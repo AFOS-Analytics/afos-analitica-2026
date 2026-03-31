@@ -255,7 +255,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">AFOS Analytics</h1>
-              <p className="text-blue-200 mt-1 text-sm md:text-base">Dashboard de Inteligência Eleitoral — Eleições Presidenciais Brasil 2026</p>
+              <p className="text-blue-200 mt-1 text-sm md:text-base">Plataforma Mundial de Inteligência em Cruzamento de Risco Político Eleitoral</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
               <button onClick={() => setShowSobre(true)} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
@@ -624,7 +624,7 @@ export default function Dashboard() {
         <section>
           <h2 className="font-bold text-[#1a1a1a] mb-4 flex items-center gap-2 text-xs sm:text-sm md:text-base lg:text-lg">
             <span className="flex-shrink-0">📊</span>
-            <span>Cruzamento de dados: Mercados de previsão x institutos de pesquisas – Análise: mídias + redes sociais</span>
+            <span>Mercados de previsão x institutos de pesquisas – Análises: mídias + redes sociais</span>
           </h2>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4 mb-4 mx-0">
             <div className="mb-2">
