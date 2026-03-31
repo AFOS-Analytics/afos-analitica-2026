@@ -255,7 +255,8 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">AFOS Analytics</h1>
-              <p className="text-blue-200 mt-1 text-sm md:text-base">Dashboard de Inteligência Eleitoral — Eleições Presidenciais Brasil 2026</p>
+              <p className="text-blue-200 mt-1 text-sm md:text-base">Cruzamento de dados e análises — Mercado de Previsão Vs. Institutos de Pesquisas — Veículos de Comunicação + Redes Sociais</p>
+              <p className="text-blue-300/70 text-[10px] sm:text-xs mt-1">Dados e probabilidades obtidos da <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Polymarket</a></p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
               <button onClick={() => setShowSobre(true)} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
@@ -1148,6 +1149,7 @@ export default function Dashboard() {
       {/* FOOTER */}
       <footer className="bg-[#0F52BA] text-white py-4 px-4 text-center text-xs">
         <p>AFOS Analytics — Dashboard de Inteligência Eleitoral | Dados: Polymarket, +17 Institutos de Pesquisa, Google News, Firecrawl AI | Atualizado a cada 2h | Este conteúdo não constitui orientação política</p>
+        <p className="mt-1 text-blue-200/50">Dados e probabilidades obtidos da <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Polymarket (polymarket.com)</a> — Este site não é afiliado à Polymarket. Os dados são atualizados automaticamente via API pública.</p>
       </footer>
     </div>
   );
