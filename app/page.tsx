@@ -255,8 +255,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">AFOS Analytics</h1>
-              <p className="text-blue-200 mt-1 text-sm md:text-base">Cruzamento de dados e análises — Mercado de Previsão Vs. Institutos de Pesquisas — Veículos de Comunicação + Redes Sociais</p>
-              <p className="text-blue-300/70 text-[10px] sm:text-xs mt-1">Dados e probabilidades obtidos da <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Polymarket</a></p>
+              <p className="text-blue-200 mt-1 text-sm md:text-base">Dashboard de Inteligência Eleitoral — Eleições Presidenciais Brasil 2026</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
               <button onClick={() => setShowSobre(true)} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
@@ -623,7 +622,10 @@ export default function Dashboard() {
 
         {/* SECTION 1: POLYMARKET */}
         <section>
-          <SectionTitle icon="📊">Polymarket — Mercado de Previsão</SectionTitle>
+          <h2 className="font-bold text-[#1a1a1a] mb-4 flex items-center gap-2 text-xs sm:text-sm md:text-base lg:text-lg">
+            <span className="flex-shrink-0">📊</span>
+            <span>Cruzamento de dados: Mercados de previsão x institutos de pesquisas – Análise: mídias + redes sociais</span>
+          </h2>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4 mb-4 mx-0">
             <div className="mb-2">
               <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-[#0F52BA] font-bold underline hover:text-[#0a3d8f] text-sm sm:text-base">polymarket.com</a>
