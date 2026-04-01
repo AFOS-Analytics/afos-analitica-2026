@@ -783,11 +783,11 @@ export default function Dashboard() {
           {/* ANÁLISE CRITERIOSA — integrada à seção de pesquisas */}
           <div className="mt-6 pt-6 border-t-2 border-[#0F52BA]/20">
           <h3 className="text-xl font-bold text-[#1a1a1a] mb-4 flex items-center gap-2"><span>🔬</span> Análise Criteriosa — Os 4 Primeiros Colocados</h3>
-          <p className="text-xs text-gray-500 mb-4">Cruzamento: 5 institutos — AtlasIntel (25/Mar) + Gerp (27/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) + Real Time Big Data (03/Mar) vs Polymarket (ao vivo) | Atualizado: 30/03/2026</p>
+          <p className="text-xs text-gray-500 mb-4">Cruzamento: 7 institutos — Paraná (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) + RTBD (03/Mar) vs Polymarket (ao vivo) | Atualizado: 01/04/2026</p>
 
           {/* LULA */}
           <Card className="mb-4 border-l-4 border-l-[#DC2626]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">1️⃣ Lula (PT) — Pesquisas: 37-46% | Polymarket: 41.5%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">1️⃣ Lula (PT) — Pesquisas: 37-46% | Polymarket: 42.5%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
@@ -801,9 +801,8 @@ export default function Dashboard() {
               <div className="bg-red-50 rounded-lg p-4">
                 <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 41.5% vs pesquisas 37-46%</strong> — mercado posiciona abaixo do topo</li>
-                  <li>• <strong>Flávio ultrapassou no Polymarket (43.9% vs 41.5%)</strong> — gap de 2.4pp</li>
-                  <li>• <strong>GERP BOMBÁSTICA: Flávio VENCE Lula no 2º turno 48% vs 45%</strong> — primeira pesquisa com derrota de Lula</li>
+                  <li>• <strong>Polymarket 42.5% — RETOMOU liderança</strong> sobre Flávio (39.8%). Subiu 1pp, Flávio caiu 4pp</li>
+                  <li>• <strong>Mas Gerp (27/Mar) mostrou Flávio VENCENDO no 2T (48% vs 45%)</strong> — alerta segue</li>
                   <li>• <strong>Rejeição recorde: 51% (Gerp)</strong> — mais da metade do eleitorado rejeita Lula. Datafolha 46%</li>
                   <li>• <strong>3 escândalos simultâneos</strong>: Banco Master + CPI INSS/Lulinha + crise STF</li>
                   <li>• <strong>80 anos em 2026</strong> — questão de saúde e energia será explorada</li>
@@ -812,18 +811,18 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Lula lidera em 5 institutos mas a Gerp (27/Mar) é um alerta vermelho: PRIMEIRA pesquisa onde Flávio VENCE Lula no 2º turno (48% vs 45%) e rejeição recorde de 51%. Polymarket confirma (43.9% Flávio vs 41.5% Lula). A combinação INSS + Banco Master + STF está corroendo a base. Cenário: favorito frágil em tendência de queda — se mais institutos confirmarem a Gerp, a corrida virou.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Lula retomou liderança no Polymarket (42.5% vs Flávio 39.8%) após semana turbulenta. Lidera em 7 institutos (37-46%). Porém: Gerp mostrou derrota no 2T (45% vs 48%), rejeição em 51%, escândalos INSS + Banco Master + STF continuam. Favorito mas vulnerável — liderança no Polymarket é frágil e pode inverter novamente.</p>
             </div>
           </Card>
 
           {/* FLÁVIO */}
           <Card className="mb-4 border-l-4 border-l-[#0F52BA]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">2️⃣ Flávio Bolsonaro (PL) — Pesquisas: 30-40% | Polymarket: 43.9%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">2️⃣ Flávio Bolsonaro (PL) — Pesquisas: 30-40% | Polymarket: 39.8%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>LIDERA Polymarket com 43.9%</strong> vs Lula 41.5% — gap de 2.4pp</li>
+                  <li>• <strong>Polymarket 39.8% — PERDEU liderança</strong> vs Lula 41.5% — gap de 2.4pp</li>
                   <li>• <strong>Crescimento em TODOS os 5 institutos</strong>: RTBD 32-34% → Quaest 30-35% → Datafolha 32-34% → Atlas 40-42% → Gerp 36-40%</li>
                   <li>• <strong>GERP: VENCE Lula no 2º turno 48% vs 45%</strong> — marco histórico, primeira pesquisa com vitória</li>
                   <li>• Vence Haddad em TODOS os cenários sem Lula</li>
@@ -844,13 +843,13 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> A Gerp (27/Mar) mudou o jogo: Flávio VENCE Lula no 2º turno (48% vs 45%) pela primeira vez em qualquer pesquisa. Polymarket confirma (43.9% vs 41.5%). Cresceu em TODOS os 5 institutos. Rejeição de 45% é alta mas MENOR que a de Lula (51% Gerp). A verdade do 1º turno está entre 33-40%, o que força 2º turno onde agora é competitivo. Se direita unificar e Tarcísio não concorrer = favorito real.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Flávio caiu no Polymarket (39.8%, era 43.9%) — Lula retomou liderança (42.5%). Porém: Gerp mostrou vitória no 2T (48% vs 45%) e cresceu em TODOS os 7 institutos. Cresceu em TODOS os 5 institutos. Rejeição de 45% é alta mas MENOR que a de Lula (51% Gerp). A verdade do 1º turno está entre 33-40%, o que força 2º turno onde agora é competitivo. Se direita unificar e Tarcísio não concorrer = favorito real.</p>
             </div>
           </Card>
 
           {/* RENAN SANTOS */}
           <Card className="mb-4 border-l-4 border-l-[#8B5CF6]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">3️⃣ Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.2%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">3️⃣ Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 5.7%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
@@ -921,9 +920,9 @@ export default function Dashboard() {
                 <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
                 <div className="font-bold text-gray-500 py-2 text-center">2º Turno vs Lula</div>
                 {[
-                  { n: 'Lula (PT)', p: '36-46%', m: '41.5%', t: '📉 Caindo', s: '45-46%', pc: '#DC2626', mc: '' },
-                  { n: 'Flávio (PL)', p: '30-42%', m: '43.9%', t: '📈 Subindo', s: '42-47.6%', pc: '', mc: '#0F52BA' },
-                  { n: 'Renan (Missão)', p: '1-4.5%', m: '6.2%', t: '📈 Subindo', s: 'N/A', pc: '', mc: '' },
+                  { n: 'Lula (PT)', p: '37-46%', m: '42.5%', t: '📉 Caindo', s: '45-46%', pc: '#DC2626', mc: '' },
+                  { n: 'Flávio (PL)', p: '30-40%', m: '39.8%', t: '📈 Subindo', s: '42-47.6%', pc: '', mc: '#0F52BA' },
+                  { n: 'Renan (Missão)', p: '1-4.5%', m: '5.7%', t: '📈 Subindo', s: 'N/A', pc: '', mc: '' },
                   { n: 'Caiado (PSD)', p: '2-4%', m: '~2%', t: '➡️ Estável', s: '36%', pc: '', mc: '' },
                 ].map((r, i) => (
                   <div key={i} className="contents">
@@ -939,9 +938,9 @@ export default function Dashboard() {
             {/* Mobile */}
             <div className="sm:hidden space-y-2">
               {[
-                { n: 'Lula (PT)', p: '36-46%', m: '41.5%', t: '📉 Caindo', s: '45-46%' },
-                { n: 'Flávio (PL)', p: '30-42%', m: '43.9%', t: '📈 Subindo', s: '42-47.6%' },
-                { n: 'Renan (Missão)', p: '1-4.5%', m: '6.2%', t: '📈 Subindo', s: 'N/A' },
+                { n: 'Lula (PT)', p: '37-46%', m: '42.5%', t: '📉 Caindo', s: '45-46%' },
+                { n: 'Flávio (PL)', p: '30-40%', m: '39.8%', t: '📈 Subindo', s: '42-47.6%' },
+                { n: 'Renan (Missão)', p: '1-4.5%', m: '5.7%', t: '📈 Subindo', s: 'N/A' },
                 { n: 'Caiado (PSD)', p: '2-4%', m: '~2%', t: '➡️ Estável', s: '36%' },
               ].map((r, i) => (
                 <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">

@@ -4,7 +4,7 @@ export const revalidate = 7200;
 
 export async function GET() {
   const data = {
-    lastUpdate: "2026-03-31",
+    lastUpdate: "2026-04-01",
     institutes: [
       { name: "Datafolha", reliability: 5, type: "Presencial", note: "Mais tradicional do Brasil. Grupo Folha." },
       { name: "Quaest/Genial", reliability: 5, type: "Presencial", note: "Encomendada por bancos/investidores. Alta precisão." },
@@ -389,12 +389,12 @@ export async function GET() {
       note: "Comparação Pesquisas Nacionais vs Polymarket (dinheiro real)",
       candidates: [
         { name: "Lula", pesquisaRange: "37-46%", polymarket: "41.5%", tendenciaPesquisa: "Estável/leve queda. Nexus/BTG 41-42%, Paraná Pesq 41.3%, Gerp 38%, AtlasIntel 45.9%", tendenciaPolymarket: "↑ RETOMOU LIDERANÇA — 41.5% vs Flávio 40.0%" },
-        { name: "Flávio Bolsonaro", pesquisaRange: "30-40%", polymarket: "40.0%", tendenciaPesquisa: "Subindo. Nexus/BTG 38-39%, Paraná Pesq 37.8%, Gerp 36-40%, AtlasIntel 40.1%", tendenciaPolymarket: "↓ Caiu de 42.25% para 40.0% — possível efeito Caiado/terras-raras" },
-        { name: "Renan Santos", pesquisaRange: "1-4.5%", polymarket: "6.15%", tendenciaPesquisa: "Baixo em pesquisas formais. Nexus/BTG 2-3%, Paraná Pesq 1.2%", tendenciaPolymarket: "Estável em 6.15% — voto protesto consolidado" },
-        { name: "Ronaldo Caiado", pesquisaRange: "2-5%", polymarket: "2.95%", tendenciaPesquisa: "Nexus/BTG 4%, Paraná Pesq 3.6%. PSD lançou candidatura 30/Mar", tendenciaPolymarket: "↑ Subiu de ~0% para 2.95% — mercado precificou lançamento PSD" },
-        { name: "Tarcísio", pesquisaRange: "21-33%", polymarket: "1.0%", tendenciaPesquisa: "Só em cenários sem Flávio", tendenciaPolymarket: "↓ Caiu para 1.0% — foco na reeleição SP" },
-        { name: "Romeu Zema", pesquisaRange: "2-6%", polymarket: "2.15%", tendenciaPesquisa: "Nexus/BTG 4-6%, Paraná Pesq 3.0%. 2° turno: perde de Lula 46x40 (Nexus)", tendenciaPolymarket: "Estável em 2.15%" },
-        { name: "Fernando Haddad", pesquisaRange: "21-38% (sem Lula)", polymarket: "5.5%", tendenciaPesquisa: "Só como Plano B", tendenciaPolymarket: "↓ Leve queda para 5.5% — Plano B petista esfriando" },
+        { name: "Flávio Bolsonaro", pesquisaRange: "30-40%", polymarket: "39.45%", tendenciaPesquisa: "Subindo em pesquisas. Nexus/BTG 38-39%, Paraná Pesq 37.8%, Gerp 36-40%, AtlasIntel 40.1%", tendenciaPolymarket: "↓ Recua de 40.2% para 39.45% — contra-ataque Lula (Alckmin+reforma) teve efeito" },
+        { name: "Renan Santos", pesquisaRange: "1-4.5%", polymarket: "5.5%", tendenciaPesquisa: "Baixo em pesquisas formais. Nexus/BTG 2-3%, Paraná Pesq 1.2%", tendenciaPolymarket: "↓ Leve recuo para 5.5% — voto protesto resiliente" },
+        { name: "Ronaldo Caiado", pesquisaRange: "2-5%", polymarket: "2.55%", tendenciaPesquisa: "Nexus/BTG 4%, Paraná Pesq 3.6%. PSD lançou candidatura 30/Mar", tendenciaPolymarket: "Estável em 2.55% — mercado cético com 3ª via" },
+        { name: "Tarcísio", pesquisaRange: "21-33%", polymarket: "1.0%", tendenciaPesquisa: "Só em cenários sem Flávio. 53% aprovação em SP (AtlasIntel)", tendenciaPolymarket: "Estável em 1.0% — foco na reeleição SP" },
+        { name: "Romeu Zema", pesquisaRange: "2-6%", polymarket: "1.4%", tendenciaPesquisa: "Nexus/BTG 4-6%, Paraná Pesq 3.0%. 2° turno: perde de Lula 46x40 (Nexus)", tendenciaPolymarket: "↓ Recuo para 1.4%" },
+        { name: "Fernando Haddad", pesquisaRange: "21-38% (sem Lula)", polymarket: "5.6%", tendenciaPesquisa: "Só como Plano B. Lula confirmou candidatura.", tendenciaPolymarket: "↑ Recupera para 5.6% — hedge de mercado apesar de Lula confirmado" },
       ]
     }
   };
