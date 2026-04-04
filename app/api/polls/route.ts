@@ -6,23 +6,27 @@ export async function GET() {
   const data = {
     lastUpdate: "2026-04-01",
     institutes: [
+      // ★★★★★ Referência nacional
       { name: "Datafolha", reliability: 5, type: "Presencial", note: "Mais tradicional do Brasil. Grupo Folha." },
       { name: "Quaest/Genial", reliability: 5, type: "Presencial", note: "Encomendada por bancos/investidores. Alta precisão." },
+      // ★★★★ Alta confiabilidade
       { name: "AtlasIntel", reliability: 4, type: "Online/Big Data", note: "Metodologia digital. Parceria Bloomberg." },
       { name: "Paraná Pesquisas", reliability: 4, type: "Presencial", note: "Forte em estaduais e nacionais." },
-      { name: "Real Time Big Data", reliability: 3, type: "Telefônica", note: "Séries frequentes, amostra menor." },
-      { name: "Ideia/Canal Meio", reliability: 3, type: "Misto", note: "Parceria editorial Canal Meio." },
       { name: "MDA", reliability: 4, type: "Presencial", note: "Um dos que mais acertou historicamente." },
       { name: "Ipec (ex-Ibope)", reliability: 4, type: "Presencial", note: "Herdeiro do Ibope. Menos dominante atualmente." },
+      // ★★★ Confiável
+      { name: "Real Time Big Data", reliability: 3, type: "Telefônica", note: "Séries frequentes, amostra menor." },
+      { name: "Ideia/Canal Meio", reliability: 3, type: "Misto", note: "Parceria editorial Canal Meio." },
       { name: "Futura Inteligência", reliability: 3, type: "Misto", note: "Pesquisas nacionais e regionais." },
       { name: "Gerp", reliability: 3, type: "Misto", note: "Frequente em rodadas semanais 2026." },
-      { name: "Veritá", reliability: 2, type: "Presencial", note: "⚠️ Erros metodológicos documentados. Usar com cautela." },
       { name: "PoderData", reliability: 3, type: "Telefônica/Online", note: "Foco em tendências políticas." },
-      { name: "Ranking Brasil", reliability: 2, type: "Misto", note: "Menos histórico disponível." },
       { name: "Methodus", reliability: 3, type: "Presencial", note: "Atuação regional forte." },
+      { name: "Ipespe", reliability: 3, type: "Presencial", note: "Menos frequente atualmente." },
+      // ★★ Usar com cautela
+      { name: "Veritá", reliability: 2, type: "Presencial", note: "⚠️ Erros metodológicos documentados. Usar com cautela." },
+      { name: "Ranking Brasil", reliability: 2, type: "Misto", note: "Menos histórico disponível." },
       { name: "Alfa Inteligência", reliability: 2, type: "Misto", note: "Instituto mais recente." },
       { name: "Colectta", reliability: 2, type: "Online", note: "Metodologia digital." },
-      { name: "Ipespe", reliability: 3, type: "Presencial", note: "Menos frequente atualmente." },
     ],
     polls: [
       {
