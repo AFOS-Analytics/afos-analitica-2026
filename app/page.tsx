@@ -86,13 +86,13 @@ function getPhoto(name: string): string | null {
 
 // ─── Candidates ──────────────────────────────────────────────────────
 const candidates = [
-  { name: "Flávio Bolsonaro", party: "PL", age: 45, role: "Senador (RJ)", polymarket: "43.25%", poll: "40.1%", position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.", risk: "Associação com pai inelegível. Investigações judiciais pendentes." },
-  { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "41.5%", poll: "45.9%", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "Idade avançada. Desgaste do governo. Escândalo Banco Master. CPI do INSS mira filho Lulinha. Aprovação em queda. Três escândalos simultâneos." },
-  { name: "Renan Santos", party: "Missão", age: 35, role: "Fundador do MBL", polymarket: "6.15%", poll: "4.4%", position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.", risk: "Partido pequeno. Baixa estrutura nacional." },
-  { name: "Ronaldo Caiado", party: "PSD", age: 76, role: "Governador de Goiás", polymarket: "~2%", poll: "3.7%", position: "Centro-direita. Agronegócio, gestão fiscal. Apoiado por Eduardo Pedrosa (DF).", risk: "Baixa projeção nacional fora do Centro-Oeste." },
-  { name: "Fernando Haddad", party: "PT", age: 63, role: "Ministro da Fazenda", polymarket: "4.65%", poll: "37.6% (sem Lula)", position: "Centro-esquerda. Plano B do PT se Lula não concorrer. Gestor técnico.", risk: "Sem Lula, perde 8pp. Desgaste como ministro da Fazenda." },
-  { name: "Romeu Zema", party: "Novo", age: 56, role: "Governador de Minas Gerais", polymarket: "~2%", poll: "3.1-6.2%", position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.", risk: "Partido sem estrutura nacional. Dificuldade de alianças." },
-  { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "1.4%", poll: "33.3% (cenário solo)", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "Baixo no Polymarket. Pode não concorrer (reeleição SP)." },
+  { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "42.5%", poll: "41-46%", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "Idade avançada. Rejeição recorde 50.6%. Escândalo Banco Master + INSS/Lulinha + crise STF. PT admite risco de Lula não concorrer." },
+  { name: "Flávio Bolsonaro", party: "PL", age: 45, role: "Senador (RJ)", polymarket: "36.5%", poll: "37-52%", position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.", risk: "Queda no Polymarket (-3.25pp em 3 dias). Rejeição 24%. Pai inelegível. Zero experiência executiva." },
+  { name: "Renan Santos", party: "Missão", age: 35, role: "Fundador do MBL", polymarket: "6.05%", poll: "1-4.5%", position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.", risk: "Partido pequeno. Baixa estrutura nacional. Força real menor que digital." },
+  { name: "Fernando Haddad", party: "PT", age: 63, role: "Ministro da Fazenda", polymarket: "6.7%", poll: "21-38% (sem Lula)", position: "Centro-esquerda. Plano B do PT se Lula não concorrer. Gestor técnico.", risk: "PT admite risco de Lula ficar fora. Desgaste como Min. da Fazenda. Perde para Flávio sem Lula." },
+  { name: "Ronaldo Caiado", party: "PSD", age: 76, role: "Governador de Goiás", polymarket: "2.2%", poll: "3-5%", position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.", risk: "Não escala além de 5%. Perde no 2T por 7-10pp. PSD sem identidade clara." },
+  { name: "Romeu Zema", party: "Novo", age: 56, role: "Governador de Minas Gerais", polymarket: "1.75%", poll: "3-6%", position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.", risk: "Partido sem estrutura nacional. Dificuldade de alianças." },
+  { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "0.4%", poll: "33% (cenário solo)", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "Praticamente descartado pelo mercado (0.4%). Foco na reeleição SP." },
 ];
 
 // ─── Components ──────────────────────────────────────────────────────
@@ -793,82 +793,83 @@ export default function Dashboard() {
           {/* ANÁLISE CRITERIOSA — integrada à seção de pesquisas */}
           <div className="mt-6 pt-6 border-t-2 border-[#0F52BA]/20">
           <h3 className="text-xl font-bold text-[#1a1a1a] mb-4 flex items-center gap-2"><span>🔬</span> Análise Criteriosa — Os 4 Primeiros Colocados</h3>
-          <p className="text-xs text-gray-500 mb-4">Cruzamento: 7 institutos — Paraná (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) + RTBD (03/Mar) vs Polymarket (ao vivo) | Atualizado: 01/04/2026</p>
+          <p className="text-xs text-gray-500 mb-4">Cruzamento: Polymarket (ao vivo) vs institutos — AtlasIntel estaduais (01-03/Abr) + Paraná Pesquisas (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel nacional (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) | Atualizado: 04/04/2026</p>
 
           {/* LULA */}
           <Card className="mb-4 border-l-4 border-l-[#DC2626]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">1️⃣ Lula (PT) — Pesquisas: 37-46% | Polymarket: 42.5%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">1️⃣ Lula (PT) — Pesquisas: 33-46% | Polymarket: 42.5%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Lidera em 5 de 5 pesquisas</strong>: Atlas 45.9% | Gerp 37-38% | Quaest 36-39% | Datafolha 38-39% | RTBD 39-40%</li>
-                  <li>• <strong>Piso eleitoral alto</strong>: nunca abaixo de 36% em nenhum cenário</li>
-                  <li>• Incumbência: máquina do governo, fundo eleitoral, tempo de TV</li>
-                  <li>• Consistência: lidera independente da metodologia (presencial, online, telefônica)</li>
+                  <li>• <strong>Polymarket 42.5% — lidera com folga</strong>. Gap de 5.95pp sobre Flávio (36.55%). Ampliou de 2.7pp em 01/Abr</li>
+                  <li>• <strong>Lidera em pesquisas nacionais</strong>: Atlas 45.9% | Paraná 41.3% | Nexus/BTG 41% | Gerp 37-38% | Quaest 36-39% | Datafolha 38-39%</li>
+                  <li>• <strong>Piso eleitoral alto</strong>: nunca abaixo de 33% em nenhum cenário nacional</li>
+                  <li>• Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Reforma ministerial (31/Mar) + Alckmin vice + Pacheco no PSB</li>
+                  <li>• Contra-ataque funcionou: Polymarket respondeu positivamente à reorganização</li>
                 </ul>
               </div>
               <div className="bg-red-50 rounded-lg p-4">
                 <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 42.5% — RETOMOU liderança</strong> sobre Flávio (39.8%). Subiu 1pp, Flávio caiu 4pp</li>
-                  <li>• <strong>Mas Gerp (27/Mar) mostrou Flávio VENCENDO no 2T (48% vs 45%)</strong> — alerta segue</li>
-                  <li>• <strong>Rejeição recorde: 51% (Gerp)</strong> — mais da metade do eleitorado rejeita Lula. Datafolha 46%</li>
-                  <li>• <strong>3 escândalos simultâneos</strong>: Banco Master + CPI INSS/Lulinha + crise STF</li>
+                  <li>• <strong>Rejeição recorde: 50.6% (AtlasIntel/Arko, 03/Abr)</strong> — mais da metade do país rejeita. Gerp 51%, Datafolha 46%</li>
+                  <li>• <strong>AtlasIntel estaduais (01-02/Abr)</strong>: perde para Flávio no PR (33.5% vs 52%), SC (vs 53.4%), AP (37.5% vs 44.8%). Empate técnico em SP e MG</li>
+                  <li>• <strong>PT admite plano B</strong> (VEJA, 03/Abr): bastidores reconhecem risco de Lula não concorrer — Haddad sobe no Polymarket (6.7%)</li>
+                  <li>• <strong>3 escândalos simultâneos</strong>: Banco Master + INSS/Lulinha + STF. Delação Vorcaro em andamento (~3 meses)</li>
                   <li>• <strong>80 anos em 2026</strong> — questão de saúde e energia será explorada</li>
-                  <li>• Sem Lula: PT cai para 21-37.6% (Haddad) — dependência total</li>
+                  <li>• Sem Lula: PT cai para 21-38% (Haddad) — dependência total do nome</li>
                 </ul>
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Lula retomou liderança no Polymarket (42.5% vs Flávio 39.8%) após semana turbulenta. Lidera em 7 institutos (37-46%). Porém: Gerp mostrou derrota no 2T (45% vs 48%), rejeição em 51%, escândalos INSS + Banco Master + STF continuam. Favorito mas vulnerável — liderança no Polymarket é frágil e pode inverter novamente.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Lula consolida liderança no Polymarket (42.5% vs Flávio 36.55%) — gap DOBROU para 5.95pp em 3 dias. Contra-ataque (Alckmin vice + reforma ministerial) funcionou no mercado. Porém: rejeição bateu 50.6% (AtlasIntel/Arko), perde para Flávio em 3 estados do Sul (PR 52%, SC 53%, AP 44.8%), PT admite plano B nos bastidores, e Haddad disparou no Polymarket (6.7%). Favorito consolidado no mercado, mas vulnerável nas pesquisas — rejeição acima de 50% é território perigoso a 6 meses da eleição.</p>
             </div>
           </Card>
 
           {/* FLÁVIO */}
           <Card className="mb-4 border-l-4 border-l-[#0F52BA]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">2️⃣ Flávio Bolsonaro (PL) — Pesquisas: 30-40% | Polymarket: 39.8%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">2️⃣ Flávio Bolsonaro (PL) — Pesquisas: 37-52% | Polymarket: 36.55%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 39.8% — PERDEU liderança</strong> vs Lula 41.5% — gap de 2.4pp</li>
-                  <li>• <strong>Crescimento em TODOS os 5 institutos</strong>: RTBD 32-34% → Quaest 30-35% → Datafolha 32-34% → Atlas 40-42% → Gerp 36-40%</li>
-                  <li>• <strong>GERP: VENCE Lula no 2º turno 48% vs 45%</strong> — marco histórico, primeira pesquisa com vitória</li>
-                  <li>• Vence Haddad em TODOS os cenários sem Lula</li>
-                  <li>• 3 munições de campanha: INSS/Lulinha + Banco Master + STF</li>
-                  <li>• Direita unificada — PL concentrado</li>
+                  <li>• <strong>DOMINA o Sul nas estaduais AtlasIntel (01-02/Abr)</strong>: Paraná 52% vs Lula 33.5% | Santa Catarina 53.4% (pode vencer no 1T!) | Amapá 44.8% vs 37.5%</li>
+                  <li>• <strong>Empate técnico em SP e MG</strong> (AtlasIntel) — disputa voto-chave nos maiores colégios</li>
+                  <li>• <strong>Rejeição 24%</strong> (AtlasIntel/Arko) — METADE da rejeição de Lula (50.6%). Vantagem decisiva</li>
+                  <li>• <strong>2º lugar 1T praticamente garantido</strong>: Polymarket dá 64.5% para Flávio ir ao 2T</li>
+                  <li>• Gerp: VENCE Lula no 2T (48% vs 45%). Nexus/BTG: empate 46x46. Paraná: 45.2% vs 44.1%</li>
+                  <li>• 3 munições de campanha: INSS/Lulinha + Banco Master + STF + rejeição recorde de Lula</li>
                 </ul>
               </div>
               <div className="bg-red-50 rounded-lg p-4">
                 <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Rejeição 45%</strong> (Datafolha/Gerp) — alta, mas MENOR que Lula (46-51%)</li>
-                  <li>• Se Tarcísio entrar: cai de 40% para 35.8% — direita fragmenta</li>
-                  <li>• Presenciais (Datafolha 33%, Quaest 30-35%) mais baixos que online (Atlas 40%) — pode estar inflado no digital</li>
+                  <li>• <strong>Polymarket em QUEDA: 36.55%</strong> (era 39.8% em 01/Abr, 43.9% em 29/Mar) — caiu 7.35pp em 6 dias</li>
+                  <li>• <strong>Gap ampliou para 5.95pp</strong> vs Lula — mercado precifica contra-ataque do governo como eficaz</li>
+                  <li>• Presenciais nacionais mais baixos (Paraná 37.8%, Nexus/BTG 38%, Quaest 30-35%) que online (Atlas 40-42%)</li>
                   <li>• Pai inelegível + investigações próprias = bagagem judicial</li>
                   <li>• Nunca disputou executivo — zero experiência administrativa</li>
-                  <li>• Perde para Lula no 2T em Datafolha (43% vs 46%) e Quaest (42% vs 46%) — mas VENCE na Gerp (48% vs 45%)</li>
+                  <li>• Perde para Lula no 2T em Datafolha (43% vs 46%) e Quaest (42% vs 46%)</li>
                 </ul>
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Flávio caiu no Polymarket (39.8%, era 43.9%) — Lula retomou liderança (42.5%). Porém: Gerp mostrou vitória no 2T (48% vs 45%) e cresceu em TODOS os 7 institutos. Cresceu em TODOS os 5 institutos. Rejeição de 45% é alta mas MENOR que a de Lula (51% Gerp). A verdade do 1º turno está entre 33-40%, o que força 2º turno onde agora é competitivo. Se direita unificar e Tarcísio não concorrer = favorito real.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Flávio vive paradoxo: DOMINA pesquisas estaduais do Sul (PR 52%, SC 53.4%) e tem rejeição de apenas 24% (metade de Lula), mas DESPENCA no Polymarket para 36.55% — queda de 7.35pp em 6 dias. Mercado interpretou contra-ataque de Lula (reforma ministerial + Alckmin vice) como eficaz. Porém: dados estruturais favorecem Flávio — rejeição de Lula em 50.6%, vitória no 2T na Gerp (48% vs 45%), e base sólida no Sul. A verdade está entre pesquisas (competitivo) e Polymarket (atrás). Candidato com maior potencial de recuperação se escândalos do governo se intensificarem.</p>
             </div>
           </Card>
 
           {/* RENAN SANTOS */}
           <Card className="mb-4 border-l-4 border-l-[#8B5CF6]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">3️⃣ Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 5.7%</h3>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">3️⃣ Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.05%</h3>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div className="bg-green-50 rounded-lg p-4">
                 <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
                 <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 6.2%</strong> — mercado dá mais chance que pesquisas tradicionais</li>
-                  <li>• <strong>Presente nos 5 institutos</strong>: Atlas 4.4% | Datafolha 3-4% | Quaest 1-2% | Gerp 1% | RTBD 2%</li>
+                  <li>• <strong>Polymarket 6.05%</strong> — mercado dá mais chance que pesquisas tradicionais. 3º colocado no mercado</li>
+                  <li>• <strong>FAVORITO para 3º lugar no 1T</strong>: Polymarket dá 36% de chance de Renan ficar em 3º (Zema distante com 10.5%)</li>
+                  <li>• <strong>Presente nos institutos</strong>: Atlas 4.4% | Datafolha 3-4% | Quaest 1-2% | Gerp 1% | RTBD 2%</li>
                   <li>• Mais jovem (35 anos) — apelo digital forte entre geração Z e Millennials</li>
                   <li>• Discurso anti-establishment atrai desencantados com PT E com Bolsonaro</li>
-                  <li>• Estadão destacou como &quot;a volta por cima do jovem de direita&quot; — narrativa de mídia favorável</li>
                   <li>• Voto próprio estável: 3-4.5% independente do cenário</li>
                 </ul>
               </div>
@@ -880,41 +881,41 @@ export default function Dashboard() {
                   <li>• Partido Missão sem capilaridade, fundo eleitoral mínimo</li>
                   <li>• Zero experiência executiva ou legislativa</li>
                   <li>• Sem apoio de governadores ou máquinas estaduais</li>
-                  <li>• Diferença entre Polymarket (6.2%) e Quaest (1%) é a maior de todos os candidatos — pode ser bolha digital</li>
+                  <li>• Diferença entre Polymarket (6.05%) e Quaest (1%) é a maior de todos os candidatos — pode ser bolha digital</li>
                 </ul>
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Renan é a maior divergência Pesquisa vs Polymarket: 1-4.4% nas urnas vs 6.2% no mercado. Gerp e Quaest (presenciais) dão apenas 1% — confirma que seu eleitorado é digital. Com partido nanômetro, não disputa 2º turno. Papel: <strong>kingmaker</strong> — seus 2-4% decidem para quem vão no 2T. Se apoiar Flávio = Lula perde.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Renan é a maior divergência Pesquisa vs Polymarket: 1-4.4% nas urnas vs 6.05% no mercado. Polymarket o coloca como favorito para 3º lugar (36% de chance). Gerp e Quaest (presenciais) dão apenas 1% — confirma que seu eleitorado é digital. Com partido nanômetro, não disputa 2º turno. Papel: <strong>kingmaker</strong> — seus 2-4% decidem para quem vão no 2T. Se apoiar Flávio = Lula perde.</p>
             </div>
           </Card>
 
           {/* CAIADO / HADDAD */}
           <Card className="mb-4 border-l-4 border-l-[#6B7280]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">4️⃣ Ronaldo Caiado (PSD) — Pesquisas: 2-4% | Poly: ~2% | Fernando Haddad (PT) — Pesquisas: 21-38% (sem Lula) | Poly: 4.2%</h3>
-            <p className="text-xs text-gray-500 mb-3">Caiado é o 4º no cenário principal em todos os institutos. Haddad é o Plano B do PT e aparece como substituto natural.</p>
+            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">4️⃣ Ronaldo Caiado (PSD) — Pesquisas: 3-5% | Poly: 2.2% | Fernando Haddad (PT) — Pesquisas: 21-38% (sem Lula) | Poly: 6.7%</h3>
+            <p className="text-xs text-gray-500 mb-3">Caiado é o 4º no cenário principal. Haddad é o Plano B do PT — ganhou força após PT admitir risco de Lula não concorrer (VEJA, 03/Abr).</p>
             <div className="grid md:grid-cols-2 gap-4 mt-3">
               <div>
-                <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 CAIADO (PSD) — 3.7%</h4>
+                <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 CAIADO (PSD) — Poly 2.2%</h4>
                 <div className="bg-green-50 rounded-lg p-3 mb-2">
-                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> Consistente nos 5 institutos: Atlas 3.7% | Gerp 3-5% | Datafolha 4% | Quaest 4% | RTBD 5%. Lançou pré-candidatura oficial pelo PSD (30/Mar). Governador bem avaliado em GO. Perfil gestor/agro. Apoio de Eduardo Pedrosa (DF) via União Progressista.</p>
+                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> Consistente nos institutos: Atlas 3.7% | Gerp 3-5% | Datafolha 4% | Quaest 4% | Paraná 3.6% | Nexus/BTG 4%. Pré-candidato oficial pelo PSD (30/Mar). Kassab saiu do governo SP para dedicar-se. Governador bem avaliado em GO. Perfil gestor/agro. Polymarket 2º lugar 1T: 3.4%.</p>
                 </div>
                 <div className="bg-red-50 rounded-lg p-3">
-                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> 3-5% em TODOS os institutos — não escala. No 2T perde: Atlas 36.7% vs Lula 46.2% | Gerp 37% vs Lula 44% | Datafolha 36% vs 46%. Gap de 7-10pp. PSD sem identidade clara. 76 anos. Polymarket ~2%.</p>
+                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> 3-5% em TODOS os institutos — não escala. No 2T perde: Atlas 36.7% vs Lula 46.2% | Gerp 37% vs Lula 44% | Nexus/BTG 41% vs Lula 46%. Gap de 5-10pp. Polymarket 2.2% — mercado cético. Poder360: &quot;Nenhuma 3ª via deu certo em 9 eleições&quot;. 76 anos.</p>
                 </div>
               </div>
               <div>
-                <h4 className="font-bold text-sm text-[#DC2626] mb-2">🔴 HADDAD (PT) — 37.6% (cenário sem Lula)</h4>
+                <h4 className="font-bold text-sm text-[#DC2626] mb-2">🔴 HADDAD (PT) — Poly 6.7% (↑2.5pp)</h4>
                 <div className="bg-green-50 rounded-lg p-3 mb-2">
-                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> Sem Lula: AtlasIntel 37.6% | Datafolha 21% — competitivo no Atlas. Herda estrutura PT + máquina federal. Perfil técnico (Min. Fazenda). Polymarket 4.2% — mercado vê como Plano B viável se Lula não concorrer.</p>
+                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> <strong>DISPAROU no Polymarket: 6.7% (era 4.2% em 01/Abr — +2.5pp em 3 dias)</strong>. Mercado precifica risco real de Lula não concorrer. Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT + máquina federal. Perfil técnico. 2º lugar 1T no Polymarket: 7.1%.</p>
                 </div>
                 <div className="bg-red-50 rounded-lg p-3">
-                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> <strong>Divergência brutal entre institutos</strong>: AtlasIntel dá 37.6% mas Datafolha dá apenas 21% sem Lula — diferença de 16.6pp! PERDE para Flávio em TODOS os cenários sem Lula. Brancos/nulos explodem sem Lula (6-20%). Polymarket em 4.2% vs pesquisas 21-38% = mercado não acredita que concorre. Desgaste como Min. da Fazenda (juros altos). Carrega escândalos.</p>
+                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> <strong>PT admite plano B nos bastidores</strong> (VEJA, 03/Abr) — reconhece risco de Lula ficar fora. Divergência brutal: Atlas 37.6% vs Datafolha 21% sem Lula (gap 16pp). PERDE para Flávio em TODOS os cenários sem Lula. Desgaste como Min. da Fazenda. Brancos/nulos explodem sem Lula (6-20%).</p>
                 </div>
               </div>
             </div>
             <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS:</strong> Caiado tem 3-5% em 5 institutos + Polymarket ~2%. Lançou pré-candidatura pelo PSD (30/Mar) mas não escala. Papel: vice ou ministro. Haddad: Atlas 37.6% mas Datafolha apenas 21% sem Lula — gap de 16pp. O PT sem Lula é um partido de 21-38%, e nenhum número vence Flávio (33-40%). Polymarket 4.2% = mercado não acredita que concorre. Se Lula desistir por saúde/escândalos, PT tem problema grave.</p>
+              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> O fato mais relevante é a ALTA de Haddad no Polymarket (6.7%, +2.5pp em 3 dias) — mercado está precificando cenário &quot;Lula não concorre&quot; após PT admitir risco (VEJA, 03/Abr). Haddad é agora o 3º no Polymarket, à frente de Renan (6.05%). Caiado segue estagnado: 3-5% nos institutos + 2.2% no Polymarket — mercado não comprou lançamento. O PT sem Lula é partido de 21-38%, e nenhum número vence Flávio. Se Lula sair, Haddad é o candidato natural mas entra perdendo. Se Lula ficar, Haddad volta a ser ministro e Polymarket corrige para baixo.</p>
             </div>
           </Card>
 
@@ -930,10 +931,11 @@ export default function Dashboard() {
                 <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
                 <div className="font-bold text-gray-500 py-2 text-center">2º Turno vs Lula</div>
                 {[
-                  { n: 'Lula (PT)', p: '37-46%', m: '42.5%', t: '📉 Caindo', s: '45-46%', pc: '#DC2626', mc: '' },
-                  { n: 'Flávio (PL)', p: '30-40%', m: '39.8%', t: '📈 Subindo', s: '42-47.6%', pc: '', mc: '#0F52BA' },
-                  { n: 'Renan (Missão)', p: '1-4.5%', m: '5.7%', t: '📈 Subindo', s: 'N/A', pc: '', mc: '' },
-                  { n: 'Caiado (PSD)', p: '2-4%', m: '~2%', t: '➡️ Estável', s: '36%', pc: '', mc: '' },
+                  { n: 'Lula (PT)', p: '33-46%', m: '42.5%', t: '➡️ Estável', s: '44-46%', pc: '#DC2626', mc: '' },
+                  { n: 'Flávio (PL)', p: '37-52%', m: '36.55%', t: '📉 Caindo no Poly', s: '45-48%', pc: '', mc: '#0F52BA' },
+                  { n: 'Haddad (PT)', p: '21-38% s/ Lula', m: '6.7%', t: '📈 Subindo forte', s: 'Perde todos', pc: '', mc: '' },
+                  { n: 'Renan (Missão)', p: '1-4.5%', m: '6.05%', t: '➡️ Estável', s: 'N/A', pc: '', mc: '' },
+                  { n: 'Caiado (PSD)', p: '3-5%', m: '2.2%', t: '➡️ Estável', s: '37-41%', pc: '', mc: '' },
                 ].map((r, i) => (
                   <div key={i} className="contents">
                     <div className="font-semibold py-1 border-t border-gray-100">{r.n}</div>
@@ -948,10 +950,11 @@ export default function Dashboard() {
             {/* Mobile */}
             <div className="sm:hidden space-y-2">
               {[
-                { n: 'Lula (PT)', p: '37-46%', m: '42.5%', t: '📉 Caindo', s: '45-46%' },
-                { n: 'Flávio (PL)', p: '30-40%', m: '39.8%', t: '📈 Subindo', s: '42-47.6%' },
-                { n: 'Renan (Missão)', p: '1-4.5%', m: '5.7%', t: '📈 Subindo', s: 'N/A' },
-                { n: 'Caiado (PSD)', p: '2-4%', m: '~2%', t: '➡️ Estável', s: '36%' },
+                { n: 'Lula (PT)', p: '33-46%', m: '42.5%', t: '➡️ Estável', s: '44-46%' },
+                { n: 'Flávio (PL)', p: '37-52%', m: '36.55%', t: '📉 Caindo no Poly', s: '45-48%' },
+                { n: 'Haddad (PT)', p: '21-38% s/ Lula', m: '6.7%', t: '📈 Subindo forte', s: 'Perde todos' },
+                { n: 'Renan (Missão)', p: '1-4.5%', m: '6.05%', t: '➡️ Estável', s: 'N/A' },
+                { n: 'Caiado (PSD)', p: '3-5%', m: '2.2%', t: '➡️ Estável', s: '37-41%' },
               ].map((r, i) => (
                 <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
                   <div className="font-semibold text-sm mb-1">{r.n}</div>
@@ -965,7 +968,7 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-3">
-              <p className="text-xs text-[#0F52BA] font-semibold">📌 CRUZAMENTO 3 INSTITUTOS + POLYMARKET (29/Mar): Lula lidera em TODAS as pesquisas (36-46%) mas Flávio lidera no Polymarket (43.9% vs 41.5%). A divergência é maior nas pesquisas presenciais (Quaest 36% vs 30%) e menor na online (AtlasIntel 46% vs 40%). Polymarket — onde apostadores colocam dinheiro real — posiciona Flávio à frente. Historicamente, mercados de previsão com skin in the game são mais precisos que pesquisas declaratórias. A direita está subindo em TODOS os indicadores; a esquerda está caindo em todos. Os 3 escândalos (INSS + Master + STF) ainda não foram plenamente capturados pelas pesquisas presenciais.</p>
+              <p className="text-xs text-[#0F52BA] font-semibold">📌 CRUZAMENTO INSTITUTOS + POLYMARKET (04/Abr): Lula lidera no Polymarket (42.5%) com gap de 5.95pp sobre Flávio (36.55%) — dobrou em 3 dias. Porém: nas pesquisas, distância é menor (Paraná 41.3% vs 37.8%, Nexus/BTG 41% vs 38%). AtlasIntel estaduais mostram Flávio DOMINANTE no Sul (PR 52%, SC 53.4%) e competitivo em SP e MG. Rejeição de Lula bateu 50.6% (AtlasIntel/Arko, 03/Abr) — recorde. Flávio tem apenas 24% de rejeição. NOVIDADE: Haddad disparou no Polymarket (6.7%, +2.5pp) após PT admitir risco de Lula não concorrer (VEJA, 03/Abr). Mercado precifica cenário Plano B. Lula+Flávio = 79.05% no Polymarket — polarização forte mas com espaço para Haddad crescer se Lula desistir.</p>
             </div>
           </Card>
           </div>
@@ -1126,8 +1129,8 @@ export default function Dashboard() {
           {ac?.updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {ac.updatedAt} BRT</p>}
           <Card className="border-l-4 border-l-[#DC2626]">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">17.5%</div>
-              <p className="text-sm text-gray-600">Probabilidade de impeachment de ministro do STF até 2027 (Polymarket)</p>
+              <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">14.5%</div>
+              <p className="text-sm text-gray-600">Probabilidade de impeachment de ministro do STF até 2027 (Polymarket, 04/Abr)</p>
             </div>
             <h4 className="font-bold text-sm text-[#1a1a1a] mb-2">Ministros sob pressão:</h4>
             <div className="grid md:grid-cols-2 gap-3 mb-4">
