@@ -11,8 +11,25 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "AFOS Analytics — Eleições Presidenciais Brasil",
-  description: "Dashboard de inteligência eleitoral com pesquisas, Polymarket e análises",
+  title: "AFOS Analytics — Eleições Presidenciais Brasil 2026",
+  description: "Dashboard de inteligência eleitoral com pesquisas de +17 institutos, Polymarket, notícias ao vivo e análises estratégicas das eleições presidenciais do Brasil 2026.",
+  openGraph: {
+    title: "AFOS Analytics — Eleições Presidenciais Brasil 2026",
+    description: "Plataforma de inteligência eleitoral: Polymarket + pesquisas + notícias + análises em tempo real.",
+    url: "https://afos-analitica-2026.vercel.app",
+    siteName: "AFOS Analytics",
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AFOS Analytics — Eleições 2026",
+    description: "Dashboard eleitoral: Polymarket + 17 institutos de pesquisa + notícias ao vivo.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -23,7 +40,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" href="/favicon.svg?v=2" />
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />

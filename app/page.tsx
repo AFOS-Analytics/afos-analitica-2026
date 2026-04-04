@@ -37,6 +37,15 @@ interface Institute { name: string; reliability: number; type: string; note: str
 interface PolyComparison { note: string; candidates: { name: string; pesquisaRange: string; polymarket: string; tendenciaPesquisa: string; tendenciaPolymarket: string; }[]; }
 interface PollData { lastUpdate: string; polls: Poll[]; institutes?: Institute[]; polymarketComparison?: PolyComparison; }
 
+interface NewsItem { title: string; source: string; url: string; time: string; category: string; summary?: string; }
+interface NewsData { updatedAt: string; totalNews: number; grouped: Record<string, NewsItem[]>; firecrawlActive: boolean; all: NewsItem[]; }
+
+interface AnalysisSection { text1?: string; text2?: string; text3?: string; text4?: string; direita?: string; esquerda?: string; terceiraVia?: string; polymarket?: string; impactoLula?: string; impactoGestao?: string; conclusao?: string; toffoli?: string; moraes?: string; gilmar?: string; dino?: string; nexo?: string; analise?: string; }
+interface AnalysisData { updatedAt: string; cards: { sentimento?: AnalysisSection; inss?: AnalysisSection; bancoMaster?: AnalysisSection; stf?: AnalysisSection; }; }
+
+interface GlobalElection { country: string; flag: string; date: string; type: string; lat: number; lng: number; polymarket?: { title: string; volume: number; markets: { question: string; yesPrice: number; volume: number; }[]; } | null; }
+interface GlobalData { elections: GlobalElection[]; updatedAt: string; }
+
 // ─── Party Colors ────────────────────────────────────────────────────
 const partyColor: Record<string, string> = {
   PT: '#DC2626', PL: '#0F52BA', PSD: '#6B7280', Novo: '#F59E0B',
@@ -133,13 +142,13 @@ function Stars({ count }: { count: number }) {
 export default function Dashboard() {
   const [poly, setPoly] = useState<PolyData | null>(null);
   const [polls, setPolls] = useState<PollData | null>(null);
-  const [news, setNews] = useState<any>(null);
-  const [ac, setAc] = useState<any>(null);
+  const [news, setNews] = useState<NewsData | null>(null);
+  const [ac, setAc] = useState<AnalysisData | null>(null);
   const [loading, setLoading] = useState(true);
   const [showMetas, setShowMetas] = useState(false);
   const [showSobre, setShowSobre] = useState(false);
   const [showGlobal, setShowGlobal] = useState(false);
-  const [globalData, setGlobalData] = useState<any>(null);
+  const [globalData, setGlobalData] = useState<GlobalData | null>(null);
   const [expandedElection, setExpandedElection] = useState<number | null>(null);
 
   useEffect(() => {
@@ -430,7 +439,7 @@ export default function Dashboard() {
                     <ellipse cx="500" cy="220" rx="80" ry="200" fill="#D4DDFB" opacity="0.5"/>
                     <ellipse cx="720" cy="200" rx="150" ry="160" fill="#D4DDFB" opacity="0.5"/>
                     <ellipse cx="820" cy="370" rx="60" ry="40" fill="#D4DDFB" opacity="0.5"/>
-                    {globalData?.elections?.map((e: any, i: number) => {
+                    {globalData?.elections?.map((e: GlobalElection, i: number) => {
                       const x = ((e.lng + 180) / 360) * 1000;
                       const y = ((90 - e.lat) / 180) * 500;
                       const hasData = e.polymarket && e.polymarket.markets?.length > 0;
@@ -457,7 +466,7 @@ export default function Dashboard() {
               <div className="mb-5">
                 <h3 className="text-sm font-bold text-[#0F52BA] mb-3">Calendário Eleitoral Global</h3>
                 <div className="flex flex-wrap gap-2">
-                  {globalData?.elections?.map((e: any, i: number) => (
+                  {globalData?.elections?.map((e: GlobalElection, i: number) => (
                     <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-[#0F52BA] hover:bg-blue-50 transition-all"
                       onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
                       <span className="mr-1">{e.flag}</span>
@@ -471,12 +480,13 @@ export default function Dashboard() {
               {/* ELECTION CARDS — clicáveis */}
               <h3 className="text-sm font-bold text-[#0F52BA] mb-3">Eleições com Dados Polymarket</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
-                {globalData?.elections?.filter((e: any) => e.polymarket && e.polymarket.markets?.length > 0)
-                  .sort((a: any, b: any) => (b.polymarket?.volume || 0) - (a.polymarket?.volume || 0))
-                  .map((e: any, i: number) => {
+                {globalData?.elections?.filter((e: GlobalElection) => e.polymarket && e.polymarket.markets?.length > 0)
+                  .sort((a: GlobalElection, b: GlobalElection) => (b.polymarket?.volume || 0) - (a.polymarket?.volume || 0))
+                  .map((e: GlobalElection, i: number) => {
                   const idx = globalData.elections.indexOf(e);
                   const isExpanded = expandedElection === idx;
-                  const volStr = e.polymarket.volume > 1e6 ? '$'+(e.polymarket.volume/1e6).toFixed(1)+'M' : '$'+(e.polymarket.volume/1e3).toFixed(0)+'K';
+                  const vol = e.polymarket?.volume || 0;
+                  const volStr = vol > 1e6 ? '$'+(vol/1e6).toFixed(1)+'M' : '$'+(vol/1e3).toFixed(0)+'K';
                   const colors = ['#0F52BA','#1a6dd4','#3b82f6','#60a5fa','#93c5fd'];
                   return (
                     <div key={i}
@@ -499,7 +509,7 @@ export default function Dashboard() {
 
                       {/* Top 3 ou todos (expandido) */}
                       <div className="space-y-1.5">
-                        {e.polymarket.markets.slice(0, isExpanded ? undefined : 3).map((m: any, j: number) => {
+                        {e.polymarket!.markets.slice(0, isExpanded ? undefined : 3).map((m: { question: string; yesPrice: number; volume: number }, j: number) => {
                           const nm = (m.question||'').replace(/^Will\s+/i,'').replace(/\s+(win|finish|be).*/i,'').trim();
                           const pct = (m.yesPrice * 100).toFixed(1);
                           return (
@@ -516,11 +526,11 @@ export default function Dashboard() {
                         })}
                       </div>
 
-                      {!isExpanded && e.polymarket.markets.length > 3 && (
-                        <div className="text-[10px] text-[#0F52BA] text-center mt-2 font-medium">Clique para ver {e.polymarket.markets.length} candidatos ▼</div>
+                      {!isExpanded && e.polymarket!.markets.length > 3 && (
+                        <div className="text-[10px] text-[#0F52BA] text-center mt-2 font-medium">Clique para ver {e.polymarket!.markets.length} candidatos ▼</div>
                       )}
                       {isExpanded && (
-                        <div className="text-[10px] text-gray-400 text-center mt-2">Vol. total: {volStr} | {e.polymarket.markets.length} candidatos ▲</div>
+                        <div className="text-[10px] text-gray-400 text-center mt-2">Vol. total: {volStr} | {e.polymarket!.markets.length} candidatos ▲</div>
                       )}
                     </div>
                   );
@@ -528,11 +538,11 @@ export default function Dashboard() {
               </div>
 
               {/* Elections without data */}
-              {globalData?.elections?.filter((e: any) => !e.polymarket || !e.polymarket.markets?.length).length > 0 && (
+              {(globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length)?.length ?? 0) > 0 && (
                 <div className="mb-4">
                   <h3 className="text-xs font-bold text-gray-400 mb-2">Próximas Eleições — Aguardando Dados</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-                    {globalData?.elections?.filter((e: any) => !e.polymarket || !e.polymarket.markets?.length).map((e: any, i: number) => (
+                    {globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length).map((e: GlobalElection, i: number) => (
                       <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-center">
                         <div className="text-lg">{e.flag}</div>
                         <div className="font-semibold text-[#1a1a1a]">{e.country}</div>
@@ -662,7 +672,7 @@ export default function Dashboard() {
                     <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
                     <div className="font-bold text-gray-500 py-2 text-center">Tend. Pesquisa</div>
                     <div className="font-bold text-gray-500 py-2 text-center">Tend. Poly</div>
-                    {polls?.polymarketComparison?.candidates.map((c: any, i: number) => (
+                    {polls?.polymarketComparison?.candidates.map((c, i) => (
                       <div key={i} className="contents">
                         <div className="font-semibold py-1 border-t border-gray-100">{c.name}</div>
                         <div className="text-center py-1 border-t border-gray-100">{c.pesquisaRange}</div>
@@ -675,7 +685,7 @@ export default function Dashboard() {
                 </div>
                 {/* Mobile: cards empilhados */}
                 <div className="sm:hidden space-y-2">
-                  {polls?.polymarketComparison?.candidates.map((c: any, i: number) => (
+                  {polls?.polymarketComparison?.candidates.map((c, i) => (
                     <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
                       <div className="font-semibold text-sm text-[#1a1a1a] mb-1">{c.name}</div>
                       <div className="grid grid-cols-2 gap-1 text-xs">
@@ -718,7 +728,7 @@ export default function Dashboard() {
             )}
 
             {/* PESQUISAS POR INSTITUTO */}
-            {polls?.polls?.map((poll: any, pi: number) => (
+            {polls?.polls?.map((poll: Poll, pi: number) => (
             <div key={pi} className="mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600 bg-[#F8FAFC] rounded-lg p-3">
               <span className="font-bold text-[#0F52BA] text-base">{poll.institute}</span>
@@ -1005,13 +1015,13 @@ export default function Dashboard() {
 
             <div className="space-y-4">
               {Object.entries(news.grouped || {}).map(([cat, items]) => {
-                const newsItems = items as any[];
+                const newsItems = items as NewsItem[];
                 return (
                 newsItems && newsItems.length > 0 ? (
                   <div key={cat}>
                     <h4 className="font-bold text-sm text-[#0F52BA] mb-2 border-b border-[#E2E8F0] pb-1">{cat}</h4>
                     <div className="space-y-2">
-                      {newsItems.map((n: any, i: number) => (
+                      {newsItems.map((n: NewsItem, i: number) => (
                         <div key={i} className="flex items-start gap-2 text-xs border-b border-gray-100 pb-2">
                           <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{n.time || '—'}</span>
                           <div className="flex-1">
@@ -1045,9 +1055,9 @@ export default function Dashboard() {
           {ac?.updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {ac.updatedAt} BRT</p>}
           <Card className="bg-gradient-to-br from-[#F8FAFC] to-blue-50 border-l-4 border-l-[#0F52BA]">
             <div className="space-y-4 text-sm text-[#1a1a1a] leading-relaxed">
-              <p dangerouslySetInnerHTML={{__html: s?.text1 || ''}} />
-              <p dangerouslySetInnerHTML={{__html: s?.text2 || ''}} />
-              <p dangerouslySetInnerHTML={{__html: s?.text3 || ''}} />
+              <p>{s?.text1 || ''}</p>
+              <p>{s?.text2 || ''}</p>
+              <p>{s?.text3 || ''}</p>
               <div className="grid md:grid-cols-3 gap-3">
                 <div className="bg-white rounded-lg p-3 border border-[#E2E8F0]">
                   <div className="font-bold text-[#0F52BA] mb-1">Direita</div>
@@ -1075,10 +1085,10 @@ export default function Dashboard() {
           {ac?.updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {ac.updatedAt} BRT</p>}
           <Card className="border-l-4 border-l-[#DC2626]">
             <div className="space-y-3 text-sm text-[#1a1a1a] leading-relaxed">
-              <p dangerouslySetInnerHTML={{__html: inss?.text1 || ''}} />
-              <p dangerouslySetInnerHTML={{__html: inss?.text2 || ''}} />
-              <p dangerouslySetInnerHTML={{__html: inss?.text3 || ''}} />
-              <p dangerouslySetInnerHTML={{__html: inss?.text4 || ''}} />
+              <p>{inss?.text1 || ''}</p>
+              <p>{inss?.text2 || ''}</p>
+              <p>{inss?.text3 || ''}</p>
+              <p>{inss?.text4 || ''}</p>
               <div className="grid md:grid-cols-2 gap-3 mt-3">
                 <div className="bg-red-50 rounded-lg p-3 border border-red-200">
                   <div className="font-bold text-[#DC2626] text-xs mb-1">⚡ IMPACTO NA IMAGEM DE LULA</div>
@@ -1101,9 +1111,9 @@ export default function Dashboard() {
           <SectionTitle icon="🏦">Impacto do Escândalo Banco Master</SectionTitle>
           {ac?.updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {ac.updatedAt} BRT</p>}
           <Card className="border-l-4 border-l-[#0F52BA]">
-            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3" dangerouslySetInnerHTML={{__html: bm?.text1 || ''}} />
-            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3" dangerouslySetInnerHTML={{__html: bm?.text2 || ''}} />
-            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3" dangerouslySetInnerHTML={{__html: bm?.text3 || ''}} />
+            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3">{bm?.text1 || ''}</p>
+            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3">{bm?.text2 || ''}</p>
+            <p className="text-sm text-[#1a1a1a] leading-relaxed mb-3">{bm?.text3 || ''}</p>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-3">
               <p className="text-xs text-[#0F52BA] font-semibold">📌 {bm?.conclusao || ''}</p>
             </div>
