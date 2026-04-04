@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { SectionTitle, Card, HBar, Stars } from './components/ui';
 
 // ─── Types ───────────────────────────────────────────────────────────
 interface Market {
@@ -45,6 +46,10 @@ interface AnalysisData { updatedAt: string; cards: { sentimento?: AnalysisSectio
 
 interface GlobalElection { country: string; flag: string; date: string; type: string; lat: number; lng: number; polymarket?: { title: string; volume: number; markets: { question: string; yesPrice: number; volume: number; }[]; } | null; }
 interface GlobalData { elections: GlobalElection[]; updatedAt: string; }
+
+interface CritCandidate { rank: string; name: string; party: string; color: string; header: string; subtitle?: string; fortes: string[]; fracos: string[]; analise: string; caiado?: { label: string; fortes: string; fracos: string }; haddad?: { label: string; fortes: string; fracos: string }; }
+interface QuadroRow { n: string; p: string; m: string; t: string; s: string; pc: string; mc: string; }
+interface CritData { updatedAt: string; subtitle: string; candidates: CritCandidate[]; quadroComparativo: QuadroRow[]; cruzamento: string; }
 
 // ─── Party Colors ────────────────────────────────────────────────────
 const partyColor: Record<string, string> = {
@@ -95,48 +100,7 @@ const candidates = [
   { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "0.4%", poll: "33% (cenário solo)", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "Praticamente descartado pelo mercado (0.4%). Foco na reeleição SP." },
 ];
 
-// ─── Components ──────────────────────────────────────────────────────
-function SectionTitle({ children, icon }: { children: React.ReactNode; icon?: string }) {
-  return (
-    <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 flex items-center gap-2">
-      {icon && <span>{icon}</span>}
-      {children}
-    </h2>
-  );
-}
-
-function Card({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 ${className}`}>
-      {children}
-    </div>
-  );
-}
-
-function HBar({ value, max, color, label, suffix = '%' }: { value: number; max: number; color: string; label: string; suffix?: string }) {
-  const pct = max > 0 ? (value / max) * 100 : 0;
-  return (
-    <div className="mb-3">
-      <div className="flex justify-between text-sm mb-1">
-        <span className="font-semibold text-[#1a1a1a]">{label}</span>
-        <span className="font-bold" style={{ color }}>{value.toFixed(1)}{suffix}</span>
-      </div>
-      <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden">
-        <div className="h-full rounded-full transition-all duration-700" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: color }} />
-      </div>
-    </div>
-  );
-}
-
-function Stars({ count }: { count: number }) {
-  return (
-    <span className="inline-flex gap-0.5 text-sm">
-      {Array.from({ length: 5 }, (_, i) => (
-        <span key={i} style={{ color: i < count ? '#0F52BA' : '#D1D5DB' }}>★</span>
-      ))}
-    </span>
-  );
-}
+// ─── UI Components imported from ./components/ui ────────────────────
 
 // ─── Main Dashboard ──────────────────────────────────────────────────
 export default function Dashboard() {
@@ -144,6 +108,7 @@ export default function Dashboard() {
   const [polls, setPolls] = useState<PollData | null>(null);
   const [news, setNews] = useState<NewsData | null>(null);
   const [ac, setAc] = useState<AnalysisData | null>(null);
+  const [crit, setCrit] = useState<CritData | null>(null);
   const [loading, setLoading] = useState(true);
   const [showMetas, setShowMetas] = useState(false);
   const [showSobre, setShowSobre] = useState(false);
@@ -157,11 +122,13 @@ export default function Dashboard() {
       fetch('/api/polls').then(r => r.json()).catch(() => null),
       fetch('/api/news').then(r => r.json()).catch(() => null),
       fetch('/api/analysis-cards').then(r => r.json()).catch(() => null),
-    ]).then(([p, pl, n, a]) => {
+      fetch('/api/analysis-criteriosa').then(r => r.json()).catch(() => null),
+    ]).then(([p, pl, n, a, cr]) => {
       setPoly(p);
       setPolls(pl);
       setNews(n);
       setAc(a);
+      setCrit(cr);
       setLoading(false);
     });
   }, []);
@@ -258,8 +225,11 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* SKIP NAV */}
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-[#0F52BA] focus:text-white focus:px-4 focus:py-2 focus:rounded">Pular para conteúdo principal</a>
+
       {/* HEADER */}
-      <header className="bg-[#0F52BA] text-white py-6 px-4 md:px-8">
+      <header className="bg-[#0F52BA] text-white py-6 px-4 md:px-8" role="banner">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
             <div>
@@ -267,10 +237,10 @@ export default function Dashboard() {
               <p className="text-blue-200 mt-1 text-sm md:text-base">Plataforma Mundial de Inteligência em Cruzamentos de Risco Político Eleitoral</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0">
-              <button onClick={() => setShowSobre(true)} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
+              <button onClick={() => setShowSobre(true)} aria-label="Abrir informações sobre o AFOS Analytics" className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
                 Sobre
               </button>
-              <button onClick={() => setShowMetas(true)} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
+              <button onClick={() => setShowMetas(true)} aria-label="Abrir metas do AFOS Analytics" className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
                 Metas
               </button>
               <button onClick={() => { setShowGlobal(true); if (!globalData) fetch('/api/global-elections').then(r=>r.json()).then(setGlobalData).catch(()=>{}); }} className="border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
@@ -286,11 +256,11 @@ export default function Dashboard() {
 
       {/* MODAL SOBRE */}
       {showSobre && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={() => setShowSobre(false)}>
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-label="Sobre o AFOS Analytics" onClick={() => setShowSobre(false)}>
           <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="bg-[#0F52BA] text-white p-6 rounded-t-2xl flex justify-between items-center">
               <h2 className="text-xl font-bold">Sobre — AFOS Analytics</h2>
-              <button onClick={() => setShowSobre(false)} className="text-white/70 hover:text-white text-2xl leading-none">✕</button>
+              <button onClick={() => setShowSobre(false)} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
             </div>
             <div className="p-6 sm:p-8 space-y-6 text-sm text-[#1a1a1a] leading-relaxed max-h-[75vh] overflow-y-auto">
 
@@ -421,11 +391,11 @@ export default function Dashboard() {
 
       {/* MODAL GLOBAL */}
       {showGlobal && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" onClick={() => setShowGlobal(false)}>
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" role="dialog" aria-label="Eleições globais" onClick={() => setShowGlobal(false)}>
           <div className="bg-white rounded-2xl max-w-5xl w-full my-4 sm:my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="bg-[#0F52BA] text-white p-4 sm:p-6 rounded-t-2xl flex justify-between items-center">
               <h2 className="text-lg sm:text-xl font-bold">Global — Eleições pelo Mundo</h2>
-              <button onClick={() => setShowGlobal(false)} className="text-white/70 hover:text-white text-2xl leading-none">✕</button>
+              <button onClick={() => setShowGlobal(false)} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
             </div>
             <div className="p-3 sm:p-6 max-h-[80vh] overflow-y-auto">
 
@@ -561,11 +531,11 @@ export default function Dashboard() {
 
       {/* MODAL METAS */}
       {showMetas && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" onClick={() => setShowMetas(false)}>
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-label="Metas do AFOS Analytics" onClick={() => setShowMetas(false)}>
           <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
             <div className="bg-[#0F52BA] text-white p-6 rounded-t-2xl flex justify-between items-center">
               <h2 className="text-xl font-bold">Metas — AFOS Analytics</h2>
-              <button onClick={() => setShowMetas(false)} className="text-white/70 hover:text-white text-2xl leading-none">✕</button>
+              <button onClick={() => setShowMetas(false)} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
             </div>
             <div className="p-6 sm:p-8 space-y-6 text-sm text-[#1a1a1a] leading-relaxed max-h-[75vh] overflow-y-auto">
 
@@ -628,7 +598,7 @@ export default function Dashboard() {
         </div>
       )}
 
-      <main className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12">
+      <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
 
         {/* SECTION 1: POLYMARKET */}
         <section>
@@ -790,139 +760,70 @@ export default function Dashboard() {
             </div>
             ))}
 
-          {/* ANÁLISE CRITERIOSA — integrada à seção de pesquisas */}
+          {/* ANÁLISE CRITERIOSA — dados via JSON externo */}
+          {crit && crit.candidates?.length > 0 && (
           <div className="mt-6 pt-6 border-t-2 border-[#0F52BA]/20">
           <h3 className="text-xl font-bold text-[#1a1a1a] mb-4 flex items-center gap-2"><span>🔬</span> Análise Criteriosa — Os 4 Primeiros Colocados</h3>
-          <p className="text-xs text-gray-500 mb-4">Cruzamento: Polymarket (ao vivo) vs institutos — AtlasIntel estaduais (01-03/Abr) + Paraná Pesquisas (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel nacional (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) | Atualizado: 04/04/2026</p>
+          <p className="text-xs text-gray-500 mb-4">{crit.subtitle}</p>
 
-          {/* LULA */}
-          <Card className="mb-4 border-l-4 border-l-[#DC2626]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">1️⃣ Lula (PT) — Pesquisas: 33-46% | Polymarket: 42.5%</h3>
-            <div className="grid md:grid-cols-2 gap-4 mt-3">
-              <div className="bg-green-50 rounded-lg p-4">
-                <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 42.5% — lidera com folga</strong>. Gap de 5.95pp sobre Flávio (36.55%). Ampliou de 2.7pp em 01/Abr</li>
-                  <li>• <strong>Lidera em pesquisas nacionais</strong>: Atlas 45.9% | Paraná 41.3% | Nexus/BTG 41% | Gerp 37-38% | Quaest 36-39% | Datafolha 38-39%</li>
-                  <li>• <strong>Piso eleitoral alto</strong>: nunca abaixo de 33% em nenhum cenário nacional</li>
-                  <li>• Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Reforma ministerial (31/Mar) + Alckmin vice + Pacheco no PSB</li>
-                  <li>• Contra-ataque funcionou: Polymarket respondeu positivamente à reorganização</li>
-                </ul>
-              </div>
-              <div className="bg-red-50 rounded-lg p-4">
-                <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Rejeição recorde: 50.6% (AtlasIntel/Arko, 03/Abr)</strong> — mais da metade do país rejeita. Gerp 51%, Datafolha 46%</li>
-                  <li>• <strong>AtlasIntel estaduais (01-02/Abr)</strong>: perde para Flávio no PR (33.5% vs 52%), SC (vs 53.4%), AP (37.5% vs 44.8%). Empate técnico em SP e MG</li>
-                  <li>• <strong>PT admite plano B</strong> (VEJA, 03/Abr): bastidores reconhecem risco de Lula não concorrer — Haddad sobe no Polymarket (6.7%)</li>
-                  <li>• <strong>3 escândalos simultâneos</strong>: Banco Master + INSS/Lulinha + STF. Delação Vorcaro em andamento (~3 meses)</li>
-                  <li>• <strong>80 anos em 2026</strong> — questão de saúde e energia será explorada</li>
-                  <li>• Sem Lula: PT cai para 21-38% (Haddad) — dependência total do nome</li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Lula consolida liderança no Polymarket (42.5% vs Flávio 36.55%) — gap DOBROU para 5.95pp em 3 dias. Contra-ataque (Alckmin vice + reforma ministerial) funcionou no mercado. Porém: rejeição bateu 50.6% (AtlasIntel/Arko), perde para Flávio em 3 estados do Sul (PR 52%, SC 53%, AP 44.8%), PT admite plano B nos bastidores, e Haddad disparou no Polymarket (6.7%). Favorito consolidado no mercado, mas vulnerável nas pesquisas — rejeição acima de 50% é território perigoso a 6 meses da eleição.</p>
-            </div>
-          </Card>
-
-          {/* FLÁVIO */}
-          <Card className="mb-4 border-l-4 border-l-[#0F52BA]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">2️⃣ Flávio Bolsonaro (PL) — Pesquisas: 37-52% | Polymarket: 36.55%</h3>
-            <div className="grid md:grid-cols-2 gap-4 mt-3">
-              <div className="bg-green-50 rounded-lg p-4">
-                <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>DOMINA o Sul nas estaduais AtlasIntel (01-02/Abr)</strong>: Paraná 52% vs Lula 33.5% | Santa Catarina 53.4% (pode vencer no 1T!) | Amapá 44.8% vs 37.5%</li>
-                  <li>• <strong>Empate técnico em SP e MG</strong> (AtlasIntel) — disputa voto-chave nos maiores colégios</li>
-                  <li>• <strong>Rejeição 24%</strong> (AtlasIntel/Arko) — METADE da rejeição de Lula (50.6%). Vantagem decisiva</li>
-                  <li>• <strong>2º lugar 1T praticamente garantido</strong>: Polymarket dá 64.5% para Flávio ir ao 2T</li>
-                  <li>• Gerp: VENCE Lula no 2T (48% vs 45%). Nexus/BTG: empate 46x46. Paraná: 45.2% vs 44.1%</li>
-                  <li>• 3 munições de campanha: INSS/Lulinha + Banco Master + STF + rejeição recorde de Lula</li>
-                </ul>
-              </div>
-              <div className="bg-red-50 rounded-lg p-4">
-                <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket em QUEDA: 36.55%</strong> (era 39.8% em 01/Abr, 43.9% em 29/Mar) — caiu 7.35pp em 6 dias</li>
-                  <li>• <strong>Gap ampliou para 5.95pp</strong> vs Lula — mercado precifica contra-ataque do governo como eficaz</li>
-                  <li>• Presenciais nacionais mais baixos (Paraná 37.8%, Nexus/BTG 38%, Quaest 30-35%) que online (Atlas 40-42%)</li>
-                  <li>• Pai inelegível + investigações próprias = bagagem judicial</li>
-                  <li>• Nunca disputou executivo — zero experiência administrativa</li>
-                  <li>• Perde para Lula no 2T em Datafolha (43% vs 46%) e Quaest (42% vs 46%)</li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Flávio vive paradoxo: DOMINA pesquisas estaduais do Sul (PR 52%, SC 53.4%) e tem rejeição de apenas 24% (metade de Lula), mas DESPENCA no Polymarket para 36.55% — queda de 7.35pp em 6 dias. Mercado interpretou contra-ataque de Lula (reforma ministerial + Alckmin vice) como eficaz. Porém: dados estruturais favorecem Flávio — rejeição de Lula em 50.6%, vitória no 2T na Gerp (48% vs 45%), e base sólida no Sul. A verdade está entre pesquisas (competitivo) e Polymarket (atrás). Candidato com maior potencial de recuperação se escândalos do governo se intensificarem.</p>
-            </div>
-          </Card>
-
-          {/* RENAN SANTOS */}
-          <Card className="mb-4 border-l-4 border-l-[#8B5CF6]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">3️⃣ Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.05%</h3>
-            <div className="grid md:grid-cols-2 gap-4 mt-3">
-              <div className="bg-green-50 rounded-lg p-4">
-                <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Polymarket 6.05%</strong> — mercado dá mais chance que pesquisas tradicionais. 3º colocado no mercado</li>
-                  <li>• <strong>FAVORITO para 3º lugar no 1T</strong>: Polymarket dá 36% de chance de Renan ficar em 3º (Zema distante com 10.5%)</li>
-                  <li>• <strong>Presente nos institutos</strong>: Atlas 4.4% | Datafolha 3-4% | Quaest 1-2% | Gerp 1% | RTBD 2%</li>
-                  <li>• Mais jovem (35 anos) — apelo digital forte entre geração Z e Millennials</li>
-                  <li>• Discurso anti-establishment atrai desencantados com PT E com Bolsonaro</li>
-                  <li>• Voto próprio estável: 3-4.5% independente do cenário</li>
-                </ul>
-              </div>
-              <div className="bg-red-50 rounded-lg p-4">
-                <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
-                <ul className="text-xs text-gray-700 space-y-1.5">
-                  <li>• <strong>Gerp 1% e Quaest 1-2%</strong> (presenciais) vs Atlas 4.4% (online) — força real pode ser menor</li>
-                  <li>• <strong>1-4.5% é insuficiente</strong> para 2º turno — precisaria quintuplicar</li>
-                  <li>• Partido Missão sem capilaridade, fundo eleitoral mínimo</li>
-                  <li>• Zero experiência executiva ou legislativa</li>
-                  <li>• Sem apoio de governadores ou máquinas estaduais</li>
-                  <li>• Diferença entre Polymarket (6.05%) e Quaest (1%) é a maior de todos os candidatos — pode ser bolha digital</li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> Renan é a maior divergência Pesquisa vs Polymarket: 1-4.4% nas urnas vs 6.05% no mercado. Polymarket o coloca como favorito para 3º lugar (36% de chance). Gerp e Quaest (presenciais) dão apenas 1% — confirma que seu eleitorado é digital. Com partido nanômetro, não disputa 2º turno. Papel: <strong>kingmaker</strong> — seus 2-4% decidem para quem vão no 2T. Se apoiar Flávio = Lula perde.</p>
-            </div>
-          </Card>
-
-          {/* CAIADO / HADDAD */}
-          <Card className="mb-4 border-l-4 border-l-[#6B7280]">
-            <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">4️⃣ Ronaldo Caiado (PSD) — Pesquisas: 3-5% | Poly: 2.2% | Fernando Haddad (PT) — Pesquisas: 21-38% (sem Lula) | Poly: 6.7%</h3>
-            <p className="text-xs text-gray-500 mb-3">Caiado é o 4º no cenário principal. Haddad é o Plano B do PT — ganhou força após PT admitir risco de Lula não concorrer (VEJA, 03/Abr).</p>
-            <div className="grid md:grid-cols-2 gap-4 mt-3">
-              <div>
-                <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 CAIADO (PSD) — Poly 2.2%</h4>
-                <div className="bg-green-50 rounded-lg p-3 mb-2">
-                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> Consistente nos institutos: Atlas 3.7% | Gerp 3-5% | Datafolha 4% | Quaest 4% | Paraná 3.6% | Nexus/BTG 4%. Pré-candidato oficial pelo PSD (30/Mar). Kassab saiu do governo SP para dedicar-se. Governador bem avaliado em GO. Perfil gestor/agro. Polymarket 2º lugar 1T: 3.4%.</p>
+          {/* CANDIDATOS 1-3 (dinâmico via JSON) */}
+          {crit.candidates.filter(c => !c.caiado).map(c => (
+            <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
+              <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">{['1️⃣','2️⃣','3️⃣','4️⃣'][Number(c.rank)-1]} {c.header}</h3>
+              <div className="grid md:grid-cols-2 gap-4 mt-3">
+                <div className="bg-green-50 rounded-lg p-4">
+                  <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
+                  <ul className="text-xs text-gray-700 space-y-1.5">
+                    {c.fortes.map((f, i) => <li key={i}>• {f}</li>)}
+                  </ul>
                 </div>
-                <div className="bg-red-50 rounded-lg p-3">
-                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> 3-5% em TODOS os institutos — não escala. No 2T perde: Atlas 36.7% vs Lula 46.2% | Gerp 37% vs Lula 44% | Nexus/BTG 41% vs Lula 46%. Gap de 5-10pp. Polymarket 2.2% — mercado cético. Poder360: &quot;Nenhuma 3ª via deu certo em 9 eleições&quot;. 76 anos.</p>
+                <div className="bg-red-50 rounded-lg p-4">
+                  <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
+                  <ul className="text-xs text-gray-700 space-y-1.5">
+                    {c.fracos.map((f, i) => <li key={i}>• {f}</li>)}
+                  </ul>
                 </div>
               </div>
-              <div>
-                <h4 className="font-bold text-sm text-[#DC2626] mb-2">🔴 HADDAD (PT) — Poly 6.7% (↑2.5pp)</h4>
-                <div className="bg-green-50 rounded-lg p-3 mb-2">
-                  <p className="text-xs text-gray-700"><strong>Fortes:</strong> <strong>DISPAROU no Polymarket: 6.7% (era 4.2% em 01/Abr — +2.5pp em 3 dias)</strong>. Mercado precifica risco real de Lula não concorrer. Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT + máquina federal. Perfil técnico. 2º lugar 1T no Polymarket: 7.1%.</p>
+              <div className="bg-gray-50 rounded-lg p-3 mt-3">
+                <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+              </div>
+            </Card>
+          ))}
+
+          {/* CANDIDATO 4 — CAIADO/HADDAD (formato especial) */}
+          {crit.candidates.filter(c => c.caiado).map(c => (
+            <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
+              <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">4️⃣ {c.header}</h3>
+              {c.subtitle && <p className="text-xs text-gray-500 mb-3">{c.subtitle}</p>}
+              <div className="grid md:grid-cols-2 gap-4 mt-3">
+                <div>
+                  <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 {c.caiado!.label}</h4>
+                  <div className="bg-green-50 rounded-lg p-3 mb-2">
+                    <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.caiado!.fortes}</p>
+                  </div>
+                  <div className="bg-red-50 rounded-lg p-3">
+                    <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.caiado!.fracos}</p>
+                  </div>
                 </div>
-                <div className="bg-red-50 rounded-lg p-3">
-                  <p className="text-xs text-gray-700"><strong>Fracos:</strong> <strong>PT admite plano B nos bastidores</strong> (VEJA, 03/Abr) — reconhece risco de Lula ficar fora. Divergência brutal: Atlas 37.6% vs Datafolha 21% sem Lula (gap 16pp). PERDE para Flávio em TODOS os cenários sem Lula. Desgaste como Min. da Fazenda. Brancos/nulos explodem sem Lula (6-20%).</p>
+                <div>
+                  <h4 className="font-bold text-sm text-[#DC2626] mb-2">🔴 {c.haddad!.label}</h4>
+                  <div className="bg-green-50 rounded-lg p-3 mb-2">
+                    <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.haddad!.fortes}</p>
+                  </div>
+                  <div className="bg-red-50 rounded-lg p-3">
+                    <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.haddad!.fracos}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-3 mt-3">
-              <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS (04/Abr):</strong> O fato mais relevante é a ALTA de Haddad no Polymarket (6.7%, +2.5pp em 3 dias) — mercado está precificando cenário &quot;Lula não concorre&quot; após PT admitir risco (VEJA, 03/Abr). Haddad é agora o 3º no Polymarket, à frente de Renan (6.05%). Caiado segue estagnado: 3-5% nos institutos + 2.2% no Polymarket — mercado não comprou lançamento. O PT sem Lula é partido de 21-38%, e nenhum número vence Flávio. Se Lula sair, Haddad é o candidato natural mas entra perdendo. Se Lula ficar, Haddad volta a ser ministro e Polymarket corrige para baixo.</p>
-            </div>
-          </Card>
+              <div className="bg-gray-50 rounded-lg p-3 mt-3">
+                <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+              </div>
+            </Card>
+          ))}
 
-          {/* RESUMO COMPARATIVO */}
+          {/* QUADRO COMPARATIVO (dinâmico via JSON) */}
           <Card className="border-l-4 border-l-[#0F52BA]">
             <h3 className="font-bold text-sm text-[#0F52BA] mb-3">📊 QUADRO COMPARATIVO — Pesquisa vs Polymarket vs Realidade</h3>
-            {/* Desktop */}
             <div className="hidden sm:block overflow-x-auto">
               <div className="grid grid-cols-5 gap-2 text-xs">
                 <div className="font-bold text-gray-500 py-2">Candidato</div>
@@ -930,13 +831,7 @@ export default function Dashboard() {
                 <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
                 <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
                 <div className="font-bold text-gray-500 py-2 text-center">2º Turno vs Lula</div>
-                {[
-                  { n: 'Lula (PT)', p: '33-46%', m: '42.5%', t: '➡️ Estável', s: '44-46%', pc: '#DC2626', mc: '' },
-                  { n: 'Flávio (PL)', p: '37-52%', m: '36.55%', t: '📉 Caindo no Poly', s: '45-48%', pc: '', mc: '#0F52BA' },
-                  { n: 'Haddad (PT)', p: '21-38% s/ Lula', m: '6.7%', t: '📈 Subindo forte', s: 'Perde todos', pc: '', mc: '' },
-                  { n: 'Renan (Missão)', p: '1-4.5%', m: '6.05%', t: '➡️ Estável', s: 'N/A', pc: '', mc: '' },
-                  { n: 'Caiado (PSD)', p: '3-5%', m: '2.2%', t: '➡️ Estável', s: '37-41%', pc: '', mc: '' },
-                ].map((r, i) => (
+                {crit.quadroComparativo.map((r, i) => (
                   <div key={i} className="contents">
                     <div className="font-semibold py-1 border-t border-gray-100">{r.n}</div>
                     <div className="text-center py-1 border-t border-gray-100" style={{color: r.pc || undefined, fontWeight: r.pc ? 700 : undefined}}>{r.p}</div>
@@ -947,15 +842,8 @@ export default function Dashboard() {
                 ))}
               </div>
             </div>
-            {/* Mobile */}
             <div className="sm:hidden space-y-2">
-              {[
-                { n: 'Lula (PT)', p: '33-46%', m: '42.5%', t: '➡️ Estável', s: '44-46%' },
-                { n: 'Flávio (PL)', p: '37-52%', m: '36.55%', t: '📉 Caindo no Poly', s: '45-48%' },
-                { n: 'Haddad (PT)', p: '21-38% s/ Lula', m: '6.7%', t: '📈 Subindo forte', s: 'Perde todos' },
-                { n: 'Renan (Missão)', p: '1-4.5%', m: '6.05%', t: '➡️ Estável', s: 'N/A' },
-                { n: 'Caiado (PSD)', p: '3-5%', m: '2.2%', t: '➡️ Estável', s: '37-41%' },
-              ].map((r, i) => (
+              {crit.quadroComparativo.map((r, i) => (
                 <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
                   <div className="font-semibold text-sm mb-1">{r.n}</div>
                   <div className="grid grid-cols-2 gap-1 text-xs">
@@ -968,10 +856,11 @@ export default function Dashboard() {
               ))}
             </div>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-3">
-              <p className="text-xs text-[#0F52BA] font-semibold">📌 CRUZAMENTO INSTITUTOS + POLYMARKET (04/Abr): Lula lidera no Polymarket (42.5%) com gap de 5.95pp sobre Flávio (36.55%) — dobrou em 3 dias. Porém: nas pesquisas, distância é menor (Paraná 41.3% vs 37.8%, Nexus/BTG 41% vs 38%). AtlasIntel estaduais mostram Flávio DOMINANTE no Sul (PR 52%, SC 53.4%) e competitivo em SP e MG. Rejeição de Lula bateu 50.6% (AtlasIntel/Arko, 03/Abr) — recorde. Flávio tem apenas 24% de rejeição. NOVIDADE: Haddad disparou no Polymarket (6.7%, +2.5pp) após PT admitir risco de Lula não concorrer (VEJA, 03/Abr). Mercado precifica cenário Plano B. Lula+Flávio = 79.05% no Polymarket — polarização forte mas com espaço para Haddad crescer se Lula desistir.</p>
+              <p className="text-xs text-[#0F52BA] font-semibold">📌 {crit.cruzamento}</p>
             </div>
           </Card>
           </div>
+          )}
           </section>
         )}
 
@@ -1162,7 +1051,7 @@ export default function Dashboard() {
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-[#0F52BA] text-white py-4 px-4 text-center text-xs">
+      <footer className="bg-[#0F52BA] text-white py-4 px-4 text-center text-xs" role="contentinfo">
         <p>AFOS Analytics — Dashboard de Inteligência Eleitoral | Dados: Polymarket, +17 Institutos de Pesquisa, Google News, Firecrawl AI | Atualizado a cada 2h | Este conteúdo não constitui orientação política</p>
         <p className="mt-1 text-blue-200/50">Dados e probabilidades obtidos da <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Polymarket (polymarket.com)</a> — Este site não é afiliado à Polymarket. Os dados são atualizados automaticamente via API pública.</p>
       </footer>

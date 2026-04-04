@@ -11,6 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://afos-analitica-2026.vercel.app'),
   title: "AFOS Analytics — Eleições Presidenciais Brasil 2026",
   description: "Dashboard de inteligência eleitoral com pesquisas de +17 institutos, Polymarket, notícias ao vivo e análises estratégicas das eleições presidenciais do Brasil 2026.",
   openGraph: {

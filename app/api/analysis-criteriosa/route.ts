@@ -6,10 +6,10 @@ export const revalidate = 7200;
 
 export async function GET() {
   try {
-    const filePath = join(process.cwd(), 'public', 'polls-data.json');
+    const filePath = join(process.cwd(), 'public', 'analysis-criteriosa.json');
     const data = JSON.parse(readFileSync(filePath, 'utf-8'));
     return NextResponse.json(data);
   } catch {
-    return NextResponse.json({ lastUpdate: '', polls: [], institutes: [] }, { status: 500 });
+    return NextResponse.json({ updatedAt: '', candidates: [], quadroComparativo: [] }, { status: 500 });
   }
 }
