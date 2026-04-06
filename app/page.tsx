@@ -433,8 +433,6 @@ export default function Dashboard() {
               <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-500 font-semibold">
                 <span>Gratuito</span>
                 <span>•</span>
-                <span>Sem login</span>
-                <span>•</span>
                 <span>Atualizado automaticamente</span>
                 <span>•</span>
                 <span>Mobile e desktop</span>
