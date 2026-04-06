@@ -266,124 +266,179 @@ export default function Dashboard() {
 
               <div>
                 <h3 className="font-bold text-lg text-[#0F52BA] mb-2">Quem Somos</h3>
-                <p>O AFOS Analytics é um dashboard de inteligência eleitoral que monitora em tempo real as eleições presidenciais do Brasil em 2026. Combina dados de mercados de previsão internacionais de apostas reais em eventos futuros (Polymarket), pesquisas de opinões eleitorais tradicionais, notícias da grande imprensa e análises estratégicas — tudo em um único painel visual, acessível pelo celular ou computador.</p>
+                <p className="mb-2">O <strong>AFOS-Analytics</strong> é uma plataforma global de <strong>inteligência eleitoral em tempo real</strong>.</p>
+                <p className="mb-2">Monitoramos eleições no mundo inteiro e transformamos dados complexos em informação clara, objetiva e acionável.</p>
+                <p className="mb-2">Fazemos isso combinando, em um único ambiente:</p>
+                <ul className="text-xs space-y-1.5 text-gray-700 ml-4">
+                  <li>• mercados internacionais de previsão com dinheiro real (como Polymarket)</li>
+                  <li>• pesquisas de opinião eleitoral tradicionais</li>
+                  <li>• notícias da grande imprensa</li>
+                  <li>• sinais e sentimento das redes sociais</li>
+                  <li>• análises estratégicas geradas com inteligência artificial</li>
+                </ul>
+                <p className="mt-3 text-xs text-gray-600">Tudo integrado em um painel simples, acessível e atualizado continuamente — no celular ou no computador.</p>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">Para Que Serve</h3>
-                <ol className="space-y-2 text-xs list-decimal list-inside">
-                  <li><strong>Acompanhar a corrida presidencial</strong> — quem lidera, quem cresce, quem cai</li>
-                  <li><strong>Ver onde o dinheiro real está</strong> — Polymarket mostra odds com apostas reais, não intenções declaradas</li>
-                  <li><strong>Cruzar pesquisas vs mercado</strong> — comparar o que os brasileiros dizem (pesquisas) vs o que apostadores internacionais acreditam (Polymarket)</li>
-                  <li><strong>Monitorar escândalos ativos</strong> — Banco Master, INSS/Lulinha, crise do STF e impacto eleitoral de cada um</li>
-                  <li><strong>Entender o sentimento popular</strong> — o que as redes sociais e a imprensa estão dizendo</li>
-                  <li><strong>Tomar decisões informadas</strong> — seja como eleitor, investidor, empresário ou analista político</li>
-                </ol>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Para que serve</h3>
+                <p className="mb-3 text-xs italic text-gray-600">O AFOS-Analytics existe para responder uma pergunta simples:</p>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 mb-3 text-sm font-semibold text-[#0F52BA]">O que realmente está acontecendo na eleição?</blockquote>
+                <p className="mb-2 text-xs text-gray-600">Com ele, você consegue:</p>
+                <ul className="text-xs space-y-1.5 text-gray-700 ml-4">
+                  <li>• acompanhar a corrida eleitoral em tempo real — quem lidera, quem cresce, quem perde força</li>
+                  <li>• ver onde o dinheiro está posicionado — não apenas opinião, mas apostas reais</li>
+                  <li>• comparar pesquisas vs mercado — o que as pessoas dizem vs o que o mundo aposta</li>
+                  <li>• monitorar eventos e escândalos — e seu impacto direto na eleição</li>
+                  <li>• entender o sentimento popular — nas redes e na mídia</li>
+                  <li>• tomar decisões mais informadas, com base em dados</li>
+                </ul>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-3">Como Usar</h3>
-
+                <h3 className="font-bold text-[#0F52BA] mb-3">Como usar</h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-[#F8FAFC] rounded-lg p-4 border border-[#E2E8F0]">
-                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">🗳️ Se você é ELEITOR</h4>
+                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">Se você é ELEITOR</h4>
                     <ul className="text-xs space-y-1.5 text-gray-700">
-                      <li>• Veja todos os candidatos e suas posições em um lugar só</li>
-                      <li>• Compare o que dizem as pesquisas de opinião tradicional vs o mercado de previsão internacional de apostas reais de eventos futuros</li>
-                      <li>• Leia análises dos pontos fortes e fracos de cada candidato</li>
-                      <li>• Acompanhe os escândalos e decida com informação</li>
+                      <li>• veja todos os candidatos em um só lugar</li>
+                      <li>• compare pesquisas tradicionais com mercados de previsão</li>
+                      <li>• entenda forças, fraquezas e contexto de cada candidato</li>
+                      <li>• acompanhe eventos relevantes e decida com mais clareza</li>
                     </ul>
                   </div>
 
                   <div className="bg-[#F8FAFC] rounded-lg p-4 border border-[#E2E8F0]">
-                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">💼 Se você é INVESTIDOR/EMPRESÁRIO</h4>
+                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">Se você é INVESTIDOR / EMPRESÁRIO</h4>
                     <ul className="text-xs space-y-1.5 text-gray-700">
-                      <li>• Antecipe cenários políticos que impactam o mercado</li>
-                      <li>• Polymarket — mercado de previsão internacional de apostas reais de eventos futuros é um indicador antecedente — se as odds mudam, o mercado segue</li>
-                      <li>• Entenda o impacto do Banco Master, STF e INSS na economia</li>
-                      <li>• Monitore inflação 2026 precificada pelo mercado (faixa 4.0-4.5%)</li>
+                      <li>• antecipe cenários políticos que impactam o mercado</li>
+                      <li>• use mercados de previsão como indicador antecipado</li>
+                      <li>• entenda como crises e eventos influenciam resultados eleitorais</li>
+                      <li>• acompanhe sinais econômicos precificados pelo mercado</li>
                     </ul>
                   </div>
 
                   <div className="bg-[#F8FAFC] rounded-lg p-4 border border-[#E2E8F0]">
-                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">📰 Se você é ANALISTA/JORNALISTA</h4>
+                    <h4 className="font-bold text-sm text-[#0F52BA] mb-2">Se você é ANALISTA / JORNALISTA</h4>
                     <ul className="text-xs space-y-1.5 text-gray-700">
-                      <li>• Dados consolidados de múltiplas fontes em um painel</li>
-                      <li>• Notícias ao vivo de +30 veículos nacionais (Live Eleições News 120&apos;)</li>
-                      <li>• Cruzamento inédito: pesquisas de opinões tradicional brasileira × mercado de previsão internacional de apostas reais de eventos futuros</li>
-                      <li>• Análise criteriosa dos 4 primeiros colocados com pontos fortes/fracos</li>
+                      <li>• acesse dados consolidados de múltiplas fontes</li>
+                      <li>• acompanhe notícias em tempo real</li>
+                      <li>• utilize um cruzamento único: pesquisas × mercados × narrativa</li>
+                      <li>• produza análises com mais profundidade e precisão</li>
                     </ul>
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">🔄 Atualizações</h3>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Atualizações em tempo real</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-xs">
-                    <span className="font-bold text-[#0F52BA]">📊 Polymarket</span> — ao vivo, a cada 2 horas (ISR)
+                    <span className="font-bold text-[#0F52BA]">Mercados de previsão</span> — atualizados continuamente
                   </div>
                   <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-xs">
-                    <span className="font-bold text-[#0F52BA]">📰 Live Eleições News</span> — notícias de +30 fontes, a cada 30 minutos
+                    <span className="font-bold text-[#0F52BA]">Notícias</span> — atualização constante de múltiplas fontes
                   </div>
                   <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-xs">
-                    <span className="font-bold text-[#0F52BA]">🔬 Análises dos cards</span> — reescritas a cada 2h quando houver novidade relevante (IA + Firecrawl + Google News)
+                    <span className="font-bold text-[#0F52BA]">Análises</span> — recalculadas automaticamente com novos dados
                   </div>
                   <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-xs">
-                    <span className="font-bold text-[#0F52BA]">📋 Pesquisas</span> — atualizadas quando sair nova pesquisa de +17 institutos de pesquisas nacionais
+                    <span className="font-bold text-[#0F52BA]">Pesquisas</span> — atualizadas sempre que novos dados são publicados
                   </div>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">📊 Seções do Dashboard</h3>
+                <h3 className="font-bold text-[#0F52BA] mb-2">O que você encontra no dashboard</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-xs">
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">📊 <strong>Polymarket</strong> — Odds de apostas reais de eventos futuros</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">📋 <strong>Pesquisas Eleitorais</strong> — +17 institutos: AtlasIntel/Bloomberg, Datafolha, Quaest, Paraná, Real Time, Ipec e outros</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">🔬 <strong>Análise Criteriosa</strong> — Pontos fortes e fracos dos 4 primeiros</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">👤 <strong>Perfil dos Candidatos</strong> — 7 pré-candidatos detalhados</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">📰 <strong>Live Eleições News 120&apos;</strong> — Notícias ao vivo categorizadas</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">📡 <strong>Sentimento Popular</strong> — Redes sociais e opinião pública</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">🔴 <strong>Escândalo INSS</strong> — Caso Lulinha e impacto</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">🏦 <strong>Banco Master</strong> — Rombo BRB e consequências</div>
-                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]">⚖️ <strong>STF</strong> — Credibilidade da Corte + odds de impeachment</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Odds de mercados de previsão</strong> (dinheiro real)</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Pesquisas eleitorais</strong> de múltiplos institutos</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Análises estratégicas</strong> — forças e fraquezas dos candidatos</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Perfil dos candidatos</strong> — visão completa</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Notícias ao vivo</strong> — organizadas por relevância</div>
+                  <div className="bg-[#F8FAFC] rounded p-2 border border-[#E2E8F0]"><strong>Sentimento popular</strong> — redes sociais e opinião pública</div>
                 </div>
               </div>
 
               <div className="bg-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-lg p-4">
-                <h3 className="font-bold text-[#0F52BA] mb-2">✨ Diferencial</h3>
-                <p className="text-xs">O AFOS Analytics é o <strong>único e inédito dashboard brasileiro</strong> que cruza Polymarket (mercado internacional de apostas reais em eventos futuros) com pesquisas nacionais + análise de escândalos + sentimento de redes sociais em um único painel. Permite ao usuário ver a eleição de 2026 por múltiplas lentes ao invés de depender de uma única fonte.</p>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Diferencial</h3>
+                <p className="text-xs mb-2">O AFOS-Analytics é uma plataforma única que conecta, no mesmo lugar:</p>
+                <ul className="text-xs space-y-1 text-gray-700 ml-4">
+                  <li>• o que as pessoas dizem (pesquisas)</li>
+                  <li>• o que o mercado acredita (apostas reais)</li>
+                  <li>• o que está sendo narrado (mídia)</li>
+                  <li>• o que está sendo sentido (redes sociais)</li>
+                </ul>
+                <p className="text-xs mt-3">Isso permite enxergar a eleição por múltiplas perspectivas — e não depender de uma única fonte.</p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#0F52BA]/10 to-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-xl p-5">
+                <h3 className="font-bold text-[#0F52BA] text-lg mb-2 text-center">GLOBAL POR DESIGN</h3>
+                <p className="text-xs text-gray-600 mb-3 text-center">Começamos com validação prática, mas o objetivo é maior:</p>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 mb-4 text-xs font-semibold text-[#0F52BA]">Acompanhar eleições no mundo inteiro e criar uma nova forma de entender risco político em escala global</blockquote>
+                <p className="text-xs text-gray-700 mb-2">Não é só uma eleição. É um sistema feito para:</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+                  <div className="bg-white rounded-lg p-2 shadow-sm text-center text-xs font-semibold text-[#1a1a1a]">Brasil</div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm text-center text-xs font-semibold text-[#1a1a1a]">Estados Unidos</div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm text-center text-xs font-semibold text-[#1a1a1a]">Europa</div>
+                  <div className="bg-white rounded-lg p-2 shadow-sm text-center text-xs font-semibold text-[#1a1a1a]">Qualquer país</div>
+                </div>
+                <p className="text-xs text-gray-600 text-center italic">Onde houver eleição, existe sinal. Onde existe sinal, o AFOS-Analytics lê.</p>
+              </div>
+
+              <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4">
+                <h3 className="font-bold text-[#0F52BA] mb-2">Open Source</h3>
+                <p className="text-xs mb-2">O AFOS-Analytics é um projeto de <strong>código aberto</strong>.</p>
+                <p className="text-xs mb-2">Acreditamos que:</p>
+                <ul className="text-xs space-y-1 text-gray-700 ml-4">
+                  <li>• informação deve ser transparente</li>
+                  <li>• dados devem ser verificáveis</li>
+                  <li>• inteligência deve ser acessível</li>
+                </ul>
+                <p className="text-xs mt-2 text-gray-600">Qualquer pessoa pode estudar, auditar e contribuir.</p>
               </div>
 
               <div className="bg-gradient-to-br from-[#0F52BA]/10 to-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-xl p-5 text-center">
-                <h3 className="font-bold text-[#0F52BA] text-lg mb-3">O que significa AFOS?</h3>
-                <p className="text-xs text-gray-600 mb-4">AFOS é mais que um nome: é o nosso propósito.</p>
+                <h3 className="font-bold text-[#0F52BA] text-lg mb-3">O que significa AFOS</h3>
+                <p className="text-xs text-gray-600 mb-4">AFOS é mais do que um nome — é o que guia tudo o que fazemos:</p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                   <div className="bg-white rounded-lg p-3 shadow-sm">
                     <div className="font-bold text-[#0F52BA] text-lg">A</div>
-                    <div className="text-xs text-gray-700 font-semibold">Amor</div>
-                    <div className="text-[10px] text-gray-500 mt-1">À liberdade e ao desenvolvimento das pessoas</div>
+                    <div className="text-xs text-gray-700 font-semibold">Astuteness</div>
+                    <div className="text-[10px] text-gray-500 mt-1">Inteligência para cruzar dados e gerar clareza</div>
                   </div>
                   <div className="bg-white rounded-lg p-3 shadow-sm">
                     <div className="font-bold text-[#0F52BA] text-lg">F</div>
-                    <div className="text-xs text-gray-700 font-semibold">Fé</div>
-                    <div className="text-[10px] text-gray-500 mt-1">No potencial da sociedade e na informação verdadeira e imparcial</div>
+                    <div className="text-xs text-gray-700 font-semibold">Faith</div>
+                    <div className="text-[10px] text-gray-500 mt-1">Confiança em informações verdadeiras e imparciais</div>
                   </div>
                   <div className="bg-white rounded-lg p-3 shadow-sm">
                     <div className="font-bold text-[#0F52BA] text-lg">O</div>
-                    <div className="text-xs text-gray-700 font-semibold">Ousadia</div>
-                    <div className="text-[10px] text-gray-500 mt-1">Para inovar e mostrar a realidade sem filtros</div>
+                    <div className="text-xs text-gray-700 font-semibold">Optimism</div>
+                    <div className="text-[10px] text-gray-500 mt-1">Visão de futuro baseada em inovação e transparência</div>
                   </div>
                   <div className="bg-white rounded-lg p-3 shadow-sm">
                     <div className="font-bold text-[#0F52BA] text-lg">S</div>
-                    <div className="text-xs text-gray-700 font-semibold">Sabedoria</div>
-                    <div className="text-[10px] text-gray-500 mt-1">Para analisar com equilíbrio e responsabilidade</div>
+                    <div className="text-xs text-gray-700 font-semibold">Synthesis</div>
+                    <div className="text-[10px] text-gray-500 mt-1">Transformar dados complexos em entendimento simples</div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-600 italic">Essa é a essência de quem somos e do que entregamos no AFOS Analytics.</p>
               </div>
 
-              <p className="text-xs text-gray-500 text-center font-semibold">Gratuito. Sem login. Atualizado automaticamente. Mobile e desktop.</p>
+              <div className="text-center">
+                <h3 className="font-bold text-[#0F52BA] mb-2">Essência</h3>
+                <p className="text-xs text-gray-700">O AFOS-Analytics não é sobre opinião.</p>
+                <p className="text-xs text-gray-700 font-semibold mt-1">É sobre entender a realidade com mais precisão.</p>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-3 text-xs text-gray-500 font-semibold">
+                <span>Gratuito</span>
+                <span>•</span>
+                <span>Sem login</span>
+                <span>•</span>
+                <span>Atualizado automaticamente</span>
+                <span>•</span>
+                <span>Mobile e desktop</span>
+              </div>
             </div>
           </div>
         </div>
