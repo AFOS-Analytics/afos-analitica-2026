@@ -590,62 +590,162 @@ export default function Dashboard() {
               <h2 className="text-xl font-bold">Metas — AFOS Analytics</h2>
               <button onClick={() => setShowMetas(false)} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
             </div>
-            <div className="p-6 sm:p-8 space-y-6 text-sm text-[#1a1a1a] leading-relaxed max-h-[75vh] overflow-y-auto">
+            <div className="p-6 sm:p-8 space-y-6 text-base text-[#1a1a1a] leading-relaxed max-h-[75vh] overflow-y-auto">
 
               <div>
-                <h3 className="font-bold text-lg text-[#0F52BA] mb-2">🇧🇷 Contribuição para o Crescimento e Desenvolvimento do Brasil</h3>
-                <p className="font-semibold mb-2">A TESE CENTRAL:</p>
-                <p>O Brasil perde bilhões de reais por ano em decisões políticas e econômicas baseadas em informação fragmentada, enviesada ou manipulada. Quando o eleitor vota sem informação, quando o empresário não antecipa cenários, quando o investidor foge do país por incerteza — todos perdem. O AFOS Analytics — <strong className="text-[#0F52BA]">projeto único e inédito em uma eleição no mundo</strong> — ataca esse problema na raiz: transformar informação política em inteligência acionável para toda a sociedade.</p>
+                <h3 className="font-bold text-lg text-[#0F52BA] mb-3">A TESE CENTRAL</h3>
+                <p className="mb-3">Governos, empresas e investidores perdem bilhões todos os anos por decisões baseadas em informação fragmentada, enviesada ou manipulada.</p>
+                <p className="mb-1 text-sm text-[#333]">Quando o eleitor vota sem dados,</p>
+                <p className="mb-1 text-sm text-[#333]">quando o empresário não antecipa cenários,</p>
+                <p className="mb-3 text-sm text-[#333]">quando o investidor precifica risco no escuro —</p>
+                <p className="mb-3">o resultado é o mesmo: <strong>ineficiência econômica e instabilidade institucional.</strong></p>
+                <p className="mb-3">O <strong>AFOS Analytics</strong> ataca esse problema na raiz:</p>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 text-base font-semibold text-[#0F52BA]">Transformar informação política em inteligência acionável — em escala global.</blockquote>
               </div>
 
               <div>
                 <h3 className="font-bold text-[#0F52BA] mb-2">📈 Impacto no Crescimento Econômico</h3>
-                <p className="mb-2"><strong>Previsibilidade gera investimento.</strong> O Brasil é a 9ª economia do mundo mas recebe investimento estrangeiro desproporcional ao seu tamanho — em parte porque investidores internacionais não conseguem precificar risco político brasileiro. AFOS Analytics, ao cruzar Polymarket (mercado de apostas reais internacional de eventos futuros) com pesquisas de opinião eleitoral tradicional, cria um termômetro de risco político em tempo real.</p>
-                <p><strong>Empresários tomam melhores decisões.</strong> Uma empresa que sabe com 7 meses de antecedência a tendência eleitoral pode planejar: expandir ou contrair? Contratar ou segurar? Investir em qual estado? Eleição no Brasil muda câmbio em 15%, juros em 3pp e bolsa em 20% — quem antecipa, prospera. Quem é pego de surpresa, quebra. Isso protege empregos.</p>
+                <p className="mb-3"><strong>Previsibilidade atrai capital.</strong> Mercados deixam de ser penalizados por incerteza quando o risco político é mensurável.</p>
+                <p className="mb-2">O AFOS Analytics integra:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4 mb-3">
+                  <li>• mercados de previsão com dinheiro real</li>
+                  <li>• pesquisas eleitorais</li>
+                  <li>• eventos críticos e sentimento</li>
+                </ul>
+                <p className="text-sm text-[#333]">→ criando um <strong>índice dinâmico de risco político em tempo real</strong></p>
+              </div>
+
+              <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4">
+                <p className="font-semibold mb-3">Decisão deixa de ser opinião — passa a ser dado.</p>
+                <p className="mb-2 text-sm text-[#333]">Empresas, investidores e governos passam a operar com antecipação:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4 mb-3">
+                  <li>• alocação de capital mais eficiente</li>
+                  <li>• proteção contra volatilidade política</li>
+                  <li>• decisões estratégicas baseadas em cenário, não narrativa</li>
+                </ul>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 text-sm text-[#0F52BA]">
+                  <p>Quem antecipa, captura valor.</p>
+                  <p>Quem reage, absorve risco.</p>
+                </blockquote>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">🗳️ Impacto no Desenvolvimento Social</h3>
-                <p className="mb-2"><strong>Qualidade democrática.</strong> O Brasil tem 150 milhões de eleitores. A maioria decide voto nas últimas semanas, baseado em propaganda de TV, WhatsApp ou redes sociais. Quando um cidadão de qualquer renda ou escolaridade pode abrir o celular e ver dados cruzados de 17 institutos + mercado internacional de apostas reais + análise de escândalos em um único painel gratuito e em português, o nível do debate político sobe. Voto informado gera representantes melhores. Representantes melhores geram políticas melhores. Políticas melhores geram desenvolvimento.</p>
-                <p className="mb-2"><strong>Accountability do poder.</strong> O card do STF com odds de impeachment de 17.5% + nexo Banco Master é algo que nenhum veículo brasileiro publica dessa forma. Quando o cidadão vê que o mercado internacional precifica quase 1 em 5 chances de um ministro do STF ser impeachmado, isso cria pressão real por transparência.</p>
-                <p><strong>Educação cívica e financeira.</strong> O AFOS Analytics introduz conceitos que a maioria dos brasileiros nunca viu: mercados de previsão, odds com dinheiro real, cruzamento de fontes, análise de credibilidade de institutos. Isso é alfabetização política e financeira simultânea.</p>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Impacto no Desenvolvimento Institucional</h3>
+                <p className="mb-3"><strong>Democracias mais informadas são mais eficientes.</strong></p>
+                <p className="mb-2 text-sm text-[#333]">O AFOS Analytics:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4 mb-3">
+                  <li>• consolida múltiplas fontes em um único painel</li>
+                  <li>• simplifica complexidade em visualização clara</li>
+                  <li>• entrega acesso gratuito, multiplataforma e multilíngue</li>
+                </ul>
+                <p className="text-sm font-semibold text-[#333]">→ <strong>eleva o nível do debate público</strong></p>
+              </div>
+
+              <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg p-4">
+                <p className="font-semibold mb-2">Accountability baseada em dados.</p>
+                <p className="text-sm text-[#333] mb-2">Ao expor probabilidades reais, impactos de eventos e divergências entre discurso e expectativa de mercado, cria-se:</p>
+                <p className="text-sm font-semibold text-[#333]">→ <strong>pressão objetiva por transparência</strong></p>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">🌎 Impacto na Imagem Internacional do Brasil</h3>
-                <p className="mb-2"><strong>Soft power tecnológico.</strong> O AFOS Analytics é um <strong className="text-[#0F52BA]">projeto único e inédito em uma eleição no mundo</strong> — o primeiro dashboard que cruza Polymarket com pesquisas eleitorais nacionais de um país emergente, em tempo real, com análise de escândalos e sentimento popular. Nenhuma democracia no planeta possui ferramenta equivalente. Isso posiciona o Brasil na vanguarda da democracia digital.</p>
-                <p><strong>Integração com mercados globais.</strong> O fato de usar Polymarket (plataforma global) como espelho das expectativas internacionais sobre o Brasil cria uma ponte entre o eleitor brasileiro e o investidor global. Ambos olham para o mesmo dashboard. Isso reduz assimetria de informação, que é um dos maiores destruidores de valor em economias emergentes.</p>
+                <h3 className="font-bold text-[#0F52BA] mb-2">🌎 Posicionamento Global</h3>
+                <p className="mb-1 text-sm text-[#333]">O AFOS Analytics não é mídia.</p>
+                <p className="mb-3 text-sm text-[#333]">Não é apenas uma ferramenta.</p>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 mb-3 text-base font-semibold text-[#0F52BA]">É infraestrutura de inteligência política para a economia global.</blockquote>
+                <p className="mb-2 text-sm text-[#333]">Uma camada que conecta:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4">
+                  <li>• informação pública</li>
+                  <li>• expectativa de mercado</li>
+                  <li>• decisão econômica</li>
+                </ul>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">🔗 Efeito Cascata no Desenvolvimento</h3>
-                <div className="bg-[#F8FAFC] rounded-lg p-4 text-xs space-y-2">
-                  <p>Informação transparente → Voto mais consciente → Representantes mais competentes → Políticas públicas melhores → Crescimento econômico sustentável → Desenvolvimento social</p>
-                  <p>Previsibilidade política → Investimento estrangeiro → Geração de empregos → Renda e consumo → Arrecadação → Serviços públicos melhores</p>
-                  <p>Accountability dos poderosos → Redução da corrupção → Recursos bem aplicados → Saúde, educação, infraestrutura → Qualidade de vida → Brasil mais forte</p>
+                <h3 className="font-bold text-[#0F52BA] mb-3">Modelo de Valor</h3>
+                <p className="mb-1 text-sm text-[#333]">O acesso à informação é aberto.</p>
+                <p className="mb-3 text-sm text-[#333]">A inteligência gerada cria valor.</p>
+                <p className="mb-3 text-sm text-[#333]">O AFOS Analytics opera em duas camadas:</p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-[#F8FAFC] rounded-lg p-4 border border-[#E2E8F0]">
+                    <h4 className="font-bold text-base text-[#0F52BA] mb-2">1. Camada pública (atenção)</h4>
+                    <ul className="text-sm space-y-1.5 text-[#1a1a1a]">
+                      <li>• acesso gratuito</li>
+                      <li>• educação cívica e financeira</li>
+                      <li>• distribuição global</li>
+                    </ul>
+                  </div>
+                  <div className="bg-[#F8FAFC] rounded-lg p-4 border border-[#E2E8F0]">
+                    <h4 className="font-bold text-base text-[#0F52BA] mb-2">2. Camada institucional (fluxo financeiro)</h4>
+                    <ul className="text-sm space-y-1.5 text-[#1a1a1a]">
+                      <li>• APIs de dados</li>
+                      <li>• inteligência para fundos, bancos e governos</li>
+                      <li>• venda de dados estruturados e modelos de risco</li>
+                    </ul>
+                  </div>
+                </div>
+                <blockquote className="border-l-4 border-[#0F52BA] pl-4 mt-4 text-sm text-[#0F52BA]">
+                  <p>Atenção constrói escala.</p>
+                  <p>Dados estruturados capturam valor.</p>
+                </blockquote>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Efeito Sistêmico</h3>
+                <div className="bg-[#F8FAFC] rounded-lg p-4 text-sm space-y-2 text-[#1a1a1a]">
+                  <p>• Informação transparente → decisões melhores</p>
+                  <p>• Previsibilidade → investimento → crescimento</p>
+                  <p>• Accountability → eficiência → desenvolvimento</p>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">💡 Impacto Potencial</h3>
-                <ul className="space-y-1 text-xs">
-                  <li>📱 <strong>150 milhões de eleitores</strong> com acesso a inteligência eleitoral profissional</li>
-                  <li>🗳️ <strong>Voto mais consciente</strong> baseado em dados cruzados, não em bolhas de WhatsApp</li>
-                  <li>💰 <strong>Investidores e empresários</strong> antecipando cenários políticos</li>
-                  <li>⚖️ <strong>Pressão por accountability</strong> sobre poder público (STF, governo, Congresso)</li>
-                  <li>📰 <strong>Jornalistas</strong> com painel consolidado para reportagens mais profundas</li>
-                  <li>🎓 <strong>Professores</strong> usando como ferramenta de educação cívica em sala de aula</li>
+                <h3 className="font-bold text-[#0F52BA] mb-2">Impacto Potencial</h3>
+                <ul className="space-y-2 text-sm text-[#1a1a1a]">
+                  <li>📱 <strong>Milhões de usuários</strong> acessando inteligência política em tempo real</li>
+                  <li>💰 <strong>Capital global</strong> alocado com mais precisão</li>
+                  <li>⚖️ <strong>Pressão contínua</strong> por transparência institucional</li>
+                  <li>🎓 <strong>Nova camada</strong> de educação econômica e política</li>
                 </ul>
               </div>
 
-              <div className="bg-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-lg p-4">
-                <h3 className="font-bold text-[#0F52BA] mb-2">🎯 Síntese</h3>
-                <p className="text-xs">O AFOS Analytics — <strong className="text-[#0F52BA]">projeto único e inédito em uma eleição no mundo</strong> — não é apenas um dashboard eleitoral. É uma peça de <strong>infraestrutura democrática</strong> que ataca três problemas estruturais do Brasil simultaneamente: <strong>assimetria de informação</strong> (nivela acesso entre elite e cidadão comum), <strong>incerteza política</strong> (reduz risco percebido por investidores) e <strong>déficit de accountability</strong> (expõe escândalos com dados, não com opinião).</p>
-                <p className="text-xs mt-2">Um país onde o cidadão vota melhor, o empresário planeja melhor e o investidor confia mais — é um país que <strong>cresce mais rápido, distribui melhor e se desenvolve de forma sustentável</strong>.</p>
-                <p className="text-xs mt-3 italic text-[#0F52BA]">&quot;A democracia não funciona sem informação. A informação não funciona sem transparência. O AFOS Analytics é transparência automatizada.&quot;</p>
+              <div className="bg-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-lg p-5">
+                <h3 className="font-bold text-[#0F52BA] mb-3">SÍNTESE ESTRATÉGICA</h3>
+                <p className="mb-3 text-sm text-[#1a1a1a]">O AFOS Analytics resolve três falhas estruturais:</p>
+                <div className="grid grid-cols-3 gap-2 mb-4">
+                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
+                    <div className="font-bold text-[#0F52BA] text-lg">1</div>
+                    <div className="text-sm text-[#1a1a1a] font-semibold">Assimetria de informação</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
+                    <div className="font-bold text-[#0F52BA] text-lg">2</div>
+                    <div className="text-sm text-[#1a1a1a] font-semibold">Incerteza política</div>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
+                    <div className="font-bold text-[#0F52BA] text-lg">3</div>
+                    <div className="text-sm text-[#1a1a1a] font-semibold">Déficit de accountability</div>
+                  </div>
+                </div>
               </div>
 
-              <p className="text-[10px] text-gray-400 text-center">Gratuito. Sem login. Atualizado automaticamente. Mobile e desktop. ⚡</p>
+              <div>
+                <h3 className="font-bold text-[#0F52BA] mb-2">POSICIONAMENTO</h3>
+                <p className="mb-2 text-sm text-[#333]">Um sistema onde:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4 mb-3">
+                  <li>• cidadãos entendem melhor</li>
+                  <li>• empresas planejam melhor</li>
+                  <li>• investidores alocam melhor</li>
+                </ul>
+                <p className="text-sm font-semibold text-[#333]">→ <strong>é um sistema que cresce mais rápido e com mais estabilidade.</strong></p>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#0F52BA]/10 to-[#0F52BA]/5 border border-[#0F52BA]/20 rounded-xl p-5 text-center">
+                <p className="text-sm italic text-[#0F52BA] font-semibold leading-relaxed">
+                  &quot;Democracy runs on information.<br/>
+                  Information runs on transparency.<br/>
+                  AFOS Analytics is programmable transparency.&quot;
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
