@@ -91,13 +91,13 @@ function getPhoto(name: string): string | null {
 
 // ─── Candidates ──────────────────────────────────────────────────────
 const candidates = [
-  { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "42%", poll: "19-47.6%", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "Desaprovação RECORDE 61% (PoderData, 21-23/Mar). Rejeição 56% Quaest. AtlasIntel (25/Mar): 2T ATRÁS de Flávio 46.6% vs 47.6% — 1ª vez. PF investiga Lulinha R$300K/mês (03/Abr). Gap Polymarket reabre 4pp." },
-  { name: "Flávio Bolsonaro", party: "PL", age: 45, role: "Senador (RJ)", polymarket: "38%", poll: "30-56%", position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.", risk: "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — 1ª vez à frente em instituto grande. Paraná (25-28/Mar): 45.2% vs 44.1%. PL Senado 72% Polymarket. Carlos Bolsonaro pré-candidato SC." },
-  { name: "Renan Santos", party: "Missão", age: 35, role: "Fundador do MBL", polymarket: "6.2%", poll: "1-4.5%", position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.", risk: "Partido pequeno. Baixa estrutura nacional. AtlasIntel (02/Abr): 4.4%. Força real menor que digital." },
-  { name: "Fernando Haddad", party: "PT", age: 63, role: "Ministro da Fazenda", polymarket: "~4.3%", poll: "21-38% (sem Lula)", position: "Centro-esquerda. Plano B do PT se Lula não concorrer. Gestor técnico.", risk: "Queda contínua no Polymarket (6.7% → ~4.3%). Mercado descarta plano B. Candidacy rejection Lula 66% contamina alternativa PT." },
-  { name: "Ronaldo Caiado", party: "PSD", age: 76, role: "Governador de Goiás", polymarket: "~3.0%", poll: "3-5%", position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.", risk: "AtlasIntel (02/Abr): 3.7%. Planeja capturar eleitorado de Flávio. Não escala além de 5%. Quaest: Flávio lidera independentes 32% vs Lula 27% — 3ª via comprimida." },
-  { name: "Romeu Zema", party: "Novo", age: 56, role: "Governador de Minas Gerais", polymarket: "1.7%", poll: "3-6%", position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.", risk: "Partido sem estrutura nacional. Dificuldade de alianças." },
-  { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "0.55%", poll: "33% (cenário solo)", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "Praticamente descartado pelo mercado. Foco na reeleição SP." },
+  { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "41.5%", poll: "19-47.6%", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "Desaprovação 61% PoderData. Rejeição 56% Quaest. AtlasIntel 2T ATRÁS de Flávio (46.6% vs 47.6%). PF Lulinha R$300K/mês. Gap 3.35pp. BBC: contra-ataque bilionário + isenção IR." },
+  { name: "Flávio Bolsonaro", party: "PL", age: 45, role: "Senador (RJ)", polymarket: "38.15%", poll: "30-56%", position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.", risk: "Atlas 2T à frente 1ª vez (47.6% vs 46.6%). PEC fim reeleição = aceno centrão (Folha). PL Senado 77.5%. Nordeste 'já não é garantido para Lula' (Gazeta)." },
+  { name: "Renan Santos", party: "Missão", age: 35, role: "Fundador do MBL", polymarket: "6.75%", poll: "1-4.4%", position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.", risk: "Subiu 0.55pp. AtlasIntel (02/Abr): 4.4%. Partido pequeno. Força real menor que digital." },
+  { name: "Fernando Haddad", party: "PT", age: 63, role: "Ministro da Fazenda", polymarket: "5.75%", poll: "21-38% (sem Lula)", position: "Centro-esquerda. Plano B do PT se Lula não concorrer. Gestor técnico.", risk: "RECUPEROU (+1.45pp). Mercado reavalia plano B. Candidacy rejection Lula 66% contamina alternativa PT." },
+  { name: "Ronaldo Caiado", party: "PSD", age: 76, role: "Governador de Goiás", polymarket: "2.4%", poll: "3-5%", position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.", risk: "CAIU 0.6pp. Foca em SP, busca 'voto envergonhado' (JOTA). Quaest: Flávio lidera independentes 32% — 3ª via comprimida." },
+  { name: "Romeu Zema", party: "Novo", age: 56, role: "Governador de Minas Gerais", polymarket: "1.8%", poll: "3-6%", position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.", risk: "Partido sem estrutura nacional. Condiciona candidatos Senado a voto pró-impeachment STF." },
+  { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "0.45%", poll: "33% (cenário solo)", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "Descartado pelo mercado. PEC Flávio sobre fim reeleição pode ser aceno (Folha)." },
 ];
 
 // ─── UI Components imported from ./components/ui ────────────────────
@@ -1018,8 +1018,8 @@ export default function Dashboard() {
           {ac?.updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {ac.updatedAt} BRT</p>}
           <Card className="border-l-4 border-l-[#DC2626]">
             <div className="flex items-center gap-3 mb-4">
-              <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">14.5%</div>
-              <p className="text-sm text-gray-600">Probabilidade de impeachment de ministro do STF até 2027 (Polymarket, 04/Abr)</p>
+              <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">13.5%</div>
+              <p className="text-sm text-gray-600">Probabilidade de impeachment de ministro do STF até 2027 (Polymarket, 06/Abr)</p>
             </div>
             <h4 className="font-bold text-sm text-[#1a1a1a] mb-2">Ministros sob pressão:</h4>
             <div className="grid md:grid-cols-2 gap-3 mb-4">
