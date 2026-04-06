@@ -1,105 +1,101 @@
 {
-  "updatedAt": "06/04/2026, 14:00",
-  "subtitle": "Cruzamento: Polymarket (ao vivo 06/Abr 14h) vs institutos — Quaest (05/Abr, 2T empate 41×41, rejeição Lula 56%) + Veritá PE/SC/SE (05/Abr) + AtlasIntel (25/Mar-02/Abr, 2T Flávio 47.6% vs Lula 46.6%) + Paraná (25-28/Mar, 2T Flávio 45.2% vs 44.1%) + PoderData (21-23/Mar, desaprov. Lula 61%) + AtlasIntel/Arko (02/Abr, rejeição 50.6%) + Datafolha (07/Mar) | Atualizado: 06/04/2026 14:00 BRT",
+  "updatedAt": "06/04/2026, 18:00",
+  "subtitle": "Cruzamento: Polymarket (ao vivo 06/Abr 18h) vs institutos — Quaest (05/Abr, 2T empate 41×41, rejeição Lula 56%) + AtlasIntel (25/Mar-02/Abr, 2T Flávio 47.6% vs Lula 46.6%; Paraná 1T Flávio +19pp) + Paraná (25-28/Mar, 2T Flávio 45.2% vs 44.1%) + PoderData (21-23/Mar, desaprov. Lula 61%) + AtlasIntel/Arko (02/Abr, rejeição 50.6%) | Próximas pesquisas: Datafolha 7-9/Abr, Quaest 15/Abr | Atualizado: 06/04/2026 18:00 BRT",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "Lula (PT) — Pesquisas: 19-47.6% | Polymarket: 41.5%",
+      "header": "Lula (PT) — Pesquisas: 19-47.6% | Polymarket: 42% (↑0.5pp)",
       "fortes": [
-        "Polymarket 41.5% — mantém liderança. Gap de 3.35pp sobre Flávio (38.15%). Após reabertura para 4pp às 10h, gap encurtou novamente à tarde",
-        "Lidera 1T em pesquisas nacionais: Atlas 43.7% (02/Abr) | Paraná 41.3% | Nexus/BTG 41% | Veritá PE (05/Abr): 43.3% — Nordeste é trincheira sólida",
-        "BBC (06/Abr): injetará bilhões na economia com programas sociais turbinados + isenção do IR — contra-ataque fiscal ativo",
-        "Quaest (05/Abr): 2T 41% x 41% — empate técnico. Rejeição candidatura Flávio também alta (55%)",
-        "Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Alckmin vice + Pacheco PSB (MG). PoderData: 31% aprovação — base resiste"
+        "Polymarket 42% (↑0.5pp vs 14h) — gap AMPLIOU para 5pp sobre Flávio (37%). Melhor momento do dia: Lula RECUPERA à tarde enquanto Flávio recua 1.15pp",
+        "Lidera 1T em pesquisas nacionais: Atlas 43.7% (02/Abr) | Paraná 41.3% | Nexus/BTG 41% | Quaest (05/Abr) 2T empate 41×41 — resiste à pressão",
+        "16-17 ministros saíram do governo para disputar eleições (desincompatibilização, prazo 04/Abr) — renovação forçada da equipe, mas sinaliza máquina eleitoral ativada (Correio do Estado, 04/Abr)",
+        "Próximas pesquisas: Datafolha 7-9/Abr e Quaest 15/Abr — janela para contra-narrativa com pacote fiscal (BBC, 06/Abr)",
+        "Incumbência: fundo eleitoral, tempo de TV. Alckmin vice + Pacheco PSB (MG). Nordeste: Veritá PE (05/Abr) 43.3% — trincheira resiste"
       ],
       "fracos": [
-        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente em 2T em instituto grande. Paraná (25-28/Mar): 2T Flávio 45.2% vs Lula 44.1%",
-        "Rejeição RECORDE: 56% Quaest (05/Abr) | 50.6% AtlasIntel/Arko | PoderData 61% desaprovação. Candidacy rejection: 66% (+4pp vs março)",
-        "PF investiga Lulinha recebendo R$300K/mês — 'mesada' rastreada como beneficiário final de desvios INSS (PF, 03/Abr). BBC: 'calcanhar de Aquiles'",
-        "STF/PGR preveem dilema se delação Vorcaro implicar Toffoli e Moraes (Estado de Minas, 06/Abr) — crise institucional persiste",
-        "CPI do Crime: relatório 14/Abr apontará Master como 'lavanderia do PCC'. 11 voos Vorcaro-STF. STF impeachment CAIU para 13.5%",
-        "Congresso rejeita 77% das MPs. 17 ministros saíram na reforma. Governabilidade comprometida. Dirceu (PT): 'o rei está nu'"
+        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente. Paraná (25-28/Mar): 2T Flávio 45.2% vs 44.1%. Atlas PR: Flávio +19pp no 1T no Paraná (02/Abr)",
+        "Rejeição RECORDE: 56% Quaest (05/Abr) | 50.6% AtlasIntel/Arko | PoderData 61% desaprovação | F5 Política (05/Abr): 86% rejeição em recorte específico. Candidacy rejection: 66%",
+        "CPMI do INSS: relator pediu indiciamento de Lulinha por tráfico de influência + lavagem (Terra, 27/Mar). CPMI rejeitou relatório final (19x12, 28/Mar) mas CPI do Crime assume com relatório previsto para 14/Abr",
+        "STF/PGR preveem dilema se delação Vorcaro implicar Toffoli e Moraes (Pravda PT/Estado de Minas, 06/Abr) — Vorcaro resiste citar Moraes. Impasse cria crise institucional persistente",
+        "16-17 ministros saíram — reforma ministerial forçada desgasta narrativa de governabilidade. Congresso rejeita 77% das MPs. Dirceu (PT): 'o rei está nu'"
       ],
-      "analise": "Lula oscilou durante o dia: 42% pela manhã → 41.5% à tarde. Gap com Flávio reabrido para 4pp às 10h, encurtou novamente para 3.35pp às 14h. DADO ESTRUTURAL dos institutos: AtlasIntel (25/Mar) mostra 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente. Paraná (25-28/Mar) confirma: 45.2% vs 44.1%. Quaest (05/Abr): ainda empate 41%x41%. Contra-ataque: BBC revela pacote bilionário com isenção IR. Mas PF investiga Lulinha R$300K/mês e STF/PGR preveem dilema com delação Vorcaro (Estado de Minas). Rejeição 56% Quaest + candidacy rejection 66% = teto de vidro. Haddad recuperou para 5.75% (+1.45pp) — mercado reavalia plano B."
+      "analise": "Lula RECUPEROU à tarde: 41.5% (14h) → 42% (18h, ↑0.5pp). Enquanto Flávio recuou de 38.15% para 37%, gap AMPLIOU de 3.35pp para 5pp — inversão da tendência da manhã. CONTEXTO ESTRUTURAL: institutos mostram empate ou virada (Atlas/Paraná 2T). Quaest (05/Abr): ainda 41×41. O prazo de desincompatibilização (04/Abr) forçou saída de 16-17 ministros e 11 governadores — entre eles Zema. STF impeach SUBIU FORTE para 17% (+3.5pp) — paradoxo: mercado aumenta risco institucional enquanto PL Senado CAIU para 72% (-5.5pp). Inflação: faixa dominante migrou para 4.50-4.99% (44%) — expectativas melhoram. Datafolha poll 7-9/Abr será termômetro crucial."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "Flávio Bolsonaro (PL) — Pesquisas: 30-56% | Polymarket: 38.15%",
+      "header": "Flávio Bolsonaro (PL) — Pesquisas: 30-56% | Polymarket: 37% (↓1.15pp)",
       "fortes": [
-        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ À FRENTE em instituto grande no 2T. Paraná (25-28/Mar): 2T 45.2% vs 44.1% — dois institutos confirmam",
-        "Polymarket 38.15% (subiu de 38% às 10h). PEC do fim da reeleição: aceno para Tarcísio e centrão (Folha, 06/Abr) — movimentação estratégica",
-        "Gazeta do Povo (06/Abr): 'Flávio avança e Nordeste já não é território garantido para Lula' — virada narrativa",
-        "Veritá SC (05/Abr): 56.3% vs Lula 19.5% — DOMÍNIO ABSOLUTO. Maior número em qualquer estado",
-        "PL bancada 114+ deputados. PL Senado 77.5% Polymarket (↑5.5pp). Direita organiza maioria Senado (Gazeta do Povo, 06/Abr). Carlos Bolsonaro pré-candidato SC",
-        "Rejeição 55% Quaest — leve vantagem vs Lula 56%. 66% querem candidatos Senado pró-impeachment STF (O Tempo)"
+        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ À FRENTE em instituto grande. Paraná (25-28/Mar): 2T 45.2% vs 44.1%. Atlas PR (02/Abr): +19pp sobre Lula no 1T no Paraná",
+        "Veritá SC (05/Abr): 56.3% vs Lula 19.5% — domínio absoluto no Sul. 11 governadores renunciaram incluindo Zema (MG) — movimentação de aliados no campo",
+        "PL bancada 114+ deputados. Rejeição 55% Quaest — margem menor que Lula (56%). 66% querem candidatos Senado pró-impeachment STF (O Tempo). Carlos Bolsonaro pré-candidato SC",
+        "STF impeach SUBIU para 17% (↑3.5pp) — narrativa anti-STF ganha força. CPI do Crime: relatório 14/Abr Master 'lavanderia PCC' (Alessandro Vieira). Vorcaro impasse = munição anti-governo",
+        "Novo condiciona candidaturas Senado a voto pró-impeachment — consolidação da bancada direita"
       ],
       "fracos": [
-        "Polymarket 38.15% ainda abaixo de Lula 41.5% — perdedor no mercado principal (gap 3.35pp)",
-        "Veritá PE: perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — região é ponto fraco estrutural (~30% eleitorado)",
-        "Quaest 2T: empate 41% x 41% — Atlas/Paraná mostram à frente mas Quaest não confirma",
-        "Pai inelegível + investigações próprias. Nunca disputou executivo — zero experiência administrativa",
-        "Caiado foca em SP e busca 'voto envergonhado' de Flávio (JOTA, 06/Abr) — 3ª via mira seus votos"
+        "Polymarket RECUOU: 38.15% (14h) → 37% (18h, ↓1.15pp) — maior queda do dia. Lula AMPLIOU gap para 5pp — inversão da tendência da manhã",
+        "PL Senado CAIU para 72% (↓5.5pp vs 14h) — mercado reduz probabilidade de dominância no Senado",
+        "Veritá PE: perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — ~30% do eleitorado é ponto fraco estrutural",
+        "Quaest 2T: empate 41% x 41% — Atlas/Paraná mostram à frente mas Quaest não confirma. Pai inelegível + investigações",
+        "Nunca disputou executivo — zero experiência administrativa. Caiado foca em SP buscando 'voto envergonhado' (JOTA)"
       ],
-      "analise": "Flávio subiu de 38% (10h) para 38.15% (14h) enquanto Lula caiu de 42% para 41.5% — gap encurtou de 4pp para 3.35pp no mesmo dia. Os institutos contam história diferente: AtlasIntel (25/Mar) 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ à frente em instituto grande. Paraná confirma: 45.2% vs 44.1%. PEC fim da reeleição é jogada estratégica para centrão (Folha). Gazeta do Povo marca virada narrativa: 'Nordeste já não é território garantido'. PL Senado subiu para 77.5% (+5.5pp). Direita organiza maioria Senado. Caiado tenta 'voto envergonhado' (JOTA) mas caiu para 2.4% — sem tração."
+      "analise": "Flávio RECUOU à tarde: 38.15% (14h) → 37% (18h, ↓1.15pp) — reverte leve ganho do início do dia. PL Senado também caiu: 77.5% → 72% (-5.5pp). Nos institutos, o quadro é diferente: Atlas/Paraná mostram 2T Flávio à frente. Atlas PR (02/Abr): +19pp no 1T no Paraná. Mas o Polymarket de 18h mostra Lula com 5pp de vantagem — gap maior do dia. 11 governadores renunciaram incluindo Zema — campo em movimento. STF impeach SUBIU para 17% beneficia narrativa anti-STF. Desincompatibilização: 16-17 ministros de Lula saíram = campo eleitoral agora definido."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.4% | Polymarket: 6.75%",
+      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.6% | Polymarket: 6.75%",
       "fortes": [
-        "Polymarket 6.75% (↑0.55pp vs manhã) — 3º colocado no mercado, em ALTA",
-        "Favorito para 3º lugar no 1T: Polymarket dá 33.5% de chance de ficar em 3º",
-        "Presente nos institutos: Atlas 4.4% (02/Abr) | Datafolha 3-4% | Quaest 1-2%",
-        "Mais jovem (35 anos) — apelo digital forte",
-        "Voto protesto estável: 3-4.5% independente do cenário",
-        "Augusto Cury (Avante) valida que há espaço para alternativa"
+        "Polymarket 6.75% — 3º colocado no mercado, mantém posição. Favorito para 3º lugar no 1T: Polymarket dá 34.5% de chance (↑1pp vs 14h)",
+        "AtlasIntel (02/Abr): 4.4-4.6% no 1T — consistente. FORÇA ENTRE JOVENS: 24.7% entre 16-24 anos (Metrópoles) — 2º lugar na faixa etária",
+        "Lança candidatura antissistema (Portal Tela, 02/Abr) — ataca PT, PL e STF. CNN Brasil: 'ganha onde a política tradicional perde'",
+        "Mais jovem (35 anos) — apelo digital forte. Gazeta do Povo: 'ameaça ex-governadores na corrida à presidência'",
+        "Voto protesto estável: 3-4.5% independente do cenário. Estratégia: 'terceira força ideológica do país'"
       ],
       "fracos": [
-        "Presenciais dão 1-2% (Gerp, Quaest) vs online 4.4% (Atlas) — força real pode ser menor",
-        "3º lugar 1T caiu de 35.5% para 33.5% — Zema (11%) cresce como alternativa",
-        "Partido Missão sem capilaridade, fundo eleitoral mínimo",
-        "Zero experiência executiva ou legislativa",
-        "Augusto Cury (Avante) pode fragmentar nicho de voto protesto",
-        "Sem apoio de governadores ou máquinas estaduais"
+        "Presenciais dão 1-2% (Gerp, Quaest) vs online 4.4-4.6% (Atlas) — força real pode ser menor",
+        "3º lugar 1T: Caiado aparece como nova ameaça no mercado com 30% (antes era Zema 11%)",
+        "Partido Missão sem capilaridade, fundo eleitoral mínimo. Zero experiência executiva ou legislativa",
+        "Zema renunciou ao governo de MG (06/Abr) — Novo entra mais forte na campanha, pode fragmentar nicho liberal",
+        "Sem apoio de governadores ou máquinas estaduais. Não disputa 2T — papel de kingmaker"
       ],
-      "analise": "Renan subiu para 6.75% (+0.55pp) no Polymarket — maior alta percentual do dia. Mantém posição de favorito para 3º lugar (33.5%). AtlasIntel (02/Abr): 4.4% no 1T. Com partido nanômetro, não disputa 2T. Papel: kingmaker — seus 3-4% decidem para quem vão no 2T."
+      "analise": "Renan mantém 6.75% no Polymarket e cresce no 3º lugar (34.5%). Novidade: Caiado surge como ameaça no 3º lugar (30%) — mercado começa a precificar impacto de 16 ministros e 11 governadores saindo do governo. AtlasIntel (02/Abr): 4.4-4.6% no 1T. 24.7% entre jovens (16-24) — fenômeno geracional. Com Zema renunciando ao governo (para concorrer), Novo entra mais forte e pode fragmentar o nicho liberal."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad",
       "party": "PSD/PT",
       "color": "#6B7280",
-      "header": "Caiado (PSD) — Poly: 2.4% | Haddad (PT) — Poly: 5.75%",
-      "subtitle": "Haddad RECUPEROU (+1.45pp vs manhã). Caiado caiu para 2.4% — foca em SP e busca 'voto envergonhado' (JOTA).",
+      "header": "Caiado (PSD) — Poly: 2% | Haddad (PT) — Poly: 6%",
+      "subtitle": "Haddad mantém recuperação (↑0.25pp total no dia). Caiado CAIU para 2% mas SOBE no 3º lugar 1T (30%). Zema renunciou ao governo MG.",
       "caiado": {
-        "label": "CAIADO (PSD) — Poly 2.4% (↓0.6pp vs manhã)",
-        "fortes": "AtlasIntel (02/Abr): 3.7%. Pré-candidato oficial pelo PSD. Kassab dedicado à campanha. JOTA (06/Abr): foca em SP e busca 'voto envergonhado' em Flávio.",
-        "fracos": "CAIU para 2.4% no Polymarket (era ~3.0%). Estratégia não convence mercado. 3-5% em TODOS os institutos — não escala. Quaest: Flávio lidera independentes 32% vs Lula 27% — 3ª via comprimida."
+        "label": "CAIADO (PSD) — Poly 2% (↓0.4pp no dia)",
+        "fortes": "AtlasIntel (02/Abr): 3.7%. Pré-candidato oficial pelo PSD. Kassab dedicado à campanha. JOTA: foca em SP e busca 'voto envergonhado' em Flávio. SURGE no mercado de 3º lugar: Polymarket 30% (era ~5% antes) — mercado reavalia cenário com campo definido pós-desincompatibilização.",
+        "fracos": "Caiu para 2% (↓0.4pp). Estratégia não convence mercado de vencedor. 3-5% em TODOS os institutos — não escala. Quaest: Flávio lidera independentes 32% vs Lula 27%."
       },
       "haddad": {
-        "label": "HADDAD (PT) — Poly 5.75% (↑1.45pp vs manhã)",
-        "fortes": "RECUPERAÇÃO no Polymarket: ~4.3% (manhã) → 5.75% (+1.45pp) — mercado reavalia plano B. Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT. 2º lugar 1T: 9.05%.",
-        "fracos": "Apesar da recuperação, 5.75% é baixo. Perde para Flávio em TODOS os cenários sem Lula. Candidacy rejection Lula 66% contamina alternativa PT."
+        "label": "HADDAD (PT) — Poly 6% (↑0.25pp vs 14h, ↑1.7pp no dia)",
+        "fortes": "Mantém recuperação: ~4.3% (manhã) → 5.75% (14h) → 6% (18h). Mercado precifica plano B do PT consistentemente. Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT. 2º lugar 1T: 9.05%.",
+        "fracos": "6% ainda reflete baixa probabilidade. Perde para Flávio em TODOS os cenários sem Lula. Candidacy rejection Lula 66% contamina alternativa PT."
       },
-      "analise": "INVERSÃO: Haddad recuperou forte: ~4.3% (manhã) → 5.75% (14h) — mercado reavalia cenário 'Lula não concorre'. Caiado caiu para 2.4% (-0.6pp) e busca 'voto envergonhado' (JOTA) sem convencer. Eduardo Leite saiu do RS (Correio do Povo). Nenhum alternativo ameaça: Lula+Flávio = 79.65% no Polymarket.",
+      "analise": "Haddad mantém alta consistente no dia: 4.3% → 5.75% → 6% (↑1.7pp total). Mercado continua precificando plano B do PT. Caiado caiu no mercado principal (2%) mas SURGE no 3º lugar com 30% — interpretação: mercado vê Caiado como potencial 3º colocado no 1T mais do que vencedor. Zema renunciou ao governo de MG (11 governadores no total). Campo eleitoral agora definido: 16-17 ministros Lula + 11 governadores saíram. Eduardo Leite saiu do RS (Correio do Povo). Lula+Flávio = 79% no Polymarket — polarização domina.",
       "fortes": [],
       "fracos": []
     }
   ],
   "quadroComparativo": [
-    { "n": "Lula (PT)", "p": "19-47.6%", "m": "41.5%", "t": "Recuo (42%→41.5%)", "s": "46.6% 2T Atlas (atrás de Flávio)", "pc": "#DC2626", "mc": "" },
-    { "n": "Flávio (PL)", "p": "30-56%", "m": "38.15%", "t": "Leve alta (38%→38.15%)", "s": "47.6% 2T Atlas (à frente 1ª vez)", "pc": "", "mc": "#0F52BA" },
-    { "n": "Renan (Missão)", "p": "1-4.4%", "m": "6.75%", "t": "Subindo (↑0.55pp)", "s": "N/A", "pc": "", "mc": "" },
-    { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "5.75%", "t": "Recuperando (↑1.45pp)", "s": "Perde todos", "pc": "", "mc": "" },
-    { "n": "Caiado (PSD)", "p": "3-5%", "m": "2.4%", "t": "Caindo (↓0.6pp)", "s": "37-41%", "pc": "", "mc": "" }
+    { "n": "Lula (PT)", "p": "19-47.6%", "m": "42%", "t": "Recuperou (41.5%→42%, ↑0.5pp)", "s": "46.6% 2T Atlas (atrás de Flávio)", "pc": "#DC2626", "mc": "" },
+    { "n": "Flávio (PL)", "p": "30-56%", "m": "37%", "t": "Recuou (38.15%→37%, ↓1.15pp)", "s": "47.6% 2T Atlas (à frente 1ª vez)", "pc": "", "mc": "#0F52BA" },
+    { "n": "Renan (Missão)", "p": "1-4.6%", "m": "6.75%", "t": "Estável (3º lugar: 34.5%)", "s": "N/A", "pc": "", "mc": "" },
+    { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "6%", "t": "Alta consistente (↑1.7pp no dia)", "s": "Perde todos", "pc": "", "mc": "" },
+    { "n": "Caiado (PSD)", "p": "3-5%", "m": "2%", "t": "Caiu (↓0.4pp) mas 3º lugar 30%", "s": "37-41%", "pc": "", "mc": "" }
   ],
-  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (06/Abr 14h): Polymarket oscilou durante o dia — Lula 42%→41.5% (↓0.5pp), Flávio 38%→38.15% (↑0.15pp). Gap: 4pp pela manhã → 3.35pp à tarde. INSTITUTOS: AtlasIntel (25/Mar) 2T Flávio 47.6% vs Lula 46.6% — 1ª vez à frente. Paraná (25-28/Mar): 2T 45.2% vs 44.1%. Quaest (05/Abr): empate 41×41. Rejeição Lula: 56% Quaest + 50.6% Atlas + PoderData 61% desaprov. Candidacy rejection 66%. PF investiga Lulinha R$300K/mês. Haddad RECUPEROU 5.75% (+1.45pp). STF impeach CAIU 13.5% (↓2.5pp). PL Senado SUBIU 77.5% (↑5.5pp). Flávio PEC fim reeleição (Folha). STF/PGR dilema delação (Estado de Minas). BBC: Lula pacote bilionário + isenção IR. CPI Crime relatório 14/Abr: Master 'lavanderia do PCC'."
+  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (06/Abr 18h): Virada da tarde — Lula 41.5%→42% (↑0.5pp), Flávio 38.15%→37% (↓1.15pp). Gap AMPLIOU: 3.35pp (14h) → 5pp (18h). STF impeach SUBIU FORTE: 13.5%→17% (↑3.5pp) — maior alta do dia. PL Senado CAIU: 77.5%→72% (↓5.5pp). Inflação: faixa dominante migrou de 5.0-5.49% para 4.50-4.99% (44%) — expectativas melhoram. INSTITUTOS: Atlas (25/Mar) 2T Flávio 47.6% vs Lula 46.6% — ainda 1ª vez à frente; Paraná: 45.2% vs 44.1%; Quaest (05/Abr): 41×41. DESINCOMPATIBILIZAÇÃO (04/Abr): 16-17 ministros Lula + 11 governadores saíram. Campo eleitoral DEFINIDO. Zema renunciou MG. Lula foco: Datafolha 7-9/Abr + pacote fiscal. Vorcaro impasse: resiste citar Moraes; STF/PGR dilema (06/Abr). CPI Crime relatório 14/Abr: Master 'lavanderia PCC'. Renan 3º 34.5%, Caiado surge 3º 30%. Haddad consolida 6% (+1.7pp dia). Flávio: Atlas PR +19pp 1T Paraná."
 }
