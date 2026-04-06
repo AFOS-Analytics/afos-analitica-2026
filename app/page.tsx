@@ -671,6 +671,23 @@ export default function Dashboard() {
               </div>
 
               <div>
+                <h3 className="font-bold text-[#0F52BA] mb-2">🌍 Impacto na Imagem Internacional</h3>
+                <p className="mb-3"><strong>Soft power tecnológico.</strong></p>
+                <p className="mb-2 text-sm text-[#333]">O AFOS Analytics posiciona qualquer país que o adote como:</p>
+                <ul className="text-sm space-y-1.5 text-[#1a1a1a] ml-4 mb-3">
+                  <li>• líder em transparência democrática</li>
+                  <li>• referência em data-driven governance</li>
+                </ul>
+                <p className="mb-2 text-sm text-[#333]">Não existe hoje uma plataforma que integre, em escala global:</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-center text-sm font-semibold text-[#1a1a1a]">Dados eleitorais</div>
+                  <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-center text-sm font-semibold text-[#1a1a1a]">Mercados preditivos</div>
+                  <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-center text-sm font-semibold text-[#1a1a1a]">Análise de eventos críticos</div>
+                  <div className="bg-[#F8FAFC] rounded-lg p-3 border border-[#E2E8F0] text-center text-sm font-semibold text-[#1a1a1a]">Sentimento informacional</div>
+                </div>
+              </div>
+
+              <div>
                 <h3 className="font-bold text-[#0F52BA] mb-2">🌎 Posicionamento Global</h3>
                 <p className="mb-3"><strong>Não é mídia. Não é ferramenta. É infraestrutura.</strong></p>
                 <p className="mb-2 text-sm text-[#333]">O AFOS Analytics se posiciona como:</p>
@@ -701,12 +718,11 @@ export default function Dashboard() {
               </div>
 
               <div>
-                <h3 className="font-bold text-[#0F52BA] mb-2">Efeito Sistêmico</h3>
-                <p className="text-sm text-[#333] mb-3">Informação melhor → decisões melhores → sistemas mais eficientes</p>
-                <div className="bg-[#F8FAFC] rounded-lg p-4 text-sm space-y-2 text-[#1a1a1a]">
-                  <p>• Voto mais consciente → melhor representação</p>
-                  <p>• Previsibilidade → investimento → crescimento</p>
-                  <p>• Accountability → menos distorção → mais eficiência pública</p>
+                <h3 className="font-bold text-[#0F52BA] mb-2">🔗 Efeito Sistêmico (Cascata)</h3>
+                <div className="bg-[#F8FAFC] rounded-lg p-4 text-sm space-y-3 text-[#1a1a1a]">
+                  <p>Transparência → Decisão informada → Melhor representação → Políticas mais eficientes → <strong>Crescimento sustentável</strong></p>
+                  <p>Previsibilidade → Investimento → Emprego → Renda → Arrecadação → <strong>Serviços públicos melhores</strong></p>
+                  <p>Accountability → Menos corrupção → Melhor uso de recursos → Infraestrutura → <strong>Qualidade de vida</strong></p>
                 </div>
               </div>
 
