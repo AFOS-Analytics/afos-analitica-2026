@@ -1,60 +1,59 @@
 {
-  "updatedAt": "07/04/2026",
-  "subtitle": "Cruzamento: Polymarket (ao vivo 07/Abr) vs institutos — Quaest (05/Abr, 2T empate 41×41, rejeição Lula 56%) + AtlasIntel (02/Abr, Lula 43.7%) + Veritá PE/SC/SE (05/Abr) + Paraná (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + Datafolha (07/Mar) | Atualizado: 07/04/2026",
+  "updatedAt": "06/04/2026",
+  "subtitle": "Cruzamento: Polymarket (ao vivo 06/Abr) vs institutos — AtlasIntel (25/Mar, 2T Flávio 47.6% vs Lula 46.6%) + Paraná (25-28/Mar, 2T Flávio 45.2% vs Lula 44.1%) + Quaest (05/Abr, 2T empate 41×41, rejeição Lula 56%) + PoderData (21-23/Mar, desaprov. Lula 61%) + AtlasIntel/Arko (02/Abr, rejeição Lula 50.6%) + Veritá PE/SC/SE (05/Abr) + Datafolha (07/Mar) | Atualizado: 06/04/2026",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "Lula (PT) — Pesquisas: 19-46% | Polymarket: 43%",
+      "header": "Lula (PT) — Pesquisas: 19-47.6% | Polymarket: 42%",
       "fortes": [
-        "Polymarket 43% (↑1.5pp) — mantém liderança. Gap 3pp sobre Flávio (40%), encurtando pela 4ª sessão. AtlasIntel (02/Abr): Lula 43.7% no 1T",
-        "Lidera em pesquisas nacionais: Atlas 43.7% (02/Abr) | Paraná 41.3% | Nexus/BTG 41% | BTG/Nexus: 45% aprovação vs 51% desaprovação",
-        "Veritá PE (05/Abr): 43.3% vs Flávio 30.9% — Nordeste é trincheira sólida. Sergipe: vence com folga",
-        "Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Alckmin vice + Pacheco PSB (MG)",
-        "Quaest (05/Abr): 2T ainda 41% x 41% — empate técnico, mas Lula sai do trailing do Polymarket"
+        "Polymarket 42% (↓1pp para 42%) — mantém liderança mas gap REABRE para 4pp sobre Flávio (38%). AtlasIntel (02/Abr): Lula 43.7% no 1T — ainda à frente no 1T",
+        "Lidera 1T em pesquisas nacionais: Atlas 43.7% (02/Abr) | Paraná 41.3% | Nexus/BTG 41% | Veritá PE (05/Abr): 43.3% — Nordeste é trincheira sólida",
+        "Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Alckmin vice + Pacheco PSB (MG). PoderData: 31% aprovação — base ainda sólida",
+        "Quaest (05/Abr): 2T 41% x 41% — empate técnico. Quaest rejeição candidatura Flávio também alta (55%)",
+        "Nordeste resiste: Veritá PE 43.3% vs Flávio 30.9% e Sergipe. Região dá base sólida de votos no 1T"
       ],
       "fracos": [
-        "Gap ENCURTANDO: era 5.95pp (04/Abr) → 3.45pp (06/Abr) → 3pp agora. Quaest 2T: EMPATE TÉCNICO 41% x 41% — pela primeira vez empatados no 2T",
-        "Veritá SC (05/Abr): Lula com apenas 19.5% vs Flávio 56.3% — DESTRUÍDO no Sul. É o pior número de Lula em qualquer estado",
-        "Rejeição RECORDE: 56% no Quaest (05/Abr) — nova alta histórica. Candidacy rejection: 66% (era 62% em março). AtlasIntel/Arko: 50.6%",
-        "11 voos Vorcaro-STF confirmados. CPI do Crime: relatório 14/Abr apontará Master como 'lavanderia do PCC'. José Dirceu (PT): 'o rei está nu'",
-        "Haddad caiu para ~4.3% no Polymarket — mercado descarta plano B. Quaest: candidacy rejection de Lula sobe para 66% (era 62%)",
-        "Congresso rejeita 77% das MPs. 17 ministros saíram na reforma. Governabilidade comprometida"
+        "Gap REABRINDO: 3pp (07/Abr) → 4pp agora. AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente em 2T em instituto de grande porte. Paraná (25-28/Mar): 2T Flávio 45.2% vs Lula 44.1%",
+        "Veritá SC (05/Abr): Lula apenas 19.5% vs Flávio 56.3% — destruído no Sul. PoderData (21-23/Mar): desaprovação RECORDE 61%, aprovação apenas 31%",
+        "Rejeição RECORDE: 56% Quaest (05/Abr) | 50.6% AtlasIntel/Arko (02/Abr) | PoderData 61% desaprovação. Candidacy rejection: 66% (era 62% março, +4pp)",
+        "PF investiga Lulinha recebendo R$300K/mês — suposta 'mesada' rastreada como beneficiário final de desvios INSS (PF, 03/Abr). BBC: 'calcanhar de Aquiles'",
+        "CPI do Crime: relatório 14/Abr apontará Master como 'lavanderia do PCC'. 11 voos Vorcaro-STF. Haddad ~4.3% — mercado descarta plano B",
+        "Congresso rejeita 77% das MPs. 17 ministros saíram na reforma. Governabilidade comprometida. Dirceu (PT): 'o rei está nu'"
       ],
-      "analise": "Lula sobe para 43% no Polymarket (↑1.5pp) mas gap contra Flávio encurtou para 3pp — o menor desde o início da convergência. DADO ESTRUTURAL: Quaest (05/Abr) mostra 2T EMPATADO 41% x 41% pela primeira vez — não é mais apenas o Polymarket que vê corrida acirrada, instituto de pesquisa confirmou. Rejeição Lula atinge 56% no Quaest (nova alta histórica) e candidacy rejection subiu para 66% (era 62%). AtlasIntel (02/Abr): Lula 43.7%, Flávio 40.4% no 1T. CPI do Crime apresenta relatório até 14/Abr com capítulo inteiro sobre Master como 'lavanderia do PCC' — nova bomba a caminho. A narrativa central: 2T pode ser disputa aberta se convergência continuar."
+      "analise": "Lula recua para 42% no Polymarket (↓1pp) enquanto Flávio também cede para 38% (↓2pp) — gap reabre para 4pp após mínimo histórico de 3pp. NOVO DADO ESTRUTURAL: AtlasIntel (25/Mar) mostra 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente em 2T em instituto de grande porte. Paraná (25-28/Mar) confirma: Flávio 45.2% vs Lula 44.1%. Quaest (05/Abr) ainda empate 41%x41% no 2T. PoderData (21-23/Mar): desaprovação Lula RECORDE 61%, aprovação só 31%. PF investiga Lulinha recebendo R$300K/mês de desvios INSS (03/Abr) — bomba nova. Rejeição 56% Quaest + candidacy rejection 66% + PF Lulinha = eleição aberta mas vento de cauda desfavorável."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "Flávio Bolsonaro (PL) — Pesquisas: 30-56% | Polymarket: 40%",
+      "header": "Flávio Bolsonaro (PL) — Pesquisas: 30-56% | Polymarket: 38%",
       "fortes": [
-        "RECUPERAÇÃO FORTE no Polymarket: 40% (↑1.95pp) — gap com Lula encurtou para 3pp. Quaest 2T: EMPATE 41% x 41% — mercado e institutos convergem",
-        "Veritá SC (05/Abr): 56.3% vs Lula 19.5% — DOMÍNIO ABSOLUTO. Pode vencer no 1T em SC",
-        "Rejeição 55% (Quaest, 05/Abr) — praticamente igual à de Lula (56%). Antes, Flávio era METADE. Ainda leve vantagem",
-        "PL liderou janela partidária: maior bancada da Câmara (114+ deputados). PL Senado 72% no Polymarket",
-        "Amplia palanques pelo Brasil. 'Nós venceremos' (04/Abr). Carlos Bolsonaro pré-candidato Senado SC (lançamento maio)",
-        "2º lugar 1T: 64% no Polymarket. Gerp: VENCE no 2T (48% vs 45%). AtlasIntel (02/Abr): 40.4% no 1T"
+        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ À FRENTE em instituto de grande porte no 2T. Paraná (25-28/Mar): 2T Flávio 45.2% vs Lula 44.1% — confirmado em dois institutos",
+        "Veritá SC (05/Abr): 56.3% vs Lula 19.5% — DOMÍNIO ABSOLUTO. Maior número de qualquer candidato em qualquer estado. Pode vencer no 1T em SC",
+        "PL liderou janela partidária: maior bancada da Câmara (114+ deputados). PL Senado 72% no Polymarket. Novo condiciona candidatos ao Senado a voto pró-impeachment STF — onda direita no Legislativo",
+        "2º lugar 1T: 64% Polymarket (estável). Runoff advancement: 87% Polymarket. AtlasIntel (02/Abr): 40.4% no 1T",
+        "Carlos Bolsonaro pré-candidato Senado SC (lançamento maio). 66% dos eleitores consideram pró-impeachment STF critério para Senado (O Tempo, 12/Mar) — Flávio explora narrativa",
+        "Rejeição 55% (Quaest, 05/Abr) — ainda leve vantagem vs Lula 56%. Antes era METADE — vantagem reduziu mas existe"
       ],
       "fracos": [
-        "Veritá PE: perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — região é ponto fraco estrutural",
-        "Quaest rejeição DISPAROU para 55% — quase igual à de Lula (56%). Antes tinha vantagem estrutural maior",
-        "Caiado planeja capturar eleitorado de Flávio — 3ª via mira seus votos. PL Senado caiu de 79% para 72% no Polymarket",
-        "Pai inelegível + investigações próprias. 'Se perder, quer intervenção de Trump' (OEstadoAcre, 02/Abr)",
-        "Nunca disputou executivo — zero experiência administrativa",
-        "Quaest 2T agora EMPATE 41% x 41% — Lula reagiu nos institutos após tendência de queda"
+        "Polymarket cedeu para 38% (↓2pp de 40%) — correção após rally. Gap com Lula reabre para 4pp (era 3pp). Ainda perdedor no Polymarket principal (38% vs 42%)",
+        "Veritá PE: perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — região é ponto fraco estrutural, ~30% do eleitorado",
+        "Quaest 2T ainda EMPATE 41% x 41% — confirmado em Quaest mas Atlas/Paraná mostram Flávio levemente à frente. Cenário incerto",
+        "Pai inelegível + investigações próprias. 'Se perder, quer intervenção de Trump' (OEstadoAcre, 02/Abr). Nunca disputou executivo",
+        "Caiado planeja capturar eleitorado de Flávio — 3ª via mira seus votos. Não escala além de 40% em 2T com rejeição de 55%"
       ],
-      "analise": "Flávio sobe para 40% no Polymarket (↑1.95pp) — maior ganho em um dia. Mas a narrativa mudou: Quaest (05/Abr) mostra 2T EMPATADO 41% x 41% — Lula reagiu. Antes Flávio avançava nos institutos enquanto Lula caía; agora ambos tecnicamente iguais nos institutos e no Polymarket gap caiu para 3pp. A batalha de rejeição ficou mais equânime: Lula 56% vs Flávio 55% no Quaest. Veritá SC 56.3% continua sendo o maior número de qualquer candidato em qualquer estado. PL Senado ajustou de 79% para 72%. Carlos Bolsonaro lança pré-candidatura SC em maio — família Bolsonaro mobilizando toda a estrutura."
+      "analise": "Flávio recua para 38% no Polymarket (↓2pp) mas os institutos contam história diferente: AtlasIntel (25/Mar) mostra 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ À FRENTE em grande instituto no 2T. Paraná (25-28/Mar) confirma: Flávio 45.2% vs Lula 44.1%. O gap Polymarket reabre para 4pp, mas os institutos mostram Flávio numericamente à frente no 2T pela primeira vez. Quaest (05/Abr) ainda vê empate 41%x41%, mas tendência de institutos favorece Flávio. PL domina Senado (72% Polymarket). Novo condiciona candidaturas ao Senado a voto pró-impeachment — onda direita legislativa apoia narrativa. Carlos Bolsonaro pré-candidato SC em maio — família mobilizando estrutura. Veritá SC: 56.3% é domínio absoluto."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.2%",
+      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.4% | Polymarket: 6.2%",
       "fortes": [
         "Polymarket 6.2% — 3º colocado no mercado, estável. AtlasIntel (02/Abr): 4.4% no 1T",
         "Favorito para 3º lugar no 1T: Polymarket dá 35.5% de chance de ficar em 3º",
@@ -79,28 +78,28 @@
       "party": "PSD/PT",
       "color": "#6B7280",
       "header": "Caiado (PSD) — Poly: ~3.0% | Haddad (PT) — Poly: ~4.3%",
-      "subtitle": "Caiado planeja capturar eleitorado de Flávio. Haddad em queda contínua — mercado descarta plano B definitivamente.",
+      "subtitle": "Caiado 30% chance de 3º lugar (Polymarket 3rd place). Haddad em queda contínua — mercado descarta plano B definitivamente.",
       "caiado": {
-        "label": "CAIADO (PSD) — Poly ~3.0% (leve alta)",
-        "fortes": "Estável no Polymarket ~3.0%. Consistente nos institutos: AtlasIntel (02/Abr) 3.7%. Pré-candidato oficial pelo PSD. Planeja capturar eleitorado de Flávio (Tribuna do Planalto). Kassab dedicado à campanha. Governador bem avaliado em GO.",
-        "fracos": "3-5% em TODOS os institutos — não escala. Perde no 2T por 5-10pp vs Lula. 'Nenhuma 3ª via deu certo em 9 eleições'. Tentar capturar eleitorado de Flávio com ~3.0% é ambicioso demais."
+        "label": "CAIADO (PSD) — Poly ~3.0% (estável)",
+        "fortes": "Estável no Polymarket ~3.0%. AtlasIntel (02/Abr): 3.7%. Polymarket 3rd place: 30% de chance de ficar em 3º (subiu). Pré-candidato oficial pelo PSD. Kassab dedicado à campanha. Governador bem avaliado em GO.",
+        "fracos": "3-5% em TODOS os institutos — não escala. 'Nenhuma 3ª via deu certo em 9 eleições'. Quaest: Flávio lidera independentes 32% vs Lula 27% — espaço para 3ª via mínimo."
       },
       "haddad": {
         "label": "HADDAD (PT) — Poly ~4.3% (queda contínua)",
         "fortes": "Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT. Perfil técnico.",
-        "fracos": "Em queda no Polymarket: 6.7% → 4.65% → ~4.3%. Mercado descarta cenário 'Lula não concorre'. Quaest: candidacy rejection de Lula 66% — desgaste contamina plano B. Perde para Flávio em TODOS os cenários sem Lula."
+        "fracos": "Em queda no Polymarket: 6.7% → 4.65% → ~4.3%. Mercado descarta cenário 'Lula não concorre'. Candidacy rejection de Lula 66% contamina alternativa PT. AtlasIntel: Haddad perde para Flávio em todos os cenários sem Lula."
       },
-      "analise": "Haddad continua caindo (~4.3%) — mercado definitivamente descartou cenário 'Lula não concorre'. Quaest (05/Abr): candidacy rejection de Lula subiu para 66% (era 62%) — desgaste do governo contamina alternativa. Caiado estável em ~3.0%, AtlasIntel (02/Abr) mostra 3.7%. Augusto Cury (Avante) sem tração real. A terceira via continua irrelevante: Lula+Flávio = 83% no Polymarket.",
+      "analise": "Haddad continua em ~4.3% — mercado definitivamente descartou 'Lula não concorre'. Quaest: candidacy rejection Lula 66%. Caiado ganha terreno no Polymarket 3rd place (30%) vs Renan Santos (35%) — disputa pelo 3º lugar. Lula+Flávio = 80% no Polymarket principal. Terceira via irrelevante: nenhum candidato passa de 5% nas pesquisas.",
       "fortes": [],
       "fracos": []
     }
   ],
   "quadroComparativo": [
-    { "n": "Lula (PT)", "p": "19-46%", "m": "43%", "t": "Subindo (↑1.5pp)", "s": "41% 2T (Quaest, empate)", "pc": "#DC2626", "mc": "" },
-    { "n": "Flávio (PL)", "p": "30-56%", "m": "40%", "t": "Subindo forte (↑1.95pp)", "s": "41% 2T (Quaest, empate)", "pc": "", "mc": "#0F52BA" },
-    { "n": "Renan (Missão)", "p": "1-4.5%", "m": "6.2%", "t": "Estável", "s": "N/A", "pc": "", "mc": "" },
+    { "n": "Lula (PT)", "p": "19-47.6%", "m": "42%", "t": "Recuo (↓1pp)", "s": "46.6% 2T (Atlas, perdendo para Flávio)", "pc": "#DC2626", "mc": "" },
+    { "n": "Flávio (PL)", "p": "30-56%", "m": "38%", "t": "Recuo (↓2pp)", "s": "47.6% 2T (Atlas, à frente pela 1ª vez)", "pc": "", "mc": "#0F52BA" },
+    { "n": "Renan (Missão)", "p": "1-4.4%", "m": "6.2%", "t": "Estável", "s": "N/A", "pc": "", "mc": "" },
     { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "~4.3%", "t": "Caindo", "s": "Perde todos", "pc": "", "mc": "" },
-    { "n": "Caiado (PSD)", "p": "3-5%", "m": "~3.0%", "t": "Leve alta", "s": "37-41%", "pc": "", "mc": "" }
+    { "n": "Caiado (PSD)", "p": "3-5%", "m": "~3.0%", "t": "Estável", "s": "37-41%", "pc": "", "mc": "" }
   ],
-  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (07/Abr): EMPATE TÉCNICO CONFIRMADO. Quaest (05/Abr): 2T Lula 41% x Flávio 41% — pela primeira vez empatados em instituto de pesquisa. Polymarket: Lula 43% (↑1.5pp) vs Flávio 40% (↑1.95pp), gap 3pp (era 3.45pp). AtlasIntel (02/Abr): Lula 43.7% x Flávio 40.4% no 1T. Quaest: rejeição Lula RECORDE 56% (nova alta), candidacy rejection 66% (era 62%). PL Senado 72% (era 79%). STF impeachment 16.5% (era 14.5%, ↑2pp). CPI do Crime: relatório 14/Abr apontará Master como 'lavanderia do PCC'. 11 voos Vorcaro-STF: Moraes 8, Toffoli e Nunes Marques. 102 pedidos de impeachment no Senado (Moraes 50, Gilmar 13, Toffoli 12, Dino 8). Vorcaro preso 2ª vez por Mendonça. Master: ~R$12 bilhões em CDBs irregulares. Carlos Bolsonaro pré-candidato Senado SC (lançamento maio com Flávio)."
+  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (06/Abr): VIRADA NOS INSTITUTOS. AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — PRIMEIRA VEZ Flávio à frente em instituto de grande porte no 2T. Paraná (25-28/Mar): 2T Flávio 45.2% vs Lula 44.1% — dois institutos confirmam. Quaest (05/Abr): ainda empate 41%x41%. Polymarket: Lula 42% (↓1pp) vs Flávio 38% (↓2pp), gap reabre para 4pp. PoderData (21-23/Mar): desaprovação Lula RECORDE 61%, aprovação 31%. Rejeição 56% Quaest + 50.6% AtlasIntel/Arko + candidacy rejection 66%. PF investiga Lulinha R$300K/mês (03/Abr). Vorcaro resiste incluir Moraes na delação. 66% dos eleitores querem candidatos ao Senado pró-impeachment STF (O Tempo, 12/Mar). Novo condiciona candidaturas Senado a voto pro-impeachment. PL Senado 72% Polymarket. STF impeachment ~16%. 102 pedidos (Moraes 50, Gilmar 13, Toffoli 12, Dino 8). Master: R$12bi CDBs irregulares. CPI Crime relatório 14/Abr."
 }
