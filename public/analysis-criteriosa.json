@@ -1,67 +1,67 @@
 {
-  "updatedAt": "04/04/2026",
-  "subtitle": "Cruzamento: Polymarket (ao vivo) vs institutos — AtlasIntel estaduais (01-03/Abr) + Paraná Pesquisas (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel nacional (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) | Atualizado: 04/04/2026",
+  "updatedAt": "05/04/2026",
+  "subtitle": "Cruzamento: Polymarket (ao vivo 05/Abr) vs institutos — Veritá PE/SE (05/Abr) + AtlasIntel estaduais (01-03/Abr) + Paraná Pesquisas (30/Mar) + Nexus/BTG (30/Mar) + Gerp (27/Mar) + AtlasIntel nacional (25/Mar) + Quaest (11/Mar) + Datafolha (07/Mar) | Atualizado: 05/04/2026",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "Lula (PT) — Pesquisas: 33-46% | Polymarket: 42.5%",
+      "header": "Lula (PT) — Pesquisas: 33-46% | Polymarket: 41.5%",
       "fortes": [
-        "Polymarket 42.5% — lidera com folga. Gap de 5.95pp sobre Flávio (36.55%). Ampliou de 2.7pp em 01/Abr",
+        "Polymarket 41.5% — mantém liderança. Gap de 3.6pp sobre Flávio (37.9%). Porém encurtou (era 5.95pp em 04/Abr)",
         "Lidera em pesquisas nacionais: Atlas 45.9% | Paraná 41.3% | Nexus/BTG 41% | Gerp 37-38% | Quaest 36-39% | Datafolha 38-39%",
-        "Piso eleitoral alto: nunca abaixo de 33% em nenhum cenário nacional",
-        "Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Reforma ministerial (31/Mar) + Alckmin vice + Pacheco no PSB",
-        "Contra-ataque funcionou: Polymarket respondeu positivamente à reorganização"
+        "Veritá PE (05/Abr): Lula 43.3% vs Flávio 30.9% — domina Nordeste",
+        "Incumbência: máquina do governo, fundo eleitoral, tempo de TV. Alckmin vice confirmado + Pacheco no PSB (MG)",
+        "Datafolha realiza nova rodada esta semana — pode reforçar liderança"
       ],
       "fracos": [
-        "Rejeição recorde: 50.6% (AtlasIntel/Arko, 03/Abr) — mais da metade do país rejeita. Gerp 51%, Datafolha 46%",
-        "AtlasIntel estaduais (01-02/Abr): perde para Flávio no PR (33.5% vs 52%), SC (vs 53.4%), AP (37.5% vs 44.8%). Empate técnico em SP e MG",
-        "PT admite plano B (VEJA, 03/Abr): bastidores reconhecem risco de Lula não concorrer — Haddad sobe no Polymarket (6.7%)",
-        "3 escândalos simultâneos: Banco Master + INSS/Lulinha + STF. Delação Vorcaro em andamento (~3 meses)",
-        "80 anos em 2026 — questão de saúde e energia será explorada",
-        "Sem Lula: PT cai para 21-38% (Haddad) — dependência total do nome"
+        "CAIU 1pp no Polymarket (42.5% → 41.5%) — gap encurtou de 5.95pp para 3.6pp em 24h",
+        "Rejeição recorde: 50.6% (AtlasIntel/Arko). Em Mato Grosso, rejeição chega a 74% e Flávio tem 64% (Veritá)",
+        "PT admite plano B (VEJA, 03/Abr) — mas Haddad CAIU para 5.0% no Polymarket (era 6.7%) — mercado corrigiu cenário 'sem Lula'",
+        "Congresso recua das CPIs do Master e aposta na delação de Vorcaro (Jornal Grande Bahia, 05/Abr) — timing eleitoral",
+        "80 anos em 2026. 3 escândalos simultâneos: Banco Master + INSS/Lulinha + STF",
+        "21 governadores renunciaram para disputar presidente — campo eleitoral expandindo"
       ],
-      "analise": "Lula consolida liderança no Polymarket (42.5% vs Flávio 36.55%) — gap DOBROU para 5.95pp em 3 dias. Contra-ataque (Alckmin vice + reforma ministerial) funcionou no mercado. Porém: rejeição bateu 50.6% (AtlasIntel/Arko), perde para Flávio em 3 estados do Sul (PR 52%, SC 53%, AP 44.8%), PT admite plano B nos bastidores, e Haddad disparou no Polymarket (6.7%). Favorito consolidado no mercado, mas vulnerável nas pesquisas — rejeição acima de 50% é território perigoso a 6 meses da eleição."
+      "analise": "Lula caiu 1pp no Polymarket (41.5%) e o gap contra Flávio encurtou para 3.6pp (era 5.95pp ontem). Flávio recuperou 1.35pp em 24h — sinal de que o mercado corrige o movimento dos últimos dias. Haddad despencou para 5.0% (-1.7pp) — mercado abandonou cenário 'Lula não concorre'. Nos institutos, Lula segue líder (37-46%) mas rejeição de 50.6% é estrutural. Veritá PE dá 43.3% no Nordeste — base sólida. Datafolha faz nova rodada esta semana — se confirmar liderança, Polymarket pode estabilizar. Favorito, mas com tendência de estreitamento."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "Flávio Bolsonaro (PL) — Pesquisas: 37-52% | Polymarket: 36.55%",
+      "header": "Flávio Bolsonaro (PL) — Pesquisas: 30-64% | Polymarket: 37.9%",
       "fortes": [
-        "DOMINA o Sul nas estaduais AtlasIntel (01-02/Abr): Paraná 52% vs Lula 33.5% | Santa Catarina 53.4% (pode vencer no 1T!) | Amapá 44.8% vs 37.5%",
-        "Empate técnico em SP e MG (AtlasIntel) — disputa voto-chave nos maiores colégios",
+        "RECUPEROU no Polymarket: 37.9% (era 36.55% em 04/Abr — +1.35pp). Gap encurtou de 5.95pp para 3.6pp",
+        "PL LIDEROU janela partidária: maiores ganhos na Câmara com 114+ deputados trocando (Estadão, 05/Abr)",
+        "Veritá MT: Flávio com 64% — domínio absoluto no Centro-Oeste",
         "Rejeição 24% (AtlasIntel/Arko) — METADE da rejeição de Lula (50.6%). Vantagem decisiva",
-        "2º lugar 1T praticamente garantido: Polymarket dá 64.5% para Flávio ir ao 2T",
-        "Gerp: VENCE Lula no 2T (48% vs 45%). Nexus/BTG: empate 46x46. Paraná: 45.2% vs 44.1%",
-        "3 munições de campanha: INSS/Lulinha + Banco Master + STF + rejeição recorde de Lula"
+        "Pediu unidade da direita após tensão Eduardo/Nikolas (Gazeta do Povo, 05/Abr) — consolidando liderança",
+        "2º lugar 1T praticamente garantido: Polymarket dá 63% para Flávio ir ao 2T. Gerp: VENCE Lula no 2T (48% vs 45%)"
       ],
       "fracos": [
-        "Polymarket em QUEDA: 36.55% (era 39.8% em 01/Abr, 43.9% em 29/Mar) — caiu 7.35pp em 6 dias",
-        "Gap ampliou para 5.95pp vs Lula — mercado precifica contra-ataque do governo como eficaz",
-        "Presenciais nacionais mais baixos (Paraná 37.8%, Nexus/BTG 38%, Quaest 30-35%) que online (Atlas 40-42%)",
+        "Veritá PE: perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — região ainda é ponto fraco",
+        "Presenciais nacionais mais baixos que online: Quaest 30-35% vs Atlas 40-42%",
         "Pai inelegível + investigações próprias = bagagem judicial",
         "Nunca disputou executivo — zero experiência administrativa",
-        "Perde para Lula no 2T em Datafolha (43% vs 46%) e Quaest (42% vs 46%)"
+        "Perde para Lula no 2T em Datafolha (43% vs 46%) e Quaest (42% vs 46%)",
+        "Tensão interna na família Bolsonaro (Eduardo vs Nikolas) pode fragmentar base digital"
       ],
-      "analise": "Flávio vive paradoxo: DOMINA pesquisas estaduais do Sul (PR 52%, SC 53.4%) e tem rejeição de apenas 24% (metade de Lula), mas DESPENCA no Polymarket para 36.55% — queda de 7.35pp em 6 dias. Mercado interpretou contra-ataque de Lula (reforma ministerial + Alckmin vice) como eficaz. Porém: dados estruturais favorecem Flávio — rejeição de Lula em 50.6%, vitória no 2T na Gerp (48% vs 45%), e base sólida no Sul. A verdade está entre pesquisas (competitivo) e Polymarket (atrás). Candidato com maior potencial de recuperação se escândalos do governo se intensificarem."
+      "analise": "Flávio RECUPEROU +1.35pp no Polymarket (37.9%) e encurtou o gap para 3.6pp — tendência de convergência. PL liderou a janela partidária com maiores ganhos na Câmara (Estadão), fortalecendo estrutura legislativa. Domina MT com 64% (Veritá) e pediu unidade da direita após tensão familiar. Rejeição de 24% é metade da de Lula — vantagem estrutural no 2T. Porém: perde no Nordeste (PE 30.9%) e presenciais nacionais ficam abaixo de 40%. Se Datafolha desta semana mostrar estreitamento, Polymarket pode continuar convergindo."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.05%",
+      "header": "Renan Santos (Missão/MBL) — Pesquisas: 1-4.5% | Polymarket: 6.35%",
       "fortes": [
-        "Polymarket 6.05% — mercado dá mais chance que pesquisas tradicionais. 3º colocado no mercado",
-        "FAVORITO para 3º lugar no 1T: Polymarket dá 36% de chance de Renan ficar em 3º (Zema distante com 10.5%)",
+        "Polymarket 6.35% — 3º colocado no mercado, leve alta (+0.3pp)",
+        "FAVORITO para 3º lugar no 1T: Polymarket dá 36% de chance de Renan ficar em 3º",
         "Presente nos institutos: Atlas 4.4% | Datafolha 3-4% | Quaest 1-2% | Gerp 1% | RTBD 2%",
         "Mais jovem (35 anos) — apelo digital forte entre geração Z e Millennials",
         "Discurso anti-establishment atrai desencantados com PT E com Bolsonaro",
-        "Voto próprio estável: 3-4.5% independente do cenário"
+        "Avante lançou Augusto Cury como concorrente na direita liberal — pode fragmentar mas também sinaliza espaço"
       ],
       "fracos": [
         "Gerp 1% e Quaest 1-2% (presenciais) vs Atlas 4.4% (online) — força real pode ser menor",
@@ -69,36 +69,38 @@
         "Partido Missão sem capilaridade, fundo eleitoral mínimo",
         "Zero experiência executiva ou legislativa",
         "Sem apoio de governadores ou máquinas estaduais",
-        "Diferença entre Polymarket (6.05%) e Quaest (1%) é a maior de todos os candidatos — pode ser bolha digital"
+        "Augusto Cury (Avante) pode disputar mesmo nicho de voto protesto"
       ],
-      "analise": "Renan é a maior divergência Pesquisa vs Polymarket: 1-4.4% nas urnas vs 6.05% no mercado. Polymarket o coloca como favorito para 3º lugar (36% de chance). Gerp e Quaest (presenciais) dão apenas 1% — confirma que seu eleitorado é digital. Com partido nanômetro, não disputa 2º turno. Papel: kingmaker — seus 2-4% decidem para quem vão no 2T. Se apoiar Flávio = Lula perde."
+      "analise": "Renan mantém-se como maior divergência Pesquisa vs Polymarket: 1-4.4% nas urnas vs 6.35% no mercado. Favorito para 3º lugar (36% no Polymarket). A entrada de Augusto Cury (Avante) pode fragmentar o voto protesto ou validar que há espaço para terceira via de direita. Com partido nanômetro, não disputa 2º turno. Papel: kingmaker — seus 2-4% decidem para quem vão no 2T."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad",
       "party": "PSD/PT",
       "color": "#6B7280",
-      "header": "Ronaldo Caiado (PSD) — Pesquisas: 3-5% | Poly: 2.2% | Fernando Haddad (PT) — Pesquisas: 21-38% (sem Lula) | Poly: 6.7%",
-      "subtitle": "Caiado é o 4º no cenário principal. Haddad é o Plano B do PT — ganhou força após PT admitir risco de Lula não concorrer (VEJA, 03/Abr).",
+      "header": "Ronaldo Caiado (PSD) — Poly: 2.75% | Fernando Haddad (PT) — Poly: 5.0%",
+      "subtitle": "Caiado é o 4º no cenário principal. Haddad perdeu força no Polymarket (-1.7pp em 24h) — mercado corrigiu cenário 'Lula não concorre'.",
       "caiado": {
-        "label": "CAIADO (PSD) — Poly 2.2%",
-        "fortes": "Consistente nos institutos: Atlas 3.7% | Gerp 3-5% | Datafolha 4% | Quaest 4% | Paraná 3.6% | Nexus/BTG 4%. Pré-candidato oficial pelo PSD (30/Mar). Kassab saiu do governo SP para dedicar-se. Governador bem avaliado em GO. Perfil gestor/agro. Polymarket 2º lugar 1T: 3.4%.",
-        "fracos": "3-5% em TODOS os institutos — não escala. No 2T perde: Atlas 36.7% vs Lula 46.2% | Gerp 37% vs Lula 44% | Nexus/BTG 41% vs Lula 46%. Gap de 5-10pp. Polymarket 2.2% — mercado cético. Poder360: \"Nenhuma 3ª via deu certo em 9 eleições\". 76 anos."
+        "label": "CAIADO (PSD) — Poly 2.75% (↑0.55pp)",
+        "fortes": "SUBIU no Polymarket: 2.75% (era 2.2%). Consistente nos institutos: Atlas 3.7% | Gerp 3-5% | Datafolha 4% | Quaest 4% | Paraná 3.6%. Pré-candidato oficial pelo PSD. Kassab saiu do governo SP. Governador bem avaliado em GO. Perfil gestor/agro.",
+        "fracos": "3-5% em TODOS os institutos — não escala. Perde no 2T: gap de 5-10pp vs Lula. Poder360: 'Nenhuma 3ª via deu certo em 9 eleições'. 76 anos. Mercado ainda cético apesar da alta."
       },
       "haddad": {
-        "label": "HADDAD (PT) — Poly 6.7% (+2.5pp)",
-        "fortes": "DISPAROU no Polymarket: 6.7% (era 4.2% em 01/Abr — +2.5pp em 3 dias). Mercado precifica risco real de Lula não concorrer. Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT + máquina federal. Perfil técnico. 2º lugar 1T no Polymarket: 7.1%.",
-        "fracos": "PT admite plano B nos bastidores (VEJA, 03/Abr) — reconhece risco de Lula ficar fora. Divergência brutal: Atlas 37.6% vs Datafolha 21% sem Lula (gap 16pp). PERDE para Flávio em TODOS os cenários sem Lula. Desgaste como Min. da Fazenda. Brancos/nulos explodem sem Lula (6-20%)."
+        "label": "HADDAD (PT) — Poly 5.0% (↓1.7pp)",
+        "fortes": "Sem Lula: Atlas 37.6% | Datafolha 21%. Herda estrutura PT + máquina federal. Perfil técnico (Min. Fazenda). 2º lugar 1T no Polymarket: 9.05% — subiu aqui.",
+        "fracos": "DESPENCOU no Polymarket: 5.0% (era 6.7% em 04/Abr — -1.7pp em 24h). Mercado CORRIGIU cenário 'Lula não concorre'. Divergência brutal: Atlas 37.6% vs Datafolha 21% sem Lula. PERDE para Flávio em TODOS os cenários sem Lula. Desgaste como Min. da Fazenda."
       },
-      "analise": "O fato mais relevante é a ALTA de Haddad no Polymarket (6.7%, +2.5pp em 3 dias) — mercado está precificando cenário \"Lula não concorre\" após PT admitir risco (VEJA, 03/Abr). Haddad é agora o 3º no Polymarket, à frente de Renan (6.05%). Caiado segue estagnado: 3-5% nos institutos + 2.2% no Polymarket — mercado não comprou lançamento. O PT sem Lula é partido de 21-38%, e nenhum número vence Flávio. Se Lula sair, Haddad é o candidato natural mas entra perdendo. Se Lula ficar, Haddad volta a ser ministro e Polymarket corrige para baixo."
+      "analise": "A grande mudança é a CORREÇÃO de Haddad no Polymarket: caiu de 6.7% para 5.0% (-1.7pp em 24h). Mercado interpretou que Lula VAI concorrer — plano B perde força. Enquanto isso, Caiado subiu levemente para 2.75% mas segue irrelevante no mercado. Avante lançou Augusto Cury como pré-candidato — campo se expande mas sem tração. Se Datafolha desta semana confirmar Lula forte, Haddad pode cair ainda mais no Polymarket.",
+      "fortes": [],
+      "fracos": []
     }
   ],
   "quadroComparativo": [
-    { "n": "Lula (PT)", "p": "33-46%", "m": "42.5%", "t": "Estável", "s": "44-46%", "pc": "#DC2626", "mc": "" },
-    { "n": "Flávio (PL)", "p": "37-52%", "m": "36.55%", "t": "Caindo no Poly", "s": "45-48%", "pc": "", "mc": "#0F52BA" },
-    { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "6.7%", "t": "Subindo forte", "s": "Perde todos", "pc": "", "mc": "" },
-    { "n": "Renan (Missão)", "p": "1-4.5%", "m": "6.05%", "t": "Estável", "s": "N/A", "pc": "", "mc": "" },
-    { "n": "Caiado (PSD)", "p": "3-5%", "m": "2.2%", "t": "Estável", "s": "37-41%", "pc": "", "mc": "" }
+    { "n": "Lula (PT)", "p": "33-46%", "m": "41.5%", "t": "Caindo leve", "s": "44-46%", "pc": "#DC2626", "mc": "" },
+    { "n": "Flávio (PL)", "p": "30-64%", "m": "37.9%", "t": "Recuperando", "s": "45-48%", "pc": "", "mc": "#0F52BA" },
+    { "n": "Renan (Missão)", "p": "1-4.5%", "m": "6.35%", "t": "Estável", "s": "N/A", "pc": "", "mc": "" },
+    { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "5.0%", "t": "Caindo forte", "s": "Perde todos", "pc": "", "mc": "" },
+    { "n": "Caiado (PSD)", "p": "3-5%", "m": "2.75%", "t": "Leve alta", "s": "37-41%", "pc": "", "mc": "" }
   ],
-  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (04/Abr): Lula lidera no Polymarket (42.5%) com gap de 5.95pp sobre Flávio (36.55%) — dobrou em 3 dias. Porém: nas pesquisas, distância é menor (Paraná 41.3% vs 37.8%, Nexus/BTG 41% vs 38%). AtlasIntel estaduais mostram Flávio DOMINANTE no Sul (PR 52%, SC 53.4%) e competitivo em SP e MG. Rejeição de Lula bateu 50.6% (AtlasIntel/Arko, 03/Abr) — recorde. Flávio tem apenas 24% de rejeição. NOVIDADE: Haddad disparou no Polymarket (6.7%, +2.5pp) após PT admitir risco de Lula não concorrer (VEJA, 03/Abr). Mercado precifica cenário Plano B. Lula+Flávio = 79.05% no Polymarket — polarização forte mas com espaço para Haddad crescer se Lula desistir."
+  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (05/Abr): Lula caiu para 41.5% (-1pp) e Flávio recuperou para 37.9% (+1.35pp) — gap ENCURTOU para 3.6pp (era 5.95pp ontem). Mercado corrige: Haddad despencou para 5.0% (-1.7pp) — cenário 'Lula não concorre' perde força. PL liderou janela partidária com maiores ganhos na Câmara (114+ deputados, Estadão). Veritá PE: Lula 43.3% no Nordeste. Veritá MT: Flávio 64%. Congresso recua das CPIs do Master e aposta na delação de Vorcaro (Jornal Grande Bahia). Mendonça fragmenta apurações do caso Master (ParaibaOnline). Datafolha faz nova rodada esta semana — resultado pode definir próximo movimento do Polymarket."
 }
