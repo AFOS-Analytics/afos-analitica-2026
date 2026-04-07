@@ -43,10 +43,14 @@ function optimizeForKv(countries: CountryAggregation[]) {
 export async function GET(request: Request) {
   const startTime = Date.now();
 
-  // Verificar autenticação do cron (em produção)
+  // Autenticação: Vercel injeta header automaticamente em cron jobs.
+  // Em produção, bloquear qualquer request que não venha do cron da Vercel.
+  const isVercelCron = request.headers.get('x-vercel-cron') === '1';
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  const isAuthorized = isVercelCron || (cronSecret && authHeader === `Bearer ${cronSecret}`);
+
+  if (process.env.VERCEL && !isAuthorized) {
     console.warn('[cron] Requisição não autenticada bloqueada');
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }

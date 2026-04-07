@@ -90,4 +90,28 @@ export async function readGlobalMapData<T>(): Promise<{ data: T; timestamp: stri
   }
 }
 
+/**
+ * Verifica se o cron está saudável (última atualização < 5 minutos).
+ */
+export async function checkCronHealth(): Promise<{ healthy: boolean; lastUpdate: string | null; ageMs: number }> {
+  const redis = getRedis();
+  if (!redis) return { healthy: false, lastUpdate: null, ageMs: -1 };
+
+  try {
+    const timestamp = await redis.get<string>(KV_KEYS.GLOBAL_MAP_TIMESTAMP);
+    if (!timestamp) return { healthy: false, lastUpdate: null, ageMs: -1 };
+
+    const ageMs = Date.now() - new Date(timestamp).getTime();
+    const healthy = ageMs < 5 * 60 * 1000; // < 5 minutos
+
+    if (!healthy) {
+      console.warn(`[kv] Cron possivelmente parado — última atualização há ${Math.round(ageMs / 1000)}s`);
+    }
+
+    return { healthy, lastUpdate: timestamp, ageMs };
+  } catch {
+    return { healthy: false, lastUpdate: null, ageMs: -1 };
+  }
+}
+
 export { KV_KEYS, isRedisAvailable as isKvAvailable };
