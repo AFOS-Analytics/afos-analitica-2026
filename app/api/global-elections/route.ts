@@ -4,13 +4,27 @@ export const revalidate = 7200;
 
 async function fetchPolymarket(slug: string) {
   try {
-    const res = await fetch(`https://gamma-api.polymarket.com/events?slug=${slug}&limit=1`, { next: { revalidate: 7200 } });
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    const res = await fetch(`https://gamma-api.polymarket.com/events?slug=${slug}&limit=1`, {
+      next: { revalidate: 7200 },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
     if (!res.ok) return null;
     const data = await res.json();
     if (!data?.[0]) return null;
     const event = data[0];
     const markets = (event.markets || []).filter((m: any) => !m.closed && m.active).map((m: any) => {
-      const prices = typeof m.outcomePrices === 'string' ? JSON.parse(m.outcomePrices) : m.outcomePrices || [];
+      let prices: any[];
+      try {
+        prices = typeof m.outcomePrices === 'string' ? JSON.parse(m.outcomePrices) : m.outcomePrices || [];
+      } catch (e) {
+        console.error(`[global-elections] Failed to parse outcomePrices for slug=${slug}:`, e);
+        prices = [];
+      }
       return {
         question: m.question,
         yesPrice: prices[0] ? parseFloat(prices[0]) : 0,
@@ -19,7 +33,10 @@ async function fetchPolymarket(slug: string) {
     }).filter((m: any) => m.yesPrice > 0.005);
     markets.sort((a: any, b: any) => b.yesPrice - a.yesPrice);
     return { title: event.title, volume: parseFloat(event.volume || '0'), markets: markets.slice(0, 5) };
-  } catch { return null; }
+  } catch (error) {
+    console.error(`[global-elections] Error fetching Polymarket slug=${slug}:`, error);
+    return null;
+  }
 }
 
 export async function GET() {

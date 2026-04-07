@@ -13,34 +13,78 @@ interface NewsItem {
 
 const FIRECRAWL_KEY = process.env.FIRECRAWL_API_KEY || '';
 
+// Validate URL format before fetching
+function isValidUrl(url: string): boolean {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 // Firecrawl scrape for richer content
 async function firecrawlScrape(url: string): Promise<string> {
   if (!FIRECRAWL_KEY) return '';
+  if (!isValidUrl(url)) {
+    console.error(`[news] Invalid URL rejected for firecrawl scrape: ${url}`);
+    return '';
+  }
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${FIRECRAWL_KEY}` },
       body: JSON.stringify({ url, formats: ['markdown'], onlyMainContent: true }),
+      signal: controller.signal,
     });
+    clearTimeout(timeout);
+
     if (!res.ok) return '';
     const data = await res.json();
     return (data?.data?.markdown || '').slice(0, 500);
-  } catch { return ''; }
+  } catch (error) {
+    console.error(`[news] Firecrawl scrape failed for ${url}:`, error);
+    return '';
+  }
 }
 
 // Google News RSS — free, no key
 async function fetchGoogleNews(query: string, category: string): Promise<NewsItem[]> {
   try {
     const encoded = encodeURIComponent(query);
-    const res = await fetch(
-      `https://news.google.com/rss/search?q=${encoded}&hl=pt-BR&gl=BR&ceid=BR:pt-419`,
-      { next: { revalidate: 7200 } }
-    );
+    const rssUrl = `https://news.google.com/rss/search?q=${encoded}&hl=pt-BR&gl=BR&ceid=BR:pt-419`;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    const res = await fetch(rssUrl, {
+      next: { revalidate: 7200 },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
     if (!res.ok) return [];
-    const xml = await res.text();
+
+    let xml: string;
+    try {
+      xml = await res.text();
+    } catch (error) {
+      console.error(`[news] Failed to read RSS response for query="${query}":`, error);
+      return [];
+    }
 
     const items: NewsItem[] = [];
-    const parts = xml.split('<item>');
+    let parts: string[];
+    try {
+      parts = xml.split('<item>');
+    } catch (error) {
+      console.error(`[news] Failed to parse XML for query="${query}":`, error);
+      return [];
+    }
+
     for (let i = 1; i < parts.length && items.length < 5; i++) {
       const block = parts[i];
       const titleMatch = block.match(/<title>([^<]+)<\/title>/);
@@ -78,7 +122,10 @@ async function fetchGoogleNews(query: string, category: string): Promise<NewsIte
       }
     }
     return items;
-  } catch { return []; }
+  } catch (error) {
+    console.error(`[news] fetchGoogleNews failed for query="${query}":`, error);
+    return [];
+  }
 }
 
 // Firecrawl-powered deep scrape of key portals
@@ -96,7 +143,15 @@ async function fetchPortalHeadlines(): Promise<NewsItem[]> {
   const results: NewsItem[] = [];
 
   for (const portal of portals) {
+    if (!isValidUrl(portal.url)) {
+      console.error(`[news] Invalid portal URL skipped: ${portal.url}`);
+      continue;
+    }
+
     try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 10000);
+
       const res = await fetch('https://api.firecrawl.dev/v1/scrape', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${FIRECRAWL_KEY}` },
@@ -105,7 +160,10 @@ async function fetchPortalHeadlines(): Promise<NewsItem[]> {
           formats: ['links'],
           onlyMainContent: true,
         }),
+        signal: controller.signal,
       });
+      clearTimeout(timeout);
+
       if (!res.ok) continue;
       const data = await res.json();
       const links = data?.data?.links || [];
@@ -125,7 +183,10 @@ async function fetchPortalHeadlines(): Promise<NewsItem[]> {
           }
         }
       }
-    } catch { continue; }
+    } catch (error) {
+      console.error(`[news] Portal scrape failed for ${portal.source}:`, error);
+      continue;
+    }
   }
 
   return results;
@@ -198,7 +259,8 @@ export async function GET() {
       firecrawlActive: !!FIRECRAWL_KEY,
       all: unique.slice(0, 35),
     });
-  } catch {
+  } catch (error) {
+    console.error('[news] GET handler failed:', error);
     return NextResponse.json({ updatedAt: '', totalNews: 0, grouped: {}, firecrawlActive: false, all: [] }, { status: 500 });
   }
 }

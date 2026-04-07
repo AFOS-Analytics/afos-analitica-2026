@@ -2,8 +2,8 @@
 
 export function SectionTitle({ children, icon }: { children: React.ReactNode; icon?: string }) {
   return (
-    <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 flex items-center gap-2">
-      {icon && <span>{icon}</span>}
+    <h2 className="text-2xl font-bold text-dark mb-4 flex items-center gap-2">
+      {icon && <span aria-hidden="true">{icon}</span>}
       {children}
     </h2>
   );
@@ -11,7 +11,7 @@ export function SectionTitle({ children, icon }: { children: React.ReactNode; ic
 
 export function Card({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-6 ${className}`} style={style}>
+    <div className={`bg-light-bg border border-light-border rounded-xl p-6 ${className}`} style={style}>
       {children}
     </div>
   );
@@ -20,9 +20,9 @@ export function Card({ children, className = '', style }: { children: React.Reac
 export function HBar({ value, max, color, label, suffix = '%' }: { value: number; max: number; color: string; label: string; suffix?: string }) {
   const pct = max > 0 ? (value / max) * 100 : 0;
   return (
-    <div className="mb-3">
+    <div className="mb-3" role="meter" aria-label={`${label}: ${value.toFixed(1)}${suffix}`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
       <div className="flex justify-between text-sm mb-1">
-        <span className="font-semibold text-[#1a1a1a]">{label}</span>
+        <span className="font-semibold text-dark">{label}</span>
         <span className="font-bold" style={{ color }}>{value.toFixed(1)}{suffix}</span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden">

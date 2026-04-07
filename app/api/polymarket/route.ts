@@ -13,11 +13,27 @@ const slugs = [
 
 const keys = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate', 'inflation'] as const;
 
+// Validate slug format: only allow alphanumeric characters and hyphens
+function isValidSlug(slug: string): boolean {
+  return /^[a-z0-9-]+$/.test(slug);
+}
+
 async function fetchEvent(slug: string) {
+  if (!isValidSlug(slug)) {
+    console.error(`[polymarket] Invalid slug rejected: ${slug}`);
+    return null;
+  }
+
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     const res = await fetch(`https://gamma-api.polymarket.com/events?slug=${slug}&limit=1`, {
       next: { revalidate: 7200 },
+      signal: controller.signal,
     });
+    clearTimeout(timeout);
+
     if (!res.ok) return null;
     const data = await res.json();
     if (!data || !data[0]) return null;
@@ -25,16 +41,40 @@ async function fetchEvent(slug: string) {
     return {
       title: event.title,
       slug: event.slug,
-      markets: (event.markets || []).map((m: Record<string, unknown>) => ({
-        question: m.question,
-        outcomePrices: typeof m.outcomePrices === 'string' ? JSON.parse(m.outcomePrices as string) : m.outcomePrices,
-        outcomes: typeof m.outcomes === 'string' ? JSON.parse(m.outcomes as string) : m.outcomes,
-        volumeNum: m.volumeNum,
-        active: m.active,
-        closed: m.closed,
-      })),
+      markets: (event.markets || []).map((m: Record<string, unknown>) => {
+        let outcomePrices = m.outcomePrices;
+        let outcomes = m.outcomes;
+
+        if (typeof outcomePrices === 'string') {
+          try {
+            outcomePrices = JSON.parse(outcomePrices as string);
+          } catch (e) {
+            console.error(`[polymarket] Failed to parse outcomePrices for slug=${slug}:`, e);
+            outcomePrices = [];
+          }
+        }
+
+        if (typeof outcomes === 'string') {
+          try {
+            outcomes = JSON.parse(outcomes as string);
+          } catch (e) {
+            console.error(`[polymarket] Failed to parse outcomes for slug=${slug}:`, e);
+            outcomes = [];
+          }
+        }
+
+        return {
+          question: m.question,
+          outcomePrices,
+          outcomes,
+          volumeNum: m.volumeNum,
+          active: m.active,
+          closed: m.closed,
+        };
+      }),
     };
-  } catch {
+  } catch (error) {
+    console.error(`[polymarket] Error fetching event slug=${slug}:`, error);
     return null;
   }
 }
