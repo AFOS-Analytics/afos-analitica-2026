@@ -1,13 +1,13 @@
 {
-  "updatedAt": "07/04/2026, 11:00",
-  "subtitle": "Cruzamento: Polymarket (ao vivo 07/Abr 11h) vs institutos — NOVO Datafolha EM CAMPO (7-9/Abr, resultado 11/Abr): Lula 39% / Flávio 33% / Zema 4-5% / Caiado 4% / Renan ~3% + AtlasIntel/CNN (recente, 2T Lula +4pp) + AtlasIntel (25/Mar, 2T Flávio 47.6% vs Lula 46.6%) + Paraná (25-28/Mar, 2T Flávio 45.2% vs 44.1%) + Quaest (05/Abr, 2T empate 41×41, rejeição Lula 56%) + PoderData (21-23/Mar, desaprov. 61%) | Focus/BCB (06/Abr): inflação 4.36% | STF impeach ↑17% (+1pp vs 09h) | Inflação Polymarket: faixa 5.00-5.49% lidera (39%) | TSE: faltam 6 meses | Atualizado: 07/04/2026 11:00 BRT",
+  "updatedAt": "07/04/2026, 15:00",
+  "subtitle": "Cruzamento: Polymarket (ao vivo 07/Abr 15h) vs institutos — NOVO Datafolha EM CAMPO (7-9/Abr, resultado 11/Abr): Lula 39% / Flávio 33% / Zema 4-5% / Caiado 4% / Renan ~3% + AtlasIntel/CNN (recente, 2T Lula +4pp) + Nova AtlasIntel (Flávio 0.1pp à frente) + AtlasIntel (25/Mar, 2T Flávio 47.6% vs Lula 46.6%) + Paraná (25-28/Mar, 2T Flávio 45.2% vs 44.1%) + Quaest (05/Abr, 2T empate 41×41, rejeição candidatura Lula 66% ↑4pp) + PoderData (21-23/Mar, desaprov. 61%) | Focus/BCB (06/Abr): inflação 4.36% | STF impeach 17% (102 pedidos) | Inflação Polymarket: faixa 5.00-5.49% lidera (39%) | TSE: faltam 6 meses | Atualizado: 07/04/2026 15:00 BRT",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "Lula (PT) — NOVO Datafolha campo: 39% 1T | Polymarket: 42% (estável) | Rejeição candidatura: 66% (Quaest)",
+      "header": "Lula (PT) — NOVO Datafolha campo: 39% 1T | Polymarket: 42% (estável) | Rejeição candidatura: 66% Quaest (↑4pp vs 62% mar)",
       "fortes": [
         "Polymarket 42% (estável vs 09h) — lidera mercado com 5pp de vantagem sobre Flávio (37%). NOVO Datafolha em campo (7-9/Abr): Lula 39% no 1T — confirma liderança no instituto presencial mais importante. Resultado completo com 2T esperado sábado 11/Abr.",
         "AtlasIntel/CNN (recente): Lula venceria Flávio por ~4pp no 2T — cenário mais favorável recente. Datafolha anterior (março): 2T Lula 46% vs Flávio 43%. Paraná (25-28/Mar): 2T Lula 44.1% vs Flávio 45.2% (empate técnico). Quaest (05/Abr): 2T empate 41×41.",
@@ -27,20 +27,20 @@
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "Flávio Bolsonaro (PL) — NOVO Datafolha campo: 33% 1T | Polymarket: 37% (estável) | Atlas 2T à frente: 47.6% vs 46.6% (25/Mar)",
+      "header": "Flávio Bolsonaro (PL) — NOVO Datafolha campo: 33% 1T | Polymarket: 38% (↑1pp) | Nova Atlas: 0.1pp à frente de Lula",
       "fortes": [
-        "AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — 1ª VEZ À FRENTE em instituto grande (dentro MoE). Paraná (25-28/Mar): 2T 45.2% vs Lula 44.1%. Atlas PR (02/Abr): +19pp sobre Lula no 1T no Paraná. Disputa 2T é tecnicamente empatada em múltiplos institutos.",
+        "Nova AtlasIntel: Flávio 0.1pp à frente de Lula (dentro MoE) — 2ª confirmação do empate técnico pelo instituto. AtlasIntel (25/Mar): 2T Flávio 47.6% vs Lula 46.6% — 1ª VEZ À FRENTE. Paraná (25-28/Mar): 2T 45.2% vs Lula 44.1%. Atlas PR (02/Abr): +19pp sobre Lula no 1T no Paraná. Disputa 2T é tecnicamente empatada em múltiplos institutos.",
         "Veritá SC (05/Abr): 56.3% vs Lula 19.5% — domínio absoluto no Sul. PL bancada 114+ deputados. STF impeach SUBIU para 17% (↑1pp vs 09h) — narrativa anti-STF voltou a ganhar força. PL Senado 72% (estável). CPI Crime relatório 14/Abr: munição narrativa.",
         "Quaest: Flávio lidera independentes 32% vs Lula 27%. 66% querem candidatos Senado pró-impeachment STF (O Tempo). Novo condiciona candidaturas Senado a voto pró-impeachment. 11 governadores renunciaram — campo eleitoral em movimento. Carlos Bolsonaro pré-candidato SC.",
         "NOVO Datafolha em campo (7-9/Abr): Flávio 33% 1T vs Lula 39% — 6pp atrás no presencial, mas distância menor que em 2022. Resultado completo 11/Abr. Rejeição 55% Quaest — marginalmente menor que Lula (56%)."
       ],
       "fracos": [
-        "Polymarket 37% (estável) — gap de 5pp para Lula mantido. NOVO Datafolha em campo: Flávio 33% 1T vs Lula 39% — 6pp atrás no instituto presencial de maior prestígio. AtlasIntel/CNN (recente): Lula venceria Flávio por ~4pp no 2T — possível reversão da tendência de 25/Mar.",
+        "Polymarket 38% (↑1pp vs 11h) — gap reduzido para 4pp para Lula. NOVO Datafolha em campo: Flávio 33% 1T vs Lula 39% — 6pp atrás no instituto presencial de maior prestígio. AtlasIntel/CNN (recente): Lula venceria Flávio por ~4pp no 2T — divergência com Atlas online mais recente.",
         "Veritá PE (05/Abr): perde para Lula por 12.4pp no Nordeste (30.9% vs 43.3%) — ~30% do eleitorado é ponto fraco estrutural. NOVO Datafolha: campo completo permite análise regional detalhada (resultado 11/Abr).",
         "Datafolha anterior (março, 2T): Lula 46% vs Flávio 43% — se confirmado pelo resultado 11/Abr, reverte vantagem dos institutos online. Quaest 2T: empate 41×41 também não confirma vantagem do Atlas online.",
         "Pai inelegível + investigações familiares. Nunca disputou executivo — zero experiência administrativa. Focus (06/Abr): inflação 4.36% (4ª semana alta) — Selic 12.5% pressiona economicamente. STF impeach 17%: arma narrativa mas também sinaliza instabilidade institucional que afeta economia."
       ],
-      "analise": "ATUALIZAÇÃO 11h 07/ABR: NOVO Datafolha em campo (7-9/Abr): Flávio 33% 1T vs Lula 39% — gap de 6pp nos institutos presenciais. Resultado completo (2T) esperado 11/Abr. Polymarket estável: 37% vs Lula 42% (gap 5pp). STF impeach SUBIU para 17% (↑1pp vs 09h) — narrativa anti-STF voltou a ganhar força no mercado, beneficia discurso Flávio. Inflação Polymarket: faixa 5.00-5.49% lidera — pressão inflacionária acima do esperado desgasta governo, favorece challenger. Atlas 2T (25/Mar) ainda mostra Flávio à frente (47.6% vs 46.6%), mas Datafolha e Quaest não confirmam. CPI Crime relatório 14/Abr = munição narrativa até outubro."
+      "analise": "ATUALIZAÇÃO 15h 07/ABR: Polymarket ↑38% (↑1pp vs 11h) — gap reduzido para 4pp. Nova AtlasIntel: Flávio 0.1pp à frente de Lula (2ª confirmação pelo instituto). Datafolha campo (7-9/Abr): Flávio 33% 1T vs Lula 39% — gap de 6pp nos presenciais. Resultado completo (2T) esperado 11/Abr. STF impeach estável em 17% — 102 pedidos acumulados, narrativa anti-STF sustentada. Inflação Polymarket: faixa 5.00-5.49% lidera — pressão inflacionária desgasta governo, favorece challenger. Congresso recua em CPIs e aposta na delação Vorcaro (JGB, 06/Abr). CPI Crime relatório 14/Abr = munição narrativa até outubro."
     },
     {
       "rank": "3",
@@ -84,10 +84,10 @@
   ],
   "quadroComparativo": [
     { "n": "Lula (PT)", "p": "39% 1T Datafolha campo", "m": "42%", "t": "Estável (vs 09h). Datafolha campo: 39% 1T vs Flávio 33%", "s": "46% 2T Datafolha (março). AtlasIntel/CNN: +4pp 2T (recente)", "pc": "#DC2626", "mc": "" },
-    { "n": "Flávio (PL)", "p": "33% 1T Datafolha campo", "m": "37%", "t": "Estável (vs 09h). Gap -6pp para Lula no Datafolha presencial", "s": "47.6% 2T Atlas (à frente, 25/Mar). Datafolha 2T 43% (março)", "pc": "", "mc": "#0F52BA" },
+    { "n": "Flávio (PL)", "p": "33% 1T Datafolha campo", "m": "38%", "t": "↑1pp vs 11h. Nova Atlas: 0.1pp à frente de Lula. Gap -6pp Datafolha presencial", "s": "47.6% 2T Atlas (à frente, 25/Mar). Datafolha 2T 43% (março)", "pc": "", "mc": "#0F52BA" },
     { "n": "Renan (Missão)", "p": "~3% 1T Datafolha campo", "m": "6.75%", "t": "Estável (3º lugar: 34.5%). Datafolha ~3% confirma subregistro", "s": "N/A", "pc": "", "mc": "" },
     { "n": "Haddad (PT)", "p": "21-38% s/ Lula", "m": "6%", "t": "Estável (consolida plano B PT)", "s": "Perde todos", "pc": "", "mc": "" },
     { "n": "Caiado (PSD)", "p": "~4% 1T Datafolha campo", "m": "2%", "t": "~4% Datafolha campo — acima do esperado. Resultado completo 11/Abr", "s": "Não aplicável", "pc": "", "mc": "" }
   ],
-  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (07/Abr 11h): GRANDE NOVIDADE — NOVO Datafolha EM CAMPO (7-9/Abr, resultado completo 11/Abr): 1T Lula 39% / Flávio 33% / Zema 4-5% / Caiado ~4% / Renan ~3%. Lula confirma liderança nos presenciais com gap de 6pp. Caiado surpreende com ~4% (melhor resultado presencial). Polymarket ESTÁVEL: Lula 42% vs Flávio 37% (gap 5pp). STF impeach SUBIU para 17% (↑1pp vs 09h) — risco institucional voltou a crescer. Inflação Polymarket: faixa 5.00-5.49% ASSUME LIDERANÇA com 39% (antes 4.50-4.99%) — mercado precifica inflação acima de 5% em 2026. Focus/BCB (06/Abr): 4.36% (4ª semana alta). INSTITUTOS 2T: Atlas (25/Mar) Flávio 47.6% vs Lula 46.6% (1ª vez à frente); Paraná (25-28/Mar): Flávio 45.2% vs 44.1%; Quaest (05/Abr): 41×41; Datafolha (março): Lula 46% vs Flávio 43%; AtlasIntel/CNN (recente): Lula +4pp. MASTER/STF: CPI Crime relatório 14/Abr: Master 'lavanderia de lavagem e cooptação de agentes públicos'. Vorcaro: ~40 dias apresentação + ~150 dias homologação. BRB quer R$8.8bi. FGC: rombo R$51,8bi (record histórico). Liquidação extrajudicial Master desde nov/2025. Banco Master: INSS mudou regras durante governo Bolsonaro (2022) para beneficiar Credcesta (Brasil de Fato, 05/Abr). Novo aponta 'inércia' AGU/MJ sobre 'Careca do INSS' (Diário Grande ABC, 06/Abr). SENADO: PL 72% (estável). CAMPO: Lula+Flávio = 79% Polymarket. 3º lugar: Renan 34.5%, Caiado 30%. Haddad 6% (plano B). TSE: 6 meses para eleições."
+  "cruzamento": "CRUZAMENTO INSTITUTOS + POLYMARKET (07/Abr 15h): Datafolha EM CAMPO (7-9/Abr, resultado completo 11/Abr): 1T Lula 39% / Flávio 33% / Zema 4-5% / Caiado ~4% / Renan ~3%. Lula confirma liderança nos presenciais com gap de 6pp. Polymarket: Lula 42% vs Flávio 38% (gap 4pp, Flávio ↑1pp vs 11h). NOVA ATLASINTEL: Flávio 0.1pp à frente de Lula (2ª vez — empate técnico). STF impeach ESTÁVEL em 17% — 102 pedidos acumulados no Senado (+22 vs contagem anterior). Inflação Polymarket: faixa 5.00-5.49% lidera com 39% — mercado precifica inflação acima de 5% em 2026. Focus/BCB (06/Abr): 4.36% (4ª semana alta). REJEIÇÃO LULA: candidatura 66% Quaest (↑4pp vs 62% março) | 50.6% AtlasIntel | 56% Quaest | PoderData 61%. INSTITUTOS 2T: Nova Atlas Flávio 0.1pp à frente; Atlas (25/Mar) 47.6% vs 46.6%; Paraná 45.2% vs 44.1%; Quaest 41×41; Datafolha março Lula 46% vs 43%; Atlas/CNN Lula +4pp. STF: após caso Master +12 novos pedidos (Moraes 6, Toffoli 6). Gilmar equalizou 2/3 — blindagem preventiva. Direita precisa 37 senadores. Congresso recua em CPIs, aposta em delação Vorcaro (JGB, 06/Abr). CAMPO: Lula+Flávio = 79-80% Polymarket. 2º lugar: Flávio 64%, Lula 17%. 3º lugar: Renan 35%, Caiado 30%. Haddad 6% (plano B). TSE: 6 meses para eleições."
 }
