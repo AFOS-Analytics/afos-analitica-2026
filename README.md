@@ -36,110 +36,158 @@ Onde houver eleição, existe sinal. Onde existe sinal, o AFOS Analytics lê.
 
 ## Arquitetura
 
-O projeto foi refatorado seguindo boas práticas de engenharia:
+### Pipeline de Dados (Cron + KV)
+
+```
+ANTES (ISR):
+  Usuário → ISR miss → Polymarket (4s) → resposta
+  ❌ Usuário espera até 4s
+
+DEPOIS (Cron + KV):
+  Background:  Cron (60s) → Polymarket (18 mercados paralelo) → Vercel KV
+  Usuário:     Requisição → KV read (<1ms) → resposta
+  ✅ 10M usuários = mesma carga que 10 usuários
+```
+
+**Cascata de fallback (4 níveis):**
+
+| Nível | Condição | Resposta |
+|-------|----------|----------|
+| 1 | KV com dados frescos | <1ms (99.9% dos casos) |
+| 2 | KV vazio | Fetch direto Polymarket (~4s) |
+| 3 | Polymarket falhou | Dados em memória (último resultado bom) |
+| 4 | Sem nenhum dado | HTTP 503 + Retry-After: 60 |
+
+### Estrutura de Componentes
 
 ```
 app/
-├── types/index.ts              # 19 interfaces TypeScript centralizadas
+├── types/
+│   ├── index.ts                # 19 interfaces TypeScript centralizadas
+│   └── global-map.ts           # Tipos do mapa global + mapeamento ISO3
 ├── hooks/useDashboardData.ts   # Custom hooks de data fetching
 ├── lib/
 │   ├── utils.ts                # Funções utilitárias compartilhadas
-│   └── security.ts             # OWASP security utilities
+│   ├── security.ts             # OWASP security utilities
+│   ├── kv.ts                   # Wrapper Vercel KV com fallback
+│   ├── map-colors.ts           # Tokens visuais do mapa global
+│   ├── mock-elections.ts       # Mock data (fallback offline)
+│   ├── cache/headers.ts        # Cache multi-camada (Vercel CDN + CDN + Browser)
+│   └── polymarket/
+│       ├── client.ts           # API client (retry, timeout, circuit breaker)
+│       ├── country-market-map.ts # Registry slug → ISO3 (14 países, 18 mercados)
+│       ├── bootstrap.ts        # Aggregador: fetch → parse → normalize
+│       └── ws.ts               # WebSocket (para worker dedicado)
 ├── components/
 │   ├── ui.tsx                  # Componentes base (Card, HBar, Stars, SectionTitle)
-│   ├── Header.tsx              # Header com navegação
-│   ├── Footer.tsx              # Footer com disclaimer
-│   ├── ModalAbout.tsx          # Modal "Sobre"
-│   ├── ModalMetas.tsx          # Modal "Metas"
-│   ├── ModalGlobal.tsx         # Modal "Eleições Globais" com mapa SVG
-│   ├── PolymarketSection.tsx   # Odds de mercados de previsão
-│   ├── PollsSection.tsx        # Pesquisas eleitorais + análise criteriosa
-│   ├── CandidatesSection.tsx   # Perfil dos candidatos
-│   ├── NewsSection.tsx         # Notícias ao vivo
-│   ├── SentimentSection.tsx    # Sentimento popular
-│   ├── InssSection.tsx         # Escândalo INSS
-│   ├── BancoMasterSection.tsx  # Banco Master
-│   └── StfSection.tsx          # Credibilidade do STF
-├── api/                        # 6 API routes (hardened)
-├── page.tsx                    # Orquestrador (~80 linhas)
+│   ├── Header.tsx / Footer.tsx
+│   ├── ModalAbout.tsx / ModalMetas.tsx / ModalGlobal.tsx
+│   ├── PolymarketSection.tsx / PollsSection.tsx / CandidatesSection.tsx
+│   ├── NewsSection.tsx / SentimentSection.tsx
+│   ├── InssSection.tsx / BancoMasterSection.tsx / StfSection.tsx
+│   └── global-map/
+│       ├── GlobalElectionMap.tsx   # D3 + TopoJSON + SVG (React.memo)
+│       ├── GlobalMapTooltip.tsx    # Tooltip hover
+│       ├── GlobalMapLegend.tsx     # Legenda de cores
+│       └── GlobalCountryDrawer.tsx # Drawer lateral com candidatos
+├── api/
+│   ├── polymarket/             # Odds presidenciais BR
+│   ├── polls/                  # Pesquisas eleitorais
+│   ├── news/                   # Notícias (Google News + Firecrawl)
+│   ├── analysis-cards/         # Análises dinâmicas
+│   ├── analysis-criteriosa/    # Análise dos 4 primeiros
+│   ├── global-elections/       # Eleições globais (legado)
+│   ├── global-map/             # Mapa global (lê KV → fallback Polymarket)
+│   └── cron/
+│       └── refresh-elections/  # Cron a cada 60s → Polymarket → KV
+├── global/
+│   ├── page.tsx                # Mapa mundial D3 (dark theme)
+│   └── loading.tsx             # Skeleton
+├── page.tsx                    # Dashboard BR (~80 linhas, orquestrador)
 └── layout.tsx                  # Metadata + SEO
-middleware.ts                   # Rate limiting + security headers
+middleware.ts                   # Rate limiting (100 req/min/IP) + headers
+vercel.json                    # Cron schedule
 ```
 
-**page.tsx: de 1242 linhas → 80 linhas** — toda a lógica distribuída em componentes especializados.
+### Cache Multi-Camada
+
+```
+Usuário → Browser (15s) → CDN downstream (30s) → Vercel Edge (60s) → KV (<1ms)
+```
+
+| Camada | TTL | Propósito |
+|--------|-----|-----------|
+| Browser | 15s | Dados razoavelmente frescos para usuário ativo |
+| CDN downstream | 30s + 2min stale | Absorve tráfego multi-região |
+| Vercel Edge | 60s + 2min stale | Protege origem de burst traffic |
+| Vercel KV | 10min TTL | Dados escritos pelo cron, <1ms leitura global |
+
+---
+
+## Mapa Global de Eleições (/global)
+
+Rota dedicada com mapa mundial interativo em dark theme financeiro.
+
+- **D3.js + TopoJSON** — Natural Earth projection, SVG render
+- **14 países monitorados** com dados ao vivo do Polymarket
+- **Hover** — tooltip com candidato líder, probabilidade, volume
+- **Click** — drawer lateral com breakdown completo de candidatos
+- **Heatmap** — escala de cores baseada em probabilidade do líder
+- **Pulsing markers** — indicadores animados para mercados ao vivo
+- **Zoom/Pan** — d3-zoom com limites (1x-8x)
+- **React.memo** — evita re-renders desnecessários do mapa
+- **Dynamic import** — D3 carregado apenas no cliente (ssr: false)
 
 ---
 
 ## Segurança (OWASP)
 
-O projeto implementa medidas de segurança baseadas em **OWASP Top 10 2025 (Web)** e **OWASP API Security Top 10 2023**:
+Implementa **OWASP Top 10 2025 (Web)** e **OWASP API Security Top 10 2023**:
 
-| OWASP | Medida Implementada |
+| OWASP | Medida |
 |---|---|
-| **A02 - Cryptographic Failures** | HSTS com max-age 2 anos, preload |
-| **A03 - Injection** | Sanitização HTML, validação de slugs (regex) |
-| **A05 - Security Misconfiguration** | CSP, X-Frame-Options DENY, poweredByHeader false |
-| **A08 - Data Integrity** | safeJsonParse com fallback, try-catch em todas as APIs |
-| **A10 - SSRF** | Allowlist de hosts para fetch externo |
-| **API4 - Resource Consumption** | Rate limiting 100 req/min/IP via middleware |
-| **API8 - Automated Threats** | safeFetch com timeout 10s + AbortController |
+| **A02** | HSTS max-age 2 anos + preload |
+| **A03** | Sanitização HTML, validação de slugs |
+| **A05** | CSP, X-Frame-Options DENY, poweredByHeader false |
+| **A08** | safeJsonParse, try-catch em todas as APIs |
+| **A10** | Allowlist de hosts para fetch externo |
+| **API4** | Rate limiting 100 req/min/IP (middleware) |
+| **API8** | safeFetch com timeout 10s + AbortController |
 
-**Arquivos de segurança:**
-- `middleware.ts` — Rate limiting por IP, security headers em APIs
-- `app/lib/security.ts` — Sanitização, validação URL, safe fetch, safe JSON parse
-- `next.config.mjs` — CSP, HSTS, X-Content-Type-Options, Permissions-Policy
-
----
-
-## Funcionalidades
-
-### 📊 Mercados de Previsão (Polymarket)
-- Odds ao vivo com dinheiro real
-- Presidência, 2º e 3º lugar no 1º turno
-- STF impeachment, Senado, Inflação 2026
-- Atualizado continuamente
-
-### 📋 Pesquisas Eleitorais — +17 Institutos
-- AtlasIntel/Bloomberg, Datafolha, Quaest/Genial, Paraná Pesquisas, Gerp, Real Time Big Data, Ipec, MDA, PoderData e outros
-- Cenários de 1º e 2º turno
-- Classificação de confiabilidade por instituto
-- Tabela comparativa Pesquisas vs Polymarket
-
-### 🔬 Análise Criteriosa
-- Pontos fortes e fracos dos 4 primeiros colocados
-- Cruzamento de múltiplos institutos vs Polymarket
-
-### 👤 Perfil dos Candidatos
-- 7 pré-candidatos detalhados com posição política, riscos e odds
-
-### 📰 Notícias ao Vivo
-- Múltiplas fontes nacionais em tempo real
-- Google News RSS + Firecrawl AI
-
-### 📡 Sentimento Popular
-- Análise de redes sociais e opinião pública
-- Tendências por espectro político
-
-### 🔴 INSS / 🏦 Banco Master / ⚖️ STF
-- Escândalos ativos com impacto eleitoral
-- Odds de impeachment STF via Polymarket
-
-### 🌍 Global — Eleições pelo Mundo
-- Mapa mundial interativo com eleições monitoradas
-- Cards clicáveis com dados Polymarket de 11+ países
+**Circuit Breaker (Polymarket):**
+```
+CLOSED → 3 falhas → OPEN (skip 5min) → HALF_OPEN (1 probe) → CLOSED
+```
 
 ---
 
-## Acessibilidade
+## Polymarket Integration
 
-- `aria-modal="true"` em todos os modais
-- `aria-label` em todos os botões interativos
-- `focus:outline` para navegação por teclado
-- `role="meter"` em barras de progresso com `aria-valuenow`
-- `aria-hidden` em emojis decorativos
-- Skip-to-content link
-- Roles semânticos: `banner`, `main`, `contentinfo`, `dialog`
-- Contraste de cores validado
+Pipeline completo de integração com a API do Polymarket:
+
+| Componente | Arquivo | Função |
+|------------|---------|--------|
+| **Client** | `lib/polymarket/client.ts` | Fetch com retry 1x, timeout 10s, circuit breaker |
+| **Registry** | `lib/polymarket/country-market-map.ts` | 14 países × 18 mercados, slug → ISO3 |
+| **Aggregador** | `lib/polymarket/bootstrap.ts` | fetch → parse → group → normalize |
+| **WebSocket** | `lib/polymarket/ws.ts` | Real-time com exponential backoff |
+| **Cron** | `api/cron/refresh-elections/` | Cada 60s → KV write |
+| **API** | `api/global-map/` | KV read <1ms, 4 níveis de fallback |
+
+---
+
+## APIs
+
+| Endpoint | Descrição | Fonte | Segurança |
+|---|---|---|---|
+| `/api/global-map` | Eleições globais normalizadas | KV (cron) → Polymarket (fallback) | Rate limit, cache multi-camada |
+| `/api/cron/refresh-elections` | Refresh background | Polymarket → KV | CRON_SECRET auth |
+| `/api/polymarket` | Odds presidenciais BR | Polymarket direta | Slug validation, timeout 10s |
+| `/api/polls` | Pesquisas de +17 institutos | JSON local | File existence check |
+| `/api/news` | Notícias categorizadas | Google News + Firecrawl | URL validation, timeout 10s |
+| `/api/analysis-cards` | Análises dinâmicas | JSON local | File existence check |
+| `/api/analysis-criteriosa` | Análise dos 4 primeiros | JSON local | File existence check |
+| `/api/global-elections` | Eleições globais (legado) | Polymarket | Timeout, safe JSON parse |
 
 ---
 
@@ -147,36 +195,35 @@ O projeto implementa medidas de segurança baseadas em **OWASP Top 10 2025 (Web)
 
 | Tecnologia | Uso |
 |---|---|
-| **Next.js 14** | Framework React, App Router, TypeScript |
-| **Tailwind CSS** | Estilização com cores centralizadas |
-| **Vercel** | Hosting, ISR, Middleware |
-| **Polymarket API** | Odds de mercado de previsão ao vivo |
+| **Next.js 14** | App Router, RSC, TypeScript |
+| **D3.js + TopoJSON** | Mapa global SVG interativo |
+| **Tailwind CSS** | Design system com cores centralizadas |
+| **Vercel** | Hosting, Edge, Middleware, Cron, KV |
+| **Polymarket API** | Mercados de previsão (18 mercados, 14 países) |
 | **Google News RSS** | Notícias de múltiplos veículos |
 | **Firecrawl** | Scraping profundo de portais |
 
 ---
 
-## APIs
+## Acessibilidade
 
-| Endpoint | Descrição | Cache | Segurança |
-|---|---|---|---|
-| `/api/polymarket` | Odds presidenciais + STF + Senado + Inflação | 2h | Slug validation, timeout 10s |
-| `/api/polls` | Pesquisas de +17 institutos | 2h | File existence check |
-| `/api/news` | Notícias categorizadas | 30min | URL validation, timeout 10s |
-| `/api/analysis-cards` | Análises dinâmicas | 2h | File existence check |
-| `/api/analysis-criteriosa` | Análise dos 4 primeiros | 2h | File existence check |
-| `/api/global-elections` | Eleições globais (11+ países) | 2h | Safe JSON parse, timeout 10s |
-
-Todas as APIs protegidas por rate limiting (100 req/min/IP) via middleware.
+- `aria-modal="true"` em modais
+- `aria-label` em botões interativos
+- `focus:outline` para navegação por teclado
+- `role="meter"` em barras com `aria-valuenow`
+- `aria-hidden` em emojis decorativos
+- Skip-to-content link
+- Roles semânticos: `banner`, `main`, `contentinfo`, `dialog`
 
 ---
 
 ## Design
 
-- **Cores centralizadas**: `primary` (#0F52BA), `danger` (#DC2626), `dark` (#1a1a1a), `light-bg` (#F8FAFC)
+- **Dashboard**: Sapphire Blue (#0F52BA) em fundo branco
+- **Mapa Global**: Dark theme financeiro (#07111f)
+- **Cores centralizadas**: `primary`, `danger`, `dark`, `light-bg`, `light-border`
 - **Font**: Inter (Google Fonts)
-- **Responsive**: Mobile-first, Android e iOS
-- **Favicon**: AF/OS em sapphire blue
+- **Responsive**: Mobile-first
 
 ---
 
@@ -191,16 +238,32 @@ Todas as APIs protegidas por rate limiting (100 req/min/IP) via middleware.
 
 ---
 
-## Diferencial
+## Configuração
 
-O AFOS Analytics é uma plataforma única que conecta, no mesmo lugar:
+```bash
+# Clone
+git clone https://github.com/andrefelipe-afos/afos-analitica-2026.git
+cd afos-analitica-2026
 
-- O que as pessoas dizem (pesquisas)
-- O que o mercado acredita (apostas reais)
-- O que está sendo narrado (mídia)
-- O que está sendo sentido (redes sociais)
+# Instalar
+npm install
 
-Isso permite enxergar a eleição por múltiplas perspectivas — e não depender de uma única fonte.
+# Configurar (opcional)
+cp .env.example .env.local
+# Preencher FIRECRAWL_API_KEY se quiser scraping de notícias
+
+# Desenvolvimento
+npm run dev
+
+# Build
+npm run build
+
+# Produção (Vercel)
+# 1. Push para GitHub
+# 2. Conectar repo no Vercel Dashboard
+# 3. Storage → Create KV Database → Connect
+# 4. Deploy automático
+```
 
 ---
 
@@ -212,7 +275,7 @@ Projeto open source. Qualquer pessoa pode estudar, auditar e contribuir.
 
 ## Versões anteriores
 
-- [README-v1.md](README-v1.md) — Versão original do README (pré-refatoração)
+- [README-v1.md](README-v1.md) — Versão original (pré-refatoração)
 
 ---
 
