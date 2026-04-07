@@ -1,73 +1,89 @@
 /**
- * Vercel KV Wrapper
+ * Upstash Redis Wrapper
  *
- * Abstrai o acesso ao Vercel KV com fallback graceful.
- * Se KV não estiver configurado (dev local), opera sem cache distribuído.
+ * Substitui o Vercel KV (descontinuado em dez/2024) por Upstash Redis.
+ * Fallback graceful se Redis não estiver configurado.
  *
- * Para configurar KV em produção:
- * 1. Vercel Dashboard → Storage → Create KV Database
- * 2. Conectar ao projeto → env vars são injetadas automaticamente
+ * Configurar em produção:
+ *   Opção A: Vercel Dashboard → Marketplace → Upstash Redis → Install → Connect
+ *   Opção B: console.upstash.com → Create Database → copiar URL + TOKEN
+ *
+ * Env vars necessárias:
+ *   UPSTASH_REDIS_REST_URL
+ *   UPSTASH_REDIS_REST_TOKEN
  */
 
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 
 const KV_KEYS = {
   GLOBAL_MAP: 'afos:global-map:latest',
   GLOBAL_MAP_TIMESTAMP: 'afos:global-map:timestamp',
-  POLYMARKET_RAW: 'afos:polymarket:raw',
 } as const;
 
 /**
- * Verifica se o KV está configurado (env vars presentes).
+ * Cria instância Redis lazy (só quando as env vars existem).
  */
-function isKvAvailable(): boolean {
-  return !!(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+function getRedis(): Redis | null {
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+
+  return new Redis({ url, token });
 }
 
 /**
- * Gravar dados do mapa global no KV.
+ * Verifica se o Redis está configurado.
+ */
+function isRedisAvailable(): boolean {
+  return !!(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
+}
+
+/**
+ * Gravar dados do mapa global no Redis.
  * TTL: 10 minutos (dados ficam disponíveis mesmo se cron falhar).
  */
 export async function writeGlobalMapData(data: unknown): Promise<boolean> {
-  if (!isKvAvailable()) {
-    console.warn('[kv] KV não configurado — dados não persistidos');
+  const redis = getRedis();
+  if (!redis) {
+    console.warn('[kv] Redis não configurado — dados não persistidos');
     return false;
   }
 
   try {
-    await kv.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: 600 }); // 10min TTL
-    await kv.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: 600 });
-    console.log('[kv] Dados do mapa global gravados com sucesso');
+    const pipeline = redis.pipeline();
+    pipeline.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: 600 }); // 10min TTL
+    pipeline.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: 600 });
+    await pipeline.exec();
+    console.log('[kv] Dados gravados no Redis com sucesso');
     return true;
   } catch (error) {
-    console.error('[kv] Erro ao gravar:', error);
+    console.error('[kv] Erro ao gravar no Redis:', error);
     return false;
   }
 }
 
 /**
- * Ler dados do mapa global do KV.
- * Retorna null se KV não disponível ou dados expirados.
+ * Ler dados do mapa global do Redis.
+ * Retorna null se Redis não disponível ou dados expirados.
  */
 export async function readGlobalMapData<T>(): Promise<{ data: T; timestamp: string } | null> {
-  if (!isKvAvailable()) {
-    return null;
-  }
+  const redis = getRedis();
+  if (!redis) return null;
 
   try {
-    const [rawData, timestamp] = await Promise.all([
-      kv.get<string>(KV_KEYS.GLOBAL_MAP),
-      kv.get<string>(KV_KEYS.GLOBAL_MAP_TIMESTAMP),
-    ]);
+    const pipeline = redis.pipeline();
+    pipeline.get(KV_KEYS.GLOBAL_MAP);
+    pipeline.get(KV_KEYS.GLOBAL_MAP_TIMESTAMP);
+    const [rawData, timestamp] = await pipeline.exec();
 
     if (!rawData || !timestamp) return null;
 
     const data = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
     return { data: data as T, timestamp: timestamp as string };
   } catch (error) {
-    console.error('[kv] Erro ao ler:', error);
+    console.error('[kv] Erro ao ler do Redis:', error);
     return null;
   }
 }
 
-export { KV_KEYS, isKvAvailable };
+export { KV_KEYS, isRedisAvailable as isKvAvailable };
