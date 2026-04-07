@@ -2,104 +2,82 @@
  * API Route: /api/global-map
  *
  * Returns aggregated election data from Polymarket, normalized by country.
- * Implements ISR caching (1 hour) with stale-while-revalidate.
+ * Multi-layer cache: Vercel CDN (5min) → downstream CDN (2min) → browser (1min).
  *
- * Response shape:
- * {
- *   countries: CountryAggregation[],
- *   updatedAt: string (ISO),
- *   fetchedMarkets: number,
- *   totalMarkets: number,
- *   staleData: boolean,
- *   errors: string[],
- * }
+ * Payload is optimized: only fields the frontend needs, no raw market data.
  */
 
 import { NextResponse } from 'next/server';
-import { aggregateElectionData } from '../../lib/polymarket/bootstrap';
+import { aggregateElectionData, type CountryAggregation } from '../../lib/polymarket/bootstrap';
+import { buildCacheHeaders, buildNoCacheHeaders, CACHE_GLOBAL_MAP } from '../../lib/cache/headers';
 
-export const revalidate = 3600; // 1 hour ISR
+export const revalidate = 300; // 5 minutes ISR (Vercel page cache)
 
-// In-memory cache for degraded mode
-let lastSuccessfulResult: Awaited<ReturnType<typeof aggregateElectionData>> | null = null;
+// In-memory fallback for degraded mode
+let lastGoodResult: ReturnType<typeof optimizePayload> | null = null;
+let lastGoodAt: string | null = null;
+
+/**
+ * Strip fields the frontend doesn't need to reduce payload size.
+ * Full market data is available via /api/global-map/[iso3] (future endpoint).
+ */
+function optimizePayload(countries: CountryAggregation[]) {
+  return countries.map(c => ({
+    iso3: c.iso3,
+    n: c.countryName,         // short key to save bytes
+    f: c.flag,
+    d: c.electionDate,
+    t: c.electionType,
+    p: c.probability,         // lead candidate probability (0-100 or null)
+    lc: c.leadCandidate,      // lead candidate name
+    v: c.volumeUsd,           // total volume across all markets
+    s: c.status,              // 'live' | 'upcoming' | 'resolved' | 'no-data'
+    mc: c.markets.length,     // market count for this country
+    // Top 5 candidates from primary market only (saves ~60% payload)
+    cs: c.markets
+      .find(m => m.isPrimary)?.candidates
+      .slice(0, 5)
+      .map(cd => ({ n: cd.name, p: cd.probability, v: cd.volumeUsd })) || [],
+  }));
+}
 
 export async function GET() {
   try {
     const result = await aggregateElectionData();
 
-    // Cache successful results for degraded mode
     if (result.fetchedMarkets > 0) {
-      lastSuccessfulResult = result;
+      lastGoodResult = optimizePayload(result.countries);
+      lastGoodAt = result.updatedAt;
     }
 
-    // If aggregation returned zero markets but we have cached data
-    if (result.fetchedMarkets === 0 && lastSuccessfulResult) {
-      console.warn('[api/global-map] Zero markets fetched — serving cached data');
+    // Zero markets but have cache → serve stale
+    if (result.fetchedMarkets === 0 && lastGoodResult) {
+      console.warn('[api/global-map] Zero markets — serving cached');
       return NextResponse.json(
-        {
-          ...lastSuccessfulResult,
-          staleData: true,
-          _cached: true,
-          _originalUpdatedAt: lastSuccessfulResult.updatedAt,
-          updatedAt: new Date().toISOString(),
-        },
-        {
-          status: 200,
-          headers: {
-            'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
-            'X-Data-Status': 'stale',
-          },
-        }
+        { c: lastGoodResult, at: new Date().toISOString(), stale: true, _cachedFrom: lastGoodAt },
+        { status: 200, headers: buildCacheHeaders(CACHE_GLOBAL_MAP, 'stale') }
       );
     }
 
-    return NextResponse.json(result, {
-      status: 200,
-      headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
-        'X-Data-Status': result.staleData ? 'partial' : 'fresh',
-      },
-    });
-  } catch (error) {
-    console.error('[api/global-map] Unhandled error:', error);
+    const payload = optimizePayload(result.countries);
 
-    // Serve cached data if available
-    if (lastSuccessfulResult) {
-      console.warn('[api/global-map] Serving cached data after error');
-      return NextResponse.json(
-        {
-          ...lastSuccessfulResult,
-          staleData: true,
-          _cached: true,
-          _error: true,
-        },
-        {
-          status: 200,
-          headers: {
-            'Cache-Control': 'public, s-maxage=600, stale-while-revalidate=3600',
-            'X-Data-Status': 'error-fallback',
-          },
-        }
-      );
-    }
-
-    // No cache, no data — return empty structure
     return NextResponse.json(
-      {
-        countries: [],
-        updatedAt: new Date().toISOString(),
-        fetchedMarkets: 0,
-        totalMarkets: 0,
-        staleData: true,
-        errors: ['Aggregation failed and no cached data available'],
-      },
-      {
-        status: 503,
-        headers: {
-          'Retry-After': '300',
-          'X-Data-Status': 'unavailable',
-        },
-      }
+      { c: payload, at: result.updatedAt, stale: result.staleData },
+      { status: 200, headers: buildCacheHeaders(CACHE_GLOBAL_MAP, result.staleData ? 'partial' : 'fresh') }
+    );
+  } catch (error) {
+    console.error('[api/global-map] Error:', error);
+
+    if (lastGoodResult) {
+      return NextResponse.json(
+        { c: lastGoodResult, at: new Date().toISOString(), stale: true, _error: true },
+        { status: 200, headers: buildCacheHeaders(CACHE_GLOBAL_MAP, 'error-fallback') }
+      );
+    }
+
+    return NextResponse.json(
+      { c: [], at: new Date().toISOString(), stale: true, error: 'unavailable' },
+      { status: 503, headers: { ...buildNoCacheHeaders(), 'Retry-After': '300' } }
     );
   }
 }

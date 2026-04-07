@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useRef, useState, useCallback, memo } from 'react';
 import type { CountryMarketSummary, MapTooltipData } from '../../types/global-map';
 import { NUMERIC_TO_ISO3 } from '../../types/global-map';
 import { MAP_TOKENS, getCountryColor, getCountryOpacity } from '../../lib/map-colors';
@@ -12,7 +12,7 @@ interface Props {
   countries: CountryMarketSummary[];
 }
 
-export function GlobalElectionMap({ countries }: Props) {
+export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: Props) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [tooltip, setTooltip] = useState<MapTooltipData | null>(null);
@@ -270,4 +270,4 @@ export function GlobalElectionMap({ countries }: Props) {
       <GlobalCountryDrawer country={selectedCountry} onClose={() => setSelectedCountry(null)} />
     </div>
   );
-}
+});
