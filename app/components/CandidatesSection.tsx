@@ -21,7 +21,7 @@ export function CandidatesSection() {
           <Card key={c.name} className="flex flex-col">
             <div className="flex items-center gap-3 mb-3">
               <div>
-                <h4 className="font-bold text-[#1a1a1a]">{c.name}</h4>
+                <h4 className="font-bold text-dark">{c.name}</h4>
                 <span className="text-xs px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: partyColor[c.party] || '#94A3B8' }}>{c.party}</span>
               </div>
             </div>
@@ -29,11 +29,11 @@ export function CandidatesSection() {
             <div className="grid grid-cols-2 gap-2 mb-3">
               <div className="bg-blue-50 rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-500">Polymarket</div>
-                <div className="font-bold text-[#0F52BA]">{c.polymarket}</div>
+                <div className="font-bold text-primary">{c.polymarket}</div>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-500">Pesquisa</div>
-                <div className="font-bold text-[#1a1a1a]">{c.poll}</div>
+                <div className="font-bold text-dark">{c.poll}</div>
               </div>
             </div>
             <p className="text-xs text-gray-600 mb-2"><strong>Posição:</strong> {c.position}</p>

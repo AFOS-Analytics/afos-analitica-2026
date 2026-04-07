@@ -15,7 +15,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Eleições globais" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-5xl w-full my-4 sm:my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
-        <div className="bg-[#0F52BA] text-white p-4 sm:p-6 rounded-t-2xl flex justify-between items-center">
+        <div className="bg-primary text-white p-4 sm:p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-lg sm:text-xl font-bold">Global — Eleições pelo Mundo</h2>
           <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
         </div>
@@ -23,7 +23,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
 
           {/* WORLD MAP */}
           <div className="bg-[#F0F4FF] rounded-xl p-3 sm:p-5 mb-5">
-            <h3 className="text-sm font-bold text-[#0F52BA] mb-3">Mapa Global — Eleições Monitoradas</h3>
+            <h3 className="text-sm font-bold text-primary mb-3">Mapa Global — Eleições Monitoradas</h3>
             <div className="relative w-full" style={{paddingBottom:'50%'}}>
               <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full">
                 <rect width="1000" height="500" fill="#E8EDFB" rx="8"/>
@@ -56,10 +56,10 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
 
           {/* CALENDAR */}
           <div className="mb-5">
-            <h3 className="text-sm font-bold text-[#0F52BA] mb-3">Calendário Eleitoral Global</h3>
+            <h3 className="text-sm font-bold text-primary mb-3">Calendário Eleitoral Global</h3>
             <div className="flex flex-wrap gap-2">
               {globalData?.elections?.map((e: GlobalElection, i: number) => (
-                <div key={i} className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-[#0F52BA] hover:bg-blue-50 transition-all"
+                <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all"
                   onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
                   <span className="mr-1">{e.flag}</span>
                   <span className="font-semibold">{e.country}</span>
@@ -70,7 +70,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
           </div>
 
           {/* ELECTION CARDS — clicáveis */}
-          <h3 className="text-sm font-bold text-[#0F52BA] mb-3">Eleições com Dados Polymarket</h3>
+          <h3 className="text-sm font-bold text-primary mb-3">Eleições com Dados Polymarket</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {globalData?.elections?.filter((e: GlobalElection) => e.polymarket && e.polymarket.markets?.length > 0)
               .sort((a: GlobalElection, b: GlobalElection) => (b.polymarket?.volume || 0) - (a.polymarket?.volume || 0))
@@ -82,19 +82,19 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
               const colors = ['#0F52BA','#1a6dd4','#3b82f6','#60a5fa','#93c5fd'];
               return (
                 <div key={i}
-                  className={`bg-[#F8FAFC] border rounded-xl p-4 cursor-pointer transition-all duration-300 ${isExpanded ? 'border-[#0F52BA] shadow-lg' : 'border-[#E2E8F0] hover:border-[#0F52BA] hover:shadow-md'}`}
+                  className={`bg-light-bg border rounded-xl p-4 cursor-pointer transition-all duration-300 ${isExpanded ? 'border-primary shadow-lg' : 'border-light-border hover:border-primary hover:shadow-md'}`}
                   onClick={() => setExpandedElection(isExpanded ? null : idx)}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
                       <span className="text-2xl">{e.flag}</span>
                       <div>
-                        <div className="font-bold text-[#1a1a1a] text-sm">{e.country}</div>
+                        <div className="font-bold text-dark text-sm">{e.country}</div>
                         <div className="text-[10px] text-gray-500">{e.type}</div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-[10px] bg-[#0F52BA] text-white px-2 py-0.5 rounded-full">{e.date}</div>
+                      <div className="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full">{e.date}</div>
                       <div className="text-[9px] text-gray-400 mt-1">{volStr}</div>
                     </div>
                   </div>
@@ -107,7 +107,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                       return (
                         <div key={j}>
                           <div className="flex justify-between text-xs mb-0.5">
-                            <span className="text-[#1a1a1a] font-medium truncate mr-2">{nm}</span>
+                            <span className="text-dark font-medium truncate mr-2">{nm}</span>
                             <span className="font-bold flex-shrink-0" style={{color: colors[Math.min(j,4)]}}>{pct}%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -119,7 +119,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                   </div>
 
                   {!isExpanded && e.polymarket!.markets.length > 3 && (
-                    <div className="text-[10px] text-[#0F52BA] text-center mt-2 font-medium">Clique para ver {e.polymarket!.markets.length} candidatos ▼</div>
+                    <div className="text-[10px] text-primary text-center mt-2 font-medium">Clique para ver {e.polymarket!.markets.length} candidatos ▼</div>
                   )}
                   {isExpanded && (
                     <div className="text-[10px] text-gray-400 text-center mt-2">Vol. total: {volStr} | {e.polymarket!.markets.length} candidatos ▲</div>
@@ -137,7 +137,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                 {globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length).map((e: GlobalElection, i: number) => (
                   <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-center">
                     <div className="text-lg">{e.flag}</div>
-                    <div className="font-semibold text-[#1a1a1a]">{e.country}</div>
+                    <div className="font-semibold text-dark">{e.country}</div>
                     <div className="text-gray-400">{e.date} | {e.type}</div>
                   </div>
                 ))}

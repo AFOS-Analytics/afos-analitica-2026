@@ -32,7 +32,7 @@ export function PolymarketSection({ poly }: Props) {
     return (
       <Card className="mb-4">
         <div className="flex flex-wrap justify-between items-center mb-3">
-          <h3 className="font-bold text-lg text-[#1a1a1a]">{title}</h3>
+          <h3 className="font-bold text-lg text-dark">{title}</h3>
           {totalVol > 0 && <span className="text-xs text-gray-500">Volume: ${(totalVol / 1e6).toFixed(2)}M</span>}
         </div>
         {display.map((item, i) => (
@@ -50,16 +50,16 @@ export function PolymarketSection({ poly }: Props) {
 
   return (
     <section>
-      <h2 className="font-bold text-[#1a1a1a] mb-4 flex items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl">
+      <h2 className="font-bold text-dark mb-4 flex items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl">
         <span className="flex-shrink-0">📊</span>
         <span className="hidden sm:inline">Mercados de previsão x institutos de pesquisas – Análises: mídias + redes sociais</span>
         <span className="sm:hidden leading-snug">Mercados de previsão x institutos de pesquisas<br/>Análises: mídias + redes sociais</span>
       </h2>
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4 mb-4 mx-0">
         <div className="mb-2">
-          <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-[#0F52BA] font-bold underline hover:text-[#0a3d8f] text-sm sm:text-base">polymarket.com</a>
+          <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline hover:text-primary-dark text-sm sm:text-base">polymarket.com</a>
         </div>
-        <p className="text-xs sm:text-sm text-[#1a1a1a] leading-relaxed">
+        <p className="text-xs sm:text-sm text-dark leading-relaxed">
           Polymarket é a maior plataforma de mercados de previsão do mundo. Diferente de pesquisas de opinião, permite apostas reais em eventos futuros e reflete onde as pessoas colocam seu dinheiro — historicamente mais preciso. As odds abaixo mostram a probabilidade do mercado.
         </p>
       </div>

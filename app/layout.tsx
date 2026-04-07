@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-const inter = { className: "font-sans" };
+const inter = { className: "font-sans antialiased" };
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.svg?v=2" />
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
       </head>
-      <body className={`${inter.className} bg-white text-[#1a1a1a] antialiased`}>{children}</body>
+      <body className={`${inter.className} bg-white text-dark`}>{children}</body>
     </html>
   );
 }

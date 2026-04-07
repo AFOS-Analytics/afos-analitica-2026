@@ -17,7 +17,7 @@ import { BancoMasterSection } from './components/BancoMasterSection';
 import { StfSection } from './components/StfSection';
 
 export default function Dashboard() {
-  const { poly, polls, news, ac, crit, loading } = useDashboardData();
+  const { poly, polls, news, ac, crit, loading, error } = useDashboardData();
   const { globalData, fetchGlobal } = useGlobalElections();
 
   const [showSobre, setShowSobre] = useState(false);
@@ -31,6 +31,18 @@ export default function Dashboard() {
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4" />
           <p className="text-primary font-semibold">Carregando dados...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="text-center">
+          <p className="text-danger font-semibold text-lg mb-2">Erro ao carregar dados</p>
+          <p className="text-gray-500 text-sm">Tente recarregar a página.</p>
+          <button onClick={() => window.location.reload()} className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">Recarregar</button>
         </div>
       </div>
     );

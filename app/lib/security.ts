@@ -38,28 +38,7 @@ export function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug) && slug.length <= 100;
 }
 
-/**
- * Rate limit tracker (in-memory, per-endpoint)
- * OWASP API4:2023 - Unrestricted Resource Consumption
- */
-const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
-
-export function checkRateLimit(key: string, maxRequests: number = 60, windowMs: number = 60000): boolean {
-  const now = Date.now();
-  const entry = rateLimitMap.get(key);
-
-  if (!entry || now > entry.resetAt) {
-    rateLimitMap.set(key, { count: 1, resetAt: now + windowMs });
-    return true;
-  }
-
-  if (entry.count >= maxRequests) {
-    return false;
-  }
-
-  entry.count++;
-  return true;
-}
+// Rate limiting is handled by middleware.ts (100 req/min/IP)
 
 /**
  * Validate environment variables at startup (OWASP A05:2021 - Security Misconfiguration)
