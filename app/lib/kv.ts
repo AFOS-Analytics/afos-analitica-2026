@@ -8,9 +8,9 @@
  *   Opção A: Vercel Dashboard → Marketplace → Upstash Redis → Install → Connect
  *   Opção B: console.upstash.com → Create Database → copiar URL + TOKEN
  *
- * Env vars necessárias:
- *   UPSTASH_REDIS_REST_URL
- *   UPSTASH_REDIS_REST_TOKEN
+ * Env vars (injetadas automaticamente pelo Vercel ao conectar Upstash):
+ *   KV_REST_API_URL
+ *   KV_REST_API_TOKEN
  */
 
 import { Redis } from '@upstash/redis';
@@ -24,8 +24,9 @@ const KV_KEYS = {
  * Cria instância Redis lazy (só quando as env vars existem).
  */
 function getRedis(): Redis | null {
-  const url = process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  // Tenta os dois formatos de env var (Vercel Marketplace e manual)
+  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
   if (!url || !token) return null;
 
   return new Redis({ url, token });
@@ -35,7 +36,10 @@ function getRedis(): Redis | null {
  * Verifica se o Redis está configurado.
  */
 function isRedisAvailable(): boolean {
-  return !!(process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN);
+  return !!(
+    (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) ||
+    (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN)
+  );
 }
 
 /**
