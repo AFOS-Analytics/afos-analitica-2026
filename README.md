@@ -130,16 +130,38 @@ Usuário → Browser (60s) → Vercel Edge (5min) → Redis (<1ms)
 
 Disponível no botão **"Global"** do header e como rota dedicada `/global`.
 
+O módulo Global transforma o calendário mundial de eleições em inteligência acionável em tempo real — criando um termômetro global de risco político e oportunidade econômica.
+
+### Funcionalidades do mapa
+
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
 - **14 países monitorados** com dados ao vivo do Polymarket
 - **Hover** — tooltip com candidato líder, probabilidade, volume
 - **Click** — drawer lateral com breakdown completo de candidatos
-- **Heatmap** — escala de cores baseada em probabilidade do líder
 - **Pulsing markers** — indicadores animados para mercados ao vivo
 - **Zoom/Pan** — d3-zoom com limites (1x-8x)
 - **React.memo** — evita re-renders desnecessários
 - **Dynamic import** — D3 carregado apenas no cliente (ssr: false)
 - **Textos em PT-BR** — tooltip, legenda, drawer, loading
+
+### Legenda de cores
+
+As cores representam o grau de definição do calendário eleitoral:
+
+| Cor | Significado |
+|-----|-------------|
+| Tons mais claros com interações | Eleições previstas para este ano |
+| Tons mais escuros com interações | Eleições previstas para os próximos 3 anos |
+| Tons mais escuros sem interações | Eleições sem data definida, horizonte mais distante |
+
+### Conteúdo explicativo
+
+O modal Global inclui seções explicativas completas:
+
+- **Como funciona** — cores, interações, dados acessíveis por clique
+- **Calendário global** — acompanhamento contínuo de eleições mundiais
+- **Finalidade estratégica** — antecipar mercado, identificar riscos, decisões baseadas em dados
+- **Tradução executiva** — política gera volatilidade, volatilidade gera oportunidade
 
 ---
 
