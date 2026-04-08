@@ -131,15 +131,15 @@ export function EmailPopup() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
         onClick={e => e.stopPropagation()}
-        style={{ animation: 'afosSlideUp 0.3s ease-out' }}
+        style={{ background: 'linear-gradient(135deg, #e8effc 0%, #f0f4ff 100%)', animation: 'afosSlideUp 0.3s ease-out' }}
       >
         <div className="h-1 bg-gradient-to-r from-primary to-blue-400" />
 
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-primary/50 hover:text-primary hover:bg-primary/10 transition-colors"
           aria-label="Fechar popup"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -175,7 +175,7 @@ export function EmailPopup() {
                   placeholder="Seu melhor e-mail"
                   autoComplete="email"
                   disabled={status === 'loading'}
-                  className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-gray-50 outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-gray-200 focus:border-primary"
+                  className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
                   onKeyDown={e => { if (e.key === 'Enter' && status !== 'loading') handleSubmit(); }}
                 />
               </div>
