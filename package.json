@@ -16,6 +16,7 @@
     "next": "14.2.35",
     "react": "^18",
     "react-dom": "^18",
+    "resend": "^6.10.0",
     "topojson-client": "^3.1.0"
   },
   "devDependencies": {

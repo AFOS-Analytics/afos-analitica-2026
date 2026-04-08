@@ -15,6 +15,7 @@ import { SentimentSection } from './components/SentimentSection';
 import { InssSection } from './components/InssSection';
 import { BancoMasterSection } from './components/BancoMasterSection';
 import { StfSection } from './components/StfSection';
+import { EmailPopup } from './components/EmailPopup';
 
 export default function Dashboard() {
   const { poly, polls, news, ac, crit, loading, error } = useDashboardData();
@@ -84,6 +85,7 @@ export default function Dashboard() {
       </main>
 
       <Footer />
+      <EmailPopup />
     </div>
   );
 }
