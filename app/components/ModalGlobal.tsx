@@ -1,5 +1,25 @@
 'use client';
+
+import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
 import type { GlobalData, GlobalElection } from '../types';
+import type { CountryMarketSummary } from '../types/global-map';
+
+// D3 map carregado dinamicamente (nunca no server bundle)
+const GlobalElectionMap = dynamic(
+  () => import('./global-map/GlobalElectionMap').then(mod => mod.GlobalElectionMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full flex items-center justify-center py-20 bg-[#07111f] rounded-xl">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-3" />
+          <p className="text-sm text-gray-400">Carregando mapa...</p>
+        </div>
+      </div>
+    ),
+  }
+);
 
 interface ModalGlobalProps {
   show: boolean;
@@ -9,7 +29,73 @@ interface ModalGlobalProps {
   setExpandedElection: (idx: number | null) => void;
 }
 
+/**
+ * Converte os dados do /api/global-elections (formato antigo)
+ * para CountryMarketSummary[] (formato do mapa D3).
+ */
+function convertToMapData(elections: GlobalElection[]): CountryMarketSummary[] {
+  return elections.map(e => {
+    const hasData = e.polymarket && e.polymarket.markets?.length > 0;
+    const markets = e.polymarket?.markets || [];
+    const topMarket = markets.length > 0 ? markets[0] : null;
+
+    return {
+      iso3: e.country.slice(0, 3).toUpperCase(), // Fallback — será sobrescrito se possível
+      countryName: e.country,
+      flag: e.flag,
+      probability: topMarket ? Math.round(topMarket.yesPrice * 1000) / 10 : 0,
+      volumeUsd: e.polymarket?.volume || 0,
+      status: hasData ? 'live' as const : 'upcoming' as const,
+      electionDate: e.date,
+      electionType: e.type,
+      leadCandidate: topMarket
+        ? (topMarket.question || '').replace(/^Will\s+/i, '').replace(/\s+(win|finish|be).*/i, '').trim()
+        : '—',
+      candidates: markets.slice(0, 5).map(m => ({
+        name: (m.question || '').replace(/^Will\s+/i, '').replace(/\s+(win|finish|be).*/i, '').trim(),
+        probability: Math.round(m.yesPrice * 1000) / 10,
+        volumeUsd: m.volume || 0,
+      })),
+    };
+  });
+}
+
+// Mapeamento nome do país → ISO3 para o mapa D3
+const COUNTRY_TO_ISO3: Record<string, string> = {
+  'Brasil': 'BRA', 'Brazil': 'BRA',
+  'EUA': 'USA', 'Estados Unidos': 'USA', 'United States': 'USA',
+  'França': 'FRA', 'France': 'FRA',
+  'Alemanha': 'DEU', 'Germany': 'DEU',
+  'Reino Unido': 'GBR', 'United Kingdom': 'GBR',
+  'Canadá': 'CAN', 'Canada': 'CAN',
+  'Austrália': 'AUS', 'Australia': 'AUS',
+  'Coreia do Sul': 'KOR', 'South Korea': 'KOR',
+  'Filipinas': 'PHL', 'Philippines': 'PHL',
+  'Chile': 'CHL',
+  'Colômbia': 'COL', 'Colombia': 'COL',
+  'Índia': 'IND', 'India': 'IND',
+  'México': 'MEX', 'Mexico': 'MEX',
+  'Nigéria': 'NGA', 'Nigeria': 'NGA',
+  'Argentina': 'ARG',
+  'Itália': 'ITA', 'Italy': 'ITA',
+  'Japão': 'JPN', 'Japan': 'JPN',
+};
+
 export function ModalGlobal({ show, onClose, globalData, expandedElection, setExpandedElection }: ModalGlobalProps) {
+  const [mapData, setMapData] = useState<CountryMarketSummary[]>([]);
+
+  useEffect(() => {
+    if (globalData?.elections) {
+      const converted = convertToMapData(globalData.elections);
+      // Resolver ISO3 pelo nome do país
+      const resolved = converted.map(c => ({
+        ...c,
+        iso3: COUNTRY_TO_ISO3[c.countryName] || c.iso3,
+      }));
+      setMapData(resolved);
+    }
+  }, [globalData]);
+
   if (!show) return null;
 
   return (
@@ -21,55 +107,33 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
         </div>
         <div className="p-3 sm:p-6 max-h-[80vh] overflow-y-auto">
 
-          {/* WORLD MAP */}
-          <div className="bg-[#F0F4FF] rounded-xl p-3 sm:p-5 mb-5">
-            <h3 className="text-sm font-bold text-primary mb-3">Mapa Global — Eleições Monitoradas</h3>
-            <div className="relative w-full" style={{paddingBottom:'50%'}}>
-              <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full">
-                <rect width="1000" height="500" fill="#E8EDFB" rx="8"/>
-                <ellipse cx="250" cy="200" rx="120" ry="180" fill="#D4DDFB" opacity="0.5"/>
-                <ellipse cx="500" cy="220" rx="80" ry="200" fill="#D4DDFB" opacity="0.5"/>
-                <ellipse cx="720" cy="200" rx="150" ry="160" fill="#D4DDFB" opacity="0.5"/>
-                <ellipse cx="820" cy="370" rx="60" ry="40" fill="#D4DDFB" opacity="0.5"/>
-                {globalData?.elections?.map((e: GlobalElection, i: number) => {
-                  const x = ((e.lng + 180) / 360) * 1000;
-                  const y = ((90 - e.lat) / 180) * 500;
-                  const hasData = e.polymarket && e.polymarket.markets?.length > 0;
-                  return (
-                    <g key={i} className="cursor-pointer" onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
-                      <circle cx={x} cy={y} r={hasData ? 8 : 5} fill={hasData ? '#0F52BA' : '#94A3B8'} stroke="white" strokeWidth="2"/>
-                      {hasData && <circle cx={x} cy={y} r={14} fill="none" stroke="#0F52BA" strokeWidth="1" opacity="0.4">
-                        <animate attributeName="r" from="8" to="18" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" from="0.5" to="0" dur="2s" repeatCount="indefinite"/>
-                      </circle>}
-                      <foreignObject x={x - 12} y={y - 28} width="24" height="24">
-                        <span style={{fontSize:'16px'}}>{e.flag}</span>
-                      </foreignObject>
-                      <text x={x} y={y - 14} textAnchor="middle" fill="#0F52BA" fontSize="7" fontWeight="700">{e.country.slice(0,3).toUpperCase()}</text>
-                    </g>
-                  );
-                })}
-                {!globalData && <text x="500" y="250" textAnchor="middle" fill="#94A3B8" fontSize="14">Carregando...</text>}
-              </svg>
-            </div>
+          {/* MAPA D3 */}
+          <div className="rounded-xl overflow-hidden mb-5" style={{ height: '400px', background: '#07111f' }}>
+            {mapData.length > 0 ? (
+              <GlobalElectionMap countries={mapData} />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <p className="text-gray-400 text-sm">Carregando dados do mapa...</p>
+              </div>
+            )}
           </div>
 
-          {/* CALENDAR */}
+          {/* CALENDÁRIO COM BANDEIRAS */}
           <div className="mb-5">
             <h3 className="text-sm font-bold text-primary mb-3">Calendário Eleitoral Global</h3>
             <div className="flex flex-wrap gap-2">
               {globalData?.elections?.map((e: GlobalElection, i: number) => (
-                <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all"
+                <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
                   onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
-                  <span className="mr-1">{e.flag}</span>
+                  <span className="text-base">{e.flag}</span>
                   <span className="font-semibold">{e.country}</span>
-                  <span className="text-gray-400 ml-1">— {e.date}</span>
+                  <span className="text-gray-400">— {e.date}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ELECTION CARDS — clicáveis */}
+          {/* ELECTION CARDS COM DADOS POLYMARKET */}
           <h3 className="text-sm font-bold text-primary mb-3">Eleições com Dados Polymarket</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {globalData?.elections?.filter((e: GlobalElection) => e.polymarket && e.polymarket.markets?.length > 0)
@@ -99,7 +163,6 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                     </div>
                   </div>
 
-                  {/* Top 3 ou todos (expandido) */}
                   <div className="space-y-1.5">
                     {e.polymarket!.markets.slice(0, isExpanded ? undefined : 3).map((m: { question: string; yesPrice: number; volume: number }, j: number) => {
                       const nm = (m.question||'').replace(/^Will\s+/i,'').replace(/\s+(win|finish|be).*/i,'').trim();
@@ -129,7 +192,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             })}
           </div>
 
-          {/* Elections without data */}
+          {/* ELEIÇÕES SEM DADOS */}
           {(globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length)?.length ?? 0) > 0 && (
             <div className="mb-4">
               <h3 className="text-xs font-bold text-gray-400 mb-2">Próximas Eleições — Aguardando Dados</h3>
@@ -145,7 +208,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             </div>
           )}
 
-          <p className="text-[10px] text-gray-400 text-center">Dados: Polymarket | Atualizado a cada 2h</p>
+          <p className="text-[10px] text-gray-400 text-center">Dados: Polymarket | Volumes e odds ao vivo</p>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { MAP_TOKENS } from '../../lib/map-colors';
 
 export function GlobalMapLegend() {
   const stops = [
-    { label: 'No data', color: '#121f36' },
+    { label: 'Sem dados', color: '#121f36' },
     { label: '< 30%', color: '#132044' },
     { label: '30-50%', color: '#1e3a7a' },
     { label: '50-70%', color: '#2150a8' },
@@ -22,7 +22,7 @@ export function GlobalMapLegend() {
       }}
     >
       <div className="text-xs font-semibold mb-2" style={{ color: MAP_TOKENS.textMuted }}>
-        Lead candidate probability
+        Probabilidade do candidato líder
       </div>
       <div className="flex items-center gap-1">
         {stops.map(s => (

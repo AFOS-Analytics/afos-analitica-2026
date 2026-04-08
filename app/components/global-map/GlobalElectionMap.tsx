@@ -248,7 +248,7 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
         <div className="absolute inset-0 flex items-center justify-center" style={{ background: MAP_TOKENS.bg }}>
           <div className="text-center">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 mx-auto mb-3" style={{ borderColor: MAP_TOKENS.primary }} />
-            <p className="text-sm" style={{ color: MAP_TOKENS.textMuted }}>Loading map...</p>
+            <p className="text-sm" style={{ color: MAP_TOKENS.textMuted }}>Carregando mapa...</p>
           </div>
         </div>
       )}

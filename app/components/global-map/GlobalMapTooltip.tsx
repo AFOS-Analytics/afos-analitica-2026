@@ -41,11 +41,11 @@ export function GlobalMapTooltip({ data }: Props) {
         {isLive ? (
           <>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Leader</span>
+              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Líder</span>
               <span className="font-bold text-sm" style={{ color: MAP_TOKENS.primarySoft }}>{c.leadCandidate}</span>
             </div>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Probability</span>
+              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Probabilidade</span>
               <span className="font-bold text-sm" style={{ color: MAP_TOKENS.text }}>{c.probability}%</span>
             </div>
             <div className="flex items-center justify-between">
@@ -55,7 +55,7 @@ export function GlobalMapTooltip({ data }: Props) {
           </>
         ) : (
           <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-            {c.status === 'upcoming' ? 'Upcoming — no market data yet' : 'Resolved'}
+            {c.status === 'upcoming' ? 'Em breve — sem dados de mercado' : 'Encerrada'}
           </div>
         )}
       </div>

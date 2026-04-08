@@ -63,7 +63,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
               }}
             >
               {c.status === 'live' && <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />}
-              {c.status === 'live' ? 'Live Market' : c.status === 'upcoming' ? 'Upcoming' : 'Resolved'}
+              {c.status === 'live' ? 'Mercado ao Vivo' : c.status === 'upcoming' ? 'Em Breve' : 'Encerrada'}
             </span>
             {c.volumeUsd > 0 && (
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
@@ -76,7 +76,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
           {isLive ? (
             <div className="space-y-3">
               <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: MAP_TOKENS.textMuted }}>
-                Candidates
+                Candidatos
               </h3>
               {c.candidates.map((cd, i) => (
                 <div key={cd.name}>
@@ -122,10 +122,10 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
               style={{ background: MAP_TOKENS.card, border: `1px solid ${MAP_TOKENS.border}` }}
             >
               <p className="text-sm" style={{ color: MAP_TOKENS.textMuted }}>
-                No market data available yet.
+                Sem dados de mercado disponíveis.
               </p>
               <p className="text-xs mt-1" style={{ color: MAP_TOKENS.textMuted }}>
-                Election scheduled for {c.electionDate}
+                Eleição prevista para {c.electionDate}
               </p>
             </div>
           )}
@@ -133,7 +133,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
           {/* Source */}
           <div className="pt-4" style={{ borderTop: `1px solid ${MAP_TOKENS.border}` }}>
             <p className="text-[10px]" style={{ color: MAP_TOKENS.textMuted }}>
-              Data: Polymarket (prediction markets with real money) — Updated continuously
+              Dados: Polymarket (mercados de previsão com dinheiro real) — Atualizado continuamente
             </p>
           </div>
         </div>
