@@ -1,95 +1,62 @@
 /**
- * Resend Service — Preparado para uso futuro
+ * Resend Service
  *
- * Este módulo abstrai o envio de emails via Resend.
- * Atualmente apenas estrutura; os envios serão ativados
- * quando RESEND_API_KEY estiver configurada.
+ * Env var: RESEND_API_KEY
  *
- * Env var necessária: RESEND_API_KEY
- * Obtenha em: https://resend.com
+ * IMPORTANTE: No free tier do Resend, sem domínio verificado,
+ * use from: 'onboarding@resend.dev'. Ao verificar seu domínio
+ * no dashboard do Resend, altere para seu domínio real.
  */
 
 import { Resend } from 'resend';
 
-let resendInstance: Resend | null = null;
-
 function getResend(): Resend | null {
   if (!process.env.RESEND_API_KEY) return null;
-  if (!resendInstance) {
-    resendInstance = new Resend(process.env.RESEND_API_KEY);
-  }
-  return resendInstance;
-}
-
-export function isResendAvailable(): boolean {
-  return !!process.env.RESEND_API_KEY;
+  return new Resend(process.env.RESEND_API_KEY);
 }
 
 /**
- * Enviar email de boas-vindas ao novo subscriber.
- * Só envia se Resend estiver configurado.
+ * Enviar email de boas-vindas.
+ * Retorna true se enviado, false se falhou ou Resend indisponível.
  */
 export async function sendWelcomeEmail(to: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) {
-    console.log('[resend] API key não configurada — email de boas-vindas não enviado');
+    console.warn('[resend] API key não configurada — welcome email não enviado');
     return false;
   }
 
   try {
-    await resend.emails.send({
-      from: 'AFOS Analytics <noreply@afos-analytics.com>',
+    const { error } = await resend.emails.send({
+      from: 'AFOS Analytics <onboarding@resend.dev>',
       to,
       subject: 'Bem-vindo ao AFOS Analytics',
       html: `
-        <div style="font-family: Inter, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #0F52BA;">AFOS Analytics</h2>
-          <p>Obrigado por se cadastrar!</p>
-          <p>Você receberá:</p>
-          <ul>
+        <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 0;">
+          <h2 style="color: #0F52BA; margin-bottom: 16px;">AFOS Analytics</h2>
+          <p style="color: #333; line-height: 1.6;">Obrigado por se cadastrar. Você receberá:</p>
+          <ul style="color: #333; line-height: 1.8;">
             <li>Alertas de mudanças significativas nas odds</li>
             <li>Resumo diário das eleições</li>
             <li>Notificações de eventos críticos</li>
           </ul>
-          <p style="color: #666; font-size: 12px;">
-            Para cancelar, acesse o link de descadastro no rodapé de qualquer email.
+          <p style="color: #999; font-size: 12px; margin-top: 24px; border-top: 1px solid #eee; padding-top: 16px;">
+            AFOS Analytics — Plataforma Global de Inteligência Eleitoral<br>
+            Para cancelar o recebimento, responda este email com "cancelar".
           </p>
         </div>
       `,
     });
-    console.log(`[resend] Welcome email enviado para ${to.slice(0, 3)}***`);
-    return true;
-  } catch (error) {
-    console.error('[resend] Erro ao enviar welcome email:', error);
-    return false;
-  }
-}
 
-/**
- * Enviar alerta de eleição (uso futuro).
- */
-export async function sendElectionAlert(
-  to: string[],
-  subject: string,
-  htmlContent: string
-): Promise<boolean> {
-  const resend = getResend();
-  if (!resend) return false;
-
-  try {
-    // Resend suporta batch sending
-    for (const email of to) {
-      await resend.emails.send({
-        from: 'AFOS Analytics <alertas@afos-analytics.com>',
-        to: email,
-        subject,
-        html: htmlContent,
-      });
+    if (error) {
+      console.error('[resend] Erro ao enviar welcome:', error.message);
+      return false;
     }
-    console.log(`[resend] Alerta enviado para ${to.length} subscribers`);
+
+    console.log(`[resend] Welcome email enviado: ${to.slice(0, 3)}***`);
     return true;
   } catch (error) {
-    console.error('[resend] Erro ao enviar alerta:', error);
+    console.error('[resend] Falha no envio:', error);
     return false;
   }
 }

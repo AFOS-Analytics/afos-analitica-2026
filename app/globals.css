@@ -38,3 +38,8 @@ img, video, svg {
     text-wrap: balance;
   }
 }
+
+@keyframes afosSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

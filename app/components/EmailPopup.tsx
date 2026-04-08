@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-const STORAGE_KEYS = {
-  SUBSCRIBED: 'afos_email_popup_subscribed',
-  DISMISSED_SESSION: 'afos_email_popup_dismissed_session',
+const STORAGE = {
+  SUBSCRIBED: 'afos_popup_subscribed',
+  DISMISSED_UNTIL: 'afos_popup_dismissed_until',
 } as const;
 
 const DELAY_MS = 30_000;
-const MIN_SCROLL_PX = 200;
+const DISMISS_TTL_MS = 24 * 60 * 60 * 1000; // 24 horas
 
 function isEmailValid(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
@@ -17,65 +17,64 @@ function isEmailValid(email: string): boolean {
 export function EmailPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(true);
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const hasScrolled = useRef(false);
   const timerFired = useRef(false);
   const submitting = useRef(false);
 
-  // Verificar se deve mostrar o popup
   const shouldShow = useCallback((): boolean => {
     if (typeof window === 'undefined') return false;
-    // Já se inscreveu permanentemente
-    if (localStorage.getItem(STORAGE_KEYS.SUBSCRIBED) === 'true') return false;
-    // Já dispensou nesta sessão
-    if (sessionStorage.getItem(STORAGE_KEYS.DISMISSED_SESSION) === 'true') return false;
+    if (localStorage.getItem(STORAGE.SUBSCRIBED) === 'true') return false;
+    const dismissedUntil = localStorage.getItem(STORAGE.DISMISSED_UNTIL);
+    if (dismissedUntil && Date.now() < Number(dismissedUntil)) return false;
     return true;
   }, []);
 
   useEffect(() => {
     if (!shouldShow()) return;
 
-    // Detectar scroll (engajamento)
+    // Scroll: 30% da viewport height (funciona em mobile e desktop)
+    const scrollThreshold = Math.max(window.innerHeight * 0.3, 100);
+
     const onScroll = () => {
-      if (window.scrollY >= MIN_SCROLL_PX) {
+      if (window.scrollY >= scrollThreshold) {
         hasScrolled.current = true;
+        // Se timer já disparou, mostrar imediatamente
+        if (timerFired.current && shouldShow()) setVisible(true);
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Timer de 30 segundos
     const timer = setTimeout(() => {
       timerFired.current = true;
-      if (hasScrolled.current && shouldShow()) {
-        setVisible(true);
-      }
+      if (hasScrolled.current && shouldShow()) setVisible(true);
     }, DELAY_MS);
-
-    // Verificação extra: se o scroll acontecer depois do timer
-    const scrollCheck = setInterval(() => {
-      if (timerFired.current && hasScrolled.current && shouldShow() && !visible) {
-        setVisible(true);
-      }
-    }, 2000);
 
     return () => {
       window.removeEventListener('scroll', onScroll);
       clearTimeout(timer);
-      clearInterval(scrollCheck);
     };
-  }, [shouldShow, visible]);
+  }, [shouldShow]);
 
   const handleDismiss = useCallback(() => {
     setVisible(false);
-    sessionStorage.setItem(STORAGE_KEYS.DISMISSED_SESSION, 'true');
+    // localStorage com TTL de 24h (funciona entre abas)
+    localStorage.setItem(STORAGE.DISMISSED_UNTIL, String(Date.now() + DISMISS_TTL_MS));
   }, []);
 
   const handleSubmit = useCallback(async () => {
     if (submitting.current) return;
+
     if (!isEmailValid(email)) {
       setErrorMsg('Insira um email válido.');
+      setStatus('error');
+      return;
+    }
+
+    if (!consent) {
+      setErrorMsg('Marque a caixa de consentimento para continuar.');
       setStatus('error');
       return;
     }
@@ -105,9 +104,7 @@ export function EmailPopup() {
       }
 
       setStatus('success');
-      localStorage.setItem(STORAGE_KEYS.SUBSCRIBED, 'true');
-
-      // Fechar popup após 2.5s de sucesso
+      localStorage.setItem(STORAGE.SUBSCRIBED, 'true');
       setTimeout(() => setVisible(false), 2500);
     } catch {
       setErrorMsg('Erro de conexão. Tente novamente.');
@@ -121,23 +118,19 @@ export function EmailPopup() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" onClick={handleDismiss}>
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
-      {/* Popup */}
       <div
-        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl animate-in"
+        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
         onClick={e => e.stopPropagation()}
         style={{
           background: 'linear-gradient(135deg, #0b1728 0%, #0f1f3a 100%)',
           border: '1px solid rgba(148,163,184,0.16)',
-          animation: 'slideUp 0.3s ease-out',
+          animation: 'afosSlideUp 0.3s ease-out',
         }}
       >
-        {/* Barra azul decorativa */}
         <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400" />
 
-        {/* Botão fechar */}
         <button
           onClick={handleDismiss}
           className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
@@ -150,7 +143,6 @@ export function EmailPopup() {
 
         <div className="px-6 py-6 sm:px-8 sm:py-7">
           {status === 'success' ? (
-            /* Estado de sucesso */
             <div className="text-center py-4">
               <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -161,7 +153,6 @@ export function EmailPopup() {
               <p className="text-gray-400 text-sm mt-1">Você receberá alertas e resumos do AFOS Analytics.</p>
             </div>
           ) : (
-            /* Formulário */
             <>
               <h3 className="text-white font-bold text-lg leading-snug mb-1">
                 Receba alertas do AFOS Analytics
@@ -170,7 +161,6 @@ export function EmailPopup() {
                 Mudanças nas odds, resumo diário, eventos críticos e novidades — direto no seu email.
               </p>
 
-              {/* Input */}
               <div className="mb-3">
                 <input
                   type="email"
@@ -188,12 +178,11 @@ export function EmailPopup() {
                 />
               </div>
 
-              {/* Checkbox de consentimento */}
               <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={consent}
-                  onChange={e => setConsent(e.target.checked)}
+                  onChange={e => { setConsent(e.target.checked); if (status === 'error') setStatus('idle'); }}
                   className="mt-0.5 w-4 h-4 rounded border-gray-600 accent-blue-500 flex-shrink-0"
                 />
                 <span className="text-xs text-gray-400 leading-relaxed">
@@ -201,15 +190,13 @@ export function EmailPopup() {
                 </span>
               </label>
 
-              {/* Erro */}
               {status === 'error' && errorMsg && (
                 <p className="text-red-400 text-xs mb-3">{errorMsg}</p>
               )}
 
-              {/* Botão */}
               <button
                 onClick={handleSubmit}
-                disabled={status === 'loading' || !email.trim()}
+                disabled={status === 'loading' || !email.trim() || !consent}
                 className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
                 style={{
                   background: status === 'loading'
@@ -235,19 +222,6 @@ export function EmailPopup() {
           )}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </div>
   );
 }

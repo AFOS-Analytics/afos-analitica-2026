@@ -45,8 +45,9 @@ export async function POST(request: Request) {
 
     // Enviar welcome email apenas para novos subscribers
     if (result.isNew) {
-      // Fire-and-forget: não bloquear resposta
-      sendWelcomeEmail(email).catch(() => {});
+      sendWelcomeEmail(email).catch(err => {
+        console.error('[api/subscribe] Welcome email falhou:', err);
+      });
     }
 
     return NextResponse.json(
