@@ -208,7 +208,67 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             </div>
           )}
 
-          <p className="text-[10px] text-gray-400 text-center">Dados: Polymarket | Volumes e odds ao vivo</p>
+          <p className="text-[10px] text-gray-400 text-center mb-6">Dados: Polymarket | Volumes e odds ao vivo</p>
+
+          {/* TEXTO EXPLICATIVO */}
+          <div className="space-y-5 text-sm text-dark leading-relaxed border-t border-light-border pt-6">
+
+            <div>
+              <p className="mb-3">O modulo <strong className="text-primary">Global</strong> do AFOS Analytics transforma o calendario mundial de eleicoes em <strong>inteligencia acionavel em tempo real</strong>.</p>
+              <p className="mb-3">O mapa interativo permite visualizar, pais por pais, onde estao ocorrendo eleicoes, quais estao proximas e quais ja foram resolvidas — criando um <strong>termometro global de risco politico e oportunidade economica</strong>.</p>
+              <p>Ao interagir com o mapa, voce acessa dados consolidados que combinam:</p>
+              <ul className="mt-2 space-y-1 text-gray-600 ml-4">
+                <li>• mercados preditivos (como Polymarket)</li>
+                <li>• calendario eleitoral oficial</li>
+                <li>• leitura de tendencias politicas</li>
+              </ul>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <h4 className="font-bold text-primary mb-3">Como funciona</h4>
+              <p className="mb-3">Cada pais no mapa representa um evento eleitoral ativo ou futuro.</p>
+              <p className="mb-2">As cores indicam o nivel de definicao ou incerteza politica:</p>
+              <ul className="space-y-1 text-gray-600 ml-4 mb-3">
+                <li>• tons mais claros → maior previsibilidade</li>
+                <li>• tons mais escuros → maior incerteza / disputa</li>
+              </ul>
+              <p className="mb-2">Ao clicar em um pais, voce acessa:</p>
+              <ul className="space-y-1 text-gray-600 ml-4">
+                <li>• probabilidade de resultado</li>
+                <li>• volume de interesse do mercado</li>
+                <li>• eleicoes relacionadas</li>
+              </ul>
+              <p className="mt-3">Isso transforma o mapa em um <strong>painel global de decisao</strong>, nao apenas visualizacao.</p>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <h4 className="font-bold text-primary mb-3">Calendario global de eleicoes</h4>
+              <p className="mb-3">O sistema acompanha eleicoes ao longo de todo o ano, todos os anos, distribuidas globalmente.</p>
+              <p>Ao longo de um unico ano, dezenas de paises realizam eleicoes nacionais — criando um fluxo continuo de impacto economico e geopolitico global.</p>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <h4 className="font-bold text-primary mb-3">Finalidade estrategica</h4>
+              <p className="mb-3">O Global nao e apenas um mapa — e uma <strong>infraestrutura de leitura do mundo</strong>.</p>
+              <p className="mb-2">Ele permite:</p>
+              <ul className="space-y-1 text-gray-600 ml-4">
+                <li>• antecipar movimentos de mercado</li>
+                <li>• identificar riscos politicos por regiao</li>
+                <li>• acompanhar ciclos eleitorais globais em tempo real</li>
+                <li>• tomar decisoes com base em dados, nao narrativa</li>
+              </ul>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <div className="bg-primary/5 border border-primary/15 rounded-xl p-5">
+                <h4 className="font-bold text-primary mb-2">Traducao direta (nivel executivo)</h4>
+                <p className="text-gray-600 mb-1">Politica gera volatilidade.</p>
+                <p className="text-gray-600 mb-3">Volatilidade gera oportunidade.</p>
+                <p>O <strong className="text-primary">Global</strong> transforma isso em uma interface simples, visual e acionavel.</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
