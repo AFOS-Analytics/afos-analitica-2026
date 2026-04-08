@@ -8,6 +8,7 @@
 import { NextResponse } from 'next/server';
 import { isKvAvailable, checkCronHealth } from '../../lib/kv';
 import { getCircuitStatus } from '../../lib/polymarket/client';
+import { countSubscribers } from '../../lib/email/subscribers';
 
 export const revalidate = 0; // Nunca cachear health checks
 
@@ -15,6 +16,7 @@ export async function GET() {
   const cronHealth = await checkCronHealth();
   const circuit = getCircuitStatus();
   const redisOk = isKvAvailable();
+  const subscriberCount = await countSubscribers();
 
   const allHealthy = cronHealth.healthy && circuit.state === 'CLOSED' && redisOk;
 
@@ -22,6 +24,7 @@ export async function GET() {
     {
       status: allHealthy ? 'healthy' : 'degraded',
       timestamp: new Date().toISOString(),
+      subscribers: { total: subscriberCount },
       components: {
         redis: { ok: redisOk },
         cron: {

@@ -18,6 +18,7 @@ export function EmailPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const hasScrolled = useRef(false);
@@ -79,6 +80,14 @@ export function EmailPopup() {
       return;
     }
 
+    // Honeypot — bot detected, fake success without submitting
+    if (honeypot) {
+      setStatus('success');
+      localStorage.setItem(STORAGE.SUBSCRIBED, 'true');
+      setTimeout(() => setVisible(false), 2500);
+      return;
+    }
+
     submitting.current = true;
     setStatus('loading');
     setErrorMsg('');
@@ -87,7 +96,7 @@ export function EmailPopup() {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), consent }),
+        body: JSON.stringify({ email: email.trim().toLowerCase(), consent, _hp: honeypot }),
       });
 
       const data = await res.json();
@@ -96,6 +105,7 @@ export function EmailPopup() {
         const msgs: Record<string, string> = {
           invalid_email: 'Email inválido. Verifique e tente novamente.',
           storage_unavailable: 'Serviço temporariamente indisponível.',
+          rate_limited: 'Muitas tentativas. Tente novamente em 1 hora.',
         };
         setErrorMsg(msgs[data.error] || 'Não foi possível concluir. Tente novamente.');
         setStatus('error');
@@ -112,7 +122,7 @@ export function EmailPopup() {
     } finally {
       submitting.current = false;
     }
-  }, [email, consent]);
+  }, [email, consent, honeypot]);
 
   if (!visible) return null;
 
@@ -121,19 +131,15 @@ export function EmailPopup() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-md bg-white rounded-2xl overflow-hidden shadow-2xl"
         onClick={e => e.stopPropagation()}
-        style={{
-          background: 'linear-gradient(135deg, #0b1728 0%, #0f1f3a 100%)',
-          border: '1px solid rgba(148,163,184,0.16)',
-          animation: 'afosSlideUp 0.3s ease-out',
-        }}
+        style={{ animation: 'afosSlideUp 0.3s ease-out' }}
       >
-        <div className="h-1 bg-gradient-to-r from-blue-600 to-blue-400" />
+        <div className="h-1 bg-gradient-to-r from-primary to-blue-400" />
 
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+          className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
           aria-label="Fechar popup"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -144,20 +150,20 @@ export function EmailPopup() {
         <div className="px-6 py-6 sm:px-8 sm:py-7">
           {status === 'success' ? (
             <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 13l4 4L19 7" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <p className="text-white font-semibold text-lg">Cadastro realizado</p>
-              <p className="text-gray-400 text-sm mt-1">Você receberá alertas e resumos do AFOS Analytics.</p>
+              <p className="text-dark font-semibold text-lg">Cadastro realizado</p>
+              <p className="text-gray-500 text-sm mt-1">Você receberá alertas e resumos do AFOS Analytics.</p>
             </div>
           ) : (
             <>
-              <h3 className="text-white font-bold text-lg leading-snug mb-1">
+              <h3 className="text-dark font-bold text-lg leading-snug mb-1">
                 Receba alertas do AFOS Analytics
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+              <p className="text-gray-500 text-sm leading-relaxed mb-5">
                 Mudanças nas odds, resumo diário, eventos críticos e novidades — direto no seu email.
               </p>
 
@@ -169,41 +175,43 @@ export function EmailPopup() {
                   placeholder="Seu melhor e-mail"
                   autoComplete="email"
                   disabled={status === 'loading'}
-                  className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder-gray-500 outline-none transition-all focus:ring-2 focus:ring-blue-500/50 disabled:opacity-50"
-                  style={{
-                    background: 'rgba(255,255,255,0.06)',
-                    border: `1px solid ${status === 'error' ? 'rgba(239,68,68,0.5)' : 'rgba(148,163,184,0.16)'}`,
-                  }}
+                  className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-gray-50 outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-gray-200 focus:border-primary"
                   onKeyDown={e => { if (e.key === 'Enter' && status !== 'loading') handleSubmit(); }}
                 />
               </div>
+
+              {/* Honeypot — hidden from humans, bots fill it */}
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={e => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+              />
 
               <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={consent}
                   onChange={e => { setConsent(e.target.checked); if (status === 'error') setStatus('idle'); }}
-                  className="mt-0.5 w-4 h-4 rounded border-gray-600 accent-blue-500 flex-shrink-0"
+                  className="mt-0.5 w-4 h-4 rounded border-gray-300 accent-primary flex-shrink-0"
                 />
-                <span className="text-xs text-gray-400 leading-relaxed">
+                <span className="text-xs text-gray-500 leading-relaxed">
                   Quero receber alertas, resumos e comunicações do AFOS Analytics por e-mail.
                 </span>
               </label>
 
               {status === 'error' && errorMsg && (
-                <p className="text-red-400 text-xs mb-3">{errorMsg}</p>
+                <p className="text-red-500 text-xs mb-3">{errorMsg}</p>
               )}
 
               <button
                 onClick={handleSubmit}
                 disabled={status === 'loading' || !email.trim() || !consent}
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-                style={{
-                  background: status === 'loading'
-                    ? 'rgba(37,99,235,0.5)'
-                    : 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-                  boxShadow: status === 'loading' ? 'none' : '0 4px 14px rgba(37,99,235,0.3)',
-                }}
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                style={{ boxShadow: status === 'loading' ? 'none' : '0 4px 14px rgba(15,82,186,0.25)' }}
               >
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center gap-2">
@@ -215,7 +223,7 @@ export function EmailPopup() {
                 )}
               </button>
 
-              <p className="text-center text-[10px] text-gray-500 mt-3">
+              <p className="text-center text-[10px] text-gray-400 mt-3">
                 Sem spam. Cancele quando quiser.
               </p>
             </>

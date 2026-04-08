@@ -16,29 +16,9 @@
 
 import { NextResponse } from 'next/server';
 import { aggregateElectionData } from '../../../lib/polymarket/bootstrap';
-import { writeGlobalMapData, isKvAvailable } from '../../../lib/kv';
+import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
-import type { CountryAggregation } from '../../../lib/polymarket/bootstrap';
-
-// Otimizar payload antes de gravar no KV (mesmo formato do api/global-map)
-function optimizeForKv(countries: CountryAggregation[]) {
-  return countries.map(c => ({
-    iso3: c.iso3,
-    n: c.countryName,
-    f: c.flag,
-    d: c.electionDate,
-    t: c.electionType,
-    p: c.probability,
-    lc: c.leadCandidate,
-    v: c.volumeUsd,
-    s: c.status,
-    mc: c.markets.length,
-    cs: c.markets
-      .find(m => m.isPrimary)?.candidates
-      .slice(0, 5)
-      .map(cd => ({ n: cd.name, p: cd.probability, v: cd.volumeUsd })) || [],
-  }));
-}
+import { optimizePayload } from '../../../lib/polymarket/normalize';
 
 export async function GET(request: Request) {
   const startTime = Date.now();
@@ -70,7 +50,7 @@ export async function GET(request: Request) {
     }
 
     // 2. Otimizar e gravar no KV
-    const optimized = optimizeForKv(result.countries);
+    const optimized = optimizePayload(result.countries);
     const payload = {
       c: optimized,
       at: result.updatedAt,

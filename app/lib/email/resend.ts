@@ -2,61 +2,125 @@
  * Resend Service
  *
  * Env var: RESEND_API_KEY
- *
- * IMPORTANTE: No free tier do Resend, sem domínio verificado,
- * use from: 'onboarding@resend.dev'. Ao verificar seu domínio
- * no dashboard do Resend, altere para seu domínio real.
+ * Free tier: 100 emails/dia, domínio onboarding@resend.dev
  */
 
 import { Resend } from 'resend';
+import { welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTemplate } from './templates';
 
 function getResend(): Resend | null {
   if (!process.env.RESEND_API_KEY) return null;
   return new Resend(process.env.RESEND_API_KEY);
 }
 
+const FROM = 'AFOS Analytics <onboarding@resend.dev>';
+
 /**
  * Enviar email de boas-vindas.
- * Retorna true se enviado, false se falhou ou Resend indisponível.
  */
 export async function sendWelcomeEmail(to: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) {
-    console.warn('[resend] API key não configurada — welcome email não enviado');
+    console.warn('[resend] API key não configurada');
     return false;
   }
 
   try {
     const { error } = await resend.emails.send({
-      from: 'AFOS Analytics <onboarding@resend.dev>',
+      from: FROM,
       to,
       subject: 'Bem-vindo ao AFOS Analytics',
-      html: `
-        <div style="font-family: system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 32px 0;">
-          <h2 style="color: #0F52BA; margin-bottom: 16px;">AFOS Analytics</h2>
-          <p style="color: #333; line-height: 1.6;">Obrigado por se cadastrar. Você receberá:</p>
-          <ul style="color: #333; line-height: 1.8;">
-            <li>Alertas de mudanças significativas nas odds</li>
-            <li>Resumo diário das eleições</li>
-            <li>Notificações de eventos críticos</li>
-          </ul>
-          <p style="color: #999; font-size: 12px; margin-top: 24px; border-top: 1px solid #eee; padding-top: 16px;">
-            AFOS Analytics — Plataforma Global de Inteligência Eleitoral<br>
-            Para cancelar o recebimento, responda este email com "cancelar".
-          </p>
-        </div>
-      `,
+      html: welcomeTemplate(),
     });
-
     if (error) {
-      console.error('[resend] Erro ao enviar welcome:', error.message);
+      console.error('[resend] Welcome email erro:', error.message);
       return false;
     }
-
-    console.log(`[resend] Welcome email enviado: ${to.slice(0, 3)}***`);
+    console.log(`[resend] Welcome enviado: ${to.slice(0, 3)}***`);
     return true;
-  } catch (error) {
-    console.error('[resend] Falha no envio:', error);
+  } catch (err) {
+    console.error('[resend] Welcome falhou:', err);
+    return false;
+  }
+}
+
+/**
+ * Enviar alerta de odds.
+ */
+export async function sendOddsAlert(to: string, data: {
+  country: string;
+  candidate: string;
+  oldOdds: number;
+  newOdds: number;
+  direction: 'up' | 'down';
+}): Promise<boolean> {
+  const resend = getResend();
+  if (!resend) return false;
+
+  try {
+    const arrow = data.direction === 'up' ? '↑' : '↓';
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to,
+      subject: `${data.candidate} ${arrow} ${data.newOdds}% — ${data.country}`,
+      html: oddsAlertTemplate(data),
+    });
+    if (error) { console.error('[resend] Odds alert erro:', error.message); return false; }
+    return true;
+  } catch (err) {
+    console.error('[resend] Odds alert falhou:', err);
+    return false;
+  }
+}
+
+/**
+ * Enviar resumo diário.
+ */
+export async function sendDailySummary(to: string, data: {
+  date: string;
+  highlights: string[];
+  topCandidates: { name: string; odds: number; change: string }[];
+}): Promise<boolean> {
+  const resend = getResend();
+  if (!resend) return false;
+
+  try {
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to,
+      subject: `AFOS Resumo — ${data.date}`,
+      html: dailySummaryTemplate(data),
+    });
+    if (error) { console.error('[resend] Daily summary erro:', error.message); return false; }
+    return true;
+  } catch (err) {
+    console.error('[resend] Daily summary falhou:', err);
+    return false;
+  }
+}
+
+/**
+ * Enviar alerta de sistema.
+ */
+export async function sendSystemAlert(to: string, data: {
+  type: string;
+  message: string;
+  details: string;
+}): Promise<boolean> {
+  const resend = getResend();
+  if (!resend) return false;
+
+  try {
+    const { error } = await resend.emails.send({
+      from: FROM,
+      to,
+      subject: `⚠️ AFOS Alert: ${data.type}`,
+      html: systemAlertTemplate(data),
+    });
+    if (error) { console.error('[resend] System alert erro:', error.message); return false; }
+    return true;
+  } catch (err) {
+    console.error('[resend] System alert falhou:', err);
     return false;
   }
 }

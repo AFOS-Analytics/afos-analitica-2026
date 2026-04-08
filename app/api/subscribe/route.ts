@@ -7,6 +7,7 @@
  */
 
 import { NextResponse } from 'next/server';
+import { Redis } from '@upstash/redis';
 import { createSubscriber, isValidEmail } from '../../lib/email/subscribers';
 import { sendWelcomeEmail } from '../../lib/email/resend';
 
@@ -16,6 +17,13 @@ export async function POST(request: Request) {
     const body = await request.json() as Record<string, unknown>;
     const email = typeof body.email === 'string' ? body.email.trim().toLowerCase() : '';
     const consent = body.consent === true;
+
+    // Honeypot check — bots preenchem campos ocultos
+    const hp = body._hp;
+    if (hp) {
+      // Honeypot triggered — return fake success
+      return NextResponse.json({ ok: true, isNew: false }, { status: 200 });
+    }
 
     // Validação
     if (!email) {
@@ -30,6 +38,21 @@ export async function POST(request: Request) {
         { ok: false, error: 'invalid_email' },
         { status: 400 }
       );
+    }
+
+    // Rate limit: 5 cadastros por IP por hora
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+    const rateLimitKey = `afos:ratelimit:subscribe:${ip}`;
+    const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+    const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+
+    if (redisUrl && redisToken) {
+      const redis = new Redis({ url: redisUrl, token: redisToken });
+      const attempts = await redis.incr(rateLimitKey);
+      if (attempts === 1) await redis.expire(rateLimitKey, 3600);
+      if (attempts > 5) {
+        return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 });
+      }
     }
 
     // Criar subscriber (idempotente)

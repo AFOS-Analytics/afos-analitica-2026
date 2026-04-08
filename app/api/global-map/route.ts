@@ -17,33 +17,14 @@
 
 import { NextResponse } from 'next/server';
 import { readGlobalMapData, isKvAvailable } from '../../lib/kv';
-import { aggregateElectionData, type CountryAggregation } from '../../lib/polymarket/bootstrap';
+import { aggregateElectionData } from '../../lib/polymarket/bootstrap';
+import { optimizePayload } from '../../lib/polymarket/normalize';
 import { buildCacheHeaders, buildNoCacheHeaders, CACHE_GLOBAL_MAP } from '../../lib/cache/headers';
 
 export const revalidate = 60; // ISR 1 minuto (fallback se KV estiver offline)
 
 // In-memory fallback (último recurso)
 let lastGoodPayload: unknown = null;
-
-// Otimizar payload (para fallback direto, sem KV)
-function optimizePayload(countries: CountryAggregation[]) {
-  return countries.map(c => ({
-    iso3: c.iso3,
-    n: c.countryName,
-    f: c.flag,
-    d: c.electionDate,
-    t: c.electionType,
-    p: c.probability,
-    lc: c.leadCandidate,
-    v: c.volumeUsd,
-    s: c.status,
-    mc: c.markets.length,
-    cs: c.markets
-      .find(m => m.isPrimary)?.candidates
-      .slice(0, 5)
-      .map(cd => ({ n: cd.name, p: cd.probability, v: cd.volumeUsd })) || [],
-  }));
-}
 
 export async function GET() {
   // ─── CAMINHO 1: Ler do KV (rápido, <1ms) ─────────────────────────

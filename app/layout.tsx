@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from '@vercel/analytics/react';
 import "./globals.css";
 
 const inter = { className: "font-sans antialiased" };
@@ -44,7 +45,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.svg?v=2" />
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
       </head>
-      <body className={`${inter.className} bg-white text-dark`}>{children}</body>
+      <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /></body>
     </html>
   );
 }
