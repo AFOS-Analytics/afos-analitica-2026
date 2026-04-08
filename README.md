@@ -36,97 +36,99 @@ Onde houver eleição, existe sinal. Onde existe sinal, o AFOS Analytics lê.
 
 ## Arquitetura
 
-### Pipeline de Dados (Cron + KV)
+### Pipeline de Dados (Cron + Upstash Redis)
 
 ```
-ANTES (ISR):
-  Usuário → ISR miss → Polymarket (4s) → resposta
-  ❌ Usuário espera até 4s
-
-DEPOIS (Cron + KV):
-  Background:  Cron (60s) → Polymarket (18 mercados paralelo) → Vercel KV
-  Usuário:     Requisição → KV read (<1ms) → resposta
-  ✅ 10M usuários = mesma carga que 10 usuários
+Background:  Cron (60s) → Polymarket (18 mercados paralelo) → Upstash Redis
+Usuário:     Requisição → Redis read (<1ms) → resposta
+             10M usuários = mesma carga que 10 usuários
 ```
 
 **Cascata de fallback (4 níveis):**
 
 | Nível | Condição | Resposta |
 |-------|----------|----------|
-| 1 | KV com dados frescos | <1ms (99.9% dos casos) |
-| 2 | KV vazio | Fetch direto Polymarket (~4s) |
+| 1 | Redis com dados frescos | <1ms (99.9% dos casos) |
+| 2 | Redis vazio | Fetch direto Polymarket (~4s) |
 | 3 | Polymarket falhou | Dados em memória (último resultado bom) |
 | 4 | Sem nenhum dado | HTTP 503 + Retry-After: 60 |
 
-### Estrutura de Componentes
+### Estrutura do Projeto
 
 ```
 app/
 ├── types/
-│   ├── index.ts                # 19 interfaces TypeScript centralizadas
-│   └── global-map.ts           # Tipos do mapa global + mapeamento ISO3
-├── hooks/useDashboardData.ts   # Custom hooks de data fetching
+│   ├── index.ts                   # 19 interfaces TypeScript
+│   └── global-map.ts              # Tipos do mapa global + ISO3
+├── hooks/useDashboardData.ts      # Custom hooks de data fetching
 ├── lib/
-│   ├── utils.ts                # Funções utilitárias compartilhadas
-│   ├── security.ts             # OWASP security utilities
-│   ├── kv.ts                   # Wrapper Vercel KV com fallback
-│   ├── map-colors.ts           # Tokens visuais do mapa global
-│   ├── mock-elections.ts       # Mock data (fallback offline)
-│   ├── cache/headers.ts        # Cache multi-camada (Vercel CDN + CDN + Browser)
-│   └── polymarket/
-│       ├── client.ts           # API client (retry, timeout, circuit breaker)
-│       ├── country-market-map.ts # Registry slug → ISO3 (14 países, 18 mercados)
-│       ├── bootstrap.ts        # Aggregador: fetch → parse → normalize
-│       └── ws.ts               # WebSocket (para worker dedicado)
+│   ├── utils.ts                   # Funções utilitárias
+│   ├── security.ts                # Documentação de segurança OWASP
+│   ├── kv.ts                      # Wrapper Upstash Redis + health check
+│   ├── map-colors.ts              # Tokens visuais do mapa global
+│   ├── mock-elections.ts          # Mock data (fallback offline)
+│   ├── cache/headers.ts           # Cache multi-camada
+│   ├── polymarket/
+│   │   ├── client.ts              # API client (retry, timeout, circuit breaker)
+│   │   ├── country-market-map.ts  # Registry slug → ISO3 (14 países, 18 mercados)
+│   │   ├── bootstrap.ts           # Aggregador: fetch → parse → normalize
+│   │   └── normalize.ts           # Payload optimization (compartilhado)
+│   └── email/
+│       ├── subscribers.ts         # CRUD subscribers (Redis Set + Hash)
+│       ├── resend.ts              # Resend service (welcome, alertas, resumo)
+│       └── templates.ts           # 4 templates HTML (sem emojis, ASCII safe)
 ├── components/
-│   ├── ui.tsx                  # Componentes base (Card, HBar, Stars, SectionTitle)
-│   ├── Header.tsx / Footer.tsx
+│   ├── ui.tsx                     # Card, HBar, Stars, SectionTitle (ARIA)
+│   ├── Header.tsx                 # Header com navegação + skip link
+│   ├── Footer.tsx                 # Footer + botão "Voltar ao topo"
+│   ├── EmailPopup.tsx             # Popup captura email (30s + scroll + LGPD)
 │   ├── ModalAbout.tsx / ModalMetas.tsx / ModalGlobal.tsx
 │   ├── PolymarketSection.tsx / PollsSection.tsx / CandidatesSection.tsx
 │   ├── NewsSection.tsx / SentimentSection.tsx
 │   ├── InssSection.tsx / BancoMasterSection.tsx / StfSection.tsx
 │   └── global-map/
 │       ├── GlobalElectionMap.tsx   # D3 + TopoJSON + SVG (React.memo)
-│       ├── GlobalMapTooltip.tsx    # Tooltip hover
-│       ├── GlobalMapLegend.tsx     # Legenda de cores
-│       └── GlobalCountryDrawer.tsx # Drawer lateral com candidatos
+│       ├── GlobalMapTooltip.tsx    # Tooltip hover (PT-BR)
+│       ├── GlobalMapLegend.tsx     # Legenda de cores (PT-BR)
+│       └── GlobalCountryDrawer.tsx # Drawer lateral com candidatos (PT-BR)
 ├── api/
-│   ├── polymarket/             # Odds presidenciais BR
-│   ├── polls/                  # Pesquisas eleitorais
-│   ├── news/                   # Notícias (Google News + Firecrawl)
-│   ├── analysis-cards/         # Análises dinâmicas
-│   ├── analysis-criteriosa/    # Análise dos 4 primeiros
-│   ├── global-elections/       # Eleições globais (legado)
-│   ├── global-map/             # Mapa global (lê KV → fallback Polymarket)
-│   └── cron/
-│       └── refresh-elections/  # Cron a cada 60s → Polymarket → KV
+│   ├── polymarket/                # Odds presidenciais BR
+│   ├── polls/                     # Pesquisas eleitorais
+│   ├── news/                      # Notícias (Google News + Firecrawl)
+│   ├── analysis-cards/            # Análises dinâmicas
+│   ├── analysis-criteriosa/       # Análise dos 4 primeiros
+│   ├── global-elections/          # Eleições globais (legado)
+│   ├── global-map/                # Mapa global (Redis → Polymarket fallback)
+│   ├── cron/refresh-elections/    # Cron 60s → Polymarket → Redis
+│   ├── health/                    # Health check (Redis, cron, circuit, subscribers)
+│   ├── subscribe/                 # POST captura email (rate limit, honeypot)
+│   └── test-email/                # Teste de envio dos 4 templates
 ├── global/
-│   ├── page.tsx                # Mapa mundial D3 (dark theme)
-│   └── loading.tsx             # Skeleton
-├── page.tsx                    # Dashboard BR (~80 linhas, orquestrador)
-└── layout.tsx                  # Metadata + SEO
-middleware.ts                   # Rate limiting (100 req/min/IP) + headers
-vercel.json                    # Cron schedule
+│   ├── page.tsx                   # Mapa mundial D3 (dark theme, standalone)
+│   └── loading.tsx                # Skeleton
+├── page.tsx                       # Dashboard BR (~92 linhas, orquestrador)
+└── layout.tsx                     # Metadata + SEO + Vercel Analytics
+middleware.ts                      # Rate limiting (100 req/min/IP) + headers
+vercel.json                        # Cron schedule (cada 60s)
 ```
 
 ### Cache Multi-Camada
 
 ```
-Usuário → Browser (15s) → CDN downstream (30s) → Vercel Edge (60s) → KV (<1ms)
+Usuário → Browser (60s) → Vercel Edge (5min) → Redis (<1ms)
 ```
 
 | Camada | TTL | Propósito |
 |--------|-----|-----------|
-| Browser | 15s | Dados razoavelmente frescos para usuário ativo |
-| CDN downstream | 30s + 2min stale | Absorve tráfego multi-região |
-| Vercel Edge | 60s + 2min stale | Protege origem de burst traffic |
-| Vercel KV | 10min TTL | Dados escritos pelo cron, <1ms leitura global |
+| Browser | 60s | Dados frescos para usuário ativo |
+| Vercel Edge | 5min + 10min stale | Protege origem de burst traffic |
+| Upstash Redis | 10min TTL | Dados escritos pelo cron, <1ms leitura global |
 
 ---
 
-## Mapa Global de Eleições (/global)
+## Mapa Global de Eleições
 
-Rota dedicada com mapa mundial interativo em dark theme financeiro.
+Disponível no botão **"Global"** do header e como rota dedicada `/global`.
 
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
 - **14 países monitorados** com dados ao vivo do Polymarket
@@ -135,8 +137,74 @@ Rota dedicada com mapa mundial interativo em dark theme financeiro.
 - **Heatmap** — escala de cores baseada em probabilidade do líder
 - **Pulsing markers** — indicadores animados para mercados ao vivo
 - **Zoom/Pan** — d3-zoom com limites (1x-8x)
-- **React.memo** — evita re-renders desnecessários do mapa
+- **React.memo** — evita re-renders desnecessários
 - **Dynamic import** — D3 carregado apenas no cliente (ssr: false)
+- **Textos em PT-BR** — tooltip, legenda, drawer, loading
+
+---
+
+## Sistema de Email (Resend)
+
+### Captura de Subscribers (Popup)
+
+- Popup aparece após **30 segundos + scroll** (engajamento real)
+- Theme **Sapphire Blue Light** (gradiente azul claro)
+- **Checkbox de consentimento** desmarcado por padrão (LGPD compliant)
+- **Honeypot** anti-bot (campo oculto no frontend + validação backend)
+- **Rate limit específico**: 5 cadastros/IP/hora via Redis
+- **Dismiss**: localStorage com TTL 24h (funciona entre abas)
+- **Cadastro**: localStorage permanente (nunca mais aparece)
+- **Idempotência**: email duplicado retorna sucesso sem erro
+
+### Templates de Email (4)
+
+| Template | Uso | Assunto |
+|----------|-----|---------|
+| **Welcome** | Novo subscriber | Bem-vindo ao AFOS Analytics |
+| **Odds Alert** | Mudança significativa | Lula ▲ 42% — Brasil |
+| **Daily Summary** | Resumo diário | AFOS Resumo — [data] |
+| **System Alert** | Cron/health falhou | AFOS Alert: [tipo] |
+
+- HTML puro, sem emojis (previne `??` em clientes de email)
+- Font Arial (compatibilidade máxima)
+- Header Sapphire Blue com branding AFOS
+- Mobile-friendly (tabelas responsivas)
+
+### Armazenamento
+
+```
+Redis SET  afos:subscribers         → dedup
+Redis HASH afos:subscriber:{email}  → { email, source, status, consentVersion, createdAt, updatedAt }
+```
+
+### Resend
+
+- **Free tier**: 100 emails/dia
+- **Remetente**: `onboarding@resend.dev` (free tier, sem domínio verificado)
+- **Welcome email**: enviado automaticamente a novos subscribers
+- **Preparado para**: alertas de odds, resumo diário, alertas de sistema
+
+---
+
+## Observabilidade
+
+### Health Check (`/api/health`)
+
+```json
+{
+  "status": "healthy | degraded",
+  "components": {
+    "redis": { "ok": true },
+    "cron": { "ok": true, "lastUpdate": "...", "ageSeconds": 45 },
+    "polymarket": { "circuit": "CLOSED", "failures": 0 },
+    "subscribers": { "total": 42 }
+  }
+}
+```
+
+### Vercel Analytics
+
+Integrado via `@vercel/analytics` — métricas de tráfego, performance e uso.
 
 ---
 
@@ -147,32 +215,36 @@ Implementa **OWASP Top 10 2025 (Web)** e **OWASP API Security Top 10 2023**:
 | OWASP | Medida |
 |---|---|
 | **A02** | HSTS max-age 2 anos + preload |
-| **A03** | Sanitização HTML, validação de slugs |
+| **A03** | Validação de slugs, sanitização de entrada |
 | **A05** | CSP, X-Frame-Options DENY, poweredByHeader false |
-| **A08** | safeJsonParse, try-catch em todas as APIs |
+| **A08** | try-catch em todas as APIs, safe JSON parse |
 | **A10** | Allowlist de hosts para fetch externo |
-| **API4** | Rate limiting 100 req/min/IP (middleware) |
-| **API8** | safeFetch com timeout 10s + AbortController |
+| **API4** | Rate limiting 100 req/min/IP + 5/IP/hora no subscribe |
+| **API8** | Timeout 10s + AbortController em todos os fetch |
 
 **Circuit Breaker (Polymarket):**
 ```
 CLOSED → 3 falhas → OPEN (skip 5min) → HALF_OPEN (1 probe) → CLOSED
 ```
 
+**Anti-spam (Subscribe):**
+- Honeypot field (frontend + backend)
+- Rate limit específico (5/IP/hora)
+- Validação dupla (frontend + backend)
+- Idempotência (email duplicado = sucesso silencioso)
+
 ---
 
 ## Polymarket Integration
 
-Pipeline completo de integração com a API do Polymarket:
-
 | Componente | Arquivo | Função |
 |------------|---------|--------|
 | **Client** | `lib/polymarket/client.ts` | Fetch com retry 1x, timeout 10s, circuit breaker |
-| **Registry** | `lib/polymarket/country-market-map.ts` | 14 países × 18 mercados, slug → ISO3 |
+| **Registry** | `lib/polymarket/country-market-map.ts` | 14 países x 18 mercados, slug → ISO3 |
 | **Aggregador** | `lib/polymarket/bootstrap.ts` | fetch → parse → group → normalize |
-| **WebSocket** | `lib/polymarket/ws.ts` | Real-time com exponential backoff |
-| **Cron** | `api/cron/refresh-elections/` | Cada 60s → KV write |
-| **API** | `api/global-map/` | KV read <1ms, 4 níveis de fallback |
+| **Normalize** | `lib/polymarket/normalize.ts` | Payload optimization (compartilhado) |
+| **Cron** | `api/cron/refresh-elections/` | Cada 60s → Redis write (autenticado) |
+| **API** | `api/global-map/` | Redis read <1ms, 4 níveis de fallback |
 
 ---
 
@@ -180,14 +252,17 @@ Pipeline completo de integração com a API do Polymarket:
 
 | Endpoint | Descrição | Fonte | Segurança |
 |---|---|---|---|
-| `/api/global-map` | Eleições globais normalizadas | KV (cron) → Polymarket (fallback) | Rate limit, cache multi-camada |
-| `/api/cron/refresh-elections` | Refresh background | Polymarket → KV | CRON_SECRET auth |
-| `/api/polymarket` | Odds presidenciais BR | Polymarket direta | Slug validation, timeout 10s |
-| `/api/polls` | Pesquisas de +17 institutos | JSON local | File existence check |
-| `/api/news` | Notícias categorizadas | Google News + Firecrawl | URL validation, timeout 10s |
-| `/api/analysis-cards` | Análises dinâmicas | JSON local | File existence check |
-| `/api/analysis-criteriosa` | Análise dos 4 primeiros | JSON local | File existence check |
+| `/api/global-map` | Eleições globais normalizadas | Redis → Polymarket | Rate limit, cache, 4 fallbacks |
+| `/api/cron/refresh-elections` | Refresh background | Polymarket → Redis | x-vercel-cron + CRON_SECRET |
+| `/api/health` | Status do sistema | Redis + circuit breaker | revalidate=0 |
+| `/api/subscribe` | Captura email | Redis | Rate limit 5/IP/h, honeypot |
+| `/api/polymarket` | Odds presidenciais BR | Polymarket | Slug validation, timeout 10s |
+| `/api/polls` | Pesquisas +17 institutos | JSON local | File check |
+| `/api/news` | Notícias categorizadas | Google News + Firecrawl | URL validation, timeout |
+| `/api/analysis-cards` | Análises dinâmicas | JSON local | File check |
+| `/api/analysis-criteriosa` | Análise dos 4 primeiros | JSON local | File check |
 | `/api/global-elections` | Eleições globais (legado) | Polymarket | Timeout, safe JSON parse |
+| `/api/test-email` | Teste dos 4 templates | Resend | Autenticação cron |
 
 ---
 
@@ -198,32 +273,55 @@ Pipeline completo de integração com a API do Polymarket:
 | **Next.js 14** | App Router, RSC, TypeScript |
 | **D3.js + TopoJSON** | Mapa global SVG interativo |
 | **Tailwind CSS** | Design system com cores centralizadas |
-| **Vercel** | Hosting, Edge, Middleware, Cron, KV |
+| **Vercel** | Hosting, Edge, Middleware, Cron |
+| **Upstash Redis** | KV store, subscribers, rate limiting |
+| **Resend** | Email transacional (welcome, alertas, resumo) |
 | **Polymarket API** | Mercados de previsão (18 mercados, 14 países) |
 | **Google News RSS** | Notícias de múltiplos veículos |
 | **Firecrawl** | Scraping profundo de portais |
+| **Vercel Analytics** | Métricas de tráfego e performance |
+
+---
+
+## Funcionalidades
+
+| Seção | Descrição |
+|-------|-----------|
+| **Polymarket** | Odds ao vivo com dinheiro real (presidência, senado, STF, inflação) |
+| **Pesquisas** | +17 institutos com classificação de confiabilidade + tabela comparativa |
+| **Análise Criteriosa** | Pontos fortes/fracos dos 4 primeiros + cruzamento |
+| **Perfil Candidatos** | 7 pré-candidatos com posição, riscos, odds |
+| **Notícias** | Múltiplas fontes ao vivo (Google News + Firecrawl) |
+| **Sentimento** | Redes sociais, tendências por espectro político |
+| **INSS / Master / STF** | Escândalos ativos com impacto eleitoral |
+| **Mapa Global** | D3 interativo com 14 países + calendário + bandeiras |
+| **Email Popup** | Captura de subscribers com Resend (LGPD compliant) |
+| **Health Check** | Monitoramento de Redis, cron, circuit breaker, subscribers |
 
 ---
 
 ## Acessibilidade
 
 - `aria-modal="true"` em modais
-- `aria-label` em botões interativos
+- `aria-label` em todos os botões interativos
 - `focus:outline` para navegação por teclado
 - `role="meter"` em barras com `aria-valuenow`
 - `aria-hidden` em emojis decorativos
 - Skip-to-content link
 - Roles semânticos: `banner`, `main`, `contentinfo`, `dialog`
+- Botão "Voltar ao topo" no footer com scroll suave
 
 ---
 
-## Design
+## UX
 
-- **Dashboard**: Sapphire Blue (#0F52BA) em fundo branco
-- **Mapa Global**: Dark theme financeiro (#07111f)
-- **Cores centralizadas**: `primary`, `danger`, `dark`, `light-bg`, `light-border`
+- **Popup Sapphire Blue Light** — gradiente azul claro, discreto, não intrusivo
+- **Mapa D3 dark theme** — visual financeiro premium
+- **Dashboard light** — Sapphire Blue (#0F52BA) em fundo branco
+- **Cores centralizadas**: `primary`, `primary-dark`, `danger`, `dark`, `light-bg`
 - **Font**: Inter (Google Fonts)
-- **Responsive**: Mobile-first
+- **Responsive**: Mobile-first, Android e iOS
+- **Botão "Voltar ao topo"** no footer
 
 ---
 
@@ -248,9 +346,9 @@ cd afos-analitica-2026
 # Instalar
 npm install
 
-# Configurar (opcional)
+# Configurar
 cp .env.example .env.local
-# Preencher FIRECRAWL_API_KEY se quiser scraping de notícias
+# Preencher: UPSTASH_REDIS, FIRECRAWL_API_KEY, RESEND_API_KEY, CRON_SECRET
 
 # Desenvolvimento
 npm run dev
@@ -261,8 +359,9 @@ npm run build
 # Produção (Vercel)
 # 1. Push para GitHub
 # 2. Conectar repo no Vercel Dashboard
-# 3. Storage → Create KV Database → Connect
-# 4. Deploy automático
+# 3. Marketplace → Upstash Redis → Install → Connect
+# 4. Environment Variables → RESEND_API_KEY
+# 5. Deploy automático + cron ativo a cada 60s
 ```
 
 ---
