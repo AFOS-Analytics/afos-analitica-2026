@@ -227,10 +227,11 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             <div className="border-t border-light-border pt-5">
               <h4 className="font-bold text-primary mb-3">Como funciona</h4>
               <p className="mb-3">Cada país no mapa representa um evento eleitoral ativo ou futuro.</p>
-              <p className="mb-2">As cores indicam o nível de definição ou incerteza política:</p>
+              <p className="mb-2">As cores representam o grau de definição do calendário eleitoral:</p>
               <ul className="space-y-1 text-gray-600 ml-4 mb-3">
-                <li>• tons mais claros → maior previsibilidade</li>
-                <li>• tons mais escuros → maior incerteza / disputa</li>
+                <li>• tons mais claros com interações → eleições previstas para este ano</li>
+                <li>• tons mais escuros com interações → eleições previstas para os próximos 3 anos</li>
+                <li>• tons mais escuros sem interações → eleições sem data definida, porém previstas para um horizonte mais distante</li>
               </ul>
               <p className="mb-2">Ao clicar em um país, você acessa:</p>
               <ul className="space-y-1 text-gray-600 ml-4">
