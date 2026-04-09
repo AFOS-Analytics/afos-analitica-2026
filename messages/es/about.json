@@ -1,0 +1,241 @@
+{
+  "about": {
+    "title": "Acerca de — AFOS Analytics",
+    "whoWeAre": "Quiénes Somos",
+    "whoWeAreDesc": "AFOS-Analytics es una plataforma global de inteligencia electoral en tiempo real.",
+    "whoWeAreDesc2": "Monitoreamos elecciones en todo el mundo y transformamos datos complejos en información clara, objetiva y accionable.",
+    "whoWeAreDesc3": "Lo hacemos combinando, en un único entorno:",
+    "whoWeAreList": [
+      "mercados internacionales de predicción con dinero real (como Polymarket)",
+      "encuestas de opinión electoral tradicionales",
+      "noticias de la gran prensa",
+      "señales y sentimiento de las redes sociales",
+      "análisis estratégicos generados con inteligencia artificial"
+    ],
+    "whoWeAreFooter": "Todo integrado en un panel simple, accesible y actualizado continuamente — en el celular o en la computadora.",
+    "whatFor": "Para qué sirve",
+    "whatForIntro": "AFOS-Analytics existe para responder una pregunta simple:",
+    "whatForQuestion": "¿Qué está realmente sucediendo en la elección?",
+    "whatForDesc": "Con él, puedes:",
+    "whatForList": [
+      "seguir la carrera electoral en tiempo real — quién lidera, quién crece, quién pierde fuerza",
+      "ver dónde está posicionado el dinero — no solo opinión, sino apuestas reales",
+      "comparar encuestas vs mercado — lo que las personas dicen vs lo que el mundo apuesta",
+      "monitorear eventos y escándalos — y su impacto directo en la elección",
+      "entender el sentimiento popular — en las redes y en los medios",
+      "tomar decisiones más informadas, basadas en datos"
+    ],
+    "howToUse": "Cómo usar",
+    "voterTitle": "Si eres ELECTOR",
+    "voterList": [
+      "ve todos los candidatos en un solo lugar",
+      "compara encuestas tradicionales con mercados de predicción",
+      "entiende fortalezas, debilidades y contexto de cada candidato",
+      "sigue eventos relevantes y decide con más claridad"
+    ],
+    "investorTitle": "Si eres INVERSOR / EMPRESARIO",
+    "investorList": [
+      "anticipa escenarios políticos que impactan el mercado",
+      "usa mercados de predicción como indicador anticipado",
+      "entiende cómo crisis y eventos influyen en resultados electorales",
+      "sigue señales económicas precificadas por el mercado"
+    ],
+    "analystTitle": "Si eres ANALISTA / PERIODISTA",
+    "analystList": [
+      "accede a datos consolidados de múltiples fuentes",
+      "sigue noticias en tiempo real",
+      "utiliza un cruce único: encuestas × mercados × narrativa",
+      "produce análisis con más profundidad y precisión"
+    ],
+    "updatesTitle": "Actualizaciones en tiempo real",
+    "updatesMarkets": "Mercados de predicción",
+    "updatesMarketsDesc": "actualizados continuamente",
+    "updatesNews": "Noticias",
+    "updatesNewsDesc": "actualización constante de múltiples fuentes",
+    "updatesAnalysis": "Análisis",
+    "updatesAnalysisDesc": "recalculados automáticamente con nuevos datos",
+    "updatesPolls": "Encuestas",
+    "updatesPollsDesc": "actualizadas siempre que se publican nuevos datos",
+    "dashboardTitle": "Lo que encuentras en el dashboard",
+    "dashboardItems": [
+      "Odds de mercados de predicción (dinero real)",
+      "Encuestas electorales de múltiples institutos",
+      "Análisis estratégicos — fortalezas y debilidades de los candidatos",
+      "Perfil de los candidatos — visión completa",
+      "Noticias en vivo — organizadas por relevancia",
+      "Sentimiento popular — redes sociales y opinión pública"
+    ],
+    "differentialTitle": "Diferencial",
+    "differentialDesc": "AFOS-Analytics es una plataforma única que conecta, en el mismo lugar:",
+    "differentialList": [
+      "lo que las personas dicen (encuestas)",
+      "lo que el mercado cree (apuestas reales)",
+      "lo que se está narrando (medios)",
+      "lo que se está sintiendo (redes sociales)"
+    ],
+    "differentialFooter": "Esto permite ver la elección desde múltiples perspectivas — y no depender de una única fuente.",
+    "globalTitle": "GLOBAL POR DISEÑO",
+    "globalIntro": "Comenzamos con validación práctica, pero el objetivo es mayor:",
+    "globalQuote": "Seguir elecciones en todo el mundo y crear una nueva forma de entender el riesgo político a escala global",
+    "globalDesc": "No es solo una elección. Es un sistema hecho para:",
+    "globalCountries": ["Brasil", "Estados Unidos", "Europa", "Cualquier país"],
+    "globalFooter": "Donde haya una elección, existe una señal. Donde existe una señal, AFOS-Analytics la lee.",
+    "openSourceTitle": "Open Source",
+    "openSourceDesc": "AFOS-Analytics es un proyecto de código abierto.",
+    "openSourceBelief": "Creemos que:",
+    "openSourceList": [
+      "la información debe ser transparente",
+      "los datos deben ser verificables",
+      "la inteligencia debe ser accesible"
+    ],
+    "openSourceFooter": "Cualquier persona puede estudiar, auditar y contribuir.",
+    "afosTitle": "Qué significa AFOS",
+    "afosDesc": "AFOS es más que un nombre — es lo que guía todo lo que hacemos:",
+    "afosA": "Astuteness",
+    "afosADesc": "Inteligencia para cruzar datos y generar claridad",
+    "afosF": "Faith",
+    "afosFDesc": "Confianza en información verdadera e imparcial",
+    "afosO": "Optimism",
+    "afosODesc": "Visión de futuro basada en innovación y transparencia",
+    "afosS": "Synthesis",
+    "afosSDesc": "Transformar datos complejos en entendimiento simple",
+    "essenceTitle": "Esencia",
+    "essenceText": "AFOS Analytics no se trata de opinión.",
+    "essenceSubtext": "Se trata de entender la realidad con más precisión.",
+    "footerLabels": ["Gratuito", "Actualizado automáticamente", "Móvil y escritorio"]
+  },
+  "metas": {
+    "title": "Metas — AFOS Analytics",
+    "centralThesis": "LA TESIS CENTRAL",
+    "centralThesisDesc": "Gobiernos, empresas e inversores pierden miles de millones cada año por decisiones basadas en información fragmentada, sesgada o manipulada.",
+    "centralThesisLines": [
+      "Cuando el elector vota sin datos,",
+      "cuando el empresario no anticipa escenarios,",
+      "cuando el inversor precifica riesgo a oscuras —"
+    ],
+    "centralThesisResult": "el resultado es el mismo: ineficiencia económica e inestabilidad.",
+    "centralThesisResolution": "AFOS Analytics resuelve esto en el origen:",
+    "centralThesisQuote": "Transformar información política en inteligencia accionable — como infraestructura global.",
+    "economicImpact": "Impacto en el Crecimiento Económico",
+    "economicImpactDesc": "La previsibilidad atrae capital.",
+    "economicImpactIntro": "AFOS Analytics integra:",
+    "economicImpactList": [
+      "mercados de predicción con dinero real",
+      "encuestas electorales",
+      "análisis de sentimiento y eventos críticos"
+    ],
+    "economicImpactThermometer": "creando un termómetro de riesgo político en tiempo real",
+    "economicImpactAllows": "Esto permite que:",
+    "economicImpactAllowsList": [
+      "inversores globales precifiquen riesgo con precisión",
+      "el capital fluya con más eficiencia",
+      "la volatilidad política deje de ser imprevisible"
+    ],
+    "businessDecision": "La decisión empresarial deja de ser reactiva.",
+    "businessDecisionDesc": "Las empresas pasan a operar con anticipación:",
+    "businessDecisionList": [
+      "expansión o contracción",
+      "asignación geográfica",
+      "gestión de riesgo regulatorio"
+    ],
+    "businessDecisionQuote1": "Quien anticipa, captura valor.",
+    "businessDecisionQuote2": "Quien reacciona, absorbe costo.",
+    "institutionalImpact": "Impacto en el Desarrollo Institucional",
+    "institutionalImpactDesc": "Democracias más eficientes comienzan con mejor información.",
+    "institutionalImpactIntro": "AFOS Analytics:",
+    "institutionalImpactList": [
+      "consolida múltiples fuentes en un único panel",
+      "traduce complejidad en visualización simple",
+      "ofrece acceso gratuito, global y multilingüe"
+    ],
+    "institutionalImpactFooter": "eleva el nivel del voto y del debate público",
+    "civicEducation": "Educación Cívica y Financiera",
+    "civicEducationDesc": "El producto no solo informa — forma usuarios más sofisticados.",
+    "civicEducationIntro": "Introduce, de forma práctica:",
+    "civicEducationList": [
+      "lectura de probabilidades y riesgo",
+      "interpretación de datos conflictivos",
+      "entendimiento del impacto político en la economía"
+    ],
+    "civicEducationFooter": "creando una nueva generación de ciudadanos e inversores más racionales.",
+    "accountability": "Accountability basada en datos",
+    "accountabilityIntro": "Al exponer:",
+    "accountabilityList": [
+      "probabilidades reales de eventos",
+      "impacto de escándalos",
+      "divergencia entre discurso y expectativa de mercado"
+    ],
+    "accountabilityFooter": "AFOS crea presión objetiva por transparencia.",
+    "internationalImpact": "Impacto en la Imagen Internacional",
+    "internationalImpactDesc": "Soft power tecnológico.",
+    "internationalImpactIntro": "AFOS Analytics posiciona a cualquier país que lo adopte como:",
+    "internationalImpactList": [
+      "líder en transparencia democrática",
+      "referencia en data-driven governance"
+    ],
+    "internationalImpactNoExist": "No existe hoy una plataforma que integre, a escala global:",
+    "internationalImpactItems": [
+      "Datos electorales",
+      "Mercados predictivos",
+      "Análisis de eventos críticos",
+      "Sentimiento informacional"
+    ],
+    "globalPositioning": "Posicionamiento Global",
+    "globalPositioningDesc": "No es medio. No es herramienta. Es infraestructura.",
+    "globalPositioningIntro": "AFOS Analytics se posiciona como:",
+    "globalPositioningQuote": "capa de inteligencia política para mercados globales",
+    "globalPositioningBridge": "Un puente directo entre:",
+    "globalPositioningBridgeList": [
+      "el elector local",
+      "el capital internacional"
+    ],
+    "globalPositioningFooter": "Ambos analizando el mismo conjunto de datos.",
+    "valueModel": "Modelo de Valor (implícito, sin contaminar el mensaje)",
+    "valueModelIntro": "La misma infraestructura que:",
+    "valueModelEducates": [
+      "educa ciudadanos",
+      "informa electores"
+    ],
+    "valueModelAlso": "también alimenta:",
+    "valueModelFeeds": [
+      "fondos de inversión",
+      "bancos",
+      "gobiernos",
+      "consultorías estratégicas"
+    ],
+    "valueModelFooter": "con datos estructurados y APIs de inteligencia política",
+    "systemicEffect": "Efecto Sistémico (Cascada)",
+    "systemicEffectChains": [
+      "Transparencia → Decisión informada → Mejor representación → Políticas más eficientes → Crecimiento sostenible",
+      "Previsibilidad → Inversión → Empleo → Renta → Recaudación → Mejores servicios públicos",
+      "Accountability → Menos corrupción → Mejor uso de recursos → Infraestructura → Calidad de vida"
+    ],
+    "potentialImpact": "Impacto Potencial",
+    "potentialImpactList": [
+      "Millones de usuarios con acceso a inteligencia política",
+      "Voto basado en datos, no en ruido",
+      "Capital global asignado con más precisión",
+      "Presión continua por transparencia",
+      "Educación cívica y financiera a escala"
+    ],
+    "synthesis": "SÍNTESIS",
+    "synthesisIntro": "AFOS Analytics.",
+    "synthesisQuote": "Es una infraestructura de inteligencia política global.",
+    "synthesisResolves": "Resuelve simultáneamente:",
+    "synthesisItems": [
+      "Asimetría de información",
+      "Incertidumbre política",
+      "Déficit de accountability"
+    ],
+    "synthesisFooter": "Mientras forma una base de usuarios más educados y mercados más eficientes.",
+    "positioning": "POSICIONAMIENTO",
+    "positioningIntro": "Un sistema donde:",
+    "positioningList": [
+      "los ciudadanos entienden mejor",
+      "las empresas planifican mejor",
+      "los inversores asignan mejor"
+    ],
+    "positioningFooter": "es un sistema que crece más rápido y con más estabilidad.",
+    "tagline": "Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency."
+  }
+}
