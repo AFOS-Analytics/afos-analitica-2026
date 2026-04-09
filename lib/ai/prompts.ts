@@ -33,21 +33,37 @@ RULES:
 9. Never hallucinate. If you are unsure, keep the original text.
 10. Return ONLY the translated text. No explanations, no notes.`;
 
+/**
+ * Sanitiza texto do usuário para evitar prompt injection.
+ * Escapa delimitadores que a IA pode interpretar como instruções.
+ */
+function sanitize(text: string): string {
+  return text
+    .replace(/```/g, '\'\'\'')
+    .replace(/---/g, '—')
+    .replace(/\n{3,}/g, '\n\n');
+}
+
 /** Prompt para tradução curta de UI (labels, botões, títulos) */
 export function uiTranslationPrompt(sourceText: string, sourceLocale: string, targetLocale: string): string {
-  return `Translate this UI text from ${sourceLocale} to ${targetLocale}.
+  return `Translate the following UI text from ${sourceLocale} to ${targetLocale}.
 Keep it concise (similar length to original). Preserve capitalization pattern.
+Return ONLY the translation, nothing else.
 
-Text: "${sourceText}"`;
+<source_text>
+${sanitize(sourceText)}
+</source_text>`;
 }
 
 /** Prompt para tradução editorial longa (descrições, análises) */
 export function editorialTranslationPrompt(sourceText: string, sourceLocale: string, targetLocale: string): string {
-  return `Translate this editorial content from ${sourceLocale} to ${targetLocale}.
+  return `Translate the following editorial content from ${sourceLocale} to ${targetLocale}.
 Maintain the analytical, institutional tone. Preserve all data points, numbers, percentages, and proper nouns exactly.
+Return ONLY the translation, nothing else.
 
-Text:
-${sourceText}`;
+<source_text>
+${sanitize(sourceText)}
+</source_text>`;
 }
 
 /** Prompt para QA de tradução (validação semântica) */

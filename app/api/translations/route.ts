@@ -14,25 +14,34 @@
  */
 
 import { NextResponse } from 'next/server';
+import { timingSafeEqual } from 'crypto';
 import { isValidLocale } from '../../../lib/i18n/config';
 import { translate } from '../../../lib/ai/translate';
 import { validateTranslation } from '../../../lib/ai/validate-translation';
 
 const MAX_TEXT_LENGTH = 10_000;
-
-// Últimas traduções aprovadas (fallback)
 const approvedCache = new Map<string, string>();
 
+function safeCompare(a: string, b: string): boolean {
+  try {
+    const bufA = Buffer.from(a);
+    const bufB = Buffer.from(b);
+    if (bufA.length !== bufB.length) return false;
+    return timingSafeEqual(bufA, bufB);
+  } catch { return false; }
+}
+
 export async function POST(request: Request) {
-  // ─── 1. Autenticação ────────────────────────────────────────────
+  // ─── 1. Autenticação (timing-safe) ────────────────────────────
   const authToken = process.env.TRANSLATION_AUTH_TOKEN;
   if (!authToken) {
     console.error('[translations] TRANSLATION_AUTH_TOKEN não configurado');
     return NextResponse.json({ error: 'not_configured' }, { status: 503 });
   }
 
-  const authHeader = request.headers.get('authorization');
-  if (!authHeader || authHeader !== `Bearer ${authToken}`) {
+  const authHeader = request.headers.get('authorization') || '';
+  const expected = `Bearer ${authToken}`;
+  if (!safeCompare(authHeader, expected)) {
     console.warn('[translations] Tentativa não autorizada');
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   }
@@ -98,6 +107,10 @@ export async function POST(request: Request) {
 
   // ─── 4. Validar ────────────────────────────────────────────────
   const validation = validateTranslation(sourceText, result.translatedText);
+
+  if (validation.warnings.length > 0) {
+    console.warn(`[translations] Warnings:`, validation.warnings);
+  }
 
   if (!validation.valid) {
     console.warn(`[translations] Validação falhou:`, validation.errors);
