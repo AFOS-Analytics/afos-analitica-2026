@@ -21,13 +21,6 @@ export function normalizeLocale(value: string): Locale | null {
   return null;
 }
 
-/** Mapeamento locale → BCP 47 para html lang e Intl APIs */
-export const localeMap: Record<Locale, string> = {
-  'pt-BR': 'pt-BR',
-  'en': 'en-US',
-  'es': 'es-ES',
-};
-
 /** Labels para o seletor de idiomas */
 export const localeLabels: Record<Locale, { short: string; full: string }> = {
   'pt-BR': { short: 'PT', full: 'Português' },

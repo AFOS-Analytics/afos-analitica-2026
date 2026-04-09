@@ -1,6 +1,7 @@
 /**
  * Glossário Central de Termos — AFOS Analytics
  *
+ * REFERÊNCIA EDITORIAL para tradutores. Não é importado por componentes.
  * Padroniza termos-chave entre pt-BR, en e es.
  * Source of truth: pt-BR (idioma primário do produto).
  *
