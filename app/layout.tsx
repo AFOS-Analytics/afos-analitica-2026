@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/react';
+import { organizationSchema, webAppSchema, datasetSchema, combineSchemas } from '../lib/seo/schema';
 import "./globals.css";
 
 const inter = { className: "font-sans antialiased" };
@@ -76,30 +77,11 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0F52BA" />
+        {/* Schema.org: Organization + WebApplication + Dataset (static, safe) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "AFOS Analytics",
-              "url": "https://afos-analitica-2026.vercel.app",
-              "description": "Plataforma global de inteligência eleitoral em tempo real. Cruzamento de mercados de previsão com pesquisas eleitorais.",
-              "applicationCategory": "NewsApplication",
-              "operatingSystem": "Web",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "BRL"
-              },
-              "author": {
-                "@type": "Organization",
-                "name": "AFOS Analytics",
-                "url": "https://afos-analitica-2026.vercel.app"
-              },
-              "inLanguage": "pt-BR",
-              "isAccessibleForFree": true
-            }),
+            __html: combineSchemas(organizationSchema(), webAppSchema(), datasetSchema()),
           }}
         />
       </head>
