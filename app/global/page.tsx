@@ -9,12 +9,25 @@ export const metadata: Metadata = {
   description: "Mapa interativo com eleições ao vivo em 14+ países. Mercados de previsão Polymarket, calendário eleitoral global e análise de risco político em tempo real.",
   alternates: {
     canonical: 'https://afos-analitica-2026.vercel.app/global',
+    languages: {
+      'pt-BR': 'https://afos-analitica-2026.vercel.app/global',
+      'en': 'https://afos-analitica-2026.vercel.app/global',
+      'es': 'https://afos-analitica-2026.vercel.app/global',
+      'x-default': 'https://afos-analitica-2026.vercel.app/global',
+    },
   },
   openGraph: {
     title: "Mapa Global de Eleições — AFOS Analytics",
     description: "Eleições ao vivo em 14+ países com mercados de previsão Polymarket.",
     url: "https://afos-analitica-2026.vercel.app/global",
     type: "website",
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'AFOS Analytics — Mapa Global de Eleições' }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mapa Global de Eleições — AFOS Analytics",
+    description: "Eleições ao vivo em 14+ países com Polymarket.",
+    images: ['/opengraph-image'],
   },
 };
 
