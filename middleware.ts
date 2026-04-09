@@ -17,25 +17,14 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
-    const now = Date.now();
-    for (const key of Array.from(rateLimit.keys())) {
-      const entry = rateLimit.get(key);
-      if (entry && now > entry.resetAt) rateLimit.delete(key);
-    }
-  }, 60000);
-}
-
 // ─── Paths to skip (no locale routing) ──────────────────────────────
-const SKIP_PATHS = ['/api/', '/_next/', '/geo/', '/fotos/'];
-const SKIP_EXACT = ['/opengraph-image', '/sitemap.xml', '/robots.txt', '/manifest.json', '/favicon.svg'];
-
 function shouldSkip(pathname: string): boolean {
-  if (SKIP_PATHS.some(p => pathname.startsWith(p))) return true;
-  if (SKIP_EXACT.some(p => pathname === p || pathname.startsWith(p + '?'))) return true;
-  if (pathname.includes('.')) return true; // static files
-  return false;
+  return pathname.startsWith('/api/') ||
+    pathname.startsWith('/_next/') ||
+    pathname.startsWith('/geo/') ||
+    pathname.startsWith('/fotos/') ||
+    pathname === '/opengraph-image' ||
+    pathname.includes('.');
 }
 
 // ─── Middleware ──────────────────────────────────────────────────────

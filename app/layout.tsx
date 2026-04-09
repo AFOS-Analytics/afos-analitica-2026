@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   title: "AFOS Analytics — Inteligência Eleitoral Global em Tempo Real",
   description: "Plataforma global de inteligência eleitoral: Polymarket (mercados de previsão com dinheiro real) + pesquisas de +17 institutos + notícias ao vivo + análises estratégicas. Eleições Brasil 2026 e mundo.",
   alternates: {
-    canonical: 'https://afos-analitica-2026.vercel.app',
+    canonical: 'https://afos-analitica-2026.vercel.app/pt-BR',
     languages: {
-      'pt-BR': 'https://afos-analitica-2026.vercel.app',
-      'en': 'https://afos-analitica-2026.vercel.app',
-      'es': 'https://afos-analitica-2026.vercel.app',
-      'x-default': 'https://afos-analitica-2026.vercel.app',
+      'pt-BR': 'https://afos-analitica-2026.vercel.app/pt-BR',
+      'en': 'https://afos-analitica-2026.vercel.app/en',
+      'es': 'https://afos-analitica-2026.vercel.app/es',
+      'x-default': 'https://afos-analitica-2026.vercel.app/pt-BR',
     },
   },
   openGraph: {

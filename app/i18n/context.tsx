@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useCallback, type ReactNode } from 'react';
 import type { Locale } from '../../lib/i18n/config';
 import { defaultLocale } from '../../lib/i18n/config';
 
@@ -21,18 +21,15 @@ interface ProviderProps {
 }
 
 export function I18nProvider({ children, initialLocale, initialMessages }: ProviderProps) {
-  const [locale] = useState<Locale>(initialLocale);
-  const [messages] = useState<Messages>(initialMessages);
-
   const t = useCallback((key: string, fallback?: string): string => {
     const parts = key.split('.');
     if (parts.length !== 2) return fallback || key;
     const [section, field] = parts;
-    return messages[section]?.[field] || fallback || key;
-  }, [messages]);
+    return initialMessages[section]?.[field] || fallback || key;
+  }, [initialMessages]);
 
   return (
-    <I18nContext.Provider value={{ locale, t, messages }}>
+    <I18nContext.Provider value={{ locale: initialLocale, t, messages: initialMessages }}>
       {children}
     </I18nContext.Provider>
   );
@@ -41,7 +38,6 @@ export function I18nProvider({ children, initialLocale, initialMessages }: Provi
 export function useTranslation() {
   const ctx = useContext(I18nContext);
   if (!ctx) {
-    // Fallback for components outside provider (should not happen in normal flow)
     return {
       locale: defaultLocale as Locale,
       t: (key: string, fallback?: string) => fallback || key,

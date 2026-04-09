@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale, localeMap, type Locale } from '../../lib/i18n/config';
+import { isValidLocale, type Locale } from '../../lib/i18n/config';
 import { getMessages } from '../../lib/i18n/get-messages';
 import { I18nProvider } from '../i18n/context';
 
