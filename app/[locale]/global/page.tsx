@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mapa Global de Eleições — AFOS Analytics",
     description: "Eleições ao vivo em 14+ países com mercados de previsão Polymarket.",
-    url: "https://afos-analitica-2026.vercel.app/global",
+    url: "https://afos-analitica-2026.vercel.app/pt-BR/global",
     type: "website",
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'AFOS Analytics — Mapa Global de Eleições' }],
   },

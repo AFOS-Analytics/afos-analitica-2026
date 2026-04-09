@@ -5,30 +5,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['pt-BR', 'en', 'es'];
   const now = new Date();
 
-  function withAlternates(path: string) {
-    const url = path ? `${baseUrl}/${path}` : baseUrl;
-    const languages: Record<string, string> = {};
-    for (const loc of locales) {
-      languages[loc] = url;
-    }
-    languages['x-default'] = url;
-    return languages;
-  }
+  const entries: MetadataRoute.Sitemap = [];
 
-  return [
-    {
-      url: baseUrl,
+  // Dashboard: /pt-BR, /en, /es
+  for (const loc of locales) {
+    const languages: Record<string, string> = {};
+    for (const alt of locales) {
+      languages[alt] = `${baseUrl}/${alt}`;
+    }
+    languages['x-default'] = `${baseUrl}/pt-BR`;
+
+    entries.push({
+      url: `${baseUrl}/${loc}`,
       lastModified: now,
       changeFrequency: 'hourly',
       priority: 1,
-      alternates: { languages: withAlternates('') },
-    },
-    {
-      url: `${baseUrl}/global`,
+      alternates: { languages },
+    });
+  }
+
+  // Global map: /pt-BR/global, /en/global, /es/global
+  for (const loc of locales) {
+    const languages: Record<string, string> = {};
+    for (const alt of locales) {
+      languages[alt] = `${baseUrl}/${alt}/global`;
+    }
+    languages['x-default'] = `${baseUrl}/pt-BR/global`;
+
+    entries.push({
+      url: `${baseUrl}/${loc}/global`,
       lastModified: now,
       changeFrequency: 'hourly',
       priority: 0.9,
-      alternates: { languages: withAlternates('global') },
-    },
-  ];
+      alternates: { languages },
+    });
+  }
+
+  return entries;
 }
