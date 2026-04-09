@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { locales, defaultLocale, COOKIE_NAME, isValidLocale } from './lib/i18n/config';
+import { defaultLocale, COOKIE_NAME, isValidLocale, normalizeLocale, locales } from './lib/i18n/config';
 
-// Rate limiting (keep existing logic)
+// ─── Rate Limiting ──────────────────────────────────────────────────
 const rateLimit = new Map<string, { count: number; resetAt: number }>();
 
 function isRateLimited(ip: string): boolean {
@@ -17,7 +17,6 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-// Cleanup expired entries
 if (typeof setInterval !== 'undefined') {
   setInterval(() => {
     const now = Date.now();
@@ -28,27 +27,28 @@ if (typeof setInterval !== 'undefined') {
   }, 60000);
 }
 
+// ─── Paths to skip (no locale routing) ──────────────────────────────
+const SKIP_PATHS = ['/api/', '/_next/', '/geo/', '/fotos/'];
+const SKIP_EXACT = ['/opengraph-image', '/sitemap.xml', '/robots.txt', '/manifest.json', '/favicon.svg'];
+
+function shouldSkip(pathname: string): boolean {
+  if (SKIP_PATHS.some(p => pathname.startsWith(p))) return true;
+  if (SKIP_EXACT.some(p => pathname === p || pathname.startsWith(p + '?'))) return true;
+  if (pathname.includes('.')) return true; // static files
+  return false;
+}
+
+// ─── Middleware ──────────────────────────────────────────────────────
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Skip static files, API routes, and Next.js internals
-  if (
-    pathname.startsWith('/api/') ||
-    pathname.startsWith('/_next/') ||
-    pathname.startsWith('/geo/') ||
-    pathname.startsWith('/fotos/') ||
-    pathname.includes('.') // static files (favicon.svg, manifest.json, etc)
-  ) {
-    // Rate limit only API routes
+  // Skip static files, API routes, Next.js internals
+  if (shouldSkip(pathname)) {
     if (pathname.startsWith('/api/')) {
       const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-                 request.headers.get('x-real-ip') ||
-                 'unknown';
+                 request.headers.get('x-real-ip') || 'unknown';
       if (isRateLimited(ip)) {
-        return NextResponse.json(
-          { error: 'Too many requests' },
-          { status: 429, headers: { 'Retry-After': '60' } }
-        );
+        return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers: { 'Retry-After': '60' } });
       }
       const response = NextResponse.next();
       response.headers.set('X-Content-Type-Options', 'nosniff');
@@ -58,36 +58,41 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Check if URL already has a valid locale prefix
+  // Check if URL has a valid locale prefix
   const segments = pathname.split('/').filter(Boolean);
   const firstSegment = segments[0] || '';
 
-  if (isValidLocale(firstSegment)) {
-    // URL has valid locale — continue
+  // Case-insensitive: /PT-BR → redirect to /pt-BR
+  if (!isValidLocale(firstSegment)) {
+    const normalized = normalizeLocale(firstSegment);
+    if (normalized) {
+      segments[0] = normalized;
+      return NextResponse.redirect(new URL('/' + segments.join('/'), request.url));
+    }
+  } else {
     return NextResponse.next();
   }
 
   // No locale in URL — detect and redirect
-  // 1. Check cookie
+  // 1. Cookie
   const cookieLocale = request.cookies.get(COOKIE_NAME)?.value;
   if (cookieLocale && isValidLocale(cookieLocale)) {
     return NextResponse.redirect(new URL(`/${cookieLocale}${pathname}`, request.url));
   }
 
-  // 2. Check Accept-Language header
+  // 2. Accept-Language
   const acceptLang = request.headers.get('accept-language') || '';
   let detectedLocale = defaultLocale;
   for (const locale of locales) {
-    if (acceptLang.includes(locale.split('-')[0])) {
+    if (acceptLang.toLowerCase().includes(locale.split('-')[0].toLowerCase())) {
       detectedLocale = locale;
       break;
     }
   }
 
-  // 3. Redirect to detected locale
   return NextResponse.redirect(new URL(`/${detectedLocale}${pathname}`, request.url));
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon\\.ico|geo/|fotos/).*)'],
+  matcher: ['/((?!_next/static|_next/image).*)'],
 };

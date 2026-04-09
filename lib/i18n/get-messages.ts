@@ -50,6 +50,10 @@ export async function getMessages(locale: Locale): Promise<Messages> {
     }
   }
 
+  if (Object.keys(merged).length === 0) {
+    console.error(`[i18n] Nenhuma mensagem carregada para locale: ${locale}`);
+  }
+
   cache.set(locale, merged);
   return merged;
 }
