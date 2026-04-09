@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /api/cron/
+Disallow: /api/test-email/
+Disallow: /api/health/
+Disallow: /api/subscribe/
+
+Sitemap: https://afos-analitica-2026.vercel.app/sitemap.xml

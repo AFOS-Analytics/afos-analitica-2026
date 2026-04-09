@@ -1,7 +1,22 @@
+import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { MAP_TOKENS } from '../lib/map-colors';
 import { MOCK_ELECTIONS } from '../lib/mock-elections';
 import type { CountryMarketSummary } from '../types/global-map';
+
+export const metadata: Metadata = {
+  title: "Mapa Global de Eleições — AFOS Analytics",
+  description: "Mapa interativo com eleições ao vivo em 14+ países. Mercados de previsão Polymarket, calendário eleitoral global e análise de risco político em tempo real.",
+  alternates: {
+    canonical: 'https://afos-analitica-2026.vercel.app/global',
+  },
+  openGraph: {
+    title: "Mapa Global de Eleições — AFOS Analytics",
+    description: "Eleições ao vivo em 14+ países com mercados de previsão Polymarket.",
+    url: "https://afos-analitica-2026.vercel.app/global",
+    type: "website",
+  },
+};
 
 // D3 must not be SSR'd — dynamic import with ssr: false
 const GlobalElectionMap = dynamic(

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/react';
+import { I18nProvider } from './i18n/context';
 import "./globals.css";
 
 const inter = { className: "font-sans antialiased" };
@@ -12,24 +13,54 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analitica-2026.vercel.app'),
-  title: "AFOS Analytics — Eleições Presidenciais Brasil 2026",
-  description: "Dashboard de inteligência eleitoral com pesquisas de +17 institutos, Polymarket, notícias ao vivo e análises estratégicas das eleições presidenciais do Brasil 2026.",
+  title: "AFOS Analytics — Inteligência Eleitoral Global em Tempo Real",
+  description: "Plataforma global de inteligência eleitoral: Polymarket (mercados de previsão com dinheiro real) + pesquisas de +17 institutos + notícias ao vivo + análises estratégicas. Eleições Brasil 2026 e mundo.",
+  alternates: {
+    canonical: 'https://afos-analitica-2026.vercel.app',
+    languages: {
+      'pt-BR': 'https://afos-analitica-2026.vercel.app',
+      'en': 'https://afos-analitica-2026.vercel.app',
+      'es': 'https://afos-analitica-2026.vercel.app',
+      'x-default': 'https://afos-analitica-2026.vercel.app',
+    },
+  },
   openGraph: {
-    title: "AFOS Analytics — Eleições Presidenciais Brasil 2026",
-    description: "Plataforma de inteligência eleitoral: Polymarket + pesquisas + notícias + análises em tempo real.",
+    title: "AFOS Analytics — Inteligência Eleitoral Global",
+    description: "Mercados de previsão + pesquisas + notícias + análises em tempo real. Eleições Brasil 2026 e mundo.",
     url: "https://afos-analitica-2026.vercel.app",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'AFOS Analytics — Inteligência Eleitoral Global em Tempo Real',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Eleições 2026",
-    description: "Dashboard eleitoral: Polymarket + 17 institutos de pesquisa + notícias ao vivo.",
+    title: "AFOS Analytics — Inteligência Eleitoral Global",
+    description: "Polymarket + 17 institutos de pesquisa + notícias ao vivo. Eleições Brasil 2026 e mundo.",
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'geo.region': 'BR',
+    'geo.placename': 'Brasil',
+    'content-language': 'pt-BR',
   },
 };
 
@@ -44,8 +75,36 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" href="/favicon.svg?v=2" />
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0F52BA" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "AFOS Analytics",
+              "url": "https://afos-analitica-2026.vercel.app",
+              "description": "Plataforma global de inteligência eleitoral em tempo real. Cruzamento de mercados de previsão com pesquisas eleitorais.",
+              "applicationCategory": "NewsApplication",
+              "operatingSystem": "Web",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "AFOS Analytics",
+                "url": "https://afos-analitica-2026.vercel.app"
+              },
+              "inLanguage": "pt-BR",
+              "isAccessibleForFree": true
+            }),
+          }}
+        />
       </head>
-      <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /></body>
+      <body className={`${inter.className} bg-white text-dark`}><I18nProvider>{children}</I18nProvider><Analytics /></body>
     </html>
   );
 }
