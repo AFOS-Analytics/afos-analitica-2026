@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Mapa Global de Eleições — AFOS Analytics",
   description: "Mapa interativo com eleições ao vivo em 14+ países. Mercados de previsão Polymarket, calendário eleitoral global e análise de risco político em tempo real.",
   alternates: {
-    canonical: 'https://afos-analitica-2026.vercel.app/global',
+    canonical: 'https://afos-analitica-2026.vercel.app/pt-BR/global',
     languages: {
       'pt-BR': 'https://afos-analitica-2026.vercel.app/pt-BR/global',
       'en': 'https://afos-analitica-2026.vercel.app/en/global',
@@ -109,7 +109,7 @@ export default async function GlobalMapPage() {
       >
         <div className="flex items-center gap-3">
           <a
-            href="/"
+            href=".."
             className="text-xs px-3 py-1.5 rounded-lg transition-colors hover:bg-white/5"
             style={{ color: MAP_TOKENS.textMuted, border: `1px solid ${MAP_TOKENS.border}` }}
             aria-label="Voltar ao dashboard"

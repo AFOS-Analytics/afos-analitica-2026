@@ -12,6 +12,15 @@ export function isValidLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
 
+/** Case-insensitive: normaliza para locale válido ou retorna null */
+export function normalizeLocale(value: string): Locale | null {
+  const lower = value.toLowerCase();
+  for (const loc of locales) {
+    if (loc.toLowerCase() === lower) return loc;
+  }
+  return null;
+}
+
 /** Mapeamento locale → BCP 47 para html lang e Intl APIs */
 export const localeMap: Record<Locale, string> = {
   'pt-BR': 'pt-BR',
