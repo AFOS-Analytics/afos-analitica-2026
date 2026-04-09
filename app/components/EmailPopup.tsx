@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { useTranslation } from '../i18n/context';
 
 const STORAGE = {
   SUBSCRIBED: 'afos_popup_subscribed',
@@ -14,7 +15,16 @@ function isEmailValid(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
 }
 
+function safeGetItem(key: string): string | null {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
+
+function safeSetItem(key: string, value: string): void {
+  try { localStorage.setItem(key, value); } catch {}
+}
+
 export function EmailPopup() {
+  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
@@ -27,8 +37,8 @@ export function EmailPopup() {
 
   const shouldShow = useCallback((): boolean => {
     if (typeof window === 'undefined') return false;
-    if (localStorage.getItem(STORAGE.SUBSCRIBED) === 'true') return false;
-    const dismissedUntil = localStorage.getItem(STORAGE.DISMISSED_UNTIL);
+    if (safeGetItem(STORAGE.SUBSCRIBED) === 'true') return false;
+    const dismissedUntil = safeGetItem(STORAGE.DISMISSED_UNTIL);
     if (dismissedUntil && Date.now() < Number(dismissedUntil)) return false;
     return true;
   }, []);
@@ -62,20 +72,20 @@ export function EmailPopup() {
   const handleDismiss = useCallback(() => {
     setVisible(false);
     // localStorage com TTL de 24h (funciona entre abas)
-    localStorage.setItem(STORAGE.DISMISSED_UNTIL, String(Date.now() + DISMISS_TTL_MS));
+    safeSetItem(STORAGE.DISMISSED_UNTIL, String(Date.now() + DISMISS_TTL_MS));
   }, []);
 
   const handleSubmit = useCallback(async () => {
     if (submitting.current) return;
 
     if (!isEmailValid(email)) {
-      setErrorMsg('Insira um email válido.');
+      setErrorMsg(t('popup.errorInvalid'));
       setStatus('error');
       return;
     }
 
     if (!consent) {
-      setErrorMsg('Marque a caixa de consentimento para continuar.');
+      setErrorMsg(t('popup.errorConsent'));
       setStatus('error');
       return;
     }
@@ -83,7 +93,7 @@ export function EmailPopup() {
     // Honeypot — bot detected, fake success without submitting
     if (honeypot) {
       setStatus('success');
-      localStorage.setItem(STORAGE.SUBSCRIBED, 'true');
+      safeSetItem(STORAGE.SUBSCRIBED, 'true');
       setTimeout(() => setVisible(false), 2500);
       return;
     }
@@ -103,26 +113,26 @@ export function EmailPopup() {
 
       if (!res.ok || !data.ok) {
         const msgs: Record<string, string> = {
-          invalid_email: 'Email inválido. Verifique e tente novamente.',
-          storage_unavailable: 'Serviço temporariamente indisponível.',
-          rate_limited: 'Muitas tentativas. Tente novamente em 1 hora.',
+          invalid_email: t('popup.errorInvalid'),
+          storage_unavailable: t('popup.errorUnavailable'),
+          rate_limited: t('popup.errorRateLimit'),
         };
-        setErrorMsg(msgs[data.error] || 'Não foi possível concluir. Tente novamente.');
+        setErrorMsg(msgs[data.error] || t('popup.errorGeneric'));
         setStatus('error');
         submitting.current = false;
         return;
       }
 
       setStatus('success');
-      localStorage.setItem(STORAGE.SUBSCRIBED, 'true');
+      safeSetItem(STORAGE.SUBSCRIBED, 'true');
       setTimeout(() => setVisible(false), 2500);
     } catch {
-      setErrorMsg('Erro de conexão. Tente novamente.');
+      setErrorMsg(t('popup.errorConnection'));
       setStatus('error');
     } finally {
       submitting.current = false;
     }
-  }, [email, consent, honeypot]);
+  }, [email, consent, honeypot, t]);
 
   if (!visible) return null;
 
@@ -140,7 +150,7 @@ export function EmailPopup() {
         <button
           onClick={handleDismiss}
           className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-primary/50 hover:text-primary hover:bg-primary/10 transition-colors"
-          aria-label="Fechar popup"
+          aria-label={t('common.close')}
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -155,16 +165,16 @@ export function EmailPopup() {
                   <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <p className="text-dark font-semibold text-lg">Cadastro realizado</p>
-              <p className="text-gray-500 text-sm mt-1">Você receberá alertas e resumos do AFOS Analytics.</p>
+              <p className="text-dark font-semibold text-lg">{t('popup.success')}</p>
+              <p className="text-gray-500 text-sm mt-1">{t('popup.successDesc')}</p>
             </div>
           ) : (
             <>
               <h3 className="text-dark font-bold text-lg leading-snug mb-1">
-                Receba alertas do AFOS Analytics
+                {t('popup.title')}
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                Mudanças nas odds, resumo diário, eventos críticos e novidades — direto no seu email.
+                {t('popup.description')}
               </p>
 
               <div className="mb-3">
@@ -172,7 +182,7 @@ export function EmailPopup() {
                   type="email"
                   value={email}
                   onChange={e => { setEmail(e.target.value); if (status === 'error') setStatus('idle'); }}
-                  placeholder="Seu melhor e-mail"
+                  placeholder={t('popup.placeholder')}
                   autoComplete="email"
                   disabled={status === 'loading'}
                   className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
@@ -199,7 +209,7 @@ export function EmailPopup() {
                   className="mt-0.5 w-4 h-4 rounded border-gray-300 accent-primary flex-shrink-0"
                 />
                 <span className="text-xs text-gray-500 leading-relaxed">
-                  Quero receber alertas, resumos e comunicações do AFOS Analytics por e-mail.
+                  {t('popup.consent')}
                 </span>
               </label>
 
@@ -216,15 +226,15 @@ export function EmailPopup() {
                 {status === 'loading' ? (
                   <span className="flex items-center justify-center gap-2">
                     <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Cadastrando...
+                    {t('popup.submitting')}
                   </span>
                 ) : (
-                  'Cadastrar'
+                  t('popup.submit')
                 )}
               </button>
 
               <p className="text-center text-[10px] text-gray-400 mt-3">
-                Sem spam. Cancele quando quiser.
+                {t('popup.noSpam')}
               </p>
             </>
           )}

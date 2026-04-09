@@ -16,6 +16,8 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
           // OWASP A02:2021 - Cryptographic Failures
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+          // SEO / GEO
+          { key: 'Content-Language', value: 'pt-BR' },
           // Content Security Policy
           {
             key: 'Content-Security-Policy',
