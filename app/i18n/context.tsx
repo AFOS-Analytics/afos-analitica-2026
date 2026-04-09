@@ -4,7 +4,8 @@ import { createContext, useContext, useCallback, type ReactNode } from 'react';
 import type { Locale } from '../../lib/i18n/config';
 import { defaultLocale } from '../../lib/i18n/config';
 
-type Messages = Record<string, Record<string, string>>;
+type MessageValue = string | string[];
+type Messages = Record<string, Record<string, MessageValue>>;
 
 interface I18nContextType {
   locale: Locale;
@@ -21,11 +22,15 @@ interface ProviderProps {
 }
 
 export function I18nProvider({ children, initialLocale, initialMessages }: ProviderProps) {
+  /** Retorna string. Para arrays, use tList(). */
   const t = useCallback((key: string, fallback?: string): string => {
     const parts = key.split('.');
     if (parts.length !== 2) return fallback || key;
     const [section, field] = parts;
-    return initialMessages[section]?.[field] || fallback || key;
+    const val = initialMessages[section]?.[field];
+    if (typeof val === 'string') return val;
+    if (Array.isArray(val)) return val.join(', ');
+    return fallback || key;
   }, [initialMessages]);
 
   return (
