@@ -59,7 +59,7 @@ function getStoredLocale(): Locale {
 
 function safeSetCookie(locale: Locale): void {
   try {
-    document.cookie = `${I18N_CONFIG.cookieName}=${locale};path=/;max-age=${365 * 24 * 60 * 60};SameSite=Lax`;
+    document.cookie = `${I18N_CONFIG.cookieName}=${locale};path=/;max-age=${365 * 24 * 60 * 60};SameSite=Lax;Secure`;
   } catch { /* modo privado */ }
 }
 

@@ -5,6 +5,16 @@
  * Apenas HTML puro + caracteres ASCII seguros.
  */
 
+/** Escape HTML para prevenir XSS em templates de email (OWASP A03) */
+function esc(text: string | number): string {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 const BRAND = {
   color: '#0F52BA',
   name: 'AFOS Analytics',
@@ -89,13 +99,13 @@ export function oddsAlertTemplate(data: {
   const diff = Math.abs(data.newOdds - data.oldOdds).toFixed(1);
 
   return layout([
-    '<h2 style="margin:0 0 8px;color:#1a1a1a;font-size:18px;">Alerta de Odds &mdash; ' + data.country + '</h2>',
+    '<h2 style="margin:0 0 8px;color:#1a1a1a;font-size:18px;">Alerta de Odds &mdash; ' + esc(data.country) + '</h2>',
     '<p style="color:#666;font-size:13px;margin:0 0 20px;">Mudanca significativa detectada no Polymarket</p>',
     '<div style="background:#f8fafc;border-radius:8px;padding:20px;border-left:4px solid ' + color + ';margin:0 0 20px;">',
-    '<p style="margin:0 0 8px;color:#1a1a1a;font-size:16px;font-weight:700;">' + data.candidate + '</p>',
+    '<p style="margin:0 0 8px;color:#1a1a1a;font-size:16px;font-weight:700;">' + esc(data.candidate) + '</p>',
     '<p style="margin:0;font-size:28px;font-weight:800;color:' + color + ';">',
-    data.newOdds + '% <span style="font-size:16px;">' + arrow + ' ' + diff + 'pp</span></p>',
-    '<p style="margin:8px 0 0;color:#999;font-size:12px;">Antes: ' + data.oldOdds + '%</p>',
+    esc(data.newOdds) + '% <span style="font-size:16px;">' + arrow + ' ' + esc(diff) + 'pp</span></p>',
+    '<p style="margin:8px 0 0;color:#999;font-size:12px;">Antes: ' + esc(data.oldOdds) + '%</p>',
     '</div>',
     '<a href="' + BRAND.url + '" style="display:inline-block;background:' + BRAND.color + ';color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
     'Ver Detalhes</a>',
@@ -112,19 +122,19 @@ export function dailySummaryTemplate(data: {
 }): string {
   const candidateRows = data.topCandidates.map(c => [
     '<tr>',
-    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#333;font-size:14px;">' + c.name + '</td>',
-    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:' + BRAND.color + ';font-weight:700;text-align:right;font-size:14px;">' + c.odds + '%</td>',
-    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#666;text-align:right;font-size:13px;">' + c.change + '</td>',
+    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#333;font-size:14px;">' + esc(c.name) + '</td>',
+    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:' + BRAND.color + ';font-weight:700;text-align:right;font-size:14px;">' + esc(c.odds) + '%</td>',
+    '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#666;text-align:right;font-size:13px;">' + esc(c.change) + '</td>',
     '</tr>',
   ].join('')).join('');
 
   const highlightItems = data.highlights.map(h =>
-    '<li style="padding:4px 0;color:#333;font-size:14px;line-height:1.6;">' + h + '</li>'
+    '<li style="padding:4px 0;color:#333;font-size:14px;line-height:1.6;">' + esc(h) + '</li>'
   ).join('');
 
   return layout([
     '<h2 style="margin:0 0 4px;color:#1a1a1a;font-size:18px;">Resumo Diario</h2>',
-    '<p style="color:#999;font-size:13px;margin:0 0 20px;">' + data.date + '</p>',
+    '<p style="color:#999;font-size:13px;margin:0 0 20px;">' + esc(data.date) + '</p>',
     '<h3 style="color:' + BRAND.color + ';font-size:14px;margin:0 0 12px;text-transform:uppercase;letter-spacing:0.5px;">Odds do Polymarket</h3>',
     '<table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">',
     '<tr>',
@@ -151,10 +161,10 @@ export function systemAlertTemplate(data: {
 }): string {
   return layout([
     '<h2 style="margin:0 0 8px;color:#dc2626;font-size:18px;">ALERTA DO SISTEMA</h2>',
-    '<p style="color:#666;font-size:13px;margin:0 0 20px;">' + data.type + '</p>',
+    '<p style="color:#666;font-size:13px;margin:0 0 20px;">' + esc(data.type) + '</p>',
     '<div style="background:#fef2f2;border-radius:8px;padding:16px;border-left:4px solid #dc2626;margin:0 0 20px;">',
-    '<p style="margin:0 0 8px;color:#1a1a1a;font-size:14px;font-weight:600;">' + data.message + '</p>',
-    '<p style="margin:0;color:#666;font-size:13px;">' + data.details + '</p>',
+    '<p style="margin:0 0 8px;color:#1a1a1a;font-size:14px;font-weight:600;">' + esc(data.message) + '</p>',
+    '<p style="margin:0;color:#666;font-size:13px;">' + esc(data.details) + '</p>',
     '</div>',
     '<a href="' + BRAND.url + '/api/health" style="display:inline-block;background:#dc2626;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
     'Verificar Status</a>',
