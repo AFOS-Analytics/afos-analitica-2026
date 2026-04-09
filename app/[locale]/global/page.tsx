@@ -3,33 +3,14 @@ import dynamic from 'next/dynamic';
 import { MAP_TOKENS } from '../../lib/map-colors';
 import { MOCK_ELECTIONS } from '../../lib/mock-elections';
 import type { CountryMarketSummary } from '../../types/global-map';
+import { isValidLocale } from '../../../lib/i18n/config';
+import { buildMetadata, PAGE_SEO } from '../../../lib/seo/metadata';
 
-export const metadata: Metadata = {
-  title: "Mapa Global de Eleições — AFOS Analytics",
-  description: "Mapa interativo com eleições ao vivo em 14+ países. Mercados de previsão Polymarket, calendário eleitoral global e análise de risco político em tempo real.",
-  alternates: {
-    canonical: 'https://afos-analitica-2026.vercel.app/pt-BR/global',
-    languages: {
-      'pt-BR': 'https://afos-analitica-2026.vercel.app/pt-BR/global',
-      'en': 'https://afos-analitica-2026.vercel.app/en/global',
-      'es': 'https://afos-analitica-2026.vercel.app/es/global',
-      'x-default': 'https://afos-analitica-2026.vercel.app/pt-BR/global',
-    },
-  },
-  openGraph: {
-    title: "Mapa Global de Eleições — AFOS Analytics",
-    description: "Eleições ao vivo em 14+ países com mercados de previsão Polymarket.",
-    url: "https://afos-analitica-2026.vercel.app/pt-BR/global",
-    type: "website",
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'AFOS Analytics — Mapa Global de Eleições' }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mapa Global de Eleições — AFOS Analytics",
-    description: "Eleições ao vivo em 14+ países com Polymarket.",
-    images: ['/opengraph-image'],
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  return buildMetadata(PAGE_SEO.global[locale], locale);
+}
 
 // D3 must not be SSR'd — dynamic import with ssr: false
 const GlobalElectionMap = dynamic(
