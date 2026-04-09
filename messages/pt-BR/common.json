@@ -1,0 +1,64 @@
+{
+  "header": {
+    "title": "AFOS Analytics",
+    "subtitle": "Plataforma Mundial de Inteligência em Cruzamentos de Risco Político Eleitoral",
+    "about": "Sobre",
+    "goals": "Metas",
+    "global": "Global",
+    "updated": "Atualizado",
+    "skipToMain": "Pular para conteúdo principal"
+  },
+  "footer": {
+    "description": "AFOS Analytics — Plataforma Global de Inteligência Eleitoral | Dados: Polymarket, +17 Institutos de Pesquisa, Google News, Firecrawl AI | Atualizado a cada 2h | Este conteúdo não constitui orientação política",
+    "disclaimer": "Dados e probabilidades obtidos da",
+    "polymarket": "Polymarket (polymarket.com)",
+    "notAffiliated": "— Este site não é afiliado à Polymarket. Os dados são atualizados automaticamente via API pública.",
+    "backToTop": "Voltar ao topo",
+    "polymarketLink": "Polymarket (abre em nova aba)"
+  },
+  "common": {
+    "loading": "Carregando dados...",
+    "error": "Erro ao carregar dados",
+    "retry": "Recarregar",
+    "tryAgain": "Tente recarregar a página.",
+    "close": "Fechar",
+    "staleData": "dados defasados",
+    "demoMode": "modo demonstração"
+  },
+  "language": {
+    "label": "Idioma",
+    "pt-BR": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "popup": {
+    "title": "Receba alertas do AFOS Analytics",
+    "description": "Mudanças nas odds, resumo diário, eventos críticos e novidades — direto no seu email.",
+    "placeholder": "Seu melhor e-mail",
+    "consent": "Quero receber alertas, resumos e comunicações do AFOS Analytics por e-mail.",
+    "submit": "Cadastrar",
+    "submitting": "Cadastrando...",
+    "success": "Cadastro realizado",
+    "successDesc": "Você receberá alertas e resumos do AFOS Analytics.",
+    "noSpam": "Sem spam. Cancele quando quiser.",
+    "errorInvalid": "Insira um email válido.",
+    "errorConsent": "Marque a caixa de consentimento para continuar.",
+    "errorConnection": "Erro de conexão. Tente novamente.",
+    "errorGeneric": "Não foi possível concluir. Tente novamente.",
+    "errorRateLimit": "Muitas tentativas. Tente novamente em 1 hora.",
+    "errorUnavailable": "Serviço temporariamente indisponível."
+  },
+  "modal": {
+    "aboutTitle": "Sobre — AFOS Analytics",
+    "metasTitle": "Metas — AFOS Analytics",
+    "globalTitle": "Global — Eleições pelo Mundo",
+    "calendarTitle": "Calendário Eleitoral Global",
+    "electionsWithData": "Eleições com Dados Polymarket",
+    "upcomingElections": "Próximas Eleições — Aguardando Dados",
+    "clickToSee": "Clique para ver",
+    "candidates": "candidatos",
+    "totalVol": "Vol. total",
+    "mapLoading": "Carregando dados do mapa...",
+    "dataSource": "Dados: Polymarket | Volumes e odds ao vivo"
+  }
+}

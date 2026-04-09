@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslation } from '../i18n/context';
-import { LanguageSelector } from './LanguageSelector';
+import { LanguageSwitcher } from './layout/language-switcher';
 
 interface HeaderProps {
   fetchedAt?: string;
@@ -37,7 +37,7 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
                   {t('header.global')}
                 </button>
               </div>
-              <LanguageSelector />
+              <LanguageSwitcher />
             </div>
           </div>
           <p className="text-blue-300 text-xs mt-2">
