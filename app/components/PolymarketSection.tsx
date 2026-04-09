@@ -30,7 +30,8 @@ export function PolymarketSection({ poly }: Props) {
     const display = topN ? items.slice(0, topN) : items;
     const maxOdds = display.length > 0 ? Math.max(...display.map(d => d.odds)) : 100;
     const totalVol = event.markets.reduce((s, m) => s + (m.volumeNum || 0), 0);
-    const eventUrl = event.slug ? `${POLYMARKET_BASE}${event.slug}` : null;
+    const isValidSlug = /^[a-z0-9-]+$/.test(event.slug || '');
+    const eventUrl = isValidSlug ? `${POLYMARKET_BASE}${event.slug}` : null;
 
     return (
       <Card className="mb-4">

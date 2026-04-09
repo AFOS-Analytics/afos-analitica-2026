@@ -1,6 +1,17 @@
 import type { NewsData, NewsItem } from '../types';
 import { SectionTitle } from './ui';
 
+/** Validar URL para prevenir javascript: protocol injection (OWASP A03) */
+function isSafeUrl(url: string | undefined): boolean {
+  if (!url || typeof url !== 'string') return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 interface Props {
   news: NewsData | null;
 }
@@ -30,9 +41,13 @@ export function NewsSection({ news }: Props) {
                     <div key={i} className="flex items-start gap-2 text-xs border-b border-gray-100 pb-2">
                       <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{n.time || '—'}</span>
                       <div className="flex-1">
-                        <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-dark hover:text-primary hover:underline leading-snug font-medium">
-                          {n.title}
-                        </a>
+                        {isSafeUrl(n.url) ? (
+                          <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-dark hover:text-primary hover:underline leading-snug font-medium">
+                            {n.title}
+                          </a>
+                        ) : (
+                          <span className="text-dark leading-snug font-medium">{n.title}</span>
+                        )}
                         <span className="text-gray-400 ml-1">— {n.source}</span>
                         {n.summary && <p className="text-gray-500 mt-1 leading-relaxed">{n.summary}</p>}
                       </div>
