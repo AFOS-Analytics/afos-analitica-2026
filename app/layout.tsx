@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from '@vercel/analytics/react';
-import { I18nProvider } from './i18n/context';
 import "./globals.css";
 
 const inter = { className: "font-sans antialiased" };
@@ -104,7 +103,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white text-dark`}><I18nProvider>{children}</I18nProvider><Analytics /></body>
+      <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /></body>
     </html>
   );
 }
