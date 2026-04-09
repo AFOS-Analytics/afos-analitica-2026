@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const seo = messages.seo || {};
 
   return {
-    title: seo.title || 'AFOS Analytics',
-    description: seo.description || '',
+    title: (typeof seo.title === 'string' ? seo.title : null) || 'AFOS Analytics',
+    description: (typeof seo.description === 'string' ? seo.description : null) || '',
   };
 }
 

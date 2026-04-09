@@ -176,9 +176,13 @@ export const GLOSSARY = {
 } as const;
 
 export type GlossaryKey = keyof typeof GLOSSARY;
-export type Locale = 'pt-BR' | 'en' | 'es';
 
-/** Busca termo do glossário por chave e locale */
-export function term(key: GlossaryKey, locale: Locale): string {
-  return GLOSSARY[key][locale];
+// Usa tipo Locale de config.ts (fonte única)
+import type { Locale } from './config';
+
+/** Busca termo do glossário por chave e locale. Retorna chave se não encontrar. */
+export function term(key: string, locale: Locale): string {
+  const entry = GLOSSARY[key as GlossaryKey];
+  if (!entry) return key;
+  return entry[locale] || entry['pt-BR'] || key;
 }

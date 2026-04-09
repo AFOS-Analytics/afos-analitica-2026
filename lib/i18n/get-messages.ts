@@ -14,17 +14,18 @@
 import type { Locale } from './config';
 import { defaultLocale } from './config';
 
-export type Messages = Record<string, Record<string, string>>;
+export type Messages = Record<string, Record<string, string | string[]>>;
 
 const NAMESPACES = ['common', 'home', 'about', 'seo'] as const;
 
 const cache = new Map<string, Messages>();
 
-async function loadNamespace(locale: Locale, ns: string): Promise<Record<string, Record<string, string>>> {
+async function loadNamespace(locale: Locale, ns: string): Promise<Record<string, Record<string, string | string[]>>> {
   try {
     const mod = await import(`../../messages/${locale}/${ns}.json`);
     return mod.default || {};
-  } catch {
+  } catch (err) {
+    console.warn(`[i18n] Namespace ${ns} falhou para ${locale}:`, err);
     if (locale !== defaultLocale) {
       return loadNamespace(defaultLocale, ns);
     }
