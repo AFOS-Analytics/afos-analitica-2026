@@ -26,17 +26,15 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
               <p className="text-blue-200 mt-1 text-sm md:text-base">{t('header.subtitle')}</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2 flex-shrink-0 items-end sm:items-center">
-              <div className="flex gap-2">
-                <button onClick={onShowSobre} aria-label={t('header.about')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
-                  {t('header.about')}
-                </button>
-                <button onClick={onShowMetas} aria-label={t('header.goals')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
-                  {t('header.goals')}
-                </button>
-                <button onClick={onShowGlobal} aria-label={t('header.global')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200">
-                  {t('header.global')}
-                </button>
-              </div>
+              <button onClick={onShowSobre} aria-label={t('header.about')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 w-full sm:w-auto text-center">
+                {t('header.about')}
+              </button>
+              <button onClick={onShowMetas} aria-label={t('header.goals')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 w-full sm:w-auto text-center">
+                {t('header.goals')}
+              </button>
+              <button onClick={onShowGlobal} aria-label={t('header.global')} className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200 w-full sm:w-auto text-center">
+                {t('header.global')}
+              </button>
               <LanguageSwitcher />
             </div>
           </div>

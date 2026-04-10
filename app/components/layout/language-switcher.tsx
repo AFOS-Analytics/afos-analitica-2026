@@ -45,7 +45,7 @@ export function LanguageSwitcher() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 py-2 rounded-lg transition-all"
+        className="flex items-center justify-center gap-1.5 border border-white/30 hover:bg-white/10 text-white text-xs sm:text-sm px-3 py-2 rounded-lg transition-all w-full sm:w-auto"
         aria-label="Idioma"
         aria-expanded={open}
       >
