@@ -1,5 +1,4 @@
 import { prisma } from './db'
-import type { Prisma } from '@prisma/client'
 
 /**
  * Grava evento de auditoria em governance.audit_log.
@@ -17,7 +16,7 @@ export function audit(
       data: {
         action,
         resource,
-        detail: (detail as Prisma.InputJsonValue) ?? undefined,
+        detail: detail ? JSON.parse(JSON.stringify(detail)) : undefined,
         ip: ip ?? undefined,
         actor: actor ?? undefined,
       },
