@@ -1,23 +1,26 @@
 'use client';
 
+import { useTranslation } from '../i18n/context';
+
 interface ModalMetasProps {
   show: boolean;
   onClose: () => void;
 }
 
 export function ModalMetas({ show, onClose }: ModalMetasProps) {
+  const { t } = useTranslation();
   if (!show) return null;
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Metas do AFOS Analytics" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-6 rounded-t-2xl flex justify-between items-center">
-          <h2 className="text-xl font-bold">Metas — AFOS Analytics</h2>
-          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none focus:outline-2 focus:outline-white" aria-label="Fechar">✕</button>
+          <h2 className="text-xl font-bold">{t('modal.metasTitle')}</h2>
+          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none focus:outline-2 focus:outline-white" aria-label={t('common.close')}>✕</button>
         </div>
             <div className="p-6 sm:p-8 space-y-6 text-base text-dark leading-relaxed max-h-[75vh] overflow-y-auto">
 
               <div>
-                <h3 className="font-bold text-lg text-primary mb-3">A TESE CENTRAL</h3>
+                <h3 className="font-bold text-lg text-primary mb-3">{t('metas.centralThesis')}</h3>
                 <p className="mb-3">Governos, empresas e investidores perdem bilhões todos os anos por decisões baseadas em informação fragmentada, enviesada ou manipulada.</p>
                 <p className="mb-1 text-sm text-dark-secondary">Quando o eleitor vota sem dados,</p>
                 <p className="mb-1 text-sm text-dark-secondary">quando o empresário não antecipa cenários,</p>
@@ -28,7 +31,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">📈 Impacto no Crescimento Econômico</h3>
+                <h3 className="font-bold text-primary mb-2">📈 {t('metas.economicImpact')}</h3>
                 <p className="mb-3"><strong>Previsibilidade atrai capital.</strong></p>
                 <p className="mb-2">O AFOS Analytics integra:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
@@ -60,7 +63,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">Impacto no Desenvolvimento Institucional</h3>
+                <h3 className="font-bold text-primary mb-2">{t('metas.institutionalImpact')}</h3>
                 <p className="mb-3"><strong>Democracias mais eficientes começam com informação melhor.</strong></p>
                 <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
@@ -72,7 +75,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
-                <p className="font-semibold mb-2">Educação Cívica e Financeira</p>
+                <p className="font-semibold mb-2">{t('metas.civicEducation')}</p>
                 <p className="text-sm text-dark-secondary mb-2">O produto não apenas informa — <strong>forma usuários mais sofisticados</strong>.</p>
                 <p className="text-sm text-dark-secondary mb-2">Introduz, de forma prática:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
@@ -84,7 +87,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
-                <p className="font-semibold mb-2">Accountability baseada em dados</p>
+                <p className="font-semibold mb-2">{t('metas.accountability')}</p>
                 <p className="text-sm text-dark-secondary mb-2">Ao expor:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
                   <li>• probabilidades reais de eventos</li>
@@ -95,7 +98,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">🌍 Impacto na Imagem Internacional</h3>
+                <h3 className="font-bold text-primary mb-2">🌍 {t('metas.internationalImpact')}</h3>
                 <p className="mb-3"><strong>Soft power tecnológico.</strong></p>
                 <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics posiciona qualquer país que o adote como:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
@@ -112,7 +115,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">🌎 Posicionamento Global</h3>
+                <h3 className="font-bold text-primary mb-2">🌎 {t('metas.globalPositioning')}</h3>
                 <p className="mb-3"><strong>Não é mídia. Não é ferramenta. É infraestrutura.</strong></p>
                 <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics se posiciona como:</p>
                 <blockquote className="border-l-4 border-primary pl-4 mb-3 text-base font-semibold text-primary">camada de inteligência política para mercados globais</blockquote>
@@ -142,7 +145,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">🔗 Efeito Sistêmico (Cascata)</h3>
+                <h3 className="font-bold text-primary mb-2">🔗 {t('metas.systemicEffect')}</h3>
                 <div className="bg-light-bg rounded-lg p-4 text-sm space-y-3 text-dark">
                   <p>Transparência → Decisão informada → Melhor representação → Políticas mais eficientes → <strong>Crescimento sustentável</strong></p>
                   <p>Previsibilidade → Investimento → Emprego → Renda → Arrecadação → <strong>Serviços públicos melhores</strong></p>
@@ -151,7 +154,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">Impacto Potencial</h3>
+                <h3 className="font-bold text-primary mb-2">{t('metas.potentialImpact')}</h3>
                 <ul className="space-y-2 text-sm text-dark">
                   <li>📱 <strong>Milhões de usuários</strong> com acesso a inteligência política</li>
                   <li>🗳️ <strong>Voto baseado em dados</strong>, não em ruído</li>
@@ -162,7 +165,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-5">
-                <h3 className="font-bold text-primary mb-3">SÍNTESE</h3>
+                <h3 className="font-bold text-primary mb-3">{t('metas.synthesis')}</h3>
                 <p className="mb-2 text-sm text-dark">O AFOS Analytics.</p>
                 <blockquote className="border-l-4 border-primary pl-4 mb-3 text-sm font-semibold text-primary">É uma infraestrutura de inteligência política global.</blockquote>
                 <p className="mb-3 text-sm text-dark">Resolve simultaneamente:</p>
@@ -181,7 +184,7 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">POSICIONAMENTO</h3>
+                <h3 className="font-bold text-primary mb-2">{t('metas.positioning')}</h3>
                 <p className="mb-2 text-sm text-dark-secondary">Um sistema onde:</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
                   <li>• cidadãos entendem melhor</li>

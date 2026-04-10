@@ -1,5 +1,8 @@
+'use client';
+
 import type { AnalysisSection } from '../types';
 import { SectionTitle, Card } from './ui';
+import { useTranslation } from '../i18n/context';
 
 interface Props {
   sentimento: AnalysisSection | undefined;
@@ -7,10 +10,11 @@ interface Props {
 }
 
 export function SentimentSection({ sentimento: s, updatedAt }: Props) {
+  const { t } = useTranslation();
   return (
     <section>
       <SectionTitle icon="📡">Sentimento Popular — Redes Sociais e Internet</SectionTitle>
-      {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {updatedAt} BRT</p>}
+      {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="bg-gradient-to-br from-light-bg to-blue-50 border-l-4 border-l-primary">
         <div className="space-y-4 text-sm text-dark leading-relaxed">
           <p>{s?.text1 || ''}</p>
@@ -18,15 +22,15 @@ export function SentimentSection({ sentimento: s, updatedAt }: Props) {
           <p>{s?.text3 || ''}</p>
           <div className="grid md:grid-cols-3 gap-3">
             <div className="bg-white rounded-lg p-3 border border-light-border">
-              <div className="font-bold text-primary mb-1">Direita</div>
+              <div className="font-bold text-primary mb-1">{t('sections.right')}</div>
               <p className="text-xs text-gray-600">{s?.direita || ''}</p>
             </div>
             <div className="bg-white rounded-lg p-3 border border-light-border">
-              <div className="font-bold text-danger mb-1">Esquerda</div>
+              <div className="font-bold text-danger mb-1">{t('sections.left')}</div>
               <p className="text-xs text-gray-600">{s?.esquerda || ''}</p>
             </div>
             <div className="bg-white rounded-lg p-3 border border-light-border">
-              <div className="font-bold text-[#6B7280] mb-1">Terceira Via</div>
+              <div className="font-bold text-[#6B7280] mb-1">{t('sections.thirdWay')}</div>
               <p className="text-xs text-gray-600">{s?.terceiraVia || ''}</p>
             </div>
           </div>
