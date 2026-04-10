@@ -32,29 +32,10 @@
  * 5. Revisar logs de [translations] para tentativas não autorizadas
  */
 
-import type { Locale } from '../i18n/config';
-import { locales } from '../i18n/config';
+// Locale validation via middleware (isValidLocale + normalizeLocale)
 
-// ─── Input Validation ───────────────────────────────────────────────
-
-/** Validar e sanitizar texto para uso em prompts de IA */
-export function sanitizeForAI(text: string, maxLength: number = 10_000): string {
-  if (!text || typeof text !== 'string') return '';
-  return text
-    .slice(0, maxLength)
-    .replace(/```/g, "'''")       // Previne escape de code blocks
-    .replace(/---{3,}/g, '—')     // Previne separadores markdown
-    .replace(/<script[^>]*>/gi, '')  // Strip script tags
-    .replace(/<\/script>/gi, '')
-    .replace(/\x00/g, '');         // Null bytes
-}
-
-/** Validar locale em runtime (além da tipagem) */
-export function assertLocale(value: unknown): asserts value is Locale {
-  if (typeof value !== 'string' || !(locales as readonly string[]).includes(value)) {
-    throw new Error(`Invalid locale: ${String(value)}`);
-  }
-}
+// sanitizeForAI: implementado em lib/ai/prompts.ts → sanitize()
+// assertLocale: implementado via isValidLocale() + normalizeLocale() no middleware
 
 /** Sanitizar output de IA antes de usar */
 export function sanitizeAIOutput(text: string): string {
