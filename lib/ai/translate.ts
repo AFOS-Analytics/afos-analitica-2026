@@ -2,8 +2,7 @@
  * Módulo de tradução assistida por IA.
  *
  * Provider: Anthropic (default) ou OpenAI.
- * Cache: Neon ai.translations (persistente, sobrevive redeploy).
- * Fallback: in-memory se Neon indisponível.
+ * Cache: in-memory com LRU 500 (tabelas AI serão estendidas em fase futura).
  */
 
 import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt } from './prompts'
@@ -31,55 +30,25 @@ function hashKey(req: TranslationRequest): string {
   return createHash('sha256').update(raw).digest('hex').slice(0, 32)
 }
 
-// ─── In-memory fallback (se Neon indisponível) — LRU 500 ──────────
+// ─── In-memory cache — LRU 500 ────────────────────────────────────
 
 const MEM_CACHE_LIMIT = 500
-const memCache = new Map<string, string>()
+const cache = new Map<string, { text: string; at: number }>()
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000
 
-// ─── Cache: Neon first, in-memory fallback ─────────────────────────
-
-async function getCached(hash: string, targetLocale: string): Promise<string | null> {
-  // Neon
-  try {
-    const record = await prisma?.translation.findUnique({
-      where: { sourceHash_targetLocale: { sourceHash: hash, targetLocale } },
-      select: { translatedText: true },
-    })
-    if (record) return record.translatedText
-  } catch {}
-
-  // In-memory fallback
-  return memCache.get(`${hash}:${targetLocale}`) ?? null
+function getCached(key: string): string | null {
+  const entry = cache.get(key)
+  if (!entry) return null
+  if (Date.now() - entry.at > CACHE_TTL_MS) { cache.delete(key); return null }
+  return entry.text
 }
 
-async function setCache(
-  hash: string,
-  req: TranslationRequest,
-  translatedText: string,
-  provider: string
-): Promise<void> {
-  const key = `${hash}:${req.targetLocale}`
-  if (memCache.size >= MEM_CACHE_LIMIT) {
-    const oldest = memCache.keys().next().value
-    if (oldest) memCache.delete(oldest)
+function setCache(key: string, text: string) {
+  if (cache.size >= MEM_CACHE_LIMIT) {
+    const oldest = cache.keys().next().value
+    if (oldest) cache.delete(oldest)
   }
-  memCache.set(key, translatedText)
-
-  // Neon (fire-and-forget)
-  try {
-    await prisma?.translation.upsert({
-      where: { sourceHash_targetLocale: { sourceHash: hash, targetLocale: req.targetLocale } },
-      update: { translatedText, provider },
-      create: {
-        sourceHash: hash,
-        sourceLocale: req.sourceLocale,
-        targetLocale: req.targetLocale,
-        sourceText: req.sourceText.slice(0, 5000),
-        translatedText,
-        provider,
-      },
-    })
-  } catch {}
+  cache.set(key, { text, at: Date.now() })
 }
 
 // ─── Provider abstraction ──────────────────────────────────────────
@@ -163,18 +132,52 @@ async function callProvider(
   }
 }
 
+// ─── LLM run tracking + guardrails (fire-and-forget) ───────────────
+
+import { assessRisk, recordModelOutput } from './guardrails'
+
+function trackLlmRun(provider: string, inputText: string, inputHash: string, outputText: string, outputHash: string) {
+  if (!prisma) return
+
+  const riskFlags = assessRisk(inputText, outputText)
+
+  prisma.llmRun
+    .create({
+      data: {
+        runType: 'translation',
+        modelName: provider === 'anthropic' ? 'claude-haiku-4-5-20251001' : 'gpt-4o-mini',
+        promptVersion: '1.0',
+        inputHash,
+        outputHash,
+        riskFlags: JSON.parse(JSON.stringify(riskFlags)),
+      },
+    })
+    .then((run) => {
+      recordModelOutput(run.id, outputText)
+    })
+    .catch((err) => {
+      console.warn('[llm-tracking] Failed:', err instanceof Error ? err.message : err)
+    })
+}
+
 // ─── Public API ────────────────────────────────────────────────────
 
 export async function translate(req: TranslationRequest): Promise<TranslationResult> {
-  const hash = hashKey(req)
-
-  const cached = await getCached(hash, req.targetLocale)
+  const key = hashKey(req)
+  const cached = getCached(key)
   if (cached) {
     return { translatedText: cached, cached: true, provider: 'cache' }
   }
 
   const config = getProvider()
   if (!config) throw new Error('translation_not_configured')
+
+  // Injection scan (flag, não bloqueia)
+  const { detectInjection } = await import('./guardrails')
+  const injectionDetected = detectInjection(req.sourceText)
+  if (injectionDetected) {
+    console.warn('[translate] Injection pattern detected in input, proceeding with flag')
+  }
 
   const userPrompt =
     req.type === 'ui'
@@ -187,7 +190,10 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
 
   if (!result.text) throw new Error('empty_translation')
 
-  await setCache(hash, req, result.text, config.provider)
+  setCache(key, result.text)
+
+  const outputHash = createHash('sha256').update(result.text).digest('hex').slice(0, 32)
+  trackLlmRun(config.provider, req.sourceText, key, result.text, outputHash)
 
   return {
     translatedText: result.text,

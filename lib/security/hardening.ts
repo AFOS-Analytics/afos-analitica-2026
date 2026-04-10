@@ -72,24 +72,11 @@ export function isAIOutputSafe(text: string): { safe: boolean; reason?: string }
 
 import { audit } from '../audit'
 
-export type AuditEvent =
-  | 'auth_success'
-  | 'auth_failure'
-  | 'translation_success'
-  | 'translation_failure'
-  | 'validation_failure'
-  | 'ai_output_blocked'
-  | 'rate_limited'
-  | 'invalid_locale'
-  | 'invalid_input';
+/** Log de auditoria — grava no Neon (governance.audit_logs) com fallback console */
+export function auditLog(event: string, details: Record<string, unknown> = {}): void {
+  const entityType = (details.route as string) || (details.resource as string) || 'system'
+  const ip = details.ip as string | undefined
+  const userAgent = details.userAgent as string | undefined
 
-/** Log de auditoria — grava no Neon (governance.audit_log) com fallback console */
-export function auditLog(event: AuditEvent, details: Record<string, unknown> = {}): void {
-  const resource = (details.resource as string) || 'unknown'
-  const ip = (details.ip as string) || undefined
-
-  // Remover campos já extraídos para não duplicar no detail
-  const { resource: _r, ip: _i, ...rest } = details
-
-  audit(event, resource, Object.keys(rest).length > 0 ? rest : null, ip)
+  audit(event, entityType, 'n/a', { ip, userAgent, after: details })
 }
