@@ -70,7 +70,9 @@ export function isAIOutputSafe(text: string): { safe: boolean; reason?: string }
 
 // ─── Audit Logging ──────────────────────────────────────────────────
 
-type AuditEvent =
+import { audit } from '../audit'
+
+export type AuditEvent =
   | 'auth_success'
   | 'auth_failure'
   | 'translation_success'
@@ -81,14 +83,13 @@ type AuditEvent =
   | 'invalid_locale'
   | 'invalid_input';
 
-/** Log de auditoria estruturado (sem vazar secrets) */
+/** Log de auditoria — grava no Neon (governance.audit_log) com fallback console */
 export function auditLog(event: AuditEvent, details: Record<string, unknown> = {}): void {
-  const safe = { ...details };
-  // Nunca logar tokens, keys, passwords
-  for (const key of Object.keys(safe)) {
-    if (/token|key|secret|password|auth/i.test(key)) {
-      safe[key] = '[REDACTED]';
-    }
-  }
-  console.log(`[audit] ${event}`, JSON.stringify(safe));
+  const resource = (details.resource as string) || 'unknown'
+  const ip = (details.ip as string) || undefined
+
+  // Remover campos já extraídos para não duplicar no detail
+  const { resource: _r, ip: _i, ...rest } = details
+
+  audit(event, resource, Object.keys(rest).length > 0 ? rest : null, ip)
 }

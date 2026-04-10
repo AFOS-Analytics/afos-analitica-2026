@@ -9,6 +9,7 @@ import { NextResponse } from 'next/server';
 import { isKvAvailable, checkCronHealth } from '../../lib/kv';
 import { getCircuitStatus } from '../../lib/polymarket/client';
 import { countSubscribers } from '../../lib/email/subscribers';
+import { prisma } from '../../../lib/db';
 
 export const revalidate = 0; // Nunca cachear health checks
 
@@ -18,7 +19,14 @@ export async function GET() {
   const redisOk = isKvAvailable();
   const subscriberCount = await countSubscribers();
 
-  const allHealthy = cronHealth.healthy && circuit.state === 'CLOSED' && redisOk;
+  // Ping Neon — mantém conexão quente (mitigação cold start)
+  let neonOk = false;
+  try {
+    await prisma.$queryRaw`SELECT 1`;
+    neonOk = true;
+  } catch {}
+
+  const allHealthy = cronHealth.healthy && circuit.state === 'CLOSED' && redisOk && neonOk;
 
   return NextResponse.json(
     {
@@ -36,6 +44,7 @@ export async function GET() {
           circuit: circuit.state,
           failures: circuit.failures,
         },
+        neon: { ok: neonOk },
       },
     },
     {
