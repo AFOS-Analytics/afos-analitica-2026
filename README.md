@@ -20,17 +20,39 @@ Monitoramos eleições no mundo inteiro e transformamos dados complexos em infor
 - Sinais e sentimento das redes sociais
 - Análises estratégicas geradas com inteligência artificial
 
-**Open Source. Gratuito. Atualizado automaticamente. Mobile e desktop.**
+**Open Source. Gratuito. Multilíngue (PT-BR / EN / ES). Mobile e desktop.**
 
 ---
 
-## Global por Design
+## Internacionalização (i18n)
 
-Começamos com o Brasil, mas o objetivo é maior:
+Plataforma disponível em 3 idiomas com rotas dedicadas:
 
-> **Acompanhar eleições no mundo inteiro e criar uma nova forma de entender risco político em escala global.**
+| Idioma | Rota | Status |
+|--------|------|--------|
+| Português (BR) | `/pt-BR` | Default |
+| English | `/en` | Completo |
+| Español | `/es` | Completo |
 
-Onde houver eleição, existe sinal. Onde existe sinal, o AFOS Analytics lê.
+### Arquitetura i18n
+
+```
+Middleware: detecta locale (URL → cookie → Accept-Language → pt-BR)
+  ↓
+/[locale]/page.tsx → dashboard traduzido
+/[locale]/global/page.tsx → mapa global traduzido
+  ↓
+I18nProvider: carrega mensagens server-side → passa via context
+  ↓
+Componentes: t('header.title') → string no idioma correto
+```
+
+- **244 chaves** × 3 idiomas = 732 strings traduzidas
+- **4 namespaces**: common, home, about, seo
+- **Language Switcher**: dropdown PT/EN/ES no header
+- **Cookie** `NEXT_LOCALE`: persiste preferência (Secure + SameSite)
+- **Content-Language**: header dinâmico por locale no middleware
+- **Glossário editorial**: 30+ termos padronizados (`lib/i18n/glossary.ts`)
 
 ---
 
@@ -57,234 +79,158 @@ Usuário:     Requisição → Redis read (<1ms) → resposta
 
 ```
 app/
+├── [locale]/
+│   ├── layout.tsx                     # Layout por locale (metadata + i18n provider)
+│   ├── page.tsx                       # Dashboard traduzido
+│   └── global/page.tsx                # Mapa global traduzido
+├── i18n/context.tsx                   # I18nProvider + useTranslation() hook
 ├── types/
-│   ├── index.ts                   # 19 interfaces TypeScript
-│   └── global-map.ts              # Tipos do mapa global + ISO3
-├── hooks/useDashboardData.ts      # Custom hooks de data fetching
+│   ├── index.ts                       # 19 interfaces TypeScript
+│   └── global-map.ts                  # Tipos do mapa global + ISO3
+├── hooks/useDashboardData.ts          # Custom hooks de data fetching (timeout 15s)
 ├── lib/
-│   ├── utils.ts                   # Funções utilitárias
-│   ├── security.ts                # Documentação de segurança OWASP
-│   ├── kv.ts                      # Wrapper Upstash Redis + health check
-│   ├── map-colors.ts              # Tokens visuais do mapa global
-│   ├── mock-elections.ts          # Mock data (fallback offline)
-│   ├── cache/headers.ts           # Cache multi-camada
+│   ├── utils.ts                       # Funções utilitárias
+│   ├── kv.ts                          # Wrapper Upstash Redis + health check
+│   ├── map-colors.ts                  # Tokens visuais do mapa global
+│   ├── mock-elections.ts              # Mock data (fallback build-time)
+│   ├── cache/headers.ts               # Cache multi-camada
 │   ├── polymarket/
-│   │   ├── client.ts              # API client (retry, timeout, circuit breaker)
-│   │   ├── country-market-map.ts  # Registry slug → ISO3 (14 países, 18 mercados)
-│   │   ├── bootstrap.ts           # Aggregador: fetch → parse → normalize
-│   │   └── normalize.ts           # Payload optimization (compartilhado)
+│   │   ├── client.ts                  # API client (retry, timeout, circuit breaker)
+│   │   ├── country-market-map.ts      # Registry slug → ISO3 (14 países, 18 mercados)
+│   │   ├── bootstrap.ts              # Aggregador: fetch → parse → normalize
+│   │   └── normalize.ts              # Payload optimization (compartilhado)
 │   └── email/
-│       ├── subscribers.ts         # CRUD subscribers (Redis Set + Hash)
-│       ├── resend.ts              # Resend service (welcome, alertas, resumo)
-│       └── templates.ts           # 4 templates HTML (sem emojis, ASCII safe)
+│       ├── subscribers.ts             # CRUD subscribers (Redis Set + Hash)
+│       ├── resend.ts                  # Resend service (welcome, alertas)
+│       └── templates.ts              # 4 templates HTML (esc() anti-XSS)
 ├── components/
-│   ├── ui.tsx                     # Card, HBar, Stars, SectionTitle (ARIA)
-│   ├── Header.tsx                 # Header com navegação + skip link
-│   ├── Footer.tsx                 # Footer + botão "Voltar ao topo"
-│   ├── EmailPopup.tsx             # Popup captura email (30s + scroll + LGPD)
-│   ├── ModalAbout.tsx / ModalMetas.tsx / ModalGlobal.tsx
+│   ├── ui.tsx                         # Card, HBar, Stars, SectionTitle (ARIA)
+│   ├── Header.tsx                     # Header + Language Switcher (i18n)
+│   ├── Footer.tsx                     # Footer traduzido + voltar ao topo
+│   ├── EmailPopup.tsx                 # Popup email traduzido (LGPD)
+│   ├── layout/language-switcher.tsx   # Seletor PT/EN/ES (URL-based)
+│   ├── ModalAbout.tsx / ModalMetas.tsx / ModalGlobal.tsx  # Modais traduzidos
 │   ├── PolymarketSection.tsx / PollsSection.tsx / CandidatesSection.tsx
 │   ├── NewsSection.tsx / SentimentSection.tsx
 │   ├── InssSection.tsx / BancoMasterSection.tsx / StfSection.tsx
 │   └── global-map/
-│       ├── GlobalElectionMap.tsx   # D3 + TopoJSON + SVG (React.memo)
-│       ├── GlobalMapTooltip.tsx    # Tooltip hover (PT-BR)
-│       ├── GlobalMapLegend.tsx     # Legenda de cores (PT-BR)
-│       └── GlobalCountryDrawer.tsx # Drawer lateral com candidatos (PT-BR)
+│       ├── GlobalElectionMap.tsx       # D3 + TopoJSON + SVG (React.memo)
+│       ├── GlobalMapTooltip.tsx / GlobalMapLegend.tsx / GlobalCountryDrawer.tsx
 ├── api/
-│   ├── polymarket/                # Odds presidenciais BR
-│   ├── polls/                     # Pesquisas eleitorais
-│   ├── news/                      # Notícias (Google News + Firecrawl)
-│   ├── analysis-cards/            # Análises dinâmicas
-│   ├── analysis-criteriosa/       # Análise dos 4 primeiros
-│   ├── global-elections/          # Eleições globais (legado)
-│   ├── global-map/                # Mapa global (Redis → Polymarket fallback)
-│   ├── cron/refresh-elections/    # Cron 60s → Polymarket → Redis
-│   ├── health/                    # Health check (Redis, cron, circuit, subscribers)
-│   ├── subscribe/                 # POST captura email (rate limit, honeypot)
-│   └── test-email/                # Teste de envio dos 4 templates
-├── global/
-│   ├── page.tsx                   # Mapa mundial D3 (dark theme, standalone)
-│   └── loading.tsx                # Skeleton
-├── page.tsx                       # Dashboard BR (~92 linhas, orquestrador)
-└── layout.tsx                     # Metadata + SEO + Vercel Analytics
-middleware.ts                      # Rate limiting (100 req/min/IP) + headers
-vercel.json                        # Cron schedule (cada 60s)
+│   ├── polymarket/                    # Odds presidenciais BR
+│   ├── polls/ / news/                 # Pesquisas + notícias
+│   ├── analysis-cards/ / analysis-criteriosa/  # Análises
+│   ├── global-elections/ / global-map/         # Eleições globais
+│   ├── cron/refresh-elections/        # Cron 60s → Redis
+│   ├── health/                        # Health check
+│   ├── subscribe/                     # Captura email (rate limit, honeypot)
+│   └── translations/                  # Pipeline tradução IA (Bearer auth)
+├── page.tsx                           # Redirect → /pt-BR
+├── layout.tsx                         # Root layout (metadata, Schema.org, Analytics)
+├── sitemap.ts                         # 6 entries (3 locales × 2 pages) + alternates
+└── robots.ts                          # Dinâmico
+lib/
+├── i18n/
+│   ├── config.ts                      # Locales, default, cookie, labels
+│   ├── get-messages.ts                # Carrega namespaces por locale
+│   └── glossary.ts                    # Referência editorial (30+ termos)
+├── seo/
+│   ├── metadata.ts                    # buildMetadata() com hreflang cruzado
+│   └── schema.ts                      # 6 schemas JSON-LD
+├── ai/
+│   ├── prompts.ts                     # 4 prompts (system, UI, editorial, QA)
+│   ├── translate.ts                   # Tradução IA (SHA-256 cache, LRU 500)
+│   └── validate-translation.ts       # 7 checks determinísticos
+└── security/
+    └── hardening.ts                   # sanitizeAIOutput, isAIOutputSafe, auditLog
+messages/
+├── pt-BR/ (common, home, about, seo)
+├── en/    (common, home, about, seo)
+└── es/    (common, home, about, seo)
+middleware.ts                          # Rate limiting Redis + locale routing
+vercel.json                            # Cron schedule
+tests/i18n.spec.ts                     # 9 testes E2E Playwright
 ```
 
-### Cache Multi-Camada
+---
 
-```
-Usuário → Browser (60s) → Vercel Edge (5min) → Redis (<1ms)
-```
+## SEO Multilíngue + GEO
 
-| Camada | TTL | Propósito |
-|--------|-----|-----------|
-| Browser | 60s | Dados frescos para usuário ativo |
-| Vercel Edge | 5min + 10min stale | Protege origem de burst traffic |
-| Upstash Redis | 10min TTL | Dados escritos pelo cron, <1ms leitura global |
+### Metadata por Locale
+
+Cada página gera metadata nativa no idioma correto via `buildMetadata()`:
+- Title, description, canonical, OG, Twitter Card
+- Hreflang cruzado automático (pt-BR, en, es, x-default)
+- Content-Language header dinâmico no middleware
+
+### Schema.org (6 tipos)
+
+| Schema | Onde | Propósito |
+|--------|------|-----------|
+| **Organization** | Root layout | Identidade da marca |
+| **WebApplication** | Root layout | Produto como app web gratuito |
+| **Dataset** | Root layout | Dados eleitorais como dataset |
+| **WebSite** | `[locale]` layout | Site por idioma |
+| **FAQPage** | `[locale]` layout | 5 perguntas nativas por idioma (GEO) |
+| **BreadcrumbList** | `[locale]` layout | Navegação estruturada |
+
+### GEO (Generative Engine Optimization)
+
+5 FAQs nativas por idioma, otimizadas para LLMs e mecanismos generativos:
+- O que é o AFOS Analytics?
+- É gratuito?
+- O que são mercados de previsão?
+- Quais eleições monitora?
+- Como os dados são atualizados?
 
 ---
 
 ## Mapa Global de Eleições
 
-Disponível no botão **"Global"** do header e como rota dedicada `/global`.
-
-O módulo Global transforma o calendário mundial de eleições em inteligência acionável em tempo real — criando um termômetro global de risco político e oportunidade econômica.
-
-### Funcionalidades do mapa
+Disponível via botão **"Global"** e rota `/[locale]/global`.
 
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
 - **14 países monitorados** com dados ao vivo do Polymarket
 - **Hover** — tooltip com candidato líder, probabilidade, volume
-- **Click** — drawer lateral com breakdown completo de candidatos
-- **Pulsing markers** — indicadores animados para mercados ao vivo
-- **Zoom/Pan** — d3-zoom com limites (1x-8x)
-- **React.memo** — evita re-renders desnecessários
-- **Dynamic import** — D3 carregado apenas no cliente (ssr: false)
-- **Textos em PT-BR** — tooltip, legenda, drawer, loading
-
-### Legenda de cores
-
-As cores representam o grau de definição do calendário eleitoral:
-
-| Cor | Significado |
-|-----|-------------|
-| Tons mais claros com interações | Eleições previstas para este ano |
-| Tons mais escuros com interações | Eleições previstas para os próximos 3 anos |
-| Tons mais escuros sem interações | Eleições sem data definida, horizonte mais distante |
-
-### Conteúdo explicativo
-
-O modal Global inclui seções explicativas completas:
-
-- **Como funciona** — cores, interações, dados acessíveis por clique
-- **Calendário global** — acompanhamento contínuo de eleições mundiais
-- **Finalidade estratégica** — antecipar mercado, identificar riscos, decisões baseadas em dados
-- **Tradução executiva** — política gera volatilidade, volatilidade gera oportunidade
+- **Click** — drawer lateral com breakdown de candidatos
+- **Zoom/Pan** — d3-zoom (1x-8x)
+- **React.memo** — evita re-renders
+- **Textos traduzidos** nos 3 idiomas
 
 ---
 
-## Sistema de Email (Resend)
-
-### Captura de Subscribers (Popup)
-
-- Popup aparece após **30 segundos + scroll** (engajamento real)
-- Theme **Sapphire Blue Light** (gradiente azul claro)
-- **Checkbox de consentimento** desmarcado por padrão (LGPD compliant)
-- **Honeypot** anti-bot (campo oculto no frontend + validação backend)
-- **Rate limit específico**: 5 cadastros/IP/hora via Redis
-- **Dismiss**: localStorage com TTL 24h (funciona entre abas)
-- **Cadastro**: localStorage permanente (nunca mais aparece)
-- **Idempotência**: email duplicado retorna sucesso sem erro
-
-### Templates de Email (4)
-
-| Template | Uso | Assunto |
-|----------|-----|---------|
-| **Welcome** | Novo subscriber | Bem-vindo ao AFOS Analytics |
-| **Odds Alert** | Mudança significativa | Lula ▲ 42% — Brasil |
-| **Daily Summary** | Resumo diário | AFOS Resumo — [data] |
-| **System Alert** | Cron/health falhou | AFOS Alert: [tipo] |
-
-- HTML puro, sem emojis (previne `??` em clientes de email)
-- Font Arial (compatibilidade máxima)
-- Header Sapphire Blue com branding AFOS
-- Mobile-friendly (tabelas responsivas)
-
-### Armazenamento
+## Pipeline de Tradução por IA
 
 ```
-Redis SET  afos:subscribers         → dedup
-Redis HASH afos:subscriber:{email}  → { email, source, status, consentVersion, createdAt, updatedAt }
+POST /api/translations (Bearer auth)
+  → sanitize input (anti-prompt-injection)
+    → cache SHA-256 (24h, LRU 500)
+      → IA (Anthropic/OpenAI)
+        → sanitizeAIOutput (strip scripts/JS)
+          → isAIOutputSafe (bloqueia se inseguro)
+            → validateTranslation (7 checks determinísticos)
+              → aprovar ou fallback
 ```
 
-### Resend
-
-- **Free tier**: 100 emails/dia
-- **Remetente**: `onboarding@resend.dev` (free tier, sem domínio verificado)
-- **Welcome email**: enviado automaticamente a novos subscribers
-- **Preparado para**: alertas de odds, resumo diário, alertas de sistema
+- **Auth**: timing-safe (timingSafeEqual)
+- **Providers**: Anthropic Claude Haiku ou OpenAI GPT-4o-mini
+- **Validação**: placeholders, números, URLs, termos protegidos, HTML tags, comprimento, caracteres
+- **Audit logging**: auth_failure, ai_output_blocked, validation_failure, translation_success
 
 ---
 
-## Observabilidade
+## Segurança
 
-### Health Check (`/api/health`)
+### OWASP Top 10 Web + API Security + LLM Guardrails
 
-```json
-{
-  "status": "healthy | degraded",
-  "components": {
-    "redis": { "ok": true },
-    "cron": { "ok": true, "lastUpdate": "...", "ageSeconds": 45 },
-    "polymarket": { "circuit": "CLOSED", "failures": 0 },
-    "subscribers": { "total": 42 }
-  }
-}
-```
-
-### Vercel Analytics
-
-Integrado via `@vercel/analytics` — métricas de tráfego, performance e uso.
-
----
-
-## Segurança (OWASP)
-
-Implementa **OWASP Top 10 2025 (Web)** e **OWASP API Security Top 10 2023**:
-
-| OWASP | Medida |
-|---|---|
-| **A02** | HSTS max-age 2 anos + preload |
-| **A03** | Validação de slugs, sanitização de entrada |
-| **A05** | CSP, X-Frame-Options DENY, poweredByHeader false |
-| **A08** | try-catch em todas as APIs, safe JSON parse |
-| **A10** | Allowlist de hosts para fetch externo |
-| **API4** | Rate limiting 100 req/min/IP + 5/IP/hora no subscribe |
-| **API8** | Timeout 10s + AbortController em todos os fetch |
-
-**Circuit Breaker (Polymarket):**
-```
-CLOSED → 3 falhas → OPEN (skip 5min) → HALF_OPEN (1 probe) → CLOSED
-```
-
-**Anti-spam (Subscribe):**
-- Honeypot field (frontend + backend)
-- Rate limit específico (5/IP/hora)
-- Validação dupla (frontend + backend)
-- Idempotência (email duplicado = sucesso silencioso)
-
----
-
-## Polymarket Integration
-
-| Componente | Arquivo | Função |
-|------------|---------|--------|
-| **Client** | `lib/polymarket/client.ts` | Fetch com retry 1x, timeout 10s, circuit breaker |
-| **Registry** | `lib/polymarket/country-market-map.ts` | 14 países x 18 mercados, slug → ISO3 |
-| **Aggregador** | `lib/polymarket/bootstrap.ts` | fetch → parse → group → normalize |
-| **Normalize** | `lib/polymarket/normalize.ts` | Payload optimization (compartilhado) |
-| **Cron** | `api/cron/refresh-elections/` | Cada 60s → Redis write (autenticado) |
-| **API** | `api/global-map/` | Redis read <1ms, 4 níveis de fallback |
-
----
-
-## APIs
-
-| Endpoint | Descrição | Fonte | Segurança |
-|---|---|---|---|
-| `/api/global-map` | Eleições globais normalizadas | Redis → Polymarket | Rate limit, cache, 4 fallbacks |
-| `/api/cron/refresh-elections` | Refresh background | Polymarket → Redis | x-vercel-cron + CRON_SECRET |
-| `/api/health` | Status do sistema | Redis + circuit breaker | revalidate=0 |
-| `/api/subscribe` | Captura email | Redis | Rate limit 5/IP/h, honeypot |
-| `/api/polymarket` | Odds presidenciais BR | Polymarket | Slug validation, timeout 10s |
-| `/api/polls` | Pesquisas +17 institutos | JSON local | File check |
-| `/api/news` | Notícias categorizadas | Google News + Firecrawl | URL validation, timeout |
-| `/api/analysis-cards` | Análises dinâmicas | JSON local | File check |
-| `/api/analysis-criteriosa` | Análise dos 4 primeiros | JSON local | File check |
-| `/api/global-elections` | Eleições globais (legado) | Polymarket | Timeout, safe JSON parse |
-| `/api/test-email` | Teste dos 4 templates | Resend | Autenticação cron |
+| Camada | Medidas |
+|--------|---------|
+| **Web** | CSP (sem unsafe-eval), HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy |
+| **API** | Rate limiting distribuído (Upstash REST), timeout 15s, slug validation, URL validation |
+| **Auth** | timing-safe compare, Bearer token, x-vercel-cron |
+| **Email** | esc() anti-XSS, honeypot anti-bot, rate limit 5/IP/hora |
+| **IA** | sanitize() anti-prompt-injection, sanitizeAIOutput(), isAIOutputSafe(), audit logging |
+| **i18n** | locale whitelist, normalizeLocale(), cookie Secure+SameSite |
 
 ---
 
@@ -292,58 +238,34 @@ CLOSED → 3 falhas → OPEN (skip 5min) → HALF_OPEN (1 probe) → CLOSED
 
 | Tecnologia | Uso |
 |---|---|
-| **Next.js 14** | App Router, RSC, TypeScript |
+| **Next.js 14** | App Router, RSC, TypeScript, Middleware |
 | **D3.js + TopoJSON** | Mapa global SVG interativo |
 | **Tailwind CSS** | Design system com cores centralizadas |
-| **Vercel** | Hosting, Edge, Middleware, Cron |
-| **Upstash Redis** | KV store, subscribers, rate limiting |
-| **Resend** | Email transacional (welcome, alertas, resumo) |
+| **Vercel** | Hosting, Edge Runtime, Cron |
+| **Upstash Redis** | KV, subscribers, rate limiting distribuído |
+| **Resend** | Email transacional |
 | **Polymarket API** | Mercados de previsão (18 mercados, 14 países) |
-| **Google News RSS** | Notícias de múltiplos veículos |
-| **Firecrawl** | Scraping profundo de portais |
-| **Vercel Analytics** | Métricas de tráfego e performance |
+| **Google News RSS + Firecrawl** | Notícias ao vivo |
+| **Vercel Analytics** | Métricas de tráfego |
+| **Playwright** | Testes E2E |
 
 ---
 
-## Funcionalidades
+## APIs (12 endpoints)
 
-| Seção | Descrição |
-|-------|-----------|
-| **Polymarket** | Odds ao vivo com dinheiro real (presidência, senado, STF, inflação) |
-| **Pesquisas** | +17 institutos com classificação de confiabilidade + tabela comparativa |
-| **Análise Criteriosa** | Pontos fortes/fracos dos 4 primeiros + cruzamento |
-| **Perfil Candidatos** | 7 pré-candidatos com posição, riscos, odds |
-| **Notícias** | Múltiplas fontes ao vivo (Google News + Firecrawl) |
-| **Sentimento** | Redes sociais, tendências por espectro político |
-| **INSS / Master / STF** | Escândalos ativos com impacto eleitoral |
-| **Mapa Global** | D3 interativo com 14 países + calendário + bandeiras |
-| **Email Popup** | Captura de subscribers com Resend (LGPD compliant) |
-| **Health Check** | Monitoramento de Redis, cron, circuit breaker, subscribers |
-
----
-
-## Acessibilidade
-
-- `aria-modal="true"` em modais
-- `aria-label` em todos os botões interativos
-- `focus:outline` para navegação por teclado
-- `role="meter"` em barras com `aria-valuenow`
-- `aria-hidden` em emojis decorativos
-- Skip-to-content link
-- Roles semânticos: `banner`, `main`, `contentinfo`, `dialog`
-- Botão "Voltar ao topo" no footer com scroll suave
-
----
-
-## UX
-
-- **Popup Sapphire Blue Light** — gradiente azul claro, discreto, não intrusivo
-- **Mapa D3 dark theme** — visual financeiro premium
-- **Dashboard light** — Sapphire Blue (#0F52BA) em fundo branco
-- **Cores centralizadas**: `primary`, `primary-dark`, `danger`, `dark`, `light-bg`
-- **Font**: Inter (Google Fonts)
-- **Responsive**: Mobile-first, Android e iOS
-- **Botão "Voltar ao topo"** no footer
+| Endpoint | Descrição | Segurança |
+|---|---|---|
+| `/api/global-map` | Eleições globais | Redis → Polymarket, 4 fallbacks |
+| `/api/cron/refresh-elections` | Refresh background | x-vercel-cron + CRON_SECRET |
+| `/api/translations` | Pipeline tradução IA | Bearer auth, timing-safe |
+| `/api/health` | Status do sistema | revalidate=0 |
+| `/api/subscribe` | Captura email | Rate limit 5/IP/h, honeypot |
+| `/api/polymarket` | Odds BR | Slug validation, timeout |
+| `/api/polls` | Pesquisas +17 institutos | File check |
+| `/api/news` | Notícias | URL validation, timeout |
+| `/api/analysis-cards` | Análises | File check |
+| `/api/analysis-criteriosa` | Top 4 candidatos | File check |
+| `/api/global-elections` | Eleições globais (legado) | Safe JSON parse |
 
 ---
 
@@ -371,9 +293,13 @@ npm install
 # Configurar
 cp .env.example .env.local
 # Preencher: UPSTASH_REDIS, FIRECRAWL_API_KEY, RESEND_API_KEY, CRON_SECRET
+# Opcional: TRANSLATION_API_KEY, TRANSLATION_PROVIDER, TRANSLATION_AUTH_TOKEN
 
 # Desenvolvimento
 npm run dev
+
+# Testes
+npx playwright test
 
 # Build
 npm run build
@@ -382,7 +308,7 @@ npm run build
 # 1. Push para GitHub
 # 2. Conectar repo no Vercel Dashboard
 # 3. Marketplace → Upstash Redis → Install → Connect
-# 4. Environment Variables → RESEND_API_KEY
+# 4. Environment Variables → RESEND_API_KEY + TRANSLATION_*
 # 5. Deploy automático + cron ativo a cada 60s
 ```
 
