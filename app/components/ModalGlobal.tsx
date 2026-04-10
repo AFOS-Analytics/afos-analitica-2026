@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { useState, useEffect } from 'react';
+import { useTranslation } from '../i18n/context';
 import type { GlobalData, GlobalElection } from '../types';
 import type { CountryMarketSummary } from '../types/global-map';
 
@@ -82,6 +83,7 @@ const COUNTRY_TO_ISO3: Record<string, string> = {
 };
 
 export function ModalGlobal({ show, onClose, globalData, expandedElection, setExpandedElection }: ModalGlobalProps) {
+  const { t } = useTranslation();
   const [mapData, setMapData] = useState<CountryMarketSummary[]>([]);
 
   useEffect(() => {
@@ -102,8 +104,8 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Eleições globais" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-5xl w-full my-4 sm:my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-4 sm:p-6 rounded-t-2xl flex justify-between items-center">
-          <h2 className="text-lg sm:text-xl font-bold">Global — Eleições pelo Mundo</h2>
-          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none" aria-label="Fechar">✕</button>
+          <h2 className="text-lg sm:text-xl font-bold">{t('modal.globalTitle')}</h2>
+          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none" aria-label={t('common.close')}>✕</button>
         </div>
         <div className="p-3 sm:p-6 max-h-[80vh] overflow-y-auto">
 
@@ -113,14 +115,14 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
               <GlobalElectionMap countries={mapData} />
             ) : (
               <div className="w-full h-full flex items-center justify-center">
-                <p className="text-gray-400 text-sm">Carregando dados do mapa...</p>
+                <p className="text-gray-400 text-sm">{t('modal.mapLoading')}</p>
               </div>
             )}
           </div>
 
           {/* CALENDÁRIO COM BANDEIRAS */}
           <div className="mb-5">
-            <h3 className="text-sm font-bold text-primary mb-3">Calendário Eleitoral Global</h3>
+            <h3 className="text-sm font-bold text-primary mb-3">{t('modal.calendarTitle')}</h3>
             <div className="flex flex-wrap gap-2">
               {globalData?.elections?.map((e: GlobalElection, i: number) => (
                 <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
@@ -134,7 +136,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
           </div>
 
           {/* ELECTION CARDS COM DADOS POLYMARKET */}
-          <h3 className="text-sm font-bold text-primary mb-3">Eleições com Dados Polymarket</h3>
+          <h3 className="text-sm font-bold text-primary mb-3">{t('modal.electionsWithData')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {globalData?.elections?.filter((e: GlobalElection) => e.polymarket && e.polymarket.markets?.length > 0)
               .sort((a: GlobalElection, b: GlobalElection) => (b.polymarket?.volume || 0) - (a.polymarket?.volume || 0))
@@ -195,7 +197,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
           {/* ELEIÇÕES SEM DADOS */}
           {(globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length)?.length ?? 0) > 0 && (
             <div className="mb-4">
-              <h3 className="text-xs font-bold text-gray-400 mb-2">Próximas Eleições — Aguardando Dados</h3>
+              <h3 className="text-xs font-bold text-gray-400 mb-2">{t('modal.upcomingElections')}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
                 {globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length).map((e: GlobalElection, i: number) => (
                   <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-center">
@@ -208,7 +210,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             </div>
           )}
 
-          <p className="text-[10px] text-gray-400 text-center mb-6">Dados: Polymarket | Volumes e odds ao vivo</p>
+          <p className="text-[10px] text-gray-400 text-center mb-6">{t('modal.dataSource')}</p>
 
           {/* TEXTO EXPLICATIVO */}
           <div className="space-y-5 text-sm text-dark leading-relaxed border-t border-light-border pt-6">

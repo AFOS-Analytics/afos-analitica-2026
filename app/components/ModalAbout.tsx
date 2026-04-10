@@ -1,23 +1,26 @@
 'use client';
 
+import { useTranslation } from '../i18n/context';
+
 interface ModalAboutProps {
   show: boolean;
   onClose: () => void;
 }
 
 export function ModalAbout({ show, onClose }: ModalAboutProps) {
+  const { t } = useTranslation();
   if (!show) return null;
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Sobre o AFOS Analytics" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-6 rounded-t-2xl flex justify-between items-center">
-          <h2 className="text-xl font-bold">Sobre — AFOS Analytics</h2>
-          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none focus:outline-2 focus:outline-white" aria-label="Fechar">✕</button>
+          <h2 className="text-xl font-bold">{t('modal.aboutTitle')}</h2>
+          <button onClick={onClose} className="text-white/70 hover:text-white text-2xl leading-none focus:outline-2 focus:outline-white" aria-label={t('common.close')}>✕</button>
         </div>
             <div className="p-6 sm:p-8 space-y-6 text-base text-dark leading-relaxed max-h-[75vh] overflow-y-auto">
 
               <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Quem Somos</h3>
+                <h3 className="font-bold text-lg text-primary mb-2">{t('about.whoWeAre')}</h3>
                 <p className="mb-2">O <strong>AFOS-Analytics</strong> é uma plataforma global de <strong>inteligência eleitoral em tempo real</strong>.</p>
                 <p className="mb-2">Monitoramos eleições no mundo inteiro e transformamos dados complexos em informação clara, objetiva e acionável.</p>
                 <p className="mb-2">Fazemos isso combinando, em um único ambiente:</p>
@@ -32,7 +35,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">Para que serve</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.whatFor')}</h3>
                 <p className="mb-3 text-sm italic text-dark-secondary">O AFOS-Analytics existe para responder uma pergunta simples:</p>
                 <blockquote className="border-l-4 border-primary pl-4 mb-3 text-base font-semibold text-primary">O que realmente está acontecendo na eleição?</blockquote>
                 <p className="mb-2 text-sm text-dark-secondary">Com ele, você consegue:</p>
@@ -47,10 +50,10 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-3">Como usar</h3>
+                <h3 className="font-bold text-primary mb-3">{t('about.howToUse')}</h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-light-bg rounded-lg p-4 border border-light-border">
-                    <h4 className="font-bold text-base text-primary mb-2">Se você é ELEITOR</h4>
+                    <h4 className="font-bold text-base text-primary mb-2">{t('about.voterTitle')}</h4>
                     <ul className="text-sm space-y-1.5 text-dark">
                       <li>• veja todos os candidatos em um só lugar</li>
                       <li>• compare pesquisas tradicionais com mercados de previsão</li>
@@ -60,7 +63,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
                   </div>
 
                   <div className="bg-light-bg rounded-lg p-4 border border-light-border">
-                    <h4 className="font-bold text-base text-primary mb-2">Se você é INVESTIDOR / EMPRESÁRIO</h4>
+                    <h4 className="font-bold text-base text-primary mb-2">{t('about.investorTitle')}</h4>
                     <ul className="text-sm space-y-1.5 text-dark">
                       <li>• antecipe cenários políticos que impactam o mercado</li>
                       <li>• use mercados de previsão como indicador antecipado</li>
@@ -70,7 +73,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
                   </div>
 
                   <div className="bg-light-bg rounded-lg p-4 border border-light-border">
-                    <h4 className="font-bold text-base text-primary mb-2">Se você é ANALISTA / JORNALISTA</h4>
+                    <h4 className="font-bold text-base text-primary mb-2">{t('about.analystTitle')}</h4>
                     <ul className="text-sm space-y-1.5 text-dark">
                       <li>• acesse dados consolidados de múltiplas fontes</li>
                       <li>• acompanhe notícias em tempo real</li>
@@ -82,7 +85,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">Atualizações em tempo real</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.updatesTitle')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="bg-light-bg rounded-lg p-3 border border-light-border text-sm text-dark">
                     <span className="font-bold text-primary">📊 Mercados de previsão</span> — atualizados continuamente
@@ -100,7 +103,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div>
-                <h3 className="font-bold text-primary mb-2">O que você encontra no dashboard</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.dashboardTitle')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 text-sm text-dark">
                   <div className="bg-light-bg rounded p-3 border border-light-border">💰 <strong>Odds de mercados de previsão</strong> (dinheiro real)</div>
                   <div className="bg-light-bg rounded p-3 border border-light-border">📋 <strong>Pesquisas eleitorais</strong> de múltiplos institutos</div>
@@ -112,7 +115,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-                <h3 className="font-bold text-primary mb-2">Diferencial</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.differentialTitle')}</h3>
                 <p className="text-sm mb-2 text-dark">O AFOS-Analytics é uma plataforma única que conecta, no mesmo lugar:</p>
                 <ul className="text-sm space-y-1 text-dark ml-4">
                   <li>• o que as pessoas dizem (pesquisas)</li>
@@ -124,7 +127,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-5">
-                <h3 className="font-bold text-primary text-lg mb-2 text-center">GLOBAL POR DESIGN</h3>
+                <h3 className="font-bold text-primary text-lg mb-2 text-center">{t('about.globalTitle')}</h3>
                 <p className="text-sm text-dark-secondary mb-3 text-center">Começamos com validação prática, mas o objetivo é maior:</p>
                 <blockquote className="border-l-4 border-primary pl-4 mb-4 text-sm font-semibold text-primary">Acompanhar eleições no mundo inteiro e criar uma nova forma de entender risco político em escala global</blockquote>
                 <p className="text-sm text-dark mb-2">Não é só uma eleição. É um sistema feito para:</p>
@@ -138,7 +141,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
-                <h3 className="font-bold text-primary mb-2">Open Source</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.openSourceTitle')}</h3>
                 <p className="text-sm mb-2 text-dark">O AFOS-Analytics é um projeto de <strong>código aberto</strong>.</p>
                 <p className="text-sm mb-2 text-dark">Acreditamos que:</p>
                 <ul className="text-sm space-y-1 text-dark ml-4">
@@ -150,7 +153,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-5 text-center">
-                <h3 className="font-bold text-primary text-lg mb-3">O que significa AFOS</h3>
+                <h3 className="font-bold text-primary text-lg mb-3">{t('about.afosTitle')}</h3>
                 <p className="text-sm text-dark-secondary mb-4">AFOS é mais do que um nome — é o que guia tudo o que fazemos:</p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                   <div className="bg-white rounded-lg p-3 shadow-sm">
@@ -177,7 +180,7 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
               </div>
 
               <div className="text-center">
-                <h3 className="font-bold text-primary mb-2">Essência</h3>
+                <h3 className="font-bold text-primary mb-2">{t('about.essenceTitle')}</h3>
                 <p className="text-sm text-dark">O AFOS-Analytics não é sobre opinião.</p>
                 <p className="text-base text-dark font-semibold mt-1">É sobre entender a realidade com mais precisão.</p>
               </div>
