@@ -5,12 +5,11 @@ const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
-function createPrismaClient() {
+function createPrismaClient(): PrismaClient | null {
   const url = process.env.DATABASE_URL
   if (!url) {
-    throw new Error(
-      '[db] DATABASE_URL não configurada. Adicione ao .env.local (veja .env.example).'
-    )
+    console.warn('[db] DATABASE_URL não configurada — banco indisponível')
+    return null
   }
 
   const adapter = new PrismaNeon({ connectionString: url })
@@ -21,8 +20,8 @@ function createPrismaClient() {
   })
 }
 
-export const prisma = globalForPrisma.prisma ?? createPrismaClient()
+export const prisma = (globalForPrisma.prisma ?? createPrismaClient())!
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production' && prisma) {
   globalForPrisma.prisma = prisma
 }
