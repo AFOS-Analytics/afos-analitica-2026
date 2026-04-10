@@ -23,11 +23,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              "script-src 'self' 'unsafe-inline'",  // unsafe-inline necessario para Next.js hydration; unsafe-eval removido
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob:",
               "font-src 'self'",
-              "connect-src 'self' https://gamma-api.polymarket.com https://news.google.com https://api.firecrawl.dev",
+              "connect-src 'self' https://gamma-api.polymarket.com https://news.google.com https://api.firecrawl.dev https://*.upstash.io",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
