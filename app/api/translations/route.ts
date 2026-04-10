@@ -18,6 +18,7 @@ import { timingSafeEqual } from 'crypto';
 import { isValidLocale } from '../../../lib/i18n/config';
 import { translate } from '../../../lib/ai/translate';
 import { validateTranslation } from '../../../lib/ai/validate-translation';
+import { sanitizeAIOutput, isAIOutputSafe, auditLog } from '../../../lib/security/hardening';
 
 const MAX_TEXT_LENGTH = 10_000;
 const approvedCache = new Map<string, string>();
@@ -42,7 +43,7 @@ export async function POST(request: Request) {
   const authHeader = request.headers.get('authorization') || '';
   const expected = `Bearer ${authToken}`;
   if (!safeCompare(authHeader, expected)) {
-    console.warn('[translations] Tentativa não autorizada');
+    auditLog('auth_failure', { route: '/api/translations', ip: request.headers.get('x-forwarded-for') });
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   }
 
@@ -105,7 +106,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'translation_failed', detail: msg }, { status: 502 });
   }
 
-  // ─── 4. Validar ────────────────────────────────────────────────
+  // ─── 4. Sanitizar output IA + Validar ──────────────────────────
+  const sanitized = sanitizeAIOutput(result.translatedText);
+  const safety = isAIOutputSafe(sanitized);
+  if (!safety.safe) {
+    auditLog('ai_output_blocked', { reason: safety.reason, sourceLocale, targetLocale });
+    const fallback = approvedCache.get(fallbackKey);
+    if (fallback) return NextResponse.json({ translatedText: fallback, cached: true, fallback: true, provider: 'fallback', validation: { valid: false, errors: [`AI output blocked: ${safety.reason}`], warnings: [] } });
+    return NextResponse.json({ error: 'ai_output_unsafe', reason: safety.reason }, { status: 422 });
+  }
+  result.translatedText = sanitized;
+
   const validation = validateTranslation(sourceText, result.translatedText);
 
   if (validation.warnings.length > 0) {
@@ -113,7 +124,7 @@ export async function POST(request: Request) {
   }
 
   if (!validation.valid) {
-    console.warn(`[translations] Validação falhou:`, validation.errors);
+    auditLog('validation_failure', { errors: validation.errors, sourceLocale, targetLocale });
 
     // Fallback
     const fallback = approvedCache.get(fallbackKey);
@@ -140,7 +151,7 @@ export async function POST(request: Request) {
   // ─── 5. Aprovar e cachear ──────────────────────────────────────
   approvedCache.set(fallbackKey, result.translatedText);
 
-  console.log(`[translations] Sucesso: ${sourceLocale}→${targetLocale} [${type}] ${result.cached ? 'cache' : result.provider} (${namespace}${contentKey ? ':' + contentKey : ''})`);
+  auditLog('translation_success', { sourceLocale, targetLocale, type, cached: result.cached, provider: result.provider, namespace });
 
   return NextResponse.json({
     translatedText: result.translatedText,
