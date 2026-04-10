@@ -23,14 +23,22 @@ export function useDashboardData(): DashboardData {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const fetchWithTimeout = (url: string, ms: number = 15000) => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), ms);
+      return fetch(url, { signal: controller.signal })
+        .then(r => { clearTimeout(timer); return r.ok ? r.json() : null; })
+        .catch(() => { clearTimeout(timer); return null; });
+    };
+
     const fetchData = async () => {
       try {
         const [p, pl, n, a, cr] = await Promise.all([
-          fetch('/api/polymarket').then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch('/api/polls').then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch('/api/news').then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch('/api/analysis-cards').then(r => r.ok ? r.json() : null).catch(() => null),
-          fetch('/api/analysis-criteriosa').then(r => r.ok ? r.json() : null).catch(() => null),
+          fetchWithTimeout('/api/polymarket'),
+          fetchWithTimeout('/api/polls'),
+          fetchWithTimeout('/api/news'),
+          fetchWithTimeout('/api/analysis-cards'),
+          fetchWithTimeout('/api/analysis-criteriosa'),
         ]);
         setPoly(p);
         setPolls(pl);
