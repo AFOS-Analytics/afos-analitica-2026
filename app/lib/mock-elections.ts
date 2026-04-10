@@ -10,8 +10,8 @@ export const MOCK_ELECTIONS: CountryMarketSummary[] = [
       { name: 'Lula', probability: 42, volumeUsd: 2_100_000 },
       { name: 'Flávio Bolsonaro', probability: 37, volumeUsd: 1_800_000 },
       { name: 'Renan Santos', probability: 6.75, volumeUsd: 400_000 },
-      { name: 'Fernando Haddad', probability: 6, volumeUsd: 350_000 },
-      { name: 'Ronaldo Caiado', probability: 2, volumeUsd: 150_000 },
+      { name: 'Fernando Haddad', probability: 4.9, volumeUsd: 300_000 },
+      { name: 'Ronaldo Caiado', probability: 2.3, volumeUsd: 150_000 },
     ],
   },
   {
