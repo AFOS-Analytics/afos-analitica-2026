@@ -21,10 +21,12 @@ export async function GET() {
 
   // Ping Neon — mantém conexão quente (mitigação cold start)
   let neonOk = false;
-  try {
-    await prisma.$queryRaw`SELECT 1`;
-    neonOk = true;
-  } catch {}
+  if (prisma) {
+    try {
+      await prisma.$queryRaw`SELECT 1`;
+      neonOk = true;
+    } catch {}
+  }
 
   const allHealthy = cronHealth.healthy && circuit.state === 'CLOSED' && redisOk && neonOk;
 

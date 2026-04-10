@@ -1,7 +1,5 @@
 /**
  * Subscriber Service — Persistência de leads no Neon (crm.leads)
- *
- * Migrado de Redis SET+HASH para Prisma/Neon.
  * Interface pública inalterada para não quebrar callers.
  */
 
@@ -9,18 +7,6 @@ import { prisma } from '../../../lib/db'
 import { audit } from '../../../lib/audit'
 import { registerConsent } from '../../../lib/consent'
 
-export interface Subscriber {
-  email: string
-  source: string
-  status: 'active' | 'unsubscribed'
-  consentVersion: string
-  createdAt: string
-  updatedAt: string
-}
-
-/**
- * Validar formato de email (backend).
- */
 export function isValidEmail(email: string): boolean {
   if (!email || typeof email !== 'string') return false
   const trimmed = email.trim().toLowerCase()
@@ -28,10 +14,8 @@ export function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(trimmed)
 }
 
-/**
- * Verificar se email já existe.
- */
 export async function subscriberExists(email: string): Promise<boolean> {
+  if (!prisma) return false
   const normalized = email.toLowerCase().trim()
   try {
     const lead = await prisma.lead.findUnique({
@@ -44,9 +28,6 @@ export async function subscriberExists(email: string): Promise<boolean> {
   }
 }
 
-/**
- * Criar subscriber (idempotente — se já existe, atualiza updatedAt e retorna sucesso).
- */
 export async function createSubscriber(
   email: string,
   source: string = 'popup',
@@ -58,6 +39,10 @@ export async function createSubscriber(
     return { success: false, isNew: false, error: 'invalid_email' }
   }
 
+  if (!prisma) {
+    return { success: false, isNew: false, error: 'storage_unavailable' }
+  }
+
   try {
     const existing = await prisma.lead.findUnique({
       where: { email: normalized },
@@ -67,35 +52,33 @@ export async function createSubscriber(
     if (existing) {
       await prisma.lead.update({
         where: { email: normalized },
-        data: { updatedAt: new Date() },
+        data: { lastSeenAt: new Date() },
       })
       return { success: true, isNew: false }
     }
 
-    await prisma.lead.create({
+    const lead = await prisma.lead.create({
       data: {
         email: normalized,
-        source,
-        status: 'active',
-        consentVersion: '1.0',
-        ip: meta?.ip,
-        userAgent: meta?.userAgent,
+        captureSource: source,
         locale: meta?.locale,
+        status: 'active',
       },
     })
 
-    audit('lead_created', 'crm.leads', { source, locale: meta?.locale }, meta?.ip)
+    audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
 
-    // Registrar consentimento LGPD (fire-and-forget)
+    // Registrar consentimento LGPD (fire-and-forget com log)
     registerConsent({
       email: normalized,
-      type: 'email_marketing',
-      version: '1.0',
+      consentType: 'email_marketing',
       granted: true,
-      ip: meta?.ip,
-      userAgent: meta?.userAgent,
+      policyVersion: '1.0',
+      source,
       locale: meta?.locale,
-    }).catch(() => {})
+    }).catch((err) => {
+      console.error('[subscribers] Consent registration failed:', normalized.slice(0, 3) + '***', err)
+    })
 
     return { success: true, isNew: true }
   } catch (error) {
@@ -104,24 +87,18 @@ export async function createSubscriber(
   }
 }
 
-/**
- * Marcar subscriber como unsubscribed.
- */
 export async function unsubscribe(email: string): Promise<{ success: boolean; error?: string }> {
-  const normalized = email.toLowerCase().trim()
+  if (!prisma) return { success: false, error: 'storage_unavailable' }
 
+  const normalized = email.toLowerCase().trim()
   try {
     await prisma.lead.update({
       where: { email: normalized },
       data: { status: 'unsubscribed' },
     })
-
-    audit('lead_unsubscribed', 'crm.leads', null, null)
-
     return { success: true }
   } catch (error) {
-    // Se não existe, é idempotente
-    if ((error as { code?: string }).code === 'P2025') {
+    if (error instanceof Error && 'code' in error && (error as { code: string }).code === 'P2025') {
       return { success: true }
     }
     console.error('[subscribers] Erro ao unsubscribe:', error)
@@ -129,10 +106,8 @@ export async function unsubscribe(email: string): Promise<{ success: boolean; er
   }
 }
 
-/**
- * Contar total de subscribers ativos.
- */
 export async function countSubscribers(): Promise<number> {
+  if (!prisma) return 0
   try {
     return await prisma.lead.count({ where: { status: 'active' } })
   } catch {

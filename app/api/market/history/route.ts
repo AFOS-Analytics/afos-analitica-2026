@@ -1,14 +1,12 @@
 /**
  * API Route: GET /api/market/history
  *
- * Retorna histórico de odds de candidatos do Neon (market schema).
+ * Série temporal de odds por candidato.
  *
  * Query params:
- *   candidate  — nome do candidato (ex: "Lula")
- *   country    — ISO3 do país (ex: "BRA"), default: todos
- *   days       — janela em dias (default: 30, max: 90)
- *
- * Ex: /api/market/history?candidate=Lula&days=30
+ *   candidate — nome (ex: "Lula"), min 2 chars
+ *   country   — slug prefix (ex: "brazil"), opcional
+ *   days      — janela (default 30, max 90)
  */
 
 import { NextResponse } from 'next/server'
@@ -21,42 +19,34 @@ export async function GET(request: Request) {
 
   const { searchParams } = new URL(request.url)
   const candidate = searchParams.get('candidate')?.trim()
-  const country = searchParams.get('country')?.trim().toUpperCase()
+  const country = searchParams.get('country')?.trim().toLowerCase()
   const days = Math.min(Math.max(Number(searchParams.get('days')) || 30, 1), 90)
 
   if (!candidate || candidate.length < 2) {
-    return NextResponse.json(
-      { error: 'candidate param required (min 2 chars)' },
-      { status: 400 }
-    )
+    return NextResponse.json({ error: 'candidate param required (min 2 chars)' }, { status: 400 })
   }
 
   try {
     const since = new Date()
     since.setDate(since.getDate() - days)
 
-    const odds = await prisma.candidateOdd.findMany({
+    const prices = await prisma.marketPrice.findMany({
       where: {
-        candidate: { startsWith: candidate, mode: 'insensitive' },
-        snapshot: {
-          fetchedAt: { gte: since },
-          ...(country ? { country } : {}),
+        snapshotAt: { gte: since },
+        outcome: {
+          outcomeName: { startsWith: candidate, mode: 'insensitive' },
         },
+        ...(country ? { market: { slug: { startsWith: country, mode: 'insensitive' } } } : {}),
       },
       select: {
-        candidate: true,
-        probability: true,
+        price: true,
         volume: true,
-        snapshot: {
-          select: {
-            slug: true,
-            country: true,
-            fetchedAt: true,
-          },
-        },
+        snapshotAt: true,
+        outcome: { select: { outcomeName: true } },
+        market: { select: { slug: true, title: true } },
       },
-      orderBy: { snapshot: { fetchedAt: 'asc' } },
-      take: 5000,
+      orderBy: { snapshotAt: 'asc' },
+      take: 1000,
     })
 
     return NextResponse.json(
@@ -64,13 +54,13 @@ export async function GET(request: Request) {
         candidate,
         country: country || 'all',
         days,
-        points: odds.length,
-        data: odds.map((o) => ({
-          date: o.snapshot.fetchedAt,
-          probability: o.probability,
-          volume: o.volume,
-          country: o.snapshot.country,
-          slug: o.snapshot.slug,
+        points: prices.length,
+        data: prices.map((p) => ({
+          date: p.snapshotAt,
+          probability: p.price,
+          volume: p.volume,
+          candidate: p.outcome?.outcomeName,
+          slug: p.market.slug,
         })),
       },
       {
@@ -82,9 +72,6 @@ export async function GET(request: Request) {
     )
   } catch (error) {
     console.error('[market/history] Erro:', error)
-    return NextResponse.json(
-      { error: 'internal_error' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: 'internal_error' }, { status: 500 })
   }
 }

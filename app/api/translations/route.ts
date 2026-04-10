@@ -14,12 +14,12 @@
  */
 
 import { NextResponse } from 'next/server';
-import { timingSafeEqual } from 'crypto';
+import { timingSafeEqual, createHash } from 'crypto';
+import { Redis } from '@upstash/redis';
 import { isValidLocale } from '../../../lib/i18n/config';
 import { translate } from '../../../lib/ai/translate';
 import { validateTranslation } from '../../../lib/ai/validate-translation';
 import { sanitizeAIOutput, isAIOutputSafe, auditLog } from '../../../lib/security/hardening';
-import { prisma } from '../../../lib/db';
 
 const MAX_TEXT_LENGTH = 10_000;
 const approvedCache = new Map<string, string>();
@@ -46,6 +46,21 @@ export async function POST(request: Request) {
   if (!safeCompare(authHeader, expected)) {
     auditLog('auth_failure', { route: '/api/translations', ip: request.headers.get('x-forwarded-for') });
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  }
+
+  // ─── 1b. Rate limit por token (60/min) ────────────────────────
+  const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
+  const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (redisUrl && redisToken) {
+    const redis = new Redis({ url: redisUrl, token: redisToken });
+    const tokenHash = createHash('sha256').update(authToken).digest('hex').slice(0, 8);
+    const rlKey = `afos:ratelimit:translations:${tokenHash}`;
+    const attempts = await redis.incr(rlKey);
+    if (attempts === 1) await redis.expire(rlKey, 60);
+    if (attempts > 60) {
+      auditLog('rate_limited', { route: '/api/translations' });
+      return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
+    }
   }
 
   // ─── 2. Validar input ───────────────────────────────────────────
@@ -153,20 +168,6 @@ export async function POST(request: Request) {
   approvedCache.set(fallbackKey, result.translatedText);
 
   auditLog('translation_success', { sourceLocale, targetLocale, type, cached: result.cached, provider: result.provider, namespace });
-
-  // Registrar LLM call no Neon (fire-and-forget, apenas se não veio do cache)
-  if (!result.cached && result.meta) {
-    prisma?.llmCall.create({
-      data: {
-        provider: result.provider,
-        model: result.provider === 'anthropic' ? 'claude-haiku-4-5-20251001' : 'gpt-4o-mini',
-        purpose: 'translation',
-        tokensIn: result.meta.tokensIn ?? 0,
-        tokensOut: result.meta.tokensOut ?? 0,
-        latencyMs: result.meta.latencyMs ?? 0,
-      },
-    }).catch(() => {})
-  }
 
   return NextResponse.json({
     translatedText: result.translatedText,

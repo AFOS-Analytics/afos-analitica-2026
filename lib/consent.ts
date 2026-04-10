@@ -1,31 +1,20 @@
-/**
- * Consent Service — Registro de consentimentos (LGPD)
- *
- * Cria user em iam.users (se não existe) e grava consent em iam.consents
- * com hash SHA-256 como prova criptográfica do consentimento.
- */
-
-import { createHash } from 'crypto'
 import { prisma } from './db'
 
-function hashConsent(email: string, type: string, version: string, granted: boolean, timestamp: string): string {
-  return createHash('sha256').update(`${email}|${type}|${version}|${granted}|${timestamp}`).digest('hex')
-}
-
 /**
- * Registra consentimento — cria user se não existe (upsert por email).
+ * Registra consentimento LGPD — cria user se não existe (upsert por email).
  * Fire-and-forget safe: callers podem ignorar erros.
  */
 export async function registerConsent(input: {
   email: string
-  type: 'email_marketing' | 'data_processing' | 'cookies'
-  version: string
+  consentType: string
   granted: boolean
-  ip?: string
-  userAgent?: string
+  policyVersion: string
+  source: string
   locale?: string
 }): Promise<{ success: boolean }> {
   try {
+    if (!prisma) return { success: false }
+
     const user = await prisma.user.upsert({
       where: { email: input.email },
       update: { locale: input.locale || undefined },
@@ -33,17 +22,15 @@ export async function registerConsent(input: {
       select: { id: true },
     })
 
-    const now = new Date()
-
-    await prisma.consent.create({
+    await prisma.userConsent.create({
       data: {
         userId: user.id,
-        type: input.type,
-        version: input.version,
+        email: input.email,
+        consentType: input.consentType,
         granted: input.granted,
-        consentHash: hashConsent(input.email, input.type, input.version, input.granted, now.toISOString()),
-        ip: input.ip,
-        userAgent: input.userAgent,
+        policyVersion: input.policyVersion,
+        source: input.source,
+        locale: input.locale || 'pt-BR',
       },
     })
 

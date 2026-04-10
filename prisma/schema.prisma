@@ -1,5 +1,5 @@
-// AFOS Analytics — Prisma Schema
-// 6 schemas: iam, crm, research, market, governance, ai
+// AFOS Analytics — Prisma Schema v2
+// UUID PKs, timestamptz, 6 schemas
 // Neon Postgres — pooled (runtime) + unpooled (migrations)
 
 generator client {
@@ -12,326 +12,385 @@ datasource db {
 }
 
 // ═══════════════════════════════════════════════════════════
-// GOVERNANCE — Audit trail, system events, data versioning
-// ═══════════════════════════════════════════════════════════
-
-model AuditLog {
-  id        String   @id @default(cuid())
-  actor     String?
-  action    String
-  resource  String
-  detail    Json?
-  ip        String?
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@index([action, createdAt])
-  @@index([resource, createdAt])
-  @@index([createdAt]) // purge cron
-  @@map("audit_log")
-  @@schema("governance")
-}
-
-model SystemEvent {
-  id        String   @id @default(cuid())
-  eventType String   @map("event_type")
-  severity  String   // info, warn, error, critical
-  message   String
-  metadata  Json?
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@index([eventType, createdAt])
-  @@index([severity, createdAt])
-  @@map("system_events")
-  @@schema("governance")
-}
-
-model DataVersion {
-  id        String   @id @default(cuid())
-  tableName String   @map("table_name")
-  recordId  String   @map("record_id")
-  oldData   Json?    @map("old_data")
-  newData   Json?    @map("new_data")
-  changedBy String?  @map("changed_by")
-  changedAt DateTime @default(now()) @map("changed_at")
-
-  @@index([tableName, recordId])
-  @@map("data_versions")
-  @@schema("governance")
-}
-
-// ═══════════════════════════════════════════════════════════
-// CRM — Leads, events, campaigns
-// ═══════════════════════════════════════════════════════════
-
-model Lead {
-  id             String      @id @default(cuid())
-  email          String      @unique
-  source         String
-  status         String      @default("active")
-  consentVersion String      @default("1.0") @map("consent_version")
-  consentHash    String?     @map("consent_hash")
-  ip             String?
-  userAgent      String?     @map("user_agent")
-  locale         String?
-  createdAt      DateTime    @default(now()) @map("created_at")
-  updatedAt      DateTime    @updatedAt @map("updated_at")
-  events         LeadEvent[]
-
-  @@index([status, createdAt])
-  @@map("leads")
-  @@schema("crm")
-}
-
-model LeadEvent {
-  id        String   @id @default(cuid())
-  leadId    String   @map("lead_id")
-  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
-  eventType String   @map("event_type")
-  metadata  Json?
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@index([leadId, createdAt])
-  @@map("lead_events")
-  @@schema("crm")
-}
-
-// ═══════════════════════════════════════════════════════════
-// IAM — Users, preferences, consents
+// IAM — Identity & Access Management
 // ═══════════════════════════════════════════════════════════
 
 model User {
-  id          String           @id @default(cuid())
+  id          String           @id @default(uuid()) @db.Uuid
   email       String           @unique
   name        String?
+  status      String           @default("active")
   locale      String           @default("pt-BR")
-  role        String           @default("viewer")
-  createdAt   DateTime         @default(now()) @map("created_at")
-  updatedAt   DateTime         @updatedAt @map("updated_at")
-  preferences UserPreference[]
-  consents    Consent[]
+  createdAt   DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime         @updatedAt @map("updated_at") @db.Timestamptz(6)
+  preferences UserPreference?
+  consents    UserConsent[]
 
+  @@index([email])
+  @@index([status])
   @@map("users")
   @@schema("iam")
 }
 
 model UserPreference {
-  id     String @id @default(cuid())
-  userId String @map("user_id")
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  key    String
-  value  String
+  id             String   @id @default(uuid()) @db.Uuid
+  userId         String   @unique @map("user_id") @db.Uuid
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  locale         String   @default("pt-BR")
+  timezone       String   @default("America/Sao_Paulo")
+  marketingOptIn Boolean  @default(false) @map("marketing_opt_in")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt      DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
 
-  @@unique([userId, key])
   @@map("user_preferences")
   @@schema("iam")
 }
 
-model Consent {
-  id          String   @id @default(cuid())
-  userId      String   @map("user_id")
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  type        String
-  version     String
-  granted     Boolean
-  consentHash String?  @map("consent_hash")
-  ip          String?
-  userAgent   String?  @map("user_agent")
-  grantedAt   DateTime @default(now()) @map("granted_at")
+model UserConsent {
+  id            String    @id @default(uuid()) @db.Uuid
+  userId        String?   @map("user_id") @db.Uuid
+  user          User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  email         String?
+  consentType   String    @map("consent_type")
+  granted       Boolean
+  grantedAt     DateTime  @default(now()) @map("granted_at") @db.Timestamptz(6)
+  revokedAt     DateTime? @map("revoked_at") @db.Timestamptz(6)
+  policyVersion String    @map("policy_version")
+  source        String
+  locale        String    @default("pt-BR")
 
-  @@index([userId, type])
-  @@map("consents")
+  @@index([email])
+  @@index([consentType])
+  @@index([userId])
+  @@map("user_consents")
   @@schema("iam")
 }
 
 // ═══════════════════════════════════════════════════════════
-// RESEARCH — Institutes, polls, scenarios, analyses
+// CRM — Customer Relationship Management
 // ═══════════════════════════════════════════════════════════
 
-model Institute {
-  id          String @id @default(cuid())
-  name        String @unique
-  reliability Int
-  type        String
-  note        String?
-  polls       Poll[]
+model Lead {
+  id            String         @id @default(uuid()) @db.Uuid
+  email         String         @unique
+  locale        String?
+  captureSource String         @map("capture_source")
+  campaign      String?
+  status        String         @default("active")
+  firstSeenAt   DateTime       @default(now()) @map("first_seen_at") @db.Timestamptz(6)
+  lastSeenAt    DateTime       @default(now()) @map("last_seen_at") @db.Timestamptz(6)
+  events        ContactEvent[]
 
-  @@map("institutes")
-  @@schema("research")
+  @@index([email])
+  @@index([status])
+  @@index([captureSource])
+  @@map("leads")
+  @@schema("crm")
 }
 
-model Poll {
-  id           String         @id @default(cuid())
-  instituteId  String         @map("institute_id")
-  institute    Institute      @relation(fields: [instituteId], references: [id])
-  date         String
-  sample       Int
-  margin       Float
-  register     String
-  method       String?
-  scenarios    PollScenario[]
-  secondRounds SecondRound[]
-  createdAt    DateTime       @default(now()) @map("created_at")
+model ContactEvent {
+  id           String   @id @default(uuid()) @db.Uuid
+  leadId       String?  @map("lead_id") @db.Uuid
+  lead         Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  userId       String?  @map("user_id") @db.Uuid
+  eventType    String   @map("event_type")
+  eventPayload Json?    @map("event_payload")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  @@index([instituteId, date])
-  @@map("polls")
-  @@schema("research")
-}
-
-model PollScenario {
-  id      String       @id @default(cuid())
-  pollId  String       @map("poll_id")
-  poll    Poll         @relation(fields: [pollId], references: [id], onDelete: Cascade)
-  name    String
-  results PollResult[]
-
-  @@map("poll_scenarios")
-  @@schema("research")
-}
-
-model PollResult {
-  id         String       @id @default(cuid())
-  scenarioId String       @map("scenario_id")
-  scenario   PollScenario @relation(fields: [scenarioId], references: [id], onDelete: Cascade)
-  candidate  String
-  percent    Float
-
-  @@map("poll_results")
-  @@schema("research")
-}
-
-model SecondRound {
-  id         String @id @default(cuid())
-  pollId     String @map("poll_id")
-  poll       Poll   @relation(fields: [pollId], references: [id], onDelete: Cascade)
-  matchup    String
-  candidate1 String
-  percent1   Float
-  candidate2 String
-  percent2   Float
-
-  @@map("second_rounds")
-  @@schema("research")
-}
-
-model Analysis {
-  id          String   @id @default(cuid())
-  type        String
-  content     Json
-  publishedAt DateTime @map("published_at")
-  version     Int      @default(1)
-  createdAt   DateTime @default(now()) @map("created_at")
-
-  @@index([type, publishedAt])
-  @@map("analyses")
-  @@schema("research")
+  @@index([leadId])
+  @@index([eventType])
+  @@index([createdAt])
+  @@map("contact_events")
+  @@schema("crm")
 }
 
 // ═══════════════════════════════════════════════════════════
-// MARKET — Snapshots, odds, signals, cross-analytics
+// RESEARCH — Sources, runs, findings, reports, signals
 // ═══════════════════════════════════════════════════════════
 
-model MarketSnapshot {
-  id        String          @id @default(cuid())
-  slug      String
-  country   String?
-  fetchedAt DateTime        @map("fetched_at")
-  rawData   Json            @map("raw_data")
-  odds      CandidateOdd[]
+model Source {
+  id               String            @id @default(uuid()) @db.Uuid
+  name             String
+  type             String
+  originUrl        String            @map("origin_url")
+  credibilityScore Int               @map("credibility_score")
+  active           Boolean           @default(true)
+  createdAt        DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
+  findings         ResearchFinding[]
 
-  @@index([slug, fetchedAt])
-  @@index([country, fetchedAt])
-  @@index([fetchedAt]) // purge cron: DELETE WHERE fetched_at < 90 days
-  @@map("market_snapshots")
+  @@index([type])
+  @@index([active])
+  @@map("sources")
+  @@schema("research")
+}
+
+model ResearchRun {
+  id         String            @id @default(uuid()) @db.Uuid
+  runType    String            @map("run_type")
+  status     String            @default("pending")
+  locale     String            @default("pt-BR")
+  startedAt  DateTime          @default(now()) @map("started_at") @db.Timestamptz(6)
+  finishedAt DateTime?         @map("finished_at") @db.Timestamptz(6)
+  summary    String?
+  createdAt  DateTime          @default(now()) @map("created_at") @db.Timestamptz(6)
+  findings   ResearchFinding[]
+
+  @@index([runType])
+  @@index([status])
+  @@index([createdAt])
+  @@map("research_runs")
+  @@schema("research")
+}
+
+model ResearchFinding {
+  id                String       @id @default(uuid()) @db.Uuid
+  researchRunId     String       @map("research_run_id") @db.Uuid
+  researchRun       ResearchRun  @relation(fields: [researchRunId], references: [id], onDelete: Cascade)
+  sourceId          String?      @map("source_id") @db.Uuid
+  source            Source?      @relation(fields: [sourceId], references: [id], onDelete: SetNull)
+  title             String
+  rawPayload        Json         @map("raw_payload")
+  normalizedPayload Json         @map("normalized_payload")
+  language          String
+  countryCode       String       @map("country_code")
+  eventDate         DateTime?    @map("event_date") @db.Timestamptz(6)
+  confidenceScore   Float?       @map("confidence_score")
+  createdAt         DateTime     @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([researchRunId])
+  @@index([countryCode])
+  @@index([createdAt])
+  @@map("research_findings")
+  @@schema("research")
+}
+
+model AnalysisReport {
+  id               String    @id @default(uuid()) @db.Uuid
+  slug             String    @unique
+  title            String
+  locale           String    @default("pt-BR")
+  status           String    @default("draft")
+  executiveSummary String    @map("executive_summary")
+  bodyMarkdown     String    @map("body_markdown")
+  createdBy        String?   @map("created_by")
+  publishedAt      DateTime? @map("published_at") @db.Timestamptz(6)
+  createdAt        DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt        DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([slug])
+  @@index([locale])
+  @@index([status])
+  @@index([createdAt])
+  @@map("analysis_reports")
+  @@schema("research")
+}
+
+model CrossSignalLink {
+  id              String   @id @default(uuid()) @db.Uuid
+  referenceTypeA  String   @map("reference_type_a")
+  referenceIdA    String   @map("reference_id_a")
+  referenceTypeB  String   @map("reference_type_b")
+  referenceIdB    String   @map("reference_id_b")
+  relationshipType String  @map("relationship_type")
+  strengthScore   Float    @map("strength_score")
+  notes           String?
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([referenceTypeA, referenceIdA])
+  @@index([referenceTypeB, referenceIdB])
+  @@index([createdAt])
+  @@map("cross_signal_links")
+  @@schema("research")
+}
+
+// ═══════════════════════════════════════════════════════════
+// MARKET — Polymarket ingestion, prices, outcomes
+// ═══════════════════════════════════════════════════════════
+
+model MarketEvent {
+  id                 String   @id @default(uuid()) @db.Uuid
+  polymarketEventId  String   @unique @map("polymarket_event_id")
+  title              String
+  slug               String?
+  active             Boolean  @default(true)
+  closed             Boolean  @default(false)
+  eventStart         DateTime? @map("event_start") @db.Timestamptz(6)
+  eventEnd           DateTime? @map("event_end") @db.Timestamptz(6)
+  rawPayload         Json?    @map("raw_payload")
+  createdAt          DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime @updatedAt @map("updated_at") @db.Timestamptz(6)
+  markets            Market[]
+
+  @@index([slug])
+  @@index([active])
+  @@index([createdAt])
+  @@map("market_events")
   @@schema("market")
 }
 
-model CandidateOdd {
-  id          String         @id @default(cuid())
-  snapshotId  String         @map("snapshot_id")
-  snapshot    MarketSnapshot @relation(fields: [snapshotId], references: [id], onDelete: Cascade)
-  candidate   String
-  probability Float
-  volume      Float
+model Market {
+  id                  String          @id @default(uuid()) @db.Uuid
+  polymarketMarketId  String          @unique @map("polymarket_market_id")
+  eventId             String?         @map("event_id") @db.Uuid
+  event               MarketEvent?    @relation(fields: [eventId], references: [id], onDelete: SetNull)
+  slug                String?
+  title               String
+  description         String?
+  active              Boolean         @default(true)
+  closed              Boolean         @default(false)
+  archived            Boolean?
+  category            String?
+  endDate             DateTime?       @map("end_date") @db.Timestamptz(6)
+  rawPayload          Json?           @map("raw_payload")
+  createdAt           DateTime        @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt           DateTime        @updatedAt @map("updated_at") @db.Timestamptz(6)
+  outcomes            MarketOutcome[]
+  prices              MarketPrice[]
+  forecastSnapshots   ForecastSnapshot[]
 
-  @@index([candidate, probability])
-  @@map("candidates_odds")
+  @@index([slug])
+  @@index([active])
+  @@index([category])
+  @@index([createdAt])
+  @@map("markets")
   @@schema("market")
 }
 
-model MarketSignal {
-  id         String   @id @default(cuid())
-  signalType String   @map("signal_type")
-  country    String
-  data       Json
-  detectedAt DateTime @map("detected_at")
+model MarketOutcome {
+  id          String        @id @default(uuid()) @db.Uuid
+  marketId    String        @map("market_id") @db.Uuid
+  market      Market        @relation(fields: [marketId], references: [id], onDelete: Cascade)
+  outcomeKey  String        @map("outcome_key")
+  outcomeName String        @map("outcome_name")
+  tokenId     String?       @map("token_id")
+  rawPayload  Json?         @map("raw_payload")
+  createdAt   DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt   DateTime      @updatedAt @map("updated_at") @db.Timestamptz(6)
+  prices      MarketPrice[]
 
-  @@index([signalType, detectedAt])
-  @@index([country, detectedAt])
-  @@map("market_signals")
+  @@unique([marketId, outcomeKey])
+  @@index([marketId])
+  @@map("market_outcomes")
   @@schema("market")
 }
 
-model CrossAnalytic {
-  id          String   @id @default(cuid())
-  type        String
-  leftSource  String   @map("left_source")
-  rightSource String   @map("right_source")
-  result      Json
-  createdAt   DateTime @default(now()) @map("created_at")
+model MarketPrice {
+  id          String         @id @default(uuid()) @db.Uuid
+  marketId    String         @map("market_id") @db.Uuid
+  market      Market         @relation(fields: [marketId], references: [id], onDelete: Cascade)
+  outcomeId   String?        @map("outcome_id") @db.Uuid
+  outcome     MarketOutcome? @relation(fields: [outcomeId], references: [id], onDelete: SetNull)
+  price       Float
+  volume      Float?
+  liquidity   Float?
+  snapshotAt  DateTime       @map("snapshot_at") @db.Timestamptz(6)
+  sourceType  String         @default("cron") @map("source_type")
+  dedupHash   String         @unique @map("dedup_hash")
 
-  @@index([type, createdAt])
-  @@map("cross_analytics")
+  @@index([marketId, snapshotAt])
+  @@index([outcomeId, snapshotAt])
+  @@index([snapshotAt])
+  @@map("market_prices")
+  @@schema("market")
+}
+
+model ForecastSnapshot {
+  id             String   @id @default(uuid()) @db.Uuid
+  marketId       String   @map("market_id") @db.Uuid
+  market         Market   @relation(fields: [marketId], references: [id], onDelete: Cascade)
+  snapshotDate   DateTime @map("snapshot_date") @db.Date
+  probabilityYes Float?   @map("probability_yes")
+  probabilityNo  Float?   @map("probability_no")
+  spread         Float?
+  confidence     Float?
+  rawPayload     Json?    @map("raw_payload")
+  createdAt      DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@unique([marketId, snapshotDate])
+  @@index([marketId, snapshotDate])
+  @@map("forecast_snapshots")
   @@schema("market")
 }
 
 // ═══════════════════════════════════════════════════════════
-// AI — Translations, validations, LLM call tracking
+// GOVERNANCE — Audit trail, deletion requests
 // ═══════════════════════════════════════════════════════════
 
-model Translation {
-  id             String                  @id @default(cuid())
-  sourceLocale   String                  @map("source_locale")
-  targetLocale   String                  @map("target_locale")
-  sourceHash     String                  @map("source_hash")
-  sourceText     String                  @map("source_text")
-  translatedText String                  @map("translated_text")
-  provider       String?
-  cached         Boolean                 @default(false)
-  validations    TranslationValidation[]
-  createdAt      DateTime                @default(now()) @map("created_at")
+model AuditLog {
+  id            String   @id @default(uuid()) @db.Uuid
+  actorType     String   @map("actor_type")
+  actorId       String?  @map("actor_id")
+  action        String
+  entityType    String   @map("entity_type")
+  entityId      String   @map("entity_id")
+  beforeData    Json?    @map("before_data")
+  afterData     Json?    @map("after_data")
+  ipHash        String?  @map("ip_hash")
+  userAgentHash String?  @map("user_agent_hash")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  @@unique([sourceHash, targetLocale])
-  @@index([sourceLocale, targetLocale])
-  @@map("translations")
+  @@index([action])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+  @@schema("governance")
+}
+
+model DeletionRequest {
+  id          String    @id @default(uuid()) @db.Uuid
+  email       String
+  userId      String?   @map("user_id") @db.Uuid
+  requestType String    @map("request_type")
+  status      String    @default("pending")
+  requestedAt DateTime  @default(now()) @map("requested_at") @db.Timestamptz(6)
+  processedAt DateTime? @map("processed_at") @db.Timestamptz(6)
+  notes       String?
+
+  @@index([email])
+  @@index([status])
+  @@index([requestedAt])
+  @@map("deletion_requests")
+  @@schema("governance")
+}
+
+// ═══════════════════════════════════════════════════════════
+// AI — LLM run tracking
+// ═══════════════════════════════════════════════════════════
+
+model LlmRun {
+  id            String        @id @default(uuid()) @db.Uuid
+  runType       String        @map("run_type")
+  modelName     String        @map("model_name")
+  promptVersion String        @map("prompt_version")
+  inputHash     String        @map("input_hash")
+  outputHash    String?       @map("output_hash")
+  riskFlags     Json?         @map("risk_flags")
+  createdAt     DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
+  outputs       ModelOutput[]
+
+  @@index([runType])
+  @@index([modelName])
+  @@index([createdAt])
+  @@map("llm_runs")
   @@schema("ai")
 }
 
-model TranslationValidation {
-  id            String      @id @default(cuid())
-  translationId String      @map("translation_id")
-  translation   Translation @relation(fields: [translationId], references: [id], onDelete: Cascade)
-  checkName     String      @map("check_name")
-  passed        Boolean
-  detail        String?
+model ModelOutput {
+  id             String    @id @default(uuid()) @db.Uuid
+  llmRunId       String    @map("llm_run_id") @db.Uuid
+  llmRun         LlmRun    @relation(fields: [llmRunId], references: [id], onDelete: Cascade)
+  content        String
+  contentHash    String    @map("content_hash")
+  classification String    @default("experimental")
+  reviewStatus   String    @default("pending") @map("review_status")
+  reviewedBy     String?   @map("reviewed_by")
+  reviewedAt     DateTime? @map("reviewed_at") @db.Timestamptz(6)
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
 
-  @@map("translation_validations")
-  @@schema("ai")
-}
-
-model LlmCall {
-  id        String   @id @default(cuid())
-  provider  String
-  model     String
-  purpose   String
-  tokensIn  Int      @map("tokens_in")
-  tokensOut Int      @map("tokens_out")
-  latencyMs Int      @map("latency_ms")
-  costUsd   Float?   @map("cost_usd")
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@index([provider, createdAt])
-  @@index([purpose, createdAt])
-  @@index([createdAt]) // purge cron + cost tracking
-  @@map("llm_calls")
+  @@index([llmRunId])
+  @@index([classification])
+  @@index([reviewStatus])
+  @@index([createdAt])
+  @@map("model_outputs")
   @@schema("ai")
 }

@@ -13,10 +13,18 @@ import { createSubscriber } from '../../lib/email/subscribers'
 import { sendWelcomeEmail } from '../../lib/email/resend'
 import { subscribeSchema } from '../../../lib/validations'
 import { audit } from '../../../lib/audit'
+import { locales } from '../../../lib/i18n/config'
+
+const VALID_LOCALES = locales as readonly string[]
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
+    let body: unknown
+    try {
+      body = await request.json()
+    } catch {
+      return NextResponse.json({ ok: false, error: 'invalid_email' }, { status: 400 })
+    }
 
     // Zod validation
     const parsed = subscribeSchema.safeParse(body)
@@ -45,14 +53,15 @@ export async function POST(request: Request) {
       const attempts = await redis.incr(rateLimitKey)
       if (attempts === 1) await redis.expire(rateLimitKey, 3600)
       if (attempts > 5) {
-        audit('rate_limited', 'subscribe', { ip })
+        audit('rate_limited', 'api.subscribe', ip, { ip })
         return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
       }
     }
 
     // Criar lead no Neon (idempotente)
     const userAgent = request.headers.get('user-agent') || undefined
-    const locale = request.headers.get('accept-language')?.split(',')[0] || undefined
+    const rawLocale = request.headers.get('accept-language')?.split(',')[0]?.split(';')[0]?.trim()
+    const locale = rawLocale && VALID_LOCALES.includes(rawLocale) ? rawLocale : 'pt-BR'
 
     const result = await createSubscriber(email, 'popup', { ip, userAgent, locale })
 

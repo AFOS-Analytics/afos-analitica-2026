@@ -13,8 +13,6 @@ export const emailSchema = z
   )
   .transform((v) => v.trim().toLowerCase())
 
-export const localeSchema = z.enum(['pt-BR', 'en', 'es'])
-
 // ── CRM ────────────────────────────────────────────────────
 
 export const subscribeSchema = z.object({
