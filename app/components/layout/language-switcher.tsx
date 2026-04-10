@@ -51,14 +51,7 @@ export function LanguageSwitcher() {
         aria-label="Idioma"
         aria-expanded={open}
       >
-        {/* Globe SVG */}
-        <svg className="w-5 h-5 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" />
-          <path d="M4.93 7h14.14" strokeWidth="1" opacity="0.6" />
-          <path d="M4.93 17h14.14" strokeWidth="1" opacity="0.6" />
-        </svg>
+        <span className="text-lg leading-none" aria-hidden="true">🌐</span>
       </button>
 
       {open && (
