@@ -314,6 +314,16 @@ npm run build
 
 ---
 
+## Claude Code
+
+Este projeto inclui uma skill customizada para o [Claude Code](https://claude.ai/claude-code) CLI:
+
+| Comando | Descrição |
+|---------|-----------|
+| `/atualizar` | Atualização completa do AFOS Analytics |
+
+---
+
 ## Licença
 
 Projeto open source. Qualquer pessoa pode estudar, auditar e contribuir.
