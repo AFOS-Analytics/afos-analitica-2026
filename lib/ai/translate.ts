@@ -2,67 +2,105 @@
  * Módulo de tradução assistida por IA.
  *
  * Provider: Anthropic (default) ou OpenAI.
- * Cache: in-memory com TTL 24h e limite de 500 entradas (LRU).
+ * Cache: Neon ai.translations (persistente, sobrevive redeploy).
+ * Fallback: in-memory se Neon indisponível.
  */
 
-import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt } from './prompts';
-import { createHash } from 'crypto';
+import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt } from './prompts'
+import { createHash } from 'crypto'
+import { prisma } from '../db'
 
 export interface TranslationRequest {
-  sourceText: string;
-  sourceLocale: string;
-  targetLocale: string;
-  type: 'ui' | 'editorial';
+  sourceText: string
+  sourceLocale: string
+  targetLocale: string
+  type: 'ui' | 'editorial'
 }
 
 export interface TranslationResult {
-  translatedText: string;
-  cached: boolean;
-  provider: string;
+  translatedText: string
+  cached: boolean
+  provider: string
+  meta?: { tokensIn?: number; tokensOut?: number; latencyMs?: number }
 }
 
-// ─── Cache com TTL + limite LRU ─────────────────────────────────────
-
-const MAX_CACHE_SIZE = 500;
-const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+// ─── Hash ──────────────────────────────────────────────────────────
 
 function hashKey(req: TranslationRequest): string {
-  const raw = `${req.sourceLocale}:${req.targetLocale}:${req.type}:${req.sourceText}`;
-  return 'tr:' + createHash('sha256').update(raw).digest('hex').slice(0, 16);
+  const raw = `${req.sourceLocale}:${req.targetLocale}:${req.type}:${req.sourceText}`
+  return createHash('sha256').update(raw).digest('hex').slice(0, 32)
 }
 
-const cache = new Map<string, { text: string; at: number }>();
+// ─── In-memory fallback (se Neon indisponível) — LRU 500 ──────────
 
-function getCached(key: string): string | null {
-  const entry = cache.get(key);
-  if (!entry) return null;
-  if (Date.now() - entry.at > CACHE_TTL_MS) { cache.delete(key); return null; }
-  return entry.text;
+const MEM_CACHE_LIMIT = 500
+const memCache = new Map<string, string>()
+
+// ─── Cache: Neon first, in-memory fallback ─────────────────────────
+
+async function getCached(hash: string, targetLocale: string): Promise<string | null> {
+  // Neon
+  try {
+    const record = await prisma?.translation.findUnique({
+      where: { sourceHash_targetLocale: { sourceHash: hash, targetLocale } },
+      select: { translatedText: true },
+    })
+    if (record) return record.translatedText
+  } catch {}
+
+  // In-memory fallback
+  return memCache.get(`${hash}:${targetLocale}`) ?? null
 }
 
-function setCache(key: string, text: string): void {
-  // LRU: se atingiu limite, remove a entrada mais antiga
-  if (cache.size >= MAX_CACHE_SIZE) {
-    const oldest = cache.keys().next().value;
-    if (oldest) cache.delete(oldest);
+async function setCache(
+  hash: string,
+  req: TranslationRequest,
+  translatedText: string,
+  provider: string
+): Promise<void> {
+  const key = `${hash}:${req.targetLocale}`
+  if (memCache.size >= MEM_CACHE_LIMIT) {
+    const oldest = memCache.keys().next().value
+    if (oldest) memCache.delete(oldest)
   }
-  cache.set(key, { text, at: Date.now() });
+  memCache.set(key, translatedText)
+
+  // Neon (fire-and-forget)
+  try {
+    await prisma?.translation.upsert({
+      where: { sourceHash_targetLocale: { sourceHash: hash, targetLocale: req.targetLocale } },
+      update: { translatedText, provider },
+      create: {
+        sourceHash: hash,
+        sourceLocale: req.sourceLocale,
+        targetLocale: req.targetLocale,
+        sourceText: req.sourceText.slice(0, 5000),
+        translatedText,
+        provider,
+      },
+    })
+  } catch {}
 }
 
-// ─── Provider abstraction ───────────────────────────────────────────
+// ─── Provider abstraction ──────────────────────────────────────────
 
-type Provider = 'anthropic' | 'openai';
+type Provider = 'anthropic' | 'openai'
 
 function getProvider(): { provider: Provider; apiKey: string } | null {
-  const key = process.env.TRANSLATION_API_KEY;
-  if (!key) return null;
-  const provider = (process.env.TRANSLATION_PROVIDER || 'anthropic') as Provider;
-  return { provider, apiKey: key };
+  const key = process.env.TRANSLATION_API_KEY
+  if (!key) return null
+  const provider = (process.env.TRANSLATION_PROVIDER || 'anthropic') as Provider
+  return { provider, apiKey: key }
 }
 
-async function callProvider(systemPrompt: string, userPrompt: string, provider: Provider, apiKey: string): Promise<string> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 30000);
+async function callProvider(
+  systemPrompt: string,
+  userPrompt: string,
+  provider: Provider,
+  apiKey: string
+): Promise<{ text: string; tokensIn?: number; tokensOut?: number }> {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 30000)
 
   try {
     if (provider === 'anthropic') {
@@ -80,11 +118,15 @@ async function callProvider(systemPrompt: string, userPrompt: string, provider: 
           messages: [{ role: 'user', content: userPrompt }],
         }),
         signal: controller.signal,
-      });
-      if (res.status === 429) throw new Error('rate_limited');
-      if (!res.ok) throw new Error(`anthropic_${res.status}`);
-      const data = await res.json();
-      return (data.content?.[0]?.text || '').trim();
+      })
+      if (res.status === 429) throw new Error('rate_limited')
+      if (!res.ok) throw new Error(`anthropic_${res.status}`)
+      const data = await res.json()
+      return {
+        text: (data.content?.[0]?.text || '').trim(),
+        tokensIn: data.usage?.input_tokens,
+        tokensOut: data.usage?.output_tokens,
+      }
     }
 
     if (provider === 'openai') {
@@ -92,7 +134,7 @@ async function callProvider(systemPrompt: string, userPrompt: string, provider: 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           model: 'gpt-4o-mini',
@@ -104,41 +146,53 @@ async function callProvider(systemPrompt: string, userPrompt: string, provider: 
           temperature: 0.1,
         }),
         signal: controller.signal,
-      });
-      if (res.status === 429) throw new Error('rate_limited');
-      if (!res.ok) throw new Error(`openai_${res.status}`);
-      const data = await res.json();
-      return (data.choices?.[0]?.message?.content || '').trim();
+      })
+      if (res.status === 429) throw new Error('rate_limited')
+      if (!res.ok) throw new Error(`openai_${res.status}`)
+      const data = await res.json()
+      return {
+        text: (data.choices?.[0]?.message?.content || '').trim(),
+        tokensIn: data.usage?.prompt_tokens,
+        tokensOut: data.usage?.completion_tokens,
+      }
     }
 
-    throw new Error(`unknown_provider: ${provider}`);
+    throw new Error(`unknown_provider: ${provider}`)
   } finally {
-    clearTimeout(timeout);
+    clearTimeout(timeout)
   }
 }
 
-// ─── Public API ─────────────────────────────────────────────────────
+// ─── Public API ────────────────────────────────────────────────────
 
 export async function translate(req: TranslationRequest): Promise<TranslationResult> {
-  const key = hashKey(req);
-  const cached = getCached(key);
+  const hash = hashKey(req)
+
+  const cached = await getCached(hash, req.targetLocale)
   if (cached) {
-    return { translatedText: cached, cached: true, provider: 'cache' };
+    return { translatedText: cached, cached: true, provider: 'cache' }
   }
 
-  const config = getProvider();
-  if (!config) throw new Error('translation_not_configured');
+  const config = getProvider()
+  if (!config) throw new Error('translation_not_configured')
 
-  const userPrompt = req.type === 'ui'
-    ? uiTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
-    : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale);
+  const userPrompt =
+    req.type === 'ui'
+      ? uiTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
+      : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
 
-  const translatedText = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey);
+  const start = Date.now()
+  const result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey)
+  const latencyMs = Date.now() - start
 
-  if (!translatedText || !translatedText.trim()) {
-    throw new Error('empty_translation');
+  if (!result.text) throw new Error('empty_translation')
+
+  await setCache(hash, req, result.text, config.provider)
+
+  return {
+    translatedText: result.text,
+    cached: false,
+    provider: config.provider,
+    meta: { tokensIn: result.tokensIn, tokensOut: result.tokensOut, latencyMs },
   }
-
-  setCache(key, translatedText);
-  return { translatedText, cached: false, provider: config.provider };
 }

@@ -15,12 +15,18 @@ export const emailSchema = z
 
 export const localeSchema = z.enum(['pt-BR', 'en', 'es'])
 
-export const cuidSchema = z.string().cuid()
-
 // ── CRM ────────────────────────────────────────────────────
 
 export const subscribeSchema = z.object({
   email: emailSchema,
   consent: z.boolean().optional(),
   _hp: z.string().max(500).optional(),
+})
+
+// ── IAM ────────────────────────────────────────────────────
+
+export const savePreferenceSchema = z.object({
+  email: emailSchema,
+  key: z.string().min(1).max(100),
+  value: z.string().max(1000),
 })

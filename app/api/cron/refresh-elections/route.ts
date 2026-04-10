@@ -16,9 +16,11 @@
 
 import { NextResponse } from 'next/server';
 import { aggregateElectionData } from '../../../lib/polymarket/bootstrap';
+import type { CountryAggregation } from '../../../lib/polymarket/bootstrap';
 import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
+import { prisma } from '../../../../lib/db';
 
 export async function GET(request: Request) {
   const startTime = Date.now();
@@ -61,6 +63,11 @@ export async function GET(request: Request) {
 
     const kvSuccess = await writeGlobalMapData(payload);
 
+    // 3. Gravar histórico no Neon (async, não bloqueia resposta)
+    persistSnapshots(result.countries).catch((err) => {
+      console.error('[cron] Neon snapshot write failed:', err instanceof Error ? err.message : err)
+    })
+
     const elapsed = Date.now() - startTime;
     console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'SKIP'}, ${elapsed}ms`);
 
@@ -80,5 +87,49 @@ export async function GET(request: Request) {
       { ok: false, error: 'internal', elapsed: Date.now() - startTime },
       { status: 500, headers: buildNoCacheHeaders() }
     );
+  }
+}
+
+/**
+ * Grava snapshots no Neon para histórico (market schema).
+ * Cada país com mercado primário gera 1 snapshot + N candidates_odds.
+ * Fire-and-forget — falha não impacta o cron.
+ */
+async function persistSnapshots(countries: CountryAggregation[]) {
+  if (!prisma) return
+
+  const now = new Date()
+
+  for (const country of countries) {
+    if (country.status === 'no-data') continue
+
+    const primary = country.markets.find((m) => m.isPrimary)
+    if (!primary) continue
+
+    try {
+      await prisma.marketSnapshot.create({
+        data: {
+          slug: primary.slug,
+          country: country.iso3,
+          fetchedAt: now,
+          rawData: JSON.parse(JSON.stringify({
+            countryName: country.countryName,
+            status: country.status,
+            probability: country.probability,
+            leadCandidate: country.leadCandidate,
+            volumeUsd: country.volumeUsd,
+          })),
+          odds: {
+            create: primary.candidates.slice(0, 10).map((c) => ({
+              candidate: c.name,
+              probability: c.probability,
+              volume: c.volumeUsd,
+            })),
+          },
+        },
+      })
+    } catch (err) {
+      console.warn(`[cron] Snapshot ${country.iso3} falhou:`, err instanceof Error ? err.message : err)
+    }
   }
 }
