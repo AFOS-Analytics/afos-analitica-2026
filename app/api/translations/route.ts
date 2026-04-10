@@ -19,6 +19,7 @@ import { isValidLocale } from '../../../lib/i18n/config';
 import { translate } from '../../../lib/ai/translate';
 import { validateTranslation } from '../../../lib/ai/validate-translation';
 import { sanitizeAIOutput, isAIOutputSafe, auditLog } from '../../../lib/security/hardening';
+import { prisma } from '../../../lib/db';
 
 const MAX_TEXT_LENGTH = 10_000;
 const approvedCache = new Map<string, string>();
@@ -152,6 +153,20 @@ export async function POST(request: Request) {
   approvedCache.set(fallbackKey, result.translatedText);
 
   auditLog('translation_success', { sourceLocale, targetLocale, type, cached: result.cached, provider: result.provider, namespace });
+
+  // Registrar LLM call no Neon (fire-and-forget, apenas se não veio do cache)
+  if (!result.cached && result.meta) {
+    prisma?.llmCall.create({
+      data: {
+        provider: result.provider,
+        model: result.provider === 'anthropic' ? 'claude-haiku-4-5-20251001' : 'gpt-4o-mini',
+        purpose: 'translation',
+        tokensIn: result.meta.tokensIn ?? 0,
+        tokensOut: result.meta.tokensOut ?? 0,
+        latencyMs: result.meta.latencyMs ?? 0,
+      },
+    }).catch(() => {})
+  }
 
   return NextResponse.json({
     translatedText: result.translatedText,

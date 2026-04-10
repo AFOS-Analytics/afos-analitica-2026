@@ -7,6 +7,7 @@
 
 import { prisma } from '../../../lib/db'
 import { audit } from '../../../lib/audit'
+import { registerConsent } from '../../../lib/consent'
 
 export interface Subscriber {
   email: string
@@ -84,6 +85,17 @@ export async function createSubscriber(
     })
 
     audit('lead_created', 'crm.leads', { source, locale: meta?.locale }, meta?.ip)
+
+    // Registrar consentimento LGPD (fire-and-forget)
+    registerConsent({
+      email: normalized,
+      type: 'email_marketing',
+      version: '1.0',
+      granted: true,
+      ip: meta?.ip,
+      userAgent: meta?.userAgent,
+      locale: meta?.locale,
+    }).catch(() => {})
 
     return { success: true, isNew: true }
   } catch (error) {
