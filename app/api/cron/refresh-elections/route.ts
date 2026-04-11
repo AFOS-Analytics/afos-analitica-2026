@@ -20,9 +20,13 @@ import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
 import { persistMarketData } from '../../../lib/polymarket/persist';
+import { prisma } from '../../../../lib/db';
 
 export async function GET(request: Request) {
   const startTime = Date.now();
+
+  // Ping Neon — mantém conexão quente (cold start mitigation)
+  if (prisma) { prisma.$queryRaw`SELECT 1`.catch(() => {}) }
 
   // Autenticação: Vercel injeta header automaticamente em cron jobs.
   // Em produção, bloquear qualquer request que não venha do cron da Vercel.

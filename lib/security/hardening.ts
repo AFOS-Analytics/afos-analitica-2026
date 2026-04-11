@@ -41,10 +41,16 @@
 export function sanitizeAIOutput(text: string): string {
   if (!text || typeof text !== 'string') return '';
   return text
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Strip scripts
-    .replace(/javascript:/gi, '')                       // Strip JS protocol
-    .replace(/on\w+\s*=/gi, '')                        // Strip event handlers
-    .replace(/\x00/g, '')                              // Null bytes
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')   // Strip scripts
+    .replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')    // Strip iframes
+    .replace(/<object[^>]*>[\s\S]*?<\/object>/gi, '')    // Strip objects
+    .replace(/<embed[^>]*\/?>/gi, '')                     // Strip embeds
+    .replace(/javascript\s*:/gi, '')                      // Strip JS protocol
+    .replace(/&#\d+;/g, '')                               // Strip numeric HTML entities
+    .replace(/&#x[0-9a-f]+;/gi, '')                       // Strip hex HTML entities
+    .replace(/on\w+\s*=/gi, '')                           // Strip event handlers (onclick, onload, etc.)
+    .replace(/<svg[^>]*>[\s\S]*?<\/svg>/gi, '')           // Strip SVG (onload vector)
+    .replace(/\x00/g, '')                                 // Null bytes
     .trim();
 }
 

@@ -98,9 +98,10 @@ app/
 │   │   ├── client.ts                  # API client (retry, timeout, circuit breaker)
 │   │   ├── country-market-map.ts      # Registry slug → ISO3 (14 países, 18 mercados)
 │   │   ├── bootstrap.ts              # Aggregador: fetch → parse → normalize
-│   │   └── normalize.ts              # Payload optimization (compartilhado)
+│   │   ├── normalize.ts              # Payload optimization (compartilhado)
+│   │   └── persist.ts                # Ingestão Neon: cron inteligente + dedup 2 camadas
 │   └── email/
-│       ├── subscribers.ts             # CRUD subscribers (Redis Set + Hash)
+│       ├── subscribers.ts             # CRUD leads (Prisma/Neon + consentimento LGPD)
 │       ├── resend.ts                  # Resend service (welcome, alertas)
 │       └── templates.ts              # 4 templates HTML (esc() anti-XSS)
 ├── components/
@@ -121,15 +122,26 @@ app/
 │   ├── polls/ / news/                 # Pesquisas + notícias
 │   ├── analysis-cards/ / analysis-criteriosa/  # Análises
 │   ├── global-elections/ / global-map/         # Eleições globais
-│   ├── cron/refresh-elections/        # Cron 60s → Redis
-│   ├── health/                        # Health check
-│   ├── subscribe/                     # Captura email (rate limit, honeypot)
-│   └── translations/                  # Pipeline tradução IA (Bearer auth)
+│   ├── cron/refresh-elections/        # Cron 60s → Redis + Neon persist
+│   ├── health/                        # Health check (app + redis + cron + neon + polymarket)
+│   ├── subscribe/                     # Captura email (Zod + rate limit + honeypot + Neon)
+│   ├── translations/                  # Pipeline tradução IA (Bearer auth + rate limit)
+│   ├── market/history/                # Série temporal de odds por candidato
+│   ├── user/preferences/              # Preferências do usuário (locale, timezone)
+│   └── admin/
+│       ├── data-request/              # LGPD: exclusão + exportação de dados (auth)
+│       └── metrics/                   # Dashboard executivo (auth)
 ├── page.tsx                           # Redirect → /pt-BR
 ├── layout.tsx                         # Root layout (metadata, Schema.org, Analytics)
 ├── sitemap.ts                         # 6 entries (3 locales × 2 pages) + alternates
 └── robots.ts                          # Dinâmico
 lib/
+├── db.ts                              # Prisma singleton (Neon pooled, null-safe)
+├── audit.ts                           # Audit trail → governance.audit_logs (IP/UA hash)
+├── consent.ts                         # Consentimento LGPD → iam.user_consents
+├── validations/index.ts               # Zod schemas (email RFC 5321, subscribe, preferences)
+├── governance/
+│   └── data-lifecycle.ts              # LGPD: anonymize, export, deletion ($transaction)
 ├── i18n/
 │   ├── config.ts                      # Locales, default, cookie, labels
 │   ├── get-messages.ts                # Carrega namespaces por locale
@@ -139,17 +151,20 @@ lib/
 │   └── schema.ts                      # 6 schemas JSON-LD
 ├── ai/
 │   ├── prompts.ts                     # 4 prompts (system, UI, editorial, QA)
-│   ├── translate.ts                   # Tradução IA (SHA-256 cache, LRU 500)
-│   └── validate-translation.ts       # 7 checks determinísticos
+│   ├── translate.ts                   # Tradução IA (cache LRU + risk flags + LLM tracking)
+│   ├── validate-translation.ts        # 7 checks determinísticos
+│   └── guardrails.ts                  # Injection detection, risk scoring, canPublish
 └── security/
     └── hardening.ts                   # sanitizeAIOutput, isAIOutputSafe, auditLog
-messages/
-├── pt-BR/ (common, home, about, seo)
-├── en/    (common, home, about, seo)
-└── es/    (common, home, about, seo)
-middleware.ts                          # Rate limiting Redis + locale routing
-vercel.json                            # Cron schedule
-tests/i18n.spec.ts                     # 9 testes E2E Playwright
+prisma/
+├── schema.prisma                      # 19 tabelas, 6 schemas (UUID, timestamptz)
+└── migrations/                        # Versionadas, commitadas
+docs/
+├── DATABASE.md                        # Arquitetura de banco, convenções, comandos
+├── LGPD.md                            # Matriz PII, retenção, runbooks, checklist
+└── OPERATIONS.md                      # Deploy, rollback, observabilidade, escala, incidentes
+scripts/
+└── seed-dev.ts                        # Seed mínimo para desenvolvimento
 ```
 
 ---
@@ -239,10 +254,13 @@ POST /api/translations (Bearer auth)
 | Tecnologia | Uso |
 |---|---|
 | **Next.js 14** | App Router, RSC, TypeScript, Middleware |
+| **Prisma 7** | ORM com multiSchema (6 schemas, 19 tabelas) |
+| **Neon Postgres** | Banco principal (pooled runtime + unpooled migrations) |
 | **D3.js + TopoJSON** | Mapa global SVG interativo |
 | **Tailwind CSS** | Design system com cores centralizadas |
+| **Zod** | Validação de inputs em API boundaries |
 | **Vercel** | Hosting, Edge Runtime, Cron |
-| **Upstash Redis** | KV, subscribers, rate limiting distribuído |
+| **Upstash Redis** | Hot cache, rate limiting distribuído |
 | **Resend** | Email transacional |
 | **Polymarket API** | Mercados de previsão (18 mercados, 14 países) |
 | **Google News RSS + Firecrawl** | Notícias ao vivo |
@@ -251,21 +269,87 @@ POST /api/translations (Bearer auth)
 
 ---
 
-## APIs (12 endpoints)
+## Banco de Dados (Neon Postgres)
+
+6 schemas, 19 tabelas, UUID PKs, timestamptz:
+
+| Schema | Tabelas | Propósito |
+|--------|---------|-----------|
+| **iam** | users, user_preferences, user_consents | Identidade, preferências, consentimento LGPD |
+| **crm** | leads, contact_events | Captura de leads, event sourcing |
+| **research** | sources, research_runs, findings, analysis_reports, cross_signal_links | Pesquisas, análises, cruzamentos |
+| **market** | markets, market_events, market_outcomes, market_prices, forecast_snapshots | Ingestão Polymarket, série temporal |
+| **governance** | audit_logs, deletion_requests | Auditoria, LGPD Art. 18 |
+| **ai** | llm_runs, model_outputs | Tracking IA, classificação, guardrails |
+
+Conexões: `DATABASE_URL` (pooled/pgbouncer) para runtime, `DATABASE_URL_UNPOOLED` para migrations.
+
+---
+
+## Ingestão Polymarket (Cron Inteligente)
+
+```
+Cron 60s → fetch 18 mercados → Redis KV (dashboard, <1ms)
+                              ↘ Neon persist (histórico, async):
+                                  hot (BRA primary): a cada 15 min
+                                  warm (outros live): a cada 60 min
+                                  cold (resolved): skip preços
+                                  dedup: Redis timestamp + DB UNIQUE hash
+```
+
+Endpoint histórico: `GET /api/market/history?candidate=Lula&days=30`
+
+---
+
+## AI Guardrails
+
+| Guardrail | Implementação |
+|-----------|--------------|
+| Prompt injection detection | 8 regex patterns (`lib/ai/guardrails.ts`) |
+| Risk scoring | Hallucination ratio, PII detection (CPF) |
+| Output classification | factual / inferred / opinative / experimental |
+| Publication gate | `canPublish()` — experimental requer aprovação humana |
+| Output sanitization | iframe, svg, script, object, embed, HTML entities |
+| Hash chain | inputHash → outputHash → contentHash (integridade) |
+| LLM tracking | `ai.llm_runs` + `ai.model_outputs` por chamada |
+
+---
+
+## LGPD Compliance
+
+| Capacidade | Implementação |
+|-----------|--------------|
+| Consentimento | `iam.user_consents` com versão de política + timestamp |
+| Exclusão (Art. 18) | `POST /api/admin/data-request` type=deletion → `$transaction` atômica |
+| Exportação (Art. 18 II) | `POST /api/admin/data-request` type=export → JSON completo |
+| Anonimização | `email → deleted-{hash}@anon.local`, `name → null` |
+| Dissociação analítica | market/research intocados por exclusão de PII |
+| Audit trail | `governance.audit_logs` com IP/UA hasheados (SHA256) |
+| Anti-enumeration | Admin endpoint sempre retorna 200 |
+
+Documentação completa: [docs/LGPD.md](docs/LGPD.md)
+
+---
+
+## APIs (16 endpoints)
 
 | Endpoint | Descrição | Segurança |
 |---|---|---|
 | `/api/global-map` | Eleições globais | Redis → Polymarket, 4 fallbacks |
-| `/api/cron/refresh-elections` | Refresh background | x-vercel-cron + CRON_SECRET |
-| `/api/translations` | Pipeline tradução IA | Bearer auth, timing-safe |
-| `/api/health` | Status do sistema | revalidate=0 |
-| `/api/subscribe` | Captura email | Rate limit 5/IP/h, honeypot |
+| `/api/cron/refresh-elections` | Refresh background + Neon persist | x-vercel-cron + CRON_SECRET |
+| `/api/translations` | Pipeline tradução IA | Bearer auth, timing-safe, rate limit 60/min |
+| `/api/health` | Status (app + redis + cron + neon + polymarket) | revalidate=0 |
+| `/api/subscribe` | Captura email → Neon + consentimento | Zod, rate limit 5/IP/h, honeypot |
 | `/api/polymarket` | Odds BR | Slug validation, timeout |
-| `/api/polls` | Pesquisas +17 institutos | File check |
+| `/api/polls` | Pesquisas +17 institutos | File read |
 | `/api/news` | Notícias | URL validation, timeout |
-| `/api/analysis-cards` | Análises | File check |
-| `/api/analysis-criteriosa` | Top 4 candidatos | File check |
+| `/api/analysis-cards` | Análises editoriais | File read |
+| `/api/analysis-criteriosa` | Top 4 candidatos | File read |
 | `/api/global-elections` | Eleições globais (legado) | Safe JSON parse |
+| `/api/market/history` | Série temporal de odds | take 1000, cache 5min |
+| `/api/user/preferences` | Preferências (locale, timezone) | Zod, rate limit 10/min, audit |
+| `/api/admin/data-request` | LGPD: exclusão + exportação | Bearer CRON_SECRET, timing-safe |
+| `/api/admin/metrics` | Dashboard executivo | Bearer CRON_SECRET, timing-safe |
 
 ---
 
@@ -287,13 +371,24 @@ POST /api/translations (Bearer auth)
 git clone https://github.com/andrefelipe-afos/afos-analitica-2026.git
 cd afos-analitica-2026
 
-# Instalar
+# Instalar (postinstall roda prisma generate automaticamente)
 npm install
 
 # Configurar
 cp .env.example .env.local
-# Preencher: UPSTASH_REDIS, FIRECRAWL_API_KEY, RESEND_API_KEY, CRON_SECRET
+# Preencher:
+#   DATABASE_URL (Neon pooled)
+#   DATABASE_URL_UNPOOLED (Neon direct)
+#   UPSTASH_REDIS_REST_URL + TOKEN
+#   RESEND_API_KEY
+#   CRON_SECRET (min 32 chars)
 # Opcional: TRANSLATION_API_KEY, TRANSLATION_PROVIDER, TRANSLATION_AUTH_TOKEN
+
+# Migrations
+npx prisma migrate dev
+
+# Seed (dados de teste)
+npx tsx scripts/seed-dev.ts
 
 # Desenvolvimento
 npm run dev
@@ -307,10 +402,21 @@ npm run build
 # Produção (Vercel)
 # 1. Push para GitHub
 # 2. Conectar repo no Vercel Dashboard
-# 3. Marketplace → Upstash Redis → Install → Connect
-# 4. Environment Variables → RESEND_API_KEY + TRANSLATION_*
-# 5. Deploy automático + cron ativo a cada 60s
+# 3. Storage → Neon → Connect (DATABASE_URL injetado)
+# 4. Marketplace → Upstash Redis → Install → Connect
+# 5. Environment Variables → CRON_SECRET, RESEND_API_KEY, TRANSLATION_*
+# 6. Deploy automático + cron ativo a cada 60s
 ```
+
+---
+
+## Documentação Operacional
+
+| Documento | Conteúdo |
+|-----------|---------|
+| [docs/DATABASE.md](docs/DATABASE.md) | Schemas, tabelas, convenções, comandos Prisma |
+| [docs/LGPD.md](docs/LGPD.md) | Matriz PII, retenção, runbooks exclusão/exportação, checklist |
+| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Ambientes, deploy, rollback, observabilidade, custo, escala, incidentes |
 
 ---
 

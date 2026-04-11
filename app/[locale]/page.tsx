@@ -83,7 +83,7 @@ export default function Dashboard() {
         <SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} />
         <InssSection inss={inss} updatedAt={ac?.updatedAt} />
         <BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} />
-        <StfSection stf={stf} updatedAt={ac?.updatedAt} />
+        <StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} />
       </main>
 
       <Footer />

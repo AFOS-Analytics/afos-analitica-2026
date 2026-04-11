@@ -149,7 +149,13 @@ function trackLlmRun(provider: string, inputText: string, inputHash: string, out
         promptVersion: '1.0',
         inputHash,
         outputHash,
-        riskFlags: JSON.parse(JSON.stringify(riskFlags)),
+        riskFlags: {
+          injectionDetected: riskFlags.injectionDetected,
+          hallucinationRisk: riskFlags.hallucinationRisk,
+          piiDetected: riskFlags.piiDetected,
+          contentTooLong: riskFlags.contentTooLong,
+          requiresHumanReview: riskFlags.requiresHumanReview,
+        },
       },
     })
     .then((run) => {
