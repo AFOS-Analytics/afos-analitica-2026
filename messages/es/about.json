@@ -237,5 +237,30 @@
     ],
     "positioningFooter": "es un sistema que crece más rápido y con más estabilidad.",
     "tagline": "Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency."
+  },
+  "global": {
+    "introDesc": "El módulo **Global** de AFOS Analytics transforma el calendario mundial de elecciones en **inteligencia accionable en tiempo real**.",
+    "introDesc2": "El mapa interactivo permite visualizar, país por país, dónde se están realizando elecciones, cuáles están próximas y cuáles ya se resolvieron — creando un **termómetro global de riesgo político y oportunidad económica**.",
+    "introDesc3": "Al interactuar con el mapa, accedes a datos consolidados que combinan:",
+    "introList": ["mercados predictivos (como Polymarket)", "calendario electoral oficial", "lectura de tendencias políticas"],
+    "howTitle": "Cómo funciona",
+    "howDesc": "Cada país en el mapa representa un evento electoral activo o futuro.",
+    "howColors": "Los colores representan el grado de definición del calendario electoral:",
+    "howColorsList": ["tonos más claros con interacciones → elecciones previstas para este año", "tonos más oscuros con interacciones → elecciones previstas para los próximos 3 años", "tonos más oscuros sin interacciones → elecciones sin fecha definida, previstas para un horizonte más distante"],
+    "howClick": "Al hacer clic en un país, accedes a:",
+    "howClickList": ["probabilidad de resultado", "volumen de interés del mercado", "elecciones relacionadas"],
+    "howFooter": "Esto transforma el mapa en un **panel global de decisión**, no solo visualización.",
+    "calendarTitle": "Calendario global de elecciones",
+    "calendarDesc": "El sistema acompaña elecciones a lo largo de todo el año, todos los años, distribuidas globalmente.",
+    "calendarDesc2": "A lo largo de un solo año, decenas de países realizan elecciones nacionales — creando un flujo continuo de impacto económico y geopolítico global.",
+    "strategyTitle": "Finalidad estratégica",
+    "strategyDesc": "El Global no es solo un mapa — es una **infraestructura de lectura del mundo**.",
+    "strategyIntro": "Permite:",
+    "strategyList": ["anticipar movimientos de mercado", "identificar riesgos políticos por región", "acompañar ciclos electorales globales en tiempo real", "tomar decisiones basadas en datos, no en narrativa"],
+    "execTitle": "Traducción directa (nivel ejecutivo)",
+    "execLine1": "La política genera volatilidad.",
+    "execLine2": "La volatilidad genera oportunidad.",
+    "execLine3": "**Global** transforma esto en una interfaz simple, visual y accionable.",
+    "loading": "Cargando mapa..."
   }
 }

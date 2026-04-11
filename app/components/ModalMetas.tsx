@@ -10,8 +10,26 @@ interface ModalMetasProps {
 export function ModalMetas({ show, onClose }: ModalMetasProps) {
   const { t } = useTranslation();
   if (!show) return null;
+
+  const centralThesisLines = t('metas.centralThesisLines').split(',');
+  const economicImpactList = t('metas.economicImpactList').split(',');
+  const economicImpactAllowsList = t('metas.economicImpactAllowsList').split(',');
+  const businessDecisionList = t('metas.businessDecisionList').split(',');
+  const institutionalImpactList = t('metas.institutionalImpactList').split(',');
+  const civicEducationList = t('metas.civicEducationList').split(',');
+  const accountabilityList = t('metas.accountabilityList').split(',');
+  const internationalImpactList = t('metas.internationalImpactList').split(',');
+  const internationalImpactItems = t('metas.internationalImpactItems').split(',');
+  const globalPositioningBridgeList = t('metas.globalPositioningBridgeList').split(',');
+  const valueModelEducates = t('metas.valueModelEducates').split(',');
+  const valueModelFeeds = t('metas.valueModelFeeds').split(',');
+  const systemicEffectChains = t('metas.systemicEffectChains').split(',');
+  const potentialImpactList = t('metas.potentialImpactList').split(',');
+  const synthesisItems = t('metas.synthesisItems').split(',');
+  const positioningList = t('metas.positioningList').split(',');
+
   return (
-    <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Metas do AFOS Analytics" onClick={onClose}>
+    <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t('metas.title')} onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-3xl w-full my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-xl font-bold">{t('modal.metasTitle')}</h2>
@@ -21,184 +39,151 @@ export function ModalMetas({ show, onClose }: ModalMetasProps) {
 
               <div>
                 <h3 className="font-bold text-lg text-primary mb-3">{t('metas.centralThesis')}</h3>
-                <p className="mb-3">Governos, empresas e investidores perdem bilhões todos os anos por decisões baseadas em informação fragmentada, enviesada ou manipulada.</p>
-                <p className="mb-1 text-sm text-dark-secondary">Quando o eleitor vota sem dados,</p>
-                <p className="mb-1 text-sm text-dark-secondary">quando o empresário não antecipa cenários,</p>
-                <p className="mb-3 text-sm text-dark-secondary">quando o investidor precifica risco no escuro —</p>
-                <p className="mb-3">o resultado é o mesmo: <strong>ineficiência econômica e instabilidade.</strong></p>
-                <p className="mb-3">O <strong>AFOS Analytics</strong> resolve isso na origem:</p>
-                <blockquote className="border-l-4 border-primary pl-4 text-base font-semibold text-primary">Transformar informação política em inteligência acionável — como infraestrutura global.</blockquote>
+                <p className="mb-3">{t('metas.centralThesisDesc')}</p>
+                {centralThesisLines.map((line, i) => (
+                  <p key={i} className="mb-1 text-sm text-dark-secondary">{line}</p>
+                ))}
+                <p className="mb-3 mt-2">{t('metas.centralThesisResult')}</p>
+                <p className="mb-3">{t('metas.centralThesisResolution')}</p>
+                <blockquote className="border-l-4 border-primary pl-4 text-base font-semibold text-primary">{t('metas.centralThesisQuote')}</blockquote>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">📈 {t('metas.economicImpact')}</h3>
-                <p className="mb-3"><strong>Previsibilidade atrai capital.</strong></p>
-                <p className="mb-2">O AFOS Analytics integra:</p>
+                <p className="mb-3"><strong>{t('metas.economicImpactDesc')}</strong></p>
+                <p className="mb-2">{t('metas.economicImpactIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• mercados de previsão com dinheiro real</li>
-                  <li>• pesquisas eleitorais</li>
-                  <li>• análise de sentimento e eventos críticos</li>
+                  {economicImpactList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm text-dark-secondary mb-3">→ criando um <strong>termômetro de risco político em tempo real</strong></p>
-                <p className="mb-2 text-sm text-dark-secondary">Isso permite que:</p>
+                <p className="text-sm text-dark-secondary mb-3">→ {t('metas.economicImpactThermometer')}</p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.economicImpactAllows')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4">
-                  <li>• investidores globais precifiquem risco com precisão</li>
-                  <li>• capital flua com mais eficiência</li>
-                  <li>• volatilidade política deixe de ser imprevisível</li>
+                  {economicImpactAllowsList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
-                <p className="font-semibold mb-3">Decisão empresarial deixa de ser reativa.</p>
-                <p className="mb-2 text-sm text-dark-secondary">Empresas passam a operar com antecipação:</p>
+                <p className="font-semibold mb-3">{t('metas.businessDecision')}</p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.businessDecisionDesc')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• expansão ou retração</li>
-                  <li>• alocação geográfica</li>
-                  <li>• gestão de risco regulatório</li>
+                  {businessDecisionList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
                 <blockquote className="border-l-4 border-primary pl-4 text-sm text-primary">
-                  <p>Quem antecipa, captura valor.</p>
-                  <p>Quem reage, absorve custo.</p>
+                  <p>{t('metas.businessDecisionQuote1')}</p>
+                  <p>{t('metas.businessDecisionQuote2')}</p>
                 </blockquote>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">{t('metas.institutionalImpact')}</h3>
-                <p className="mb-3"><strong>Democracias mais eficientes começam com informação melhor.</strong></p>
-                <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics:</p>
+                <p className="mb-3"><strong>{t('metas.institutionalImpactDesc')}</strong></p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.institutionalImpactIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• consolida múltiplas fontes em um único painel</li>
-                  <li>• traduz complexidade em visualização simples</li>
-                  <li>• oferece acesso gratuito, global e multilíngue</li>
+                  {institutionalImpactList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm font-semibold text-dark-secondary">→ <strong>eleva o nível do voto e do debate público</strong></p>
+                <p className="text-sm font-semibold text-dark-secondary">→ <strong>{t('metas.institutionalImpactFooter')}</strong></p>
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
                 <p className="font-semibold mb-2">{t('metas.civicEducation')}</p>
-                <p className="text-sm text-dark-secondary mb-2">O produto não apenas informa — <strong>forma usuários mais sofisticados</strong>.</p>
-                <p className="text-sm text-dark-secondary mb-2">Introduz, de forma prática:</p>
+                <p className="text-sm text-dark-secondary mb-2">{t('metas.civicEducationDesc')}</p>
+                <p className="text-sm text-dark-secondary mb-2">{t('metas.civicEducationIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• leitura de probabilidades e risco</li>
-                  <li>• interpretação de dados conflitantes</li>
-                  <li>• entendimento do impacto político na economia</li>
+                  {civicEducationList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm text-dark-secondary">→ criando uma nova geração de cidadãos e investidores mais racionais.</p>
+                <p className="text-sm text-dark-secondary">→ {t('metas.civicEducationFooter')}</p>
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
                 <p className="font-semibold mb-2">{t('metas.accountability')}</p>
-                <p className="text-sm text-dark-secondary mb-2">Ao expor:</p>
+                <p className="text-sm text-dark-secondary mb-2">{t('metas.accountabilityIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• probabilidades reais de eventos</li>
-                  <li>• impacto de escândalos</li>
-                  <li>• divergência entre discurso e expectativa de mercado</li>
+                  {accountabilityList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm text-dark-secondary">o AFOS cria <strong>pressão objetiva por transparência</strong>.</p>
+                <p className="text-sm text-dark-secondary">{t('metas.accountabilityFooter')}</p>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">🌍 {t('metas.internationalImpact')}</h3>
-                <p className="mb-3"><strong>Soft power tecnológico.</strong></p>
-                <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics posiciona qualquer país que o adote como:</p>
+                <p className="mb-3"><strong>{t('metas.internationalImpactDesc')}</strong></p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.internationalImpactIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• líder em transparência democrática</li>
-                  <li>• referência em data-driven governance</li>
+                  {internationalImpactList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="mb-2 text-sm text-dark-secondary">Não existe hoje uma plataforma que integre, em escala global:</p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.internationalImpactNoExist')}</p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  <div className="bg-light-bg rounded-lg p-3 border border-light-border text-center text-sm font-semibold text-dark">Dados eleitorais</div>
-                  <div className="bg-light-bg rounded-lg p-3 border border-light-border text-center text-sm font-semibold text-dark">Mercados preditivos</div>
-                  <div className="bg-light-bg rounded-lg p-3 border border-light-border text-center text-sm font-semibold text-dark">Análise de eventos críticos</div>
-                  <div className="bg-light-bg rounded-lg p-3 border border-light-border text-center text-sm font-semibold text-dark">Sentimento informacional</div>
+                  {internationalImpactItems.map((item, i) => (
+                    <div key={i} className="bg-light-bg rounded-lg p-3 border border-light-border text-center text-sm font-semibold text-dark">{item}</div>
+                  ))}
                 </div>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">🌎 {t('metas.globalPositioning')}</h3>
-                <p className="mb-3"><strong>Não é mídia. Não é ferramenta. É infraestrutura.</strong></p>
-                <p className="mb-2 text-sm text-dark-secondary">O AFOS Analytics se posiciona como:</p>
-                <blockquote className="border-l-4 border-primary pl-4 mb-3 text-base font-semibold text-primary">camada de inteligência política para mercados globais</blockquote>
-                <p className="mb-2 text-sm text-dark-secondary">Uma ponte direta entre:</p>
+                <p className="mb-3"><strong>{t('metas.globalPositioningDesc')}</strong></p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.globalPositioningIntro')}</p>
+                <blockquote className="border-l-4 border-primary pl-4 mb-3 text-base font-semibold text-primary">{t('metas.globalPositioningQuote')}</blockquote>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.globalPositioningBridge')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4">
-                  <li>• eleitor local</li>
-                  <li>• capital internacional</li>
+                  {globalPositioningBridgeList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="mt-2 text-sm text-dark-secondary">Ambos analisando o mesmo conjunto de dados.</p>
+                <p className="mt-2 text-sm text-dark-secondary">{t('metas.globalPositioningFooter')}</p>
               </div>
 
               <div className="bg-light-bg border border-light-border rounded-lg p-4">
-                <p className="font-semibold mb-2 text-sm text-dark-secondary">Modelo de Valor (implícito, sem poluir a mensagem)</p>
-                <p className="text-sm text-dark-secondary mb-2">A mesma infraestrutura que:</p>
+                <p className="font-semibold mb-2 text-sm text-dark-secondary">{t('metas.valueModel')}</p>
+                <p className="text-sm text-dark-secondary mb-2">{t('metas.valueModelIntro')}</p>
                 <ul className="text-sm space-y-1 text-dark ml-4 mb-3">
-                  <li>• educa cidadãos</li>
-                  <li>• informa eleitores</li>
+                  {valueModelEducates.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm text-dark-secondary mb-2">→ também alimenta:</p>
+                <p className="text-sm text-dark-secondary mb-2">→ {t('metas.valueModelAlso')}</p>
                 <ul className="text-sm space-y-1 text-dark ml-4 mb-3">
-                  <li>• fundos de investimento</li>
-                  <li>• bancos</li>
-                  <li>• governos</li>
-                  <li>• consultorias estratégicas</li>
+                  {valueModelFeeds.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm text-dark-secondary">com <strong>dados estruturados e APIs de inteligência política</strong></p>
+                <p className="text-sm text-dark-secondary">{t('metas.valueModelFooter')}</p>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">🔗 {t('metas.systemicEffect')}</h3>
                 <div className="bg-light-bg rounded-lg p-4 text-sm space-y-3 text-dark">
-                  <p>Transparência → Decisão informada → Melhor representação → Políticas mais eficientes → <strong>Crescimento sustentável</strong></p>
-                  <p>Previsibilidade → Investimento → Emprego → Renda → Arrecadação → <strong>Serviços públicos melhores</strong></p>
-                  <p>Accountability → Menos corrupção → Melhor uso de recursos → Infraestrutura → <strong>Qualidade de vida</strong></p>
+                  {systemicEffectChains.map((chain, i) => <p key={i}>{chain}</p>)}
                 </div>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">{t('metas.potentialImpact')}</h3>
                 <ul className="space-y-2 text-sm text-dark">
-                  <li>📱 <strong>Milhões de usuários</strong> com acesso a inteligência política</li>
-                  <li>🗳️ <strong>Voto baseado em dados</strong>, não em ruído</li>
-                  <li>💰 <strong>Capital global</strong> alocado com mais precisão</li>
-                  <li>⚖️ <strong>Pressão contínua</strong> por transparência</li>
-                  <li>🎓 <strong>Educação cívica e financeira</strong> em escala</li>
+                  {potentialImpactList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
               </div>
 
               <div className="bg-primary/5 border border-primary/20 rounded-lg p-5">
                 <h3 className="font-bold text-primary mb-3">{t('metas.synthesis')}</h3>
-                <p className="mb-2 text-sm text-dark">O AFOS Analytics.</p>
-                <blockquote className="border-l-4 border-primary pl-4 mb-3 text-sm font-semibold text-primary">É uma infraestrutura de inteligência política global.</blockquote>
-                <p className="mb-3 text-sm text-dark">Resolve simultaneamente:</p>
+                <p className="mb-2 text-sm text-dark">{t('metas.synthesisIntro')}</p>
+                <blockquote className="border-l-4 border-primary pl-4 mb-3 text-sm font-semibold text-primary">{t('metas.synthesisQuote')}</blockquote>
+                <p className="mb-3 text-sm text-dark">{t('metas.synthesisResolves')}</p>
                 <div className="grid grid-cols-3 gap-2 mb-3">
-                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
-                    <div className="text-sm text-dark font-semibold">Assimetria de informação</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
-                    <div className="text-sm text-dark font-semibold">Incerteza política</div>
-                  </div>
-                  <div className="bg-white rounded-lg p-3 shadow-sm text-center">
-                    <div className="text-sm text-dark font-semibold">Déficit de accountability</div>
-                  </div>
+                  {synthesisItems.map((item, i) => (
+                    <div key={i} className="bg-white rounded-lg p-3 shadow-sm text-center">
+                      <div className="text-sm text-dark font-semibold">{item}</div>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-sm text-dark-secondary">Enquanto forma uma base de usuários mais educados e mercados mais eficientes.</p>
+                <p className="text-sm text-dark-secondary">{t('metas.synthesisFooter')}</p>
               </div>
 
               <div>
                 <h3 className="font-bold text-primary mb-2">{t('metas.positioning')}</h3>
-                <p className="mb-2 text-sm text-dark-secondary">Um sistema onde:</p>
+                <p className="mb-2 text-sm text-dark-secondary">{t('metas.positioningIntro')}</p>
                 <ul className="text-sm space-y-1.5 text-dark ml-4 mb-3">
-                  <li>• cidadãos entendem melhor</li>
-                  <li>• empresas planejam melhor</li>
-                  <li>• investidores alocam melhor</li>
+                  {positioningList.map((item, i) => <li key={i}>• {item}</li>)}
                 </ul>
-                <p className="text-sm font-semibold text-dark-secondary">→ <strong>é um sistema que cresce mais rápido e com mais estabilidade.</strong></p>
+                <p className="text-sm font-semibold text-dark-secondary">→ <strong>{t('metas.positioningFooter')}</strong></p>
               </div>
 
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-5 text-center">
                 <p className="text-base italic text-primary font-semibold leading-relaxed">
-                  &quot;Democracy runs on information.<br/>
-                  Information runs on transparency.<br/>
-                  AFOS Analytics is programmable transparency.&quot;
+                  &quot;{t('metas.tagline')}&quot;
                 </p>
               </div>
 
