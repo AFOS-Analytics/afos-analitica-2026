@@ -237,5 +237,30 @@
     ],
     "positioningFooter": "is a system that grows faster and with more stability.",
     "tagline": "Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency."
+  },
+  "global": {
+    "introDesc": "The **Global** module of AFOS Analytics transforms the world election calendar into **actionable real-time intelligence**.",
+    "introDesc2": "The interactive map lets you visualize, country by country, where elections are happening, which are upcoming, and which have been resolved — creating a **global thermometer of political risk and economic opportunity**.",
+    "introDesc3": "By interacting with the map, you access consolidated data combining:",
+    "introList": ["prediction markets (like Polymarket)", "official election calendar", "political trend analysis"],
+    "howTitle": "How it works",
+    "howDesc": "Each country on the map represents an active or upcoming election event.",
+    "howColors": "Colors represent the degree of definition in the election calendar:",
+    "howColorsList": ["lighter tones with interactions → elections scheduled for this year", "darker tones with interactions → elections scheduled for the next 3 years", "darker tones without interactions → elections without a defined date, scheduled for a more distant horizon"],
+    "howClick": "By clicking on a country, you access:",
+    "howClickList": ["outcome probability", "market interest volume", "related elections"],
+    "howFooter": "This transforms the map into a **global decision panel**, not just visualization.",
+    "calendarTitle": "Global election calendar",
+    "calendarDesc": "The system tracks elections throughout the year, every year, distributed globally.",
+    "calendarDesc2": "Over a single year, dozens of countries hold national elections — creating a continuous flow of global economic and geopolitical impact.",
+    "strategyTitle": "Strategic purpose",
+    "strategyDesc": "The Global module is not just a map — it's an **infrastructure for reading the world**.",
+    "strategyIntro": "It allows you to:",
+    "strategyList": ["anticipate market movements", "identify political risks by region", "track global election cycles in real time", "make decisions based on data, not narrative"],
+    "execTitle": "Direct translation (executive level)",
+    "execLine1": "Politics generates volatility.",
+    "execLine2": "Volatility generates opportunity.",
+    "execLine3": "**Global** transforms this into a simple, visual, and actionable interface.",
+    "loading": "Loading map..."
   }
 }
