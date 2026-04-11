@@ -131,8 +131,8 @@ export async function aggregateElectionData(): Promise<AggregationResult> {
   const startTime = Date.now();
   const errors: string[] = [];
 
-  // 1. Get all slugs from the registry
-  const allSlugs = ELECTION_REGISTRY.map(e => e.slug);
+  // 1. Get all enabled slugs from the registry
+  const allSlugs = ELECTION_REGISTRY.filter(e => e.enabled !== false).map(e => e.slug);
   const totalMarkets = allSlugs.length;
 
   console.log(`[bootstrap] Starting aggregation — ${totalMarkets} markets across ${getTrackedCountries().length} countries`);
