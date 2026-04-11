@@ -331,6 +331,7 @@ model AuditLog {
 
   @@index([action])
   @@index([entityType, entityId])
+  @@index([actorType, actorId])
   @@index([createdAt])
   @@map("audit_logs")
   @@schema("governance")
