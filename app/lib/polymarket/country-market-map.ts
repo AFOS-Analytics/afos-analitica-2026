@@ -14,7 +14,8 @@ export interface ElectionRegistryEntry {
   flag: string;
   electionDate: string;
   electionType: string;
-  isPrimary: boolean; // Whether this is the "who wins" market for the country
+  isPrimary: boolean;
+  enabled: boolean;
 }
 
 // ─── Static Registry ────────────────────────────────────────────────
@@ -23,48 +24,48 @@ export interface ElectionRegistryEntry {
 
 export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   // ── Brazil ─────────────────────────────
-  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true },
-  { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false },
-  { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false },
-  { slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2027-01-01', electionType: 'STF Impeachment', isPrimary: false },
-  { slug: 'next-brazil-senate-election-most-seats-won', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Senate', isPrimary: false },
-  { slug: 'brazil-annual-inflation-2026', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-12-31', electionType: 'Inflation 2026', isPrimary: false },
+  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: true },
+  { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false, enabled: true },
+  { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false, enabled: true },
+  { slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2027-01-01', electionType: 'STF Impeachment', isPrimary: false, enabled: true },
+  { slug: 'next-brazil-senate-election-most-seats-won', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Senate', isPrimary: false, enabled: true },
+  { slug: 'brazil-annual-inflation-2026', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-12-31', electionType: 'Inflation 2026', isPrimary: false, enabled: true },
 
   // ── France ─────────────────────────────
-  { slug: '2027-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: '🇫🇷', electionDate: '2027-04-10', electionType: 'Presidential', isPrimary: true },
+  { slug: '2027-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: '🇫🇷', electionDate: '2027-04-10', electionType: 'Presidential', isPrimary: true, enabled: true },
 
   // ── Germany ────────────────────────────
-  { slug: 'next-german-chancellor', iso3: 'DEU', countryName: 'Germany', flag: '🇩🇪', electionDate: '2025-02-23', electionType: 'Federal Election', isPrimary: true },
+  { slug: 'next-german-chancellor', iso3: 'DEU', countryName: 'Germany', flag: '🇩🇪', electionDate: '2025-02-23', electionType: 'Federal Election', isPrimary: true, enabled: true },
 
   // ── United Kingdom ────────────────────
-  { slug: 'next-uk-prime-minister', iso3: 'GBR', countryName: 'United Kingdom', flag: '🇬🇧', electionDate: '2029-01-01', electionType: 'General Election', isPrimary: true },
+  { slug: 'next-uk-prime-minister', iso3: 'GBR', countryName: 'United Kingdom', flag: '🇬🇧', electionDate: '2029-01-01', electionType: 'General Election', isPrimary: true, enabled: true },
 
   // ── Canada ─────────────────────────────
-  { slug: 'canadian-federal-election-winner', iso3: 'CAN', countryName: 'Canada', flag: '🇨🇦', electionDate: '2025-04-28', electionType: 'Federal Election', isPrimary: true },
+  { slug: 'canadian-federal-election-winner', iso3: 'CAN', countryName: 'Canada', flag: '🇨🇦', electionDate: '2025-04-28', electionType: 'Federal Election', isPrimary: true, enabled: true },
 
   // ── Australia ──────────────────────────
-  { slug: 'next-australian-federal-election', iso3: 'AUS', countryName: 'Australia', flag: '🇦🇺', electionDate: '2025-05-03', electionType: 'Federal Election', isPrimary: true },
+  { slug: 'next-australian-federal-election', iso3: 'AUS', countryName: 'Australia', flag: '🇦🇺', electionDate: '2025-05-03', electionType: 'Federal Election', isPrimary: true, enabled: true },
 
   // ── South Korea ────────────────────────
-  { slug: 'next-south-korean-presidential-election', iso3: 'KOR', countryName: 'South Korea', flag: '🇰🇷', electionDate: '2025-06-03', electionType: 'Presidential', isPrimary: true },
+  { slug: 'next-south-korean-presidential-election', iso3: 'KOR', countryName: 'South Korea', flag: '🇰🇷', electionDate: '2025-06-03', electionType: 'Presidential', isPrimary: true, enabled: true },
 
   // ── Philippines ────────────────────────
-  { slug: 'philippines-midterm-elections-2025-senate', iso3: 'PHL', countryName: 'Philippines', flag: '🇵🇭', electionDate: '2025-05-12', electionType: 'Midterm Senate', isPrimary: true },
+  { slug: 'philippines-midterm-elections-2025-senate', iso3: 'PHL', countryName: 'Philippines', flag: '🇵🇭', electionDate: '2025-05-12', electionType: 'Midterm Senate', isPrimary: true, enabled: true },
 
   // ── Chile ──────────────────────────────
-  { slug: '2025-chilean-presidential-election', iso3: 'CHL', countryName: 'Chile', flag: '🇨🇱', electionDate: '2025-11-16', electionType: 'Presidential', isPrimary: true },
+  { slug: '2025-chilean-presidential-election', iso3: 'CHL', countryName: 'Chile', flag: '🇨🇱', electionDate: '2025-11-16', electionType: 'Presidential', isPrimary: true, enabled: true },
 
   // ── Colombia ───────────────────────────
-  { slug: '2026-colombian-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: '🇨🇴', electionDate: '2026-05-31', electionType: 'Presidential', isPrimary: true },
+  { slug: '2026-colombian-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: '🇨🇴', electionDate: '2026-05-31', electionType: 'Presidential', isPrimary: true, enabled: true },
 
   // ── India ──────────────────────────────
-  { slug: 'next-indian-general-election', iso3: 'IND', countryName: 'India', flag: '🇮🇳', electionDate: '2029-04-01', electionType: 'General Election', isPrimary: true },
+  { slug: 'next-indian-general-election', iso3: 'IND', countryName: 'India', flag: '🇮🇳', electionDate: '2029-04-01', electionType: 'General Election', isPrimary: true, enabled: true },
 
   // ── Mexico ─────────────────────────────
-  { slug: 'next-mexican-presidential-election', iso3: 'MEX', countryName: 'Mexico', flag: '🇲🇽', electionDate: '2030-06-01', electionType: 'Presidential', isPrimary: true },
+  { slug: 'next-mexican-presidential-election', iso3: 'MEX', countryName: 'Mexico', flag: '🇲🇽', electionDate: '2030-06-01', electionType: 'Presidential', isPrimary: true, enabled: true },
 
   // ── Nigeria ────────────────────────────
-  { slug: '2027-nigerian-presidential-election', iso3: 'NGA', countryName: 'Nigeria', flag: '🇳🇬', electionDate: '2027-02-25', electionType: 'Presidential', isPrimary: true },
+  { slug: '2027-nigerian-presidential-election', iso3: 'NGA', countryName: 'Nigeria', flag: '🇳🇬', electionDate: '2027-02-25', electionType: 'Presidential', isPrimary: true, enabled: true },
 ];
 
 // ─── Lookup Functions ───────────────────────────────────────────────
