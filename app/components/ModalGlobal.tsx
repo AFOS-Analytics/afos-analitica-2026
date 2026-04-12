@@ -213,52 +213,74 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
           <p className="text-[10px] text-gray-400 text-center mb-6">{t('modal.dataSource')}</p>
 
           {/* TEXTO EXPLICATIVO */}
-          <div className="space-y-5 text-sm text-dark leading-relaxed border-t border-light-border pt-6">
+          <div className="space-y-6 text-sm text-dark leading-relaxed border-t border-light-border pt-6">
 
             <div>
               <p className="mb-3">{t('global.introDesc')}</p>
-              <p className="mb-3">{t('global.introDesc2')}</p>
-              <p>{t('global.introDesc3')}</p>
-              <ul className="mt-2 space-y-1 text-gray-600 ml-4">
+              <p className="mb-2">{t('global.introDesc2')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
                 {t('global.introList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
               </ul>
+              <p className="text-gray-500 italic">{t('global.introFooter')}</p>
             </div>
 
             <div className="border-t border-light-border pt-5">
               <h4 className="font-bold text-primary mb-3">{t('global.howTitle')}</h4>
               <p className="mb-3">{t('global.howDesc')}</p>
-              <p className="mb-2">{t('global.howColors')}</p>
-              <ul className="space-y-1 text-gray-600 ml-4 mb-3">
-                {t('global.howColorsList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+              <p className="mb-2">{t('global.howDesc2')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
+                {t('global.howList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
               </ul>
-              <p className="mb-2">{t('global.howClick')}</p>
-              <ul className="space-y-1 text-gray-600 ml-4">
-                {t('global.howClickList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+              <p className="text-gray-500 italic">{t('global.howFooter')}</p>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <h4 className="font-bold text-primary mb-3">{t('global.mapTitle')}</h4>
+              <p className="mb-2">{t('global.mapDesc')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
+                {t('global.mapColorsList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
               </ul>
-              <p className="mt-3">{t('global.howFooter')}</p>
+              <p className="text-gray-500 italic">{t('global.mapFooter')}</p>
+            </div>
+
+            <div className="border-t border-light-border pt-5">
+              <h4 className="font-bold text-primary mb-3">{t('global.clickTitle')}</h4>
+              <p className="mb-2">{t('global.clickDesc')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
+                {t('global.clickList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+              </ul>
+              <p className="text-gray-500 italic">{t('global.clickFooter')}</p>
             </div>
 
             <div className="border-t border-light-border pt-5">
               <h4 className="font-bold text-primary mb-3">{t('global.calendarTitle')}</h4>
               <p className="mb-3">{t('global.calendarDesc')}</p>
-              <p>{t('global.calendarDesc2')}</p>
+              <p className="mb-2">{t('global.calendarDesc2')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
+                {t('global.calendarList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+              </ul>
+              <p className="text-gray-500 italic">{t('global.calendarFooter')}</p>
             </div>
 
             <div className="border-t border-light-border pt-5">
-              <h4 className="font-bold text-primary mb-3">{t('global.strategyTitle')}</h4>
-              <p className="mb-3">{t('global.strategyDesc')}</p>
-              <p className="mb-2">{t('global.strategyIntro')}</p>
-              <ul className="space-y-1 text-gray-600 ml-4">
-                {t('global.strategyList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+              <h4 className="font-bold text-primary mb-3">{t('global.purposeTitle')}</h4>
+              <p className="mb-2">{t('global.purposeDesc')}</p>
+              <ul className="space-y-1.5 text-gray-600 ml-4">
+                {t('global.purposeList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
               </ul>
             </div>
 
             <div className="border-t border-light-border pt-5">
               <div className="bg-primary/5 border border-primary/15 rounded-xl p-5">
-                <h4 className="font-bold text-primary mb-2">{t('global.execTitle')}</h4>
-                <p className="text-gray-600 mb-1">{t('global.execLine1')}</p>
-                <p className="text-gray-600 mb-3">{t('global.execLine2')}</p>
-                <p>{t('global.execLine3')}</p>
+                <h4 className="font-bold text-primary mb-3">{t('global.simpleTitle')}</h4>
+                <p className="mb-3">{t('global.simpleDesc')}</p>
+                <p className="mb-2">{t('global.simpleDesc2')}</p>
+                <div className="flex gap-4 justify-center my-3">
+                  {t('global.simpleList').split(',').map((item, i) => (
+                    <span key={i} className="bg-white rounded-lg px-4 py-2 shadow-sm font-semibold text-primary">{item}</span>
+                  ))}
+                </div>
+                <p className="text-gray-500 italic text-center">{t('global.simpleFooter')}</p>
               </div>
             </div>
 
