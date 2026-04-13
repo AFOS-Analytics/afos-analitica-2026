@@ -59,15 +59,16 @@ export function useDashboardData(): DashboardData {
 }
 
 export function useGlobalElections() {
-  const [globalData, setGlobalData] = useState<GlobalData | null>(null);
   const [mapCountries, setMapCountries] = useState<Record<string, unknown>[] | null>(null);
   const [loading, setLoading] = useState(false);
+  const [fetched, setFetched] = useState(false);
 
-  const fetchGlobal = () => {
-    if (mapCountries) return;
+  // Eager fetch no mount — dados prontos quando modal abrir
+  useEffect(() => {
+    if (fetched) return;
+    setFetched(true);
     setLoading(true);
 
-    // Fonte única: /api/global-map (14 países, cron 60s, Redis KV)
     fetch('/api/global-map')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
@@ -75,7 +76,10 @@ export function useGlobalElections() {
       })
       .catch(err => console.error('[Global] Fetch error:', err))
       .finally(() => setLoading(false));
-  };
+  }, [fetched]);
 
-  return { globalData, mapCountries, loading, fetchGlobal };
+  // fetchGlobal mantido para compatibilidade mas dados já estão carregados
+  const fetchGlobal = () => {};
+
+  return { globalData: null as GlobalData | null, mapCountries, loading, fetchGlobal };
 }

@@ -88,7 +88,6 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
   const [mapData, setMapData] = useState<CountryMarketSummary[]>([]);
 
   useEffect(() => {
-    // Fonte primária: /api/global-map (14 países, dados ricos do Redis KV)
     if (mapCountries && mapCountries.length > 0) {
       const rich = mapCountries.map((c) => ({
         iso3: c.iso3 as string,
@@ -107,16 +106,8 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
         })),
       })) as CountryMarketSummary[];
       setMapData(rich);
-    } else if (globalData?.elections) {
-      // Fallback: /api/global-elections (legado, menos países)
-      const converted = convertToMapData(globalData.elections);
-      const resolved = converted.map(c => ({
-        ...c,
-        iso3: COUNTRY_TO_ISO3[c.countryName] || c.iso3,
-      }));
-      setMapData(resolved);
     }
-  }, [mapCountries, globalData]);
+  }, [mapCountries]);
 
   if (!show) return null;
 
