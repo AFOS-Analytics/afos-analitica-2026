@@ -39,7 +39,21 @@
     "newsUpdated": "Actualizado cada 30 minutos",
     "lastUpdate": "Última",
     "newsCollected": "noticias recopiladas",
-    "newsSources": "Fuentes: Google News RSS + Firecrawl AI"
+    "newsSources": "Fuentes: Google News RSS + Firecrawl AI",
+    "presidential": "¿Quién gana la Presidencia?",
+    "secondPlace": "2º lugar en la primera vuelta",
+    "thirdPlace": "3er lugar en la primera vuelta",
+    "stfMarket": "STF: ¿Destitución de ministro hasta 2027?",
+    "senate": "Senado: ¿Qué partido elige más?",
+    "inflation": "Inflación 2026",
+    "stfProb": "Probabilidad de destitución de ministro del STF hasta 2027 (Polymarket)",
+    "pollsLabel": "Encuestas:",
+    "updated": "Actualizado:",
+    "referenceNational": "Referencia nacional",
+    "highReliability": "Alta confiabilidad",
+    "reliable": "Confiable",
+    "useWithCaution": "Usar con precaución",
+    "lowReliability": "Baja confiabilidad"
   },
   "candidates": {
     "position": "Posición",

@@ -1,6 +1,7 @@
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';
 import { getColor } from '../lib/utils';
+import { useTranslation } from '../i18n/context';
 
 interface PollsSectionProps {
   polls: PollData | null;
@@ -8,24 +9,25 @@ interface PollsSectionProps {
 }
 
 export function PollsSection({ polls, crit }: PollsSectionProps) {
+  const { t } = useTranslation();
   if (!polls) return null;
 
   return (
     <section>
-      <SectionTitle icon="📋">Pesquisas Eleitorais</SectionTitle>
+      <SectionTitle icon="📋">{t('sections.polls')}</SectionTitle>
 
       {/* TABELA COMPARATIVA PESQUISAS VS POLYMARKET */}
       {polls?.polymarketComparison && (
         <Card className="mb-6 border-l-4 border-l-primary">
-          <h3 className="font-bold text-sm text-primary mb-3">📊 Pesquisas vs Polymarket — Comparação dos Candidatos</h3>
+          <h3 className="font-bold text-sm text-primary mb-3">📊 {t('sections.pollsVsPolymarket')}</h3>
           {/* Desktop: tabela grid */}
           <div className="hidden sm:block overflow-x-auto">
             <div className="grid grid-cols-5 gap-1 text-xs">
-              <div className="font-bold text-gray-500 py-2">Candidato</div>
+              <div className="font-bold text-gray-500 py-2">{t('sections.candidate')}</div>
               <div className="font-bold text-gray-500 py-2 text-center">Pesquisas</div>
               <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
-              <div className="font-bold text-gray-500 py-2 text-center">Tend. Pesquisa</div>
-              <div className="font-bold text-gray-500 py-2 text-center">Tend. Poly</div>
+              <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoll')}</div>
+              <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoly')}</div>
               {polls?.polymarketComparison?.candidates.map((c, i) => (
                 <div key={i} className="contents">
                   <div className="font-semibold py-1 border-t border-gray-100">{c.name}</div>
@@ -43,10 +45,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
                 <div className="font-semibold text-sm text-dark mb-1">{c.name}</div>
                 <div className="grid grid-cols-2 gap-1 text-xs">
-                  <span className="text-gray-500">Pesquisas:</span><span className="font-medium">{c.pesquisaRange}</span>
+                  <span className="text-gray-500">{t('sections.pollsLabel')}</span><span className="font-medium">{c.pesquisaRange}</span>
                   <span className="text-gray-500">Polymarket:</span><span className="font-bold text-primary">{c.polymarket}</span>
-                  <span className="text-gray-500">Tend. Pesq:</span><span>{c.tendenciaPesquisa}</span>
-                  <span className="text-gray-500">Tend. Poly:</span><span>{c.tendenciaPolymarket}</span>
+                  <span className="text-gray-500">{t('sections.tendPoll')}:</span><span>{c.tendenciaPesquisa}</span>
+                  <span className="text-gray-500">{t('sections.tendPoly')}:</span><span>{c.tendenciaPolymarket}</span>
                 </div>
               </div>
             ))}
@@ -58,7 +60,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* LISTA DE INSTITUTOS */}
       {polls?.institutes && (
         <Card className="mb-6">
-          <h3 className="font-bold text-sm text-dark mb-3">🏛️ 17 Institutos Monitorados — Confiabilidade</h3>
+          <h3 className="font-bold text-sm text-dark mb-3">🏛️ {t('sections.institutes')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {polls?.institutes.map((inst: Institute) => (
               <div key={inst.name} className="flex items-center gap-2 text-xs py-1 border-b border-gray-50">
@@ -76,7 +78,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <span><span className="text-primary">★★</span><span className="text-gray-300">★★★</span> Usar com cautela</span>
               <span><span className="text-primary">★</span><span className="text-gray-300">★★★★</span> Baixa confiabilidade</span>
             </div>
-            <div>Atualizado: {polls.lastUpdate}</div>
+            <div>{t('sections.updated')} {polls.lastUpdate}</div>
           </div>
         </Card>
       )}
@@ -114,7 +116,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       </div>
 
       {/* Second Round */}
-      <h3 className="font-bold text-lg text-dark mb-3">🔄 Simulações de 2º Turno</h3>
+      <h3 className="font-bold text-lg text-dark mb-3">🔄 {t('sections.secondRound')}</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {poll.secondRound.map((sr: SecondRound) => (
           <Card key={sr.matchup}>
@@ -147,7 +149,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* ANÁLISE CRITERIOSA — dados via JSON externo */}
       {crit && crit.candidates?.length > 0 && (
       <div className="mt-6 pt-6 border-t-2 border-primary/20">
-      <h3 className="text-xl font-bold text-dark mb-4 flex items-center gap-2"><span>🔬</span> Análise Criteriosa — Os 4 Primeiros Colocados</h3>
+      <h3 className="text-xl font-bold text-dark mb-4 flex items-center gap-2"><span>🔬</span> {t('sections.critAnalysis')}</h3>
       <p className="text-xs text-gray-500 mb-4">{crit.subtitle}</p>
 
       {/* CANDIDATOS 1-3 (dinâmico via JSON) */}
@@ -156,20 +158,20 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           <h3 className="font-bold text-lg text-dark mb-1">{['1️⃣','2️⃣','3️⃣','4️⃣'][Number(c.rank)-1]} {c.header}</h3>
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div className="bg-green-50 rounded-lg p-4">
-              <h4 className="font-bold text-green-700 text-sm mb-2">✅ PONTOS FORTES</h4>
+              <h4 className="font-bold text-green-700 text-sm mb-2">✅ {t('sections.strengths')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
                 {c.fortes.map((f, i) => <li key={i}>• {f}</li>)}
               </ul>
             </div>
             <div className="bg-red-50 rounded-lg p-4">
-              <h4 className="font-bold text-red-700 text-sm mb-2">❌ PONTOS FRACOS</h4>
+              <h4 className="font-bold text-red-700 text-sm mb-2">❌ {t('sections.weaknesses')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
                 {c.fracos.map((f, i) => <li key={i}>• {f}</li>)}
               </ul>
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3 mt-3">
-            <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
           </div>
         </Card>
       ))}
@@ -200,21 +202,21 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3 mt-3">
-            <p className="text-xs text-gray-700"><strong>🎯 Análise AFOS ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
           </div>
         </Card>
       ))}
 
       {/* QUADRO COMPARATIVO (dinâmico via JSON) */}
       <Card className="border-l-4 border-l-primary">
-        <h3 className="font-bold text-sm text-primary mb-3">📊 QUADRO COMPARATIVO — Pesquisa vs Polymarket vs Realidade</h3>
+        <h3 className="font-bold text-sm text-primary mb-3">📊 {t('sections.comparativeTable')}</h3>
         <div className="hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-5 gap-2 text-xs">
-            <div className="font-bold text-gray-500 py-2">Candidato</div>
+            <div className="font-bold text-gray-500 py-2">{t('sections.candidate')}</div>
             <div className="font-bold text-gray-500 py-2 text-center">Pesquisa</div>
             <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
             <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
-            <div className="font-bold text-gray-500 py-2 text-center">2º Turno vs Lula</div>
+            <div className="font-bold text-gray-500 py-2 text-center">{t('sections.secondRoundVsLula')}</div>
             {crit.quadroComparativo.map((r, i) => (
               <div key={i} className="contents">
                 <div className="font-semibold py-1 border-t border-gray-100">{r.n}</div>

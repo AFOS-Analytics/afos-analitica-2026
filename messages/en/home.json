@@ -39,7 +39,21 @@
     "newsUpdated": "Updated every 30 minutes",
     "lastUpdate": "Last",
     "newsCollected": "news collected",
-    "newsSources": "Sources: Google News RSS + Firecrawl AI"
+    "newsSources": "Sources: Google News RSS + Firecrawl AI",
+    "presidential": "Who wins the Presidency?",
+    "secondPlace": "2nd place in first round",
+    "thirdPlace": "3rd place in first round",
+    "stfMarket": "STF: Justice impeached by 2027?",
+    "senate": "Senate: Which party wins most seats?",
+    "inflation": "Inflation 2026",
+    "stfProb": "Probability of STF justice impeachment by 2027 (Polymarket)",
+    "pollsLabel": "Polls:",
+    "updated": "Updated:",
+    "referenceNational": "National reference",
+    "highReliability": "High reliability",
+    "reliable": "Reliable",
+    "useWithCaution": "Use with caution",
+    "lowReliability": "Low reliability"
   },
   "candidates": {
     "position": "Position",

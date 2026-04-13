@@ -1,5 +1,6 @@
 import type { AnalysisSection } from '../types';
 import { SectionTitle, Card } from './ui';
+import { useTranslation } from '../i18n/context';
 
 interface Props {
   bancoMaster: AnalysisSection | undefined;
@@ -7,10 +8,11 @@ interface Props {
 }
 
 export function BancoMasterSection({ bancoMaster: bm, updatedAt }: Props) {
+  const { t } = useTranslation();
   return (
     <section>
-      <SectionTitle icon="🏦">Impacto do Escândalo Banco Master</SectionTitle>
-      {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 Análise atualizada: {updatedAt} BRT</p>}
+      <SectionTitle icon="🏦">{t('sections.bancoMaster')}</SectionTitle>
+      {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="border-l-4 border-l-primary">
         <p className="text-sm text-dark leading-relaxed mb-3">{bm?.text1 || ''}</p>
         <p className="text-sm text-dark leading-relaxed mb-3">{bm?.text2 || ''}</p>

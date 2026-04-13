@@ -78,12 +78,12 @@ export function PolymarketSection({ poly }: Props) {
         </p>
       </div>
       <div className="grid md:grid-cols-2 gap-4">
-        {renderMarkets(poly?.presidential, '🏆 Quem vence a Presidência?', 10)}
-        {renderMarkets(poly?.secondPlace, '🥈 2º lugar no 1º turno', 8)}
-        {renderMarkets(poly?.thirdPlace, '🥉 3º lugar no 1º turno', 8)}
-        {renderMarkets(poly?.stf, '⚖️ STF: Impeachment de ministro até 2027?')}
-        {renderMarkets(poly?.senate, '🏛️ Senado: Qual partido elege mais?', 8)}
-        {renderMarkets(poly?.inflation, '📈 Inflação 2026')}
+        {renderMarkets(poly?.presidential, `🏆 ${t('sections.presidential')}`, 10)}
+        {renderMarkets(poly?.secondPlace, `🥈 ${t('sections.secondPlace')}`, 8)}
+        {renderMarkets(poly?.thirdPlace, `🥉 ${t('sections.thirdPlace')}`, 8)}
+        {renderMarkets(poly?.stf, `⚖️ ${t('sections.stfMarket')}`)}
+        {renderMarkets(poly?.senate, `🏛️ ${t('sections.senate')}`, 8)}
+        {renderMarkets(poly?.inflation, `📈 ${t('sections.inflation')}`)}
       </div>
     </section>
   );

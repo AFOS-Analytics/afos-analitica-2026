@@ -1,5 +1,6 @@
 import type { NewsData, NewsItem } from '../types';
 import { SectionTitle } from './ui';
+import { useTranslation } from '../i18n/context';
 
 /** Validar URL para prevenir javascript: protocol injection (OWASP A03) */
 function isSafeUrl(url: string | undefined): boolean {
@@ -17,17 +18,18 @@ interface Props {
 }
 
 export function NewsSection({ news }: Props) {
+  const { t } = useTranslation();
   if (!news || news.totalNews <= 0) return null;
 
   return (
     <section>
-      <SectionTitle icon="📰">Live Eleições News 120&apos;</SectionTitle>
+      <SectionTitle icon="📰">{t('sections.news')}</SectionTitle>
       <div className="bg-light-bg border border-light-border rounded-xl p-4 sm:p-6 mb-4">
         <div className="flex flex-wrap justify-between items-center mb-4">
-          <p className="text-xs text-gray-500">🔄 Atualizado a cada 30 minutos | Última: <span className="font-semibold text-primary">{news.updatedAt} BRT</span></p>
-          <span className="text-xs text-gray-400">{news.totalNews} notícias coletadas</span>
+          <p className="text-xs text-gray-500">🔄 {t('sections.newsUpdated')} | {t('sections.lastUpdate')}: <span className="font-semibold text-primary">{news.updatedAt} BRT</span></p>
+          <span className="text-xs text-gray-400">{news.totalNews} {t('sections.newsCollected')}</span>
         </div>
-        <p className="text-xs text-gray-500 mb-4">Fontes: Google News RSS + Firecrawl AI | CNN Brasil, TV Globo, Folha de S.Paulo, Estadão, Metrópoles, Poder360, Valor Econômico, Gazeta do Povo, Jovem Pan, Correio Braziliense, Band, Record, SBT, Veja, IstoÉ, Época, X/Twitter e outros</p>
+        <p className="text-xs text-gray-500 mb-4">{t('sections.newsSources')} | CNN Brasil, TV Globo, Folha de S.Paulo, Estadão, Metrópoles, Poder360, Valor Econômico, Gazeta do Povo, Jovem Pan, Correio Braziliense, Band, Record, SBT, Veja, IstoÉ, Época, X/Twitter</p>
 
         <div className="space-y-4">
           {Object.entries(news.grouped || {}).map(([cat, items]) => {

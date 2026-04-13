@@ -39,7 +39,21 @@
     "newsUpdated": "Atualizado a cada 30 minutos",
     "lastUpdate": "Última",
     "newsCollected": "notícias coletadas",
-    "newsSources": "Fontes: Google News RSS + Firecrawl AI"
+    "newsSources": "Fontes: Google News RSS + Firecrawl AI",
+    "presidential": "Quem vence a Presidência?",
+    "secondPlace": "2º lugar no 1º turno",
+    "thirdPlace": "3º lugar no 1º turno",
+    "stfMarket": "STF: Impeachment de ministro até 2027?",
+    "senate": "Senado: Qual partido elege mais?",
+    "inflation": "Inflação 2026",
+    "stfProb": "Probabilidade de impeachment de ministro do STF até 2027 (Polymarket)",
+    "pollsLabel": "Pesquisas:",
+    "updated": "Atualizado:",
+    "referenceNational": "Referência nacional",
+    "highReliability": "Alta confiabilidade",
+    "reliable": "Confiável",
+    "useWithCaution": "Usar com cautela",
+    "lowReliability": "Baixa confiabilidade"
   },
   "candidates": {
     "position": "Posição",
