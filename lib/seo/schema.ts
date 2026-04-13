@@ -7,7 +7,7 @@
 
 import type { Locale } from '../i18n/config';
 
-const BASE_URL = 'https://afos-analitica-2026.vercel.app';
+const BASE_URL = 'https://afos-analytics.com';
 
 /** Organization — identidade da marca */
 export function organizationSchema() {

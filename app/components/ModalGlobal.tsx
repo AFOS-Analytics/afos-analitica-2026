@@ -101,7 +101,7 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label="Eleições globais" onClick={onClose}>
+    <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t('modal.globalTitle')} onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-5xl w-full my-4 sm:my-8 shadow-2xl" onClick={e => e.stopPropagation()}>
         <div className="bg-primary text-white p-4 sm:p-6 rounded-t-2xl flex justify-between items-center">
           <h2 className="text-lg sm:text-xl font-bold">{t('modal.globalTitle')}</h2>
@@ -184,10 +184,10 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                   </div>
 
                   {!isExpanded && e.polymarket!.markets.length > 3 && (
-                    <div className="text-[10px] text-primary text-center mt-2 font-medium">Clique para ver {e.polymarket!.markets.length} candidatos ▼</div>
+                    <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {e.polymarket!.markets.length} {t('modal.candidates')} ▼</div>
                   )}
                   {isExpanded && (
-                    <div className="text-[10px] text-gray-400 text-center mt-2">Vol. total: {volStr} | {e.polymarket!.markets.length} candidatos ▲</div>
+                    <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {e.polymarket!.markets.length} {t('modal.candidates')} ▲</div>
                   )}
                 </div>
               );

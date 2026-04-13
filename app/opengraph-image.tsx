@@ -46,7 +46,7 @@ export default function Image() {
             display: 'flex',
           }}
         >
-          afos-analitica-2026.vercel.app
+          afos-analytics.com
         </div>
       </div>
     ),

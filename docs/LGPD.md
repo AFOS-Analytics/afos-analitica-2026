@@ -51,14 +51,14 @@
 
 ```bash
 # 1. Registrar pedido de exclusão
-curl -X POST https://afos-analitica-2026.vercel.app/api/admin/data-request \
+curl -X POST https://afos-analytics.com/api/admin/data-request \
   -H "Authorization: Bearer $CRON_SECRET" \
   -H "Content-Type: application/json" \
   -d '{"email": "titular@email.com", "type": "deletion"}'
 # Response: { "status": "accepted", "requestId": "uuid" }
 
 # 2. Processar exclusão (anonimiza PII, preserva analítico)
-curl -X POST https://afos-analitica-2026.vercel.app/api/admin/data-request \
+curl -X POST https://afos-analytics.com/api/admin/data-request \
   -H "Authorization: Bearer $CRON_SECRET" \
   -H "Content-Type: application/json" \
   -d '{"email": "titular@email.com", "type": "process"}'
@@ -86,7 +86,7 @@ curl -X POST https://afos-analitica-2026.vercel.app/api/admin/data-request \
 **Prazo legal: 15 dias úteis.**
 
 ```bash
-curl -X POST https://afos-analitica-2026.vercel.app/api/admin/data-request \
+curl -X POST https://afos-analytics.com/api/admin/data-request \
   -H "Authorization: Bearer $CRON_SECRET" \
   -H "Content-Type: application/json" \
   -d '{"email": "titular@email.com", "type": "export"}'

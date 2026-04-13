@@ -1,45 +1,96 @@
-import type { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next'
+import { COUNTRIES_SEO } from '../lib/seo/countries'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://afos-analitica-2026.vercel.app';
-  const locales = ['pt-BR', 'en', 'es'];
-  const now = new Date();
+  const baseUrl = 'https://afos-analytics.com'
+  const locales = ['pt-BR', 'en', 'es']
+  const now = new Date()
+  const entries: MetadataRoute.Sitemap = []
 
-  const entries: MetadataRoute.Sitemap = [];
+  function hreflang(path: (loc: string) => string, xDefault?: string) {
+    const languages: Record<string, string> = {}
+    for (const loc of locales) languages[loc] = `${baseUrl}${path(loc)}`
+    languages['x-default'] = xDefault || `${baseUrl}${path('pt-BR')}`
+    return languages
+  }
 
   // Dashboard: /pt-BR, /en, /es
   for (const loc of locales) {
-    const languages: Record<string, string> = {};
-    for (const alt of locales) {
-      languages[alt] = `${baseUrl}/${alt}`;
-    }
-    languages['x-default'] = `${baseUrl}/pt-BR`;
-
     entries.push({
       url: `${baseUrl}/${loc}`,
       lastModified: now,
       changeFrequency: 'hourly',
       priority: 1,
-      alternates: { languages },
-    });
+      alternates: { languages: hreflang((l) => `/${l}`) },
+    })
   }
 
   // Global map: /pt-BR/global, /en/global, /es/global
   for (const loc of locales) {
-    const languages: Record<string, string> = {};
-    for (const alt of locales) {
-      languages[alt] = `${baseUrl}/${alt}/global`;
-    }
-    languages['x-default'] = `${baseUrl}/pt-BR/global`;
-
     entries.push({
       url: `${baseUrl}/${loc}/global`,
       lastModified: now,
       changeFrequency: 'hourly',
       priority: 0.9,
-      alternates: { languages },
-    });
+      alternates: { languages: hreflang((l) => `/${l}/global`) },
+    })
   }
 
-  return entries;
+  // Country pages: /[locale]/country/[country]
+  for (const country of COUNTRIES_SEO) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/country/${country.slug[loc]}`,
+        lastModified: now,
+        changeFrequency: 'daily',
+        priority: 0.8,
+        alternates: { languages: hreflang((l) => `/${l}/country/${country.slug[l]}`, `${baseUrl}/en/country/${country.slug['en']}`) },
+      })
+    }
+  }
+
+  // Election pages: /[locale]/election/[slug]
+  for (const country of COUNTRIES_SEO) {
+    for (const election of country.elections) {
+      for (const loc of locales) {
+        entries.push({
+          url: `${baseUrl}/${loc}/election/${election.slug}`,
+          lastModified: now,
+          changeFrequency: election.status === 'active' ? 'hourly' : 'daily',
+          priority: election.status === 'active' ? 0.9 : 0.7,
+          alternates: { languages: hreflang((l) => `/${l}/election/${election.slug}`, `${baseUrl}/en/election/${election.slug}`) },
+        })
+      }
+    }
+  }
+
+  // Region pages
+  const regions = ['eu', 'latam'] // us removido (sem dados), america-latina canonical → latam
+  for (const region of regions) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/${region}`,
+        lastModified: now,
+        changeFrequency: 'daily',
+        priority: 0.85,
+        alternates: { languages: hreflang((l) => `/${l}/${region}`, `${baseUrl}/en/${region}`) },
+      })
+    }
+  }
+
+  // Institutional pages
+  const institutional = ['for-investors', 'political-risk', 'election-intelligence', 'for-analysts', 'geopolitical-signals', 'emerging-markets-risk', 'global-election-calendar']
+  for (const page of institutional) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/${page}`,
+        lastModified: now,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+        alternates: { languages: hreflang((l) => `/${l}/${page}`, `${baseUrl}/en/${page}`) },
+      })
+    }
+  }
+
+  return entries
 }

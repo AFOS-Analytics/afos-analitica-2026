@@ -18,7 +18,7 @@ function esc(text: string | number): string {
 const BRAND = {
   color: '#0F52BA',
   name: 'AFOS Analytics',
-  url: 'https://afos-analitica-2026.vercel.app',
+  url: 'https://afos-analytics.com',
   tagline: 'Plataforma Global de Inteligencia Eleitoral',
 };
 
