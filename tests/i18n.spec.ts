@@ -64,9 +64,9 @@ test.describe('SEO', () => {
     const res = await request.get('/sitemap.xml');
     expect(res.status()).toBe(200);
     const body = await res.text();
-    expect(body).toContain('https://afos-analitica-2026.vercel.app/pt-BR');
-    expect(body).toContain('https://afos-analitica-2026.vercel.app/en');
-    expect(body).toContain('https://afos-analitica-2026.vercel.app/es');
+    expect(body).toContain('https://afos-analytics.com/pt-BR');
+    expect(body).toContain('https://afos-analytics.com/en');
+    expect(body).toContain('https://afos-analytics.com/es');
   });
 
   test('/robots.txt allows crawling', async ({ request }) => {

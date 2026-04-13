@@ -2,7 +2,7 @@
 
 **Plataforma Global de Inteligência Eleitoral em Tempo Real**
 
-🔗 **[afos-analitica-2026.vercel.app](https://afos-analitica-2026.vercel.app)**
+🔗 **[afos-analytics.com](https://afos-analytics.com)**
 
 > *Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency.*
 
@@ -328,6 +328,53 @@ Endpoint histórico: `GET /api/market/history?candidate=Lula&days=30`
 | Anti-enumeration | Admin endpoint sempre retorna 200 |
 
 Documentação completa: [docs/LGPD.md](docs/LGPD.md)
+
+---
+
+## SEO / GEO / Indexação
+
+**Domínio:** https://afos-analytics.com
+
+### Páginas indexáveis (~114 SSG com hreflang)
+
+| Tipo | Rotas | Páginas | Prioridade |
+|------|-------|---------|-----------|
+| Dashboard | `/[locale]` | 3 | 1.0 |
+| Mapa Global | `/[locale]/global` | 3 | 0.9 |
+| País (13 países × 3 locales) | `/[locale]/country/[country]` | 39 | 0.8 |
+| Eleição (13 × 3) | `/[locale]/election/[slug]` | 39 | 0.7-0.9 |
+| Região (EU, LatAm × 3) | `/[locale]/eu`, `/[locale]/latam` | 6 | 0.85 |
+| Institucional (7 × 3) | `/[locale]/for-investors`, `political-risk`, etc. | 21 | 0.8 |
+
+### SEO Programático
+
+- Dataset: `lib/seo/countries.ts` — 13 países, 13 eleições, 2 regiões
+- Metadata: `lib/seo/metadata.ts` — `buildMetadata()` com hreflang cruzado
+- Schema.org: Organization, WebSite, WebApp, FAQ, Dataset, Breadcrumb
+- Sitemap dinâmico: `app/sitemap.ts` (~114 entries)
+- robots.txt: `app/robots.ts`
+
+### Páginas Institucionais
+
+| Rota | Target |
+|------|--------|
+| `/[locale]/for-investors` | Fundos, bancos, gestores |
+| `/[locale]/for-analysts` | Analistas políticos e de mercado |
+| `/[locale]/political-risk` | Equipes de risco geopolítico |
+| `/[locale]/election-intelligence` | Inteligência eleitoral geral |
+| `/[locale]/geopolitical-signals` | Sinais macro e geopolíticos |
+| `/[locale]/emerging-markets-risk` | Risco em mercados emergentes |
+| `/[locale]/global-election-calendar` | Calendário global de eleições |
+
+### Internal Linking
+
+```
+Dashboard → 13 country cards (bandeiras)
+Footer → Regiões + Institucional + Inteligência
+Region pages → Country pages → Election pages
+Election pages → Country + Institutional
+Institutional → Cross-links entre si
+```
 
 ---
 

@@ -6,7 +6,7 @@
 |----------|-----|-------|--------|-----|
 | **Local** | `localhost:3000` | Neon main (via .env.local) | `main` ou feature | Desenvolvimento |
 | **Preview** | `*.vercel.app` (por PR) | Neon main (shared) | PR branch | QA de features |
-| **Production** | `afos-analitica-2026.vercel.app` | Neon main | `main` | Produção |
+| **Production** | `afos-analytics.com` | Neon main | `main` | Produção |
 
 ### ENV vars por ambiente
 
@@ -62,10 +62,10 @@ npx vercel --prod
 
 ```bash
 # Health check
-curl -s https://afos-analitica-2026.vercel.app/api/health | jq .
+curl -s https://afos-analytics.com/api/health | jq .
 
 # Metrics (requer CRON_SECRET)
-curl -s https://afos-analitica-2026.vercel.app/api/admin/metrics \
+curl -s https://afos-analytics.com/api/admin/metrics \
   -H "Authorization: Bearer $CRON_SECRET" | jq .
 ```
 
@@ -132,7 +132,7 @@ Retorna: leads (total, 7d, 30d), market prices (total, 24h), audit logs, LLM run
 
 ```
 UptimeRobot (free):
-  URL: https://afos-analitica-2026.vercel.app/api/health
+  URL: https://afos-analytics.com/api/health
   Intervalo: 5 minutos
   Alerta: email quando status != 200
 ```
@@ -237,7 +237,7 @@ DELETE FROM market.market_prices WHERE snapshot_at < NOW() - INTERVAL '7 days';
 
 ```bash
 # Detectar
-curl -s https://afos-analitica-2026.vercel.app/api/health
+curl -s https://afos-analytics.com/api/health
 
 # Se timeout → Vercel down → status.vercel.com → esperar
 # Se 503 → ver components no JSON

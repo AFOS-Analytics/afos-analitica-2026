@@ -19,7 +19,7 @@ import { StfSection } from '../components/StfSection';
 import { EmailPopup } from '../components/EmailPopup';
 
 export default function Dashboard() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const { poly, polls, news, ac, crit, loading, error } = useDashboardData();
   const { globalData, fetchGlobal } = useGlobalElections();
 
@@ -79,6 +79,33 @@ export default function Dashboard() {
         <PolymarketSection poly={poly} />
         <PollsSection polls={polls} crit={crit} />
         <CandidatesSection />
+
+        {/* SEO internal links — country pages */}
+        <section className="bg-light-bg border border-light-border rounded-xl p-4">
+          <p className="text-xs font-semibold text-primary mb-3">{t('map.countries')}</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { flag: '🇧🇷', slug: locale === 'en' ? 'brazil' : 'brasil', name: 'Brasil' },
+              { flag: '🇫🇷', slug: locale === 'en' ? 'france' : locale === 'es' ? 'francia' : 'franca', name: locale === 'en' ? 'France' : locale === 'es' ? 'Francia' : 'França' },
+              { flag: '🇩🇪', slug: locale === 'en' ? 'germany' : locale === 'es' ? 'alemania' : 'alemanha', name: locale === 'en' ? 'Germany' : locale === 'es' ? 'Alemania' : 'Alemanha' },
+              { flag: '🇬🇧', slug: locale === 'en' ? 'united-kingdom' : 'reino-unido', name: locale === 'en' ? 'United Kingdom' : 'Reino Unido' },
+              { flag: '🇨🇦', slug: 'canada', name: locale === 'en' ? 'Canada' : 'Canadá' },
+              { flag: '🇨🇴', slug: 'colombia', name: locale === 'en' ? 'Colombia' : 'Colômbia' },
+              { flag: '🇨🇱', slug: 'chile', name: 'Chile' },
+              { flag: '🇰🇷', slug: locale === 'en' ? 'south-korea' : locale === 'es' ? 'corea-del-sur' : 'coreia-do-sul', name: locale === 'en' ? 'South Korea' : locale === 'es' ? 'Corea del Sur' : 'Coreia do Sul' },
+              { flag: '🇦🇺', slug: 'australia', name: locale === 'en' ? 'Australia' : locale === 'es' ? 'Australia' : 'Austrália' },
+              { flag: '🇮🇳', slug: locale === 'en' ? 'india' : 'india', name: locale === 'en' ? 'India' : locale === 'es' ? 'India' : 'Índia' },
+              { flag: '🇲🇽', slug: 'mexico', name: locale === 'en' ? 'Mexico' : 'México' },
+              { flag: '🇳🇬', slug: 'nigeria', name: locale === 'en' ? 'Nigeria' : locale === 'es' ? 'Nigeria' : 'Nigéria' },
+              { flag: '🇵🇭', slug: locale === 'en' ? 'philippines' : 'filipinas', name: locale === 'en' ? 'Philippines' : 'Filipinas' },
+            ].map((c) => (
+              <a key={c.slug} href={`/${locale}/country/${c.slug}`} className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors">
+                <span>{c.flag}</span>{c.name}
+              </a>
+            ))}
+          </div>
+        </section>
+
         <NewsSection news={news} />
         <SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} />
         <InssSection inss={inss} updatedAt={ac?.updatedAt} />

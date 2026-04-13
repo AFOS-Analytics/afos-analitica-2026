@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://afos-analitica-2026.vercel.app/sitemap.xml',
+    sitemap: 'https://afos-analytics.com/sitemap.xml',
   };
 }
