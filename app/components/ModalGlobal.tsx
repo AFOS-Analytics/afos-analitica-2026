@@ -82,6 +82,10 @@ const COUNTRY_TO_ISO3: Record<string, string> = {
   'Argentina': 'ARG',
   'Itália': 'ITA', 'Italy': 'ITA',
   'Japão': 'JPN', 'Japan': 'JPN',
+  'Rússia': 'RUS', 'Russia': 'RUS',
+  'Hungria': 'HUN', 'Hungary': 'HUN',
+  'Ucrânia': 'UKR', 'Ukraine': 'UKR',
+  'Espanha': 'ESP', 'Spain': 'ESP',
 };
 
 export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedElection, setExpandedElection }: ModalGlobalProps) {
