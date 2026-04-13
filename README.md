@@ -66,6 +66,14 @@ Usuário:     Requisição → Redis read (<1ms) → resposta
              10M usuários = mesma carga que 10 usuários
 ```
 
+**Fonte única de dados para ambos os mapas (card Global + página /global):**
+
+```
+Cron 60s → Polymarket (18 mercados) → Redis KV → /api/global-map
+                                                    ↙            ↘
+                                          Mapa D3 (SVG)    Calendário + Cards (HTML)
+```
+
 **Cascata de fallback (4 níveis):**
 
 | Nível | Condição | Resposta |

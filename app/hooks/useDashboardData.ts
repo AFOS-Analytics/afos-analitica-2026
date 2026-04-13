@@ -60,17 +60,22 @@ export function useDashboardData(): DashboardData {
 
 export function useGlobalElections() {
   const [globalData, setGlobalData] = useState<GlobalData | null>(null);
+  const [mapCountries, setMapCountries] = useState<Record<string, unknown>[] | null>(null);
   const [loading, setLoading] = useState(false);
 
   const fetchGlobal = () => {
-    if (globalData) return;
+    if (mapCountries) return;
     setLoading(true);
-    fetch('/api/global-elections')
+
+    // Fonte única: /api/global-map (14 países, cron 60s, Redis KV)
+    fetch('/api/global-map')
       .then(r => r.ok ? r.json() : null)
-      .then(data => setGlobalData(data))
+      .then(data => {
+        if (data?.c) setMapCountries(data.c);
+      })
       .catch(err => console.error('[Global] Fetch error:', err))
       .finally(() => setLoading(false));
   };
 
-  return { globalData, loading, fetchGlobal };
+  return { globalData, mapCountries, loading, fetchGlobal };
 }

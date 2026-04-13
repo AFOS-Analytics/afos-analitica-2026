@@ -26,6 +26,7 @@ interface ModalGlobalProps {
   show: boolean;
   onClose: () => void;
   globalData: GlobalData | null;
+  mapCountries?: Record<string, unknown>[] | null;
   expandedElection: number | null;
   setExpandedElection: (idx: number | null) => void;
 }
@@ -82,21 +83,40 @@ const COUNTRY_TO_ISO3: Record<string, string> = {
   'Japão': 'JPN', 'Japan': 'JPN',
 };
 
-export function ModalGlobal({ show, onClose, globalData, expandedElection, setExpandedElection }: ModalGlobalProps) {
+export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedElection, setExpandedElection }: ModalGlobalProps) {
   const { t } = useTranslation();
   const [mapData, setMapData] = useState<CountryMarketSummary[]>([]);
 
   useEffect(() => {
-    if (globalData?.elections) {
+    // Fonte primária: /api/global-map (14 países, dados ricos do Redis KV)
+    if (mapCountries && mapCountries.length > 0) {
+      const rich = mapCountries.map((c) => ({
+        iso3: c.iso3 as string,
+        countryName: c.n as string,
+        flag: c.f as string,
+        electionDate: c.d as string,
+        electionType: c.t as string,
+        probability: (c.p as number) || 0,
+        leadCandidate: (c.lc as string) || '—',
+        volumeUsd: (c.v as number) || 0,
+        status: ((c.s as string) || 'no-data') as CountryMarketSummary['status'],
+        candidates: ((c.cs as Array<Record<string, unknown>>) || []).map((cd) => ({
+          name: cd.n as string,
+          probability: cd.p as number,
+          volumeUsd: cd.v as number,
+        })),
+      })) as CountryMarketSummary[];
+      setMapData(rich);
+    } else if (globalData?.elections) {
+      // Fallback: /api/global-elections (legado, menos países)
       const converted = convertToMapData(globalData.elections);
-      // Resolver ISO3 pelo nome do país
       const resolved = converted.map(c => ({
         ...c,
         iso3: COUNTRY_TO_ISO3[c.countryName] || c.iso3,
       }));
       setMapData(resolved);
     }
-  }, [globalData]);
+  }, [mapCountries, globalData]);
 
   if (!show) return null;
 
@@ -120,30 +140,31 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
             )}
           </div>
 
-          {/* CALENDÁRIO COM BANDEIRAS */}
+          {/* CALENDÁRIO COM BANDEIRAS — dados do /api/global-map */}
           <div className="mb-5">
             <h3 className="text-sm font-bold text-primary mb-3">{t('modal.calendarTitle')}</h3>
             <div className="flex flex-wrap gap-2">
-              {globalData?.elections?.map((e: GlobalElection, i: number) => (
+              {mapData.map((c, i) => (
                 <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
                   onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
-                  <span className="text-base">{e.flag}</span>
-                  <span className="font-semibold">{e.country}</span>
-                  <span className="text-gray-400">— {e.date}</span>
+                  <span className="text-base">{c.flag}</span>
+                  <span className="font-semibold">{c.countryName}</span>
+                  <span className="text-gray-400">— {c.electionDate}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* ELECTION CARDS COM DADOS POLYMARKET */}
+          {/* ELECTION CARDS — dados do /api/global-map */}
           <h3 className="text-sm font-bold text-primary mb-3">{t('modal.electionsWithData')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
-            {globalData?.elections?.filter((e: GlobalElection) => e.polymarket && e.polymarket.markets?.length > 0)
-              .sort((a: GlobalElection, b: GlobalElection) => (b.polymarket?.volume || 0) - (a.polymarket?.volume || 0))
-              .map((e: GlobalElection, i: number) => {
-              const idx = globalData.elections.indexOf(e);
+            {mapData
+              .filter(c => c.candidates && c.candidates.length > 0 && c.status === 'live')
+              .sort((a, b) => (b.volumeUsd || 0) - (a.volumeUsd || 0))
+              .map((c, i) => {
+              const idx = mapData.indexOf(c);
               const isExpanded = expandedElection === idx;
-              const vol = e.polymarket?.volume || 0;
+              const vol = c.volumeUsd || 0;
               const volStr = vol > 1e6 ? '$'+(vol/1e6).toFixed(1)+'M' : '$'+(vol/1e3).toFixed(0)+'K';
               const colors = ['#0F52BA','#1a6dd4','#3b82f6','#60a5fa','#93c5fd'];
               return (
@@ -153,26 +174,25 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl">{e.flag}</span>
+                      <span className="text-2xl">{c.flag}</span>
                       <div>
-                        <div className="font-bold text-dark text-sm">{e.country}</div>
-                        <div className="text-[10px] text-gray-500">{e.type}</div>
+                        <div className="font-bold text-dark text-sm">{c.countryName}</div>
+                        <div className="text-[10px] text-gray-500">{c.electionType}</div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full">{e.date}</div>
+                      <div className="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full">{c.electionDate}</div>
                       <div className="text-[9px] text-gray-400 mt-1">{volStr}</div>
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    {e.polymarket!.markets.slice(0, isExpanded ? undefined : 3).map((m: { question: string; yesPrice: number; volume: number }, j: number) => {
-                      const nm = (m.question||'').replace(/^Will\s+/i,'').replace(/\s+(win|finish|be).*/i,'').trim();
-                      const pct = (m.yesPrice * 100).toFixed(1);
+                    {c.candidates.slice(0, isExpanded ? undefined : 3).map((cand, j) => {
+                      const pct = cand.probability.toFixed(1);
                       return (
                         <div key={j}>
                           <div className="flex justify-between text-xs mb-0.5">
-                            <span className="text-dark font-medium truncate mr-2">{nm}</span>
+                            <span className="text-dark font-medium truncate mr-2">{cand.name}</span>
                             <span className="font-bold flex-shrink-0" style={{color: colors[Math.min(j,4)]}}>{pct}%</span>
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
@@ -183,27 +203,27 @@ export function ModalGlobal({ show, onClose, globalData, expandedElection, setEx
                     })}
                   </div>
 
-                  {!isExpanded && e.polymarket!.markets.length > 3 && (
-                    <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {e.polymarket!.markets.length} {t('modal.candidates')} ▼</div>
+                  {!isExpanded && c.candidates.length > 3 && (
+                    <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {c.candidates.length} {t('modal.candidates')} ▼</div>
                   )}
                   {isExpanded && (
-                    <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {e.polymarket!.markets.length} {t('modal.candidates')} ▲</div>
+                    <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {c.candidates.length} {t('modal.candidates')} ▲</div>
                   )}
                 </div>
               );
             })}
           </div>
 
-          {/* ELEIÇÕES SEM DADOS */}
-          {(globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length)?.length ?? 0) > 0 && (
+          {/* ELEIÇÕES SEM DADOS (upcoming/no-data) */}
+          {mapData.filter(c => c.status !== 'live').length > 0 && (
             <div className="mb-4">
               <h3 className="text-xs font-bold text-gray-400 mb-2">{t('modal.upcomingElections')}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-                {globalData?.elections?.filter((e: GlobalElection) => !e.polymarket || !e.polymarket.markets?.length).map((e: GlobalElection, i: number) => (
+                {mapData.filter(c => c.status !== 'live').map((c, i) => (
                   <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-center">
-                    <div className="text-lg">{e.flag}</div>
-                    <div className="font-semibold text-dark">{e.country}</div>
-                    <div className="text-gray-400">{e.date} | {e.type}</div>
+                    <div className="text-lg">{c.flag}</div>
+                    <div className="font-semibold text-dark">{c.countryName}</div>
+                    <div className="text-gray-400">{c.electionDate} | {c.electionType}</div>
                   </div>
                 ))}
               </div>

@@ -21,7 +21,7 @@ import { EmailPopup } from '../components/EmailPopup';
 export default function Dashboard() {
   const { t, locale } = useTranslation();
   const { poly, polls, news, ac, crit, loading, error } = useDashboardData();
-  const { globalData, fetchGlobal } = useGlobalElections();
+  const { globalData, mapCountries, fetchGlobal } = useGlobalElections();
 
   const [showSobre, setShowSobre] = useState(false);
   const [showMetas, setShowMetas] = useState(false);
@@ -71,6 +71,7 @@ export default function Dashboard() {
         show={showGlobal}
         onClose={() => setShowGlobal(false)}
         globalData={globalData}
+        mapCountries={mapCountries}
         expandedElection={expandedElection}
         setExpandedElection={setExpandedElection}
       />
