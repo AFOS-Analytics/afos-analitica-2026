@@ -1,6 +1,7 @@
 import type { CandidateProfile } from '../types';
 import { partyColor } from '../lib/utils';
 import { SectionTitle, Card } from './ui';
+import { useTranslation } from '../i18n/context';
 
 const candidates: CandidateProfile[] = [
   { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "41%", poll: "39% 1T (Datafolha, 11/Abr) / 40.4% (Meio/Ideia, 8/Abr)", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "41% Poly (ESTÁVEL). Gap 4pp. DATAFOLHA (11/Abr): 1T 39% lidera; 2T FLÁVIO 46% × LULA 45% (empate técnico). QUAEST (10/Abr): 2T empatam. Rejeição 48% (máxima). MASTER: Lewandowski (ex-Min.Justiça) R$5.93M + Mantega (ex-Min.Fazenda) pagos pelo Master — contamina campo aliado. Quaest (5/Abr): 66% rejeitam candidatura. Quaest nova: resultados 15/Abr." },
@@ -13,9 +14,10 @@ const candidates: CandidateProfile[] = [
 ];
 
 export function CandidatesSection() {
+  const { t } = useTranslation();
   return (
     <section>
-      <SectionTitle icon="👤">Perfil dos Pré-Candidatos</SectionTitle>
+      <SectionTitle icon="👤">{t('sections.candidates')}</SectionTitle>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {candidates.map(c => (
           <Card key={c.name} className="flex flex-col">
@@ -25,19 +27,19 @@ export function CandidatesSection() {
                 <span className="text-xs px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: partyColor[c.party] || '#94A3B8' }}>{c.party}</span>
               </div>
             </div>
-            <div className="text-xs text-gray-500 mb-2">{c.role} · {c.age} anos</div>
+            <div className="text-xs text-gray-500 mb-2">{c.role} · {c.age} {t('candidates.age')}</div>
             <div className="grid grid-cols-2 gap-2 mb-3">
               <div className="bg-blue-50 rounded-lg p-2 text-center">
                 <div className="text-xs text-gray-500">Polymarket</div>
                 <div className="font-bold text-primary">{c.polymarket}</div>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 text-center">
-                <div className="text-xs text-gray-500">Pesquisa</div>
+                <div className="text-xs text-gray-500">{t('candidates.poll')}</div>
                 <div className="font-bold text-dark">{c.poll}</div>
               </div>
             </div>
-            <p className="text-xs text-gray-600 mb-2"><strong>Posição:</strong> {c.position}</p>
-            <p className="text-xs text-red-600"><strong>⚠️ Risco:</strong> {c.risk}</p>
+            <p className="text-xs text-gray-600 mb-2"><strong>{t('candidates.position')}:</strong> {c.position}</p>
+            <p className="text-xs text-red-600"><strong>⚠️ {t('candidates.risk')}:</strong> {c.risk}</p>
           </Card>
         ))}
       </div>
