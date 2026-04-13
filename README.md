@@ -386,7 +386,29 @@ Institutional → Cross-links entre si
 
 ---
 
-## APIs (16 endpoints)
+## Ingestão TSE (Pesquisas Eleitorais)
+
+```
+Cron 3x/dia (6h, 12h, 18h)
+  → cdn.tse.jus.br/pesquisa_eleitoral_2026.zip
+  → Parse CSV (180+ pesquisas presidenciais registradas)
+  → Neon: research.sources + research_runs + research_findings
+  → Cruzamento: pesquisas recentes (15 dias) × odds Polymarket
+```
+
+**Fonte:** Dados abertos do TSE (dadosabertos.tse.jus.br) — pesquisas registradas no PesqEle.
+
+| Endpoint | Descrição |
+|----------|-----------|
+| `/api/cron/refresh-polls` | Cron: ingest TSE + persist + cross Polymarket |
+| `/api/polls/tse?days=15` | Consulta pesquisas recentes |
+| `/api/polls/tse?institute=Datafolha` | Filtrar por instituto |
+
+**Metadados disponíveis:** instituto, amostra, margem de erro, metodologia, contratante, custo, protocolo TSE, datas de campo e publicação.
+
+---
+
+## APIs (18 endpoints)
 
 | Endpoint | Descrição | Segurança |
 |---|---|---|
@@ -405,6 +427,8 @@ Institutional → Cross-links entre si
 | `/api/user/preferences` | Preferências (locale, timezone) | Zod, rate limit 10/min, audit |
 | `/api/admin/data-request` | LGPD: exclusão + exportação | Bearer CRON_SECRET, timing-safe |
 | `/api/admin/metrics` | Dashboard executivo | Bearer CRON_SECRET, timing-safe |
+| `/api/cron/refresh-polls` | Ingest TSE + cross Polymarket | x-vercel-cron + CRON_SECRET |
+| `/api/polls/tse` | Consulta pesquisas TSE | Cache 5min |
 
 ---
 
@@ -482,6 +506,7 @@ Este projeto inclui uma skill customizada para o [Claude Code](https://claude.ai
 | Comando | Descrição |
 |---------|-----------|
 | `/atualizar` | Atualização completa do AFOS Analytics |
+| `/atualizar-pesquisas` | Ingestão de pesquisas eleitorais do TSE + cruzamento Polymarket |
 
 ---
 

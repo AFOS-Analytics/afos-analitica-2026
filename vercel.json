@@ -3,6 +3,10 @@
     {
       "path": "/api/cron/refresh-elections",
       "schedule": "* * * * *"
+    },
+    {
+      "path": "/api/cron/refresh-polls",
+      "schedule": "0 6,12,18 * * *"
     }
   ]
 }
