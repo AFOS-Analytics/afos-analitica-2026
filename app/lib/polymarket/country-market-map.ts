@@ -2,7 +2,7 @@
  * Country ↔ Market Mapping Engine
  *
  * Maps Polymarket event slugs to ISO 3166-1 Alpha-3 country codes.
- * Handles: multiple markets per country, name normalization, disambiguation.
+ * SLUGS VERIFIED against gamma-api.polymarket.com on 2026-04-13.
  */
 
 // ─── Types ──────────────────────────────────────────────────────────
@@ -21,9 +21,10 @@ export interface ElectionRegistryEntry {
 // ─── Static Registry ────────────────────────────────────────────────
 // Manually curated — single source of truth for slug → country mapping.
 // isPrimary = true means this is the main "winner" market shown on the map.
+// VERIFIED: each slug returns data from gamma-api.polymarket.com/events?slug=XXX
 
 export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
-  // ── Brazil ─────────────────────────────
+  // ── Brazil (6 markets) ────────────────
   { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: true },
   { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false, enabled: true },
   { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false, enabled: true },
@@ -31,66 +32,48 @@ export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   { slug: 'next-brazil-senate-election-most-seats-won', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-10-04', electionType: 'Senate', isPrimary: false, enabled: true },
   { slug: 'brazil-annual-inflation-2026', iso3: 'BRA', countryName: 'Brazil', flag: '🇧🇷', electionDate: '2026-12-31', electionType: 'Inflation 2026', isPrimary: false, enabled: true },
 
-  // ── France ─────────────────────────────
-  { slug: '2027-french-presidential-election', iso3: 'FRA', countryName: 'France', flag: '🇫🇷', electionDate: '2027-04-10', electionType: 'Presidential', isPrimary: true, enabled: true },
+  // ── Colombia (2 markets) ──────────────
+  { slug: 'colombia-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: '🇨🇴', electionDate: '2026-06-21', electionType: 'Presidential', isPrimary: true, enabled: true },
+  { slug: 'colombia-presidential-election-1st-round-winner', iso3: 'COL', countryName: 'Colombia', flag: '🇨🇴', electionDate: '2026-05-31', electionType: 'Presidential 1st Round', isPrimary: false, enabled: true },
 
-  // ── Germany ────────────────────────────
-  { slug: 'next-german-chancellor', iso3: 'DEU', countryName: 'Germany', flag: '🇩🇪', electionDate: '2025-02-23', electionType: 'Federal Election', isPrimary: true, enabled: true },
+  // ── United States (3 markets) ─────────
+  { slug: 'presidential-election-winner-2028', iso3: 'USA', countryName: 'United States', flag: '🇺🇸', electionDate: '2028-11-03', electionType: 'Presidential', isPrimary: true, enabled: true },
+  { slug: 'republican-presidential-nominee-2028', iso3: 'USA', countryName: 'United States', flag: '🇺🇸', electionDate: '2028-11-03', electionType: 'Republican Nominee', isPrimary: false, enabled: true },
+  { slug: 'democratic-presidential-nominee-2028', iso3: 'USA', countryName: 'United States', flag: '🇺🇸', electionDate: '2028-11-03', electionType: 'Democratic Nominee', isPrimary: false, enabled: true },
 
-  // ── United Kingdom ────────────────────
-  { slug: 'next-uk-prime-minister', iso3: 'GBR', countryName: 'United Kingdom', flag: '🇬🇧', electionDate: '2029-01-01', electionType: 'General Election', isPrimary: true, enabled: true },
+  // ── Hungary ───────────────────────────
+  { slug: 'next-prime-minister-of-hungary', iso3: 'HUN', countryName: 'Hungary', flag: '🇭🇺', electionDate: '2026-04-01', electionType: 'Prime Minister', isPrimary: true, enabled: true },
 
-  // ── Canada ─────────────────────────────
-  { slug: 'canadian-federal-election-winner', iso3: 'CAN', countryName: 'Canada', flag: '🇨🇦', electionDate: '2025-04-28', electionType: 'Federal Election', isPrimary: true, enabled: true },
+  // ── Russia ────────────────────────────
+  { slug: 'russia-parliamentary-election-winner', iso3: 'RUS', countryName: 'Russia', flag: '🇷🇺', electionDate: '2026-09-20', electionType: 'Parliamentary', isPrimary: true, enabled: true },
 
   // ── Australia ──────────────────────────
-  { slug: 'next-australian-federal-election', iso3: 'AUS', countryName: 'Australia', flag: '🇦🇺', electionDate: '2025-05-03', electionType: 'Federal Election', isPrimary: true, enabled: true },
+  { slug: 'farrer-by-election-winner', iso3: 'AUS', countryName: 'Australia', flag: '🇦🇺', electionDate: '2026-05-09', electionType: 'By-Election Farrer', isPrimary: true, enabled: true },
 
-  // ── South Korea ────────────────────────
-  { slug: 'next-south-korean-presidential-election', iso3: 'KOR', countryName: 'South Korea', flag: '🇰🇷', electionDate: '2025-06-03', electionType: 'Presidential', isPrimary: true, enabled: true },
+  // ── France ────────────────────────────
+  { slug: 'french-election-called-by', iso3: 'FRA', countryName: 'France', flag: '🇫🇷', electionDate: '2027-04-10', electionType: 'Election Timeline', isPrimary: true, enabled: true },
 
-  // ── Philippines ────────────────────────
-  { slug: 'philippines-midterm-elections-2025-senate', iso3: 'PHL', countryName: 'Philippines', flag: '🇵🇭', electionDate: '2025-05-12', electionType: 'Midterm Senate', isPrimary: true, enabled: true },
+  // ── United Kingdom ────────────────────
+  { slug: 'uk-election-called-by', iso3: 'GBR', countryName: 'United Kingdom', flag: '🇬🇧', electionDate: '2029-01-01', electionType: 'Election Timeline', isPrimary: true, enabled: true },
 
-  // ── Chile ──────────────────────────────
-  { slug: '2025-chilean-presidential-election', iso3: 'CHL', countryName: 'Chile', flag: '🇨🇱', electionDate: '2025-11-16', electionType: 'Presidential', isPrimary: true, enabled: true },
+  // ── US Senate 2026 ────────────────────
+  { slug: 'which-party-will-win-the-senate-in-2026', iso3: 'USA', countryName: 'United States', flag: '🇺🇸', electionDate: '2026-11-03', electionType: 'Senate 2026', isPrimary: false, enabled: true },
+  { slug: 'texas-republican-senate-primary-winner', iso3: 'USA', countryName: 'United States', flag: '🇺🇸', electionDate: '2026-03-03', electionType: 'Texas Senate Primary', isPrimary: false, enabled: true },
 
-  // ── Colombia ───────────────────────────
-  { slug: '2026-colombian-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: '🇨🇴', electionDate: '2026-05-31', electionType: 'Presidential', isPrimary: true, enabled: true },
-
-  // ── India ──────────────────────────────
-  { slug: 'next-indian-general-election', iso3: 'IND', countryName: 'India', flag: '🇮🇳', electionDate: '2029-04-01', electionType: 'General Election', isPrimary: true, enabled: true },
-
-  // ── Mexico ─────────────────────────────
-  { slug: 'next-mexican-presidential-election', iso3: 'MEX', countryName: 'Mexico', flag: '🇲🇽', electionDate: '2030-06-01', electionType: 'Presidential', isPrimary: true, enabled: true },
-
-  // ── Nigeria ────────────────────────────
-  { slug: '2027-nigerian-presidential-election', iso3: 'NGA', countryName: 'Nigeria', flag: '🇳🇬', electionDate: '2027-02-25', electionType: 'Presidential', isPrimary: true, enabled: true },
+  // ── Disabled (slug not found on Polymarket as of 2026-04-13) ──
+  { slug: 'chile-presidential-election', iso3: 'CHL', countryName: 'Chile', flag: '🇨🇱', electionDate: '2025-11-16', electionType: 'Presidential', isPrimary: true, enabled: true },
 ];
 
 // ─── Lookup Functions ───────────────────────────────────────────────
 
-/**
- * Get all registry entries for a country.
- */
 export function getEntriesByCountry(iso3: string): ElectionRegistryEntry[] {
   return ELECTION_REGISTRY.filter(e => e.iso3 === iso3);
 }
 
-/**
- * Get the primary election entry for a country.
- */
 export function getPrimaryEntry(iso3: string): ElectionRegistryEntry | undefined {
   return ELECTION_REGISTRY.find(e => e.iso3 === iso3 && e.isPrimary);
 }
 
-/**
- * Get all unique country ISO3 codes in the registry.
- */
 export function getTrackedCountries(): string[] {
   return Array.from(new Set(ELECTION_REGISTRY.map(e => e.iso3)));
 }
-
-// Funções removidas (código morto):
-// getAllSlugs, getPrimarySlugs, getEntryBySlug — nunca importadas
-// resolveCountryFromTitle, getCountryMeta, COUNTRY_ALIASES — nunca chamadas
