@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from '../i18n/context';
 import type { GlobalData, GlobalElection } from '../types';
 import type { CountryMarketSummary } from '../types/global-map';
+import { MOCK_ELECTIONS } from '../lib/mock-elections';
 
 // D3 map carregado dinamicamente (nunca no server bundle)
 const GlobalElectionMap = dynamic(
@@ -89,7 +90,8 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
 
   useEffect(() => {
     if (mapCountries && mapCountries.length > 0) {
-      const rich = mapCountries.map((c) => ({
+      // Dados reais da API
+      const apiData = mapCountries.map((c) => ({
         iso3: c.iso3 as string,
         countryName: c.n as string,
         flag: c.f as string,
@@ -105,7 +107,30 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
           volumeUsd: cd.v as number,
         })),
       })) as CountryMarketSummary[];
-      setMapData(rich);
+
+      // Enriquecer: para países no-data da API, usar mock se disponível
+      const mockMap = new Map<string, CountryMarketSummary>();
+      MOCK_ELECTIONS.forEach(m => mockMap.set(m.iso3, m));
+
+      const merged = apiData.map(c => {
+        if ((c.status as string) === 'no-data' || (c.probability === 0 && c.candidates.length === 0)) {
+          const mock = mockMap.get(c.iso3);
+          if (mock && mock.probability > 0) return mock;
+        }
+        return c;
+      });
+
+      // Adicionar países do mock que não estão na API (ex: USA)
+      for (const mock of MOCK_ELECTIONS) {
+        if (!merged.find(c => c.iso3 === mock.iso3)) {
+          merged.push(mock);
+        }
+      }
+
+      setMapData(merged);
+    } else {
+      // Fallback total: usar mock se API não respondeu
+      setMapData([...MOCK_ELECTIONS]);
     }
   }, [mapCountries]);
 
