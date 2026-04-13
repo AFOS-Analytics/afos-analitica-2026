@@ -38,7 +38,7 @@ export const revalidate = 300;
 async function getMapData(): Promise<{ countries: CountryMarketSummary[]; stale: boolean; source: string }> {
   try {
     const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
+      ? `https://www.afos-analytics.com`
       : 'http://localhost:3000';
 
     const res = await fetch(`${baseUrl}/api/global-map`, {
