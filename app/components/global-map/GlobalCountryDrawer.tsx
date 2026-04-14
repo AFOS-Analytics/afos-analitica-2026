@@ -35,7 +35,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
           }}
         >
           <div className="flex items-center gap-3">
-            <span className="text-2xl">{c.flag}</span>
+            <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={28} height={19} className="rounded-sm object-cover" style={{ width: 28, height: 19 }} />
             <div>
               <h2 className="font-bold text-lg" style={{ color: MAP_TOKENS.text }}>{c.countryName}</h2>
               <p className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType} — {c.electionDate}</p>
@@ -67,7 +67,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
             </span>
             {c.volumeUsd > 0 && (
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-                Vol: {formatVolume(c.volumeUsd)}
+                Vol: {formatVolume(c.volumeUsd)}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount} mercados)` : ''}
               </span>
             )}
           </div>

@@ -202,7 +202,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
                     </div>
                     <div className="text-right">
                       <div className="text-[10px] bg-primary text-white px-2 py-0.5 rounded-full">{c.electionDate}</div>
-                      <div className="text-[9px] text-gray-400 mt-1">{volStr}</div>
+                      <div className="text-[9px] text-gray-400 mt-1">{volStr}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount} mercados)` : ''}</div>
                     </div>
                   </div>
 

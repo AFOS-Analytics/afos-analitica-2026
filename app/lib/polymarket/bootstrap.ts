@@ -198,6 +198,7 @@ export async function aggregateElectionData(): Promise<AggregationResult> {
       probability,
       leadCandidate,
       volumeUsd: Math.round(totalCountryVolume),
+      marketCount: marketSummaries.length,
       status,
       markets: marketSummaries,
     });
