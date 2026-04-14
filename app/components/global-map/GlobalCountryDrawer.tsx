@@ -67,7 +67,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
             </span>
             {c.volumeUsd > 0 && (
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-                Vol: {formatVolume(c.volumeUsd)}{c.marketCount > 1 ? ` (somatorio ${c.marketCount} mercados)` : ''}
+                Vol: {formatVolume(c.volumeUsd)}{(c.marketCount ?? 0) > 1 ? ` (somatorio ${c.marketCount} mercados)` : ''}
               </span>
             )}
           </div>
