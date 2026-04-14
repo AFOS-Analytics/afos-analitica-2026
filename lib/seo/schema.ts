@@ -20,7 +20,7 @@ export function organizationSchema() {
     description: 'Global electoral intelligence platform combining prediction markets, polls, and real-time news analysis.',
     foundingDate: '2026',
     sameAs: [
-      'https://github.com/andrefelipe-afos/afos-analitica-2026',
+      'https://github.com/AFOS-Analytics/afos-analitica-2026',
     ],
   };
 }
