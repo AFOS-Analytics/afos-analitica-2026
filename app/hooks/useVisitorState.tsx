@@ -50,8 +50,14 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
   const hasInteraction = useRef(false);
 
   // Fetch state from backend (3s timeout, fallback to free on error)
+  // Also sync old localStorage subscribers → backend (one-time migration)
   useEffect(() => {
     if (!visitorId) { setLoading(false); return; }
+
+    // Check if user was subscribed via the OLD popup system (pre-migration)
+    let wasOldSubscriber = false;
+    try { wasOldSubscriber = localStorage.getItem(SUBSCRIBED_LS_KEY) === 'true'; } catch {}
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 3000);
 
@@ -62,8 +68,30 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
       signal: controller.signal,
     })
       .then(r => r.ok ? r.json() : null)
-      .then(data => { if (data?.ok) setState(data.state); })
-      .catch(() => {}) // On error/timeout: keep DEFAULT_STATE (eligible: 'free')
+      .then(data => {
+        if (!data?.ok) return;
+
+        // If old subscriber but backend doesn't know → migrate to new system
+        if (wasOldSubscriber && !data.state.subscribed) {
+          fetch('/api/visitor/migrate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ visitorId }),
+          }).catch(() => {});
+
+          // Immediately update local state to prevent popup/gate
+          setState({ ...data.state, subscribed: true, eligible: 'subscribed', showPopup: false });
+          return;
+        }
+
+        setState(data.state);
+      })
+      .catch(() => {
+        // On error: if old subscriber, trust localStorage
+        if (wasOldSubscriber) {
+          setState(prev => ({ ...prev, subscribed: true, eligible: 'subscribed', showPopup: false }));
+        }
+      })
       .finally(() => { clearTimeout(timeout); setLoading(false); });
   }, [visitorId]);
 
