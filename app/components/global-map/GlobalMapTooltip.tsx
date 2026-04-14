@@ -50,7 +50,7 @@ export function GlobalMapTooltip({ data }: Props) {
             </div>
             <div className="flex items-center justify-between">
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Volume</span>
-              <span className="text-xs font-medium" style={{ color: MAP_TOKENS.textMuted }}>{formatVolume(c.volumeUsd)}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount})` : ''}</span>
+              <span className="text-xs font-medium" style={{ color: MAP_TOKENS.textMuted }}>{formatVolume(c.volumeUsd)}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount} mkts)` : ''}</span>
             </div>
           </>
         ) : (

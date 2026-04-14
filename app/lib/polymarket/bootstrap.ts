@@ -43,6 +43,7 @@ export interface CountryAggregation {
   probability: number | null; // Lead candidate % from primary market
   leadCandidate: string | null;
   volumeUsd: number; // Sum of all markets for this country
+  marketCount: number;
   status: 'live' | 'upcoming' | 'resolved' | 'no-data';
   markets: MarketSummary[];
 }
