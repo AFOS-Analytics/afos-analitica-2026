@@ -167,7 +167,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
               {mapData.map((c, i) => (
                 <div key={i} className="bg-light-bg border border-light-border rounded-lg px-3 py-2 text-xs cursor-pointer hover:border-primary hover:bg-blue-50 transition-all flex items-center gap-1.5"
                   onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
-                  <span className="text-base">{c.flag}</span>
+                  <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={20} height={14} className="rounded-sm object-cover" style={{ width: 20, height: 14 }} />
                   <span className="font-semibold">{c.countryName}</span>
                   <span className="text-gray-400">— {c.electionDate}</span>
                 </div>
@@ -194,7 +194,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-2">
-                      <span className="text-2xl">{c.flag}</span>
+                      <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={28} height={19} className="rounded-sm object-cover" style={{ width: 28, height: 19 }} />
                       <div>
                         <div className="font-bold text-dark text-sm">{c.countryName}</div>
                         <div className="text-[10px] text-gray-500">{c.electionType}</div>
@@ -241,7 +241,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
                 {mapData.filter(c => c.status !== 'live').map((c, i) => (
                   <div key={i} className="bg-gray-50 border border-gray-100 rounded-lg p-3 text-xs text-center">
-                    <div className="text-lg">{c.flag}</div>
+                    <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={24} height={16} className="rounded-sm object-cover mx-auto" style={{ width: 24, height: 16 }} />
                     <div className="font-semibold text-dark">{c.countryName}</div>
                     <div className="text-gray-400">{c.electionDate} | {c.electionType}</div>
                   </div>
