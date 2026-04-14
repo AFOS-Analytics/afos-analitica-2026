@@ -2,13 +2,13 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { defaultLocale, COOKIE_NAME, isValidLocale, normalizeLocale, locales } from './lib/i18n/config';
 
-const VISITOR_COOKIE = 'afos_visitor_id';
+const VISITOR_COOKIE_NAME = 'afos_visitor_id';
+const VISITOR_COOKIE_MAX_AGE = 365 * 24 * 60 * 60;
 
 function ensureVisitorCookie(request: NextRequest, response: NextResponse): NextResponse {
-  if (!request.cookies.get(VISITOR_COOKIE)) {
-    const id = crypto.randomUUID();
-    response.cookies.set(VISITOR_COOKIE, id, {
-      maxAge: 365 * 24 * 60 * 60,
+  if (!request.cookies.get(VISITOR_COOKIE_NAME)) {
+    response.cookies.set(VISITOR_COOKIE_NAME, crypto.randomUUID(), {
+      maxAge: VISITOR_COOKIE_MAX_AGE,
       path: '/',
       sameSite: 'lax',
       httpOnly: false,

@@ -16,7 +16,7 @@ import { SubscribeForm } from './SubscribeForm';
  * - After subscribe: never shows again
  */
 
-const DELAY_MS = 30_000;
+import { POPUP_SHOW_DELAY_MS } from '../../lib/visitor/constants';
 
 export function EmailPopup() {
   const { t } = useTranslation();
@@ -43,7 +43,7 @@ export function EmailPopup() {
     const timer = setTimeout(() => {
       timerFired.current = true;
       if (hasScrolled.current) setVisible(true);
-    }, DELAY_MS);
+    }, POPUP_SHOW_DELAY_MS);
 
     return () => {
       window.removeEventListener('scroll', onScroll);
