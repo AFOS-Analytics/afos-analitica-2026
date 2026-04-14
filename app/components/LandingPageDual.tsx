@@ -21,11 +21,11 @@ const CONTENT = {
   'pt-BR': {
     nav: { dashboard: 'Dashboard', about: 'Sobre', github: 'GitHub' },
     hero: {
-      badge: 'Eleições 2026 — Dados em tempo real',
+      badge: 'Eleições 2026 — 14 Países Monitorados',
       title: 'Inteligência Eleitoral',
-      titleHighlight: 'Global em Tempo Real',
-      claim: 'Plataforma inedita no mundo — cruzamento de mercados de previsao com pesquisas eleitorais em tempo real.',
-      subtitle: 'Polymarket, pesquisas de 17+ institutos, noticias ao vivo e analises estrategicas — tudo em um unico painel, gratuito e aberto.',
+      titleHighlight: 'Global e Preditiva',
+      claim: 'Plataforma inédita no mundo — cruzamento de mercados de previsão com pesquisas eleitorais em tempo real.',
+      subtitle: 'Polymarket, pesquisas de 17+ institutos, notícias ao vivo e análises estratégicas — tudo em um único painel, gratuito e aberto.',
       cta: 'Acessar Dashboard',
       ctaSecondary: 'Saiba mais',
     },
@@ -66,9 +66,9 @@ const CONTENT = {
   en: {
     nav: { dashboard: 'Dashboard', about: 'About', github: 'GitHub' },
     hero: {
-      badge: 'Elections 2026 — Real-time data',
+      badge: 'Elections 2026 — 14 Countries Monitored',
       title: 'Global Election',
-      titleHighlight: 'Intelligence in Real Time',
+      titleHighlight: 'Intelligence & Prediction',
       claim: 'Unprecedented platform — crossing prediction markets with electoral polls in real time.',
       subtitle: 'Polymarket, polls from 17+ institutes, live news and strategic analysis — all in one panel, free and open.',
       cta: 'Open Dashboard',
@@ -111,13 +111,13 @@ const CONTENT = {
   es: {
     nav: { dashboard: 'Dashboard', about: 'Acerca de', github: 'GitHub' },
     hero: {
-      badge: 'Elecciones 2026 — Datos en tiempo real',
+      badge: 'Elecciones 2026 — 14 Países Monitoreados',
       title: 'Inteligencia Electoral',
-      titleHighlight: 'Global en Tiempo Real',
-      claim: 'Plataforma inedita en el mundo — cruce de mercados de prediccion con encuestas electorales en tiempo real.',
-      subtitle: 'Polymarket, encuestas de 17+ institutos, noticias en vivo y analisis estrategicos — todo en un panel, gratuito y abierto.',
+      titleHighlight: 'Global y Predictiva',
+      claim: 'Plataforma inédita en el mundo — cruce de mercados de predicción con encuestas electorales en tiempo real.',
+      subtitle: 'Polymarket, encuestas de 17+ institutos, noticias en vivo y análisis estratégicos — todo en un panel, gratuito y abierto.',
       cta: 'Abrir Dashboard',
-      ctaSecondary: 'Saber mas',
+      ctaSecondary: 'Saber más',
     },
     stats: [
       { value: '14', label: 'Paises monitoreados' },
@@ -524,7 +524,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <p className={`mt-4 text-xs sm:text-sm font-medium max-w-xl mx-auto transition-colors duration-500 ${isBlueTheme ? 'text-white' : 'text-dark'}`}>
             {t.hero.claim}
           </p>
-          <p className={`mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${tk.subtitle}`}>
+          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${tk.subtitle}`}>
             {t.hero.subtitle}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
