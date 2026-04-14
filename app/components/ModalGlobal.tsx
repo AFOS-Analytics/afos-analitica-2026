@@ -104,6 +104,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
         probability: (c.p as number) || 0,
         leadCandidate: (c.lc as string) || '—',
         volumeUsd: (c.v as number) || 0,
+        marketCount: (c.mc as number) || 1,
         status: ((c.s as string) || 'no-data') as CountryMarketSummary['status'],
         candidates: ((c.cs as Array<Record<string, unknown>>) || []).map((cd) => ({
           name: cd.n as string,
