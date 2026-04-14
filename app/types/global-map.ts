@@ -4,6 +4,7 @@ export interface CountryMarketSummary {
   flag: string;
   probability: number;
   volumeUsd: number;
+  marketCount?: number;
   status: 'live' | 'upcoming' | 'resolved' | 'no-data';
   electionDate: string;
   electionType: string;
