@@ -48,6 +48,22 @@
     "errorRateLimit": "Demasiados intentos. Inténtalo en 1 hora.",
     "errorUnavailable": "Servicio temporalmente no disponible."
   },
+  "gate": {
+    "title": "Sigue monitoreando con AFOS Analytics",
+    "description": "Ingresa tu email para continuar accediendo al dashboard y recibir alertas relevantes.",
+    "benefit1": "Alertas de cambios en probabilidades",
+    "benefit2": "Resumen diario por email",
+    "benefit3": "Acceso ilimitado al dashboard",
+    "cta": "Continuar",
+    "placeholder": "Tu mejor email",
+    "consent": "Quiero recibir alertas y comunicaciones de AFOS Analytics por email.",
+    "success": "Acceso concedido!",
+    "errorInvalid": "Ingresa un email valido.",
+    "errorConsent": "Marca la casilla de consentimiento.",
+    "errorConnection": "Error de conexion. Intentalo de nuevo.",
+    "errorGeneric": "Algo salio mal. Intentalo de nuevo.",
+    "errorRateLimit": "Demasiados intentos. Espera unos minutos."
+  },
   "modal": {
     "aboutTitle": "Acerca de — AFOS Analytics",
     "metasTitle": "Metas — AFOS Analytics",

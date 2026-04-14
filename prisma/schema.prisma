@@ -104,6 +104,24 @@ model ContactEvent {
   @@schema("crm")
 }
 
+model VisitorState {
+  id                 String    @id @default(uuid()) @db.Uuid
+  visitorId          String    @unique @map("visitor_id")
+  qualifiedSessions  Int       @default(0) @map("qualified_sessions")
+  popupDismissals    Int       @default(0) @map("popup_dismissals")
+  subscribed         Boolean   @default(false)
+  subscribedAt       DateTime? @map("subscribed_at") @db.Timestamptz(6)
+  leadId             String?   @map("lead_id") @db.Uuid
+  lastSessionAt      DateTime? @map("last_session_at") @db.Timestamptz(6)
+  createdAt          DateTime  @default(now()) @map("created_at") @db.Timestamptz(6)
+  updatedAt          DateTime  @updatedAt @map("updated_at") @db.Timestamptz(6)
+
+  @@index([subscribed])
+  @@index([createdAt])
+  @@map("visitor_states")
+  @@schema("crm")
+}
+
 // ═══════════════════════════════════════════════════════════
 // RESEARCH — Sources, runs, findings, reports, signals
 // ═══════════════════════════════════════════════════════════

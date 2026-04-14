@@ -32,7 +32,7 @@ export async function createSubscriber(
   email: string,
   source: string = 'popup',
   meta?: { ip?: string; userAgent?: string; locale?: string }
-): Promise<{ success: boolean; isNew: boolean; error?: string }> {
+): Promise<{ success: boolean; isNew: boolean; leadId?: string; error?: string }> {
   const normalized = email.toLowerCase().trim()
 
   if (!isValidEmail(normalized)) {
@@ -54,7 +54,7 @@ export async function createSubscriber(
         where: { email: normalized },
         data: { lastSeenAt: new Date() },
       })
-      return { success: true, isNew: false }
+      return { success: true, isNew: false, leadId: existing.id }
     }
 
     const lead = await prisma.lead.create({
@@ -80,7 +80,7 @@ export async function createSubscriber(
       console.error('[subscribers] Consent registration failed:', normalized.slice(0, 3) + '***', err)
     })
 
-    return { success: true, isNew: true }
+    return { success: true, isNew: true, leadId: lead.id }
   } catch (error) {
     console.error('[subscribers] Erro ao criar subscriber:', error)
     return { success: false, isNew: false, error: 'internal_error' }

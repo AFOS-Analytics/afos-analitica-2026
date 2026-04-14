@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -19,15 +21,16 @@ const nextConfig = {
           // SEO / GEO
           { key: 'Content-Language', value: 'pt-BR' },
           // Content Security Policy
+          // Em dev, unsafe-eval é necessário para React Fast Refresh (HMR)
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",  // unsafe-inline necessario para Next.js hydration; unsafe-eval removido
+              isDev ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'" : "script-src 'self' 'unsafe-inline'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob:",
               "font-src 'self'",
-              "connect-src 'self' https://gamma-api.polymarket.com https://news.google.com https://api.firecrawl.dev https://*.upstash.io",
+              "connect-src 'self' https://gamma-api.polymarket.com https://news.google.com https://api.firecrawl.dev https://*.upstash.io" + (isDev ? " ws://localhost:*" : ""),
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

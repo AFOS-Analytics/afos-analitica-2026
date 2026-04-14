@@ -35,7 +35,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const { email, _hp } = parsed.data
+    const { email, _hp, visitorId, captureSource } = parsed.data
 
     // Honeypot check — bots preenchem campos ocultos
     if (_hp) {
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     const rawLocale = request.headers.get('accept-language')?.split(',')[0]?.split(';')[0]?.trim()
     const locale = rawLocale && VALID_LOCALES.includes(rawLocale) ? rawLocale : 'pt-BR'
 
-    const result = await createSubscriber(email, 'popup', { ip, userAgent, locale })
+    const result = await createSubscriber(email, captureSource || 'popup', { ip, userAgent, locale })
 
     if (!result.success) {
       return NextResponse.json(
@@ -77,6 +77,20 @@ export async function POST(request: Request) {
       sendWelcomeEmail(email).catch((err) => {
         console.error('[subscribe] Welcome email falhou:', err)
       })
+    }
+
+    // Vincular visitor_state ao lead (fire-and-forget)
+    if (visitorId && result.leadId) {
+      const { prisma: db } = await import('../../../lib/db')
+      if (db) {
+        db.visitorState.upsert({
+          where: { visitorId },
+          create: { visitorId, subscribed: true, subscribedAt: new Date(), leadId: result.leadId },
+          update: { subscribed: true, subscribedAt: new Date(), leadId: result.leadId },
+        }).catch((err) => {
+          console.error('[subscribe] visitor_state update failed:', err)
+        })
+      }
     }
 
     return NextResponse.json(

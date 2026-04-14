@@ -2,6 +2,21 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { defaultLocale, COOKIE_NAME, isValidLocale, normalizeLocale, locales } from './lib/i18n/config';
 
+const VISITOR_COOKIE = 'afos_visitor_id';
+
+function ensureVisitorCookie(request: NextRequest, response: NextResponse): NextResponse {
+  if (!request.cookies.get(VISITOR_COOKIE)) {
+    const id = crypto.randomUUID();
+    response.cookies.set(VISITOR_COOKIE, id, {
+      maxAge: 365 * 24 * 60 * 60,
+      path: '/',
+      sameSite: 'lax',
+      httpOnly: false,
+    });
+  }
+  return response;
+}
+
 // ─── Rate Limiting (distribuído via Upstash REST, fallback in-memory) ──
 const memoryRL = new Map<string, { count: number; resetAt: number }>();
 
@@ -77,10 +92,10 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/' + segments.join('/'), request.url));
     }
   } else {
-    // Set Content-Language header based on locale
+    // Set Content-Language header based on locale + ensure visitor cookie
     const response = NextResponse.next();
     response.headers.set('Content-Language', firstSegment);
-    return response;
+    return ensureVisitorCookie(request, response);
   }
 
   const cookieLocale = request.cookies.get(COOKIE_NAME)?.value;
