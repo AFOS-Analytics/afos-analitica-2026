@@ -481,12 +481,14 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
   // Sync body background with theme (overrides !important in globals.css)
   useEffect(() => {
     const bg = isBlueTheme ? '#0F52BA' : '#ffffff';
-    document.documentElement.style.cssText = `background: ${bg} !important`;
-    document.body.style.cssText = `background: ${bg} !important; color: ${isBlueTheme ? '#ffffff' : '#1a1a1a'}; font-family: Arial, Helvetica, sans-serif; overflow-x: hidden; width: 100%; max-width: 100vw; min-height: 100vh; margin: 0; padding: 0;`;
+    document.documentElement.style.setProperty('background', bg, 'important');
+    document.body.style.setProperty('background', bg, 'important');
+    document.body.style.setProperty('color', isBlueTheme ? '#ffffff' : '#1a1a1a');
     return () => {
-      // Reset on unmount (navigating away from landing)
-      document.documentElement.style.cssText = '';
-      document.body.style.cssText = '';
+      // Restore globals.css defaults on unmount
+      document.documentElement.style.removeProperty('background');
+      document.body.style.removeProperty('background');
+      document.body.style.removeProperty('color');
     };
   }, [isBlueTheme]);
 
@@ -495,11 +497,11 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
       {/* ─── Nav ─────────────────────────────────────────────── */}
       <nav className={`fixed top-0 w-full z-50 border-b ${tk.navBorder} transition-colors duration-500`} style={{ background: tk.navBg, backdropFilter: 'blur(12px)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
-          <span className={`font-extrabold text-lg tracking-tight transition-colors duration-500 ${tk.logo}`}>AFOS Analytics</span>
-          <div className="flex items-center gap-2 sm:gap-3">
+          <span className={`font-extrabold text-sm sm:text-lg tracking-tight transition-colors duration-500 ${tk.logo}`}>AFOS Analytics</span>
+          <div className="flex items-center gap-1.5 sm:gap-3">
             <LangSwitcher current={locale} onSelect={setLocale} isBlue={isBlueTheme} />
             <ThemeSwitcher current={theme} onSelect={setTheme} isBlue={isBlueTheme} />
-            <a href={dashboardUrl} className={`text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-500 ${tk.navBtn}`}>
+            <a href={dashboardUrl} className={`text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg transition-colors duration-500 ${tk.navBtn}`}>
               {t.nav.dashboard}
             </a>
           </div>

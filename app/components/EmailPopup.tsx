@@ -64,11 +64,11 @@ export function EmailPopup() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4" onClick={handleDismiss}>
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 overflow-y-auto" onClick={handleDismiss}>
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
       <div
-        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl"
+        className="relative w-full max-w-md rounded-2xl overflow-hidden shadow-2xl my-auto"
         onClick={e => e.stopPropagation()}
         style={{ background: 'linear-gradient(135deg, #e8effc 0%, #f0f4ff 100%)', animation: 'afosSlideUp 0.3s ease-out' }}
       >
