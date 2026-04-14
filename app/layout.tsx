@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
-  title: "AFOS Analytics — Plataforma Inédita no Mundo | Inteligência Eleitoral Global e Preditiva",
+  title: "AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral",
   description: "Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Notícias ao vivo, análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFOS Analytics — Plataforma Inédita | Inteligência Eleitoral Global e Preditiva",
+    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
     description: "Plataforma inédita no mundo: cruzamento de mercados de previsão com pesquisas eleitorais em tempo real. Eleições Brasil 2026 e cobertura de 14 países.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência Eleitoral Global e Preditiva',
+        alt: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Plataforma Inédita | Inteligência Eleitoral Global e Preditiva",
+    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
     description: "Plataforma inédita no mundo: Polymarket + 17 institutos de pesquisa + notícias ao vivo. Eleições Brasil 2026 e cobertura de 14 países.",
     images: ['/opengraph-image'],
   },

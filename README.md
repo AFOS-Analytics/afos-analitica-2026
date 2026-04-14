@@ -1,6 +1,6 @@
 # AFOS Analytics
 
-**Plataforma inedita no mundo — cruzamento de mercados de previsao com pesquisas eleitorais em tempo real.**
+**Plataforma inédita no mundo — Inteligência de Risco Político Eleitoral em tempo real.**
 
 **[afos-analytics.com](https://afos-analytics.com)**
 
@@ -10,7 +10,7 @@
 
 ## Sobre
 
-O **AFOS Analytics** e a primeira e unica plataforma no mundo que cruza em tempo real:
+O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco político eleitoral que cruza em tempo real:
 
 - **Mercados de previsao** com dinheiro real (Polymarket) — odds atualizadas a cada 60 segundos
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
@@ -352,4 +352,4 @@ npm run dev
 
 ---
 
-*AFOS Analytics — Plataforma inedita no mundo: cruzamento de mercados de previsao com pesquisas eleitorais em tempo real.*
+*AFOS Analytics — Plataforma inédita no mundo: Inteligência de Risco Político Eleitoral em tempo real.*
