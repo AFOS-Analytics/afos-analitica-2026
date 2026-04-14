@@ -77,6 +77,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.svg?v=2" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0F52BA" />
+        <meta name="google-site-verification" content="9Fyuh0VcblSnhBhJADUisYYzPG24CuRieNWPyPhJyxE" />
         {/* Schema.org: Organization + WebApplication + Dataset (static, safe) */}
         <script
           type="application/ld+json"
