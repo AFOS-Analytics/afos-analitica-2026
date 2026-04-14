@@ -1,138 +1,65 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from '../i18n/context';
+import { useVisitorState } from '../hooks/useVisitorState';
+import { SubscribeForm } from './SubscribeForm';
 
-const STORAGE = {
-  SUBSCRIBED: 'afos_popup_subscribed',
-  DISMISSED_UNTIL: 'afos_popup_dismissed_until',
-} as const;
+/**
+ * Email Popup — Soft lead capture during free sessions.
+ *
+ * Rules:
+ * - Only shows when eligible === 'free' && showPopup && popupDismissals < 3
+ * - Triggers after 30s on page + scroll
+ * - If dismissed, doesn't reappear in the same session
+ * - Max 3 total dismissals across sessions (server-tracked)
+ * - After subscribe: never shows again
+ */
 
 const DELAY_MS = 30_000;
-const DISMISS_TTL_MS = 24 * 60 * 60 * 1000; // 24 horas
-
-function isEmailValid(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
-}
-
-function safeGetItem(key: string): string | null {
-  try { return localStorage.getItem(key); } catch { return null; }
-}
-
-function safeSetItem(key: string, value: string): void {
-  try { localStorage.setItem(key, value); } catch {}
-}
 
 export function EmailPopup() {
   const { t } = useTranslation();
+  const { visitorId, state, loading, popupDismissedThisSession, dismissPopup, markSubscribed } = useVisitorState();
   const [visible, setVisible] = useState(false);
-  const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
-  const [honeypot, setHoneypot] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
   const hasScrolled = useRef(false);
   const timerFired = useRef(false);
-  const submitting = useRef(false);
 
-  const shouldShow = useCallback((): boolean => {
-    if (typeof window === 'undefined') return false;
-    if (safeGetItem(STORAGE.SUBSCRIBED) === 'true') return false;
-    const dismissedUntil = safeGetItem(STORAGE.DISMISSED_UNTIL);
-    if (dismissedUntil && Date.now() < Number(dismissedUntil)) return false;
-    return true;
-  }, []);
+  const canShow = !loading && state.eligible === 'free' && state.showPopup && !state.subscribed && !popupDismissedThisSession;
 
   useEffect(() => {
-    if (!shouldShow()) return;
+    if (!canShow) return;
 
-    // Scroll: 30% da viewport height (funciona em mobile e desktop)
     const scrollThreshold = Math.max(window.innerHeight * 0.3, 100);
 
     const onScroll = () => {
       if (window.scrollY >= scrollThreshold) {
         hasScrolled.current = true;
-        // Se timer já disparou, mostrar imediatamente
-        if (timerFired.current && shouldShow()) setVisible(true);
+        if (timerFired.current) setVisible(true);
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
     const timer = setTimeout(() => {
       timerFired.current = true;
-      if (hasScrolled.current && shouldShow()) setVisible(true);
+      if (hasScrolled.current) setVisible(true);
     }, DELAY_MS);
 
     return () => {
       window.removeEventListener('scroll', onScroll);
       clearTimeout(timer);
     };
-  }, [shouldShow]);
+  }, [canShow]);
 
-  const handleDismiss = useCallback(() => {
+  const handleDismiss = () => {
     setVisible(false);
-    // localStorage com TTL de 24h (funciona entre abas)
-    safeSetItem(STORAGE.DISMISSED_UNTIL, String(Date.now() + DISMISS_TTL_MS));
-  }, []);
+    dismissPopup();
+  };
 
-  const handleSubmit = useCallback(async () => {
-    if (submitting.current) return;
-
-    if (!isEmailValid(email)) {
-      setErrorMsg(t('popup.errorInvalid'));
-      setStatus('error');
-      return;
-    }
-
-    if (!consent) {
-      setErrorMsg(t('popup.errorConsent'));
-      setStatus('error');
-      return;
-    }
-
-    // Honeypot — bot detected, fake success without submitting
-    if (honeypot) {
-      setStatus('success');
-      safeSetItem(STORAGE.SUBSCRIBED, 'true');
-      setTimeout(() => setVisible(false), 2500);
-      return;
-    }
-
-    submitting.current = true;
-    setStatus('loading');
-    setErrorMsg('');
-
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), consent, _hp: honeypot }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.ok) {
-        const msgs: Record<string, string> = {
-          invalid_email: t('popup.errorInvalid'),
-          storage_unavailable: t('popup.errorUnavailable'),
-          rate_limited: t('popup.errorRateLimit'),
-        };
-        setErrorMsg(msgs[data.error] || t('popup.errorGeneric'));
-        setStatus('error');
-        submitting.current = false;
-        return;
-      }
-
-      setStatus('success');
-      safeSetItem(STORAGE.SUBSCRIBED, 'true');
-      setTimeout(() => setVisible(false), 2500);
-    } catch {
-      setErrorMsg(t('popup.errorConnection'));
-      setStatus('error');
-    } finally {
-      submitting.current = false;
-    }
-  }, [email, consent, honeypot, t]);
+  const handleSuccess = () => {
+    markSubscribed();
+    setTimeout(() => setVisible(false), 2500);
+  };
 
   if (!visible) return null;
 
@@ -158,86 +85,19 @@ export function EmailPopup() {
         </button>
 
         <div className="px-6 py-6 sm:px-8 sm:py-7">
-          {status === 'success' ? (
-            <div className="text-center py-4">
-              <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <p className="text-dark font-semibold text-lg">{t('popup.success')}</p>
-              <p className="text-gray-500 text-sm mt-1">{t('popup.successDesc')}</p>
-            </div>
-          ) : (
-            <>
-              <h3 className="text-dark font-bold text-lg leading-snug mb-1">
-                {t('popup.title')}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-5">
-                {t('popup.description')}
-              </p>
+          <h3 className="text-dark font-bold text-lg leading-snug mb-1">
+            {t('popup.title')}
+          </h3>
+          <p className="text-gray-500 text-sm leading-relaxed mb-5">
+            {t('popup.description')}
+          </p>
 
-              <div className="mb-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => { setEmail(e.target.value); if (status === 'error') setStatus('idle'); }}
-                  placeholder={t('popup.placeholder')}
-                  autoComplete="email"
-                  disabled={status === 'loading'}
-                  className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
-                  onKeyDown={e => { if (e.key === 'Enter' && status !== 'loading') handleSubmit(); }}
-                />
-              </div>
-
-              {/* Honeypot — hidden from humans, bots fill it */}
-              <input
-                type="text"
-                name="website"
-                value={honeypot}
-                onChange={e => setHoneypot(e.target.value)}
-                tabIndex={-1}
-                autoComplete="off"
-                style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
-              />
-
-              <label className="flex items-start gap-2.5 mb-4 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={consent}
-                  onChange={e => { setConsent(e.target.checked); if (status === 'error') setStatus('idle'); }}
-                  className="mt-0.5 w-4 h-4 rounded border-gray-300 accent-primary flex-shrink-0"
-                />
-                <span className="text-xs text-gray-500 leading-relaxed">
-                  {t('popup.consent')}
-                </span>
-              </label>
-
-              {status === 'error' && errorMsg && (
-                <p className="text-red-500 text-xs mb-3">{errorMsg}</p>
-              )}
-
-              <button
-                onClick={handleSubmit}
-                disabled={status === 'loading' || !email.trim() || !consent}
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark transition-all disabled:opacity-40 disabled:cursor-not-allowed"
-                style={{ boxShadow: status === 'loading' ? 'none' : '0 4px 14px rgba(15,82,186,0.25)' }}
-              >
-                {status === 'loading' ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    {t('popup.submitting')}
-                  </span>
-                ) : (
-                  t('popup.submit')
-                )}
-              </button>
-
-              <p className="text-center text-[10px] text-gray-400 mt-3">
-                {t('popup.noSpam')}
-              </p>
-            </>
-          )}
+          <SubscribeForm
+            visitorId={visitorId}
+            captureSource="popup"
+            variant="default"
+            onSuccess={handleSuccess}
+          />
         </div>
       </div>
     </div>

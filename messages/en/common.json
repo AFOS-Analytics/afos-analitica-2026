@@ -48,6 +48,22 @@
     "errorRateLimit": "Too many attempts. Try again in 1 hour.",
     "errorUnavailable": "Service temporarily unavailable."
   },
+  "gate": {
+    "title": "Keep tracking with AFOS Analytics",
+    "description": "Enter your email to continue accessing the dashboard and receive relevant alerts.",
+    "benefit1": "Odds change alerts",
+    "benefit2": "Daily email summary",
+    "benefit3": "Unlimited dashboard access",
+    "cta": "Continue",
+    "placeholder": "Your best email",
+    "consent": "I want to receive alerts and communications from AFOS Analytics by email.",
+    "success": "Access granted!",
+    "errorInvalid": "Enter a valid email.",
+    "errorConsent": "Check the consent box.",
+    "errorConnection": "Connection error. Try again.",
+    "errorGeneric": "Something went wrong. Try again.",
+    "errorRateLimit": "Too many attempts. Wait a few minutes."
+  },
   "modal": {
     "aboutTitle": "About — AFOS Analytics",
     "metasTitle": "Goals — AFOS Analytics",
