@@ -31,7 +31,7 @@ export const visitorStateSchema = z.object({
 
 export const visitorSessionSchema = z.object({
   visitorId: z.string().uuid('Invalid visitor ID'),
-  durationMs: z.number().int().min(0).max(3_600_000),
+  durationMs: z.number().int().min(0).max(86_400_000),
   hasInteraction: z.boolean(),
 })
 

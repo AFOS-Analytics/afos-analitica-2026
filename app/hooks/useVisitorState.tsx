@@ -114,27 +114,29 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
     };
   }, []);
 
-  // Register qualified session after 30s + interaction
+  // Register qualified session after 30s + interaction (single attempt)
   useEffect(() => {
     if (!visitorId || state.subscribed || sessionRegistered.current) return;
 
-    const timer = setInterval(() => {
+    const checkQualification = () => {
       const elapsed = Date.now() - startTime.current;
       if (elapsed >= 30_000 && hasInteraction.current && !sessionRegistered.current) {
-        sessionRegistered.current = true;
+        sessionRegistered.current = true; // Prevent any further attempts
+        clearInterval(timer);
         fetch('/api/visitor/session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ visitorId, durationMs: elapsed, hasInteraction: true }),
+          body: JSON.stringify({ visitorId, durationMs: Math.min(elapsed, 3_600_000), hasInteraction: true }),
         })
           .then(r => r.ok ? r.json() : null)
           .then(data => {
             if (data?.ok && data.state) setState(data.state);
           })
-          .catch(() => {});
+          .catch(() => { sessionRegistered.current = false; }); // Allow retry on network error
       }
-    }, 5000); // Check every 5s
+    };
 
+    const timer = setInterval(checkQualification, 5000);
     return () => clearInterval(timer);
   }, [visitorId, state.subscribed]);
 

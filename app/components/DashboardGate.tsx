@@ -11,11 +11,20 @@ import { SubscribeForm } from './SubscribeForm';
  */
 
 export function DashboardGate({ children }: { children: React.ReactNode }) {
-  const { visitorId, state, loading } = useVisitorState();
+  const { visitorId, state, loading, markSubscribed } = useVisitorState();
   const { t } = useTranslation();
 
-  // While loading or if subscribed/free, show children normally
-  if (loading || state.eligible !== 'gate') {
+  // While loading, show nothing to prevent gate flash
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary" />
+      </div>
+    );
+  }
+
+  // If subscribed or free, show children normally
+  if (state.eligible !== 'gate') {
     return <>{children}</>;
   }
 
@@ -73,11 +82,7 @@ export function DashboardGate({ children }: { children: React.ReactNode }) {
               visitorId={visitorId}
               captureSource="gate"
               variant="gate"
-              onSuccess={() => {
-                // Will be handled by markSubscribed via the context
-                // Force reload to remove gate
-                window.location.reload();
-              }}
+              onSuccess={markSubscribed}
             />
           </div>
         </div>
