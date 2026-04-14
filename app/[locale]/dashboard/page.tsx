@@ -59,6 +59,7 @@ function DashboardContent() {
   const stf = ac?.cards?.stf;
 
   return (
+    <>
     <DashboardGate>
       <div className="min-h-screen bg-white">
         <Header
@@ -121,6 +122,7 @@ function DashboardContent() {
       </div>
     </DashboardGate>
     <EmailPopup />
+    </>
   );
 }
 
