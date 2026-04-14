@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return languages
   }
 
-  // Dashboard: /pt-BR, /en, /es
+  // Landing page: /pt-BR, /en, /es
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}`,
@@ -22,6 +22,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'hourly',
       priority: 1,
       alternates: { languages: hreflang((l) => `/${l}`) },
+    })
+  }
+
+  // Dashboard: /pt-BR/dashboard, /en/dashboard, /es/dashboard
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/dashboard`,
+      lastModified: now,
+      changeFrequency: 'hourly',
+      priority: 0.95,
+      alternates: { languages: hreflang((l) => `/${l}/dashboard`) },
     })
   }
 
