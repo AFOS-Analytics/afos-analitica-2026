@@ -49,18 +49,22 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
   const startTime = useRef(Date.now());
   const hasInteraction = useRef(false);
 
-  // Fetch state from backend
+  // Fetch state from backend (3s timeout, fallback to free on error)
   useEffect(() => {
-    if (!visitorId) return;
+    if (!visitorId) { setLoading(false); return; }
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3000);
+
     fetch('/api/visitor/state', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ visitorId }),
+      signal: controller.signal,
     })
       .then(r => r.ok ? r.json() : null)
       .then(data => { if (data?.ok) setState(data.state); })
-      .catch(() => {})
-      .finally(() => setLoading(false));
+      .catch(() => {}) // On error/timeout: keep DEFAULT_STATE (eligible: 'free')
+      .finally(() => { clearTimeout(timeout); setLoading(false); });
   }, [visitorId]);
 
   // Track interaction (scroll or click — once)
