@@ -1,6 +1,6 @@
 # AFOS Analytics
 
-**Plataforma inédita no mundo — Inteligência de Risco Político Eleitoral em tempo real.**
+**Plataforma inédita no mundo — cruzamento de mercados de previsão com pesquisas eleitorais em tempo real em qualquer eleições e institutos de pesquisas no mundo todo.**
 
 **[afos-analytics.com](https://afos-analytics.com)**
 
