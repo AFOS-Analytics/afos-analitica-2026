@@ -321,7 +321,7 @@ Cron 3x/dia (6h, 12h, 18h)
 ## Configuracao
 
 ```bash
-git clone https://github.com/andrefelipe-afos/afos-analitica-2026.git
+git clone https://github.com/AFOS-Analytics/afos-analitica-2026.git
 cd afos-analitica-2026
 npm install
 cp .env.example .env.local

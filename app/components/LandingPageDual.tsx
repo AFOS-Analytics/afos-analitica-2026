@@ -627,7 +627,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <p className={`mt-2 transition-colors duration-500 ${tk.footerDim}`}>{t.footer.disclaimer}</p>
           <div className={`mt-4 flex items-center justify-center gap-4 transition-colors duration-500 ${tk.footerLink}`}>
             <a href={dashboardUrl} className="hover:text-white transition-colors">Dashboard</a>
-            <a href="https://github.com/andrefelipe-afos/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/AFOS-Analytics/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </footer>
