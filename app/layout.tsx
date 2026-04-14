@@ -57,11 +57,7 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'geo.region': 'BR',
-    'geo.placename': 'Brasil',
-    'content-language': 'pt-BR',
-  },
+  // geo tags moved to lib/seo/metadata.ts buildMetadata() per locale
 };
 
 export default function RootLayout({
