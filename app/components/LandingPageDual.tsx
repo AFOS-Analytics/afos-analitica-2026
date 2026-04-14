@@ -215,13 +215,15 @@ function Icon({ name }: { name: string }) {
 // ─── Hook: fechar dropdown ao clicar fora ───────────────────────────
 
 function useClickOutside(ref: React.RefObject<HTMLDivElement | null>, onClose: () => void) {
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) onClose();
+      if (ref.current && !ref.current.contains(e.target as Node)) onCloseRef.current();
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
-  }, [ref, onClose]);
+  }, [ref]);
 }
 
 // ─── Seletor de Idioma (Globo + código) ─────────────────────────────
@@ -593,16 +595,19 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
     }
   };
 
-  // useEffect para forçar background no body (sobrescreve !important do globals.css)
   const isBlueTheme = theme === 'blue';
 
-  if (typeof window !== 'undefined') {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    // Executa a cada render para manter sincronizado
+  // Sync body background with theme (overrides !important in globals.css)
+  useEffect(() => {
     const bg = isBlueTheme ? '#0F52BA' : '#ffffff';
     document.documentElement.style.cssText = `background: ${bg} !important`;
     document.body.style.cssText = `background: ${bg} !important; color: ${isBlueTheme ? '#ffffff' : '#1a1a1a'}; font-family: Arial, Helvetica, sans-serif; overflow-x: hidden; width: 100%; max-width: 100vw; min-height: 100vh; margin: 0; padding: 0;`;
-  }
+    return () => {
+      // Reset on unmount (navigating away from landing)
+      document.documentElement.style.cssText = '';
+      document.body.style.cssText = '';
+    };
+  }, [isBlueTheme]);
 
   return (
     <div className="min-h-screen transition-colors duration-500" style={{ background: isBlueTheme ? '#0F52BA' : '#ffffff' }}>

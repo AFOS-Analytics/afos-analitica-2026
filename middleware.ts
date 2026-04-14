@@ -12,6 +12,7 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
       path: '/',
       sameSite: 'lax',
       httpOnly: false,
+      secure: process.env.NODE_ENV === 'production',
     });
   }
   return response;

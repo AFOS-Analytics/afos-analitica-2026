@@ -12,33 +12,29 @@ import { visitorSessionSchema } from '../../../../lib/validations'
 const MIN_DURATION_MS = 30_000
 const SESSION_DEDUP_TTL = 1800 // 30 minutes
 
-async function isSessionAlreadyCounted(visitorId: string): Promise<boolean> {
+/**
+ * Atomic SET NX — returns true if this is a NEW session (not yet counted).
+ * Uses Redis SET with NX (only set if not exists) + EX (TTL) in one call.
+ * This prevents race conditions between check and set.
+ */
+async function tryClaimSession(visitorId: string): Promise<boolean> {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
   const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
-  if (!url || !token) return false
+  if (!url || !token) return true // No Redis = allow (fallback)
 
   try {
     const key = `afos:session:active:${visitorId}`
-    const res = await fetch(`${url}/get/${key}`, {
+    const res = await fetch(`${url}/set/${key}/1/ex/${SESSION_DEDUP_TTL}/nx`, {
       headers: { Authorization: `Bearer ${token}` },
     })
-    if (!res.ok) return false
+    if (!res.ok) return true // On error, allow
     const data = await res.json()
-    return data?.result !== null
-  } catch { return false }
-}
-
-async function markSessionCounted(visitorId: string): Promise<void> {
-  const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
-  const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
-  if (!url || !token) return
-
-  try {
-    const key = `afos:session:active:${visitorId}`
-    await fetch(`${url}/set/${key}/1/ex/${SESSION_DEDUP_TTL}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-  } catch {}
+    // NX returns OK if set, null if already exists
+    return data?.result === 'OK'
+  } catch (err) {
+    console.warn('[visitor/session] Redis dedup error:', err instanceof Error ? err.message : err)
+    return true
+  }
 }
 
 export async function POST(request: Request) {
@@ -63,8 +59,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true, counted: false, reason: 'not_qualified' })
   }
 
-  // Dedup: already counted this session
-  if (await isSessionAlreadyCounted(visitorId)) {
+  // Atomic dedup: claim session slot in Redis (NX = only if not exists)
+  const isNew = await tryClaimSession(visitorId)
+  if (!isNew) {
     return NextResponse.json({ ok: true, counted: false, reason: 'already_counted' })
   }
 
@@ -78,8 +75,6 @@ export async function POST(request: Request) {
       },
       select: { qualifiedSessions: true, subscribed: true, popupDismissals: true },
     })
-
-    await markSessionCounted(visitorId)
 
     const eligible = state.subscribed ? 'subscribed' : state.qualifiedSessions >= 3 ? 'gate' : 'free'
     const showPopup = !state.subscribed && state.qualifiedSessions < 3 && state.popupDismissals < 3
