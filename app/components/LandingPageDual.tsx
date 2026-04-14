@@ -24,7 +24,8 @@ const CONTENT = {
       badge: 'Eleições 2026 — Dados em tempo real',
       title: 'Inteligência Eleitoral',
       titleHighlight: 'Global em Tempo Real',
-      subtitle: 'Polymarket, pesquisas de 17+ institutos, notícias ao vivo e análises estratégicas — tudo em um único painel, gratuito e aberto.',
+      claim: 'Plataforma inedita no mundo — cruzamento de mercados de previsao com pesquisas eleitorais em tempo real.',
+      subtitle: 'Polymarket, pesquisas de 17+ institutos, noticias ao vivo e analises estrategicas — tudo em um unico painel, gratuito e aberto.',
       cta: 'Acessar Dashboard',
       ctaSecondary: 'Saiba mais',
     },
@@ -68,6 +69,7 @@ const CONTENT = {
       badge: 'Elections 2026 — Real-time data',
       title: 'Global Election',
       titleHighlight: 'Intelligence in Real Time',
+      claim: 'Unprecedented platform — crossing prediction markets with electoral polls in real time.',
       subtitle: 'Polymarket, polls from 17+ institutes, live news and strategic analysis — all in one panel, free and open.',
       cta: 'Open Dashboard',
       ctaSecondary: 'Learn more',
@@ -112,6 +114,7 @@ const CONTENT = {
       badge: 'Elecciones 2026 — Datos en tiempo real',
       title: 'Inteligencia Electoral',
       titleHighlight: 'Global en Tiempo Real',
+      claim: 'Plataforma inedita en el mundo — cruce de mercados de prediccion con encuestas electorales en tiempo real.',
       subtitle: 'Polymarket, encuestas de 17+ institutos, noticias en vivo y analisis estrategicos — todo en un panel, gratuito y abierto.',
       cta: 'Abrir Dashboard',
       ctaSecondary: 'Saber mas',
@@ -518,7 +521,10 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
             {t.hero.title}{' '}
             <span className={`transition-colors duration-500 ${tk.highlight}`}>{t.hero.titleHighlight}</span>
           </h1>
-          <p className={`mt-6 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${tk.subtitle}`}>
+          <p className={`mt-4 text-xs sm:text-sm font-medium max-w-xl mx-auto transition-colors duration-500 ${isBlueTheme ? 'text-white' : 'text-dark'}`}>
+            {t.hero.claim}
+          </p>
+          <p className={`mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${tk.subtitle}`}>
             {t.hero.subtitle}
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">

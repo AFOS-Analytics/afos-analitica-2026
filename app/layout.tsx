@@ -13,8 +13,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
-  title: "AFOS Analytics — Inteligência Eleitoral Global em Tempo Real",
-  description: "Plataforma global de inteligência eleitoral: Polymarket (mercados de previsão com dinheiro real) + pesquisas de +17 institutos + notícias ao vivo + análises estratégicas. Eleições Brasil 2026 e mundo.",
+  title: "AFOS Analytics — Plataforma Inedita no Mundo | Inteligencia Eleitoral em Tempo Real",
+  description: "Plataforma inedita no mundo: cruzamento de mercados de previsao (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Noticias ao vivo, analises estrategicas. Eleicoes Brasil 2026 e cobertura global.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
     languages: {
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFOS Analytics — Inteligência Eleitoral Global",
-    description: "Mercados de previsão + pesquisas + notícias + análises em tempo real. Eleições Brasil 2026 e mundo.",
+    title: "AFOS Analytics — Plataforma Inedita | Inteligencia Eleitoral Global",
+    description: "Plataforma inedita no mundo: cruzamento de mercados de previsao com pesquisas eleitorais em tempo real. Eleicoes Brasil 2026 e cobertura global.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'AFOS Analytics — Inteligência Eleitoral Global em Tempo Real',
+        alt: 'AFOS Analytics — Plataforma Inedita no Mundo | Inteligencia Eleitoral em Tempo Real',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Inteligência Eleitoral Global",
-    description: "Polymarket + 17 institutos de pesquisa + notícias ao vivo. Eleições Brasil 2026 e mundo.",
+    title: "AFOS Analytics — Plataforma Inedita | Inteligencia Eleitoral Global",
+    description: "Plataforma inedita no mundo: Polymarket + 17 institutos de pesquisa + noticias ao vivo. Eleicoes Brasil 2026 e cobertura global.",
     images: ['/opengraph-image'],
   },
   robots: {
