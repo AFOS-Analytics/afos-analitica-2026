@@ -24,7 +24,7 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">{t('header.title')}</h1>
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">{t('header.title')}</h1>
               <p className="text-blue-200 mt-1 text-sm md:text-base">{t('header.subtitle')}</p>
             </div>
 
