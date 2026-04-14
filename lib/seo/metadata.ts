@@ -52,6 +52,11 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
       description: seo.description,
       images: ['/opengraph-image'],
     },
+    other: {
+      'geo.region': locale === 'pt-BR' ? 'BR' : locale === 'es' ? 'LATAM' : 'Global',
+      'geo.placename': locale === 'pt-BR' ? 'Brasil' : locale === 'es' ? 'America Latina' : 'Global',
+      'content-language': locale,
+    },
   };
 }
 
