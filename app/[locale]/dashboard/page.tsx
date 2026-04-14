@@ -90,22 +90,22 @@ function DashboardContent() {
             <p className="text-xs font-semibold text-primary mb-3">{t('map.countries')}</p>
             <div className="flex flex-wrap gap-2">
               {[
-                { flag: '\u{1F1E7}\u{1F1F7}', slug: locale === 'en' ? 'brazil' : 'brasil', name: 'Brasil' },
-                { flag: '\u{1F1EB}\u{1F1F7}', slug: locale === 'en' ? 'france' : locale === 'es' ? 'francia' : 'franca', name: locale === 'en' ? 'France' : locale === 'es' ? 'Francia' : 'Franca' },
-                { flag: '\u{1F1E9}\u{1F1EA}', slug: locale === 'en' ? 'germany' : locale === 'es' ? 'alemania' : 'alemanha', name: locale === 'en' ? 'Germany' : locale === 'es' ? 'Alemania' : 'Alemanha' },
-                { flag: '\u{1F1EC}\u{1F1E7}', slug: locale === 'en' ? 'united-kingdom' : 'reino-unido', name: locale === 'en' ? 'United Kingdom' : 'Reino Unido' },
-                { flag: '\u{1F1E8}\u{1F1E6}', slug: 'canada', name: locale === 'en' ? 'Canada' : 'Canada' },
-                { flag: '\u{1F1E8}\u{1F1F4}', slug: 'colombia', name: locale === 'en' ? 'Colombia' : 'Colombia' },
-                { flag: '\u{1F1E8}\u{1F1F1}', slug: 'chile', name: 'Chile' },
-                { flag: '\u{1F1F0}\u{1F1F7}', slug: locale === 'en' ? 'south-korea' : locale === 'es' ? 'corea-del-sur' : 'coreia-do-sul', name: locale === 'en' ? 'South Korea' : locale === 'es' ? 'Corea del Sur' : 'Coreia do Sul' },
-                { flag: '\u{1F1E6}\u{1F1FA}', slug: 'australia', name: locale === 'en' ? 'Australia' : locale === 'es' ? 'Australia' : 'Australia' },
-                { flag: '\u{1F1EE}\u{1F1F3}', slug: locale === 'en' ? 'india' : 'india', name: locale === 'en' ? 'India' : locale === 'es' ? 'India' : 'India' },
-                { flag: '\u{1F1F2}\u{1F1FD}', slug: 'mexico', name: locale === 'en' ? 'Mexico' : 'Mexico' },
-                { flag: '\u{1F1F3}\u{1F1EC}', slug: 'nigeria', name: locale === 'en' ? 'Nigeria' : locale === 'es' ? 'Nigeria' : 'Nigeria' },
-                { flag: '\u{1F1F5}\u{1F1ED}', slug: locale === 'en' ? 'philippines' : 'filipinas', name: locale === 'en' ? 'Philippines' : 'Filipinas' },
+                { code: 'br', slug: locale === 'en' ? 'brazil' : 'brasil', name: 'Brasil' },
+                { code: 'fr', slug: locale === 'en' ? 'france' : locale === 'es' ? 'francia' : 'franca', name: locale === 'en' ? 'France' : locale === 'es' ? 'Francia' : 'Franca' },
+                { code: 'de', slug: locale === 'en' ? 'germany' : locale === 'es' ? 'alemania' : 'alemanha', name: locale === 'en' ? 'Germany' : locale === 'es' ? 'Alemania' : 'Alemanha' },
+                { code: 'gb', slug: locale === 'en' ? 'united-kingdom' : 'reino-unido', name: locale === 'en' ? 'United Kingdom' : 'Reino Unido' },
+                { code: 'ca', slug: 'canada', name: locale === 'en' ? 'Canada' : 'Canada' },
+                { code: 'co', slug: 'colombia', name: locale === 'en' ? 'Colombia' : 'Colombia' },
+                { code: 'cl', slug: 'chile', name: 'Chile' },
+                { code: 'kr', slug: locale === 'en' ? 'south-korea' : locale === 'es' ? 'corea-del-sur' : 'coreia-do-sul', name: locale === 'en' ? 'South Korea' : locale === 'es' ? 'Corea del Sur' : 'Coreia do Sul' },
+                { code: 'au', slug: 'australia', name: locale === 'en' ? 'Australia' : locale === 'es' ? 'Australia' : 'Australia' },
+                { code: 'in', slug: locale === 'en' ? 'india' : 'india', name: locale === 'en' ? 'India' : locale === 'es' ? 'India' : 'India' },
+                { code: 'mx', slug: 'mexico', name: locale === 'en' ? 'Mexico' : 'Mexico' },
+                { code: 'ng', slug: 'nigeria', name: locale === 'en' ? 'Nigeria' : locale === 'es' ? 'Nigeria' : 'Nigeria' },
+                { code: 'ph', slug: locale === 'en' ? 'philippines' : 'filipinas', name: locale === 'en' ? 'Philippines' : 'Filipinas' },
               ].map((c) => (
                 <a key={c.slug} href={`/${locale}/country/${c.slug}`} className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors">
-                  <span>{c.flag}</span>{c.name}
+                  <img src={`/flags/${c.code}.svg`} alt={c.name} width={18} height={12} className="rounded-sm object-cover" style={{ width: 18, height: 12 }} />{c.name}
                 </a>
               ))}
             </div>
