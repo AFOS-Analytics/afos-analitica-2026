@@ -59,26 +59,26 @@ function DashboardContent() {
   const stf = ac?.cards?.stf;
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header
-        fetchedAt={poly?.fetchedAt}
-        onShowSobre={() => setShowSobre(true)}
-        onShowMetas={() => setShowMetas(true)}
-        onShowGlobal={() => { setShowGlobal(true); fetchGlobal(); }}
-      />
+    <DashboardGate>
+      <div className="min-h-screen bg-white">
+        <Header
+          fetchedAt={poly?.fetchedAt}
+          onShowSobre={() => setShowSobre(true)}
+          onShowMetas={() => setShowMetas(true)}
+          onShowGlobal={() => { setShowGlobal(true); fetchGlobal(); }}
+        />
 
-      <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
-      <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
-      <ModalGlobal
-        show={showGlobal}
-        onClose={() => setShowGlobal(false)}
-        globalData={globalData}
-        mapCountries={mapCountries}
-        expandedElection={expandedElection}
-        setExpandedElection={setExpandedElection}
-      />
+        <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
+        <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
+        <ModalGlobal
+          show={showGlobal}
+          onClose={() => setShowGlobal(false)}
+          globalData={globalData}
+          mapCountries={mapCountries}
+          expandedElection={expandedElection}
+          setExpandedElection={setExpandedElection}
+        />
 
-      <DashboardGate>
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
           <PolymarketSection poly={poly} />
           <PollsSection polls={polls} crit={crit} />
@@ -116,11 +116,11 @@ function DashboardContent() {
           <BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} />
           <StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} />
         </main>
-      </DashboardGate>
 
-      <Footer />
-      <EmailPopup />
-    </div>
+        <Footer />
+      </div>
+    </DashboardGate>
+    <EmailPopup />
   );
 }
 
