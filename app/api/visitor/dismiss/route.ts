@@ -1,19 +1,14 @@
 /**
- * POST /api/visitor/dismiss
- *
- * Record popup dismissal. Caps at 3 total.
+ * POST /api/visitor/dismiss — Record popup dismissal (max 3).
  */
 
 import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 import { visitorDismissSchema } from '../../../../lib/validations'
-
-const MAX_DISMISSALS = 3
+import { MAX_POPUP_DISMISSALS } from '../../../../lib/visitor/constants'
 
 export async function POST(request: Request) {
-  if (!prisma) {
-    return NextResponse.json({ ok: false, error: 'unavailable' }, { status: 503 })
-  }
+  if (!prisma) return NextResponse.json({ ok: false, error: 'unavailable' }, { status: 503 })
 
   let body: unknown
   try { body = await request.json() } catch {
@@ -21,24 +16,20 @@ export async function POST(request: Request) {
   }
 
   const parsed = visitorDismissSchema.safeParse(body)
-  if (!parsed.success) {
-    return NextResponse.json({ ok: false, error: 'invalid_visitor_id' }, { status: 400 })
-  }
-
-  const { visitorId } = parsed.data
+  if (!parsed.success) return NextResponse.json({ ok: false, error: 'invalid_visitor_id' }, { status: 400 })
 
   try {
     const current = await prisma.visitorState.findUnique({
-      where: { visitorId },
+      where: { visitorId: parsed.data.visitorId },
       select: { popupDismissals: true },
     })
 
-    if (!current || current.popupDismissals >= MAX_DISMISSALS) {
-      return NextResponse.json({ ok: true, popupDismissals: current?.popupDismissals ?? MAX_DISMISSALS })
+    if (!current || current.popupDismissals >= MAX_POPUP_DISMISSALS) {
+      return NextResponse.json({ ok: true, popupDismissals: current?.popupDismissals ?? MAX_POPUP_DISMISSALS })
     }
 
     const updated = await prisma.visitorState.update({
-      where: { visitorId },
+      where: { visitorId: parsed.data.visitorId },
       data: { popupDismissals: { increment: 1 } },
       select: { popupDismissals: true },
     })

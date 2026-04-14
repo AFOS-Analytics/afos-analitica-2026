@@ -451,148 +451,29 @@ function useThemeTokens(theme: Theme) {
 
 // ─── Component ──────────────────────────────────────────────────────
 
-// ─── localStorage helpers (mesmas chaves do EmailPopup) ─────────────
-
-const STORAGE_SUBSCRIBED = 'afos_popup_subscribed';
-
-function safeGetItem(key: string): string | null {
-  try { return localStorage.getItem(key); } catch { return null; }
-}
-function safeSetItem(key: string, value: string): void {
-  try { localStorage.setItem(key, value); } catch {}
-}
-function isEmailValid(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
-}
-
-// ─── Mensagens de erro por idioma ───────────────────────────────────
-
-const ERROR_MSGS: Record<Locale, Record<string, string>> = {
-  'pt-BR': {
-    invalid_email: 'Email invalido. Verifique e tente novamente.',
-    storage_unavailable: 'Servico temporariamente indisponivel.',
-    rate_limited: 'Muitas tentativas. Aguarde alguns minutos.',
-    no_consent: 'Marque a caixa de consentimento para continuar.',
-    connection: 'Erro de conexao. Verifique sua internet.',
-    generic: 'Algo deu errado. Tente novamente.',
-  },
-  en: {
-    invalid_email: 'Invalid email. Please check and try again.',
-    storage_unavailable: 'Service temporarily unavailable.',
-    rate_limited: 'Too many attempts. Please wait a few minutes.',
-    no_consent: 'Check the consent box to continue.',
-    connection: 'Connection error. Check your internet.',
-    generic: 'Something went wrong. Please try again.',
-  },
-  es: {
-    invalid_email: 'Email invalido. Verifica e intenta nuevamente.',
-    storage_unavailable: 'Servicio temporalmente no disponible.',
-    rate_limited: 'Demasiados intentos. Espera unos minutos.',
-    no_consent: 'Marca la casilla de consentimiento para continuar.',
-    connection: 'Error de conexion. Verifica tu internet.',
-    generic: 'Algo salio mal. Intenta nuevamente.',
-  },
-};
-
-// ─── Component ──────────────────────────────────────────────────────
+import { getOrCreateVisitorId } from '../../lib/visitor/id';
+import { SUBSCRIBED_LS_KEY } from '../../lib/visitor/constants';
+import { SubscribeForm } from './SubscribeForm';
 
 export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPageProps) {
   const [locale, setLocale] = useState<Locale>(initialLocale);
   const t = CONTENT[locale];
   const [theme, setTheme] = useState<Theme>('light');
-  const [email, setEmail] = useState('');
-  const [consent, setConsent] = useState(false);
-  const [honeypot, setHoneypot] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-  const [alreadySubscribed, setAlreadySubscribed] = useState(false);
   const [visitorId, setVisitorId] = useState('');
-  const submitting = useRef(false);
+  const [subscribed, setSubscribed] = useState(false);
   const featuresRef = useRef<HTMLElement>(null);
   const tk = useThemeTokens(theme);
-  const errors = ERROR_MSGS[locale];
 
   const dashboardUrl = `/${locale}/dashboard`;
 
-  // Get visitor ID and check if already subscribed
   useEffect(() => {
-    // Visitor ID from cookie or generate new
-    const cookieMatch = document.cookie.match(/(?:^|; )afos_visitor_id=([^;]+)/);
-    let vid = cookieMatch?.[1] || '';
-    if (!vid) {
-      try { vid = localStorage.getItem('afos_visitor_id') || ''; } catch {}
-    }
-    if (!vid) {
-      vid = crypto.randomUUID();
-      document.cookie = `afos_visitor_id=${vid}; path=/; max-age=${365 * 86400}; SameSite=Lax`;
-      try { localStorage.setItem('afos_visitor_id', vid); } catch {}
-    }
-    setVisitorId(vid);
-
-    if (safeGetItem(STORAGE_SUBSCRIBED) === 'true') {
-      setAlreadySubscribed(true);
-      setStatus('success');
-    }
+    setVisitorId(getOrCreateVisitorId());
+    try { if (localStorage.getItem(SUBSCRIBED_LS_KEY) === 'true') setSubscribed(true); } catch {}
   }, []);
 
-  const handleSubscribe = async () => {
-    if (submitting.current) return;
-
-    // Validação de email
-    if (!isEmailValid(email)) {
-      setErrorMsg(errors.invalid_email);
-      setStatus('error');
-      return;
-    }
-
-    // Validação de consentimento
-    if (!consent) {
-      setErrorMsg(errors.no_consent);
-      setStatus('error');
-      return;
-    }
-
-    // Honeypot — bot detectado, fake success
-    if (honeypot) {
-      setStatus('success');
-      safeSetItem(STORAGE_SUBSCRIBED, 'true');
-      return;
-    }
-
-    submitting.current = true;
-    setStatus('loading');
-    setErrorMsg('');
-
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim().toLowerCase(), consent, _hp: honeypot, visitorId: visitorId || undefined, captureSource: 'landing' as const }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok || !data.ok) {
-        const serverErrors: Record<string, string> = {
-          invalid_email: errors.invalid_email,
-          storage_unavailable: errors.storage_unavailable,
-          rate_limited: errors.rate_limited,
-        };
-        setErrorMsg(serverErrors[data.error] || errors.generic);
-        setStatus('error');
-        submitting.current = false;
-        return;
-      }
-
-      // Sucesso — marcar no localStorage (sincroniza com popup do dashboard)
-      setStatus('success');
-      safeSetItem(STORAGE_SUBSCRIBED, 'true');
-    } catch {
-      setErrorMsg(errors.connection);
-      setStatus('error');
-    } finally {
-      submitting.current = false;
-    }
+  const handleSubscribeSuccess = () => {
+    setSubscribed(true);
+    try { localStorage.setItem(SUBSCRIBED_LS_KEY, 'true'); } catch {}
   };
 
   const isBlueTheme = theme === 'blue';
@@ -712,64 +593,19 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
 
           <div className={`mt-12 pt-10 border-t transition-colors duration-500 ${tk.divider}`}>
             <p className={`text-sm mb-4 transition-colors duration-500 ${tk.emailHint}`}>{t.cta.email}</p>
-            {status === 'success' ? (
+            {subscribed ? (
               <div className={`flex items-center justify-center gap-2 font-semibold ${tk.successColor}`}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 {t.cta.success}
               </div>
             ) : (
-              <>
-                <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => { setEmail(e.target.value); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
-                    placeholder={t.cta.placeholder}
-                    autoComplete="email"
-                    disabled={status === 'loading'}
-                    className={`flex-1 px-4 py-3 rounded-xl text-sm border outline-none transition-all duration-500 focus:ring-2 disabled:opacity-50 ${tk.inputBg}`}
-                    onKeyDown={(e) => { if (e.key === 'Enter' && status !== 'loading') handleSubscribe(); }}
-                  />
-                  <button
-                    onClick={handleSubscribe}
-                    disabled={status === 'loading' || !email.trim()}
-                    className={`text-sm font-semibold px-6 py-3 rounded-xl transition-all duration-500 disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap ${tk.subscribeBtn}`}
-                  >
-                    {status === 'loading' ? (
-                      <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
-                        <span style={{ width: 14, height: 14, border: '2px solid rgba(255,255,255,0.3)', borderTop: '2px solid #fff', borderRadius: '50%', animation: 'spin 0.6s linear infinite', display: 'inline-block' }} />
-                        ...
-                      </span>
-                    ) : t.cta.subscribe}
-                  </button>
-                </div>
-
-                {/* Honeypot — invisivel para humanos, bots preenchem */}
-                <input
-                  type="text"
-                  name="website"
-                  value={honeypot}
-                  onChange={(e) => setHoneypot(e.target.value)}
-                  tabIndex={-1}
-                  autoComplete="off"
-                  style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+              <div className="max-w-sm mx-auto">
+                <SubscribeForm
+                  visitorId={visitorId}
+                  captureSource="landing"
+                  onSuccess={handleSubscribeSuccess}
                 />
-
-                {/* Erro detalhado */}
-                {status === 'error' && errorMsg && (
-                  <p style={{ color: '#ef4444', fontSize: 12, marginTop: 8 }}>{errorMsg}</p>
-                )}
-
-                <label className="flex items-center justify-center gap-2 mt-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={consent}
-                    onChange={(e) => { setConsent(e.target.checked); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
-                    className={`w-3.5 h-3.5 ${tk.checkAccent}`}
-                  />
-                  <span className={`text-[11px] transition-colors duration-500 ${tk.consentText}`}>{t.cta.consent}</span>
-                </label>
-              </>
+              </div>
             )}
           </div>
         </div>
