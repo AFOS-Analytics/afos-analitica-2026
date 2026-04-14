@@ -64,18 +64,18 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
 export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
-      title: 'AFOS Analytics — Plataforma Inedita no Mundo | Inteligencia Eleitoral em Tempo Real',
-      description: 'Plataforma inedita no mundo: cruzamento de mercados de previsao (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Noticias ao vivo e analises estrategicas. Eleicoes Brasil 2026 e cobertura global.',
+      title: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência Eleitoral Global e Preditiva',
+      description: 'Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.',
       path: '',
     },
     en: {
-      title: 'AFOS Analytics — Unprecedented Platform | Real-Time Election Intelligence',
-      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Live news and strategic analysis. Brazil 2026 elections and global coverage.',
+      title: 'AFOS Analytics — Unprecedented Platform | Global Election Intelligence & Prediction',
+      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Live news and strategic analysis. Brazil 2026 elections and 14-country coverage.',
       path: '',
     },
     es: {
-      title: 'AFOS Analytics — Plataforma Inedita en el Mundo | Inteligencia Electoral en Tiempo Real',
-      description: 'Plataforma inedita en el mundo: cruce de mercados de prediccion (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Noticias en vivo y analisis estrategicos. Elecciones Brasil 2026 y cobertura global.',
+      title: 'AFOS Analytics — Plataforma Inédita en el Mundo | Inteligencia Electoral Global y Predictiva',
+      description: 'Plataforma inédita en el mundo: cruce de mercados de predicción (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 14 países.',
       path: '',
     },
   },
