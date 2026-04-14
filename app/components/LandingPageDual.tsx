@@ -22,8 +22,8 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'Sobre', github: 'GitHub' },
     hero: {
       badge: 'Eleições 2026 — 14 Países Monitorados',
-      title: 'Inteligência Eleitoral',
-      titleHighlight: 'Global e Preditiva',
+      title: 'Inteligência de',
+      titleHighlight: 'Risco Político Eleitoral',
       claim: 'Plataforma inédita no mundo — cruzamento de mercados de previsão com pesquisas eleitorais em tempo real.',
       subtitle: 'Polymarket, pesquisas de 17+ institutos, notícias ao vivo e análises estratégicas — tudo em um único painel, gratuito e aberto.',
       cta: 'Acessar Dashboard',
@@ -67,8 +67,8 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'About', github: 'GitHub' },
     hero: {
       badge: 'Elections 2026 — 14 Countries Monitored',
-      title: 'Global Election',
-      titleHighlight: 'Intelligence & Prediction',
+      title: 'Political Election',
+      titleHighlight: 'Risk Intelligence',
       claim: 'Unprecedented platform — crossing prediction markets with electoral polls in real time.',
       subtitle: 'Polymarket, polls from 17+ institutes, live news and strategic analysis — all in one panel, free and open.',
       cta: 'Open Dashboard',
@@ -112,8 +112,8 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'Acerca de', github: 'GitHub' },
     hero: {
       badge: 'Elecciones 2026 — 14 Países Monitoreados',
-      title: 'Inteligencia Electoral',
-      titleHighlight: 'Global y Predictiva',
+      title: 'Inteligencia de',
+      titleHighlight: 'Riesgo Político Electoral',
       claim: 'Plataforma inédita en el mundo — cruce de mercados de predicción con encuestas electorales en tiempo real.',
       subtitle: 'Polymarket, encuestas de 17+ institutos, noticias en vivo y análisis estratégicos — todo en un panel, gratuito y abierto.',
       cta: 'Abrir Dashboard',

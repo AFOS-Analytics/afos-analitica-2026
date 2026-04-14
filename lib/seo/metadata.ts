@@ -64,18 +64,18 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
 export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
-      title: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência Eleitoral Global e Preditiva',
-      description: 'Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.',
+      title: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral',
+      description: 'Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Inteligência de risco político eleitoral com notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.',
       path: '',
     },
     en: {
-      title: 'AFOS Analytics — Unprecedented Platform | Global Election Intelligence & Prediction',
-      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Live news and strategic analysis. Brazil 2026 elections and 14-country coverage.',
+      title: 'AFOS Analytics — Unprecedented Platform | Political Election Risk Intelligence',
+      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Political election risk intelligence with live news and strategic analysis. Brazil 2026 elections and 14-country coverage.',
       path: '',
     },
     es: {
-      title: 'AFOS Analytics — Plataforma Inédita en el Mundo | Inteligencia Electoral Global y Predictiva',
-      description: 'Plataforma inédita en el mundo: cruce de mercados de predicción (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 14 países.',
+      title: 'AFOS Analytics — Plataforma Inédita en el Mundo | Inteligencia de Riesgo Político Electoral',
+      description: 'Plataforma inédita en el mundo: cruce de mercados de predicción (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Inteligencia de riesgo político electoral con noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 14 países.',
       path: '',
     },
   },
