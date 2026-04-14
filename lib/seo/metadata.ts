@@ -64,18 +64,18 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
 export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
-      title: 'AFOS Analytics — Inteligência Eleitoral Global em Tempo Real',
-      description: 'Plataforma global de inteligência eleitoral: Polymarket + pesquisas de +17 institutos + notícias ao vivo. Eleições Brasil 2026 e mundo.',
+      title: 'AFOS Analytics — Plataforma Inedita no Mundo | Inteligencia Eleitoral em Tempo Real',
+      description: 'Plataforma inedita no mundo: cruzamento de mercados de previsao (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Noticias ao vivo e analises estrategicas. Eleicoes Brasil 2026 e cobertura global.',
       path: '',
     },
     en: {
-      title: 'AFOS Analytics — Global Electoral Intelligence in Real Time',
-      description: 'Global electoral intelligence platform: Polymarket + polls from 17+ institutes + live news. Brazil 2026 elections and world.',
+      title: 'AFOS Analytics — Unprecedented Platform | Real-Time Election Intelligence',
+      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Live news and strategic analysis. Brazil 2026 elections and global coverage.',
       path: '',
     },
     es: {
-      title: 'AFOS Analytics — Inteligencia Electoral Global en Tiempo Real',
-      description: 'Plataforma global de inteligencia electoral: Polymarket + encuestas de +17 institutos + noticias en vivo. Elecciones Brasil 2026 y mundo.',
+      title: 'AFOS Analytics — Plataforma Inedita en el Mundo | Inteligencia Electoral en Tiempo Real',
+      description: 'Plataforma inedita en el mundo: cruce de mercados de prediccion (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Noticias en vivo y analisis estrategicos. Elecciones Brasil 2026 y cobertura global.',
       path: '',
     },
   },
