@@ -1,8 +1,12 @@
-# AFOS Analytics
+# AFOS Analytics — V1
+
+🇧🇷 Português | 🇺🇸 [Read in English](README-v1.md)
+
+> Este é o README original da V1, preservado para mostrar como tudo começou. Veja o [README atual](../README.pt-BR.md) para a versão mais recente.
 
 **Dashboard de Inteligência Eleitoral — Eleições Presidenciais Brasil 2026**
 
-🔗 **[afos-analitica-2026.vercel.app](https://afos-analitica-2026.vercel.app)**
+**[afos-analytics.com](https://afos-analytics.com)**
 
 ---
 
@@ -16,51 +20,51 @@ O AFOS Analytics é um dashboard de inteligência eleitoral que monitora em temp
 
 ## Funcionalidades
 
-### 📊 Polymarket — Mercado de Previsão
+### Polymarket — Mercado de Previsão
 - Odds ao vivo com dinheiro real de quem vence a presidência
 - Dados de 2º e 3º lugar no 1º turno
 - Impeachment STF, Senado, Inflação 2026
 - Atualizado a cada 2 horas (ISR)
 
-### 📋 Pesquisas Eleitorais — +17 Institutos
+### Pesquisas Eleitorais — +17 Institutos
 - AtlasIntel/Bloomberg, Datafolha, Quaest/Genial, Paraná Pesquisas, Gerp, Real Time Big Data, Ipec, MDA, PoderData e outros
 - Múltiplos cenários de 1º e 2º turno
-- Classificação de confiabilidade por instituto (★ a ★★★★★)
+- Classificação de confiabilidade por instituto (1 a 5 estrelas)
 - Tabela comparativa Pesquisas vs Polymarket
 
-### 🔬 Análise Criteriosa
+### Análise Criteriosa
 - Pontos fortes e fracos dos 4 primeiros colocados
 - Cruzamento de 5+ institutos vs Polymarket
 - Veredicto analítico para cada candidato
 
-### 👤 Perfil dos Pré-Candidatos
+### Perfil dos Pré-Candidatos
 - 7 candidatos detalhados: Flávio Bolsonaro, Lula, Renan Santos, Ronaldo Caiado, Fernando Haddad, Romeu Zema, Tarcísio de Freitas
 - Posição política, riscos, odds vs pesquisas
 
-### 📰 Live Eleições News 120'
+### Live Eleições News 120'
 - Notícias ao vivo de +30 veículos nacionais
 - Google News RSS + Firecrawl AI para scraping profundo
 - Categorias: Presidência, Governadores, Senado, Banco Master, INSS, STF, Congresso
 - Atualizado a cada 30 minutos
 
-### 📡 Sentimento Popular
+### Sentimento Popular
 - Análise de redes sociais e opinião pública
 - Tendências por espectro político (Direita/Esquerda/Terceira Via)
 - Atualizado a cada 2 horas com base em notícias
 
-### 🔴 Escândalo INSS e o Caso Lulinha
+### Escândalo INSS e o Caso Lulinha
 - CPMI do INSS, investigações da PF
 - Impacto na imagem de Lula e na gestão federal
 
-### 🏦 Impacto do Escândalo Banco Master
+### Impacto do Escândalo Banco Master
 - Rombo BRB, Operação Compliance Zero
 - Impacto nacional e no Distrito Federal
 
-### ⚖️ Credibilidade do STF — Impacto Eleitoral
+### Credibilidade do STF — Impacto Eleitoral
 - Nexo STF × Banco Master (Toffoli, Moraes, Gilmar, Dino)
-- Odds de impeachment via Polymarket (17.5%)
+- Odds de impeachment via Polymarket
 
-### 🌍 Global — Eleições pelo Mundo
+### Global — Eleições pelo Mundo
 - Mapa mundial interativo com eleições monitoradas
 - Cards clicáveis com dados Polymarket de 11+ países
 - Calendário eleitoral global
@@ -133,7 +137,7 @@ O AFOS Analytics é o único e inédito dashboard brasileiro que cruza Polymarke
 
 ## Licença
 
-Projeto privado. Todos os direitos reservados.
+Apache License 2.0 — Veja [LICENSE](../LICENSE)
 
 ---
 

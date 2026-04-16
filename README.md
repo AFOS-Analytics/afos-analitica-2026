@@ -1,8 +1,10 @@
 # AFOS Analytics
 
-Plataforma inédita no mundo
+🇧🇷 [Leia em Português](README.pt-BR.md) | 🇺🇸 English
 
-**Cruzamento em tempo real entre mercados de previsão e pesquisas eleitorais, agregando mais de 400 fontes** (5 grandes mercados globais de previsão + 100+ institutos de pesquisa + 300+ meios de comunicação e redes sociais, 20+ idiomas) em **14+ países.**
+Unprecedented platform worldwide
+
+**Real-time cross-referencing of prediction markets and electoral polls, aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
@@ -11,128 +13,128 @@ Plataforma inédita no mundo
 
 > *Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency worldwide.*
 
-> Pipeline escalável com cron, Redis e Neon. Adicione fontes por país conforme as eleições se aproximam.
+> Scalable pipeline with cron, Redis, and Neon. Add sources per country as elections approach.
 
 ---
 
-## Sobre
+## About
 
-O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco político eleitoral que cruza em tempo real:
+**AFOS Analytics** is the world's first political electoral risk intelligence platform that cross-references in real time:
 
-- **Mercados de previsao** com dinheiro real (Polymarket) — odds atualizadas a cada 60 segundos
-- **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
-- **Noticias ao vivo** da grande imprensa
-- **Analises estrategicas** com inteligencia artificial
+- **Prediction markets** with real money (Polymarket) — odds updated every 60 seconds
+- **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
+- **Live news** from major media outlets
+- **Strategic analyses** powered by artificial intelligence
 
-Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
+Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
-**Open Source. Gratuito. Mobile e desktop.**
+**Open Source. Free. Mobile and desktop.**
 
 ---
 
-## Arquitetura
+## Architecture
 
-### Rotas Principais
+### Main Routes
 
-| Rota | Conteudo |
-|------|---------|
-| `/[locale]` | Landing page (seletor de cor + idioma) |
-| `/[locale]/dashboard` | Dashboard interativo com dados ao vivo |
-| `/[locale]/global` | Mapa global de eleicoes (D3.js) |
-| `/[locale]/country/[country]` | Pagina por pais (13 paises) |
+| Route | Content |
+|-------|---------|
+| `/[locale]` | Landing page (color + language selector) |
+| `/[locale]/dashboard` | Interactive dashboard with live data |
+| `/[locale]/global` | Global elections map (D3.js) |
+| `/[locale]/country/[country]` | Country page (13 countries) |
 
 ### Landing Page
 
-- Seletor de tema (branco/azul primary) com transicao animada
-- Seletor de idioma (PT-BR/EN/ES) com mini-menu dropdown
-- Bandeiras SVG (compativel com todos os dispositivos incluindo Windows)
-- Formulario de captura de lead integrado com sistema de visitor tracking
-- SEO otimizado com claim "Plataforma inedita no mundo" em metadata
+- Theme selector (white/primary blue) with animated transition
+- Language selector (PT-BR/EN/ES) with mini dropdown menu
+- SVG flags (compatible with all devices including Windows)
+- Lead capture form integrated with visitor tracking system
+- SEO optimized with "Unprecedented platform worldwide" claim in metadata
 
-### Sistema de Captura de Leads (Visitor State)
-
-```
-Sessao 1-3: Dashboard livre + popup suave (30s + scroll, max 3 dismissals)
-Sessao 4+:  Gate obrigatorio (blur + formulario premium)
-Apos cadastro: Acesso ilimitado, sem popup/gate
-```
-
-| Componente | Funcao |
-|---|---|
-| `visitor_states` (Neon) | Rastreia visitantes anonimos por visitor_id |
-| `POST /api/visitor/state` | Cria/retorna estado do visitante |
-| `POST /api/visitor/session` | Registra sessao qualificada (30s + scroll) |
-| `POST /api/visitor/dismiss` | Registra dismissal do popup (max 3) |
-| `POST /api/visitor/migrate` | Migra inscritos antigos (localStorage → backend) |
-| `useVisitorState` hook | Estado central no cliente (cookie + backend) |
-| `VisitorStateProvider` | Context React para dashboard |
-| `SubscribeForm` | Formulario compartilhado (popup + gate + landing) |
-| `DashboardGate` | Blur overlay na 4a sessao |
-| `EmailPopup` | Popup suave nas 3 sessoes livres |
-
-**Seguranca:** Backend e fonte de verdade (nao localStorage). Timeout 3s com fallback. Dedup atomico via Redis SET NX. Honeypot anti-bot. Rate limiting.
-
-### Pipeline de Dados (Cron + Upstash Redis)
+### Lead Capture System (Visitor State)
 
 ```
-Background:  Cron (60s) → Polymarket (18 mercados paralelo) → Upstash Redis
-Usuario:     Requisicao → Redis read (<1ms) → resposta
+Session 1-3: Free dashboard + soft popup (30s + scroll, max 3 dismissals)
+Session 4+:  Mandatory gate (blur + premium form)
+After signup: Unlimited access, no popup/gate
 ```
 
-**Cascata de fallback (4 niveis):**
+| Component | Function |
+|-----------|----------|
+| `visitor_states` (Neon) | Tracks anonymous visitors by visitor_id |
+| `POST /api/visitor/state` | Creates/returns visitor state |
+| `POST /api/visitor/session` | Records qualified session (30s + scroll) |
+| `POST /api/visitor/dismiss` | Records popup dismissal (max 3) |
+| `POST /api/visitor/migrate` | Migrates legacy subscribers (localStorage → backend) |
+| `useVisitorState` hook | Central client state (cookie + backend) |
+| `VisitorStateProvider` | React Context for dashboard |
+| `SubscribeForm` | Shared form (popup + gate + landing) |
+| `DashboardGate` | Blur overlay on 4th session |
+| `EmailPopup` | Soft popup on first 3 sessions |
 
-| Nivel | Condicao | Resposta |
-|-------|----------|----------|
-| 1 | Redis com dados frescos | <1ms (99.9% dos casos) |
-| 2 | Redis vazio | Fetch direto Polymarket (~4s) |
-| 3 | Polymarket falhou | Dados em memoria (ultimo resultado bom) |
-| 4 | Sem nenhum dado | HTTP 503 + Retry-After: 60 |
+**Security:** Backend is source of truth (not localStorage). 3s timeout with fallback. Atomic dedup via Redis SET NX. Honeypot anti-bot. Rate limiting.
 
-### Estrutura do Projeto
+### Data Pipeline (Cron + Upstash Redis)
+
+```
+Background:  Cron (60s) → Polymarket (18 markets in parallel) → Upstash Redis
+User:        Request → Redis read (<1ms) → response
+```
+
+**4-level fallback cascade:**
+
+| Level | Condition | Response |
+|-------|-----------|----------|
+| 1 | Redis with fresh data | <1ms (99.9% of cases) |
+| 2 | Redis empty | Direct Polymarket fetch (~4s) |
+| 3 | Polymarket failed | In-memory data (last good result) |
+| 4 | No data at all | HTTP 503 + Retry-After: 60 |
+
+### Project Structure
 
 ```
 app/
 ├── [locale]/
-│   ├── layout.tsx                     # Layout por locale (metadata + i18n)
+│   ├── layout.tsx                     # Per-locale layout (metadata + i18n)
 │   ├── page.tsx                       # Landing page (LandingPageDual)
 │   ├── dashboard/
-│   │   ├── layout.tsx                 # Metadata SEO do dashboard
+│   │   ├── layout.tsx                 # Dashboard SEO metadata
 │   │   └── page.tsx                   # Dashboard + Gate + Popup
-│   └── global/page.tsx                # Mapa global traduzido
+│   └── global/page.tsx                # Translated global map
 ├── components/
-│   ├── LandingPageDual.tsx            # Landing com seletor cor/idioma
+│   ├── LandingPageDual.tsx            # Landing with color/language selector
 │   ├── DashboardGate.tsx              # Gate blur overlay
-│   ├── EmailPopup.tsx                 # Popup suave
-│   ├── SubscribeForm.tsx              # Formulario compartilhado
-│   ├── FlagImg.tsx                    # Bandeira SVG cross-platform
-│   ├── Header.tsx / Footer.tsx        # Header e footer traduzidos
-│   ├── PolymarketSection.tsx          # Odds ao vivo
-│   ├── PollsSection.tsx               # Pesquisas eleitorais
+│   ├── EmailPopup.tsx                 # Soft popup
+│   ├── SubscribeForm.tsx              # Shared form
+│   ├── FlagImg.tsx                    # Cross-platform SVG flag
+│   ├── Header.tsx / Footer.tsx        # Translated header and footer
+│   ├── PolymarketSection.tsx          # Live odds
+│   ├── PollsSection.tsx               # Electoral polls
 │   ├── global-map/                    # D3 + TopoJSON + SVG
-│   └── ...                            # Demais secoes do dashboard
+│   └── ...                            # Other dashboard sections
 ├── hooks/
-│   ├── useDashboardData.ts            # Data fetching (5 APIs paralelo)
-│   └── useVisitorState.tsx            # Estado do visitante (context)
+│   ├── useDashboardData.ts            # Data fetching (5 APIs in parallel)
+│   └── useVisitorState.tsx            # Visitor state (context)
 ├── api/
 │   ├── visitor/state/session/dismiss/migrate/  # Visitor tracking
-│   ├── subscribe/                     # Captura email
+│   ├── subscribe/                     # Email capture
 │   ├── cron/refresh-elections/        # Cron 60s → Redis + Neon
-│   ├── cron/refresh-polls/            # Cron 3x/dia → TSE
-│   ├── admin/analytics/               # Analytics detalhado (Neon)
+│   ├── cron/refresh-polls/            # Cron 3x/day → TSE
+│   ├── admin/analytics/               # Detailed analytics (Neon)
 │   ├── admin/search-console/          # Google Search Console API
-│   ├── admin/metrics/                 # Dashboard executivo
-│   └── ...                            # Demais endpoints
+│   ├── admin/metrics/                 # Executive dashboard
+│   └── ...                            # Other endpoints
 ├── lib/
 │   ├── polymarket/                    # Client, registry, bootstrap, persist
 │   ├── email/                         # Subscribers, Resend, templates
-│   ├── cache/                         # Cache multi-camada
-│   └── kv.ts                          # Wrapper Upstash Redis
+│   ├── cache/                         # Multi-layer cache
+│   └── kv.ts                          # Upstash Redis wrapper
 lib/
 ├── db.ts                              # Prisma singleton (Neon)
-├── visitor/constants.ts               # Constantes centralizadas do visitor system
+├── visitor/constants.ts               # Centralized visitor system constants
 ├── visitor/id.ts                      # Visitor ID (cookie + localStorage)
-├── seo/metadata.ts                    # buildMetadata() com claim + hreflang
-├── seo/schema.ts                      # 6 schemas JSON-LD
+├── seo/metadata.ts                    # buildMetadata() with claim + hreflang
+├── seo/schema.ts                      # 6 JSON-LD schemas
 ├── validations/index.ts               # Zod schemas
 ├── audit.ts                           # Audit trail
 ├── consent.ts                         # LGPD consent
@@ -141,77 +143,77 @@ lib/
 ├── governance/                        # Data lifecycle, LGPD
 └── security/                          # Output sanitization
 prisma/
-├── schema.prisma                      # 20 tabelas, 6 schemas
+├── schema.prisma                      # 20 tables, 6 schemas
 └── migrations/
 public/
-├── flags/                             # 16 bandeiras SVG (cross-platform)
-├── geo/world-110m.json                # TopoJSON para mapa global
+├── flags/                             # 16 SVG flags (cross-platform)
+├── geo/world-110m.json                # TopoJSON for global map
 └── ...
 ```
 
 ---
 
-## Internacionalizacao (i18n)
+## Internationalization (i18n)
 
-| Idioma | Rota | Status |
-|--------|------|--------|
-| Portugues (BR) | `/pt-BR` | Default |
-| English | `/en` | Completo |
-| Espanol | `/es` | Completo |
+| Language | Route | Status |
+|----------|-------|--------|
+| Portuguese (BR) | `/pt-BR` | Default |
+| English | `/en` | Complete |
+| Spanish | `/es` | Complete |
 
-- **244+ chaves** × 3 idiomas = 732+ strings traduzidas
-- **Language Switcher**: dropdown na landing e no dashboard
-- **Cookie** `NEXT_LOCALE`: persiste preferencia
-- **Content-Language**: header dinamico por locale no middleware
-- **Geo tags**: `geo.region` e `geo.placename` por locale (BR/Global/LATAM)
+- **244+ keys** × 3 languages = 732+ translated strings
+- **Language Switcher**: dropdown on landing and dashboard
+- **Cookie** `NEXT_LOCALE`: persists preference
+- **Content-Language**: dynamic header per locale in middleware
+- **Geo tags**: `geo.region` and `geo.placename` per locale (BR/Global/LATAM)
 
 ---
 
 ## SEO / GEO
 
-### Metadata por Locale
+### Per-Locale Metadata
 
-Cada pagina gera metadata nativa no idioma correto via `buildMetadata()`:
-- Title com claim "Plataforma Inedita no Mundo"
-- Description com posicionamento unico
-- Canonical + hreflang cruzado (pt-BR, en, es, x-default)
+Each page generates native metadata in the correct language via `buildMetadata()`:
+- Title with "Unprecedented Platform Worldwide" claim
+- Description with unique positioning
+- Canonical + cross-linked hreflang (pt-BR, en, es, x-default)
 - Open Graph + Twitter Card
-- Geo tags por locale
+- Geo tags per locale
 
 ### Google Search Console
 
-Integrado via `POST /api/admin/search-console`:
-- Impressoes, cliques, CTR, posicao media
-- Breakdown por pagina, query, pais, device
-- Secao especial `seoGeo` para paginas de pais
+Integrated via `POST /api/admin/search-console`:
+- Impressions, clicks, CTR, average position
+- Breakdown by page, query, country, device
+- Special `seoGeo` section for country pages
 - Auth: Bearer CRON_SECRET
 
-### Schema.org (6 tipos)
+### Schema.org (6 types)
 
 Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList
 
-### Paginas indexaveis (~120+ com hreflang)
+### Indexable Pages (~120+ with hreflang)
 
-| Tipo | Paginas | Prioridade |
-|------|---------|-----------|
+| Type | Pages | Priority |
+|------|-------|----------|
 | Landing page | 3 | 1.0 |
 | Dashboard | 3 | 0.95 |
-| Mapa Global | 3 | 0.9 |
-| Pais (13 × 3) | 39 | 0.8 |
-| Eleicao (13 × 3) | 39 | 0.7-0.9 |
-| Institucional (7 × 3) | 21 | 0.8 |
-| Regiao (2 × 3) | 6 | 0.85 |
+| Global Map | 3 | 0.9 |
+| Country (13 × 3) | 39 | 0.8 |
+| Election (13 × 3) | 39 | 0.7-0.9 |
+| Institutional (7 × 3) | 21 | 0.8 |
+| Region (2 × 3) | 6 | 0.85 |
 
 ---
 
-## Mapa Global de Eleicoes
+## Global Elections Map
 
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
-- **14 paises** com dados ao vivo do Polymarket
-- **Bandeiras SVG** — visiveis em todos os dispositivos (Windows, Mac, mobile)
-- **Volume com label**: "Vol: $53.4M (somatorio 6 mercados)" quando multiplos mercados
-- **Hover** — tooltip com candidato lider, probabilidade, volume
-- **Click** — drawer lateral com breakdown de candidatos
+- **14 countries** with live Polymarket data
+- **SVG flags** — visible on all devices (Windows, Mac, mobile)
+- **Volume with label**: "Vol: $53.4M (sum of 6 markets)" when multiple markets
+- **Hover** — tooltip with leading candidate, probability, volume
+- **Click** — side drawer with candidate breakdown
 - **Zoom/Pan** — d3-zoom (1x-8x)
 
 ---
@@ -219,120 +221,120 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList
 ## Analytics
 
 ### /api/admin/analytics
-Analytics detalhado do Neon: curva de leads, pipeline health, engajamento, audit logs, AI runs.
+Detailed analytics from Neon: lead curves, pipeline health, engagement, audit logs, AI runs.
 
 ### /api/admin/search-console
-Dados do Google Search Console: impressoes, cliques, CTR, posicao media, performance de paginas de pais (SEO GEO).
+Google Search Console data: impressions, clicks, CTR, average position, country page performance (SEO GEO).
 
 ### /api/admin/metrics
-Dashboard executivo: contagens pontuais de leads, precos, audit logs, LLM runs, deletion requests.
+Executive dashboard: point-in-time counts of leads, prices, audit logs, LLM runs, deletion requests.
 
 ---
 
-## Ingestao TSE (Pesquisas Eleitorais)
+## TSE Ingestion (Electoral Polls)
 
 ```
-Cron 3x/dia (6h, 12h, 18h)
+Cron 3x/day (6am, 12pm, 6pm)
   → cdn.tse.jus.br/pesquisa_eleitoral_2026.zip
-  → Parse CSV (180+ pesquisas presidenciais)
+  → Parse CSV (180+ presidential polls)
   → Neon: research.sources + research_runs + research_findings
-  → Cruzamento: pesquisas recentes (15 dias) × odds Polymarket
+  → Cross-reference: recent polls (15 days) × Polymarket odds
 ```
 
 ---
 
-## Banco de Dados (Neon Postgres)
+## Database (Neon Postgres)
 
-6 schemas, 20 tabelas, UUID PKs, timestamptz:
+6 schemas, 20 tables, UUID PKs, timestamptz:
 
-| Schema | Tabelas | Proposito |
-|--------|---------|-----------|
-| **iam** | users, user_preferences, user_consents | Identidade, LGPD |
+| Schema | Tables | Purpose |
+|--------|--------|---------|
+| **iam** | users, user_preferences, user_consents | Identity, LGPD |
 | **crm** | leads, contact_events, visitor_states | Leads, visitor tracking |
-| **research** | sources, runs, findings, reports, cross_signals | Pesquisas, cruzamentos |
-| **market** | events, markets, outcomes, prices, forecasts | Polymarket, serie temporal |
-| **governance** | audit_logs, deletion_requests | Auditoria, LGPD Art. 18 |
-| **ai** | llm_runs, model_outputs | Tracking IA, guardrails |
+| **research** | sources, runs, findings, reports, cross_signals | Polls, cross-references |
+| **market** | events, markets, outcomes, prices, forecasts | Polymarket, time series |
+| **governance** | audit_logs, deletion_requests | Audit, LGPD Art. 18 |
+| **ai** | llm_runs, model_outputs | AI tracking, guardrails |
 
 ---
 
-## Seguranca
+## Security
 
-| Camada | Medidas |
-|--------|---------|
-| **Web** | CSP (unsafe-eval so em dev), HSTS, X-Frame-Options, Referrer-Policy |
-| **API** | Rate limiting distribuido (Upstash), timeout, slug validation |
+| Layer | Measures |
+|-------|----------|
+| **Web** | CSP (unsafe-eval only in dev), HSTS, X-Frame-Options, Referrer-Policy |
+| **API** | Distributed rate limiting (Upstash), timeout, slug validation |
 | **Auth** | timing-safe compare, Bearer token, x-vercel-cron |
-| **Email** | Honeypot anti-bot, rate limit 5/IP/hora, Zod validation |
+| **Email** | Honeypot anti-bot, rate limit 5/IP/hour, Zod validation |
 | **Visitor** | Backend source of truth, Redis SET NX dedup, 3s timeout |
-| **IA** | Prompt injection detection, output sanitization, risk scoring |
-| **LGPD** | Consent tracking, exclusao atomica, anonimizacao, audit trail |
+| **AI** | Prompt injection detection, output sanitization, risk scoring |
+| **LGPD** | Consent tracking, atomic deletion, anonymization, audit trail |
 
 ---
 
 ## Tech Stack
 
-| Tecnologia | Uso |
-|---|---|
+| Technology | Usage |
+|------------|-------|
 | **Next.js 14** | App Router, RSC, TypeScript, Middleware |
-| **Prisma 7** | ORM com multiSchema (6 schemas, 20 tabelas) |
-| **Neon Postgres** | Banco principal (pooled + unpooled) |
-| **D3.js + TopoJSON** | Mapa global SVG interativo |
+| **Prisma 7** | ORM with multiSchema (6 schemas, 20 tables) |
+| **Neon Postgres** | Main database (pooled + unpooled) |
+| **D3.js + TopoJSON** | Interactive SVG global map |
 | **Tailwind CSS** | Design system |
-| **Zod** | Validacao de inputs |
+| **Zod** | Input validation |
 | **Vercel** | Hosting, Edge Runtime, Cron |
 | **Upstash Redis** | Hot cache, rate limiting, session dedup |
-| **Resend** | Email transacional |
-| **Polymarket API** | Mercados de previsao (18 mercados, 14 paises) |
-| **Google News RSS + Firecrawl** | Noticias ao vivo |
-| **Vercel Analytics** | Metricas de trafego |
+| **Resend** | Transactional email |
+| **Polymarket API** | Prediction markets (18 markets, 14 countries) |
+| **Google News RSS + Firecrawl** | Live news |
+| **Vercel Analytics** | Traffic metrics |
 
 ---
 
 ## APIs (22+ endpoints)
 
-| Endpoint | Descricao |
-|---|---|
-| `/api/visitor/state` | Estado do visitante (get/create) |
-| `/api/visitor/session` | Registra sessao qualificada |
-| `/api/visitor/dismiss` | Registra dismissal popup |
-| `/api/visitor/migrate` | Migra inscritos legados |
-| `/api/subscribe` | Captura email (visitorId + captureSource) |
-| `/api/global-map` | Eleicoes globais (Redis → Polymarket) |
+| Endpoint | Description |
+|----------|-------------|
+| `/api/visitor/state` | Visitor state (get/create) |
+| `/api/visitor/session` | Record qualified session |
+| `/api/visitor/dismiss` | Record popup dismissal |
+| `/api/visitor/migrate` | Migrate legacy subscribers |
+| `/api/subscribe` | Email capture (visitorId + captureSource) |
+| `/api/global-map` | Global elections (Redis → Polymarket) |
 | `/api/cron/refresh-elections` | Cron 60s |
-| `/api/cron/refresh-polls` | Cron 3x/dia TSE |
-| `/api/polymarket` | Odds BR |
-| `/api/polls` / `/api/polls/tse` | Pesquisas |
-| `/api/news` | Noticias |
-| `/api/admin/analytics` | Analytics detalhado |
+| `/api/cron/refresh-polls` | Cron 3x/day TSE |
+| `/api/polymarket` | BR odds |
+| `/api/polls` / `/api/polls/tse` | Polls |
+| `/api/news` | News |
+| `/api/admin/analytics` | Detailed analytics |
 | `/api/admin/search-console` | Google Search Console |
-| `/api/admin/metrics` | Dashboard executivo |
-| `/api/admin/data-request` | LGPD exclusao/exportacao |
+| `/api/admin/metrics` | Executive dashboard |
+| `/api/admin/data-request` | LGPD deletion/export |
 | `/api/health` | Health check |
-| `/api/translations` | Pipeline traducao IA |
-| `/api/market/history` | Serie temporal odds |
+| `/api/translations` | AI translation pipeline |
+| `/api/market/history` | Odds time series |
 
 ---
 
-## O que significa AFOS?
+## What does AFOS mean?
 
-| Letra | Significado | Descricao |
-|---|---|---|
-| **A** | Astuteness | Inteligencia para cruzar dados e gerar clareza |
-| **F** | Faith | Confianca em informacoes verdadeiras e imparciais |
-| **O** | Optimism | Visao de futuro baseada em inovacao e transparencia |
-| **S** | Synthesis | Transformar dados complexos em entendimento simples |
+| Letter | Meaning | Description |
+|--------|---------|-------------|
+| **A** | Astuteness | Intelligence to cross-reference data and generate clarity |
+| **F** | Faith | Trust in truthful and impartial information |
+| **O** | Optimism | Future vision based on innovation and transparency |
+| **S** | Synthesis | Transforming complex data into simple understanding |
 
 ---
 
-## Configuracao
+## Setup
 
 ```bash
 git clone https://github.com/AFOS-Analytics/afos-analitica-2026.git
 cd afos-analitica-2026
 npm install
 cp .env.example .env.local
-# Preencher env vars (ver .env.example)
+# Fill in env vars (see .env.example)
 npx prisma migrate dev
 npx tsx scripts/seed-dev.ts
 npm run dev
@@ -340,23 +342,24 @@ npm run dev
 
 ---
 
-## Documentacao
+## Documentation
 
-| Documento | Conteudo |
-|-----------|---------|
-| [docs/DATABASE.md](docs/DATABASE.md) | Schemas, tabelas, convencoes |
-| [docs/LGPD.md](docs/LGPD.md) | Matriz PII, retencao, runbooks |
-| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Deploy, rollback, observabilidade |
+| Document | Content |
+|----------|---------|
+| [docs/DATABASE.md](docs/DATABASE.md) | Schemas, tables, conventions |
+| [docs/LGPD.md](docs/LGPD.md) | PII matrix, retention, runbooks |
+| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Deploy, rollback, observability |
+| [V1 README](docs/README-v1.md) | How it all started |
 
 ---
 
 ## Claude Code
 
-| Comando | Descricao |
-|---------|-----------|
-| `/atualizar` | Atualizacao completa do AFOS Analytics |
-| `/atualizar-pesquisas` | Ingestao de pesquisas eleitorais do TSE |
+| Command | Description |
+|---------|-------------|
+| `/atualizar` | Full AFOS Analytics update |
+| `/atualizar-pesquisas` | TSE electoral polls ingestion |
 
 ---
 
-*AFOS Analytics — Plataforma inédita no mundo: Inteligência de Risco Político Eleitoral em tempo real.*
+*AFOS Analytics — Unprecedented platform worldwide: Real-time Political Electoral Risk Intelligence.*
