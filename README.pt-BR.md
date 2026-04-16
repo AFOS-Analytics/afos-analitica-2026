@@ -1,5 +1,7 @@
 # AFOS Analytics
 
+![AFOS Analytics](public/social-preview.png)
+
 🇧🇷 Português | 🇺🇸 [Read in English](README.md)
 
 Plataforma inédita no mundo
