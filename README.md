@@ -1,10 +1,17 @@
 # AFOS Analytics
 
-**Plataforma inédita no mundo — cruzamento de mercados de previsão com pesquisas eleitorais em tempo real em qualquer eleições e institutos de pesquisas no mundo todo.**
+Plataforma inédita no mundo
+
+**Cruzamento em tempo real entre mercados de previsão e pesquisas eleitorais, agregando mais de 400 fontes** (5 grandes mercados globais de previsão + 100+ institutos de pesquisa + 300+ meios de comunicação e redes sociais, 20+ idiomas) em **14+ países.**
+
+![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
 **[afos-analytics.com](https://afos-analytics.com)**
 
-> *Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency.*
+> *Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency worldwide.*
+
+> Pipeline escalável com cron, Redis e Neon. Adicione fontes por país conforme as eleições se aproximam.
 
 ---
 
