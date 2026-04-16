@@ -40,3 +40,4 @@ next-env.d.ts
 
 # documents
 *.pdf
+docs/pipeline-launch-opensource.html
