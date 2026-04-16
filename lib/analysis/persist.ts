@@ -4,6 +4,9 @@
  * Persiste análises (cards + criteriosa) no Neon Postgres via AnalysisReport.
  * Fire-and-forget: não bloqueia a resposta da API.
  * Cada snapshot diário gera um registro único (slug = tipo + data).
+ *
+ * TODO: Wire into cron pipeline (inline import in ISR routes conflicts with Vercel build).
+ * Planned integration: call from a dedicated /api/cron/persist-analysis route.
  */
 
 type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
