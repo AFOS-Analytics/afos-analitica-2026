@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFOS Analytics — Pipeline de Lançamento Open Source</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  #lock-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0F52BA 0%, #1a6edb 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #lock-screen h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  #lock-screen p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  #lock-screen input {
+    padding: 12px 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    width: 240px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  #lock-screen input::placeholder { color: rgba(255,255,255,0.4); }
+  #lock-screen input:focus { border-color: rgba(255,255,255,0.8); }
+
+  #lock-screen .error {
+    color: #fca5a5;
+    font-size: 12px;
+    margin-top: 8px;
+    min-height: 18px;
+  }
+
+  #content { display: none; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8fafc;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media print {
+    body { padding: 20px; font-size: 11px; }
+    .phase { page-break-inside: avoid; }
+    .no-print { display: none; }
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #0F52BA;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .date {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 32px;
+  }
+
+  .summary-box {
+    background: linear-gradient(135deg, #0F52BA 0%, #1a6edb 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 32px;
+  }
+
+  .summary-box h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .summary-item {
+    text-align: center;
+  }
+
+  .summary-item .number {
+    font-size: 32px;
+    font-weight: 800;
+    display: block;
+  }
+
+  .summary-item .label {
+    font-size: 11px;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .phase {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
+  }
+
+  .phase-number {
+    background: #0F52BA;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .phase-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .phase-meta {
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .phase-hours {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F52BA;
+  }
+
+  .phase-days {
+    font-size: 11px;
+    color: #888;
+  }
+
+  .phase-why {
+    background: #f0f7ff;
+    border-left: 3px solid #0F52BA;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: #444;
+  }
+
+  .phase-why strong {
+    color: #0F52BA;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  table th {
+    background: #f8fafc;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .task-id {
+    color: #0F52BA;
+    font-weight: 600;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .task-name {
+    font-weight: 500;
+  }
+
+  .task-detail {
+    color: #666;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .hours-badge {
+    background: #e8f0fe;
+    color: #0F52BA;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .who-badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .who-claude { background: #f3e8ff; color: #7c3aed; }
+  .who-andre { background: #fef3c7; color: #d97706; }
+  .who-both { background: #dcfce7; color: #16a34a; }
+
+  .daily-schedule {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .daily-schedule h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+  }
+
+  .day-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .day-label {
+    background: #0F52BA;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 12px;
+    white-space: nowrap;
+    min-width: 65px;
+    text-align: center;
+  }
+
+  .day-label.launch { background: #DC2626; }
+  .day-label.post { background: #16a34a; }
+
+  .day-content {
+    flex: 1;
+  }
+
+  .day-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .day-content p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 2px;
+  }
+
+  .day-hours {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F52BA;
+    white-space: nowrap;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .legend-dot.claude { background: #7c3aed; }
+  .legend-dot.andre { background: #d97706; }
+  .legend-dot.both { background: #16a34a; }
+
+  .tip {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #92400e;
+    margin-top: 12px;
+  }
+
+  .tip strong { color: #d97706; }
+
+  .footer-doc {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    color: #999;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<div id="lock-screen">
+  <h1>AFOS Analytics</h1>
+  <p>Documento interno — acesso restrito</p>
+  <input type="password" id="pw" placeholder="Senha" autofocus onkeydown="if(event.key==='Enter')unlock()">
+  <div class="error" id="err"></div>
+</div>
+
+<div id="content">
+
+<h1>AFOS Analytics</h1>
+<p class="subtitle">Pipeline de Lançamento Open Source — Guia Completo</p>
+<p class="date">Documento interno — Abril 2026</p>
+
+<div class="summary-box">
+  <h2>Resumo Executivo</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <span class="number">7</span>
+      <span class="label">Fases</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">~50h</span>
+      <span class="label">Horas de trabalho</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">12</span>
+      <span class="label">Dias úteis</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">4-5h</span>
+      <span class="label">Por dia (ritmo)</span>
+    </div>
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot claude"></div> Claude executa (você revisa)</div>
+  <div class="legend-item"><div class="legend-dot andre"></div> Você executa (Claude orienta)</div>
+  <div class="legend-item"><div class="legend-dot both"></div> Juntos em tempo real</div>
+</div>
+
+<!-- FASE 0 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">0</div>
+    <div>
+      <div class="phase-title">Auditoria de Segurança</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~3h</div>
+      <div class="phase-days">Dia 1 (manhã)</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> Quando o repo ficar público, qualquer pessoa no mundo poderá ler cada linha de código e cada commit do histórico. Se houver uma API key, token ou senha em qualquer lugar — mesmo num commit antigo que já foi "apagado" — alguém vai encontrar. Isso acontece em minutos, não dias. Bots varrem repos novos automaticamente buscando secrets.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">0.1</td>
+        <td>
+          <div class="task-name">Varrer secrets em todos os arquivos</div>
+          <div class="task-detail">Buscar API keys, tokens, senhas hardcoded. Inclui o token Vercel que está no skill /atualizar.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">0.2</td>
+        <td>
+          <div class="task-name">Varrer histórico git</div>
+          <div class="task-detail">Verificar se algum commit antigo contém secret no diff. Se sim, será necessário reescrever o histórico com git filter-branch.</div>
+        </td>
+        <td><span class="hours-badge">45min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">0.3</td>
+        <td>
+          <div class="task-name">Validar .env.example</div>
+          <div class="task-detail">Confirmar que todas as variáveis necessárias estão listadas, sem valores reais. Quem clonar o repo precisa saber o que configurar.</div>
+        </td>
+        <td><span class="hours-badge">20min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">0.4</td>
+        <td>
+          <div class="task-name">Validar .gitignore</div>
+          <div class="task-detail">Confirmar que .env.local, node_modules, .next, e qualquer arquivo sensível estão sendo ignorados pelo git.</div>
+        </td>
+        <td><span class="hours-badge">10min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">0.5</td>
+        <td>
+          <div class="task-name">Remover dados pessoais do código</div>
+          <div class="task-detail">Verificar se seu email pessoal, IP ou dados sensíveis aparecem em algum arquivo ou comentário.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">0.6</td>
+        <td>
+          <div class="task-name">Revisar resultado juntos</div>
+          <div class="task-detail">Você valida o que foi encontrado e decide como resolver cada item.</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Dica:</strong> Essa fase é a mais importante. Todo o resto pode ser ajustado depois do lançamento. Um secret vazado não pode ser "desvazado".
+  </div>
+</div>
+
+<!-- FASE 1 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">1</div>
+    <div>
+      <div class="phase-title">Preparação do Repositório</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~6h</div>
+      <div class="phase-days">Dias 1-2</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> Um desenvolvedor leva 30 segundos para decidir se um repo é sério ou amador. Eles olham: tem CONTRIBUTING? Tem issues abertas? Tem templates? Tem lint? Projetos sem isso passam a impressão de "projeto pessoal jogado no GitHub". Projetos com isso passam a impressão de "isso aqui é profissional, posso contribuir". Você quer a segunda impressão.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">1.1</td>
+        <td>
+          <div class="task-name">CONTRIBUTING.md</div>
+          <div class="task-detail">Documento que explica: como rodar o projeto local, padrões de código, como abrir PR, como reportar bug. É o "manual do contribuidor".</div>
+        </td>
+        <td><span class="hours-badge">1.5h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.2</td>
+        <td>
+          <div class="task-name">CODE_OF_CONDUCT.md</div>
+          <div class="task-detail">Código de conduta da comunidade. Usa o modelo "Contributor Covenant" (padrão da indústria). Diz que a comunidade é respeitosa e inclusiva.</div>
+        </td>
+        <td><span class="hours-badge">20min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.3</td>
+        <td>
+          <div class="task-name">SECURITY.md</div>
+          <div class="task-detail">Como reportar vulnerabilidades de segurança de forma privada (email), em vez de abrir issue pública. Padrão em projetos sérios.</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.4</td>
+        <td>
+          <div class="task-name">Issue templates (Bug + Feature)</div>
+          <div class="task-detail">Formulários padronizados para quando alguém abre uma issue. Bug report pede: o que aconteceu, o que esperava, como reproduzir. Feature request pede: o que quer, por quê.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.5</td>
+        <td>
+          <div class="task-name">PR template</div>
+          <div class="task-detail">Checklist que aparece quando alguém abre um Pull Request. Ex: "Testei localmente? Atualizei documentação? Lint passou?"</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.6</td>
+        <td>
+          <div class="task-name">Labels no GitHub</div>
+          <div class="task-detail">Etiquetas coloridas: "good first issue" (verde, para iniciantes), "help wanted" (amarelo), "enhancement", "bug", "documentation". Organiza as issues.</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.7</td>
+        <td>
+          <div class="task-name">Criar 5-10 issues iniciais</div>
+          <div class="task-detail">Issues com "good first issue" que convidam devs a contribuir. Ex: "Add country: Mexico", "Translate to French", "Add PredictIt as data source". Mostra que o projeto está vivo e aberto.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.8</td>
+        <td>
+          <div class="task-name">Configurar ESLint</div>
+          <div class="task-detail">Ferramenta que verifica qualidade do código automaticamente. Quem clonar e rodar "npm run lint" precisa funcionar. Hoje está pendente de configuração.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.9</td>
+        <td>
+          <div class="task-name">Descrição + Topics no GitHub</div>
+          <div class="task-detail">A frase curta que aparece abaixo do nome do repo no GitHub + tags como "prediction-markets", "elections", "polymarket", "open-source", "next-js". Ajuda na busca.</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">1.10</td>
+        <td>
+          <div class="task-name">Social Preview Image</div>
+          <div class="task-detail">Imagem 1280x640px que aparece quando alguém compartilha o link do repo no X, Slack, WhatsApp. Precisa ser atraente — é a "capa" do projeto.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FASE 2 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">2</div>
+    <div>
+      <div class="phase-title">Assets Visuais</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~10h</div>
+      <div class="phase-days">Dias 3-5</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> 80% das pessoas que vão ver o seu projeto NÃO vão clicar no link do site. Elas vão olhar o README no GitHub e decidir em segundos se é interessante. Se não tiver imagens, GIF ou vídeo — elas passam direto. Um screenshot bem feito do dashboard com dados reais vale mais que 10 parágrafos de texto.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">2.1</td>
+        <td>
+          <div class="task-name">Screenshot do Dashboard</div>
+          <div class="task-detail">Captura de tela do dashboard com dados reais visíveis — Polymarket, pesquisas, candidatos. Resolução alta, full width. Tirar no Chrome com DevTools aberto para simular tela grande.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">2.2</td>
+        <td>
+          <div class="task-name">Screenshot do Mapa Global</div>
+          <div class="task-detail">Mapa D3.js mostrando países coloridos, com tooltip visível em um país (ex: Brasil). Mostra que é multi-país.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">2.3</td>
+        <td>
+          <div class="task-name">Screenshot da Landing Page</div>
+          <div class="task-detail">Landing page nos dois temas (azul/branco) mostrando o visual profissional.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">2.4</td>
+        <td>
+          <div class="task-name">GIF animado (15-20 segundos)</div>
+          <div class="task-detail">Gravação rápida navegando: landing → dashboard → scroll nas seções → mapa global → click num país. Usar ferramenta como ScreenToGif (Windows, grátis) ou LICEcap. O GIF vai no topo do README.</div>
+        </td>
+        <td><span class="hours-badge">2.5h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">2.5</td>
+        <td>
+          <div class="task-name">Vídeo demo (60-90 segundos)</div>
+          <div class="task-detail">Screencast com narração em inglês mostrando o produto. Não precisa ser profissional — pode ser gravado com OBS Studio (grátis) + microfone do notebook. O importante é mostrar o produto funcionando e explicar o diferencial em 1 minuto. Vai para o Product Hunt e YouTube.</div>
+        </td>
+        <td><span class="hours-badge">4h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">2.6</td>
+        <td>
+          <div class="task-name">Inserir assets no README (EN + PT-BR)</div>
+          <div class="task-detail">Adicionar screenshots e GIF nos dois READMEs, logo após o header e antes da seção "About". As imagens ficam em public/ ou num serviço como imgur (para não pesar o repo).</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Dica para iniciante:</strong> O vídeo é a tarefa mais demorada. Não busque perfeição — um vídeo "bom o suficiente" gravado em 1 take é melhor que um vídeo "perfeito" que nunca sai. Escreva um roteiro de 8-10 frases antes de gravar. Pratique 2x. Grave na 3ª.
+  </div>
+</div>
+
+<!-- FASE 3 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">3</div>
+    <div>
+      <div class="phase-title">Textos de Lançamento</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~10h</div>
+      <div class="phase-days">Dias 5-8</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> Cada plataforma tem um público e um tom diferentes. O que funciona no Hacker News (técnico, sem hype) seria ignorado no Product Hunt (visual, storytelling). E vice-versa. Preparar os textos com antecedência evita escrever apressado no dia do lançamento — quando o foco precisa ser responder comentários, não redigir posts.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">3.1</td>
+        <td>
+          <div class="task-name">Título + texto Hacker News</div>
+          <div class="task-detail"><strong>Tom:</strong> Técnico, factual, zero hype. <strong>Formato:</strong> "Show HN: [título ~80 chars]" + primeiro comentário com 10-15 linhas explicando: o que é, por que fiz, stack técnico, link do repo e demo. HN odeia autopromoção — o texto precisa soar como "fiz isso, achei que vocês gostariam de ver".</div>
+        </td>
+        <td><span class="hours-badge">2h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.2</td>
+        <td>
+          <div class="task-name">Product Hunt page</div>
+          <div class="task-detail"><strong>Tom:</strong> Visual, polido, amigável. <strong>Precisa de:</strong> tagline (1 frase), descrição (2-3 parágrafos), 5 screenshots em sequência, vídeo demo, links, categorias. Você cria conta como "Maker" e agenda o launch. A comunidade PH vota durante 24h.</div>
+        </td>
+        <td><span class="hours-badge">2.5h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.3</td>
+        <td>
+          <div class="task-name">Thread X/Twitter (Inglês)</div>
+          <div class="task-detail"><strong>Tom:</strong> Storytelling técnico. <strong>Formato:</strong> 5-7 tweets encadeados. Tweet 1: gancho + screenshot. Tweets 2-5: o que faz, diferencial, stack, dados. Tweet final: link repo + demo. Cada tweet com imagem ou GIF.</div>
+        </td>
+        <td><span class="hours-badge">1.5h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.4</td>
+        <td>
+          <div class="task-name">Thread X/Twitter (Português)</div>
+          <div class="task-detail">Versão brasileira da thread. Não é tradução literal — adaptar para o contexto e referências BR. Marcar influenciadores brasileiros de tech.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.5</td>
+        <td>
+          <div class="task-name">Posts Reddit (3-4 subreddits)</div>
+          <div class="task-detail"><strong>r/dataisbeautiful:</strong> foco no mapa + visualização. <strong>r/opensource:</strong> foco no projeto. <strong>r/webdev:</strong> foco no stack técnico. <strong>r/Polymarket:</strong> foco no uso dos dados deles. Cada sub tem regras — ler antes de postar.</div>
+        </td>
+        <td><span class="hours-badge">1.5h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.6</td>
+        <td>
+          <div class="task-name">Email de cold outreach (template)</div>
+          <div class="task-detail">3 linhas máximo. Sem pitch, sem pedir nada. Só mostrar. "We built X. Live at Y. Code at Z. Thought you'd find it relevant." Um template que funciona para Polymarket, Kalshi, jornalistas, newsletters.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">3.7</td>
+        <td>
+          <div class="task-name">One-pager / Press Release</div>
+          <div class="task-detail">1 página PDF: o que é o AFOS, diferencial (primeiro do mundo), números (14 países, 400+ fontes), stack, link. Para enviar a jornalistas que peçam mais info. Visual limpo, marca AFOS.</div>
+        </td>
+        <td><span class="hours-badge">1.5h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FASE 4 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">4</div>
+    <div>
+      <div class="phase-title">Lista de Contatos</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~4h</div>
+      <div class="phase-days">Dias 8-9</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> Cold outreach funciona quando é personalizado e direcionado. Enviar email genérico para "info@empresa.com" não funciona. Você precisa encontrar a pessoa certa (dev relations, editor, fundador) e explicar em 3 linhas por que isso importa para ELA especificamente. A lista precisa estar pronta antes do Dia D — no dia do lançamento você só aperta "enviar".
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">4.1</td>
+        <td>
+          <div class="task-name">Contatos Polymarket + Kalshi + Verso</div>
+          <div class="task-detail">Encontrar emails/X de: dev relations, partnerships, fundadores. Polymarket (Shayne Coplan), Kalshi (Tarek Mansour), Verso (founders). 2-3 contatos por empresa.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">4.2</td>
+        <td>
+          <div class="task-name">Contatos jornalistas tech</div>
+          <div class="task-detail">TechCrunch, The Verge, Wired, Rest of World (LATAM), Ars Technica. Buscar quem cobre: open source, prediction markets, ou LATAM tech. 5-10 jornalistas com email.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">4.3</td>
+        <td>
+          <div class="task-name">Contatos newsletters</div>
+          <div class="task-detail">TLDR (tldr.tech), Hacker Newsletter, Console.dev, Changelog, This Week in React, bytes.dev. Cada uma tem formulário de submissão ou email de editor.</div>
+        </td>
+        <td><span class="hours-badge">45min</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">4.4</td>
+        <td>
+          <div class="task-name">Contatos acadêmicos + influenciadores</div>
+          <div class="task-detail">Philip Tetlock (superforecasting), Nate Silver (X), Andrew Gelman (blog). BR: Filipe Deschamps, Akita, Fabio Akita. Contato via X ou email público.</div>
+        </td>
+        <td><span class="hours-badge">45min</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">4.5</td>
+        <td>
+          <div class="task-name">Organizar em planilha</div>
+          <div class="task-detail">Nome, empresa, canal (email/X/LinkedIn), status (não enviado/enviado/respondeu). Para acompanhar no dia D e depois.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- FASE 5 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">5</div>
+    <div>
+      <div class="phase-title">Pré-Launch (Testes e Agendamento)</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~5h</div>
+      <div class="phase-days">Dias 9-11</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> O dia do lançamento precisa ser 100% execução, 0% improvisação. Tudo que pode ser testado e agendado antes, deve ser. Se o site cair durante o pico de tráfego do HN, você perde a oportunidade — não tem como "relançar". Se o git clone não funcionar do zero, os devs vão embora em 30 segundos.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">5.1</td>
+        <td>
+          <div class="task-name">Testar git clone + setup do zero</div>
+          <div class="task-detail">Num computador ou pasta limpa, seguir o README passo a passo: git clone, npm install, configurar .env, prisma migrate, seed, npm run dev. Se qualquer passo falhar, corrigir antes de lançar. Esse teste é OBRIGATÓRIO.</div>
+        </td>
+        <td><span class="hours-badge">1.5h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">5.2</td>
+        <td>
+          <div class="task-name">Stress test do site</div>
+          <div class="task-detail">Verificar que afos-analytics.com está estável, cron rodando, dados frescos. Vercel aguenta tráfego bem (CDN global), mas confirmar que Redis e Neon não vão travar com pico de requests.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-claude">Claude</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">5.3</td>
+        <td>
+          <div class="task-name">Agendar Product Hunt</div>
+          <div class="task-detail">Criar conta de Maker no Product Hunt. Montar a page com screenshots, tagline, descrição, vídeo. Agendar para o dia D à meia-noite Pacific Time (PH roda em ciclos de 24h PT).</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">5.4</td>
+        <td>
+          <div class="task-name">Revisar todos os textos</div>
+          <div class="task-detail">Reler HN post, threads X, Reddit, emails. Idealmente pedir para alguém nativo em inglês revisar. Se não tiver, usar o próprio Claude para checagem final.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">5.5</td>
+        <td>
+          <div class="task-name">Definir data de lançamento</div>
+          <div class="task-detail"><strong>Melhores dias:</strong> terça, quarta ou quinta. <strong>Pior dia:</strong> sexta/sábado (menos gente online). <strong>Horário:</strong> 9am Eastern Time (10am BRT). HN e PH têm pico entre 9-11am ET.</div>
+        </td>
+        <td><span class="hours-badge">15min</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">5.6</td>
+        <td>
+          <div class="task-name">Preparar FAQ mental</div>
+          <div class="task-detail">Perguntas que vão fazer: "How accurate is Polymarket?", "Why not PredictIt/Kalshi?", "Why Apache 2.0?", "How do I add my country?", "What's next?". Ter respostas prontas para copiar e colar.</div>
+        </td>
+        <td><span class="hours-badge">30min</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Dica:</strong> O teste de "git clone do zero" (5.1) é o mais importante desta fase. Se um dev clona e não funciona, ele abre uma issue negativa ou simplesmente vai embora. Nenhum texto bonito compensa setup quebrado.
+  </div>
+</div>
+
+<!-- FASE 6 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">6</div>
+    <div>
+      <div class="phase-title">Dia do Lançamento</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~8h</div>
+      <div class="phase-days">Dia D</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> O lançamento é um evento de 24 horas. Os algoritmos do HN e Product Hunt valorizam velocidade de votos nas primeiras horas. Se você posta e desaparece, perde. Se você posta e responde todos os comentários, o post sobe. Esse dia precisa ser 100% dedicado — sem reuniões, sem distrações.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Hora (BRT)</th><th>Ação</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">01:01</td>
+        <td>
+          <div class="task-name">Product Hunt vai ao ar</div>
+          <div class="task-detail">Agendado na véspera — vai ao ar automaticamente à meia-noite Pacific (4am BRT).</div>
+        </td>
+        <td><span class="who-badge who-andre">Automático</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">09:00</td>
+        <td>
+          <div class="task-name">Mudar repo de PRIVADO para PÚBLICO</div>
+          <div class="task-detail">Settings → Danger Zone → Change visibility → Public. A partir daqui, o mundo vê tudo.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">10:00</td>
+        <td>
+          <div class="task-name">Post no Hacker News</div>
+          <div class="task-detail">"Show HN: [título]" com link do repo. Imediatamente postar o primeiro comentário com a explicação preparada.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">10:15</td>
+        <td>
+          <div class="task-name">Thread X/Twitter (EN + PT-BR)</div>
+          <div class="task-detail">Postar as duas threads preparadas. Fixar o primeiro tweet no perfil.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">10:30</td>
+        <td>
+          <div class="task-name">Posts no Reddit</div>
+          <div class="task-detail">Postar nos 3-4 subreddits. Cada um com texto adaptado.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">11:00</td>
+        <td>
+          <div class="task-name">Disparar cold emails</div>
+          <div class="task-detail">Enviar os emails preparados para Polymarket, Kalshi, jornalistas, newsletters. Personalizar a primeira linha de cada um.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">10:00-22:00</td>
+        <td>
+          <div class="task-name">RESPONDER TODOS OS COMENTÁRIOS</div>
+          <div class="task-detail">HN, Product Hunt, Reddit, X. Cada resposta é uma oportunidade de explicar o projeto. Ser gentil, técnico, humilde. Agradecer feedback. Esta é a tarefa mais importante do dia.</div>
+        </td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Dica:</strong> Reserve o dia inteiro. Não marque nada. Tenha comida pronta. Carregador do celular plugado. Você vai ficar alternando entre HN, PH, Reddit e X o dia todo. É cansativo mas é um dia só — e define tudo.
+  </div>
+</div>
+
+<!-- FASE 7 -->
+<div class="phase">
+  <div class="phase-header">
+    <div class="phase-number">7</div>
+    <div>
+      <div class="phase-title">Pós-Launch (D+1 a D+7)</div>
+    </div>
+    <div class="phase-meta">
+      <div class="phase-hours">~6h</div>
+      <div class="phase-days">Semana seguinte</div>
+    </div>
+  </div>
+
+  <div class="phase-why">
+    <strong>Por que isso importa:</strong> O lançamento abre a porta. A semana seguinte é onde você constrói a comunidade. Devs que deram star estão observando — se você responde issues rápido e aceita PRs, eles voltam. Se o repo fica parado, eles esquecem. "Building in public" (compartilhar métricas e progresso) mantém o momentum.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Tarefa</th><th>Tempo</th><th>Quem</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="task-id">7.1</td>
+        <td>
+          <div class="task-name">Responder todas as issues e PRs</div>
+          <div class="task-detail">Cada issue merece resposta em menos de 24h. Mesmo que seja "Thanks for the suggestion, we'll look into it." Mostra que o projeto está vivo.</div>
+        </td>
+        <td><span class="hours-badge">1h/dia</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">7.2</td>
+        <td>
+          <div class="task-name">Follow-up com contatos</div>
+          <div class="task-detail">Quem não respondeu ao cold email no dia D → reenviar em D+3 com update ("launched yesterday, 500 stars in 24h"). Quem respondeu → continuar conversa.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">7.3</td>
+        <td>
+          <div class="task-name">Postar métricas ("building in public")</div>
+          <div class="task-detail">Tweet/post em D+3 e D+7: "Day 3: X stars, Y forks, contributors from Z countries." Transparência atrai mais contribuidores e press.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-andre">André</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">7.4</td>
+        <td>
+          <div class="task-name">Blog post / artigo</div>
+          <div class="task-detail">"How we built the first platform to cross-reference prediction markets with election polls." Publicar no dev.to, Medium ou blog pessoal. Inclui a história, stack, decisões técnicas, e métricas do lançamento.</div>
+        </td>
+        <td><span class="hours-badge">3h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id">7.5</td>
+        <td>
+          <div class="task-name">Avaliar próximos passos</div>
+          <div class="task-detail">Com base no feedback recebido: o que a comunidade quer? Quais países pediram? Quais features? Priorizar e criar issues.</div>
+        </td>
+        <td><span class="hours-badge">1h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+      <tr>
+        <td class="task-id" style="color:#DC2626;font-weight:700;">7.6</td>
+        <td>
+          <div class="task-name" style="color:#DC2626;font-weight:700;">Integrar Kalshi — 2º mercado de previsão (D+5 a D+7)</div>
+          <div class="task-detail"><strong>Tacada estratégica pós-launch:</strong> Adicionar Kalshi (CFTC-regulated, mercado BR: kxbrpres-26) como segunda fonte de odds ao lado do Polymarket. API pública sem autenticação (api.elections.kalshi.com/trade-api/v2). Replicar padrão existente: lib/kalshi/client.ts + normalize.ts, mesmo cron, Redis key kalshi:*. Dashboard mostra Polymarket vs Kalshi vs Pesquisas lado a lado. <strong>Por que agora:</strong> Gera segunda onda de visibilidade ("just added Kalshi support!") + dá motivo para Kalshi divulgar o AFOS + valida o posicionamento "5 grandes mercados globais" do README. Anunciar no X/HN como update. ~4-6h de trabalho.</div>
+        </td>
+        <td><span class="hours-badge">4-6h</span></td>
+        <td><span class="who-badge who-both">Juntos</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip">
+    <strong>Por que Kalshi em D+5 e não antes:</strong> No dia do lançamento, Polymarket sozinho já é inédito. Guardar Kalshi para a semana seguinte cria uma segunda notícia — mantém o projeto nos feeds e dá motivo para quem já deu star voltar e olhar de novo. É combustível de momentum, não de lançamento.
+  </div>
+</div>
+
+<!-- CRONOGRAMA DIÁRIO -->
+<div class="daily-schedule">
+  <h2>Cronograma Dia a Dia</h2>
+  <p style="color: #666; font-size: 13px; margin-bottom: 16px;">Ritmo: 4-5 horas por dia (realista para quem está aprendendo e trabalhando sozinho)</p>
+
+  <div class="day-card">
+    <div class="day-label">Dia 1</div>
+    <div class="day-content">
+      <h4>Auditoria de Segurança + Início Repo</h4>
+      <p>Fase 0 completa (varredura de secrets, .env, .gitignore) + iniciar CONTRIBUTING.md e CODE_OF_CONDUCT.md</p>
+    </div>
+    <div class="day-hours">~5h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 2</div>
+    <div class="day-content">
+      <h4>Finalizar Preparação do Repo</h4>
+      <p>SECURITY.md, templates de issue/PR, ESLint, criar issues iniciais com "good first issue"</p>
+    </div>
+    <div class="day-hours">~4h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 3</div>
+    <div class="day-content">
+      <h4>Screenshots + Início GIF</h4>
+      <p>Capturar screenshots (dashboard, mapa, landing). Instalar ScreenToGif. Começar a gravar o GIF animado.</p>
+    </div>
+    <div class="day-hours">~4h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 4</div>
+    <div class="day-content">
+      <h4>GIF + Social Preview + Início Vídeo</h4>
+      <p>Finalizar GIF. Criar imagem 1280x640 do social preview. Instalar OBS Studio. Escrever roteiro do vídeo (8-10 frases).</p>
+    </div>
+    <div class="day-hours">~5h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 5</div>
+    <div class="day-content">
+      <h4>Gravar Vídeo + Inserir Assets</h4>
+      <p>Praticar roteiro 2x, gravar na 3ª. Edição básica (cortar início/fim). Inserir screenshots e GIF nos READMEs.</p>
+    </div>
+    <div class="day-hours">~5h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 6</div>
+    <div class="day-content">
+      <h4>Texto HN + Product Hunt</h4>
+      <p>Redigir título e comentário do Hacker News. Montar página do Product Hunt (tagline, descrição, screenshots, vídeo).</p>
+    </div>
+    <div class="day-hours">~5h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 7</div>
+    <div class="day-content">
+      <h4>Threads X + Posts Reddit + Email</h4>
+      <p>Threads EN e PT-BR para X/Twitter. Posts adaptados para cada subreddit. Template de cold email. One-pager PDF.</p>
+    </div>
+    <div class="day-hours">~5h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 8</div>
+    <div class="day-content">
+      <h4>Lista de Contatos</h4>
+      <p>Pesquisar e organizar todos os contatos: Polymarket, Kalshi, jornalistas, newsletters, acadêmicos, influenciadores BR.</p>
+    </div>
+    <div class="day-hours">~4h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 9</div>
+    <div class="day-content">
+      <h4>Teste Git Clone + Stress Test</h4>
+      <p>Testar setup do zero seguindo README. Verificar estabilidade do site. Corrigir qualquer problema encontrado.</p>
+    </div>
+    <div class="day-hours">~4h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 10</div>
+    <div class="day-content">
+      <h4>Agendar PH + Revisão Final</h4>
+      <p>Agendar Product Hunt. Revisar TODOS os textos (HN, X, Reddit, email). Preparar FAQ. Definir data do Dia D.</p>
+    </div>
+    <div class="day-hours">~4h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label">Dia 11</div>
+    <div class="day-content">
+      <h4>Buffer / Respiro</h4>
+      <p>Dia de folga ou para resolver pendências. Descansar antes do Dia D. Revisar tudo uma última vez com calma.</p>
+    </div>
+    <div class="day-hours">~2h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label launch">Dia 12</div>
+    <div class="day-content">
+      <h4>DIA DO LANÇAMENTO</h4>
+      <p>Repo público. HN. X. Reddit. Emails. Responder tudo o dia inteiro. Dia mais importante de todos.</p>
+    </div>
+    <div class="day-hours">~8h</div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-label post">D+1 a D+7</div>
+    <div class="day-content">
+      <h4>Sustentação + Comunidade</h4>
+      <p>Responder issues/PRs. Follow-up contatos. Postar métricas. Escrever blog post. Avaliar próximos passos.</p>
+    </div>
+    <div class="day-hours">~1-2h/dia</div>
+  </div>
+</div>
+
+<!-- TOTAIS -->
+<div class="summary-box" style="margin-top: 32px;">
+  <h2>Totais</h2>
+  <div class="summary-grid">
+    <div class="summary-item">
+      <span class="number">~50h</span>
+      <span class="label">Horas totais</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">12</span>
+      <span class="label">Dias de preparação</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">1</span>
+      <span class="label">Dia de lançamento</span>
+    </div>
+    <div class="summary-item">
+      <span class="number">7</span>
+      <span class="label">Dias de sustentação</span>
+    </div>
+  </div>
+</div>
+
+<div class="phase" style="border-left: 3px solid #0F52BA;">
+  <h3 style="margin-bottom: 8px;">Divisão de Trabalho</h3>
+  <table>
+    <thead>
+      <tr><th>Quem</th><th>Horas</th><th>O que</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="who-badge who-claude">Claude</span></td>
+        <td>~15h</td>
+        <td>Auditoria de segurança, documentos (CONTRIBUTING, SECURITY, templates), textos Reddit, email template, inserir assets nos READMEs, stress test, revisão final</td>
+      </tr>
+      <tr>
+        <td><span class="who-badge who-andre">André</span></td>
+        <td>~20h</td>
+        <td>Screenshots, GIF, vídeo, labels GitHub, PH setup, posts no Dia D, responder comentários, follow-ups</td>
+      </tr>
+      <tr>
+        <td><span class="who-badge who-both">Juntos</span></td>
+        <td>~15h</td>
+        <td>Issues iniciais, social preview, textos HN/X/one-pager, lista contatos, teste git clone, FAQ, blog post, revisão</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer-doc">
+  AFOS Analytics — Pipeline de Lançamento Open Source<br>
+  Documento interno — Abril 2026<br>
+  <em>Primeiro commit: 30/Mar/2026. Primeiro do mundo.</em>
+</div>
+
+</div>
+
+<script>
+function unlock(){
+  var p=document.getElementById('pw').value;
+  if(p==='free'){
+    document.getElementById('lock-screen').style.display='none';
+    document.getElementById('content').style.display='block';
+  } else {
+    document.getElementById('err').textContent='Senha incorreta';
+    document.getElementById('pw').value='';
+  }
+}
+</script>
+
+</body>
+</html>
