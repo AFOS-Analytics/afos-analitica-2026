@@ -56,9 +56,9 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 ## ETAPA 4: Build + Deploy + Commit
 
 Execute em sequência:
-1. `cd "C:\Users\afos3\OneDrive\Documentos\MeusProjetos\AFOS-Analitica-2026" && rm -rf .next && npm run build`
-2. `npx vercel --yes --prod --token=REDACTED_VERCEL_TOKEN_ROTATED_16APR2026`
-3. `git add app/page.tsx public/analysis-data.json public/analysis-criteriosa.json`
+1. `rm -rf .next && npm run build`
+2. `npx vercel --yes --prod`
+3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
 5. `git push origin main`
 
