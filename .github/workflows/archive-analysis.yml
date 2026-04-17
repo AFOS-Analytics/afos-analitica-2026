@@ -1,0 +1,102 @@
+name: Archive Analysis Snapshots
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/analysis-data.json'
+      - 'public/analysis-criteriosa.json'
+  schedule:
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: archive-analysis
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Extract archive date from JSON
+        id: meta
+        run: |
+          RAW=$(jq -r '.updatedAt // empty' public/analysis-data.json)
+          if [[ "$RAW" =~ ^([0-9]{2})/([0-9]{2})/([0-9]{4}) ]]; then
+            DATE="${BASH_REMATCH[3]}-${BASH_REMATCH[2]}-${BASH_REMATCH[1]}"
+          else
+            DATE=$(date -u +%Y-%m-%d)
+          fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+          echo "Archive date: $DATE"
+
+      - name: Archive to branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ARCHIVE_DATE: ${{ steps.meta.outputs.date }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -e
+
+          mkdir -p /tmp/snap
+          cp public/analysis-data.json /tmp/snap/analysis-cards.json
+          cp public/analysis-criteriosa.json /tmp/snap/analysis-criteriosa.json
+
+          REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git"
+          cd /tmp
+
+          if git clone --depth 1 --branch archive "$REMOTE" archive-wt 2>/dev/null; then
+            echo "✓ archive branch exists, cloned"
+          else
+            echo "✓ archive branch missing, creating orphan"
+            git clone --depth 1 "$REMOTE" archive-wt
+            cd archive-wt
+            git checkout --orphan archive
+            git rm -rf . > /dev/null 2>&1 || true
+            cat > README.md <<'EOF'
+          # AFOS Analytics — Archive Branch
+
+          Snapshots diários de análises (cards + criteriosa) preservados automaticamente.
+          Gerado pelo workflow `.github/workflows/archive-analysis.yml`.
+
+          **Não editar manualmente** — alterações serão sobrescritas.
+
+          ## Estrutura
+
+          ```
+          archive/
+          └── YYYY-MM-DD/
+              ├── analysis-cards.json
+              └── analysis-criteriosa.json
+          ```
+          EOF
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "init: archive branch"
+            git push -u origin archive
+            cd ..
+          fi
+
+          cd archive-wt
+          mkdir -p "archive/$ARCHIVE_DATE"
+          cp /tmp/snap/analysis-cards.json "archive/$ARCHIVE_DATE/analysis-cards.json"
+          cp /tmp/snap/analysis-criteriosa.json "archive/$ARCHIVE_DATE/analysis-criteriosa.json"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "archive/$ARCHIVE_DATE/"
+
+          if git diff --cached --quiet; then
+            echo "✓ No changes — snapshot idêntico ao existente"
+          else
+            git commit -m "archive: $ARCHIVE_DATE"
+            git push origin archive
+            echo "✓ Snapshot $ARCHIVE_DATE publicado em branch archive"
+          fi
