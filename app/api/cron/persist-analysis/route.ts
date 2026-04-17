@@ -1,34 +1,27 @@
 /**
  * Cron Job: /api/cron/persist-analysis
  *
- * Persiste snapshots diários das análises (cards + criteriosa):
- *   1. Neon (AnalysisReport — fonte primária, queryable)
- *   2. Git branch `archive` (backup redundante imutável via GitHub API)
+ * Persiste snapshots diários das análises no Neon (AnalysisReport — fonte primária).
+ * Arquivamento redundante em Git branch é feito por GitHub Actions
+ * (workflow: .github/workflows/archive-analysis.yml), não aqui.
  *
  * Execução:
  *   - Cron Vercel (diário às 14h UTC = 11h BRT)
  *   - Ou via Bearer CRON_SECRET (trigger manual)
  *
- * Alertas: falha em qualquer job → email via Resend para ALERT_EMAIL
+ * Alertas: falha → email via Resend para ALERT_EMAIL
  */
 
 import { NextResponse } from 'next/server'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { persistAnalysisSnapshot } from '../../../../lib/analysis/persist'
-import { archiveToGit } from '../../../../lib/analysis/git-archive'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 
 export const dynamic = 'force-dynamic'
 
 const ALERT_EMAIL = process.env.ALERT_EMAIL || '***redacted-email***'
-
-type JobResult = {
-  type: string
-  neon: { ok: boolean; error?: string }
-  git: { ok: boolean; url?: string; error?: string }
-}
 
 export async function GET(request: Request) {
   const startTime = Date.now()
@@ -42,59 +35,38 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const results: JobResult[] = []
+  const results: Array<{ type: string; ok: boolean; error?: string }> = []
 
   for (const job of [
     { type: 'analysis-cards' as const, file: 'analysis-data.json' },
     { type: 'analysis-criteriosa' as const, file: 'analysis-criteriosa.json' },
   ]) {
-    const path = join(process.cwd(), 'public', job.file)
-    let data: Record<string, unknown>
     try {
-      data = JSON.parse(readFileSync(path, 'utf-8'))
+      const path = join(process.cwd(), 'public', job.file)
+      const data = JSON.parse(readFileSync(path, 'utf-8'))
+      await persistAnalysisSnapshot(job.type, data)
+      results.push({ type: job.type, ok: true })
     } catch (err) {
       const error = err instanceof Error ? err.message : String(err)
-      results.push({
-        type: job.type,
-        neon: { ok: false, error: `read failed: ${error}` },
-        git: { ok: false, error: 'skipped (read failed)' },
-      })
-      continue
+      console.error(`[cron/persist-analysis] ${job.type} failed:`, error)
+      results.push({ type: job.type, ok: false, error })
     }
-
-    const [neonRes, gitRes] = await Promise.allSettled([
-      persistAnalysisSnapshot(job.type, data).then(() => ({ ok: true })),
-      archiveToGit(job.type, data),
-    ])
-
-    results.push({
-      type: job.type,
-      neon: neonRes.status === 'fulfilled'
-        ? neonRes.value
-        : { ok: false, error: String(neonRes.reason) },
-      git: gitRes.status === 'fulfilled'
-        ? gitRes.value
-        : { ok: false, error: String(gitRes.reason) },
-    })
   }
 
-  const neonFailures = results.filter(r => !r.neon.ok)
-  const allNeonOk = neonFailures.length === 0
+  const failed = results.filter(r => !r.ok)
+  const allOk = failed.length === 0
 
-  if (neonFailures.length > 0) {
-    const message = `Persistência Neon falhou em ${neonFailures.length}/${results.length} jobs`
-    const details = neonFailures
-      .map(f => `${f.type}: ${f.neon.error || 'unknown'}`)
-      .join('\n')
+  if (failed.length > 0) {
+    const details = failed.map(f => `${f.type}: ${f.error || 'unknown'}`).join('\n')
     await sendSystemAlert(ALERT_EMAIL, {
       type: 'persist-analysis-failure',
-      message,
+      message: `Persistência Neon falhou em ${failed.length}/${results.length} jobs`,
       details: `${details}\n\nTimestamp: ${new Date().toISOString()}\nElapsed: ${Date.now() - startTime}ms`,
     }).catch(err => console.error('[cron/persist-analysis] alert send failed:', err))
   }
 
   return NextResponse.json(
-    { ok: allNeonOk, elapsed: Date.now() - startTime, results },
-    { status: allNeonOk ? 200 : 500, headers: buildNoCacheHeaders() },
+    { ok: allOk, elapsed: Date.now() - startTime, results },
+    { status: allOk ? 200 : 500, headers: buildNoCacheHeaders() },
   )
 }
