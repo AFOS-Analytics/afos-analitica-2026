@@ -4,6 +4,8 @@
  * Lê public/analysis-data.json e public/analysis-criteriosa.json e grava
  * um AnalysisReport por tipo+data (upsert via slug).
  *
+ * Resiliente: falha em um arquivo não impede o outro.
+ *
  * Arquivamento redundante em Git branch é feito automaticamente por
  * GitHub Actions (workflow archive-analysis.yml) no push para main.
  *
@@ -17,6 +19,7 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
+import { deriveDateSlug, truncate } from '../lib/analysis/date-slug'
 
 type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
 
@@ -34,48 +37,62 @@ async function main() {
     { type: 'analysis-criteriosa', file: 'analysis-criteriosa.json' },
   ]
 
+  let successCount = 0
+  let failureCount = 0
+
   for (const job of jobs) {
-    const path = join(process.cwd(), 'public', job.file)
-    const raw = readFileSync(path, 'utf-8')
-    const data = JSON.parse(raw) as Record<string, unknown>
+    try {
+      const path = join(process.cwd(), 'public', job.file)
+      const raw = readFileSync(path, 'utf-8')
+      const data = JSON.parse(raw) as Record<string, unknown>
 
-    const updatedAt = (data.updatedAt as string) || new Date().toISOString()
-    const dateSlug = updatedAt.slice(0, 10).replace(/\//g, '-')
-    const slug = `${job.type}-${dateSlug}`
+      const dateSlug = deriveDateSlug(data)
+      const slug = `${job.type}-${dateSlug}`
+      const updatedAtLabel = (data.updatedAt as string) || new Date().toISOString()
 
-    const title = job.type === 'analysis-cards'
-      ? `Análise Cards — ${updatedAt}`
-      : `Análise Criteriosa — ${updatedAt}`
+      const title = job.type === 'analysis-cards'
+        ? `Análise Cards — ${updatedAtLabel}`
+        : `Análise Criteriosa — ${updatedAtLabel}`
 
-    const executiveSummary = job.type === 'analysis-cards'
-      ? buildCardsSummary(data)
-      : buildCriteriaSummary(data)
+      const executiveSummary = truncate(
+        job.type === 'analysis-cards' ? buildCardsSummary(data) : buildCriteriaSummary(data),
+      )
 
-    const result = await prisma.analysisReport.upsert({
-      where: { slug },
-      create: {
-        slug,
-        title,
-        locale: 'pt-BR',
-        status: 'published',
-        executiveSummary,
-        bodyMarkdown: JSON.stringify(data),
-        createdBy: 'script:persist-analysis',
-        publishedAt: new Date(),
-      },
-      update: {
-        title,
-        executiveSummary,
-        bodyMarkdown: JSON.stringify(data),
-        publishedAt: new Date(),
-      },
-    })
+      const result = await prisma.analysisReport.upsert({
+        where: { slug },
+        create: {
+          slug,
+          title,
+          locale: 'pt-BR',
+          status: 'published',
+          executiveSummary,
+          bodyMarkdown: JSON.stringify(data),
+          createdBy: 'script:persist-analysis',
+          publishedAt: new Date(),
+        },
+        update: {
+          title,
+          executiveSummary,
+          bodyMarkdown: JSON.stringify(data),
+          publishedAt: new Date(),
+        },
+      })
 
-    console.log(`✅ ${job.type.padEnd(22)} slug=${slug} (id=${result.id.slice(0, 8)}…)`)
+      console.log(`✅ ${job.type.padEnd(22)} slug=${slug} (id=${result.id.slice(0, 8)}…)`)
+      successCount++
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error(`❌ ${job.type.padEnd(22)} falhou: ${msg}`)
+      failureCount++
+    }
   }
 
   await prisma.$disconnect()
-  console.log('\n✨ Neon atualizado. Git archive será feito via GitHub Actions no próximo push.\n')
+  console.log(`\n${successCount === jobs.length ? '✨' : '⚠️'} ${successCount}/${jobs.length} snapshots persistidos` +
+    (failureCount > 0 ? ` (${failureCount} falharam)` : '') +
+    '. Git archive será feito via GitHub Actions no próximo push.\n')
+
+  if (failureCount > 0) process.exit(1)
 }
 
 function buildCardsSummary(data: Record<string, unknown>): string {

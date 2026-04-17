@@ -20,6 +20,7 @@ import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 
 export const dynamic = 'force-dynamic'
+export const maxDuration = 60
 
 const ALERT_EMAIL = process.env.ALERT_EMAIL || '***redacted-email***'
 

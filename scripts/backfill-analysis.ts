@@ -7,6 +7,7 @@
  *   3. Persiste no Neon via upsert por slug (tipo-data)
  *
  * Commits dentro do mesmo dia: o último (mais recente) "ganha" o upsert.
+ * Idempotente: rodar múltiplas vezes é seguro.
  *
  * Uso: npx tsx scripts/backfill-analysis.ts
  */
@@ -17,6 +18,7 @@ config({ path: '.env.local' })
 import { execSync } from 'child_process'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
+import { deriveDateSlug, truncate } from '../lib/analysis/date-slug'
 
 type Job = { type: 'analysis-cards' | 'analysis-criteriosa'; path: string }
 
@@ -26,7 +28,8 @@ const jobs: Job[] = [
 ]
 
 function gitLog(path: string): Array<{ hash: string; date: string }> {
-  const out = execSync(`git log --pretty=format:"%H|%ai" --follow -- ${path}`, { encoding: 'utf-8' })
+  const out = execSync(`git log --pretty=format:"%H|%ai" --follow -- "${path}"`, { encoding: 'utf-8' })
+  if (!out.trim()) return []
   return out.trim().split('\n').map(line => {
     const [hash, date] = line.split('|')
     return { hash, date }
@@ -35,21 +38,10 @@ function gitLog(path: string): Array<{ hash: string; date: string }> {
 
 function gitShow(hash: string, path: string): string | null {
   try {
-    return execSync(`git show ${hash}:${path}`, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] })
+    return execSync(`git show ${hash}:"${path}"`, { encoding: 'utf-8', stdio: ['pipe', 'pipe', 'ignore'] })
   } catch {
     return null
   }
-}
-
-function deriveDateSlug(data: Record<string, unknown>, commitDate: string): string {
-  const updatedAt = data.updatedAt as string | undefined
-  if (updatedAt && /^\d{2}\/\d{2}\/\d{4}/.test(updatedAt)) {
-    const [dd, mm, yyyy] = updatedAt.slice(0, 10).split('/')
-    return `${dd}-${mm}-${yyyy}`
-  }
-  const iso = commitDate.slice(0, 10)
-  const [yyyy, mm, dd] = iso.split('-')
-  return `${dd}-${mm}-${yyyy}`
 }
 
 function buildTitle(type: Job['type'], data: Record<string, unknown>, fallbackDate: string): string {
@@ -93,36 +85,42 @@ async function main() {
       let data: Record<string, unknown>
       try { data = JSON.parse(raw) } catch { skipped++; continue }
 
-      const dateSlug = deriveDateSlug(data, date)
-      const slug = `${job.type}-${dateSlug}`
-      const title = buildTitle(job.type, data, date.slice(0, 10))
-      const summary = buildSummary(job.type, data)
-      const publishedAt = new Date(date)
+      try {
+        const dateSlug = deriveDateSlug(data, date.slice(0, 10))
+        const slug = `${job.type}-${dateSlug}`
+        const title = buildTitle(job.type, data, date.slice(0, 10))
+        const summary = truncate(buildSummary(job.type, data))
+        const publishedAt = new Date(date)
 
-      await prisma.analysisReport.upsert({
-        where: { slug },
-        create: {
-          slug, title,
-          locale: 'pt-BR',
-          status: 'published',
-          executiveSummary: summary,
-          bodyMarkdown: JSON.stringify(data),
-          createdBy: `backfill:${hash.slice(0, 7)}`,
-          publishedAt,
-        },
-        update: {
-          title,
-          executiveSummary: summary,
-          bodyMarkdown: JSON.stringify(data),
-          publishedAt,
-        },
-      })
+        await prisma.analysisReport.upsert({
+          where: { slug },
+          create: {
+            slug, title,
+            locale: 'pt-BR',
+            status: 'published',
+            executiveSummary: summary,
+            bodyMarkdown: JSON.stringify(data),
+            createdBy: `backfill:${hash.slice(0, 7)}`,
+            publishedAt,
+          },
+          update: {
+            title,
+            executiveSummary: summary,
+            bodyMarkdown: JSON.stringify(data),
+            publishedAt,
+          },
+        })
 
-      persisted++
-      process.stdout.write(`  ✓ ${slug.padEnd(40)} (${hash.slice(0, 7)} ${date.slice(0, 10)})\n`)
+        persisted++
+        process.stdout.write(`  ✓ ${slug.padEnd(40)} (${hash.slice(0, 7)} ${date.slice(0, 10)})\n`)
+      } catch (err) {
+        skipped++
+        const msg = err instanceof Error ? err.message : String(err)
+        console.error(`  ✗ ${hash.slice(0, 7)} falhou: ${msg}`)
+      }
     }
 
-    console.log(`\n  → ${persisted} persistidos, ${skipped} pulados (parse error)\n`)
+    console.log(`\n  → ${persisted} persistidos, ${skipped} pulados\n`)
   }
 
   const total = await prisma.analysisReport.count()
