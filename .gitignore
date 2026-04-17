@@ -36,6 +36,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# documents
+# documents (internal — never ship)
 *.pdf
 docs/pipeline-launch-opensource.html
+public/pipeline-launch-opensource.html
+public/pipeline-*.html
