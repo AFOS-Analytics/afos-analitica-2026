@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/cron/refresh-elections",
-      "schedule": "* * * * *"
+      "schedule": "*/5 * * * *"
     },
     {
       "path": "/api/cron/refresh-polls",
