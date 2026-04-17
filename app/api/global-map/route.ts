@@ -21,7 +21,8 @@ import { aggregateElectionData } from '../../lib/polymarket/bootstrap';
 import { optimizePayload } from '../../lib/polymarket/normalize';
 import { buildCacheHeaders, buildNoCacheHeaders, CACHE_GLOBAL_MAP } from '../../lib/cache/headers';
 
-export const revalidate = 60; // ISR 1 minuto (fallback se KV estiver offline)
+// ISR 60s — usado apenas no fallback direto ao Polymarket (KV offline). Independe do cron.
+export const revalidate = 60;
 
 // In-memory fallback (último recurso)
 let lastGoodPayload: unknown = null;
