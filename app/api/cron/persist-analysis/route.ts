@@ -1,28 +1,20 @@
-/**
- * Cron Job: /api/cron/persist-analysis
- *
- * Persiste snapshots diários das análises no Neon (AnalysisReport — fonte primária).
- * Arquivamento redundante em Git branch é feito por GitHub Actions
- * (workflow: .github/workflows/archive-analysis.yml), não aqui.
- *
- * Execução:
- *   - Cron Vercel (diário às 14h UTC = 11h BRT)
- *   - Ou via Bearer CRON_SECRET (trigger manual)
- *
- * Alertas: falha → email via Resend para ALERT_EMAIL
- */
-
 import { NextResponse } from 'next/server'
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { persistAnalysisSnapshot } from '../../../../lib/analysis/persist'
+import { persistAnalysisSnapshot, type AnalysisType } from '../../../../lib/analysis/persist'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 
 export const dynamic = 'force-dynamic'
-export const maxDuration = 60
+// 2 Neon upserts em paralelo costumam <3s; 20s cobre pico + envio de alerta.
+export const maxDuration = 20
 
 const ALERT_EMAIL = process.env.ALERT_EMAIL || 'afos2100@gmail.com'
+
+const JOBS: Array<{ type: AnalysisType; file: string }> = [
+  { type: 'analysis-cards', file: 'analysis-data.json' },
+  { type: 'analysis-criteriosa', file: 'analysis-criteriosa.json' },
+]
 
 export async function GET(request: Request) {
   const startTime = Date.now()
@@ -31,28 +23,21 @@ export async function GET(request: Request) {
   const authHeader = request.headers.get('authorization')
   const cronSecret = process.env.CRON_SECRET
   const isAuthorized = isVercelCron || (cronSecret && authHeader === `Bearer ${cronSecret}`)
-
   if (process.env.VERCEL && !isAuthorized) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const results: Array<{ type: string; ok: boolean; error?: string }> = []
-
-  for (const job of [
-    { type: 'analysis-cards' as const, file: 'analysis-data.json' },
-    { type: 'analysis-criteriosa' as const, file: 'analysis-criteriosa.json' },
-  ]) {
+  const results = await Promise.all(JOBS.map(async job => {
     try {
-      const path = join(process.cwd(), 'public', job.file)
-      const data = JSON.parse(readFileSync(path, 'utf-8'))
+      const data = JSON.parse(readFileSync(join(process.cwd(), 'public', job.file), 'utf-8'))
       await persistAnalysisSnapshot(job.type, data)
-      results.push({ type: job.type, ok: true })
+      return { type: job.type, ok: true }
     } catch (err) {
       const error = err instanceof Error ? err.message : String(err)
       console.error(`[cron/persist-analysis] ${job.type} failed:`, error)
-      results.push({ type: job.type, ok: false, error })
+      return { type: job.type, ok: false, error }
     }
-  }
+  }))
 
   const failed = results.filter(r => !r.ok)
   const allOk = failed.length === 0
