@@ -53,7 +53,7 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualize `risk` com informações relevantes do dia
 - Atualize o % de impeachment STF se mudou (buscar "14.5%" ou valor atual)
 
-## ETAPA 4: Build + Deploy + Commit
+## ETAPA 4: Build + Deploy + Commit + Persistência Neon
 
 Execute em sequência:
 1. `rm -rf .next && npm run build`
@@ -61,6 +61,10 @@ Execute em sequência:
 3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
 5. `git push origin main`
+6. **Persistir snapshots no Neon** (após deploy concluir):
+   - `npx tsx scripts/persist-analysis.ts` (local) OU
+   - `curl -X GET "https://www.afos-analytics.com/api/cron/persist-analysis" -H "Authorization: Bearer $CRON_SECRET"` (via rota cron)
+   - Cron Vercel também roda automaticamente às 14:00 UTC diariamente (11:00 BRT)
 
 ## REGRAS
 
