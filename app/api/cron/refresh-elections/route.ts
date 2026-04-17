@@ -1,11 +1,11 @@
 /**
  * Cron Job: /api/cron/refresh-elections
  *
- * Executado automaticamente pela Vercel a cada 1 minuto.
+ * Executado automaticamente pela Vercel a cada 5 minutos.
  * Busca TODOS os mercados do Polymarket em PARALELO e grava no Vercel KV.
  *
  * Fluxo:
- *   Vercel Cron (cada 60s) → esta rota → Polymarket (18 paralelo) → KV
+ *   Vercel Cron (5min) → esta rota → Polymarket (18 paralelo) → KV
  *   Nenhum usuário é impactado por este processo.
  *   /api/global-map lê do KV (<1ms) em vez de chamar Polymarket.
  *
@@ -20,13 +20,9 @@ import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
 import { persistMarketData } from '../../../lib/polymarket/persist';
-import { prisma } from '../../../../lib/db';
 
 export async function GET(request: Request) {
   const startTime = Date.now();
-
-  // Ping Neon — mantém conexão quente (cold start mitigation)
-  if (prisma) { prisma.$queryRaw`SELECT 1`.catch(() => {}) }
 
   // Autenticação: Vercel injeta header automaticamente em cron jobs.
   // Em produção, bloquear qualquer request que não venha do cron da Vercel.
