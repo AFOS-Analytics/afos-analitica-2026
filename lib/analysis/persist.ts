@@ -5,9 +5,10 @@
  * Fire-and-forget: não bloqueia a resposta da API.
  * Cada snapshot diário gera um registro único (slug = tipo + data).
  *
- * TODO: Wire into cron pipeline (inline import in ISR routes conflicts with Vercel build).
- * Planned integration: call from a dedicated /api/cron/persist-analysis route.
+ * Chamado a partir de /api/cron/persist-analysis e scripts locais.
  */
+
+import { deriveDateSlug, truncate } from './date-slug'
 
 type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
 
@@ -18,23 +19,25 @@ type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
  */
 export async function persistAnalysisSnapshot(
   type: AnalysisType,
-  data: Record<string, unknown>
+  data: Record<string, unknown>,
 ): Promise<void> {
   try {
     const { prisma } = await import('../db')
     if (!prisma) return
 
-    const updatedAt = (data.updatedAt as string) || new Date().toISOString()
-    const dateSlug = updatedAt.slice(0, 10).replace(/\//g, '-')
+    const dateSlug = deriveDateSlug(data)
     const slug = `${type}-${dateSlug}`
+    const updatedAtLabel = (data.updatedAt as string) || new Date().toISOString()
 
     const title = type === 'analysis-cards'
-      ? `Análise Cards — ${updatedAt}`
-      : `Análise Criteriosa — ${updatedAt}`
+      ? `Análise Cards — ${updatedAtLabel}`
+      : `Análise Criteriosa — ${updatedAtLabel}`
 
-    const executiveSummary = type === 'analysis-cards'
-      ? buildCardsSummary(data)
-      : buildCriteriaSummary(data)
+    const executiveSummary = truncate(
+      type === 'analysis-cards'
+        ? buildCardsSummary(data)
+        : buildCriteriaSummary(data),
+    )
 
     await prisma.analysisReport.upsert({
       where: { slug },
@@ -56,21 +59,19 @@ export async function persistAnalysisSnapshot(
       },
     })
   } catch (err) {
-    // Fire-and-forget: log e segue — nunca quebra a API
     console.error(`[persist-analysis] ${type} failed:`, err)
+    throw err
   }
 }
 
 function buildCardsSummary(data: Record<string, unknown>): string {
   const cards = data.cards as Record<string, unknown> | undefined
   if (!cards) return 'Sem dados'
-  const sections = Object.keys(cards)
-  return `Cards: ${sections.join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
+  return `Cards: ${Object.keys(cards).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
 }
 
 function buildCriteriaSummary(data: Record<string, unknown>): string {
   const candidates = data.candidates as Array<{ name: string }> | undefined
   if (!candidates) return 'Sem dados'
-  const names = candidates.map(c => c.name)
-  return `Candidatos: ${names.join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
+  return `Candidatos: ${candidates.map(c => c.name).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
 }
