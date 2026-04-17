@@ -4,6 +4,9 @@
  * Lê public/analysis-data.json e public/analysis-criteriosa.json e grava
  * um AnalysisReport por tipo+data (upsert via slug).
  *
+ * Arquivamento redundante em Git branch é feito automaticamente por
+ * GitHub Actions (workflow archive-analysis.yml) no push para main.
+ *
  * Uso: npx tsx scripts/persist-analysis.ts
  */
 
@@ -14,7 +17,6 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
-import { archiveToGit } from '../lib/analysis/git-archive'
 
 type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
 
@@ -69,18 +71,11 @@ async function main() {
       },
     })
 
-    console.log(`✅ Neon  ${job.type.padEnd(22)} slug=${slug} (id=${result.id.slice(0, 8)}…)`)
-
-    const git = await archiveToGit(job.type, data)
-    if (git.ok) {
-      console.log(`✅ Git   ${job.type.padEnd(22)} ${git.url}`)
-    } else {
-      console.log(`⚠️  Git   ${job.type.padEnd(22)} skipped (${git.error})`)
-    }
+    console.log(`✅ ${job.type.padEnd(22)} slug=${slug} (id=${result.id.slice(0, 8)}…)`)
   }
 
   await prisma.$disconnect()
-  console.log('\n✨ Done\n')
+  console.log('\n✨ Neon atualizado. Git archive será feito via GitHub Actions no próximo push.\n')
 }
 
 function buildCardsSummary(data: Record<string, unknown>): string {
