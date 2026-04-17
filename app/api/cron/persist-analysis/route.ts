@@ -3,7 +3,7 @@
  *
  * Persiste snapshots diários das análises (cards + criteriosa):
  *   1. Neon (AnalysisReport — fonte primária, queryable)
- *   2. Vercel Blob (backup redundante acessível via URL pública)
+ *   2. Git branch `archive` (backup redundante imutável via GitHub API)
  *
  * Execução:
  *   - Cron Vercel (diário às 14h UTC = 11h BRT)
@@ -16,7 +16,7 @@ import { NextResponse } from 'next/server'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 import { persistAnalysisSnapshot } from '../../../../lib/analysis/persist'
-import { backupToBlob } from '../../../../lib/analysis/blob-backup'
+import { archiveToGit } from '../../../../lib/analysis/git-archive'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 
@@ -27,7 +27,7 @@ const ALERT_EMAIL = process.env.ALERT_EMAIL || 'afos2100@gmail.com'
 type JobResult = {
   type: string
   neon: { ok: boolean; error?: string }
-  blob: { ok: boolean; url?: string; error?: string }
+  git: { ok: boolean; url?: string; error?: string }
 }
 
 export async function GET(request: Request) {
@@ -57,14 +57,14 @@ export async function GET(request: Request) {
       results.push({
         type: job.type,
         neon: { ok: false, error: `read failed: ${error}` },
-        blob: { ok: false, error: 'skipped (read failed)' },
+        git: { ok: false, error: 'skipped (read failed)' },
       })
       continue
     }
 
-    const [neonRes, blobRes] = await Promise.allSettled([
+    const [neonRes, gitRes] = await Promise.allSettled([
       persistAnalysisSnapshot(job.type, data).then(() => ({ ok: true })),
-      backupToBlob(job.type, data),
+      archiveToGit(job.type, data),
     ])
 
     results.push({
@@ -72,9 +72,9 @@ export async function GET(request: Request) {
       neon: neonRes.status === 'fulfilled'
         ? neonRes.value
         : { ok: false, error: String(neonRes.reason) },
-      blob: blobRes.status === 'fulfilled'
-        ? blobRes.value
-        : { ok: false, error: String(blobRes.reason) },
+      git: gitRes.status === 'fulfilled'
+        ? gitRes.value
+        : { ok: false, error: String(gitRes.reason) },
     })
   }
 
