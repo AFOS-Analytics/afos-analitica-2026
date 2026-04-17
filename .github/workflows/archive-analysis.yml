@@ -21,37 +21,17 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v4
-
-      - name: Validate JSON files
-        run: |
-          set -e
-          for f in public/analysis-data.json public/analysis-criteriosa.json; do
-            if [ ! -f "$f" ]; then
-              echo "::error file=$f::arquivo ausente"
-              exit 1
-            fi
-            if ! jq empty "$f" 2>/dev/null; then
-              echo "::error file=$f::JSON inválido"
-              exit 1
-            fi
-            echo "✓ $f válido ($(wc -c < "$f") bytes)"
-          done
+      - uses: actions/checkout@v4
 
       - name: Derive archive date per file
         id: meta
         run: |
           set -e
-          # Cada arquivo deriva sua própria data a partir do updatedAt (DD/MM/YYYY → YYYY-MM-DD)
           derive() {
-            local file="$1"
             local raw
-            raw=$(jq -r '.updatedAt // empty' "$file")
+            raw=$(jq -r '.updatedAt // empty' "$1")
             if [[ "$raw" =~ ^([0-9]{2})/([0-9]{2})/([0-9]{4}) ]]; then
               echo "${BASH_REMATCH[3]}-${BASH_REMATCH[2]}-${BASH_REMATCH[1]}"
-            elif [[ "$raw" =~ ^([0-9]{4})-([0-9]{2})-([0-9]{2}) ]]; then
-              echo "${BASH_REMATCH[1]}-${BASH_REMATCH[2]}-${BASH_REMATCH[3]}"
             else
               date -u +%Y-%m-%d
             fi
@@ -60,8 +40,7 @@ jobs:
           CRIT_DATE=$(derive public/analysis-criteriosa.json)
           echo "cards_date=$CARDS_DATE" >> "$GITHUB_OUTPUT"
           echo "crit_date=$CRIT_DATE" >> "$GITHUB_OUTPUT"
-          echo "Cards → archive/$CARDS_DATE/"
-          echo "Criteriosa → archive/$CRIT_DATE/"
+          echo "Cards → archive/$CARDS_DATE/ | Criteriosa → archive/$CRIT_DATE/"
 
       - name: Archive to branch
         env:
@@ -80,7 +59,7 @@ jobs:
           cd /tmp
 
           if git clone --depth 1 --branch archive "$REMOTE" archive-wt 2>/dev/null; then
-            echo "✓ archive branch exists, cloned"
+            echo "✓ archive branch cloned"
           else
             echo "✓ archive branch missing, creating orphan"
             git clone --depth 1 "$REMOTE" archive-wt
@@ -90,19 +69,10 @@ jobs:
             cat > README.md <<'EOF'
           # AFOS Analytics — Archive Branch
 
-          Snapshots diários de análises (cards + criteriosa) preservados automaticamente.
-          Gerado pelo workflow `.github/workflows/archive-analysis.yml`.
+          Snapshots diários de análises preservados automaticamente.
+          Gerado por `.github/workflows/archive-analysis.yml` — não editar.
 
-          **Não editar manualmente** — alterações serão sobrescritas.
-
-          ## Estrutura
-
-          ```
-          archive/
-          └── YYYY-MM-DD/
-              ├── analysis-cards.json
-              └── analysis-criteriosa.json
-          ```
+          Estrutura: `archive/YYYY-MM-DD/analysis-{cards,criteriosa}.json`
           EOF
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -122,14 +92,12 @@ jobs:
           git add archive/
 
           if git diff --cached --quiet; then
-            echo "::notice::Snapshot idêntico ao existente — nada a commitar"
+            echo "::notice::Snapshot idêntico — nada a commitar"
           else
-            if [ "$CARDS_DATE" = "$CRIT_DATE" ]; then
-              MSG="archive: $CARDS_DATE"
-            else
-              MSG="archive: cards=$CARDS_DATE criteriosa=$CRIT_DATE"
-            fi
+            MSG=$([ "$CARDS_DATE" = "$CRIT_DATE" ] \
+              && echo "archive: $CARDS_DATE" \
+              || echo "archive: cards=$CARDS_DATE criteriosa=$CRIT_DATE")
             git commit -m "$MSG"
             git push origin archive
-            echo "::notice::$MSG publicado em branch archive"
+            echo "::notice::$MSG publicado"
           fi
