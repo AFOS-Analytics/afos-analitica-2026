@@ -5,7 +5,7 @@
  *
  *   CAMINHO RÁPIDO (KV disponível):
  *   Requisição → leitura KV (<1ms) → resposta
- *   Dados escritos pelo cron (/api/cron/refresh-elections) a cada 60s.
+ *   Dados escritos pelo cron (/api/cron/refresh-elections) a cada 5min.
  *
  *   CAMINHO FALLBACK (KV indisponível ou vazio):
  *   Requisição → aggregateElectionData() → Polymarket → resposta
