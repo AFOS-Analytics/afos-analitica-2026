@@ -21,6 +21,10 @@ import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
 import { persistMarketData } from '../../../lib/polymarket/persist';
 
+// Polymarket fetch de 18 markets em paralelo + KV write + Neon upserts.
+// Timing típico <5s; 30s dá folga se Polymarket ou Neon estiverem lentos.
+export const maxDuration = 30;
+
 export async function GET(request: Request) {
   const startTime = Date.now();
 
