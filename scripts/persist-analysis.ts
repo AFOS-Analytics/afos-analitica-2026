@@ -14,7 +14,7 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
-import { backupToBlob } from '../lib/analysis/blob-backup'
+import { archiveToGit } from '../lib/analysis/git-archive'
 
 type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
 
@@ -71,11 +71,11 @@ async function main() {
 
     console.log(`✅ Neon  ${job.type.padEnd(22)} slug=${slug} (id=${result.id.slice(0, 8)}…)`)
 
-    const blob = await backupToBlob(job.type, data)
-    if (blob.ok) {
-      console.log(`✅ Blob  ${job.type.padEnd(22)} ${blob.url}`)
+    const git = await archiveToGit(job.type, data)
+    if (git.ok) {
+      console.log(`✅ Git   ${job.type.padEnd(22)} ${git.url}`)
     } else {
-      console.log(`⚠️  Blob  ${job.type.padEnd(22)} skipped (${blob.error})`)
+      console.log(`⚠️  Git   ${job.type.padEnd(22)} skipped (${git.error})`)
     }
   }
 
