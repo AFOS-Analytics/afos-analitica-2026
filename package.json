@@ -17,6 +17,7 @@
     "@types/topojson-client": "^3.1.5",
     "@upstash/redis": "^1.37.0",
     "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.3.3",
     "d3": "^7.9.0",
     "jszip": "^3.10.1",
     "next": "14.2.35",
