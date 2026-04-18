@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation, useLocale } from '../i18n/context';
+import { EMAIL_CONTACT, EMAIL_SUPPORT, EMAIL_SECURITY, EMAIL_FOUNDER } from '../lib/contacts';
 
 const FOOTER_LINKS: Record<string, { regions: { href: string; label: string }[]; institutional: { href: string; label: string }[] }> = {
   'pt-BR': {
@@ -44,10 +45,10 @@ const FOOTER_LINKS: Record<string, { regions: { href: string; label: string }[];
 type ContactKey = 'general' | 'support' | 'security' | 'founder'
 
 const CONTACTS: Array<{ key: ContactKey; email: string; icon: string }> = [
-  { key: 'general',  email: 'contact@afos-analytics.com',  icon: '📧' },
-  { key: 'support',  email: 'support@afos-analytics.com',  icon: '💬' },
-  { key: 'security', email: 'security@afos-analytics.com', icon: '🔒' },
-  { key: 'founder',  email: 'founder@afos-analytics.com',  icon: '👤' },
+  { key: 'general',  email: EMAIL_CONTACT,  icon: '📧' },
+  { key: 'support',  email: EMAIL_SUPPORT,  icon: '💬' },
+  { key: 'security', email: EMAIL_SECURITY, icon: '🔒' },
+  { key: 'founder',  email: EMAIL_FOUNDER,  icon: '👤' },
 ]
 
 const CONTACT_LABELS: Record<string, Record<ContactKey | 'title', string>> = {
@@ -93,7 +94,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Seção Contact — emails visíveis, alinhados, profissionais */}
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{labels.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
