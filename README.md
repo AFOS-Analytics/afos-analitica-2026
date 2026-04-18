@@ -10,6 +10,8 @@ Unprecedented platform worldwide
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+[![Contact](https://img.shields.io/badge/contact-afos--analytics.com-0F52BA?logo=maildotru&logoColor=white)](mailto:contact@afos-analytics.com)
+[![Security](https://img.shields.io/badge/security-disclosure-d32f2f?logo=keycdn&logoColor=white)](mailto:security@afos-analytics.com)
 
 **[afos-analytics.com](https://afos-analytics.com)**
 
@@ -31,6 +33,18 @@ Unprecedented platform worldwide
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
 **Open Source. Free. Mobile and desktop.**
+
+---
+
+## Community
+
+- 💬 **Questions & ideas** → [GitHub Issues](https://github.com/AFOS-Analytics/afos-analitica-2026/issues) · [Discussions](https://github.com/AFOS-Analytics/afos-analitica-2026/discussions)
+- 📧 **Press, partnerships, general** → [contact@afos-analytics.com](mailto:contact@afos-analytics.com)
+- 💡 **User support & help** → [support@afos-analytics.com](mailto:support@afos-analytics.com)
+- 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
+- 👤 **Founder direct** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
+
+Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
