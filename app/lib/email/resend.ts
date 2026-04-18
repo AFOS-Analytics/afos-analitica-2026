@@ -1,13 +1,14 @@
 import { Resend } from 'resend';
 import { welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTemplate } from './templates';
+import { EMAIL_ALERTS, EMAIL_CONTACT } from '../contacts';
 
 function getResend(): Resend | null {
   if (!process.env.RESEND_API_KEY) return null;
   return new Resend(process.env.RESEND_API_KEY);
 }
 
-const FROM = 'AFOS Analytics <alerts@afos-analytics.com>';
-const REPLY_TO_HUMAN = 'contact@afos-analytics.com';
+const FROM = `AFOS Analytics <${EMAIL_ALERTS}>`;
+const REPLY_TO_HUMAN = EMAIL_CONTACT;
 
 export async function sendWelcomeEmail(to: string): Promise<boolean> {
   const resend = getResend();

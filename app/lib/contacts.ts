@@ -1,0 +1,5 @@
+export const EMAIL_CONTACT = 'contact@afos-analytics.com'
+export const EMAIL_SUPPORT = 'support@afos-analytics.com'
+export const EMAIL_SECURITY = 'security@afos-analytics.com'
+export const EMAIL_FOUNDER = 'founder@afos-analytics.com'
+export const EMAIL_ALERTS = 'alerts@afos-analytics.com'
