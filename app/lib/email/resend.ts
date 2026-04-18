@@ -1,10 +1,3 @@
-/**
- * Resend Service
- *
- * Env var: RESEND_API_KEY
- * Free tier: 100 emails/dia, domínio onboarding@resend.dev
- */
-
 import { Resend } from 'resend';
 import { welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTemplate } from './templates';
 
@@ -13,11 +6,9 @@ function getResend(): Resend | null {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
-const FROM = 'AFOS Analytics <onboarding@resend.dev>';
+const FROM = 'AFOS Analytics <alerts@afos-analytics.com>';
+const REPLY_TO_HUMAN = 'contact@afos-analytics.com';
 
-/**
- * Enviar email de boas-vindas.
- */
 export async function sendWelcomeEmail(to: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) {
@@ -28,6 +19,7 @@ export async function sendWelcomeEmail(to: string): Promise<boolean> {
   try {
     const { error } = await resend.emails.send({
       from: FROM,
+      replyTo: REPLY_TO_HUMAN,
       to,
       subject: 'Bem-vindo ao AFOS Analytics',
       html: welcomeTemplate(),
@@ -44,9 +36,6 @@ export async function sendWelcomeEmail(to: string): Promise<boolean> {
   }
 }
 
-/**
- * Enviar alerta de odds.
- */
 export async function sendOddsAlert(to: string, data: {
   country: string;
   candidate: string;
@@ -73,9 +62,6 @@ export async function sendOddsAlert(to: string, data: {
   }
 }
 
-/**
- * Enviar resumo diário.
- */
 export async function sendDailySummary(to: string, data: {
   date: string;
   highlights: string[];
@@ -87,6 +73,7 @@ export async function sendDailySummary(to: string, data: {
   try {
     const { error } = await resend.emails.send({
       from: FROM,
+      replyTo: REPLY_TO_HUMAN,
       to,
       subject: `AFOS Resumo — ${data.date}`,
       html: dailySummaryTemplate(data),
@@ -99,9 +86,6 @@ export async function sendDailySummary(to: string, data: {
   }
 }
 
-/**
- * Enviar alerta de sistema.
- */
 export async function sendSystemAlert(to: string, data: {
   type: string;
   message: string;
