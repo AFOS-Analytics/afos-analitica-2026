@@ -364,4 +364,17 @@ npm run dev
 
 ---
 
+## Contato
+
+| Finalidade | Email |
+|------------|-------|
+| Geral, imprensa, parcerias | [contact@afos-analytics.com](mailto:contact@afos-analytics.com) |
+| Suporte e ajuda ao usuário | [support@afos-analytics.com](mailto:support@afos-analytics.com) |
+| Disclosure de vulnerabilidades | [security@afos-analytics.com](mailto:security@afos-analytics.com) |
+| Contato direto com o founder | [founder@afos-analytics.com](mailto:founder@afos-analytics.com) |
+
+Para bugs e pedidos de features, use [GitHub Issues](https://github.com/AFOS-Analytics/afos-analitica-2026/issues).
+
+---
+
 *AFOS Analytics — Plataforma inédita no mundo: Inteligência de Risco Político Eleitoral em tempo real.*
