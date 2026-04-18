@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 // 2 Neon upserts em paralelo costumam <3s; 20s cobre pico + envio de alerta.
 export const maxDuration = 20
 
-const ALERT_EMAIL = process.env.ALERT_EMAIL || '***redacted-email***'
+const ALERT_EMAIL = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
 
 const JOBS: Array<{ type: AnalysisType; file: string }> = [
   { type: 'analysis-cards', file: 'analysis-data.json' },

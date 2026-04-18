@@ -74,6 +74,8 @@ export function Footer() {
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">Dashboard</a>
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Mapa Global' : locale === 'es' ? 'Mapa Global' : 'Global Map'}</a>
             <a href="https://github.com/AFOS-Analytics/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">GitHub</a>
+            <a href="mailto:contact@afos-analytics.com" className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Contato' : locale === 'es' ? 'Contacto' : 'Contact'}</a>
+            <a href="mailto:support@afos-analytics.com" className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Suporte' : locale === 'es' ? 'Soporte' : 'Support'}</a>
           </div>
         </div>
 
