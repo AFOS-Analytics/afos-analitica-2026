@@ -1,9 +1,8 @@
 import { z } from 'zod'
 
-// Preprocess: trata string vazia como undefined. Node.js define env vars
-// vazias como "" (não undefined) quando declaradas sem valor, o que fazia
-// z.string().optional() rejeitar ao invés de aceitar como ausente.
-const optional = <T extends z.ZodTypeAny>(inner: T) =>
+// Trata string vazia como undefined: Node define env vars sem valor como "",
+// e z.string().optional() rejeita "" em vez de aceitar como ausente.
+const optional = (inner: z.ZodString) =>
   z.preprocess(v => (v === '' ? undefined : v), inner.optional())
 
 const envSchema = z.object({
