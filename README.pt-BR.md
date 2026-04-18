@@ -10,6 +10,8 @@ Plataforma inédita no mundo
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+[![Contato](https://img.shields.io/badge/contato-afos--analytics.com-0F52BA?logo=maildotru&logoColor=white)](mailto:contact@afos-analytics.com)
+[![Segurança](https://img.shields.io/badge/segurança-disclosure-d32f2f?logo=keycdn&logoColor=white)](mailto:security@afos-analytics.com)
 
 **[afos-analytics.com](https://afos-analytics.com)**
 
@@ -31,6 +33,18 @@ O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco
 Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
 
 **Open Source. Gratuito. Mobile e desktop.**
+
+---
+
+## Comunidade
+
+- 💬 **Dúvidas & ideias** → [GitHub Issues](https://github.com/AFOS-Analytics/afos-analitica-2026/issues) · [Discussions](https://github.com/AFOS-Analytics/afos-analitica-2026/discussions)
+- 📧 **Imprensa, parcerias, geral** → [contact@afos-analytics.com](mailto:contact@afos-analytics.com)
+- 💡 **Suporte e ajuda ao usuário** → [support@afos-analytics.com](mailto:support@afos-analytics.com)
+- 🔒 **Disclosure de vulnerabilidades** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (ver [SECURITY.md](SECURITY.md))
+- 👤 **Contato direto com o founder** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
+
+Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
