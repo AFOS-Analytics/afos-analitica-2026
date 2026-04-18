@@ -41,9 +41,18 @@ const FOOTER_LINKS: Record<string, { regions: { href: string; label: string }[];
   },
 }
 
-const CONTACT_LABELS: Record<string, { general: string; support: string; security: string; founder: string; title: string }> = {
-  'pt-BR': { general: 'Contato', support: 'Suporte', security: 'Segurança', founder: 'Founder', title: 'Fale Conosco' },
-  en:      { general: 'Contact', support: 'Support', security: 'Security', founder: 'Founder', title: 'Get in Touch' },
+type ContactKey = 'general' | 'support' | 'security' | 'founder'
+
+const CONTACTS: Array<{ key: ContactKey; email: string; icon: string }> = [
+  { key: 'general',  email: 'contact@afos-analytics.com',  icon: '📧' },
+  { key: 'support',  email: 'support@afos-analytics.com',  icon: '💬' },
+  { key: 'security', email: 'security@afos-analytics.com', icon: '🔒' },
+  { key: 'founder',  email: 'founder@afos-analytics.com',  icon: '👤' },
+]
+
+const CONTACT_LABELS: Record<string, Record<ContactKey | 'title', string>> = {
+  'pt-BR': { general: 'Contato',  support: 'Suporte', security: 'Segurança', founder: 'Founder', title: 'Fale Conosco' },
+  en:      { general: 'Contact',  support: 'Support', security: 'Security',  founder: 'Founder', title: 'Get in Touch' },
   es:      { general: 'Contacto', support: 'Soporte', security: 'Seguridad', founder: 'Founder', title: 'Contáctenos' },
 }
 
@@ -51,7 +60,7 @@ export function Footer() {
   const { t } = useTranslation();
   const locale = useLocale();
   const links = FOOTER_LINKS[locale] || FOOTER_LINKS['en'];
-  const c = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
+  const labels = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
 
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
@@ -86,36 +95,17 @@ export function Footer() {
 
         {/* Seção Contact — emails visíveis, alinhados, profissionais */}
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
-          <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{c.title}</p>
+          <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{labels.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-            <a href="mailto:contact@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
-              <span aria-hidden className="text-base leading-none mt-0.5">📧</span>
-              <span className="flex flex-col">
-                <span className="font-semibold text-white/90">{c.general}</span>
-                <span className="text-white/60 group-hover:text-white break-all">contact@afos-analytics.com</span>
-              </span>
-            </a>
-            <a href="mailto:support@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
-              <span aria-hidden className="text-base leading-none mt-0.5">💬</span>
-              <span className="flex flex-col">
-                <span className="font-semibold text-white/90">{c.support}</span>
-                <span className="text-white/60 group-hover:text-white break-all">support@afos-analytics.com</span>
-              </span>
-            </a>
-            <a href="mailto:security@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
-              <span aria-hidden className="text-base leading-none mt-0.5">🔒</span>
-              <span className="flex flex-col">
-                <span className="font-semibold text-white/90">{c.security}</span>
-                <span className="text-white/60 group-hover:text-white break-all">security@afos-analytics.com</span>
-              </span>
-            </a>
-            <a href="mailto:founder@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
-              <span aria-hidden className="text-base leading-none mt-0.5">👤</span>
-              <span className="flex flex-col">
-                <span className="font-semibold text-white/90">{c.founder}</span>
-                <span className="text-white/60 group-hover:text-white break-all">founder@afos-analytics.com</span>
-              </span>
-            </a>
+            {CONTACTS.map(({ key, email, icon }) => (
+              <a key={key} href={`mailto:${email}`} className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                <span aria-hidden className="text-base leading-none mt-0.5">{icon}</span>
+                <span className="flex flex-col">
+                  <span className="font-semibold text-white/90">{labels[key]}</span>
+                  <span className="text-white/60 group-hover:text-white break-all">{email}</span>
+                </span>
+              </a>
+            ))}
           </div>
         </div>
 
