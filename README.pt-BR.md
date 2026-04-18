@@ -1,6 +1,6 @@
 # AFOS Analytics
 
-![AFOS Analytics](public/social-preview.png)
+![AFOS Analytics](public/social-preview.jpg)
 
 🇧🇷 Português | 🇺🇸 [Read in English](README.md)
 
