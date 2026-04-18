@@ -41,10 +41,17 @@ const FOOTER_LINKS: Record<string, { regions: { href: string; label: string }[];
   },
 }
 
+const CONTACT_LABELS: Record<string, { general: string; support: string; security: string; founder: string; title: string }> = {
+  'pt-BR': { general: 'Contato', support: 'Suporte', security: 'Segurança', founder: 'Founder', title: 'Fale Conosco' },
+  en:      { general: 'Contact', support: 'Support', security: 'Security', founder: 'Founder', title: 'Get in Touch' },
+  es:      { general: 'Contacto', support: 'Soporte', security: 'Seguridad', founder: 'Founder', title: 'Contáctenos' },
+}
+
 export function Footer() {
   const { t } = useTranslation();
   const locale = useLocale();
   const links = FOOTER_LINKS[locale] || FOOTER_LINKS['en'];
+  const c = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
 
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
@@ -74,8 +81,41 @@ export function Footer() {
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">Dashboard</a>
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Mapa Global' : locale === 'es' ? 'Mapa Global' : 'Global Map'}</a>
             <a href="https://github.com/AFOS-Analytics/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">GitHub</a>
-            <a href="mailto:contact@afos-analytics.com" className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Contato' : locale === 'es' ? 'Contacto' : 'Contact'}</a>
-            <a href="mailto:support@afos-analytics.com" className="block text-white/60 hover:text-white py-0.5">{locale === 'pt-BR' ? 'Suporte' : locale === 'es' ? 'Soporte' : 'Support'}</a>
+          </div>
+        </div>
+
+        {/* Seção Contact — emails visíveis, alinhados, profissionais */}
+        <div className="border-t border-white/20 pt-4 pb-4 mb-4">
+          <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{c.title}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+            <a href="mailto:contact@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
+              <span aria-hidden className="text-base leading-none mt-0.5">📧</span>
+              <span className="flex flex-col">
+                <span className="font-semibold text-white/90">{c.general}</span>
+                <span className="text-white/60 group-hover:text-white break-all">contact@afos-analytics.com</span>
+              </span>
+            </a>
+            <a href="mailto:support@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
+              <span aria-hidden className="text-base leading-none mt-0.5">💬</span>
+              <span className="flex flex-col">
+                <span className="font-semibold text-white/90">{c.support}</span>
+                <span className="text-white/60 group-hover:text-white break-all">support@afos-analytics.com</span>
+              </span>
+            </a>
+            <a href="mailto:security@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
+              <span aria-hidden className="text-base leading-none mt-0.5">🔒</span>
+              <span className="flex flex-col">
+                <span className="font-semibold text-white/90">{c.security}</span>
+                <span className="text-white/60 group-hover:text-white break-all">security@afos-analytics.com</span>
+              </span>
+            </a>
+            <a href="mailto:founder@afos-analytics.com" className="group flex items-start gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors">
+              <span aria-hidden className="text-base leading-none mt-0.5">👤</span>
+              <span className="flex flex-col">
+                <span className="font-semibold text-white/90">{c.founder}</span>
+                <span className="text-white/60 group-hover:text-white break-all">founder@afos-analytics.com</span>
+              </span>
+            </a>
           </div>
         </div>
 
