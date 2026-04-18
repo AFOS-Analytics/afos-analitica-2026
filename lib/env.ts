@@ -1,27 +1,40 @@
 import { z } from 'zod'
 
+// Preprocess: trata string vazia como undefined. Node.js define env vars
+// vazias como "" (não undefined) quando declaradas sem valor, o que fazia
+// z.string().optional() rejeitar ao invés de aceitar como ausente.
+const optional = <T extends z.ZodTypeAny>(inner: T) =>
+  z.preprocess(v => (v === '' ? undefined : v), inner.optional())
+
 const envSchema = z.object({
-  DATABASE_URL: z.string().url().startsWith('postgres'),
-  KV_REST_API_URL: z.string().url().optional(),
-  KV_REST_API_TOKEN: z.string().min(10).optional(),
-  UPSTASH_REDIS_REST_URL: z.string().url().optional(),
-  UPSTASH_REDIS_REST_TOKEN: z.string().min(10).optional(),
-  RESEND_API_KEY: z.string().startsWith('re_').optional(),
-  CRON_SECRET: z.string().min(16).optional(),
-  ALERT_EMAIL: z.string().email().optional(),
+  DATABASE_URL: optional(z.string().url().startsWith('postgres')),
+  KV_REST_API_URL: optional(z.string().url()),
+  KV_REST_API_TOKEN: optional(z.string().min(10)),
+  UPSTASH_REDIS_REST_URL: optional(z.string().url()),
+  UPSTASH_REDIS_REST_TOKEN: optional(z.string().min(10)),
+  RESEND_API_KEY: optional(z.string().startsWith('re_')),
+  CRON_SECRET: optional(z.string().min(16)),
+  ALERT_EMAIL: optional(z.string().email()),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
-}).refine(
-  d => d.KV_REST_API_URL || d.UPSTASH_REDIS_REST_URL,
-  { message: 'Redis URL obrigatória: KV_REST_API_URL ou UPSTASH_REDIS_REST_URL' },
-).refine(
-  d => d.KV_REST_API_TOKEN || d.UPSTASH_REDIS_REST_TOKEN,
-  { message: 'Redis token obrigatório: KV_REST_API_TOKEN ou UPSTASH_REDIS_REST_TOKEN' },
-)
+}).superRefine((d, ctx) => {
+  if (d.NODE_ENV !== 'production') return
+  // Em produção, crítico ter os secrets principais configurados.
+  if (!d.DATABASE_URL) ctx.addIssue({ code: 'custom', path: ['DATABASE_URL'], message: 'obrigatório em produção' })
+  const hasRedisUrl = d.KV_REST_API_URL || d.UPSTASH_REDIS_REST_URL
+  const hasRedisToken = d.KV_REST_API_TOKEN || d.UPSTASH_REDIS_REST_TOKEN
+  if (!hasRedisUrl) ctx.addIssue({ code: 'custom', path: ['KV_REST_API_URL'], message: 'Redis URL obrigatória em produção' })
+  if (!hasRedisToken) ctx.addIssue({ code: 'custom', path: ['KV_REST_API_TOKEN'], message: 'Redis token obrigatório em produção' })
+})
 
 type Env = z.infer<typeof envSchema>
 
 let cached: Env | null = null
 
+/**
+ * Valida process.env contra o schema e retorna valores tipados + cacheados.
+ * Em dev: fields opcionais podem faltar. Em prod: secrets críticos obrigatórios.
+ * Throw com mensagens descritivas se inválido.
+ */
 export function getEnv(): Env {
   if (cached) return cached
   const parsed = envSchema.safeParse(process.env)
