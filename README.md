@@ -6,7 +6,7 @@
 
 ### The open-source **Global Political Risk Intelligence** observatory.
 
-Prediction markets cross-referenced with electoral polls and real-time news. Built and battle-tested during Brazil's 2026 election cycle. Now expanding to 14+ countries.
+Prediction markets cross-referenced with electoral polls and real-time news. Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis, Apache 2.0 open-source.
 
 **Aggregating 400+ sources:** 5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks in 20+ languages.
 
