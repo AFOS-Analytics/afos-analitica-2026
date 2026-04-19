@@ -4,9 +4,11 @@
 
 🇧🇷 [Leia em Português](README.pt-BR.md) | 🇺🇸 English
 
-Unprecedented platform worldwide
+### Global platform — unprecedented — real-time cross-referencing of prediction markets, electoral polls and news.
 
-**Real-time cross-referencing of prediction markets and electoral polls, aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
+Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis.
+
+**Aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
@@ -25,7 +27,7 @@ Unprecedented platform worldwide
 
 **AFOS Analytics** is the world's first political electoral risk intelligence platform that cross-references in real time:
 
-- **Prediction markets** with real money (Polymarket) — odds updated every 60 seconds
+- **Prediction markets** with real money (Polymarket) — odds updated every 5 minutes
 - **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
@@ -93,7 +95,7 @@ After signup: Unlimited access, no popup/gate
 ### Data Pipeline (Cron + Upstash Redis)
 
 ```
-Background:  Cron (60s) → Polymarket (18 markets in parallel) → Upstash Redis
+Background:  Cron (5min) → Polymarket (18 markets in parallel) → Upstash Redis
 User:        Request → Redis read (<1ms) → response
 ```
 
@@ -134,7 +136,7 @@ app/
 ├── api/
 │   ├── visitor/state/session/dismiss/migrate/  # Visitor tracking
 │   ├── subscribe/                     # Email capture
-│   ├── cron/refresh-elections/        # Cron 60s → Redis + Neon
+│   ├── cron/refresh-elections/        # Cron 5min → Redis + Neon
 │   ├── cron/refresh-polls/            # Cron 3x/day → TSE
 │   ├── admin/analytics/               # Detailed analytics (Neon)
 │   ├── admin/search-console/          # Google Search Console API
@@ -317,7 +319,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/visitor/migrate` | Migrate legacy subscribers |
 | `/api/subscribe` | Email capture (visitorId + captureSource) |
 | `/api/global-map` | Global elections (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 60s |
+| `/api/cron/refresh-elections` | Cron 5min |
 | `/api/cron/refresh-polls` | Cron 3x/day TSE |
 | `/api/polymarket` | BR odds |
 | `/api/polls` / `/api/polls/tse` | Polls |

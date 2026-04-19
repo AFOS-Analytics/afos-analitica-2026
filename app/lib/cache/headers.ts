@@ -12,7 +12,7 @@ export interface CacheProfile {
   browser: string;
 }
 
-/** Mapa global: dados de eleições, atualizado pelo cron a cada 60s. */
+/** Mapa global: dados de eleições, atualizado pelo cron a cada 5min. */
 export const CACHE_GLOBAL_MAP: CacheProfile = {
   vercelCdn: 'max-age=300, stale-while-revalidate=600',
   cdn: 'max-age=120, stale-while-revalidate=300',
