@@ -39,5 +39,7 @@ next-env.d.ts
 # documents (internal — never ship)
 *.pdf
 docs/pipeline-launch-opensource.html
+docs/posicionamento-estrategico-afos.html
 public/pipeline-launch-opensource.html
 public/pipeline-*.html
+public/posicionamento-*.html
