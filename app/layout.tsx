@@ -13,8 +13,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
-  title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-  description: "Open-source observatory cross-referencing prediction markets (Polymarket, Kalshi), electoral polls (TSE + 100+ institutes) and real-time news. Built and battle-tested during 2026 election cycles in South American countries. Apache 2.0.",
+  title: "AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral",
+  description: "Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Notícias ao vivo, análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
     languages: {
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-    description: "Open-source observatory cross-referencing prediction markets, electoral polls and real-time news. Built for 2026 election cycles in South American countries.",
+    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
+    description: "Plataforma inédita no mundo: cruzamento de mercados de previsão com pesquisas eleitorais em tempo real. Eleições Brasil 2026 e cobertura de 14 países.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'AFOS Analytics — Global Political Risk Intelligence Observatory',
+        alt: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-    description: "Open-source: prediction markets × electoral polls × real-time news. Built for 2026 elections in South American countries. Apache 2.0.",
+    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
+    description: "Plataforma inédita no mundo: Polymarket + 17 institutos de pesquisa + notícias ao vivo. Eleições Brasil 2026 e cobertura de 14 países.",
     images: ['/opengraph-image'],
   },
   robots: {
