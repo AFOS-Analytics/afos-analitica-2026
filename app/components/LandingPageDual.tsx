@@ -25,7 +25,7 @@ const CONTENT = {
       title: 'Inteligência de',
       titleHighlight: 'Risco Político Eleitoral',
       claim: 'O observatório open-source de Global Political Risk Intelligence — cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias.',
-      subtitle: 'Construído e validado durante o ciclo eleitoral do Brasil 2026. Em expansão para 14+ países. Análises humanas diárias, código aberto Apache 2.0.',
+      subtitle: 'Construído e validado durante o ciclo eleitoral do Brasil 2026. Análises diárias, código aberto Apache 2.0.',
       cta: 'Acessar Dashboard',
       ctaSecondary: 'Saiba mais',
     },
