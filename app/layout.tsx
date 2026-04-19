@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
   title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-  description: "Open-source observatory cross-referencing prediction markets (Polymarket, Kalshi), electoral polls (TSE + 100+ institutes) and real-time news across 14+ countries. Built for Brazil 2026. Apache 2.0.",
+  description: "Open-source observatory cross-referencing prediction markets (Polymarket, Kalshi), electoral polls (TSE + 100+ institutes) and real-time news. Built and battle-tested during 2026 election cycles in South American countries. Apache 2.0.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
     languages: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-    description: "Open-source observatory cross-referencing prediction markets, electoral polls and real-time news across 14+ countries. Built for Brazil 2026.",
+    description: "Open-source observatory cross-referencing prediction markets, electoral polls and real-time news. Built for 2026 election cycles in South American countries.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AFOS Analytics — Global Political Risk Intelligence Observatory",
-    description: "Open-source: prediction markets × electoral polls × real-time news. 14+ countries. Built for Brazil 2026. Apache 2.0.",
+    description: "Open-source: prediction markets × electoral polls × real-time news. Built for 2026 elections in South American countries. Apache 2.0.",
     images: ['/opengraph-image'],
   },
   robots: {
