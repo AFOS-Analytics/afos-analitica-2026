@@ -4,11 +4,9 @@
 
 🇧🇷 Português | 🇺🇸 [Read in English](README.md)
 
-### O observatório open-source de **Global Political Risk Intelligence**.
+Plataforma inédita no mundo
 
-Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias. Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul. Análises diárias, código aberto Apache 2.0.
-
-**Agregando 400+ fontes:** 5 grandes mercados globais de previsão + 100+ institutos de pesquisa + 300+ meios de comunicação e redes sociais em 20+ idiomas.
+**Cruzamento em tempo real entre mercados de previsão e pesquisas eleitorais, agregando mais de 400 fontes** (5 grandes mercados globais de previsão + 100+ institutos de pesquisa + 300+ meios de comunicação e redes sociais, 20+ idiomas) em **14+ países.**
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)

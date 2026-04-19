@@ -4,11 +4,9 @@
 
 🇧🇷 [Leia em Português](README.pt-BR.md) | 🇺🇸 English
 
-### The open-source **Global Political Risk Intelligence** observatory.
+Unprecedented platform worldwide
 
-Prediction markets cross-referenced with electoral polls and real-time news. Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis, Apache 2.0 open-source.
-
-**Aggregating 400+ sources:** 5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks in 20+ languages.
+**Real-time cross-referencing of prediction markets and electoral polls, aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
 
 ![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=social)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
