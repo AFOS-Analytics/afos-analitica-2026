@@ -332,7 +332,7 @@ curl -X POST .../api/admin/data-request \
 - [x] Neon Postgres conectado (pooled + unpooled)
 - [x] Upstash Redis conectado (rate limit + KV cache)
 - [x] Resend configurado (welcome email)
-- [x] Cron 60s ativo (vercel.json)
+- [x] Cron 5min ativo (vercel.json)
 - [x] `postinstall: prisma generate` no package.json
 - [x] ENV vars em production + preview
 

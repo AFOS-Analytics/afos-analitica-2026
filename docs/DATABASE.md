@@ -45,7 +45,7 @@
 
 ### `market` — Sinais de Mercado
 
-Schema criado, tabelas serão adicionadas quando a pipeline de ingestão Polymarket for migrada para persistência relacional. Atualmente o hot cache (Redis KV, 60s TTL) atende a demanda.
+Schema criado, tabelas serão adicionadas quando a pipeline de ingestão Polymarket for migrada para persistência relacional. Atualmente o hot cache (Redis KV, 10min TTL) atende a demanda.
 
 ### `governance` — Auditoria e Compliance
 
