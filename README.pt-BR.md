@@ -60,6 +60,8 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 | `/[locale]/dashboard` | Dashboard interativo com dados ao vivo |
 | `/[locale]/global` | Mapa global de eleicoes (D3.js) |
 | `/[locale]/country/[country]` | Pagina por pais (13 paises) |
+| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo" |
+| `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa) |
 
 ### Landing Page
 
@@ -206,9 +208,16 @@ Integrado via `POST /api/admin/search-console`:
 - Secao especial `seoGeo` para paginas de pais
 - Auth: Bearer CRON_SECRET
 
-### Schema.org (6 tipos)
+### Schema.org (7 tipos)
 
-Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList
+Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
+
+### Otimizacao para IA (GEO)
+
+- **`public/llms.txt`** — Descreve a plataforma para AI crawlers (ChatGPT, Perplexity, Claude, Gemini) seguindo padrao emergente da industria
+- **13 AI crawlers permitidos explicitamente** em `app/robots.ts`: GPTBot, anthropic-ai, ClaudeBot, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, CCBot, Bytespider, Applebot-Extended, cohere-ai, Meta-ExternalAgent, FacebookBot
+- **JSON-LD Article schema** em `/how-it-works` para atribuicao em citacoes de motores generativos
+- **Atribuicao transparente de IA** — analises geradas por inteligencia artificial a partir de dados publicos e auditaveis
 
 ### Paginas indexaveis (~120+ com hreflang)
 
@@ -221,6 +230,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList
 | Eleicao (13 × 3) | 39 | 0.7-0.9 |
 | Institucional (7 × 3) | 21 | 0.8 |
 | Regiao (2 × 3) | 6 | 0.85 |
+| Como Funciona (1 × 3) | 3 | 0.85 |
 
 ---
 
@@ -367,6 +377,7 @@ npm run dev
 | [docs/DATABASE.md](docs/DATABASE.md) | Schemas, tabelas, convencoes |
 | [docs/LGPD.md](docs/LGPD.md) | Matriz PII, retencao, runbooks |
 | [docs/OPERATIONS.md](docs/OPERATIONS.md) | Deploy, rollback, observabilidade |
+| [docs/como-funciona-afos.html](docs/como-funciona-afos.html) | Guia didatico da metodologia (fonte) |
 | [V1 README](docs/README-v1.pt-BR.md) | Como tudo comecou |
 
 ---
