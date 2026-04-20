@@ -11,10 +11,10 @@ const NAV_LABELS: Record<string, { title: string; dashboard: string; global: str
   es:      { title: 'Navegación', dashboard: 'Dashboard', global: 'Mapa Global', latam: 'América Latina', eu: 'Europa' },
 }
 
-const OSS_LABELS: Record<string, { title: string; license: string; github: string; security: string; contributing: string }> = {
-  'pt-BR': { title: 'Open Source', license: 'Licença Apache 2.0',  github: 'GitHub', security: 'Segurança', contributing: 'Contribuir' },
-  en:      { title: 'Open Source', license: 'Apache 2.0 License',  github: 'GitHub', security: 'Security',  contributing: 'Contributing' },
-  es:      { title: 'Open Source', license: 'Licencia Apache 2.0', github: 'GitHub', security: 'Seguridad', contributing: 'Contribuir' },
+const OSS_LABELS: Record<string, { title: string; license: string; github: string; security: string; contributing: string; conduct: string }> = {
+  'pt-BR': { title: 'Open Source', license: 'Licença Apache 2.0',  github: 'GitHub', security: 'Segurança', contributing: 'Contribuir',   conduct: 'Código de Conduta' },
+  en:      { title: 'Open Source', license: 'Apache 2.0 License',  github: 'GitHub', security: 'Security',  contributing: 'Contributing', conduct: 'Code of Conduct' },
+  es:      { title: 'Open Source', license: 'Licencia Apache 2.0', github: 'GitHub', security: 'Seguridad', contributing: 'Contribuir',   conduct: 'Código de Conducta' },
 }
 
 type ContactKey = 'general' | 'support' | 'security' | 'founder'
@@ -57,6 +57,7 @@ export function Footer() {
             <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>
             <a href={`${GITHUB_URL}/blob/main/SECURITY.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.security}</a>
             <a href={`${GITHUB_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.contributing}</a>
+            <a href={`${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.conduct}</a>
           </div>
         </div>
 
