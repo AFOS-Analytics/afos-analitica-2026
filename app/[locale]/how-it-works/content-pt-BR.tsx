@@ -6,8 +6,7 @@ export function HowItWorksPtBR() {
     <>
       <p className="text-center text-sm font-extrabold text-primary uppercase tracking-[0.25em] mb-3">O Método</p>
       <h1 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-2 tracking-tight">
-        <span className="md:hidden">Como funciona<br />AFOS Analytics</span>
-        <span className="hidden md:inline">Como funciona o AFOS Analytics</span>
+        Como funciona<br className="md:hidden" /> AFOS Analytics
       </h1>
       <p className="text-center text-gray-600 text-base font-medium mb-10">Guia didático para navegação na plataforma</p>
 
