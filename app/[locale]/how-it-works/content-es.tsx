@@ -35,7 +35,7 @@ export function HowItWorksEs() {
             <TocLink href="#bastidores">Detrás de la plataforma</TocLink>
             <TocLink href="#perfis-usuario">3 perfiles de usuario</TocLink>
             <TocLink href="#limitacoes">Cuándo AFOS no sirve</TocLink>
-            <TocLink href="#diferenciacao">Diferencia vs periódicos</TocLink>
+            <TocLink href="#diferenciacao">Diferencia vs agregadores vs periódicos</TocLink>
             <TocLink href="#comece-aqui">Comienza aquí</TocLink>
           </TocCol>
         </div>
@@ -472,8 +472,8 @@ export function HowItWorksEs() {
           <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase"></th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Periódico tradicional</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Google News</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">AFOS</th></tr></thead>
           <tbody>
             <tr className="border-b border-gray-100"><td className="px-4 py-3">Sesgo editorial</td><td className="px-4 py-3">Alto</td><td className="px-4 py-3">Medio</td><td className="px-4 py-3"><strong>Transparente (muestra ambos lados)</strong></td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">¿Integra dinero real?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">No</td><td className="px-4 py-3"><strong>Sí (Polymarket)</strong></td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">¿Cruza múltiples fuentes?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">Agrega pero no cruza</td><td className="px-4 py-3"><strong>Sí, con lógica explícita</strong></td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">¿Integra dinero real?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">No</td><td className="px-4 py-3"><strong>Sí, mercado de predicción</strong></td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3">¿Cruza múltiples fuentes?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">Agrega pero no cruza</td><td className="px-4 py-3"><strong>Sí, con lógica y método</strong></td></tr>
             <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">¿Muestra cambio en el tiempo?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">No</td><td className="px-4 py-3"><strong>Sí (↑↓pp variaciones diarias)</strong></td></tr>
             <tr className="border-b border-gray-100"><td className="px-4 py-3">¿Open source?</td><td className="px-4 py-3">No</td><td className="px-4 py-3">No</td><td className="px-4 py-3"><strong>Sí, Apache 2.0</strong></td></tr>
             <tr><td className="px-4 py-3">¿Cuesta?</td><td className="px-4 py-3">Suscripción</td><td className="px-4 py-3">Gratis pero adictivo</td><td className="px-4 py-3"><strong>100% gratis, sin login</strong></td></tr>

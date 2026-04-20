@@ -35,7 +35,7 @@ export function HowItWorksPtBR() {
             <TocLink href="#bastidores">Por trás da plataforma</TocLink>
             <TocLink href="#perfis-usuario">3 perfis de usuário</TocLink>
             <TocLink href="#limitacoes">Quando o AFOS não serve</TocLink>
-            <TocLink href="#diferenciacao">Diferença vs jornais</TocLink>
+            <TocLink href="#diferenciacao">Diferença vs agregadores vs jornais</TocLink>
             <TocLink href="#comece-aqui">Comece por aqui</TocLink>
           </TocCol>
         </div>
@@ -472,8 +472,8 @@ export function HowItWorksPtBR() {
           <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase"></th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Jornal tradicional</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Google News</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">AFOS</th></tr></thead>
           <tbody>
             <tr className="border-b border-gray-100"><td className="px-4 py-3">Viés editorial</td><td className="px-4 py-3">Alto</td><td className="px-4 py-3">Médio</td><td className="px-4 py-3"><strong>Transparente (mostra os 2 lados)</strong></td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Integra dinheiro real?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim (Polymarket)</strong></td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Cruza múltiplas fontes?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Agrega mas não cruza</td><td className="px-4 py-3"><strong>Sim, com lógica explícita</strong></td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Integra dinheiro real?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim, mercado de previsão</strong></td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3">Cruza múltiplas fontes?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Agrega mas não cruza</td><td className="px-4 py-3"><strong>Sim, com lógica e método</strong></td></tr>
             <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Mostra mudança no tempo?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim (↑↓pp variações diárias)</strong></td></tr>
             <tr className="border-b border-gray-100"><td className="px-4 py-3">Open source?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim, Apache 2.0</strong></td></tr>
             <tr><td className="px-4 py-3">Custa?</td><td className="px-4 py-3">Assinatura</td><td className="px-4 py-3">Grátis mas viciado</td><td className="px-4 py-3"><strong>100% grátis, sem login</strong></td></tr>
