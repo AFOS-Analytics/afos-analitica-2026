@@ -248,16 +248,111 @@
     font-size: 14px;
     margin: 6px 0 0;
   }
+
+  .toc {
+    background: white;
+    border: 1px solid #e0e7ff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .toc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0F52BA;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 640px) { .toc-grid { grid-template-columns: 1fr; } }
+  .toc-col h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin: 0 0 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .toc-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .toc-col li {
+    margin: 0;
+    padding: 3px 0;
+    font-size: 13px;
+  }
+  .toc-col a {
+    color: #334155;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .toc-col a:hover {
+    color: #0F52BA;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
 
 <h1>Como funciona o AFOS Analytics</h1>
 <p class="subtitle">Guia didático para navegação na plataforma</p>
-<p class="date">Atualizado em: 19 de abril de 2026</p>
+<p class="date">Atualizado em: 19 de abril de 2026 (rev. 3)</p>
+
+<!-- SUMÁRIO -->
+<nav class="toc" aria-label="Sumário do documento">
+  <div class="toc-title">Sumário</div>
+  <div class="toc-grid">
+    <div class="toc-col">
+      <h4>O que é o AFOS</h4>
+      <ul>
+        <li><a href="#introducao">Por que o AFOS existe</a></li>
+        <li><a href="#metodo">Como os dados são cruzados</a></li>
+        <li><a href="#variacoes-pp">Entendendo variações ↑↓pp</a></li>
+      </ul>
+    </div>
+    <div class="toc-col">
+      <h4>Tour pela plataforma</h4>
+      <ul>
+        <li><a href="#header">1. Header</a></li>
+        <li><a href="#cards-polymarket">2. 6 Cards Polymarket</a></li>
+        <li><a href="#pesquisas">3. Pesquisas Eleitorais</a></li>
+        <li><a href="#analise-criteriosa">4. Análise Criteriosa</a></li>
+        <li><a href="#quadro-comparativo">5. Quadro Comparativo</a></li>
+        <li><a href="#perfil-candidatos">6. Perfil dos Candidatos</a></li>
+        <li><a href="#paises">7. Países</a></li>
+        <li><a href="#live-news">8. Live News 120'</a></li>
+        <li><a href="#sentimento">9. Card Sentimento</a></li>
+        <li><a href="#inss-lulinha">10. INSS e Caso Lulinha</a></li>
+        <li><a href="#banco-master">11. Banco Master</a></li>
+        <li><a href="#stf">12. Credibilidade do STF</a></li>
+        <li><a href="#footer">13. Footer</a></li>
+      </ul>
+    </div>
+    <div class="toc-col">
+      <h4>Aprofundamento</h4>
+      <ul>
+        <li><a href="#bastidores">Por trás da plataforma</a></li>
+        <li><a href="#perfis-usuario">3 perfis de usuário</a></li>
+        <li><a href="#limitacoes">Quando o AFOS não serve</a></li>
+        <li><a href="#diferenciacao">Diferença vs jornais</a></li>
+        <li><a href="#comece-aqui">Comece por aqui</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- INTRODUÇÃO -->
-<h2>Introdução — Por que o AFOS existe</h2>
+<h2 id="introducao">Introdução — Por que o AFOS existe</h2>
 
 <p>Todo dia você abre um jornal e lê "Pesquisa X diz que candidato Y tem 37%". Em outro, lê "32%". Qual acreditar?</p>
 
@@ -295,7 +390,7 @@
 <p>Quando essas três fontes <strong>concordam</strong>, a previsão é robusta. Quando <strong>divergem</strong>, é sinal de que algo está em movimento — e isso é informação valiosíssima.</p>
 
 <!-- MÉTODO -->
-<h2>Como os dados são cruzados (o método)</h2>
+<h2 id="metodo">Como os dados são cruzados (o método)</h2>
 
 <p>O AFOS não faz estatística formal (regressão, modelos bayesianos). Faz algo diferente e mais útil no dia a dia: um <strong>cruzamento narrativo estruturado com regras explícitas</strong>.</p>
 
@@ -359,8 +454,12 @@
 
 <p>Quem lê AFOS diariamente <strong>chega antes na conclusão</strong> — porque vê o movimento enquanto ele acontece, não depois.</p>
 
+<div class="section-intro">
+  <strong>Nota de validade:</strong> os exemplos concretos citados (como o caso Zema 18-19/Abr) ilustram o <em>método</em>, não um ponto definitivo. Este documento é atualizado trimestralmente com eventos recentes para manter relevância. Os dados na plataforma estão sempre ao vivo.
+</div>
+
 <!-- VARIAÇÕES PP -->
-<h2>Entendendo as variações ↑↓pp</h2>
+<h2 id="variacoes-pp">Entendendo as variações ↑↓pp</h2>
 
 <p>"pp" = <strong>ponto percentual</strong>. É a diferença entre dois percentuais. Diferente de "percentual".</p>
 
@@ -424,7 +523,7 @@
 </div>
 
 <!-- 1. HEADER -->
-<h2>1. Header (topo da página)</h2>
+<h2 id="header">1. Header (topo da página)</h2>
 
 <p>No topo da tela você vê o logo <strong>AFOS Analytics</strong> e três botões de navegação:</p>
 
@@ -454,7 +553,7 @@
 <p>O header está presente em todas as páginas. É a âncora da navegação.</p>
 
 <!-- 2. CARDS POLYMARKET -->
-<h2>2. Os 6 Cards Polymarket — Painel instantâneo</h2>
+<h2 id="cards-polymarket">2. Os 6 Cards Polymarket — Painel instantâneo</h2>
 
 <p>Logo após o header, aparecem <strong>seis cards lado a lado</strong> resumindo os mercados mais importantes do Polymarket no momento. Cada card mostra um <strong>percentual</strong> (probabilidade precificada pelo mercado) com a <strong>variação em relação ao dia anterior</strong> (↑↓pp).</p>
 
@@ -501,13 +600,13 @@
 </div>
 
 <!-- 3. PESQUISAS -->
-<h2>3. Pesquisas Eleitorais</h2>
+<h2 id="pesquisas">3. Pesquisas Eleitorais</h2>
 
 <p>Abaixo dos cards Polymarket, você encontra a seção de pesquisas eleitorais.</p>
 
 <h3>Como as pesquisas chegam aqui</h3>
 
-<p>Todas as pesquisas registradas no <strong>TSE (Tribunal Superior Eleitoral)</strong> são baixadas automaticamente todos os dias. Hoje há <strong>176 pesquisas indexadas</strong>, das quais 25 foram publicadas nos últimos 30 dias.</p>
+<p>Todas as pesquisas registradas no <strong>TSE (Tribunal Superior Eleitoral)</strong> são baixadas automaticamente todos os dias. A base conta com <strong>mais de 150 pesquisas indexadas</strong> e cresce com cerca de <strong>2 a 4 novas pesquisas registradas por semana</strong> — ritmo que acelera à medida que o ciclo eleitoral avança.</p>
 
 <h3>Institutos monitorados</h3>
 
@@ -530,17 +629,38 @@
   </tbody>
 </table>
 
-<h3>As pesquisas exibidas</h3>
+<h3>Saber não só o que as pesquisas dizem, mas o que vão dizer</h3>
 
-<p>Cada pesquisa mostra: nome do instituto, data do campo, data de publicação, tamanho da amostra, e os percentuais por candidato. Pesquisas com <strong>campo ativo</strong> (ainda sendo aplicadas) aparecem sinalizadas — você sabe quais números estão por vir nos próximos dias.</p>
+<p>Pela legislação brasileira, todo instituto é obrigado a <strong>registrar cada pesquisa no TSE antes de divulgá-la</strong>, com protocolo único, data do campo (quando está sendo aplicada), data prevista de publicação, tamanho da amostra e custo. Esse registro é <strong>público</strong> e fica disponível na base oficial do TSE no instante em que o instituto o envia.</p>
+
+<p><strong>É aí que a inteligência do AFOS entra:</strong> a plataforma roda ciclos automáticos de ingestão ao longo do dia consultando o TSE diretamente. Quando uma pesquisa nova é registrada na base oficial, em poucas horas ela já está processada, cruzada com Polymarket e exibida na sua tela — <strong>sem depender de jornalista cobrir ou de nota oficial do instituto</strong>.</p>
+
+<h3>O que você vê em cada pesquisa</h3>
+
+<ul>
+  <li><strong>Instituto</strong> (ex: Paraná Pesquisas, Datafolha, Quaest)</li>
+  <li><strong>Protocolo TSE</strong> (identificador único, auditável)</li>
+  <li><strong>Campo:</strong> datas em que os entrevistadores estão coletando respostas</li>
+  <li><strong>Publicação prevista:</strong> quando o instituto vai divulgar o resultado</li>
+  <li><strong>Amostra:</strong> número de entrevistados</li>
+  <li><strong>Status:</strong> "publicada" (já saiu) ou "campo ativo" (ainda sendo aplicada)</li>
+</ul>
+
+<h3>Exemplo real hoje (19/Abr)</h3>
+
+<blockquote>
+Paraná Pesquisas — nacional — campo <strong>21-23/Abr (em andamento)</strong> — publicação prevista <strong>24/Abr</strong> — amostra 1.680
+</blockquote>
+
+<p>Você sabe <strong>com 5 dias de antecedência</strong> que na quinta-feira haverá uma pesquisa nacional da Paraná Pesquisas com quase 1.700 entrevistados.</p>
 
 <div class="callout">
   <div class="callout-title">Valor pra você</div>
-  <p>Saber não só o que as pesquisas dizem, mas <strong>quais vão sair em breve</strong> e de que instituto. Isso antecipa notícia.</p>
+  <p>Imprensa e analistas tradicionais só descobrem uma pesquisa <strong>quando o instituto divulga publicamente</strong> — e isso pode ser 5 a 10 dias depois do registro. O AFOS descobre <strong>no mesmo dia em que o registro entra no TSE</strong>, porque seus ciclos de ingestão operam automaticamente em intervalos de poucas horas. Isso transforma a lógica: você para de <strong>reagir a notícias</strong> e passa a <strong>antecipá-las</strong>.</p>
 </div>
 
 <!-- 4. ANÁLISE CRITERIOSA -->
-<h2>4. Análise Criteriosa (dos 4 primeiros candidatos)</h2>
+<h2 id="analise-criteriosa">4. Análise Criteriosa (dos 4 primeiros candidatos)</h2>
 
 <p>Esta é a seção mais rica e a que exige leitura mais lenta.</p>
 
@@ -567,7 +687,7 @@
 <p>A costura. Como os pontos de fortes e fracos se conectam, e o que isso significa estrategicamente naquele momento.</p>
 
 <!-- 5. QUADRO COMPARATIVO -->
-<h2>5. Quadro Comparativo</h2>
+<h2 id="quadro-comparativo">5. Quadro Comparativo</h2>
 
 <p>Uma tabela única que resume candidato por candidato:</p>
 
@@ -594,7 +714,7 @@
 </div>
 
 <!-- 6. PERFIL DOS CANDIDATOS -->
-<h2>6. Perfil dos Candidatos</h2>
+<h2 id="perfil-candidatos">6. Perfil dos Candidatos</h2>
 
 <p>Esta seção apresenta cada candidato em <strong>cards individuais</strong> com cinco campos:</p>
 
@@ -612,7 +732,7 @@
 </div>
 
 <!-- 7. PAÍSES -->
-<h2>7. Países — Botões Clicáveis</h2>
+<h2 id="paises">7. Países — Botões Clicáveis</h2>
 
 <p>A plataforma cobre <strong>14+ países</strong> com eleições monitoradas. Cada país aparece como um botão clicável. Clicando em um, você vê o mesmo tipo de cruzamento (Polymarket + pesquisas locais + notícias) aplicado àquela eleição.</p>
 
@@ -621,7 +741,7 @@
 <p><strong>Por que isso importa:</strong> decisões políticas globais se influenciam. O resultado dos EUA 2024 afeta a dinâmica do Brasil 2026. Ver o mapa completo te dá contexto.</p>
 
 <!-- 8. LIVE NEWS -->
-<h2>8. Live Eleições News 120'</h2>
+<h2 id="live-news">8. Live Eleições News 120'</h2>
 
 <p>Um feed ao vivo que mostra as <strong>notícias publicadas nos últimos 120 minutos</strong> relacionadas às eleições monitoradas. Fontes incluem Google News, grandes portais brasileiros e agências internacionais.</p>
 
@@ -633,7 +753,7 @@
 </div>
 
 <!-- 9. SENTIMENTO -->
-<h2>9. Card Sentimento</h2>
+<h2 id="sentimento">9. Card Sentimento</h2>
 
 <p>Um painel dedicado a mostrar <strong>o clima geral da disputa</strong> em quatro lentes simultâneas:</p>
 
@@ -650,7 +770,7 @@
 </div>
 
 <!-- 10. INSS -->
-<h2>10. Escândalo INSS e o Caso Lulinha</h2>
+<h2 id="inss-lulinha">10. Escândalo INSS e o Caso Lulinha</h2>
 
 <p>Card específico sobre o maior escândalo econômico de 2026 — a fraude dos descontos indevidos no INSS — e as ramificações envolvendo Luís Cláudio (Lulinha, filho do presidente).</p>
 
@@ -669,7 +789,7 @@
 </div>
 
 <!-- 11. BANCO MASTER -->
-<h2>11. Impacto do Escândalo Banco Master</h2>
+<h2 id="banco-master">11. Impacto do Escândalo Banco Master</h2>
 
 <p>Card focado no caso Banco Master e na delação de Daniel Vorcaro — outro escândalo econômico que se desenrola em capítulos.</p>
 
@@ -688,7 +808,7 @@
 </div>
 
 <!-- 12. STF -->
-<h2>12. Credibilidade do STF — Impacto Eleitoral</h2>
+<h2 id="stf">12. Credibilidade do STF — Impacto Eleitoral</h2>
 
 <p>Card dedicado à <strong>leitura do Supremo como ator eleitoral</strong> — porque o STF, embora não vote, influencia decisivamente as eleições.</p>
 
@@ -712,31 +832,57 @@
 </div>
 
 <!-- 13. FOOTER -->
-<h2>13. Footer (rodapé da página)</h2>
+<h2 id="footer">13. Footer (rodapé da página)</h2>
 
-<p>O rodapé organiza a navegação secundária em quatro colunas:</p>
+<p>O rodapé é organizado em <strong>três blocos enxutos</strong>, cada um com propósito claro. Nenhum link no footer aponta para página vazia — cada um entrega algo específico.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Coluna</th>
-      <th>O que contém</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td><strong>Regiões</strong></td><td>Links diretos para cada país monitorado</td></tr>
-    <tr><td><strong>Institucional</strong></td><td>Sobre o projeto, contato, SECURITY, CONTRIBUTING, licença Apache 2.0</td></tr>
-    <tr><td><strong>Inteligência</strong></td><td>Acesso a relatórios históricos, análises anteriores, arquivo</td></tr>
-    <tr><td><strong>AFOS Analytics</strong></td><td>Branding, ano, identidade visual</td></tr>
-  </tbody>
-</table>
+<h3>Bloco 1 — Navegação</h3>
 
-<p>É aqui que você encontra o "lado formal" da plataforma — o que está por trás da operação.</p>
+<p>Atalhos para as áreas principais da plataforma:</p>
+
+<ul>
+  <li><strong>Dashboard</strong> — aplicação principal com os 6 cards Polymarket, análises e cards temáticos</li>
+  <li><strong>Mapa Global</strong> — visualização D3.js interativa dos 14+ países monitorados</li>
+  <li><strong>América Latina</strong> — hub regional com Brasil, Colômbia, Chile e México</li>
+  <li><strong>Europa</strong> — hub regional com França, Alemanha e Reino Unido</li>
+</ul>
+
+<h3>Bloco 2 — Open Source</h3>
+
+<p>Transparência completa sobre o projeto, conforme padrão de referência em software open-source:</p>
+
+<ul>
+  <li><strong>Licença Apache 2.0</strong> — uso, modificação e redistribuição permitidos com atribuição</li>
+  <li><strong>⭐ GitHub</strong> — repositório público com código-fonte auditável</li>
+  <li><strong>Segurança</strong> — política de <em>disclosure</em> responsável para vulnerabilidades</li>
+  <li><strong>Contribuir</strong> — guia para desenvolvedores externos enviarem melhorias</li>
+  <li><strong>Código de Conduta</strong> — regras de convivência na comunidade (Contributor Covenant)</li>
+</ul>
+
+<h3>Bloco 3 — Fale Conosco</h3>
+
+<p>Quatro canais de email segmentados por propósito:</p>
+
+<ul>
+  <li>📧 <strong>Contato</strong> — imprensa, parcerias e assuntos gerais</li>
+  <li>💬 <strong>Suporte</strong> — ajuda para uso da plataforma</li>
+  <li>🔒 <strong>Segurança</strong> — reporte confidencial de vulnerabilidades</li>
+  <li>👤 <strong>Founder</strong> — contato direto com o fundador</li>
+</ul>
+
+<h3>Rodapé final</h3>
+
+<p>Linha inferior com identificação da plataforma, fontes de dados com frequências reais ("Polymarket 5min, 17+ Institutos TSE, Google News 30min"), disclaimer de não-afiliação com o Polymarket e botão "voltar ao topo".</p>
+
+<div class="callout">
+  <div class="callout-title">Por que o footer é assim</div>
+  <p>Muitos sites preenchem o rodapé com dezenas de links decorativos que não funcionam ou levam a páginas vazias. O AFOS optou pelo oposto: <strong>poucos links, todos funcionais</strong>. Se um link aparece no footer, ele entrega algo real quando clicado. Essa é a mesma filosofia de projetos open-source maduros como Supabase, Linear e Prisma.</p>
+</div>
 
 <div class="divider"></div>
 
 <!-- POR TRÁS -->
-<h2>Por trás da plataforma</h2>
+<h2 id="bastidores">Por trás da plataforma</h2>
 
 <h3>Os dados chegam sozinhos</h3>
 
@@ -769,7 +915,7 @@
 </div>
 
 <!-- PERFIS -->
-<h2>Como extrair valor (3 perfis de usuário)</h2>
+<h2 id="perfis-usuario">Como extrair valor (3 perfis de usuário)</h2>
 
 <div class="card">
   <div class="card-title">👤 Cidadão curioso</div>
@@ -792,8 +938,33 @@
   <p><strong>Valor:</strong> risco político é <strong>preço de ativo</strong>. Saber antes que o mercado precifica uma inelegibilidade ou um escândalo = vantagem concreta em trade/hedge.</p>
 </div>
 
+<!-- LIMITAÇÕES -->
+<h2 id="limitacoes">Quando o AFOS não serve (limitações honestas)</h2>
+
+<p>Nenhuma plataforma é útil para todas as perguntas. Ser honesto sobre o que o AFOS <em>não</em> entrega é o que separa uma ferramenta séria de uma promessa vaga.</p>
+
+<h3>O AFOS não substitui pesquisa estatística formal</h3>
+
+<p>Se você precisa de <strong>margem de erro, intervalo de confiança ou amostragem científica controlada</strong> (em linguagem simples: números com precisão matemática certificada e metodologia auditável de amostragem), a fonte é o <strong>instituto de pesquisa</strong> (Datafolha, Quaest, IBGE etc.). O AFOS consolida e cruza esses dados, mas não produz pesquisa nova.</p>
+
+<h3>O AFOS não prevê resultados com precisão quantitativa</h3>
+
+<p>O cruzamento é <strong>narrativo estruturado</strong>, não modelo estatístico. A plataforma não entrega previsões com precisão matemática calculada. Entrega <strong>direção, ritmo e convergência</strong> — leituras qualitativas úteis para apoiar decisão, mas que não substituem a modelagem matemática formal que acadêmicos e fundos quantitativos usam.</p>
+
+<h3>O AFOS depende da qualidade dos mercados de previsão</h3>
+
+<p>Em países onde o <strong>Polymarket não tem mercados ativos</strong> ou tem mercados com liquidez muito baixa (abaixo de US$ 100 mil em volume), o sinal de mercado fica ruidoso. O AFOS sinaliza esses casos, mas a confiança dos dados cai proporcionalmente.</p>
+
+<h3>O AFOS não é recomendação de investimento ou voto</h3>
+
+<p>É <strong>informação estruturada para apoiar decisão</strong>. Decisão sobre portfolio, apostas ou voto é responsabilidade exclusiva de quem usa. A plataforma não opera com cliente, não recebe comissão e não tem conflito de interesse declarado — justamente para não precisar recomendar nada.</p>
+
+<h3>A cobertura atual é restrita a 14+ países</h3>
+
+<p>Países fora dessa lista não têm pipeline de coleta específico. O mapa global mostra agregados, mas a profundidade de análise (cruzamento pesquisas × Polymarket × notícias) só existe onde há infraestrutura pronta. Expansão é contínua, mas não é universal.</p>
+
 <!-- COMPARAÇÃO -->
-<h2>O que torna o AFOS diferente de Google News ou um jornal</h2>
+<h2 id="diferenciacao">O que torna o AFOS diferente de Google News ou um jornal</h2>
 
 <table>
   <thead>
@@ -814,9 +985,34 @@
   </tbody>
 </table>
 
+<!-- COMEÇE POR AQUI -->
+<h2 id="comece-aqui">Comece por aqui</h2>
+
+<p>Se é sua primeira visita, este é o caminho mais rápido para extrair valor em <strong>5 minutos</strong>:</p>
+
+<div class="card">
+  <div class="card-title">Passo 1 — Abra o Dashboard</div>
+  <p>Os <strong>6 Cards Polymarket</strong> no topo já dão o panorama do dia. Leia na ordem: <em>1º turno</em> → <em>2º lugar</em> → <em>STF</em> → <em>Senado</em>. Foco nas variações <strong>↑↓pp</strong> — elas dizem o que se moveu desde ontem.</p>
+</div>
+
+<div class="card">
+  <div class="card-title">Passo 2 — Desça até a Análise Criteriosa</div>
+  <p>Escolha um candidato que te interessa e leia os blocos <strong>FORTES</strong> e <strong>FRACOS</strong> lado a lado. Vai sentir desconforto honesto lendo os pontos contra o seu preferido — isso é sinal de que o método funciona. O AFOS mostra os dois lados de cada número.</p>
+</div>
+
+<div class="card">
+  <div class="card-title">Passo 3 — Consulte o Card Sentimento</div>
+  <p>O resumo visual do clima político do dia em <strong>30 segundos</strong>. Direita, esquerda, 3ª via e Polymarket consolidado — tudo em uma tela.</p>
+</div>
+
+<div class="callout">
+  <div class="callout-title">Depois disso</div>
+  <p>Volte <strong>amanhã</strong>. O valor real do AFOS aparece na sequência: um dia dá contexto, três dias dão padrão, uma semana dá tendência. Ler uma única vez é informar-se; ler diariamente é <strong>antecipar</strong>.</p>
+</div>
+
 <!-- FRASE SÍNTESE -->
 <div class="summary-frame">
-  <p>AFOS Analytics é a primeira plataforma que combina mercados de previsão com dinheiro real, pesquisas oficiais e notícias em tempo real para mostrar, com honestidade e transparência, o que os dados realmente dizem sobre política — sem viés, sem propaganda, sem assinatura.</p>
+  <p>AFOS Analytics é a primeira plataforma que combina mercados de previsão com dinheiro real, pesquisas oficiais e notícias em tempo real para mostrar, com honestidade e transparência, o que os dados realmente dizem sobre política — sem viés, sem propaganda, livre e sem cadastro obrigatório.</p>
 </div>
 
 </body>
