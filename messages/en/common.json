@@ -9,7 +9,7 @@
     "skipToMain": "Skip to main content"
   },
   "footer": {
-    "description": "AFOS Analytics — Global Electoral Intelligence Platform | Data: Polymarket, +17 Polling Institutes, Google News, Firecrawl AI | Updated every 2h | This content does not constitute political advice",
+    "description": "AFOS Analytics — Global Electoral Intelligence Platform | Data: Polymarket (5min), 17+ TSE Institutes, Google News (30min) | This content does not constitute political advice",
     "disclaimer": "Data and probabilities sourced from",
     "polymarket": "Polymarket (polymarket.com)",
     "notAffiliated": "— This site is not affiliated with Polymarket. Data is updated automatically via public API.",
