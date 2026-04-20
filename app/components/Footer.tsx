@@ -5,10 +5,10 @@ import { EMAIL_CONTACT, EMAIL_SUPPORT, EMAIL_SECURITY, EMAIL_FOUNDER } from '../
 
 const GITHUB_URL = 'https://github.com/AFOS-Analytics/afos-analitica-2026';
 
-const NAV_LABELS: Record<string, { title: string; dashboard: string; global: string; latam: string; eu: string }> = {
-  'pt-BR': { title: 'Navegação', dashboard: 'Dashboard', global: 'Mapa Global', latam: 'América Latina', eu: 'Europa' },
-  en:      { title: 'Navigation', dashboard: 'Dashboard', global: 'Global Map',  latam: 'Latin America',  eu: 'Europe' },
-  es:      { title: 'Navegación', dashboard: 'Dashboard', global: 'Mapa Global', latam: 'América Latina', eu: 'Europa' },
+const NAV_LABELS: Record<string, { title: string; dashboard: string; global: string; latam: string; eu: string; howItWorks: string }> = {
+  'pt-BR': { title: 'Navegação', dashboard: 'Dashboard', global: 'Mapa Global', latam: 'América Latina', eu: 'Europa', howItWorks: 'O Método' },
+  en:      { title: 'Navigation', dashboard: 'Dashboard', global: 'Global Map',  latam: 'Latin America',  eu: 'Europe', howItWorks: 'The Method' },
+  es:      { title: 'Navegación', dashboard: 'Dashboard', global: 'Mapa Global', latam: 'América Latina', eu: 'Europa', howItWorks: 'El Método' },
 }
 
 const OSS_LABELS: Record<string, { title: string; license: string; github: string; security: string; contributing: string; conduct: string }> = {
@@ -50,6 +50,7 @@ export function Footer() {
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{nav.global}</a>
             <a href={`/${locale}/latam`} className="block text-white/60 hover:text-white py-0.5">{nav.latam}</a>
             <a href={`/${locale}/eu`} className="block text-white/60 hover:text-white py-0.5">{nav.eu}</a>
+            <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>
           </div>
           <div>
             <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
