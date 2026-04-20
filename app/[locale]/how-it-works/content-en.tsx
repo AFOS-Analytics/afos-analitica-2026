@@ -5,7 +5,10 @@ export function HowItWorksEn() {
   return (
     <>
       <p className="text-center text-sm font-extrabold text-primary uppercase tracking-[0.25em] mb-3">The Method</p>
-      <h1 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-2 tracking-tight">How AFOS Analytics Works</h1>
+      <h1 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-2 tracking-tight">
+        <span className="md:hidden">How It Works<br />AFOS Analytics</span>
+        <span className="hidden md:inline">How AFOS Analytics Works</span>
+      </h1>
       <p className="text-center text-gray-600 text-base font-medium mb-10">A didactic guide to navigating the platform</p>
 
       <nav className="bg-white border border-blue-100 rounded-xl p-6 my-8 shadow-sm" aria-label="Table of contents">
