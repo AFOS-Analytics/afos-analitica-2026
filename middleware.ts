@@ -18,15 +18,18 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
   return response;
 }
 
-// ─── Rate Limiting (distribuído via Upstash REST, fallback in-memory) ──
+// ─── Rate Limiting (distribuído via Upstash REST; memory só quando Upstash ausente) ──
 const memoryRL = new Map<string, { count: number; resetAt: number }>();
 
-async function isRateLimited(ip: string): Promise<boolean> {
+type RateLimitResult = 'ok' | 'limited' | 'unavailable';
+
+async function checkRateLimit(ip: string): Promise<RateLimitResult> {
   const url = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
   const token = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
 
   if (url && token) {
-    // Distributed: Upstash Redis REST API (funciona em Edge Runtime)
+    // Upstash configurado: falha = 'unavailable' (nunca cair em memory, evita bypass
+    // entre workers serverless — cada instância contaria sozinha, permitindo N× o limite).
     try {
       const key = `rl:${ip}`;
       const res = await fetch(`${url}/pipeline`, {
@@ -34,24 +37,25 @@ async function isRateLimited(ip: string): Promise<boolean> {
         headers: { Authorization: `Bearer ${token}` },
         body: JSON.stringify([['INCR', key], ['EXPIRE', key, 60]]),
       });
-      if (res.ok) {
-        const data = await res.json();
-        const count = data?.[0]?.result || 0;
-        return count > 100;
-      }
-    } catch { /* fallback to memory */ }
+      if (!res.ok) return 'unavailable';
+      const data = await res.json();
+      const count = data?.[0]?.result || 0;
+      return count > 100 ? 'limited' : 'ok';
+    } catch {
+      return 'unavailable';
+    }
   }
 
-  // Fallback: in-memory (per-worker, não distribuído)
+  // Sem Upstash (dev local): memory fallback é aceitável — uma única instância.
   const now = Date.now();
   const entry = memoryRL.get(ip);
   if (!entry || now > entry.resetAt) {
     memoryRL.set(ip, { count: 1, resetAt: now + 60000 });
-    return false;
+    return 'ok';
   }
-  if (entry.count >= 100) return true;
+  if (entry.count >= 100) return 'limited';
   entry.count++;
-  return false;
+  return 'ok';
 }
 
 // ─── Paths to skip ──────────────────────────────────────────────────
@@ -72,8 +76,12 @@ export async function middleware(request: NextRequest) {
     if (pathname.startsWith('/api/')) {
       const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
                  request.headers.get('x-real-ip') || 'unknown';
-      if (await isRateLimited(ip)) {
+      const rl = await checkRateLimit(ip);
+      if (rl === 'limited') {
         return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers: { 'Retry-After': '60' } });
+      }
+      if (rl === 'unavailable') {
+        return NextResponse.json({ error: 'Service temporarily unavailable' }, { status: 503, headers: { 'Retry-After': '30' } });
       }
       const response = NextResponse.next();
       response.headers.set('X-Content-Type-Options', 'nosniff');
