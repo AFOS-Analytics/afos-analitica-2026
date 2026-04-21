@@ -20,6 +20,7 @@ export function HowItWorksEs() {
             <TocLink href="#header">1. Header</TocLink>
             <TocLink href="#cards-polymarket">2. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">3. Encuestas Electorales</TocLink>
+            <TocLink href="#criterios-institutos">└ Evaluación de encuestadoras</TocLink>
             <TocLink href="#analise-criteriosa">4. Análisis Detallado</TocLink>
             <TocLink href="#quadro-comparativo">5. Tabla Comparativa</TocLink>
             <TocLink href="#perfil-candidatos">6. Perfil de Candidatos</TocLink>
@@ -251,6 +252,62 @@ export function HowItWorksEs() {
       <p className="mb-4 text-gray-700">Sabes <strong>con 5 días de anticipación</strong> que el jueves habrá una encuesta nacional de Paraná Pesquisas con casi 1.700 entrevistados.</p>
       <Callout title="Valor para ti">
         <p>La prensa y los analistas tradicionales solo descubren una encuesta <strong>cuando la encuestadora la divulga públicamente</strong> — y eso puede ser 5 a 10 días después del registro. AFOS la descubre <strong>el mismo día que el registro entra en el TSE</strong>, porque sus ciclos de ingesta operan automáticamente en intervalos de pocas horas. Esto transforma la lógica: dejas de <strong>reaccionar a noticias</strong> y pasas a <strong>anticiparlas</strong>.</p>
+      </Callout>
+
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Criterios de evaluación de encuestadoras</h3>
+      <p className="mb-4 text-gray-700">Además de listar las encuestas, AFOS muestra en el dashboard un card llamado <strong>"Encuestadoras Monitoreadas — Confiabilidad"</strong>, donde cada encuestadora recibe una clasificación de 1 a 5 estrellas. Esta clasificación sirve como <strong>regla de peso editorial</strong> para ayudar al lector a decidir cuánto confiar cuando dos encuestas divergen.</p>
+      <p className="mb-4 text-gray-700"><strong>Naturaleza de la clasificación:</strong> es una evaluación <em>editorial cualitativa</em> — no un score calculado automáticamente. Refleja el consenso público del mercado electoral brasileño (analistas, periodistas especializados, literatura metodológica). Funciona como primera aproximación honesta; el roadmap prevé evolución hacia un score cuantitativo tras el ciclo electoral de 2026.</p>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Los 5 criterios considerados</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Criterio</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Qué mide</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Historial de precisión</strong></td><td className="px-4 py-3">Cuánto acertó la encuestadora en elecciones pasadas (dentro del margen declarado). Ej: MDA tiene historial robusto de aciertos en ciclos anteriores.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Metodología de recolección</strong></td><td className="px-4 py-3">Presencial (más representativa), Online (sesgo digital), Telefónica (sesgo demográfico), Mixta. La metodología aparece entre paréntesis en el card: "(Presencial)", "(Online)", etc.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Tradición y tiempo en el mercado</strong></td><td className="px-4 py-3">Cuántos ciclos electorales cubrió la encuestadora. La tradición larga reduce el riesgo de error metodológico sistémico.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Quién encarga</strong></td><td className="px-4 py-3">Proxy indirecto de exigencia de calidad. Encuestas encargadas por bancos, inversores o grandes medios tienden a tener mayor rigor (costo típico R$100k-300k).</td></tr>
+            <tr><td className="px-4 py-3"><strong>Frecuencia y alcance</strong></td><td className="px-4 py-3">Cuántas encuestas publica, con qué regularidad, y si cubre escenarios nacionales, estatales o solo locales.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Escala de estrellas e interpretación</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Nivel</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Significado</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Cómo leer las encuestas de esta encuestadora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★★★</strong></td><td className="px-4 py-3">Referencia nacional</td><td className="px-4 py-3">Citar sin reservas. El dato suele ser robusto y auditable.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★★★</strong></td><td className="px-4 py-3">Alta confiabilidad</td><td className="px-4 py-3">Dato sólido. Bueno para formar opinión, idealmente con comparación cruzada.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★</strong></td><td className="px-4 py-3">Confiable</td><td className="px-4 py-3">Usar, pero siempre comparar con al menos 1-2 encuestas más del mismo período.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★</strong></td><td className="px-4 py-3">Usar con precaución</td><td className="px-4 py-3">Citar siempre con reservas. Historial metodológico inconsistente o encuestadora muy reciente.</td></tr>
+            <tr><td className="px-4 py-3"><strong>★</strong></td><td className="px-4 py-3">Baja confiabilidad</td><td className="px-4 py-3">Evitar basar decisiones solo en esta fuente. Ninguna encuestadora brasileña está en este nivel actualmente.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Fuentes consultadas para la clasificación</h4>
+      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+        <li><strong>Resultados electorales oficiales del TSE</strong> — comparación pública entre previsiones y resultados de urnas en ciclos anteriores (2018, 2022)</li>
+        <li><strong>Literatura metodológica brasileña</strong> — ABEP (Asociación Brasileña de Empresas de Investigación), artículos académicos sobre precisión de encuestas electorales, análisis metodológicos en FGV y Poder360</li>
+        <li><strong>Consenso periodístico especializado</strong> — analistas políticos de referencia (Folha, Estadão, O Globo, Poder360) que históricamente pesan las encuestadoras de forma similar</li>
+        <li><strong>Historial público del TSE</strong> — protocolos de registro, tamaño de muestra, costo declarado, frecuencia de publicación (todos públicos y auditables)</li>
+        <li><strong>Sitios web de las propias encuestadoras</strong> — metodología declarada, divulgación de cuestionario, transparencia sobre ponderación y estratificación</li>
+      </ul>
+
+      <Callout title="Limitación honesta">
+        <p>La clasificación actual es <strong>editorial y subjetiva</strong>. Dos personas evaluando los mismos criterios podrían llegar a notas ligeramente diferentes. Para reducir esta subjetividad a largo plazo, el <strong>roadmap de AFOS prevé evolución hacia un score cuantitativo</strong> basado en datos históricos del TSE + resultados oficiales — tasa de acierto, error medio absoluto, muestra ponderada, frecuencia y transparencia metodológica — con cálculo reproducible publicado. Plazo dependiente de datos del ciclo electoral de octubre/2026.</p>
       </Callout>
 
       <h2 id="analise-criteriosa" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">4. Análisis Detallado (de los 4 primeros candidatos)</h2>

@@ -60,7 +60,7 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 | `/[locale]/dashboard` | Interactive dashboard with live data |
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
-| `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method" |
+| `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". Includes subsection on polling institute evaluation criteria (`#criterios-institutos`) |
 | `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe) |
 
 ### Landing Page
