@@ -60,7 +60,7 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 | `/[locale]/dashboard` | Dashboard interativo com dados ao vivo |
 | `/[locale]/global` | Mapa global de eleicoes (D3.js) |
 | `/[locale]/country/[country]` | Pagina por pais (13 paises) |
-| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Inclui subsecao sobre criterios de avaliacao dos institutos de pesquisa (`#criterios-institutos`) |
+| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Inclui subsecao sobre criterios de avaliacao dos institutos de pesquisa (`#criterios-institutos`). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
 | `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa) |
 
 ### Landing Page
