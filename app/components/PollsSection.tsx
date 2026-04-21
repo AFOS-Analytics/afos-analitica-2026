@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';
 import { getColor } from '../lib/utils';
@@ -59,7 +60,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       )}
 
       {/* LISTA DE INSTITUTOS */}
-      {polls?.institutes && (
+      {polls?.institutes && polls.institutes.length > 0 && (
         <Card className="mb-6">
           <h3 className="font-bold text-sm text-dark mb-3">🏛️ {t('sections.institutes')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -80,9 +81,13 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <span><span className="text-primary">★</span><span className="text-gray-300">★★★★</span> Baixa confiabilidade</span>
             </div>
             <div>{t('sections.updated')} {polls.lastUpdate}</div>
-            <a href={`/${locale}/how-it-works#criterios-institutos`} className="inline-flex items-center gap-1 text-gray-400 hover:text-primary hover:underline transition-colors">
+            <Link
+              href={`/${locale}/how-it-works#criterios-institutos`}
+              className="inline-flex items-center gap-1 text-gray-400 hover:text-primary hover:underline transition-colors"
+              aria-label={`${t('sections.criteriaLink')} — ${t('sections.institutes')}`}
+            >
               ⓘ {t('sections.criteriaLink')} →
-            </a>
+            </Link>
           </div>
         </Card>
       )}

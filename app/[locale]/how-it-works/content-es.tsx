@@ -254,9 +254,9 @@ export function HowItWorksEs() {
         <p>La prensa y los analistas tradicionales solo descubren una encuesta <strong>cuando la encuestadora la divulga públicamente</strong> — y eso puede ser 5 a 10 días después del registro. AFOS la descubre <strong>el mismo día que el registro entra en el TSE</strong>, porque sus ciclos de ingesta operan automáticamente en intervalos de pocas horas. Esto transforma la lógica: dejas de <strong>reaccionar a noticias</strong> y pasas a <strong>anticiparlas</strong>.</p>
       </Callout>
 
-      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Criterios de evaluación de encuestadoras</h3>
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-20">Criterios de evaluación de encuestadoras</h3>
       <p className="mb-4 text-gray-700">Además de listar las encuestas, AFOS muestra en el dashboard un card llamado <strong>"Encuestadoras Monitoreadas — Confiabilidad"</strong>, donde cada encuestadora recibe una clasificación de 1 a 5 estrellas. Esta clasificación sirve como <strong>regla de peso editorial</strong> para ayudar al lector a decidir cuánto confiar cuando dos encuestas divergen.</p>
-      <p className="mb-4 text-gray-700"><strong>Naturaleza de la clasificación:</strong> es una evaluación <em>editorial cualitativa</em> — no un score calculado automáticamente. Refleja el consenso público del mercado electoral brasileño (analistas, periodistas especializados, literatura metodológica). Funciona como primera aproximación honesta; el roadmap prevé evolución hacia un score cuantitativo tras el ciclo electoral de 2026.</p>
+      <p className="mb-4 text-gray-700"><strong>Naturaleza de la clasificación:</strong> es una evaluación <em>editorial cualitativa</em> — no un score calculado automáticamente. Refleja el consenso público del mercado electoral brasileño (analistas, periodistas especializados, literatura metodológica). Funciona como primera aproximación honesta; la evolución hacia un score cuantitativo está en el roadmap de AFOS tras el ciclo electoral.</p>
 
       <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Los 5 criterios considerados</h4>
       <div className="overflow-x-auto my-4">
