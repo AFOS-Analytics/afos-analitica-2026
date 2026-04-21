@@ -46,7 +46,9 @@
     "errorConnection": "Erro de conexão. Tente novamente.",
     "errorGeneric": "Não foi possível concluir. Tente novamente.",
     "errorRateLimit": "Muitas tentativas. Tente novamente em 1 hora.",
-    "errorUnavailable": "Serviço temporariamente indisponível."
+    "errorUnavailable": "Serviço temporariamente indisponível.",
+    "typoSuggestion": "Você quis dizer",
+    "typoUse": "Usar"
   },
   "gate": {
     "title": "Continue acompanhando o AFOS Analytics",

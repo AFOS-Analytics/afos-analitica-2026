@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useMemo } from 'react';
 import { useTranslation } from '../i18n/context';
+import { suggestEmailCorrection } from '../../lib/email-typo';
 
 /**
  * Shared subscribe form — used by Popup, Gate, and Landing Page.
@@ -30,6 +31,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
   const submitting = useRef(false);
 
   const prefix = variant === 'gate' ? 'gate' : 'popup';
+  const suggestion = useMemo(() => suggestEmailCorrection(email), [email]);
 
   const handleSubmit = useCallback(async () => {
     if (submitting.current) return;
@@ -122,6 +124,19 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
           className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
           onKeyDown={e => { if (e.key === 'Enter' && status !== 'loading') handleSubmit(); }}
         />
+        {suggestion && status !== 'loading' && (
+          <p className="text-xs text-amber-700 mt-1.5 px-1">
+            {t('popup.typoSuggestion')}{' '}
+            <button
+              type="button"
+              onClick={() => { setEmail(suggestion); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
+              className="font-semibold underline hover:text-amber-900 transition-colors"
+            >
+              {suggestion}
+            </button>
+            ?
+          </p>
+        )}
       </div>
 
       {/* Honeypot */}

@@ -29,7 +29,7 @@ export function HowItWorksPtBR() {
             <TocLink href="#perfil-candidatos">6. Perfil dos Candidatos</TocLink>
             <TocLink href="#paises">7. Países</TocLink>
             <TocLink href="#live-news">8. Live News 120'</TocLink>
-            <TocLink href="#sentimento">9. Card Sentimento</TocLink>
+            <TocLink href="#sentimento">9. Clima Político</TocLink>
             <TocLink href="#inss-lulinha">10. INSS e Caso Lulinha</TocLink>
             <TocLink href="#banco-master">11. Banco Master</TocLink>
             <TocLink href="#stf">12. Credibilidade do STF</TocLink>
@@ -37,7 +37,7 @@ export function HowItWorksPtBR() {
           </TocCol>
           <TocCol heading="Aprofundamento">
             <TocLink href="#bastidores">Por trás da plataforma</TocLink>
-            <TocLink href="#perfis-usuario">3 perfis de usuário</TocLink>
+            <TocLink href="#perfis-usuario">Perfis de usuários</TocLink>
             <TocLink href="#limitacoes">Quando o AFOS não serve</TocLink>
             <TocLink href="#diferenciacao">Diferença vs agregadores vs jornais</TocLink>
             <TocLink href="#comece-aqui">Comece por aqui</TocLink>
@@ -61,7 +61,7 @@ export function HowItWorksPtBR() {
           </thead>
           <tbody>
             <tr className={S.trRow}>
-              <td className={S.tdTop}>🎯 <strong>Polymarket</strong></td>
+              <td className={S.tdTop}>🎯 <strong>Mercado de previsão — apostas</strong> (Polymarket)</td>
               <td className={S.tdTop}>Onde gente real aposta dinheiro real em quem vai ganhar</td>
               <td className={S.tdTop}>Quando alguém arrisca US$ 10.000, não mente por vaidade</td>
             </tr>
@@ -374,7 +374,7 @@ export function HowItWorksPtBR() {
         <p>Em vez de abrir 10 abas de jornais, você tem o essencial em uma única tela, filtrado por relevância eleitoral.</p>
       </Callout>
 
-      <h2 id="sentimento" className={S.h2}>9. Card Sentimento</h2>
+      <h2 id="sentimento" className={S.h2}>9. Clima Político</h2>
       <p className={S.p}>Um painel dedicado a mostrar <strong>o clima geral da disputa</strong> em quatro lentes simultâneas:</p>
       <ul className={S.ul}>
         <li><strong>Direita:</strong> o que está jogando a favor/contra os candidatos de direita</li>
@@ -491,10 +491,10 @@ export function HowItWorksPtBR() {
         <p>Transparência sobre o uso de IA é padrão moderno — e é o que diferencia um projeto sério de um projeto opaco.</p>
       </Callout>
 
-      <h2 id="perfis-usuario" className={S.h2}>Como extrair valor (3 perfis de usuário)</h2>
+      <h2 id="perfis-usuario" className={S.h2}>Perfis de usuários</h2>
       <Card title="👤 Cidadão curioso">
         <p><strong>Visita:</strong> 2x por semana, 5 minutos por vez.</p>
-        <p><strong>O que faz:</strong> lê os 6 cards Polymarket + o card Sentimento.</p>
+        <p><strong>O que faz:</strong> lê os 6 cards Polymarket + o card Clima Político.</p>
         <p><strong>Valor:</strong> mantém-se informado sem consumir jornais enviesados. Forma opinião baseada em dados.</p>
       </Card>
       <Card title="👤 Profissional (analista, consultor, jornalista, assessor)">
@@ -536,7 +536,7 @@ export function HowItWorksPtBR() {
             <tr className={S.trRow}><td className={S.td}>Cruza múltiplas fontes?</td><td className={S.td}>Não</td><td className={S.td}>Agrega mas não cruza</td><td className={S.td}><strong>Sim, com lógica e método</strong></td></tr>
             <tr className={S.trAlt}><td className={S.td}>Mostra mudança no tempo?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim (↑↓pp variações diárias)</strong></td></tr>
             <tr className={S.trRow}><td className={S.td}>Open source?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim, Apache 2.0</strong></td></tr>
-            <tr><td className={S.td}>Custa?</td><td className={S.td}>Assinatura</td><td className={S.td}>Grátis mas viciado</td><td className={S.td}><strong>100% grátis, sem login</strong></td></tr>
+            <tr><td className={S.td}>Custa?</td><td className={S.td}>Assinatura</td><td className={S.td}>Grátis mas limitado</td><td className={S.td}><strong>100% grátis, sem login</strong></td></tr>
           </tbody>
         </table>
       </div>
@@ -549,7 +549,7 @@ export function HowItWorksPtBR() {
       <Card title="Passo 2 — Desça até a Análise Criteriosa">
         <p>Escolha um candidato que te interessa e leia os blocos <strong>FORTES</strong> e <strong>FRACOS</strong> lado a lado. Vai sentir desconforto honesto lendo os pontos contra o seu preferido — isso é sinal de que o método funciona. O AFOS mostra os dois lados de cada número.</p>
       </Card>
-      <Card title="Passo 3 — Consulte o Card Sentimento">
+      <Card title="Passo 3 — Consulte o Card Clima Político">
         <p>O resumo visual do clima político do dia em <strong>30 segundos</strong>. Direita, esquerda, 3ª via e Polymarket consolidado — tudo em uma tela.</p>
       </Card>
       <Callout title="Depois disso">
