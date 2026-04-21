@@ -6,7 +6,7 @@ export function HowItWorksPtBR() {
     <>
       <p className="text-center text-sm font-extrabold text-primary uppercase tracking-[0.25em] mb-3">O Método</p>
       <h1 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-2 tracking-tight">
-        Como funciona<br className="md:hidden" /> AFOS Analytics
+        Como funciona<br className="md:hidden" aria-hidden="true" /> AFOS Analytics
       </h1>
       <p className="text-center text-gray-600 text-base font-medium mb-10">Guia didático para navegação na plataforma</p>
 
@@ -256,9 +256,9 @@ export function HowItWorksPtBR() {
         <p>Imprensa e analistas tradicionais só descobrem uma pesquisa <strong>quando o instituto divulga publicamente</strong> — e isso pode ser 5 a 10 dias depois do registro. O AFOS descobre <strong>no mesmo dia em que o registro entra no TSE</strong>, porque seus ciclos de ingestão operam automaticamente em intervalos de poucas horas. Isso transforma a lógica: você para de <strong>reagir a notícias</strong> e passa a <strong>antecipá-las</strong>.</p>
       </Callout>
 
-      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Critérios de avaliação dos institutos</h3>
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-20">Critérios de avaliação dos institutos</h3>
       <p className="mb-4 text-gray-700">Além de listar as pesquisas, o AFOS exibe no dashboard um card chamado <strong>"Institutos Monitorados — Confiabilidade"</strong>, onde cada instituto recebe uma classificação de 1 a 5 estrelas. Essa classificação serve como <strong>régua de peso editorial</strong> para ajudar o leitor a decidir quanto confiar quando duas pesquisas divergem.</p>
-      <p className="mb-4 text-gray-700"><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; o roadmap prevê evolução para score quantitativo pós-ciclo eleitoral de 2026.</p>
+      <p className="mb-4 text-gray-700"><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; a evolução para score quantitativo está no roadmap do AFOS pós-ciclo eleitoral.</p>
 
       <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Os 5 critérios considerados</h4>
       <div className="overflow-x-auto my-4">

@@ -254,9 +254,9 @@ export function HowItWorksEn() {
         <p>Press and traditional analysts only discover a poll <strong>when the institute publicly releases it</strong> — which can be 5 to 10 days after registration. AFOS discovers it <strong>on the same day the registration enters the TSE</strong>, because its ingestion cycles operate automatically at intervals of a few hours. This changes the logic: you stop <strong>reacting to news</strong> and start <strong>anticipating it</strong>.</p>
       </Callout>
 
-      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Institute evaluation criteria</h3>
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-20">Institute evaluation criteria</h3>
       <p className="mb-4 text-gray-700">Beyond listing polls, AFOS displays a dashboard card called <strong>"Monitored Institutes — Reliability"</strong>, where each institute receives a 1-to-5-star rating. This rating serves as an <strong>editorial weighting ruler</strong> to help readers decide how much to trust each source when polls diverge.</p>
-      <p className="mb-4 text-gray-700"><strong>Nature of the rating:</strong> it is a <em>qualitative editorial evaluation</em> — not an automatically calculated score. It reflects public consensus in the Brazilian electoral market (analysts, specialized journalists, methodological literature). It works as an honest first approximation; the roadmap calls for evolution toward a quantitative score after the 2026 election cycle.</p>
+      <p className="mb-4 text-gray-700"><strong>Nature of the rating:</strong> it is a <em>qualitative editorial evaluation</em> — not an automatically calculated score. It reflects public consensus in the Brazilian electoral market (analysts, specialized journalists, methodological literature). It works as an honest first approximation; evolution toward a quantitative score is on the AFOS roadmap post-election cycle.</p>
 
       <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">The 5 criteria considered</h4>
       <div className="overflow-x-auto my-4">
