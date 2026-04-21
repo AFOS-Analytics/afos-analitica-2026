@@ -1,7 +1,14 @@
 'use client';
 
+import Link from 'next/link';
 import { useTranslation } from '../i18n/context';
 import { LanguageSwitcher } from './layout/language-switcher';
+
+const HOW_IT_WORKS_LABEL: Record<string, string> = {
+  'pt-BR': 'O Método',
+  en: 'The Method',
+  es: 'El Método',
+};
 
 interface HeaderProps {
   fetchedAt?: string;
@@ -59,6 +66,10 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
             </div>
           </div>
           <p className="text-blue-300 text-xs mt-2">
+            <Link href={`/${locale}/how-it-works`} className="hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-white transition-colors">
+              {HOW_IT_WORKS_LABEL[locale] ?? HOW_IT_WORKS_LABEL['pt-BR']}
+            </Link>
+            {' · '}
             {t('header.updated')}: {fetchedAt ? new Date(fetchedAt).toLocaleString(dateLocale, { timeZone: 'America/Sao_Paulo' }) : new Date().toLocaleString(dateLocale)}
           </p>
         </div>
