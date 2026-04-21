@@ -326,6 +326,7 @@
         <li><a href="#header">1. Header</a></li>
         <li><a href="#cards-polymarket">2. 6 Cards Polymarket</a></li>
         <li><a href="#pesquisas">3. Pesquisas Eleitorais</a></li>
+        <li><a href="#criterios-institutos">└ Avaliação dos institutos</a></li>
         <li><a href="#analise-criteriosa">4. Análise Criteriosa</a></li>
         <li><a href="#quadro-comparativo">5. Quadro Comparativo</a></li>
         <li><a href="#perfil-candidatos">6. Perfil dos Candidatos</a></li>
@@ -657,6 +658,64 @@ Paraná Pesquisas — nacional — campo <strong>21-23/Abr (em andamento)</stron
 <div class="callout">
   <div class="callout-title">Valor pra você</div>
   <p>Imprensa e analistas tradicionais só descobrem uma pesquisa <strong>quando o instituto divulga publicamente</strong> — e isso pode ser 5 a 10 dias depois do registro. O AFOS descobre <strong>no mesmo dia em que o registro entra no TSE</strong>, porque seus ciclos de ingestão operam automaticamente em intervalos de poucas horas. Isso transforma a lógica: você para de <strong>reagir a notícias</strong> e passa a <strong>antecipá-las</strong>.</p>
+</div>
+
+<h3 id="criterios-institutos">Critérios de avaliação dos institutos</h3>
+
+<p>Além de listar as pesquisas, o AFOS exibe no dashboard um card chamado <strong>"Institutos Monitorados — Confiabilidade"</strong>, onde cada instituto recebe uma classificação de 1 a 5 estrelas. Essa classificação serve como <strong>régua de peso editorial</strong> para ajudar o leitor a decidir quanto confiar quando duas pesquisas divergem.</p>
+
+<p><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; o roadmap prevê evolução para score quantitativo pós-ciclo eleitoral de 2026.</p>
+
+<h4>Os 5 critérios considerados</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Critério</th>
+      <th>O que mede</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Histórico de precisão</strong></td><td>Quanto o instituto acertou em eleições passadas (dentro da margem declarada). Ex: MDA tem histórico robusto de acertos em ciclos anteriores.</td></tr>
+    <tr><td><strong>Metodologia de coleta</strong></td><td>Presencial (mais representativa), Online (viés digital), Telefônica (viés demográfico), Misto. Metodologia aparece entre parênteses no card: "(Presencial)", "(Online)", etc.</td></tr>
+    <tr><td><strong>Tradição e tempo de mercado</strong></td><td>Quantos ciclos eleitorais o instituto já cobriu. Tradição longa reduz risco de erro metodológico sistêmico.</td></tr>
+    <tr><td><strong>Quem encomenda</strong></td><td>Proxy indireto de exigência de qualidade. Pesquisas encomendadas por bancos, investidores ou grandes veículos tendem a ter rigor maior (custo típico R$100k-300k).</td></tr>
+    <tr><td><strong>Frequência e abrangência</strong></td><td>Quantas pesquisas publica, com que regularidade, e se cobre cenários nacionais, estaduais ou apenas locais.</td></tr>
+  </tbody>
+</table>
+
+<h4>Escala de estrelas e interpretação</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nível</th>
+      <th>Significado</th>
+      <th>Como ler as pesquisas desse instituto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>★★★★★</strong></td><td>Referência nacional</td><td>Cite sem ressalva. Dado costuma ser robusto e auditável.</td></tr>
+    <tr><td><strong>★★★★</strong></td><td>Alta confiabilidade</td><td>Dado sólido. Boa para formar opinião, idealmente com comparação cruzada.</td></tr>
+    <tr><td><strong>★★★</strong></td><td>Confiável</td><td>Usar, mas sempre comparar com pelo menos 1-2 outras pesquisas do mesmo período.</td></tr>
+    <tr><td><strong>★★</strong></td><td>Usar com cautela</td><td>Cite sempre com ressalva. Histórico metodológico inconsistente ou instituto muito recente.</td></tr>
+    <tr><td><strong>★</strong></td><td>Baixa confiabilidade</td><td>Evitar basear decisão apenas nesta fonte. Nenhum instituto brasileiro está neste nível atualmente.</td></tr>
+  </tbody>
+</table>
+
+<h4>Fontes consultadas para a classificação</h4>
+
+<ul>
+  <li><strong>Resultados eleitorais oficiais do TSE</strong> — comparação pública entre previsões e resultado de urna em ciclos anteriores (2018, 2022)</li>
+  <li><strong>Literatura metodológica brasileira</strong> — ABEP (Associação Brasileira de Empresas de Pesquisa), artigos acadêmicos sobre precisão de pesquisas eleitorais, análises metodológicas em FGV e Poder360</li>
+  <li><strong>Consenso jornalístico especializado</strong> — analistas políticos de referência (Folha, Estadão, O Globo, Poder360) que historicamente pesam os institutos de forma similar</li>
+  <li><strong>Histórico público do TSE</strong> — protocolos de registro, tamanho de amostra, custo declarado, frequência de publicação (todos públicos e auditáveis)</li>
+  <li><strong>Próprios sites dos institutos</strong> — metodologia declarada, divulgação de questionário, transparência sobre ponderação e estratificação</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-title">Limitação honesta</div>
+  <p>A classificação atual é <strong>editorial e subjetiva</strong>. Duas pessoas avaliando os mesmos critérios poderiam chegar a notas ligeiramente diferentes. Para reduzir essa subjetividade no longo prazo, o <strong>roadmap do AFOS prevê evolução para score quantitativo</strong> baseado em dados históricos TSE + resultados oficiais — taxa de acerto, erro médio absoluto, amostra ponderada, frequência e transparência metodológica — com cálculo reproduzível publicado. Prazo dependente de dados do ciclo eleitoral de outubro/2026.</p>
 </div>
 
 <!-- 4. ANÁLISE CRITERIOSA -->

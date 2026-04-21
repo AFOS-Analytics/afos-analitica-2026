@@ -1,7 +1,7 @@
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';
 import { getColor } from '../lib/utils';
-import { useTranslation } from '../i18n/context';
+import { useTranslation, useLocale } from '../i18n/context';
 
 interface PollsSectionProps {
   polls: PollData | null;
@@ -10,6 +10,7 @@ interface PollsSectionProps {
 
 export function PollsSection({ polls, crit }: PollsSectionProps) {
   const { t } = useTranslation();
+  const locale = useLocale();
   if (!polls) return null;
 
   return (
@@ -79,6 +80,9 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <span><span className="text-primary">★</span><span className="text-gray-300">★★★★</span> Baixa confiabilidade</span>
             </div>
             <div>{t('sections.updated')} {polls.lastUpdate}</div>
+            <a href={`/${locale}/how-it-works#criterios-institutos`} className="inline-flex items-center gap-1 text-gray-400 hover:text-primary hover:underline transition-colors">
+              ⓘ {t('sections.criteriaLink')} →
+            </a>
           </div>
         </Card>
       )}

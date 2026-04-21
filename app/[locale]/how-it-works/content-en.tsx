@@ -20,6 +20,7 @@ export function HowItWorksEn() {
             <TocLink href="#header">1. Header</TocLink>
             <TocLink href="#cards-polymarket">2. 6 Polymarket Cards</TocLink>
             <TocLink href="#pesquisas">3. Electoral Polls</TocLink>
+            <TocLink href="#criterios-institutos">└ Institute evaluation</TocLink>
             <TocLink href="#analise-criteriosa">4. In-Depth Analysis</TocLink>
             <TocLink href="#quadro-comparativo">5. Comparative Table</TocLink>
             <TocLink href="#perfil-candidatos">6. Candidate Profiles</TocLink>
@@ -251,6 +252,62 @@ export function HowItWorksEn() {
       <p className="mb-4 text-gray-700">You know <strong>5 days in advance</strong> that on Thursday there will be a national Paraná Pesquisas poll with nearly 1,700 respondents.</p>
       <Callout title="Value for you">
         <p>Press and traditional analysts only discover a poll <strong>when the institute publicly releases it</strong> — which can be 5 to 10 days after registration. AFOS discovers it <strong>on the same day the registration enters the TSE</strong>, because its ingestion cycles operate automatically at intervals of a few hours. This changes the logic: you stop <strong>reacting to news</strong> and start <strong>anticipating it</strong>.</p>
+      </Callout>
+
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Institute evaluation criteria</h3>
+      <p className="mb-4 text-gray-700">Beyond listing polls, AFOS displays a dashboard card called <strong>"Monitored Institutes — Reliability"</strong>, where each institute receives a 1-to-5-star rating. This rating serves as an <strong>editorial weighting ruler</strong> to help readers decide how much to trust each source when polls diverge.</p>
+      <p className="mb-4 text-gray-700"><strong>Nature of the rating:</strong> it is a <em>qualitative editorial evaluation</em> — not an automatically calculated score. It reflects public consensus in the Brazilian electoral market (analysts, specialized journalists, methodological literature). It works as an honest first approximation; the roadmap calls for evolution toward a quantitative score after the 2026 election cycle.</p>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">The 5 criteria considered</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Criterion</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">What it measures</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Accuracy track record</strong></td><td className="px-4 py-3">How well the institute predicted past elections (within declared margins). E.g., MDA has a strong track record of hits in previous cycles.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Collection methodology</strong></td><td className="px-4 py-3">In-person (most representative), Online (digital bias), Phone (demographic bias), Mixed. Methodology appears in parentheses on the card: "(Presencial)", "(Online)", etc.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Tradition and time in market</strong></td><td className="px-4 py-3">How many election cycles the institute has covered. Long tradition reduces the risk of systemic methodological error.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Who commissions</strong></td><td className="px-4 py-3">Indirect proxy of quality demand. Polls commissioned by banks, investors, or major outlets tend to have higher rigor (typical cost R$100k-300k).</td></tr>
+            <tr><td className="px-4 py-3"><strong>Frequency and scope</strong></td><td className="px-4 py-3">How many polls are published, how often, and whether it covers national, state, or only local scenarios.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Star scale and interpretation</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Level</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Meaning</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">How to read polls from this institute</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★★★</strong></td><td className="px-4 py-3">National reference</td><td className="px-4 py-3">Cite without reservation. Data is usually robust and auditable.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★★★</strong></td><td className="px-4 py-3">High reliability</td><td className="px-4 py-3">Solid data. Good for forming opinions, ideally with cross-comparison.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★</strong></td><td className="px-4 py-3">Reliable</td><td className="px-4 py-3">Use, but always compare with at least 1-2 other polls from the same period.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★</strong></td><td className="px-4 py-3">Use with caution</td><td className="px-4 py-3">Always cite with reservation. Inconsistent methodological track record or very recent institute.</td></tr>
+            <tr><td className="px-4 py-3"><strong>★</strong></td><td className="px-4 py-3">Low reliability</td><td className="px-4 py-3">Avoid basing decisions on this source alone. No Brazilian institute is currently at this level.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Sources consulted for the classification</h4>
+      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+        <li><strong>Official TSE electoral results</strong> — public comparison between predictions and ballot box results in previous cycles (2018, 2022)</li>
+        <li><strong>Brazilian methodological literature</strong> — ABEP (Brazilian Association of Research Companies), academic articles on electoral poll accuracy, methodological analyses at FGV and Poder360</li>
+        <li><strong>Specialized journalistic consensus</strong> — reference political analysts (Folha, Estadão, O Globo, Poder360) who historically weight institutes in similar fashion</li>
+        <li><strong>Public TSE history</strong> — registration protocols, sample size, declared cost, publication frequency (all public and auditable)</li>
+        <li><strong>The institutes' own websites</strong> — declared methodology, disclosure of questionnaires, transparency about weighting and stratification</li>
+      </ul>
+
+      <Callout title="Honest limitation">
+        <p>The current rating is <strong>editorial and subjective</strong>. Two people evaluating the same criteria could arrive at slightly different scores. To reduce this subjectivity in the long term, the <strong>AFOS roadmap calls for evolution toward a quantitative score</strong> based on TSE historical data + official results — accuracy rate, mean absolute error, weighted sample, frequency, and methodological transparency — with reproducible, published calculation. Timeline depends on data from the October 2026 election cycle.</p>
       </Callout>
 
       <h2 id="analise-criteriosa" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">4. In-Depth Analysis (of the top 4 candidates)</h2>

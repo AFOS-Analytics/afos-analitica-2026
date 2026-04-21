@@ -22,6 +22,7 @@ export function HowItWorksPtBR() {
             <TocLink href="#header">1. Header</TocLink>
             <TocLink href="#cards-polymarket">2. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">3. Pesquisas Eleitorais</TocLink>
+            <TocLink href="#criterios-institutos">└ Avaliação dos institutos</TocLink>
             <TocLink href="#analise-criteriosa">4. Análise Criteriosa</TocLink>
             <TocLink href="#quadro-comparativo">5. Quadro Comparativo</TocLink>
             <TocLink href="#perfil-candidatos">6. Perfil dos Candidatos</TocLink>
@@ -253,6 +254,62 @@ export function HowItWorksPtBR() {
       <p className="mb-4 text-gray-700">Você sabe <strong>com 5 dias de antecedência</strong> que na quinta-feira haverá uma pesquisa nacional da Paraná Pesquisas com quase 1.700 entrevistados.</p>
       <Callout title="Valor pra você">
         <p>Imprensa e analistas tradicionais só descobrem uma pesquisa <strong>quando o instituto divulga publicamente</strong> — e isso pode ser 5 a 10 dias depois do registro. O AFOS descobre <strong>no mesmo dia em que o registro entra no TSE</strong>, porque seus ciclos de ingestão operam automaticamente em intervalos de poucas horas. Isso transforma a lógica: você para de <strong>reagir a notícias</strong> e passa a <strong>antecipá-las</strong>.</p>
+      </Callout>
+
+      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3">Critérios de avaliação dos institutos</h3>
+      <p className="mb-4 text-gray-700">Além de listar as pesquisas, o AFOS exibe no dashboard um card chamado <strong>"Institutos Monitorados — Confiabilidade"</strong>, onde cada instituto recebe uma classificação de 1 a 5 estrelas. Essa classificação serve como <strong>régua de peso editorial</strong> para ajudar o leitor a decidir quanto confiar quando duas pesquisas divergem.</p>
+      <p className="mb-4 text-gray-700"><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; o roadmap prevê evolução para score quantitativo pós-ciclo eleitoral de 2026.</p>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Os 5 critérios considerados</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Critério</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">O que mede</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Histórico de precisão</strong></td><td className="px-4 py-3">Quanto o instituto acertou em eleições passadas (dentro da margem declarada). Ex: MDA tem histórico robusto de acertos em ciclos anteriores.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Metodologia de coleta</strong></td><td className="px-4 py-3">Presencial (mais representativa), Online (viés digital), Telefônica (viés demográfico), Misto. Metodologia aparece entre parênteses no card: "(Presencial)", "(Online)", etc.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Tradição e tempo de mercado</strong></td><td className="px-4 py-3">Quantos ciclos eleitorais o instituto já cobriu. Tradição longa reduz risco de erro metodológico sistêmico.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Quem encomenda</strong></td><td className="px-4 py-3">Proxy indireto de exigência de qualidade. Pesquisas encomendadas por bancos, investidores ou grandes veículos tendem a ter rigor maior (custo típico R$100k-300k).</td></tr>
+            <tr><td className="px-4 py-3"><strong>Frequência e abrangência</strong></td><td className="px-4 py-3">Quantas pesquisas publica, com que regularidade, e se cobre cenários nacionais, estaduais ou apenas locais.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Escala de estrelas e interpretação</h4>
+      <div className="overflow-x-auto my-4">
+        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Nível</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Significado</th>
+              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Como ler as pesquisas desse instituto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★★★</strong></td><td className="px-4 py-3">Referência nacional</td><td className="px-4 py-3">Cite sem ressalva. Dado costuma ser robusto e auditável.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★★★</strong></td><td className="px-4 py-3">Alta confiabilidade</td><td className="px-4 py-3">Dado sólido. Boa para formar opinião, idealmente com comparação cruzada.</td></tr>
+            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★</strong></td><td className="px-4 py-3">Confiável</td><td className="px-4 py-3">Usar, mas sempre comparar com pelo menos 1-2 outras pesquisas do mesmo período.</td></tr>
+            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★</strong></td><td className="px-4 py-3">Usar com cautela</td><td className="px-4 py-3">Cite sempre com ressalva. Histórico metodológico inconsistente ou instituto muito recente.</td></tr>
+            <tr><td className="px-4 py-3"><strong>★</strong></td><td className="px-4 py-3">Baixa confiabilidade</td><td className="px-4 py-3">Evitar basear decisão apenas nesta fonte. Nenhum instituto brasileiro está neste nível atualmente.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Fontes consultadas para a classificação</h4>
+      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+        <li><strong>Resultados eleitorais oficiais do TSE</strong> — comparação pública entre previsões e resultado de urna em ciclos anteriores (2018, 2022)</li>
+        <li><strong>Literatura metodológica brasileira</strong> — ABEP (Associação Brasileira de Empresas de Pesquisa), artigos acadêmicos sobre precisão de pesquisas eleitorais, análises metodológicas em FGV e Poder360</li>
+        <li><strong>Consenso jornalístico especializado</strong> — analistas políticos de referência (Folha, Estadão, O Globo, Poder360) que historicamente pesam os institutos de forma similar</li>
+        <li><strong>Histórico público do TSE</strong> — protocolos de registro, tamanho de amostra, custo declarado, frequência de publicação (todos públicos e auditáveis)</li>
+        <li><strong>Próprios sites dos institutos</strong> — metodologia declarada, divulgação de questionário, transparência sobre ponderação e estratificação</li>
+      </ul>
+
+      <Callout title="Limitação honesta">
+        <p>A classificação atual é <strong>editorial e subjetiva</strong>. Duas pessoas avaliando os mesmos critérios poderiam chegar a notas ligeiramente diferentes. Para reduzir essa subjetividade no longo prazo, o <strong>roadmap do AFOS prevê evolução para score quantitativo</strong> baseado em dados históricos TSE + resultados oficiais — taxa de acerto, erro médio absoluto, amostra ponderada, frequência e transparência metodológica — com cálculo reproduzível publicado. Prazo dependente de dados do ciclo eleitoral de outubro/2026.</p>
       </Callout>
 
       <h2 id="analise-criteriosa" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">4. Análise Criteriosa (dos 4 primeiros candidatos)</h2>
