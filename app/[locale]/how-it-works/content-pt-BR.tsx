@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Callout, Card, SectionIntro, NavFlag, SummaryFrame, TocCol, TocLink } from './components'
+import { S } from './styles'
 
 export function HowItWorksPtBR() {
   return (
@@ -44,71 +45,71 @@ export function HowItWorksPtBR() {
         </div>
       </nav>
 
-      <h2 id="introducao" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Introdução — Por que o AFOS existe</h2>
-      <p className="mb-4 text-gray-700">Todo dia você abre um jornal e lê "Pesquisa X diz que candidato Y tem 37%". Em outro, lê "32%". Qual acreditar?</p>
-      <p className="mb-4 text-gray-700"><strong className="text-primary">O problema:</strong> pesquisas eleitorais medem <em>intenção declarada</em> — o que a pessoa <em>diz</em> que vai fazer. Mas intenção muda, pesquisa tem viés, e no Brasil já deu errado várias vezes (2018 e 2022 tiveram surpresas grandes).</p>
-      <p className="mb-4 text-gray-700"><strong className="text-primary">A solução do AFOS:</strong> em vez de confiar em UMA fonte, a plataforma cruza <strong>três fontes independentes em tempo real</strong>:</p>
+      <h2 id="introducao" className={S.h2}>Introdução — Por que o AFOS existe</h2>
+      <p className={S.p}>Todo dia você abre um jornal e lê "Pesquisa X diz que candidato Y tem 37%". Em outro, lê "32%". Qual acreditar?</p>
+      <p className={S.p}><strong className="text-primary">O problema:</strong> pesquisas eleitorais medem <em>intenção declarada</em> — o que a pessoa <em>diz</em> que vai fazer. Mas intenção muda, pesquisa tem viés, e no Brasil já deu errado várias vezes (2018 e 2022 tiveram surpresas grandes).</p>
+      <p className={S.p}><strong className="text-primary">A solução do AFOS:</strong> em vez de confiar em UMA fonte, a plataforma cruza <strong>três fontes independentes em tempo real</strong>:</p>
 
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+      <div className={S.tableWrap}>
+        <table className={S.table}>
           <thead>
             <tr>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Fonte</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">O que mede</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Por que importa</th>
+              <th className={S.th}>Fonte</th>
+              <th className={S.th}>O que mede</th>
+              <th className={S.th}>Por que importa</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100">
-              <td className="px-4 py-3 align-top">🎯 <strong>Polymarket</strong></td>
-              <td className="px-4 py-3 align-top">Onde gente real aposta dinheiro real em quem vai ganhar</td>
-              <td className="px-4 py-3 align-top">Quando alguém arrisca US$ 10.000, não mente por vaidade</td>
+            <tr className={S.trRow}>
+              <td className={S.tdTop}>🎯 <strong>Polymarket</strong></td>
+              <td className={S.tdTop}>Onde gente real aposta dinheiro real em quem vai ganhar</td>
+              <td className={S.tdTop}>Quando alguém arrisca US$ 10.000, não mente por vaidade</td>
             </tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50">
-              <td className="px-4 py-3 align-top">📊 <strong>Institutos de pesquisa</strong> (17+ no Brasil — Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá e outros)</td>
-              <td className="px-4 py-3 align-top">Intenção declarada em amostras</td>
-              <td className="px-4 py-3 align-top">Captura o sentimento do eleitorado tradicional</td>
+            <tr className={S.trAlt}>
+              <td className={S.tdTop}>📊 <strong>Institutos de pesquisa</strong> (17+ no Brasil — Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá e outros)</td>
+              <td className={S.tdTop}>Intenção declarada em amostras</td>
+              <td className={S.tdTop}>Captura o sentimento do eleitorado tradicional</td>
             </tr>
             <tr>
-              <td className="px-4 py-3 align-top">📰 <strong>Notícias ao vivo</strong> (400+ fontes via Google News, grandes portais, agências)</td>
-              <td className="px-4 py-3 align-top">Narrativa do momento</td>
-              <td className="px-4 py-3 align-top">Explica <em>por que</em> os números mudaram</td>
+              <td className={S.tdTop}>📰 <strong>Notícias ao vivo</strong> (400+ fontes via Google News, grandes portais, agências)</td>
+              <td className={S.tdTop}>Narrativa do momento</td>
+              <td className={S.tdTop}>Explica <em>por que</em> os números mudaram</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p className="mb-4 text-gray-700">Quando essas três fontes <strong>concordam</strong>, a previsão é robusta. Quando <strong>divergem</strong>, é sinal de que algo está em movimento — e isso é informação valiosíssima.</p>
+      <p className={S.p}>Quando essas três fontes <strong>concordam</strong>, a previsão é robusta. Quando <strong>divergem</strong>, é sinal de que algo está em movimento — e isso é informação valiosíssima.</p>
 
-      <h2 id="metodo" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Como os dados são cruzados (o método)</h2>
-      <p className="mb-4 text-gray-700">O AFOS não faz estatística formal (regressão, modelos bayesianos). Faz algo diferente e mais útil no dia a dia: um <strong>cruzamento narrativo estruturado com regras explícitas</strong>.</p>
+      <h2 id="metodo" className={S.h2}>Como os dados são cruzados (o método)</h2>
+      <p className={S.p}>O AFOS não faz estatística formal (regressão, modelos bayesianos). Faz algo diferente e mais útil no dia a dia: um <strong>cruzamento narrativo estruturado com regras explícitas</strong>.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Regra de ouro: convergência vs divergência</h3>
-      <p className="mb-4 text-gray-700">Para cada pergunta importante (ex: "quem ganha o 1º turno?"), a plataforma compara os valores das 3 fontes:</p>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+      <h3 className={S.h3}>Regra de ouro: convergência vs divergência</h3>
+      <p className={S.p}>Para cada pergunta importante (ex: "quem ganha o 1º turno?"), a plataforma compara os valores das 3 fontes:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
           <thead>
             <tr>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Situação</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Interpretação</th>
+              <th className={S.th}>Situação</th>
+              <th className={S.th}>Interpretação</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Diferença Polymarket × Pesquisa ≤ 3pp</td><td className="px-4 py-3"><strong>Convergência</strong> — sinal robusto, consenso</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Diferença entre 3-5pp</td><td className="px-4 py-3">Zona neutra — tensão leve</td></tr>
-            <tr><td className="px-4 py-3">Diferença &gt; 5pp</td><td className="px-4 py-3"><strong>Divergência</strong> — algo está mudando, uma das fontes vê o que a outra não vê</td></tr>
+            <tr className={S.trRow}><td className={S.td}>Diferença Polymarket × Pesquisa ≤ 3pp</td><td className={S.td}><strong>Convergência</strong> — sinal robusto, consenso</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Diferença entre 3-5pp</td><td className={S.td}>Zona neutra — tensão leve</td></tr>
+            <tr><td className={S.td}>Diferença &gt; 5pp</td><td className={S.td}><strong>Divergência</strong> — algo está mudando, uma das fontes vê o que a outra não vê</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O ouro está na divergência</h3>
-      <p className="mb-4 text-gray-700">Quando Polymarket e pesquisa divergem, investiga-se o porquê:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>O ouro está na divergência</h3>
+      <p className={S.p}>Quando Polymarket e pesquisa divergem, investiga-se o porquê:</p>
+      <ul className={S.ul}>
         <li><strong>Pesquisa acima, mercado abaixo</strong> → ou a pesquisa está desatualizada/enviesada, ou o mercado sabe de algo (operação iminente, escândalo vazando)</li>
         <li><strong>Mercado acima, pesquisa abaixo</strong> → ou o mercado antecipa virada, ou é especulação com pouco volume</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Exemplo real — o salto e o recuo do Candidato D</h3>
+      <h3 className={S.h3}>Exemplo real — o salto e o recuo do Candidato D</h3>
       <Callout title="18/Abr">
         <p>O Candidato D (governador regional) saltou no Polymarket "3º lugar" de 8.5% para 19.5% (↑11pp em 24h).</p>
         <ul>
@@ -125,61 +126,61 @@ export function HowItWorksPtBR() {
           <li>Quem apostou rápido demais, perdeu</li>
         </ul>
       </Callout>
-      <p className="mb-4 text-gray-700">Quem lê AFOS diariamente <strong>chega antes na conclusão</strong> — porque vê o movimento enquanto ele acontece, não depois.</p>
+      <p className={S.p}>Quem lê AFOS diariamente <strong>chega antes na conclusão</strong> — porque vê o movimento enquanto ele acontece, não depois.</p>
       <SectionIntro>
         <strong>Nota de validade:</strong> os exemplos concretos citados ilustram o <em>método</em>, não um ponto definitivo. Este documento é revisado conforme a plataforma evolui. Os dados na plataforma estão sempre ao vivo.
       </SectionIntro>
 
-      <h2 id="variacoes-pp" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Entendendo as variações ↑↓pp</h2>
-      <p className="mb-4 text-gray-700">"pp" = <strong>ponto percentual</strong>. É a diferença entre dois percentuais. Diferente de "percentual".</p>
-      <p className="mb-4 text-gray-700"><strong>Exemplo:</strong> o Candidato A tinha 40%, hoje tem 42%. Subiu <strong>2 pontos percentuais (2pp)</strong>. Em termos relativos, é crescimento de 5% (2 em cima de 40).</p>
+      <h2 id="variacoes-pp" className={S.h2}>Entendendo as variações ↑↓pp</h2>
+      <p className={S.p}>"pp" = <strong>ponto percentual</strong>. É a diferença entre dois percentuais. Diferente de "percentual".</p>
+      <p className={S.p}><strong>Exemplo:</strong> o Candidato A tinha 40%, hoje tem 42%. Subiu <strong>2 pontos percentuais (2pp)</strong>. Em termos relativos, é crescimento de 5% (2 em cima de 40).</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Por que variações pequenas importam</h3>
-      <p className="mb-3 text-gray-700"><strong>1. Liquidez:</strong> o Polymarket presidencial tem US$ 54 milhões em jogo. Uma mudança de 0.8pp significa que cerca de US$ 432 mil líquidos foram reprecificados. Não é opinião — é compromisso financeiro real.</p>
-      <p className="mb-3 text-gray-700"><strong>2. Velocidade:</strong> 0.8pp em 1 dia parece pouco. Se sustentar o ritmo: 5.6pp por semana; 24pp por mês; reversão completa em 5 meses. Movimento pequeno e persistente <strong>vence</strong> movimento grande e isolado.</p>
-      <p className="mb-4 text-gray-700"><strong>3. Antecipação:</strong> quando o mercado move, ele move <strong>antes</strong> do consenso dos jornais. 48 horas depois, você vai ler analistas dizendo o que o mercado já disse.</p>
+      <h3 className={S.h3}>Por que variações pequenas importam</h3>
+      <p className={S.pTight}><strong>1. Liquidez:</strong> o Polymarket presidencial tem US$ 54 milhões em jogo. Uma mudança de 0.8pp significa que cerca de US$ 432 mil líquidos foram reprecificados. Não é opinião — é compromisso financeiro real.</p>
+      <p className={S.pTight}><strong>2. Velocidade:</strong> 0.8pp em 1 dia parece pouco. Se sustentar o ritmo: 5.6pp por semana; 24pp por mês; reversão completa em 5 meses. Movimento pequeno e persistente <strong>vence</strong> movimento grande e isolado.</p>
+      <p className={S.p}><strong>3. Antecipação:</strong> quando o mercado move, ele move <strong>antes</strong> do consenso dos jornais. 48 horas depois, você vai ler analistas dizendo o que o mercado já disse.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Tabela de interpretação</h3>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+      <h3 className={S.h3}>Tabela de interpretação</h3>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
           <thead>
             <tr>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Variação</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">O que significa</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">O que fazer</th>
+              <th className={S.th}>Variação</th>
+              <th className={S.th}>O que significa</th>
+              <th className={S.th}>O que fazer</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">±0.0 a ±0.3pp</td><td className="px-4 py-3">Ruído de mercado</td><td className="px-4 py-3">Ignorar</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">±0.4 a ±1.0pp</td><td className="px-4 py-3">Movimento leve, direção nascendo</td><td className="px-4 py-3">Observar se persiste 2-3 dias</td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">±1.0 a ±3.0pp</td><td className="px-4 py-3">Movimento significativo</td><td className="px-4 py-3">Investigar notícias do dia</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">±3.0 a ±5.0pp</td><td className="px-4 py-3">Salto — algo grande aconteceu</td><td className="px-4 py-3">Prioridade máxima</td></tr>
-            <tr><td className="px-4 py-3">±5.0pp+</td><td className="px-4 py-3">Evento disruptivo</td><td className="px-4 py-3">Reler todo o cenário</td></tr>
+            <tr className={S.trRow}><td className={S.td}>±0.0 a ±0.3pp</td><td className={S.td}>Ruído de mercado</td><td className={S.td}>Ignorar</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>±0.4 a ±1.0pp</td><td className={S.td}>Movimento leve, direção nascendo</td><td className={S.td}>Observar se persiste 2-3 dias</td></tr>
+            <tr className={S.trRow}><td className={S.td}>±1.0 a ±3.0pp</td><td className={S.td}>Movimento significativo</td><td className={S.td}>Investigar notícias do dia</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>±3.0 a ±5.0pp</td><td className={S.td}>Salto — algo grande aconteceu</td><td className={S.td}>Prioridade máxima</td></tr>
+            <tr><td className={S.td}>±5.0pp+</td><td className={S.td}>Evento disruptivo</td><td className={S.td}>Reler todo o cenário</td></tr>
           </tbody>
         </table>
       </div>
-      <blockquote className="border-l-4 border-primary bg-blue-50 px-5 py-4 my-5 italic text-gray-700 text-sm rounded-r">
+      <blockquote className={S.quote}>
         <strong>Regra mental em uma frase:</strong> "Um movimento de 1pp é um tweet. 3pp é uma entrevista. 5pp+ é um fato consumado."
       </blockquote>
 
       <NavFlag title="Navegando a plataforma" description="A partir daqui, vamos percorrer a plataforma na ordem em que você a encontra ao abrir o site." />
 
-      <h2 id="header" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">1. Header (topo da página)</h2>
-      <p className="mb-4 text-gray-700">No topo da tela você vê o logo <strong>AFOS Analytics</strong> e três botões de navegação:</p>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
-          <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Botão</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">O que faz</th></tr></thead>
+      <h2 id="header" className={S.h2}>1. Header (topo da página)</h2>
+      <p className={S.p}>No topo da tela você vê o logo <strong>AFOS Analytics</strong> e três botões de navegação:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}>Botão</th><th className={S.th}>O que faz</th></tr></thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Sobre</strong></td><td className="px-4 py-3">Explica a missão do projeto, o problema que resolve e o método</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Metas</strong></td><td className="px-4 py-3">Mostra os objetivos públicos da plataforma (cobertura de países, integração de fontes, roadmap)</td></tr>
-            <tr><td className="px-4 py-3"><strong>Global</strong></td><td className="px-4 py-3">Volta ao mapa mundial — útil quando você está no meio de uma análise e quer explorar outro país</td></tr>
+            <tr className={S.trRow}><td className={S.td}><strong>Sobre</strong></td><td className={S.td}>Explica a missão do projeto, o problema que resolve e o método</td></tr>
+            <tr className={S.trAlt}><td className={S.td}><strong>Metas</strong></td><td className={S.td}>Mostra os objetivos públicos da plataforma (cobertura de países, integração de fontes, roadmap)</td></tr>
+            <tr><td className={S.td}><strong>Global</strong></td><td className={S.td}>Volta ao mapa mundial — útil quando você está no meio de uma análise e quer explorar outro país</td></tr>
           </tbody>
         </table>
       </div>
-      <p className="mb-4 text-gray-700">O header está presente em todas as páginas. É a âncora da navegação.</p>
+      <p className={S.p}>O header está presente em todas as páginas. É a âncora da navegação.</p>
 
-      <h2 id="cards-polymarket" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">2. Os 6 Cards Polymarket — Painel instantâneo</h2>
-      <p className="mb-4 text-gray-700">Logo após o header, aparecem <strong>seis cards lado a lado</strong> resumindo os mercados mais importantes do Polymarket no momento. Cada card mostra um <strong>percentual</strong> (probabilidade precificada pelo mercado) com a <strong>variação em relação ao dia anterior</strong> (↑↓pp).</p>
+      <h2 id="cards-polymarket" className={S.h2}>2. Os 6 Cards Polymarket — Painel instantâneo</h2>
+      <p className={S.p}>Logo após o header, aparecem <strong>seis cards lado a lado</strong> resumindo os mercados mais importantes do Polymarket no momento. Cada card mostra um <strong>percentual</strong> (probabilidade precificada pelo mercado) com a <strong>variação em relação ao dia anterior</strong> (↑↓pp).</p>
 
       <Card title="🏆 Card 1 — Quem vence a presidência no 1º turno">
         <p>Mostra as probabilidades dos principais candidatos de <strong>ganhar no primeiro turno</strong> (&gt;50% dos votos válidos, evitando 2º turno).</p>
@@ -212,33 +213,33 @@ export function HowItWorksPtBR() {
         <p><strong>Como ler:</strong> esse é o <strong>termômetro econômico</strong>. Inflação alta pressiona o governo, favorece oposição. Quando a faixa 5.00-5.49% dispara (↑2.75pp em 1 dia), o mercado está dizendo "esqueça inflação baixa" — com consequência eleitoral direta.</p>
       </Card>
 
-      <h2 id="pesquisas" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">3. Pesquisas Eleitorais</h2>
-      <p className="mb-4 text-gray-700">Abaixo dos cards Polymarket, você encontra a seção de pesquisas eleitorais.</p>
+      <h2 id="pesquisas" className={S.h2}>3. Pesquisas Eleitorais</h2>
+      <p className={S.p}>Abaixo dos cards Polymarket, você encontra a seção de pesquisas eleitorais.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Como as pesquisas chegam aqui</h3>
-      <p className="mb-4 text-gray-700">Todas as pesquisas registradas no <strong>TSE (Tribunal Superior Eleitoral)</strong> são baixadas automaticamente todos os dias. A base conta com <strong>mais de 150 pesquisas indexadas</strong> e cresce com cerca de <strong>2 a 4 novas pesquisas registradas por semana</strong> — ritmo que acelera à medida que o ciclo eleitoral avança.</p>
+      <h3 className={S.h3}>Como as pesquisas chegam aqui</h3>
+      <p className={S.p}>Todas as pesquisas registradas no <strong>TSE (Tribunal Superior Eleitoral)</strong> são baixadas automaticamente todos os dias. A base conta com <strong>mais de 150 pesquisas indexadas</strong> e cresce com cerca de <strong>2 a 4 novas pesquisas registradas por semana</strong> — ritmo que acelera à medida que o ciclo eleitoral avança.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Institutos monitorados</h3>
-      <p className="mb-4 text-gray-700">A plataforma acompanha 17+ institutos brasileiros. Os mais frequentes no último mês:</p>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
-          <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Instituto</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Pesquisas recentes</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Amostra média</th></tr></thead>
+      <h3 className={S.h3}>Institutos monitorados</h3>
+      <p className={S.p}>A plataforma acompanha 17+ institutos brasileiros. Os mais frequentes no último mês:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}>Instituto</th><th className={S.th}>Pesquisas recentes</th><th className={S.th}>Amostra média</th></tr></thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Paraná Pesquisas</td><td className="px-4 py-3">3</td><td className="px-4 py-3">1.593 entrevistados</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Datafolha</td><td className="px-4 py-3">2</td><td className="px-4 py-3">1.513</td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">100 Cidades</td><td className="px-4 py-3">2</td><td className="px-4 py-3">1.400</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Instituto Piauiense</td><td className="px-4 py-3">2</td><td className="px-4 py-3">800</td></tr>
-            <tr><td className="px-4 py-3">Veritá</td><td className="px-4 py-3">1</td><td className="px-4 py-3">1.220</td></tr>
+            <tr className={S.trRow}><td className={S.td}>Paraná Pesquisas</td><td className={S.td}>3</td><td className={S.td}>1.593 entrevistados</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Datafolha</td><td className={S.td}>2</td><td className={S.td}>1.513</td></tr>
+            <tr className={S.trRow}><td className={S.td}>100 Cidades</td><td className={S.td}>2</td><td className={S.td}>1.400</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Instituto Piauiense</td><td className={S.td}>2</td><td className={S.td}>800</td></tr>
+            <tr><td className={S.td}>Veritá</td><td className={S.td}>1</td><td className={S.td}>1.220</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Saber não só o que as pesquisas dizem, mas o que vão dizer</h3>
-      <p className="mb-4 text-gray-700">Pela legislação brasileira, todo instituto é obrigado a <strong>registrar cada pesquisa no TSE antes de divulgá-la</strong>, com protocolo único, data do campo (quando está sendo aplicada), data prevista de publicação, tamanho da amostra e custo. Esse registro é <strong>público</strong> e fica disponível na base oficial do TSE no instante em que o instituto o envia.</p>
-      <p className="mb-4 text-gray-700"><strong>É aí que a inteligência do AFOS entra:</strong> a plataforma roda ciclos automáticos de ingestão ao longo do dia consultando o TSE diretamente. Quando uma pesquisa nova é registrada na base oficial, em poucas horas ela já está processada, cruzada com Polymarket e exibida na sua tela — <strong>sem depender de jornalista cobrir ou de nota oficial do instituto</strong>.</p>
+      <h3 className={S.h3}>Saber não só o que as pesquisas dizem, mas o que vão dizer</h3>
+      <p className={S.p}>Pela legislação brasileira, todo instituto é obrigado a <strong>registrar cada pesquisa no TSE antes de divulgá-la</strong>, com protocolo único, data do campo (quando está sendo aplicada), data prevista de publicação, tamanho da amostra e custo. Esse registro é <strong>público</strong> e fica disponível na base oficial do TSE no instante em que o instituto o envia.</p>
+      <p className={S.p}><strong>É aí que a inteligência do AFOS entra:</strong> a plataforma roda ciclos automáticos de ingestão ao longo do dia consultando o TSE diretamente. Quando uma pesquisa nova é registrada na base oficial, em poucas horas ela já está processada, cruzada com Polymarket e exibida na sua tela — <strong>sem depender de jornalista cobrir ou de nota oficial do instituto</strong>.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O que você vê em cada pesquisa</h3>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>O que você vê em cada pesquisa</h3>
+      <ul className={S.ul}>
         <li><strong>Instituto</strong> (ex: Paraná Pesquisas, Datafolha, Quaest)</li>
         <li><strong>Protocolo TSE</strong> (identificador único, auditável)</li>
         <li><strong>Campo:</strong> datas em que os entrevistadores estão coletando respostas</li>
@@ -247,60 +248,60 @@ export function HowItWorksPtBR() {
         <li><strong>Status:</strong> "publicada" (já saiu) ou "campo ativo" (ainda sendo aplicada)</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Exemplo real hoje (19/Abr)</h3>
-      <blockquote className="border-l-4 border-primary bg-blue-50 px-5 py-4 my-5 italic text-gray-700 text-sm rounded-r">
+      <h3 className={S.h3}>Exemplo real hoje (19/Abr)</h3>
+      <blockquote className={S.quote}>
         Paraná Pesquisas — nacional — campo <strong>21-23/Abr (em andamento)</strong> — publicação prevista <strong>24/Abr</strong> — amostra 1.680
       </blockquote>
-      <p className="mb-4 text-gray-700">Você sabe <strong>com 5 dias de antecedência</strong> que na quinta-feira haverá uma pesquisa nacional da Paraná Pesquisas com quase 1.700 entrevistados.</p>
+      <p className={S.p}>Você sabe <strong>com 5 dias de antecedência</strong> que na quinta-feira haverá uma pesquisa nacional da Paraná Pesquisas com quase 1.700 entrevistados.</p>
       <Callout title="Valor pra você">
         <p>Imprensa e analistas tradicionais só descobrem uma pesquisa <strong>quando o instituto divulga publicamente</strong> — e isso pode ser 5 a 10 dias depois do registro. O AFOS descobre <strong>no mesmo dia em que o registro entra no TSE</strong>, porque seus ciclos de ingestão operam automaticamente em intervalos de poucas horas. Isso transforma a lógica: você para de <strong>reagir a notícias</strong> e passa a <strong>antecipá-las</strong>.</p>
       </Callout>
 
-      <h3 id="criterios-institutos" className="text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-20">Critérios de avaliação dos institutos</h3>
-      <p className="mb-4 text-gray-700">Além de listar as pesquisas, o AFOS exibe no dashboard um card chamado <strong>"Institutos Monitorados — Confiabilidade"</strong>, onde cada instituto recebe uma classificação de 1 a 5 estrelas. Essa classificação serve como <strong>régua de peso editorial</strong> para ajudar o leitor a decidir quanto confiar quando duas pesquisas divergem.</p>
-      <p className="mb-4 text-gray-700"><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; a evolução para score quantitativo está no roadmap do AFOS pós-ciclo eleitoral.</p>
+      <h3 id="criterios-institutos" className={S.h3Anchor}>Critérios de avaliação dos institutos</h3>
+      <p className={S.p}>Além de listar as pesquisas, o AFOS exibe no dashboard um card chamado <strong>"Institutos Monitorados — Confiabilidade"</strong>, onde cada instituto recebe uma classificação de 1 a 5 estrelas. Essa classificação serve como <strong>régua de peso editorial</strong> para ajudar o leitor a decidir quanto confiar quando duas pesquisas divergem.</p>
+      <p className={S.p}><strong>Natureza da classificação:</strong> é uma avaliação <em>editorial qualitativa</em> — não um score calculado automaticamente. Reflete o consenso público do mercado eleitoral brasileiro (analistas, jornalistas especializados, literatura metodológica). Funciona como primeira aproximação honesta; a evolução para score quantitativo está no roadmap do AFOS pós-ciclo eleitoral.</p>
 
-      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Os 5 critérios considerados</h4>
+      <h4 className={S.h4}>Os 5 critérios considerados</h4>
       <div className="overflow-x-auto my-4">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+        <table className={S.table}>
           <thead>
             <tr>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Critério</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">O que mede</th>
+              <th className={S.th}>Critério</th>
+              <th className={S.th}>O que mede</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Histórico de precisão</strong></td><td className="px-4 py-3">Quanto o instituto acertou em eleições passadas (dentro da margem declarada). Ex: MDA tem histórico robusto de acertos em ciclos anteriores.</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Metodologia de coleta</strong></td><td className="px-4 py-3">Presencial (mais representativa), Online (viés digital), Telefônica (viés demográfico), Misto. Metodologia aparece entre parênteses no card: "(Presencial)", "(Online)", etc.</td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>Tradição e tempo de mercado</strong></td><td className="px-4 py-3">Quantos ciclos eleitorais o instituto já cobriu. Tradição longa reduz risco de erro metodológico sistêmico.</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>Quem encomenda</strong></td><td className="px-4 py-3">Proxy indireto de exigência de qualidade. Pesquisas encomendadas por bancos, investidores ou grandes veículos tendem a ter rigor maior (custo típico R$100k-300k).</td></tr>
-            <tr><td className="px-4 py-3"><strong>Frequência e abrangência</strong></td><td className="px-4 py-3">Quantas pesquisas publica, com que regularidade, e se cobre cenários nacionais, estaduais ou apenas locais.</td></tr>
+            <tr className={S.trRow}><td className={S.td}><strong>Histórico de precisão</strong></td><td className={S.td}>Quanto o instituto acertou em eleições passadas (dentro da margem declarada). Ex: MDA tem histórico robusto de acertos em ciclos anteriores.</td></tr>
+            <tr className={S.trAlt}><td className={S.td}><strong>Metodologia de coleta</strong></td><td className={S.td}>Presencial (mais representativa), Online (viés digital), Telefônica (viés demográfico), Misto. Metodologia aparece entre parênteses no card: "(Presencial)", "(Online)", etc.</td></tr>
+            <tr className={S.trRow}><td className={S.td}><strong>Tradição e tempo de mercado</strong></td><td className={S.td}>Quantos ciclos eleitorais o instituto já cobriu. Tradição longa reduz risco de erro metodológico sistêmico.</td></tr>
+            <tr className={S.trAlt}><td className={S.td}><strong>Quem encomenda</strong></td><td className={S.td}>Proxy indireto de exigência de qualidade. Pesquisas encomendadas por bancos, investidores ou grandes veículos tendem a ter rigor maior (custo típico R$100k-300k).</td></tr>
+            <tr><td className={S.td}><strong>Frequência e abrangência</strong></td><td className={S.td}>Quantas pesquisas publica, com que regularidade, e se cobre cenários nacionais, estaduais ou apenas locais.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Escala de estrelas e interpretação</h4>
+      <h4 className={S.h4}>Escala de estrelas e interpretação</h4>
       <div className="overflow-x-auto my-4">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
+        <table className={S.table}>
           <thead>
             <tr>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Nível</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Significado</th>
-              <th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase tracking-wide">Como ler as pesquisas desse instituto</th>
+              <th className={S.th}>Nível</th>
+              <th className={S.th}>Significado</th>
+              <th className={S.th}>Como ler as pesquisas desse instituto</th>
             </tr>
           </thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★★★</strong></td><td className="px-4 py-3">Referência nacional</td><td className="px-4 py-3">Cite sem ressalva. Dado costuma ser robusto e auditável.</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★★★</strong></td><td className="px-4 py-3">Alta confiabilidade</td><td className="px-4 py-3">Dado sólido. Boa para formar opinião, idealmente com comparação cruzada.</td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3"><strong>★★★</strong></td><td className="px-4 py-3">Confiável</td><td className="px-4 py-3">Usar, mas sempre comparar com pelo menos 1-2 outras pesquisas do mesmo período.</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3"><strong>★★</strong></td><td className="px-4 py-3">Usar com cautela</td><td className="px-4 py-3">Cite sempre com ressalva. Histórico metodológico inconsistente ou instituto muito recente.</td></tr>
-            <tr><td className="px-4 py-3"><strong>★</strong></td><td className="px-4 py-3">Baixa confiabilidade</td><td className="px-4 py-3">Evitar basear decisão apenas nesta fonte. Nenhum instituto brasileiro está neste nível atualmente.</td></tr>
+            <tr className={S.trRow}><td className={S.td}><strong>★★★★★</strong></td><td className={S.td}>Referência nacional</td><td className={S.td}>Cite sem ressalva. Dado costuma ser robusto e auditável.</td></tr>
+            <tr className={S.trAlt}><td className={S.td}><strong>★★★★</strong></td><td className={S.td}>Alta confiabilidade</td><td className={S.td}>Dado sólido. Boa para formar opinião, idealmente com comparação cruzada.</td></tr>
+            <tr className={S.trRow}><td className={S.td}><strong>★★★</strong></td><td className={S.td}>Confiável</td><td className={S.td}>Usar, mas sempre comparar com pelo menos 1-2 outras pesquisas do mesmo período.</td></tr>
+            <tr className={S.trAlt}><td className={S.td}><strong>★★</strong></td><td className={S.td}>Usar com cautela</td><td className={S.td}>Cite sempre com ressalva. Histórico metodológico inconsistente ou instituto muito recente.</td></tr>
+            <tr><td className={S.td}><strong>★</strong></td><td className={S.td}>Baixa confiabilidade</td><td className={S.td}>Evitar basear decisão apenas nesta fonte. Nenhum instituto brasileiro está neste nível atualmente.</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h4 className="text-base font-bold text-gray-700 mt-6 mb-3">Fontes consultadas para a classificação</h4>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h4 className={S.h4}>Fontes consultadas para a classificação</h4>
+      <ul className={S.ul}>
         <li><strong>Resultados eleitorais oficiais do TSE</strong> — comparação pública entre previsões e resultado de urna em ciclos anteriores (2018, 2022)</li>
         <li><strong>Literatura metodológica brasileira</strong> — ABEP (Associação Brasileira de Empresas de Pesquisa), artigos acadêmicos sobre precisão de pesquisas eleitorais, análises metodológicas em FGV e Poder360</li>
         <li><strong>Consenso jornalístico especializado</strong> — analistas políticos de referência (Folha, Estadão, O Globo, Poder360) que historicamente pesam os institutos de forma similar</li>
@@ -312,35 +313,35 @@ export function HowItWorksPtBR() {
         <p>A classificação atual é <strong>editorial e subjetiva</strong>. Duas pessoas avaliando os mesmos critérios poderiam chegar a notas ligeiramente diferentes. Para reduzir essa subjetividade no longo prazo, o <strong>roadmap do AFOS prevê evolução para score quantitativo</strong> baseado em dados históricos TSE + resultados oficiais — taxa de acerto, erro médio absoluto, amostra ponderada, frequência e transparência metodológica — com cálculo reproduzível publicado. Prazo dependente de dados do ciclo eleitoral de outubro/2026.</p>
       </Callout>
 
-      <h2 id="analise-criteriosa" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">4. Análise Criteriosa (dos 4 primeiros candidatos)</h2>
-      <p className="mb-4 text-gray-700">Esta é a seção mais rica e a que exige leitura mais lenta.</p>
-      <p className="mb-4 text-gray-700">A análise é dividida em <strong>4 seções</strong>: Candidato A, Candidato B, Candidato C, e uma seção agrupada com os candidatos D, E e F. Cada seção tem <strong>três blocos</strong>: FORTES, FRACOS e ANÁLISE.</p>
+      <h2 id="analise-criteriosa" className={S.h2}>4. Análise Criteriosa (dos 4 primeiros candidatos)</h2>
+      <p className={S.p}>Esta é a seção mais rica e a que exige leitura mais lenta.</p>
+      <p className={S.p}>A análise é dividida em <strong>4 seções</strong>: Candidato A, Candidato B, Candidato C, e uma seção agrupada com os candidatos D, E e F. Cada seção tem <strong>três blocos</strong>: FORTES, FRACOS e ANÁLISE.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">🟢 Bloco "FORTES"</h3>
-      <p className="mb-4 text-gray-700">Tudo o que está jogando a favor do candidato <strong>naquele dia</strong>, com <strong>fonte, data e veículo citados</strong>. Não é opinião — é dado auditável.</p>
-      <blockquote className="border-l-4 border-primary bg-blue-50 px-5 py-4 my-5 italic text-gray-700 text-sm rounded-r">
+      <h3 className={S.h3}>🟢 Bloco "FORTES"</h3>
+      <p className={S.p}>Tudo o que está jogando a favor do candidato <strong>naquele dia</strong>, com <strong>fonte, data e veículo citados</strong>. Não é opinião — é dado auditável.</p>
+      <blockquote className={S.quote}>
         <strong>Exemplo Candidato A hoje:</strong> "POLYMARKET (19/Abr): 39.5% (estável) enquanto o Candidato B desinfla. 2º lugar Poly Candidato A SOBE 17% (↑1pp). Folha: 'Candidato A intensifica agenda voltada às mulheres'. Poder360: 'Mulheres viram foco central'."
       </blockquote>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">🔴 Bloco "FRACOS"</h3>
-      <p className="mb-4 text-gray-700">Tudo que está <strong>contra</strong> o candidato — com a mesma profundidade dos blocos fortes. O AFOS é <strong>simétrico</strong>.</p>
-      <blockquote className="border-l-4 border-primary bg-blue-50 px-5 py-4 my-5 italic text-gray-700 text-sm rounded-r">
+      <h3 className={S.h3}>🔴 Bloco "FRACOS"</h3>
+      <p className={S.p}>Tudo que está <strong>contra</strong> o candidato — com a mesma profundidade dos blocos fortes. O AFOS é <strong>simétrico</strong>.</p>
+      <blockquote className={S.quote}>
         <strong>Exemplo Candidato A hoje:</strong> "Candidato B mantém liderança mínima. Paraná Pesquisas SP: 2T Candidato B 48.1% × Candidato A 40.3%. BNews: queda Candidato A / crescimento Candidato B no Nordeste. Gazeta Povo: 'Como o Candidato A derreteu vantagem de 2022'."
       </blockquote>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">🔵 Bloco "ANÁLISE"</h3>
-      <p className="mb-4 text-gray-700">A costura. Como os pontos de fortes e fracos se conectam, e o que isso significa estrategicamente naquele momento.</p>
+      <h3 className={S.h3}>🔵 Bloco "ANÁLISE"</h3>
+      <p className={S.p}>A costura. Como os pontos de fortes e fracos se conectam, e o que isso significa estrategicamente naquele momento.</p>
 
-      <h2 id="quadro-comparativo" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">5. Quadro Comparativo</h2>
-      <p className="mb-4 text-gray-700">Uma tabela única que resume candidato por candidato:</p>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
-          <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Candidato</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Pesquisa vigente</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Polymarket</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Tendência</th></tr></thead>
+      <h2 id="quadro-comparativo" className={S.h2}>5. Quadro Comparativo</h2>
+      <p className={S.p}>Uma tabela única que resume candidato por candidato:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Pesquisa vigente</th><th className={S.th}>Polymarket</th><th className={S.th}>Tendência</th></tr></thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Candidato A (PT)</td><td className="px-4 py-3">37% 1T (Quaest) / 39.2% (CNT/MDA)</td><td className="px-4 py-3">39.5% (estável)</td><td className="px-4 py-3">Empate técnico com Candidato B</td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Candidato B (PL)</td><td className="px-4 py-3">32% 1T (Quaest) / 35.9% (Veritá)</td><td className="px-4 py-3">39.6% (↓0.8pp)</td><td className="px-4 py-3">Desinfla salto, mantém liderança mínima</td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Candidato C (Missão)</td><td className="px-4 py-3">4.4% (AtlasIntel)</td><td className="px-4 py-3">6.25% (estável)</td><td className="px-4 py-3">3º lugar recupera (Candidato D regride)</td></tr>
-            <tr><td className="px-4 py-3">...</td><td className="px-4 py-3">...</td><td className="px-4 py-3">...</td><td className="px-4 py-3">...</td></tr>
+            <tr className={S.trRow}><td className={S.td}>Candidato A (PT)</td><td className={S.td}>37% 1T (Quaest) / 39.2% (CNT/MDA)</td><td className={S.td}>39.5% (estável)</td><td className={S.td}>Empate técnico com Candidato B</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Candidato B (PL)</td><td className={S.td}>32% 1T (Quaest) / 35.9% (Veritá)</td><td className={S.td}>39.6% (↓0.8pp)</td><td className={S.td}>Desinfla salto, mantém liderança mínima</td></tr>
+            <tr className={S.trRow}><td className={S.td}>Candidato C (Missão)</td><td className={S.td}>4.4% (AtlasIntel)</td><td className={S.td}>6.25% (estável)</td><td className={S.td}>3º lugar recupera (Candidato D regride)</td></tr>
+            <tr><td className={S.td}>...</td><td className={S.td}>...</td><td className={S.td}>...</td><td className={S.td}>...</td></tr>
           </tbody>
         </table>
       </div>
@@ -348,9 +349,9 @@ export function HowItWorksPtBR() {
         <p>Em um único olhar, você vê o estado do jogo completo.</p>
       </Callout>
 
-      <h2 id="perfil-candidatos" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">6. Perfil dos Candidatos</h2>
-      <p className="mb-4 text-gray-700">Esta seção apresenta cada candidato em <strong>cards individuais</strong> com cinco campos:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="perfil-candidatos" className={S.h2}>6. Perfil dos Candidatos</h2>
+      <p className={S.p}>Esta seção apresenta cada candidato em <strong>cards individuais</strong> com cinco campos:</p>
+      <ul className={S.ul}>
         <li><strong>Nome, partido, idade, cargo atual</strong></li>
         <li><strong>Polymarket:</strong> percentual atual no mercado presidencial</li>
         <li><strong>Pesquisa:</strong> número mais recente de intenção de voto</li>
@@ -361,21 +362,21 @@ export function HowItWorksPtBR() {
         <p>É um "quem é quem" rápido. Se alguém pergunta "quem é o Candidato C?", você abre, lê 20 segundos e responde com dados.</p>
       </Callout>
 
-      <h2 id="paises" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">7. Países — Botões Clicáveis</h2>
-      <p className="mb-4 text-gray-700">A plataforma cobre <strong>14+ países</strong> com eleições monitoradas. Cada país aparece como um botão clicável. Clicando em um, você vê o mesmo tipo de cruzamento (Polymarket + pesquisas locais + notícias) aplicado àquela eleição.</p>
-      <p className="mb-4 text-gray-700"><strong>Países em destaque atualmente:</strong> Brasil, EUA, França, Alemanha, Reino Unido, Canadá, Austrália, Coreia do Sul, Colômbia, Chile, entre outros.</p>
-      <p className="mb-4 text-gray-700"><strong>Por que isso importa:</strong> decisões políticas globais se influenciam. O resultado dos EUA 2024 afeta a dinâmica do Brasil 2026. Ver o mapa completo te dá contexto.</p>
+      <h2 id="paises" className={S.h2}>7. Países — Botões Clicáveis</h2>
+      <p className={S.p}>A plataforma cobre <strong>14+ países</strong> com eleições monitoradas. Cada país aparece como um botão clicável. Clicando em um, você vê o mesmo tipo de cruzamento (Polymarket + pesquisas locais + notícias) aplicado àquela eleição.</p>
+      <p className={S.p}><strong>Países em destaque atualmente:</strong> Brasil, EUA, França, Alemanha, Reino Unido, Canadá, Austrália, Coreia do Sul, Colômbia, Chile, entre outros.</p>
+      <p className={S.p}><strong>Por que isso importa:</strong> decisões políticas globais se influenciam. O resultado dos EUA 2024 afeta a dinâmica do Brasil 2026. Ver o mapa completo te dá contexto.</p>
 
-      <h2 id="live-news" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">8. Live Eleições News 120'</h2>
-      <p className="mb-4 text-gray-700">Um feed ao vivo que mostra as <strong>notícias publicadas nos últimos 120 minutos</strong> relacionadas às eleições monitoradas. Fontes incluem Google News, grandes portais brasileiros e agências internacionais.</p>
-      <p className="mb-4 text-gray-700"><strong>Como funciona:</strong> a cada 30 minutos, um robô busca notícias em 6 categorias diferentes (eleição presidencial, candidatos específicos, escândalos, pesquisas, aprovação do governo, disputas estaduais) e nos 3 idiomas da plataforma (PT-BR, EN, ES). O feed exibe as mais relevantes em ordem cronológica.</p>
+      <h2 id="live-news" className={S.h2}>8. Live Eleições News 120'</h2>
+      <p className={S.p}>Um feed ao vivo que mostra as <strong>notícias publicadas nos últimos 120 minutos</strong> relacionadas às eleições monitoradas. Fontes incluem Google News, grandes portais brasileiros e agências internacionais.</p>
+      <p className={S.p}><strong>Como funciona:</strong> a cada 30 minutos, um robô busca notícias em 6 categorias diferentes (eleição presidencial, candidatos específicos, escândalos, pesquisas, aprovação do governo, disputas estaduais) e nos 3 idiomas da plataforma (PT-BR, EN, ES). O feed exibe as mais relevantes em ordem cronológica.</p>
       <Callout title="Valor pra você">
         <p>Em vez de abrir 10 abas de jornais, você tem o essencial em uma única tela, filtrado por relevância eleitoral.</p>
       </Callout>
 
-      <h2 id="sentimento" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">9. Card Sentimento</h2>
-      <p className="mb-4 text-gray-700">Um painel dedicado a mostrar <strong>o clima geral da disputa</strong> em quatro lentes simultâneas:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="sentimento" className={S.h2}>9. Card Sentimento</h2>
+      <p className={S.p}>Um painel dedicado a mostrar <strong>o clima geral da disputa</strong> em quatro lentes simultâneas:</p>
+      <ul className={S.ul}>
         <li><strong>Direita:</strong> o que está jogando a favor/contra os candidatos de direita</li>
         <li><strong>Esquerda:</strong> idem para candidatos de esquerda</li>
         <li><strong>Terceira via:</strong> como os candidatos fora do eixo Candidato A / Candidato B estão se movendo</li>
@@ -385,10 +386,10 @@ export function HowItWorksPtBR() {
         <p>Em 30 segundos você tem a <strong>temperatura política</strong> do momento, sem precisar ler qualquer análise longa.</p>
       </Callout>
 
-      <h2 id="inss-lulinha" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">10. Escândalo INSS e o Caso do Familiar do Incumbente</h2>
-      <p className="mb-4 text-gray-700">Card específico sobre o maior escândalo econômico de 2026 — a fraude dos descontos indevidos no INSS — e as ramificações envolvendo familiar do incumbente.</p>
-      <p className="mb-4 text-gray-700"><strong>O que mostra:</strong> texto estruturado em 4 blocos:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="inss-lulinha" className={S.h2}>10. Escândalo INSS e o Caso do Familiar do Incumbente</h2>
+      <p className={S.p}>Card específico sobre o maior escândalo econômico de 2026 — a fraude dos descontos indevidos no INSS — e as ramificações envolvendo familiar do incumbente.</p>
+      <p className={S.p}><strong>O que mostra:</strong> texto estruturado em 4 blocos:</p>
+      <ul className={S.ul}>
         <li><strong>Contexto atual</strong> do caso (novidades do dia)</li>
         <li><strong>Dinâmica institucional</strong> (Congresso, PF, PGR, STF)</li>
         <li><strong>Impacto no STF</strong> (probabilidade de impeachment no Polymarket)</li>
@@ -398,10 +399,10 @@ export function HowItWorksPtBR() {
         <p>Um tema que envolve dezenas de atores (ministros, senadores, delegados, juízes) fica <strong>consolidado em 2 minutos de leitura</strong>, com as conexões já feitas.</p>
       </Callout>
 
-      <h2 id="banco-master" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">11. Impacto do Escândalo Banco Master</h2>
-      <p className="mb-4 text-gray-700">Card focado no caso Banco Master e na delação do executivo envolvido — outro escândalo econômico que se desenrola em capítulos.</p>
-      <p className="mb-4 text-gray-700"><strong>O que mostra:</strong></p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="banco-master" className={S.h2}>11. Impacto do Escândalo Banco Master</h2>
+      <p className={S.p}>Card focado no caso Banco Master e na delação do executivo envolvido — outro escândalo econômico que se desenrola em capítulos.</p>
+      <p className={S.p}><strong>O que mostra:</strong></p>
+      <ul className={S.ul}>
         <li>Últimos desenvolvimentos (ex: BC aprovou controle do executivo após primeiro rejeitar)</li>
         <li>Tensões institucionais (PF × PGR, CPMI × STF)</li>
         <li>Cruzamento com o Polymarket (o mercado acredita em impeachment de ministro?)</li>
@@ -411,37 +412,37 @@ export function HowItWorksPtBR() {
         <p>Por ser uma história <strong>longa e fragmentada</strong> na imprensa, ter um diário consolidado economiza horas de busca.</p>
       </Callout>
 
-      <h2 id="stf" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">12. Credibilidade do STF — Impacto Eleitoral</h2>
-      <p className="mb-4 text-gray-700">Card dedicado à <strong>leitura do Supremo como ator eleitoral</strong> — porque o STF, embora não vote, influencia decisivamente as eleições.</p>
-      <p className="mb-4 text-gray-700"><strong>O que mostra:</strong></p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="stf" className={S.h2}>12. Credibilidade do STF — Impacto Eleitoral</h2>
+      <p className={S.p}>Card dedicado à <strong>leitura do Supremo como ator eleitoral</strong> — porque o STF, embora não vote, influencia decisivamente as eleições.</p>
+      <p className={S.p}><strong>O que mostra:</strong></p>
+      <ul className={S.ul}>
         <li><strong>Ministro por ministro</strong> (Ministro 1, Ministro 2, Ministro 3, Ministro 4): o que cada um está fazendo</li>
         <li><strong>Nexo:</strong> como as ações individuais se conectam em estratégia institucional</li>
         <li><strong>Análise:</strong> interpreta o Polymarket — mercado acha que haverá ruptura (impeachment) ou acomodação?</li>
       </ul>
-      <blockquote className="border-l-4 border-primary bg-blue-50 px-5 py-4 my-5 italic text-gray-700 text-sm rounded-r">
+      <blockquote className={S.quote}>
         <strong>Exemplo hoje:</strong> "STF impeach cai 11.5% (↓1.5pp, -4.5pp em 2 dias). Supremo quer endurecer CPIs. Ministro 1 pode se declarar impedido em caso BRB."
       </blockquote>
-      <p className="mb-4 text-gray-700"><strong>Tradução:</strong> o STF está <strong>se blindando</strong>. O mercado sente que não haverá impeachment — o que reduz o risco para candidatos que apostariam em ruptura institucional.</p>
+      <p className={S.p}><strong>Tradução:</strong> o STF está <strong>se blindando</strong>. O mercado sente que não haverá impeachment — o que reduz o risco para candidatos que apostariam em ruptura institucional.</p>
       <Callout title="Valor pra você">
         <p>Entender o STF como <strong>ator político</strong>, não só jurídico.</p>
       </Callout>
 
-      <h2 id="footer" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">13. Footer (rodapé da página)</h2>
-      <p className="mb-4 text-gray-700">O rodapé é organizado em <strong>três blocos enxutos</strong>, cada um com propósito claro. Nenhum link no footer aponta para página vazia — cada um entrega algo específico.</p>
+      <h2 id="footer" className={S.h2}>13. Footer (rodapé da página)</h2>
+      <p className={S.p}>O rodapé é organizado em <strong>três blocos enxutos</strong>, cada um com propósito claro. Nenhum link no footer aponta para página vazia — cada um entrega algo específico.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Bloco 1 — Navegação</h3>
-      <p className="mb-3 text-gray-700">Atalhos para as áreas principais da plataforma:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>Bloco 1 — Navegação</h3>
+      <p className={S.pTight}>Atalhos para as áreas principais da plataforma:</p>
+      <ul className={S.ul}>
         <li><strong>Dashboard</strong> — aplicação principal com os 6 cards Polymarket, análises e cards temáticos</li>
         <li><strong>Mapa Global</strong> — visualização D3.js interativa dos 14+ países monitorados</li>
         <li><strong>América Latina</strong> — hub regional com Brasil, Colômbia, Chile e México</li>
         <li><strong>Europa</strong> — hub regional com França, Alemanha e Reino Unido</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Bloco 2 — Open Source</h3>
-      <p className="mb-3 text-gray-700">Transparência completa sobre o projeto, conforme padrão de referência em software open-source:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>Bloco 2 — Open Source</h3>
+      <p className={S.pTight}>Transparência completa sobre o projeto, conforme padrão de referência em software open-source:</p>
+      <ul className={S.ul}>
         <li><strong>Licença Apache 2.0</strong> — uso, modificação e redistribuição permitidos com atribuição</li>
         <li><strong>⭐ GitHub</strong> — repositório público com código-fonte auditável</li>
         <li><strong>Segurança</strong> — política de <em>disclosure</em> responsável para vulnerabilidades</li>
@@ -449,48 +450,48 @@ export function HowItWorksPtBR() {
         <li><strong>Código de Conduta</strong> — regras de convivência na comunidade (Contributor Covenant)</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Bloco 3 — Fale Conosco</h3>
-      <p className="mb-3 text-gray-700">Quatro canais de email segmentados por propósito:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>Bloco 3 — Fale Conosco</h3>
+      <p className={S.pTight}>Quatro canais de email segmentados por propósito:</p>
+      <ul className={S.ul}>
         <li>📧 <strong>Contato</strong> — imprensa, parcerias e assuntos gerais</li>
         <li>💬 <strong>Suporte</strong> — ajuda para uso da plataforma</li>
         <li>🔒 <strong>Segurança</strong> — reporte confidencial de vulnerabilidades</li>
         <li>👤 <strong>Founder</strong> — contato direto com o fundador</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Rodapé final</h3>
-      <p className="mb-4 text-gray-700">Linha inferior com identificação da plataforma, fontes de dados com frequências reais ("Polymarket 5min, 17+ Institutos TSE, Google News 30min"), disclaimer de não-afiliação com o Polymarket e botão "voltar ao topo".</p>
+      <h3 className={S.h3}>Rodapé final</h3>
+      <p className={S.p}>Linha inferior com identificação da plataforma, fontes de dados com frequências reais ("Polymarket 5min, 17+ Institutos TSE, Google News 30min"), disclaimer de não-afiliação com o Polymarket e botão "voltar ao topo".</p>
       <Callout title="Por que o footer é assim">
         <p>Muitos sites preenchem o rodapé com dezenas de links decorativos que não funcionam ou levam a páginas vazias. O AFOS optou pelo oposto: <strong>poucos links, todos funcionais</strong>. Se um link aparece no footer, ele entrega algo real quando clicado. Essa é a mesma filosofia de projetos open-source maduros como Supabase, Linear e Prisma.</p>
       </Callout>
 
       <div className="h-px bg-gray-200 my-12" />
 
-      <h2 id="bastidores" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Por trás da plataforma</h2>
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Os dados chegam sozinhos</h3>
-      <p className="mb-4 text-gray-700">Tudo o que você lê vem de pipelines automatizados que rodam 24 horas por dia:</p>
-      <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
+      <h2 id="bastidores" className={S.h2}>Por trás da plataforma</h2>
+      <h3 className={S.h3}>Os dados chegam sozinhos</h3>
+      <p className={S.p}>Tudo o que você lê vem de pipelines automatizados que rodam 24 horas por dia:</p>
+      <ul className={S.ul}>
         <li><strong>A cada 5 minutos:</strong> o Polymarket é consultado e os percentuais são atualizados</li>
         <li><strong>A cada 30 minutos:</strong> notícias são coletadas em 6 categorias temáticas e 3 idiomas</li>
         <li><strong>Diariamente:</strong> novas pesquisas registradas no TSE são baixadas e indexadas</li>
         <li><strong>Duas vezes ao dia (12h e 18h BRT):</strong> cruzamento completo das 3 fontes é executado, comparando o estado atual com o do dia anterior (variações ↑↓pp), e persistido no banco para formar histórico auditável</li>
       </ul>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">Análises geradas por IA a partir de dados públicos</h3>
-      <p className="mb-4 text-gray-700">As análises criteriosas (os blocos <strong>Fortes</strong>, <strong>Fracos</strong>, <strong>Análise</strong>, o <strong>Cruzamento</strong> e os <strong>quatro cards temáticos</strong>) são geradas por <strong>inteligência artificial</strong> que:</p>
-      <ol className="list-decimal pl-6 mb-4 text-gray-700 space-y-2">
+      <h3 className={S.h3}>Análises geradas por IA a partir de dados públicos</h3>
+      <p className={S.p}>As análises criteriosas (os blocos <strong>Fortes</strong>, <strong>Fracos</strong>, <strong>Análise</strong>, o <strong>Cruzamento</strong> e os <strong>quatro cards temáticos</strong>) são geradas por <strong>inteligência artificial</strong> que:</p>
+      <ol className={S.ol}>
         <li>Lê os valores atuais das 3 fontes</li>
         <li>Compara com os valores do dia anterior</li>
         <li>Consulta as notícias mais relevantes das últimas 24 horas</li>
         <li>Aplica as regras de convergência/divergência descritas anteriormente</li>
         <li>Escreve a narrativa resultante, citando fontes, datas e veículos</li>
       </ol>
-      <p className="mb-4 text-gray-700">Todos os dados usados são <strong>públicos e auditáveis</strong> — qualquer pessoa pode verificar Polymarket, pesquisas do TSE ou notícias citadas.</p>
+      <p className={S.p}>Todos os dados usados são <strong>públicos e auditáveis</strong> — qualquer pessoa pode verificar Polymarket, pesquisas do TSE ou notícias citadas.</p>
       <Callout title="Por que isso é importante dizer">
         <p>Transparência sobre o uso de IA é padrão moderno — e é o que diferencia um projeto sério de um projeto opaco.</p>
       </Callout>
 
-      <h2 id="perfis-usuario" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Como extrair valor (3 perfis de usuário)</h2>
+      <h2 id="perfis-usuario" className={S.h2}>Como extrair valor (3 perfis de usuário)</h2>
       <Card title="👤 Cidadão curioso">
         <p><strong>Visita:</strong> 2x por semana, 5 minutos por vez.</p>
         <p><strong>O que faz:</strong> lê os 6 cards Polymarket + o card Sentimento.</p>
@@ -507,41 +508,41 @@ export function HowItWorksPtBR() {
         <p><strong>Valor:</strong> risco político é <strong>preço de ativo</strong>. Saber antes que o mercado precifica uma inelegibilidade ou um escândalo = vantagem concreta em trade/hedge.</p>
       </Card>
 
-      <h2 id="limitacoes" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Quando o AFOS não serve (limitações honestas)</h2>
-      <p className="mb-4 text-gray-700">Nenhuma plataforma é útil para todas as perguntas. Ser honesto sobre o que o AFOS <em>não</em> entrega é o que separa uma ferramenta séria de uma promessa vaga.</p>
+      <h2 id="limitacoes" className={S.h2}>Quando o AFOS não serve (limitações honestas)</h2>
+      <p className={S.p}>Nenhuma plataforma é útil para todas as perguntas. Ser honesto sobre o que o AFOS <em>não</em> entrega é o que separa uma ferramenta séria de uma promessa vaga.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O AFOS não substitui pesquisa estatística formal</h3>
-      <p className="mb-4 text-gray-700">Se você precisa de <strong>margem de erro, intervalo de confiança ou amostragem científica controlada</strong> (em linguagem simples: números com precisão matemática certificada e metodologia auditável de amostragem), a fonte é o <strong>instituto de pesquisa</strong> (Datafolha, Quaest, IBGE etc.). O AFOS consolida e cruza esses dados, mas não produz pesquisa nova.</p>
+      <h3 className={S.h3}>O AFOS não substitui pesquisa estatística formal</h3>
+      <p className={S.p}>Se você precisa de <strong>margem de erro, intervalo de confiança ou amostragem científica controlada</strong> (em linguagem simples: números com precisão matemática certificada e metodologia auditável de amostragem), a fonte é o <strong>instituto de pesquisa</strong> (Datafolha, Quaest, IBGE etc.). O AFOS consolida e cruza esses dados, mas não produz pesquisa nova.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O AFOS não prevê resultados com precisão quantitativa</h3>
-      <p className="mb-4 text-gray-700">O cruzamento é <strong>narrativo estruturado</strong>, não modelo estatístico. A plataforma não entrega previsões com precisão matemática calculada. Entrega <strong>direção, ritmo e convergência</strong> — leituras qualitativas úteis para apoiar decisão, mas que não substituem a modelagem matemática formal que acadêmicos e fundos quantitativos usam.</p>
+      <h3 className={S.h3}>O AFOS não prevê resultados com precisão quantitativa</h3>
+      <p className={S.p}>O cruzamento é <strong>narrativo estruturado</strong>, não modelo estatístico. A plataforma não entrega previsões com precisão matemática calculada. Entrega <strong>direção, ritmo e convergência</strong> — leituras qualitativas úteis para apoiar decisão, mas que não substituem a modelagem matemática formal que acadêmicos e fundos quantitativos usam.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O AFOS depende da qualidade dos mercados de previsão</h3>
-      <p className="mb-4 text-gray-700">Em países onde o <strong>Polymarket não tem mercados ativos</strong> ou tem mercados com liquidez muito baixa (abaixo de US$ 100 mil em volume), o sinal de mercado fica ruidoso. O AFOS sinaliza esses casos, mas a confiança dos dados cai proporcionalmente.</p>
+      <h3 className={S.h3}>O AFOS depende da qualidade dos mercados de previsão</h3>
+      <p className={S.p}>Em países onde o <strong>Polymarket não tem mercados ativos</strong> ou tem mercados com liquidez muito baixa (abaixo de US$ 100 mil em volume), o sinal de mercado fica ruidoso. O AFOS sinaliza esses casos, mas a confiança dos dados cai proporcionalmente.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">O AFOS não é recomendação de investimento ou voto</h3>
-      <p className="mb-4 text-gray-700">É <strong>informação estruturada para apoiar decisão</strong>. Decisão sobre portfolio, apostas ou voto é responsabilidade exclusiva de quem usa. A plataforma não opera com cliente, não recebe comissão e não tem conflito de interesse declarado — justamente para não precisar recomendar nada.</p>
+      <h3 className={S.h3}>O AFOS não é recomendação de investimento ou voto</h3>
+      <p className={S.p}>É <strong>informação estruturada para apoiar decisão</strong>. Decisão sobre portfolio, apostas ou voto é responsabilidade exclusiva de quem usa. A plataforma não opera com cliente, não recebe comissão e não tem conflito de interesse declarado — justamente para não precisar recomendar nada.</p>
 
-      <h3 className="text-lg font-bold text-gray-800 mt-7 mb-3">A cobertura atual é restrita a 14+ países</h3>
-      <p className="mb-4 text-gray-700">Países fora dessa lista não têm pipeline de coleta específico. O mapa global mostra agregados, mas a profundidade de análise (cruzamento pesquisas × Polymarket × notícias) só existe onde há infraestrutura pronta. Expansão é contínua, mas não é universal.</p>
+      <h3 className={S.h3}>A cobertura atual é restrita a 14+ países</h3>
+      <p className={S.p}>Países fora dessa lista não têm pipeline de coleta específico. O mapa global mostra agregados, mas a profundidade de análise (cruzamento pesquisas × Polymarket × notícias) só existe onde há infraestrutura pronta. Expansão é contínua, mas não é universal.</p>
 
-      <h2 id="diferenciacao" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">O que torna o AFOS diferente de Google News ou um jornal</h2>
-      <div className="overflow-x-auto my-5">
-        <table className="w-full bg-white rounded-lg shadow-sm text-sm border-collapse">
-          <thead><tr><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase"></th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Jornal tradicional</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">Google News</th><th className="bg-primary text-white px-4 py-3 text-left font-semibold text-xs uppercase">AFOS</th></tr></thead>
+      <h2 id="diferenciacao" className={S.h2}>O que torna o AFOS diferente de Google News ou um jornal</h2>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}></th><th className={S.th}>Jornal tradicional</th><th className={S.th}>Google News</th><th className={S.th}>AFOS</th></tr></thead>
           <tbody>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Viés editorial</td><td className="px-4 py-3">Alto</td><td className="px-4 py-3">Médio</td><td className="px-4 py-3"><strong>Transparente (mostra os 2 lados)</strong></td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Integra dinheiro real?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim, mercado de previsão</strong></td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Cruza múltiplas fontes?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Agrega mas não cruza</td><td className="px-4 py-3"><strong>Sim, com lógica e método</strong></td></tr>
-            <tr className="border-b border-gray-100 bg-gray-50/50"><td className="px-4 py-3">Mostra mudança no tempo?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim (↑↓pp variações diárias)</strong></td></tr>
-            <tr className="border-b border-gray-100"><td className="px-4 py-3">Open source?</td><td className="px-4 py-3">Não</td><td className="px-4 py-3">Não</td><td className="px-4 py-3"><strong>Sim, Apache 2.0</strong></td></tr>
-            <tr><td className="px-4 py-3">Custa?</td><td className="px-4 py-3">Assinatura</td><td className="px-4 py-3">Grátis mas viciado</td><td className="px-4 py-3"><strong>100% grátis, sem login</strong></td></tr>
+            <tr className={S.trRow}><td className={S.td}>Viés editorial</td><td className={S.td}>Alto</td><td className={S.td}>Médio</td><td className={S.td}><strong>Transparente (mostra os 2 lados)</strong></td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Integra dinheiro real?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim, mercado de previsão</strong></td></tr>
+            <tr className={S.trRow}><td className={S.td}>Cruza múltiplas fontes?</td><td className={S.td}>Não</td><td className={S.td}>Agrega mas não cruza</td><td className={S.td}><strong>Sim, com lógica e método</strong></td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Mostra mudança no tempo?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim (↑↓pp variações diárias)</strong></td></tr>
+            <tr className={S.trRow}><td className={S.td}>Open source?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim, Apache 2.0</strong></td></tr>
+            <tr><td className={S.td}>Custa?</td><td className={S.td}>Assinatura</td><td className={S.td}>Grátis mas viciado</td><td className={S.td}><strong>100% grátis, sem login</strong></td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="comece-aqui" className="text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100">Comece por aqui</h2>
-      <p className="mb-4 text-gray-700">Se é sua primeira visita, este é o caminho mais rápido para extrair valor em <strong>5 minutos</strong>:</p>
+      <h2 id="comece-aqui" className={S.h2}>Comece por aqui</h2>
+      <p className={S.p}>Se é sua primeira visita, este é o caminho mais rápido para extrair valor em <strong>5 minutos</strong>:</p>
       <Card title="Passo 1 — Abra o Dashboard">
         <p>Os <strong>6 Cards Polymarket</strong> no topo já dão o panorama do dia. Leia na ordem: <em>1º turno</em> → <em>2º lugar</em> → <em>STF</em> → <em>Senado</em>. Foco nas variações <strong>↑↓pp</strong> — elas dizem o que se moveu desde ontem.</p>
       </Card>
