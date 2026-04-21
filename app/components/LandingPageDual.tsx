@@ -33,7 +33,7 @@ const CONTENT = {
       { value: '14', label: 'Países monitorados' },
       { value: '17+', label: 'Institutos de pesquisa' },
       { value: '5min', label: 'Atualização dos mercados' },
-      { value: '100%', label: 'Gratuito e aberto' },
+      { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Tudo que você precisa para acompanhar eleições',
@@ -78,7 +78,7 @@ const CONTENT = {
       { value: '14', label: 'Countries monitored' },
       { value: '17+', label: 'Polling institutes' },
       { value: '5min', label: 'Market refresh rate' },
-      { value: '100%', label: 'Free and open source' },
+      { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Everything you need to track elections',
@@ -123,7 +123,7 @@ const CONTENT = {
       { value: '14', label: 'Paises monitoreados' },
       { value: '17+', label: 'Institutos de encuestas' },
       { value: '5min', label: 'Actualizacion de mercados' },
-      { value: '100%', label: 'Gratuito y abierto' },
+      { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Todo lo que necesitas para seguir elecciones',

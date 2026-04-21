@@ -27,7 +27,7 @@ export function HowItWorksEs() {
             <TocLink href="#perfil-candidatos">6. Perfil de Candidatos</TocLink>
             <TocLink href="#paises">7. Países</TocLink>
             <TocLink href="#live-news">8. Live News 120'</TocLink>
-            <TocLink href="#sentimento">9. Card Sentimiento</TocLink>
+            <TocLink href="#sentimento">9. Clima Político</TocLink>
             <TocLink href="#inss-lulinha">10. INSS y Caso Familiar del Incumbente</TocLink>
             <TocLink href="#banco-master">11. Banco Master</TocLink>
             <TocLink href="#stf">12. Credibilidad del STF</TocLink>
@@ -35,7 +35,7 @@ export function HowItWorksEs() {
           </TocCol>
           <TocCol heading="Profundización">
             <TocLink href="#bastidores">Detrás de la plataforma</TocLink>
-            <TocLink href="#perfis-usuario">3 perfiles de usuario</TocLink>
+            <TocLink href="#perfis-usuario">Perfiles de usuarios</TocLink>
             <TocLink href="#limitacoes">Cuándo AFOS no sirve</TocLink>
             <TocLink href="#diferenciacao">Diferencia vs agregadores vs periódicos</TocLink>
             <TocLink href="#comece-aqui">Comienza aquí</TocLink>
@@ -59,7 +59,7 @@ export function HowItWorksEs() {
           </thead>
           <tbody>
             <tr className={S.trRow}>
-              <td className={S.tdTop}>🎯 <strong>Polymarket</strong></td>
+              <td className={S.tdTop}>🎯 <strong>Mercado de predicción — apuestas</strong> (Polymarket)</td>
               <td className={S.tdTop}>Donde gente real apuesta dinero real sobre quién ganará</td>
               <td className={S.tdTop}>Cuando alguien arriesga US$ 10.000, no miente por vanidad</td>
             </tr>
@@ -372,7 +372,7 @@ export function HowItWorksEs() {
         <p>En lugar de abrir 10 pestañas de periódicos, tienes lo esencial en una única pantalla, filtrado por relevancia electoral.</p>
       </Callout>
 
-      <h2 id="sentimento" className={S.h2}>9. Card Sentimiento</h2>
+      <h2 id="sentimento" className={S.h2}>9. Clima Político</h2>
       <p className={S.p}>Un panel dedicado a mostrar <strong>el clima general de la disputa</strong> en cuatro lentes simultáneas:</p>
       <ul className={S.ul}>
         <li><strong>Derecha:</strong> lo que está jugando a favor/en contra de los candidatos de derecha</li>
@@ -489,10 +489,10 @@ export function HowItWorksEs() {
         <p>La transparencia sobre el uso de IA es estándar moderno — y es lo que diferencia un proyecto serio de uno opaco.</p>
       </Callout>
 
-      <h2 id="perfis-usuario" className={S.h2}>Cómo extraer valor (3 perfiles de usuario)</h2>
+      <h2 id="perfis-usuario" className={S.h2}>Perfiles de usuarios</h2>
       <Card title="👤 Ciudadano curioso">
         <p><strong>Visita:</strong> 2x por semana, 5 minutos cada vez.</p>
-        <p><strong>Qué hace:</strong> lee los 6 cards Polymarket + el card Sentimiento.</p>
+        <p><strong>Qué hace:</strong> lee los 6 cards Polymarket + el card Clima Político.</p>
         <p><strong>Valor:</strong> se mantiene informado sin consumir periódicos sesgados. Forma opinión basada en datos.</p>
       </Card>
       <Card title="👤 Profesional (analista, consultor, periodista, asesor)">
@@ -534,7 +534,7 @@ export function HowItWorksEs() {
             <tr className={S.trRow}><td className={S.td}>¿Cruza múltiples fuentes?</td><td className={S.td}>No</td><td className={S.td}>Agrega pero no cruza</td><td className={S.td}><strong>Sí, con lógica y método</strong></td></tr>
             <tr className={S.trAlt}><td className={S.td}>¿Muestra cambio en el tiempo?</td><td className={S.td}>No</td><td className={S.td}>No</td><td className={S.td}><strong>Sí (↑↓pp variaciones diarias)</strong></td></tr>
             <tr className={S.trRow}><td className={S.td}>¿Open source?</td><td className={S.td}>No</td><td className={S.td}>No</td><td className={S.td}><strong>Sí, Apache 2.0</strong></td></tr>
-            <tr><td className={S.td}>¿Cuesta?</td><td className={S.td}>Suscripción</td><td className={S.td}>Gratis pero adictivo</td><td className={S.td}><strong>100% gratis, sin login</strong></td></tr>
+            <tr><td className={S.td}>¿Cuesta?</td><td className={S.td}>Suscripción</td><td className={S.td}>Gratis pero limitado</td><td className={S.td}><strong>100% gratis, sin login</strong></td></tr>
           </tbody>
         </table>
       </div>
@@ -547,7 +547,7 @@ export function HowItWorksEs() {
       <Card title="Paso 2 — Baja hasta el Análisis Detallado">
         <p>Elige un candidato que te interese y lee los bloques <strong>FORTALEZAS</strong> y <strong>DEBILIDADES</strong> lado a lado. Vas a sentir incomodidad honesta leyendo los puntos contra tu preferido — eso es señal de que el método funciona. AFOS muestra los dos lados de cada número.</p>
       </Card>
-      <Card title="Paso 3 — Consulta el Card Sentimiento">
+      <Card title="Paso 3 — Consulta el Card Clima Político">
         <p>El resumen visual del clima político del día en <strong>30 segundos</strong>. Derecha, izquierda, 3ª vía y Polymarket consolidado — todo en una pantalla.</p>
       </Card>
       <Callout title="Después de eso">

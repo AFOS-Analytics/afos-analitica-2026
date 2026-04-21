@@ -46,7 +46,9 @@
     "errorConnection": "Connection error. Please try again.",
     "errorGeneric": "Could not complete. Please try again.",
     "errorRateLimit": "Too many attempts. Try again in 1 hour.",
-    "errorUnavailable": "Service temporarily unavailable."
+    "errorUnavailable": "Service temporarily unavailable.",
+    "typoSuggestion": "Did you mean",
+    "typoUse": "Use"
   },
   "gate": {
     "title": "Keep tracking with AFOS Analytics",
