@@ -2,6 +2,7 @@
 
 import type { AnalysisSection } from '../types';
 import { SectionTitle, Card } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 interface Props {
@@ -13,7 +14,7 @@ export function SentimentSection({ sentimento: s, updatedAt }: Props) {
   const { t } = useTranslation();
   return (
     <section>
-      <SectionTitle icon="📡">{t('sections.sentiment')}</SectionTitle>
+      <SectionTitle icon="📡" rightSlot={<LogicLink anchor="sentimento" />}>{t('sections.sentiment')}</SectionTitle>
       {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="bg-gradient-to-br from-light-bg to-blue-50 border-l-4 border-l-primary">
         <div className="space-y-4 text-sm text-dark leading-relaxed">

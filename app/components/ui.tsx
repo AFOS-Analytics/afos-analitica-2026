@@ -1,11 +1,14 @@
 'use client';
 
-export function SectionTitle({ children, icon }: { children: React.ReactNode; icon?: string }) {
+export function SectionTitle({ children, icon, rightSlot }: { children: React.ReactNode; icon?: string; rightSlot?: React.ReactNode }) {
   return (
-    <h2 className="text-2xl font-bold text-dark mb-4 flex items-center gap-2">
-      {icon && <span aria-hidden="true">{icon}</span>}
-      {children}
-    </h2>
+    <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
+      <h2 className="text-2xl font-bold text-dark flex items-center gap-2">
+        {icon && <span aria-hidden="true">{icon}</span>}
+        {children}
+      </h2>
+      {rightSlot}
+    </div>
   );
 }
 

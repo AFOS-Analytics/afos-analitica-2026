@@ -1,5 +1,6 @@
 import type { NewsData, NewsItem } from '../types';
 import { SectionTitle } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 /** Validar URL para prevenir javascript: protocol injection (OWASP A03) */
@@ -23,7 +24,7 @@ export function NewsSection({ news }: Props) {
 
   return (
     <section>
-      <SectionTitle icon="📰">{t('sections.news')}</SectionTitle>
+      <SectionTitle icon="📰" rightSlot={<LogicLink anchor="live-news" />}>{t('sections.news')}</SectionTitle>
       <div className="bg-light-bg border border-light-border rounded-xl p-4 sm:p-6 mb-4">
         <div className="flex flex-wrap justify-between items-center mb-4">
           <p className="text-xs text-gray-500">🔄 {t('sections.newsUpdated')} | {t('sections.lastUpdate')}: <span className="font-semibold text-primary">{news.updatedAt} BRT</span></p>

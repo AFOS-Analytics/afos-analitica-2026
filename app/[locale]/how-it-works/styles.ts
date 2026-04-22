@@ -6,9 +6,9 @@
  */
 export const S = {
   // Headings
-  h2: 'text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100',
+  h2: 'text-2xl font-bold text-primary mt-12 mb-4 pb-2 border-b-2 border-blue-100 scroll-mt-24',
   h3: 'text-lg font-bold text-gray-800 mt-7 mb-3',
-  h3Anchor: 'text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-20', // h3 com id (âncora)
+  h3Anchor: 'text-lg font-bold text-gray-800 mt-10 mb-3 scroll-mt-24', // h3 com id (âncora)
   h4: 'text-base font-bold text-gray-700 mt-6 mb-3',
 
   // Paragraphs

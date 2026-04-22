@@ -2,6 +2,7 @@
 
 import type { AnalysisSection, PolyEvent } from '../types';
 import { SectionTitle, Card } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 interface Props {
@@ -21,7 +22,7 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
 
   return (
     <section>
-      <SectionTitle icon="⚖️">{t('sections.stf')}</SectionTitle>
+      <SectionTitle icon="⚖️" rightSlot={<LogicLink anchor="stf" />}>{t('sections.stf')}</SectionTitle>
       {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="border-l-4 border-l-danger">
         <div className="flex items-center gap-3 mb-4">
