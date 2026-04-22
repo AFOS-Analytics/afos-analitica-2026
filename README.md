@@ -46,7 +46,7 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 - 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
 - 👤 **Founder direct** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
 
-Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Trademark use of the "AFOS Analytics" name and logo is governed by [TRADEMARK.md](TRADEMARK.md). Hosted-platform contributions (onboarding a new country) are documented at [docs/platform/add-your-country.md](docs/platform/add-your-country.md) and the public governance model is explained at `/methodology/automated-governance`.
 
 ---
 
@@ -61,6 +61,7 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". Includes subsection on polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
+| `/[locale]/methodology/automated-governance` | Public governance page (3 languages) — how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
 | `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe) |
 
 ### Landing Page
@@ -377,6 +378,8 @@ npm run dev
 | [docs/DATABASE.md](docs/DATABASE.md) | Schemas, tables, conventions |
 | [docs/LGPD.md](docs/LGPD.md) | PII matrix, retention, runbooks |
 | [docs/OPERATIONS.md](docs/OPERATIONS.md) | Deploy, rollback, observability |
+| [docs/platform/add-your-country.md](docs/platform/add-your-country.md) | Step-by-step guide to onboard a new country to the AFOS hosted platform (configuration, not daily content) |
+| [TRADEMARK.md](TRADEMARK.md) | AFOS Analytics trademark policy (what forkers can/cannot do with the name and logo) |
 | [docs/como-funciona-afos.html](docs/como-funciona-afos.html) | Didactic methodology guide (source) |
 | [V1 README](docs/README-v1.md) | How it all started |
 

@@ -103,5 +103,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // How it works (didactic guide)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/how-it-works`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+      alternates: { languages: hreflang((l) => `/${l}/how-it-works`, `${baseUrl}/en/how-it-works`) },
+    })
+  }
+
+  // Methodology — Automated Governance
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/methodology/automated-governance`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`, `${baseUrl}/en/methodology/automated-governance`) },
+    })
+  }
+
   return entries
 }
