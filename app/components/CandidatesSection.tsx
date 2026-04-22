@@ -1,6 +1,7 @@
 import type { CandidateProfile } from '../types';
 import { partyColor } from '../lib/utils';
 import { SectionTitle, Card } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 const candidates: CandidateProfile[] = [
@@ -17,7 +18,7 @@ export function CandidatesSection() {
   const { t } = useTranslation();
   return (
     <section>
-      <SectionTitle icon="👤">{t('sections.candidates')}</SectionTitle>
+      <SectionTitle icon="👤" rightSlot={<LogicLink anchor="perfil-candidatos" />}>{t('sections.candidates')}</SectionTitle>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {candidates.map(c => (
           <Card key={c.name} className="flex flex-col">

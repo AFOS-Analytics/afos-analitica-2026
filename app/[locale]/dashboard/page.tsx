@@ -17,6 +17,7 @@ import { SentimentSection } from '../../components/SentimentSection';
 import { InssSection } from '../../components/InssSection';
 import { BancoMasterSection } from '../../components/BancoMasterSection';
 import { StfSection } from '../../components/StfSection';
+import { LogicLink } from '../../components/LogicLink';
 import { EmailPopup } from '../../components/EmailPopup';
 import { DashboardGate } from '../../components/DashboardGate';
 
@@ -87,7 +88,10 @@ function DashboardContent() {
 
           {/* SEO internal links — country pages */}
           <section className="bg-light-bg border border-light-border rounded-xl p-4">
-            <p className="text-xs font-semibold text-primary mb-3">{t('map.countries')}</p>
+            <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
+              <p className="text-xs font-semibold text-primary">{t('map.countries')}</p>
+              <LogicLink anchor="paises" />
+            </div>
             <div className="flex flex-wrap gap-2">
               {[
                 { code: 'br', slug: locale === 'en' ? 'brazil' : 'brasil', name: 'Brasil' },

@@ -3,6 +3,7 @@
 import type { PolyData, PolyEvent } from '../types';
 import { extractCandidateName } from '../lib/utils';
 import { Card, HBar } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 interface Props {
@@ -64,11 +65,14 @@ export function PolymarketSection({ poly }: Props) {
 
   return (
     <section>
-      <h2 className="font-bold text-dark mb-4 flex items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl">
-        <span className="flex-shrink-0" aria-hidden="true">📊</span>
-        <span className="hidden sm:inline">{t('sections.polymarket')}</span>
-        <span className="sm:hidden leading-snug">{t('sections.polymarketMobile')}<br/>{t('sections.polymarketMobileLine2')}</span>
-      </h2>
+      <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
+        <h2 className="font-bold text-dark flex items-center gap-2 text-sm sm:text-base md:text-lg lg:text-xl">
+          <span className="flex-shrink-0" aria-hidden="true">📊</span>
+          <span className="hidden sm:inline">{t('sections.polymarket')}</span>
+          <span className="sm:hidden leading-snug">{t('sections.polymarketMobile')}<br/>{t('sections.polymarketMobileLine2')}</span>
+        </h2>
+        <LogicLink anchor="cards-polymarket" />
+      </div>
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4 mb-4 mx-0">
         <div className="mb-2">
           <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline hover:text-primary-dark text-sm sm:text-base" aria-label="Polymarket (abre em nova aba)">polymarket.com</a>

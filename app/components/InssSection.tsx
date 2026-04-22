@@ -2,6 +2,7 @@
 
 import type { AnalysisSection } from '../types';
 import { SectionTitle, Card } from './ui';
+import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
 interface Props {
@@ -13,7 +14,7 @@ export function InssSection({ inss, updatedAt }: Props) {
   const { t } = useTranslation();
   return (
     <section>
-      <SectionTitle icon="🔴">{t('sections.inss')}</SectionTitle>
+      <SectionTitle icon="🔴" rightSlot={<LogicLink anchor="inss-lulinha" />}>{t('sections.inss')}</SectionTitle>
       {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="border-l-4 border-l-danger">
         <div className="space-y-3 text-sm text-dark leading-relaxed">

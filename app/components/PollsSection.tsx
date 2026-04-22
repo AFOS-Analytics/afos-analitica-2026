@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';
+import { LogicLink } from './LogicLink';
 import { getColor } from '../lib/utils';
 import { useTranslation, useLocale } from '../i18n/context';
 
@@ -16,7 +17,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
 
   return (
     <section>
-      <SectionTitle icon="📋">{t('sections.polls')}</SectionTitle>
+      <SectionTitle icon="📋" rightSlot={<LogicLink anchor="pesquisas" />}>{t('sections.polls')}</SectionTitle>
 
       {/* TABELA COMPARATIVA PESQUISAS VS POLYMARKET */}
       {polls?.polymarketComparison && (
@@ -158,7 +159,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* ANÁLISE CRITERIOSA — dados via JSON externo */}
       {crit && crit.candidates?.length > 0 && (
       <div className="mt-6 pt-6 border-t-2 border-primary/20">
-      <h3 className="text-xl font-bold text-dark mb-4 flex items-center gap-2"><span>🔬</span> {t('sections.critAnalysis')}</h3>
+      <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
+        <h3 className="text-xl font-bold text-dark flex items-center gap-2"><span>🔬</span> {t('sections.critAnalysis')}</h3>
+        <LogicLink anchor="analise-criteriosa" />
+      </div>
       <p className="text-xs text-gray-500 mb-4">{crit.subtitle}</p>
 
       {/* CANDIDATOS 1-3 (dinâmico via JSON) */}
@@ -218,7 +222,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
 
       {/* QUADRO COMPARATIVO (dinâmico via JSON) */}
       <Card className="border-l-4 border-l-primary">
-        <h3 className="font-bold text-sm text-primary mb-3">📊 {t('sections.comparativeTable')}</h3>
+        <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
+          <h3 className="font-bold text-sm text-primary">📊 {t('sections.comparativeTable')}</h3>
+          <LogicLink anchor="quadro-comparativo" />
+        </div>
         <div className="hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-5 gap-2 text-xs">
             <div className="font-bold text-gray-500 py-2">{t('sections.candidate')}</div>
