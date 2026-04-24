@@ -1,8 +1,8 @@
 {
   "sections": {
-    "polymarket": "Mercados de previsão x institutos de pesquisas – Análises: mídias + redes sociais",
-    "polymarketMobile": "Mercados de previsão x institutos de pesquisas",
-    "polymarketMobileLine2": "Análises: mídias + redes sociais",
+    "polymarket": "Mercados de previsão × institutos de pesquisas × notícias",
+    "polymarketMobile": "Mercados × pesquisas × notícias",
+    "polymarketMobileLine2": "Cruzamento em tempo real",
     "polymarketDesc": "Polymarket é a maior plataforma de mercados de previsão do mundo. Diferente de pesquisas de opinião, permite apostas reais em eventos futuros e reflete onde as pessoas colocam seu dinheiro — historicamente mais preciso. As odds abaixo mostram a probabilidade do mercado.",
     "polls": "Pesquisas Eleitorais",
     "candidates": "Perfil dos Pré-Candidatos",

@@ -1,7 +1,7 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
   if (type === 'analysis-cards') {
@@ -9,15 +9,19 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
     if (!cards) return 'Sem dados'
     return `Cards: ${Object.keys(cards).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
   }
+  if (type === 'afos-hoje') {
+    const lede = data.lede as string | undefined
+    return lede ? lede.slice(0, 200) : `AFOS Hoje — ${data.updatedAt || data.date || 'N/A'}`
+  }
   const candidates = data.candidates as Array<{ name: string }> | undefined
   if (!candidates) return 'Sem dados'
   return `Candidatos: ${candidates.map(c => c.name).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
 }
 
 export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
-  return type === 'analysis-cards'
-    ? `Análise Cards — ${updatedAtLabel}`
-    : `Análise Criteriosa — ${updatedAtLabel}`
+  if (type === 'analysis-cards') return `Análise Cards — ${updatedAtLabel}`
+  if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
+  return `Análise Criteriosa — ${updatedAtLabel}`
 }
 
 type UpsertOpts = {

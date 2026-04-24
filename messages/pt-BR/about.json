@@ -9,7 +9,6 @@
       "mercados internacionais de previsão com dinheiro real (como Polymarket)",
       "pesquisas de opinião eleitoral tradicionais",
       "notícias da grande imprensa",
-      "sinais e sentimento das redes sociais",
       "análises estratégicas geradas com inteligência artificial"
     ],
     "whoWeAreFooter": "Tudo integrado em um painel simples, acessível e atualizado continuamente — no celular ou no computador.",
@@ -22,7 +21,7 @@
       "ver onde o dinheiro está posicionado — não apenas opinião, mas apostas reais",
       "comparar pesquisas vs mercado — o que as pessoas dizem vs o que o mundo aposta",
       "monitorar eventos e escândalos — e seu impacto direto na eleição",
-      "entender o sentimento popular — nas redes e na mídia",
+      "acompanhar o clima político do ciclo eleitoral",
       "tomar decisões mais informadas, com base em dados"
     ],
     "howToUse": "Como usar",
@@ -63,15 +62,14 @@
       "Análises estratégicas — forças e fraquezas dos candidatos",
       "Perfil dos candidatos — visão completa",
       "Notícias ao vivo — organizadas por relevância",
-      "Sentimento popular — redes sociais e opinião pública"
+      "Clima Político — análises cruzadas de mídia e mercado"
     ],
     "differentialTitle": "Diferencial",
     "differentialDesc": "O AFOS-Analytics é uma plataforma única que conecta, no mesmo lugar:",
     "differentialList": [
       "o que as pessoas dizem (pesquisas)",
       "o que o mercado acredita (apostas reais)",
-      "o que está sendo narrado (mídia)",
-      "o que está sendo sentido (redes sociais)"
+      "o que está sendo narrado (mídia)"
     ],
     "differentialFooter": "Isso permite enxergar a eleição por múltiplas perspectivas — e não depender de uma única fonte.",
     "globalTitle": "GLOBAL POR DESIGN",

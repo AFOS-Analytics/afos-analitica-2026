@@ -1,8 +1,8 @@
 {
   "sections": {
-    "polymarket": "Mercados de predicción x encuestadoras – Análisis: medios + redes sociales",
-    "polymarketMobile": "Mercados de predicción x encuestadoras",
-    "polymarketMobileLine2": "Análisis: medios + redes sociales",
+    "polymarket": "Mercados de predicción × encuestadoras × noticias",
+    "polymarketMobile": "Mercados × encuestas × noticias",
+    "polymarketMobileLine2": "Cruce en tiempo real",
     "polymarketDesc": "Polymarket es la mayor plataforma de mercados de predicción del mundo. A diferencia de las encuestas, permite apuestas reales en eventos futuros y refleja dónde la gente pone su dinero — históricamente más preciso. Las probabilidades muestran la estimación del mercado.",
     "polls": "Encuestas Electorales",
     "candidates": "Perfiles de Precandidatos",
