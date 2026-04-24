@@ -1,8 +1,8 @@
 {
   "sections": {
-    "polymarket": "Prediction markets x polling institutes – Analysis: media + social networks",
-    "polymarketMobile": "Prediction markets x polling institutes",
-    "polymarketMobileLine2": "Analysis: media + social networks",
+    "polymarket": "Prediction markets × polling institutes × news",
+    "polymarketMobile": "Markets × polls × news",
+    "polymarketMobileLine2": "Real-time cross-reference",
     "polymarketDesc": "Polymarket is the world's largest prediction market platform. Unlike opinion polls, it allows real-money bets on future events and reflects where people put their money — historically more accurate. The odds below show the market's probability.",
     "polls": "Electoral Polls",
     "candidates": "Pre-Candidate Profiles",

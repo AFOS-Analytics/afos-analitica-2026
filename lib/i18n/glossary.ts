@@ -76,11 +76,6 @@ export const GLOSSARY = {
     en: 'public sentiment',
     es: 'sentimiento popular',
   },
-  socialSentiment: {
-    'pt-BR': 'sentimento das redes sociais',
-    en: 'social media sentiment',
-    es: 'sentimiento de redes sociales',
-  },
   marketSignals: {
     'pt-BR': 'sinais de mercado',
     en: 'market signals',
