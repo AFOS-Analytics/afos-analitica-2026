@@ -1,6 +1,6 @@
-# AFOS Hoje — Síntese Narrativa Diária (PILOTO 6 DIAS)
+# AFOS Hoje — Síntese Narrativa Diária (PILOTO 7 DIAS)
 
-Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 para piloto de 6 dias (decisão final no 6º dia).
+Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 para piloto de 7 dias (decisão final no 7º dia — 28/Abr noite, INEGOCIÁVEL).
 
 ## Pré-requisito obrigatório
 
@@ -96,10 +96,12 @@ Executar em sequência:
 ## Cronograma do piloto
 
 - **Dia 1 — 22/04/2026:** ✅ gerado, aprovado, arquivado no Neon (slug `afos-hoje-22-04-2026`)
-- **Dias 2-5 — 23-26/04:** execução diária manual com este comando
-- **Dia 6 — 27/04:** última síntese + DECISÃO FINAL do usuário:
+- **Dias 2-5 — 23-26/04:** ✅ executados, arquivados Neon, deployados prod
+- **Dia 6 — 27/04:** síntese cobre dia-bomba (3 Quaest + Paraná 2ª + Nexus, ~6.700 entrevistados)
+- **Dia 7 — 28/04 (noite):** **DECISÃO FINAL GO/NO-GO — INEGOCIÁVEL** (síntese cobre dia-mega-bomba: AtlasIntel n=5k + 2 Quaest + 3 outros, ~10.700 entrevistados; decisão à noite com evidência acumulada de 2 dias seguidos de pesquisas pesadas)
   - **GO para produção diária:** automatizar via cron + linkar no dashboard + integrar ao launch
   - **NO-GO:** desativar feature e documentar aprendizado
+  - **Prorrogação adicional:** vetada — piloto sem deadline rígido vira projeto sem fim
 
 ## Observações importantes
 
