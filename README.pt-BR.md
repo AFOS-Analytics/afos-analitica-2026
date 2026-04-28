@@ -39,9 +39,9 @@ Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN
 
 ### Demo da plataforma (60 segundos)
 
-https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/public/demo-en.mp4
+[![AFOS Analytics — demo 60s (clique para tocar)](public/screenshots/landing.png)](https://raw.githubusercontent.com/AFOS-Analytics/afos-analitica-2026/main/public/demo-en.mp4)
 
-> Audio em PT-BR com legendas em ingles. Disponivel tambem sem legendas em [`public/demo.mp4`](public/demo.mp4) e como faixa de audio separada em [`public/demo-audio.m4a`](public/demo-audio.m4a).
+> **Clique na imagem acima para tocar** (~8.5 MB, audio em PT-BR com legendas em ingles embutidas). Trilhas alternativas: [`public/demo.mp4`](https://raw.githubusercontent.com/AFOS-Analytics/afos-analitica-2026/main/public/demo.mp4) (sem legendas) e [`public/demo-audio.m4a`](https://raw.githubusercontent.com/AFOS-Analytics/afos-analitica-2026/main/public/demo-audio.m4a) (apenas audio).
 
 ---
 
