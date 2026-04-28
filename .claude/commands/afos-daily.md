@@ -1,6 +1,6 @@
-# AFOS Hoje — Síntese Narrativa Diária (PILOTO 7 DIAS)
+# AFOS Daily — Síntese Narrativa Diária
 
-Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 para piloto de 7 dias (decisão final no 7º dia — 28/Abr noite, INEGOCIÁVEL).
+Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 e validado pelo piloto de 7 dias (decisão GO em 28/04/2026 noite).
 
 ## Pré-requisito obrigatório
 
@@ -18,22 +18,22 @@ Se o `/atualizar` de hoje ainda não rodou, PARAR e pedir ao usuário para execu
 
 ## ETAPA 2: Gerar markdown seguindo o template
 
-Criar arquivo em `public/afos-hoje/{YYYY-MM-DD}.md` com a estrutura EXATA do template 22/Abr:
+Criar arquivo em `public/afos-daily/{YYYY-MM-DD}.md` com a estrutura EXATA do template 22/Abr:
 
 ```yaml
 ---
 date: YYYY-MM-DD
 updatedAt: "DD/MM/YYYY, HH:MM"
-title: AFOS Hoje — DD de MÊS de YYYY
+title: AFOS Daily — DD de MÊS de YYYY
 locale: pt-BR
-status: pilot
+status: published
 lede: "[lede de 2-3 linhas capturando 3 movimentos-chave do dia]"
 ---
 ```
 
 Seguido de 6 seções obrigatórias:
 
-1. **Título + eyebrow** — "AFOS Hoje · Síntese do Dia" + data por extenso
+1. **Título + eyebrow** — "AFOS Daily · Síntese do Dia" + data por extenso
 2. **Lede (blockquote)** — 2-3 linhas bold que capturam os 3 movimentos mais relevantes
 3. **1. Mercado de previsão** — 4-5 parágrafos cobrindo: presidencial (Flávio × Lula + gap), 3ª via (Zema + Renan), 2º lugar, STF impeach, Senado, inflação
 4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver
@@ -56,9 +56,9 @@ Mantidas rigorosamente do piloto 22/Abr:
 - **Datas sempre explícitas** — nunca "ontem" ou "semana passada", sempre "21 de abril"
 - **Densidade alvo:** 600-900 palavras, 4-5 min de leitura
 
-## ETAPA 3: Atualizar a página `/pt-BR/hoje`
+## ETAPA 3: Atualizar a página `/pt-BR/daily`
 
-Editar `app/[locale]/hoje/page.tsx` para refletir o novo conteúdo do dia. Manter exatamente a mesma estrutura visual aprovada em 22/Abr (Lede em box azul, seções numeradas com h2 border, box amarelo de divergências, bullets numerados em síntese, rodapé com 3 linhas).
+Editar `app/[locale]/daily/page.tsx` para refletir o novo conteúdo do dia. Manter exatamente a mesma estrutura visual aprovada em 22/Abr (Lede em box azul, seções numeradas com h2 border, box amarelo de divergências, bullets numerados em síntese, rodapé com 3 linhas).
 
 ## ETAPA 4: Gerar preview Vercel (SEM prod)
 
@@ -78,13 +78,13 @@ Executar em sequência:
 
 1. **Persistir no Neon:**
    ```bash
-   npx tsx scripts/persist-afos-hoje.ts YYYY-MM-DD
+   npx tsx scripts/persist-afos-daily.ts YYYY-MM-DD
    ```
 
 2. **Commit + push:**
    ```bash
-   git add public/afos-hoje/YYYY-MM-DD.md app/\[locale\]/hoje/page.tsx
-   git commit -m "AFOS Hoje YYYY-MM-DD — [resumo do dia em 1 linha]" (com Co-Authored-By padrão)
+   git add public/afos-daily/YYYY-MM-DD.md app/\[locale\]/daily/page.tsx
+   git commit -m "AFOS Daily YYYY-MM-DD — [resumo do dia em 1 linha]" (com Co-Authored-By padrão)
    git push origin main
    ```
 
@@ -93,20 +93,15 @@ Executar em sequência:
    npx vercel --yes --prod
    ```
 
-## Cronograma do piloto
+## Histórico
 
-- **Dia 1 — 22/04/2026:** ✅ gerado, aprovado, arquivado no Neon (slug `afos-hoje-22-04-2026`)
-- **Dias 2-5 — 23-26/04:** ✅ executados, arquivados Neon, deployados prod
-- **Dia 6 — 27/04:** síntese cobre dia-bomba (3 Quaest + Paraná 2ª + Nexus, ~6.700 entrevistados)
-- **Dia 7 — 28/04 (noite):** **DECISÃO FINAL GO/NO-GO — INEGOCIÁVEL** (síntese cobre dia-mega-bomba: AtlasIntel n=5k + 2 Quaest + 3 outros, ~10.700 entrevistados; decisão à noite com evidência acumulada de 2 dias seguidos de pesquisas pesadas)
-  - **GO para produção diária:** automatizar via cron + linkar no dashboard + integrar ao launch
-  - **NO-GO:** desativar feature e documentar aprendizado
-  - **Prorrogação adicional:** vetada — piloto sem deadline rígido vira projeto sem fim
+- **Piloto de 7 dias (22-28/Abr/2026):** ✅ concluído, decisão GO em 28/Abr noite. Feature aprovada e renomeada de "AFOS Hoje" para "AFOS Daily".
+- **Slugs Neon do piloto:** `afos-hoje-22-04-2026` até `afos-hoje-28-04-2026` (preservados como histórico). Novos arquivos a partir de 29/Abr usam slug `afos-daily-YYYY-MM-DD`.
 
 ## Observações importantes
 
 - **Zero auto-disparo:** este comando NUNCA dispara sozinho — sempre via ação explícita do usuário
-- **Cada dia um arquivo:** `public/afos-hoje/{data}.md` preserva histórico legível
-- **Arquivamento Neon obrigatório:** garante que nenhuma síntese do piloto se perca
-- **`/pt-BR/hoje` mostra sempre a última:** por simplicidade do piloto (arquitetura dinâmica fica pra pós-decisão)
-- **`robots: noindex`** mantido durante todo o piloto (não indexar em buscadores até decisão final)
+- **Cada dia um arquivo:** `public/afos-daily/{data}.md` preserva histórico legível (arquivos do piloto 22-28/Abr permanecem na pasta com nomes originais)
+- **Arquivamento Neon obrigatório:** garante que nenhuma síntese se perca
+- **`/pt-BR/daily` mostra sempre a última:** arquitetura dinâmica para múltiplas datas é trabalho futuro
+- **`robots: noindex`** mantido (decisão de indexação para buscadores fica para a etapa de lançamento)

@@ -30,14 +30,14 @@ async function persistOne(prisma: PrismaClient, filePath: string, dateIso: strin
   const data = {
     date: dateIso,
     updatedAt: fm.updatedAt || `${dateIso}`,
-    title: fm.title || `AFOS Hoje — ${dateIso}`,
+    title: fm.title || `AFOS Daily — ${dateIso}`,
     locale: fm.locale || 'pt-BR',
     lede: fm.lede || '',
     markdown: body,
   }
 
-  const result = await upsertAnalysisReport(prisma, 'afos-hoje', data, {
-    createdBy: 'afos-hoje:pilot',
+  const result = await upsertAnalysisReport(prisma, 'afos-daily', data, {
+    createdBy: 'afos-daily',
     fallbackIsoDate: dateIso,
   })
 
@@ -49,9 +49,9 @@ async function main() {
   if (!url) { console.error('❌ DATABASE_URL não configurada'); process.exit(1) }
 
   const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) })
-  console.log('\n💾 Persistindo AFOS Hoje no Neon\n')
+  console.log('\n💾 Persistindo AFOS Daily no Neon\n')
 
-  const dir = join(process.cwd(), 'public', 'afos-hoje')
+  const dir = join(process.cwd(), 'public', 'afos-daily')
   const targetArg = process.argv[2]
 
   let files: string[]
