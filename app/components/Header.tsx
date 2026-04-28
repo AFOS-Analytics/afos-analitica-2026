@@ -30,10 +30,10 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
       <header className="bg-primary text-white py-6 px-4 md:px-8" role="banner">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
-            <div>
+            <Link href={`/${locale}`} aria-label={t('header.backToHome')} className="block hover:opacity-90 focus:outline-2 focus:outline-offset-2 focus:outline-white rounded transition-opacity">
               <h1 className="text-4xl md:text-4xl font-extrabold tracking-tight">{t('header.title')}</h1>
               <p className="text-blue-200 mt-1 text-sm md:text-base">{t('header.subtitle')}</p>
-            </div>
+            </Link>
 
             {/* Desktop: botões em linha + globo no final */}
             <div className="hidden sm:flex items-center gap-2">
