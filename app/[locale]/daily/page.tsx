@@ -2,13 +2,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'AFOS Hoje — 28 de abril de 2026 | AFOS Analytics',
-  description: 'Síntese do dia 28/Abr/2026 (dia-mega-bomba): Polymarket precifica empate técnico Lula × Flávio pela 1ª vez (38.50% × 38.75%, gap 0.25pp). AtlasIntel n=5.000 dá Lula liderando 1º turno por 6.9pp (46.6% × 39.7%) e empate técnico no 2º. 7º e último dia do piloto AFOS Hoje — decisão GO/NO-GO esta noite.',
+  title: 'AFOS Daily — 28 de abril de 2026 | AFOS Analytics',
+  description: 'Síntese do dia 28/Abr/2026: Polymarket precifica empate técnico Lula × Flávio pela 1ª vez (38.50% × 38.75%, gap 0.25pp). AtlasIntel n=5.000 dá Lula liderando 1º turno por 6.9pp (46.6% × 39.7%) e empate técnico no 2º.',
   robots: { index: false, follow: false },
-  alternates: { canonical: 'https://afos-analytics.com/pt-BR/hoje' },
+  alternates: { canonical: 'https://afos-analytics.com/pt-BR/daily' },
 }
 
-export default function AfosHojePtBRPage() {
+export default function AfosDailyPtBRPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       <article className="max-w-[720px] mx-auto px-5 md:px-10 py-12 md:py-14">
@@ -16,7 +16,7 @@ export default function AfosHojePtBRPage() {
           <a href="/pt-BR/dashboard" className="text-primary hover:underline">← Voltar ao Dashboard</a>
         </nav>
 
-        <p className="text-center text-xs font-extrabold text-primary uppercase tracking-[0.25em] mb-2">AFOS Hoje · Síntese do Dia</p>
+        <p className="text-center text-xs font-extrabold text-primary uppercase tracking-[0.25em] mb-2">AFOS Daily · Síntese do Dia</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-primary text-center mb-3 tracking-tight leading-tight">
           28 de abril de 2026
         </h1>
@@ -30,7 +30,7 @@ export default function AfosHojePtBRPage() {
         {/* LEDE */}
         <div className="border-l-4 border-primary pl-5 py-2 mb-10">
           <p className="text-lg md:text-xl text-dark font-medium leading-relaxed">
-            Pela primeira vez no ciclo, <strong>Polymarket precificou empate técnico</strong> entre Lula e Flávio Bolsonaro: <strong>38.50% × 38.75%</strong>, gap de <strong>0.25pp</strong> — fechando os 4.8pp de ontem em 24 horas. No mesmo dia, a <strong>AtlasIntel/Bloomberg</strong> (n=5.000) registrou <strong>Lula liderando o 1º turno por 6.9pp</strong> (46.6% × 39.7%) e <strong>empate técnico no 2º</strong> (47.5% × 47.8%). É também o <strong>sétimo e último dia do piloto AFOS Hoje</strong> — a decisão GO/NO-GO está marcada para esta noite.
+            Pela primeira vez no ciclo, <strong>Polymarket precificou empate técnico</strong> entre Lula e Flávio Bolsonaro: <strong>38.50% × 38.75%</strong>, gap de <strong>0.25pp</strong> — fechando os 4.8pp de 27/Abr em 24 horas. No mesmo dia, a <strong>AtlasIntel/Bloomberg</strong> (n=5.000) registrou <strong>Lula liderando o 1º turno por 6.9pp</strong> (46.6% × 39.7%) e <strong>empate técnico no 2º</strong> (47.5% × 47.8%). Encerrando o piloto de 7 dias: o produto foi aprovado e renomeado de "AFOS Hoje" para <strong>AFOS Daily</strong>.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export default function AfosHojePtBRPage() {
             </li>
             <li className="flex gap-3">
               <span className="text-primary font-bold mt-0.5 flex-shrink-0">3.</span>
-              <span><strong>É o sétimo e último dia do piloto AFOS Hoje</strong> — sete sínteses publicadas em sete dias consecutivos, cobrindo do 22/Abr (3 pesquisas, ~2.500 entrevistados) ao 28/Abr (AtlasIntel n=5.000 + Quaest MG/PE, ~10.700 entrevistados). A decisão final <strong>GO/NO-GO</strong> está marcada para esta noite, conforme cronograma do piloto. A continuidade da feature em produção depende dessa decisão.</span>
+              <span><strong>Piloto de 7 dias concluído com decisão GO</strong> — sete sínteses publicadas em sete dias consecutivos, cobrindo do 22/Abr (3 pesquisas, ~2.500 entrevistados) ao 28/Abr (AtlasIntel n=5.000 + Quaest MG/PE, ~10.700 entrevistados). O produto passa a se chamar <strong>AFOS Daily</strong> e será integrado ao lançamento da plataforma. As sínteses do piloto permanecem arquivadas e linkáveis (slugs `afos-hoje-22-04-2026` a `afos-hoje-28-04-2026`).</span>
             </li>
           </ul>
         </section>
