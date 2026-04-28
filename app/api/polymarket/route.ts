@@ -79,7 +79,33 @@ async function fetchEvent(slug: string) {
   }
 }
 
+async function fetchFromProdProxy() {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+
+    const res = await fetch('https://www.afos-analytics.com/api/polymarket', {
+      next: { revalidate: 7200 },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (error) {
+    console.error('[polymarket] Error fetching from prod proxy:', error);
+    return null;
+  }
+}
+
 export async function GET() {
+  if (process.env.NODE_ENV === 'development') {
+    const proxied = await fetchFromProdProxy();
+    if (proxied) {
+      return NextResponse.json(proxied);
+    }
+  }
+
   const results = await Promise.all(slugs.map(fetchEvent));
   const data: Record<string, unknown> = {};
   keys.forEach((key, i) => {

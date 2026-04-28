@@ -6,7 +6,8 @@
     "goals": "Metas",
     "global": "Global",
     "updated": "Atualizado",
-    "skipToMain": "Pular para conteúdo principal"
+    "skipToMain": "Pular para conteúdo principal",
+    "backToHome": "Voltar para a página inicial"
   },
   "footer": {
     "description": "AFOS Analytics — Plataforma Global de Inteligência Eleitoral | Dados: Polymarket (5min), +17 Institutos TSE, Google News (30min) | Este conteúdo não constitui orientação política",
