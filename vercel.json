@@ -5,6 +5,10 @@
       "schedule": "*/5 * * * *"
     },
     {
+      "path": "/api/cron/persist-elections",
+      "schedule": "*/30 * * * *"
+    },
+    {
       "path": "/api/cron/refresh-polls",
       "schedule": "0 6,12,18 * * *"
     },
