@@ -9,6 +9,10 @@
  *   Nenhum usuário é impactado por este processo.
  *   /api/global-map lê do KV (<1ms) em vez de chamar Polymarket.
  *
+ * Persistência histórica no Neon foi desacoplada para
+ * /api/cron/persist-elections (30min) para reduzir compute hours
+ * — escrever em Neon a cada 5min mantinha o banco sempre acordado.
+ *
  * Segurança:
  *   Vercel envia header CRON_SECRET para autenticar.
  *   Em dev local, aceita qualquer request.
@@ -19,10 +23,9 @@ import { aggregateElectionData } from '../../../lib/polymarket/bootstrap';
 import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
-import { persistMarketData } from '../../../lib/polymarket/persist';
 
-// Polymarket fetch de 18 markets em paralelo + KV write + Neon upserts.
-// Timing típico <5s; 30s dá folga se Polymarket ou Neon estiverem lentos.
+// Polymarket fetch de 18 markets em paralelo + KV write.
+// Timing típico <5s; 30s dá folga se Polymarket estiver lento.
 export const maxDuration = 30;
 
 export async function GET(request: Request) {
@@ -65,11 +68,6 @@ export async function GET(request: Request) {
     };
 
     const kvSuccess = await writeGlobalMapData(payload);
-
-    // Persist histórico no Neon (fire-and-forget — não bloqueia response)
-    persistMarketData(result.countries).catch((err) => {
-      console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err)
-    })
 
     const elapsed = Date.now() - startTime;
     console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'SKIP'}, ${elapsed}ms`);
