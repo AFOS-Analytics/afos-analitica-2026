@@ -31,10 +31,17 @@ O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
 - **Noticias ao vivo** da grande imprensa
 - **Analises estrategicas** com inteligencia artificial
+- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao (validada em piloto de 7 dias em abril/2026, agora permanente)
 
 Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
 
 **Open Source. Gratuito. Mobile e desktop.**
+
+### Demo da plataforma (60 segundos)
+
+https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/public/demo-en.mp4
+
+> Audio em PT-BR com legendas em ingles. Disponivel tambem sem legendas em [`public/demo.mp4`](public/demo.mp4) e como faixa de audio separada em [`public/demo-audio.m4a`](public/demo-audio.m4a).
 
 ---
 
@@ -57,7 +64,8 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 | Rota | Conteudo |
 |------|---------|
 | `/[locale]` | Landing page (seletor de cor + idioma) |
-| `/[locale]/dashboard` | Dashboard interativo com dados ao vivo |
+| `/[locale]/dashboard` | Dashboard interativo com dados ao vivo — logo do header volta para landing |
+| `/[locale]/daily` | AFOS Daily — sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias |
 | `/[locale]/global` | Mapa global de eleicoes (D3.js) |
 | `/[locale]/country/[country]` | Pagina por pais (13 paises) |
 | `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Inclui subsecao sobre criterios de avaliacao dos institutos de pesquisa (`#criterios-institutos`). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
@@ -95,12 +103,15 @@ Apos cadastro: Acesso ilimitado, sem popup/gate
 
 **Seguranca:** Backend e fonte de verdade (nao localStorage). Timeout 3s com fallback. Dedup atomico via Redis SET NX. Honeypot anti-bot. Rate limiting.
 
-### Pipeline de Dados (Cron + Upstash Redis)
+### Pipeline de Dados (Cron + Upstash Redis + Neon)
 
 ```
-Background:  Cron (5min) → Polymarket (18 mercados paralelo) → Upstash Redis
-Usuario:     Requisicao → Redis read (<1ms) → resposta
+Background:  Cron 5min   → Polymarket (18 mercados paralelo) → Upstash Redis (KV-only, <1ms)
+Background:  Cron 30min  → Polymarket (18 mercados paralelo) → Neon (snapshot historico)
+Usuario:     Requisicao  → Redis read (<1ms) → resposta
 ```
+
+**Arquitetura de dois crons (otimizada para custo):** o cron de 5 minutos esta desacoplado da persistencia em banco — escreve apenas no Redis para que usuarios vejam precos frescos a cada 5 minutos (<1ms), enquanto um cron separado de 30 minutos persiste snapshots historicos no Neon. Isso permite que o banco entre em scale-to-zero entre ticks (~85% de reducao em compute hours observada em abril/2026).
 
 **Cascata de fallback (4 niveis):**
 
@@ -330,8 +341,10 @@ Cron 3x/dia (6h, 12h, 18h)
 | `/api/visitor/migrate` | Migra inscritos legados |
 | `/api/subscribe` | Captura email (visitorId + captureSource) |
 | `/api/global-map` | Eleicoes globais (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 5min |
+| `/api/cron/refresh-elections` | Cron 5min — Polymarket → Redis (KV-only, sem escrita em banco) |
+| `/api/cron/persist-elections` | Cron 30min — Polymarket → Neon (snapshot historico, desacoplado do cron de usuario) |
 | `/api/cron/refresh-polls` | Cron 3x/dia TSE |
+| `/api/cron/persist-analysis` | Cron 1x/dia — persiste JSONs de analise e markdown do AFOS Daily no Neon |
 | `/api/polymarket` | Odds BR |
 | `/api/polls` / `/api/polls/tse` | Pesquisas |
 | `/api/news` | Noticias |
@@ -389,8 +402,9 @@ npm run dev
 
 | Comando | Descricao |
 |---------|-----------|
-| `/atualizar` | Atualizacao completa do AFOS Analytics |
+| `/atualizar` | Atualizacao completa do AFOS Analytics (Polymarket + Google News + JSONs + deploy) |
 | `/atualizar-pesquisas` | Ingestao de pesquisas eleitorais do TSE |
+| `/afos-daily` | Gera a sintese narrativa diaria (AFOS Daily) — cruza mercados, pesquisas e noticias com link auditavel por alegacao |
 
 ---
 
