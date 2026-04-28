@@ -16,12 +16,17 @@ export default function AfosDailyPtBRPage() {
           <a href="/pt-BR/dashboard" className="text-primary hover:underline">← Voltar ao Dashboard</a>
         </nav>
 
+        <div className="flex justify-center mb-6">
+          <a href="/pt-BR" aria-label="AFOS Analytics — página inicial" className="hover:opacity-90 transition-opacity">
+            <span className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">AFOS Analytics</span>
+          </a>
+        </div>
         <p className="text-center text-xs font-extrabold text-primary uppercase tracking-[0.25em] mb-2">AFOS Daily · Síntese do Dia</p>
         <h1 className="text-4xl md:text-5xl font-extrabold text-primary text-center mb-3 tracking-tight leading-tight">
           28 de abril de 2026
         </h1>
         <p className="text-center text-gray-600 text-base font-medium mb-2">
-          Polymarket × Pesquisas × Notícias
+          Mercado de Previsão × Pesquisas × Notícias
         </p>
         <p className="text-center text-gray-400 text-xs mb-12 italic">
           Síntese gerada com base em dados auditáveis. Cada alegação cita sua fonte.

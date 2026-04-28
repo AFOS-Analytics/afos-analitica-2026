@@ -31,10 +31,17 @@ Built and battle-tested during the 2026 election cycle in South American countri
 - **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
+- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim (validated through a 7-day pilot in April/2026, now permanent)
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
 **Open Source. Free. Mobile and desktop.**
+
+### 60-second platform demo
+
+https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/public/demo-en.mp4
+
+> Audio in PT-BR with English subtitles. Available also without subtitles at [`public/demo.mp4`](public/demo.mp4) and as a separate audio track at [`public/demo-audio.m4a`](public/demo-audio.m4a).
 
 ---
 
@@ -57,7 +64,8 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 | Route | Content |
 |-------|---------|
 | `/[locale]` | Landing page (color + language selector) |
-| `/[locale]/dashboard` | Interactive dashboard with live data |
+| `/[locale]/dashboard` | Interactive dashboard with live data — header logo links back to landing |
+| `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news |
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". Includes subsection on polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
@@ -95,12 +103,15 @@ After signup: Unlimited access, no popup/gate
 
 **Security:** Backend is source of truth (not localStorage). 3s timeout with fallback. Atomic dedup via Redis SET NX. Honeypot anti-bot. Rate limiting.
 
-### Data Pipeline (Cron + Upstash Redis)
+### Data Pipeline (Cron + Upstash Redis + Neon)
 
 ```
-Background:  Cron (5min) → Polymarket (18 markets in parallel) → Upstash Redis
-User:        Request → Redis read (<1ms) → response
+Background:  Cron 5min   → Polymarket (18 markets in parallel) → Upstash Redis (KV-only, <1ms)
+Background:  Cron 30min  → Polymarket (18 markets in parallel) → Neon (historical snapshot)
+User:        Request     → Redis read (<1ms) → response
 ```
+
+**Two-cron architecture (cost-optimized):** the 5-minute cron is decoupled from database persistence — it writes only to Redis so users see fresh prices every 5 minutes (<1ms), while a separate 30-minute cron persists historical snapshots to Neon. This allows the database to scale to zero between ticks (~85% reduction in compute hours observed in April/2026).
 
 **4-level fallback cascade:**
 
@@ -330,8 +341,10 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/visitor/migrate` | Migrate legacy subscribers |
 | `/api/subscribe` | Email capture (visitorId + captureSource) |
 | `/api/global-map` | Global elections (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 5min |
+| `/api/cron/refresh-elections` | Cron 5min — Polymarket → Redis (KV-only, no DB writes) |
+| `/api/cron/persist-elections` | Cron 30min — Polymarket → Neon (historical snapshot, decoupled from user-facing cadence) |
 | `/api/cron/refresh-polls` | Cron 3x/day TSE |
+| `/api/cron/persist-analysis` | Cron 1x/day — persists analysis JSONs and AFOS Daily markdown to Neon |
 | `/api/polymarket` | BR odds |
 | `/api/polls` / `/api/polls/tse` | Polls |
 | `/api/news` | News |
@@ -389,8 +402,9 @@ npm run dev
 
 | Command | Description |
 |---------|-------------|
-| `/atualizar` | Full AFOS Analytics update |
+| `/atualizar` | Full AFOS Analytics update (Polymarket + Google News + JSONs + deploy) |
 | `/atualizar-pesquisas` | TSE electoral polls ingestion |
+| `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily) — cross-references markets, polls and news with auditable links per claim |
 
 ---
 
