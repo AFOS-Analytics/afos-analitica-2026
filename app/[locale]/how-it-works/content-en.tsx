@@ -19,19 +19,20 @@ export function HowItWorksEn() {
           </TocCol>
           <TocCol heading="Platform tour">
             <TocLink href="#header">1. Header</TocLink>
-            <TocLink href="#cards-polymarket">2. 6 Polymarket Cards</TocLink>
-            <TocLink href="#pesquisas">3. Electoral Polls</TocLink>
+            <TocLink href="#afos-daily-card">2. AFOS Daily — Daily Synthesis</TocLink>
+            <TocLink href="#cards-polymarket">3. 6 Polymarket Cards</TocLink>
+            <TocLink href="#pesquisas">4. Electoral Polls</TocLink>
             <TocLink href="#criterios-institutos">└ Institute evaluation</TocLink>
-            <TocLink href="#analise-criteriosa">4. In-Depth Analysis</TocLink>
-            <TocLink href="#quadro-comparativo">5. Comparative Table</TocLink>
-            <TocLink href="#perfil-candidatos">6. Candidate Profiles</TocLink>
-            <TocLink href="#paises">7. Countries</TocLink>
-            <TocLink href="#live-news">8. Live News 120'</TocLink>
-            <TocLink href="#sentimento">9. Political Climate</TocLink>
-            <TocLink href="#inss-lulinha">10. INSS & Incumbent's Family Case</TocLink>
-            <TocLink href="#banco-master">11. Banco Master</TocLink>
-            <TocLink href="#stf">12. Supreme Court Credibility</TocLink>
-            <TocLink href="#footer">13. Footer</TocLink>
+            <TocLink href="#analise-criteriosa">5. In-Depth Analysis</TocLink>
+            <TocLink href="#quadro-comparativo">6. Comparative Table</TocLink>
+            <TocLink href="#perfil-candidatos">7. Candidate Profiles</TocLink>
+            <TocLink href="#paises">8. Countries</TocLink>
+            <TocLink href="#live-news">9. Live News 120'</TocLink>
+            <TocLink href="#sentimento">10. Political Climate</TocLink>
+            <TocLink href="#inss-lulinha">11. INSS & Incumbent's Family Case</TocLink>
+            <TocLink href="#banco-master">12. Banco Master</TocLink>
+            <TocLink href="#stf">13. Supreme Court Credibility</TocLink>
+            <TocLink href="#footer">14. Footer</TocLink>
           </TocCol>
           <TocCol heading="Deep dive">
             <TocLink href="#bastidores">Behind the platform</TocLink>
@@ -177,7 +178,23 @@ export function HowItWorksEn() {
       </div>
       <p className={S.p}>The header is present on all pages. It's the navigation anchor.</p>
 
-      <h2 id="cards-polymarket" className={S.h2}>2. The 6 Polymarket Cards — Instant dashboard</h2>
+      <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily — Daily Synthesis</h2>
+      <p className={S.p}>Right below the header you see the <strong>AFOS Daily card</strong>: a light-blue block with today's date, an excerpt of the day's narrative synthesis (up to 2 lines) and a <strong>"Read synthesis →"</strong> button.</p>
+      <p className={S.p}>It's the only piece of the dashboard that is <strong>not raw data</strong> — it's a curated narrative (~700 words, 4-minute read) cross-referencing the three signals (market, poll, news) with an inline link for every claim. Published once a day, at the end of the day.</p>
+
+      <Card title="How AFOS Daily works">
+        <p><strong>Fixed structure:</strong> 2-3 line lede with 3 key movements + 4 numbered sections (Prediction market, What institutes registered, What the press covered, Divergences of the day) + final synthesis in 3 bullets.</p>
+        <p><strong>Editorial rules:</strong> every claim with an inline link to the source (minimum 1 link per substantive paragraph); zero partisan adjectives; observational tone ("the market priced", "the poll registered"); always explicit dates (never "yesterday"); ↑↓pp variations cited.</p>
+        <p><strong>Permanent permalink:</strong> each day has its own URL (<code>/daily/2026-04-28</code>). Allows citing and linking a specific synthesis on social media, articles or reports.</p>
+        <p><strong>History:</strong> inside the synthesis page, <strong>"← Previous synthesis"</strong> and <strong>"Next synthesis →"</strong> buttons navigate the archive days.</p>
+        <p><strong>3 languages:</strong> PT-BR · EN · ES. Switching language preserves the date being read. Brazilian political terms without direct translation (TSE, STF, BolsoMaster, aging political class, etc.) stay in Portuguese with an inline link to the <a href="/en/glossary" className="text-primary hover:underline">glossary</a> that explains them in 3 languages.</p>
+        <p><strong>Visual theme:</strong> toggle in the top-right corner switches between light theme (default) and Sapphire Blue (dark blue background with light text, ideal for evening reading).</p>
+        <p><strong>Validation:</strong> the feature went through a 7-day public pilot (April 22-28, 2026) with a GO/NO-GO decision on the last day. Approved as a permanent feature.</p>
+      </Card>
+
+      <p className={S.p}><strong>When it's worth reading:</strong> when you want to understand <em>why</em> the dashboard numbers moved, not just <em>how much</em>. The dashboard shows the day's snapshot; AFOS Daily tells the story — with auditable sources for you to verify each step.</p>
+
+      <h2 id="cards-polymarket" className={S.h2}>3. The 6 Polymarket Cards — Instant dashboard</h2>
       <p className={S.p}>Right after the header, <strong>six cards appear side by side</strong> summarizing Polymarket's most important markets at the moment. Each card shows a <strong>percentage</strong> (probability priced by the market) with the <strong>variation relative to the previous day</strong> (↑↓pp).</p>
 
       <Card title="🏆 Card 1 — Who wins the presidency in the 1st round">
@@ -211,7 +228,7 @@ export function HowItWorksEn() {
         <p><strong>How to read:</strong> this is the <strong>economic thermometer</strong>. High inflation pressures government, favors opposition. When the 5.00-5.49% band surges (↑2.75pp in 1 day), the market is saying "forget low inflation" — with direct electoral consequence.</p>
       </Card>
 
-      <h2 id="pesquisas" className={S.h2}>3. Electoral Polls</h2>
+      <h2 id="pesquisas" className={S.h2}>4. Electoral Polls</h2>
       <p className={S.p}>Below the Polymarket cards, you find the electoral polls section.</p>
 
       <h3 className={S.h3}>How polls arrive here</h3>
@@ -311,7 +328,7 @@ export function HowItWorksEn() {
         <p>The current rating is <strong>editorial and subjective</strong>. Two people evaluating the same criteria could arrive at slightly different scores. To reduce this subjectivity in the long term, the <strong>AFOS roadmap calls for evolution toward a quantitative score</strong> based on TSE historical data + official results — accuracy rate, mean absolute error, weighted sample, frequency, and methodological transparency — with reproducible, published calculation. Timeline depends on data from the October 2026 election cycle.</p>
       </Callout>
 
-      <h2 id="analise-criteriosa" className={S.h2}>4. In-Depth Analysis (of the top 4 candidates)</h2>
+      <h2 id="analise-criteriosa" className={S.h2}>5. In-Depth Analysis (of the top 4 candidates)</h2>
       <p className={S.p}>This is the richest section and the one that requires slower reading.</p>
       <p className={S.p}>The analysis is divided into <strong>4 sections</strong>: Candidate A, Candidate B, Candidate C, and a section grouping candidates D, E, and F. Each section has <strong>three blocks</strong>: STRENGTHS, WEAKNESSES, and ANALYSIS.</p>
 
@@ -330,7 +347,7 @@ export function HowItWorksEn() {
       <h3 className={S.h3}>🔵 "ANALYSIS" block</h3>
       <p className={S.p}>The stitch. How strengths and weaknesses connect, and what it means strategically at that moment.</p>
 
-      <h2 id="quadro-comparativo" className={S.h2}>5. Comparative Table</h2>
+      <h2 id="quadro-comparativo" className={S.h2}>6. Comparative Table</h2>
       <p className={S.p}>A single table summarizing candidate by candidate:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
@@ -347,7 +364,7 @@ export function HowItWorksEn() {
         <p>In a single glance, you see the complete state of the game.</p>
       </Callout>
 
-      <h2 id="perfil-candidatos" className={S.h2}>6. Candidate Profiles</h2>
+      <h2 id="perfil-candidatos" className={S.h2}>7. Candidate Profiles</h2>
       <p className={S.p}>This section presents each candidate in <strong>individual cards</strong> with five fields:</p>
       <ul className={S.ul}>
         <li><strong>Name, party, age, current role</strong></li>
@@ -360,19 +377,19 @@ export function HowItWorksEn() {
         <p>It's a quick "who's who". If someone asks "who is Candidate C?", you open, read for 20 seconds, and answer with data.</p>
       </Callout>
 
-      <h2 id="paises" className={S.h2}>7. Countries — Clickable Buttons</h2>
+      <h2 id="paises" className={S.h2}>8. Countries — Clickable Buttons</h2>
       <p className={S.p}>The platform covers <strong>14+ countries</strong> with monitored elections. Each country appears as a clickable button. Clicking one, you see the same type of cross-reference (Polymarket + local polls + news) applied to that election.</p>
       <p className={S.p}><strong>Countries currently featured:</strong> Brazil, USA, France, Germany, UK, Canada, Australia, South Korea, Colombia, Chile, among others.</p>
       <p className={S.p}><strong>Why this matters:</strong> global political decisions influence each other. The 2024 US result affects the dynamics of Brazil 2026. Seeing the full map gives you context.</p>
 
-      <h2 id="live-news" className={S.h2}>8. Live Elections News 120'</h2>
+      <h2 id="live-news" className={S.h2}>9. Live Elections News 120'</h2>
       <p className={S.p}>A live feed showing <strong>news published in the last 120 minutes</strong> related to monitored elections. Sources include Google News, major Brazilian portals, and international agencies.</p>
       <p className={S.p}><strong>How it works:</strong> every 30 minutes, a bot fetches news in 6 different categories (presidential election, specific candidates, scandals, polls, government approval, state races) and in the platform's 3 languages (PT-BR, EN, ES). The feed displays the most relevant in chronological order.</p>
       <Callout title="Value for you">
         <p>Instead of opening 10 newspaper tabs, you have the essential on a single screen, filtered by electoral relevance.</p>
       </Callout>
 
-      <h2 id="sentimento" className={S.h2}>9. Political Climate</h2>
+      <h2 id="sentimento" className={S.h2}>10. Political Climate</h2>
       <p className={S.p}>A dedicated panel showing <strong>the general climate of the race</strong> through four simultaneous lenses:</p>
       <ul className={S.ul}>
         <li><strong>Right:</strong> what's working for/against right-wing candidates</li>
@@ -384,7 +401,7 @@ export function HowItWorksEn() {
         <p>In 30 seconds you have the <strong>political temperature</strong> of the moment, without needing to read any long analysis.</p>
       </Callout>
 
-      <h2 id="inss-lulinha" className={S.h2}>10. INSS Scandal and the Incumbent's Family Case</h2>
+      <h2 id="inss-lulinha" className={S.h2}>11. INSS Scandal and the Incumbent's Family Case</h2>
       <p className={S.p}>Specific card about the biggest economic scandal of 2026 — the fraud of undue INSS (Brazilian pension) deductions — and the ramifications involving a family member of the incumbent.</p>
       <p className={S.p}><strong>What it shows:</strong> text structured in 4 blocks:</p>
       <ul className={S.ul}>
@@ -397,7 +414,7 @@ export function HowItWorksEn() {
         <p>A topic involving dozens of actors (ministers, senators, police chiefs, judges) becomes <strong>consolidated in 2 minutes of reading</strong>, with the connections already made.</p>
       </Callout>
 
-      <h2 id="banco-master" className={S.h2}>11. Banco Master Scandal Impact</h2>
+      <h2 id="banco-master" className={S.h2}>12. Banco Master Scandal Impact</h2>
       <p className={S.p}>Card focused on the Banco Master case and the plea bargain of the executive involved — another economic scandal unfolding in chapters.</p>
       <p className={S.p}><strong>What it shows:</strong></p>
       <ul className={S.ul}>
@@ -410,7 +427,7 @@ export function HowItWorksEn() {
         <p>As a <strong>long and fragmented</strong> story in the press, having a consolidated diary saves hours of searching.</p>
       </Callout>
 
-      <h2 id="stf" className={S.h2}>12. Supreme Court Credibility — Electoral Impact</h2>
+      <h2 id="stf" className={S.h2}>13. Supreme Court Credibility — Electoral Impact</h2>
       <p className={S.p}>Card dedicated to <strong>reading the Supreme Court as an electoral actor</strong> — because the Court, though it doesn't vote, decisively influences elections.</p>
       <p className={S.p}><strong>What it shows:</strong></p>
       <ul className={S.ul}>
@@ -426,7 +443,7 @@ export function HowItWorksEn() {
         <p>Understanding the Supreme Court as a <strong>political actor</strong>, not just a judicial one.</p>
       </Callout>
 
-      <h2 id="footer" className={S.h2}>13. Footer (page bottom)</h2>
+      <h2 id="footer" className={S.h2}>14. Footer (page bottom)</h2>
       <p className={S.p}>The footer is organized into <strong>three lean blocks</strong>, each with a clear purpose. No link in the footer points to an empty page — each one delivers something specific.</p>
 
       <h3 className={S.h3}>Block 1 — Navigation</h3>
