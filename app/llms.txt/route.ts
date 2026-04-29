@@ -48,6 +48,17 @@ AFOS Analytics combines three independent data sources in real time to provide u
 
 When the three sources agree, the forecast is robust. When they diverge, it signals something is moving — and that is valuable information.
 
+## Brazilian political terms glossary
+
+For Brazilian political terminology that does not have direct translation
+to English or Spanish (institutional acronyms, neologisms, idiomatic
+expressions, polling institutes), AFOS maintains a public glossary at
+${SITE}/en/glossary (also available in pt-BR and es). Each entry has a
+Schema.org \`DefinedTerm\` JSON-LD and definitions in all three languages.
+This is the canonical reference for terms like TSE, STF, PEC, BolsoMaster,
+Farra do INSS, lideranças envelhecidas, and others that appear repeatedly
+in AFOS Daily syntheses.
+
 ## AFOS Daily — narrative daily synthesis
 
 The AFOS Daily is a 600-900 word narrative published once per day, cross-referencing the three sources for the Brazilian 2026 presidential election. Each claim is backed by an inline link to its source. Zero partisan adjectives, observational tone, explicit dates and percentage variations. RSS feed: ${SITE}/feed/daily.xml
