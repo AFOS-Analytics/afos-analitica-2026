@@ -46,17 +46,42 @@ export function getLatestDate(): string | null {
   return all.length ? all[all.length - 1] : null
 }
 
+function str(value: unknown, fallback = ''): string {
+  return typeof value === 'string' ? value : fallback
+}
+
+function coerceDate(value: unknown, fallback: string): string {
+  if (value instanceof Date) return value.toISOString().slice(0, 10)
+  if (typeof value === 'string') return value
+  return fallback
+}
+
+// Extracts the comma-separated sources list from "**Fontes citadas:** ..." line.
+function extractSources(rawBody: string): string {
+  const m = rawBody.match(/\*\*Fontes citadas:?\*\*\s*([^\n]+)/i)
+  return m ? m[1].trim().replace(/\.$/, '') : ''
+}
+
+// Removes elements that the template renders separately (date heading, subline,
+// lede blockquote, sources/method footer) so the body only contains article sections.
+function stripTemplateArtifacts(rawBody: string): string {
+  return rawBody
+    .replace(/\n+---\n+\*\*Fontes citadas:?\*\*[\s\S]*$/i, '')
+    .replace(/^# .+?\n+/, '')
+    .replace(/^\*\*Polymarket × Pesquisas × Notícias\*\*[^\n]*\n+/m, '')
+    .replace(/^> [^\n]+(?:\n> [^\n]+)*\n+/m, '')
+    .trim()
+}
+
 export function loadDaily(date: string): AfosDailyData | null {
   if (!isValidDate(date)) return null
   const path = join(DAILY_DIR, `${date}.md`)
   if (!existsSync(path)) return null
 
-  let raw: string
   let fm: Record<string, unknown>
   let rawBody: string
   try {
-    raw = readFileSync(path, 'utf-8')
-    const parsed = matter(raw)
+    const parsed = matter(readFileSync(path, 'utf-8'))
     fm = parsed.data as Record<string, unknown>
     rawBody = parsed.content
   } catch (err) {
@@ -64,39 +89,16 @@ export function loadDaily(date: string): AfosDailyData | null {
     return null
   }
 
-  // Extract the sources list from the markdown footer before stripping it.
-  // Pattern: "**Fontes citadas:** Source A, Source B, ..." (single line, may include period at end).
-  const sourcesMatch = rawBody.match(/\*\*Fontes citadas:?\*\*\s*([^\n]+)/i)
-  const sources = sourcesMatch ? sourcesMatch[1].trim().replace(/\.$/, '') : ''
-
-  // Strip the footer (Fontes citadas / Método / Integração) — template renders it.
-  // Markdown footer pattern: trailing horizontal rule + "**Fontes citadas:**" section.
-  const body = rawBody
-    .replace(/\n+---\n+\*\*Fontes citadas:?\*\*[\s\S]*$/i, '')
-    // Also strip the leading H1 — template renders the date as the heading.
-    .replace(/^# .+?\n+/, '')
-    // Strip the "Polymarket × Pesquisas × Notícias" subline (template renders it).
-    .replace(/^\*\*Polymarket × Pesquisas × Notícias\*\*[^\n]*\n+/m, '')
-    // Strip the lede blockquote that duplicates the frontmatter lede.
-    .replace(/^> [^\n]+(?:\n> [^\n]+)*\n+/m, '')
-    .trim()
-
-  // gray-matter parses unquoted YAML dates as Date objects — coerce back to YYYY-MM-DD
-  let dateStr = date
-  if (fm.date instanceof Date) {
-    dateStr = fm.date.toISOString().slice(0, 10)
-  } else if (typeof fm.date === 'string') {
-    dateStr = fm.date
-  }
+  const dateStr = coerceDate(fm.date, date)
 
   return {
     date: dateStr,
-    updatedAt: typeof fm.updatedAt === 'string' ? fm.updatedAt : '',
-    title: typeof fm.title === 'string' ? fm.title : `AFOS Daily — ${dateStr}`,
-    locale: typeof fm.locale === 'string' ? fm.locale : 'pt-BR',
-    status: typeof fm.status === 'string' ? fm.status : 'published',
-    lede: typeof fm.lede === 'string' ? fm.lede : '',
-    body,
-    sources,
+    updatedAt: str(fm.updatedAt),
+    title: str(fm.title, `AFOS Daily — ${dateStr}`),
+    locale: str(fm.locale, 'pt-BR'),
+    status: str(fm.status, 'published'),
+    lede: str(fm.lede),
+    body: stripTemplateArtifacts(rawBody),
+    sources: extractSources(rawBody),
   }
 }
