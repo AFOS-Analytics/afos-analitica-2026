@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
-import { loadDaily, listDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader'
+import { loadDaily, listDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates } from '../../../../lib/afos-daily/loader'
 import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
@@ -75,6 +75,7 @@ export default function DailyByDatePage({ params }: PageProps) {
   if (!data) notFound()
 
   const schema = buildArticleSchema(data, params.locale)
+  const nav = getAdjacentDates(params.date)
 
   return (
     <>
@@ -82,7 +83,7 @@ export default function DailyByDatePage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <AfosDailyTemplate data={data} />
+      <AfosDailyTemplate data={data} nav={nav} />
     </>
   )
 }

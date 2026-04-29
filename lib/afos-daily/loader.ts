@@ -46,6 +46,20 @@ export function getLatestDate(): string | null {
   return all.length ? all[all.length - 1] : null
 }
 
+/**
+ * Returns the YYYY-MM-DD adjacent to the given date in the sorted list of
+ * available dailies. Used for prev/next navigation on the synthesis page.
+ */
+export function getAdjacentDates(date: string): { previous?: string; next?: string } {
+  const all = listDailies()
+  const idx = all.indexOf(date)
+  if (idx === -1) return {}
+  return {
+    previous: idx > 0 ? all[idx - 1] : undefined,
+    next: idx < all.length - 1 ? all[idx + 1] : undefined,
+  }
+}
+
 function str(value: unknown, fallback = ''): string {
   return typeof value === 'string' ? value : fallback
 }
