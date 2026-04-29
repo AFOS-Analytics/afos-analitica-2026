@@ -68,7 +68,7 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 | `/[locale]/daily` | AFOS Daily — sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias |
 | `/[locale]/global` | Mapa global de eleicoes (D3.js) |
 | `/[locale]/country/[country]` | Pagina por pais (13 paises) |
-| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Inclui subsecao sobre criterios de avaliacao dos institutos de pesquisa (`#criterios-institutos`). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
+| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Tour pela plataforma com 14 secoes incluindo explicacao do card AFOS Daily (`#afos-daily-card`) e criterios de avaliacao dos institutos (`#criterios-institutos`). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
 | `/[locale]/methodology/automated-governance` | Pagina publica de governanca (3 idiomas) — como a plataforma hospedada aplica integridade editorial via codigo (validadores automaticos + prompt rules versionadas), os 2 caminhos de interacao (Fork / Country Onboarding) e as 3 excecoes onde o humano intervem |
 | `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa) |
 

@@ -68,7 +68,7 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 | `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news |
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
-| `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". Includes subsection on polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
+| `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". 14-section platform tour including AFOS Daily card explanation (`#afos-daily-card`) and polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
 | `/[locale]/methodology/automated-governance` | Public governance page (3 languages) — how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
 | `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe) |
 
