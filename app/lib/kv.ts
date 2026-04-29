@@ -44,7 +44,8 @@ function isRedisAvailable(): boolean {
 
 /**
  * Gravar dados do mapa global no Redis.
- * TTL: 10 minutos (dados ficam disponíveis mesmo se cron falhar).
+ * TTL: 90 minutos (cron roda a cada 30min; 90min cobre 3 ticks de tolerância
+ * caso 1-2 cron jobs falhem — usuários veem dados antigos em vez de erro).
  */
 export async function writeGlobalMapData(data: unknown): Promise<boolean> {
   const redis = getRedis();
@@ -55,8 +56,8 @@ export async function writeGlobalMapData(data: unknown): Promise<boolean> {
 
   try {
     const pipeline = redis.pipeline();
-    pipeline.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: 600 }); // 10min TTL
-    pipeline.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: 600 });
+    pipeline.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: 5400 }); // 90min TTL
+    pipeline.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: 5400 });
     await pipeline.exec();
     console.log('[kv] Dados gravados no Redis com sucesso');
     return true;
@@ -91,7 +92,8 @@ export async function readGlobalMapData<T>(): Promise<{ data: T; timestamp: stri
 }
 
 /**
- * Verifica se o cron está saudável (última atualização < 5 minutos).
+ * Verifica se o cron está saudável (última atualização < 35 minutos).
+ * Cron roda a cada 30min; janela de 35min permite 1 tick atrasar sem alarmar.
  */
 export async function checkCronHealth(): Promise<{ healthy: boolean; lastUpdate: string | null; ageMs: number }> {
   const redis = getRedis();
@@ -102,7 +104,7 @@ export async function checkCronHealth(): Promise<{ healthy: boolean; lastUpdate:
     if (!timestamp) return { healthy: false, lastUpdate: null, ageMs: -1 };
 
     const ageMs = Date.now() - new Date(timestamp).getTime();
-    const healthy = ageMs < 5 * 60 * 1000; // < 5 minutos
+    const healthy = ageMs < 35 * 60 * 1000; // < 35 minutos (cron de 30min + 5min de margem)
 
     if (!healthy) {
       console.warn(`[kv] Cron possivelmente parado — última atualização há ${Math.round(ageMs / 1000)}s`);

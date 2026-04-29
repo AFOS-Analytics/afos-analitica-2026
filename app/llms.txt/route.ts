@@ -42,7 +42,7 @@ export function GET() {
 
 AFOS Analytics combines three independent data sources in real time to provide unbiased electoral analysis:
 
-- **Prediction markets** (Polymarket): real-money odds updated every 5 minutes
+- **Prediction markets** (Polymarket): real-money odds updated every 30 minutes
 - **Polling institutes**: 17+ in Brazil (Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá) plus equivalents in each monitored country, ingested automatically from official registries (e.g., TSE in Brazil)
 - **Live news**: 400+ sources via Google News in 3 languages (PT-BR, EN, ES), refreshed every 30 minutes
 

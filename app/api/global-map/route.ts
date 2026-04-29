@@ -5,7 +5,7 @@
  * CAMINHO FALLBACK:      request → Polymarket direct → response
  * ÚLTIMO RECURSO:        503 com Retry-After (cliente tenta de novo)
  *
- * KV é escrito pelo cron /api/cron/refresh-elections a cada 5min.
+ * KV é escrito pelo cron /api/cron/refresh-elections a cada 30min.
  */
 
 import { NextResponse } from 'next/server';

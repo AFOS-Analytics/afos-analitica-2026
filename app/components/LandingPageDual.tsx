@@ -32,14 +32,14 @@ const CONTENT = {
     stats: [
       { value: '14', label: 'Países monitorados' },
       { value: '17+', label: 'Institutos de pesquisa' },
-      { value: '5min', label: 'Atualização dos mercados' },
+      { value: '30min', label: 'Atualização dos mercados' },
       { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Tudo que você precisa para acompanhar eleições',
       subtitle: 'Dados de múltiplas fontes cruzados em tempo real',
       items: [
-        { icon: 'chart', title: 'Mercados de Previsão', desc: 'Odds do Polymarket com dinheiro real — o indicador mais preciso de probabilidade eleitoral, atualizado a cada 5 minutos.' },
+        { icon: 'chart', title: 'Mercados de Previsão', desc: 'Odds do Polymarket com dinheiro real — o indicador mais preciso de probabilidade eleitoral, atualizado a cada 30 minutos.' },
         { icon: 'poll', title: 'Pesquisas Eleitorais', desc: 'Dados oficiais do TSE + 17 institutos brasileiros. Cruzamento automático com odds dos mercados de previsão.' },
         { icon: 'globe', title: 'Mapa Global Interativo', desc: '14 países com eleições monitoradas. Visualização D3.js com dados agregados por região e candidato.' },
         { icon: 'news', title: 'Notícias ao Vivo', desc: 'Agregação automática de notícias políticas com categorização por tema e relevância eleitoral.' },
@@ -77,14 +77,14 @@ const CONTENT = {
     stats: [
       { value: '14', label: 'Countries monitored' },
       { value: '17+', label: 'Polling institutes' },
-      { value: '5min', label: 'Market refresh rate' },
+      { value: '30min', label: 'Market refresh rate' },
       { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Everything you need to track elections',
       subtitle: 'Multi-source data cross-referenced in real time',
       items: [
-        { icon: 'chart', title: 'Prediction Markets', desc: 'Real-money Polymarket odds — the most accurate probability indicator for elections, updated every 5 minutes.' },
+        { icon: 'chart', title: 'Prediction Markets', desc: 'Real-money Polymarket odds — the most accurate probability indicator for elections, updated every 30 minutes.' },
         { icon: 'poll', title: 'Electoral Polls', desc: 'Official TSE data + 17 Brazilian institutes. Automatic cross-analysis with prediction market odds.' },
         { icon: 'globe', title: 'Interactive Global Map', desc: '14 countries with monitored elections. D3.js visualization with data aggregated by region and candidate.' },
         { icon: 'news', title: 'Live News', desc: 'Automatic political news aggregation with categorization by topic and electoral relevance.' },
@@ -122,14 +122,14 @@ const CONTENT = {
     stats: [
       { value: '14', label: 'Paises monitoreados' },
       { value: '17+', label: 'Institutos de encuestas' },
-      { value: '5min', label: 'Actualizacion de mercados' },
+      { value: '30min', label: 'Actualizacion de mercados' },
       { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Todo lo que necesitas para seguir elecciones',
       subtitle: 'Datos de multiples fuentes cruzados en tiempo real',
       items: [
-        { icon: 'chart', title: 'Mercados de Prediccion', desc: 'Probabilidades de Polymarket con dinero real — el indicador mas preciso de probabilidad electoral, actualizado cada 5 minutos.' },
+        { icon: 'chart', title: 'Mercados de Prediccion', desc: 'Probabilidades de Polymarket con dinero real — el indicador mas preciso de probabilidad electoral, actualizado cada 30 minutos.' },
         { icon: 'poll', title: 'Encuestas Electorales', desc: 'Datos oficiales del TSE + 17 institutos brasilenhos. Cruce automatico con probabilidades de mercados.' },
         { icon: 'globe', title: 'Mapa Global Interactivo', desc: '14 paises con elecciones monitoreadas. Visualizacion D3.js con datos agregados por region y candidato.' },
         { icon: 'news', title: 'Noticias en Vivo', desc: 'Agregacion automatica de noticias politicas con categorizacion por tema y relevancia electoral.' },

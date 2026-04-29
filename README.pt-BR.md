@@ -27,7 +27,7 @@ Construído e validado durante o ciclo eleitoral 2026 em países na América do 
 
 O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco político eleitoral que cruza em tempo real:
 
-- **Mercados de previsao** com dinheiro real (Polymarket) — odds atualizadas a cada 5 minutos
+- **Mercados de previsao** com dinheiro real (Polymarket) — odds atualizadas a cada 30 minutos
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
 - **Noticias ao vivo** da grande imprensa
 - **Analises estrategicas** com inteligencia artificial
@@ -106,12 +106,11 @@ Apos cadastro: Acesso ilimitado, sem popup/gate
 ### Pipeline de Dados (Cron + Upstash Redis + Neon)
 
 ```
-Background:  Cron 5min   → Polymarket (18 mercados paralelo) → Upstash Redis (KV-only, <1ms)
-Background:  Cron 30min  → Polymarket (18 mercados paralelo) → Neon (snapshot historico)
+Background:  Cron 30min  → Polymarket (18 mercados paralelo) → Upstash Redis + Neon
 Usuario:     Requisicao  → Redis read (<1ms) → resposta
 ```
 
-**Arquitetura de dois crons (otimizada para custo):** o cron de 5 minutos esta desacoplado da persistencia em banco — escreve apenas no Redis para que usuarios vejam precos frescos a cada 5 minutos (<1ms), enquanto um cron separado de 30 minutos persiste snapshots historicos no Neon. Isso permite que o banco entre em scale-to-zero entre ticks (~85% de reducao em compute hours observada em abril/2026).
+**Arquitetura de cron unico (otimizada para custo + carga):** um unico cron de 30 minutos escreve tanto no Redis (caminho quente para usuarios) quanto no Neon (snapshot historico). Decisao documentada em abril/2026 apos analise de risco/custo: a cadencia de 5 minutos criava pressao excessiva em Vercel e Upstash sob picos de trafego sem ganho relevante de UX (movimentos do Polymarket raramente exigem granularidade sub-30-minutos para analises eleitorais cruzadas). A cadencia de 30 minutos permite scale-to-zero do Neon entre ticks, simplifica operacao (um unico cron) e preserva o diferencial real-time atraves do cruzamento em si, nao da frequencia de polling.
 
 **Cascata de fallback (4 niveis):**
 
@@ -150,7 +149,7 @@ app/
 ├── api/
 │   ├── visitor/state/session/dismiss/migrate/  # Visitor tracking
 │   ├── subscribe/                     # Captura email
-│   ├── cron/refresh-elections/        # Cron 5min → Redis + Neon
+│   ├── cron/refresh-elections/        # Cron 30min → Redis + Neon (unificado)
 │   ├── cron/refresh-polls/            # Cron 3x/dia → TSE
 │   ├── admin/analytics/               # Analytics detalhado (Neon)
 │   ├── admin/search-console/          # Google Search Console API
@@ -341,8 +340,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | `/api/visitor/migrate` | Migra inscritos legados |
 | `/api/subscribe` | Captura email (visitorId + captureSource) |
 | `/api/global-map` | Eleicoes globais (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 5min — Polymarket → Redis (KV-only, sem escrita em banco) |
-| `/api/cron/persist-elections` | Cron 30min — Polymarket → Neon (snapshot historico, desacoplado do cron de usuario) |
+| `/api/cron/refresh-elections` | Cron 30min — Polymarket → Redis + Neon (unificado, um fetch por tick) |
 | `/api/cron/refresh-polls` | Cron 3x/dia TSE |
 | `/api/cron/persist-analysis` | Cron 1x/dia — persiste JSONs de analise e markdown do AFOS Daily no Neon |
 | `/api/polymarket` | Odds BR |

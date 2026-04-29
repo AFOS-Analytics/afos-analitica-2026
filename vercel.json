@@ -2,10 +2,6 @@
   "crons": [
     {
       "path": "/api/cron/refresh-elections",
-      "schedule": "*/5 * * * *"
-    },
-    {
-      "path": "/api/cron/persist-elections",
       "schedule": "*/30 * * * *"
     },
     {
