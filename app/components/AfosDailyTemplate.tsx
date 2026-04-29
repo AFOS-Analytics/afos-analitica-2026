@@ -53,6 +53,9 @@ const T = {
     integrationText2: 'dashboard completo',
     integrationText3: '. Para entender o método em profundidade, leia',
     integrationText4: 'O Método',
+    glossaryLabel: 'Glossário:',
+    glossaryText: 'termos políticos brasileiros usados nas sínteses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definições nos 3 idiomas.',
+    glossaryLink: 'Ver glossário completo',
     accessDashboard: '← Acessar o Dashboard',
     homeAriaLabel: 'AFOS Analytics — página inicial',
   },
@@ -70,6 +73,9 @@ const T = {
     integrationText2: 'full dashboard',
     integrationText3: '. To understand the method in depth, read',
     integrationText4: 'The Method',
+    glossaryLabel: 'Glossary:',
+    glossaryText: 'Brazilian political terms used in the syntheses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definitions in 3 languages.',
+    glossaryLink: 'See the full glossary',
     accessDashboard: '← Access the Dashboard',
     homeAriaLabel: 'AFOS Analytics — homepage',
   },
@@ -87,6 +93,9 @@ const T = {
     integrationText2: 'dashboard completo',
     integrationText3: '. Para entender el método en profundidad, lea',
     integrationText4: 'El Método',
+    glossaryLabel: 'Glosario:',
+    glossaryText: 'términos políticos brasileños usados en las síntesis (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definiciones en 3 idiomas.',
+    glossaryLink: 'Ver glosario completo',
     accessDashboard: '← Acceder al Dashboard',
     homeAriaLabel: 'AFOS Analytics — página principal',
   },
@@ -292,6 +301,10 @@ export function AfosDailyTemplate({ data, nav }: Props) {
             <strong className={footerStrong}>{t.integrationLabel}</strong> {t.integrationText1}{' '}
             <a href={`/${locale}/dashboard`} className={linkColor}>{t.integrationText2}</a>{t.integrationText3}{' '}
             <a href={`/${locale}/how-it-works`} className={linkColor}>{t.integrationText4}</a>.
+          </p>
+          <p>
+            <strong className={footerStrong}>{t.glossaryLabel}</strong> {t.glossaryText}{' '}
+            <a href={`/${locale}/glossary`} className={linkColor}>{t.glossaryLink} →</a>
           </p>
         </div>
 
