@@ -29,7 +29,14 @@ export function generateMetadata({ params }: PageProps): Metadata {
     title: `${data.title} | AFOS Analytics`,
     description: ledePlain,
     robots: { index: false, follow: false },
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      types: {
+        'application/rss+xml': [
+          { url: 'https://afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },
+        ],
+      },
+    },
     openGraph: {
       type: 'article',
       title: data.title,
