@@ -1,4 +1,5 @@
 import { isValidDate, isValidLocale, listDailies, loadDaily, getLatestDate } from '../lib/afos-daily/loader'
+import { loadGlossary, getGlossaryEntry, isValidGlossaryId, listGlossaryIds } from '../lib/glossary/loader'
 
 let pass = 0
 let fail = 0
@@ -52,6 +53,24 @@ check('invalid date returns null', loadDaily('2026-13-45'), null)
 check('path traversal returns null', loadDaily('../../etc/passwd'), null)
 check('non-existent date returns null', loadDaily('1999-01-01'), null)
 check('empty string returns null', loadDaily(''), null)
+
+console.log('\nGlossary edge cases:')
+const glossary = loadGlossary()
+console.log(`  found ${glossary.length} entries`)
+check('non-empty glossary', glossary.length > 0, true)
+check('all entries have id', glossary.every(e => typeof e.id === 'string' && e.id.length > 0), true)
+check('all entries have term', glossary.every(e => typeof e.term === 'string' && e.term.length > 0), true)
+check('all entries have pt-BR definition', glossary.every(e => typeof e.definitions['pt-BR'] === 'string' && e.definitions['pt-BR'].length > 0), true)
+check('all entries have en definition', glossary.every(e => typeof e.definitions.en === 'string' && e.definitions.en.length > 0), true)
+check('all entries have es definition', glossary.every(e => typeof e.definitions.es === 'string' && e.definitions.es.length > 0), true)
+check('all ids are URL-safe', glossary.every(e => /^[a-z0-9-]+$/.test(e.id)), true)
+check('listGlossaryIds matches loadGlossary count', listGlossaryIds().length, glossary.length)
+check('valid id returns entry', !!getGlossaryEntry('tse'), true)
+check('invalid id returns null', getGlossaryEntry('nonexistent'), null)
+check('path traversal in id returns null', getGlossaryEntry('../../etc/passwd'), null)
+check('uppercase id returns null (URL-safe enforce)', getGlossaryEntry('TSE'), null)
+check('empty id returns null', getGlossaryEntry(''), null)
+check('isValidGlossaryId rejects path traversal', isValidGlossaryId('../tse'), false)
 
 console.log(`\n${pass} passed, ${fail} failed`)
 process.exit(fail > 0 ? 1 : 0)

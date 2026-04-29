@@ -1,0 +1,233 @@
+{
+  "tse": {
+    "id": "tse",
+    "term": "TSE",
+    "type": "institutional",
+    "firstSeen": "2026-04-22",
+    "url": "https://www.tse.jus.br",
+    "definitions": {
+      "pt-BR": "Tribunal Superior Eleitoral. Órgão máximo da Justiça Eleitoral brasileira, responsável por organizar eleições e registrar pesquisas eleitorais. Toda pesquisa publicada na imprensa precisa ser previamente registrada no TSE.",
+      "en": "Tribunal Superior Eleitoral (Brazilian Supreme Electoral Court). The highest body of Brazil's electoral justice system; organizes elections and registers electoral polls. Every poll published in the press must be pre-registered with the TSE.",
+      "es": "Tribunal Superior Eleitoral (Tribunal Superior Electoral de Brasil). Órgano máximo de la justicia electoral brasileña; organiza las elecciones y registra las encuestas electorales. Toda encuesta publicada en la prensa debe estar previamente registrada en el TSE."
+    }
+  },
+  "stf": {
+    "id": "stf",
+    "term": "STF",
+    "type": "institutional",
+    "firstSeen": "2026-04-22",
+    "url": "https://www.stf.jus.br",
+    "definitions": {
+      "pt-BR": "Supremo Tribunal Federal. Mais alta corte do Brasil, com 11 ministros nomeados pelo presidente e aprovados pelo Senado. Decide sobre constitucionalidade de leis e julga autoridades com foro privilegiado.",
+      "en": "Supremo Tribunal Federal (Brazilian Supreme Court). Brazil's highest court, with 11 justices appointed by the president and confirmed by the Senate. Rules on the constitutionality of laws and tries officials with privileged forum.",
+      "es": "Supremo Tribunal Federal (Tribunal Supremo de Brasil). Más alto tribunal de Brasil, con 11 ministros nombrados por el presidente y aprobados por el Senado. Decide sobre la constitucionalidad de las leyes y juzga a autoridades con fuero privilegiado."
+    }
+  },
+  "pec": {
+    "id": "pec",
+    "term": "PEC",
+    "type": "institutional",
+    "firstSeen": "2026-04-23",
+    "definitions": {
+      "pt-BR": "Proposta de Emenda à Constituição. Mecanismo formal para alterar a Constituição brasileira; precisa de aprovação por 3/5 da Câmara e do Senado em dois turnos.",
+      "en": "Proposta de Emenda à Constituição (Constitutional Amendment Proposal). Formal mechanism to amend Brazil's Constitution; requires 3/5 approval in the Chamber of Deputies and Senate in two rounds.",
+      "es": "Proposta de Emenda à Constituição (Propuesta de Enmienda Constitucional). Mecanismo formal para enmendar la Constitución brasileña; requiere aprobación de 3/5 en la Cámara y el Senado en dos turnos."
+    }
+  },
+  "primeiro-turno": {
+    "id": "primeiro-turno",
+    "term": "1º turno",
+    "type": "electoral_concept",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Primeira rodada da eleição presidencial brasileira. Se nenhum candidato obtiver mais de 50% dos votos válidos, os dois mais votados disputam o 2º turno três semanas depois.",
+      "en": "First round of Brazil's presidential election. If no candidate wins more than 50% of valid votes, the top two go to a runoff (2º turno) three weeks later.",
+      "es": "Primera vuelta de la elección presidencial brasileña. Si ningún candidato obtiene más del 50% de los votos válidos, los dos más votados disputan la segunda vuelta tres semanas después."
+    }
+  },
+  "segundo-turno": {
+    "id": "segundo-turno",
+    "term": "2º turno",
+    "type": "electoral_concept",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Segunda rodada (runoff) da eleição presidencial. Disputada apenas pelos dois candidatos mais votados no 1º turno quando nenhum obteve maioria absoluta.",
+      "en": "Runoff round of Brazil's presidential election. Held only between the two top candidates from the first round when no one won an absolute majority.",
+      "es": "Segunda vuelta (balotaje) de la elección presidencial. Disputada solo por los dos candidatos más votados de la primera vuelta cuando ninguno obtuvo mayoría absoluta."
+    }
+  },
+  "empate-tecnico": {
+    "id": "empate-tecnico",
+    "term": "Empate técnico",
+    "type": "electoral_concept",
+    "firstSeen": "2026-04-25",
+    "definitions": {
+      "pt-BR": "Diferença entre candidatos menor ou igual à margem de erro da pesquisa. Estatisticamente, não é possível afirmar que um lidera o outro.",
+      "en": "Statistical tie. Difference between candidates is smaller than or equal to the poll's margin of error; statistically, it cannot be claimed that one leads the other.",
+      "es": "Empate técnico. La diferencia entre candidatos es menor o igual al margen de error de la encuesta; estadísticamente, no se puede afirmar que uno aventaja al otro."
+    }
+  },
+  "polymarket": {
+    "id": "polymarket",
+    "term": "Polymarket",
+    "type": "prediction_market",
+    "firstSeen": "2026-04-22",
+    "url": "https://polymarket.com",
+    "definitions": {
+      "pt-BR": "Maior mercado de previsão do mundo. Plataforma onde participantes apostam dinheiro real (USDC) em eventos políticos, esportivos e econômicos. As odds funcionam como probabilidade implícita de cada cenário. Bloqueada no Brasil desde 24/Abr/2026 mas continua acessível internacionalmente.",
+      "en": "World's largest prediction market. Platform where participants bet real money (USDC) on political, sports, and economic events. Odds function as the implicit probability of each scenario. Blocked in Brazil since April 24, 2026, but remains accessible internationally.",
+      "es": "El mercado de predicciones más grande del mundo. Plataforma donde los participantes apuestan dinero real (USDC) en eventos políticos, deportivos y económicos. Las cuotas funcionan como la probabilidad implícita de cada escenario. Bloqueada en Brasil desde el 24/abr/2026, pero sigue accesible internacionalmente."
+    }
+  },
+  "quaest": {
+    "id": "quaest",
+    "term": "Quaest",
+    "type": "polling_institute",
+    "firstSeen": "2026-04-22",
+    "url": "https://www.quaest.com.br",
+    "definitions": {
+      "pt-BR": "Instituto de pesquisa brasileiro fundado por Felipe Nunes em 2018. Conhecido pela parceria com a Genial Investimentos (Genial/Quaest) em pesquisas de cobertura nacional.",
+      "en": "Brazilian polling institute founded by Felipe Nunes in 2018. Known for its partnership with Genial Investimentos (Genial/Quaest) in nationally covered polls.",
+      "es": "Instituto de encuestas brasileño fundado por Felipe Nunes en 2018. Conocido por su asociación con Genial Investimentos (Genial/Quaest) en encuestas de cobertura nacional."
+    }
+  },
+  "atlasintel": {
+    "id": "atlasintel",
+    "term": "AtlasIntel",
+    "type": "polling_institute",
+    "firstSeen": "2026-04-22",
+    "url": "https://atlasintel.org",
+    "definitions": {
+      "pt-BR": "Instituto de pesquisa brasileiro com metodologia digital (online), conhecido por amostras grandes (n=5.000) e parceria com Bloomberg em pesquisas internacionais.",
+      "en": "Brazilian polling institute using digital (online) methodology, known for large sample sizes (n=5,000) and its Bloomberg partnership for international polling.",
+      "es": "Instituto de encuestas brasileño con metodología digital (online), conocido por sus grandes muestras (n=5.000) y su asociación con Bloomberg en encuestas internacionales."
+    }
+  },
+  "datafolha": {
+    "id": "datafolha",
+    "term": "Datafolha",
+    "type": "polling_institute",
+    "firstSeen": "2026-04-22",
+    "url": "https://datafolha.folha.uol.com.br",
+    "definitions": {
+      "pt-BR": "Instituto de pesquisa do Grupo Folha de S.Paulo, fundado em 1983. Um dos institutos mais tradicionais do Brasil, com metodologia presencial e cobertura histórica de eleições nacionais.",
+      "en": "Polling institute of the Folha de S.Paulo media group, founded in 1983. One of Brazil's most established institutes, with in-person methodology and historical coverage of national elections.",
+      "es": "Instituto de encuestas del grupo Folha de S.Paulo, fundado en 1983. Uno de los institutos más tradicionales de Brasil, con metodología presencial y cobertura histórica de elecciones nacionales."
+    }
+  },
+  "parana-pesquisas": {
+    "id": "parana-pesquisas",
+    "term": "Paraná Pesquisas",
+    "type": "polling_institute",
+    "firstSeen": "2026-04-23",
+    "url": "https://paranapesquisas.com.br",
+    "definitions": {
+      "pt-BR": "Instituto de pesquisa fundado em 2010, com sede em Curitiba. Conhecido por pesquisas regionais e estaduais com presença nacional crescente.",
+      "en": "Polling institute founded in 2010, headquartered in Curitiba. Known for regional and state-level polls with growing national reach.",
+      "es": "Instituto de encuestas fundado en 2010, con sede en Curitiba. Conocido por encuestas regionales y estatales con creciente alcance nacional."
+    }
+  },
+  "nexus-btg": {
+    "id": "nexus-btg",
+    "term": "Nexus/BTG Pactual",
+    "type": "polling_institute",
+    "firstSeen": "2026-04-27",
+    "definitions": {
+      "pt-BR": "Pesquisa nacional realizada pela Nexus em parceria com o BTG Pactual, banco de investimento. Estreou em abril de 2026 como nova fonte de pesquisas presidenciais nacionais.",
+      "en": "National poll conducted by Nexus in partnership with BTG Pactual, an investment bank. Debuted in April 2026 as a new source of national presidential polls.",
+      "es": "Encuesta nacional realizada por Nexus en asociación con BTG Pactual, banco de inversión. Debutó en abril de 2026 como nueva fuente de encuestas presidenciales nacionales."
+    }
+  },
+  "pt": {
+    "id": "pt",
+    "term": "PT",
+    "type": "political_party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido dos Trabalhadores. Centro-esquerda. Fundado em 1980 por sindicalistas e intelectuais. Partido do presidente Lula (3 mandatos: 2003-2010 e 2023-).",
+      "en": "Partido dos Trabalhadores (Workers' Party). Center-left. Founded in 1980 by trade unionists and intellectuals. Party of President Lula (3 terms: 2003-2010 and 2023-).",
+      "es": "Partido dos Trabalhadores (Partido de los Trabajadores). Centro-izquierda. Fundado en 1980 por sindicalistas e intelectuales. Partido del presidente Lula (3 mandatos: 2003-2010 y 2023-)."
+    }
+  },
+  "pl": {
+    "id": "pl",
+    "term": "PL",
+    "type": "political_party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido Liberal. Direita. Atual partido de Jair Bolsonaro e Flávio Bolsonaro. Maior bancada da Câmara dos Deputados desde 2022.",
+      "en": "Partido Liberal (Liberal Party). Right-wing. Current party of Jair Bolsonaro and Flávio Bolsonaro. Largest caucus in the Chamber of Deputies since 2022.",
+      "es": "Partido Liberal. Derecha. Actual partido de Jair Bolsonaro y Flávio Bolsonaro. Mayor bancada de la Cámara de Diputados desde 2022."
+    }
+  },
+  "psd": {
+    "id": "psd",
+    "term": "PSD",
+    "type": "political_party",
+    "firstSeen": "2026-04-23",
+    "definitions": {
+      "pt-BR": "Partido Social Democrático. Centro. Fundado em 2011 por Gilberto Kassab. Atualmente integra a base de governo Lula com vários ministérios, mas mantém críticas públicas. Partido de Ronaldo Caiado.",
+      "en": "Partido Social Democrático (Social Democratic Party). Center. Founded in 2011 by Gilberto Kassab. Currently part of the Lula governing coalition with several ministries, but maintains public criticism. Party of Ronaldo Caiado.",
+      "es": "Partido Social Democrático. Centro. Fundado en 2011 por Gilberto Kassab. Actualmente integra la base del gobierno Lula con varios ministerios, pero mantiene críticas públicas. Partido de Ronaldo Caiado."
+    }
+  },
+  "novo": {
+    "id": "novo",
+    "term": "Novo",
+    "type": "political_party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido Novo. Direita liberal. Fundado em 2011, defende Estado mínimo, privatizações e gestão fiscal rigorosa. Partido de Romeu Zema.",
+      "en": "Partido Novo (New Party). Liberal right. Founded in 2011, advocates for minimal state, privatizations, and strict fiscal management. Party of Romeu Zema.",
+      "es": "Partido Novo (Partido Nuevo). Derecha liberal. Fundado en 2011, defiende el Estado mínimo, las privatizaciones y la gestión fiscal rigurosa. Partido de Romeu Zema."
+    }
+  },
+  "bolsomaster": {
+    "id": "bolsomaster",
+    "term": "BolsoMaster",
+    "type": "neologism",
+    "firstSeen": "2026-04-26",
+    "definitions": {
+      "pt-BR": "Termo cunhado em redes sociais e por adversários políticos no fim de abril/2026 para descrever supostas conexões entre o senador Flávio Bolsonaro e o caso de fraude no Banco Master. O PL (partido de Flávio) negou publicamente envolvimento.",
+      "en": "Term coined on social media and by political opponents in late April 2026 to describe alleged connections between senator Flávio Bolsonaro and the Banco Master fraud case. The PL (Flávio's party) publicly denied involvement.",
+      "es": "Término acuñado en redes sociales y por adversarios políticos a fines de abril/2026 para describir supuestas conexiones entre el senador Flávio Bolsonaro y el caso de fraude del Banco Master. El PL (partido de Flávio) negó públicamente cualquier implicación."
+    },
+    "relatedSources": [
+      { "label": "SBT News", "url": "https://www.sbtnews.sbt.com.br", "date": "2026-04-27" },
+      { "label": "Diário do Povo", "url": "https://www.diariodopovo.com.br", "date": "2026-04-27" }
+    ]
+  },
+  "farra-do-inss": {
+    "id": "farra-do-inss",
+    "term": "Farra do INSS",
+    "type": "scandal",
+    "firstSeen": "2026-04-25",
+    "definitions": {
+      "pt-BR": "Escândalo envolvendo descontos não autorizados nos benefícios de aposentados e pensionistas do INSS (Instituto Nacional do Seguro Social), revelado em 2025. Diversas entidades sob investigação por desvio de recursos.",
+      "en": "Scandal involving unauthorized deductions from retiree and pensioner benefits at INSS (Brazil's National Social Security Institute), uncovered in 2025. Multiple entities under investigation for diverting funds.",
+      "es": "Escándalo que involucra descuentos no autorizados de los beneficios de jubilados y pensionados del INSS (Instituto Nacional del Seguro Social brasileño), revelado en 2025. Diversas entidades bajo investigación por desvío de recursos."
+    }
+  },
+  "banco-master": {
+    "id": "banco-master",
+    "term": "Banco Master",
+    "type": "scandal",
+    "firstSeen": "2026-04-23",
+    "definitions": {
+      "pt-BR": "Banco brasileiro do empresário Daniel Vorcaro, alvo de investigação por suspeitas de fraude bilionária a partir de 2026. Originou a CPI do Banco Master (parada no STF em abril/2026) e o termo BolsoMaster.",
+      "en": "Brazilian bank owned by businessman Daniel Vorcaro, under investigation for billion-real fraud allegations beginning in 2026. Source of the Banco Master Parliamentary Inquiry (stalled at the STF in April 2026) and the BolsoMaster term.",
+      "es": "Banco brasileño del empresario Daniel Vorcaro, objeto de investigación por presunto fraude multimillonario a partir de 2026. Originó la Comisión Parlamentaria de Investigación del Banco Master (detenida en el STF en abril/2026) y el término BolsoMaster."
+    }
+  },
+  "liderancas-envelhecidas": {
+    "id": "liderancas-envelhecidas",
+    "term": "Lideranças envelhecidas",
+    "type": "neologism",
+    "firstSeen": "2026-04-26",
+    "definitions": {
+      "pt-BR": "Expressão usada por Tarcísio de Freitas em 26/Abr/2026 para se referir a Lula (80 anos) e Jair Bolsonaro (71). Sinalizou inflexão estratégica que culminou no apoio público de Tarcísio a Flávio Bolsonaro como candidato em 27/Abr.",
+      "en": "Phrase used by Tarcísio de Freitas on April 26, 2026, referring to Lula (80) and Jair Bolsonaro (71). Signaled the strategic shift that culminated in Tarcísio's public endorsement of Flávio Bolsonaro as candidate on April 27.",
+      "es": "Expresión utilizada por Tarcísio de Freitas el 26/abr/2026 para referirse a Lula (80 años) y Jair Bolsonaro (71). Marcó la inflexión estratégica que culminó en el respaldo público de Tarcísio a Flávio Bolsonaro como candidato el 27/abr."
+    }
+  }
+}

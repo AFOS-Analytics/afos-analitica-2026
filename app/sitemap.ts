@@ -137,6 +137,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
+  // Glossary — Brazilian political terms (3 locales)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/glossary`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: { languages: hreflang((l) => `/${l}/glossary`) },
+    })
+  }
+
   // AFOS Daily — permalinks per date (3 locales × N dates)
   // Latest date gets higher priority. Each entry's lastModified = the date.
   const dailyDates = listDailies()
