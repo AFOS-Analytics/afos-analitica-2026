@@ -20,6 +20,10 @@ const KV_KEYS = {
   GLOBAL_MAP_TIMESTAMP: 'afos:global-map:timestamp',
 } as const;
 
+// Cron Polymarket roda a cada 30min. Tolerâncias derivadas:
+const KV_TTL_SECONDS = 90 * 60;       // 90min cobre 3 ticks (1-2 cron jobs podem falhar sem deixar usuário sem dados)
+const KV_HEALTH_MAX_AGE_MS = 35 * 60 * 1000;  // 30min cron + 5min de margem para delay de execução do Vercel cron
+
 /**
  * Cria instância Redis lazy (só quando as env vars existem).
  */
@@ -43,9 +47,7 @@ function isRedisAvailable(): boolean {
 }
 
 /**
- * Gravar dados do mapa global no Redis.
- * TTL: 90 minutos (cron roda a cada 30min; 90min cobre 3 ticks de tolerância
- * caso 1-2 cron jobs falhem — usuários veem dados antigos em vez de erro).
+ * Gravar dados do mapa global no Redis. TTL = KV_TTL_SECONDS.
  */
 export async function writeGlobalMapData(data: unknown): Promise<boolean> {
   const redis = getRedis();
@@ -56,8 +58,8 @@ export async function writeGlobalMapData(data: unknown): Promise<boolean> {
 
   try {
     const pipeline = redis.pipeline();
-    pipeline.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: 5400 }); // 90min TTL
-    pipeline.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: 5400 });
+    pipeline.set(KV_KEYS.GLOBAL_MAP, JSON.stringify(data), { ex: KV_TTL_SECONDS });
+    pipeline.set(KV_KEYS.GLOBAL_MAP_TIMESTAMP, new Date().toISOString(), { ex: KV_TTL_SECONDS });
     await pipeline.exec();
     console.log('[kv] Dados gravados no Redis com sucesso');
     return true;
@@ -92,8 +94,7 @@ export async function readGlobalMapData<T>(): Promise<{ data: T; timestamp: stri
 }
 
 /**
- * Verifica se o cron está saudável (última atualização < 35 minutos).
- * Cron roda a cada 30min; janela de 35min permite 1 tick atrasar sem alarmar.
+ * Verifica se o cron está saudável (última atualização < KV_HEALTH_MAX_AGE_MS).
  */
 export async function checkCronHealth(): Promise<{ healthy: boolean; lastUpdate: string | null; ageMs: number }> {
   const redis = getRedis();
@@ -104,7 +105,7 @@ export async function checkCronHealth(): Promise<{ healthy: boolean; lastUpdate:
     if (!timestamp) return { healthy: false, lastUpdate: null, ageMs: -1 };
 
     const ageMs = Date.now() - new Date(timestamp).getTime();
-    const healthy = ageMs < 35 * 60 * 1000; // < 35 minutos (cron de 30min + 5min de margem)
+    const healthy = ageMs < KV_HEALTH_MAX_AGE_MS;
 
     if (!healthy) {
       console.warn(`[kv] Cron possivelmente parado — última atualização há ${Math.round(ageMs / 1000)}s`);

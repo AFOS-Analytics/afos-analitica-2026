@@ -1,25 +1,11 @@
 /**
  * Cron Job: /api/cron/refresh-elections
  *
- * Executado automaticamente pela Vercel a cada 30 minutos.
- * Busca TODOS os mercados do Polymarket em PARALELO, grava no Vercel KV
- * (cache rápido para usuários) e persiste snapshot histórico no Neon
- * (arquivo auditável de longo prazo).
+ * Vercel cron (30min) → Polymarket (18 paralelo) → KV (caminho quente) + Neon (arquivo histórico).
+ * Usuários leem do KV em <1ms. Neon write é fire-and-forget — falha não bloqueia.
  *
- * Cron unificado em 30min após análise de risco/custo: cron de 5min
- * exigia escrita no Redis muito frequente e cron paralelo de 30min para
- * Neon (arquitetura de 2 crons). Com 30min direto, KV e Neon ficam em
- * sincronia, simplifica a operação, reduz pressão em Vercel/Upstash sob
- * tráfego pesado e mantém Neon idle entre ticks (scale-to-zero).
- *
- * Fluxo:
- *   Vercel Cron (30min) → esta rota → Polymarket (18 paralelo) → KV + Neon
- *   Usuários servidos pelo KV (<1ms). Neon usado apenas para arquivo
- *   histórico (não bloqueia leitura do usuário).
- *
- * Segurança:
- *   Vercel envia header CRON_SECRET para autenticar.
- *   Em dev local, aceita qualquer request.
+ * Auth: header `x-vercel-cron` (injetado pelo Vercel) ou `Authorization: Bearer CRON_SECRET`.
+ * Em dev local sem VERCEL=1, qualquer request é aceito.
  */
 
 import { NextResponse } from 'next/server';
@@ -29,15 +15,11 @@ import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
 import { persistMarketData } from '../../../lib/polymarket/persist';
 
-// Polymarket fetch de 18 markets em paralelo + KV write + Neon upserts.
-// Timing típico <10s; 60s dá folga se Polymarket ou Neon estiverem lentos.
 export const maxDuration = 60;
 
 export async function GET(request: Request) {
   const startTime = Date.now();
 
-  // Autenticação: Vercel injeta header automaticamente em cron jobs.
-  // Em produção, bloquear qualquer request que não venha do cron da Vercel.
   const isVercelCron = request.headers.get('x-vercel-cron') === '1';
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
@@ -51,7 +33,6 @@ export async function GET(request: Request) {
   try {
     console.log('[cron] Iniciando refresh de dados eleitorais...');
 
-    // 1. Buscar dados do Polymarket
     const result = await aggregateElectionData();
 
     if (result.fetchedMarkets === 0) {
@@ -62,10 +43,8 @@ export async function GET(request: Request) {
       );
     }
 
-    // 2. Otimizar e gravar no KV (caminho quente — usuários leem aqui)
-    const optimized = optimizePayload(result.countries);
     const payload = {
-      c: optimized,
+      c: optimizePayload(result.countries),
       at: result.updatedAt,
       stale: result.staleData,
       fetched: result.fetchedMarkets,
@@ -74,41 +53,29 @@ export async function GET(request: Request) {
 
     const kvSuccess = await writeGlobalMapData(payload);
 
-    // 3. Persistir snapshot histórico no Neon (fire-and-forget — não bloqueia response).
-    // shouldPersist() em persist.ts aplica tier inteligente (hot/warm/cold).
+    // Snapshot histórico no Neon — fire-and-forget. shouldPersist() em
+    // persist.ts aplica tier inteligente (hot/warm/cold) por mercado.
     persistMarketData(result.countries).catch((err) => {
-      console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err)
-    })
+      console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err);
+    });
 
     const elapsed = Date.now() - startTime;
-    console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'FAIL'}, ${elapsed}ms`);
+    const status = kvSuccess ? 'OK' : 'FAIL';
+    console.log(`[cron] Refresh ${status} — ${result.fetchedMarkets}/${result.totalMarkets} mercados, ${elapsed}ms`);
 
-    // KV é o caminho quente — falha em escrever significa usuários verão dados antigos
-    // ou vão para o fallback Polymarket direto. Reportamos como erro 500 para que o
-    // monitoring do Vercel/UptimeRobot capte. Neon falha é silenciosa porque é
-    // arquivo histórico (não bloqueia experiência do usuário).
-    if (!kvSuccess) {
-      return NextResponse.json(
-        {
-          ok: false,
-          reason: 'kv-write-failed',
-          markets: `${result.fetchedMarkets}/${result.totalMarkets}`,
-          countries: result.countries.length,
-          elapsed,
-        },
-        { status: 500, headers: buildNoCacheHeaders() }
-      );
-    }
-
+    // HTTP 500 quando KV falha: monitoring (Vercel/UptimeRobot) captura.
+    // Usuários cairão no fallback Polymarket direto até KV se recuperar.
+    const httpStatus = kvSuccess ? 200 : 500;
     return NextResponse.json(
       {
-        ok: true,
+        ok: kvSuccess,
+        ...(kvSuccess ? {} : { reason: 'kv-write-failed' }),
         markets: `${result.fetchedMarkets}/${result.totalMarkets}`,
         countries: result.countries.length,
         kv: kvSuccess,
         elapsed,
       },
-      { status: 200, headers: buildNoCacheHeaders() }
+      { status: httpStatus, headers: buildNoCacheHeaders() }
     );
   } catch (error) {
     console.error('[cron] Erro fatal:', error);
