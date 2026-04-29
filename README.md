@@ -37,11 +37,11 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 
 **Open Source. Free. Mobile and desktop.**
 
-### 60-second platform demo
+### Platform demo (~90 seconds)
 
-[![AFOS Analytics — 60-second demo (click to play)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
+[![AFOS Analytics — platform demo (click to play)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
 
-> **Click the image above to play** (~8.5 MB, audio in PT-BR with English subtitles burned-in). Alternative tracks: [`public/demo.mp4`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo.mp4) (no subtitles) and [`public/demo-audio.m4a`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-audio.m4a) (audio only).
+> **Click the image above to play** (~9 MB, audio in PT-BR with English subtitles burned-in). Covers: real-time cross-referencing, prediction markets, electoral polls, news aggregation, and the **AFOS Daily** narrative synthesis. Alternative tracks: [`public/demo.mp4`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo.mp4) (no subtitles) and [`public/demo-audio.m4a`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-audio.m4a) (audio only).
 
 ---
 
