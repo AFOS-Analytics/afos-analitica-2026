@@ -62,13 +62,28 @@ const SOURCE_URLS: Record<string, string> = {
   'OpiniaoCE': 'https://opiniaoce.com.br',
 }
 
+// Build a case-insensitive (and accent-folded) lookup index from SOURCE_URLS.
+const SOURCE_URLS_NORMALIZED: Record<string, string> = (() => {
+  const idx: Record<string, string> = {}
+  for (const [name, url] of Object.entries(SOURCE_URLS)) {
+    const key = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    idx[key] = url
+  }
+  return idx
+})()
+
+function lookupSourceUrl(name: string): string | undefined {
+  const key = name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  return SOURCE_URLS_NORMALIZED[key]
+}
+
 function parseSources(sourcesStr: string): Array<{ name: string; url?: string }> {
   return sourcesStr
     .split(',')
     .map(s => s.trim().replace(/\.$/, ''))
     .filter(Boolean)
     .map(name => {
-      const url = SOURCE_URLS[name]
+      const url = lookupSourceUrl(name)
       return url ? { name, url } : { name }
     })
 }

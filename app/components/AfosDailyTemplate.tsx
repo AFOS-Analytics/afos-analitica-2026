@@ -19,7 +19,10 @@ function formatDateExtenso(dateIso: string, locale: string): string {
     en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
   }
-  const [y, m, d] = dateIso.split('-').map(Number)
+  const parts = dateIso.split('-').map(Number)
+  if (parts.length !== 3 || parts.some(Number.isNaN)) return dateIso
+  const [y, m, d] = parts
+  if (m < 1 || m > 12) return dateIso
   const monthName = (meses[locale] ?? meses['pt-BR'])[m - 1]
   if (locale === 'en') return `${monthName} ${d}, ${y}`
   return `${d} de ${monthName} de ${y}`
@@ -109,25 +112,30 @@ export function AfosDailyTemplate({ data }: Props) {
         <p className="text-center text-gray-400 text-xs mb-12 italic">{t.disclaimer}</p>
 
         {/* LEDE */}
-        <div className="border-l-4 border-primary pl-5 py-2 mb-10">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              p: ({ children }) => (
-                <p className="text-lg md:text-xl text-dark font-medium leading-relaxed">{children}</p>
-              ),
-              a: ({ href, children }) => (
-                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{children}</a>
-              ),
-              strong: ({ children }) => <strong>{children}</strong>,
-            }}
-          >
-            {data.lede}
-          </ReactMarkdown>
-        </div>
+        {data.lede && (
+          <div className="border-l-4 border-primary pl-5 py-2 mb-10">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                p: ({ children }) => (
+                  <p className="text-lg md:text-xl text-dark font-medium leading-relaxed">{children}</p>
+                ),
+                a: ({ href, children }) => (
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{children}</a>
+                ),
+                strong: ({ children }) => <strong>{children}</strong>,
+              }}
+            >
+              {data.lede}
+            </ReactMarkdown>
+          </div>
+        )}
 
         {/* BODY (markdown) */}
         <div className="prose prose-slate max-w-none">
+          {!data.body && (
+            <p className="text-gray-500 italic">{locale === 'en' ? 'Synthesis content unavailable for this date.' : locale === 'es' ? 'Contenido de la síntesis no disponible para esta fecha.' : 'Conteúdo da síntese indisponível para esta data.'}</p>
+          )}
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
