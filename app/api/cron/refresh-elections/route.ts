@@ -81,7 +81,24 @@ export async function GET(request: Request) {
     })
 
     const elapsed = Date.now() - startTime;
-    console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'SKIP'}, ${elapsed}ms`);
+    console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'FAIL'}, ${elapsed}ms`);
+
+    // KV é o caminho quente — falha em escrever significa usuários verão dados antigos
+    // ou vão para o fallback Polymarket direto. Reportamos como erro 500 para que o
+    // monitoring do Vercel/UptimeRobot capte. Neon falha é silenciosa porque é
+    // arquivo histórico (não bloqueia experiência do usuário).
+    if (!kvSuccess) {
+      return NextResponse.json(
+        {
+          ok: false,
+          reason: 'kv-write-failed',
+          markets: `${result.fetchedMarkets}/${result.totalMarkets}`,
+          countries: result.countries.length,
+          elapsed,
+        },
+        { status: 500, headers: buildNoCacheHeaders() }
+      );
+    }
 
     return NextResponse.json(
       {

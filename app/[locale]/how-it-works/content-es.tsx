@@ -469,7 +469,7 @@ export function HowItWorksEs() {
       <h3 className={S.h3}>Los datos llegan solos</h3>
       <p className={S.p}>Todo lo que lees viene de pipelines automatizados que funcionan 24 horas al día:</p>
       <ul className={S.ul}>
-        <li><strong>Cada 5 minutos:</strong> Polymarket es consultado y los porcentajes actualizados</li>
+        <li><strong>Cada 30 minutos:</strong> Polymarket es consultado y los porcentajes actualizados</li>
         <li><strong>Cada 30 minutos:</strong> las noticias son recogidas en 6 categorías temáticas y 3 idiomas</li>
         <li><strong>Diariamente:</strong> nuevas encuestas registradas en el TSE son descargadas e indexadas</li>
         <li><strong>Dos veces al día (12h y 18h BRT):</strong> se ejecuta el cruce completo de las 3 fuentes, comparando el estado actual con el del día anterior (variaciones ↑↓pp), y se persiste en la base de datos para formar un historial auditable</li>
