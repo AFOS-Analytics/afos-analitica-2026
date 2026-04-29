@@ -1,6 +1,11 @@
+'use client'
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+
+type Theme = 'light' | 'blue'
+const THEME_KEY = 'afos-daily-theme'
 
 export interface AfosDailyData {
   date: string          // YYYY-MM-DD
@@ -11,6 +16,11 @@ export interface AfosDailyData {
   lede: string
   body: string          // markdown body (without footer)
   sources: string       // comma-separated source list extracted from markdown footer
+}
+
+interface NavDates {
+  previous?: string  // YYYY-MM-DD
+  next?: string      // YYYY-MM-DD
 }
 
 function formatDateExtenso(dateIso: string, locale: string): string {
@@ -84,44 +94,132 @@ const T = {
 
 interface Props {
   data: AfosDailyData
+  nav?: NavDates
 }
 
-export function AfosDailyTemplate({ data }: Props) {
+const LANG_LABEL: Record<string, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
+const NAV_LABEL = {
+  'pt-BR': { prev: '← Síntese anterior', next: 'Próxima síntese →' },
+  en: { prev: '← Previous synthesis', next: 'Next synthesis →' },
+  es: { prev: '← Síntesis anterior', next: 'Próxima síntesis →' },
+}
+
+function ThemeToggle({ theme, onChoose }: { theme: Theme; onChoose: (t: Theme) => void }) {
+  const isBlue = theme === 'blue'
+  const baseStyle = 'w-6 h-6 rounded border-2 transition-all'
+  return (
+    <div className={`absolute top-3 right-3 md:top-5 md:right-5 flex items-center gap-2 p-1.5 rounded-lg ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-white border border-gray-200'}`} role="radiogroup" aria-label="Tema da página">
+      <button
+        type="button"
+        role="radio"
+        aria-checked={theme === 'light'}
+        aria-label="Modo claro"
+        onClick={() => onChoose('light')}
+        className={`${baseStyle} bg-slate-50 ${theme === 'light' ? 'border-primary scale-110' : 'border-gray-300 hover:border-gray-400'}`}
+      />
+      <button
+        type="button"
+        role="radio"
+        aria-checked={theme === 'blue'}
+        aria-label="Modo Sapphire Blue"
+        onClick={() => onChoose('blue')}
+        className={`${baseStyle} bg-[#0a3d8f] ${theme === 'blue' ? 'border-white scale-110' : 'border-blue-700 hover:border-blue-500'}`}
+      />
+    </div>
+  )
+}
+
+function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale: string; currentDate: string; isBlue: boolean }) {
+  const locales: Array<'pt-BR' | 'en' | 'es'> = ['pt-BR', 'en', 'es']
+  const linkBase = isBlue ? 'text-blue-200 hover:text-white' : 'text-gray-500 hover:text-primary'
+  const activeBase = isBlue ? 'text-white font-bold' : 'text-primary font-bold'
+  return (
+    <div className="flex items-center gap-2 text-xs">
+      {locales.map((loc, i) => (
+        <span key={loc} className="flex items-center gap-2">
+          {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
+          <a
+            href={`/${loc}/daily/${currentDate}`}
+            aria-label={`Idioma: ${LANG_LABEL[loc]}`}
+            className={loc === currentLocale ? activeBase : linkBase}
+          >
+            {LANG_LABEL[loc]}
+          </a>
+        </span>
+      ))}
+    </div>
+  )
+}
+
+export function AfosDailyTemplate({ data, nav }: Props) {
   const locale = (data.locale === 'en' || data.locale === 'es' ? data.locale : 'pt-BR') as 'pt-BR' | 'en' | 'es'
   const t = T[locale]
   const dateExtenso = formatDateExtenso(data.date, locale)
 
+  const [theme, setTheme] = useState<Theme>('light')
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? window.localStorage.getItem(THEME_KEY) : null
+    if (saved === 'blue' || saved === 'light') setTheme(saved)
+  }, [])
+  function chooseTheme(next: Theme) {
+    setTheme(next)
+    if (typeof window !== 'undefined') window.localStorage.setItem(THEME_KEY, next)
+  }
+
+  const isBlue = theme === 'blue'
+  const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-slate-50'
+  const headingColor = isBlue ? 'text-white' : 'text-primary'
+  const wordmarkColor = isBlue ? 'text-white' : 'text-primary'
+  const eyebrowColor = isBlue ? 'text-blue-200' : 'text-primary'
+  const sublineColor = isBlue ? 'text-blue-100' : 'text-gray-600'
+  const disclaimerColor = isBlue ? 'text-blue-200/70' : 'text-gray-400'
+  const ledeBorder = isBlue ? 'border-blue-300' : 'border-primary'
+  const ledeText = isBlue ? 'text-blue-50' : 'text-dark'
+  const sectionBorder = isBlue ? 'border-blue-400/40' : 'border-blue-100'
+  const sectionHeading = isBlue ? 'text-white' : 'text-primary'
+  const bodyText = isBlue ? 'text-blue-50' : 'text-gray-700'
+  const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
+  const strongColor = isBlue ? 'text-white' : 'text-dark'
+  const blockquoteBg = isBlue ? 'bg-blue-900/40 border-amber-300' : 'bg-amber-50 border-amber-500'
+  const footerBorder = isBlue ? 'border-blue-400/30' : 'border-gray-200'
+  const footerText = isBlue ? 'text-blue-200' : 'text-gray-500'
+  const footerStrong = isBlue ? 'text-white' : 'text-gray-700'
+  const ctaBg = isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'
+
   return (
-    <div className="min-h-screen bg-slate-50">
-      <article className="max-w-[720px] mx-auto px-5 md:px-10 py-12 md:py-14">
-        <nav className="mb-10 text-sm">
-          <a href={`/${locale}/dashboard`} className="text-primary hover:underline">{t.backToDashboard}</a>
+    <div className={`min-h-screen ${pageBg} transition-colors`}>
+      <article className="max-w-[720px] mx-auto px-5 md:px-10 py-12 md:py-14 relative">
+        <ThemeToggle theme={theme} onChoose={chooseTheme} />
+
+        <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
+          <a href={`/${locale}/dashboard`} className={linkColor}>{t.backToDashboard}</a>
+          <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 
         <div className="flex justify-center mb-6">
           <a href={`/${locale}`} aria-label={t.homeAriaLabel} className="hover:opacity-90 transition-opacity">
-            <span className="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">AFOS Analytics</span>
+            <span className={`text-3xl md:text-4xl font-extrabold tracking-tight ${wordmarkColor}`}>AFOS Analytics</span>
           </a>
         </div>
 
-        <p className="text-center text-xs font-extrabold text-primary uppercase tracking-[0.25em] mb-2">{t.eyebrow}</p>
-        <h1 className="text-4xl md:text-5xl font-extrabold text-primary text-center mb-3 tracking-tight leading-tight">
+        <p className={`text-center text-xs font-extrabold uppercase tracking-[0.25em] mb-2 ${eyebrowColor}`}>{t.eyebrow}</p>
+        <h1 className={`text-4xl md:text-5xl font-extrabold text-center mb-3 tracking-tight leading-tight ${headingColor}`}>
           {dateExtenso}
         </h1>
-        <p className="text-center text-gray-600 text-base font-medium mb-2">{t.subline}</p>
-        <p className="text-center text-gray-400 text-xs mb-12 italic">{t.disclaimer}</p>
+        <p className={`text-center text-base font-medium mb-2 ${sublineColor}`}>{t.subline}</p>
+        <p className={`text-center text-xs mb-12 italic ${disclaimerColor}`}>{t.disclaimer}</p>
 
         {/* LEDE */}
         {data.lede && (
-          <div className="border-l-4 border-primary pl-5 py-2 mb-10">
+          <div className={`border-l-4 ${ledeBorder} pl-5 py-2 mb-10`}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
                 p: ({ children }) => (
-                  <p className="text-lg md:text-xl text-dark font-medium leading-relaxed">{children}</p>
+                  <p className={`text-lg md:text-xl font-medium leading-relaxed ${ledeText}`}>{children}</p>
                 ),
                 a: ({ href, children }) => (
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{children}</a>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
                 ),
                 strong: ({ children }) => <strong>{children}</strong>,
               }}
@@ -134,57 +232,73 @@ export function AfosDailyTemplate({ data }: Props) {
         {/* BODY (markdown) */}
         <div className="prose prose-slate max-w-none">
           {!data.body && (
-            <p className="text-gray-500 italic">{locale === 'en' ? 'Synthesis content unavailable for this date.' : locale === 'es' ? 'Contenido de la síntesis no disponible para esta fecha.' : 'Conteúdo da síntese indisponível para esta data.'}</p>
+            <p className={`italic ${footerText}`}>{locale === 'en' ? 'Synthesis content unavailable for this date.' : locale === 'es' ? 'Contenido de la síntesis no disponible para esta fecha.' : 'Conteúdo da síntese indisponível para esta data.'}</p>
           )}
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
               h1: () => null,
               h2: ({ children }) => (
-                <h2 className="text-2xl font-bold text-primary mt-10 mb-4 pb-2 border-b-2 border-blue-100">{children}</h2>
+                <h2 className={`text-2xl font-bold mt-10 mb-4 pb-2 border-b-2 ${sectionHeading} ${sectionBorder}`}>{children}</h2>
               ),
-              p: ({ children }) => <p className="mb-4 text-gray-700 leading-relaxed">{children}</p>,
+              p: ({ children }) => <p className={`mb-4 leading-relaxed ${bodyText}`}>{children}</p>,
               a: ({ href, children }) => (
-                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{children}</a>
+                <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
               ),
-              strong: ({ children }) => <strong className="font-bold">{children}</strong>,
-              ul: ({ children }) => <ul className="space-y-3 text-gray-700 leading-relaxed mb-6 list-none pl-0">{children}</ul>,
-              ol: ({ children }) => <ol className="space-y-3 text-gray-700 leading-relaxed mb-6 list-decimal pl-6">{children}</ol>,
-              li: ({ children }) => <li className="flex gap-3"><span className="text-gray-700">{children}</span></li>,
+              strong: ({ children }) => <strong className={`font-bold ${strongColor}`}>{children}</strong>,
+              ul: ({ children }) => <ul className={`space-y-3 leading-relaxed mb-6 list-none pl-0 ${bodyText}`}>{children}</ul>,
+              ol: ({ children }) => <ol className={`space-y-3 leading-relaxed mb-6 list-decimal pl-6 ${bodyText}`}>{children}</ol>,
+              li: ({ children }) => <li className="flex gap-3"><span>{children}</span></li>,
               blockquote: ({ children }) => (
-                <div className="bg-amber-50 border-l-4 border-amber-500 pl-5 py-4 my-4 rounded-r [&_p]:mb-3 [&_p:last-child]:mb-0">
+                <div className={`border-l-4 pl-5 py-4 my-4 rounded-r [&_p]:mb-3 [&_p:last-child]:mb-0 ${blockquoteBg}`}>
                   {children}
                 </div>
               ),
-              hr: () => <hr className="my-10 border-gray-200" />,
+              hr: () => <hr className={`my-10 ${footerBorder}`} />,
             }}
           >
             {data.body}
           </ReactMarkdown>
         </div>
 
+        {/* PREV / NEXT NAVIGATION */}
+        {(nav?.previous || nav?.next) && (
+          <div className={`mt-12 pt-6 border-t ${footerBorder} flex flex-wrap items-center justify-between gap-3 text-sm`}>
+            {nav?.previous ? (
+              <a href={`/${locale}/daily/${nav.previous}`} className={`${linkColor} font-medium`}>
+                {NAV_LABEL[locale].prev}
+              </a>
+            ) : <span />}
+            {nav?.next ? (
+              <a href={`/${locale}/daily/${nav.next}`} className={`${linkColor} font-medium`}>
+                {NAV_LABEL[locale].next}
+              </a>
+            ) : <span />}
+          </div>
+        )}
+
         {/* RODAPÉ MÉTODO */}
-        <div className="mt-16 pt-8 border-t border-gray-200 text-xs text-gray-500 space-y-3">
+        <div className={`mt-12 pt-8 border-t text-xs space-y-3 ${footerBorder} ${footerText}`}>
           {data.sources && (
             <p>
-              <strong className="text-gray-700">{t.sourcesLabel}</strong> {data.sources}
+              <strong className={footerStrong}>{t.sourcesLabel}</strong> {data.sources}
             </p>
           )}
           <p>
-            <strong className="text-gray-700">{t.methodLabel}</strong> {t.methodText}{' '}
-            <a href={`/${locale}/methodology/automated-governance`} className="text-primary hover:underline">{t.methodLink}</a>.
+            <strong className={footerStrong}>{t.methodLabel}</strong> {t.methodText}{' '}
+            <a href={`/${locale}/methodology/automated-governance`} className={linkColor}>{t.methodLink}</a>.
           </p>
           <p>
-            <strong className="text-gray-700">{t.integrationLabel}</strong> {t.integrationText1}{' '}
-            <a href={`/${locale}/dashboard`} className="text-primary hover:underline">{t.integrationText2}</a>{t.integrationText3}{' '}
-            <a href={`/${locale}/how-it-works`} className="text-primary hover:underline">{t.integrationText4}</a>.
+            <strong className={footerStrong}>{t.integrationLabel}</strong> {t.integrationText1}{' '}
+            <a href={`/${locale}/dashboard`} className={linkColor}>{t.integrationText2}</a>{t.integrationText3}{' '}
+            <a href={`/${locale}/how-it-works`} className={linkColor}>{t.integrationText4}</a>.
           </p>
         </div>
 
         <div className="mt-12 text-center">
           <a
             href={`/${locale}/dashboard`}
-            className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors text-sm"
+            className={`inline-block px-8 py-3 rounded-xl font-semibold transition-colors text-sm ${ctaBg}`}
           >
             {t.accessDashboard}
           </a>
