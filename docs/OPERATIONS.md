@@ -120,7 +120,7 @@ npx vercel --prod
 |-----------|-------|---------|----------|
 | App | Response 200 | ✅ | Timeout |
 | Redis | `isKvAvailable()` | `ok: true` | `ok: false` |
-| Cron | Redis timestamp age < 5min | `ok: true` | `ageSeconds > 300` |
+| Cron | Redis timestamp age < 35min | `ok: true` | `ageSeconds > 2100` |
 | Polymarket | Circuit breaker | `CLOSED` | `OPEN` |
 | Neon | `SELECT 1` | `ok: true` | `ok: false` |
 
@@ -332,7 +332,7 @@ curl -X POST .../api/admin/data-request \
 - [x] Neon Postgres conectado (pooled + unpooled)
 - [x] Upstash Redis conectado (rate limit + KV cache)
 - [x] Resend configurado (welcome email)
-- [x] Cron 5min ativo (vercel.json)
+- [x] Cron 30min ativo (vercel.json)
 - [x] `postinstall: prisma generate` no package.json
 - [x] ENV vars em production + preview
 

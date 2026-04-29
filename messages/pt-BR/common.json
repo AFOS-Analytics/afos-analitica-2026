@@ -10,7 +10,7 @@
     "backToHome": "Voltar para a página inicial"
   },
   "footer": {
-    "description": "AFOS Analytics — Plataforma Global de Inteligência Eleitoral | Dados: Polymarket (5min), +17 Institutos TSE, Google News (30min) | Este conteúdo não constitui orientação política",
+    "description": "AFOS Analytics — Plataforma Global de Inteligência Eleitoral | Dados: Polymarket (30min), +17 Institutos TSE, Google News (30min) | Este conteúdo não constitui orientação política",
     "disclaimer": "Dados e probabilidades obtidos da",
     "polymarket": "Polymarket (polymarket.com)",
     "notAffiliated": "— Este site não é afiliado à Polymarket. Os dados são atualizados automaticamente via API pública.",

@@ -1,17 +1,21 @@
 /**
  * Cron Job: /api/cron/refresh-elections
  *
- * Executado automaticamente pela Vercel a cada 5 minutos.
- * Busca TODOS os mercados do Polymarket em PARALELO e grava no Vercel KV.
+ * Executado automaticamente pela Vercel a cada 30 minutos.
+ * Busca TODOS os mercados do Polymarket em PARALELO, grava no Vercel KV
+ * (cache rápido para usuários) e persiste snapshot histórico no Neon
+ * (arquivo auditável de longo prazo).
+ *
+ * Cron unificado em 30min após análise de risco/custo: cron de 5min
+ * exigia escrita no Redis muito frequente e cron paralelo de 30min para
+ * Neon (arquitetura de 2 crons). Com 30min direto, KV e Neon ficam em
+ * sincronia, simplifica a operação, reduz pressão em Vercel/Upstash sob
+ * tráfego pesado e mantém Neon idle entre ticks (scale-to-zero).
  *
  * Fluxo:
- *   Vercel Cron (5min) → esta rota → Polymarket (18 paralelo) → KV
- *   Nenhum usuário é impactado por este processo.
- *   /api/global-map lê do KV (<1ms) em vez de chamar Polymarket.
- *
- * Persistência histórica no Neon foi desacoplada para
- * /api/cron/persist-elections (30min) para reduzir compute hours
- * — escrever em Neon a cada 5min mantinha o banco sempre acordado.
+ *   Vercel Cron (30min) → esta rota → Polymarket (18 paralelo) → KV + Neon
+ *   Usuários servidos pelo KV (<1ms). Neon usado apenas para arquivo
+ *   histórico (não bloqueia leitura do usuário).
  *
  * Segurança:
  *   Vercel envia header CRON_SECRET para autenticar.
@@ -23,10 +27,11 @@ import { aggregateElectionData } from '../../../lib/polymarket/bootstrap';
 import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
+import { persistMarketData } from '../../../lib/polymarket/persist';
 
-// Polymarket fetch de 18 markets em paralelo + KV write.
-// Timing típico <5s; 30s dá folga se Polymarket estiver lento.
-export const maxDuration = 30;
+// Polymarket fetch de 18 markets em paralelo + KV write + Neon upserts.
+// Timing típico <10s; 60s dá folga se Polymarket ou Neon estiverem lentos.
+export const maxDuration = 60;
 
 export async function GET(request: Request) {
   const startTime = Date.now();
@@ -50,14 +55,14 @@ export async function GET(request: Request) {
     const result = await aggregateElectionData();
 
     if (result.fetchedMarkets === 0) {
-      console.warn('[cron] ZERO mercados — KV não atualizado');
+      console.warn('[cron] ZERO mercados — KV e Neon não atualizados');
       return NextResponse.json(
         { ok: false, reason: 'zero-markets', elapsed: Date.now() - startTime },
         { status: 200, headers: buildNoCacheHeaders() }
       );
     }
 
-    // 2. Otimizar e gravar no KV
+    // 2. Otimizar e gravar no KV (caminho quente — usuários leem aqui)
     const optimized = optimizePayload(result.countries);
     const payload = {
       c: optimized,
@@ -68,6 +73,12 @@ export async function GET(request: Request) {
     };
 
     const kvSuccess = await writeGlobalMapData(payload);
+
+    // 3. Persistir snapshot histórico no Neon (fire-and-forget — não bloqueia response).
+    // shouldPersist() em persist.ts aplica tier inteligente (hot/warm/cold).
+    persistMarketData(result.countries).catch((err) => {
+      console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err)
+    })
 
     const elapsed = Date.now() - startTime;
     console.log(`[cron] Refresh completo — ${result.fetchedMarkets}/${result.totalMarkets} mercados, KV=${kvSuccess ? 'OK' : 'SKIP'}, ${elapsed}ms`);

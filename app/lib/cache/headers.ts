@@ -1,7 +1,10 @@
 /**
  * Cache Multi-Camada para AFOS Analytics
  *
- * Usuário → Browser (60s) → Vercel Edge (5min) → KV (<1ms) → origem
+ * Usuário → Browser (5min) → Vercel Edge (30min) → KV (<1ms; cron 30min) → origem
+ *
+ * TTLs alinhados à frequência do cron de 30min: CDN cacheia até a próxima
+ * atualização do cron; browser cacheia 5min para reload rápido.
  *
  * Apenas os profiles efetivamente usados estão aqui.
  */
@@ -12,11 +15,11 @@ export interface CacheProfile {
   browser: string;
 }
 
-/** Mapa global: dados de eleições, atualizado pelo cron a cada 5min. */
+/** Mapa global: dados de eleições, atualizado pelo cron a cada 30min. */
 export const CACHE_GLOBAL_MAP: CacheProfile = {
-  vercelCdn: 'max-age=300, stale-while-revalidate=600',
-  cdn: 'max-age=120, stale-while-revalidate=300',
-  browser: 'public, max-age=60',
+  vercelCdn: 'max-age=1800, stale-while-revalidate=3600',
+  cdn: 'max-age=900, stale-while-revalidate=1800',
+  browser: 'public, max-age=300',
 };
 
 /** Headers de cache para uma resposta de API. */
