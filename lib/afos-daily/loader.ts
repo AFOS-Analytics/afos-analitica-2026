@@ -6,17 +6,39 @@ import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
+export const SUPPORTED_LOCALES = ['pt-BR', 'en', 'es'] as const
+export type SupportedLocale = typeof SUPPORTED_LOCALES[number]
+
+export function isValidLocale(loc: string): loc is SupportedLocale {
+  return (SUPPORTED_LOCALES as readonly string[]).includes(loc)
+}
+
 export function isValidDate(date: string): boolean {
-  return DATE_RE.test(date)
+  if (!DATE_RE.test(date)) return false
+  // Defensively validate that the date is a real calendar date
+  // (the regex alone allows things like "2026-13-45" or "2026-02-30").
+  const [y, m, d] = date.split('-').map(Number)
+  if (m < 1 || m > 12 || d < 1 || d > 31) return false
+  const probe = new Date(Date.UTC(y, m - 1, d))
+  return (
+    probe.getUTCFullYear() === y &&
+    probe.getUTCMonth() === m - 1 &&
+    probe.getUTCDate() === d
+  )
 }
 
 export function listDailies(): string[] {
   if (!existsSync(DAILY_DIR)) return []
-  return readdirSync(DAILY_DIR)
-    .filter(f => f.endsWith('.md'))
-    .map(f => f.replace('.md', ''))
-    .filter(isValidDate)
-    .sort()
+  try {
+    return readdirSync(DAILY_DIR)
+      .filter(f => f.endsWith('.md'))
+      .map(f => f.replace('.md', ''))
+      .filter(isValidDate)
+      .sort()
+  } catch (err) {
+    console.error('[afos-daily] Failed to list dailies:', err)
+    return []
+  }
 }
 
 export function getLatestDate(): string | null {
@@ -29,8 +51,18 @@ export function loadDaily(date: string): AfosDailyData | null {
   const path = join(DAILY_DIR, `${date}.md`)
   if (!existsSync(path)) return null
 
-  const raw = readFileSync(path, 'utf-8')
-  const { data: fm, content: rawBody } = matter(raw)
+  let raw: string
+  let fm: Record<string, unknown>
+  let rawBody: string
+  try {
+    raw = readFileSync(path, 'utf-8')
+    const parsed = matter(raw)
+    fm = parsed.data as Record<string, unknown>
+    rawBody = parsed.content
+  } catch (err) {
+    console.error(`[afos-daily] Failed to read or parse ${date}.md:`, err)
+    return null
+  }
 
   // Extract the sources list from the markdown footer before stripping it.
   // Pattern: "**Fontes citadas:** Source A, Source B, ..." (single line, may include period at end).

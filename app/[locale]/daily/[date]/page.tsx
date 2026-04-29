@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
-import { loadDaily, listDailies, isValidDate } from '../../../../lib/afos-daily/loader'
+import { loadDaily, listDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader'
 import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
@@ -9,15 +9,16 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const locales = ['pt-BR', 'en', 'es']
   const dates = listDailies()
-  return locales.flatMap(locale => dates.map(date => ({ locale, date })))
+  return SUPPORTED_LOCALES.flatMap(locale => dates.map(date => ({ locale, date })))
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {
-  if (!isValidDate(params.date)) return { title: 'AFOS Daily | AFOS Analytics' }
+  if (!isValidLocale(params.locale) || !isValidDate(params.date)) {
+    return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
+  }
   const data = loadDaily(params.date)
-  if (!data) return { title: 'AFOS Daily | AFOS Analytics' }
+  if (!data) return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
 
   const ledePlain = data.lede.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
   const url = `https://afos-analytics.com/${params.locale}/daily/${params.date}`
@@ -68,6 +69,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 }
 
 export default function DailyByDatePage({ params }: PageProps) {
+  if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
   const data = loadDaily(params.date)
   if (!data) notFound()
