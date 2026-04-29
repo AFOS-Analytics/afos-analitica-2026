@@ -1,4 +1,5 @@
 import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
+import { cleanMarkdownText } from './utils'
 
 const SITE = 'https://afos-analytics.com'
 const ORG_LOGO = `${SITE}/brand/logo-icon-512.png`
@@ -88,14 +89,6 @@ function parseSources(sourcesStr: string): Array<{ name: string; url?: string }>
     })
 }
 
-function cleanText(s: string): string {
-  return s
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
 function parseUpdatedAt(updatedAt: string, dateIso: string): string {
   // updatedAt format: "DD/MM/YYYY, HH:MM" — convert to ISO 8601 with -03:00 offset (BRT)
   const m = updatedAt.match(/^(\d{2})\/(\d{2})\/(\d{4}),?\s+(\d{2}):(\d{2})$/)
@@ -117,7 +110,7 @@ function parseUpdatedAt(updatedAt: string, dateIso: string): string {
  */
 export function buildArticleSchema(data: AfosDailyData, locale: string) {
   const url = `${SITE}/${locale}/daily/${data.date}`
-  const description = cleanText(data.lede).slice(0, 300)
+  const description = cleanMarkdownText(data.lede).slice(0, 300)
   const datePublished = `${data.date}T00:00:00-03:00`
   const dateModified = parseUpdatedAt(data.updatedAt, data.date)
   const mentions = parseSources(data.sources).map(s => ({

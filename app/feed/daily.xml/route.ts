@@ -15,6 +15,7 @@
  */
 
 import { listDailies, loadDaily } from '../../../lib/afos-daily/loader'
+import { cleanMarkdownText } from '../../../lib/afos-daily/utils'
 
 const SITE = 'https://afos-analytics.com'
 const FEED_URL = `${SITE}/feed/daily.xml`
@@ -27,14 +28,6 @@ function escape(s: string): string {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;')
-}
-
-function cleanText(s: string): string {
-  return s
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/\s+/g, ' ')
-    .trim()
 }
 
 function toRfc822(dateIso: string, updatedAt: string): string {
@@ -60,7 +53,7 @@ export function GET() {
       const data = loadDaily(date)
       if (!data) return ''
       const url = `${SITE}/pt-BR/daily/${date}`
-      const description = cleanText(data.lede).slice(0, 500)
+      const description = cleanMarkdownText(data.lede).slice(0, 500)
       return `    <item>
       <title>${escape(data.title)}</title>
       <link>${url}</link>

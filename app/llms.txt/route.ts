@@ -12,16 +12,9 @@
  */
 
 import { listDailies, loadDaily } from '../../lib/afos-daily/loader'
+import { cleanMarkdownText } from '../../lib/afos-daily/utils'
 
 const SITE = 'https://afos-analytics.com'
-
-function cleanLede(s: string): string {
-  return s
-    .replace(/\*\*([^*]+)\*\*/g, '$1')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
 
 export const dynamic = 'force-static'
 export const revalidate = 3600
@@ -34,7 +27,7 @@ export function GET() {
       const data = loadDaily(date)
       if (!data) return ''
       const url = `${SITE}/pt-BR/daily/${date}`
-      const lede = cleanLede(data.lede).slice(0, 220)
+      const lede = cleanMarkdownText(data.lede).slice(0, 220)
       return `- [${data.title}](${url}): ${lede}`
     })
     .filter(Boolean)
