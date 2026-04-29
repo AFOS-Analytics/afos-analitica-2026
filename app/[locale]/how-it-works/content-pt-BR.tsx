@@ -471,7 +471,7 @@ export function HowItWorksPtBR() {
       <h3 className={S.h3}>Os dados chegam sozinhos</h3>
       <p className={S.p}>Tudo o que você lê vem de pipelines automatizados que rodam 24 horas por dia:</p>
       <ul className={S.ul}>
-        <li><strong>A cada 5 minutos:</strong> o Polymarket é consultado e os percentuais são atualizados</li>
+        <li><strong>A cada 30 minutos:</strong> o Polymarket é consultado e os percentuais são atualizados</li>
         <li><strong>A cada 30 minutos:</strong> notícias são coletadas em 6 categorias temáticas e 3 idiomas</li>
         <li><strong>Diariamente:</strong> novas pesquisas registradas no TSE são baixadas e indexadas</li>
         <li><strong>Duas vezes ao dia (12h e 18h BRT):</strong> cruzamento completo das 3 fontes é executado, comparando o estado atual com o do dia anterior (variações ↑↓pp), e persistido no banco para formar histórico auditável</li>
