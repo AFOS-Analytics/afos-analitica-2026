@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
+import { listDailies } from '../lib/afos-daily/loader'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://afos-analytics.com'
@@ -123,6 +124,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
       alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`, `${baseUrl}/en/methodology/automated-governance`) },
     })
+  }
+
+  // AFOS Daily — synthesis index per locale (always redirects to latest)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/daily`,
+      lastModified: now,
+      changeFrequency: 'daily',
+      priority: 0.9,
+      alternates: { languages: hreflang((l) => `/${l}/daily`) },
+    })
+  }
+
+  // AFOS Daily — permalinks per date (3 locales × N dates)
+  // Latest date gets higher priority. Each entry's lastModified = the date.
+  const dailyDates = listDailies()
+  const latestDate = dailyDates.length ? dailyDates[dailyDates.length - 1] : null
+  for (const date of dailyDates) {
+    const isLatest = date === latestDate
+    const lastMod = new Date(`${date}T00:00:00-03:00`)
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/daily/${date}`,
+        lastModified: lastMod,
+        changeFrequency: 'monthly',
+        priority: isLatest ? 0.95 : 0.7,
+        alternates: { languages: hreflang((l) => `/${l}/daily/${date}`) },
+      })
+    }
   }
 
   return entries
