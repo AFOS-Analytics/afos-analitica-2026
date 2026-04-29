@@ -66,6 +66,56 @@ ${sanitize(sourceText)}
 </source_text>`;
 }
 
+/** Prompt para tradução de AFOS Daily — preserva markdown + glossário brasileiro */
+export function afosDailyTranslationPrompt(
+  sourceText: string,
+  sourceLocale: string,
+  targetLocale: string,
+  glossaryEntries: Array<{ term: string; id: string }>
+): string {
+  const glossaryRules = glossaryEntries
+    .map(g => `  - "${g.term}" → [${g.term}](/${targetLocale}/glossary#${g.id})`)
+    .join('\n')
+
+  return `Translate the following AFOS Daily synthesis from ${sourceLocale} to ${targetLocale}.
+
+CRITICAL RULES:
+
+1. **Preserve markdown structure exactly** — headings (## ), inline links [text](url), bold (**text**), italic, blockquotes (>), bullet lists (1., 2., -), horizontal rules (---), and line breaks.
+
+2. **Preserve all data points exactly** — numbers (38.50%), percentage variations (↑3.0pp, ↓1.55pp, +6.05pp), counts (n=5.000, n=10.700), times ("18:30 BRT", "07h38"). Never round or rephrase numbers.
+
+3. **Convert dates to target locale conventions:**
+   - English (en): "April 28", "April 27, 2026", "January 22"
+   - Spanish (es): "28 de abril", "27 de abril de 2026", "22 de enero"
+   - Source uses Brazilian conventions like "27/Abr", "22 de abril de 2026" — convert these.
+
+4. **Preserve inline link URLs identically.** Translate only the [text] portion of [text](url). Never invent or change URLs.
+
+5. **Brazilian glossary terms — KEEP IN PORTUGUESE and link to glossary.** For each occurrence of these terms, use the exact replacement shown:
+${glossaryRules}
+   Apply to plain text occurrences. If the term is already inside another markdown link (e.g., [TSE](https://www.tse.jus.br)), keep that link as is. Otherwise, replace the plain term with the glossary link above.
+
+6. **Preserve proper names exactly:** Lula, Flávio Bolsonaro, Tarcísio de Freitas, Romeu Zema, Ronaldo Caiado, Renan Santos, Fernando Haddad, Ratinho Jr., Eduardo Paes, Cláudio Castro, Benedita da Silva, Sergio Moro, Cleitinho, André do Prado, Kassab, Ciro Nogueira, Alexandre de Moraes, Vorcaro, João Campos, Raquel Lyra, etc. Newspaper names (Folha de S.Paulo, Estadão, CNN Brasil, etc.) and outlet names (G1, SBT News, Valor Econômico, etc.) stay in original Portuguese.
+
+7. **Brand terms NEVER translate:** "AFOS Daily", "AFOS Analytics", "Polymarket".
+
+8. **Maintain observational tone.** NEVER add adjectives like "authoritarian", "corrupt", "savior", "radical", "extremist", "visionary". The source is intentionally non-partisan; the translation must preserve that neutrality.
+
+9. **Convert Brazilian-specific labels carefully:**
+   - "1º turno" → "first round" (en) / "primera vuelta" (es)
+   - "2º turno" → "runoff" or "second round" (en) / "segunda vuelta" (es)
+   - But if these terms have a glossary entry above (rule 5), follow rule 5 and link to glossary instead.
+
+10. **Section headings:** translate the descriptive part but keep the numbering. Example: "## 1. Mercado de previsão" → "## 1. Prediction market" (en) / "## 1. Mercado de predicción" (es).
+
+Return ONLY the translated markdown. No explanations, no preamble, no code fences around the result.
+
+<source_text>
+${sanitize(sourceText)}
+</source_text>`;
+}
+
 /** Prompt para QA de tradução (validação semântica) */
 export function qaPrompt(originalText: string, translatedText: string, sourceLocale: string, targetLocale: string): string {
   return `Compare these two texts and answer ONLY "PASS" or "FAIL: [reason]".

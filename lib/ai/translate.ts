@@ -5,7 +5,7 @@
  * Cache: in-memory com LRU 500 (tabelas AI serão estendidas em fase futura).
  */
 
-import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt } from './prompts'
+import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt, afosDailyTranslationPrompt } from './prompts'
 import { createHash } from 'crypto'
 import { prisma } from '../db'
 
@@ -13,7 +13,9 @@ export interface TranslationRequest {
   sourceText: string
   sourceLocale: string
   targetLocale: string
-  type: 'ui' | 'editorial'
+  type: 'ui' | 'editorial' | 'afos-daily'
+  /** For type='afos-daily' only — terms to keep in PT and link to glossary */
+  glossaryEntries?: Array<{ term: string; id: string }>
 }
 
 export interface TranslationResult {
@@ -66,10 +68,12 @@ async function callProvider(
   systemPrompt: string,
   userPrompt: string,
   provider: Provider,
-  apiKey: string
+  apiKey: string,
+  maxTokens = 2048,
+  timeoutMs = 30000
 ): Promise<{ text: string; tokensIn?: number; tokensOut?: number }> {
   const controller = new AbortController()
-  const timeout = setTimeout(() => controller.abort(), 30000)
+  const timeout = setTimeout(() => controller.abort(), timeoutMs)
 
   try {
     if (provider === 'anthropic') {
@@ -82,7 +86,7 @@ async function callProvider(
         },
         body: JSON.stringify({
           model: 'claude-haiku-4-5-20251001',
-          max_tokens: 2048,
+          max_tokens: maxTokens,
           system: systemPrompt,
           messages: [{ role: 'user', content: userPrompt }],
         }),
@@ -111,7 +115,7 @@ async function callProvider(
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt },
           ],
-          max_tokens: 2048,
+          max_tokens: maxTokens,
           temperature: 0.1,
         }),
         signal: controller.signal,
@@ -188,10 +192,16 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
   const userPrompt =
     req.type === 'ui'
       ? uiTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
-      : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
+      : req.type === 'afos-daily'
+        ? afosDailyTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale, req.glossaryEntries ?? [])
+        : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
+
+  // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
+  const maxTokens = req.type === 'afos-daily' ? 4096 : 2048
+  const timeoutMs = req.type === 'afos-daily' ? 60000 : 30000
 
   const start = Date.now()
-  const result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey)
+  const result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey, maxTokens, timeoutMs)
   const latencyMs = Date.now() - start
 
   if (!result.text) throw new Error('empty_translation')
