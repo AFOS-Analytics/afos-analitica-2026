@@ -60,13 +60,13 @@ export function DailyHeroCard() {
   const [meta, setMeta] = useState<DailyMeta | null>(null)
 
   useEffect(() => {
-    fetch('/api/afos-daily/latest')
+    fetch(`/api/afos-daily/latest?locale=${encodeURIComponent(tKey)}`)
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (d?.ok) setMeta({ date: d.date, title: d.title, lede: d.lede, updatedAt: d.updatedAt, previousDate: d.previousDate ?? null })
       })
       .catch(() => { /* fail silently — card simply doesn't render */ })
-  }, [])
+  }, [tKey])
 
   if (!meta) return null
 
