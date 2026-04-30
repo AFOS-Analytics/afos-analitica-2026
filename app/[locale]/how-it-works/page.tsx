@@ -86,18 +86,27 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
+const MENTIONS_I18N: Record<string, { dailyName: string; dailyDesc: string; glossaryName: string }> = {
+  'pt-BR': {
+    dailyName: 'AFOS Daily — Síntese Narrativa Diária',
+    dailyDesc: 'Síntese narrativa diária cruzando Polymarket, pesquisas eleitorais e notícias com link auditável por alegação. Disponível em 3 idiomas.',
+    glossaryName: 'Glossário Político Brasileiro',
+  },
+  en: {
+    dailyName: 'AFOS Daily — Daily Narrative Synthesis',
+    dailyDesc: 'Daily narrative synthesis cross-referencing Polymarket, electoral polls, and news with auditable links per claim. Available in 3 languages.',
+    glossaryName: 'Brazilian Political Glossary',
+  },
+  es: {
+    dailyName: 'AFOS Daily — Síntesis Narrativa Diaria',
+    dailyDesc: 'Síntesis narrativa diaria cruzando Polymarket, encuestas electorales y noticias con enlace auditable por afirmación. Disponible en 3 idiomas.',
+    glossaryName: 'Glosario Político Brasileño',
+  },
+}
+
 function articleSchema(loc: Locale) {
   const seo = SEO[loc] || SEO['en']
-  const dailyName = loc === 'pt-BR'
-    ? 'AFOS Daily — Síntese Narrativa Diária'
-    : loc === 'es'
-      ? 'AFOS Daily — Síntesis Narrativa Diaria'
-      : 'AFOS Daily — Daily Narrative Synthesis'
-  const dailyDesc = loc === 'pt-BR'
-    ? 'Síntese narrativa diária cruzando Polymarket, pesquisas eleitorais e notícias com link auditável por alegação. Disponível em 3 idiomas.'
-    : loc === 'es'
-      ? 'Síntesis narrativa diaria cruzando Polymarket, encuestas electorales y noticias con enlace auditable por afirmación. Disponible en 3 idiomas.'
-      : 'Daily narrative synthesis cross-referencing Polymarket, electoral polls, and news with auditable links per claim. Available in 3 languages.'
+  const m = MENTIONS_I18N[loc] || MENTIONS_I18N.en
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -129,8 +138,8 @@ function articleSchema(loc: Locale) {
       {
         '@type': 'CreativeWork',
         '@id': `${BASE_URL}/${loc}/daily`,
-        name: dailyName,
-        description: dailyDesc,
+        name: m.dailyName,
+        description: m.dailyDesc,
         url: `${BASE_URL}/${loc}/daily`,
         inLanguage: seo.htmlLocale,
         publisher: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
@@ -138,7 +147,7 @@ function articleSchema(loc: Locale) {
       {
         '@type': 'DefinedTermSet',
         '@id': `${BASE_URL}/${loc}/glossary`,
-        name: loc === 'pt-BR' ? 'Glossário Político Brasileiro' : loc === 'es' ? 'Glosario Político Brasileño' : 'Brazilian Political Glossary',
+        name: m.glossaryName,
         url: `${BASE_URL}/${loc}/glossary`,
       },
     ],

@@ -93,15 +93,12 @@ function stripTemplateArtifacts(rawBody: string): string {
 
 export function loadDaily(date: string, locale?: string): AfosDailyData | null {
   if (!isValidDate(date)) return null
-  // For non-default locales, try the locale-specific file first ({date}.{locale}.md),
-  // falling back to the canonical PT-BR file ({date}.md) if the translation
-  // is not available yet. Default locale (pt-BR) goes straight to the canonical file.
-  const candidates: string[] = []
-  if (locale && locale !== 'pt-BR' && isValidLocale(locale)) {
-    candidates.push(join(DAILY_DIR, `${date}.${locale}.md`))
-  }
-  candidates.push(join(DAILY_DIR, `${date}.md`))
-  const path = candidates.find(p => existsSync(p))
+  // Try {date}.{locale}.md first; fall back to canonical {date}.md (PT-BR).
+  const canonical = join(DAILY_DIR, `${date}.md`)
+  const localized = locale && locale !== 'pt-BR' && isValidLocale(locale)
+    ? join(DAILY_DIR, `${date}.${locale}.md`)
+    : null
+  const path = localized && existsSync(localized) ? localized : existsSync(canonical) ? canonical : null
   if (!path) return null
 
   let fm: Record<string, unknown>
