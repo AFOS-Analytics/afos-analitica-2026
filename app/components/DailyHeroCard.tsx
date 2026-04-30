@@ -73,11 +73,20 @@ export function DailyHeroCard() {
   const lede = stripMarkdown(meta.lede)
   const dateShort = formatDateShort(meta.date, tKey)
   const linkHref = `/${tKey}/daily/${meta.date}`
+  const ariaLabel = tKey === 'en'
+    ? `Read AFOS Daily for ${dateShort} — ${meta.title}`
+    : tKey === 'es'
+      ? `Leer AFOS Daily de ${dateShort} — ${meta.title}`
+      : `Ler AFOS Daily de ${dateShort} — ${meta.title}`
 
   return (
     <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-5 sm:mt-6">
+      {/* Discovery hints for crawlers and assistive engines */}
+      <link rel="alternate" type="text/html" href={linkHref} title={meta.title} hrefLang={tKey} />
+      <link rel="alternate" type="application/rss+xml" href="/feed/daily.xml" title="AFOS Daily — RSS feed" />
       <a
         href={linkHref}
+        aria-label={ariaLabel}
         className="block bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-4 md:p-5 transition-colors group"
       >
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
@@ -92,7 +101,11 @@ export function DailyHeroCard() {
       </a>
       {meta.previousDate && (
         <div className="mt-2 text-right">
-          <a href={`/${tKey}/daily/${meta.previousDate}`} className="text-xs text-gray-500 hover:text-primary hover:underline">
+          <a
+            href={`/${tKey}/daily/${meta.previousDate}`}
+            aria-label={tKey === 'en' ? `See previous AFOS Daily synthesis (${meta.previousDate})` : tKey === 'es' ? `Ver síntesis anterior de AFOS Daily (${meta.previousDate})` : `Ver síntese anterior do AFOS Daily (${meta.previousDate})`}
+            className="text-xs text-gray-500 hover:text-primary hover:underline"
+          >
             ← {t.seePrevious}
           </a>
         </div>

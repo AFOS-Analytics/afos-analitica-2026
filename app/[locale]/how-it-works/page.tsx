@@ -88,6 +88,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 function articleSchema(loc: Locale) {
   const seo = SEO[loc] || SEO['en']
+  const dailyName = loc === 'pt-BR'
+    ? 'AFOS Daily — Síntese Narrativa Diária'
+    : loc === 'es'
+      ? 'AFOS Daily — Síntesis Narrativa Diaria'
+      : 'AFOS Daily — Daily Narrative Synthesis'
+  const dailyDesc = loc === 'pt-BR'
+    ? 'Síntese narrativa diária cruzando Polymarket, pesquisas eleitorais e notícias com link auditável por alegação. Disponível em 3 idiomas.'
+    : loc === 'es'
+      ? 'Síntesis narrativa diaria cruzando Polymarket, encuestas electorales y noticias con enlace auditable por afirmación. Disponible en 3 idiomas.'
+      : 'Daily narrative synthesis cross-referencing Polymarket, electoral polls, and news with auditable links per claim. Available in 3 languages.'
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -95,7 +105,7 @@ function articleSchema(loc: Locale) {
     description: seo.description,
     inLanguage: seo.htmlLocale,
     datePublished: '2026-04-19T12:00:00Z',
-    dateModified: '2026-04-19T22:00:00Z',
+    dateModified: '2026-04-30T22:00:00Z',
     url: `${BASE_URL}/${loc}/${SLUG}`,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -115,6 +125,23 @@ function articleSchema(loc: Locale) {
         url: `${BASE_URL}/favicon.svg`,
       },
     },
+    mentions: [
+      {
+        '@type': 'CreativeWork',
+        '@id': `${BASE_URL}/${loc}/daily`,
+        name: dailyName,
+        description: dailyDesc,
+        url: `${BASE_URL}/${loc}/daily`,
+        inLanguage: seo.htmlLocale,
+        publisher: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
+      },
+      {
+        '@type': 'DefinedTermSet',
+        '@id': `${BASE_URL}/${loc}/glossary`,
+        name: loc === 'pt-BR' ? 'Glossário Político Brasileiro' : loc === 'es' ? 'Glosario Político Brasileño' : 'Brazilian Political Glossary',
+        url: `${BASE_URL}/${loc}/glossary`,
+      },
+    ],
   }
 }
 
