@@ -60,12 +60,23 @@ export function DailyHeroCard() {
   const [meta, setMeta] = useState<DailyMeta | null>(null)
 
   useEffect(() => {
-    fetch(`/api/afos-daily/latest?locale=${encodeURIComponent(tKey)}`)
+    // AbortController prevents race conditions when the user toggles locale
+    // rapidly: fetches from previous locales are cancelled before they can
+    // overwrite the response for the current locale.
+    const ctrl = new AbortController()
+    fetch(`/api/afos-daily/latest?locale=${tKey}`, { signal: ctrl.signal })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (d?.ok) setMeta({ date: d.date, title: d.title, lede: d.lede, updatedAt: d.updatedAt, previousDate: d.previousDate ?? null })
       })
-      .catch(() => { /* fail silently — card simply doesn't render */ })
+      .catch(err => {
+        // AbortError is expected on locale change; ignore. Other errors:
+        // fail silently so the card simply doesn't render.
+        if (err?.name !== 'AbortError') {
+          /* swallow */
+        }
+      })
+    return () => ctrl.abort()
   }, [tKey])
 
   if (!meta) return null
