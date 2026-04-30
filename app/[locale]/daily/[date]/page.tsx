@@ -29,7 +29,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${data.title} | AFOS Analytics`,
     description: ledePlain,
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
     alternates: {
       canonical: url,
       types: {

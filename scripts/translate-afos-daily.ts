@@ -139,9 +139,9 @@ async function main() {
     process.exit(0)
   }
 
-  if (!process.env.TRANSLATION_API_KEY) {
-    console.error('\n❌ TRANSLATION_API_KEY not set in .env.local')
-    console.error('   Add: TRANSLATION_API_KEY="sk-ant-api03-..."')
+  if (!process.env.TRANSLATION_API_KEY && !process.env.ANTHROPIC_API_KEY) {
+    console.error('\n❌ Neither TRANSLATION_API_KEY nor ANTHROPIC_API_KEY set in .env.local')
+    console.error('   Add: ANTHROPIC_API_KEY="sk-ant-api03-..." (or TRANSLATION_API_KEY for explicit override)')
     console.error('   Get a key at: https://console.anthropic.com/settings/keys\n')
     process.exit(1)
   }
