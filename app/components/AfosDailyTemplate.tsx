@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-daily-theme'
@@ -24,18 +25,13 @@ interface NavDates {
 }
 
 function formatDateExtenso(dateIso: string, locale: string): string {
-  const meses: Record<string, string[]> = {
-    'pt-BR': ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'],
-    en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    es: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-  }
   const parts = dateIso.split('-').map(Number)
   if (parts.length !== 3 || parts.some(Number.isNaN)) return dateIso
   const [y, m, d] = parts
   if (m < 1 || m > 12) return dateIso
-  const monthName = (meses[locale] ?? meses['pt-BR'])[m - 1]
-  if (locale === 'en') return `${monthName} ${d}, ${y}`
-  return `${d} de ${monthName} de ${y}`
+  const loc: MonthsLocale = (locale === 'en' || locale === 'es') ? locale : 'pt-BR'
+  const monthName = MONTHS[loc][m - 1]
+  return loc === 'en' ? `${monthName} ${d}, ${y}` : `${d} de ${monthName} de ${y}`
 }
 
 const T = {

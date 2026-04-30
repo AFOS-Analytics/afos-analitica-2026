@@ -27,14 +27,28 @@ export function isValidDate(date: string): boolean {
   )
 }
 
+// Memoize listDailies for 60s. The directory only changes when a new daily
+// is committed (manual op). 60s TTL means worst case 60s of stale list,
+// but eliminates readdirSync from the hot path of /api/afos-daily/latest.
+const LIST_TTL_MS = 60 * 1000
+let listCache: { list: string[]; expiresAt: number } | null = null
+
 export function listDailies(): string[] {
-  if (!existsSync(DAILY_DIR)) return []
+  const now = Date.now()
+  if (listCache && now < listCache.expiresAt) return listCache.list
+
+  if (!existsSync(DAILY_DIR)) {
+    listCache = { list: [], expiresAt: now + LIST_TTL_MS }
+    return []
+  }
   try {
-    return readdirSync(DAILY_DIR)
+    const list = readdirSync(DAILY_DIR)
       .filter(f => f.endsWith('.md'))
       .map(f => f.replace('.md', ''))
       .filter(isValidDate)
       .sort()
+    listCache = { list, expiresAt: now + LIST_TTL_MS }
+    return list
   } catch (err) {
     console.error('[afos-daily] Failed to list dailies:', err)
     return []
@@ -112,6 +126,15 @@ export function loadDaily(date: string, locale?: string): AfosDailyData | null {
     return null
   }
 
+  // Required fields must be present in the frontmatter so the page doesn't
+  // render skeleton content. If any is missing, return null so the caller
+  // (page or API) can decide how to handle (notFound, fallback, etc).
+  const lede = str(fm.lede)
+  if (!lede || !fm.date || !fm.title) {
+    console.warn(`[afos-daily] ${path} missing required frontmatter (lede/date/title)`)
+    return null
+  }
+
   const dateStr = coerceDate(fm.date, date)
 
   return {
@@ -120,7 +143,7 @@ export function loadDaily(date: string, locale?: string): AfosDailyData | null {
     title: str(fm.title, `AFOS Daily — ${dateStr}`),
     locale: str(fm.locale, 'pt-BR'),
     status: str(fm.status, 'published'),
-    lede: str(fm.lede),
+    lede,
     body: stripTemplateArtifacts(rawBody),
     sources: extractSources(rawBody),
   }
