@@ -1,22 +1,25 @@
 /**
- * GET /api/afos-daily/latest
+ * GET /api/afos-daily/latest?locale=pt-BR|en|es
  * Returns metadata of the most recent AFOS Daily synthesis (date, title, lede).
- * Used by the dashboard hero card. Static at build time.
+ * Used by the dashboard hero card. Loader falls back to PT-BR if the locale
+ * variant ({date}.{locale}.md) doesn't exist yet.
  */
 
-import { NextResponse } from 'next/server'
-import { getLatestDate, loadDaily, getAdjacentDates } from '../../../../lib/afos-daily/loader'
+import { NextRequest, NextResponse } from 'next/server'
+import { getLatestDate, loadDaily, getAdjacentDates, isValidLocale } from '../../../../lib/afos-daily/loader'
 
-export const dynamic = 'force-static'
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
-export function GET() {
+export function GET(req: NextRequest) {
+  const localeParam = req.nextUrl.searchParams.get('locale') ?? 'pt-BR'
+  const locale = isValidLocale(localeParam) ? localeParam : 'pt-BR'
+
   const date = getLatestDate()
   if (!date) {
     return NextResponse.json({ ok: false, reason: 'no-daily' }, { status: 404 })
   }
 
-  const data = loadDaily(date)
+  const data = loadDaily(date, locale)
   if (!data) {
     return NextResponse.json({ ok: false, reason: 'load-failed' }, { status: 500 })
   }
