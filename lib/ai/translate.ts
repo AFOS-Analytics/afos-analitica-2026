@@ -58,7 +58,7 @@ function setCache(key: string, text: string) {
 type Provider = 'anthropic' | 'openai'
 
 function getProvider(): { provider: Provider; apiKey: string } | null {
-  const key = process.env.TRANSLATION_API_KEY
+  const key = process.env.TRANSLATION_API_KEY ?? process.env.ANTHROPIC_API_KEY
   if (!key) return null
   const provider = (process.env.TRANSLATION_PROVIDER || 'anthropic') as Provider
   return { provider, apiKey: key }
