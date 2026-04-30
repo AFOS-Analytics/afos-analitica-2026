@@ -37,10 +37,6 @@ export function GET(req: NextRequest) {
     },
     {
       headers: {
-        // Cache 1h. Vary: Accept-Language is defensive — the locale itself
-        // comes from ?locale= which is already part of the CDN cache key,
-        // but Vary protects against any proxy that might not include the
-        // query string in its cache key.
         'Cache-Control': 'public, max-age=3600, s-maxage=3600',
         'Vary': 'Accept-Language',
       },
