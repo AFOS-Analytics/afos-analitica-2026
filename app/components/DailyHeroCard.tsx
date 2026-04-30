@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useTranslation } from '../i18n/context'
+import { MONTHS } from '../../lib/i18n/months'
 
 interface DailyMeta {
   date: string
@@ -32,18 +33,13 @@ const T = {
   },
 }
 
-const MONTHS_PT = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-
-function formatDateShort(dateIso: string, locale: string): string {
+function formatDateShort(dateIso: string, locale: 'pt-BR' | 'en' | 'es'): string {
   const parts = dateIso.split('-').map(Number)
   if (parts.length !== 3 || parts.some(Number.isNaN)) return dateIso
   const [y, m, d] = parts
   if (m < 1 || m > 12) return dateIso
-  if (locale === 'en') return `${MONTHS_EN[m - 1]} ${d}, ${y}`
-  if (locale === 'es') return `${d} de ${MONTHS_ES[m - 1]}`
-  return `${d} de ${MONTHS_PT[m - 1]}`
+  const month = MONTHS[locale][m - 1]
+  return locale === 'en' ? `${month} ${d}, ${y}` : `${d} de ${month}`
 }
 
 function stripMarkdown(s: string): string {

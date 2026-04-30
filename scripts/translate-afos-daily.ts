@@ -33,6 +33,7 @@ import { translate } from '../lib/ai/translate'
 import { afosDailyTranslationPrompt } from '../lib/ai/prompts'
 import { loadGlossary } from '../lib/glossary/loader'
 import { isValidDate } from '../lib/afos-daily/loader'
+import { MONTHS } from '../lib/i18n/months'
 
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
 
@@ -75,16 +76,12 @@ interface TitleInfo {
   es: string
 }
 
-const MONTHS_PT = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-const MONTHS_ES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-
 function buildTitles(date: string): TitleInfo {
   const [y, m, d] = date.split('-').map(Number)
   return {
-    pt: `AFOS Daily — ${d} de ${MONTHS_PT[m - 1]} de ${y}`,
-    en: `AFOS Daily — ${MONTHS_EN[m - 1]} ${d}, ${y}`,
-    es: `AFOS Daily — ${d} de ${MONTHS_ES[m - 1]} de ${y}`,
+    pt: `AFOS Daily — ${d} de ${MONTHS['pt-BR'][m - 1]} de ${y}`,
+    en: `AFOS Daily — ${MONTHS.en[m - 1]} ${d}, ${y}`,
+    es: `AFOS Daily — ${d} de ${MONTHS.es[m - 1]} de ${y}`,
   }
 }
 
