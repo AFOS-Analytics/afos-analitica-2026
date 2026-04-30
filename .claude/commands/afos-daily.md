@@ -38,7 +38,7 @@ Seguido de 6 seções obrigatórias:
 3. **1. Mercado de previsão** — 4-5 parágrafos cobrindo: presidencial (Flávio × Lula + gap), 3ª via (Zema + Renan), 2º lugar, STF impeach, Senado, inflação
 4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver
 5. **3. O que a imprensa cobriu** — 3-4 parágrafos: dinâmica governo, dinâmica oposição, pauta institucional, observações
-6. **4. Divergências do dia** — box com 2-3 observações de onde mercado ≠ pesquisa ≠ notícia
+6. **4. Divergências do dia** — box amarelo com 2-3 observações de onde mercado ≠ pesquisa ≠ notícia. **REGRA (a partir de 29/Abr/2026):** usar **blockquote markdown** (`>`) em cada parágrafo da seção, NÃO `<div class="box-divergencia">`. O template renderiza `react-markdown` sem `rehype-raw`, então HTML inline é ignorado — apenas blockquote captura o estilo amber/yellow definido em `AfosDailyTemplate.tsx` (linha 192). Exemplo correto: `> **Mercado × pesquisa:** ...` (separar parágrafos com `>` em linha vazia entre eles). Dailies anteriores (22-28/Abr) ficam como histórico, não retroagir.
 7. **Em síntese** — 3 bullets numerados com observações-chave
 8. **Rodapé** — fontes citadas + método + links
 
