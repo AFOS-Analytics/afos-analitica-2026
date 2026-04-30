@@ -31,7 +31,7 @@ Built and battle-tested during the 2026 election cycle in South American countri
 - **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
-- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim (validated through a 7-day pilot in April/2026, now permanent)
+- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — published daily in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
