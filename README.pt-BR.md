@@ -65,7 +65,7 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 |------|---------|
 | `/[locale]` | Landing page (seletor de cor + idioma) |
 | `/[locale]/dashboard` | Dashboard interativo com dados ao vivo — logo do header volta para landing |
-| `/[locale]/daily` | AFOS Daily — sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias |
+| `/[locale]/daily` | AFOS Daily — sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias. Disponivel em **3 idiomas** (PT-BR, EN, ES) — loader detecta `{data}.{locale}.md` com fallback para o PT-BR canonico. Termos politicos brasileiros (TSE, STF, BolsoMaster, etc.) preservados em PT com links inline para o glossario trilingue |
 | `/[locale]/global` | Mapa global de eleicoes (D3.js) |
 | `/[locale]/country/[country]` | Pagina por pais (13 paises) |
 | `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Tour pela plataforma com 14 secoes incluindo explicacao do card AFOS Daily (`#afos-daily-card`) e criterios de avaliacao dos institutos (`#criterios-institutos`). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |

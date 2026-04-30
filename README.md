@@ -65,7 +65,7 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 |-------|---------|
 | `/[locale]` | Landing page (color + language selector) |
 | `/[locale]/dashboard` | Interactive dashboard with live data — header logo links back to landing |
-| `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news |
+| `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news. Available in **3 languages** (PT-BR, EN, ES) — loader detects `{date}.{locale}.md` with fallback to canonical PT-BR. Brazilian political terms (TSE, STF, BolsoMaster, etc.) kept in PT with inline links to the trilingual glossary |
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". 14-section platform tour including AFOS Daily card explanation (`#afos-daily-card`) and polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |

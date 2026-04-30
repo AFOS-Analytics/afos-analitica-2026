@@ -70,27 +70,39 @@ function coerceDate(value: unknown, fallback: string): string {
   return fallback
 }
 
-// Extracts the comma-separated sources list from "**Fontes citadas:** ..." line.
+// Matches the "sources cited" line label in any supported locale.
+const SOURCES_LABEL_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*/i
+
+// Extracts the comma-separated sources list from the sources-cited line.
 function extractSources(rawBody: string): string {
-  const m = rawBody.match(/\*\*Fontes citadas:?\*\*\s*([^\n]+)/i)
+  const m = rawBody.match(new RegExp(SOURCES_LABEL_RE.source + /\s*([^\n]+)/.source, 'i'))
   return m ? m[1].trim().replace(/\.$/, '') : ''
 }
 
 // Removes elements that the template renders separately (date heading, subline,
 // lede blockquote, sources/method footer) so the body only contains article sections.
 function stripTemplateArtifacts(rawBody: string): string {
+  const sourcesFooter = new RegExp(`\\n+---\\n+${SOURCES_LABEL_RE.source}[\\s\\S]*$`, 'i')
   return rawBody
-    .replace(/\n+---\n+\*\*Fontes citadas:?\*\*[\s\S]*$/i, '')
+    .replace(sourcesFooter, '')
     .replace(/^# .+?\n+/, '')
-    .replace(/^\*\*Polymarket × Pesquisas × Notícias\*\*[^\n]*\n+/m, '')
+    .replace(/^\*\*Polymarket × (?:Pesquisas|Polls|Encuestas) × (?:Notícias|News|Noticias)\*\*[^\n]*\n+/m, '')
     .replace(/^> [^\n]+(?:\n> [^\n]+)*\n+/m, '')
     .trim()
 }
 
-export function loadDaily(date: string): AfosDailyData | null {
+export function loadDaily(date: string, locale?: string): AfosDailyData | null {
   if (!isValidDate(date)) return null
-  const path = join(DAILY_DIR, `${date}.md`)
-  if (!existsSync(path)) return null
+  // For non-default locales, try the locale-specific file first ({date}.{locale}.md),
+  // falling back to the canonical PT-BR file ({date}.md) if the translation
+  // is not available yet. Default locale (pt-BR) goes straight to the canonical file.
+  const candidates: string[] = []
+  if (locale && locale !== 'pt-BR' && isValidLocale(locale)) {
+    candidates.push(join(DAILY_DIR, `${date}.${locale}.md`))
+  }
+  candidates.push(join(DAILY_DIR, `${date}.md`))
+  const path = candidates.find(p => existsSync(p))
+  if (!path) return null
 
   let fm: Record<string, unknown>
   let rawBody: string

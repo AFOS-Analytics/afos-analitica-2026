@@ -17,7 +17,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!isValidLocale(params.locale) || !isValidDate(params.date)) {
     return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
   }
-  const data = loadDaily(params.date)
+  const data = loadDaily(params.date, params.locale)
   if (!data) return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
 
   const ledePlain = data.lede.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
@@ -71,7 +71,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 export default function DailyByDatePage({ params }: PageProps) {
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
-  const data = loadDaily(params.date)
+  const data = loadDaily(params.date, params.locale)
   if (!data) notFound()
 
   const schema = buildArticleSchema(data, params.locale)
