@@ -31,7 +31,7 @@ O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
 - **Noticias ao vivo** da grande imprensa
 - **Analises estrategicas** com inteligencia artificial
-- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao (validada em piloto de 7 dias em abril/2026, agora permanente)
+- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente — publicada diariamente em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`
 
 Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
 
