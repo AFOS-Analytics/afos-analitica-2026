@@ -4,7 +4,7 @@ config({ path: '.env.local' })
 import { welcomeTemplate } from '../app/lib/email/templates'
 import { Resend } from 'resend'
 
-const TO = 'afos2100@gmail.com'
+const TO = 'afos-analytics@proton.me'
 
 async function main() {
   const key = process.env.RESEND_API_KEY
