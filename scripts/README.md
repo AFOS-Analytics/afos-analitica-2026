@@ -14,7 +14,6 @@ Scripts utilitários e de manutenção do AFOS Analytics. Todos rodam via `tsx` 
 | **backfill-analysis.ts** | Re-popula `analysis_reports` a partir de arquivos JSON antigos em git history. | Apenas para recovery — não rodar em produção sem backup. |
 | **check-neon-polls.ts** | Diagnóstico: lista pesquisas TSE indexadas no Neon nos últimos 15 dias. | Quando suspeitar de pesquisa duplicada ou faltando. |
 | **check-neon-size.ts** | Mostra tamanho do Neon (storage, queries, connections) — útil pra monitorar consumo do free tier. | Mensalmente, ou quando pico de tráfego. |
-| **fix-typo-email.ts** | One-off: corrige typos em emails na tabela `subscribers`. | Apenas se houver erro reportado por usuário. |
 | **send-test-welcome.ts** | Envia email de welcome de teste via Resend para validar template/SPF/DKIM. | Após mudanças em template ou domínio Resend. |
 
 ## Como rodar
