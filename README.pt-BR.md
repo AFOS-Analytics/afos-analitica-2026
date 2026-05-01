@@ -361,8 +361,8 @@ Cron 3x/dia (6h, 12h, 18h)
 | Letra | Significado | Descricao |
 |---|---|---|
 | **A** | Astuteness | Inteligencia para cruzar dados e gerar clareza |
-| **F** | Faith | Confianca em informacoes verdadeiras e imparciais |
-| **O** | Optimism | Visao de futuro baseada em inovacao e transparencia |
+| **F** | Fairness | Imparcialidade verificavel no tratamento de cada fonte |
+| **O** | Objectivity | Neutralidade analitica - observamos os dados, nao tomamos partido |
 | **S** | Synthesis | Transformar dados complexos em entendimento simples |
 
 ---

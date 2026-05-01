@@ -46,3 +46,7 @@ public/posicionamento-*.html
 
 # Translation pipeline artifacts (not for public repo)
 public/afos-daily/*.claude-test.md
+
+# Operational protocols (internal — never ship)
+docs/operacao/
+docs/launch-texts/

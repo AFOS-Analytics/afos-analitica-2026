@@ -361,8 +361,8 @@ Cron 3x/day (6am, 12pm, 6pm)
 | Letter | Meaning | Description |
 |--------|---------|-------------|
 | **A** | Astuteness | Intelligence to cross-reference data and generate clarity |
-| **F** | Faith | Trust in truthful and impartial information |
-| **O** | Optimism | Future vision based on innovation and transparency |
+| **F** | Fairness | Verifiable impartiality in the treatment of every source |
+| **O** | Objectivity | Analytical neutrality — we observe the data, we don't take sides |
 | **S** | Synthesis | Transforming complex data into simple understanding |
 
 ---
