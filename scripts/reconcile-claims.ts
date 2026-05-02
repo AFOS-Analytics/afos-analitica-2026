@@ -25,6 +25,7 @@
  */
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
+import { isValidDate, readDailyMarkdown } from './lib/daily-files'
 
 const ROOT = process.cwd()
 const TOLERANCE_PP = 0.05
@@ -34,12 +35,6 @@ interface Claim {
   unit: '%' | 'pp'
   context: string
   line: number
-}
-
-function readMarkdown(date: string): string | null {
-  const path = join(ROOT, 'public', 'afos-daily', `${date}.md`)
-  if (!existsSync(path)) return null
-  return readFileSync(path, 'utf-8')
 }
 
 // Padroes que devem ser EXCLUIDOS do reconcile (geram falso positivo).
@@ -136,12 +131,12 @@ function main() {
   const date = process.argv[2]
   const strict = process.argv.includes('--strict')
 
-  if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+  if (!date || !isValidDate(date)) {
     console.error('Usage: npx tsx scripts/reconcile-claims.ts YYYY-MM-DD [--strict]')
     process.exit(1)
   }
 
-  const markdown = readMarkdown(date)
+  const markdown = readDailyMarkdown(date)
   if (!markdown) {
     console.error(`File public/afos-daily/${date}.md not found.`)
     process.exit(1)

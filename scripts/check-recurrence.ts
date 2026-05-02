@@ -25,11 +25,10 @@
  *   ✅ "{keyword}" não aparece em nenhuma das últimas 7 dailies — possível novidade.
  *   ⚠️ AINDA verificar via fetch do corpo do artigo (Verificação 2 do gate).
  */
-import { readdirSync, readFileSync, existsSync } from 'fs'
+import { readFileSync } from 'fs'
 import { join } from 'path'
+import { DAILY_DIR, listRecentCanonicalDailies } from './lib/daily-files'
 
-const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
-const DATE_RE = /^\d{4}-\d{2}-\d{2}\.md$/
 const DEFAULT_WINDOW = 7
 
 function parseArgs(argv: string[]): { keywords: string[]; window: number } {
@@ -44,14 +43,6 @@ function parseArgs(argv: string[]): { keywords: string[]; window: number } {
     }
   }
   return { keywords, window }
-}
-
-function listRecentCanonicalDailies(window: number): string[] {
-  if (!existsSync(DAILY_DIR)) return []
-  return readdirSync(DAILY_DIR)
-    .filter((f) => DATE_RE.test(f))
-    .sort()
-    .slice(-window)
 }
 
 function findMentions(filePath: string, keyword: string): Array<{ line: number; context: string }> {
