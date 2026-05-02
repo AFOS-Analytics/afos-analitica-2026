@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { isValidLocale } from '../../../lib/afos-daily/loader'
+import { StaticPageHeader } from '../../components/StaticPageHeader'
+import { Footer } from '../../components/Footer'
 
 interface Props { params: { locale: string } }
 
@@ -69,17 +71,21 @@ export default function PrivacyPage({ params }: Props) {
   if (!isValidLocale(params.locale)) notFound()
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16 sm:py-24">
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-dark mb-2">{c.h1}</h1>
-      <p className="text-xs text-gray-500 mb-10">{c.updated}</p>
-      <div className="prose prose-sm sm:prose-base max-w-none">
-        {c.sections.map(([heading, body]) => (
-          <section key={heading} className="mb-8">
-            <h2 className="text-lg font-bold text-dark mb-3">{heading}</h2>
-            <p className="text-gray-700 leading-relaxed">{body}</p>
-          </section>
-        ))}
-      </div>
-    </main>
+    <div className="min-h-screen bg-light-bg flex flex-col">
+      <StaticPageHeader />
+      <main id="main-content" className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-dark mb-2">{c.h1}</h1>
+        <p className="text-xs text-gray-500 mb-10">{c.updated}</p>
+        <div className="space-y-8">
+          {c.sections.map(([heading, body]) => (
+            <section key={heading} className="bg-white border border-light-border rounded-xl p-6 shadow-sm">
+              <h2 className="text-lg sm:text-xl font-bold text-primary mb-3">{heading}</h2>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{body}</p>
+            </section>
+          ))}
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }
