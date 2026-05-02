@@ -38,7 +38,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
             <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={28} height={19} className="rounded-sm object-cover" style={{ width: 28, height: 19 }} />
             <div>
               <h2 className="font-bold text-lg" style={{ color: MAP_TOKENS.text }}>{c.countryName}</h2>
-              <p className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType} — {c.electionDate}</p>
+              <p className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType}, {c.electionDate}</p>
             </div>
           </div>
           <button
@@ -133,7 +133,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
           {/* Source */}
           <div className="pt-4" style={{ borderTop: `1px solid ${MAP_TOKENS.border}` }}>
             <p className="text-[10px]" style={{ color: MAP_TOKENS.textMuted }}>
-              Dados: Polymarket (mercados de previsão com dinheiro real) — Atualizado continuamente
+              Dados: Polymarket (mercados de previsão com dinheiro real), Atualizado continuamente
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 {
   "about": {
-    "title": "Sobre — AFOS Analytics",
+    "title": "Sobre o AFOS Analytics",
     "whoWeAre": "Quem Somos",
     "whoWeAreDesc": "O AFOS-Analytics é uma plataforma global de inteligência eleitoral em tempo real.",
     "whoWeAreDesc2": "Monitoramos eleições no mundo inteiro e transformamos dados complexos em informação clara, objetiva e acionável.",
@@ -11,16 +11,16 @@
       "notícias da grande imprensa",
       "análises estratégicas geradas com inteligência artificial"
     ],
-    "whoWeAreFooter": "Tudo integrado em um painel simples, acessível e atualizado continuamente — no celular ou no computador.",
+    "whoWeAreFooter": "Tudo integrado em um painel simples, acessível e atualizado continuamente, no celular ou no computador.",
     "whatFor": "Para que serve",
     "whatForIntro": "O AFOS-Analytics existe para responder uma pergunta simples:",
     "whatForQuestion": "O que realmente está acontecendo na eleição?",
     "whatForDesc": "Com ele, você consegue:",
     "whatForList": [
-      "acompanhar a corrida eleitoral em tempo real — quem lidera, quem cresce, quem perde força",
-      "ver onde o dinheiro está posicionado — não apenas opinião, mas apostas reais",
-      "comparar pesquisas vs mercado — o que as pessoas dizem vs o que o mundo aposta",
-      "monitorar eventos e escândalos — e seu impacto direto na eleição",
+      "acompanhar a corrida eleitoral em tempo real, quem lidera, quem cresce, quem perde força",
+      "ver onde o dinheiro está posicionado, não apenas opinião, mas apostas reais",
+      "comparar pesquisas vs mercado, o que as pessoas dizem vs o que o mundo aposta",
+      "monitorar eventos e escândalos, e seu impacto direto na eleição",
       "acompanhar o clima político do ciclo eleitoral",
       "tomar decisões mais informadas, com base em dados"
     ],
@@ -59,10 +59,10 @@
     "dashboardItems": [
       "Odds de mercados de previsão (dinheiro real)",
       "Pesquisas eleitorais de múltiplos institutos",
-      "Análises estratégicas — forças e fraquezas dos candidatos",
-      "Perfil dos candidatos — visão completa",
-      "Notícias ao vivo — organizadas por relevância",
-      "Clima Político — análises cruzadas de mídia e mercado"
+      "Análises estratégicas, forças e fraquezas dos candidatos",
+      "Perfil dos candidatos, visão completa",
+      "Notícias ao vivo, organizadas por relevância",
+      "Clima Político, análises cruzadas de mídia e mercado"
     ],
     "differentialTitle": "Diferencial",
     "differentialDesc": "O AFOS-Analytics é uma plataforma única que conecta, no mesmo lugar:",
@@ -71,7 +71,7 @@
       "o que o mercado acredita (apostas reais)",
       "o que está sendo narrado (mídia)"
     ],
-    "differentialFooter": "Isso permite enxergar a eleição por múltiplas perspectivas — e não depender de uma única fonte.",
+    "differentialFooter": "Isso permite enxergar a eleição por múltiplas perspectivas, e não depender de uma única fonte.",
     "globalTitle": "GLOBAL POR DESIGN",
     "globalIntro": "Começamos com validação prática, mas o objetivo é maior:",
     "globalQuote": "Acompanhar eleições no mundo inteiro e criar uma nova forma de entender risco político em escala global",
@@ -88,13 +88,13 @@
     ],
     "openSourceFooter": "Qualquer pessoa pode estudar, auditar e contribuir.",
     "afosTitle": "O que significa AFOS",
-    "afosDesc": "AFOS é mais do que um nome — é o que guia tudo o que fazemos:",
+    "afosDesc": "AFOS é mais do que um nome, é o que guia tudo o que fazemos:",
     "afosA": "Astuteness",
     "afosADesc": "Inteligência para cruzar dados e gerar clareza",
     "afosF": "Fairness",
     "afosFDesc": "Imparcialidade verificável no tratamento de cada fonte",
     "afosO": "Objectivity",
-    "afosODesc": "Neutralidade analítica — observamos os dados, não tomamos partido",
+    "afosODesc": "Neutralidade analítica, observamos os dados, não tomamos partido",
     "afosS": "Synthesis",
     "afosSDesc": "Transformar dados complexos em entendimento simples",
     "essenceTitle": "Essência",
@@ -103,17 +103,17 @@
     "footerLabels": ["Gratuito", "Atualizado automaticamente", "Mobile e desktop"]
   },
   "metas": {
-    "title": "Metas — AFOS Analytics",
+    "title": "Metas do AFOS Analytics",
     "centralThesis": "A TESE CENTRAL",
     "centralThesisDesc": "Governos, empresas e investidores perdem bilhões todos os anos por decisões baseadas em informação fragmentada, enviesada ou manipulada.",
     "centralThesisLines": [
       "Quando o eleitor vota sem dados,",
       "quando o empresário não antecipa cenários,",
-      "quando o investidor precifica risco no escuro —"
+      "quando o investidor precifica risco no escuro."
     ],
     "centralThesisResult": "o resultado é o mesmo: ineficiência econômica e instabilidade.",
     "centralThesisResolution": "O AFOS Analytics resolve isso na origem:",
-    "centralThesisQuote": "Transformar informação política em inteligência acionável — como infraestrutura global.",
+    "centralThesisQuote": "Transformar informação política em inteligência acionável, como infraestrutura global.",
     "economicImpact": "Impacto no Crescimento Econômico",
     "economicImpactDesc": "Previsibilidade atrai capital.",
     "economicImpactIntro": "O AFOS Analytics integra:",
@@ -148,7 +148,7 @@
     ],
     "institutionalImpactFooter": "eleva o nível do voto e do debate público",
     "civicEducation": "Educação Cívica e Financeira",
-    "civicEducationDesc": "O produto não apenas informa — forma usuários mais sofisticados.",
+    "civicEducationDesc": "O produto não apenas informa, forma usuários mais sofisticados.",
     "civicEducationIntro": "Introduz, de forma prática:",
     "civicEducationList": [
       "leitura de probabilidades e risco",
@@ -255,7 +255,7 @@
     "clickFooter": "Transformando o mapa em uma interface geopolítica interativa de decisão, não apenas visualização.",
     "calendarTitle": "Calendário Global Dinâmico",
     "calendarDesc": "O sistema acompanha eleições continuamente, em escala global.",
-    "calendarDesc2": "Todos os anos, dezenas de países realizam eleições nacionais — gerando:",
+    "calendarDesc2": "Todos os anos, dezenas de países realizam eleições nacionais, gerando:",
     "calendarList": ["impacto em câmbio", "movimentos de mercado", "reprecificação de risco geopolítico"],
     "calendarFooter": "O resultado é um fluxo contínuo de eventos com impacto econômico real.",
     "purposeTitle": "Finalidade Estratégica",

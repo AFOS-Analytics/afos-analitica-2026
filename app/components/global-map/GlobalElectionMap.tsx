@@ -50,7 +50,7 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
     let topoModule: typeof import('topojson-client');
 
     const renderMap = async () => {
-      // Dynamic imports — only loaded on client, never in server bundle
+      // Dynamic imports, only loaded on client, never in server bundle
       const [d3, topojson] = await Promise.all([
         import('d3'),
         import('topojson-client'),

@@ -5,7 +5,7 @@ import { useTranslation } from '../i18n/context';
 import { SubscribeForm } from './SubscribeForm';
 
 /**
- * Dashboard Gate — Blocks dashboard on 4th+ qualified session.
+ * Dashboard Gate, Blocks dashboard on 4th+ qualified session.
  *
  * Children always render (parallel data loading).
  * Gate overlay is a sibling portal-style div, NOT inside a relative parent.
@@ -19,12 +19,12 @@ export function DashboardGate({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {/* Children always render — no wrapper div that breaks fixed positioning */}
+      {/* Children always render, no wrapper div that breaks fixed positioning */}
       <div style={showGate ? { filter: 'blur(8px)', pointerEvents: 'none', userSelect: 'none' } : undefined} aria-hidden={showGate || undefined}>
         {children}
       </div>
 
-      {/* Gate overlay — sibling element, fixed to viewport (not inside relative) */}
+      {/* Gate overlay, sibling element, fixed to viewport (not inside relative) */}
       {showGate && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto" style={{ background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(4px)' }}>
           <div

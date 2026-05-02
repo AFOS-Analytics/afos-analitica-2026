@@ -42,7 +42,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
-        {/* BLOCO 1 + 2 — Navegação + Open Source */}
+        {/* BLOCO 1 + 2, Navegação + Open Source */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 text-xs">
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* BLOCO 3 — Fale Conosco */}
+        {/* BLOCO 3, Fale Conosco */}
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{labels.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
@@ -80,7 +80,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Rodapé — descrição + disclaimer + voltar ao topo */}
+        {/* Rodapé, descrição + disclaimer + voltar ao topo */}
         <div className="text-center text-xs border-t border-white/20 pt-4">
           <p>{t('footer.description')}</p>
           <p className="mt-1 text-white/70">{t('footer.disclaimer')} <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white" aria-label={t('footer.polymarketLink')}>{t('footer.polymarket')}</a> {t('footer.notAffiliated')}</p>

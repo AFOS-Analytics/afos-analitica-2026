@@ -1,6 +1,6 @@
 {
   "about": {
-    "title": "About — AFOS Analytics",
+    "title": "About AFOS Analytics",
     "whoWeAre": "Who We Are",
     "whoWeAreDesc": "AFOS-Analytics is a global platform for real-time electoral intelligence.",
     "whoWeAreDesc2": "We monitor elections worldwide and transform complex data into clear, objective, and actionable information.",
@@ -11,16 +11,16 @@
       "mainstream press news",
       "strategic analyses generated with artificial intelligence"
     ],
-    "whoWeAreFooter": "All integrated into a simple, accessible panel that is continuously updated — on mobile or desktop.",
+    "whoWeAreFooter": "All integrated into a simple, accessible panel that is continuously updated, on mobile or desktop.",
     "whatFor": "What It's For",
     "whatForIntro": "AFOS-Analytics exists to answer a simple question:",
     "whatForQuestion": "What is really happening in the election?",
     "whatForDesc": "With it, you can:",
     "whatForList": [
-      "follow the electoral race in real time — who leads, who grows, who loses momentum",
-      "see where the money is positioned — not just opinion, but real bets",
-      "compare polls vs market — what people say vs what the world bets",
-      "monitor events and scandals — and their direct impact on the election",
+      "follow the electoral race in real time, who leads, who grows, who loses momentum",
+      "see where the money is positioned, not just opinion, but real bets",
+      "compare polls vs market, what people say vs what the world bets",
+      "monitor events and scandals, and their direct impact on the election",
       "track the political climate throughout the electoral cycle",
       "make more informed decisions, based on data"
     ],
@@ -59,10 +59,10 @@
     "dashboardItems": [
       "Prediction market odds (real money)",
       "Electoral polls from multiple institutes",
-      "Strategic analyses — candidates' strengths and weaknesses",
-      "Candidate profiles — complete overview",
-      "Live news — organized by relevance",
-      "Political Climate — cross-references of media and market"
+      "Strategic analyses, candidates' strengths and weaknesses",
+      "Candidate profiles, complete overview",
+      "Live news, organized by relevance",
+      "Political Climate, cross-references of media and market"
     ],
     "differentialTitle": "Differentiator",
     "differentialDesc": "AFOS-Analytics is a unique platform that connects, in the same place:",
@@ -71,7 +71,7 @@
       "what the market believes (real bets)",
       "what is being narrated (media)"
     ],
-    "differentialFooter": "This allows you to see the election from multiple perspectives — and not depend on a single source.",
+    "differentialFooter": "This allows you to see the election from multiple perspectives, and not depend on a single source.",
     "globalTitle": "GLOBAL BY DESIGN",
     "globalIntro": "We started with practical validation, but the goal is bigger:",
     "globalQuote": "Track elections worldwide and create a new way to understand political risk on a global scale",
@@ -88,13 +88,13 @@
     ],
     "openSourceFooter": "Anyone can study, audit, and contribute.",
     "afosTitle": "What AFOS means",
-    "afosDesc": "AFOS is more than a name — it's what guides everything we do:",
+    "afosDesc": "AFOS is more than a name, it's what guides everything we do:",
     "afosA": "Astuteness",
     "afosADesc": "Intelligence to cross-reference data and generate clarity",
     "afosF": "Fairness",
     "afosFDesc": "Verifiable impartiality in the treatment of every source",
     "afosO": "Objectivity",
-    "afosODesc": "Analytical neutrality — we observe the data, we don't take sides",
+    "afosODesc": "Analytical neutrality, we observe the data, we don't take sides",
     "afosS": "Synthesis",
     "afosSDesc": "Transforming complex data into simple understanding",
     "essenceTitle": "Essence",
@@ -103,17 +103,17 @@
     "footerLabels": ["Free", "Automatically updated", "Mobile and desktop"]
   },
   "metas": {
-    "title": "Goals — AFOS Analytics",
+    "title": "Goals of AFOS Analytics",
     "centralThesis": "THE CENTRAL THESIS",
     "centralThesisDesc": "Governments, companies, and investors lose billions every year due to decisions based on fragmented, biased, or manipulated information.",
     "centralThesisLines": [
       "When the voter votes without data,",
       "when the business owner doesn't anticipate scenarios,",
-      "when the investor prices risk in the dark —"
+      "when the investor prices risk in the dark."
     ],
     "centralThesisResult": "the result is the same: economic inefficiency and instability.",
     "centralThesisResolution": "AFOS Analytics solves this at the source:",
-    "centralThesisQuote": "Transform political information into actionable intelligence — as global infrastructure.",
+    "centralThesisQuote": "Transform political information into actionable intelligence, as global infrastructure.",
     "economicImpact": "Impact on Economic Growth",
     "economicImpactDesc": "Predictability attracts capital.",
     "economicImpactIntro": "AFOS Analytics integrates:",
@@ -148,7 +148,7 @@
     ],
     "institutionalImpactFooter": "raises the level of voting and public debate",
     "civicEducation": "Civic and Financial Education",
-    "civicEducationDesc": "The product doesn't just inform — it develops more sophisticated users.",
+    "civicEducationDesc": "The product doesn't just inform, it develops more sophisticated users.",
     "civicEducationIntro": "It introduces, in a practical way:",
     "civicEducationList": [
       "reading probabilities and risk",
@@ -255,7 +255,7 @@
     "clickFooter": "Transforming the map into an interactive geopolitical decision interface, not just visualization.",
     "calendarTitle": "Dynamic Global Calendar",
     "calendarDesc": "The system tracks elections continuously, on a global scale.",
-    "calendarDesc2": "Every year, dozens of countries hold national elections — generating:",
+    "calendarDesc2": "Every year, dozens of countries hold national elections, generating:",
     "calendarList": ["currency impact", "market movements", "geopolitical risk repricing"],
     "calendarFooter": "The result is a continuous flow of events with real economic impact.",
     "purposeTitle": "Strategic Purpose",

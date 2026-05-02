@@ -6,7 +6,7 @@ import { useTranslation } from '../i18n/context';
 
 // Os campos `polymarket`, `poll` e `risk` são atualizados pela skill /atualizar
 // (a cada execução, o markdown dos JSONs e este arquivo são reescritos com
-// dados frescos). O conteúdo abaixo é um snapshot evergreen — substituído na
+// dados frescos). O conteúdo abaixo é um snapshot evergreen, substituído na
 // primeira execução de /atualizar pós-deploy.
 const candidates: CandidateProfile[] = [
   {

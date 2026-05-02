@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
-  title: "AFOS Analytics — Inteligência Eleitoral Open-Source | Polymarket × Pesquisas × Notícias",
+  title: "AFOS Analytics | Polymarket, Pesquisas e Notícias Eleitorais Cruzados",
   description: "Cruzamento em tempo real entre mercados de previsão (Polymarket), pesquisas eleitorais de +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Eleições Brasil 2026 e 14 países.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFOS Analytics — Inteligência Eleitoral Open-Source",
+    title: "AFOS Analytics. Inteligência Eleitoral Open-Source",
     description: "Cruzamento em tempo real entre Polymarket, pesquisas eleitorais e cobertura jornalística. Eleições Brasil 2026 e 14 países.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'AFOS Analytics — Inteligência Eleitoral Open-Source',
+        alt: 'AFOS Analytics. Inteligência Eleitoral Open-Source',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Inteligência Eleitoral Open-Source",
-    description: "Polymarket × 17 institutos × notícias, cruzados em tempo real. Open-source. Brasil 2026 + 14 países.",
+    title: "AFOS Analytics. Inteligência Eleitoral Open-Source",
+    description: "Polymarket, 17 institutos de pesquisa e notícias cruzados em tempo real. Open-source. Brasil 2026 e 14 países.",
     images: ['/opengraph-image'],
   },
   robots: {

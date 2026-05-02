@@ -11,7 +11,7 @@ const THEME_KEY = 'afos-daily-theme'
 export interface AfosDailyData {
   date: string          // YYYY-MM-DD
   updatedAt: string     // "DD/MM/YYYY, HH:MM"
-  title: string         // "AFOS Daily — DD de MÊS de YYYY"
+  title: string         // "AFOS Daily, DD de MÊS de YYYY"
   locale: string        // "pt-BR" | "en" | "es"
   status: string        // "published" | "pilot"
   lede: string
@@ -50,10 +50,10 @@ const T = {
     integrationText3: '. Para entender o método em profundidade, leia',
     integrationText4: 'O Método',
     glossaryLabel: 'Glossário:',
-    glossaryText: 'termos políticos brasileiros usados nas sínteses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definições nos 3 idiomas.',
+    glossaryText: 'termos políticos brasileiros usados nas sínteses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.), definições nos 3 idiomas.',
     glossaryLink: 'Ver glossário completo',
     accessDashboard: '← Acessar o Dashboard',
-    homeAriaLabel: 'AFOS Analytics — página inicial',
+    homeAriaLabel: 'AFOS Analytics, página inicial',
   },
   en: {
     backToDashboard: '← Back to Dashboard',
@@ -70,10 +70,10 @@ const T = {
     integrationText3: '. To understand the method in depth, read',
     integrationText4: 'The Method',
     glossaryLabel: 'Glossary:',
-    glossaryText: 'Brazilian political terms used in the syntheses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definitions in 3 languages.',
+    glossaryText: 'Brazilian political terms used in the syntheses (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.), definitions in 3 languages.',
     glossaryLink: 'See the full glossary',
     accessDashboard: '← Access the Dashboard',
-    homeAriaLabel: 'AFOS Analytics — homepage',
+    homeAriaLabel: 'AFOS Analytics, homepage',
   },
   es: {
     backToDashboard: '← Volver al Dashboard',
@@ -90,10 +90,10 @@ const T = {
     integrationText3: '. Para entender el método en profundidad, lea',
     integrationText4: 'El Método',
     glossaryLabel: 'Glosario:',
-    glossaryText: 'términos políticos brasileños usados en las síntesis (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) — definiciones en 3 idiomas.',
+    glossaryText: 'términos políticos brasileños usados en las síntesis (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.), definiciones en 3 idiomas.',
     glossaryLink: 'Ver glosario completo',
     accessDashboard: '← Acceder al Dashboard',
-    homeAriaLabel: 'AFOS Analytics — página principal',
+    homeAriaLabel: 'AFOS Analytics, página principal',
   },
 }
 

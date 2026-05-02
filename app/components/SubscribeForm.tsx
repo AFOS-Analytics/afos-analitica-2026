@@ -5,7 +5,7 @@ import { useTranslation } from '../i18n/context';
 import { suggestEmailCorrection } from '../../lib/email-typo';
 
 /**
- * Shared subscribe form — used by Popup, Gate, and Landing Page.
+ * Shared subscribe form, used by Popup, Gate, and Landing Page.
  * Honeypot, validation, error handling, i18n, loading state.
  */
 
