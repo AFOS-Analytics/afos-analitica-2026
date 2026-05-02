@@ -183,7 +183,7 @@ export function HowItWorksEs() {
 
       <Card title="Modal Acerca de" id="modal-sobre">
         <p>Hacer clic en <strong>Acerca de</strong> abre una ventana con 4 bloques: <em>Quiénes somos</em> (descripción de la plataforma y fuentes), <em>Para qué sirve</em> (preguntas que ayuda a responder), <em>Cómo usar</em> (perfiles sugeridos: elector, inversor, periodista) y <em>Qué significa AFOS</em> (sigla A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, los 4 valores que guían el proyecto).</p>
-        <p>También explica el modelo open-source: código bajo Apache 2.0 y contenido editorial (síntesis AFOS Daily) bajo CC BY 4.0. Cualquier persona puede estudiar, auditar y contribuir.</p>
+        <p>El modelo open-source está declarado: cualquier persona puede estudiar, auditar y contribuir. Los detalles de licenciamiento (Apache 2.0 para código, CC BY 4.0 para contenido editorial) están en el pie de página de todas las páginas y en la página de <a href="/es/terms" className="text-primary hover:underline">Términos de Uso</a>.</p>
       </Card>
 
       <Card title="Modal Metas" id="modal-metas">

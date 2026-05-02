@@ -185,7 +185,7 @@ export function HowItWorksPtBR() {
 
       <Card title="Modal Sobre" id="modal-sobre">
         <p>Clicar em <strong>Sobre</strong> abre uma janela com 4 blocos: <em>Quem somos</em> (descrição da plataforma e fontes), <em>Para que serve</em> (perguntas que ajuda a responder), <em>Como usar</em> (perfis sugeridos: eleitor, investidor, jornalista) e <em>O que significa AFOS</em> (sigla A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, os 4 valores que guiam o projeto).</p>
-        <p>Também explica o modelo open-source: código sob Apache 2.0 e conteúdo editorial (sínteses AFOS Daily) sob CC BY 4.0. Qualquer pessoa pode estudar, auditar e contribuir.</p>
+        <p>O modelo open-source é declarado: qualquer pessoa pode estudar, auditar e contribuir. Detalhes de licenciamento (Apache 2.0 para código, CC BY 4.0 para conteúdo editorial) ficam no rodapé de todas as páginas e na página de <a href="/pt-BR/terms" className="text-primary hover:underline">Termos de Uso</a>.</p>
       </Card>
 
       <Card title="Modal Metas" id="modal-metas">
