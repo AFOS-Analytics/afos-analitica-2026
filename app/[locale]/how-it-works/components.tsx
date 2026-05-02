@@ -11,9 +11,9 @@ export function Callout({ title, children }: { title: string; children: ReactNod
   )
 }
 
-export function Card({ title, children }: { title: string; children: ReactNode }) {
+export function Card({ title, children, id }: { title: string; children: ReactNode; id?: string }) {
   return (
-    <div className="bg-white border-l-4 border-primary rounded-lg p-5 my-4 shadow-sm">
+    <div id={id} className="bg-white border-l-4 border-primary rounded-lg p-5 my-4 shadow-sm scroll-mt-24">
       <div className="font-bold text-primary text-base mb-2">{title}</div>
       <div className="text-gray-700 text-sm leading-relaxed [&>p]:mb-2 [&>p>strong]:text-primary">
         {children}
