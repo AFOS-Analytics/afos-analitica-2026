@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
-import { loadDaily, listDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates } from '../../../../lib/afos-daily/loader'
+import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates, isVisibleInProduction } from '../../../../lib/afos-daily/loader'
 import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
@@ -9,7 +9,10 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const dates = listDailies()
+  // Pre-render only published dailies. Drafts are still accessible
+  // dynamically (rendered on first request) so Vercel preview deploys can
+  // show them for review, but they're never in the static manifest.
+  const dates = listPublishedDailies()
   return SUPPORTED_LOCALES.flatMap(locale => dates.map(date => ({ locale, date })))
 }
 
@@ -20,6 +23,11 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const data = loadDaily(params.date, params.locale)
   if (!data) return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
 
+  // Drafts: noindex + follow even on preview deploys. Belt-and-suspenders
+  // alongside notFound() in production — protects review URLs that get
+  // shared by accident from being crawled.
+  const isDraft = data.status !== 'published'
+
   const ledePlain = data.lede.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
   const url = `https://afos-analytics.com/${params.locale}/daily/${params.date}`
   const ogImage = getOgImageUrl()
@@ -29,7 +37,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return {
     title: `${data.title} | AFOS Analytics`,
     description: ledePlain,
-    robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
+    robots: isDraft
+      ? { index: false, follow: true, googleBot: { index: false, follow: true } }
+      : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
     alternates: {
       canonical: url,
       types: {
@@ -71,6 +81,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
 export default function DailyByDatePage({ params }: PageProps) {
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
+  // Production-only gate: drafts are 404 on www.afos-analytics.com but
+  // remain accessible on Vercel preview deploys for human review.
+  // VERCEL_ENV is 'production' on the prod domain, 'preview' on previews.
+  if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date)) notFound()
   const data = loadDaily(params.date, params.locale)
   if (!data) notFound()
 
