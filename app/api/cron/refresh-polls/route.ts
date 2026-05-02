@@ -21,11 +21,11 @@ import { audit } from '../../../../lib/audit'
 export async function GET(request: Request) {
   const startTime = Date.now()
 
-  // Auth
-  const isVercelCron = request.headers.get('x-vercel-cron') === '1'
+  // Auth — defense in depth: require Bearer always. Vercel injects CRON_SECRET
+  // automatically for scheduled crons. Removed x-vercel-cron bypass.
   const authHeader = request.headers.get('authorization')
   const cronSecret = process.env.CRON_SECRET
-  const isAuthorized = isVercelCron || (cronSecret && authHeader === `Bearer ${cronSecret}`)
+  const isAuthorized = !!(cronSecret && authHeader === `Bearer ${cronSecret}`)
 
   if (process.env.VERCEL && !isAuthorized) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

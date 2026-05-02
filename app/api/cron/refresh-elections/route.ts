@@ -20,10 +20,12 @@ export const maxDuration = 60;
 export async function GET(request: Request) {
   const startTime = Date.now();
 
-  const isVercelCron = request.headers.get('x-vercel-cron') === '1';
+  // Defense in depth: require Bearer secret always. Vercel injects CRON_SECRET
+  // automatically for scheduled crons. Removed x-vercel-cron bypass (was
+  // vulnerable if Vercel's header stripping ever failed).
   const authHeader = request.headers.get('authorization');
   const cronSecret = process.env.CRON_SECRET;
-  const isAuthorized = isVercelCron || (cronSecret && authHeader === `Bearer ${cronSecret}`);
+  const isAuthorized = !!(cronSecret && authHeader === `Bearer ${cronSecret}`);
 
   if (process.env.VERCEL && !isAuthorized) {
     console.warn('[cron] Requisição não autenticada bloqueada');

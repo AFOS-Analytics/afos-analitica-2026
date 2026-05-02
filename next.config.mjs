@@ -21,8 +21,8 @@ const nextConfig = {
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
           // OWASP A02:2021 - Cryptographic Failures
           { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
-          // SEO / GEO
-          { key: 'Content-Language', value: 'pt-BR' },
+          // Content-Language is set dynamically per-locale via middleware.ts,
+          // not hardcoded here (would conflict with /en, /es routes).
           // Content Security Policy
           // Em dev, unsafe-eval é necessário para React Fast Refresh (HMR)
           {

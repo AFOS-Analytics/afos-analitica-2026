@@ -101,9 +101,11 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/' + segments.join('/'), request.url));
     }
   } else {
-    // Set Content-Language header based on locale + ensure visitor cookie
+    // Set Content-Language header based on locale + propagate locale via x-pathname-locale
+    // for the root layout to read and emit <html lang="...">.
     const response = NextResponse.next();
     response.headers.set('Content-Language', firstSegment);
+    response.headers.set('x-pathname-locale', firstSegment);
     return ensureVisitorCookie(request, response);
   }
 

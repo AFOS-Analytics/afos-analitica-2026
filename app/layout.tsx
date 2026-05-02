@@ -1,9 +1,17 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { organizationSchema, webAppSchema, datasetSchema, combineSchemas } from '../lib/seo/schema';
 import "./globals.css";
 
-const inter = { className: "font-sans antialiased" };
+// Real Inter from Google Fonts (subsetted, self-hosted by Next). Replaces
+// the prior placeholder `{ className: 'font-sans antialiased' }` which fell
+// back to Arial — looked like weekend project to design-savvy reviewers.
+const inter = Inter({
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -13,8 +21,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
-  title: "AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral",
-  description: "Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Notícias ao vivo, análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.",
+  title: "AFOS Analytics — Inteligência Eleitoral Open-Source | Polymarket × Pesquisas × Notícias",
+  description: "Cruzamento em tempo real entre mercados de previsão (Polymarket), pesquisas eleitorais de +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Eleições Brasil 2026 e 14 países.",
   alternates: {
     canonical: 'https://afos-analytics.com/pt-BR',
     languages: {
@@ -25,8 +33,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
-    description: "Plataforma inédita no mundo: cruzamento de mercados de previsão com pesquisas eleitorais em tempo real. Eleições Brasil 2026 e cobertura de 14 países.",
+    title: "AFOS Analytics — Inteligência Eleitoral Open-Source",
+    description: "Cruzamento em tempo real entre Polymarket, pesquisas eleitorais e cobertura jornalística. Eleições Brasil 2026 e 14 países.",
     url: "https://afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
@@ -36,14 +44,14 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral',
+        alt: 'AFOS Analytics — Inteligência Eleitoral Open-Source',
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AFOS Analytics — Plataforma Inédita | Inteligência de Risco Político Eleitoral",
-    description: "Plataforma inédita no mundo: Polymarket + 17 institutos de pesquisa + notícias ao vivo. Eleições Brasil 2026 e cobertura de 14 países.",
+    title: "AFOS Analytics — Inteligência Eleitoral Open-Source",
+    description: "Polymarket × 17 institutos × notícias, cruzados em tempo real. Open-source. Brasil 2026 + 14 países.",
     images: ['/opengraph-image'],
   },
   robots: {
@@ -60,13 +68,20 @@ export const metadata: Metadata = {
   // geo tags moved to lib/seo/metadata.ts buildMetadata() per locale
 };
 
+// Read locale from middleware-injected header so <html lang> matches the
+// route. Defaults to pt-BR for routes that don't pass through the locale
+// matcher (api, _next, static).
+import { headers } from 'next/headers';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = headers();
+  const localeFromMiddleware = headersList.get('x-pathname-locale') || 'pt-BR';
   return (
-    <html lang="pt-BR">
+    <html lang={localeFromMiddleware}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
         <link rel="shortcut icon" href="/favicon.svg?v=2" />

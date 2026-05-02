@@ -17,7 +17,10 @@ export const emailSchema = z
 
 export const subscribeSchema = z.object({
   email: emailSchema,
-  consent: z.boolean().optional(),
+  // LGPD compliance: consent must be explicitly true. Was z.boolean().optional(),
+  // which allowed silent subscriptions without consent record. Frontend MUST
+  // include `consent: true` in the request payload.
+  consent: z.literal(true, { message: 'Consent must be explicitly granted (LGPD)' }),
   _hp: z.string().max(500).optional(),
   visitorId: z.string().uuid().optional(),
   captureSource: z.enum(['popup', 'gate', 'landing']).optional(),
