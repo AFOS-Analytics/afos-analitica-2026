@@ -19,6 +19,9 @@ export function HowItWorksEn() {
           </TocCol>
           <TocCol heading="Platform tour">
             <TocLink href="#header">1. Header</TocLink>
+            <TocLink href="#modal-sobre">└ About modal</TocLink>
+            <TocLink href="#modal-metas">└ Goals modal</TocLink>
+            <TocLink href="#modal-global">└ Global modal</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Daily Synthesis</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Polymarket Cards</TocLink>
             <TocLink href="#pesquisas">4. Electoral Polls</TocLink>

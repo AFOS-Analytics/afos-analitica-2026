@@ -21,6 +21,9 @@ export function HowItWorksPtBR() {
           </TocCol>
           <TocCol heading="Tour pela plataforma">
             <TocLink href="#header">1. Header</TocLink>
+            <TocLink href="#modal-sobre">└ Modal Sobre</TocLink>
+            <TocLink href="#modal-metas">└ Modal Metas</TocLink>
+            <TocLink href="#modal-global">└ Modal Global</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Síntese do Dia</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">4. Pesquisas Eleitorais</TocLink>
