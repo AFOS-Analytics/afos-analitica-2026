@@ -27,17 +27,33 @@ Ler os ÚLTIMOS 3-5 arquivos `public/afos-daily/YYYY-MM-DD.md` e comparar:
 - Se sim, é **continuidade** (delação progredindo, julgamento em andamento) — NÃO trate como novidade do dia
 - Se não, fetch artigo completo (próxima etapa)
 
-### Verificação 2 — Fetch corpo de pelo menos 1 artigo
+### Verificação 2 — Fetch corpo de pelo menos 2 artigos (two-source rule, Fase 3.1)
 
 Headlines de Google News RSS retornam título + timestamp, NÃO o corpo do artigo. Verbos como "preso", "que levaram à prisão", "morto", "decidiu X" no título podem referir a:
 - **Evento de hoje** (incorporar)
 - **Explainer/perfil** sobre situação em curso (NÃO tratar como evento novo — texto atemporal)
 - **Análise/desdobramento** sobre evento passado (NÃO incorporar como divisor de águas)
 
-Use `WebFetch` para abrir 1 artigo do veículo principal e extrair:
+**Two-source rule (Reuters/AP standard):** para qualquer evento factual de alto impacto, exigir **2 fontes independentes** confirmando — não 1.
+
+⚠️ **Google News RSS conta como UMA fonte** (é agregador, não fonte primária). 5 manchetes do Google News sobre o mesmo evento = 1 fonte. Foi exatamente o que aconteceu no incidente Vorcaro.
+
+**Fontes independentes válidas:**
+- Veículos de redações distintas (Folha + Estadão = 2 fontes; Folha + UOL = 1 fonte, mesmo grupo)
+- Documento primário oficial (DOU, decisão STF, divulgação TSE) + 1 veículo
+- Site oficial do órgão + 1 veículo
+
+**Fontes que contam como UMA fonte (agregadores):**
+- Google News, Bing News, Yahoo Notícias
+- MSN, Terra (republicam de outros)
+- Pena News, Notícias da TV (republicações)
+- BBC traduções de Reuters/AP
+
+Use `WebFetch` para abrir 2 artigos de veículos independentes e extrair:
 - Data exata do evento descrito
 - Tempo verbal do lead do artigo (passado distante = evento antigo recoberto; passado recente = evento de hoje)
 - Se o artigo é "perfil/explainer" sobre figura já em situação crítica
+- Se as 2 fontes convergem ou divergem — divergência é dado relevante por si
 
 ### Quando incorporar à síntese
 
@@ -53,6 +69,46 @@ Movimentos de mercado (Polymarket) podem reagir a eventos novos ou refletir dige
 
 Em **01/Mai/2026**, gerei síntese afirmando "Daniel Vorcaro PRESO PELA PF HOJE — divisor de águas Master" e atribuindo a queda do STF impeach (-2.5pp) à "vindicação institucional pela prisão". Era falso: Vorcaro estava preso desde 19/Mar/2026. As 5 manchetes do Google News eram explainers sobre o já-preso (perfis, apuração de mensagens, declarações antigas vindo a público). O usuário pegou o erro antes do deploy prod. Esse fact-check gate foi adicionado para impedir recorrência.
 
+### OUTPUT OBRIGATÓRIO — sem este bloco, ETAPA 2 NÃO COMEÇA
+
+Antes de prosseguir para a geração do markdown, EMITIR no chat o bloco abaixo. Isso torna invisibilidade do gate impossível e cria evidência auditável na transcript.
+
+```
+## Fact-check gate — log [{YYYY-MM-DD}]
+
+**Cross-reference automatizado executado:**
+- Comando: `npx tsx scripts/check-recurrence.ts {keyword}` (Fase 1.3)
+- Output: [colar resultado ou "nenhum keyword crítico identificado"]
+
+**Eventos candidatos a alto impacto identificados:** [lista breve | "nenhum"]
+
+Para CADA evento candidato:
+- **Evento:** [descrição em 1 linha]
+- **Verificação 1 (cross-ref temporal):**
+  - Apareceu nas últimas 7 dailies? [sim com datas | não]
+  - Status: [novidade real do dia | continuidade de caso ativo | recobrança/explainer]
+- **Verificação 2 (fetch corpo do artigo):**
+  - URL fetchada: [link]
+  - Data do evento confirmada (ISO): [YYYY-MM-DD]
+  - Tipo do artigo: [evento | explainer/perfil | análise/comentário | desdobramento]
+  - Tempo verbal do lead: [presente recente | passado recente | passado distante]
+- **2ª fonte independente** (Fase 3.1, two-source rule): [URL | "ainda não verificado"]
+- **Decisão final:** [incorporar como novidade | incorporar como continuidade | NÃO incorporar | flag UNVERIFIED]
+
+**Self-check pré-deploy:**
+- [ ] Cada alegação que se tornou âncora narrativa (lede, primeiro parágrafo de seção) passou por Verificação 2
+- [ ] Não há atribuição de causação entre evento e movimento de mercado sem timing compatível confirmado
+- [ ] Cross-reference cobriu últimas 7 dailies (não só 3-5)
+- [ ] Nenhum evento "Tipo=explainer/perfil" foi tratado como evento de hoje
+- [ ] Verbos críticos (preso, morto, decidiu, rejeitou) seguiram regra do codebook (Fase 2.3)
+- [ ] Aspas literais foram confrontadas com fonte (Fase 2.2)
+- [ ] Nenhuma % do markdown diverge do `analysis-data.json` (Fase 2.2)
+```
+
+**Se houver QUALQUER checkbox não marcável**, parar e reportar ao usuário. Não gerar markdown com checkbox vazio.
+
+**Se NÃO houver eventos candidatos a alto impacto**, ainda assim emitir o bloco com `Eventos: nenhum`. Sem evento crítico ainda há valor: documenta que o cross-reference rodou.
+
 ## ETAPA 2: Gerar markdown seguindo o template
 
 Criar arquivo em `public/afos-daily/{YYYY-MM-DD}.md` com a estrutura EXATA do template 22/Abr:
@@ -63,10 +119,24 @@ date: YYYY-MM-DD
 updatedAt: "DD/MM/YYYY, HH:MM"
 title: AFOS Daily — DD de MÊS de YYYY
 locale: pt-BR
-status: published
+status: draft  # OBRIGATORIAMENTE draft. Vira published só via scripts/publish-afos-daily.ts {date} APÓS revisão humana e aprovação explícita.
 lede: "[lede de 2-3 linhas capturando 3 movimentos-chave do dia]"
 ---
 ```
+
+⚠️ **REGRA DE PUBLICAÇÃO (Fase 1.1 — publish gate):** Toda síntese nova começa como `status: draft`. Isso garante que:
+- Página `/[locale]/daily/{data}` retorna 404 em produção (mas continua acessível em Vercel preview para revisão)
+- `sitemap.xml` NÃO lista a draft (Google não indexa)
+- `/feed/daily.xml` NÃO inclui draft (subscritores RSS não recebem push)
+- `/llms.txt` NÃO inclui draft (LLM crawlers não veem)
+- `getLatestDate()` NÃO retorna draft (redirect `/daily` continua na última publicada)
+
+A flip para `published` é executada APÓS a aprovação do usuário, via:
+```bash
+npx tsx scripts/publish-afos-daily.ts YYYY-MM-DD --all-locales
+```
+
+Esse comando deve ser invocado em ETAPA 6 (após aprovação), nunca em ETAPA 2 (geração).
 
 Seguido de 6 seções obrigatórias:
 
@@ -96,6 +166,36 @@ Mantidas rigorosamente do piloto 22/Abr:
 ## ETAPA 3: Atualizar a página `/pt-BR/daily`
 
 Editar `app/[locale]/daily/page.tsx` para refletir o novo conteúdo do dia. Manter exatamente a mesma estrutura visual aprovada em 22/Abr (Lede em box azul, seções numeradas com h2 border, box amarelo de divergências, bullets numerados em síntese, rodapé com 3 linhas).
+
+## ETAPA 3.5: Adversarial review pass (Fase 3.3 — guardrail)
+
+**Antes** de gerar o preview Vercel, fazer um **adversarial pass** sobre a síntese gerada.
+
+Isso é uma sanity-check anti-viés-do-autor: invocar perspectiva de jornalista hostil tentando destruir a credibilidade da síntese.
+
+### Como executar
+
+Releia a síntese inteira e responda explicitamente as 5 perguntas adversariais abaixo. Cada pergunta deve gerar 1 linha de resposta — se houver vulnerabilidade real, **corrigir antes de prosseguir**.
+
+```
+## Adversarial review — pass [{YYYY-MM-DD}]
+
+1. **Single-source claims:** Que alegações não-triviais aparecem com 1 só fonte? [listar | "nenhuma"]
+2. **Numerical errors:** Algum % do markdown não bate com analysis-data.json? Rodar `npx tsx scripts/reconcile-claims.ts {date}`. [output | "OK"]
+3. **Fontes inventadas:** Cada veículo citado tem matéria correspondente do dia? [verificar 3 aleatórios]
+4. **Quotes literais:** Existe aspas literais sem confirmação? [listar | "nenhuma"]
+5. **Causação espúria:** Existe atribuição "X aconteceu PORQUE Y" sem evidência documentada? [listar | "nenhuma"]
+6. **Verbos críticos do codebook (Fase 2.3):** Algum verbo de privação de liberdade, morte, decisão judicial foi usado sem desambiguação? [listar | "OK"]
+
+**Decisão:** [prosseguir para preview | corrigir issues antes]
+```
+
+### Quando este pass é PARTICULARMENTE crítico
+
+- Síntese tem >5 alegações de eventos factuais novos (mais material = mais risco)
+- Caso de alto perfil envolvido (presidente, ministro STF, candidato top-3)
+- Movimento de mercado forte (>3pp Polymarket) atribuído a evento — risco de causação espúria
+- Pesquisa nacional publicada hoje — confrontar números com mesmo cuidado
 
 ## ETAPA 4: Gerar preview Vercel (SEM prod)
 

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
-import { listDailies } from '../lib/afos-daily/loader'
+import { listPublishedDailies } from '../lib/afos-daily/loader'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://afos-analytics.com'
@@ -150,7 +150,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // AFOS Daily — permalinks per date (3 locales × N dates)
   // Latest date gets higher priority. Each entry's lastModified = the date.
-  const dailyDates = listDailies()
+  // Published-only filter: drafts must not be discoverable via sitemap.
+  const dailyDates = listPublishedDailies()
   const latestDate = dailyDates.length ? dailyDates[dailyDates.length - 1] : null
   for (const date of dailyDates) {
     const isLatest = date === latestDate

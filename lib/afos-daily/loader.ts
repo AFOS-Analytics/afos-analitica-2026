@@ -55,17 +55,56 @@ export function listDailies(): string[] {
   }
 }
 
+/**
+ * Reads only the `status` field from frontmatter without full markdown parse.
+ * Fast path for listPublishedDailies() and isVisibleInProduction().
+ * Defaults to 'published' for legacy files (pre-2026-05-01) without the field.
+ */
+const STATUS_RE = /^status:\s*([a-z]+)/m
+function readStatusFast(date: string): string {
+  const path = join(DAILY_DIR, `${date}.md`)
+  if (!existsSync(path)) return 'published'
+  try {
+    const head = readFileSync(path, 'utf-8').slice(0, 500)
+    const m = head.match(STATUS_RE)
+    return m ? m[1] : 'published'
+  } catch {
+    return 'published'
+  }
+}
+
+/**
+ * Returns only dates where frontmatter status is 'published'. Used by
+ * sitemap, RSS feed, and getLatestDate to prevent drafts from leaking
+ * to public surfaces (Google, RSS subscribers, default daily redirect).
+ */
+export function listPublishedDailies(): string[] {
+  return listDailies().filter(d => readStatusFast(d) === 'published')
+}
+
+/**
+ * Production-visibility gate for the [date]/page.tsx. Drafts are 404 in
+ * production but render normally on Vercel preview deploys (so the user
+ * can review before flipping status to published).
+ */
+export function isVisibleInProduction(date: string): boolean {
+  return readStatusFast(date) === 'published'
+}
+
 export function getLatestDate(): string | null {
-  const all = listDailies()
+  // Only published dailies count as "latest" — drafts must not become the
+  // page that /[locale]/daily/ redirects to.
+  const all = listPublishedDailies()
   return all.length ? all[all.length - 1] : null
 }
 
 /**
  * Returns the YYYY-MM-DD adjacent to the given date in the sorted list of
  * available dailies. Used for prev/next navigation on the synthesis page.
+ * Filters drafts so prev/next never lands on an unpublished page.
  */
 export function getAdjacentDates(date: string): { previous?: string; next?: string } {
-  const all = listDailies()
+  const all = listPublishedDailies()
   const idx = all.indexOf(date)
   if (idx === -1) return {}
   return {

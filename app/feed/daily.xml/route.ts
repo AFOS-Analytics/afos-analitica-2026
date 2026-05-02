@@ -14,7 +14,7 @@
  * of the launch pipeline).
  */
 
-import { listDailies, loadDaily } from '../../../lib/afos-daily/loader'
+import { listPublishedDailies, loadDaily } from '../../../lib/afos-daily/loader'
 import { cleanMarkdownText } from '../../../lib/afos-daily/utils'
 
 const SITE = 'https://afos-analytics.com'
@@ -46,7 +46,8 @@ export const dynamic = 'force-static'
 export const revalidate = 3600
 
 export function GET() {
-  const dates = listDailies().slice().reverse()
+  // Published-only filter: drafts must not push to RSS subscribers.
+  const dates = listPublishedDailies().slice().reverse()
 
   const items = dates
     .map(date => {
