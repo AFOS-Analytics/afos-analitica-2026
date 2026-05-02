@@ -4,14 +4,81 @@ import { SectionTitle, Card } from './ui';
 import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
 
+// Os campos `polymarket`, `poll` e `risk` são atualizados pela skill /atualizar
+// (a cada execução, o markdown dos JSONs e este arquivo são reescritos com
+// dados frescos). O conteúdo abaixo é um snapshot evergreen — substituído na
+// primeira execução de /atualizar pós-deploy.
 const candidates: CandidateProfile[] = [
-  { name: "Lula", party: "PT", age: 80, role: "Presidente da República", polymarket: "37.50%", poll: "**Real Time Big Data publicada hoje: empate técnico Lula × Flávio** (VEJA+Folha 01/Mai) | Quaest BA: 47% querem aliado Lula × 32% indep × 16% Bolsonaro (G1 30/Abr) | AtlasIntel 28/Abr 1T Lula 46.6% × Flávio 39.7% mantida | Aprovação 46.6-46.8% mantida", position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato.", risk: "**SUSTENTA 37.50% APÓS DIA-DUPLO** (Vorcaro PRESO + Real Time Big Data empate) — gap +6.05pp Flávio (alarga vs +5.5pp ontem). 2º lugar Lula estável 21.50%. **STF impeach DESPENCA 13.00% (↓2.5pp de 15.50% — institucionalidade VINDICADA pela prisão Vorcaro)**. **VORCARO PRESO PELA PF HOJE** — 'Máfia no estado puro' (Deltan, Gazeta do Povo 19:51) | 'Mensagens levaram à prisão' (Terra 20:06) | 'Sicário e a milícia de Vorcaro' (Gazeta do Povo 21:50). **Haddad: 'lavagem cerebral coletiva' explica empate** (Folha) — governo nega legitimidade da pesquisa. **'Esquerda fragmenta atos 1º Maio sem Lula'** (Folha). **'Lula derrotado em dose dupla, refém do Congresso'** (BBC). **'Planalto fala em traições'** (Blog Ricardo Antunes). **Lula anuncia programa alívio dívidas pré-eleição** (Bloomberg Linea). **'Direita ocupa Avenida Paulista 1º Maio'** (Estadão). 'Wellington Dias projeta disputa difícil' (CidadeVerde). 'Senado ganha peso com crise STF' (Gazeta do Povo)." },
-  { name: "Flávio Bolsonaro", party: "PL", age: 45, role: "Senador (RJ)", polymarket: "43.55%", poll: "**Real Time Big Data publicada hoje: empate técnico × Lula** (VEJA+Folha 01/Mai) | **'Flávio sobe no salto e canta vitória a 5 meses'** (O Globo 01/Mai) | AtlasIntel 28/Abr 1T 39.7% × Lula 46.6% mantida | **'Nikolas e Flávio rejeição maior que Lula e Bolsonaro'** (Estado de Minas)", position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.", risk: "**NOVO TOPO CICLO 43.55%** (↑0.55pp de 43.00% — supera barreira 43%). Gap +6.05pp Flávio (alarga vs +5.5pp ontem). 2º lugar 65.5% (↓0.5pp leve). 3º lugar não listado direto. **VORCARO XINGOU BOLSONARO 'idiota e beócio'** (Gazeta do Povo 16:52) — **SEPARA Bolsonaro do escândalo Master narrativamente** (Vorcaro NÃO é aliado direita). **'Alcolumbre articula União+PP em pré-candidatura Flávio'** (Revista Fórum 01/Mai) — 'acordão contra Lula'. **'Direita ocupa Avenida Paulista 1º Maio'** (Estadão). **'Flávio: trabalhador sustenta vida luxo Lula'** (Poder360). **'Pesquisa Real Time Big Data revela empate'** (VEJA 01/Mai) — material narrativo ouro. **'Flávio articula candidatura Rogéria Bolsonaro Senado RJ'** (afasta Cláudio Castro). **'Lula derrotado em dose dupla'** (BBC). MAS: **STF impeach DESPENCA 13.00% (↓2.5pp)** — narrativa anti-STF de direita perde combustível com Vorcaro preso. **PL Senado 76.5% (↑2.5pp recupera)**. **União 9.25% (↓2.20pp continua devolvendo)**. **PSDB Senado DESPENCA 2.55% (↓7.00pp forte)**. **Tarcísio 3º DEVOLVE 0.55% (↓1.1pp de 1.65%)** — overhype ontem se reverte. **Eduardo Bolsonaro 3º recupera 0.35%**." },
-  { name: "Renan Santos", party: "Missão", age: 35, role: "Fundador do MBL", polymarket: "5.65%", poll: "Mantido 'Sou candidato direita' (BBC 28/Abr) | Nexus 27/Abr 2T empate técnico mantido | **3º LUGAR DEVOLVE 33.50% — Zema RETOMA LIDERANÇA 39.50% (REVERSÃO da inversão de ontem)**", position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.", risk: "5.65% Poly (estável). **3º LUGAR DEVOLVE 33.50% (↓4.5pp de 38% — Zema RETOMA LIDERANÇA 39.50% pela primeira vez desde inversão de ontem)** — REVERSÃO da inversão histórica de 30/Abr. Mercado interpretou movimento de ontem como overhype, retorna ao patamar Zema-líder. **STF impeach DESPENCA 13.00% (↓2.5pp de 15.50%)** — combustível anti-establishment perde força com **VORCARO PRESO** (institucionalidade vindicada). **Alcolumbre articula União+PP em pré-candidatura Flávio** (Revista Fórum) — direita unificada absorve oxigênio anti-Lula que era espaço Renan. **'Direita ocupa Avenida Paulista 1º Maio'** (Estadão) — narrativa direita coesa, marginaliza outsider. **Real Time Big Data empate Lula × Flávio** publicada — 1ª vez Renan não aparece em narrativa principal pesquisa nacional. MAS: 'Senado ganha peso com crise STF' (Gazeta do Povo) — narrativa anti-establishment ainda viva. **Camilo presidencial DISPARA 3.35% (↑1.10pp)** — outsider esquerda emerge, ressalta espaço outsider em geral. Eduardo Bolsonaro 3º recupera 0.35% (de 0.30%). Bolsonaro 3º DISPARA 0.65% (↑0.40pp). Eduardo Leite 3º DISPARA 0.85% (↑0.70pp)." },
-  { name: "Fernando Haddad", party: "PT", age: 63, role: "Pré-candidato Gov. SP", polymarket: "3.35%", poll: "**Real Time Big Data: empate Lula × Flávio nacional** (VEJA+Folha 01/Mai) | Vox SP gov: Tarcísio 38% × Haddad 26% mantido (CartaCapital 29/Abr) | **'Haddad: empate só explica lavagem cerebral coletiva'** (Folha 01/Mai)", position: "Centro-esquerda. Lula convenceu a disputar governo de SP. Fora da corrida presidencial.", risk: "3.35% Poly (↑0.10pp leve de 3.25%). 2º lugar RECUPERA 4.55% (↑0.20pp de 4.35%). 3º lugar 3.65% (↑0.25pp). **'Haddad: lavagem cerebral coletiva explica empate'** (Folha 01/Mai) — declaração polêmica reage à Real Time Big Data, RISCO REPUTACIONAL alto, mídia explora declaração 'desrespeito eleitor'. **VORCARO PRESO HOJE** (Terra 20:06) — institucionalidade vindicada beneficia narrativa governo (PF funciona). 'Lula anuncia alívio dívidas' (Bloomberg Linea) — programa econômico pré-eleição. 'Lula articula segunda vaga Senado MT' — articulação política ativa. PT Senado 2.5% (↓0.15pp leve). MDB estável 2.3%. MAS: **'Esquerda fragmenta atos 1º Maio sem Lula'** (Folha) — base PT dividida em data simbólica. **'Lula derrotado em dose dupla'** (BBC). **'Planalto fala em traições'** (Blog Ricardo Antunes). **'Direita ocupa Avenida Paulista'** (Estadão) — direita coesa em SP, território Haddad. **Vox SP**: Tarcísio 38% × Haddad 26% mantido — atrás 12pp em SP. **Inflação RECONFIGURA**: caudas altas RETORNAM (6-6.49% ↑8.5pp DISPARA, 6.5-7% ↑6.9pp DISPARA, 5.5-5.99% ↑5.9pp DISPARA) — mercado reprecifica risco inflacionário, pressão sobre governo." },
-  { name: "Ronaldo Caiado", party: "PSD", age: 76, role: "Ex-Gov. Goiás (renunciou 4/Abr)", polymarket: "1.65%", poll: "AtlasIntel 28/Abr 2T não cita Caiado mantido | **Quaest GO 30/Abr: Daniel Vilela 33% 1º turno** (aliado MDB) | **Quaest GO segundo turno: Daniel Vilela lidera × Marconi × Wilder**", position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.", risk: "1.65% Poly (estável). **3º lugar não listado em fetch** (era 21.50% ontem) — possível devolução massiva ou volatilidade. **PSD Senado 2.6% (↓0.35pp leve de 2.95%)** — coalizão centrão estabiliza. **Quaest GO segundo turno: Daniel Vilela lidera Marconi e Wilder** — aliado MDB consolida base regional. **VORCARO PRESO HOJE** (Terra) — institucionalidade vindicada beneficia narrativa pró-instituições centro-direita. **'Alcolumbre articula União+PP em pré-candidatura Flávio'** (Revista Fórum) — direita unificada em torno de Flávio MARGINALIZA Caiado como alternativa centro-direita. **'Direita ocupa Avenida Paulista'** (Estadão) — direita coesa não inclui Caiado em destaque. **STF impeach DESPENCA 13.00%** — Caiado defende ordem, vindicado pela prisão Vorcaro. **Tarcísio 3º DEVOLVE 0.55% (↓1.1pp)** — competidor centro-direita perde força, abre espaço Caiado. 'Senado ganha peso com crise STF' (Gazeta do Povo) — força institucional centro-direita relevante." },
-  { name: "Romeu Zema", party: "Novo", age: 56, role: "Ex-Gov. Minas Gerais (renunciou 4/Abr)", polymarket: "4.45%", poll: "AtlasIntel 28/Abr 2T 'Lula empata com Zema' mantido | Genial/Quaest MG Cleitinho LIDERA mantido | **NOVO Senado RECUPERA 1.85% (↑1.60pp de 0.25% — reverte colapso)**", position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.", risk: "**ZEMA RETOMA 3º LUGAR 39.50% (↑2.5pp de 37% — inversão Renan>Zema de ontem REVERTE)** — primeira vez desde 30/Abr. **Presidencial 4.45% (↓0.25pp continua despencando de 4.70%)** — abaixo dos 5% pelo 2º dia consecutivo, perda definitiva 3ª via no presidencial confirmada. 2º lugar 2.65% (↑0.20pp leve). **NOVO Senado RECUPERA 1.85% (↑1.60pp de 0.25%)** — reverte parcialmente o colapso de ontem. AtlasIntel 28/Abr 2T 'Lula empata Zema' mantida (CNN+Pleno+Poder360) — viabilidade institucional 2T preservada. Genial/Quaest MG Cleitinho LIDERA mantido. **VORCARO PRESO HOJE** (Terra) — narrativa pró-mercado/institucional Zema fortalecida. **STF impeach DESPENCA 13.00%** — narrativa anti-STF perde força mas pró-instituições beneficia Zema. **'Direita ocupa Avenida Paulista 1º Maio'** (Estadão) — direita coesa, mas Flávio dominante. **Inflação RECONFIGURA**: caudas altas RETORNAM (6-7% ↑8-9pp DISPARA), reabre espaço discurso fiscal Zema. ZEMA privatizar Petrobras+BB mantido. **Eduardo Leite 3º DISPARA 0.85% (↑0.70pp)** — outro liberal centro-direita ganha precificação. MAS: presidencial Zema continua atrás de Haddad (4.45% × 3.35%) — ainda 4ª colocação efetiva." },
-  { name: "Tarcísio de Freitas", party: "Republicanos", age: 51, role: "Governador de São Paulo", polymarket: "0.15%", poll: "**Vox SP gov: Tarcísio 38% × Haddad 26%** mantido (CartaCapital 29/Abr) | Tarcísio LIDERA SP gov 48.2% mantido | Senado SP Podemos: Tarcísio + Palumbo/Rufino mantido", position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.", risk: "0.15% Poly (↓0.10pp DEVOLVE de 0.25%). **3º lugar Tarcísio DEVOLVE 0.55% (↓1.1pp de 1.65% — overhype ontem reverte completamente)**. **Vox SP gov mantido**: Tarcísio 38% × Haddad 26% (atrás 12pp SP a favor de Tarcísio). **'Direita ocupa Avenida Paulista 1º Maio'** (Estadão) — direita coesa em SP, território Tarcísio fortalece. **'Alcolumbre articula União+PP em pré-candidatura Flávio'** (Revista Fórum) — coalizão Flávio direita ampla, Tarcísio aliado por extensão. Tarcísio + Flávio juntos pré-campanha mantido (G1+Folha 27/Abr). **VORCARO PRESO HOJE** (Terra) — institucionalidade vindicada (Tarcísio defende ordem). **PL Senado RECUPERA 76.5% (↑2.5pp)** — coalizão Flávio se fortalece. **PODEMOS Senado 1.2% (↓0.10pp leve)**. Tarcísio LIDERA SP 48.2% mantido — força regional consolidada SP. MAS: presidencial 0.15% mostra que mercado não vê Tarcísio como candidato presidencial — rota é vice ou governador SP reeleito. 'Camilo presidencial DISPARA 3.35%' (outsider esquerda) — espaço outsider abre nos dois lados." },
+  {
+    name: "Lula",
+    party: "PT",
+    age: 80,
+    role: "Presidente da República",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Flávio Bolsonaro",
+    party: "PL",
+    age: 45,
+    role: "Senador (RJ)",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Renan Santos",
+    party: "Missão",
+    age: 35,
+    role: "Fundador do MBL",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Fernando Haddad",
+    party: "PT",
+    age: 63,
+    role: "Pré-candidato Gov. SP",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Ronaldo Caiado",
+    party: "PSD",
+    age: 76,
+    role: "Ex-Gov. Goiás",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Romeu Zema",
+    party: "Novo",
+    age: 56,
+    role: "Ex-Gov. Minas Gerais",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
+  {
+    name: "Tarcísio de Freitas",
+    party: "Republicanos",
+    age: 51,
+    role: "Governador de São Paulo",
+    polymarket: "—",
+    poll: "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+    position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
+    risk: "Os indicadores de risco e cruzamento com pesquisas eleitorais e mercados de previsão são atualizados periodicamente. Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+  },
 ];
 
 export function CandidatesSection() {

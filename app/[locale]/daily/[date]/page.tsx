@@ -30,7 +30,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   const ledePlain = data.lede.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
   const url = `https://afos-analytics.com/${params.locale}/daily/${params.date}`
-  const ogImage = getOgImageUrl()
+  const ogImage = getOgImageUrl(params.locale)
   const publishedTime = `${data.date}T00:00:00-03:00`
   const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
 
