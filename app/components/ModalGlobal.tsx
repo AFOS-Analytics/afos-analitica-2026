@@ -43,7 +43,7 @@ function convertToMapData(elections: GlobalElection[]): CountryMarketSummary[] {
     const topMarket = markets.length > 0 ? markets[0] : null;
 
     return {
-      iso3: e.country.slice(0, 3).toUpperCase(), // Fallback — será sobrescrito se possível
+      iso3: e.country.slice(0, 3).toUpperCase(), // Fallback, será sobrescrito se possível
       countryName: e.country,
       flag: e.flag,
       probability: topMarket ? Math.round(topMarket.yesPrice * 1000) / 10 : 0,
@@ -161,7 +161,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
             )}
           </div>
 
-          {/* CALENDÁRIO COM BANDEIRAS — dados do /api/global-map */}
+          {/* CALENDÁRIO COM BANDEIRAS, dados do /api/global-map */}
           <div className="mb-5">
             <h3 className="text-sm font-bold text-primary mb-3">{t('modal.calendarTitle')}</h3>
             <div className="flex flex-wrap gap-2">
@@ -176,7 +176,7 @@ export function ModalGlobal({ show, onClose, globalData, mapCountries, expandedE
             </div>
           </div>
 
-          {/* ELECTION CARDS — dados do /api/global-map */}
+          {/* ELECTION CARDS, dados do /api/global-map */}
           <h3 className="text-sm font-bold text-primary mb-3">{t('modal.electionsWithData')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-5">
             {mapData

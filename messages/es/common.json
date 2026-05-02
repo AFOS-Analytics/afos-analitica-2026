@@ -10,7 +10,7 @@
     "backToHome": "Volver a la página inicial"
   },
   "footer": {
-    "description": "AFOS Analytics — Plataforma Global de Inteligencia Electoral | Datos: Polymarket (30min), +17 Encuestadoras TSE, Google News (30min) | Este contenido no constituye asesoría política",
+    "description": "AFOS Analytics, Plataforma Global de Inteligencia Electoral | Datos: Polymarket (30min), +17 Encuestadoras TSE, Google News (30min) | Este contenido no constituye asesoría política",
     "disclaimer": "Datos y probabilidades obtenidos de",
     "polymarket": "Polymarket (polymarket.com)",
     "notAffiliated": "— Este sitio no está afiliado con Polymarket. Los datos se actualizan automáticamente vía API pública.",
@@ -34,7 +34,7 @@
   },
   "popup": {
     "title": "Recibe alertas de AFOS Analytics",
-    "description": "Cambios en las probabilidades, resumen diario, eventos críticos y novedades — directamente a tu correo.",
+    "description": "Cambios en las probabilidades, resumen diario, eventos críticos y novedades, directamente a tu correo.",
     "placeholder": "Tu mejor email",
     "consent": "Quiero recibir alertas, resúmenes y comunicaciones de AFOS Analytics por email.",
     "submit": "Suscribirse",
@@ -68,12 +68,12 @@
     "errorRateLimit": "Demasiados intentos. Espera unos minutos."
   },
   "modal": {
-    "aboutTitle": "Acerca de — AFOS Analytics",
-    "metasTitle": "Metas — AFOS Analytics",
-    "globalTitle": "Global — Elecciones en el Mundo",
+    "aboutTitle": "Acerca de AFOS Analytics",
+    "metasTitle": "Metas de AFOS Analytics",
+    "globalTitle": "Global, Elecciones en el Mundo",
     "calendarTitle": "Calendario Electoral Global",
     "electionsWithData": "Elecciones con Datos Polymarket",
-    "upcomingElections": "Próximas Elecciones — Esperando Datos",
+    "upcomingElections": "Próximas Elecciones, Esperando Datos",
     "clickToSee": "Clic para ver",
     "candidates": "candidatos",
     "totalVol": "Vol. total",

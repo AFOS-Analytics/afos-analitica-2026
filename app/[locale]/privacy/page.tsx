@@ -6,7 +6,7 @@ interface Props { params: { locale: string } }
 
 const CONTENT = {
   'pt-BR': {
-    title: 'Política de Privacidade — AFOS Analytics',
+    title: 'Política de Privacidade | AFOS Analytics',
     description: 'Como AFOS Analytics coleta, usa e protege dados pessoais conforme LGPD.',
     h1: 'Política de Privacidade',
     updated: 'Última atualização: 1 de maio de 2026',
@@ -20,7 +20,7 @@ const CONTENT = {
     ],
   },
   en: {
-    title: 'Privacy Policy — AFOS Analytics',
+    title: 'Privacy Policy | AFOS Analytics',
     description: 'How AFOS Analytics collects, uses and protects personal data in compliance with LGPD.',
     h1: 'Privacy Policy',
     updated: 'Last updated: May 1, 2026',
@@ -34,7 +34,7 @@ const CONTENT = {
     ],
   },
   es: {
-    title: 'Política de Privacidad — AFOS Analytics',
+    title: 'Política de Privacidad | AFOS Analytics',
     description: 'Cómo AFOS Analytics recolecta, usa y protege datos personales conforme a LGPD.',
     h1: 'Política de Privacidad',
     updated: 'Última actualización: 1 de mayo de 2026',

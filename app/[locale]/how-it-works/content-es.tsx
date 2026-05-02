@@ -19,7 +19,7 @@ export function HowItWorksEs() {
           </TocCol>
           <TocCol heading="Recorrido por la plataforma">
             <TocLink href="#header">1. Header</TocLink>
-            <TocLink href="#afos-daily-card">2. AFOS Daily — Síntesis Diaria</TocLink>
+            <TocLink href="#afos-daily-card">2. AFOS Daily, Síntesis Diaria</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">4. Encuestas Electorales</TocLink>
             <TocLink href="#criterios-institutos">└ Evaluación de encuestadoras</TocLink>
@@ -44,9 +44,9 @@ export function HowItWorksEs() {
         </div>
       </nav>
 
-      <h2 id="introducao" className={S.h2}>Introducción — Por qué existe AFOS</h2>
+      <h2 id="introducao" className={S.h2}>Introducción, Por qué existe AFOS</h2>
       <p className={S.p}>Cada día abres un periódico y lees "Encuesta X dice que candidato Y tiene 37%". En otro, lees "32%". ¿A cuál creerle?</p>
-      <p className={S.p}><strong className="text-primary">El problema:</strong> las encuestas electorales miden <em>intención declarada</em> — lo que la persona <em>dice</em> que hará. Pero la intención cambia, las encuestas tienen sesgo, y en Brasil ya salió mal varias veces (2018 y 2022 tuvieron grandes sorpresas).</p>
+      <p className={S.p}><strong className="text-primary">El problema:</strong> las encuestas electorales miden <em>intención declarada</em>, lo que la persona <em>dice</em> que hará. Pero la intención cambia, las encuestas tienen sesgo, y en Brasil ya salió mal varias veces (2018 y 2022 tuvieron grandes sorpresas).</p>
       <p className={S.p}><strong className="text-primary">La solución de AFOS:</strong> en lugar de confiar en UNA fuente, la plataforma cruza <strong>tres fuentes independientes en tiempo real</strong>:</p>
 
       <div className={S.tableWrap}>
@@ -60,12 +60,12 @@ export function HowItWorksEs() {
           </thead>
           <tbody>
             <tr className={S.trRow}>
-              <td className={S.tdTop}>🎯 <strong>Mercado de predicción — apuestas</strong> (Polymarket)</td>
+              <td className={S.tdTop}>🎯 <strong>Mercado de predicción, apuestas</strong> (Polymarket)</td>
               <td className={S.tdTop}>Donde gente real apuesta dinero real sobre quién ganará</td>
               <td className={S.tdTop}>Cuando alguien arriesga US$ 10.000, no miente por vanidad</td>
             </tr>
             <tr className={S.trAlt}>
-              <td className={S.tdTop}>📊 <strong>Encuestadoras</strong> (17+ en Brasil — Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá y otros)</td>
+              <td className={S.tdTop}>📊 <strong>Encuestadoras</strong> (17+ en Brasil, Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá y otros)</td>
               <td className={S.tdTop}>Intención declarada en muestras</td>
               <td className={S.tdTop}>Captura el sentimiento del electorado tradicional</td>
             </tr>
@@ -78,7 +78,7 @@ export function HowItWorksEs() {
         </table>
       </div>
 
-      <p className={S.p}>Cuando estas tres fuentes <strong>concuerdan</strong>, la previsión es robusta. Cuando <strong>divergen</strong>, es señal de que algo está en movimiento — y eso es información valiosísima.</p>
+      <p className={S.p}>Cuando estas tres fuentes <strong>concuerdan</strong>, la previsión es robusta. Cuando <strong>divergen</strong>, es señal de que algo está en movimiento, y eso es información valiosísima.</p>
 
       <h2 id="metodo" className={S.h2}>Cómo se cruzan los datos (el método)</h2>
       <p className={S.p}>AFOS no hace estadística formal (regresión, modelos bayesianos). Hace algo diferente y más útil en el día a día: un <strong>cruce narrativo estructurado con reglas explícitas</strong>.</p>
@@ -94,9 +94,9 @@ export function HowItWorksEs() {
             </tr>
           </thead>
           <tbody>
-            <tr className={S.trRow}><td className={S.td}>Diferencia Polymarket × Encuesta ≤ 3pp</td><td className={S.td}><strong>Convergencia</strong> — señal robusta, consenso</td></tr>
-            <tr className={S.trAlt}><td className={S.td}>Diferencia entre 3-5pp</td><td className={S.td}>Zona neutra — tensión leve</td></tr>
-            <tr><td className={S.td}>Diferencia &gt; 5pp</td><td className={S.td}><strong>Divergencia</strong> — algo está cambiando, una fuente ve lo que la otra no</td></tr>
+            <tr className={S.trRow}><td className={S.td}>Diferencia Polymarket × Encuesta ≤ 3pp</td><td className={S.td}><strong>Convergencia</strong>, señal robusta, consenso</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Diferencia entre 3-5pp</td><td className={S.td}>Zona neutra, tensión leve</td></tr>
+            <tr><td className={S.td}>Diferencia &gt; 5pp</td><td className={S.td}><strong>Divergencia</strong>, algo está cambiando, una fuente ve lo que la otra no</td></tr>
           </tbody>
         </table>
       </div>
@@ -108,7 +108,7 @@ export function HowItWorksEs() {
         <li><strong>Mercado arriba, encuesta abajo</strong> → o el mercado anticipa un giro, o es especulación con poco volumen</li>
       </ul>
 
-      <h3 className={S.h3}>Ejemplo real — el salto y el retroceso del Candidato D</h3>
+      <h3 className={S.h3}>Ejemplo real, el salto y el retroceso del Candidato D</h3>
       <Callout title="18/Abr">
         <p>El Candidato D (gobernador regional) saltó en Polymarket "3er lugar" de 8.5% a 19.5% (↑11pp en 24h).</p>
         <ul>
@@ -125,7 +125,7 @@ export function HowItWorksEs() {
           <li>Quien apostó demasiado rápido, perdió</li>
         </ul>
       </Callout>
-      <p className={S.p}>Quien lee AFOS diariamente <strong>llega antes a la conclusión</strong> — porque ve el movimiento mientras ocurre, no después.</p>
+      <p className={S.p}>Quien lee AFOS diariamente <strong>llega antes a la conclusión</strong>, porque ve el movimiento mientras ocurre, no después.</p>
       <SectionIntro>
         <strong>Nota de validez:</strong> los ejemplos concretos citados ilustran el <em>método</em>, no un punto definitivo. Este documento es revisado a medida que la plataforma evoluciona. Los datos en la plataforma están siempre en vivo.
       </SectionIntro>
@@ -135,7 +135,7 @@ export function HowItWorksEs() {
       <p className={S.p}><strong>Ejemplo:</strong> el Candidato A tenía 40%, hoy tiene 42%. Subió <strong>2 puntos porcentuales (2pp)</strong>. En términos relativos, es un crecimiento del 5% (2 sobre 40).</p>
 
       <h3 className={S.h3}>Por qué importan las variaciones pequeñas</h3>
-      <p className={S.pTight}><strong>1. Liquidez:</strong> el Polymarket presidencial tiene US$ 54 millones en juego. Un cambio de 0.8pp significa que aproximadamente US$ 432 mil líquidos fueron reajustados. No es opinión — es compromiso financiero real.</p>
+      <p className={S.pTight}><strong>1. Liquidez:</strong> el Polymarket presidencial tiene US$ 54 millones en juego. Un cambio de 0.8pp significa que aproximadamente US$ 432 mil líquidos fueron reajustados. No es opinión, es compromiso financiero real.</p>
       <p className={S.pTight}><strong>2. Velocidad:</strong> 0.8pp en 1 día parece poco. Si sostiene el ritmo: 5.6pp por semana; 24pp por mes; reversión completa en 5 meses. Movimiento pequeño y persistente <strong>vence</strong> al movimiento grande y aislado.</p>
       <p className={S.p}><strong>3. Anticipación:</strong> cuando el mercado se mueve, se mueve <strong>antes</strong> del consenso de los periódicos. 48 horas después, vas a leer analistas diciendo lo que el mercado ya dijo.</p>
 
@@ -153,7 +153,7 @@ export function HowItWorksEs() {
             <tr className={S.trRow}><td className={S.td}>±0.0 a ±0.3pp</td><td className={S.td}>Ruido de mercado</td><td className={S.td}>Ignorar</td></tr>
             <tr className={S.trAlt}><td className={S.td}>±0.4 a ±1.0pp</td><td className={S.td}>Movimiento leve, dirección naciendo</td><td className={S.td}>Observar si persiste 2-3 días</td></tr>
             <tr className={S.trRow}><td className={S.td}>±1.0 a ±3.0pp</td><td className={S.td}>Movimiento significativo</td><td className={S.td}>Investigar noticias del día</td></tr>
-            <tr className={S.trAlt}><td className={S.td}>±3.0 a ±5.0pp</td><td className={S.td}>Salto — algo grande pasó</td><td className={S.td}>Prioridad máxima</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>±3.0 a ±5.0pp</td><td className={S.td}>Salto, algo grande pasó</td><td className={S.td}>Prioridad máxima</td></tr>
             <tr><td className={S.td}>±5.0pp+</td><td className={S.td}>Evento disruptivo</td><td className={S.td}>Releer todo el escenario</td></tr>
           </tbody>
         </table>
@@ -172,15 +172,15 @@ export function HowItWorksEs() {
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>Acerca de</strong></td><td className={S.td}>Explica la misión del proyecto, el problema que resuelve y el método</td></tr>
             <tr className={S.trAlt}><td className={S.td}><strong>Metas</strong></td><td className={S.td}>Muestra los objetivos públicos de la plataforma (cobertura de países, integración de fuentes, roadmap)</td></tr>
-            <tr><td className={S.td}><strong>Global</strong></td><td className={S.td}>Vuelve al mapa mundial — útil cuando estás en medio de un análisis y quieres explorar otro país</td></tr>
+            <tr><td className={S.td}><strong>Global</strong></td><td className={S.td}>Vuelve al mapa mundial, útil cuando estás en medio de un análisis y quieres explorar otro país</td></tr>
           </tbody>
         </table>
       </div>
       <p className={S.p}>El header está presente en todas las páginas. Es el ancla de la navegación.</p>
 
-      <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily — Síntesis Diaria</h2>
+      <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily, Síntesis Diaria</h2>
       <p className={S.p}>Justo debajo del header aparece el <strong>card AFOS Daily</strong>: un bloque azul claro con la fecha de hoy, un extracto de la síntesis narrativa del día (hasta 2 líneas) y un botón <strong>"Leer síntesis →"</strong>.</p>
-      <p className={S.p}>Es la única pieza del dashboard que <strong>no es dato bruto</strong> — es una narrativa curada (~700 palabras, 4 minutos de lectura) cruzando las tres señales (mercado, encuesta, noticia) con enlace inline para cada afirmación. Publicada una vez al día, al final del día.</p>
+      <p className={S.p}>Es la única pieza del dashboard que <strong>no es dato bruto</strong>, es una narrativa curada (~700 palabras, 4 minutos de lectura) cruzando las tres señales (mercado, encuesta, noticia) con enlace inline para cada afirmación. Publicada una vez al día, al final del día.</p>
 
       <Card title="Cómo funciona AFOS Daily">
         <p><strong>Estructura fija:</strong> lede de 2-3 líneas con 3 movimientos clave + 4 secciones numeradas (Mercado de predicción, Lo que las encuestadoras registraron, Lo que la prensa cubrió, Divergencias del día) + síntesis final en 3 bullets.</p>
@@ -192,47 +192,47 @@ export function HowItWorksEs() {
         <p><strong>Validación:</strong> la feature pasó por un piloto público de 7 días (22-28 de abril/2026) con decisión GO/NO-GO en el último día. Aprobada como feature permanente.</p>
       </Card>
 
-      <p className={S.p}><strong>Cuándo vale la pena leer:</strong> cuando quieres entender <em>por qué</em> los números del dashboard se movieron, no solo <em>cuánto</em>. El dashboard muestra la foto del día; AFOS Daily explica la historia — con fuentes auditables para que verifiques cada paso.</p>
+      <p className={S.p}><strong>Cuándo vale la pena leer:</strong> cuando quieres entender <em>por qué</em> los números del dashboard se movieron, no solo <em>cuánto</em>. El dashboard muestra la foto del día; AFOS Daily explica la historia, con fuentes auditables para que verifiques cada paso.</p>
 
-      <h2 id="cards-polymarket" className={S.h2}>3. Los 6 Cards Polymarket — Panel instantáneo</h2>
+      <h2 id="cards-polymarket" className={S.h2}>3. Los 6 Cards Polymarket, Panel instantáneo</h2>
       <p className={S.p}>Justo después del header, aparecen <strong>seis cards lado a lado</strong> resumiendo los mercados más importantes de Polymarket en el momento. Cada card muestra un <strong>porcentaje</strong> (probabilidad precifada por el mercado) con la <strong>variación respecto al día anterior</strong> (↑↓pp).</p>
 
-      <Card title="🏆 Card 1 — Quién gana la presidencia en la 1ª vuelta">
+      <Card title="🏆 Card 1, Quién gana la presidencia en la 1ª vuelta">
         <p>Muestra las probabilidades de los principales candidatos de <strong>ganar en la primera vuelta</strong> (&gt;50% de votos válidos, evitando segunda vuelta).</p>
         <p><strong>Ejemplo hoy (19/Abr):</strong> Candidato B 39.6% × Candidato A 39.5% → <em>empate técnico</em>. Ninguno con chance real de victoria en la 1ª vuelta.</p>
         <p><strong>Cómo leer:</strong> si un candidato pasa de 50%, el mercado cree en victoria directa; por debajo de eso, habrá segunda vuelta.</p>
       </Card>
-      <Card title="🥈 Card 2 — Quién queda en 2º lugar">
+      <Card title="🥈 Card 2, Quién queda en 2º lugar">
         <p>Muestra la probabilidad de <strong>cada candidato ser el subcampeón</strong> (llegar a la segunda vuelta en segunda posición).</p>
         <p><strong>Ejemplo hoy:</strong> Candidato B 66.5% (↑0.5pp) × Candidato A 17% (↑1pp) × Candidato C 6.7%.</p>
         <p><strong>Cómo leer:</strong> este mercado <strong>consolida el escenario de segunda vuelta</strong>. Si el Candidato B lidera con 66.5%, significa que el dinero ve <em>casi seguro</em> que disputa la segunda vuelta, sin importar contra quién.</p>
       </Card>
-      <Card title="🥉 Card 3 — Quién queda en 3er lugar">
-        <p>Muestra los favoritos a quedar en <strong>3ª posición</strong> — es decir, fuera de la segunda vuelta, pero con influencia decisiva (transfieren votos).</p>
+      <Card title="🥉 Card 3, Quién queda en 3er lugar">
+        <p>Muestra los favoritos a quedar en <strong>3ª posición</strong>, es decir, fuera de la segunda vuelta, pero con influencia decisiva (transfieren votos).</p>
         <p><strong>Ejemplo hoy:</strong> Candidato C 32% × Candidato D 19% × Candidato F 3.95%.</p>
         <p><strong>Cómo leer:</strong> este es el <strong>termómetro de la tercera vía</strong>. Cuando un nombre sube fuerte aquí (como el Candidato D de 8.5% → 19.5% el 18/Abr), el mercado está precificando una articulación política relevante.</p>
       </Card>
-      <Card title="⚖️ Card 4 — STF (Impeachment de ministro)">
+      <Card title="⚖️ Card 4, STF (Impeachment de ministro)">
         <p>Muestra la probabilidad de <strong>algún ministro del STF sufrir impeachment antes de 2027</strong>.</p>
         <p><strong>Ejemplo hoy:</strong> 11.5% (↓1.5pp, cayendo -4.5pp en 2 días).</p>
         <p><strong>Cómo leer:</strong> este número es el <strong>riesgo institucional</strong> precifado. Cuando sube, hay tensión real entre Congreso y STF. Cuando baja, el mercado cree que el sistema "se acomodará".</p>
       </Card>
-      <Card title="🏛️ Card 5 — Senado (Partido con más escaños)">
+      <Card title="🏛️ Card 5, Senado (Partido con más escaños)">
         <p>Muestra la probabilidad de <strong>cada partido ganar la mayoría de escaños</strong> en la elección del Senado 2026.</p>
         <p><strong>Ejemplo hoy:</strong> PL 76.5% (↓3pp) × MDB 10.5% × PSD 5.1% × União 3.1% × PT 2.4%.</p>
-        <p><strong>Cómo leer:</strong> el Senado <strong>condiciona el próximo gobierno</strong>. Un presidente sin base en el Senado gobierna poco. Cuando el PL baja (↓3pp), el mercado precifica un escenario diferente de 2022 — cuando el gobierno tuvo Senado adverso.</p>
+        <p><strong>Cómo leer:</strong> el Senado <strong>condiciona el próximo gobierno</strong>. Un presidente sin base en el Senado gobierna poco. Cuando el PL baja (↓3pp), el mercado precifica un escenario diferente de 2022, cuando el gobierno tuvo Senado adverso.</p>
       </Card>
-      <Card title="📈 Card 6 — Inflación 2026">
+      <Card title="📈 Card 6, Inflación 2026">
         <p>Muestra la probabilidad de <strong>en qué franja cerrará la inflación anual de 2026</strong>.</p>
         <p><strong>Ejemplo hoy:</strong> 5.00-5.49% tiene 39.45% de probabilidad (↑2.75pp) × 4.50-4.99%: 33.75% × 4.00-4.49%: 9.45%.</p>
-        <p><strong>Cómo leer:</strong> este es el <strong>termómetro económico</strong>. La inflación alta presiona al gobierno, favorece a la oposición. Cuando la franja 5.00-5.49% se dispara (↑2.75pp en 1 día), el mercado está diciendo "olvídate de inflación baja" — con consecuencia electoral directa.</p>
+        <p><strong>Cómo leer:</strong> este es el <strong>termómetro económico</strong>. La inflación alta presiona al gobierno, favorece a la oposición. Cuando la franja 5.00-5.49% se dispara (↑2.75pp en 1 día), el mercado está diciendo "olvídate de inflación baja", con consecuencia electoral directa.</p>
       </Card>
 
       <h2 id="pesquisas" className={S.h2}>4. Encuestas Electorales</h2>
       <p className={S.p}>Debajo de los cards Polymarket, encuentras la sección de encuestas electorales.</p>
 
       <h3 className={S.h3}>Cómo llegan las encuestas aquí</h3>
-      <p className={S.p}>Todas las encuestas registradas en el <strong>TSE (Tribunal Superior Electoral) de Brasil</strong> son descargadas automáticamente todos los días. La base cuenta con <strong>más de 150 encuestas indexadas</strong> y crece con aproximadamente <strong>2 a 4 nuevas encuestas registradas por semana</strong> — ritmo que acelera a medida que avanza el ciclo electoral.</p>
+      <p className={S.p}>Todas las encuestas registradas en el <strong>TSE (Tribunal Superior Electoral) de Brasil</strong> son descargadas automáticamente todos los días. La base cuenta con <strong>más de 150 encuestas indexadas</strong> y crece con aproximadamente <strong>2 a 4 nuevas encuestas registradas por semana</strong>, ritmo que acelera a medida que avanza el ciclo electoral.</p>
 
       <h3 className={S.h3}>Encuestadoras monitoreadas</h3>
       <p className={S.p}>La plataforma acompaña más de 17 encuestadoras brasileñas. Las más frecuentes en el último mes:</p>
@@ -251,7 +251,7 @@ export function HowItWorksEs() {
 
       <h3 className={S.h3}>Saber no solo lo que dicen las encuestas, sino lo que van a decir</h3>
       <p className={S.p}>Por la legislación brasileña, toda encuestadora está obligada a <strong>registrar cada encuesta en el TSE antes de divulgarla</strong>, con protocolo único, fecha de campo (cuándo está siendo aplicada), fecha prevista de publicación, tamaño de la muestra y costo. Este registro es <strong>público</strong> y queda disponible en la base oficial del TSE en el momento en que la encuestadora lo envía.</p>
-      <p className={S.p}><strong>Ahí es donde entra la inteligencia de AFOS:</strong> la plataforma ejecuta ciclos automáticos de ingesta a lo largo del día consultando el TSE directamente. Cuando una encuesta nueva es registrada en la base oficial, en pocas horas ya está procesada, cruzada con Polymarket y mostrada en tu pantalla — <strong>sin depender de un periodista que la cubra o de nota oficial de la encuestadora</strong>.</p>
+      <p className={S.p}><strong>Ahí es donde entra la inteligencia de AFOS:</strong> la plataforma ejecuta ciclos automáticos de ingesta a lo largo del día consultando el TSE directamente. Cuando una encuesta nueva es registrada en la base oficial, en pocas horas ya está procesada, cruzada con Polymarket y mostrada en tu pantalla, <strong>sin depender de un periodista que la cubra o de nota oficial de la encuestadora</strong>.</p>
 
       <h3 className={S.h3}>Qué ves en cada encuesta</h3>
       <ul className={S.ul}>
@@ -265,16 +265,16 @@ export function HowItWorksEs() {
 
       <h3 className={S.h3}>Ejemplo real hoy (19/Abr)</h3>
       <blockquote className={S.quote}>
-        Paraná Pesquisas — nacional — campo <strong>21-23/Abr (en curso)</strong> — publicación prevista <strong>24/Abr</strong> — muestra 1.680
+        Paraná Pesquisas, nacional, campo <strong>21-23/Abr (en curso)</strong>, publicación prevista <strong>24/Abr</strong>, muestra 1.680
       </blockquote>
       <p className={S.p}>Sabes <strong>con 5 días de anticipación</strong> que el jueves habrá una encuesta nacional de Paraná Pesquisas con casi 1.700 entrevistados.</p>
       <Callout title="Valor para ti">
-        <p>La prensa y los analistas tradicionales solo descubren una encuesta <strong>cuando la encuestadora la divulga públicamente</strong> — y eso puede ser 5 a 10 días después del registro. AFOS la descubre <strong>el mismo día que el registro entra en el TSE</strong>, porque sus ciclos de ingesta operan automáticamente en intervalos de pocas horas. Esto transforma la lógica: dejas de <strong>reaccionar a noticias</strong> y pasas a <strong>anticiparlas</strong>.</p>
+        <p>La prensa y los analistas tradicionales solo descubren una encuesta <strong>cuando la encuestadora la divulga públicamente</strong>, y eso puede ser 5 a 10 días después del registro. AFOS la descubre <strong>el mismo día que el registro entra en el TSE</strong>, porque sus ciclos de ingesta operan automáticamente en intervalos de pocas horas. Esto transforma la lógica: dejas de <strong>reaccionar a noticias</strong> y pasas a <strong>anticiparlas</strong>.</p>
       </Callout>
 
       <h3 id="criterios-institutos" className={S.h3Anchor}>Criterios de evaluación de encuestadoras</h3>
-      <p className={S.p}>Además de listar las encuestas, AFOS muestra en el dashboard un card llamado <strong>"Encuestadoras Monitoreadas — Confiabilidad"</strong>, donde cada encuestadora recibe una clasificación de 1 a 5 estrellas. Esta clasificación sirve como <strong>regla de peso editorial</strong> para ayudar al lector a decidir cuánto confiar cuando dos encuestas divergen.</p>
-      <p className={S.p}><strong>Naturaleza de la clasificación:</strong> es una evaluación <em>editorial cualitativa</em> — no un score calculado automáticamente. Refleja el consenso público del mercado electoral brasileño (analistas, periodistas especializados, literatura metodológica). Funciona como primera aproximación honesta; la evolución hacia un score cuantitativo está en el roadmap de AFOS tras el ciclo electoral.</p>
+      <p className={S.p}>Además de listar las encuestas, AFOS muestra en el dashboard un card llamado <strong>"Encuestadoras Monitoreadas, Confiabilidad"</strong>, donde cada encuestadora recibe una clasificación de 1 a 5 estrellas. Esta clasificación sirve como <strong>regla de peso editorial</strong> para ayudar al lector a decidir cuánto confiar cuando dos encuestas divergen.</p>
+      <p className={S.p}><strong>Naturaleza de la clasificación:</strong> es una evaluación <em>editorial cualitativa</em>, no un score calculado automáticamente. Refleja el consenso público del mercado electoral brasileño (analistas, periodistas especializados, literatura metodológica). Funciona como primera aproximación honesta; la evolución hacia un score cuantitativo está en el roadmap de AFOS tras el ciclo electoral.</p>
 
       <h4 className={S.h4}>Los 5 criterios considerados</h4>
       <div className="overflow-x-auto my-4">
@@ -317,15 +317,15 @@ export function HowItWorksEs() {
 
       <h4 className={S.h4}>Fuentes consultadas para la clasificación</h4>
       <ul className={S.ul}>
-        <li><strong>Resultados electorales oficiales del TSE</strong> — comparación pública entre previsiones y resultados de urnas en ciclos anteriores (2018, 2022)</li>
-        <li><strong>Literatura metodológica brasileña</strong> — ABEP (Asociación Brasileña de Empresas de Investigación), artículos académicos sobre precisión de encuestas electorales, análisis metodológicos en FGV y Poder360</li>
-        <li><strong>Consenso periodístico especializado</strong> — analistas políticos de referencia (Folha, Estadão, O Globo, Poder360) que históricamente pesan las encuestadoras de forma similar</li>
-        <li><strong>Historial público del TSE</strong> — protocolos de registro, tamaño de muestra, costo declarado, frecuencia de publicación (todos públicos y auditables)</li>
-        <li><strong>Sitios web de las propias encuestadoras</strong> — metodología declarada, divulgación de cuestionario, transparencia sobre ponderación y estratificación</li>
+        <li><strong>Resultados electorales oficiales del TSE</strong>, comparación pública entre previsiones y resultados de urnas en ciclos anteriores (2018, 2022)</li>
+        <li><strong>Literatura metodológica brasileña</strong>, ABEP (Asociación Brasileña de Empresas de Investigación), artículos académicos sobre precisión de encuestas electorales, análisis metodológicos en FGV y Poder360</li>
+        <li><strong>Consenso periodístico especializado</strong>, analistas políticos de referencia (Folha, Estadão, O Globo, Poder360) que históricamente pesan las encuestadoras de forma similar</li>
+        <li><strong>Historial público del TSE</strong>, protocolos de registro, tamaño de muestra, costo declarado, frecuencia de publicación (todos públicos y auditables)</li>
+        <li><strong>Sitios web de las propias encuestadoras</strong>, metodología declarada, divulgación de cuestionario, transparencia sobre ponderación y estratificación</li>
       </ul>
 
       <Callout title="Limitación honesta">
-        <p>La clasificación actual es <strong>editorial y subjetiva</strong>. Dos personas evaluando los mismos criterios podrían llegar a notas ligeramente diferentes. Para reducir esta subjetividad a largo plazo, el <strong>roadmap de AFOS prevé evolución hacia un score cuantitativo</strong> basado en datos históricos del TSE + resultados oficiales — tasa de acierto, error medio absoluto, muestra ponderada, frecuencia y transparencia metodológica — con cálculo reproducible publicado. Plazo dependiente de datos del ciclo electoral de octubre/2026.</p>
+        <p>La clasificación actual es <strong>editorial y subjetiva</strong>. Dos personas evaluando los mismos criterios podrían llegar a notas ligeramente diferentes. Para reducir esta subjetividad a largo plazo, el <strong>roadmap de AFOS prevé evolución hacia un score cuantitativo</strong> basado en datos históricos del TSE + resultados oficiales, tasa de acierto, error medio absoluto, muestra ponderada, frecuencia y transparencia metodológica, con cálculo reproducible publicado. Plazo dependiente de datos del ciclo electoral de octubre/2026.</p>
       </Callout>
 
       <h2 id="analise-criteriosa" className={S.h2}>5. Análisis Detallado (de los 4 primeros candidatos)</h2>
@@ -333,13 +333,13 @@ export function HowItWorksEs() {
       <p className={S.p}>El análisis se divide en <strong>4 secciones</strong>: Candidato A, Candidato B, Candidato C, y una sección agrupada con los candidatos D, E y F. Cada sección tiene <strong>tres bloques</strong>: FORTALEZAS, DEBILIDADES y ANÁLISIS.</p>
 
       <h3 className={S.h3}>🟢 Bloque "FORTALEZAS"</h3>
-      <p className={S.p}>Todo lo que está jugando a favor del candidato <strong>ese día</strong>, con <strong>fuente, fecha y medio citados</strong>. No es opinión — es dato auditable.</p>
+      <p className={S.p}>Todo lo que está jugando a favor del candidato <strong>ese día</strong>, con <strong>fuente, fecha y medio citados</strong>. No es opinión, es dato auditable.</p>
       <blockquote className={S.quote}>
         <strong>Ejemplo Candidato A hoy:</strong> "POLYMARKET (19/Abr): 39.5% (estable) mientras el Candidato B se desinfla. 2º lugar Poly Candidato A SUBE 17% (↑1pp). Folha: 'Candidato A intensifica agenda dirigida a las mujeres'. Poder360: 'Las mujeres se vuelven foco central'."
       </blockquote>
 
       <h3 className={S.h3}>🔴 Bloque "DEBILIDADES"</h3>
-      <p className={S.p}>Todo lo que está <strong>en contra</strong> del candidato — con la misma profundidad que las fortalezas. AFOS es <strong>simétrico</strong>.</p>
+      <p className={S.p}>Todo lo que está <strong>en contra</strong> del candidato, con la misma profundidad que las fortalezas. AFOS es <strong>simétrico</strong>.</p>
       <blockquote className={S.quote}>
         <strong>Ejemplo Candidato A hoy:</strong> "Candidato B mantiene liderazgo mínimo. Paraná Pesquisas SP: 2da vuelta Candidato B 48.1% × Candidato A 40.3%. BNews: caída Candidato A / crecimiento Candidato B en el Nordeste. Gazeta do Povo: 'Cómo el Candidato A derritió su ventaja de 2022'."
       </blockquote>
@@ -371,13 +371,13 @@ export function HowItWorksEs() {
         <li><strong>Polymarket:</strong> porcentaje actual en el mercado presidencial</li>
         <li><strong>Encuesta:</strong> número más reciente de intención de voto</li>
         <li><strong>Posicionamiento:</strong> ideología resumida (centro-izquierda, derecha liberal, etc.)</li>
-        <li><strong>⚠️ Riesgo:</strong> el resumen del día — qué puede cambiar, qué está bajo presión, qué favorece</li>
+        <li><strong>⚠️ Riesgo:</strong> el resumen del día, qué puede cambiar, qué está bajo presión, qué favorece</li>
       </ul>
       <Callout title="Valor para ti">
         <p>Es un "quién es quién" rápido. Si alguien pregunta "¿quién es el Candidato C?", abres, lees 20 segundos y respondes con datos.</p>
       </Callout>
 
-      <h2 id="paises" className={S.h2}>8. Países — Botones Clicables</h2>
+      <h2 id="paises" className={S.h2}>8. Países, Botones Clicables</h2>
       <p className={S.p}>La plataforma cubre <strong>14+ países</strong> con elecciones monitoreadas. Cada país aparece como un botón clicable. Clickeando uno, ves el mismo tipo de cruce (Polymarket + encuestas locales + noticias) aplicado a esa elección.</p>
       <p className={S.p}><strong>Países en destaque actualmente:</strong> Brasil, EE.UU., Francia, Alemania, Reino Unido, Canadá, Australia, Corea del Sur, Colombia, Chile, entre otros.</p>
       <p className={S.p}><strong>Por qué importa:</strong> las decisiones políticas globales se influencian. El resultado de EE.UU. 2024 afecta la dinámica de Brasil 2026. Ver el mapa completo te da contexto.</p>
@@ -402,7 +402,7 @@ export function HowItWorksEs() {
       </Callout>
 
       <h2 id="inss-lulinha" className={S.h2}>11. Escándalo INSS y el Caso del Familiar del Incumbente</h2>
-      <p className={S.p}>Card específico sobre el mayor escándalo económico de 2026 — el fraude de los descuentos indebidos en el INSS (sistema de pensiones) — y las ramificaciones que involucran a un familiar del incumbente.</p>
+      <p className={S.p}>Card específico sobre el mayor escándalo económico de 2026, el fraude de los descuentos indebidos en el INSS (sistema de pensiones), y las ramificaciones que involucran a un familiar del incumbente.</p>
       <p className={S.p}><strong>Qué muestra:</strong> texto estructurado en 4 bloques:</p>
       <ul className={S.ul}>
         <li><strong>Contexto actual</strong> del caso (novedades del día)</li>
@@ -415,7 +415,7 @@ export function HowItWorksEs() {
       </Callout>
 
       <h2 id="banco-master" className={S.h2}>12. Impacto del Escándalo Banco Master</h2>
-      <p className={S.p}>Card enfocado en el caso Banco Master y la delación del ejecutivo involucrado — otro escándalo económico que se despliega por capítulos.</p>
+      <p className={S.p}>Card enfocado en el caso Banco Master y la delación del ejecutivo involucrado, otro escándalo económico que se despliega por capítulos.</p>
       <p className={S.p}><strong>Qué muestra:</strong></p>
       <ul className={S.ul}>
         <li>Últimos desarrollos (ej: el Banco Central aprobó el control del ejecutivo después de rechazarlo primero)</li>
@@ -427,51 +427,51 @@ export function HowItWorksEs() {
         <p>Al ser una historia <strong>larga y fragmentada</strong> en la prensa, tener un diario consolidado ahorra horas de búsqueda.</p>
       </Callout>
 
-      <h2 id="stf" className={S.h2}>13. Credibilidad del STF — Impacto Electoral</h2>
-      <p className={S.p}>Card dedicado a la <strong>lectura del Supremo como actor electoral</strong> — porque el STF, aunque no vota, influye decisivamente en las elecciones.</p>
+      <h2 id="stf" className={S.h2}>13. Credibilidad del STF, Impacto Electoral</h2>
+      <p className={S.p}>Card dedicado a la <strong>lectura del Supremo como actor electoral</strong>, porque el STF, aunque no vota, influye decisivamente en las elecciones.</p>
       <p className={S.p}><strong>Qué muestra:</strong></p>
       <ul className={S.ul}>
         <li><strong>Ministro por ministro</strong> (Ministro 1, Ministro 2, Ministro 3, Ministro 4): qué está haciendo cada uno</li>
         <li><strong>Nexo:</strong> cómo las acciones individuales se conectan en estrategia institucional</li>
-        <li><strong>Análisis:</strong> interpreta Polymarket — ¿el mercado espera ruptura (impeachment) o acomodación?</li>
+        <li><strong>Análisis:</strong> interpreta Polymarket, ¿el mercado espera ruptura (impeachment) o acomodación?</li>
       </ul>
       <blockquote className={S.quote}>
         <strong>Ejemplo hoy:</strong> "STF impeach cae 11.5% (↓1.5pp, -4.5pp en 2 días). El Supremo quiere endurecer las CPIs. Ministro 1 puede declararse impedido en el caso BRB."
       </blockquote>
-      <p className={S.p}><strong>Traducción:</strong> el STF se está <strong>blindando</strong>. El mercado siente que no habrá impeachment — lo que reduce el riesgo para candidatos que apostarían a una ruptura institucional.</p>
+      <p className={S.p}><strong>Traducción:</strong> el STF se está <strong>blindando</strong>. El mercado siente que no habrá impeachment, lo que reduce el riesgo para candidatos que apostarían a una ruptura institucional.</p>
       <Callout title="Valor para ti">
         <p>Entender al STF como <strong>actor político</strong>, no solo jurídico.</p>
       </Callout>
 
       <h2 id="footer" className={S.h2}>14. Footer (pie de página)</h2>
-      <p className={S.p}>El footer se organiza en <strong>tres bloques enjutos</strong>, cada uno con propósito claro. Ningún link en el footer apunta a página vacía — cada uno entrega algo específico.</p>
+      <p className={S.p}>El footer se organiza en <strong>tres bloques enjutos</strong>, cada uno con propósito claro. Ningún link en el footer apunta a página vacía, cada uno entrega algo específico.</p>
 
-      <h3 className={S.h3}>Bloque 1 — Navegación</h3>
+      <h3 className={S.h3}>Bloque 1, Navegación</h3>
       <p className={S.pTight}>Atajos a las áreas principales de la plataforma:</p>
       <ul className={S.ul}>
-        <li><strong>Dashboard</strong> — aplicación principal con los 6 cards Polymarket, análisis y cards temáticos</li>
-        <li><strong>Mapa Global</strong> — visualización D3.js interactiva de los 14+ países monitoreados</li>
-        <li><strong>América Latina</strong> — hub regional con Brasil, Colombia, Chile y México</li>
-        <li><strong>Europa</strong> — hub regional con Francia, Alemania y Reino Unido</li>
+        <li><strong>Dashboard</strong>, aplicación principal con los 6 cards Polymarket, análisis y cards temáticos</li>
+        <li><strong>Mapa Global</strong>, visualización D3.js interactiva de los 14+ países monitoreados</li>
+        <li><strong>América Latina</strong>, hub regional con Brasil, Colombia, Chile y México</li>
+        <li><strong>Europa</strong>, hub regional con Francia, Alemania y Reino Unido</li>
       </ul>
 
-      <h3 className={S.h3}>Bloque 2 — Open Source</h3>
+      <h3 className={S.h3}>Bloque 2, Open Source</h3>
       <p className={S.pTight}>Transparencia completa sobre el proyecto, según el estándar de referencia en software open-source:</p>
       <ul className={S.ul}>
-        <li><strong>Licencia Apache 2.0</strong> — uso, modificación y redistribución permitidos con atribución</li>
-        <li><strong>⭐ GitHub</strong> — repositorio público con código fuente auditable</li>
-        <li><strong>Seguridad</strong> — política de <em>disclosure</em> responsable para vulnerabilidades</li>
-        <li><strong>Contribuir</strong> — guía para desarrolladores externos que quieran enviar mejoras</li>
-        <li><strong>Código de Conducta</strong> — reglas de convivencia en la comunidad (Contributor Covenant)</li>
+        <li><strong>Licencia Apache 2.0</strong>, uso, modificación y redistribución permitidos con atribución</li>
+        <li><strong>⭐ GitHub</strong>, repositorio público con código fuente auditable</li>
+        <li><strong>Seguridad</strong>, política de <em>disclosure</em> responsable para vulnerabilidades</li>
+        <li><strong>Contribuir</strong>, guía para desarrolladores externos que quieran enviar mejoras</li>
+        <li><strong>Código de Conducta</strong>, reglas de convivencia en la comunidad (Contributor Covenant)</li>
       </ul>
 
-      <h3 className={S.h3}>Bloque 3 — Contáctenos</h3>
+      <h3 className={S.h3}>Bloque 3, Contáctenos</h3>
       <p className={S.pTight}>Cuatro canales de email segmentados por propósito:</p>
       <ul className={S.ul}>
-        <li>📧 <strong>Contacto</strong> — prensa, asociaciones y asuntos generales</li>
-        <li>💬 <strong>Soporte</strong> — ayuda para uso de la plataforma</li>
-        <li>🔒 <strong>Seguridad</strong> — reporte confidencial de vulnerabilidades</li>
-        <li>👤 <strong>Founder</strong> — contacto directo con el fundador</li>
+        <li>📧 <strong>Contacto</strong>, prensa, asociaciones y asuntos generales</li>
+        <li>💬 <strong>Soporte</strong>, ayuda para uso de la plataforma</li>
+        <li>🔒 <strong>Seguridad</strong>, reporte confidencial de vulnerabilidades</li>
+        <li>👤 <strong>Founder</strong>, contacto directo con el fundador</li>
       </ul>
 
       <h3 className={S.h3}>Pie final</h3>
@@ -501,9 +501,9 @@ export function HowItWorksEs() {
         <li>Aplica las reglas de convergencia/divergencia descritas anteriormente</li>
         <li>Escribe la narrativa resultante, citando fuentes, fechas y medios</li>
       </ol>
-      <p className={S.p}>Todos los datos usados son <strong>públicos y auditables</strong> — cualquiera puede verificar Polymarket, encuestas del TSE o noticias citadas.</p>
+      <p className={S.p}>Todos los datos usados son <strong>públicos y auditables</strong>, cualquiera puede verificar Polymarket, encuestas del TSE o noticias citadas.</p>
       <Callout title="Por qué es importante decirlo">
-        <p>La transparencia sobre el uso de IA es estándar moderno — y es lo que diferencia un proyecto serio de uno opaco.</p>
+        <p>La transparencia sobre el uso de IA es estándar moderno, y es lo que diferencia un proyecto serio de uno opaco.</p>
       </Callout>
 
       <h2 id="perfis-usuario" className={S.h2}>Perfiles de usuarios</h2>
@@ -530,13 +530,13 @@ export function HowItWorksEs() {
       <p className={S.p}>Si necesitas <strong>margen de error, intervalo de confianza o muestreo científico controlado</strong> (en lenguaje simple: números con precisión matemática certificada y metodología auditable de muestreo), la fuente es la <strong>encuestadora</strong> (Datafolha, Quaest, IBGE, etc.). AFOS consolida y cruza estos datos, pero no produce encuesta nueva.</p>
 
       <h3 className={S.h3}>AFOS no predice resultados con precisión cuantitativa</h3>
-      <p className={S.p}>El cruce es <strong>narrativo estructurado</strong>, no modelo estadístico. La plataforma no entrega previsiones con precisión matemática calculada. Entrega <strong>dirección, ritmo y convergencia</strong> — lecturas cualitativas útiles para apoyar decisión, pero que no sustituyen el modelado matemático formal que académicos y fondos cuantitativos usan.</p>
+      <p className={S.p}>El cruce es <strong>narrativo estructurado</strong>, no modelo estadístico. La plataforma no entrega previsiones con precisión matemática calculada. Entrega <strong>dirección, ritmo y convergencia</strong>, lecturas cualitativas útiles para apoyar decisión, pero que no sustituyen el modelado matemático formal que académicos y fondos cuantitativos usan.</p>
 
       <h3 className={S.h3}>AFOS depende de la calidad de los mercados de predicción</h3>
       <p className={S.p}>En países donde <strong>Polymarket no tiene mercados activos</strong> o tiene mercados con liquidez muy baja (por debajo de US$ 100 mil en volumen), la señal de mercado se vuelve ruidosa. AFOS señala estos casos, pero la confianza de los datos cae proporcionalmente.</p>
 
       <h3 className={S.h3}>AFOS no es recomendación de inversión ni de voto</h3>
-      <p className={S.p}>Es <strong>información estructurada para apoyar decisión</strong>. La decisión sobre portafolio, apuestas o voto es responsabilidad exclusiva de quien usa. La plataforma no opera con cliente, no recibe comisión y no tiene conflicto de interés declarado — justamente para no tener que recomendar nada.</p>
+      <p className={S.p}>Es <strong>información estructurada para apoyar decisión</strong>. La decisión sobre portafolio, apuestas o voto es responsabilidad exclusiva de quien usa. La plataforma no opera con cliente, no recibe comisión y no tiene conflicto de interés declarado, justamente para no tener que recomendar nada.</p>
 
       <h3 className={S.h3}>La cobertura actual está restringida a 14+ países</h3>
       <p className={S.p}>Los países fuera de esta lista no tienen pipeline de recolección específico. El mapa global muestra agregados, pero la profundidad de análisis (cruce encuestas × Polymarket × noticias) solo existe donde la infraestructura está lista. La expansión es continua, pero no universal.</p>
@@ -558,21 +558,21 @@ export function HowItWorksEs() {
 
       <h2 id="comece-aqui" className={S.h2}>Comienza aquí</h2>
       <p className={S.p}>Si es tu primera visita, este es el camino más rápido para extraer valor en <strong>5 minutos</strong>:</p>
-      <Card title="Paso 1 — Abre el Dashboard">
-        <p>Los <strong>6 Cards Polymarket</strong> en la parte superior ya dan el panorama del día. Lee en orden: <em>1ª vuelta</em> → <em>2º lugar</em> → <em>STF</em> → <em>Senado</em>. Enfoque en las variaciones <strong>↑↓pp</strong> — dicen qué se movió desde ayer.</p>
+      <Card title="Paso 1, Abre el Dashboard">
+        <p>Los <strong>6 Cards Polymarket</strong> en la parte superior ya dan el panorama del día. Lee en orden: <em>1ª vuelta</em> → <em>2º lugar</em> → <em>STF</em> → <em>Senado</em>. Enfoque en las variaciones <strong>↑↓pp</strong>, dicen qué se movió desde ayer.</p>
       </Card>
-      <Card title="Paso 2 — Baja hasta el Análisis Detallado">
-        <p>Elige un candidato que te interese y lee los bloques <strong>FORTALEZAS</strong> y <strong>DEBILIDADES</strong> lado a lado. Vas a sentir incomodidad honesta leyendo los puntos contra tu preferido — eso es señal de que el método funciona. AFOS muestra los dos lados de cada número.</p>
+      <Card title="Paso 2, Baja hasta el Análisis Detallado">
+        <p>Elige un candidato que te interese y lee los bloques <strong>FORTALEZAS</strong> y <strong>DEBILIDADES</strong> lado a lado. Vas a sentir incomodidad honesta leyendo los puntos contra tu preferido, eso es señal de que el método funciona. AFOS muestra los dos lados de cada número.</p>
       </Card>
-      <Card title="Paso 3 — Consulta el Card Clima Político">
-        <p>El resumen visual del clima político del día en <strong>30 segundos</strong>. Derecha, izquierda, 3ª vía y Polymarket consolidado — todo en una pantalla.</p>
+      <Card title="Paso 3, Consulta el Card Clima Político">
+        <p>El resumen visual del clima político del día en <strong>30 segundos</strong>. Derecha, izquierda, 3ª vía y Polymarket consolidado, todo en una pantalla.</p>
       </Card>
       <Callout title="Después de eso">
         <p>Vuelve <strong>mañana</strong>. El valor real de AFOS aparece en la secuencia: un día da contexto, tres días dan patrón, una semana da tendencia. Leer una única vez es informarse; leer diariamente es <strong>anticipar</strong>.</p>
       </Callout>
 
       <SummaryFrame>
-        AFOS Analytics es la primera plataforma que combina mercados de predicción con dinero real, encuestas oficiales y noticias en tiempo real para mostrar, con honestidad y transparencia, lo que los datos realmente dicen sobre política — sin sesgo, sin propaganda, libre y sin registro obligatorio.
+        AFOS Analytics es la primera plataforma que combina mercados de predicción con dinero real, encuestas oficiales y noticias en tiempo real para mostrar, con honestidad y transparencia, lo que los datos realmente dicen sobre política, sin sesgo, sin propaganda, libre y sin registro obligatorio.
       </SummaryFrame>
 
       <p className="text-center text-xs text-gray-400 mt-10 mb-2">Actualizado en abril de 2026</p>

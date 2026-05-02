@@ -85,7 +85,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <Link
               href={`/${locale}/how-it-works#criterios-institutos`}
               className="inline-flex items-center gap-1 text-gray-400 hover:text-primary hover:underline transition-colors"
-              aria-label={`${t('sections.criteriaLink')} — ${t('sections.institutes')}`}
+              aria-label={`${t('sections.criteriaLink')}, ${t('sections.institutes')}`}
             >
               ⓘ {t('sections.criteriaLink')} →
             </Link>
@@ -134,7 +134,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div className="flex items-center gap-2">
               <div className="flex-1">
                 <div className="text-right text-sm font-bold" style={{ color: sr.percent1 > sr.percent2 ? '#0F52BA' : '#6B7280' }}>
-                  {sr.candidate1} — {sr.percent1}%
+                  {sr.candidate1}, {sr.percent1}%
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 mt-1 overflow-hidden flex justify-end">
                   <div className="h-full rounded-full" style={{ width: `${sr.percent1}%`, backgroundColor: sr.percent1 > sr.percent2 ? '#0F52BA' : '#94A3B8' }} />
@@ -143,7 +143,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <span className="text-xs font-bold text-gray-400">vs</span>
               <div className="flex-1">
                 <div className="text-left text-sm font-bold" style={{ color: sr.percent2 > sr.percent1 ? '#DC2626' : '#6B7280' }}>
-                  {sr.candidate2} — {sr.percent2}%
+                  {sr.candidate2}, {sr.percent2}%
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 mt-1 overflow-hidden">
                   <div className="h-full rounded-full" style={{ width: `${sr.percent2}%`, backgroundColor: sr.percent2 > sr.percent1 ? '#DC2626' : '#94A3B8' }} />
@@ -156,7 +156,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       </div>
       ))}
 
-      {/* ANÁLISE CRITERIOSA — dados via JSON externo */}
+      {/* ANÁLISE CRITERIOSA, dados via JSON externo */}
       {crit && crit.candidates?.length > 0 && (
       <div className="mt-6 pt-6 border-t-2 border-primary/20">
       <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
@@ -189,7 +189,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         </Card>
       ))}
 
-      {/* CANDIDATO 4 — CAIADO/HADDAD (formato especial) */}
+      {/* CANDIDATO 4, CAIADO/HADDAD (formato especial) */}
       {crit.candidates.filter(c => c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
           <h3 className="font-bold text-lg text-dark mb-1">4️⃣ {c.header}</h3>

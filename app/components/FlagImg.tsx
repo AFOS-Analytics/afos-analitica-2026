@@ -1,5 +1,5 @@
 /**
- * FlagImg — Renders country flag as SVG image.
+ * FlagImg, Renders country flag as SVG image.
  * Works on all platforms (Windows, Mac, mobile).
  *
  * Usage: <FlagImg code="br" /> or <FlagImg code="br" size={24} />

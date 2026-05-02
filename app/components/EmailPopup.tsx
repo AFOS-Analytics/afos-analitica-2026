@@ -6,7 +6,7 @@ import { useVisitorState } from '../hooks/useVisitorState';
 import { SubscribeForm } from './SubscribeForm';
 
 /**
- * Email Popup — Soft lead capture during free sessions.
+ * Email Popup, Soft lead capture during free sessions.
  *
  * Rules:
  * - Only shows when eligible === 'free' && showPopup && popupDismissals < 3

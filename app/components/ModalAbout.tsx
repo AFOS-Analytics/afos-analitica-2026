@@ -80,16 +80,16 @@ export function ModalAbout({ show, onClose }: ModalAboutProps) {
                 <h3 className="font-bold text-primary mb-2">{t('about.updatesTitle')}</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   <div className="bg-light-bg rounded-lg p-3 border border-light-border text-sm text-dark">
-                    <span className="font-bold text-primary">📊 {t('about.updatesMarkets')}</span> — {t('about.updatesMarketsDesc')}
+                    <span className="font-bold text-primary">📊 {t('about.updatesMarkets')}</span>, {t('about.updatesMarketsDesc')}
                   </div>
                   <div className="bg-light-bg rounded-lg p-3 border border-light-border text-sm text-dark">
-                    <span className="font-bold text-primary">📰 {t('about.updatesNews')}</span> — {t('about.updatesNewsDesc')}
+                    <span className="font-bold text-primary">📰 {t('about.updatesNews')}</span>, {t('about.updatesNewsDesc')}
                   </div>
                   <div className="bg-light-bg rounded-lg p-3 border border-light-border text-sm text-dark">
-                    <span className="font-bold text-primary">🔬 {t('about.updatesAnalysis')}</span> — {t('about.updatesAnalysisDesc')}
+                    <span className="font-bold text-primary">🔬 {t('about.updatesAnalysis')}</span>, {t('about.updatesAnalysisDesc')}
                   </div>
                   <div className="bg-light-bg rounded-lg p-3 border border-light-border text-sm text-dark">
-                    <span className="font-bold text-primary">📋 {t('about.updatesPolls')}</span> — {t('about.updatesPollsDesc')}
+                    <span className="font-bold text-primary">📋 {t('about.updatesPolls')}</span>, {t('about.updatesPollsDesc')}
                   </div>
                 </div>
               </div>

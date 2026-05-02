@@ -34,7 +34,7 @@ export function GlobalMapTooltip({ data }: Props) {
           <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={22} height={15} className="rounded-sm object-cover" style={{ width: 22, height: 15 }} />
           <div>
             <div className="font-semibold text-sm" style={{ color: MAP_TOKENS.text }}>{c.countryName}</div>
-            <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType} — {c.electionDate}</div>
+            <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType}, {c.electionDate}</div>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export function GlobalMapTooltip({ data }: Props) {
           </>
         ) : (
           <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-            {c.status === 'upcoming' ? 'Em breve — sem dados de mercado' : 'Encerrada'}
+            {c.status === 'upcoming' ? 'Em breve, sem dados de mercado' : 'Encerrada'}
           </div>
         )}
       </div>

@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lordicon/react": "^1.11.0",
     "@neondatabase/serverless": "^1.0.2",
     "@prisma/adapter-neon": "^7.7.0",
     "@prisma/client": "^7.7.0",
@@ -20,6 +21,7 @@
     "d3": "^7.9.0",
     "gray-matter": "^4.0.3",
     "jszip": "^3.10.1",
+    "lottie-web": "^5.13.0",
     "next": "14.2.35",
     "prisma": "^7.7.0",
     "react": "^18",
