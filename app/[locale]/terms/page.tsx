@@ -19,7 +19,6 @@ const CONTENT = {
       ['Limitação de responsabilidade', 'AFOS Analytics fornece informações com base em dados auditáveis públicos, sem garantia de precisão, completude ou atualidade. Decisões tomadas com base no conteúdo são de responsabilidade exclusiva do usuário. AFOS Analytics não se responsabiliza por perdas decorrentes de uso da plataforma.'],
       ['Uso permitido', 'Permitido: leitura, citação com atribuição, embed em sites próprios, uso em pesquisa acadêmica. Não permitido: scraping automatizado em larga escala, redistribuição comercial sem permissão, uso para construir produto concorrente.'],
       ['Alterações nos termos', 'Estes termos podem ser atualizados a qualquer momento. Mudanças significativas serão comunicadas aos subscritores por email.'],
-      ['Lei aplicável', 'Estes termos são regidos pelas leis do Brasil. Foro de Brasília-DF para disputas.'],
     ],
   },
   en: {
@@ -34,7 +33,6 @@ const CONTENT = {
       ['Limitation of liability', 'AFOS Analytics provides information based on publicly auditable data, without guarantee of accuracy, completeness or timeliness. Decisions made based on content are sole responsibility of the user. AFOS Analytics is not liable for losses arising from use of the platform.'],
       ['Permitted use', 'Permitted: reading, citation with attribution, embed in own sites, academic research. Not permitted: large-scale automated scraping, commercial redistribution without permission, use to build competing product.'],
       ['Changes to terms', 'These terms may be updated at any time. Significant changes will be communicated to subscribers via email.'],
-      ['Governing law', 'These terms are governed by the laws of Brazil. Jurisdiction: Brasília-DF for disputes.'],
     ],
   },
   es: {
@@ -49,7 +47,6 @@ const CONTENT = {
       ['Limitación de responsabilidad', 'AFOS Analytics proporciona información basada en datos auditables públicos, sin garantía de precisión, completitud o actualidad. Las decisiones tomadas con base en el contenido son responsabilidad exclusiva del usuario. AFOS Analytics no se responsabiliza por pérdidas derivadas del uso de la plataforma.'],
       ['Uso permitido', 'Permitido: lectura, cita con atribución, embed en sitios propios, uso en investigación académica. No permitido: scraping automatizado a gran escala, redistribución comercial sin permiso, uso para construir producto competidor.'],
       ['Cambios en los términos', 'Estos términos pueden actualizarse en cualquier momento. Cambios significativos serán comunicados a los suscriptores por email.'],
-      ['Ley aplicable', 'Estos términos se rigen por las leyes de Brasil. Foro de Brasília-DF para disputas.'],
     ],
   },
 } as const
