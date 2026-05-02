@@ -50,9 +50,19 @@ def main() -> int:
     if not re.search(r"public[/\\]afos-daily[/\\][^/\\]+\.md$", file_path):
         return 0
 
-    # Filtro 2: edits pontuais sem headers (typo fix, link rot) podem passar
-    # Heurística: se o content NÃO tem '## ' (header de seção), é edit menor
-    if not re.search(r"^## ", content, re.MULTILINE):
+    # Filtro 2: distinguir CRIAÇÃO de síntese nova de EDIT pontual.
+    # Sinal forte de criação: presença de frontmatter YAML (--- bloco no início).
+    # Edits pontuais (typo fix, link rot, status flip) não modificam frontmatter
+    # inteiro, então não terão `---` no content payload.
+    #
+    # Edits via Edit tool passam o trecho EDITADO como content/new_string, não o
+    # arquivo inteiro — então frontmatter aparece só em Write (criação) ou em
+    # Edit que substitua o bloco YAML inteiro.
+    has_frontmatter = bool(re.search(r"^---\s*\n.*?\n---\s*\n", content, re.DOTALL | re.MULTILINE))
+    has_section_header = bool(re.search(r"^## ", content, re.MULTILINE))
+
+    # Se NÃO tem frontmatter E NÃO tem seção -- é edit pontual, permitir
+    if not has_frontmatter and not has_section_header:
         return 0
 
     # Localizar transcript da sessão atual

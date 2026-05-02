@@ -79,6 +79,15 @@ function main() {
     console.error('   Default window: last 7 dailies (canonical PT-BR only).')
     process.exit(1)
   }
+  // Validar que keywords não são strings vazias ou só whitespace — regex // matches everything
+  const validKeywords = keywords.filter((k) => k.trim().length > 0)
+  if (validKeywords.length === 0) {
+    console.error('❌ Erro: todos os keywords passados são vazios. Forneça pelo menos 1 keyword não-vazio.')
+    process.exit(1)
+  }
+  if (validKeywords.length < keywords.length) {
+    console.error(`⚠️  ${keywords.length - validKeywords.length} keyword(s) vazios ignorados.`)
+  }
 
   const files = listRecentCanonicalDailies(window)
   if (files.length === 0) {
@@ -90,7 +99,7 @@ function main() {
 
   let anyMentionAcross = false
 
-  for (const keyword of keywords) {
+  for (const keyword of validKeywords) {
     console.log(`📅 Timeline de menções a "${keyword}":`)
     let mentionCount = 0
     for (const file of files) {

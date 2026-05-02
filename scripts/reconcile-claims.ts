@@ -42,6 +42,11 @@ function readMarkdown(date: string): string | null {
   return readFileSync(path, 'utf-8')
 }
 
+// Padroes que devem ser EXCLUIDOS do reconcile (geram falso positivo).
+// `n=2.000` (sample size), `1.500 entrevistados`, codigos protocolo BR083372026,
+// "5/Mai" ou "5 de Maio" (datas), "20:30" (horarios), "n=4.000".
+const EXCLUDE_CONTEXT_RE = /\b(?:n\s*=|sample|amostra|entrevistados|protocolo)/i
+
 function extractClaimsFromMarkdown(text: string): Claim[] {
   const claims: Claim[] = []
   const lines = text.split(/\r?\n/)
@@ -57,6 +62,8 @@ function extractClaimsFromMarkdown(text: string): Claim[] {
       // Captura ~80 chars de contexto antes da match
       const start = Math.max(0, m.index - 80)
       const ctx = line.slice(start, m.index + m[0].length).trim()
+      // Filtrar contextos que sao falsos positivos (n=, amostra, etc.)
+      if (EXCLUDE_CONTEXT_RE.test(ctx)) continue
       claims.push({
         value: v,
         unit: m[2] as '%' | 'pp',
