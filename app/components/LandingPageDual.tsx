@@ -592,7 +592,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <div className="flex flex-wrap justify-center gap-3">
             {COUNTRIES.map((c) => (
               <div key={c.name} className={`flex items-center gap-2 rounded-xl px-4 py-2.5 border transition-all duration-500 ${tk.countryCard}`}>
-                <img src={`/flags/${c.code}.svg`} alt={c.name} width={24} height={16} className="rounded-sm object-cover" style={{ width: 24, height: 16 }} />
+                <img src={`/flags/${c.code}.svg`} alt="" aria-hidden="true" width={24} height={16} loading="lazy" decoding="async" className="rounded-sm object-cover" style={{ width: 24, height: 16 }} />
                 <span className={`text-sm font-medium transition-colors duration-500 ${tk.countryName}`}>{c.name}</span>
                 <span className={`text-[10px] font-mono transition-colors duration-500 ${tk.countryYear}`}>{c.year}</span>
               </div>

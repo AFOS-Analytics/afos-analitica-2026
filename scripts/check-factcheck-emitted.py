@@ -87,15 +87,28 @@ def main() -> int:
         )
         return 0
 
-    # Verificar se "Fact-check gate" foi emitido
+    # Verificar se "Fact-check gate" foi emitido E tem estrutura mínima.
+    # Substring-only era bypassável: Claude podia escrever o literal sem fazer
+    # as verificações. Agora exigimos pelo menos 3 dos 4 marcadores estruturais.
+    REQUIRED_MARKERS = [
+        re.compile(r"##\s*Fact-check gate", re.IGNORECASE),
+        re.compile(r"Verifica[çc][ãa]o\s*1", re.IGNORECASE),
+        re.compile(r"Verifica[çc][ãa]o\s*2", re.IGNORECASE),
+        re.compile(r"(Decis[ãa]o|Self-check)", re.IGNORECASE),
+    ]
+
     try:
         with transcript.open("r", encoding="utf-8", errors="ignore") as f:
-            for line in f:
-                if "Fact-check gate" in line:
-                    return 0  # OK, gate emitido
+            transcript_text = f.read()
     except OSError as exc:
         print(f"[factcheck-hook] WARN: cannot read transcript ({exc}), allowing write", file=sys.stderr)
         return 0
+
+    marker_hits = sum(1 for rx in REQUIRED_MARKERS if rx.search(transcript_text))
+    # Exigir pelo menos 3 dos 4 marcadores. Permite paráfrase legítima sem
+    # perder estrutura (e.g., "Self-check" em vez de "Decisão").
+    if marker_hits >= 3:
+        return 0  # Gate emitido com estrutura suficiente
 
     # BLOQUEAR — emitir JSON de denial
     decision = {
@@ -103,11 +116,13 @@ def main() -> int:
             "hookEventName": "PreToolUse",
             "permissionDecision": "deny",
             "permissionDecisionReason": (
-                "FACT-CHECK GATE BLOQUEIO: nenhum '## Fact-check gate -- log' foi emitido "
-                "nesta sessao antes de escrever em public/afos-daily/. A ETAPA 1.5 do skill "
-                "/afos-daily e obrigatoria -- emita o log de fact-check (Verificacao 1 + "
-                "Verificacao 2 + Self-check pre-deploy) ANTES de tentar Write novamente. "
-                "Origem: guardrail Fase 2.1, instalado apos incidente Vorcaro de 01/Mai/2026."
+                "FACT-CHECK GATE BLOQUEIO: o '## Fact-check gate -- log' nao foi emitido "
+                "nesta sessao com estrutura minima (precisa pelo menos 3 dos 4 marcadores: "
+                "header '## Fact-check gate', 'Verificacao 1', 'Verificacao 2', "
+                "'Decisao' ou 'Self-check'). A ETAPA 1.5 do skill /afos-daily e obrigatoria. "
+                "Emita o log estruturado completo ANTES de tentar Write novamente. "
+                "Origem: guardrail Fase 2.1 (estrutural a partir de 02/Mai/2026), "
+                "instalado apos incidente Vorcaro de 01/Mai/2026."
             ),
         }
     }

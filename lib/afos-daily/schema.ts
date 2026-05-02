@@ -157,8 +157,13 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
   }
 }
 
-export function getOgImageUrl(): string {
-  return OG_IMAGE
+export function getOgImageUrl(locale?: string): string {
+  // Per-locale OG image: /opengraph-image?locale=en or ?locale=es.
+  // Defaults to pt-BR (no query param). Fixes prior single-locale-only OG image.
+  if (locale === 'en' || locale === 'es') {
+    return `${SITE}/opengraph-image?locale=${locale}`
+  }
+  return `${SITE}/opengraph-image`
 }
 
 export { parseUpdatedAt }

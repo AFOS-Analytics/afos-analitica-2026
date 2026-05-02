@@ -127,6 +127,116 @@ function isLikelyPolymarketClaim(context: string): boolean {
   return indicators.test(context)
 }
 
+// Lista de candidatos/entidades para cross-check name×number.
+const NAMED_ENTITIES = [
+  'Lula', 'Flávio', 'Flavio', 'Renan', 'Zema', 'Haddad', 'Caiado',
+  'Camilo', 'Tarcísio', 'Tarcisio', 'Bolsonaro', 'Eduardo Bolsonaro',
+  'Michelle', 'Alckmin', 'Eduardo Leite', 'Aldo', 'Ratinho',
+  'STF impeach', 'STF', 'PL', 'União', 'Uniao', 'PSDB', 'PT', 'MDB',
+  'PSD', 'Novo', 'PSB', 'Republicanos', 'Podemos', 'PP',
+]
+
+interface NamedClaim {
+  entity: string
+  value: number
+  unit: '%' | 'pp'
+  line: number
+  context: string
+}
+
+/**
+ * Extrai pares (entidade, valor) de um texto. Para cada % ou pp,
+ * procura a entidade nominal mais próxima no contexto (mesmo bloco).
+ * Retorna apenas claims onde uma entidade foi identificada.
+ */
+function extractNamedClaims(text: string, source: 'markdown' | 'json'): NamedClaim[] {
+  const claims: NamedClaim[] = []
+  const lines = source === 'markdown' ? text.split(/\r?\n/) : [text]
+  const re = /([+-]?\d+(?:\.\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    let m: RegExpExecArray | null
+    re.lastIndex = 0
+    while ((m = re.exec(line)) !== null) {
+      const v = parseFloat(m[1])
+      if (Number.isNaN(v)) continue
+      // Procurar entidade nas 80 chars anteriores
+      const start = Math.max(0, m.index - 80)
+      const before = line.slice(start, m.index)
+      let entity: string | null = null
+      for (const e of NAMED_ENTITIES) {
+        const idx = before.lastIndexOf(e)
+        if (idx >= 0 && (entity === null || idx > before.lastIndexOf(entity))) {
+          entity = e
+        }
+      }
+      if (!entity) continue
+      claims.push({
+        entity,
+        value: v,
+        unit: m[2] as '%' | 'pp',
+        line: i + 1,
+        context: line.slice(start, m.index + m[0].length).trim().slice(0, 140),
+      })
+    }
+  }
+  return claims
+}
+
+/**
+ * Recursivamente extrai pares (entity, value) de strings em JSON.
+ */
+function extractNamedClaimsFromJson(obj: unknown, accumulator: Array<{ entity: string; value: number }>): void {
+  if (typeof obj === 'string') {
+    const claims = extractNamedClaims(obj, 'json')
+    for (const c of claims) accumulator.push({ entity: c.entity, value: c.value })
+    return
+  }
+  if (Array.isArray(obj)) {
+    for (const item of obj) extractNamedClaimsFromJson(item, accumulator)
+    return
+  }
+  if (obj && typeof obj === 'object') {
+    for (const v of Object.values(obj as Record<string, unknown>)) {
+      extractNamedClaimsFromJson(v, accumulator)
+    }
+  }
+}
+
+function loadJsonNamedPairs(): Array<{ entity: string; value: number }> {
+  const accumulator: Array<{ entity: string; value: number }> = []
+  for (const fname of ['analysis-data.json', 'analysis-criteriosa.json']) {
+    const path = join(ROOT, 'public', fname)
+    if (!existsSync(path)) continue
+    try {
+      const json = JSON.parse(readFileSync(path, 'utf-8'))
+      extractNamedClaimsFromJson(json, accumulator)
+    } catch {
+      // skip
+    }
+  }
+  return accumulator
+}
+
+/**
+ * Cross-check entidade×valor: o número V atribuído à entidade E no
+ * markdown corresponde a algum (E, ~V) no JSON?
+ * Retorna claims do markdown que NÃO encontraram match.
+ */
+function findMismatchedNamedClaims(markdown: string): NamedClaim[] {
+  const markdownClaims = extractNamedClaims(markdown, 'markdown')
+  const jsonPairs = loadJsonNamedPairs()
+  const mismatched: NamedClaim[] = []
+  for (const claim of markdownClaims) {
+    const match = jsonPairs.find(
+      (p) => p.entity === claim.entity && Math.abs(p.value - claim.value) <= TOLERANCE_PP
+    )
+    if (!match) mismatched.push(claim)
+  }
+  return mismatched
+}
+
 function main() {
   const date = process.argv[2]
   const strict = process.argv.includes('--strict')
@@ -160,9 +270,26 @@ function main() {
     }
   }
 
+  // Cross-check name×number (Fase 2.2 robustez): compara pares (entidade, valor)
+  // entre markdown e JSONs. Detecta polling transposition (Lula com numero do
+  // Flavio, Tarcisio com numero do Bolsonaro, etc.) — falsos negativos do match
+  // de valor pelado.
+  const namedMismatches = findMismatchedNamedClaims(markdown)
+  if (namedMismatches.length > 0) {
+    console.log(`\n[NAMED-CHECK] ${namedMismatches.length} pares (entidade, valor) sem match exato no JSON:\n`)
+    for (const c of namedMismatches.slice(0, 10)) {
+      console.log(`  Linha ${c.line}: ${c.entity} = ${c.value}${c.unit}`)
+      console.log(`    Contexto: "${c.context.slice(0, 110)}${c.context.length > 110 ? '...' : ''}"`)
+    }
+    if (namedMismatches.length > 10) {
+      console.log(`  (... +${namedMismatches.length - 10} pares)`)
+    }
+    console.log('  Note: pode incluir deltas (ex: Flavio +0.55pp), n=pesquisa, contextos editoriais — investigar caso a caso.')
+  }
+
   if (divergent.length === 0) {
     console.log('\n[OK] Todos os claims numericos do markdown batem com algum valor no JSON (tolerancia +-' + TOLERANCE_PP + 'pp).')
-    process.exit(0)
+    process.exit(namedMismatches.length > 0 && strict ? 1 : 0)
   }
 
   console.log(`\n[WARN] ${divergent.length} claims divergem dos JSONs (podem ser deltas calculados, n's de pesquisa, ou erros):\n`)
