@@ -68,8 +68,15 @@ Execute em sequência:
 
 ## REGRAS
 
-- **Padrão de cruzamento**: Todos os dados são cruzamentos Polymarket (dinheiro real) + institutos de pesquisa (intenção declarada) + notícias (contexto) na data da atualização
-- **Comparar com estado anterior**: Leia os JSONs atuais ANTES de reescrever para calcular variações (↑↓pp)
-- **Fontes sempre citadas**: Inclua nome do veículo/instituto + data entre parênteses
-- **Sem inventar dados**: Use APENAS dados obtidos nas buscas. Se não encontrar, mantenha o dado anterior
-- **Informe ao final**: Mostre tabela resumo com principais mudanças
+- Padrão de cruzamento: Todos os dados são cruzamentos Polymarket (dinheiro real) + institutos de pesquisa (intenção declarada) + notícias (contexto) na data da atualização
+- Comparar com estado anterior: Leia os JSONs atuais ANTES de reescrever para calcular variações (↑↓pp)
+- Fontes sempre citadas: Inclua nome do veículo/instituto + data entre parênteses
+- Sem inventar dados: Use APENAS dados obtidos nas buscas. Se não encontrar, mantenha o dado anterior
+- Informe ao final: Mostre tabela resumo com principais mudanças
+
+## ESTILO TEXTUAL (anti-AI tells)
+
+- NÃO usar markdown bold (`**...**`) dentro de strings dos JSONs — renderiza como literal `**` na UI do dashboard. Use texto plano com vírgulas, dois pontos ou frases curtas para destacar.
+- NÃO usar travessão (—) como separador. Use vírgula, ponto, ou parênteses.
+- Variações em pp (↑0.55pp / ↓2.5pp) são bem-vindas — formato técnico claro, não AI tell.
+- Evitar sentence fragments para "ênfase" e parallel structure exagerado.
