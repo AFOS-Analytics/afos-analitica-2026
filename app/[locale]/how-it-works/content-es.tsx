@@ -19,6 +19,9 @@ export function HowItWorksEs() {
           </TocCol>
           <TocCol heading="Recorrido por la plataforma">
             <TocLink href="#header">1. Header</TocLink>
+            <TocLink href="#modal-sobre">└ Modal Acerca de</TocLink>
+            <TocLink href="#modal-metas">└ Modal Metas</TocLink>
+            <TocLink href="#modal-global">└ Modal Global</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Síntesis Diaria</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">4. Encuestas Electorales</TocLink>
