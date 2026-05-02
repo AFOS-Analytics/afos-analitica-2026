@@ -24,7 +24,7 @@ const CONTENT = {
       badge: 'Eleições 2026 — 14 Países Monitorados',
       title: 'Inteligência de',
       titleHighlight: 'Risco Político Eleitoral',
-      claim: 'Plataforma Global — inédita — cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias.',
+      claim: 'Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias — código aberto, fontes públicas auditáveis.',
       subtitle: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul. Análises diárias.',
       cta: 'Acessar Dashboard',
       ctaSecondary: 'Saiba mais',
@@ -69,7 +69,7 @@ const CONTENT = {
       badge: 'Elections 2026 — 14 Countries Monitored',
       title: 'Political Election',
       titleHighlight: 'Risk Intelligence',
-      claim: 'Global platform — unprecedented — real-time cross-referencing of prediction markets, electoral polls and news.',
+      claim: 'Real-time cross-referencing of prediction markets, electoral polls and news — open-source, auditable public sources.',
       subtitle: 'Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis.',
       cta: 'Open Dashboard',
       ctaSecondary: 'Learn more',
@@ -114,43 +114,43 @@ const CONTENT = {
       badge: 'Elecciones 2026 — 14 Países Monitoreados',
       title: 'Inteligencia de',
       titleHighlight: 'Riesgo Político Electoral',
-      claim: 'Plataforma Global — inédita — cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias.',
+      claim: 'Cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias — código abierto, fuentes públicas auditables.',
       subtitle: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur. Análisis diario.',
       cta: 'Abrir Dashboard',
       ctaSecondary: 'Saber más',
     },
     stats: [
-      { value: '14', label: 'Paises monitoreados' },
+      { value: '14', label: 'Países monitoreados' },
       { value: '17+', label: 'Institutos de encuestas' },
-      { value: '30min', label: 'Actualizacion de mercados' },
+      { value: '30min', label: 'Actualización de mercados' },
       { value: '100%', label: 'Open-source' },
     ],
     features: {
       title: 'Todo lo que necesitas para seguir elecciones',
-      subtitle: 'Datos de multiples fuentes cruzados en tiempo real',
+      subtitle: 'Datos de múltiples fuentes cruzados en tiempo real',
       items: [
-        { icon: 'chart', title: 'Mercados de Prediccion', desc: 'Probabilidades de Polymarket con dinero real — el indicador mas preciso de probabilidad electoral, actualizado cada 30 minutos.' },
-        { icon: 'poll', title: 'Encuestas Electorales', desc: 'Datos oficiales del TSE + 17 institutos brasilenhos. Cruce automatico con probabilidades de mercados.' },
-        { icon: 'globe', title: 'Mapa Global Interactivo', desc: '14 paises con elecciones monitoreadas. Visualizacion D3.js con datos agregados por region y candidato.' },
-        { icon: 'news', title: 'Noticias en Vivo', desc: 'Agregacion automatica de noticias politicas con categorizacion por tema y relevancia electoral.' },
-        { icon: 'brain', title: 'Analisis Estrategico', desc: 'Sentimiento politico, riesgos economicos y analisis de escenarios — actualizado con inteligencia artificial.' },
-        { icon: 'shield', title: 'Transparente y Seguro', desc: 'Codigo abierto en GitHub. Cumplimiento LGPD. Sin rastreo invasivo. Tus datos son tuyos.' },
+        { icon: 'chart', title: 'Mercados de Predicción', desc: 'Probabilidades de Polymarket con dinero real — el indicador más preciso de probabilidad electoral, actualizado cada 30 minutos.' },
+        { icon: 'poll', title: 'Encuestas Electorales', desc: 'Datos oficiales del TSE + 17 institutos brasileños. Cruce automático con probabilidades de mercados.' },
+        { icon: 'globe', title: 'Mapa Global Interactivo', desc: '14 países con elecciones monitoreadas. Visualización D3.js con datos agregados por región y candidato.' },
+        { icon: 'news', title: 'Noticias en Vivo', desc: 'Agregación automática de noticias políticas con categorización por tema y relevancia electoral.' },
+        { icon: 'brain', title: 'Análisis Estratégico', desc: 'Sentimiento político, riesgos económicos y análisis de escenarios — actualizado con inteligencia artificial.' },
+        { icon: 'shield', title: 'Transparente y Seguro', desc: 'Código abierto en GitHub. Cumplimiento LGPD. Sin rastreo invasivo. Tus datos son tuyos.' },
       ],
     },
-    countries: { title: 'Elecciones que monitoreamos', subtitle: 'Cobertura global con foco en America Latina' },
+    countries: { title: 'Elecciones que monitoreamos', subtitle: 'Cobertura global con foco en América Latina' },
     cta: {
-      title: 'Listo para seguir las elecciones?',
+      title: '¿Listo para seguir las elecciones?',
       subtitle: 'Accede al dashboard ahora — sin registro, sin costo.',
       button: 'Abrir Dashboard',
-      email: 'O recibe analisis semanales en tu email',
+      email: 'O recibe análisis semanales en tu email',
       placeholder: 'tu@email.com',
       subscribe: 'Suscribirse',
       consent: 'Acepto recibir emails. Puedo cancelar en cualquier momento.',
-      success: 'Suscrito con exito!',
+      success: '¡Suscrito con éxito!',
     },
     footer: {
-      desc: 'Plataforma de inteligencia electoral. Datos de Polymarket, TSE y fuentes publicas.',
-      disclaimer: 'No estamos afiliados a Polymarket. Los datos son informativos, no constituyen recomendacion.',
+      desc: 'Plataforma de inteligencia electoral. Datos de Polymarket, TSE y fuentes públicas.',
+      disclaimer: 'No estamos afiliados a Polymarket. Los datos son informativos, no constituyen recomendación.',
     },
   },
 };
@@ -280,7 +280,7 @@ function LangSwitcher({ current, onSelect, isBlue }: { current: Locale; onSelect
             >
               <span>{LOCALE_LABELS[loc]}</span>
               <span style={{ fontWeight: 400, fontSize: 11, opacity: 0.6 }}>
-                {loc === 'pt-BR' ? 'Portugues' : loc === 'en' ? 'English' : 'Espanol'}
+                {loc === 'pt-BR' ? 'Português' : loc === 'en' ? 'English' : 'Español'}
               </span>
             </div>
           ))}
@@ -454,12 +454,23 @@ function useThemeTokens(theme: Theme) {
 
 // ─── Component ──────────────────────────────────────────────────────
 
+import { useRouter, usePathname } from 'next/navigation';
 import { getOrCreateVisitorId } from '../../lib/visitor/id';
 import { SUBSCRIBED_LS_KEY } from '../../lib/visitor/constants';
 import { SubscribeForm } from './SubscribeForm';
 
 export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPageProps) {
-  const [locale, setLocale] = useState<Locale>(initialLocale);
+  const router = useRouter();
+  const pathname = usePathname();
+  const [locale, setLocaleState] = useState<Locale>(initialLocale);
+  // Sync locale state with URL navigation. Without router.push, deep-linking
+  // shares /pt-BR for all locales (broken hreflang + share + middleware detection).
+  const setLocale = (next: Locale) => {
+    if (next === locale) return;
+    setLocaleState(next);
+    const newPath = pathname.replace(/^\/(pt-BR|en|es)/, `/${next}`) || `/${next}`;
+    router.push(newPath);
+  };
   const t = CONTENT[locale];
   const [theme, setTheme] = useState<Theme>('light');
   const [visitorId, setVisitorId] = useState('');
