@@ -15,27 +15,6 @@ export function getColor(candidate: string): string {
   return partyColor[p] || '#94A3B8';
 }
 
-export const PHOTOS: Record<string, string> = {
-  'Flávio Bolsonaro': '/fotos/flavio.svg',
-  'Lula': '/fotos/lula.svg',
-  'Luiz Inácio Lula da Silva': '/fotos/lula.svg',
-  'Fernando Haddad': '/fotos/haddad.svg',
-  'Tarcísio de Freitas': '/fotos/tarcisio.svg',
-  'Tarcisio de Freitas': '/fotos/tarcisio.svg',
-  'Ronaldo Caiado': '/fotos/caiado.jpg',
-  'Romeu Zema': '/fotos/zema.svg',
-  'Renan Santos': '/fotos/renan.svg',
-  'Jair Bolsonaro': '/fotos/jair.svg',
-  'Michelle Bolsonaro': '/fotos/michelle.svg',
-  'Eduardo Bolsonaro': '/fotos/eduardo.jpg',
-  'Ratinho Jr.': '/fotos/ratinho.svg',
-  'Camilo Santana': '/fotos/camilo.svg',
-};
-
-export function getPhoto(name: string): string | null {
-  return PHOTOS[name] || null;
-}
-
 export function extractCandidateName(question: string): string {
   const q = question || '';
   const inflMatch = q.match(/less than (\d+\.\d+%)/);

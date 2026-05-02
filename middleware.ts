@@ -63,7 +63,6 @@ function shouldSkip(pathname: string): boolean {
   return pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
     pathname.startsWith('/geo/') ||
-    pathname.startsWith('/fotos/') ||
     pathname === '/opengraph-image' ||
     pathname.includes('.');
 }
