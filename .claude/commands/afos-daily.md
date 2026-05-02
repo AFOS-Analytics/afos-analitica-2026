@@ -16,6 +16,43 @@ Se o `/atualizar` de hoje ainda não rodou, PARAR e pedir ao usuário para execu
 2. Ler `public/analysis-data.json` (cards `sentimento`, `inss`, `bancoMaster`, `stf`)
 3. Extrair data de hoje em formato `YYYY-MM-DD` (usar `updatedAt` dos JSONs)
 
+## ETAPA 1.5: FACT-CHECK GATE (obrigatório — guardrail incidente Vorcaro 01/Mai/2026)
+
+Antes de incorporar qualquer **evento factual de alto impacto** à síntese (prisão, morte, decisão judicial, indicação, demissão, ruptura institucional, vazamento), **VERIFICAR TIMING** em duas etapas:
+
+### Verificação 1 — Cross-reference temporal
+
+Ler os ÚLTIMOS 3-5 arquivos `public/afos-daily/YYYY-MM-DD.md` e comparar:
+- Esse evento já apareceu em síntese anterior?
+- Se sim, é **continuidade** (delação progredindo, julgamento em andamento) — NÃO trate como novidade do dia
+- Se não, fetch artigo completo (próxima etapa)
+
+### Verificação 2 — Fetch corpo de pelo menos 1 artigo
+
+Headlines de Google News RSS retornam título + timestamp, NÃO o corpo do artigo. Verbos como "preso", "que levaram à prisão", "morto", "decidiu X" no título podem referir a:
+- **Evento de hoje** (incorporar)
+- **Explainer/perfil** sobre situação em curso (NÃO tratar como evento novo — texto atemporal)
+- **Análise/desdobramento** sobre evento passado (NÃO incorporar como divisor de águas)
+
+Use `WebFetch` para abrir 1 artigo do veículo principal e extrair:
+- Data exata do evento descrito
+- Tempo verbal do lead do artigo (passado distante = evento antigo recoberto; passado recente = evento de hoje)
+- Se o artigo é "perfil/explainer" sobre figura já em situação crítica
+
+### Quando incorporar à síntese
+
+- ✅ Evento confirmadamente acontecido **na janela do dia da síntese** → incorporar com link e tom factual
+- ⚠️ Evento de janela ambígua (ex: "decisão de ontem comentada hoje") → incorporar com framing correto ("comentários sobre decisão de DD/MM")
+- ❌ Evento já em curso há semanas/meses → NÃO tratar como divisor de águas; tratar como continuidade
+
+### Não atribuir CAUSAÇÃO sem timing compatível
+
+Movimentos de mercado (Polymarket) podem reagir a eventos novos ou refletir digestão de informação anterior. **NUNCA** atribuir causação tipo "STF impeach caiu PORQUE Vorcaro foi preso" sem confirmar que Vorcaro foi preso na janela compatível. Se não houver evento triggador claro do dia, escrever "saída do pico do ciclo após série de altas" ou similar — leitura técnica, não narrativa especulativa.
+
+### Histórico do incidente (não esquecer)
+
+Em **01/Mai/2026**, gerei síntese afirmando "Daniel Vorcaro PRESO PELA PF HOJE — divisor de águas Master" e atribuindo a queda do STF impeach (-2.5pp) à "vindicação institucional pela prisão". Era falso: Vorcaro estava preso desde 19/Mar/2026. As 5 manchetes do Google News eram explainers sobre o já-preso (perfis, apuração de mensagens, declarações antigas vindo a público). O usuário pegou o erro antes do deploy prod. Esse fact-check gate foi adicionado para impedir recorrência.
+
 ## ETAPA 2: Gerar markdown seguindo o template
 
 Criar arquivo em `public/afos-daily/{YYYY-MM-DD}.md` com a estrutura EXATA do template 22/Abr:
