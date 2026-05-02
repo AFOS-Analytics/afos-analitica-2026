@@ -183,7 +183,7 @@ export function HowItWorksEn() {
 
       <Card title="About modal" id="modal-sobre">
         <p>Clicking <strong>About</strong> opens a window with 4 blocks: <em>Who we are</em> (platform description and sources), <em>What it's for</em> (questions it helps answer), <em>How to use</em> (suggested profiles: voter, investor, journalist) and <em>What AFOS means</em> (acronym A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, the 4 values guiding the project).</p>
-        <p>It also explains the open-source model: code under Apache 2.0 and editorial content (AFOS Daily syntheses) under CC BY 4.0. Anyone can study, audit and contribute.</p>
+        <p>The open-source model is declared: anyone can study, audit and contribute. Licensing details (Apache 2.0 for code, CC BY 4.0 for editorial content) live in the footer on every page and on the <a href="/en/terms" className="text-primary hover:underline">Terms of Use</a> page.</p>
       </Card>
 
       <Card title="Goals modal" id="modal-metas">
