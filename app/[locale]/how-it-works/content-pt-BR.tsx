@@ -180,6 +180,22 @@ export function HowItWorksPtBR() {
       </div>
       <p className={S.p}>O header está presente em todas as páginas. É a âncora da navegação.</p>
 
+      <Card title="Modal Sobre" id="modal-sobre">
+        <p>Clicar em <strong>Sobre</strong> abre uma janela com 4 blocos: <em>Quem somos</em> (descrição da plataforma e fontes), <em>Para que serve</em> (perguntas que ajuda a responder), <em>Como usar</em> (perfis sugeridos: eleitor, investidor, jornalista) e <em>O que significa AFOS</em> (sigla A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, os 4 valores que guiam o projeto).</p>
+        <p>Também explica o modelo open-source: código sob Apache 2.0 e conteúdo editorial (sínteses AFOS Daily) sob CC BY 4.0. Qualquer pessoa pode estudar, auditar e contribuir.</p>
+      </Card>
+
+      <Card title="Modal Metas" id="modal-metas">
+        <p>Clicar em <strong>Metas</strong> abre o documento estratégico do projeto: a tese central (informação política como infraestrutura global), o impacto pretendido em três dimensões (econômica, institucional, educacional) e o roadmap de cobertura por país.</p>
+        <p>Aqui você encontra o "porquê" do projeto: qual problema estrutural resolve, qual valor entrega para investidores institucionais, governos, jornalistas e cidadãos. É a página mais densa institucionalmente, recomendada para quem está avaliando a plataforma como parceira ou referência analítica.</p>
+      </Card>
+
+      <Card title="Modal Global" id="modal-global">
+        <p>Clicar em <strong>Global</strong> abre o mapa-múndi interativo das eleições nacionais previstas para 2026 e anos seguintes. Cada país com eleição registrada aparece em destaque, com volume de mercado em Polymarket (quando disponível) e candidato favorito segundo as odds.</p>
+        <p>Atualmente, 14 países são monitorados, com foco em América Latina (Brasil, Argentina, Chile, Colômbia, Peru, México) e países-chave globais (EUA, França, Reino Unido). Para cada um, o card exibe data da eleição, principais candidatos, e link para ficha detalhada.</p>
+        <p>É a porta de entrada para a expansão internacional da plataforma. Se você está acompanhando uma eleição específica, o mapa global é o atalho mais rápido para mudar de contexto sem precisar voltar à home.</p>
+      </Card>
+
       <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily, Síntese do Dia</h2>
       <p className={S.p}>Logo abaixo do header aparece o <strong>card AFOS Daily</strong>: um bloco azul claro com a data de hoje, um trecho da síntese narrativa do dia (até 2 linhas) e um botão <strong>"Ler síntese →"</strong>.</p>
       <p className={S.p}>É a única peça do dashboard que <strong>não é dado bruto</strong>, é uma narrativa curada (~700 palavras, 4 minutos de leitura) cruzando os três sinais (mercado, pesquisa, notícia) com link inline para cada alegação. Publicada uma vez por dia, ao final do dia.</p>
