@@ -16,7 +16,7 @@ export function getColor(candidate: string): string {
 }
 
 export const PHOTOS: Record<string, string> = {
-  'Flávio Bolsonaro': '/fotos/flavio.jpg',
+  'Flávio Bolsonaro': '/fotos/flavio.svg',
   'Lula': '/fotos/lula.svg',
   'Luiz Inácio Lula da Silva': '/fotos/lula.svg',
   'Fernando Haddad': '/fotos/haddad.svg',
