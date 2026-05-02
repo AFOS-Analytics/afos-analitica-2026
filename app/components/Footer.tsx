@@ -17,6 +17,12 @@ const OSS_LABELS: Record<string, { title: string; license: string; github: strin
   es:      { title: 'Open Source', license: 'Licencia Apache 2.0', github: 'GitHub', security: 'Seguridad', contributing: 'Contribuir',   conduct: 'Código de Conducta', governance: 'Gobernanza', trademark: 'Trademark' },
 }
 
+const LEGAL_LABELS: Record<string, { title: string; privacy: string; terms: string; sources: string }> = {
+  'pt-BR': { title: 'Legal',          privacy: 'Política de Privacidade', terms: 'Termos de Uso', sources: 'Fontes de Dados' },
+  en:      { title: 'Legal',          privacy: 'Privacy Policy',           terms: 'Terms of Use',  sources: 'Data Sources'    },
+  es:      { title: 'Legal',          privacy: 'Política de Privacidad',   terms: 'Términos de Uso', sources: 'Fuentes de Datos' },
+}
+
 type ContactKey = 'general' | 'support' | 'security' | 'founder'
 
 const CONTACTS: Array<{ key: ContactKey; email: string; icon: string }> = [
@@ -37,13 +43,14 @@ export function Footer() {
   const locale = useLocale();
   const nav = NAV_LABELS[locale] || NAV_LABELS['en'];
   const oss = OSS_LABELS[locale] || OSS_LABELS['en'];
+  const legal = LEGAL_LABELS[locale] || LEGAL_LABELS['en'];
   const labels = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
 
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
-        {/* BLOCO 1 + 2, Navegação + Open Source */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 text-xs">
+        {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs">
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
@@ -61,6 +68,12 @@ export function Footer() {
             <a href={`${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.conduct}</a>
             <a href={`/${locale}/methodology/automated-governance`} className="block text-white/60 hover:text-white py-0.5">{oss.governance}</a>
             <a href={`${GITHUB_URL}/blob/main/TRADEMARK.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.trademark}</a>
+          </div>
+          <div>
+            <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
+            <a href={`/${locale}/privacy`} className="block text-white/60 hover:text-white py-0.5">{legal.privacy}</a>
+            <a href={`/${locale}/terms`} className="block text-white/60 hover:text-white py-0.5">{legal.terms}</a>
+            <a href={`/${locale}/data-sources`} className="block text-white/60 hover:text-white py-0.5">{legal.sources}</a>
           </div>
         </div>
 
