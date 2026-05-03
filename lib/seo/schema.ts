@@ -36,7 +36,7 @@ export function organizationSchema() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      contactType: 'general',
+      contactType: 'customer support',
       email: 'contact@afos-analytics.com',
       availableLanguage: ['Portuguese', 'English', 'Spanish'],
     },
@@ -147,6 +147,20 @@ export function datasetSchema() {
       encodingFormat: 'application/json',
       contentUrl: `${BASE_URL}/api/global-map`,
     },
+  };
+}
+
+/** AboutPage — institutional Organization page (E-E-A-T trust signal) */
+export function aboutPageSchema(locale: Locale, name: string, description: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name,
+    description,
+    url: `${BASE_URL}/${locale}/about`,
+    inLanguage: locale === 'es' ? 'es' : locale === 'en' ? 'en' : 'pt-BR',
+    mainEntity: { '@id': `${BASE_URL}/#organization` },
+    isPartOf: { '@type': 'WebSite', name: 'AFOS Analytics', url: BASE_URL },
   };
 }
 

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { isValidLocale } from '../../../lib/afos-daily/loader'
 import { StaticPageHeader } from '../../components/StaticPageHeader'
 import { Footer } from '../../components/Footer'
+import { aboutPageSchema, organizationSchema, combineSchemas } from '../../../lib/seo/schema'
+import type { Locale } from '../../../lib/i18n/config'
 
 interface Props { params: { locale: string } }
 
@@ -68,8 +70,13 @@ export function generateMetadata({ params }: Props): Metadata {
 export default function AboutPage({ params }: Props) {
   if (!isValidLocale(params.locale)) notFound()
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
+  const jsonLd = combineSchemas(
+    organizationSchema(),
+    aboutPageSchema(params.locale as Locale, c.title, c.description),
+  )
   return (
     <div className="min-h-screen bg-light-bg flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
       <StaticPageHeader />
       <main id="main-content" className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-dark mb-10">{c.h1}</h1>
