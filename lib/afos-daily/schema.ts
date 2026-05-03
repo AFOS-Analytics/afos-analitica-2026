@@ -158,12 +158,10 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
 }
 
 export function getOgImageUrl(locale?: string): string {
-  // Per-locale OG image: /opengraph-image?locale=en or ?locale=es.
-  // Defaults to pt-BR (no query param). Fixes prior single-locale-only OG image.
-  if (locale === 'en' || locale === 'es') {
-    return `${SITE}/opengraph-image?locale=${locale}`
-  }
-  return `${SITE}/opengraph-image`
+  // Per-locale OG image via /api/og (Edge route handler que respeita searchParams).
+  // app/opengraph-image.tsx default function não recebe searchParams em runtime edge.
+  const safe = (locale === 'en' || locale === 'es') ? locale : 'pt-BR'
+  return `${SITE}/api/og?locale=${safe}`
 }
 
 export { parseUpdatedAt }

@@ -1,11 +1,15 @@
-import { ImageResponse } from 'next/og';
+/**
+ * OG Image Route Handler — locale-aware via ?locale=X
+ * Substitui app/opengraph-image.tsx que não respeitava searchParams em Edge.
+ *
+ * Uso: /api/og?locale=en (ou pt-BR, es). Default: pt-BR.
+ */
 
-export const runtime = 'edge';
-export const alt = 'AFOS Analytics — Open-Source Electoral Intelligence';
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+import { ImageResponse } from 'next/og'
+import { NextRequest } from 'next/server'
 
-// Per-locale text. Defaults to PT-BR if locale missing/invalid.
+export const runtime = 'edge'
+
 const COPY = {
   'pt-BR': {
     subtitle: 'Inteligência Eleitoral Open-Source',
@@ -22,17 +26,14 @@ const COPY = {
     chips: ['Polymarket', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
     footer: 'Brasil 2026 + 14 países',
   },
-} as const;
+} as const
 
-type Locale = keyof typeof COPY;
+type Locale = keyof typeof COPY
 
-export default function Image({ searchParams }: { searchParams?: { locale?: string } } = {}) {
-  // Per-locale OG image: /opengraph-image?locale=en or /opengraph-image?locale=es.
-  // Defaults to pt-BR. Fixes prior issue where shares of /en/* and /es/* pages
-  // were preview-cached as Portuguese-only (mismatched language signal).
-  const localeParam = searchParams?.locale as string | undefined;
-  const locale: Locale = (localeParam === 'en' || localeParam === 'es') ? localeParam : 'pt-BR';
-  const copy = COPY[locale];
+export async function GET(request: NextRequest) {
+  const localeParam = request.nextUrl.searchParams.get('locale')
+  const locale: Locale = (localeParam === 'en' || localeParam === 'es') ? localeParam : 'pt-BR'
+  const copy = COPY[locale]
 
   return new ImageResponse(
     (
@@ -64,19 +65,18 @@ export default function Image({ searchParams }: { searchParams?: { locale?: stri
         <div style={{ fontSize: 28, marginTop: 40, fontWeight: 700, display: 'flex' }}>
           {copy.footer}
         </div>
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 40,
-            fontSize: 18,
-            opacity: 0.5,
-            display: 'flex',
-          }}
-        >
+        <div style={{ position: 'absolute', bottom: 40, fontSize: 18, opacity: 0.5, display: 'flex' }}>
           afos-analytics.com
         </div>
       </div>
     ),
-    { ...size }
-  );
+    {
+      width: 1200,
+      height: 630,
+      headers: {
+        // Cache CDN 1h, navegador 0 (revalidação imediata se locale muda)
+        'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    }
+  )
 }
