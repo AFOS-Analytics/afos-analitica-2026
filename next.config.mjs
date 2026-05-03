@@ -42,11 +42,13 @@ const nextConfig = {
         ],
       },
       {
-        // API routes get additional security headers
+        // API routes get additional security headers + noindex (não devem ser
+        // descobertas por buscadores; OG image é exceção via headers próprios).
         source: '/api/(.*)',
         headers: [
           { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate' },
           { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
         ],
       },
     ];

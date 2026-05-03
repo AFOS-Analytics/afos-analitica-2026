@@ -5,7 +5,11 @@ import { listPublishedDailies } from '../lib/afos-daily/loader'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://afos-analytics.com'
   const locales = ['pt-BR', 'en', 'es']
-  const now = new Date()
+  // dynamic: páginas com cron a cada 30min (landing, dashboard, global, daily index)
+  const dynamicLastMod = new Date()
+  // static: páginas institucionais sem mudança frequente. Atualizar manualmente
+  // quando houver redesign/conteúdo novo. Evita rebanhar tudo a cada deploy.
+  const staticLastMod = new Date('2026-05-03T00:00:00-03:00')
   const entries: MetadataRoute.Sitemap = []
 
   function hreflang(path: (loc: string) => string, xDefault?: string) {
@@ -15,45 +19,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return languages
   }
 
-  // Landing page: /pt-BR, /en, /es
+  // Landing page: /pt-BR, /en, /es (dynamic — cron 30min)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}`,
-      lastModified: now,
+      lastModified: dynamicLastMod,
       changeFrequency: 'hourly',
       priority: 1,
       alternates: { languages: hreflang((l) => `/${l}`) },
     })
   }
 
-  // Dashboard: /pt-BR/dashboard, /en/dashboard, /es/dashboard
+  // Dashboard: /pt-BR/dashboard (dynamic — cron 30min)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/dashboard`,
-      lastModified: now,
+      lastModified: dynamicLastMod,
       changeFrequency: 'hourly',
       priority: 0.95,
       alternates: { languages: hreflang((l) => `/${l}/dashboard`) },
     })
   }
 
-  // Global map: /pt-BR/global, /en/global, /es/global
+  // Global map: /pt-BR/global (dynamic — cron 30min)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/global`,
-      lastModified: now,
+      lastModified: dynamicLastMod,
       changeFrequency: 'hourly',
       priority: 0.9,
       alternates: { languages: hreflang((l) => `/${l}/global`) },
     })
   }
 
-  // Country pages: /[locale]/country/[country]
+  // Country pages: /[locale]/country/[country] (static template, dados via fetch)
   for (const country of COUNTRIES_SEO) {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/country/${country.slug[loc]}`,
-        lastModified: now,
+        lastModified: staticLastMod,
         changeFrequency: 'daily',
         priority: 0.8,
         alternates: { languages: hreflang((l) => `/${l}/country/${country.slug[l]}`, `${baseUrl}/en/country/${country.slug['en']}`) },
@@ -62,27 +66,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Election pages: /[locale]/election/[slug]
+  // Active elections marcam como dynamic (mudam frequentemente); outras static.
   for (const country of COUNTRIES_SEO) {
     for (const election of country.elections) {
+      const isActive = election.status === 'active'
       for (const loc of locales) {
         entries.push({
           url: `${baseUrl}/${loc}/election/${election.slug}`,
-          lastModified: now,
-          changeFrequency: election.status === 'active' ? 'hourly' : 'daily',
-          priority: election.status === 'active' ? 0.9 : 0.7,
+          lastModified: isActive ? dynamicLastMod : staticLastMod,
+          changeFrequency: isActive ? 'hourly' : 'daily',
+          priority: isActive ? 0.9 : 0.7,
           alternates: { languages: hreflang((l) => `/${l}/election/${election.slug}`, `${baseUrl}/en/election/${election.slug}`) },
         })
       }
     }
   }
 
-  // Region pages
-  const regions = ['eu', 'latam'] // us removido (sem dados), america-latina canonical → latam
+  // Region pages (static template)
+  const regions = ['eu', 'latam']
   for (const region of regions) {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/${region}`,
-        lastModified: now,
+        lastModified: staticLastMod,
         changeFrequency: 'daily',
         priority: 0.85,
         alternates: { languages: hreflang((l) => `/${l}/${region}`, `${baseUrl}/en/${region}`) },
@@ -90,13 +96,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Institutional pages
+  // Institutional pages (static — só mudam em redesign)
   const institutional = ['for-investors', 'political-risk', 'election-intelligence', 'for-analysts', 'geopolitical-signals', 'emerging-markets-risk', 'global-election-calendar']
   for (const page of institutional) {
     for (const loc of locales) {
       entries.push({
         url: `${baseUrl}/${loc}/${page}`,
-        lastModified: now,
+        lastModified: staticLastMod,
         changeFrequency: 'weekly',
         priority: 0.8,
         alternates: { languages: hreflang((l) => `/${l}/${page}`, `${baseUrl}/en/${page}`) },
@@ -104,47 +110,58 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // How it works (didactic guide)
+  // How it works (static didactic guide)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/how-it-works`,
-      lastModified: now,
+      lastModified: staticLastMod,
       changeFrequency: 'weekly',
       priority: 0.85,
       alternates: { languages: hreflang((l) => `/${l}/how-it-works`, `${baseUrl}/en/how-it-works`) },
     })
   }
 
-  // Methodology — Automated Governance
+  // Methodology — Automated Governance (static)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/methodology/automated-governance`,
-      lastModified: now,
+      lastModified: staticLastMod,
       changeFrequency: 'monthly',
       priority: 0.75,
       alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`, `${baseUrl}/en/methodology/automated-governance`) },
     })
   }
 
-  // AFOS Daily — synthesis index per locale (always redirects to latest)
+  // AFOS Daily — synthesis index per locale (dynamic — sempre nova daily)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/daily`,
-      lastModified: now,
+      lastModified: dynamicLastMod,
       changeFrequency: 'daily',
       priority: 0.9,
       alternates: { languages: hreflang((l) => `/${l}/daily`) },
     })
   }
 
-  // Glossary — Brazilian political terms (3 locales)
+  // Glossary (static template, conteúdo evolui ocasionalmente)
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/glossary`,
-      lastModified: now,
+      lastModified: staticLastMod,
       changeFrequency: 'weekly',
       priority: 0.8,
       alternates: { languages: hreflang((l) => `/${l}/glossary`) },
+    })
+  }
+
+  // About — institutional Organization page (E-E-A-T, GEO trust signal)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/about`,
+      lastModified: staticLastMod,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: { languages: hreflang((l) => `/${l}/about`) },
     })
   }
 
