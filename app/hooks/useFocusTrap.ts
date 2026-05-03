@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Focus trap WCAG 2.2 AA: prende foco dentro do container enquanto open=true.
@@ -45,12 +45,17 @@ export function useFocusTrap(open: boolean, onClose: () => void) {
 /**
  * Hook que detecta prefers-reduced-motion via media query.
  * Retorna true se o usuário prefere movimento reduzido (acessibilidade).
+ * Reativo: atualiza se o usuário mudar a preferência durante a sessão.
+ * Default true em SSR para evitar flash de animação antes da hidratação.
  */
 export function usePrefersReducedMotion(): boolean {
-  const ref = useRef(false);
+  const [reduced, setReduced] = useState(true);
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    ref.current = mq.matches;
+    setReduced(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
+    mq.addEventListener?.('change', onChange);
+    return () => mq.removeEventListener?.('change', onChange);
   }, []);
-  return ref.current;
+  return reduced;
 }

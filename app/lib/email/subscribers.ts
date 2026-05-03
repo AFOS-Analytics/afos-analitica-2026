@@ -69,11 +69,21 @@ export async function createSubscriber(
     const now = new Date()
 
     // Upsert atômico — elimina race condition em double-submit.
-    // Se o lead existe: atualiza lastSeenAt e mantém token original.
-    // Se não existe: cria com token novo.
+    // - create: insere com token novo
+    // - update: atualiza lastSeenAt; se token estiver null (lead legado pré-migration),
+    //   preenche com newToken para garantir one-click unsubscribe em todos os emails.
+    //
+    // isNew detection: comparar token retornado com newToken. Em CREATE, prisma
+    // grava newToken e retorna newToken → match. Em UPDATE quando token já existia,
+    // retorna o token antigo → no match. Mais robusto que comparar timestamps,
+    // que podem coincidir por default `now()` em microsegundos de precisão.
     const lead = await prisma.lead.upsert({
       where: { email: normalized },
-      update: { lastSeenAt: now },
+      update: {
+        lastSeenAt: now,
+        // Backfill token se for legacy lead criado antes da migration
+        unsubscribeToken: { set: undefined },
+      },
       create: {
         email: normalized,
         captureSource: source,
@@ -81,11 +91,21 @@ export async function createSubscriber(
         status: 'active',
         unsubscribeToken: newToken,
       },
-      select: { id: true, unsubscribeToken: true, firstSeenAt: true, lastSeenAt: true },
+      select: { id: true, unsubscribeToken: true, status: true },
     })
 
-    // isNew = firstSeenAt === lastSeenAt (foi criado agora, sem update prévio)
-    const isNew = lead.firstSeenAt.getTime() === lead.lastSeenAt.getTime()
+    // Backfill: se lead existia mas sem token (pré-migration), gerar agora
+    let finalToken = lead.unsubscribeToken
+    if (!finalToken) {
+      const updated = await prisma.lead.update({
+        where: { id: lead.id },
+        data: { unsubscribeToken: newToken },
+        select: { unsubscribeToken: true },
+      })
+      finalToken = updated.unsubscribeToken
+    }
+
+    const isNew = finalToken === newToken
 
     if (isNew) {
       audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
@@ -109,7 +129,7 @@ export async function createSubscriber(
       success: true,
       isNew,
       leadId: lead.id,
-      unsubscribeToken: lead.unsubscribeToken ?? undefined,
+      unsubscribeToken: finalToken ?? undefined,
     }
   } catch (error) {
     console.error('[subscribers] Erro ao criar subscriber:', error)
