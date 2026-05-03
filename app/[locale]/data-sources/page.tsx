@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { isValidLocale } from '../../../lib/afos-daily/loader'
 import { StaticPageHeader } from '../../components/StaticPageHeader'
 import { Footer } from '../../components/Footer'
+import { buildMetadata } from '../../../lib/seo/metadata'
+import type { Locale } from '../../../lib/i18n/config'
 
 interface Props { params: { locale: string } }
 
@@ -56,18 +58,7 @@ const CONTENT = {
 
 export function generateMetadata({ params }: Props): Metadata {
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
-  return {
-    title: c.title,
-    description: c.description,
-    alternates: {
-      canonical: `https://afos-analytics.com/${params.locale}/data-sources`,
-      languages: {
-        'pt-BR': 'https://afos-analytics.com/pt-BR/data-sources',
-        en: 'https://afos-analytics.com/en/data-sources',
-        es: 'https://afos-analytics.com/es/data-sources',
-      },
-    },
-  }
+  return buildMetadata({ title: c.title, description: c.description, path: 'data-sources' }, params.locale as Locale)
 }
 
 export default function DataSourcesPage({ params }: Props) {
