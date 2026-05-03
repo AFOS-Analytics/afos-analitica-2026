@@ -36,6 +36,12 @@ export function EmailPopup() {
 
     const scrollThreshold = Math.max(window.innerHeight * 0.3, 100);
 
+    // Check initial scroll position — usuário pode ter chegado na página com scroll
+    // já feito (ex: link âncora, refresh com scrollRestoration, HMR em dev).
+    if (window.scrollY >= scrollThreshold) {
+      hasScrolled.current = true;
+    }
+
     const onScroll = () => {
       if (window.scrollY >= scrollThreshold) {
         hasScrolled.current = true;
@@ -68,10 +74,17 @@ export function EmailPopup() {
     dismissPopup();
   };
 
+  const successTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const handleSuccess = () => {
     markSubscribed();
-    setTimeout(() => setVisible(false), 2500);
+    if (successTimer.current) clearTimeout(successTimer.current);
+    successTimer.current = setTimeout(() => setVisible(false), 2500);
   };
+
+  useEffect(() => () => {
+    if (successTimer.current) clearTimeout(successTimer.current);
+  }, []);
 
   const dialogRef = useFocusTrap(visible, handleDismiss);
 

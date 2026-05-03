@@ -28,13 +28,13 @@ async function sendWithRetry(
       const { error } = await fn();
       if (!error) return true;
       const status = Number((error as { statusCode?: number | null })?.statusCode) || 0;
-      // 4xx (validation, invalid email): não retry
-      if (status >= 400 && status < 500) {
-        console.error(`[resend] ${context} 4xx, sem retry:`, error.message);
+      // 4xx exceto 408 (timeout) e 429 (rate limit transitório): não retry
+      if (status >= 400 && status < 500 && status !== 408 && status !== 429) {
+        console.error(`[resend] ${context} ${status}, sem retry:`, error.message);
         return false;
       }
       lastError = error;
-      console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} falhou:`, error.message);
+      console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} falhou (${status}):`, error.message);
     } catch (err) {
       lastError = err;
       console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} threw:`, err);
