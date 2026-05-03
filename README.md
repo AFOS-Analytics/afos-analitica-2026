@@ -6,7 +6,7 @@
 
 ### Global platform — unprecedented — real-time cross-referencing of prediction markets, electoral polls and news.
 
-Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis.
+Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.
 
 **Aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
 
