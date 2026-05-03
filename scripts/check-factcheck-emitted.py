@@ -67,7 +67,20 @@ def main() -> int:
 
     # Localizar transcript da sessão atual
     if not session_id:
-        print("[factcheck-hook] WARN: no session_id in input, allowing write", file=sys.stderr)
+        if os.environ.get("AFOS_FACTCHECK_BYPASS") == "1":
+            print("[factcheck-hook] WARN: no session_id, BYPASS via AFOS_FACTCHECK_BYPASS=1", file=sys.stderr)
+            return 0
+        decision = {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": (
+                    "FACT-CHECK GATE BLOQUEIO: session_id ausente no payload do hook. "
+                    "Defina AFOS_FACTCHECK_BYPASS=1 para emergencia."
+                ),
+            }
+        }
+        print(json.dumps(decision, ensure_ascii=False))
         return 0
 
     home = Path(os.environ.get("HOME") or os.environ.get("USERPROFILE") or "")
@@ -81,10 +94,29 @@ def main() -> int:
             break
 
     if transcript is None or not transcript.is_file():
-        print(
-            f"[factcheck-hook] WARN: transcript not found for session {session_id}, allowing write",
-            file=sys.stderr,
-        )
+        # FAIL-CLOSED: se transcript não encontrado, BLOQUEAR (não permitir bypass por erro infra).
+        # Bypass de emergência: AFOS_FACTCHECK_BYPASS=1 no ambiente.
+        if os.environ.get("AFOS_FACTCHECK_BYPASS") == "1":
+            print(
+                f"[factcheck-hook] WARN: transcript not found for session {session_id}, "
+                "BYPASS via AFOS_FACTCHECK_BYPASS=1",
+                file=sys.stderr,
+            )
+            return 0
+        decision = {
+            "hookSpecificOutput": {
+                "hookEventName": "PreToolUse",
+                "permissionDecision": "deny",
+                "permissionDecisionReason": (
+                    f"FACT-CHECK GATE BLOQUEIO: transcript da sessao {session_id} nao foi "
+                    "encontrado em ~/.claude/projects/. Sem transcript, nao posso verificar se a "
+                    "ETAPA 1.5 do skill /afos-daily foi cumprida. Para emergencia, defina "
+                    "AFOS_FACTCHECK_BYPASS=1 no ambiente. Origem: guardrail Fase 2.1 "
+                    "fail-closed (estrutural a partir de 03/Mai/2026)."
+                ),
+            }
+        }
+        print(json.dumps(decision, ensure_ascii=False))
         return 0
 
     # Verificar se "Fact-check gate" foi emitido E tem estrutura mínima.

@@ -102,6 +102,7 @@ model ContactEvent {
   createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(6)
 
   @@index([leadId])
+  @@index([userId])
   @@index([eventType])
   @@index([createdAt])
   @@map("contact_events")
@@ -122,6 +123,7 @@ model VisitorState {
 
   @@index([subscribed])
   @@index([createdAt])
+  @@index([leadId])
   @@map("visitor_states")
   @@schema("crm")
 }

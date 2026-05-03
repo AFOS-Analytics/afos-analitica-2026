@@ -39,9 +39,12 @@ export async function GET(request: Request) {
 
     if (result.fetchedMarkets === 0) {
       console.warn('[cron] ZERO mercados — KV e Neon não atualizados');
+      // Status 503 garante que monitoring/UptimeRobot dispara alerta. Era 200 antes (silencioso).
+      const { sendCronFailureAlert } = await import('../../../lib/cron/health-alerts')
+      sendCronFailureAlert('refresh-elections', 'zero-markets', Date.now() - startTime).catch(() => {})
       return NextResponse.json(
         { ok: false, reason: 'zero-markets', elapsed: Date.now() - startTime },
-        { status: 200, headers: buildNoCacheHeaders() }
+        { status: 503, headers: buildNoCacheHeaders() }
       );
     }
 

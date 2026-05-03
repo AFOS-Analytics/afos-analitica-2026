@@ -1,0 +1,76 @@
+{
+  "updatedAt": "auto",
+  "note": "Atualizado pela skill /atualizar. Conteúdo dinâmico (polymarket %, poll info, risk) reescrito a cada execução.",
+  "candidates": [
+    {
+      "name": "Lula",
+      "party": "PT",
+      "age": 80,
+      "role": "Presidente da República",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "age": 45,
+      "role": "Senador (RJ)",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Renan Santos",
+      "party": "Missão",
+      "age": 35,
+      "role": "Fundador do MBL",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Fernando Haddad",
+      "party": "PT",
+      "age": 63,
+      "role": "Pré-candidato Gov. SP",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Ronaldo Caiado",
+      "party": "PSD",
+      "age": 76,
+      "role": "Ex-Gov. Goiás",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Romeu Zema",
+      "party": "Novo",
+      "age": 56,
+      "role": "Ex-Gov. Minas Gerais",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    },
+    {
+      "name": "Tarcísio de Freitas",
+      "party": "Republicanos",
+      "age": 51,
+      "role": "Governador de São Paulo",
+      "polymarket": "—",
+      "poll": "Atualizado pela rotina /atualizar com dados de Polymarket, AtlasIntel, Quaest e demais institutos TSE.",
+      "position": "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
+      "risk": "Veja o card de Sentimento e a síntese AFOS Daily para o quadro do dia."
+    }
+  ]
+}
