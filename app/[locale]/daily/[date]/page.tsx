@@ -42,6 +42,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
       : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
     alternates: {
       canonical: url,
+      languages: {
+        'pt-BR': `https://afos-analytics.com/pt-BR/daily/${params.date}`,
+        en: `https://afos-analytics.com/en/daily/${params.date}`,
+        es: `https://afos-analytics.com/es/daily/${params.date}`,
+        'x-default': `https://afos-analytics.com/pt-BR/daily/${params.date}`,
+      },
       types: {
         'application/rss+xml': [
           { url: 'https://afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },

@@ -65,9 +65,11 @@ export async function GET(request: Request) {
       headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
     })
   } catch (error) {
+    // Logar internamente o erro completo, mas NÃO expor message ao cliente
+    // (pode vazar SQL, connection strings, paths internos).
     console.error('[search-console] Error:', error)
     return NextResponse.json(
-      { error: 'gsc_query_failed', message: error instanceof Error ? error.message : 'unknown' },
+      { error: 'gsc_query_failed' },
       { status: 500 }
     )
   }

@@ -7,6 +7,7 @@
  */
 
 import { createHash } from 'crypto'
+import { Prisma } from '@prisma/client'
 import { prisma } from '../db'
 import { audit } from '../audit'
 
@@ -50,10 +51,11 @@ export async function anonymizeUser(email: string): Promise<{ success: boolean; 
         where: { email: normalized },
         data: { email: anon, status: 'deleted' },
       }))
-      // Scrub eventPayload JSONB que pode conter PII
+      // Scrub eventPayload JSONB (pode conter PII). DbNull força SQL NULL real
+      // (data: undefined no Prisma significa "não atualizar", não NULL).
       ops.push(prisma.contactEvent.updateMany({
         where: { leadId: lead.id },
-        data: { eventPayload: undefined, leadId: null },
+        data: { eventPayload: Prisma.DbNull, leadId: null },
       }))
     }
 

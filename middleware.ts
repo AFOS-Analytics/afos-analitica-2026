@@ -11,7 +11,7 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
       maxAge: VISITOR_COOKIE_MAX_AGE,
       path: '/',
       sameSite: 'lax',
-      httpOnly: false,
+      httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
     });
   }

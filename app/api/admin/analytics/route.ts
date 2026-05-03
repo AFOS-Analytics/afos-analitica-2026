@@ -209,7 +209,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error('[analytics] Error:', error)
     return NextResponse.json(
-      { error: 'analytics_failed', message: error instanceof Error ? error.message : 'unknown' },
+      { error: 'analytics_failed' },
       { status: 500 }
     )
   }

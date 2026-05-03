@@ -102,7 +102,9 @@ function buildOutputMarkdown(fm: Record<string, unknown>, locale: TargetLocale, 
     `updatedAt: "${fm.updatedAt}"`,
     `title: ${title}`,
     `locale: ${locale}`,
-    `status: ${fm.status || 'published'}`,
+    // SEMPRE 'draft': traduções precisam de revisão humana antes de virar 'published'.
+    // Nunca herdar status do PT-BR — risco de pular publish gate (Fase 1.1).
+    'status: draft',
     `lede: ${JSON.stringify(translatedLede)}`,
     '---',
     '',
