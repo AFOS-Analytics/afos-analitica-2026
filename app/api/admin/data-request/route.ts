@@ -22,38 +22,29 @@ function safeCompare(a: string, b: string): boolean {
   } catch { return false }
 }
 
-const ALLOWED_ORIGINS = [
-  'https://www.afos-analytics.com',
-  'https://afos-analytics.com',
-]
+const ALLOWED_ORIGINS = ['https://www.afos-analytics.com', 'https://afos-analytics.com']
 
 export async function POST(request: Request) {
-  // Origin check — bloqueia browsers de outras origens (cron e Postman não enviam origin)
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+
+  // Origin whitelist (cron e Postman não enviam origin → passam)
   const origin = request.headers.get('origin')
   if (origin && !ALLOWED_ORIGINS.includes(origin)) {
-    audit('origin_rejected', 'api.admin.data-request', 'n/a', {
-      ip: request.headers.get('x-forwarded-for') || undefined,
-      actorId: origin,
-    })
+    audit('origin_rejected', 'api.admin.data-request', 'n/a', { ip, actorId: origin })
     return NextResponse.json({ error: 'forbidden_origin' }, { status: 403 })
   }
 
-  // Auth
+  // Bearer auth (timing-safe)
   const secret = process.env.CRON_SECRET
-  if (!secret) {
-    return NextResponse.json({ error: 'not_configured' }, { status: 503 })
-  }
+  if (!secret) return NextResponse.json({ error: 'not_configured' }, { status: 503 })
 
   const authHeader = request.headers.get('authorization') || ''
   if (!safeCompare(authHeader, `Bearer ${secret}`)) {
-    audit('auth_failure', 'api.admin.data-request', 'n/a', {
-      ip: request.headers.get('x-forwarded-for') || undefined,
-    })
+    audit('auth_failure', 'api.admin.data-request', 'n/a', { ip })
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
   }
 
-  // Rate limit defensivo: 30 req/min por IP, mesmo com Bearer válido (defesa em profundidade)
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+  // Rate limit defensivo (defesa em profundidade): 30 req/min por IP
   const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
   const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
   if (redisUrl && redisToken) {

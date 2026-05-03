@@ -1,12 +1,13 @@
 import { createHash } from 'crypto'
 import { prisma } from './db'
 
+/** SHA-256 truncado em 16 chars hex (LGPD Art. 8 sem PII em claro). */
+const hashShort = (s: string | undefined) =>
+  s ? createHash('sha256').update(s).digest('hex').slice(0, 16) : undefined
+
 /**
- * Registra consentimento LGPD — cria user se não existe (upsert por email).
- * Fire-and-forget safe: callers podem ignorar erros.
- *
- * IP e user-agent são hasheados (SHA-256, 16 chars) antes de gravar.
- * Isso atende LGPD Art. 8 (prova de consentimento) sem armazenar PII em claro.
+ * Registra consentimento LGPD. Upsert User por email + insert UserConsent
+ * com IP/UA hasheados. Fire-and-forget safe.
  */
 export async function registerConsent(input: {
   email: string
@@ -18,18 +19,15 @@ export async function registerConsent(input: {
   ip?: string
   userAgent?: string
 }): Promise<{ success: boolean }> {
-  try {
-    if (!prisma) return { success: false }
+  if (!prisma) return { success: false }
 
+  try {
     const user = await prisma.user.upsert({
       where: { email: input.email },
       update: { locale: input.locale || undefined },
       create: { email: input.email, locale: input.locale || 'pt-BR' },
       select: { id: true },
     })
-
-    const ipHash = input.ip ? createHash('sha256').update(input.ip).digest('hex').slice(0, 16) : undefined
-    const userAgentHash = input.userAgent ? createHash('sha256').update(input.userAgent).digest('hex').slice(0, 16) : undefined
 
     await prisma.userConsent.create({
       data: {
@@ -40,14 +38,14 @@ export async function registerConsent(input: {
         policyVersion: input.policyVersion,
         source: input.source,
         locale: input.locale || 'pt-BR',
-        ipHash,
-        userAgentHash,
+        ipHash: hashShort(input.ip),
+        userAgentHash: hashShort(input.userAgent),
       },
     })
 
     return { success: true }
   } catch (error) {
-    console.error('[consent] Erro ao registrar:', error)
+    console.error('[consent] erro:', error)
     return { success: false }
   }
 }
