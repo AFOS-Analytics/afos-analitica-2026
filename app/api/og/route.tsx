@@ -13,18 +13,18 @@ export const runtime = 'edge'
 const COPY = {
   'pt-BR': {
     subtitle: 'Inteligência Eleitoral Open-Source',
-    chips: ['Polymarket', '17 Institutos', 'Notícias ao Vivo', 'Análises'],
-    footer: 'Brasil 2026 + 14 países',
+    chips: ['Mercado de previsão', '17 Institutos', 'Notícias ao Vivo', 'Análises'],
+    footer: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 14 países. Análises diárias.',
   },
   en: {
     subtitle: 'Open-Source Electoral Intelligence',
-    chips: ['Polymarket', '17 Institutes', 'Live News', 'Analysis'],
-    footer: 'Brazil 2026 + 14 countries',
+    chips: ['Prediction market', '17 Institutes', 'Live News', 'Analysis'],
+    footer: 'Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.',
   },
   es: {
     subtitle: 'Inteligencia Electoral Open-Source',
-    chips: ['Polymarket', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
-    footer: 'Brasil 2026 + 14 países',
+    chips: ['Mercado de predicción', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
+    footer: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur + 14 países. Análisis diarios.',
   },
 } as const
 
@@ -62,7 +62,7 @@ export async function GET(request: NextRequest) {
             <span key={c}>{c}</span>
           ))}
         </div>
-        <div style={{ fontSize: 28, marginTop: 40, fontWeight: 700, display: 'flex' }}>
+        <div style={{ fontSize: 22, marginTop: 32, fontWeight: 600, maxWidth: 1000, lineHeight: 1.4, textAlign: 'center', display: 'flex' }}>
           {copy.footer}
         </div>
         <div style={{ position: 'absolute', bottom: 40, fontSize: 18, opacity: 0.5, display: 'flex' }}>
