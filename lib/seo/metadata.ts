@@ -64,18 +64,18 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
 export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
-      title: 'AFOS Analytics — Plataforma Inédita no Mundo | Inteligência de Risco Político Eleitoral',
-      description: 'Plataforma inédita no mundo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de +17 institutos em tempo real. Inteligência de risco político eleitoral com notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.',
+      title: 'AFOS Analytics — Eleições Brasil 2026: Polymarket × Pesquisas TSE em Tempo Real',
+      description: 'Eleições Brasil 2026 ao vivo: odds de mercados de previsão (Polymarket), pesquisas eleitorais de 17+ institutos (Quaest, AtlasIntel, Datafolha) e cobertura jornalística cruzados em tempo real. Open-source, fontes públicas auditáveis. 14 países cobertos.',
       path: '',
     },
     en: {
-      title: 'AFOS Analytics — Unprecedented Platform | Political Election Risk Intelligence',
-      description: 'Unprecedented platform: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes in real time. Political election risk intelligence with live news and strategic analysis. Brazil 2026 elections and 14-country coverage.',
+      title: 'AFOS Analytics — Brazil 2026 Elections: Polymarket × Polls in Real Time',
+      description: 'Brazil 2026 elections live: prediction market odds (Polymarket), polls from 17+ institutes (Quaest, AtlasIntel, Datafolha) and news coverage cross-referenced in real time. Open-source, auditable public sources. 14 countries covered.',
       path: '',
     },
     es: {
-      title: 'AFOS Analytics — Plataforma Inédita en el Mundo | Inteligencia de Riesgo Político Electoral',
-      description: 'Plataforma inédita en el mundo: cruce de mercados de predicción (Polymarket) con encuestas electorales de +17 institutos en tiempo real. Inteligencia de riesgo político electoral con noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 14 países.',
+      title: 'AFOS Analytics — Elecciones Brasil 2026: Polymarket × Encuestas en Tiempo Real',
+      description: 'Elecciones Brasil 2026 en vivo: odds de mercados de predicción (Polymarket), encuestas de 17+ institutos (Quaest, AtlasIntel, Datafolha) y cobertura periodística cruzados en tiempo real. Open-source, fuentes públicas auditables. 14 países cubiertos.',
       path: '',
     },
   },

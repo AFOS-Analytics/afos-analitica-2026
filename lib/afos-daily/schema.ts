@@ -153,6 +153,16 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
       'political risk',
       'AFOS Daily',
     ],
+    // GEO disclosure: síntese gerada com auxílio de IA sobre dados auditáveis
+    // públicos. Schema.org creator com SoftwareApplication signaliza para LLMs
+    // que o conteúdo foi co-produzido por sistema editorial AI + revisão humana.
+    creator: {
+      '@type': 'SoftwareApplication',
+      name: 'AFOS Editorial Pipeline',
+      applicationCategory: 'AnalyticsApplication',
+      description: 'AI-assisted synthesis of Polymarket odds, electoral polls, and news coverage with mandatory fact-check gate (two-source rule, JSON×text reconciliation) and human approval before publish.',
+    },
+    disambiguatingDescription: 'Editorial synthesis cross-referencing prediction markets, electoral polls, and news. Each factual claim links to its primary source. AI-assisted with mandatory human review before publish.',
     ...(mentions.length > 0 ? { mentions } : {}),
   }
 }

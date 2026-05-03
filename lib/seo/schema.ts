@@ -14,12 +14,34 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${BASE_URL}/#organization`,
     name: 'AFOS Analytics',
+    alternateName: 'AFOS',
     url: BASE_URL,
-    logo: `${BASE_URL}/favicon.svg`,
-    description: 'Global electoral intelligence platform combining prediction markets, polls, and real-time news analysis.',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${BASE_URL}/favicon.svg`,
+      width: 512,
+      height: 512,
+    },
+    description: 'Open-source electoral intelligence platform cross-referencing prediction markets, electoral polls, and live news. Brazil 2026 + 14 countries coverage.',
     foundingDate: '2026',
+    knowsAbout: [
+      'Election prediction',
+      'Brazilian politics',
+      'Polymarket prediction markets',
+      'Electoral polls',
+      'Political risk analysis',
+      'Open data',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'general',
+      email: 'contact@afos-analytics.com',
+      availableLanguage: ['Portuguese', 'English', 'Spanish'],
+    },
     sameAs: [
+      'https://github.com/AFOS-Analytics',
       'https://github.com/AFOS-Analytics/afos-analitica-2026',
     ],
   };

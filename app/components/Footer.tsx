@@ -17,10 +17,10 @@ const OSS_LABELS: Record<string, { title: string; license: string; github: strin
   es:      { title: 'Open Source', license: 'Licencia Apache 2.0', github: 'GitHub', security: 'Seguridad', contributing: 'Contribuir',   conduct: 'Código de Conducta', governance: 'Gobernanza', trademark: 'Trademark' },
 }
 
-const LEGAL_LABELS: Record<string, { title: string; privacy: string; terms: string; sources: string }> = {
-  'pt-BR': { title: 'Legal',          privacy: 'Política de Privacidade', terms: 'Termos de Uso', sources: 'Fontes de Dados' },
-  en:      { title: 'Legal',          privacy: 'Privacy Policy',           terms: 'Terms of Use',  sources: 'Data Sources'    },
-  es:      { title: 'Legal',          privacy: 'Política de Privacidad',   terms: 'Términos de Uso', sources: 'Fuentes de Datos' },
+const LEGAL_LABELS: Record<string, { title: string; privacy: string; terms: string; sources: string; about: string }> = {
+  'pt-BR': { title: 'Legal',          privacy: 'Política de Privacidade', terms: 'Termos de Uso', sources: 'Fontes de Dados', about: 'Sobre' },
+  en:      { title: 'Legal',          privacy: 'Privacy Policy',           terms: 'Terms of Use',  sources: 'Data Sources',    about: 'About' },
+  es:      { title: 'Legal',          privacy: 'Política de Privacidad',   terms: 'Términos de Uso', sources: 'Fuentes de Datos', about: 'Acerca de' },
 }
 
 type ContactKey = 'general' | 'support' | 'security' | 'founder'
@@ -71,6 +71,7 @@ export function Footer() {
           </div>
           <div>
             <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
+            <a href={`/${locale}/about`} className="block text-white/60 hover:text-white py-0.5">{legal.about}</a>
             <a href={`/${locale}/privacy`} className="block text-white/60 hover:text-white py-0.5">{legal.privacy}</a>
             <a href={`/${locale}/terms`} className="block text-white/60 hover:text-white py-0.5">{legal.terms}</a>
             <a href={`/${locale}/data-sources`} className="block text-white/60 hover:text-white py-0.5">{legal.sources}</a>

@@ -23,15 +23,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://afos-analytics.com'),
   title: "AFOS Analytics | Polymarket, Pesquisas e Notícias Eleitorais Cruzados",
   description: "Cruzamento em tempo real entre mercados de previsão (Polymarket), pesquisas eleitorais de +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Eleições Brasil 2026 e 14 países.",
-  alternates: {
-    canonical: 'https://afos-analytics.com/pt-BR',
-    languages: {
-      'pt-BR': 'https://afos-analytics.com/pt-BR',
-      'en': 'https://afos-analytics.com/en',
-      'es': 'https://afos-analytics.com/es',
-      'x-default': 'https://afos-analytics.com/pt-BR',
-    },
-  },
+  // Canonical/alternates removidos do root layout para evitar que TODAS as
+  // rotas (PT-BR/EN/ES) declarem canonical=PT-BR (Google trataria EN/ES como
+  // duplicatas). buildMetadata() em [locale]/layout aplica canonical correto
+  // por locale via PAGE_SEO + alternates.languages cruzado.
   openGraph: {
     title: "AFOS Analytics. Inteligência Eleitoral Open-Source",
     description: "Cruzamento em tempo real entre Polymarket, pesquisas eleitorais e cobertura jornalística. Eleições Brasil 2026 e 14 países.",
