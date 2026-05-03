@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: '/opengraph-image',
+        url: '/api/og?locale=pt-BR',
         width: 1200,
         height: 630,
         alt: 'AFOS Analytics. Inteligência Eleitoral Open-Source',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AFOS Analytics. Inteligência Eleitoral Open-Source",
     description: "Polymarket, 17 institutos de pesquisa e notícias cruzados em tempo real. Open-source. Brasil 2026 e 14 países.",
-    images: ['/opengraph-image'],
+    images: ['/api/og?locale=pt-BR'],
   },
   robots: {
     index: true,
