@@ -64,18 +64,19 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
 export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   home: {
     'pt-BR': {
-      title: 'AFOS Analytics — Eleições Brasil 2026: Polymarket × Pesquisas TSE em Tempo Real',
-      description: 'Eleições Brasil 2026 ao vivo: odds de mercados de previsão (Polymarket), pesquisas eleitorais de 17+ institutos (Quaest, AtlasIntel, Datafolha) e cobertura jornalística cruzados em tempo real. Open-source, fontes públicas auditáveis. 14 países cobertos.',
+      // Title 60 chars (mobile-safe). Description 155 chars (Google snippet).
+      title: 'Eleições Brasil 2026: Polymarket × Pesquisas | AFOS',
+      description: 'Eleições Brasil 2026 ao vivo: Polymarket, pesquisas TSE de 17+ institutos (Quaest, AtlasIntel, Datafolha) e notícias cruzadas. Open-source.',
       path: '',
     },
     en: {
-      title: 'AFOS Analytics — Brazil 2026 Elections: Polymarket × Polls in Real Time',
-      description: 'Brazil 2026 elections live: prediction market odds (Polymarket), polls from 17+ institutes (Quaest, AtlasIntel, Datafolha) and news coverage cross-referenced in real time. Open-source, auditable public sources. 14 countries covered.',
+      title: 'Brazil 2026 Elections: Polymarket × Polls | AFOS',
+      description: 'Brazil 2026 elections live: Polymarket odds, polls from 17+ institutes (Quaest, AtlasIntel, Datafolha) and news cross-referenced. Open-source.',
       path: '',
     },
     es: {
-      title: 'AFOS Analytics — Elecciones Brasil 2026: Polymarket × Encuestas en Tiempo Real',
-      description: 'Elecciones Brasil 2026 en vivo: odds de mercados de predicción (Polymarket), encuestas de 17+ institutos (Quaest, AtlasIntel, Datafolha) y cobertura periodística cruzados en tiempo real. Open-source, fuentes públicas auditables. 14 países cubiertos.',
+      title: 'Elecciones Brasil 2026: Polymarket × Encuestas | AFOS',
+      description: 'Elecciones Brasil 2026 en vivo: Polymarket, encuestas de 17+ institutos (Quaest, AtlasIntel, Datafolha) y noticias cruzadas. Open-source.',
       path: '',
     },
   },
