@@ -9,32 +9,77 @@ function getResend(): Resend | null {
 
 const FROM = `AFOS Analytics <${EMAIL_ALERTS}>`;
 const REPLY_TO_HUMAN = EMAIL_CONTACT;
+const PUBLIC_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://afos-analytics.com';
 
-export async function sendWelcomeEmail(to: string): Promise<boolean> {
+/**
+ * Retry com exponential backoff: 1s → 2s → 4s.
+ * Falhas transientes (5xx, network, timeout) são retentadas. 4xx (validação) não.
+ */
+type ResendSendResponse = Awaited<ReturnType<Resend['emails']['send']>>
+
+async function sendWithRetry(
+  fn: () => Promise<ResendSendResponse>,
+  context: string,
+  maxAttempts = 3,
+): Promise<boolean> {
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const { error } = await fn();
+      if (!error) return true;
+      const status = Number((error as { statusCode?: number | null })?.statusCode) || 0;
+      // 4xx (validation, invalid email): não retry
+      if (status >= 400 && status < 500) {
+        console.error(`[resend] ${context} 4xx, sem retry:`, error.message);
+        return false;
+      }
+      lastError = error;
+      console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} falhou:`, error.message);
+    } catch (err) {
+      lastError = err;
+      console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} threw:`, err);
+    }
+    if (attempt < maxAttempts) {
+      const delay = 1000 * Math.pow(2, attempt - 1); // 1s, 2s, 4s
+      await new Promise((r) => setTimeout(r, delay));
+    }
+  }
+  console.error(`[resend] ${context} esgotou ${maxAttempts} tentativas:`, lastError);
+  return false;
+}
+
+/**
+ * Headers RFC 2369 + RFC 8058 (one-click unsubscribe).
+ * Gmail/Outlook usam isso para botão "Cancelar inscrição" nativo.
+ */
+function buildListUnsubscribeHeaders(token: string | undefined): Record<string, string> | undefined {
+  if (!token) return undefined;
+  const url = `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(token)}`;
+  return {
+    'List-Unsubscribe': `<${url}>, <mailto:${EMAIL_CONTACT}?subject=unsubscribe>`,
+    'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+  };
+}
+
+export async function sendWelcomeEmail(to: string, unsubscribeToken?: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) {
     console.warn('[resend] API key não configurada');
     return false;
   }
 
-  try {
-    const { error } = await resend.emails.send({
+  const headers = buildListUnsubscribeHeaders(unsubscribeToken);
+  return sendWithRetry(
+    () => resend.emails.send({
       from: FROM,
       replyTo: REPLY_TO_HUMAN,
       to,
       subject: 'Bem-vindo ao AFOS Analytics',
-      html: welcomeTemplate(),
-    });
-    if (error) {
-      console.error('[resend] Welcome email erro:', error.message);
-      return false;
-    }
-    console.log(`[resend] Welcome enviado: ${to.slice(0, 3)}***`);
-    return true;
-  } catch (err) {
-    console.error('[resend] Welcome falhou:', err);
-    return false;
-  }
+      html: welcomeTemplate(unsubscribeToken),
+      headers,
+    }),
+    `welcome to ${to.slice(0, 3)}***`,
+  );
 }
 
 export async function sendOddsAlert(to: string, data: {
@@ -43,48 +88,44 @@ export async function sendOddsAlert(to: string, data: {
   oldOdds: number;
   newOdds: number;
   direction: 'up' | 'down';
-}): Promise<boolean> {
+}, unsubscribeToken?: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) return false;
 
-  try {
-    const arrow = data.direction === 'up' ? '↑' : '↓';
-    const { error } = await resend.emails.send({
+  const arrow = data.direction === 'up' ? '↑' : '↓';
+  const headers = buildListUnsubscribeHeaders(unsubscribeToken);
+  return sendWithRetry(
+    () => resend.emails.send({
       from: FROM,
       to,
       subject: `${data.candidate} ${arrow} ${data.newOdds}% — ${data.country}`,
-      html: oddsAlertTemplate(data),
-    });
-    if (error) { console.error('[resend] Odds alert erro:', error.message); return false; }
-    return true;
-  } catch (err) {
-    console.error('[resend] Odds alert falhou:', err);
-    return false;
-  }
+      html: oddsAlertTemplate(data, unsubscribeToken),
+      headers,
+    }),
+    `odds alert to ${to.slice(0, 3)}***`,
+  );
 }
 
 export async function sendDailySummary(to: string, data: {
   date: string;
   highlights: string[];
   topCandidates: { name: string; odds: number; change: string }[];
-}): Promise<boolean> {
+}, unsubscribeToken?: string): Promise<boolean> {
   const resend = getResend();
   if (!resend) return false;
 
-  try {
-    const { error } = await resend.emails.send({
+  const headers = buildListUnsubscribeHeaders(unsubscribeToken);
+  return sendWithRetry(
+    () => resend.emails.send({
       from: FROM,
       replyTo: REPLY_TO_HUMAN,
       to,
       subject: `AFOS Resumo — ${data.date}`,
-      html: dailySummaryTemplate(data),
-    });
-    if (error) { console.error('[resend] Daily summary erro:', error.message); return false; }
-    return true;
-  } catch (err) {
-    console.error('[resend] Daily summary falhou:', err);
-    return false;
-  }
+      html: dailySummaryTemplate(data, unsubscribeToken),
+      headers,
+    }),
+    `daily summary to ${to.slice(0, 3)}***`,
+  );
 }
 
 export async function sendSystemAlert(to: string, data: {
@@ -95,17 +136,14 @@ export async function sendSystemAlert(to: string, data: {
   const resend = getResend();
   if (!resend) return false;
 
-  try {
-    const { error } = await resend.emails.send({
+  // System alerts são internos (ops), não levam unsubscribe
+  return sendWithRetry(
+    () => resend.emails.send({
       from: FROM,
       to,
       subject: `⚠️ AFOS Alert: ${data.type}`,
       html: systemAlertTemplate(data),
-    });
-    if (error) { console.error('[resend] System alert erro:', error.message); return false; }
-    return true;
-  } catch (err) {
-    console.error('[resend] System alert falhou:', err);
-    return false;
-  }
+    }),
+    `system alert to ${to.slice(0, 3)}***`,
+  );
 }

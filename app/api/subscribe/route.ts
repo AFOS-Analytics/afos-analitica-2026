@@ -72,9 +72,9 @@ export async function POST(request: Request) {
       )
     }
 
-    // Welcome email apenas para novos leads
+    // Welcome email apenas para novos leads, com token de unsubscribe one-click
     if (result.isNew) {
-      sendWelcomeEmail(email).catch((err) => {
+      sendWelcomeEmail(email, result.unsubscribeToken).catch((err) => {
         console.error('[subscribe] Welcome email falhou:', err)
       })
     }

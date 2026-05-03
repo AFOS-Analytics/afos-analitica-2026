@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo, useId } from 'react';
 import { useTranslation } from '../i18n/context';
 import { suggestEmailCorrection } from '../../lib/email-typo';
+import { trackEvent } from '../lib/analytics/events';
 
 /**
  * Shared subscribe form, used by Popup, Gate, and Landing Page.
- * Honeypot, validation, error handling, i18n, loading state.
+ * Honeypot, validation inline, error handling, i18n, loading state.
+ * a11y: label associado, ARIA error states, touch targets ≥44px (mobile).
  */
 
 interface SubscribeFormProps {
@@ -23,6 +25,9 @@ function isEmailValid(email: string): boolean {
 
 export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = 'default', className = '' }: SubscribeFormProps) {
   const { t } = useTranslation();
+  const emailId = useId();
+  const consentId = useId();
+  const errorId = useId();
   const [email, setEmail] = useState('');
   const [consent, setConsent] = useState(false);
   const [honeypot, setHoneypot] = useState('');
@@ -32,6 +37,11 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
 
   const prefix = variant === 'gate' ? 'gate' : 'popup';
   const suggestion = useMemo(() => suggestEmailCorrection(email), [email]);
+  const emailLooksValid = email.trim().length > 0 && isEmailValid(email);
+
+  const submitEventName = captureSource === 'landing' ? 'landing_subscribe_submit' : (variant === 'gate' ? 'gate_submit' : 'popup_submit');
+  const successEventName = captureSource === 'landing' ? 'landing_subscribe_success' : (variant === 'gate' ? 'gate_success' : 'popup_success');
+  const errorEventName = captureSource === 'landing' ? 'landing_subscribe_error' : (variant === 'gate' ? 'gate_error' : 'popup_error');
 
   const handleSubmit = useCallback(async () => {
     if (submitting.current) return;
@@ -57,6 +67,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
     submitting.current = true;
     setStatus('loading');
     setErrorMsg('');
+    trackEvent(submitEventName, { source: captureSource });
 
     try {
       const res = await fetch('/api/subscribe', {
@@ -81,31 +92,34 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
         };
         setErrorMsg(errorMap[data.error] || t(`${prefix}.errorGeneric`));
         setStatus('error');
+        trackEvent(errorEventName, { source: captureSource, reason: data.error || 'unknown' });
         submitting.current = false;
         return;
       }
 
       setStatus('success');
+      trackEvent(successEventName, { source: captureSource, isNew: data.isNew ?? false });
       onSuccess?.();
     } catch {
       setErrorMsg(t(`${prefix}.errorConnection`));
       setStatus('error');
+      trackEvent(errorEventName, { source: captureSource, reason: 'network' });
     } finally {
       submitting.current = false;
     }
-  }, [email, consent, honeypot, visitorId, captureSource, onSuccess, t, prefix]);
+  }, [email, consent, honeypot, visitorId, captureSource, onSuccess, t, prefix, submitEventName, successEventName, errorEventName]);
 
   if (status === 'success') {
     return (
-      <div className={`text-center py-4 ${className}`}>
-        <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3">
+      <div className={`text-center py-4 ${className}`} role="status" aria-live="polite">
+        <div className="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-3" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M5 13l4 4L19 7" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
         <p className="text-dark font-semibold text-lg">{t(variant === 'gate' ? 'gate.success' : 'popup.success')}</p>
         {variant !== 'gate' && (
-          <p className="text-gray-500 text-sm mt-1">{t('popup.successDesc')}</p>
+          <p className="text-gray-700 text-sm mt-1">{t('popup.successDesc')}</p>
         )}
       </div>
     );
@@ -114,14 +128,26 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
   return (
     <div className={className}>
       <div className="mb-3">
+        <label htmlFor={emailId} className="sr-only">{t(`${prefix}.placeholder`)}</label>
         <input
+          id={emailId}
           type="email"
           value={email}
-          onChange={e => { setEmail(e.target.value); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
+          onChange={e => {
+            const next = e.target.value;
+            setEmail(next);
+            if (status === 'error') {
+              const validNow = isEmailValid(next);
+              if (validNow || next.trim() === '') { setStatus('idle'); setErrorMsg(''); }
+            }
+          }}
           placeholder={t(`${prefix}.placeholder`)}
           autoComplete="email"
+          inputMode="email"
           disabled={status === 'loading'}
-          className="w-full px-4 py-3 rounded-xl text-sm text-dark placeholder-gray-400 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
+          aria-invalid={status === 'error'}
+          aria-describedby={status === 'error' ? errorId : undefined}
+          className="w-full px-4 py-3 rounded-xl text-base sm:text-sm text-dark placeholder-gray-500 bg-white outline-none transition-all focus:ring-2 focus:ring-primary/30 disabled:opacity-50 border border-primary/20 focus:border-primary"
           onKeyDown={e => { if (e.key === 'Enter' && status !== 'loading') handleSubmit(); }}
         />
         {suggestion && status !== 'loading' && (
@@ -130,7 +156,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
             <button
               type="button"
               onClick={() => { setEmail(suggestion); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
-              className="font-semibold underline hover:text-amber-900 transition-colors"
+              className="font-semibold underline hover:text-amber-900 focus:outline-none focus:ring-2 focus:ring-amber-500 rounded transition-colors"
             >
               {suggestion}
             </button>
@@ -139,7 +165,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
         )}
       </div>
 
-      {/* Honeypot */}
+      {/* Honeypot — anti-bot, hidden from real users + AT */}
       <input
         type="text"
         name="website"
@@ -147,34 +173,37 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
         onChange={e => setHoneypot(e.target.value)}
         tabIndex={-1}
         autoComplete="off"
-        style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0 }}
+        aria-hidden="true"
+        style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, pointerEvents: 'none' }}
       />
 
-      <label className="flex items-start gap-2.5 mb-3 cursor-pointer select-none">
+      <div className="flex items-start gap-2.5 mb-3">
         <input
+          id={consentId}
           type="checkbox"
           checked={consent}
           onChange={e => { setConsent(e.target.checked); if (status === 'error') { setStatus('idle'); setErrorMsg(''); } }}
-          className="mt-0.5 w-4 h-4 rounded border-gray-300 accent-primary flex-shrink-0"
+          className="mt-0.5 w-5 h-5 sm:w-4 sm:h-4 rounded border-gray-300 accent-primary flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer"
         />
-        <span className="text-xs text-gray-500 leading-relaxed">
+        <label htmlFor={consentId} className="text-xs text-gray-700 leading-relaxed cursor-pointer select-none">
           {t(`${prefix}.consent`)}
-        </span>
-      </label>
+        </label>
+      </div>
 
       {status === 'error' && errorMsg && (
-        <p className="text-red-500 text-xs mb-3">{errorMsg}</p>
+        <p id={errorId} role="alert" className="text-red-600 text-xs mb-3">{errorMsg}</p>
       )}
 
       <button
+        type="button"
         onClick={handleSubmit}
-        disabled={status === 'loading' || !email.trim()}
-        className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+        disabled={status === 'loading' || !email.trim() || (email.trim().length > 0 && !emailLooksValid)}
+        className="w-full min-h-[44px] py-3 rounded-xl text-sm font-semibold text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
         style={{ boxShadow: status === 'loading' ? 'none' : '0 4px 14px rgba(15,82,186,0.25)' }}
       >
         {status === 'loading' ? (
           <span className="flex items-center justify-center gap-2">
-            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" aria-hidden="true" />
             {t('popup.submitting')}
           </span>
         ) : (
@@ -183,7 +212,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
       </button>
 
       {variant !== 'gate' && (
-        <p className="text-center text-[10px] text-gray-400 mt-3">{t('popup.noSpam')}</p>
+        <p className="text-center text-xs text-gray-600 mt-3">{t('popup.noSpam')}</p>
       )}
     </div>
   );

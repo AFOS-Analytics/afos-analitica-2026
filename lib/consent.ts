@@ -1,8 +1,12 @@
+import { createHash } from 'crypto'
 import { prisma } from './db'
 
 /**
  * Registra consentimento LGPD — cria user se não existe (upsert por email).
  * Fire-and-forget safe: callers podem ignorar erros.
+ *
+ * IP e user-agent são hasheados (SHA-256, 16 chars) antes de gravar.
+ * Isso atende LGPD Art. 8 (prova de consentimento) sem armazenar PII em claro.
  */
 export async function registerConsent(input: {
   email: string
@@ -11,6 +15,8 @@ export async function registerConsent(input: {
   policyVersion: string
   source: string
   locale?: string
+  ip?: string
+  userAgent?: string
 }): Promise<{ success: boolean }> {
   try {
     if (!prisma) return { success: false }
@@ -22,6 +28,9 @@ export async function registerConsent(input: {
       select: { id: true },
     })
 
+    const ipHash = input.ip ? createHash('sha256').update(input.ip).digest('hex').slice(0, 16) : undefined
+    const userAgentHash = input.userAgent ? createHash('sha256').update(input.userAgent).digest('hex').slice(0, 16) : undefined
+
     await prisma.userConsent.create({
       data: {
         userId: user.id,
@@ -31,6 +40,8 @@ export async function registerConsent(input: {
         policyVersion: input.policyVersion,
         source: input.source,
         locale: input.locale || 'pt-BR',
+        ipHash,
+        userAgentHash,
       },
     })
 
