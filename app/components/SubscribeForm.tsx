@@ -38,9 +38,10 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
   const prefix = variant === 'gate' ? 'gate' : 'popup';
   const suggestion = useMemo(() => suggestEmailCorrection(email), [email]);
 
-  const submitEventName = captureSource === 'landing' ? 'landing_subscribe_submit' : (variant === 'gate' ? 'gate_submit' : 'popup_submit');
-  const successEventName = captureSource === 'landing' ? 'landing_subscribe_success' : (variant === 'gate' ? 'gate_success' : 'popup_success');
-  const errorEventName = captureSource === 'landing' ? 'landing_subscribe_error' : (variant === 'gate' ? 'gate_error' : 'popup_error');
+  const eventBase = captureSource === 'landing' ? 'landing_subscribe' : variant === 'gate' ? 'gate' : 'popup';
+  const submitEventName = `${eventBase}_submit` as const;
+  const successEventName = `${eventBase}_success` as const;
+  const errorEventName = `${eventBase}_error` as const;
 
   const handleSubmit = useCallback(async () => {
     if (submitting.current) return;

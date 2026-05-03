@@ -1,8 +1,7 @@
 /**
- * Subscriber Service — Persistência de leads no Neon (crm.leads)
- * Interface pública inalterada para não quebrar callers.
- * Upsert atômico para evitar race condition em double-submit.
- * Gera unsubscribeToken único para one-click unsubscribe (RFC 8058).
+ * Subscriber Service — persistência de leads em crm.leads (Neon).
+ * Upsert atômico evita race em double-submit. Gera unsubscribeToken
+ * único (24 bytes hex) para one-click unsubscribe RFC 8058.
  */
 
 import { randomBytes } from 'crypto'
@@ -13,39 +12,19 @@ import { registerConsent } from '../../../lib/consent'
 export function isValidEmail(email: string): boolean {
   if (!email || typeof email !== 'string') return false
   const trimmed = email.trim().toLowerCase()
-  if (trimmed.length > 254) return false
-  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(trimmed)
-}
-
-function generateUnsubscribeToken(): string {
-  return randomBytes(24).toString('hex')
+  return trimmed.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(trimmed)
 }
 
 export async function subscriberExists(email: string): Promise<boolean> {
   if (!prisma) return false
-  const normalized = email.toLowerCase().trim()
   try {
     const lead = await prisma.lead.findUnique({
-      where: { email: normalized },
+      where: { email: email.toLowerCase().trim() },
       select: { id: true },
     })
     return lead !== null
   } catch {
     return false
-  }
-}
-
-export async function getUnsubscribeToken(email: string): Promise<string | null> {
-  if (!prisma) return null
-  const normalized = email.toLowerCase().trim()
-  try {
-    const lead = await prisma.lead.findUnique({
-      where: { email: normalized },
-      select: { unsubscribeToken: true },
-    })
-    return lead?.unsubscribeToken ?? null
-  } catch {
-    return null
   }
 }
 
@@ -65,25 +44,13 @@ export async function createSubscriber(
   }
 
   try {
-    const newToken = generateUnsubscribeToken()
-    const now = new Date()
+    const newToken = randomBytes(24).toString('hex')
 
-    // Upsert atômico — elimina race condition em double-submit.
-    // - create: insere com token novo
-    // - update: atualiza lastSeenAt; se token estiver null (lead legado pré-migration),
-    //   preenche com newToken para garantir one-click unsubscribe em todos os emails.
-    //
-    // isNew detection: comparar token retornado com newToken. Em CREATE, prisma
-    // grava newToken e retorna newToken → match. Em UPDATE quando token já existia,
-    // retorna o token antigo → no match. Mais robusto que comparar timestamps,
-    // que podem coincidir por default `now()` em microsegundos de precisão.
+    // Upsert atômico (race-safe em double-submit). isNew via token comparison:
+    // CREATE → token retornado é newToken; UPDATE → mantém token antigo.
     const lead = await prisma.lead.upsert({
       where: { email: normalized },
-      update: {
-        lastSeenAt: now,
-        // Backfill token se for legacy lead criado antes da migration
-        unsubscribeToken: { set: undefined },
-      },
+      update: { lastSeenAt: new Date() },
       create: {
         email: normalized,
         captureSource: source,
@@ -91,10 +58,10 @@ export async function createSubscriber(
         status: 'active',
         unsubscribeToken: newToken,
       },
-      select: { id: true, unsubscribeToken: true, status: true },
+      select: { id: true, unsubscribeToken: true },
     })
 
-    // Backfill: se lead existia mas sem token (pré-migration), gerar agora
+    // Backfill para leads pré-migration (token null)
     let finalToken = lead.unsubscribeToken
     if (!finalToken) {
       const updated = await prisma.lead.update({
@@ -110,7 +77,7 @@ export async function createSubscriber(
     if (isNew) {
       audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
 
-      // Registrar consentimento LGPD com IP/UA hash (Art. 8 — prova de consentimento)
+      // Consentimento LGPD Art. 8 (IP/UA hasheados em consent.ts)
       registerConsent({
         email: normalized,
         consentType: 'email_marketing',
@@ -121,7 +88,7 @@ export async function createSubscriber(
         ip: meta?.ip,
         userAgent: meta?.userAgent,
       }).catch((err) => {
-        console.error('[subscribers] Consent registration failed:', normalized.slice(0, 3) + '***', err)
+        console.error('[subscribers] consent failed:', normalized.slice(0, 3) + '***', err)
       })
     }
 
@@ -156,9 +123,6 @@ export async function unsubscribeByEmail(email: string): Promise<{ success: bool
     return { success: false, error: 'internal_error' }
   }
 }
-
-/** Backward-compat alias */
-export const unsubscribe = unsubscribeByEmail
 
 export async function unsubscribeByToken(token: string): Promise<{ success: boolean; email?: string; error?: string }> {
   if (!prisma) return { success: false, error: 'storage_unavailable' }
