@@ -47,17 +47,19 @@ model UserPreference {
 }
 
 model UserConsent {
-  id            String    @id @default(uuid()) @db.Uuid
-  userId        String?   @map("user_id") @db.Uuid
-  user          User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
-  email         String?
-  consentType   String    @map("consent_type")
-  granted       Boolean
-  grantedAt     DateTime  @default(now()) @map("granted_at") @db.Timestamptz(6)
-  revokedAt     DateTime? @map("revoked_at") @db.Timestamptz(6)
-  policyVersion String    @map("policy_version")
-  source        String
-  locale        String    @default("pt-BR")
+  id             String    @id @default(uuid()) @db.Uuid
+  userId         String?   @map("user_id") @db.Uuid
+  user           User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+  email          String?
+  consentType    String    @map("consent_type")
+  granted        Boolean
+  grantedAt      DateTime  @default(now()) @map("granted_at") @db.Timestamptz(6)
+  revokedAt      DateTime? @map("revoked_at") @db.Timestamptz(6)
+  policyVersion  String    @map("policy_version")
+  source         String
+  locale         String    @default("pt-BR")
+  ipHash         String?   @map("ip_hash")
+  userAgentHash  String?   @map("user_agent_hash")
 
   @@index([email])
   @@index([consentType])
@@ -71,19 +73,21 @@ model UserConsent {
 // ═══════════════════════════════════════════════════════════
 
 model Lead {
-  id            String         @id @default(uuid()) @db.Uuid
-  email         String         @unique
-  locale        String?
-  captureSource String         @map("capture_source")
-  campaign      String?
-  status        String         @default("active")
-  firstSeenAt   DateTime       @default(now()) @map("first_seen_at") @db.Timestamptz(6)
-  lastSeenAt    DateTime       @default(now()) @map("last_seen_at") @db.Timestamptz(6)
-  events        ContactEvent[]
+  id               String         @id @default(uuid()) @db.Uuid
+  email            String         @unique
+  locale           String?
+  captureSource    String         @map("capture_source")
+  campaign         String?
+  status           String         @default("active")
+  unsubscribeToken String?        @unique @map("unsubscribe_token")
+  firstSeenAt      DateTime       @default(now()) @map("first_seen_at") @db.Timestamptz(6)
+  lastSeenAt       DateTime       @default(now()) @map("last_seen_at") @db.Timestamptz(6)
+  events           ContactEvent[]
 
   @@index([email])
   @@index([status])
   @@index([captureSource])
+  @@index([unsubscribeToken])
   @@map("leads")
   @@schema("crm")
 }

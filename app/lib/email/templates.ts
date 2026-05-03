@@ -22,7 +22,18 @@ const BRAND = {
   tagline: 'Plataforma Global de Inteligencia Eleitoral',
 };
 
-function layout(content: string): string {
+function unsubscribeFooter(unsubscribeToken?: string): string {
+  if (!unsubscribeToken) {
+    return 'Para cancelar o recebimento, responda este email com &quot;cancelar&quot;.';
+  }
+  const url = BRAND.url + '/api/unsubscribe?token=' + encodeURIComponent(unsubscribeToken);
+  return [
+    'Voce nao quer mais receber? ',
+    '<a href="' + url + '" style="color:' + BRAND.color + ';text-decoration:underline;">Cancelar inscricao com 1 clique</a>',
+  ].join('');
+}
+
+function layout(content: string, unsubscribeToken?: string): string {
   return [
     '<!DOCTYPE html>',
     '<html lang="pt-BR">',
@@ -39,10 +50,10 @@ function layout(content: string): string {
     content,
     '</td></tr>',
     '<tr><td style="padding:20px 32px;border-top:1px solid #eee;">',
-    '<p style="margin:0;color:#999;font-size:11px;line-height:1.6;">',
+    '<p style="margin:0;color:#666;font-size:11px;line-height:1.6;">',
     BRAND.name + ' &mdash; ' + BRAND.tagline + '<br>',
     '<a href="' + BRAND.url + '" style="color:' + BRAND.color + ';text-decoration:none;">' + BRAND.url + '</a><br><br>',
-    'Para cancelar o recebimento, responda este email com &quot;cancelar&quot;.',
+    unsubscribeFooter(unsubscribeToken),
     '</p>',
     '</td></tr>',
     '</table>',
@@ -56,7 +67,7 @@ function layout(content: string): string {
 /**
  * Template: Welcome (novo subscriber)
  */
-export function welcomeTemplate(): string {
+export function welcomeTemplate(unsubscribeToken?: string): string {
   return layout([
     '<h2 style="margin:0 0 16px;color:#1a1a1a;font-size:18px;">Bem-vindo ao AFOS Analytics</h2>',
     '<p style="color:#333;font-size:14px;line-height:1.7;margin:0 0 16px;">',
@@ -81,7 +92,7 @@ export function welcomeTemplate(): string {
     '</table>',
     '<a href="' + BRAND.url + '" style="display:inline-block;background:' + BRAND.color + ';color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
     'Acessar o Dashboard</a>',
-  ].join(''));
+  ].join(''), unsubscribeToken);
 }
 
 /**
@@ -93,7 +104,7 @@ export function oddsAlertTemplate(data: {
   oldOdds: number;
   newOdds: number;
   direction: 'up' | 'down';
-}): string {
+}, unsubscribeToken?: string): string {
   const arrow = data.direction === 'up' ? '&#9650;' : '&#9660;';
   const color = data.direction === 'up' ? '#16a34a' : '#dc2626';
   const diff = Math.abs(data.newOdds - data.oldOdds).toFixed(1);
@@ -109,7 +120,7 @@ export function oddsAlertTemplate(data: {
     '</div>',
     '<a href="' + BRAND.url + '" style="display:inline-block;background:' + BRAND.color + ';color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
     'Ver Detalhes</a>',
-  ].join(''));
+  ].join(''), unsubscribeToken);
 }
 
 /**
@@ -119,7 +130,7 @@ export function dailySummaryTemplate(data: {
   date: string;
   highlights: string[];
   topCandidates: { name: string; odds: number; change: string }[];
-}): string {
+}, unsubscribeToken?: string): string {
   const candidateRows = data.topCandidates.map(c => [
     '<tr>',
     '<td style="padding:8px 0;border-bottom:1px solid #f0f0f0;color:#333;font-size:14px;">' + esc(c.name) + '</td>',
@@ -148,7 +159,7 @@ export function dailySummaryTemplate(data: {
     '<ul style="margin:0 0 20px;padding-left:20px;">' + highlightItems + '</ul>',
     '<a href="' + BRAND.url + '" style="display:inline-block;background:' + BRAND.color + ';color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;">',
     'Ver Dashboard Completo</a>',
-  ].join(''));
+  ].join(''), unsubscribeToken);
 }
 
 /**

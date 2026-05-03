@@ -8,6 +8,7 @@
 
 import { NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
+import { Redis } from '@upstash/redis'
 import { prisma } from '../../../../lib/db'
 import { anonymizeUser, exportUserData, processDeletionRequest } from '../../../../lib/governance/data-lifecycle'
 import { audit } from '../../../../lib/audit'
@@ -21,7 +22,22 @@ function safeCompare(a: string, b: string): boolean {
   } catch { return false }
 }
 
+const ALLOWED_ORIGINS = [
+  'https://www.afos-analytics.com',
+  'https://afos-analytics.com',
+]
+
 export async function POST(request: Request) {
+  // Origin check — bloqueia browsers de outras origens (cron e Postman não enviam origin)
+  const origin = request.headers.get('origin')
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    audit('origin_rejected', 'api.admin.data-request', 'n/a', {
+      ip: request.headers.get('x-forwarded-for') || undefined,
+      actorId: origin,
+    })
+    return NextResponse.json({ error: 'forbidden_origin' }, { status: 403 })
+  }
+
   // Auth
   const secret = process.env.CRON_SECRET
   if (!secret) {
@@ -34,6 +50,21 @@ export async function POST(request: Request) {
       ip: request.headers.get('x-forwarded-for') || undefined,
     })
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+  }
+
+  // Rate limit defensivo: 30 req/min por IP, mesmo com Bearer válido (defesa em profundidade)
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+  const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
+  const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
+  if (redisUrl && redisToken) {
+    const redis = new Redis({ url: redisUrl, token: redisToken })
+    const key = `afos:ratelimit:admin:data-request:${ip}`
+    const attempts = await redis.incr(key)
+    if (attempts === 1) await redis.expire(key, 60)
+    if (attempts > 30) {
+      audit('rate_limited', 'api.admin.data-request', ip, { ip })
+      return NextResponse.json({ error: 'rate_limited' }, { status: 429 })
+    }
   }
 
   // Parse body
