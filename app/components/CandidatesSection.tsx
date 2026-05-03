@@ -13,60 +13,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "38.50%",
-    poll: "Lula RECUPERA 38.50% Poly (↑1.0pp de 37.50%) gap fecha +4.15pp Flávio (vs +6.05pp ontem). Real Time Big Data PA: Lula lidera todos cenários 1T (CNN). AtlasIntel 28/Abr 1T 46.6% × Flávio 39.7% mantida.",
+    polymarket: "37.50%",
+    poll: "Lula DESPENCA 37.50% Poly (↓1.0pp de 38.50%) gap ALARGA +6.45pp Flávio (vs +4.15pp ontem). Wellington Dias (coordenador campanha): Flávio bateu no teto (Brasil 247, VEJA 03/Mai). Real Time Big Data PA Lula lidera 1T (CNN). Nexus 2T empate técnico Lula × Flávio/Zema/Caiado (Capital News 03/Mai).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "PT autocrítica: Edinho Silva 'PT deveria ter assinado CPI Master' (O Antagonista). Mendonça: 'Vorcaro tinha apoio mais altos escalões República' (Metrópoles). Lula estuda aliança neta Brizola RS (Gazeta do Povo). Lula confiante MG (CNN)."
+    risk: "VOX BRASIL SP 2T: Flávio 50,4% × Lula 38,1% (Folha do Estado 03/Mai 18:37) Lula perde forte SP. 'Pai do Lulinha': campanha Lula vai chamar Flávio (Folha 03/Mai). 'Lula testa mote reeleição enquanto acumula tropeços Congresso' (Folha)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "42.65%",
-    poll: "Flávio PERDE TOPO CICLO 42.65% Poly (↓0.90pp de 43.55%). 2º lugar ALARGA 68.0% (↑2.5pp). 'Flávio avança Nordeste já não garantido Lula' (Gazeta do Povo). 'Articulador 2 derrotas Lula' (Estadão).",
+    polymarket: "43.95%",
+    poll: "Flávio RECUPERA TOPO 43.95% Poly (↑1.30pp de 42.65% reverte devolução) gap ALARGA +6.45pp. 2º lugar 67.5% (↓0.5pp leve). VOX SP 2T: Flávio 50,4% × Lula 38,1% (Folha do Estado 03/Mai). Federação União-PP MAIS PRÓXIMA Flávio após crise Senado (O Globo).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "Flávio 'assume anistia total na Papudinha' (Blog Esmael). Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum). Tensão direita: Flávio pede união após atrito Eduardo×Nikolas (Gazeta do Povo). 'Costa Neto antecipou acordo Flávio×Alcolumbre barrar CPI Master' (Revista Fórum)."
+    risk: "Flávio + Silas Malafaia culto Rio (Folha+Estadão 03/Mai 16:31) reaproximação alinhamento evangélico explícito. Wellington Dias (coordenador Lula): bateu no teto (Brasil 247). Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai)."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "5.60%",
-    poll: "Renan presidencial 5.60% Poly (estável de 5.65%). 3º lugar 33.5% (estável após reversão ontem, Zema lidera 39.0%). Mantido 'Sou candidato direita' (BBC 28/Abr).",
+    polymarket: "5.65%",
+    poll: "Renan presidencial 5.65% Poly (↑0.05pp leve estável). 3º lugar DISPARA 36.0% (↑2.5pp forte de 33.5%) reduz gap com Zema (39.5%). Mantido 'Sou candidato direita' (BBC 28/Abr).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "STF impeach Poly RECUPERA 14.0% (↑1.0pp) reverte parte do despenque ontem. Combustível anti-establishment volta levemente. Mas direita unificada Flávio absorve oxigênio (Alcolumbre articula União+PP)."
+    risk: "STF impeach Poly DEVOLVE 13.5% (↓0.5pp leve). Eduardo Leite 3º DEVOLVE forte 0.85% (↓0.65pp de 1.5%) — competidor 3º lugar liberal centro-direita perde força, abre espaço Renan. Zema radicaliza impeach STF + 'privatizar tudo' (Estadão 03/Mai) compete oxigênio anti-establishment."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "3.65%",
-    poll: "Haddad presidencial 3.65% Poly (↑0.30pp de 3.35%). 'Haddad lavagem cerebral' continua repercutindo 02/Mai (O Globo, Revista Oeste). 'Haddad planeja debates econômicos Tarcísio com inflação SP' (Estadão). Vox SP gov: Tarcísio 38% × Haddad 26% mantido.",
+    polymarket: "2.95%",
+    poll: "Haddad presidencial DESPENCA 2.95% Poly (↓0.70pp de 3.65% segundo dia consecutivo de queda forte). 'Pai do Lulinha': campanha Lula vai chamar Flávio (Folha 03/Mai 09:00) escalada retórica PT.",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Repercussão 'lavagem cerebral coletiva' continua dominante 48h depois (RISCO REPUTACIONAL). Haddad atrás 12pp em SP. Camilo presidencial DISPARA 3.95% (↑0.60pp) iguala Haddad mostra fragmentação esquerda."
+    risk: "VOX BRASIL SP 2T: Flávio 50,4% × Lula 38,1% Haddad ausente. Camilo presidencial 3.85% > Haddad 2.95% diferença ALARGA 0.90pp fragmentação esquerda piora. Repercussão 'lavagem cerebral coletiva' Haddad mantida 72h (eco continua)."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.45%",
-    poll: "Caiado presidencial 1.45% Poly (↓0.20pp de 1.65%). PSD Senado DISPARA 7.5% (↑4.9pp de 2.6%) coalizão centrão recupera força. Quaest GO: Daniel Vilela 33% 1T + lidera 2T (Quaest 01/Mai) aliado MDB.",
+    polymarket: "1.35%",
+    poll: "Caiado presidencial 1.35% Poly (↓0.10pp leve queda de 1.45%). PSD Senado DESPENCA forte 2.15% (↓5.35pp de 7.5% coalizão centrão devolve). Nexus 2T: Lula empate técnico com Caiado (Capital News 03/Mai).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado presidencial em queda lenta. 'Alcolumbre articula União+PP em Flávio' (Revista Fórum) marginaliza Caiado como alternativa centro-direita. AtlasIntel 28/Abr 2T não cita Caiado mantido."
+    risk: "Federação União-PP MAIS PRÓXIMA Flávio após crise Senado (O Globo 03/Mai) marginaliza Caiado centro-direita. PSD Senado DESPENCA forte. AtlasIntel 28/Abr 2T não cita Caiado mantido."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "4.15%",
-    poll: "Zema presidencial 4.15% Poly (↓0.30pp continua despencando, 3º dia consecutivo <5%). 3º lugar mantém liderança 39.0% (↓0.5pp leve, reversão ontem se sustenta). NOVO Senado DISPARA 7.9% (↑6.05pp segunda recuperação, partido reverte colapso). AtlasIntel 28/Abr 2T 'Lula empata Zema' mantido.",
+    polymarket: "3.75%",
+    poll: "Zema presidencial 3.75% Poly (↓0.40pp continua despencando 4º dia <5%). 3º lugar mantém liderança 39.5% (↑0.50pp leve sustenta). NOVO Senado DEVOLVE forte 4.5% (↓3.4pp de 7.9%) reverte recuperação anterior.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema 'criança vai poder trabalhar caso eleito' (Estadão+Blog Esmael 02/Mai) declaração polêmica trabalho infantil pode dominar narrativa próximas 48h. Presidencial continua despencando apesar 3º lugar consolidado."
+    risk: "Zema RADICALIZA: defende impeachment ministros STF + 'privatizar tudo' caso eleito (Estadão 03/Mai 16:55) — radicalização anti-establishment forte. Continua despencando presidencial 4º dia consecutivo abaixo dos 5% apesar manter liderança 3º lugar."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly (estável). 3º lugar 0.45% (↓0.10pp). Vox SP gov: Tarcísio 38% × Haddad 26% mantido (CartaCapital 29/Abr) liderança SP.",
+    poll: "Tarcísio presidencial 0.15% Poly (estável). VOX SP gov: Tarcísio 38% × Haddad 26% mantido (CartaCapital 29/Abr) liderança SP. Marília apela Pacheco candidatura MG (Estado de Minas 03/Mai).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio+Flávio reportados Procuradoria Geral por crimes eleitorais (Revista Fórum 02/Mai). 'Haddad planeja debates econômicos Tarcísio com inflação SP' (Estadão) ataque direto. Mantém aliança Flávio mas dividido entre defesa estadual e nacional."
+    risk: "Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai) mantido. VOX SP 2T presidencial: Flávio 50,4% × Lula 38,1% — Tarcísio fica fora da disputa nacional, papel de braço estadual SP."
   },
 ];
 
