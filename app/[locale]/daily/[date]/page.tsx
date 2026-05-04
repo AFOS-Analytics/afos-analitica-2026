@@ -46,12 +46,19 @@ export function generateMetadata({ params }: PageProps): Metadata {
       // for this date. Listing missing locales tells Google a translation
       // exists when the page would silently fall back to PT — that erodes
       // hreflang trust signal across the site.
-      languages: Object.fromEntries(
-        SUPPORTED_LOCALES
-          .filter((loc) => dailyExists(params.date, loc))
-          .map((loc) => [loc, `https://afos-analytics.com/${loc}/daily/${params.date}`])
-          .concat([['x-default', `https://afos-analytics.com/pt-BR/daily/${params.date}`]] as [string, string][])
-      ),
+      languages: (() => {
+        const langs: Record<string, string> = {}
+        for (const loc of SUPPORTED_LOCALES) {
+          if (dailyExists(params.date, loc)) {
+            langs[loc] = `https://afos-analytics.com/${loc}/daily/${params.date}`
+          }
+        }
+        // x-default points to PT-BR if it exists, otherwise to whichever
+        // locale we did include — never to a missing file.
+        const fallback = langs['pt-BR'] || langs['en'] || langs['es']
+        if (fallback) langs['x-default'] = fallback
+        return langs
+      })(),
       types: {
         'application/rss+xml': [
           { url: 'https://afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },

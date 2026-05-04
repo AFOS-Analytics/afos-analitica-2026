@@ -194,22 +194,28 @@ NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explíc
 
 Executar em sequência:
 
-0. **Arquivar adversarial review pass** (Fase 3.3):
-   Salvar o bloco emitido em ETAPA 3.5 em `public/afos-daily/_audit/{YYYY-MM-DD}.json`. Sem isso, audit pós-fato depende de transcrits e fica não-reproduzível.
+1. **Arquivar adversarial review pass** (Fase 3.3):
+   Salvar o bloco emitido em ETAPA 3.5 em `public/afos-daily/_audit/{YYYY-MM-DD}.json`. Sem isso, audit pós-fato depende de transcripts e fica não-reproduzível.
 
-1. **Persistir no Neon:**
+2. **Wayback archiving (Fase 3.2):**
+   ```bash
+   npx tsx scripts/wayback-archive.ts YYYY-MM-DD
+   ```
+   Snapshot das URLs citadas na daily em archive.org/web/save antes do deploy. Se uma fonte editar/cair, evidência fica preservada.
+
+3. **Persistir no Neon:**
    ```bash
    npx tsx scripts/persist-afos-daily.ts YYYY-MM-DD
    ```
 
-2. **Commit + push:**
+4. **Commit + push:**
    ```bash
-   git add public/afos-daily/YYYY-MM-DD.md app/\[locale\]/daily/page.tsx
+   git add public/afos-daily/YYYY-MM-DD*.md public/afos-daily/_audit/YYYY-MM-DD.json
    git commit -m "AFOS Daily YYYY-MM-DD — [resumo do dia em 1 linha]" (com Co-Authored-By padrão)
    git push origin main
    ```
 
-3. **Deploy prod:**
+5. **Deploy prod:**
    ```bash
    npx vercel --yes --prod
    ```
