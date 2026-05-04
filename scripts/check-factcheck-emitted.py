@@ -23,6 +23,25 @@ import json
 import os
 import re
 import sys
+from datetime import datetime, timezone
+
+
+def _audit_bypass(reason: str, file_path: str = "", session_id: str = "") -> None:
+    """Append a single line to docs/operacao/log-incidentes-afos-daily.md when
+    AFOS_FACTCHECK_BYPASS=1 is honored. Without this trail, an emergency bypass
+    leaves no evidence in transcripts (env var doesn't get echoed). The cost
+    is one fs append; failure is silent so it never blocks the actual write.
+    """
+    try:
+        cwd = os.getcwd()
+        log_path = os.path.join(cwd, "docs", "operacao", "log-incidentes-afos-daily.md")
+        ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+        line = f"- {ts} BYPASS reason={reason} session={session_id or '-'} path={file_path or '-'}\n"
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(line)
+    except Exception:
+        pass
 from pathlib import Path
 
 # Force UTF-8 stdout — Windows default cp1252 cannot encode emojis or accents
@@ -69,6 +88,7 @@ def main() -> int:
     if not session_id:
         if os.environ.get("AFOS_FACTCHECK_BYPASS") == "1":
             print("[factcheck-hook] WARN: no session_id, BYPASS via AFOS_FACTCHECK_BYPASS=1", file=sys.stderr)
+            _audit_bypass("no_session_id", file_path)
             return 0
         decision = {
             "hookSpecificOutput": {
@@ -102,6 +122,7 @@ def main() -> int:
                 "BYPASS via AFOS_FACTCHECK_BYPASS=1",
                 file=sys.stderr,
             )
+            _audit_bypass("transcript_not_found", file_path, session_id)
             return 0
         decision = {
             "hookSpecificOutput": {

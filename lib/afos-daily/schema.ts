@@ -118,6 +118,12 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
     name: s.name,
     ...(s.url ? { url: s.url } : {}),
   }))
+  // GEO signal: articleBody + wordCount let crawlers index full content
+  // without re-rendering the page. Stripped of markdown so token economy of
+  // LLM crawlers is preserved.
+  const articleBodyClean = cleanMarkdownText(data.body || '')
+  const wordCount = articleBodyClean ? articleBodyClean.split(/\s+/).filter(Boolean).length : 0
+  const articleBody = articleBodyClean.slice(0, 8000)
 
   return {
     '@context': 'https://schema.org',
@@ -146,6 +152,8 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
     },
     image: OG_IMAGE,
     articleSection: 'Politics',
+    ...(wordCount > 0 ? { wordCount } : {}),
+    ...(articleBody ? { articleBody } : {}),
     keywords: [
       'Brazil 2026 election',
       'prediction markets',

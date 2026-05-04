@@ -46,7 +46,7 @@ function extractClaimsFromMarkdown(text: string): Claim[] {
   const claims: Claim[] = []
   const lines = text.split(/\r?\n/)
   // Captura "X.XX%" e "X.XXpp" — same regex shape as JSON extractor.
-  const re = /([+-]?\d+(?:\.\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
+  const re = /(?<![\d.,])([+-]?\d+(?:[.,]\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]
     let m: RegExpExecArray | null
@@ -76,7 +76,7 @@ function extractValuesFromJson(obj: unknown, accumulator: Set<number>): void {
     // Captura X.XX% e X.XXpp em strings JSON.
     // Sem \b ao final: % e' nao-word, espaco e' nao-word, entao \b nao casa
     // entre eles e a regex original perdia "43.55%" antes de espaco.
-    const re = /([+-]?\d+(?:\.\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
+    const re = /(?<![\d.,])([+-]?\d+(?:[.,]\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
     let m: RegExpExecArray | null
     while ((m = re.exec(obj)) !== null) {
       const v = parseFloat(m[1])
@@ -152,7 +152,7 @@ interface NamedClaim {
 function extractNamedClaims(text: string, source: 'markdown' | 'json'): NamedClaim[] {
   const claims: NamedClaim[] = []
   const lines = source === 'markdown' ? text.split(/\r?\n/) : [text]
-  const re = /([+-]?\d+(?:\.\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
+  const re = /(?<![\d.,])([+-]?\d+(?:[.,]\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]

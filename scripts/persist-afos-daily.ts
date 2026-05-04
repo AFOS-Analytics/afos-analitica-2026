@@ -3,24 +3,17 @@ config({ path: '.env.local' })
 
 import { readFileSync, readdirSync } from 'fs'
 import { join } from 'path'
+import matter from 'gray-matter'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { upsertAnalysisReport } from '../lib/analysis/persist'
+import { assertDatabaseUrl } from '../lib/db-url-validator'
 
 function parseFrontmatter(md: string): { fm: Record<string, string>; body: string } {
-  const m = md.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/)
-  if (!m) return { fm: {}, body: md }
+  const parsed = matter(md)
   const fm: Record<string, string> = {}
-  for (const line of m[1].split('\n')) {
-    const kv = line.match(/^(\w+):\s*(.*)$/)
-    if (!kv) continue
-    let v = kv[2].trim()
-    if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
-      v = v.slice(1, -1)
-    }
-    fm[kv[1]] = v
-  }
-  return { fm, body: m[2] }
+  for (const [k, v] of Object.entries(parsed.data)) fm[k] = String(v ?? '')
+  return { fm, body: parsed.content }
 }
 
 async function persistOne(prisma: PrismaClient, filePath: string, dateIso: string) {
@@ -46,7 +39,7 @@ async function persistOne(prisma: PrismaClient, filePath: string, dateIso: strin
 
 async function main() {
   const url = process.env.DATABASE_URL
-  if (!url) { console.error('❌ DATABASE_URL não configurada'); process.exit(1) }
+  assertDatabaseUrl(url, 'DATABASE_URL')
 
   const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) })
   console.log('\n💾 Persistindo AFOS Daily no Neon\n')
