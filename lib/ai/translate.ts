@@ -212,7 +212,14 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
     } catch (err) {
       lastErr = err
       const msg = err instanceof Error ? err.message : String(err)
-      const transient = msg === 'rate_limited' || msg.endsWith('_503') || msg.endsWith('_502') || msg.endsWith('_504') || msg === 'AbortError'
+      const name = err instanceof Error ? err.name : ''
+      // Only retry on transient signals: 429 (rate_limited), 5xx, or aborted
+      // (network drop / fetch timeout). 4xx other than 429 is permanent —
+      // bad API key, malformed body, etc. — never recovers via retry.
+      const transient =
+        msg === 'rate_limited' ||
+        msg.endsWith('_502') || msg.endsWith('_503') || msg.endsWith('_504') || msg.endsWith('_429') ||
+        name === 'AbortError' || name === 'TimeoutError'
       if (!transient || attempt === 2) throw err
       await new Promise((r) => setTimeout(r, 1500 * Math.pow(3, attempt)))
     }

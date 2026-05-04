@@ -120,8 +120,10 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
   }))
   // GEO signal: articleBody + wordCount let crawlers index full content
   // without re-rendering the page. Stripped of markdown so token economy of
-  // LLM crawlers is preserved.
-  const articleBodyClean = cleanMarkdownText(data.body || '')
+  // LLM crawlers is preserved. Defensive: body may be undefined/null/empty
+  // depending on how the daily was authored; we never throw here.
+  const rawBody = typeof data.body === 'string' ? data.body : ''
+  const articleBodyClean = rawBody ? cleanMarkdownText(rawBody) : ''
   const wordCount = articleBodyClean ? articleBodyClean.split(/\s+/).filter(Boolean).length : 0
   const articleBody = articleBodyClean.slice(0, 8000)
 
