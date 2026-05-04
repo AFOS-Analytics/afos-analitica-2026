@@ -96,7 +96,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* PESQUISAS POR INSTITUTO */}
       {polls?.polls && polls.polls.length > 0 && (
         <p className="text-xs text-gray-500 italic mb-3 px-1">
-          📍 Última pesquisa nacional registrada. Estaduais e 2º turno aparecem no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>.
+          📍 Mostramos a pesquisa nacional de 1º turno mais recente. Estaduais e segundo turno aparecem no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>. Histórico completo via <a href="/api/polls/tse?days=30" className="text-primary hover:underline">API</a>.
         </p>
       )}
       {polls?.polls?.map((poll: Poll, pi: number) => (
