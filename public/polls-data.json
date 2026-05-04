@@ -153,16 +153,13 @@
     }
   ],
   "approvalData": {
-    "note": "Nexus/BTG Pactual (27-29/Mar/2026) + PoderData (21-23/Mar/2026): Avaliação do governo Lula",
-    "source": "Nexus/BTG Pactual via CNN Brasil + PoderData via Gazeta do Povo",
-    "date": "2026-03-30",
+    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon.",
+    "source": "AtlasIntel/Bloomberg via CNN Brasil + InfoMoney + Gazeta do Povo (publicada 28/Abr/2026)",
+    "date": "2026-04-28",
     "results": {
-      "otimoBom": 35,
-      "regular": 21,
-      "ruimPessimo": 44,
-      "aprovacao": 45,
-      "desaprovacao": 51,
-      "nota": "Nexus: 35% positivo (20% ótimo + 15% bom), 44% negativo (8% ruim + 36% péssimo), 21% regular. Aprovação binária: 45% aprovam, 51% desaprovam. PoderData (semana anterior): 26% ótimo/bom, 51% ruim/péssimo, 61% desaprovação."
+      "aprovacao": 46.6,
+      "desaprovacao": 53.4,
+      "nota": "AtlasIntel 28/Abr (campo 22-27/Abr): aprovação Lula 46.6-46.8%, desaprovação 53.2-53.4%. Mantido pré-Real Time Big Data nacional (publicação 05/Mai)."
     },
     "historicalComparison": [
       {
@@ -187,62 +184,63 @@
       },
       {
         "president": "Lula (2026)",
-        "approval6m": 26,
-        "disapproval6m": 51
+        "approval6m": 47,
+        "disapproval6m": 53
       }
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas Nacionais vs Polymarket (dinheiro real)",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 04/Mai/2026",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data PA (02/Mai), Quaest 11 estados (02/Mai), Nexus 2T (03/Mai), VOX BRASIL SP 2T (03/Mai), Polymarket (ao vivo)",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "37-46%",
-        "polymarket": "41.5%",
-        "tendenciaPesquisa": "Estável/leve queda. Nexus/BTG 41-42%, Paraná Pesq 41.3%, Gerp 38%, AtlasIntel 45.9%",
-        "tendenciaPolymarket": "↑ RETOMOU LIDERANÇA — 41.5% vs Flávio 40.0%"
+        "pesquisaRange": "37-47%",
+        "polymarket": "37.50%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 46.6%; Nexus 2T 03/Mai empate técnico Lula × Flávio/Zema/Caiado; Real Time Big Data PA Lula lidera todos cenários 1T",
+        "tendenciaPolymarket": "↓ DESPENCA 37.50% (↓1.0pp em 03/Mai, devolveu recuperação 02/Mai)"
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "30-40%",
-        "polymarket": "39.45%",
-        "tendenciaPesquisa": "Subindo em pesquisas. Nexus/BTG 38-39%, Paraná Pesq 37.8%, Gerp 36-40%, AtlasIntel 40.1%",
-        "tendenciaPolymarket": "↓ Recua de 40.2% para 39.45% — contra-ataque Lula (Alckmin+reforma) teve efeito"
+        "pesquisaRange": "39-50%",
+        "polymarket": "43.95%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 39.7%; AtlasIntel 2T 47.8% × Lula 47.5% empate técnico; VOX BRASIL SP 2T 50.4% × Lula 38.1% (Lula perde forte SP)",
+        "tendenciaPolymarket": "↑ RECUPERA TOPO 43.95% (↑1.30pp em 03/Mai); gap +6.45pp Flávio (vs +4.15pp em 02/Mai)"
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "1-4.5%",
-        "polymarket": "5.5%",
-        "tendenciaPesquisa": "Baixo em pesquisas formais. Nexus/BTG 2-3%, Paraná Pesq 1.2%",
-        "tendenciaPolymarket": "↓ Leve recuo para 5.5% — voto protesto resiliente"
+        "pesquisaRange": "5.3%",
+        "polymarket": "5.65%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3% (sustenta entre 5-6%); 3º lugar Polymarket DISPARA 36% (↑2.5pp)",
+        "tendenciaPolymarket": "Estável 5.65% (presidencial); 3º lugar 36% reduz gap com Zema (39.5%)"
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "2-5%",
-        "polymarket": "2.55%",
-        "tendenciaPesquisa": "Nexus/BTG 4%, Paraná Pesq 3.6%. PSD lançou candidatura 30/Mar",
-        "tendenciaPolymarket": "Estável em 2.55% — mercado cético com 3ª via"
+        "pesquisaRange": "3.3%",
+        "polymarket": "1.35%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Nexus 2T 03/Mai cita Caiado em empate técnico com Lula (4 cenários)",
+        "tendenciaPolymarket": "↓ 1.35% (↓0.10pp em 03/Mai); PSD Senado DESPENCA 2.15% (↓5.35pp coalizão centrão)"
       },
       {
         "name": "Tarcísio",
-        "pesquisaRange": "21-33%",
-        "polymarket": "1.0%",
-        "tendenciaPesquisa": "Só em cenários sem Flávio. 53% aprovação em SP (AtlasIntel)",
-        "tendenciaPolymarket": "Estável em 1.0% — foco na reeleição SP"
+        "pesquisaRange": "0.15%",
+        "polymarket": "0.15%",
+        "tendenciaPesquisa": "Não cita Tarcísio em cenários presidenciais nacionais Abr-Mai; Vox SP gov: Tarcísio 38% × Haddad 26%",
+        "tendenciaPolymarket": "Estável 0.15% — foco mantido na reeleição SP"
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "2-6%",
-        "polymarket": "1.4%",
-        "tendenciaPesquisa": "Nexus/BTG 4-6%, Paraná Pesq 3.0%. 2° turno: perde de Lula 46x40 (Nexus)",
-        "tendenciaPolymarket": "↓ Recuo para 1.4%"
+        "pesquisaRange": "3.1%",
+        "polymarket": "3.75%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; 2T AtlasIntel Lula 46% × Zema 43% empate técnico; Nexus 2T 03/Mai cita Zema em empate técnico Lula",
+        "tendenciaPolymarket": "↓ DESPENCA 3.75% (↓0.40pp em 03/Mai, 4º dia consecutivo <5%); 3º lugar mantém liderança 39.5% (↑0.50pp)"
       },
       {
         "name": "Fernando Haddad",
-        "pesquisaRange": "21-38% (sem Lula)",
-        "polymarket": "5.6%",
-        "tendenciaPesquisa": "Só como Plano B. Lula confirmou candidatura.",
-        "tendenciaPolymarket": "↑ Recupera para 5.6% — hedge de mercado apesar de Lula confirmado"
+        "pesquisaRange": "sem dados Abr-Mai",
+        "polymarket": "2.95%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr não cita Haddad presidencial (Plano B só com Lula fora); Vox SP gov Haddad 26% × Tarcísio 38%",
+        "tendenciaPolymarket": "↓ DESPENCA 2.95% (↓0.70pp em 03/Mai, 2º dia consecutivo queda forte); Camilo 3.85% > Haddad 2.95% fragmentação esquerda"
       }
     ]
   }
