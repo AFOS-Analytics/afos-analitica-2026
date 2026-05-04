@@ -37,6 +37,7 @@ export interface Institute { name: string; reliability: number; type: string; no
 
 export interface PolyComparison {
   note: string;
+  sources?: string;
   candidates: { name: string; pesquisaRange: string; polymarket: string; tendenciaPesquisa: string; tendenciaPolymarket: string; }[];
 }
 
