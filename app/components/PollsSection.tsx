@@ -56,7 +56,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               </div>
             ))}
           </div>
-          <p className="text-[10px] text-gray-400 mt-2">Fontes: Datafolha (07/Mar), Quaest (11/Mar), AtlasIntel (25/Mar), Polymarket (ao vivo)</p>
+          <p className="text-[10px] text-gray-400 mt-2">{polls?.polymarketComparison?.sources ? `Fontes: ${polls.polymarketComparison.sources}` : 'Fontes: Polymarket (ao vivo) + pesquisas Abr-Mai/2026'}</p>
         </Card>
       )}
 
