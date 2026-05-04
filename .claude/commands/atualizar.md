@@ -53,12 +53,29 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualize `risk` com informações relevantes do dia
 - Atualize o % de impeachment STF se mudou (buscar "14.5%" ou valor atual)
 
+### 3.4 `public/polls-data.json` — Pesquisas no dashboard (REGRA DE FRESCOR)
+
+**Guardrail (descoberto 04/Mai/2026 — pesquisas Mar ficaram 2 meses no dashboard):**
+
+- Verificar `lastUpdate` no topo do arquivo. Se >7 dias atrás de hoje, atualizar.
+- Para cada entrada em `polls[]`:
+  - Se `date` tem >30 dias: **REMOVER** (mover histórico para Neon via cron de persist; dashboard mostra só pesquisas ≤30 dias)
+  - Se `date` ≤7 dias: manter
+  - Se 7-30 dias: avaliar caso a caso (manter se for nacional grande tipo AtlasIntel/Quaest, remover se for estadual de baixa relevância)
+- Adicionar pesquisas novas que apareceram desde último /atualizar (use os dados que `/atualizar-pesquisas` registrou no Neon, OU que apareceram no JSON `analysis-criteriosa.json` na seção de pesquisas)
+- **Sem inventar números**: cada pesquisa precisa ter números verificáveis em fonte primária (Bloomberg/G1/CNN/site do instituto). Se não conseguir confirmar números detalhados, mantenha estrutura mínima (apenas 1T sem detalhes 2T).
+- Atualizar `lastUpdate` para data de hoje (formato `YYYY-MM-DD`)
+- Atualizar `approvalData.results` se aprovação Lula mudou (AtlasIntel/Quaest mais recentes)
+- Atualizar `polymarketComparison.candidates` com % Polymarket atuais (já tem dados em ETAPA 1)
+
+**Por que essa regra existe:** dashboard prometendo "tempo real" mostrando pesquisa de 2 meses atrás mata credibilidade. Pesquisa eleitoral perde relevância em ~3 semanas. Histórico fica no Neon (já temos).
+
 ## ETAPA 4: Build + Deploy + Commit + Persistência Neon
 
 Execute em sequência:
 1. `rm -rf .next && npm run build`
 2. `npx vercel --yes --prod`
-3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json`
+3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
 5. `git push origin main`
 6. **Persistir snapshots no Neon** (após deploy concluir):
