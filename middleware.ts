@@ -71,6 +71,15 @@ function shouldSkip(pathname: string): boolean {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Bare root `/` falls through to app/page.tsx, which renders OG metadata
+  // (EN copy) and dispatches a JS smart-redirect based on navigator.language.
+  // Without this, middleware would 307 to /pt-BR before any HTML body renders,
+  // leaving LLM crawlers and IM clients that don't follow redirects with empty
+  // OG. See app/page.tsx for the redirect logic.
+  if (pathname === '/') {
+    return ensureVisitorCookie(request, NextResponse.next());
+  }
+
   if (shouldSkip(pathname)) {
     if (pathname.startsWith('/api/')) {
       const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
