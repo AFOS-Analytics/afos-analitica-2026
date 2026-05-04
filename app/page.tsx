@@ -50,12 +50,12 @@ export default function RootPage() {
   return (
     <main style={{ fontFamily: 'system-ui, sans-serif', textAlign: 'center', padding: '4rem 2rem', color: '#333' }}>
       <h1 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>AFOS Analytics</h1>
-      <p>Open-Source Electoral Intelligence — redirecting…</p>
-      <p style={{ marginTop: '1rem', fontSize: '0.9rem' }}>
-        If you are not redirected automatically:{' '}
-        <a href="/en">English</a>
-        {' · '}
+      <p style={{ color: '#555' }}>Inteligência Eleitoral Open-Source · Open-Source Electoral Intelligence · Inteligencia Electoral Open-Source</p>
+      <p style={{ marginTop: '0.5rem', color: '#666' }}>Redirecionando · Redirecting · Redirigiendo…</p>
+      <p style={{ marginTop: '1.5rem', fontSize: '0.9rem' }}>
         <a href="/pt-BR">Português</a>
+        {' · '}
+        <a href="/en">English</a>
         {' · '}
         <a href="/es">Español</a>
       </p>
