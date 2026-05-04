@@ -26,7 +26,10 @@ export function useDashboardData(): DashboardData {
     const fetchWithTimeout = (url: string, ms: number = 15000) => {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), ms);
-      return fetch(url, { signal: controller.signal })
+      // cache: 'no-store' bypassa Vercel edge cache + browser cache; cada
+      // load do dashboard busca dados frescos. APIs já têm Cache-Control
+      // no-store no header, mas alguns POPs Vercel ignoram — esse flag força.
+      return fetch(url, { signal: controller.signal, cache: 'no-store' })
         .then(r => { clearTimeout(timer); return r.ok ? r.json() : null; })
         .catch(() => { clearTimeout(timer); return null; });
     };
