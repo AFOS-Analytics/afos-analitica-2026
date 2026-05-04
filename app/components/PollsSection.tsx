@@ -94,6 +94,11 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       )}
 
       {/* PESQUISAS POR INSTITUTO */}
+      {polls?.polls && polls.polls.length > 0 && (
+        <p className="text-xs text-gray-500 italic mb-3 px-1">
+          📍 Última pesquisa nacional registrada. Estaduais e 2º turno aparecem no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>.
+        </p>
+      )}
       {polls?.polls?.map((poll: Poll, pi: number) => (
       <div key={pi} className="mb-8">
       <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600 bg-light-bg rounded-lg p-3">
