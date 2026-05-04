@@ -145,6 +145,32 @@ Releia a síntese inteira e responda explicitamente as 5 perguntas adversariais 
 **Decisão:** [prosseguir para preview | corrigir issues antes]
 ```
 
+### Codebook verbos críticos — inline (Fase 2.3, evita depender de leitura externa)
+
+Estes verbos **devem ser desambiguados** quando aparecerem na síntese:
+
+| Verbo | Risco | Forma desambiguada |
+|-------|-------|---------------------|
+| **preso** | confunde "preso hoje" vs "preso desde [data anterior]" (incidente Vorcaro 01/Mai) | "preso desde 19/Mar", "permanece preso", "foi preso em [data]" |
+| **morreu / faleceu** | recobrança de morte antiga lida como evento atual | sempre data exata; se >7 dias, marcar "[recobrança]" |
+| **rejeitou** (Senado/Câmara) | precisa placar e data | "rejeitou 42×34 em 28/Abr" |
+| **indicou** (presidencial → STF/STJ) | confunde com "considerou indicar" | "Lula indicou X em DD/MM" — só com decreto/oficial |
+| **demitiu / exonerou** | rumor vs fato | só com Diário Oficial citado |
+| **vazou** (documento/áudio) | cuidado: alegação ≠ verificação | "[veículo] reportou ter acesso a..." |
+| **declarou inconstitucional / suspendeu** (STF) | minoritário em colegiado vs decisão consolidada | "decisão monocrática", "plenário decidiu" |
+| **operou plea deal** | em curso ≠ celebrado | "PF analisa proposta de plea deal" |
+| **confessou** | nunca sem citação direta + fonte | só com aspas literais + 2 fontes |
+| **renunciou** | data crítica (desincompatibilização) | "renunciou em DD/MM via Diário Oficial extra" |
+
+**Verbos a EVITAR sempre:** "destruiu", "humilhou", "atacou", "demoliu" (carga editorial). Trocar por "criticou", "respondeu", "confrontou".
+
+### Datas — REGRA R8 (sem "ontem")
+
+PROIBIDO: "ontem", "hoje", "amanhã", "esta semana", "semana passada", "no início da semana".
+USAR SEMPRE: data explícita por extenso ou DD/MM ("em 2 de maio", "no dia 28/Abr").
+
+Razão: permalinks são lidos meses/anos depois. "Ontem" sem data é contexto perdido.
+
 ### Quando este pass é PARTICULARMENTE crítico
 
 - Síntese tem >5 alegações de eventos factuais novos (mais material = mais risco)
@@ -167,6 +193,9 @@ NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explíc
 ## ETAPA 6: Após aprovação — persistir + commit + deploy
 
 Executar em sequência:
+
+0. **Arquivar adversarial review pass** (Fase 3.3):
+   Salvar o bloco emitido em ETAPA 3.5 em `public/afos-daily/_audit/{YYYY-MM-DD}.json`. Sem isso, audit pós-fato depende de transcrits e fica não-reproduzível.
 
 1. **Persistir no Neon:**
    ```bash

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
-import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates, isVisibleInProduction } from '../../../../lib/afos-daily/loader'
+import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates, isVisibleInProduction, dailyExists } from '../../../../lib/afos-daily/loader'
 import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
@@ -42,12 +42,16 @@ export function generateMetadata({ params }: PageProps): Metadata {
       : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
     alternates: {
       canonical: url,
-      languages: {
-        'pt-BR': `https://afos-analytics.com/pt-BR/daily/${params.date}`,
-        en: `https://afos-analytics.com/en/daily/${params.date}`,
-        es: `https://afos-analytics.com/es/daily/${params.date}`,
-        'x-default': `https://afos-analytics.com/pt-BR/daily/${params.date}`,
-      },
+      // Only include hreflang for locales whose .{locale}.md actually exists
+      // for this date. Listing missing locales tells Google a translation
+      // exists when the page would silently fall back to PT — that erodes
+      // hreflang trust signal across the site.
+      languages: Object.fromEntries(
+        SUPPORTED_LOCALES
+          .filter((loc) => dailyExists(params.date, loc))
+          .map((loc) => [loc, `https://afos-analytics.com/${loc}/daily/${params.date}`])
+          .concat([['x-default', `https://afos-analytics.com/pt-BR/daily/${params.date}`]] as [string, string][])
+      ),
       types: {
         'application/rss+xml': [
           { url: 'https://afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },

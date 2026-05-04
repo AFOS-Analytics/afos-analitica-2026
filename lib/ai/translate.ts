@@ -201,7 +201,23 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
   const timeoutMs = req.type === 'afos-daily' ? 60000 : 30000
 
   const start = Date.now()
-  const result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey, maxTokens, timeoutMs)
+  // Retry with exponential backoff on transient failures (429 / network).
+  // 3 attempts: 0ms, 1500ms, 4500ms — total ~6s additional ceiling under load.
+  let result: Awaited<ReturnType<typeof callProvider>> | null = null
+  let lastErr: unknown = null
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey, maxTokens, timeoutMs)
+      break
+    } catch (err) {
+      lastErr = err
+      const msg = err instanceof Error ? err.message : String(err)
+      const transient = msg === 'rate_limited' || msg.endsWith('_503') || msg.endsWith('_502') || msg.endsWith('_504') || msg === 'AbortError'
+      if (!transient || attempt === 2) throw err
+      await new Promise((r) => setTimeout(r, 1500 * Math.pow(3, attempt)))
+    }
+  }
+  if (!result) throw lastErr ?? new Error('translate_failed')
   const latencyMs = Date.now() - start
 
   if (!result.text) throw new Error('empty_translation')

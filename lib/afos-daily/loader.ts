@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, existsSync } from 'fs'
+import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
@@ -71,15 +71,33 @@ export function listDailies(): string[] {
 const STATUS_RE = /^status:\s*([a-z]+)\s*$/im
 const VALID_STATUSES = new Set(['published', 'draft', 'archived'])
 
+// Memoize per (date, mtime) — sitemap, feed, llms.txt all call this 3× per
+// rebuild. At 100 dailies that's 300 file reads each cold build; index
+// short-circuits the second and third caller.
+const statusCache = new Map<string, { mtime: number; status: string }>()
+
 function readStatusFast(date: string): string {
   const path = join(DAILY_DIR, `${date}.md`)
   if (!existsSync(path)) return 'draft'
+  let mtime = 0
+  try {
+    mtime = statSync(path).mtimeMs
+  } catch {
+    return 'draft'
+  }
+  const cached = statusCache.get(date)
+  if (cached && cached.mtime === mtime) return cached.status
   try {
     const head = readFileSync(path, 'utf-8').slice(0, 500)
     const m = head.match(STATUS_RE)
-    if (!m) return 'draft'
+    if (!m) {
+      statusCache.set(date, { mtime, status: 'draft' })
+      return 'draft'
+    }
     const status = m[1].toLowerCase()
-    return VALID_STATUSES.has(status) ? status : 'draft'
+    const final = VALID_STATUSES.has(status) ? status : 'draft'
+    statusCache.set(date, { mtime, status: final })
+    return final
   } catch {
     return 'draft'
   }
@@ -101,6 +119,16 @@ export function listPublishedDailies(): string[] {
  */
 export function isVisibleInProduction(date: string): boolean {
   return readStatusFast(date) === 'published'
+}
+
+/**
+ * True when the locale-specific markdown for `date` exists on disk. PT-BR
+ * uses bare `{date}.md`; EN/ES use `{date}.{locale}.md`. Used for hreflang
+ * truthfulness — only declare alternates that actually resolve.
+ */
+export function dailyExists(date: string, locale: string): boolean {
+  const filename = locale === 'pt-BR' ? `${date}.md` : `${date}.${locale}.md`
+  return existsSync(join(DAILY_DIR, filename))
 }
 
 export function getLatestDate(): string | null {

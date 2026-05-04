@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
+import { assertDatabaseUrl } from './db-url-validator'
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | null
@@ -9,6 +10,12 @@ function createPrismaClient(): PrismaClient | null {
   const url = process.env.DATABASE_URL
   if (!url) {
     console.warn('[db] DATABASE_URL não configurada — banco indisponível')
+    return null
+  }
+  try {
+    assertDatabaseUrl(url, 'DATABASE_URL')
+  } catch (e) {
+    console.error('[db] DATABASE_URL inválida:', (e as Error).message)
     return null
   }
 
