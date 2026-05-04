@@ -42,21 +42,17 @@ export function generateMetadata({ params }: PageProps): Metadata {
       : { index: true, follow: true, googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' } },
     alternates: {
       canonical: url,
-      // Only include hreflang for locales whose .{locale}.md actually exists
-      // for this date. Listing missing locales tells Google a translation
-      // exists when the page would silently fall back to PT — that erodes
-      // hreflang trust signal across the site.
+      // Only declare hreflang for locales whose .{locale}.md exists. Listing
+      // missing locales tells Google a translation is available when the page
+      // would silently fall back to PT — erodes hreflang trust site-wide.
       languages: (() => {
         const langs: Record<string, string> = {}
         for (const loc of SUPPORTED_LOCALES) {
-          if (dailyExists(params.date, loc)) {
-            langs[loc] = `https://afos-analytics.com/${loc}/daily/${params.date}`
-          }
+          if (dailyExists(params.date, loc)) langs[loc] = `https://afos-analytics.com/${loc}/daily/${params.date}`
         }
-        // x-default points to PT-BR if it exists, otherwise to whichever
-        // locale we did include — never to a missing file.
-        const fallback = langs['pt-BR'] || langs['en'] || langs['es']
-        if (fallback) langs['x-default'] = fallback
+        if (langs['pt-BR'] || langs['en'] || langs['es']) {
+          langs['x-default'] = langs['pt-BR'] || langs['en'] || langs['es']
+        }
         return langs
       })(),
       types: {
