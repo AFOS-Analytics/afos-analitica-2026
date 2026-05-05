@@ -419,4 +419,17 @@ For bugs and feature requests, please use [GitHub Issues](https://github.com/AFO
 
 ---
 
+## Official Mirror Domains
+
+The canonical domain is **[afos-analytics.com](https://www.afos-analytics.com)**. The following are official mirror domains that redirect (HTTP 308 Permanent) to the canonical:
+
+- [afos-analytics.one](https://afos-analytics.one)
+- [afos-analytics.info](https://afos-analytics.info)
+- [afos-analytics.news](https://afos-analytics.news)
+- [afos-analytics.xyz](https://afos-analytics.xyz)
+
+Domains not listed above (including any other `afos-analytics.*` TLD or variation of the name) are **not** officially operated by AFOS Analytics.
+
+---
+
 *AFOS Analytics — Unprecedented platform worldwide: Real-time Political Electoral Risk Intelligence.*
