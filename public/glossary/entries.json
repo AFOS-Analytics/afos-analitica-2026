@@ -229,5 +229,84 @@
       "en": "Phrase used by Tarcísio de Freitas on April 26, 2026, referring to Lula (80) and Jair Bolsonaro (71). Signaled the strategic shift that culminated in Tarcísio's public endorsement of Flávio Bolsonaro as candidate on April 27.",
       "es": "Expresión utilizada por Tarcísio de Freitas el 26/abr/2026 para referirse a Lula (80 años) y Jair Bolsonaro (71). Marcó la inflexión estratégica que culminó en el respaldo público de Tarcísio a Flávio Bolsonaro como candidato el 27/abr."
     }
+  },
+  "inss": {
+    "id": "inss",
+    "term": "INSS",
+    "type": "institutional",
+    "firstSeen": "2026-05-04",
+    "url": "https://www.gov.br/inss",
+    "definitions": {
+      "pt-BR": "Instituto Nacional do Seguro Social. Autarquia federal responsável pela previdência social brasileira (aposentadorias, pensões, auxílios). Em 2025-2026 tornou-se centro do escândalo da Farra do INSS — desconto irregular de associativas em benefícios de aposentados, com investigação por CPMI no Congresso.",
+      "en": "Instituto Nacional do Seguro Social (Brazilian Social Security Institute). Federal agency responsible for Brazilian social security (retirement, pensions, benefits). In 2025-2026 became the center of the INSS scandal — irregular charges by associations on retiree benefits, under joint congressional inquiry (CPMI).",
+      "es": "Instituto Nacional do Seguro Social (Instituto Nacional de Seguridad Social de Brasil). Agencia federal responsable de la seguridad social brasileña (jubilaciones, pensiones, beneficios). En 2025-2026 se convirtió en el centro del escándalo Farra do INSS — descuentos irregulares de asociaciones en beneficios de jubilados, bajo investigación por CPMI en el Congreso."
+    }
+  },
+  "pf": {
+    "id": "pf",
+    "term": "PF",
+    "type": "institutional",
+    "firstSeen": "2026-05-04",
+    "url": "https://www.gov.br/pf",
+    "definitions": {
+      "pt-BR": "Polícia Federal. Polícia judiciária da União, vinculada ao Ministério da Justiça. Investiga crimes federais (corrupção, lavagem de dinheiro, tráfico, crimes contra a ordem econômica). Atua em casos de alto perfil como Banco Master, INSS e investigações eleitorais.",
+      "en": "Polícia Federal (Brazilian Federal Police). Federal judicial police, linked to the Ministry of Justice. Investigates federal crimes (corruption, money laundering, trafficking, crimes against economic order). Acts on high-profile cases like Banco Master, INSS, and electoral investigations.",
+      "es": "Polícia Federal (Policía Federal de Brasil). Policía judicial de la Unión, vinculada al Ministerio de Justicia. Investiga delitos federales (corrupción, lavado de dinero, tráfico, delitos contra el orden económico). Actúa en casos de alto perfil como Banco Master, INSS e investigaciones electorales."
+    }
+  },
+  "mdb": {
+    "id": "mdb",
+    "term": "MDB",
+    "type": "party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Movimento Democrático Brasileiro. Partido de centro tradicional, com forte presença regional especialmente em Goiás (Daniel Vilela), Alagoas e Maranhão. Histórico de ocupar o vice (Sarney, Michel Temer). Frequente integrante do centrão.",
+      "en": "Movimento Democrático Brasileiro (Brazilian Democratic Movement). Traditional centrist party, with strong regional presence especially in Goiás (Daniel Vilela), Alagoas, and Maranhão. Historically held the vice presidency (Sarney, Michel Temer). Frequent member of the centrão coalition.",
+      "es": "Movimento Democrático Brasileiro (Movimiento Democrático Brasileño). Partido tradicional de centro, con fuerte presencia regional especialmente en Goiás (Daniel Vilela), Alagoas y Maranhão. Históricamente ocupó la vicepresidencia (Sarney, Michel Temer). Miembro frecuente de la coalición centrão."
+    }
+  },
+  "psb": {
+    "id": "psb",
+    "term": "PSB",
+    "type": "party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido Socialista Brasileiro. Centro-esquerda. Forte em Pernambuco (família Arraes/Campos) e em Minas Gerais. Aliado histórico do PT em coligações federais; em 2026, atual vice-presidente Geraldo Alckmin é filiado.",
+      "en": "Partido Socialista Brasileiro (Brazilian Socialist Party). Center-left. Strong in Pernambuco (Arraes/Campos family) and Minas Gerais. Historical PT ally in federal coalitions; in 2026, current vice-president Geraldo Alckmin is affiliated.",
+      "es": "Partido Socialista Brasileiro (Partido Socialista Brasileño). Centro-izquierda. Fuerte en Pernambuco (familia Arraes/Campos) y Minas Gerais. Aliado histórico del PT en coaliciones federales; en 2026, el actual vicepresidente Geraldo Alckmin está afiliado."
+    }
+  },
+  "uniao-brasil": {
+    "id": "uniao-brasil",
+    "term": "União Brasil",
+    "type": "party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido de centro-direita criado em 2022 pela fusão do DEM com o PSL (partido original de Bolsonaro). Compõe o centrão. Forte em Roraima, Amazonas (Roberto Cidade, governador AM 2026) e Goiás. Bancada parlamentar entre as maiores na Câmara.",
+      "en": "Center-right party created in 2022 from the merger of DEM with PSL (Bolsonaro's original party). Part of the centrão coalition. Strong in Roraima, Amazonas (Roberto Cidade, Amazonas governor 2026), and Goiás. One of the largest party blocks in the Chamber of Deputies.",
+      "es": "Partido de centro-derecha creado en 2022 por la fusión del DEM con el PSL (partido original de Bolsonaro). Compone el centrão. Fuerte en Roraima, Amazonas (Roberto Cidade, gobernador AM 2026) y Goiás. Bancada parlamentaria entre las mayores en la Cámara."
+    }
+  },
+  "republicanos": {
+    "id": "republicanos",
+    "term": "Republicanos",
+    "type": "party",
+    "firstSeen": "2026-04-22",
+    "definitions": {
+      "pt-BR": "Partido de direita conservadora, vinculado historicamente à Igreja Universal do Reino de Deus. Filiado de Tarcísio de Freitas (governador SP). Importante na coalizão evangélica de direita; em 2026 emerge no top 10 da disputa pelo Senado.",
+      "en": "Conservative right party, historically linked to the Universal Church of the Kingdom of God. Tarcísio de Freitas (governor of SP) is affiliated. Important in the evangelical right coalition; in 2026 emerges in the top 10 for the Senate race.",
+      "es": "Partido de derecha conservadora, vinculado históricamente a la Iglesia Universal del Reino de Dios. Tarcísio de Freitas (gobernador SP) está afiliado. Importante en la coalición evangélica de derecha; en 2026 emerge en el top 10 de la disputa por el Senado."
+    }
+  },
+  "avante": {
+    "id": "avante",
+    "term": "Avante",
+    "type": "party",
+    "firstSeen": "2026-04-05",
+    "definitions": {
+      "pt-BR": "Partido de centro político, criado em 2017 a partir do antigo PTdoB. Filiou o escritor Augusto Cury em abril de 2026 como pré-candidato à Presidência. Sem grande peso parlamentar, costuma compor coligações.",
+      "en": "Centrist party created in 2017 from the former PTdoB. Affiliated writer Augusto Cury in April 2026 as a pre-candidate for the Presidency. Without significant parliamentary weight, it typically forms coalitions.",
+      "es": "Partido de centro político, creado en 2017 a partir del antiguo PTdoB. Afilió al escritor Augusto Cury en abril de 2026 como precandidato a la Presidencia. Sin gran peso parlamentario, suele componer coaliciones."
+    }
   }
 }

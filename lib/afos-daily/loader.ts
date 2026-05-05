@@ -174,8 +174,11 @@ function extractSources(rawBody: string): string {
 
 // Removes elements that the template renders separately (date heading, subline,
 // lede blockquote, sources/method footer) so the body only contains article sections.
+// HR pattern accepts `---`, `***`, `___` (markdown standard) AND `—` (em-dash) which
+// Haiku 4.5 sometimes substitutes during translation, breaking the original separator.
+const HR_PATTERN = `(?:---|\\*\\*\\*|___|—)`
 function stripTemplateArtifacts(rawBody: string): string {
-  const sourcesFooter = new RegExp(`\\n+---\\n+${SOURCES_LABEL_RE.source}[\\s\\S]*$`, 'i')
+  const sourcesFooter = new RegExp(`\\n+${HR_PATTERN}\\n+${SOURCES_LABEL_RE.source}[\\s\\S]*$`, 'i')
   return rawBody
     .replace(sourcesFooter, '')
     .replace(/^# .+?\n+/, '')

@@ -197,7 +197,7 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
         : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
 
   // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
-  const maxTokens = req.type === 'afos-daily' ? 4096 : 2048
+  const maxTokens = req.type === 'afos-daily' ? 8192 : 2048
   const timeoutMs = req.type === 'afos-daily' ? 60000 : 30000
 
   const start = Date.now()
