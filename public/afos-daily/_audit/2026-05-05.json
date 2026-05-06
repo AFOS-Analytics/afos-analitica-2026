@@ -1,0 +1,94 @@
+{
+  "date": "2026-05-05",
+  "generatedAt": "2026-05-05T18:30:00-03:00",
+  "factCheckGate": {
+    "candidatesHighImpact": [
+      {
+        "event": "Real Time Big Data nacional 1T+2T detalhados",
+        "verification1_crossRef": "19 menções 'Real Time Big Data' em 7 dailies (continuidade do instituto), MAS números 1T+2T nacionais detalhados são novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.cnnbrasil.com.br/politica/real-time-big-data-lula-supera-flavio-na-disputa-pelo-1o-turno/",
+          "eventDateIso": "2026-05-05",
+          "fieldworkDateIso": "2026-05-02 a 2026-05-04",
+          "tseRegistration": "BR-03627/2026",
+          "sample": 2010,
+          "type": "evento (publicação) com números completos"
+        },
+        "secondSource": "CNN + R7 + Estadão + InfoMoney (3 grupos independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Casa Branca confirma reunião Lula × Trump quinta 07/Mai",
+        "verification1_crossRef": "não aparece em 7 dailies → novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.cnnbrasil.com.br",
+          "eventDateIso": "2026-05-07",
+          "type": "evento confirmado pela Casa Branca em 2026-05-05"
+        },
+        "secondSource": "CNN Brasil + CBN + Folha de SP (3 fontes independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Tarcísio lança André do Prado (presidente Alesp) ao Senado + crítica Haddad",
+        "verification1_crossRef": "não aparece em 7 dailies → novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.folha.uol.com.br",
+          "eventDateIso": "2026-05-05",
+          "type": "evento (anúncio oficial)"
+        },
+        "secondSource": "Folha de SP + Terra (chapa Ramuth como vice)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "PF + PGR decidem negociar só conjunto delações INSS + Master",
+        "verification1_crossRef": "não aparece em 7 dailies → novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.sbtnews.com.br",
+          "eventDateIso": "2026-05-05",
+          "type": "desenvolvimento institucional progressivo"
+        },
+        "secondSource": "SBT News + O Globo + Revista Oeste + Cidade997 (4 fontes independentes)",
+        "decision": "incorporar"
+      }
+    ],
+    "selfCheck": {
+      "everyAnchorPassedV2": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRan": true,
+      "reconcileResult": "2 falsos positivos por substring matching (39 lendo 39,7%, 0pp lendo 0,20pp)"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma — todos eventos chave verificados em ≥2 fontes",
+    "numericalErrors": "OK (reconcile-claims rodado, 2 falsos positivos)",
+    "fontesInventadas": "OK (CNN, R7, Estadão, InfoMoney, CartaCapital, BBC, Folha, CBN, O Globo, SBT News, Terra, Estado de Minas, Times Brasil/CNBC, Portal 96FM, Brasil de Fato, Poder360 todas verificadas)",
+    "quotesLiterais": "OK (todas com link inline: BBC título, Brasil de Fato editorial, armação PT Portal 96FM, carta na manga SBT News, Pix minerais críticos e tarifas Terra)",
+    "causacaoEspuria": "OK (STF impeach DEVOLVE descrita como precificação institucional, sem causação direta)",
+    "verbosCriticos": "OK ('lançou' Tarcísio 05/Mai com data + fonte; 'rejeitou' Messias 42×34 em 28/Abr — recobrança contextual)",
+    "decision": "prosseguir para preview"
+  },
+  "launchDateUpdate": {
+    "originalDate": "07/Mai/2026 (quinta)",
+    "rescheduledTo": "12/Mai/2026 (terça-feira)",
+    "rescheduledOn": "05/Mai/2026 noite",
+    "filesUpdated": [
+      "public/afos-daily/2026-05-05.md (síntese)",
+      "public/afos-daily/2026-04-30.md/.en.md/.es.md",
+      "public/afos-daily/2026-05-01.en.md",
+      "public/analysis-data.json",
+      "public/analysis-criteriosa.json",
+      "scripts/build-outreach-pdf.mjs",
+      "memory/project_launch_constraint.md",
+      "memory/project_dmarc_escalation.md",
+      "memory/project_resend_pro_upgrade_05mai.md",
+      "memory/project_defensive_domains.md",
+      "memory/MEMORY.md"
+    ],
+    "preserved": [
+      "Reunião Lula × Trump 07/Mai (evento externo confirmado pela Casa Branca)",
+      "Pesquisa J J COELHO 07/Mai (registro TSE oficial)",
+      "Daily 01/Mai PT/ES referência factual a 5/Mai (Real Time Big Data antecipada)"
+    ]
+  }
+}
