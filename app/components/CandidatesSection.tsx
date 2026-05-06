@@ -13,60 +13,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "36.50%",
-    poll: "Lula estável 36.50% Poly (mantém piso) gap leve compressão +7.55pp Flávio (vs +7.75pp ontem). Real Time Big Data nacional 05/Mai 1T Lula 40% × Flávio 34% sample 2.000 campo 02-04/Mai BR-03627/2026. 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico (R7 05/Mai). 2T Caiado 42% × Lula 43% empate (Estadão 05/Mai). Casa Branca confirma reunião Lula × Trump quinta 07/Mai (MSN 06/Mai).",
+    polymarket: "37.50%",
+    poll: "Lula DISPARA 37.50% Poly (↑1.00pp recupera de 36.50% mantém piso e avança), gap COMPRIME +7.35pp Flávio (vs +7.55pp ontem). 2L Lula estável 19.50%. Genial/Quaest 10 estados publicada hoje (Poder360, Folha, CartaCapital 06/Mai): Lula lidera em 5 estados (Nordeste forte, especialmente Pernambuco e Bahia) × Flávio em 5 (SP, RJ + Sul). Meio/Ideia 2T nacional publicada hoje 06/Mai: Flávio 45,3% × Lula 44,7% (Poder360, Exame). Real Time Big Data 2T Flávio 44% × Lula 43% (AJN1 06/Mai recobrança).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "Desaprovação Lula sobe 52% pós Messias (InfoMoney 05/Mai). Encontro Lula × Trump cercado de tensão e desconfiança (Estado de Minas 05/Mai). Governo se divide sobre reação de Trump (CNN Brasil 05/Mai). Tarcísio lança Alesp Senado e critica Haddad (Folha 05/Mai 18:21). Senador denuncia armação PT cobrança CPI Master (Portal 96FM 05/Mai)."
+    risk: "Senado REJEITOU Messias para STF, líder do governo diz que rejeição foi 'cacetada' em Lula (Gazeta do Povo 06/Mai 20:04). Lula adota discurso antissistema para 2026 (Gazeta do Povo 06/Mai 22:41). STF IMPEACH RECUPERA 14.50% Poly (↑2.50pp DISPARA de 12.00%) reabre narrativa institucional. Pesquisa Quaest avalia que Flávio repete teto da derrota do pai (bncamazonas 06/Mai). Quaest mostra força Lula no Nordeste mas vantagem Flávio no Sul (Brasil de Fato 06/Mai)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "44.05%",
-    poll: "Flávio leve cede 44.05% Poly (↓0.20pp de 44.25%) gap leve compressão +7.55pp. 2º lugar DEVOLVE FORTE 62.50% (↓4.0pp de 66.50%). 3º DEVOLVE 5.40% (↓4.65pp). Real Time Big Data 05/Mai 1T Flávio 34% × Lula 40% (CNN). 2T Flávio 44% × Lula 43% empate técnico (R7 05/Mai) lidera numericamente. Tarcísio lança Alesp Senado (Folha 05/Mai). Flávio bate-volta EUA véspera Lula × Trump (Poder360 05/Mai).",
+    polymarket: "44.85%",
+    poll: "Flávio DISPARA 44.85% Poly (↑0.80pp recupera de 44.05%) mantém liderança forte. 2L DISPARA 65.00% (↑2.50pp recupera de 62.50%) reverte devolução de ontem. 3L DEVOLVE 4.20% (↓1.20pp). Meio/Ideia 2T 06/Mai Flávio 45,3% × Lula 44,7% (Poder360). Genial/Quaest 06/Mai Flávio vence Lula em SP, RJ e mais 3 estados (Pleno.News). Futura/Apex RJ Flávio lidera + maioria apoia impeachment ministros STF (UOL 06/Mai 17:15). Tarcísio confirma Felício Ramuth como vice e chapa Senado SP (T7news 06/Mai).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "STF impeach Poly DEVOLVE FORTE 12.00% (↓1.0pp continua queda movimento mais relevante do dia institucionalidade firme). 2L cede consolidação significativamente. PF e PGR negociam só conjunto delações INSS + Master (SBT News 05/Mai). CPI Crime Organizado reta final foco Master (Times Brasil 05/Mai). Tarcísio + Flávio reportados PG (Revista Fórum 02/Mai mantido)."
+    risk: "STF IMPEACH RECUPERA 14.50% Poly (↑2.50pp DISPARA de 12.00%) maior movimento do dia, devolve queda forte. Senado REJEITA Messias enfraquece Mendonça e agrava crise STF (Estadão 06/Mai 21:00). 'Pesquisa Quaest avalia que Flávio repete teto da derrota do pai' (bncamazonas 06/Mai 18:05) sinal teto eleitoral. Proposta de delação Vorcaro decepciona PF (Estado de Minas 06/Mai 14:45). Costa Neto antecipou acordo Flávio × Alcolumbre barrar CPI Master (Revista Fórum mantida)."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "5.45%",
-    poll: "Renan presidencial 5.45% Poly (↓0.10pp leve estável). 3º lugar RECUPERA FORTE 36.00% (↑5pp de 31% reduz gap Zema 38%) competidor 3ª via emerge novamente. Real Time Big Data 05/Mai 1T Renan 3% (sample 2.000 abaixo Caiado 5% e Zema 4%). Mantido 'Sou candidato direita' (BBC 28/Abr).",
+    polymarket: "5.85%",
+    poll: "Renan presidencial DISPARA 5.85% Poly (↑0.40pp leve recupera de 5.45%). 3L DEVOLVE 32.50% (↓3.50pp corrige recuperação ontem 36%) Zema mantém liderança 38.50%. STF impeach RECUPERA 14.50% Poly (↑2.50pp DISPARA) reabre combustível anti-establishment. Mantido 'Sou candidato direita' (BBC 28/Abr).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "STF impeach Poly DEVOLVE FORTE 12.00% (↓1.0pp continua queda) institucionalidade firme reduz combustível anti-establishment. Casa Branca confirma reunião Lula × Trump (MSN 06/Mai) agenda institucional dominante. Augusto Cury Avante 1% novo entrante 3ª via fragmenta (Real Time Big Data 05/Mai). Tarcísio lança Alesp Senado articulação direita centralizada absorve."
+    risk: "Senado REJEITA Messias e Lula adota discurso antissistema (Gazeta do Povo 06/Mai) — Lula tenta capturar oxigênio outsider que era espaço Renan. Genial/Quaest 10 estados não cita Renan competitivo (Poder360, Folha 06/Mai). Eleições 2026 vaquinha começa 15/Mai (VEJA 06/Mai 21:20). Caiado 3L DEVOLVE FORTE 11.50% (↓5.00pp) corrige movimento mas reduz disputa 3ª via."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "3.15%",
-    poll: "Haddad presidencial recupera leve 3.15% Poly (↑0.10pp para queda 3 dias forte de 2.95%) sinaliza estabilização contínua. 2º lugar recupera 4.70% (↑1.05pp de 3.65%). 3º 4.15% (estável). Casa Branca confirma reunião Lula × Trump (MSN 06/Mai) agenda governamental beneficia base PT.",
+    polymarket: "3.45%",
+    poll: "Haddad presidencial DISPARA 3.45% Poly (↑0.30pp leve recupera de 3.15%). 2L DEVOLVE 3.55% (↓1.15pp corrige recuperação ontem 4.70%). 3L mantém 4.15% (estável). Camilo paridade presidencial 3.55% × Haddad 3.45% gap fechou para 0.10pp (vs 0.40pp ontem) fragmentação esquerda comprimindo.",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Tarcísio lança Alesp Senado e CRITICA HADDAD diretamente (Folha 05/Mai 18:21). Camilo presidencial 3.55% (↓0.30pp leve) > Haddad 3.15% fragmentação esquerda persiste 0.40pp. Vox SP gov Tarcísio 38% × Haddad 26% mantido atrás 12pp em SP. Real Time Big Data 1T Haddad ausente top (CNN 05/Mai). Lula empata Flávio Caiado Zema 2T (Estadão) Haddad ausente cenários 2T."
+    risk: "Tarcísio confirma Felício Ramuth como vice + chapa Senado (T7news 06/Mai 12:22) consolida coalizão SP. Genial/Quaest mostra Flávio à frente em SP (Folha 06/Mai 17:39) Haddad enfraquece estadual. Pré-candidatos ao Senado priorizam debate STF no Sudeste (Gazeta do Povo 06/Mai 20:18). Senado REJEITA Messias enfraquece base Lula no Senado (Estadão 06/Mai)."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.15%",
-    poll: "Caiado presidencial 1.15% Poly (↓0.10pp leve queda de 1.25%). 3º LUGAR DEVOLVE 16.50% (↓2.5pp de 19% corrige movimento extremo ontem). Real Time Big Data 05/Mai 1T Caiado 5% LIDERA 3ª via 1T por 2pp sobre Zema 4% (CNN sample 2.000). 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai). Lula empata Flávio Caiado Zema 2T (Estadão).",
+    polymarket: "0.95%",
+    poll: "Caiado presidencial leve cede 0.95% Poly (↓0.20pp de 1.15%) entra abaixo de 1%. 3L DEVOLVE FORTE 11.50% (↓5.00pp corrige de 16.50%) corrige movimento extremo. PSD Senado DEVOLVE FORTE 2.45% (↓2.95pp de 5.40%) reorganização Senado. Mantido 'Caiado lidera 3ª via 1T 5%' (Real Time Big Data 05/Mai sample 2.000).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado sem apoio explícito governadores PSD na corrida presidencial (Gazeta do Povo 04/Mai mantida) PSD fragmentado. Tarcísio lança Alesp Senado articulação direita Tarcísio/Flávio absorve oxigênio (Folha 05/Mai). PSD Senado leve cede 5.40% (↓0.45pp). PL Senado consolida 86.50% (↑0.50pp leve)."
+    risk: "Caiado sem apoio explícito governadores PSD na corrida presidencial (Gazeta do Povo 04/Mai mantida) PSD fragmentado. PSD Senado DEVOLVE FORTE 2.45% (↓2.95pp de 5.40%) reorganização significativa. Tarcísio confirma chapa Senado SP (T7news 06/Mai) articulação direita centraliza-se em PL/Republicanos."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "4.65%",
-    poll: "Zema DEVOLVE presidencial 4.65% Poly (↓0.40pp reverte recuperação ontem 5.05% volta abaixo dos 5%). 3º mantém liderança 38.00% (estável primeiro dia sustentando). NOVO Senado leve cede 3.75% (↓0.10pp leve). Real Time Big Data 05/Mai 1T Zema 4% (sample 2.000 abaixo Caiado 5%). 2T Zema × Lula empate técnico (Estadão 05/Mai). Zema RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida).",
+    polymarket: "3.55%",
+    poll: "Zema DEVOLVE FORTE presidencial 3.55% Poly (↓1.10pp continua queda de 4.65% perde 1pp em 24h). 3L mantém liderança 38.50% (↑0.50pp leve estável). 2L DISPARA 3.35% (↑1.35pp recupera de 2.00%). NOVO Senado DEVOLVE 2.10% (↓1.65pp de 3.75%) reorganização Senado. INFLAÇÃO REORGANIZAÇÃO COLOSSAL: bandas altas (≥6.50%) saltam 25.00% → 67.40% (↑42.40pp em 24h) oxigênio para narrativa fiscal Zema mas ele segue caindo Poly.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Caiado lidera 3ª via 1T por 2pp (Real Time Big Data 5% × 4%). Renan 3L RECUPERA 36% (↑5pp) competidor 3ª via emerge. Eduardo Leite 3L DISPARA 3.0% (↑2.15pp). STF impeach DEVOLVE FORTE 12.00% (↓1.0pp continua queda) reduz espaço narrativa anti-STF. Augusto Cury Avante 1% novo entrante 3ª via fragmenta. Inflação banda 6.00-6.49% DEVOLVE 16.95% (↓3.35pp corrige) reduz oxigênio discurso fiscal Zema."
+    risk: "Renan 3L DEVOLVE 32.50% (↓3.50pp) MAS presidencial DISPARA 5.85% (↑0.40pp) — competidor 3ª via expande presidencial enquanto Zema cai. Caiado 3L DEVOLVE FORTE 11.50% (↓5.00pp). STF impeach RECUPERA 14.50% Poly (↑2.50pp DISPARA) reabre narrativa anti-STF mas Zema não capitaliza. Genial/Quaest 10 estados não destaca Zema (Poder360, Folha 06/Mai)."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly (estável). 3º lugar 0.65% (↑0.40pp leve recupera). Tarcísio LANÇA presidente da Alesp ao Senado e CRITICA Haddad (Folha 05/Mai 18:21) articulação SP intensifica. Vox SP gov Tarcísio 38% × Haddad 26% mantido liderança SP.",
+    poll: "Tarcísio presidencial 0.15% Poly (estável). 3L 0.45% (↓0.20pp leve cede). Tarcísio CONFIRMA Felício Ramuth como vice e anuncia chapa Senado (T7news 06/Mai 12:22) consolida coalizão SP. Genial/Quaest mostra Flávio à frente em SP (Folha 06/Mai 17:39) — Tarcísio reforça operação local pela direita.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai mantido) vetor judicial. Foco mantido na reeleição SP (papel de braço estadual). Republicanos Senado DISPARA 2.35% (↑1.0pp) coalizão direita estadual emerge."
+    risk: "Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai mantido) vetor judicial. Foco mantido na reeleição SP (papel de braço estadual). Republicanos Senado leve cede 1.65% Poly (↓0.70pp de 2.35%) reorganização Senado. Pré-candidatos ao Senado priorizam debate STF no Sudeste (Gazeta do Povo 06/Mai)."
   },
 ];
 

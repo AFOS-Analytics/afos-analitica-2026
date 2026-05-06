@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-05",
-  "lastSyncedAt": "2026-05-05T18:00:00-03:00",
+  "lastUpdate": "2026-05-06",
+  "lastSyncedAt": "2026-05-06T20:00:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -107,6 +107,34 @@
   ],
   "polls": [
     {
+      "institute": "Meio/Ideia",
+      "date": "2026-05-06",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa nacional 2º turno publicada 06/Mai (Poder360, Exame, GZH). Números 1T não detalhados em fontes públicas verificadas.",
+      "scenarios": [],
+      "secondRound": [
+        { "matchup": "Flávio vs Lula", "candidate1": "Flávio Bolsonaro", "percent1": 45.3, "candidate2": "Lula", "percent2": 44.7 }
+      ]
+    },
+    {
+      "institute": "Genial/Quaest",
+      "date": "2026-05-06",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa multiestadual 10 estados publicada 06/Mai (Poder360, Folha, CartaCapital, Brasil de Fato, Pleno.News, VEJA). Lula lidera em 5 estados Nordeste; Flávio em 5 estados SP/RJ/Sul. Números 1T/2T por estado não consolidados em fonte primária pública verificada para o cenário nacional.",
+      "scenarios": [],
+      "secondRound": []
+    },
+    {
       "institute": "Real Time Big Data",
       "date": "2026-05-05",
       "sample": 2000,
@@ -205,36 +233,36 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 05/Mai/2026 18:00 BRT",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Polymarket (ao vivo). Dados Veritá PE 04/Mai e Quaest ES 04/Mai movidos para histórico Neon (relevância secundária pós nacional Real Time).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 06/Mai/2026 20:00 BRT",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Futura/Apex RJ (06/Mai), Polymarket (ao vivo fetchedAt 06/Mai 22:51 UTC).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "40-46.6%",
-        "polymarket": "36.50%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 46.6%; Real Time Big Data 05/Mai 1T 40% (sample 2.000); 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate, Zema × Lula empate técnico",
-        "tendenciaPolymarket": "Estável 36.50% (mantém piso); gap leve compressão +7.55pp Flávio (vs +7.75pp ontem)"
+        "polymarket": "37.50%",
+        "tendenciaPesquisa": "Genial/Quaest 10 estados 06/Mai: Lula lidera em 5 estados Nordeste (Folha, Brasil de Fato); Meio/Ideia 2T nacional 06/Mai: Lula 44,7% × Flávio 45,3% (Poder360, Exame); AtlasIntel 28/Abr 1T 46.6% mantida; Real Time Big Data 05/Mai 1T 40% (sample 2.000) mantida; 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico mantida",
+        "tendenciaPolymarket": "DISPARA 37.50% (↑1.00pp recupera de 36.50% mantém piso e avança); gap em compressão +7.35pp Flávio (vs +7.55pp ontem)"
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "34-39.7%",
-        "polymarket": "44.05%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 39.7%; AtlasIntel 2T 47.8% × Lula 47.5% empate técnico; Real Time Big Data 05/Mai 1T 34%; 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico (lidera numericamente)",
-        "tendenciaPolymarket": "Leve cede 44.05% (↓0.20pp em 05/Mai de 44.25%); 2L DEVOLVE FORTE 62.50% (↓4.0pp de 66.50%)"
+        "pesquisaRange": "34-45.3%",
+        "polymarket": "44.85%",
+        "tendenciaPesquisa": "Genial/Quaest 10 estados 06/Mai: Flávio à frente em SP, RJ + 3 estados (Pleno.News, Folha); Meio/Ideia 2T 06/Mai: Flávio 45,3% × Lula 44,7% (Poder360, Exame); Futura/Apex RJ 06/Mai: Flávio lidera + maioria apoia impeachment STF (UOL); 'Pesquisa Quaest avalia que Flávio repete teto da derrota do pai' (bncamazonas 06/Mai); AtlasIntel 28/Abr 1T 39.7% mantida",
+        "tendenciaPolymarket": "DISPARA 44.85% (↑0.80pp recupera de 44.05%); 2L DISPARA 65.00% (↑2.50pp recupera de 62.50%)"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "5.45%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3% (abaixo Caiado 5% e Zema 4%); 3º lugar Polymarket RECUPERA 36% (↑5pp de 31%)",
-        "tendenciaPolymarket": "Leve estável 5.45% (↓0.10pp leve presidencial); 3º RECUPERA 36% (↑5pp reduz gap Zema 38%)"
+        "polymarket": "5.85%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3% mantida; Genial/Quaest 10 estados 06/Mai não destaca Renan competitivo; STF impeach RECUPERA FORTE 14.50% reabre combustível anti-establishment",
+        "tendenciaPolymarket": "DISPARA 5.85% (↑0.40pp leve recupera de 5.45%); 3º DEVOLVE 32.50% (↓3.50pp corrige recuperação ontem 36%)"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3.3-5%",
-        "polymarket": "1.15%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via 1T por 2pp sobre Zema; 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai); Caiado sem apoio explícito governadores PSD (Gazeta do Povo 04/Mai mantida)",
-        "tendenciaPolymarket": "Leve cede 1.15% (↓0.10pp leve presidencial); 3º DEVOLVE 16.5% (↓2.5pp corrige movimento extremo ontem); PSD Senado leve cede 5.40%"
+        "polymarket": "0.95%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via 1T mantida; 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai mantida); Caiado sem apoio explícito governadores PSD (Gazeta do Povo 04/Mai mantida)",
+        "tendenciaPolymarket": "Leve cede 0.95% (↓0.20pp entra abaixo de 1%); 3º DEVOLVE FORTE 11.50% (↓5.00pp corrige extremo ontem 16.50%); PSD Senado DEVOLVE FORTE 2.45% (↓2.95pp)"
       },
       {
         "name": "Tarcísio",
@@ -246,16 +274,16 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "4.65%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; Real Time Big Data 05/Mai 1T 4% (abaixo Caiado 5%); 2T Zema × Lula empate técnico (Estadão 05/Mai); ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
-        "tendenciaPolymarket": "DEVOLVE 4.65% (↓0.40pp reverte recuperação ontem 5.05%, volta abaixo dos 5%); 3º mantém liderança 38% (estável)"
+        "polymarket": "3.55%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; Real Time Big Data 05/Mai 1T 4% mantida; Genial/Quaest 10 estados 06/Mai não destaca Zema competitivo; ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
+        "tendenciaPolymarket": "DEVOLVE FORTE 3.55% (↓1.10pp continua queda perde 1pp em 24h); 3º mantém liderança 38.50% (↑0.50pp leve estável)"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "3.15%",
-        "tendenciaPesquisa": "Vox SP gov Haddad 26% × Tarcísio 38%; Real Time Big Data 05/Mai 1T Haddad ausente top; 'Tarcísio crítica Haddad' (Folha 05/Mai 18:21) ataque direto",
-        "tendenciaPolymarket": "Recupera leve 3.15% (↑0.10pp para queda 3 dias forte); 2L recupera 4.70% (↑1.05pp); Camilo 3.55% > Haddad 3.15% fragmentação esquerda persiste"
+        "polymarket": "3.45%",
+        "tendenciaPesquisa": "Vox SP gov Haddad 26% × Tarcísio 38% mantida; Genial/Quaest 10 estados 06/Mai mostra Flávio à frente em SP (Folha) Haddad enfraquece estadual; 'Tarcísio confirma Felício Ramuth como vice + chapa Senado' (T7news 06/Mai)",
+        "tendenciaPolymarket": "DISPARA 3.45% (↑0.30pp leve recupera de 3.15%); 2L DEVOLVE 3.55% (↓1.15pp corrige); Camilo 3.55% × Haddad 3.45% gap fechou para 0.10pp"
       }
     ]
   }
