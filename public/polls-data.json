@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-04",
-  "lastSyncedAt": "2026-05-04T23:55:00-03:00",
+  "lastUpdate": "2026-05-05",
+  "lastSyncedAt": "2026-05-05T18:00:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -107,6 +107,35 @@
   ],
   "polls": [
     {
+      "institute": "Real Time Big Data",
+      "date": "2026-05-05",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-03627/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-05-02 a 2026-05-04",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            { "candidate": "Lula (PT)", "percent": 40 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 34 },
+            { "candidate": "Ronaldo Caiado (PSD)", "percent": 5 },
+            { "candidate": "Romeu Zema (Novo)", "percent": 4 },
+            { "candidate": "Renan Santos (Missão)", "percent": 3 },
+            { "candidate": "Augusto Cury (Avante)", "percent": 1 },
+            { "candidate": "Aldo Rebelo (DC)", "percent": 1 },
+            { "candidate": "Cabo Daciolo", "percent": 1 }
+          ]
+        }
+      ],
+      "secondRound": [
+        { "matchup": "Flávio vs Lula", "candidate1": "Flávio Bolsonaro", "percent1": 44, "candidate2": "Lula", "percent2": 43 },
+        { "matchup": "Caiado vs Lula", "candidate1": "Ronaldo Caiado", "percent1": 42, "candidate2": "Lula", "percent2": 43 }
+      ]
+    },
+    {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-04-28",
       "sample": 5008,
@@ -119,26 +148,11 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 46.6
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 39.7
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 5.3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3.3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 3.1
-            }
+            { "candidate": "Lula (PT)", "percent": 46.6 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 39.7 },
+            { "candidate": "Renan Santos (Missão)", "percent": 5.3 },
+            { "candidate": "Ronaldo Caiado (PSD)", "percent": 3.3 },
+            { "candidate": "Romeu Zema (Novo)", "percent": 3.1 }
           ]
         }
       ],
@@ -154,13 +168,13 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Real Time Big Data nacional publicada 04/Mai (números secundários detalhados pendentes). Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon.",
-    "source": "AtlasIntel/Bloomberg via CNN Brasil + InfoMoney + Gazeta do Povo (publicada 28/Abr/2026)",
-    "date": "2026-04-28",
+    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Real Time Big Data nacional publicada 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate. InfoMoney 05/Mai reportou desaprovação Lula sobe 52%. Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon.",
+    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026)",
+    "date": "2026-05-05",
     "results": {
       "aprovacao": 46.6,
       "desaprovacao": 53.4,
-      "nota": "AtlasIntel 28/Abr (campo 22-27/Abr): aprovação Lula 46.6-46.8%, desaprovação 53.2-53.4%. Real Time Big Data nacional publicada 04/Mai (VEJA, CartaCapital, Revista Fórum); números secundários detalhados pendentes."
+      "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico (Flávio 44 × Lula 43, Caiado 42 × Lula 43, Zema × Lula empate técnico)."
     },
     "historicalComparison": [
       {
@@ -191,57 +205,57 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 04/Mai/2026 23:55 BRT",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Veritá PE (04/Mai sample 2010 campo 24-30/Mar), Quaest ES empate técnico (04/Mai), Real Time Big Data nacional (04/Mai publicada VEJA+CartaCapital+Revista Fórum), Polymarket (ao vivo)",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 05/Mai/2026 18:00 BRT",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Polymarket (ao vivo). Dados Veritá PE 04/Mai e Quaest ES 04/Mai movidos para histórico Neon (relevância secundária pós nacional Real Time).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "37-47%",
+        "pesquisaRange": "40-46.6%",
         "polymarket": "36.50%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 46.6%; Veritá PE 04/Mai 1T 43.3% (sample 2010 campo 24-30/Mar); Quaest ES 04/Mai empate técnico Lula × Flávio; Real Time Big Data nacional publicada 04/Mai (números secundários pendentes)",
-        "tendenciaPolymarket": "↓ DESPENCA 36.50% (↓1.0pp 4º DIA CONSECUTIVO de 37.50%) gap ALARGA AINDA MAIS +7.75pp Flávio (vs +6.45pp ontem)"
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 46.6%; Real Time Big Data 05/Mai 1T 40% (sample 2.000); 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate, Zema × Lula empate técnico",
+        "tendenciaPolymarket": "Estável 36.50% (mantém piso); gap leve compressão +7.55pp Flávio (vs +7.75pp ontem)"
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "30-50%",
-        "polymarket": "44.25%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 39.7%; AtlasIntel 2T 47.8% × Lula 47.5% empate técnico; Veritá PE 04/Mai 1T 30.9% (atrás Lula 12.4pp); Quaest ES 04/Mai empate técnico; Flávio MS 11,47% à frente Lula (Investiga MS 04/Mai)",
-        "tendenciaPolymarket": "↑ AMPLIA TOPO 44.25% (↑0.30pp leve em 04/Mai); gap +7.75pp Flávio (vs +6.45pp ontem ALARGA AINDA MAIS)"
+        "pesquisaRange": "34-39.7%",
+        "polymarket": "44.05%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 1T 39.7%; AtlasIntel 2T 47.8% × Lula 47.5% empate técnico; Real Time Big Data 05/Mai 1T 34%; 2T Real Time Big Data Flávio 44% × Lula 43% empate técnico (lidera numericamente)",
+        "tendenciaPolymarket": "Leve cede 44.05% (↓0.20pp em 05/Mai de 44.25%); 2L DEVOLVE FORTE 62.50% (↓4.0pp de 66.50%)"
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "5.3%",
-        "polymarket": "5.55%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3% (sustenta entre 5-6%); 3º lugar Polymarket DEVOLVE forte 31% (↓5pp de 36%)",
-        "tendenciaPolymarket": "Leve estável 5.55% (↓0.10pp leve presidencial); 3º DEVOLVE forte 31% reorganização dramática"
+        "pesquisaRange": "3-5.3%",
+        "polymarket": "5.45%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3% (abaixo Caiado 5% e Zema 4%); 3º lugar Polymarket RECUPERA 36% (↑5pp de 31%)",
+        "tendenciaPolymarket": "Leve estável 5.45% (↓0.10pp leve presidencial); 3º RECUPERA 36% (↑5pp reduz gap Zema 38%)"
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "3.3%",
-        "polymarket": "1.25%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Caiado sem apoio explícito governadores PSD (Gazeta do Povo 04/Mai); Nexus 2T 03/Mai cita Caiado em empate técnico Lula",
-        "tendenciaPolymarket": "↓ 1.25% (↓0.10pp leve presidencial); 3º DISPARA 19% (↑18.45pp atenção liquidez baixa); PSD Senado RECUPERA 5.85% (↑3.70pp)"
+        "pesquisaRange": "3.3-5%",
+        "polymarket": "1.15%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via 1T por 2pp sobre Zema; 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai); Caiado sem apoio explícito governadores PSD (Gazeta do Povo 04/Mai mantida)",
+        "tendenciaPolymarket": "Leve cede 1.15% (↓0.10pp leve presidencial); 3º DEVOLVE 16.5% (↓2.5pp corrige movimento extremo ontem); PSD Senado leve cede 5.40%"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "0.15%",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "Não cita Tarcísio em cenários presidenciais nacionais Abr-Mai; Vox SP gov: Tarcísio 38% × Haddad 26%",
-        "tendenciaPolymarket": "Estável 0.15% — foco mantido na reeleição SP"
+        "tendenciaPesquisa": "Não cita Tarcísio em cenários presidenciais nacionais; Vox SP gov: Tarcísio 38% × Haddad 26%; 'Tarcísio lança presidente Alesp ao Senado e critica Haddad' (Folha 05/Mai)",
+        "tendenciaPolymarket": "Estável 0.15% — foco mantido na reeleição SP. 3L 0.65% (↑0.40pp leve)"
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "3.1%",
-        "polymarket": "5.05%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; 2T AtlasIntel Lula 46% × Zema 43% empate técnico; Nexus 2T 03/Mai cita Zema em empate técnico Lula; ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
-        "tendenciaPolymarket": "↑ RECUPERA presidencial 5.05% (↑1.30pp REVERTE 4 dias <5%, era 3.75%) movimento contra-tendência; 3º cede leve liderança 38% (↓1.5pp)"
+        "pesquisaRange": "3.1-4%",
+        "polymarket": "4.65%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; Real Time Big Data 05/Mai 1T 4% (abaixo Caiado 5%); 2T Zema × Lula empate técnico (Estadão 05/Mai); ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
+        "tendenciaPolymarket": "DEVOLVE 4.65% (↓0.40pp reverte recuperação ontem 5.05%, volta abaixo dos 5%); 3º mantém liderança 38% (estável)"
       },
       {
         "name": "Fernando Haddad",
-        "pesquisaRange": "sem dados Abr-Mai",
-        "polymarket": "3.05%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr não cita Haddad presidencial (Plano B só com Lula fora); Vox SP gov Haddad 26% × Tarcísio 38%",
-        "tendenciaPolymarket": "↑ recupera leve 3.05% (↑0.10pp para queda 2 dias forte de 2.95%); Camilo 3.85% > Haddad 3.05% fragmentação esquerda persiste"
+        "pesquisaRange": "sem dados nacionais",
+        "polymarket": "3.15%",
+        "tendenciaPesquisa": "Vox SP gov Haddad 26% × Tarcísio 38%; Real Time Big Data 05/Mai 1T Haddad ausente top; 'Tarcísio crítica Haddad' (Folha 05/Mai 18:21) ataque direto",
+        "tendenciaPolymarket": "Recupera leve 3.15% (↑0.10pp para queda 3 dias forte); 2L recupera 4.70% (↑1.05pp); Camilo 3.55% > Haddad 3.15% fragmentação esquerda persiste"
       }
     ]
   }
