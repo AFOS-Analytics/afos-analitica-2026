@@ -22,12 +22,16 @@ export interface Violation {
   detail: string
 }
 
-const URL_REGEX = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
+// URLs externas (http/https) — apenas estas contam para regras de qualidade.
+// URLs relativas tipo `/en/glossary#tse` ou `/pt-BR/dashboard` são links internos
+// (glossário, página própria) e NÃO devem ser contadas como "matérias citadas".
+const EXTERNAL_URL_REGEX = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
+const ALL_URL_REGEX = /\[([^\]]+)\]\(([^)]+)\)/g
 const FOOTER_SOURCES_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*[^\n]*/i
 
 function extractAllLinks(body: string): { text: string; url: string }[] {
   const links: { text: string; url: string }[] = []
-  const re = new RegExp(URL_REGEX.source, 'g')
+  const re = new RegExp(EXTERNAL_URL_REGEX.source, 'g')
   let m: RegExpExecArray | null
   while ((m = re.exec(body)) !== null) {
     links.push({ text: m[1], url: m[2] })
@@ -35,9 +39,17 @@ function extractAllLinks(body: string): { text: string; url: string }[] {
   return links
 }
 
+// Identifica URLs internas do próprio AFOS — não contam para "matérias externas".
+function isInternalUrl(url: string): boolean {
+  if (!/^https?:/.test(url)) return true  // relative path = interno
+  return /^https?:\/\/(?:www\.)?afos-analytics\.(?:com|one|info|news|xyz)/.test(url)
+}
+
 function isBareHomepage(url: string): boolean {
   // True se URL é só `https://{domain}` ou `https://{domain}/` sem path
   // Exclui: subdomínios `news.*` (agregadores como news.google.com) e `api.*` (já tem regra própria)
+  // Exclui: domínios próprios AFOS (já filtrados como internos)
+  if (isInternalUrl(url)) return false
   const m = url.match(/^https?:\/\/([^/]+)\/?$/)
   if (!m) return false
   const host = m[1].toLowerCase()
@@ -50,6 +62,37 @@ function isAllowedPolymarketUrl(url: string): boolean {
   if (/^https?:\/\/(?:www\.)?polymarket\.com\/event\//.test(url)) return true
   if (/^https?:\/\/news\.google\.com/.test(url)) return true
   return false
+}
+
+// Conta parágrafos substantivos no body (>= 80 caracteres, ignora headings, hr, blockquote-only).
+// Cada parágrafo substantivo deveria ter >= 1 link inline (regra editorial 22/Abr).
+function countParagraphsAndLinks(body: string): { substantialParagraphs: number; paragraphsWithLink: number } {
+  const blocks = body.split(/\n\n+/)
+  let substantial = 0
+  let withLink = 0
+  for (const block of blocks) {
+    const trimmed = block.trim()
+    if (!trimmed) continue
+    // Skip headings (# ## ###), hr (---), e blocks só de bullets de fontes
+    if (/^#{1,6}\s/.test(trimmed)) continue
+    if (/^[-*_]{3,}$/.test(trimmed)) continue
+    if (trimmed.length < 80) continue  // muito curto para ser parágrafo substantivo
+    // Skip if é lista de bullets (matérias da seção "Fontes consultadas")
+    if (/^- \[/.test(trimmed)) continue
+    substantial++
+    // Tem pelo menos 1 link externo (não interno)?
+    const re = new RegExp(EXTERNAL_URL_REGEX.source, 'g')
+    let hasExternalLink = false
+    let m: RegExpExecArray | null
+    while ((m = re.exec(trimmed)) !== null) {
+      if (!isInternalUrl(m[2])) {
+        hasExternalLink = true
+        break
+      }
+    }
+    if (hasExternalLink) withLink++
+  }
+  return { substantialParagraphs: substantial, paragraphsWithLink: withLink }
 }
 
 export function validateBody(body: string): Violation[] {
@@ -85,13 +128,15 @@ export function validateBody(body: string): Violation[] {
 
   // ====== WARNINGS (relatam mas não bloqueiam) ======
 
-  // W1. Razão de homepages bare > 30% sinaliza coleta sem URLs primárias
-  const homepageCount = allLinks.filter((l) => isBareHomepage(l.url)).length
-  if (allLinks.length >= 5 && homepageCount / allLinks.length > 0.3) {
+  // W1. Razão de homepages bare > 30% (medida apenas em links externos com >=10 amostras)
+  // 30% threshold escolhido empiricamente: daily 05/Mai (boa) tinha ~20%, daily 06/Mai inicial (ruim) tinha 68%.
+  const externalLinks = allLinks.filter((l) => !isInternalUrl(l.url))
+  const homepageCount = externalLinks.filter((l) => isBareHomepage(l.url)).length
+  if (externalLinks.length >= 10 && homepageCount / externalLinks.length > 0.3) {
     violations.push({
       severity: 'warning',
       rule: 'high-homepage-ratio',
-      detail: `${homepageCount}/${allLinks.length} links (${Math.round((homepageCount / allLinks.length) * 100)}%) são homepage sem path. Ideal ≤30%. Use Google News redirect (news.google.com/rss/articles/...) do news-cache do dia.`,
+      detail: `${homepageCount}/${externalLinks.length} links externos (${Math.round((homepageCount / externalLinks.length) * 100)}%) são homepage sem path. Ideal ≤30%. Use Google News redirect (news.google.com/rss/articles/...) do news-cache do dia.`,
     })
   }
 
@@ -103,6 +148,20 @@ export function validateBody(body: string): Violation[] {
         severity: 'warning',
         rule: 'polymarket-non-event-url',
         detail: `Link Polymarket fora do padrão polymarket.com/event/{slug}: ${url}`,
+      })
+    }
+  }
+
+  // W3. Link-density: cada parágrafo substantivo deveria ter ≥1 link externo.
+  // Regra editorial firmada no template 22/Abr. Threshold: >=80% dos parágrafos substantivos com link.
+  const { substantialParagraphs, paragraphsWithLink } = countParagraphsAndLinks(body)
+  if (substantialParagraphs >= 5) {
+    const ratio = paragraphsWithLink / substantialParagraphs
+    if (ratio < 0.8) {
+      violations.push({
+        severity: 'warning',
+        rule: 'low-link-density',
+        detail: `${paragraphsWithLink}/${substantialParagraphs} parágrafos substantivos (${Math.round(ratio * 100)}%) têm link externo. Regra editorial: ≥80% (cada alegação factual com fonte linkada).`,
       })
     }
   }
