@@ -132,27 +132,37 @@ async function main() {
   const outDir = join(process.cwd(), 'public', 'news-cache')
   mkdirSync(outDir, { recursive: true })
 
+  // 6 queries em paralelo — single host (news.google.com), volume baixo, sem rate-limit prático.
+  // Worst-case cai de ~3min sequencial para max(individual) ~30s.
+  console.log(`Fetching ${QUERIES.length} queries in parallel...`)
+  const results = await Promise.all(
+    QUERIES.map(async ({ id, q }) => {
+      try {
+        const xml = await fetchRSS(q)
+        const rawItems = parseItems(xml)
+        const items = filterValidItems(rawItems)
+        return { id, q, items, filteredOut: rawItems.length - items.length, error: null }
+      } catch (err) {
+        return { id, q, items: [], filteredOut: 0, error: String(err) }
+      }
+    }),
+  )
+
   const allItems = {}
   let totalItems = 0
   let totalErrors = 0
-
   let totalFiltered = 0
-  for (const { id, q } of QUERIES) {
-    process.stdout.write(`Fetching ${id}... `)
-    try {
-      const xml = await fetchRSS(q)
-      const rawItems = parseItems(xml)
-      const items = filterValidItems(rawItems)
-      const filteredOut = rawItems.length - items.length
-      totalFiltered += filteredOut
+  for (const { id, q, items, filteredOut, error } of results) {
+    if (error) {
+      console.log(`  ✗ ${id}: ${error}`)
+      allItems[id] = { query: q, items: [], error }
+      totalErrors++
+    } else {
+      const filterNote = filteredOut > 0 ? ` (${filteredOut} dropped)` : ''
+      console.log(`  ✓ ${id}: ${items.length} items${filterNote}`)
       allItems[id] = { query: q, items }
       totalItems += items.length
-      const filterNote = filteredOut > 0 ? ` (${filteredOut} dropped)` : ''
-      console.log(`✓ ${items.length} items${filterNote}`)
-    } catch (err) {
-      console.log(`✗ ${err.message}`)
-      allItems[id] = { query: q, items: [], error: String(err) }
-      totalErrors++
+      totalFiltered += filteredOut
     }
   }
 

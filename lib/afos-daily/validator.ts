@@ -1,17 +1,9 @@
 /**
- * AFOS Daily — Validador de URLs e qualidade de fontes
+ * AFOS Daily — Validador de URLs e qualidade de fontes.
+ * Bloqueia Write se URLs proibidas; emite warnings para sinais de qualidade.
  *
- * Camada 4 da arquitetura URL-primária:
- * Gate técnico que valida o markdown antes de Write em public/afos-daily/*.md.
- * Bloqueia commit se violações críticas são detectadas — substitui dependência
- * de cuidado humano por gate automático.
- *
- * Implementado em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de
- * URLs específicas, gamma-api.polymarket.com em vez de polymarket.com/event/).
- *
- * Severidade:
- *  - error: bloqueia Write (não-recuperável sem ação humana)
- *  - warning: relata mas não bloqueia (passa Write, fica visível)
+ *  - error: bloqueia Write (irrecuperável sem ação humana)
+ *  - warning: relata mas não bloqueia
  */
 
 export type ViolationSeverity = 'error' | 'warning'
@@ -22,75 +14,50 @@ export interface Violation {
   detail: string
 }
 
-// URLs externas (http/https) — apenas estas contam para regras de qualidade.
-// URLs relativas tipo `/en/glossary#tse` ou `/pt-BR/dashboard` são links internos
-// (glossário, página própria) e NÃO devem ser contadas como "matérias citadas".
-const EXTERNAL_URL_REGEX = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
-const ALL_URL_REGEX = /\[([^\]]+)\]\(([^)]+)\)/g
+const MARKDOWN_LINK_RE = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
 const FOOTER_SOURCES_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*[^\n]*/i
+const PARAGRAPH_BREAK_RE = /\n\n+/
+const SOURCES_BULLET_RE = /^- \[/
+const HR_OR_HEADING_RE = /^(?:#{1,6}\s|[-*_]{3,}$)/
 
 function extractAllLinks(body: string): { text: string; url: string }[] {
-  const links: { text: string; url: string }[] = []
-  const re = new RegExp(EXTERNAL_URL_REGEX.source, 'g')
-  let m: RegExpExecArray | null
-  while ((m = re.exec(body)) !== null) {
-    links.push({ text: m[1], url: m[2] })
-  }
-  return links
+  return Array.from(body.matchAll(MARKDOWN_LINK_RE), (m) => ({ text: m[1], url: m[2] }))
 }
 
-// Identifica URLs internas do próprio AFOS — não contam para "matérias externas".
 function isInternalUrl(url: string): boolean {
-  if (!/^https?:/.test(url)) return true  // relative path = interno
+  if (!/^https?:/.test(url)) return true
   return /^https?:\/\/(?:www\.)?afos-analytics\.(?:com|one|info|news|xyz)/.test(url)
 }
 
 function isBareHomepage(url: string): boolean {
-  // True se URL é só `https://{domain}` ou `https://{domain}/` sem path
-  // Exclui: subdomínios `news.*` (agregadores como news.google.com) e `api.*` (já tem regra própria)
-  // Exclui: domínios próprios AFOS (já filtrados como internos)
   if (isInternalUrl(url)) return false
   const m = url.match(/^https?:\/\/([^/]+)\/?$/)
   if (!m) return false
   const host = m[1].toLowerCase()
-  if (host.startsWith('news.') || host.startsWith('api.')) return false
-  return true
+  // news.* (agregadores como news.google.com) e api.* têm regras próprias
+  return !host.startsWith('news.') && !host.startsWith('api.')
 }
 
 function isAllowedPolymarketUrl(url: string): boolean {
-  // Apenas polymarket.com/event/{slug} ou Google News redirect
-  if (/^https?:\/\/(?:www\.)?polymarket\.com\/event\//.test(url)) return true
-  if (/^https?:\/\/news\.google\.com/.test(url)) return true
-  return false
+  return (
+    /^https?:\/\/(?:www\.)?polymarket\.com\/event\//.test(url) ||
+    /^https?:\/\/news\.google\.com/.test(url)
+  )
 }
 
-// Conta parágrafos substantivos no body (>= 80 caracteres, ignora headings, hr, blockquote-only).
-// Cada parágrafo substantivo deveria ter >= 1 link inline (regra editorial 22/Abr).
+// Regra editorial template 22/Abr: cada parágrafo substantivo (>=80 chars,
+// não-heading, não-hr, não-bullet) deveria ter >=1 link externo inline.
 function countParagraphsAndLinks(body: string): { substantialParagraphs: number; paragraphsWithLink: number } {
-  const blocks = body.split(/\n\n+/)
   let substantial = 0
   let withLink = 0
-  for (const block of blocks) {
+  for (const block of body.split(PARAGRAPH_BREAK_RE)) {
     const trimmed = block.trim()
-    if (!trimmed) continue
-    // Skip headings (# ## ###), hr (---), e blocks só de bullets de fontes
-    if (/^#{1,6}\s/.test(trimmed)) continue
-    if (/^[-*_]{3,}$/.test(trimmed)) continue
-    if (trimmed.length < 80) continue  // muito curto para ser parágrafo substantivo
-    // Skip if é lista de bullets (matérias da seção "Fontes consultadas")
-    if (/^- \[/.test(trimmed)) continue
+    if (trimmed.length < 80) continue
+    if (HR_OR_HEADING_RE.test(trimmed)) continue
+    if (SOURCES_BULLET_RE.test(trimmed)) continue
     substantial++
-    // Tem pelo menos 1 link externo (não interno)?
-    const re = new RegExp(EXTERNAL_URL_REGEX.source, 'g')
-    let hasExternalLink = false
-    let m: RegExpExecArray | null
-    while ((m = re.exec(trimmed)) !== null) {
-      if (!isInternalUrl(m[2])) {
-        hasExternalLink = true
-        break
-      }
-    }
-    if (hasExternalLink) withLink++
+    const hasExternal = extractAllLinks(trimmed).some((l) => !isInternalUrl(l.url))
+    if (hasExternal) withLink++
   }
   return { substantialParagraphs: substantial, paragraphsWithLink: withLink }
 }
@@ -128,8 +95,8 @@ export function validateBody(body: string): Violation[] {
 
   // ====== WARNINGS (relatam mas não bloqueiam) ======
 
-  // W1. Razão de homepages bare > 30% (medida apenas em links externos com >=10 amostras)
-  // 30% threshold escolhido empiricamente: daily 05/Mai (boa) tinha ~20%, daily 06/Mai inicial (ruim) tinha 68%.
+  // W1. Razão de homepages bare em links externos. Threshold 30% calibrado
+  // empiricamente — ajustar se passar a falsar dailies de qualidade conhecida.
   const externalLinks = allLinks.filter((l) => !isInternalUrl(l.url))
   const homepageCount = externalLinks.filter((l) => isBareHomepage(l.url)).length
   if (externalLinks.length >= 10 && homepageCount / externalLinks.length > 0.3) {
@@ -141,9 +108,8 @@ export function validateBody(body: string): Violation[] {
   }
 
   // W2. URLs Polymarket fora do padrão polymarket.com/event/{slug}
-  const polyLinks = allLinks.filter((l) => /polymarket\.com/.test(l.url))
-  for (const { url } of polyLinks) {
-    if (!isAllowedPolymarketUrl(url)) {
+  for (const { url } of allLinks) {
+    if (/polymarket\.com/.test(url) && !isAllowedPolymarketUrl(url)) {
       violations.push({
         severity: 'warning',
         rule: 'polymarket-non-event-url',
@@ -152,18 +118,16 @@ export function validateBody(body: string): Violation[] {
     }
   }
 
-  // W3. Link-density: cada parágrafo substantivo deveria ter ≥1 link externo.
-  // Regra editorial firmada no template 22/Abr. Threshold: >=80% dos parágrafos substantivos com link.
+  // W3. Link-density: regra editorial template 22/Abr — cada parágrafo
+  // substantivo precisa de >=1 link externo. Threshold 80%.
   const { substantialParagraphs, paragraphsWithLink } = countParagraphsAndLinks(body)
-  if (substantialParagraphs >= 5) {
+  if (substantialParagraphs >= 5 && paragraphsWithLink / substantialParagraphs < 0.8) {
     const ratio = paragraphsWithLink / substantialParagraphs
-    if (ratio < 0.8) {
-      violations.push({
-        severity: 'warning',
-        rule: 'low-link-density',
-        detail: `${paragraphsWithLink}/${substantialParagraphs} parágrafos substantivos (${Math.round(ratio * 100)}%) têm link externo. Regra editorial: ≥80% (cada alegação factual com fonte linkada).`,
-      })
-    }
+    violations.push({
+      severity: 'warning',
+      rule: 'low-link-density',
+      detail: `${paragraphsWithLink}/${substantialParagraphs} parágrafos substantivos (${Math.round(ratio * 100)}%) têm link externo. Regra editorial: ≥80% (cada alegação factual com fonte linkada).`,
+    })
   }
 
   return violations

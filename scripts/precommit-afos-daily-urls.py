@@ -83,40 +83,29 @@ def validate_body(content):
 
 
 def main():
+    # Fail-open em qualquer falha de leitura/parsing — hook nunca deve quebrar workflow.
     try:
         payload = json.load(sys.stdin)
-    except (json.JSONDecodeError, ValueError):
-        # Sem stdin válido — não bloqueia (fail-open, hook sem input não é nosso caso)
-        sys.exit(0)
-    except Exception:
-        # Qualquer outro erro de leitura: fail-open
-        sys.exit(0)
-
-    if not isinstance(payload, dict):
-        sys.exit(0)
-
-    try:
+        if not isinstance(payload, dict):
+            sys.exit(0)
         file_path, content = extract_content_from_hook_input(payload)
     except Exception:
-        # Estrutura inesperada de tool_input: fail-open (não nosso caso)
         sys.exit(0)
 
-    # Sanitização de path: protege contra path traversal e força string
     if not isinstance(file_path, str) or not file_path:
         sys.exit(0)
     normalized_path = file_path.replace('\\', '/')
 
-    # Aplica apenas em public/afos-daily/*.md (não bloqueia outros files)
+    # Escopo: apenas markdown em public/afos-daily/, sem path traversal.
     if 'public/afos-daily/' not in normalized_path:
         sys.exit(0)
-    # Path traversal protection — recusar se há `..` no path
     if '..' in normalized_path:
         sys.exit(0)
     if not normalized_path.endswith('.md'):
         sys.exit(0)
     if not isinstance(content, str) or not content:
         sys.exit(0)
-    # Content sanity: skip se >5MB (provavelmente binary, fora do escopo)
+    # Provavelmente binary se passar de 5MB — fora do escopo deste validator.
     if len(content) > 5_000_000:
         sys.exit(0)
 
