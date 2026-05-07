@@ -11,6 +11,13 @@
             "shell": "bash",
             "timeout": 10,
             "statusMessage": "Verificando fact-check gate (afos-daily)..."
+          },
+          {
+            "type": "command",
+            "command": "python scripts/precommit-afos-daily-urls.py",
+            "shell": "bash",
+            "timeout": 5,
+            "statusMessage": "Validando URLs (afos-daily)..."
           }
         ]
       }
