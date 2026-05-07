@@ -58,3 +58,6 @@ docs/launch-texts/
 
 # File.io upload artifacts (temporários, contêm URLs de download de PDFs criptografados)
 fileio-response.json
+
+# Launch strategy drafts (confidencial — Show HN, tactical timelines, account warm-up)
+docs/launch/
