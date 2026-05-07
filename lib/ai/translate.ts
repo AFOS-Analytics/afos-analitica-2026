@@ -198,7 +198,8 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
 
   // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
   const maxTokens = req.type === 'afos-daily' ? 8192 : 2048
-  const timeoutMs = req.type === 'afos-daily' ? 60000 : 30000
+  // 120s timeout: dailies grandes (>15k chars com seção "Fontes consultadas") podem levar 80-100s no Haiku 4.5.
+  const timeoutMs = req.type === 'afos-daily' ? 120000 : 30000
 
   const start = Date.now()
   // Retry with exponential backoff on transient failures (429 / network).
