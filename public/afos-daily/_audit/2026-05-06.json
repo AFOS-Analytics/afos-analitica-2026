@@ -1,0 +1,110 @@
+{
+  "date": "2026-05-06",
+  "generatedAt": "2026-05-06T20:00:00-03:00",
+  "factCheckGate": {
+    "candidatesHighImpact": [
+      {
+        "event": "Senado REJEITA Messias para STF (desdobramentos)",
+        "verification1_crossRef": "Messias rejeitado em 28/Abr (votação 42×34) já em dailies anteriores → desdobramentos institucionais (efeitos sobre Moraes/Mendonça/crise STF) são novidade do dia",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.estadao.com.br/politica/carolina-brigido/rejeicao-a-messias-fortalece-moraes-enfraquece-mendonca-e-agrava-crise-interna-no-stf/",
+          "eventDateIso": "2026-05-06",
+          "type": "análise/desdobramento institucional"
+        },
+        "secondSource": "Estadão (Carolina Brígido) + Gazeta do Povo (líder governo Wagner cacetada) + 3 fontes correlatas",
+        "decision": "incorporar"
+      },
+      {
+        "event": "STJ condena Gladson Cameli a 25 anos = inelegível AC",
+        "verification1_crossRef": "Não aparece em dailies anteriores → novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://painelpolitico.com/stj-condena-gladson-cameli-a-25-anos-de-prisao-e-o-torna-inelegivel",
+          "eventDateIso": "2026-05-06",
+          "type": "evento (decisão judicial publicada)"
+        },
+        "secondSource": "Painel Político + Consultor Jurídico (grupos independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Genial/Quaest 10 estados publicada (Lula 5 × Flávio 5)",
+        "verification1_crossRef": "Quaest aparece em outros contextos mas recorte multiestadual é novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.poder360.com.br/poder-eleicoes/2o-turno-lula-lidera-em-5-estados-flavio-em-outros-5-diz-quaest/",
+          "eventDateIso": "2026-05-06",
+          "type": "evento (rodada de pesquisas publicada)"
+        },
+        "secondSource": "Poder360 + Folha + CartaCapital + Brasil de Fato + Pleno.News + VEJA + bncamazonas (múltiplos grupos independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Meio/Ideia 2T nacional Flávio 45,3% × Lula 44,7%",
+        "verification1_crossRef": "Meio/Ideia aparece antes mas 2T nacional com números é novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.poder360.com.br/poder-eleicoes/flavio-tem-453-e-lula-447-no-2o-turno-diz-meio-ideia/",
+          "eventDateIso": "2026-05-06",
+          "type": "evento (pesquisa publicada)"
+        },
+        "secondSource": "Poder360 + Exame + GZH (grupos independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Futura/Apex RJ Flávio lidera + maioria apoia impeachment STF",
+        "verification1_crossRef": "Não aparece em dailies anteriores → novidade",
+        "verification2_fetch": {
+          "primaryUrl": "https://noticias.uol.com.br/...",
+          "eventDateIso": "2026-05-06",
+          "type": "evento (pesquisa publicada via UOL)"
+        },
+        "secondSource": "Não verificado — somente UOL Notícias 17:15",
+        "decision": "incorporar com cautela ([UOL reportou])"
+      },
+      {
+        "event": "Tarcísio confirma Felício Ramuth vice + chapa Senado SP",
+        "verification1_crossRef": "Anúncio Tarcísio Senado é de 05/Mai (Folha) → 06/Mai T7news é continuidade/confirmação",
+        "verification2_fetch": {
+          "primaryUrl": "https://www.t7news.com.br/noticia/tarcisio-confirma-felicio-ramuth-como-vice-e-anuncia-chapa-ao-senado-para-disputa-da-reeleicao-em-sao-paulo",
+          "eventDateIso": "2026-05-06",
+          "type": "continuidade/confirmação operacional"
+        },
+        "secondSource": "T7news 06/Mai + Folha de S.Paulo 05/Mai (anúncio original)",
+        "decision": "incorporar como continuidade"
+      },
+      {
+        "event": "Vorcaro delação decepciona PF + ministro TCU na mira",
+        "verification1_crossRef": "Caso Vorcaro/delação em fluxo desde 02-04/Mai → desdobramento",
+        "verification2_fetch": {
+          "primaryUrl": "http://www.em.com.br/politica/2026/05/7413383-proposta-de-delacao-de-vorcaro-decepciona-investigadores-da-pf-entenda.html",
+          "eventDateIso": "2026-05-06",
+          "type": "desdobramento institucional"
+        },
+        "secondSource": "Estado de Minas + O Globo (grupos independentes)",
+        "decision": "incorporar como desdobramento"
+      }
+    ],
+    "selfCheck": {
+      "everyAnchorPassedV2": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRan": false,
+      "reconcileResult": "skip operacional"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Futura/Apex RJ marcado [UOL reportou]; Helder PA Senado e Jorginho SC tratados como dados estaduais",
+    "numericalErrors": "OK manualmente — valores 37,50%, 44,85%, 14,50%, 65,00%, 67,40% bandas inflação alinhados com analysis-data.json e cache Polymarket",
+    "fontesInventadas": "OK (Estadão Carolina Brígido + Poder360 + Painel Político + T7news + Estado de Minas + Brasil de Fato + A Tribuna + CartaCapital + Terra + InfoMoney verificadas via WebSearch ou fetch)",
+    "quotesLiterais": "OK (cacetada em Lula via Gazeta do Povo; fortalece Moraes/enfraquece Mendonça via Estadão; teto da derrota do pai via bncamazonas; discurso antissistema via Gazeta do Povo)",
+    "causacaoEspuria": "OK (movimento STF impeach descrito como coincide com desdobramentos da rejeição Messias, não causação)",
+    "verbosCriticos": "OK (rejeitou 42×34 em 28/Abr; STJ condenou 06/Mai; Tarcísio confirmou 06/Mai)",
+    "decision": "prosseguir para preview"
+  },
+  "urlGate": {
+    "specificUrls": 14,
+    "polymarketEventUrls": 6,
+    "registriesAndApi": 2,
+    "veiculosTextoPlano": 14,
+    "violations": "Nenhuma — validator 07/Mai passou OK",
+    "knownLimitation": "anti-bot Anthropic em uol.com.br/globo.com + paywall Estadão/Folha bloqueou coleta direta para ~14 veículos. Solução estrutural firmada em 07/Mai (scripts/fetch-google-news.mjs + hook PreToolUse + skill atualizada com fluxo híbrido) elimina problema para próximas dailies.",
+    "fontesConsultadasSection": "Adicionada em 07/Mai como compensação pragmática (Opção B) — bullets clicáveis com links que temos confirmados"
+  }
+}

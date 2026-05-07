@@ -15,7 +15,27 @@ Busque dados de TODOS os 6 mercados via WebFetch:
 
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
-Busque notícias recentes via WebFetch para TODAS as categorias:
+**OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
+
+```bash
+node scripts/fetch-google-news.mjs              # data = hoje
+node scripts/fetch-google-news.mjs 2026-05-08   # data específica
+```
+
+Output: 6 queries Google News executadas, 100-200 itens com URL primária, cache em `public/news-cache/{date}.json`.
+
+**O `/afos-daily` lê esse cache** para citar matérias com URL primária funcional. Sem o cache, cai-se no problema de homepages genéricas e atribuições texto plano (ver `lib/afos-daily/validator.ts` regras de URL).
+
+**Categorias coletadas (já hard-coded no script):**
+
+- `eleicoes-2026` — eleições presidenciais Brasil (24h)
+- `flavio-lula` — confronto Flávio × Lula (24h)
+- `master-vorcaro` — caso Master/Vorcaro/STF/INSS/CPI (24h)
+- `pesquisas` — pesquisas eleitorais nacionais (48h)
+- `aprovacao` — aprovação/rejeição governo Lula (24h)
+- `estaduais` — governadores e Senado 2026 (24h)
+
+**Fallback se script falhar:** WebFetch direto nas URLs RSS abaixo (mas perde URLs primárias — apenas última opção):
 
 - `https://news.google.com/rss/search?q=eleições+2026+presidente+Brasil+when:1d&hl=pt-BR&gl=BR&ceid=BR:pt-419`
 - `https://news.google.com/rss/search?q=Flávio+Bolsonaro+Lula+2026+when:1d&hl=pt-BR&gl=BR&ceid=BR:pt-419`

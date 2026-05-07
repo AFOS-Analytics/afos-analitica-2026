@@ -118,6 +118,66 @@ Mantidas rigorosamente do piloto 22/Abr:
 - **Datas sempre explícitas** — nunca "ontem" ou "semana passada", sempre "21 de abril"
 - **Densidade alvo:** 600-900 palavras, 4-5 min de leitura
 
+## REGRAS DE URL (não negociáveis — gate técnico bloqueia Write se violado)
+
+Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de URLs específicas, gamma-api em vez de polymarket.com/event). PreToolUse hook `precommit-afos-daily-urls.py` bloqueia Write automaticamente se detectar violações críticas.
+
+### URLs PROIBIDAS (bloqueiam Write)
+
+- ❌ `gamma-api.polymarket.com` — URL de API REST, não interface humana. Use `polymarket.com/event/{slug}`.
+- ❌ Linha "Fontes citadas:" no rodapé com markdown links `[Texto](URL)` — o template renderiza `data.sources` como **texto plano**, então markdown vira texto literal. Use texto plano separado por vírgulas.
+
+### FLUXO HÍBRIDO (procedimento obrigatório — adotado 07/Mai/2026)
+
+**Passo 1 — Identificar 3-5 matérias-âncora do dia.** Matérias-âncora = alegações centrais da síntese (movimento Polymarket forte, pesquisa nacional publicada, evento político major). Listar antes de redigir.
+
+**Passo 2 — Para cada matéria-âncora, buscar URL primária do veículo via WebSearch:**
+
+```javascript
+WebSearch({
+  query: '"título exato ou trecho-chave" veículo data',
+  allowed_domains: ['veiculo.com.br']  // restringe ao domínio
+})
+```
+
+Resultado típico: URL bonita tipo `https://www.estadao.com.br/politica/carolina-brigido/.../titulo-slug/` — leva direto à matéria.
+
+**Passo 3 — Para matérias secundárias (suplementares ao texto), usar URL Google News redirect do cache.** O `/atualizar` gera `public/news-cache/{YYYY-MM-DD}.json` com todas as matérias coletadas e suas URLs primárias preservadas (`news.google.com/rss/articles/CBM...`). Ler e cruzar título→URL.
+
+```javascript
+// Pseudocódigo de leitura do cache
+const cache = JSON.parse(readFileSync(`public/news-cache/${date}.json`))
+const allItems = Object.values(cache.queries).flatMap(q => q.items)
+const article = allItems.find(item => item.title.includes('palavra-chave'))
+const url = article.link  // Google News redirect
+```
+
+**Resultado do fluxo híbrido:** matérias-âncora com URL bonita (estadao.com.br/...), matérias secundárias com Google News redirect funcional (anti-bot bypass automático). **Zero veículos sem link.**
+
+### URLs PREFERIDAS (hierarquia de fallback)
+
+Para CADA matéria/alegação citada, escolher URL na seguinte ordem:
+
+1. **URL primária do veículo via WebSearch** (matérias-âncora) — `[Estadão](https://www.estadao.com.br/politica/.../titulo-slug/)`
+2. **URL Google News redirect via cache** (matérias secundárias) — `[Estadão](https://news.google.com/rss/articles/CBM...)`. Funciona até com anti-bot.
+3. **URL específica de mercado Polymarket** — `polymarket.com/event/{slug}`
+4. **URL TSE registro** — `eleitor.tse.jus.br/sip/sip-pesquisas`
+5. **Atribuição texto plano com data exata** — apenas em último caso, e somente se cache Google News também falhou
+
+### URLs HOMEPAGE (`https://www.veiculo.com.br/`) — evitar
+
+Não bloqueiam Write, mas warning é emitido se >30% dos links forem homepage sem path. **Significa coleta superficial** — buscar URL específica via cache Google News antes de aceitar homepage.
+
+### Validação manual antes de Write
+
+Após gerar markdown, rodar:
+
+```bash
+npx tsx scripts/validate-afos-daily.ts {YYYY-MM-DD}
+```
+
+Sai com exit 1 se errors críticos. Hook PreToolUse roda equivalente automaticamente.
+
 ## ETAPA 3: Atualizar a página `/pt-BR/daily`
 
 Editar `app/[locale]/daily/page.tsx` para refletir o novo conteúdo do dia. Manter exatamente a mesma estrutura visual aprovada em 22/Abr (Lede em box azul, seções numeradas com h2 border, box amarelo de divergências, bullets numerados em síntese, rodapé com 3 linhas).
