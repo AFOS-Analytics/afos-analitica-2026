@@ -44,9 +44,17 @@ public/pipeline-launch-opensource.html
 public/pipeline-*.html
 public/posicionamento-*.html
 
+# Outreach contacts list (78 contatos) — confidencial
+outreach-contacts.md
+outreach-contacts.html
+.qpdf-bin/
+
 # Translation pipeline artifacts (not for public repo)
 public/afos-daily/*.claude-test.md
 
 # Operational protocols (internal — never ship)
 docs/operacao/
 docs/launch-texts/
+
+# File.io upload artifacts (temporários, contêm URLs de download de PDFs criptografados)
+fileio-response.json
