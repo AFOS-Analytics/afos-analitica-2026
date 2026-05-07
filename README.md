@@ -48,6 +48,8 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 ## Community
 
 - 💬 **Questions & ideas** → [GitHub Issues](https://github.com/AFOS-Analytics/afos-analitica-2026/issues) · [Discussions](https://github.com/AFOS-Analytics/afos-analitica-2026/discussions)
+- 🐦 **Twitter / X** → [@AFOS_Analytics](https://x.com/AFOS_Analytics)
+- 👥 **Reddit** → [u/AFOS-Analytics](https://reddit.com/user/AFOS-Analytics)
 - 📧 **Press, partnerships, general** → [contact@afos-analytics.com](mailto:contact@afos-analytics.com)
 - 💡 **User support & help** → [support@afos-analytics.com](mailto:support@afos-analytics.com)
 - 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
@@ -120,6 +122,20 @@ User:        Request     → Redis read (<1ms) → response
 | 2 | Redis empty | Direct Polymarket fetch (~4s) |
 | 3 | Polymarket failed | In-memory data (last good result) |
 | 4 | No data at all | HTTP 503 + Retry-After: 60 |
+
+### URL-Primary Architecture (AFOS Daily editorial integrity)
+
+Each claim in AFOS Daily must link to the **specific article** that supports it — not the outlet's homepage. Enforced by 5 cooperating layers:
+
+| Layer | Component | Function |
+|-------|-----------|----------|
+| 1 | `scripts/fetch-google-news.mjs` | Collects Google News RSS preserving primary `<link>` URLs (redirect to article works even for anti-bot outlets). Parallel fetch via `Promise.all`, retry with backoff, fail-fast on partial errors |
+| 2 | Hybrid flow in `/afos-daily` skill | WebSearch with `allowed_domains` for 3-5 anchor stories (clean primary URLs); Google News redirect from cache for the rest |
+| 3 | `scripts/wayback-archive.ts` | Snapshots cited URLs to archive.org before publish (evidence preservation) |
+| 4 | `scripts/precommit-afos-daily-urls.py` (PreToolUse hook) + `lib/afos-daily/validator.ts` | Blocks `Write/Edit/MultiEdit` on `public/afos-daily/*.md` if forbidden URLs detected (`gamma-api.polymarket.com`, markdown links in plain-text "Sources cited" footer). Warns on >30% homepage ratio or <80% link-density per substantial paragraph |
+| 5 | `.claude/commands/afos-daily.md` (skill rules) | Documents the URL hierarchy, validation gates, and the editorial principles enforced in code |
+
+**Manual validator:** `npx tsx scripts/validate-afos-daily.ts {date} [--locale=en\|es]` exits 1 on critical errors (matches the PreToolUse hook). Used in CI checks and in operator workflow before commit.
 
 ### Project Structure
 
