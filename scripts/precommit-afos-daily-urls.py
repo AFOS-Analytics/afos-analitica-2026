@@ -31,15 +31,27 @@ GAMMA_API_RE = re.compile(r'^https?://gamma-api\.polymarket\.com', re.IGNORECASE
 
 
 def extract_content_from_hook_input(payload):
-    """Extrai content do tool_input. Para Write retorna content; Edit retorna new_string."""
+    """Extrai content do tool_input.
+
+    - Write: tool_input.content (string)
+    - Edit:  tool_input.new_string (string)
+    - MultiEdit: tool_input.edits[].new_string (array de objetos);
+                 concatenamos todos new_strings para validação.
+    """
     tool = payload.get('tool_name', '')
     tool_input = payload.get('tool_input', {})
     file_path = tool_input.get('file_path', '')
     if tool == 'Write':
         return file_path, tool_input.get('content', '')
-    if tool in ('Edit', 'MultiEdit'):
-        # Para Edit, valida o new_string (conteúdo que está sendo escrito)
+    if tool == 'Edit':
         return file_path, tool_input.get('new_string', '')
+    if tool == 'MultiEdit':
+        # MultiEdit estrutura: { file_path, edits: [{old_string, new_string}, ...] }
+        edits = tool_input.get('edits', [])
+        if isinstance(edits, list):
+            return file_path, '\n'.join(
+                e.get('new_string', '') for e in edits if isinstance(e, dict)
+            )
     return file_path, ''
 
 

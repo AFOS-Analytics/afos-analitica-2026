@@ -108,8 +108,10 @@ async function main() {
   console.log(`Total items: ${totalItems}`)
   console.log(`Errors: ${totalErrors}/${QUERIES.length}`)
 
-  if (totalErrors === QUERIES.length) {
-    console.error('\nAll queries failed. Check network or Google News RSS availability.')
+  // Fail-fast: qualquer query falhando significa cache incompleto.
+  // Daily depende de cache completo para fluxo híbrido — re-rodar antes de prosseguir.
+  if (totalErrors > 0) {
+    console.error(`\n${totalErrors}/${QUERIES.length} queries falharam. Cache incompleto — re-execute.`)
     process.exit(1)
   }
 }

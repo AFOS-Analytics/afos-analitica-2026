@@ -61,3 +61,6 @@ fileio-response.json
 
 # Launch strategy drafts (confidencial — Show HN, tactical timelines, account warm-up)
 docs/launch/
+
+# News cache (Google News redirect URLs — não devem acumular no repo)
+public/news-cache/
