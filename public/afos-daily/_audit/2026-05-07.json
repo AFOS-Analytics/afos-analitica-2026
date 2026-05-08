@@ -1,0 +1,31 @@
+{
+  "date": "2026-05-07",
+  "auditedAt": "2026-05-07T22:55:00-03:00",
+  "template": "06-Mai (definitivo a partir de 07/Mai)",
+  "factCheckGate": {
+    "events": [
+      {"name": "Reunião Lula × Trump 3h Casa Branca", "decision": "incorporar", "primary": "InfoMoney + Poder360 + Folha (URLs primárias)"},
+      {"name": "Operação Compliance Zero 5ª fase Ciro Nogueira", "decision": "incorporar", "primary": "Imirante + Diário Carioca + Folha 4 matérias"},
+      {"name": "Paraná Pesquisas SP atualizada", "decision": "incorporar com nuance (campo 11-14 abr)", "primary": "CNN Brasil"},
+      {"name": "Alcolumbre/Vorcaro blindagem (Malu Gaspar O Globo)", "decision": "incorporar com framing 'gabinete nega'", "primary": "O Globo (URL primária Malu Gaspar)"}
+    ]
+  },
+  "prestigeOutletsLinked": {
+    "Folha de S.Paulo": 9,
+    "O Globo": 4,
+    "G1": 2,
+    "VEJA": 0,
+    "Estadão": 0,
+    "Valor": 0,
+    "note": "VEJA/Estadão/Valor sem matéria do dia coberta no daily. RSS feeds estão configurados — disponíveis quando houver matéria relevante."
+  },
+  "rssIntegration": "fetch-google-news.mjs estendido com 14 RSS feeds prestige (Folha 3 + O Globo 3 + G1 1 + Estadão 3 + Valor 1 + VEJA 3). 884 items totais coletados, 737 do prestige.",
+  "urlGateLayers": [
+    "E1: gamma-api blocked",
+    "E2: footer markdown blocked",
+    "E3: Google News URL <150 chars blocked",
+    "E4: HTTP 4xx/5xx blocked",
+    "E5: misattribution check (label vs hostname)"
+  ],
+  "decision": "prosseguir para preview"
+}
