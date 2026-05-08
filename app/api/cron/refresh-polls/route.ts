@@ -57,10 +57,17 @@ export async function GET(request: Request) {
       if (polyRes.ok) {
         const polyData = await polyRes.json()
         const markets = polyData?.presidential?.markets || []
+        // /api/polymarket retorna outcomePrices: [yesStr, noStr] — não yesPrice numérico.
+        // Bug fix 08/Mai: extrair yesPrice de outcomePrices[0] antes de filtrar/mapear.
         polyOdds = markets
+          .map((m: { question?: string; outcomePrices?: string[]; closed?: boolean }) => ({
+            question: m.question || '',
+            yesPrice: parseFloat(m.outcomePrices?.[0] ?? '0'),
+            closed: !!m.closed,
+          }))
           .filter((m: { yesPrice: number; closed: boolean }) => m.yesPrice > 0.005 && !m.closed)
           .map((m: { question: string; yesPrice: number }) => ({
-            candidate: (m.question || '').replace(/^Will\s+/i, '').replace(/\s+(win|finish|be).*/i, '').trim(),
+            candidate: m.question.replace(/^Will\s+/i, '').replace(/\s+(win|finish|be).*/i, '').trim(),
             probability: Math.round(m.yesPrice * 1000) / 10,
           }))
           .slice(0, 10)
