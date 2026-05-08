@@ -1,0 +1,30 @@
+{
+  "date": "2026-05-08",
+  "auditedAt": "2026-05-08T22:30:00-03:00",
+  "template": "06-Mai (definitivo) com nova regra 30/70 prestige/secundário",
+  "factCheckGate": {
+    "events": [
+      {"name": "Quaest nova rodada", "decision": "incorporar com framing INICIA (não publicada)", "source": "Diário do Centro do Mundo + Lauro Jardim O Globo"},
+      {"name": "Percent Brasil MT", "decision": "incorporar com instituto CORRETO (Percent Brasil, NÃO Paraná Pesquisas como JSONs erradamente)", "primary": "Poder360 BR 00726/2026 + MT 06232/2026"},
+      {"name": "Operação Ciro Nogueira desdobramentos", "decision": "incorporar como continuidade", "sources": "Folha + VEJA + Estadão + Gazeta do Povo + Brasil 247 + Hora do Povo + Jornal O Sul + UOL"},
+      {"name": "Mendonça Vorcaro Papuda/domiciliar", "decision": "incorporar — novidade", "primary": "O Globo"},
+      {"name": "Lula × Trump rescaldo", "decision": "incorporar como rescaldo institucional não evento novo", "sources": "O Globo + Folha + Valor"}
+    ]
+  },
+  "ratio": {
+    "target": "30% prestige / 70% secundário",
+    "achieved": {
+      "prestige_count": 8,
+      "prestige_outlets": ["Folha de S.Paulo (4)", "O Globo (2)", "Estadão (1)", "VEJA (1)"],
+      "secondary_count": 13,
+      "secondary_outlets": ["Poder360 (2)", "Diário do Centro do Mundo", "Brasil 247", "Imirante", "Diário Carioca", "InfoMoney", "CNN Brasil", "Gazeta do Povo", "Hora do Povo", "Jornal O Sul", "UOL Notícias", "Correio Braziliense"],
+      "actual_ratio": "38% / 62% — desvio aceitável (target ±10pp)"
+    }
+  },
+  "urlGateE5Adjustment": "Hook ajustado em 8/Mai noite: misattribution check fail-open quando final_host=news.google.com (HEAD não segue JS-redirect; browser real segue normalmente). Preserva proteção contra final_host=outro-veículo (ex: VEJA-as-Folha incidente 7/Mai).",
+  "criticalCorrections": [
+    "Pesquisa MT atribuída como Percent Brasil (não Paraná Pesquisas como /atualizar JSONs erradamente)",
+    "Quaest framing CORRETO: INICIA rodada 8/Mai, publicação prevista 13/Mai (não publicada hoje)"
+  ],
+  "decision": "prosseguir para preview"
+}

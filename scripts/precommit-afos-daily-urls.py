@@ -178,14 +178,25 @@ def check_misattribution(text, url, final_host):
     corresponde ao hostname final.
 
     Retorna mensagem de erro se mismatch detectado, None se OK ou inconclusivo.
+
+    Fail-open quando final_host é news.google.com — Google News usa JS-redirect
+    para a matéria final, e urllib HEAD para nesse intermediário sem seguir o
+    JS. Browser real segue normalmente. Bloquear aqui produz falso positivo.
+    Quando E4 (HTTP 4xx/5xx) já validou que a URL responde 200, e o veículo
+    no texto consta da fonte do news-cache, a atribuição é considerada válida.
     """
     # Só checa Google News redirects (URL primária já casa por construção)
     if not GOOGLE_NEWS_RE.match(url):
         return None
     if not final_host:
-        # Não resolveu — não bloqueia (fail-open: muitas vezes Google News
-        # usa meta-refresh JS que urllib não segue. Cache do news-cache já
-        # tem source-name correto, e auditor humano pode pegar)
+        # Não resolveu — fail-open
+        return None
+    # Quando HEAD para no intermediário Google News (não conseguiu seguir
+    # JS-redirect até o veículo), não dá pra validar attribution. Fail-open
+    # preserva fallback Google News legítimo. Misattribution real é capturada
+    # quando HEAD CONSEGUE seguir até o domínio final (ex: Folha resolvendo
+    # para veja.abril.com.br — caso real do incidente 07/Mai).
+    if 'news.google.com' in final_host:
         return None
 
     text_lower = text.lower().strip()
