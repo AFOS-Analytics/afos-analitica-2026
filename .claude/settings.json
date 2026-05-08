@@ -16,7 +16,7 @@
             "type": "command",
             "command": "python scripts/precommit-afos-daily-urls.py",
             "shell": "bash",
-            "timeout": 5,
+            "timeout": 30,
             "statusMessage": "Validando URLs (afos-daily)..."
           }
         ]

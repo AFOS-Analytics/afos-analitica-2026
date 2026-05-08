@@ -30,6 +30,34 @@ const QUERIES = [
   { id: 'estaduais', q: 'governador senado eleição 2026 when:1d' },
 ]
 
+// Feeds RSS dos veículos de prestígio brasileiros (Folha, O Globo, Estadão, G1, Valor).
+// Esses feeds são endpoints públicos oficiais para syndication — URLs primárias do veículo,
+// sem anti-bot, sem paywall ao nível de URL (clique vai à matéria; conteúdo pode ser pago).
+// Adicionado em 07/Mai/2026 após meta-falha: a /afos-daily 07/Mai cedo usei só Google News
+// e não consegui URLs primárias para Folha/O Globo. RSS direto resolve definitivamente.
+const PRESTIGE_FEEDS = [
+  // Folha de S.Paulo
+  { id: 'prestige-folha-poder', source: 'Folha de S.Paulo', url: 'https://feeds.folha.uol.com.br/poder/rss091.xml' },
+  { id: 'prestige-folha-mercado', source: 'Folha de S.Paulo', url: 'https://feeds.folha.uol.com.br/mercado/rss091.xml' },
+  { id: 'prestige-folha-cotidiano', source: 'Folha de S.Paulo', url: 'https://feeds.folha.uol.com.br/cotidiano/rss091.xml' },
+  // O Globo
+  { id: 'prestige-oglobo-politica', source: 'O Globo', url: 'https://oglobo.globo.com/rss/oglobo/politica/' },
+  { id: 'prestige-oglobo-economia', source: 'O Globo', url: 'https://oglobo.globo.com/rss/oglobo/economia/' },
+  { id: 'prestige-oglobo-brasil', source: 'O Globo', url: 'https://oglobo.globo.com/rss/oglobo/brasil/' },
+  // G1
+  { id: 'prestige-g1-politica', source: 'G1', url: 'https://g1.globo.com/rss/g1/politica/' },
+  // Estadão (URL via meta tag rss+xml descoberta na home — endpoint Arc CMS)
+  { id: 'prestige-estadao-geral', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D' },
+  { id: 'prestige-estadao-politica', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/politica/?body=%7B%22layout%22:%22google-news%22%7D' },
+  { id: 'prestige-estadao-economia', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/economia/?body=%7B%22layout%22:%22google-news%22%7D' },
+  // Valor (feed único)
+  { id: 'prestige-valor', source: 'Valor', url: 'https://valor.globo.com/rss/valor' },
+  // VEJA (oficial endpoint via meta tag rss+xml descoberta)
+  { id: 'prestige-veja-ultimas', source: 'VEJA', url: 'https://veja.abril.com.br/ultimas-noticias/rss' },
+  { id: 'prestige-veja-politica', source: 'VEJA', url: 'https://veja.abril.com.br/politica/feed/' },
+  { id: 'prestige-veja-economia', source: 'VEJA', url: 'https://veja.abril.com.br/economia/feed/' },
+]
+
 const FETCH_TIMEOUT_MS = 30000  // 30s timeout per query — Google News RSS pode estar lento
 const MAX_RETRIES = 2  // 1 retry em transient (429/5xx/network)
 
@@ -121,6 +149,48 @@ function filterValidItems(items) {
   })
 }
 
+// Fetch RSS de um veículo de prestígio (Folha/O Globo/Estadão/G1/Valor).
+// Diferente do Google News: source pré-conhecido, URL primária do veículo.
+async function fetchPrestigeRSSFeed(feedUrl, sourceName, attempt = 0) {
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
+  try {
+    const res = await fetch(feedUrl, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AFOS-News-Bot/1.0; +https://www.afos-analytics.com)' },
+      signal: controller.signal,
+    })
+    clearTimeout(timeoutId)
+    if (!res.ok) {
+      if (attempt < MAX_RETRIES && (res.status === 429 || res.status >= 500)) {
+        await new Promise((r) => setTimeout(r, 1000 * Math.pow(2, attempt)))
+        return fetchPrestigeRSSFeed(feedUrl, sourceName, attempt + 1)
+      }
+      throw new Error(`HTTP ${res.status} for ${feedUrl}`)
+    }
+    return await res.text()
+  } catch (err) {
+    clearTimeout(timeoutId)
+    if (attempt < MAX_RETRIES && (err.name === 'AbortError' || err.code === 'ECONNRESET')) {
+      await new Promise((r) => setTimeout(r, 1000 * Math.pow(2, attempt)))
+      return fetchPrestigeRSSFeed(feedUrl, sourceName, attempt + 1)
+    }
+    throw err
+  }
+}
+
+// Filtra items por janela temporal — só matérias do dia alvo ±24h.
+// RSS feeds podem ter histórico de dias; queremos só recentes pra daily.
+function filterByDateWindow(items, targetDate) {
+  const target = new Date(targetDate + 'T12:00:00Z').getTime()
+  const windowMs = 30 * 60 * 60 * 1000  // 30h: ontem 18h até hoje 24h
+  return items.filter((item) => {
+    if (!item.pubDate) return true  // sem pubDate, manter (raro)
+    const pubMs = new Date(item.pubDate).getTime()
+    if (isNaN(pubMs)) return true  // formato inválido, manter
+    return Math.abs(target - pubMs) <= windowMs
+  })
+}
+
 async function main() {
   const argDate = process.argv[2]
   const date = argDate || new Date().toISOString().slice(0, 10)
@@ -132,21 +202,38 @@ async function main() {
   const outDir = join(process.cwd(), 'public', 'news-cache')
   mkdirSync(outDir, { recursive: true })
 
-  // 6 queries em paralelo — single host (news.google.com), volume baixo, sem rate-limit prático.
-  // Worst-case cai de ~3min sequencial para max(individual) ~30s.
-  console.log(`Fetching ${QUERIES.length} queries in parallel...`)
-  const results = await Promise.all(
+  // 6 queries Google News + 11 feeds RSS prestige em paralelo (single batch).
+  // Volume baixo, hosts diversos, sem rate-limit prático. Worst-case ~30s.
+  console.log(`Fetching ${QUERIES.length} Google News queries + ${PRESTIGE_FEEDS.length} prestige RSS feeds in parallel...`)
+
+  const googleNewsResults = await Promise.all(
     QUERIES.map(async ({ id, q }) => {
       try {
         const xml = await fetchRSS(q)
         const rawItems = parseItems(xml)
         const items = filterValidItems(rawItems)
-        return { id, q, items, filteredOut: rawItems.length - items.length, error: null }
+        return { id, q, items, filteredOut: rawItems.length - items.length, error: null, kind: 'google' }
       } catch (err) {
-        return { id, q, items: [], filteredOut: 0, error: String(err) }
+        return { id, q, items: [], filteredOut: 0, error: String(err), kind: 'google' }
       }
     }),
   )
+
+  const prestigeResults = await Promise.all(
+    PRESTIGE_FEEDS.map(async ({ id, source, url }) => {
+      try {
+        const xml = await fetchPrestigeRSSFeed(url, source)
+        const rawItems = parseItems(xml).map((it) => ({ ...it, sourceName: source }))
+        let items = filterValidItems(rawItems)
+        items = filterByDateWindow(items, date)
+        return { id, q: url, source, items, filteredOut: rawItems.length - items.length, error: null, kind: 'prestige' }
+      } catch (err) {
+        return { id, q: url, source, items: [], filteredOut: 0, error: String(err), kind: 'prestige' }
+      }
+    }),
+  )
+
+  const results = [...googleNewsResults, ...prestigeResults]
 
   const allItems = {}
   let totalItems = 0

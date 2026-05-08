@@ -122,10 +122,22 @@ Mantidas rigorosamente do piloto 22/Abr:
 
 Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de URLs específicas, gamma-api em vez de polymarket.com/event). PreToolUse hook `precommit-afos-daily-urls.py` bloqueia Write automaticamente se detectar violações críticas.
 
-### URLs PROIBIDAS (bloqueiam Write)
+### URLs PROIBIDAS (bloqueiam Write — gate Python)
 
 - ❌ `gamma-api.polymarket.com` — URL de API REST, não interface humana. Use `polymarket.com/event/{slug}`.
 - ❌ Linha "Fontes citadas:" no rodapé com markdown links `[Texto](URL)` — o template renderiza `data.sources` como **texto plano**, então markdown vira texto literal. Use texto plano separado por vírgulas.
+- ❌ **URL Google News redirect truncada (<150 chars)** — token incompleto não resolve para a matéria, leitor recebe erro 400/404. Releia URL completa do `news-cache/{YYYY-MM-DD}.json`. **NÃO copie via `head -c N` ou similar** — sempre ler URL inteira.
+- ❌ **URL retornando HTTP 4xx/5xx no HEAD check** — gate faz `urllib.request.HEAD` com User-Agent browser em paralelo (8 workers, 8s timeout cada). Domínios anti-bot conhecidos (polymarket, TSE, paywalls Globo/Folha/Estadão) passam em network timeout, mas 4xx/5xx explícito SEMPRE bloqueia.
+
+### REGRA PRESTIGE OUTLETS (Folha/Globo/Estadão)
+
+Folha, O Globo e Estadão são veículos de prestígio nacional — citá-los empresta credibilidade ao AFOS Daily. **Mas só se o link levar a uma matéria real do veículo.** Hierarquia:
+
+1. **WebSearch primário** com `allowed_domains: ['folha.uol.com.br']` (ou outlet equivalente). Se WebSearch retornar URL bonita do próprio veículo, usar — paywall é OK, leitor chega na página com brand do veículo.
+2. **Google News redirect URL completa** (~400 chars do cache). Resolve para matéria do veículo via redirect.
+3. **Atribuição plain-text + link primário de outlet secundário** — quando 1 e 2 falham. Ex: "A reportagem original do O Globo, assinada por Malu Gaspar, [resumida em Revista Fórum](https://...)". Mantém credibilidade da fonte original sem prometer link que não funciona.
+
+**NUNCA fazer:** citar `[Folha](URL_quebrada)` quando URL gera 400/404. Hook bloqueia automaticamente, mas a regra editorial é: **preferir reformular o texto a forçar URL ruim**.
 
 ### FLUXO HÍBRIDO (procedimento obrigatório — adotado 07/Mai/2026)
 
