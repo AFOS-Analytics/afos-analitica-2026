@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-07",
-  "lastSyncedAt": "2026-05-07T19:00:00-03:00",
+  "lastUpdate": "2026-05-08",
+  "lastSyncedAt": "2026-05-08T19:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -106,6 +106,40 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Paraná Pesquisas",
+      "date": "2026-05-08",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa estadual MT publicada 08/Mai (Poder360): 1T Flávio Bolsonaro 44,6% × Lula 29,8%. Cenário Mato Grosso, sem extrapolação nacional.",
+      "scenarios": [
+        {
+          "name": "Cenário MT (1º turno)",
+          "results": [
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 44.6 },
+            { "candidate": "Lula (PT)", "percent": 29.8 }
+          ]
+        }
+      ],
+      "secondRound": []
+    },
+    {
+      "institute": "Quaest",
+      "date": "2026-05-08",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Nova pesquisa Quaest publicada 08/Mai pós-Messias e encontro Trump (VEJA). Disputa Lula × Flávio. Números detalhados não consolidados em fonte primária pública verificada.",
+      "scenarios": [],
+      "secondRound": []
+    },
     {
       "institute": "Paraná Pesquisas",
       "date": "2026-05-07",
@@ -256,57 +290,57 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 07/Mai/2026 19:00 BRT",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Futura/Apex RJ (06/Mai), Paraná Pesquisas SP (07/Mai), Polymarket (ao vivo fetchedAt 07/Mai 21:53 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 08/Mai/2026 19:30 BRT",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Futura/Apex RJ (06/Mai), Paraná Pesquisas SP (07/Mai), Quaest nova (08/Mai pós-Messias e Trump via VEJA), Paraná Pesquisas MT (08/Mai Flávio 44,6% × Lula 29,8% via Poder360), Polymarket (ao vivo fetchedAt 08/Mai 22:14 UTC).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "36-46.6%",
+        "pesquisaRange": "29.8-46.6%",
         "polymarket": "37.50%",
-        "tendenciaPesquisa": "Paraná Pesquisas SP 07/Mai: Lula 36% × Flávio 39,3% no 1T; 2T Flávio 48,1% × Lula 40,3% (CNN Brasil); Genial/Quaest 10 estados 06/Mai: Lula lidera em 5 estados Nordeste (Folha, Brasil de Fato); Meio/Ideia 2T nacional 06/Mai: Lula 44,7% × Flávio 45,3% (Poder360, Exame); AtlasIntel 28/Abr 1T 46.6% mantida; Real Time Big Data 05/Mai 1T 40% mantida",
-        "tendenciaPolymarket": "Estável 37.50% (mantém piso após DISPARA ontem ↑1.00pp); gap leve EXPANSÃO +7.50pp Flávio (vs +7.35pp ontem)"
+        "tendenciaPesquisa": "Quaest nova publicada hoje 08/Mai pós-Messias e Trump (VEJA); Paraná Pesquisas MT 08/Mai: Lula 29,8% × Flávio 44,6% (Poder360); Mantida Paraná Pesquisas SP 07/Mai Lula 36% × Flávio 39,3% (CNN Brasil); Genial/Quaest 10 estados 06/Mai Lula lidera em 5 Nordeste (Folha); Meio/Ideia 2T 06/Mai 44,7% × 45,3% (Poder360, Exame); AtlasIntel 28/Abr 1T 46.6% mantida; Real Time Big Data 05/Mai 1T 40% mantida",
+        "tendenciaPolymarket": "Estável 37.50% (mantém piso); gap em COMPRESSÃO +6.35pp Flávio (vs +7.50pp ontem 1.15pp ENTREGUE pela direita)"
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "34-48.1%",
-        "polymarket": "45.00%",
-        "tendenciaPesquisa": "Paraná Pesquisas SP 07/Mai: Flávio 39,3% × Lula 36% no 1T; 2T Flávio 48,1% × Lula 40,3% (CNN Brasil); Genial/Quaest 10 estados 06/Mai: Flávio à frente em SP, RJ + 3 estados (Pleno.News, Folha); Meio/Ideia 2T 06/Mai: Flávio 45,3% × Lula 44,7% (Poder360, Exame); Futura/Apex RJ 06/Mai: Flávio lidera (UOL); AtlasIntel 28/Abr 1T 39.7% mantida",
-        "tendenciaPolymarket": "DISPARA 45.00% (↑0.15pp leve avança de 44.85%); 2L DISPARA 65.50% (↑0.50pp consolida)"
+        "polymarket": "43.85%",
+        "tendenciaPesquisa": "Quaest nova 08/Mai (VEJA); Paraná Pesquisas MT 08/Mai: Flávio 44,6% × Lula 29,8% (Poder360); Mantida Paraná Pesquisas SP 07/Mai: Flávio 39,3% × Lula 36%; 2T 48,1% × 40,3% (CNN Brasil); Genial/Quaest 10 estados 06/Mai: Flávio à frente em SP, RJ + 3 estados (Pleno.News, Folha); Meio/Ideia 2T 06/Mai: 45,3% × 44,7% (Poder360); Futura/Apex RJ 06/Mai: Flávio lidera (UOL); AtlasIntel 28/Abr 1T 39.7% mantida",
+        "tendenciaPolymarket": "DEVOLVE 43.85% (↓1.15pp DEVOLVE de 45.00%); 2L 65.50% (estável consolida)"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "5.85%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3% mantida; Genial/Quaest 10 estados 06/Mai não destaca Renan; STF impeach leve cede 14.00% Poly",
-        "tendenciaPolymarket": "Estável 5.85% (mantém após ↑0.40pp ontem); 3º estável 32.50% firme em 2º na disputa"
+        "polymarket": "5.95%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3% mantida; Genial/Quaest 10 estados 06/Mai não destaca Renan; Quaest nova 08/Mai não destaca Renan (VEJA); STF impeach DEVOLVE 13.00% Poly",
+        "tendenciaPolymarket": "Leve avança 5.95% (↑0.10pp de 5.85%); 3º estável 32.50% Zema RECUPERA LIDERANÇA 35.00%"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3.3-5%",
-        "polymarket": "1.15%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via 1T mantida; 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai mantida); Caiado sem apoio explícito governadores PSD (Gazeta do Povo 04/Mai mantida)",
-        "tendenciaPolymarket": "DISPARA 1.15% (↑0.20pp recupera acima 1% de 0.95%); 3º DISPARA 14.50% (↑3.00pp recupera de 11.50%); PSD Senado DISPARA 4.25% (↑1.80pp recupera)"
+        "polymarket": "1.45%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.3%; Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via 1T mantida; 2T Caiado 42% × Lula 43% empate técnico (Estadão 05/Mai mantida); Mantida 'Caiado sem apoio explícito governadores PSD' (Gazeta do Povo 04/Mai mantida)",
+        "tendenciaPolymarket": "DISPARA 1.45% (↑0.30pp acima 1% de 1.15%); 3º DISPARA 16.00% (↑1.50pp DISPARA recupera de 14.50%); PSD Senado estável 4.25%"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "0.15%",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "Paraná Pesquisas SP 07/Mai foca presidencial; Vox SP gov: Tarcísio 38% × Haddad 26% mantido; 'Tarcísio confirma Felício Ramuth como vice + chapa Senado' (T7news 06/Mai mantida)",
-        "tendenciaPolymarket": "Estável 0.15% — foco mantido na reeleição SP. 3L 0.45% (estável). Republicanos Senado DISPARA 5.35% (↑3.70pp DISPARA)"
+        "tendenciaPesquisa": "Paraná Pesquisas MT 08/Mai foca presidencial Centro-Oeste; Vox SP gov: Tarcísio 38% × Haddad 26% mantido; 'Flávio diz elogiou Ciro como vice por cortesia, prefere mulher para chapa' (Valor 08/Mai); 'Tarcísio nega prejuízo com operação' (Folha 08/Mai)",
+        "tendenciaPolymarket": "Estável 0.15% — foco mantido na reeleição SP. 3L 0.25% (↓0.20pp leve). Republicanos Senado COLAPSA 0.75% (↓4.60pp DEVOLVE COLOSSAL)"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "3.95%",
-        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; Real Time Big Data 05/Mai 1T 4% mantida; Genial/Quaest 10 estados 06/Mai não destaca Zema competitivo; ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
-        "tendenciaPolymarket": "DISPARA 3.95% (↑0.40pp recupera de 3.55% após queda ontem); 3º DEVOLVE FORTE 33.50% (↓5.00pp DEVOLVE de 38.50% perde liderança); NOVO Senado DEVOLVE 1.00% (↓1.10pp)"
+        "polymarket": "4.25%",
+        "tendenciaPesquisa": "AtlasIntel 28/Abr 3.1%; Real Time Big Data 05/Mai 1T 4% mantida; Genial/Quaest 10 estados 06/Mai não destaca Zema competitivo; Quaest nova 08/Mai não destaca Zema (VEJA); ZEMA RADICALIZA impeachment STF + privatizar tudo (Estadão 03/Mai mantida)",
+        "tendenciaPolymarket": "DISPARA 4.25% (↑0.30pp de 3.95%); 3º RECUPERA LIDERANÇA 35.00% (↑1.50pp DISPARA volta ao topo de 33.50%); NOVO Senado leve cede 0.80% (↓0.20pp)"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "3.35%",
-        "tendenciaPesquisa": "Vox SP gov Haddad 26% × Tarcísio 38% mantida; Genial/Quaest 10 estados 06/Mai mostra Flávio à frente em SP (Folha); Paraná Pesquisas SP 07/Mai Flávio 39,3% extrapola favoritismo direita SP",
-        "tendenciaPolymarket": "Leve cede 3.35% (↓0.10pp de 3.45%); 2L estável 3.55%; 3L estável 4.15%; Camilo DEVOLVE FORTE 2.25% (↓1.30pp) Haddad agora ACIMA"
+        "polymarket": "4.05%",
+        "tendenciaPesquisa": "Vox SP gov Haddad 26% × Tarcísio 38% mantida; Quaest nova 08/Mai (VEJA); Paraná Pesquisas MT 08/Mai não cita SP; Mantida Genial/Quaest 10 estados 06/Mai mostra Flávio à frente em SP (Folha); Mantida Paraná Pesquisas SP 07/Mai Flávio 39,3%",
+        "tendenciaPolymarket": "DISPARA 4.05% (↑0.70pp DISPARA maior movimento individual presidencial do dia de 3.35%); 2L 3.25% (↓0.30pp leve cede); 3L 4.15% estável; Camilo recupera 2.55% (↑0.30pp) Haddad mantém 1.50pp ACIMA"
       }
     ]
   }
