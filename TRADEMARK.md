@@ -59,16 +59,9 @@ The AFOS Analytics **name and brand**, however, carry editorial responsibility. 
 
 ---
 
-## Official domains operated by AFOS Analytics
+## Official domain
 
-The canonical domain is **[afos-analytics.com](https://www.afos-analytics.com)**. The following are official mirror domains that redirect (HTTP 308 Permanent) to the canonical:
-
-- [afos-analytics.one](https://afos-analytics.one)
-- [afos-analytics.info](https://afos-analytics.info)
-- [afos-analytics.news](https://afos-analytics.news)
-- [afos-analytics.xyz](https://afos-analytics.xyz)
-
-Domains not in this list are **not** officially operated by AFOS Analytics. Use of any other `afos-analytics.*` TLD or variation of the name without authorization is a trademark violation under this policy.
+The canonical domain is **[afos-analytics.com](https://www.afos-analytics.com)**. Use of any other `afos-analytics.*` TLD or variation of the name without authorization is a trademark violation under this policy. To verify whether a specific domain is operated by AFOS Analytics, contact [contact@afos-analytics.com](mailto:contact@afos-analytics.com).
 
 ---
 
