@@ -64,14 +64,12 @@ ANTI_BOT_WHITELIST = {
     'estadao.com.br',
     'www.estadao.com.br',
     'valor.globo.com',
-    # AFOS próprio domínio — pode dar timeout no Windows local
-    'afos-analytics.com',
-    'www.afos-analytics.com',
-    'afos-analytics.one',
-    'afos-analytics.info',
-    'afos-analytics.news',
-    'afos-analytics.xyz',
 }
+
+# AFOS-próprios passam por regex genérico — qualquer subdomínio + qualquer TLD AFOS.
+# Não listar mirrors explicitamente: estratégia anti-bloqueio depende dos mirrors
+# serem menos discoverable. Lista explícita em repo público entrega lista ao bloqueador.
+AFOS_DOMAIN_RE = re.compile(r'^(?:[a-z0-9-]+\.)?afos-analytics\.[a-z]+$', re.IGNORECASE)
 
 # Tamanho mínimo de Google News redirect URL — tokens completos têm ~400 chars,
 # mas qualquer URL <150 chars é definitivamente truncada (perde resolução).
@@ -154,7 +152,7 @@ def check_url_http(url):
     except Exception:
         return (url, False, 'URL inválida', None)
 
-    in_whitelist = host in ANTI_BOT_WHITELIST
+    in_whitelist = host in ANTI_BOT_WHITELIST or bool(AFOS_DOMAIN_RE.match(host))
 
     req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': BROWSER_UA})
     try:
