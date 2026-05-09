@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-08",
-  "lastSyncedAt": "2026-05-08T19:30:00-03:00",
+  "lastUpdate": "2026-05-09",
+  "lastSyncedAt": "2026-05-09T09:00:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -290,8 +290,8 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 08/Mai/2026 19:30 BRT",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Futura/Apex RJ (06/Mai), Paraná Pesquisas SP (07/Mai), Quaest nova (08/Mai pós-Messias e Trump via VEJA), Paraná Pesquisas MT (08/Mai Flávio 44,6% × Lula 29,8% via Poder360), Polymarket (ao vivo fetchedAt 08/Mai 22:14 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 09/Mai/2026 09:00 BRT",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Futura/Apex RJ (06/Mai), Paraná Pesquisas SP (07/Mai), Percent Brasil MT (08/Mai Flávio 44,6% × Lula 29,8% via Poder360), Quaest rodada nacional pós-Messias e Trump iniciada 08/Mai (publicação prevista 13/Mai), Polymarket (ao vivo fetchedAt 09/Mai 06:17 UTC).",
     "candidates": [
       {
         "name": "Lula",

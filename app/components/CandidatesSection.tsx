@@ -14,29 +14,29 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "37.50%",
-    poll: "Lula estável 37.50% Poly (mantém piso). Gap COMPRIME +6.35pp Flávio (vs +7.50pp ontem) Flávio devolve liderança. 2L Lula estável 19.50%. Quaest nova pesquisa publicada hoje 08/Mai pós-Messias e encontro Trump (VEJA 08/Mai). Paraná Pesquisas MT: Flávio 44,6% × Lula 29,8% (Poder360 08/Mai). Mantida Genial/Quaest 10 estados (Lula em 5 Nordeste × Flávio em 5 SP/RJ/Sul) e Meio/Ideia 2T 45,3% × 44,7%.",
+    poll: "Lula estável 37.50% Poly (mantém piso). Gap leve compressão +6.15pp Flávio (vs +6.35pp ontem). 2L Lula estável 19.50%. STF IMPEACH RECUPERA 14.00% Poly (↑1.00pp de 13.00%) coincide com decisão Moraes suspendendo Lei da Dosimetria (Folha, O Globo, G1, Estadão, Valor, VEJA 09/Mai). Mantida Quaest INICIA rodada nacional pós-Messias e Trump (publicação prevista 13/Mai).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "Lula declarou que disse a Trump não querer guerra, disputa é narrativa (G1, O Globo, Valor 08/Mai). Tarifas dominaram conversa Lula × Trump, minerais e big techs em 2º plano (Folha 08/Mai). Operação Ciro Nogueira desdobramentos: Pimenta cobra CPI Master rejeita acordão (Jornal O Sul 08/Mai). Mendonça aguarda PF/PGR para decidir Papuda ou domiciliar Vorcaro (O Globo 08/Mai)."
+    risk: "Moraes suspende aplicação Lei da Dosimetria até STF julgar (Folha, G1, VEJA 09/Mai) decisão monocrática reabre tensão STF × Congresso. Folha analise Três Poderes Lula vencedor da semana, Ciro Nogueira perdedor (Folha 09/Mai). Bondades governo Lula somam R$ 144 bilhões ano eleitoral (Folha 09/Mai). Flávio fala governo de até 8 anos após acenar com fim de reeleição (Folha, O Globo, Valor 09/Mai)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "43.85%",
-    poll: "Flávio DEVOLVE 43.85% Poly (↓1.15pp de 45.00%) entrega parte do gap. 2L Flávio 65.50% (estável consolida). 3L Flávio 5.10% (↑0.90pp leve recupera). Paraná Pesquisas MT 08/Mai: Flávio 44,6% × Lula 29,8% (Poder360). Quaest nova 08/Mai pós-Messias e Trump (VEJA). Mantida Genial/Quaest Flávio em SP, RJ + 3 estados.",
+    polymarket: "43.65%",
+    poll: "Flávio leve cede 43.65% Poly (↓0.20pp de 43.85%) mantém liderança forte. 2L Flávio DISPARA 66.50% (↑1.00pp consolida de 65.50%). 3L Flávio leve cede 4.85%. Mantida Percent Brasil MT 08/Mai Flávio 44,6% × Lula 29,8% (Poder360). Mantida Quaest INICIA quinta rodada nacional, publicação 13/Mai. Mantida Genial/Quaest 10 estados Flávio em SP, RJ + 3 estados.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "Flávio e Tarcísio se descolam de Ciro Nogueira após nova operação Master (Gazeta do Povo 08/Mai). PP cancela ato apoio eleitoral SP (Folha 08/Mai). Flávio diz elogiou Ciro como vice por cortesia, prefere mulher para chapa (Valor 08/Mai). Operação Ciro Nogueira inaugura chegada investigações Master ao Congresso (Estadão Andreazza 08/Mai). Master deixa Flávio Bolsonaro desnorteado (Hora do Povo 08/Mai). Flávio vai pregar união em viagem para lançar Carlos ao Senado (Estadão 08/Mai)."
+    risk: "Flávio lança pré-candidatura sábado 09/Mai em estado do Sul (Gazeta do Povo). Flávio exclui Amin e escolhe Carlos Bolsonaro vaga Senado SC (Poder360 09/Mai). Flávio fala governo de até 8 anos após acenar com fim de reeleição (Folha, O Globo, Valor 09/Mai). Flávio promete acabar com esquerda próximos 40 anos (VEJA 09/Mai). Flávio Pix é do Bolsonaro e Master é do Lula (Poder360 09/Mai). Flávio critica decisão Moraes suspender Lei da Dosimetria como jogo combinado (O Globo, Valor 09/Mai). Operação contra Ciro Nogueira e disputa Senado antecipam embate Lula × Flávio sobre Master (Folha 09/Mai)."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "5.95%",
-    poll: "Renan presidencial leve avança 5.95% Poly (↑0.10pp de 5.85%). 3L estável 32.50% Renan firme em 2º na disputa por terceiro lugar (Zema recupera liderança 35.00%). STF impeach DEVOLVE 13.00% Poly (↓1.00pp de 14.00%). Mantido 'Sou candidato direita' (BBC 28/Abr).",
+    polymarket: "5.85%",
+    poll: "Renan presidencial estável 5.85% Poly (após avanço leve ontem 5.95%). 3L estável 32.50% Renan firme em 2º na disputa por terceiro lugar (Zema mantém liderança 35.00%). 2L Renan leve avança 5.05% (↑0.20pp de 4.85%). STF impeach RECUPERA 14.00% Poly (↑1.00pp). Mantido 'Sou candidato direita' (BBC 28/Abr).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Caiado 3L DISPARA 16.00% (↑1.50pp DISPARA de 14.50%) competidor 3ª via avança. Operação Ciro Nogueira impacto centrão e Lula × Trump rescaldo (G1, Folha, Valor 08/Mai) capturam ciclo institucional reduz oxigênio outsider. Quaest nova 08/Mai não destaca Renan competitivo."
+    risk: "Caiado 3L DEVOLVE 13.50% (↓2.50pp DEVOLVE de 16.00%) competidor 3ª via cede. Decisão Moraes suspender Lei da Dosimetria reabre narrativa anti-STF favorável outsider mas Flávio captura espaço com pré-candidatura SC e governo 8 anos. Quaest nova rodada pós-Messias e Trump iniciada 08/Mai não destaca Renan (VEJA 09/Mai)."
   },
   {
     name: "Fernando Haddad",
@@ -44,9 +44,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "4.05%",
-    poll: "Haddad presidencial DISPARA 4.05% Poly (↑0.70pp de 3.35%) maior movimento individual presidencial do dia. 2L 3.25% (↓0.30pp leve cede). 3L 4.15% (estável). Camilo presidencial 2.55% (↑0.30pp recupera) Haddad agora 1.50pp ACIMA Camilo gap presidencial expande favorável.",
+    poll: "Haddad presidencial estável 4.05% Poly (após ↑0.70pp DISPARA ontem). 2L Haddad leve cede 2.95% (↓0.30pp de 3.25%). 3L 3.95% (↓0.20pp leve). Camilo presidencial 2.55% (estável) Haddad mantém 1.50pp ACIMA Camilo gap presidencial mantido favorável.",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Tarcísio nega prejuízo com operação, e PP de Ciro Nogueira cancela ato para apoio eleitoral em SP (Folha 08/Mai). Paraná Pesquisas MT mostra Flávio 44,6% × Lula 29,8% extrapolação favorece Tarcísio em SP (Poder360 08/Mai) Haddad enfraquece estadual. PT Senado leve cede 3.15% (↓0.15pp). Flávio pregar união em viagem para lançar Carlos ao Senado (Estadão 08/Mai)."
+    risk: "Flávio Bolsonaro lança pré-candidatura SC sábado 09/Mai (Gazeta do Povo) consolida coalizão direita Sul. Flávio governo de até 8 anos após acenar com fim de reeleição (Folha 09/Mai) reposicionamento. PT Senado leve cede 2.55% (↓0.60pp leve). Decisão Moraes suspender Lei da Dosimetria 09/Mai polariza base PT vê 'vitória democracia' oposição diz 'STF fechou Congresso' (Estadão 09/Mai)."
   },
   {
     name: "Ronaldo Caiado",
@@ -54,19 +54,19 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "1.45%",
-    poll: "Caiado presidencial DISPARA 1.45% Poly (↑0.30pp de 1.15%) consolida acima 1%. 3L DISPARA 16.00% (↑1.50pp DISPARA de 14.50%) reaproxima Renan 32.50% e Zema 35.00%. PSD Senado estável 4.25%. Mantido 'Caiado lidera 3ª via 1T 5%' (Real Time Big Data 05/Mai). Genial/Quaest GO Caiado lidera (O Globo Pulso 06/Mai mantida).",
+    poll: "Caiado presidencial estável 1.45% Poly (após DISPARA ontem). 3L DEVOLVE 13.50% (↓2.50pp DEVOLVE de 16.00%) corrige movimento ontem. PSD Senado estável 4.25%. Mantido 'Caiado lidera 3ª via 1T 5%' (Real Time Big Data 05/Mai). Mantida Genial/Quaest GO Caiado lidera (O Globo Pulso 06/Mai mantida).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Senado REORGANIZAÇÃO HOJE: PL estável 81.50%, Republicanos COLAPSA 0.75% (↓4.60pp DEVOLVE COLOSSAL de 5.35%) reprecificação massiva, MDB DISPARA 6.40% (↑0.60pp). 'Caiado sem apoio explícito governadores PSD na corrida' (Gazeta do Povo 04/Mai mantida) PSD fragmentado. União Senado leve cede 4.65% (↓0.65pp)."
+    risk: "Senado REORGANIZAÇÃO HOJE: PL estável 81.50%, MDB DEVOLVE FORTE 3.30% (↓3.10pp DEVOLVE de 6.40%) corrige movimento ontem, PSB DEVOLVE FORTE 1.25% (↓2.35pp DEVOLVE de 3.60%), União leve cede 4.25% (↓0.40pp). Flávio lança pré-candidatura SC e escolhe Carlos para Senado SC excluindo Amin (Poder360 09/Mai) consolida direita Sul. 'Caiado sem apoio explícito governadores PSD' (Gazeta do Povo 04/Mai mantida)."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "4.25%",
-    poll: "Zema DISPARA presidencial 4.25% Poly (↑0.30pp de 3.95% recupera). 3L RECUPERA LIDERANÇA 35.00% (↑1.50pp DISPARA de 33.50% volta ao topo). NOVO Senado leve cede 0.80% (↓0.20pp leve). INFLAÇÃO REORGANIZAÇÃO HOJE: bandas altas (≥6.50%) DEVOLVEM 44.70% (↓15.95pp DEVOLVE FORTE de 60.65%) revertendo movimento ontem. Banda 5.00-5.49% DISPARA 33.60% (↑12.85pp DISPARA recupera liderança).",
+    polymarket: "4.35%",
+    poll: "Zema DISPARA leve presidencial 4.35% Poly (↑0.10pp de 4.25%). 3L mantém liderança 35.00% (estável). NOVO Senado leve 0.85% (estável). INFLAÇÃO REORGANIZAÇÃO COLOSSAL: bandas altas (≥6.50%) DEVOLVEM 27.60% (↓17.10pp DEVOLVE COLOSSAL de 44.70%) movimento sem paralelo dia. Banda 5.00-5.49% mantém liderança 32.75%.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Renan 3L estável 32.50% empata virtualmente com Zema. Caiado 3L DISPARA 16.00% (↑1.50pp). Operação Ciro Nogueira fragmenta direita interna PP cancela ato SP (Folha 08/Mai). Vorcaro quer devolver R$ 40 bilhões em 10 anos (Poder360 08/Mai). Quaest nova 08/Mai não destaca Zema."
+    risk: "Decisão Moraes suspender Lei da Dosimetria (Folha, G1, VEJA 09/Mai) reabre narrativa anti-STF mas Flávio captura espaço com pré-candidatura SC e governo 8 anos (Folha, O Globo, Valor 09/Mai). Caiado 3L DEVOLVE 13.50% (↓2.50pp). Flávio promete acabar com esquerda 40 anos (VEJA 09/Mai). Quaest rodada pós-Messias e Trump iniciada 08/Mai não destaca Zema (VEJA 09/Mai)."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly (estável). 3L 0.25% (↓0.20pp leve cede). Republicanos Senado COLAPSA 0.75% (↓4.60pp DEVOLVE COLOSSAL de 5.35%) reprecificação massiva.",
+    poll: "Tarcísio presidencial 0.15% Poly (estável). 3L 0.25% (estável). Republicanos Senado leve recupera 1.00% (↑0.25pp de 0.75%) movimento técnico após colapso ontem.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio nega prejuízo com operação, e PP cancela ato apoio (Folha 08/Mai). Tarcísio e Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai mantido). Paraná Pesquisas MT extrapola favoritismo direita (Poder360 08/Mai). Foco mantido na reeleição SP."
+    risk: "Tarcísio+Flávio reportados PG por crimes eleitorais (Revista Fórum 02/Mai mantido). Foco mantido na reeleição SP. Flávio lança pré-candidatura SC sábado 09/Mai (Gazeta do Povo) consolida coalizão direita Sul. Operação Ciro Nogueira impacta Centrão e PP de Ciro Nogueira cancela ato apoio SP (Folha 08/Mai mantida)."
   },
 ];
 
