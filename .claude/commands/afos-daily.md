@@ -122,6 +122,28 @@ Mantidas rigorosamente do piloto 22/Abr:
 
 Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de URLs específicas, gamma-api em vez de polymarket.com/event). PreToolUse hook `precommit-afos-daily-urls.py` bloqueia Write automaticamente se detectar violações críticas.
 
+### REGRA 30/70 (definitiva — firmada 08/Mai/2026, vale PT-BR/EN/ES)
+
+> **30% veículos âncora via RSS direto + 70% veículos secundários via Google News redirect**
+
+**Veículos âncora (~30% das citações, RSS direto preserva URL primária):**
+- Folha de S.Paulo · O Globo · G1 · Estadão · Valor · VEJA
+
+**Veículos secundários (~70% das citações, Google News redirect):**
+- Poder360 · CartaCapital · InfoMoney · Brasil 247 · Imirante · Diário Carioca · CNN Brasil · Gazeta do Povo · Hora do Povo · Jornal O Sul · UOL Notícias · Correio Braziliense · Diário do Centro do Mundo · BBC News Brasil · Estado de Minas · etc.
+
+**Tolerância:** ±10pp aceitável (target 30/70, real 38/62 em 08/Mai = OK). Razão: prioriza diversidade de cobertura preservando credibilidade institucional dos âncoras.
+
+**Operacionalização:**
+- Items com `qid` começando em `prestige-` no cache `public/news-cache/{YYYY-MM-DD}.json` são âncora (URL primária do RSS direto)
+- Items das queries Google News (`eleicoes-2026`, `flavio-lula`, `master-vorcaro`, `pesquisas`, `aprovacao`, `estaduais`) são secundários (Google News redirect)
+- Mirar 30% prestígio + 70% secundário ao construir parágrafos da síntese
+- **Seção "Fontes consultadas" SEPARADA em 2 blocos:**
+  - "Matérias com link direto para a notícia" — primárias âncora
+  - "Matérias secundárias (URL Google News redirect — clique resolve à matéria)" — secundárias
+
+**Aplicar em PT-BR, EN e ES uniformemente** (traduções via `translate-afos-daily.ts` mantêm URLs originais — proporção é definida na geração PT, replicada nas traduções).
+
 ### URLs PROIBIDAS (bloqueiam Write — gate Python)
 
 - ❌ `gamma-api.polymarket.com` — URL de API REST, não interface humana. Use `polymarket.com/event/{slug}`.
