@@ -13,18 +13,39 @@ import { isValidDate, readDailyMarkdown, extractExternalUrls } from './lib/daily
 
 const WAYBACK_BASE = 'https://web.archive.org/save/'
 const THROTTLE_MS = 3000
+const FETCH_TIMEOUT_MS = 120000
+const MAX_RETRIES = 3
 
-async function archiveUrl(url: string): Promise<{ ok: boolean; error?: string }> {
+async function archiveOnce(url: string): Promise<{ ok: boolean; error?: string }> {
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
   try {
     const res = await fetch(WAYBACK_BASE + url, {
       method: 'GET',
       redirect: 'follow',
       headers: { 'User-Agent': 'AFOS-Analytics-Wayback-Archiver/1.0' },
+      signal: controller.signal,
     })
     return res.ok ? { ok: true } : { ok: false, error: `HTTP ${res.status}` }
   } catch (err) {
     return { ok: false, error: String(err) }
+  } finally {
+    clearTimeout(timeout)
   }
+}
+
+async function archiveUrl(url: string): Promise<{ ok: boolean; error?: string; attempts: number }> {
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    const result = await archiveOnce(url)
+    if (result.ok) return { ok: true, attempts: attempt }
+    if (attempt < MAX_RETRIES) {
+      const backoff = 2000 * attempt
+      await new Promise(r => setTimeout(r, backoff))
+    } else {
+      return { ok: false, error: result.error, attempts: attempt }
+    }
+  }
+  return { ok: false, error: 'unreachable', attempts: MAX_RETRIES }
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
@@ -56,10 +77,10 @@ async function main() {
     process.stdout.write(`  [${i + 1}/${urls.length}] ${short} `)
     const result = await archiveUrl(url)
     if (result.ok) {
-      console.log('OK')
+      console.log(result.attempts > 1 ? `OK (retry ${result.attempts})` : 'OK')
       ok++
     } else {
-      console.log(`FAIL (${result.error})`)
+      console.log(`FAIL after ${result.attempts} attempts (${result.error})`)
       fail++
     }
     if (i < urls.length - 1) await sleep(THROTTLE_MS)

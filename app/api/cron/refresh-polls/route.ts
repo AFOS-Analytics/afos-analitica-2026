@@ -18,6 +18,11 @@ import { generateCrossAnalysis } from '../../../../lib/tse/cross-polymarket'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { audit } from '../../../../lib/audit'
 
+// Cron baixa CSV TSE + cruza com Polymarket. TSE CDN às vezes lento (10-30s),
+// + Polymarket fetch (10s timeout) + persist Neon. Sem maxDuration explícito,
+// Vercel Hobby aborta em 60s. 90s cobre pior caso TSE+Polymarket+persist.
+export const maxDuration = 90
+
 export async function GET(request: Request) {
   const startTime = Date.now()
 
