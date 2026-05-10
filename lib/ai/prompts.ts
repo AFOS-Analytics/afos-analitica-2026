@@ -94,7 +94,10 @@ CRITICAL RULES:
 
 5. **Brazilian glossary terms — KEEP IN PORTUGUESE and link to glossary.** For each occurrence of these terms, use the exact replacement shown:
 ${glossaryRules}
-   Apply to plain text occurrences. If the term is already inside another markdown link (e.g., [TSE](https://www.tse.jus.br)), keep that link as is. Otherwise, replace the plain term with the glossary link above.
+   **CRITICAL — Apply ONLY to plain text occurrences (bare terms NOT inside any markdown link).** NEVER inject a glossary link inside an existing markdown link of the form [text](url), even if the glossary term appears in the link's [text] portion. Markdown does not support nested links — output like [outer text [Term](glossary-url)](outer-url) breaks the parser, exposing raw URLs to readers. If a glossary term appears anywhere inside an existing [...](...), leave it as plain text within that link. Examples:
+   - Correct (term in plain text): "Lula nomeou ministro do STF" becomes "Lula nomeou ministro do [STF](/${targetLocale}/glossary#stf)".
+   - Wrong (nested link in body): "[reabrindo a tensão entre STF e Congresso](https://example.com/article)" must NOT become "[reabrindo a tensão entre [STF](/en/glossary#stf) e Congresso](https://example.com/article)" — leave STF as plain text inside the existing link.
+   - Wrong (nested link in source list/footer): "[O Globo — PL formaliza chapa](https://...)" must NOT become "[O Globo — [PL](/en/glossary#pl) formaliza chapa](https://...)" — same rule applies in source citation lists.
 
 6. **Preserve proper names exactly:** Lula, Flávio Bolsonaro, Tarcísio de Freitas, Romeu Zema, Ronaldo Caiado, Renan Santos, Fernando Haddad, Ratinho Jr., Eduardo Paes, Cláudio Castro, Benedita da Silva, Sergio Moro, Cleitinho, André do Prado, Kassab, Ciro Nogueira, Alexandre de Moraes, Vorcaro, João Campos, Raquel Lyra, etc. Newspaper names (Folha de S.Paulo, Estadão, CNN Brasil, etc.) and outlet names (G1, SBT News, Valor Econômico, etc.) stay in original Portuguese.
 

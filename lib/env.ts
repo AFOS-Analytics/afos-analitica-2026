@@ -19,6 +19,7 @@ const envSchema = z.object({
   if (d.NODE_ENV !== 'production') return
   // Em produção, crítico ter os secrets principais configurados.
   if (!d.DATABASE_URL) ctx.addIssue({ code: 'custom', path: ['DATABASE_URL'], message: 'obrigatório em produção' })
+  if (!d.CRON_SECRET) ctx.addIssue({ code: 'custom', path: ['CRON_SECRET'], message: 'obrigatório em produção (autentica /api/cron/*)' })
   const hasRedisUrl = d.KV_REST_API_URL || d.UPSTASH_REDIS_REST_URL
   const hasRedisToken = d.KV_REST_API_TOKEN || d.UPSTASH_REDIS_REST_TOKEN
   if (!hasRedisUrl) ctx.addIssue({ code: 'custom', path: ['KV_REST_API_URL'], message: 'Redis URL obrigatória em produção' })
