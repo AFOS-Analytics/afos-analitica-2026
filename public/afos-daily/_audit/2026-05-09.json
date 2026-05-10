@@ -1,0 +1,37 @@
+{
+  "date": "2026-05-09",
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "Moraes suspende Lei da Dosimetria via decisão monocrática",
+        "verification1": "não em 7 dailies anteriores → novidade",
+        "verification2": "Folha/O Globo/G1 retornaram 403; cache RSS BBC + Canal MyNews + Folha + Estadão + VEJA + O Globo confirmam",
+        "type": "evento",
+        "decision": "incorporar (decisão monocrática, não plenário)"
+      },
+      {
+        "event": "Flávio lança pré-candidatura sábado 09/Mai em SC",
+        "verification1": "não em 7 dailies → novidade",
+        "verification2": "WebFetch Gazeta do Povo OK + cache múltiplos hits",
+        "type": "evento",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Flávio governo de até 8 anos",
+        "verification1": "não em dailies → novidade",
+        "verification2": "Folha + O Globo + Valor cache RSS",
+        "type": "evento (declaração)",
+        "decision": "incorporar"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "VEJA-only para 40 anos (aceitável: declaração com URL primária)",
+    "numericalErrors": "OK - 28 pares fuzzy-match warnings, todos validados manualmente",
+    "fontesInventadas": "OK - Estadão/VEJA/Folha confirmados",
+    "quotesLiterais": "OK - canetada burocrática + jogo combinado confirmados",
+    "causacaoEspuria": "OK - STF impeach explicitamente NÃO atribuído a Moraes",
+    "verbosCriticos": "OK - suspendeu desambiguado como monocrática"
+  },
+  "decision": "prosseguir para preview"
+}

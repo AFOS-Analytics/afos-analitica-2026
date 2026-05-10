@@ -137,6 +137,8 @@ Each claim in AFOS Daily must link to the **specific article** that supports it 
 
 **Manual validator:** `npx tsx scripts/validate-afos-daily.ts {date} [--locale=en\|es]` exits 1 on critical errors (matches the PreToolUse hook). Used in CI checks and in operator workflow before commit.
 
+**Editorial source ratio (50/50 rule, firmed May 9, 2026):** each AFOS Daily uses a **minimum 50% anchor outlets via direct RSS** (Folha de S.Paulo, O Globo, G1, Estadão, Valor, VEJA — institutional credibility) **+ minimum 50% secondary outlets via Google News redirect** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc. — open access, reproduce anchor coverage without paywall). Refinement of the prior 30/70 rule motivated by the observation that anchor outlets often paywall content for non-subscribers (especially international readers); secondary outlets replicate the same coverage with open access. Applies uniformly to PT-BR / EN / ES. Translations preserve URLs as collected in the source language.
+
 ### Project Structure
 
 ```
