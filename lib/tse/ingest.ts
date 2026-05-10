@@ -31,47 +31,34 @@ export interface TSEPoll {
 
 /**
  * Baixa e parseia pesquisas presidenciais do TSE.
- * Retorna array de pesquisas filtradas por cargo "Presidente".
  *
- * TSE CDN pode retornar transient 503/504 (Cloudflare-fronted). Sem retry,
- * 1 falha = cron inteiro perdido. 2 attempts com backoff 5s/15s + timeout 30s.
+ * TSE CDN (Cloudflare-fronted) pode retornar 503/504 transient. 2 attempts
+ * com 5s de backoff + timeout 30s/attempt. Fail-fast em 4xx (URL errada /
+ * arquivo ausente) e em "ZIP estrutural" — não retenta esses.
  */
 export async function fetchTSEPolls(year: number = CURRENT_YEAR): Promise<TSEPoll[]> {
   const url = `${TSE_CDN}/pesquisa_eleitoral_${year}.zip`
 
-  let lastErr: unknown = null
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
       const res = await fetch(url, { signal: AbortSignal.timeout(30000) })
-      if (!res.ok) {
-        // 4xx é fail-fast (URL errada / arquivo não existe); 5xx é transient e retentável
-        if (res.status >= 400 && res.status < 500) {
-          throw new Error(`TSE CDN returned ${res.status} (no retry on 4xx)`)
-        }
-        throw new Error(`TSE CDN returned ${res.status}`)
-      }
+      if (!res.ok) throw new Error(`TSE CDN returned ${res.status}`)
 
-      const buffer = await res.arrayBuffer()
-      const zip = await JSZip.loadAsync(buffer)
-
+      const zip = await JSZip.loadAsync(await res.arrayBuffer())
       const brasilFile = zip.file(`pesquisa_eleitoral_${year}_BRASIL.csv`)
       if (!brasilFile) throw new Error('BRASIL.csv not found in ZIP')
 
-      const csvText = await brasilFile.async('text')
-      return parseCSV(csvText)
+      return parseCSV(await brasilFile.async('text'))
     } catch (err) {
-      lastErr = err
       const msg = err instanceof Error ? err.message : String(err)
-      // Não retentar em 4xx ou erro de parse (estrutural, não transient)
-      if (msg.includes('no retry on 4xx') || msg.includes('not found in ZIP')) throw err
-      if (attempt < 2) {
-        const backoff = attempt === 1 ? 5000 : 15000
-        console.warn(`[tse/ingest] attempt ${attempt} failed (${msg}); retry em ${backoff}ms`)
-        await new Promise(r => setTimeout(r, backoff))
-      }
+      // Fail-fast: 4xx (URL errada) ou ZIP estrutural — não adianta retentar
+      const isFailFast = /returned 4\d\d|not found in ZIP/.test(msg)
+      if (isFailFast || attempt === 2) throw err
+      console.warn(`[tse/ingest] attempt ${attempt} failed (${msg}); retry em 5s`)
+      await new Promise(r => setTimeout(r, 5000))
     }
   }
-  throw lastErr instanceof Error ? lastErr : new Error('TSE CDN fetch failed after 2 attempts')
+  throw new Error('TSE CDN fetch unreachable') // for TS — loop sempre termina via return ou throw
 }
 
 function parseCSV(csv: string): TSEPoll[] {
