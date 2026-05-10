@@ -1,0 +1,21 @@
+{
+  "date": "2026-05-10",
+  "factCheckGate": {
+    "events": [
+      {"event": "Lula DISPARA Polymarket 40.50%", "type": "movimento mercado", "decision": "incorporar como leitura técnica, sem causação"},
+      {"event": "Kassio Nunes assume TSE 12/Mai", "verification": "Folha prestige + Portal ABC + Tribuna Online + Folha Vitória — múltiplas fontes", "decision": "incorporar"},
+      {"event": "Publicitário coordena comunicação Flávio", "verification": "Folha prestige + GP1", "decision": "incorporar"},
+      {"event": "PL Florianópolis 5 mil", "verification": "WH3 single", "decision": "incorporar como continuidade do 09/Mai"},
+      {"event": "Flávio camiseta Pix-Master", "verification": "continuidade 09/Mai", "decision": "incorporar como continuidade"}
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Pesquisa MS citação genérica 'veículos locais' fallback honesto",
+    "numericalErrors": "OK Polymarket valores conferem com /atualizar 10/Mai",
+    "fontesInventadas": "OK Folha Kassio + Estadão Lula + Diário Carioca Centrão confirmados no cache",
+    "quotesLiterais": "OK aposentar Lula + Pix-Master atribuídos Poder360",
+    "causacaoEspuria": "OK gap COLAPSO tratado como leitura técnica não-causal",
+    "verbosCriticos": "OK assume/anulou/suspendeu desambiguados com datas"
+  },
+  "decision": "prosseguir para preview"
+}
