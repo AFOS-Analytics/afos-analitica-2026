@@ -226,15 +226,56 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
 
   if (!result.text) throw new Error('empty_translation')
 
-  setCache(key, result.text)
+  // Defense-in-depth: ainda que o prompt PROIBA glossary tags dentro de markdown
+  // links (rule 5 em prompts.ts), Haiku pode slip. Pós-resposta, removemos
+  // qualquer [term](/lang/glossary#anchor) que esteja aninhado dentro de outro
+  // [...](url) — mantém só o texto do termo. Loop até estável (múltiplos
+  // aninhados na mesma linha precisam de iteração).
+  let cleanText = result.text
+  if (req.type === 'afos-daily') {
+    cleanText = stripNestedGlossaryTags(cleanText)
+  }
 
-  const outputHash = createHash('sha256').update(result.text).digest('hex').slice(0, 32)
-  trackLlmRun(config.provider, req.sourceText, key, result.text, outputHash)
+  setCache(key, cleanText)
+
+  const outputHash = createHash('sha256').update(cleanText).digest('hex').slice(0, 32)
+  trackLlmRun(config.provider, req.sourceText, key, cleanText, outputHash)
 
   return {
-    translatedText: result.text,
+    translatedText: cleanText,
     cached: false,
     provider: config.provider,
     meta: { tokensIn: result.tokensIn, tokensOut: result.tokensOut, latencyMs },
   }
+}
+
+const GLOSSARY_TAG_RE = /\[([^\[\]]+)\]\(\/(?:en|es|pt-BR)\/glossary#[^)]+\)/g
+
+/**
+ * Remove glossary tags `[term](/lang/glossary#anchor)` aninhadas dentro de outro
+ * markdown link `[outer](url)`. Tags standalone são preservadas.
+ *
+ * Estratégia: para cada match de glossary tag, conta `[` não fechados no texto
+ * anterior. Se depth > 0, está aninhada (strip → mantém só o term). Se depth = 0,
+ * standalone (preservar). Funciona corretamente com múltiplos tags no mesmo outer
+ * link, ao contrário de regex puro.
+ */
+function stripNestedGlossaryTags(text: string): string {
+  let result = ''
+  let lastIdx = 0
+  let match: RegExpExecArray | null
+  GLOSSARY_TAG_RE.lastIndex = 0
+  while ((match = GLOSSARY_TAG_RE.exec(text)) !== null) {
+    const before = text.slice(0, match.index)
+    let depth = 0
+    for (let i = 0; i < before.length; i++) {
+      if (before[i] === '[') depth++
+      else if (before[i] === ']' && depth > 0) depth--
+    }
+    result += text.slice(lastIdx, match.index)
+    result += depth > 0 ? match[1] : match[0]
+    lastIdx = match.index + match[0].length
+  }
+  result += text.slice(lastIdx)
+  return result
 }
