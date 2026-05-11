@@ -13,30 +13,30 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "40.50%",
-    poll: "Lula DISPARA 40.50% Poly (↑3.00pp de 37.50%) maior movimento individual presidencial em 24h. Gap COLAPSA para +1.10pp Flávio (vs +6.15pp ontem) compressão sem precedentes. 2L Lula 19.50% estável. STF IMPEACH DISPARA 16.50% Poly (↑2.50pp de 14.00%) continuação repercussão decisão Moraes Lei Dosimetria. Mantida Quaest às vésperas publicação 13/Mai (VEJA 10/Mai).",
+    polymarket: "39.50%",
+    poll: "Lula leve cede 39.50% Poly (↓1.00pp de 40.50%) gap leve expansão +1.85pp Flávio (vs +1.10pp ontem). 2L Lula 20.00% (↑0.50pp leve). STF IMPEACH leve cede 15.50% Poly (↓1.00pp). EVENTO MAIOR: Futura/Apex publicada hoje 2T Flávio 46,9% × Lula 44,4% empate técnico (CNN Brasil, JOTA, Poder360, UOL, O TEMPO 11/Mai). Lula rejeição 47,4% × Flávio 43,8% (Poder360 11/Mai). Datafolha nova pesquisa anunciada esta semana (VEJA, O Globo 11/Mai). Quaest publicação confirmada 13/Mai D-Day LAUNCH AFOS.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "Estadão analítica dados explicam por que mesmo desgastado Lula segue competitivo (Estadão 10/Mai). Lula mensagem Dia das Mães acena eleitorado feminino (BOL, Poder360, R7 10/Mai). Lula e Flávio buscam apoio feminino no Dia das Mães (diário do estado 10/Mai). Centrão define preço para apoiar Lula ou Flávio (Diário Carioca 10/Mai). Mantido decisão Moraes Lei Dosimetria 09/Mai polariza base Lula vs oposição. Mantido Bondades governo Lula R$ 144 bilhões ano eleitoral (Folha 09/Mai)."
+    risk: "Futura/Apex publicada hoje empate técnico (CNN Brasil, JOTA 11/Mai) reduz vantagem psicológica. Lula rejeição 47,4% acima Flávio 43,8% (Poder360 11/Mai). PT campanha terrorismo fiscal vs Flávio contra-ataque (Gazeta do Povo 11/Mai). Ciro Gomes descarta Presidência anuncia governo Ceará (O Dia, Terra 11/Mai) reduz fragmentação esquerda fora-PT. Kassio Nunes Marques assume TSE oficialmente (Terra 11/Mai). Mantida Estadão analítica Lula competitivo desgastado (10/Mai). Mantido Bondades R$ 144bi (Folha 09/Mai)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "41.60%",
-    poll: "Flávio DEVOLVE 41.60% Poly (↓2.05pp de 43.65%) primeira queda significativa após série de altas. Gap COLAPSA para +1.10pp (vs +6.15pp ontem). 2L Flávio 66.50% estável consolida liderança forte. 3L Flávio leve cede 4.80%. Mantida Quaest publicação 13/Mai (VEJA 10/Mai). Pesquisa MS mostra Flávio à frente Lula governo Riedel lidera (Enfoque MS 10/Mai). Disputa apertada Lula × Flávio segue acirrada (Real Time Big Data 10/Mai recap).",
+    polymarket: "41.35%",
+    poll: "Flávio leve cede 41.35% Poly (↓0.25pp de 41.60%) gap leve expansão +1.85pp Flávio. 2L Flávio 67.50% (↑1.00pp consolida). 3L Flávio DEVOLVE 3.30% (↓1.50pp). EVENTO MAIOR: Futura/Apex publicada hoje 2T Flávio 46,9% × Lula 44,4% empate técnico (CNN Brasil, JOTA, Poder360, UOL, O TEMPO, Estado de Minas, Exame 11/Mai). 1T também empate técnico Futura/Apex. Flávio rejeição 43,8% abaixo Lula 47,4% (Poder360 11/Mai). Datafolha nova pesquisa anunciada esta semana (VEJA, O Globo 11/Mai). Quaest publicação confirmada 13/Mai D-Day.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "Flávio diz Brasil vai aposentar Lula em 2026 (Poder360 10/Mai). PL reúne 5 mil apoiadores Florianópolis lança pré-candidaturas 2026 (WH3 10/Mai) consolida ato sábado. Publicitário amigo Flávio vai coordenar comunicação campanha (Folha 10/Mai) profissionalização. Flávio camiseta Pix é Bolsonaro Master é Lula (Pleno.News 10/Mai) consolida narrativa. Flávio Jovens mal sabem interpretar texto Lula educação (Poder360 10/Mai). Flávio defende fim reeleição mandato 4 anos muito pouco (Muita Informação 10/Mai). Mantido governo de até 8 anos (Folha 09/Mai), acabar com esquerda 40 anos (VEJA 09/Mai). Centrão preço apoio Lula ou Flávio (Diário Carioca 10/Mai)."
+    risk: "Futura/Apex publicada hoje empate técnico 2T 46,9% × 44,4% confirma cenário competitivo (CNN Brasil 11/Mai). 'Empate técnico Lula cresce Flávio cai em pesquisa que deu vitória Bolsonaro 2022' (Revista Fórum 11/Mai) framing crítico. PT campanha terrorismo fiscal vs Flávio (Gazeta do Povo 11/Mai). Mantidos 10/Mai: PL 5 mil Florianópolis (WH3), Publicitário coordena comunicação (Folha), Flávio aposentar Lula (Poder360), camiseta Pix-Master (Pleno.News), fim reeleição (Muita Informação). Mantido governo 8 anos (Folha 09/Mai), acabar esquerda 40 anos (VEJA 09/Mai). Centrão preço apoio (Diário Carioca 10/Mai)."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "5.55%",
-    poll: "Renan presidencial leve cede 5.55% Poly (↓0.30pp de 5.85%). 3L 31.50% (↓1.00pp de 32.50%) Zema mantém liderança 34.50%. 2L Renan leve cede 4.95% (↓0.10pp). STF impeach DISPARA 16.50% Poly (↑2.50pp) maior repercussão Moraes Dosimetria favorece narrativa anti-establishment.",
+    polymarket: "5.45%",
+    poll: "Renan presidencial leve cede 5.45% Poly (↓0.10pp de 5.55%). 3L 31.50% estável Zema mantém liderança 33.50% (↓1.00pp). 2L Renan DISPARA 5.45% (↑0.50pp). STF impeach leve cede 15.50% Poly (↓1.00pp). Futura/Apex publicada hoje não destaca Renan (CNN Brasil 11/Mai). Ciro Gomes descarta Presidência sai do páreo (O Dia, Terra 11/Mai).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Caiado 3L DISPARA 16.50% (↑3.00pp recupera de 13.50%) competidor 3ª via avança forte. Lula DISPARA presidencial 40.50% (↑3.00pp) reduz oxigênio outsider. Quaest às vésperas publicação 13/Mai não destaca Renan (VEJA 10/Mai). Mantido sem destaque pesquisas estaduais MS, SC."
+    risk: "Caiado 3L DISPARA 18.50% (↑2.00pp continua avanço 2 dias seguidos) competidor 3ª via avança. Camilo 3L DISPARA 4.25% (↑3.20pp NOVO movimento) fragmenta espaço 3ª via. Futura/Apex publicada hoje empate técnico Lula × Flávio reduz oxigênio outsider (CNN Brasil 11/Mai). Quaest publicação confirmada 13/Mai D-Day não deve destacar Renan."
   },
   {
     name: "Fernando Haddad",
@@ -44,9 +44,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "3.95%",
-    poll: "Haddad presidencial leve cede 3.95% Poly (↓0.10pp de 4.05%). 2L Haddad leve avança 3.05% (↑0.10pp). 3L 3.90% leve cede. Camilo presidencial DISPARA leve 2.75% (↑0.20pp) Haddad mantém 1.20pp ACIMA Camilo gap presidencial estreitando. PT Senado DEVOLVE COLOSSAL 0.25% (↓2.30pp DEVOLVE de 2.55%) movimento extraordinário.",
+    poll: "Haddad presidencial 3.95% estável Poly. 2L Haddad 3.00% estável (↓0.05pp leve). 3L 4.15% (↑0.25pp leve). Camilo presidencial 2.75% estável Haddad mantém 1.20pp ACIMA Camilo. PT Senado DISPARA COLOSSAL 2.15% (↑1.90pp recupera de COLAPSO 0.25% ontem) reorganização governista.",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Lula DISPARA presidencial 40.50% (↑3.00pp) consolida vetor PT central. PT Senado COLAPSA 0.25% (↓2.30pp DEVOLVE COLOSSAL) reorganização contra direita estadual. PSB DISPARA FORTE Senado 4.80% (↑3.55pp). Mantida pesquisa SP Tarcísio frente Haddad. Estadão analítica Lula segue competitivo mesmo desgastado (10/Mai)."
+    risk: "Futura/Apex publicada hoje empate técnico nacional (CNN Brasil 11/Mai). Datafolha nova pesquisa anunciada esta semana (VEJA, O Globo 11/Mai). PT Senado DISPARA COLOSSAL recupera (↑1.90pp) sinal reorganização base governista. PSB Senado DEVOLVE COLOSSAL 0.75% (↓4.05pp). Lula leve cede presidencial 39.50% (↓1.00pp) gap leve expansão +1.85pp. Mantida pesquisa SP Tarcísio frente Haddad."
   },
   {
     name: "Ronaldo Caiado",
@@ -54,19 +54,19 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "1.25%",
-    poll: "Caiado presidencial leve cede 1.25% Poly (↓0.20pp de 1.45%). 3L DISPARA 16.50% (↑3.00pp DISPARA recupera de 13.50%) maior salto individual 3º lugar 24h. PSD Senado DEVOLVE FORTE 2.25% (↓2.00pp DEVOLVE de 4.25%). Mantido Caiado lidera 3ª via 1T 5% (Real Time Big Data 05/Mai recap 10/Mai). Caiado em rodeios palanques Flávio Caiado Zema (diário do estado 10/Mai).",
+    poll: "Caiado presidencial 1.25% estável Poly. 3L DISPARA 18.50% (↑2.00pp DISPARA continua avanço 2 dias seguidos de 16.50%) consolida posição 3º lugar. PSD Senado DISPARA 3.25% (↑1.00pp recupera de 2.25%). Mantido Caiado lidera 3ª via 1T 5% Real Time. Ciro Gomes descarta Presidência reduz competidor 3ª via (O Dia, Terra 11/Mai).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Senado REORGANIZAÇÃO TOTAL HOJE: PL DISPARA 83.00% (↑1.50pp), Podemos DISPARA COLOSSAL 7.95% (↑6.55pp de 1.40%), PSB DISPARA FORTE 4.80% (↑3.55pp), Republicanos DISPARA FORTE 3.85% (↑2.85pp), MDB ↑0.75pp 4.05%, União leve cede 3.65% (↓0.60pp), PSD DEVOLVE FORTE 2.25% (↓2.00pp), PT DEVOLVE COLOSSAL 0.25% (↓2.30pp). Movimento sem paralelo Senado 24h. Flávio Caiado Zema rodeios palanques (diário do estado 10/Mai)."
+    risk: "SENADO REORGANIZAÇÃO TOTAL OUTRA VEZ 24h: Republicanos DISPARA FORTE 8.15% (↑4.30pp MAIOR MOVIMENTO 24h), Podemos DEVOLVE 5.10% (↓2.85pp), MDB DISPARA 4.90% (↑0.85pp), PSD DISPARA 3.25% (↑1.00pp), PT DISPARA COLOSSAL 2.15% (↑1.90pp recupera), PSB DEVOLVE COLOSSAL 0.75% (↓4.05pp), Novo DISPARA 0.80% (↑0.55pp). Camilo 3L DISPARA 4.25% (↑3.20pp NOVO movimento) fragmenta 3ª via. Futura/Apex publicada hoje empate técnico nacional (CNN Brasil 11/Mai)."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "4.15%",
-    poll: "Zema presidencial leve cede 4.15% Poly (↓0.20pp de 4.35%). 3L mantém liderança 34.50% (↓0.50pp leve cede). NOVO Senado DEVOLVE 0.25% (↓0.60pp) movimento técnico. INFLAÇÃO 5.00-5.49% DISPARA 34.95% (↑2.20pp dominante), 7.00%+ DISPARA 17.10% (↑2.35pp), bandas altas (≥6.50%) leve cedem 26.50% (↓1.10pp).",
+    polymarket: "4.45%",
+    poll: "Zema presidencial DISPARA 4.45% Poly (↑0.30pp de 4.15%) recupera leve. 3L mantém liderança 33.50% (↓1.00pp leve cede). NOVO Senado DISPARA 0.80% (↑0.55pp recupera de 0.25%). INFLAÇÃO 5.00-5.49% DISPARA 36.60% dominante (↑1.65pp), 6.50-6.99% DISPARA FORTE 16.05% (↑6.65pp recupera), bandas altas (≥6.50%) DISPARA 28.90% (↑2.40pp recupera).",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Lula DISPARA 40.50% (↑3.00pp) reduz oxigênio outsider. Caiado 3L DISPARA 16.50% (↑3.00pp recupera) competidor 3ª via avança. STF IMPEACH DISPARA 16.50% (↑2.50pp) reabre narrativa anti-STF mas Zema não captura. Quaest às vésperas publicação 13/Mai não destaca Zema (VEJA 10/Mai). Zema rodeios palanques Flávio Caiado Zema (diário do estado 10/Mai)."
+    risk: "Caiado 3L DISPARA 18.50% (↑2.00pp continua avanço 2 dias) competidor 3ª via ameaça. Camilo 3L DISPARA 4.25% (↑3.20pp NOVO) fragmenta espaço 3ª via. Futura/Apex publicada hoje empate técnico nacional reduz outsider (CNN Brasil 11/Mai). Ciro Gomes descarta Presidência (O Dia, Terra 11/Mai). Quaest publicação 13/Mai D-Day não deve destacar Zema. STF IMPEACH leve cede 15.50% (↓1.00pp) reduz narrativa anti-STF."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.25%",
-    poll: "Tarcísio presidencial DISPARA leve 0.25% Poly (↑0.10pp de 0.15%). 3L 0.25% (estável). Republicanos Senado DISPARA FORTE 3.85% (↑2.85pp DISPARA de 1.00%) movimento extraordinário consolidação direita.",
+    poll: "Tarcísio presidencial 0.25% Poly estável. 3L 0.25% estável. Republicanos Senado DISPARA FORTE 8.15% (↑4.30pp DISPARA de 3.85%) MAIOR MOVIMENTO Senado 24h consolida coalizão direita estadual.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Republicanos Senado DISPARA FORTE 3.85% sinaliza coalizão direita estadual em construção. Flávio recebe articulação Centrão preço apoio (Diário Carioca 10/Mai). Mantido Tarcísio+Flávio reportados PG crimes eleitorais (Revista Fórum 02/Mai). Mantido foco reeleição SP."
+    risk: "Republicanos Senado DISPARA FORTE 8.15% (↑4.30pp MAIOR MOVIMENTO 24h) sinaliza coalizão direita estadual consolidando-se rapidamente. Frente a Frente Folha/UOL entrevista Kassab segunda 11/Mai (Folha 11/Mai). Mantido Tarcísio+Flávio reportados PG crimes eleitorais (Revista Fórum 02/Mai). Mantido foco reeleição SP."
   },
 ];
 
