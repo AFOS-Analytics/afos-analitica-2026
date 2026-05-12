@@ -1,0 +1,9 @@
+Contact: mailto:security@afos-analytics.com
+Expires: 2027-05-12T23:59:59.000Z
+Preferred-Languages: en, pt-BR, es
+Canonical: https://www.afos-analytics.com/.well-known/security.txt
+Policy: https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/SECURITY.md
+
+# Open-source civic intelligence — responsible disclosure welcome.
+# Please report vulnerabilities privately to the contact above before public disclosure.
+# See SECURITY.md for our coordinated-disclosure policy and scope.

@@ -50,12 +50,14 @@ export function LanguageSwitcher() {
         className="flex items-center justify-center border border-white/30 hover:bg-white/10 text-white p-2 rounded-lg transition-all focus:outline-2 focus:outline-offset-2 focus:outline-white"
         aria-label="Idioma"
         aria-expanded={open}
+        aria-haspopup="listbox"
+        aria-controls="locale-list"
       >
         <span className="text-lg leading-none" aria-hidden="true">🌐</span>
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-xl overflow-hidden z-50 min-w-[160px] border border-gray-200">
+        <div id="locale-list" role="listbox" className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-xl overflow-hidden z-50 min-w-[160px] border border-gray-200">
           {locales.map(loc => (
             <button
               key={loc}

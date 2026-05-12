@@ -2,6 +2,24 @@
   "name": "afos-analitica-2026",
   "version": "0.1.0",
   "private": true,
+  "description": "Open-source civic intelligence platform cross-referencing prediction markets, polling data and verified news for Brazil 2026 elections — global by design.",
+  "homepage": "https://www.afos-analytics.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AFOS-Analytics/afos-analitica-2026.git"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "elections",
+    "prediction-markets",
+    "polling",
+    "political-intelligence",
+    "open-source",
+    "polymarket",
+    "tse",
+    "brazil-2026",
+    "civic-tech"
+  ],
   "scripts": {
     "dev": "next dev",
     "postinstall": "prisma generate",
