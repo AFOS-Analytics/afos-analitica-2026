@@ -1,10 +1,3 @@
-/**
- * OG Image Route Handler — locale-aware via ?locale=X
- * Substitui app/opengraph-image.tsx que não respeitava searchParams em Edge.
- *
- * Uso: /api/og?locale=en (ou pt-BR, es). Default: pt-BR.
- */
-
 import { ImageResponse } from 'next/og'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -80,7 +73,6 @@ export async function GET(request: NextRequest) {
         width: 1200,
         height: 630,
         headers: {
-          // Cache CDN 1h, navegador 0 (revalidação imediata se locale muda)
           'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
         },
       }

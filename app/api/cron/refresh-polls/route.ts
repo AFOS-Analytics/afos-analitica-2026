@@ -17,6 +17,7 @@ import { persistPolls } from '../../../../lib/tse/persist'
 import { generateCrossAnalysis } from '../../../../lib/tse/cross-polymarket'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { audit } from '../../../../lib/audit'
+import { requireCronAuth } from '../../../../lib/cron/auth'
 
 // Cron baixa CSV TSE + cruza com Polymarket. TSE CDN às vezes lento (10-30s),
 // + Polymarket fetch (10s timeout) + persist Neon. Sem maxDuration explícito,
@@ -24,17 +25,9 @@ import { audit } from '../../../../lib/audit'
 export const maxDuration = 90
 
 export async function GET(request: Request) {
+  const unauthorized = requireCronAuth(request)
+  if (unauthorized) return unauthorized
   const startTime = Date.now()
-
-  // Auth — defense in depth: require Bearer always. Vercel injects CRON_SECRET
-  // automatically for scheduled crons. Removed x-vercel-cron bypass.
-  const authHeader = request.headers.get('authorization')
-  const cronSecret = process.env.CRON_SECRET
-  const isAuthorized = !!(cronSecret && authHeader === `Bearer ${cronSecret}`)
-
-  if (process.env.VERCEL && !isAuthorized) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
 
   try {
     console.log('[cron/refresh-polls] Starting TSE ingest...')
@@ -62,8 +55,7 @@ export async function GET(request: Request) {
       if (polyRes.ok) {
         const polyData = await polyRes.json()
         const markets = polyData?.presidential?.markets || []
-        // /api/polymarket retorna outcomePrices: [yesStr, noStr] — não yesPrice numérico.
-        // Bug fix 08/Mai: extrair yesPrice de outcomePrices[0] antes de filtrar/mapear.
+        // outcomePrices é tuple [yesStr, noStr]; índice 0 é a probabilidade YES.
         polyOdds = markets
           .map((m: { question?: string; outcomePrices?: string[]; closed?: boolean }) => ({
             question: m.question || '',

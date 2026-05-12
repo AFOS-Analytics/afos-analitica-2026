@@ -13,7 +13,6 @@ const slugs = [
 
 const keys = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate', 'inflation'] as const;
 
-// Validate slug format: only allow alphanumeric characters and hyphens
 function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug);
 }

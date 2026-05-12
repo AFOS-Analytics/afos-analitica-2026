@@ -11,17 +11,15 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 import { audit } from '../../../../lib/audit'
+import { requireCronAuth } from '../../../../lib/cron/auth'
 
 export const maxDuration = 60
 
 const RETENTION_DAYS = 90
 
 export async function GET(request: Request) {
-  const authHeader = request.headers.get('authorization')
-  const cronSecret = process.env.CRON_SECRET
-  if (process.env.VERCEL && (!cronSecret || authHeader !== `Bearer ${cronSecret}`)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
+  const unauthorized = requireCronAuth(request)
+  if (unauthorized) return unauthorized
 
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })

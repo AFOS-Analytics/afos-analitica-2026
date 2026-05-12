@@ -167,7 +167,6 @@ function coerceDate(value: unknown, fallback: string): string {
   return fallback
 }
 
-// Matches the "sources cited" line label in any supported locale.
 const SOURCES_LABEL_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*/i
 
 // Extracts the comma-separated sources list from the sources-cited line.
