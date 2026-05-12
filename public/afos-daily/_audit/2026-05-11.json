@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-11",
+  "factCheckGate": {
+    "events": [
+      {"event": "Futura/Apex publicada (2T 46,9% × 44,4%, 1T empate, 57% impeach STF)", "verification1": "novidade", "verification2": "evento — 7 fontes independentes", "decision": "incorporar"},
+      {"event": "Kassio Nunes Marques relator revisão Bolsonaro + posse TSE", "verification1": "TSE continuidade; STF novidade", "verification2": "evento — 3 fontes diretas (Estadão/Globo/G1)", "decision": "incorporar"},
+      {"event": "Ciro Gomes descarta Presidência (Ceará)", "verification1": "novidade", "verification2": "evento — Folha + Terra", "decision": "incorporar"},
+      {"event": "Cúpula Congresso descarta PEC anistia", "verification1": "novidade", "verification2": "1 fonte (Folha)", "decision": "NÃO incorporar como divisor"}
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "Cúpula Congresso/anistia — não incorporado",
+    "numericalErrors": "OK — reconcile warns apenas em 57% (datapoint Futura, não JSON)",
+    "fontesInventadas": "verificadas 3 (estadao_kassio, terra_ciro, poder_rejeicao) — todas em cache",
+    "quotesLiterais": "terrorismo fiscal atribuído à Gazeta",
+    "causacaoEspuria": "STF Impeach ↓1.00pp descrito como leitura técnica",
+    "verbosCriticos": "sorteado relator + data ✓; assumiu TSE + contexto ✓"
+  },
+  "ratio": "40/60 (8 anchor + 12 secondary)"
+}
