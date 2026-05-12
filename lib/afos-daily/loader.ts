@@ -30,7 +30,10 @@ export function isValidDate(date: string): boolean {
 // Memoize listDailies for 60s. The directory only changes when a new daily
 // is committed (manual op). 60s TTL means worst case 60s of stale list,
 // but eliminates readdirSync from the hot path of /api/afos-daily/latest.
+// Empty results get a shorter TTL (5s) so newly-published dailies post-deploy
+// are picked up quickly during launch-day rapid validation.
 const LIST_TTL_MS = 60 * 1000
+const LIST_TTL_EMPTY_MS = 5 * 1000
 let listCache: { list: string[]; expiresAt: number } | null = null
 
 export function listDailies(): string[] {
@@ -38,7 +41,7 @@ export function listDailies(): string[] {
   if (listCache && now < listCache.expiresAt) return listCache.list
 
   if (!existsSync(DAILY_DIR)) {
-    listCache = { list: [], expiresAt: now + LIST_TTL_MS }
+    listCache = { list: [], expiresAt: now + LIST_TTL_EMPTY_MS }
     return []
   }
   try {
@@ -47,7 +50,8 @@ export function listDailies(): string[] {
       .map(f => f.replace('.md', ''))
       .filter(isValidDate)
       .sort()
-    listCache = { list, expiresAt: now + LIST_TTL_MS }
+    const ttl = list.length > 0 ? LIST_TTL_MS : LIST_TTL_EMPTY_MS
+    listCache = { list, expiresAt: now + ttl }
     return list
   } catch (err) {
     console.error('[afos-daily] Failed to list dailies:', err)

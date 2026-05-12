@@ -6,9 +6,14 @@
  */
 
 import { ImageResponse } from 'next/og'
-import { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 export const runtime = 'edge'
+
+// Static fallback when ImageResponse fails (rare, but possible during edge runtime
+// hiccups). Unfurl previews are critical during launch — better to serve a slightly
+// generic image than a 500 to social media crawlers.
+const STATIC_FALLBACK_URL = 'https://afos-analytics.com/brand/og-en-linkedin-1200x627.png'
 
 const COPY = {
   'pt-BR': {
@@ -35,7 +40,8 @@ export async function GET(request: NextRequest) {
   const locale: Locale = (localeParam === 'en' || localeParam === 'es') ? localeParam : 'pt-BR'
   const copy = COPY[locale]
 
-  return new ImageResponse(
+  try {
+    return new ImageResponse(
     (
       <div
         style={{
@@ -70,13 +76,17 @@ export async function GET(request: NextRequest) {
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-      headers: {
-        // Cache CDN 1h, navegador 0 (revalidação imediata se locale muda)
-        'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
-      },
-    }
-  )
+      {
+        width: 1200,
+        height: 630,
+        headers: {
+          // Cache CDN 1h, navegador 0 (revalidação imediata se locale muda)
+          'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+        },
+      }
+    )
+  } catch (err) {
+    console.error('[og] ImageResponse failed, redirecting to static fallback:', err)
+    return NextResponse.redirect(STATIC_FALLBACK_URL, { status: 307 })
+  }
 }
