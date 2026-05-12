@@ -28,9 +28,10 @@ export interface Scenario { name: string; results: PollResult[] }
 export interface SecondRound { matchup: string; candidate1: string; percent1: number; candidate2: string; percent2: number }
 
 export interface Poll {
-  institute: string; date: string; sample: number; margin: number;
-  register: string; reliability: number; method?: string;
+  institute: string; date: string; sample: number | null; margin: number | null;
+  register: string | null; reliability: number; method?: string;
   scenarios: Scenario[]; secondRound: SecondRound[];
+  fieldDates?: string; note?: string;
 }
 
 export interface Institute { name: string; reliability: number; type: string; note: string; }
