@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-11",
+  "lastUpdate": "2026-05-12",
   "lastSyncedAt": "2026-05-11T22:00:00-03:00",
   "institutes": [
     {
@@ -120,8 +120,14 @@
         {
           "name": "Cenário MT (1º turno)",
           "results": [
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 44.6 },
-            { "candidate": "Lula (PT)", "percent": 29.8 }
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 44.6
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 29.8
+            }
           ]
         }
       ],
@@ -154,13 +160,25 @@
         {
           "name": "Cenário SP (1º turno)",
           "results": [
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 39.3 },
-            { "candidate": "Lula (PT)", "percent": 36 }
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39.3
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 36
+            }
           ]
         }
       ],
       "secondRound": [
-        { "matchup": "Flávio vs Lula (SP)", "candidate1": "Flávio Bolsonaro", "percent1": 48.1, "candidate2": "Lula", "percent2": 40.3 }
+        {
+          "matchup": "Flávio vs Lula (SP)",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 48.1,
+          "candidate2": "Lula",
+          "percent2": 40.3
+        }
       ]
     },
     {
@@ -175,7 +193,13 @@
       "note": "Pesquisa nacional 2º turno publicada 06/Mai (Poder360, Exame, GZH). Números 1T não detalhados em fontes públicas verificadas.",
       "scenarios": [],
       "secondRound": [
-        { "matchup": "Flávio vs Lula", "candidate1": "Flávio Bolsonaro", "percent1": 45.3, "candidate2": "Lula", "percent2": 44.7 }
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 45.3,
+          "candidate2": "Lula",
+          "percent2": 44.7
+        }
       ]
     },
     {
@@ -204,20 +228,56 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 40 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 34 },
-            { "candidate": "Ronaldo Caiado (PSD)", "percent": 5 },
-            { "candidate": "Romeu Zema (Novo)", "percent": 4 },
-            { "candidate": "Renan Santos (Missão)", "percent": 3 },
-            { "candidate": "Augusto Cury (Avante)", "percent": 1 },
-            { "candidate": "Aldo Rebelo (DC)", "percent": 1 },
-            { "candidate": "Cabo Daciolo", "percent": 1 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 1
+            },
+            {
+              "candidate": "Cabo Daciolo",
+              "percent": 1
+            }
           ]
         }
       ],
       "secondRound": [
-        { "matchup": "Flávio vs Lula", "candidate1": "Flávio Bolsonaro", "percent1": 44, "candidate2": "Lula", "percent2": 43 },
-        { "matchup": "Caiado vs Lula", "candidate1": "Ronaldo Caiado", "percent1": 42, "candidate2": "Lula", "percent2": 43 }
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 44,
+          "candidate2": "Lula",
+          "percent2": 43
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Ronaldo Caiado",
+          "percent1": 42,
+          "candidate2": "Lula",
+          "percent2": 43
+        }
       ]
     },
     {
@@ -233,11 +293,26 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 46.6 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 39.7 },
-            { "candidate": "Renan Santos (Missão)", "percent": 5.3 },
-            { "candidate": "Ronaldo Caiado (PSD)", "percent": 3.3 },
-            { "candidate": "Romeu Zema (Novo)", "percent": 3.1 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 46.6
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39.7
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 5.3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3.1
+            }
           ]
         }
       ],
@@ -298,28 +373,32 @@
         "pesquisaRange": "29.8-46.6%",
         "polymarket": "40.50%",
         "tendenciaPesquisa": "Quaest às vésperas publicação 13/Mai (VEJA 10/Mai); Estadão analítica dados explicam Lula segue competitivo mesmo desgastado (Estadão 10/Mai); Real Time Big Data recap disputa segue acirrada (10/Mai); Mantida Paraná Pesquisas MT 08/Mai 29,8%; AtlasIntel 28/Abr 1T 46.6%",
-        "tendenciaPolymarket": "DISPARA 40.50% (↑3.00pp de 37.50%) maior movimento individual presidencial 24h; gap COLAPSA +1.10pp Flávio (vs +6.15pp ontem) 5pp comprimido em 24h"
+        "tendenciaPolymarket": "DISPARA 40.50% (↑3.00pp de 37.50%) maior movimento individual presidencial 24h; gap COLAPSA +1.10pp Flávio (vs +6.15pp ontem) 5pp comprimido em 24h",
+        "odds": 38.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "34-48.1%",
         "polymarket": "41.60%",
         "tendenciaPesquisa": "Quaest às vésperas 13/Mai; Pesquisa MS Flávio frente Lula governo Riedel lidera (Enfoque MS 10/Mai); Disputa apertada Real Time Big Data recap (10/Mai); Mantida Paraná Pesquisas MT 08/Mai 44,6%; Mantida Genial/Quaest 10 estados 06/Mai Flávio em SP/RJ/Sul",
-        "tendenciaPolymarket": "DEVOLVE 41.60% (↓2.05pp de 43.65%) primeira queda significativa série de altas; 2L 66.50% estável consolida"
+        "tendenciaPolymarket": "DEVOLVE 41.60% (↓2.05pp de 43.65%) primeira queda significativa série de altas; 2L 66.50% estável consolida",
+        "odds": 43.35
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
         "polymarket": "5.55%",
         "tendenciaPesquisa": "Quaest às vésperas 13/Mai não destaca Renan (VEJA 10/Mai); Mantida AtlasIntel 28/Abr 5.3%; Mantida Real Time Big Data 05/Mai 1T 3%; STF impeach DISPARA 16.50% Poly favorece outsider mas Caiado captura espaço",
-        "tendenciaPolymarket": "Leve cede 5.55% (↓0.30pp de 5.85%); 3º 31.50% (↓1.00pp leve) Zema mantém 34.50% liderança"
+        "tendenciaPolymarket": "Leve cede 5.55% (↓0.30pp de 5.85%); 3º 31.50% (↓1.00pp leve) Zema mantém 34.50% liderança",
+        "odds": 5.85
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3.3-5%",
         "polymarket": "1.25%",
         "tendenciaPesquisa": "Caiado em rodeios palanques Flávio Caiado Zema (diário do estado 10/Mai); Mantida Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via; Mantida Quaest GO Caiado lidera (06/Mai)",
-        "tendenciaPolymarket": "Leve cede 1.25% (↓0.20pp de 1.45%); 3º DISPARA 16.50% (↑3.00pp recupera de 13.50%) maior salto 3º lugar 24h; PSD Senado DEVOLVE FORTE 2.25% (↓2.00pp)"
+        "tendenciaPolymarket": "Leve cede 1.25% (↓0.20pp de 1.45%); 3º DISPARA 16.50% (↑3.00pp recupera de 13.50%) maior salto 3º lugar 24h; PSD Senado DEVOLVE FORTE 2.25% (↓2.00pp)",
+        "odds": 1.15
       },
       {
         "name": "Tarcísio",
@@ -333,15 +412,18 @@
         "pesquisaRange": "3.1-4%",
         "polymarket": "4.15%",
         "tendenciaPesquisa": "Quaest às vésperas 13/Mai não destaca Zema (VEJA 10/Mai); Zema rodeios palanques (diário do estado 10/Mai); Mantida AtlasIntel 28/Abr 3.1%; Mantida Real Time Big Data 05/Mai 1T 4%",
-        "tendenciaPolymarket": "Leve cede 4.15% (↓0.20pp de 4.35%); 3º mantém liderança 34.50% (↓0.50pp leve); NOVO Senado DEVOLVE 0.25% (↓0.60pp)"
+        "tendenciaPolymarket": "Leve cede 4.15% (↓0.20pp de 4.35%); 3º mantém liderança 34.50% (↓0.50pp leve); NOVO Senado DEVOLVE 0.25% (↓0.60pp)",
+        "odds": 3.85
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "3.95%",
         "tendenciaPesquisa": "Quaest às vésperas 13/Mai (VEJA 10/Mai); Mantida Vox SP gov Haddad 26% × Tarcísio 38%; Mantida Genial/Quaest 10 estados Flávio frente SP",
-        "tendenciaPolymarket": "Leve cede 3.95% (↓0.10pp de 4.05%); 2L recupera 3.05% (↑0.10pp); Camilo DISPARA 2.75% (↑0.20pp) Haddad mantém 1.20pp ACIMA gap estreitando; PT Senado COLAPSA 0.25% (↓2.30pp DEVOLVE COLOSSAL)"
+        "tendenciaPolymarket": "Leve cede 3.95% (↓0.10pp de 4.05%); 2L recupera 3.05% (↑0.10pp); Camilo DISPARA 2.75% (↑0.20pp) Haddad mantém 1.20pp ACIMA gap estreitando; PT Senado COLAPSA 0.25% (↓2.30pp DEVOLVE COLOSSAL)",
+        "odds": 3.45
       }
-    ]
+    ],
+    "updatedAt": "2026-05-12 18:45 BRT"
   }
 }
