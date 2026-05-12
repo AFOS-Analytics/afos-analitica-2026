@@ -111,5 +111,24 @@ export async function GET() {
   keys.forEach((key, i) => {
     data[key] = results[i];
   });
-  return NextResponse.json({ ...data, fetchedAt: new Date().toISOString() });
+  // Surface a degraded flag when some/all upstream events failed so callers
+  // (dashboard cards, refresh-elections cron) can distinguish a stale-cache
+  // empty result from "data missing today" and decide whether to alert.
+  const failed = results.filter(r => r === null).length;
+  const degraded = failed > 0;
+  return NextResponse.json(
+    {
+      ...data,
+      fetchedAt: failed < slugs.length ? new Date().toISOString() : null,
+      degraded,
+      failedCount: failed,
+    },
+    {
+      headers: {
+        'Cache-Control': degraded
+          ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
+          : 'public, max-age=0, s-maxage=7200, stale-while-revalidate=86400',
+      },
+    }
+  );
 }

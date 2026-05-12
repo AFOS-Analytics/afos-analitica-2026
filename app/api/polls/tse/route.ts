@@ -16,8 +16,12 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url)
-  const days = Math.min(Number(searchParams.get('days')) || 15, 365)
-  const institute = searchParams.get('institute')?.trim()
+  // Clamp days to a safe range. Negative or NaN → fallback to default 15;
+  // upper bound 365 prevents abusive queries that scan the entire history.
+  const daysRaw = Number(searchParams.get('days'))
+  const days = Number.isFinite(daysRaw) && daysRaw > 0 ? Math.min(daysRaw, 365) : 15
+  // Cap institute filter at 100 chars to bound Prisma query input.
+  const institute = searchParams.get('institute')?.trim().slice(0, 100)
 
   try {
     const since = new Date()
