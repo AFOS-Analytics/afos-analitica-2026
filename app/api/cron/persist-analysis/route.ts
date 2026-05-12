@@ -5,6 +5,7 @@ import { persistAnalysisSnapshot, type AnalysisType } from '../../../../lib/anal
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 import { prisma } from '../../../../lib/db'
+import { requireCronAuth } from '../../../../lib/cron/auth'
 
 export const dynamic = 'force-dynamic'
 // 2 Neon upserts em paralelo costumam <3s; 20s cobre pico + envio de alerta.
@@ -53,17 +54,9 @@ async function withRetry<T>(fn: () => Promise<T>, maxAttempts = 3): Promise<T> {
 }
 
 export async function GET(request: Request) {
+  const unauthorized = requireCronAuth(request)
+  if (unauthorized) return unauthorized
   const startTime = Date.now()
-
-  // Defense in depth: require Bearer secret always. Vercel injects
-  // CRON_SECRET as Authorization for scheduled crons. The prior bypass via
-  // x-vercel-cron was vulnerable if Vercel's header stripping ever failed.
-  const authHeader = request.headers.get('authorization')
-  const cronSecret = process.env.CRON_SECRET
-  const isAuthorized = !!(cronSecret && authHeader === `Bearer ${cronSecret}`)
-  if (process.env.VERCEL && !isAuthorized) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-  }
 
   // Warm-up Neon WS antes dos upserts. Cold-start adapter Neon serverless
   // dispara [object ErrorEvent] na primeira query após idle. SELECT 1

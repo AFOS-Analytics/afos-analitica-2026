@@ -18,7 +18,6 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
   return response;
 }
 
-// ─── Rate Limiting (distribuído via Upstash REST; memory só quando Upstash ausente) ──
 const memoryRL = new Map<string, { count: number; resetAt: number }>();
 
 type RateLimitResult = 'ok' | 'limited' | 'unavailable';
@@ -58,7 +57,6 @@ async function checkRateLimit(ip: string): Promise<RateLimitResult> {
   return 'ok';
 }
 
-// ─── Paths to skip ──────────────────────────────────────────────────
 function shouldSkip(pathname: string): boolean {
   return pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
@@ -67,7 +65,6 @@ function shouldSkip(pathname: string): boolean {
     pathname.includes('.');
 }
 
-// ─── Middleware ──────────────────────────────────────────────────────
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 

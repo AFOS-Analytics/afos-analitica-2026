@@ -3,9 +3,6 @@
  *
  * Vercel cron (30min) → Polymarket (18 paralelo) → KV (caminho quente) + Neon (arquivo histórico).
  * Usuários leem do KV em <1ms. Neon write é fire-and-forget — falha não bloqueia.
- *
- * Auth: header `x-vercel-cron` (injetado pelo Vercel) ou `Authorization: Bearer CRON_SECRET`.
- * Em dev local sem VERCEL=1, qualquer request é aceito.
  */
 
 import { NextResponse } from 'next/server';
@@ -14,23 +11,14 @@ import { writeGlobalMapData } from '../../../lib/kv';
 import { buildNoCacheHeaders } from '../../../lib/cache/headers';
 import { optimizePayload } from '../../../lib/polymarket/normalize';
 import { persistMarketData } from '../../../lib/polymarket/persist';
+import { requireCronAuth } from '../../../../lib/cron/auth';
 
 export const maxDuration = 60;
 
 export async function GET(request: Request) {
+  const unauthorized = requireCronAuth(request);
+  if (unauthorized) return unauthorized;
   const startTime = Date.now();
-
-  // Defense in depth: require Bearer secret always. Vercel injects CRON_SECRET
-  // automatically for scheduled crons. Removed x-vercel-cron bypass (was
-  // vulnerable if Vercel's header stripping ever failed).
-  const authHeader = request.headers.get('authorization');
-  const cronSecret = process.env.CRON_SECRET;
-  const isAuthorized = !!(cronSecret && authHeader === `Bearer ${cronSecret}`);
-
-  if (process.env.VERCEL && !isAuthorized) {
-    console.warn('[cron] Requisição não autenticada bloqueada');
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
 
   try {
     console.log('[cron] Iniciando refresh de dados eleitorais...');
@@ -39,7 +27,7 @@ export async function GET(request: Request) {
 
     if (result.fetchedMarkets === 0) {
       console.warn('[cron] ZERO mercados — KV e Neon não atualizados');
-      // Status 503 garante que monitoring/UptimeRobot dispara alerta. Era 200 antes (silencioso).
+      // 503 garante alerta no monitoring/UptimeRobot (200 seria silencioso).
       const { sendCronFailureAlert } = await import('../../../lib/cron/health-alerts')
       sendCronFailureAlert('refresh-elections', 'zero-markets', Date.now() - startTime).catch(() => {})
       return NextResponse.json(
