@@ -1,0 +1,24 @@
+# humanstxt.org — for humans behind the platform
+
+/* TEAM */
+Founder: André Felipe
+Site: https://www.afos-analytics.com
+LinkedIn: https://www.linkedin.com/in/andre-felipe-afos
+From: Brasília, Brazil
+
+/* THANKS */
+Open-source community, OSS maintainers powering the stack (Next.js, Vercel, Neon, Upstash, Anthropic, Prisma, Tailwind).
+Polymarket for the public prediction-market data.
+TSE (Tribunal Superior Eleitoral) for the public polls registry.
+Journalists, researchers and civic technologists pushing for transparency in electoral data.
+
+/* SITE */
+Last update: 2026-05-12
+Standards: HTML5, CSS3, JSON-LD, RSS 2.0, Atom
+Components: Next.js 14 (App Router), React 18, Tailwind CSS, Prisma, Anthropic SDK
+Software: Vercel (hosting), Neon (Postgres), Upstash (Redis), Resend (email)
+License: Apache-2.0 (https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/LICENSE)
+
+/* MISSION */
+Open-source civic intelligence cross-referencing prediction markets, polling data
+and verified news for the 2026 Brazil electoral cycle. Global by design.

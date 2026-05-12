@@ -63,7 +63,9 @@ export function DailyHeroCard() {
       .then(d => {
         if (d?.ok) setMeta({ date: d.date, title: d.title, lede: d.lede, updatedAt: d.updatedAt, previousDate: d.previousDate ?? null })
       })
-      .catch(() => { /* network/abort errors → card silently doesn't render */ })
+      .catch((err) => {
+        if (err?.name !== 'AbortError') console.error('[DailyHeroCard] fetch failed:', err)
+      })
     return () => ctrl.abort()
   }, [tKey])
 
