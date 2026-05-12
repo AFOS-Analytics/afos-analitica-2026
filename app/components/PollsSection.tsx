@@ -94,12 +94,27 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       )}
 
       {/* PESQUISAS POR INSTITUTO */}
-      {polls?.polls && polls.polls.length > 0 && (
-        <p className="text-xs text-gray-500 italic mb-3 px-1">
-          📍 Mostramos a pesquisa nacional de 1º turno mais recente. Estaduais e segundo turno aparecem no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>. Histórico completo via <a href="/api/polls/tse?days=30" className="text-primary hover:underline">API</a>.
-        </p>
-      )}
-      {polls?.polls?.map((poll: Poll, pi: number) => (
+      {/* Guardrail: filtra polls estaduais/regionais do dashboard. Memory: estaduais
+          devem aparecer apenas no AFOS Daily. Detecta via 'note' contendo "estadual",
+          "Cenário <UF>", ou nome de scenario com sufixo de UF. Polls sem note ou
+          com escopo nacional explícito passam. */}
+      {(() => {
+        const isStatePoll = (p: Poll): boolean => {
+          const note = (p.note || '').toLowerCase()
+          if (note.includes('estadual') || note.includes('cenário ') && !note.includes('cenário nacional')) return true
+          if (note.match(/\b(mt|sp|rj|mg|rs|pr|sc|ba|ce|pe|go|am|pa|ma|pi|al|se|rn|pb|to|ro|rr|ap|ac|ms|es|df)\b/i)) {
+            if (!note.includes('nacional')) return true
+          }
+          if (p.scenarios?.some((s: { name?: string }) => /\(.*[A-Z]{2}.*\)/.test(s.name || ''))) return true
+          return false
+        }
+        const nationalPolls = (polls?.polls || []).filter(p => !isStatePoll(p))
+        return nationalPolls.length > 0 && (
+          <>
+            <p className="text-xs text-gray-500 italic mb-3 px-1">
+              📍 Mostramos pesquisas nacionais (1º e 2º turnos) mais recentes. Estaduais e análise integrada no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>. Histórico completo via <a href="/api/polls/tse?days=30" className="text-primary hover:underline">API</a>.
+            </p>
+            {nationalPolls.map((poll: Poll, pi: number) => (
       <div key={pi} className="mb-8">
       <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600 bg-light-bg rounded-lg p-3">
         <span className="font-bold text-primary text-base">{poll.institute}</span>
@@ -159,7 +174,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         ))}
       </div>
       </div>
-      ))}
+            ))}
+          </>
+        )
+      })()}
 
       {/* ANÁLISE CRITERIOSA, dados via JSON externo */}
       {crit && crit.candidates?.length > 0 && (

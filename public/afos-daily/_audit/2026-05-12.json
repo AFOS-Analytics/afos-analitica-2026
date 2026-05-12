@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-12",
+  "factCheckGate": {
+    "events": [
+      {"event": "Kassio + Mendonça POSSE OFICIAL TSE 12/Mai", "verification1": "Kassio 10 menções continuidade; posse oficial 12/Mai é ritual confirmatório", "verification2": "evento — 6+ fontes (G1, Folha, O Globo, Jurinews, Folha BV, GZH, ND Mais)", "decision": "incorporar como ritual confirmatório, não divisor"},
+      {"event": "Marqueteiro Flávio R$ 650k influencers contra BC Vorcaro", "verification1": "Vorcaro 19 menções; desdobramento NOVO específico marqueteiro R$ 650k", "verification2": "evento — Folha + O Globo + Estadão (3 independentes, empresário confirma à PF)", "decision": "incorporar como desdobramento factual 12/Mai"},
+      {"event": "PEC Anistia retomada pós-Moraes", "verification1": "PEC Anistia 0 menções → novidade", "verification2": "evento — G1 (Valdo Cruz) + Folha (cúpula Congresso espera dosimetria), 2 independentes", "decision": "incorporar como articulação, não aprovação"},
+      {"event": "Câmara aplicabilidade Lei Dosimetria + Fachin parlamentares", "verification1": "dosimetria 19 menções continuidade; Motta/Fachin reagindo é NOVO desdobramento", "verification2": "evento — O Globo (Motta + Fachin) + Folha (cúpula Congresso), 2 fontes complementares", "decision": "incorporar como desdobramento institucional"}
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "Nenhum BLOCKER. Posse Kassio (5+), Vorcaro (3), PEC Anistia (2), Câmara dosimetria (2)",
+    "numericalErrors": "OK — reconcile-claims todos ±0.05pp do JSON. 5 named-checks são falsos positivos do regex (Flávio Bolsonaro pego como entidade 'Bolsonaro')",
+    "fontesInventadas": "verificadas 3 (Folha marqueteiro, O Globo Malu Gaspar, Estadão impeach Moraes) — todas em news-cache/2026-05-12.json",
+    "quotesLiterais": "'queremos Ciro no palanque do Flávio' atribuído Valdemar via Estado de Minas; 'bônus nordestino' atribuído AtlasIntel via Sobral Online",
+    "causacaoEspuria": "STF Impeach ↓5pp atribuído a abertura de 3 caminhos institucionais (posse + PEC + dosimetria), não evento isolado. Flávio DISPARA qualificado com 'ou está antecipando, ou está descontando'",
+    "verbosCriticos": "'tomam posse' + data 12/Mai ✓; 'marqueteiro citado em plano' (não afirma autoria do crime) ✓; 'PEC Anistia retomada' (articulação, não aprovação) ✓; 'novo pedido impeachment Moraes' (apresentado, não acolhido) ✓"
+  },
+  "ratio": "56/44 (14 anchor + 11 secondary). Aprovado pelo usuário apesar de violar target 30/70 — escândalo Vorcaro concentrado em anchors institucionais"
+}
