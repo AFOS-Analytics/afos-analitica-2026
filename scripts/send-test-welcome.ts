@@ -4,11 +4,12 @@ config({ path: '.env.local' })
 import { welcomeTemplate } from '../app/lib/email/templates'
 import { Resend } from 'resend'
 
-const TO = 'afos-analytics@proton.me'
+const TO = process.env.TEST_EMAIL || 'test@example.com'
 
 async function main() {
   const key = process.env.RESEND_API_KEY
   if (!key) { console.error('❌ RESEND_API_KEY não configurada'); process.exit(1) }
+  if (TO === 'test@example.com') { console.error('❌ Set TEST_EMAIL in .env.local to receive the test email'); process.exit(1) }
 
   const resend = new Resend(key)
   console.log(`📨 Enviando welcome test para ${TO}...\n`)
