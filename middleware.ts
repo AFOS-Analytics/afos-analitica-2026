@@ -18,6 +18,41 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
   return response;
 }
 
+const STRATEGIC_DOCS = new Set([
+  '/pipeline-launch-opensource.html',
+  '/posicionamento-estrategico-afos.html',
+]);
+
+function basicAuthChallenge(): NextResponse {
+  return new NextResponse('Authentication required', {
+    status: 401,
+    headers: {
+      'WWW-Authenticate': 'Basic realm="AFOS Analytics - Documento interno"',
+      'Cache-Control': 'no-store',
+    },
+  });
+}
+
+function checkStrategicDocAuth(request: NextRequest): NextResponse | null {
+  const password = process.env.STRATEGIC_DOCS_PASSWORD;
+  if (!password) {
+    // Fail closed — sem env var, ninguém entra (mais seguro que liberar geral).
+    return new NextResponse('Service unavailable', { status: 503 });
+  }
+  const auth = request.headers.get('authorization');
+  if (!auth || !auth.startsWith('Basic ')) return basicAuthChallenge();
+  let provided = '';
+  try {
+    const decoded = atob(auth.slice(6));
+    const idx = decoded.indexOf(':');
+    provided = idx >= 0 ? decoded.slice(idx + 1) : decoded;
+  } catch {
+    return basicAuthChallenge();
+  }
+  if (provided !== password) return basicAuthChallenge();
+  return null;
+}
+
 const memoryRL = new Map<string, { count: number; resetAt: number }>();
 
 type RateLimitResult = 'ok' | 'limited' | 'unavailable';
@@ -67,6 +102,12 @@ function shouldSkip(pathname: string): boolean {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (STRATEGIC_DOCS.has(pathname)) {
+    const denied = checkStrategicDocAuth(request);
+    if (denied) return denied;
+    return NextResponse.next();
+  }
 
   // Bare root `/` falls through to app/page.tsx, which renders OG metadata
   // (EN copy) and dispatches a JS smart-redirect based on navigator.language.
