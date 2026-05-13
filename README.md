@@ -48,8 +48,10 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 ## Community
 
 - 💬 **Questions & ideas** → [GitHub Issues](https://github.com/AFOS-Analytics/afos-analitica-2026/issues) · [Discussions](https://github.com/AFOS-Analytics/afos-analitica-2026/discussions)
+- 🏢 **GitHub Organization** → [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics)
 - 🐦 **Twitter / X** → [@AFOS_Analytics](https://x.com/AFOS_Analytics)
-- 👥 **Reddit** → [u/AFOS-Analytics](https://reddit.com/user/AFOS-Analytics)
+- 🦋 **Bluesky** → [@afos-analytics.com](https://bsky.app/profile/afos-analytics.com)
+- 🚀 **Product Hunt** → [@afosanalytics](https://www.producthunt.com/@afosanalytics)
 - 📧 **Press, partnerships, general** → [contact@afos-analytics.com](mailto:contact@afos-analytics.com)
 - 💡 **User support & help** → [support@afos-analytics.com](mailto:support@afos-analytics.com)
 - 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
