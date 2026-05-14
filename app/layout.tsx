@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://afos-analytics.com'),
+  metadataBase: new URL('https://www.afos-analytics.com'),
   title: "AFOS Analytics | Polymarket, Pesquisas e Notícias Eleitorais Cruzados",
   description: "Cruzamento em tempo real entre mercados de previsão (Polymarket), pesquisas eleitorais de +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Eleições Brasil 2026 e 14 países.",
   // Canonical/alternates removidos do root layout para evitar que TODAS as
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AFOS Analytics. Inteligência Eleitoral Open-Source",
     description: "Cruzamento em tempo real entre Polymarket, pesquisas eleitorais e cobertura jornalística. Eleições Brasil 2026 e 14 países.",
-    url: "https://afos-analytics.com",
+    url: "https://www.afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
     type: "website",
