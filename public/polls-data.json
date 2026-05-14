@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-12",
-  "lastSyncedAt": "2026-05-11T22:00:00-03:00",
+  "lastUpdate": "2026-05-13",
+  "lastSyncedAt": "2026-05-13T19:00:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -107,6 +107,37 @@
   ],
   "polls": [
     {
+      "institute": "Quaest/Genial",
+      "date": "2026-05-13",
+      "sample": 2004,
+      "margin": 2,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-05-08 a 2026-05-11",
+      "note": "Quaest nacional publicada 13/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA). Lula REASSUME VANTAGEM 2T sobre Flávio. Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            { "candidate": "Lula (PT)", "percent": 39 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 33 },
+            { "candidate": "Ronaldo Caiado (PSD)", "percent": 4 },
+            { "candidate": "Romeu Zema (Novo)", "percent": 4 }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": null,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": null
+        }
+      ]
+    },
+    {
       "institute": "Quaest",
       "date": "2026-05-08",
       "sample": null,
@@ -115,7 +146,7 @@
       "reliability": 5,
       "method": "Presencial",
       "fieldDates": "Maio 2026",
-      "note": "Nova pesquisa Quaest publicada 08/Mai pós-Messias e encontro Trump (VEJA). Disputa Lula × Flávio. Números detalhados não consolidados em fonte primária pública verificada.",
+      "note": "Pesquisa Quaest publicada 08/Mai pós-Messias e encontro Trump (VEJA). Disputa Lula × Flávio. Superseded pela Quaest 13/Mai nacional n=2.004.",
       "scenarios": [],
       "secondRound": []
     },
@@ -290,65 +321,66 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 10/Mai/2026 22:00 BRT",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000 campo 02-04/Mai BR-03627/2026), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Paraná Pesquisas SP (07/Mai), Percent Brasil MT (08/Mai Flávio 44,6% × Lula 29,8% via Poder360), Quaest rodada nacional pós-Messias e Trump iniciada 08/Mai (publicação prevista 13/Mai), Pesquisa MS Riedel governo (Enfoque MS 10/Mai), Polymarket (ao vivo fetchedAt 10/Mai 21:51 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 13/Mai/2026 19:00 BRT D-1 launch",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Paraná Pesquisas SP (07/Mai), Quaest nacional publicada 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), Polymarket (ao vivo fetchedAt 13/Mai 21:50 UTC).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "29.8-46.6%",
-        "polymarket": "40.50%",
-        "tendenciaPesquisa": "Quaest às vésperas publicação 13/Mai (VEJA 10/Mai); Estadão analítica dados explicam Lula segue competitivo mesmo desgastado (Estadão 10/Mai); Real Time Big Data recap disputa segue acirrada (10/Mai); Mantida Paraná Pesquisas MT 08/Mai 29,8%; AtlasIntel 28/Abr 1T 46.6%",
-        "tendenciaPolymarket": "DISPARA 40.50% (↑3.00pp de 37.50%) maior movimento individual presidencial 24h; gap COLAPSA +1.10pp Flávio (vs +6.15pp ontem) 5pp comprimido em 24h",
-        "odds": 38.5
+        "pesquisaRange": "39-46.6%",
+        "polymarket": "45.50%",
+        "tendenciaPesquisa": "Quaest publicada 13/Mai n=2.004 Lula 39% × Flávio 33% (G1, Gazeta do Povo, CartaCapital 13/Mai); Lula REASSUME VANTAGEM 2T (JOTA, Quaest 13/Mai); Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui (Genial/Quaest 13/Mai); AtlasIntel 28/Abr 1T 46.6%",
+        "tendenciaPolymarket": "DISPARA COLOSSAL 45.50% (↑7.00pp de 38.50%) MAIOR MOVIMENTO INDIVIDUAL DA SÉRIE; gap REVERTE COLOSSAL +17.05pp LULA (vs +4.85pp Flávio ontem, variação 21.90pp em 24h MAIOR DA SÉRIE)",
+        "odds": 45.5
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "34-48.1%",
-        "polymarket": "41.60%",
-        "tendenciaPesquisa": "Quaest às vésperas 13/Mai; Pesquisa MS Flávio frente Lula governo Riedel lidera (Enfoque MS 10/Mai); Disputa apertada Real Time Big Data recap (10/Mai); Mantida Paraná Pesquisas MT 08/Mai 44,6%; Mantida Genial/Quaest 10 estados 06/Mai Flávio em SP/RJ/Sul",
-        "tendenciaPolymarket": "DEVOLVE 41.60% (↓2.05pp de 43.65%) primeira queda significativa série de altas; 2L 66.50% estável consolida",
-        "odds": 43.35
+        "pesquisaRange": "33-48.1%",
+        "polymarket": "28.45%",
+        "tendenciaPesquisa": "Quaest 13/Mai Flávio 33% × Lula 39% (G1 13/Mai); Lula REASSUME VANTAGEM 2T sobre Flávio (JOTA 13/Mai); BOMBA: Áudio vazado Flávio negociou R$ 134 milhões com Vorcaro filme 'Dark Horse' (Intercept Brasil 13/Mai); Flávio ADMITE pedido após negativa anterior (Folha 13/Mai); Bolsonaristas debatem substituir Flávio por Michelle (VEJA 13/Mai)",
+        "tendenciaPolymarket": "DESPENCA COLOSSAL 28.45% (↓14.90pp de 43.35%) MAIOR QUEDA DA SÉRIE; 2L 61.00% (↓6.50pp); 3L DEVOLVE 3.30% (↓2.45pp); PL Senado 77% (↑2.00pp recupera mas crise individual Flávio)",
+        "odds": 28.45
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "5.55%",
-        "tendenciaPesquisa": "Quaest às vésperas 13/Mai não destaca Renan (VEJA 10/Mai); Mantida AtlasIntel 28/Abr 5.3%; Mantida Real Time Big Data 05/Mai 1T 3%; STF impeach DISPARA 16.50% Poly favorece outsider mas Caiado captura espaço",
-        "tendenciaPolymarket": "Leve cede 5.55% (↓0.30pp de 5.85%); 3º 31.50% (↓1.00pp leve) Zema mantém 34.50% liderança",
-        "odds": 5.85
+        "polymarket": "7.05%",
+        "tendenciaPesquisa": "Renan AUSENTE Quaest 13/Mai como destaque (G1, CartaCapital, VEJA); Mantida AtlasIntel 28/Abr 5.3%; Mantida Real Time Big Data 05/Mai 1T 3%",
+        "tendenciaPolymarket": "DISPARA 7.05% (↑1.20pp de 5.85%) absorve parte migração Flávio pós-crise Vorcaro; 3L 31.50% (↓0.50pp leve cede para Zema RECUPERA LIDERANÇA 35.00%)",
+        "odds": 7.05
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3.3-5%",
         "polymarket": "1.25%",
-        "tendenciaPesquisa": "Caiado em rodeios palanques Flávio Caiado Zema (diário do estado 10/Mai); Mantida Real Time Big Data 05/Mai 1T 5% LIDERA 3ª via; Mantida Quaest GO Caiado lidera (06/Mai)",
-        "tendenciaPolymarket": "Leve cede 1.25% (↓0.20pp de 1.45%); 3º DISPARA 16.50% (↑3.00pp recupera de 13.50%) maior salto 3º lugar 24h; PSD Senado DEVOLVE FORTE 2.25% (↓2.00pp)",
-        "odds": 1.15
+        "tendenciaPesquisa": "Quaest 13/Mai: Caiado 4% × Zema 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai); Caiado cobra explicações Flávio Vorcaro (G1 13/Mai); Mantida '2T Caiado 42% × Lula 43% empate' (Estadão 05/Mai)",
+        "tendenciaPolymarket": "Estável 1.25%; 3L mantém 18.50% estável consolida 3º competidor; PSD Senado 2.05%",
+        "odds": 1.25
       },
       {
         "name": "Tarcísio",
-        "pesquisaRange": "0.15-0.25%",
-        "polymarket": "0.25%",
+        "pesquisaRange": "0.15-0.55%",
+        "polymarket": "0.55%",
         "tendenciaPesquisa": "Mantido Vox SP gov Tarcísio 38% × Haddad 26%; Mantido foco reeleição SP",
-        "tendenciaPolymarket": "DISPARA leve 0.25% (↑0.10pp de 0.15%); 3L 0.25% estável; Republicanos Senado DISPARA FORTE 3.85% (↑2.85pp) consolidação direita estadual"
+        "tendenciaPolymarket": "Leve sobe 0.55% (↑0.30pp de 0.25%); 2L 0.45%; Republicanos Senado 5.25%",
+        "odds": 0.55
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "4.15%",
-        "tendenciaPesquisa": "Quaest às vésperas 13/Mai não destaca Zema (VEJA 10/Mai); Zema rodeios palanques (diário do estado 10/Mai); Mantida AtlasIntel 28/Abr 3.1%; Mantida Real Time Big Data 05/Mai 1T 4%",
-        "tendenciaPolymarket": "Leve cede 4.15% (↓0.20pp de 4.35%); 3º mantém liderança 34.50% (↓0.50pp leve); NOVO Senado DEVOLVE 0.25% (↓0.60pp)",
-        "odds": 3.85
+        "polymarket": "12.00%",
+        "tendenciaPesquisa": "Quaest 13/Mai: Zema 4% × Caiado 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai); Mantida AtlasIntel 28/Abr 3.1%; Mantida Real Time Big Data 05/Mai 1T 4%",
+        "tendenciaPolymarket": "DISPARA COLOSSAL 12.00% (↑8.15pp de 3.85%) MAIOR DISPARADA INDIVIDUAL 3ª via DA SÉRIE absorve espaço Flávio pós-crise Vorcaro; 3L RECUPERA LIDERANÇA 35.00% (↑2.50pp); 2L 7.25% (↑4.30pp DISPARA)",
+        "odds": 12.0
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "3.95%",
-        "tendenciaPesquisa": "Quaest às vésperas 13/Mai (VEJA 10/Mai); Mantida Vox SP gov Haddad 26% × Tarcísio 38%; Mantida Genial/Quaest 10 estados Flávio frente SP",
-        "tendenciaPolymarket": "Leve cede 3.95% (↓0.10pp de 4.05%); 2L recupera 3.05% (↑0.10pp); Camilo DISPARA 2.75% (↑0.20pp) Haddad mantém 1.20pp ACIMA gap estreitando; PT Senado COLAPSA 0.25% (↓2.30pp DEVOLVE COLOSSAL)",
-        "odds": 3.45
+        "polymarket": "2.65%",
+        "tendenciaPesquisa": "Quaest 13/Mai não destaca Haddad como cenário principal; Lula MELHORA AVALIAÇÃO+intenção+rejeição diminui beneficia base PT por extensão (Genial/Quaest 13/Mai)",
+        "tendenciaPolymarket": "Estável 2.65%; 2L 2.75%; Camilo DEVOLVE 1.65% (↓0.90pp) Haddad agora ACIMA Camilo; PT Senado 3.05% (↑0.15pp)",
+        "odds": 2.65
       }
     ],
-    "updatedAt": "2026-05-12 18:45 BRT"
+    "updatedAt": "2026-05-13 19:00 BRT"
   }
 }
