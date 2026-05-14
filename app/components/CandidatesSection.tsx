@@ -13,70 +13,70 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "45.50%",
-    poll: "Lula DISPARA 45.50% Poly (↑7.00pp de 38.50%) MAIOR MOVIMENTO INDIVIDUAL DA SÉRIE. Gap REVERTE COLOSSAL +17.05pp LULA (vs +4.85pp Flávio ontem, variação 21.90pp em 24h MAIOR DA SÉRIE). 2L Lula 15.50% (↓1.00pp). STF IMPEACH COLAPSA 6.50% (↓4.00pp). QUAEST publicada 13/Mai: Lula 39% × Flávio 33% (G1, Gazeta do Povo, CartaCapital 13/Mai). Lula REASSUME VANTAGEM 2T (Quaest, JOTA 13/Mai). Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui (Genial/Quaest 13/Mai). Lula vence Flávio 2T (TVT News 13/Mai).",
+    polymarket: "42.50%",
+    poll: "Lula DEVOLVE leve 42.50% Poly (↓3.00pp de 45.50%) ressaca do spike de ontem mantém liderança. Gap DEVOLVE +9.15pp LULA (vs +17.05pp ontem ↓7.90pp Lula mantém à frente). 2L Lula 16.00% (↑0.50pp). STF IMPEACH continua COLAPSANDO 4.50% (↓2.00pp de 6.50%, acumulado ↓13.50pp em 72h). Mantida QUAEST 13/Mai: Lula 39% × Flávio 33% (G1, Gazeta do Povo, CartaCapital 13/Mai). ANÁLISE Quaest diretor: melhora avaliação governo + eleição apertada (G1 14/Mai). Quaest aprovação sobe pós-derrotas + reunião Lula-Trump (PlatôBR 14/Mai). Lula REASSUME VANTAGEM 2T (JOTA 14/Mai). Quaest Lula vence Flávio 2T (TVT News 14/Mai).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "BOMBA DO DIA: Áudio vazado Flávio negociou R$ 134 milhões com Vorcaro filme 'Dark Horse' (Intercept Brasil 13/Mai) abre flanco anti-direita. Campanha Lula vai explorar ligação Flávio-Vorcaro nas redes (CBN 13/Mai). Mensagens Flávio×Vorcaro viram munição Lula (Estadão 13/Mai). Fim taxa blusinhas reviravolta governo (G1, Gazeta do Povo 13/Mai); pesquisa interna 70% rejeição taxa determinante (G1 13/Mai); Lula esperou saída Haddad evitar mal-estar (CNN Brasil 13/Mai) gestão calibrada. Posse Kassio TSE consumada (TSE 13/Mai). MAS: oposição diz pesquisa máquina pública vê limite melhora (Folha 13/Mai). Eleitor não vê Lula nem Flávio como moderados (Estadão 13/Mai). Ibovespa recua dólar +2% (VEJA 13/Mai). Datafolha 15/Mai (D+1) validação pós-launch."
+    risk: "EVENTO DO DIA: Henrique Vorcaro (pai Daniel) PRESO 6ª fase Compliance Zero (G1, O Globo 14/Mai) consolida narrativa anti-corrupção investigativa. Vorcaro usou conta pai ocultar R$ 2,2 bi vítimas Master (O Globo 14/Mai). Governistas comemoram áudio mas têm dúvida sobre efeito eleitor (Folha 14/Mai). Pesquisa interna 70% rejeição taxa blusinhas determinante revogação (G1 14/Mai). LAUNCH AFOS hoje D-Day. Mantidos 13/Mai: Lula explora Flávio-Vorcaro nas redes (CBN); Mensagens viram munição Lula (Estadão); Posse Kassio TSE (TSE); Fachin endurece distribuição STF (Valor). MAS: Ligação Flávio-Vorcaro pesa mercado doméstico (Valor 14/Mai). Risco político volta ao foco mercado (Valor 14/Mai). Ibovespa afetado (VEJA 14/Mai). Pesquisa Gerp publicada (Gazeta do Povo 14/Mai). Datafolha 15/Mai (D+1) validação pós-launch."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "28.45%",
-    poll: "Flávio DESPENCA COLOSSAL 28.45% Poly (↓14.90pp de 43.35%) MAIOR QUEDA DA SÉRIE. Gap REVERTE COLOSSAL +17.05pp LULA (vs +4.85pp Flávio ontem, variação 21.90pp em 24h). 2L Flávio 61.00% (↓6.50pp). 3L DEVOLVE 3.30% (↓2.45pp). QUAEST 13/Mai: Flávio 33% × Lula 39% (G1, Gazeta do Povo 13/Mai). Lula REASSUME VANTAGEM 2T (JOTA, Quaest 13/Mai). PL Senado 77.00% (↑2.00pp recupera).",
+    polymarket: "33.35%",
+    poll: "Flávio RECUPERA 33.35% Poly (↑4.90pp de 28.45%) ressaca do choque base PL resiste. Gap DEVOLVE +9.15pp LULA (de +17.05pp ↓7.90pp Lula mantém à frente). 2L recupera 66.00% (↑5.00pp de 61.00%). 3L 5.80% (↑2.50pp). Mantida QUAEST 13/Mai: Flávio 33% × Lula 39% (G1 13/Mai). PL Senado CONSOLIDA 79.50% (↑2.50pp de 77.00% partido sólido apesar crise individual).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "BOMBA: Áudio vazado Flávio negociou R$ 134 milhões com Vorcaro filme 'Dark Horse' (Intercept Brasil 13/Mai). Flávio ADMITE pedido após negativa anterior de 2 meses (Folha 13/Mai). Bolsonaristas DEBATEM SUBSTITUIR Flávio por Michelle (VEJA 13/Mai). Aliados se dizem traídos candidatura em xeque (G1 colunistas 13/Mai). 'Lei Rouanet da família Bolsonaro' Paulo Teixeira (G1 13/Mai). Caiado cobra explicações (G1 13/Mai). Lindbergh pede prisão preventiva à PF (SBT News 13/Mai). 'Tapa na cara da direita brasileira' deputado rompido (Estadão 13/Mai). Pressão renovada CPI Master (Câmara, Valor, Poder360 13/Mai). Mensagens Flávio×Vorcaro durante investigações PF Master já públicas (Estadão 13/Mai). Filme 'Dark Horse' é maior crise campanha Flávio (VEJA 13/Mai). MAS: Líder PL Sóstenes defende 'patrocínio privado' (VEJA 13/Mai). Bolsonaro ordena apoio Flávio (SBT News 13/Mai)."
+    risk: "EVENTO DO DIA: Henrique Vorcaro (pai Daniel) PRESO 6ª fase Compliance Zero (G1, O Globo, Estadão, Folha, BBC 14/Mai). Vorcaro usou conta pai ocultar R$ 2,2 bi vítimas Master (O Globo 14/Mai). Valor filme 13x caixa do Master (O Globo 14/Mai). Flávio negociou meses após Bolsonaro atacar Master 'sistema agindo' (O Globo 14/Mai). BBC 'Balde de água fria' bolsonarismo (BBC 14/Mai). Aliados Flávio veem abalo confiança elo Vorcaro temem mais acusações (Folha 14/Mai). Conversa Vorcaro atropela Flávio abala direita (Folha 14/Mai). 'Negócio com Master semeia dúvidas candidatura Flávio' (VEJA 14/Mai). CPI Master defendida pelo PRÓPRIO Flávio + governistas; criação depende Alcolumbre (G1 14/Mai). MICHELLE CONTINUA SUBINDO 3.40% Poly (↑1.45pp) + 2L 3.60% (↑2.60pp narrativa substituição). Imprensa internacional repercute caso (G1 14/Mai). Ibovespa afetado risco político mercado (Valor, VEJA 14/Mai). MAS: Mantidos 13/Mai Líder PL Sóstenes defende 'patrocínio privado'; Bolsonaro ordena apoio Flávio."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "7.05%",
-    poll: "Renan presidencial DISPARA 7.05% Poly (↑1.20pp de 5.85%) absorve parte migração Flávio pós-crise Vorcaro. 3L 31.50% (↓0.50pp leve cede para Zema RECUPERA LIDERANÇA 35.00%). 2L Renan 5.60% (↓1.15pp). STF IMPEACH COLAPSA 6.50% (↓4.00pp). Quaest 13/Mai não destaca Renan (G1, CartaCapital, VEJA).",
+    polymarket: "7.15%",
+    poll: "Renan presidencial estável 7.15% Poly (↑0.10pp leve) mantém patamar pós-ressaca Vorcaro. 3L Renan DISPARA 34.50% (↑3.00pp de 31.50%) consolida competitivo Zema 35.50%. Caiado 3L DEVOLVE COLOSSAL 13.00% (↓5.50pp) Renan ganha espaço relativo. 2L Renan 5.65% (estável). STF IMPEACH continua COLAPSANDO 4.50% (↓2.00pp, ↓13.50pp 72h). Mantida ausência destaque Quaest 13/Mai (G1, CartaCapital, VEJA).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Renan AUSENTE Quaest 13/Mai como destaque (G1, CartaCapital, VEJA 13/Mai) — Caiado 4% e Zema 4% destacados, Renan não. Crise Flávio-Vorcaro abre espaço outsider direita liberal MBL mas Lula CAPTURA maior parte migração com DISPARA 45.50%. Bolsonaristas debatem substituir Flávio por Michelle (VEJA 13/Mai) — direita pode reorganizar SEM Renan. Caiado 3L 18.50% estável. Eleitor não vê Lula nem Flávio como moderados (Estadão 13/Mai) narrativa alternativa relevante. Aprovação Lula 46.6-46.8% melhorando reduz oxigênio outsider. Datafolha 15/Mai pode reforçar bipolaridade nacional."
+    risk: "Renan AUSENTE Quaest 13/Mai como destaque mantida (G1, CartaCapital, VEJA 13/Mai). Discrepância presidencial Poly (7.15%) × 3º lugar (34.50%) sugere mercado vê Renan como '3º consolidado' não 'presidencial competitivo'. Flávio RECUPERA 33.35% (↑4.90pp) base PL resiste migração para outsiders. ZEMA DEVOLVE COLOSSAL 5.85% (↓6.15pp) Renan ganha espaço relativo 3L. Mantidos 13/Mai: Bolsonaristas debatem substituir Flávio por Michelle; Sóstenes defende Flávio; Bolsonaro ordena apoio. MICHELLE CONTINUA SUBINDO 3.40% (↑1.45pp) ocupa espaço alternativo direita. STF IMPEACH continua COLAPSANDO 4.50% (↓2.00pp) reduz combustível anti-establishment. Aprovação Lula 46.6-46.8% melhorando. Pesquisa Gerp publicada (Gazeta do Povo 14/Mai). Datafolha 15/Mai pode reforçar bipolaridade."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "2.65%",
-    poll: "Haddad presidencial 2.65% Poly (estável). 2L Haddad 2.75% (↓0.10pp). 3L 4.20% (↓0.05pp). Camilo presidencial DEVOLVE 1.65% (↓0.90pp) — Haddad mantém 1.00pp ACIMA Camilo. PT Senado 3.05% (↑0.15pp). Quaest 13/Mai não destaca Haddad como cenário principal.",
+    polymarket: "2.45%",
+    poll: "Haddad presidencial 2.45% Poly (↓0.20pp leve). 2L Haddad 2.75% (estável). 3L 4.05% (↓0.15pp). Camilo presidencial 1.65% (estável) — Haddad mantém 0.80pp ACIMA Camilo. PT Senado 2.90% (↓0.15pp leve). Quaest 13/Mai não destaca Haddad como cenário principal.",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Lula DISPARA Poly 45.50% (↑7.00pp) base PT beneficia Haddad por extensão. Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui (Genial/Quaest 13/Mai). Fim taxa blusinhas reviravolta governo (G1, Gazeta do Povo 13/Mai); Lula esperou saída Haddad evitar mal-estar (CNN Brasil 13/Mai) gestão política calibrada com Haddad. PT Senado 3.05% (↑0.15pp). MAS: Tarcísio crítica Haddad mantida (Folha); Vox SP gap 12pp mantido (CartaCapital). Ibovespa recua dólar +2% (VEJA 13/Mai) fragiliza narrativa governo. Petrobras zera importações diesel (VEJA 13/Mai). Datafolha 15/Mai oportunidade reposicionamento."
+    risk: "Lula mantém liderança Poly 42.50% (DEVOLVE leve) base PT beneficia Haddad por extensão. ANÁLISE Quaest diretor: melhora avaliação governo + eleição apertada (G1 14/Mai). Quaest aprovação sobe pós-derrotas+Trump (PlatôBR 14/Mai). Pesquisa interna 70% rejeição taxa blusinhas determinante revogação (G1 14/Mai); Lula esperou saída Haddad evitar mal-estar gestão calibrada (CNN Brasil 13/Mai mantida). PT Senado 2.90% (↓0.15pp). MAS: Mantida Tarcísio crítica Haddad (Folha 05/Mai); Vox SP gap 12pp mantido; Ligação Flávio-Vorcaro pesa mercado doméstico (Valor 14/Mai). Risco político volta ao foco (Valor 14/Mai). Ibovespa afetado (VEJA 14/Mai). Mantido Petrobras zera importações diesel (VEJA 13/Mai). Pesquisa Gerp publicada (Gazeta do Povo 14/Mai). Datafolha 15/Mai oportunidade reposicionamento."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.25%",
-    poll: "Caiado presidencial 1.25% Poly (estável). 3L mantém 18.50% estável consolida 3º competidor. PSD Senado 2.05%. QUAEST 13/Mai: Caiado 4% × Zema 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai). Caiado COBRA EXPLICAÇÕES Flávio sobre Vorcaro (G1 13/Mai) postura institucional reposicionamento aproveita crise direita.",
+    polymarket: "1.35%",
+    poll: "Caiado presidencial 1.35% Poly (↑0.10pp leve). 3L DEVOLVE COLOSSAL 13.00% (↓5.50pp de 18.50%) cede liderança 3L. PSD Senado DISPARA 3.05% (↑1.00pp de 2.05%) recuperação institucional. Mantida QUAEST 13/Mai: Caiado 4% × Zema 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai). Mantido Caiado cobra explicações Flávio Vorcaro (G1 13/Mai).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Apesar empate Caiado×Zema 1T (Quaest 13/Mai), Zema CAPTURA mais espaço Poly (12.00% vs Caiado 1.25%) — mercado precifica Zema como receptor fragmentação direita pós-crise Vorcaro. SENADO: PL 77.00% (↑2.00pp recupera), MDB DEVOLVE 5.00% (↓3.65pp), Republicanos 5.25%, Podemos DEVOLVE 1.35% (↓1.70pp), PT 3.05% (↑0.15pp). 'Caiado sem apoio governadores PSD' (Gazeta do Povo mantida). Bolsonaristas debatem substituir Flávio por Michelle (VEJA 13/Mai) — direita pode reorganizar SEM Caiado. Líder PL Sóstenes defende Flávio 'patrocínio privado' (VEJA 13/Mai) — PL mantém Flávio."
+    risk: "Caiado 3L DEVOLVE COLOSSAL 13.00% (↓5.50pp) cede liderança. ZEMA DEVOLVE COLOSSAL 5.85% (↓6.15pp) mas mantém 3L 35.50% topo. Renan DISPARA 3L 34.50% (↑3.00pp) consolida competitivo. SENADO 14/Mai: PL CONSOLIDA 79.50% (↑2.50pp), PSD DISPARA 3.05% (↑1.00pp recuperação), Podemos 1.55% (↑0.20pp), REPUBLICANOS DEVOLVE COLOSSAL 1.05% (↓4.20pp), PT 2.90% (↓0.15pp). 'Caiado sem apoio governadores PSD' (Gazeta do Povo mantida). Mantidos 13/Mai: Bolsonaristas debatem substituir Flávio por Michelle; Sóstenes defende Flávio. MICHELLE CONTINUA SUBINDO 3.40% (↑1.45pp) ocupa espaço alternativo direita. Pesquisa Gerp publicada (Gazeta do Povo 14/Mai)."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "12.00%",
-    poll: "Zema DISPARA COLOSSAL presidencial 12.00% Poly (↑8.15pp de 3.85%) MAIOR DISPARADA INDIVIDUAL 3ª via DA SÉRIE — absorve espaço Flávio pós-crise Vorcaro. 3L RECUPERA LIDERANÇA 35.00% (↑2.50pp). 2L Zema 7.25% (↑4.30pp DISPARA). NOVO Senado 0.85% (↓0.15pp). QUAEST 13/Mai: Zema 4% × Caiado 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai).",
+    polymarket: "5.85%",
+    poll: "Zema DEVOLVE COLOSSAL presidencial 5.85% Poly (↓6.15pp de 12.00%) spike 13/Mai NÃO confirmado mercado precifica reação excessiva. 3L Zema mantém 35.50% (↑0.50pp estável topo). 2L Zema DEVOLVE 3.10% (↓4.15pp de 7.25%). NOVO Senado 0.85% (estável). Mantida QUAEST 13/Mai: Zema 4% × Caiado 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai).",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Crise Flávio-Vorcaro abre espaço narrativa direita alternativa moderada. 'Zema RADICALIZA impeachment STF + privatizar tudo' (Estadão 03/Mai mantida). Caiado 3L 18.50% estável competidor 3ª via. INFLAÇÃO bandas altas DEVOLVEM COLOSSAL (≥6.50%) 17.20% (↓23.10pp de 40.30%) reduz oxigênio discurso fiscal Zema momentaneamente. STF IMPEACH COLAPSA 6.50% (↓4.00pp) reduz narrativa anti-STF Zema. 2L Zema 7.25% ainda muito atrás Flávio 61% — caminho 2T requer continuidade colapso Flávio. Bolsonaristas debatem substituir Flávio por Michelle (VEJA 13/Mai) — direita pode reorganizar SEM Zema. Bolsonaro ordena apoio Flávio (SBT News 13/Mai) — base Bolsonaro resiste migração para Novo."
+    risk: "ZEMA DEVOLVE COLOSSAL spike 13/Mai não confirmado — mercado não consolida Zema como receptor migração Flávio. Flávio RECUPERA 33.35% (↑4.90pp) base PL resistiu. STF IMPEACH continua COLAPSANDO 4.50% (↓2.00pp, ↓13.50pp 72h) reduz combustível narrativa anti-STF Zema. INFLAÇÃO bandas altas (≥6.50%) RECUPERAM parcial 20.35% (↑3.15pp); 7.00%+ DISPARA 10.40% (↑2.20pp) — narrativa fiscal extrema retorna pode favorecer discurso Zema MAS spike 13/Mai não confirmado. MICHELLE CONTINUA SUBINDO 3.40% (↑1.45pp) ocupa espaço alternativo direita. Mantidos 13/Mai: Bolsonaristas debatem substituir Flávio por Michelle — direita pode reorganizar SEM Zema; Bolsonaro ordena apoio Flávio. Mantido 'Zema RADICALIZA impeachment STF + privatizar tudo' (Estadão 03/Mai)."
   },
   {
     name: "Tarcísio de Freitas",
     party: "Republicanos",
     age: 51,
     role: "Governador de São Paulo",
-    polymarket: "0.55%",
-    poll: "Tarcísio presidencial 0.55% Poly (↑0.30pp leve sobe). 2L Tarcísio 0.45%. Republicanos Senado 5.25% (↓0.20pp). PL Senado 77.00% (↑2.00pp recupera).",
+    polymarket: "0.75%",
+    poll: "Tarcísio presidencial 0.75% Poly (↑0.20pp leve sobe). 2L Tarcísio 0.35% (↓0.10pp). Republicanos Senado DEVOLVE COLOSSAL 1.05% (↓4.20pp de 5.25%). PL Senado CONSOLIDA 79.50% (↑2.50pp).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Bolsonaristas DEBATEM SUBSTITUIR Flávio por Michelle (VEJA 13/Mai) — Tarcísio é candidato alternativo possível mas mantém foco SP. Líder PL Sóstenes defende Flávio (VEJA 13/Mai) — partido não fragmenta. Bolsonaro ordena apoio Flávio (SBT News 13/Mai) — base mantida. Crise Flávio-Vorcaro pode levar a reorganização interna PL/Republicanos. Mantido Tarcísio+Flávio reportados PG crimes eleitorais (Revista Fórum 02/Mai mantida). Mantido foco reeleição SP."
+    risk: "Tarcísio comenta explosão obra Sabesp 'mão pesada do Estado vai atuar e punição vai acontecer' (O Globo 14/Mai). Republicanos Senado DEVOLVE COLOSSAL (↓4.20pp) — mercado abandona hipótese partido como força protagonista no Senado. Mantidos 13/Mai: Bolsonaristas debatem substituir Flávio por Michelle (VEJA) — Tarcísio é candidato alternativo possível mas mantém foco SP; Líder PL Sóstenes defende Flávio (VEJA); Bolsonaro ordena apoio Flávio (SBT News). Crise Flávio-Vorcaro pode levar a reorganização interna PL/Republicanos. Mantido Tarcísio+Flávio reportados PG crimes eleitorais (Revista Fórum 02/Mai mantida). MICHELLE CONTINUA SUBINDO 3.40% (↑1.45pp) — direita pode reorganizar com Michelle não necessariamente Tarcísio. Mantido foco reeleição SP."
   },
 ];
 
