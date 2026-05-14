@@ -38,6 +38,19 @@ const CONTACT_LABELS: Record<string, Record<ContactKey | 'title', string>> = {
   es:      { general: 'Contacto', support: 'Soporte', security: 'Seguridad', founder: 'Founder', title: 'Contáctenos' },
 }
 
+const SOCIAL_LABELS: Record<string, { title: string }> = {
+  'pt-BR': { title: 'Redes Sociais' },
+  en:      { title: 'Follow Us' },
+  es:      { title: 'Síguenos' },
+}
+
+const SOCIALS: Array<{ name: string; url: string; icon: string }> = [
+  { name: 'GitHub',       url: 'https://github.com/AFOS-Analytics/afos-analitica-2026', icon: '⭐' },
+  { name: 'X / Twitter',  url: 'https://x.com/AFOS_Analytics',                          icon: '𝕏' },
+  { name: 'Bluesky',      url: 'https://bsky.app/profile/afos-analytics.com',           icon: '🦋' },
+  { name: 'Product Hunt', url: 'https://www.producthunt.com/@afosanalytics',            icon: '🚀' },
+]
+
 export function Footer() {
   const { t } = useTranslation();
   const locale = useLocale();
@@ -45,6 +58,7 @@ export function Footer() {
   const oss = OSS_LABELS[locale] || OSS_LABELS['en'];
   const legal = LEGAL_LABELS[locale] || LEGAL_LABELS['en'];
   const labels = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
+  const social = SOCIAL_LABELS[locale] || SOCIAL_LABELS['en'];
 
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
@@ -75,6 +89,26 @@ export function Footer() {
             <a href={`/${locale}/privacy`} className="block text-white/60 hover:text-white py-0.5">{legal.privacy}</a>
             <a href={`/${locale}/terms`} className="block text-white/60 hover:text-white py-0.5">{legal.terms}</a>
             <a href={`/${locale}/data-sources`} className="block text-white/60 hover:text-white py-0.5">{legal.sources}</a>
+          </div>
+        </div>
+
+        {/* Redes Sociais */}
+        <div className="border-t border-white/20 pt-4 pb-4 mb-4">
+          <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+            {SOCIALS.map(({ name, url, icon }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
+                aria-label={`${name} (opens in new tab)`}
+              >
+                <span aria-hidden className="text-base leading-none">{icon}</span>
+                <span className="text-white/70 group-hover:text-white font-medium">{name}</span>
+              </a>
+            ))}
           </div>
         </div>
 
