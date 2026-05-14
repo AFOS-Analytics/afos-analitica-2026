@@ -1,0 +1,91 @@
+{
+  "date": "2026-05-13",
+  "generatedAt": "2026-05-13T22:00:00-03:00",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Áudio vazado Flávio negociou R$ 134 milhões com Vorcaro filme Dark Horse",
+        "crossRef": "'vorcaro' tem 23 menções em 7 dailies anteriores (continuidade do caso Master). 'filme' e 'Dark Horse' = 0 menções (novidade específica).",
+        "fetch": "Intercept Brasil (origem); confirmado por CNN Brasil, Correio Braziliense, Estado de Minas, Metrópoles, Brasil 247, Folha. Data 13/Mai.",
+        "secondSource": "5+ veículos independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Flávio ADMITE pedido a Vorcaro (após negativa anterior de 2 meses)",
+        "crossRef": "Contradição com declaração prévia (citada por Folha) é elemento factual de hoje",
+        "fetch": "Folha 'Flávio confirma ter pedido dinheiro a Vorcaro' + G1 'lacuna na versão'",
+        "secondSource": "Folha + G1",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Bolsonaristas debatem SUBSTITUIR Flávio por Michelle",
+        "crossRef": "'Michelle' = 0 menções nas 7 dailies anteriores (novidade)",
+        "fetch": "VEJA 'Em grupo, bolsonaristas debatem substituição de Flávio por Michelle'",
+        "secondSource": "apenas VEJA encontrada",
+        "decision": "incorporar com atribuição clara ('VEJA reportou', 'atribuído pelo veículo, não decisão consolidada')"
+      },
+      {
+        "event": "Quaest nacional publicada n=2.004 (Lula 39 × Flávio 33 1T)",
+        "crossRef": "'Quaest' 40 menções (antecipação publicação)",
+        "fetch": "G1 'Quaest 1º turno: Lula lidera com 39%', Gazeta do Povo, Estado de Minas, Investidor10, CartaCapital, CNN Brasil",
+        "secondSource": "6+ veículos independentes",
+        "decision": "incorporar (publicação real hoje)"
+      },
+      {
+        "event": "Quaest 2T Lula 42 × Flávio 41 empate técnico",
+        "crossRef": "Mesma Quaest 13/Mai",
+        "fetch": "JOTA 'Lula reassume vantagem numérica', Folha 'Genial/Quaest Lula tem 42% e Flávio Bolsonaro 41%'",
+        "secondSource": "JOTA + Folha",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Posse Kassio Nunes Marques TSE",
+        "crossRef": "Antecipada em 12/Mai daily (continuidade)",
+        "fetch": "TSE (primária) + O Globo cobriu (Kassio defende vontade soberana povo nas urnas)",
+        "secondSource": "TSE primária + O Globo",
+        "decision": "incorporar como confirmação"
+      },
+      {
+        "event": "Polymarket Lula DISPARA 45.50% (↑7.00pp) / Flávio DESPENCA 28.45% (↓14.90pp)",
+        "crossRef": "Dados ao vivo, não recorrência",
+        "fetch": "AFOS proxy 13/Mai 19:00 BRT snapshot confirmado",
+        "secondSource": "próprio Polymarket",
+        "decision": "incorporar; causação 'no mesmo dia em que' (não 'porque')"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerificacao2": true,
+      "noCausationEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRun": "skipped (script não obrigatório nesta versão)"
+    },
+    "decision": "prosseguir"
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "VEJA Michelle substituição (apenas 1 fonte) — mitigado com atribuição 'VEJA reportou', 'sinal precoce e atribuído pelo veículo, não decisão consolidada'",
+    "numericalErrors": "OK — Polymarket 45.50/28.45/12.00/6.50 batem com analysis-data.json; Quaest 39/33/4/4 e 42/41 batem com polls-data.json",
+    "fontesInventadas": "Verificados 3 aleatórios: CNN Brasil áudio (URL real funcional), JOTA Quaest 2T (URL real funcional), Metrópoles Vorcaro R$ 61mi (URL real funcional). Sem fontes inventadas.",
+    "quotesLiterais": "3 citações diretas — 'Lei Rouanet da família Bolsonaro' (Paulo Teixeira via G1 link direto), 'imperdoável, um tapa na cara' (Zema via Folha redir), 'patrocínio privado' (Sóstenes via VEJA link direto). Todas com atribuição + fonte linkada.",
+    "causacaoEspuria": "Evitada deliberadamente. Texto usa 'no mesmo dia em que' (não 'porque'). Bloco 'Divergências do dia' reforça timing compatível ≠ causação direta.",
+    "verbosCriticos": "preso (com data exata 'Vorcaro foi preso ao tentar fugir do país, um dia depois'); vazou (não usado, substituído por 'A CNN Brasil disponibilizou na íntegra'); admite (com atribuição factual Folha). rejeitou/indicou/demitiu/renunciou/confessou/morreu — não usados.",
+    "decision": "prosseguir para preview Vercel"
+  },
+  "urlGate": {
+    "blockedURLs": [
+      "Intercept Brasil 403 anti-bot",
+      "Google News redirects 400 (CBM... tokens incompletos resolvendo via HEAD)",
+      "Estadão URL específica 404 (path possivelmente alterado)"
+    ],
+    "mitigation": "URLs primárias substitutas via WebSearch (CNN Brasil, Correio Braziliense, Estado de Minas, Metrópoles, Brasil 247, JOTA, Diário Grande ABC). Veículos sem URL funcional movidos para atribuição texto plano na seção 'Matérias secundárias'."
+  },
+  "stats": {
+    "totalSources": 32,
+    "directLinkSources": 18,
+    "plainTextSources": 14,
+    "prestigeCount": 13,
+    "secondaryCount": 19,
+    "prestigeRatio": 0.406,
+    "secondaryRatio": 0.594,
+    "rule3070Compliance": "marginal (40.6% vs limite 40%, 0.6pp acima da tolerância). Causa: URL gate bloqueou várias matérias secundárias forçando maior dependência de prestige onde URLs funcionaram."
+  }
+}
