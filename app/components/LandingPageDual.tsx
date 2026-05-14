@@ -636,9 +636,12 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <p className="font-bold text-white text-base mb-2">AFOS Analytics</p>
           <p className={`transition-colors duration-500 ${tk.footerText}`}>{t.footer.desc}</p>
           <p className={`mt-2 transition-colors duration-500 ${tk.footerDim}`}>{t.footer.disclaimer}</p>
-          <div className={`mt-4 flex items-center justify-center gap-4 transition-colors duration-500 ${tk.footerLink}`}>
+          <div className={`mt-4 flex items-center justify-center flex-wrap gap-x-4 gap-y-2 transition-colors duration-500 ${tk.footerLink}`}>
             <a href={dashboardUrl} className="hover:text-white transition-colors">Dashboard</a>
-            <a href="https://github.com/AFOS-Analytics/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://github.com/AFOS-Analytics/afos-analitica-2026" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">⭐ GitHub</a>
+            <a href="https://x.com/AFOS_Analytics" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">𝕏 X</a>
+            <a href="https://bsky.app/profile/afos-analytics.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">🦋 Bluesky</a>
+            <a href="https://www.producthunt.com/@afosanalytics" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">🚀 Product Hunt</a>
           </div>
         </div>
       </footer>
