@@ -321,39 +321,39 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 14/Mai/2026 09:00 BRT D-Day LAUNCH AFOS",
-    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Paraná Pesquisas SP (07/Mai), Quaest nacional publicada 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), Pesquisa Gerp publicada 14/Mai (Gazeta do Povo), Polymarket (ao vivo fetchedAt 14/Mai 11:40 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 14/Mai/2026 17:30 BRT FECHAMENTO D-Day LAUNCH AFOS",
+    "sources": "AtlasIntel/Bloomberg (28/Abr, n=5008), Real Time Big Data nacional (05/Mai sample 2000), Genial/Quaest 10 estados (06/Mai), Meio/Ideia 2T nacional (06/Mai), Paraná Pesquisas SP (07/Mai), Quaest nacional publicada 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), Pesquisa Gerp publicada 14/Mai (Gazeta do Povo), Polymarket (ao vivo fetchedAt 14/Mai 20:30 UTC fechamento BRT).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "39-46.6%",
-        "polymarket": "42.50%",
-        "tendenciaPesquisa": "Mantida Quaest 13/Mai n=2.004 Lula 39% × Flávio 33% (G1, Gazeta do Povo, CartaCapital 13/Mai); ANÁLISE Quaest pelo próprio diretor: melhora avaliação governo + eleição apertada (G1 14/Mai); Quaest aprovação sobe pós-derrotas + reunião Lula-Trump (PlatôBR 14/Mai); Lula REASSUME VANTAGEM 2T (JOTA 14/Mai); Quaest Lula vence Flávio 2T (TVT News 14/Mai); AtlasIntel 28/Abr 1T 46.6%; Pesquisa Gerp publicada 14/Mai (Gazeta do Povo)",
-        "tendenciaPolymarket": "DEVOLVE leve 42.50% (↓3.00pp de 45.50%) ressaca do spike ontem mantém liderança; gap DEVOLVE +9.15pp LULA (vs +17.05pp ontem ↓7.90pp Lula mantém à frente); 2L 16.00% (↑0.50pp); STF impeach continua COLAPSANDO 4.50% (↓2.00pp, ↓13.50pp 72h)",
-        "odds": 42.5
+        "polymarket": "43.00%",
+        "tendenciaPesquisa": "Mantida Quaest 13/Mai n=2.004 Lula 39% × Flávio 33% (G1, Gazeta do Povo, CartaCapital 13/Mai); ANÁLISE Quaest pelo próprio diretor: melhora avaliação governo + eleição apertada (G1 14/Mai); Quaest aprovação sobe pós-derrotas + reunião Lula-Trump (PlatôBR 14/Mai); Lula REASSUME VANTAGEM 2T (JOTA 14/Mai); Quaest Lula vence Flávio 2T (TVT News 14/Mai); AtlasIntel 28/Abr 1T 46.6%; Pesquisa Gerp publicada 14/Mai (Gazeta do Povo); Datafolha publica 15/Mai (D+1) n=2.004",
+        "tendenciaPolymarket": "FECHAMENTO 43.00% (↑0.50pp leve vs 42.50% 09:00) estável; gap +10.00pp LULA (vs +9.15pp 09:00); 2L 16.00% estável; STF impeach REVERTE colapso 8.00% (↑3.50pp de 4.50%) interrompe trajetória descendente",
+        "odds": 43.0
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-48.1%",
-        "polymarket": "33.35%",
-        "tendenciaPesquisa": "Mantida Quaest 13/Mai Flávio 33% × Lula 39% (G1 13/Mai); 'Aliados Flávio veem abalo confiança elo Vorcaro temem mais acusações' (Folha 14/Mai); 'Negócio com Master semeia dúvidas sobre candidatura Flávio' (VEJA 14/Mai); BBC 'Balde de água fria' bolsonarismo (BBC 14/Mai); Mantidos 13/Mai: Áudio Intercept R$ 134 mi filme Dark Horse; Flávio admite pedido; Bolsonaristas debatem substituir por Michelle",
-        "tendenciaPolymarket": "RECUPERA 33.35% (↑4.90pp de 28.45%) ressaca do choque base PL resiste; 2L recupera 66.00% (↑5.00pp); 3L 5.80% (↑2.50pp); PL Senado CONSOLIDA 79.50% (↑2.50pp)",
-        "odds": 33.35
+        "polymarket": "33.00%",
+        "tendenciaPesquisa": "Mantida Quaest 13/Mai Flávio 33% × Lula 39% (G1 13/Mai); 'Aliados Flávio veem abalo confiança elo Vorcaro temem mais acusações' (Folha 14/Mai); 'Negócio com Master semeia dúvidas sobre candidatura Flávio' (VEJA 14/Mai); BBC 'Balde de água fria' bolsonarismo (BBC 14/Mai); Henrique Vorcaro pai PRESO 6ª fase Compliance Zero (14/Mai); Mantidos 13/Mai: Áudio R$ 134 mi Dark Horse; Flávio admite pedido",
+        "tendenciaPolymarket": "FECHAMENTO 33.00% (↓0.35pp leve vs 33.35% 09:00) estável; 2L 65.00% (↓1.00pp leve); 3L 5.80% estável; PL Senado CEDE 73.00% (↓6.50pp de 79.50%) MDB ABSORVE 8.00% (↑3.05pp)",
+        "odds": 33.0
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "7.15%",
+        "polymarket": "7.00%",
         "tendenciaPesquisa": "Mantida ausência destaque Quaest 13/Mai (G1, CartaCapital, VEJA); Mantida AtlasIntel 28/Abr 5.3%; Mantida Real Time Big Data 05/Mai 1T 3%",
-        "tendenciaPolymarket": "Estável 7.15% (↑0.10pp leve) mantém patamar pós-ressaca; 3L DISPARA 34.50% (↑3.00pp consolida competitivo Zema 35.50%); Caiado DEVOLVE 3L COLOSSAL 13.00% (↓5.50pp) Renan ganha espaço relativo",
-        "odds": 7.15
+        "tendenciaPolymarket": "FECHAMENTO 7.00% (↓0.15pp leve estável); 3L CEDE 32.00% (↓2.50pp de 34.50%) Zema fortalece liderança 3L; Caiado 3L estável 13.00%",
+        "odds": 7.0
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3.3-5%",
         "polymarket": "1.35%",
         "tendenciaPesquisa": "Mantida Quaest 13/Mai: Caiado 4% × Zema 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai); Mantido Caiado cobra explicações Flávio Vorcaro (G1 13/Mai); Mantida '2T Caiado 42% × Lula 43% empate' (Estadão 05/Mai)",
-        "tendenciaPolymarket": "Estável 1.35% (↑0.10pp leve); 3L DEVOLVE COLOSSAL 13.00% (↓5.50pp de 18.50%) cede liderança 3L; PSD Senado DISPARA 3.05% (↑1.00pp)",
+        "tendenciaPolymarket": "FECHAMENTO 1.35% estável; 3L Caiado 13.00% estável; PSD Senado mantida posição relativa",
         "odds": 1.35
       },
       {
@@ -361,26 +361,26 @@
         "pesquisaRange": "0.15-0.75%",
         "polymarket": "0.75%",
         "tendenciaPesquisa": "Mantido Vox SP gov Tarcísio 38% × Haddad 26%; Mantido foco reeleição SP; Tarcísio comenta Sabesp 'mão pesada Estado' (O Globo 14/Mai)",
-        "tendenciaPolymarket": "Estável 0.75% (↑0.20pp leve); 2L 0.35% leve; Republicanos Senado DEVOLVE COLOSSAL 1.05% (↓4.20pp de 5.25%)",
+        "tendenciaPolymarket": "FECHAMENTO estável 0.75% (≈); Republicanos Senado mantida queda 1.05%",
         "odds": 0.75
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "5.85%",
+        "polymarket": "9.00%",
         "tendenciaPesquisa": "Mantida Quaest 13/Mai: Zema 4% × Caiado 4% empate técnico 1T 3ª via (G1, CartaCapital 13/Mai); Mantida AtlasIntel 28/Abr 3.1%; Mantida Real Time Big Data 05/Mai 1T 4%",
-        "tendenciaPolymarket": "DEVOLVE COLOSSAL 5.85% (↓6.15pp de 12.00%) spike 13/Mai NÃO confirmado mercado precifica reação excessiva; 3L mantém 35.50% (↑0.50pp estável topo); 2L DEVOLVE 3.10% (↓4.15pp de 7.25%)",
-        "odds": 5.85
+        "tendenciaPolymarket": "FECHAMENTO RECUPERA parcial 9.00% (↑3.15pp de 5.85% 09:00) mas ainda abaixo do spike 12.00% de 13/Mai; 3L FORTALECE 41.00% (↑5.50pp de 35.50%) consolida liderança 3L; mercado precifica Zema como receptor parcial migração 3ª via pós-crise Flávio",
+        "odds": 9.0
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "2.45%",
         "tendenciaPesquisa": "Quaest 13/Mai não destaca Haddad como cenário principal; ANÁLISE Quaest diretor melhora avaliação governo beneficia base PT por extensão (G1 14/Mai); Quaest aprovação sobe pós Trump-Lula (PlatôBR 14/Mai)",
-        "tendenciaPolymarket": "Leve 2.45% (↓0.20pp); 2L 2.75% estável; Camilo 1.65% estável Haddad mantém 0.80pp ACIMA Camilo; PT Senado 2.90% (↓0.15pp)",
+        "tendenciaPolymarket": "FECHAMENTO estável 2.45%; 2L estável; PT Senado estável; ligação Flávio-Vorcaro pesa mercado doméstico (Valor 14/Mai)",
         "odds": 2.45
       }
     ],
-    "updatedAt": "2026-05-14 09:00 BRT"
+    "updatedAt": "2026-05-14 17:30 BRT"
   }
 }
