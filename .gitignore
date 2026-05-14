@@ -64,3 +64,10 @@ docs/launch/
 
 # News cache (Google News redirect URLs — não devem acumular no repo)
 public/news-cache/
+
+# Internal preview/mockup (não vai pro repo)
+public/preview-daily-viz.html
+
+# Defensive ignores (proteção redundante — paths movidos pra C:\AFOS-Privado\)
+launch-day-13mai.md
+docs/launch-texts/0*.md
