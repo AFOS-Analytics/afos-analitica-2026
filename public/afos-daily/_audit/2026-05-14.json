@@ -1,0 +1,84 @@
+{
+  "date": "2026-05-14",
+  "generatedAt": "2026-05-14T12:00:00-03:00",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Henrique Vorcaro (pai Daniel) preso 6ª fase Operação Compliance Zero",
+        "crossRef": "'Henrique Vorcaro' = 0 menções em 7 dailies (novidade). 'Vorcaro' 47 menções (continuidade do caso). 'Compliance Zero' 15 menções (continuidade da operação, mas 6ª fase específica). 'A Turma' 0 menções (novidade).",
+        "fetch": "Confirmado em 6 fontes independentes 14/Mai: G1, O Globo, Estadão, Folha, BBC, Valor. Data 14/Mai (quinta).",
+        "secondSource": "6+ fontes independentes",
+        "decision": "incorporar com desambiguação pai vs Daniel"
+      },
+      {
+        "event": "Vorcaro usou conta do pai ocultar R$ 2,2 bi vítimas Master",
+        "crossRef": "Desdobramento descoberta hoje. Continuidade caso Master.",
+        "fetch": "O Globo 14/Mai 'diz PF' — atribuição clara à PF. Tipo: evento/desdobramento.",
+        "secondSource": "O Globo (origem). Folha + Estadão repercutem.",
+        "decision": "incorporar com atribuição 'segundo a PF'"
+      },
+      {
+        "event": "Valor filme 13× caixa Master ao ser liquidado",
+        "crossRef": "Desdobramento numérico do caso. Continuidade.",
+        "fetch": "O Globo Malu Gaspar 14/Mai + Valor coverage. 14/Mai.",
+        "secondSource": "O Globo + Valor",
+        "decision": "incorporar com atribuição autora identificada"
+      },
+      {
+        "event": "Flávio negociou meses após Bolsonaro atacar Master ('sistema agindo')",
+        "crossRef": "Desdobramento da revelação 13/Mai. Continuidade.",
+        "fetch": "O Globo Malu Gaspar 14/Mai. Aspas literais com atribuição.",
+        "secondSource": "Folha repercute em coluna 14/Mai",
+        "decision": "incorporar com aspas literais marcadas + atribuição autora"
+      },
+      {
+        "event": "ANÁLISE Quaest pelo próprio diretor (G1 14/Mai)",
+        "crossRef": "Desdobramento da pesquisa 13/Mai. Continuidade.",
+        "fetch": "G1 14/Mai entrevista diretor Quaest. Tipo: análise.",
+        "secondSource": "PlatôBR + JOTA cobrem ângulo similar",
+        "decision": "incorporar como contexto da Quaest pré-existente"
+      },
+      {
+        "event": "Pesquisa Gerp publicada hoje (Gazeta do Povo 14/Mai)",
+        "crossRef": "Gerp 0 menções nas dailies → novidade.",
+        "fetch": "Gazeta do Povo 14/Mai apenas — 1 fonte. Sem números específicos.",
+        "secondSource": "não verificado",
+        "decision": "incorporar como menção/UNVERIFIED — citar publicação sem detalhes"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerificacao2": true,
+      "noCausationEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRun": "passou — valores % batem com analysis-data.json"
+    },
+    "decision": "prosseguir"
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "Apenas Gerp 14/Mai (Gazeta do Povo) — mitigado com atribuição plain-text + ressalva 'números não verificados'.",
+    "numericalErrors": "OK — 42.50/33.35/9.15pp/17.05pp/4.50/5.85/3.40/79.50/1.05/20.35/10.40 batem com analysis-data.json snapshot 14/Mai 09:00.",
+    "fontesInventadas": "16 URLs anchor pré-validadas via HTTP HEAD 200 antes do Write. Verificados 3 aleatórios pós-Write: O Globo R$ 2,2 bi (200), VEJA Mário Frias (200), Estadão Flávio confirma (200). Sem fontes inventadas.",
+    "quotesLiterais": "1 citação direta — 'sistema agindo' (Malu Gaspar O Globo, link direto). 'Balde de água fria' (BBC, plain-text attribution apenas).",
+    "causacaoEspuria": "Evitada deliberadamente. Texto explícito: 'movimento compatível com digestão', 'não é causação direta', 'correção técnica'.",
+    "verbosCriticos": "preso (com sujeito + relação familiar 'pai de Daniel Vorcaro' + agente PF + fase operação); admite (atribuição BBC); confirma (atribuição Estadão). Datas explícitas, zero 'ontem'/'hoje'.",
+    "decision": "prosseguir para preview Vercel"
+  },
+  "urlGate": {
+    "blockedURLs": [
+      "URLs inventadas (não no cache) bloqueadas 404/400 no primeiro Write — corrigido na v2",
+      "Folha rss091 URLs (anti-bot HEAD timeout) — substituídas por plain-text attribution",
+      "BBC URLs inventadas — substituídas por plain-text attribution"
+    ],
+    "mitigation": "v2 usa apenas URLs pré-validadas via curl HEAD 200 (16 anchor: O Globo, Estadão, VEJA, Polymarket). Secundárias como atribuição texto plano. Trade-off: low-link-density warning (64% vs 80% target) aceito dado gate constraints."
+  },
+  "stats": {
+    "totalSources": 47,
+    "directLinkSources": 16,
+    "plainTextSources": 31,
+    "prestigeCount": 16,
+    "secondaryCount": 31,
+    "prestigeRatio": 0.34,
+    "secondaryRatio": 0.66,
+    "rule3070Compliance": "OK marginal (34/66 vs target 30/70, ±10pp tolerância). Anchor heavy esperado dado constraint de gate URL validation."
+  }
+}
