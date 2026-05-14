@@ -1,6 +1,6 @@
 # AFOS Analytics
 
-![AFOS Analytics](public/social-preview.jpg)
+![AFOS Analytics — Live Dashboard](public/screenshots/dashboard-demo.gif)
 
 🇧🇷 [Leia em Português](README.pt-BR.md) | 🇺🇸 English
 
