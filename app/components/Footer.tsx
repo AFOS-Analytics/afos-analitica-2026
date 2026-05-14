@@ -44,11 +44,11 @@ const SOCIAL_LABELS: Record<string, { title: string }> = {
   es:      { title: 'Síguenos' },
 }
 
-const SOCIALS: Array<{ name: string; url: string; icon: string }> = [
-  { name: 'GitHub',       url: 'https://github.com/AFOS-Analytics/afos-analitica-2026', icon: '⭐' },
-  { name: 'X / Twitter',  url: 'https://x.com/AFOS_Analytics',                          icon: '𝕏' },
-  { name: 'Bluesky',      url: 'https://bsky.app/profile/afos-analytics.com',           icon: '🦋' },
-  { name: 'Product Hunt', url: 'https://www.producthunt.com/@afosanalytics',            icon: '🚀' },
+const SOCIALS: Array<{ name: string; url: string }> = [
+  { name: 'GitHub',       url: 'https://github.com/AFOS-Analytics/afos-analitica-2026' },
+  { name: 'X',            url: 'https://x.com/AFOS_Analytics' },
+  { name: 'Bluesky',      url: 'https://bsky.app/profile/afos-analytics.com' },
+  { name: 'Product Hunt', url: 'https://www.producthunt.com/@afosanalytics' },
 ]
 
 export function Footer() {
@@ -96,17 +96,16 @@ export function Footer() {
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-            {SOCIALS.map(({ name, url, icon }) => (
+            {SOCIALS.map(({ name, url }) => (
               <a
                 key={name}
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 p-2 rounded-lg hover:bg-white/5 transition-colors"
+                className="text-white/60 hover:text-white transition-colors py-0.5"
                 aria-label={`${name} (opens in new tab)`}
               >
-                <span aria-hidden className="text-base leading-none">{icon}</span>
-                <span className="text-white/70 group-hover:text-white font-medium">{name}</span>
+                {name}
               </a>
             ))}
           </div>
