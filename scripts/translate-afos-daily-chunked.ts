@@ -61,27 +61,64 @@ async function main() {
   const chunkA = body.slice(0, sec3Idx)
   const chunkB = body.slice(sec3Idx, sec4Idx)
   const chunkC = body.slice(sec4Idx, sepIdx)
-  const chunkD = body.slice(sepIdx)
+  const chunkDFull = body.slice(sepIdx)
 
-  console.log(`📖 ${date} body=${body.length} chars (4 chunks: ${chunkA.length}+${chunkB.length}+${chunkC.length}+${chunkD.length})`)
+  // Split chunk D further if too large: at "matérias secundárias" heading
+  // (sources block with many Google News URLs can exceed API max_tokens)
+  const secondMatIdx = chunkDFull.indexOf('matérias secundárias')
+  const splitDPoint = secondMatIdx > 0 ? chunkDFull.lastIndexOf('\n\n**', secondMatIdx) : -1
+  const chunkD1 = splitDPoint > 0 ? chunkDFull.slice(0, splitDPoint) : chunkDFull
+  const chunkD2 = splitDPoint > 0 ? chunkDFull.slice(splitDPoint) : ''
+
+  console.log(`📖 ${date} body=${body.length} chars (chunks: ${chunkA.length}+${chunkB.length}+${chunkC.length}+${chunkD1.length}${chunkD2 ? '+' + chunkD2.length : ''})`)
   console.log(`🌐 Translating to ${TARGET_LOCALE_NAMES[locale]}...`)
 
-  console.log('   [1/5] lede')
+  console.log('   [1/6] lede')
   const ledeResult = await translateChunk(lede, locale, glossaryEntries)
 
-  console.log('   [2/5] chunk A (title + sec 1 + sec 2)')
+  console.log('   [2/6] chunk A (title + sec 1 + sec 2)')
   const aResult = await translateChunk(chunkA, locale, glossaryEntries)
 
-  console.log('   [3/5] chunk B (sec 3)')
+  console.log('   [3/6] chunk B (sec 3)')
   const bResult = await translateChunk(chunkB, locale, glossaryEntries)
 
-  console.log('   [4/5] chunk C (sec 4 + Em síntese)')
+  console.log('   [4/6] chunk C (sec 4 + Em síntese)')
   const cResult = await translateChunk(chunkC, locale, glossaryEntries)
 
-  console.log('   [5/5] chunk D (separator + sources + método)')
-  const dResult = await translateChunk(chunkD, locale, glossaryEntries)
+  console.log('   [5/6] chunk D1 (separator + anchor sources)')
+  const d1Result = await translateChunk(chunkD1, locale, glossaryEntries)
 
-  const translatedBody = aResult.translatedText + bResult.translatedText + cResult.translatedText + dResult.translatedText
+  let d2Text = ''
+  if (chunkD2) {
+    // Quartile-split D2: long URL list blows past API limits when in 1-2 chunks.
+    // Split at "- [" boundaries to keep each chunk under ~5000 chars.
+    if (chunkD2.length > 8000) {
+      const quarter = Math.floor(chunkD2.length / 4)
+      const p1 = chunkD2.indexOf('\n- [', quarter)
+      const p2 = p1 > 0 ? chunkD2.indexOf('\n- [', p1 + quarter) : -1
+      const p3 = p2 > 0 ? chunkD2.indexOf('\n- [', p2 + quarter) : -1
+      const parts = [
+        chunkD2.slice(0, p1 > 0 ? p1 : chunkD2.length),
+        p1 > 0 ? chunkD2.slice(p1, p2 > 0 ? p2 : chunkD2.length) : '',
+        p2 > 0 ? chunkD2.slice(p2, p3 > 0 ? p3 : chunkD2.length) : '',
+        p3 > 0 ? chunkD2.slice(p3) : '',
+      ].filter(Boolean)
+      console.log(`   Split D2 in ${parts.length} sub-chunks: ${parts.map(p => p.length).join('+')}`)
+      const results: string[] = []
+      for (let i = 0; i < parts.length; i++) {
+        console.log(`   [D2.${i + 1}/${parts.length}] ${parts[i].length} chars`)
+        const r = await translateChunk(parts[i], locale, glossaryEntries)
+        results.push(r.translatedText)
+      }
+      d2Text = results.join('')
+    } else {
+      console.log('   [6/6] chunk D2 (secondary sources + método)')
+      const d2Result = await translateChunk(chunkD2, locale, glossaryEntries)
+      d2Text = d2Result.translatedText
+    }
+  }
+
+  const translatedBody = aResult.translatedText + bResult.translatedText + cResult.translatedText + d1Result.translatedText + d2Text
 
   const yamlLines = [
     '---',

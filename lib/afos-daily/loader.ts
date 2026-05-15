@@ -146,9 +146,15 @@ export function getLatestDate(): string | null {
  * Returns the YYYY-MM-DD adjacent to the given date in the sorted list of
  * available dailies. Used for prev/next navigation on the synthesis page.
  * Filters drafts so prev/next never lands on an unpublished page.
+ *
+ * If the current date is itself a draft (not in published list), inserts it
+ * into the sort order temporarily so preview deploys still get prev/next
+ * navigation pointing to surrounding published dailies. This lets reviewers
+ * navigate from a draft preview to the previous published synthesis.
  */
 export function getAdjacentDates(date: string): { previous?: string; next?: string } {
-  const all = listPublishedDailies()
+  const published = listPublishedDailies()
+  const all = published.includes(date) ? published : [...published, date].sort()
   const idx = all.indexOf(date)
   if (idx === -1) return {}
   return {
