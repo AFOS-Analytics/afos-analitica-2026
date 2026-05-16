@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-15",
-  "lastSyncedAt": "2026-05-15T11:00:00-03:00",
+  "lastUpdate": "2026-05-16",
+  "lastSyncedAt": "2026-05-16T22:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -84,7 +84,7 @@
       "name": "Veritá",
       "reliability": 2,
       "type": "Presencial",
-      "note": "⚠️ Erros metodológicos documentados. Usar com cautela."
+      "note": "Erros metodológicos documentados. Usar com cautela."
     },
     {
       "name": "Ranking Brasil",
@@ -108,16 +108,32 @@
   "polls": [
     {
       "institute": "Datafolha",
-      "date": "2026-05-15",
+      "date": "2026-05-16",
       "sample": 2004,
       "margin": 2,
       "register": "BR-00290/2026",
       "reliability": 5,
       "method": "Presencial",
       "fieldDates": "2026-05-12 a 2026-05-14",
-      "note": "Datafolha nacional REGISTRADA no TSE para publicação 15/Mai (BR-00290/2026, custo R$ 307.641,60). Campo concluído 12-14/Mai. Será a primeira pesquisa de campo cobrindo janela completa pós-áudio Flávio-Vorcaro quando publicada. Até esta atualização, AINDA NÃO DIVULGADA. Cenários e segundo turno serão preenchidos após divulgação oficial.",
-      "scenarios": [],
-      "secondRound": []
+      "note": "Datafolha nacional publicada 16/Mai sábado (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA, Brasil de Fato, Vermelho, Exame, Gazeta do Povo 16/Mai). Campo 12-14/Mai capturou parcialmente efeito áudio Flávio-Vorcaro publicado 13-14/Mai. Folha (proprietária) e CNN enquadram como retrato pré-escândalo. 1T Lula 38% × Flávio 35% gap +3pp Lula. 2T Lula 45% × Flávio 45% empate técnico.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            { "candidate": "Lula (PT)", "percent": 38 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 35 }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45
+        }
+      ]
     },
     {
       "institute": "Quaest/Genial",
@@ -197,38 +213,14 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1
-            },
-            {
-              "candidate": "Aldo Rebelo (DC)",
-              "percent": 1
-            },
-            {
-              "candidate": "Cabo Daciolo",
-              "percent": 1
-            }
+            { "candidate": "Lula (PT)", "percent": 40 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 34 },
+            { "candidate": "Ronaldo Caiado (PSD)", "percent": 5 },
+            { "candidate": "Romeu Zema (Novo)", "percent": 4 },
+            { "candidate": "Renan Santos (Missão)", "percent": 3 },
+            { "candidate": "Augusto Cury (Avante)", "percent": 1 },
+            { "candidate": "Aldo Rebelo (DC)", "percent": 1 },
+            { "candidate": "Cabo Daciolo", "percent": 1 }
           ]
         }
       ],
@@ -262,26 +254,11 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 46.6
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 39.7
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 5.3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3.3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 3.1
-            }
+            { "candidate": "Lula (PT)", "percent": 46.6 },
+            { "candidate": "Flávio Bolsonaro (PL)", "percent": 39.7 },
+            { "candidate": "Renan Santos (Missão)", "percent": 5.3 },
+            { "candidate": "Ronaldo Caiado (PSD)", "percent": 3.3 },
+            { "candidate": "Romeu Zema (Novo)", "percent": 3.1 }
           ]
         }
       ],
@@ -297,103 +274,83 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Real Time Big Data nacional publicada 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate. InfoMoney 05/Mai reportou desaprovação Lula sobe 52%. Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon.",
-    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026)",
-    "date": "2026-05-05",
+    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Real Time Big Data nacional publicada 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate. InfoMoney 05/Mai reportou desaprovação Lula sobe 52%. Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon. Datafolha publicada 16/Mai: 1T Lula 38% × Flávio 35%; 2T 45×45 empate técnico.",
+    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026) + Datafolha (16/Mai/2026, n=2004, BR-00290/2026)",
+    "date": "2026-05-16",
     "results": {
       "aprovacao": 46.6,
       "desaprovacao": 53.4,
-      "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico (Flávio 44 × Lula 43, Caiado 42 × Lula 43, Zema × Lula empate técnico)."
+      "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico (Flávio 44 × Lula 43, Caiado 42 × Lula 43, Zema × Lula empate técnico). Datafolha 16/Mai (n=2.004 campo 12-14/Mai BR-00290/2026): 1T Lula 38% × Flávio 35% gap +3pp; 2T 45×45 empate técnico."
     },
     "historicalComparison": [
-      {
-        "president": "FHC (2002)",
-        "approval6m": 38,
-        "disapproval6m": 21
-      },
-      {
-        "president": "Lula (2006)",
-        "approval6m": 44,
-        "disapproval6m": 17
-      },
-      {
-        "president": "Dilma (2014)",
-        "approval6m": 51,
-        "disapproval6m": 43
-      },
-      {
-        "president": "Bolsonaro (2022)",
-        "approval6m": 29,
-        "disapproval6m": 50
-      },
-      {
-        "president": "Lula (2026)",
-        "approval6m": 47,
-        "disapproval6m": 53
-      }
+      { "president": "FHC (2002)", "approval6m": 38, "disapproval6m": 21 },
+      { "president": "Lula (2006)", "approval6m": 44, "disapproval6m": 17 },
+      { "president": "Dilma (2014)", "approval6m": 51, "disapproval6m": 43 },
+      { "president": "Bolsonaro (2022)", "approval6m": 29, "disapproval6m": 50 },
+      { "president": "Lula (2026)", "approval6m": 47, "disapproval6m": 53 }
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 15/Mai/2026 11:00 BRT (D+1 launch AFOS, Datafolha REGISTRADA TSE aguardando divulgação)",
-    "sources": "Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), Vox Brasil 15/Mai (campo pré-Vorcaro segundo Bahia Notícias), AtlasIntel tracking 15/Mai (Exame, VEJA, BPMoney), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Datafolha BR-00290/2026 campo 12-14/Mai registrada para publicação 15/Mai aguardando divulgação, Polymarket (ao vivo fetchedAt 15/Mai 14:00 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 16/Mai/2026 22:30 BRT (D+2 launch AFOS, Datafolha publicada hoje)",
+    "sources": "Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026 (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA, Brasil de Fato, Vermelho, Exame, Gazeta do Povo), Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 16/Mai 22:30 BRT).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "39-46.6%",
+        "pesquisaRange": "38-46.6%",
         "polymarket": "44.50%",
-        "tendenciaPesquisa": "Datafolha 15/Mai n=2.004 campo 12-14/Mai REGISTRADA TSE BR-00290/2026 AGUARDANDO DIVULGAÇÃO; Quaest publicada 13/Mai n=2.004 Lula 39% × Flávio 33% (gap +6pp Lula); AtlasIntel/Bloomberg 28/Abr 1T 46.6%; AtlasIntel tracking 15/Mai indica Lula 7pp à frente 2T pós-áudios (Exame, VEJA, BPMoney)",
-        "tendenciaPolymarket": "AMPLIA 44.50% (↑1.50pp vs 43.00% fechamento 14/Mai); gap +15.65pp LULA (vs +10.00pp ontem fechamento, ↑5.65pp em 18h); 2L 15.50% estável; STF impeach DISPARA continua 12.75% (↑4.75pp de 8.00%, ↑8.25pp em 24h reversão acelera)",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai n=2.004 Lula 38% × Flávio 35% 1T gap +3pp; 2T Lula 45% × Flávio 45% empate técnico (G1, Folha, CartaCapital, CNN Brasil 16/Mai); Quaest publicada 13/Mai n=2.004 Lula 39% × Flávio 33% (gap +6pp Lula); AtlasIntel/Bloomberg 28/Abr 1T 46.6%; campo Datafolha 12-14/Mai capturou parcialmente efeito Vorcaro publicado 13-14/Mai (Folha enquadra como pré-escândalo)",
+        "tendenciaPolymarket": "Estável 44.50% (sem variação 36h+ vs 15/Mai manhã); gap ESTREITA +12.00pp LULA (vs +15.65pp ontem manhã ↓3.65pp 36h pós-Datafolha); 2L 15.00% estável; STF impeach REVERTE colapso de reversão 7.25% (↓1.75pp 24h, ↓5.50pp 36h reverte pico 12.75% 15/Mai)",
         "odds": 44.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-46%",
-        "polymarket": "28.85%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; Vox Brasil 15/Mai (campo pré-Vorcaro) Flávio 43,8% × Lula 40,2% 2T; Quaest publicada 13/Mai Flávio 33% × Lula 39%; AtlasIntel tracking 15/Mai indica Lula 7pp à frente 2T (Exame, VEJA); Vorcaro pai preso continua narrative dominante",
-        "tendenciaPolymarket": "CONTINUA CEDENDO 28.85% (↓4.15pp vs 33.00% fechamento, acumulado ↓4.50pp em 24h pós-Vorcaro); 2L 58.50% (↓6.50pp); 3L 5.80% estável; PL Senado recupera 78.00% (↑5.00pp); REPUBLICANOS RESSURGE 11.65% (vs 1.05% baseline 14/Mai morning)",
-        "odds": 28.85
+        "polymarket": "32.50%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai 1T Flávio 35% × Lula 38% gap -3pp; 2T 45×45 empate técnico (G1, Folha, CartaCapital, CNN Brasil 16/Mai); Quaest publicada 13/Mai Flávio 33% × Lula 39%; Folha 'Flávio estancou antes de Dark Horse'; CNN 'antes de áudio vazado'; Flávio reforça candidatura 'Não vou desistir' (Estadão 16/Mai)",
+        "tendenciaPolymarket": "RECUPERA 32.50% (↑4.15pp 24h, ↑3.65pp 36h vs 28.85% 15/Mai); 2L 60.50% (↓2.50pp 24h leve cedência); 3L 5.55% (↓1.60pp 24h); PL Senado 78.00% (↓2.00pp 24h); Republicanos 10.40% (↓0.75pp 24h)",
+        "odds": 32.5
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "9.45%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; Mantida ausência destaque Quaest 13/Mai; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%",
-        "tendenciaPolymarket": "SOBE 9.45% (↑2.45pp vs 7.00% fechamento), 3ª via consolida; 3L 32.00% estável (mantém 2º lugar 3L); 2L 6.30% estável",
-        "odds": 9.45
+        "polymarket": "9.75%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai não destaca Renan no headline central (G1, Folha 16/Mai); Mantida ausência destaque Quaest 13/Mai; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%",
+        "tendenciaPolymarket": "SUPERA Zema pela primeira vez em D+2 — 9.75% (↑0.40pp 24h, ↑0.30pp 36h vs 9.45% 15/Mai); 3L 31.00% estável (↓1.00pp 36h topo); 2L 5.80% (↓0.55pp 24h)",
+        "odds": 9.75
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-5%",
-        "polymarket": "1.55%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; Mantida Quaest 13/Mai Caiado 4% empate técnico Zema; AtlasIntel 28/Abr 3.3%",
-        "tendenciaPolymarket": "Estável 1.55% (↑0.20pp leve); 3L Caiado RECUPERA 18.00% (↑5.00pp de 13.00%); PSD Senado 4.20% (recupera)",
-        "odds": 1.55
+        "polymarket": "1.15%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai não destaca Caiado headline central (G1, Folha 16/Mai); Mantida Quaest 13/Mai Caiado 4% empate técnico Zema; Caiado 'não fará juízo de valor' sobre Flávio (G1 16/Mai); AtlasIntel 28/Abr 3.3%",
+        "tendenciaPolymarket": "Cede 1.15% (↓0.40pp 36h leve vs 1.55% 15/Mai); 3L RECUPERA 18.50% (↑2.00pp 24h, ↑0.50pp 36h vs 18.00%); PSD Senado 3.60% (↓1.90pp 24h cede)",
+        "odds": 1.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "0.15-0.75%",
-        "polymarket": "0.35%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; Mantido Vox SP gov Tarcísio 38% × Haddad 26%; foco reeleição SP",
-        "tendenciaPolymarket": "CEDE 0.35% (↓0.40pp vs 0.75% fechamento) afastamento candidatura presidencial; Republicanos Senado SOBE 11.65%",
-        "odds": 0.35
+        "polymarket": "0.45%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai não destaca Tarcísio cenário presidencial (G1, Folha 16/Mai); Mantido Vox SP gov Tarcísio 38% × Haddad 26%; foco reeleição SP",
+        "tendenciaPolymarket": "Estável 0.45% (↑0.10pp 36h leve vs 0.35% 15/Mai); 2L 0.30% estável; Republicanos Senado 10.40% (↓0.75pp 24h)",
+        "odds": 0.45
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "6.60%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; Mantida Quaest 13/Mai Zema 4% empate Caiado; AtlasIntel 28/Abr 3.1%",
-        "tendenciaPolymarket": "CEDE 6.60% (↓2.40pp vs 9.00% fechamento, devolve recuperação ontem); 3L Zema 39.50% (estável topo); 2L 6.20% estável",
-        "odds": 6.6
+        "polymarket": "5.65%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai não destaca Zema headline central (G1, Folha 16/Mai); Mantida Quaest 13/Mai Zema 4% empate Caiado; Zema 'página virada' não houve ruptura (Estadão 16/Mai); AtlasIntel 28/Abr 3.1%",
+        "tendenciaPolymarket": "CEDE 5.65% (↓1.20pp 24h, ↓0.95pp 36h vs 6.60% 15/Mai) — Renan SUPERA Zema pela primeira vez em D+2; 3L DEVOLVE COLOSSAL 32.50% (↓7.00pp 24h cede topo vs Renan 31.00% estável); 2L 5.65% (↓0.20pp 24h)",
+        "odds": 5.65
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "2.35%",
-        "tendenciaPesquisa": "Datafolha 15/Mai REGISTRADA TSE aguardando divulgação; ANÁLISE Quaest 13/Mai melhora avaliação governo beneficia base PT por extensão",
-        "tendenciaPolymarket": "Estável 2.35% (↓0.10pp leve); 2L estável; PT Senado 2.95% estável; mercado mantém Haddad como segunda opção PT",
-        "odds": 2.35
+        "polymarket": "2.25%",
+        "tendenciaPesquisa": "Datafolha publicada 16/Mai não destaca Haddad cenário principal (G1, Folha 16/Mai); ANÁLISE Quaest 13/Mai melhora avaliação governo beneficia base PT por extensão",
+        "tendenciaPolymarket": "Cede 2.25% (↓0.10pp 24h leve vs 2.35% 15/Mai); 2L 2.55% estável; 3L 3.55% (↓0.40pp 24h); PT Senado 3.00% (↑0.05pp)",
+        "odds": 2.25
       }
     ],
-    "updatedAt": "2026-05-15 11:00 BRT"
+    "updatedAt": "2026-05-16 22:30 BRT"
   }
 }
