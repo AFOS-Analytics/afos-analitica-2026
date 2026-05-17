@@ -167,40 +167,6 @@
       ]
     },
     {
-      "institute": "Quaest",
-      "date": "2026-05-08",
-      "sample": null,
-      "margin": null,
-      "register": null,
-      "reliability": 5,
-      "method": "Presencial",
-      "fieldDates": "Maio 2026",
-      "note": "Pesquisa Quaest publicada 08/Mai pós-Messias e encontro Trump (VEJA). Disputa Lula × Flávio. Superseded pela Quaest 13/Mai nacional n=2.004.",
-      "scenarios": [],
-      "secondRound": []
-    },
-    {
-      "institute": "Meio/Ideia",
-      "date": "2026-05-06",
-      "sample": null,
-      "margin": null,
-      "register": null,
-      "reliability": 3,
-      "method": "Misto",
-      "fieldDates": "Maio 2026",
-      "note": "Pesquisa nacional 2º turno publicada 06/Mai (Poder360, Exame, GZH). Números 1T não detalhados em fontes públicas verificadas.",
-      "scenarios": [],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 45.3,
-          "candidate2": "Lula",
-          "percent2": 44.7
-        }
-      ]
-    },
-    {
       "institute": "Real Time Big Data",
       "date": "2026-05-05",
       "sample": 2000,

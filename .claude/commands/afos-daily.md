@@ -243,7 +243,7 @@ Para CADA matéria/alegação citada, escolher URL na seguinte ordem:
 1. **URL primária do veículo via WebSearch** (matérias-âncora) — `[Estadão](https://www.estadao.com.br/politica/.../titulo-slug/)`
 2. **URL Google News redirect via cache** (matérias secundárias) — `[Estadão](https://news.google.com/rss/articles/CBM...)`. Funciona até com anti-bot.
 3. **URL específica de mercado Polymarket** — `polymarket.com/event/{slug}`
-4. **URL TSE registro** — `eleitor.tse.jus.br/sip/sip-pesquisas`
+4. **URL TSE registro** — `divulgacandcontas.tse.jus.br/divulga/`
 5. **Atribuição texto plano com data exata** — apenas em último caso, e somente se cache Google News também falhou
 
 ### URLs HOMEPAGE (`https://www.veiculo.com.br/`) — evitar
