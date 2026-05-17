@@ -1,5 +1,5 @@
 {
-  "ignoreCommand": "git diff --name-only HEAD^ HEAD | grep -qvE '^(docs/|tests/|scripts/|README(\\.pt-BR)?\\.md$|CONTRIBUTING\\.md$|LICENSE$|NOTICE$|SECURITY\\.md$|TRADEMARK\\.md$|CODE_OF_CONDUCT\\.md$|AFOS-Analytics-.*\\.md$|playwright\\.config\\.ts$|fileio-response\\.json$)' && exit 1 || exit 0",
+  "ignoreCommand": "git diff --name-only HEAD^ HEAD|grep -qvE '^(docs|tests|scripts)/|^(README|CONTRIBUTING|SECURITY|TRADEMARK|CODE_OF_CONDUCT)\\.md$|^(LICENSE|NOTICE)$'&&exit 1||exit 0",
   "crons": [
     {
       "path": "/api/cron/refresh-elections",
