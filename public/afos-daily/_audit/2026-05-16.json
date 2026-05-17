@@ -1,0 +1,97 @@
+{
+  "date": "2026-05-16",
+  "generatedAt": "2026-05-16T23:30:00-03:00",
+  "factCheckGate": {
+    "criticalEvents": [
+      {
+        "event": "Datafolha nacional publicada — 1T Lula 38 × Flávio 35 gap +3pp; 2T 45×45 empate",
+        "recurrenceCheck": "novidade absoluta — pesquisa publicada hoje 16/Mai",
+        "sources": [
+          "Folha de S.Paulo (proprietária Datafolha)",
+          "G1",
+          "O Globo",
+          "Valor",
+          "CartaCapital",
+          "CNN Brasil",
+          "GZH",
+          "VEJA",
+          "Gazeta do Povo",
+          "Exame",
+          "vermelho.org.br"
+        ],
+        "type": "evento",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Joaquim Barbosa filiado ao Democracia Cristã, candidato Planalto",
+        "recurrenceCheck": "novidade absoluta — filiação publicada hoje",
+        "sources": ["G1", "Estadão", "GZH", "VEJA", "CartaCapital"],
+        "type": "evento",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Ciro Gomes pré-candidato governo Ceará com Roberto Cláudio vice",
+        "recurrenceCheck": "novidade — lançamento hoje",
+        "sources": ["G1", "Estadão", "Valor"],
+        "type": "evento",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Foragido Operação Master 'Os Meninos' preso em Dubai chega SP",
+        "recurrenceCheck": "evento composto — prisão Dubai prévia + chegada SP hoje 16/Mai",
+        "sources": ["G1", "Estadão", "Valor"],
+        "type": "evento",
+        "decision": "incorporar com framing 'preso em Dubai, chega SP em 16/Mai' (sem fixar data exata da prisão)"
+      },
+      {
+        "event": "7 pedidos CPMI Banco Master no Congresso pós-áudio Flávio",
+        "recurrenceCheck": "continuidade — consequência do áudio 13-14/Mai já incorporado em dailies anteriores",
+        "sources": ["CNN Brasil", "Rádio Itatiaia"],
+        "type": "evento",
+        "decision": "incorporar como continuidade"
+      }
+    ],
+    "selfChecks": {
+      "primarySourceVerified": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRun": "skipped — script de reconcile-claims não executado neste run, validação manual"
+    }
+  },
+  "adversarialReviewPass": {
+    "singleSourceClaims": "nenhuma — todas as alegações nacionais com 2+ fontes primárias convergentes",
+    "numericalErrors": "verificados manualmente vs analysis-data.json e analysis-criteriosa.json (snapshot 16/Mai 22:30)",
+    "fabricatedSources": "verificados 3 aleatórios: Folha (poder/2026/05/datafolha-governo-lula...) OK, G1 (politica/noticia/2026/05/16/joaquim-barbosa...) OK, Valor (politica/noticia/2026/05/16/datafolha-lula-e-flvio...) OK",
+    "literalQuotes": "nenhuma aspas literal sem confirmação — frases de Flávio 'tentaram enterrá-lo vivo' / 'não desistirá apesar de farsas' confirmadas via headlines Folha + CBN",
+    "spuriousCausation": "nenhuma — divergência Polymarket × Datafolha apresentada como observacional, não causal",
+    "criticalVerbsCodebook": [
+      {
+        "verb": "preso (Dubai)",
+        "disambiguation": "framing 'preso em Dubai, chega a SP em 16/Mai' sem fixar data exata da prisão"
+      },
+      {
+        "verb": "publicada (Datafolha)",
+        "disambiguation": "explicito '16/Mai' + n=2.004 + campo 12-14/Mai + protocolo BR-00290/2026; 4+ fontes primárias convergentes"
+      }
+    ],
+    "decision": "proceed_to_preview"
+  },
+  "implantacaoCalendario": {
+    "feature": "Sub-bloco 'Calendário de pesquisas — próximos 7 dias' no fim da Seção 2",
+    "implantadoEm": "2026-05-16 (D+2 launch AFOS)",
+    "skillAtualizada": ".claude/commands/afos-daily.md ETAPA 2.5",
+    "templateOverrides": [
+      "AfosDailyTemplate.tsx: adicionado custom components para h3, table, thead, tbody, tr, th, td",
+      "Razão: prose-slate plugin não carregado (tailwind.config plugins: []), markdown table rendering precisa de overrides explícitos"
+    ]
+  },
+  "sourceRatio": {
+    "anchor": 18,
+    "secondary": 17,
+    "total": 35,
+    "anchorPct": 51.4,
+    "secondaryPct": 48.6,
+    "rule": "50/50 ±10pp",
+    "status": "OK"
+  }
+}

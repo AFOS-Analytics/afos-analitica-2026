@@ -192,7 +192,7 @@ function stripTemplateArtifacts(rawBody: string): string {
     .replace(sourcesFooter, '')
     .replace(/^# .+?\n+/, '')
     .replace(/^\*\*Polymarket × (?:Pesquisas|Polls|Encuestas) × (?:Notícias|News|Noticias)\*\*[^\n]*\n+/m, '')
-    .replace(/^> [^\n]+(?:\n> [^\n]+)*\n+/m, '')
+    .replace(/^> [^\n]+(?:\n> [^\n]+)*\n+/, '')
     .trim()
 }
 

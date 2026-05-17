@@ -98,11 +98,59 @@ Seguido de 6 seções obrigatórias:
 1. **Título + eyebrow** — "AFOS Daily · Síntese do Dia" + data por extenso
 2. **Lede (blockquote)** — 2-3 linhas bold que capturam os 3 movimentos mais relevantes
 3. **1. Mercado de previsão** — 4-5 parágrafos cobrindo: presidencial (Flávio × Lula + gap), 3ª via (Zema + Renan), 2º lugar, STF impeach, Senado, inflação
-4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver
+4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver. **No FIM da seção, sub-bloco obrigatório "Calendário de pesquisas — próximos 7 dias"** (ver ETAPA 2.5 abaixo).
 5. **3. O que a imprensa cobriu** — 3-4 parágrafos: dinâmica governo, dinâmica oposição, pauta institucional, observações
 6. **4. Divergências do dia** — box amarelo com 2-3 observações de onde mercado ≠ pesquisa ≠ notícia. **REGRA (a partir de 29/Abr/2026):** usar **blockquote markdown** (`>`) em cada parágrafo da seção, NÃO `<div class="box-divergencia">`. O template renderiza `react-markdown` sem `rehype-raw`, então HTML inline é ignorado — apenas blockquote captura o estilo amber/yellow definido em `AfosDailyTemplate.tsx` (linha 192). Exemplo correto: `> **Mercado × pesquisa:** ...` (separar parágrafos com `>` em linha vazia entre eles). Dailies anteriores (22-28/Abr) ficam como histórico, não retroagir.
 7. **Em síntese** — 3 bullets numerados com observações-chave
 8. **Rodapé** — fontes citadas + método + links
+
+## ETAPA 2.5: Sub-bloco "Calendário de pesquisas — próximos 7 dias" (no fim da Seção 2)
+
+**Implantado em 16/Mai/2026 D+2 launch.** Bloco aditivo obrigatório no fim da Seção 2, sem modificar o template visual (markdown nativo puro, renderizado via prose-slate do `AfosDailyTemplate.tsx`).
+
+### Como gerar
+
+1. Consultar `/api/polls/tse?days=10` (ou ler do Neon) e filtrar:
+   - `publicationDate` > hoje E ≤ hoje+7
+   - `sampleSize` ≥ 1000 (filtro contra municipais de baixo n)
+   - Ordenar por `publicationDate` ascendente, então por `sampleSize` descendente
+
+2. Construir tabela markdown GFM com 6 colunas: **Data · Instituto · Amostra · Escopo · Protocolo TSE · Conf.**
+
+3. **Highlight rows ≥ 3.000 amostra:** bold em `Data`, `Instituto` + 🔥 emoji após nome, bold em `Amostra`.
+
+4. **Link no protocolo:** cada protocolo TSE linkado à consulta pública `https://divulgacandcontas.tse.jus.br/divulga/` (em PT, EN e ES).
+
+5. **Parágrafo de fonte abaixo da tabela** linkando "TSE" → `https://www.tse.jus.br/eleicoes/pesquisas/pesquisas`.
+
+### Template markdown obrigatório
+
+```markdown
+### 📅 Calendário de pesquisas — próximos 7 dias
+
+Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]. Inclusão na tabela não significa publicação confirmada — institutos podem atrasar ou cancelar divulgação. Filtro aplicado: amostra ≥ 1.000. Cada protocolo linkado à [consulta pública TSE](https://divulgacandcontas.tse.jus.br/divulga/).
+
+| Data | Instituto | Amostra | Escopo | Protocolo TSE | Conf. |
+|------|-----------|---------|--------|---------------|-------|
+| **DD/Mai** | **Instituto 🔥** | **n** | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
+| DD/Mai | Instituto | n | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
+
+Fonte: registro público [TSE](https://www.tse.jus.br/eleicoes/pesquisas/pesquisas) via API AFOS. 🔥 destaca amostras ≥ 3.000. Status "registrada ≠ publicada" — confirmação de divulgação efetiva exige verificação de duas fontes primárias antes da citação de números.
+```
+
+### Tradução EN/ES
+
+- **EN:** Heading "📅 Polling calendar — next 7 days". Frase: "Polls registered with TSE scheduled for publication between [DD/May] and [DD/May]…"
+- **ES:** Heading "📅 Calendario de encuestas — próximos 7 días". Frase: "Encuestas registradas en el TSE con publicación prevista entre [DD/May] y [DD/May]…"
+
+### Quando NÃO incluir o bloco
+
+- Sem nenhuma pesquisa registrada com publicação prevista nos próximos 7 dias E amostra ≥ 1.000: emitir o heading com nota "Sem pesquisas com amostra ≥ 1.000 registradas no TSE para os próximos 7 dias."
+- Não pular o bloco silenciosamente — ausência também é informação.
+
+### Princípio editorial
+
+Bloco é **descritivo, não preditivo**. NÃO atribuir resultado à pesquisa que ainda não saiu. NÃO indicar "Datafolha 19/Mai vai mostrar X". Apenas registrar a existência da pesquisa em campo via metadata TSE.
 
 ## REGRAS EDITORIAIS DO TEMPLATE (não negociáveis)
 

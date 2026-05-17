@@ -246,6 +246,27 @@ export function AfosDailyTemplate({ data, nav }: Props) {
               h2: ({ children }) => (
                 <h2 className={`text-2xl font-bold mt-10 mb-4 pb-2 border-b-2 ${sectionHeading} ${sectionBorder}`}>{children}</h2>
               ),
+              h3: ({ children }) => (
+                <h3 className={`text-xl font-bold mt-8 mb-3 ${strongColor}`}>{children}</h3>
+              ),
+              table: ({ children }) => (
+                <div className="my-6 overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">{children}</table>
+                </div>
+              ),
+              thead: ({ children }) => (
+                <thead className={`border-b-2 ${isBlue ? 'border-blue-400/40' : 'border-slate-300'}`}>{children}</thead>
+              ),
+              tbody: ({ children }) => <tbody>{children}</tbody>,
+              tr: ({ children }) => (
+                <tr className={`border-b last:border-b-0 ${isBlue ? 'border-blue-400/20' : 'border-slate-200'}`}>{children}</tr>
+              ),
+              th: ({ children }) => (
+                <th className={`text-left px-3 py-2 font-semibold ${strongColor}`}>{children}</th>
+              ),
+              td: ({ children }) => (
+                <td className={`px-3 py-2 align-top ${bodyText}`}>{children}</td>
+              ),
               p: ({ children }) => <p className={`mb-4 leading-relaxed ${bodyText}`}>{children}</p>,
               a: ({ href, children }) => (
                 <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
