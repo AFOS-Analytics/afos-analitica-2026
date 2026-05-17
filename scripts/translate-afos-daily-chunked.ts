@@ -80,7 +80,30 @@ async function main() {
   const aResult = await translateChunk(chunkA, locale, glossaryEntries)
 
   console.log('   [3/6] chunk B (sec 3)')
-  const bResult = await translateChunk(chunkB, locale, glossaryEntries)
+  let bText: string
+  if (chunkB.length > 7000) {
+    // Section 3 with many long Google News URLs exceeds output tokens — split at paragraph boundaries
+    const parts: string[] = []
+    let remaining = chunkB
+    while (remaining.length > 5000) {
+      const splitAt = remaining.lastIndexOf('\n\n', 5000)
+      const cut = splitAt > 2000 ? splitAt + 2 : 5000
+      parts.push(remaining.slice(0, cut))
+      remaining = remaining.slice(cut)
+    }
+    if (remaining.length > 0) parts.push(remaining)
+    console.log(`   Split B in ${parts.length} sub-chunks: ${parts.map(p => p.length).join('+')}`)
+    const bResults: string[] = []
+    for (let i = 0; i < parts.length; i++) {
+      console.log(`   [B.${i + 1}/${parts.length}] ${parts[i].length} chars`)
+      const r = await translateChunk(parts[i], locale, glossaryEntries)
+      bResults.push(r.translatedText)
+    }
+    bText = bResults.join('')
+  } else {
+    const bResult = await translateChunk(chunkB, locale, glossaryEntries)
+    bText = bResult.translatedText
+  }
 
   console.log('   [4/6] chunk C (sec 4 + Em síntese)')
   const cResult = await translateChunk(chunkC, locale, glossaryEntries)
@@ -118,7 +141,7 @@ async function main() {
     }
   }
 
-  const translatedBody = aResult.translatedText + bResult.translatedText + cResult.translatedText + d1Result.translatedText + d2Text
+  const translatedBody = aResult.translatedText + bText + cResult.translatedText + d1Result.translatedText + d2Text
 
   const yamlLines = [
     '---',

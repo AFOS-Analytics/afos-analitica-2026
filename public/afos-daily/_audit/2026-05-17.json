@@ -1,0 +1,41 @@
+{
+  "date": "2026-05-17",
+  "factCheck": {
+    "events": [
+      {
+        "event": "Motta CPI Master 'tratamento regimental'",
+        "recurrence": "0 menções em 7 dailies → novidade",
+        "verification": "4 fontes independentes 17/Mai (G1 14:14 URL primária, Revista Oeste 15:07, Portal 96FM 15:43, Pleno.News 17:01)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Lula reindicará Jorge Messias ao STF",
+        "recurrence": "0 menções em 7 dailies → novidade",
+        "verification": "Folha de S.Paulo 17/Mai 16:14 GMT (âncora); Coluna Basília",
+        "decision": "incorporar com caveat 'diz a aliados' = backchannel"
+      },
+      {
+        "event": "Campanhas Lula × Flávio batalha judicial TSE",
+        "recurrence": "0 menções em 7 dailies → novidade",
+        "verification": "5+ fontes 17/Mai (G1, BPMoney, Brasil 247, Portal 96FM, Imirante, O Sul)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "AtlasIntel publicada pós-áudio (mencionado no /atualizar)",
+        "recurrence": "AtlasIntel tem 17 menções históricas",
+        "verification": "Headline VEJA é ANÁLISE comparativa, NÃO anúncio de nova pesquisa AtlasIntel nacional",
+        "decision": "NÃO tratar como nova pesquisa, reframe como análise"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSource": "Lula-Messias é Folha (âncora) + Coluna Basília, framing 'diz a aliados' preserva qualidade backchannel",
+    "numericalErrors": "OK - todos os % batem com analysis-data.json",
+    "fonteInventada": "OK - 19 URLs verificadas no news cache (244-664 chars)",
+    "quotesLiterais": "OK - 'Me subestimaram' e 'Vamos cumprir o regimento' são headlines diretos",
+    "causacaoEspuria": "OK - link Polymarket × Messias apresentado como contexto concorrente, não causa provada",
+    "verbosCriticos": "OK - 'reindicará' qualificado com 'diz a aliados'; 'preso' só em referências mantidas com data"
+  },
+  "decision": "prosseguir para preview",
+  "newConventions": "Volume Polymarket acumulado citado junto da % na Seção 1 (primeira aplicação da convenção firmada em 17/Mai/2026)"
+}
