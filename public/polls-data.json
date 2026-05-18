@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-17",
-  "lastSyncedAt": "2026-05-17T17:00:00-03:00",
+  "lastUpdate": "2026-05-18",
+  "lastSyncedAt": "2026-05-18T13:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -257,13 +257,13 @@
     ]
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 17/Mai/2026 17:00 BRT (D+3 launch AFOS, AtlasIntel publicada pós-áudio domingo)",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 18/Mai/2026 13:30 BRT (D+4 launch AFOS, AtlasIntel publica amanhã 19/Mai n=5.000, Datafolha publica sexta 22/Mai com Michelle Bolsonaro)",
     "sources": "AtlasIntel nacional publicada 17/Mai pós-áudio Flávio-Vorcaro (Gazeta do Povo, ICL Notícias 17/Mai) sem números detalhados ainda no dia, Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026 (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA, Brasil de Fato, Vermelho, Exame, Gazeta do Povo), Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 17/Mai 17:00 BRT).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-46.6%",
-        "polymarket": "44.50%",
+        "polymarket": "43.50%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio (Gazeta do Povo, ICL Notícias 17/Mai) sem números detalhados ainda no domingo; Datafolha 16/Mai n=2.004 mantida Lula 38% × Flávio 35% 1T gap +3pp; 2T 45×45 empate técnico; Quaest publicada 13/Mai n=2.004 Lula 39% × Flávio 33% (gap +6pp Lula); AtlasIntel/Bloomberg 28/Abr 1T 46.6%",
         "tendenciaPolymarket": "Estável 44.50% (sem variação 48h+); gap AMPLIA +13.20pp LULA (vs +12.00pp 16/Mai noite ↑1.20pp 18h Lula consolida sem ganhar Flávio cede); 2L 16.00% (↑1.00pp 18h); STF impeach MÍNIMA DO CICLO 6.15% (↓1.10pp 24h, ↓6.60pp 48h vs pico 12.75% 15/Mai); LULA REINDICARÁ Jorge Messias ao STF (Coluna Basília 17/Mai)",
         "odds": 44.5
@@ -271,7 +271,7 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-46%",
-        "polymarket": "31.30%",
+        "polymarket": "31.55%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio (Gazeta do Povo, ICL Notícias 17/Mai) sem números detalhados ainda; Datafolha 16/Mai mantida 1T Flávio 35% × Lula 38% gap -3pp; 2T 45×45 empate técnico; Quaest 13/Mai Flávio 33% × Lula 39%; Flávio 'Me subestimaram não vou desistir do meu Brasil' pós-áudio (Gazeta do Povo, Pleno.News, Estadão 17/Mai)",
         "tendenciaPolymarket": "CEDE 31.30% (↓1.20pp 18h, ↓1.20pp 24h vs 32.50% 16/Mai noite); 2L 62.00% (↑1.50pp 18h base resiste); 3L COLAPSA 3.25% (↓2.30pp 18h vs 5.55% 16/Mai mercado tira Flávio cenário 3º); PL Senado 78.50% (↑0.50pp estável); Republicanos RECUPERA 11.00% (↑0.60pp 18h); Motta CPI Master 'tratamento regimental' (Revista Oeste, Pleno.News 17/Mai)",
         "odds": 31.3
@@ -279,7 +279,7 @@
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "9.05%",
+        "polymarket": "9.70%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Renan no headline central; Mantida ausência destaque Quaest 13/Mai; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%",
         "tendenciaPolymarket": "Mantém topo 3ª via Poly acima Zema (5.35%) — presidencial 9.05% (↓0.70pp 18h vs 9.75% 16/Mai noite leve recuo); 2L DISPARA 7.70% (↑1.90pp 18h vs 5.80% 16/Mai mercado precifica chance Renan virar 2º colocado); 3L 30.00% (↓1.00pp 18h estável topo)",
         "odds": 9.05
@@ -287,7 +287,7 @@
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-5%",
-        "polymarket": "1.15%",
+        "polymarket": "1.35%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Caiado headline central; Mantida Quaest 13/Mai Caiado 4% empate técnico Zema; Caiado 'não fará juízo de valor' sobre Flávio (G1 16/Mai mantido); AtlasIntel 28/Abr 3.3%",
         "tendenciaPolymarket": "Estável 1.15% (18h); 3L SOBE 20.50% (↑2.00pp 18h, ↑4.00pp 48h vs 16.50% 15/Mai consolida 3º do 3L); PSD Senado RECUPERA 5.65% (↑2.05pp 18h reverte cedência 16/Mai); Abilio quer CPI Master e alfineta Zema (Rdnews 17/Mai)",
         "odds": 1.15
@@ -303,7 +303,7 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "5.35%",
+        "polymarket": "4.95%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Zema headline central; Mantida Quaest 13/Mai Zema 4% empate Caiado; Mantido Zema 'página virada' não houve ruptura (Estadão 16/Mai); Pesquisa MG indefinição Pacheco (Carta Capital 17/Mai); AtlasIntel 28/Abr 3.1%",
         "tendenciaPolymarket": "Cede 5.35% (↓0.30pp 18h vs 5.65% 16/Mai noite leve recuo) mantém-se abaixo Renan (9.05%); 3L RECUPERA 36.50% (↑4.00pp 18h reverte cedência colossal de 16/Mai retoma liderança 3L acima Renan); 2L 6.90% (↑1.25pp 18h); Bandas altas (≥6.50%) RECUPERAM 15.85% (↑2.65pp 18h) narrativa fiscal extrema volta força",
         "odds": 5.35
@@ -311,12 +311,12 @@
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "2.25%",
+        "polymarket": "2.55%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Haddad cenário principal; ANÁLISE Quaest 13/Mai melhora avaliação governo beneficia base PT por extensão",
         "tendenciaPolymarket": "Estável 2.25% 18h; 2L 2.55% estável; 3L 3.85% (↑0.30pp 18h leve); PT Senado 3.00% estável; Lula reage pacote benesses reeleição (G1, Folha 17/Mai) beneficia base PT",
         "odds": 2.25
       }
     ],
-    "updatedAt": "2026-05-17 17:00 BRT"
+    "updatedAt": "2026-05-18 13:30 BRT"
   }
 }
