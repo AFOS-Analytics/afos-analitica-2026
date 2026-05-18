@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-18",
+  "factCheck": {
+    "events": [
+      {
+        "event": "Datafolha 22/Mai inclui Michelle Bolsonaro no cenário",
+        "recurrence": "0 menções 7 dailies → novidade",
+        "verification": "múltiplas fontes 18/Mai (InfoMoney, CartaCapital, VEJA, Vermelho, ParaibaOnline)",
+        "decision": "incorporar como anúncio metodológico, NÃO pesquisa publicada"
+      },
+      {
+        "event": "Ato do Senado impede nova indicação de Messias ao STF",
+        "recurrence": "0 menções 7 dailies → novidade (desdobramento direto da reindicação 17/Mai)",
+        "verification": "O Globo + Folha primary URLs 18/Mai",
+        "decision": "incorporar — anchor confirmado em 2 fontes Tier 1"
+      },
+      {
+        "event": "PF vai à Câmara em meio à revelação áudios Flávio-Vorcaro",
+        "recurrence": "0 menções 7 dailies → novidade",
+        "verification": "Master Vorcaro coverage 18/Mai (single primary)",
+        "decision": "incorporar com qualificação 'vai', sem inferir motivo"
+      },
+      {
+        "event": "Banco Master racha STF — ministros evitam eventos sociais",
+        "recurrence": "0 menções como racha explícito → novidade (continuação de 'Crise se espalha STF' 16/Mai)",
+        "verification": "Portal, Jornal coverage 18/Mai",
+        "decision": "incorporar como análise/desdobramento, não divisor de águas"
+      },
+      {
+        "event": "Veritá/LeiaJá: Lula rejeição 52% × Flávio 43.7%",
+        "recurrence": "Veritá não aparece nas 7 dailies como referência",
+        "verification": "1 fonte primária (LeiaJá 18/Mai). Veritá registrado TSE mas não Tier 1",
+        "decision": "incorporar com qualificação 'não-Tier 1', oferece leitura adicional pré-AtlasIntel"
+      },
+      {
+        "event": "Polymarket Lula CEDE 1pp em 60h+ (43.50%, gap 11.95pp)",
+        "recurrence": "fato observável Polymarket",
+        "verification": "snapshot AFOS API 18/Mai 13:20 BRT, fetchedAt 16:20 UTC",
+        "decision": "incorporar como leitura técnica, sem atribuir causa"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSource": "Veritá/LeiaJá qualificado como não-Tier 1; PF Câmara apresentado como 'vai', sem motivo inferido",
+    "numericalErrors": "OK - todos os % batem com analysis-data.json e API snapshot",
+    "fonteInventada": "OK - todas URLs verificadas no news-cache 2026-05-18 ou grep direto",
+    "quotesLiterais": "OK - nenhuma aspas literal usada",
+    "causacaoEspuria": "OK - Lula CEDE 1pp apresentado explicitamente como 'leitura técnica, não notícia'",
+    "verbosCriticos": "OK - 'indicação' qualificado, 'preso' não em referências novas, 'racha' = linguagem fonte O Globo"
+  },
+  "decision": "prosseguir para preview",
+  "templateMatch": "16/Mai approved template — 4 seções + Calendário + Síntese 3 bullets + Fontes 30/70 + Método com volume convention"
+}
