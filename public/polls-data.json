@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-18",
+  "lastUpdate": "2026-05-19",
   "lastSyncedAt": "2026-05-18T13:30:00-03:00",
   "institutes": [
     {
@@ -107,6 +107,36 @@
   ],
   "polls": [
     {
+      "institute": "AtlasIntel",
+      "date": "2026-05-19",
+      "sampleSize": 5000,
+      "scope": "national",
+      "fieldStart": "2026-05-17",
+      "fieldEnd": "2026-05-18",
+      "results": {
+        "firstRound": {
+          "Lula": 47,
+          "Flávio Bolsonaro": 34.3,
+          "gap": 12.7
+        },
+        "secondRound": {
+          "Lula": 48.9,
+          "Flávio Bolsonaro": 41.8,
+          "gap": 7.1
+        },
+        "approval": {
+          "Lula approval": 47.4,
+          "Lula disapproval": 51.3
+        },
+        "rejection": {
+          "Lula": 50.6,
+          "Flávio": 52
+        }
+      },
+      "source": "Atlas/Bloomberg via BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor 19/Mai",
+      "note": "Primeira pesquisa nacional pós-áudio Flávio-Vorcaro. Flávio cai 6 pontos vs anterior. Equipe Flávio acionou TSE pedindo suspensão da divulgação. AtlasIntel inclui áudio na pesquisa, empresa nega impacto no resultado (Gazeta do Povo)."
+    },
+    {
       "institute": "Datafolha",
       "date": "2026-05-16",
       "sample": 2004,
@@ -120,8 +150,14 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 38 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 35 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            }
           ]
         }
       ],
@@ -149,10 +185,22 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 39 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 33 },
-            { "candidate": "Ronaldo Caiado (PSD)", "percent": 4 },
-            { "candidate": "Romeu Zema (Novo)", "percent": 4 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            }
           ]
         }
       ],
@@ -179,14 +227,38 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 40 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 34 },
-            { "candidate": "Ronaldo Caiado (PSD)", "percent": 5 },
-            { "candidate": "Romeu Zema (Novo)", "percent": 4 },
-            { "candidate": "Renan Santos (Missão)", "percent": 3 },
-            { "candidate": "Augusto Cury (Avante)", "percent": 1 },
-            { "candidate": "Aldo Rebelo (DC)", "percent": 1 },
-            { "candidate": "Cabo Daciolo", "percent": 1 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 1
+            },
+            {
+              "candidate": "Cabo Daciolo",
+              "percent": 1
+            }
           ]
         }
       ],
@@ -220,11 +292,26 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            { "candidate": "Lula (PT)", "percent": 46.6 },
-            { "candidate": "Flávio Bolsonaro (PL)", "percent": 39.7 },
-            { "candidate": "Renan Santos (Missão)", "percent": 5.3 },
-            { "candidate": "Ronaldo Caiado (PSD)", "percent": 3.3 },
-            { "candidate": "Romeu Zema (Novo)", "percent": 3.1 }
+            {
+              "candidate": "Lula (PT)",
+              "percent": 46.6
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39.7
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 5.3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3.1
+            }
           ]
         }
       ],
@@ -249,12 +336,33 @@
       "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico (Flávio 44 × Lula 43, Caiado 42 × Lula 43, Zema × Lula empate técnico). Datafolha 16/Mai (n=2.004 campo 12-14/Mai BR-00290/2026): 1T Lula 38% × Flávio 35% gap +3pp; 2T 45×45 empate técnico."
     },
     "historicalComparison": [
-      { "president": "FHC (2002)", "approval6m": 38, "disapproval6m": 21 },
-      { "president": "Lula (2006)", "approval6m": 44, "disapproval6m": 17 },
-      { "president": "Dilma (2014)", "approval6m": 51, "disapproval6m": 43 },
-      { "president": "Bolsonaro (2022)", "approval6m": 29, "disapproval6m": 50 },
-      { "president": "Lula (2026)", "approval6m": 47, "disapproval6m": 53 }
-    ]
+      {
+        "president": "FHC (2002)",
+        "approval6m": 38,
+        "disapproval6m": 21
+      },
+      {
+        "president": "Lula (2006)",
+        "approval6m": 44,
+        "disapproval6m": 17
+      },
+      {
+        "president": "Dilma (2014)",
+        "approval6m": 51,
+        "disapproval6m": 43
+      },
+      {
+        "president": "Bolsonaro (2022)",
+        "approval6m": 29,
+        "disapproval6m": 50
+      },
+      {
+        "president": "Lula (2026)",
+        "approval6m": 47,
+        "disapproval6m": 53
+      }
+    ],
+    "lastUpdate": "2026-05-19"
   },
   "polymarketComparison": {
     "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 18/Mai/2026 13:30 BRT (D+4 launch AFOS, AtlasIntel publica amanhã 19/Mai n=5.000, Datafolha publica sexta 22/Mai com Michelle Bolsonaro)",
@@ -266,7 +374,9 @@
         "polymarket": "43.50%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio (Gazeta do Povo, ICL Notícias 17/Mai) sem números detalhados ainda no domingo; Datafolha 16/Mai n=2.004 mantida Lula 38% × Flávio 35% 1T gap +3pp; 2T 45×45 empate técnico; Quaest publicada 13/Mai n=2.004 Lula 39% × Flávio 33% (gap +6pp Lula); AtlasIntel/Bloomberg 28/Abr 1T 46.6%",
         "tendenciaPolymarket": "Estável 44.50% (sem variação 48h+); gap AMPLIA +13.20pp LULA (vs +12.00pp 16/Mai noite ↑1.20pp 18h Lula consolida sem ganhar Flávio cede); 2L 16.00% (↑1.00pp 18h); STF impeach MÍNIMA DO CICLO 6.15% (↓1.10pp 24h, ↓6.60pp 48h vs pico 12.75% 15/Mai); LULA REINDICARÁ Jorge Messias ao STF (Coluna Basília 17/Mai)",
-        "odds": 44.5
+        "odds": 44.5,
+        "percentage": 45.5,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Flávio Bolsonaro",
@@ -274,7 +384,9 @@
         "polymarket": "31.55%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio (Gazeta do Povo, ICL Notícias 17/Mai) sem números detalhados ainda; Datafolha 16/Mai mantida 1T Flávio 35% × Lula 38% gap -3pp; 2T 45×45 empate técnico; Quaest 13/Mai Flávio 33% × Lula 39%; Flávio 'Me subestimaram não vou desistir do meu Brasil' pós-áudio (Gazeta do Povo, Pleno.News, Estadão 17/Mai)",
         "tendenciaPolymarket": "CEDE 31.30% (↓1.20pp 18h, ↓1.20pp 24h vs 32.50% 16/Mai noite); 2L 62.00% (↑1.50pp 18h base resiste); 3L COLAPSA 3.25% (↓2.30pp 18h vs 5.55% 16/Mai mercado tira Flávio cenário 3º); PL Senado 78.50% (↑0.50pp estável); Republicanos RECUPERA 11.00% (↑0.60pp 18h); Motta CPI Master 'tratamento regimental' (Revista Oeste, Pleno.News 17/Mai)",
-        "odds": 31.3
+        "odds": 31.3,
+        "percentage": 28.15,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Renan Santos",
@@ -282,7 +394,9 @@
         "polymarket": "9.70%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Renan no headline central; Mantida ausência destaque Quaest 13/Mai; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%",
         "tendenciaPolymarket": "Mantém topo 3ª via Poly acima Zema (5.35%) — presidencial 9.05% (↓0.70pp 18h vs 9.75% 16/Mai noite leve recuo); 2L DISPARA 7.70% (↑1.90pp 18h vs 5.80% 16/Mai mercado precifica chance Renan virar 2º colocado); 3L 30.00% (↓1.00pp 18h estável topo)",
-        "odds": 9.05
+        "odds": 9.05,
+        "percentage": 12.55,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Ronaldo Caiado",
@@ -290,7 +404,9 @@
         "polymarket": "1.35%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Caiado headline central; Mantida Quaest 13/Mai Caiado 4% empate técnico Zema; Caiado 'não fará juízo de valor' sobre Flávio (G1 16/Mai mantido); AtlasIntel 28/Abr 3.3%",
         "tendenciaPolymarket": "Estável 1.15% (18h); 3L SOBE 20.50% (↑2.00pp 18h, ↑4.00pp 48h vs 16.50% 15/Mai consolida 3º do 3L); PSD Senado RECUPERA 5.65% (↑2.05pp 18h reverte cedência 16/Mai); Abilio quer CPI Master e alfineta Zema (Rdnews 17/Mai)",
-        "odds": 1.15
+        "odds": 1.15,
+        "percentage": 1.45,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Tarcísio",
@@ -298,7 +414,9 @@
         "polymarket": "0.35%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Tarcísio cenário presidencial; Mantido Vox SP gov Tarcísio 38% × Haddad 26%; foco reeleição SP",
         "tendenciaPolymarket": "Cede 0.35% (↓0.10pp 18h vs 0.45% 16/Mai); 2L 0.30% estável; Republicanos Senado RECUPERA 11.00% (↑0.60pp 18h)",
-        "odds": 0.35
+        "odds": 0.35,
+        "percentage": 0.35,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Romeu Zema",
@@ -306,7 +424,9 @@
         "polymarket": "4.95%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Zema headline central; Mantida Quaest 13/Mai Zema 4% empate Caiado; Mantido Zema 'página virada' não houve ruptura (Estadão 16/Mai); Pesquisa MG indefinição Pacheco (Carta Capital 17/Mai); AtlasIntel 28/Abr 3.1%",
         "tendenciaPolymarket": "Cede 5.35% (↓0.30pp 18h vs 5.65% 16/Mai noite leve recuo) mantém-se abaixo Renan (9.05%); 3L RECUPERA 36.50% (↑4.00pp 18h reverte cedência colossal de 16/Mai retoma liderança 3L acima Renan); 2L 6.90% (↑1.25pp 18h); Bandas altas (≥6.50%) RECUPERAM 15.85% (↑2.65pp 18h) narrativa fiscal extrema volta força",
-        "odds": 5.35
+        "odds": 5.35,
+        "percentage": 6.25,
+        "lastUpdate": "2026-05-19"
       },
       {
         "name": "Fernando Haddad",
@@ -314,7 +434,9 @@
         "polymarket": "2.55%",
         "tendenciaPesquisa": "AtlasIntel publicada 17/Mai pós-áudio sem números detalhados; Datafolha 16/Mai não destaca Haddad cenário principal; ANÁLISE Quaest 13/Mai melhora avaliação governo beneficia base PT por extensão",
         "tendenciaPolymarket": "Estável 2.25% 18h; 2L 2.55% estável; 3L 3.85% (↑0.30pp 18h leve); PT Senado 3.00% estável; Lula reage pacote benesses reeleição (G1, Folha 17/Mai) beneficia base PT",
-        "odds": 2.25
+        "odds": 2.25,
+        "percentage": 2.35,
+        "lastUpdate": "2026-05-19"
       }
     ],
     "updatedAt": "2026-05-18 13:30 BRT"
