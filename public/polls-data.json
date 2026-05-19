@@ -109,32 +109,37 @@
     {
       "institute": "AtlasIntel",
       "date": "2026-05-19",
-      "sampleSize": 5000,
-      "scope": "national",
-      "fieldStart": "2026-05-17",
-      "fieldEnd": "2026-05-18",
-      "results": {
-        "firstRound": {
-          "Lula": 47,
-          "Flávio Bolsonaro": 34.3,
-          "gap": 12.7
-        },
-        "secondRound": {
-          "Lula": 48.9,
-          "Flávio Bolsonaro": 41.8,
-          "gap": 7.1
-        },
-        "approval": {
-          "Lula approval": 47.4,
-          "Lula disapproval": 51.3
-        },
-        "rejection": {
-          "Lula": 50.6,
-          "Flávio": 52
+      "sample": 5000,
+      "margin": 1,
+      "reliability": 5,
+      "method": "Recruit-and-Revisit (CAWI)",
+      "fieldDates": "2026-05-17 a 2026-05-18",
+      "note": "Primeira pesquisa nacional pós-áudio Flávio-Vorcaro. Flávio cai 6 pontos vs anterior. Equipe Flávio acionou TSE pedindo suspensão da divulgação. Aprovação Lula 47.4% × desaprovação 51.3%; rejeição Lula 50.6% × Flávio 52%. AtlasIntel inclui áudio na pesquisa, empresa nega impacto no resultado (Gazeta do Povo).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 47
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34.3
+            }
+          ]
         }
-      },
-      "source": "Atlas/Bloomberg via BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor 19/Mai",
-      "note": "Primeira pesquisa nacional pós-áudio Flávio-Vorcaro. Flávio cai 6 pontos vs anterior. Equipe Flávio acionou TSE pedindo suspensão da divulgação. AtlasIntel inclui áudio na pesquisa, empresa nega impacto no resultado (Gazeta do Povo)."
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 48.9,
+          "candidate2": "Flávio",
+          "percent2": 41.8
+        }
+      ],
+      "source": "Atlas/Bloomberg via BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor 19/Mai"
     },
     {
       "institute": "Datafolha",
