@@ -1,0 +1,71 @@
+{
+  "date": "2026-05-19",
+  "generatedAt": "2026-05-19T20:30:00-03:00",
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "AtlasIntel publicou pesquisa nacional pós-áudio Flávio-Vorcaro; Flávio cai 6 pontos no 2T",
+        "verification1_crossRef": "novidade — publicação efetivamente 19/Mai (antecipada em 18/Mai como agendada para hoje)",
+        "verification2_fetch": "múltiplos veículos independentes 19/Mai: BBC, Estadão, Folha de S.Paulo, CNN Brasil, Poder360, JOTA, Valor, Money Times — tempo verbal 'hoje/agora'",
+        "secondSource": "confirmada (BBC + Estadão + CNN Brasil = 3 grupos independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Equipe de Flávio aciona TSE pedindo suspensão da divulgação da pesquisa AtlasIntel",
+        "verification1_crossRef": "novidade — não apareceu em dailies anteriores",
+        "verification2_fetch": "Folha + Congresso em Foco + Estado de Minas, 19/Mai, tempo verbal 'hoje'",
+        "secondSource": "confirmada",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Flávio Bolsonaro discutiu renúncia com o pai (José Casado em VEJA)",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "VEJA (colunista identificado José Casado), GZH como desdobramento",
+        "secondSource": "fraca — GZH é desdobramento, não confirmação independente da renúncia em si",
+        "decision": "incorporar com atribuição cuidadosa — usar 'José Casado em VEJA reportou que Flávio teria discutido renúncia'; não afirmar como fato consolidado"
+      },
+      {
+        "event": "Lula leva Messias a ato com tom eleitoral antes do reenvio formal ao STF",
+        "verification1_crossRef": "continuidade temática (antecipações nas dailies 17 e 18/Mai); hoje é evento concreto (ato realizado)",
+        "verification2_fetch": "Folha de S.Paulo cobre como evento factual de 19/Mai",
+        "secondSource": "O Globo dá contexto secundário sobre 'Alcolumbre irritado' mas não confirma o ato em si — single-source identificada",
+        "decision": "incorporar com atribuição Folha; flag para adversarial review"
+      },
+      {
+        "event": "AtlasIntel incluiu menção ao áudio no questionário; empresa nega impacto no resultado",
+        "verification1_crossRef": "novidade contextual",
+        "verification2_fetch": "Gazeta do Povo",
+        "secondSource": "única fonte explícita sobre o detalhe metodológico, mas é informação operacional da própria empresa",
+        "decision": "incorporar como contexto metodológico, não evento separado"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerificationDone": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRun": false
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": [
+      "Lula leva Messias a ato eleitoral — Folha única fonte primária identificada (O Globo contextual)",
+      "Flávio discutiu renúncia com o pai — VEJA/José Casado único, atribuído explicitamente como reportagem de colunista"
+    ],
+    "numericalErrors": "OK — manual reconciliation com analysis-data.json: Lula 45.50% ✓, Flávio 28.15% ✓, gap +17.35pp ✓, Renan 12.55% pres / 35.50% 3L ✓, Zema 6.25% pres / 28.50% 3L ✓, STF impeach 6.05% ✓, bandas altas 9.00% ✓, AtlasIntel 1T 47/34.3/+12.7pp ✓, 2T 48.9/41.8/+7.1pp ✓",
+    "fontesInventadas": "amostral check OK — BBC AtlasIntel, CNN Brasil 47.4%×40.5%, O Globo Joaquim Barbosa, VEJA José Casado, Folha Lula Messias — todos confirmados em cache 2026-05-19.json",
+    "quotesLiterais": "única quote: 'foi um erro' (taxa blusinhas) atribuída a ministro do gabinete via Folha, sem nome específico citado — verbo 'reconheceu' preserva tom observacional",
+    "causacaoEspuria": "observacional, não causal — 'Polymarket reagiu na direção da AtlasIntel mas com magnitude diferente', STF impeach 'mantido baixo durante o dia'",
+    "verbosCriticos": "OK — 'renúncia' atribuída como 'teria discutido' (não consolidada); 'indicação STF' como 'tom eleitoral antes de comunicar formalmente' (não decreto); 'acionou TSE' confirmado por 3 fontes (Folha + Congresso em Foco + Estado de Minas)",
+    "decision": "prosseguir para preview — single-source flagados via atribuição cuidadosa no texto"
+  },
+  "approval": {
+    "v1Status": "reprovado pelo usuário — pediu: (1) links nos veículos, (2) remover h2/h3 do topo redundante com template, (3) verificar se rodapé Método/Integração faz sentido",
+    "v2Changes": [
+      "Removido h2/h3 redundante do topo do body",
+      "Adicionada seção 'Fontes consultadas' antes do rodapé com 2 blocos (link direto / Google News redirect)",
+      "Mantido rodapé institucional Método + Integração + linha 'Fontes citadas neste texto:' (parseado pelo template)"
+    ],
+    "v2Status": "aprovado pelo usuário em 19/Mai/2026 noite",
+    "previewVercel": "https://afos-analitica-2026-nh0ec8yqs-andre-felipes-projects-6b6d4469.vercel.app/pt-BR/daily/2026-05-19"
+  }
+}
