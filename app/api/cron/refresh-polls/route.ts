@@ -44,12 +44,21 @@ export async function GET(request: Request) {
     const { inserted, skipped } = await persistPolls(allPolls, 'tse_daily')
 
     // 4. Buscar odds atuais do Polymarket para cruzamento
+    // Resolução de base URL com 3 fallbacks:
+    //   1. VERCEL_PROJECT_PRODUCTION_URL — set em todos os deploys, aponta sempre ao prod canonical
+    //   2. VERCEL_URL — deployment-specific (preview/branch); pode estar vazio fora da Vercel
+    //   3. localhost — dev local
+    // Hardcoded afos-analytics.com como último guard contra cron silenciosamente sem dados em prod.
+    const baseUrl = (() => {
+      if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`
+      if (process.env.VERCEL_ENV === 'production') return 'https://www.afos-analytics.com'
+      return 'http://localhost:3000'
+    })()
     let polyOdds: { candidate: string; probability: number }[] = []
     try {
       const polyRes = await fetch(
-        process.env.VERCEL_URL
-          ? `https://${process.env.VERCEL_URL}/api/polymarket`
-          : 'http://localhost:3000/api/polymarket',
+        `${baseUrl}/api/polymarket`,
         { signal: AbortSignal.timeout(10000) }
       )
       if (polyRes.ok) {

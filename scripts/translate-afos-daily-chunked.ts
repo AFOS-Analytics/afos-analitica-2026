@@ -142,7 +142,23 @@ async function main() {
     }
   }
 
-  const translatedBody = aResult.translatedText + bText + cResult.translatedText + d1Result.translatedText + d2Text
+  let translatedBody = aResult.translatedText + bText + cResult.translatedText + d1Result.translatedText + d2Text
+
+  // ============================================================
+  // POST-PROCESS — corrige bugs cumulativos do tradutor
+  // Documentado em memory/feedback_translator_known_bugs.md
+  // ============================================================
+  // 1. Insert blank line before ## headers glued to previous content
+  translatedBody = translatedBody.replace(/([^\n])(\n## )/g, '$1\n$2')
+  translatedBody = translatedBody.replace(/([^\n])(\n### )/g, '$1\n$2')
+  // 2. Restore ### Calendar heading split into '#\n\n## 📅' or '## 📅'
+  translatedBody = translatedBody.replace(/\n#\n+## 📅/g, '\n\n### 📅')
+  translatedBody = translatedBody.replace(/^## 📅 /gm, '### 📅 ')
+  // 3. Em-dash auto-replacement: standalone — used as section separator
+  translatedBody = translatedBody.replace(/^—$/gm, '---')
+  translatedBody = translatedBody.replace(/^—{2,}$/gm, '---')
+  // 4. Em-dash in table separator row: |—|—|...|  →  |---|---|...|
+  translatedBody = translatedBody.replace(/^\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|$/gm, '|---|---|---|---|---|---|')
 
   const yamlLines = [
     '---',
@@ -154,6 +170,7 @@ async function main() {
     `lede: ${JSON.stringify(ledeResult.translatedText)}`,
     '---',
     '',
+    '', // 5. Blank line between frontmatter close and content (lede blockquote rendering)
   ]
   const outMd = yamlLines.join('\n') + translatedBody.trim() + '\n'
 

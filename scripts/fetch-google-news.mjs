@@ -18,7 +18,7 @@
  *   node scripts/fetch-google-news.mjs 2026-05-07  # data específica
  */
 
-import { writeFileSync, mkdirSync } from 'fs'
+import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'fs'
 import { join } from 'path'
 
 const QUERIES = [
@@ -283,6 +283,24 @@ async function main() {
     console.warn(`\n⚠ ${emptyQueries.length} queries retornaram zero items: ${emptyQueries.map(([id]) => id).join(', ')}`)
     console.warn('Possível: anti-bot, filtro Google News mudou, ou janela "when:1d" muito curta.')
     // Não exit 1 — cache parcial é melhor que zero, mas alerta usuário.
+  }
+
+  // Cache rotation — delete cache files older than 30 days
+  // Previne crescimento indefinido do deploy bundle Vercel (público/ é incluído)
+  try {
+    const cutoffMs = Date.now() - 30 * 24 * 60 * 60 * 1000
+    let deleted = 0
+    for (const f of readdirSync(outDir)) {
+      if (!/^\d{4}-\d{2}-\d{2}\.json$/.test(f)) continue
+      const filePath = join(outDir, f)
+      if (statSync(filePath).mtimeMs < cutoffMs) {
+        unlinkSync(filePath)
+        deleted++
+      }
+    }
+    if (deleted > 0) console.log(`\n🗑  Cache rotation: ${deleted} arquivo(s) >30d removido(s).`)
+  } catch (err) {
+    console.warn(`\n⚠ Cache rotation skipped: ${err.message}`)
   }
 }
 
