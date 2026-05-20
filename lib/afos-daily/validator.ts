@@ -93,6 +93,36 @@ export function validateBody(body: string): Violation[] {
     }
   }
 
+  // E3. Template placeholders {{var}} unfilled (incidente daily 18/Mai)
+  // {{algo}} dentro de markdown link gera URL inválida que renderiza como 404 relativo
+  const placeholderMatches = body.match(/\{\{[^}]+\}\}/g)
+  if (placeholderMatches) {
+    const unique = Array.from(new Set(placeholderMatches))
+    violations.push({
+      severity: 'error',
+      rule: 'unfilled-template-placeholder',
+      detail: `${placeholderMatches.length} placeholder(s) {{var}} não preenchido(s): ${unique.join(', ')}. Substituir por URL real ou remover o link/bullet inteiro.`,
+    })
+  }
+
+  // E4. Seções obrigatórias do template — todas devem aparecer com ^## N. heading
+  // Template aprovado 22/Abr exige Seções 1-4 numeradas
+  const requiredSections = [
+    { re: /^## 1\. /m, label: '## 1. Mercado de previsão / Prediction market / Mercado de predicción' },
+    { re: /^## 2\. /m, label: '## 2. O que os institutos / What the polling institutes / Lo que registraron los institutos' },
+    { re: /^## 3\. /m, label: '## 3. O que a imprensa cobriu / What the press covered / Lo que la prensa cubrió' },
+    { re: /^## 4\. /m, label: '## 4. Divergências do dia / Day\'s divergences / Divergencias del día' },
+  ]
+  for (const { re, label } of requiredSections) {
+    if (!re.test(body)) {
+      violations.push({
+        severity: 'error',
+        rule: 'missing-required-section',
+        detail: `Seção obrigatória ausente: ${label}. Headers concatenados sem newline anterior também caem nesta regra (^## com 'm' exige começo de linha).`,
+      })
+    }
+  }
+
   // ====== WARNINGS (relatam mas não bloqueiam) ======
 
   // W1. Razão de homepages bare em links externos. Threshold 30% calibrado
@@ -127,6 +157,37 @@ export function validateBody(body: string): Violation[] {
       severity: 'warning',
       rule: 'low-link-density',
       detail: `${paragraphsWithLink}/${substantialParagraphs} parágrafos substantivos (${Math.round(ratio * 100)}%) têm link externo. Regra editorial: ≥80% (cada alegação factual com fonte linkada).`,
+    })
+  }
+
+  // W4. Em-dash usado como separador entre seções (bug do translator)
+  // Linha contendo apenas — ou ——+ não é interpretada como horizontal rule pelo react-markdown
+  const emDashSeparators = body.match(/^—+$/gm)
+  if (emDashSeparators && emDashSeparators.length > 0) {
+    violations.push({
+      severity: 'warning',
+      rule: 'em-dash-separator',
+      detail: `${emDashSeparators.length} linha(s) usando — como separador. Substituir por --- (triple hyphen ASCII) para render como <hr>. Causa: auto-replacement do translator.`,
+    })
+  }
+
+  // W5. Table separator com em-dashes (bug translator) — quebra render GFM
+  if (/^\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|$/m.test(body)) {
+    if (/—/.test(body.match(/^\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|[—\-\s]+\|$/m)?.[0] || '')) {
+      violations.push({
+        severity: 'warning',
+        rule: 'table-separator-em-dash',
+        detail: 'Separator de tabela GFM contém em-dashes (—) em vez de hyphens ASCII (-). Tabela renderiza como texto plano em vez de tabela. Substituir |---|---|...| ASCII.',
+      })
+    }
+  }
+
+  // W6. Headers ## colados ao parágrafo anterior sem blank line
+  if (/[^\n]\n## /.test(body)) {
+    violations.push({
+      severity: 'warning',
+      rule: 'header-no-blank-line',
+      detail: 'Pelo menos um header ## está concatenado ao parágrafo anterior sem blank line. Markdown exige \\n\\n antes de heading para renderizar como h2 (não texto inline).',
     })
   }
 
