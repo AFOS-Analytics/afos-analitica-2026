@@ -53,7 +53,8 @@ async function main() {
   // Chunk D: --- + sources + método (large URL block)
   const sec3Idx = body.indexOf('## 3. ')
   const sec4Idx = body.indexOf('## 4. ')
-  const sepIdx = body.indexOf('\n---\n')
+  // sepIdx: separator AFTER sec4 (lede may have its own `---` before sec1, ignore it)
+  const sepIdx = body.indexOf('\n---\n', sec4Idx)
   if (sec3Idx < 0 || sec4Idx < 0 || sepIdx < 0) {
     console.error('Section markers not found in body')
     process.exit(1)
