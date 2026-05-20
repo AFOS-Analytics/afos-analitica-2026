@@ -190,7 +190,7 @@ Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de U
   - "Matérias com link direto para a notícia" — primárias âncora
   - "Matérias secundárias (URL Google News redirect — clique resolve à matéria)" — secundárias
 
-**Aplicar em PT-BR, EN e ES uniformemente** (traduções via `translate-afos-daily.ts` mantêm URLs originais — proporção é definida na geração PT, replicada nas traduções).
+**Aplicar em PT-BR, EN e ES uniformemente** (traduções via `translate-afos-daily-chunked.ts` mantêm URLs originais — proporção é definida na geração PT, replicada nas traduções).
 
 ### URLs PROIBIDAS (bloqueiam Write — gate Python)
 

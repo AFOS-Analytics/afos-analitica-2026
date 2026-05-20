@@ -68,6 +68,12 @@ public/news-cache/
 # Internal preview/mockup (não vai pro repo)
 public/preview-daily-viz.html
 
+# Polymarket local cache (gerado por scripts de dev/test)
+.poly-cache/
+
+# Claude Code scheduled tasks runtime lock
+.claude/scheduled_tasks.lock
+
 # Defensive ignores (proteção redundante — paths movidos pra C:\AFOS-Privado\)
 launch-day-13mai.md
 docs/launch-texts/0*.md

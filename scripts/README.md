@@ -8,7 +8,7 @@ Scripts utilitários e de manutenção do AFOS Analytics. Todos rodam via `tsx` 
 |--------|-----------|--------------|
 | **persist-afos-daily.ts** | Persiste arquivos `public/afos-daily/{date}.md` no Neon (tabela `analysis_reports`) com slug `afos-daily-DD-MM-YYYY`. | Após criar/editar uma síntese AFOS Daily e antes de fazer commit/deploy. |
 | **persist-analysis.ts** | Persiste `analysis-data.json` e `analysis-criteriosa.json` no Neon como snapshots diários. | Manualmente após `/atualizar`. Roda automaticamente via cron Vercel às 14:00 UTC. |
-| **translate-afos-daily.ts** | Traduz uma síntese AFOS Daily PT-BR → EN/ES via Claude Haiku 4.5. Lê `ANTHROPIC_API_KEY` do `.env.local`. | Quando o pipeline de tradução automatizada for ativado (Task 7.12 do roadmap). Pré-launch: tradução é manual. |
+| **translate-afos-daily-chunked.ts** | Traduz uma síntese AFOS Daily PT-BR → EN/ES via Claude Haiku 4.5 com chunking automático por seção (`## 1.`, `## 2.`, etc) — necessário para dailies >7k chars que excediam max_tokens=8192 da versão antiga não-chunked. Lê `ANTHROPIC_API_KEY` do `.env.local`. Post-process inline corrige 5 bugs cumulativos do translator (header newlines, em-dash separators, ### Calendar split, table separator, blank line antes lede). | Após executar `/afos-daily` em PT-BR e aprovar a síntese — gera as 2 traduções. |
 | **test-afos-daily-edge-cases.ts** | 42 testes de edge cases do loader AFOS Daily + glossário (path traversal, datas inválidas, locale fallback, etc.). | Antes de qualquer commit que toque `lib/afos-daily/`. CI roda automaticamente. |
 | **seed-dev.ts** | Popula tabelas Neon com dados de teste para desenvolvimento local. | Após `npx prisma migrate dev` em ambiente novo. |
 | **backfill-analysis.ts** | Re-popula `analysis_reports` a partir de arquivos JSON antigos em git history. | Apenas para recovery — não rodar em produção sem backup. |
@@ -32,14 +32,11 @@ npx tsx scripts/persist-afos-daily.ts 2026-04-29
 # Persistir TODOS os AFOS Daily de public/afos-daily/
 npx tsx scripts/persist-afos-daily.ts
 
-# Traduzir AFOS Daily 22/Abr para EN
-npx tsx scripts/translate-afos-daily.ts 2026-04-22 --locale=en
+# Traduzir AFOS Daily 19/Mai para EN
+npx tsx scripts/translate-afos-daily-chunked.ts 2026-05-19 en
 
-# Traduzir para EN E ES
-npx tsx scripts/translate-afos-daily.ts 2026-04-22
-
-# Dry-run (mostra prompt sem chamar API)
-npx tsx scripts/translate-afos-daily.ts 2026-04-22 --dry-run
+# Traduzir para ES
+npx tsx scripts/translate-afos-daily-chunked.ts 2026-05-19 es
 
 # Rodar testes edge case
 npx tsx scripts/test-afos-daily-edge-cases.ts
@@ -48,7 +45,7 @@ npx tsx scripts/test-afos-daily-edge-cases.ts
 ## Pré-requisitos
 
 - `.env.local` configurado com pelo menos `DATABASE_URL` (Neon) — todos os scripts que tocam Neon falham gracefully se ausente
-- Para `translate-afos-daily.ts`: `ANTHROPIC_API_KEY` ou `TRANSLATION_API_KEY` no `.env.local`
+- Para `translate-afos-daily-chunked.ts`: `ANTHROPIC_API_KEY` ou `TRANSLATION_API_KEY` no `.env.local`
 - Para `send-test-welcome.ts`: `RESEND_API_KEY` no `.env.local`
 
 ## Observações de segurança
