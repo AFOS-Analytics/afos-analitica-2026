@@ -4,7 +4,7 @@ import { loadGlossary, type GlossaryEntry } from '../../../lib/glossary/loader'
 import { isValidLocale, SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
 
 interface PageProps {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
 export async function generateStaticParams() {
@@ -77,7 +77,8 @@ const T = {
   },
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   if (!isValidLocale(params.locale)) {
     return { title: 'Glossary | AFOS Analytics' }
   }
@@ -123,7 +124,8 @@ function buildDefinedTermsSchema(entries: GlossaryEntry[], locale: 'pt-BR' | 'en
   }
 }
 
-export default function GlossaryPage({ params }: PageProps) {
+export default async function GlossaryPage(props: PageProps) {
+  const params = await props.params;
   if (!isValidLocale(params.locale)) notFound()
   const locale = params.locale as keyof typeof T
   const t = T[locale]

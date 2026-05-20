@@ -68,12 +68,14 @@ export const metadata: Metadata = {
 // matcher (api, _next, static).
 import { headers } from 'next/headers';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const headersList = headers();
+export default async function RootLayout(
+  {
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>
+) {
+  const headersList = await headers();
   const localeFromMiddleware = headersList.get('x-pathname-locale') || 'pt-BR';
   return (
     <html lang={localeFromMiddleware}>

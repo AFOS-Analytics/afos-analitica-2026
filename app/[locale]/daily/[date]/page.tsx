@@ -5,7 +5,7 @@ import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_
 import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
-  params: { locale: string; date: string }
+  params: Promise<{ locale: string; date: string }>
 }
 
 export async function generateStaticParams() {
@@ -16,7 +16,8 @@ export async function generateStaticParams() {
   return SUPPORTED_LOCALES.flatMap(locale => dates.map(date => ({ locale, date })))
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   if (!isValidLocale(params.locale) || !isValidDate(params.date)) {
     return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
   }
@@ -91,7 +92,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   }
 }
 
-export default function DailyByDatePage({ params }: PageProps) {
+export default async function DailyByDatePage(props: PageProps) {
+  const params = await props.params;
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
   // Production-only gate: drafts are 404 on www.afos-analytics.com but

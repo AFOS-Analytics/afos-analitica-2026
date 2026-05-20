@@ -5,14 +5,15 @@ import { getLatestDate, isValidLocale } from '../../../lib/afos-daily/loader'
 export const dynamic = 'force-static'
 
 interface Props {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }
 
 // Index page redirects to /daily/{latest-date}. Metadata is set to noindex
 // so the redirect URL itself doesn't compete with the canonical permalink
 // in search engines. Sitemap still lists this URL (priority 0.9) for
 // discoverability.
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const latest = getLatestDate()
   const validLocale = isValidLocale(params.locale) ? params.locale : 'pt-BR'
   const canonical = latest
@@ -27,7 +28,8 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function DailyIndexPage({ params }: Props) {
+export default async function DailyIndexPage(props: Props) {
+  const params = await props.params;
   const validLocale = isValidLocale(params.locale) ? params.locale : 'pt-BR'
   const latest = getLatestDate()
   if (!latest) redirect(`/${validLocale}/dashboard`)

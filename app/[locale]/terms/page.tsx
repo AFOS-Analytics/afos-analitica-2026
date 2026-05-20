@@ -6,7 +6,7 @@ import { Footer } from '../../components/Footer'
 import { buildMetadata } from '../../../lib/seo/metadata'
 import type { Locale } from '../../../lib/i18n/config'
 
-interface Props { params: { locale: string } }
+interface Props { params: Promise<{ locale: string }> }
 
 const CONTENT = {
   'pt-BR': {
@@ -53,12 +53,14 @@ const CONTENT = {
   },
 } as const
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
   return buildMetadata({ title: c.title, description: c.description, path: 'terms' }, params.locale as Locale)
 }
 
-export default function TermsPage({ params }: Props) {
+export default async function TermsPage(props: Props) {
+  const params = await props.params;
   if (!isValidLocale(params.locale)) notFound()
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
   return (
