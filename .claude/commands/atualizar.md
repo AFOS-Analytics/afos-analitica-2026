@@ -73,9 +73,9 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualize `risk` com informações relevantes do dia
 - Atualize o % de impeachment STF se mudou (buscar "14.5%" ou valor atual)
 
-### 3.4 `public/polls-data.json` — Pesquisas no dashboard (REGRA DE FRESCOR)
+### 3.4 `public/polls-data.json` — Pesquisas no dashboard (REGRA DE FRESCOR + SCHEMA CANÔNICO)
 
-**Guardrail (descoberto 04/Mai/2026 — pesquisas Mar ficaram 2 meses no dashboard):**
+**Guardrail #1 (frescor — descoberto 04/Mai/2026, pesquisas Mar ficaram 2 meses no dashboard):**
 
 - Verificar `lastUpdate` no topo do arquivo. Se >7 dias atrás de hoje, atualizar.
 - Para cada entrada em `polls[]`:
@@ -88,11 +88,27 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualizar `approvalData.results` se aprovação Lula mudou (AtlasIntel/Quaest mais recentes)
 - Atualizar `polymarketComparison.candidates` com % Polymarket atuais (já tem dados em ETAPA 1)
 
-**Por que essa regra existe:** dashboard prometendo "tempo real" mostrando pesquisa de 2 meses atrás mata credibilidade. Pesquisa eleitoral perde relevância em ~3 semanas. Histórico fica no Neon (já temos).
+**Guardrail #2 (schema canônico — OBRIGATÓRIO, instalado 21/Mai/2026 após 2ª regressão em 72h):**
+
+⚠️ **PROTOCOLO TEMPLATE-FIRST — NÃO NEGOCIÁVEL.** Antes de inserir QUALQUER nova entry em `polls[]`:
+
+1. **LER uma entry canônica recente do array** (ex: `data.polls[0]` ou a mais próxima do mesmo instituto) e usar como template field-por-field.
+2. **Copiar EXATAMENTE as chaves estruturais:** `institute`, `date`, `sample`, `margin`, `reliability`, `method`, `fieldDates`, `note`, `scenarios[]`, `secondRound[]`, `source`.
+3. **`scenarios` e `secondRound` SEMPRE arrays.** Se a fonte original (ex: AtlasIntel report puro) vier com `results.firstRound`/`results.secondRound` como OBJETO, CONVERTER para o shape canônico antes de gravar. Aprovação/desaprovação/rejeição vão no campo `note` (texto), nunca em chaves estruturadas novas.
+4. **Antes de fechar o commit, rodar:**
+   ```bash
+   npx tsx scripts/validate-polls-data.ts
+   ```
+   Exit 0 obrigatório. Schema canônico completo em `memory/feedback_polls_data_canonical_schema.md`.
+
+**Por que esse protocolo existe:** `app/components/PollsSection.tsx` consome `poll.scenarios` e `poll.secondRound` em render client. Quando uma entry vem com shape divergente, **derruba o dashboard inteiro**. Incidentes documentados: AtlasIntel 19/Mai e Vox Brasil 21/Mai (2× em 72h). Validator é trava final, mas template-first elimina o erro na origem.
+
+**Por que a regra de frescor existe:** dashboard prometendo "tempo real" mostrando pesquisa de 2 meses atrás mata credibilidade. Pesquisa eleitoral perde relevância em ~3 semanas. Histórico fica no Neon (já temos).
 
 ## ETAPA 4: Build + Deploy + Commit + Persistência Neon
 
 Execute em sequência:
+0. **VALIDATOR-FIRST (bloqueante):** `npx tsx scripts/validate-polls-data.ts`. Se exit 1, NÃO prosseguir — corrigir entry malformada e rodar de novo. Mais barato que crashar prod (incidente 21/Mai).
 1. `rm -rf .next && npm run build`
 2. `npx vercel --yes --prod`
 3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json`

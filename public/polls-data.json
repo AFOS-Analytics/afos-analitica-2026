@@ -244,15 +244,7 @@
           ]
         }
       ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Lula",
-          "percent1": null,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": null
-        }
-      ]
+      "secondRound": []
     },
     {
       "institute": "Real Time Big Data",

@@ -21,6 +21,7 @@ import { StfSection } from '../../components/StfSection';
 import { LogicLink } from '../../components/LogicLink';
 import { EmailPopup } from '../../components/EmailPopup';
 import { DashboardGate } from '../../components/DashboardGate';
+import { SectionErrorBoundary } from '../../components/SectionErrorBoundary';
 
 function DashboardContent() {
   const { t, locale } = useTranslation();
@@ -85,9 +86,9 @@ function DashboardContent() {
         <DailyHeroCard />
 
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
-          <PolymarketSection poly={poly} />
-          <PollsSection polls={polls} crit={crit} />
-          <CandidatesSection />
+          <SectionErrorBoundary name="Polymarket"><PolymarketSection poly={poly} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Candidatos"><CandidatesSection /></SectionErrorBoundary>
 
           {/* SEO internal links — country pages */}
           <section className="bg-light-bg border border-light-border rounded-xl p-4">
@@ -118,11 +119,11 @@ function DashboardContent() {
             </div>
           </section>
 
-          <NewsSection news={news} />
-          <SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} />
-          <InssSection inss={inss} updatedAt={ac?.updatedAt} />
-          <BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} />
-          <StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} />
+          <SectionErrorBoundary name="Notícias"><NewsSection news={news} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Sentimento"><SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="INSS"><InssSection inss={inss} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Banco Master"><BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="STF"><StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} /></SectionErrorBoundary>
         </main>
 
         <Footer />

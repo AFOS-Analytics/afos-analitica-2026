@@ -126,12 +126,14 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-4 mb-6">
-        {poll.scenarios.map((scenario: Scenario) => {
-          const maxP = Math.max(...scenario.results.map(r => r.percent));
+        {(Array.isArray(poll.scenarios) ? poll.scenarios : []).map((scenario: Scenario) => {
+          const results = Array.isArray(scenario?.results) ? scenario.results : [];
+          if (results.length === 0) return null;
+          const maxP = Math.max(...results.map(r => r.percent));
           return (
             <Card key={scenario.name}>
               <h4 className="font-bold text-dark mb-3">{scenario.name}</h4>
-              {scenario.results.map(r => (
+              {results.map(r => (
                 <HBar
                   key={r.candidate}
                   value={r.percent}
@@ -148,7 +150,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* Second Round */}
       <h3 className="font-bold text-lg text-dark mb-3">🔄 {t('sections.secondRound')}</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {poll.secondRound.map((sr: SecondRound) => (
+        {(Array.isArray(poll.secondRound) ? poll.secondRound : []).map((sr: SecondRound) => (
           <Card key={sr.matchup}>
             <h4 className="font-semibold text-sm text-center mb-3 text-gray-600">{sr.matchup}</h4>
             <div className="flex items-center gap-2">
