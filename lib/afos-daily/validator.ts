@@ -191,6 +191,25 @@ export function validateBody(body: string): Violation[] {
     })
   }
 
+  // W7. Densidade de citação de volume USD na Seção 1.
+  // Protocolo firmado 17/Mai (feedback_afos_daily_volume_polymarket.md):
+  // toda Seção 1 deve citar volume USD inline por sub-mercado (1T, 2L, 3L, STF,
+  // Senado, inflação). 18/Mai aplicou 12 vezes; 19-21/Mai regrediram para 0-1.
+  // Threshold ≥4 menções 'USD' na Seção 1 captura aplicação consistente
+  // (>=1 menção em pelo menos 4 dos 6 sub-mercados) sem ser tão estrito
+  // que pegue toda variação editorial.
+  const sec1Match = body.match(/## 1\.[^]*?(?=\n## 2\.)/m)
+  if (sec1Match) {
+    const usdCount = (sec1Match[0].match(/\bUSD\b/g) || []).length
+    if (usdCount < 4) {
+      violations.push({
+        severity: 'warning',
+        rule: 'volume-usd-citation-thin',
+        detail: `Seção 1 cita volume USD apenas ${usdCount}× (protocolo 17/Mai: ≥4 menções, formato inline XX,XX% (USD X,XXM)). Aplicar ao mercado presidencial, 2L, 3L, STF, Senado, inflação — reforça "dinheiro real" e contextualiza distorções de baixa liquidez.`,
+      })
+    }
+  }
+
   return violations
 }
 

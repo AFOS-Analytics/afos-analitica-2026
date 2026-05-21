@@ -156,6 +156,7 @@ Bloco é **descritivo, não preditivo**. NÃO atribuir resultado à pesquisa que
 
 Mantidas rigorosamente do piloto 22/Abr:
 
+- **Volume USD inline obrigatório na Seção 1** — protocolo firmado 17/Mai (`feedback_afos_daily_volume_polymarket.md`): toda menção de candidato/mercado em Seção 1 cita % E volume USD acumulado no formato `XX,XX% (USD X,XXM)`. Aplicar a TODOS os sub-mercados: presidencial (top 5 candidatos), 2L, 3L, STF impeach, Senado, inflação. Reforça "dinheiro real" e contextualiza distorções de baixa liquidez (ex: MDB Senado spike 16,55% com vol USD 254k = distorção). **Validator W7 emite warning se < 4 menções USD na Seção 1**. Daily 18/Mai é o gabarito (12 USDs aplicados); dailies 19-21/Mai regrediram — não repetir.
 - **Cada alegação factual com link inline** para fonte — mínimo 1 link por parágrafo substantivo
 - **Zero adjetivos partidários** ("autoritário", "corrupto", "salvador", "radical", "extremista", "visionário")
 - **Zero atribuição de motivação sem evidência documentada** ("ele quer X porque Y" só se Y estiver citado)
