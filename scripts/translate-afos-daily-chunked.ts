@@ -149,8 +149,10 @@ async function main() {
   // Documentado em memory/feedback_translator_known_bugs.md
   // ============================================================
   // 1. Insert blank line before ## headers glued to previous content
-  translatedBody = translatedBody.replace(/([^\n])(\n## )/g, '$1\n$2')
-  translatedBody = translatedBody.replace(/([^\n])(\n### )/g, '$1\n$2')
+  // Use [^\n#] (NOT just [^\n]) to avoid breaking ### into # + ##.
+  // Match both '\n##' (already on own line) and inline '##' (no newline at all).
+  translatedBody = translatedBody.replace(/([^\n#])(## )/g, '$1\n\n$2')
+  translatedBody = translatedBody.replace(/([^\n#])(### )/g, '$1\n\n$2')
   // 2. Restore ### Calendar heading split into '#\n\n## 📅' or '## 📅'
   translatedBody = translatedBody.replace(/\n#\n+## 📅/g, '\n\n### 📅')
   translatedBody = translatedBody.replace(/^## 📅 /gm, '### 📅 ')
