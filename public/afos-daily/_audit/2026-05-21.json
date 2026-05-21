@@ -1,0 +1,106 @@
+{
+  "date": "2026-05-21",
+  "generatedAt": "2026-05-21T09:00:00-03:00",
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "Vox Brasil publicou pesquisa nacional 2T Lula 46.8% × Flávio 38.1% gap +8.7pp",
+        "verification1_crossRef": "novidade — primeira aparição",
+        "verification2_fetch": "Poder360, Exame, Folha de Alphaville, Revista Fórum, Sudoeste Bahia, Bahia Econômica, Portal de Notícias (20/Mai) — 7+ veículos independentes",
+        "secondSource": "confirmada (3+ grupos independentes)",
+        "decision": "incorporar como evento-âncora"
+      },
+      {
+        "event": "PSDB discute lançar Aécio Neves à Presidência aproveitando desgaste Flávio",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "CNN Brasil + Folha de S.Paulo + O TEMPO + O Globo (20/Mai)",
+        "secondSource": "confirmada (4 fontes)",
+        "decision": "incorporar com atribuição 'discute' (discussion, not decision)"
+      },
+      {
+        "event": "Caiado: 'contaminado por Vorcaro não pode ser presidente' sem citar Flávio",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "O Globo + Folha de S.Paulo + Estadão + Estado de Minas (20/Mai)",
+        "secondSource": "confirmada",
+        "decision": "incorporar com atribuição explícita 'sem citar Flávio diretamente'"
+      },
+      {
+        "event": "Zema: 'credibilidade liderar país' sem citar Flávio",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "Folha de S.Paulo (20/Mai) — single source",
+        "secondSource": "não confirmada independentemente",
+        "decision": "incorporar com atribuição cuidadosa — flag para adversarial review"
+      },
+      {
+        "event": "Michelle ignora Flávio e critica 'aliança com o mal' (referência a Ciro Gomes)",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "Folha de S.Paulo (20/Mai) — single source",
+        "secondSource": "não confirmada independentemente",
+        "decision": "incorporar com atribuição — Folha é prestige outlet"
+      },
+      {
+        "event": "Flávio Bolsonaro troca de marqueteiro após caso Dark Horse",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "Folha de S.Paulo + Estadão + O Globo (20/Mai) — 3 prestige outlets independentes",
+        "secondSource": "confirmada",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Aliados PL admitem rever candidatura Flávio após Vorcaro",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "Bnews + Área VIP (20/Mai) — ambos rumor-tier",
+        "secondSource": "fraca",
+        "decision": "incorporar com cautela máxima como 'reportagens registram'"
+      },
+      {
+        "event": "Valdemar pressionado, PL pode tirar Flávio das eleições 2026",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "Área VIP — single source rumor-tier",
+        "secondSource": "não verificada",
+        "decision": "NÃO incorporar como fato — manter como background, não citar como notícia primária"
+      },
+      {
+        "event": "PF apura emenda Flávio Bolsonaro para ONG suspeita",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "O Globo (20/Mai) — prestige outlet, investigação em andamento",
+        "secondSource": "fonte primária confiável",
+        "decision": "incorporar como 'investigação em curso'"
+      },
+      {
+        "event": "Lula no TCU ao lado de Alcolumbre",
+        "verification1_crossRef": "novidade",
+        "verification2_fetch": "O Globo (20/Mai)",
+        "secondSource": "single source mas evento público observável",
+        "decision": "incorporar como sinal de reaproximação institucional"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerificationDone": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRun": false
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": [
+      "Zema 'credibilidade' — Folha única fonte primária",
+      "Michelle 'aliança com o mal' — Folha única fonte primária",
+      "Bnews/Área VIP sobre PL rever candidatura — rumor-tier, atribuído como reportagem não fato"
+    ],
+    "numericalErrors": "OK — manual reconciliation: Lula 45.50%, Flávio 23.35%, gap +22.15pp, Renan 15.60% pres/34.50% 3L, Haddad 4.70%, Michelle 3.70% + 2L 3.25%, STF impeach 7.25%, PL Senado 76%, bandas altas 8.55%, Vox 46.8/38.1 gap+8.7pp, AtlasIntel 47/34.3 gap+12.7pp",
+    "fontesInventadas": "amostral OK — O Globo Caiado URL slug corrigido (nao-tem-condicoes), Estadão Flávio marqueteiro URL primária válida, Vox Brasil via Poder360 confirmado",
+    "quotesLiterais": "todas com atribuição clara: 'contaminado por Vorcaro' (Caiado via O Globo), 'aliança com o mal' (Michelle via Folha), 'chapa ganharia adesão' (Salles via BBC)",
+    "causacaoEspuria": "Divergência mercado×pesquisa explicada como acumulação de eventos, não causação 1:1. Seção 4 explicita 'movimento parece refletir acumulação' sem atribuir causa única",
+    "verbosCriticos": "OK — 'troca marqueteiro' = fato 3 prestige sources; 'admitem rever candidatura' = atribuído como reportagem rumor-tier; 'discute lançar' (PSDB) = discussion não decisão; 'apura' (PF) = investigação em curso",
+    "decision": "prosseguir para preview"
+  },
+  "approval": {
+    "v1Status": "aprovado pelo usuário em 21/Mai/2026",
+    "previewVercel": "https://afos-analitica-2026-ng1uik4v4-andre-felipes-projects-6b6d4469.vercel.app/pt-BR/daily/2026-05-21",
+    "urlGateFixes": [
+      "Caiado O Globo URL slug: 'nao-te-condicoes' → 'nao-tem-condicoes'",
+      "Flávio marqueteiro: substituído O Globo (URL slug truncado 404) por Estadão direto",
+      "Bnews aliados PL: URL Google News completa do cache (versão anterior estava truncada)"
+    ]
+  }
+}
