@@ -13,6 +13,14 @@ Busque dados de TODOS os 6 mercados via WebFetch:
 5. `https://gamma-api.polymarket.com/events?slug=next-brazil-senate-election-most-seats-won&limit=1` — Senado
 6. `https://gamma-api.polymarket.com/events?slug=brazil-annual-inflation-2026&limit=1` — Inflação
 
+**Para cada mercado, extrair TRÊS métricas (regra firmada 21/Mai/2026 D+7):**
+
+- **% (yes price)** — outcomePrices[0] convertido para %, métrica principal de probabilidade implícita.
+- **`volumeNum` (volume acumulado USD)** — notional total negociado desde abertura do mercado. Mostra fluxo histórico. Já forwardado pelo proxy AFOS.
+- **`liquidityNum` (liquidez atual USD)** — profundidade do order book AGORA, ou seja, dinheiro disponível pra comprar/vender no momento do snapshot. Forwardada pelo proxy AFOS a partir de 21/Mai/2026.
+
+Por que ambos: volume é passado acumulado, liquidity é presente disponível. Spike de % com volume alto mas liquidity baixa = sinal frágil (poucas mãos sustentando o preço). Citar os dois separa precificação genuína de distorção temporária.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
@@ -126,6 +134,7 @@ Execute em sequência:
 - Fontes sempre citadas: Inclua nome do veículo/instituto + data entre parênteses
 - Sem inventar dados: Use APENAS dados obtidos nas buscas. Se não encontrar, mantenha o dado anterior
 - Informe ao final: Mostre tabela resumo com principais mudanças
+- **Volume + liquidity Polymarket — regra firmada 21/Mai/2026 D+7:** ao escrever os campos `subtitle`, `header`, `analise` e `t` (trend) em `analysis-criteriosa.json` e os textos dos cards em `analysis-data.json`, citar o par volume (USD acumulado) **e** liquidity (USD disponível agora) quando o número agregar contexto. Aplicação contextual, não exaustiva: (a) **obrigatório** quando houver spike >3pp em 24h — citar liquidity para qualificar se sinal é genuíno ou distorção; (b) **obrigatório** no parágrafo de fechamento da `analise` de cada candidato top 4 (Lula, Flávio, Renan, terceira via dominante do dia) — pelo menos uma menção do par "vol USD X,XXM · liq USD Xk"; (c) **opcional** em sub-mercados estáveis sem variação relevante. Formato canônico: `Lula 45,50% (vol USD 5,69M · liq USD 12k)`. Volume é passado acumulado, liquidity é presente disponível — citar os dois separa precificação genuína de distorção temporária. Histórico do incidente que motivou: MDB Senado spike 16,55% com vol USD 254k e liquidity essencialmente zero, foi distorção pura, normalizou para 4,70% em 18h. Sem citar liquidity, leitor não distingue.
 
 ## ESTILO TEXTUAL (anti-AI tells)
 

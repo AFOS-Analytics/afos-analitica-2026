@@ -67,6 +67,7 @@ async function fetchEvent(slug: string) {
           outcomePrices,
           outcomes,
           volumeNum: m.volumeNum,
+          liquidityNum: m.liquidityNum,
           active: m.active,
           closed: m.closed,
         };
