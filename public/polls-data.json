@@ -109,21 +109,37 @@
     {
       "institute": "Vox Brasil",
       "date": "2026-05-20",
-      "sampleSize": 1200,
-      "scope": "national",
-      "results": {
-        "secondRound": {
-          "Lula": 46.8,
-          "Flávio Bolsonaro": 38.1,
-          "gap": 8.7
-        },
-        "rejection": {
-          "Lula": 52.8,
-          "Flávio Bolsonaro": 49.2
+      "sample": 1200,
+      "margin": 3,
+      "reliability": 3,
+      "method": "Pesquisa nacional",
+      "fieldDates": "maio de 2026",
+      "note": "Segunda pesquisa nacional pós-áudio Flávio-Vorcaro. Confirma deterioração capturada pela AtlasIntel 19/Mai. Rejeição Lula 52.8%, Flávio 49.2%.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (2º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 46.8
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38.1
+            }
+          ]
         }
-      },
-      "source": "Vox Brasil via Poder360, Exame, Folha Alphaville, Revista Fórum 20/Mai",
-      "note": "Pesquisa nacional pós-AtlasIntel confirma deterioração Flávio. Sample n=1200 confirmação ainda pendente."
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46.8,
+          "candidate2": "Flávio",
+          "percent2": 38.1
+        }
+      ],
+      "source": "Vox Brasil via Poder360, Exame, Folha de Alphaville, Revista Fórum 20/Mai"
     },
     {
       "institute": "AtlasIntel",
