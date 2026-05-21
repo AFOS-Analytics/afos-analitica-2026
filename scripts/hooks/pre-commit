@@ -1,0 +1,28 @@
+#!/bin/sh
+# AFOS Analytics — pre-commit hook
+# Camada 2.5 (fechamento do gap C2 → automação): valida schema de polls-data.json
+# antes de qualquer commit que toque o arquivo. Documentado em
+# memory/project_dashboard_4layer_defense.md.
+#
+# Para reinstalar em uma nova clone:
+#   bash scripts/hooks/install.sh
+
+set -e
+
+# Lista arquivos staged. Se polls-data.json não está no commit, sai 0 (passa).
+STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || echo "")
+
+if echo "$STAGED" | grep -qE '(^|/)public/polls-data\.json$'; then
+  echo "🔍 pre-commit: polls-data.json staged — validando schema canônico..."
+  if ! npx tsx scripts/validate-polls-data.ts; then
+    echo ""
+    echo "❌ pre-commit BLOQUEADO: polls-data.json não passou no validator."
+    echo "   Schema canônico em memory/feedback_polls_data_canonical_schema.md"
+    echo "   Para inspecionar erros: npx tsx scripts/validate-polls-data.ts"
+    echo "   Para bypass de emergência (NÃO recomendado): git commit --no-verify"
+    exit 1
+  fi
+  echo "✅ pre-commit: polls-data.json OK"
+fi
+
+exit 0
