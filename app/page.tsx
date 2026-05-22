@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 // Bare-domain landing for `/`. Renders OG metadata (EN, the international face
 // of the project) so that LLM crawlers and IM clients that don't follow
-// redirects still see proper share previews. Real users hit this for ~50ms
-// before being bounced to their preferred locale via JS. The visible link
-// list is the no-JS fallback — modern browsers all support JS.
+// redirects still see proper share previews. Real users get server-side
+// redirected to their detected locale immediately — no visible UI flash.
+// The blue post-signup screen lives at /welcome (not here).
 
 export const metadata: Metadata = {
   title: 'AFOS Analytics — Electoral Political Risk Intelligence — Open-Source',
@@ -38,108 +40,19 @@ export const metadata: Metadata = {
   },
 };
 
-// D+7 hardening (Rule 5B): transition state. Detect language, show explicit
-// "Redirecting to X — click to switch" UI for 8 seconds, then auto-redirect.
-// Sapphire blue mode — full background AFOS primary color.
-const TRANSITION_SCRIPT = `(function(){
-  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-  var target = '/en';
-  var label = 'English';
-  if (lang.indexOf('pt') === 0) { target = '/pt-BR'; label = 'Português'; }
-  else if (lang.indexOf('es') === 0) { target = '/es'; label = 'Español'; }
-  var el = document.getElementById('redirect-status');
-  if (el) {
-    el.textContent = 'Redirecting to ' + label + ' in 8 seconds…';
-  }
-  setTimeout(function(){ window.location.replace(target); }, 8000);
-})();`;
+// Server-side redirect to detected locale based on Accept-Language header.
+// No UI rendered for real users; the blue welcome screen lives at /welcome
+// and only shows for visitors with a valid signup_session_id cookie.
+function detectLocaleFromHeader(acceptLanguage: string | null): 'pt-BR' | 'en' | 'es' {
+  if (!acceptLanguage) return 'en';
+  const first = acceptLanguage.split(',')[0]?.split(';')[0]?.trim().toLowerCase() || '';
+  if (first.startsWith('pt')) return 'pt-BR';
+  if (first.startsWith('es')) return 'es';
+  return 'en';
+}
 
-export default function RootPage() {
-  return (
-    <main
-      style={{
-        fontFamily: 'system-ui, sans-serif',
-        minHeight: '100vh',
-        backgroundColor: '#0F52BA',
-        color: '#fff',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 'clamp(2rem, 8vw, 3rem) clamp(0.75rem, 4vw, 1.5rem)',
-        textAlign: 'center',
-      }}
-    >
-      <div style={{ maxWidth: '640px', width: '100%' }}>
-        <h1
-          style={{
-            fontSize: 'clamp(1.6rem, 8vw, 3rem)',
-            fontWeight: 800,
-            letterSpacing: '-0.02em',
-            margin: '0 0 0.75rem',
-            color: '#fff',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          AFOS Analytics
-        </h1>
-        <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.125rem', margin: '0 0 0.35rem', lineHeight: 1.5, fontWeight: 500 }}>
-          Electoral Political Risk Intelligence
-        </p>
-        <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', margin: '0 0 2rem', lineHeight: 1.4, fontWeight: 400, letterSpacing: '0.02em' }}>
-          Open-Source
-        </p>
-
-        {/* Rule 6: CTA primary above fold — Dashboard + AFOS Daily */}
-        <div style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
-          <a
-            href="/en/dashboard"
-            style={{
-              display: 'inline-block',
-              padding: '0.875rem 1.75rem',
-              backgroundColor: '#fff',
-              color: '#0F52BA',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 700,
-              fontSize: '1rem',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-            }}
-          >
-            View live dashboard →
-          </a>
-          <a
-            href="/en/daily"
-            style={{
-              display: 'inline-block',
-              padding: '0.875rem 1.75rem',
-              backgroundColor: 'transparent',
-              color: '#fff',
-              textDecoration: 'none',
-              borderRadius: '8px',
-              fontWeight: 700,
-              fontSize: '1rem',
-              border: '2px solid rgba(255,255,255,0.9)',
-            }}
-          >
-            Read AFOS Daily →
-          </a>
-        </div>
-
-        {/* Rule 5B: explicit transition state with escape hatch (8s timeout) */}
-        <p id="redirect-status" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', margin: '0 0 1.25rem' }}>
-          Detecting language preference…
-        </p>
-        <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)' }}>
-          Switch manually:{' '}
-          <a href="/pt-BR" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>Português</a>
-          {' · '}
-          <a href="/en" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>English</a>
-          {' · '}
-          <a href="/es" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 500 }}>Español</a>
-        </p>
-      </div>
-      <script dangerouslySetInnerHTML={{ __html: TRANSITION_SCRIPT }} />
-    </main>
-  );
+export default async function RootPage() {
+  const h = await headers();
+  const locale = detectLocaleFromHeader(h.get('accept-language'));
+  redirect(`/${locale}`);
 }

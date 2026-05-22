@@ -9,6 +9,7 @@
 
 import { NextResponse } from 'next/server'
 import { Redis } from '@upstash/redis'
+import { randomBytes } from 'crypto'
 import { createSubscriber } from '../../lib/email/subscribers'
 import { sendWelcomeEmail } from '../../lib/email/resend'
 import { subscribeSchema } from '../../../lib/validations'
@@ -16,6 +17,7 @@ import { audit } from '../../../lib/audit'
 import { locales } from '../../../lib/i18n/config'
 
 const VALID_LOCALES = locales as readonly string[]
+const SIGNUP_SESSION_TTL_SECONDS = 3600 // 1h — TTL for /welcome screen access
 
 export async function POST(request: Request) {
   try {
@@ -93,10 +95,37 @@ export async function POST(request: Request) {
       }
     }
 
-    return NextResponse.json(
+    // Set signup session cookie — grants temporary access to /welcome screen
+    // for locale capture (TTL 1h). Stored server-side in Redis with email payload.
+    let signupSessionId: string | null = null
+    if (redisUrl && redisToken && result.leadId) {
+      try {
+        const redis = new Redis({ url: redisUrl, token: redisToken })
+        signupSessionId = randomBytes(24).toString('hex')
+        await redis.set(
+          `afos:signup-session:${signupSessionId}`,
+          JSON.stringify({ email, leadId: result.leadId, createdAt: Date.now() }),
+          { ex: SIGNUP_SESSION_TTL_SECONDS }
+        )
+      } catch (err) {
+        console.error('[subscribe] signup session cookie set failed:', err)
+      }
+    }
+
+    const response = NextResponse.json(
       { ok: true, isNew: result.isNew },
       { status: 200, headers: { 'X-Content-Type-Options': 'nosniff' } }
     )
+    if (signupSessionId) {
+      response.cookies.set('signup_session_id', signupSessionId, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: SIGNUP_SESSION_TTL_SECONDS,
+        path: '/',
+      })
+    }
+    return response
   } catch (error) {
     console.error('[subscribe] Erro:', error)
     return NextResponse.json(

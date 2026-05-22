@@ -83,6 +83,7 @@ model Lead {
   unsubscribeToken String?        @unique @map("unsubscribe_token")
   unsubscribedAt   DateTime?      @map("unsubscribed_at") @db.Timestamptz(6)
   softBounceCount  Int            @default(0) @map("soft_bounce_count")
+  preferredLocale  String?        @map("preferred_locale")
   firstSeenAt      DateTime       @default(now()) @map("first_seen_at") @db.Timestamptz(6)
   lastSeenAt       DateTime       @default(now()) @map("last_seen_at") @db.Timestamptz(6)
   events           ContactEvent[]

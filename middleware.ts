@@ -97,6 +97,10 @@ function shouldSkip(pathname: string): boolean {
     pathname.startsWith('/_next/') ||
     pathname.startsWith('/geo/') ||
     pathname === '/opengraph-image' ||
+    // /welcome is a locale-less meta route (post-signup language picker).
+    // It must NOT be prefixed with /pt-BR, /en, or /es — the page itself
+    // renders the trilingual UI and saves the chosen locale to Lead.
+    pathname === '/welcome' || pathname.startsWith('/welcome/') ||
     pathname.includes('.');
 }
 
