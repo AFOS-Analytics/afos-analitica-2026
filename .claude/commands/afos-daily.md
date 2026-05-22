@@ -395,8 +395,8 @@ Executar em sequência:
 
 ## Histórico
 
-- **Piloto de 7 dias (22-28/Abr/2026):** ✅ concluído, decisão GO em 28/Abr noite. Feature aprovada e renomeada de "AFOS Hoje" para "AFOS Daily".
-- **Slugs Neon do piloto:** `afos-hoje-22-04-2026` até `afos-hoje-28-04-2026` (preservados como histórico). Novos arquivos a partir de 29/Abr usam slug `afos-daily-YYYY-MM-DD`.
+- **Piloto de 7 dias (22-28/Abr/2026):** ✅ concluído, decisão GO em 28/Abr noite. Feature AFOS Daily aprovada.
+- **Slugs Neon do piloto** preservados como histórico. Novos arquivos a partir de 29/Abr usam slug `afos-daily-YYYY-MM-DD`.
 
 ## Observações importantes
 
