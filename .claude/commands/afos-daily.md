@@ -363,6 +363,36 @@ Executar em sequência:
    npx vercel --yes --prod
    ```
 
+## ETAPA 7: Broadcast email aos subscribers (Fase 3 — firmada 22/Mai/2026 D+8)
+
+**Pré-requisito:** deploy prod da ETAPA 6 concluído (URL `/{locale}/daily/{date}` precisa estar live antes do email apontar pra ela).
+
+**Disparo automático em 2 passos:**
+
+1. **Dry-run primeiro (preview obrigatório):**
+   ```bash
+   npx tsx scripts/broadcast-afos-daily.ts YYYY-MM-DD --dry-run
+   ```
+   Mostra título/lede extraídos das 3 versões locale (.md, .en.md, .es.md) + quantos leads ativos seriam alcançados + por idioma cada um receberia. **Nenhum email é enviado.**
+
+2. **Send real (após dry-run aprovar):**
+   ```bash
+   npx tsx scripts/broadcast-afos-daily.ts YYYY-MM-DD
+   ```
+   Batch de 50 emails/lote com 1s delay (respeita rate limit Resend 10/s). Locale resolution: `preferredLocale` (set via /welcome) > `locale` signup (accept-language inferido) > fallback `'en'`. Link aponta pra `/{locale}/daily/{date}`. Audit log entry por batch.
+
+**Critérios pra disparar:**
+- ✅ Daily 3 versões (.md, .en.md, .es.md) com `status: published`
+- ✅ Deploy prod confirmado live em `https://www.afos-analytics.com/{locale}/daily/{date}`
+- ✅ Dry-run mostrou números esperados
+
+**Quando NÃO disparar:**
+- Daily ainda em draft em alguma versão locale
+- Deploy prod com falha
+- Dry-run mostrou 0 leads (algo de errado no Neon access)
+
+**Histórico:** scripts/broadcast-afos-daily.ts criado 22/Mai/2026 D+8 dentro do bundle Fase 3 + locale capture flow (commit 5b3f48e). Antes desta data, distribuição era manual via outros scripts ou inexistente.
+
 ## Histórico
 
 - **Piloto de 7 dias (22-28/Abr/2026):** ✅ concluído, decisão GO em 28/Abr noite. Feature aprovada e renomeada de "AFOS Hoje" para "AFOS Daily".
