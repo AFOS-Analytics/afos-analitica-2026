@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-21",
-  "lastSyncedAt": "2026-05-18T13:30:00-03:00",
+  "lastUpdate": "2026-05-22",
+  "lastSyncedAt": "2026-05-22T18:00:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -107,6 +107,48 @@
   ],
   "polls": [
     {
+      "institute": "Datafolha",
+      "date": "2026-05-22",
+      "sample": 2004,
+      "margin": 2,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "maio de 2026 (publicada 22/Mai sexta)",
+      "note": "Datafolha nacional publicada 22/Mai sexta, primeira rodada inteira pós-áudio Vorcaro (BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, InfoMoney, Correio Braziliense, O Globo, Jornal do Comércio, UOL, Brasil de Fato, Congresso em Foco, Poder360, CBN, SRzd 22/Mai). Lula 1T 40% × Flávio 31% gap +9pp Lula (Lula sobe, Flávio cai 4pp vs 16/Mai). 2T Lula 47% × Flávio 43% gap +4pp Lula (vs empate 45×45 anterior). Cenário Michelle 2T Lula 48% × Michelle 43% gap +5pp. Rejeição Flávio 46%, Lula 45% (Flávio supera Lula numericamente pela primeira vez). Sample exato e protocolo TSE em confirmação (assumido 2004 por padrão Datafolha).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Michelle",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Michelle Bolsonaro",
+          "percent2": 43
+        }
+      ],
+      "source": "Datafolha via BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, O Globo, InfoMoney, Correio Braziliense 22/Mai"
+    },
+    {
       "institute": "Vox Brasil",
       "date": "2026-05-20",
       "sample": 1200,
@@ -185,7 +227,7 @@
       "reliability": 5,
       "method": "Presencial",
       "fieldDates": "2026-05-12 a 2026-05-14",
-      "note": "Datafolha nacional publicada 16/Mai sábado (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA, Brasil de Fato, Vermelho, Exame, Gazeta do Povo 16/Mai). Campo 12-14/Mai capturou parcialmente efeito áudio Flávio-Vorcaro publicado 13-14/Mai. Folha (proprietária) e CNN enquadram como retrato pré-escândalo. 1T Lula 38% × Flávio 35% gap +3pp Lula. 2T Lula 45% × Flávio 45% empate técnico.",
+      "note": "Datafolha nacional publicada 16/Mai sábado (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA, Brasil de Fato, Vermelho, Exame, Gazeta do Povo 16/Mai). Campo 12-14/Mai capturou parcialmente efeito áudio Flávio-Vorcaro publicado 13-14/Mai. Folha (proprietária) e CNN enquadram como retrato pré-escândalo. 1T Lula 38% × Flávio 35% gap +3pp Lula. 2T Lula 45% × Flávio 45% empate técnico. Substituída pela rodada 22/Mai com gap ampliado.",
       "scenarios": [
         {
           "name": "Cenário Principal (1º turno)",
@@ -220,7 +262,7 @@
       "reliability": 5,
       "method": "Presencial",
       "fieldDates": "2026-05-08 a 2026-05-11",
-      "note": "Quaest nacional publicada 13/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA). Lula REASSUME VANTAGEM 2T sobre Flávio. Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui.",
+      "note": "Quaest nacional publicada 13/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA). Lula reassume vantagem 2T sobre Flávio. Lula melhora avaliação, intenção voto e rejeição diminui.",
       "scenarios": [
         {
           "name": "Cenário Principal (1º turno)",
@@ -359,13 +401,13 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008). Real Time Big Data nacional publicada 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T Flávio 44% × Lula 43% empate técnico, Caiado 42% × Lula 43% empate. InfoMoney 05/Mai reportou desaprovação Lula sobe 52%. Snapshot histórico Nexus/PoderData Mar/2026 movido para Neon. Datafolha publicada 16/Mai: 1T Lula 38% × Flávio 35%; 2T 45×45 empate técnico.",
-    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026) + Datafolha (16/Mai/2026, n=2004, BR-00290/2026)",
-    "date": "2026-05-16",
+    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008) + Real Time Big Data nacional 05/Mai (n=2.000) + Datafolha 16/Mai (n=2.004) + Datafolha 22/Mai (publicada 22/Mai sexta, rejeição Flávio 46% × Lula 45% supera Lula numericamente pela primeira vez).",
+    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026) + Datafolha (16/Mai/2026, n=2004, BR-00290/2026) + Datafolha (22/Mai/2026 publicada, sample padrão 2.004)",
+    "date": "2026-05-22",
     "results": {
       "aprovacao": 46.6,
       "desaprovacao": 53.4,
-      "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai (sample 2.000 campo 02-04/Mai BR-03627/2026): 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico (Flávio 44 × Lula 43, Caiado 42 × Lula 43, Zema × Lula empate técnico). Datafolha 16/Mai (n=2.004 campo 12-14/Mai BR-00290/2026): 1T Lula 38% × Flávio 35% gap +3pp; 2T 45×45 empate técnico."
+      "nota": "AtlasIntel 28/Abr: aprovação Lula 46.6%, desaprovação 53.4%. InfoMoney 05/Mai reporta desaprovação Lula sobe a 52% pós Messias. Real Time Big Data nacional 05/Mai: 1T Lula 40% × Flávio 34%; 2T 3 cenários empate técnico. Datafolha 16/Mai: 1T Lula 38% × Flávio 35% gap +3pp; 2T 45×45 empate técnico. Datafolha 22/Mai publicada: 1T Lula 40% × Flávio 31% gap +9pp; 2T Lula 47% × Flávio 43% gap +4pp; rejeição Flávio 46% × Lula 45% (Flávio supera Lula em rejeição numericamente pela primeira vez)."
     },
     "historicalComparison": [
       {
@@ -394,83 +436,83 @@
         "disapproval6m": 53
       }
     ],
-    "lastUpdate": "2026-05-19"
+    "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 21/Mai/2026 17:30 BRT (D+7 launch AFOS FECHAMENTO, Lula estável dia inteiro, Flávio recupera parcial vs mínima manhã)",
-    "sources": "Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum), AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor), Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026 (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA), Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 21/Mai 17:28 BRT).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 22/Mai/2026 18:00 BRT (D+8 launch AFOS, primeira /atualizar pós-Datafolha 22/Mai)",
+    "sources": "Datafolha 22/Mai 2026 publicada (BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, InfoMoney, O Globo, Correio Braziliense), Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum), AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor), Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026 (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA), Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 22/Mai 17:53 BRT).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-46.8%",
+        "pesquisaRange": "38-47%",
         "polymarket": "45.50%",
-        "tendenciaPesquisa": "Vox Brasil 20/Mai 2T 46.8% × Flávio 38.1% gap +8.7pp; AtlasIntel 19/Mai 1T 47% × 34.3% gap +12.7pp / 2T 48.9% × 41.8% gap +7.1pp; Datafolha 16/Mai 1T 38% × 35% gap +3pp 2T 45×45 empate; Quaest 13/Mai 1T 39% × 33%; AtlasIntel 28/Abr 1T 46.6%",
-        "tendenciaPolymarket": "ESTÁVEL 45.50% dia inteiro (vol USD 5.69M acumulado, 60h+ pós-AtlasIntel); gap +20.85pp LULA (↓1.30pp tarde leve estreitamento vs +22.15pp manhã porque Flávio recupera 1.30pp); 2L 12.00% (vol USD 68.7k baixo); STF IMPEACH 7.55% (↑0.30pp tarde leve alta sustentada); Lula ironiza Flávio 'Lei Daniel Vorcaro' 4 fontes (Folha, G1, Correio Braziliense, Notícias Agrícolas 21/Mai)",
+        "tendenciaPesquisa": "Datafolha 22/Mai 1T 40% × Flávio 31% gap +9pp; 2T 47% × 43% gap +4pp; cenário Michelle 48% × 43% gap +5pp. Vox Brasil 20/Mai 2T 46.8% gap +8.7pp. AtlasIntel 19/Mai 1T 47% / 2T 48.9%. Quaest 13/Mai 1T 39%. AtlasIntel 28/Abr 1T 46.6%.",
+        "tendenciaPolymarket": "ESTÁVEL 45.50% (vol USD 5.72M acumulado, sem alteração 24h+); gap +17.45pp Lula sobre Flávio (↓3.30pp 24h porque Flávio recupera 3.30pp); 2L Lula 11.50% (↓1.00pp 24h); STF impeach reverte parcialmente colapso da véspera 6.45% (↑2.10pp ~22h vs 4.35% pós-fechamento 21/Mai 19h, vol USD 75k baixo confirma hipótese distorção liquidez baixa que foi sinalizada na atualização anterior); PT Senado 3.05% (↑0.20pp). Mercado mantém Lula favorito amplo mesmo com Datafolha gap +4pp 2T menor que mercado.",
         "odds": 45.5,
-        "percentage": 46.8,
-        "lastUpdate": "2026-05-21"
+        "percentage": 47,
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "33-38.1%",
-        "polymarket": "24.65%",
-        "tendenciaPesquisa": "Vox Brasil 20/Mai 2T 38.1% gap -8.7pp vs Lula; rejeição Vox 49.2%; AtlasIntel 19/Mai 1T 34.3% / 2T 41.8% rejeição 52%; Datafolha 16/Mai 1T 35% gap -3pp 2T 45×45; Quaest 13/Mai 1T 33%",
-        "tendenciaPolymarket": "RECUPERA parcial 24.65% (↑1.30pp tarde vs mínima absoluta 23.35% manhã, vol USD 5.87M); ainda ↓6.65pp 4 dias vs 31.30% 17/Mai; 2L 55.50% mantém topo (vol USD 57k baixo); 3L 9.30%; PL Senado 75.00% (↓1.00pp tarde primeira queda continuada); Flávio cobra CPI/CPMI Master com depoimento Vorcaro 5 fontes (Gazeta do Povo, Folha, SBT News, Estadão, O Liberal 21/Mai); Mendonça relator ações CPMI Master (Alagoas24h, Diário 360 20-21/Mai)",
-        "odds": 24.65,
-        "percentage": 38.1,
-        "lastUpdate": "2026-05-21"
+        "pesquisaRange": "31-38.1%",
+        "polymarket": "28.05%",
+        "tendenciaPesquisa": "Datafolha 22/Mai 1T 31% (↓4pp vs 16/Mai 35%) gap -9pp vs Lula; 2T 43% gap -4pp; rejeição 46% supera Lula 45% numericamente pela 1ª vez. Vox 20/Mai 2T 38.1% gap -8.7pp; rejeição 49.2%. AtlasIntel 19/Mai 1T 34.3% / 2T 41.8% rejeição 52%. Quaest 13/Mai 1T 33%.",
+        "tendenciaPolymarket": "RECUPERA 28.05% (↑3.40pp 24h vs 24.65% fechamento 21/Mai 17:30, vol USD 5.92M acumulado); ainda ↓3.25pp 5 dias vs 31.30% 17/Mai. Gap Lula reduz para +17.45pp. 2L Flávio 58.00% mantém topo (↑2.50pp 24h, vol USD 60k baixo); 3L 11.10%; PL Senado 69.00% (↓6.00pp 24h queda relevante segue trajetória descendente). Movimento contra-intuitivo: Datafolha 22/Mai pior que mercado esperava em 1T mas 2T gap +4pp leu como menos catastrófico que cenário Flávio 'na chapa quente'; Flávio não assinou 3 de 5 pedidos CPI Master (Gazeta Mercantil, ND Mais 22/Mai) desmascara narrativa 'Flávio cobra CPI'; Mendonça vota manter prisão pai+primo Vorcaro (Folha 22/Mai); delação rejeitada+advogado Vorcaro saiu (Gazeta Mercantil).",
+        "odds": 28.05,
+        "percentage": 31,
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "12.55%",
-        "tendenciaPesquisa": "Vox/AtlasIntel 20/Mai não destacam 3ª via; Datafolha 16/Mai não destaca; Quaest 13/Mai não destaca; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%",
-        "tendenciaPolymarket": "CORRIGE pós-spike 12.55% (↓3.05pp tarde vs 15.60% manhã, vol USD 5.56M acumulado mantém liquidez forte) volta nível 19/Mai noite — mercado realinha hierarquia 3ª via; mantém SEGUNDO presidencial Poly acima Haddad 5.40%, Zema 5.35% e Michelle 3.75%; 2L 13.85% (vol USD 1M consolida base); 3L 37.00% (↑2.50pp recupera topo absoluto); Aécio Neves pré-candidatura PSDB defendida dirigentes (AJN1 21/Mai continuidade)",
-        "odds": 12.55,
+        "polymarket": "11.75%",
+        "tendenciaPesquisa": "Datafolha 22/Mai não destaca 3ª via no recorte publicado; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai não destaca; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%.",
+        "tendenciaPolymarket": "Cede 11.75% (↓0.80pp 24h vs 12.55% fechamento 21/Mai, vol USD 5.64M acumulado mantém liquidez forte); mantém SEGUNDO presidencial Poly acima Haddad 4.55%, Zema 5.05% e Michelle 3.35%. 2L Renan 16.25% (↑1.75pp 24h, vol USD 1M consolida base). 3L Renan 33.00% (↓4.00pp 24h cede topo absoluto mas mantém liderança 3L). Mercado realinha hierarquia 3ª via: Flávio recupera reduz espaço outsider.",
+        "odds": 11.75,
         "percentage": 5.3,
-        "lastUpdate": "2026-05-21"
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-4%",
-        "polymarket": "1.15%",
-        "tendenciaPesquisa": "Vox/AtlasIntel 20/Mai não destacam; Datafolha 16/Mai não destaca; Quaest 13/Mai Caiado 4% empate técnico Zema; '2T Caiado 42% × Lula 43% empate' (Estadão 05/Mai); AtlasIntel 28/Abr 3.3%",
-        "tendenciaPolymarket": "1.15% (↓0.10pp tarde leve queda, vol USD 2.96M); 3L 15.50% (↓1.00pp tarde); PSD Senado 5.75% estável; Mantidos manhã: Caiado 'contaminado por Vorcaro não pode ser presidente' sem citar Flávio (Folha, Estadão 20/Mai)",
-        "odds": 1.15,
+        "polymarket": "1.05%",
+        "tendenciaPesquisa": "Datafolha 22/Mai não destaca; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai Caiado 4% empate técnico Zema; 2T Caiado 42% × Lula 43% empate (Estadão 05/Mai); AtlasIntel 28/Abr 3.3%.",
+        "tendenciaPolymarket": "1.05% (↓0.10pp 24h leve cedência, vol USD 3.04M); 3L Caiado 15.00% (↓0.50pp 24h estável); PSD Senado 4.15% (↓1.60pp 24h cede). Mantidos: Caiado 'contaminado por Vorcaro não pode ser presidente' sem citar Flávio (Folha, Estadão 20/Mai).",
+        "odds": 1.05,
         "percentage": 4.0,
-        "lastUpdate": "2026-05-21"
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "0.15-0.75%",
-        "polymarket": "0.35%",
-        "tendenciaPesquisa": "Vox/AtlasIntel 20/Mai não destacam Tarcísio; Datafolha 16/Mai não destaca cenário presidencial; Mantido Vox SP gov Tarcísio 38% × Haddad 26%; foco reeleição SP",
-        "tendenciaPolymarket": "Estável 0.35% dia inteiro (vol USD 11.57M maior volume mercado mas precificação baixíssima); Republicanos Senado 4.35% (recuperação parcial vs colapso 2.50% manhã)",
-        "odds": 0.35,
+        "polymarket": "0.15%",
+        "tendenciaPesquisa": "Vox/AtlasIntel/Datafolha 22/Mai não destacam presidencial Tarcísio; Mantido Vox SP gov Tarcísio 38% × Haddad 26%; Tarcísio SP 47.3% (Poder360 22/Mai); foco reeleição SP.",
+        "tendenciaPolymarket": "Cede a 0.15% (↓0.20pp 24h vs 0.35% fechamento 21/Mai, vol USD 11.81M maior volume mercado mas precificação baixíssima); Republicanos Senado 4.05% (↓0.30pp 24h leve cedência).",
+        "odds": 0.15,
         "percentage": 0.75,
-        "lastUpdate": "2026-05-21"
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "5.35%",
-        "tendenciaPesquisa": "Vox/AtlasIntel 20/Mai não destacam Zema; Datafolha 16/Mai não destaca headline central; Mantida Quaest 13/Mai Zema 4% empate Caiado; Mantido Zema 'página virada' não houve ruptura (Estadão 16/Mai); AtlasIntel 28/Abr 3.1%",
-        "tendenciaPolymarket": "Estável 5.35% (↓0.20pp tarde, vol USD 2.72M); 3L 24.50% (↓1.50pp tarde) mantém liderança 3L acima Caiado 15.50%; Renan 3L 37.00% topo absoluto; INFLAÇÃO bandas altas (≥6.50%) 7.65% (↓0.90pp tarde leve cedência); Mantidos manhã: Zema 'credibilidade liderar país' sem citar Flávio (Folha 20/Mai)",
-        "odds": 5.35,
+        "polymarket": "5.05%",
+        "tendenciaPesquisa": "Datafolha 22/Mai não destaca; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai Zema 4% empate Caiado; Zema 'página virada' não houve ruptura (Estadão 16/Mai); AtlasIntel 28/Abr 3.1%.",
+        "tendenciaPolymarket": "Cede 5.05% (↓0.30pp 24h vs 5.35% fechamento 21/Mai, vol USD 2.75M); 3L Zema 23.00% (↓1.50pp 24h) mantém competidor 3L acima Caiado 15.00%; Renan 3L 33.00% topo. Inflação bandas altas (≥6.50%) 7.55% (↓0.10pp 24h estável). Banda 5.50-5.99% migra de 12.05% para 23.05% (+11pp redistribuição forte para banda média-alta).",
+        "odds": 5.05,
         "percentage": 4.0,
-        "lastUpdate": "2026-05-21"
+        "lastUpdate": "2026-05-22"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "5.40%",
-        "tendenciaPesquisa": "Vox/AtlasIntel 20/Mai não destacam Haddad; Datafolha 16/Mai não destaca cenário principal; Mantida 'Vox SP Tarcísio 38% × Haddad 26%'",
-        "tendenciaPolymarket": "ELEVA 5.40% (↑0.70pp tarde vs 4.70% manhã, vol USD 4.83M consolida hedge interno PT); 2L 4.40%; 3L 2.40%; PT Senado 2.85% estável; Lula medida cada 3,5 dias 'acelera gastos' (O Globo 21/Mai); Lula recusa Motta canal BRB (Folha 21/Mai); Lula diz Senado vai aprovar Jorge Messias STF (Folha 21/Mai)",
-        "odds": 5.40,
+        "polymarket": "4.55%",
+        "tendenciaPesquisa": "Datafolha 22/Mai não destaca cenário principal; Vox/AtlasIntel 20/Mai não destacam Haddad; Mantida Vox SP Tarcísio 38% × Haddad 26%; Líder PSB defende Haddad SP (Congresso em Foco 22/Mai).",
+        "tendenciaPolymarket": "Cede 4.55% (↓0.85pp 24h vs 5.40% fechamento 21/Mai, vol USD 4.87M); 2L Haddad 4.30% (↓0.10pp 24h); 3L Haddad 4.25% estável; PT Senado 3.05% (↑0.20pp 24h leve alta).",
+        "odds": 4.55,
         "percentage": 0,
-        "lastUpdate": "2026-05-21"
+        "lastUpdate": "2026-05-22"
       }
     ],
-    "updatedAt": "2026-05-21 17:30 BRT"
+    "updatedAt": "2026-05-22 18:00 BRT"
   }
 }
