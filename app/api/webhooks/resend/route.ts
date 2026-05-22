@@ -13,8 +13,11 @@
 
 import { NextResponse } from 'next/server'
 import { createHmac, timingSafeEqual } from 'crypto'
-import { markBouncedByEmail, unsubscribeByEmail } from '../../../lib/email/subscribers'
+import { Redis } from '@upstash/redis'
+import { markBouncedByEmail, unsubscribeByEmail, incrementSoftBounce, resetSoftBounce } from '../../../lib/email/subscribers'
 import { audit } from '../../../../lib/audit'
+
+const SOFT_BOUNCE_THRESHOLD = 5
 
 interface ResendEvent {
   type: 'email.bounced' | 'email.complained' | 'email.delivered' | 'email.delivery_delayed' | string
@@ -75,6 +78,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'invalid_signature' }, { status: 401 })
   }
 
+  // D+7 hardening: dedup by svix-id (24h TTL). Resend retries up to 5 times on non-2xx;
+  // without dedup, audit log gets polluted and Prisma updates re-run unnecessarily.
+  const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
+  const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
+  if (redisUrl && redisToken) {
+    const redis = new Redis({ url: redisUrl, token: redisToken })
+    // SET NX with 24h TTL — returns 'OK' if first time, null if already seen.
+    const firstTime = await redis.set(`afos:svix-dedup:${svixId}`, '1', { ex: 86400, nx: true })
+    if (!firstTime) {
+      return NextResponse.json({ ok: true, dedup: true })
+    }
+  }
+
   let event: ResendEvent
   try {
     event = JSON.parse(body) as ResendEvent
@@ -93,8 +109,22 @@ export async function POST(request: Request) {
       if (bounceType === 'hard' || bounceType === 'permanent') {
         await markBouncedByEmail(recipient, bounceType)
         audit('email_hard_bounce', 'crm.leads', recipient, { actorType: 'resend' })
+        return NextResponse.json({ ok: true, type: bounceType })
       }
-      return NextResponse.json({ ok: true, type: bounceType })
+      // D+7 hardening: soft bounce tracking. Increment counter; mark as bounced
+      // after 5 consecutive soft bounces. A successful delivery resets the counter.
+      const result = await incrementSoftBounce(recipient, SOFT_BOUNCE_THRESHOLD)
+      audit('email_soft_bounce', 'crm.leads', recipient, { actorType: 'resend', actorId: `count=${result.count}` })
+      if (result.markedBounced) {
+        audit('email_bounced_threshold', 'crm.leads', recipient, { actorType: 'system' })
+      }
+      return NextResponse.json({ ok: true, type: bounceType, softBounceCount: result.count, markedBounced: result.markedBounced })
+    }
+
+    if (event.type === 'email.delivered') {
+      // D+7 hardening: reset soft bounce counter on successful delivery.
+      await resetSoftBounce(recipient)
+      return NextResponse.json({ ok: true, type: 'delivered' })
     }
 
     if (event.type === 'email.complained') {

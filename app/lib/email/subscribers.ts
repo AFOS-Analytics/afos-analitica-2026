@@ -109,9 +109,17 @@ export async function unsubscribeByEmail(email: string): Promise<{ success: bool
 
   const normalized = email.toLowerCase().trim()
   try {
+    // LGPD Art.16: preserve original unsubscribedAt if already unsubscribed.
+    const existing = await prisma.lead.findUnique({
+      where: { email: normalized },
+      select: { unsubscribedAt: true },
+    })
     await prisma.lead.update({
       where: { email: normalized },
-      data: { status: 'unsubscribed' },
+      data: {
+        status: 'unsubscribed',
+        unsubscribedAt: existing?.unsubscribedAt ?? new Date(),
+      },
     })
     audit('lead_unsubscribed', 'crm.leads', normalized)
     return { success: true }
@@ -133,14 +141,18 @@ export async function unsubscribeByToken(token: string): Promise<{ success: bool
   try {
     const lead = await prisma.lead.findFirst({
       where: { unsubscribeToken: token },
-      select: { id: true, email: true },
+      select: { id: true, email: true, unsubscribedAt: true },
     })
 
     if (!lead) return { success: false, error: 'token_not_found' }
 
+    // LGPD Art.16: preserve original unsubscribedAt if already unsubscribed.
     await prisma.lead.update({
       where: { id: lead.id },
-      data: { status: 'unsubscribed' },
+      data: {
+        status: 'unsubscribed',
+        unsubscribedAt: lead.unsubscribedAt ?? new Date(),
+      },
     })
     audit('lead_unsubscribed', 'crm.leads', lead.id)
     return { success: true, email: lead.email }
@@ -165,6 +177,61 @@ export async function markBouncedByEmail(email: string, reason?: string): Promis
       return { success: true }
     }
     console.error('[subscribers] Erro ao mark bounced:', error)
+    return { success: false }
+  }
+}
+
+/**
+ * D+7 hardening: track soft bounces. Increments counter; marks status='bounced'
+ * when threshold reached. Returns { count, markedBounced } for telemetry.
+ */
+export async function incrementSoftBounce(
+  email: string,
+  threshold: number,
+): Promise<{ count: number; markedBounced: boolean }> {
+  if (!prisma) return { count: 0, markedBounced: false }
+  const normalized = email.toLowerCase().trim()
+  try {
+    const updated = await prisma.lead.update({
+      where: { email: normalized },
+      data: { softBounceCount: { increment: 1 } },
+      select: { softBounceCount: true, status: true },
+    })
+    if (updated.softBounceCount >= threshold && updated.status === 'active') {
+      await prisma.lead.update({
+        where: { email: normalized },
+        data: { status: 'bounced' },
+      })
+      return { count: updated.softBounceCount, markedBounced: true }
+    }
+    return { count: updated.softBounceCount, markedBounced: false }
+  } catch (error) {
+    if (error instanceof Error && 'code' in error && (error as { code: string }).code === 'P2025') {
+      return { count: 0, markedBounced: false }
+    }
+    console.error('[subscribers] Erro ao increment soft bounce:', error)
+    return { count: 0, markedBounced: false }
+  }
+}
+
+/**
+ * D+7 hardening: reset soft bounce counter on successful delivery.
+ * Idempotent — no-op if already 0.
+ */
+export async function resetSoftBounce(email: string): Promise<{ success: boolean }> {
+  if (!prisma) return { success: false }
+  const normalized = email.toLowerCase().trim()
+  try {
+    await prisma.lead.update({
+      where: { email: normalized },
+      data: { softBounceCount: 0 },
+    })
+    return { success: true }
+  } catch (error) {
+    if (error instanceof Error && 'code' in error && (error as { code: string }).code === 'P2025') {
+      return { success: true }
+    }
+    console.error('[subscribers] Erro ao reset soft bounce:', error)
     return { success: false }
   }
 }

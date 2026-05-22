@@ -7,19 +7,22 @@ const H = 627
 const COPY = {
   en: {
     title: 'AFOS Analytics',
-    subtitle: 'Open-Source Electoral Intelligence',
+    subtitle: 'Electoral Political Risk Intelligence',
+    openSource: 'Open-Source',
     chips: ['Prediction market', '17 Institutes', 'Live News', 'Analysis'],
     footer: 'Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.',
   },
   'pt-BR': {
     title: 'AFOS Analytics',
-    subtitle: 'Inteligência Eleitoral Open-Source',
+    subtitle: 'Inteligência de Risco Político Eleitoral',
+    openSource: 'Open-Source',
     chips: ['Mercado de previsão', '17 Institutos', 'Notícias ao Vivo', 'Análises'],
     footer: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 14 países. Análises diárias.',
   },
   es: {
     title: 'AFOS Analytics',
-    subtitle: 'Inteligencia Electoral Open-Source',
+    subtitle: 'Inteligencia de Riesgo Político Electoral',
+    openSource: 'Open-Source',
     chips: ['Mercado de predicción', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
     footer: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur + 14 países. Análisis diarios.',
   },
@@ -42,14 +45,16 @@ body { width: ${W}px; height: ${H}px; }
   position: relative;
 }
 .title { font-size: 72px; font-weight: 800; letter-spacing: -2px; margin-bottom: 16px; }
-.subtitle { font-size: 32px; opacity: 0.92; text-align: center; max-width: 900px; line-height: 1.4; }
-.chips { font-size: 24px; opacity: 0.75; margin-top: 24px; display: flex; gap: 24px; }
+.subtitle { font-size: 32px; opacity: 0.92; text-align: center; max-width: 1000px; line-height: 1.4; }
+.opensource { font-size: 22px; opacity: 0.78; margin-top: 8px; font-weight: 500; letter-spacing: 0.5px; }
+.chips { font-size: 24px; opacity: 0.75; margin-top: 20px; display: flex; gap: 24px; }
 .footer { font-size: 22px; margin-top: 32px; font-weight: 600; max-width: 1000px; line-height: 1.4; text-align: center; }
 .url { position: absolute; bottom: 32px; font-size: 18px; opacity: 0.55; letter-spacing: 0.3px; }
 </style></head>
 <body><div class="og">
   <div class="title">${c.title}</div>
   <div class="subtitle">${c.subtitle}</div>
+  <div class="opensource">${c.openSource}</div>
   <div class="chips">${c.chips.map(x => `<span>${x}</span>`).join('')}</div>
   <div class="footer">${c.footer}</div>
   <div class="url">afos-analytics.com</div>

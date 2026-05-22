@@ -34,7 +34,7 @@ export default function NotFound() {
           </Link>
         </div>
         <p className="text-xs text-gray-400 mt-12">
-          AFOS Analytics — Inteligência Eleitoral Open-Source
+          AFOS Analytics — Inteligência de Risco Político Eleitoral — Open-Source
         </p>
       </div>
     </main>

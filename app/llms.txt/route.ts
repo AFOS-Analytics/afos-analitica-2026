@@ -39,9 +39,9 @@ export function GET() {
 
   const content = `# AFOS Analytics
 
-> Global electoral intelligence platform that cross-references prediction markets, electoral polls, and real-time news across 14+ countries. Open source (Apache 2.0), free, and without mandatory registration.
+> Electoral Political Risk Intelligence — Open-Source. Global platform that cross-references prediction markets, electoral polls, and real-time news across 14+ countries. Open source (Apache 2.0), free, and without mandatory registration.
 
-AFOS Analytics combines three independent data sources in real time to provide unbiased electoral analysis:
+AFOS Analytics combines three independent data sources in real time to provide unbiased electoral political risk analysis:
 
 - **Prediction markets** (Polymarket): real-money odds updated every 30 minutes
 - **Polling institutes**: 17+ in Brazil (Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá) plus equivalents in each monitored country, ingested automatically from official registries (e.g., TSE in Brazil)

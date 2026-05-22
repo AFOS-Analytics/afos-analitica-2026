@@ -10,17 +10,20 @@ const STATIC_FALLBACK_URL = 'https://afos-analytics.com/brand/og-en-linkedin-120
 
 const COPY = {
   'pt-BR': {
-    subtitle: 'Inteligência Eleitoral Open-Source',
+    subtitle: 'Inteligência de Risco Político Eleitoral',
+    openSource: 'Open-Source',
     chips: ['Mercado de previsão', '17 Institutos', 'Notícias ao Vivo', 'Análises'],
     footer: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 14 países. Análises diárias.',
   },
   en: {
-    subtitle: 'Open-Source Electoral Intelligence',
+    subtitle: 'Electoral Political Risk Intelligence',
+    openSource: 'Open-Source',
     chips: ['Prediction market', '17 Institutes', 'Live News', 'Analysis'],
     footer: 'Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.',
   },
   es: {
-    subtitle: 'Inteligencia Electoral Open-Source',
+    subtitle: 'Inteligencia de Riesgo Político Electoral',
+    openSource: 'Open-Source',
     chips: ['Mercado de predicción', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
     footer: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur + 14 países. Análisis diarios.',
   },
@@ -53,10 +56,13 @@ export async function GET(request: NextRequest) {
         <div style={{ fontSize: 72, fontWeight: 800, letterSpacing: '-2px', marginBottom: 16, display: 'flex' }}>
           AFOS Analytics
         </div>
-        <div style={{ fontSize: 32, opacity: 0.9, textAlign: 'center', maxWidth: 900, lineHeight: 1.4, display: 'flex' }}>
+        <div style={{ fontSize: 32, opacity: 0.9, textAlign: 'center', maxWidth: 1000, lineHeight: 1.4, display: 'flex' }}>
           {copy.subtitle}
         </div>
-        <div style={{ fontSize: 24, opacity: 0.7, marginTop: 24, display: 'flex', gap: 24 }}>
+        <div style={{ fontSize: 22, opacity: 0.75, marginTop: 8, textAlign: 'center', display: 'flex', fontWeight: 500, letterSpacing: '0.5px' }}>
+          {copy.openSource}
+        </div>
+        <div style={{ fontSize: 24, opacity: 0.7, marginTop: 20, display: 'flex', gap: 24 }}>
           {copy.chips.map((c) => (
             <span key={c}>{c}</span>
           ))}

@@ -11,8 +11,8 @@ interface Props { params: Promise<{ locale: string }> }
 
 const CONTENT = {
   'pt-BR': {
-    title: 'Sobre o AFOS Analytics | Inteligência Eleitoral Open-Source',
-    description: 'AFOS Analytics: plataforma open-source de inteligência eleitoral, cruzando mercados de previsão, pesquisas e notícias. Construída e validada no ciclo eleitoral 2026.',
+    title: 'Sobre o AFOS Analytics | Inteligência de Risco Político Eleitoral — Open-Source',
+    description: 'AFOS Analytics: plataforma open-source de inteligência de risco político eleitoral, cruzando mercados de previsão, pesquisas e notícias. Construída e validada no ciclo eleitoral 2026.',
     h1: 'Sobre o AFOS Analytics',
     sections: [
       ['O que é', 'AFOS Analytics é uma plataforma open-source de inteligência eleitoral em tempo real. Cruza três fontes públicas auditáveis: mercados de previsão (Polymarket), pesquisas de 17+ institutos brasileiros (TSE) e cobertura jornalística. O código é distribuído sob Apache 2.0; o conteúdo editorial sob CC BY 4.0.'],
@@ -24,8 +24,8 @@ const CONTENT = {
     ],
   },
   en: {
-    title: 'About AFOS Analytics | Open-Source Electoral Intelligence',
-    description: 'AFOS Analytics: open-source electoral intelligence platform cross-referencing prediction markets, polls and news. Built and validated during the 2026 electoral cycle.',
+    title: 'About AFOS Analytics | Electoral Political Risk Intelligence — Open-Source',
+    description: 'AFOS Analytics: open-source electoral political risk intelligence platform cross-referencing prediction markets, polls and news. Built and validated during the 2026 electoral cycle.',
     h1: 'About AFOS Analytics',
     sections: [
       ['What it is', 'AFOS Analytics is an open-source electoral intelligence platform in real time. Cross-references three auditable public sources: prediction markets (Polymarket), polls from 17+ Brazilian institutes (TSE) and journalistic coverage. Code distributed under Apache 2.0; editorial content under CC BY 4.0.'],
@@ -37,8 +37,8 @@ const CONTENT = {
     ],
   },
   es: {
-    title: 'Sobre AFOS Analytics | Inteligencia Electoral Open-Source',
-    description: 'AFOS Analytics: plataforma open-source de inteligencia electoral cruzando mercados de predicción, encuestas y noticias. Construida y validada durante el ciclo electoral 2026.',
+    title: 'Sobre AFOS Analytics | Inteligencia de Riesgo Político Electoral — Open-Source',
+    description: 'AFOS Analytics: plataforma open-source de inteligencia de riesgo político electoral cruzando mercados de predicción, encuestas y noticias. Construida y validada durante el ciclo electoral 2026.',
     h1: 'Sobre AFOS Analytics',
     sections: [
       ['Qué es', 'AFOS Analytics es una plataforma open-source de inteligencia electoral en tiempo real. Cruza tres fuentes públicas auditables: mercados de predicción (Polymarket), encuestas de 17+ institutos brasileños (TSE) y cobertura periodística. El código se distribuye bajo Apache 2.0; el contenido editorial bajo CC BY 4.0.'],

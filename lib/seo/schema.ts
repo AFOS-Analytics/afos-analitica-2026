@@ -24,7 +24,7 @@ export function organizationSchema() {
       width: 512,
       height: 512,
     },
-    description: 'Open-source electoral intelligence platform cross-referencing prediction markets, electoral polls, and live news. Brazil 2026 + 14 countries coverage.',
+    description: 'Electoral Political Risk Intelligence — Open-Source. Cross-references Polymarket, 17+ polls, and live news. Brazil 2026 + 14 countries.',
     foundingDate: '2026',
     knowsAbout: [
       'Election prediction',
@@ -56,10 +56,10 @@ export function websiteSchema(locale: Locale) {
     url: `${BASE_URL}/${locale}`,
     inLanguage: locale === 'es' ? 'es' : locale === 'en' ? 'en' : 'pt-BR',
     description: locale === 'en'
-      ? 'Global electoral intelligence in real time'
+      ? 'Electoral Political Risk Intelligence — Open-Source'
       : locale === 'es'
-        ? 'Inteligencia electoral global en tiempo real'
-        : 'Inteligência eleitoral global em tempo real',
+        ? 'Inteligencia de Riesgo Político Electoral — Open-Source'
+        : 'Inteligência de Risco Político Eleitoral — Open-Source',
   };
 }
 
@@ -136,7 +136,7 @@ export function datasetSchema() {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
     name: 'AFOS Analytics Election Data',
-    description: 'Real-time election prediction market data, polls from 17+ institutes, and news analysis for global elections.',
+    description: 'Electoral political risk intelligence dataset: real-time Polymarket odds, polls from 17+ institutes, and news cross-references across 14+ countries.',
     url: BASE_URL,
     license: 'https://opensource.org/licenses/MIT',
     creator: { '@type': 'Organization', name: 'AFOS Analytics' },
