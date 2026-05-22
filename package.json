@@ -46,7 +46,7 @@
     "react-dom": "^18",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^6.10.0",
+    "resend": "^6.12.3",
     "topojson-client": "^3.1.0",
     "zod": "^4.3.6"
   },
