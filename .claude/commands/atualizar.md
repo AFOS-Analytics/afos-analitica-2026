@@ -13,13 +13,12 @@ Busque dados de TODOS os 6 mercados via WebFetch:
 5. `https://gamma-api.polymarket.com/events?slug=next-brazil-senate-election-most-seats-won&limit=1` — Senado
 6. `https://gamma-api.polymarket.com/events?slug=brazil-annual-inflation-2026&limit=1` — Inflação
 
-**Para cada mercado, extrair TRÊS métricas (regra firmada 21/Mai/2026 D+7):**
+**Para cada mercado, extrair duas métricas:**
 
 - **% (yes price)** — outcomePrices[0] convertido para %, métrica principal de probabilidade implícita.
-- **`volumeNum` (volume acumulado USD)** — notional total negociado desde abertura do mercado. Mostra fluxo histórico. Já forwardado pelo proxy AFOS.
-- **`liquidityNum` (liquidez atual USD)** — profundidade do order book AGORA, ou seja, dinheiro disponível pra comprar/vender no momento do snapshot. Forwardada pelo proxy AFOS a partir de 21/Mai/2026.
+- **`volumeNum` (volume acumulado USD)** — notional total negociado desde abertura do mercado. Reforça tese de "dinheiro real" e contextualiza distorções de baixa atividade. Forwardada pelo proxy AFOS.
 
-Por que ambos: volume é passado acumulado, liquidity é presente disponível. Spike de % com volume alto mas liquidity baixa = sinal frágil (poucas mãos sustentando o preço). Citar os dois separa precificação genuína de distorção temporária.
+NOTA: o proxy também forwarda `liquidityNum` (profundidade do order book) desde 21/Mai/2026, **mas o uso editorial está suspenso** após pushback de consultor de mercado em 21/Mai noite. Razão: liquidez baixa em Polymarket NÃO significa preço errado — o mercado é arbitrado continuamente em minutos, e expor o número técnico para leitor leigo gera misread "AFOS mostra mercado quebrado" quando na verdade indica arbitragem ativa. Campo segue disponível na API para análise interna de anomalia, mas NUNCA citar inline na narrativa do dashboard ou daily.
 
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
@@ -134,7 +133,7 @@ Execute em sequência:
 - Fontes sempre citadas: Inclua nome do veículo/instituto + data entre parênteses
 - Sem inventar dados: Use APENAS dados obtidos nas buscas. Se não encontrar, mantenha o dado anterior
 - Informe ao final: Mostre tabela resumo com principais mudanças
-- **Volume + liquidity Polymarket — regra firmada 21/Mai/2026 D+7:** ao escrever os campos `subtitle`, `header`, `analise` e `t` (trend) em `analysis-criteriosa.json` e os textos dos cards em `analysis-data.json`, citar o par volume (USD acumulado) **e** liquidity (USD disponível agora) quando o número agregar contexto. Aplicação contextual, não exaustiva: (a) **obrigatório** quando houver spike >3pp em 24h — citar liquidity para qualificar se sinal é genuíno ou distorção; (b) **obrigatório** no parágrafo de fechamento da `analise` de cada candidato top 4 (Lula, Flávio, Renan, terceira via dominante do dia) — pelo menos uma menção do par "vol USD X,XXM · liq USD Xk"; (c) **opcional** em sub-mercados estáveis sem variação relevante. Formato canônico: `Lula 45,50% (vol USD 5,69M · liq USD 12k)`. Volume é passado acumulado, liquidity é presente disponível — citar os dois separa precificação genuína de distorção temporária. Histórico do incidente que motivou: MDB Senado spike 16,55% com vol USD 254k e liquidity essencialmente zero, foi distorção pura, normalizou para 4,70% em 18h. Sem citar liquidity, leitor não distingue.
+- **Volume Polymarket — regra firmada 17/Mai/2026 D+3:** ao escrever os campos `subtitle`, `header`, `analise` e `t` (trend) em `analysis-criteriosa.json` e os textos dos cards em `analysis-data.json`, citar volume USD acumulado quando o número agregar contexto. Formato canônico: `Lula 45,50% (vol USD 5,69M acumulado)`. Volume reforça tese "dinheiro real" diferenciando AFOS de agregadores. Aplicação contextual, não exaustiva — em parágrafos de fechamento da `analise` de cada candidato top 4 e em sub-mercados onde volume sinaliza distorção (vol baixo = sinal a contextualizar). NÃO citar `liquidityNum` no texto editorial — decisão 21/Mai/2026 noite após pushback do consultor de mercado: liquidez baixa em Polymarket não significa preço errado (arbitragem ativa em minutos), e expor o número gera misread "AFOS mostra mercado quebrado" no leitor leigo. Liquidity segue disponível na API para análise interna de anomalia.
 
 ## ESTILO TEXTUAL (anti-AI tells)
 
