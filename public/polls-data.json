@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-22",
-  "lastSyncedAt": "2026-05-22T18:00:00-03:00",
+  "lastUpdate": "2026-05-23",
+  "lastSyncedAt": "2026-05-23T15:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -439,8 +439,8 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 22/Mai/2026 18:00 BRT (D+8 launch AFOS, primeira /atualizar pós-Datafolha 22/Mai)",
-    "sources": "Datafolha 22/Mai 2026 publicada (BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, InfoMoney, O Globo, Correio Braziliense), Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum), AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor), Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026 (G1, Folha, CartaCapital, CNN Brasil, GZH, VEJA), Quaest nacional 13/Mai n=2.004 campo 08-11/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA), AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 22/Mai 17:53 BRT).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 23/Mai/2026 15:30 BRT (D+9 launch AFOS, /atualizar pós-reverberação Datafolha 22/Mai)",
+    "sources": "Datafolha 22/Mai 2026 publicada + reverberação 23/Mai (G1 48% defendem Flávio abdicar; aprovação Lula MELHORA 32% ótimo/bom vs 28%, rejeição cai 38%; PT e PL pregam cautela O Globo), Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum), AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor), Datafolha nacional 16/Mai n=2.004 campo 12-14/Mai BR-00290/2026, Quaest nacional 13/Mai n=2.004 campo 08-11/Mai, AtlasIntel/Bloomberg 28/Abr n=5008, Real Time Big Data nacional 05/Mai n=2000 BR-03627/2026, Polymarket (ao vivo fetchedAt 23/Mai 18:01 UTC).",
     "candidates": [
       {
         "name": "Lula",
@@ -450,37 +450,37 @@
         "tendenciaPolymarket": "ESTÁVEL 45.50% (vol USD 5.72M acumulado, sem alteração 24h+); gap +17.45pp Lula sobre Flávio (↓3.30pp 24h porque Flávio recupera 3.30pp); 2L Lula 11.50% (↓1.00pp 24h); STF impeach reverte parcialmente colapso da véspera 6.45% (↑2.10pp ~22h vs 4.35% pós-fechamento 21/Mai 19h, vol USD 75k baixo confirma hipótese distorção liquidez baixa que foi sinalizada na atualização anterior); PT Senado 3.05% (↑0.20pp). Mercado mantém Lula favorito amplo mesmo com Datafolha gap +4pp 2T menor que mercado.",
         "odds": 45.5,
         "percentage": 47,
-        "lastUpdate": "2026-05-22"
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "31-38.1%",
-        "polymarket": "28.05%",
+        "polymarket": "27.75%",
         "tendenciaPesquisa": "Datafolha 22/Mai 1T 31% (↓4pp vs 16/Mai 35%) gap -9pp vs Lula; 2T 43% gap -4pp; rejeição 46% supera Lula 45% numericamente pela 1ª vez. Vox 20/Mai 2T 38.1% gap -8.7pp; rejeição 49.2%. AtlasIntel 19/Mai 1T 34.3% / 2T 41.8% rejeição 52%. Quaest 13/Mai 1T 33%.",
         "tendenciaPolymarket": "RECUPERA 28.05% (↑3.40pp 24h vs 24.65% fechamento 21/Mai 17:30, vol USD 5.92M acumulado); ainda ↓3.25pp 5 dias vs 31.30% 17/Mai. Gap Lula reduz para +17.45pp. 2L Flávio 58.00% mantém topo (↑2.50pp 24h, vol USD 60k baixo); 3L 11.10%; PL Senado 69.00% (↓6.00pp 24h queda relevante segue trajetória descendente). Movimento contra-intuitivo: Datafolha 22/Mai pior que mercado esperava em 1T mas 2T gap +4pp leu como menos catastrófico que cenário Flávio 'na chapa quente'; Flávio não assinou 3 de 5 pedidos CPI Master (Gazeta Mercantil, ND Mais 22/Mai) desmascara narrativa 'Flávio cobra CPI'; Mendonça vota manter prisão pai+primo Vorcaro (Folha 22/Mai); delação rejeitada+advogado Vorcaro saiu (Gazeta Mercantil).",
-        "odds": 28.05,
+        "odds": 27.75,
         "percentage": 31,
-        "lastUpdate": "2026-05-22"
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-5.3%",
-        "polymarket": "11.75%",
+        "polymarket": "11.95%",
         "tendenciaPesquisa": "Datafolha 22/Mai não destaca 3ª via no recorte publicado; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai não destaca; AtlasIntel 28/Abr 5.3%; Real Time Big Data 05/Mai 1T 3%.",
         "tendenciaPolymarket": "Cede 11.75% (↓0.80pp 24h vs 12.55% fechamento 21/Mai, vol USD 5.64M acumulado mantém liquidez forte); mantém SEGUNDO presidencial Poly acima Haddad 4.55%, Zema 5.05% e Michelle 3.35%. 2L Renan 16.25% (↑1.75pp 24h, vol USD 1M consolida base). 3L Renan 33.00% (↓4.00pp 24h cede topo absoluto mas mantém liderança 3L). Mercado realinha hierarquia 3ª via: Flávio recupera reduz espaço outsider.",
-        "odds": 11.75,
+        "odds": 11.95,
         "percentage": 5.3,
-        "lastUpdate": "2026-05-22"
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-4%",
-        "polymarket": "1.05%",
+        "polymarket": "1.65%",
         "tendenciaPesquisa": "Datafolha 22/Mai não destaca; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai Caiado 4% empate técnico Zema; 2T Caiado 42% × Lula 43% empate (Estadão 05/Mai); AtlasIntel 28/Abr 3.3%.",
         "tendenciaPolymarket": "1.05% (↓0.10pp 24h leve cedência, vol USD 3.04M); 3L Caiado 15.00% (↓0.50pp 24h estável); PSD Senado 4.15% (↓1.60pp 24h cede). Mantidos: Caiado 'contaminado por Vorcaro não pode ser presidente' sem citar Flávio (Folha, Estadão 20/Mai).",
-        "odds": 1.05,
-        "percentage": 4.0,
-        "lastUpdate": "2026-05-22"
+        "odds": 1.65,
+        "percentage": 4,
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Tarcísio",
@@ -490,29 +490,29 @@
         "tendenciaPolymarket": "Cede a 0.15% (↓0.20pp 24h vs 0.35% fechamento 21/Mai, vol USD 11.81M maior volume mercado mas precificação baixíssima); Republicanos Senado 4.05% (↓0.30pp 24h leve cedência).",
         "odds": 0.15,
         "percentage": 0.75,
-        "lastUpdate": "2026-05-22"
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3.1-4%",
-        "polymarket": "5.05%",
+        "polymarket": "4.65%",
         "tendenciaPesquisa": "Datafolha 22/Mai não destaca; Vox/AtlasIntel 20/Mai não destacam; Quaest 13/Mai Zema 4% empate Caiado; Zema 'página virada' não houve ruptura (Estadão 16/Mai); AtlasIntel 28/Abr 3.1%.",
         "tendenciaPolymarket": "Cede 5.05% (↓0.30pp 24h vs 5.35% fechamento 21/Mai, vol USD 2.75M); 3L Zema 23.00% (↓1.50pp 24h) mantém competidor 3L acima Caiado 15.00%; Renan 3L 33.00% topo. Inflação bandas altas (≥6.50%) 7.55% (↓0.10pp 24h estável). Banda 5.50-5.99% migra de 12.05% para 23.05% (+11pp redistribuição forte para banda média-alta).",
-        "odds": 5.05,
-        "percentage": 4.0,
-        "lastUpdate": "2026-05-22"
+        "odds": 4.65,
+        "percentage": 4,
+        "lastUpdate": "2026-05-23"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "4.55%",
+        "polymarket": "4.65%",
         "tendenciaPesquisa": "Datafolha 22/Mai não destaca cenário principal; Vox/AtlasIntel 20/Mai não destacam Haddad; Mantida Vox SP Tarcísio 38% × Haddad 26%; Líder PSB defende Haddad SP (Congresso em Foco 22/Mai).",
         "tendenciaPolymarket": "Cede 4.55% (↓0.85pp 24h vs 5.40% fechamento 21/Mai, vol USD 4.87M); 2L Haddad 4.30% (↓0.10pp 24h); 3L Haddad 4.25% estável; PT Senado 3.05% (↑0.20pp 24h leve alta).",
-        "odds": 4.55,
+        "odds": 4.65,
         "percentage": 0,
-        "lastUpdate": "2026-05-22"
+        "lastUpdate": "2026-05-23"
       }
     ],
-    "updatedAt": "2026-05-22 18:00 BRT"
+    "updatedAt": "2026-05-23T15:30:00-03:00"
   }
 }
