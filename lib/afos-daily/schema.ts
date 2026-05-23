@@ -173,6 +173,25 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
   }
 }
 
+/**
+ * BreadcrumbList JSON-LD for a Daily permalink: Home > Daily > {date}
+ * Emitted alongside NewsArticle to give crawlers explicit IA structure.
+ */
+export function buildBreadcrumbSchema(date: string, locale: string) {
+  const safeLocale = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
+  const homeName = safeLocale === 'pt-BR' ? 'Início' : safeLocale === 'es' ? 'Inicio' : 'Home'
+  const dailyName = safeLocale === 'pt-BR' ? 'AFOS Daily' : safeLocale === 'es' ? 'AFOS Daily' : 'AFOS Daily'
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: homeName, item: `${SITE}/${safeLocale}` },
+      { '@type': 'ListItem', position: 2, name: dailyName, item: `${SITE}/${safeLocale}/daily` },
+      { '@type': 'ListItem', position: 3, name: date, item: `${SITE}/${safeLocale}/daily/${date}` },
+    ],
+  }
+}
+
 export function getOgImageUrl(locale?: string): string {
   // Per-locale OG image via /api/og (Edge route handler que respeita searchParams).
   // app/opengraph-image.tsx default function não recebe searchParams em runtime edge.

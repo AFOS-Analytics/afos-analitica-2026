@@ -70,12 +70,25 @@ export function webAppSchema() {
     '@type': 'WebApplication',
     name: 'AFOS Analytics',
     url: BASE_URL,
-    applicationCategory: 'NewsApplication',
+    // Dual-categoria: NewsApplication (Daily editorial) + BusinessApplication
+    // (risco político eleitoral para tomada de decisão institucional).
+    applicationCategory: ['BusinessApplication', 'NewsApplication'],
+    applicationSubCategory: 'Political Risk Intelligence',
     operatingSystem: 'Web',
+    description: 'Global Electoral Political Risk Intelligence — Open-Source. Cross-references real-money prediction markets (Polymarket), polls from 17+ Brazilian institutes (TSE), and live news coverage across 14+ countries.',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     author: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
+    publisher: { '@id': `${BASE_URL}/#organization` },
     inLanguage: ['pt-BR', 'en', 'es'],
     isAccessibleForFree: true,
+    screenshot: `${BASE_URL}/api/og?locale=en`,
+    featureList: [
+      'Real-time prediction market odds (Polymarket)',
+      'Polls cross-reference from 17+ institutes',
+      'Daily editorial synthesis with auditable sources',
+      'Coverage across 14+ countries',
+      'Open-source under Apache 2.0',
+    ],
   };
 }
 

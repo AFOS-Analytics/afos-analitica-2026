@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
 import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates, isVisibleInProduction, dailyExists } from '../../../../lib/afos-daily/loader'
-import { buildArticleSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
+import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
 interface PageProps {
   params: Promise<{ locale: string; date: string }>
@@ -104,13 +104,14 @@ export default async function DailyByDatePage(props: PageProps) {
   if (!data) notFound()
 
   const schema = buildArticleSchema(data, params.locale)
+  const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)
   const nav = getAdjacentDates(params.date)
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
       />
       <AfosDailyTemplate data={data} nav={nav} />
     </>

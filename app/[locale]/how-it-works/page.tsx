@@ -3,6 +3,7 @@ import { locales, isValidLocale, type Locale } from '../../../lib/i18n/config'
 import { HowItWorksPtBR } from './content-pt-BR'
 import { HowItWorksEn } from './content-en'
 import { HowItWorksEs } from './content-es'
+import { faqSchema } from '../../../lib/seo/schema'
 
 const BASE_URL = 'https://afos-analytics.com'
 const SLUG = 'how-it-works'
@@ -177,7 +178,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     <div className="min-h-screen bg-slate-50">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc)]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
       />
       <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
         <nav className="mb-8 text-sm">
