@@ -66,7 +66,7 @@ export default function WelcomeClient({ email }: Props) {
           AFOS Analytics
         </h1>
         <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.125rem', margin: '0 0 0.35rem', lineHeight: 1.5, fontWeight: 500 }}>
-          Electoral Political Risk Intelligence
+          Global Electoral Political Risk Intelligence
         </p>
         <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', margin: '0 0 3rem', lineHeight: 1.4, fontWeight: 400, letterSpacing: '0.02em' }}>
           Open-Source

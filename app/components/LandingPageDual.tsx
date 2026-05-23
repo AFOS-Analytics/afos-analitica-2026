@@ -22,8 +22,8 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'Sobre', github: 'GitHub' },
     hero: {
       badge: 'Eleições 2026 · 14 Países Monitorados',
-      title: 'Inteligência de',
-      titleHighlight: 'Risco Político Eleitoral',
+      title: 'Inteligência de Risco',
+      titleHighlight: 'Político Eleitoral Global',
       claim: 'Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias. Código aberto, fontes públicas auditáveis.',
       subtitle: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul. Análises diárias.',
       cta: 'Acessar Dashboard',
@@ -67,7 +67,7 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'About', github: 'GitHub' },
     hero: {
       badge: 'Elections 2026 · 14 Countries Monitored',
-      title: 'Political Election',
+      title: 'Global Electoral Political',
       titleHighlight: 'Risk Intelligence',
       claim: 'Real-time cross-referencing of prediction markets, electoral polls and news. Open-source, auditable public sources.',
       subtitle: 'Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis.',
@@ -112,7 +112,7 @@ const CONTENT = {
     nav: { dashboard: 'Dashboard', about: 'Acerca de', github: 'GitHub' },
     hero: {
       badge: 'Elecciones 2026 · 14 Países Monitoreados',
-      title: 'Inteligencia de',
+      title: 'Inteligencia Global de',
       titleHighlight: 'Riesgo Político Electoral',
       claim: 'Cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias. Código abierto, fuentes públicas auditables.',
       subtitle: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur. Análisis diario.',

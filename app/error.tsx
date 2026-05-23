@@ -46,7 +46,7 @@ export default function GlobalError({
           </Link>
         </div>
         <p className="text-xs text-gray-400 mt-12">
-          AFOS Analytics — Inteligência de Risco Político Eleitoral — Open-Source
+          AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source
         </p>
       </div>
     </main>

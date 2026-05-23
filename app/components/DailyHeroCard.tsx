@@ -91,7 +91,7 @@ export function DailyHeroCard() {
         className="block bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl p-4 md:p-5 transition-colors group"
       >
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-          <span className="text-xs font-extrabold text-primary uppercase tracking-[0.18em]">{t.eyebrow}</span>
+          <span className="text-base md:text-lg font-extrabold text-primary uppercase tracking-[0.12em]">{t.eyebrow}</span>
           <span className="text-base md:text-lg font-bold text-dark">{dateShort}</span>
           {meta.updatedAt && (
             <span className="text-xs text-gray-500 ml-auto">{t.updatedAt} {meta.updatedAt}</span>
