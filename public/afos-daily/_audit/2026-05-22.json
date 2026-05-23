@@ -1,0 +1,59 @@
+{
+  "date": "2026-05-22",
+  "generatedAt": "2026-05-22T21:30:00-03:00",
+  "factCheckGate": {
+    "candidates": [
+      {
+        "event": "Datafolha 22/Mai publicada — 1T 40×31 gap +9pp; 2T 47×43 gap +4pp; cenário Michelle 48×43; rejeição Flávio 46% > Lula 45% 1ª vez",
+        "v1_crossref": "Datafolha 22 aparece 2× em daily 18/Mai como anúncio do próximo. Hoje é publicação efetiva.",
+        "v2_fetch": "30+ headlines independentes (BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, InfoMoney, O Globo, Correio Braziliense, GP1, DeFato, viva, SRzd, Tribuna Sertão/Jundiaí/Agreste). JOTA confirmou subtítulo via WebFetch.",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Mendonça vota manutenção prisão pai+primo Vorcaro",
+        "v1_crossref": "Mendonça 0 menções últimas 7 dailies — NOVIDADE",
+        "v2_fetch": "Folha (Mendonça vota para manter pai e primo de Vorcaro presos; Gilmar suspende julgamentos) + Amazonas1 (Mendonça vota para manter prisão de pai de Vorcaro; Gilmar pede vista) — 2 fontes independentes",
+        "verbDisambiguation": "votou pela manutenção (não prendeu hoje); presos desde 14/Mai",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Gilmar pede vista suspende julgamentos",
+        "v1_crossref": "Continuidade evento Mendonça",
+        "v2_fetch": "Folha + Amazonas1 + O Globo confirmam mesma sessão",
+        "decision": "INCORPORAR como contraponto procedural"
+      },
+      {
+        "event": "Flávio NÃO assinou 3 de 5 pedidos CPI Master",
+        "v1_crossref": "Contradiz narrativa registrada em daily 21/Mai (Flávio cobra CPI 5 fontes) — fato NOVO honesto",
+        "v2_fetch": "Gazeta Mercantil + ND Mais — 2 fontes independentes. Coluna Bernardo Mello Franco/O Globo explora mesmo descompasso. Folha registra Alcolumbre barrando CPI.",
+        "decision": "INCORPORAR com transparência (honestidade radical)"
+      },
+      {
+        "event": "Delação Vorcaro rejeitada PF + advogado saiu",
+        "v1_crossref": "Caso Vorcaro tem múltiplos marcos; rejeição é evento NOVO",
+        "v2_fetch": "Gazeta Mercantil + Folha (Advogado deixa defesa após rejeição) + O Globo (Advogado deixa defesa do banqueiro) — 3 fontes independentes confirmam",
+        "decision": "INCORPORAR (confirmou 2ª fonte além de Gazeta Mercantil)"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma (Flávio não assinou 3/5 CPI tem Gazeta Mercantil + ND Mais + Bernardo Mello Franco + Folha-Alcolumbre adjacente)",
+    "numericalErrors": "reconcile-claims rodado, todos % batem com snapshot Polymarket",
+    "fontesInventadas": "verificadas 3 aleatórias (O Globo Pulso Flávio cai 4pts, Folha Mendonça-Gilmar, Folha Apex/Futura) — todas existem no cache 2026-05-22.json",
+    "quotesLiterais": "todas aspas usadas são headlines verbatim de O Globo/Folha (Vera Magalhães, Bernardo Mello Franco, Marcos Nobre, Malu Gaspar, PL e Centrão, Cúpula PL)",
+    "causacaoEspuria": "movimento Flávio +3.40pp Polymarket vs queda 4pp Datafolha explicitado como regressão à média via dado conservador, não causação",
+    "verbosCriticos": "presos desde 14/Mai (desambigua), votou pela manutenção (não confunde com prendeu hoje), pediu vista (não vagueza)",
+    "decisao": "prosseguir para preview"
+  },
+  "validation": {
+    "reconcileClaims": "OK (todos % do markdown batem com analysis-data.json e snapshot Polymarket 22/Mai 17:53)",
+    "validateAfosDaily": "OK exit 0, 1 warning low-link-density 58% não-bloqueante",
+    "urlGate": "OK após correção (16 URLs O Globo truncadas corrigidas pegando URLs inteiras do cache)",
+    "translatorBugs": "EN: 1 nested-glossary-in-link corrigido manualmente (Polymarket dentro de link maior). ES: 0 bugs."
+  },
+  "approvalHistory": [
+    {"step": "PT-BR draft", "approvedBy": "user", "approvedAt": "2026-05-22T20:45-03:00", "note": "USD 88,7M adicionado ao lede após primeiro preview"},
+    {"step": "EN+ES traduções", "approvedBy": "user", "approvedAt": "2026-05-22T21:15-03:00"},
+    {"step": "publish prod", "approvedBy": "user", "approvedAt": "2026-05-22T21:30-03:00"}
+  ]
+}
