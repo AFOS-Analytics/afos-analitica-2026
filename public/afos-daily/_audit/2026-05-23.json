@@ -1,0 +1,74 @@
+{
+  "date": "2026-05-23",
+  "factCheckGate": {
+    "candidatesEvents": [
+      {
+        "event": "Fux vota manter prisão pai+primo Vorcaro",
+        "v1_crossref": "Vorcaro 63 menções 7 dailies (continuidade institucional); Fux 0 menções (voto NOVO no plenário)",
+        "v2_fetch": { "primarySource": "https://oglobo.globo.com/politica/noticia/2026/05/23/fux-vota-para-manter-prisao-de-pai-e-primo-de-vorcaro.ghtml", "secondSource": "https://www.estadao.com.br/politica/fux-antecipa-voto-e-stf-tem-placar-de-2-a-0-para-manter-prisoes-de-pai-e-primo-de-vorcaro/", "thirdSource": "https://valor.globo.com/empresas/noticia/2026/05/23/fux-vota-para-manter-pai-e-primo-de-vorcaro-presos.ghtml", "date": "2026-05-23", "type": "evento" },
+        "decision": "incorporar"
+      },
+      {
+        "event": "Datafolha 48% defendem Flávio abdicar candidatura",
+        "v1_crossref": "abdicar 0 menções 7 dailies = novidade",
+        "v2_fetch": { "primarySource": "G1 (Google News redirect)", "secondSource": "Folha (mesmo dado em coluna mas sem manchete autônoma)", "date": "2026-05-23", "type": "pesquisa-breakdown" },
+        "decision": "incorporar com atribuição explícita ao G1"
+      },
+      {
+        "event": "Aprovação Lula MELHORA 32% × 28% / rejeição 38% × 41%",
+        "v1_crossref": "tema recorrente (Datafolha 22/Mai), breakdown institucional novo",
+        "v2_fetch": { "primarySources": ["G1", "Folha", "O Globo", "Muita Informação", "Metropolitana FM Caruaru", "Guararema News", "Portal de Prefeitura"], "date": "2026-05-23", "type": "pesquisa-breakdown" },
+        "decision": "incorporar como breakdown da rodada Datafolha publicado sábado"
+      },
+      {
+        "event": "Flávio vai aos EUA buscar Trump",
+        "v1_crossref": "Trump 2 menções (18/Mai, contexto Lula Margem Equatorial); Flávio-Trump = novidade",
+        "v2_fetch": { "primarySource": "BBC News Brasil (Google News redirect)", "secondSource": "Folha pré-cobertura 22/Mai (Brasília Hoje)", "date": "2026-05-23", "type": "evento (viagem)" },
+        "decision": "incorporar com cautela — atribuir explicitamente 'segundo a BBC', sem causação ao Polymarket"
+      },
+      {
+        "event": "Lula no RJ ataca Cláudio Castro",
+        "v1_crossref": "Cláudio Castro 0 menções 7 dailies = novidade",
+        "v2_fetch": { "primarySource": "https://oglobo.globo.com/politica/noticia/2026/05/23/no-rio-lula-faz-aceno-a-governador-em-exercicio-e-oferece-ajuda-para-consertar-o-rio-e-enfrentar-a-milicia.ghtml", "secondSource": "https://www1.folha.uol.com.br/poder/2026/05/trabalhe-para-prender-todos-os-ladroes-diz-lula-a-governador-interino-do-rj.shtml", "date": "2026-05-23", "type": "evento" },
+        "decision": "incorporar como evento factual de hoje"
+      },
+      {
+        "event": "Lula e Motta reúnem 26/Mai fim 6x1",
+        "v1_crossref": "Motta 8 menções (recorrência institucional); 6x1 0 menções = novidade",
+        "v2_fetch": { "primarySource": "https://www1.folha.uol.com.br/mercado/2026/05/lula-e-motta-preparam-reuniao-nesta-2a-para-definir-fim-da-6x1.shtml", "date": "2026-05-23", "type": "agenda institucional anunciada" },
+        "decision": "incorporar com atribuição condicional 'agenda para 26/Mai'"
+      }
+    ],
+    "selfCheck": {
+      "all_anchors_v2_verified": true,
+      "no_spurious_causation": true,
+      "critical_verbs_disambiguated": true,
+      "reconcile_claims_run": "pending — validator W7/W1 passou com 1 warning não-crítico (link density 56% vs target 80%)"
+    }
+  },
+  "adversarialReview": {
+    "single_source_claims": [
+      "48% defendem Flávio abdicar: G1 anchor + secundários derivativos. Atribuição explícita feita no texto."
+    ],
+    "numerical_errors": "% batem com analysis-data.json: Lula 45.50, Flávio 27.75, Renan 11.95, Haddad 4.65, Zema 4.65, Michelle 2.90, Caiado 1.65, STF 6.65, PL 70.00, Inflação modal 30.00.",
+    "fontes_inventadas": "Fux/Estadão/Valor + BBC Trump + Folha Dark Horse + Vinicius Torres Freire — todos confirmados via cache news 23/Mai.",
+    "quotes_literais": [
+      "'Dark Horse abala Flávio... antipetismo é amortecedor no 2º turno' — literal Folha headline 12:00",
+      "'Eleitorado antipetista mantém Flávio firme...' — literal JOTA headline",
+      "'Trabalhe para prender todos os ladrões...' — literal Folha headline",
+      "'agenda positiva em meio à crise' — literal BBC headline"
+    ],
+    "causacao_espuria": "Nenhuma. Leitura técnica explícita: mercado já tinha precificado a queda na sexta (recuperação Flávio ↑3,40pp em 22/Mai como resposta a 'Datafolha menos catastrófica que esperado'), 23/Mai apenas refina sem mover gap material.",
+    "verbos_criticos": {
+      "votou": "Fux = voto novo (vs Mendonça véspera) — desambiguado explicitamente",
+      "abdicar": "= pesquisa de opinião (48% defendem), não fato consumado — atribuição explícita",
+      "preso": "= continuidade da prisão desde 14/Mai (Compliance Zero) — implícito mas reforçado pela menção 22/Mai",
+      "embarcou": "fato declarado pela BBC, atribuído explicitamente"
+    },
+    "decisao": "prosseguir para preview"
+  },
+  "validatorResult": {
+    "errors": 0,
+    "warnings": [{ "code": "low-link-density", "value": "14/25 (56%) parágrafos substantivos com link externo; regra ≥80%", "blocking": false }]
+  }
+}
