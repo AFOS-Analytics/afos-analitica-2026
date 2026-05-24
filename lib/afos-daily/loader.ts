@@ -167,6 +167,15 @@ function str(value: unknown, fallback = ''): string {
   return typeof value === 'string' ? value : fallback
 }
 
+// Safely coerces frontmatter `tldr` to string[]. Accepts: undefined (returns
+// undefined for backward compat), array of strings, array of any (filtered to
+// strings). Anything else returns undefined — fail-safe to "no TL;DR rendered".
+function coerceTldr(value: unknown): string[] | undefined {
+  if (!Array.isArray(value)) return undefined
+  const filtered = value.filter((b): b is string => typeof b === 'string' && b.trim().length > 0)
+  return filtered.length > 0 ? filtered : undefined
+}
+
 function coerceDate(value: unknown, fallback: string): string {
   if (value instanceof Date) return value.toISOString().slice(0, 10)
   if (typeof value === 'string') return value
@@ -235,6 +244,7 @@ export function loadDaily(date: string, locale?: string): AfosDailyData | null {
     locale: str(fm.locale, 'pt-BR'),
     status: str(fm.status, 'draft'), // Fail-safe: missing field => draft (hidden from prod)
     lede,
+    tldr: coerceTldr(fm.tldr), // optional 3-bullet summary; undefined if absent or malformed
     body: stripTemplateArtifacts(rawBody),
     sources: extractSources(rawBody),
   }

@@ -76,8 +76,23 @@ title: AFOS Daily — DD de MÊS de YYYY
 locale: pt-BR
 status: draft  # OBRIGATORIAMENTE draft. Vira published só via scripts/publish-afos-daily.ts {date} APÓS revisão humana e aprovação explícita.
 lede: "[lede de 2-3 linhas capturando 3 movimentos-chave do dia]"
+tldr:
+  - "[Mercado: 1-2 frases sintetizando os movimentos Polymarket relevantes — gap presidencial, destaque do dia, sub-mercado relevante]"
+  - "[Pesquisas+Eventos: 1-2 frases sintetizando o que pesquisas/imprensa mostraram + 1-2 eventos institucionais do dia]"
+  - "[Divergência: 1 frase sintetizando a divergência mais relevante mercado × pesquisa × narrativa]"
 ---
 ```
+
+⚠️ **REGRA TL;DR (firmada 23/Mai/2026 noite após benchmark Prediction Circle):** O campo `tldr` é **obrigatório** em toda nova daily a partir de 24/Mai/2026. Estrutura canônica:
+- **Exatamente 3 bullets**, espelhando as 3 seções do Daily (Mercado / Pesquisas+Eventos / Divergência)
+- **Label exibido:** "📌 TL;DR" — sigla literal (não traduzir pra PT/EN/ES; convenção internet reconhecida)
+- **Comprimento por bullet:** 1-2 frases curtas (~100-180 caracteres), escaneáveis em segundos
+- **Negrito em entidades-chave** (`**Lula 45,50%**`, `**Datafolha**`, `**Caiado ↑+0,60pp**`) — markdown standard, renderizado pelo template
+- **Conteúdo dos bullets é DERIVADO** do que já está no Daily — não inventar; sintetizar
+- Renderizado pelo template como `<aside>` callout ANTES da lede; backward compatible (dailies antigas sem `tldr` continuam renderizando normal)
+- Traduzido pelo `translate-afos-daily-chunked.ts` em chunk próprio (bullet a bullet)
+
+Por que essa regra existe: Prediction Circle vai lançar "Daily Prediction Brief" Q1 2026 — formato TL;DR aplicado como produto email. AFOS Daily TL;DR antes do PC = reivindicar convenção no mercado PT + EN. Memória: `project_post_launch_visualizations.md` + `project_prediction_circle_benchmark.md`.
 
 ⚠️ **REGRA DE PUBLICAÇÃO (Fase 1.1 — publish gate):** Toda síntese nova começa como `status: draft`. Isso garante que:
 - Página `/[locale]/daily/{data}` retorna 404 em produção (mas continua acessível em Vercel preview para revisão)

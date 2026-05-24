@@ -15,6 +15,10 @@ export interface AfosDailyData {
   locale: string        // "pt-BR" | "en" | "es"
   status: string        // "published" | "pilot"
   lede: string
+  // TL;DR: optional 3-bullet summary rendered above lede. Convention is
+  // 1 bullet per article section (Mercado / Pesquisas+Eventos / Divergência).
+  // Label is the literal acronym "TL;DR" in all 3 locales (PT/EN/ES).
+  tldr?: string[]
   body: string          // markdown body (without footer)
   sources: string       // comma-separated source list extracted from markdown footer
 }
@@ -213,6 +217,36 @@ export function AfosDailyTemplate({ data, nav }: Props) {
         </h1>
         <p className={`text-center text-base font-medium mb-2 ${sublineColor}`}>{t.subline}</p>
         <p className={`text-center text-xs mb-12 italic ${disclaimerColor}`}>{t.disclaimer}</p>
+
+        {/* TL;DR — bloco callout antes da lede; opcional, backward compatible */}
+        {data.tldr && data.tldr.length > 0 && (
+          <aside
+            className={`rounded-lg border-l-4 ${isBlue ? 'bg-blue-950/40 border-blue-300' : 'bg-slate-50 border-primary'} p-4 md:p-5 mb-6`}
+            aria-label="TL;DR"
+          >
+            <h2 className={`text-sm font-extrabold uppercase tracking-[0.18em] mb-3 ${isBlue ? 'text-blue-200' : 'text-primary'}`}>
+              📌 TL;DR
+            </h2>
+            <ul className="space-y-2 list-none pl-0">
+              {data.tldr.map((bullet, i) => (
+                <li key={i} className={`text-sm md:text-base leading-relaxed ${isBlue ? 'text-blue-50' : 'text-dark'} pl-4 relative before:content-['•'] before:absolute before:left-0 before:font-bold ${isBlue ? 'before:text-blue-300' : 'before:text-primary'}`}>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      p: ({ children }) => <span>{children}</span>,
+                      strong: ({ children }) => <strong className={isBlue ? 'text-white' : 'text-primary'}>{children}</strong>,
+                      a: ({ href, children }) => (
+                        <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
+                      ),
+                    }}
+                  >
+                    {bullet}
+                  </ReactMarkdown>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        )}
 
         {/* LEDE */}
         {data.lede && (

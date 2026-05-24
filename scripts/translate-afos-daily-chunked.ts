@@ -43,6 +43,10 @@ async function main() {
   const raw = readFileSync(path, 'utf-8')
   const { data: fm, content: body } = matter(raw)
   const lede = String(fm.lede ?? '')
+  // tldr: optional 3-bullet summary; translate each bullet separately if present
+  const tldr: string[] = Array.isArray(fm.tldr)
+    ? fm.tldr.filter((b: unknown): b is string => typeof b === 'string' && b.trim().length > 0)
+    : []
 
   const glossaryEntries = loadGlossary().map(e => ({ term: e.term, id: e.id }))
 
@@ -76,6 +80,17 @@ async function main() {
 
   console.log('   [1/6] lede')
   const ledeResult = await translateChunk(lede, locale, glossaryEntries)
+
+  // Translate TL;DR bullets (if present). Each bullet is small (~150-200 chars),
+  // so translating individually is cheap and keeps glossary tagging granular.
+  let tldrTranslated: string[] = []
+  if (tldr.length > 0) {
+    console.log(`   [1.5/6] TL;DR (${tldr.length} bullets)`)
+    for (const bullet of tldr) {
+      const r = await translateChunk(bullet, locale, glossaryEntries)
+      tldrTranslated.push(r.translatedText.trim())
+    }
+  }
 
   console.log('   [2/6] chunk A (title + sec 1 + sec 2)')
   const aResult = await translateChunk(chunkA, locale, glossaryEntries)
@@ -170,10 +185,14 @@ async function main() {
     `locale: ${locale}`,
     'status: draft',
     `lede: ${JSON.stringify(ledeResult.translatedText)}`,
-    '---',
-    '',
-    '', // 5. Blank line between frontmatter close and content (lede blockquote rendering)
   ]
+  if (tldrTranslated.length > 0) {
+    yamlLines.push('tldr:')
+    for (const bullet of tldrTranslated) {
+      yamlLines.push(`  - ${JSON.stringify(bullet)}`)
+    }
+  }
+  yamlLines.push('---', '', '') // 5. Blank line between frontmatter close and content (lede blockquote rendering)
   const outMd = yamlLines.join('\n') + translatedBody.trim() + '\n'
 
   const outPath = join(DAILY_DIR, `${date}.${locale}.md`)
