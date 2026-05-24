@@ -85,6 +85,8 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 - SVG flags (compatible with all devices including Windows)
 - Lead capture form integrated with visitor tracking system
 - SEO optimized with "Unprecedented platform worldwide" claim in metadata
+- **Reading flow (firmed 24/May/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → CTA "Open Dashboard" → Features. Lets users browse specific products before falling back to the generic dashboard CTA. Daily / Tradeoff / Global links always use the index route (`/{locale}/daily`, `/{locale}/tradeoff`) — never hardcoded dates — so new editions are auto-discovered.
+- **Inverted-color design rule:** components that need to stand out from the page background invert across themes — light theme = Sapphire Blue components (cards, CTA, subtitle box) with white text; Sapphire Blue theme = white components with primary-color text. Applied consistently in ProductsSection, dashboard CTA, and hero subtitle box.
 
 ### Lead Capture System (Visitor State)
 

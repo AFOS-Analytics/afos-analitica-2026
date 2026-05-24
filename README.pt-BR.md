@@ -81,6 +81,8 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 - Bandeiras SVG (compativel com todos os dispositivos incluindo Windows)
 - Formulario de captura de lead integrado com sistema de visitor tracking
 - SEO otimizado com claim "Plataforma inedita no mundo" em metadata
+- **Fluxo de leitura (firmado 24/Mai/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → CTA "Acessar Dashboard" → Features. Permite que o usuario avalie produtos especificos antes de cair no CTA generico do dashboard. Links Daily / Tradeoff / Global sempre usam a rota indice (`/{locale}/daily`, `/{locale}/tradeoff`) — nunca data hardcoded — para que novas edicoes sejam auto-descobertas.
+- **Regra de design "cores invertidas":** componentes que precisam destacar do fundo da pagina invertem nos temas — tema light = componentes Sapphire Blue (cards, CTA, caixa do subtitle) com texto branco; tema Sapphire Blue = componentes brancos com texto cor primaria. Aplicado consistentemente em ProductsSection, CTA dashboard e caixa do subtitle do hero.
 
 ### Sistema de Captura de Leads (Visitor State)
 
