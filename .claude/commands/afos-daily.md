@@ -83,16 +83,43 @@ tldr:
 ---
 ```
 
-⚠️ **REGRA TL;DR (firmada 23/Mai/2026 noite após benchmark Prediction Circle):** O campo `tldr` é **obrigatório** em toda nova daily a partir de 24/Mai/2026. Estrutura canônica:
-- **Exatamente 3 bullets**, espelhando as 3 seções do Daily (Mercado / Pesquisas+Eventos / Divergência)
-- **Label exibido:** "📌 TL;DR" — sigla literal (não traduzir pra PT/EN/ES; convenção internet reconhecida)
-- **Comprimento por bullet:** 1-2 frases curtas (~100-180 caracteres), escaneáveis em segundos
-- **Negrito em entidades-chave** (`**Lula 45,50%**`, `**Datafolha**`, `**Caiado ↑+0,60pp**`) — markdown standard, renderizado pelo template
-- **Conteúdo dos bullets é DERIVADO** do que já está no Daily — não inventar; sintetizar
-- Renderizado pelo template como `<aside>` callout ANTES da lede; backward compatible (dailies antigas sem `tldr` continuam renderizando normal)
-- Traduzido pelo `translate-afos-daily-chunked.ts` em chunk próprio (bullet a bullet)
+⚠️ **REGRA TL;DR — NÃO-NEGOCIÁVEL (firmada 23/Mai/2026 noite após benchmark Prediction Circle, ativa em prod desde commit 44f643c):**
 
-Por que essa regra existe: Prediction Circle vai lançar "Daily Prediction Brief" Q1 2026 — formato TL;DR aplicado como produto email. AFOS Daily TL;DR antes do PC = reivindicar convenção no mercado PT + EN. Memória: `project_post_launch_visualizations.md` + `project_prediction_circle_benchmark.md`.
+O campo `tldr` é **obrigatório** em **toda daily a partir de 23/Mai/2026 (inclusive)**. Ausência = daily incompleta, NÃO publicar.
+
+### Estrutura canônica obrigatória
+
+- **Exatamente 3 bullets**, espelhando as 3 seções do Daily nesta ordem:
+  1. **Mercado** (movimentos Polymarket relevantes do dia)
+  2. **Pesquisas+Eventos** (o que pesquisas + imprensa registraram + eventos institucionais)
+  3. **Divergência** (a divergência mais relevante mercado × pesquisa × narrativa)
+- **Label exibido:** "📌 TL;DR" — sigla literal (NÃO traduzir pra PT/EN/ES; convenção internet reconhecida internacionalmente)
+- **Comprimento por bullet:** 1-2 frases curtas (~100-180 caracteres), escaneáveis em segundos
+- **Negrito em entidades-chave** via markdown `**...**` (`**Lula 45,50%**`, `**Datafolha**`, `**Caiado ↑+0,60pp**`) — renderizado pelo template
+- **Conteúdo derivado, não inventado:** os 3 bullets sintetizam o que já está no corpo do Daily — proibido criar fato novo no TL;DR que não aparece em alguma seção
+- Renderizado pelo `AfosDailyTemplate.tsx` como `<aside>` callout ANTES da lede (cor primária no light theme, blue-300 no Sapphire theme)
+- Traduzido pelo `translate-afos-daily-chunked.ts` em chunk próprio (bullet a bullet, baixo custo de tokens)
+- Backward compatible: dailies antigas (≤22/Mai/2026) sem `tldr` continuam renderizando sem o bloco — não retroagir
+
+### Checklist self-check pré-publish (obrigatório)
+
+Antes de submeter o `.md` para preview, validar mentalmente:
+
+- [ ] `tldr` tem **exatamente 3** entradas (nem 2, nem 4, nem 5)
+- [ ] Bullet 1 começa com `**Mercado:**` (ou tradução EN/ES correspondente, mas mantendo a ordem semântica Mercado→Pesquisas→Divergência)
+- [ ] Bullet 2 começa com `**Pesquisas+Eventos:**` ou variação coerente
+- [ ] Bullet 3 começa com `**Divergência:**` ou variação coerente
+- [ ] Cada bullet < 250 chars (mais que isso = não é mais TL;DR, é parágrafo)
+- [ ] Toda alegação no TL;DR aparece detalhada em alguma seção do corpo
+- [ ] Negrito aplicado em pelo menos 2-3 entidades-chave por bullet
+
+### Por que essa regra é não-negociável
+
+1. **Urgência competitiva:** Prediction Circle vai lançar "Daily Prediction Brief" Q1 2026 — formato TL;DR como produto email. AFOS Daily TL;DR antes do PC = reivindicar convenção no mercado PT/EN/ES.
+2. **UX:** dailies têm 600-900 palavras. Maioria dos leitores não lê tudo. TL;DR captura quem ia bouncar.
+3. **GEO/LLM:** estrutura bulletada com entidades em negrito é trivialmente parseável vs prosa — reforça posicionamento machine-readable do AFOS.
+
+Memórias relacionadas: `project_post_launch_visualizations.md` (Fase 0 implementada 23/Mai), `project_prediction_circle_benchmark.md` (urgência competitiva PC), `feedback_tradeoff_implementation_preview_only.md` (sprint Tradeoff onde TL;DR foi implementado como Fase 0).
 
 ⚠️ **REGRA DE PUBLICAÇÃO (Fase 1.1 — publish gate):** Toda síntese nova começa como `status: draft`. Isso garante que:
 - Página `/[locale]/daily/{data}` retorna 404 em produção (mas continua acessível em Vercel preview para revisão)
