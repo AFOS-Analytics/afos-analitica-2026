@@ -109,19 +109,44 @@ interface TranslateContext {
   glossary: Array<{ term: string; id: string }>
 }
 
+// Throttle: Anthropic Tier 1 has ~50 RPM and ~10k output TPM. With 30+ calls
+// and ~500 output tokens each, back-to-back calls trip the limit. 1.5s sleep
+// = 40 calls/min max, well under any rate limit. Adds ~45s total to a full
+// edition translation — acceptable cost for reliability.
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
+const RATE_LIMIT_SLEEP_MS = 3000
+
+async function callTranslateWithRetry(text: string, ctx: TranslateContext, attempt = 0): Promise<{ translatedText: string }> {
+  try {
+    return await translate({
+      sourceText: text,
+      sourceLocale: 'pt-BR',
+      targetLocale: ctx.locale,
+      type: 'afos-daily',
+      glossaryEntries: ctx.glossary,
+    })
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    // Retry on rate_limited up to 3 times with exponential backoff (30s, 60s, 90s).
+    // Avoids losing 30+ already-translated calls when a single burst trips the TPM cap.
+    if (msg.includes('rate_limited') && attempt < 3) {
+      const backoff = 30000 * (attempt + 1)
+      console.log(`   ⏳ rate_limited — backoff ${backoff / 1000}s (attempt ${attempt + 1}/3)`)
+      await sleep(backoff)
+      return callTranslateWithRetry(text, ctx, attempt + 1)
+    }
+    throw err
+  }
+}
+
 async function tx(text: string | undefined, ctx: TranslateContext): Promise<string> {
   if (!text || !text.trim()) return text ?? ''
   // Tiny phrases bypass the API
   if (text.length <= 20 && SHORT_PHRASE_MAP[text.trim()]) {
     return SHORT_PHRASE_MAP[text.trim()][ctx.locale]
   }
-  const r = await translate({
-    sourceText: text,
-    sourceLocale: 'pt-BR',
-    targetLocale: ctx.locale,
-    type: 'afos-daily',
-    glossaryEntries: ctx.glossary,
-  })
+  await sleep(RATE_LIMIT_SLEEP_MS)
+  const r = await callTranslateWithRetry(text, ctx)
   // Strip glossary auto-tags that sometimes appear inside markdown links
   // (known translator bug, documented in feedback_translator_known_bugs.md).
   let out = r.translatedText

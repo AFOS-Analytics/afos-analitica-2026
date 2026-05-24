@@ -32,6 +32,7 @@ Built and validated during the 2026 electoral cycle across South American countr
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
 - **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — published daily in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`
+- **AFOS Tradeoff** — weekly technical reading published every Monday, targeted at institutional research, buy-side and treasury. Cross-references the same three signals but reports them **separately** (no weighted-average composites) — when prediction markets, polls and news diverge, the divergence *is* the signal. Structured in 9 sections (executive summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Published in 3 languages (PT-BR, EN, ES) with full archive at `/tradeoff/[date]`. RSS: `/feed/tradeoff.xml`
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
@@ -70,6 +71,7 @@ Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIB
 | `/[locale]` | Landing page (color + language selector) |
 | `/[locale]/dashboard` | Interactive dashboard with live data — header logo links back to landing |
 | `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news. Available in **3 languages** (PT-BR, EN, ES) — loader detects `{date}.{locale}.md` with fallback to canonical PT-BR. Brazilian political terms (TSE, STF, BolsoMaster, etc.) kept in PT with inline links to the trilingual glossary |
+| `/[locale]/tradeoff` | AFOS Tradeoff — weekly technical reading (Mondays) targeted at institutional research / buy-side / treasury. Three signals reported separately — divergence *is* the signal, not noise to average away. 9 structured sections rendered via rich-frontmatter YAML (summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Tri-locale parity with Daily (`{date}.{locale}.md`). RSS: `/feed/tradeoff.xml` |
 | `/[locale]/global` | Global elections map (D3.js) |
 | `/[locale]/country/[country]` | Country page (13 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". 14-section platform tour including AFOS Daily card explanation (`#afos-daily-card`) and polling institute evaluation criteria (`#criterios-institutos`). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
@@ -423,6 +425,7 @@ npm run dev
 | `/atualizar` | Full AFOS Analytics update (Polymarket + Google News + JSONs + deploy) |
 | `/atualizar-pesquisas` | TSE electoral polls ingestion |
 | `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily) — cross-references markets, polls and news with auditable links per claim |
+| `/tradeoff` | Generate the weekly technical reading (AFOS Tradeoff) — 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
 
 ---
 
