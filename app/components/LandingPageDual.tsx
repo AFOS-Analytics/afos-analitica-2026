@@ -518,7 +518,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
             <div className="hidden md:flex items-center gap-3 text-xs font-semibold mr-2">
               <a href={`/${locale}/daily`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Daily</a>
               <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
-              <a href={`/${locale}/tradeoff/2026-05-25`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Tradeoff</a>
+              <a href={`/${locale}/tradeoff`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Tradeoff</a>
               <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
               <a href={`/${locale}/dashboard`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Global</a>
             </div>

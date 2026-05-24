@@ -85,7 +85,7 @@ const T = {
 export function ProductsSection({ locale, isBlue = false }: Props) {
   const t = T[locale]
   const dailyUrl = `/${locale}/daily`
-  const tradeoffUrl = `/${locale}/tradeoff/2026-05-25`
+  const tradeoffUrl = `/${locale}/tradeoff`
   const globalUrl = `/${locale}/global`
 
   // Inverted color scheme by user request (23/Mai noite):
