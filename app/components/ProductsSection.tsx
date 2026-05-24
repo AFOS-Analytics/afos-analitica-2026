@@ -10,8 +10,8 @@ interface Props {
 const T = {
   'pt-BR': {
     sectionLabel: 'Nossos produtos',
-    sectionTitle: 'Opções para você ler risco político eleitoral',
-    sectionTitleMobileLine1: 'Opções para você ler',
+    sectionTitle: 'Para você ler sobre risco político eleitoral',
+    sectionTitleMobileLine1: 'Para você ler sobre',
     sectionTitleMobileLine2: 'risco político eleitoral',
     daily: {
       title: 'AFOS Daily',
@@ -34,8 +34,8 @@ const T = {
   },
   en: {
     sectionLabel: 'Our products',
-    sectionTitle: 'Options for you to read electoral political risk',
-    sectionTitleMobileLine1: 'Options for you to read',
+    sectionTitle: 'For you to read about electoral political risk',
+    sectionTitleMobileLine1: 'For you to read about',
     sectionTitleMobileLine2: 'electoral political risk',
     daily: {
       title: 'AFOS Daily',
@@ -58,8 +58,8 @@ const T = {
   },
   es: {
     sectionLabel: 'Nuestros productos',
-    sectionTitle: 'Opciones para que leas riesgo político electoral',
-    sectionTitleMobileLine1: 'Opciones para que leas',
+    sectionTitle: 'Para que leas sobre riesgo político electoral',
+    sectionTitleMobileLine1: 'Para que leas sobre',
     sectionTitleMobileLine2: 'riesgo político electoral',
     daily: {
       title: 'AFOS Daily',
@@ -103,7 +103,7 @@ export function ProductsSection({ locale, isBlue = false }: Props) {
   const sectionTitleColor = isBlue ? 'text-white' : 'text-dark'
 
   return (
-    <section className="pt-4 pb-12 sm:pt-6 sm:pb-16 px-4">
+    <section className="pt-1 pb-4 sm:pt-2 sm:pb-6 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-10">
           <p className={`text-xs font-bold tracking-[0.18em] uppercase mb-2 ${sectionLabelColor}`}>

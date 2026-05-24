@@ -25,7 +25,7 @@ const CONTENT = {
       title: 'Inteligência de Risco',
       titleHighlight: 'Político Eleitoral Global',
       claim: 'Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias. Código aberto, fontes públicas auditáveis.',
-      subtitle: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul. Análises diárias.',
+      subtitle: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul.',
       cta: 'Acessar Dashboard',
       ctaSecondary: 'Saiba mais',
     },
@@ -70,7 +70,7 @@ const CONTENT = {
       title: 'Global Electoral Political',
       titleHighlight: 'Risk Intelligence',
       claim: 'Real-time cross-referencing of prediction markets, electoral polls and news. Open-source, auditable public sources.',
-      subtitle: 'Built and battle-tested during the 2026 election cycle in South American countries. Daily analysis.',
+      subtitle: 'Built and battle-tested during the 2026 election cycle in South American countries.',
       cta: 'Open Dashboard',
       ctaSecondary: 'Learn more',
     },
@@ -115,7 +115,7 @@ const CONTENT = {
       title: 'Inteligencia Global de',
       titleHighlight: 'Riesgo Político Electoral',
       claim: 'Cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias. Código abierto, fuentes públicas auditables.',
-      subtitle: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur. Análisis diario.',
+      subtitle: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur.',
       cta: 'Abrir Dashboard',
       ctaSecondary: 'Saber más',
     },
@@ -532,7 +532,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
       </nav>
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section className="pt-28 sm:pt-36 pb-8 sm:pb-12 px-4">
+      <section className="pt-28 sm:pt-36 pb-2 sm:pb-3 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-6 transition-colors duration-500 ${tk.badge}`}>
             {t.hero.badge}
@@ -544,13 +544,15 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <p className={`mt-4 text-xs sm:text-sm font-medium max-w-xl mx-auto transition-colors duration-500 ${isBlueTheme ? 'text-white' : 'text-dark'}`}>
             {t.hero.claim}
           </p>
-          <p className={`mt-4 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed transition-colors duration-500 ${tk.subtitle}`}>
-            {t.hero.subtitle}
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href={dashboardUrl} className={`w-full sm:w-auto font-semibold px-8 py-3.5 rounded-xl transition-all duration-500 text-center ${tk.ctaPrimary}`}>
-              {t.hero.cta}
-            </a>
+          {/* Subtitle como caixa Sapphire Blue (contraste visual) com inversão no tema azul */}
+          <div className="mt-4 flex justify-center px-4">
+            <p className={`inline-block max-w-2xl px-5 py-2.5 rounded-lg text-sm sm:text-base font-medium text-center leading-relaxed transition-colors duration-500 ${
+              isBlueTheme
+                ? 'bg-white text-primary'
+                : 'bg-primary text-white'
+            }`}>
+              {t.hero.subtitle}
+            </p>
           </div>
         </div>
       </section>
@@ -569,6 +571,16 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           ))}
         </div>
       </section>
+
+      {/* ─── Primary CTA: Access Dashboard (between Stats and Features) ──── */}
+      {/* Width matches a single product card (1/3 of grid on desktop, full width on mobile) */}
+      <div className="max-w-6xl mx-auto py-12 sm:py-16 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <a href={dashboardUrl} className={`md:col-start-2 block w-full font-semibold px-8 py-3.5 rounded-xl transition-all duration-500 text-center ${tk.ctaPrimary}`}>
+            {t.hero.cta}
+          </a>
+        </div>
+      </div>
 
       {/* ─── Features ────────────────────────────────────────── */}
       <section ref={featuresRef} className="py-16 sm:py-24 px-4">
