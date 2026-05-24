@@ -1,7 +1,7 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
   if (type === 'analysis-cards') {
@@ -9,9 +9,9 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
     if (!cards) return 'Sem dados'
     return `Cards: ${Object.keys(cards).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
   }
-  if (type === 'afos-hoje' || type === 'afos-daily') {
+  if (type === 'afos-hoje' || type === 'afos-daily' || type === 'afos-tradeoff') {
     const lede = data.lede as string | undefined
-    const fallback = type === 'afos-daily' ? 'AFOS Daily' : 'AFOS Hoje'
+    const fallback = type === 'afos-daily' ? 'AFOS Daily' : type === 'afos-tradeoff' ? 'AFOS Tradeoff' : 'AFOS Hoje'
     return lede ? lede.slice(0, 200) : `${fallback} — ${data.updatedAt || data.date || 'N/A'}`
   }
   const candidates = data.candidates as Array<{ name: string }> | undefined
@@ -23,6 +23,7 @@ export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
   if (type === 'analysis-cards') return `Análise Cards — ${updatedAtLabel}`
   if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
   if (type === 'afos-daily') return `AFOS Daily — ${updatedAtLabel}`
+  if (type === 'afos-tradeoff') return `AFOS Tradeoff — ${updatedAtLabel}`
   return `Análise Criteriosa — ${updatedAtLabel}`
 }
 

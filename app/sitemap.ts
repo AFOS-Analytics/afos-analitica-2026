@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
 import { listPublishedDailies } from '../lib/afos-daily/loader'
+import { listPublishedTradeoffs } from '../lib/afos-tradeoff/loader'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://afos-analytics.com'
@@ -180,6 +181,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: isLatest ? 0.95 : 0.7,
         alternates: { languages: hreflang((l) => `/${l}/daily/${date}`) },
+      })
+    }
+  }
+
+  // AFOS Tradeoff — weekly synthesis index per locale
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/tradeoff`,
+      lastModified: dynamicLastMod,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+      alternates: { languages: hreflang((l) => `/${l}/tradeoff`) },
+    })
+  }
+
+  // AFOS Tradeoff — permalinks per edition (3 locales × N editions)
+  // Latest edition gets higher priority. Published-only filter.
+  const tradeoffDates = listPublishedTradeoffs()
+  const latestTradeoff = tradeoffDates.length ? tradeoffDates[tradeoffDates.length - 1] : null
+  for (const date of tradeoffDates) {
+    const isLatest = date === latestTradeoff
+    const lastMod = new Date(`${date}T00:00:00-03:00`)
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/tradeoff/${date}`,
+        lastModified: lastMod,
+        changeFrequency: 'monthly',
+        priority: isLatest ? 0.95 : 0.7,
+        alternates: { languages: hreflang((l) => `/${l}/tradeoff/${date}`) },
       })
     }
   }

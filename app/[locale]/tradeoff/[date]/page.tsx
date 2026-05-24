@@ -11,6 +11,7 @@ import {
   tradeoffExists,
   getAdjacentDates,
 } from '../../../../lib/afos-tradeoff/loader'
+import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-tradeoff/schema'
 
 interface PageProps {
   params: Promise<{ locale: string; date: string }>
@@ -42,6 +43,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
   const url = `https://afos-analytics.com/${params.locale}/tradeoff/${params.date}`
+  const ogImage = getOgImageUrl(params.locale)
+  const publishedTime = `${data.date}T00:00:00-03:00`
+  const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
 
   return {
     title: `${data.title} | AFOS Analytics`,
@@ -61,6 +65,38 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         }
         return langs
       })(),
+      types: {
+        'application/rss+xml': [
+          { url: 'https://afos-analytics.com/feed/tradeoff.xml', title: 'AFOS Tradeoff — RSS feed' },
+        ],
+      },
+    },
+    openGraph: {
+      type: 'article',
+      title: data.title,
+      description: sinalPlain,
+      url,
+      siteName: 'AFOS Analytics',
+      locale: params.locale,
+      publishedTime,
+      modifiedTime,
+      authors: ['AFOS Analytics'],
+      section: 'Politics',
+      tags: ['Brazil 2026 election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: 'AFOS Analytics — Weekly Tradeoff',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: data.title,
+      description: sinalPlain,
+      images: [ogImage],
     },
   }
 }
@@ -74,6 +110,16 @@ export default async function TradeoffByDatePage(props: PageProps) {
   if (!data) notFound()
 
   const nav = getAdjacentDates(params.date)
+  const schema = buildArticleSchema(data, params.locale)
+  const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)
 
-  return <AfosTradeoffTemplate data={data} nav={nav} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
+      />
+      <AfosTradeoffTemplate data={data} nav={nav} />
+    </>
+  )
 }

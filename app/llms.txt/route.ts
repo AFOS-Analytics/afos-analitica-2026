@@ -12,6 +12,7 @@
  */
 
 import { listPublishedDailies, loadDaily } from '../../lib/afos-daily/loader'
+import { listPublishedTradeoffs, loadTradeoff } from '../../lib/afos-tradeoff/loader'
 import { cleanMarkdownText } from '../../lib/afos-daily/utils'
 
 const SITE = 'https://afos-analytics.com'
@@ -30,6 +31,19 @@ export function GET() {
       const url = `${SITE}/pt-BR/daily/${date}`
       const lede = cleanMarkdownText(data.lede).slice(0, 220)
       return `- [${data.title}](${url}): ${lede}`
+    })
+    .filter(Boolean)
+    .join('\n')
+
+  // AFOS Tradeoff — weekly editions, also published-only.
+  const tradeoffDates = listPublishedTradeoffs().slice().reverse()
+  const tradeoffEntries = tradeoffDates
+    .map(date => {
+      const data = loadTradeoff(date)
+      if (!data) return ''
+      const url = `${SITE}/pt-BR/tradeoff/${date}`
+      const sinal = cleanMarkdownText(data.sinalDaSemana).slice(0, 220)
+      return `- [${data.title}](${url}): ${sinal}`
     })
     .filter(Boolean)
     .join('\n')
@@ -67,6 +81,14 @@ The AFOS Daily is a 600-900 word narrative published once per day, cross-referen
 Recent editions (latest first):
 
 ${dailyEntries}
+
+## AFOS Tradeoff — weekly technical reading
+
+The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at institutional research, buy-side, and treasury readers. It cross-references the same three signals as AFOS Daily but reports them **separately** — no weighted-average composites, no smoothed consensus trackers. When prediction markets, polls, and news diverge, the divergence *is* the signal. Structured in 9 sections: executive summary cards, anti-average rationale, weighted scenarios, indicator grid (contracts × deltas × volume), liquidity & market structure, polls calendar, watch list, methodology, additional reading. RSS feed: ${SITE}/feed/tradeoff.xml
+
+Recent editions (latest first):
+
+${tradeoffEntries || '- (no editions published yet)'}
 
 ## Core pages
 
