@@ -458,6 +458,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { getOrCreateVisitorId } from '../../lib/visitor/id';
 import { SUBSCRIBED_LS_KEY } from '../../lib/visitor/constants';
 import { SubscribeForm } from './SubscribeForm';
+import { ProductsSection } from './ProductsSection';
 
 export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPageProps) {
   const router = useRouter();
@@ -513,6 +514,14 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <span className={`font-extrabold text-sm sm:text-lg tracking-tight transition-colors duration-500 ${tk.logo}`}>AFOS Analytics</span>
           <div className="flex items-center gap-1.5 sm:gap-3">
+            {/* Product quick-access links — desktop only to keep mobile nav uncluttered */}
+            <div className="hidden md:flex items-center gap-3 text-xs font-semibold mr-2">
+              <a href={`/${locale}/daily`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Daily</a>
+              <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
+              <a href={`/${locale}/tradeoff/2026-05-25`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Tradeoff</a>
+              <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
+              <a href={`/${locale}/dashboard`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Global</a>
+            </div>
             <LangSwitcher current={locale} onSelect={setLocale} isBlue={isBlueTheme} />
             <ThemeSwitcher current={theme} onSelect={setTheme} isBlue={isBlueTheme} />
             <a href={dashboardUrl} className={`text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg transition-colors duration-500 ${tk.navBtn}`}>
@@ -523,7 +532,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
       </nav>
 
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section className="pt-28 sm:pt-36 pb-16 sm:pb-24 px-4">
+      <section className="pt-28 sm:pt-36 pb-8 sm:pb-12 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-6 transition-colors duration-500 ${tk.badge}`}>
             {t.hero.badge}
@@ -542,12 +551,12 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
             <a href={dashboardUrl} className={`w-full sm:w-auto font-semibold px-8 py-3.5 rounded-xl transition-all duration-500 text-center ${tk.ctaPrimary}`}>
               {t.hero.cta}
             </a>
-            <button onClick={() => featuresRef.current?.scrollIntoView({ behavior: 'smooth' })} className={`w-full sm:w-auto font-semibold px-8 py-3.5 rounded-xl transition-all duration-500 text-center ${tk.ctaSecondary}`}>
-              {t.hero.ctaSecondary}
-            </button>
           </div>
         </div>
       </section>
+
+      {/* ─── Products (Daily / Tradeoff / Global access cards) ──── */}
+      <ProductsSection locale={locale} isBlue={isBlueTheme} />
 
       {/* ─── Stats ───────────────────────────────────────────── */}
       <section className={`border-y py-10 px-4 transition-colors duration-500 ${tk.statsBg}`}>

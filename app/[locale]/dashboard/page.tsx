@@ -7,6 +7,7 @@ import { VisitorStateProvider } from '../../hooks/useVisitorState';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { DailyHeroCard } from '../../components/DailyHeroCard';
+import { AfosTradeoffHeroCard } from '../../components/AfosTradeoffHeroCard';
 import { ModalAbout } from '../../components/ModalAbout';
 import { ModalMetas } from '../../components/ModalMetas';
 import { ModalGlobal } from '../../components/ModalGlobal';
@@ -84,6 +85,7 @@ function DashboardContent() {
         />
 
         <DailyHeroCard />
+        <AfosTradeoffHeroCard />
 
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
           <SectionErrorBoundary name="Polymarket"><PolymarketSection poly={poly} /></SectionErrorBoundary>
