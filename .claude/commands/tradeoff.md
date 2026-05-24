@@ -1,6 +1,6 @@
 # AFOS Tradeoff — Brazil Political Risk Weekly
 
-Gerar edição semanal técnica do AFOS Tradeoff seguindo o template HTML preview validado por Custódio + Cunha em 23/Mai/2026. Audiência: leitor profissional de mercado (research, buy-side, treasury, mesa institucional).
+Gerar edição semanal técnica do AFOS Tradeoff seguindo o template HTML preview firmado em 23/Mai/2026 (validação por Custódio + Cunha prevista pós-Edição №1 silent launch). Audiência: leitor profissional de mercado (research, buy-side, treasury, mesa institucional).
 
 ## Pré-requisitos obrigatórios
 
@@ -135,32 +135,41 @@ Reportar URL pra André avaliar em aba anônima.
 
 NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explícita ("aprovado", "deploy prod", "pode fazer").
 
-## ETAPA 6: Após aprovação — publicar + persistir + deploy
+## ETAPA 6: Após aprovação — traduzir + publicar + persistir + deploy
 
-1. Flip status:
+**Ordem correta firmada após Edição №1 (24/Mai):** traduzir EN+ES PRIMEIRO (em draft), DEPOIS flip publish em todos os 3 locales de uma vez. Inverter essa ordem cria estado inconsistente onde PT já está published mas EN/ES seguem draft — sitemap/RSS/llms.txt entram em descompasso tri-locale.
+
+1. **Traduzir EN+ES (sequencial, NÃO paralelo):**
+```bash
+# IMPORTANTE: rodar sequencial. Paralelo trip rate-limit Anthropic Tier 1.
+npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD en
+# Aguardar EN completar (~3 min), depois ES
+npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD es
+```
+
+⚠️ **Rate-limit gotcha (firmado 24/Mai/2026):** Tradutor faz ~36 chamadas API por locale. Anthropic Tier 1 trip em ~30 chamadas back-to-back (50k input TPM, 50 RPM). Script já tem throttle 3s + retry exponencial (30s/60s/90s) embutido, mas:
+- **Nunca rodar EN+ES em paralelo** — soma de calls trip imediato
+- Se falhar mesmo sequencial: aguardar 2 min cooldown e retry
+- Output `failed exit code 1` no Bash background é tipicamente false-positive do `cwd warning` — verificar o arquivo `.{locale}.md` foi escrito; se sim, está OK
+
+2. **Flip status:draft → published nos 3 locales de uma vez:**
 ```bash
 npx tsx scripts/publish-afos-tradeoff.ts YYYY-MM-DD --all-locales
 ```
 
-2. Traduzir EN+ES:
-```bash
-npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD en
-npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD es
-```
-
-3. Persistir no Neon:
+3. **Persistir no Neon:**
 ```bash
 npx tsx scripts/persist-afos-tradeoff.ts YYYY-MM-DD
 ```
 
-4. Commit + push:
+4. **Commit + push:**
 ```bash
 git add public/afos-tradeoff/YYYY-MM-DD*.md
 git commit -m "AFOS Tradeoff Edição №N (YYYY-MM-DD) — [resumo em 1 linha]"
 git push origin main
 ```
 
-5. Deploy prod:
+5. **Deploy prod:**
 ```bash
 npx vercel --yes --prod
 ```
@@ -182,7 +191,7 @@ npx tsx scripts/broadcast-afos-tradeoff.ts YYYY-MM-DD
 ## Observações importantes
 
 - **Cadência fixa segunda-feira:** Tradeoff é semanal, não diário. Skill só roda às segundas (ou domingo noite preparatório). Edições "ad-hoc" entre segundas violam o ritmo prometido ao subscriber.
-- **Edição №1 (semana de 19-23 Mai 2026):** publicada **Seg 25/Mai/2026** seguindo HTML preview validado por Custódio + Cunha. Conteúdo será editado próximo do silent launch.
+- **Edição №1 (semana de 19-23 Mai 2026):** publicada **Sáb 24/Mai/2026** (silent launch antecipado vs cadência canônica de segunda — decisão de 24/Mai pra não deixar `/tradeoff` 404 até segunda; exceção exclusiva para №1, dado que a semana coberta 19-23 já estava finalizada). Slug do arquivo = data de publicação (`2026-05-24.md`), com `weekStart/weekEnd` apontando para a semana coberta. Edições subsequentes retomam cadência canônica de segunda (№2 = 2026-06-01, №3 = 2026-06-08, etc).
 - **Tradeoff é independente do Daily** — pode usar dados frescos do dia ou consolidar a semana inteira; o foco é em pricing/divergência semanal, não em narrativa diária.
 - **HTML preview como referência canônica:** `C:\Users\afos3\OneDrive\Área de Trabalho\AFOS-Tradeoff-Preview.html` define o visual e estrutura de 9 seções. Mantido fora do git como histórico.
 - **Memórias relacionadas:** `project_tradeoff_arquitetura_final.md`, `project_tradeoff_launch_sequence.md`, `feedback_tradeoff_implementation_preview_only.md`, `project_prediction_circle_benchmark.md`.
