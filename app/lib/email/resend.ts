@@ -148,6 +148,41 @@ export function sendDailyTeaser(to: string, data: {
   });
 }
 
+export function sendTradeoffTeaser(to: string, data: {
+  date: string;
+  locale: 'pt-BR' | 'en' | 'es';
+  title: string;
+  sinalDaSemana: string;
+  issueNumber: number;
+}, unsubscribeToken?: string): Promise<boolean> {
+  const localeLabels = {
+    'pt-BR': { subject: `AFOS Tradeoff — Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
+    'en':    { subject: `AFOS Tradeoff — Issue #${data.issueNumber}`,  cta: 'Read the Tradeoff', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
+    'es':    { subject: `AFOS Tradeoff — Edición №${data.issueNumber}`, cta: 'Leer el Tradeoff', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
+  } as const;
+  const L = localeLabels[data.locale];
+  const url = `${PUBLIC_URL}/${data.locale}/tradeoff/${data.date}`;
+  const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
+  // Strip markdown bold/links from sinalDaSemana for plain HTML preview
+  const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 400);
+
+  const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
+  <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.5rem;font-weight:700;">${data.title}</h1>
+  <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${sinalPlain}</p>
+  <a href="${url}" style="display:inline-block;padding:12px 24px;background-color:#0F52BA;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;">${L.cta} →</a>
+  <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0 1rem;" />
+  <p style="color:#94a3b8;font-size:0.8rem;margin:0;">${L.why} <a href="${PUBLIC_URL}" style="color:#94a3b8;">afos-analytics.com</a>. <a href="${unsubUrl}" style="color:#94a3b8;">${L.unsubscribe}</a>.</p>
+</div>`;
+
+  return send({
+    to,
+    subject: L.subject,
+    html,
+    unsubscribeToken,
+    replyTo: EMAIL_CONTACT,
+  });
+}
+
 export function sendSystemAlert(to: string, data: {
   type: string;
   message: string;
