@@ -180,19 +180,26 @@ function MarkdownInline({ text, isBlue }: { text: string; isBlue: boolean }) {
   )
 }
 
-function SummaryCards({ cards, isBlue }: { cards: SummaryCard[]; isBlue: boolean }) {
+function SummaryCards({ cards }: { cards: SummaryCard[]; isBlue: boolean }) {
+  // Summary cards SEMPRE em Sapphire Blue com letras brancas (pedido 24/Mai noite).
+  // Delta highlight: amarelo (em vez de verde) pra contrastar melhor com fundo azul.
+  const DELTA_COLOR_CARDS = {
+    up: 'text-yellow-300',
+    down: 'text-yellow-300',
+    flat: 'text-blue-200',
+  }
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-5 mb-8">
       {cards.map((card, i) => (
-        <div key={i} className={`rounded-lg p-4 ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-slate-50 border border-slate-200'}`}>
-          <div className={`text-[10px] font-bold tracking-wider uppercase mb-2 ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>
+        <div key={i} className="rounded-lg p-4 bg-primary border border-primary">
+          <div className="text-[10px] font-bold tracking-wider uppercase mb-2 text-blue-200">
             {card.label}
           </div>
-          <div className={`text-[22px] font-extrabold leading-tight mb-1 ${isBlue ? 'text-white' : 'text-slate-900'}`}>
+          <div className="text-[22px] font-extrabold leading-tight mb-1 text-white">
             {card.headline}{card.unit && <span className="text-sm font-extrabold">{card.unit}</span>}
           </div>
-          <div className={`text-xs font-semibold ${DELTA_COLOR[card.deltaDirection]}`}>{card.delta}</div>
-          <div className={`text-xs mt-1.5 leading-snug ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{card.desc}</div>
+          <div className={`text-xs font-semibold ${DELTA_COLOR_CARDS[card.deltaDirection]}`}>{card.delta}</div>
+          <div className="text-xs mt-1.5 leading-snug text-blue-100">{card.desc}</div>
         </div>
       ))}
     </div>
