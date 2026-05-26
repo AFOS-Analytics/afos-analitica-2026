@@ -131,7 +131,10 @@ export default function GlobalPage() {
 
   const liveCount = countries.filter(c => c.status === 'live').length;
   const totalVolume = countries.reduce((s, c) => s + (c.volumeUsd || 0), 0);
-  const volStr = totalVolume > 1e6 ? `$${(totalVolume / 1e6).toFixed(1)}M` : `$${(totalVolume / 1e3).toFixed(0)}K`;
+  const volStr =
+    totalVolume >= 1e9 ? `$${(totalVolume / 1e9).toFixed(2)}B`
+    : totalVolume >= 1e6 ? `$${(totalVolume / 1e6).toFixed(1)}M`
+    : `$${(totalVolume / 1e3).toFixed(0)}K`;
 
   return (
     <div className="min-h-screen bg-white">
@@ -150,7 +153,7 @@ export default function GlobalPage() {
             </div>
             <LangSwitcher current={locale} onSelect={handleLocaleChange} />
             <a href={`/${locale}/dashboard`} className="text-[11px] sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors">
-              {t('home.backToDashboard') || '← Dashboard'}
+              Dashboard
             </a>
           </div>
         </div>

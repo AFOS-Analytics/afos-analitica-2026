@@ -45,6 +45,7 @@ export function getCountryOpacity(volumeUsd: number): number {
  * Format volume for display: $1.2M, $500K, etc.
  */
 export function formatVolume(usd: number): string {
+  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(2)}B`;
   if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(1)}M`;
   if (usd >= 1_000) return `$${(usd / 1_000).toFixed(0)}K`;
   if (usd > 0) return `$${usd}`;
