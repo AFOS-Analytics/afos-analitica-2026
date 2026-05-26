@@ -182,8 +182,13 @@ export function AfosDailyTemplate({ data, nav }: Props) {
   const eyebrowColor = isBlue ? 'text-blue-200' : 'text-primary'
   const sublineColor = isBlue ? 'text-blue-100' : 'text-gray-600'
   const disclaimerColor = isBlue ? 'text-blue-200/70' : 'text-gray-400'
-  const ledeBorder = isBlue ? 'border-blue-300' : 'border-primary'
-  const ledeText = isBlue ? 'text-blue-50' : 'text-dark'
+  // Lede agora renderiza como BOX AMARELO HIGHLIGHT (Opção B firmada 26/Mai noite):
+  // - bg-yellow-100 + border-yellow-500 thick = highlight visual no topo do daily
+  // - Distinto do amber-50 mais suave da seção 4 Divergências (hierarquia: lede > divergências)
+  // - Mesma cor em ambos temas (yellow contrasta com white e Sapphire blue de fundo)
+  const ledeBg = 'bg-yellow-100'
+  const ledeBorder = 'border-yellow-500'
+  const ledeText = 'text-slate-900'
   const sectionBorder = isBlue ? 'border-blue-400/40' : 'border-blue-100'
   const sectionHeading = isBlue ? 'text-white' : 'text-primary'
   const bodyText = isBlue ? 'text-blue-50' : 'text-gray-700'
@@ -248,9 +253,9 @@ export function AfosDailyTemplate({ data, nav }: Props) {
           </aside>
         )}
 
-        {/* LEDE */}
+        {/* LEDE — box amarelo highlight (Opção B firmada 26/Mai) */}
         {data.lede && (
-          <div className={`border-l-4 ${ledeBorder} pl-5 py-2 mb-10`}>
+          <div className={`${ledeBg} border-l-4 ${ledeBorder} px-5 py-4 mb-10 rounded-r-lg`}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
