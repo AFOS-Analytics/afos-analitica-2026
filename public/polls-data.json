@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-26",
-  "lastSyncedAt": "2026-05-26T21:15:00-03:00",
+  "lastUpdate": "2026-05-27",
+  "lastSyncedAt": "2026-05-27T18:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -106,6 +106,41 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Indexa Pesquisas",
+      "date": "2026-05-27",
+      "sample": 2000,
+      "margin": 2,
+      "reliability": 3,
+      "method": "Online/painel",
+      "fieldDates": "maio de 2026 (publicada 27/Mai quarta via JOTA)",
+      "note": "Indexa Pesquisas nacional publicada 27/Mai quarta via JOTA. Confirma direção Datafolha 22/Mai (mesmo gap +9pp 1T). Cenários reportados em manchete: 1T Lula 39% × Flávio 30% gap +9pp Lula. 2T Lula 46% × Flávio 41% gap +5pp Lula. Confidence pelo TSE: 0.7. Credibilidade 3 (instituto registrado TSE, não Tier 1). Cobertura: JOTA 27/Mai principal.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41
+        }
+      ],
+      "source": "JOTA 27/Mai"
+    },
     {
       "institute": "Datafolha",
       "date": "2026-05-22",
@@ -407,7 +442,7 @@
     "results": {
       "aprovacao": 32,
       "desaprovacao": 68,
-      "nota": "Datafolha 22/Mai: aprovação Lula 32% ótimo/bom (↑4pp vs 28% anterior), rejeição 38% vs 41%. BTG/Nexus 25/Mai 2T 47×43 gap +4pp mantém. AtlasIntel 19/Mai: 2T 48.9%. Datafolha 16/Mai (anterior): 1T 38×35, 2T 45×45 empate. Calendário próximo: Datafolha qua 28/Mai n=1.022, AtlasIntel 28/Mai n=1.000, Real Time qua 27/Mai n=1.600, PoderData qui 29/Mai n=2.400."
+      "nota": "Datafolha 22/Mai: aprovação Lula 32% ótimo/bom (↑4pp vs 28% anterior), rejeição 38% vs 41%. Indexa 27/Mai: 1T Lula 39% × Flávio 30% gap +9pp (confirma direção Datafolha). BTG/Nexus 25/Mai 2T 47×43 gap +4pp. AtlasIntel 19/Mai 2T 48.9%. Real Time Big Data 27/Mai sugere chance vitória Lula em turno único. Calendário próximas 72h: Datafolha qua 28/Mai n=1.022, AtlasIntel 28/Mai n=1.000, PoderData qui 29/Mai n=2.400."
     },
     "historicalComparison": [
       {
@@ -462,7 +497,7 @@
         "odds": 27.75,
         "percentage": 31,
         "lastUpdate": "2026-05-23",
-        "value": "28.85"
+        "value": "28.75"
       },
       {
         "name": "Renan Santos",
@@ -473,7 +508,7 @@
         "odds": 11.95,
         "percentage": 5.3,
         "lastUpdate": "2026-05-23",
-        "value": "13.85"
+        "value": "14.15"
       },
       {
         "name": "Ronaldo Caiado",
@@ -506,7 +541,7 @@
         "odds": 4.65,
         "percentage": 4,
         "lastUpdate": "2026-05-23",
-        "value": "4.25"
+        "value": "3.45"
       },
       {
         "name": "Fernando Haddad",
@@ -517,7 +552,7 @@
         "odds": 4.65,
         "percentage": 0,
         "lastUpdate": "2026-05-23",
-        "value": "6.65"
+        "value": "5.75"
       }
     ],
     "updatedAt": "2026-05-25T22:30:00-03:00"
