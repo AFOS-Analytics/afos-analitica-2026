@@ -1,0 +1,64 @@
+{
+  "date": "2026-05-26",
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "Flávio Bolsonaro recebido por Trump na Casa Branca",
+        "verification1": "novidade — não aparece em dailies 19-25/Mai",
+        "verification2": "URL primária O Globo `2026/05/26/flavio-trump.ghtml` + G1 + Estadão (URLs com slug ISO date), 6 fontes independentes",
+        "secondSource": "G1 + Estadão (URLs 2026/05/26)",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Operação PF contra Cláudio Castro (Rioprevidência → Master)",
+        "verification1": "novidade",
+        "verification2": "O Globo `2026/05/26/operacao-da-pf-contra-claudio-castro...ghtml` + 8 matérias adicionais O Globo + Estadão",
+        "secondSource": "Estadão + Gazeta do Povo",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Tarcísio diz Flávio precisa explicar relação com Vorcaro",
+        "verification1": "novidade",
+        "verification2": "O Globo + G1 + Estadão (URLs 2026/05/26)",
+        "secondSource": "G1 + Estadão",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Soraya Thronicke declara apoio reeleição Lula",
+        "verification1": "novidade",
+        "verification2": "G1 (URL 2026/05/26)",
+        "secondSource": "single-source — tom observacional mantido",
+        "decision": "INCORPORAR (com tom observacional)"
+      },
+      {
+        "event": "TJ-RJ nega liminar CPI Master Alerj",
+        "verification1": "desdobramento — caso Master é continuidade (62 menções Vorcaro), mas decisão específica é nova",
+        "verification2": "Folha de S.Paulo 26/05/2026 Economia",
+        "secondSource": "single-source — atribuição texto-plano",
+        "decision": "INCORPORAR como desdobramento"
+      },
+      {
+        "event": "Estrategista 2018 deixa campanha Flávio",
+        "verification1": "novidade",
+        "verification2": "O Globo URL 2026/05/26",
+        "secondSource": "single-source — citação removida do final draft pra evitar atribuição fraca",
+        "decision": "REMOVIDO do draft final"
+      }
+    ],
+    "limitations": "WebFetch bloqueado por anti-bot em BBC/O Globo/G1/Estadão. Verificação 2 feita via análise do slug de URL primária (que contém data ISO 2026/05/26) + multi-source cross-check (≥3 veículos independentes confirmando cada evento). Fallback proporcional ao risco."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma (todas com 2+ fontes ou tom observacional)",
+    "numericalErrors": "reconcile-claims OK — discrepâncias são truncamentos regex sobre 13,85%/18,25%/72,50% e deltas pp (cálculos legítimos)",
+    "fontesInventadas": "verificadas 5 URLs primárias O Globo + G1 + Estadão com slug 2026/05/26 extraídas do news-cache",
+    "quotesLiterais": "apenas 'tem muitas questões que ele mesmo precisa explicar' (Tarcísio, 3 fontes) e 'presidente Lula' (ato falho Flávio, G1)",
+    "causaoEspuria": "movimento Polymarket atribuído a 'redistribuição técnica de outsiders zerados', NÃO a Trump-Flávio. Parágrafo especulativo Soraya→Zema REMOVIDO em revisão final.",
+    "verbosCriticos": "OK - 'preso' não usado; 'é alvo da PF' (Castro) correto para busca/apreensão; 'TJ-RJ negou liminar' com data exata",
+    "decision": "prosseguir para preview → aprovado → prod"
+  },
+  "editorialDecisions": [
+    "Lede e título redundantes removidos do body (template já renderiza do YAML)",
+    "Volume USD total agregado USD 92,54M incluído no lede e Seção 1 parágrafo 1",
+    "Parágrafo final Seção 1 (Zema/Caiado + causação Soraya) REMOVIDO após review do user — causação espúria + quebra de progressão narrativa"
+  ]
+}
