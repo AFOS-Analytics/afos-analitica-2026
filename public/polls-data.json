@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-27",
-  "lastSyncedAt": "2026-05-27T18:30:00-03:00",
+  "lastUpdate": "2026-05-28",
+  "lastSyncedAt": "2026-05-28T16:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -106,6 +106,39 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Meio/Ideia",
+      "date": "2026-05-28",
+      "sample": 1500,
+      "margin": 2.5,
+      "register": "BR-02918/2026",
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "2026-05-23 a 2026-05-27",
+      "note": "Meio/Ideia nacional publicada 28/Mai quinta (Poder360, Correio Braziliense, Gazeta do Povo, JB, Tribuna de Minas, Jornal de Brasília, Revista Fórum, Brasil de Fato 28/Mai). Inverteu cenário 2T vs rodada anterior do instituto (início Mai 45.3×44.7 Flávio numericamente liderava). Confirma direção Datafolha 22/Mai + Indexa 27/Mai — 3ª rodada Tier 1+2 do ciclo com gap +7pp ou superior 1T. Margem ±2.5pp 95% confiança. Quedas Flávio pós-Dark Horse: -19pp alta renda, -18pp centro-direita, -16pp jovens; 60.4% afirmam ter contato com tema. Protocolo TSE BR-02918/2026.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {"candidate": "Lula (PT)", "percent": 38.5},
+            {"candidate": "Flávio Bolsonaro (PL)", "percent": 31.5},
+            {"candidate": "Ronaldo Caiado (PSD)", "percent": 5.5},
+            {"candidate": "Romeu Zema (Novo)", "percent": 2.4},
+            {"candidate": "Renan Santos (Missão)", "percent": 2.1}
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46.5,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41.4
+        }
+      ],
+      "source": "Meio/Ideia via Poder360, Correio Braziliense, Gazeta do Povo, JB, Tribuna de Minas, Jornal de Brasília, Revista Fórum 28/Mai"
+    },
     {
       "institute": "Indexa Pesquisas",
       "date": "2026-05-27",
