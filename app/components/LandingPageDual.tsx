@@ -572,14 +572,23 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
         </div>
       </section>
 
-      {/* ─── Primary CTA: Access Dashboard (between Stats and Features) ──── */}
-      {/* Width matches a single product card (1/3 of grid on desktop, full width on mobile) */}
-      <div className="max-w-6xl mx-auto py-12 sm:py-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <a href={dashboardUrl} className={`md:col-start-2 block w-full font-semibold px-8 py-3.5 rounded-xl transition-all duration-500 text-center ${tk.ctaPrimary}`}>
-            {t.hero.cta}
-          </a>
-        </div>
+      {/* ─── Email signup (movido do CTA Final pra entre Stats e Features) ──── */}
+      <div className="max-w-2xl mx-auto py-12 sm:py-16 px-4 text-center">
+        <p className={`text-sm mb-4 transition-colors duration-500 ${tk.emailHint}`}>{t.cta.email}</p>
+        {subscribed ? (
+          <div className={`flex items-center justify-center gap-2 font-semibold ${tk.successColor}`}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            {t.cta.success}
+          </div>
+        ) : (
+          <div className="max-w-sm mx-auto">
+            <SubscribeForm
+              visitorId={visitorId}
+              captureSource="landing"
+              onSuccess={handleSubscribeSuccess}
+            />
+          </div>
+        )}
       </div>
 
       {/* ─── Features ────────────────────────────────────────── */}
@@ -630,24 +639,6 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           <a href={dashboardUrl} className={`inline-block mt-6 font-semibold px-10 py-4 rounded-xl transition-all duration-500 ${tk.ctaBtn}`}>
             {t.cta.button}
           </a>
-
-          <div className={`mt-12 pt-10 border-t transition-colors duration-500 ${tk.divider}`}>
-            <p className={`text-sm mb-4 transition-colors duration-500 ${tk.emailHint}`}>{t.cta.email}</p>
-            {subscribed ? (
-              <div className={`flex items-center justify-center gap-2 font-semibold ${tk.successColor}`}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                {t.cta.success}
-              </div>
-            ) : (
-              <div className="max-w-sm mx-auto">
-                <SubscribeForm
-                  visitorId={visitorId}
-                  captureSource="landing"
-                  onSuccess={handleSubscribeSuccess}
-                />
-              </div>
-            )}
-          </div>
         </div>
       </section>
 
