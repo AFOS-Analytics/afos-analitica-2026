@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: '/api/og?locale=pt-BR',
+        url: 'https://afos-analytics.com/brand/og-pt-linkedin-1200x627.png',
         width: 1200,
-        height: 630,
+        height: 627,
         alt: 'AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source',
       },
     ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source",
     description: "Inteligência de risco político eleitoral global: Polymarket, 17 institutos e notícias cruzados em tempo real. Open-source. Brasil 2026 e 14 países.",
-    images: ['/api/og?locale=pt-BR'],
+    images: ['https://afos-analytics.com/brand/og-pt-linkedin-1200x627.png'],
   },
   robots: {
     index: true,

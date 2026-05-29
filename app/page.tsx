@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     siteName: 'AFOS Analytics',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/api/og?locale=en', width: 1200, height: 630, alt: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source' }],
+    images: [{ url: 'https://afos-analytics.com/brand/og-en-linkedin-1200x627.png', width: 1200, height: 627, alt: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source',
     description: 'Global electoral political risk intelligence: Polymarket × 17 polling institutes × live news, cross-referenced in real time. Brazil 2026 + 14 countries.',
-    images: ['/api/og?locale=en'],
+    images: ['https://afos-analytics.com/brand/og-en-linkedin-1200x627.png'],
   },
 };
 

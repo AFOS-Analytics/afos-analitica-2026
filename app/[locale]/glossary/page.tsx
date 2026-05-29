@@ -102,6 +102,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       url: `https://afos-analytics.com/${locale}/glossary`,
       siteName: 'AFOS Analytics',
       locale,
+      images: [{ url: `https://afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: t.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.title,
+      description: t.subtitle,
+      images: [`https://afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`],
     },
   }
 }

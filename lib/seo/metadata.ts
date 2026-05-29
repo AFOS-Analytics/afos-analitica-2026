@@ -44,13 +44,13 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
       siteName: 'AFOS Analytics',
       locale: locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_US' : 'pt_BR',
       type: 'website',
-      images: [{ url: `/api/og?locale=${locale}`, width: 1200, height: 630, alt: seo.title }],
+      images: [{ url: `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: seo.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
-      images: [`/api/og?locale=${locale}`],
+      images: [`${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`],
     },
     other: {
       'geo.region': locale === 'pt-BR' ? 'BR' : locale === 'es' ? 'LATAM' : 'Global',
