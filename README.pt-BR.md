@@ -31,7 +31,7 @@ O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
 - **Noticias ao vivo** da grande imprensa
 - **Analises estrategicas** com inteligencia artificial
-- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente — publicada diariamente em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`
+- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente — **38 edicoes publicadas ate 29/Mai/2026** (D+15 do lancamento publico), em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`. Distribuicao por email para assinantes optados-in via Resend Pro
 - **AFOS Tradeoff** — leitura tecnica semanal publicada toda segunda, voltada para research institucional, buy-side e tesouraria. Cruza os mesmos tres sinais mas reporta **separadamente** (sem compostos de media ponderada) — quando mercado de previsao, pesquisa e noticia divergem, a divergencia *e* o sinal. Estruturada em 9 secoes (cards de resumo executivo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Publicada em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/tradeoff/[data]`. RSS: `/feed/tradeoff.xml`
 
 Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
@@ -81,7 +81,7 @@ Open source, Apache 2.0. Contribuições bem-vindas — veja [CONTRIBUTING.md](C
 - Bandeiras SVG (compativel com todos os dispositivos incluindo Windows)
 - Formulario de captura de lead integrado com sistema de visitor tracking
 - SEO otimizado com claim "Plataforma inedita no mundo" em metadata
-- **Fluxo de leitura (firmado 24/Mai/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → CTA "Acessar Dashboard" → Features. Permite que o usuario avalie produtos especificos antes de cair no CTA generico do dashboard. Links Daily / Tradeoff / Global sempre usam a rota indice (`/{locale}/daily`, `/{locale}/tradeoff`) — nunca data hardcoded — para que novas edicoes sejam auto-descobertas.
+- **Fluxo de leitura (revisado 29/Mai/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → Captura de email ("Ou receba análises semanais...") → Features → Países → CTA Final "Acessar Dashboard". A captura de leads subiu na página para converter antes do usuário rolar até depois das Features; CTA intermediario redundante removido (somente botões nav-topo e CTA Final permanecem). Links Daily / Tradeoff / Global sempre usam a rota indice (`/{locale}/daily`, `/{locale}/tradeoff`) — nunca data hardcoded — para que novas edicoes sejam auto-descobertas.
 - **Regra de design "cores invertidas":** componentes que precisam destacar do fundo da pagina invertem nos temas — tema light = componentes Sapphire Blue (cards, CTA, caixa do subtitle) com texto branco; tema Sapphire Blue = componentes brancos com texto cor primaria. Aplicado consistentemente em ProductsSection, CTA dashboard e caixa do subtitle do hero.
 
 ### Sistema de Captura de Leads (Visitor State)
