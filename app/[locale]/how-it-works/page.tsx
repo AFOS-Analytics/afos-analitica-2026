@@ -73,13 +73,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       publishedTime: '2026-04-19T12:00:00Z',
       modifiedTime: '2026-04-19T22:00:00Z',
       authors: ['AFOS Analytics'],
-      images: [{ url: `${BASE_URL}/api/og?locale=${loc}`, width: 1200, height: 630, alt: seo.title }],
+      images: [{ url: `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`, width: 1200, height: 627, alt: seo.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
-      images: [`${BASE_URL}/api/og?locale=${loc}`],
+      images: [`${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`],
     },
     robots: {
       index: true,
