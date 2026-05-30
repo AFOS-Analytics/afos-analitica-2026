@@ -88,7 +88,9 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualize `risk` com informações relevantes do dia
 - Atualize o % de impeachment STF se mudou (buscar "14.5%" ou valor atual)
 
-### 3.4 `public/polls-data.json` — Pesquisas no dashboard (REGRA DE FRESCOR + SCHEMA CANÔNICO)
+### 3.4 `public/polls-data.json` — Pesquisas no dashboard (ESCOPO NACIONAL + FRESCOR + SCHEMA CANÔNICO)
+
+**Guardrail #0 (escopo NACIONAL — firmado 12/Mai/2026, `memory/project_dashboard_polls_scope.md`):** o dashboard mostra APENAS pesquisas de escopo **nacional** (1º e 2º turnos). Pesquisas estaduais NUNCA entram em `polls-data.json` — vão exclusivamente pro `analysis-criteriosa.json` (cobertura jornalística) e Seção 2 do AFOS Daily. Existe runtime filter `isStatePoll` em `PollsSection.tsx` como belt-and-suspenders, mas a regra de origem é: só nacional no JSON.
 
 **Guardrail #1 (frescor — descoberto 04/Mai/2026, pesquisas Mar ficaram 2 meses no dashboard):**
 
@@ -96,7 +98,7 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Para cada entrada em `polls[]`:
   - Se `date` tem >30 dias: **REMOVER** (mover histórico para Neon via cron de persist; dashboard mostra só pesquisas ≤30 dias)
   - Se `date` ≤7 dias: manter
-  - Se 7-30 dias: avaliar caso a caso (manter se for nacional grande tipo AtlasIntel/Quaest, remover se for estadual de baixa relevância)
+  - Se 7-30 dias: avaliar caso a caso (manter se for nacional grande tipo AtlasIntel/Quaest). Estaduais NUNCA entram, independente de relevância (Guardrail #0 — vão pro Daily)
 - Adicionar pesquisas novas que apareceram desde último /atualizar (use os dados que `/atualizar-pesquisas` registrou no Neon, OU que apareceram no JSON `analysis-criteriosa.json` na seção de pesquisas)
 - **Sem inventar números**: cada pesquisa precisa ter números verificáveis em fonte primária (Bloomberg/G1/CNN/site do instituto). Se não conseguir confirmar números detalhados, mantenha estrutura mínima (apenas 1T sem detalhes 2T).
 - Atualizar `lastUpdate` para data de hoje (formato `YYYY-MM-DD`)
