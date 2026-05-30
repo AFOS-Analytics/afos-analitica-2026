@@ -4,14 +4,22 @@ Execute uma análise profunda cruzando TODAS as fontes e atualize o projeto para
 
 ## ETAPA 1: Coleta de dados Polymarket (ao vivo)
 
-Busque dados de TODOS os 6 mercados via WebFetch:
+**OBRIGATÓRIO — usar o proxy AFOS, NÃO o `gamma-api` direto.** O `gamma-api.polymarket.com` falha em ambiente local (ECONNREFUSED/ENOTFOUND, ver `memory/feedback_polymarket_local_dns_workaround.md`). O proxy server-side da Vercel resolve e retorna TODOS os 6 mercados numa única chamada:
 
-1. `https://gamma-api.polymarket.com/events?slug=brazil-presidential-election&limit=1` — Extraia TODOS os candidatos com yes price %
-2. `https://gamma-api.polymarket.com/events?slug=brazil-presidential-election-first-round-2nd-place&limit=1` — 2º lugar
-3. `https://gamma-api.polymarket.com/events?slug=brazil-presidential-election-first-round-3rd-place&limit=1` — 3º lugar
-4. `https://gamma-api.polymarket.com/events?slug=any-brazil-stf-justice-removed-by-impeachment-before-2027&limit=1` — STF impeachment
-5. `https://gamma-api.polymarket.com/events?slug=next-brazil-senate-election-most-seats-won&limit=1` — Senado
-6. `https://gamma-api.polymarket.com/events?slug=brazil-annual-inflation-2026&limit=1` — Inflação
+```bash
+curl -s "https://www.afos-analytics.com/api/polymarket"
+```
+
+A resposta traz 6 chaves: `presidential`, `secondPlace`, `thirdPlace`, `stf`, `senate`, `inflation` (+ `fetchedAt`, `degraded`, `failedCount`). Cada uma tem `markets[]` com `question`, `outcomePrices`, `outcomes`, `volumeNum`, `liquidityNum`.
+
+Mapa slug → chave (referência; o `gamma-api` direto só serve de fallback manual se o proxy cair):
+
+1. `brazil-presidential-election` → `presidential` — extraia TODOS os candidatos com yes price %
+2. `brazil-presidential-election-first-round-2nd-place` → `secondPlace`
+3. `brazil-presidential-election-first-round-3rd-place` → `thirdPlace`
+4. `any-brazil-stf-justice-removed-by-impeachment-before-2027` → `stf` (impeachment)
+5. `next-brazil-senate-election-most-seats-won` → `senate`
+6. `brazil-annual-inflation-2026` → `inflation`
 
 **Para cada mercado, extrair duas métricas:**
 
@@ -74,7 +82,7 @@ Com os dados coletados, atualize os 3 arquivos JSON:
   - **bancoMaster**: text1-3, conclusao
   - **stf**: toffoli, moraes, gilmar, dino, nexo, analise (incluir % impeachment atualizado)
 
-### 3.3 `app/page.tsx` — Perfil dos candidatos (linhas ~79-97)
+### 3.3 `app/components/CandidatesSection.tsx` — Perfil dos candidatos (array `candidates`, linhas ~10-82)
 - Atualize `polymarket` de cada candidato com % ao vivo
 - Atualize `poll` se houver pesquisa nova
 - Atualize `risk` com informações relevantes do dia
