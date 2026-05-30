@@ -58,7 +58,7 @@ Para cada um:
 **Self-check pré-deploy:**
 - [ ] Toda âncora narrativa passou por Verificação 2
 - [ ] Sem causação espúria entre evento e movimento Polymarket
-- [ ] Verbos críticos (codebook em `docs/operacao/codebook-verbos-criticos.md`) desambiguados
+- [ ] Verbos críticos (codebook inline na ETAPA 3.5 desta skill, tabela "Codebook verbos críticos") desambiguados
 - [ ] `npx tsx scripts/reconcile-claims.ts {date}` rodado (% do markdown bate com JSON)
 ```
 
@@ -138,13 +138,51 @@ Esse comando deve ser invocado em ETAPA 6 (após aprovação), nunca em ETAPA 2 
 Seguido de 6 seções obrigatórias:
 
 1. **Título + eyebrow** — "AFOS Daily · Síntese do Dia" + data por extenso
-2. **Lede (blockquote)** — 2-3 linhas bold que capturam os 3 movimentos mais relevantes
+2. **Lede — SOMENTE no YAML frontmatter** (campo `lede`) — o `AfosDailyTemplate.tsx` já renderiza automaticamente como bloco prominent. NÃO repetir como blockquote `>` no body (duplica em 2 blocos visuais: azul do YAML + amarelo do body — regra firmada 25/Mai/2026, `feedback_daily_no_body_blockquote_duplicating_lede.md`). Blockquote `>` é usado APENAS na Seção 4 (Divergências).
 3. **1. Mercado de previsão** — 4-5 parágrafos cobrindo: presidencial (Flávio × Lula + gap), 3ª via (Zema + Renan), 2º lugar, STF impeach, Senado, inflação
 4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver. **No FIM da seção, sub-bloco obrigatório "Calendário de pesquisas — próximos 7 dias"** (ver ETAPA 2.5 abaixo).
 5. **3. O que a imprensa cobriu** — 3-4 parágrafos: dinâmica governo, dinâmica oposição, pauta institucional, observações
 6. **4. Divergências do dia** — box amarelo com 2-3 observações de onde mercado ≠ pesquisa ≠ notícia. **REGRA (a partir de 29/Abr/2026):** usar **blockquote markdown** (`>`) em cada parágrafo da seção, NÃO `<div class="box-divergencia">`. O template renderiza `react-markdown` sem `rehype-raw`, então HTML inline é ignorado — apenas blockquote captura o estilo amber/yellow definido em `AfosDailyTemplate.tsx` (linha 192). Exemplo correto: `> **Mercado × pesquisa:** ...` (separar parágrafos com `>` em linha vazia entre eles). Dailies anteriores (22-28/Abr) ficam como histórico, não retroagir.
 7. **Em síntese** — 3 bullets numerados com observações-chave
-8. **Rodapé** — fontes citadas + método + links
+8. **Rodapé — "## Fontes consultadas"** — ver estrutura canônica obrigatória logo abaixo
+
+### Estrutura canônica do rodapé — "## Fontes consultadas" (NÃO-NEGOCIÁVEL, firmada 26/Mai/2026)
+
+Regra completa em `feedback_afos_daily_fontes_consultadas_template.md`. O fim do `.md` segue EXATAMENTE este formato (ler uma daily recente em `public/afos-daily/` antes de redigir):
+
+```markdown
+---
+
+## Fontes consultadas
+
+**matérias com link direto para a notícia (veículos âncora):**
+
+- [Veículo — Título da matéria](URL primária)
+- ...
+
+**matérias secundárias (URL Google News redirect — clique resolve à matéria):**
+
+- [Veículo — Título da matéria](URL Google News redirect completa do news-cache)
+- ...
+
+**Fontes técnicas:** [Polymarket](https://polymarket.com/event/brazil-presidential-election) (cotações ao vivo via proxy AFOS, fetched DD/MMM HH:MM BRT), [registro TSE](https://divulgacandcontas.tse.jus.br/divulga/) (pesquisas eleitorais oficiais).
+
+---
+
+**Fontes citadas:** Polymarket, TSE (registro público), [lista plain de veículos sem links — SEM markdown].
+
+**Método:** Síntese gerada com assistência de IA cruzando mercados de previsão, pesquisas registradas no TSE e cobertura editorial. Cada alegação factual linka diretamente à fonte primária. Fonte do método e código aberto em afos-analytics.com.
+
+**Histórico:** Síntese DD de mês disponível em /pt-BR/daily/YYYY-MM-DD. Arquivo completo em /pt-BR/daily.
+```
+
+Regras inflexíveis do rodapé:
+- Seção `## Fontes consultadas` é OBRIGATÓRIA no body, antes do separador final. NUNCA omitir.
+- Os 2 sub-blocos (âncora + secundárias) sempre presentes; cada bullet no formato `- [Veículo — Título](URL)`.
+- Bloco `**Fontes técnicas:**` sempre presente após os 2 sub-blocos (Polymarket + TSE linkados).
+- Linha plain `**Fontes citadas:**` mantida APÓS o separador final, SEM markdown links (URL gate bloqueia) — extraída pelo loader pro footer.
+- Linhas `**Método:**` e `**Histórico:**` sempre presentes após "Fontes citadas:".
+- NÃO modificar `AfosDailyTemplate.tsx` pra renderizar markdown no footer — template é fixo.
 
 ## ETAPA 2.5: Sub-bloco "Calendário de pesquisas — próximos 7 dias" (no fim da Seção 2)
 
@@ -163,7 +201,7 @@ Seguido de 6 seções obrigatórias:
 
 4. **Link no protocolo:** cada protocolo TSE linkado à consulta pública `https://divulgacandcontas.tse.jus.br/divulga/` (em PT, EN e ES).
 
-5. **Parágrafo de fonte abaixo da tabela** linkando "TSE" → `https://www.tse.jus.br/eleicoes/pesquisas/pesquisas`.
+5. **Parágrafo de fonte abaixo da tabela** linkando "TSE" → `https://divulgacandcontas.tse.jus.br/divulga/`.
 
 ### Template markdown obrigatório
 
@@ -177,7 +215,7 @@ Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]
 | **DD/Mai** | **Instituto 🔥** | **n** | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 | DD/Mai | Instituto | n | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 
-Fonte: registro público [TSE](https://www.tse.jus.br/eleicoes/pesquisas/pesquisas) via API AFOS. 🔥 destaca amostras ≥ 3.000. Status "registrada ≠ publicada" — confirmação de divulgação efetiva exige verificação de duas fontes primárias antes da citação de números.
+Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) via API AFOS. 🔥 destaca amostras ≥ 3.000. Status "registrada ≠ publicada" — confirmação de divulgação efetiva exige verificação de duas fontes primárias antes da citação de números.
 ```
 
 ### Tradução EN/ES
@@ -213,9 +251,11 @@ Mantidas rigorosamente do piloto 22/Abr:
 
 Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de URLs específicas, gamma-api em vez de polymarket.com/event). PreToolUse hook `precommit-afos-daily-urls.py` bloqueia Write automaticamente se detectar violações críticas.
 
-### REGRA 30/70 (definitiva — firmada 08/Mai/2026, vale PT-BR/EN/ES)
+### REGRA DE FONTES — mínimo 50% secundário (refinada 09/Mai/2026, supersede o 30/70 de 08/Mai; vale PT-BR/EN/ES)
 
-> **30% veículos âncora via RSS direto + 70% veículos secundários via Google News redirect**
+> **≥50% veículos secundários via Google News redirect (acesso aberto) + ≤50% veículos âncora via RSS direto. Alvo operacional: 50–70% secundário.**
+
+**Razão do refinamento (09/Mai, `project_afos_daily_template_definitivo.md`):** veículos âncora prestigiados têm paywall pesado (Folha/Globo/Estadão/Valor) que bloqueia leitor não-assinante, especialmente do exterior. Secundários replicam o conteúdo com acesso aberto. O 30/70 inicial (08/Mai) já priorizava acessibilidade; o piso virou ≥50% secundário, podendo ir a 60–70%. O que NÃO pode é âncora virar maioria (síntese predominante paywall).
 
 **Veículos âncora (~30% das citações, RSS direto preserva URL primária):**
 - Folha de S.Paulo · O Globo · G1 · Estadão · Valor · VEJA
@@ -223,12 +263,12 @@ Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de U
 **Veículos secundários (~70% das citações, Google News redirect):**
 - Poder360 · CartaCapital · InfoMoney · Brasil 247 · Imirante · Diário Carioca · CNN Brasil · Gazeta do Povo · Hora do Povo · Jornal O Sul · UOL Notícias · Correio Braziliense · Diário do Centro do Mundo · BBC News Brasil · Estado de Minas · etc.
 
-**Tolerância:** ±10pp aceitável (target 30/70, real 38/62 em 08/Mai = OK). Razão: prioriza diversidade de cobertura preservando credibilidade institucional dos âncoras.
+**Tolerância:** alvo 50–70% secundário; não cair abaixo de 50% secundário. Razão: prioriza acessibilidade (acesso aberto) sem perder a credibilidade institucional dos 30–50% âncora.
 
 **Operacionalização:**
 - Items com `qid` começando em `prestige-` no cache `public/news-cache/{YYYY-MM-DD}.json` são âncora (URL primária do RSS direto)
 - Items das queries Google News (`eleicoes-2026`, `flavio-lula`, `master-vorcaro`, `pesquisas`, `aprovacao`, `estaduais`) são secundários (Google News redirect)
-- Mirar 30% prestígio + 70% secundário ao construir parágrafos da síntese
+- Mirar 50–70% secundário (acesso aberto) + 30–50% prestígio âncora ao construir parágrafos da síntese
 - **Seção "Fontes consultadas" SEPARADA em 2 blocos:**
   - "Matérias com link direto para a notícia" — primárias âncora
   - "Matérias secundárias (URL Google News redirect — clique resolve à matéria)" — secundárias
