@@ -1,0 +1,20 @@
+{
+  "date": "2026-05-30",
+  "factCheckGate": {
+    "eventos": [
+      { "evento": "Moro lança pré-candidatura PR com Flávio", "verif1": "Moro recorrente (25/Mai)", "verif2": "Poder360 + CNN confirmam ato em 29/Mai (não 30/Mai)", "decisao": "incorporar datado 29/Mai (continuidade, não novidade)" },
+      { "evento": "Aliados pedem PGR investigar Flávio por atentado à soberania", "verif1": "soberania 0 menções (novo)", "verif2": "single-source (só Estadão, corpo não verificável); WebSearch não corroborou", "decisao": "NÃO incorporar (UNVERIFIED)" },
+      { "evento": "Lula discurso de soberania pós-decisão EUA PCC/CV", "verif1": "continuidade EUA/PCC", "verif2": "g1 + Poder360 confirmam (29/Mai)", "decisao": "incorporar como continuidade 29/Mai" },
+      { "evento": "Vox SP 2T empate / Tarcísio 48,3% x Haddad 36,5%", "verif1": "n/a", "verif2": "Poder360 + Gazeta Brasil (múltiplas)", "decisao": "incorporar como contexto estadual" }
+    ]
+  },
+  "adversarialPass": {
+    "singleSource": "nenhuma (PGR-soberania removida)",
+    "numericalErrors": "OK — candidatos batem com polls-data.json/analysis-criteriosa.json",
+    "fontesInventadas": "não — g1, Poder360, CNN com URLs verificadas",
+    "quotesLiterais": "'não aceitamos ser tratados como moleques' confirmada (g1/Poder360)",
+    "causacaoEspuria": "nenhuma — Renan/Haddad marcados como leitura técnica sem trigger",
+    "verbosCriticos": "OK — Moro 'lançou' datado 29/Mai; Vorcaro 'em fase de parecer' (não 'PF investiga/decidiu')",
+    "decisao": "prosseguir para preview"
+  }
+}
