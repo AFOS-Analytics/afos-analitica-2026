@@ -22,8 +22,17 @@ import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendDailyTeaser } from '../app/lib/email/resend'
 
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
-const BATCH_SIZE = 50
-const BATCH_DELAY_MS = 1000
+
+// Adaptive throttle (firmed 30/Mai pós-EVAL D+15 — incidente 22/Mai broadcast bateu 429
+// em 8/13 envios, retries absorveram. Acima de 30 leads cai abrupto. Tier Resend 10/s).
+function pickThrottle(leadCount: number): { batchSize: number; batchDelayMs: number; interSendMs: number } {
+  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 200 }
+  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 120 }
+  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 100 }
+  return { batchSize: 50, batchDelayMs: 1000, interSendMs: 0 } // base atual, sem regressão
+}
+
+function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
 
 type Locale = 'pt-BR' | 'en' | 'es'
 const LOCALE_SUFFIX: Record<Locale, string> = { 'pt-BR': '', 'en': '.en', 'es': '.es' }
@@ -93,11 +102,16 @@ async function main() {
   let failed = 0
   let skipped = 0
 
+  const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
+  console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
+  console.log()
+
   for (let i = 0; i < leads.length; i += BATCH_SIZE) {
     const batch = leads.slice(i, i + BATCH_SIZE)
     console.log(`📤 Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(leads.length / BATCH_SIZE)} (${batch.length} emails)...`)
 
-    const results = await Promise.all(batch.map(async (lead) => {
+    const results = await Promise.all(batch.map(async (lead, idx) => {
+      if (INTER_SEND_MS > 0 && idx > 0) await sleep(INTER_SEND_MS * idx)
       // Resolve locale: preferredLocale (set via /welcome) takes priority.
       // Fallback to signup-time locale (accept-language inference) → fallback 'en'.
       const raw = (lead.preferredLocale || lead.locale || 'en').toLowerCase()

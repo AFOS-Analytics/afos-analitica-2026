@@ -14,9 +14,13 @@ async function tryClaimSession(visitorId: string): Promise<boolean> {
   if (!url || !token) return true
 
   try {
+    const controller = new AbortController()
+    const timeout = setTimeout(() => controller.abort(), 3000)
     const res = await fetch(`${url}/set/afos:session:active:${visitorId}/1/ex/${SESSION_DEDUP_TTL}/nx`, {
       headers: { Authorization: `Bearer ${token}` },
+      signal: controller.signal,
     })
+    clearTimeout(timeout)
     if (!res.ok) return true
     const data = await res.json()
     return data?.result === 'OK'

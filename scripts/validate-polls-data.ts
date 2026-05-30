@@ -76,6 +76,49 @@ data.polls.forEach((p: any, idx: number) => {
   })
 })
 
+// Hardening firmed 30/Mai pós-EVAL D+15: validar approvalData e polymarketComparison.
+// Antes, regressões nessas seções passavam pelo gate de pre-commit e quebravam dashboard
+// em ApprovalSection ou candidate cards.
+if (data.approvalData !== undefined) {
+  const ad = data.approvalData
+  if (typeof ad !== 'object' || ad === null) {
+    errors.push(`approvalData: deve ser objeto (got ${typeof ad})`)
+  } else {
+    if (ad.results !== undefined) {
+      if (typeof ad.results !== 'object' || ad.results === null) {
+        errors.push(`approvalData.results: deve ser objeto`)
+      } else {
+        if (typeof ad.results.aprovacao !== 'number') errors.push(`approvalData.results.aprovacao: deve ser number`)
+        if (typeof ad.results.desaprovacao !== 'number') errors.push(`approvalData.results.desaprovacao: deve ser number`)
+        const sum = (ad.results.aprovacao || 0) + (ad.results.desaprovacao || 0)
+        if (sum > 101 || sum < 99) warnings.push(`approvalData.results: aprovacao + desaprovacao = ${sum} (esperado ≈100)`)
+      }
+    }
+    if (ad.historicalComparison !== undefined && !Array.isArray(ad.historicalComparison)) {
+      errors.push(`approvalData.historicalComparison: deve ser array`)
+    }
+  }
+}
+
+if (data.polymarketComparison !== undefined) {
+  const pc = data.polymarketComparison
+  if (typeof pc !== 'object' || pc === null) {
+    errors.push(`polymarketComparison: deve ser objeto`)
+  } else if (pc.candidates !== undefined) {
+    if (!Array.isArray(pc.candidates)) {
+      errors.push(`polymarketComparison.candidates: DEVE ser array (got ${typeof pc.candidates})`)
+    } else {
+      pc.candidates.forEach((c: any, i: number) => {
+        const cl = `polymarketComparison.candidates[${i}] (${c?.name || 'sem-nome'})`
+        if (typeof c?.name !== 'string') errors.push(`${cl}: name ausente/inválido`)
+        if (typeof c?.polymarket !== 'string') errors.push(`${cl}: polymarket deve ser string (formato 'XX.XX%')`)
+        if (c?.odds !== undefined && typeof c.odds !== 'number') errors.push(`${cl}: odds deve ser number quando presente`)
+        if (c?.percentage !== undefined && typeof c.percentage !== 'number') errors.push(`${cl}: percentage deve ser number quando presente`)
+      })
+    }
+  }
+}
+
 if (warnings.length > 0) {
   console.warn(`⚠️  ${warnings.length} warning(s):`)
   warnings.forEach(w => console.warn(`   ${w}`))
@@ -88,4 +131,4 @@ if (errors.length > 0) {
   process.exit(1)
 }
 
-console.log(`✅ polls-data.json OK — ${data.polls.length} entradas validadas`)
+console.log(`✅ polls-data.json OK — ${data.polls.length} entradas validadas + approvalData + polymarketComparison`)

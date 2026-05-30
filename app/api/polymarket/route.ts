@@ -62,6 +62,18 @@ async function fetchEvent(slug: string) {
           }
         }
 
+        // Hardening firmed 30/Mai pós-EVAL D+15: shape validation pós-parse.
+        // Polymarket gamma-api ocasionalmente retorna objeto ao invés de array após mudanças de schema.
+        // Dashboard ficaria silenciosamente quebrado (PollsSection / CandidatesSection .map em não-array).
+        if (!Array.isArray(outcomePrices)) {
+          console.error(`[polymarket] outcomePrices not array after parse for slug=${slug}, got:`, typeof outcomePrices);
+          outcomePrices = [];
+        }
+        if (!Array.isArray(outcomes)) {
+          console.error(`[polymarket] outcomes not array after parse for slug=${slug}, got:`, typeof outcomes);
+          outcomes = [];
+        }
+
         return {
           question: m.question,
           outcomePrices,
