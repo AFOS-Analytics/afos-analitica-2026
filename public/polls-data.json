@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-05-29",
-  "lastSyncedAt": "2026-05-29T18:00:00-03:00",
+  "lastUpdate": "2026-05-30",
+  "lastSyncedAt": "2026-05-30T17:30:00-03:00",
   "institutes": [
     {
       "name": "Datafolha",
@@ -420,52 +420,6 @@
           "percent2": 43
         }
       ]
-    },
-    {
-      "institute": "AtlasIntel/Bloomberg",
-      "date": "2026-04-28",
-      "sample": 5008,
-      "margin": 1,
-      "register": "BR-04227/2026",
-      "reliability": 4,
-      "method": "Online/Big Data",
-      "fieldDates": "2026-04-22 a 2026-04-27",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 46.6
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 39.7
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 5.3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3.3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 3.1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 47.8,
-          "candidate2": "Lula",
-          "percent2": 47.5
-        }
-      ]
     }
   ],
   "approvalData": {
@@ -507,18 +461,18 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 29/Mai/2026 18:00 BRT (D+15 launch AFOS, /atualizar pós-PoderData/AYA + EUA classificam PCC/CV terroristas)",
-    "sources": "PoderData/AYA 29/Mai n=2.400 BR048822026 (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). AtlasIntel RN 29/Mai (CartaCapital, Poder360, Revista Fórum). JOTA Agregador 29/Mai síntese 11 institutos. Meio/Ideia 28/Mai BR-02918/2026 n=1.500 (Poder360, Folha, CNN, Gazeta do Povo, JB). Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum). AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor). Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. AtlasIntel/Bloomberg 28/Abr n=5008. Polymarket (ao vivo fetchedAt 29/Mai 21:00 UTC).",
+    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 30/Mai/2026 17:30 BRT (D+16 launch AFOS, /atualizar: sem pesquisa nacional nova, movimento Polymarket Renan/Haddad)",
+    "sources": "PoderData/AYA 29/Mai n=2.400 BR048822026 (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). Meio/Ideia 28/Mai BR-02918/2026 n=1.500 (Poder360, Folha, CNN, Gazeta do Povo, JB). Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum). AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor). Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 30/Mai 20:14 UTC).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38.5-47%",
         "polymarket": "40.50%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai: EMPATE técnico 2T Lula × Flávio (CNN, Oeste, EM) — primeiro Tier 1+2 do ciclo cenário 2T mais apertado. Meio/Ideia 28/Mai 1T 38.5% × Flávio 31.5% gap +7pp; 2T 46.5%×41.4% gap +5.1pp. Indexa 27/Mai 1T 39%×30% gap +9pp; 2T 46%×41% gap +5pp. Datafolha 22/Mai 1T 40%×31% gap +9pp; 2T 47%×43% gap +4pp; cenário Michelle 48%×43% gap +5pp. Vox 20/Mai 2T 46.8% gap +8.7pp. AtlasIntel 19/Mai 1T 47% / 2T 48.9%. AtlasIntel RN 29/Mai: PT à frente governo+Senado. JOTA Agregador 29/Mai: favoritismo Lula em pico do ciclo.",
-        "tendenciaPolymarket": "DEVOLVE 40.50% (↓1.00pp 24h vs 41.50% véspera, vol USD 5.98M acumulado) — devolve totalidade ganho da véspera. Gap Lula × Flávio ESTREITA pra +11.85pp. 2L Lula 10.50% estável. STF impeach 5.45% estável 3º dia (vol USD 79k baixo). PT Senado 2.90% estável. EUA classificam PCC/CV terroristas — bandeira Flávio (BBC, G1, O Globo). PoderData/AYA 29/Mai cenário menos favorável a Lula. Pacheco encerra carreira política (G1) frustra projeto PT MG.",
+        "tendenciaPolymarket": "Estável 40.50% (↔ 24h, vol USD 5.99M acumulado). Gap Lula × Flávio mantém +11.85pp. 2L Lula 9.50%. STF impeach 5.45% estável (vol USD 80k baixo). Sem pesquisa nacional nova em 30/Mai. Aliados de Lula pedem que a PGR investigue Flávio por atentado à soberania após decisão dos EUA sobre PCC/CV (Estadão 30/Mai). Mantido PoderData/AYA 29/Mai cenário menos favorável a Lula; Pacheco encerra carreira (G1) frustra projeto PT em MG.",
         "odds": 40.5,
         "percentage": 38.5,
-        "lastUpdate": "2026-05-29",
+        "lastUpdate": "2026-05-30",
         "value": "40.50"
       },
       {
@@ -526,32 +480,32 @@
         "pesquisaRange": "30-34.3%",
         "polymarket": "28.65%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE técnico 2T com Lula (CNN, Oeste 29/Mai) — primeiro Tier 1+2 do ciclo cenário menos pior. Meio/Ideia 28/Mai 1T 31.5% gap -7pp; 2T 41.4% gap -5.1pp; quedas -19pp alta renda, -18pp centro-direita, -16pp jovens. Indexa 27/Mai 1T 30% gap -9pp; 2T 41% gap -5pp. Datafolha 22/Mai 1T 31% gap -9pp; 2T 43% gap -4pp; rejeição 46% supera Lula 45% pela 1ª vez. Vox 20/Mai 2T 38.1% rejeição 49.2%. AtlasIntel 19/Mai 1T 34.3% rejeição 52%. Em PE Lula abre 32pp (Jamildo 29/Mai).",
-        "tendenciaPolymarket": "ESTÁVEL 28.65% (↔ 24h, vol USD 6.10M acumulado). Gap Lula ESTREITA +11.85pp porque Lula devolveu ganho. 2L 60.50% topo absoluto. 🔥 SENADO PL RECUPERA 67.50% (↑9.00pp 24h vs 58.50% véspera). 🌎 EUA classificam PCC/CV terroristas (BBC, G1, O Globo, Estadão) — bandeira Flávio pediu 28/Mai. Mitigantes triplos: porta-voz EUA NEGA influência Flávio (G1, Estadão); Valor 'NÃO reverte crise Master'; PF envia parecer PGR investigar remessa Vorcaro EUA a pedido de Flávio (Valor). Castro confirma desistência Senado RJ (Congresso em Foco). MICHELLE CEDE 1.05% (↓0.60pp 24h).",
+        "tendenciaPolymarket": "Estável 28.65% (↔ 24h, vol USD 6.13M acumulado). Gap Lula × Flávio mantém +11.85pp. 2L Flávio 62.00% topo absoluto (↑1.50pp). 🔥 SENADO PL sobe 68.00% (↑0.50pp 24h). Moro se lança no PR ao lado de Flávio e ataca Lula (Folha 30/Mai). Aliados de Lula pedem que a PGR investigue Flávio por atentado à soberania (Estadão 30/Mai). Mantido 29/Mai: EUA classificam PCC/CV terroristas; porta-voz EUA NEGA influência Flávio (G1, Estadão); Valor 'NÃO reverte crise Master'; PF parecer PGR remessa Vorcaro (Valor). MICHELLE segue caindo 0.65% (↓0.40pp 24h).",
         "odds": 28.65,
         "percentage": 31.5,
-        "lastUpdate": "2026-05-29",
+        "lastUpdate": "2026-05-30",
         "value": "28.65"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2.1-5.3%",
-        "polymarket": "15.60%",
+        "polymarket": "17.20%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai sem destaque. Meio/Ideia 28/Mai 1T Renan 2.1% (divergência Polymarket × pesquisa de 13pp absolutos). Indexa 27/Mai sem destaque. Datafolha 22/Mai sem destaque. Vox/AtlasIntel 20/Mai não destacam. AtlasIntel 28/Abr 5.3%. Real Time Big Data 05/Mai 1T 3%.",
-        "tendenciaPolymarket": "Consolida 15.60% (↑0.55pp 24h vs 15.05% véspera, vol USD 6.08M acumulado) — 4º dia consecutivo de alta. Mantém SEGUNDO presidencial Poly acima Haddad 6.45%, Zema 2.75%, Caiado 1.35%, Michelle 1.05%. MICHELLE CEDE 1.05% (↓0.60pp 24h, total ↓1.85pp 48h) narrativa substituição se esvazia. Eduardo Leite (Novo) 'Há espaço para alternativa' (VEJA 29/Mai); Aécio aceno Ciro Gomes (VEJA 29/Mai) — fragmentação 3ª via centro intensifica.",
-        "odds": 15.6,
+        "tendenciaPolymarket": "Acelera 17.20% (↑1.60pp 24h vs 15.60% véspera, vol USD 6.19M acumulado) — 5º dia consecutivo de alta, maior salto diário da série, sem evento triggador claro em 30/Mai (leitura técnica). Consolida SEGUNDO presidencial Poly acima de Haddad 5.20%, Zema 2.55%, Caiado 1.35%. 2L Renan 17.20%; 3L 41.50% (favorito a 3º lugar). Divergência Polymarket × Meio/Ideia 1T 2.1% agora ~15pp absolutos, ponto mais largo do dashboard. MICHELLE segue caindo 0.65%, abre espaço para o outsider de direita.",
+        "odds": 17.2,
         "percentage": 2.1,
-        "lastUpdate": "2026-05-29",
-        "value": "15.60"
+        "lastUpdate": "2026-05-30",
+        "value": "17.20"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5.5%",
         "polymarket": "1.35%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE Lula × Caiado 2T (CNN, Oeste). Meio/Ideia 28/Mai 1T Caiado 5.5% LIDERA 3ª via. Indexa 27/Mai sem destaque. Datafolha 22/Mai não destaca. Quaest 13/Mai Caiado 4% × Zema 4% empate técnico 1T. 2T Caiado 42% × Lula 43% empate (Estadão 05/Mai). AtlasIntel 28/Abr 3.3%.",
-        "tendenciaPolymarket": "1.35% (↓0.10pp 24h vs 1.45% véspera, vol USD 3.45M acumulado) — não capitalizou empate PoderData/AYA 2T como ganho individual. PSD Senado CEDE 16.50% (↓1.80pp 24h vs 18.30% véspera). Caiado declara decisão EUA facções 'deveria ter sido tomada mais cedo pelo governo BR' (G1 29/Mai) — posicionamento tardio 24h após Flávio.",
+        "tendenciaPolymarket": "Estável 1.35% (↔ 24h, vol USD 3.48M acumulado) — não converteu o empate PoderData/AYA 2T em ganho individual. 3L Caiado 13.00%. PSD Senado recua a 7.45% em book fino e volátil (leitura cautelosa). Mantido 29/Mai: Caiado diz que a decisão dos EUA sobre facções 'deveria ter sido tomada mais cedo pelo governo BR' (G1), posicionamento tardio.",
         "odds": 1.35,
         "percentage": 5.5,
-        "lastUpdate": "2026-05-29",
+        "lastUpdate": "2026-05-30",
         "value": "1.35"
       },
       {
@@ -559,35 +513,35 @@
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai não destaca Tarcísio nacional. Meio/Ideia 28/Mai não destaca. Datafolha/Indexa/Vox/AtlasIntel não destacam presidencial Tarcísio. Tarcísio SP 47.3% (Poder360 22/Mai); foco reeleição SP. Vox SP gov Tarcísio 38% × Haddad 26%.",
-        "tendenciaPolymarket": "Estável 0.15% (vol USD 12.29M maior volume mercado mas precificação baixíssima anomalia). 🔥 PL Senado RECUPERA 67.50% (↑9.00pp 24h). Republicanos Senado 2.75% (vol baixo). Haddad cola decisão PCC/CV em Tarcísio: 'Deram um tiro no pé' (O Globo 29/Mai).",
+        "tendenciaPolymarket": "Estável 0.15% (vol USD 12.31M, maior volume do mercado mas precificação baixíssima, anomalia). 🔥 PL Senado sobe 68.00% (↑0.50pp 24h). Vox SP 30/Mai 2T estadual: Tarcísio 48.3% × Haddad 36.5% (Poder360) amplia favoritismo na reeleição. Mantido Haddad enquadra decisão PCC/CV como problema para Tarcísio (O Globo 29/Mai).",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-05-29",
+        "lastUpdate": "2026-05-30",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2.4-4%",
-        "polymarket": "2.75%",
+        "polymarket": "2.55%",
         "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE Lula × Zema 2T (CNN, Oeste). Meio/Ideia 28/Mai 1T Zema 2.4% (menor que Caiado 5.5% validando lógica vice). Indexa 27/Mai sem destaque. Datafolha 22/Mai não destaca. Vox/AtlasIntel 20/Mai não destacam. Quaest 13/Mai Zema 4% empate Caiado. Zema 'página virada' não houve ruptura (Estadão 16/Mai). AtlasIntel 28/Abr 3.1%.",
-        "tendenciaPolymarket": "CEDE 4º dia consecutivo 2.75% (↓0.10pp 24h vs 2.85% véspera, vol USD 3.12M) — total ↓2.30pp em 4 dias desde 25/Mai. NOVO Senado CEDE 0.90% (↓0.10pp 24h). Eduardo Leite (Novo) 'Há espaço para alternativa' (VEJA 29/Mai) — competição interna Novo dilui base solo Zema. INFLAÇÃO 2026 calda gorda VOLTA todas as bandas (5.00-5.49% dispara 37.75% ↑7.15pp; 5.50-5.99% 25.60% ↑4.20pp; 6.00-6.49% 22.25% ↑4.40pp) pode reanimar discurso fiscal Zema estrutural.",
-        "odds": 2.75,
+        "tendenciaPolymarket": "CEDE 5º dia consecutivo 2.55% (↓0.20pp 24h vs 2.75% véspera, vol USD 3.17M) — total ↓2.50pp em 5 dias desde 25/Mai. 2L Zema 3.50%; 3L 17.00% (vice-favorito a 3º atrás de Renan). Mantido Eduardo Leite (Novo) 'há espaço para alternativa' (VEJA 29/Mai) — competição interna dilui base solo Zema. INFLAÇÃO 2026: banda modal 5.00-5.49% sobe a 40.55% (↑2.80pp), curva concentrada na faixa 5-6%, pode reanimar discurso fiscal Zema estrutural.",
+        "odds": 2.55,
         "percentage": 2.4,
-        "lastUpdate": "2026-05-29",
-        "value": "2.75"
+        "lastUpdate": "2026-05-30",
+        "value": "2.55"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "6.45%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai não destaca cenário principal. Meio/Ideia 28/Mai não destaca. Indexa 27/Mai sem destaque. Reverberação Datafolha 23/Mai não destaca. Mantida Vox SP Tarcísio 38% × Haddad 26%; Líder PSB defende Haddad SP (Congresso em Foco 22/Mai). Pacheco fora MG impacta projeto PT estadual.",
-        "tendenciaPolymarket": "Recupera 6.45% (↑0.25pp 24h vs 6.20% véspera, vol USD 5.23M). Lula DEVOLVE 40.50% (↓1.00pp) base PT desfavorecida por extensão. PT Senado 2.90% estável. Pacheco encerra carreira política (G1) frustra projeto PT MG; presidente PT vai a MG (O Globo). Haddad cola decisão PCC/CV em Tarcísio: 'Deram um tiro no pé' (O Globo 29/Mai).",
-        "odds": 6.45,
+        "polymarket": "5.20%",
+        "tendenciaPesquisa": "PoderData/AYA 29/Mai não destaca cenário principal. Meio/Ideia 28/Mai não destaca. Indexa 27/Mai sem destaque. Vox SP 30/Mai 2T estadual: Tarcísio 48.3% × Haddad 36.5% (Poder360). Líder do PSB defende Haddad SP (Congresso em Foco 22/Mai). Pacheco fora MG impacta projeto PT estadual.",
+        "tendenciaPolymarket": "CEDE 5.20% (↓1.25pp 24h vs 6.45% véspera, vol USD 5.27M) — devolve a recuperação, mercado fino sem fato novo em 30/Mai (leitura técnica). 2L Haddad 4.75%; 3L 7.40%. Vox SP 30/Mai 2T: Tarcísio 48.3% × Haddad 36.5% (Poder360). Mantido 29/Mai: Pacheco fora de MG frustra projeto do PT; Haddad enquadra decisão PCC/CV como autogol da direita (O Globo).",
+        "odds": 5.2,
         "percentage": 0,
-        "lastUpdate": "2026-05-29",
-        "value": "6.45"
+        "lastUpdate": "2026-05-30",
+        "value": "5.20"
       }
     ],
-    "updatedAt": "2026-05-29T18:00:00-03:00"
+    "updatedAt": "2026-05-30T17:30:00-03:00"
   }
 }
