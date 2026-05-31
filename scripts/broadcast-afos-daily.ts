@@ -24,12 +24,16 @@ import { sendDailyTeaser } from '../app/lib/email/resend'
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
 
 // Adaptive throttle (firmed 30/Mai pós-EVAL D+15 — incidente 22/Mai broadcast bateu 429
-// em 8/13 envios, retries absorveram. Acima de 30 leads cai abrupto. Tier Resend 10/s).
+// em 8/13 envios, retries absorveram. Acima de 30 leads cai abrupto.
+// Limite REAL observado = 5 req/s (mensagem 429 em 31/Mai), NÃO 10/s. interSendMs é stagger
+// cumulativo (interSendMs*idx dentro do batch), então >=220ms mantém <5 envios/s.
+// Faixa base era interSendMs:0 → disparava lista pequena de uma vez e estourava 5/s
+// (15 leads em 31/Mai bateram 429, salvos só pelo retry). Piso de 220ms elimina na origem.
 function pickThrottle(leadCount: number): { batchSize: number; batchDelayMs: number; interSendMs: number } {
-  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 200 }
-  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 120 }
-  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 100 }
-  return { batchSize: 50, batchDelayMs: 1000, interSendMs: 0 } // base atual, sem regressão
+  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 220 }
+  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 220 }
+  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 }
+  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 } // piso 220ms: <5 req/s, sem 429
 }
 
 function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
