@@ -19,8 +19,19 @@ import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendTradeoffTeaser } from '../app/lib/email/resend'
 
 const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
-const BATCH_SIZE = 50
-const BATCH_DELAY_MS = 1000
+
+// Adaptive throttle — espelha broadcast-afos-daily.ts (fix 31/Mai commit 01c319b).
+// Limite REAL do Resend = 5 req/s. interSendMs é stagger cumulativo (interSendMs*idx dentro
+// do batch) ⇒ >=220ms mantém <5 envios/s. Antes, este script usava batchSize:50 + Promise.all
+// SEM stagger → dispararia a lista toda de uma vez e bateria 429 (mesmo furo do Daily).
+function pickThrottle(leadCount: number): { batchSize: number; batchDelayMs: number; interSendMs: number } {
+  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 220 }
+  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 220 }
+  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 }
+  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 } // piso 220ms: <5 req/s, sem 429
+}
+
+function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
 
 type Locale = 'pt-BR' | 'en' | 'es'
 const LOCALE_SUFFIX: Record<Locale, string> = { 'pt-BR': '', 'en': '.en', 'es': '.es' }
@@ -93,11 +104,16 @@ async function main() {
   let failed = 0
   let skipped = 0
 
+  const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
+  console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
+  console.log()
+
   for (let i = 0; i < leads.length; i += BATCH_SIZE) {
     const batch = leads.slice(i, i + BATCH_SIZE)
     console.log(`📤 Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(leads.length / BATCH_SIZE)} (${batch.length} emails)...`)
 
-    const results = await Promise.all(batch.map(async (lead) => {
+    const results = await Promise.all(batch.map(async (lead, idx) => {
+      if (INTER_SEND_MS > 0 && idx > 0) await sleep(INTER_SEND_MS * idx)
       const raw = (lead.preferredLocale || lead.locale || 'en').toLowerCase()
       const locale: Locale = raw.startsWith('pt') ? 'pt-BR' : raw.startsWith('es') ? 'es' : 'en'
 
