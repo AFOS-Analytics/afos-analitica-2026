@@ -20,15 +20,16 @@ import { sendTradeoffTeaser } from '../app/lib/email/resend'
 
 const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
 
-// Adaptive throttle — espelha broadcast-afos-daily.ts (fix 31/Mai commit 01c319b).
-// Limite REAL do Resend = 5 req/s. interSendMs é stagger cumulativo (interSendMs*idx dentro
-// do batch) ⇒ >=220ms mantém <5 envios/s. Antes, este script usava batchSize:50 + Promise.all
-// SEM stagger → dispararia a lista toda de uma vez e bateria 429 (mesmo furo do Daily).
+// Adaptive throttle — espelha broadcast-afos-daily.ts (fix 31/Mai commits 01c319b/81f0bd8).
+// Limite REAL do Resend = 5 req/s. interSendMs é stagger cumulativo (interSendMs*idx dentro do
+// batch). 220ms ficou na borda (2x 429 no 1º broadcast Tradeoff 31/Mai, recuperados por retry);
+// 260ms dá folga real (~3.8/s) e zera. Antes, este script usava batchSize:50 + Promise.all SEM
+// stagger → dispararia a lista toda de uma vez e bateria 429 (mesmo furo do Daily).
 function pickThrottle(leadCount: number): { batchSize: number; batchDelayMs: number; interSendMs: number } {
-  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 220 }
-  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 220 }
-  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 }
-  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 } // piso 220ms: <5 req/s, sem 429
+  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 260 }
+  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 260 }
+  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 260 }
+  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 260 } // piso 260ms: ~3.8/s, folga real <5 req/s
 }
 
 function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }

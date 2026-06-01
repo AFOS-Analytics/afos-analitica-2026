@@ -26,14 +26,15 @@ const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
 // Adaptive throttle (firmed 30/Mai pós-EVAL D+15 — incidente 22/Mai broadcast bateu 429
 // em 8/13 envios, retries absorveram. Acima de 30 leads cai abrupto.
 // Limite REAL observado = 5 req/s (mensagem 429 em 31/Mai), NÃO 10/s. interSendMs é stagger
-// cumulativo (interSendMs*idx dentro do batch), então >=220ms mantém <5 envios/s.
-// Faixa base era interSendMs:0 → disparava lista pequena de uma vez e estourava 5/s
-// (15 leads em 31/Mai bateram 429, salvos só pelo retry). Piso de 220ms elimina na origem.
+// cumulativo (interSendMs*idx dentro do batch). 220ms ficou NA BORDA (5 sends em ~880ms = 5/s):
+// no broadcast Tradeoff de 31/Mai 2 envios ainda bateram 429 (recuperados por retry). 260ms dá
+// folga real (~3.8/s) e zera os 429. Faixa base era interSendMs:0 → disparava lista pequena de
+// uma vez e estourava o limite (15 leads bateram ~7x 429, salvos só pelo retry).
 function pickThrottle(leadCount: number): { batchSize: number; batchDelayMs: number; interSendMs: number } {
-  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 220 }
-  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 220 }
-  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 }
-  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 220 } // piso 220ms: <5 req/s, sem 429
+  if (leadCount > 200) return { batchSize: 5, batchDelayMs: 1000, interSendMs: 260 }
+  if (leadCount > 50) return { batchSize: 8, batchDelayMs: 1000, interSendMs: 260 }
+  if (leadCount > 20) return { batchSize: 10, batchDelayMs: 1000, interSendMs: 260 }
+  return { batchSize: 10, batchDelayMs: 1000, interSendMs: 260 } // piso 260ms: ~3.8/s, folga real <5 req/s
 }
 
 function sleep(ms: number) { return new Promise(r => setTimeout(r, ms)) }
