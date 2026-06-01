@@ -183,8 +183,25 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
         dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
       />
       <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
-        <nav className="mb-8 text-sm">
+        <nav className="mb-8 flex items-center justify-between gap-4 text-sm">
           <a href={`/${loc}/dashboard`} className="text-primary hover:underline">← {loc === 'pt-BR' ? 'Voltar ao Dashboard' : loc === 'es' ? 'Volver al Dashboard' : 'Back to Dashboard'}</a>
+          <div className="flex items-center gap-1" aria-label={loc === 'pt-BR' ? 'Seletor de idioma' : loc === 'es' ? 'Selector de idioma' : 'Language selector'}>
+            {(['pt-BR', 'en', 'es'] as const).map((l) => (
+              <a
+                key={l}
+                href={`/${l}/${SLUG}`}
+                hrefLang={l}
+                aria-current={l === loc ? 'page' : undefined}
+                className={
+                  l === loc
+                    ? 'px-2.5 py-1 rounded-md bg-primary text-white text-xs font-semibold'
+                    : 'px-2.5 py-1 rounded-md text-slate-500 hover:text-primary hover:bg-slate-100 text-xs font-semibold transition-colors'
+                }
+              >
+                {l === 'pt-BR' ? 'PT-BR' : l === 'es' ? 'ES' : 'EN'}
+              </a>
+            ))}
+          </div>
         </nav>
         <Content />
         <div className="mt-16 pt-8 border-t border-gray-200 text-center">

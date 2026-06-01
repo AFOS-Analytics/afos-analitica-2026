@@ -25,6 +25,7 @@ export function HowItWorksPtBR() {
             <TocLink href="#modal-metas">└ Modal Metas</TocLink>
             <TocLink href="#modal-global">└ Modal Global</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Síntese do Dia</TocLink>
+            <TocLink href="#afos-tradeoff-card">└ AFOS Tradeoff, Semanal</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">4. Pesquisas Eleitorais</TocLink>
             <TocLink href="#criterios-institutos">└ Avaliação dos institutos</TocLink>
@@ -214,6 +215,20 @@ export function HowItWorksPtBR() {
       </Card>
 
       <p className={S.p}><strong>Quando vale ler:</strong> quando você quer entender <em>por quê</em> os números do dashboard mexeram, não apenas <em>quanto</em>. O dashboard mostra a foto do dia; o AFOS Daily explica a história, com fontes auditáveis para você verificar cada passo.</p>
+
+      <h2 id="afos-tradeoff-card" className={S.h2}>AFOS Tradeoff, Brief Técnico Semanal</h2>
+      <p className={S.p}>Se o AFOS Daily é a leitura de todo dia, o <strong>AFOS Tradeoff</strong> é o aprofundamento <strong>semanal</strong>: um brief técnico publicado <strong>toda segunda-feira</strong>, cobrindo a semana que passou. É voltado ao leitor profissional de mercado (research, mesa institucional, tesouraria, buy-side), com foco em <strong>pricing e divergência</strong>, não em narrativa.</p>
+      <p className={S.p}>Enquanto o Daily conta a história do dia, o Tradeoff mede a <strong>variação da semana</strong> (Δ semana) a partir de snapshots persistidos e organiza tudo em estrutura fixa de leitura rápida para quem precisa de sinal acionável.</p>
+
+      <Card title="Como o AFOS Tradeoff funciona">
+        <p><strong>Cadência:</strong> semanal, publicado às segundas, cobrindo a semana anterior (cada edição traz número sequencial, ex.: Edição №2).</p>
+        <p><strong>Estrutura fixa (9 blocos):</strong> resumo executivo (3 cards de métrica), "Por que o AFOS não suaviza" (por que a média ponderada apaga sinal), 3 cenários ponderados (base / contrário ao pricing / cauda), grade de indicadores, liquidez e estrutura de mercado, calendário de pesquisas, watch list de gatilhos, metodologia e leitura macro complementar.</p>
+        <p><strong>Δ semana:</strong> cada contrato mostra preço atual, variação na semana e volume USD acumulado, calculados sobre snapshots diários persistidos, não estimativas.</p>
+        <p><strong>Tom técnico:</strong> sem floreio jornalístico, sem adjetivos partidários e <strong>sem recomendação de investimento</strong> (cada edição traz aviso financeiro fixo). Volume USD é citado como contexto de "dinheiro real"; liquidez de book não é usada como sinal editorial.</p>
+        <p><strong>3 idiomas e permalink:</strong> PT-BR · EN · ES, cada edição com URL própria (<code>/tradeoff/2026-06-01</code>) e o índice <code>/tradeoff</code> sempre redirecionando para a edição mais recente. Mesmo toggle de tema (claro / Sapphire Blue) do Daily.</p>
+      </Card>
+
+      <p className={S.p}><strong>Quando vale ler:</strong> quando você quer a <em>leitura da semana</em> em vez da foto do dia, onde o mercado lidera ou atrasa em relação à pesquisa, o que mudou de fato e o que é ruído. O Daily é o pulso diário; o Tradeoff é o raio-X semanal.</p>
 
       <h2 id="cards-polymarket" className={S.h2}>3. Os 6 Cards Polymarket, Painel instantâneo</h2>
       <p className={S.p}>Logo após o header, aparecem <strong>seis cards lado a lado</strong> resumindo os mercados mais importantes do Polymarket no momento. Cada card mostra um <strong>percentual</strong> (probabilidade precificada pelo mercado) com a <strong>variação em relação ao dia anterior</strong> (↑↓pp).</p>
@@ -587,6 +602,10 @@ export function HowItWorksPtBR() {
       </Card>
       <Card title="Passo 3, Consulte o Card Clima Político">
         <p>O resumo visual do clima político do dia em <strong>30 segundos</strong>. Direita, esquerda, 3ª via e Polymarket consolidado, tudo em uma tela.</p>
+      </Card>
+      <Card title="Passo 4, Acompanhe o AFOS Daily e o Tradeoff">
+        <p><strong>AFOS Daily (todo dia):</strong> leitura de ~4 minutos que explica <em>por que</em> os números do dashboard mexeram, com fonte auditável por alegação. É o que transforma a foto do dia em história.</p>
+        <p><strong>AFOS Tradeoff (toda segunda):</strong> o brief técnico da semana, para quem quer profundidade de pricing e divergência (research, mesa, buy-side). Traz Δ semana, cenários ponderados e watch list de gatilhos.</p>
       </Card>
       <Callout title="Depois disso">
         <p>Volte <strong>amanhã</strong>. O valor real do AFOS aparece na sequência: um dia dá contexto, três dias dão padrão, uma semana dá tendência. Ler uma única vez é informar-se; ler diariamente é <strong>antecipar</strong>.</p>
