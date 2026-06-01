@@ -31,7 +31,7 @@ Built and validated during the 2026 electoral cycle across South American countr
 - **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
-- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — **38 editions published as of 29/May/2026** (D+15 of public launch), in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`. Distribution by email to opted-in subscribers via Resend Pro
+- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — **40 editions published as of 31/May/2026** (D+17 of public launch), in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`. Distribution by email to opted-in subscribers via Resend Pro
 - **AFOS Tradeoff** — weekly technical reading published every Monday, targeted at institutional research, buy-side and treasury. Cross-references the same three signals but reports them **separately** (no weighted-average composites) — when prediction markets, polls and news diverge, the divergence *is* the signal. Structured in 9 sections (executive summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Published in 3 languages (PT-BR, EN, ES) with full archive at `/tradeoff/[date]`. RSS: `/feed/tradeoff.xml`
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
