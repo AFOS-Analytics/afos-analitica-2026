@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-01",
+  "lastUpdate": "2026-06-02",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -545,87 +545,87 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 01/Jun 23:41 BRT) x Real Time Big Data nacional 01/Jun (n=2.000). 1T poll: Lula 38% x Flavio 31% (gap +7pp) vs Polymarket gap +11.3pp (mercado mais largo). 2T poll: Lula 45x40 Flavio; Caiado EMPATA Lula 43x43; Zema 43x40 — Caiado e Zema mais competitivos que Flavio contra Lula. Divergencia Renan: poll 6% x mercado 16.8% (~11pp).",
+    "note": "Cruzamento Polymarket (live 02/Jun 20:24 BRT) x Real Time Big Data nacional 01/Jun. REPRECIFICACAO FORTE: Flavio dispara +4.2pp (33.40%), gap Lula x Flavio colapsa de +11.3pp para +6.1pp; 3a via sangra (Renan -1.2, Caiado -0.6, Zema -0.3). DRIVERS verificados: (1) Tarcisio descarta terceira via e fecha apoio a Flavio (01-02/Jun); (2) tarifaco EUA 25% 02/Jun, 6 dias apos Flavio ver Trump, com Flavio tentando se descolar (carta a Rubio). 1T poll RTBD ainda Lula 38 x Flavio 31 (gap +7pp) — mercado agora MAIS APERTADO (+6.1pp) que a ultima pesquisa.",
     "sources": "PoderData/AYA 29/Mai n=2.400 BR048822026 (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). Meio/Ideia 28/Mai BR-02918/2026 n=1.500 (Poder360, Folha, CNN, Gazeta do Povo, JB). Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum). AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor). Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 30/Mai 20:14 UTC).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-47%",
-        "polymarket": "40.50%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun (n=2.000, BR-05864/2026): 1T Lula 38% x Flavio 31% (gap +7pp); 2T 45% x 40% Flavio (+5). Aprovacao 42% x desaprova 52%. Anteriores mantidas: Meio/Ideia 28/Mai 1T 38.5% gap +7pp; Datafolha 22/Mai 1T 40% gap +9pp, 2T 47x43; PoderData/AYA 29/Mai empate tecnico 2T.",
-        "tendenciaPolymarket": "Estavel 40.50% (flat 24h, vol USD 6.03M acumulado). Gap Lula x Flavio estreita pra +11.3pp porque Flavio sobe a 29.20%. Mercado segue mais largo que o poll (RTBD gap 1T +7pp). 2L Lula ~10%.",
-        "odds": 40.5,
+        "polymarket": "39.50%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun (n=2.000): 1T Lula 38% x Flavio 31% (gap +7pp); 2T 45x40 Flavio, mas Caiado EMPATA Lula 43x43. Aprovacao 42% x desaprova 52%. Datafolha 22/Mai 1T 40x31 gap +9pp.",
+        "tendenciaPolymarket": "CEDE 39.50% (↓1.0pp 24h, vol USD 6.08M). Gap Lula x Flavio COLAPSA a +6.1pp (de +11.3pp ontem) com a disparada de Flavio. Lula reage chamando os Bolsonaro de traidores da patria e culpa a familia pelo tarifaco dos EUA (O Tempo, Estado de Minas 02/Jun).",
+        "odds": 39.5,
         "percentage": 38,
-        "lastUpdate": "2026-06-01",
-        "value": "40.50"
+        "lastUpdate": "2026-06-02",
+        "value": "39.50"
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "30-34.3%",
-        "polymarket": "29.20%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% x Lula 45 (-5). Destaque negativo: Caiado e Zema sao MAIS competitivos que Flavio no 2T contra Lula. Mantidas: Datafolha 22/Mai rejeicao 46% supera Lula 45%; AtlasIntel 19/Mai 1T 34.3%.",
-        "tendenciaPolymarket": "SOBE 29.20% (↑0.85pp 24h vs 28.35% véspera, vol USD 6.17M) — capitaliza decisao EUA/PCC (Band) apesar do poll desfavoravel. 2L Flavio topo. SENADO PL salta a 77.50% (↑9.5pp, leitura cautelosa book). Operacao contra ONG da produtora de Dark Horse; Flavio fala em perseguicao (G1).",
-        "odds": 29.2,
+        "polymarket": "33.40%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% x Lula 45. Caiado e Zema mais competitivos que Flavio no 2T. Datafolha 22/Mai rejeicao 46% supera Lula 45%.",
+        "tendenciaPolymarket": "DISPARA 33.40% (↑4.2pp 24h vs 29.20% vespera, vol USD 6.24M) — maior alta do ciclo. Gap para Lula estreita a +6.1pp. DRIVER: Tarcisio descarta 3a via e fecha apoio a Flavio (\"disputa sera entre Lula e Flavio... meu candidato e Flavio, ponto\", Imirante/ACidade ON 01-02/Jun), consolidando a direita. Tarifaco EUA 25% (02/Jun, mira PIX) 6 dias apos Flavio ver Trump: Flavio se descola (carta a Rubio pedindo nao taxar). Fator double-edged — protagonismo vs ataque traidor da patria. SENADO PL recua a 75.50%.",
+        "odds": 33.4,
         "percentage": 31,
-        "lastUpdate": "2026-06-01",
-        "value": "29.20"
+        "lastUpdate": "2026-06-02",
+        "value": "33.40"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2.1-6%",
-        "polymarket": "16.80%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun 1T Renan 6% (acima do Meio/Ideia 28/Mai 2.1%, mas ainda ~11pp abaixo do Polymarket). Sem destaque em 2T. AtlasIntel 28/Abr 5.3%.",
-        "tendenciaPolymarket": "Estavel 16.80% (flat 24h, vol USD 6.44M acumulado) — SEGUNDO presidencial Poly, acima de Haddad/Caiado/Zema. Divergencia Polymarket x pesquisa: mercado 16.8% x RTBD 6% (~11pp). 3L favorito a 3o lugar.",
-        "odds": 16.8,
+        "polymarket": "15.60%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun 1T Renan 6%. Mantida divergencia Polymarket x pesquisa (~10pp).",
+        "tendenciaPolymarket": "CEDE 15.60% (↓1.2pp 24h, vol USD 6.52M) — 3a via sangra apos Tarcisio declarar que nao ha espaco para terceira via (binariza Lula x Flavio). Segue 2o presidencial Poly. Divergencia mercado 15.6% x RTBD 6% persiste.",
+        "odds": 15.6,
         "percentage": 6,
-        "lastUpdate": "2026-06-01",
-        "value": "16.80"
+        "lastUpdate": "2026-06-02",
+        "value": "15.60"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-6%",
-        "polymarket": "2.60%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Caiado 6% LIDERA 3a via; 2T Caiado EMPATA Lula 43x43 — mais competitivo que Flavio contra Lula (Portal N10, Jornal Opcao). Quaest 13/Mai Caiado 4% empate Zema; 2T Caiado 42 x Lula 43.",
-        "tendenciaPolymarket": "SALTA 2.60% (↑1.15pp 24h vs 1.45% véspera, vol USD 3.70M) — maior alta relativa do dia, mercado reprecifica apos RTBD mostrar Caiado empatando Lula no 2T. Alianca Caiado-Zema (continuidade reuniao 27/Mai) ganha tracao como alternativa de centro-direita a Flavio.",
-        "odds": 2.6,
+        "polymarket": "2.00%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Caiado 6% lidera 3a via; 2T Caiado EMPATA Lula 43x43.",
+        "tendenciaPolymarket": "DEVOLVE o salto de ontem: 2.00% (↓0.6pp 24h vs 2.60% vespera, vol USD 3.78M). Tarcisio fechando a 3a via atras de Flavio tira o oxigenio da alianca Caiado-Zema. Mercado x pesquisa: 2.0% Poly x 6% RTBD invertido (poll ve mais que mercado, raro).",
+        "odds": 2,
         "percentage": 6,
-        "lastUpdate": "2026-06-01",
-        "value": "2.60"
+        "lastUpdate": "2026-06-02",
+        "value": "2.00"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional (foco reeleicao SP). Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5% (Poder360).",
-        "tendenciaPolymarket": "Estavel 0.15% (vol USD ~12.3M, maior volume mas precificacao baixissima, anomalia de legado). PL Senado salta a 77.50%.",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
+        "tendenciaPolymarket": "Estavel 0.15% presidencial (vol USD ~12.3M, anomalia de legado). PROTAGONISTA do dia mesmo sem se candidatar: descartou 3a via e selou apoio a Flavio (Imirante/ACidade ON), evento que reprecificou o mercado todo. SENADO PL recua a 75.50%.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-06-01",
+        "lastUpdate": "2026-06-02",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2.4-4%",
-        "polymarket": "2.80%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43 (-3) — mais competitivo que Flavio contra Lula. Quaest 13/Mai Zema 4% empate Caiado.",
-        "tendenciaPolymarket": "Estavel 2.80% (↑0.05pp 24h, vol USD 3.28M). Alianca Caiado-Zema segue como alternativa de centro-direita. STJ da 15 dias para Zema se manifestar em caso de calunia contra Gilmar Mendes.",
-        "odds": 2.8,
+        "polymarket": "2.50%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43.",
+        "tendenciaPolymarket": "CEDE 2.50% (↓0.3pp 24h, vol USD 3.38M). 3a via sangra com Tarcisio binarizando a disputa. Alianca Caiado-Zema perde tracao no curto prazo.",
+        "odds": 2.5,
         "percentage": 4,
-        "lastUpdate": "2026-06-01",
-        "value": "2.80"
+        "lastUpdate": "2026-06-02",
+        "value": "2.50"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "6.10%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao lista Haddad no presidencial nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%. Haddad defende taxa das blusinhas apos recuo de Lula (G1).",
-        "tendenciaPolymarket": "SOBE 6.10% (↑0.80pp 24h vs 5.30% véspera, vol USD 5.32M). 2L Haddad ~5%. Ruido de mercado fino, sem evento presidencial nacional direto.",
-        "odds": 6.1,
+        "polymarket": "5.10%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao lista Haddad presidencial. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
+        "tendenciaPolymarket": "CEDE 5.10% (↓1.0pp 24h, vol USD 5.36M) — ruido de mercado fino no dia da reprecificacao em torno do eixo Flavio/Tarcisio/tarifaco.",
+        "odds": 5.1,
         "percentage": 0,
-        "lastUpdate": "2026-06-01",
-        "value": "6.10"
+        "lastUpdate": "2026-06-02",
+        "value": "5.10"
       }
     ],
-    "updatedAt": "2026-06-01T23:45"
+    "updatedAt": "2026-06-02T20:30"
   }
 }

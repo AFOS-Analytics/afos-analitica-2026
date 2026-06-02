@@ -13,60 +13,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "40.50%",
-    poll: "Lula estável Poly 40.50% (flat 24h, vol USD 6.03M acumulado). Gap Lula × Flávio estreita pra +11.3pp porque Flávio sobe a 29.20%. Real Time Big Data 01/Jun (nacional, n=2.000, BR-05864/2026): 1T Lula 38% × Flávio 31% (gap +7pp); 2T Lula 45% × Flávio 40% (+5). Aprovação Lula 42% × desaprova 52%. Mercado segue mais largo que o poll no 1T. Mantidas Datafolha 22/Mai (1T 40×31, 2T 47×43) e Meio/Ideia 28/Mai (1T 38.5×31.5).",
+    polymarket: "39.50%",
+    poll: "Lula CEDE Poly 39.50% (↓1.0pp 24h, vol USD 6.08M acumulado). Gap Lula × Flávio COLAPSA pra +6.1pp (de +11.3pp na véspera) com a disparada de Flávio. Real Time Big Data 01/Jun: 1T Lula 38% × Flávio 31%; 2T 45×40, mas Caiado empata Lula 43×43. Aprovação Lula 42% × desaprova 52%. Mercado agora MAIS APERTADO (+6.1pp) que o 1T da pesquisa (+7pp).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 01/Jun D+17: 1ª pesquisa nacional pós-caso Vorcaro/Dark Horse (Real Time Big Data) — Lula amplia vantagem no 2T contra Flávio (45×40), MAS Caiado EMPATA com Lula (43×43) e Zema fica perto (43×40), sinal de que a 3ª via é mais competitiva que Flávio contra Lula. Aprovação 42% × desaprovação 52%, economia 'piorou' para 40%. A decisão dos EUA de classificar PCC/CV como terroristas segue como arma eleitoral Lula × Flávio (Band). STF impeach 5.50% estável. Mantida rejeição Lula 45% próxima de Flávio 46% (Datafolha 22/Mai)."
+    risk: "EVENTOS 02/Jun D+18: reprecificação forte no curto prazo — Flávio dispara +4.2pp e o gap despenca a +6.1pp. DRIVERS: (1) Tarcísio descarta a 3ª via e fecha apoio a Flávio (Imirante, ACidade ON 01-02/Jun), consolidando a direita; (2) tarifaço EUA de 25% (02/Jun, mira o PIX) 6 dias após Flávio ver Trump. Lula reage chamando os filhos de Bolsonaro de 'traidores da pátria'; o governo culpa a família pelo tarifaço e diz que vai proteger o PIX (O Tempo, Estado de Minas, G1). Mantida aprovação 42% × 52% (RTBD). STF impeach 5.50% estável."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "29.20%",
-    poll: "Flávio SOBE Poly 29.20% (↑0.85pp 24h vs 28.35% véspera, vol USD 6.17M acumulado) — capitaliza decisão EUA/PCC apesar de pesquisa desfavorável. Gap Lula × Flávio estreita pra +11.3pp. 2L Flávio topo. 🔥 SENADO PL salta a 77.50% (↑9.5pp, leitura cautelosa de book). Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% × Lula 45 (-5); Caiado e Zema MAIS competitivos que Flávio contra Lula. Mantida Datafolha 22/Mai rejeição 46% > Lula 45%.",
+    polymarket: "33.40%",
+    poll: "Flávio DISPARA Poly 33.40% (↑4.2pp 24h vs 29.20% véspera, vol USD 6.24M acumulado) — maior alta do ciclo. Gap para Lula estreita a +6.1pp. 🔥 SENADO PL recua a 75.50% (de 77.50%, leitura cautelosa de book). Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% × Lula 45; rejeição 46% > Lula 45% (Datafolha 22/Mai). Mercado precifica Flávio bem acima do 1T da pesquisa, refletindo a consolidação da direita.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 01/Jun: Flávio sobe no Poly capitalizando a decisão dos EUA sobre PCC/CV (Band, 'Flávio capitaliza'), MAS a 1ª pesquisa nacional pós-Vorcaro (Real Time Big Data) o mostra MENOS competitivo que Caiado/Zema no 2T contra Lula. Operação contra ONG da produtora de 'Dark Horse'; Flávio fala em 'perseguição' e 'pescaria probatória' (G1). Sakamoto/UOL: 'Flávio fez gol importante e jogou batata quente pro Lula'. Mantida rejeição Flávio 46% > Lula 45% (Datafolha 22/Mai). STF impeach 5.50% estável."
+    risk: "EVENTOS 02/Jun: maior alta do ciclo (+4.2pp). DRIVER 1 — Tarcísio descarta a 3ª via e sela apoio a Flávio: 'a disputa será entre Lula e Flávio... meu candidato é Flávio, ponto' (Imirante, ACidade ON), consolidando a direita atrás dele. DRIVER 2 — tarifaço EUA de 25% (02/Jun, mira o PIX) 6 dias após Flávio ver Trump; Flávio se descola, com carta ao Secretário Marco Rubio pedindo não taxar (O Tempo, Estado de Minas). Fator DOUBLE-EDGED: protagonismo/eixo EUA vs ataque 'traidor da pátria' (Lula, PT). Mantida rejeição Flávio 46% > Lula 45%. STF impeach 5.50% estável."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "16.80%",
-    poll: "Renan presidencial Poly 16.80% (flat 24h, vol USD 6.44M acumulado) — segue SEGUNDO presidencial Poly, acima de Haddad (6.10%), Zema (2.80%), Caiado (2.60%). Real Time Big Data 01/Jun 1T Renan 6% — acima do Meio/Ideia 28/Mai (2.1%) mas ainda ~11pp abaixo do mercado, divergência que persiste como a mais larga do dashboard. 2L Renan ~17%; 3L favorito a 3º lugar.",
+    polymarket: "15.60%",
+    poll: "Renan presidencial Poly 15.60% (↓1.2pp 24h, vol USD 6.52M acumulado) — 3ª via sangra após Tarcísio binarizar a disputa (Lula × Flávio). Segue SEGUNDO presidencial Poly, acima de Haddad (5.10%), Zema (2.50%), Caiado (2.00%). Real Time Big Data 01/Jun 1T Renan 6%; divergência mercado × pesquisa (~10pp) persiste como a mais larga do dashboard. 3L favorito a 3º lugar.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Renan estável no Poly. RTBD 01/Jun dá 6% no 1T (melhor leitura recente de pesquisa), mas o mercado segue muito acima (~11pp). 🤝 a rearticulação da centro-direita (Caiado-Zema, com Aécio/PSDB no radar) divide o oxigênio da 3ª via. A decisão EUA/PCC pode reabsorver pauta anti-establishment se Flávio capitalizar. STF impeach 5.50% estável. Mantidos 22-23/Mai: Estadão 'terceira via tem janela estreita'; Joaquim Barbosa pré-candidato."
+    risk: "Renan cede 1.2pp — a fala de Tarcísio de que 'não há espaço para terceira via' e o apoio fechado a Flávio (Imirante, ACidade ON) tiram oxigênio de toda a 3ª via. RTBD 01/Jun dá 6% no 1T, ainda bem abaixo do mercado. STF impeach 5.50% estável. Mantido Estadão 'terceira via tem janela estreita'."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "6.10%",
-    poll: "Haddad SOBE Poly 6.10% (↑0.80pp 24h vs 5.30% véspera, vol USD 5.32M acumulado) — ruído de mercado fino, sem evento presidencial nacional direto. 2L Haddad ~5%. Real Time Big Data 01/Jun não lista Haddad no presidencial nacional. Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    polymarket: "5.10%",
+    poll: "Haddad cede Poly 5.10% (↓1.0pp 24h vs 6.10% véspera, vol USD 5.36M acumulado) — ruído fino no dia da reprecificação em torno do eixo Flávio/Tarcísio/tarifaço. Real Time Big Data 01/Jun não lista Haddad no presidencial nacional. Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad sobe 0.80pp no Poly (ruído de mercado fino). Haddad defende a 'taxa das blusinhas' mesmo após recuo de Lula: 'não mudei de opinião' (G1). Mantido enquadramento da decisão EUA/PCC como autogol da direita (O Globo). Disputa estadual SP desfavorável (Vox 30/Mai Tarcísio 48.3% × Haddad 36.5%). STF impeach 5.50% estável."
+    risk: "Haddad cede 1.0pp (ruído fino). Como ministro da Fazenda, está no centro do tarifaço EUA de 25% que mira o PIX: diz que a família Bolsonaro fez 'movimento' contra o PIX e que o governo vai proteger a ferramenta (G1). Disputa estadual SP desfavorável (Vox 30/Mai Tarcísio 48.3% × Haddad 36.5%). STF impeach 5.50% estável."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "2.60%",
-    poll: "Caiado SALTA Poly 2.60% (↑1.15pp 24h vs 1.45% véspera, vol USD 3.70M acumulado) — maior alta relativa do dia. Real Time Big Data 01/Jun: 1T Caiado 6% LIDERA a 3ª via; 2T Caiado EMPATA Lula 43×43 — mais competitivo que Flávio contra Lula (Portal N10, Jornal Opção). 3L Caiado favorito intermediário. Mantida Quaest 13/Mai Caiado 4% empate Zema.",
+    polymarket: "2.00%",
+    poll: "Caiado DEVOLVE o salto de ontem: Poly 2.00% (↓0.6pp 24h vs 2.60% véspera, vol USD 3.78M acumulado). Tarcísio fechando a 3ª via atrás de Flávio tira a tração da aliança Caiado-Zema. Real Time Big Data 01/Jun: 1T Caiado 6% (2T empata Lula 43×43) — aqui o poll vê MAIS que o mercado (inversão rara). Mantida Quaest 13/Mai Caiado 4% empate Zema.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado tem a MAIOR alta do dia no Poly, reprecificado após a Real Time Big Data mostrá-lo empatando Lula no 2T (43×43) — leitura de que a centro-direita pode ser mais viável que Flávio contra Lula. 🤝 ALIANÇA CAIADO-ZEMA ganha tração (continuidade da reunião 27/Mai) como alternativa a Flávio; Aécio/PSDB também se mexe. STF impeach 5.50% estável. Mantido Estadão 'terceira via tem janela estreita'."
+    risk: "Caiado devolve a alta de ontem (↓0.6pp) — Tarcísio declarando que 'não há espaço para terceira via' e fechando apoio a Flávio (Imirante, ACidade ON) esvazia a janela da centro-direita alternativa. A aliança Caiado-Zema perde tração no curto prazo. STF impeach 5.50% estável. Mantido Estadão 'terceira via tem janela estreita'."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "2.80%",
-    poll: "Zema presidencial Poly 2.80% (↑0.05pp 24h, vol USD 3.28M). 2L Zema ~3%; 3L vice-favorito a 3º lugar atrás de Renan. Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 × Lula 43 (-3) — mais competitivo que Flávio contra Lula. Mantida Quaest 13/Mai Zema 4% empate Caiado.",
+    polymarket: "2.50%",
+    poll: "Zema presidencial Poly 2.50% (↓0.3pp 24h, vol USD 3.38M). 3ª via sangra com Tarcísio binarizando Lula × Flávio. 3L vice-favorito a 3º atrás de Renan. Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 × Lula 43. Mantida Quaest 13/Mai Zema 4% empate Caiado.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema estável. Real Time Big Data 01/Jun o coloca competitivo no 2T (43×40 Lula). 🤝 ALIANÇA CAIADO-ZEMA segue como alternativa de centro-direita a Flávio (continuidade da reunião 27/Mai). STJ dá 15 dias para Zema se manifestar em caso de calúnia contra Gilmar Mendes. Mantida competição interna no Novo (Eduardo Leite, VEJA). STF impeach 5.50% estável."
+    risk: "Zema cede com o resto da 3ª via após a fala de Tarcísio de que 'não há espaço para terceira via' (Imirante, ACidade ON). A aliança Caiado-Zema perde tração no curto prazo. STJ deu 15 dias para Zema se manifestar em caso de calúnia contra Gilmar Mendes. STF impeach 5.50% estável."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.3M acumulado, maior volume do mercado mas precificação baixíssima, anomalia de legado). 🔥 PL Senado SALTA a 77.50% (↑9.5pp, leitura cautelosa de book), dominante na disputa por mais cadeiras. Real Time Big Data 01/Jun não destaca Tarcísio nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.3M acumulado, anomalia de legado). 🔥 PL Senado recua a 75.50% (de 77.50%, leitura cautelosa de book). Real Time Big Data 01/Jun não destaca Tarcísio nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio presidencial estável (anomalia de volume alto e preço baixíssimo, convicção concentrada para-e-contra). Foco na reeleição em SP, onde lidera. Mantido Haddad tentando enquadrar a decisão dos EUA sobre PCC/CV como problema para Tarcísio (O Globo). STF impeach 5.50% estável. Mantidos 22-23/Mai: PL e Centrão temem queda maior de Flávio (O Globo)."
+    risk: "Tarcísio foi o PROTAGONISTA do dia mesmo sem se candidatar: descartou a 3ª via e selou apoio a Flávio ('a disputa será entre Lula e Flávio... meu candidato é Flávio, ponto', Imirante, ACidade ON), evento que reprecificou o mercado inteiro — Flávio +4.2pp e 3ª via em queda. Foco na reeleição em SP, onde lidera. STF impeach 5.50% estável."
   },
 ];
 
