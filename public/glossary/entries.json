@@ -193,8 +193,16 @@
       "es": "Término acuñado en redes sociales y por adversarios políticos a fines de abril/2026 para describir supuestas conexiones entre el senador Flávio Bolsonaro y el caso de fraude del Banco Master. El PL (partido de Flávio) negó públicamente cualquier implicación."
     },
     "relatedSources": [
-      { "label": "SBT News", "url": "https://www.sbtnews.sbt.com.br", "date": "2026-04-27" },
-      { "label": "Diário do Povo", "url": "https://www.diariodopovo.com.br", "date": "2026-04-27" }
+      {
+        "label": "SBT News",
+        "url": "https://www.sbtnews.sbt.com.br",
+        "date": "2026-04-27"
+      },
+      {
+        "label": "Diário do Povo",
+        "url": "https://www.diariodopovo.com.br",
+        "date": "2026-04-27"
+      }
     ]
   },
   "farra-do-inss": {
@@ -307,6 +315,17 @@
       "pt-BR": "Partido de centro político, criado em 2017 a partir do antigo PTdoB. Filiou o escritor Augusto Cury em abril de 2026 como pré-candidato à Presidência. Sem grande peso parlamentar, costuma compor coligações.",
       "en": "Centrist party created in 2017 from the former PTdoB. Affiliated writer Augusto Cury in April 2026 as a pre-candidate for the Presidency. Without significant parliamentary weight, it typically forms coalitions.",
       "es": "Partido de centro político, creado en 2017 a partir del antiguo PTdoB. Afilió al escritor Augusto Cury en abril de 2026 como precandidato a la Presidencia. Sin gran peso parlamentario, suele componer coaliciones."
+    }
+  },
+  "pcc": {
+    "id": "pcc",
+    "term": "PCC",
+    "type": "event",
+    "firstSeen": "2026-05-29",
+    "definitions": {
+      "pt-BR": "Primeiro Comando da Capital (PCC) e Comando Vermelho (CV) são as duas maiores facções criminosas do Brasil. Entraram no debate eleitoral de 2026 depois que os Estados Unidos as classificaram como organizações terroristas — medida defendida por Flávio Bolsonaro e explorada como arma eleitoral pelos dois campos (governo Lula e oposição).",
+      "en": "Primeiro Comando da Capital (PCC) and Comando Vermelho (CV) are Brazils two largest criminal factions. They entered the 2026 electoral debate after the United States designated them terrorist organizations — a move championed by Flávio Bolsonaro and used as a campaign weapon by both sides (the Lula government and the opposition).",
+      "es": "Primeiro Comando da Capital (PCC) y Comando Vermelho (CV) son las dos mayores facciones criminales de Brasil. Entraron en el debate electoral de 2026 después de que Estados Unidos las clasificara como organizaciones terroristas — una medida defendida por Flávio Bolsonaro y utilizada como arma electoral por ambos lados (el gobierno de Lula y la oposición)."
     }
   }
 }
