@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-05-31",
+  "lastUpdate": "2026-06-01",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -107,6 +107,72 @@
   ],
   "polls": [
     {
+      "institute": "Real Time Big Data",
+      "date": "2026-06-01",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-05864/2026",
+      "reliability": 3,
+      "method": "Telefônico",
+      "fieldDates": "2026-05-29 a 2026-05-30",
+      "note": "Real Time Big Data nacional publicada 01/Jun (Exame, Brasil247, Gazeta do Povo, CNN Brasil, Brasil de Fato, Portal N10, Money Times). Primeira pesquisa nacional pós-explosao do caso Vorcaro/Dark Horse. Destaque: Caiado e Zema sao MAIS competitivos que Flavio no 2T contra Lula (Caiado empata 43x43; Zema 43x40), enquanto Lula x Flavio fica 45x40. Aprovacao Lula: aprova 42% x desaprova 52% (6% sem opiniao); avaliacao otimo+bom 27%, ruim+pessimo 48%, regular 23%; economia piorou para 40%. Margem 2pp, 95% confianca. Protocolo TSE BR-05864/2026.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Aécio Neves (PSDB)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Romeu Zema",
+          "percent2": 40
+        }
+      ],
+      "source": "Real Time Big Data via Exame, Brasil247, Gazeta do Povo, CNN Brasil, Brasil de Fato, Portal N10 01/Jun"
+    },
+    {
       "institute": "Meio/Ideia",
       "date": "2026-05-28",
       "sample": 1500,
@@ -120,11 +186,26 @@
         {
           "name": "Cenário Principal (1º turno)",
           "results": [
-            {"candidate": "Lula (PT)", "percent": 38.5},
-            {"candidate": "Flávio Bolsonaro (PL)", "percent": 31.5},
-            {"candidate": "Ronaldo Caiado (PSD)", "percent": 5.5},
-            {"candidate": "Romeu Zema (Novo)", "percent": 2.4},
-            {"candidate": "Renan Santos (Missão)", "percent": 2.1}
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.5
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31.5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5.5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2.4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.1
+            }
           ]
         }
       ],
@@ -423,13 +504,16 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação Lula via AtlasIntel (28/Abr/2026, n=5008) + Real Time Big Data nacional 05/Mai (n=2.000) + Datafolha 16/Mai (n=2.004) + Datafolha 22/Mai (publicada 22/Mai sexta, rejeição Flávio 46% × Lula 45% supera Lula numericamente pela primeira vez).",
-    "source": "AtlasIntel/Bloomberg (28/Abr/2026, n=5008) + Real Time Big Data nacional (05/Mai/2026, n=2000, BR-03627/2026) + Datafolha (16/Mai/2026, n=2004, BR-00290/2026) + Datafolha (22/Mai/2026 publicada, sample padrão 2.004)",
+    "note": "Aprovação Lula via Real Time Big Data nacional 01/Jun (n=2.000, BR-05864/2026): aprova 42% x desaprova 52% (6% sem opinião); avaliação ótimo+bom 27%, ruim+péssimo 48%, regular 23%; economia piorou para 40% dos entrevistados. Anteriores: Datafolha 22/Mai (rejeição Flávio 46% x Lula 45% supera Lula pela 1ª vez), Datafolha 16/Mai, AtlasIntel 28/Abr.",
+    "source": "Real Time Big Data (01/Jun/2026, n=2000, BR-05864/2026) + Datafolha (22/Mai e 16/Mai) + AtlasIntel/Bloomberg (28/Abr/2026, n=5008)",
     "date": "2026-05-22",
     "results": {
-      "aprovacao": 32,
-      "desaprovacao": 68,
-      "nota": "Datafolha 22/Mai: aprovação Lula 32% ótimo/bom (↑4pp vs 28% anterior), rejeição 38% vs 41%. Indexa 27/Mai: 1T Lula 39% × Flávio 30% gap +9pp (confirma direção Datafolha). Meio/Ideia 28/Mai BR-02918/2026: 1T 38.5%×31.5% gap +7pp; 2T 46.5%×41.4% gap +5.1pp. PoderData/AYA 29/Mai (BR048822026, n=2.400, campo 25-28/Mai): EMPATE técnico 2T Lula × Flávio, Joaquim Barbosa, Caiado e Zema (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). Primeiro Tier 1+2 do ciclo cenário 2T menos favorável a Lula. AtlasIntel RN 29/Mai: PT à frente governo+Senado (CartaCapital, Poder360). JOTA Agregador 29/Mai: favoritismo Lula em pico do ciclo (síntese 11 institutos). Datafolha BR042422026 segue sem divulgação 7d após registro."
+      "aprovacao": 42,
+      "desaprovacao": 52,
+      "naoSabe": 6,
+      "otimoBom": 27,
+      "ruimPessimo": 48,
+      "regular": 23
     },
     "historicalComparison": [
       {
@@ -461,87 +545,87 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Comparação Pesquisas (Abr-Mai) vs Polymarket (dinheiro real) — atualizado 31/Mai/2026 18:40 BRT (D+17 launch AFOS, /atualizar: domingo calmo, sem pesquisa nacional nova, Polymarket ruído + inflação 6%+ sobe)",
+    "note": "Cruzamento Polymarket (live 01/Jun 23:41 BRT) x Real Time Big Data nacional 01/Jun (n=2.000). 1T poll: Lula 38% x Flavio 31% (gap +7pp) vs Polymarket gap +11.3pp (mercado mais largo). 2T poll: Lula 45x40 Flavio; Caiado EMPATA Lula 43x43; Zema 43x40 — Caiado e Zema mais competitivos que Flavio contra Lula. Divergencia Renan: poll 6% x mercado 16.8% (~11pp).",
     "sources": "PoderData/AYA 29/Mai n=2.400 BR048822026 (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). Meio/Ideia 28/Mai BR-02918/2026 n=1.500 (Poder360, Folha, CNN, Gazeta do Povo, JB). Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum). AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor). Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 30/Mai 20:14 UTC).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38.5-47%",
+        "pesquisaRange": "38-47%",
         "polymarket": "40.50%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai: EMPATE técnico 2T Lula × Flávio (CNN, Oeste, EM) — primeiro Tier 1+2 do ciclo cenário 2T mais apertado. Meio/Ideia 28/Mai 1T 38.5% × Flávio 31.5% gap +7pp; 2T 46.5%×41.4% gap +5.1pp. Indexa 27/Mai 1T 39%×30% gap +9pp; 2T 46%×41% gap +5pp. Datafolha 22/Mai 1T 40%×31% gap +9pp; 2T 47%×43% gap +4pp; cenário Michelle 48%×43% gap +5pp. Vox 20/Mai 2T 46.8% gap +8.7pp. AtlasIntel 19/Mai 1T 47% / 2T 48.9%. AtlasIntel RN 29/Mai: PT à frente governo+Senado. JOTA Agregador 29/Mai: favoritismo Lula em pico do ciclo.",
-        "tendenciaPolymarket": "Estável 40.50% (↔ 24h, vol USD 6.01M acumulado). Gap Lula × Flávio ABRE pra +12.15pp (↑0.30pp, porque Flávio cedeu). 2L Lula 10.00%. STF impeach 5.45% estável (vol USD 80k baixo). Sem pesquisa nacional nova em 31/Mai (domingo calmo). EUA/PCC-CV segue como arma eleitoral Lula × Flávio (Jornal Opção). Mantido PoderData/AYA 29/Mai cenário menos favorável a Lula; Pacheco encerra carreira (G1) frustra projeto PT em MG.",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun (n=2.000, BR-05864/2026): 1T Lula 38% x Flavio 31% (gap +7pp); 2T 45% x 40% Flavio (+5). Aprovacao 42% x desaprova 52%. Anteriores mantidas: Meio/Ideia 28/Mai 1T 38.5% gap +7pp; Datafolha 22/Mai 1T 40% gap +9pp, 2T 47x43; PoderData/AYA 29/Mai empate tecnico 2T.",
+        "tendenciaPolymarket": "Estavel 40.50% (flat 24h, vol USD 6.03M acumulado). Gap Lula x Flavio estreita pra +11.3pp porque Flavio sobe a 29.20%. Mercado segue mais largo que o poll (RTBD gap 1T +7pp). 2L Lula ~10%.",
         "odds": 40.5,
-        "percentage": 38.5,
-        "lastUpdate": "2026-05-31",
+        "percentage": 38,
+        "lastUpdate": "2026-06-01",
         "value": "40.50"
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "30-34.3%",
-        "polymarket": "28.35%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE técnico 2T com Lula (CNN, Oeste 29/Mai) — primeiro Tier 1+2 do ciclo cenário menos pior. Meio/Ideia 28/Mai 1T 31.5% gap -7pp; 2T 41.4% gap -5.1pp; quedas -19pp alta renda, -18pp centro-direita, -16pp jovens. Indexa 27/Mai 1T 30% gap -9pp; 2T 41% gap -5pp. Datafolha 22/Mai 1T 31% gap -9pp; 2T 43% gap -4pp; rejeição 46% supera Lula 45% pela 1ª vez. Vox 20/Mai 2T 38.1% rejeição 49.2%. AtlasIntel 19/Mai 1T 34.3% rejeição 52%. Em PE Lula abre 32pp (Jamildo 29/Mai).",
-        "tendenciaPolymarket": "CEDE 28.35% (↓0.30pp 24h vs 28.65% véspera, vol USD 6.14M acumulado). Gap Lula × Flávio ABRE pra +12.15pp. 2L Flávio 62.50% topo absoluto (↑0.50pp). 🔥 SENADO PL mantém 68.00%; UNIÃO 14.90%, PSB salta a 14.30% (book fino, leitura cautelosa), MDB 15.20%, PSD recua a 6.55%. Domingo calmo; EUA/PCC-CV segue como arma eleitoral (Jornal Opção). Mantido 29/Mai: porta-voz EUA NEGA influência Flávio (G1); Valor 'NÃO reverte crise Master'; PF parecer à PGR sobre remessa Vorcaro (Valor).",
-        "odds": 28.35,
-        "percentage": 31.5,
-        "lastUpdate": "2026-05-31",
-        "value": "28.35"
+        "polymarket": "29.20%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% x Lula 45 (-5). Destaque negativo: Caiado e Zema sao MAIS competitivos que Flavio no 2T contra Lula. Mantidas: Datafolha 22/Mai rejeicao 46% supera Lula 45%; AtlasIntel 19/Mai 1T 34.3%.",
+        "tendenciaPolymarket": "SOBE 29.20% (↑0.85pp 24h vs 28.35% véspera, vol USD 6.17M) — capitaliza decisao EUA/PCC (Band) apesar do poll desfavoravel. 2L Flavio topo. SENADO PL salta a 77.50% (↑9.5pp, leitura cautelosa book). Operacao contra ONG da produtora de Dark Horse; Flavio fala em perseguicao (G1).",
+        "odds": 29.2,
+        "percentage": 31,
+        "lastUpdate": "2026-06-01",
+        "value": "29.20"
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "2.1-5.3%",
-        "polymarket": "16.85%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai sem destaque. Meio/Ideia 28/Mai 1T Renan 2.1% (divergência Polymarket × pesquisa ~15pp absolutos). Indexa 27/Mai sem destaque. Datafolha 22/Mai sem destaque. Vox/AtlasIntel 20/Mai não destacam. AtlasIntel 28/Abr 5.3%. Real Time Big Data 05/Mai 1T 3%.",
-        "tendenciaPolymarket": "Devolve parte do salto: 16.85% (↓0.35pp 24h vs 17.20% véspera, vol USD 6.25M acumulado) — correção técnica após 5 dias de alta. Segue SEGUNDO presidencial Poly acima de Haddad 5.30%, Zema 2.75%, Caiado 1.45%. 2L Renan 17.15%; 3L favorito a 3º lugar. Divergência Polymarket × Meio/Ideia 1T 2.1% ~15pp absolutos, ponto mais largo do dashboard. Mantido Aécio trunfo PSDB contra cláusula de barreira (Gazeta do Povo 31/Mai) — fragmentação 3ª via.",
-        "odds": 16.85,
-        "percentage": 2.1,
-        "lastUpdate": "2026-05-31",
-        "value": "16.85"
+        "pesquisaRange": "2.1-6%",
+        "polymarket": "16.80%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun 1T Renan 6% (acima do Meio/Ideia 28/Mai 2.1%, mas ainda ~11pp abaixo do Polymarket). Sem destaque em 2T. AtlasIntel 28/Abr 5.3%.",
+        "tendenciaPolymarket": "Estavel 16.80% (flat 24h, vol USD 6.44M acumulado) — SEGUNDO presidencial Poly, acima de Haddad/Caiado/Zema. Divergencia Polymarket x pesquisa: mercado 16.8% x RTBD 6% (~11pp). 3L favorito a 3o lugar.",
+        "odds": 16.8,
+        "percentage": 6,
+        "lastUpdate": "2026-06-01",
+        "value": "16.80"
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "4-5.5%",
-        "polymarket": "1.45%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE Lula × Caiado 2T (CNN, Oeste). Meio/Ideia 28/Mai 1T Caiado 5.5% LIDERA 3ª via. Indexa 27/Mai sem destaque. Datafolha 22/Mai não destaca. Quaest 13/Mai Caiado 4% × Zema 4% empate técnico 1T. 2T Caiado 42% × Lula 43% empate (Estadão 05/Mai). AtlasIntel 28/Abr 3.3%.",
-        "tendenciaPolymarket": "1.45% (↑0.10pp 24h vs 1.35% véspera, vol USD 3.50M acumulado) — ruído de mercado fino. PSD Senado recua a 6.55% (book fino, leitura cautelosa). ALIANÇA CAIADO-ZEMA ganha tração: Jornal Opção 31/Mai aponta que pode criar alternativa de centro-direita a Flávio (continuidade da reunião 27/Mai). Mantido 29/Mai: empate PoderData/AYA 2T; Caiado diz que decisão dos EUA 'deveria ter sido tomada mais cedo' (G1), posicionamento tardio.",
-        "odds": 1.45,
-        "percentage": 5.5,
-        "lastUpdate": "2026-05-31",
-        "value": "1.45"
+        "pesquisaRange": "4-6%",
+        "polymarket": "2.60%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Caiado 6% LIDERA 3a via; 2T Caiado EMPATA Lula 43x43 — mais competitivo que Flavio contra Lula (Portal N10, Jornal Opcao). Quaest 13/Mai Caiado 4% empate Zema; 2T Caiado 42 x Lula 43.",
+        "tendenciaPolymarket": "SALTA 2.60% (↑1.15pp 24h vs 1.45% véspera, vol USD 3.70M) — maior alta relativa do dia, mercado reprecifica apos RTBD mostrar Caiado empatando Lula no 2T. Alianca Caiado-Zema (continuidade reuniao 27/Mai) ganha tracao como alternativa de centro-direita a Flavio.",
+        "odds": 2.6,
+        "percentage": 6,
+        "lastUpdate": "2026-06-01",
+        "value": "2.60"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai não destaca Tarcísio nacional. Meio/Ideia 28/Mai não destaca. Datafolha/Indexa/Vox/AtlasIntel não destacam presidencial Tarcísio. Tarcísio SP 47.3% (Poder360 22/Mai); foco reeleição SP. Vox SP gov Tarcísio 38% × Haddad 26%.",
-        "tendenciaPolymarket": "Estável 0.15% (vol USD 12.31M, maior volume do mercado mas precificação baixíssima, anomalia). 🔥 PL Senado sobe 68.00% (↑0.50pp 24h). Vox SP 30/Mai 2T estadual: Tarcísio 48.3% × Haddad 36.5% (Poder360) amplia favoritismo na reeleição. Mantido Haddad enquadra decisão PCC/CV como problema para Tarcísio (O Globo 29/Mai).",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional (foco reeleicao SP). Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5% (Poder360).",
+        "tendenciaPolymarket": "Estavel 0.15% (vol USD ~12.3M, maior volume mas precificacao baixissima, anomalia de legado). PL Senado salta a 77.50%.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-05-31",
+        "lastUpdate": "2026-06-01",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2.4-4%",
-        "polymarket": "2.75%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai EMPATE Lula × Zema 2T (CNN, Oeste). Meio/Ideia 28/Mai 1T Zema 2.4% (menor que Caiado 5.5% validando lógica vice). Indexa 27/Mai sem destaque. Datafolha 22/Mai não destaca. Vox/AtlasIntel 20/Mai não destacam. Quaest 13/Mai Zema 4% empate Caiado. Zema 'página virada' não houve ruptura (Estadão 16/Mai). AtlasIntel 28/Abr 3.1%.",
-        "tendenciaPolymarket": "SOBE 2.75% (↑0.20pp 24h vs 2.55% véspera, vol USD 3.24M) — interrompe a sequência de quedas. 2L Zema 3.15%; 3L vice-favorito a 3º atrás de Renan. ALIANÇA CAIADO-ZEMA: Jornal Opção 31/Mai aponta alternativa de centro-direita a Flávio (continuidade reunião 27/Mai). INFLAÇÃO 2026: curva desloca pra cima, banda 6.00-6.49% sobe a 23.70% (↑6.75pp), mercado precifica inflação mais alta — terreno fértil pro discurso fiscal estrutural de Zema.",
-        "odds": 2.75,
-        "percentage": 2.4,
-        "lastUpdate": "2026-05-31",
-        "value": "2.75"
+        "polymarket": "2.80%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43 (-3) — mais competitivo que Flavio contra Lula. Quaest 13/Mai Zema 4% empate Caiado.",
+        "tendenciaPolymarket": "Estavel 2.80% (↑0.05pp 24h, vol USD 3.28M). Alianca Caiado-Zema segue como alternativa de centro-direita. STJ da 15 dias para Zema se manifestar em caso de calunia contra Gilmar Mendes.",
+        "odds": 2.8,
+        "percentage": 4,
+        "lastUpdate": "2026-06-01",
+        "value": "2.80"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "5.30%",
-        "tendenciaPesquisa": "PoderData/AYA 29/Mai não destaca cenário principal. Meio/Ideia 28/Mai não destaca. Indexa 27/Mai sem destaque. Vox SP 30/Mai 2T estadual: Tarcísio 48.3% × Haddad 36.5% (Poder360). Líder do PSB defende Haddad SP (Congresso em Foco 22/Mai). Pacheco fora MG impacta projeto PT estadual.",
-        "tendenciaPolymarket": "Recupera leve 5.30% (↑0.10pp 24h vs 5.20% véspera, vol USD 5.29M) — ruído de mercado fino. 2L Haddad 4.80%. Mantida Vox SP 30/Mai 2T: Tarcísio 48.3% × Haddad 36.5% (Poder360). Mantido 29/Mai: Pacheco fora de MG frustra projeto do PT; Haddad enquadra decisão PCC/CV como autogol da direita (O Globo).",
-        "odds": 5.3,
+        "polymarket": "6.10%",
+        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao lista Haddad no presidencial nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%. Haddad defende taxa das blusinhas apos recuo de Lula (G1).",
+        "tendenciaPolymarket": "SOBE 6.10% (↑0.80pp 24h vs 5.30% véspera, vol USD 5.32M). 2L Haddad ~5%. Ruido de mercado fino, sem evento presidencial nacional direto.",
+        "odds": 6.1,
         "percentage": 0,
-        "lastUpdate": "2026-05-31",
-        "value": "5.30"
+        "lastUpdate": "2026-06-01",
+        "value": "6.10"
       }
     ],
-    "updatedAt": "2026-05-31T18:40:00-03:00"
+    "updatedAt": "2026-06-01T23:45"
   }
 }
