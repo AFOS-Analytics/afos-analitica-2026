@@ -31,6 +31,12 @@ const T = {
       desc: 'Mapa interativo de eleições cobertas globalmente. Brasil 2026 e além.',
       cta: 'Explorar mapa',
     },
+    metodo: {
+      title: 'O Método',
+      badge: 'Comece aqui',
+      desc: 'Guia didático de como o AFOS cruza mercados, pesquisas e imprensa — e por que sinaliza divergências.',
+      cta: 'Como funciona',
+    },
   },
   en: {
     sectionLabel: 'Our products',
@@ -54,6 +60,12 @@ const T = {
       badge: '14+ countries',
       desc: 'Interactive map of elections covered globally. Brazil 2026 and beyond.',
       cta: 'Explore map',
+    },
+    metodo: {
+      title: 'The Method',
+      badge: 'Start here',
+      desc: 'A didactic guide to how AFOS cross-references markets, polls and press — and why it flags divergences.',
+      cta: 'How it works',
     },
   },
   es: {
@@ -79,6 +91,12 @@ const T = {
       desc: 'Mapa interactivo de elecciones cubiertas globalmente. Brasil 2026 y más.',
       cta: 'Explorar mapa',
     },
+    metodo: {
+      title: 'El Método',
+      badge: 'Empieza aquí',
+      desc: 'Guía didáctica de cómo AFOS cruza mercados, encuestas y prensa — y por qué señala divergencias.',
+      cta: 'Cómo funciona',
+    },
   },
 }
 
@@ -87,6 +105,7 @@ export function ProductsSection({ locale, isBlue = false }: Props) {
   const dailyUrl = `/${locale}/daily`
   const tradeoffUrl = `/${locale}/tradeoff`
   const globalUrl = `/${locale}/global`
+  const metodoUrl = `/${locale}/how-it-works`
 
   // Inverted color scheme by user request (23/Mai noite):
   // Light theme (page is white) → cards are dark Sapphire Blue → standout
@@ -119,13 +138,26 @@ export function ProductsSection({ locale, isBlue = false }: Props) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a
+            href={metodoUrl}
+            className={`block rounded-xl px-5 py-2.5 border ${cardBg} transition-colors group`}
+            aria-label={`${t.metodo.title}: ${t.metodo.cta}`}
+          >
+            <div className="flex items-baseline gap-2.5 mb-1 flex-wrap">
+              <span className={`text-base font-extrabold uppercase tracking-[0.12em] ${titleColor}`}>{t.metodo.title}</span>
+              <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded whitespace-nowrap ${badgeColor}`}>{t.metodo.badge}</span>
+            </div>
+            <p className={`text-sm leading-snug mb-1.5 ${descColor}`}>{t.metodo.desc}</p>
+            <span className={`text-sm font-semibold group-hover:underline ${ctaColor}`}>{t.metodo.cta} →</span>
+          </a>
+
           <a
             href={dailyUrl}
             className={`block rounded-xl px-5 py-2.5 border ${cardBg} transition-colors group`}
             aria-label={`${t.daily.title}: ${t.daily.cta}`}
           >
-            <div className="flex items-baseline gap-2.5 mb-1 flex-nowrap">
+            <div className="flex items-baseline gap-2.5 mb-1 flex-wrap">
               <span className={`text-base font-extrabold uppercase tracking-[0.12em] ${titleColor}`}>{t.daily.title}</span>
               <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded whitespace-nowrap ${badgeColor}`}>{t.daily.badge}</span>
             </div>
@@ -138,7 +170,7 @@ export function ProductsSection({ locale, isBlue = false }: Props) {
             className={`block rounded-xl px-5 py-2.5 border ${cardBg} transition-colors group`}
             aria-label={`${t.tradeoff.title}: ${t.tradeoff.cta}`}
           >
-            <div className="flex items-baseline gap-2.5 mb-1 flex-nowrap">
+            <div className="flex items-baseline gap-2.5 mb-1 flex-wrap">
               <span className={`text-base font-extrabold uppercase tracking-[0.12em] ${titleColor}`}>{t.tradeoff.title}</span>
               <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded whitespace-nowrap ${badgeColor}`}>{t.tradeoff.badge}</span>
             </div>
@@ -151,7 +183,7 @@ export function ProductsSection({ locale, isBlue = false }: Props) {
             className={`block rounded-xl px-5 py-2.5 border ${cardBg} transition-colors group`}
             aria-label={`${t.global.title}: ${t.global.cta}`}
           >
-            <div className="flex items-baseline gap-2.5 mb-1 flex-nowrap">
+            <div className="flex items-baseline gap-2.5 mb-1 flex-wrap">
               <span className={`text-base font-extrabold uppercase tracking-[0.12em] ${titleColor}`}>{t.global.title}</span>
               <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded whitespace-nowrap ${badgeColor}`}>{t.global.badge}</span>
             </div>
