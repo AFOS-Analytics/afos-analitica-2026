@@ -5,12 +5,12 @@ import { S } from './styles'
 export function HowItWorksEn() {
   return (
     <>
-      <p className="text-center text-sm font-extrabold text-primary uppercase tracking-[0.25em] mb-3">The Method</p>
-      <h1 className="text-3xl md:text-4xl font-extrabold text-primary text-center mb-2 tracking-tight">How AFOS Analytics Works</h1>
-      <p className="text-center text-gray-600 text-base font-medium mb-10">A didactic guide to navigating the platform</p>
+      <p className="text-center text-sm font-extrabold text-primary dark:text-blue-200 uppercase tracking-[0.25em] mb-3">The Method</p>
+      <h1 className="text-3xl md:text-4xl font-extrabold text-primary dark:text-white text-center mb-2 tracking-tight">How AFOS Analytics Works</h1>
+      <p className="text-center text-gray-600 dark:text-blue-100 text-base font-medium mb-10">A didactic guide to navigating the platform</p>
 
-      <nav className="bg-white border border-blue-100 rounded-xl p-6 my-8 shadow-sm" aria-label="Table of contents">
-        <div className="text-xs font-bold text-primary uppercase tracking-wider mb-4">Table of Contents</div>
+      <nav className="bg-white dark:bg-blue-900/40 border border-blue-100 dark:border-blue-400/40 rounded-xl p-6 my-8 shadow-sm" aria-label="Table of contents">
+        <div className="text-xs font-bold text-primary dark:text-blue-200 uppercase tracking-wider mb-4">Table of Contents</div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <TocCol heading="What AFOS is">
             <TocLink href="#introducao">Why AFOS exists</TocLink>
@@ -514,7 +514,7 @@ export function HowItWorksEn() {
         <p>Many sites fill the footer with dozens of decorative links that don't work or lead to empty pages. AFOS chose the opposite: <strong>few links, all functional</strong>. If a link appears in the footer, it delivers something real when clicked. This is the same philosophy as mature open-source projects like Supabase, Linear, and Prisma.</p>
       </Callout>
 
-      <div className="h-px bg-gray-200 my-12" />
+      <div className="h-px bg-gray-200 dark:bg-blue-400/30 my-12" />
 
       <h2 id="bastidores" className={S.h2}>Behind the platform</h2>
       <h3 className={S.h3}>Data arrives on its own</h3>
@@ -610,10 +610,10 @@ export function HowItWorksEn() {
       </Callout>
 
       <SummaryFrame>
-        AFOS Analytics is the first platform that combines real-money prediction markets, official polls, and real-time news to show, with honesty and transparency, what the data actually says about politics, without bias, without propaganda, free and without mandatory registration.
+        AFOS Analytics is the first platform that combines, in real time, prediction markets × opinion polls × news to show, with honesty and transparency, explicit divergences instead of smoothed averages — revealing what the data really says about politics, without bias, without propaganda, free and without mandatory registration.
       </SummaryFrame>
 
-      <p className="text-center text-xs text-gray-400 mt-10 mb-2">Updated April 2026</p>
+      <p className="text-center text-xs text-gray-400 dark:text-blue-200/70 mt-10 mb-2">Updated April 2026</p>
     </>
   )
 }
