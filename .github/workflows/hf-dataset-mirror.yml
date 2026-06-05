@@ -1,13 +1,11 @@
 name: Mirror dataset to Hugging Face
 
-# ⚠️ Por ora SÓ manual (workflow_dispatch). O schedule diário está COMENTADO de
-# propósito — "nada roda antes do OK". Após o 1º run manual aprovado, descomentar
-# o bloco `schedule` abaixo para ligar a rotina diária (14:10 UTC, logo após o
-# archive-analysis das 14:00).
+# Rotina diária LIGADA (1º run manual validado 05/Jun/2026). Roda 14:10 UTC,
+# logo após o archive-analysis (14:00). Também disparável manualmente.
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '10 14 * * *'
+  schedule:
+    - cron: '10 14 * * *'
 
 concurrency:
   group: hf-dataset-mirror
