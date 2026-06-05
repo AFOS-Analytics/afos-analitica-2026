@@ -1,0 +1,55 @@
+name: Mirror dataset to Hugging Face
+
+# ⚠️ Por ora SÓ manual (workflow_dispatch). O schedule diário está COMENTADO de
+# propósito — "nada roda antes do OK". Após o 1º run manual aprovado, descomentar
+# o bloco `schedule` abaixo para ligar a rotina diária (14:10 UTC, logo após o
+# archive-analysis das 14:00).
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '10 14 * * *'
+
+concurrency:
+  group: hf-dataset-mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main (artefatos públicos + scripts)
+        uses: actions/checkout@v4
+
+      - name: Checkout branch archive (série histórica de snapshots)
+        uses: actions/checkout@v4
+        continue-on-error: true
+        with:
+          ref: archive
+          path: archive-history
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Hugging Face CLI
+        run: pip install -q -U "huggingface_hub[cli]"
+
+      - name: Build public export (DB-free — sem acesso a Lead)
+        env:
+          HF_HISTORY_DIR: archive-history
+        run: node scripts/export-hf-dataset.mjs
+
+      - name: Upload to Hugging Face dataset (cumulativo, sem --delete)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          DATE=$(jq -r '.updatedAt // empty' public/analysis-criteriosa.json | grep -oE '^[0-9]{2}/[0-9]{2}/[0-9]{4}' || date -u +%d/%m/%Y)
+          huggingface-cli upload \
+            AFOS-Analytics1/brazil-2026-electoral-divergence \
+            .cache/hf-dataset . \
+            --repo-type=dataset \
+            --commit-message "daily mirror — ${DATE}"

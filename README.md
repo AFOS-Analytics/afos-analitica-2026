@@ -58,7 +58,7 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 - 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
 - 👤 **Founder direct** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
 
-Open source, Apache 2.0. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Trademark use of the "AFOS Analytics" name and logo is governed by [TRADEMARK.md](TRADEMARK.md). Hosted-platform contributions (onboarding a new country) are documented at [docs/platform/add-your-country.md](docs/platform/add-your-country.md) and the public governance model is explained at `/methodology/automated-governance`.
+Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the public divergence dataset mirrored daily to [Hugging Face](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence)) is licensed under **CC BY 4.0** — both require attribution to AFOS Analytics. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Trademark use of the "AFOS Analytics" name and logo is governed by [TRADEMARK.md](TRADEMARK.md). Hosted-platform contributions (onboarding a new country) are documented at [docs/platform/add-your-country.md](docs/platform/add-your-country.md) and the public governance model is explained at `/methodology/automated-governance`.
 
 ---
 
