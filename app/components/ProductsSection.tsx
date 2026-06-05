@@ -9,7 +9,7 @@ interface Props {
 
 const T = {
   'pt-BR': {
-    sectionLabel: 'Nossos produtos',
+    sectionLabel: 'Nossas análises',
     sectionTitle: 'Para você ler sobre risco político eleitoral',
     sectionTitleMobileLine1: 'Para você ler sobre',
     sectionTitleMobileLine2: 'risco político eleitoral',
@@ -39,7 +39,7 @@ const T = {
     },
   },
   en: {
-    sectionLabel: 'Our products',
+    sectionLabel: 'Our analyses',
     sectionTitle: 'For you to read about electoral political risk',
     sectionTitleMobileLine1: 'For you to read about',
     sectionTitleMobileLine2: 'electoral political risk',
@@ -69,7 +69,7 @@ const T = {
     },
   },
   es: {
-    sectionLabel: 'Nuestros productos',
+    sectionLabel: 'Nuestros análisis',
     sectionTitle: 'Para que leas sobre riesgo político electoral',
     sectionTitleMobileLine1: 'Para que leas sobre',
     sectionTitleMobileLine2: 'riesgo político electoral',
