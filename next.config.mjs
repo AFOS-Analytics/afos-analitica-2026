@@ -53,6 +53,18 @@ const nextConfig = {
       },
     ];
   },
+
+  async redirects() {
+    return [
+      {
+        // Alias de marca → dataset público no Hugging Face.
+        // 307 (permanent: false) de propósito: destino trocável sem cache duro.
+        source: '/dataset',
+        destination: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default withBundleAnalyzer(nextConfig);
