@@ -18,6 +18,7 @@ export function HowItWorksEs() {
             <TocLink href="#variacoes-pp">Entendiendo variaciones ↑↓pp</TocLink>
           </TocCol>
           <TocCol heading="Recorrido por la plataforma">
+            <TocLink href="#landing">Página inicial (landing)</TocLink>
             <TocLink href="#header">1. Header</TocLink>
             <TocLink href="#modal-sobre">└ Modal Acerca de</TocLink>
             <TocLink href="#modal-metas">└ Modal Metas</TocLink>
@@ -167,6 +168,17 @@ export function HowItWorksEs() {
       </blockquote>
 
       <NavFlag title="Navegando la plataforma" description="Desde aquí, recorremos la plataforma en el orden en que la encuentras al abrir el sitio." />
+
+      <h2 id="landing" className={S.h2}>La página inicial (landing)</h2>
+      <p className={S.p}>Al abrir <strong>afos-analytics.com</strong>, caes en la página inicial, la puerta de entrada pública. Reúne, en un solo lugar, todo lo que orienta al visitante antes de entrar al dashboard:</p>
+      <ul className={S.ul}>
+        <li><strong>Barra superior (testera)</strong>, el logo <strong>AFOS Analytics</strong> + atajos directos a <strong>Daily · Tradeoff · Global</strong>, selector de idioma (PT/EN/ES), botón de tema (claro/oscuro) y el botón <strong>Dashboard</strong> para entrar a la aplicación.</li>
+        <li><strong>Qué hace AFOS</strong> y estadísticas en vivo (países monitoreados, institutos de encuestas, frecuencia de actualización de los mercados).</li>
+        <li><strong>"Nuestros análisis"</strong>, una grilla con los cuatro atajos principales: <strong>El Método</strong> (esta guía), <strong>AFOS Daily</strong>, <strong>AFOS Tradeoff</strong> y <strong>AFOS Global</strong>.</li>
+        <li><strong>Cobertura global</strong>, una franja con las elecciones monitoreadas (Brasil, Francia, Alemania, Reino Unido, Canadá y más).</li>
+        <li><strong>Registro por email</strong>, el bloque "recibe análisis semanales en tu email": un campo de email + consentimiento opt-in (marcas la casilla) para recibir alertas, resúmenes y comunicaciones. Sin spam, cancela cuando quieras. Justo después de confirmar, una pantalla de bienvenida te deja <strong>elegir el idioma en que quieres recibir</strong> (Português, English o Español), y esa preferencia define el idioma de tus emails del Daily y del Tradeoff.</li>
+        <li><strong>Footer enjuto</strong>, el nombre de la plataforma, una línea de descripción, el disclaimer (sin afiliación con Polymarket) y una fila de íconos: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt y 🤗 Hugging Face. (El footer completo de cuatro bloques, con listas detalladas, es el del dashboard y las demás páginas, descrito en la sección 14.)</li>
+      </ul>
 
       <h2 id="header" className={S.h2}>1. Header (parte superior)</h2>
       <p className={S.p}>En la parte superior ves el logo <strong>AFOS Analytics</strong> y tres botones de navegación:</p>
@@ -478,7 +490,7 @@ export function HowItWorksEs() {
       </Callout>
 
       <h2 id="footer" className={S.h2}>14. Footer (pie de página)</h2>
-      <p className={S.p}>El footer se organiza en <strong>tres bloques enjutos</strong>, cada uno con propósito claro. Ningún link en el footer apunta a página vacía, cada uno entrega algo específico.</p>
+      <p className={S.p}>Este es el footer del <strong>dashboard y las demás páginas</strong> (la página inicial tiene una versión más enjuta, citada en la sección de la landing). Se organiza en <strong>cuatro bloques enjutos</strong>, cada uno con propósito claro. Ningún link en el footer apunta a página vacía, cada uno entrega algo específico.</p>
 
       <h3 className={S.h3}>Bloque 1, Navegación</h3>
       <p className={S.pTight}>Atajos a las áreas principales de la plataforma:</p>
@@ -497,6 +509,8 @@ export function HowItWorksEs() {
         <li><strong>Seguridad</strong>, política de <em>disclosure</em> responsable para vulnerabilidades</li>
         <li><strong>Contribuir</strong>, guía para desarrolladores externos que quieran enviar mejoras</li>
         <li><strong>Código de Conducta</strong>, reglas de convivencia en la comunidad (Contributor Covenant)</li>
+        <li><strong>Gobernanza</strong>, cómo se garantiza la integridad editorial por código (validadores automáticos + reglas versionadas), no por revisión humana caso a caso</li>
+        <li><strong>Trademark</strong>, política de uso del nombre y la marca "AFOS Analytics"</li>
       </ul>
 
       <h3 className={S.h3}>Bloque 3, Contáctenos</h3>
@@ -506,6 +520,17 @@ export function HowItWorksEs() {
         <li>💬 <strong>Soporte</strong>, ayuda para uso de la plataforma</li>
         <li>🔒 <strong>Seguridad</strong>, reporte confidencial de vulnerabilidades</li>
         <li>👤 <strong>Founder</strong>, contacto directo con el fundador</li>
+      </ul>
+
+      <h3 className={S.h3}>Bloque 4, Redes sociales y datos abiertos</h3>
+      <p className={S.pTight}>Una fila de íconos conecta a las presencias oficiales de AFOS, cada una a un canal real y actualizado:</p>
+      <ul className={S.ul}>
+        <li><strong>⭐ GitHub</strong>, código fuente e historial de commits auditable</li>
+        <li><strong>LinkedIn</strong>, perfil del fundador (André Felipe) con actualizaciones institucionales</li>
+        <li><strong>X (@AFOS_Analytics)</strong>, distribución en tiempo real de señales y movimientos de mercado</li>
+        <li><strong>Bluesky</strong>, la misma cobertura en el ecosistema abierto</li>
+        <li><strong>Product Hunt</strong>, la página del producto en la comunidad de tecnología</li>
+        <li><strong>🤗 Hugging Face</strong>, el <strong>dataset abierto</strong> de divergencia (mercados × encuestas × prensa), actualizado diariamente bajo licencia CC BY 4.0, el link de datos del footer lleva directo a él</li>
       </ul>
 
       <h3 className={S.h3}>Pie final</h3>
