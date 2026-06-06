@@ -34,9 +34,9 @@ const candidates: CandidateProfile[] = [
     age: 35,
     role: "Fundador do MBL",
     polymarket: "16.70%",
-    poll: "Renan presidencial Poly 16.70% (↑0.3pp 24h, vol USD 6.62M acumulado). Lidera o mercado de 2º lugar do 1º turno (18.35%) e segue favorito a 3º lugar, à frente de Haddad (3.25%), Zema (3.05%), Caiado (1.95%) no mercado presidencial. Vox Brasil 05/Jun não destaca Renan no 1T; divergência mercado × pesquisa (~10pp) persiste como a mais larga do dashboard.",
+    poll: "Renan presidencial Poly 16.70% (↑0.3pp 24h, vol USD 6.62M acumulado), 3º no mercado presidencial à frente de Haddad (3.25%), Zema (3.05%), Caiado (1.95%). Favorito a terminar em 3º lugar no 1º turno (44.50%) e 2º colocado no mercado do 2º lugar (18.35%, atrás de Flávio 62.50%). Vox Brasil 05/Jun não destaca Renan no 1T; divergência mercado × pesquisa (~10pp) persiste como a mais larga do dashboard.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Renan subiu levemente e lidera o mercado de 2º lugar, muito acima do que as pesquisas lhe dão (~10pp, a maior divergência do dashboard — a Vox 05/Jun sequer o destaca no recorte principal de 1º turno). A VEJA fala em 'candidato que cresce nas pesquisas e vira dor de cabeça para a direita' no duelo Lula × Flávio, sinal de 3ª via tentando se viabilizar enquanto a disputa se bipolariza. STF impeach 5.25% estável."
+    risk: "Renan subiu levemente e segue, nas apostas, muito acima do que as pesquisas lhe dão (~10pp, a maior divergência do dashboard — a Vox 05/Jun sequer o destaca no recorte principal de 1º turno). É favorito ao 3º lugar (44.50%) e 2º no mercado do 2º colocado, atrás de Flávio. A VEJA fala em 'candidato que cresce nas pesquisas e vira dor de cabeça para a direita' no duelo Lula × Flávio. STF impeach 5.25% estável."
   },
   {
     name: "Fernando Haddad",
