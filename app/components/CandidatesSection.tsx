@@ -13,60 +13,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "41.50%",
-    poll: "Lula sobe Poly 41.50% (↑1.0pp 24h, vol USD 6.14M acumulado). Gap Lula × Flávio ALARGA a +13.30pp (de +10.1pp), o mais largo do ciclo recente — 3º dia de recuo de Flávio. Vox Brasil 05/Jun (n=2.100, BR-08016/2026): 1T Lula 42.1% × Flávio 33.6% (gap +8.5pp), Lula +7.8pp desde meados de maio; 2T 47.8 × 41.3, e Lula empata Caiado e Zema. Mercado e pesquisa na mesma direção.",
+    polymarket: "40.50%",
+    poll: "Lula devolve 1pp Poly 40.50% (↓1.0pp 24h, vol USD 6.16M acumulado). Gap Lula × Flávio ESTREITA a +12.35pp (de +13.30pp), mas segue o mais largo do ciclo recente. Sem pesquisa nacional nova: Vox Brasil 05/Jun (n=2.100, BR-08016/2026) segue referência — 1T Lula 42.1% × Flávio 33.6% (gap +8.5pp), Lula +7.8pp desde meados de maio; 2T 47.8 × 41.3, e Lula empata Caiado e Zema.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 05/Jun D+21: Flávio cai pelo 3º dia e Lula sobe, com o gap alargando a +13.30pp — agora confirmado pela pesquisa (Vox 05/Jun 1T +8.5pp). O tarifaço/PIX virou ganho do governo (Estadão: 'esquerda domina o debate sobre tarifas e Pix') e Lula passou a se apresentar como antissistema (Gazeta do Povo). Contraponto: rejeição da indicação de Messias ao STF lida como 'cacetada' em Lula (Gazeta do Povo); PoderData aponta 52% de desaprovação à participação de Janja. STF impeach 5.45% estável."
+    risk: "EVENTOS 06/Jun D+22: dia de continuidade — Lula devolve 1pp e o gap estreita a +12.35pp, ainda o mais largo do ciclo. O tarifaço/PIX (TariFlávio) segue como ganho do governo e passivo de Flávio. Contraponto: rejeição da indicação de Messias ao STF lida como 'cacetada' em Lula (Gazeta do Povo); PoderData aponta 52% de desaprovação à participação de Janja. STF impeach 5.25% estável."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "28.20%",
-    poll: "Flávio CAI 3º dia: Poly 28.20% (↓2.2pp 24h, vol USD 6.43M acumulado) — bem abaixo do patamar pré-salto de 02/Jun. Gap para Lula alarga a +13.30pp. Vox Brasil 05/Jun: 1T 33.6% (gap -8.5pp, caiu 2.9pp desde meados de maio); 2T 41.3% × Lula 47.8. SENADO PL 72.50%. Rejeição 46% > Lula 45% (Datafolha 22/Mai).",
+    polymarket: "28.15%",
+    poll: "Flávio ~estável: Poly 28.15% (↓0.05pp 24h, vol USD 6.43M acumulado) — segue bem abaixo do patamar pré-salto de 02/Jun. Gap para Lula estreita a +12.35pp. Vox Brasil 05/Jun: 1T 33.6% (gap -8.5pp, caiu 2.9pp desde meados de maio); 2T 41.3% × Lula 47.8. SENADO PL 73.50% (vol USD 243k). Rejeição 46% > Lula 45% (Datafolha 22/Mai).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 05/Jun: o tarifaço/PIX se firmou como PASSIVO. A esquerda domina o enquadramento sobre tarifas e Pix (Estadão) e a fala de Eduardo Bolsonaro pressiona a campanha; Flávio insiste que 'o Pix é do Bolsonaro', mas a Folha lembra que Bolsonaro disse desconhecer a medida em 2020. No STF, Flávio pede que Moraes seja declarado suspeito no caso Master (Terra, Band) e Fachin nega afastar Nunes Marques da relatoria da CPI (BPMoney). Mantida rejeição Flávio 46% > Lula 45%. STF impeach 5.45% estável."
+    risk: "EVENTOS 06/Jun: o tarifaço/PIX (TariFlávio) segue como PASSIVO — a visita a Trump foi lida como 'gol contra' (Intercept) e Flávio caiu nos rankings de engajamento nas redes após o caso Vorcaro (Exame, Revista Fórum). No STF, Flávio pede que Moraes seja declarado suspeito no caso Master (Estadão, Terra) e Fachin nega afastar Nunes Marques da relatoria da CPI (Jornal do Brasil, UOL). Mantida rejeição Flávio 46% > Lula 45%. STF impeach 5.25% estável."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "16.40%",
-    poll: "Renan presidencial Poly 16.40% (↑0.5pp 24h, vol USD 6.61M acumulado). Segue SEGUNDO presidencial Poly e favorito a 3º lugar (3L 44.50%), acima de Zema (3.25%), Haddad (2.65%), Caiado (2.35%). Vox Brasil 05/Jun não destaca Renan no 1T; divergência mercado × pesquisa (~10pp) persiste como a mais larga do dashboard.",
+    polymarket: "16.70%",
+    poll: "Renan presidencial Poly 16.70% (↑0.3pp 24h, vol USD 6.62M acumulado). Lidera o mercado de 2º lugar do 1º turno (18.35%) e segue favorito a 3º lugar, à frente de Haddad (3.25%), Zema (3.05%), Caiado (1.95%) no mercado presidencial. Vox Brasil 05/Jun não destaca Renan no 1T; divergência mercado × pesquisa (~10pp) persiste como a mais larga do dashboard.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "Renan subiu levemente e preserva o 2º lugar de mercado, muito acima do que as pesquisas lhe dão (~10pp, a maior divergência do dashboard — a Vox 05/Jun sequer o destaca no recorte principal de 1º turno). A VEJA fala em 'candidato que cresce nas pesquisas e vira dor de cabeça para a direita' no duelo Lula × Flávio, sinal de 3ª via tentando se viabilizar enquanto a disputa se bipolariza. STF impeach 5.45% estável."
+    risk: "Renan subiu levemente e lidera o mercado de 2º lugar, muito acima do que as pesquisas lhe dão (~10pp, a maior divergência do dashboard — a Vox 05/Jun sequer o destaca no recorte principal de 1º turno). A VEJA fala em 'candidato que cresce nas pesquisas e vira dor de cabeça para a direita' no duelo Lula × Flávio, sinal de 3ª via tentando se viabilizar enquanto a disputa se bipolariza. STF impeach 5.25% estável."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "2.65%",
-    poll: "Haddad CAI Poly 2.65% (↓2.45pp 24h, vol USD 5.54M acumulado) — devolve o prêmio das últimas sessões e perde a 3ª posição presidencial do mercado. Vox Brasil 05/Jun não lista Haddad no presidencial nacional. Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    polymarket: "3.25%",
+    poll: "Haddad RECUPERA Poly 3.25% (↑0.6pp 24h, vol USD 5.56M acumulado) — retoma o prêmio e a 3ª posição presidencial do mercado que havia devolvido. Vox Brasil 05/Jun não lista Haddad no presidencial nacional. Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad recuou forte no mercado (↓2.45pp). Como ministro da Fazenda, segue no centro da disputa do PIX, em que o governo cravou 'O PIX é do Brasil' como bandeira, mas o mercado não precifica candidatura presidencial. Disputa estadual SP desfavorável (Vox 30/Mai Tarcísio 48.3% × Haddad 36.5%). STF impeach 5.45% estável."
+    risk: "Haddad recuperou terreno no mercado (↑0.6pp). Como ministro da Fazenda, segue no centro da disputa do PIX/tarifaço, em que o governo cravou 'O PIX é do Brasil' como bandeira, mas o mercado não precifica candidatura presidencial dele. Disputa estadual SP desfavorável (Vox 30/Mai Tarcísio 48.3% × Haddad 36.5%). STF impeach 5.25% estável."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "2.35%",
-    poll: "Caiado leve alta no piso: Poly 2.35% (↑0.45pp 24h, vol USD 3.86M acumulado). Vox Brasil 05/Jun: 1T Caiado 6.9% (LIDERA a 3ª via na pesquisa); 2T Lula empata Caiado — aqui o poll vê MUITO MAIS que o mercado (inversão rara, agora em 2 pesquisas seguidas, com RTBD 01/Jun 6% e empate 43×43).",
+    polymarket: "1.95%",
+    poll: "Caiado leve recuo no piso: Poly 1.95% (↓0.4pp 24h, vol USD 3.87M acumulado). Vox Brasil 05/Jun: 1T Caiado 6.9% (LIDERA a 3ª via na pesquisa); 2T Lula empata Caiado — aqui o poll vê MUITO MAIS que o mercado (inversão rara, em 2 pesquisas seguidas, com RTBD 01/Jun 6% e empate 43×43).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado segue no piso do mercado, mas é o líder da 3ª via nas pesquisas: a Vox 05/Jun dá 6.9% no 1T e empate com Lula no 2T, leitura que o mercado não precifica (mantém abaixo de 2.5%). É a inversão rara em que duas pesquisas seguidas veem mais que o Polymarket. STF impeach 5.45% estável."
+    risk: "Caiado segue no piso do mercado, mas é o líder da 3ª via nas pesquisas: a Vox 05/Jun dá 6.9% no 1T e empate com Lula no 2T, leitura que o mercado não precifica (mantém abaixo de 2%). É a inversão rara em que duas pesquisas seguidas veem mais que o Polymarket. STF impeach 5.25% estável."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "3.25%",
-    poll: "Zema presidencial Poly 3.25% (↑0.75pp 24h, vol USD 3.47M), ainda no piso da 3ª via. Vox Brasil 05/Jun: 2T Lula empata Zema (poll vê mais que o mercado). 3ª via sem tração com a disputa bipolarizada Lula × Flávio. Mantida Quaest 13/Mai Zema 4% empate Caiado.",
+    polymarket: "3.05%",
+    poll: "Zema presidencial Poly 3.05% (↓0.2pp 24h, vol USD 3.47M), ainda no piso da 3ª via. Vox Brasil 05/Jun: 2T Lula empata Zema (poll vê mais que o mercado). 3ª via sem tração com a disputa bipolarizada Lula × Flávio. Mantida Quaest 13/Mai Zema 4% empate Caiado.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema com leve alta, mas segue no piso — a 3ª via não reabre com a disputa bipolarizada. A Vox 05/Jun dá Lula empatando Zema no 2º turno, leitura mais favorável que a do mercado. STF impeach 5.45% estável."
+    risk: "Zema com leve recuo, segue no piso — a 3ª via não reabre com a disputa bipolarizada. A Vox 05/Jun dá Lula empatando Zema no 2º turno, leitura mais favorável que a do mercado. STF impeach 5.25% estável."
   },
   {
     name: "Tarcísio de Freitas",
@@ -74,9 +74,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.4M acumulado, anomalia de legado). PL Senado em 72.50%. Vox Brasil 05/Jun não destaca Tarcísio nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.4M acumulado, anomalia de legado). PL Senado em 73.50% (vol USD 243k). Vox Brasil 05/Jun não destaca Tarcísio nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio foi o fiador do realinhamento de 02/Jun (apoio a Flávio), mas o salto que ele destravou já reverteu inteiro com o tarifaço virando passivo — Flávio caiu pelo 3º dia. Foco na reeleição em SP, onde lidera. STF impeach 5.45% estável."
+    risk: "Tarcísio foi o fiador do realinhamento de 02/Jun (apoio a Flávio), mas o salto que ele destravou já reverteu inteiro com o tarifaço virando passivo (TariFlávio). Foco na reeleição em SP, onde lidera. STF impeach 5.25% estável."
   },
 ];
 
