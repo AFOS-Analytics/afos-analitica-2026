@@ -87,7 +87,9 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   return {
     title: `${t.title} | AFOS Analytics`,
     description: t.subtitle,
-    robots: { index: false, follow: false },
+    // Indexável: o glossário é ativo GEO/trust intencional, promovido em sitemap + llms.txt
+    // + DefinedTerm JSON-LD. O noindex anterior contradizia esses sinais (EVAL 06/Jun).
+    robots: { index: true, follow: true },
     alternates: {
       canonical: `https://afos-analytics.com/${locale}/glossary`,
       languages: SUPPORTED_LOCALES.reduce<Record<string, string>>((acc, l) => {
@@ -101,7 +103,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       description: t.subtitle,
       url: `https://afos-analytics.com/${locale}/glossary`,
       siteName: 'AFOS Analytics',
-      locale,
+      locale: locale === 'pt-BR' ? 'pt_BR' : locale === 'es' ? 'es_ES' : 'en_US',
       images: [{ url: `https://afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: t.title }],
     },
     twitter: {

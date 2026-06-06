@@ -181,7 +181,7 @@ async function main() {
     '---',
     `date: ${fm.date instanceof Date ? fm.date.toISOString().slice(0, 10) : fm.date}`,
     `updatedAt: "${fm.updatedAt}"`,
-    `title: ${buildTitle(date, locale)}`,
+    `title: ${JSON.stringify(buildTitle(date, locale))}`,
     `locale: ${locale}`,
     'status: draft',
     `lede: ${JSON.stringify(ledeResult.translatedText)}`,

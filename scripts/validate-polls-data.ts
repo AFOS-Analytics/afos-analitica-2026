@@ -10,7 +10,7 @@
  *   npx tsx scripts/validate-polls-data.ts
  *   (exit 0 = OK, exit 1 = schema violation)
  */
-import { readFileSync } from 'fs'
+import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
 const path = join(process.cwd(), 'public', 'polls-data.json')
@@ -119,16 +119,69 @@ if (data.polymarketComparison !== undefined) {
   }
 }
 
+// Hardening 06/Jun pós-EVAL D+21: validar TAMBÉM analysis-criteriosa.json.
+// PollsSection.tsx renderiza crit.quadroComparativo.map, crit.candidates[].fortes/.fracos.map
+// e c.caiado/c.haddad — o /atualizar reescreve esse arquivo todo dia, mesma classe de
+// drift (objeto-onde-se-espera-array) que derrubou o dashboard em 19-21/Mai. Esse arquivo
+// não tinha cobertura de validator nem de pre-commit (gêmeo não-guardado do polls-data).
+// Tolerante a ausência (EVAL 06/Jun): se o arquivo não existe (estado raro/fresh clone antes
+// do 1º /atualizar), warn e pula — não bloqueia commits de polls-data. O arquivo é versionado,
+// então em uso normal sempre existe. JSON inválido (existe mas corrompido) ainda é erro fatal.
+const critPath = join(process.cwd(), 'public', 'analysis-criteriosa.json')
+let crit: any = null
+if (!existsSync(critPath)) {
+  warnings.push('analysis-criteriosa.json ausente — validação do crit pulada (esperado existir no repo)')
+} else {
+  try {
+    crit = JSON.parse(readFileSync(critPath, 'utf-8'))
+  } catch (err) {
+    console.error(`❌ analysis-criteriosa.json inválido: ${err instanceof Error ? err.message : err}`)
+    process.exit(1)
+  }
+
+  if (!Array.isArray(crit?.candidates)) {
+    errors.push(`analysis-criteriosa.json: candidates DEVE ser array (got ${typeof crit?.candidates})`)
+  } else {
+    crit.candidates.forEach((c: any, i: number) => {
+      const cl = `analysis-criteriosa.candidates[${i}] (${c?.name || c?.rank || 'sem-id'})`
+      if (!c || typeof c !== 'object') { errors.push(`${cl}: entrada não é objeto`); return }
+      // Candidatos 1-3 (sem 'caiado'): fortes/fracos são arrays renderizados com .map
+      if (!c.caiado) {
+        if (!Array.isArray(c.fortes)) errors.push(`${cl}: fortes DEVE ser array (got ${typeof c.fortes})`)
+        if (!Array.isArray(c.fracos)) errors.push(`${cl}: fracos DEVE ser array (got ${typeof c.fracos})`)
+      } else {
+        // Candidato 4 (formato especial): caiado/haddad são objetos com label string
+        for (const sub of ['caiado', 'haddad']) {
+          if (typeof c[sub] !== 'object' || c[sub] === null) errors.push(`${cl}.${sub}: DEVE ser objeto`)
+          else if (typeof c[sub].label !== 'string') errors.push(`${cl}.${sub}.label: deve ser string`)
+        }
+      }
+    })
+  }
+
+  if (!Array.isArray(crit?.quadroComparativo)) {
+    errors.push(`analysis-criteriosa.json: quadroComparativo DEVE ser array (got ${typeof crit?.quadroComparativo})`)
+  } else {
+    crit.quadroComparativo.forEach((r: any, i: number) => {
+      if (!r || typeof r !== 'object') errors.push(`analysis-criteriosa.quadroComparativo[${i}]: entrada não é objeto`)
+      else if (typeof r.n !== 'string') errors.push(`analysis-criteriosa.quadroComparativo[${i}]: campo 'n' (nome) ausente/inválido`)
+    })
+  }
+}
+
 if (warnings.length > 0) {
   console.warn(`⚠️  ${warnings.length} warning(s):`)
   warnings.forEach(w => console.warn(`   ${w}`))
 }
 
 if (errors.length > 0) {
-  console.error(`\n❌ ${errors.length} erro(s) de schema em polls-data.json:`)
+  console.error(`\n❌ ${errors.length} erro(s) de schema (polls-data.json + analysis-criteriosa.json):`)
   errors.forEach(e => console.error(`   ${e}`))
   console.error('\nSchema canônico em: memory/feedback_polls_data_canonical_schema.md')
   process.exit(1)
 }
 
-console.log(`✅ polls-data.json OK — ${data.polls.length} entradas validadas + approvalData + polymarketComparison`)
+console.log(`✅ polls-data.json OK — ${data.polls.length} entradas + approvalData + polymarketComparison`)
+if (crit) {
+  console.log(`✅ analysis-criteriosa.json OK — ${crit.candidates.length} candidatos + ${crit.quadroComparativo.length} linhas quadroComparativo`)
+}

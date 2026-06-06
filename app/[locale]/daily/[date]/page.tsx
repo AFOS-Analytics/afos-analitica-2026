@@ -102,6 +102,12 @@ export default async function DailyByDatePage(props: PageProps) {
   if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date)) notFound()
   const data = loadDaily(params.date, params.locale)
   if (!data) notFound()
+  // EVAL 06/Jun: loadDaily faz fallback pro PT quando o arquivo do locale pedido não existe,
+  // mas esta página declara inLanguage/og:locale = params.locale (da URL). Sem este guard,
+  // /en|/es serviria o corpo PT mentindo o idioma (hreflang + JSON-LD falsos). Em produção,
+  // 404 é a resposta honesta — o publish sempre traduz os 3 locales antes de publicar. Em
+  // preview, o fallback fica liberado para revisão antes da tradução.
+  if (process.env.VERCEL_ENV === 'production' && data.locale !== params.locale) notFound()
 
   const schema = buildArticleSchema(data, params.locale)
   const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)

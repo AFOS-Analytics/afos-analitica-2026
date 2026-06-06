@@ -9,6 +9,7 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 import { visitorStateSchema } from '../../../../lib/validations'
+import { isRateLimited } from '../../../../lib/rate-limit'
 
 export async function POST(request: Request) {
   if (!prisma) return NextResponse.json({ ok: false }, { status: 503 })
@@ -21,11 +22,21 @@ export async function POST(request: Request) {
   const parsed = visitorStateSchema.safeParse(body)
   if (!parsed.success) return NextResponse.json({ ok: false }, { status: 400 })
 
+  // Rate-limit (EVAL 06/Jun): rota era unauthenticated + sem throttle = amplificador de
+  // escrita no Neon. 10 chamadas/min por visitorId, mesmo guard do /dismiss.
+  if (await isRateLimited(`afos:ratelimit:migrate:${parsed.data.visitorId}`, 10, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
+
   try {
+    // Semântica de migração (EVAL 06/Jun): create-if-absent ATÔMICO via upsert com update vazio.
+    // O `update: {}` garante que um registro JÁ existente NÃO é sobrescrito — fecha o vetor de
+    // "flipar qualquer visitorId para subscribed=true". E por ser upsert é race-safe (sem P2002
+    // em requests concorrentes, ao contrário de findUnique+create).
     await prisma.visitorState.upsert({
       where: { visitorId: parsed.data.visitorId },
       create: { visitorId: parsed.data.visitorId, subscribed: true, subscribedAt: new Date() },
-      update: { subscribed: true, subscribedAt: new Date() },
+      update: {},
     })
     return NextResponse.json({ ok: true })
   } catch (error) {

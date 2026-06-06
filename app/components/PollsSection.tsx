@@ -10,6 +10,11 @@ interface PollsSectionProps {
   crit: CritData | null;
 }
 
+// Guard de render (camada 1 da defesa do dashboard): retorna [] quando o valor não é array,
+// evitando o crash `.map is not a function` se um JSON do /atualizar vier com shape divergente
+// (objeto-onde-se-espera-array — incidentes 19-21/Mai). O validator (camada 2) pega na origem.
+const asArray = (x: unknown): any[] => (Array.isArray(x) ? x : []);
+
 export function PollsSection({ polls, crit }: PollsSectionProps) {
   const { t } = useTranslation();
   const locale = useLocale();
@@ -31,7 +36,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
               <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoll')}</div>
               <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoly')}</div>
-              {polls?.polymarketComparison?.candidates.map((c, i) => (
+              {asArray(polls.polymarketComparison.candidates).map((c, i) => (
                 <div key={i} className="contents">
                   <div className="font-semibold py-1 border-t border-gray-100">{c.name}</div>
                   <div className="text-center py-1 border-t border-gray-100">{c.pesquisaRange}</div>
@@ -44,7 +49,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           </div>
           {/* Mobile: cards empilhados */}
           <div className="sm:hidden space-y-2">
-            {polls?.polymarketComparison?.candidates.map((c, i) => (
+            {asArray(polls.polymarketComparison.candidates).map((c, i) => (
               <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
                 <div className="font-semibold text-sm text-dark mb-1">{c.name}</div>
                 <div className="grid grid-cols-2 gap-1 text-xs">
@@ -182,7 +187,9 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       })()}
 
       {/* ANÁLISE CRITERIOSA, dados via JSON externo */}
-      {crit && crit.candidates?.length > 0 && (
+      {/* Gate exige Array.isArray (EVAL 06/Jun): `candidates?.length > 0` passava se candidates
+          fosse um objeto/string com .length, e os `crit.candidates.filter(...)` abaixo quebravam. */}
+      {crit && Array.isArray(crit.candidates) && crit.candidates.length > 0 && (
       <div className="mt-6 pt-6 border-t-2 border-primary/20">
       <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
         <h3 className="text-xl font-bold text-dark flex items-center gap-2"><span>🔬</span> {t('sections.critAnalysis')}</h3>
@@ -198,13 +205,13 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div className="bg-green-50 rounded-lg p-4">
               <h4 className="font-bold text-green-700 text-sm mb-2">✅ {t('sections.strengths')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
-                {c.fortes.map((f, i) => <li key={i}>• {f}</li>)}
+                {asArray(c.fortes).map((f, i) => <li key={i}>• {f}</li>)}
               </ul>
             </div>
             <div className="bg-red-50 rounded-lg p-4">
               <h4 className="font-bold text-red-700 text-sm mb-2">❌ {t('sections.weaknesses')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
-                {c.fracos.map((f, i) => <li key={i}>• {f}</li>)}
+                {asArray(c.fracos).map((f, i) => <li key={i}>• {f}</li>)}
               </ul>
             </div>
           </div>
@@ -221,21 +228,21 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           {c.subtitle && <p className="text-xs text-gray-500 mb-3">{c.subtitle}</p>}
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div>
-              <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 {c.caiado!.label}</h4>
+              <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 {c.caiado?.label}</h4>
               <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.caiado!.fortes}</p>
+                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.caiado?.fortes}</p>
               </div>
               <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.caiado!.fracos}</p>
+                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.caiado?.fracos}</p>
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-sm text-danger mb-2">🔴 {c.haddad!.label}</h4>
+              <h4 className="font-bold text-sm text-danger mb-2">🔴 {c.haddad?.label}</h4>
               <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.haddad!.fortes}</p>
+                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.haddad?.fortes}</p>
               </div>
               <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.haddad!.fracos}</p>
+                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.haddad?.fracos}</p>
               </div>
             </div>
           </div>
@@ -258,7 +265,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
             <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
             <div className="font-bold text-gray-500 py-2 text-center">{t('sections.secondRoundVsLula')}</div>
-            {crit.quadroComparativo.map((r, i) => (
+            {asArray(crit.quadroComparativo).map((r, i) => (
               <div key={i} className="contents">
                 <div className="font-semibold py-1 border-t border-gray-100">{r.n}</div>
                 <div className="text-center py-1 border-t border-gray-100" style={{color: r.pc || undefined, fontWeight: r.pc ? 700 : undefined}}>{r.p}</div>
@@ -270,7 +277,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           </div>
         </div>
         <div className="sm:hidden space-y-2">
-          {crit.quadroComparativo.map((r, i) => (
+          {asArray(crit.quadroComparativo).map((r, i) => (
             <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
               <div className="font-semibold text-sm mb-1">{r.n}</div>
               <div className="grid grid-cols-2 gap-1 text-xs">

@@ -151,9 +151,14 @@ export async function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/' + segments.join('/'), request.url));
     }
   } else {
-    // Set Content-Language header based on locale + propagate locale via x-pathname-locale
-    // for the root layout to read and emit <html lang="...">.
-    const response = NextResponse.next();
+    // Set Content-Language header based on locale + propagate locale via x-pathname-locale.
+    // CRÍTICO: o header precisa ir nas REQUEST headers (não só na response) para o root
+    // layout (server component) lê-lo via headers() e emitir <html lang="...">. Sem o
+    // request.headers, headers() nunca enxerga o valor e <html lang> ficava sempre "pt-BR"
+    // em /en/* e /es/* (bug a11y + SEO, EVAL 06/Jun).
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set('x-pathname-locale', firstSegment);
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set('Content-Language', firstSegment);
     response.headers.set('x-pathname-locale', firstSegment);
     return ensureVisitorCookie(request, response);

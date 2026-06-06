@@ -12,8 +12,8 @@ set -e
 # Lista arquivos staged. Se polls-data.json não está no commit, sai 0 (passa).
 STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || echo "")
 
-if echo "$STAGED" | grep -qE '(^|/)public/polls-data\.json$'; then
-  echo "🔍 pre-commit: polls-data.json staged — validando schema canônico..."
+if echo "$STAGED" | grep -qE '(^|/)public/(polls-data|analysis-criteriosa)\.json$'; then
+  echo "🔍 pre-commit: polls-data/analysis-criteriosa staged — validando schema canônico..."
   if ! npx tsx scripts/validate-polls-data.ts; then
     echo ""
     echo "❌ pre-commit BLOQUEADO: polls-data.json não passou no validator."

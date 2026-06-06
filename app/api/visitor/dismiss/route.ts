@@ -4,10 +4,10 @@
  */
 
 import { NextResponse } from 'next/server'
-import { Redis } from '@upstash/redis'
 import { prisma } from '../../../../lib/db'
 import { visitorDismissSchema } from '../../../../lib/validations'
 import { MAX_POPUP_DISMISSALS } from '../../../../lib/visitor/constants'
+import { isRateLimited } from '../../../../lib/rate-limit'
 
 export async function POST(request: Request) {
   if (!prisma) return NextResponse.json({ ok: false, error: 'unavailable' }, { status: 503 })
@@ -21,16 +21,8 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ ok: false, error: 'invalid_visitor_id' }, { status: 400 })
 
   // Rate limit: 10 dismiss calls per minute per visitorId (D+7 hardening).
-  const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
-  const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
-  if (redisUrl && redisToken) {
-    const redis = new Redis({ url: redisUrl, token: redisToken })
-    const rateLimitKey = `afos:ratelimit:dismiss:${parsed.data.visitorId}`
-    const attempts = await redis.incr(rateLimitKey)
-    if (attempts === 1) await redis.expire(rateLimitKey, 60)
-    if (attempts > 10) {
-      return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
-    }
+  if (await isRateLimited(`afos:ratelimit:dismiss:${parsed.data.visitorId}`, 10, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
   }
 
   try {

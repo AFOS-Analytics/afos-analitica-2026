@@ -106,6 +106,7 @@ async function main() {
   let sent = 0
   let failed = 0
   let skipped = 0
+  const failedEmails: string[] = []
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
@@ -143,6 +144,13 @@ async function main() {
 
     sent += results.filter(r => r.ok).length
     failed += results.filter(r => !r.ok).length
+    // EVAL 06/Jun: registra os endereços que falharam para re-envio DIRIGIDO. Sem isso, um
+    // crash/429 no meio forçava re-broadcast pra lista inteira (duplicatas). Não é idempotência
+    // completa, mas torna a falha observável e recuperável sem reenviar a todos.
+    for (const r of results) {
+      const reason = 'reason' in r ? r.reason : undefined
+      if (!r.ok && reason !== 'dry_run' && reason !== 'no_content') failedEmails.push(r.lead.email)
+    }
 
     if (i + BATCH_SIZE < leads.length) {
       await new Promise(r => setTimeout(r, BATCH_DELAY_MS))
@@ -150,6 +158,10 @@ async function main() {
   }
 
   console.log(`\n✅ Broadcast complete: ${sent} sent / ${failed} failed / ${skipped} skipped of ${leads.length} active leads.`)
+  if (failedEmails.length > 0) {
+    console.warn(`⚠️  ${failedEmails.length} envios falharam — re-enviar dirigido a:`)
+    failedEmails.forEach(e => console.warn(`   ${e}`))
+  }
   await prisma.$disconnect()
 }
 

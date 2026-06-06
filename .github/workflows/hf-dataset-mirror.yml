@@ -1,11 +1,17 @@
 name: Mirror dataset to Hugging Face
 
-# Rotina diária LIGADA (1º run manual validado 05/Jun/2026). Roda 14:10 UTC,
-# logo após o archive-analysis (14:00). Também disparável manualmente.
+# Rotina diária LIGADA (1º run manual validado 05/Jun/2026). Encadeada via workflow_run:
+# dispara na CONCLUSÃO do "Archive Analysis Snapshots" em vez de um cron independente
+# às 14:10. Schedules do GitHub atrasam (best-effort), e o gap de 10min com o archive
+# (14:00) era curto demais → em dias de atraso o mirror publicava sem o snapshot do dia
+# (dataset público incompleto). Agora a ordem archive→mirror é garantida (EVAL 06/Jun).
+# Também disparável manualmente.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '10 14 * * *'
+  workflow_run:
+    workflows: ["Archive Analysis Snapshots"]
+    types:
+      - completed
 
 concurrency:
   group: hf-dataset-mirror
@@ -14,6 +20,9 @@ concurrency:
 jobs:
   mirror:
     runs-on: ubuntu-latest
+    # Só roda se o archive concluiu com sucesso (ou disparo manual). Evita espelhar
+    # quando o upstream falhou.
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout main (artefatos públicos + scripts)
         uses: actions/checkout@v4
@@ -35,6 +44,16 @@ jobs:
 
       - name: Install Hugging Face CLI
         run: pip install -q -U "huggingface_hub[cli]"
+
+      - name: Guard — export DEVE ser DB-free (anti-Lead/LGPD, não-negociável)
+        run: |
+          # Casa apenas CÓDIGO real (import/uso), não a prosa do comentário-salvaguarda
+          # que cita "DATABASE_URL"/"Prisma" de propósito. Padrões precisos evitam falso-positivo.
+          if grep -nE "@prisma/client|PrismaClient|process\.env\.DATABASE_URL|from ['\"][^'\"]*/db['\"]|require\(['\"][^'\"]*/db['\"]" scripts/export-hf-dataset.mjs; then
+            echo "::error::export-hf-dataset.mjs referencia DB — viola a salvaguarda anti-Lead. Abortando."
+            exit 1
+          fi
+          echo "✅ export-hf-dataset.mjs é DB-free."
 
       - name: Build public export (DB-free — sem acesso a Lead)
         env:

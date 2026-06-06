@@ -52,8 +52,10 @@ async function main() {
     // Persist específico (ex: 2026-04-22)
     files = [`${targetArg}.md`]
   } else {
-    // Persist todos os .md no diretório
-    files = readdirSync(dir).filter(f => f.endsWith('.md')).sort()
+    // Persist todos os .md no diretório — EXCLUI .en.md/.es.md (EVAL 06/Jun): os 3 locales
+    // têm o mesmo updatedAt → mesmo slug, gerando 3× upserts colapsando na mesma linha PT
+    // (amplificação de escrita no Neon + estado não-determinístico). Igual ao persist-tradeoff.
+    files = readdirSync(dir).filter(f => f.endsWith('.md') && !f.includes('.en.') && !f.includes('.es.')).sort()
   }
 
   let ok = 0
