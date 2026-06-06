@@ -1,0 +1,41 @@
+{
+  "date": "2026-06-06",
+  "factCheckGate": {
+    "highImpactEvents": [
+      {
+        "event": "Flávio pede suspeição de Moraes + Fachin nega afastar Nunes Marques da CPI do Master",
+        "crossRef": "Nunes Marques/Moraes suspeito já em 2026-06-05.md (linha 51) → CONTINUIDADE de 05/Jun",
+        "fetch": "check-recurrence confirmou conteúdo de 05/Jun; sem fato novo em 06/Jun",
+        "secondSource": "n/a (continuidade)",
+        "decision": "NÃO incorporar como novidade — citado como frente em curso com data 05/Jun"
+      },
+      {
+        "event": "Flávio cai após áudio com Vorcaro, Lula lidera ranking de redes (Exame 06/Jun 12:06)",
+        "crossRef": "Vorcaro em dailies desde 30/Mai, 01/Jun → CONTINUIDADE",
+        "fetch": "WebSearch exame.com + intercept.com.br confirma: áudio Vorcaro/Dark Horse é de 13/Mai (intercept.com.br/2026/05/13/audio-flavio-negociou-vorcaro-milhoes); peça de 06/Jun é DADO de ranking de redes (Datrix), tipo=análise/dados",
+        "secondSource": "CNN Brasil/Datrix (06/Jun 03:38) — independente",
+        "decision": "INCORPORAR como sinal de redes de 06/Jun (análise), não como vazamento novo"
+      },
+      {
+        "event": "Tariflávio — visita a Trump como gol contra (Intercept Brasil 06/Jun 10:00)",
+        "crossRef": "tarifaço em dailies desde 04/Jun (23 menções) → CONTINUIDADE",
+        "fetch": "cache pubDate 06/Jun + WebSearch intercept.com.br/2026/06/06/visita-flavio-bolsonaro-trump-gol-contra; tipo=análise/opinião; 78% sentimento negativo nas redes",
+        "secondSource": "O Globo (modulação EUA) + Metrópoles (teste para Trump) — independentes, 06/Jun",
+        "decision": "INCORPORAR como enquadramento de 06/Jun (análise), sem causação espúria com o mercado"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "78% sentimento negativo (Intercept), Datrix 56% (CNN), Quaest 10 estados (CNN) — todos atribuídos ao veículo. Mercado = Polymarket (primário). Vox = multi-fonte (05/Jun + Correio + J.Uberaba). Nenhuma âncora single-source apresentada como fato.",
+    "numericalErrors": "reconcile-claims rodado; só falsos-positivos de truncamento decimal (40% de 40,50%; 12pp de 12,35pp). Markdown bate com JSON (40,50/28,15/16,70/3,25/3,05/1,95/62,50/18,35/44,50/73,50/5,25).",
+    "fontesInventadas": "Intercept/O Globo/Estadão/Exame/CNN/Metrópoles/Folha presentes no cache 06/Jun; domínios Intercept+Exame confirmados via WebSearch. OK.",
+    "quotesLiterais": "gol contra, Tariflávio, teste para Trump — manchetes/apelidos atribuídos ao veículo, não citações fabricadas. OK.",
+    "causacaoEspuria": "Movimento de mercado tratado como correção técnica; narrativa Tariflávio explicitamente NÃO atribuída ao preço (estável ↓0,05pp); Divergência 4.3 declara não-atribuição a fator único. OK.",
+    "verbosCriticos": "áudio desambiguado (de 13/Mai, não vazamento novo); frente judicial marcada como continuidade de 05/Jun; datas explícitas; sem verbos de prisão/morte. OK.",
+    "decision": "prosseguir para preview"
+  },
+  "translationReview": {
+    "en": "URLs: 6 redirects do Google News normalizadas contra o PT (tradutor corrompeu chars base64 de Datrix/Exame-político etc.). Texto: 1º/2º turno → first/second round; 'in [Empate técnico]' → '[technically tied]'.",
+    "es": "URLs: 8 redirects normalizadas contra o PT. Texto: 1º/2º turno → primera/segunda vuelta; 'empaта' (cirílico) → 'empata'; investigación/investigaciones (pesquisa) → encuesta(s); amostra/Amostra/amostrasl → muestra(s); '13/Mai' → '13 de mayo'; 'e Flávio' → 'y Flávio'. Slugs #primeiro-turno mantidos (neutros)."
+  }
+}
