@@ -1,0 +1,48 @@
+{
+  "date": "2026-06-05",
+  "factCheckGate": {
+    "highImpactEvents": [
+      {
+        "event": "Pesquisa nacional Vox Brasil 05/Jun (1T Lula 42,1 × Flávio 33,6; 2T 47,8 × 41,3)",
+        "crossRef": "Vox aparece 12× nas dailies 01-04/Jun apenas como entrada de calendário (estadual); publicação dos resultados é novidade de hoje",
+        "fetch": "Poder360 (URL direta) + WebSearch (Exame/Metrópoles/JB); n=2.100, campo 01-03/Jun, BR-08016/2026, tipo=evento",
+        "secondSource": "Exame + Metrópoles + Correio Braziliense",
+        "decision": "INCORPORAR — nota: registrada como estadual no TSE, conteúdo nacional presidencial (confirmado em 2 primárias)"
+      },
+      {
+        "event": "Flávio pede ao STF que declare Moraes suspeito no caso Master",
+        "crossRef": "suspeição 0 menções (novidade); Moraes 1 menção (29/Mai, contexto diferente)",
+        "fetch": "Gazeta do Povo + WebSearch (Band, Correio Braziliense, CartaCapital, Estado de Minas); petição protocolada 01/Jun, será analisada por Fachin; tipo=desdobramento institucional",
+        "secondSource": "Band + Correio Braziliense + CartaCapital",
+        "decision": "INCORPORAR como pauta institucional em curso (não evento de hoje — protocolo é de 01/Jun)"
+      },
+      {
+        "event": "Fachin rejeita afastar Nunes Marques da relatoria da CPI do Master",
+        "crossRef": "Nunes Marques 4 menções (04/Jun, relatoria TSE) → continuidade",
+        "fetch": "BPMoney (cache); tipo=desdobramento",
+        "secondSource": "não verificado independentemente → tratado como contexto, não âncora",
+        "decision": "INCORPORAR como contexto institucional (continuidade)"
+      },
+      {
+        "event": "Rejeição de Messias ao STF descrita como cacetada em Lula",
+        "crossRef": "Messias 4 menções (29/Mai: Lula reenviar após rejeição) → CONTINUIDADE",
+        "fetch": "WebSearch (CNN, Gazeta do Povo, JOTA); rejeição foi 42×34 em fim de maio (1ª em 130 anos); fala do líder do governo de hoje é retrospectiva; tipo=desdobramento",
+        "secondSource": "CNN + Gazeta do Povo + JOTA",
+        "decision": "NÃO incorporar como evento novo — mencionado só como pano de fundo com placar/data (42×34, fim de maio)"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Arrancada +7,8pp = Vox (Poder360+WebSearch, 2 fontes); Fachin/Nunes Marques = 1 fonte (BPMoney) enquadrado como contexto. Nenhuma âncora single-source.",
+    "numericalErrors": "reconcile-claims rodado; % de mercado batem com JSON (41,50/28,20/16,40/2,35/3,25/2,65/62,50/72,50/5,45); números Vox são poll data legítimos.",
+    "fontesInventadas": "Poder360, Gazeta do Povo, Folha, Estadão verificadas no cache/WebSearch com matéria real de 05/Jun. OK.",
+    "quotesLiterais": "Pix é do Bolsonaro (Folha), esquerda domina o debate (Estadão), candidato que cresce (VEJA) — todas atribuídas. OK.",
+    "causacaoEspuria": "Queda de Flávio = 3º dia de recuo + Vox confirmando + digestão técnica; Divergência 4.3 declara não atribuir causa única. OK.",
+    "verbosCriticos": "suspeição = pedido protocolado 01/Jun (não decisão); rejeição de Messias desambiguada (42×34, fim de maio). OK.",
+    "decision": "prosseguir para preview"
+  },
+  "translationReview": {
+    "en": "8 correções: 1º/2º turno → first/second round; Empate técnico → technically tied; 06/05 → June 5; stray dash removido",
+    "es": "16 correções: investigación/pesquisa → encuesta; tarifaço → arancel; empaita → empata; sospechoso → impedido; [1º/2º turno] → [primera/segunda vuelta]; 7 títulos de fonte PT → ES; stray dash removido"
+  }
+}
