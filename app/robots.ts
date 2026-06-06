@@ -41,6 +41,6 @@ export default function robots(): MetadataRoute.Robots {
       // Brave Search (alimenta Brave Leo)
       { userAgent: 'Brave-Search',       allow: '/', disallow: '/api/' },
     ],
-    sitemap: 'https://afos-analytics.com/sitemap.xml',
+    sitemap: 'https://www.afos-analytics.com/sitemap.xml',
   };
 }

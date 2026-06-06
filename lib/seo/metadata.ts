@@ -8,7 +8,7 @@
 import type { Metadata } from 'next';
 import type { Locale } from '../i18n/config';
 
-const BASE_URL = 'https://afos-analytics.com';
+const BASE_URL = 'https://www.afos-analytics.com';
 
 const LOCALES: Locale[] = ['pt-BR', 'en', 'es'];
 

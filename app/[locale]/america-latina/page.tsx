@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { locales, isValidLocale } from '../../../lib/i18n/config'
 import { RegionPage } from '../../../lib/seo/region-page'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 
 // Canonical aponta para /latam — evitar duplicate content com america-latina
 export async function generateStaticParams() {

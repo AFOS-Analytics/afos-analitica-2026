@@ -18,7 +18,7 @@ function esc(text: string | number): string {
 const BRAND = {
   color: '#0F52BA',
   name: 'AFOS Analytics',
-  url: 'https://afos-analytics.com',
+  url: 'https://www.afos-analytics.com',
   tagline: 'Plataforma Global de Inteligencia Eleitoral',
 };
 

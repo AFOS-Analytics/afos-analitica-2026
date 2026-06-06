@@ -3,7 +3,7 @@ import { welcomeTemplate, oddsAlertTemplate, dailySummaryTemplate, systemAlertTe
 import { EMAIL_ALERTS, EMAIL_CONTACT } from '../contacts';
 
 const FROM = `AFOS Analytics <${EMAIL_ALERTS}>`;
-const PUBLIC_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://afos-analytics.com';
+const PUBLIC_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.afos-analytics.com';
 
 function getResend(): Resend | null {
   return process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;

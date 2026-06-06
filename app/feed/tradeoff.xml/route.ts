@@ -13,7 +13,7 @@
 import { listPublishedTradeoffs, loadTradeoff } from '../../../lib/afos-tradeoff/loader'
 import { cleanMarkdownText } from '../../../lib/afos-tradeoff/utils'
 
-const SITE = 'https://afos-analytics.com'
+const SITE = 'https://www.afos-analytics.com'
 const FEED_URL = `${SITE}/feed/tradeoff.xml`
 const PAGE_URL = `${SITE}/pt-BR/tradeoff`
 

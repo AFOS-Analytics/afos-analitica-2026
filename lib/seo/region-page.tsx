@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
 import { getRegionBySlug, getCountriesForRegion, type RegionSEO } from './countries'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 
 const LABELS: Record<string, { countries: string; elections: string; risk: string; cta: string; relatedElections: string; institutional: string }> = {
   'pt-BR': { countries: 'Países monitorados', elections: 'Eleições', risk: 'Risco político', cta: '← Dashboard', relatedElections: 'Eleições relacionadas', institutional: 'Inteligência institucional' },

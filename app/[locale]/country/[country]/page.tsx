@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 
 const META_TEMPLATES: Record<string, { title: string; desc: string }> = {
   'pt-BR': {

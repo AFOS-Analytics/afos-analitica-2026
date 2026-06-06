@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source',
   description: 'Real-time global electoral political risk intelligence: cross-reference of prediction markets (Polymarket), polls from 17+ Brazilian institutes (TSE), and live news. Open-source, auditable. Brazil 2026 + 14 countries.',
   alternates: {
-    canonical: 'https://afos-analytics.com/en',
+    canonical: 'https://www.afos-analytics.com/en',
     languages: {
-      'pt-BR': 'https://afos-analytics.com/pt-BR',
-      en: 'https://afos-analytics.com/en',
-      es: 'https://afos-analytics.com/es',
-      'x-default': 'https://afos-analytics.com/en',
+      'pt-BR': 'https://www.afos-analytics.com/pt-BR',
+      en: 'https://www.afos-analytics.com/en',
+      es: 'https://www.afos-analytics.com/es',
+      'x-default': 'https://www.afos-analytics.com/en',
     },
   },
   // Don't compete with /en in search results — canonical handles consolidation
@@ -26,17 +26,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source',
     description: 'Global electoral political risk intelligence: Polymarket × 17 polling institutes × live news, cross-referenced in real time. Brazil 2026 + 14 countries.',
-    url: 'https://afos-analytics.com',
+    url: 'https://www.afos-analytics.com',
     siteName: 'AFOS Analytics',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: 'https://afos-analytics.com/brand/og-en-linkedin-1200x627.png', width: 1200, height: 627, alt: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source' }],
+    images: [{ url: 'https://www.afos-analytics.com/brand/og-en-linkedin-1200x627.png', width: 1200, height: 627, alt: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AFOS Analytics — Global Electoral Political Risk Intelligence — Open-Source',
     description: 'Global electoral political risk intelligence: Polymarket × 17 polling institutes × live news, cross-referenced in real time. Brazil 2026 + 14 countries.',
-    images: ['https://afos-analytics.com/brand/og-en-linkedin-1200x627.png'],
+    images: ['https://www.afos-analytics.com/brand/og-en-linkedin-1200x627.png'],
   },
 };
 

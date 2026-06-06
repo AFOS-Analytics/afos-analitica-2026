@@ -6,7 +6,7 @@ export const runtime = 'edge'
 // Static fallback when ImageResponse fails (rare, but possible during edge runtime
 // hiccups). Unfurl previews are critical during launch — better to serve a slightly
 // generic image than a 500 to social media crawlers.
-const STATIC_FALLBACK_URL = 'https://afos-analytics.com/brand/og-en-linkedin-1200x627.png'
+const STATIC_FALLBACK_URL = 'https://www.afos-analytics.com/brand/og-en-linkedin-1200x627.png'
 
 const COPY = {
   'pt-BR': {

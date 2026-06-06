@@ -33,7 +33,7 @@ const HTML_OK = (email: string) => `<!DOCTYPE html>
 </head><body><main>
 <h1>Inscricao cancelada</h1>
 <p>Voce nao recebera mais emails do AFOS Analytics em <strong>${htmlEscape(email)}</strong>.</p>
-<p>Se foi um engano, basta se inscrever novamente em <a href="https://afos-analytics.com">afos-analytics.com</a>.</p>
+<p>Se foi um engano, basta se inscrever novamente em <a href="https://www.afos-analytics.com">afos-analytics.com</a>.</p>
 </main></body></html>`
 
 const HTML_FAIL = `<!DOCTYPE html>

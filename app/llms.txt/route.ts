@@ -15,7 +15,7 @@ import { listPublishedDailies, loadDaily } from '../../lib/afos-daily/loader'
 import { listPublishedTradeoffs, loadTradeoff } from '../../lib/afos-tradeoff/loader'
 import { cleanMarkdownText } from '../../lib/afos-daily/utils'
 
-const SITE = 'https://afos-analytics.com'
+const SITE = 'https://www.afos-analytics.com'
 
 export const dynamic = 'force-static'
 export const revalidate = 3600

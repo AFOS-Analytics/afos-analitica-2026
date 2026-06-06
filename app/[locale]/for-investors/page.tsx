@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../../../lib/i18n/config'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 
 const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; h1: string; intro: string; features: string[]; cta: string }> = {
   'pt-BR': {

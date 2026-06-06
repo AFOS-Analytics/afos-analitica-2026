@@ -30,7 +30,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const isDraft = data.status !== 'published'
 
   const ledePlain = data.lede.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
-  const url = `https://afos-analytics.com/${params.locale}/daily/${params.date}`
+  const url = `https://www.afos-analytics.com/${params.locale}/daily/${params.date}`
   const ogImage = getOgImageUrl(params.locale)
   const publishedTime = `${data.date}T00:00:00-03:00`
   const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
@@ -49,7 +49,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       languages: (() => {
         const langs: Record<string, string> = {}
         for (const loc of SUPPORTED_LOCALES) {
-          if (dailyExists(params.date, loc)) langs[loc] = `https://afos-analytics.com/${loc}/daily/${params.date}`
+          if (dailyExists(params.date, loc)) langs[loc] = `https://www.afos-analytics.com/${loc}/daily/${params.date}`
         }
         if (langs['pt-BR'] || langs['en'] || langs['es']) {
           langs['x-default'] = langs['pt-BR'] || langs['en'] || langs['es']
@@ -58,7 +58,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: 'https://afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },
+          { url: 'https://www.afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },
         ],
       },
     },
@@ -68,7 +68,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       description: ledePlain,
       url,
       siteName: 'AFOS Analytics',
-      locale: params.locale,
+      locale: params.locale === 'es' ? 'es_ES' : params.locale === 'en' ? 'en_US' : 'pt_BR',
       publishedTime,
       modifiedTime,
       authors: ['AFOS Analytics'],

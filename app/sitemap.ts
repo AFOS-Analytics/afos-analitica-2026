@@ -4,7 +4,7 @@ import { listPublishedDailies } from '../lib/afos-daily/loader'
 import { listPublishedTradeoffs } from '../lib/afos-tradeoff/loader'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://afos-analytics.com'
+  const baseUrl = 'https://www.afos-analytics.com'
   const locales = ['pt-BR', 'en', 'es']
   // dynamic: páginas com cron a cada 30min (landing, dashboard, global, daily index)
   const dynamicLastMod = new Date()
@@ -98,7 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // Institutional pages (static — só mudam em redesign)
-  const institutional = ['for-investors', 'political-risk', 'election-intelligence', 'for-analysts', 'geopolitical-signals', 'emerging-markets-risk', 'global-election-calendar']
+  const institutional = ['for-investors', 'political-risk', 'election-intelligence', 'for-analysts', 'geopolitical-signals', 'emerging-markets-risk', 'global-election-calendar', 'data-sources']
   for (const page of institutional) {
     for (const loc of locales) {
       entries.push({

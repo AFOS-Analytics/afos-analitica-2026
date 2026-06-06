@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 
 interface PageContent {
   metaTitle: string

@@ -42,7 +42,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const isDraft = data.status !== 'published'
 
   const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
-  const url = `https://afos-analytics.com/${params.locale}/tradeoff/${params.date}`
+  const url = `https://www.afos-analytics.com/${params.locale}/tradeoff/${params.date}`
   const ogImage = getOgImageUrl(params.locale)
   const publishedTime = `${data.date}T00:00:00-03:00`
   const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
@@ -58,7 +58,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       languages: (() => {
         const langs: Record<string, string> = {}
         for (const loc of SUPPORTED_LOCALES) {
-          if (tradeoffExists(params.date, loc)) langs[loc] = `https://afos-analytics.com/${loc}/tradeoff/${params.date}`
+          if (tradeoffExists(params.date, loc)) langs[loc] = `https://www.afos-analytics.com/${loc}/tradeoff/${params.date}`
         }
         if (langs['pt-BR'] || langs['en'] || langs['es']) {
           langs['x-default'] = langs['pt-BR'] || langs['en'] || langs['es']
@@ -67,7 +67,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: 'https://afos-analytics.com/feed/tradeoff.xml', title: 'AFOS Tradeoff — RSS feed' },
+          { url: 'https://www.afos-analytics.com/feed/tradeoff.xml', title: 'AFOS Tradeoff — RSS feed' },
         ],
       },
     },
@@ -77,7 +77,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       description: sinalPlain,
       url,
       siteName: 'AFOS Analytics',
-      locale: params.locale,
+      locale: params.locale === 'es' ? 'es_ES' : params.locale === 'en' ? 'en_US' : 'pt_BR',
       publishedTime,
       modifiedTime,
       authors: ['AFOS Analytics'],

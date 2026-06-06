@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { isValidLocale, type Locale } from '../../lib/i18n/config';
 import { getMessages } from '../../lib/i18n/get-messages';
 import { buildMetadata, PAGE_SEO } from '../../lib/seo/metadata';
-import { websiteSchema, faqSchema, breadcrumbSchema, combineSchemas } from '../../lib/seo/schema';
+import { websiteSchema, breadcrumbSchema, combineSchemas } from '../../lib/seo/schema';
 import { I18nProvider } from '../i18n/context';
 
 interface Props {
@@ -26,13 +26,14 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <I18nProvider initialLocale={loc} initialMessages={messages}>
-      {/* Schema.org per locale: WebSite + FAQ + Breadcrumb */}
+      {/* Schema.org per locale: WebSite + Breadcrumb. FAQPage NÃO entra aqui (era injetado
+          site-wide → risco de spam de structured-data; Google exige FAQ visível na página).
+          O FAQ fica só em /how-it-works, que renderiza as perguntas. (SEO EVAL 06/Jun) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: combineSchemas(
             websiteSchema(loc),
-            faqSchema(loc),
             breadcrumbSchema(loc, [{ name: 'AFOS Analytics', path: '' }])
           ),
         }}

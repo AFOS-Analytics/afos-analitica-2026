@@ -91,26 +91,26 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     // + DefinedTerm JSON-LD. O noindex anterior contradizia esses sinais (EVAL 06/Jun).
     robots: { index: true, follow: true },
     alternates: {
-      canonical: `https://afos-analytics.com/${locale}/glossary`,
+      canonical: `https://www.afos-analytics.com/${locale}/glossary`,
       languages: SUPPORTED_LOCALES.reduce<Record<string, string>>((acc, l) => {
-        acc[l] = `https://afos-analytics.com/${l}/glossary`
+        acc[l] = `https://www.afos-analytics.com/${l}/glossary`
         return acc
-      }, { 'x-default': `https://afos-analytics.com/pt-BR/glossary` }),
+      }, { 'x-default': `https://www.afos-analytics.com/pt-BR/glossary` }),
     },
     openGraph: {
       type: 'website',
       title: t.title,
       description: t.subtitle,
-      url: `https://afos-analytics.com/${locale}/glossary`,
+      url: `https://www.afos-analytics.com/${locale}/glossary`,
       siteName: 'AFOS Analytics',
       locale: locale === 'pt-BR' ? 'pt_BR' : locale === 'es' ? 'es_ES' : 'en_US',
-      images: [{ url: `https://afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: t.title }],
+      images: [{ url: `https://www.afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: t.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: t.title,
       description: t.subtitle,
-      images: [`https://afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`],
+      images: [`https://www.afos-analytics.com/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`],
     },
   }
 }
@@ -120,13 +120,13 @@ function buildDefinedTermsSchema(entries: GlossaryEntry[], locale: 'pt-BR' | 'en
     '@context': 'https://schema.org',
     '@graph': entries.map(e => ({
       '@type': 'DefinedTerm',
-      '@id': `https://afos-analytics.com/${locale}/glossary#${e.id}`,
+      '@id': `https://www.afos-analytics.com/${locale}/glossary#${e.id}`,
       name: e.term,
       description: e.definitions[locale],
       inDefinedTermSet: {
         '@type': 'DefinedTermSet',
         name: 'AFOS Analytics — Brazilian political terms glossary',
-        url: `https://afos-analytics.com/${locale}/glossary`,
+        url: `https://www.afos-analytics.com/${locale}/glossary`,
       },
       ...(e.url ? { url: e.url } : {}),
     })),

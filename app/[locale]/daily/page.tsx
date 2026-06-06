@@ -17,8 +17,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const latest = getLatestDate()
   const validLocale = isValidLocale(params.locale) ? params.locale : 'pt-BR'
   const canonical = latest
-    ? `https://afos-analytics.com/${validLocale}/daily/${latest}`
-    : `https://afos-analytics.com/${validLocale}/dashboard`
+    ? `https://www.afos-analytics.com/${validLocale}/daily/${latest}`
+    : `https://www.afos-analytics.com/${validLocale}/dashboard`
 
   return {
     title: 'AFOS Daily — latest synthesis | AFOS Analytics',

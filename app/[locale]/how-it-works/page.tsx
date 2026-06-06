@@ -6,7 +6,7 @@ import { HowItWorksEs } from './content-es'
 import { ThemeShell } from './ThemeShell'
 import { faqSchema } from '../../../lib/seo/schema'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 const SLUG = 'how-it-works'
 
 const SEO: Record<string, {

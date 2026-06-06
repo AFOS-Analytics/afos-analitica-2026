@@ -17,7 +17,7 @@
 import { listPublishedDailies, loadDaily } from '../../../lib/afos-daily/loader'
 import { cleanMarkdownText } from '../../../lib/afos-daily/utils'
 
-const SITE = 'https://afos-analytics.com'
+const SITE = 'https://www.afos-analytics.com'
 const FEED_URL = `${SITE}/feed/daily.xml`
 const PAGE_URL = `${SITE}/pt-BR/daily`
 

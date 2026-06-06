@@ -1,7 +1,7 @@
 import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
 import { cleanMarkdownText } from './utils'
 
-const SITE = 'https://afos-analytics.com'
+const SITE = 'https://www.afos-analytics.com'
 const ORG_LOGO = `${SITE}/brand/logo-icon-512.png`
 const OG_IMAGE = `${SITE}/brand/footer-preview.png`
 

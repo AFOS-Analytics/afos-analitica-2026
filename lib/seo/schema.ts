@@ -7,7 +7,7 @@
 
 import type { Locale } from '../i18n/config';
 
-const BASE_URL = 'https://afos-analytics.com';
+const BASE_URL = 'https://www.afos-analytics.com';
 
 /** Organization — identidade da marca */
 export function organizationSchema() {
@@ -151,14 +151,18 @@ export function datasetSchema() {
     name: 'AFOS Analytics Election Data',
     description: 'Global electoral political risk intelligence dataset: real-time Polymarket odds, polls from 17+ institutes, and news cross-references across 14+ countries.',
     url: BASE_URL,
-    license: 'https://opensource.org/licenses/MIT',
-    creator: { '@type': 'Organization', name: 'AFOS Analytics' },
+    // EVAL 06/Jun: licença estava MIT (errada — o dado é CC BY 4.0). distribution apontava
+    // para /api/global-map (bloqueado no robots). Agora aponta para o dataset aberto real no
+    // Hugging Face + sameAs para citabilidade (Google Dataset Search / engines de IA).
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    sameAs: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
+    creator: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
     temporalCoverage: '2025/..',
     spatialCoverage: { '@type': 'Place', name: 'Global' },
     distribution: {
       '@type': 'DataDownload',
-      encodingFormat: 'application/json',
-      contentUrl: `${BASE_URL}/api/global-map`,
+      encodingFormat: 'text/csv',
+      contentUrl: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
     },
   };
 }

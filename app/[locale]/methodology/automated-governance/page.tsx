@@ -4,7 +4,7 @@ import { AutomatedGovPtBR } from './content-pt-BR'
 import { AutomatedGovEn } from './content-en'
 import { AutomatedGovEs } from './content-es'
 
-const BASE_URL = 'https://afos-analytics.com'
+const BASE_URL = 'https://www.afos-analytics.com'
 const SLUG = 'methodology/automated-governance'
 
 const SEO: Record<string, {
