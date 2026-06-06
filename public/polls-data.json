@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-04",
+  "lastUpdate": "2026-06-05",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -106,6 +106,46 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-06-05",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-08016/2026",
+      "reliability": 3,
+      "method": "Pesquisa nacional",
+      "fieldDates": "2026-06-01 a 2026-06-03",
+      "note": "Vox Brasil (Vox Populi) nacional publicada 05/Jun (Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247). Lula amplia a vantagem: 1T 42.1% × Flávio 33.6% (gap +8.5pp), com Lula subindo +7.8pp desde meados de maio (34.3% → 42.1%) e Flávio caindo 2.9pp (36.5% → 33.6%). 2T Lula 47.8% × Flávio 41.3% (gap +6.5pp). Pesquisa também testou 2T contra Caiado, Zema e Aécio: Lula lidera todos, com Caiado e Zema em empate técnico (Exame). Avaliação do governo Lula em empate técnico. Campo 01-03/Jun captura o auge do tarifaço/disputa do PIX. Margem ±2.15pp, 95% confiança. Protocolo TSE BR-08016/2026, custo R$ 50 mil (autofinanciada).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 42.1
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33.6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 6.9
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.8,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41.3
+        }
+      ],
+      "source": "Vox Brasil/Vox Populi via Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247 05/Jun"
+    },
     {
       "institute": "Real Time Big Data",
       "date": "2026-06-01",
@@ -480,87 +520,87 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 04/Jun 14:15 BRT) x Real Time Big Data nacional 01/Jun. CONTINUACAO DO RECUO: Flavio devolve quase todo o salto de 02/Jun, 30.40% (↓1.7pp), gap Lula x Flavio ALARGA a +10.1pp (de +7.4pp), quase no baseline pre-salto. Lula recupera 40.50%. Driver: o tarifaco EUA virou PASSIVO LIQUIDO para a oposicao (Lula vence enquadramento \"PIX e do Brasil\", tarifa pode chegar a 37.5%, narrativa traidor cola, Renan ataca Flavio). 3a via no piso. Mercado (+10.1pp) de novo mais largo que o 1T da pesquisa (+7pp). STF impeach 5.50% estavel; Senado PL erode 4o dia a 72.50%. Total presidencial ~USD 94.7M.",
-    "sources": "PoderData/AYA 29/Mai n=2.400 BR048822026 (CNN Brasil, Revista Oeste, Estado de Minas, Gazeta do Povo). Meio/Ideia 28/Mai BR-02918/2026 n=1.500 (Poder360, Folha, CNN, Gazeta do Povo, JB). Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. Vox Brasil 20/Mai 2T (Poder360, Exame, Folha Alphaville, Revista Fórum). AtlasIntel nacional 19/Mai n=5.000 (BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor). Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 30/Mai 20:14 UTC).",
+    "note": "Cruzamento Polymarket (live 05/Jun 21:09 BRT) x Vox Brasil nacional 05/Jun. MERCADO E PESQUISA NA MESMA DIRECAO: Flavio cai 3o dia consecutivo a 28.20% (↓2.2pp), bem abaixo do patamar pre-salto; Lula sobe a 41.50% (↑1.0pp); gap Lula x Flavio ALARGA a +13.30pp (de +10.1pp). A Vox 05/Jun confirma: 1T Lula 42.1% x Flavio 33.6% (gap +8.5pp), com Lula +7.8pp desde meados de maio; 2T 47.8 x 41.3. Driver consolidado: o tarifaco/PIX virou ganho liquido de Lula (Estadao: \"esquerda domina debate sobre tarifas e Pix\"); fala de Eduardo Bolsonaro pressiona campanha de Flavio. Institucional: Flavio pede suspeicao de Moraes no caso Master; Fachin nega afastar Nunes Marques da CPI; rejeicao de Messias vista como \"cacetada\" em Lula (Gazeta do Povo). 3a via no piso, mas Vox da Caiado 6.9% no 1T (poll ve mais que o mercado). STF impeach 5.45% estavel; Senado PL 72.50%. Total presidencial ~USD 96M.",
+    "sources": "Vox Brasil/Vox Populi 05/Jun n=2.100 BR-08016/2026 (Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247). Real Time Big Data 01/Jun n=2.000 BR-05864/2026. Meio/Ideia 28/Mai BR-02918/2026 n=1.500. Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. AtlasIntel nacional 19/Mai n=5.000. Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 05/Jun 00:09 UTC).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-47%",
-        "polymarket": "40.50%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun (n=2.000): 1T Lula 38% x Flavio 31% (gap +7pp); 2T 45x40, Caiado EMPATA Lula 43x43. Aprovacao 42% x desaprova 52%. Datafolha 22/Mai 1T 40x31.",
-        "tendenciaPolymarket": "Recupera 40.50% (↑1.0pp 24h, vol USD 6.10M). Gap Lula x Flavio ALARGA a +10.1pp (de +7.4pp), quase de volta ao baseline pre-salto — o salto de Flavio de 02/Jun esta praticamente todo digerido. Lula na ofensiva no tarifaco: \"PIX e do Brasil\" em reuniao ministerial, ataca Rubio, envia nova carta a Trump, chama tratamento dos EUA de inaceitavel (g1). Mercado de novo MAIS LARGO (+10.1pp) que o 1T da pesquisa (+7pp RTBD).",
-        "odds": 40.5,
-        "percentage": 38,
-        "lastUpdate": "2026-06-04",
-        "value": "40.50"
+        "pesquisaRange": "38-47.8%",
+        "polymarket": "41.50%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun (n=2.100, BR-08016/2026): 1T Lula 42.1% x Flavio 33.6% (gap +8.5pp), Lula +7.8pp desde meados de maio; 2T 47.8 x 41.3 (gap +6.5pp), Lula empata Caiado e Zema. RTBD 01/Jun 1T 38% (gap +7pp). Datafolha 22/Mai 1T 40x31.",
+        "tendenciaPolymarket": "Sobe a 41.50% (↑1.0pp 24h, vol USD 6.14M). Gap Lula x Flavio ALARGA a +13.30pp (de +10.1pp) no 3o dia de recuo de Flavio — o salto de 02/Jun ja reverteu inteiro e o mercado precifica a disputa mais larga do ciclo recente. Mercado e pesquisa na MESMA direcao: a Vox 05/Jun da 1T +8.5pp. Driver: tarifaco/PIX consolidado como ganho de Lula (Estadao: \"esquerda domina o debate sobre tarifas e Pix\"); Lula tambem se apresenta como antissistema (Gazeta do Povo).",
+        "odds": 41.5,
+        "percentage": 42.1,
+        "lastUpdate": "2026-06-05",
+        "value": "41.50"
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "30-34.3%",
-        "polymarket": "30.40%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T 31% (gap -7pp); 2T 40% x Lula 45. Caiado/Zema mais competitivos que Flavio no 2T. Datafolha 22/Mai rejeicao 46% > Lula 45%.",
-        "tendenciaPolymarket": "DEVOLVE quase todo o salto: 30.40% (↓1.7pp 24h, vol USD 6.42M) — 2o dia consecutivo de recuo, de volta perto do patamar pre-salto. O tarifaco EUA virou PASSIVO LIQUIDO: Lula vence o enquadramento \"PIX e do Brasil\", tarifa pode chegar a 37.5% com sobretaxa (governo), narrativa \"traidor\" cola; ate Renan ataca Flavio (\"favorece Lula\"). Flavio reage com cartaz \"PIX e do Brasil e do Bolsonaro\". SENADO PL erode 4o dia a 72.50%. RTBD 01/Jun 1T 31% (gap -7pp); rejeicao 46% > Lula 45% (Datafolha 22/Mai).",
-        "odds": 30.4,
-        "percentage": 31,
-        "lastUpdate": "2026-06-04",
-        "value": "30.40"
+        "pesquisaRange": "33.6-34.3%",
+        "polymarket": "28.20%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun: 1T 33.6% (gap -8.5pp), caiu 2.9pp desde meados de maio; 2T 41.3% x Lula 47.8. RTBD 01/Jun 1T 31%. Datafolha 22/Mai rejeicao 46% > Lula 45%.",
+        "tendenciaPolymarket": "CAI 3o dia consecutivo a 28.20% (↓2.2pp 24h, vol USD 6.43M) — bem abaixo do patamar pre-salto de 02/Jun. O tarifaco/PIX se firmou como PASSIVO: a esquerda domina o enquadramento (Estadao), Flavio insiste \"PIX e do Bolsonaro\" embora Bolsonaro tenha dito desconhecer a medida em 2020 (Folha), e fala de Eduardo Bolsonaro pressiona a campanha (Estadao). Institucional: Flavio pede suspeicao de Moraes no caso Master (Terra, Band); Fachin nega afastar Nunes Marques da CPI. Vox 05/Jun 1T 33.6% (gap -8.5pp); rejeicao 46% > Lula 45% (Datafolha 22/Mai). SENADO PL 72.50%.",
+        "odds": 28.2,
+        "percentage": 33.6,
+        "lastUpdate": "2026-06-05",
+        "value": "28.20"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2.1-6%",
-        "polymarket": "15.90%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun 1T Renan 6%. Divergencia mercado x pesquisa (~10pp) persiste.",
-        "tendenciaPolymarket": "Estavel 15.90% (~flat 24h, vol USD 6.57M). Segue 2o presidencial Poly. Renan atacou Flavio publicamente (\"favorece Lula\", Meio Norte) — 3a via tentando se descolar do realinhamento bolsonarista. Divergencia mercado 15.9% x RTBD 6% (~10pp) segue a mais larga do dashboard.",
-        "odds": 15.9,
+        "polymarket": "16.40%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun nao destaca Renan no 1T (Lula/Flavio/Caiado). RTBD 01/Jun 1T Renan 6%. Divergencia mercado x pesquisa (~10pp) persiste.",
+        "tendenciaPolymarket": "Sobe a 16.40% (↑0.5pp 24h, vol USD 6.61M). Segue 2o presidencial Poly, favorito a 3o lugar (3L 44.50%). Divergencia estrutural mercado 16.4% x pesquisa ~6% (~10pp) segue a mais larga do dashboard. VEJA aponta \"candidato que cresce nas pesquisas e vira dor de cabeca para a direita\" no duelo Lula x Flavio — 3a via tentando se viabilizar enquanto a disputa se bipolariza.",
+        "odds": 16.4,
         "percentage": 6,
-        "lastUpdate": "2026-06-04",
-        "value": "15.90"
+        "lastUpdate": "2026-06-05",
+        "value": "16.40"
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "4-6%",
-        "polymarket": "1.90%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Caiado 6%; 2T Caiado EMPATA Lula 43x43.",
-        "tendenciaPolymarket": "Estavel no piso 1.90% (~flat 24h, vol USD 3.81M). 3a via segue esvaziada. RTBD 01/Jun: 1T 6%, 2T EMPATA Lula 43x43 (poll ve mais que o mercado, inversao rara).",
-        "odds": 1.9,
-        "percentage": 6,
-        "lastUpdate": "2026-06-04",
-        "value": "1.90"
+        "pesquisaRange": "4-6.9%",
+        "polymarket": "2.35%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun: 1T Caiado 6.9% (LIDERA a 3a via na pesquisa); 2T Lula empata Caiado. RTBD 01/Jun: 1T 6%; 2T EMPATA Lula 43x43.",
+        "tendenciaPolymarket": "Leve alta 2.35% (↑0.45pp 24h, vol USD 3.86M), mas segue no piso. Inversao rara persiste: Vox 05/Jun da Caiado 6.9% no 1T (LIDER da 3a via) e empate com Lula no 2T, enquanto o mercado o mantem abaixo de 2.5% — o poll ve muito mais que o mercado.",
+        "odds": 2.35,
+        "percentage": 6.9,
+        "lastUpdate": "2026-06-05",
+        "value": "2.35"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estavel 0.15% presidencial (anomalia de legado). Participou da Marcha para Jesus em SP (g1). Foco reeleicao SP. SENADO PL erode 4o dia a 72.50%.",
+        "tendenciaPolymarket": "Estavel 0.15% presidencial (anomalia de legado, vol USD 12.4M lifetime). Foco reeleicao SP, onde lidera. SENADO PL 72.50%.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-06-04",
+        "lastUpdate": "2026-06-05",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2.4-4%",
-        "polymarket": "2.50%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43.",
-        "tendenciaPolymarket": "Estavel 2.50% (~flat 24h, vol USD 3.43M). 3a via sem tracao. RTBD 01/Jun 1T 4%; 2T Zema 40 x Lula 43.",
-        "odds": 2.5,
+        "polymarket": "3.25%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun: 2T Lula empata Zema. RTBD 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43.",
+        "tendenciaPolymarket": "Leve alta 3.25% (↑0.75pp 24h, vol USD 3.47M), ainda no piso da 3a via. Vox 05/Jun da Lula empatando Zema no 2T (poll ve mais que o mercado). Sem tracao com a disputa bipolarizada Lula x Flavio.",
+        "odds": 3.25,
         "percentage": 4,
-        "lastUpdate": "2026-06-04",
-        "value": "2.50"
+        "lastUpdate": "2026-06-05",
+        "value": "3.25"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "5.10%",
-        "tendenciaPesquisa": "Real Time Big Data 01/Jun nao lista Haddad presidencial. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Leve alta 5.10% (↑0.2pp 24h, vol USD 5.40M). Como ministro da Fazenda, no centro do tarifaco que mira o PIX — governo cravou \"O PIX e do Brasil\" como bandeira (g1). RTBD 01/Jun nao lista Haddad presidencial nacional.",
-        "odds": 5.1,
+        "polymarket": "2.65%",
+        "tendenciaPesquisa": "Vox Brasil 05/Jun nao lista Haddad presidencial. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
+        "tendenciaPolymarket": "CAI a 2.65% (↓2.45pp 24h, vol USD 5.54M) — devolve o premio das ultimas sessoes e perde a 3a posicao presidencial do mercado. Como ministro da Fazenda, segue no centro da disputa do PIX, mas o mercado nao precifica candidatura presidencial. RTBD/Vox nao listam Haddad presidencial nacional.",
+        "odds": 2.65,
         "percentage": 0,
-        "lastUpdate": "2026-06-04",
-        "value": "5.10"
+        "lastUpdate": "2026-06-05",
+        "value": "2.65"
       }
     ],
-    "updatedAt": "2026-06-04T14:20"
+    "updatedAt": "2026-06-05T21:15"
   }
 }
