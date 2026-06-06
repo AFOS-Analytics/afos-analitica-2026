@@ -47,7 +47,7 @@ const CONTENT = {
         { icon: 'shield', title: 'Transparente e Seguro', desc: 'Código aberto no GitHub. Conformidade LGPD. Sem rastreamento invasivo. Seus dados são seus.' },
       ],
     },
-    countries: { title: 'Eleições que monitoramos', subtitle: 'Cobertura global com foco na América Latina' },
+    countries: { title: 'Eleições que monitoramos', subtitle: 'Cobertura global' },
     cta: {
       title: 'Pronto para acompanhar as eleições?',
       subtitle: 'Acesse o dashboard agora. Sem cadastro, sem custo.',
@@ -92,7 +92,7 @@ const CONTENT = {
         { icon: 'shield', title: 'Transparent & Secure', desc: 'Open source on GitHub. LGPD compliant. No invasive tracking. Your data is yours.' },
       ],
     },
-    countries: { title: 'Elections we monitor', subtitle: 'Global coverage with focus on Latin America' },
+    countries: { title: 'Elections we monitor', subtitle: 'Global coverage' },
     cta: {
       title: 'Ready to track elections?',
       subtitle: 'Access the dashboard now. No signup, no cost.',
@@ -137,7 +137,7 @@ const CONTENT = {
         { icon: 'shield', title: 'Transparente y Seguro', desc: 'Código abierto en GitHub. Cumplimiento LGPD. Sin rastreo invasivo. Tus datos son tuyos.' },
       ],
     },
-    countries: { title: 'Elecciones que monitoreamos', subtitle: 'Cobertura global con foco en América Latina' },
+    countries: { title: 'Elecciones que monitoreamos', subtitle: 'Cobertura global' },
     cta: {
       title: '¿Listo para seguir las elecciones?',
       subtitle: 'Accede al dashboard ahora. Sin registro, sin costo.',

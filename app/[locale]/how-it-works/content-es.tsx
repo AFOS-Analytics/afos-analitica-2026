@@ -50,8 +50,8 @@ export function HowItWorksEs() {
 
       <h2 id="introducao" className={S.h2}>Introducción, Por qué existe AFOS</h2>
       <p className={S.p}>Cada día abres un periódico y lees "Encuesta X dice que candidato Y tiene 37%". En otro, lees "32%". ¿A cuál creerle?</p>
-      <p className={S.p}><strong className="text-primary">El problema:</strong> las encuestas electorales miden <em>intención declarada</em>, lo que la persona <em>dice</em> que hará. Pero la intención cambia, las encuestas tienen sesgo, y en Brasil ya salió mal varias veces (2018 y 2022 tuvieron grandes sorpresas).</p>
-      <p className={S.p}><strong className="text-primary">La solución de AFOS:</strong> en lugar de confiar en UNA fuente, la plataforma cruza <strong>tres fuentes independientes en tiempo real</strong>:</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">El problema:</strong> las encuestas electorales miden <em>intención declarada</em>, lo que la persona <em>dice</em> que hará. Pero la intención cambia, las encuestas tienen sesgo, y en Brasil ya salió mal varias veces (2018 y 2022 tuvieron grandes sorpresas).</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">La solución de AFOS:</strong> en lugar de confiar en UNA fuente, la plataforma cruza <strong>tres fuentes independientes en tiempo real</strong>:</p>
 
       <div className={S.tableWrap}>
         <table className={S.table}>
@@ -184,7 +184,7 @@ export function HowItWorksEs() {
 
       <Card title="Modal Acerca de" id="modal-sobre">
         <p>Hacer clic en <strong>Acerca de</strong> abre una ventana con 4 bloques: <em>Quiénes somos</em> (descripción de la plataforma y fuentes), <em>Para qué sirve</em> (preguntas que ayuda a responder), <em>Cómo usar</em> (perfiles sugeridos: elector, inversor, periodista) y <em>Qué significa AFOS</em> (sigla A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, los 4 valores que guían el proyecto).</p>
-        <p>El modelo open-source está declarado: cualquier persona puede estudiar, auditar y contribuir. Los detalles de licenciamiento (Apache 2.0 para código, CC BY 4.0 para contenido editorial) están en el pie de página de todas las páginas y en la página de <a href="/es/terms" className="text-primary hover:underline">Términos de Uso</a>.</p>
+        <p>El modelo open-source está declarado: cualquier persona puede estudiar, auditar y contribuir. Los detalles de licenciamiento (Apache 2.0 para código, CC BY 4.0 para contenido editorial) están en el pie de página de todas las páginas y en la página de <a href="/es/terms" className="text-primary dark:text-yellow-400 hover:underline">Términos de Uso</a>.</p>
       </Card>
 
       <Card title="Modal Metas" id="modal-metas">
@@ -207,7 +207,7 @@ export function HowItWorksEs() {
         <p><strong>Reglas editoriales:</strong> cada afirmación con enlace inline a la fuente (mínimo 1 enlace por párrafo sustantivo); cero adjetivos partidarios; tono observacional ("el mercado precificó", "la encuesta registró"); fechas siempre explícitas (nunca "ayer"); variaciones ↑↓pp citadas.</p>
         <p><strong>Permalink permanente:</strong> cada día tiene URL propia (<code>/daily/2026-04-28</code>). Permite citar y enlazar una síntesis específica en redes sociales, reportajes o informes.</p>
         <p><strong>Histórico:</strong> dentro de la página de la síntesis, botones <strong>"← Síntesis anterior"</strong> y <strong>"Próxima síntesis →"</strong> navegan por los días del archivo.</p>
-        <p><strong>3 idiomas:</strong> PT-BR · EN · ES. Cambiar de idioma preserva la fecha en lectura. Términos políticos brasileños sin traducción directa (TSE, STF, BolsoMaster, liderazgos envejecidos, etc.) quedan en portugués con enlace inline al <a href="/es/glossary" className="text-primary hover:underline">glosario</a> que los explica en 3 idiomas.</p>
+        <p><strong>3 idiomas:</strong> PT-BR · EN · ES. Cambiar de idioma preserva la fecha en lectura. Términos políticos brasileños sin traducción directa (TSE, STF, BolsoMaster, liderazgos envejecidos, etc.) quedan en portugués con enlace inline al <a href="/es/glossary" className="text-primary dark:text-yellow-400 hover:underline">glosario</a> que los explica en 3 idiomas.</p>
         <p><strong>Tema visual:</strong> toggle en la esquina superior derecha alterna entre tema claro (predeterminado) y Sapphire Blue (fondo azul oscuro con texto claro, ideal para lectura nocturna).</p>
         <p><strong>Validación:</strong> la feature pasó por un piloto público de 7 días (22-28 de abril/2026) con decisión GO/NO-GO en el último día. Aprobada como feature permanente.</p>
       </Card>

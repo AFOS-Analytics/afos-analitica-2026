@@ -52,8 +52,8 @@ export function HowItWorksPtBR() {
 
       <h2 id="introducao" className={S.h2}>Introdução, Por que o AFOS existe</h2>
       <p className={S.p}>Todo dia você abre um jornal e lê "Pesquisa X diz que candidato Y tem 37%". Em outro, lê "32%". Qual acreditar?</p>
-      <p className={S.p}><strong className="text-primary">O problema:</strong> pesquisas eleitorais medem <em>intenção declarada</em>, o que a pessoa <em>diz</em> que vai fazer. Mas intenção muda, pesquisa tem viés, e no Brasil já deu errado várias vezes (2018 e 2022 tiveram surpresas grandes).</p>
-      <p className={S.p}><strong className="text-primary">A solução do AFOS:</strong> em vez de confiar em UMA fonte, a plataforma cruza <strong>três fontes independentes em tempo real</strong>:</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">O problema:</strong> pesquisas eleitorais medem <em>intenção declarada</em>, o que a pessoa <em>diz</em> que vai fazer. Mas intenção muda, pesquisa tem viés, e no Brasil já deu errado várias vezes (2018 e 2022 tiveram surpresas grandes).</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">A solução do AFOS:</strong> em vez de confiar em UMA fonte, a plataforma cruza <strong>três fontes independentes em tempo real</strong>:</p>
 
       <div className={S.tableWrap}>
         <table className={S.table}>
@@ -186,7 +186,7 @@ export function HowItWorksPtBR() {
 
       <Card title="Modal Sobre" id="modal-sobre">
         <p>Clicar em <strong>Sobre</strong> abre uma janela com 4 blocos: <em>Quem somos</em> (descrição da plataforma e fontes), <em>Para que serve</em> (perguntas que ajuda a responder), <em>Como usar</em> (perfis sugeridos: eleitor, investidor, jornalista) e <em>O que significa AFOS</em> (sigla A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, os 4 valores que guiam o projeto).</p>
-        <p>O modelo open-source é declarado: qualquer pessoa pode estudar, auditar e contribuir. Detalhes de licenciamento (Apache 2.0 para código, CC BY 4.0 para conteúdo editorial) ficam no rodapé de todas as páginas e na página de <a href="/pt-BR/terms" className="text-primary hover:underline">Termos de Uso</a>.</p>
+        <p>O modelo open-source é declarado: qualquer pessoa pode estudar, auditar e contribuir. Detalhes de licenciamento (Apache 2.0 para código, CC BY 4.0 para conteúdo editorial) ficam no rodapé de todas as páginas e na página de <a href="/pt-BR/terms" className="text-primary dark:text-yellow-400 hover:underline">Termos de Uso</a>.</p>
       </Card>
 
       <Card title="Modal Metas" id="modal-metas">
@@ -209,7 +209,7 @@ export function HowItWorksPtBR() {
         <p><strong>Regras editoriais:</strong> cada alegação com link inline para a fonte (mínimo 1 link por parágrafo substantivo); zero adjetivos partidários; tom observacional ("o mercado precificou", "a pesquisa registrou"); datas sempre explícitas (nunca "ontem"); variações ↑↓pp citadas.</p>
         <p><strong>Permalink permanente:</strong> cada dia tem URL própria (<code>/daily/2026-04-28</code>). Permite citar e linkar uma síntese específica em redes sociais, reportagens ou relatórios.</p>
         <p><strong>Histórico:</strong> dentro da página da síntese, botões <strong>"← Síntese anterior"</strong> e <strong>"Próxima síntese →"</strong> navegam pelos dias do arquivo.</p>
-        <p><strong>3 idiomas:</strong> PT-BR · EN · ES. Trocar de idioma preserva a data sendo lida. Termos políticos brasileiros sem tradução direta (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) ficam em português com link inline para o <a href="/pt-BR/glossary" className="text-primary hover:underline">glossário</a> que explica nos 3 idiomas.</p>
+        <p><strong>3 idiomas:</strong> PT-BR · EN · ES. Trocar de idioma preserva a data sendo lida. Termos políticos brasileiros sem tradução direta (TSE, STF, BolsoMaster, lideranças envelhecidas, etc.) ficam em português com link inline para o <a href="/pt-BR/glossary" className="text-primary dark:text-yellow-400 hover:underline">glossário</a> que explica nos 3 idiomas.</p>
         <p><strong>Tema visual:</strong> toggle no canto superior direito alterna entre tema claro (padrão) e Sapphire Blue (fundo azul escuro com texto claro, ideal para leitura noturna).</p>
         <p><strong>Validação:</strong> a feature passou por um piloto público de 7 dias (22-28 de abril/2026) com decisão GO/NO-GO no último dia. Aprovada como feature permanente.</p>
       </Card>

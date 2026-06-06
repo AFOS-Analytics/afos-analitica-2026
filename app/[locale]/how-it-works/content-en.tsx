@@ -50,8 +50,8 @@ export function HowItWorksEn() {
 
       <h2 id="introducao" className={S.h2}>Introduction, Why AFOS exists</h2>
       <p className={S.p}>Every day you open a newspaper and read "Poll X says candidate Y has 37%". In another, "32%". Which one to believe?</p>
-      <p className={S.p}><strong className="text-primary">The problem:</strong> electoral polls measure <em>declared intent</em>, what a person <em>says</em> they will do. But intent changes, polls have bias, and in Brazil this has gone wrong several times (2018 and 2022 had major surprises).</p>
-      <p className={S.p}><strong className="text-primary">AFOS's solution:</strong> instead of trusting ONE source, the platform cross-references <strong>three independent sources in real time</strong>:</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">The problem:</strong> electoral polls measure <em>declared intent</em>, what a person <em>says</em> they will do. But intent changes, polls have bias, and in Brazil this has gone wrong several times (2018 and 2022 had major surprises).</p>
+      <p className={S.p}><strong className="text-primary dark:text-yellow-400">AFOS's solution:</strong> instead of trusting ONE source, the platform cross-references <strong>three independent sources in real time</strong>:</p>
 
       <div className={S.tableWrap}>
         <table className={S.table}>
@@ -184,7 +184,7 @@ export function HowItWorksEn() {
 
       <Card title="About modal" id="modal-sobre">
         <p>Clicking <strong>About</strong> opens a window with 4 blocks: <em>Who we are</em> (platform description and sources), <em>What it's for</em> (questions it helps answer), <em>How to use</em> (suggested profiles: voter, investor, journalist) and <em>What AFOS means</em> (acronym A-F-O-S: Astuteness, Fairness, Objectivity, Synthesis, the 4 values guiding the project).</p>
-        <p>The open-source model is declared: anyone can study, audit and contribute. Licensing details (Apache 2.0 for code, CC BY 4.0 for editorial content) live in the footer on every page and on the <a href="/en/terms" className="text-primary hover:underline">Terms of Use</a> page.</p>
+        <p>The open-source model is declared: anyone can study, audit and contribute. Licensing details (Apache 2.0 for code, CC BY 4.0 for editorial content) live in the footer on every page and on the <a href="/en/terms" className="text-primary dark:text-yellow-400 hover:underline">Terms of Use</a> page.</p>
       </Card>
 
       <Card title="Goals modal" id="modal-metas">
@@ -207,7 +207,7 @@ export function HowItWorksEn() {
         <p><strong>Editorial rules:</strong> every claim with an inline link to the source (minimum 1 link per substantive paragraph); zero partisan adjectives; observational tone ("the market priced", "the poll registered"); always explicit dates (never "yesterday"); ↑↓pp variations cited.</p>
         <p><strong>Permanent permalink:</strong> each day has its own URL (<code>/daily/2026-04-28</code>). Allows citing and linking a specific synthesis on social media, articles or reports.</p>
         <p><strong>History:</strong> inside the synthesis page, <strong>"← Previous synthesis"</strong> and <strong>"Next synthesis →"</strong> buttons navigate the archive days.</p>
-        <p><strong>3 languages:</strong> PT-BR · EN · ES. Switching language preserves the date being read. Brazilian political terms without direct translation (TSE, STF, BolsoMaster, aging political class, etc.) stay in Portuguese with an inline link to the <a href="/en/glossary" className="text-primary hover:underline">glossary</a> that explains them in 3 languages.</p>
+        <p><strong>3 languages:</strong> PT-BR · EN · ES. Switching language preserves the date being read. Brazilian political terms without direct translation (TSE, STF, BolsoMaster, aging political class, etc.) stay in Portuguese with an inline link to the <a href="/en/glossary" className="text-primary dark:text-yellow-400 hover:underline">glossary</a> that explains them in 3 languages.</p>
         <p><strong>Visual theme:</strong> toggle in the top-right corner switches between light theme (default) and Sapphire Blue (dark blue background with light text, ideal for evening reading).</p>
         <p><strong>Validation:</strong> the feature went through a 7-day public pilot (April 22-28, 2026) with a GO/NO-GO decision on the last day. Approved as a permanent feature.</p>
       </Card>
