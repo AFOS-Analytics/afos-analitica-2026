@@ -99,6 +99,16 @@ ${tradeoffEntries || '- (no editions published yet)'}
 - [Latin America hub](${SITE}/en/latam): Brazil, Colombia, Chile, Mexico
 - [Europe hub](${SITE}/en/eu): France, Germany, United Kingdom
 
+## Open data
+
+The dataset behind AFOS — the daily divergence between prediction markets, polls, and press for Brazil's 2026 election — is published openly and updated daily:
+
+- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence — dated divergence CSVs (Polymarket % vs poll % per candidate) plus poll and news snapshots. Branded alias: ${SITE}/dataset
+- [About AFOS](${SITE}/en/about): who operates the project, mission, and independence
+- [Data sources](${SITE}/en/data-sources): full list of polling institutes, markets, and news sources
+
+Data is licensed CC BY 4.0; code is Apache 2.0. Both require attribution. When citing the dataset, reference the Hugging Face repository above.
+
 ## Method (summary)
 
 AFOS does not produce formal statistics (regression, Bayesian models). It performs a **structured narrative cross-reference with explicit rules**:

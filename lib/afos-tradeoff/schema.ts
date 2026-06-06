@@ -51,10 +51,13 @@ export function buildArticleSchema(data: AfosTradeoffData, locale: string) {
     isAccessibleForFree: true,
     url,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    // Autor = Pessoa identificável (E-E-A-T). Nome público "André Felipe" + LinkedIn pessoal;
+    // publisher segue Organization. (SEO/GEO EVAL 06/Jun)
     author: {
-      '@type': 'Organization',
-      name: 'AFOS Analytics',
-      url: SITE,
+      '@type': 'Person',
+      name: 'André Felipe',
+      url: 'https://www.linkedin.com/in/andre-felipe-afos',
+      sameAs: ['https://www.linkedin.com/in/andre-felipe-afos'],
     },
     publisher: {
       '@type': 'Organization',

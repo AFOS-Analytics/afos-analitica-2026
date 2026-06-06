@@ -134,10 +134,14 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
     isAccessibleForFree: true,
     url,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    // Autor = Pessoa identificável (E-E-A-T para conteúdo político). Usa só o nome público
+    // já adotado ("André Felipe") + LinkedIn pessoal — consistente com a decisão de anonimato.
+    // Publisher segue Organization. (SEO/GEO EVAL 06/Jun)
     author: {
-      '@type': 'Organization',
-      name: 'AFOS Analytics',
-      url: SITE,
+      '@type': 'Person',
+      name: 'André Felipe',
+      url: 'https://www.linkedin.com/in/andre-felipe-afos',
+      sameAs: ['https://www.linkedin.com/in/andre-felipe-afos'],
     },
     publisher: {
       '@type': 'Organization',
