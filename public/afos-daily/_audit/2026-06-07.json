@@ -1,0 +1,60 @@
+{
+  "date": "2026-06-07",
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "Fala de Lula sobre 'enforcamento de traidores'",
+        "verificacao1": "cross-ref: 'traidores' aparece em 02/Jun ('traidores da pátria'); 'enforcamento' sem menção previa",
+        "verificacao2": "Gazeta do Povo + Público confirmam discurso em 02/Jun (nao 07/Jun); Lula errou fato historico (Joaquim Silverio dos Reis); Flavio anunciou noticia-crime",
+        "fontes": ["gazetadopovo.com.br", "publico.pt"],
+        "tipo": "declaracao 02/Jun + desdobramento",
+        "decisao": "NAO incorporar como evento novo de 07/Jun; tratar como continuidade datada 02/Jun"
+      },
+      {
+        "evento": "TCU arquiva representacao de Flavio sobre ex-nora de Lula",
+        "verificacao1": "cross-ref: 'TCU' so em contexto Pix antes; angulo novo",
+        "verificacao2": "InfoMoney, Metropoles, Jornal de Brasilia, Estado de Minas confirmam arquivamento por 'falta de indicios minimos'; empresa ligada ao Min. Educacao (Camilo Santana)",
+        "fontes": ["infomoney.com.br", "metropoles.com", "jornaldebrasilia.com.br", "estadodeminas (google news)"],
+        "tipo": "decisao (arquivamento)",
+        "decisao": "Incorporar como reves menor de Flavio; NAO cravar causa entre o caso e o salto de Camilo no mercado"
+      },
+      {
+        "evento": "Flavio lanca 1o jingle / 'batalha espiritual'",
+        "verificacao1": "cross-ref: 'jingle' sem mencao previa; novo",
+        "verificacao2": "Gazeta do Povo (cache 07/Jun)",
+        "fontes": ["gazetadopovo.com.br (google news)"],
+        "tipo": "ato de campanha",
+        "decisao": "Incorporar de leve como secundario"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "causacaoEspuria": "evitada: salto de Camilo NAO atribuido a evento nem ao caso TCU; gap = digestao tecnica",
+      "verbosCriticos": "'arquivou' (TCU) atribuido/datado; fala de Lula datada 02/Jun; 'anunciou noticia-crime' atribuido",
+      "reconcileClaims": "rodado; presidenciais batem com JSON; sub-mercados/Vox conferidos contra coleta"
+    }
+  },
+  "adversarialReview": {
+    "singleSource": "salto de Camilo (Polymarket, dado objetivo) e fala de Casaroes sobre Pix (O Globo, parafraseada) = contexto, nao ancoras",
+    "numericalErrors": "OK — reconcile rodado, sem % inventada",
+    "fontesInventadas": "verificadas Gazeta do Povo, InfoMoney, G1, VEJA — todas reais (WebSearch + cache)",
+    "quotesLiterais": "'batalha espiritual', 'traidores da patria', 'indicios minimos suficientes', 'autoridade moral' — todas com fonte",
+    "causacaoEspuria": "salto de Camilo nao atribuido a evento; gap = digestao tecnica",
+    "verbosCriticos": "OK — arquivou/fala datada/noticia-crime atribuidos",
+    "decisao": "prosseguir para preview"
+  },
+  "translationReview": {
+    "urls": "2 URLs corrompidas pelo tradutor (Exame cTdOaky3, Caiado cU41T3A3) restauradas em EN e ES; URLs google news identicas PT/EN/ES",
+    "leaksCorrigidos": {
+      "en": ["lede Vox->Quaest (erro factual)", "display [1o turno]->[first round]", "[2o turno]->[second round]", "[Empate tecnico]->[technical tie]"],
+      "es": ["TL;DR [1o turno]->[primera vuelta]", "investigacion->encuesta (lede sec2, calendario heading+texto)"]
+    },
+    "leaksLegitimos": ["'Parana Pesquisas' (nome instituto)", "ES linha 61 'investigacion' = investigacao policial/TCU (correto)"],
+    "validate": "EN exit 0, ES exit 0"
+  },
+  "metrics": {
+    "fontes": "4 ancora primaria + 6 secundaria google news (60% secundaria, acima do piso 50%)",
+    "volumeTotalPresidencial": "USD 96.7M (96705371)",
+    "calendario": "16 pesquisas previstas 8-12/Jun com protocolos reais; Quaest 10/Jun marcada nacional (provavel)"
+  }
+}
