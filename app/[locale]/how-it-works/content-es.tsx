@@ -23,6 +23,7 @@ export function HowItWorksEs() {
             <TocLink href="#modal-sobre">└ Modal Acerca de</TocLink>
             <TocLink href="#modal-metas">└ Modal Metas</TocLink>
             <TocLink href="#modal-global">└ Modal Global</TocLink>
+            <TocLink href="#email-popup">└ Popup de correo</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Síntesis Diaria</TocLink>
             <TocLink href="#afos-tradeoff-card">└ AFOS Tradeoff, Semanal</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
@@ -44,6 +45,7 @@ export function HowItWorksEs() {
             <TocLink href="#perfis-usuario">Perfiles de usuarios</TocLink>
             <TocLink href="#limitacoes">Cuándo AFOS no sirve</TocLink>
             <TocLink href="#diferenciacao">Diferencia vs agregadores vs periódicos</TocLink>
+            <TocLink href="#glossario">Glosario trilingüe</TocLink>
             <TocLink href="#comece-aqui">Comienza aquí</TocLink>
           </TocCol>
         </div>
@@ -208,6 +210,12 @@ export function HowItWorksEs() {
         <p>Hacer clic en <strong>Global</strong> abre el mapa mundial interactivo de las elecciones nacionales previstas para 2026 y años siguientes. Cada país con elección registrada aparece destacado, con volumen de mercado en Polymarket (cuando disponible) y candidato favorito según las odds.</p>
         <p>Actualmente, 14 países son monitoreados, con foco en América Latina (Brasil, Argentina, Chile, Colombia, Perú, México) y países clave globales (EE.UU., Francia, Reino Unido). Para cada uno, el card muestra fecha de la elección, principales candidatos y enlace a ficha detallada.</p>
         <p>Es la puerta de entrada para la expansión internacional de la plataforma. Si estás siguiendo una elección específica, el mapa global es el atajo más rápido para cambiar de contexto sin necesidad de volver a la home.</p>
+      </Card>
+
+      <Card title="Popup de correo (aparece durante la navegación)" id="email-popup">
+        <p>Durante la navegación, quien aún no se ha suscrito puede ver una invitación discreta para recibir el <strong>AFOS Daily</strong> y el <strong>Tradeoff</strong> por correo. No es un modal del header (no se abre con clic): aparece solo y es totalmente <strong>opcional</strong>, todo el panel sigue siendo 100% gratis y sin registro.</p>
+        <p><strong>Comportamiento respetuoso:</strong> solo aparece tras unos 30 segundos en la página y algo de scroll (nunca de entrada); se cierra en la X o haciendo clic fuera; no reaparece en la misma sesión; y hay un límite de 3 apariciones en total, después de eso nunca más. Quien se suscribe deja de verlo para siempre.</p>
+        <p><strong>Privacidad:</strong> el correo sirve solo para enviar las síntesis, y la baja es con un clic en cualquier momento.</p>
       </Card>
 
       <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily, Síntesis Diaria</h2>
@@ -614,6 +622,14 @@ export function HowItWorksEs() {
           </tbody>
         </table>
       </div>
+
+      <h2 id="glossario" className={S.h2}>Glosario trilingüe de términos políticos</h2>
+      <p className={S.p}>La política brasileña tiene términos sin traducción directa (TSE, STF, primera vuelta, empate técnico, BolsoMaster, tarifaço) que pueden frenar a un lector de fuera del país. AFOS mantiene un <a href="/es/glossary" className="text-primary dark:text-yellow-400 hover:underline">glosario dedicado</a> que explica cada uno en <strong>3 idiomas</strong> (PT-BR · EN · ES).</p>
+      <Card title="Cómo se usa el glosario">
+        <p><strong>Página propia:</strong> en <code>/glossary</code> está la lista completa, cada término definido de forma breve y neutra, bajo "Termos políticos brasileiros" (PT), "Brazilian political terms" (EN) y "Términos políticos brasileños" (ES).</p>
+        <p><strong>Enlaces inline:</strong> en el AFOS Daily y el AFOS Tradeoff, la primera mención de un término técnico se vuelve un enlace que lleva directo a la entrada del glosario, sin sacarte de la lectura.</p>
+        <p><strong>Por qué importa:</strong> es lo que hace a AFOS legible para una audiencia internacional sin diluir el rigor local. Un analista en Londres o Bogotá lee la misma síntesis que un votante en São Paulo, cada término a un clic de distancia.</p>
+      </Card>
 
       <h2 id="comece-aqui" className={S.h2}>Comienza aquí</h2>
       <p className={S.p}>Si es tu primera visita, este es el camino más rápido para extraer valor en <strong>5 minutos</strong>:</p>

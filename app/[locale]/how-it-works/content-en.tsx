@@ -23,6 +23,7 @@ export function HowItWorksEn() {
             <TocLink href="#modal-sobre">└ About modal</TocLink>
             <TocLink href="#modal-metas">└ Goals modal</TocLink>
             <TocLink href="#modal-global">└ Global modal</TocLink>
+            <TocLink href="#email-popup">└ Email popup</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Daily Synthesis</TocLink>
             <TocLink href="#afos-tradeoff-card">└ AFOS Tradeoff, Weekly</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Polymarket Cards</TocLink>
@@ -44,6 +45,7 @@ export function HowItWorksEn() {
             <TocLink href="#perfis-usuario">User profiles</TocLink>
             <TocLink href="#limitacoes">When AFOS isn't useful</TocLink>
             <TocLink href="#diferenciacao">Difference vs aggregators vs newspapers</TocLink>
+            <TocLink href="#glossario">Trilingual glossary</TocLink>
             <TocLink href="#comece-aqui">Start here</TocLink>
           </TocCol>
         </div>
@@ -208,6 +210,12 @@ export function HowItWorksEn() {
         <p>Clicking <strong>Global</strong> opens an interactive world map of national elections planned for 2026 and following years. Each country with a registered election appears highlighted, with Polymarket market volume (when available) and favorite candidate by odds.</p>
         <p>Currently, 14 countries are monitored, with focus on Latin America (Brazil, Argentina, Chile, Colombia, Peru, Mexico) and key global countries (US, France, UK). For each, the card displays election date, main candidates, and link to a detailed profile.</p>
         <p>It's the entry point for the platform's international expansion. If you're following a specific election, the global map is the fastest shortcut to switch context without going back to the home page.</p>
+      </Card>
+
+      <Card title="Email popup (appears during navigation)" id="email-popup">
+        <p>While browsing, anyone who hasn't subscribed yet may see a discreet invitation to receive the <strong>AFOS Daily</strong> and the <strong>Tradeoff</strong> by email. It is not a header modal (it doesn't open on click): it appears on its own and is entirely <strong>optional</strong>, the whole dashboard remains 100% free and login-free.</p>
+        <p><strong>Respectful behavior:</strong> it only appears after about 30 seconds on the page plus some scrolling (never right away); it closes on the X or by clicking outside; it doesn't reappear in the same session; and there is a limit of 3 appearances in total, after that never again. Subscribers stop seeing it for good.</p>
+        <p><strong>Privacy:</strong> the email is used only to send the syntheses, and unsubscribing is one click away at any time.</p>
       </Card>
 
       <h2 id="afos-daily-card" className={S.h2}>2. AFOS Daily, Daily Synthesis</h2>
@@ -614,6 +622,14 @@ export function HowItWorksEn() {
           </tbody>
         </table>
       </div>
+
+      <h2 id="glossario" className={S.h2}>Trilingual glossary of political terms</h2>
+      <p className={S.p}>Brazilian politics has terms with no direct translation (TSE, STF, first round, technical tie, BolsoMaster, tarifaço) that can stall a reader from outside the country. AFOS keeps a <a href="/en/glossary" className="text-primary dark:text-yellow-400 hover:underline">dedicated glossary</a> that explains each one in <strong>3 languages</strong> (PT-BR · EN · ES).</p>
+      <Card title="How the glossary is used">
+        <p><strong>Its own page:</strong> at <code>/glossary</code> you find the full list, each term defined briefly and neutrally, under "Termos políticos brasileiros" (PT), "Brazilian political terms" (EN) and "Términos políticos brasileños" (ES).</p>
+        <p><strong>Inline links:</strong> in the AFOS Daily and the AFOS Tradeoff, the first mention of a technical term becomes a link that takes you straight to the glossary entry, without pulling you out of your reading.</p>
+        <p><strong>Why it matters:</strong> it is what makes AFOS legible to an international audience without diluting local rigor. An analyst in London or Bogotá reads the same synthesis as a voter in São Paulo, every term one click away.</p>
+      </Card>
 
       <h2 id="comece-aqui" className={S.h2}>Start here</h2>
       <p className={S.p}>If this is your first visit, this is the fastest way to extract value in <strong>5 minutes</strong>:</p>
