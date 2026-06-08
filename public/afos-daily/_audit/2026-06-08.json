@@ -1,0 +1,48 @@
+{
+  "date": "2026-06-08",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "TSE/Nunes Marques suspende em liminar a divulgação de pesquisa da AtlasIntel (BR-06939/2026, publicada 19/Mai) a pedido de Flávio, por suposta indução do eleitor (áudio Flávio–Vorcaro no questionário)",
+        "crossRef": "não aparece nas últimas 7 dailies (01–07/Jun) → novidade",
+        "fetch": "CartaCapital (acesso aberto): data=2026-06-08, verbo 'suspendeu' (evento de hoje), tipo=evento (decisão liminar)",
+        "secondSource": "TSE oficial + InfoMoney + WebSearch (CNN, Jornal de Brasília) confirmam BR-06939/2026, liminar, referendo do plenário",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "Quaest nacional anunciada para quarta 10/Jun (avaliará Flávio, Trump, tarifas)",
+        "crossRef": "Quaest 'iminente' já citada em dailies anteriores → continuidade (calendário, não resultado)",
+        "fetch": "Valor: explainer/anúncio, verbo futuro 'vai avaliar', sem números publicados",
+        "secondSource": "GZH",
+        "decision": "INCORPORAR como evento de calendário (descritivo, sem atribuir resultado)"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerified": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileRun": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma alegação não-trivial isolada (suspensão = 6+ fontes; Quaest = 3 fontes; delação 2ª versão = continuidade hedgeada)",
+    "numericalErrors": "OK — reconcile-claims: todos os % batem com os JSONs (divergências = truncamento do script)",
+    "fontesInventadas": "3 conferidas (O POVO BolsoMaster, Estadão Fausto Macedo, InfoMoney) — todas reais no cache/WebSearch",
+    "quotesLiterais": "'precedente perigoso' (Folha), 'BolsoMaster e TariFlávio' (O POVO), 'indução dos entrevistados' (O Globo) — todas atribuídas",
+    "causacaoEspuria": "nenhuma — box de divergência aponta que o mercado NÃO reprecificou Flávio para cima apesar da decisão favorável do TSE",
+    "verbosCriticos": "OK — 'suspendeu' datado 08/Jun + 'liminar' + pesquisa 'de 19/Mai'; 'declare Moraes suspeito' = pedido",
+    "decision": "prosseguir para preview"
+  },
+  "translationReview": {
+    "en": "limpo; removido '—' solto no fim de 'Em síntese'",
+    "es": "6 correções: STF→TSE (erro factual divergência 3), 'Segundo día'→'Lunes' (lede), removido prefixo '## 1. Mercado' vazado no lede, 'precificada'→'incorporada al precio', URL Valor/Quaest corrompida (CBMi_AFB→CBMi/AFB) substituída pela canônica, 'habló en'→'habló de' + 'empatá'→'empata'",
+    "urlIntegrity": "16 URLs http idênticos em PT/EN/ES após fixes"
+  },
+  "marketSnapshot": {
+    "fetchedAt": "2026-06-08 15:00 BRT",
+    "lula": "40.50%", "flavio": "27.15%", "gap": "+13.35pp",
+    "renan": "17.55%", "camilo": "3.85%", "haddad": "2.95%", "zema": "2.20%", "caiado": "1.75%",
+    "secondPlaceFlavio": "63.50%", "thirdPlaceRenan": "45.50%",
+    "stfImpeach": "5.45%", "senadoPL": "72.50%", "totalPresVolUSD": "~97M"
+  }
+}
