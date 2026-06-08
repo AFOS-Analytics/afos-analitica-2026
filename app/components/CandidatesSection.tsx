@@ -16,7 +16,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "40.50%",
     poll: "Lula estável Poly 40.50% (vol USD 6.17M acumulado). Gap Lula × Flávio VOLTA A ALARGAR a +13.25pp (de +12.35pp), porque Flávio devolveu 0.90pp. De volta ao topo do ciclo. Sem pesquisa nacional nova: Vox Brasil 05/Jun (n=2.100, BR-08016/2026) segue referência — 1T Lula 42.1% × Flávio 33.6% (gap +8.5pp), Lula +7.8pp desde meados de maio; 2T 47.8 × 41.3, e Lula empata Caiado e Zema. Quaest dada como iminente (VEJA).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 07/Jun D+23: dia de continuidade — o gap volta a alargar a +13.25pp (Flávio devolve 0.90pp). Lula escala a retórica do tarifaço com a fala sobre 'enforcamento de traidores', que fez petistas e bolsonaristas trocarem de posição (Folha); a campanha criou uma central de monitoramento de redes (Folha). Contraponto: PoderData aponta 52% de desaprovação à participação de Janja. STF impeach 5.15%."
+    risk: "EVENTOS 07/Jun D+23: dia de continuidade — o gap volta a alargar a +13.25pp (Flávio devolve 0.90pp). A repercussão da fala de Lula de 02/Jun sobre 'traidores' segue no debate, fazendo petistas e bolsonaristas trocarem de posição (Folha); a campanha criou uma central de monitoramento de redes (Folha). Contraponto: PoderData aponta 52% de desaprovação à participação de Janja. STF impeach 5.15%."
   },
   {
     name: "Flávio Bolsonaro",
