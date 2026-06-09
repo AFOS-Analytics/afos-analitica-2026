@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-09",
+  "generatedAt": "09/06/2026, 19:30 BRT",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Escalada da suspensão da pesquisa AtlasIntel pelo TSE (Kassio Nunes Marques)",
+        "verificacao1": "AtlasIntel 10 menções / Nunes Marques 20 menções em 7 dailies → CONTINUIDADE (suspensão original 08/Jun; 09/Jun = desdobramento)",
+        "verificacao2": "Estadão (ala critica, pode ir ao STF), Folha (meio termo), Valor (associação: precedente perigoso), O Globo (adiar desfecho), CNN Brasil (vira batalha eleitoral), Conjur. Pesquisa = BR-06939/2026 (AtlasIntel 19/Mai). Liminar pendente de referendo do plenário.",
+        "segundaFonte": "Estadão + Folha + Valor (independentes)",
+        "tipo": "desdobramento/análise",
+        "decisao": "INCORPORAR como disputa institucional em curso, NÃO como divisor de águas"
+      },
+      {
+        "evento": "Caso Master — 2ª proposta de delação de Vorcaro (cita Ciro Nogueira e 'Dark Horse')",
+        "verificacao1": "Vorcaro 9 menções → CONTINUIDADE",
+        "verificacao2": "G1, CNN Brasil, Metrópoles, Revista Fórum, JB, Imirante. PF deve rejeitar (contraria provas); homologação cabe a André Mendonça (relator STF). Data 09/Jun.",
+        "segundaFonte": "G1 + Metrópoles + CNN Brasil (independentes)",
+        "tipo": "desdobramento",
+        "decisao": "INCORPORAR como passivo em curso. 'Mendonça revogou cautelares' atribuído a O Globo (08/Jun), não central"
+      },
+      {
+        "evento": "Daniella Marques como conselheira econômica de Flávio ('Posto Ipiranga')",
+        "verificacao1": "0 menções em 7 dailies → novidade",
+        "verificacao2": "Valor + O Globo (09/Jun), perfil/desdobramento (não evento duro)",
+        "segundaFonte": "Valor + O Globo (mesmo grupo) → corroboração limitada",
+        "tipo": "perfil/desdobramento",
+        "decisao": "INCORPORAR com cautela, atribuído; NÃO usar como causa do movimento de Flávio"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "semCausacaoEspuria": "Flávio +2,20pp = leitura técnica (sem evento da janela), não atribuído a Daniella Marques nem à suspensão",
+      "verbosCriticosDesambiguados": "suspendeu (liminar pendente de referendo), revogou cautelares (atribuído+datado), deve ser rejeitada (PF, condicional)",
+      "reconcileClaims": "rodado — números sinalizados são sub-mercados (2º/3º lugar, Senado, STF, inflação) e poll figures Vox; todos batem com JSON; nenhuma % inventada"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "'Mendonça revogou cautelares' (só O Globo, 08/Jun) atribuído e não-central; 'Caiado cobra Flávio explicar elo com Vorcaro' (cache, declaração política branda); Daniella Marques (Valor+O Globo, mesmo grupo) atribuído",
+    "numericalErrors": "reconcile-claims OK — sem % inventada",
+    "fontesInventadas": "3 checadas (Estadão/TSE-STF, G1/Vorcaro-Ciro Nogueira, CartaCapital/Nexus-BTG) — todas no cache 09/Jun",
+    "quotesLiterais": "'precedente perigoso' (associação, Valor), 'Posto Ipiranga' (termo informal), 'Dark Horse' (filme) — nenhuma aspas fabricada",
+    "causacaoEspuria": "Flávio +2,20pp = recuperação técnica; STF impeach recuo não atribuído a causa específica",
+    "verbosCriticos": "OK (ver fact-check gate)",
+    "decisao": "prosseguir para preview/publish"
+  },
+  "marketSnapshot": {
+    "fetchedAt": "2026-06-09T22:13:19Z",
+    "presidencial": {
+      "Lula": { "pct": 40.50, "volUSD": "6.20M", "delta": "estável" },
+      "Flavio": { "pct": 29.35, "volUSD": "6.54M", "delta": "+2.20pp" },
+      "Renan": { "pct": 17.15, "volUSD": "6.74M", "delta": "-0.40pp" },
+      "Camilo": { "pct": 3.75, "volUSD": "3.23M", "delta": "-0.10pp" },
+      "Haddad": { "pct": 2.85, "volUSD": "5.62M", "delta": "-0.10pp" },
+      "Zema": { "pct": 1.95, "volUSD": "3.53M", "delta": "-0.25pp" },
+      "Caiado": { "pct": 1.65, "volUSD": "3.92M", "delta": "-0.10pp" }
+    },
+    "gapLulaFlavio": "+11.15pp (de +13.35pp, -2.20pp em 24h)",
+    "segundoLugar": { "Flavio": 62.50, "Renan": 16.85, "Lula": 8.50 },
+    "terceiroLugar": { "Renan": 43.50, "Zema": 22.0, "Caiado": 14.50 },
+    "stfImpeach": { "pct": 3.55, "volUSD": "81k", "delta": "-1.90pp" },
+    "senado": { "PL": 73.50, "MDB": 17.15, "Uniao": 10.95 },
+    "inflacao": { "5.50-5.99%": 26.75, "6.00-6.49%": 22.30, "5.00-5.49%": 20.55 },
+    "totalPresidencialUSD": "~97M"
+  },
+  "translationReview": {
+    "bugsFound": [
+      "EN: URL InfoMoney (rodapé) corrompida (token base64) → restaurada do PT",
+      "ES: URL Quaest (Sec 4) + InfoMoney (rodapé) corrompidas → restauradas do PT",
+      "ES: lusismos 'para 29,35%' → 'a 29,35%' (lede+TL;DR); 'sin print nacional nuevo' → 'sin nueva encuesta nacional'"
+    ],
+    "verified": "Sem troca STF↔TSE; glossário linkado; volume USD 97M no lede; URLs batem 100% com PT (diff=0); validate EN/ES OK"
+  }
+}
