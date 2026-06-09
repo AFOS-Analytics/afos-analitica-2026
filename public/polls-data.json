@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-08",
+  "lastUpdate": "2026-06-09",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -520,87 +520,87 @@
     "lastUpdate": "2026-05-22"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 08/Jun 18:00 UTC) x Vox Brasil nacional 05/Jun (referencia vigente). CONTINUIDADE no topo: Lula estavel a 40.50%, Flavio cede 0.10pp a 27.15%, gap Lula x Flavio em +13.35pp (↑0.10pp). Renan sobe a 17.55% (↑0.20pp); Camilo Santana segue 4o a 3.85%; Zema interrompe a queda a 2.20%; Caiado 1.75%. EVENTO DO DIA: o presidente do TSE, Nunes Marques, suspendeu uma pesquisa da AtlasIntel que apontava queda de Flavio, a pedido dele, por suposta inducao do eleitor (Folha, O Globo, G1, Estadao); campanha de Lula fala em precedente perigoso. Sem pesquisa nacional nova publicada (QUAEST prevista para quarta 10/Jun, avaliando Flavio/Trump/tarifas; Vox 05/Jun segue referencia). STF impeach repica a 5.45%; Senado PL 72.50%. Total presidencial ~USD 97M.",
-    "sources": "Vox Brasil/Vox Populi 05/Jun n=2.100 BR-08016/2026 (Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247). Real Time Big Data 01/Jun n=2.000 BR-05864/2026. Meio/Ideia 28/Mai BR-02918/2026 n=1.500. Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. AtlasIntel nacional 19/Mai n=5.000. Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 05/Jun 00:09 UTC).",
+    "note": "Cruzamento Polymarket (live 09/Jun 22:13 UTC) x Vox Brasil nacional 05/Jun (referência vigente). VOLATILIDADE no topo: Flávio devolve parte da queda e sobe 2.20pp a 29.35%, Lula estável a 40.50%, gap Lula x Flavio fecha de +13.35pp para +11.15pp em 24h. Renan recua a 17.15% (↓0.40pp); Camilo Santana 3.75% (↓0.10pp); Zema devolve o repique a 1.95% (↓0.25pp); Caiado 1.65%. EVENTO DO DIA: a suspensão da pesquisa AtlasIntel pelo presidente do TSE, Kassio Nunes Marques, a pedido de Flávio, escalou: a associação das empresas de pesquisa fala em precedente perigoso, parte do TSE critica a decisão e o caso pode ir ao STF (Folha, CNN Brasil, O Globo). Sem pesquisa nacional nova confirmada: surge a Nexus/BTG (1ª após a ameaça de tarifaço, CartaCapital, sem números) e a Quaest está prevista para quarta 10/Jun; Vox 05/Jun segue referência. STF impeach recua a 3.55%; Senado PL 73.50%. Total presidencial ~USD 97M.",
+    "sources": "Vox Brasil/Vox Populi 05/Jun n=2.100 BR-08016/2026 (Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247). Real Time Big Data 01/Jun n=2.000 BR-05864/2026. Meio/Ideia 28/Mai BR-02918/2026 n=1.500. Indexa 27/Mai n=2.000 (JOTA). Datafolha 22/Mai 2026 + reverberação. AtlasIntel nacional 19/Mai n=5.000. Datafolha nacional 16/Mai n=2.004 BR-00290/2026. Quaest nacional 13/Mai n=2.004. Polymarket (ao vivo fetchedAt 05/Jun 00:09 UTC). Notícias 09/Jun: Folha, CNN Brasil, O Globo, CartaCapital, Estadão (suspensão AtlasIntel escala, Nexus/BTG, Master).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-47.8%",
         "polymarket": "40.50%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun (n=2.100, BR-08016/2026): 1T Lula 42.1% x Flavio 33.6% (gap +8.5pp), Lula +7.8pp desde meados de maio; 2T 47.8 x 41.3 (gap +6.5pp), Lula empata Caiado e Zema. RTBD 01/Jun 1T 38% (gap +7pp). Datafolha 22/Mai 1T 40x31.",
-        "tendenciaPolymarket": "Estavel a 40.50% (vol USD 6.18M). Gap Lula x Flavio em +13.35pp (↑0.10pp), no topo do ciclo, com Flavio cedendo 0.10pp. Sem pesquisa nacional nova publicada: a Vox 05/Jun (1T +8.5pp) segue como referencia; QUAEST prevista para quarta 10/Jun. Evento do dia: o TSE suspende uma pesquisa da AtlasIntel que apontava queda de Flavio, a pedido dele (Folha, O Globo); campanha de Lula fala em precedente perigoso.",
+        "tendenciaPolymarket": "Estável a 40.50% (vol USD 6.20M). O gap Lula x Flavio fechou de +13.35pp para +11.15pp em 24h, com Flavio devolvendo parte da queda (sobe 2.20pp a 29.35%). Sem pesquisa nacional nova confirmada: a Vox 05/Jun (1T +8.5pp) segue referencia; surge a Nexus/BTG (CartaCapital, sem numeros) e a Quaest esta prevista para quarta 10/Jun. A suspensao da pesquisa AtlasIntel pelo TSE escala (associacao fala em precedente perigoso, caso pode ir ao STF; Folha, CNN Brasil).",
         "odds": 40.5,
         "percentage": 42.1,
-        "lastUpdate": "2026-06-08",
+        "lastUpdate": "2026-06-09",
         "value": "40.50"
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33.6-34.3%",
-        "polymarket": "27.15%",
+        "polymarket": "29.35%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun: 1T 33.6% (gap -8.5pp), caiu 2.9pp desde meados de maio; 2T 41.3% x Lula 47.8. RTBD 01/Jun 1T 31%. Datafolha 22/Mai rejeicao 46% > Lula 45%.",
-        "tendenciaPolymarket": "Cede 0.10pp a 27.15% (vol USD 6.51M), bem abaixo do patamar pre-salto de 02/Jun. Gap para Lula em +13.35pp, no topo do ciclo. EVENTO: a pedido de Flavio, o TSE (Nunes Marques) suspendeu uma pesquisa da AtlasIntel que apontava queda dele, por suposta inducao do eleitor (Folha, O Globo, G1, Estadao). Caso Master: 2a versao da delacao de Vorcaro sem fatos novos (O Globo). Lidera o 2o lugar no mercado a 63.50%. Rejeicao 46% > Lula 45% (Datafolha 22/Mai).",
-        "odds": 27.15,
+        "tendenciaPolymarket": "Devolve parte da queda e sobe 2.20pp a 29.35% (vol USD 6.54M), o segundo movimento de alta no curto prazo, sem evento triggador unico confirmado (leitura tecnica). Gap para Lula fecha a +11.15pp. A campanha estrutura time economico (Daniella Marques cotada como Posto Ipiranga, O Globo). EVENTO: a suspensao, a pedido dele, da pesquisa AtlasIntel pelo TSE escalou (associacao fala em precedente perigoso, caso pode ir ao STF; Folha, CNN Brasil, Estadao). Lidera o 2o lugar no mercado a 62.50% (↓1.00pp).",
+        "odds": 29.35,
         "percentage": 33.6,
-        "lastUpdate": "2026-06-08",
-        "value": "27.15"
+        "lastUpdate": "2026-06-09",
+        "value": "29.35"
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2.1-6%",
-        "polymarket": "17.55%",
+        "polymarket": "17.15%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun nao destaca Renan no 1T (Lula/Flavio/Caiado). RTBD 01/Jun 1T Renan 6%. Divergencia mercado x pesquisa (~11pp) persiste.",
-        "tendenciaPolymarket": "Sobe a 17.55% (↑0.20pp 24h, vol USD 6.68M). 3o no mercado presidencial de vencedor, favorito a terminar em 3o lugar no 1o turno (45.50%) e 2o no mercado do 2o lugar (17.00%, atras de Flavio 63.50%). Divergencia estrutural mercado 17.55% x pesquisa ~6% (~11pp) segue a mais larga do dashboard; a Quaest de quarta pode testa-la.",
-        "odds": 17.55,
+        "tendenciaPolymarket": "Recua a 17.15% (↓0.40pp 24h, vol USD 6.74M), mas mantem o 3o lugar no mercado presidencial de vencedor, a lideranca do 3o colocado no 1o turno (43.50%, ↓2.00pp) e o 2o no mercado do 2o lugar (16.85%, atras de Flavio 62.50%). Divergencia estrutural mercado 17.15% x pesquisa ~6% (~11pp) segue a mais larga do dashboard; a Quaest de quarta pode testa-la.",
+        "odds": 17.15,
         "percentage": 6,
-        "lastUpdate": "2026-06-08",
-        "value": "17.55"
+        "lastUpdate": "2026-06-09",
+        "value": "17.15"
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-6.9%",
-        "polymarket": "1.75%",
+        "polymarket": "1.65%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun: 1T Caiado 6.9% (LIDERA a 3a via na pesquisa); 2T Lula empata Caiado. RTBD 01/Jun: 1T 6%; 2T EMPATA Lula 43x43.",
-        "tendenciaPolymarket": "Estavel a 1.75% (vol USD 3.90M), no piso. Inversao rara persiste: Vox 05/Jun da Caiado 6.9% no 1T (LIDER da 3a via) e empate com Lula no 2T, enquanto o mercado o mantem abaixo de 2% — o poll ve muito mais que o mercado. A Quaest de quarta pode testa-la.",
-        "odds": 1.75,
+        "tendenciaPolymarket": "Cede a 1.65% (↓0.10pp, vol USD 3.92M), no piso. Inversao rara persiste: Vox 05/Jun da Caiado 6.9% no 1T (lider da 3a via) e empate com Lula no 2T, enquanto o mercado o mantem abaixo de 2%. No dia, Caiado cobrou que Flavio explique o elo com Vorcaro. A Quaest de quarta pode testa-la.",
+        "odds": 1.65,
         "percentage": 6.9,
-        "lastUpdate": "2026-06-08",
-        "value": "1.75"
+        "lastUpdate": "2026-06-09",
+        "value": "1.65"
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estavel 0.15% presidencial (anomalia de legado, vol USD 12.4M lifetime). Foco reeleicao SP, onde lidera. SENADO PL 72.50%.",
+        "tendenciaPolymarket": "Estavel 0.15% presidencial (anomalia de legado, vol USD 12.5M lifetime). Foco reeleicao SP, onde lidera. SENADO PL 73.50% (↑1.00pp).",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-06-08",
+        "lastUpdate": "2026-06-09",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2.4-4%",
-        "polymarket": "2.20%",
+        "polymarket": "1.95%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun: 2T Lula empata Zema. RTBD 01/Jun: 1T Zema 4%; 2T Zema 40 x Lula 43.",
-        "tendenciaPolymarket": "Interrompe a sequencia de quedas, sobe a 2.20% (↑0.15pp 24h, vol USD 3.51M), no piso da 3a via. Vox 05/Jun da Lula empatando Zema no 2T (poll ve mais que o mercado). Sem tracao com a disputa bipolarizada Lula x Flavio.",
-        "odds": 2.20,
+        "tendenciaPolymarket": "Volta a ceder a 1.95% (↓0.25pp 24h, vol USD 3.53M), no piso da 3a via, devolvendo o repique do dia anterior. Favorito ao 3o lugar no 1o turno no mercado (22%), atras de Renan (43.50%). Vox 05/Jun da Lula empatando Zema no 2T (poll ve mais que o mercado).",
+        "odds": 1.95,
         "percentage": 4,
-        "lastUpdate": "2026-06-08",
-        "value": "2.20"
+        "lastUpdate": "2026-06-09",
+        "value": "1.95"
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "2.95%",
+        "polymarket": "2.85%",
         "tendenciaPesquisa": "Vox Brasil 05/Jun nao lista Haddad presidencial. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Cede a 2.95% (↓0.15pp 24h, vol USD 5.60M), 5o nome presidencial atras de Camilo Santana (3.85%). Como ministro da Fazenda, no centro da disputa do PIX/tarifaco, mas o mercado nao precifica candidatura presidencial. RTBD/Vox nao listam Haddad presidencial nacional.",
-        "odds": 2.95,
+        "tendenciaPolymarket": "Cede a 2.85% (↓0.10pp 24h, vol USD 5.62M), 5o nome presidencial atras de Camilo Santana (3.75%). Como ministro da Fazenda, no centro da disputa do PIX/tarifaco, mas o mercado nao precifica candidatura presidencial. Ala do PT-SP pressiona por Simone Tebet na vice no projeto estadual.",
+        "odds": 2.85,
         "percentage": 0,
-        "lastUpdate": "2026-06-08",
-        "value": "2.95"
+        "lastUpdate": "2026-06-09",
+        "value": "2.85"
       }
     ],
-    "updatedAt": "2026-06-08T15:30"
+    "updatedAt": "2026-06-09T19:15"
   }
 }
