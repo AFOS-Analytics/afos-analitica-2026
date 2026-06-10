@@ -1,0 +1,159 @@
+poll_id,register_tse,institute,poll_date,field_dates,sample,margin_pp,method,scenario,candidate,party,percent
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Ratinho Jr,Lula,PT,39
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Ratinho Jr,Flávio Bolsonaro,PL,32
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Ratinho Jr,Ratinho Jr,PSD,9
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Ratinho Jr,Romeu Zema,Novo,2
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Ratinho Jr,Renan Santos,Missão,2
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Eduardo Leite,Lula,PT,40
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Eduardo Leite,Flávio Bolsonaro,PL,34
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Eduardo Leite,Eduardo Leite,PSD,4
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Eduardo Leite,Romeu Zema,Novo,3
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Eduardo Leite,Renan Santos,Missão,2
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Caiado,Lula,PT,40
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Caiado,Flávio Bolsonaro,PL,33
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Caiado,Ronaldo Caiado,PSD,5
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Caiado,Romeu Zema,Novo,3
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,,2000,2,Telefônica,Cenário com Caiado,Renan Santos,Missão,2
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Eduardo Leite,Lula,PT,39
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Eduardo Leite,Flávio Bolsonaro,PL,34
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Eduardo Leite,Romeu Zema,Novo,4
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Eduardo Leite,Eduardo Leite,PSD,3
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Eduardo Leite,Renan Santos,Missão,3
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Caiado,Lula,PT,39
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Caiado,Flávio Bolsonaro,PL,33
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Caiado,Romeu Zema,Novo,5
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Caiado,Ronaldo Caiado,PSD,4
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Caiado,Renan Santos,Missão,3
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Tarcísio + Ratinho,Lula,PT,39
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Tarcísio + Ratinho,Tarcísio de Freitas,Rep,21
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Tarcísio + Ratinho,Ratinho Jr,PSD,11
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Tarcísio + Ratinho,Romeu Zema,Novo,5
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Cenário com Tarcísio + Ratinho,Renan Santos,Missão,3
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Com Haddad (sem Lula),Flávio Bolsonaro,PL,33
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Com Haddad (sem Lula),Fernando Haddad,PT,21
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Com Haddad (sem Lula),Ratinho Jr,PSD,11
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Com Haddad (sem Lula),Romeu Zema,Novo,5
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,,2004,2,Presencial,Com Haddad (sem Lula),Renan Santos,Missão,4
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Ratinho e Zema,Lula,PT,37
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Ratinho e Zema,Flávio Bolsonaro,PL,30
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Ratinho e Zema,Ratinho Jr,PSD,7
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Ratinho e Zema,Romeu Zema,Novo,3
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Ratinho e Zema,Renan Santos,Missão,1
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Caiado e Zema,Lula,PT,39
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Caiado e Zema,Flávio Bolsonaro,PL,32
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Caiado e Zema,Ronaldo Caiado,PSD,4
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Caiado e Zema,Romeu Zema,Novo,2
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Caiado e Zema,Renan Santos,Missão,1
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Leite,Lula,PT,36
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Leite,Flávio Bolsonaro,PL,35
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Leite,Eduardo Leite,PSD,3
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,,2004,2,Presencial,Cenário com Leite,Renan Santos,Missão,2
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Cenário Principal,Lula,PT,45.9
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Cenário Principal,Flávio Bolsonaro,PL,40.1
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Cenário Principal,Renan Santos,Missão,4.4
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Cenário Principal,Ronaldo Caiado,PSD,3.7
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Cenário Principal,Romeu Zema,Novo,3.1
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Tarcísio (sem Flávio),Lula,PT,45.6
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Tarcísio (sem Flávio),Tarcísio de Freitas,Rep,33.3
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Tarcísio (sem Flávio),Romeu Zema,Novo,6.2
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Tarcísio (sem Flávio),Renan Santos,Missão,4.6
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Tarcísio (sem Flávio),Ronaldo Caiado,PSD,4.2
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Haddad (sem Lula),Flávio Bolsonaro,PL,40.1
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Haddad (sem Lula),Fernando Haddad,PT,37.6
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Haddad (sem Lula),Renan Santos,Missão,4.5
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Haddad (sem Lula),Ronaldo Caiado,PSD,3.9
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Com Haddad (sem Lula),Romeu Zema,Novo,3
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Lula,PT,45.7
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Flávio Bolsonaro,PL,35.8
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Tarcísio de Freitas,Rep,7.9
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Renan Santos,Missão,4.3
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Ronaldo Caiado,PSD,2.8
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,,5028,1,Online/Big Data,Flávio + Tarcísio divididos,Romeu Zema,Novo,1.6
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Lula,PT,38
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Flávio Bolsonaro,PL,36
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Ciro Gomes,PSDB,7
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Ratinho Jr,PSD,4
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Romeu Zema,Novo,3
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Ronaldo Caiado,PSD,3
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Ratinho e Zema,Renan Santos,Missão,1
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Lula,PT,38
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Flávio Bolsonaro,PL,37
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Ciro Gomes,PSDB,7
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Ronaldo Caiado,PSD,5
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Romeu Zema,Novo,5
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Cenário com Caiado e Zema,Renan Santos,Missão,1
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Flávio Bolsonaro,PL,37
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Lula,PT,37
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Ciro Gomes,PSDB,7
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Ratinho Jr,PSD,5
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Romeu Zema,Novo,4
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Empate numérico,Renan Santos,Missão,1
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Flávio Bolsonaro,PL,40
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Lula,PT,38
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Ciro Gomes,PSDB,7
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Romeu Zema,Novo,5
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Eduardo Leite,PSD,3
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,,2000,2.24,Presencial,Flávio lidera com Eduardo Leite,Renan Santos,Missão,1
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Lula,PT,41.3
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Flávio Bolsonaro,PL,37.8
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Ronaldo Caiado,PSD,3.6
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Romeu Zema,Novo,3
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Renan Santos,Missão,1.2
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,,2080,2.2,Presencial,Cenário Único (com Caiado/PSD),Aldo Rebelo,Novo,1.1
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Lula,PT,41
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Flávio Bolsonaro,PL,38
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Romeu Zema,Novo,4
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Ronaldo Caiado,PSD,4
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Renan Santos,Missão,2
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 1 (com Caiado),Aldo Rebelo,DC,0
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Lula,PT,39
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Flávio Bolsonaro,PL,39
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Romeu Zema,Novo,5
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Eduardo Leite,PSD,4
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Renan Santos,Missão,3
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 2 (com Eduardo Leite),Aldo Rebelo,DC,1
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 3 (sem 3ª via PSD),Lula,PT,42
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 3 (sem 3ª via PSD),Flávio Bolsonaro,PL,39
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 3 (sem 3ª via PSD),Romeu Zema,Novo,6
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 3 (sem 3ª via PSD),Renan Santos,Missão,3
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,,2000,2,Telefônica,Cenário 3 (sem 3ª via PSD),Aldo Rebelo,DC,1
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Lula,PT,40
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Flávio Bolsonaro,PL,34
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Ronaldo Caiado,PSD,5
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Romeu Zema,Novo,4
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Renan Santos,Missão,3
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Augusto Cury,Avante,1
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Aldo Rebelo,DC,1
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,2026-05-02 a 2026-05-04,2000,2,Telefônica,Cenário Principal (1º turno),Cabo Daciolo,,1
+Paraná Pesquisas-2026-05-07,,Paraná Pesquisas,2026-05-07,Maio 2026,,,Presencial,Cenário SP (1º turno),Flávio Bolsonaro,PL,39.3
+Paraná Pesquisas-2026-05-07,,Paraná Pesquisas,2026-05-07,Maio 2026,,,Presencial,Cenário SP (1º turno),Lula,PT,36
+Paraná Pesquisas-2026-05-08,,Paraná Pesquisas,2026-05-08,Maio 2026,,,Presencial,Cenário MT (1º turno),Flávio Bolsonaro,PL,44.6
+Paraná Pesquisas-2026-05-08,,Paraná Pesquisas,2026-05-08,Maio 2026,,,Presencial,Cenário MT (1º turno),Lula,PT,29.8
+Quaest/Genial-2026-05-13,,Quaest/Genial,2026-05-13,2026-05-08 a 2026-05-11,2004,2,Presencial,Cenário Principal (1º turno),Lula,PT,39
+Quaest/Genial-2026-05-13,,Quaest/Genial,2026-05-13,2026-05-08 a 2026-05-11,2004,2,Presencial,Cenário Principal (1º turno),Flávio Bolsonaro,PL,33
+Quaest/Genial-2026-05-13,,Quaest/Genial,2026-05-13,2026-05-08 a 2026-05-11,2004,2,Presencial,Cenário Principal (1º turno),Ronaldo Caiado,PSD,4
+Quaest/Genial-2026-05-13,,Quaest/Genial,2026-05-13,2026-05-08 a 2026-05-11,2004,2,Presencial,Cenário Principal (1º turno),Romeu Zema,Novo,4
+BR-00290/2026,BR-00290/2026,Datafolha,2026-05-15,2026-05-12 a 2026-05-14,2004,2,Presencial,Cenário Principal (1º turno),Lula,PT,39
+BR-00290/2026,BR-00290/2026,Datafolha,2026-05-15,2026-05-12 a 2026-05-14,2004,2,Presencial,Cenário Principal (1º turno),Flávio Bolsonaro,PL,35
+AtlasIntel-2026-05-19,,AtlasIntel,2026-05-19,2026-05-17 a 2026-05-18,5000,1,Recruit-and-Revisit (CAWI),Cenário Principal (1º turno),Lula,PT,47
+AtlasIntel-2026-05-19,,AtlasIntel,2026-05-19,2026-05-17 a 2026-05-18,5000,1,Recruit-and-Revisit (CAWI),Cenário Principal (1º turno),Flávio Bolsonaro,PL,34.3
+Vox Brasil-2026-05-20,,Vox Brasil,2026-05-20,maio de 2026,1200,3,Pesquisa nacional,Cenário Principal (2º turno),Lula,PT,46.8
+Vox Brasil-2026-05-20,,Vox Brasil,2026-05-20,maio de 2026,1200,3,Pesquisa nacional,Cenário Principal (2º turno),Flávio Bolsonaro,PL,38.1
+Datafolha-2026-05-22,,Datafolha,2026-05-22,maio de 2026 (publicada 22/Mai sexta),2004,2,Presencial,Cenário Principal (1º turno),Lula,PT,40
+Datafolha-2026-05-22,,Datafolha,2026-05-22,maio de 2026 (publicada 22/Mai sexta),2004,2,Presencial,Cenário Principal (1º turno),Flávio Bolsonaro,PL,31
+Indexa Pesquisas-2026-05-27,,Indexa Pesquisas,2026-05-27,maio de 2026 (publicada 27/Mai quarta via JOTA),2000,2,Online/painel,Cenário Principal (1º turno),Lula,PT,39
+Indexa Pesquisas-2026-05-27,,Indexa Pesquisas,2026-05-27,maio de 2026 (publicada 27/Mai quarta via JOTA),2000,2,Online/painel,Cenário Principal (1º turno),Flávio Bolsonaro,PL,30
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,2026-05-23 a 2026-05-27,1500,2.5,Misto,Cenário Principal (1º turno),Lula,PT,38.5
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,2026-05-23 a 2026-05-27,1500,2.5,Misto,Cenário Principal (1º turno),Flávio Bolsonaro,PL,31.5
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,2026-05-23 a 2026-05-27,1500,2.5,Misto,Cenário Principal (1º turno),Ronaldo Caiado,PSD,5.5
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,2026-05-23 a 2026-05-27,1500,2.5,Misto,Cenário Principal (1º turno),Romeu Zema,Novo,2.4
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,2026-05-23 a 2026-05-27,1500,2.5,Misto,Cenário Principal (1º turno),Renan Santos,Missão,2.1
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Lula,PT,38
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Flávio Bolsonaro,PL,31
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Ronaldo Caiado,PSD,6
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Renan Santos,Missão,6
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Romeu Zema,Novo,4
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,2026-05-29 a 2026-05-30,2000,2,Telefônico,Cenário Principal (1º turno),Aécio Neves,PSDB,3
+BR-08016/2026,BR-08016/2026,Vox Brasil,2026-06-05,2026-06-01 a 2026-06-03,2100,2.15,Pesquisa nacional,Cenário Principal (1º turno),Lula,PT,42.1
+BR-08016/2026,BR-08016/2026,Vox Brasil,2026-06-05,2026-06-01 a 2026-06-03,2100,2.15,Pesquisa nacional,Cenário Principal (1º turno),Flávio Bolsonaro,PL,33.6
+BR-08016/2026,BR-08016/2026,Vox Brasil,2026-06-05,2026-06-01 a 2026-06-03,2100,2.15,Pesquisa nacional,Cenário Principal (1º turno),Ronaldo Caiado,PSD,6.9

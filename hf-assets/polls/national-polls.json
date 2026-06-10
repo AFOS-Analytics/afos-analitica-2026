@@ -1,0 +1,1387 @@
+{
+  "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number.",
+  "generated_from": "public/polls-data.json git history",
+  "count": 22,
+  "polls": [
+    {
+      "institute": "Real Time Big Data/Record",
+      "date": "2026-03-03",
+      "sample": 2000,
+      "margin": 2,
+      "register": "Encomendada pela Record",
+      "reliability": 3,
+      "method": "Telefônica",
+      "scenarios": [
+        {
+          "name": "Cenário com Ratinho Jr",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 32
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 9
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Eduardo Leite",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Eduardo Leite (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Caiado",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41
+        },
+        {
+          "matchup": "Ratinho vs Lula",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ratinho Jr",
+          "percent2": 39
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Caiado",
+          "percent2": 36
+        }
+      ]
+    },
+    {
+      "institute": "Datafolha",
+      "date": "2026-03-07",
+      "sample": 2004,
+      "margin": 2,
+      "register": "Folha de S.Paulo",
+      "reliability": 5,
+      "method": "Presencial",
+      "scenarios": [
+        {
+          "name": "Cenário com Eduardo Leite",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Eduardo Leite (PSD)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Caiado",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Tarcísio + Ratinho",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Tarcísio de Freitas (Rep)",
+              "percent": 21
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 11
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            }
+          ]
+        },
+        {
+          "name": "Com Haddad (sem Lula)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Fernando Haddad (PT)",
+              "percent": 21
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 11
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        },
+        {
+          "matchup": "Tarcísio vs Lula",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Tarcísio",
+          "percent2": 42
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Caiado",
+          "percent2": 36
+        },
+        {
+          "matchup": "Flávio vs Haddad",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 43,
+          "candidate2": "Haddad",
+          "percent2": 41
+        }
+      ]
+    },
+    {
+      "institute": "Quaest/Genial Investimentos",
+      "date": "2026-03-11",
+      "sample": 2004,
+      "margin": 2,
+      "register": "Genial Investimentos",
+      "reliability": 5,
+      "method": "Presencial",
+      "scenarios": [
+        {
+          "name": "Cenário com Ratinho e Zema",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 7
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Caiado e Zema",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 32
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Leite",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 36
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            },
+            {
+              "candidate": "Eduardo Leite (PSD)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        }
+      ]
+    },
+    {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-03-25",
+      "sample": 5028,
+      "margin": 1,
+      "register": "BR-04227/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "scenarios": [
+        {
+          "name": "Cenário Principal",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 45.9
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 40.1
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.7
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3.1
+            }
+          ]
+        },
+        {
+          "name": "Com Tarcísio (sem Flávio)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 45.6
+            },
+            {
+              "candidate": "Tarcísio de Freitas (Rep)",
+              "percent": 33.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 6.2
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4.2
+            }
+          ]
+        },
+        {
+          "name": "Com Haddad (sem Lula)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 40.1
+            },
+            {
+              "candidate": "Fernando Haddad (PT)",
+              "percent": 37.6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.9
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            }
+          ]
+        },
+        {
+          "name": "Flávio + Tarcísio divididos",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 45.7
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35.8
+            },
+            {
+              "candidate": "Tarcísio de Freitas (Rep)",
+              "percent": 7.9
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 2.8
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1.6
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 47.6,
+          "candidate2": "Lula",
+          "percent2": 46.6
+        },
+        {
+          "matchup": "Tarcísio vs Lula",
+          "candidate1": "Tarcísio",
+          "percent1": 47.2,
+          "candidate2": "Lula",
+          "percent2": 46.3
+        },
+        {
+          "matchup": "Zema vs Lula",
+          "candidate1": "Lula",
+          "percent1": 46.6,
+          "candidate2": "Zema",
+          "percent2": 43.7
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Lula",
+          "percent1": 46.2,
+          "candidate2": "Caiado",
+          "percent2": 36.7
+        }
+      ]
+    },
+    {
+      "institute": "Gerp/AESP",
+      "date": "2026-03-27",
+      "sample": 2000,
+      "margin": 2.24,
+      "register": "AESP (Assoc. Emissoras SP)",
+      "reliability": 3,
+      "method": "Presencial",
+      "scenarios": [
+        {
+          "name": "Cenário com Ratinho e Zema",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 36
+            },
+            {
+              "candidate": "Ciro Gomes (PSDB)",
+              "percent": 7
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário com Caiado e Zema",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Ciro Gomes (PSDB)",
+              "percent": 7
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Empate numérico",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Ciro Gomes (PSDB)",
+              "percent": 7
+            },
+            {
+              "candidate": "Ratinho Jr (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Flávio lidera com Eduardo Leite",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 40
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Ciro Gomes (PSDB)",
+              "percent": 7
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Eduardo Leite (PSD)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 48,
+          "candidate2": "Lula",
+          "percent2": 45
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Caiado",
+          "percent2": 37
+        },
+        {
+          "matchup": "Zema vs Lula",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Zema",
+          "percent2": 41
+        }
+      ]
+    },
+    {
+      "institute": "Paraná Pesquisas",
+      "date": "2026-03-30",
+      "sample": 2080,
+      "margin": 2.2,
+      "register": "BR-00873/2026",
+      "reliability": 4,
+      "method": "Presencial",
+      "scenarios": [
+        {
+          "name": "Cenário Único (com Caiado/PSD)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41.3
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37.8
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.6
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 1.2
+            },
+            {
+              "candidate": "Aldo Rebelo (Novo)",
+              "percent": 1.1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 45.2,
+          "candidate2": "Lula",
+          "percent2": 44.1
+        }
+      ]
+    },
+    {
+      "institute": "Nexus/BTG Pactual",
+      "date": "2026-03-30",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-07875/2026",
+      "reliability": 4,
+      "method": "Telefônica",
+      "scenarios": [
+        {
+          "name": "Cenário 1 (com Caiado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 0
+            }
+          ]
+        },
+        {
+          "name": "Cenário 2 (com Eduardo Leite)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 5
+            },
+            {
+              "candidate": "Eduardo Leite (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário 3 (sem 3ª via PSD)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 42
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 46,
+          "candidate2": "Lula",
+          "percent2": 46
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Zema",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Caiado",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Eduardo Leite",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Eduardo Leite",
+          "percent2": 36
+        }
+      ]
+    },
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-05-05",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-03627/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-05-02 a 2026-05-04",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            },
+            {
+              "candidate": "Aldo Rebelo (DC)",
+              "percent": 1
+            },
+            {
+              "candidate": "Cabo Daciolo",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 44,
+          "candidate2": "Lula",
+          "percent2": 43
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Ronaldo Caiado",
+          "percent1": 42,
+          "candidate2": "Lula",
+          "percent2": 43
+        }
+      ]
+    },
+    {
+      "institute": "Meio/Ideia",
+      "date": "2026-05-06",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa nacional 2º turno publicada 06/Mai (Poder360, Exame, GZH). Números 1T não detalhados em fontes públicas verificadas.",
+      "scenarios": [],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 45.3,
+          "candidate2": "Lula",
+          "percent2": 44.7
+        }
+      ]
+    },
+    {
+      "institute": "Genial/Quaest",
+      "date": "2026-05-06",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa multiestadual 10 estados publicada 06/Mai (Poder360, Folha, CartaCapital, Brasil de Fato, Pleno.News, VEJA). Lula lidera em 5 estados Nordeste; Flávio em 5 estados SP/RJ/Sul. Números 1T/2T por estado não consolidados em fonte primária pública verificada para o cenário nacional.",
+      "scenarios": [],
+      "secondRound": []
+    },
+    {
+      "institute": "Paraná Pesquisas",
+      "date": "2026-05-07",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa estadual SP publicada 07/Mai (CNN Brasil): 1T Flávio Bolsonaro 39,3% × Lula 36%; 2T Flávio 48,1% × Lula 40,3%. Cenário SP, sem extrapolação nacional.",
+      "scenarios": [
+        {
+          "name": "Cenário SP (1º turno)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39.3
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 36
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula (SP)",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 48.1,
+          "candidate2": "Lula",
+          "percent2": 40.3
+        }
+      ]
+    },
+    {
+      "institute": "Quaest",
+      "date": "2026-05-08",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa Quaest publicada 08/Mai pós-Messias e encontro Trump (VEJA). Disputa Lula × Flávio. Superseded pela Quaest 13/Mai nacional n=2.004.",
+      "scenarios": [],
+      "secondRound": []
+    },
+    {
+      "institute": "Paraná Pesquisas",
+      "date": "2026-05-08",
+      "sample": null,
+      "margin": null,
+      "register": null,
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "Maio 2026",
+      "note": "Pesquisa estadual MT publicada 08/Mai (Poder360): 1T Flávio Bolsonaro 44,6% × Lula 29,8%. Cenário Mato Grosso, sem extrapolação nacional.",
+      "scenarios": [
+        {
+          "name": "Cenário MT (1º turno)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 44.6
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 29.8
+            }
+          ]
+        }
+      ],
+      "secondRound": []
+    },
+    {
+      "institute": "Quaest/Genial",
+      "date": "2026-05-13",
+      "sample": 2004,
+      "margin": 2,
+      "register": null,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-05-08 a 2026-05-11",
+      "note": "Quaest nacional publicada 13/Mai (G1, Gazeta do Povo, CartaCapital, VEJA, JOTA). Lula REASSUME VANTAGEM 2T sobre Flávio. Lula MELHORA AVALIAÇÃO+intenção voto+rejeição diminui.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Lula",
+          "percent1": null,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": null
+        }
+      ]
+    },
+    {
+      "institute": "Datafolha",
+      "date": "2026-05-15",
+      "sample": 2004,
+      "margin": 2,
+      "register": "BR-00290/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-05-12 a 2026-05-14",
+      "note": "Datafolha nacional publicada 15/Mai (Folha, G1, CartaCapital, Revista Fórum). PRIMEIRA pesquisa nacional grande pós-Vorcaro pai preso 14/Mai. Voto direto 1T NÃO mudou vs Datafolha 11/Abr (Lula 39 × Flávio 35 idêntico). 2T empate técnico mantido. Espontânea Flávio subiu 12→16% (mais saliência).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 46,
+          "candidate2": "Lula",
+          "percent2": 45
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Ronaldo Caiado",
+          "percent1": 42,
+          "candidate2": "Lula",
+          "percent2": 45
+        },
+        {
+          "matchup": "Zema vs Lula",
+          "candidate1": "Romeu Zema",
+          "percent1": 42,
+          "candidate2": "Lula",
+          "percent2": 45
+        }
+      ]
+    },
+    {
+      "institute": "AtlasIntel",
+      "date": "2026-05-19",
+      "sample": 5000,
+      "margin": 1,
+      "reliability": 5,
+      "method": "Recruit-and-Revisit (CAWI)",
+      "fieldDates": "2026-05-17 a 2026-05-18",
+      "note": "Primeira pesquisa nacional pós-áudio Flávio-Vorcaro. Flávio cai 6 pontos vs anterior. Equipe Flávio acionou TSE pedindo suspensão da divulgação. Aprovação Lula 47.4% × desaprovação 51.3%; rejeição Lula 50.6% × Flávio 52%. AtlasIntel inclui áudio na pesquisa, empresa nega impacto no resultado (Gazeta do Povo).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 47
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34.3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 48.9,
+          "candidate2": "Flávio",
+          "percent2": 41.8
+        }
+      ],
+      "source": "Atlas/Bloomberg via BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor 19/Mai"
+    },
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-05-20",
+      "sample": 1200,
+      "margin": 3,
+      "reliability": 3,
+      "method": "Pesquisa nacional",
+      "fieldDates": "maio de 2026",
+      "note": "Segunda pesquisa nacional pós-áudio Flávio-Vorcaro. Confirma deterioração capturada pela AtlasIntel 19/Mai. Rejeição Lula 52.8%, Flávio 49.2%.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (2º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 46.8
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38.1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46.8,
+          "candidate2": "Flávio",
+          "percent2": 38.1
+        }
+      ],
+      "source": "Vox Brasil via Poder360, Exame, Folha de Alphaville, Revista Fórum 20/Mai"
+    },
+    {
+      "institute": "Datafolha",
+      "date": "2026-05-22",
+      "sample": 2004,
+      "margin": 2,
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "maio de 2026 (publicada 22/Mai sexta)",
+      "note": "Datafolha nacional publicada 22/Mai sexta, primeira rodada inteira pós-áudio Vorcaro (BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, InfoMoney, Correio Braziliense, O Globo, Jornal do Comércio, UOL, Brasil de Fato, Congresso em Foco, Poder360, CBN, SRzd 22/Mai). Lula 1T 40% × Flávio 31% gap +9pp Lula (Lula sobe, Flávio cai 4pp vs 16/Mai). 2T Lula 47% × Flávio 43% gap +4pp Lula (vs empate 45×45 anterior). Cenário Michelle 2T Lula 48% × Michelle 43% gap +5pp. Rejeição Flávio 46%, Lula 45% (Flávio supera Lula numericamente pela primeira vez). Sample exato e protocolo TSE em confirmação (assumido 2004 por padrão Datafolha).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Michelle",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Michelle Bolsonaro",
+          "percent2": 43
+        }
+      ],
+      "source": "Datafolha via BBC, G1, Folha, GZH, SBT News, VEJA, CartaCapital, Estadão, Valor, JOTA, O Globo, InfoMoney, Correio Braziliense 22/Mai"
+    },
+    {
+      "institute": "Indexa Pesquisas",
+      "date": "2026-05-27",
+      "sample": 2000,
+      "margin": 2,
+      "reliability": 3,
+      "method": "Online/painel",
+      "fieldDates": "maio de 2026 (publicada 27/Mai quarta via JOTA)",
+      "note": "Indexa Pesquisas nacional publicada 27/Mai quarta via JOTA. Confirma direção Datafolha 22/Mai (mesmo gap +9pp 1T). Cenários reportados em manchete: 1T Lula 39% × Flávio 30% gap +9pp Lula. 2T Lula 46% × Flávio 41% gap +5pp Lula. Confidence pelo TSE: 0.7. Credibilidade 3 (instituto registrado TSE, não Tier 1). Cobertura: JOTA 27/Mai principal.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41
+        }
+      ],
+      "source": "JOTA 27/Mai"
+    },
+    {
+      "institute": "Meio/Ideia",
+      "date": "2026-05-28",
+      "sample": 1500,
+      "margin": 2.5,
+      "register": "BR-02918/2026",
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "2026-05-23 a 2026-05-27",
+      "note": "Meio/Ideia nacional publicada 28/Mai quinta (Poder360, Correio Braziliense, Gazeta do Povo, JB, Tribuna de Minas, Jornal de Brasília, Revista Fórum, Brasil de Fato 28/Mai). Inverteu cenário 2T vs rodada anterior do instituto (início Mai 45.3×44.7 Flávio numericamente liderava). Confirma direção Datafolha 22/Mai + Indexa 27/Mai — 3ª rodada Tier 1+2 do ciclo com gap +7pp ou superior 1T. Margem ±2.5pp 95% confiança. Quedas Flávio pós-Dark Horse: -19pp alta renda, -18pp centro-direita, -16pp jovens; 60.4% afirmam ter contato com tema. Protocolo TSE BR-02918/2026.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.5
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31.5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5.5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2.4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46.5,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41.4
+        }
+      ],
+      "source": "Meio/Ideia via Poder360, Correio Braziliense, Gazeta do Povo, JB, Tribuna de Minas, Jornal de Brasília, Revista Fórum 28/Mai"
+    },
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-06-01",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-05864/2026",
+      "reliability": 3,
+      "method": "Telefônico",
+      "fieldDates": "2026-05-29 a 2026-05-30",
+      "note": "Real Time Big Data nacional publicada 01/Jun (Exame, Brasil247, Gazeta do Povo, CNN Brasil, Brasil de Fato, Portal N10, Money Times). Primeira pesquisa nacional pós-explosao do caso Vorcaro/Dark Horse. Destaque: Caiado e Zema sao MAIS competitivos que Flavio no 2T contra Lula (Caiado empata 43x43; Zema 43x40), enquanto Lula x Flavio fica 45x40. Aprovacao Lula: aprova 42% x desaprova 52% (6% sem opiniao); avaliacao otimo+bom 27%, ruim+pessimo 48%, regular 23%; economia piorou para 40%. Margem 2pp, 95% confianca. Protocolo TSE BR-05864/2026.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Aécio Neves (PSDB)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Romeu Zema",
+          "percent2": 40
+        }
+      ],
+      "source": "Real Time Big Data via Exame, Brasil247, Gazeta do Povo, CNN Brasil, Brasil de Fato, Portal N10 01/Jun"
+    },
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-06-05",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-08016/2026",
+      "reliability": 3,
+      "method": "Pesquisa nacional",
+      "fieldDates": "2026-06-01 a 2026-06-03",
+      "note": "Vox Brasil (Vox Populi) nacional publicada 05/Jun (Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247). Lula amplia a vantagem: 1T 42.1% × Flávio 33.6% (gap +8.5pp), com Lula subindo +7.8pp desde meados de maio (34.3% → 42.1%) e Flávio caindo 2.9pp (36.5% → 33.6%). 2T Lula 47.8% × Flávio 41.3% (gap +6.5pp). Pesquisa também testou 2T contra Caiado, Zema e Aécio: Lula lidera todos, com Caiado e Zema em empate técnico (Exame). Avaliação do governo Lula em empate técnico. Campo 01-03/Jun captura o auge do tarifaço/disputa do PIX. Margem ±2.15pp, 95% confiança. Protocolo TSE BR-08016/2026, custo R$ 50 mil (autofinanciada).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 42.1
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33.6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 6.9
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.8,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41.3
+        }
+      ],
+      "source": "Vox Brasil/Vox Populi via Exame, Poder360, Metrópoles, Jornal do Brasil, Jovem Pan, Correio Braziliense, Brasil 247 05/Jun"
+    }
+  ]
+}

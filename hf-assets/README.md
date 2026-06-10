@@ -74,12 +74,39 @@ Mantenido por **[AFOS Analytics](https://afos-analytics.com)** — infraestructu
 
 ## 📁 Structure · Estrutura · Estructura
 
-| Path | Content / Conteúdo / Contenido |
-|------|--------|
-| `data/divergence-{date}.csv` | `date, candidate, polymarket_pct, poll_pct, divergence_pp` |
-| `snapshots/analysis-criteriosa/{date}.json` | Daily analysis: market × poll × press, per candidate |
-| `snapshots/analysis-cards/{date}.json` | Thematic cards (sentiment, institutional, macro) |
-| `polls/polls-data-{date}.json` | National polls (1st/2nd round) referenced that day |
-| `news/news-{date}.json` | Public news **links** (source, title, URL, date) — no article bodies |
+Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DATA_DICTIONARY.md)**. Citation metadata in **[`CITATION.cff`](CITATION.cff)**; version history in **[`CHANGELOG.md`](CHANGELOG.md)**.
+
+### 🗳️ Electoral polls (priority) · Pesquisas eleitorais · Encuestas
+
+| Path | Rows | Content |
+|------|------|---------|
+| `polls/tse-registry.csv` · `.json` | 382 | **Official TSE poll registry** — registration metadata for every poll filed for the 2026 cycle: institute, sample size, scope, state (UF), field dates, registration number, declared cost. *Registration-sheet fields only — no per-candidate results, no demographic crosstabs.* |
+| `polls/national-poll-results-firstround.csv` | 158 | **Published first-round results**, long format: one row per candidate × scenario × poll. Carries the TSE registration number, institute, sample, margin, field dates. |
+| `polls/national-poll-results-secondround.csv` | 38 | Published head-to-head **runoff** matchups (`candidate1 vs candidate2`, percentages). |
+| `polls/national-polls.json` | 22 | Full structured national polls (results + methodology), reconstructed from the platform history. |
+| `polls/polls-data-{date}.json` | — | Daily snapshot of the national polls referenced on that date. |
+
+### 📈 Market & divergence time-series
+
+| Path | Content |
+|------|---------|
+| `data/market-odds-timeseries.csv` | **Polymarket presidential odds per candidate, daily** (`date, candidate, party, polymarket_pct, volume_usd_m`) — full history from 2026-04-17. |
+| `data/divergence-timeseries.csv` | **Market × poll divergence** per candidate (`poll_date, institute, register_tse, candidate, poll_pct, polymarket_pct, polymarket_date, divergence_pp`) — each national poll joined to the market odds on its date. The dataset's namesake signal. |
+| `data/divergence-{date}.csv` | Per-day market × poll divergence snapshot. |
+
+### 📰 Daily analysis & news
+
+| Path | Content |
+|------|---------|
+| `snapshots/analysis-criteriosa/{date}.json` | Daily analysis: market × poll × press, per candidate (incl. `quadroComparativo`). |
+| `snapshots/analysis-cards/{date}.json` | Thematic cards (sentiment, institutional, macro). |
+| `news/news-{date}.json` | Public news **links** (source, title, URL, date) — no article bodies. |
+
+## 🎓 For researchers
+
+- **Start with** `DATA_DICTIONARY.md` (every column, type, unit, provenance) and `polls/` (the registered-poll universe + published results).
+- **Reproducibility:** every value traces to a public primary source — the TSE registry, a named pollster's release, or a live Polymarket contract. Nothing is imputed or smoothed; where a number is missing it is left blank, not filled.
+- **Editorial stance:** AFOS reports *divergence* between sources rather than a single blended average — the spread is treated as signal, not noise.
+- **Updates:** dated and append-only; each daily commit preserves the full history natively (see `CHANGELOG.md`).
 
 **Sources / Fontes / Fuentes:** Polymarket (live USD markets) · TSE-registered institutes · 400+ press outlets. Method & source code (Apache 2.0): [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics).

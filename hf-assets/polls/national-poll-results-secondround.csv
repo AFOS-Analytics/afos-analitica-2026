@@ -1,0 +1,39 @@
+poll_id,register_tse,institute,poll_date,matchup,candidate1,percent1,candidate2,percent2
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,Flávio vs Lula,Lula,42,Flávio Bolsonaro,41
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,Ratinho vs Lula,Lula,43,Ratinho Jr,39
+Encomendada pela Record,Encomendada pela Record,Real Time Big Data/Record,2026-03-03,Caiado vs Lula,Lula,45,Caiado,36
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,Flávio vs Lula,Lula,46,Flávio Bolsonaro,43
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,Tarcísio vs Lula,Lula,45,Tarcísio,42
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,Caiado vs Lula,Lula,46,Caiado,36
+Folha de S.Paulo,Folha de S.Paulo,Datafolha,2026-03-07,Flávio vs Haddad,Flávio Bolsonaro,43,Haddad,41
+Genial Investimentos,Genial Investimentos,Quaest/Genial Investimentos,2026-03-11,Flávio vs Lula,Lula,46,Flávio Bolsonaro,42
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,Flávio vs Lula,Flávio Bolsonaro,47.6,Lula,46.6
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,Tarcísio vs Lula,Tarcísio,47.2,Lula,46.3
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,Zema vs Lula,Lula,46.6,Zema,43.7
+BR-04227/2026,BR-04227/2026,AtlasIntel/Bloomberg,2026-03-25,Caiado vs Lula,Lula,46.2,Caiado,36.7
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,Flávio vs Lula,Flávio Bolsonaro,48,Lula,45
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,Caiado vs Lula,Lula,44,Caiado,37
+AESP (Assoc. Emissoras SP),AESP (Assoc. Emissoras SP),Gerp/AESP,2026-03-27,Zema vs Lula,Lula,45,Zema,41
+BR-00873/2026,BR-00873/2026,Paraná Pesquisas,2026-03-30,Flávio vs Lula,Flávio Bolsonaro,45.2,Lula,44.1
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,Flávio vs Lula,Flávio Bolsonaro,46,Lula,46
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,Lula vs Zema,Lula,46,Zema,40
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,Lula vs Caiado,Lula,46,Caiado,41
+BR-07875/2026,BR-07875/2026,Nexus/BTG Pactual,2026-03-30,Lula vs Eduardo Leite,Lula,46,Eduardo Leite,36
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,Flávio vs Lula,Flávio Bolsonaro,44,Lula,43
+BR-03627/2026,BR-03627/2026,Real Time Big Data,2026-05-05,Caiado vs Lula,Ronaldo Caiado,42,Lula,43
+Meio/Ideia-2026-05-06,,Meio/Ideia,2026-05-06,Flávio vs Lula,Flávio Bolsonaro,45.3,Lula,44.7
+Paraná Pesquisas-2026-05-07,,Paraná Pesquisas,2026-05-07,Flávio vs Lula (SP),Flávio Bolsonaro,48.1,Lula,40.3
+Quaest/Genial-2026-05-13,,Quaest/Genial,2026-05-13,Flávio vs Lula,Lula,,Flávio Bolsonaro,
+BR-00290/2026,BR-00290/2026,Datafolha,2026-05-15,Flávio vs Lula,Flávio Bolsonaro,46,Lula,45
+BR-00290/2026,BR-00290/2026,Datafolha,2026-05-15,Caiado vs Lula,Ronaldo Caiado,42,Lula,45
+BR-00290/2026,BR-00290/2026,Datafolha,2026-05-15,Zema vs Lula,Romeu Zema,42,Lula,45
+AtlasIntel-2026-05-19,,AtlasIntel,2026-05-19,Lula vs Flávio,Lula,48.9,Flávio,41.8
+Vox Brasil-2026-05-20,,Vox Brasil,2026-05-20,Lula vs Flávio,Lula,46.8,Flávio,38.1
+Datafolha-2026-05-22,,Datafolha,2026-05-22,Lula vs Flávio,Lula,47,Flávio Bolsonaro,43
+Datafolha-2026-05-22,,Datafolha,2026-05-22,Lula vs Michelle,Lula,48,Michelle Bolsonaro,43
+Indexa Pesquisas-2026-05-27,,Indexa Pesquisas,2026-05-27,Lula vs Flávio,Lula,46,Flávio Bolsonaro,41
+BR-02918/2026,BR-02918/2026,Meio/Ideia,2026-05-28,Lula vs Flávio,Lula,46.5,Flávio Bolsonaro,41.4
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,Lula vs Flávio,Lula,45,Flávio Bolsonaro,40
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,Lula vs Caiado,Lula,43,Ronaldo Caiado,43
+BR-05864/2026,BR-05864/2026,Real Time Big Data,2026-06-01,Lula vs Zema,Lula,43,Romeu Zema,40
+BR-08016/2026,BR-08016/2026,Vox Brasil,2026-06-05,Lula vs Flávio,Lula,47.8,Flávio Bolsonaro,41.3
