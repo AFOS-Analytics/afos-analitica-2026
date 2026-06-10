@@ -135,7 +135,9 @@ function articleSchema(loc: Locale) {
       url: BASE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${BASE_URL}/favicon.svg`,
+        url: `${BASE_URL}/brand/logo-icon-512.png`,
+        width: 512,
+        height: 512,
       },
     },
     mentions: [

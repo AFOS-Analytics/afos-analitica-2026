@@ -20,7 +20,7 @@ export function organizationSchema() {
     url: BASE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: `${BASE_URL}/favicon.svg`,
+      url: `${BASE_URL}/brand/logo-icon-512.png`,
       width: 512,
       height: 512,
     },
@@ -43,6 +43,10 @@ export function organizationSchema() {
     sameAs: [
       'https://github.com/AFOS-Analytics',
       'https://github.com/AFOS-Analytics/afos-analitica-2026',
+      'https://x.com/AFOS_Analytics',
+      'https://www.linkedin.com/in/andre-felipe-afos',
+      'https://bsky.app/profile/afos-analytics.com',
+      'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
     ],
   };
 }

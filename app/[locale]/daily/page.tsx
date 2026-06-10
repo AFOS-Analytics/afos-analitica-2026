@@ -1,13 +1,22 @@
 import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
-import { getLatestDate, listPublishedDailies, loadDaily, isValidLocale } from '../../../lib/afos-daily/loader'
+import { getLatestDate, listPublishedDailies, loadDaily, isValidLocale, SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
+import { getOgImageUrl } from '../../../lib/afos-daily/schema'
+import { breadcrumbSchema } from '../../../lib/seo/schema'
 import { MONTHS, type MonthsLocale } from '../../../lib/i18n/months'
 import { DailyArchiveShell, type ArchiveGroup, type ArchiveStrings } from '../../components/DailyArchiveShell'
 
-export const dynamic = 'force-static'
+const BASE = 'https://www.afos-analytics.com'
 
 interface Props {
   params: Promise<{ locale: string }>
+}
+
+// Mirror the edition pages (which render the correct <html lang>): prerender one
+// page per locale via generateStaticParams and DO NOT force-static (force-static
+// with no params baked lang="pt-BR" into the /en and /es variants — SEO regression).
+export function generateStaticParams() {
+  return SUPPORTED_LOCALES.map((locale) => ({ locale }))
 }
 
 const T = {
@@ -66,6 +75,10 @@ function monthsLocale(locale: string): MonthsLocale {
   return locale === 'en' || locale === 'es' ? locale : 'pt-BR'
 }
 
+function ogLocale(loc: string): string {
+  return loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US'
+}
+
 function fmtDate(iso: string, locale: string): string {
   const [y, m, d] = iso.split('-').map(Number)
   if (!y || !m || !d || m < 1 || m > 12) return iso
@@ -88,16 +101,40 @@ function snippet(lede: string, max = 150): string {
   return clean.length > max ? clean.slice(0, max).trimEnd() + '…' : clean
 }
 
+function langAlternates(path: string): Record<string, string> {
+  return {
+    'pt-BR': `${BASE}/pt-BR/${path}`,
+    en: `${BASE}/en/${path}`,
+    es: `${BASE}/es/${path}`,
+    'x-default': `${BASE}/pt-BR/${path}`,
+  }
+}
+
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params
   const loc = isValidLocale(params.locale) ? params.locale : 'pt-BR'
   const t = T[tLocale(loc)]
-  const canonical = `https://www.afos-analytics.com/${loc}/daily`
+  const canonical = `${BASE}/${loc}/daily`
+  const ogImage = getOgImageUrl(loc)
   return {
     title: t.metaTitle,
     description: t.metaDesc,
     robots: { index: true, follow: true },
-    alternates: { canonical },
+    alternates: {
+      canonical,
+      languages: langAlternates('daily'),
+      types: { 'application/rss+xml': [{ url: `${BASE}/feed/daily.xml`, title: 'AFOS Daily — RSS feed' }] },
+    },
+    openGraph: {
+      type: 'website',
+      title: t.metaTitle,
+      description: t.metaDesc,
+      url: canonical,
+      siteName: 'AFOS Analytics',
+      locale: ogLocale(loc),
+      images: [{ url: ogImage, width: 1200, height: 627, alt: t.metaTitle }],
+    },
+    twitter: { card: 'summary_large_image', title: t.metaTitle, description: t.metaDesc, images: [ogImage] },
   }
 }
 
@@ -110,17 +147,21 @@ export default async function DailyArchivePage(props: Props) {
   if (!latest) redirect(`/${loc}/dashboard`)
 
   // Newest-first list of published editions, with localized lede snippet.
+  // Snippet only when the requested-locale file actually exists (data.locale === loc);
+  // otherwise omit so an EN/ES indexable list never leaks a PT lede (parity guard).
   const dates = listPublishedDailies().slice().reverse()
   const items = dates.map((date) => {
     const data = loadDaily(date, loc)
-    return { date, dateLabel: fmtDate(date, loc), snippet: snippet(data?.lede ?? '') }
+    const localized = !!data && data.locale === loc
+    return { date, dateLabel: fmtDate(date, loc), snippet: localized ? snippet(data.lede ?? '') : '' }
   })
 
   const oldest = dates[dates.length - 1]
+  const latestData = loadDaily(latest, loc)
   const latestItem = {
     date: latest,
     dateLabel: fmtDate(latest, loc),
-    snippet: snippet(loadDaily(latest, loc)?.lede ?? '', 180),
+    snippet: latestData && latestData.locale === loc ? snippet(latestData.lede ?? '', 180) : '',
   }
 
   // Group by YYYY-MM, preserving newest-first order.
@@ -147,5 +188,37 @@ export default async function DailyArchivePage(props: Props) {
     langAria: t.langAria,
   }
 
-  return <DailyArchiveShell locale={loc} strings={strings} latest={latestItem} oldest={oldest} groups={groups} />
+  // CollectionPage + ItemList so crawlers/LLMs can parse the full back-catalog,
+  // plus a Home > AFOS Daily breadcrumb. URLs/dates only — no editorial text.
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: t.metaTitle,
+    description: t.metaDesc,
+    url: `${BASE}/${loc}/daily`,
+    inLanguage: loc,
+    isPartOf: { '@id': `${BASE}/#organization` },
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      numberOfItems: items.length,
+      itemListElement: items.map((it, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${BASE}/${loc}/daily/${it.date}`,
+        name: it.dateLabel,
+      })),
+    },
+  }
+  const breadcrumb = breadcrumbSchema(loc as 'pt-BR' | 'en' | 'es', [
+    { name: 'AFOS Analytics', path: '' },
+    { name: t.metaTitle, path: 'daily' },
+  ])
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([collectionSchema, breadcrumb]) }} />
+      <DailyArchiveShell locale={loc} strings={strings} latest={latestItem} oldest={oldest} groups={groups} />
+    </>
+  )
 }

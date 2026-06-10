@@ -92,6 +92,8 @@ ${tradeoffEntries || '- (no editions published yet)'}
 
 ## Core pages
 
+- [AFOS Daily archive](${SITE}/en/daily): browsable index of every daily synthesis, newest first (also /pt-BR/daily, /es/daily)
+- [AFOS Tradeoff archive](${SITE}/en/tradeoff): browsable index of every weekly technical brief (also /pt-BR/tradeoff, /es/tradeoff)
 - [Dashboard (main application)](${SITE}/en/dashboard): 6 Polymarket cards (1st round, 2nd place, 3rd place, Supreme Court impeachment, Senate, inflation), in-depth candidate analysis, comparative table, live news feed
 - [How it works (didactic guide)](${SITE}/en/how-it-works): complete methodology explanation, cross-referencing logic, ↑↓pp variation interpretation, user profiles, honest limitations
 - [Automated Governance (public methodology)](${SITE}/en/methodology/automated-governance): explains how AFOS enforces editorial integrity via code (automated validators and prompt rules) rather than human editorial review; describes the 2 paths for interacting with the hosted platform (Fork under Apache 2.0, or Country Onboarding contribution) and the 3 exceptions where humans do intervene

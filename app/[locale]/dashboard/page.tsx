@@ -115,7 +115,8 @@ function DashboardContent() {
                 { code: 'ph', slug: locale === 'en' ? 'philippines' : 'filipinas', name: locale === 'en' ? 'Philippines' : 'Filipinas' },
               ].map((c) => (
                 <a key={c.slug} href={`/${locale}/country/${c.slug}`} className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors">
-                  <img src={`/flags/${c.code}.svg`} alt={c.name} width={18} height={12} className="rounded-sm object-cover" style={{ width: 18, height: 12 }} />{c.name}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`/flags/${c.code}.svg`} alt="" aria-hidden={true} width={18} height={12} className="rounded-sm object-cover" style={{ width: 18, height: 12 }} />{c.name}
                 </a>
               ))}
             </div>

@@ -152,7 +152,12 @@ export function buildArticleSchema(data: AfosDailyData, locale: string) {
         url: ORG_LOGO,
       },
     },
-    image: OG_IMAGE,
+    image: {
+      '@type': 'ImageObject',
+      url: OG_IMAGE,
+      width: 2560,
+      height: 1300,
+    },
     articleSection: 'Politics',
     ...(wordCount > 0 ? { wordCount } : {}),
     ...(articleBody ? { articleBody } : {}),
