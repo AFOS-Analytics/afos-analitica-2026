@@ -18,18 +18,21 @@ const T = {
     cta: 'Ler síntese',
     updatedAt: 'Atualizado:',
     seePrevious: 'Ver síntese anterior',
+    seeAll: 'Todas as edições',
   },
   en: {
     eyebrow: 'AFOS Daily',
     cta: 'Read synthesis',
     updatedAt: 'Updated:',
     seePrevious: 'See previous synthesis',
+    seeAll: 'All editions',
   },
   es: {
     eyebrow: 'AFOS Daily',
     cta: 'Leer síntesis',
     updatedAt: 'Actualizado:',
     seePrevious: 'Ver síntesis anterior',
+    seeAll: 'Todas las ediciones',
   },
 }
 
@@ -100,8 +103,15 @@ export function DailyHeroCard() {
         <p className="text-sm text-gray-800 leading-snug line-clamp-2 mb-2">{lede}</p>
         <span className="text-sm font-semibold text-primary group-hover:underline">{t.cta} →</span>
       </a>
-      {meta.previousDate && (
-        <div className="mt-2 text-right">
+      <div className="mt-2 flex items-center justify-between gap-3">
+        <a
+          href={`/${tKey}/daily`}
+          aria-label={t.seeAll}
+          className="text-xs font-medium text-gray-500 hover:text-primary hover:underline"
+        >
+          {t.seeAll} →
+        </a>
+        {meta.previousDate && (
           <a
             href={`/${tKey}/daily/${meta.previousDate}`}
             aria-label={tKey === 'en' ? `See previous AFOS Daily synthesis (${meta.previousDate})` : tKey === 'es' ? `Ver síntesis anterior de AFOS Daily (${meta.previousDate})` : `Ver síntese anterior do AFOS Daily (${meta.previousDate})`}
@@ -109,8 +119,8 @@ export function DailyHeroCard() {
           >
             ← {t.seePrevious}
           </a>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }

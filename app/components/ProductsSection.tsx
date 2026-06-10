@@ -17,13 +17,13 @@ const T = {
       title: 'AFOS Daily',
       badge: 'Diário',
       desc: 'Síntese narrativa do dia cruzando Polymarket, pesquisas TSE e imprensa. Lê em 5 minutos.',
-      cta: 'Ler último Daily',
+      cta: 'Ver o AFOS Daily',
     },
     tradeoff: {
       title: 'AFOS Tradeoff',
       badge: 'Semanal · Segundas',
       desc: 'Brief técnico semanal sem médias suavizadas. Audiência: research, buy-side, treasury.',
-      cta: 'Ler tradeoff',
+      cta: 'Ver o AFOS Tradeoff',
     },
     global: {
       title: 'AFOS Global',
@@ -47,13 +47,13 @@ const T = {
       title: 'AFOS Daily',
       badge: 'Daily',
       desc: 'Narrative synthesis cross-referencing Polymarket, polls, and news. Reads in 5 minutes.',
-      cta: 'Read latest Daily',
+      cta: 'Browse AFOS Daily',
     },
     tradeoff: {
       title: 'AFOS Tradeoff',
       badge: 'Weekly · Mondays',
       desc: 'Technical weekly brief without smoothed averages. Audience: research, buy-side, treasury.',
-      cta: 'Read Tradeoff',
+      cta: 'Browse AFOS Tradeoff',
     },
     global: {
       title: 'AFOS Global',
@@ -77,13 +77,13 @@ const T = {
       title: 'AFOS Daily',
       badge: 'Diario',
       desc: 'Síntesis narrativa diaria cruzando Polymarket, encuestas y prensa. Se lee en 5 minutos.',
-      cta: 'Leer último Daily',
+      cta: 'Ver el AFOS Daily',
     },
     tradeoff: {
       title: 'AFOS Tradeoff',
       badge: 'Semanal · Lunes',
       desc: 'Brief técnico semanal sin promedios suavizados. Audiencia: research, buy-side, treasury.',
-      cta: 'Leer Tradeoff',
+      cta: 'Ver el AFOS Tradeoff',
     },
     global: {
       title: 'AFOS Global',

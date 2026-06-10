@@ -108,9 +108,9 @@ interface Props {
 
 const LANG_LABEL: Record<string, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
 const NAV_LABEL = {
-  'pt-BR': { prev: '← Síntese anterior', next: 'Próxima síntese →' },
-  en: { prev: '← Previous synthesis', next: 'Next synthesis →' },
-  es: { prev: '← Síntesis anterior', next: 'Próxima síntesis →' },
+  'pt-BR': { prev: '← Síntese anterior', next: 'Próxima síntese →', archive: 'Todas as edições' },
+  en: { prev: '← Previous synthesis', next: 'Next synthesis →', archive: 'All editions' },
+  es: { prev: '← Síntesis anterior', next: 'Próxima síntesis →', archive: 'Todas las ediciones' },
 }
 
 function ThemeToggle({ theme, onChoose }: { theme: Theme; onChoose: (t: Theme) => void }) {
@@ -326,21 +326,22 @@ export function AfosDailyTemplate({ data, nav }: Props) {
           </ReactMarkdown>
         </div>
 
-        {/* PREV / NEXT NAVIGATION */}
-        {(nav?.previous || nav?.next) && (
-          <div className={`mt-12 pt-6 border-t ${footerBorder} flex flex-wrap items-center justify-between gap-3 text-sm`}>
-            {nav?.previous ? (
-              <a href={`/${locale}/daily/${nav.previous}`} className={`${linkColor} font-medium`}>
-                {NAV_LABEL[locale].prev}
-              </a>
-            ) : <span />}
-            {nav?.next ? (
-              <a href={`/${locale}/daily/${nav.next}`} className={`${linkColor} font-medium`}>
-                {NAV_LABEL[locale].next}
-              </a>
-            ) : <span />}
-          </div>
-        )}
+        {/* PREV / ARCHIVE / NEXT NAVIGATION (archive link always present) */}
+        <div className={`mt-12 pt-6 border-t ${footerBorder} flex flex-wrap items-center justify-between gap-3 text-sm`}>
+          {nav?.previous ? (
+            <a href={`/${locale}/daily/${nav.previous}`} className={`${linkColor} font-medium`}>
+              {NAV_LABEL[locale].prev}
+            </a>
+          ) : <span />}
+          <a href={`/${locale}/daily`} className={`${linkColor} font-semibold`}>
+            {NAV_LABEL[locale].archive}
+          </a>
+          {nav?.next ? (
+            <a href={`/${locale}/daily/${nav.next}`} className={`${linkColor} font-medium`}>
+              {NAV_LABEL[locale].next}
+            </a>
+          ) : <span />}
+        </div>
 
         {/* RODAPÉ MÉTODO */}
         <div className={`mt-12 pt-8 border-t text-xs space-y-3 ${footerBorder} ${footerText}`}>

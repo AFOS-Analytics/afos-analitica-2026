@@ -23,6 +23,7 @@ const T = {
     badge: 'Semanal · Segundas',
     subtitle: 'Leitura técnica semanal · Toda segunda',
     cta: 'Ler edição',
+    seeAll: 'Todas as edições',
     ctaPre: 'Cadastre-se pra receber',
     updatedAt: 'Atualizado:',
     seePrevious: 'Ver edição anterior',
@@ -36,6 +37,7 @@ const T = {
     badge: 'Weekly · Mondays',
     subtitle: 'Weekly technical reading · Every Monday',
     cta: 'Read edition',
+    seeAll: 'All editions',
     ctaPre: 'Subscribe to receive',
     updatedAt: 'Updated:',
     seePrevious: 'See previous edition',
@@ -49,6 +51,7 @@ const T = {
     badge: 'Semanal · Lunes',
     subtitle: 'Lectura técnica semanal · Todos los lunes',
     cta: 'Leer edición',
+    seeAll: 'Todas las ediciones',
     ctaPre: 'Suscríbete para recibir',
     updatedAt: 'Actualizado:',
     seePrevious: 'Ver edición anterior',
@@ -172,8 +175,15 @@ export function AfosTradeoffHeroCard() {
         <p className="text-sm text-gray-800 leading-snug line-clamp-2 mb-2">{meta.sinalDaSemana}</p>
         <span className="text-sm font-semibold text-primary group-hover:underline">{t.cta} →</span>
       </a>
-      {meta.previousDate && (
-        <div className="mt-2 text-right">
+      <div className="mt-2 flex items-center justify-between gap-3">
+        <a
+          href={`/${tKey}/tradeoff`}
+          aria-label={t.seeAll}
+          className="text-xs font-medium text-gray-500 hover:text-primary hover:underline"
+        >
+          {t.seeAll} →
+        </a>
+        {meta.previousDate && (
           <a
             href={`/${tKey}/tradeoff/${meta.previousDate}`}
             aria-label={`${t.seePrevious} (${meta.previousDate})`}
@@ -181,8 +191,8 @@ export function AfosTradeoffHeroCard() {
           >
             ← {t.seePrevious}
           </a>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 }

@@ -94,6 +94,7 @@ const T = {
     previewBanner: 'PREVIEW LOCAL · DRAFT · Não publicado',
     navPrev: '← Edição anterior',
     navNext: 'Próxima edição →',
+    navArchive: 'Todas as edições',
   },
   en: {
     backToDashboard: '← Back to Dashboard',
@@ -121,6 +122,7 @@ const T = {
     previewBanner: 'LOCAL PREVIEW · DRAFT · Not published',
     navPrev: '← Previous edition',
     navNext: 'Next edition →',
+    navArchive: 'All editions',
   },
   es: {
     backToDashboard: '← Volver al Dashboard',
@@ -148,6 +150,7 @@ const T = {
     previewBanner: 'PREVIEW LOCAL · DRAFT · No publicado',
     navPrev: '← Edición anterior',
     navNext: 'Próxima edición →',
+    navArchive: 'Todas las ediciones',
   },
 }
 
@@ -664,17 +667,16 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
           </div>
         </div>
 
-        {/* Edition navigation */}
-        {(nav?.previous || nav?.next) && (
-          <nav className="mt-8 flex items-center justify-between text-sm">
-            {nav.previous ? (
-              <a href={`/${locale}/tradeoff/${nav.previous}`} className={linkColor}>{t.navPrev}</a>
-            ) : <span />}
-            {nav.next ? (
-              <a href={`/${locale}/tradeoff/${nav.next}`} className={linkColor}>{t.navNext}</a>
-            ) : <span />}
-          </nav>
-        )}
+        {/* Edition navigation (archive link always present) */}
+        <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">
+          {nav?.previous ? (
+            <a href={`/${locale}/tradeoff/${nav.previous}`} className={linkColor}>{t.navPrev}</a>
+          ) : <span />}
+          <a href={`/${locale}/tradeoff`} className={`${linkColor} font-semibold`}>{t.navArchive}</a>
+          {nav?.next ? (
+            <a href={`/${locale}/tradeoff/${nav.next}`} className={linkColor}>{t.navNext}</a>
+          ) : <span />}
+        </nav>
       </article>
     </div>
   )
