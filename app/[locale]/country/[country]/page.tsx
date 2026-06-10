@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
+import { breadcrumbSchema } from '../../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -49,11 +50,21 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
   languages['x-default'] = `${BASE_URL}/en/country/${country.slug['en']}`
 
+  const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
   return {
     title,
     description,
     alternates: { canonical: `${BASE_URL}/${loc}/country/${slug}`, languages },
-    openGraph: { title, description, url: `${BASE_URL}/${loc}/country/${slug}` },
+    openGraph: {
+      type: 'website',
+      title,
+      description,
+      url: `${BASE_URL}/${loc}/country/${slug}`,
+      siteName: 'AFOS Analytics',
+      locale: loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US',
+      images: [{ url: ogImage, width: 1200, height: 627, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
   }
 }
 
@@ -72,9 +83,11 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
     es: { region: 'Región', type: 'Tipo', date: 'Fecha', status: 'Estado', elections: 'Elecciones monitoreadas', backToDashboard: '← Dashboard', overview: 'Visión general', overviewText: `Siga la elección de ${name} con datos de mercados de predicción, encuestas electorales y análisis de riesgo político en tiempo real.`, risk: 'Riesgo Político', riskText: `El escenario político de ${name} es monitoreado continuamente con señales de mercados de predicción, sentimiento público y eventos críticos que pueden impactar divisas, inversiones y gobernanza.`, market: 'Relevancia de Mercado', marketText: `Las elecciones en ${name} impactan directamente flujos de capital, tipo de cambio y percepción de riesgo soberano. Los mercados de predicción ofrecen señales anticipadas sobre escenarios probables.`, why: 'Por qué monitorear', whyText: `${name} es uno de los mercados monitoreados por AFOS Analytics. Datos electorales en tiempo real permiten decisiones más informadas para inversores, analistas y ciudadanos.` },
   }
   const l = labels[loc] || labels['en']
+  const breadcrumb = breadcrumbSchema(loc, [{ name: 'AFOS Analytics', path: '' }, { name, path: `country/${slug}` }])
 
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <div className="max-w-4xl mx-auto px-4 py-12">
         <a href={`/${loc}`} className="text-primary text-sm hover:underline mb-6 inline-block">{l.backToDashboard}</a>
 

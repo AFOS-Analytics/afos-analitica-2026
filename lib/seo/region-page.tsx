@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
 import { getRegionBySlug, getCountriesForRegion, type RegionSEO } from './countries'
+import { breadcrumbSchema } from './schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -25,11 +26,21 @@ export function RegionPage(regionSlug: string) {
     const languages: Record<string, string> = {}
     for (const l of locales) languages[l] = `${BASE_URL}/${l}/${regionSlug}`
     languages['x-default'] = `${BASE_URL}/en/${regionSlug}`
+    const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
     return {
       title: m.title,
       description: m.desc,
       alternates: { canonical: `${BASE_URL}/${loc}/${regionSlug}`, languages },
-      openGraph: { title: m.title, description: m.desc, url: `${BASE_URL}/${loc}/${regionSlug}` },
+      openGraph: {
+        type: 'website',
+        title: m.title,
+        description: m.desc,
+        url: `${BASE_URL}/${loc}/${regionSlug}`,
+        siteName: 'AFOS Analytics',
+        locale: loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US',
+        images: [{ url: ogImage, width: 1200, height: 627, alt: m.title }],
+      },
+      twitter: { card: 'summary_large_image', title: m.title, description: m.desc, images: [ogImage] },
     }
   }
 
@@ -41,9 +52,11 @@ export function RegionPage(regionSlug: string) {
     const m = region.meta[loc] || region.meta['en']
     const l = LABELS[loc] || LABELS['en']
     const countries = getCountriesForRegion(region)
+    const breadcrumb = breadcrumbSchema(loc, [{ name: m.h1, path: regionSlug }])
 
     return (
       <div className="min-h-screen bg-white">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
         <div className="max-w-5xl mx-auto px-4 py-12">
           <a href={`/${loc}`} className="text-primary text-sm hover:underline mb-6 inline-block">{l.cta}</a>
 

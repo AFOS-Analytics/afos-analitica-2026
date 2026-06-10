@@ -7,6 +7,11 @@ import { DailyArchiveJump } from './DailyArchiveJump'
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-daily-theme'
 const LANG_LABEL: Record<string, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
+const FOOTER: Record<string, { sibling: string; method: string }> = {
+  'pt-BR': { sibling: 'AFOS Tradeoff (semanal) →', method: 'O Método →' },
+  en: { sibling: 'AFOS Tradeoff (weekly) →', method: 'The Method →' },
+  es: { sibling: 'AFOS Tradeoff (semanal) →', method: 'El Método →' },
+}
 
 export interface ArchiveItem {
   date: string
@@ -120,6 +125,7 @@ export function DailyArchiveShell({
     if (typeof window !== 'undefined') window.localStorage.setItem(THEME_KEY, next)
   }
   const isBlue = theme === 'blue'
+  const footer = FOOTER[locale] ?? FOOTER['pt-BR']
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const backLink = isBlue ? 'text-blue-200 hover:text-white' : 'text-gray-500 hover:text-primary'
@@ -199,6 +205,11 @@ export function DailyArchiveShell({
             </section>
           ))}
         </div>
+
+        <nav className={`mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t pt-6 text-sm ${headerBorder}`}>
+          <a href={`/${locale}/tradeoff`} className={`font-medium ${backLink}`}>{footer.sibling}</a>
+          <a href={`/${locale}/how-it-works`} className={`font-medium ${backLink}`}>{footer.method}</a>
+        </nav>
       </div>
     </main>
   )
