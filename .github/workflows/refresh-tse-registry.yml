@@ -1,0 +1,54 @@
+name: Refresh TSE poll registry
+
+# Atualiza o artefato ESTÁTICO hf-assets/polls/tse-registry.{csv,json} (382+ registros
+# oficiais do TSE) a partir do banco (tabela researchFinding) e commita de volta na main.
+# Quem PUBLICA no HF é o mirror DB-free ("Mirror dataset to Hugging Face"), que copia este
+# artefato já commitado — assim a credencial de banco NUNCA entra no pipeline público.
+#
+# ⚠️ Isolamento anti-Lead: este workflow tem DATABASE_URL e PODE alcançar o banco, mas
+# (a) build-hf-tse-registry.mjs consulta SOMENTE researchFinding (metadado público de
+# pesquisa, sem PII/Lead) e (b) ele NÃO faz upload externo — só gera CSV/JSON e commita.
+# O mirror público segue DB-free. Registro muda devagar → cadência semanal.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * 1' # toda segunda 13:00 UTC (antes do archive 14:00 / mirror 14:10)
+
+concurrency:
+  group: refresh-tse-registry
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install deps (postinstall roda prisma generate)
+        run: npm ci
+
+      - name: Gerar registro TSE do banco (só researchFinding — sem Lead)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL_UNPOOLED: ${{ secrets.DATABASE_URL_UNPOOLED }}
+        run: node scripts/build-hf-tse-registry.mjs
+
+      - name: Commitar artefato se mudou
+        run: |
+          git config user.name "afos-ci"
+          git config user.email "ci@afos-analytics.com"
+          git add hf-assets/polls/tse-registry.csv hf-assets/polls/tse-registry.json
+          if git diff --cached --quiet; then
+            echo "registro TSE inalterado — nada a commitar"
+          else
+            git commit -m "chore: refresh TSE poll registry artifact (weekly)"
+            git push
+          fi

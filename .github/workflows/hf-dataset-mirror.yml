@@ -26,6 +26,10 @@ jobs:
     steps:
       - name: Checkout main (artefatos públicos + scripts)
         uses: actions/checkout@v4
+        with:
+          # histórico completo: build-hf-poll-results.mjs reconstrói as pesquisas
+          # do log de public/polls-data.json (precisa de todos os commits)
+          fetch-depth: 0
 
       - name: Checkout branch archive (série histórica de snapshots)
         uses: actions/checkout@v4
@@ -54,6 +58,11 @@ jobs:
             exit 1
           fi
           echo "✅ export-hf-dataset.mjs é DB-free."
+
+      - name: Refresh national poll results (DB-free — só histórico git)
+        # Reconstrói polls/national-poll-results-*.csv + national-polls.json das 22+
+        # pesquisas nacionais a partir do log de polls-data.json. Sem DB, sem Lead.
+        run: node scripts/build-hf-poll-results.mjs
 
       - name: Build public export (DB-free — sem acesso a Lead)
         env:
