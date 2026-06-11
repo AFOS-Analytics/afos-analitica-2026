@@ -27,9 +27,9 @@ const T = {
     },
     global: {
       title: 'AFOS Global',
-      badge: '14+ países',
-      desc: 'Mapa interativo de eleições cobertas globalmente. Brasil 2026 e além.',
-      cta: 'Explorar mapa',
+      badge: 'Casos + mapa',
+      desc: 'Casos validados (Peru, Colômbia) com divergência mercado × pesquisa, mais o mapa de odds ao vivo.',
+      cta: 'Explorar cobertura',
     },
     metodo: {
       title: 'O Método',
@@ -57,9 +57,9 @@ const T = {
     },
     global: {
       title: 'AFOS Global',
-      badge: '14+ countries',
-      desc: 'Interactive map of elections covered globally. Brazil 2026 and beyond.',
-      cta: 'Explore map',
+      badge: 'Cases + map',
+      desc: 'Validated cases (Peru, Colombia) with market × poll divergence, plus the live odds map.',
+      cta: 'Explore coverage',
     },
     metodo: {
       title: 'The Method',
@@ -87,9 +87,9 @@ const T = {
     },
     global: {
       title: 'AFOS Global',
-      badge: '14+ países',
-      desc: 'Mapa interactivo de elecciones cubiertas globalmente. Brasil 2026 y más.',
-      cta: 'Explorar mapa',
+      badge: 'Casos + mapa',
+      desc: 'Casos validados (Perú, Colombia) con divergencia mercado × encuesta, más el mapa de odds en vivo.',
+      cta: 'Explorar cobertura',
     },
     metodo: {
       title: 'El Método',

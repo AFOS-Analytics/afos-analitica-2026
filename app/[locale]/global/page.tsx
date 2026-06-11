@@ -6,6 +6,13 @@ import { MOCK_ELECTIONS } from '../../lib/mock-elections';
 import type { CountryMarketSummary } from '../../types/global-map';
 import { useTranslation } from '../../i18n/context';
 import { GlobalContent } from '../../components/global-section/GlobalContent';
+import { ValidatedCases } from '../../components/global-section/ValidatedCases';
+
+const LIVE: Record<'pt-BR' | 'en' | 'es', { t: string; s: string }> = {
+  'pt-BR': { t: 'Ao vivo — odds de mercado agora', s: 'Eleições em andamento com mercados Polymarket ativos. Somente odds — sem a camada de pesquisas e divergência dos casos acima.' },
+  en: { t: 'Live — market odds now', s: 'Ongoing elections with active Polymarket markets. Odds only — without the polls and divergence layer of the cases above.' },
+  es: { t: 'En vivo — odds de mercado ahora', s: 'Elecciones en curso con mercados Polymarket activos. Solo odds — sin la capa de encuestas y divergencia de los casos de arriba.' },
+};
 
 type Locale = 'pt-BR' | 'en' | 'es';
 const LOCALE_LABELS: Record<Locale, string> = { 'pt-BR': 'BR', en: 'EN', es: 'ES' };
@@ -188,6 +195,11 @@ export default function GlobalPage() {
       </header>
 
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <ValidatedCases locale={locale} />
+        <div className="border-t border-light-border pt-6 mb-4">
+          <h2 className="text-lg font-bold text-primary mb-0.5">📊 {LIVE[locale].t}</h2>
+          <p className="text-xs text-gray-500 max-w-2xl leading-relaxed">{LIVE[locale].s}</p>
+        </div>
         <GlobalContent
           mapData={countries}
           expandedElection={expandedElection}

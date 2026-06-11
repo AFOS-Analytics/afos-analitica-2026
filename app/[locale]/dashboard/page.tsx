@@ -96,7 +96,10 @@ function DashboardContent() {
           <section className="bg-light-bg border border-light-border rounded-xl p-4">
             <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
               <p className="text-xs font-semibold text-primary">{t('map.countries')}</p>
-              <LogicLink anchor="paises" />
+              <div className="flex items-center gap-3">
+                <a href={`/${locale}/global`} className="text-[11px] font-semibold text-primary hover:underline">{locale === 'en' ? 'See global coverage' : locale === 'es' ? 'Ver cobertura global' : 'Ver cobertura global'} →</a>
+                <LogicLink anchor="paises" />
+              </div>
             </div>
             <div className="flex flex-wrap gap-2">
               {[
@@ -114,6 +117,7 @@ function DashboardContent() {
                 { code: 'mx', slug: 'mexico', name: locale === 'en' ? 'Mexico' : 'Mexico' },
                 { code: 'ng', slug: 'nigeria', name: locale === 'en' ? 'Nigeria' : locale === 'es' ? 'Nigeria' : 'Nigeria' },
                 { code: 'ph', slug: locale === 'en' ? 'philippines' : 'filipinas', name: locale === 'en' ? 'Philippines' : 'Filipinas' },
+                { code: 'us', slug: locale === 'en' ? 'united-states' : 'estados-unidos', name: locale === 'en' ? 'United States' : 'Estados Unidos' },
               ].map((c) => (
                 <a key={c.slug} href={`/${locale}/country/${c.slug}`} className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
