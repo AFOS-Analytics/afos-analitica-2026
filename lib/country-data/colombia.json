@@ -49,5 +49,101 @@
       "market_pct": 0.1,
       "divergence_pp": -0.2
     }
-  ]
+  ],
+  "market_snapshot": {
+    "date": "2026-05-20",
+    "total_volume_usd": 36346454,
+    "candidates": [
+      {
+        "candidate": "Abelardo de la Espriella",
+        "market_pct": 43.5,
+        "volume_usd": 3254888
+      },
+      {
+        "candidate": "Iván Cepeda Castro",
+        "market_pct": 43.5,
+        "volume_usd": 3172276
+      },
+      {
+        "candidate": "Paloma Valencia",
+        "market_pct": 14.5,
+        "volume_usd": 2674635
+      },
+      {
+        "candidate": "Sergio Fajardo",
+        "market_pct": 0.2,
+        "volume_usd": 2393093
+      },
+      {
+        "candidate": "Carlos Felipe Córdoba",
+        "market_pct": 0.2,
+        "volume_usd": 709130
+      },
+      {
+        "candidate": "Vicky Dávila",
+        "market_pct": 0.1,
+        "volume_usd": 3018077
+      },
+      {
+        "candidate": "Luis Gilberto Murillo",
+        "market_pct": 0.1,
+        "volume_usd": 1926534
+      },
+      {
+        "candidate": "Claudia López",
+        "market_pct": 0.1,
+        "volume_usd": 1207052
+      },
+      {
+        "candidate": "David Luna Sánchez",
+        "market_pct": 0.1,
+        "volume_usd": 1850813
+      },
+      {
+        "candidate": "Juan Daniel Oviedo",
+        "market_pct": 0.1,
+        "volume_usd": 1534890
+      },
+      {
+        "candidate": "Gustavo Bolívar",
+        "market_pct": 0.1,
+        "volume_usd": 5794849
+      },
+      {
+        "candidate": "Juan Manuel Galán",
+        "market_pct": 0.1,
+        "volume_usd": 769121
+      },
+      {
+        "candidate": "Germán Vargas Lleras",
+        "market_pct": 0.1,
+        "volume_usd": 1787258
+      },
+      {
+        "candidate": "Mauricio Cárdenas",
+        "market_pct": 0.1,
+        "volume_usd": 2525323
+      },
+      {
+        "candidate": "Daniel Quintero",
+        "market_pct": 0.1,
+        "volume_usd": 706339
+      },
+      {
+        "candidate": "Roy Barreras",
+        "market_pct": 0.1,
+        "volume_usd": 1230962
+      },
+      {
+        "candidate": "Enrique Peñalosa",
+        "market_pct": 0.1,
+        "volume_usd": 1313099
+      },
+      {
+        "candidate": "Juan Carlos Pinzón",
+        "market_pct": 0.1,
+        "volume_usd": 478115
+      }
+    ]
+  }
 }

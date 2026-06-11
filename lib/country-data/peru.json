@@ -54,5 +54,81 @@
       "market_pct": 15,
       "divergence_pp": 8
     }
-  ]
+  ],
+  "market_snapshot": {
+    "date": "2026-03-29",
+    "total_volume_usd": 87597396,
+    "candidates": [
+      {
+        "candidate": "Rafael López Aliaga",
+        "market_pct": 37.5,
+        "volume_usd": 13880454
+      },
+      {
+        "candidate": "Keiko Fujimori",
+        "market_pct": 16.5,
+        "volume_usd": 18911020
+      },
+      {
+        "candidate": "Alfonso López Chau",
+        "market_pct": 12.4,
+        "volume_usd": 2316316
+      },
+      {
+        "candidate": "Roberto Sánchez",
+        "market_pct": 12.4,
+        "volume_usd": 29547202
+      },
+      {
+        "candidate": "Jorge Nieto",
+        "market_pct": 7.1,
+        "volume_usd": 5777944
+      },
+      {
+        "candidate": "Carlos Álvarez",
+        "market_pct": 6.3,
+        "volume_usd": 13157687
+      },
+      {
+        "candidate": "Enrique Valderrama",
+        "market_pct": 0.8,
+        "volume_usd": 266138
+      },
+      {
+        "candidate": "Fernando Olivera",
+        "market_pct": 0.7,
+        "volume_usd": 472562
+      },
+      {
+        "candidate": "Yonhy Lescano",
+        "market_pct": 0.7,
+        "volume_usd": 439432
+      },
+      {
+        "candidate": "Mesías Guevara",
+        "market_pct": 0.6,
+        "volume_usd": 327092
+      },
+      {
+        "candidate": "Marisol Pérez Tello",
+        "market_pct": 0.6,
+        "volume_usd": 1741368
+      },
+      {
+        "candidate": "Vladimir Cerrón",
+        "market_pct": 0.3,
+        "volume_usd": 252942
+      },
+      {
+        "candidate": "Roberto Chiabra",
+        "market_pct": 0.3,
+        "volume_usd": 137391
+      },
+      {
+        "candidate": "José Luna",
+        "market_pct": 0.3,
+        "volume_usd": 369848
+      }
+    ]
+  }
 }

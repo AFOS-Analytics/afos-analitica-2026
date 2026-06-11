@@ -55,5 +55,41 @@
       "market_pct": 0.1,
       "divergence_pp": -4.4
     }
-  ]
+  ],
+  "market_snapshot": {
+    "date": "2025-02-22",
+    "total_volume_usd": 106316921,
+    "candidates": [
+      {
+        "candidate": "CDU/CSU",
+        "market_pct": 96.7,
+        "volume_usd": 11315209
+      },
+      {
+        "candidate": "AfD",
+        "market_pct": 3.3,
+        "volume_usd": 18597089
+      },
+      {
+        "candidate": "Grüne",
+        "market_pct": 0.1,
+        "volume_usd": 19221606
+      },
+      {
+        "candidate": "BSW",
+        "market_pct": 0.1,
+        "volume_usd": 19989627
+      },
+      {
+        "candidate": "SPD",
+        "market_pct": 0.1,
+        "volume_usd": 15970451
+      },
+      {
+        "candidate": "FDP",
+        "market_pct": 0.1,
+        "volume_usd": 21222939
+      }
+    ]
+  }
 }

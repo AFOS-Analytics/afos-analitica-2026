@@ -55,5 +55,66 @@
       "market_pct": 0.1,
       "divergence_pp": -0.9
     }
-  ]
+  ],
+  "market_snapshot": {
+    "date": "2025-10-31",
+    "total_volume_usd": 48828454,
+    "candidates": [
+      {
+        "candidate": "José Antonio Kast",
+        "market_pct": 66,
+        "volume_usd": 6918328
+      },
+      {
+        "candidate": "Jeannette Jara",
+        "market_pct": 16.2,
+        "volume_usd": 8873168
+      },
+      {
+        "candidate": "Johannes Kaiser",
+        "market_pct": 12.3,
+        "volume_usd": 3058238
+      },
+      {
+        "candidate": "Evelyn Matthei",
+        "market_pct": 5.8,
+        "volume_usd": 4415718
+      },
+      {
+        "candidate": "Franco Parisi",
+        "market_pct": 0.8,
+        "volume_usd": 3635525
+      },
+      {
+        "candidate": "Jaime Mulet",
+        "market_pct": 0.1,
+        "volume_usd": 2989188
+      },
+      {
+        "candidate": "Carolina Tohá",
+        "market_pct": 0.1,
+        "volume_usd": 407673
+      },
+      {
+        "candidate": "Gonzalo Winter",
+        "market_pct": 0.1,
+        "volume_usd": 405502
+      },
+      {
+        "candidate": "Eduardo Artés",
+        "market_pct": 0.1,
+        "volume_usd": 3048376
+      },
+      {
+        "candidate": "Félix González",
+        "market_pct": 0.1,
+        "volume_usd": 3700699
+      },
+      {
+        "candidate": "Marco Enríquez-Ominami",
+        "market_pct": 0.1,
+        "volume_usd": 11376039
+      }
+    ]
+  }
 }

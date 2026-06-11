@@ -18,6 +18,7 @@ export interface DivergenceRow {
   divergence_pp: number
   note?: Record<string, string> // ressalva por linha (ex.: spike transitório de mercado fino), trilíngue
 }
+export interface MarketSnapshotRow { candidate: string; market_pct: number; volume_usd: number }
 export interface CountryDivergence {
   iso3: string
   hf: string
@@ -27,6 +28,7 @@ export interface CountryDivergence {
   latest_poll: { pollster: string; date: string }
   headline: Record<string, string>
   rows: DivergenceRow[]
+  market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
 }
 
 // chave = iso3 (bate com CountrySEO.iso3)

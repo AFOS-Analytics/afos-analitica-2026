@@ -55,5 +55,41 @@
       "market_pct": 0.1,
       "divergence_pp": -0.9
     }
-  ]
+  ],
+  "market_snapshot": {
+    "date": "2025-04-27",
+    "total_volume_usd": 11891299,
+    "candidates": [
+      {
+        "candidate": "Liberal",
+        "market_pct": 80.2,
+        "volume_usd": 5152025
+      },
+      {
+        "candidate": "Conservative",
+        "market_pct": 19.5,
+        "volume_usd": 3398501
+      },
+      {
+        "candidate": "Bloc Québécois",
+        "market_pct": 0.1,
+        "volume_usd": 882306
+      },
+      {
+        "candidate": "NDP",
+        "market_pct": 0.1,
+        "volume_usd": 761989
+      },
+      {
+        "candidate": "People's Party",
+        "market_pct": 0.1,
+        "volume_usd": 1139788
+      },
+      {
+        "candidate": "Green",
+        "market_pct": 0.1,
+        "volume_usd": 556690
+      }
+    ]
+  }
 }
