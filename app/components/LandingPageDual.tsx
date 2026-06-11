@@ -21,7 +21,7 @@ const CONTENT = {
   'pt-BR': {
     nav: { dashboard: 'Dashboard', about: 'Sobre', github: 'GitHub' },
     hero: {
-      badge: 'Eleições 2026 · 14 Países Monitorados',
+      badge: 'Eleições 2026 · 15 Países Monitorados',
       title: 'Inteligência de Risco',
       titleHighlight: 'Político Eleitoral Global',
       claim: 'Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias. Código aberto, fontes públicas auditáveis.',
@@ -30,7 +30,7 @@ const CONTENT = {
       ctaSecondary: 'Saiba mais',
     },
     stats: [
-      { value: '14', label: 'Países monitorados' },
+      { value: '15', label: 'Países monitorados' },
       { value: '17+', label: 'Institutos de pesquisa' },
       { value: '30min', label: 'Atualização dos mercados' },
       { value: '100%', label: 'Open-source' },
@@ -41,7 +41,7 @@ const CONTENT = {
       items: [
         { icon: 'chart', title: 'Mercados de Previsão', desc: 'Odds do Polymarket com dinheiro real. O indicador mais preciso de probabilidade eleitoral, atualizado a cada 30 minutos.' },
         { icon: 'poll', title: 'Pesquisas Eleitorais', desc: 'Dados oficiais do TSE e 17 institutos brasileiros. Cruzamento automático com odds dos mercados de previsão.' },
-        { icon: 'globe', title: 'Mapa Global Interativo', desc: '14 países com eleições monitoradas. Visualização D3.js com dados agregados por região e candidato.' },
+        { icon: 'globe', title: 'Mapa Global Interativo', desc: '15 países com eleições monitoradas. Visualização D3.js com dados agregados por região e candidato.' },
         { icon: 'news', title: 'Notícias ao Vivo', desc: 'Agregação automática de notícias políticas com categorização por tema e relevância eleitoral.' },
         { icon: 'brain', title: 'Análises Estratégicas', desc: 'Sentimento político, riscos econômicos e análise de cenários, atualizado com inteligência artificial.' },
         { icon: 'shield', title: 'Transparente e Seguro', desc: 'Código aberto no GitHub. Conformidade LGPD. Sem rastreamento invasivo. Seus dados são seus.' },
@@ -66,7 +66,7 @@ const CONTENT = {
   en: {
     nav: { dashboard: 'Dashboard', about: 'About', github: 'GitHub' },
     hero: {
-      badge: 'Elections 2026 · 14 Countries Monitored',
+      badge: 'Elections 2026 · 15 Countries Monitored',
       title: 'Global Electoral Political',
       titleHighlight: 'Risk Intelligence',
       claim: 'Real-time cross-referencing of prediction markets, electoral polls and news. Open-source, auditable public sources.',
@@ -75,7 +75,7 @@ const CONTENT = {
       ctaSecondary: 'Learn more',
     },
     stats: [
-      { value: '14', label: 'Countries monitored' },
+      { value: '15', label: 'Countries monitored' },
       { value: '17+', label: 'Polling institutes' },
       { value: '30min', label: 'Market refresh rate' },
       { value: '100%', label: 'Open-source' },
@@ -86,7 +86,7 @@ const CONTENT = {
       items: [
         { icon: 'chart', title: 'Prediction Markets', desc: 'Real-money Polymarket odds. The most accurate probability indicator for elections, updated every 30 minutes.' },
         { icon: 'poll', title: 'Electoral Polls', desc: 'Official TSE data and 17 Brazilian institutes. Automatic cross-analysis with prediction market odds.' },
-        { icon: 'globe', title: 'Interactive Global Map', desc: '14 countries with monitored elections. D3.js visualization with data aggregated by region and candidate.' },
+        { icon: 'globe', title: 'Interactive Global Map', desc: '15 countries with monitored elections. D3.js visualization with data aggregated by region and candidate.' },
         { icon: 'news', title: 'Live News', desc: 'Automatic political news aggregation with categorization by topic and electoral relevance.' },
         { icon: 'brain', title: 'Strategic Analysis', desc: 'Political sentiment, economic risks and scenario analysis, updated with artificial intelligence.' },
         { icon: 'shield', title: 'Transparent & Secure', desc: 'Open source on GitHub. LGPD compliant. No invasive tracking. Your data is yours.' },
@@ -111,7 +111,7 @@ const CONTENT = {
   es: {
     nav: { dashboard: 'Dashboard', about: 'Acerca de', github: 'GitHub' },
     hero: {
-      badge: 'Elecciones 2026 · 14 Países Monitoreados',
+      badge: 'Elecciones 2026 · 15 Países Monitoreados',
       title: 'Inteligencia Global de',
       titleHighlight: 'Riesgo Político Electoral',
       claim: 'Cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias. Código abierto, fuentes públicas auditables.',
@@ -120,7 +120,7 @@ const CONTENT = {
       ctaSecondary: 'Saber más',
     },
     stats: [
-      { value: '14', label: 'Países monitoreados' },
+      { value: '15', label: 'Países monitoreados' },
       { value: '17+', label: 'Institutos de encuestas' },
       { value: '30min', label: 'Actualización de mercados' },
       { value: '100%', label: 'Open-source' },
@@ -131,7 +131,7 @@ const CONTENT = {
       items: [
         { icon: 'chart', title: 'Mercados de Predicción', desc: 'Probabilidades de Polymarket con dinero real. El indicador más preciso de probabilidad electoral, actualizado cada 30 minutos.' },
         { icon: 'poll', title: 'Encuestas Electorales', desc: 'Datos oficiales del TSE y 17 institutos brasileños. Cruce automático con probabilidades de mercados.' },
-        { icon: 'globe', title: 'Mapa Global Interactivo', desc: '14 países con elecciones monitoreadas. Visualización D3.js con datos agregados por región y candidato.' },
+        { icon: 'globe', title: 'Mapa Global Interactivo', desc: '15 países con elecciones monitoreadas. Visualización D3.js con datos agregados por región y candidato.' },
         { icon: 'news', title: 'Noticias en Vivo', desc: 'Agregación automática de noticias políticas con categorización por tema y relevancia electoral.' },
         { icon: 'brain', title: 'Análisis Estratégico', desc: 'Sentimiento político, riesgos económicos y análisis de escenarios, actualizado con inteligencia artificial.' },
         { icon: 'shield', title: 'Transparente y Seguro', desc: 'Código abierto en GitHub. Cumplimiento LGPD. Sin rastreo invasivo. Tus datos son tuyos.' },

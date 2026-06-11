@@ -22,14 +22,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.afos-analytics.com'),
   title: "AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source",
-  description: "Inteligência de risco político eleitoral global em tempo real: cruzamento entre Polymarket, +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Brasil 2026 e 14 países.",
+  description: "Inteligência de risco político eleitoral global em tempo real: cruzamento entre Polymarket, +17 institutos brasileiros e cobertura jornalística. Open-source, fontes públicas auditáveis. Brasil 2026 e 15 países.",
   // Canonical/alternates removidos do root layout para evitar que TODAS as
   // rotas (PT-BR/EN/ES) declarem canonical=PT-BR (Google trataria EN/ES como
   // duplicatas). buildMetadata() em [locale]/layout aplica canonical correto
   // por locale via PAGE_SEO + alternates.languages cruzado.
   openGraph: {
     title: "AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source",
-    description: "Inteligência de risco político eleitoral global em tempo real: Polymarket, pesquisas e cobertura jornalística cruzados. Brasil 2026 e 14 países.",
+    description: "Inteligência de risco político eleitoral global em tempo real: Polymarket, pesquisas e cobertura jornalística cruzados. Brasil 2026 e 15 países.",
     url: "https://www.afos-analytics.com",
     siteName: "AFOS Analytics",
     locale: "pt_BR",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AFOS Analytics — Inteligência de Risco Político Eleitoral Global — Open-Source",
-    description: "Inteligência de risco político eleitoral global: Polymarket, 17 institutos e notícias cruzados em tempo real. Open-source. Brasil 2026 e 14 países.",
+    description: "Inteligência de risco político eleitoral global: Polymarket, 17 institutos e notícias cruzados em tempo real. Open-source. Brasil 2026 e 15 países.",
     images: ['https://www.afos-analytics.com/brand/og-pt-linkedin-1200x627.png'],
   },
   robots: {

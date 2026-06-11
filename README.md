@@ -6,7 +6,7 @@
 
 ### Global platform — unprecedented — real-time cross-referencing of prediction markets, electoral polls and news.
 
-Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.
+Built and validated during the 2026 electoral cycle across South American countries + 15 countries. Daily analyses.
 
 **Aggregating over 400 sources** (5 major global prediction markets + 100+ polling institutes + 300+ media outlets and social networks, 20+ languages) across **14+ countries.**
 
@@ -272,7 +272,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 ## Global Elections Map
 
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
-- **14 countries** with live Polymarket data
+- **15 countries** with live Polymarket data
 - **SVG flags** — visible on all devices (Windows, Mac, mobile)
 - **Volume with label**: "Vol: $53.4M (sum of 6 markets)" when multiple markets
 - **Hover** — tooltip with leading candidate, probability, volume
@@ -348,7 +348,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | **Vercel** | Hosting, Edge Runtime, Cron |
 | **Upstash Redis** | Hot cache, rate limiting, session dedup |
 | **Resend** | Transactional email |
-| **Polymarket API** | Prediction markets (18 markets, 14 countries) |
+| **Polymarket API** | Prediction markets (18 markets, 15 countries) |
 | **Google News RSS + Firecrawl** | Live news |
 | **Vercel Analytics** | Traffic metrics |
 

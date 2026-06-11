@@ -208,7 +208,7 @@ export function HowItWorksEn() {
 
       <Card title="Global modal" id="modal-global">
         <p>Clicking <strong>Global</strong> opens an interactive world map of national elections planned for 2026 and following years. Each country with a registered election appears highlighted, with Polymarket market volume (when available) and favorite candidate by odds.</p>
-        <p>Currently, 14 countries are monitored, with focus on Latin America (Brazil, Argentina, Chile, Colombia, Peru, Mexico) and key global countries (US, France, UK). For each, the card displays election date, main candidates, and link to a detailed profile.</p>
+        <p>Currently, 15 countries are monitored, with focus on Latin America (Brazil, Mexico, Colombia, Chile, Peru) and key global countries (US, France, UK). For each, the card displays election date, main candidates, and link to a detailed profile.</p>
         <p>It's the entry point for the platform's international expansion. If you're following a specific election, the global map is the fastest shortcut to switch context without going back to the home page.</p>
       </Card>
 

@@ -6,26 +6,26 @@ const BASE_URL = 'https://www.afos-analytics.com'
 const CONTENT: Record<string, { metaTitle: string; desc: string; h1: string; intro: string; features: string[]; cta: string }> = {
   'pt-BR': {
     metaTitle: 'Inteligência Eleitoral | Dados Políticos em Tempo Real | AFOS Analytics',
-    desc: 'Plataforma de inteligência eleitoral global. Mercados de previsão, pesquisas, notícias e análises cruzadas para eleições em 14 países.',
+    desc: 'Plataforma de inteligência eleitoral global. Mercados de previsão, pesquisas, notícias e análises cruzadas para eleições em 15 países.',
     h1: 'Inteligência Eleitoral Global',
     intro: 'Uma camada de inteligência política para mercados, governos e cidadãos.',
-    features: ['14 países monitorados com dados ao vivo', 'Mercados de previsão × pesquisas × notícias cruzadas', 'Análise de candidatos com forças e fraquezas', 'Mapa global interativo com D3.js', 'Multilíngue: PT-BR, EN, ES', 'Open source, gratuito, sem cadastro obrigatório'],
+    features: ['15 países monitorados com dados ao vivo', 'Mercados de previsão × pesquisas × notícias cruzadas', 'Análise de candidatos com forças e fraquezas', 'Mapa global interativo com D3.js', 'Multilíngue: PT-BR, EN, ES', 'Open source, gratuito, sem cadastro obrigatório'],
     cta: '← Acessar Plataforma',
   },
   en: {
     metaTitle: 'Election Intelligence | Real-Time Political Data | AFOS Analytics',
-    desc: 'Global election intelligence platform. Prediction markets, polls, news, and cross-analysis for elections in 14 countries.',
+    desc: 'Global election intelligence platform. Prediction markets, polls, news, and cross-analysis for elections in 15 countries.',
     h1: 'Global Election Intelligence',
     intro: 'A political intelligence layer for markets, governments, and citizens.',
-    features: ['14 countries monitored with live data', 'Prediction markets × polls × news cross-referenced', 'Candidate analysis with strengths and weaknesses', 'Interactive global map with D3.js', 'Multilingual: PT-BR, EN, ES', 'Open source, free, no registration required'],
+    features: ['15 countries monitored with live data', 'Prediction markets × polls × news cross-referenced', 'Candidate analysis with strengths and weaknesses', 'Interactive global map with D3.js', 'Multilingual: PT-BR, EN, ES', 'Open source, free, no registration required'],
     cta: '← Access Platform',
   },
   es: {
     metaTitle: 'Inteligencia Electoral | Datos Políticos en Tiempo Real | AFOS Analytics',
-    desc: 'Plataforma de inteligencia electoral global. Mercados de predicción, encuestas, noticias y análisis cruzados para elecciones en 14 países.',
+    desc: 'Plataforma de inteligencia electoral global. Mercados de predicción, encuestas, noticias y análisis cruzados para elecciones en 15 países.',
     h1: 'Inteligencia Electoral Global',
     intro: 'Una capa de inteligencia política para mercados, gobiernos y ciudadanos.',
-    features: ['14 países monitoreados con datos en vivo', 'Mercados de predicción × encuestas × noticias cruzadas', 'Análisis de candidatos con fortalezas y debilidades', 'Mapa global interactivo con D3.js', 'Multilingüe: PT-BR, EN, ES', 'Código abierto, gratuito, sin registro obligatorio'],
+    features: ['15 países monitoreados con datos en vivo', 'Mercados de predicción × encuestas × noticias cruzadas', 'Análisis de candidatos con fortalezas y debilidades', 'Mapa global interactivo con D3.js', 'Multilingüe: PT-BR, EN, ES', 'Código abierto, gratuito, sin registro obligatorio'],
     cta: '← Acceder a la Plataforma',
   },
 }

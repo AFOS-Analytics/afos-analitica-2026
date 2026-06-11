@@ -10,21 +10,21 @@ const COPY = {
     subtitle: 'Global Electoral Political Risk Intelligence',
     openSource: 'Open-Source',
     chips: ['Prediction market', '17 Institutes', 'Live News', 'Analysis'],
-    footer: 'Built and validated during the 2026 electoral cycle across South American countries + 14 countries. Daily analyses.',
+    footer: 'Built and validated during the 2026 electoral cycle across South American countries + 15 countries. Daily analyses.',
   },
   'pt-BR': {
     title: 'AFOS Analytics',
     subtitle: 'Inteligência de Risco Político Eleitoral Global',
     openSource: 'Open-Source',
     chips: ['Mercado de previsão', '17 Institutos', 'Notícias ao Vivo', 'Análises'],
-    footer: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 14 países. Análises diárias.',
+    footer: 'Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 15 países. Análises diárias.',
   },
   es: {
     title: 'AFOS Analytics',
     subtitle: 'Inteligencia Global de Riesgo Político Electoral',
     openSource: 'Open-Source',
     chips: ['Mercado de predicción', '17 Institutos', 'Noticias en Vivo', 'Análisis'],
-    footer: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur + 14 países. Análisis diarios.',
+    footer: 'Construido y validado durante el ciclo electoral 2026 en países de América del Sur + 15 países. Análisis diarios.',
   },
 }
 

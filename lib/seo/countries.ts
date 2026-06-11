@@ -136,6 +136,14 @@ export const COUNTRIES_SEO: CountrySEO[] = [
       { slug: 'philippines-2025', year: 2025, type: { 'pt-BR': 'Legislativa', en: 'Midterm Senate', es: 'Legislativa' }, date: '2025-05-12', status: 'active', polymarketSlug: 'philippines-midterm-elections-2025-senate' },
     ],
   },
+  {
+    slug: { 'pt-BR': 'estados-unidos', en: 'united-states', es: 'estados-unidos' },
+    name: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
+    iso3: 'USA', flag: '🇺🇸', region: 'Americas',
+    elections: [
+      { slug: 'usa-2028', year: 2028, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2028-11-07', status: 'upcoming' },
+    ],
+  },
 ]
 
 // ── Helpers ────────────────────────────────────────────────

@@ -6,7 +6,7 @@
 
 ### Plataforma Global — inédita — cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias.
 
-Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 14 países. Análises diárias.
+Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 15 países. Análises diárias.
 
 **Agregando mais de 400 fontes** (5 grandes mercados globais de previsão + 100+ institutos de pesquisa + 300+ meios de comunicação e redes sociais, 20+ idiomas) em **14+ países.**
 
@@ -34,7 +34,7 @@ O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco
 - **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente — **40 edicoes publicadas ate 31/Mai/2026** (D+17 do lancamento publico), em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`. Distribuicao por email para assinantes optados-in via Resend Pro
 - **AFOS Tradeoff** — leitura tecnica semanal publicada toda segunda, voltada para research institucional, buy-side e tesouraria. Cruza os mesmos tres sinais mas reporta **separadamente** (sem compostos de media ponderada) — quando mercado de previsao, pesquisa e noticia divergem, a divergencia *e* o sinal. Estruturada em 9 secoes (cards de resumo executivo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Publicada em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/tradeoff/[data]`. RSS: `/feed/tradeoff.xml`
 
-Cobertura de **14 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
+Cobertura de **15 paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
 
 **Open Source. Gratuito. Mobile e desktop.**
 
@@ -252,7 +252,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 ## Mapa Global de Eleicoes
 
 - **D3.js + TopoJSON** — Natural Earth projection, SVG render
-- **14 paises** com dados ao vivo do Polymarket
+- **15 paises** com dados ao vivo do Polymarket
 - **Bandeiras SVG** — visiveis em todos os dispositivos (Windows, Mac, mobile)
 - **Volume com label**: "Vol: $53.4M (somatorio 6 mercados)" quando multiplos mercados
 - **Hover** — tooltip com candidato lider, probabilidade, volume
@@ -328,7 +328,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | **Vercel** | Hosting, Edge Runtime, Cron |
 | **Upstash Redis** | Hot cache, rate limiting, session dedup |
 | **Resend** | Email transacional |
-| **Polymarket API** | Mercados de previsao (18 mercados, 14 paises) |
+| **Polymarket API** | Mercados de previsao (18 mercados, 15 paises) |
 | **Google News RSS + Firecrawl** | Noticias ao vivo |
 | **Vercel Analytics** | Metricas de trafego |
 

@@ -5,7 +5,7 @@ import type { Locale } from '../../../lib/i18n/config';
 const SEO: Record<Locale, { title: string; description: string }> = {
   'pt-BR': {
     title: 'Dashboard — AFOS Analytics | Inteligência de Risco Político Eleitoral Global',
-    description: 'Dashboard interativo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de 17+ institutos, notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 14 países.',
+    description: 'Dashboard interativo: cruzamento de mercados de previsão (Polymarket) com pesquisas eleitorais de 17+ institutos, notícias ao vivo e análises estratégicas. Eleições Brasil 2026 e cobertura de 15 países.',
   },
   en: {
     title: 'Dashboard — AFOS Analytics | Political Election Risk Intelligence',
@@ -13,7 +13,7 @@ const SEO: Record<Locale, { title: string; description: string }> = {
   },
   es: {
     title: 'Dashboard — AFOS Analytics | Inteligencia Global de Riesgo Político Electoral',
-    description: 'Dashboard interactivo: cruce de mercados de predicción (Polymarket) con encuestas electorales de 17+ institutos, noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 14 países.',
+    description: 'Dashboard interactivo: cruce de mercados de predicción (Polymarket) con encuestas electorales de 17+ institutos, noticias en vivo y análisis estratégicos. Elecciones Brasil 2026 y cobertura de 15 países.',
   },
 };
 

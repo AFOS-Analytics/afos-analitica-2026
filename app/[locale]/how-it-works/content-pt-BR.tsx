@@ -210,7 +210,7 @@ export function HowItWorksPtBR() {
 
       <Card title="Modal Global" id="modal-global">
         <p>Clicar em <strong>Global</strong> abre o mapa-múndi interativo das eleições nacionais previstas para 2026 e anos seguintes. Cada país com eleição registrada aparece em destaque, com volume de mercado em Polymarket (quando disponível) e candidato favorito segundo as odds.</p>
-        <p>Atualmente, 14 países são monitorados, com foco em América Latina (Brasil, Argentina, Chile, Colômbia, Peru, México) e países-chave globais (EUA, França, Reino Unido). Para cada um, o card exibe data da eleição, principais candidatos, e link para ficha detalhada.</p>
+        <p>Atualmente, 15 países são monitorados, com foco em América Latina (Brasil, México, Colômbia, Chile, Peru) e países-chave globais (EUA, França, Reino Unido). Para cada um, o card exibe data da eleição, principais candidatos, e link para ficha detalhada.</p>
         <p>É a porta de entrada para a expansão internacional da plataforma. Se você está acompanhando uma eleição específica, o mapa global é o atalho mais rápido para mudar de contexto sem precisar voltar à home.</p>
       </Card>
 

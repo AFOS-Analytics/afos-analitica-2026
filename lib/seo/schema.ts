@@ -24,7 +24,7 @@ export function organizationSchema() {
       width: 512,
       height: 512,
     },
-    description: 'Global Electoral Political Risk Intelligence — Open-Source. Cross-references Polymarket, 17+ polls, and live news. Brazil 2026 + 14 countries.',
+    description: 'Global Electoral Political Risk Intelligence — Open-Source. Cross-references Polymarket, 17+ polls, and live news. Brazil 2026 + 15 countries.',
     foundingDate: '2026',
     knowsAbout: [
       'Election prediction',

@@ -190,7 +190,7 @@ export function AutomatedGovEn() {
       <ul className={S.ul}>
         <li><strong>Auditable.</strong> Any reader can open the repo and see exactly which rule was applied. Impossible in a traditional newsroom.</li>
         <li><strong>Reproducible.</strong> Same input generates same output. Guarantees no case gets different treatment based on who was on shift.</li>
-        <li><strong>Scalable.</strong> 14 countries today, 40 tomorrow, without hiring editors. The newsroom model would die at 20 countries.</li>
+        <li><strong>Scalable.</strong> 15 countries today, 40 tomorrow, without hiring editors. The newsroom model would die at 20 countries.</li>
         <li><strong>Directly attackable.</strong> If you think a rule is wrong, open an issue. If you think the prompt is biased, open an issue. Critique is technical, not subjective.</li>
       </ul>
 

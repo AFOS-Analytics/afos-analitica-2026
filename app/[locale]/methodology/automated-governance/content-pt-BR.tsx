@@ -194,7 +194,7 @@ export function AutomatedGovPtBR() {
       <ul className={S.ul}>
         <li><strong>Auditáveis.</strong> Qualquer leitor pode abrir o repositório e ver exatamente qual regra foi aplicada. Impossível em redação tradicional.</li>
         <li><strong>Reproduzíveis.</strong> A mesma entrada gera a mesma saída. Garantia que nenhum caso recebe tratamento diferente por quem estava de plantão.</li>
-        <li><strong>Escaláveis.</strong> 14 países hoje, 40 amanhã, sem contratar editor. Newsroom model morreria em 20 países.</li>
+        <li><strong>Escaláveis.</strong> 15 países hoje, 40 amanhã, sem contratar editor. Newsroom model morreria em 20 países.</li>
         <li><strong>Ataques diretos.</strong> Se achar que uma regra está errada, abra issue. Se achar que o prompt está enviesado, abra issue. A crítica é técnica, não opinativa.</li>
       </ul>
 

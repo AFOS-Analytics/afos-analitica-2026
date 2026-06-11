@@ -192,7 +192,7 @@ export function AutomatedGovEs() {
       <ul className={S.ul}>
         <li><strong>Auditables.</strong> Cualquier lector puede abrir el repositorio y ver exactamente qué regla se aplicó. Imposible en una redacción tradicional.</li>
         <li><strong>Reproducibles.</strong> La misma entrada genera la misma salida. Garantía de que ningún caso recibe trato diferente según quién esté de turno.</li>
-        <li><strong>Escalables.</strong> 14 países hoy, 40 mañana, sin contratar editores. El newsroom model moriría en 20 países.</li>
+        <li><strong>Escalables.</strong> 15 países hoy, 40 mañana, sin contratar editores. El newsroom model moriría en 20 países.</li>
         <li><strong>Atacables directamente.</strong> Si crees que una regla está mal, abre issue. Si crees que el prompt está sesgado, abre issue. La crítica es técnica, no opinativa.</li>
       </ul>
 
