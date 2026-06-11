@@ -1,0 +1,59 @@
+{
+  "iso3": "CAN",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence",
+  "election": {
+    "first_round": "2025-04-28",
+    "runoff": "",
+    "matchup": "Federal (House of Commons) — quem vence mais cadeiras",
+    "status": "completed"
+  },
+  "polls_count": 437,
+  "market_candidates": 6,
+  "latest_poll": {
+    "pollster": "Liaison Strategies",
+    "date": "2025-04-27"
+  },
+  "headline": {
+    "pt-BR": "Nível partido (FPTP): a pesquisa mede o voto, o mercado precifica quem vence MAIS cadeiras. Em jan/2025 o mercado dava ~85% aos Conservadores; em abr virou ~80% aos Liberais — com o voto dos dois quase empatado o tempo todo. Os Liberais venceram (169×144). Abaixo, a foto final; a virada inteira está no dataset aberto.",
+    "en": "Party-level (FPTP): polls measure vote share, the market prices which party wins the MOST seats. In Jan 2025 the market gave the Conservatives ~85%; by April it flipped to the Liberals ~80% — with the two parties near-tied in vote the whole time. The Liberals won (169-144). Below is the final snapshot; the full swing is in the open dataset.",
+    "es": "Nivel partido (FPTP): la encuesta mide el voto, el mercado valora quién gana MÁS escaños. En ene 2025 el mercado daba ~85% a los Conservadores; en abr viró a ~80% a los Liberales — con ambos casi empatados en voto todo el tiempo. Los Liberales ganaron (169-144). Abajo, la foto final; el vuelco completo está en el dataset abierto."
+  },
+  "rows": [
+    {
+      "candidate": "Liberal",
+      "poll_pct": 43,
+      "market_pct": 80.2,
+      "divergence_pp": 37.2
+    },
+    {
+      "candidate": "Conservative",
+      "poll_pct": 41,
+      "market_pct": 19.5,
+      "divergence_pp": -21.5
+    },
+    {
+      "candidate": "NDP",
+      "poll_pct": 7,
+      "market_pct": 0.1,
+      "divergence_pp": -6.9
+    },
+    {
+      "candidate": "Bloc Québécois",
+      "poll_pct": 6,
+      "market_pct": 0.1,
+      "divergence_pp": -5.9
+    },
+    {
+      "candidate": "People's Party",
+      "poll_pct": 1,
+      "market_pct": 0.1,
+      "divergence_pp": -0.9
+    },
+    {
+      "candidate": "Green",
+      "poll_pct": 1,
+      "market_pct": 0.1,
+      "divergence_pp": -0.9
+    }
+  ]
+}

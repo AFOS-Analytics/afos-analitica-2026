@@ -41,6 +41,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'The AfD was 2nd in votes (~21%) but the market gave it only ~3% to win the most seats — vote share is not winning. CDU/CSU won, as the market (~97%) called.',
     es: 'La AfD fue 2ª en votos (~21%) pero el mercado le daba solo ~3% de ganar más escaños — el voto no es la victoria. La CDU/CSU ganó, como el mercado (~97%) anticipaba.',
   },
+  CAN: {
+    'pt-BR': 'O mercado virou ~85% Conservadores (jan) → ~80% Liberais (abr) com o voto quase empatado — e os Liberais venceram (169×144). A virada foi o sinal.',
+    en: 'The market swung ~85% Conservative (Jan) → ~80% Liberal (Apr) with the vote near-tied — and the Liberals won (169-144). The swing was the signal.',
+    es: 'El mercado viró ~85% Conservadores (ene) → ~80% Liberales (abr) con el voto casi empatado — y los Liberales ganaron (169-144). El vuelco fue la señal.',
+  },
 };
 
 export function ValidatedCases({ locale }: { locale: Locale }) {

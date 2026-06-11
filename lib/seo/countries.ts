@@ -61,7 +61,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Canadá', en: 'Canada', es: 'Canadá' },
     iso3: 'CAN', flag: '🇨🇦', region: 'Americas',
     elections: [
-      { slug: 'canada-2025', year: 2025, type: { 'pt-BR': 'Federal', en: 'Federal Election', es: 'Federal' }, date: '2025-04-28', status: 'active', polymarketSlug: 'canadian-federal-election-winner' },
+      { slug: 'canada-2025', year: 2025, type: { 'pt-BR': 'Federal', en: 'Federal Election', es: 'Federal' }, date: '2025-04-28', status: 'completed', polymarketSlug: 'which-party-wins-most-seats-in-canadian-election' },
     ],
   },
   {
