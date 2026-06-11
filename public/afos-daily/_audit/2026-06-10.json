@@ -1,0 +1,45 @@
+{
+  "date": "2026-06-10",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Genial/Quaest nacional divulgada 10/Jun (1T Lula 39% x Flávio 29%; 2T 44% x 38%; aprovação 47% x 48%)",
+        "verificacao1_crossRef": "Keyword 'Quaest' aparece em 05-09/Jun sempre como 'iminente/prevista para 10/Jun'; hoje é a publicação de fato = novidade (evento real), não recobrança",
+        "verificacao2_fetch": {
+          "url": "https://www.poder360.com.br/poder-eleicoes/lula-tem-44-contra-38-de-flavio-diz-quaest/",
+          "data": "2026-06-10",
+          "tipo": "evento",
+          "leadTense": "presente ('mostra', 'divulgada nesta 4a feira')"
+        },
+        "segundaFonte": "https://www.metropoles.com/brasil/genial-quaest-lula-abre-vantagem-sobre-flavio-em-1o-e-2o-turnos (confirma 39/29, 44/38, 47/48, reg BR-07661/2026)",
+        "decisao": "INCORPORAR (âncora do dia)"
+      },
+      {
+        "evento": "Gerp 1T Flávio 35% x Lula 34% (contraponto)",
+        "verificacao": "fonte única atribuída (Exame); tratado como contraponto/outlier explícito",
+        "decisao": "INCORPORAR com atribuição clara, não como divisor de águas"
+      }
+    ],
+    "selfCheck": {
+      "ancorasComVerificacao2": true,
+      "semCausacaoEspuria": "Lula +4pp escrito como 'reagiu na direção da pesquisa', não causação dura",
+      "verbosCriticosDesambiguados": "'adiou' (TSE plenário) desambiguado; sem preso/morreu/indicou novos",
+      "reconcileClaims": "EXIT 0"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Gerp (só Exame) marcado como outlier atribuído; Pleno 'Vorcaro citou ministro' atribuído, continuação do caso Master, baixo risco",
+    "numericalErrors": "reconcile-claims.ts EXIT 0; %s batem com polymarketComparison + Quaest",
+    "fontesInventadas": "verificados G1, CNN, Estadão -> matérias reais no news-cache 10/Jun",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma (timing compatível, redação 'na esteira'/'reagiu na direção')",
+    "verbosCodebook": "OK ('adiou' desambiguado)",
+    "decisao": "prosseguir para preview"
+  },
+  "translationReview": {
+    "en": "corrigido 'Divergencies' -> 'Divergences'; links de país /pt-BR/ -> /en/; separador .— -> ---",
+    "es": "corrigido 'investigación(es)' -> 'encuesta(s)' (7x incl. heading calendário); lusismo 'embolado' -> 'amontonado'; separador .— -> ---",
+    "globalNote": "Peru/Colombia divergência verificada em prod antes de citar (Álvarez 8x31,6; Espriella 43,5x31,6->43,7); HF datasets 200; links país por locale"
+  },
+  "approval": "PT-BR aprovado + EN/ES aprovados por André (10/Jun)"
+}
