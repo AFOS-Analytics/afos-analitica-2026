@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-10",
+  "lastUpdate": "2026-06-11",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -584,7 +584,7 @@
         "odds": 44.5,
         "percentage": 39,
         "lastUpdate": "2026-06-10",
-        "value": "44.50"
+        "value": 44.5
       },
       {
         "name": "Flávio Bolsonaro",
@@ -595,7 +595,7 @@
         "odds": 28.65,
         "percentage": 29,
         "lastUpdate": "2026-06-10",
-        "value": "28.65"
+        "value": 28
       },
       {
         "name": "Renan Santos",
@@ -606,7 +606,7 @@
         "odds": 16.65,
         "percentage": 3,
         "lastUpdate": "2026-06-10",
-        "value": "16.65"
+        "value": 15.7
       },
       {
         "name": "Ronaldo Caiado",
@@ -617,7 +617,7 @@
         "odds": 1.75,
         "percentage": 3,
         "lastUpdate": "2026-06-10",
-        "value": "1.75"
+        "value": 1.7
       },
       {
         "name": "Tarcísio",
@@ -639,7 +639,7 @@
         "odds": 1.85,
         "percentage": 2,
         "lastUpdate": "2026-06-10",
-        "value": "1.85"
+        "value": 1.6
       },
       {
         "name": "Fernando Haddad",
@@ -650,7 +650,7 @@
         "odds": 2.85,
         "percentage": 0,
         "lastUpdate": "2026-06-10",
-        "value": "2.85"
+        "value": 2.8
       }
     ],
     "updatedAt": "2026-06-10T21:30"
