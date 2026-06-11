@@ -1,0 +1,53 @@
+{
+  "iso3": "COL",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/colombia-2026-electoral-divergence",
+  "election": {
+    "first_round": "2026-05-31",
+    "runoff": "2026-06-21",
+    "matchup": "Abelardo de la Espriella × Iván Cepeda",
+    "status": "active"
+  },
+  "polls_count": 29,
+  "market_candidates": 19,
+  "latest_poll": {
+    "pollster": "Invamer",
+    "date": "2026-05-20"
+  },
+  "headline": {
+    "pt-BR": "O mercado precificou a vitória de Abelardo de la Espriella em 43,5% enquanto as pesquisas davam 31,6% de voto — e ele venceu o 1º turno com 43,7%. Iván Cepeda liderou a intenção de voto, com divergência quase nula.",
+    "en": "The market priced Abelardo de la Espriella's win probability at 43.5% while polls gave him 31.6% of the vote — and he won the first round with 43.7%. Iván Cepeda led voting intention, with near-zero market-poll divergence.",
+    "es": "El mercado valoró la probabilidad de victoria de Abelardo de la Espriella en 43,5% mientras las encuestas le daban 31,6% del voto — y ganó la primera vuelta con 43,7%. Iván Cepeda lideró la intención de voto, con divergencia casi nula."
+  },
+  "rows": [
+    {
+      "candidate": "Iván Cepeda",
+      "poll_pct": 44.6,
+      "market_pct": 43.5,
+      "divergence_pp": -1.1
+    },
+    {
+      "candidate": "Abelardo de la Espriella",
+      "poll_pct": 31.6,
+      "market_pct": 43.5,
+      "divergence_pp": 11.9
+    },
+    {
+      "candidate": "Paloma Valencia",
+      "poll_pct": 14,
+      "market_pct": 14.5,
+      "divergence_pp": 0.5
+    },
+    {
+      "candidate": "Sergio Fajardo",
+      "poll_pct": 2.2,
+      "market_pct": 0.2,
+      "divergence_pp": -2
+    },
+    {
+      "candidate": "Roy Barreras",
+      "poll_pct": 0.3,
+      "market_pct": 0.1,
+      "divergence_pp": -0.2
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "iso3": "PER",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence",
+  "election": {
+    "first_round": "2026-04-12",
+    "runoff": "2026-06-07",
+    "matchup": "Keiko Fujimori × Roberto Sánchez",
+    "status": "completed"
+  },
+  "polls_count": 36,
+  "market_candidates": 16,
+  "latest_poll": {
+    "pollster": "Ipsos Perú/Perú 21",
+    "date": "2026-04-06"
+  },
+  "headline": {
+    "pt-BR": "O mercado precificou a chance de VENCER acima do voto de 1º turno: superprecificou o azarão Carlos Álvarez (8% na pesquisa × 31,6% no mercado), que nem chegou ao 2º turno. Keiko Fujimori liderou pesquisa e mercado e avançou.",
+    "en": "The market priced probability of WINNING above first-round vote share — overpricing outsider Carlos Álvarez (8% in polls vs 31.6% in the market), who did not reach the runoff. Keiko Fujimori led both polls and market and advanced.",
+    "es": "El mercado valoró la probabilidad de GANAR por encima del voto de primera vuelta — sobrevalorando al outsider Carlos Álvarez (8% en encuestas vs 31,6% en el mercado), que no llegó al balotaje. Keiko Fujimori lideró encuestas y mercado y avanzó."
+  },
+  "rows": [
+    {
+      "candidate": "Keiko Fujimori",
+      "poll_pct": 16,
+      "market_pct": 22,
+      "divergence_pp": 6
+    },
+    {
+      "candidate": "Ricardo Belmont",
+      "poll_pct": 9,
+      "market_pct": 5.1,
+      "divergence_pp": -3.9
+    },
+    {
+      "candidate": "Carlos Álvarez",
+      "poll_pct": 8,
+      "market_pct": 31.6,
+      "divergence_pp": 23.6
+    },
+    {
+      "candidate": "Roberto Sánchez",
+      "poll_pct": 7,
+      "market_pct": 7.7,
+      "divergence_pp": 0.7
+    },
+    {
+      "candidate": "Rafael López Aliaga",
+      "poll_pct": 7,
+      "market_pct": 15,
+      "divergence_pp": 8
+    }
+  ]
+}

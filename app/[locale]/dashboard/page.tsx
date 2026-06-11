@@ -106,6 +106,7 @@ function DashboardContent() {
                 { code: 'gb', slug: locale === 'en' ? 'united-kingdom' : 'reino-unido', name: locale === 'en' ? 'United Kingdom' : 'Reino Unido' },
                 { code: 'ca', slug: 'canada', name: locale === 'en' ? 'Canada' : 'Canada' },
                 { code: 'co', slug: 'colombia', name: locale === 'en' ? 'Colombia' : 'Colombia' },
+                { code: 'pe', slug: 'peru', name: locale === 'es' ? 'Perú' : 'Peru' },
                 { code: 'cl', slug: 'chile', name: 'Chile' },
                 { code: 'kr', slug: locale === 'en' ? 'south-korea' : locale === 'es' ? 'corea-del-sur' : 'coreia-do-sul', name: locale === 'en' ? 'South Korea' : locale === 'es' ? 'Corea del Sur' : 'Coreia do Sul' },
                 { code: 'au', slug: 'australia', name: locale === 'en' ? 'Australia' : locale === 'es' ? 'Australia' : 'Australia' },

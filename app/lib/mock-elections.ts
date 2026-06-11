@@ -22,8 +22,15 @@ export const MOCK_ELECTIONS: CountryMarketSummary[] = [
   },
   {
     iso3: 'COL', countryName: 'Colombia', flag: 'co',
-    probability: 0, volumeUsd: 0, status: 'upcoming',
+    probability: 0, volumeUsd: 0, status: 'live',
     electionDate: '2026-06-21', electionType: 'Presidential',
+    leadCandidate: '—',
+    candidates: [],
+  },
+  {
+    iso3: 'PER', countryName: 'Peru', flag: 'pe',
+    probability: 0, volumeUsd: 0, status: 'resolved',
+    electionDate: '2026-06-07', electionType: 'Presidential',
     leadCandidate: '—',
     candidates: [],
   },

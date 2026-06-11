@@ -46,6 +46,9 @@ export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   { slug: 'colombia-presidential-election', iso3: 'COL', countryName: 'Colombia', flag: 'co', electionDate: '2026-06-21', electionType: 'Presidential', isPrimary: true, enabled: true },
   { slug: 'colombia-presidential-election-1st-round-winner', iso3: 'COL', countryName: 'Colombia', flag: 'co', electionDate: '2026-05-31', electionType: 'Presidential 1st Round', isPrimary: false, enabled: true },
 
+  // ── Peru (1 market) ──────────────
+  { slug: 'peru-presidential-election-winner', iso3: 'PER', countryName: 'Peru', flag: 'pe', electionDate: '2026-06-07', electionType: 'Presidential', isPrimary: true, enabled: true },
+
   // ── United States (3 markets) ─────────
   { slug: 'presidential-election-winner-2028', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2028-11-03', electionType: 'Presidential', isPrimary: true, enabled: true },
   { slug: 'republican-presidential-nominee-2028', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2028-11-03', electionType: 'Republican Nominee', isPrimary: false, enabled: true },

@@ -162,6 +162,7 @@ const COUNTRIES = [
   { code: 'gb', name: 'UK', year: '2029' },
   { code: 'ca', name: 'Canada', year: '2025' },
   { code: 'co', name: 'Colombia', year: '2026' },
+  { code: 'pe', name: 'Peru', year: '2026' },
   { code: 'cl', name: 'Chile', year: '2025' },
   { code: 'kr', name: 'South Korea', year: '2027' },
   { code: 'au', name: 'Australia', year: '2025' },

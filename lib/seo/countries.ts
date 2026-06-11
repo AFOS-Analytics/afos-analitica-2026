@@ -85,7 +85,15 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Colômbia', en: 'Colombia', es: 'Colombia' },
     iso3: 'COL', flag: '🇨🇴', region: 'Americas',
     elections: [
-      { slug: 'colombia-2026', year: 2026, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2026-05-31', status: 'upcoming', polymarketSlug: '2026-colombian-presidential-election' },
+      { slug: 'colombia-2026', year: 2026, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2026-05-31', status: 'active', polymarketSlug: '2026-colombian-presidential-election' },
+    ],
+  },
+  {
+    slug: { 'pt-BR': 'peru', en: 'peru', es: 'peru' },
+    name: { 'pt-BR': 'Peru', en: 'Peru', es: 'Perú' },
+    iso3: 'PER', flag: '🇵🇪', region: 'Americas',
+    elections: [
+      { slug: 'peru-2026', year: 2026, type: { 'pt-BR': 'Presidencial (Geral)', en: 'Presidential (General)', es: 'Presidencial (General)' }, date: '2026-04-12', status: 'completed', polymarketSlug: 'peru-presidential-election-winner' },
     ],
   },
   {
