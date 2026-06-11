@@ -296,6 +296,8 @@ Public, auditable **electoral-divergence** datasets — *prediction markets × p
 
 The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
 
+On-platform, every completed election's `/country/[country]` and `/election/[slug]` pages render its **election-day Polymarket snapshot** (candidates, bars, accumulated volume) and the **market×poll divergence** table, theme-aware (light / Sapphire), with the AFOS brand and country flag.
+
 ---
 
 ## Analytics
