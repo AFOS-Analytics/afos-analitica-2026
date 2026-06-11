@@ -290,11 +290,11 @@ Public, auditable **electoral-divergence** datasets — *prediction markets × p
 | [brazil-2026](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence) | Brazil 2026 (live) | Daily market × poll divergence + full TSE registry (350 polls × 20 public fields) |
 | [peru-2026](https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence) | Peru 2026 ✓ | The market's sustained favorite (López Aliaga) missed the runoff |
 | [colombia-2026](https://huggingface.co/datasets/AFOS-Analytics1/colombia-2026-electoral-divergence) | Colombia 2026 (1st round) | The market matched de la Espriella's first-round win |
-| [chile-2025](https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence) | Chile 2025 ✓ | Market priced Kast ~66% to win while polls led with Jara — Kast won |
+| [chile-2025](https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence) | Chile 2025 ✓ | Market priced Kast ~66% to win while polls led with Jara, and Kast won |
 | [germany-2025](https://huggingface.co/datasets/AFOS-Analytics1/germany-2025-electoral-divergence) | Germany 2025 ✓ | AfD 2nd in votes (~21%) but ~3% to win the most seats |
 | [canada-2025](https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence) | Canada 2025 ✓ | Market swung 85% Conservative → 80% Liberal; the Liberals won |
 
-The completed cases (✓) are the method **validated against the real result** — surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
+The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
 
 ---
 
