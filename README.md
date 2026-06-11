@@ -281,6 +281,23 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ---
 
+## Open Datasets (Hugging Face)
+
+Public, auditable **electoral-divergence** datasets — *prediction markets × polls, with explicit divergence* (the spread is the signal, not a blended average). All **CC BY 4.0**, trilingual cards with a branded flag banner, built from public sources only (no personal data).
+
+| Dataset | Election | What the divergence shows |
+|---|---|---|
+| [brazil-2026](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence) | Brazil 2026 (live) | Daily market × poll divergence + full TSE registry (350 polls × 20 public fields) |
+| [peru-2026](https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence) | Peru 2026 ✓ | The market's sustained favorite (López Aliaga) missed the runoff |
+| [colombia-2026](https://huggingface.co/datasets/AFOS-Analytics1/colombia-2026-electoral-divergence) | Colombia 2026 (1st round) | The market matched de la Espriella's first-round win |
+| [chile-2025](https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence) | Chile 2025 ✓ | Market priced Kast ~66% to win while polls led with Jara — Kast won |
+| [germany-2025](https://huggingface.co/datasets/AFOS-Analytics1/germany-2025-electoral-divergence) | Germany 2025 ✓ | AfD 2nd in votes (~21%) but ~3% to win the most seats |
+| [canada-2025](https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence) | Canada 2025 ✓ | Market swung 85% Conservative → 80% Liberal; the Liberals won |
+
+The completed cases (✓) are the method **validated against the real result** — surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
+
+---
+
 ## Analytics
 
 ### /api/admin/analytics
@@ -299,7 +316,8 @@ Executive dashboard: point-in-time counts of leads, prices, audit logs, LLM runs
 ```
 Cron 3x/day (6am, 12pm, 6pm)
   → cdn.tse.jus.br/pesquisa_eleitoral_2026.zip
-  → Parse CSV (180+ presidential polls)
+  → Parse CSV (350 presidential polls, ALL public fields:
+     methodology + sampling/weighting plan + statistician/CONRE, un-truncated)
   → Neon: research.sources + research_runs + research_findings
   → Cross-reference: recent polls (15 days) × Polymarket odds
 ```
