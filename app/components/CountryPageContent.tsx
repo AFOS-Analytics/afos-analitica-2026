@@ -118,11 +118,16 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 </thead>
                 <tbody>
                   {div.rows.map((r) => (
-                    <tr key={r.candidate} className={`border-b ${tdRow}`}>
-                      <td className={`py-2 font-medium ${textMain}`}>{r.candidate}</td>
+                    <tr key={r.candidate} className={`border-b ${tdRow} align-top`}>
+                      <td className={`py-2 font-medium ${textMain}`}>
+                        {r.candidate}
+                        {r.note && (r.note[loc] || r.note['en']) && (
+                          <span className={`block text-[11px] font-normal italic ${textMuted} mt-0.5 max-w-xs leading-snug`}>⚠ {r.note[loc] || r.note['en']}</span>
+                        )}
+                      </td>
                       <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.poll_pct}%</td>
-                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.market_pct}%</td>
-                      <td className={`text-right tabular-nums font-semibold pl-2 ${r.divergence_pp > 0 ? pos : r.divergence_pp < 0 ? neg : textMuted}`}>{r.divergence_pp > 0 ? '+' : ''}{r.divergence_pp}pp</td>
+                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.market_pct}%{r.note ? '*' : ''}</td>
+                      <td className={`text-right tabular-nums font-semibold pl-2 ${r.divergence_pp > 0 ? pos : r.divergence_pp < 0 ? neg : textMuted}`}>{r.divergence_pp > 0 ? '+' : ''}{r.divergence_pp}pp{r.note ? '*' : ''}</td>
                     </tr>
                   ))}
                 </tbody>

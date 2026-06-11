@@ -35,7 +35,12 @@
       "candidate": "Carlos Álvarez",
       "poll_pct": 8,
       "market_pct": 31.6,
-      "divergence_pp": 23.6
+      "divergence_pp": 23.6,
+      "note": {
+        "pt-BR": "O 31,6% foi um spike de 1 dia em mercado fino (~05–06/abr); caiu a ~0% em poucos dias. Ruído transitório, não sinal sustentado.",
+        "en": "The 31.6% was a one-day thin-market spike (~Apr 5–6); it fell to ~0% within days. Transient noise, not a sustained signal.",
+        "es": "El 31,6% fue un pico de 1 día en mercado poco líquido (~5–6 abr); cayó a ~0% en pocos días. Ruido transitorio, no señal sostenida."
+      }
     },
     {
       "candidate": "Roberto Sánchez",

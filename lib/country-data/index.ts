@@ -13,6 +13,7 @@ export interface DivergenceRow {
   poll_pct: number
   market_pct: number
   divergence_pp: number
+  note?: Record<string, string> // ressalva por linha (ex.: spike transitório de mercado fino), trilíngue
 }
 export interface CountryDivergence {
   iso3: string
