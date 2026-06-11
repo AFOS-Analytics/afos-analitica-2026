@@ -261,8 +261,8 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 | Landing page | 3 | 1.0 |
 | Dashboard | 3 | 0.95 |
 | Global Map | 3 | 0.9 |
-| Country (13 × 3) | 39 | 0.8 |
-| Election (13 × 3) | 39 | 0.7-0.9 |
+| Country (15 × 3) | 45 | 0.8 |
+| Election (15 × 3) | 45 | 0.7-0.9 |
 | Institutional (7 × 3) | 21 | 0.8 |
 | Region (2 × 3) | 6 | 0.85 |
 | How It Works (1 × 3) | 3 | 0.85 |
