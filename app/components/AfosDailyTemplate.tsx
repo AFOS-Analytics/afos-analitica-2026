@@ -206,7 +206,7 @@ export function AfosDailyTemplate({ data, nav }: Props) {
         <ThemeToggle theme={theme} onChoose={chooseTheme} />
 
         <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard`} className={linkColor}>{t.backToDashboard}</a>
+          <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
           <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 

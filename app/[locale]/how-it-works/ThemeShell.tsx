@@ -54,9 +54,10 @@ export function ThemeShell({ loc, slug, children }: { loc: string; slug: string;
     <div className={isBlue ? 'dark' : undefined}>
       <div className="min-h-screen bg-slate-50 dark:bg-[#0a3d8f] transition-colors">
         <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
-          <nav className="mb-8 flex items-center justify-between gap-4 text-sm">
-            <a href={`/${loc}/dashboard`} className="text-primary dark:text-blue-200 hover:underline">{t.back}</a>
+          <nav className="mb-8 flex flex-wrap items-center justify-between gap-4 text-sm">
+            <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary dark:text-white">AFOS Analytics</a>
             <div className="flex items-center gap-3">
+              <a href={`/${loc}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
               <div className="flex items-center gap-1" aria-label={t.langAria}>
                 {(['pt-BR', 'en', 'es'] as const).map((l) => (
                   <a

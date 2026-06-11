@@ -72,7 +72,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
         <div className="flex items-center justify-between gap-3 mb-6">
           <a href={`/${loc}`} className={`text-base sm:text-lg font-extrabold tracking-tight ${isBlue ? 'text-white' : 'text-primary'}`} aria-label="AFOS Analytics, Home">AFOS Analytics</a>
           <div className="flex items-center gap-4">
-            <a href={`/${loc}`} className={`text-sm font-medium ${link}`}>{l.backToDashboard}</a>
+            <a href={`/${loc}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
             <ThemeToggle theme={theme} onChoose={choose} isBlue={isBlue} />
           </div>
         </div>

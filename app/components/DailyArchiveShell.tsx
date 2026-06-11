@@ -149,12 +149,15 @@ export function DailyArchiveShell({
   return (
     <main className={`min-h-screen ${pageBg} transition-colors`}>
       <div className="mx-auto max-w-3xl px-5 py-10 sm:px-6 sm:py-14">
-        {/* Top bar: back link + language + theme */}
-        <div className="flex items-center justify-between gap-3">
-          <a href={`/${locale}/dashboard`} className={`text-sm font-medium transition-colors ${backLink}`}>
-            {strings.backToDashboard}
+        {/* Top bar: wordmark + back link + language + theme */}
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <a href={`/${locale}`} aria-label="AFOS Analytics, Home" className={`text-base font-extrabold tracking-tight transition-colors sm:text-lg ${isBlue ? 'text-white' : 'text-primary'}`}>
+            AFOS Analytics
           </a>
           <div className="flex items-center gap-3">
+            <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">
+              Dashboard
+            </a>
             <LanguagePicker locale={locale} isBlue={isBlue} langAria={strings.langAria} />
             <ThemeToggle theme={theme} onChoose={chooseTheme} isBlue={isBlue} strings={strings} />
           </div>

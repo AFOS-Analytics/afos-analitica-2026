@@ -139,10 +139,9 @@ export default async function AutomatedGovernancePage({ params }: { params: Prom
         dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc)]) }}
       />
       <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
-        <nav className="mb-8 text-sm">
-          <a href={`/${loc}/dashboard`} className="text-primary hover:underline">
-            ← {loc === 'pt-BR' ? 'Voltar ao Dashboard' : loc === 'es' ? 'Volver al Dashboard' : 'Back to Dashboard'}
-          </a>
+        <nav className="mb-8 flex flex-wrap items-center justify-between gap-3 text-sm">
+          <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
+          <a href={`/${loc}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
         </nav>
         <Content />
         <div className="mt-16 pt-8 border-t border-gray-200 text-center">
