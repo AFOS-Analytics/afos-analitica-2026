@@ -80,10 +80,10 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 
 | Path | Rows | Content |
 |------|------|---------|
-| `polls/tse-registry.csv` · `.json` | 382 | **Official TSE poll registry** — registration metadata for every poll filed for the 2026 cycle: institute, sample size, scope, state (UF), field dates, registration number, declared cost. *Registration-sheet fields only — no per-candidate results, no demographic crosstabs.* |
+| `polls/tse-registry.csv` · `.json` | 350 | **Official TSE poll registry — full public fields**, built directly from the [TSE Open Data](https://dadosabertos.tse.jus.br) file. Every presidential poll filed for 2026 with its complete registration sheet: institute, CNPJ, sample, field dates, declared cost, **named responsible statistician + CONRE**, and the **full (un-truncated) methodology and sampling/weighting design** — including the demographic/geographic quota design (sex, age, education, income, region) with the declared quota percentages. *Registration-design fields only — no per-candidate results, and the complete questionnaire is a PesqEle attachment, not in the open-data file.* (`Lei 9.504/97 art. 33`) |
 | `polls/national-poll-results-firstround.csv` | 158 | **Published first-round results**, long format: one row per candidate × scenario × poll. Carries the TSE registration number, institute, sample, margin, field dates. |
 | `polls/national-poll-results-secondround.csv` | 38 | Published head-to-head **runoff** matchups (`candidate1 vs candidate2`, percentages). |
-| `polls/national-polls.json` | 22 | Full structured national polls (results + methodology), reconstructed from the platform history. |
+| `polls/national-polls.json` | 22 | Full structured national polls **with results** (first round + runoff + methodology), reconstructed from the platform history. Each poll now carries a **`tse_registration`** block linking it to its public TSE registration (full methodology, sampling/weighting design, statistician, CONRE, CNPJ, cost). |
 | `polls/polls-data-{date}.json` | — | Daily snapshot of the national polls referenced on that date. |
 
 ### 📈 Market & divergence time-series

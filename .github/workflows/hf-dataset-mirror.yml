@@ -42,6 +42,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install deps (jszip — descompacta o ZIP do TSE)
+        run: npm ci
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -63,6 +66,13 @@ jobs:
         # Reconstrói polls/national-poll-results-*.csv + national-polls.json das 22+
         # pesquisas nacionais a partir do log de polls-data.json. Sem DB, sem Lead.
         run: node scripts/build-hf-poll-results.mjs
+
+      - name: Build enriched TSE registry + enrich the results polls (DB-free)
+        # Baixa o TSE Dados Abertos e reconstrói polls/tse-registry.csv/json (350
+        # presidenciais, TODOS os campos públicos sem truncar) + reaplica o bloco
+        # tse_registration nas pesquisas com resultados (roda APÓS o passo acima,
+        # senão a regeneração de national-polls.json apagaria o enriquecimento).
+        run: node scripts/build-tse-registry-full.mjs
 
       - name: Build public export (DB-free — sem acesso a Lead)
         env:

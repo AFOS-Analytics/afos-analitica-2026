@@ -23,8 +23,11 @@ export interface TSEPoll {
   divulgacao: string
   amostra: number
   uf: string
+  conre: string
   metodologia: string
   planoAmostral: string
+  controlSystem: string
+  dadoMunicipio: string
   valorPesquisa: number
   estatistico: string
 }
@@ -62,14 +65,17 @@ export async function fetchTSEPolls(year: number = CURRENT_YEAR): Promise<TSEPol
 }
 
 function parseCSV(csv: string): TSEPoll[] {
-  const lines = csv.split('\n').filter(l => l.trim())
-  if (lines.length < 2) return []
+  // Parser char-stream: respeita aspas que envolvem campos com ';' E '\n' embutidos.
+  // (metodologia/plano amostral do TSE são textos multi-linha de até ~4k chars — um split
+  //  ingênuo por '\n' fragmentava o registro e perdia o plano amostral inteiro.)
+  const rows = parseRows(csv)
+  if (rows.length < 2) return []
 
   const polls: TSEPoll[] = []
 
-  for (let i = 1; i < lines.length; i++) {
-    const fields = parseCSVLine(lines[i])
-    if (fields.length < 22) continue
+  for (let i = 1; i < rows.length; i++) {
+    const fields = rows[i]
+    if (fields.length < 26) continue
 
     const cargo = cleanField(fields[14])
 
@@ -88,39 +94,43 @@ function parseCSV(csv: string): TSEPoll[] {
       divulgacao: cleanField(fields[17]).slice(0, 10),
       amostra: parseInt(cleanField(fields[18])) || 0,
       uf: cleanField(fields[5]),
-      metodologia: cleanField(fields[22]).slice(0, 500),
-      planoAmostral: cleanField(fields[23]).slice(0, 500),
-      valorPesquisa: parseFloat(cleanField(fields[21]).replace(',', '.')) || 0,
+      conre: cleanField(fields[19]),
       estatistico: cleanField(fields[20]),
+      valorPesquisa: parseFloat(cleanField(fields[21]).replace(',', '.')) || 0,
+      metodologia: cleanField(fields[22]),       // completo, sem truncar
+      planoAmostral: cleanField(fields[23]),     // desenho de ponderação demográfica/geográfica
+      controlSystem: cleanField(fields[24]),
+      dadoMunicipio: cleanField(fields[25]),
     })
   }
 
   return polls
 }
 
-function parseCSVLine(line: string): string[] {
-  const fields: string[] = []
-  let current = ''
-  let inQuotes = false
-
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i]
-    if (ch === '"') {
-      inQuotes = !inQuotes
-    } else if (ch === ';' && !inQuotes) {
-      fields.push(current)
-      current = ''
-    } else {
-      current += ch
-    }
+/** Parser CSV completo (arquivo inteiro): quebra registros em '\n' só FORA de aspas. */
+function parseRows(text: string): string[][] {
+  const rows: string[][] = []
+  let row: string[] = []
+  let field = ''
+  let q = false
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (q) {
+      if (ch === '"') { if (text[i + 1] === '"') { field += '"'; i++ } else q = false }
+      else field += ch
+    } else if (ch === '"') q = true
+    else if (ch === ';') { row.push(field); field = '' }
+    else if (ch === '\r') { /* ignora */ }
+    else if (ch === '\n') { row.push(field); rows.push(row); row = []; field = '' }
+    else field += ch
   }
-  fields.push(current)
-  return fields
+  if (field.length || row.length) { row.push(field); rows.push(row) }
+  return rows
 }
 
 function cleanField(f: string | undefined): string {
   if (!f) return ''
-  return f.replace(/^"|"$/g, '').replace(/#NULO#/g, '').trim()
+  return f.replace(/^"|"$/g, '').replace(/#NULO#/g, '').replace(/\s+/g, ' ').trim()
 }
 
 /**
