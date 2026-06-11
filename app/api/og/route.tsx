@@ -32,9 +32,46 @@ const COPY = {
 type Locale = keyof typeof COPY
 
 export async function GET(request: NextRequest) {
-  const localeParam = request.nextUrl.searchParams.get('locale')
+  const sp = request.nextUrl.searchParams
+  const localeParam = sp.get('locale')
   const locale: Locale = (localeParam === 'en' || localeParam === 'es') ? localeParam : 'pt-BR'
   const copy = COPY[locale]
+
+  // Dataset/open-data OG mode: /api/og?title=...&line=...&tag=...
+  const title = sp.get('title')
+  if (title) {
+    const line = sp.get('line') || 'Prediction market × polls — the spread is the signal.'
+    const tag = sp.get('tag') || 'Open dataset · CC BY 4.0'
+    const chips = (sp.get('chips') || 'Reproducible · EN · ES · PT').split('·').map((c) => c.trim())
+    try {
+      return new ImageResponse(
+        (
+          <div style={{ background: 'linear-gradient(135deg, #0F52BA 0%, #0a3d8f 100%)', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', fontFamily: 'sans-serif', color: 'white', padding: '64px 72px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 24, fontWeight: 700, letterSpacing: '0.5px', opacity: 0.85 }}>
+              <span style={{ display: 'flex' }}>AFOS ANALYTICS</span>
+              <span style={{ display: 'flex', opacity: 0.8 }}>{tag}</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: 68, fontWeight: 800, letterSpacing: '-2px', lineHeight: 1.05, display: 'flex', maxWidth: 1040 }}>{title}</div>
+              <div style={{ fontSize: 30, opacity: 0.92, marginTop: 22, lineHeight: 1.35, display: 'flex', maxWidth: 1000 }}>{line}</div>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 22 }}>
+              <div style={{ display: 'flex', gap: 14 }}>
+                {chips.map((c) => (
+                  <span key={c} style={{ display: 'flex', border: '1px solid rgba(255,255,255,0.4)', borderRadius: 999, padding: '6px 16px', opacity: 0.85 }}>{c}</span>
+                ))}
+              </div>
+              <span style={{ display: 'flex', opacity: 0.6 }}>huggingface.co/AFOS-Analytics1</span>
+            </div>
+          </div>
+        ),
+        { width: 1200, height: 630, headers: { 'Cache-Control': 'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400' } }
+      )
+    } catch (err) {
+      console.error('[og] dataset ImageResponse failed:', err)
+      return NextResponse.redirect(STATIC_FALLBACK_URL, { status: 307 })
+    }
+  }
 
   try {
     return new ImageResponse(
