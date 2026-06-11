@@ -36,6 +36,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'Jara led the first-round vote, but the market priced Kast at ~66% to win — and Kast won the runoff 58–42. The gap was the signal.',
     es: 'Jara lideró el voto de primera vuelta, pero el mercado valoró a Kast en ~66% para ganar — y Kast ganó el balotaje 58–42. La brecha fue la señal.',
   },
+  DEU: {
+    'pt-BR': 'A AfD foi 2º em votos (~21%), mas o mercado lhe dava só ~3% de vencer (mais cadeiras) — voto não é vitória. A CDU/CSU venceu, como o mercado (~97%) cravava.',
+    en: 'The AfD was 2nd in votes (~21%) but the market gave it only ~3% to win the most seats — vote share is not winning. CDU/CSU won, as the market (~97%) called.',
+    es: 'La AfD fue 2ª en votos (~21%) pero el mercado le daba solo ~3% de ganar más escaños — el voto no es la victoria. La CDU/CSU ganó, como el mercado (~97%) anticipaba.',
+  },
 };
 
 export function ValidatedCases({ locale }: { locale: Locale }) {

@@ -1,0 +1,59 @@
+{
+  "iso3": "DEU",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/germany-2025-electoral-divergence",
+  "election": {
+    "first_round": "2025-02-23",
+    "runoff": "",
+    "matchup": "Federal (Bundestag) — quem vence mais cadeiras",
+    "status": "completed"
+  },
+  "polls_count": 349,
+  "market_candidates": 6,
+  "latest_poll": {
+    "pollster": "INSA",
+    "date": "2025-02-22"
+  },
+  "headline": {
+    "pt-BR": "Nível partido: a pesquisa mede o voto, o mercado precifica quem vence MAIS cadeiras. A AfD foi o 2º partido mais votado (~21%), mas o mercado lhe dava só ~3% de vencer — voto não é vitória. A CDU/CSU, com ~30% do voto, era ~97% favorita e venceu (Merz, chanceler). Abaixo, a foto final pré-eleição; a série completa está no dataset aberto.",
+    "en": "Party-level: polls measure vote share, the market prices which party wins the MOST seats. The AfD was the second-most-voted party (~21%) but the market gave it only ~3% to win — vote share is not winning. The CDU/CSU, ~30% of the vote, was ~97% to win and did (Merz became Chancellor). Below is the final pre-election snapshot; the full series is in the open dataset.",
+    "es": "Nivel partido: la encuesta mide el voto, el mercado valora quién gana MÁS escaños. La AfD fue el 2º partido más votado (~21%) pero el mercado le daba solo ~3% de ganar — el voto no es la victoria. La CDU/CSU, ~30% del voto, era ~97% favorita y ganó (Merz, canciller). Abajo, la foto final pre-elección; la serie completa está en el dataset abierto."
+  },
+  "rows": [
+    {
+      "candidate": "CDU/CSU",
+      "poll_pct": 29.5,
+      "market_pct": 96.7,
+      "divergence_pp": 67.2
+    },
+    {
+      "candidate": "AfD",
+      "poll_pct": 21,
+      "market_pct": 3.3,
+      "divergence_pp": -17.7
+    },
+    {
+      "candidate": "SPD",
+      "poll_pct": 15,
+      "market_pct": 0.1,
+      "divergence_pp": -14.9
+    },
+    {
+      "candidate": "Grüne",
+      "poll_pct": 12.5,
+      "market_pct": 0.1,
+      "divergence_pp": -12.4
+    },
+    {
+      "candidate": "BSW",
+      "poll_pct": 5,
+      "market_pct": 0.1,
+      "divergence_pp": -4.9
+    },
+    {
+      "candidate": "FDP",
+      "poll_pct": 4.5,
+      "market_pct": 0.1,
+      "divergence_pp": -4.4
+    }
+  ]
+}

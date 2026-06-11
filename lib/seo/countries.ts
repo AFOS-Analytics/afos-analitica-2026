@@ -45,7 +45,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Alemanha', en: 'Germany', es: 'Alemania' },
     iso3: 'DEU', flag: '🇩🇪', region: 'Europe',
     elections: [
-      { slug: 'germany-2025', year: 2025, type: { 'pt-BR': 'Federal', en: 'Federal Election', es: 'Federal' }, date: '2025-02-23', status: 'completed', polymarketSlug: 'next-german-chancellor' },
+      { slug: 'germany-2025', year: 2025, type: { 'pt-BR': 'Federal', en: 'Federal Election', es: 'Federal' }, date: '2025-02-23', status: 'completed', polymarketSlug: 'germany-parliamentary-election' },
     ],
   },
   {

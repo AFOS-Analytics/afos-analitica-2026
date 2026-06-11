@@ -8,6 +8,7 @@
 import peru from './peru.json'
 import chile from './chile.json'
 import colombia from './colombia.json'
+import germany from './germany.json'
 
 export interface DivergenceRow {
   candidate: string
@@ -32,6 +33,7 @@ export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
   PER: peru as CountryDivergence,
   CHL: chile as CountryDivergence,
   COL: colombia as CountryDivergence,
+  DEU: germany as CountryDivergence,
 }
 
 export function getCountryDivergence(iso3: string): CountryDivergence | null {
