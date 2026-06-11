@@ -70,8 +70,11 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
     <div className={`min-h-screen ${pageBg} transition-colors`}>
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="flex items-center justify-between gap-3 mb-6">
-          <a href={`/${loc}`} className={`text-sm font-medium ${link}`}>{l.backToDashboard}</a>
-          <ThemeToggle theme={theme} onChoose={choose} isBlue={isBlue} />
+          <a href={`/${loc}`} className={`text-base sm:text-lg font-extrabold tracking-tight ${isBlue ? 'text-white' : 'text-primary'}`} aria-label="AFOS Analytics — Home">AFOS Analytics</a>
+          <div className="flex items-center gap-4">
+            <a href={`/${loc}`} className={`text-sm font-medium ${link}`}>{l.backToDashboard}</a>
+            <ThemeToggle theme={theme} onChoose={choose} isBlue={isBlue} />
+          </div>
         </div>
 
         <h1 className={`flex items-center gap-3 text-3xl md:text-4xl font-extrabold ${textMain} mb-2`}>
