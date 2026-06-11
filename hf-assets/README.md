@@ -18,6 +18,8 @@ tags:
 - open-data
 ---
 
+![AFOS — Brazil 2026 Electoral Divergence](banner.png)
+
 # AFOS — Brazil 2026 Electoral Divergence Dataset
 
 🌐 **[English](#english) · [Português](#português) · [Español](#español)**

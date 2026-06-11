@@ -43,6 +43,7 @@ export async function GET(request: NextRequest) {
     const line = sp.get('line') || 'Prediction market × polls — the spread is the signal.'
     const tag = sp.get('tag') || 'Open dataset · CC BY 4.0'
     const chips = (sp.get('chips') || 'Reproducible · EN · ES · PT').split('·').map((c) => c.trim())
+    const cc = (sp.get('cc') || '').replace(/[^a-z]/g, '') // 2-letter country code → /flags/{cc}.svg
     try {
       return new ImageResponse(
         (
@@ -52,6 +53,14 @@ export async function GET(request: NextRequest) {
               <span style={{ display: 'flex', opacity: 0.8 }}>{tag}</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {cc && (
+                <img
+                  src={`${request.nextUrl.origin}/flags/${cc}.svg`}
+                  width={88}
+                  height={59}
+                  style={{ borderRadius: 8, marginBottom: 24, boxShadow: '0 2px 14px rgba(0,0,0,0.3)' }}
+                />
+              )}
               <div style={{ fontSize: 68, fontWeight: 800, letterSpacing: '-2px', lineHeight: 1.05, display: 'flex', maxWidth: 1040 }}>{title}</div>
               <div style={{ fontSize: 30, opacity: 0.92, marginTop: 22, lineHeight: 1.35, display: 'flex', maxWidth: 1000 }}>{line}</div>
             </div>
