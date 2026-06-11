@@ -17,10 +17,10 @@ const TEXTS = (name: string): Record<string, Record<string, string>> => ({
   en: { overview: `Track ${name}'s election with prediction market data, electoral polls, and political risk analysis.`, risk: `${name}'s political landscape is monitored with prediction market signals, public sentiment, and critical events that may impact FX, investments, and governance.`, market: `Elections in ${name} directly impact capital flows, FX, and sovereign risk perception. Prediction markets offer early signals on likely scenarios.`, why: `${name} is one of the markets monitored by AFOS Analytics. Cross-referencing prediction markets and polls enables more informed decisions for investors, analysts, and citizens.` },
   es: { overview: `Siga la elección de ${name} con datos de mercados de predicción, encuestas electorales y análisis de riesgo político.`, risk: `El escenario político de ${name} es monitoreado con señales de mercados de predicción, sentimiento público y eventos críticos que pueden impactar divisas, inversiones y gobernanza.`, market: `Las elecciones en ${name} impactan directamente flujos de capital, tipo de cambio y percepción de riesgo soberano. Los mercados de predicción ofrecen señales anticipadas sobre escenarios probables.`, why: `${name} es uno de los mercados monitoreados por AFOS Analytics. Cruzar mercados de predicción y encuestas permite decisiones más informadas para inversores, analistas y ciudadanos.` },
 })
-const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; caveat: string; dataset: string; source: (p: string, d: string, n: number) => string }> = {
-  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas — ciclo 2026', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', caveat: 'O mercado precifica a probabilidade de VENCER a eleição; a pesquisa mede a intenção de voto no 1º turno — grandezas diferentes. A divergência é o sinal que a AFOS acompanha, não um erro de pesquisa.', dataset: 'Dataset aberto', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
-  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls — 2026 cycle', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', caveat: 'The market prices the probability of WINNING the election; the poll measures first-round voting intention — different quantities. The divergence is the signal AFOS tracks, not a polling error.', dataset: 'Open dataset', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
-  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas — ciclo 2026', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', caveat: 'El mercado valora la probabilidad de GANAR la elección; la encuesta mide la intención de voto en primera vuelta — magnitudes distintas. La divergencia es la señal que AFOS sigue, no un error de encuesta.', dataset: 'Dataset abierto', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
+const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; dataset: string; source: (p: string, d: string, n: number) => string }> = {
+  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', dataset: 'Dataset aberto', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
+  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', dataset: 'Open dataset', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
+  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', dataset: 'Dataset abierto', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
 }
 
 function ThemeToggle({ theme, onChoose, isBlue }: { theme: Theme; onChoose: (t: Theme) => void; isBlue: boolean }) {
@@ -70,7 +70,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
     <div className={`min-h-screen ${pageBg} transition-colors`}>
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="flex items-center justify-between gap-3 mb-6">
-          <a href={`/${loc}`} className={`text-base sm:text-lg font-extrabold tracking-tight ${isBlue ? 'text-white' : 'text-primary'}`} aria-label="AFOS Analytics — Home">AFOS Analytics</a>
+          <a href={`/${loc}`} className={`text-base sm:text-lg font-extrabold tracking-tight ${isBlue ? 'text-white' : 'text-primary'}`} aria-label="AFOS Analytics, Home">AFOS Analytics</a>
           <div className="flex items-center gap-4">
             <a href={`/${loc}`} className={`text-sm font-medium ${link}`}>{l.backToDashboard}</a>
             <ThemeToggle theme={theme} onChoose={choose} isBlue={isBlue} />
@@ -136,8 +136,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 </tbody>
               </table>
             </div>
-            <p className={`text-xs ${textMuted} mt-4 leading-relaxed`}>{ds.caveat}</p>
-            <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-2`}>
+            <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-4`}>
               {ds.source(div.latest_poll.pollster, div.latest_poll.date, div.polls_count)}{' '}
               <a href={div.hf} target="_blank" rel="noopener noreferrer" className={link}>🤗 {ds.dataset} ↗</a>
             </p>
