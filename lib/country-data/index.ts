@@ -6,6 +6,7 @@
  * Gerado por .cache/gen-country-bundles.mjs a partir das CSVs de divergência (fonte da verdade).
  */
 import peru from './peru.json'
+import chile from './chile.json'
 import colombia from './colombia.json'
 
 export interface DivergenceRow {
@@ -29,6 +30,7 @@ export interface CountryDivergence {
 // chave = iso3 (bate com CountrySEO.iso3)
 export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
   PER: peru as CountryDivergence,
+  CHL: chile as CountryDivergence,
   COL: colombia as CountryDivergence,
 }
 

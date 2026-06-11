@@ -101,7 +101,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Chile', en: 'Chile', es: 'Chile' },
     iso3: 'CHL', flag: '🇨🇱', region: 'Americas',
     elections: [
-      { slug: 'chile-2025', year: 2025, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2025-11-16', status: 'upcoming', polymarketSlug: '2025-chilean-presidential-election' },
+      { slug: 'chile-2025', year: 2025, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2025-11-16', status: 'completed', polymarketSlug: 'chile-presidential-election' },
     ],
   },
   {

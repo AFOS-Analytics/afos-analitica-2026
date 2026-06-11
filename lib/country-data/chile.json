@@ -1,0 +1,59 @@
+{
+  "iso3": "CHL",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence",
+  "election": {
+    "first_round": "2025-11-16",
+    "runoff": "2025-12-14",
+    "matchup": "Jeannette Jara × José Antonio Kast",
+    "status": "completed"
+  },
+  "polls_count": 100,
+  "market_candidates": 11,
+  "latest_poll": {
+    "pollster": "Panel Ciudadano",
+    "date": "2025-10-31"
+  },
+  "headline": {
+    "pt-BR": "O mercado precificou José Antonio Kast em ~66% para VENCER a presidência enquanto Jeannette Jara liderava o voto de 1º turno (~26%) — o mercado dava só ~16% a ela, já vendo a consolidação da direita no 2º turno. Kast venceu o runoff 58×42. Abaixo, a foto final pré-1º-turno; a divergência ao longo do tempo está no dataset aberto.",
+    "en": "The market priced José Antonio Kast at ~66% to WIN the presidency while Jeannette Jara led first-round vote share (~26%) — the market gave her only ~16%, already pricing the right’s runoff consolidation. Kast won the runoff 58–42. Below is the final pre-first-round snapshot; the full divergence over time is in the open dataset.",
+    "es": "El mercado valoró a José Antonio Kast en ~66% para GANAR la presidencia mientras Jeannette Jara lideraba el voto de primera vuelta (~26%) — el mercado le daba solo ~16%, precificando ya la consolidación de la derecha en el balotaje. Kast ganó 58–42. Abajo, la foto final pre-primera-vuelta; la divergencia en el tiempo está en el dataset abierto."
+  },
+  "rows": [
+    {
+      "candidate": "Jeannette Jara",
+      "poll_pct": 26,
+      "market_pct": 16.2,
+      "divergence_pp": -9.8
+    },
+    {
+      "candidate": "José Antonio Kast",
+      "poll_pct": 21,
+      "market_pct": 66,
+      "divergence_pp": 45
+    },
+    {
+      "candidate": "Evelyn Matthei",
+      "poll_pct": 14,
+      "market_pct": 5.8,
+      "divergence_pp": -8.2
+    },
+    {
+      "candidate": "Johannes Kaiser",
+      "poll_pct": 14,
+      "market_pct": 12.3,
+      "divergence_pp": -1.7
+    },
+    {
+      "candidate": "Franco Parisi",
+      "poll_pct": 10,
+      "market_pct": 0.8,
+      "divergence_pp": -9.2
+    },
+    {
+      "candidate": "Eduardo Artés",
+      "poll_pct": 1,
+      "market_pct": 0.1,
+      "divergence_pp": -0.9
+    }
+  ]
+}

@@ -31,6 +31,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'The market priced De la Espriella to win (43.5%) and he won the first round (43.7%) — near-zero divergence on the vote leader.',
     es: 'El mercado valoró la victoria de De la Espriella (43,5%) y ganó la primera vuelta (43,7%) — divergencia casi nula en el líder de votos.',
   },
+  CHL: {
+    'pt-BR': 'Jara liderou o voto de 1º turno, mas o mercado precificava Kast em ~66% para vencer — e Kast venceu o runoff 58×42. A diferença foi o sinal.',
+    en: 'Jara led the first-round vote, but the market priced Kast at ~66% to win — and Kast won the runoff 58–42. The gap was the signal.',
+    es: 'Jara lideró el voto de primera vuelta, pero el mercado valoró a Kast en ~66% para ganar — y Kast ganó el balotaje 58–42. La brecha fue la señal.',
+  },
 };
 
 export function ValidatedCases({ locale }: { locale: Locale }) {
