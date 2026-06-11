@@ -23,7 +23,6 @@ export interface ArchiveGroup {
   items: ArchiveItem[]
 }
 export interface ArchiveStrings {
-  backToDashboard: string
   eyebrow: string
   title: string
   subtitle: string

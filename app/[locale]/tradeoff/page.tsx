@@ -20,7 +20,6 @@ export function generateStaticParams() {
 
 const T = {
   'pt-BR': {
-    backToDashboard: '← Voltar ao Dashboard',
     eyebrow: 'AFOS Tradeoff',
     title: 'Arquivo de edições',
     subtitle: (n: number) => `${n} ${n === 1 ? 'edição publicada' : 'edições publicadas'}, da mais recente à mais antiga.`,
@@ -36,7 +35,6 @@ const T = {
     metaDesc: 'Todas as edições do AFOS Tradeoff, o brief técnico semanal de risco político eleitoral sem médias suavizadas.',
   },
   en: {
-    backToDashboard: '← Back to Dashboard',
     eyebrow: 'AFOS Tradeoff',
     title: 'Editions archive',
     subtitle: (n: number) => `${n} ${n === 1 ? 'edition published' : 'editions published'}, newest to oldest.`,
@@ -52,7 +50,6 @@ const T = {
     metaDesc: 'All AFOS Tradeoff editions, the weekly technical brief on electoral political risk without smoothed averages.',
   },
   es: {
-    backToDashboard: '← Volver al Dashboard',
     eyebrow: 'AFOS Tradeoff',
     title: 'Archivo de ediciones',
     subtitle: (n: number) => `${n} ${n === 1 ? 'edición publicada' : 'ediciones publicadas'}, de la más reciente a la más antigua.`,
@@ -178,7 +175,6 @@ export default async function TradeoffArchivePage(props: Props) {
   }
 
   const strings: TradeoffArchiveStrings = {
-    backToDashboard: t.backToDashboard,
     eyebrow: t.eyebrow,
     title: t.title,
     subtitle: t.subtitle(items.length),

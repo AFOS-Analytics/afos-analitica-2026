@@ -21,7 +21,6 @@ export function generateStaticParams() {
 
 const T = {
   'pt-BR': {
-    backToDashboard: '← Voltar ao Dashboard',
     eyebrow: 'AFOS Daily',
     title: 'Arquivo de edições',
     subtitle: (n: number) => `${n} edições publicadas, da mais recente à mais antiga.`,
@@ -36,7 +35,6 @@ const T = {
     metaDesc: 'Todas as edições do AFOS Daily, síntese diária cruzando mercados de previsão, pesquisas e notícias da eleição brasileira de 2026.',
   },
   en: {
-    backToDashboard: '← Back to Dashboard',
     eyebrow: 'AFOS Daily',
     title: 'Editions archive',
     subtitle: (n: number) => `${n} editions published, newest to oldest.`,
@@ -51,7 +49,6 @@ const T = {
     metaDesc: 'All AFOS Daily editions, the daily synthesis cross-referencing prediction markets, polls and news on the 2026 Brazilian election.',
   },
   es: {
-    backToDashboard: '← Volver al Dashboard',
     eyebrow: 'AFOS Daily',
     title: 'Archivo de ediciones',
     subtitle: (n: number) => `${n} ediciones publicadas, de la más reciente a la más antigua.`,
@@ -175,7 +172,6 @@ export default async function DailyArchivePage(props: Props) {
   }
 
   const strings: ArchiveStrings = {
-    backToDashboard: t.backToDashboard,
     eyebrow: t.eyebrow,
     title: t.title,
     subtitle: t.subtitle(items.length),

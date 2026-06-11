@@ -23,7 +23,6 @@ export interface TradeoffArchiveGroup {
   items: TradeoffArchiveItem[]
 }
 export interface TradeoffArchiveStrings {
-  backToDashboard: string
   eyebrow: string
   title: string
   subtitle: string
