@@ -76,7 +76,7 @@ export function webAppSchema() {
     url: BASE_URL,
     // Dual-categoria: NewsApplication (Daily editorial) + BusinessApplication
     // (risco político eleitoral para tomada de decisão institucional).
-    applicationCategory: ['BusinessApplication', 'NewsApplication'],
+    applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Political Risk Intelligence',
     operatingSystem: 'Web',
     description: 'Global Electoral Political Risk Intelligence — Open-Source. Cross-references real-money prediction markets (Polymarket), polls from 17+ Brazilian institutes (TSE), and live news coverage across 15 countries.',
@@ -168,6 +168,23 @@ export function datasetSchema() {
       encodingFormat: 'text/csv',
       contentUrl: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
     },
+  };
+}
+
+/** Dataset por país — casos validados (Google Dataset Search / GEO) */
+export function countryDatasetSchema(countryName: string, hf: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: `AFOS Analytics — ${countryName} electoral divergence dataset`,
+    description: `Prediction-market odds cross-referenced with electoral polls (market × poll divergence) for ${countryName}, checked against the real election result. Open dataset, CC BY 4.0.`,
+    url: hf,
+    license: 'https://creativecommons.org/licenses/by/4.0/',
+    isAccessibleForFree: true,
+    creator: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
+    publisher: { '@id': `${BASE_URL}/#organization` },
+    sameAs: hf,
+    distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: hf },
   };
 }
 

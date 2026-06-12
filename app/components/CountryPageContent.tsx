@@ -12,6 +12,11 @@ const LABELS: Record<string, Record<string, string>> = {
   en: { region: 'Region', type: 'Type', date: 'Date', status: 'Status', elections: 'Monitored elections', backToDashboard: '← Dashboard', overview: 'Overview', risk: 'Political Risk', market: 'Market Relevance', why: 'Why monitor', politicalRisk: 'Political Risk', forInvestors: 'For Investors' },
   es: { region: 'Región', type: 'Tipo', date: 'Fecha', status: 'Estado', elections: 'Elecciones monitoreadas', backToDashboard: '← Dashboard', overview: 'Visión general', risk: 'Riesgo Político', market: 'Relevancia de Mercado', why: 'Por qué monitorear', politicalRisk: 'Riesgo Político', forInvestors: 'Para Inversores' },
 }
+const STATUS_L: Record<string, Record<string, string>> = {
+  'pt-BR': { active: 'Em andamento', completed: 'Encerrada', upcoming: 'Futura' },
+  en: { active: 'Active', completed: 'Completed', upcoming: 'Upcoming' },
+  es: { active: 'En curso', completed: 'Finalizada', upcoming: 'Próxima' },
+}
 const TEXTS = (name: string): Record<string, Record<string, string>> => ({
   'pt-BR': { overview: `Acompanhe a eleição de ${name} com dados de mercados de previsão, pesquisas eleitorais e análise de risco político.`, risk: `O cenário político de ${name} é monitorado com sinais de mercados de previsão, sentimento público e eventos críticos que podem impactar câmbio, investimentos e governança.`, market: `Eleições em ${name} impactam diretamente fluxos de capital, câmbio e percepção de risco soberano. Mercados de previsão oferecem sinais antecipados sobre cenários prováveis.`, why: `${name} é um dos mercados monitorados pela AFOS Analytics. Cruzar mercado de previsão e pesquisas permite decisões mais informadas para investidores, analistas e cidadãos.` },
   en: { overview: `Track ${name}'s election with prediction market data, electoral polls, and political risk analysis.`, risk: `${name}'s political landscape is monitored with prediction market signals, public sentiment, and critical events that may impact FX, investments, and governance.`, market: `Elections in ${name} directly impact capital flows, FX, and sovereign risk perception. Prediction markets offer early signals on likely scenarios.`, why: `${name} is one of the markets monitored by AFOS Analytics. Cross-referencing prediction markets and polls enables more informed decisions for investors, analysts, and citizens.` },
@@ -98,7 +103,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
               </div>
               <div>
                 <span className={`text-xs ${textMuted} uppercase`}>{l.status}</span>
-                <p className={`font-semibold ${textMain} capitalize`}>{election.status}</p>
+                <p className={`font-semibold ${textMain}`}>{(STATUS_L[loc] || STATUS_L['en'])[election.status] || election.status}</p>
               </div>
             </div>
           </div>
@@ -159,7 +164,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
               {country.elections.map((el) => (
                 <a key={el.slug} href={`/${loc}/election/${el.slug}`} className={`block ${elCard} border rounded-lg p-4 transition-colors`}>
                   <span className={`font-semibold ${textMain}`}>{el.type[loc] || el.type['en']} {el.year}</span>
-                  <span className={`text-xs ${textMuted} ml-2 capitalize`}>{el.status}</span>
+                  <span className={`text-xs ${textMuted} ml-2`}>{(STATUS_L[loc] || STATUS_L['en'])[el.status] || el.status}</span>
                 </a>
               ))}
             </div>

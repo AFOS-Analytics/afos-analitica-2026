@@ -63,7 +63,7 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
 
       // Load TopoJSON
       const worldData = await d3.json('/geo/world-110m.json') as any;
-      if (!worldData) return;
+      if (!worldData?.objects?.countries) return;
 
       const countriesGeo = topojson.feature(worldData, worldData.objects.countries) as any;
       const borders = topojson.mesh(worldData, worldData.objects.countries, (a: any, b: any) => a !== b);

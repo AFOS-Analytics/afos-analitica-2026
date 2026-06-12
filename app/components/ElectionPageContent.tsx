@@ -23,6 +23,12 @@ const L: Record<string, { backToCountry: string; date: string; status: string; m
   es: { backToCountry: '← Ver país', date: 'Fecha', status: 'Estado', marketTitle: 'Mercado de predicción (Polymarket)', whoWins: '¿Quién gana?', volume: 'Volumen', snapshotNote: (d) => `Foto del mercado el ${d}, pre-resultado (mercado cerrado).`, viewOn: 'Ver en Polymarket', context: 'Contexto político', implications: 'Implicaciones de mercado', institutional: 'Relevancia institucional', whyPrediction: 'Por qué mercados de predicción', ctx: (n, t, y) => `La elección ${t.toLowerCase()} de ${n} en ${y} es monitoreada por AFOS Analytics con datos de mercados de predicción, encuestas electorales y análisis de eventos críticos.`, impl: (n) => `Los resultados electorales en ${n} impactan directamente la percepción de riesgo soberano, flujos de capital y decisiones de inversores globales. Los mercados de predicción precifican escenarios probables en tiempo real.`, inst: (n) => `Fondos, bancos y consultorías estratégicas usan señales electorales para anticipar movimientos de mercado. AFOS Analytics consolida esas señales en una interfaz accesible.`, why: 'Los mercados de predicción con dinero real (como Polymarket) son históricamente competitivos con las encuestas. Reflejan dónde las personas ponen su dinero, no solo su opinión; y la divergencia entre ambos es la señal que AFOS sigue.' },
 }
 
+const STATUS_L: Record<string, Record<string, string>> = {
+  'pt-BR': { active: 'Em andamento', completed: 'Encerrada', upcoming: 'Futura' },
+  en: { active: 'Active', completed: 'Completed', upcoming: 'Upcoming' },
+  es: { active: 'En curso', completed: 'Finalizada', upcoming: 'Próxima' },
+}
+
 export function ElectionPageContent({ locale, country, election, div }: { locale: string; country: CountrySEO; election: ElectionSEO; div: CountryDivergence | null }) {
   const [theme, setTheme] = useState<Theme>('light')
   useEffect(() => {
@@ -67,7 +73,7 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
           <img src={`/flags/${cc}.svg`} alt="" aria-hidden="true" width={40} height={27} className="rounded-sm object-cover shadow-sm" style={{ width: 40, height: 27 }} />
           <span>{name} · {type} {election.year}</span>
         </h1>
-        <p className={`${textMuted} mb-8`}>{l.date}: {election.date} · {l.status}: <span className="capitalize">{election.status}</span></p>
+        <p className={`${textMuted} mb-8`}>{l.date}: {election.date} · {l.status}: <span>{(STATUS_L[locale] || STATUS_L['en'])[election.status] || election.status}</span></p>
 
         {snap ? (
           <section className={`${mktCard} border rounded-xl p-6 mb-8`}>
