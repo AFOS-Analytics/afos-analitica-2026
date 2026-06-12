@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
+import { socialMeta } from './metadata'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -26,13 +27,11 @@ export function InstitutionalPage(slug: string, content: Record<string, PageCont
     const languages: Record<string, string> = {}
     for (const l of locales) languages[l] = `${BASE_URL}/${l}/${slug}`
     languages['x-default'] = `${BASE_URL}/en/${slug}`
-    const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
     return {
       title: c.metaTitle,
       description: c.desc,
       alternates: { canonical: `${BASE_URL}/${loc}/${slug}`, languages },
-      openGraph: { type: 'website', title: c.metaTitle, description: c.desc, url: `${BASE_URL}/${loc}/${slug}`, siteName: 'AFOS Analytics', locale: loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US', images: [{ url: ogImage, width: 1200, height: 627, alt: c.metaTitle }] },
-      twitter: { card: 'summary_large_image', title: c.metaTitle, description: c.desc, images: [ogImage] },
+      ...socialMeta(loc, { title: c.metaTitle, description: c.desc, url: `${BASE_URL}/${loc}/${slug}` }),
     }
   }
 

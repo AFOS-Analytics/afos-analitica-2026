@@ -5,6 +5,7 @@ import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
 import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { CountryPageContent } from '../../../components/CountryPageContent'
+import { socialMeta } from '../../../../lib/seo/metadata'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -52,21 +53,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
   languages['x-default'] = `${BASE_URL}/en/country/${country.slug['en']}`
 
-  const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
   return {
     title,
     description,
     alternates: { canonical: `${BASE_URL}/${loc}/country/${slug}`, languages },
-    openGraph: {
-      type: 'website',
-      title,
-      description,
-      url: `${BASE_URL}/${loc}/country/${slug}`,
-      siteName: 'AFOS Analytics',
-      locale: loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US',
-      images: [{ url: ogImage, width: 1200, height: 627, alt: title }],
-    },
-    twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
+    ...socialMeta(loc, { title, description, url: `${BASE_URL}/${loc}/country/${slug}` }),
   }
 }
 

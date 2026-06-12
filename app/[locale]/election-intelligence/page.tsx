@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../../../lib/i18n/config'
+import { socialMeta } from '../../../lib/seo/metadata'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: c.metaTitle,
     description: c.desc,
     alternates: { canonical: `${BASE_URL}/${loc}/election-intelligence`, languages },
-    openGraph: { title: c.metaTitle, description: c.desc, url: `${BASE_URL}/${loc}/election-intelligence` },
+    ...socialMeta(loc, { title: c.metaTitle, description: c.desc, url: `${BASE_URL}/${loc}/election-intelligence` }),
   }
 }
 

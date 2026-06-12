@@ -10,6 +10,14 @@
 // Fonte única reusada por ValidatedCases, CountryPageContent, ElectionPageContent e RegionPage.
 export const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us', HUN: 'hu', RUS: 'ru' }
 
+// Rótulos de status de eleição por locale. Fonte única reusada por
+// CountryPageContent e ElectionPageContent (importam como STATUS_LABELS).
+export const STATUS_LABELS: Record<string, Record<string, string>> = {
+  'pt-BR': { active: 'Em andamento', completed: 'Encerrada', upcoming: 'Futura' },
+  en: { active: 'Active', completed: 'Completed', upcoming: 'Upcoming' },
+  es: { active: 'En curso', completed: 'Finalizada', upcoming: 'Próxima' },
+}
+
 export interface CountrySEO {
   slug: Record<string, string> // { 'pt-BR': 'brasil', en: 'brazil', es: 'brasil' }
   name: Record<string, string>

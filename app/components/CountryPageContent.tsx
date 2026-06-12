@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import type { CountrySEO } from '../../lib/seo/countries'
-import { ISO3_TO_CC } from '../../lib/seo/countries'
+import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
 
 type Theme = 'light' | 'blue'
@@ -11,11 +11,6 @@ const LABELS: Record<string, Record<string, string>> = {
   'pt-BR': { region: 'Região', type: 'Tipo', date: 'Data', status: 'Status', elections: 'Eleições monitoradas', backToDashboard: '← Dashboard', overview: 'Visão geral', risk: 'Risco Político', market: 'Relevância para o Mercado', why: 'Por que acompanhar', politicalRisk: 'Risco Político', forInvestors: 'Para Investidores' },
   en: { region: 'Region', type: 'Type', date: 'Date', status: 'Status', elections: 'Monitored elections', backToDashboard: '← Dashboard', overview: 'Overview', risk: 'Political Risk', market: 'Market Relevance', why: 'Why monitor', politicalRisk: 'Political Risk', forInvestors: 'For Investors' },
   es: { region: 'Región', type: 'Tipo', date: 'Fecha', status: 'Estado', elections: 'Elecciones monitoreadas', backToDashboard: '← Dashboard', overview: 'Visión general', risk: 'Riesgo Político', market: 'Relevancia de Mercado', why: 'Por qué monitorear', politicalRisk: 'Riesgo Político', forInvestors: 'Para Inversores' },
-}
-const STATUS_L: Record<string, Record<string, string>> = {
-  'pt-BR': { active: 'Em andamento', completed: 'Encerrada', upcoming: 'Futura' },
-  en: { active: 'Active', completed: 'Completed', upcoming: 'Upcoming' },
-  es: { active: 'En curso', completed: 'Finalizada', upcoming: 'Próxima' },
 }
 const TEXTS = (name: string): Record<string, Record<string, string>> => ({
   'pt-BR': { overview: `Acompanhe a eleição de ${name} com dados de mercados de previsão, pesquisas eleitorais e análise de risco político.`, risk: `O cenário político de ${name} é monitorado com sinais de mercados de previsão, sentimento público e eventos críticos que podem impactar câmbio, investimentos e governança.`, market: `Eleições em ${name} impactam diretamente fluxos de capital, câmbio e percepção de risco soberano. Mercados de previsão oferecem sinais antecipados sobre cenários prováveis.`, why: `${name} é um dos mercados monitorados pela AFOS Analytics. Cruzar mercado de previsão e pesquisas permite decisões mais informadas para investidores, analistas e cidadãos.` },

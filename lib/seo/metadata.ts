@@ -19,6 +19,32 @@ interface PageSeo {
 }
 
 /**
+ * Bloco OpenGraph + Twitter padrão da plataforma (imagem LinkedIn 1200x627 por locale).
+ * Fonte única reusada por buildMetadata e pelos generateMetadata de country/election/
+ * institutional/for-investors — evita copiar o mesmo objeto OG em cada página.
+ */
+export function socialMeta(locale: string, opts: { title: string; description: string; url: string }): Pick<Metadata, 'openGraph' | 'twitter'> {
+  const ogImage = `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`;
+  return {
+    openGraph: {
+      title: opts.title,
+      description: opts.description,
+      url: opts.url,
+      siteName: 'AFOS Analytics',
+      locale: locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_US' : 'pt_BR',
+      type: 'website',
+      images: [{ url: ogImage, width: 1200, height: 627, alt: opts.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: opts.title,
+      description: opts.description,
+      images: [ogImage],
+    },
+  };
+}
+
+/**
  * Gera metadata completa com hreflang cruzado, canonical, OG e Twitter.
  */
 export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
@@ -37,21 +63,7 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
       canonical: url,
       languages,
     },
-    openGraph: {
-      title: seo.title,
-      description: seo.description,
-      url,
-      siteName: 'AFOS Analytics',
-      locale: locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_US' : 'pt_BR',
-      type: 'website',
-      images: [{ url: `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`, width: 1200, height: 627, alt: seo.title }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: seo.title,
-      description: seo.description,
-      images: [`${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`],
-    },
+    ...socialMeta(locale, { title: seo.title, description: seo.description, url }),
     other: {
       'geo.region': locale === 'pt-BR' ? 'BR' : locale === 'es' ? 'LATAM' : 'Global',
       'geo.placename': locale === 'pt-BR' ? 'Brasil' : locale === 'es' ? 'America Latina' : 'Global',
