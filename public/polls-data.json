@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-11",
+  "lastUpdate": "2026-06-12",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -578,79 +578,79 @@
       {
         "name": "Lula",
         "pesquisaRange": "39-44%",
-        "polymarket": "44.50%",
+        "polymarket": "47.50%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun (n=2.004, campo 05-08/Jun, margem 2pp): 1T Lula 39% x Flávio 29% (gap +10pp); 2T Lula 44% x Flávio 38% (gap +6pp), Lula vence todos os cenários e abre 13pp entre independentes; aprovação 47% x 48%. Vox 05/Jun 1T 42.1% (gap +8.5pp). Contraponto Gerp 1T Flávio 35% x Lula 34% (Exame).",
-        "tendenciaPolymarket": "Salta a 44.50% (↑4.00pp 24h, vol USD 6.26M) reagindo à Quaest. O gap Lula x Flávio no mercado abriu de +11.15pp para +15.85pp em 24h, mais largo que o 1T (+10pp) e o 2T (+6pp) da pesquisa, sinal de que precifica favoritismo mais forte. No TSE, o plenário adiou a decisão sobre a suspensão da AtlasIntel (BBC).",
-        "odds": 44.5,
+        "tendenciaPolymarket": "Sobe a 47.50% (↑3.00pp em ~48h, vol USD 6.38M) consolidando o favoritismo. O gap Lula × Flávio no mercado abriu a +21.00pp, o mais largo do ciclo, bem acima do 1T (+10pp) e do 2T (+6pp) da Quaest. Motor: a digestão da Quaest 10/Jun (Lula +7pp entre evangélicos, Folha) e a nova Pesquisa Alfa (VEJA).",
+        "odds": 47.5,
         "percentage": 39,
-        "lastUpdate": "2026-06-10",
-        "value": 44.5
+        "lastUpdate": "2026-06-12",
+        "value": 47.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-38%",
-        "polymarket": "28.65%",
+        "polymarket": "26.50%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun: 1T 29% (gap -10pp); 2T 38% (perde 44% x 38%); 12% dizem que a relação com Vorcaro diminui a vontade de votar nele (G1). Gerp 1T 35% x Lula 34% (contraponto, Exame).",
-        "tendenciaPolymarket": "Cede a 28.65% (↓0.70pp 24h, vol USD 6.55M) após a Quaest. A pesquisa aponta acerto do governo em associá-lo a Vorcaro e ao tarifaço (G1) e o Estadão fala em sinal amarelo para toda a oposição. O gap para Lula abriu a +15.85pp. Lidera o 2º lugar no mercado a 65.00% (↑2.50pp).",
-        "odds": 28.65,
+        "tendenciaPolymarket": "Cede a 26.50% (↓1.50pp em 48h, vol USD 6.58M) com a digestão da Quaest, cujo recorte mostra Flávio -9pp entre evangélicos (Folha). O gap para Lula abriu a +21.00pp. Lidera o 2º lugar no mercado a 66.50% (↑2.00pp).",
+        "odds": 26.5,
         "percentage": 29,
-        "lastUpdate": "2026-06-10",
-        "value": 28
+        "lastUpdate": "2026-06-12",
+        "value": 26.5
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3%",
-        "polymarket": "16.65%",
+        "polymarket": "13.70%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun mediu Renan em 3% no 1T, embolado com Caiado (3%), Aécio (2%) e Zema (2%) na disputa anti-Lula (G1). Divergência mercado 16.65% x pesquisa 3% (~13.65pp), a mais larga e agora medida do dashboard.",
-        "tendenciaPolymarket": "Recua a 16.65% (↓0.50pp 24h, vol USD 6.79M) no mercado de vencedor, mas DISPARA no de 3º lugar do 1º turno a 52.00% (↑8.50pp), virando favorito isolado do pódio, e segue 2º no do 2º colocado (16.95%, atrás de Flávio 65.00%). A Quaest cravou a divergência em ~13.65pp; monitorar se as próximas Tier 1 confirmam os 3%.",
-        "odds": 16.65,
+        "tendenciaPolymarket": "Recua a 13.70% (↓2.00pp em 48h, vol USD 6.93M) no mercado de vencedor, estreitando um pouco a divergência com a pesquisa (Quaest 3%), que segue a maior do dashboard (~10.70pp). Mantém o favoritismo isolado do 3º lugar do 1º turno (51.50%) e é 2º no do 2º colocado (16.50%).",
+        "odds": 13.7,
         "percentage": 3,
-        "lastUpdate": "2026-06-10",
-        "value": 15.7
+        "lastUpdate": "2026-06-12",
+        "value": 13.7
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6.9%",
-        "polymarket": "1.75%",
+        "polymarket": "1.60%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun: 1T Caiado 3% (empatado com Renan), abaixo dos 6.9% da Vox 05/Jun, o que reduz a inversão poll x mercado. Caiado domina entre os bolsonaristas (Jornal Opção).",
-        "tendenciaPolymarket": "Sobe a 1.75% (↑0.10pp, vol USD 3.94M), segue no piso. A Quaest (3%) aproximou a pesquisa do que o mercado já precificava. Mantém o argumento de maior teto na direita não-Bolsonaro ao liderar entre os bolsonaristas (Jornal Opção).",
-        "odds": 1.75,
+        "tendenciaPolymarket": "Cede a 1.60% (vol USD 4.00M), segue no piso. A Quaest 10/Jun (3% no 1T) aproximou a pesquisa do que o mercado já precificava. Lidera entre os bolsonaristas (Jornal Opção), recorte que ganha peso com a queda de Flávio entre evangélicos.",
+        "odds": 1.6,
         "percentage": 3,
-        "lastUpdate": "2026-06-10",
-        "value": 1.7
+        "lastUpdate": "2026-06-12",
+        "value": 1.6
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Real Time Big Data 01/Jun nao destaca Tarcisio nacional. Vox SP 30/Mai 2T estadual Tarcisio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estável 0.15% presidencial (anomalia de legado, vol USD 12.5M lifetime). Foco reeleição SP, onde lidera. SENADO PL 73.00% (↓0.50pp).",
+        "tendenciaPolymarket": "Estável 0.15% presidencial (anomalia de legado, vol USD 12.5M lifetime). Foco reeleição SP, onde lidera. SENADO PL 72.50% (↓0.50pp).",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-06-10",
+        "lastUpdate": "2026-06-12",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
-        "polymarket": "1.85%",
+        "polymarket": "1.20%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun: 1T Zema 2%, embolado na base da disputa anti-Lula; 2T Lula vence todos os cenários.",
-        "tendenciaPolymarket": "Cede a 1.85% (↓0.10pp 24h, vol USD 3.55M), no piso da 3ª via. No mercado de 3º lugar do 1º turno, recua a 17.50%, atrás de Renan (52.00%). Sem tração com a disputa bipolarizada Lula x Flávio.",
-        "odds": 1.85,
+        "tendenciaPolymarket": "Cede a 1.20% (↓0.40pp em 48h, vol USD 3.59M), no piso da 3ª via. No mercado de 3º lugar do 1º turno, é 2º a 19.00%, atrás de Renan (51.50%). Sem tração com a disputa bipolarizada Lula × Flávio.",
+        "odds": 1.2,
         "percentage": 2,
-        "lastUpdate": "2026-06-10",
-        "value": 1.6
+        "lastUpdate": "2026-06-12",
+        "value": 1.2
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "2.85%",
+        "polymarket": "1.90%",
         "tendenciaPesquisa": "Genial/Quaest 10/Jun não lista Haddad no presidencial nacional (foco SP). Vox SP 30/Mai 2T estadual Tarcísio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estável a 2.85% (vol USD 5.63M), 5º nome presidencial atrás de Camilo Santana (3.15%, ↓0.60pp). Como ministro da Fazenda, no centro da disputa do PIX/tarifaço, mas o mercado não precifica candidatura presidencial. Ala do PT-SP pressiona por Simone Tebet na vice no projeto estadual.",
-        "odds": 2.85,
+        "tendenciaPolymarket": "Cede a 1.90% (↓0.95pp em 48h, vol USD 5.69M), 5º nome presidencial atrás de Camilo Santana (2.80%). No centro do PIX/tarifaço e do INSS (TCU), mas o mercado não precifica candidatura presidencial dele.",
+        "odds": 1.9,
         "percentage": 0,
-        "lastUpdate": "2026-06-10",
-        "value": 2.8
+        "lastUpdate": "2026-06-12",
+        "value": 1.9
       }
     ],
     "updatedAt": "2026-06-10T21:30"

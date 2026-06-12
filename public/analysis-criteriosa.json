@@ -1,6 +1,6 @@
 {
-  "updatedAt": "11/06/2026, 20:25",
-  "subtitle": "ATUALIZAÇÃO 11/Jun 20:25 BRT D+28 launch AFOS. Dia de consolidação após a Genial/Quaest de 10/Jun, sem pesquisa nacional nova publicada (MDA, IPESPE e AtlasIntel estão registradas no TSE para sair entre 15 e 16/Jun, ainda não divulgadas). EVENTO DO DIA: a pré-campanha de Flávio Bolsonaro acionou o STF após Lula falar em enforcamento de traidor (Folha de S.Paulo); a Quaest segue reverberando, com Lula reduzindo a rejeição entre evangélicos em 8pp em dois meses (Brasil de Fato, G1). O Polymarket digeriu a pesquisa na direção de Lula: Lula firme em 44.50% (vol USD 6.28M), Flávio cede a 28.00% (↓0.65pp, vol USD 6.56M) e o gap Lula x Flávio abre a +16.50pp. Renan recua a 15.70% (↓0.95pp), Camilo Santana sobe a 3.80% (↑0.65pp, 4º nome), Haddad 2.80% e Caiado 1.70% estáveis, Zema cede a 1.60% (↓0.25pp). No 3º lugar do 1º turno, Renan cede a 50.50% (↓1.50pp) com Zema (19.50%) e Caiado (16.00%) avançando. STF impeach estável 2.30%; Senado PL 72.50% (↓0.50pp). Total presidencial ~USD 97M. No exterior, monitorado pela AFOS, o 2º turno do Peru segue indefinido: com 98% apurado, Fujimori passou à frente de Sánchez por pouco mais de 800 votos, rumo a recontagem (G1, CNN Brasil).",
+  "updatedAt": "12/06/2026, 17:00",
+  "subtitle": "ATUALIZAÇÃO 12/Jun 17:00 BRT D+29 launch AFOS. Mercado consolidou o favoritismo de Lula (47.50%, gap +21.00pp sobre Flávio, o mais largo do ciclo) digerindo a Genial/Quaest 10/Jun, cujo recorte mostra Flávio caindo 9pp e Lula subindo 7pp entre evangélicos (Folha), e uma nova Pesquisa Alfa que reforça a recuperação. Sem print nacional Tier 1 novo (MDA, IPESPE e AtlasIntel registradas no TSE para 15-16/Jun). Governo com crises próprias: 6x1, bets e INSS/TCU.",
   "candidates": [
     {
       "rank": "1",
@@ -85,8 +85,8 @@
     {
       "n": "Lula (PT)",
       "p": "Genial/Quaest 10/Jun (n=2.004, campo 05-08/Jun, margem 2pp) 1T Lula 39% x Flávio 29% (gap +10pp); 2T Lula 44% x Flávio 38% (gap +6pp), Lula vence todos os cenários, abre 13pp entre independentes; aprovação 47% x 48% | Vox Brasil 05/Jun (n=2.100, BR-08016/2026) 1T 42.1%×33.6% gap +8.5pp (Lula +7.8pp desde meados de maio); 2T 47.8%×41.3% gap +6.5pp, Lula empata Caiado e Zema | RTBD 01/Jun 1T 38%×31% gap +7pp; 2T 45×40, Caiado empata 43×43 | Meio/Ideia 28/Mai 1T 38.5%×31.5% gap +7pp; 2T 46.5%×41.4% gap +5.1pp | Indexa 27/Mai 1T 39%×30% gap +9pp | Datafolha 22/Mai 1T 40%×31% gap +9pp; 2T 47%×43% gap +4pp | AtlasIntel 19/Mai 1T 47% / 2T 48.9% gap +7.1pp | JOTA Agregador 29/Mai 'favoritismo Lula em pico do ciclo'",
-      "m": "44.50% (vol USD 6.28M acumulado)",
-      "t": "Firme em 44.50% (vol USD 6.28M) reagindo à Genial/Quaest, que deu 1T Lula 39% x Flávio 29% (gap +10pp) e 2T 44% x 38% (gap +6pp), com Lula vencendo todos os cenários e a aprovação melhorando a 47% x 48%. O gap Lula x Flávio no mercado abriu de +11.15pp para +16.50pp em 24h, ficando mais largo que o 1T da pesquisa (+10pp). Contraponto Gerp 1T Flávio 35% x Lula 34% (Exame), fora da curva. No TSE, o plenário adiou a decisão sobre a suspensão da AtlasIntel (BBC).",
+      "m": "47.50% (vol USD 6.38M acumulado)",
+      "t": "Sobe a 47.50% (↑3.00pp em 48h, vol USD 6.38M), consolidando o favoritismo. O gap Lula × Flávio no mercado abriu a +21.00pp, o mais largo do ciclo e bem acima do 1T da Quaest (+10pp). Motor: a digestão da Genial/Quaest 10/Jun, cujo recorte mostra Lula +7pp e Flávio -9pp entre evangélicos (Folha), mais uma nova Pesquisa Alfa que reforça a recuperação (VEJA). No flanco do governo há ruídos próprios (6x1, bets, INSS/TCU), mas o mercado precifica favoritismo mais forte.",
       "s": "Genial/Quaest 10/Jun n=2.004 campo 05-08/Jun (G1, Folha, CNN Brasil, Estadão, Poder360, Metrópoles). Gerp 1T (Exame). TSE adia decisão suspensão AtlasIntel (BBC). Vox Brasil 05/Jun BR-08016/2026 referência anterior. Polymarket ao vivo 10/Jun.",
       "pc": "#DC2626",
       "mc": ""
@@ -94,8 +94,8 @@
     {
       "n": "Flávio (PL)",
       "p": "Genial/Quaest 10/Jun 1T Flávio 29% (gap -10pp); 2T 38% (perde 44% x 38%); 12% dizem que a relação com Vorcaro diminui a vontade de votar nele | Gerp 10/Jun 1T Flávio 35% x Lula 34% (contraponto) | Vox Brasil 05/Jun 1T 33.6% gap -8.5pp (caiu 2.9pp desde meados de maio); 2T 41.3% gap -6.5pp | RTBD 01/Jun 1T 31% gap -7pp | Meio/Ideia 28/Mai 1T 31.5% gap -7pp; quedas -19pp alta renda, -18pp centro-direita, -16pp jovens | Indexa 27/Mai 1T 30% gap -9pp | Datafolha 22/Mai 1T 31% gap -9pp; 2T 43% gap -4pp; rejeição 46% > Lula 45% pela 1ª vez | Vox 20/Mai 2T 38.1% rejeição 49.2% | AtlasIntel 19/Mai 1T 34.3% rejeição 52%",
-      "m": "28.00% (vol USD 6.56M acumulado)",
-      "t": "Cede a 28.00% (↓0.70pp 24h, vol USD 6.56M) após a Quaest dar 1T 29% (gap -10pp) e 2T 38% (perde 44% x 38%). A Quaest aponta acerto do governo em associá-lo a Vorcaro e ao tarifaço, com 12% dizendo que o vínculo com Vorcaro reduz a vontade de votar nele (G1), e o Estadão fala em sinal amarelo para toda a oposição. O gap para Lula abriu a +16.50pp. Mantém a liderança isolada do 2º lugar no mercado a 64.50% (↓0.50pp). Caiado domina entre bolsonaristas em outra leitura (Jornal Opção).",
+      "m": "26.50% (vol USD 6.58M acumulado)",
+      "t": "Cede a 26.50% (↓1.50pp em 48h, vol USD 6.58M) com a digestão da Quaest, cujo recorte mostra queda de 9pp entre evangélicos (Folha/Mônica Bergamo), apontada como motor do recuo. O gap para Lula abriu a +21.00pp. Mantém a liderança isolada do 2º lugar no mercado a 66.50% (↑2.00pp). A oposição segue fragmentada e o Estadão fala em sinal amarelo.",
       "s": "Genial/Quaest 10/Jun (G1, CNN Brasil, Estadão). Quaest Vorcaro 12% (G1). Caiado entre bolsonaristas (Jornal Opção). Master: propostas de delação de Vorcaro citam ministro do governo Lula (Pleno.News). TSE adia decisão suspensão AtlasIntel (BBC).",
       "pc": "#0F52BA",
       "mc": ""
@@ -103,8 +103,8 @@
     {
       "n": "Renan (Missão)",
       "p": "Genial/Quaest 10/Jun 1T Renan 3%, embolado com Caiado (3%), Aécio (2%) e Zema (2%) na disputa anti-Lula; divergência mercado 15.70% x pesquisa 3% (~12.70pp), a mais larga e agora medida | PoderData/AYA 29/Mai sem destaque cenário principal (foco bipolar Lula × Flávio + Caiado/Zema/Barbosa) | Meio/Ideia 28/Mai 1T Renan 2.1% (divergência ampla c/ Polymarket 15.60%) | Indexa 27/Mai sem destaque | Datafolha 22/Mai sem destaque | Vox/AtlasIntel 20/Mai não destacam | AtlasIntel 28/Abr 5.3% | Real Time Big Data 05/Mai 1T 3% | Mantido Sou candidato direita (BBC 28/Abr)",
-      "m": "15.70% (vol USD 6.82M acumulado)",
-      "t": "Recua a 15.70% (↓0.95pp 24h, vol USD 6.82M), e cede também no 3º lugar do 1º turno a 50.50% (↓1.50pp) e segue 3º no de vencedor e 2º no do 2º colocado (16.70%, atrás de Flávio 65.00%). A Genial/Quaest 10/Jun mediu Renan em 3% no 1T, embolado com Caiado, Aécio e Zema (G1), o que ALARGA a divergência do dashboard para ~12.70pp (mercado 15.70% x pesquisa 3%), agora a mais larga e medida por print nacional Tier 1.",
+      "m": "13.70% (vol USD 6.93M acumulado)",
+      "t": "Recua a 13.70% (↓2.00pp em 48h, vol USD 6.93M) no mercado de vencedor, estreitando um pouco a divergência com a pesquisa (Quaest 3% no 1T), que segue a maior do dashboard (~10.70pp). No pódio do 1º turno, mantém o favoritismo isolado do 3º lugar a 51.50% e segue 2º no do 2º colocado (16.50%, atrás de Flávio 66.50%). Monitorar as Tier 1 de 15-16/Jun.",
       "s": "Genial/Quaest 10/Jun 1T 3% (G1: Renan, Caiado, Zema e Aécio embolados). Polymarket 3º lugar 50.50% ao vivo. VEJA mantida.",
       "pc": "#8B5CF6",
       "mc": ""
@@ -112,8 +112,8 @@
     {
       "n": "Haddad (PT)",
       "p": "Genial/Quaest 10/Jun não lista Haddad no presidencial (foco SP) | PoderData/AYA 29/Mai não destaca | Meio/Ideia 28/Mai não destaca cenário principal | Indexa 27/Mai sem destaque | Reverberação Datafolha 23/Mai não destaca | Mantido Líder PSB defende Haddad SP (Congresso em Foco 22/Mai) | Mantida Vox SP Tarcísio 38% × Haddad 26% | Pacheco fora MG impacta projeto PT estadual",
-      "m": "2.80% (vol USD 5.64M acumulado)",
-      "t": "Estável a 2.80% (vol USD 5.63M), 5º nome presidencial atrás de Camilo Santana (3.80%). A Quaest 10/Jun não lista Haddad no presidencial nacional. Como ministro da Fazenda, segue no centro da disputa do PIX/tarifaço, mas o mercado não precifica candidatura presidencial dele. A ala do PT-SP intensifica a pressão por Simone Tebet na vice no projeto estadual.",
+      "m": "1.90% (vol USD 5.69M acumulado)",
+      "t": "Cede a 1.90% (↓0.95pp em 48h, vol USD 5.69M), 5º nome presidencial atrás de Camilo Santana (2.80%). A Quaest 10/Jun não lista Haddad no presidencial nacional. Como ministro da Fazenda, no centro do PIX/tarifaço e do INSS (TCU manda mudar a concessão automática), mas o mercado não precifica candidatura presidencial dele.",
       "s": "Genial/Quaest 10/Jun (sem Haddad presidencial). PT-SP/Tebet vice. Vox SP 30/Mai 2T estadual Tarcísio 48.3% x Haddad 36.5%.",
       "pc": "#7c3aed",
       "mc": ""
@@ -121,8 +121,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "Genial/Quaest 10/Jun 1T Caiado 3% (empatado com Renan na 3ª via) | Vox Brasil 05/Jun 1T Caiado 6.9% (LIDERA a 3ª via na pesquisa); 2T Lula empata Caiado | RTBD 01/Jun 1T 6%; 2T EMPATA Lula 43×43 | Meio/Ideia 28/Mai 1T 5.5% LIDERA 3ª via | Quaest 13/Mai Caiado 4% × Zema 4% empate 1T",
-      "m": "1.70% (vol USD 3.96M acumulado)",
-      "t": "Estável em 1.70% (, vol USD 3.94M), segue no piso. A Quaest 10/Jun deu Caiado 3% no 1T, embolado com Renan (3%), Aécio e Zema (2%), número bem abaixo dos 6.9% da Vox 05/Jun, o que reduz a inversão poll x mercado que vinha sendo destacada. Caiado domina entre os bolsonaristas em leitura da Quaest (Jornal Opção). No dia, seguiu a cobrança para que Flávio explique o elo com Vorcaro.",
+      "m": "1.60% (vol USD 4.00M acumulado)",
+      "t": "Cede a 1.60% (vol USD 4.00M), segue no piso. A Quaest 10/Jun deu Caiado 3% no 1T, embolado com Renan, número que aproximou a pesquisa do mercado. Caiado lidera entre os bolsonaristas (Jornal Opção), recorte que ganha peso com a queda de Flávio entre evangélicos.",
       "s": "Genial/Quaest 10/Jun 1T 3% (G1). Caiado entre bolsonaristas (Jornal Opção). Vox Brasil 05/Jun 6.9% referência anterior.",
       "pc": "#6B7280",
       "mc": ""
@@ -130,12 +130,12 @@
     {
       "n": "Zema (Novo)",
       "p": "Genial/Quaest 10/Jun 1T Zema 2% | Vox Brasil 05/Jun 2T Lula empata Zema | Meio/Ideia 28/Mai 1T Zema 2.4% | Quaest 13/Mai Zema 4% × Caiado 4% empate 1T | Mantida AtlasIntel 28/Abr 2T Lula empata Zema | RTBD 01/Jun 1T 4%; 2T Zema 40 × Lula 43",
-      "m": "1.60% (vol USD 3.57M acumulado)",
-      "t": "Cede a 1.60% (↓0.25pp 24h, vol USD 3.55M), no piso da 3ª via. A Quaest 10/Jun deu Zema 2% no 1T, embolado na base da disputa anti-Lula. No mercado de 3º lugar do 1º turno, Zema recua a 17.50% (atrás de Renan, que disparou a 50.50%). Sem tração com a disputa bipolarizada Lula x Flávio.",
+      "m": "1.20% (vol USD 3.59M acumulado)",
+      "t": "Cede a 1.20% (↓0.40pp em 48h, vol USD 3.59M), no piso da 3ª via. A Quaest 10/Jun deu Zema 2% no 1T. No mercado de 3º lugar do 1º turno, é 2º a 19.00%, atrás de Renan (51.50%). Sem tração com a disputa bipolarizada Lula × Flávio.",
       "s": "Genial/Quaest 10/Jun 1T 2% (G1). Polymarket 3º lugar 17.50% ao vivo. VEJA 29/Mai (Novo) mantida.",
       "pc": "#F59E0B",
       "mc": ""
     }
   ],
-  "cruzamento": "O 11/Jun foi um dia de consolidação, sem pesquisa nacional nova publicada (a Genial/Quaest de 10/Jun segue como o print Tier 1 mais recente; MDA, IPESPE e AtlasIntel estão registradas no TSE para sair entre 15 e 16/Jun, ainda não divulgadas, registrada não é publicada). O Polymarket digeriu a Quaest na direção de Lula sem novidade de pesquisa: Lula ficou firme em 44.50% (vol USD 6.28M), Flávio cedeu a 28.00% (↓0.65pp, vol USD 6.56M) e o gap Lula x Flávio abriu para +16.50pp, mais largo que o 1T (+10pp) e o 2T (+6pp) da própria Quaest, o que mantém a leitura de um mercado precificando favoritismo mais forte que a pesquisa. O evento político do dia foi a pré-campanha de Flávio acionar o STF após Lula falar em enforcamento de traidor (Folha de S.Paulo), enquanto a Quaest segue reverberando com Lula reduzindo a rejeição entre evangélicos em 8pp em dois meses (Brasil de Fato, G1). A maior divergência do dashboard se mantém: Renan, medido em 3% na Quaest, recuou a 15.70% (↓0.95pp) no mercado de vencedor, cerca de 12.70pp acima da pesquisa, e cedeu a 50.50% (↓1.50pp) no mercado de 3º lugar do 1º turno, com Zema (19.50%) e Caiado (16.00%) avançando atrás dele. Camilo Santana subiu a 3.80% (↑0.65pp) e assumiu o 4º nome presidencial, à frente de Haddad (2.80%). STF impeach estável 2.30% (vol USD baixo); Senado PL 72.50% (↓0.50pp). Total presidencial cerca de USD 97M. No exterior, monitorado pela AFOS, o 2º turno do Peru segue indefinido: com 98% apurado, Fujimori passou à frente de Sánchez por pouco mais de 800 votos, rumo a recontagem (G1, CNN Brasil)."
+  "cruzamento": "O 12/Jun foi de consolidação do favoritismo de Lula no mercado, que subiu a 47.50% (↑3.00pp em ~48h) e abriu o gap para Flávio a +21.00pp, o mais largo do ciclo. O motor não é um print novo, e sim a digestão da Genial/Quaest 10/Jun: o recorte por segmento mostrou Flávio caindo 9pp entre evangélicos e Lula subindo 7pp (Folha/Mônica Bergamo), além de uma nova Pesquisa Alfa que reforça a tendência de recuperação do presidente (VEJA). A divergência mais larga do dashboard segue sendo Renan (mercado 13.70% × pesquisa Quaest 3%, ~10.70pp), embora o mercado tenha estreitado a aposta no vencedor (↓2.00pp) enquanto o mantém favorito isolado do 3º lugar do 1º turno (51.50%). No flanco do governo, contradições: enquanto o mercado precifica favoritismo mais forte, Lula enfrenta a pressão da 6x1 sobre Alcolumbre, nova crise de credibilidade nas bets (Gazeta) e ordem do TCU para o INSS mudar a concessão automática de aposentadorias. O caso Master/Vorcaro esfriou (busca específica zerou no dia; STF impeach a 2.30%, volume baixo). Próximos sinais: as Tier 1 registradas para 15-16/Jun (MDA, IPESPE, AtlasIntel) confirmam ou não os 3% de Renan e o gap de ~10pp no 1º turno."
 }
