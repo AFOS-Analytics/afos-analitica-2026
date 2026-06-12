@@ -58,6 +58,9 @@ const T = {
     glossaryLink: 'Ver glossário completo',
     accessDashboard: '← Acessar o Dashboard',
     homeAriaLabel: 'AFOS Analytics, página inicial',
+    themeAria: 'Tema da página',
+    lightAria: 'Modo claro',
+    blueAria: 'Modo Sapphire Blue',
   },
   en: {
     backToDashboard: '← Back to Dashboard',
@@ -78,6 +81,9 @@ const T = {
     glossaryLink: 'See the full glossary',
     accessDashboard: '← Access the Dashboard',
     homeAriaLabel: 'AFOS Analytics, homepage',
+    themeAria: 'Page theme',
+    lightAria: 'Light mode',
+    blueAria: 'Sapphire Blue mode',
   },
   es: {
     backToDashboard: '← Volver al Dashboard',
@@ -98,6 +104,9 @@ const T = {
     glossaryLink: 'Ver glosario completo',
     accessDashboard: '← Acceder al Dashboard',
     homeAriaLabel: 'AFOS Analytics, página principal',
+    themeAria: 'Tema de la página',
+    lightAria: 'Modo claro',
+    blueAria: 'Modo Sapphire Blue',
   },
 }
 
@@ -113,16 +122,16 @@ const NAV_LABEL = {
   es: { prev: '← Síntesis anterior', next: 'Próxima síntesis →', archive: 'Todas las ediciones' },
 }
 
-function ThemeToggle({ theme, onChoose }: { theme: Theme; onChoose: (t: Theme) => void }) {
+function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: Theme) => void; labels: { group: string; light: string; blue: string } }) {
   const isBlue = theme === 'blue'
   const baseStyle = 'w-6 h-6 rounded border-2 transition-all'
   return (
-    <div className={`absolute top-3 right-3 md:top-5 md:right-5 flex items-center gap-2 p-1.5 rounded-lg ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-white border border-gray-200'}`} role="radiogroup" aria-label="Tema da página">
+    <div className={`absolute top-3 right-3 md:top-5 md:right-5 flex items-center gap-2 p-1.5 rounded-lg ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-white border border-gray-200'}`} role="radiogroup" aria-label={labels.group}>
       <button
         type="button"
         role="radio"
         aria-checked={theme === 'light'}
-        aria-label="Modo claro"
+        aria-label={labels.light}
         onClick={() => onChoose('light')}
         className={`${baseStyle} bg-slate-50 ${theme === 'light' ? 'border-primary scale-110' : 'border-gray-300 hover:border-gray-400'}`}
       />
@@ -130,7 +139,7 @@ function ThemeToggle({ theme, onChoose }: { theme: Theme; onChoose: (t: Theme) =
         type="button"
         role="radio"
         aria-checked={theme === 'blue'}
-        aria-label="Modo Sapphire Blue"
+        aria-label={labels.blue}
         onClick={() => onChoose('blue')}
         className={`${baseStyle} bg-[#0a3d8f] ${theme === 'blue' ? 'border-white scale-110' : 'border-blue-700 hover:border-blue-500'}`}
       />
@@ -203,7 +212,7 @@ export function AfosDailyTemplate({ data, nav }: Props) {
   return (
     <div className={`min-h-screen ${pageBg} transition-colors`}>
       <article className="max-w-[720px] mx-auto px-5 md:px-10 py-12 md:py-14 relative">
-        <ThemeToggle theme={theme} onChoose={chooseTheme} />
+        <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
           <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>

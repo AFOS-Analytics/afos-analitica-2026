@@ -91,6 +91,9 @@ const T = {
     signatureName: 'AFOS Analytics',
     signatureTitle: 'Global Political Risk Intelligence · GLOBAL POR DESIGN',
     homeAriaLabel: 'AFOS Analytics, página inicial',
+    themeAria: 'Tema da página',
+    lightAria: 'Modo claro',
+    blueAria: 'Modo Sapphire Blue',
     previewBanner: 'PREVIEW LOCAL · DRAFT · Não publicado',
     navPrev: '← Edição anterior',
     navNext: 'Próxima edição →',
@@ -119,6 +122,9 @@ const T = {
     signatureName: 'AFOS Analytics',
     signatureTitle: 'Global Political Risk Intelligence · GLOBAL BY DESIGN',
     homeAriaLabel: 'AFOS Analytics, homepage',
+    themeAria: 'Page theme',
+    lightAria: 'Light mode',
+    blueAria: 'Sapphire Blue mode',
     previewBanner: 'LOCAL PREVIEW · DRAFT · Not published',
     navPrev: '← Previous edition',
     navNext: 'Next edition →',
@@ -147,6 +153,9 @@ const T = {
     signatureName: 'AFOS Analytics',
     signatureTitle: 'Global Political Risk Intelligence · GLOBAL POR DISEÑO',
     homeAriaLabel: 'AFOS Analytics, página principal',
+    themeAria: 'Tema de la página',
+    lightAria: 'Modo claro',
+    blueAria: 'Modo Sapphire Blue',
     previewBanner: 'PREVIEW LOCAL · DRAFT · No publicado',
     navPrev: '← Edición anterior',
     navNext: 'Próxima edición →',
@@ -437,13 +446,13 @@ function AdditionalReading({ block, paywallLabel, isBlue }: { block: AdditionalR
   )
 }
 
-function ThemeToggle({ theme, onChoose }: { theme: Theme; onChoose: (t: Theme) => void }) {
+function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: Theme) => void; labels: { group: string; light: string; blue: string } }) {
   const isBlue = theme === 'blue'
   const baseStyle = 'w-6 h-6 rounded border-2 transition-all'
   return (
-    <div className={`absolute top-3 right-3 md:top-5 md:right-5 flex items-center gap-2 p-1.5 rounded-lg ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-white border border-gray-200'}`} role="radiogroup" aria-label="Tema da página">
-      <button type="button" role="radio" aria-checked={theme === 'light'} aria-label="Modo claro" onClick={() => onChoose('light')} className={`${baseStyle} bg-slate-50 ${theme === 'light' ? 'border-primary scale-110' : 'border-gray-300 hover:border-gray-400'}`} />
-      <button type="button" role="radio" aria-checked={theme === 'blue'} aria-label="Modo Sapphire Blue" onClick={() => onChoose('blue')} className={`${baseStyle} bg-[#0a3d8f] ${theme === 'blue' ? 'border-white scale-110' : 'border-blue-700 hover:border-blue-500'}`} />
+    <div className={`absolute top-3 right-3 md:top-5 md:right-5 flex items-center gap-2 p-1.5 rounded-lg ${isBlue ? 'bg-blue-900/40 border border-blue-400/30' : 'bg-white border border-gray-200'}`} role="radiogroup" aria-label={labels.group}>
+      <button type="button" role="radio" aria-checked={theme === 'light'} aria-label={labels.light} onClick={() => onChoose('light')} className={`${baseStyle} bg-slate-50 ${theme === 'light' ? 'border-primary scale-110' : 'border-gray-300 hover:border-gray-400'}`} />
+      <button type="button" role="radio" aria-checked={theme === 'blue'} aria-label={labels.blue} onClick={() => onChoose('blue')} className={`${baseStyle} bg-[#0a3d8f] ${theme === 'blue' ? 'border-white scale-110' : 'border-blue-700 hover:border-blue-500'}`} />
     </div>
   )
 }
@@ -500,7 +509,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
       )}
 
       <article className="max-w-[760px] mx-auto px-5 md:px-7 pt-12 pb-20 relative">
-        <ThemeToggle theme={theme} onChoose={chooseTheme} />
+        <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-7 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
           <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
