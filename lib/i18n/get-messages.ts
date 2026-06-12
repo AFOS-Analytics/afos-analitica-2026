@@ -16,7 +16,10 @@ import { defaultLocale } from './config';
 
 export type Messages = Record<string, Record<string, string | string[]>>;
 
-const NAMESPACES = ['common', 'home', 'about', 'seo'] as const;
+// `about` (about + metas, ~10KB) NÃO entra aqui: é carregado lazy só no dashboard
+// (LazyAboutMessages) pois só os modais Sobre/Metas usam. `global` fica global pois a
+// página /global standalone o consome no primeiro paint (evita flash de chaves).
+const NAMESPACES = ['common', 'home', 'seo', 'global'] as const;
 
 const cache = new Map<string, Messages>();
 

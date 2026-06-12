@@ -11,6 +11,7 @@ import { AfosTradeoffHeroCard } from '../../components/AfosTradeoffHeroCard';
 import { ModalAbout } from '../../components/ModalAbout';
 import { ModalMetas } from '../../components/ModalMetas';
 import { ModalGlobal } from '../../components/ModalGlobal';
+import { LazyAboutMessages } from '../../components/LazyAboutMessages';
 import { PolymarketSection } from '../../components/PolymarketSection';
 import { PollsSection } from '../../components/PollsSection';
 import { CandidatesSection } from '../../components/CandidatesSection';
@@ -73,8 +74,10 @@ function DashboardContent() {
           onShowGlobal={() => { setShowGlobal(true); fetchGlobal(); }}
         />
 
-        <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
-        <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
+        <LazyAboutMessages>
+          <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
+          <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
+        </LazyAboutMessages>
         <ModalGlobal
           show={showGlobal}
           onClose={() => setShowGlobal(false)}

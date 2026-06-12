@@ -1,0 +1,64 @@
+{
+  "global": {
+    "introDesc": "O módulo Global do AFOS Analytics transforma o calendário mundial de eleições em inteligência em tempo real.",
+    "introDesc2": "O mapa interativo permite visualizar, país por país:",
+    "introList": [
+      "eleições em andamento",
+      "eleições futuras",
+      "ciclos já concluídos"
+    ],
+    "introFooter": "Criando um termômetro global de risco político e oportunidade econômica.",
+    "dataTitle": "Camada de Dados Integrada",
+    "dataDesc": "Ao interagir com o mapa, você acessa dados consolidados que combinam:",
+    "dataList": [
+      "mercados preditivos (apostas reais)",
+      "calendário eleitoral oficial",
+      "análise de tendências políticas"
+    ],
+    "howTitle": "Como funciona",
+    "howDesc": "Cada país no mapa representa um evento eleitoral ativo ou futuro.",
+    "howDesc2": "As cores indicam o horizonte temporal das eleições:",
+    "howColorsList": [
+      "tons claros (interativos) → eleições no curto prazo (até 12 meses)",
+      "tons médios (interativos) → eleições no médio prazo (1 a 3 anos)",
+      "tons escuros (não interativos) → eleições previstas ainda sem data definida"
+    ],
+    "howFooter": "Interação indica disponibilidade de dados detalhados.",
+    "clickTitle": "Ao clicar em um país",
+    "clickDesc": "O usuário acessa informações organizadas como:",
+    "clickList": [
+      "probabilidade de cenários eleitorais",
+      "nível de interesse do mercado",
+      "eventos e eleições relacionados"
+    ],
+    "clickFooter": "Transformando o mapa em uma interface geopolítica interativa de decisão, não apenas visualização.",
+    "calendarTitle": "Calendário Global Dinâmico",
+    "calendarDesc": "O sistema acompanha eleições continuamente, em escala global.",
+    "calendarDesc2": "Todos os anos, dezenas de países realizam eleições nacionais, gerando:",
+    "calendarList": [
+      "impacto em câmbio",
+      "movimentos de mercado",
+      "reprecificação de risco geopolítico"
+    ],
+    "calendarFooter": "O resultado é um fluxo contínuo de eventos com impacto econômico real.",
+    "purposeTitle": "Finalidade Estratégica",
+    "purposeDesc": "O módulo Global não é uma infraestrutura de leitura sistêmica do ambiente político global.",
+    "purposeIntro": "Permite:",
+    "purposeList": [
+      "antecipar movimentos de mercado",
+      "identificar risco político por região",
+      "monitorar ciclos eleitorais em tempo real",
+      "tomar decisões baseadas em dados, não em narrativa"
+    ],
+    "execTitle": "Tradução Executiva",
+    "execLine1": "Política gera volatilidade.",
+    "execLine2": "Volatilidade gera reprecificação de ativos.",
+    "execDesc": "O Global organiza essa complexidade em uma interface que permite:",
+    "execList": [
+      "ver",
+      "entender",
+      "comparar"
+    ],
+    "loading": "Carregando mapa..."
+  }
+}

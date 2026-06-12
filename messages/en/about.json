@@ -76,7 +76,12 @@
     "globalIntro": "We started with practical validation, but the goal is bigger:",
     "globalQuote": "Track elections worldwide and create a new way to understand political risk on a global scale",
     "globalDesc": "It's not just one election. It's a system built for:",
-    "globalCountries": ["Brazil", "United States", "Europe", "Any country"],
+    "globalCountries": [
+      "Brazil",
+      "United States",
+      "Europe",
+      "Any country"
+    ],
     "globalFooter": "Where there's an election, there's a signal. Where there's a signal, AFOS-Analytics reads it.",
     "openSourceTitle": "Open Source",
     "openSourceDesc": "AFOS-Analytics is an open source project.",
@@ -100,7 +105,11 @@
     "essenceTitle": "Essence",
     "essenceText": "AFOS Analytics is not about opinion.",
     "essenceSubtext": "It's about understanding reality with more precision.",
-    "footerLabels": ["Free", "Automatically updated", "Mobile and desktop"]
+    "footerLabels": [
+      "Free",
+      "Automatically updated",
+      "Mobile and desktop"
+    ]
   },
   "metas": {
     "title": "Goals of AFOS Analytics",
@@ -235,38 +244,5 @@
     ],
     "positioningFooter": "is a system that grows faster and with more stability.",
     "tagline": "Democracy runs on information. Information runs on transparency. AFOS Analytics is programmable transparency."
-  },
-  "global": {
-    "introDesc": "The Global module of AFOS Analytics transforms the world election calendar into real-time intelligence.",
-    "introDesc2": "The interactive map allows you to visualize, country by country:",
-    "introList": ["ongoing elections", "upcoming elections", "completed cycles"],
-    "introFooter": "Creating a global thermometer of political risk and economic opportunity.",
-    "dataTitle": "Integrated Data Layer",
-    "dataDesc": "By interacting with the map, you access consolidated data combining:",
-    "dataList": ["prediction markets (real-money bets)", "official election calendar", "political trend analysis"],
-    "howTitle": "How it works",
-    "howDesc": "Each country on the map represents an active or upcoming election event.",
-    "howDesc2": "Colors indicate the time horizon of elections:",
-    "howColorsList": ["light tones (interactive) → short-term elections (up to 12 months)", "medium tones (interactive) → medium-term elections (1 to 3 years)", "dark tones (non-interactive) → scheduled elections, date not yet defined"],
-    "howFooter": "Interaction indicates availability of detailed data.",
-    "clickTitle": "Clicking on a country",
-    "clickDesc": "The user accesses organized information such as:",
-    "clickList": ["probability of election scenarios", "level of market interest", "related events and elections"],
-    "clickFooter": "Transforming the map into an interactive geopolitical decision interface, not just visualization.",
-    "calendarTitle": "Dynamic Global Calendar",
-    "calendarDesc": "The system tracks elections continuously, on a global scale.",
-    "calendarDesc2": "Every year, dozens of countries hold national elections, generating:",
-    "calendarList": ["currency impact", "market movements", "geopolitical risk repricing"],
-    "calendarFooter": "The result is a continuous flow of events with real economic impact.",
-    "purposeTitle": "Strategic Purpose",
-    "purposeDesc": "The Global module is an infrastructure for systemic reading of the global political environment.",
-    "purposeIntro": "It allows you to:",
-    "purposeList": ["anticipate market movements", "identify political risk by region", "monitor election cycles in real time", "make decisions based on data, not narrative"],
-    "execTitle": "Executive Translation",
-    "execLine1": "Politics generates volatility.",
-    "execLine2": "Volatility generates asset repricing.",
-    "execDesc": "Global organizes this complexity into an interface that allows you to:",
-    "execList": ["see", "understand", "compare"],
-    "loading": "Loading map..."
   }
 }
