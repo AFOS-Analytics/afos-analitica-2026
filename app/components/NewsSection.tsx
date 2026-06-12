@@ -18,11 +18,32 @@ function isSafeUrl(url: string | undefined): boolean {
 
 interface Props {
   news: NewsData | null;
+  loading?: boolean;
 }
 
-export function NewsSection({ news }: Props) {
+export function NewsSection({ news, loading }: Props) {
   const { t } = useTranslation();
-  if (!news || news.totalNews <= 0) return null;
+  if (!news || news.totalNews <= 0) {
+    if (!loading) return null;
+    // Skeleton enquanto o fetch client (Google News/Firecrawl, ~20s) está em voo.
+    return (
+      <section>
+        <SectionTitle icon="📰" rightSlot={<LogicLink anchor="live-news" />}>{t('sections.news')}</SectionTitle>
+        <div className="bg-light-bg border border-light-border rounded-xl p-4 sm:p-6 mb-4 animate-pulse" aria-hidden="true">
+          <div className="mb-4 h-3 w-1/3 rounded bg-gray-200" />
+          <div className="space-y-4">
+            {[0, 1, 2, 3].map(i => (
+              <div key={i}>
+                <div className="mb-2 h-4 w-1/4 rounded bg-gray-200" />
+                <div className="mb-1 h-3 w-full rounded bg-gray-100" />
+                <div className="h-3 w-5/6 rounded bg-gray-100" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section>

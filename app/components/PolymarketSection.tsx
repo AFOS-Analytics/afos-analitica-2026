@@ -8,17 +8,26 @@ import { useTranslation } from '../i18n/context';
 
 interface Props {
   poly: PolyData | null;
+  loading?: boolean;
 }
 
 const POLYMARKET_BASE = 'https://polymarket.com/event/';
 
-export function PolymarketSection({ poly }: Props) {
+export function PolymarketSection({ poly, loading }: Props) {
   const { t } = useTranslation();
   function renderMarkets(event: PolyEvent | null | undefined, title: string, topN?: number) {
     if (!event || !event.markets?.length) return (
       <Card className="mb-4">
         <h3 className="font-bold text-lg mb-2">{title}</h3>
-        <p className="text-gray-500 text-sm">{t('sections.dataUnavailable')}</p>
+        {loading ? (
+          <div className="space-y-2 animate-pulse" aria-hidden="true">
+            <div className="h-3 w-3/4 rounded bg-gray-200" />
+            <div className="h-3 w-1/2 rounded bg-gray-200" />
+            <div className="h-3 w-2/3 rounded bg-gray-200" />
+          </div>
+        ) : (
+          <p className="text-gray-500 text-sm">{t('sections.dataUnavailable')}</p>
+        )}
       </Card>
     );
 

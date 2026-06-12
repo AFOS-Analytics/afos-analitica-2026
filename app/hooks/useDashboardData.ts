@@ -15,7 +15,8 @@ interface DashboardData {
   news: NewsData | null;
   ac: AnalysisData | null;
   crit: CritData | null;
-  loading: boolean;
+  polyLoading: boolean;
+  newsLoading: boolean;
   error: string | null;
 }
 
@@ -28,7 +29,10 @@ interface DashboardData {
 export function useDashboardData({ initialPolls, initialAc, initialCrit }: InitialStatic): DashboardData {
   const [poly, setPoly] = useState<PolyData | null>(null);
   const [news, setNews] = useState<NewsData | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Loadings independentes: poly (~2s) e news (~20s, Firecrawl) resolvem em
+  // tempos bem diferentes, então cada seção mostra/oculta seu skeleton sozinha.
+  const [polyLoading, setPolyLoading] = useState(true);
+  const [newsLoading, setNewsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -42,25 +46,16 @@ export function useDashboardData({ initialPolls, initialAc, initialCrit }: Initi
         .catch(() => { clearTimeout(timer); return null; });
     };
 
-    const fetchData = async () => {
-      try {
-        const [p, n] = await Promise.all([
-          fetchWithTimeout('/api/polymarket'),
-          fetchWithTimeout('/api/news'),
-        ]);
-        setPoly(p);
-        setNews(n);
-      } catch (err) {
-        console.error('[Dashboard] Data fetch error:', err);
-        setError('Erro ao carregar dados');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
+    fetchWithTimeout('/api/polymarket')
+      .then(p => setPoly(p))
+      .catch(() => setError('Erro ao carregar dados'))
+      .finally(() => setPolyLoading(false));
+    fetchWithTimeout('/api/news')
+      .then(n => setNews(n))
+      .finally(() => setNewsLoading(false));
   }, []);
 
-  return { poly, polls: initialPolls, news, ac: initialAc, crit: initialCrit, loading, error };
+  return { poly, polls: initialPolls, news, ac: initialAc, crit: initialCrit, polyLoading, newsLoading, error };
 }
 
 export function useGlobalElections() {

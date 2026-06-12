@@ -35,7 +35,7 @@ interface DashboardClientProps {
 function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardClientProps) {
   const { t, locale } = useTranslation();
   // Estáticos (polls/ac/crit) vêm do SSR via props; só poly/news são fetch client.
-  const { poly, polls, news, ac, crit } = useDashboardData({ initialPolls, initialAc, initialCrit });
+  const { poly, polls, news, ac, crit, polyLoading, newsLoading } = useDashboardData({ initialPolls, initialAc, initialCrit });
   const { mapCountries, fetchGlobal } = useGlobalElections();
 
   const [showSobre, setShowSobre] = useState(false);
@@ -75,7 +75,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
         <AfosTradeoffHeroCard />
 
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
-          <SectionErrorBoundary name="Polymarket"><PolymarketSection poly={poly} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Polymarket"><PolymarketSection poly={poly} loading={polyLoading} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Candidatos"><CandidatesSection /></SectionErrorBoundary>
 
@@ -114,7 +114,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
             </div>
           </section>
 
-          <SectionErrorBoundary name="Notícias"><NewsSection news={news} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Notícias"><NewsSection news={news} loading={newsLoading} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Sentimento"><SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
           <SectionErrorBoundary name="INSS"><InssSection inss={inss} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Banco Master"><BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
