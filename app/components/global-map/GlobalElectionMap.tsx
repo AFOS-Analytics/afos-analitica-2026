@@ -234,7 +234,12 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
       setMapReady(true);
     };
 
-    renderMap();
+    renderMap().catch((e) => {
+      // async throw inside renderMap can't be caught by an error boundary;
+      // clear the loading skeleton so it doesn't hang forever on a render failure.
+      console.error('GlobalElectionMap render failed', e);
+      setMapReady(true);
+    });
 
     // Cleanup
     return () => {

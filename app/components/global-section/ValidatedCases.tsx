@@ -62,8 +62,8 @@ export function ValidatedCases({ locale }: { locale: Locale }) {
           const slug = seo?.slug[locale] || seo?.slug['en'] || '';
           const name = seo?.name[locale] || seo?.name['en'] || c.iso3;
           const cc = ISO3_TO_CC[c.iso3] || '';
-          const tag = TAGLINE[c.iso3]?.[locale] || c.election.matchup;
-          const badge = c.election.status === 'completed' ? l.completed : l.firstRound;
+          const tag = TAGLINE[c.iso3]?.[locale] || c.election?.matchup || '';
+          const badge = c.election?.status === 'completed' ? l.completed : l.firstRound;
           return (
             <a key={c.iso3} href={`/${locale}/country/${slug}`} className="block border border-light-border rounded-xl p-4 bg-light-bg hover:border-primary/40 hover:shadow-sm transition-all">
               <div className="flex items-center justify-between mb-2 gap-2">
@@ -76,7 +76,7 @@ export function ValidatedCases({ locale }: { locale: Locale }) {
               <p className="text-xs text-gray-600 leading-snug mb-3">{tag}</p>
               <div className="flex items-center justify-between text-[11px] gap-2">
                 <span className="text-primary font-semibold whitespace-nowrap">{l.analysis} →</span>
-                <span className="text-gray-400 text-right">{c.polls_count} {l.poll} · {c.market_candidates} {l.market}</span>
+                <span className="text-gray-400 text-right">{c.polls_count ?? 0} {l.poll} · {c.market_candidates ?? 0} {l.market}</span>
               </div>
             </a>
           );

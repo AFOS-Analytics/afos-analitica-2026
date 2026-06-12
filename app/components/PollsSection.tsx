@@ -143,7 +143,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         {(Array.isArray(poll.scenarios) ? poll.scenarios : []).map((scenario: Scenario) => {
           const results = Array.isArray(scenario?.results) ? scenario.results : [];
           if (results.length === 0) return null;
-          const maxP = Math.max(...results.map(r => r.percent));
+          const maxP = Math.max(...results.map(r => r.percent ?? 0), 1);
           return (
             <Card key={scenario.name}>
               <h4 className="font-bold text-dark mb-3">{scenario.name}</h4>

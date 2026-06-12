@@ -20,7 +20,7 @@ export const MAP_TOKENS = {
  * No data = dark default.
  */
 export function getCountryColor(probability: number, status: string): string {
-  if (status === 'upcoming' || probability === 0) return '#121f36';
+  if (status === 'upcoming' || !probability || Number.isNaN(probability)) return '#121f36';
   if (probability < 25) return '#132044';
   if (probability < 40) return '#1a2f5c';
   if (probability < 55) return '#1e3a7a';
@@ -34,7 +34,7 @@ export function getCountryColor(probability: number, status: string): string {
  * Higher volume = higher confidence = more opaque.
  */
 export function getCountryOpacity(volumeUsd: number): number {
-  if (volumeUsd === 0) return 0.4;
+  if (!volumeUsd || Number.isNaN(volumeUsd)) return 0.4;
   if (volumeUsd < 100_000) return 0.6;
   if (volumeUsd < 500_000) return 0.75;
   if (volumeUsd < 1_000_000) return 0.85;
@@ -45,6 +45,7 @@ export function getCountryOpacity(volumeUsd: number): number {
  * Format volume for display: $1.2M, $500K, etc.
  */
 export function formatVolume(usd: number): string {
+  if (!usd || Number.isNaN(usd) || usd <= 0) return '—';
   if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(2)}B`;
   if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(1)}M`;
   if (usd >= 1_000) return `$${(usd / 1_000).toFixed(0)}K`;

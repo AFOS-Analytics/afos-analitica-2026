@@ -43,7 +43,7 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
   const type = election.type[loc] || election.type['en']
   const cc = ISO3_TO_CC[country.iso3] || country.flag
   const l = L[loc] || L['en']
-  const snap = div?.market_snapshot && div.market_snapshot.candidates.length ? div.market_snapshot : null
+  const snap = div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const textMain = isBlue ? 'text-white' : 'text-dark'
@@ -79,17 +79,17 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
           <section className={`${mktCard} border rounded-xl p-6 mb-8`}>
             <div className="flex items-baseline justify-between gap-3 mb-4">
               <h2 className={`text-lg font-bold ${heading}`}>🏆 {l.whoWins}</h2>
-              <span className={`text-sm font-semibold ${textMuted}`}>{l.volume}: ${(snap.total_volume_usd / 1e6).toFixed(1)}M</span>
+              <span className={`text-sm font-semibold ${textMuted}`}>{l.volume}: ${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M</span>
             </div>
             <div className="space-y-2.5">
               {snap.candidates.slice(0, 8).map((c, i) => (
                 <div key={c.candidate}>
                   <div className="flex justify-between text-sm mb-1">
                     <span className={`font-medium ${textMain}`}>{c.candidate}</span>
-                    <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{c.market_pct}%</span>
+                    <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{c.market_pct ?? 0}%</span>
                   </div>
                   <div className={`w-full ${track} rounded-full h-2.5`}>
-                    <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.min((c.market_pct / max) * 100, 100)}%`, backgroundColor: i === 0 ? '#0F52BA' : (isBlue ? '#3b6fd4' : '#94a3b8') }} />
+                    <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(((c.market_pct || 0) / max) * 100, 100)}%`, backgroundColor: i === 0 ? '#0F52BA' : (isBlue ? '#3b6fd4' : '#94a3b8') }} />
                   </div>
                 </div>
               ))}

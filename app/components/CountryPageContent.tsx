@@ -113,7 +113,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           <section className={`${divCard} border rounded-xl p-6 mb-8`}>
             <h2 className={`text-xl font-bold ${heading} mb-0.5`}>{ds.title}</h2>
             <p className={`text-xs ${textMuted} uppercase tracking-wide mb-4`}>{ds.subtitle}</p>
-            <p className={`text-sm ${textMain} leading-relaxed mb-5`}>{div.headline[loc] || div.headline['en']}</p>
+            <p className={`text-sm ${textMain} leading-relaxed mb-5`}>{div.headline?.[loc] || div.headline?.['en']}</p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -125,7 +125,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                   </tr>
                 </thead>
                 <tbody>
-                  {div.rows.map((r) => (
+                  {(div.rows || []).map((r) => (
                     <tr key={r.candidate} className={`border-b ${tdRow} align-top`}>
                       <td className={`py-2 font-medium ${textMain}`}>
                         {r.candidate}
@@ -142,7 +142,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
               </table>
             </div>
             <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-4`}>
-              {ds.source(div.latest_poll.pollster, div.latest_poll.date, div.polls_count)}{' '}
+              {ds.source(div.latest_poll?.pollster || '', div.latest_poll?.date || '', div.polls_count ?? 0)}{' '}
               <a href={div.hf} target="_blank" rel="noopener noreferrer" className={link}>🤗 {ds.dataset} ↗</a>
             </p>
           </section>
