@@ -60,7 +60,7 @@ export async function GET(request: Request) {
           probability: p.price,
           volume: p.volume,
           candidate: p.outcome?.outcomeName,
-          slug: p.market.slug,
+          slug: p.market?.slug,
         })),
       },
       {
