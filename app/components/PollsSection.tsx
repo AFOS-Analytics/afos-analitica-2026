@@ -17,9 +17,16 @@ interface PollsSectionProps {
 // (objeto-onde-se-espera-array — incidentes 19-21/Mai). O validator (camada 2) pega na origem.
 const asArray = (x: unknown): any[] => (Array.isArray(x) ? x : []);
 
+const PL_L: Record<string, { polls: string; survey: string; trend: string; secondRound: string; sources: string; respondents: string; defaultSources: string; rel: [string, string, string, string, string]; natIntro: string; natState: string; natHist: string; natHistApi: string }> = {
+  'pt-BR': { polls: 'Pesquisas', survey: 'Pesquisa', trend: 'Tendência', secondRound: '2º Turno', sources: 'Fontes', respondents: 'entrevistados', defaultSources: 'Polymarket (ao vivo) + pesquisas Abr-Mai/2026', rel: ['Referência nacional', 'Alta confiabilidade', 'Confiável', 'Usar com cautela', 'Baixa confiabilidade'], natIntro: 'Mostramos pesquisas nacionais (1º e 2º turnos) mais recentes. Estaduais e análise integrada no', natState: 'AFOS Daily', natHist: '. Histórico completo via', natHistApi: 'API' },
+  en: { polls: 'Polls', survey: 'Poll', trend: 'Trend', secondRound: 'Runoff', sources: 'Sources', respondents: 'respondents', defaultSources: 'Polymarket (live) + polls Apr-May/2026', rel: ['National reference', 'High reliability', 'Reliable', 'Use with caution', 'Low reliability'], natIntro: 'We show the most recent national polls (1st and 2nd round). State-level polls and integrated analysis in the', natState: 'AFOS Daily', natHist: '. Full history via', natHistApi: 'API' },
+  es: { polls: 'Encuestas', survey: 'Encuesta', trend: 'Tendencia', secondRound: 'Balotaje', sources: 'Fuentes', respondents: 'encuestados', defaultSources: 'Polymarket (en vivo) + encuestas Abr-May/2026', rel: ['Referencia nacional', 'Alta fiabilidad', 'Fiable', 'Usar con cautela', 'Baja fiabilidad'], natIntro: 'Mostramos las encuestas nacionales (1ª y 2ª vuelta) más recientes. Estaduales y análisis integrado en el', natState: 'AFOS Daily', natHist: '. Historial completo vía', natHistApi: 'API' },
+}
+
 export function PollsSection({ polls, crit }: PollsSectionProps) {
   const { t } = useTranslation();
   const locale = useLocale();
+  const pl = PL_L[locale] || PL_L['en'];
   if (!polls) return null;
 
   return (
@@ -34,7 +41,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           <div className="hidden sm:block overflow-x-auto">
             <div className="grid grid-cols-5 gap-1 text-xs">
               <div className="font-bold text-gray-500 py-2">{t('sections.candidate')}</div>
-              <div className="font-bold text-gray-500 py-2 text-center">Pesquisas</div>
+              <div className="font-bold text-gray-500 py-2 text-center">{pl.polls}</div>
               <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
               <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoll')}</div>
               <div className="font-bold text-gray-500 py-2 text-center">{t('sections.tendPoly')}</div>
@@ -63,7 +70,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               </div>
             ))}
           </div>
-          <p className="text-[10px] text-gray-400 mt-2">{polls?.polymarketComparison?.sources ? `Fontes: ${polls.polymarketComparison.sources}` : 'Fontes: Polymarket (ao vivo) + pesquisas Abr-Mai/2026'}</p>
+          <p className="text-[10px] text-gray-400 mt-2">{polls?.polymarketComparison?.sources ? `${pl.sources}: ${polls.polymarketComparison.sources}` : `${pl.sources}: ${pl.defaultSources}`}</p>
         </Card>
       )}
 
@@ -82,11 +89,11 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           </div>
           <div className="text-[10px] text-gray-400 mt-3 space-y-1">
             <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <span><span className="text-primary">★★★★★</span> Referência nacional</span>
-              <span><span className="text-primary">★★★★</span><span className="text-gray-300">★</span> Alta confiabilidade</span>
-              <span><span className="text-primary">★★★</span><span className="text-gray-300">★★</span> Confiável</span>
-              <span><span className="text-primary">★★</span><span className="text-gray-300">★★★</span> Usar com cautela</span>
-              <span><span className="text-primary">★</span><span className="text-gray-300">★★★★</span> Baixa confiabilidade</span>
+              <span><span className="text-primary">★★★★★</span> {pl.rel[0]}</span>
+              <span><span className="text-primary">★★★★</span><span className="text-gray-300">★</span> {pl.rel[1]}</span>
+              <span><span className="text-primary">★★★</span><span className="text-gray-300">★★</span> {pl.rel[2]}</span>
+              <span><span className="text-primary">★★</span><span className="text-gray-300">★★★</span> {pl.rel[3]}</span>
+              <span><span className="text-primary">★</span><span className="text-gray-300">★★★★</span> {pl.rel[4]}</span>
             </div>
             <div>{t('sections.updated')} {polls.lastUpdate}</div>
             <Link
@@ -119,14 +126,14 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         return nationalPolls.length > 0 && (
           <>
             <p className="text-xs text-gray-500 italic mb-3 px-1">
-              📍 Mostramos pesquisas nacionais (1º e 2º turnos) mais recentes. Estaduais e análise integrada no <a href={`/${locale}/daily`} className="text-primary hover:underline">AFOS Daily</a>. Histórico completo via <a href="/api/polls/tse?days=30" className="text-primary hover:underline">API</a>.
+              📍 {pl.natIntro} <a href={`/${locale}/daily`} className="text-primary hover:underline">{pl.natState}</a>{pl.natHist} <a href="/api/polls/tse?days=30" className="text-primary hover:underline">{pl.natHistApi}</a>.
             </p>
             {nationalPolls.map((poll: Poll, pi: number) => (
       <div key={pi} className="mb-8">
       <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600 bg-light-bg rounded-lg p-3">
         <span className="font-bold text-primary text-base">{poll.institute}</span>
         <span>📅 {poll.date}</span>
-        <span>👥 {poll.sample?.toLocaleString('pt-BR')} entrevistados</span>
+        <span>👥 {poll.sample?.toLocaleString(locale === 'es' ? 'es' : locale === 'en' ? 'en' : 'pt-BR')} {pl.respondents}</span>
         <span>± {poll.margin}pp</span>
         <span><Stars count={poll.reliability} /></span>
         <span className="text-xs text-gray-400">{poll.method}</span>
@@ -263,9 +270,9 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         <div className="hidden sm:block overflow-x-auto">
           <div className="grid grid-cols-5 gap-2 text-xs">
             <div className="font-bold text-gray-500 py-2">{t('sections.candidate')}</div>
-            <div className="font-bold text-gray-500 py-2 text-center">Pesquisa</div>
+            <div className="font-bold text-gray-500 py-2 text-center">{pl.survey}</div>
             <div className="font-bold text-gray-500 py-2 text-center">Polymarket</div>
-            <div className="font-bold text-gray-500 py-2 text-center">Tendência</div>
+            <div className="font-bold text-gray-500 py-2 text-center">{pl.trend}</div>
             <div className="font-bold text-gray-500 py-2 text-center">{t('sections.secondRoundVsLula')}</div>
             {asArray(crit.quadroComparativo).map((r, i) => (
               <div key={i} className="contents">
@@ -283,10 +290,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
               <div className="font-semibold text-sm mb-1">{r.n}</div>
               <div className="grid grid-cols-2 gap-1 text-xs">
-                <span className="text-gray-500">Pesquisa:</span><span className="font-medium">{r.p}</span>
+                <span className="text-gray-500">{pl.survey}:</span><span className="font-medium">{r.p}</span>
                 <span className="text-gray-500">Polymarket:</span><span className="font-bold text-primary">{r.m}</span>
-                <span className="text-gray-500">Tendência:</span><span>{r.t}</span>
-                <span className="text-gray-500">2º Turno:</span><span>{r.s}</span>
+                <span className="text-gray-500">{pl.trend}:</span><span>{r.t}</span>
+                <span className="text-gray-500">{pl.secondRound}:</span><span>{r.s}</span>
               </div>
             </div>
           ))}
