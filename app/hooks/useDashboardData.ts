@@ -3,6 +3,12 @@
 import { useEffect, useState } from 'react';
 import type { PolyData, PollData, NewsData, AnalysisData, CritData } from '../types';
 
+interface InitialStatic {
+  initialPolls: PollData | null;
+  initialAc: AnalysisData | null;
+  initialCrit: CritData | null;
+}
+
 interface DashboardData {
   poly: PolyData | null;
   polls: PollData | null;
@@ -13,12 +19,15 @@ interface DashboardData {
   error: string | null;
 }
 
-export function useDashboardData(): DashboardData {
+/**
+ * Dados estáticos (pesquisas + cards) vêm prontos do SERVIDOR (props iniciais,
+ * lidos via lib/dashboard/static-data) → renderizam no 1º paint. Só polymarket
+ * (odds ao vivo) e news (Google News/Firecrawl, pesado) são buscados no client.
+ * `loading` reflete só esses dois — não bloqueia mais a página inteira.
+ */
+export function useDashboardData({ initialPolls, initialAc, initialCrit }: InitialStatic): DashboardData {
   const [poly, setPoly] = useState<PolyData | null>(null);
-  const [polls, setPolls] = useState<PollData | null>(null);
   const [news, setNews] = useState<NewsData | null>(null);
-  const [ac, setAc] = useState<AnalysisData | null>(null);
-  const [crit, setCrit] = useState<CritData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -27,8 +36,7 @@ export function useDashboardData(): DashboardData {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), ms);
       // cache: 'no-store' bypassa Vercel edge cache + browser cache; cada
-      // load do dashboard busca dados frescos. APIs já têm Cache-Control
-      // no-store no header, mas alguns POPs Vercel ignoram — esse flag força.
+      // load busca odds/notícias frescas. (Estáticos já vêm do SSR.)
       return fetch(url, { signal: controller.signal, cache: 'no-store' })
         .then(r => { clearTimeout(timer); return r.ok ? r.json() : null; })
         .catch(() => { clearTimeout(timer); return null; });
@@ -36,18 +44,12 @@ export function useDashboardData(): DashboardData {
 
     const fetchData = async () => {
       try {
-        const [p, pl, n, a, cr] = await Promise.all([
+        const [p, n] = await Promise.all([
           fetchWithTimeout('/api/polymarket'),
-          fetchWithTimeout('/api/polls'),
           fetchWithTimeout('/api/news'),
-          fetchWithTimeout('/api/analysis-cards'),
-          fetchWithTimeout('/api/analysis-criteriosa'),
         ]);
         setPoly(p);
-        setPolls(pl);
         setNews(n);
-        setAc(a);
-        setCrit(cr);
       } catch (err) {
         console.error('[Dashboard] Data fetch error:', err);
         setError('Erro ao carregar dados');
@@ -58,7 +60,7 @@ export function useDashboardData(): DashboardData {
     fetchData();
   }, []);
 
-  return { poly, polls, news, ac, crit, loading, error };
+  return { poly, polls: initialPolls, news, ac: initialAc, crit: initialCrit, loading, error };
 }
 
 export function useGlobalElections() {
