@@ -27,7 +27,7 @@ import { SectionErrorBoundary } from '../../components/SectionErrorBoundary';
 function DashboardContent() {
   const { t, locale } = useTranslation();
   const { poly, polls, news, ac, crit, loading, error } = useDashboardData();
-  const { globalData, mapCountries, fetchGlobal } = useGlobalElections();
+  const { mapCountries, fetchGlobal } = useGlobalElections();
 
   const [showSobre, setShowSobre] = useState(false);
   const [showMetas, setShowMetas] = useState(false);
@@ -78,7 +78,6 @@ function DashboardContent() {
         <ModalGlobal
           show={showGlobal}
           onClose={() => setShowGlobal(false)}
-          globalData={globalData}
           mapCountries={mapCountries}
           expandedElection={expandedElection}
           setExpandedElection={setExpandedElection}

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { PolyData, PollData, NewsData, AnalysisData, CritData, GlobalData } from '../types';
+import type { PolyData, PollData, NewsData, AnalysisData, CritData } from '../types';
 
 interface DashboardData {
   poly: PolyData | null;
@@ -85,5 +85,5 @@ export function useGlobalElections() {
     if (!mapCountries) doFetch();
   };
 
-  return { globalData: null as GlobalData | null, mapCountries, loading, fetchGlobal };
+  return { mapCountries, loading, fetchGlobal };
 }

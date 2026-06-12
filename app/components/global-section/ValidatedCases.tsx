@@ -7,12 +7,9 @@
  * Separa explicitamente o que é "analisado a fundo" do "só odds ao vivo" (abaixo, no GlobalContent).
  */
 import { COUNTRY_DIVERGENCE } from '../../../lib/country-data';
-import { COUNTRIES_SEO } from '../../../lib/seo/countries';
+import { COUNTRIES_SEO, ISO3_TO_CC } from '../../../lib/seo/countries';
 
 type Locale = 'pt-BR' | 'en' | 'es';
-
-// emoji de bandeira não renderiza no Windows (vira "PE"/"CO") → usar SVG, como o resto da plataforma
-const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us' };
 
 const LABELS: Record<Locale, { title: string; subtitle: string; analysis: string; poll: string; market: string; completed: string; firstRound: string }> = {
   'pt-BR': { title: 'Casos validados', subtitle: 'O método contra o resultado real — eleições já realizadas, com divergência mercado × pesquisa cruzada e dataset aberto.', analysis: 'Ver análise de divergência', poll: 'pesquisas', market: 'candidatos no mercado', completed: 'Encerrada', firstRound: '1º turno · resultado conhecido' },

@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
 import type { CountrySEO, ElectionSEO } from '../../lib/seo/countries'
+import { ISO3_TO_CC } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
-const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us' }
 
 function ThemeToggle({ theme, onChoose, isBlue }: { theme: Theme; onChoose: (t: Theme) => void; isBlue: boolean }) {
   const base = 'w-5 h-5 rounded border-2 transition-all'

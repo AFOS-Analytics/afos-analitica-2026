@@ -1,12 +1,9 @@
 import type { Metadata } from 'next'
 import { locales, isValidLocale, type Locale } from '../i18n/config'
-import { getRegionBySlug, getCountriesForRegion, type RegionSEO } from './countries'
+import { getRegionBySlug, getCountriesForRegion, ISO3_TO_CC, type RegionSEO } from './countries'
 import { breadcrumbSchema } from './schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
-
-// emoji de bandeira não renderiza no Windows (vira "BR"/"CO") → usar SVG, como o resto da plataforma
-const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us', HUN: 'hu', RUS: 'ru' }
 
 const STATUS_STYLE: Record<string, string> = { active: 'bg-green-100 text-green-700', completed: 'bg-gray-200 text-gray-600', upcoming: 'bg-blue-100 text-blue-700' }
 

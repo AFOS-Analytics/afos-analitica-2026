@@ -5,6 +5,11 @@
  * Usado por: country/[country], election/[slug], sitemap.ts
  */
 
+// ISO 3166-1 alpha-3 → código de bandeira de 2 letras (para /flags/{cc}.svg).
+// Emoji de bandeira não renderiza no Windows (vira "PE"/"CO"), então a plataforma usa SVG.
+// Fonte única reusada por ValidatedCases, CountryPageContent, ElectionPageContent e RegionPage.
+export const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us', HUN: 'hu', RUS: 'ru' }
+
 export interface CountrySEO {
   slug: Record<string, string> // { 'pt-BR': 'brasil', en: 'brazil', es: 'brasil' }
   name: Record<string, string>

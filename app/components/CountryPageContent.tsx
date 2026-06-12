@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
 import type { CountrySEO } from '../../lib/seo/countries'
+import { ISO3_TO_CC } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
-const ISO3_TO_CC: Record<string, string> = { BRA: 'br', FRA: 'fr', DEU: 'de', GBR: 'gb', CAN: 'ca', AUS: 'au', KOR: 'kr', COL: 'co', PER: 'pe', CHL: 'cl', IND: 'in', MEX: 'mx', NGA: 'ng', PHL: 'ph', USA: 'us' }
 
 const LABELS: Record<string, Record<string, string>> = {
   'pt-BR': { region: 'Região', type: 'Tipo', date: 'Data', status: 'Status', elections: 'Eleições monitoradas', backToDashboard: '← Dashboard', overview: 'Visão geral', risk: 'Risco Político', market: 'Relevância para o Mercado', why: 'Por que acompanhar', politicalRisk: 'Risco Político', forInvestors: 'Para Investidores' },

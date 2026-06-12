@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from '../i18n/context';
-import type { GlobalData } from '../types';
 import type { CountryMarketSummary } from '../types/global-map';
 import { MOCK_ELECTIONS } from '../lib/mock-elections';
 import { GlobalContent } from './global-section/GlobalContent';
@@ -10,7 +9,6 @@ import { GlobalContent } from './global-section/GlobalContent';
 interface ModalGlobalProps {
   show: boolean;
   onClose: () => void;
-  globalData: GlobalData | null;
   mapCountries?: Record<string, unknown>[] | null;
   expandedElection: number | null;
   setExpandedElection: (idx: number | null) => void;
