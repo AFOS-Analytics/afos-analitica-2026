@@ -28,6 +28,7 @@ export function HowItWorksPtBR() {
             <TocLink href="#email-popup">└ Popup de e-mail</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Síntese do Dia</TocLink>
             <TocLink href="#afos-tradeoff-card">└ AFOS Tradeoff, Semanal</TocLink>
+            <TocLink href="#afos-global-card">└ AFOS Global, o Método no Mundo</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Cards Polymarket</TocLink>
             <TocLink href="#pesquisas">4. Pesquisas Eleitorais</TocLink>
             <TocLink href="#criterios-institutos">└ Avaliação dos institutos</TocLink>
@@ -212,6 +213,7 @@ export function HowItWorksPtBR() {
         <p>Clicar em <strong>Global</strong> abre o mapa-múndi interativo das eleições nacionais previstas para 2026 e anos seguintes. Cada país com eleição registrada aparece em destaque, com volume de mercado em Polymarket (quando disponível) e candidato favorito segundo as odds.</p>
         <p>Atualmente, 15 países são monitorados, com foco em América Latina (Brasil, México, Colômbia, Chile, Peru) e países-chave globais (EUA, França, Reino Unido). Para cada um, o card exibe data da eleição, principais candidatos, e link para ficha detalhada.</p>
         <p>É a porta de entrada para a expansão internacional da plataforma. Se você está acompanhando uma eleição específica, o mapa global é o atalho mais rápido para mudar de contexto sem precisar voltar à home.</p>
+        <p>Esse modal é só a camada <strong>ao vivo</strong>. A página <strong>AFOS Global</strong> também reúne os <strong>casos validados</strong> (eleições já apuradas, com mercado × pesquisa cruzados contra o resultado real), detalhados no bloco <strong>AFOS Global, o Método no Mundo</strong> deste guia.</p>
       </Card>
 
       <Card title="Popup de e-mail (aparece durante a navegação)" id="email-popup">
@@ -249,6 +251,33 @@ export function HowItWorksPtBR() {
       </Card>
 
       <p className={S.p}><strong>Quando vale ler:</strong> quando você quer a <em>leitura da semana</em> em vez da foto do dia, onde o mercado lidera ou atrasa em relação à pesquisa, o que mudou de fato e o que é ruído. O Daily é o pulso diário; o Tradeoff é o raio-X semanal.</p>
+
+      <h2 id="afos-global-card" className={S.h2}>AFOS Global, o Método no Mundo</h2>
+      <p className={S.p}>Se o Daily e o Tradeoff leem o Brasil de hoje, o <strong>AFOS Global</strong> mostra que a mesma leitura vale em qualquer eleição. A página <strong>Global</strong> tem duas camadas. No topo, os <strong>Casos validados</strong>: eleições <strong>já realizadas</strong>, em que cruzamos o mercado de previsão com as pesquisas e conferimos contra o que <strong>de fato aconteceu nas urnas</strong>. Abaixo, o <strong>Ao vivo</strong>: o mapa de odds das eleições em andamento, só com a precificação de mercado, sem a camada de pesquisa e divergência.</p>
+      <p className={S.p}><strong>Por que os casos validados importam:</strong> eles são a prova do método. Numa eleição já apurada dá para ver, em retrospecto, quando o mercado enxergou o que a pesquisa não viu e quando o mercado errou. Hoje são seis: Brasil, Peru, Colômbia, Chile, Alemanha e Canadá, da América à Europa.</p>
+      <Callout title="O conceito que destrava tudo: probabilidade não é voto">
+        <p>O número do <strong>mercado</strong> é a <strong>probabilidade de vencer a eleição</strong>. O número da <strong>pesquisa</strong> é a <strong>fatia de intenção de voto</strong>, em geral do 1º turno. São eixos diferentes, e é exatamente aí que mora o sinal, não num erro de medição.</p>
+        <p><strong>Chile 2025:</strong> as pesquisas davam Jeannette Jara à frente no 1º turno (cerca de 26%), enquanto o mercado precificava José Antonio Kast em torno de 66% de chance de vencer. A pesquisa media o voto de 1º turno; o mercado já lia o desfecho, antecipando a união da direita no 2º turno. Kast venceu o segundo turno com 58%. A divergência de +45pp na linha dele não foi erro de pesquisa, foi o sinal.</p>
+      </Callout>
+      <p className={S.p}>Cada caso validado abre em duas telas complementares:</p>
+      <ul className={S.ul}>
+        <li><strong>Página do país</strong> traz a <strong>Análise de divergência</strong>: uma tabela candidato a candidato com três colunas, <strong>Pesquisa</strong> (fatia de voto), <strong>Mercado</strong> (probabilidade de vencer) e <strong>Divergência</strong> (a diferença em pontos percentuais). Quando um número merece ressalva, a própria tabela anota em vez de esconder. No Peru, por exemplo, o 31,6% de Carlos Álvarez foi um pico de um dia num mercado de baixa atividade, e está marcado como tal.</li>
+        <li><strong>Página da eleição</strong> mostra o card <strong>"Quem vence?"</strong>: a foto do mercado no dia da eleição (pré-resultado, com o mercado já encerrado) e o <strong>volume acumulado</strong> em dólares, a mesma leitura de "dinheiro real" do dashboard brasileiro.</li>
+      </ul>
+      <p className={S.p}>Na prática, a tabela de divergência do Chile fica assim:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Pesquisa</th><th className={S.th}>Mercado</th><th className={S.th}>Divergência</th></tr></thead>
+          <tbody>
+            <tr className={S.trRow}><td className={S.td}><strong>José Antonio Kast (venceu)</strong></td><td className={S.td}>21%</td><td className={S.td}>66%</td><td className={S.td}>+45pp</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Jeannette Jara</td><td className={S.td}>26%</td><td className={S.td}>16.2%</td><td className={S.td}>-9.8pp</td></tr>
+            <tr><td className={S.td}>Evelyn Matthei</td><td className={S.td}>14%</td><td className={S.td}>5.8%</td><td className={S.td}>-8.2pp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p className={S.p}>O vencedor é justamente o nome que o mercado mais sobreprecificava em relação à pesquisa. Esse é o padrão que o AFOS persegue: a divergência como sinal, não como ruído.</p>
+      <p className={S.p}><strong>Dados abertos:</strong> cada caso validado tem um <strong>dataset público no Hugging Face</strong>, sob licença CC BY 4.0, com as pesquisas, as odds e a divergência calculada. Qualquer pessoa pode auditar ou reproduzir a análise.</p>
+      <p className={S.p}><strong>Por que cobrir o mundo:</strong> onde houver eleição, existe sinal. O mesmo método aplicado da América à Europa mostra que a leitura não é um acaso brasileiro, é estrutural.</p>
 
       <h2 id="cards-polymarket" className={S.h2}>3. Os 6 Cards Polymarket, Painel instantâneo</h2>
       <p className={S.p}>Logo após o header, aparecem <strong>seis cards lado a lado</strong> resumindo os mercados mais importantes do Polymarket no momento. Cada card mostra um <strong>percentual</strong> (probabilidade precificada pelo mercado) com a <strong>variação em relação ao dia anterior</strong> (↑↓pp).</p>
@@ -433,10 +462,9 @@ export function HowItWorksPtBR() {
         <p>É um "quem é quem" rápido. Se alguém pergunta "quem é o Candidato C?", você abre, lê 20 segundos e responde com dados.</p>
       </Callout>
 
-      <h2 id="paises" className={S.h2}>8. Países, Botões Clicáveis</h2>
-      <p className={S.p}>A plataforma cobre <strong>14+ países</strong> com eleições monitoradas. Cada país aparece como um botão clicável. Clicando em um, você vê o mesmo tipo de cruzamento (Polymarket + pesquisas locais + notícias) aplicado àquela eleição.</p>
-      <p className={S.p}><strong>Países em destaque atualmente:</strong> Brasil, EUA, França, Alemanha, Reino Unido, Canadá, Austrália, Coreia do Sul, Colômbia, Chile, entre outros.</p>
-      <p className={S.p}><strong>Por que isso importa:</strong> decisões políticas globais se influenciam. O resultado dos EUA 2024 afeta a dinâmica do Brasil 2026. Ver o mapa completo te dá contexto.</p>
+      <h2 id="paises" className={S.h2}>8. Países (botões do dashboard)</h2>
+      <p className={S.p}>No dashboard há uma fileira de <strong>botões de país</strong>, atalhos diretos para a ficha de cada eleição monitorada (15 países: Brasil, EUA, França, Alemanha, Reino Unido, Canadá, Colômbia, Chile, Peru, entre outros). É o caminho rápido para sair do Brasil e abrir outro país sem voltar à home.</p>
+      <p className={S.p}><strong>A camada internacional completa</strong>, os casos validados, as páginas de país e de eleição, e os datasets abertos, está explicada no bloco <strong>AFOS Global</strong> (logo após o Daily e o Tradeoff). Aqui no dashboard, os botões são apenas o atalho de navegação.</p>
 
       <h2 id="live-news" className={S.h2}>9. Live Eleições News 120'</h2>
       <p className={S.p}>Um feed ao vivo que mostra as <strong>notícias publicadas nos últimos 120 minutos</strong> relacionadas às eleições monitoradas. Fontes incluem Google News, grandes portais brasileiros e agências internacionais.</p>

@@ -26,6 +26,7 @@ export function HowItWorksEn() {
             <TocLink href="#email-popup">└ Email popup</TocLink>
             <TocLink href="#afos-daily-card">2. AFOS Daily, Daily Synthesis</TocLink>
             <TocLink href="#afos-tradeoff-card">└ AFOS Tradeoff, Weekly</TocLink>
+            <TocLink href="#afos-global-card">└ AFOS Global, the Method Worldwide</TocLink>
             <TocLink href="#cards-polymarket">3. 6 Polymarket Cards</TocLink>
             <TocLink href="#pesquisas">4. Electoral Polls</TocLink>
             <TocLink href="#criterios-institutos">└ Institute evaluation</TocLink>
@@ -210,6 +211,7 @@ export function HowItWorksEn() {
         <p>Clicking <strong>Global</strong> opens an interactive world map of national elections planned for 2026 and following years. Each country with a registered election appears highlighted, with Polymarket market volume (when available) and favorite candidate by odds.</p>
         <p>Currently, 15 countries are monitored, with focus on Latin America (Brazil, Mexico, Colombia, Chile, Peru) and key global countries (US, France, UK). For each, the card displays election date, main candidates, and link to a detailed profile.</p>
         <p>It's the entry point for the platform's international expansion. If you're following a specific election, the global map is the fastest shortcut to switch context without going back to the home page.</p>
+        <p>This modal is just the <strong>live</strong> layer. The <strong>AFOS Global</strong> page also gathers the <strong>validated cases</strong> (elections already counted, with market × poll cross-checked against the real result), detailed in the <strong>AFOS Global, the Method Worldwide</strong> block of this guide.</p>
       </Card>
 
       <Card title="Email popup (appears during navigation)" id="email-popup">
@@ -247,6 +249,33 @@ export function HowItWorksEn() {
       </Card>
 
       <p className={S.p}><strong>When to read:</strong> when you want the <em>week's read</em> rather than the day's snapshot, where the market leads or lags the polls, what actually changed, and what is noise. The Daily is the daily pulse; the Tradeoff is the weekly X-ray.</p>
+
+      <h2 id="afos-global-card" className={S.h2}>AFOS Global, the Method Worldwide</h2>
+      <p className={S.p}>If the Daily and the Tradeoff read Brazil today, <strong>AFOS Global</strong> shows that the same reading holds in any election. The <strong>Global</strong> page has two layers. At the top, the <strong>Validated cases</strong>: elections <strong>already held</strong>, where we cross the prediction market with the polls and check the result against <strong>what actually happened at the ballot box</strong>. Below, the <strong>Live</strong> layer: the odds map of ongoing elections, with market pricing only, without the polls and divergence layer.</p>
+      <p className={S.p}><strong>Why validated cases matter:</strong> they are the proof of the method. In an election that has already been counted, you can see, in hindsight, when the market saw what the poll did not, and when the market got it wrong. There are six today: Brazil, Peru, Colombia, Chile, Germany and Canada, from the Americas to Europe.</p>
+      <Callout title="The concept that unlocks everything: probability is not vote share">
+        <p>The <strong>market</strong> number is the <strong>probability of winning the election</strong>. The <strong>poll</strong> number is the <strong>share of voting intention</strong>, usually in the first round. They are different axes, and that is exactly where the signal lives, not in a measurement error.</p>
+        <p><strong>Chile 2025:</strong> polls had Jeannette Jara ahead in the first round (around 26%), while the market priced José Antonio Kast at about 66% to win. The poll measured first-round vote; the market was already reading the outcome, anticipating the right's consolidation in the runoff. Kast won the runoff with 58%. The +45pp divergence on his line was not a polling error, it was the signal.</p>
+      </Callout>
+      <p className={S.p}>Each validated case opens in two complementary screens:</p>
+      <ul className={S.ul}>
+        <li>The <strong>country page</strong> carries the <strong>Divergence analysis</strong>: a candidate-by-candidate table with three columns, <strong>Poll</strong> (vote share), <strong>Market</strong> (probability of winning) and <strong>Divergence</strong> (the difference in percentage points). When a number deserves a caveat, the table annotates it rather than hiding it. In Peru, for example, Carlos Álvarez's 31.6% was a one-day spike in a thin market, and is flagged as such.</li>
+        <li>The <strong>election page</strong> shows the <strong>"Who wins?"</strong> card: the snapshot of the market on election day (pre-result, with the market already closed) and the <strong>accumulated volume</strong> in dollars, the same "real money" reading as the Brazilian dashboard.</li>
+      </ul>
+      <p className={S.p}>In practice, Chile's divergence table looks like this:</p>
+      <div className={S.tableWrap}>
+        <table className={S.table}>
+          <thead><tr><th className={S.th}>Candidate</th><th className={S.th}>Poll</th><th className={S.th}>Market</th><th className={S.th}>Divergence</th></tr></thead>
+          <tbody>
+            <tr className={S.trRow}><td className={S.td}><strong>José Antonio Kast (won)</strong></td><td className={S.td}>21%</td><td className={S.td}>66%</td><td className={S.td}>+45pp</td></tr>
+            <tr className={S.trAlt}><td className={S.td}>Jeannette Jara</td><td className={S.td}>26%</td><td className={S.td}>16.2%</td><td className={S.td}>-9.8pp</td></tr>
+            <tr><td className={S.td}>Evelyn Matthei</td><td className={S.td}>14%</td><td className={S.td}>5.8%</td><td className={S.td}>-8.2pp</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p className={S.p}>The winner is precisely the name the market most overpriced relative to the poll. That is the pattern AFOS pursues: divergence as signal, not as noise.</p>
+      <p className={S.p}><strong>Open data:</strong> each validated case has a <strong>public dataset on Hugging Face</strong>, under CC BY 4.0 license, with the polls, the odds and the calculated divergence. Anyone can audit or reproduce the analysis.</p>
+      <p className={S.p}><strong>Why cover the world:</strong> wherever there is an election, there is a signal. The same method applied from the Americas to Europe shows the reading is not a Brazilian fluke, it is structural.</p>
 
       <h2 id="cards-polymarket" className={S.h2}>3. The 6 Polymarket Cards, Instant dashboard</h2>
       <p className={S.p}>Right after the header, <strong>six cards appear side by side</strong> summarizing Polymarket's most important markets at the moment. Each card shows a <strong>percentage</strong> (probability priced by the market) with the <strong>variation relative to the previous day</strong> (↑↓pp).</p>
@@ -431,10 +460,9 @@ export function HowItWorksEn() {
         <p>It's a quick "who's who". If someone asks "who is Candidate C?", you open, read for 20 seconds, and answer with data.</p>
       </Callout>
 
-      <h2 id="paises" className={S.h2}>8. Countries, Clickable Buttons</h2>
-      <p className={S.p}>The platform covers <strong>14+ countries</strong> with monitored elections. Each country appears as a clickable button. Clicking one, you see the same type of cross-reference (Polymarket + local polls + news) applied to that election.</p>
-      <p className={S.p}><strong>Countries currently featured:</strong> Brazil, USA, France, Germany, UK, Canada, Australia, South Korea, Colombia, Chile, among others.</p>
-      <p className={S.p}><strong>Why this matters:</strong> global political decisions influence each other. The 2024 US result affects the dynamics of Brazil 2026. Seeing the full map gives you context.</p>
+      <h2 id="paises" className={S.h2}>8. Countries (dashboard buttons)</h2>
+      <p className={S.p}>The dashboard has a row of <strong>country buttons</strong>, direct shortcuts to the profile of each monitored election (15 countries: Brazil, USA, France, Germany, UK, Canada, Colombia, Chile, Peru, among others). It's the quick way to leave Brazil and open another country without going back to the home page.</p>
+      <p className={S.p}><strong>The full international layer</strong>, the validated cases, the country and election pages, and the open datasets, is explained in the <strong>AFOS Global</strong> block (right after Daily and Tradeoff). Here on the dashboard, the buttons are just the navigation shortcut.</p>
 
       <h2 id="live-news" className={S.h2}>9. Live Elections News 120'</h2>
       <p className={S.p}>A live feed showing <strong>news published in the last 120 minutes</strong> related to monitored elections. Sources include Google News, major Brazilian portals, and international agencies.</p>
