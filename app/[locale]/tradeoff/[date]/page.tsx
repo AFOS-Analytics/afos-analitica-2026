@@ -67,7 +67,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: 'https://www.afos-analytics.com/feed/tradeoff.xml', title: 'AFOS Tradeoff — RSS feed' },
+          { url: `https://www.afos-analytics.com/feed/tradeoff${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Tradeoff — RSS feed' },
         ],
       },
     },

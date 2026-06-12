@@ -126,7 +126,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: langAlternates('tradeoff'),
-      types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff.xml`, title: 'AFOS Tradeoff — RSS feed' }] },
+      types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Tradeoff — RSS feed' }] },
     },
     openGraph: {
       type: 'website',

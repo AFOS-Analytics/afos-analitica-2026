@@ -58,7 +58,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: 'https://www.afos-analytics.com/feed/daily.xml', title: 'AFOS Daily — RSS feed' },
+          { url: `https://www.afos-analytics.com/feed/daily${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Daily — RSS feed' },
         ],
       },
     },

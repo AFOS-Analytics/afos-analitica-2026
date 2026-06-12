@@ -120,7 +120,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: langAlternates('daily'),
-      types: { 'application/rss+xml': [{ url: `${BASE}/feed/daily.xml`, title: 'AFOS Daily — RSS feed' }] },
+      types: { 'application/rss+xml': [{ url: `${BASE}/feed/daily${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Daily — RSS feed' }] },
     },
     openGraph: {
       type: 'website',
