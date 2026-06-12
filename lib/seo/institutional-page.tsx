@@ -42,7 +42,9 @@ export function InstitutionalPage(slug: string, content: Record<string, PageCont
     return (
       <div className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 py-16">
-          <a href={c.ctaHref.replace('{locale}', loc)} className="text-primary text-sm hover:underline mb-8 inline-block">{c.cta}</a>
+          <div className="mb-10">
+            <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold text-dark mb-4">{c.h1}</h1>
           <p className="text-lg text-gray-600 mb-10">{c.intro}</p>
           <div className="space-y-4 mb-12">
@@ -58,7 +60,7 @@ export function InstitutionalPage(slug: string, content: Record<string, PageCont
             <a href={`/${loc}/political-risk`} className="bg-light-bg border border-light-border rounded-lg p-3 text-sm font-semibold text-dark hover:border-primary transition-colors text-center">→ {loc === 'pt-BR' ? 'Risco Político' : loc === 'es' ? 'Riesgo Político' : 'Political Risk'}</a>
             <a href={`/${loc}/election-intelligence`} className="bg-light-bg border border-light-border rounded-lg p-3 text-sm font-semibold text-dark hover:border-primary transition-colors text-center">→ {loc === 'pt-BR' ? 'Inteligência Eleitoral' : loc === 'es' ? 'Inteligencia Electoral' : 'Election Intelligence'}</a>
           </div>
-          <a href={c.ctaHref.replace('{locale}', loc)} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
+          <a href={c.ctaHref.replace('{locale}', loc)} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta.replace('← ', '')}</a>
         </div>
       </div>
     )

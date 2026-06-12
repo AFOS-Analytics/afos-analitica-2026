@@ -11,7 +11,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     h1: 'Inteligência Eleitoral para Investidores',
     intro: 'Decisões de investimento baseadas em dados eleitorais em tempo real — não em narrativa.',
     features: ['Odds de mercados de previsão com dinheiro real (Polymarket)', 'Cruzamento de pesquisas eleitorais com sinais de mercado', 'Alertas de risco político por país e região', 'Calendário global de eleições com impacto macro', 'API de inteligência política estruturada'],
-    cta: '← Acessar Dashboard',
+    cta: 'Acessar Dashboard',
   },
   en: {
     title: 'For Investors | AFOS Analytics',
@@ -20,7 +20,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     h1: 'Election Intelligence for Investors',
     intro: 'Investment decisions driven by real-time election data — not narrative.',
     features: ['Real-money prediction market odds (Polymarket)', 'Cross-referencing polls with market signals', 'Political risk alerts by country and region', 'Global election calendar with macro impact', 'Structured political intelligence API'],
-    cta: '← Access Dashboard',
+    cta: 'Access Dashboard',
   },
   es: {
     title: 'Para Inversores | AFOS Analytics',
@@ -29,7 +29,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     h1: 'Inteligencia Electoral para Inversores',
     intro: 'Decisiones de inversión basadas en datos electorales en tiempo real — no en narrativa.',
     features: ['Odds de mercados de predicción con dinero real (Polymarket)', 'Cruce de encuestas electorales con señales de mercado', 'Alertas de riesgo político por país y región', 'Calendario global de elecciones con impacto macro', 'API de inteligencia política estructurada'],
-    cta: '← Acceder al Dashboard',
+    cta: 'Acceder al Dashboard',
   },
 }
 
@@ -60,7 +60,10 @@ export default async function ForInvestorsPage({ params }: { params: Promise<{ l
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <a href={`/${loc}`} className="text-primary text-sm hover:underline mb-8 inline-block">{c.cta}</a>
+        <div className="flex items-center justify-between gap-3 mb-10">
+          <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
+          <a href={`/${loc}/global`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">← Global</a>
+        </div>
         <h1 className="text-3xl md:text-5xl font-extrabold text-dark mb-4">{c.h1}</h1>
         <p className="text-lg text-gray-600 mb-10">{c.intro}</p>
         <div className="space-y-4 mb-12">
@@ -71,7 +74,7 @@ export default async function ForInvestorsPage({ params }: { params: Promise<{ l
             </div>
           ))}
         </div>
-        <a href={`/${loc}`} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
+        <a href={`/${loc}/dashboard`} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
       </div>
     </div>
   )

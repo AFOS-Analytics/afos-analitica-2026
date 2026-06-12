@@ -10,7 +10,7 @@ const CONTENT: Record<string, { metaTitle: string; desc: string; h1: string; int
     h1: 'Risco Político Global',
     intro: 'Monitoramento contínuo de risco político em 15 países. Dados ao vivo, não relatórios estáticos.',
     features: ['Termômetro de risco político por país', 'Mercados de previsão como indicador antecipado', 'Impacto de escândalos e crises em tempo real', 'Calendário eleitoral global interativo', 'Cruzamento pesquisas × mercado × notícias'],
-    cta: '← Acessar Mapa Global',
+    cta: 'Acessar Mapa Global',
   },
   en: {
     metaTitle: 'Global Political Risk | Real-Time Monitoring | AFOS Analytics',
@@ -18,7 +18,7 @@ const CONTENT: Record<string, { metaTitle: string; desc: string; h1: string; int
     h1: 'Global Political Risk',
     intro: 'Continuous political risk monitoring across 15 countries. Live data, not static reports.',
     features: ['Political risk thermometer by country', 'Prediction markets as leading indicator', 'Real-time impact of scandals and crises', 'Interactive global election calendar', 'Cross-referencing polls × markets × news'],
-    cta: '← Access Global Map',
+    cta: 'Access Global Map',
   },
   es: {
     metaTitle: 'Riesgo Político Global | Monitoreo en Tiempo Real | AFOS Analytics',
@@ -26,7 +26,7 @@ const CONTENT: Record<string, { metaTitle: string; desc: string; h1: string; int
     h1: 'Riesgo Político Global',
     intro: 'Monitoreo continuo de riesgo político en 15 países. Datos en vivo, no informes estáticos.',
     features: ['Termómetro de riesgo político por país', 'Mercados de predicción como indicador anticipado', 'Impacto de escándalos y crisis en tiempo real', 'Calendario electoral global interactivo', 'Cruce encuestas × mercado × noticias'],
-    cta: '← Acceder al Mapa Global',
+    cta: 'Acceder al Mapa Global',
   },
 }
 
@@ -57,7 +57,9 @@ export default async function PoliticalRiskPage({ params }: { params: Promise<{ 
   return (
     <div className="min-h-screen bg-white">
       <div className="max-w-4xl mx-auto px-4 py-16">
-        <a href={`/${loc}/global`} className="text-primary text-sm hover:underline mb-8 inline-block">{c.cta}</a>
+        <div className="mb-10">
+          <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
+        </div>
         <h1 className="text-3xl md:text-5xl font-extrabold text-dark mb-4">{c.h1}</h1>
         <p className="text-lg text-gray-600 mb-10">{c.intro}</p>
         <div className="space-y-4 mb-12">
