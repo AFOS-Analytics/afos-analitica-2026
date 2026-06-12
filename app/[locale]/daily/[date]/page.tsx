@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
+import { DailyBody, DailyLede, DailyTldr } from '../../../components/DailyMarkdown'
 import { loadDaily, listPublishedDailies, isValidDate, isValidLocale, SUPPORTED_LOCALES, getAdjacentDates, isVisibleInProduction, dailyExists } from '../../../../lib/afos-daily/loader'
 import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-daily/schema'
 
@@ -119,7 +120,13 @@ export default async function DailyByDatePage(props: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
       />
-      <AfosDailyTemplate data={data} nav={nav} />
+      <AfosDailyTemplate
+        data={data}
+        nav={nav}
+        renderedTldr={data.tldr?.map((b, i) => <DailyTldr key={i} markdown={b} />)}
+        renderedLede={data.lede ? <DailyLede markdown={data.lede} /> : null}
+        renderedBody={<DailyBody markdown={data.body} />}
+      />
     </>
   )
 }

@@ -39,6 +39,43 @@ img, video, svg {
   }
 }
 
+/* AFOS Daily/Tradeoff — tema do markdown renderizado no SERVIDOR.
+   O conteúdo (react-markdown) sai do bundle client; as cores que antes eram
+   `isBlue ? ... : ...` inline viram CSS escopado pelo ancestral [data-theme] que
+   o toggle (client) controla. Tokens idênticos aos anteriores (equivalência exata). */
+@layer components {
+  .amd-link { @apply transition-colors; }
+  [data-theme="light"] .amd-link { @apply text-primary; }
+  [data-theme="light"] .amd-link:hover { @apply underline; }
+  [data-theme="blue"] .amd-link { @apply text-blue-200; }
+  [data-theme="blue"] .amd-link:hover { @apply text-white; }
+
+  [data-theme="light"] .amd-body { @apply text-gray-700; }
+  [data-theme="blue"] .amd-body { @apply text-blue-50; }
+
+  [data-theme="light"] .amd-strong { @apply text-dark; }
+  [data-theme="blue"] .amd-strong { @apply text-white; }
+
+  [data-theme="light"] .amd-h2 { @apply text-primary border-blue-100; }
+  [data-theme="blue"] .amd-h2 { @apply text-white border-blue-400/40; }
+
+  [data-theme="light"] .amd-thead { @apply border-slate-300; }
+  [data-theme="blue"] .amd-thead { @apply border-blue-400/40; }
+  [data-theme="light"] .amd-tr { @apply border-slate-200; }
+  [data-theme="blue"] .amd-tr { @apply border-blue-400/20; }
+
+  [data-theme="light"] .amd-bq { @apply bg-amber-50 border-amber-500; }
+  [data-theme="blue"] .amd-bq { @apply bg-blue-900/40 border-amber-300; }
+
+  [data-theme="light"] .amd-hr { @apply border-gray-200; }
+  [data-theme="blue"] .amd-hr { @apply border-blue-400/30; }
+
+  [data-theme="light"] .amd-tldr-li { @apply text-dark before:text-primary; }
+  [data-theme="blue"] .amd-tldr-li { @apply text-blue-50 before:text-blue-300; }
+  [data-theme="light"] .amd-tldr-strong { @apply text-primary; }
+  [data-theme="blue"] .amd-tldr-strong { @apply text-white; }
+}
+
 @keyframes afosSlideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }

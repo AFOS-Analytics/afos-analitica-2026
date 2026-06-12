@@ -1,8 +1,6 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import { useEffect, useState, type ReactNode } from 'react'
 import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
 
 type Theme = 'light' | 'blue'
@@ -113,6 +111,11 @@ const T = {
 interface Props {
   data: AfosDailyData
   nav?: NavDates
+  // Markdown renderizado no SERVIDOR (DailyMarkdown) e passado como nós prontos,
+  // p/ react-markdown ficar fora do bundle client. Cor via amd-* + [data-theme].
+  renderedTldr?: ReactNode[]
+  renderedLede?: ReactNode
+  renderedBody?: ReactNode
 }
 
 const LANG_LABEL: Record<string, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
@@ -169,7 +172,7 @@ function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale:
   )
 }
 
-export function AfosDailyTemplate({ data, nav }: Props) {
+export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, renderedBody }: Props) {
   const locale = (data.locale === 'en' || data.locale === 'es' ? data.locale : 'pt-BR') as 'pt-BR' | 'en' | 'es'
   const t = T[locale]
   const dateExtenso = formatDateExtenso(data.date, locale)
@@ -197,20 +200,14 @@ export function AfosDailyTemplate({ data, nav }: Props) {
   // - Mesma cor em ambos temas (yellow contrasta com white e Sapphire blue de fundo)
   const ledeBg = 'bg-yellow-100'
   const ledeBorder = 'border-yellow-500'
-  const ledeText = 'text-slate-900'
-  const sectionBorder = isBlue ? 'border-blue-400/40' : 'border-blue-100'
-  const sectionHeading = isBlue ? 'text-white' : 'text-primary'
-  const bodyText = isBlue ? 'text-blue-50' : 'text-gray-700'
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
-  const strongColor = isBlue ? 'text-white' : 'text-dark'
-  const blockquoteBg = isBlue ? 'bg-blue-900/40 border-amber-300' : 'bg-amber-50 border-amber-500'
   const footerBorder = isBlue ? 'border-blue-400/30' : 'border-gray-200'
   const footerText = isBlue ? 'text-blue-200' : 'text-gray-500'
   const footerStrong = isBlue ? 'text-white' : 'text-gray-700'
   const ctaBg = isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'
 
   return (
-    <div className={`min-h-screen ${pageBg} transition-colors`}>
+    <div data-theme={theme} className={`min-h-screen ${pageBg} transition-colors`}>
       <article className="max-w-[720px] mx-auto px-5 md:px-10 py-12 md:py-14 relative">
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
@@ -233,7 +230,7 @@ export function AfosDailyTemplate({ data, nav }: Props) {
         <p className={`text-center text-xs mb-12 italic ${disclaimerColor}`}>{t.disclaimer}</p>
 
         {/* TL;DR — bloco callout antes da lede; opcional, backward compatible */}
-        {data.tldr && data.tldr.length > 0 && (
+        {renderedTldr && renderedTldr.length > 0 && (
           <aside
             className={`rounded-lg border-l-4 ${isBlue ? 'bg-blue-950/40 border-blue-300' : 'bg-slate-50 border-primary'} p-4 md:p-5 mb-6`}
             aria-label="TL;DR"
@@ -242,20 +239,9 @@ export function AfosDailyTemplate({ data, nav }: Props) {
               📌 TL;DR
             </h2>
             <ul className="space-y-2 list-none pl-0">
-              {data.tldr.map((bullet, i) => (
-                <li key={i} className={`text-sm md:text-base leading-relaxed ${isBlue ? 'text-blue-50' : 'text-dark'} pl-4 relative before:content-['•'] before:absolute before:left-0 before:font-bold ${isBlue ? 'before:text-blue-300' : 'before:text-primary'}`}>
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    components={{
-                      p: ({ children }) => <span>{children}</span>,
-                      strong: ({ children }) => <strong className={isBlue ? 'text-white' : 'text-primary'}>{children}</strong>,
-                      a: ({ href, children }) => (
-                        <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
-                      ),
-                    }}
-                  >
-                    {bullet}
-                  </ReactMarkdown>
+              {renderedTldr.map((node, i) => (
+                <li key={i} className="text-sm md:text-base leading-relaxed pl-4 relative before:content-['•'] before:absolute before:left-0 before:font-bold amd-tldr-li">
+                  {node}
                 </li>
               ))}
             </ul>
@@ -263,22 +249,9 @@ export function AfosDailyTemplate({ data, nav }: Props) {
         )}
 
         {/* LEDE — box amarelo highlight (Opção B firmada 26/Mai) */}
-        {data.lede && (
+        {renderedLede && (
           <div className={`${ledeBg} border-l-4 ${ledeBorder} px-5 py-4 mb-10 rounded-r-lg`}>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                p: ({ children }) => (
-                  <p className={`text-lg md:text-xl font-medium leading-relaxed ${ledeText}`}>{children}</p>
-                ),
-                a: ({ href, children }) => (
-                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
-                ),
-                strong: ({ children }) => <strong>{children}</strong>,
-              }}
-            >
-              {data.lede}
-            </ReactMarkdown>
+            {renderedLede}
           </div>
         )}
 
@@ -287,52 +260,7 @@ export function AfosDailyTemplate({ data, nav }: Props) {
           {!data.body && (
             <p className={`italic ${footerText}`}>{locale === 'en' ? 'Synthesis content unavailable for this date.' : locale === 'es' ? 'Contenido de la síntesis no disponible para esta fecha.' : 'Conteúdo da síntese indisponível para esta data.'}</p>
           )}
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: () => null,
-              h2: ({ children }) => (
-                <h2 className={`text-2xl font-bold mt-10 mb-4 pb-2 border-b-2 ${sectionHeading} ${sectionBorder}`}>{children}</h2>
-              ),
-              h3: ({ children }) => (
-                <h3 className={`text-xl font-bold mt-8 mb-3 ${strongColor}`}>{children}</h3>
-              ),
-              table: ({ children }) => (
-                <div className="my-6 overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">{children}</table>
-                </div>
-              ),
-              thead: ({ children }) => (
-                <thead className={`border-b-2 ${isBlue ? 'border-blue-400/40' : 'border-slate-300'}`}>{children}</thead>
-              ),
-              tbody: ({ children }) => <tbody>{children}</tbody>,
-              tr: ({ children }) => (
-                <tr className={`border-b last:border-b-0 ${isBlue ? 'border-blue-400/20' : 'border-slate-200'}`}>{children}</tr>
-              ),
-              th: ({ children }) => (
-                <th className={`text-left px-3 py-2 font-semibold ${strongColor}`}>{children}</th>
-              ),
-              td: ({ children }) => (
-                <td className={`px-3 py-2 align-top ${bodyText}`}>{children}</td>
-              ),
-              p: ({ children }) => <p className={`mb-4 leading-relaxed ${bodyText}`}>{children}</p>,
-              a: ({ href, children }) => (
-                <a href={href} target="_blank" rel="noopener noreferrer" className={linkColor}>{children}</a>
-              ),
-              strong: ({ children }) => <strong className={`font-bold ${strongColor}`}>{children}</strong>,
-              ul: ({ children }) => <ul className={`space-y-3 leading-relaxed mb-6 list-none pl-0 ${bodyText}`}>{children}</ul>,
-              ol: ({ children }) => <ol className={`space-y-3 leading-relaxed mb-6 list-decimal pl-6 ${bodyText}`}>{children}</ol>,
-              li: ({ children }) => <li className="flex gap-3"><span>{children}</span></li>,
-              blockquote: ({ children }) => (
-                <div className={`border-l-4 pl-5 py-4 my-4 rounded-r [&_p]:mb-3 [&_p:last-child]:mb-0 ${blockquoteBg}`}>
-                  {children}
-                </div>
-              ),
-              hr: () => <hr className={`my-10 ${footerBorder}`} />,
-            }}
-          >
-            {data.body}
-          </ReactMarkdown>
+          {renderedBody}
         </div>
 
         {/* PREV / ARCHIVE / NEXT NAVIGATION (archive link always present) */}
