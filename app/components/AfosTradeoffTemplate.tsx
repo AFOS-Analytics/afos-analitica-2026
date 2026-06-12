@@ -1,8 +1,6 @@
 'use client'
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+import { useEffect, useState, type ReactNode } from 'react'
 import type {
   AfosTradeoffData,
   SummaryCard,
@@ -24,9 +22,30 @@ interface NavDates {
   next?: string
 }
 
+// Markdown renderizado no SERVIDOR (TradeoffMarkdown) e passado como nós prontos,
+// p/ react-markdown ficar fora do bundle client. Construído no page server.
+export interface TradeoffRenderedMd {
+  sinalDaSemana?: ReactNode
+  execSummaryIntro?: ReactNode
+  antiAvgIntro?: ReactNode
+  antiAvgClosing?: ReactNode
+  scenariosIntro?: ReactNode
+  calendarFooter?: ReactNode
+  methodology?: ReactNode
+  body?: ReactNode
+  antiAvgFooter?: ReactNode
+  antiAvgRightDetails?: ReactNode[]
+  scenarioTexts?: ReactNode[]
+  liquidityAnomaly?: ReactNode
+  liquidityFooter?: ReactNode
+  additionalIntro?: ReactNode
+  additionalFooter?: ReactNode
+}
+
 interface Props {
   data: AfosTradeoffData
   nav?: NavDates
+  md: TradeoffRenderedMd
 }
 
 // ────────────────────────────────────────────────────────────────────
@@ -175,23 +194,6 @@ function SectionHeading({ num, title, isBlue }: { num: number; title: string; is
   )
 }
 
-function MarkdownInline({ text, isBlue }: { text: string; isBlue: boolean }) {
-  const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
-  return (
-    <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
-      components={{
-        p: ({ children }) => <p className="mb-3.5 last:mb-0 leading-relaxed">{children}</p>,
-        a: ({ href, children }) => <a href={href} target="_blank" rel="noopener noreferrer" className={`underline-offset-2 border-b border-current/40 ${linkColor}`}>{children}</a>,
-        strong: ({ children }) => <strong className={isBlue ? 'text-white' : 'text-slate-900'}>{children}</strong>,
-        em: ({ children }) => <em className="italic">{children}</em>,
-      }}
-    >
-      {text}
-    </ReactMarkdown>
-  )
-}
-
 function SummaryCards({ cards }: { cards: SummaryCard[]; isBlue: boolean }) {
   // Summary cards SEMPRE em Sapphire Blue com letras brancas (pedido 24/Mai noite).
   // Delta highlight: amarelo (em vez de verde) pra contrastar melhor com fundo azul.
@@ -218,7 +220,7 @@ function SummaryCards({ cards }: { cards: SummaryCard[]; isBlue: boolean }) {
   )
 }
 
-function AntiAvg({ block, isBlue }: { block: AntiAvgBlock; isBlue: boolean }) {
+function AntiAvg({ block, isBlue, footer, rightDetails }: { block: AntiAvgBlock; isBlue: boolean; footer?: ReactNode; rightDetails?: ReactNode[] }) {
   return (
     <div className={`rounded-lg overflow-hidden my-5 ${isBlue ? 'border border-blue-400/40' : 'border border-slate-200'}`}>
       <div className={`px-5 py-3 font-bold ${isBlue ? 'bg-blue-900 text-white' : 'bg-primary text-white'}`}>
@@ -243,9 +245,9 @@ function AntiAvg({ block, isBlue }: { block: AntiAvgBlock; isBlue: boolean }) {
           <div className={`text-[28px] font-extrabold leading-none mb-2 ${isBlue ? 'text-white' : 'text-primary'}`}>
             {block.rightValue}
           </div>
-          {block.rightDetails.map((d, i) => (
+          {block.rightDetails.map((_d, i) => (
             <div key={i} className={`text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>
-              <ReactMarkdown components={{ p: ({ children }) => <span>{children}</span>, strong: ({ children }) => <strong className={isBlue ? 'text-white' : 'text-slate-900'}>{children}</strong> }}>{d}</ReactMarkdown>
+              {rightDetails?.[i]}
             </div>
           ))}
           {block.rightBadge && (
@@ -257,14 +259,14 @@ function AntiAvg({ block, isBlue }: { block: AntiAvgBlock; isBlue: boolean }) {
       </div>
       {block.footer && (
         <div className={`p-4 px-5 text-sm italic leading-relaxed ${isBlue ? 'bg-blue-950 text-blue-100 border-t border-blue-400/30' : 'bg-white text-slate-600 border-t border-slate-200'}`}>
-          <MarkdownInline text={block.footer} isBlue={isBlue} />
+          {footer}
         </div>
       )}
     </div>
   )
 }
 
-function Scenarios({ scenarios, isBlue }: { scenarios: Scenario[]; isBlue: boolean }) {
+function Scenarios({ scenarios, isBlue, texts }: { scenarios: Scenario[]; isBlue: boolean; texts?: ReactNode[] }) {
   return (
     <div className="space-y-3 my-4">
       {scenarios.map((s, i) => (
@@ -273,7 +275,7 @@ function Scenarios({ scenarios, isBlue }: { scenarios: Scenario[]; isBlue: boole
             {s.label}
           </div>
           <div className={`text-sm leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-800'}`}>
-            <MarkdownInline text={s.text} isBlue={isBlue} />
+            {texts?.[i]}
           </div>
         </div>
       ))}
@@ -317,7 +319,7 @@ function IndicatorGrid({ rows, headers, isBlue }: { rows: IndicatorRow[]; header
   )
 }
 
-function Liquidity({ block, totalSuffix, anomalyLabel, isBlue }: { block: LiquidityBlock; totalSuffix: string; anomalyLabel: string; isBlue: boolean }) {
+function Liquidity({ block, totalSuffix, anomalyLabel, isBlue, anomaly, footer }: { block: LiquidityBlock; totalSuffix: string; anomalyLabel: string; isBlue: boolean; anomaly?: ReactNode; footer?: ReactNode }) {
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
   return (
     <>
@@ -349,13 +351,13 @@ function Liquidity({ block, totalSuffix, anomalyLabel, isBlue }: { block: Liquid
         {block.anomalyText && (
           <div className={`mt-4 px-4 py-3 border-l-[3px] border-amber-500 rounded text-[13px] ${isBlue ? 'bg-amber-900/30 text-amber-100' : 'bg-amber-50 text-amber-900'}`}>
             <strong className={isBlue ? 'text-amber-200' : 'text-amber-800'}>{anomalyLabel}</strong>{' '}
-            <MarkdownInline text={block.anomalyText} isBlue={isBlue} />
+            {anomaly}
           </div>
         )}
       </div>
       {block.footer && (
         <div className={`text-sm leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-          <MarkdownInline text={block.footer} isBlue={isBlue} />
+          {footer}
         </div>
       )}
     </>
@@ -411,13 +413,13 @@ function WatchList({ items, isBlue }: { items: WatchItem[]; isBlue: boolean }) {
   )
 }
 
-function AdditionalReading({ block, paywallLabel, isBlue }: { block: AdditionalReadingBlock; paywallLabel: string; isBlue: boolean }) {
+function AdditionalReading({ block, paywallLabel, isBlue, intro, footer }: { block: AdditionalReadingBlock; paywallLabel: string; isBlue: boolean; intro?: ReactNode; footer?: ReactNode }) {
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
   return (
     <>
       {block.intro && (
         <div className={`text-[13px] leading-relaxed mb-3 ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>
-          <MarkdownInline text={block.intro} isBlue={isBlue} />
+          {intro}
         </div>
       )}
       <ul className="space-y-0 list-none pl-0 text-[13px]">
@@ -439,7 +441,7 @@ function AdditionalReading({ block, paywallLabel, isBlue }: { block: AdditionalR
       </ul>
       {block.footer && (
         <div className={`mt-3 text-xs italic ${isBlue ? 'text-blue-200/70' : 'text-slate-400'}`}>
-          <MarkdownInline text={block.footer} isBlue={isBlue} />
+          {footer}
         </div>
       )}
     </>
@@ -478,7 +480,7 @@ function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale:
 // Main template
 // ────────────────────────────────────────────────────────────────────
 
-export function AfosTradeoffTemplate({ data, nav }: Props) {
+export function AfosTradeoffTemplate({ data, nav, md }: Props) {
   const locale = (data.locale === 'en' || data.locale === 'es' ? data.locale : 'pt-BR') as 'pt-BR' | 'en' | 'es'
   const t = T[locale]
 
@@ -500,7 +502,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
   const isDraft = data.status !== 'published'
 
   return (
-    <div className={`min-h-screen ${pageBg} transition-colors`}>
+    <div data-theme={theme} className={`min-h-screen ${pageBg} transition-colors`}>
       {/* Preview banner — only shown for drafts */}
       {isDraft && (
         <div className="bg-[#fef3c7] border-y border-amber-400 text-amber-900 text-xs text-center font-semibold tracking-wide py-2.5 px-4">
@@ -543,7 +545,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
             <div className={`text-[11px] font-bold tracking-wider uppercase mb-2 ${isBlue ? 'text-blue-200' : 'text-primary'}`}>
               {t.sinalDaSemana}
             </div>
-            <MarkdownInline text={data.sinalDaSemana} isBlue={isBlue} />
+            {md.sinalDaSemana}
           </div>
         )}
 
@@ -554,7 +556,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
             <SummaryCards cards={data.summaryCards} isBlue={isBlue} />
             {data.execSummaryIntro && (
               <div className={`text-[15px] leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-                <MarkdownInline text={data.execSummaryIntro} isBlue={isBlue} />
+                {md.execSummaryIntro}
               </div>
             )}
           </>
@@ -566,13 +568,13 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
             <SectionHeading num={2} title={t.section[2]} isBlue={isBlue} />
             {data.antiAvgIntro && (
               <div className={`text-[15px] leading-relaxed mb-3 ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-                <MarkdownInline text={data.antiAvgIntro} isBlue={isBlue} />
+                {md.antiAvgIntro}
               </div>
             )}
-            {data.antiAvg && <AntiAvg block={data.antiAvg} isBlue={isBlue} />}
+            {data.antiAvg && <AntiAvg block={data.antiAvg} isBlue={isBlue} footer={md.antiAvgFooter} rightDetails={md.antiAvgRightDetails} />}
             {data.antiAvgClosing && (
               <div className={`text-[15px] leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-                <MarkdownInline text={data.antiAvgClosing} isBlue={isBlue} />
+                {md.antiAvgClosing}
               </div>
             )}
           </>
@@ -584,10 +586,10 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
             <SectionHeading num={3} title={t.section[3]} isBlue={isBlue} />
             {data.scenariosIntro && (
               <div className={`text-[15px] leading-relaxed mb-3 ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-                <MarkdownInline text={data.scenariosIntro} isBlue={isBlue} />
+                {md.scenariosIntro}
               </div>
             )}
-            <Scenarios scenarios={data.scenarios} isBlue={isBlue} />
+            <Scenarios scenarios={data.scenarios} isBlue={isBlue} texts={md.scenarioTexts} />
           </>
         )}
 
@@ -603,7 +605,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
         {data.liquidity && (
           <>
             <SectionHeading num={5} title={t.section[5]} isBlue={isBlue} />
-            <Liquidity block={data.liquidity} totalSuffix={t.liquidityTotalSuffix} anomalyLabel={t.liquidityAnomalyLabel} isBlue={isBlue} />
+            <Liquidity block={data.liquidity} totalSuffix={t.liquidityTotalSuffix} anomalyLabel={t.liquidityAnomalyLabel} isBlue={isBlue} anomaly={md.liquidityAnomaly} footer={md.liquidityFooter} />
           </>
         )}
 
@@ -614,7 +616,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
             <Calendar rows={data.calendar} headers={t.calendarHeaders} isBlue={isBlue} />
             {data.calendarFooter && (
               <div className={`text-xs ${isBlue ? 'text-blue-200' : 'text-slate-500'}`}>
-                <MarkdownInline text={data.calendarFooter} isBlue={isBlue} />
+                {md.calendarFooter}
               </div>
             )}
           </>
@@ -633,7 +635,7 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
           <>
             <SectionHeading num={8} title={t.section[8]} isBlue={isBlue} />
             <div className={`text-[15px] leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
-              <MarkdownInline text={data.methodology} isBlue={isBlue} />
+              {md.methodology}
             </div>
           </>
         )}
@@ -642,14 +644,14 @@ export function AfosTradeoffTemplate({ data, nav }: Props) {
         {data.additionalReading && (
           <>
             <SectionHeading num={9} title={t.section[9]} isBlue={isBlue} />
-            <AdditionalReading block={data.additionalReading} paywallLabel={t.paywall} isBlue={isBlue} />
+            <AdditionalReading block={data.additionalReading} paywallLabel={t.paywall} isBlue={isBlue} intro={md.additionalIntro} footer={md.additionalFooter} />
           </>
         )}
 
         {/* Fallback body (used by Fase 1 placeholder; will be empty once structured data is present) */}
         {(!data.summaryCards && data.body) && (
           <div className={`mt-6 prose prose-slate max-w-none ${isBlue ? 'prose-invert' : ''}`}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{data.body}</ReactMarkdown>
+            {md.body}
           </div>
         )}
 

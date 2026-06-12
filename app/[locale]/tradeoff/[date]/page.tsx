@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { AfosTradeoffTemplate } from '../../../components/AfosTradeoffTemplate'
+import { AfosTradeoffTemplate, type TradeoffRenderedMd } from '../../../components/AfosTradeoffTemplate'
+import { Inline, InlineSpan, Body } from '../../../components/TradeoffMarkdown'
 import {
   loadTradeoff,
   listPublishedTradeoffs,
@@ -113,13 +114,32 @@ export default async function TradeoffByDatePage(props: PageProps) {
   const schema = buildArticleSchema(data, params.locale)
   const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)
 
+  // Markdown renderizado no servidor (react-markdown fora do bundle client).
+  const md: TradeoffRenderedMd = {
+    sinalDaSemana: data.sinalDaSemana ? <Inline text={data.sinalDaSemana} /> : undefined,
+    execSummaryIntro: data.execSummaryIntro ? <Inline text={data.execSummaryIntro} /> : undefined,
+    antiAvgIntro: data.antiAvgIntro ? <Inline text={data.antiAvgIntro} /> : undefined,
+    antiAvgClosing: data.antiAvgClosing ? <Inline text={data.antiAvgClosing} /> : undefined,
+    scenariosIntro: data.scenariosIntro ? <Inline text={data.scenariosIntro} /> : undefined,
+    calendarFooter: data.calendarFooter ? <Inline text={data.calendarFooter} /> : undefined,
+    methodology: data.methodology ? <Inline text={data.methodology} /> : undefined,
+    body: (!data.summaryCards && data.body) ? <Body text={data.body} /> : undefined,
+    antiAvgFooter: data.antiAvg?.footer ? <Inline text={data.antiAvg.footer} /> : undefined,
+    antiAvgRightDetails: data.antiAvg?.rightDetails?.map((d, i) => <InlineSpan key={i} text={d} />),
+    scenarioTexts: data.scenarios?.map((s, i) => <Inline key={i} text={s.text} />),
+    liquidityAnomaly: data.liquidity?.anomalyText ? <Inline text={data.liquidity.anomalyText} /> : undefined,
+    liquidityFooter: data.liquidity?.footer ? <Inline text={data.liquidity.footer} /> : undefined,
+    additionalIntro: data.additionalReading?.intro ? <Inline text={data.additionalReading.intro} /> : undefined,
+    additionalFooter: data.additionalReading?.footer ? <Inline text={data.additionalReading.footer} /> : undefined,
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
       />
-      <AfosTradeoffTemplate data={data} nav={nav} />
+      <AfosTradeoffTemplate data={data} nav={nav} md={md} />
     </>
   )
 }

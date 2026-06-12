@@ -74,6 +74,11 @@ img, video, svg {
   [data-theme="blue"] .amd-tldr-li { @apply text-blue-50 before:text-blue-300; }
   [data-theme="light"] .amd-tldr-strong { @apply text-primary; }
   [data-theme="blue"] .amd-tldr-strong { @apply text-white; }
+
+  /* Tradeoff — strong dentro de MarkdownInline (slate-900 no claro, branco no azul);
+     o texto base é herdado do bloco-pai (chrome client), então o <p> não tem cor. */
+  [data-theme="light"] .amd-inline-strong { @apply text-slate-900; }
+  [data-theme="blue"] .amd-inline-strong { @apply text-white; }
 }
 
 @keyframes afosSlideUp {
