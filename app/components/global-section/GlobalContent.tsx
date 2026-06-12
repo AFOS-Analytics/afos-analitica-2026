@@ -1,8 +1,9 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useTranslation } from '../../i18n/context';
+import { useTranslation, useLocale } from '../../i18n/context';
 import type { CountryMarketSummary } from '../../types/global-map';
+import { COUNTRIES_SEO } from '../../../lib/seo/countries';
 
 const GlobalElectionMap = dynamic(
   () => import('../global-map/GlobalElectionMap').then(mod => mod.GlobalElectionMap),
@@ -28,6 +29,9 @@ interface GlobalContentProps {
 
 export function GlobalContent({ mapData, expandedElection, setExpandedElection, variant = 'modal' }: GlobalContentProps) {
   const { t } = useTranslation();
+  const locale = useLocale();
+  const slugFor = (iso3: string) => COUNTRIES_SEO.find((x) => x.iso3 === iso3)?.slug[locale];
+  const viewLabel = locale === 'pt-BR' ? 'Ver análise →' : locale === 'es' ? 'Ver análisis →' : 'View analysis →';
   const mapHeight = variant === 'page' ? 'min(520px, 70vh)' : '400px';
 
   return (
@@ -109,6 +113,9 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
               {isExpanded && (
                 <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {c.candidates.length} {t('modal.candidates')} ▲</div>
               )}
+              {slugFor(c.iso3) && (
+                <a href={`/${locale}/country/${slugFor(c.iso3)}`} onClick={(e) => e.stopPropagation()} className="mt-2 block text-center text-[11px] font-semibold text-primary hover:underline">{viewLabel}</a>
+              )}
             </div>
           );
         })}
@@ -123,6 +130,9 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
                 <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={24} height={16} className="rounded-sm object-cover mx-auto" style={{ width: 24, height: 16 }} />
                 <div className="font-semibold text-dark">{c.countryName}</div>
                 <div className="text-gray-400">{c.electionDate} | {c.electionType}</div>
+                {slugFor(c.iso3) && (
+                  <a href={`/${locale}/country/${slugFor(c.iso3)}`} className="mt-1 block text-[10px] font-semibold text-primary hover:underline">{viewLabel}</a>
+                )}
               </div>
             ))}
           </div>

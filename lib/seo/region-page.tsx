@@ -132,6 +132,9 @@ export function RegionPage(regionSlug: string) {
               <a href={`/${loc}/political-risk`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Risco Político' : loc === 'es' ? 'Riesgo Político' : 'Political Risk'}</a>
               <a href={`/${loc}/election-intelligence`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Inteligência Eleitoral' : loc === 'es' ? 'Inteligencia Electoral' : 'Election Intelligence'}</a>
               <a href={`/${loc}/for-analysts`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Para Analistas' : loc === 'es' ? 'Para Analistas' : 'For Analysts'}</a>
+              <a href={`/${loc}/geopolitical-signals`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Sinais Geopolíticos' : loc === 'es' ? 'Señales Geopolíticas' : 'Geopolitical Signals'}</a>
+              <a href={`/${loc}/emerging-markets-risk`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Mercados Emergentes' : loc === 'es' ? 'Mercados Emergentes' : 'Emerging Markets'}</a>
+              <a href={`/${loc}/global-election-calendar`} className="bg-light-bg border border-light-border rounded-lg p-4 hover:border-primary transition-colors text-sm font-semibold text-dark">→ {loc === 'pt-BR' ? 'Calendário Eleitoral' : loc === 'es' ? 'Calendario Electoral' : 'Election Calendar'}</a>
             </div>
           </section>
         </div>
