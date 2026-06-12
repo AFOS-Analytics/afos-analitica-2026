@@ -34,7 +34,7 @@ const T = {
     metodo: {
       title: 'O Método',
       badge: 'Comece aqui',
-      desc: 'Guia didático de como o AFOS cruza mercados, pesquisas e imprensa — e por que sinaliza divergências.',
+      desc: 'Guia didático de como o AFOS cruza mercados, pesquisas e imprensa, e por que sinaliza divergências.',
       cta: 'Como funciona',
     },
   },
@@ -64,7 +64,7 @@ const T = {
     metodo: {
       title: 'The Method',
       badge: 'Start here',
-      desc: 'A didactic guide to how AFOS cross-references markets, polls and press — and why it flags divergences.',
+      desc: 'A didactic guide to how AFOS cross-references markets, polls and press, and why it flags divergences.',
       cta: 'How it works',
     },
   },
@@ -94,7 +94,7 @@ const T = {
     metodo: {
       title: 'El Método',
       badge: 'Empieza aquí',
-      desc: 'Guía didáctica de cómo AFOS cruza mercados, encuestas y prensa — y por qué señala divergencias.',
+      desc: 'Guía didáctica de cómo AFOS cruza mercados, encuestas y prensa, y por qué señala divergencias.',
       cta: 'Cómo funciona',
     },
   },
