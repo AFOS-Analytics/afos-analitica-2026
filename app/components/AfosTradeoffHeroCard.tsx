@@ -102,7 +102,17 @@ export function AfosTradeoffHeroCard() {
     return () => ctrl.abort()
   }, [tKey])
 
-  if (!meta) return null
+  // Placeholder reservando a altura (evita CLS quando o fetch client popula este
+  // card no topo, logo abaixo do DailyHeroCard).
+  if (!meta) return (
+    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4" aria-hidden="true">
+      <div className="min-h-[140px] sm:min-h-[116px] rounded-xl border border-orange-100 bg-orange-50/60 p-4 md:p-5 animate-pulse">
+        <div className="mb-3 h-4 w-2/5 rounded bg-orange-100" />
+        <div className="mb-1.5 h-3 w-full rounded bg-orange-100/70" />
+        <div className="h-3 w-4/6 rounded bg-orange-100/70" />
+      </div>
+    </div>
+  )
 
   // Estado A — pré-primeira edição (ainda não tem nada publicado)
   if (!meta.hasEdition) {
