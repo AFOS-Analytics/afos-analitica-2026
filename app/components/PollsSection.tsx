@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';

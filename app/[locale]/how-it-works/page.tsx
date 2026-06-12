@@ -72,7 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       siteName: 'AFOS Analytics',
       locale: seo.ogLocale,
       publishedTime: '2026-04-19T12:00:00Z',
-      modifiedTime: '2026-04-19T22:00:00Z',
+      modifiedTime: '2026-06-12T00:00:00Z',
       authors: ['AFOS Analytics'],
       images: [{ url: `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`, width: 1200, height: 627, alt: seo.title }],
     },
@@ -118,7 +118,7 @@ function articleSchema(loc: Locale) {
     description: seo.description,
     inLanguage: seo.htmlLocale,
     datePublished: '2026-04-19T12:00:00Z',
-    dateModified: '2026-04-30T22:00:00Z',
+    dateModified: '2026-06-12T00:00:00Z',
     url: `${BASE_URL}/${loc}/${SLUG}`,
     mainEntityOfPage: {
       '@type': 'WebPage',

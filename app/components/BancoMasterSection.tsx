@@ -1,3 +1,5 @@
+'use client';
+
 import type { AnalysisSection } from '../types';
 import { SectionTitle, Card } from './ui';
 import { LogicLink } from './LogicLink';

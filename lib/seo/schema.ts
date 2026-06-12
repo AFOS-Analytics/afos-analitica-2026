@@ -44,7 +44,6 @@ export function organizationSchema() {
       'https://github.com/AFOS-Analytics',
       'https://github.com/AFOS-Analytics/afos-analitica-2026',
       'https://x.com/AFOS_Analytics',
-      'https://www.linkedin.com/in/andre-felipe-afos',
       'https://bsky.app/profile/afos-analytics.com',
       'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
     ],

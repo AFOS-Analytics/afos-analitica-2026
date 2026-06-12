@@ -1,3 +1,5 @@
+'use client';
+
 import type { CandidateProfile } from '../types';
 import { partyColor } from '../lib/utils';
 import { SectionTitle, Card } from './ui';

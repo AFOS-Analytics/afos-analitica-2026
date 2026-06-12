@@ -1,3 +1,5 @@
+'use client';
+
 import type { NewsData, NewsItem } from '../types';
 import { SectionTitle } from './ui';
 import { LogicLink } from './LogicLink';

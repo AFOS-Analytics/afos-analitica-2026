@@ -16,7 +16,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const HOST = 'afos-analytics.com';
+const HOST = 'www.afos-analytics.com';
 const KEY = 'e2fc7313c168995ef8cc3fde4457253c';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const ENDPOINT = 'https://api.indexnow.org/IndexNow';

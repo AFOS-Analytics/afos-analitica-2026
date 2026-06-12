@@ -48,7 +48,7 @@ export function LanguageSwitcher() {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center justify-center border border-white/30 hover:bg-white/10 text-white p-2 rounded-lg transition-all focus:outline-2 focus:outline-offset-2 focus:outline-white"
-        aria-label="Idioma"
+        aria-label={locale === 'en' ? 'Language' : 'Idioma'}
         aria-expanded={open}
         aria-haspopup="listbox"
         aria-controls="locale-list"
@@ -61,6 +61,8 @@ export function LanguageSwitcher() {
           {locales.map(loc => (
             <button
               key={loc}
+              role="option"
+              aria-selected={locale === loc}
               onClick={() => switchLocale(loc)}
               className={`w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center gap-2.5 focus:outline-2 focus:-outline-offset-2 focus:outline-primary ${
                 locale === loc
