@@ -28,7 +28,7 @@ const T = {
     global: {
       title: 'AFOS Global',
       badge: 'Casos + mapa',
-      desc: 'Casos validados (Peru, Colômbia) com divergência mercado × pesquisa, mais o mapa de odds ao vivo.',
+      desc: 'Casos validados (Alemanha, Canadá, Chile, Peru, Colômbia) com divergência mercado × pesquisa, mais o mapa de odds ao vivo.',
       cta: 'Explorar cobertura',
     },
     metodo: {
@@ -58,7 +58,7 @@ const T = {
     global: {
       title: 'AFOS Global',
       badge: 'Cases + map',
-      desc: 'Validated cases (Peru, Colombia) with market × poll divergence, plus the live odds map.',
+      desc: 'Validated cases (Germany, Canada, Chile, Peru, Colombia) with market × poll divergence, plus the live odds map.',
       cta: 'Explore coverage',
     },
     metodo: {
@@ -88,7 +88,7 @@ const T = {
     global: {
       title: 'AFOS Global',
       badge: 'Casos + mapa',
-      desc: 'Casos validados (Perú, Colombia) con divergencia mercado × encuesta, más el mapa de odds en vivo.',
+      desc: 'Casos validados (Alemania, Canadá, Chile, Perú, Colombia) con divergencia mercado × encuesta, más el mapa de odds en vivo.',
       cta: 'Explorar cobertura',
     },
     metodo: {
