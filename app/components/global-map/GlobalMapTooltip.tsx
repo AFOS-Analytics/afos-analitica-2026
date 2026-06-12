@@ -2,12 +2,21 @@
 
 import type { MapTooltipData } from '../../types/global-map';
 import { MAP_TOKENS, formatVolume } from '../../lib/map-colors';
+import { useLocale } from '../../i18n/context';
+
+const TT_L: Record<string, { leader: string; probability: string; upcoming: string; closed: string }> = {
+  'pt-BR': { leader: 'Líder', probability: 'Probabilidade', upcoming: 'Em breve, sem dados de mercado', closed: 'Encerrada' },
+  en: { leader: 'Leader', probability: 'Probability', upcoming: 'Upcoming, no market data', closed: 'Completed' },
+  es: { leader: 'Líder', probability: 'Probabilidad', upcoming: 'Próximamente, sin datos de mercado', closed: 'Finalizada' },
+}
 
 interface Props {
   data: MapTooltipData | null;
 }
 
 export function GlobalMapTooltip({ data }: Props) {
+  const locale = useLocale();
+  const L = TT_L[locale] || TT_L['en'];
   if (!data) return null;
 
   const { x, y, country: c } = data;
@@ -41,11 +50,11 @@ export function GlobalMapTooltip({ data }: Props) {
         {isLive ? (
           <>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Líder</span>
+              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{L.leader}</span>
               <span className="font-bold text-sm" style={{ color: MAP_TOKENS.primarySoft }}>{c.leadCandidate}</span>
             </div>
             <div className="flex items-center justify-between mb-1">
-              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Probabilidade</span>
+              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{L.probability}</span>
               <span className="font-bold text-sm" style={{ color: MAP_TOKENS.text }}>{c.probability}%</span>
             </div>
             <div className="flex items-center justify-between">
@@ -55,7 +64,7 @@ export function GlobalMapTooltip({ data }: Props) {
           </>
         ) : (
           <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-            {c.status === 'upcoming' ? 'Em breve, sem dados de mercado' : 'Encerrada'}
+            {c.status === 'upcoming' ? L.upcoming : L.closed}
           </div>
         )}
       </div>

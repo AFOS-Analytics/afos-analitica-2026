@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback, memo } from 'react';
+import { useLocale } from '../../i18n/context';
 import type { CountryMarketSummary, MapTooltipData } from '../../types/global-map';
 import { NUMERIC_TO_ISO3 } from '../../types/global-map';
 import { MAP_TOKENS, getCountryColor, getCountryOpacity } from '../../lib/map-colors';
@@ -18,6 +19,8 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
   const [tooltip, setTooltip] = useState<MapTooltipData | null>(null);
   const [selectedCountry, setSelectedCountry] = useState<CountryMarketSummary | null>(null);
   const [mapReady, setMapReady] = useState(false);
+  const locale = useLocale();
+  const loadingLabel = locale === 'pt-BR' ? 'Carregando mapa...' : locale === 'es' ? 'Cargando mapa...' : 'Loading map...';
 
   // Build lookup: ISO3 → country data
   const countryLookup = useRef<Map<string, CountryMarketSummary>>(new Map());
@@ -248,7 +251,7 @@ export const GlobalElectionMap = memo(function GlobalElectionMap({ countries }: 
         <div className="absolute inset-0 flex items-center justify-center" style={{ background: MAP_TOKENS.bg }}>
           <div className="text-center">
             <div className="animate-spin rounded-full h-10 w-10 border-b-2 mx-auto mb-3" style={{ borderColor: MAP_TOKENS.primary }} />
-            <p className="text-sm" style={{ color: MAP_TOKENS.textMuted }}>Carregando mapa...</p>
+            <p className="text-sm" style={{ color: MAP_TOKENS.textMuted }}>{loadingLabel}</p>
           </div>
         </div>
       )}

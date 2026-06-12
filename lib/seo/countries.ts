@@ -93,7 +93,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Peru', en: 'Peru', es: 'Perú' },
     iso3: 'PER', flag: '🇵🇪', region: 'Americas',
     elections: [
-      { slug: 'peru-2026', year: 2026, type: { 'pt-BR': 'Presidencial (Geral)', en: 'Presidential (General)', es: 'Presidencial (General)' }, date: '2026-04-12', status: 'completed', polymarketSlug: 'peru-presidential-election-winner' },
+      { slug: 'peru-2026', year: 2026, type: { 'pt-BR': 'Presidencial (Geral)', en: 'Presidential (General)', es: 'Presidencial (General)' }, date: '2026-04-12', status: 'active', polymarketSlug: 'peru-presidential-election-winner' },
     ],
   },
   {
