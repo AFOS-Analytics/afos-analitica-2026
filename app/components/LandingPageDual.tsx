@@ -521,7 +521,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
               <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
               <a href={`/${locale}/tradeoff`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Tradeoff</a>
               <span className={isBlueTheme ? 'text-white/30' : 'text-gray-300'}>·</span>
-              <a href={`/${locale}/dashboard`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Global</a>
+              <a href={`/${locale}/global`} className={`transition-colors duration-500 ${isBlueTheme ? 'text-white/85 hover:text-white' : 'text-gray-600 hover:text-primary'}`}>Global</a>
             </div>
             <LangSwitcher current={locale} onSelect={setLocale} isBlue={isBlueTheme} />
             <ThemeSwitcher current={theme} onSelect={setTheme} isBlue={isBlueTheme} />

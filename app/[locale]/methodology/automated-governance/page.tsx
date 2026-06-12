@@ -106,7 +106,7 @@ function articleSchema(loc: Locale) {
       '@type': 'Organization',
       name: 'AFOS Analytics',
       url: BASE_URL,
-      logo: { '@type': 'ImageObject', url: `${BASE_URL}/favicon.svg` },
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/brand/logo-icon-512.png`, width: 512, height: 512 },
     },
   }
 }
@@ -114,14 +114,12 @@ function articleSchema(loc: Locale) {
 function breadcrumbSchema(loc: Locale) {
   const seo = SEO[loc] || SEO['en']
   const homeName = loc === 'pt-BR' ? 'Início' : loc === 'es' ? 'Inicio' : 'Home'
-  const methodologyName = loc === 'pt-BR' ? 'Metodologia' : loc === 'es' ? 'Metodología' : 'Methodology'
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: homeName, item: `${BASE_URL}/${loc}` },
-      { '@type': 'ListItem', position: 2, name: methodologyName, item: `${BASE_URL}/${loc}/methodology` },
-      { '@type': 'ListItem', position: 3, name: seo.headline, item: `${BASE_URL}/${loc}/${SLUG}` },
+      { '@type': 'ListItem', position: 2, name: seo.headline, item: `${BASE_URL}/${loc}/${SLUG}` },
     ],
   }
 }

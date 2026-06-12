@@ -53,7 +53,7 @@ export function GET() {
 
   const content = `# AFOS Analytics
 
-> Global Electoral Political Risk Intelligence — Open-Source. Global platform that cross-references prediction markets, electoral polls, and real-time news across 14+ countries. Open source (Apache 2.0), free, and without mandatory registration.
+> Global Electoral Political Risk Intelligence — Open-Source. Global platform that cross-references prediction markets, electoral polls, and real-time news across 15 countries. Open source (Apache 2.0), free, and without mandatory registration.
 
 AFOS Analytics combines three independent data sources in real time to provide unbiased electoral political risk analysis:
 

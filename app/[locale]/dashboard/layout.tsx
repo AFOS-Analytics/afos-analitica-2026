@@ -9,7 +9,7 @@ const SEO: Record<Locale, { title: string; description: string }> = {
   },
   en: {
     title: 'Dashboard — AFOS Analytics | Political Election Risk Intelligence',
-    description: 'Interactive dashboard: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes, live news and strategic analysis. Brazil 2026 elections and 14-country coverage.',
+    description: 'Interactive dashboard: crossing prediction markets (Polymarket) with electoral polls from 17+ institutes, live news and strategic analysis. Brazil 2026 elections and 15-country coverage.',
   },
   es: {
     title: 'Dashboard — AFOS Analytics | Inteligencia Global de Riesgo Político Electoral',

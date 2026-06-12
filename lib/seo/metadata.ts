@@ -83,17 +83,17 @@ export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   global: {
     'pt-BR': {
       title: 'Mapa Global de Eleições — AFOS Analytics',
-      description: 'Mapa interativo com eleições ao vivo em 14+ países. Mercados de previsão Polymarket e calendário eleitoral global.',
+      description: 'Mapa interativo com eleições ao vivo em 15 países. Mercados de previsão Polymarket e calendário eleitoral global.',
       path: 'global',
     },
     en: {
       title: 'Global Election Map — AFOS Analytics',
-      description: 'Interactive map with live elections in 14+ countries. Polymarket prediction markets and global election calendar.',
+      description: 'Interactive map with live elections in 15 countries. Polymarket prediction markets and global election calendar.',
       path: 'global',
     },
     es: {
       title: 'Mapa Global de Elecciones — AFOS Analytics',
-      description: 'Mapa interactivo con elecciones en vivo en 14+ países. Mercados de predicción Polymarket y calendario electoral global.',
+      description: 'Mapa interactivo con elecciones en vivo en 15 países. Mercados de predicción Polymarket y calendario electoral global.',
       path: 'global',
     },
   },

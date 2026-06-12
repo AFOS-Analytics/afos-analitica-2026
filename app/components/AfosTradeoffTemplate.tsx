@@ -260,7 +260,7 @@ function Scenarios({ scenarios, isBlue }: { scenarios: Scenario[]; isBlue: boole
     <div className="space-y-3 my-4">
       {scenarios.map((s, i) => (
         <div key={i} className={`rounded p-4 border-l-4 ${SCENARIO_BORDER[s.type]} ${isBlue ? 'bg-blue-900/30' : 'bg-slate-50'}`}>
-          <div className={`text-[11px] font-bold tracking-wider uppercase mb-2 ${SCENARIO_LABEL_COLOR[s.type]}`}>
+          <div className={`text-[11px] font-bold tracking-wider uppercase mb-2 ${isBlue ? ({ base: 'text-blue-200', bear: 'text-amber-300', tail: 'text-violet-300' })[s.type] : SCENARIO_LABEL_COLOR[s.type]}`}>
             {s.label}
           </div>
           <div className={`text-sm leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-800'}`}>

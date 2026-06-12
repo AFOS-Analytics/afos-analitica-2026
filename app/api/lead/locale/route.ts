@@ -51,7 +51,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'session_expired' }, { status: 401 })
   }
 
-  const session: SignupSession = typeof sessionRaw === 'string' ? JSON.parse(sessionRaw) : sessionRaw
+  let session: SignupSession
+  try {
+    session = typeof sessionRaw === 'string' ? JSON.parse(sessionRaw) : sessionRaw
+  } catch {
+    return NextResponse.json({ ok: false, error: 'invalid_session' }, { status: 401 })
+  }
   if (!session?.leadId) {
     return NextResponse.json({ ok: false, error: 'invalid_session' }, { status: 401 })
   }

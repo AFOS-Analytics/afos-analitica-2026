@@ -19,7 +19,7 @@ const SEO: Record<string, {
 }> = {
   'pt-BR': {
     title: 'Como Funciona o AFOS Analytics — Guia Didático da Plataforma',
-    description: 'Guia completo: como o AFOS cruza Polymarket, 17+ institutos de pesquisa e Google News em tempo real para entregar inteligência eleitoral sem viés em 14+ países.',
+    description: 'Guia completo: como o AFOS cruza Polymarket, 17+ institutos de pesquisa e Google News em tempo real para entregar inteligência eleitoral sem viés em 15 países.',
     keywords: ['como funciona afos', 'inteligência eleitoral', 'polymarket brasil', 'cruzamento de pesquisas', 'mercado de previsão', 'análise eleitoral 2026', 'risco político', 'open source eleições', 'afos analytics'],
     headline: 'Como funciona o AFOS Analytics',
     ogLocale: 'pt_BR',
@@ -27,7 +27,7 @@ const SEO: Record<string, {
   },
   en: {
     title: 'How AFOS Analytics Works — Platform Didactic Guide',
-    description: 'Complete guide: how AFOS cross-references Polymarket, 17+ polling institutes, and Google News in real time to deliver unbiased electoral intelligence across 14+ countries.',
+    description: 'Complete guide: how AFOS cross-references Polymarket, 17+ polling institutes, and Google News in real time to deliver unbiased electoral intelligence across 15 countries.',
     keywords: ['how afos works', 'electoral intelligence', 'polymarket brazil', 'poll cross-reference', 'prediction market', 'election analysis 2026', 'political risk', 'open source elections', 'afos analytics'],
     headline: 'How AFOS Analytics Works',
     ogLocale: 'en_US',
@@ -35,7 +35,7 @@ const SEO: Record<string, {
   },
   es: {
     title: 'Cómo Funciona AFOS Analytics — Guía Didáctica de la Plataforma',
-    description: 'Guía completa: cómo AFOS cruza Polymarket, 17+ encuestadoras y Google News en tiempo real para entregar inteligencia electoral sin sesgo en 14+ países.',
+    description: 'Guía completa: cómo AFOS cruza Polymarket, 17+ encuestadoras y Google News en tiempo real para entregar inteligencia electoral sin sesgo en 15 países.',
     keywords: ['cómo funciona afos', 'inteligencia electoral', 'polymarket brasil', 'cruce de encuestas', 'mercado de predicción', 'análisis electoral 2026', 'riesgo político', 'open source elecciones', 'afos analytics'],
     headline: 'Cómo Funciona AFOS Analytics',
     ogLocale: 'es_ES',

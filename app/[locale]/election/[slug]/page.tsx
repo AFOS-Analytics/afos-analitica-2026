@@ -54,11 +54,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
   languages['x-default'] = `${BASE_URL}/en/election/${slug}`
 
+  const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
   return {
     title,
     description,
     alternates: { canonical: `${BASE_URL}/${loc}/election/${slug}`, languages },
-    openGraph: { title, description, url: `${BASE_URL}/${loc}/election/${slug}` },
+    openGraph: { type: 'website', title, description, url: `${BASE_URL}/${loc}/election/${slug}`, siteName: 'AFOS Analytics', locale: loc === 'pt-BR' ? 'pt_BR' : loc === 'es' ? 'es_ES' : 'en_US', images: [{ url: ogImage, width: 1200, height: 627, alt: title }] },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
   }
 }
 
