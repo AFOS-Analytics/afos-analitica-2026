@@ -15,60 +15,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "47.50%",
-    poll: "Lula consolida o favoritismo: Poly 47.50% (↑3.00pp em ~48h, vol USD 6.38M acumulado), digerindo a Quaest 10/Jun e uma nova Pesquisa Alfa que reforça sua recuperação (VEJA). Genial/Quaest 10/Jun (n=2.004, campo 05-08/Jun, margem 2pp): 1T Lula 39% × Flávio 29% (gap +10pp); 2T Lula 44% × Flávio 38% (gap +6pp), Lula vence todos os cenários e abre 13pp entre independentes; aprovação 47% × 48%. Recorte da Quaest aponta Lula +7pp entre evangélicos (Folha). O gap Lula × Flávio no mercado abriu a +21.00pp, o mais largo do ciclo.",
+    polymarket: "49.50%",
+    poll: "Lula renova o pico do ciclo: Poly 49.50% (↑2.00pp, vol USD 6.40M acumulado), com o gap sobre Flávio abrindo a +22.95pp, o mais largo do ciclo. Sem print nacional Tier 1 novo, o movimento digere a Genial/Quaest 10/Jun (n=2.004, campo 05-08/Jun, margem 2pp: 1T Lula 39% × Flávio 29%, gap +10pp; 2T 44% × 38%, gap +6pp, Lula vence todos os cenários) e ganha reforço da Pesquisa Alfa, que confirma a recuperação do presidente (VEJA), e do 'paradoxo da direita' lido pelo diretor da Quaest (Flávio perde força, mas rivais não herdam o voto anti-Lula, G1).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 12/Jun D+29: o mercado seguiu reprecificando o favoritismo de Lula, que subiu a 47.50% (↑3.00pp em 48h) e abriu o gap para Flávio a +21.00pp, bem mais largo que o 1T da Quaest (+10pp). Motor: a digestão da Quaest 10/Jun (Lula +7pp e Flávio -9pp entre evangélicos, Folha) e a nova Alfa confirmando a recuperação. No flanco do governo, crises próprias: pressão da 6x1 sobre Alcolumbre e nova crise de credibilidade nas bets (Gazeta), TCU manda o INSS mudar concessão automática. STF impeach 2.30%."
+    risk: "EVENTOS 13/Jun D+30: o mercado levou Lula a um novo pico do ciclo, 49.50% (↑2.00pp), com o gap para Flávio em +22.95pp, bem acima do 1T da Quaest (+10pp). Sem pesquisa nacional nova (MDA, IPESPE e AtlasIntel registradas no TSE para 15-16/Jun), o motor foi a Pesquisa Alfa (VEJA) e a leitura do 'paradoxo da direita' (diretor da Quaest, G1). A Copa abre hoje (Brasil contra Marrocos) e divide a atenção política. STF impeach sobe a 3.60% (vol baixo)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "26.50%",
-    poll: "Flávio recua a Poly 26.50% (↓1.50pp em 48h, vol USD 6.58M acumulado) com a digestão da Quaest. Genial/Quaest 10/Jun: 1T 29% (gap -10pp); 2T 38% (perde 44% × 38%); 12% dizem que a relação com Vorcaro diminui a vontade de votar nele. Recorte da Quaest aponta queda de 9pp entre evangélicos (Folha/Mônica Bergamo), apontada como motor do recuo. Lidera o 2º lugar no mercado a 66.50% (↑2.00pp). Rejeição 46% > Lula 45% (Datafolha 22/Mai).",
+    polymarket: "26.55%",
+    poll: "Flávio fica estável em Poly 26.55% (vol USD 6.58M acumulado), mas o gap para Lula abriu a +22.95pp com a alta do presidente. A campanha vive momento difícil, com baque nas pesquisas e racha entre aliados (VEJA), e o Estadão fala em necessidade de 'rebranding'. Genial/Quaest 10/Jun: 1T 29% (gap -10pp); 2T 38% (perde 44% × 38%); 12% dizem que a relação com Vorcaro diminui a vontade de votar nele. Lidera com folga o 2º lugar no mercado a 68.00% (↑1.50pp).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 12/Jun: o recorte da Quaest virou a manchete do dia, com Flávio caindo 9pp entre evangélicos (Folha), e o embate simbólico da camiseta da Seleção alimentando a queda de braço. O mercado cedeu a 26.50% (↓1.50pp em 48h) e o gap para Lula abriu a +21.00pp. Mantém a liderança do 2º lugar (66.50%). A oposição segue fragmentada e o Estadão fala em sinal amarelo. STF impeach 2.30%."
+    risk: "EVENTOS 13/Jun: o diretor da Quaest resumiu o dilema da oposição no 'paradoxo da direita', Flávio perde força mas os rivais não conseguem herdar o voto anti-Lula (G1). A campanha enfrenta racha entre aliados (VEJA) e pressão por 'rebranding' (Estadão). No mercado, Flávio ficou estável a 26.55%, mas o gap para Lula virou recorde do ciclo (+22.95pp). Segue líder isolado do 2º lugar (68.00%, ↑1.50pp). STF impeach 3.60%."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "13.70%",
-    poll: "Renan presidencial Poly 13.70% (↓2.00pp em 48h, vol USD 6.93M acumulado), 3º no mercado de vencedor. Genial/Quaest 10/Jun mediu Renan em 3% no 1T, embolado com Caiado (3%), Aécio (2%) e Zema (2%): a divergência mercado × pesquisa segue a maior do dashboard (~10.70pp, 13.70% × 3%). No mercado, lidera o 3º lugar do 1º turno a 51.50% e segue 2º no do 2º colocado (16.50%, atrás de Flávio 66.50%).",
+    polymarket: "13.10%",
+    poll: "Renan presidencial Poly 13.10% (↓0.60pp, vol USD 6.94M acumulado), 3º no mercado de vencedor. A divergência mercado × pesquisa segue a maior do dashboard: 13.10% × 3% da Quaest 10/Jun (~10.10pp), com Renan embolado com Caiado (3%), Aécio (2%) e Zema (2%). No mercado, reforça o favoritismo do 3º lugar do 1º turno a 52.00% (↑0.50pp) e segue 2º no do 2º colocado (16.65%, atrás de Flávio 68.00%).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "12/Jun: Renan recuou no mercado de vencedor a 13.70% (↓2.00pp em 48h), estreitando um pouco a divergência com a pesquisa (a Quaest cravou 3% no 1T, G1), mas ela segue a maior do dashboard (~10.70pp). No pódio do 1º turno, mantém o favoritismo isolado do 3º lugar (51.50%). Sinal a monitorar: se as próximas Tier 1 (MDA/IPESPE/AtlasIntel, registradas p/ 15-16/Jun) confirmarem os 3%, cresce o risco de reprecificação para baixo. STF impeach 2.30%."
+    risk: "13/Jun: Renan cedeu de leve no mercado de vencedor a 13.10% (↓0.60pp), com a divergência ante a Quaest (3% no 1T) ainda a maior do dashboard (~10.10pp). No pódio do 1º turno, ampliou o favoritismo isolado do 3º lugar (52.00%). O 'paradoxo da direita' (G1) reforça que nenhum nome anti-Lula, Renan incluído, tem convertido a fraqueza de Flávio. Sinal a monitorar: as Tier 1 de 15-16/Jun (MDA/IPESPE/AtlasIntel). STF impeach 3.60%."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "1.90%",
-    poll: "Haddad recua a Poly 1.90% (↓0.95pp em 48h, vol USD 5.69M acumulado), 5º nome presidencial atrás de Camilo Santana (2.80%). Genial/Quaest 10/Jun não lista Haddad no presidencial nacional (foco SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    polymarket: "2.00%",
+    poll: "Haddad sobe de leve a Poly 2.00% (↑0.10pp, vol USD 5.70M acumulado), atrás de Camilo Santana (2.35%) no mercado presidencial. Genial/Quaest 10/Jun não lista Haddad no presidencial nacional (foco SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad segue atrás de Camilo Santana no mercado presidencial. Como ministro da Fazenda, no centro da disputa do PIX/tarifaço e do INSS (TCU manda mudar a concessão automática de aposentadorias), mas o mercado não precifica candidatura presidencial dele. A ala do PT-SP pressiona por Simone Tebet na vice no projeto estadual de SP. STF impeach 2.30%."
+    risk: "Haddad segue atrás de Camilo Santana no mercado presidencial (2.00% contra 2.35%). Como ministro da Fazenda, no centro da disputa do PIX/tarifaço e do INSS, mas o mercado não precifica candidatura presidencial dele. A 'taxa das blusinhas', antes de revogada, rendeu mais de R$ 2 bilhões ao governo em 2026 (G1), pano de fundo fiscal da sua pasta. STF impeach 3.60%."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.60%",
-    poll: "Caiado estável no piso: Poly 1.60% (vol USD 4.00M acumulado). Genial/Quaest 10/Jun: 1T Caiado 3% (empatado com Renan na 3ª via, abaixo dos 6.9% da Vox 05/Jun), o que reduz a inversão poll × mercado. Caiado domina entre os bolsonaristas em recorte da própria Quaest (Jornal Opção). No 2T, Lula vence todos os cenários.",
+    polymarket: "1.35%",
+    poll: "Caiado cede a Poly 1.35% (↓0.25pp, vol USD 4.00M acumulado), no piso do mercado. Genial/Quaest 10/Jun: 1T Caiado 3% (empatado com Renan na 3ª via, abaixo dos 6.9% da Vox 05/Jun). Caiado domina entre os bolsonaristas em recorte da própria Quaest (Jornal Opção). No 2T, Lula vence todos os cenários.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "A Quaest 10/Jun aproximou Caiado do que o mercado já precificava: 3% no 1T (contra 6.9% da Vox 05/Jun). Segue no piso das apostas (1.60%), mas mantém o argumento de maior teto na direita não-Bolsonaro ao liderar entre os bolsonaristas (Jornal Opção), recorte que ganha peso com a queda de Flávio entre evangélicos. STF impeach 2.30%."
+    risk: "Caiado recuou a 1.35% (↓0.25pp), seguindo no piso das apostas. O 'paradoxo da direita' da Quaest (G1) explica o teto: mesmo liderando entre os bolsonaristas (Jornal Opção), não herda o voto anti-Lula que Flávio perde. Mantém o argumento de maior competitividade no 2T medida por Tier 1+2 (PoderData/AYA 29/Mai, empate técnico). STF impeach 3.60%."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "1.20%",
-    poll: "Zema presidencial Poly 1.20% (↓0.40pp em 48h, vol USD 3.59M), no piso da 3ª via. Genial/Quaest 10/Jun: 1T Zema 2%, embolado na base da disputa anti-Lula. No mercado de 3º lugar do 1º turno, Zema é 2º a 19.00%, atrás de Renan (51.50%). 3ª via sem tração com a disputa bipolarizada Lula × Flávio.",
+    polymarket: "1.65%",
+    poll: "Zema sobe a Poly 1.65% (↑0.45pp, vol USD 3.63M), interrompendo a queda. Genial/Quaest 10/Jun: 1T Zema 2%. O Novo tenta se equilibrar entre a candidatura de Zema e alianças com Flávio nos estados (G1). No mercado de 3º lugar do 1º turno, Zema é 3º a 16.50%, empatado com Caiado e atrás de Renan (52.00%).",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema segue no piso (↓0.40pp em 48h), a 3ª via não reabre com a disputa bipolarizada Lula × Flávio dominando o ciclo. A Quaest 10/Jun deu Zema 2% no 1T e Lula vencendo todos os cenários no 2T. No mercado de 3º lugar do 1º turno, é 2º a 19.00%, atrás de Renan (51.50%). STF impeach 2.30%."
+    risk: "Zema teve leve recuperação no mercado (1.65%, ↑0.45pp), mas a 3ª via segue sem tração na disputa bipolarizada Lula × Flávio. O Novo tenta equilibrar a candidatura presidencial de Zema com alianças locais junto a Flávio (G1), o que dilui o discurso nacional. No 3º lugar do 1º turno, caiu para 16.50% (empate com Caiado), atrás de Renan (52.00%). STF impeach 3.60%."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.5M acumulado, anomalia de legado). PL Senado em 72.50% (↓0.50pp, vol USD 243k). Genial/Quaest 10/Jun não destaca Tarcísio no presidencial nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.6M acumulado, anomalia de legado). PL Senado SALTA a 76.50% (↑4.00pp, vol USD 243k). Genial/Quaest 10/Jun não destaca Tarcísio no presidencial nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio foi o fiador do realinhamento de 02/Jun (apoio a Flávio), mas a Quaest 10/Jun mostrou Flávio perdendo os dois turnos e caindo 9pp entre evangélicos, com o mercado cedendo a 26.50%. Tarcísio segue focado na reeleição em SP, onde lidera. PL lidera o Senado a 72.50%. STF impeach 2.30%."
+    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado). O PL, partido dele e de Flávio, reforçou o favoritismo no Senado a 76.50% (↑4.00pp), sinal de que o mercado preserva a capilaridade institucional da legenda mesmo com Flávio em baixa. STF impeach 3.60%."
   },
 ];
 
