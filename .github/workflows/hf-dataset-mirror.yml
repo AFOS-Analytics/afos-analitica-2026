@@ -79,6 +79,19 @@ jobs:
           HF_HISTORY_DIR: archive-history
         run: node scripts/export-hf-dataset.mjs
 
+      - name: Enriquecimento poll-centric (datação midpoint + divergência por pesquisa + demografia A)
+        # Roda APÓS o export (lê a série de mercado e o national-polls.json já no staging) e
+        # enriquece o staging in-place: cada pesquisa ganha field_midpoint/days-to-election +
+        # sample_design (camada A) e gera polls/sample-demographics.csv + data/poll-divergence.csv.
+        # Defensivo (exit 0 em erro) — nunca quebra o mirror; pior caso = dia sem enriquecimento.
+        env:
+          POLLS_JSON: .cache/hf-dataset/polls/national-polls.json
+          REGISTRY_JSON: .cache/hf-dataset/polls/tse-registry.json
+          MARKET_CSV: .cache/hf-dataset/data/market-odds-timeseries.csv
+          OUT_DIR: .cache/hf-dataset/polls
+          DATA_DIR: .cache/hf-dataset/data
+        run: node scripts/build-poll-enrichment.mjs
+
       - name: Upload to Hugging Face dataset (cumulativo, sem --delete)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}

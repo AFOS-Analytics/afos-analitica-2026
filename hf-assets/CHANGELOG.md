@@ -2,6 +2,13 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-06-13 — Poll-centric research enrichment
+
+### Added
+- **`polls/national-polls.json`** — each poll now carries `field_window`, `field_midpoint`, `days_to_first_round`/`days_to_runoff`, `dating_source`, and `tse_registration.sample_design` (sample composition/weighting, layer A).
+- **`polls/sample-demographics.csv`** — flat view of the sample-design demographics (layer A) with explicit per-poll coverage (`full_percentages` for 12/22 polls; `mentioned_no_pct` for 10/22). This is sample composition/weighting, **not** vote-by-demographic crosstabs (layer B), which are absent from TSE open data.
+- **`data/poll-divergence.csv`** — poll-level market×poll pairing anchored on the fieldwork midpoint, with `naive_gap_pp` explicitly flagged as P(win) − vote-share (not scale-reconciled).
+
 ## 2026-06-10 — Robustness & research release
 
 Major enrichment toward academic-grade, poll-centric use.

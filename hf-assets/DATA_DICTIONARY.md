@@ -129,3 +129,44 @@ Thematic cards: `sentimento`, `inss`, `bancoMaster`, `stf` (incl. impeachment ma
 ## `news/news-{date}.json`
 
 `{ date, count, items[] }`, where each item is `{ source, title, url, published }`. **Links only — no article bodies.**
+
+---
+
+## Research enrichment (2026-06-13) — poll-centric analytical layers
+
+Three additions for methodological/research use. They **add** depth; nothing in the base files changed in meaning.
+
+### New fields on each poll in `polls/national-polls.json`
+| Field | Type | Notes |
+|-------|------|-------|
+| `field_window` | object/null | `{ start, end }` — fieldwork dates from the poll's TSE registration. |
+| `field_midpoint` | date | Midpoint of the fieldwork window. A poll is best dated by its field midpoint, not its publication date. |
+| `dating_source` | string | `field_midpoint` (all 22 current polls), `publication_date` (fallback), or `unavailable`. |
+| `days_to_first_round` | int | Days from `field_midpoint` to the 1st round (2026-10-04). Positive = before election. |
+| `days_to_runoff` | int | Days from `field_midpoint` to the runoff (2026-10-25). |
+| `tse_registration.sample_design` | object | Sample composition/weighting (layer A) — see below. |
+
+### `tse_registration.sample_design` — sample-design demographics (layer A)
+Parsed from the TSE `sampling_plan` registration text. **This is the declared composition/weighting of the SAMPLE (quota frame), NOT vote-by-demographic crosstabs (layer B).** Layer B is not part of Brazil's TSE open data — institutes publish it separately — so it is intentionally absent here.
+| Field | Type | Notes |
+|-------|------|-------|
+| `quota_detail_level` | string | `full_percentages` (institute declared quotas with %; 12/22 polls), `mentioned_no_pct` (controls named, no % in registry; 10/22), or `not_in_sampling_text`. |
+| `control_variables` | object | Booleans for `sex`, `age`, `education`, `income`, `region` — whether the design controls/weights on each. |
+| `sex_quota` | object/null | `{ male_pct, female_pct }` where declared. |
+| `age_quota` / `education_quota` / `income_quota` | array/null | `[{ label, pct }]` where declared (each declared dimension sums to ~100%). |
+
+> Best-effort extraction from free text; `null` where the institute did not declare structured percentages. No value is fabricated.
+
+### `polls/sample-demographics.csv`
+Flat (long) view of layer A: `poll_id, register_tse, institute, poll_date, field_midpoint, dimension, category, pct, quota_detail_level`. One row per declared (dimension, category). Polls that only name controls without % carry a single `(declared, no % in registry)` row per dimension — explicit coverage, not a hidden gap.
+
+### `data/poll-divergence.csv`
+Poll-level market×poll pairing **anchored on the field midpoint** (vs the publication-date-anchored `divergence-timeseries.csv`).
+| Column | Type | Notes |
+|--------|------|-------|
+| `poll_id, register_tse, institute, poll_date, field_midpoint, days_to_first_round, scenario, candidate` | — | Poll/candidate identity. |
+| `poll_pct` | number | First-round vote share, %. |
+| `polymarket_pct` | number | Market implied win-probability on `polymarket_date`, %. |
+| `polymarket_date` | date | Nearest market date **on or before** the field midpoint (no fabricated contemporaneity; polls predating the market series start, 2026-04-17, have no row). |
+| `naive_gap_pp` | number | `polymarket_pct − poll_pct`, percentage points. |
+| `gap_type` | string | Always `naive_winprob_minus_voteshare` — a **flag, not a metric**: the market prices **P(win)** while the poll reports **vote share**, so the gap is **not scale-reconciled**. Reconciling the scales (e.g. mapping vote share to a win probability) is a modeling choice left to the researcher. |
