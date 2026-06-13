@@ -85,7 +85,8 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 | `polls/tse-registry.csv` · `.json` | 350 | **Official TSE poll registry — full public fields**, built directly from the [TSE Open Data](https://dadosabertos.tse.jus.br) file. Every presidential poll filed for 2026 with its complete registration sheet: institute, CNPJ, sample, field dates, declared cost, **named responsible statistician + CONRE**, and the **full (un-truncated) methodology and sampling/weighting design** — including the demographic/geographic quota design (sex, age, education, income, region) with the declared quota percentages. *Registration-design fields only — no per-candidate results, and the complete questionnaire is a PesqEle attachment, not in the open-data file.* (`Lei 9.504/97 art. 33`) |
 | `polls/national-poll-results-firstround.csv` | 158 | **Published first-round results**, long format: one row per candidate × scenario × poll. Carries the TSE registration number, institute, sample, margin, field dates. |
 | `polls/national-poll-results-secondround.csv` | 38 | Published head-to-head **runoff** matchups (`candidate1 vs candidate2`, percentages). |
-| `polls/national-polls.json` | 22 | Full structured national polls **with results** (first round + runoff + methodology), reconstructed from the platform history. Each poll now carries a **`tse_registration`** block linking it to its public TSE registration (full methodology, sampling/weighting design, statistician, CONRE, CNPJ, cost). |
+| `polls/national-polls.json` | 22 | Full structured national polls **with results** (first round + runoff + methodology), reconstructed from the platform history. Each poll carries a **`tse_registration`** block (full methodology, sampling/weighting design, statistician, CONRE, CNPJ, cost) and, since 2026-06-13, **fieldwork-midpoint dating** (`field_midpoint`, `days_to_first_round`/`runoff`) plus **`tse_registration.sample_design`** (parsed sample composition/weighting — layer A). |
+| `polls/sample-demographics.csv` | 119 | **Sample-design demographics (layer A)**, long format: each poll's declared sex/age/education/income quota composition parsed from the TSE sampling plan, with explicit per-poll coverage (`full_percentages` 12/22 · `mentioned_no_pct` 10/22). This is sample composition/weighting — **not** vote-by-demographic crosstabs (layer B), which are not part of TSE open data. |
 | `polls/polls-data-{date}.json` | — | Daily snapshot of the national polls referenced on that date. |
 
 ### 📈 Market & divergence time-series
@@ -94,6 +95,7 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 |------|---------|
 | `data/market-odds-timeseries.csv` | **Polymarket presidential odds per candidate, daily** (`date, candidate, party, polymarket_pct, volume_usd_m`) — full history from 2026-04-17. |
 | `data/divergence-timeseries.csv` | **Market × poll divergence** per candidate (`poll_date, institute, register_tse, candidate, poll_pct, polymarket_pct, polymarket_date, divergence_pp`) — each national poll joined to the market odds on its date. The dataset's namesake signal. |
+| `data/poll-divergence.csv` | **Poll-level market × poll pairing** anchored on each poll's **fieldwork midpoint**; `naive_gap_pp` is explicitly flagged `naive_winprob_minus_voteshare` — the market prices *P(win)* while the poll reports *vote share*, so the gap is **not scale-reconciled** (reconciling the scales is a modeling choice left to the researcher). |
 | `data/divergence-{date}.csv` | Per-day market × poll divergence snapshot. |
 
 ### 📰 Daily analysis & news
@@ -109,6 +111,8 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 - **Start with** `DATA_DICTIONARY.md` (every column, type, unit, provenance) and `polls/` (the registered-poll universe + published results).
 - **Reproducibility:** every value traces to a public primary source — the TSE registry, a named pollster's release, or a live Polymarket contract. Nothing is imputed or smoothed; where a number is missing it is left blank, not filled.
 - **Editorial stance:** AFOS reports *divergence* between sources rather than a single blended average — the spread is treated as signal, not noise.
+- **Demographics:** *sample-design* demographics — the declared composition/weighting of each poll's sample (layer A) — are included (`polls/sample-demographics.csv`). *Vote-by-demographic crosstabs* (layer B — e.g. vote share by sex/age/income) are **not** part of Brazil's TSE open data; institutes publish those separately, so they are intentionally absent here rather than partially scraped.
+- **Scale caveat (market vs poll):** Polymarket prices *probability of winning*; polls report *vote share*. The two divergence files keep both raw values side by side and flag the naive gap accordingly — they are not a like-for-like error metric.
 - **Updates:** dated and append-only; each daily commit preserves the full history natively (see `CHANGELOG.md`).
 
 **Sources / Fontes / Fuentes:** Polymarket (live USD markets) · TSE-registered institutes · 400+ press outlets. Method & source code (Apache 2.0): [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics).
