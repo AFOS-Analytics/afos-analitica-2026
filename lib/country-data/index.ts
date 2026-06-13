@@ -33,7 +33,7 @@ export interface CountryDivergence {
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
 }
 
-// chave = iso3 (bate com CountrySEO.iso3)
+// chave = iso3 (bate com CountrySEO.iso3). Casos validados: PER CHL COL DEU CAN GBR MEX (UK+México 2024 add 13/Jun).
 export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
   PER: peru as CountryDivergence,
   CHL: chile as CountryDivergence,
