@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import type { CountrySEO } from '../../lib/seo/countries'
 import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
+import { OddsTrajectoryChart } from './OddsTrajectoryChart'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
@@ -136,6 +137,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 </tbody>
               </table>
             </div>
+            {div.market_trajectory && (
+              <OddsTrajectoryChart trajectory={div.market_trajectory} volume={div.market_snapshot?.total_volume_usd || 0} locale={loc} isBlue={isBlue} />
+            )}
             <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-4`}>
               {ds.source(div.latest_poll?.pollster || '', div.latest_poll?.date || '', div.polls_count ?? 0)}{' '}
               <a href={div.hf} target="_blank" rel="noopener noreferrer" className={link}>🤗 {ds.dataset} ↗</a>

@@ -21,6 +21,7 @@ export interface DivergenceRow {
   note?: Record<string, string> // ressalva por linha (ex.: spike transitório de mercado fino), trilíngue
 }
 export interface MarketSnapshotRow { candidate: string; market_pct: number; volume_usd: number }
+export interface MarketTrajectory { dates: string[]; series: { name: string; pct: number[] }[] }
 export interface CountryDivergence {
   iso3: string
   hf: string
@@ -31,6 +32,7 @@ export interface CountryDivergence {
   headline: Record<string, string>
   rows: DivergenceRow[]
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
+  market_trajectory?: MarketTrajectory
 }
 
 // chave = iso3 (bate com CountrySEO.iso3). Casos validados: PER CHL COL DEU CAN GBR MEX (UK+México 2024 add 13/Jun).

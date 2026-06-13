@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import type { CountrySEO, ElectionSEO } from '../../lib/seo/countries'
 import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
+import { OddsTrajectoryChart } from './OddsTrajectoryChart'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
@@ -90,6 +91,9 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
                 </div>
               ))}
             </div>
+            {isValidatedElection && div?.market_trajectory && (
+              <OddsTrajectoryChart trajectory={div.market_trajectory} volume={snap.total_volume_usd || 0} locale={loc} isBlue={isBlue} />
+            )}
             <p className={`text-xs ${textMuted} mt-4`}>
               {l.snapshotNote(snap.date)}{' '}
               {election.polymarketSlug && <a href={`https://polymarket.com/event/${election.polymarketSlug}`} target="_blank" rel="noopener noreferrer" className={link}>{l.viewOn} ↗</a>}
