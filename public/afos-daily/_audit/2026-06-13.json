@@ -1,0 +1,50 @@
+{
+  "date": "2026-06-13",
+  "factCheckGate": {
+    "eventosAltoImpacto": "nenhum do tipo crítico (prisão/morte/decisão judicial/indicação/demissão)",
+    "itens": [
+      {
+        "evento": "'Paradoxo da direita' — entrevista do diretor da Quaest (Flávio perde força, rivais não herdam voto anti-Lula)",
+        "verificacao1": "'paradoxo' não aparece em 7 dailies anteriores → novidade, mas tipo=análise",
+        "verificacao2": "G1 direct (anti-bot bloqueia WebFetch, passa por timeout); corroborado por Diário do Centro do Mundo, MSN, O Cafezinho, Alagoas Alerta — análise da Quaest 10/Jun, tipo=análise",
+        "segundaFonte": "Diário do Centro do Mundo + MSN + O Cafezinho (independentes)",
+        "decisao": "incorporar como leitura editorial do dia, NÃO como pesquisa nova"
+      },
+      {
+        "evento": "Pesquisa Alfa (Lula 40% × Flávio 31%)",
+        "verificacao1": "12 menções em dailies 11-12/Jun → continuidade",
+        "decisao": "incorporar como continuidade, não novidade"
+      },
+      {
+        "evento": "Campanha de Flávio 'momento difícil / rebranding'",
+        "verificacao2": "VEJA + Estadão (grupos independentes), tipo=análise/desdobramento",
+        "decisao": "incorporar como contexto narrativo"
+      },
+      {
+        "evento": "Governo DF contrata auditoria (crise BRB/Master)",
+        "verificacao2": "Folha Painel, tipo=evento administrativo (não prisão/judicial), 1 fonte",
+        "decisao": "incorporar como pano de fundo, atribuído à Folha"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "semCausacaoEspuria": "alta de Lula tratada como digestão acumulada, não reação a evento isolado",
+      "verbosCriticos": "nenhum de privação de liberdade/morte/decisão judicial usado como evento novo",
+      "reconcileClaims": "rodado — todos os % batem com os JSONs; mismatches são truncamento/deltas (falsos positivos documentados)"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "BRB/Master DF (Folha) e taxa blusinhas R$2bi (G1) — background, atribuídos nominalmente",
+    "numericalErrors": "reconcile só acusou truncamento/deltas; todos os % batem com os JSONs deployados",
+    "fontesInventadas": "G1/VEJA/Folha/Estadão/O Cafezinho/DCM/MSN — todas no cache 2026-06-13, URLs verificadas",
+    "quotesLiterais": "'paradoxo da direita' e 'rebranding' são termos dos próprios veículos (manchetes), entre aspas e atribuídos; nenhuma citação fabricada",
+    "causacaoEspuria": "alta de Lula escrita como 'digestão acumulada, não reação a evento isolado'",
+    "verbosCriticosCodebook": "nenhum preso/morreu/indicou/rejeitou como evento novo",
+    "decisao": "prosseguir para preview/publish"
+  },
+  "notas": [
+    "Achado de honestidade: zero pesquisas nacionais previstas nos próximos 7 dias; as 23 registradas no TSE para 14-20/Jun são todas de escopo estadual. Dashboard corrigido no commit a47490c.",
+    "Volume total de apostas: ~USD 99,4M no presidencial e ~USD 103,9M nos 6 mercados brasileiros, citado no Lede, Seção 1 e TL;DR.",
+    "Coleta de notícias: 3 queries zeraram (master-vorcaro, aprovacao, prestige-estadao-geral); caso Master entrou via fontes prestige (Folha BRB/Master)."
+  ]
+}
