@@ -1,0 +1,78 @@
+{
+  "iso3": "GBR",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/uk-2024-electoral-divergence",
+  "election": {
+    "first_round": "2024-07-04",
+    "runoff": "",
+    "matchup": "Geral (Câmara dos Comuns): quem vence mais cadeiras",
+    "status": "completed"
+  },
+  "polls_count": 293,
+  "market_candidates": 5,
+  "latest_poll": {
+    "pollster": "Number Cruncher Politics",
+    "date": "2024-07-03"
+  },
+  "headline": {
+    "pt-BR": "Os Trabalhistas de Keir Starmer venceram a eleição de 2024 com 411 das 650 cadeiras. Na véspera, o mercado dava ao Labour cerca de 99% de probabilidade de ter a maior bancada, enquanto as pesquisas mediam cerca de 40% de intenção de voto. Não é contradição: o mercado precifica quem vence, a pesquisa mede voto, e o sistema distrital britânico transformou 33,7% dos votos em 411 cadeiras (63% da Câmara). O Reform foi o 3º em votos (14,3%) mas levou apenas 5 cadeiras. A divergência entre probabilidade de vencer (mercado) e voto (pesquisa), partido a partido na tabela, é o sinal que a AFOS acompanha, não um erro de pesquisa.",
+    "en": "Keir Starmer's Labour won the 2024 election with 411 of 650 seats. On the eve of the vote the market gave Labour about 99% probability of winning the most seats, while polls measured about 40% vote intention. Not a contradiction: the market prices who wins, the poll measures vote, and Britain's first-past-the-post system turned 33.7% of the vote into 411 seats (63% of the chamber). Reform was third in votes (14.3%) but took only 5 seats. The gap between probability of winning (market) and vote share (poll), party by party in the table, is the signal AFOS tracks, not a polling error.",
+    "es": "El Laborismo de Keir Starmer ganó la elección de 2024 con 411 de 650 escaños. En la víspera, el mercado daba al Laborismo cerca del 99% de probabilidad de lograr la mayor bancada, mientras las encuestas medían cerca del 40% de intención de voto. No es contradicción: el mercado valora quién gana, la encuesta mide voto, y el sistema británico convirtió 33,7% de los votos en 411 escaños (63% de la Cámara). Reform fue tercero en votos (14,3%) pero obtuvo solo 5 escaños. La brecha entre probabilidad de ganar (mercado) y voto (encuesta), partido por partido en la tabla, es la señal que AFOS sigue, no un error de encuesta."
+  },
+  "rows": [
+    {
+      "candidate": "Labour",
+      "poll_pct": 41,
+      "market_pct": 99.3,
+      "divergence_pp": 58.3
+    },
+    {
+      "candidate": "Conservative",
+      "poll_pct": 23,
+      "market_pct": 1,
+      "divergence_pp": -22
+    },
+    {
+      "candidate": "Reform",
+      "poll_pct": 13,
+      "market_pct": 0.8,
+      "divergence_pp": -12.2
+    },
+    {
+      "candidate": "Lib Dems",
+      "poll_pct": 11,
+      "market_pct": 0.4,
+      "divergence_pp": -10.6
+    }
+  ],
+  "market_snapshot": {
+    "date": "2024-07-03",
+    "total_volume_usd": 1763874,
+    "candidates": [
+      {
+        "candidate": "Labour",
+        "market_pct": 99.3,
+        "volume_usd": 350274
+      },
+      {
+        "candidate": "Conservative",
+        "market_pct": 1,
+        "volume_usd": 227754
+      },
+      {
+        "candidate": "Reform",
+        "market_pct": 0.8,
+        "volume_usd": 452437
+      },
+      {
+        "candidate": "Lib Dems",
+        "market_pct": 0.4,
+        "volume_usd": 209460
+      },
+      {
+        "candidate": "Other",
+        "market_pct": 0.2,
+        "volume_usd": 523949
+      }
+    ]
+  }
+}

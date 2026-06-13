@@ -1,0 +1,67 @@
+{
+  "iso3": "MEX",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/mexico-2024-electoral-divergence",
+  "election": {
+    "first_round": "2024-06-02",
+    "runoff": "",
+    "matchup": "Presidencial: Sheinbaum × Gálvez × Máynez",
+    "status": "completed"
+  },
+  "polls_count": 49,
+  "market_candidates": 4,
+  "latest_poll": {
+    "pollster": "LaEncuesta.mx",
+    "date": "2024-05-29"
+  },
+  "headline": {
+    "pt-BR": "Claudia Sheinbaum venceu a eleição presidencial de 2024 com cerca de 59,8% dos votos, a maior votação da história do México, e tornou-se a primeira mulher presidente do país. O sinal apareceu cedo: desde janeiro o mercado já dava a Sheinbaum cerca de 90% de probabilidade de vencer, enquanto as pesquisas mediam seu voto em torno de 50%. O mercado tratou a eleição como decidida muito antes da urna, e o resultado real superou até o que as pesquisas indicavam. Mercado mede probabilidade de vencer, pesquisa mede voto; essa diferença, candidato a candidato na tabela, é o sinal que a AFOS acompanha, não um erro de pesquisa.",
+    "en": "Claudia Sheinbaum won the 2024 presidential election with about 59.8% of the vote, the largest vote count in Mexican history, and became the country's first woman president. The signal showed early: from January the market already gave Sheinbaum about 90% probability of winning, while polls measured her vote share around 50%. The market treated the race as decided long before election day, and the actual result ran even higher than the polls suggested. The market measures probability of winning, the poll measures vote share; that gap, candidate by candidate in the table, is the signal AFOS tracks, not a polling error.",
+    "es": "Claudia Sheinbaum ganó la elección presidencial de 2024 con cerca del 59,8% de los votos, la mayor votación en la historia de México, y se convirtió en la primera mujer presidenta del país. La señal apareció temprano: desde enero el mercado ya daba a Sheinbaum cerca del 90% de probabilidad de ganar, mientras las encuestas medían su voto en torno al 50%. El mercado trató la elección como decidida mucho antes, y el resultado real superó incluso lo que las encuestas indicaban. El mercado mide probabilidad de ganar, la encuesta mide voto; esa diferencia, candidato por candidato en la tabla, es la señal que AFOS sigue, no un error de encuesta."
+  },
+  "rows": [
+    {
+      "candidate": "Sheinbaum",
+      "poll_pct": 50.8,
+      "market_pct": 90,
+      "divergence_pp": 39.2
+    },
+    {
+      "candidate": "Gálvez",
+      "poll_pct": 33.3,
+      "market_pct": 10.9,
+      "divergence_pp": -22.4
+    },
+    {
+      "candidate": "Máynez",
+      "poll_pct": 10.7,
+      "market_pct": 0.2,
+      "divergence_pp": -10.5
+    }
+  ],
+  "market_snapshot": {
+    "date": "2024-05-29",
+    "total_volume_usd": 2082860,
+    "candidates": [
+      {
+        "candidate": "Sheinbaum",
+        "market_pct": 90,
+        "volume_usd": 747925
+      },
+      {
+        "candidate": "Gálvez",
+        "market_pct": 10.9,
+        "volume_usd": 686503
+      },
+      {
+        "candidate": "Máynez",
+        "market_pct": 0.2,
+        "volume_usd": 415552
+      },
+      {
+        "candidate": "Other",
+        "market_pct": 0.2,
+        "volume_usd": 232880
+      }
+    ]
+  }
+}

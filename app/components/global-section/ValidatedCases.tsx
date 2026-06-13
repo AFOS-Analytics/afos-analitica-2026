@@ -43,6 +43,16 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'The market swung ~85% Conservative (Jan) → ~80% Liberal (Apr) with the vote near-tied, and the Liberals won (169×144). The swing was the signal.',
     es: 'El mercado viró ~85% Conservadores (ene) → ~80% Liberales (abr) con el voto casi empatado, y los Liberales ganaron (169×144). El vuelco fue la señal.',
   },
+  GBR: {
+    'pt-BR': 'O Labour de Starmer venceu com 411 das 650 cadeiras. O mercado dava cerca de 99% de ter a maior bancada e a pesquisa media cerca de 40% de voto: o sistema distrital virou 33,7% dos votos em 63% das cadeiras. O Reform foi 3º em votos e levou só 5 cadeiras.',
+    en: "Starmer's Labour won 411 of 650 seats. The market gave it about 99% to win the most seats while polls measured about 40% of the vote: first-past-the-post turned 33.7% of votes into 63% of seats. Reform was third in votes yet took only 5 seats.",
+    es: 'El Laborismo de Starmer ganó 411 de 650 escaños. El mercado le daba cerca del 99% de lograr la mayor bancada y la encuesta medía cerca del 40% del voto: el sistema convirtió 33,7% de los votos en 63% de los escaños. Reform fue 3º en votos y obtuvo solo 5 escaños.',
+  },
+  MEX: {
+    'pt-BR': 'Sheinbaum venceu a presidência de 2024 com cerca de 59,8%, a maior votação da história do México. Desde janeiro o mercado já a dava em cerca de 90% de vencer, enquanto a pesquisa media seu voto em torno de 50%. O mercado cravou o desfecho cedo e o resultado superou as pesquisas.',
+    en: "Sheinbaum won the 2024 presidency with about 59.8%, the largest vote count in Mexican history. From January the market already gave her about 90% to win, while polls measured her vote share around 50%. The market called the outcome early and the result outran the polls.",
+    es: 'Sheinbaum ganó la presidencia de 2024 con cerca del 59,8%, la mayor votación en la historia de México. Desde enero el mercado ya la daba en cerca del 90% de ganar, mientras la encuesta medía su voto en torno al 50%. El mercado fijó el desenlace temprano y el resultado superó a las encuestas.',
+  },
 };
 
 export function ValidatedCases({ locale }: { locale: Locale }) {

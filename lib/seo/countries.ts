@@ -66,6 +66,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Reino Unido', en: 'United Kingdom', es: 'Reino Unido' },
     iso3: 'GBR', flag: '🇬🇧', region: 'Europe',
     elections: [
+      { slug: 'uk-2024', year: 2024, type: { 'pt-BR': 'Geral', en: 'General Election', es: 'General' }, date: '2024-07-04', status: 'completed', polymarketSlug: 'uk-elections-who-will-win-most-seats' },
       { slug: 'uk-2029', year: 2029, type: { 'pt-BR': 'Geral', en: 'General Election', es: 'General' }, date: '2029-01-01', status: 'upcoming', polymarketSlug: 'next-uk-prime-minister' },
     ],
   },
@@ -130,6 +131,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'México', en: 'Mexico', es: 'México' },
     iso3: 'MEX', flag: '🇲🇽', region: 'Americas',
     elections: [
+      { slug: 'mexico-2024', year: 2024, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2024-06-02', status: 'completed', polymarketSlug: 'mexican-presidential-election-who-will-win' },
       { slug: 'mexico-2030', year: 2030, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2030-06-01', status: 'upcoming', polymarketSlug: 'next-mexican-presidential-election' },
     ],
   },
