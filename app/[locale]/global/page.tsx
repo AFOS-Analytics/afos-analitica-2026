@@ -9,9 +9,9 @@ import { GlobalContent } from '../../components/global-section/GlobalContent';
 import { ValidatedCases } from '../../components/global-section/ValidatedCases';
 
 const LIVE: Record<'pt-BR' | 'en' | 'es', { t: string; s: string }> = {
-  'pt-BR': { t: 'Ao vivo — odds de mercado agora', s: 'Eleições em andamento com mercados Polymarket ativos. Somente odds — sem a camada de pesquisas e divergência dos casos acima.' },
-  en: { t: 'Live — market odds now', s: 'Ongoing elections with active Polymarket markets. Odds only — without the polls and divergence layer of the cases above.' },
-  es: { t: 'En vivo — odds de mercado ahora', s: 'Elecciones en curso con mercados Polymarket activos. Solo odds — sin la capa de encuestas y divergencia de los casos de arriba.' },
+  'pt-BR': { t: 'Ao vivo: odds de mercado agora', s: 'Eleições em andamento com mercados Polymarket ativos. Somente odds, sem a camada de pesquisas e divergência dos casos acima.' },
+  en: { t: 'Live: market odds now', s: 'Ongoing elections with active Polymarket markets. Odds only, without the polls and divergence layer of the cases above.' },
+  es: { t: 'En vivo: odds de mercado ahora', s: 'Elecciones en curso con mercados Polymarket activos. Solo odds, sin la capa de encuestas y divergencia de los casos de arriba.' },
 };
 
 type Locale = 'pt-BR' | 'en' | 'es';
@@ -175,7 +175,7 @@ export default function GlobalPage() {
               </h1>
               <p className="text-sm sm:text-base text-white/85 max-w-2xl">
                 Real-time prediction markets × election data
-                {source === 'polymarket' && <span> — {liveCount} live markets</span>}
+                {source === 'polymarket' && <span> · {liveCount} live markets</span>}
                 {source === 'mock' && <span className="ml-2 text-orange-200">(demo mode)</span>}
                 {source === 'loading' && <span className="ml-2 text-yellow-200">loading...</span>}
               </p>
@@ -210,7 +210,7 @@ export default function GlobalPage() {
 
       <footer className="border-t border-light-border py-6 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto text-center text-[11px] text-gray-500">
-          AFOS Analytics — Data: Polymarket prediction markets — Updated continuously
+          AFOS Analytics · Data: Polymarket prediction markets · Updated continuously
         </div>
       </footer>
     </div>

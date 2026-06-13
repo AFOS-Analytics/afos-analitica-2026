@@ -12,36 +12,36 @@ import { COUNTRIES_SEO, ISO3_TO_CC } from '../../../lib/seo/countries';
 type Locale = 'pt-BR' | 'en' | 'es';
 
 const LABELS: Record<Locale, { title: string; subtitle: string; analysis: string; poll: string; market: string; completed: string; firstRound: string }> = {
-  'pt-BR': { title: 'Casos validados', subtitle: 'O método contra o resultado real — eleições já realizadas, com divergência mercado × pesquisa cruzada e dataset aberto.', analysis: 'Ver análise de divergência', poll: 'pesquisas', market: 'candidatos no mercado', completed: 'Encerrada', firstRound: '1º turno · resultado conhecido' },
-  en: { title: 'Validated cases', subtitle: 'The method against the real result — already-held elections, with cross-referenced market × poll divergence and an open dataset.', analysis: 'See divergence analysis', poll: 'polls', market: 'market candidates', completed: 'Completed', firstRound: 'First round · result known' },
-  es: { title: 'Casos validados', subtitle: 'El método contra el resultado real — elecciones ya realizadas, con divergencia mercado × encuesta cruzada y dataset abierto.', analysis: 'Ver análisis de divergencia', poll: 'encuestas', market: 'candidatos en el mercado', completed: 'Finalizada', firstRound: '1ª vuelta · resultado conocido' },
+  'pt-BR': { title: 'Casos validados', subtitle: 'O método contra o resultado real: eleições já realizadas, com divergência mercado × pesquisa cruzada e dataset aberto.', analysis: 'Ver análise de divergência', poll: 'pesquisas', market: 'candidatos no mercado', completed: 'Encerrada', firstRound: '1º turno · resultado conhecido' },
+  en: { title: 'Validated cases', subtitle: 'The method against the real result: already-held elections, with cross-referenced market × poll divergence and an open dataset.', analysis: 'See divergence analysis', poll: 'polls', market: 'market candidates', completed: 'Completed', firstRound: 'First round · result known' },
+  es: { title: 'Casos validados', subtitle: 'El método contra el resultado real: elecciones ya realizadas, con divergencia mercado × encuesta cruzada y dataset abierto.', analysis: 'Ver análisis de divergencia', poll: 'encuestas', market: 'candidatos en el mercado', completed: 'Finalizada', firstRound: '1ª vuelta · resultado conocido' },
 };
 
 const TAGLINE: Record<string, Record<Locale, string>> = {
   PER: {
-    'pt-BR': 'O favorito do mercado por meses (López Aliaga) ficou em 3º e não foi ao 2º turno — divergência sustentada, não ruído.',
-    en: "The market's months-long favorite (López Aliaga) placed 3rd and missed the runoff — sustained divergence, not noise.",
-    es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje — divergencia sostenida, no ruido.',
+    'pt-BR': 'O favorito do mercado por meses (López Aliaga) ficou em 3º e não foi ao 2º turno. Divergência sustentada, não ruído.',
+    en: "The market's months-long favorite (López Aliaga) placed 3rd and missed the runoff. Sustained divergence, not noise.",
+    es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje. Divergencia sostenida, no ruido.',
   },
   COL: {
-    'pt-BR': 'O mercado precificou a vitória de De la Espriella (43,5%) e ele venceu o 1º turno (43,7%) — divergência quase nula no líder de votos.',
-    en: 'The market priced De la Espriella to win (43.5%) and he won the first round (43.7%) — near-zero divergence on the vote leader.',
-    es: 'El mercado valoró la victoria de De la Espriella (43,5%) y ganó la primera vuelta (43,7%) — divergencia casi nula en el líder de votos.',
+    'pt-BR': 'O mercado precificou a vitória de De la Espriella (43,5%) e ele venceu o 1º turno (43,7%). Divergência quase nula no líder de votos.',
+    en: 'The market priced De la Espriella to win (43.5%) and he won the first round (43.7%). Near-zero divergence on the vote leader.',
+    es: 'El mercado valoró la victoria de De la Espriella (43,5%) y ganó la primera vuelta (43,7%). Divergencia casi nula en el líder de votos.',
   },
   CHL: {
-    'pt-BR': 'Jara liderou o voto de 1º turno, mas o mercado precificava Kast em ~66% para vencer — e Kast venceu o runoff 58×42. A diferença foi o sinal.',
-    en: 'Jara led the first-round vote, but the market priced Kast at ~66% to win — and Kast won the runoff 58–42. The gap was the signal.',
-    es: 'Jara lideró el voto de primera vuelta, pero el mercado valoró a Kast en ~66% para ganar — y Kast ganó el balotaje 58–42. La brecha fue la señal.',
+    'pt-BR': 'Jara liderou o voto de 1º turno, mas o mercado precificava Kast em ~66% para vencer, e Kast venceu o runoff 58×42. A diferença foi o sinal.',
+    en: 'Jara led the first-round vote, but the market priced Kast at ~66% to win, and Kast won the runoff 58×42. The gap was the signal.',
+    es: 'Jara lideró el voto de primera vuelta, pero el mercado valoró a Kast en ~66% para ganar, y Kast ganó el balotaje 58×42. La brecha fue la señal.',
   },
   DEU: {
-    'pt-BR': 'A AfD foi 2º em votos (~21%), mas o mercado lhe dava só ~3% de vencer (mais cadeiras) — voto não é vitória. A CDU/CSU venceu, como o mercado (~97%) cravava.',
-    en: 'The AfD was 2nd in votes (~21%) but the market gave it only ~3% to win the most seats — vote share is not winning. CDU/CSU won, as the market (~97%) called.',
-    es: 'La AfD fue 2ª en votos (~21%) pero el mercado le daba solo ~3% de ganar más escaños — el voto no es la victoria. La CDU/CSU ganó, como el mercado (~97%) anticipaba.',
+    'pt-BR': 'A AfD foi 2º em votos (~21%), mas o mercado lhe dava só ~3% de vencer (mais cadeiras). Voto não é vitória. A CDU/CSU venceu, como o mercado (~97%) cravava.',
+    en: 'The AfD was 2nd in votes (~21%) but the market gave it only ~3% to win the most seats. Vote share is not winning. CDU/CSU won, as the market (~97%) called.',
+    es: 'La AfD fue 2ª en votos (~21%) pero el mercado le daba solo ~3% de ganar más escaños. El voto no es la victoria. La CDU/CSU ganó, como el mercado (~97%) anticipaba.',
   },
   CAN: {
-    'pt-BR': 'O mercado virou ~85% Conservadores (jan) → ~80% Liberais (abr) com o voto quase empatado — e os Liberais venceram (169×144). A virada foi o sinal.',
-    en: 'The market swung ~85% Conservative (Jan) → ~80% Liberal (Apr) with the vote near-tied — and the Liberals won (169-144). The swing was the signal.',
-    es: 'El mercado viró ~85% Conservadores (ene) → ~80% Liberales (abr) con el voto casi empatado — y los Liberales ganaron (169-144). El vuelco fue la señal.',
+    'pt-BR': 'O mercado virou ~85% Conservadores (jan) → ~80% Liberais (abr) com o voto quase empatado, e os Liberais venceram (169×144). A virada foi o sinal.',
+    en: 'The market swung ~85% Conservative (Jan) → ~80% Liberal (Apr) with the vote near-tied, and the Liberals won (169×144). The swing was the signal.',
+    es: 'El mercado viró ~85% Conservadores (ene) → ~80% Liberales (abr) con el voto casi empatado, y los Liberales ganaron (169×144). El vuelco fue la señal.',
   },
 };
 
