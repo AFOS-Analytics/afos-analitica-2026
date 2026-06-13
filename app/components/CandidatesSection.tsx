@@ -18,7 +18,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "49.50%",
     poll: "Lula renova o pico do ciclo: Poly 49.50% (↑2.00pp, vol USD 6.40M acumulado), com o gap sobre Flávio abrindo a +22.95pp, o mais largo do ciclo. Sem print nacional Tier 1 novo, o movimento digere a Genial/Quaest 10/Jun (n=2.004, campo 05-08/Jun, margem 2pp: 1T Lula 39% × Flávio 29%, gap +10pp; 2T 44% × 38%, gap +6pp, Lula vence todos os cenários) e ganha reforço da Pesquisa Alfa, que confirma a recuperação do presidente (VEJA), e do 'paradoxo da direita' lido pelo diretor da Quaest (Flávio perde força, mas rivais não herdam o voto anti-Lula, G1).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 13/Jun D+30: o mercado levou Lula a um novo pico do ciclo, 49.50% (↑2.00pp), com o gap para Flávio em +22.95pp, bem acima do 1T da Quaest (+10pp). Sem pesquisa nacional nova (MDA, IPESPE e AtlasIntel registradas no TSE para 15-16/Jun), o motor foi a Pesquisa Alfa (VEJA) e a leitura do 'paradoxo da direita' (diretor da Quaest, G1). A Copa abre hoje (Brasil contra Marrocos) e divide a atenção política. STF impeach sobe a 3.60% (vol baixo)."
+    risk: "EVENTOS 13/Jun D+30: o mercado levou Lula a um novo pico do ciclo, 49.50% (↑2.00pp), com o gap para Flávio em +22.95pp, bem acima do 1T da Quaest (+10pp). Sem pesquisa nacional nova (a próxima janela de registros no TSE é dominada por pesquisas estaduais, sem print nacional previsto nos próximos 7 dias), o motor foi a Pesquisa Alfa (VEJA) e a leitura do 'paradoxo da direita' (diretor da Quaest, G1). Volume total no presidencial ~USD 99.4M (USD 103.9M nos 6 mercados). STF impeach sobe a 3.60% (vol baixo)."
   },
   {
     name: "Flávio Bolsonaro",
@@ -38,7 +38,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "13.10%",
     poll: "Renan presidencial Poly 13.10% (↓0.60pp, vol USD 6.94M acumulado), 3º no mercado de vencedor. A divergência mercado × pesquisa segue a maior do dashboard: 13.10% × 3% da Quaest 10/Jun (~10.10pp), com Renan embolado com Caiado (3%), Aécio (2%) e Zema (2%). No mercado, reforça o favoritismo do 3º lugar do 1º turno a 52.00% (↑0.50pp) e segue 2º no do 2º colocado (16.65%, atrás de Flávio 68.00%).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "13/Jun: Renan cedeu de leve no mercado de vencedor a 13.10% (↓0.60pp), com a divergência ante a Quaest (3% no 1T) ainda a maior do dashboard (~10.10pp). No pódio do 1º turno, ampliou o favoritismo isolado do 3º lugar (52.00%). O 'paradoxo da direita' (G1) reforça que nenhum nome anti-Lula, Renan incluído, tem convertido a fraqueza de Flávio. Sinal a monitorar: as Tier 1 de 15-16/Jun (MDA/IPESPE/AtlasIntel). STF impeach 3.60%."
+    risk: "13/Jun: Renan cedeu de leve no mercado de vencedor a 13.10% (↓0.60pp), com a divergência ante a Quaest (3% no 1T) ainda a maior do dashboard (~10.10pp). No pódio do 1º turno, ampliou o favoritismo isolado do 3º lugar (52.00%). O 'paradoxo da direita' (G1) reforça que nenhum nome anti-Lula, Renan incluído, tem convertido a fraqueza de Flávio. Sinal a monitorar: a próxima pesquisa nacional Tier 1 (sem data prevista nos próximos 7 dias; janela do TSE só com estaduais). STF impeach 3.60%."
   },
   {
     name: "Fernando Haddad",
