@@ -1,5 +1,4 @@
 {
-  "build_rev": "mx-2024-1",
   "iso3": "MEX",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/mexico-2024-electoral-divergence",
   "election": {
