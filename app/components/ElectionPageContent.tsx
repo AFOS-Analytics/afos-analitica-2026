@@ -37,7 +37,9 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
   const type = election.type[loc] || election.type['en']
   const cc = ISO3_TO_CC[country.iso3] || country.flag
   const l = L[loc] || L['en']
-  const snap = div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
+  // o bundle de divergência é do caso validado (ex. 2024); só mostrar a foto do mercado na eleição daquele ano, não nas futuras (ex. uk-2029, mexico-2030)
+  const isValidatedElection = !!div && div.election?.first_round?.slice(0, 4) === String(election.year)
+  const snap = isValidatedElection && div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const textMain = isBlue ? 'text-white' : 'text-dark'
