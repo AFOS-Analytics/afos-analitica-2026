@@ -24,9 +24,9 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje. Divergencia sostenida, no ruido.',
   },
   COL: {
-    'pt-BR': 'O mercado precificou a vitória de De la Espriella (43,5%) e ele venceu o 1º turno (43,7%). Divergência quase nula no líder de votos.',
-    en: 'The market priced De la Espriella to win (43.5%) and he won the first round (43.7%). Near-zero divergence on the vote leader.',
-    es: 'El mercado valoró la victoria de De la Espriella (43,5%) y ganó la primera vuelta (43,7%). Divergencia casi nula en el líder de votos.',
+    'pt-BR': 'De la Espriella venceu o 1º turno (31/mai, 43,7%) e o mercado já o precificava como favorito (43,5%): divergência quase nula entre mercado e resultado. Disputa o 2º turno em 21/jun contra Cepeda; desfecho ainda em aberto.',
+    en: 'De la Espriella won the first round (May 31, 43.7%) and the market had already priced him as favorite (43.5%): near-zero divergence between market and result. He faces the June 21 runoff against Cepeda; the outcome is still open.',
+    es: 'De la Espriella ganó la primera vuelta (31/may, 43,7%) y el mercado ya lo valoraba como favorito (43,5%): divergencia casi nula entre mercado y resultado. Disputa el balotaje del 21/jun contra Cepeda; el desenlace sigue abierto.',
   },
   CHL: {
     'pt-BR': 'Jara liderou o voto de 1º turno, mas o mercado precificava Kast em ~66% para vencer, e Kast venceu o runoff 58×42. A diferença foi o sinal.',
