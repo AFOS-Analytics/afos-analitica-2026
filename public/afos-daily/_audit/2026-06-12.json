@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-12",
+  "factCheckGate": {
+    "events": [
+      {
+        "evento": "Quaest 10/Jun recorte por segmento religioso (Flávio -9pp / Lula +7pp entre evangélicos)",
+        "verificacao1_crossref": "'evangélicos' não aparece em 7 dailies → novidade (desdobramento do print de 10/Jun, não evento novo)",
+        "verificacao2_fetch": "WebSearch confirmou em 3 fontes independentes: Brasil247, Revista Fórum, CartaCapital. Flávio evangélicos 61%→52% (-9pp); Lula 24%→31% (+7pp); católicos Flávio estável (34%)",
+        "tipo": "análise/desdobramento",
+        "segundaFonte": "Revista Fórum + CartaCapital (independentes da Folha/Mônica Bergamo)",
+        "decisao": "INCORPORAR (como digestão do print, não print novo)"
+      },
+      {
+        "evento": "Pesquisa Alfa nacional ('Lula à frente de Flávio')",
+        "verificacao1_crossref": "'Alfa' aparece como Alfa Inteligência ESTADUAL n=1.400 (calendário daily 07/Jun); a Alfa nacional (Exame, Lula 40%×31% 1T) JÁ estava na daily de 11/Jun = continuidade",
+        "verificacao2_fetch": "WebSearch não confirmou Alfa nacional NOVA de 12/Jun com números",
+        "segundaFonte": "não verificado como novidade do dia",
+        "decisao": "NÃO INCORPORAR como driver novo (é continuidade do 11/Jun); citada só como contexto de pesquisas anteriores"
+      },
+      {
+        "evento": "TCU/INSS + 6x1/Alcolumbre + bets",
+        "verificacao1_crossref": "não aparecem em 7 dailies → novidades",
+        "verificacao2_fetch": "news-cache (Folha/Estadão/Gazeta) — single-source cada",
+        "segundaFonte": "não verificado independentemente",
+        "decisao": "INCORPORAR só como contexto (Seção 3) com atribuição ao veículo, NÃO como âncora de mercado"
+      }
+    ],
+    "selfCheck": {
+      "ancoraVerificada": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileRodado": "só falso positivo (24% = recorte evangélicos verificado, não % do JSON)"
+    }
+  },
+  "adversarialReview": {
+    "1_singleSource": "âncoras (Polymarket dado de mercado; recorte Quaest multi-fonte) OK; contexto single-source (6x1, INSS/TCU, bets) atribuído na Seção 3, não-âncora",
+    "2_numericalErrors": "OK (reconcile só falso positivo 24%)",
+    "3_fontesInventadas": "OK (Brasil247/Fórum/CartaCapital via WebSearch; secundárias do news-cache 7/7)",
+    "4_quotesLiterais": "OK ('vistam a camisa do Bolsonaro' é manchete do veículo, atribuída)",
+    "5_causacaoEspuria": "OK (movimento atribuído à digestão Quaest 10/Jun; Seção 4 explicita que mercado subiu APESAR dos atritos do governo)",
+    "6_verbosCriticos": "OK (TCU/INSS com atribuição Folha; impeachment STF = contrato de mercado)",
+    "decisao": "prosseguir para preview"
+  },
+  "calendarioTSE": {
+    "obs": "protocolos reais extraídos do campo `protocolo` do /api/polls/tse",
+    "protocolos": {
+      "MDA": "BR-04256/2026",
+      "Real Time Big Data": "BR-04419/2026",
+      "100 Cidades": "BR-01461/2026",
+      "Doxa": "BR-03857/2026",
+      "AtlasIntel": "BR-01326/2026",
+      "IPESPE": "BR-06997/2026"
+    }
+  }
+}
