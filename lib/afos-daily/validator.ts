@@ -208,6 +208,19 @@ export function validateBody(body: string): Violation[] {
         detail: `Seção 1 cita volume USD apenas ${usdCount}× (protocolo 17/Mai: ≥4 menções, formato inline XX,XX% (USD X,XXM)). Aplicar ao mercado presidencial, 2L, 3L, STF, Senado, inflação — reforça "dinheiro real" e contextualiza distorções de baixa liquidez.`,
       })
     }
+
+    // W8. Volume TOTAL acumulado do mercado presidencial obrigatório na Seção 1.
+    // Regra firmada 14/Jun (feedback_afos_daily_volume_polymarket.md "Mercado total
+    // (sempre)"): além do volume por candidato, citar o volume total acumulado do
+    // presidencial (~USD XXM). Faltou no Daily 14/Jun → enforcement adicionado.
+    const hasTotalVolume = /(volume total|total acumulad|total negociad)[^.]*\bUSD\b/i.test(sec1Match[0])
+    if (!hasTotalVolume) {
+      violations.push({
+        severity: 'warning',
+        rule: 'volume-total-missing',
+        detail: 'Seção 1 não cita o VOLUME TOTAL acumulado do mercado presidencial (~USD XXM). Regra "Mercado total (sempre)": somar volumeNum de todos os candidatos e citar inline, ex.: "volume total acumulado no presidencial soma ~USD 99,6M".',
+      })
+    }
   }
 
   return violations
