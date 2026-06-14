@@ -155,6 +155,11 @@ export function filterHistoricalPolls(polls: TSEPoll[], days: number = 15): TSEP
   return polls.filter(p => p.registroDate < cutoffStr)
 }
 
+// Classificação de escopo (nacional × estadual) — FONTE ÚNICA em ./scope.mjs,
+// compartilhada com o backfill (Neon) e o builder do dataset HF/Zaid (DB-free).
+export { detectScope, classifyScope } from './scope.mjs'
+export type { PollScope, ScopeSource } from './scope.mjs'
+
 /**
  * Retorna nome normalizado do instituto para matching.
  */

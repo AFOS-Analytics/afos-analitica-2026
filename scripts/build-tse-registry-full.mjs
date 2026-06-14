@@ -18,6 +18,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join } from 'path'
 import JSZip from 'jszip'
+import { classifyScope } from '../lib/tse/scope.mjs'
 
 const TSE_URL = 'https://cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral/pesquisa_eleitoral_2026.zip'
 const CSV_NAME = 'pesquisa_eleitoral_2026_BRASIL.csv'
@@ -57,7 +58,7 @@ const clean = (f) => (f || '').replace(/^"|"$/g, '').replace(/#NULO#/g, '').repl
 const d = (f) => clean(f).slice(0, 10)
 const csvEsc = (v) => { const s = String(v ?? ''); return /[",\n;]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s }
 
-const COLS = ['register_tse', 'registration_date', 'own_poll', 'cnpj', 'institute', 'institute_trade_name', 'office', 'field_start', 'field_end', 'publication_date', 'sample_size', 'conre', 'statistician', 'cost_brl', 'methodology', 'sampling_plan', 'control_system', 'municipality_data', 'uf', 'electoral_unit']
+const COLS = ['register_tse', 'registration_date', 'own_poll', 'cnpj', 'institute', 'institute_trade_name', 'office', 'field_start', 'field_end', 'publication_date', 'sample_size', 'conre', 'statistician', 'cost_brl', 'methodology', 'sampling_plan', 'control_system', 'municipality_data', 'uf', 'electoral_unit', 'scope', 'scope_source']
 
 function buildRegistry(rows) {
   const recs = []
@@ -65,14 +66,19 @@ function buildRegistry(rows) {
     const f = rows[i]
     if (f.length < 26) continue
     if (!clean(f[14]).toLowerCase().includes('presidente')) continue
+    const methodology = clean(f[22]), sampling_plan = clean(f[23]), municipality_data = clean(f[25])
+    // Escopo (nacional×estadual) inferido do universo declarado — fonte única scope.mjs.
+    // uf=SG_UF é sempre "BR" no BRASIL.csv, então não discrimina; ver scope.mjs.
+    const { scope, source: scope_source } = classifyScope(methodology, sampling_plan, municipality_data)
     recs.push({
       register_tse: clean(f[8]), registration_date: d(f[9]), own_poll: clean(f[10]), cnpj: clean(f[11]),
       institute: clean(f[12]), institute_trade_name: clean(f[13]), office: clean(f[14]),
       field_start: d(f[15]), field_end: d(f[16]), publication_date: d(f[17]),
       sample_size: parseInt(clean(f[18])) || '', conre: clean(f[19]), statistician: clean(f[20]),
       cost_brl: parseFloat(clean(f[21]).replace(',', '.')) || '',
-      methodology: clean(f[22]), sampling_plan: clean(f[23]), control_system: clean(f[24]),
-      municipality_data: clean(f[25]), uf: clean(f[5]), electoral_unit: clean(f[7]),
+      methodology, sampling_plan, control_system: clean(f[24]),
+      municipality_data, uf: clean(f[5]), electoral_unit: clean(f[7]),
+      scope, scope_source,
     })
   }
   recs.sort((a, b) => (b.registration_date || '').localeCompare(a.registration_date || ''))

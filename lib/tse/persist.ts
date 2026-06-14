@@ -11,7 +11,7 @@
 
 import { prisma } from '../db'
 import type { TSEPoll } from './ingest'
-import { normalizeInstitute } from './ingest'
+import { normalizeInstitute, classifyScope } from './ingest'
 
 export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_daily'): Promise<{ inserted: number; skipped: number }> {
   if (!prisma || polls.length === 0) return { inserted: 0, skipped: 0 }
@@ -71,7 +71,9 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
   // Batch 3: createMany com payload completo
   if (toInsert.length > 0) {
     await prisma.researchFinding.createMany({
-      data: toInsert.map((poll) => ({
+      data: toInsert.map((poll) => {
+       const scopeClass = classifyScope(poll.metodologia, poll.planoAmostral, poll.dadoMunicipio)
+       return {
         researchRunId: run.id,
         sourceId: sourceByName.get(normalizeInstitute(poll.instituto))!,
         title: poll.protocolo,
@@ -101,7 +103,12 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
           registrationDate: poll.registroDate,
           cost: poll.valorPesquisa,
           uf: poll.uf,
-          scope: poll.uf && poll.uf !== '' ? 'state' : 'national',
+          // O TSE devolve uf="BR" para todo o arquivo BRASIL.csv, então `uf` não
+          // discrimina nacional×estadual. O escopo real vem do universo declarado
+          // na metodologia/plano amostral/dado-município. scopeSource registra qual
+          // fonte decidiu (auditoria). Ver classifyScope() em scope.mjs.
+          scope: scopeClass.scope,
+          scopeSource: scopeClass.source,
           // campos públicos completos do TSE (Lei 9.504/97 art. 33), sem truncar
           cnpj: poll.cnpj,
           statistician: poll.estatistico,
@@ -114,7 +121,8 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
         countryCode: 'BRA',
         eventDate: poll.divulgacao ? new Date(poll.divulgacao) : null,
         confidenceScore: calculateConfidence(poll),
-      })),
+       }
+      }),
       skipDuplicates: true,
     })
   }

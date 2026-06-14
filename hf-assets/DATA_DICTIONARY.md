@@ -6,7 +6,7 @@ Every file, every column, with type, unit, and provenance. Values are never impu
 
 ## `polls/tse-registry.csv` / `.json`
 
-Official **TSE poll-registration registry** for the 2026 presidential cycle, built **directly from the TSE Open Data file** `pesquisa_eleitoral_2026_BRASIL.csv` ([dadosabertos.tse.jus.br](https://dadosabertos.tse.jus.br)). One row per registered presidential poll (**350**). This is the **full set of public registration fields** — every poll registered in Brazil must, by **Lei 9.504/1997 art. 33** (and Resolução TSE 23.600/2019), disclose its methodology, sampling/weighting design, cost, contracting party and responsible statistician *before* release. The registry carries that design; it does **not** carry per-candidate results (the institute publishes those) nor the demographic crosstabs *of the results*.
+Official **TSE poll-registration registry** for the 2026 presidential cycle, built **directly from the TSE Open Data file** `pesquisa_eleitoral_2026_BRASIL.csv` ([dadosabertos.tse.jus.br](https://dadosabertos.tse.jus.br)). One row per registered presidential poll (**365** at the latest snapshot; the count grows as new polls are registered). This is the **full set of public registration fields** — every poll registered in Brazil must, by **Lei 9.504/1997 art. 33** (and Resolução TSE 23.600/2019), disclose its methodology, sampling/weighting design, cost, contracting party and responsible statistician *before* release. The registry carries that design; it does **not** carry per-candidate results (the institute publishes those) nor the demographic crosstabs *of the results*.
 
 | Column | Type | Unit / format | Notes |
 |--------|------|---------------|-------|
@@ -27,12 +27,16 @@ Official **TSE poll-registration registry** for the 2026 presidential cycle, bui
 | `sampling_plan` | string (long) | free text | **Full** sampling/weighting design (`DS_PLANO_AMOSTRAL`) — universe, multi-stage cluster design, **and the demographic/geographic quota design (sex, age, education, income, region) with the exact quota percentages** when declared. Up to ~4k chars; **not truncated**. This is the registration-level weighting *design*. |
 | `control_system` | string (long) | free text | Internal field-control/quality-control system (`DS_SISTEMA_CONTROLE`). |
 | `municipality_data` | string | free text | Municipality-level breakdown declaration (`DS_DADO_MUNICIPIO`), when present. |
-| `uf` | string | 2-letter UF or `BR` | Federative unit (`SG_UF`). |
-| `electoral_unit` | string | — | Electoral unit name (`NM_UE`). |
+| `uf` | string | 2-letter UF or `BR` | Federative unit (`SG_UF`). **Always `BR`** for presidential-office registrations — the TSE files all presidential polls under the national jurisdiction regardless of where the sample was drawn (see `scope`). |
+| `electoral_unit` | string | — | Electoral unit name (`NM_UE`) — `BRASIL` for all presidential registrations. |
+| `scope` | string | `national` \| `state` \| `unknown` | **AFOS-derived** sample-coverage label (not a native TSE field). `national` = declared universe spans more than one UF / the country; `state` = restricted to a single UF (a single municipality is within one UF, so municipal polls are `state`); `unknown` = the registration text does not declare a universe (left honest, never guessed). See provenance note below. |
+| `scope_source` | string | `methodology` \| `sampling_plan` \| `dado_municipio` \| `none` | Which registration field the `scope` was inferred from — for auditability/reproducibility. `none` ⇔ `scope = unknown`. |
 
 > ⚠️ **"Registered" ≠ "published".** A poll in the registry has been filed with the TSE; it may be delayed or never released. Confirm actual release against a primary source before citing numbers.
 >
 > 🔎 **What the TSE publishes vs not.** Public (in this file): methodology, sampling/weighting **design**, cost, contracting party, named statistician, fieldwork dates, sample size. **Not** in the open-data file: the per-candidate **results** and their demographic crosstabs (published by the institute, not the TSE), and the **complete questionnaire** (art. 33 VI) — that is an attachment in the TSE *PesqEle* system, not in the open-data CSV.
+>
+> 🧭 **`scope` is AFOS-inferred, not a TSE classification.** The TSE does **not** label a poll's *sample* as national or state. It registers by the *office* polled: any poll asking about **Presidente** is filed under the national jurisdiction (`SG_UF=BR`, `NM_UE=BRASIL`) even when the sample covers a single state. The actual geographic reach lives only in the institute's free-text **methodology / sampling plan / municipality declaration**. `scope` is AFOS's transparent inference from that text: **`national`** when the declared universe spans more than one UF / the country (signals: "eleitorado brasileiro", "residente no Brasil", "todas as regiões do Brasil", "N unidades da federação", "todo o país", "âmbito nacional"); **`state`** when restricted to one UF (a municipality is within one UF → `state`); **`unknown`** when no universe is declared. `scope_source` records which field the decision came from. This is a documented derivation, **not** a field the TSE certifies — verify against the registration text (included in this file) for any rigorous use.
 
 ---
 
