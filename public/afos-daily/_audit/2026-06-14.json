@@ -1,0 +1,45 @@
+{
+  "date": "2026-06-14",
+  "factCheckGate": {
+    "eventosAltoImpacto": "nenhum do tipo crítico (prisão/morte/decisão judicial/indicação/demissão/vazamento); âncoras do dia são movimento de mercado + declarações políticas",
+    "itens": [
+      {
+        "evento": "Eduardo Bolsonaro defende ruptura PL × Novo (após fala de Zema sobre Flávio/Vorcaro)",
+        "verificacao1": "'ruptura PL Novo' não aparece em 7 dailies anteriores → novidade",
+        "verificacao2": "O Globo direct (oglobo.globo.com/politica/.../eduardo-bolsonaro-defende-rompimento...ghtml), data 13/Jun, tipo=evento (declaração)",
+        "segundaFonte": "Folha de S.Paulo via Google News (eleicoes-2026) — independente",
+        "decisao": "incorporar como declaração política, NÃO divisor de águas"
+      },
+      {
+        "evento": "Renan Santos 'ascensão' / alta de mercado +1,55pp (14,65%)",
+        "verificacao1": "'Renan' 47 menções em 7 dailies → continuidade",
+        "verificacao2": "manchete VEJA 'Renan vence Lula e Flávio' é palpite de jogo de futebol (descartada como eleitoral); 'ascensão' no noticiário referencia Datafolha sem números divulgados",
+        "segundaFonte": "não verificado (números do suposto Datafolha)",
+        "decisao": "incorporar SÓ o fato sólido (movimento de mercado); manter Quaest 10/Jun (Renan 3%) como referência; NÃO afirmar ascensão eleitoral"
+      },
+      {
+        "evento": "Lula no G7 / reunião com Trump",
+        "verificacao1": "continuidade (agenda)",
+        "verificacao2": "BBC/noticiário: 'Lula vai ao G7 sem Trump formal' → framing corrigido (sem bilateral formal confirmada)",
+        "segundaFonte": "noticiário do fim de semana (Google News flavio-lula)",
+        "decisao": "incorporar com correção (não afirmar reunião com Trump)"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaims": "exit 0 (divergências = falsos positivos do parser com vírgula decimal PT; números batem com analysis-criteriosa.json)"
+    }
+  },
+  "adversarialReview": {
+    "singleSource": "G7 'sem Trump formal' em fonte secundária fraca (Blog do Esmael), framing suavizado; PL oficializa e vice Cleitinho com 1 fonte secundária (cor, não divisor de águas); Eduardo ruptura e Flávio evangélicos com 2 fontes cada",
+    "numericalErrors": "reconcile-claims exit 0; % batem com JSON",
+    "fontesInventadas": "nenhuma; todos os veículos têm matéria no news-cache/2026-06-14.json",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma; alta de Renan atribuída a movimento de mercado + digestão de notícia, explicitamente não a evento",
+    "verbosCriticos": "OK; caso Master tratado como continuidade ('segue ativo sem ato judicial novo')",
+    "decisao": "prosseguir para preview"
+  },
+  "notas": "Aprovado por André em 14/Jun. Correções pós-preview: volume total acumulado adicionado (Seção 1 + Lede), duplicação eyebrow/data removida, dashboard alinhado (escopo TSE: nacionais previstas), fix do loader EN (rótulo 'Cited sources'). Enforcement novo: Validator W8 (volume total Seção 1) + W9 (volume total no Lede)."
+}

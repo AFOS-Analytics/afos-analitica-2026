@@ -15,7 +15,7 @@ export interface Violation {
 }
 
 const MARKDOWN_LINK_RE = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g
-const FOOTER_SOURCES_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*[^\n]*/i
+const FOOTER_SOURCES_RE = /\*\*(?:Fontes citadas|Sources cited|Cited sources|Fuentes citadas):?\*\*[^\n]*/i
 const PARAGRAPH_BREAK_RE = /\n\n+/
 const SOURCES_BULLET_RE = /^- \[/
 const HR_OR_HEADING_RE = /^(?:#{1,6}\s|[-*_]{3,}$)/
@@ -213,7 +213,8 @@ export function validateBody(body: string): Violation[] {
     // Regra firmada 14/Jun (feedback_afos_daily_volume_polymarket.md "Mercado total
     // (sempre)"): além do volume por candidato, citar o volume total acumulado do
     // presidencial (~USD XXM). Faltou no Daily 14/Jun → enforcement adicionado.
-    const hasTotalVolume = /(volume total|total acumulad|total negociad)[^.]*\bUSD\b/i.test(sec1Match[0])
+    // i18n: PT (volume total / total acumulado / negociado), EN (total/accumulated volume), ES (volumen total/acumulado).
+    const hasTotalVolume = /(volume total|total acumulad|total negociad|total accumulated|accumulated volume|total volume|volumen total|volumen acumulad)[^.]*\bUSD\b/i.test(sec1Match[0])
     if (!hasTotalVolume) {
       violations.push({
         severity: 'warning',
@@ -221,6 +222,19 @@ export function validateBody(body: string): Violation[] {
         detail: 'Seção 1 não cita o VOLUME TOTAL acumulado do mercado presidencial (~USD XXM). Regra "Mercado total (sempre)": somar volumeNum de todos os candidatos e citar inline, ex.: "volume total acumulado no presidencial soma ~USD 99,6M".',
       })
     }
+  }
+
+  // W9. O Lede (frontmatter) deve citar o volume TOTAL acumulado (USD XXM).
+  // Regra firmada 14/Jun: o volume total é a assinatura "dinheiro real" do AFOS e
+  // entra no Lede (o número total, não os volumes por candidato). Exceção explícita
+  // à diretriz "evitar excesso técnico no Lede" — só o total agregado.
+  const ledeMatch = body.match(/^lede:\s*"([^"]*)"/m)
+  if (ledeMatch && !/\bUSD\b/.test(ledeMatch[1])) {
+    violations.push({
+      severity: 'warning',
+      rule: 'lede-volume-total-missing',
+      detail: 'O Lede não cita o volume TOTAL acumulado do mercado presidencial (~USD XXM). Regra 14/Jun: incluir o total agregado no Lede como assinatura de "dinheiro real" (apenas o total, não volumes por candidato).',
+    })
   }
 
   return violations

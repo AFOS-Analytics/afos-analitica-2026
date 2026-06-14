@@ -182,7 +182,9 @@ function coerceDate(value: unknown, fallback: string): string {
   return fallback
 }
 
-const SOURCES_LABEL_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*/i
+// EN: o tradutor produz "Cited sources" (ordem natural), não "Sources cited" —
+// aceitar ambas, senão o rodapé EN vaza como corpo acima da navegação (bug 14/Jun).
+const SOURCES_LABEL_RE = /\*\*(?:Fontes citadas|Sources cited|Cited sources|Fuentes citadas):?\*\*/i
 
 // Extracts the comma-separated sources list from the sources-cited line.
 function extractSources(rawBody: string): string {
