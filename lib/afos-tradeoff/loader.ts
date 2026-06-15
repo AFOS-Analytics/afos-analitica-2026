@@ -150,6 +150,8 @@ export interface AfosTradeoffData {
   calendarFooter?: string           // "Fonte: registro TSE..."
   // Section 7 — Watch list
   watchList?: WatchItem[]
+  // Track record callout — casos validados pelo resultado real (global hub)
+  trackRecord?: string
   // Section 8 — Metodologia (free markdown, multi-paragraph)
   methodology?: string
   // Section 9 — Leitura adicional
@@ -470,6 +472,7 @@ export function loadTradeoff(date: string, locale?: string): AfosTradeoffData | 
     calendar: coerceCalendar(fm.calendar),
     calendarFooter: str(fm.calendarFooter) || undefined,
     watchList: coerceWatchList(fm.watchList),
+    trackRecord: str(fm.trackRecord) || undefined,
     methodology: str(fm.methodology) || undefined,
     additionalReading: coerceAdditionalReading(fm.additionalReading),
     body: stripTemplateArtifacts(rawBody),

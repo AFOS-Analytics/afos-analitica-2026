@@ -202,6 +202,7 @@ async function main() {
 
   console.log('   [7] methodology')
   const methodology = await tx(typeof fm.methodology === 'string' ? fm.methodology : undefined, ctx)
+  const trackRecord = await tx(typeof fm.trackRecord === 'string' ? fm.trackRecord : undefined, ctx)
 
   // ─── summaryCards ─────────────────────────────────────────────────
   const summaryCards = Array.isArray(fm.summaryCards)
@@ -362,6 +363,7 @@ async function main() {
   if (calendarFooter) outFm.calendarFooter = calendarFooter
   if (watchList) outFm.watchList = watchList
   if (methodology) outFm.methodology = methodology
+  if (trackRecord) outFm.trackRecord = trackRecord
   if (additionalReading) outFm.additionalReading = additionalReading
 
   const outMd = matter.stringify(translatedBody, outFm)

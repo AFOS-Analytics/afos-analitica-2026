@@ -32,6 +32,7 @@ export interface TradeoffRenderedMd {
   scenariosIntro?: ReactNode
   calendarFooter?: ReactNode
   methodology?: ReactNode
+  trackRecord?: ReactNode
   body?: ReactNode
   antiAvgFooter?: ReactNode
   antiAvgRightDetails?: ReactNode[]
@@ -104,6 +105,7 @@ const T = {
     section: { 1: 'Executive Summary', 2: 'Por que o AFOS não suaviza', 3: 'Cenários ponderados para a semana', 4: 'Indicator Grid', 5: 'Liquidez e estrutura de mercado', 6: 'Calendário de prints price-relevant', 7: 'Watch list — gatilhos da semana', 8: 'Metodologia', 9: 'Leitura adicional · cobertura macro' },
     paywall: '(paywall)',
     disclaimerLabel: 'Aviso obrigatório.',
+    trackRecordLabel: 'Track record · casos validados globalmente',
     disclaimerText: 'Este brief é pesquisa observacional sobre infraestrutura de mercados de previsão, pesquisas eleitorais e fluxo de notícias.',
     disclaimerNotRec: 'Não constitui recomendação de investimento.',
     disclaimerExtra: 'Nenhuma posição é recomendada ou implícita. Polymarket é mercado USD-denominado operando fora da jurisdição brasileira; volumes mencionados são informativos, não orientativos. Decisões de portfólio são responsabilidade exclusiva do leitor e devem considerar análise independente, perfil de risco e regulamentação aplicável.',
@@ -135,6 +137,7 @@ const T = {
     section: { 1: 'Executive Summary', 2: 'Why AFOS does not smooth', 3: 'Weighted scenarios for the week', 4: 'Indicator Grid', 5: 'Liquidity and market structure', 6: 'Calendar of price-relevant prints', 7: 'Watch list — week triggers', 8: 'Methodology', 9: 'Additional reading · macro coverage' },
     paywall: '(paywall)',
     disclaimerLabel: 'Mandatory disclaimer.',
+    trackRecordLabel: 'Track record · globally validated cases',
     disclaimerText: 'This brief is observational research on the infrastructure of prediction markets, electoral polls, and news flow.',
     disclaimerNotRec: 'Does not constitute investment recommendation.',
     disclaimerExtra: 'No position is recommended or implied. Polymarket is a USD-denominated market operating outside Brazilian jurisdiction; volumes mentioned are informative, not orientative. Portfolio decisions are the sole responsibility of the reader and must consider independent analysis, risk profile, and applicable regulation.',
@@ -166,6 +169,7 @@ const T = {
     section: { 1: 'Executive Summary', 2: 'Por qué AFOS no suaviza', 3: 'Escenarios ponderados para la semana', 4: 'Indicator Grid', 5: 'Liquidez y estructura de mercado', 6: 'Calendario de prints price-relevant', 7: 'Watch list — disparadores de la semana', 8: 'Metodología', 9: 'Lectura adicional · cobertura macro' },
     paywall: '(paywall)',
     disclaimerLabel: 'Aviso obligatorio.',
+    trackRecordLabel: 'Track record · casos validados globalmente',
     disclaimerText: 'Este brief es investigación observacional sobre infraestructura de mercados de predicción, encuestas electorales y flujo de noticias.',
     disclaimerNotRec: 'No constituye recomendación de inversión.',
     disclaimerExtra: 'Ninguna posición es recomendada o implícita. Polymarket es mercado denominado en USD operando fuera de la jurisdicción brasileña; volúmenes mencionados son informativos, no orientativos. Decisiones de portafolio son responsabilidad exclusiva del lector.',
@@ -207,13 +211,13 @@ function SummaryCards({ cards }: { cards: SummaryCard[]; isBlue: boolean }) {
       {cards.map((card, i) => (
         <div key={i} className="rounded-lg p-4 bg-primary border border-primary">
           <div className="text-[10px] font-bold tracking-wider uppercase mb-2 text-blue-200">
-            {card.label}
+            {stripMdLinks(card.label)}
           </div>
           <div className="text-[22px] font-extrabold leading-tight mb-1 text-white">
             {card.headline}{card.unit && <span className="text-sm font-extrabold">{card.unit}</span>}
           </div>
           <div className={`text-xs font-semibold ${DELTA_COLOR_CARDS[card.deltaDirection]}`}>{card.delta}</div>
-          <div className="text-xs mt-1.5 leading-snug text-blue-100">{card.desc}</div>
+          <div className="text-xs mt-1.5 leading-snug text-blue-100">{stripMdLinks(card.desc)}</div>
         </div>
       ))}
     </div>
@@ -224,7 +228,7 @@ function AntiAvg({ block, isBlue, footer, rightDetails }: { block: AntiAvgBlock;
   return (
     <div className={`rounded-lg overflow-hidden my-5 ${isBlue ? 'border border-blue-400/40' : 'border border-slate-200'}`}>
       <div className={`px-5 py-3 font-bold ${isBlue ? 'bg-blue-900 text-white' : 'bg-primary text-white'}`}>
-        {block.title}
+        {stripMdLinks(block.title)}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className={`p-5 ${isBlue ? 'bg-blue-950/60 md:border-r border-blue-400/30' : 'bg-stone-50 md:border-r border-slate-200'}`}>
@@ -232,7 +236,7 @@ function AntiAvg({ block, isBlue, footer, rightDetails }: { block: AntiAvgBlock;
             {block.leftLabel}
           </div>
           <div className={`text-[28px] font-extrabold leading-none mb-2 line-through decoration-red-600 decoration-2 ${isBlue ? 'text-blue-300' : 'text-slate-400'}`}>
-            {block.leftValue}{block.leftUnit && <span className="text-sm">{block.leftUnit}</span>}
+            {stripMdLinks(block.leftValue)}{block.leftUnit && <span className="text-sm">{block.leftUnit}</span>}
           </div>
           {block.leftDetails.map((d, i) => (
             <div key={i} className={`text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{d}</div>
@@ -243,7 +247,7 @@ function AntiAvg({ block, isBlue, footer, rightDetails }: { block: AntiAvgBlock;
             {block.rightLabel}
           </div>
           <div className={`text-[28px] font-extrabold leading-none mb-2 ${isBlue ? 'text-white' : 'text-primary'}`}>
-            {block.rightValue}
+            {stripMdLinks(block.rightValue)}
           </div>
           {block.rightDetails.map((_d, i) => (
             <div key={i} className={`text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>
@@ -302,15 +306,15 @@ function IndicatorGrid({ rows, headers, isBlue }: { rows: IndicatorRow[]; header
             <tr key={i} className={`${row.highlight ? (isBlue ? 'bg-blue-900/40' : 'bg-amber-50') : ''} ${isBlue ? 'border-b border-blue-400/20' : 'border-b border-slate-200'}`}>
               <td className="px-3 py-2.5">
                 {row.contractLink ? (
-                  <a href={row.contractLink} target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor}`}>{row.contract}</a>
+                  <a href={row.contractLink} target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor}`}>{stripMdLinks(row.contract)}</a>
                 ) : (
-                  <span className={`font-semibold ${isBlue ? 'text-white' : 'text-slate-900'}`}>{row.contract}</span>
+                  <span className={`font-semibold ${isBlue ? 'text-white' : 'text-slate-900'}`}>{stripMdLinks(row.contract)}</span>
                 )}
               </td>
               <td className="px-3 py-2.5 text-right font-semibold tabular-nums">{row.value}</td>
               <td className={`px-3 py-2.5 text-right font-semibold tabular-nums ${DELTA_COLOR[row.deltaDirection]}`}>{row.delta}</td>
               <td className={`px-3 py-2.5 text-right tabular-nums ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{row.volume}</td>
-              <td className={`px-3 py-2.5 italic text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{row.reading}</td>
+              <td className={`px-3 py-2.5 italic text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{stripMdLinks(row.reading)}</td>
             </tr>
           ))}
         </tbody>
@@ -364,6 +368,13 @@ function Liquidity({ block, totalSuffix, anomalyLabel, isBlue, anomaly, footer }
   )
 }
 
+// O campo `print` é texto plano numa célula (já envolto pelo printLink do TSE).
+// O tradutor às vezes injeta link de glossário em termos (ex.: [Datafolha](...)),
+// que renderiza cru aqui — remover a sintaxe de link, mantendo só o texto.
+function stripMdLinks(s: string): string {
+  return (s || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+}
+
 function Calendar({ rows, headers, isBlue }: { rows: CalendarRow[]; headers: { date: string; print: string; sample: string; reading: string }; isBlue: boolean }) {
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
   return (
@@ -383,13 +394,13 @@ function Calendar({ rows, headers, isBlue }: { rows: CalendarRow[]; headers: { d
               <td className={`px-3 py-2.5 font-semibold ${isBlue ? 'text-white' : 'text-slate-900'}`}>{row.date}</td>
               <td className="px-3 py-2.5">
                 {row.printLink ? (
-                  <a href={row.printLink} target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor}`}>{row.print}</a>
+                  <a href={row.printLink} target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor}`}>{stripMdLinks(row.print)}</a>
                 ) : (
-                  <span className="font-semibold">{row.print}</span>
+                  <span className="font-semibold">{stripMdLinks(row.print)}</span>
                 )}
               </td>
               <td className={`px-3 py-2.5 tabular-nums ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{row.sample}</td>
-              <td className={`px-3 py-2.5 italic text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{row.reading}</td>
+              <td className={`px-3 py-2.5 italic text-xs ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>{stripMdLinks(row.reading)}</td>
             </tr>
           ))}
         </tbody>
@@ -404,8 +415,8 @@ function WatchList({ items, isBlue }: { items: WatchItem[]; isBlue: boolean }) {
       <ol className="list-decimal pl-5 space-y-3">
         {items.map((item, i) => (
           <li key={i} className={`text-sm leading-relaxed ${isBlue ? 'text-amber-50' : 'text-amber-950'}`}>
-            <strong className={isBlue ? 'text-white' : 'text-amber-900'}>{item.bold}</strong>{item.text && ' '}
-            {item.text}
+            <strong className={isBlue ? 'text-white' : 'text-amber-900'}>{stripMdLinks(item.bold)}</strong>{item.text && ' '}
+            {stripMdLinks(item.text || '')}
           </li>
         ))}
       </ol>
@@ -428,7 +439,7 @@ function AdditionalReading({ block, paywallLabel, isBlue, intro, footer }: { blo
             <strong className={isBlue ? 'text-white' : 'text-slate-900'}>{item.source}</strong>
             {item.description && (
               <>
-                {' · '}<span className={isBlue ? 'text-blue-100' : 'text-slate-700'}>{item.description}</span>
+                {' · '}<span className={isBlue ? 'text-blue-100' : 'text-slate-700'}>{stripMdLinks(item.description)}</span>
               </>
             )}
             {item.paywall && (
@@ -578,6 +589,14 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
               </div>
             )}
           </>
+        )}
+
+        {/* Track record callout — casos validados pelo resultado real */}
+        {md.trackRecord && (
+          <div className={`my-7 p-5 rounded-lg border-l-[4px] ${isBlue ? 'bg-blue-950/50 border-blue-300 text-blue-50' : 'bg-sky-50 border-sky-500 text-slate-700'}`}>
+            <div className={`text-[11px] font-bold uppercase tracking-wider mb-2 ${isBlue ? 'text-white' : 'text-slate-900'}`}>🌐 {t.trackRecordLabel}</div>
+            <div className="text-[15px] leading-relaxed">{md.trackRecord}</div>
+          </div>
         )}
 
         {/* Section 3 — Cenários ponderados */}

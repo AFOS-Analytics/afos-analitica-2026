@@ -123,6 +123,7 @@ export default async function TradeoffByDatePage(props: PageProps) {
     scenariosIntro: data.scenariosIntro ? <Inline text={data.scenariosIntro} /> : undefined,
     calendarFooter: data.calendarFooter ? <Inline text={data.calendarFooter} /> : undefined,
     methodology: data.methodology ? <Inline text={data.methodology} /> : undefined,
+    trackRecord: data.trackRecord ? <Inline text={data.trackRecord} /> : undefined,
     body: (!data.summaryCards && data.body) ? <Body text={data.body} /> : undefined,
     antiAvgFooter: data.antiAvg?.footer ? <Inline text={data.antiAvg.footer} /> : undefined,
     antiAvgRightDetails: data.antiAvg?.rightDetails?.map((d, i) => <InlineSpan key={i} text={d} />),
