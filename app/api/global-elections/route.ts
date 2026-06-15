@@ -43,7 +43,7 @@ export async function GET() {
   // Eleições futuras — excluídas as que já aconteceram em 2025
   const elections = [
     { country: 'Brasil', flag: '🇧🇷', date: 'Out 2026', slug: 'brazil-presidential-election', type: 'Presidencial', lat: -15.8, lng: -47.9 },
-    { country: 'Colômbia', flag: '🇨🇴', date: '2026', slug: 'colombia-presidential-election', type: 'Presidencial', lat: 4.7, lng: -74.1 },
+    { country: 'Colômbia', flag: '🇨🇴', date: '2º turno · 21/Jun', slug: 'colombia-presidential-election', type: 'Presidencial', lat: 4.7, lng: -74.1 },
     { country: 'França', flag: '🇫🇷', date: '2027', slug: 'french-presidential-election-2027', type: 'Presidencial', lat: 48.9, lng: 2.3 },
     { country: 'Coreia do Sul', flag: '🇰🇷', date: '2027', slug: 'south-korea-presidential-election', type: 'Presidencial', lat: 37.6, lng: 127.0 },
     { country: 'México', flag: '🇲🇽', date: 'Jun 2027', slug: 'mexico-presidential-election', type: 'Presidencial', lat: 19.4, lng: -99.1 },

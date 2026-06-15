@@ -10,139 +10,41 @@
   "polls_count": 29,
   "market_candidates": 19,
   "latest_poll": {
-    "pollster": "Invamer",
-    "date": "2026-05-20"
+    "pollster": "AtlasIntel",
+    "date": "2026-06-11"
   },
   "headline": {
-    "pt-BR": "Abelardo de la Espriella venceu o 1º turno (31/mai) com 43,7% e disputa o 2º turno em 21/jun contra Iván Cepeda. O mercado leu bem a força dele: precificava 43,5% de probabilidade de vitória enquanto as pesquisas mostravam 31,6% de voto, e ele superou as pesquisas no resultado. Cepeda liderou a intenção de voto, com divergência quase nula. Onde o mercado (probabilidade de vencer) e a pesquisa (voto) divergem está o sinal que a AFOS acompanha. O desfecho ainda depende do 2º turno.",
-    "en": "Abelardo de la Espriella won the first round (May 31) with 43.7% and faces the June 21 runoff against Iván Cepeda. The market read his strength well: it priced him at 43.5% to win while polls showed 31.6% of the vote, and he outran the polls in the result. Cepeda led voting intention, with near-zero divergence. Where the market (probability of winning) and the poll (vote share) diverge is the signal AFOS tracks. The outcome still depends on the runoff.",
-    "es": "Abelardo de la Espriella ganó la primera vuelta (31 may) con 43,7% y disputa el balotaje del 21 jun contra Iván Cepeda. El mercado leyó bien su fuerza: lo valoraba en 43,5% de ganar mientras las encuestas mostraban 31,6% del voto, y superó a las encuestas en el resultado. Cepeda lideró la intención de voto, con divergencia casi nula. Donde el mercado (probabilidad de ganar) y la encuesta (voto) divergen está la señal que AFOS sigue. El desenlace aún depende del balotaje."
+    "pt-BR": "1º turno (31/mai): De la Espriella 43,7% × Cepeda 40,9%, sem maioria. No 2º turno (21/jun), as pesquisas dão De la Espriella à frente por ~8pp (AtlasIntel 9-11/jun: 50,9% × 43,1%; CNC 14/jun: 48,6% × 44,7%), enquanto o mercado precifica a vitória dele como quase certa (88,5% × 12,5%). A divergência do runoff é grande: o mercado lê o lead de ~8pp como desfecho praticamente selado, bem acima da margem da pesquisa. Resultado real só em 21/jun.",
+    "en": "First round (May 31): De la Espriella 43.7% × Cepeda 40.9%, no majority. In the June 21 runoff, polls put De la Espriella ahead by ~8pp (AtlasIntel Jun 9-11: 50.9% × 43.1%; CNC Jun 14: 48.6% × 44.7%), while the market prices his win as near-certain (88.5% × 12.5%). The runoff divergence is wide: the market reads the ~8pp lead as an all-but-sealed outcome, far above the poll margin. Real result only on June 21.",
+    "es": "Primera vuelta (31 may): De la Espriella 43,7% × Cepeda 40,9%, sin mayoría. En el balotaje del 21 jun, las encuestas dan a De la Espriella adelante por ~8pp (AtlasIntel 9-11 jun: 50,9% × 43,1%; CNC 14 jun: 48,6% × 44,7%), mientras el mercado valora su victoria como casi segura (88,5% × 12,5%). La divergencia del balotaje es amplia: el mercado lee la ventaja de ~8pp como un desenlace prácticamente sellado, muy por encima del margen de la encuesta. Resultado real solo el 21 jun."
   },
   "rows": [
     {
-      "candidate": "Iván Cepeda",
-      "poll_pct": 44.6,
-      "market_pct": 43.5,
-      "divergence_pp": -1.1
-    },
-    {
       "candidate": "Abelardo de la Espriella",
-      "poll_pct": 31.6,
-      "market_pct": 43.5,
-      "divergence_pp": 11.9
+      "poll_pct": 50.9,
+      "market_pct": 88.5,
+      "divergence_pp": 37.6
     },
     {
-      "candidate": "Paloma Valencia",
-      "poll_pct": 14,
-      "market_pct": 14.5,
-      "divergence_pp": 0.5
-    },
-    {
-      "candidate": "Sergio Fajardo",
-      "poll_pct": 2.2,
-      "market_pct": 0.2,
-      "divergence_pp": -2
-    },
-    {
-      "candidate": "Roy Barreras",
-      "poll_pct": 0.3,
-      "market_pct": 0.1,
-      "divergence_pp": -0.2
+      "candidate": "Iván Cepeda",
+      "poll_pct": 43.1,
+      "market_pct": 12.5,
+      "divergence_pp": -30.6
     }
   ],
   "market_snapshot": {
-    "date": "2026-05-20",
-    "total_volume_usd": 36346454,
+    "date": "2026-06-15",
+    "total_volume_usd": 37086157,
     "candidates": [
       {
         "candidate": "Abelardo de la Espriella",
-        "market_pct": 43.5,
-        "volume_usd": 3254888
+        "market_pct": 88.5,
+        "volume_usd": 3516585
       },
       {
         "candidate": "Iván Cepeda Castro",
-        "market_pct": 43.5,
-        "volume_usd": 3172276
-      },
-      {
-        "candidate": "Paloma Valencia",
-        "market_pct": 14.5,
-        "volume_usd": 2674635
-      },
-      {
-        "candidate": "Sergio Fajardo",
-        "market_pct": 0.2,
-        "volume_usd": 2393093
-      },
-      {
-        "candidate": "Carlos Felipe Córdoba",
-        "market_pct": 0.2,
-        "volume_usd": 709130
-      },
-      {
-        "candidate": "Vicky Dávila",
-        "market_pct": 0.1,
-        "volume_usd": 3018077
-      },
-      {
-        "candidate": "Luis Gilberto Murillo",
-        "market_pct": 0.1,
-        "volume_usd": 1926534
-      },
-      {
-        "candidate": "Claudia López",
-        "market_pct": 0.1,
-        "volume_usd": 1207052
-      },
-      {
-        "candidate": "David Luna Sánchez",
-        "market_pct": 0.1,
-        "volume_usd": 1850813
-      },
-      {
-        "candidate": "Juan Daniel Oviedo",
-        "market_pct": 0.1,
-        "volume_usd": 1534890
-      },
-      {
-        "candidate": "Gustavo Bolívar",
-        "market_pct": 0.1,
-        "volume_usd": 5794849
-      },
-      {
-        "candidate": "Juan Manuel Galán",
-        "market_pct": 0.1,
-        "volume_usd": 769121
-      },
-      {
-        "candidate": "Germán Vargas Lleras",
-        "market_pct": 0.1,
-        "volume_usd": 1787258
-      },
-      {
-        "candidate": "Mauricio Cárdenas",
-        "market_pct": 0.1,
-        "volume_usd": 2525323
-      },
-      {
-        "candidate": "Daniel Quintero",
-        "market_pct": 0.1,
-        "volume_usd": 706339
-      },
-      {
-        "candidate": "Roy Barreras",
-        "market_pct": 0.1,
-        "volume_usd": 1230962
-      },
-      {
-        "candidate": "Enrique Peñalosa",
-        "market_pct": 0.1,
-        "volume_usd": 1313099
-      },
-      {
-        "candidate": "Juan Carlos Pinzón",
-        "market_pct": 0.1,
-        "volume_usd": 478115
+        "market_pct": 12.5,
+        "volume_usd": 3481906
       }
     ]
   },
@@ -201,7 +103,8 @@
       "2026-05-27",
       "2026-06-02",
       "2026-06-08",
-      "2026-06-10"
+      "2026-06-10",
+      "2026-06-14"
     ],
     "series": [
       {
@@ -260,7 +163,8 @@
           70.5,
           80.5,
           83.5,
-          85.5
+          85.5,
+          88.5
         ]
       },
       {
@@ -319,7 +223,8 @@
           29.5,
           19.5,
           15.5,
-          14.5
+          14.5,
+          12.5
         ]
       },
       {
@@ -375,6 +280,7 @@
           0.2,
           0.2,
           0.2,
+          0.1,
           0.1,
           0.1,
           0.1,
@@ -437,6 +343,7 @@
           1.8,
           0.1,
           0.1,
+          0.1,
           0.1
         ]
       },
@@ -491,6 +398,7 @@
           0.1,
           0.2,
           0.2,
+          0.1,
           0.1,
           0.1,
           0.1,
