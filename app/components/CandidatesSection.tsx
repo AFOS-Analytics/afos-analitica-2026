@@ -78,7 +78,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "0.15%",
     poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.6M acumulado, anomalia de legado). Genial/Quaest 10/Jun não destaca Tarcísio no presidencial nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas). O mercado de Senado por número de cadeiras está pouco negociado hoje, sem favorito claro de alta liquidez, sinal a ler com cautela. STF impeach 3.60%."
+    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas). No mercado de Senado por número de cadeiras, o PL lidera com folga (73%, vol USD 243k), sinal de capilaridade institucional da legenda. STF impeach 3.60%."
   },
 ];
 
