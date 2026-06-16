@@ -12,6 +12,7 @@ Built and validated during the 2026 electoral cycle across South American countr
 
 [![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=flat&logo=github&label=Stars&color=0F52BA)](https://github.com/AFOS-Analytics/afos-analitica-2026/stargazers)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+[![DOI](https://img.shields.io/badge/DOI-10.7910%2FDVN%2F2D0UK7-0F52BA)](https://doi.org/10.7910/DVN/2D0UK7)
 [![Contact](https://img.shields.io/badge/contact-afos--analytics.com-0F52BA?logo=maildotru&logoColor=white)](mailto:contact@afos-analytics.com)
 [![Security](https://img.shields.io/badge/security-disclosure-d32f2f?logo=keycdn&logoColor=white)](mailto:security@afos-analytics.com)
 
@@ -295,6 +296,8 @@ Public, auditable **electoral-divergence** datasets — *prediction markets × p
 | [canada-2025](https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence) | Canada 2025 ✓ | Market swung 85% Conservative → 80% Liberal; the Liberals won |
 | [uk-2024](https://huggingface.co/datasets/AFOS-Analytics1/uk-2024-electoral-divergence) | United Kingdom 2024 ✓ | Labour won 411 of 650 seats on 33.7% of the vote; the market read a landslide the polls measured only as ~40% vote share |
 | [mexico-2024](https://huggingface.co/datasets/AFOS-Analytics1/mexico-2024-electoral-divergence) | Mexico 2024 ✓ | Market gave Sheinbaum ~90% to win from January; she won with ~59.8%, above the final polls |
+
+The **Brazil 2026** dataset additionally has a curated, citable academic release on **Harvard Dataverse** — DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7), a versioned and permanent snapshot of the live Hugging Face mirror, deposited in the largest social-science data repository. To our knowledge it is the first dataset on Harvard Dataverse to cross-reference prediction markets × registered polls × press coverage to measure explicit divergence in a Brazilian election.
 
 The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, **two odds charts** (probability trajectory + eve-of-vote market×poll snapshot, with total bet volume), a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
 

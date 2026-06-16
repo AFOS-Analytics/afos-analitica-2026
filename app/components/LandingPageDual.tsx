@@ -665,6 +665,17 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z"/></svg>
             </a>
           </div>
+          <a
+            href="https://doi.org/10.7910/DVN/2D0UK7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors ${tk.footerLink}`}
+            title="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7"
+            aria-label="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7 (opens in new tab)"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z"/></svg>
+            <span className="text-[11px]"><span className="font-semibold text-white">Harvard Dataverse</span> · DOI 10.7910/DVN/2D0UK7</span>
+          </a>
         </div>
       </footer>
     </div>

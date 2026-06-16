@@ -149,6 +149,17 @@ export function Footer() {
         <div className="text-center text-xs border-t border-white/20 pt-4">
           <p>{t('footer.description')}</p>
           <p className="mt-1 text-white/70">{t('footer.disclaimer')} <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white" aria-label={t('footer.polymarketLink')}>{t('footer.polymarket')}</a> {t('footer.notAffiliated')}</p>
+          <a
+            href="https://doi.org/10.7910/DVN/2D0UK7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors text-white/70 hover:text-white"
+            title="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7"
+            aria-label="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7 (opens in new tab)"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" /></svg>
+            <span className="text-[11px]"><span className="font-semibold text-white/90">Harvard Dataverse</span> · DOI 10.7910/DVN/2D0UK7</span>
+          </a>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-white/30 text-white/80 hover:text-white hover:bg-white/10 transition-all text-xs font-medium"
