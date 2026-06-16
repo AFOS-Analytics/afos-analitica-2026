@@ -1,0 +1,58 @@
+{
+  "date": "2026-06-16",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Pesquisa CNT/MDA 16/Jun",
+        "v1CrossRef": "0 menções em 7 dailies (novidade)",
+        "v2Fetch": "WebFetch CartaCapital (números completos 1T/2T) + Estadão, Folha, Sul21, CNN Brasil, Revista Fórum",
+        "secondSource": "múltiplas independentes",
+        "decision": "INCORPORAR (âncora)"
+      },
+      {
+        "event": "Pesquisa Futura/Apex 16/Jun",
+        "v1CrossRef": "'Futura' 4 menções (calendário); números publicados são novos",
+        "v2Fetch": "WebFetch Poder360 (números completos, incl. cenário sem Flávio) + CNN Brasil, Exame, JOTA",
+        "secondSource": "múltiplas independentes",
+        "decision": "INCORPORAR (âncora)"
+      },
+      {
+        "event": "PGR rejeita 2ª proposta de delação de Daniel Vorcaro",
+        "v1CrossRef": "'PGR' 0 menções (novidade); 'delação' recorrente (thread Vorcaro)",
+        "v2Fetch": "comunicada ao STF em 15/Jun; PF já recusara na semana anterior; tipo=evento",
+        "secondSource": "Metrópoles + Brasil 247 + CNN Brasil + Brasil de Fato + Jornal de Brasília",
+        "decision": "INCORPORAR (dated 15/Jun)"
+      },
+      {
+        "event": "Mendonça 'assumiu o caso Master no STF'",
+        "v1CrossRef": "'Mendonça' 1 menção (continuidade)",
+        "v2Fetch": "Agência Brasil confirma relatoria desde fev/2026 (após saída de Toffoli); manchete ICL usa 'assumir' como contexto antigo; tipo=recobrança",
+        "secondSource": "Agência Brasil + CNN Brasil",
+        "decision": "NÃO INCORPORAR como novidade. Incorporar só o desdobramento atual: caberá a Mendonça (relator) decidir o destino prisional de Vorcaro (CNN Brasil)"
+      },
+      {
+        "event": "Datafolha 19/Jun (Aécio + Joaquim Barbosa)",
+        "v1CrossRef": "continuidade (calendário)",
+        "v2Fetch": "G1, anúncio descritivo de rodada futura",
+        "secondSource": "n/a (calendário)",
+        "decision": "INCORPORAR descritivamente"
+      }
+    ],
+    "selfCheck": {
+      "ancorasViaV2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "PGR rejeição = multi-fonte; pesquisas = multi-fonte",
+    "numericalErrors": "reconcile-claims exit 0; %s batem com analysis-data.json; números das pesquisas verificados via fetch primário (CartaCapital/Poder360)",
+    "fontesInventadas": "13 veículos, todos do news-cache com títulos reais conferidos",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma; recuo de Flávio atribuído às pesquisas, não às pautas do STF; reascensão de Renan descrita como especulativa",
+    "verbosCriticos": "'rejeitou' (PGR, dated 15/Jun), 'preso' (Vorcaro desde nov/2025, dated), 'assumiu' (Mendonça) descartado como recobrança",
+    "decisao": "prosseguir para preview"
+  },
+  "notes": "Recobrança 'Mendonça assumiu o caso Master' foi também corrigida no dashboard (commit 590c444), alinhando dashboard e Daily ao padrão de 2 fontes. Tradutor (Bug 9): EN 1 URL e ES 2 URLs corrompidas, canonicalizadas contra o PT antes do publish."
+}
