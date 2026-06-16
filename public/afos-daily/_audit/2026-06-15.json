@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-15",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Publicação da pesquisa BTG/Nexus 15/Jun",
+        "v1CrossRef": "'Nexus' aparecia só como entrada de calendário nas dailies anteriores; os números publicados são novidade",
+        "v2Fetch": "Poder360 (primária) confirma 1T 42x33, 2T 49x43, aprovação>desaprovação; JOTA corrobora",
+        "secondSource": "JOTA (+ Estadão, Folha, CNN, GZH, Metrópoles na mesma direção)",
+        "decision": "INCORPORAR"
+      },
+      {
+        "event": "STF 'negou 589 pedidos de suspeição e impedimento de ministros' (Estadão)",
+        "v1CrossRef": "'suspeição' = 0 menções em 7 dailies (potencial novidade)",
+        "v2Fetch": "estadao.com.br bloqueado para o crawler; WebSearch amplo retornou decisão de 2025 (rito do golpe), NÃO ruling de 15/Jun sobre o caso Master de Flávio; tipo provável = explainer/contagem agregada",
+        "secondSource": "não verificada",
+        "decision": "NÃO INCORPORAR (UNVERIFIED) — risco de causação espúria com o recuo de Flávio"
+      },
+      {
+        "event": "Datafolha publica a partir de 19/Jun com Aécio Neves e Joaquim Barbosa",
+        "v1CrossRef": "'Datafolha' recorrente como calendário (continuidade)",
+        "v2Fetch": "manchete G1 = anúncio descritivo de rodada futura, não resultado",
+        "secondSource": "n/a (item descritivo de calendário)",
+        "decision": "INCORPORAR descritivamente (sem prever resultado)"
+      },
+      {
+        "event": "Moro defende CPI do Master (ES Brasil)",
+        "v1CrossRef": "continuidade do caso Master",
+        "v2Fetch": "fonte única (ES Brasil), declaração de baixo impacto",
+        "secondSource": "não verificada",
+        "decision": "NÃO INCORPORAR (single-source, não-essencial)"
+      }
+    ],
+    "selfCheck": {
+      "ancorasViaV2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Roundup estadual (O POVO) é descritivo, baixo risco, atribuído; números Nexus são multi-fonte",
+    "numericalErrors": "reconcile-claims.ts exit 0; %s de candidatos batem com analysis-data.json; itens sinalizados = deltas e sub-mercados (falsos positivos)",
+    "fontesInventadas": "12 veículos, todos do news-cache com títulos reais conferidos",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma; recuo de Flávio atribuído ao print Nexus (rejeição 52%), STF 589 descartado",
+    "verbosCriticos": "'negou/rejeitou' (STF 589) removido por falta de confirmação; sem prisão/morte/indicação/vazamento",
+    "decisao": "prosseguir para preview"
+  },
+  "notes": "A versão do dashboard (analysis-criteriosa.json + analysis-data.json) foi corrigida em separado (commit 52a079f) para remover a mesma alegação STF 589 não-verificada que o gate do Daily reprovou. Daily e dashboard alinhados no padrão de 2 fontes."
+}
