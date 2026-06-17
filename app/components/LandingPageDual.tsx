@@ -21,7 +21,7 @@ const CONTENT = {
   'pt-BR': {
     nav: { dashboard: 'Dashboard', about: 'Sobre', github: 'GitHub' },
     hero: {
-      badge: '15 Países Monitorados',
+      badge: 'Harvard Dataverse · DOI 10.7910/DVN/2D0UK7',
       title: 'Inteligência de Risco',
       titleHighlight: 'Político Eleitoral Global',
       claim: 'Cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias. Código aberto, fontes públicas auditáveis.',
@@ -66,7 +66,7 @@ const CONTENT = {
   en: {
     nav: { dashboard: 'Dashboard', about: 'About', github: 'GitHub' },
     hero: {
-      badge: '15 Countries Monitored',
+      badge: 'Harvard Dataverse · DOI 10.7910/DVN/2D0UK7',
       title: 'Global Electoral Political',
       titleHighlight: 'Risk Intelligence',
       claim: 'Real-time cross-referencing of prediction markets, electoral polls and news. Open-source, auditable public sources.',
@@ -111,7 +111,7 @@ const CONTENT = {
   es: {
     nav: { dashboard: 'Dashboard', about: 'Acerca de', github: 'GitHub' },
     hero: {
-      badge: '15 Países Monitoreados',
+      badge: 'Harvard Dataverse · DOI 10.7910/DVN/2D0UK7',
       title: 'Inteligencia Global de',
       titleHighlight: 'Riesgo Político Electoral',
       claim: 'Cruce en tiempo real entre mercados de predicción, encuestas electorales y noticias. Código abierto, fuentes públicas auditables.',
@@ -527,9 +527,17 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
       {/* ─── Hero ────────────────────────────────────────────── */}
       <section className="pt-28 sm:pt-36 pb-2 sm:pb-3 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-6 transition-colors duration-500 ${tk.badge}`}>
+          <a
+            href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7"
+            aria-label="Harvard Dataverse — DOI 10.7910/DVN/2D0UK7 (opens in new tab)"
+            className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full mb-6 transition-colors duration-500 hover:opacity-80 ${tk.badge}`}
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z"/></svg>
             {t.hero.badge}
-          </span>
+          </a>
           <h1 className={`text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight transition-colors duration-500 ${tk.title}`}>
             {t.hero.title}{' '}
             <span className={`transition-colors duration-500 ${tk.highlight}`}>{t.hero.titleHighlight}</span>
