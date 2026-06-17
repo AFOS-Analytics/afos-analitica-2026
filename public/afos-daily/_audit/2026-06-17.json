@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-17",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "No G7, Trump chamou o cenário político do Brasil de 'perigoso', confundiu-se sobre os filhos de Bolsonaro; Lula respondeu 'não se meta nas eleições do Brasil'.",
+        "verificacao1": "'Trump' aparece 5x nas últimas 7 dailies (10-14/Jun, contexto tarifaço/G7); o encontro/declarações do G7 são desdobramento novo de 16-17/Jun, não recobrança.",
+        "verificacao2": "CNN Brasil (primária) + Folha datada 17/06/2026 + G1 + O Globo + Estadão + BBC + InfoMoney; tipo=evento, multi-fonte independente.",
+        "segundaFonte": "múltiplas independentes (Folha, Estadão, O Globo, G1, BBC, CNN Brasil, Poder360)",
+        "decisao": "INCORPORAR como contexto político (Seção 3), NÃO como driver do mercado"
+      },
+      {
+        "evento": "Senadora pede CPI para investigar Master e BMG.",
+        "verificacao1": "'CPI' 0 menções em 7 dailies -> novidade.",
+        "verificacao2": "InfoMoney (1 fonte), tipo=evento (pedido, não abertura).",
+        "segundaFonte": "não verificada independentemente",
+        "decisao": "INCORPORAR com atribuição clara como 'pedido' (single-source, baixo impacto)"
+      },
+      {
+        "evento": "Flávio lançará plano de segurança pública.",
+        "verificacao1": "'segurança' 2 menções (outro contexto, Alcolumbre).",
+        "verificacao2": "Folha (1 fonte), tipo=evento (anúncio planejado, 'lançará').",
+        "segundaFonte": "não verificada independentemente",
+        "decisao": "INCORPORAR com atribuição, enquadrado como planejado"
+      }
+    ],
+    "selfCheck": {
+      "ancorasPassaramV2": true,
+      "semCausacaoEspuria": "recuo Lula/Flávio = leitura técnica (saída do platô), NÃO atribuído ao G7",
+      "verbosCriticosDesambiguados": "'preso/prender': Trump se confundiu sobre os Bolsonaros, NÃO afirmo prisão; 'pediu CPI' (não abertura); 'lançará plano' (planejado)",
+      "reconcileClaimsRodado": true
+    }
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "CPI (InfoMoney), plano de segurança (Folha), Zema restrições (G1) — baixo-impacto, atribuídos; Trump×Lula multi-fonte. Aceitável.",
+    "2_numericalErrors": "reconcile-claims rodado; divergências = artefato de decimal-vírgula (50,50% vs 50.5). Números conferidos contra JSON. OK.",
+    "3_fontesInventadas": "checados 3 (Poder360 primário, Notícias Tudo Aqui, JOTA) — reais no cache. OK.",
+    "4_quotesLiterais": "'não se meta nas eleições do Brasil' (multi-fonte), 'perigoso' (confirmado). OK.",
+    "5_causacaoEspuria": "evitada explicitamente (Divergência 3: G7 não moveu o mercado; recuo = leitura técnica). Nenhuma.",
+    "6_verbosCriticos": "'se confundiu' (não afirma prisão), 'pediu CPI', 'lançará plano'. OK.",
+    "decisao": "prosseguir para preview"
+  },
+  "validator": {
+    "validateAfosDaily": "exit 0, 1 warning low-link-density (48%, dia sem pesquisa, Seção 1 só Polymarket)",
+    "reconcileClaims": "falsos positivos de decimal-vírgula; números batem com JSON"
+  }
+}
