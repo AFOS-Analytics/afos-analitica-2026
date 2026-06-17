@@ -12,6 +12,10 @@ type: dataset
 authors:
   - name: "AFOS Analytics"
     website: "https://afos-analytics.com"
+identifiers:
+  - type: doi
+    value: 10.7910/DVN/2D0UK7
+    description: "Harvard Dataverse permanent deposit"
 keywords:
   - elections
   - Brazil
