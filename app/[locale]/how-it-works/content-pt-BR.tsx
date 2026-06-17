@@ -178,11 +178,12 @@ export function HowItWorksPtBR() {
       <p className={S.p}>Ao abrir <strong>afos-analytics.com</strong>, você cai na página inicial, a porta de entrada pública. Ela reúne, num só lugar, tudo que orienta o visitante antes de entrar no dashboard:</p>
       <ul className={S.ul}>
         <li><strong>Barra do topo (testeira)</strong>, o logo <strong>AFOS Analytics</strong> + atalhos diretos para <strong>Daily · Tradeoff · Global</strong>, seletor de idioma (PT/EN/ES), botão de tema (claro/escuro) e o botão <strong>Dashboard</strong> para entrar na aplicação.</li>
+        <li><strong>Selo do topo</strong>, logo abaixo da testeira, uma pílula clicável <strong>Harvard Dataverse · DOI</strong> que leva ao depósito acadêmico permanente e citável do dataset do Brasil 2026 (DOI 10.7910/DVN/2D0UK7).</li>
         <li><strong>Resumo do que a AFOS faz</strong> e estatísticas ao vivo (países monitorados, institutos de pesquisa, frequência de atualização dos mercados).</li>
         <li><strong>"Nossas análises"</strong>, grid com os quatro atalhos principais: <strong>O Método</strong> (este guia), <strong>AFOS Daily</strong>, <strong>AFOS Tradeoff</strong> e <strong>AFOS Global</strong>.</li>
         <li><strong>Cobertura global</strong>, faixa com as eleições monitoradas (Brasil, França, Alemanha, Reino Unido, Canadá e mais).</li>
         <li><strong>Cadastro por e-mail</strong>, o bloco "receba análises semanais no seu e-mail": campo de e-mail + consentimento opt-in (você marca a caixa) para receber alertas, resumos e comunicações. Sem spam, cancele quando quiser. Logo após confirmar, uma tela de boas-vindas deixa você <strong>escolher o idioma em que quer receber</strong> (Português, English ou Español), e essa preferência define o idioma dos seus e-mails do Daily e do Tradeoff.</li>
-        <li><strong>Rodapé enxuto</strong>, o nome da plataforma, uma linha de descrição, o disclaimer (não-afiliação ao Polymarket) e uma fileira de ícones: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt e 🤗 Hugging Face. (O rodapé completo de quatro blocos, com listas detalhadas, é o do dashboard e das demais páginas, descrito na seção 14.)</li>
+        <li><strong>Rodapé enxuto</strong>, o nome da plataforma, uma linha de descrição, o disclaimer (não-afiliação ao Polymarket) e uma fileira de ícones: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt, 🤗 Hugging Face e 🏛️ Harvard Dataverse. (O rodapé completo de quatro blocos, com listas detalhadas, é o do dashboard e das demais páginas, descrito na seção 14.)</li>
       </ul>
 
       <h2 id="header" className={S.h2}>1. Header (topo da página)</h2>
@@ -569,6 +570,7 @@ export function HowItWorksPtBR() {
         <li><strong>Bluesky</strong>, a mesma cobertura no ecossistema aberto</li>
         <li><strong>Product Hunt</strong>, a página do produto na comunidade de tecnologia</li>
         <li><strong>🤗 Hugging Face</strong>, o <strong>dataset aberto</strong> de divergência (mercado × pesquisa × imprensa), atualizado diariamente sob licença CC BY 4.0, o link de dados do rodapé leva direto a ele</li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, a versão acadêmica curada e citável do dataset do <strong>Brasil 2026</strong>, um <em>snapshot</em> permanente e versionado com DOI <strong>10.7910/DVN/2D0UK7</strong></li>
       </ul>
 
       <h3 className={S.h3}>Rodapé final</h3>
@@ -599,6 +601,7 @@ export function HowItWorksPtBR() {
         <li>Escreve a narrativa resultante, citando fontes, datas e veículos</li>
       </ol>
       <p className={S.p}>Todos os dados usados são <strong>públicos e auditáveis</strong>, qualquer pessoa pode verificar Polymarket, pesquisas do TSE ou notícias citadas.</p>
+      <p className={S.p}><strong>Permanência e citabilidade:</strong> além do espelho diário e auditável no <strong>Hugging Face</strong>, o dataset do <strong>Brasil 2026</strong> tem uma versão acadêmica curada e citável no <strong>Harvard Dataverse</strong> (DOI <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-yellow-400 hover:underline">10.7910/DVN/2D0UK7</a>), um <em>snapshot</em> permanente e versionado, com referência fixa para quem quiser citar o AFOS em pesquisa.</p>
       <Callout title="Por que isso é importante dizer">
         <p>Transparência sobre o uso de IA é padrão moderno, e é o que diferencia um projeto sério de um projeto opaco.</p>
       </Callout>

@@ -176,11 +176,12 @@ export function HowItWorksEs() {
       <p className={S.p}>Al abrir <strong>afos-analytics.com</strong>, caes en la página inicial, la puerta de entrada pública. Reúne, en un solo lugar, todo lo que orienta al visitante antes de entrar al dashboard:</p>
       <ul className={S.ul}>
         <li><strong>Barra superior (testera)</strong>, el logo <strong>AFOS Analytics</strong> + atajos directos a <strong>Daily · Tradeoff · Global</strong>, selector de idioma (PT/EN/ES), botón de tema (claro/oscuro) y el botón <strong>Dashboard</strong> para entrar a la aplicación.</li>
+        <li><strong>Sello superior</strong>, justo debajo de la testera, una píldora clicable <strong>Harvard Dataverse · DOI</strong> que lleva al depósito académico permanente y citable del dataset de Brasil 2026 (DOI 10.7910/DVN/2D0UK7).</li>
         <li><strong>Qué hace AFOS</strong> y estadísticas en vivo (países monitoreados, institutos de encuestas, frecuencia de actualización de los mercados).</li>
         <li><strong>"Nuestros análisis"</strong>, una grilla con los cuatro atajos principales: <strong>El Método</strong> (esta guía), <strong>AFOS Daily</strong>, <strong>AFOS Tradeoff</strong> y <strong>AFOS Global</strong>.</li>
         <li><strong>Cobertura global</strong>, una franja con las elecciones monitoreadas (Brasil, Francia, Alemania, Reino Unido, Canadá y más).</li>
         <li><strong>Registro por email</strong>, el bloque "recibe análisis semanales en tu email": un campo de email + consentimiento opt-in (marcas la casilla) para recibir alertas, resúmenes y comunicaciones. Sin spam, cancela cuando quieras. Justo después de confirmar, una pantalla de bienvenida te deja <strong>elegir el idioma en que quieres recibir</strong> (Português, English o Español), y esa preferencia define el idioma de tus emails del Daily y del Tradeoff.</li>
-        <li><strong>Footer enjuto</strong>, el nombre de la plataforma, una línea de descripción, el disclaimer (sin afiliación con Polymarket) y una fila de íconos: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt y 🤗 Hugging Face. (El footer completo de cuatro bloques, con listas detalladas, es el del dashboard y las demás páginas, descrito en la sección 14.)</li>
+        <li><strong>Footer enjuto</strong>, el nombre de la plataforma, una línea de descripción, el disclaimer (sin afiliación con Polymarket) y una fila de íconos: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt, 🤗 Hugging Face y 🏛️ Harvard Dataverse. (El footer completo de cuatro bloques, con listas detalladas, es el del dashboard y las demás páginas, descrito en la sección 14.)</li>
       </ul>
 
       <h2 id="header" className={S.h2}>1. Header (parte superior)</h2>
@@ -567,6 +568,7 @@ export function HowItWorksEs() {
         <li><strong>Bluesky</strong>, la misma cobertura en el ecosistema abierto</li>
         <li><strong>Product Hunt</strong>, la página del producto en la comunidad de tecnología</li>
         <li><strong>🤗 Hugging Face</strong>, el <strong>dataset abierto</strong> de divergencia (mercados × encuestas × prensa), actualizado diariamente bajo licencia CC BY 4.0, el link de datos del footer lleva directo a él</li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, la versión académica curada y citable del dataset de <strong>Brasil 2026</strong>, un <em>snapshot</em> permanente y versionado con DOI <strong>10.7910/DVN/2D0UK7</strong></li>
       </ul>
 
       <h3 className={S.h3}>Pie final</h3>
@@ -597,6 +599,7 @@ export function HowItWorksEs() {
         <li>Escribe la narrativa resultante, citando fuentes, fechas y medios</li>
       </ol>
       <p className={S.p}>Todos los datos usados son <strong>públicos y auditables</strong>, cualquiera puede verificar Polymarket, encuestas del TSE o noticias citadas.</p>
+      <p className={S.p}><strong>Permanencia y citabilidad:</strong> además del espejo diario y auditable en <strong>Hugging Face</strong>, el dataset de <strong>Brasil 2026</strong> tiene una versión académica curada y citable en el <strong>Harvard Dataverse</strong> (DOI <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-yellow-400 hover:underline">10.7910/DVN/2D0UK7</a>), un <em>snapshot</em> permanente y versionado, con referencia fija para quien quiera citar AFOS en investigación.</p>
       <Callout title="Por qué es importante decirlo">
         <p>La transparencia sobre el uso de IA es estándar moderno, y es lo que diferencia un proyecto serio de uno opaco.</p>
       </Callout>

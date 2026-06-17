@@ -176,11 +176,12 @@ export function HowItWorksEn() {
       <p className={S.p}>When you open <strong>afos-analytics.com</strong>, you land on the home page, the public entry point. It gathers, in one place, everything that orients a visitor before stepping into the dashboard:</p>
       <ul className={S.ul}>
         <li><strong>Top bar (header strip)</strong>, the <strong>AFOS Analytics</strong> logo + direct shortcuts to <strong>Daily · Tradeoff · Global</strong>, a language switcher (PT/EN/ES), a theme toggle (light/dark), and the <strong>Dashboard</strong> button to enter the app.</li>
+        <li><strong>Top badge</strong>, just below the header strip, a clickable <strong>Harvard Dataverse · DOI</strong> pill that links to the permanent, citable academic deposit of the Brazil 2026 dataset (DOI 10.7910/DVN/2D0UK7).</li>
         <li><strong>What AFOS does</strong>, plus live stats (monitored countries, polling institutes, market refresh frequency).</li>
         <li><strong>"Our analyses"</strong>, a grid with the four main shortcuts: <strong>The Method</strong> (this guide), <strong>AFOS Daily</strong>, <strong>AFOS Tradeoff</strong>, and <strong>AFOS Global</strong>.</li>
         <li><strong>Global coverage</strong>, a strip with the monitored elections (Brazil, France, Germany, United Kingdom, Canada, and more).</li>
         <li><strong>Email signup</strong>, the "get weekly analyses in your inbox" block: an email field + opt-in consent (you tick the box) to receive alerts, summaries, and updates. No spam, unsubscribe anytime. Right after confirming, a welcome screen lets you <strong>choose the language you want to receive</strong> (Português, English, or Español), and that preference sets the language of your Daily and Tradeoff emails.</li>
-        <li><strong>Lean footer</strong>, the platform name, a one-line description, the disclaimer (no Polymarket affiliation), and a row of icons: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt, and 🤗 Hugging Face. (The full four-block footer, with detailed lists, is the one on the dashboard and other pages, described in section 14.)</li>
+        <li><strong>Lean footer</strong>, the platform name, a one-line description, the disclaimer (no Polymarket affiliation), and a row of icons: Dashboard + GitHub, LinkedIn, X, Bluesky, Product Hunt, 🤗 Hugging Face, and 🏛️ Harvard Dataverse. (The full four-block footer, with detailed lists, is the one on the dashboard and other pages, described in section 14.)</li>
       </ul>
 
       <h2 id="header" className={S.h2}>1. Header (top of the page)</h2>
@@ -567,6 +568,7 @@ export function HowItWorksEn() {
         <li><strong>Bluesky</strong>, the same coverage on the open ecosystem</li>
         <li><strong>Product Hunt</strong>, the product's page in the tech community</li>
         <li><strong>🤗 Hugging Face</strong>, the <strong>open dataset</strong> of divergence (markets × polls × press), updated daily under a CC BY 4.0 license, the footer's data link goes straight to it</li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, the curated, citable academic version of the <strong>Brazil 2026</strong> dataset, a permanent, versioned snapshot with DOI <strong>10.7910/DVN/2D0UK7</strong></li>
       </ul>
 
       <h3 className={S.h3}>Bottom row</h3>
@@ -597,6 +599,7 @@ export function HowItWorksEn() {
         <li>Writes the resulting narrative, citing sources, dates, and outlets</li>
       </ol>
       <p className={S.p}>All data used is <strong>public and auditable</strong>, anyone can verify Polymarket, TSE polls, or cited news.</p>
+      <p className={S.p}><strong>Permanence and citability:</strong> beyond the daily, auditable mirror on <strong>Hugging Face</strong>, the <strong>Brazil 2026</strong> dataset has a curated, citable academic version on the <strong>Harvard Dataverse</strong> (DOI <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-yellow-400 hover:underline">10.7910/DVN/2D0UK7</a>), a permanent, versioned snapshot with a fixed reference for anyone who wants to cite AFOS in research.</p>
       <Callout title="Why this matters to say">
         <p>Transparency about AI use is a modern standard, and it's what differentiates a serious project from an opaque one.</p>
       </Callout>
