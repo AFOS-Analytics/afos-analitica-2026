@@ -1,0 +1,43 @@
+{
+  "date": "2026-06-18",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Nova fase da PF no caso Master mirando Jaques Wagner (9ª fase Operação Compliance Zero)",
+        "verificacao1_crossRef": "\"Wagner\" → 0 menções em 7 dailies → NOVIDADE; \"Master\" → 19 menções → caso em continuidade",
+        "verificacao2_fetch": { "fonte": "Poder360", "data": "2026-06-18", "tipo": "evento", "detalhe": "9ª fase Compliance Zero, 18 mandados de busca e apreensão por ordem do STF (BA/SP/DF), alvos Jaques Wagner e Augusto Ferreira Lima (ex-sócio de Vorcaro)" },
+        "segundaFonte": "Bloomberg Línea + Brasil 247 (independentes da BBC)",
+        "decisao": "INCORPORAR (evento novo, hoje, 3 fontes independentes)"
+      },
+      {
+        "evento": "Flávio lança plano de segurança (castração química / prisões modelo Bukele / 500 mil vagas)",
+        "verificacao1_crossRef": "plano 'preparado' já citado no Daily 17/Jun → hoje é o lançamento/detalhamento, desdobramento",
+        "verificacao2_fetch": { "fonte": "Money Times + Pleno.News", "data": "2026-06-18", "tipo": "evento/anúncio de proposta" },
+        "segundaFonte": "Money Times (500 mil vagas) + Pleno.News (castração química, Bukele)",
+        "decisao": "INCORPORAR como desdobramento (proposta de campanha, não fato judicial; não divisor de águas)"
+      },
+      {
+        "evento": "Caiado diz que Flávio 'perdeu a chance' de vencer Lula",
+        "verificacao1_crossRef": "declaração de opinião, não evento factual",
+        "verificacao2_fetch": { "fonte": "G1 + Estado de Minas + Jornal Opção", "data": "2026-06-18", "tipo": "declaração" },
+        "segundaFonte": "Estado de Minas + Jornal Opção",
+        "decisao": "INCORPORAR como fala atribuída (citação indireta, sem aspas literais inventadas)"
+      }
+    ],
+    "selfCheck": {
+      "ancoraVerificacao2": true,
+      "semCausacaoEspuria": "recuperação de Flávio narrada como coincidência temporal com a simetria do Master + vasos comunicantes com recuo de Renan, NÃO 'subiu porque Wagner foi alvo'",
+      "verbosCriticosDesambiguados": "'alvo de operação'/'18 mandados de busca'; Vorcaro 'preso desde 19/Mar'; sem uso de 'preso' para Wagner",
+      "reconcileClaims": "rodado — só falsos-positivos conhecidos (sub-mercados, amostras, valores de pesquisa que batem com JSON)"
+    }
+  },
+  "adversarialReview": {
+    "1_singleSource": "nenhuma alegação não-trivial single-source (Wagner 3 fontes, Flávio plano 2, Caiado 3)",
+    "2_numericalErrors": "reconcile-claims OK (falsos-positivos conhecidos)",
+    "3_fontesInventadas": "Poder360/BBC/Estadão/Folha/Money Times/Pleno.News/Estado de Minas todos com matéria do dia no cache/WebSearch",
+    "4_quotesLiterais": "'perdeu a chance' e 'não se meta nas eleições do Brasil' são citações reportadas por múltiplos veículos, atribuídas, não inventadas",
+    "5_causacaoEspuria": "evitada — recuperação de Flávio = coincidência temporal + vasos comunicantes com recuo de Renan",
+    "6_verbosCriticos": "'alvo de operação', '18 mandados de busca e apreensão', 'respinga'; Vorcaro 'preso desde 19/Mar' — OK",
+    "decisao": "prosseguir para preview e pipeline (aprovado pelo usuário)"
+  }
+}

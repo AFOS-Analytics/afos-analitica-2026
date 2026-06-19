@@ -118,6 +118,11 @@ interface Props {
   renderedBody?: ReactNode
 }
 
+// Link canônico do dataset BR2026 no Harvard Dataverse (DOI permanente).
+// Mesma URL usada no hero da landing, README, how-it-works e LinkedIn.
+// Pílula no hero da daily = lastro acadêmico dos dados de divergência da série.
+const HARVARD_DOI_URL = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7'
+
 const LANG_LABEL: Record<string, string> = { 'pt-BR': 'PT', en: 'EN', es: 'ES' }
 const NAV_LABEL = {
   'pt-BR': { prev: '← Síntese anterior', next: 'Próxima síntese →', archive: 'Todas as edições' },
@@ -205,6 +210,9 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
   const footerText = isBlue ? 'text-blue-200' : 'text-gray-500'
   const footerStrong = isBlue ? 'text-white' : 'text-gray-700'
   const ctaBg = isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'
+  const harvardPill = isBlue
+    ? 'bg-white/15 text-white hover:bg-white/25 border-white/20'
+    : 'bg-primary/10 text-primary hover:bg-primary/20 border-primary/15'
 
   return (
     <div data-theme={theme} className={`min-h-screen ${pageBg} transition-colors`}>
@@ -227,7 +235,23 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
           {dateExtenso}
         </h1>
         <p className={`text-center text-base font-medium mb-2 ${sublineColor}`}>{t.subline}</p>
-        <p className={`text-center text-xs mb-12 italic ${disclaimerColor}`}>{t.disclaimer}</p>
+        <p className={`text-center text-xs mb-5 italic ${disclaimerColor}`}>{t.disclaimer}</p>
+
+        {/* Harvard Dataverse — lastro acadêmico dos dados de divergência da série.
+            Link, não badge de imagem, p/ acessibilidade e theme-awareness. */}
+        <div className="flex justify-center mb-12">
+          <a
+            href={HARVARD_DOI_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border transition-colors ${harvardPill}`}
+          >
+            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
+              <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
+            </svg>
+            Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
+          </a>
+        </div>
 
         {/* TL;DR — bloco callout antes da lede; opcional, backward compatible */}
         {renderedTldr && renderedTldr.length > 0 && (
