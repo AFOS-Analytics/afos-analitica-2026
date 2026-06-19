@@ -1,0 +1,42 @@
+{
+  "date": "2026-06-19",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Escalada do caso Wagner: aliados dizem que Lula espera a renúncia de Jaques Wagner da liderança no Senado + operação reduz chance de indicação de Messias ao STF",
+        "verificacao1_crossRef": "\"Wagner\" = CONTINUIDADE (11 menções em 7 dailies, desdobramento do 18/Jun); \"Messias\" = NOVIDADE (0 menções)",
+        "verificacao2_fetch": { "fonte": "Folha (Lula espera renúncia, dizem aliados + Painel: reduz chance de Messias)", "data": "2026-06-19", "tipo": "desdobramento" },
+        "segundaFonte": "CartaCapital + Brasil 247 + Estado de Minas + BBC (independentes) — confirmam que aliados veem permanência insustentável; operação foi 18/Jun",
+        "nuance": "Wagner DISSE que segue no posto até decisão de Lula, que sequer tocou no tema com ele → enquadrar como EXPECTATIVA de aliados, NÃO renúncia consumada. Verbo 'renúncia' desambiguado.",
+        "decisao": "INCORPORAR como desdobramento (não divisor de águas; expectativa, não fato)"
+      },
+      {
+        "evento": "Datafolha adiada para sábado 20/Jun",
+        "verificacao1_crossRef": "continuidade (Datafolha = pauta recorrente)",
+        "verificacao2_fetch": { "fonte": "Folha + CartaCapital", "data": "2026-06-19", "tipo": "agenda" },
+        "segundaFonte": "CartaCapital (independente de Folha)",
+        "decisao": "INCORPORAR como nota prospectiva (registrada≠publicada; sem números)"
+      },
+      {
+        "evento": "Times Brasil/CNBC 'terceira via não decola' (Vinícius Torres Freire, sobre pesquisa American Analytics)",
+        "verificacao2_fetch": { "fonte": "Times Brasil/CNBC", "data": "2026-06-19", "tipo": "análise/coluna" },
+        "decisao": "INCORPORAR como contexto/leitura (NÃO adicionar números de pesquisa nova)"
+      }
+    ],
+    "selfCheck": {
+      "ancoraVerificacao2": true,
+      "semCausacaoEspuria": "Lula AVANÇOU no mercado apesar da escalada → narrado como divergência narrativa×mercado (mercado leu renúncia esperada como contenção), NÃO 'Lula subiu porque Wagner caiu'",
+      "verbosCriticosDesambiguados": "'renúncia' = expectativa de aliados (Wagner segue no posto); 'alvo de operação'/'mandados de busca' (não 'preso'); Vorcaro 'preso desde 19/Mar'",
+      "reconcileClaims": "rodado — só falsos-positivos conhecidos (51,50%/14,15%/deltas batem com JSON)"
+    }
+  },
+  "adversarialReview": {
+    "1_singleSource": "'Lula espera renúncia' = multi-fonte (Folha/CartaCapital/Brasil247/EM); Messias = Folha/Painel (atribuído à coluna)",
+    "2_numericalErrors": "reconcile-claims OK (falsos-positivos conhecidos)",
+    "3_fontesInventadas": "Folha/BBC/Estadão/CartaCapital/Times Brasil/Brasil247/Estado de Minas todas com matéria do dia",
+    "4_quotesLiterais": "'terceira via não decola' (Vinícius Torres Freire) e 'a lei tem que ser aplicada independentemente de torcida' (Haddad) atribuídas, não inventadas",
+    "5_causacaoEspuria": "evitada — Lula avança APESAR da escalada; narrado como divergência, mercado lendo renúncia esperada como contenção",
+    "6_verbosCriticos": "'renúncia' (expectativa, Wagner segue), 'alvo de operação', 'reduz a chance de indicação' — OK",
+    "decisao": "prosseguir para o pipeline (aprovado pelo usuário)"
+  }
+}
