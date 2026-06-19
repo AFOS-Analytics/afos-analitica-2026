@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useDashboardData, useGlobalElections } from '../../hooks/useDashboardData';
+import { useDashboardData } from '../../hooks/useDashboardData';
 import { useTranslation } from '../../i18n/context';
 import { VisitorStateProvider } from '../../hooks/useVisitorState';
 import type { PollData, AnalysisData, CritData } from '../../types';
@@ -11,7 +11,6 @@ import { DailyHeroCard } from '../../components/DailyHeroCard';
 import { AfosTradeoffHeroCard } from '../../components/AfosTradeoffHeroCard';
 import { ModalAbout } from '../../components/ModalAbout';
 import { ModalMetas } from '../../components/ModalMetas';
-import { ModalGlobal } from '../../components/ModalGlobal';
 import { LazyAboutMessages } from '../../components/LazyAboutMessages';
 import { PolymarketSection } from '../../components/PolymarketSection';
 import { PollsSection } from '../../components/PollsSection';
@@ -36,12 +35,9 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
   const { t, locale } = useTranslation();
   // Estáticos (polls/ac/crit) vêm do SSR via props; só poly/news são fetch client.
   const { poly, polls, news, ac, crit, polyLoading, newsLoading } = useDashboardData({ initialPolls, initialAc, initialCrit });
-  const { mapCountries, fetchGlobal } = useGlobalElections();
 
   const [showSobre, setShowSobre] = useState(false);
   const [showMetas, setShowMetas] = useState(false);
-  const [showGlobal, setShowGlobal] = useState(false);
-  const [expandedElection, setExpandedElection] = useState<number | null>(null);
 
   const sentimento = ac?.cards?.sentimento;
   const inss = ac?.cards?.inss;
@@ -56,20 +52,12 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
           fetchedAt={poly?.fetchedAt}
           onShowSobre={() => setShowSobre(true)}
           onShowMetas={() => setShowMetas(true)}
-          onShowGlobal={() => { setShowGlobal(true); fetchGlobal(); }}
         />
 
         <LazyAboutMessages>
           <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
           <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
         </LazyAboutMessages>
-        <ModalGlobal
-          show={showGlobal}
-          onClose={() => setShowGlobal(false)}
-          mapCountries={mapCountries}
-          expandedElection={expandedElection}
-          setExpandedElection={setExpandedElection}
-        />
 
         <DailyHeroCard />
         <AfosTradeoffHeroCard />

@@ -14,10 +14,9 @@ interface HeaderProps {
   fetchedAt?: string;
   onShowSobre: () => void;
   onShowMetas: () => void;
-  onShowGlobal: () => void;
 }
 
-export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: HeaderProps) {
+export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
   const { t, locale } = useTranslation();
 
   const dateLocale = locale === 'es' ? 'es-ES' : locale === 'en' ? 'en-US' : 'pt-BR';
@@ -43,9 +42,9 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
               <button onClick={onShowMetas} aria-label={t('header.goals')} className={btnClass}>
                 {t('header.goals')}
               </button>
-              <button onClick={onShowGlobal} aria-label={t('header.global')} className={btnClass}>
+              <Link href={`/${locale}/global`} aria-label={t('header.global')} className={btnClass}>
                 {t('header.global')}
-              </button>
+              </Link>
               <LanguageSwitcher />
             </div>
 
@@ -59,9 +58,9 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas, onShowGlobal }: He
                 <button onClick={onShowMetas} aria-label={t('header.goals')} className={btnClass}>
                   {t('header.goals')}
                 </button>
-                <button onClick={onShowGlobal} aria-label={t('header.global')} className={btnClass}>
+                <Link href={`/${locale}/global`} aria-label={t('header.global')} className={btnClass}>
                   {t('header.global')}
-                </button>
+                </Link>
               </div>
             </div>
           </div>

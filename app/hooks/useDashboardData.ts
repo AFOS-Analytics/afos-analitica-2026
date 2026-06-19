@@ -57,30 +57,3 @@ export function useDashboardData({ initialPolls, initialAc, initialCrit }: Initi
 
   return { poly, polls: initialPolls, news, ac: initialAc, crit: initialCrit, polyLoading, newsLoading, error };
 }
-
-export function useGlobalElections() {
-  const [mapCountries, setMapCountries] = useState<Record<string, unknown>[] | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  const doFetch = () => {
-    if (loading) return;
-    setLoading(true);
-    fetch('/api/global-map')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (data?.c) setMapCountries(data.c);
-      })
-      .catch(err => console.error('[Global] Fetch error:', err))
-      .finally(() => setLoading(false));
-  };
-
-  // Eager fetch no mount
-  useEffect(() => { doFetch(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // fetchGlobal: retry se dados não chegaram
-  const fetchGlobal = () => {
-    if (!mapCountries) doFetch();
-  };
-
-  return { mapCountries, loading, fetchGlobal };
-}
