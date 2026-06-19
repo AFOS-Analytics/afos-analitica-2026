@@ -15,50 +15,50 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "50.50%",
-    poll: "Lula fica estável no platô do ciclo: Poly 50.50% (vol USD 6.53M acumulado), mas o gap sobre Flávio recua a +24.55pp, abaixo do recorde de ontem (+26.45pp), pela recuperação do adversário. Sem pesquisa nacional nova em 18/Jun, o pano de fundo das urnas segue o das três nacionais de 15-16/Jun: CNT/MDA (n=2.002, campo 10-14/Jun, BR-04256/2026) 2T 49.3% × 36.8% (gap +12.5pp), o maior do recorte; Futura/Apex 2T 48.1% × 42.9%; BTG/Nexus 2T 49% × 43% (aprovação 48% × 47%). Próximo teste: a Datafolha 19/Jun, com Aécio Neves e Joaquim Barbosa (G1).",
+    polymarket: "51.50%",
+    poll: "Lula AVANÇA no platô do ciclo: Poly 51.50% (↑1.00pp, vol USD 6.56M acumulado), reabrindo o gap sobre Flávio a +25.75pp, ainda abaixo do recorde de 17/Jun (+26.45pp). Sem pesquisa nacional nova em 19/Jun (a Datafolha foi adiada para sábado 20/Jun), o pano de fundo das urnas segue o das três nacionais de 15-16/Jun: CNT/MDA (n=2.002, campo 10-14/Jun, BR-04256/2026) 2T 49.3% × 36.8% (gap +12.5pp), o maior do recorte; Futura/Apex 2T 48.1% × 42.9%; BTG/Nexus 2T 49% × 43% (aprovação 48% × 47%). Próximo teste: a Datafolha (Aécio, Joaquim Barbosa) sábado 20/Jun (Folha).",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 18/Jun D+35: sem pesquisa nova, dia de reversão parcial no mercado. Lula ficou estável a 50.50% e Flávio recuperou a 25.95% (↑1.90pp), estreitando o gap a +24.55pp (abaixo do recorde de ontem). O pano de fundo das urnas segue favorável, com três nacionais de 15-16/Jun (CNT/MDA, Futura/Apex e BTG/Nexus) todas com Lula ampliando. Na política, o caso Master respingou no governo: nova fase da PF mira Jaques Wagner, líder do governo no Senado, mas o Planalto vê dano menor que o de Flávio (Estadão, BBC). O mercado não puniu Lula. Volume total no presidencial USD 101.6M. STF impeach recua a 2.45% (vol baixo)."
+    risk: "EVENTOS 19/Jun D+36: sem pesquisa nova, dia de mercado na contramão da pressão política. Lula AVANÇOU a 51.50% (↑1.00pp) e o gap reabriu a +25.75pp, mesmo no dia em que o caso Master mais pressiona o governo: a nova fase da PF escalou contra Jaques Wagner, líder do governo no Senado, e Lula já espera a renúncia dele da liderança (Folha); a investigação aproxima o escândalo do Planalto (BBC) e reduz a chance da indicação de Messias ao STF (Folha). O mercado leu a renúncia esperada como contenção, não dano. Volume total no presidencial USD 101.9M. STF impeach volta a 3.60% (↑1.15pp)."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "25.95%",
-    poll: "Flávio recupera parte da queda da semana em Poly 25.95% (↑1.90pp, vol USD 6.71M acumulado), estreitando o gap para o presidente a +24.55pp, abaixo do recorde de ontem. Sem pesquisa nova, o pano de fundo das urnas segue adverso: CNT/MDA 16/Jun 1T 28.2% (gap -13.6pp); 2T 36.8% (perde 49.3% × 36.8%), o pior 2º turno do recorte; a Futura/Apex é mais branda (2T 42.9%, gap -5.2pp). No dia, lançou um plano de segurança radical (castração química, prisões no modelo Bukele, 500 mil vagas, Money Times, Pleno.News). O PL só pretende oficializar a candidatura no fim de julho em SP (Gazeta do Povo).",
+    polymarket: "25.75%",
+    poll: "Flávio recua de leve em Poly 25.75% (↓0.20pp, vol USD 6.75M acumulado), com o gap para o presidente reabrindo a +25.75pp pela alta de Lula. Sem pesquisa nova, o pano de fundo das urnas segue adverso: CNT/MDA 16/Jun 1T 28.2% (gap -13.6pp); 2T 36.8% (perde 49.3% × 36.8%), o pior 2º turno do recorte; a Futura/Apex é mais branda (2T 42.9%, gap -5.2pp). No dia, com o caso Master agora respingando no governo (Wagner), a campanha pediu CAUTELA na resposta para não soar oportunista (Folha). Segue isolado na frente do 2º lugar do 1º turno (69.5%).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 18/Jun: Flávio recuperou a 25.95% (↑1.90pp), estreitando o gap para Lula a +24.55pp (abaixo do recorde de ontem). O movimento coincide com a simetria do caso Master, que passou a respingar no governo (nova fase da PF mira Jaques Wagner, Estadão). Para reagir, lançou um plano de segurança radical (castração química, prisões Bukele, Money Times), enquanto Caiado dizia que ele 'perdeu a chance' de vencer Lula (G1). No STF, Nunes Marques assumiu a ação de Flávio que pede investigar Lula (Portal VV8). STF impeach recua a 2.45% (↓1.15pp)."
+    risk: "EVENTOS 19/Jun: Flávio recuou de leve a 25.75% (↓0.20pp), com o gap para Lula reabrindo a +25.75pp pela alta do presidente. O caso Master ESCALOU contra o governo (PF mira Wagner, Lula espera renúncia dele, Folha), e a campanha de Flávio pediu CAUTELA na resposta, para não soar oportunista num caso em que ele próprio é alvo (Folha). O mercado NÃO premiou a oposição: Flávio recuou e Lula subiu. Zema negou proximidade com Flávio e reacendeu a briga na direita (Estadão). STF impeach volta a 3.60% (↑1.15pp)."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "14.55%",
-    poll: "Renan presidencial Poly 14.55% (↓1.20pp, vol USD 7.21M acumulado), devolve parte da alta da semana e recua no posto de favorito ao 3º lugar do 1º turno (46.55% no sub-mercado, ↓7pp), ainda com o maior volume acumulado do mercado presidencial. Com o recuo, a divergência mercado × pesquisa estreita para ~12.55pp (14.55% × 2% da CNT/MDA 16/Jun), mas segue a maior do dashboard. O noticiário resume o paradoxo: Renan cresce, mas não ameaça (Notícias Tudo Aqui), o mercado precifica conversão futura sem lastro nas urnas.",
+    polymarket: "14.15%",
+    poll: "Renan presidencial Poly 14.15% (↓0.40pp, vol USD 7.25M acumulado) no mercado de vencedor, MAS dispara no posto de favorito ao 3º lugar do 1º turno (54.5% no sub-mercado, ↑8pp), ainda com o maior volume acumulado do presidencial. A divergência mercado × pesquisa segue a maior do dashboard, em ~12.15pp (14.15% × 2% da CNT/MDA 16/Jun). Sinal dividido: o mercado o crava como provável 3º colocado, mas sem chance real de vencer. A Times Brasil/CNBC resume o quadro: a terceira via não decola (Vinícius Torres Freire).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "18/Jun: Renan devolveu parte da alta da semana, a 14.55% (↓1.20pp), recuando no posto de favorito ao 3º lugar do 1º turno (46.55%, ↓7pp); a divergência ante a CNT/MDA (2% no 1T) estreita para ~12.55pp, mas segue a maior do dashboard. A recuperação de Flávio veio junto com o recuo de Renan, sinal de vasos comunicantes na precificação da oposição. O 'paradoxo da direita' (G1) reforça que nenhum nome anti-Lula converteu a fraqueza de Flávio em voto. Sinal a monitorar: a Datafolha 19/Jun, que confirme ou não o patamar de 2-3% no 1T. STF impeach 2.45%."
+    risk: "19/Jun: Renan deu sinal dividido — recuou de leve no vencedor (14.15%, ↓0.40pp), mas o mercado o RECRAVOU como favorito ao 3º lugar do 1º turno (54.5%, ↑8pp), revertendo o recuo de ontem. A divergência ante a CNT/MDA (2% no 1T) segue a maior do dashboard, em ~12.15pp. A leitura é de um mercado que o precifica como provável 3º colocado, mas sem chance real de vencer. A Times Brasil reforça que a 3ª via não decola. Sinal a monitorar: a Datafolha 20/Jun, que confirme ou não o patamar de 2-3% no 1T. STF impeach 3.60%."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "1.85%",
-    poll: "Haddad fica estável a Poly 1.85% (vol USD 5.78M acumulado), à frente de Camilo Santana (1.75%) como nome do PT depois de Lula no mercado presidencial. CNT/MDA e Futura/Apex 16/Jun não listam Haddad no presidencial nacional (foco SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
+    polymarket: "1.95%",
+    poll: "Haddad sobe de leve a Poly 1.95% (↑0.10pp, vol USD 5.81M acumulado), à frente de Camilo Santana (1.75%) como nome do PT depois de Lula no mercado presidencial. CNT/MDA e Futura/Apex 16/Jun não listam Haddad no presidencial nacional (foco SP). No dia, comentou o caso Wagner com tom institucional ('a lei tem que ser aplicada independentemente de torcida', Folha). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad segue como nome do PT depois de Lula no mercado presidencial (1.85%, à frente de Camilo Santana 1.75%). Como ministro da Fazenda, no centro da disputa do PIX/tarifaço e do INSS, mas o mercado não precifica candidatura presidencial dele. A nova fase da PF no caso Master alcançou Jaques Wagner, líder do governo no Senado (BBC), o que pressiona a articulação política do PT. A aprovação do governo segue acima da desaprovação (Nexus 48% × 47%). STF impeach 2.45%."
+    risk: "Haddad sobe de leve a 1.95% (↑0.10pp), à frente de Camilo Santana (1.75%), como nome do PT depois de Lula. Como ministro da Fazenda, no centro do PIX/tarifaço e do INSS, mas o mercado não precifica candidatura presidencial dele. A escalada da PF no caso Master alcançou Jaques Wagner, líder do governo no Senado, com Lula esperando a renúncia dele (Folha), o que pressiona a articulação do PT no Congresso. Haddad comentou o caso com tom institucional (Folha). A aprovação do governo segue acima da desaprovação (Nexus 48% × 47%). STF impeach 3.60%."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "2.20%",
-    poll: "Caiado sobe de leve a Poly 2.20% (↑0.25pp, vol USD 4.18M acumulado), ainda no piso da 3ª via. CNT/MDA 16/Jun: 1T Caiado 4%, à frente da 3ª via com Flávio na disputa; e a Futura/Apex, num cenário SEM Flávio, dá Caiado 16.5% (lidera a 3ª via). No dia, disse que Flávio 'perdeu a chance' de vencer Lula (G1). Caiado domina entre os bolsonaristas em recorte da Quaest (Jornal Opção): é o nome posicionado para herdar o voto da direita se Flávio não for.",
+    polymarket: "2.35%",
+    poll: "Caiado sobe de leve a Poly 2.35% (↑0.15pp, vol USD 4.21M acumulado), ainda no piso da 3ª via. CNT/MDA 16/Jun: 1T Caiado 4%, à frente da 3ª via com Flávio na disputa; e a Futura/Apex, num cenário SEM Flávio, dá Caiado 16.5% (lidera a 3ª via). Disse que Flávio 'perdeu a chance' de vencer Lula (G1). Caiado domina entre os bolsonaristas em recorte da Quaest (Jornal Opção): é o nome posicionado para herdar o voto da direita se Flávio não for.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado subiu de leve a 2.20% (↑0.25pp, vol USD 4.18M), ainda no piso das apostas: o mercado precifica baixa a hipótese de Flávio sair da disputa. No dia, foi à ofensiva e disse que Flávio 'perdeu a chance' de vencer Lula (G1). No cenário sem Flávio, a Futura/Apex 16/Jun dá Caiado 16.5%, sinal de quanto voto da direita está represado em Flávio. No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto. A Datafolha 19/Jun, que passa a testar Aécio e Joaquim Barbosa (G1), acirra a disputa pelo mesmo nicho. STF impeach 2.45%."
+    risk: "Caiado subiu de leve a 2.35% (↑0.15pp, vol USD 4.21M), ainda no piso das apostas: o mercado precifica baixa a hipótese de Flávio sair da disputa. No cenário sem Flávio, a Futura/Apex 16/Jun dá Caiado 16.5%, sinal de quanto voto da direita está represado em Flávio. No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto, e a Times Brasil reforça que a 3ª via não decola. A Datafolha 20/Jun, que passa a testar Aécio e Joaquim Barbosa (Folha), acirra a disputa pelo mesmo nicho. STF impeach 3.60%."
   },
   {
     name: "Romeu Zema",
@@ -66,9 +66,9 @@ const candidates: CandidateProfile[] = [
     age: 56,
     role: "Ex-Gov. Minas Gerais",
     polymarket: "1.45%",
-    poll: "Zema fica estável a Poly 1.45% (vol USD 3.72M), segue no piso da 3ª via. CNT/MDA 16/Jun: 1T Zema 2.8% (com Flávio); sem Flávio, a Futura/Apex dá Zema 13.3% (2º da 3ª via, atrás de Caiado). Zema diz ter mais restrições a Lula do que a Flávio após a troca de críticas na direita (G1), atrito que expõe a dificuldade de convergência da direita. O Novo se equilibra entre a candidatura de Zema e alianças com o PL nos estados.",
+    poll: "Zema fica estável a Poly 1.45% (vol USD 3.74M), segue no piso da 3ª via. No dia, NEGOU proximidade com Flávio e reacendeu a briga na direita (Estadão), atrito que dificulta a convergência da oposição. CNT/MDA 16/Jun: 1T Zema 2.8% (com Flávio); sem Flávio, a Futura/Apex dá Zema 13.3% (2º da 3ª via, atrás de Caiado). O Novo se equilibra entre a candidatura de Zema e alianças com o PL nos estados.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema ficou estável a 1.45%, e a 3ª via segue sem tração na disputa bipolarizada Lula × Flávio. No cenário sem Flávio, a Futura/Apex 16/Jun dá Zema 13.3%, fôlego latente. Zema diz ter mais restrições a Lula do que a Flávio após a troca de críticas na direita (G1), sinal do atrito que dificulta qualquer convergência da oposição. STF impeach 2.45%."
+    risk: "Zema ficou estável a 1.45%, e a 3ª via segue sem tração na disputa bipolarizada Lula × Flávio. No dia, NEGOU proximidade com Flávio e reacendeu a briga na direita (Estadão), sinal do atrito do Novo com o bolsonarismo justamente quando o campo tentaria se unificar. No cenário sem Flávio, a Futura/Apex 16/Jun dá Zema 13.3%, fôlego latente. STF impeach 3.60%."
   },
   {
     name: "Tarcísio de Freitas",
@@ -78,7 +78,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "0.15%",
     poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~12.7M acumulado, o maior do mercado, anomalia de legado). CNT/MDA e Futura/Apex 16/Jun não destacam Tarcísio no presidencial nacional (foco reeleição SP). Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 12.8M). No mercado de Senado por número de cadeiras, o PL amplia a liderança (77.5%, ↑2.5pp), sinal de capilaridade institucional da legenda. STF impeach 2.45%."
+    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 12.8M). No mercado de Senado por número de cadeiras, o PL segue na liderança (77.5%), sinal de capilaridade institucional da legenda. STF impeach 3.60%."
   },
 ];
 
