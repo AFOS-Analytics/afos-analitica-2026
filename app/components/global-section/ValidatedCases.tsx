@@ -19,9 +19,9 @@ const LABELS: Record<Locale, { title: string; subtitle: string; analysis: string
 
 const TAGLINE: Record<string, Record<Locale, string>> = {
   PER: {
-    'pt-BR': 'O favorito do mercado por meses (López Aliaga) ficou em 3º e não foi ao 2º turno. Divergência sustentada, não ruído.',
-    en: "The market's months-long favorite (López Aliaga) placed 3rd and missed the runoff. Sustained divergence, not noise.",
-    es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje. Divergencia sostenida, no ruido.',
+    'pt-BR': 'O favorito do mercado por meses (López Aliaga) ficou em 3º e não foi ao 2º turno: divergência sustentada, não ruído. O 2º turno (07/jun) Fujimori × Sánchez terminou em empate técnico (~50,1% × 49,9%), ainda sem vencedor proclamado.',
+    en: "The market's months-long favorite (López Aliaga) placed 3rd and missed the runoff: sustained divergence, not noise. The June 7 runoff (Fujimori × Sánchez) ended in a virtual tie (~50.1% × 49.9%), no winner yet proclaimed.",
+    es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje: divergencia sostenida, no ruido. El balotaje del 7 jun (Fujimori × Sánchez) terminó en empate técnico (~50,1% × 49,9%), sin ganador proclamado aún.',
   },
   COL: {
     'pt-BR': 'De la Espriella venceu o 1º turno (31/mai, 43,7%) e o mercado já o precificava como favorito (43,5%): divergência quase nula entre mercado e resultado. Disputa o 2º turno em 21/jun contra Cepeda; desfecho ainda em aberto.',
@@ -70,13 +70,17 @@ export function ValidatedCases({ locale }: { locale: Locale }) {
           const name = seo?.name[locale] || seo?.name['en'] || c.iso3;
           const cc = ISO3_TO_CC[c.iso3] || '';
           const tag = TAGLINE[c.iso3]?.[locale] || c.election?.matchup || '';
+          const year = c.election?.first_round?.slice(0, 4) || '';
           const badge = c.election?.status === 'completed' ? l.completed : l.firstRound;
           return (
             <a key={c.iso3} href={`/${locale}/country/${slug}`} className="block border border-light-border rounded-xl p-4 bg-light-bg hover:border-primary/40 hover:shadow-sm transition-all">
               <div className="flex items-center justify-between mb-2 gap-2">
                 <div className="flex items-center gap-2 min-w-0">
                   {cc && <img src={`/flags/${cc}.svg`} alt="" aria-hidden="true" width={24} height={16} className="rounded-sm object-cover shadow-sm flex-shrink-0" style={{ width: 24, height: 16 }} />}
-                  <span className="font-bold text-dark text-sm truncate">{name}</span>
+                  <div className="flex items-baseline gap-1.5 min-w-0">
+                    <span className="font-bold text-dark text-sm truncate">{name}</span>
+                    {year && <span className="text-xs font-semibold text-dark flex-shrink-0">{year}</span>}
+                  </div>
                 </div>
                 <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium flex-shrink-0 whitespace-nowrap">{badge}</span>
               </div>
