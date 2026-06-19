@@ -57,7 +57,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   // OG dinâmico por eleição (bandeira + título) via /api/og — substitui o OG genérico da marca.
   const ogTitle = `${name} · ${type} ${election.year}`
-  const ogImage = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&cc=${ISO3_TO_CC[country.iso3] || ''}`
+  // subtítulo de 3 eixos (mercado × pesquisa × imprensa) só onde há eixo de imprensa (EUA 2024); demais usam o default 2 eixos
+  const ogLine3: Record<string, string> = {
+    'pt-BR': 'Mercado de previsão × pesquisas × imprensa — a diferença é o sinal.',
+    en: 'Prediction markets × polls × press — the spread is the signal.',
+    es: 'Mercado de predicción × encuestas × prensa — la brecha es la señal.',
+  }
+  const ogLine = country.iso3 === 'USA' ? (ogLine3[loc] || ogLine3.en) : ''
+  const ogImage = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&cc=${ISO3_TO_CC[country.iso3] || ''}${ogLine ? `&line=${encodeURIComponent(ogLine)}` : ''}`
 
   return {
     title,
