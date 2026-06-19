@@ -12,6 +12,7 @@ import germany from './germany.json'
 import canada from './canada.json'
 import uk from './uk.json'
 import mexico from './mexico.json'
+import usa from './usa.json'
 
 export interface DivergenceRow {
   candidate: string
@@ -35,8 +36,9 @@ export interface CountryDivergence {
   market_trajectory?: MarketTrajectory
 }
 
-// chave = iso3 (bate com CountrySEO.iso3). Casos validados: PER CHL COL DEU CAN GBR MEX (UK+México 2024 add 13/Jun).
+// chave = iso3 (bate com CountrySEO.iso3). Casos validados: USA PER CHL COL DEU CAN GBR MEX (EUA 2024 add 19/Jun, lidera = maior mercado eleitoral da história).
 export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
+  USA: usa as unknown as CountryDivergence,
   PER: peru as CountryDivergence,
   CHL: chile as CountryDivergence,
   COL: colombia as CountryDivergence,

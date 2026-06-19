@@ -156,6 +156,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
     iso3: 'USA', flag: '🇺🇸', region: 'Americas',
     elections: [
+      { slug: 'usa-2024', year: 2024, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2024-11-05', status: 'completed', polymarketSlug: 'presidential-election-winner-2024' },
       { slug: 'usa-2028', year: 2028, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2028-11-07', status: 'upcoming' },
     ],
   },

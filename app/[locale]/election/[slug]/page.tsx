@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
-import { getElectionBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
+import { getElectionBySlug, COUNTRIES_SEO, ISO3_TO_CC } from '../../../../lib/seo/countries'
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { ElectionPageContent } from '../../../components/ElectionPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
@@ -55,11 +55,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
   languages['x-default'] = `${BASE_URL}/en/election/${slug}`
 
+  // OG dinâmico por eleição (bandeira + título) via /api/og — substitui o OG genérico da marca.
+  const ogTitle = `${name} · ${type} ${election.year}`
+  const ogImage = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&cc=${ISO3_TO_CC[country.iso3] || ''}`
+
   return {
     title,
     description,
     alternates: { canonical: `${BASE_URL}/${loc}/election/${slug}`, languages },
-    ...socialMeta(loc, { title, description, url: `${BASE_URL}/${loc}/election/${slug}` }),
+    ...socialMeta(loc, { title, description, url: `${BASE_URL}/${loc}/election/${slug}`, image: ogImage }),
   }
 }
 

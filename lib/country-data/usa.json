@@ -1,0 +1,152 @@
+{
+  "iso3": "USA",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/usa-2024-electoral-divergence",
+  "election": {
+    "first_round": "2024-11-05",
+    "runoff": "",
+    "matchup": "Presidencial: Harris × Trump",
+    "status": "completed"
+  },
+  "polls_count": 517,
+  "market_candidates": 2,
+  "latest_poll": {
+    "pollster": "AtlasIntel",
+    "date": "2024-11-04"
+  },
+  "headline": {
+    "pt-BR": "Donald Trump venceu a eleição presidencial de 2024, e 2024 é o caso mais honesto do acervo: os dois grandes mercados do Polymarket discordaram entre si. O mercado de vencedor (colégio eleitoral), o maior mercado eleitoral da história com cerca de US$ 3,7 bilhões, dava Trump em ~56% na véspera enquanto as pesquisas nacionais mediam empate técnico, e acertou. Já o mercado de voto popular dava Harris em ~74% e errou: Trump também venceu o voto popular (49,8% × 48,3%, dentro da margem das pesquisas). A AFOS mostra o acerto e o erro do mercado lado a lado, porque o validador é o resultado real, não um relato conveniente. Mercado mede probabilidade de vencer, pesquisa mede voto; a tabela usa o mercado de colégio como eixo.",
+    "en": "Donald Trump won the 2024 presidential election, and 2024 is the most honest case in the collection: Polymarket's two big markets disagreed with each other. The winner market (electoral college), the largest election market in history at about US$3.7 billion, gave Trump ~56% on the eve while national polls measured a near-tie, and it was right. The popular-vote market gave Harris ~74% and was wrong: Trump won the popular vote too (49.8% × 48.3%, within the polls' margin). AFOS shows the market's hit and its miss side by side, because the validator is the real result, not a convenient narrative. The market measures probability of winning, the poll measures vote share; the table uses the electoral-college market as the axis.",
+    "es": "Donald Trump ganó la elección presidencial de 2024, y 2024 es el caso más honesto del acervo: los dos grandes mercados de Polymarket se contradijeron. El mercado de ganador (colegio electoral), el mayor mercado electoral de la historia con cerca de US$ 3,7 mil millones, daba a Trump ~56% en la víspera mientras las encuestas nacionales medían empate técnico, y acertó. El mercado de voto popular daba a Harris ~74% y se equivocó: Trump también ganó el voto popular (49,8% × 48,3%, dentro del margen de las encuestas). AFOS muestra el acierto y el error del mercado lado a lado, porque el validador es el resultado real. El mercado mide probabilidad de ganar, la encuesta mide voto; la tabla usa el mercado de colegio electoral como eje."
+  },
+  "rows": [
+    {
+      "candidate": "Trump",
+      "poll_pct": 47.8,
+      "market_pct": 56.4,
+      "divergence_pp": 8.5
+    },
+    {
+      "candidate": "Harris",
+      "poll_pct": 48.4,
+      "market_pct": 43.5,
+      "divergence_pp": -4.9
+    }
+  ],
+  "market_snapshot": {
+    "date": "2024-11-04",
+    "total_volume_usd": 3686335059,
+    "note_pt": "Mercado de vencedor (colégio eleitoral) — o maior mercado eleitoral da história, ~US$ 3,7 bi.",
+    "candidates": [
+      {
+        "candidate": "Trump",
+        "market_pct": 56.4,
+        "volume_usd": 1531000000
+      },
+      {
+        "candidate": "Harris",
+        "market_pct": 43.5,
+        "volume_usd": 1037000000
+      }
+    ]
+  },
+  "market_trajectory": {
+    "dates": [
+      "2024-07-21",
+      "2024-07-25",
+      "2024-07-29",
+      "2024-08-02",
+      "2024-08-06",
+      "2024-08-10",
+      "2024-08-14",
+      "2024-08-18",
+      "2024-08-22",
+      "2024-08-26",
+      "2024-08-30",
+      "2024-09-03",
+      "2024-09-07",
+      "2024-09-11",
+      "2024-09-15",
+      "2024-09-19",
+      "2024-09-23",
+      "2024-09-27",
+      "2024-10-01",
+      "2024-10-05",
+      "2024-10-09",
+      "2024-10-13",
+      "2024-10-17",
+      "2024-10-21",
+      "2024-10-25",
+      "2024-10-29",
+      "2024-11-02",
+      "2024-11-05"
+    ],
+    "series": [
+      {
+        "name": "Trump",
+        "pct": [
+          64,
+          62.5,
+          58.5,
+          53.5,
+          53.5,
+          47.6,
+          45.55,
+          48.65,
+          52.15,
+          49.55,
+          49.8,
+          51.75,
+          50.55,
+          51.95,
+          48.85,
+          46.75,
+          46.95,
+          48.95,
+          48.85,
+          49.75,
+          52.9,
+          54.95,
+          58.55,
+          60.65,
+          64.1,
+          65.85,
+          58.25,
+          58.55
+        ]
+      },
+      {
+        "name": "Harris",
+        "pct": [
+          18.25,
+          32.15,
+          39.3,
+          44.15,
+          43.7,
+          49.15,
+          52.45,
+          49.75,
+          46.8,
+          49.6,
+          48.3,
+          47.05,
+          47.75,
+          46.4,
+          50.35,
+          51.75,
+          52,
+          50.2,
+          49.65,
+          49.25,
+          46.55,
+          44.7,
+          41.05,
+          39.25,
+          36.05,
+          34.15,
+          41.85,
+          41.45
+        ]
+      }
+    ]
+  }
+}

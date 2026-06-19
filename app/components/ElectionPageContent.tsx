@@ -76,7 +76,7 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
           <section className={`${mktCard} border rounded-xl p-6 mb-8`}>
             <div className="flex items-baseline justify-between gap-3 mb-4">
               <h2 className={`text-lg font-bold ${heading}`}>🏆 {l.whoWins}</h2>
-              <span className={`text-sm font-semibold ${textMuted}`}>{l.volume}: ${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M</span>
+              <span className={`text-sm ${textMuted}`}>{l.volume}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{snap.total_volume_usd >= 1e9 ? `$${(snap.total_volume_usd / 1e9).toFixed(1)}B` : `$${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M`}</strong></span>
             </div>
             <div className="space-y-2.5">
               {snap.candidates.slice(0, 8).map((c, i) => (

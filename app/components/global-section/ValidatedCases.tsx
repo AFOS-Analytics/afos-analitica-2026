@@ -18,6 +18,11 @@ const LABELS: Record<Locale, { title: string; subtitle: string; analysis: string
 };
 
 const TAGLINE: Record<string, Record<Locale, string>> = {
+  USA: {
+    'pt-BR': 'O caso mais honesto do acervo: os dois mercados discordaram. O de vencedor (colégio eleitoral, **~US$ 3,7 bi**, o maior mercado eleitoral da história) dava Trump em ~56% contra o empate técnico das pesquisas, e acertou; o de voto popular dava Harris em ~74% e errou (Trump venceu o voto popular). A AFOS mostra o acerto e o erro do mercado lado a lado.',
+    en: 'The most honest case here: the two markets disagreed. The winner market (electoral college, **~US$3.7bn**, the largest election market in history) gave Trump ~56% against a poll near-tie, and was right; the popular-vote market gave Harris ~74% and was wrong (Trump won the popular vote too). AFOS shows the market’s hit and its miss side by side.',
+    es: 'El caso más honesto del acervo: los dos mercados se contradijeron. El de ganador (colegio electoral, **~US$3,7bn**, el mayor mercado electoral de la historia) daba a Trump ~56% frente al empate de las encuestas, y acertó; el de voto popular daba a Harris ~74% y se equivocó (Trump también ganó el voto popular). AFOS muestra el acierto y el error lado a lado.',
+  },
   PER: {
     'pt-BR': 'O favorito do mercado por meses (López Aliaga) ficou em 3º e não foi ao 2º turno: divergência sustentada, não ruído. O 2º turno (07/jun) Fujimori × Sánchez terminou em empate técnico (~50,1% × 49,9%), ainda sem vencedor proclamado.',
     en: "The market's months-long favorite (López Aliaga) placed 3rd and missed the runoff: sustained divergence, not noise. The June 7 runoff (Fujimori × Sánchez) ended in a virtual tie (~50.1% × 49.9%), no winner yet proclaimed.",
@@ -55,6 +60,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
   },
 };
 
+// Renderiza a tagline com suporte a **negrito** (marcador markdown simples), bolando o destaque de volume.
+function renderTag(s: string) {
+  return s.split('**').map((seg, i) => (i % 2 === 1 ? <strong key={i} className="font-bold text-dark">{seg}</strong> : seg));
+}
+
 export function ValidatedCases({ locale }: { locale: Locale }) {
   const l = LABELS[locale] || LABELS['pt-BR'];
   const cases = Object.values(COUNTRY_DIVERGENCE);
@@ -84,7 +94,7 @@ export function ValidatedCases({ locale }: { locale: Locale }) {
                 </div>
                 <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded-full font-medium flex-shrink-0 whitespace-nowrap">{badge}</span>
               </div>
-              <p className="text-xs text-gray-600 leading-snug mb-3">{tag}</p>
+              <p className="text-xs text-gray-600 leading-snug mb-3">{renderTag(tag)}</p>
               <div className="flex items-center justify-between text-[11px] gap-2">
                 <span className="text-primary font-semibold whitespace-nowrap">{l.analysis} →</span>
                 <span className="text-gray-400 text-right">{c.polls_count ?? 0} {l.poll} · {c.market_candidates ?? 0} {l.market}</span>

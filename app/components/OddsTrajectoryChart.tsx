@@ -28,7 +28,7 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
   const grid = isBlue ? 'rgba(147,197,253,0.16)' : '#eceef3'
   const axisText = isBlue ? 'rgba(191,219,254,0.7)' : '#9aa3b2'
   const lab = L[locale] || L['en']
-  const fmtVol = 'US$ ' + (volume / 1e6).toFixed(volume >= 1e8 ? 0 : 1) + 'M'
+  const fmtVol = volume >= 1e9 ? 'US$ ' + (volume / 1e9).toFixed(1) + 'B' : 'US$ ' + (volume / 1e6).toFixed(volume >= 1e8 ? 0 : 1) + 'M'
   const fmtPct = (p: number) => (p < 1 ? '<1%' : Math.min(99, Math.round(p)) + '%')
   const fmtDate = (d: string) => {
     try { return new Date(d + 'T00:00:00Z').toLocaleDateString(locale === 'pt-BR' ? 'pt-BR' : locale, { month: 'short', year: '2-digit', timeZone: 'UTC' }) } catch { return d }
@@ -37,7 +37,7 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
   return (
     <div className="mt-5">
       <p className={`text-[11px] uppercase tracking-wide mb-1.5 ${isBlue ? 'text-blue-300/70' : 'text-gray-500'}`}>
-        {lab.caption} · {lab.vol} {fmtVol}
+        {lab.caption} · {lab.vol} <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{fmtVol}</strong>
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet" role="img" aria-label={lab.caption}>
         {[0, 25, 50, 75, 100].map((p) => (

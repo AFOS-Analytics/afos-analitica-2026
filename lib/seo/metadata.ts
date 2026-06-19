@@ -23,8 +23,8 @@ interface PageSeo {
  * Fonte única reusada por buildMetadata e pelos generateMetadata de country/election/
  * institutional/for-investors — evita copiar o mesmo objeto OG em cada página.
  */
-export function socialMeta(locale: string, opts: { title: string; description: string; url: string }): Pick<Metadata, 'openGraph' | 'twitter'> {
-  const ogImage = `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`;
+export function socialMeta(locale: string, opts: { title: string; description: string; url: string; image?: string }): Pick<Metadata, 'openGraph' | 'twitter'> {
+  const ogImage = opts.image || `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`;
   return {
     openGraph: {
       title: opts.title,
