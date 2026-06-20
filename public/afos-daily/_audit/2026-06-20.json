@@ -1,0 +1,42 @@
+{
+  "date": "2026-06-20",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Datafolha 20/Jun publicada (1T Lula 41% x Flávio 31%; 2T 47% x 43%; rejeição Flávio 48% x Lula 46%)",
+        "verificacao1_crossRef": "'Datafolha' = 30 menções, MAS todas sobre o ADIAMENTO (adiada p/ 20/Jun nas dailies 18-19/Jun). A publicação de hoje é NOVIDADE.",
+        "verificacao2_fetch": { "fonte": "G1 (URL limpa /pesquisa-eleitoral 20/06) + Folha (análise 'cara de 2º turno')", "data": "2026-06-20", "tipo": "evento (pesquisa publicada)" },
+        "segundaFonte": "MÚLTIPLAS independentes: CartaCapital + Brasil de Fato + Gazeta do Povo + Bahia Economica + Portal ABC + Tribuna do Agreste. Protocolo BR-09956/2026 verificável.",
+        "decisao": "INCORPORAR como âncora central"
+      },
+      {
+        "evento": "Caso Wagner — mudança de tom sobre deixar a liderança + PT vai medir o impacto da operação",
+        "verificacao1_crossRef": "'Wagner' = 24 menções = CONTINUIDADE/desdobramento do 18-19/Jun",
+        "verificacao2_fetch": { "fonte": "O Globo/Bela Megale (mudança de humor + PT pesquisa)", "data": "2026-06-20", "tipo": "análise/desdobramento" },
+        "nuance": "SEM renúncia consumada — Wagner mudou de tom, não deixou a liderança. Verbo 'renúncia' segue como expectativa não consumada.",
+        "decisao": "INCORPORAR como desdobramento (não divisor de águas)"
+      },
+      {
+        "evento": "Alckmin sobre o caso (PF tem independência, Lula conduzirá bem)",
+        "verificacao2_fetch": { "fonte": "Estadão (Valor deu 404, removido pelo URL gate)", "data": "2026-06-20", "tipo": "declaração" },
+        "decisao": "INCORPORAR como contexto"
+      }
+    ],
+    "selfCheck": {
+      "ancoraVerificacao2": true,
+      "semCausacaoEspuria": "o mercado moveu CONTRA Flávio no dia da Datafolha boa pra ele → narrado como DIVERGÊNCIA (pesquisa×mercado apontam direções opostas), NÃO 'mercado caiu porque saiu a Datafolha'",
+      "verbosCriticosDesambiguados": "'renúncia' = não consumada (Wagner mudou de tom, sem deixar a liderança); Vorcaro 'deve ser mantido na PF' (não 'preso hoje')",
+      "reconcileClaims": "rodado — só falsos-positivos (amostras, números de 2º turno, ~11,35pp é valor calculado); 51,50/25,05/14,35/41/31/47/43 batem com JSON"
+    }
+  },
+  "adversarialReview": {
+    "1_singleSource": "Datafolha = multi-fonte; Wagner mudança de tom = O Globo/Bela Megale (atribuído à coluna); Alckmin = Estadão",
+    "2_numericalErrors": "reconcile-claims OK (falsos-positivos)",
+    "3_fontesInventadas": "G1/Folha/O Globo/Estadão/CartaCapital/Brasil de Fato todas com matéria do dia",
+    "4_quotesLiterais": "'estancou o prejuízo'/'cara de 2º turno' (Folha) e 'a PF está no papel dela de investigar' (Haddad, G1) atribuídas, não inventadas",
+    "5_causacaoEspuria": "evitada — a divergência (pesquisa boa p/ Flávio × mercado contra ele) narrada como sinal, não causação",
+    "6_verbosCriticos": "'renúncia' (não consumada, Wagner mudou de tom), 'reduz a chance de indicação de Messias' — OK",
+    "gateURL": "URL do Valor (Alckmin) deu HTTP 404 → removida; mantido Estadão. Demais URLs verificadas.",
+    "decisao": "prosseguir para o pipeline (aprovado pelo usuário)"
+  }
+}
