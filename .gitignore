@@ -77,3 +77,6 @@ public/preview-daily-viz.html
 # Defensive ignores (proteção redundante — paths movidos pra C:\AFOS-Privado\)
 launch-day-13mai.md
 docs/launch-texts/0*.md
+
+# Working/scratch dir (scripts efêmeros + tokens — NUNCA commitar)
+.cache/
