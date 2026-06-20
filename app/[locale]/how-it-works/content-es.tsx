@@ -568,7 +568,7 @@ export function HowItWorksEs() {
         <li><strong>Bluesky</strong>, la misma cobertura en el ecosistema abierto</li>
         <li><strong>Product Hunt</strong>, la página del producto en la comunidad de tecnología</li>
         <li><strong>🤗 Hugging Face</strong>, el <strong>dataset abierto</strong> de divergencia (mercados × encuestas × prensa), actualizado diariamente bajo licencia CC BY 4.0, el link de datos del footer lleva directo a él</li>
-        <li><strong>🏛️ Harvard Dataverse</strong>, la versión académica curada y citable del dataset de <strong>Brasil 2026</strong>, un <em>snapshot</em> permanente y versionado con DOI <strong>10.7910/DVN/2D0UK7</strong></li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, la colección <strong>AFOS Analytics</strong> de datasets académicos curados y citables (<strong>Brasil 2026</strong> y <strong>EE. UU. 2024</strong>), cada uno un <em>snapshot</em> permanente y versionado con su propio DOI</li>
       </ul>
 
       <h3 className={S.h3}>Pie final</h3>

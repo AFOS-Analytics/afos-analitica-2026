@@ -570,7 +570,7 @@ export function HowItWorksPtBR() {
         <li><strong>Bluesky</strong>, a mesma cobertura no ecossistema aberto</li>
         <li><strong>Product Hunt</strong>, a página do produto na comunidade de tecnologia</li>
         <li><strong>🤗 Hugging Face</strong>, o <strong>dataset aberto</strong> de divergência (mercado × pesquisa × imprensa), atualizado diariamente sob licença CC BY 4.0, o link de dados do rodapé leva direto a ele</li>
-        <li><strong>🏛️ Harvard Dataverse</strong>, a versão acadêmica curada e citável do dataset do <strong>Brasil 2026</strong>, um <em>snapshot</em> permanente e versionado com DOI <strong>10.7910/DVN/2D0UK7</strong></li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, a coleção <strong>AFOS Analytics</strong> de datasets acadêmicos curados e citáveis (<strong>Brasil 2026</strong> e <strong>EUA 2024</strong>), cada um um <em>snapshot</em> permanente e versionado com seu próprio DOI</li>
       </ul>
 
       <h3 className={S.h3}>Rodapé final</h3>

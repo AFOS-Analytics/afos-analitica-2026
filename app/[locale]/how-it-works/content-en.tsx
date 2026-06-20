@@ -568,7 +568,7 @@ export function HowItWorksEn() {
         <li><strong>Bluesky</strong>, the same coverage on the open ecosystem</li>
         <li><strong>Product Hunt</strong>, the product's page in the tech community</li>
         <li><strong>🤗 Hugging Face</strong>, the <strong>open dataset</strong> of divergence (markets × polls × press), updated daily under a CC BY 4.0 license, the footer's data link goes straight to it</li>
-        <li><strong>🏛️ Harvard Dataverse</strong>, the curated, citable academic version of the <strong>Brazil 2026</strong> dataset, a permanent, versioned snapshot with DOI <strong>10.7910/DVN/2D0UK7</strong></li>
+        <li><strong>🏛️ Harvard Dataverse</strong>, the <strong>AFOS Analytics</strong> collection of curated, citable academic datasets (<strong>Brazil 2026</strong> and <strong>USA 2024</strong>), each a permanent, versioned snapshot with its own DOI</li>
       </ul>
 
       <h3 className={S.h3}>Bottom row</h3>
