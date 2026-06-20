@@ -142,8 +142,8 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
             )}
             <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-4`}>
               {ds.source(div.latest_poll?.pollster || '', div.latest_poll?.date || '', div.polls_count ?? 0)}{' '}
+              {div.harvard && <><a href={div.harvard} target="_blank" rel="noopener noreferrer" className={link}>🎓 {ds.harvard} ↗</a> · </>}
               <a href={div.hf} target="_blank" rel="noopener noreferrer" className={link}>🤗 {ds.dataset} ↗</a>
-              {div.harvard && <> · <a href={div.harvard} target="_blank" rel="noopener noreferrer" className={link}>🎓 {ds.harvard} ↗</a></>}
             </p>
           </section>
         )}
