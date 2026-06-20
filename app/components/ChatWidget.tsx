@@ -97,7 +97,7 @@ export function ChatWidget({ locale }: { locale: Locale }) {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? l.close : l.open}
         aria-expanded={open}
-        className={`fixed z-[60] bottom-5 right-5 h-14 w-14 rounded-full bg-primary hover:bg-primary-dark text-white shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-primary ${open ? 'hidden sm:flex' : 'flex'}`}
+        className={`fixed z-[60] bottom-5 right-5 h-14 w-14 rounded-full bg-orange-50 hover:bg-orange-100 text-primary border border-orange-200 shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-105 focus:outline-2 focus:outline-offset-2 focus:outline-primary ${open ? 'hidden sm:flex' : 'flex'}`}
       >
         {open ? (
           <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
