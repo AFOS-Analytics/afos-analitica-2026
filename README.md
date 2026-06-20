@@ -34,6 +34,7 @@ Built and validated during the 2026 electoral cycle across South American countr
 - **Strategic analyses** powered by artificial intelligence
 - **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — **40 editions published as of 31/May/2026** (D+17 of public launch), in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`. Distribution by email to opted-in subscribers via Resend Pro
 - **AFOS Tradeoff** — weekly technical reading published every Monday, targeted at institutional research, buy-side and treasury. Cross-references the same three signals but reports them **separately** (no weighted-average composites) — when prediction markets, polls and news diverge, the divergence *is* the signal. Structured in 9 sections (executive summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Published in 3 languages (PT-BR, EN, ES) with full archive at `/tradeoff/[date]`. RSS: `/feed/tradeoff.xml`
+- **AFOS Chat** — conversational agent available as a **floating bubble on every page** (and full-screen at `/chat`) that answers in natural language by querying the platform's **live data via tool-calling**: Polymarket odds, TSE polls, the **validated cases & market×poll divergence**, news, and the latest AFOS Daily — **every answer cites its source**, with the same radical-honesty rules (a prediction market is an implied probability, not a forecast; divergence is the signal, the real result is the validator). Trilingual (PT-BR, EN, ES), streamed responses, powered by **OpenRouter (DeepSeek V4 Flash)**. Public with per-IP rate limiting
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
@@ -74,6 +75,7 @@ Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the publi
 | `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news. Available in **3 languages** (PT-BR, EN, ES) — loader detects `{date}.{locale}.md` with fallback to canonical PT-BR. Brazilian political terms (TSE, STF, BolsoMaster, etc.) kept in PT with inline links to the trilingual glossary. **Index route = editions archive** (month-grouped list of every published edition, latest highlighted, jump-to-date + in-page language & theme selectors); individual editions live at `/[locale]/daily/[date]` with prev / next + "All editions" navigation |
 | `/[locale]/tradeoff` | AFOS Tradeoff — weekly technical reading (Mondays) targeted at institutional research / buy-side / treasury. Three signals reported separately — divergence *is* the signal, not noise to average away. 9 structured sections rendered via rich-frontmatter YAML (summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Tri-locale parity with Daily (`{date}.{locale}.md`). **Index route = editions archive** (list by issue number & week, latest highlighted, in-page language & theme selectors); editions live at `/[locale]/tradeoff/[date]` with prev / next + "All editions" navigation. RSS: `/feed/tradeoff.xml` |
 | `/[locale]/global` | Global elections hub — **leads with validated cases** (market × poll divergence vs the real result, with open datasets) followed by the **live odds map** (D3.js). Same destination as the landing's "AFOS Global" card and the dashboard header's Global link (single source of truth) |
+| `/[locale]/chat` | **AFOS Chat** — conversational agent with live data access via tool-calling (Polymarket odds, TSE polls, validated cases & divergence, news, AFOS Daily); every answer cites its source. Streamed responses (SSE), trilingual, OpenRouter / DeepSeek V4 Flash. Also mounted site-wide as a **floating chat bubble** (lazy-loaded, hidden on this dedicated page) |
 | `/[locale]/country/[country]` | Country page (15 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". In-page language selector (PT-BR/EN/ES). 14-section platform tour including the AFOS Daily card (`#afos-daily-card`), the **AFOS Tradeoff** weekly-brief section (`#afos-tradeoff-card`), the **AFOS Global** section (`#afos-global-card`) documenting the validated-cases layer (the probability-of-winning vs vote-share concept, the country & election divergence pages, and the open datasets), and polling institute evaluation criteria (`#criterios-institutos`); the "Start here" onboarding orients readers to both the Daily and the Tradeoff. Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
 | `/[locale]/methodology/automated-governance` | Public governance page (3 languages) — how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
@@ -376,6 +378,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | **Resend** | Transactional email |
 | **Polymarket API** | Prediction markets (18 markets, 15 countries) |
 | **Google News RSS + Firecrawl** | Live news |
+| **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat — conversational tool-calling agent over live data |
 | **Vercel Analytics** | Traffic metrics |
 
 ---
@@ -402,6 +405,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/admin/data-request` | LGPD deletion/export |
 | `/api/health` | Health check |
 | `/api/translations` | AI translation pipeline |
+| `/api/chat` | AFOS Chat — streaming (SSE) tool-calling agent over live platform data; per-IP rate limited |
 | `/api/market/history` | Odds time series |
 
 ---

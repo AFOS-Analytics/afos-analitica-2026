@@ -5,6 +5,7 @@ import { getMessages } from '../../lib/i18n/get-messages';
 import { buildMetadata, PAGE_SEO } from '../../lib/seo/metadata';
 import { websiteSchema, combineSchemas } from '../../lib/seo/schema';
 import { I18nProvider } from '../i18n/context';
+import { ChatWidget } from '../components/ChatWidget';
 
 interface Props {
   children: React.ReactNode;
@@ -38,6 +39,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         }}
       />
       {children}
+      <ChatWidget locale={loc} />
     </I18nProvider>
   );
 }

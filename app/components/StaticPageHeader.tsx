@@ -36,6 +36,12 @@ export function StaticPageHeader() {
             >
               Dashboard
             </Link>
+            <Link
+              href={`/${locale}/chat`}
+              className="border border-white/30 hover:bg-white/10 focus:outline-2 focus:outline-offset-2 focus:outline-white text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-lg transition-all duration-200"
+            >
+              Chat
+            </Link>
             <LanguageSwitcher />
           </nav>
         </div>

@@ -13,6 +13,8 @@ const envSchema = z.object({
   UPSTASH_REDIS_REST_TOKEN: optional(z.string().min(10)),
   RESEND_API_KEY: optional(z.string().startsWith('re_').min(20)),
   ANTHROPIC_API_KEY: optional(z.string().startsWith('sk-ant-').min(40)),
+  OPENROUTER_API_KEY: optional(z.string().startsWith('sk-or-').min(20)),
+  OPENROUTER_CHAT_MODEL: optional(z.string().min(3)),
   CRON_SECRET: optional(z.string().min(16)),
   ALERT_EMAIL: optional(z.string().email()),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
