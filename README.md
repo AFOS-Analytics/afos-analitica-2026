@@ -12,7 +12,7 @@ Built and validated during the 2026 electoral cycle across South American countr
 
 [![GitHub Stars](https://img.shields.io/github/stars/AFOS-Analytics/afos-analitica-2026?style=flat&logo=github&label=Stars&color=0F52BA)](https://github.com/AFOS-Analytics/afos-analitica-2026/stargazers)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
-[![Harvard Dataverse](https://img.shields.io/badge/Harvard%20Dataverse-DOI%2010.7910%2FDVN%2F2D0UK7-0F52BA)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7)
+[![Harvard Dataverse](https://img.shields.io/badge/Harvard%20Dataverse-AFOS%20Analytics%20collection-0F52BA)](https://dataverse.harvard.edu/dataverse/afos-analytics)
 [![Contact](https://img.shields.io/badge/contact-afos--analytics.com-0F52BA?logo=maildotru&logoColor=white)](mailto:contact@afos-analytics.com)
 [![Security](https://img.shields.io/badge/security-disclosure-d32f2f?logo=keycdn&logoColor=white)](mailto:security@afos-analytics.com)
 
