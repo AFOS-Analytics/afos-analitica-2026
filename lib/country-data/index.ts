@@ -26,6 +26,7 @@ export interface MarketTrajectory { dates: string[]; series: { name: string; pct
 export interface CountryDivergence {
   iso3: string
   hf: string
+  harvard?: string // DOI do dataset no Harvard Dataverse (ex.: USA 2024); só países com depósito acadêmico próprio
   election: { first_round: string; runoff: string; matchup: string; status: string }
   polls_count: number
   market_candidates: number
