@@ -538,7 +538,13 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
             <a href={`/${locale}`} aria-label={t.homeAriaLabel} className="hover:opacity-90 transition-opacity">AFOS Analytics</a>
           </h1>
           <p className={`text-[15px] font-medium mb-3.5 max-w-[540px] mx-auto ${isBlue ? 'text-blue-100' : 'text-slate-600'}`}>
-            {t.subline}
+            {/* subline em 3 linhas: divide nos separadores " · " (mesma cor/tamanho/fonte) */}
+            {t.subline.split(' · ').map((part, i, arr) => (
+              <span key={i}>
+                {part}
+                {i < arr.length - 1 && <br />}
+              </span>
+            ))}
           </p>
           <div className={`flex flex-wrap gap-2.5 justify-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
             <span className="font-semibold">{t.issueLabel} №{data.issueNumber}</span>
