@@ -90,12 +90,12 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{nav.global}</a>
             <a href={`/${locale}/latam`} className="block text-white/60 hover:text-white py-0.5">{nav.latam}</a>
             <a href={`/${locale}/eu`} className="block text-white/60 hover:text-white py-0.5">{nav.eu}</a>
-            <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>
+            {!compact && <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>}
           </div>
           <div>
             <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
-            <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.license}</a>
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>
+            {!compact && <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.license}</a>}
+            {!compact && <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>}
             <a href={`${GITHUB_URL}/blob/main/SECURITY.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.security}</a>
             <a href={`${GITHUB_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.contributing}</a>
             <a href={`${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.conduct}</a>
