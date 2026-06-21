@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-21",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Operação da PF (caso Master) avança sobre Jaques Wagner; aliados temem efeito no palanque de Lula na Bahia; Alckmin defende a PF.",
+        "verificacao1_crossRef": "Aparece em 18/Jun (9ª fase, mira Wagner), 19/Jun (escalou), 20/Jun (continuidade, Alckmin). 31 menções 'Wagner', 21 'Jaques Wagner'. Operação NÃO é nova de hoje (desde 18/Jun).",
+        "classificacao": "continuidade",
+        "verificacao2_fetch": "Headlines do news-cache 2026-06-21 do tipo análise/desdobramento: Folha 'Aliados de Wagner... palanque de Lula na Bahia' + Folha/Datafolha 'Aliados de Flávio esperam melhora após efeito Wagner'.",
+        "tipo": "analise/desdobramento",
+        "segundaFonte": "Folha (2 ângulos) + Datafolha; operação já two-source-verificada nas dailies 18-20/Jun.",
+        "decisao": "NAO incorporar como divisor de aguas; tratar como continuidade. Mercado estavel: sem causacao espuria."
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma critica (Wagner com 2 angulos Folha + O Globo/Estadao; Trump-indiferente Poder360 + Datafolha; Datafolha G1 + secundarias)",
+    "numericalErrors": "reconcile-claims listou apenas valores corretos que batem com o JSON (51,50/24,90/14,30/~11,30pp). OK",
+    "fontesInventadas": "G1, Estadao, O Globo, Folha, Poder360 todas reais (cache/daily anterior). 3 conferidas, OK",
+    "quotesLiterais": "nenhuma aspas literal nesta edicao",
+    "causacaoEspuria": "nenhuma; texto explicita 'correlacao nao autoriza causa' e 'sem evento de urna que justificasse movimento'",
+    "verbosCriticos": "operacao 'avanca/avancou sobre Wagner' desambiguado como continuidade (desde 18/Jun); sem 'preso/indiciado' novos. OK",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "OK (1 warning: low-link-density 57%)",
+    "reconcileClaims": "sem % inventada (falsos positivos que batem com o JSON)",
+    "emDash": "0 travessoes (PT/EN/ES) apos strip"
+  }
+}
