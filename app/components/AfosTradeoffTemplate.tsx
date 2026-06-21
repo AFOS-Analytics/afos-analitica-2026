@@ -705,12 +705,13 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
 
         {/* Edition navigation (archive link always present) */}
         <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">
+          {/* Navegação de edição como botões (mesmo estilo do botão Dashboard do masthead) */}
           {nav?.previous ? (
-            <a href={`/${locale}/tradeoff/${nav.previous}`} className={linkColor}>{t.navPrev}</a>
+            <a href={`/${locale}/tradeoff/${nav.previous}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navPrev}</a>
           ) : <span />}
-          <a href={`/${locale}/tradeoff`} className={`${linkColor} font-semibold`}>{t.navArchive}</a>
+          <a href={`/${locale}/tradeoff`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navArchive}</a>
           {nav?.next ? (
-            <a href={`/${locale}/tradeoff/${nav.next}`} className={linkColor}>{t.navNext}</a>
+            <a href={`/${locale}/tradeoff/${nav.next}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navNext}</a>
           ) : <span />}
         </nav>
       </article>
