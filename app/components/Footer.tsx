@@ -75,35 +75,62 @@ export function Footer() {
   const labels = CONTACT_LABELS[locale] || CONTACT_LABELS['en'];
   const social = SOCIAL_LABELS[locale] || SOCIAL_LABELS['en'];
 
+  // Links por coluna, ordenados do rótulo mais curto (topo) ao mais longo (base).
+  // O peso do "⭐ " do GitHub entra na ordenação (displayLen) para refletir o tamanho visual.
+  type FooterLink = { href: string; label: string; external?: boolean; star?: boolean };
+  const byLen = (a: FooterLink, b: FooterLink) =>
+    (a.label.length + (a.star ? 2 : 0)) - (b.label.length + (b.star ? 2 : 0));
+  const navLinks: FooterLink[] = [
+    { href: `/${locale}/dashboard`, label: nav.dashboard },
+    { href: `/${locale}/global`, label: nav.global },
+    { href: `/${locale}/latam`, label: nav.latam },
+    { href: `/${locale}/eu`, label: nav.eu },
+    { href: `/${locale}/how-it-works`, label: nav.howItWorks },
+  ].sort(byLen);
+  const ossLinks: FooterLink[] = [
+    { href: `${GITHUB_URL}/blob/main/LICENSE`, label: oss.license, external: true },
+    { href: GITHUB_URL, label: oss.github, external: true, star: true },
+    { href: `${GITHUB_URL}/blob/main/SECURITY.md`, label: oss.security, external: true },
+    { href: `${GITHUB_URL}/blob/main/CONTRIBUTING.md`, label: oss.contributing, external: true },
+    { href: `${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`, label: oss.conduct, external: true },
+    { href: `/${locale}/methodology/automated-governance`, label: oss.governance },
+    { href: `${GITHUB_URL}/blob/main/TRADEMARK.md`, label: oss.trademark, external: true },
+  ].sort(byLen);
+  const legalLinks: FooterLink[] = [
+    { href: `/${locale}/about`, label: legal.about },
+    { href: `/${locale}/privacy`, label: legal.privacy },
+    { href: `/${locale}/terms`, label: legal.terms },
+    { href: `/${locale}/data-sources`, label: legal.sources },
+  ].sort(byLen);
+
   return (
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs md:text-center">
           <div>
-            <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
-            <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
-            <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{nav.global}</a>
-            <a href={`/${locale}/latam`} className="block text-white/60 hover:text-white py-0.5">{nav.latam}</a>
-            <a href={`/${locale}/eu`} className="block text-white/60 hover:text-white py-0.5">{nav.eu}</a>
-            <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>
+            <div className="inline-block text-left">
+              <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
+              {navLinks.map((l) => (
+                <a key={l.href} href={l.href} className="block text-white/60 hover:text-white py-0.5">{l.label}</a>
+              ))}
+            </div>
           </div>
           <div>
-            <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
-            <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.license}</a>
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>
-            <a href={`${GITHUB_URL}/blob/main/SECURITY.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.security}</a>
-            <a href={`${GITHUB_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.contributing}</a>
-            <a href={`${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.conduct}</a>
-            <a href={`/${locale}/methodology/automated-governance`} className="block text-white/60 hover:text-white py-0.5">{oss.governance}</a>
-            <a href={`${GITHUB_URL}/blob/main/TRADEMARK.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.trademark}</a>
+            <div className="inline-block text-left">
+              <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
+              {ossLinks.map((l) => (
+                <a key={l.href} href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="block text-white/60 hover:text-white py-0.5">{l.star ? `⭐ ${l.label}` : l.label}</a>
+              ))}
+            </div>
           </div>
           <div>
-            <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
-            <a href={`/${locale}/about`} className="block text-white/60 hover:text-white py-0.5">{legal.about}</a>
-            <a href={`/${locale}/privacy`} className="block text-white/60 hover:text-white py-0.5">{legal.privacy}</a>
-            <a href={`/${locale}/terms`} className="block text-white/60 hover:text-white py-0.5">{legal.terms}</a>
-            <a href={`/${locale}/data-sources`} className="block text-white/60 hover:text-white py-0.5">{legal.sources}</a>
+            <div className="inline-block text-left">
+              <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
+              {legalLinks.map((l) => (
+                <a key={l.href} href={l.href} className="block text-white/60 hover:text-white py-0.5">{l.label}</a>
+              ))}
+            </div>
           </div>
         </div>
 
