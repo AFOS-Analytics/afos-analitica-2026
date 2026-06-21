@@ -79,10 +79,11 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
   const social = SOCIAL_LABELS[locale] || SOCIAL_LABELS['en'];
 
   return (
-    <footer className={`bg-primary text-white py-6 px-4 sm:px-8 ${compact ? 'border-t border-white/15' : ''}`} role="contentinfo">
+    <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs">
+        {/* compact (home): divisória no topo das colunas, MESMO padrão das demais (border-white/20, largura do conteúdo) */}
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs ${compact ? 'border-t border-white/20 pt-6' : ''}`}>
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
