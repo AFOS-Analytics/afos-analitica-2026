@@ -66,7 +66,10 @@ const SOCIALS: Array<{ name: string; url: string; icon: SocialIconKey }> = [
   { name: 'Harvard Dataverse', url: 'https://dataverse.harvard.edu/dataverse/afos-analytics', icon: 'dataverse' },
 ]
 
-export function Footer() {
+// compact: usado na landing — esconde Redes Sociais, Fale Conosco, a pílula Harvard
+// e o "Voltar ao topo" (a landing já tem seus próprios sociais/credits no topo do rodapé).
+// Mantém as colunas de navegação (link-juice) + descrição/disclaimer. Default = footer completo.
+export function Footer({ compact = false }: { compact?: boolean } = {}) {
   const { t } = useTranslation();
   const locale = useLocale();
   const nav = NAV_LABELS[locale] || NAV_LABELS['en'];
@@ -107,7 +110,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Redes Sociais */}
+        {/* Redes Sociais (escondido na landing compacta) */}
+        {!compact && (
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
           <div className="flex items-center gap-5">
@@ -128,8 +132,10 @@ export function Footer() {
             ))}
           </div>
         </div>
+        )}
 
-        {/* BLOCO 3, Fale Conosco */}
+        {/* BLOCO 3, Fale Conosco (escondido na landing compacta) */}
+        {!compact && (
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{labels.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
@@ -144,11 +150,13 @@ export function Footer() {
             ))}
           </div>
         </div>
+        )}
 
         {/* Rodapé, descrição + disclaimer + voltar ao topo */}
         <div className="text-center text-xs border-t border-white/20 pt-4">
           <p>{t('footer.description')}</p>
           <p className="mt-1 text-white/70">{t('footer.disclaimer')} <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white" aria-label={t('footer.polymarketLink')}>{t('footer.polymarket')}</a> {t('footer.notAffiliated')}</p>
+          {!compact && (
           <a
             href="https://dataverse.harvard.edu/dataverse/afos-analytics"
             target="_blank"
@@ -160,6 +168,8 @@ export function Footer() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" /></svg>
             <span className="text-[11px]"><span className="font-semibold text-white/90">Harvard Dataverse</span> · AFOS Analytics collection</span>
           </a>
+          )}
+          {!compact && (
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-white/30 text-white/80 hover:text-white hover:bg-white/10 transition-all text-xs font-medium"
@@ -170,6 +180,7 @@ export function Footer() {
             </svg>
             {t('footer.backToTop')}
           </button>
+          )}
         </div>
       </div>
     </footer>

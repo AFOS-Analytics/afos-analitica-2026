@@ -9,7 +9,7 @@ export default async function HomePage(props: { params: Promise<{ locale: string
   return (
     <>
       <LandingPageDual locale={locale} />
-      <Footer />
+      <Footer compact />
     </>
   );
 }
