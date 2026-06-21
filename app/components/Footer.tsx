@@ -110,9 +110,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs md:text-center">
           <div>
             <div className="inline-block text-left">
-              <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
-              {ossLinks.map((l) => (
-                <a key={l.href} href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="block text-white/60 hover:text-white py-0.5">{l.star ? `⭐ ${l.label}` : l.label}</a>
+              <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
+              {legalLinks.map((l) => (
+                <a key={l.href} href={l.href} className="block text-white/60 hover:text-white py-0.5">{l.label}</a>
               ))}
             </div>
           </div>
@@ -126,9 +126,9 @@ export function Footer() {
           </div>
           <div>
             <div className="inline-block text-left">
-              <p className="font-semibold text-white/90 mb-2">{legal.title}</p>
-              {legalLinks.map((l) => (
-                <a key={l.href} href={l.href} className="block text-white/60 hover:text-white py-0.5">{l.label}</a>
+              <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
+              {ossLinks.map((l) => (
+                <a key={l.href} href={l.href} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="block text-white/60 hover:text-white py-0.5">{l.star ? `⭐ ${l.label}` : l.label}</a>
               ))}
             </div>
           </div>
