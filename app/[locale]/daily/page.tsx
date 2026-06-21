@@ -14,7 +14,7 @@ interface Props {
 
 // Mirror the edition pages (which render the correct <html lang>): prerender one
 // page per locale via generateStaticParams and DO NOT force-static (force-static
-// with no params baked lang="pt-BR" into the /en and /es variants — SEO regression).
+// with no params baked lang="pt-BR" into the /en and /es variants, SEO regression).
 export function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }))
 }
@@ -120,7 +120,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: langAlternates('daily'),
-      types: { 'application/rss+xml': [{ url: `${BASE}/feed/daily${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Daily — RSS feed' }] },
+      types: { 'application/rss+xml': [{ url: `${BASE}/feed/daily${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Daily, RSS feed' }] },
     },
     openGraph: {
       type: 'website',
@@ -185,7 +185,7 @@ export default async function DailyArchivePage(props: Props) {
   }
 
   // CollectionPage + ItemList so crawlers/LLMs can parse the full back-catalog,
-  // plus a Home > AFOS Daily breadcrumb. URLs/dates only — no editorial text.
+  // plus a Home > AFOS Daily breadcrumb. URLs/dates only, no editorial text.
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',

@@ -1,7 +1,7 @@
 {
   "header": {
     "title": "AFOS Analytics",
-    "subtitle": "Global Electoral Political Risk Intelligence — Open-Source",
+    "subtitle": "Global Electoral Political Risk Intelligence, Open-Source",
     "about": "About",
     "goals": "Goals",
     "global": "Global",
@@ -13,7 +13,7 @@
     "description": "AFOS Analytics, Global Electoral Intelligence Platform | Data: Polymarket (30min), 17+ TSE Institutes, Google News (30min) | This content does not constitute political advice",
     "disclaimer": "Data and probabilities sourced from",
     "polymarket": "Polymarket (polymarket.com)",
-    "notAffiliated": "— This site is not affiliated with Polymarket. Data is updated automatically via public API.",
+    "notAffiliated": ",  This site is not affiliated with Polymarket. Data is updated automatically via public API.",
     "backToTop": "Back to top",
     "polymarketLink": "Polymarket (opens in new tab)"
   },

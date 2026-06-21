@@ -81,7 +81,7 @@ function ogLocale(loc: string): string {
 function fmtWeekRange(start: string, end: string, locale: string): string {
   const p1 = start.split('-').map(Number)
   const p2 = end.split('-').map(Number)
-  if (p1.length !== 3 || p2.length !== 3) return `${start} – ${end}`
+  if (p1.length !== 3 || p2.length !== 3) return `${start}, ${end}`
   const [, m1, d1] = p1
   const [y2, m2, d2] = p2
   const loc = monthsLocale(locale)
@@ -126,7 +126,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     alternates: {
       canonical,
       languages: langAlternates('tradeoff'),
-      types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Tradeoff — RSS feed' }] },
+      types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Tradeoff, RSS feed' }] },
     },
     openGraph: {
       type: 'website',

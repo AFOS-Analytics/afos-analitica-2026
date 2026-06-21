@@ -168,7 +168,7 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
         )}
       </div>
 
-      {/* Honeypot — anti-bot, hidden from real users + AT */}
+      {/* Honeypot, anti-bot, hidden from real users + AT */}
       <input
         type="text"
         name="website"

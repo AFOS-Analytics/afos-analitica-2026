@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const c = CONTENT[loc] || CONTENT['en']
   const languages: Record<string, string> = {}
   for (const l of locales) languages[l] = `${BASE_URL}/${l}/election-intelligence`
-  languages['x-default'] = `${BASE_URL}/en/election-intelligence`
+  languages['x-default'] = `${BASE_URL}/pt-BR/election-intelligence`
   return {
     title: c.metaTitle,
     description: c.desc,

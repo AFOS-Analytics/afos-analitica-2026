@@ -65,7 +65,7 @@ export function NewsSection({ news, loading }: Props) {
                 <div className="space-y-2">
                   {newsItems.map((n: NewsItem, i: number) => (
                     <div key={i} className="flex items-start gap-2 text-xs border-b border-gray-100 pb-2">
-                      <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{n.time || '—'}</span>
+                      <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{n.time || ', '}</span>
                       <div className="flex-1">
                         {isSafeUrl(n.url) ? (
                           <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-dark hover:text-primary hover:underline leading-snug font-medium">
@@ -74,7 +74,7 @@ export function NewsSection({ news, loading }: Props) {
                         ) : (
                           <span className="text-dark leading-snug font-medium">{n.title}</span>
                         )}
-                        <span className="text-gray-400 ml-1">— {n.source}</span>
+                        <span className="text-gray-400 ml-1">,  {n.source}</span>
                         {n.summary && <p className="text-gray-500 mt-1 leading-relaxed">{n.summary}</p>}
                       </div>
                     </div>

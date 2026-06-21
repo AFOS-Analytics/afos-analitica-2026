@@ -20,7 +20,7 @@ interface PageProps {
 
 // Force dynamic rendering. With zero published Tradeoffs initially,
 // generateStaticParams returns [], which would make Next.js 15 attempt
-// static fallback rendering — but the page reads process.env.VERCEL_ENV
+// static fallback rendering, but the page reads process.env.VERCEL_ENV
 // (a dynamic API), causing DYNAMIC_SERVER_USAGE crash. Forcing dynamic
 // makes every request go through SSR cleanly, no static fallback.
 // TODO post-launch: once Tradeoff has N≥2 published editions, switch
@@ -68,7 +68,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: `https://www.afos-analytics.com/feed/tradeoff${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Tradeoff — RSS feed' },
+          { url: `https://www.afos-analytics.com/feed/tradeoff${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Tradeoff, RSS feed' },
         ],
       },
     },
@@ -89,7 +89,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: 'AFOS Analytics — Weekly Tradeoff',
+          alt: 'AFOS Analytics, Weekly Tradeoff',
         },
       ],
     },

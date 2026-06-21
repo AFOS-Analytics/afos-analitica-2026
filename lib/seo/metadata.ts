@@ -2,7 +2,7 @@
  * SEO Metadata Helper
  *
  * Gera metadata por locale para qualquer página.
- * Server-side only — usado em generateMetadata() do App Router.
+ * Server-side only, usado em generateMetadata() do App Router.
  */
 
 import type { Metadata } from 'next';
@@ -21,17 +21,21 @@ interface PageSeo {
 /**
  * Bloco OpenGraph + Twitter padrão da plataforma (imagem LinkedIn 1200x627 por locale).
  * Fonte única reusada por buildMetadata e pelos generateMetadata de country/election/
- * institutional/for-investors — evita copiar o mesmo objeto OG em cada página.
+ * institutional/for-investors, evita copiar o mesmo objeto OG em cada página.
  */
 export function socialMeta(locale: string, opts: { title: string; description: string; url: string; image?: string }): Pick<Metadata, 'openGraph' | 'twitter'> {
   const ogImage = opts.image || `${BASE_URL}/brand/og-${locale === 'pt-BR' ? 'pt' : locale}-linkedin-1200x627.png`;
+  const OG_LOCALE: Record<string, string> = { 'pt-BR': 'pt_BR', en: 'en_US', es: 'es_ES' };
+  const ogLocale = OG_LOCALE[locale] || 'pt_BR';
   return {
     openGraph: {
       title: opts.title,
       description: opts.description,
       url: opts.url,
       siteName: 'AFOS Analytics',
-      locale: locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_US' : 'pt_BR',
+      locale: ogLocale,
+      // og:locale:alternate — declara as outras versões de idioma para scrapers sociais (LinkedIn/FB)
+      alternateLocale: Object.values(OG_LOCALE).filter((v) => v !== ogLocale),
       type: 'website',
       images: [{ url: ogImage, width: 1200, height: 627, alt: opts.title }],
     },
@@ -94,17 +98,17 @@ export const PAGE_SEO: Record<string, Record<Locale, PageSeo>> = {
   },
   global: {
     'pt-BR': {
-      title: 'Mapa Global de Eleições — AFOS Analytics',
+      title: 'Mapa Global de Eleições, AFOS Analytics',
       description: 'Mapa interativo com eleições ao vivo em 15 países. Mercados de previsão Polymarket e calendário eleitoral global.',
       path: 'global',
     },
     en: {
-      title: 'Global Election Map — AFOS Analytics',
+      title: 'Global Election Map, AFOS Analytics',
       description: 'Interactive map with live elections in 15 countries. Polymarket prediction markets and global election calendar.',
       path: 'global',
     },
     es: {
-      title: 'Mapa Global de Elecciones — AFOS Analytics',
+      title: 'Mapa Global de Elecciones, AFOS Analytics',
       description: 'Mapa interactivo con elecciones en vivo en 15 países. Mercados de predicción Polymarket y calendario electoral global.',
       path: 'global',
     },

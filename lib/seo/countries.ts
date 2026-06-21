@@ -1,5 +1,5 @@
 /**
- * SEO Dataset — Countries + Elections
+ * SEO Dataset, Countries + Elections
  *
  * Fonte de dados para geração programática de metadata, sitemap e páginas.
  * Usado por: country/[country], election/[slug], sitemap.ts
@@ -202,15 +202,15 @@ export interface RegionSEO {
 }
 
 export const REGIONS_SEO: RegionSEO[] = [
-  // US region removed — no Polymarket data yet. Re-add when US elections tracked.
+  // US region removed, no Polymarket data yet. Re-add when US elections tracked.
   {
     slug: 'eu',
     name: { 'pt-BR': 'Europa', en: 'Europe', es: 'Europa' },
     countryIso3s: ['FRA', 'DEU', 'GBR'],
     meta: {
-      'pt-BR': { title: 'Risco Político Europa | Eleições e Mercados de Previsão', desc: 'Inteligência eleitoral europeia: França, Alemanha, Reino Unido. Mercados de previsão e análise de risco político.', h1: 'Risco Político e Inteligência Eleitoral — Europa', intro: 'Monitoramento de eleições e risco político nos principais países europeus.' },
-      en: { title: 'Europe Political Risk & Election Intelligence', desc: 'European election intelligence: France, Germany, United Kingdom. Prediction markets and political risk analysis.', h1: 'Political Risk & Election Intelligence — Europe', intro: 'Monitoring elections and political risk across major European countries.' },
-      es: { title: 'Riesgo Político Europa | Elecciones y Mercados de Predicción', desc: 'Inteligencia electoral europea: Francia, Alemania, Reino Unido. Mercados de predicción y análisis de riesgo político.', h1: 'Riesgo Político e Inteligencia Electoral — Europa', intro: 'Monitoreo de elecciones y riesgo político en los principales países europeos.' },
+      'pt-BR': { title: 'Risco Político Europa | Eleições e Mercados de Previsão', desc: 'Inteligência eleitoral europeia: França, Alemanha, Reino Unido. Mercados de previsão e análise de risco político.', h1: 'Risco Político e Inteligência Eleitoral, Europa', intro: 'Monitoramento de eleições e risco político nos principais países europeus.' },
+      en: { title: 'Europe Political Risk & Election Intelligence', desc: 'European election intelligence: France, Germany, United Kingdom. Prediction markets and political risk analysis.', h1: 'Political Risk & Election Intelligence, Europe', intro: 'Monitoring elections and political risk across major European countries.' },
+      es: { title: 'Riesgo Político Europa | Elecciones y Mercados de Predicción', desc: 'Inteligencia electoral europea: Francia, Alemania, Reino Unido. Mercados de predicción y análisis de riesgo político.', h1: 'Riesgo Político e Inteligencia Electoral, Europa', intro: 'Monitoreo de elecciones y riesgo político en los principales países europeos.' },
     },
   },
   {
@@ -218,9 +218,9 @@ export const REGIONS_SEO: RegionSEO[] = [
     name: { 'pt-BR': 'América Latina', en: 'Latin America', es: 'América Latina' },
     countryIso3s: ['BRA', 'COL', 'CHL', 'MEX'],
     meta: {
-      'pt-BR': { title: 'Inteligência Eleitoral América Latina | AFOS Analytics', desc: 'Eleições na América Latina: Brasil, Colômbia, Chile, México. Mercados de previsão e sinais de risco político.', h1: 'Inteligência Eleitoral — América Latina', intro: 'Hub de inteligência eleitoral para os principais mercados da América Latina.' },
-      en: { title: 'Latin America Election Intelligence Hub | AFOS Analytics', desc: 'Latin American elections: Brazil, Colombia, Chile, Mexico. Prediction markets and political risk signals.', h1: 'Election Intelligence — Latin America', intro: 'Election intelligence hub for major Latin American markets.' },
-      es: { title: 'Inteligencia Electoral América Latina | AFOS Analytics', desc: 'Elecciones en América Latina: Brasil, Colombia, Chile, México. Mercados de predicción y señales de riesgo político.', h1: 'Inteligencia Electoral — América Latina', intro: 'Hub de inteligencia electoral para los principales mercados de América Latina.' },
+      'pt-BR': { title: 'Inteligência Eleitoral América Latina | AFOS Analytics', desc: 'Eleições na América Latina: Brasil, Colômbia, Chile, México. Mercados de previsão e sinais de risco político.', h1: 'Inteligência Eleitoral, América Latina', intro: 'Hub de inteligência eleitoral para os principais mercados da América Latina.' },
+      en: { title: 'Latin America Election Intelligence Hub | AFOS Analytics', desc: 'Latin American elections: Brazil, Colombia, Chile, Mexico. Prediction markets and political risk signals.', h1: 'Election Intelligence, Latin America', intro: 'Election intelligence hub for major Latin American markets.' },
+      es: { title: 'Inteligencia Electoral América Latina | AFOS Analytics', desc: 'Elecciones en América Latina: Brasil, Colombia, Chile, México. Mercados de predicción y señales de riesgo político.', h1: 'Inteligencia Electoral, América Latina', intro: 'Hub de inteligencia electoral para los principales mercados de América Latina.' },
     },
   },
 ]

@@ -237,7 +237,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
         <p className={`text-center text-base font-medium mb-2 ${sublineColor}`}>{t.subline}</p>
         <p className={`text-center text-xs mb-5 italic ${disclaimerColor}`}>{t.disclaimer}</p>
 
-        {/* Harvard Dataverse — lastro acadêmico dos dados de divergência da série.
+        {/* Harvard Dataverse, lastro acadêmico dos dados de divergência da série.
             Link, não badge de imagem, p/ acessibilidade e theme-awareness. */}
         <div className="flex justify-center mb-12">
           <a
@@ -253,7 +253,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
           </a>
         </div>
 
-        {/* TL;DR — bloco callout antes da lede; opcional, backward compatible */}
+        {/* TL;DR, bloco callout antes da lede; opcional, backward compatible */}
         {renderedTldr && renderedTldr.length > 0 && (
           <aside
             className={`rounded-lg border-l-4 ${isBlue ? 'bg-blue-950/40 border-blue-300' : 'bg-slate-50 border-primary'} p-4 md:p-5 mb-6`}
@@ -272,7 +272,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
           </aside>
         )}
 
-        {/* LEDE — box amarelo highlight (Opção B firmada 26/Mai) */}
+        {/* LEDE, box amarelo highlight (Opção B firmada 26/Mai) */}
         {renderedLede && (
           <div className={`${ledeBg} border-l-4 ${ledeBorder} px-5 py-4 mb-10 rounded-r-lg`}>
             {renderedLede}

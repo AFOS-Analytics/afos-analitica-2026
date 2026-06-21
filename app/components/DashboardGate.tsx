@@ -13,7 +13,7 @@ import { trackEvent } from '../lib/analytics/events';
  * Children always render (parallel data loading).
  * Gate overlay is a sibling portal-style div, NOT inside a relative parent.
  * a11y: role=dialog + aria-modal + focus trap interno (gate é bloqueador,
- * não permite ESC para fechar — usuário precisa subscrever para sair).
+ * não permite ESC para fechar, usuário precisa subscrever para sair).
  */
 
 export function DashboardGate({ children }: { children: React.ReactNode }) {

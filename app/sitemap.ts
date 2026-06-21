@@ -85,7 +85,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: staticLastMod,
         changeFrequency: 'daily',
         priority: 0.8,
-        alternates: { languages: hreflang((l) => `/${l}/country/${country.slug[l]}`, `${baseUrl}/en/country/${country.slug['en']}`) },
+        alternates: { languages: hreflang((l) => `/${l}/country/${country.slug[l]}`) },
       })
     }
   }
@@ -101,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           lastModified: isActive ? dynamicLastMod : staticLastMod,
           changeFrequency: isActive ? 'hourly' : 'daily',
           priority: isActive ? 0.9 : 0.7,
-          alternates: { languages: hreflang((l) => `/${l}/election/${election.slug}`, `${baseUrl}/en/election/${election.slug}`) },
+          alternates: { languages: hreflang((l) => `/${l}/election/${election.slug}`) },
         })
       }
     }
@@ -116,7 +116,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: staticLastMod,
         changeFrequency: 'daily',
         priority: 0.85,
-        alternates: { languages: hreflang((l) => `/${l}/${region}`, `${baseUrl}/en/${region}`) },
+        alternates: { languages: hreflang((l) => `/${l}/${region}`) },
       })
     }
   }
@@ -130,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: staticLastMod,
         changeFrequency: 'weekly',
         priority: 0.8,
-        alternates: { languages: hreflang((l) => `/${l}/${page}`, `${baseUrl}/en/${page}`) },
+        alternates: { languages: hreflang((l) => `/${l}/${page}`) },
       })
     }
   }
@@ -142,7 +142,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: staticLastMod,
       changeFrequency: 'weekly',
       priority: 0.85,
-      alternates: { languages: hreflang((l) => `/${l}/how-it-works`, `${baseUrl}/en/how-it-works`) },
+      alternates: { languages: hreflang((l) => `/${l}/how-it-works`) },
     })
   }
 
@@ -153,7 +153,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: staticLastMod,
       changeFrequency: 'monthly',
       priority: 0.75,
-      alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`, `${baseUrl}/en/methodology/automated-governance`) },
+      alternates: { languages: hreflang((l) => `/${l}/methodology/automated-governance`) },
     })
   }
 
@@ -188,6 +188,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
       alternates: { languages: hreflang((l) => `/${l}/about`) },
     })
+  }
+
+  // Chat — conversational agent page (indexable, linked from header)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/chat`,
+      lastModified: staticLastMod,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+      alternates: { languages: hreflang((l) => `/${l}/chat`) },
+    })
+  }
+
+  // Legal pages — indexable + linked from footer (priority baixa, mudam raramente)
+  for (const page of ['privacy', 'terms']) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/${page}`,
+        lastModified: staticLastMod,
+        changeFrequency: 'yearly',
+        priority: 0.3,
+        alternates: { languages: hreflang((l) => `/${l}/${page}`) },
+      })
+    }
   }
 
   // AFOS Daily — permalinks per date (3 locales × N dates)

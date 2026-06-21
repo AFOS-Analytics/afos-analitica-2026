@@ -74,7 +74,7 @@ export function DailyHeroCard() {
 
   // Placeholder com a altura aproximada do card: reserva o espaço enquanto o fetch
   // client roda, para o card não empurrar a página ao aparecer (era a maior fonte
-  // de CLS do dashboard — este card fica no topo, acima do Polymarket).
+  // de CLS do dashboard, este card fica no topo, acima do Polymarket).
   if (!meta) return (
     <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-5 sm:mt-6" aria-hidden="true">
       <div className="min-h-[148px] sm:min-h-[120px] rounded-xl border border-orange-100 bg-orange-50/60 p-4 md:p-5 animate-pulse">

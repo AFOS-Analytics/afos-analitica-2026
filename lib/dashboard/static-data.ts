@@ -3,7 +3,7 @@
  * análise), para o /[locale]/dashboard renderizá-los no 1º paint (SSR/ISR) em vez
  * de buscar via /api no client (que causava "LCP = spinner").
  *
- * Replica a guarda do /api/polls (exige polls[] array) — a defesa de 4 camadas
+ * Replica a guarda do /api/polls (exige polls[] array), a defesa de 4 camadas
  * continua: aqui é a 1ª (shape guard), e as seções client mantêm Array.isArray.
  * Retorna `T | null`: null em arquivo ausente/JSON inválido/shape errado, exatamente
  * o que as seções já tratam hoje quando o fetch falha. Os routes /api/* seguem
@@ -23,7 +23,7 @@ function readJson(file: string): unknown | null {
   }
 }
 
-/** Pesquisas (polls-data.json) — mesma guarda do /api/polls: exige polls[] array. */
+/** Pesquisas (polls-data.json), mesma guarda do /api/polls: exige polls[] array. */
 export function loadPollsData(): PollData | null {
   const data = readJson('polls-data.json')
   if (!data || typeof data !== 'object' || !Array.isArray((data as { polls?: unknown }).polls)) return null

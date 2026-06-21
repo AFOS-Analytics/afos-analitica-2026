@@ -4,7 +4,6 @@ import { HowItWorksPtBR } from './content-pt-BR'
 import { HowItWorksEn } from './content-en'
 import { HowItWorksEs } from './content-es'
 import { ThemeShell } from './ThemeShell'
-import { faqSchema } from '../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 const SLUG = 'how-it-works'
@@ -18,7 +17,7 @@ const SEO: Record<string, {
   htmlLocale: string
 }> = {
   'pt-BR': {
-    title: 'Como Funciona o AFOS Analytics — Guia Didático da Plataforma',
+    title: 'Como Funciona o AFOS Analytics, Guia Didático da Plataforma',
     description: 'Guia completo: como o AFOS cruza Polymarket, 17+ institutos de pesquisa e Google News em tempo real para entregar inteligência eleitoral sem viés em 15 países.',
     keywords: ['como funciona afos', 'inteligência eleitoral', 'polymarket brasil', 'cruzamento de pesquisas', 'mercado de previsão', 'análise eleitoral 2026', 'risco político', 'open source eleições', 'afos analytics'],
     headline: 'Como funciona o AFOS Analytics',
@@ -26,7 +25,7 @@ const SEO: Record<string, {
     htmlLocale: 'pt-BR',
   },
   en: {
-    title: 'How AFOS Analytics Works — Platform Didactic Guide',
+    title: 'How AFOS Analytics Works, Platform Didactic Guide',
     description: 'Complete guide: how AFOS cross-references Polymarket, 17+ polling institutes, and Google News in real time to deliver unbiased electoral intelligence across 15 countries.',
     keywords: ['how afos works', 'electoral intelligence', 'polymarket brazil', 'poll cross-reference', 'prediction market', 'election analysis 2026', 'political risk', 'open source elections', 'afos analytics'],
     headline: 'How AFOS Analytics Works',
@@ -34,7 +33,7 @@ const SEO: Record<string, {
     htmlLocale: 'en',
   },
   es: {
-    title: 'Cómo Funciona AFOS Analytics — Guía Didáctica de la Plataforma',
+    title: 'Cómo Funciona AFOS Analytics, Guía Didáctica de la Plataforma',
     description: 'Guía completa: cómo AFOS cruza Polymarket, 17+ encuestadoras y Google News en tiempo real para entregar inteligencia electoral sin sesgo en 15 países.',
     keywords: ['cómo funciona afos', 'inteligencia electoral', 'polymarket brasil', 'cruce de encuestas', 'mercado de predicción', 'análisis electoral 2026', 'riesgo político', 'open source elecciones', 'afos analytics'],
     headline: 'Cómo Funciona AFOS Analytics',
@@ -54,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const languages: Record<string, string> = {}
   for (const l of locales) languages[l] = `${BASE_URL}/${l}/${SLUG}`
-  languages['x-default'] = `${BASE_URL}/en/${SLUG}`
+  languages['x-default'] = `${BASE_URL}/pt-BR/${SLUG}`
 
   return {
     title: seo.title,
@@ -92,17 +91,17 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const MENTIONS_I18N: Record<string, { dailyName: string; dailyDesc: string; glossaryName: string }> = {
   'pt-BR': {
-    dailyName: 'AFOS Daily — Síntese Narrativa Diária',
+    dailyName: 'AFOS Daily, Síntese Narrativa Diária',
     dailyDesc: 'Síntese narrativa diária cruzando Polymarket, pesquisas eleitorais e notícias com link auditável por alegação. Disponível em 3 idiomas.',
     glossaryName: 'Glossário Político Brasileiro',
   },
   en: {
-    dailyName: 'AFOS Daily — Daily Narrative Synthesis',
+    dailyName: 'AFOS Daily, Daily Narrative Synthesis',
     dailyDesc: 'Daily narrative synthesis cross-referencing Polymarket, electoral polls, and news with auditable links per claim. Available in 3 languages.',
     glossaryName: 'Brazilian Political Glossary',
   },
   es: {
-    dailyName: 'AFOS Daily — Síntesis Narrativa Diaria',
+    dailyName: 'AFOS Daily, Síntesis Narrativa Diaria',
     dailyDesc: 'Síntesis narrativa diaria cruzando Polymarket, encuestas electorales y noticias con enlace auditable por afirmación. Disponible en 3 idiomas.',
     glossaryName: 'Glosario Político Brasileño',
   },
@@ -183,7 +182,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc)]) }}
       />
       <ThemeShell loc={loc} slug={SLUG}>
         <Content />

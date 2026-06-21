@@ -72,7 +72,7 @@ export function LanguageSwitcher() {
             >
               <span className="text-base leading-none">{localeFlags[loc]}</span>
               <span className="font-mono text-xs">{localeLabels[loc].short}</span>
-              <span className="text-gray-500 text-xs">—</span>
+              <span className="text-gray-500 text-xs">, </span>
               <span className="text-xs">{localeLabels[loc].full}</span>
             </button>
           ))}

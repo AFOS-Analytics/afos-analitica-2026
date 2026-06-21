@@ -19,7 +19,7 @@ const T = {
     subtitle: 'Conceitos institucionais, partidos, expressões e termos cunhados durante o ciclo eleitoral 2026.',
     firstSeenLabel: 'Primeiro uso:',
     relatedSourcesLabel: 'Fontes relacionadas:',
-    homeAriaLabel: 'AFOS Analytics — página inicial',
+    homeAriaLabel: 'AFOS Analytics, página inicial',
     types: {
       institutional: 'Instituição',
       electoral_concept: 'Conceito eleitoral',
@@ -40,7 +40,7 @@ const T = {
     subtitle: 'Institutional concepts, parties, expressions, and terms coined during the 2026 electoral cycle.',
     firstSeenLabel: 'First seen:',
     relatedSourcesLabel: 'Related sources:',
-    homeAriaLabel: 'AFOS Analytics — homepage',
+    homeAriaLabel: 'AFOS Analytics, homepage',
     types: {
       institutional: 'Institution',
       electoral_concept: 'Electoral concept',
@@ -61,7 +61,7 @@ const T = {
     subtitle: 'Conceptos institucionales, partidos, expresiones y términos acuñados durante el ciclo electoral 2026.',
     firstSeenLabel: 'Primera mención:',
     relatedSourcesLabel: 'Fuentes relacionadas:',
-    homeAriaLabel: 'AFOS Analytics — página principal',
+    homeAriaLabel: 'AFOS Analytics, página principal',
     types: {
       institutional: 'Institución',
       electoral_concept: 'Concepto electoral',
@@ -125,7 +125,7 @@ function buildDefinedTermsSchema(entries: GlossaryEntry[], locale: 'pt-BR' | 'en
       description: e.definitions[locale],
       inDefinedTermSet: {
         '@type': 'DefinedTermSet',
-        name: 'AFOS Analytics — Brazilian political terms glossary',
+        name: 'AFOS Analytics, Brazilian political terms glossary',
         url: `https://www.afos-analytics.com/${locale}/glossary`,
       },
       ...(e.url ? { url: e.url } : {}),

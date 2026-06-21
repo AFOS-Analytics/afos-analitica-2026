@@ -684,7 +684,7 @@ export function HowItWorksPtBR() {
       </Callout>
 
       <SummaryFrame>
-        AFOS Analytics é a primeira plataforma que combina, em tempo real, mercados de previsão × pesquisas de opinião × notícias para mostrar, com honestidade e transparência, divergências explícitas em vez de médias suavizadas — revelando o que os dados realmente dizem sobre política, sem viés, sem propaganda, livre e sem cadastro obrigatório.
+        AFOS Analytics é a primeira plataforma que combina, em tempo real, mercados de previsão × pesquisas de opinião × notícias para mostrar, com honestidade e transparência, divergências explícitas em vez de médias suavizadas, revelando o que os dados realmente dizem sobre política, sem viés, sem propaganda, livre e sem cadastro obrigatório.
       </SummaryFrame>
 
       <p className="text-center text-xs text-gray-400 dark:text-blue-200/70 mt-10 mb-2">Atualizado em abril de 2026</p>

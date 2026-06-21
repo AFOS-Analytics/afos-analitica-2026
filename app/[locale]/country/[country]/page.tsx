@@ -11,7 +11,7 @@ const BASE_URL = 'https://www.afos-analytics.com'
 
 const META_TEMPLATES: Record<string, { title: string; desc: string }> = {
   'pt-BR': {
-    title: '{country} — Eleições {year} | Risco Político e Mercados de Previsão',
+    title: '{country}, Eleições {year} | Risco Político e Mercados de Previsão',
     desc: 'Dados eleitorais, sinais de risco político e mercados de previsão para {country}. AFOS Analytics.',
   },
   en: {
@@ -19,7 +19,7 @@ const META_TEMPLATES: Record<string, { title: string; desc: string }> = {
     desc: 'Election data, political risk signals, and prediction markets for {country}. AFOS Analytics.',
   },
   es: {
-    title: '{country} — Elecciones {year} | Riesgo Político y Mercados de Predicción',
+    title: '{country}, Elecciones {year} | Riesgo Político y Mercados de Predicción',
     desc: 'Datos electorales, señales de riesgo político y mercados de predicción para {country}. AFOS Analytics.',
   },
 }
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   for (const l of locales) {
     languages[l] = `${BASE_URL}/${l}/country/${country.slug[l]}`
   }
-  languages['x-default'] = `${BASE_URL}/en/country/${country.slug['en']}`
+  languages['x-default'] = `${BASE_URL}/pt-BR/country/${country.slug['pt-BR']}`
 
   return {
     title,

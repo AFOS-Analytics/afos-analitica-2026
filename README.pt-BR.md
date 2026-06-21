@@ -4,7 +4,7 @@
 
 🇧🇷 Português | 🇺🇸 [Read in English](README.md)
 
-### Plataforma Global — inédita — cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias.
+### Plataforma Global, inédita, cruzamento em tempo real entre mercados de previsão, pesquisas eleitorais e notícias.
 
 Construído e validado durante o ciclo eleitoral 2026 em países na América do Sul + 15 países. Análises diárias.
 
@@ -28,13 +28,13 @@ Construído e validado durante o ciclo eleitoral 2026 em países na América do 
 
 O **AFOS Analytics** é a plataforma inédita no mundo de inteligência de risco político eleitoral que cruza em tempo real:
 
-- **Mercados de previsao** com dinheiro real (Polymarket) — odds atualizadas a cada 30 minutos
+- **Mercados de previsao** com dinheiro real (Polymarket), odds atualizadas a cada 30 minutos
 - **Pesquisas eleitorais** oficiais do TSE + 17 institutos brasileiros
 - **Noticias ao vivo** da grande imprensa
 - **Analises estrategicas** com inteligencia artificial
-- **AFOS Daily** — sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente — **40 edicoes publicadas ate 31/Mai/2026** (D+17 do lancamento publico), em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`. Distribuicao por email para assinantes optados-in via Resend Pro
-- **AFOS Tradeoff** — leitura tecnica semanal publicada toda segunda, voltada para research institucional, buy-side e tesouraria. Cruza os mesmos tres sinais mas reporta **separadamente** (sem compostos de media ponderada) — quando mercado de previsao, pesquisa e noticia divergem, a divergencia *e* o sinal. Estruturada em 9 secoes (cards de resumo executivo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Publicada em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/tradeoff/[data]`. RSS: `/feed/tradeoff.xml`
-- **AFOS Chat** — agente conversacional disponivel como **bolha flutuante em todas as paginas** (e em tela cheia em `/chat`) que responde em linguagem natural consultando os **dados ao vivo da plataforma via tool-calling**: odds do Polymarket, pesquisas TSE, os **casos validados & divergencia mercado×pesquisa**, noticias e a ultima edicao do AFOS Daily — **toda resposta cita a fonte**, com as mesmas regras de honestidade radical (mercado de previsao e probabilidade implicita, nao previsao; divergencia e o sinal, o resultado real e o validador). Trilingue (PT-BR, EN, ES), respostas em streaming, com **OpenRouter (DeepSeek V4 Flash)**. Publico com rate-limit por IP
+- **AFOS Daily**, sintese narrativa diaria cruzando as tres fontes, com link auditavel por alegacao. Validada em piloto de 7 dias (22-28/Abr/2026), agora permanente, **40 edicoes publicadas ate 31/Mai/2026** (D+17 do lancamento publico), em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/daily/[data]`. Distribuicao por email para assinantes optados-in via Resend Pro
+- **AFOS Tradeoff**, leitura tecnica semanal publicada toda segunda, voltada para research institucional, buy-side e tesouraria. Cruza os mesmos tres sinais mas reporta **separadamente** (sem compostos de media ponderada), quando mercado de previsao, pesquisa e noticia divergem, a divergencia *e* o sinal. Estruturada em 9 secoes (cards de resumo executivo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Publicada em 3 idiomas (PT-BR, EN, ES) com arquivo completo em `/tradeoff/[data]`. RSS: `/feed/tradeoff.xml`
+- **AFOS Chat**, agente conversacional disponivel como **bolha flutuante em todas as paginas** (e em tela cheia em `/chat`) que responde em linguagem natural consultando os **dados ao vivo da plataforma via tool-calling**: odds do Polymarket, pesquisas TSE, os **casos validados & divergencia mercado×pesquisa**, noticias e a ultima edicao do AFOS Daily, **toda resposta cita a fonte**, com as mesmas regras de honestidade radical (mercado de previsao e probabilidade implicita, nao previsao; divergencia e o sinal, o resultado real e o validador). Trilingue (PT-BR, EN, ES), respostas em streaming, com **OpenRouter (DeepSeek V4 Flash)**. Publico com rate-limit por IP
 
 Cobertura de **14+ paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, EN, ES).
 
@@ -42,7 +42,7 @@ Cobertura de **14+ paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, E
 
 ### Demo da plataforma (~90 segundos)
 
-[![AFOS Analytics — demo (clique para tocar)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
+[![AFOS Analytics, demo (clique para tocar)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
 
 > **Clique na imagem acima para tocar** (~9 MB, audio em PT-BR com legendas em ingles embutidas). Cobre: cruzamento em tempo real, mercados de previsao, pesquisas eleitorais, agregacao de noticias e a sintese narrativa **AFOS Daily**. Trilhas alternativas: [`public/demo.mp4`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo.mp4) (sem legendas) e [`public/demo-audio.m4a`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-audio.m4a) (apenas audio).
 
@@ -60,7 +60,7 @@ Cobertura de **14+ paises** com eleicoes monitoradas, em **3 idiomas** (PT-BR, E
 - 🔒 **Disclosure de vulnerabilidades** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (ver [SECURITY.md](SECURITY.md))
 - 👤 **Contato direto com o founder** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
 
-Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: o dataset público de divergência espelhado diariamente no [Hugging Face](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence)) são licenciados sob **CC BY 4.0** — ambos exigem atribuição ao AFOS Analytics. Contribuições bem-vindas — veja [CONTRIBUTING.md](CONTRIBUTING.md). O uso da marca "AFOS Analytics" (nome e logo) é regido pelo [TRADEMARK.md](TRADEMARK.md). Contribuições para a plataforma hospedada (onboarding de um novo país) são documentadas em [docs/platform/add-your-country.md](docs/platform/add-your-country.md) e o modelo público de governança é explicado em `/methodology/automated-governance`.
+Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: o dataset público de divergência espelhado diariamente no [Hugging Face](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence)) são licenciados sob **CC BY 4.0**, ambos exigem atribuição ao AFOS Analytics. Contribuições bem-vindas, veja [CONTRIBUTING.md](CONTRIBUTING.md). O uso da marca "AFOS Analytics" (nome e logo) é regido pelo [TRADEMARK.md](TRADEMARK.md). Contribuições para a plataforma hospedada (onboarding de um novo país) são documentadas em [docs/platform/add-your-country.md](docs/platform/add-your-country.md) e o modelo público de governança é explicado em `/methodology/automated-governance`.
 
 ---
 
@@ -71,15 +71,15 @@ Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: 
 | Rota | Conteudo |
 |------|---------|
 | `/[locale]` | Landing page (seletor de cor + idioma) |
-| `/[locale]/dashboard` | Dashboard interativo com dados ao vivo — logo do header volta para landing |
-| `/[locale]/daily` | AFOS Daily — sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias. Disponivel em **3 idiomas** (PT-BR, EN, ES) — loader detecta `{data}.{locale}.md` com fallback para o PT-BR canonico. Termos politicos brasileiros (TSE, STF, BolsoMaster, etc.) preservados em PT com links inline para o glossario trilingue. **Rota indice = arquivo de edicoes** (lista agrupada por mes de todas as edicoes publicadas, ultima destacada, pular-para-data + seletores de idioma e tema na pagina); edicoes individuais ficam em `/[locale]/daily/[date]` com prev / next + navegacao "Todas as edicoes" |
-| `/[locale]/tradeoff` | AFOS Tradeoff — leitura tecnica semanal (segundas) voltada para research institucional / buy-side / tesouraria. Tres sinais reportados separadamente — divergencia *e* o sinal, nao ruido a mediar. 9 secoes estruturadas renderizadas via YAML rich-frontmatter (cards de resumo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Paridade tri-locale com Daily (`{data}.{locale}.md`). **Rota indice = arquivo de edicoes** (lista por numero de edicao e semana, ultima destacada, seletores de idioma e tema na pagina); edicoes ficam em `/[locale]/tradeoff/[date]` com prev / next + navegacao "Todas as edicoes". RSS: `/feed/tradeoff.xml` |
-| `/[locale]/global` | Hub global de eleicoes — **lidera com os casos validados** (divergencia mercado × pesquisa vs o resultado real, com datasets abertos) seguidos do **mapa de odds ao vivo** (D3.js). Mesmo destino do card "AFOS Global" da landing e do link Global no header do dashboard (fonte unica) |
-| `/[locale]/chat` | **AFOS Chat** — agente conversacional com acesso a dados ao vivo via tool-calling (odds Polymarket, pesquisas TSE, casos validados & divergencia, noticias, AFOS Daily); toda resposta cita a fonte. Respostas em streaming (SSE), trilingue, OpenRouter / DeepSeek V4 Flash. Tambem montado no site todo como **bolha de chat flutuante** (lazy-load, oculta nesta pagina dedicada) |
+| `/[locale]/dashboard` | Dashboard interativo com dados ao vivo, logo do header volta para landing |
+| `/[locale]/daily` | AFOS Daily, sintese narrativa diaria cruzando mercados de previsao, pesquisas e noticias. Disponivel em **3 idiomas** (PT-BR, EN, ES), loader detecta `{data}.{locale}.md` com fallback para o PT-BR canonico. Termos politicos brasileiros (TSE, STF, BolsoMaster, etc.) preservados em PT com links inline para o glossario trilingue. **Rota indice = arquivo de edicoes** (lista agrupada por mes de todas as edicoes publicadas, ultima destacada, pular-para-data + seletores de idioma e tema na pagina); edicoes individuais ficam em `/[locale]/daily/[date]` com prev / next + navegacao "Todas as edicoes" |
+| `/[locale]/tradeoff` | AFOS Tradeoff, leitura tecnica semanal (segundas) voltada para research institucional / buy-side / tesouraria. Tres sinais reportados separadamente, divergencia *e* o sinal, nao ruido a mediar. 9 secoes estruturadas renderizadas via YAML rich-frontmatter (cards de resumo, racional anti-media, cenarios ponderados, grade de indicadores, liquidez e estrutura de mercado, calendario de prints, watch list, metodologia, leitura adicional). Paridade tri-locale com Daily (`{data}.{locale}.md`). **Rota indice = arquivo de edicoes** (lista por numero de edicao e semana, ultima destacada, seletores de idioma e tema na pagina); edicoes ficam em `/[locale]/tradeoff/[date]` com prev / next + navegacao "Todas as edicoes". RSS: `/feed/tradeoff.xml` |
+| `/[locale]/global` | Hub global de eleicoes, **lidera com os casos validados** (divergencia mercado × pesquisa vs o resultado real, com datasets abertos) seguidos do **mapa de odds ao vivo** (D3.js). Mesmo destino do card "AFOS Global" da landing e do link Global no header do dashboard (fonte unica) |
+| `/[locale]/chat` | **AFOS Chat**, agente conversacional com acesso a dados ao vivo via tool-calling (odds Polymarket, pesquisas TSE, casos validados & divergencia, noticias, AFOS Daily); toda resposta cita a fonte. Respostas em streaming (SSE), trilingue, OpenRouter / DeepSeek V4 Flash. Tambem montado no site todo como **bolha de chat flutuante** (lazy-load, oculta nesta pagina dedicada) |
 | `/[locale]/country/[country]` | Pagina por pais (15 paises) |
-| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas) — "O Metodo". Seletor de idioma na pagina (PT-BR/EN/ES). Tour pela plataforma com 14 secoes incluindo o card AFOS Daily (`#afos-daily-card`), a secao do **AFOS Tradeoff** semanal (`#afos-tradeoff-card`), a secao do **AFOS Global** (`#afos-global-card`) documentando a camada de casos validados (o conceito de probabilidade-de-vencer vs participacao-de-votos, as paginas de divergencia por pais e eleicao, e os datasets abertos) e criterios de avaliacao dos institutos (`#criterios-institutos`); o "Comece por aqui" orienta o leitor tanto ao Daily quanto ao Tradeoff. Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
-| `/[locale]/methodology/automated-governance` | Pagina publica de governanca (3 idiomas) — como a plataforma hospedada aplica integridade editorial via codigo (validadores automaticos + prompt rules versionadas), os 2 caminhos de interacao (Fork / Country Onboarding) e as 3 excecoes onde o humano intervem |
-| `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa), 3 idiomas. Wordmark AFOS + header com botao "Dashboard". **Paises monitorados** como cards clicaveis (bandeira SVG + nome + regiao + proxima eleicao + CTA "Ver pais →" → `/country/[country]`) e **eleicoes relacionadas** como linhas (bandeira SVG + badge de status colorido e localizado — Ativa / Concluida / Proxima — + "Ver eleicao →" → `/election/[slug]`), mais uma grade de botoes de inteligencia institucional. Componente `RegionPage` compartilhado; bandeiras via `ISO3_TO_CC` → `/flags/{cc}.svg` (sem emoji, Windows-safe) |
+| `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas), "O Metodo". Seletor de idioma na pagina (PT-BR/EN/ES). Tour pela plataforma com 14 secoes incluindo o card AFOS Daily (`#afos-daily-card`), a secao do **AFOS Tradeoff** semanal (`#afos-tradeoff-card`), a secao do **AFOS Global** (`#afos-global-card`) documentando a camada de casos validados (o conceito de probabilidade-de-vencer vs participacao-de-votos, as paginas de divergencia por pais e eleicao, e os datasets abertos) e criterios de avaliacao dos institutos (`#criterios-institutos`); o "Comece por aqui" orienta o leitor tanto ao Daily quanto ao Tradeoff. Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
+| `/[locale]/methodology/automated-governance` | Pagina publica de governanca (3 idiomas), como a plataforma hospedada aplica integridade editorial via codigo (validadores automaticos + prompt rules versionadas), os 2 caminhos de interacao (Fork / Country Onboarding) e as 3 excecoes onde o humano intervem |
+| `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa), 3 idiomas. Wordmark AFOS + header com botao "Dashboard". **Paises monitorados** como cards clicaveis (bandeira SVG + nome + regiao + proxima eleicao + CTA "Ver pais →" → `/country/[country]`) e **eleicoes relacionadas** como linhas (bandeira SVG + badge de status colorido e localizado, Ativa / Concluida / Proxima, + "Ver eleicao →" → `/election/[slug]`), mais uma grade de botoes de inteligencia institucional. Componente `RegionPage` compartilhado; bandeiras via `ISO3_TO_CC` → `/flags/{cc}.svg` (sem emoji, Windows-safe) |
 
 ### Landing Page
 
@@ -88,8 +88,8 @@ Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: 
 - Bandeiras SVG (compativel com todos os dispositivos incluindo Windows)
 - Formulario de captura de lead integrado com sistema de visitor tracking
 - SEO otimizado com claim "Plataforma inedita no mundo" em metadata
-- **Fluxo de leitura (revisado 29/Mai/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → Captura de email ("Ou receba análises semanais...") → Features → Países → CTA Final "Acessar Dashboard". A captura de leads subiu na página para converter antes do usuário rolar até depois das Features; CTA intermediario redundante removido (somente botões nav-topo e CTA Final permanecem). Links Daily / Tradeoff / Global sempre usam a rota indice (`/{locale}/daily`, `/{locale}/tradeoff`) — nunca data hardcoded — para que novas edicoes sejam auto-descobertas. A partir de junho/2026 essas rotas indice **sao o arquivo de edicoes** (uma lista navegavel, agrupada por mes, de todas as edicoes, com seletores de idioma e tema na pagina), nao um redirect para a ultima edicao; a edicao mais recente fica destacada no topo, a um clique de distancia.
-- **Regra de design "cores invertidas":** componentes que precisam destacar do fundo da pagina invertem nos temas — tema light = componentes Sapphire Blue (cards, CTA, caixa do subtitle) com texto branco; tema Sapphire Blue = componentes brancos com texto cor primaria. Aplicado consistentemente em ProductsSection, CTA dashboard e caixa do subtitle do hero.
+- **Fluxo de leitura (revisado 29/Mai/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → Captura de email ("Ou receba análises semanais...") → Features → Países → CTA Final "Acessar Dashboard". A captura de leads subiu na página para converter antes do usuário rolar até depois das Features; CTA intermediario redundante removido (somente botões nav-topo e CTA Final permanecem). Links Daily / Tradeoff / Global sempre usam a rota indice (`/{locale}/daily`, `/{locale}/tradeoff`), nunca data hardcoded, para que novas edicoes sejam auto-descobertas. A partir de junho/2026 essas rotas indice **sao o arquivo de edicoes** (uma lista navegavel, agrupada por mes, de todas as edicoes, com seletores de idioma e tema na pagina), nao um redirect para a ultima edicao; a edicao mais recente fica destacada no topo, a um clique de distancia.
+- **Regra de design "cores invertidas":** componentes que precisam destacar do fundo da pagina invertem nos temas, tema light = componentes Sapphire Blue (cards, CTA, caixa do subtitle) com texto branco; tema Sapphire Blue = componentes brancos com texto cor primaria. Aplicado consistentemente em ProductsSection, CTA dashboard e caixa do subtitle do hero.
 
 ### Sistema de Captura de Leads (Visitor State)
 
@@ -134,7 +134,7 @@ Usuario:     Requisicao  → Redis read (<1ms) → resposta
 
 ### Arquitetura URL-Primary (integridade editorial do AFOS Daily)
 
-Cada alegacao no AFOS Daily precisa linkar para o **artigo especifico** que a sustenta — nao para a home do veiculo. Garantido por 5 camadas cooperantes:
+Cada alegacao no AFOS Daily precisa linkar para o **artigo especifico** que a sustenta, nao para a home do veiculo. Garantido por 5 camadas cooperantes:
 
 | Camada | Componente | Funcao |
 |--------|------------|--------|
@@ -146,7 +146,7 @@ Cada alegacao no AFOS Daily precisa linkar para o **artigo especifico** que a su
 
 **Validador manual:** `npx tsx scripts/validate-afos-daily.ts {date} [--locale=en\|es]` sai com 1 em erros criticos (igual ao hook PreToolUse). Usado nos checks de CI e no fluxo do operador antes do commit.
 
-**Razao de fontes editoriais (regra 50/50, firmada em 9/Mai/2026):** cada AFOS Daily usa **no minimo 50% de veiculos-ancora via RSS direto** (Folha de S.Paulo, O Globo, G1, Estadao, Valor, VEJA — credibilidade institucional) **+ no minimo 50% de veiculos secundarios via redirect do Google News** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc. — acesso aberto, reproduzem a cobertura-ancora sem paywall). Refinamento da regra anterior 30/70, motivado pela observacao de que veiculos-ancora frequentemente colocam conteudo em paywall para nao-assinantes (sobretudo leitores internacionais); os secundarios replicam a mesma cobertura com acesso aberto. Aplica-se uniformemente a PT-BR / EN / ES. As traducoes preservam as URLs como coletadas no idioma de origem.
+**Razao de fontes editoriais (regra 50/50, firmada em 9/Mai/2026):** cada AFOS Daily usa **no minimo 50% de veiculos-ancora via RSS direto** (Folha de S.Paulo, O Globo, G1, Estadao, Valor, VEJA, credibilidade institucional) **+ no minimo 50% de veiculos secundarios via redirect do Google News** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc., acesso aberto, reproduzem a cobertura-ancora sem paywall). Refinamento da regra anterior 30/70, motivado pela observacao de que veiculos-ancora frequentemente colocam conteudo em paywall para nao-assinantes (sobretudo leitores internacionais); os secundarios replicam a mesma cobertura com acesso aberto. Aplica-se uniformemente a PT-BR / EN / ES. As traducoes preservam as URLs como coletadas no idioma de origem.
 
 ### Estrutura do Projeto
 
@@ -252,10 +252,10 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ### Otimizacao para IA (GEO)
 
-- **`public/llms.txt`** — Descreve a plataforma para AI crawlers (ChatGPT, Perplexity, Claude, Gemini) seguindo padrao emergente da industria
+- **`public/llms.txt`**, Descreve a plataforma para AI crawlers (ChatGPT, Perplexity, Claude, Gemini) seguindo padrao emergente da industria
 - **13 AI crawlers permitidos explicitamente** em `app/robots.ts`: GPTBot, anthropic-ai, ClaudeBot, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, CCBot, Bytespider, Applebot-Extended, cohere-ai, Meta-ExternalAgent, FacebookBot
 - **JSON-LD Article schema** em `/how-it-works` para atribuicao em citacoes de motores generativos
-- **Atribuicao transparente de IA** — analises geradas por inteligencia artificial a partir de dados publicos e auditaveis
+- **Atribuicao transparente de IA**, analises geradas por inteligencia artificial a partir de dados publicos e auditaveis
 
 ### Paginas indexaveis (~120+ com hreflang)
 
@@ -274,19 +274,19 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ## Mapa Global de Eleicoes
 
-- **D3.js + TopoJSON** — Natural Earth projection, SVG render
+- **D3.js + TopoJSON**, Natural Earth projection, SVG render
 - **15 paises** com dados ao vivo do Polymarket
-- **Bandeiras SVG** — visiveis em todos os dispositivos (Windows, Mac, mobile)
+- **Bandeiras SVG**, visiveis em todos os dispositivos (Windows, Mac, mobile)
 - **Volume com label**: "Vol: $53.4M (somatorio 6 mercados)" quando multiplos mercados
-- **Hover** — tooltip com candidato lider, probabilidade, volume
-- **Click** — drawer lateral com breakdown de candidatos
-- **Zoom/Pan** — d3-zoom (1x-8x)
+- **Hover**, tooltip com candidato lider, probabilidade, volume
+- **Click**, drawer lateral com breakdown de candidatos
+- **Zoom/Pan**, d3-zoom (1x-8x)
 
 ---
 
 ## Datasets Abertos (Hugging Face)
 
-Datasets publicos e auditaveis de **divergencia eleitoral** — *mercados de previsao × pesquisas, com divergencia explicita* (o spread e o sinal, nao uma media combinada). Todos em **CC BY 4.0**, com cards trilingues e banner com bandeira da marca, construidos apenas a partir de fontes publicas (sem dados pessoais).
+Datasets publicos e auditaveis de **divergencia eleitoral**, *mercados de previsao × pesquisas, com divergencia explicita* (o spread e o sinal, nao uma media combinada). Todos em **CC BY 4.0**, com cards trilingues e banner com bandeira da marca, construidos apenas a partir de fontes publicas (sem dados pessoais).
 
 | Dataset | Eleicao | O que a divergencia mostra |
 |---|---|---|
@@ -298,9 +298,9 @@ Datasets publicos e auditaveis de **divergencia eleitoral** — *mercados de pre
 | [canada-2025](https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence) | Canada 2025 ✓ | O mercado virou 85% Conservador → 80% Liberal; os Liberais venceram |
 | [uk-2024](https://huggingface.co/datasets/AFOS-Analytics1/uk-2024-electoral-divergence) | Reino Unido 2024 ✓ | O Labour venceu 411 de 650 cadeiras com 33,7% dos votos; o mercado leu uma vitoria esmagadora que as pesquisas mediam so como ~40% de votos |
 | [mexico-2024](https://huggingface.co/datasets/AFOS-Analytics1/mexico-2024-electoral-divergence) | Mexico 2024 ✓ | O mercado dava ~90% a Sheinbaum desde janeiro; ela venceu com ~59,8%, acima das pesquisas finais |
-| [usa-2024](https://huggingface.co/datasets/AFOS-Analytics1/usa-2024-electoral-divergence) | Estados Unidos 2024 ✓ | Dois mercados discordaram: o de vencedor (colégio eleitoral, **US$ 3,7 bi** — o maior mercado eleitoral da história) cravou Trump contra o empate das pesquisas e acertou; o de voto popular favoreceu Harris e errou. Inclui uma **linha do tempo de imprensa** arquivada no Wayback (mercado × pesquisa × imprensa) |
+| [usa-2024](https://huggingface.co/datasets/AFOS-Analytics1/usa-2024-electoral-divergence) | Estados Unidos 2024 ✓ | Dois mercados discordaram: o de vencedor (colégio eleitoral, **US$ 3,7 bi**, o maior mercado eleitoral da história) cravou Trump contra o empate das pesquisas e acertou; o de voto popular favoreceu Harris e errou. Inclui uma **linha do tempo de imprensa** arquivada no Wayback (mercado × pesquisa × imprensa) |
 
-Os datasets **Brasil 2026** e **USA 2024** tem, adicionalmente, versoes academicas curadas e citaveis no **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, agrupadas na colecao **AFOS Analytics** — DOI do Brasil [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) e DOI dos EUA [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), cada um um snapshot versionado e permanente do seu mirror ao vivo do Hugging Face, depositado no maior repositorio de dados de ciencias sociais. Ate onde verificamos, o deposito do Brasil 2026 e o primeiro no Harvard Dataverse a cruzar mercados de previsao × pesquisas registradas × cobertura de imprensa para medir divergencia explicita numa eleicao brasileira.
+Os datasets **Brasil 2026** e **USA 2024** tem, adicionalmente, versoes academicas curadas e citaveis no **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, agrupadas na colecao **AFOS Analytics**, DOI do Brasil [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) e DOI dos EUA [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), cada um um snapshot versionado e permanente do seu mirror ao vivo do Hugging Face, depositado no maior repositorio de dados de ciencias sociais. Ate onde verificamos, o deposito do Brasil 2026 e o primeiro no Harvard Dataverse a cruzar mercados de previsao × pesquisas registradas × cobertura de imprensa para medir divergencia explicita numa eleicao brasileira.
 
 Os casos concluidos (✓) sao o metodo **validado contra o resultado real**, exibidos como **"Casos validados"** no hub [`/global`](https://www.afos-analytics.com/pt-BR/global). Cada um carrega o historico completo de pesquisas, as odds diarias do Polymarket, a serie temporal da divergencia mercado × pesquisa, **dois graficos de odds** (trajetoria de probabilidade + snapshot mercado × pesquisa na vespera, com volume total apostado), um `DATA_DICTIONARY.md` e um `CITATION.cff`. Fora do Brasil a profundidade e apenas topline (sem equivalente ao registro de open-data do TSE brasileiro).
 
@@ -378,7 +378,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | **Resend** | Email transacional |
 | **Polymarket API** | Mercados de previsao (18 mercados, 15 paises) |
 | **Google News RSS + Firecrawl** | Noticias ao vivo |
-| **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat — agente conversacional (tool-calling) sobre dados ao vivo |
+| **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat, agente conversacional (tool-calling) sobre dados ao vivo |
 | **Vercel Analytics** | Metricas de trafego |
 
 ---
@@ -393,9 +393,9 @@ Cron 3x/dia (6h, 12h, 18h)
 | `/api/visitor/migrate` | Migra inscritos legados |
 | `/api/subscribe` | Captura email (visitorId + captureSource) |
 | `/api/global-map` | Eleicoes globais (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 30min — Polymarket → Redis + Neon (unificado, um fetch por tick) |
+| `/api/cron/refresh-elections` | Cron 30min, Polymarket → Redis + Neon (unificado, um fetch por tick) |
 | `/api/cron/refresh-polls` | Cron 3x/dia TSE |
-| `/api/cron/persist-analysis` | Cron 1x/dia — persiste JSONs de analise e markdown do AFOS Daily no Neon |
+| `/api/cron/persist-analysis` | Cron 1x/dia, persiste JSONs de analise e markdown do AFOS Daily no Neon |
 | `/api/polymarket` | Odds BR |
 | `/api/polls` / `/api/polls/tse` | Pesquisas |
 | `/api/news` | Noticias |
@@ -405,7 +405,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | `/api/admin/data-request` | LGPD exclusao/exportacao |
 | `/api/health` | Health check |
 | `/api/translations` | Pipeline traducao IA |
-| `/api/chat` | AFOS Chat — agente tool-calling em streaming (SSE) sobre dados ao vivo; rate-limit por IP |
+| `/api/chat` | AFOS Chat, agente tool-calling em streaming (SSE) sobre dados ao vivo; rate-limit por IP |
 | `/api/market/history` | Serie temporal odds |
 
 ---
@@ -456,8 +456,8 @@ npm run dev
 |---------|-----------|
 | `/atualizar` | Atualizacao completa do AFOS Analytics (Polymarket + Google News + JSONs + deploy) |
 | `/atualizar-pesquisas` | Ingestao de pesquisas eleitorais do TSE |
-| `/afos-daily` | Gera a sintese narrativa diaria (AFOS Daily) — cruza mercados, pesquisas e noticias com link auditavel por alegacao |
-| `/tradeoff` | Gera a leitura tecnica semanal (AFOS Tradeoff) — 9 secoes estruturadas, reporta os tres sinais separadamente, analise de cenarios ponderados para leitores institucionais |
+| `/afos-daily` | Gera a sintese narrativa diaria (AFOS Daily), cruza mercados, pesquisas e noticias com link auditavel por alegacao |
+| `/tradeoff` | Gera a leitura tecnica semanal (AFOS Tradeoff), 9 secoes estruturadas, reporta os tres sinais separadamente, analise de cenarios ponderados para leitores institucionais |
 
 ---
 
@@ -480,4 +480,4 @@ O dominio canonico e **[afos-analytics.com](https://www.afos-analytics.com)**. Q
 
 ---
 
-*AFOS Analytics — Plataforma inédita no mundo: Inteligência de Risco Político Eleitoral em tempo real.*
+*AFOS Analytics, Plataforma inédita no mundo: Inteligência de Risco Político Eleitoral em tempo real.*

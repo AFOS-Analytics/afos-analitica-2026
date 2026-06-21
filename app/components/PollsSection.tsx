@@ -14,7 +14,7 @@ interface PollsSectionProps {
 
 // Guard de render (camada 1 da defesa do dashboard): retorna [] quando o valor não é array,
 // evitando o crash `.map is not a function` se um JSON do /atualizar vier com shape divergente
-// (objeto-onde-se-espera-array — incidentes 19-21/Mai). O validator (camada 2) pega na origem.
+// (objeto-onde-se-espera-array, incidentes 19-21/Mai). O validator (camada 2) pega na origem.
 const asArray = (x: unknown): any[] => (Array.isArray(x) ? x : []);
 
 const PL_L: Record<string, { polls: string; survey: string; trend: string; secondRound: string; sources: string; respondents: string; defaultSources: string; rel: [string, string, string, string, string]; natIntro: string; natState: string; natHist: string; natHistApi: string }> = {

@@ -26,7 +26,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   if (!data) return { title: 'AFOS Daily | AFOS Analytics', robots: { index: false, follow: false } }
 
   // Drafts: noindex + follow even on preview deploys. Belt-and-suspenders
-  // alongside notFound() in production — protects review URLs that get
+  // alongside notFound() in production, protects review URLs that get
   // shared by accident from being crawled.
   const isDraft = data.status !== 'published'
 
@@ -46,7 +46,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       canonical: url,
       // Only declare hreflang for locales whose .{locale}.md exists. Listing
       // missing locales tells Google a translation is available when the page
-      // would silently fall back to PT — erodes hreflang trust site-wide.
+      // would silently fall back to PT, erodes hreflang trust site-wide.
       languages: (() => {
         const langs: Record<string, string> = {}
         for (const loc of SUPPORTED_LOCALES) {
@@ -59,7 +59,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       })(),
       types: {
         'application/rss+xml': [
-          { url: `https://www.afos-analytics.com/feed/daily${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Daily — RSS feed' },
+          { url: `https://www.afos-analytics.com/feed/daily${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Daily, RSS feed' },
         ],
       },
     },
@@ -80,7 +80,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: 'AFOS Analytics — Daily Synthesis',
+          alt: 'AFOS Analytics, Daily Synthesis',
         },
       ],
     },
@@ -106,7 +106,7 @@ export default async function DailyByDatePage(props: PageProps) {
   // EVAL 06/Jun: loadDaily faz fallback pro PT quando o arquivo do locale pedido não existe,
   // mas esta página declara inLanguage/og:locale = params.locale (da URL). Sem este guard,
   // /en|/es serviria o corpo PT mentindo o idioma (hreflang + JSON-LD falsos). Em produção,
-  // 404 é a resposta honesta — o publish sempre traduz os 3 locales antes de publicar. Em
+  // 404 é a resposta honesta, o publish sempre traduz os 3 locales antes de publicar. Em
   // preview, o fallback fica liberado para revisão antes da tradução.
   if (process.env.VERCEL_ENV === 'production' && data.locale !== params.locale) notFound()
 

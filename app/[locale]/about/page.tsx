@@ -11,7 +11,7 @@ interface Props { params: Promise<{ locale: string }> }
 
 const CONTENT = {
   'pt-BR': {
-    title: 'Sobre o AFOS Analytics | Inteligência de Risco Político Eleitoral Global — Open-Source',
+    title: 'Sobre o AFOS Analytics | Inteligência de Risco Político Eleitoral Global, Open-Source',
     description: 'AFOS Analytics: plataforma open-source de inteligência de risco político eleitoral global, cruzando mercados de previsão, pesquisas e notícias. Construída e validada no ciclo eleitoral 2026.',
     h1: 'Sobre o AFOS Analytics',
     sections: [
@@ -19,12 +19,12 @@ const CONTENT = {
       ['Por que existe', 'Decisões políticas, eleitorais e de risco geopolítico são tomadas hoje com base em fontes fragmentadas, conflitantes e não-auditáveis. AFOS Analytics consolida três sinais distintos (apostas reais, intenção declarada, narrativa midiática) em um único cruzamento, com cada alegação ligada à fonte primária. Construído e validado durante o ciclo eleitoral 2026 em países da América do Sul, com cobertura de 15 países.'],
       ['Como funciona', 'Um cron unificado de 30 minutos coleta dados do Polymarket (18 mercados) e escreve em Redis (caminho quente para usuários) e Neon (snapshot histórico). Pesquisas TSE são ingeridas diariamente. AFOS Daily é uma síntese narrativa diária assistida por IA com fact-check gate obrigatório (regra das duas fontes, reconciliação JSON×texto) e revisão humana antes de publicar. Detalhes em /how-it-works e /methodology/automated-governance.'],
       ['Princípios editoriais', 'Cada alegação factual com link inline para fonte. Zero adjetivos partidários. Simetria entre candidatos. Tom observacional, não prescritivo. Datas explícitas (nunca "ontem"). Variações em pp sempre citadas. Densidade alvo: 600-900 palavras por daily.'],
-      ['Quem mantém', 'Projeto independente desenvolvido por André Felipe, founder solo. Sem afiliação política, sem financiamento de campanha ou PAC. Governança automatizada via código versionado em git (regras, validators, prompts) — minimiza intervenção humana ad-hoc e maximiza auditabilidade. Contribuições via GitHub.'],
+      ['Quem mantém', 'Projeto independente desenvolvido por André Felipe, founder solo. Sem afiliação política, sem financiamento de campanha ou PAC. Governança automatizada via código versionado em git (regras, validators, prompts), minimiza intervenção humana ad-hoc e maximiza auditabilidade. Contribuições via GitHub.'],
       ['Como contribuir', 'Código no GitHub (Apache 2.0). Issues e Pull Requests bem-vindos. CONTRIBUTING.md detalha o processo. Para reportar vulnerabilidades de segurança: security@afos-analytics.com. Para parcerias institucionais: founder@afos-analytics.com.'],
     ],
   },
   en: {
-    title: 'About AFOS Analytics | Global Electoral Political Risk Intelligence — Open-Source',
+    title: 'About AFOS Analytics | Global Electoral Political Risk Intelligence, Open-Source',
     description: 'AFOS Analytics: open-source global electoral political risk intelligence platform cross-referencing prediction markets, polls and news. Built and validated during the 2026 electoral cycle.',
     h1: 'About AFOS Analytics',
     sections: [
@@ -32,12 +32,12 @@ const CONTENT = {
       ['Why it exists', 'Political, electoral and geopolitical risk decisions today are made on fragmented, conflicting and non-auditable sources. AFOS Analytics consolidates three distinct signals (real money bets, declared intent, media narrative) into a single cross-reference, with each claim linked to its primary source. Built and validated during the 2026 electoral cycle across South American countries, covering 15 countries total.'],
       ['How it works', 'A unified 30-minute cron collects Polymarket data (18 markets) and writes to Redis (hot path for users) and Neon (historical snapshot). TSE polls ingested daily. AFOS Daily is an AI-assisted daily narrative synthesis with mandatory fact-check gate (two-source rule, JSON×text reconciliation) and human review before publish. Details at /how-it-works and /methodology/automated-governance.'],
       ['Editorial principles', 'Every factual claim with inline link to source. Zero partisan adjectives. Symmetry across candidates. Observational tone, not prescriptive. Explicit dates (never "yesterday"). Variations in pp always cited. Target density: 600-900 words per daily.'],
-      ['Who maintains it', 'Independent project developed by André Felipe, solo founder. No political affiliation, no campaign or PAC funding. Automated governance via git-versioned code (rules, validators, prompts) — minimizes ad-hoc human intervention and maximizes auditability. Contributions via GitHub.'],
+      ['Who maintains it', 'Independent project developed by André Felipe, solo founder. No political affiliation, no campaign or PAC funding. Automated governance via git-versioned code (rules, validators, prompts), minimizes ad-hoc human intervention and maximizes auditability. Contributions via GitHub.'],
       ['How to contribute', 'Code on GitHub (Apache 2.0). Issues and Pull Requests welcome. CONTRIBUTING.md details the process. To report security vulnerabilities: security@afos-analytics.com. For institutional partnerships: founder@afos-analytics.com.'],
     ],
   },
   es: {
-    title: 'Sobre AFOS Analytics | Inteligencia Global de Riesgo Político Electoral — Open-Source',
+    title: 'Sobre AFOS Analytics | Inteligencia Global de Riesgo Político Electoral, Open-Source',
     description: 'AFOS Analytics: plataforma open-source de inteligencia global de riesgo político electoral cruzando mercados de predicción, encuestas y noticias. Construida y validada durante el ciclo electoral 2026.',
     h1: 'Sobre AFOS Analytics',
     sections: [
@@ -45,7 +45,7 @@ const CONTENT = {
       ['Por qué existe', 'Las decisiones políticas, electorales y de riesgo geopolítico hoy se toman sobre fuentes fragmentadas, conflictivas y no auditables. AFOS Analytics consolida tres señales distintas (apuestas reales, intención declarada, narrativa mediática) en un único cruce, con cada afirmación enlazada a su fuente primaria. Construido y validado durante el ciclo electoral 2026 en países de América del Sur, con cobertura de 15 países.'],
       ['Cómo funciona', 'Un cron unificado de 30 minutos recolecta datos de Polymarket (18 mercados) y escribe en Redis (camino caliente para usuarios) y Neon (snapshot histórico). Las encuestas TSE se ingieren diariamente. AFOS Daily es una síntesis narrativa diaria asistida por IA con fact-check gate obligatorio (regla de dos fuentes, reconciliación JSON×texto) y revisión humana antes de publicar. Detalles en /how-it-works y /methodology/automated-governance.'],
       ['Principios editoriales', 'Cada afirmación factual con enlace inline a la fuente. Cero adjetivos partidistas. Simetría entre candidatos. Tono observacional, no prescriptivo. Fechas explícitas (nunca "ayer"). Variaciones en pp siempre citadas. Densidad objetivo: 600-900 palabras por daily.'],
-      ['Quién lo mantiene', 'Proyecto independiente desarrollado por André Felipe, founder solo. Sin afiliación política, sin financiamiento de campaña o PAC. Gobernanza automatizada vía código versionado en git (reglas, validators, prompts) — minimiza intervención humana ad-hoc y maximiza auditabilidad. Contribuciones vía GitHub.'],
+      ['Quién lo mantiene', 'Proyecto independiente desarrollado por André Felipe, founder solo. Sin afiliación política, sin financiamiento de campaña o PAC. Gobernanza automatizada vía código versionado en git (reglas, validators, prompts), minimiza intervención humana ad-hoc y maximiza auditabilidad. Contribuciones vía GitHub.'],
       ['Cómo contribuir', 'Código en GitHub (Apache 2.0). Issues y Pull Requests bienvenidos. CONTRIBUTING.md detalla el proceso. Para reportar vulnerabilidades de seguridad: security@afos-analytics.com. Para alianzas institucionales: founder@afos-analytics.com.'],
     ],
   },
@@ -65,7 +65,10 @@ export default async function AboutPage(props: Props) {
   const jsonLd = combineSchemas(
     organizationSchema(),
     aboutPageSchema(params.locale as Locale, c.title, c.description),
-    breadcrumbSchema(params.locale as Locale, [{ name: aboutCrumbName, path: 'about' }]),
+    breadcrumbSchema(params.locale as Locale, [
+      { name: params.locale === 'pt-BR' ? 'Início' : params.locale === 'es' ? 'Inicio' : 'Home', path: '' },
+      { name: aboutCrumbName, path: 'about' },
+    ]),
   )
   return (
     <div className="min-h-screen bg-light-bg flex flex-col">

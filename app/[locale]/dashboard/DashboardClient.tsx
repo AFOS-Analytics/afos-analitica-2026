@@ -67,7 +67,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
           <SectionErrorBoundary name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Candidatos"><CandidatesSection /></SectionErrorBoundary>
 
-          {/* SEO internal links — country pages */}
+          {/* SEO internal links, country pages */}
           <section className="bg-light-bg border border-light-border rounded-xl p-4">
             <div className="flex items-baseline justify-between gap-3 flex-wrap mb-3">
               <p className="text-xs font-semibold text-primary">{t('map.countries')}</p>

@@ -27,7 +27,7 @@ export function RegionPage(regionSlug: string) {
     const m = region.meta[loc] || region.meta['en']
     const languages: Record<string, string> = {}
     for (const l of locales) languages[l] = `${BASE_URL}/${l}/${regionSlug}`
-    languages['x-default'] = `${BASE_URL}/en/${regionSlug}`
+    languages['x-default'] = `${BASE_URL}/pt-BR/${regionSlug}`
     const ogImage = `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`
     return {
       title: m.title,
@@ -54,7 +54,10 @@ export function RegionPage(regionSlug: string) {
     const m = region.meta[loc] || region.meta['en']
     const l = LABELS[loc] || LABELS['en']
     const countries = getCountriesForRegion(region)
-    const breadcrumb = breadcrumbSchema(loc, [{ name: m.h1, path: regionSlug }])
+    const breadcrumb = breadcrumbSchema(loc, [
+      { name: loc === 'pt-BR' ? 'Início' : loc === 'es' ? 'Inicio' : 'Home', path: '' },
+      { name: m.h1, path: regionSlug },
+    ])
 
     return (
       <div className="min-h-screen bg-white">
@@ -110,7 +113,7 @@ export function RegionPage(regionSlug: string) {
                         ? <img src={`/flags/${cc}.svg`} alt="" aria-hidden="true" width={28} height={19} className="rounded-sm object-cover shadow-sm flex-shrink-0" style={{ width: 28, height: 19 }} />
                         : <span className="text-xl flex-shrink-0" aria-hidden="true">{c.flag}</span>}
                       <div className="flex-1 min-w-0">
-                        <span className="font-semibold text-dark">{c.name[loc] || c.name['en']} — {e.type[loc] || e.type['en']} {e.year}</span>
+                        <span className="font-semibold text-dark">{c.name[loc] || c.name['en']}, {e.type[loc] || e.type['en']} {e.year}</span>
                         <span className={`ml-2 inline-block rounded-full px-2 py-0.5 text-[11px] font-semibold ${STATUS_STYLE[e.status] || STATUS_STYLE.upcoming}`}>{l.status[e.status] || e.status}</span>
                       </div>
                       <span className="flex-shrink-0 whitespace-nowrap text-sm font-semibold text-primary group-hover:underline">{l.viewElection} →</span>

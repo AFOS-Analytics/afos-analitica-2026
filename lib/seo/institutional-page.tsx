@@ -26,7 +26,7 @@ export function InstitutionalPage(slug: string, content: Record<string, PageCont
     const c = content[loc] || content['en']
     const languages: Record<string, string> = {}
     for (const l of locales) languages[l] = `${BASE_URL}/${l}/${slug}`
-    languages['x-default'] = `${BASE_URL}/en/${slug}`
+    languages['x-default'] = `${BASE_URL}/pt-BR/${slug}`
     return {
       title: c.metaTitle,
       description: c.desc,

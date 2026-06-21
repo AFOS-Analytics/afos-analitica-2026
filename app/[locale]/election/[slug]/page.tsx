@@ -5,12 +5,13 @@ import { getElectionBySlug, COUNTRIES_SEO, ISO3_TO_CC } from '../../../../lib/se
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { ElectionPageContent } from '../../../components/ElectionPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
+import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
 const META_TEMPLATES: Record<string, { title: string; desc: string }> = {
   'pt-BR': {
-    title: 'Eleição {country} {year} — {type} | AFOS Analytics',
+    title: 'Eleição {country} {year}, {type} | AFOS Analytics',
     desc: 'Inteligência eleitoral em tempo real para {country} {year}. Odds de mercados de previsão, pesquisas e sinais políticos.',
   },
   en: {
@@ -18,7 +19,7 @@ const META_TEMPLATES: Record<string, { title: string; desc: string }> = {
     desc: 'Real-time election intelligence for {country} {year}. Prediction market odds, polls, and political signals.',
   },
   es: {
-    title: 'Elección {country} {year} — {type} | AFOS Analytics',
+    title: 'Elección {country} {year}, {type} | AFOS Analytics',
     desc: 'Inteligencia electoral en tiempo real para {country} {year}. Odds de mercados de predicción, encuestas y señales políticas.',
   },
 }
@@ -53,15 +54,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   for (const l of locales) {
     languages[l] = `${BASE_URL}/${l}/election/${slug}`
   }
-  languages['x-default'] = `${BASE_URL}/en/election/${slug}`
+  languages['x-default'] = `${BASE_URL}/pt-BR/election/${slug}`
 
-  // OG dinâmico por eleição (bandeira + título) via /api/og — substitui o OG genérico da marca.
+  // OG dinâmico por eleição (bandeira + título) via /api/og, substitui o OG genérico da marca.
   const ogTitle = `${name} · ${type} ${election.year}`
   // subtítulo de 3 eixos (mercado × pesquisa × imprensa) só onde há eixo de imprensa (EUA 2024); demais usam o default 2 eixos
   const ogLine3: Record<string, string> = {
-    'pt-BR': 'Mercado de previsão × pesquisas × imprensa — a diferença é o sinal.',
-    en: 'Prediction markets × polls × press — the spread is the signal.',
-    es: 'Mercado de predicción × encuestas × prensa — la brecha es la señal.',
+    'pt-BR': 'Mercado de previsão × pesquisas × imprensa, a diferença é o sinal.',
+    en: 'Prediction markets × polls × press, the spread is the signal.',
+    es: 'Mercado de predicción × encuestas × prensa, la brecha es la señal.',
   }
   const ogLine = country.iso3 === 'USA' ? (ogLine3[loc] || ogLine3.en) : ''
   const ogImage = `${BASE_URL}/api/og?title=${encodeURIComponent(ogTitle)}&cc=${ISO3_TO_CC[country.iso3] || ''}${ogLine ? `&line=${encodeURIComponent(ogLine)}` : ''}`
@@ -81,5 +82,19 @@ export default async function ElectionPage({ params }: { params: Promise<{ local
   if (!result) notFound()
 
   const { country, election } = result
-  return <ElectionPageContent locale={loc} country={country} election={election} div={getCountryDivergence(country.iso3)} />
+  const name = country.name[loc] || country.name['en']
+  const type = election.type[loc] || election.type['en']
+  const div = getCountryDivergence(country.iso3)
+  // JSON-LD: espelha /country (breadcrumb + dataset HF quando existir), antes ausente aqui.
+  const breadcrumb = breadcrumbSchema(loc, [
+    { name: 'AFOS Analytics', path: '' },
+    { name: `${name} ${type} ${election.year}`, path: `election/${slug}` },
+  ])
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      {div?.hf && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(countryDatasetSchema(name, div.hf)) }} />}
+      <ElectionPageContent locale={loc} country={country} election={election} div={div} />
+    </>
+  )
 }

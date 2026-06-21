@@ -4,7 +4,7 @@
 
 🇧🇷 [Leia em Português](README.pt-BR.md) | 🇺🇸 English
 
-### Global platform — unprecedented — real-time cross-referencing of prediction markets, electoral polls and news.
+### Global platform, unprecedented, real-time cross-referencing of prediction markets, electoral polls and news.
 
 Built and validated during the 2026 electoral cycle across South American countries + 15 countries. Daily analyses.
 
@@ -28,13 +28,13 @@ Built and validated during the 2026 electoral cycle across South American countr
 
 **AFOS Analytics** is the world's first political electoral risk intelligence platform that cross-references in real time:
 
-- **Prediction markets** with real money (Polymarket) — odds updated every 30 minutes
+- **Prediction markets** with real money (Polymarket), odds updated every 30 minutes
 - **Electoral polls** from official sources (TSE) + 17 Brazilian institutes
 - **Live news** from major media outlets
 - **Strategic analyses** powered by artificial intelligence
-- **AFOS Daily** — narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent — **40 editions published as of 31/May/2026** (D+17 of public launch), in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`. Distribution by email to opted-in subscribers via Resend Pro
-- **AFOS Tradeoff** — weekly technical reading published every Monday, targeted at institutional research, buy-side and treasury. Cross-references the same three signals but reports them **separately** (no weighted-average composites) — when prediction markets, polls and news diverge, the divergence *is* the signal. Structured in 9 sections (executive summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Published in 3 languages (PT-BR, EN, ES) with full archive at `/tradeoff/[date]`. RSS: `/feed/tradeoff.xml`
-- **AFOS Chat** — conversational agent available as a **floating bubble on every page** (and full-screen at `/chat`) that answers in natural language by querying the platform's **live data via tool-calling**: Polymarket odds, TSE polls, the **validated cases & market×poll divergence**, news, and the latest AFOS Daily — **every answer cites its source**, with the same radical-honesty rules (a prediction market is an implied probability, not a forecast; divergence is the signal, the real result is the validator). Trilingual (PT-BR, EN, ES), streamed responses, powered by **OpenRouter (DeepSeek V4 Flash)**. Public with per-IP rate limiting
+- **AFOS Daily**, narrative daily synthesis cross-referencing the three sources, with auditable links per claim. Validated through a 7-day pilot (April 22-28/2026), now permanent, **40 editions published as of 31/May/2026** (D+17 of public launch), in 3 languages (PT-BR, EN, ES) with full archive at `/daily/[date]`. Distribution by email to opted-in subscribers via Resend Pro
+- **AFOS Tradeoff**, weekly technical reading published every Monday, targeted at institutional research, buy-side and treasury. Cross-references the same three signals but reports them **separately** (no weighted-average composites), when prediction markets, polls and news diverge, the divergence *is* the signal. Structured in 9 sections (executive summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Published in 3 languages (PT-BR, EN, ES) with full archive at `/tradeoff/[date]`. RSS: `/feed/tradeoff.xml`
+- **AFOS Chat**, conversational agent available as a **floating bubble on every page** (and full-screen at `/chat`) that answers in natural language by querying the platform's **live data via tool-calling**: Polymarket odds, TSE polls, the **validated cases & market×poll divergence**, news, and the latest AFOS Daily, **every answer cites its source**, with the same radical-honesty rules (a prediction market is an implied probability, not a forecast; divergence is the signal, the real result is the validator). Trilingual (PT-BR, EN, ES), streamed responses, powered by **OpenRouter (DeepSeek V4 Flash)**. Public with per-IP rate limiting
 
 Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-BR, EN, ES).
 
@@ -42,7 +42,7 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 
 ### Platform demo (~90 seconds)
 
-[![AFOS Analytics — platform demo (click to play)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
+[![AFOS Analytics, platform demo (click to play)](public/screenshots/landing.png)](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-en.mp4)
 
 > **Click the image above to play** (~9 MB, audio in PT-BR with English subtitles burned-in). Covers: real-time cross-referencing, prediction markets, electoral polls, news aggregation, and the **AFOS Daily** narrative synthesis. Alternative tracks: [`public/demo.mp4`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo.mp4) (no subtitles) and [`public/demo-audio.m4a`](https://github.com/AFOS-Analytics/afos-analitica-2026/raw/main/public/demo-audio.m4a) (audio only).
 
@@ -60,7 +60,7 @@ Coverage of **14+ countries** with monitored elections, in **3 languages** (PT-B
 - 🔒 **Security vulnerability disclosure** → [security@afos-analytics.com](mailto:security@afos-analytics.com) (see [SECURITY.md](SECURITY.md))
 - 👤 **Founder direct** → [founder@afos-analytics.com](mailto:founder@afos-analytics.com)
 
-Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the public divergence dataset mirrored daily to [Hugging Face](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence)) is licensed under **CC BY 4.0** — both require attribution to AFOS Analytics. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Trademark use of the "AFOS Analytics" name and logo is governed by [TRADEMARK.md](TRADEMARK.md). Hosted-platform contributions (onboarding a new country) are documented at [docs/platform/add-your-country.md](docs/platform/add-your-country.md) and the public governance model is explained at `/methodology/automated-governance`.
+Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the public divergence dataset mirrored daily to [Hugging Face](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence)) is licensed under **CC BY 4.0**, both require attribution to AFOS Analytics. Contributions welcome, see [CONTRIBUTING.md](CONTRIBUTING.md). Trademark use of the "AFOS Analytics" name and logo is governed by [TRADEMARK.md](TRADEMARK.md). Hosted-platform contributions (onboarding a new country) are documented at [docs/platform/add-your-country.md](docs/platform/add-your-country.md) and the public governance model is explained at `/methodology/automated-governance`.
 
 ---
 
@@ -71,15 +71,15 @@ Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the publi
 | Route | Content |
 |-------|---------|
 | `/[locale]` | Landing page (color + language selector) |
-| `/[locale]/dashboard` | Interactive dashboard with live data — header logo links back to landing |
-| `/[locale]/daily` | AFOS Daily — daily narrative synthesis cross-referencing prediction markets, polls and news. Available in **3 languages** (PT-BR, EN, ES) — loader detects `{date}.{locale}.md` with fallback to canonical PT-BR. Brazilian political terms (TSE, STF, BolsoMaster, etc.) kept in PT with inline links to the trilingual glossary. **Index route = editions archive** (month-grouped list of every published edition, latest highlighted, jump-to-date + in-page language & theme selectors); individual editions live at `/[locale]/daily/[date]` with prev / next + "All editions" navigation |
-| `/[locale]/tradeoff` | AFOS Tradeoff — weekly technical reading (Mondays) targeted at institutional research / buy-side / treasury. Three signals reported separately — divergence *is* the signal, not noise to average away. 9 structured sections rendered via rich-frontmatter YAML (summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Tri-locale parity with Daily (`{date}.{locale}.md`). **Index route = editions archive** (list by issue number & week, latest highlighted, in-page language & theme selectors); editions live at `/[locale]/tradeoff/[date]` with prev / next + "All editions" navigation. RSS: `/feed/tradeoff.xml` |
-| `/[locale]/global` | Global elections hub — **leads with validated cases** (market × poll divergence vs the real result, with open datasets) followed by the **live odds map** (D3.js). Same destination as the landing's "AFOS Global" card and the dashboard header's Global link (single source of truth) |
-| `/[locale]/chat` | **AFOS Chat** — conversational agent with live data access via tool-calling (Polymarket odds, TSE polls, validated cases & divergence, news, AFOS Daily); every answer cites its source. Streamed responses (SSE), trilingual, OpenRouter / DeepSeek V4 Flash. Also mounted site-wide as a **floating chat bubble** (lazy-loaded, hidden on this dedicated page) |
+| `/[locale]/dashboard` | Interactive dashboard with live data, header logo links back to landing |
+| `/[locale]/daily` | AFOS Daily, daily narrative synthesis cross-referencing prediction markets, polls and news. Available in **3 languages** (PT-BR, EN, ES), loader detects `{date}.{locale}.md` with fallback to canonical PT-BR. Brazilian political terms (TSE, STF, BolsoMaster, etc.) kept in PT with inline links to the trilingual glossary. **Index route = editions archive** (month-grouped list of every published edition, latest highlighted, jump-to-date + in-page language & theme selectors); individual editions live at `/[locale]/daily/[date]` with prev / next + "All editions" navigation |
+| `/[locale]/tradeoff` | AFOS Tradeoff, weekly technical reading (Mondays) targeted at institutional research / buy-side / treasury. Three signals reported separately, divergence *is* the signal, not noise to average away. 9 structured sections rendered via rich-frontmatter YAML (summary cards, anti-average rationale, weighted scenarios, indicator grid, liquidity & market structure, polls calendar, watch list, methodology, additional reading). Tri-locale parity with Daily (`{date}.{locale}.md`). **Index route = editions archive** (list by issue number & week, latest highlighted, in-page language & theme selectors); editions live at `/[locale]/tradeoff/[date]` with prev / next + "All editions" navigation. RSS: `/feed/tradeoff.xml` |
+| `/[locale]/global` | Global elections hub, **leads with validated cases** (market × poll divergence vs the real result, with open datasets) followed by the **live odds map** (D3.js). Same destination as the landing's "AFOS Global" card and the dashboard header's Global link (single source of truth) |
+| `/[locale]/chat` | **AFOS Chat**, conversational agent with live data access via tool-calling (Polymarket odds, TSE polls, validated cases & divergence, news, AFOS Daily); every answer cites its source. Streamed responses (SSE), trilingual, OpenRouter / DeepSeek V4 Flash. Also mounted site-wide as a **floating chat bubble** (lazy-loaded, hidden on this dedicated page) |
 | `/[locale]/country/[country]` | Country page (15 countries) |
-| `/[locale]/how-it-works` | Didactic methodology guide (3 languages) — "The Method". In-page language selector (PT-BR/EN/ES). 14-section platform tour including the AFOS Daily card (`#afos-daily-card`), the **AFOS Tradeoff** weekly-brief section (`#afos-tradeoff-card`), the **AFOS Global** section (`#afos-global-card`) documenting the validated-cases layer (the probability-of-winning vs vote-share concept, the country & election divergence pages, and the open datasets), and polling institute evaluation criteria (`#criterios-institutos`); the "Start here" onboarding orients readers to both the Daily and the Tradeoff. Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
-| `/[locale]/methodology/automated-governance` | Public governance page (3 languages) — how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
-| `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe), 3 languages. AFOS wordmark + "Dashboard" button header. **Monitored countries** as clickable cards (SVG flag + name + region + next election + "View country →" CTA → `/country/[country]`) and **related elections** as rows (SVG flag + localized colored status badge — Active / Completed / Upcoming — + "View election →" → `/election/[slug]`), plus an institutional-intelligence button grid. Shared `RegionPage` component; flags via `ISO3_TO_CC` → `/flags/{cc}.svg` (no emoji, Windows-safe) |
+| `/[locale]/how-it-works` | Didactic methodology guide (3 languages), "The Method". In-page language selector (PT-BR/EN/ES). 14-section platform tour including the AFOS Daily card (`#afos-daily-card`), the **AFOS Tradeoff** weekly-brief section (`#afos-tradeoff-card`), the **AFOS Global** section (`#afos-global-card`) documenting the validated-cases layer (the probability-of-winning vs vote-share concept, the country & election divergence pages, and the open datasets), and polling institute evaluation criteria (`#criterios-institutos`); the "Start here" onboarding orients readers to both the Daily and the Tradeoff. Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
+| `/[locale]/methodology/automated-governance` | Public governance page (3 languages), how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
+| `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe), 3 languages. AFOS wordmark + "Dashboard" button header. **Monitored countries** as clickable cards (SVG flag + name + region + next election + "View country →" CTA → `/country/[country]`) and **related elections** as rows (SVG flag + localized colored status badge, Active / Completed / Upcoming, + "View election →" → `/election/[slug]`), plus an institutional-intelligence button grid. Shared `RegionPage` component; flags via `ISO3_TO_CC` → `/flags/{cc}.svg` (no emoji, Windows-safe) |
 
 ### Landing Page
 
@@ -88,8 +88,8 @@ Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the publi
 - SVG flags (compatible with all devices including Windows)
 - Lead capture form integrated with visitor tracking system
 - SEO optimized with "Unprecedented platform worldwide" claim in metadata
-- **Reading flow (revised 29/May/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → Email signup ("Or receive weekly analysis...") → Features → Countries → Final CTA "Open Dashboard". Lead capture moved up the page to convert before users scroll past Features; redundant intermediate dashboard CTA removed (only nav-button and final-CTA dashboard buttons remain). Daily / Tradeoff / Global links always use the index route (`/{locale}/daily`, `/{locale}/tradeoff`) — never hardcoded dates. As of June 2026 these index routes **are the editions archive** (a browsable, month-grouped list of all editions with in-page language & theme selectors), not a redirect to the latest edition; the most recent edition is highlighted at the top so it stays one click away.
-- **Inverted-color design rule:** components that need to stand out from the page background invert across themes — light theme = Sapphire Blue components (cards, CTA, subtitle box) with white text; Sapphire Blue theme = white components with primary-color text. Applied consistently in ProductsSection, dashboard CTA, and hero subtitle box.
+- **Reading flow (revised 29/May/2026):** Hero → ProductsSection (3 cards: Daily / Tradeoff / Global) → Stats → Email signup ("Or receive weekly analysis...") → Features → Countries → Final CTA "Open Dashboard". Lead capture moved up the page to convert before users scroll past Features; redundant intermediate dashboard CTA removed (only nav-button and final-CTA dashboard buttons remain). Daily / Tradeoff / Global links always use the index route (`/{locale}/daily`, `/{locale}/tradeoff`), never hardcoded dates. As of June 2026 these index routes **are the editions archive** (a browsable, month-grouped list of all editions with in-page language & theme selectors), not a redirect to the latest edition; the most recent edition is highlighted at the top so it stays one click away.
+- **Inverted-color design rule:** components that need to stand out from the page background invert across themes, light theme = Sapphire Blue components (cards, CTA, subtitle box) with white text; Sapphire Blue theme = white components with primary-color text. Applied consistently in ProductsSection, dashboard CTA, and hero subtitle box.
 
 ### Lead Capture System (Visitor State)
 
@@ -134,7 +134,7 @@ User:        Request     → Redis read (<1ms) → response
 
 ### URL-Primary Architecture (AFOS Daily editorial integrity)
 
-Each claim in AFOS Daily must link to the **specific article** that supports it — not the outlet's homepage. Enforced by 5 cooperating layers:
+Each claim in AFOS Daily must link to the **specific article** that supports it, not the outlet's homepage. Enforced by 5 cooperating layers:
 
 | Layer | Component | Function |
 |-------|-----------|----------|
@@ -146,7 +146,7 @@ Each claim in AFOS Daily must link to the **specific article** that supports it 
 
 **Manual validator:** `npx tsx scripts/validate-afos-daily.ts {date} [--locale=en\|es]` exits 1 on critical errors (matches the PreToolUse hook). Used in CI checks and in operator workflow before commit.
 
-**Editorial source ratio (50/50 rule, firmed May 9, 2026):** each AFOS Daily uses a **minimum 50% anchor outlets via direct RSS** (Folha de S.Paulo, O Globo, G1, Estadão, Valor, VEJA — institutional credibility) **+ minimum 50% secondary outlets via Google News redirect** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc. — open access, reproduce anchor coverage without paywall). Refinement of the prior 30/70 rule motivated by the observation that anchor outlets often paywall content for non-subscribers (especially international readers); secondary outlets replicate the same coverage with open access. Applies uniformly to PT-BR / EN / ES. Translations preserve URLs as collected in the source language.
+**Editorial source ratio (50/50 rule, firmed May 9, 2026):** each AFOS Daily uses a **minimum 50% anchor outlets via direct RSS** (Folha de S.Paulo, O Globo, G1, Estadão, Valor, VEJA, institutional credibility) **+ minimum 50% secondary outlets via Google News redirect** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc., open access, reproduce anchor coverage without paywall). Refinement of the prior 30/70 rule motivated by the observation that anchor outlets often paywall content for non-subscribers (especially international readers); secondary outlets replicate the same coverage with open access. Applies uniformly to PT-BR / EN / ES. Translations preserve URLs as collected in the source language.
 
 ### Project Structure
 
@@ -252,10 +252,10 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ### AI Search Optimization (GEO)
 
-- **`public/llms.txt`** — Describes platform for AI crawlers (ChatGPT, Perplexity, Claude, Gemini) following emerging industry standard
+- **`public/llms.txt`**, Describes platform for AI crawlers (ChatGPT, Perplexity, Claude, Gemini) following emerging industry standard
 - **13 AI crawlers explicitly allowed** in `app/robots.ts`: GPTBot, anthropic-ai, ClaudeBot, Claude-Web, PerplexityBot, Perplexity-User, Google-Extended, CCBot, Bytespider, Applebot-Extended, cohere-ai, Meta-ExternalAgent, FacebookBot
 - **JSON-LD Article schema** on `/how-it-works` for citation attribution by generative engines
-- **Transparent AI attribution** — analyses generated by AI from public, auditable data
+- **Transparent AI attribution**, analyses generated by AI from public, auditable data
 
 ### Indexable Pages (~120+ with hreflang)
 
@@ -274,19 +274,19 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 
 ## Global Elections Map
 
-- **D3.js + TopoJSON** — Natural Earth projection, SVG render
+- **D3.js + TopoJSON**, Natural Earth projection, SVG render
 - **15 countries** with live Polymarket data
-- **SVG flags** — visible on all devices (Windows, Mac, mobile)
+- **SVG flags**, visible on all devices (Windows, Mac, mobile)
 - **Volume with label**: "Vol: $53.4M (sum of 6 markets)" when multiple markets
-- **Hover** — tooltip with leading candidate, probability, volume
-- **Click** — side drawer with candidate breakdown
-- **Zoom/Pan** — d3-zoom (1x-8x)
+- **Hover**, tooltip with leading candidate, probability, volume
+- **Click**, side drawer with candidate breakdown
+- **Zoom/Pan**, d3-zoom (1x-8x)
 
 ---
 
 ## Open Datasets (Hugging Face)
 
-Public, auditable **electoral-divergence** datasets — *prediction markets × polls, with explicit divergence* (the spread is the signal, not a blended average). All **CC BY 4.0**, trilingual cards with a branded flag banner, built from public sources only (no personal data).
+Public, auditable **electoral-divergence** datasets, *prediction markets × polls, with explicit divergence* (the spread is the signal, not a blended average). All **CC BY 4.0**, trilingual cards with a branded flag banner, built from public sources only (no personal data).
 
 | Dataset | Election | What the divergence shows |
 |---|---|---|
@@ -298,9 +298,9 @@ Public, auditable **electoral-divergence** datasets — *prediction markets × p
 | [canada-2025](https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence) | Canada 2025 ✓ | Market swung 85% Conservative → 80% Liberal; the Liberals won |
 | [uk-2024](https://huggingface.co/datasets/AFOS-Analytics1/uk-2024-electoral-divergence) | United Kingdom 2024 ✓ | Labour won 411 of 650 seats on 33.7% of the vote; the market read a landslide the polls measured only as ~40% vote share |
 | [mexico-2024](https://huggingface.co/datasets/AFOS-Analytics1/mexico-2024-electoral-divergence) | Mexico 2024 ✓ | Market gave Sheinbaum ~90% to win from January; she won with ~59.8%, above the final polls |
-| [usa-2024](https://huggingface.co/datasets/AFOS-Analytics1/usa-2024-electoral-divergence) | United States 2024 ✓ | Two markets disagreed: the winner market (electoral college, **US$3.7bn** — the largest election market ever) called Trump vs a poll near-tie and was right; the popular-vote market favored Harris and erred. Adds a Wayback-archived **press timeline** (market × poll × press) |
+| [usa-2024](https://huggingface.co/datasets/AFOS-Analytics1/usa-2024-electoral-divergence) | United States 2024 ✓ | Two markets disagreed: the winner market (electoral college, **US$3.7bn**, the largest election market ever) called Trump vs a poll near-tie and was right; the popular-vote market favored Harris and erred. Adds a Wayback-archived **press timeline** (market × poll × press) |
 
-The **Brazil 2026** and **USA 2024** datasets additionally have curated, citable academic releases on **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, grouped under the **AFOS Analytics** collection — Brazil DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) and USA DOI [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), each a versioned and permanent snapshot of its live Hugging Face mirror, deposited in the largest social-science data repository. To our knowledge the Brazil 2026 deposit is the first on Harvard Dataverse to cross-reference prediction markets × registered polls × press coverage to measure explicit divergence in a Brazilian election.
+The **Brazil 2026** and **USA 2024** datasets additionally have curated, citable academic releases on **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, grouped under the **AFOS Analytics** collection, Brazil DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) and USA DOI [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), each a versioned and permanent snapshot of its live Hugging Face mirror, deposited in the largest social-science data repository. To our knowledge the Brazil 2026 deposit is the first on Harvard Dataverse to cross-reference prediction markets × registered polls × press coverage to measure explicit divergence in a Brazilian election.
 
 The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, **two odds charts** (probability trajectory + eve-of-vote market×poll snapshot, with total bet volume), a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
 
@@ -378,7 +378,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | **Resend** | Transactional email |
 | **Polymarket API** | Prediction markets (18 markets, 15 countries) |
 | **Google News RSS + Firecrawl** | Live news |
-| **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat — conversational tool-calling agent over live data |
+| **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat, conversational tool-calling agent over live data |
 | **Vercel Analytics** | Traffic metrics |
 
 ---
@@ -393,9 +393,9 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/visitor/migrate` | Migrate legacy subscribers |
 | `/api/subscribe` | Email capture (visitorId + captureSource) |
 | `/api/global-map` | Global elections (Redis → Polymarket) |
-| `/api/cron/refresh-elections` | Cron 30min — Polymarket → Redis + Neon (unified, single fetch per tick) |
+| `/api/cron/refresh-elections` | Cron 30min, Polymarket → Redis + Neon (unified, single fetch per tick) |
 | `/api/cron/refresh-polls` | Cron 3x/day TSE |
-| `/api/cron/persist-analysis` | Cron 1x/day — persists analysis JSONs and AFOS Daily markdown to Neon |
+| `/api/cron/persist-analysis` | Cron 1x/day, persists analysis JSONs and AFOS Daily markdown to Neon |
 | `/api/polymarket` | BR odds |
 | `/api/polls` / `/api/polls/tse` | Polls |
 | `/api/news` | News |
@@ -405,7 +405,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/admin/data-request` | LGPD deletion/export |
 | `/api/health` | Health check |
 | `/api/translations` | AI translation pipeline |
-| `/api/chat` | AFOS Chat — streaming (SSE) tool-calling agent over live platform data; per-IP rate limited |
+| `/api/chat` | AFOS Chat, streaming (SSE) tool-calling agent over live platform data; per-IP rate limited |
 | `/api/market/history` | Odds time series |
 
 ---
@@ -416,7 +416,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 |--------|---------|-------------|
 | **A** | Astuteness | Intelligence to cross-reference data and generate clarity |
 | **F** | Fairness | Verifiable impartiality in the treatment of every source |
-| **O** | Objectivity | Analytical neutrality — we observe the data, we don't take sides |
+| **O** | Objectivity | Analytical neutrality, we observe the data, we don't take sides |
 | **S** | Synthesis | Transforming complex data into simple understanding |
 
 ---
@@ -456,8 +456,8 @@ npm run dev
 |---------|-------------|
 | `/atualizar` | Full AFOS Analytics update (Polymarket + Google News + JSONs + deploy) |
 | `/atualizar-pesquisas` | TSE electoral polls ingestion |
-| `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily) — cross-references markets, polls and news with auditable links per claim |
-| `/tradeoff` | Generate the weekly technical reading (AFOS Tradeoff) — 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
+| `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily), cross-references markets, polls and news with auditable links per claim |
+| `/tradeoff` | Generate the weekly technical reading (AFOS Tradeoff), 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
 
 ---
 
@@ -480,4 +480,4 @@ The canonical domain is **[afos-analytics.com](https://www.afos-analytics.com)**
 
 ---
 
-*AFOS Analytics — Unprecedented platform worldwide: Real-time Political Electoral Risk Intelligence.*
+*AFOS Analytics, Unprecedented platform worldwide: Real-time Political Electoral Risk Intelligence.*

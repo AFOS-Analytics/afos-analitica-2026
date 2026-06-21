@@ -1,12 +1,12 @@
 'use client'
 
 /**
- * Bolha flutuante do chat AFOS-Analytics — presente em TODAS as páginas
+ * Bolha flutuante do chat AFOS-Analytics, presente em TODAS as páginas
  * (montada no layout [locale]). Clicar abre o chat num overlay, sem sair da
  * página. Esconde-se na própria rota /chat (que já é o chat em tela cheia).
  *
  * Performance: o núcleo ChatConversation (+ react-markdown) é carregado LAZY,
- * só quando a bolha é aberta pela primeira vez — não pesa o bundle das demais
+ * só quando a bolha é aberta pela primeira vez, não pesa o bundle das demais
  * páginas. SSR off (componente puramente interativo).
  */
 

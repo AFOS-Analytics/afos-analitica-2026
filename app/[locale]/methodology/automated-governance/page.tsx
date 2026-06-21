@@ -16,7 +16,7 @@ const SEO: Record<string, {
   htmlLocale: string
 }> = {
   'pt-BR': {
-    title: 'Governança Automatizada — AFOS Analytics',
+    title: 'Governança Automatizada, AFOS Analytics',
     description: 'Como o AFOS gera análises eleitorais sem intervenção humana por análise: regras em código, validadores automáticos, prompts calibrados. Escala para dezenas de países sem newsroom.',
     keywords: ['governança automatizada', 'afos analytics', 'análise política automatizada', 'inteligência eleitoral', 'pipeline de dados', 'validadores de integridade', 'zero-touch'],
     headline: 'Governança Automatizada',
@@ -24,7 +24,7 @@ const SEO: Record<string, {
     htmlLocale: 'pt-BR',
   },
   en: {
-    title: 'Automated Governance — AFOS Analytics',
+    title: 'Automated Governance, AFOS Analytics',
     description: 'How AFOS generates electoral analyses without human-per-analysis intervention: rules in code, automated validators, calibrated prompts. Scales across dozens of countries without a newsroom.',
     keywords: ['automated governance', 'afos analytics', 'automated political analysis', 'electoral intelligence', 'data pipeline', 'integrity validators', 'zero-touch'],
     headline: 'Automated Governance',
@@ -32,7 +32,7 @@ const SEO: Record<string, {
     htmlLocale: 'en',
   },
   es: {
-    title: 'Gobernanza Automatizada — AFOS Analytics',
+    title: 'Gobernanza Automatizada, AFOS Analytics',
     description: 'Cómo AFOS genera análisis electorales sin intervención humana por análisis: reglas en código, validadores automáticos, prompts calibrados. Escala a decenas de países sin newsroom.',
     keywords: ['gobernanza automatizada', 'afos analytics', 'análisis político automatizado', 'inteligencia electoral', 'pipeline de datos', 'validadores de integridad', 'zero-touch'],
     headline: 'Gobernanza Automatizada',
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
   const languages: Record<string, string> = {}
   for (const l of locales) languages[l] = `${BASE_URL}/${l}/${SLUG}`
-  languages['x-default'] = `${BASE_URL}/en/${SLUG}`
+  languages['x-default'] = `${BASE_URL}/pt-BR/${SLUG}`
 
   return {
     title: seo.title,

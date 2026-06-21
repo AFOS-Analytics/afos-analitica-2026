@@ -682,7 +682,7 @@ export function HowItWorksEn() {
       </Callout>
 
       <SummaryFrame>
-        AFOS Analytics is the first platform that combines, in real time, prediction markets × opinion polls × news to show, with honesty and transparency, explicit divergences instead of smoothed averages — revealing what the data really says about politics, without bias, without propaganda, free and without mandatory registration.
+        AFOS Analytics is the first platform that combines, in real time, prediction markets × opinion polls × news to show, with honesty and transparency, explicit divergences instead of smoothed averages, revealing what the data really says about politics, without bias, without propaganda, free and without mandatory registration.
       </SummaryFrame>
 
       <p className="text-center text-xs text-gray-400 dark:text-blue-200/70 mt-10 mb-2">Updated April 2026</p>

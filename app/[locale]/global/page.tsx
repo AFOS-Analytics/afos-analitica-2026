@@ -74,7 +74,7 @@ function parseMapPayload(data: Record<string, unknown>): CountryMarketSummary[] 
     electionDate: c.d as string,
     electionType: c.t as string,
     probability: (c.p as number) || 0,
-    leadCandidate: (c.lc as string) || '—',
+    leadCandidate: (c.lc as string) || ', ',
     volumeUsd: (c.v as number) || 0,
     marketCount: (c.mc as number) || 1,
     status: ((c.s as string) || 'no-data') as CountryMarketSummary['status'],

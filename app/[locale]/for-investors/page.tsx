@@ -10,7 +10,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     metaTitle: 'Inteligência Eleitoral para Investidores | Risco Político em Tempo Real',
     desc: 'Mercados de previsão, odds eleitorais e sinais macro para gestão de risco político. Dados em tempo real para fundos, bancos e consultorias.',
     h1: 'Inteligência Eleitoral para Investidores',
-    intro: 'Decisões de investimento baseadas em dados eleitorais em tempo real — não em narrativa.',
+    intro: 'Decisões de investimento baseadas em dados eleitorais em tempo real, não em narrativa.',
     features: ['Odds de mercados de previsão com dinheiro real (Polymarket)', 'Cruzamento de pesquisas eleitorais com sinais de mercado', 'Alertas de risco político por país e região', 'Calendário global de eleições com impacto macro', 'API de inteligência política estruturada'],
     cta: 'Acessar Dashboard',
   },
@@ -19,7 +19,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     metaTitle: 'Election Intelligence for Investors | Real-Time Political Risk',
     desc: 'Prediction markets, election odds, and macro signals for political risk management. Real-time data for funds, banks, and consultancies.',
     h1: 'Election Intelligence for Investors',
-    intro: 'Investment decisions driven by real-time election data — not narrative.',
+    intro: 'Investment decisions driven by real-time election data, not narrative.',
     features: ['Real-money prediction market odds (Polymarket)', 'Cross-referencing polls with market signals', 'Political risk alerts by country and region', 'Global election calendar with macro impact', 'Structured political intelligence API'],
     cta: 'Access Dashboard',
   },
@@ -28,7 +28,7 @@ const CONTENT: Record<string, { title: string; metaTitle: string; desc: string; 
     metaTitle: 'Inteligencia Electoral para Inversores | Riesgo Político en Tiempo Real',
     desc: 'Mercados de predicción, odds electorales y señales macro para gestión de riesgo político. Datos en tiempo real para fondos, bancos y consultorías.',
     h1: 'Inteligencia Electoral para Inversores',
-    intro: 'Decisiones de inversión basadas en datos electorales en tiempo real — no en narrativa.',
+    intro: 'Decisiones de inversión basadas en datos electorales en tiempo real, no en narrativa.',
     features: ['Odds de mercados de predicción con dinero real (Polymarket)', 'Cruce de encuestas electorales con señales de mercado', 'Alertas de riesgo político por país y región', 'Calendario global de elecciones con impacto macro', 'API de inteligencia política estructurada'],
     cta: 'Acceder al Dashboard',
   },
@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const c = CONTENT[loc] || CONTENT['en']
   const languages: Record<string, string> = {}
   for (const l of locales) languages[l] = `${BASE_URL}/${l}/for-investors`
-  languages['x-default'] = `${BASE_URL}/en/for-investors`
+  languages['x-default'] = `${BASE_URL}/pt-BR/for-investors`
   return {
     title: c.metaTitle,
     description: c.desc,

@@ -9,7 +9,7 @@ export function AutomatedGovEn() {
         Automated Governance
       </h1>
       <p className="text-center text-gray-600 text-base font-medium mb-10">
-        How AFOS analyses are generated — rules in code, not in humans
+        How AFOS analyses are generated, rules in code, not in humans
       </p>
 
       <h2 id="the-model" className={S.h2}>Two ways to interact with the hosted platform</h2>
@@ -39,21 +39,20 @@ export function AutomatedGovEn() {
               <td className={S.tdTop}>🔌 <strong>Country Onboarding</strong></td>
               <td className={S.tdTop}>You contribute a configuration that onboards a new country to the hosted platform</td>
               <td className={S.tdTop}>Technical PR review, one-time</td>
-              <td className={S.tdTop}>Integrity rules in code — applied automatically</td>
+              <td className={S.tdTop}>Integrity rules in code, applied automatically</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p className={S.p}>
         <strong>Improvements to the code itself</strong> (bugs, features, new validators) follow the standard open-source
-        flow via <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CONTRIBUTING.md</a>{' '}
-        — nothing special, it's just a PR.
+        flow via <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CONTRIBUTING.md</a>{' '}, nothing special, it's just a PR.
       </p>
 
       <h2 id="fork" className={S.h2}>Fork (Apache 2.0, full stop)</h2>
       <p className={S.p}>
         The AFOS codebase is licensed under <strong>Apache 2.0</strong>. Anyone can fork, modify, run their own
-        instance, change the prompt, remove rules, swap sources, use commercially. This is not a bug — it is the
+        instance, change the prompt, remove rules, swap sources, use commercially. This is not a bug, it is the
         contract of serious open-source.
       </p>
       <p className={S.p}>
@@ -62,16 +61,15 @@ export function AutomatedGovEn() {
         only obligations are the Apache 2.0 license (preserve attribution in NOTICE, cite original copyright) and our{' '}
         <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/TRADEMARK.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
           trademark policy
-        </a>{' '}
-        — the code is free, but the name "AFOS Analytics" and the logo are registered trademarks. Forks operate under their own name.
+        </a>{' '}, the code is free, but the name "AFOS Analytics" and the logo are registered trademarks. Forks operate under their own name.
       </p>
       <p className={S.p}>
-        This model has precedent: Linux kernel, PostgreSQL, React, Kubernetes — all allow forks, none accept
+        This model has precedent: Linux kernel, PostgreSQL, React, Kubernetes, all allow forks, none accept
         responsibility for what happens in third-party instances. AFOS follows the same logic.
       </p>
       <h3 className={S.h3}>Why forks strengthen AFOS rather than weaken it</h3>
       <p className={S.p}>
-        Forks are not a threat — they are validation. If someone finds enough value in AFOS to replicate it, that
+        Forks are not a threat, they are validation. If someone finds enough value in AFOS to replicate it, that
         proves the method works. PostgreSQL benefits from Supabase, Neon, Aiven existing; Linux benefits from Red Hat,
         Ubuntu, SUSE; React benefits from Next.js, Remix. Every successful commercial fork expands the upstream market
         rather than replacing it.
@@ -80,11 +78,11 @@ export function AutomatedGovEn() {
         <strong>The real moat of AFOS is not in the code</strong> (which is free by design). It is in:
       </p>
       <ul className={S.ul}>
-        <li><strong>Historical data</strong> persisted in Neon since launch — forkers start from zero</li>
-        <li><strong>SEO authority</strong> built through citations, backlinks and press mentions — takes years to replicate</li>
-        <li><strong>Execution speed</strong> of a solo founder vs a corporate committee — decisions in minutes, not weeks</li>
+        <li><strong>Historical data</strong> persisted in Neon since launch, forkers start from zero</li>
+        <li><strong>SEO authority</strong> built through citations, backlinks and press mentions, takes years to replicate</li>
+        <li><strong>Execution speed</strong> of a solo founder vs a corporate committee, decisions in minutes, not weeks</li>
         <li><strong>Community</strong> of early contributors, reviewers and completed Country Onboardings</li>
-        <li><strong>Brand</strong> protected by trademark — forcing anyone who copies the code to build reputation from scratch</li>
+        <li><strong>Brand</strong> protected by trademark, forcing anyone who copies the code to build reputation from scratch</li>
       </ul>
       <p className={S.p}>
         None of that is forkable. That is precisely why AFOS can be 100% open-source without fear.
@@ -111,8 +109,7 @@ export function AutomatedGovEn() {
         Step-by-step technical guide:{' '}
         <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/docs/platform/add-your-country.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
           docs/platform/add-your-country.md
-        </a>{' '}
-        — ~2 hours of work, one PR.
+        </a>{' '}, ~2 hours of work, one PR.
       </p>
 
       <h2 id="hosted-platform" className={S.h2}>Hosted platform (governance in code)</h2>
@@ -155,11 +152,10 @@ export function AutomatedGovEn() {
       <p className={S.p}>
         The LLM prompt that generates analyses explicitly includes: "do not use partisan adjectives", "attribute
         motivations only when documented", "flag source disagreements rather than manufacture certainty". This
-        calibration is versioned in git — see{' '}
+        calibration is versioned in git, see{' '}
         <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/lib/ai/prompts.ts" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-mono text-sm">
           lib/ai/prompts.ts
-        </a>{' '}
-        — any change requires a reviewed PR.
+        </a>{' '}, any change requires a reviewed PR.
       </p>
 
       <h2 id="exceptions" className={S.h2}>The 3 honest exceptions where humans intervene</h2>
@@ -196,8 +192,8 @@ export function AutomatedGovEn() {
 
       <h2 id="how-to-contribute" className={S.h2}>How to contribute</h2>
       <ul className={S.ul}>
-        <li>📘 <strong>Understand the model:</strong> <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CONTRIBUTING.md</a> — 3 roles, responsibilities, rules</li>
-        <li>🌎 <strong>Onboard a country:</strong> <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/docs/platform/add-your-country.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">"Add your country" guide</a> — 5 steps, ~2h, 1 PR</li>
+        <li>📘 <strong>Understand the model:</strong> <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">CONTRIBUTING.md</a>, 3 roles, responsibilities, rules</li>
+        <li>🌎 <strong>Onboard a country:</strong> <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/blob/main/docs/platform/add-your-country.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">"Add your country" guide</a>, 5 steps, ~2h, 1 PR</li>
         <li>🔧 <strong>Propose before coding:</strong> <a href="https://github.com/AFOS-Analytics/afos-analitica-2026/issues/new?template=country-onboarding.md" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Country Onboarding template</a></li>
         <li>💬 <strong>Question or bypass report:</strong> <a href="mailto:contact@afos-analytics.com" className="text-primary hover:underline">contact@afos-analytics.com</a></li>
       </ul>

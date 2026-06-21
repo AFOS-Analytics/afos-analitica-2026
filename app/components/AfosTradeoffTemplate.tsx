@@ -56,7 +56,7 @@ interface Props {
 function formatWeekRange(start: string, end: string, locale: string): string {
   const parts1 = start.split('-').map(Number)
   const parts2 = end.split('-').map(Number)
-  if (parts1.length !== 3 || parts2.length !== 3) return `${start} – ${end}`
+  if (parts1.length !== 3 || parts2.length !== 3) return `${start}, ${end}`
   const [, m1, d1] = parts1
   const [y2, m2, d2] = parts2
   const loc: MonthsLocale = (locale === 'en' || locale === 'es') ? locale : 'pt-BR'
@@ -102,7 +102,7 @@ const T = {
     liquidityTotalSuffix: 'vol. acumulado desde abertura',
     liquidityAnomalyLabel: 'Anomalia de leitura.',
     calendarHeaders: { date: 'Data', print: 'Print', sample: 'Amostra', reading: 'Por que importa' },
-    section: { 1: 'Executive Summary', 2: 'Por que o AFOS não suaviza', 3: 'Cenários ponderados para a semana', 4: 'Indicator Grid', 5: 'Liquidez e estrutura de mercado', 6: 'Calendário de prints price-relevant', 7: 'Watch list — gatilhos da semana', 8: 'Metodologia', 9: 'Leitura adicional · cobertura macro' },
+    section: { 1: 'Executive Summary', 2: 'Por que o AFOS não suaviza', 3: 'Cenários ponderados para a semana', 4: 'Indicator Grid', 5: 'Liquidez e estrutura de mercado', 6: 'Calendário de prints price-relevant', 7: 'Watch list, gatilhos da semana', 8: 'Metodologia', 9: 'Leitura adicional · cobertura macro' },
     paywall: '(paywall)',
     disclaimerLabel: 'Aviso obrigatório.',
     trackRecordLabel: 'Track record · casos validados globalmente',
@@ -134,7 +134,7 @@ const T = {
     liquidityTotalSuffix: 'vol. accumulated since opening',
     liquidityAnomalyLabel: 'Reading anomaly.',
     calendarHeaders: { date: 'Date', print: 'Print', sample: 'Sample', reading: 'Why it matters' },
-    section: { 1: 'Executive Summary', 2: 'Why AFOS does not smooth', 3: 'Weighted scenarios for the week', 4: 'Indicator Grid', 5: 'Liquidity and market structure', 6: 'Calendar of price-relevant prints', 7: 'Watch list — week triggers', 8: 'Methodology', 9: 'Additional reading · macro coverage' },
+    section: { 1: 'Executive Summary', 2: 'Why AFOS does not smooth', 3: 'Weighted scenarios for the week', 4: 'Indicator Grid', 5: 'Liquidity and market structure', 6: 'Calendar of price-relevant prints', 7: 'Watch list, week triggers', 8: 'Methodology', 9: 'Additional reading · macro coverage' },
     paywall: '(paywall)',
     disclaimerLabel: 'Mandatory disclaimer.',
     trackRecordLabel: 'Track record · globally validated cases',
@@ -166,7 +166,7 @@ const T = {
     liquidityTotalSuffix: 'vol. acumulado desde apertura',
     liquidityAnomalyLabel: 'Anomalía de lectura.',
     calendarHeaders: { date: 'Fecha', print: 'Print', sample: 'Muestra', reading: 'Por qué importa' },
-    section: { 1: 'Executive Summary', 2: 'Por qué AFOS no suaviza', 3: 'Escenarios ponderados para la semana', 4: 'Indicator Grid', 5: 'Liquidez y estructura de mercado', 6: 'Calendario de prints price-relevant', 7: 'Watch list — disparadores de la semana', 8: 'Metodología', 9: 'Lectura adicional · cobertura macro' },
+    section: { 1: 'Executive Summary', 2: 'Por qué AFOS no suaviza', 3: 'Escenarios ponderados para la semana', 4: 'Indicator Grid', 5: 'Liquidez y estructura de mercado', 6: 'Calendario de prints price-relevant', 7: 'Watch list, disparadores de la semana', 8: 'Metodología', 9: 'Lectura adicional · cobertura macro' },
     paywall: '(paywall)',
     disclaimerLabel: 'Aviso obligatorio.',
     trackRecordLabel: 'Track record · casos validados globalmente',
@@ -370,7 +370,7 @@ function Liquidity({ block, totalSuffix, anomalyLabel, isBlue, anomaly, footer }
 
 // O campo `print` é texto plano numa célula (já envolto pelo printLink do TSE).
 // O tradutor às vezes injeta link de glossário em termos (ex.: [Datafolha](...)),
-// que renderiza cru aqui — remover a sintaxe de link, mantendo só o texto.
+// que renderiza cru aqui, remover a sintaxe de link, mantendo só o texto.
 function stripMdLinks(s: string): string {
   return (s || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
 }
@@ -445,7 +445,7 @@ function AdditionalReading({ block, paywallLabel, isBlue, intro, footer }: { blo
             {item.paywall && (
               <span className={`ml-1.5 ${isBlue ? 'text-blue-300/70' : 'text-slate-400'}`}>{paywallLabel}</span>
             )}
-            {' — '}
+            {', '}
             <a href={item.link} target="_blank" rel="noopener noreferrer" className={linkColor}>{item.link.replace(/^https?:\/\//, '')}</a>
           </li>
         ))}
@@ -514,7 +514,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
 
   return (
     <div data-theme={theme} className={`min-h-screen ${pageBg} transition-colors`}>
-      {/* Preview banner — only shown for drafts */}
+      {/* Preview banner, only shown for drafts */}
       {isDraft && (
         <div className="bg-[#fef3c7] border-y border-amber-400 text-amber-900 text-xs text-center font-semibold tracking-wide py-2.5 px-4">
           {t.previewBanner}
@@ -560,7 +560,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </div>
         )}
 
-        {/* Section 1 — Executive Summary */}
+        {/* Section 1, Executive Summary */}
         {data.summaryCards && data.summaryCards.length > 0 && (
           <>
             <SectionHeading num={1} title={t.section[1]} isBlue={isBlue} />
@@ -573,7 +573,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 2 — Por que o AFOS não suaviza */}
+        {/* Section 2, Por que o AFOS não suaviza */}
         {(data.antiAvg || data.antiAvgIntro) && (
           <>
             <SectionHeading num={2} title={t.section[2]} isBlue={isBlue} />
@@ -591,7 +591,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Track record callout — casos validados pelo resultado real */}
+        {/* Track record callout, casos validados pelo resultado real */}
         {md.trackRecord && (
           <div className={`my-7 p-5 rounded-lg border-l-[4px] ${isBlue ? 'bg-blue-950/50 border-blue-300 text-blue-50' : 'bg-sky-50 border-sky-500 text-slate-700'}`}>
             <div className={`text-[11px] font-bold uppercase tracking-wider mb-2 ${isBlue ? 'text-white' : 'text-slate-900'}`}>🌐 {t.trackRecordLabel}</div>
@@ -599,7 +599,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </div>
         )}
 
-        {/* Section 3 — Cenários ponderados */}
+        {/* Section 3, Cenários ponderados */}
         {data.scenarios && data.scenarios.length > 0 && (
           <>
             <SectionHeading num={3} title={t.section[3]} isBlue={isBlue} />
@@ -612,7 +612,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 4 — Indicator Grid */}
+        {/* Section 4, Indicator Grid */}
         {data.indicatorGrid && data.indicatorGrid.length > 0 && (
           <>
             <SectionHeading num={4} title={t.section[4]} isBlue={isBlue} />
@@ -620,7 +620,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 5 — Liquidez */}
+        {/* Section 5, Liquidez */}
         {data.liquidity && (
           <>
             <SectionHeading num={5} title={t.section[5]} isBlue={isBlue} />
@@ -628,7 +628,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 6 — Calendário */}
+        {/* Section 6, Calendário */}
         {data.calendar && data.calendar.length > 0 && (
           <>
             <SectionHeading num={6} title={t.section[6]} isBlue={isBlue} />
@@ -641,7 +641,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 7 — Watch list */}
+        {/* Section 7, Watch list */}
         {data.watchList && data.watchList.length > 0 && (
           <>
             <SectionHeading num={7} title={t.section[7]} isBlue={isBlue} />
@@ -649,7 +649,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 8 — Metodologia */}
+        {/* Section 8, Metodologia */}
         {data.methodology && (
           <>
             <SectionHeading num={8} title={t.section[8]} isBlue={isBlue} />
@@ -659,7 +659,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
           </>
         )}
 
-        {/* Section 9 — Leitura adicional */}
+        {/* Section 9, Leitura adicional */}
         {data.additionalReading && (
           <>
             <SectionHeading num={9} title={t.section[9]} isBlue={isBlue} />

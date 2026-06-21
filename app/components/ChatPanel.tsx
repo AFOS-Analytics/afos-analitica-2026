@@ -1,7 +1,7 @@
 'use client'
 
 /**
- * Página /chat — casca de largura/altura em torno do núcleo ChatConversation.
+ * Página /chat, casca de largura/altura em torno do núcleo ChatConversation.
  * A lógica de conversa/stream vive em ChatConversation (compartilhada com a
  * bolha flutuante ChatWidget).
  */

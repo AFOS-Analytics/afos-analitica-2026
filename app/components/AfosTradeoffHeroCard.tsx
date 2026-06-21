@@ -74,7 +74,7 @@ function formatDateShort(dateIso: string, locale: 'pt-BR' | 'en' | 'es'): string
 function formatWeekRange(start: string, end: string, locale: 'pt-BR' | 'en' | 'es'): string {
   const p1 = start.split('-').map(Number)
   const p2 = end.split('-').map(Number)
-  if (p1.length !== 3 || p2.length !== 3) return `${start} – ${end}`
+  if (p1.length !== 3 || p2.length !== 3) return `${start}, ${end}`
   const [, m1, d1] = p1
   const [, m2, d2] = p2
   const month = MONTHS[locale][m2 - 1]
@@ -114,7 +114,7 @@ export function AfosTradeoffHeroCard() {
     </div>
   )
 
-  // Estado A — pré-primeira edição (ainda não tem nada publicado)
+  // Estado A, pré-primeira edição (ainda não tem nada publicado)
   if (!meta.hasEdition) {
     const dateShort = meta.firstEditionDate ? formatDateShort(meta.firstEditionDate, tKey) : ''
     return (
@@ -148,7 +148,7 @@ export function AfosTradeoffHeroCard() {
     )
   }
 
-  // Estado B — tem edição publicada
+  // Estado B, tem edição publicada
   const dateShort = formatDateShort(meta.date!, tKey)
   const weekRange = formatWeekRange(meta.weekStart!, meta.weekEnd!, tKey)
   const linkHref = `/${tKey}/tradeoff/${meta.date}`

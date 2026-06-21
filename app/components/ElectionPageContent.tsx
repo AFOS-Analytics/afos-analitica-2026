@@ -105,7 +105,7 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
             <p className="text-sm">
               {election.polymarketSlug
                 ? <a href={`https://polymarket.com/event/${election.polymarketSlug}`} target="_blank" rel="noopener noreferrer" className={link}>{l.viewOn} ↗</a>
-                : <span className={textMuted}>—</span>}
+                : <span className={textMuted}>, </span>}
             </p>
           </section>
         )}

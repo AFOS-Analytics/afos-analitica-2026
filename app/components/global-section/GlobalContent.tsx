@@ -54,7 +54,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
               onClick={() => setExpandedElection(expandedElection === i ? null : i)}>
               <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={20} height={14} className="rounded-sm object-cover" style={{ width: 20, height: 14 }} />
               <span className="font-semibold">{c.countryName}</span>
-              <span className="text-gray-400">— {c.electionDate}</span>
+              <span className="text-gray-400">,  {c.electionDate}</span>
             </div>
           ))}
         </div>

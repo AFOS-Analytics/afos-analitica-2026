@@ -2,14 +2,14 @@
 
 /**
  * Carrega o namespace `about` (seções about + metas, ~10KB) de forma lazy e só
- * onde é necessário — os modais Sobre/Metas do dashboard. Esse namespace foi
+ * onde é necessário, os modais Sobre/Metas do dashboard. Esse namespace foi
  * removido do carregamento global (lib/i18n/get-messages.ts) para não pesar o
  * payload de TODA página com texto que ~ninguém abre.
  *
  * Mergeia o JSON carregado nas mensagens atuais e provê um I18nProvider aninhado,
  * então os modais seguem usando t('about.*') / t('metas.*') sem alteração. Como
  * os modais só renderizam quando abertos, o chunk (carregado no mount) já chegou
- * antes do clique — sem flash de chaves.
+ * antes do clique, sem flash de chaves.
  */
 
 import { useEffect, useState, type ReactNode } from 'react'

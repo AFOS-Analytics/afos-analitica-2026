@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * "Casos validados" — faixa de destaque no topo do /global.
+ * "Casos validados", faixa de destaque no topo do /global.
  * Lê os bundles COUNTRY_DIVERGENCE (eleições já realizadas, com divergência mercado × pesquisa
  * cruzada contra o resultado real). Cresce sozinho conforme novos países ganham bundle.
  * Separa explicitamente o que é "analisado a fundo" do "só odds ao vivo" (abaixo, no GlobalContent).

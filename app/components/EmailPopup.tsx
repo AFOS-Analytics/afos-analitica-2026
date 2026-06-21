@@ -36,7 +36,7 @@ export function EmailPopup() {
 
     const scrollThreshold = Math.max(window.innerHeight * 0.3, 100);
 
-    // Check initial scroll position — usuário pode ter chegado na página com scroll
+    // Check initial scroll position, usuário pode ter chegado na página com scroll
     // já feito (ex: link âncora, refresh com scrollRestoration, HMR em dev).
     if (window.scrollY >= scrollThreshold) {
       hasScrolled.current = true;

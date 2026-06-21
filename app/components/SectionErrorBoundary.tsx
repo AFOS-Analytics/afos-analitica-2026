@@ -11,7 +11,7 @@ interface State {
   hasError: boolean;
 }
 
-// Camada 4 — isolamento por seção. Antes deste boundary, uma exceção em qualquer
+// Camada 4, isolamento por seção. Antes deste boundary, uma exceção em qualquer
 // .map() de dado degradado (ex: poll sem scenarios[]) propagava até app/error.tsx
 // e derrubava o dashboard inteiro. Agora a seção quebrada vira um aviso "Seção
 // indisponível", e o resto da página continua renderizando.

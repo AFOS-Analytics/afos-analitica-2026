@@ -38,7 +38,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     placeholder: 'Pergunte sobre as odds de 2026, pesquisas, divergência…',
     send: 'Enviar',
     disclaimer:
-      'O agente consulta dados reais do AFOS (Polymarket, pesquisas TSE, casos validados, notícias). Mercados de previsão são probabilidades implícitas, não previsões oficiais. Pode conter erros — verifique dados críticos.',
+      'O agente consulta dados reais do AFOS (Polymarket, pesquisas TSE, casos validados, notícias). Mercados de previsão são probabilidades implícitas, não previsões oficiais. Pode conter erros, verifique dados críticos.',
     thinking: 'Pensando…',
     consulting: 'Consultando',
     errorGeneric: 'Não foi possível concluir a resposta. Tente novamente.',
@@ -62,7 +62,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     placeholder: 'Ask about 2026 odds, polls, divergence…',
     send: 'Send',
     disclaimer:
-      'The agent queries real AFOS data (Polymarket, TSE polls, validated cases, news). Prediction markets are implied probabilities, not official forecasts. May contain errors — verify critical data.',
+      'The agent queries real AFOS data (Polymarket, TSE polls, validated cases, news). Prediction markets are implied probabilities, not official forecasts. May contain errors, verify critical data.',
     thinking: 'Thinking…',
     consulting: 'Querying',
     errorGeneric: 'Could not complete the answer. Please try again.',
@@ -86,7 +86,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     placeholder: 'Pregunta por las odds de 2026, encuestas, divergencia…',
     send: 'Enviar',
     disclaimer:
-      'El agente consulta datos reales del AFOS (Polymarket, encuestas TSE, casos validados, noticias). Los mercados de predicción son probabilidades implícitas, no pronósticos oficiales. Puede contener errores — verifica datos críticos.',
+      'El agente consulta datos reales del AFOS (Polymarket, encuestas TSE, casos validados, noticias). Los mercados de predicción son probabilidades implícitas, no pronósticos oficiales. Puede contener errores, verifica datos críticos.',
     thinking: 'Pensando…',
     consulting: 'Consultando',
     errorGeneric: 'No se pudo completar la respuesta. Inténtalo de nuevo.',

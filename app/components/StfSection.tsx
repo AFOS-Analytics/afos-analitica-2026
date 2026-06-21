@@ -18,7 +18,7 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
   const livePrice = polyStf?.markets?.[0]?.outcomePrices?.[0];
   const livePct = livePrice != null ? `${Math.round(Number(livePrice) * 100)}%` : null;
   // Fallback: regex do texto editorial (dado estático)
-  const displayPct = livePct || stf?.analise?.match(/(\d+\.?\d*)%/)?.[0] || '—';
+  const displayPct = livePct || stf?.analise?.match(/(\d+\.?\d*)%/)?.[0] || ', ';
 
   return (
     <section>

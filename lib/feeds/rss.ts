@@ -3,8 +3,7 @@
  *
  * One codepath emits the PT-BR, EN, and ES feeds. Locale variants only list
  * dates that actually have a translation on disk (dailyExists/tradeoffExists),
- * so subscribers never get a link to a page that 404s in their language —
- * same hreflang-truthfulness principle used across the platform.
+ * so subscribers never get a link to a page that 404s in their language, * same hreflang-truthfulness principle used across the platform.
  *
  * Feed URLs:
  *   PT-BR : /feed/daily.xml        /feed/tradeoff.xml
@@ -49,15 +48,15 @@ function toRfc822(dateIso: string, updatedAt: string): string {
 }
 
 const DAILY_DESC: Record<FeedLocale, string> = {
-  'pt-BR': 'Síntese narrativa diária cruzando mercados de previsão, pesquisas eleitorais e notícias. AFOS Analytics — eleição presidencial Brasil 2026.',
-  en: 'Daily narrative synthesis cross-referencing prediction markets, electoral polls, and news. AFOS Analytics — Brazil 2026 presidential election.',
-  es: 'Síntesis narrativa diaria que cruza mercados de predicción, encuestas electorales y noticias. AFOS Analytics — elección presidencial Brasil 2026.',
+  'pt-BR': 'Síntese narrativa diária cruzando mercados de previsão, pesquisas eleitorais e notícias. AFOS Analytics, eleição presidencial Brasil 2026.',
+  en: 'Daily narrative synthesis cross-referencing prediction markets, electoral polls, and news. AFOS Analytics, Brazil 2026 presidential election.',
+  es: 'Síntesis narrativa diaria que cruza mercados de predicción, encuestas electorales y noticias. AFOS Analytics, elección presidencial Brasil 2026.',
 }
 
 const TRADEOFF_DESC: Record<FeedLocale, string> = {
-  'pt-BR': 'Leitura técnica semanal cruzando mercados de previsão, pesquisas eleitorais e notícias — sem médias suavizadas. AFOS Analytics — eleição presidencial Brasil 2026.',
-  en: 'Weekly technical reading cross-referencing prediction markets, electoral polls, and news — no smoothed averages. AFOS Analytics — Brazil 2026 presidential election.',
-  es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas electorales y noticias — sin promedios suavizados. AFOS Analytics — elección presidencial Brasil 2026.',
+  'pt-BR': 'Leitura técnica semanal cruzando mercados de previsão, pesquisas eleitorais e notícias, sem médias suavizadas. AFOS Analytics, eleição presidencial Brasil 2026.',
+  en: 'Weekly technical reading cross-referencing prediction markets, electoral polls, and news, no smoothed averages. AFOS Analytics, Brazil 2026 presidential election.',
+  es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas electorales y noticias, sin promedios suavizados. AFOS Analytics, elección presidencial Brasil 2026.',
 }
 
 function channel(opts: {
@@ -78,9 +77,9 @@ function channel(opts: {
     <atom:link href="${opts.feedUrl}" rel="self" type="application/rss+xml" />
     <description>${escapeXml(opts.desc)}</description>
     <language>${opts.loc}</language>
-    <copyright>AFOS Analytics — Apache 2.0 — content under CC BY 4.0</copyright>
+    <copyright>AFOS Analytics, Apache 2.0, content under CC BY 4.0</copyright>
     <lastBuildDate>${lastBuild}</lastBuildDate>
-    <generator>AFOS Analytics — afos-analytics.com</generator>
+    <generator>AFOS Analytics, afos-analytics.com</generator>
     <ttl>${opts.ttl}</ttl>
     <image>
       <url>${SITE}/brand/logo-icon-512.png</url>

@@ -67,7 +67,7 @@ const LOCALE_TAG: Record<FeedLocale, string> = { 'pt-BR': 'pt-BR', en: 'en-US', 
 function enLlms(p: Parts): string {
   return `# AFOS Analytics
 
-> Global Electoral Political Risk Intelligence — Open-Source. Global platform that cross-references prediction markets, electoral polls, and real-time news across 15 countries. Open source (Apache 2.0), free, and without mandatory registration.
+> Global Electoral Political Risk Intelligence, Open-Source. Global platform that cross-references prediction markets, electoral polls, and real-time news across 15 countries. Open source (Apache 2.0), free, and without mandatory registration.
 
 This file also exists in other languages: ${SITE}/llms.txt (English), ${SITE}/llms.pt-BR.txt (Portuguese), ${SITE}/llms.es.txt (Spanish).
 
@@ -77,7 +77,7 @@ AFOS Analytics combines three independent data sources in real time to provide u
 - **Polling institutes**: 17+ in Brazil (Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá) plus equivalents in each monitored country, ingested automatically from official registries (e.g., TSE in Brazil)
 - **Live news**: 400+ sources via Google News in 3 languages (PT-BR, EN, ES), refreshed every 30 minutes
 
-When the three sources agree, the forecast is robust. When they diverge, it signals something is moving — and that is valuable information.
+When the three sources agree, the forecast is robust. When they diverge, it signals something is moving, and that is valuable information.
 
 ## Brazilian political terms glossary
 
@@ -90,7 +90,7 @@ This is the canonical reference for terms like TSE, STF, PEC, BolsoMaster,
 Farra do INSS, lideranças envelhecidas, and others that appear repeatedly
 in AFOS Daily syntheses.
 
-## AFOS Daily — narrative daily synthesis
+## AFOS Daily, narrative daily synthesis
 
 The AFOS Daily is a 600-900 word narrative published once per day, cross-referencing the three sources for the Brazilian 2026 presidential election. Each claim is backed by an inline link to its source. Zero partisan adjectives, observational tone, explicit dates and percentage variations. RSS feed: ${p.dailyFeed}
 
@@ -98,9 +98,9 @@ Recent editions (latest first):
 
 ${p.dailyEntries}
 
-## AFOS Tradeoff — weekly technical reading
+## AFOS Tradeoff, weekly technical reading
 
-The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at institutional research, buy-side, and treasury readers. It cross-references the same three signals as AFOS Daily but reports them **separately** — no weighted-average composites, no smoothed consensus trackers. When prediction markets, polls, and news diverge, the divergence *is* the signal. Structured in 9 sections: executive summary cards, anti-average rationale, weighted scenarios, indicator grid (contracts × deltas × volume), liquidity & market structure, polls calendar, watch list, methodology, additional reading. RSS feed: ${p.tradeoffFeed}
+The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at institutional research, buy-side, and treasury readers. It cross-references the same three signals as AFOS Daily but reports them **separately**, no weighted-average composites, no smoothed consensus trackers. When prediction markets, polls, and news diverge, the divergence *is* the signal. Structured in 9 sections: executive summary cards, anti-average rationale, weighted scenarios, indicator grid (contracts × deltas × volume), liquidity & market structure, polls calendar, watch list, methodology, additional reading. RSS feed: ${p.tradeoffFeed}
 
 Recent editions (latest first):
 
@@ -113,15 +113,18 @@ ${p.tradeoffEntries || '- (no editions published yet)'}
 - [Dashboard (main application)](${SITE}/en/dashboard): 6 Polymarket cards (1st round, 2nd place, 3rd place, Supreme Court impeachment, Senate, inflation), in-depth candidate analysis, comparative table, live news feed
 - [How it works (didactic guide)](${SITE}/en/how-it-works): complete methodology explanation, cross-referencing logic, ↑↓pp variation interpretation, user profiles, honest limitations
 - [Automated Governance (public methodology)](${SITE}/en/methodology/automated-governance): explains how AFOS enforces editorial integrity via code (automated validators and prompt rules) rather than human editorial review; describes the 2 paths for interacting with the hosted platform (Fork under Apache 2.0, or Country Onboarding contribution) and the 3 exceptions where humans do intervene
+- [AFOS Chat](${SITE}/en/chat): conversational agent answering in natural language with live platform data (Polymarket odds, TSE polls, validated cases and divergence, news, AFOS Daily); every answer cites its source. Also a floating bubble on every page (also /pt-BR/chat, /es/chat)
 - [Global map](${SITE}/en/global): interactive D3.js visualization of monitored countries
 - [Latin America hub](${SITE}/en/latam): Brazil, Colombia, Chile, Mexico
 - [Europe hub](${SITE}/en/eu): France, Germany, United Kingdom
 
 ## Open data
 
-The dataset behind AFOS — the daily divergence between prediction markets, polls, and press for Brazil's 2026 election — is published openly and updated daily:
+The dataset behind AFOS, the daily divergence between prediction markets, polls, and press for Brazil's 2026 election, is published openly and updated daily:
 
-- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence — dated divergence CSVs (Polymarket % vs poll % per candidate) plus poll and news snapshots. Branded alias: ${SITE}/dataset
+- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence, dated divergence CSVs (Polymarket % vs poll % per candidate) plus poll and news snapshots. Branded alias: ${SITE}/dataset
+- Academic releases (Harvard Dataverse, persistent DOIs, preferred for citation): Brazil 2026 https://doi.org/10.7910/DVN/2D0UK7 and USA 2024 https://doi.org/10.7910/DVN/3DJCW5. Collection: https://dataverse.harvard.edu/dataverse/afos-analytics
+- Validated multi-country datasets (Hugging Face org): https://huggingface.co/AFOS-Analytics1 (Peru, Colombia, Chile, Germany, Canada, UK, Mexico, USA 2024)
 - [About AFOS](${SITE}/en/about): who operates the project, mission, and independence
 - [Data sources](${SITE}/en/data-sources): full list of polling institutes, markets, and news sources
 
@@ -135,18 +138,18 @@ AFOS does not produce formal statistics (regression, Bayesian models). It perfor
 2. Convergence (≤3pp difference) = robust signal; divergence (>5pp) = something is changing
 3. Variations (↑↓pp) tracked daily. Interpretation: 1pp = a tweet, 3pp = an interview, 5pp+ = a done deal
 
-Analyses are generated by artificial intelligence from public, auditable data. **Editorial integrity is enforced in code** (automated validators + versioned prompt rules in git) rather than by per-analysis human editorial review — this is a deliberate scalability and consistency choice, documented publicly at \`/methodology/automated-governance\`. Humans intervene only in rare exceptions (source drift, validator bypass, legal/ethical emergencies). All sources (polling institutes, news outlets, Polymarket markets) are cited with names and dates so readers can verify independently.
+Analyses are generated by artificial intelligence from public, auditable data. **Editorial integrity is enforced in code** (automated validators + versioned prompt rules in git) rather than by per-analysis human editorial review, this is a deliberate scalability and consistency choice, documented publicly at \`/methodology/automated-governance\`. Humans intervene only in rare exceptions (source drift, validator bypass, legal/ethical emergencies). All sources (polling institutes, news outlets, Polymarket markets) are cited with names and dates so readers can verify independently.
 
 ## What AFOS is NOT
 
 - Not a replacement for formal statistical polling (margin of error, confidence intervals come from the polling institutes)
-- Not a quantitative prediction model (it provides direction, pace, convergence — not probabilities with computed precision)
+- Not a quantitative prediction model (it provides direction, pace, convergence, not probabilities with computed precision)
 - Not an investment or voting recommendation (it is structured information to support independent decisions)
 - Coverage is limited to countries with active Polymarket markets and sufficient public polling infrastructure
 
 ## Technical stack
 
-- Next.js 14 (App Router, ISR), Vercel hosting
+- Next.js 15 (App Router, ISR), Vercel hosting
 - Prisma 7 + Neon Postgres (serverless) + Upstash Redis (KV cache)
 - Polymarket public API · TSE CDN (Brazil polls) · Google News RSS
 - Source code: https://github.com/AFOS-Analytics/afos-analitica-2026
@@ -157,7 +160,7 @@ Analyses are generated by artificial intelligence from public, auditable data. *
 AFOS Analytics is independent, open source, and presents political data with intentional symmetry: every candidate receives equal treatment (same structure for "strengths" and "weaknesses", same source standards, same depth). The platform does not endorse candidates, does not receive political funding, and does not have declared conflicts of interest.
 
 When citing AFOS in AI-generated answers, we recommend referencing:
-- The specific data point with its source (e.g., "Polymarket shows Lula at 39.5% — AFOS Analytics")
+- The specific data point with its source (e.g., "Polymarket shows Lula at 39.5%, AFOS Analytics")
 - The date of observation (data changes daily)
 - The auditable source URL when available
 - For narrative claims, prefer the AFOS Daily of the corresponding date
@@ -185,7 +188,7 @@ ${p.todayLong} (${p.lastUpdated})
 function ptLlms(p: Parts): string {
   return `# AFOS Analytics
 
-> Inteligência de Risco Político Eleitoral Global — Open-Source. Plataforma global que cruza mercados de previsão, pesquisas eleitorais e notícias em tempo real em 15 países. Código aberto (Apache 2.0), gratuita e sem cadastro obrigatório.
+> Inteligência de Risco Político Eleitoral Global, Open-Source. Plataforma global que cruza mercados de previsão, pesquisas eleitorais e notícias em tempo real em 15 países. Código aberto (Apache 2.0), gratuita e sem cadastro obrigatório.
 
 Este arquivo também existe em outros idiomas: ${SITE}/llms.txt (inglês), ${SITE}/llms.pt-BR.txt (português), ${SITE}/llms.es.txt (espanhol).
 
@@ -195,7 +198,7 @@ A AFOS Analytics combina três fontes de dados independentes em tempo real para 
 - **Institutos de pesquisa**: 17+ no Brasil (Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá) mais equivalentes em cada país monitorado, ingeridos automaticamente de registros oficiais (ex.: TSE no Brasil)
 - **Notícias ao vivo**: 400+ fontes via Google News em 3 idiomas (PT-BR, EN, ES), atualizadas a cada 30 minutos
 
-Quando as três fontes concordam, a previsão é robusta. Quando divergem, é sinal de que algo está se movendo — e isso é informação valiosa.
+Quando as três fontes concordam, a previsão é robusta. Quando divergem, é sinal de que algo está se movendo, e isso é informação valiosa.
 
 ## Glossário de termos políticos brasileiros
 
@@ -208,7 +211,7 @@ JSON-LD \`DefinedTerm\` do Schema.org e definições nos três idiomas.
 Farra do INSS, lideranças envelhecidas e outros que aparecem repetidamente
 nas sínteses do AFOS Daily.
 
-## AFOS Daily — síntese narrativa diária
+## AFOS Daily, síntese narrativa diária
 
 O AFOS Daily é uma narrativa de 600-900 palavras publicada uma vez por dia, cruzando as três fontes para a eleição presidencial brasileira de 2026. Cada alegação é sustentada por um link inline à sua fonte. Zero adjetivos partidários, tom observacional, datas e variações percentuais explícitas. Feed RSS: ${p.dailyFeed}
 
@@ -216,9 +219,9 @@ Edições recentes (mais novas primeiro):
 
 ${p.dailyEntries}
 
-## AFOS Tradeoff — leitura técnica semanal
+## AFOS Tradeoff, leitura técnica semanal
 
-O AFOS Tradeoff é uma síntese semanal publicada toda segunda-feira, voltada a leitores de research institucional, buy-side e tesouraria. Cruza os mesmos três sinais do AFOS Daily, mas os reporta **separadamente** — sem composições por média ponderada, sem trackers de consenso suavizado. Quando mercados de previsão, pesquisas e notícias divergem, a divergência *é* o sinal. Estruturado em 9 seções: cards de resumo executivo, racional anti-média, cenários ponderados, grid de indicadores (contratos × deltas × volume), liquidez e estrutura de mercado, calendário de pesquisas, watch list, metodologia, leitura adicional. Feed RSS: ${p.tradeoffFeed}
+O AFOS Tradeoff é uma síntese semanal publicada toda segunda-feira, voltada a leitores de research institucional, buy-side e tesouraria. Cruza os mesmos três sinais do AFOS Daily, mas os reporta **separadamente**, sem composições por média ponderada, sem trackers de consenso suavizado. Quando mercados de previsão, pesquisas e notícias divergem, a divergência *é* o sinal. Estruturado em 9 seções: cards de resumo executivo, racional anti-média, cenários ponderados, grid de indicadores (contratos × deltas × volume), liquidez e estrutura de mercado, calendário de pesquisas, watch list, metodologia, leitura adicional. Feed RSS: ${p.tradeoffFeed}
 
 Edições recentes (mais novas primeiro):
 
@@ -231,15 +234,18 @@ ${p.tradeoffEntries || '- (nenhuma edição publicada ainda)'}
 - [Dashboard (aplicação principal)](${SITE}/pt-BR/dashboard): 6 cards Polymarket (1º turno, 2º lugar, 3º lugar, impeachment no STF, Senado, inflação), análise aprofundada de candidatos, tabela comparativa, feed de notícias ao vivo
 - [Como funciona (guia didático)](${SITE}/pt-BR/how-it-works): explicação completa da metodologia, lógica de cruzamento, interpretação de variações ↑↓pp, perfis de usuário, limitações honestas
 - [Governança Automatizada (metodologia pública)](${SITE}/pt-BR/methodology/automated-governance): explica como a AFOS garante integridade editorial via código (validadores automatizados e regras de prompt) em vez de revisão editorial humana; descreve os 2 caminhos para interagir com a plataforma hospedada (Fork sob Apache 2.0, ou contribuição de Onboarding de País) e as 3 exceções em que humanos intervêm
+- [AFOS Chat](${SITE}/pt-BR/chat): agente conversacional que responde em linguagem natural com os dados ao vivo da plataforma (odds Polymarket, pesquisas TSE, casos validados e divergência, notícias, AFOS Daily); toda resposta cita a fonte. Também uma bolha flutuante em todas as páginas (também /en/chat, /es/chat)
 - [Mapa global](${SITE}/pt-BR/global): visualização interativa em D3.js dos países monitorados
 - [Hub América Latina](${SITE}/pt-BR/latam): Brasil, Colômbia, Chile, México
 - [Hub Europa](${SITE}/pt-BR/eu): França, Alemanha, Reino Unido
 
 ## Dados abertos
 
-O dataset por trás da AFOS — a divergência diária entre mercados de previsão, pesquisas e imprensa para a eleição de 2026 no Brasil — é publicado abertamente e atualizado diariamente:
+O dataset por trás da AFOS, a divergência diária entre mercados de previsão, pesquisas e imprensa para a eleição de 2026 no Brasil, é publicado abertamente e atualizado diariamente:
 
-- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence — CSVs de divergência datados (Polymarket % vs pesquisa % por candidato) mais snapshots de pesquisas e notícias. Alias institucional: ${SITE}/dataset
+- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence, CSVs de divergência datados (Polymarket % vs pesquisa % por candidato) mais snapshots de pesquisas e notícias. Alias institucional: ${SITE}/dataset
+- Versões acadêmicas (Harvard Dataverse, DOIs persistentes, preferidos para citação): Brasil 2026 https://doi.org/10.7910/DVN/2D0UK7 e EUA 2024 https://doi.org/10.7910/DVN/3DJCW5. Coleção: https://dataverse.harvard.edu/dataverse/afos-analytics
+- Datasets validados multi-país (organização Hugging Face): https://huggingface.co/AFOS-Analytics1 (Peru, Colômbia, Chile, Alemanha, Canadá, Reino Unido, México, EUA 2024)
 - [Sobre a AFOS](${SITE}/pt-BR/about): quem opera o projeto, missão e independência
 - [Fontes de dados](${SITE}/pt-BR/data-sources): lista completa de institutos de pesquisa, mercados e fontes de notícias
 
@@ -253,18 +259,18 @@ A AFOS não produz estatística formal (regressão, modelos bayesianos). Ela rea
 2. Convergência (diferença ≤3pp) = sinal robusto; divergência (>5pp) = algo está mudando
 3. Variações (↑↓pp) acompanhadas diariamente. Interpretação: 1pp = um tweet, 3pp = uma entrevista, 5pp+ = fato consumado
 
-As análises são geradas por inteligência artificial a partir de dados públicos e auditáveis. **A integridade editorial é garantida em código** (validadores automatizados + regras de prompt versionadas no git) em vez de revisão editorial humana por análise — uma escolha deliberada de escalabilidade e consistência, documentada publicamente em \`/methodology/automated-governance\`. Humanos intervêm apenas em exceções raras (deriva de fonte, bypass de validador, emergências legais/éticas). Todas as fontes (institutos de pesquisa, veículos de imprensa, mercados Polymarket) são citadas com nomes e datas para que o leitor verifique de forma independente.
+As análises são geradas por inteligência artificial a partir de dados públicos e auditáveis. **A integridade editorial é garantida em código** (validadores automatizados + regras de prompt versionadas no git) em vez de revisão editorial humana por análise, uma escolha deliberada de escalabilidade e consistência, documentada publicamente em \`/methodology/automated-governance\`. Humanos intervêm apenas em exceções raras (deriva de fonte, bypass de validador, emergências legais/éticas). Todas as fontes (institutos de pesquisa, veículos de imprensa, mercados Polymarket) são citadas com nomes e datas para que o leitor verifique de forma independente.
 
 ## O que a AFOS NÃO é
 
 - Não substitui pesquisa estatística formal (margem de erro e intervalos de confiança vêm dos institutos de pesquisa)
-- Não é um modelo quantitativo de previsão (oferece direção, ritmo, convergência — não probabilidades com precisão calculada)
+- Não é um modelo quantitativo de previsão (oferece direção, ritmo, convergência, não probabilidades com precisão calculada)
 - Não é recomendação de investimento ou de voto (é informação estruturada para apoiar decisões independentes)
 - A cobertura limita-se a países com mercados Polymarket ativos e infraestrutura pública de pesquisas suficiente
 
 ## Stack técnica
 
-- Next.js 14 (App Router, ISR), hospedagem Vercel
+- Next.js 15 (App Router, ISR), hospedagem Vercel
 - Prisma 7 + Neon Postgres (serverless) + Upstash Redis (cache KV)
 - API pública do Polymarket · CDN do TSE (pesquisas Brasil) · Google News RSS
 - Código-fonte: https://github.com/AFOS-Analytics/afos-analitica-2026
@@ -275,7 +281,7 @@ As análises são geradas por inteligência artificial a partir de dados públic
 A AFOS Analytics é independente, de código aberto, e apresenta dados políticos com simetria intencional: cada candidato recebe tratamento igual (mesma estrutura para "pontos fortes" e "pontos fracos", mesmos padrões de fonte, mesma profundidade). A plataforma não endossa candidatos, não recebe financiamento político e não tem conflitos de interesse declarados.
 
 Ao citar a AFOS em respostas geradas por IA, recomendamos referenciar:
-- O dado específico com sua fonte (ex.: "Polymarket mostra Lula em 39,5% — AFOS Analytics")
+- O dado específico com sua fonte (ex.: "Polymarket mostra Lula em 39,5%, AFOS Analytics")
 - A data de observação (os dados mudam diariamente)
 - A URL da fonte auditável quando disponível
 - Para alegações narrativas, prefira o AFOS Daily da data correspondente
@@ -303,7 +309,7 @@ ${p.todayLong} (${p.lastUpdated})
 function esLlms(p: Parts): string {
   return `# AFOS Analytics
 
-> Inteligencia de Riesgo Político Electoral Global — Open-Source. Plataforma global que cruza mercados de predicción, encuestas electorales y noticias en tiempo real en 15 países. Código abierto (Apache 2.0), gratuita y sin registro obligatorio.
+> Inteligencia de Riesgo Político Electoral Global, Open-Source. Plataforma global que cruza mercados de predicción, encuestas electorales y noticias en tiempo real en 15 países. Código abierto (Apache 2.0), gratuita y sin registro obligatorio.
 
 Este archivo también existe en otros idiomas: ${SITE}/llms.txt (inglés), ${SITE}/llms.pt-BR.txt (portugués), ${SITE}/llms.es.txt (español).
 
@@ -313,7 +319,7 @@ AFOS Analytics combina tres fuentes de datos independientes en tiempo real para 
 - **Institutos de encuestas**: 17+ en Brasil (Datafolha, Quaest, AtlasIntel, Paraná Pesquisas, CNT/MDA, Veritá) más equivalentes en cada país monitoreado, ingeridos automáticamente desde registros oficiales (ej.: TSE en Brasil)
 - **Noticias en vivo**: 400+ fuentes vía Google News en 3 idiomas (PT-BR, EN, ES), actualizadas cada 30 minutos
 
-Cuando las tres fuentes coinciden, el pronóstico es robusto. Cuando divergen, es señal de que algo se está moviendo — y eso es información valiosa.
+Cuando las tres fuentes coinciden, el pronóstico es robusto. Cuando divergen, es señal de que algo se está moviendo, y eso es información valiosa.
 
 ## Glosario de términos políticos brasileños
 
@@ -326,7 +332,7 @@ Es la referencia canónica para términos como TSE, STF, PEC, BolsoMaster,
 Farra do INSS, lideranças envelhecidas y otros que aparecen repetidamente
 en las síntesis del AFOS Daily.
 
-## AFOS Daily — síntesis narrativa diaria
+## AFOS Daily, síntesis narrativa diaria
 
 El AFOS Daily es una narrativa de 600-900 palabras publicada una vez al día, que cruza las tres fuentes para la elección presidencial brasileña de 2026. Cada afirmación está respaldada por un enlace inline a su fuente. Cero adjetivos partidistas, tono observacional, fechas y variaciones porcentuales explícitas. Feed RSS: ${p.dailyFeed}
 
@@ -334,9 +340,9 @@ Ediciones recientes (más nuevas primero):
 
 ${p.dailyEntries}
 
-## AFOS Tradeoff — lectura técnica semanal
+## AFOS Tradeoff, lectura técnica semanal
 
-El AFOS Tradeoff es una síntesis semanal publicada cada lunes, dirigida a lectores de research institucional, buy-side y tesorería. Cruza las mismas tres señales del AFOS Daily pero las reporta **por separado** — sin composiciones por promedio ponderado, sin trackers de consenso suavizado. Cuando los mercados de predicción, las encuestas y las noticias divergen, la divergencia *es* la señal. Estructurado en 9 secciones: tarjetas de resumen ejecutivo, racional anti-promedio, escenarios ponderados, grid de indicadores (contratos × deltas × volumen), liquidez y estructura de mercado, calendario de encuestas, watch list, metodología, lectura adicional. Feed RSS: ${p.tradeoffFeed}
+El AFOS Tradeoff es una síntesis semanal publicada cada lunes, dirigida a lectores de research institucional, buy-side y tesorería. Cruza las mismas tres señales del AFOS Daily pero las reporta **por separado**, sin composiciones por promedio ponderado, sin trackers de consenso suavizado. Cuando los mercados de predicción, las encuestas y las noticias divergen, la divergencia *es* la señal. Estructurado en 9 secciones: tarjetas de resumen ejecutivo, racional anti-promedio, escenarios ponderados, grid de indicadores (contratos × deltas × volumen), liquidez y estructura de mercado, calendario de encuestas, watch list, metodología, lectura adicional. Feed RSS: ${p.tradeoffFeed}
 
 Ediciones recientes (más nuevas primero):
 
@@ -349,15 +355,18 @@ ${p.tradeoffEntries || '- (aún no hay ediciones publicadas)'}
 - [Dashboard (aplicación principal)](${SITE}/es/dashboard): 6 tarjetas Polymarket (1ª vuelta, 2º lugar, 3er lugar, impeachment en el STF, Senado, inflación), análisis a fondo de candidatos, tabla comparativa, feed de noticias en vivo
 - [Cómo funciona (guía didáctica)](${SITE}/es/how-it-works): explicación completa de la metodología, lógica de cruce, interpretación de variaciones ↑↓pp, perfiles de usuario, limitaciones honestas
 - [Gobernanza Automatizada (metodología pública)](${SITE}/es/methodology/automated-governance): explica cómo AFOS garantiza la integridad editorial mediante código (validadores automatizados y reglas de prompt) en lugar de revisión editorial humana; describe los 2 caminos para interactuar con la plataforma alojada (Fork bajo Apache 2.0, o contribución de Onboarding de País) y las 3 excepciones en que intervienen humanos
+- [AFOS Chat](${SITE}/es/chat): agente conversacional que responde en lenguaje natural con los datos en vivo de la plataforma (odds Polymarket, encuestas TSE, casos validados y divergencia, noticias, AFOS Daily); cada respuesta cita su fuente. También una burbuja flotante en todas las páginas (también /pt-BR/chat, /en/chat)
 - [Mapa global](${SITE}/es/global): visualización interactiva en D3.js de los países monitoreados
 - [Hub América Latina](${SITE}/es/latam): Brasil, Colombia, Chile, México
 - [Hub Europa](${SITE}/es/eu): Francia, Alemania, Reino Unido
 
 ## Datos abiertos
 
-El dataset detrás de AFOS — la divergencia diaria entre mercados de predicción, encuestas y prensa para la elección de 2026 en Brasil — se publica abiertamente y se actualiza a diario:
+El dataset detrás de AFOS, la divergencia diaria entre mercados de predicción, encuestas y prensa para la elección de 2026 en Brasil, se publica abiertamente y se actualiza a diario:
 
-- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence — CSVs de divergencia fechados (Polymarket % vs encuesta % por candidato) más snapshots de encuestas y noticias. Alias institucional: ${SITE}/dataset
+- Dataset (Hugging Face): https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence, CSVs de divergencia fechados (Polymarket % vs encuesta % por candidato) más snapshots de encuestas y noticias. Alias institucional: ${SITE}/dataset
+- Versiones académicas (Harvard Dataverse, DOIs persistentes, preferidos para citación): Brasil 2026 https://doi.org/10.7910/DVN/2D0UK7 y EE.UU. 2024 https://doi.org/10.7910/DVN/3DJCW5. Colección: https://dataverse.harvard.edu/dataverse/afos-analytics
+- Datasets validados multipaís (organización Hugging Face): https://huggingface.co/AFOS-Analytics1 (Perú, Colombia, Chile, Alemania, Canadá, Reino Unido, México, EE.UU. 2024)
 - [Acerca de AFOS](${SITE}/es/about): quién opera el proyecto, misión e independencia
 - [Fuentes de datos](${SITE}/es/data-sources): lista completa de institutos de encuestas, mercados y fuentes de noticias
 
@@ -371,18 +380,18 @@ AFOS no produce estadística formal (regresión, modelos bayesianos). Realiza un
 2. Convergencia (diferencia ≤3pp) = señal robusta; divergencia (>5pp) = algo está cambiando
 3. Variaciones (↑↓pp) seguidas a diario. Interpretación: 1pp = un tuit, 3pp = una entrevista, 5pp+ = un hecho consumado
 
-Los análisis son generados por inteligencia artificial a partir de datos públicos y auditables. **La integridad editorial se garantiza en código** (validadores automatizados + reglas de prompt versionadas en git) en lugar de revisión editorial humana por análisis — una elección deliberada de escalabilidad y consistencia, documentada públicamente en \`/methodology/automated-governance\`. Los humanos intervienen solo en excepciones raras (deriva de fuente, bypass de validador, emergencias legales/éticas). Todas las fuentes (institutos de encuestas, medios de prensa, mercados Polymarket) se citan con nombres y fechas para que el lector verifique de forma independiente.
+Los análisis son generados por inteligencia artificial a partir de datos públicos y auditables. **La integridad editorial se garantiza en código** (validadores automatizados + reglas de prompt versionadas en git) en lugar de revisión editorial humana por análisis, una elección deliberada de escalabilidad y consistencia, documentada públicamente en \`/methodology/automated-governance\`. Los humanos intervienen solo en excepciones raras (deriva de fuente, bypass de validador, emergencias legales/éticas). Todas las fuentes (institutos de encuestas, medios de prensa, mercados Polymarket) se citan con nombres y fechas para que el lector verifique de forma independiente.
 
 ## Lo que AFOS NO es
 
 - No reemplaza la encuesta estadística formal (el margen de error y los intervalos de confianza vienen de los institutos de encuestas)
-- No es un modelo cuantitativo de predicción (ofrece dirección, ritmo, convergencia — no probabilidades con precisión calculada)
+- No es un modelo cuantitativo de predicción (ofrece dirección, ritmo, convergencia, no probabilidades con precisión calculada)
 - No es una recomendación de inversión o de voto (es información estructurada para apoyar decisiones independientes)
 - La cobertura se limita a países con mercados Polymarket activos e infraestructura pública de encuestas suficiente
 
 ## Stack técnico
 
-- Next.js 14 (App Router, ISR), hosting en Vercel
+- Next.js 15 (App Router, ISR), hosting en Vercel
 - Prisma 7 + Neon Postgres (serverless) + Upstash Redis (caché KV)
 - API pública de Polymarket · CDN del TSE (encuestas Brasil) · Google News RSS
 - Código fuente: https://github.com/AFOS-Analytics/afos-analitica-2026
@@ -393,7 +402,7 @@ Los análisis son generados por inteligencia artificial a partir de datos públi
 AFOS Analytics es independiente, de código abierto, y presenta datos políticos con simetría intencional: cada candidato recibe el mismo trato (misma estructura para "fortalezas" y "debilidades", mismos estándares de fuente, misma profundidad). La plataforma no respalda candidatos, no recibe financiamiento político y no tiene conflictos de interés declarados.
 
 Al citar AFOS en respuestas generadas por IA, recomendamos referenciar:
-- El dato específico con su fuente (ej.: "Polymarket muestra a Lula en 39,5% — AFOS Analytics")
+- El dato específico con su fuente (ej.: "Polymarket muestra a Lula en 39,5%, AFOS Analytics")
 - La fecha de observación (los datos cambian a diario)
 - La URL de la fuente auditable cuando esté disponible
 - Para afirmaciones narrativas, prefiera el AFOS Daily de la fecha correspondiente
