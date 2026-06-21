@@ -1,0 +1,141 @@
+{
+  "updatedAt": "21/06/2026, 13:30",
+  "subtitle": "ATUALIZAÇÃO 21/Jun 13:30 BRT D+38 launch AFOS. Domingo estável: nenhuma pesquisa nacional nova foi registrada no TSE e o Polymarket ficou praticamente parado, confirmando a Datafolha de ontem (n=2.004, campo 17-19/Jun, BR-09956/2026): 1T Lula 41% x Flávio 31%; 2T Lula 47% x Flávio 43% (gap +4pp, o mais apertado entre as nacionais recentes). Lula fica estável a 51.50% (vol USD 6.57M) e Flávio recua de leve a 24.90% (↓0.15pp, vol USD 6.77M), de modo que o gap Lula x Flávio abre a +26.60pp, perto do recorde do ciclo. O eixo do dia foi político: a operação da PF no caso Master avançou sobre Jaques Wagner, líder do governo no Senado, e aliados argumentam que um senador fragilizado prejudica o palanque de Lula na Bahia (Folha); Alckmin defendeu a independência da PF e disse que Lula conduzirá bem a crise (Estadão, G1). O mercado não reprecificou a corrida e manteve Lula no topo. Renan fica a 14.30% (↓0.05pp) e mantém a maior divergência do dashboard (mercado 14.30% x 3% na Datafolha, ~11.30pp). Follow-up da Datafolha: apoio de Trump indiferente para 65% dos eleitores (Poder360). STF impeach estável a 3.60%. Volume total acima de USD 100M no presidencial.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 51.50% (estável, vol USD 6.57M acumulado), no platô do ciclo, com o gap sobre Flávio REABRINDO a +26.60pp, que reata o recorde de 17/Jun. A Datafolha 20/Jun confirma a liderança: 1T Lula 41% x Flávio 31%; 2T 47% x 43% (gap +4pp), em linha com as três nacionais de 15-16/Jun (CNT/MDA 2T 49.3% x 36.8%, Futura/Apex 48.1% x 42.9%, BTG/Nexus 49% x 43%). A leitura é dupla: Lula segue favorito em todos os cenários, mas o 2º turno mais apertado da Datafolha (+4pp) mostra a corrida ganhando 'cara de 2º turno' (Folha). No pano de fundo, o caso Master segue sem desfecho (Wagner muda de tom sobre a liderança, Folha), mas o mercado manteve Lula no topo.",
+      "fortes": [
+        "🗳️ DATAFOLHA 20/Jun CONFIRMA A LIDERANÇA: n=2.004, campo 17-19/Jun, BR-09956/2026, margem 2pp. 1T Lula 41% x Flávio 31% (gap +10pp), com a 3ª via no piso (Caiado e Renan 3%, Zema e Aécio 2%, Joaquim Barbosa 1%). 2T Lula 47% x Flávio 43%; Lula 47% x Caiado 41%; Lula 48% x Zema 39%: vence todos os cenários (G1, Folha, CartaCapital, Brasil de Fato). Rejeição de Flávio (48%) maior que a de Lula (46%).",
+        "📊 QUATRO NACIONAIS EM 15-20/Jun COM LULA À FRENTE: além da Datafolha, a CNT/MDA (n=2.002, BR-04256/2026) deu 2T 49.3% x 36.8% (gap +12.5pp, o maior do recorte); Futura/Apex 2T 48.1% x 42.9%; BTG/Nexus 15/Jun 2T 49% x 43%, com aprovação 48% x 47% (supera a desaprovação pela 1ª vez no ciclo). Convergência rara de quatro institutos apontando o mesmo favoritismo.",
+        "📈 MERCADO REATA O RECORDE: Lula fica estável a 51.50% e o gap sobre Flávio reabre a +26.60pp (pelo recuo do adversário), reatando o recorde de 17/Jun, justamente no dia em que a Datafolha dá a Flávio o 2º turno mais competitivo do recorte. INFLAÇÃO 2026 segue com a banda 5.00-5.49% liderando a 31.4%, seguida de 5.50-5.99% a 26.0% e 6.00-6.49% a 19.0%, distribuição que indica incerteza."
+      ],
+      "fracos": [
+        "🚨 CASO MASTER SEGUE SEM DESFECHO: a operação da PF contra Jaques Wagner, líder do governo no Senado, segue pressionando o Planalto. Wagner mudou de tom sobre deixar a liderança (Folha) e o PT vai medir o impacto eleitoral da operação em pesquisa própria (CNN Brasil). Alckmin afirma que a PF tem independência e que Lula conduzirá bem o caso (Estadão). A crise se soma à rejeição da indicação de Messias ao STF e mantém viva a frente de risco político sobre o lado governista.",
+        "🚨 DATAFOLHA, O ALERTA NO 2º TURNO: o 2T Lula 47% x Flávio 43% (gap +4pp) é o mais apertado entre as nacionais recentes, e a Folha avalia que a eleição já tem 'cara de 2º turno', com Flávio 'estancando o prejuízo'. A rejeição de Lula (46%) segue alta. O Gerp 10/Jun (1T Flávio 35% x Lula 34%, Exame) e o PoderData/AYA 29/Mai (empate técnico no 2T contra quatro nomes) seguem como contrapontos de que a polarização pode estreitar a corrida.",
+        "🏛️ MG sem palanque definido: Lula segue sem candidato a governador no 2º maior colégio (G1), em reduto próximo a Flávio, e Pacheco confirmou que não disputará o governo (G1, Estadão). Sem diálogo fluido, Alcolumbre trava a agenda do governo no Senado e apoiou Wagner (BBC). A inflação com cauda alta persiste como preocupação macro de fundo."
+      ],
+      "analise": "Em 21/Jun, domingo estável e sem pesquisa nacional nova, o quadro confirmou a Datafolha de ontem com o mercado praticamente parado. A Datafolha (n=2.004, campo 17-19/Jun, BR-09956/2026) confirmou a liderança de Lula (1T 41% x 31%; 2T 47% x 43%), mas com o 2º turno mais apertado do recorte (+4pp), levando a imprensa a falar em eleição com 'cara de 2º turno' e em Flávio 'estancando o prejuízo' (Folha). O Polymarket, porém, foi na direção OPOSTA ao alívio de Flávio: Lula ficou estável a 51.50% (vol USD 6.57M) e o gap reabriu a +26.60pp, reatando o recorde de 17/Jun, pelo recuo do adversário. A leitura é que o mercado precifica a dominância de Lula no topo da corrida bem acima do que a Datafolha mede no 2º turno, com os dois medindo coisas diferentes (probabilidade de vencer x voto de 2º turno). No pano de fundo, o caso Master segue sem desfecho (Wagner muda de tom sobre a liderança, o PT vai medir o impacto, Folha/CNN Brasil), mas sem reprecificar a corrida contra o presidente. STF impeach estável a 3.60%."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 24.90% (↓0.15pp, vol USD 6.77M acumulado), recua mesmo no dia em que a Datafolha lhe traz o melhor 2º turno do recorte. A Datafolha 20/Jun deu 1T Flávio 31% (gap -10pp) e 2T 47% x 43% (gap -4pp), o mais competitivo entre as nacionais recentes, e a imprensa lê que ele 'estancou o prejuízo' (Folha). Mas a rejeição (48%) segue a maior do páreo e o mercado NÃO premiou o alívio: Flávio caiu e o gap reabriu a +26.60pp, reatando o recorde. No mercado, segue isolado na frente do 2º lugar do 1º turno (68.5%). A oficialização da candidatura segue prevista para o fim de julho em SP (Gazeta do Povo).",
+      "fortes": [
+        "🗳️ DATAFOLHA, O MELHOR 2º TURNO DO RECORTE: 2T Lula 47% x Flávio 43% (gap -4pp), mais apertado que a CNT/MDA (-12.5pp), a BTG/Nexus (-6pp) e a Futura/Apex (-5.2pp). No 1T, 31% mantém Flávio isolado como o nome da oposição, muito à frente da 3ª via (Caiado e Renan 3%). A Folha avalia que a eleição já tem 'cara de 2º turno' e que ele 'estancou o prejuízo' das semanas anteriores. PoderData/AYA 29/Mai havia sido o 1º Tier 1+2 a empatar Lula x Flávio no 2T (CNN Brasil).",
+        "📈 CASO MASTER RESPINGA NO GOVERNO: a operação da PF contra Jaques Wagner, líder do governo no Senado, joga parte do desgaste para o campo governista (Folha, CNN Brasil), o que sustenta a tentativa de Flávio de reequilibrar a narrativa. No mercado, segue isolado na frente do 2º lugar do 1º turno (68.5%) e o PL lidera o Senado por cadeiras (77.5%).",
+        "🏛️ CAPILARIDADE INSTITUCIONAL: o PL segue como a maior legenda do Congresso e prepara a oficialização de Flávio para o fim de julho, em ato em SP (Gazeta do Povo). É o ativo estrutural que o mantém isolado como nome único da oposição, mesmo com a 3ª via tentando se viabilizar pelos cenários sem Flávio."
+      ],
+      "fracos": [
+        "🚨 MERCADO NÃO PREMIOU O ALÍVIO: mesmo com a Datafolha trazendo o 2º turno mais competitivo do recorte, Flávio RECUOU a 24.90% (↓0.15pp) e o gap para Lula reabriu a +26.60pp, reatando o recorde do ciclo. A leitura é que o mercado precifica a dominância de Lula no topo bem acima do que a pesquisa mostra no 2º turno, e que a melhora marginal de Flávio nas urnas não bastou para mover a probabilidade de vitória.",
+        "🚨 REJEIÇÃO É O TETO: a Datafolha 20/Jun deu rejeição de 48% a Flávio, a maior do páreo (Lula 46%), confirmando a Nexus 15/Jun (52%). A Genial/Quaest 10/Jun mostrou perda de apoio entre evangélicos, mulheres, jovens e no Sudeste, com 12% dizendo que a relação com Vorcaro diminui a vontade de votar nele (G1). O custo eleitoral do vínculo com Vorcaro segue documentado nas urnas.",
+        "💣 RACHA NA OPOSIÇÃO: Zema negou proximidade com Flávio e reacendeu a briga (Estadão), depois de Caiado dizer que ele 'perdeu a chance' de vencer Lula (G1). A oficialização tardia (fim de julho, Gazeta do Povo) prolonga a indefinição, e a campanha ainda vive impasse com o nome do vice. No caso Master, a relatoria no STF segue com André Mendonça, que deve manter Vorcaro na PF (Folha)."
+      ],
+      "analise": "Em 21/Jun, persiste o paradoxo de Flávio: a Datafolha de ontem lhe deu o melhor 2º turno do recorte (47% x 43%, gap -4pp) e a imprensa falou em 'estancar o prejuízo' (Folha), mas o mercado foi na direção oposta, com Flávio recuando a 24.90% (↓0.15pp, vol USD 6.77M) e o gap para Lula reabrindo a +26.60pp, reatando o recorde do ciclo. A divergência é o sinal: a pesquisa mostra a corrida estreitando no 2º turno, enquanto o mercado crava a dominância de Lula no topo. A rejeição (48%, a maior do páreo) segue como teto, e o racha na direita persiste (Zema negou proximidade, Estadão). O respiro pelo caso Master, que agora respinga no governo (Wagner), não converteu em alta no mercado. Flávio mantém o 2º lugar do 1º turno no sub-mercado (68.5%) e o PL lidera o Senado por cadeiras (77.5%)."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 14.30% (↓0.05pp, vol USD 7.29M acumulado) no mercado de vencedor, e segue cravado como favorito ao 3º lugar do 1º turno (61.5% no sub-mercado). A Datafolha 20/Jun mediu Renan em 3% no 1T, empatado com Caiado e à frente de Zema e Aécio (2%) e Joaquim Barbosa (1%). A divergência mercado x pesquisa segue a mais larga do dashboard, em ~11.30pp (mercado 14.30% x 3% na Datafolha), levemente menor que ontem porque a Datafolha mede Renan um ponto acima da CNT/MDA (2%). O volume acumulado de USD 7.29M é o maior do mercado presidencial. A Times Brasil/CNBC resume o quadro: a terceira via não decola (Vinícius Torres Freire).",
+      "fortes": [
+        "🔥 POLYMARKET MANTÉM O SINAL: Renan sobe de leve no mercado de vencedor (14.30%, ↓0.05pp) e segue cravado como favorito ao 3º lugar do 1º turno (61.5% no sub-mercado). O mercado o vê como o terceiro nome do 1º turno, com o maior volume acumulado do presidencial (USD 7.29M), bem acima dos 3% que a Datafolha mede.",
+        "🧩 PARADOXO DA DIREITA: a Datafolha 20/Jun confirma um campo anti-Lula embolado e no piso (Caiado e Renan 3%, Zema e Aécio 2%), em que nenhum nome herda o voto que Flávio perde. Para Renan, é leitura de duplo sentido: limita a tração nas pesquisas, mas mantém aberta a disputa pelo posto de alternativa, que o sub-mercado de 3º lugar reforça (54%).",
+        "INFLAÇÃO 2026 no mercado segue indicando incerteza, com a banda 5.00-5.49% liderando a 31.4%, a 5.50-5.99% a 26.0% e a 6.00-6.49% a 19.0%: distribuição embolada, pano de fundo para o discurso fiscal da direita anti-establishment. STF impeach estável a 3.60% (vol baixo)."
+      ],
+      "fracos": [
+        "🚨 PESQUISAS NO PISO: a Datafolha 20/Jun mediu Renan em 3% no 1T, a CNT/MDA 16/Jun em 2% e a Genial/Quaest 10/Jun em 3%, sempre embolado com Caiado, Aécio e Zema e longe de Flávio na disputa pelo voto anti-Lula. A divergência mercado x pesquisa segue larga, em ~11.30pp (mercado 14.30% x 3%), a maior do dashboard. A Times Brasil/CNBC reforça que a terceira via não decola (Vinícius Torres Freire).",
+        "↔️ SINAL DE NICHO, NÃO DE VITÓRIA: o mercado precifica Renan cada vez mais como provável 3º colocado do 1º turno (61.5% no sub-mercado), mas sem converter isso em chance real de vencer a eleição (14.30% no mercado de vencedor). Capital de nicho, não de vitória, e agora com a Datafolha confirmando o patamar de 3% que sustenta a divergência.",
+        "Aprovação de Lula em recuperação (Nexus 15/Jun 48% x 47%, supera a desaprovação pela 1ª vez; Quaest 10/Jun 47% x 48%) reduz o oxigênio de candidaturas outsider. A entrada de Aécio Neves e Joaquim Barbosa na Datafolha (ambos no piso) fragmenta ainda mais o espaço da 3ª via que Renan disputa."
+      ],
+      "analise": "Em 21/Jun, domingo estável, a Datafolha de ontem mantém Renan a 3% no 1T, um ponto acima da CNT/MDA, o que estreitou de leve a divergência mercado x pesquisa para ~11.30pp (mercado 14.30% x 3%), ainda a mais larga do dashboard. No Polymarket, Renan subiu de leve no mercado de vencedor (14.30%, ↓0.05pp, vol USD 7.29M, o maior do presidencial) e segue cravado como favorito ao 3º lugar do 1º turno (61.5% no sub-mercado). A leitura é a mesma das últimas sessões: o mercado separa as apostas, precificando Renan como provável 3º colocado, mas sem chance real de vencer. O 'paradoxo da direita' segue dando o contexto, agora com a Datafolha confirmando um campo anti-Lula embolado e no piso (Caiado e Renan 3%, Zema e Aécio 2%, Joaquim Barbosa 1%). A Times Brasil/CNBC sintetiza: a terceira via não decola (Vinícius Torres Freire)."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: a 3ª via segue no piso, e a Datafolha 20/Jun confirma (Caiado 3%, Zema 2%, mais Aécio 2% e Joaquim Barbosa 1% estreando). No mercado, Caiado recua de leve a 2.00% (↓0.25pp, vol USD 4.29M); Haddad sobe a 2.10% (↓0.05pp, vol USD 5.84M); Zema fica estável a 1.40% (vol USD 3.79M). A Datafolha dá Lula 47% x Caiado 41% e Lula 48% x Zema 39% no 2º turno. Os cenários SEM Flávio seguem como o melhor argumento do grupo (Futura/Apex 16/Jun: Caiado 16.5%, Zema 13.3%). No cenário com Flávio, o 'paradoxo da direita' (G1) confirma que a 3ª via não herda o voto que ele perde.",
+      "subtitle": "21/Jun D+38: domingo estável, a Datafolha de ontem confirma a 3ª via no piso (Caiado 3%, Zema 2%, Aécio 2%, Joaquim Barbosa 1%). No mercado, Caiado 2.00% (↓0.25pp), Haddad 2.10% (↓0.05pp), Zema 1.40%, Camilo Santana 1.75%. A Datafolha dá Lula 47% x Caiado 41% e Lula 48% x Zema 39% no 2T. Sem Flávio, a Futura/Apex dá Caiado 16.5% e Zema 13.3%. Na disputa bipolarizada com Flávio, a 3ª via segue sem tração e a Times Brasil resume: não decola. O caso Wagner segue sem desfecho e Haddad disse que a PF está 'no papel dela de investigar' (Folha).",
+      "caiado": {
+        "label": "CAIADO (PSD) — Poly presidencial 2.00% (↓0.25pp, vol USD 4.29M) | Datafolha 20/Jun 1T 3%; 2T Lula 47% x Caiado 41%; sem Flávio a Futura/Apex dá 16.5% | disse que Flávio 'perdeu a chance' de vencer Lula (G1)",
+        "fortes": "Os cenários sem Flávio são o melhor argumento de Caiado: a Futura/Apex 16/Jun dá Caiado 16.5% num 1T sem Flávio, e o PoderData/AYA 29/Mai mediu Lula empatando tecnicamente com Caiado no 2T (CNN Brasil). A Datafolha 20/Jun deu 2T Lula 47% x Caiado 41% (gap -6pp), competitivo. No 1T, 3% o mantém à frente da 3ª via empatado com Renan. Lidera entre os bolsonaristas na Quaest 10/Jun (Jornal Opção).",
+        "fracos": "Caiado presidencial Polymarket a 2.00% (↓0.25pp, vol USD 4.29M), ainda no piso: o mercado precifica baixa a hipótese de Flávio sair da disputa. A Datafolha 20/Jun o manteve a 3% no 1T, no piso da 3ª via. O 'paradoxo da direita' (G1) explica o teto no cenário com Flávio, e a Times Brasil/CNBC reforça que a terceira via não decola. A estreia de Aécio na Datafolha disputa o mesmo nicho de centro-direita."
+      },
+      "haddad": {
+        "label": "HADDAD (PT) — Poly presidencial 2.10% (↓0.05pp, vol USD 5.84M) | nome do PT depois de Lula, à frente de Camilo Santana (1.75%) | sobre o caso Wagner: a PF está 'no papel dela de investigar' (Folha)",
+        "fortes": "Haddad sobe a 2.10% (↓0.05pp, vol USD 5.84M), seguindo como nome de reserva do PT no mercado depois de Lula e à frente de Camilo Santana (1.75%). A aprovação do governo segue acima da desaprovação (BTG/Nexus 15/Jun 48% x 47%, supera pela 1ª vez no ciclo), o que reforça a gestão econômica em que Haddad é peça central. No caso Wagner, disse que a PF está 'no papel dela de investigar' (Folha).",
+        "fracos": "O mercado não precifica candidatura presidencial de Haddad, que fica a 2.10% como nome do PT depois de Lula. A operação da PF contra Jaques Wagner, líder do governo no Senado, pressiona a articulação política do PT no Congresso, área sensível para a agenda econômica de Haddad. Sem diálogo fluido, Alcolumbre trava a agenda do governo no Senado (BBC). A Datafolha não testa Haddad no presidencial nacional (foco SP)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo) — Poly presidencial 1.40% (estável, vol USD 3.79M) | Datafolha 20/Jun 1T 2%; 2T Lula 48% x Zema 39%; sem Flávio a Futura/Apex dá 13.3% | negou proximidade com Flávio e reacendeu a briga na direita (Estadão)",
+        "fortes": "O cenário sem Flávio é o melhor argumento de Zema: a Futura/Apex 16/Jun dá Zema 13.3% num 1T sem Flávio, atrás só de Caiado. No 2T, o PoderData/AYA 29/Mai mediu Lula empatando tecnicamente com Zema (CNN Brasil). A INFLAÇÃO 2026, com a banda 5.00-5.49% liderando a 31.4% e cauda alta persistente, dá lastro ao discurso fiscal do Novo.",
+        "fracos": "Zema fica estável a 1.40% (vol USD 3.79M) e segue no piso. A Datafolha 20/Jun o mediu a 2% no 1T e deu 2T Lula 48% x Zema 39% (gap -9pp), o mais largo da 3ª via testada. Negou proximidade com Flávio e reacendeu a briga na direita (Estadão), sinal do atrito do Novo com o bolsonarismo justamente quando o campo tentaria se unificar. O partido se equilibra entre a candidatura dele e alianças com o PL nos estados."
+      },
+      "analise": "Em 21/Jun, domingo estável, a Datafolha de ontem confirma a 3ª via no piso: Caiado 3%, Zema 2%, com Aécio Neves (2%) e Joaquim Barbosa (1%) também no piso. No mercado, Caiado recuou de leve a 2.00% (↓0.25pp), Haddad subiu a 2.10% (↓0.05pp) e Zema ficou estável a 1.40%, à frente de Camilo Santana (1.75%). A Datafolha deu 2T Lula 47% x Caiado 41% (gap -6pp) e Lula 48% x Zema 39% (gap -9pp). Os cenários SEM Flávio seguem como o melhor argumento do grupo (Futura/Apex: Caiado 16.5%, Zema 13.3%), mas no cenário com Flávio o 'paradoxo da direita' (G1) continua valendo e a Times Brasil/CNBC resume: a terceira via não decola. Nos eventos do dia, Haddad disse que a PF está 'no papel dela de investigar' no caso Wagner (Folha) e Zema negou proximidade com Flávio (Estadão). A estreia de Aécio e Joaquim Barbosa fragmenta ainda mais o espaço da 3ª via."
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Datafolha 20/Jun (n=2.004, campo 17-19/Jun, BR-09956/2026, margem 2pp) 1T Lula 41% x Flávio 31% (gap +10pp); 2T 47% x 43% (gap +4pp); 47% x Caiado 41%; 48% x Zema 39%; rejeição Lula 46% x Flávio 48% | CNT/MDA 16/Jun (n=2.002, BR-04256/2026) 1T 41.8% x 28.2% (gap +13.6pp); 2T 49.3% x 36.8% (gap +12.5pp) | Futura/Apex 16/Jun (n=2.000, BR-01461/2026) 1T 41.6% x 34.1%; 2T 48.1% x 42.9% (gap +5.2pp) | BTG/Nexus 15/Jun (n=2.017, BR-06645/2026) 1T 42% x 33%; 2T 49% x 43% (gap +6pp); aprovação 48% x 47% | Genial/Quaest 10/Jun 1T 39% x 29%; 2T 44% x 38% | RTBD 01/Jun 2T 45 x 40 | JOTA Agregador 'favoritismo de Lula no platô do ciclo'",
+      "m": "51.50% (vol USD 6.57M acumulado)",
+      "t": "Fica estável a 51.50% (vol USD 6.57M) e o gap Lula x Flávio reabre a +26.60pp, reatando o recorde de 17/Jun, justamente no dia em que a Datafolha dá a Flávio o 2º turno mais competitivo do recorte (47% x 43%). O mercado precifica a dominância de Lula no topo bem acima do que a pesquisa mede no 2º turno. Sustentação: quatro nacionais de 15-20/Jun com Lula à frente. O caso Master segue sem desfecho (Wagner muda de tom, Folha), mas o mercado manteve Lula no topo.",
+      "s": "Datafolha 20/Jun n=2.004 BR-09956/2026 (G1, Folha, CartaCapital, Brasil de Fato). CNT/MDA 16/Jun n=2.002 BR-04256/2026 (Estadão). Futura/Apex 16/Jun (Poder360). BTG/Nexus 15/Jun (JOTA). Caso Master segue sem desfecho (Folha, CNN Brasil). Polymarket ao vivo 20/Jun.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio (PL)",
+      "p": "Datafolha 20/Jun 1T 31% (gap -10pp); 2T 43% (perde 47% x 43%, gap -4pp, o mais competitivo do recorte); rejeição 48% (a maior do páreo); 'estancou o prejuízo', eleição com 'cara de 2º turno' (Folha) | CNT/MDA 16/Jun 1T 28.2%; 2T 36.8% (perde 49.3% x 36.8%), o pior 2º turno do recorte | Futura/Apex 16/Jun 1T 34.1%; 2T 42.9% (gap -5.2pp) | BTG/Nexus 15/Jun 2T 43% (perde 49% x 43%); rejeição 52% | Genial/Quaest 10/Jun 1T 29%; 2T 38%; perde apoio entre evangélicos, mulheres, jovens | Gerp 10/Jun 1T 35% x Lula 34% (contraponto)",
+      "m": "24.90% (vol USD 6.77M acumulado)",
+      "t": "Recua a 24.90% (↓0.15pp, vol USD 6.77M) mesmo no dia em que a Datafolha lhe traz o 2º turno mais competitivo do recorte (gap -4pp). O gap para Lula reabriu a +26.60pp, reatando o recorde. Eis a divergência do dia: a pesquisa mostra Flávio estancando o prejuízo, o mercado NÃO premiou o alívio. A rejeição (48%) segue a maior do páreo. Mantém o 2º lugar do 1º turno no sub-mercado (68.5%).",
+      "s": "Datafolha 20/Jun 2T 47% x 43%; rejeição 48% (G1, Folha). Flávio 'estancou o prejuízo' (Folha). Campanha pediu cautela ao caso Wagner (Folha). Zema nega proximidade com Flávio (Estadão). Polymarket ao vivo 20/Jun.",
+      "pc": "#0F52BA",
+      "mc": ""
+    },
+    {
+      "n": "Renan (Missão)",
+      "p": "Datafolha 20/Jun 1T Renan 3% (empatado com Caiado, à frente de Zema/Aécio 2% e Joaquim Barbosa 1%); divergência mercado 14.30% x pesquisa 3% (~11.30pp), a mais larga do dashboard | CNT/MDA 16/Jun 1T 2% | Genial/Quaest 10/Jun 1T 3% | Meio/Ideia 28/Mai 1T 2.1%",
+      "m": "14.30% (vol USD 7.29M acumulado)",
+      "t": "Sobe de leve no vencedor a 14.30% (↓0.05pp, vol USD 7.29M) e segue cravado como favorito ao 3º lugar do 1º turno (61.5% no sub-mercado). A Datafolha mediu Renan a 3% no 1T, um ponto acima da CNT/MDA, estreitando de leve a divergência para ~11.30pp, ainda a maior do dashboard. Sinal dividido: o mercado o crava como provável 3º colocado, mas sem chance real de vencer. A Times Brasil resume: a terceira via não decola.",
+      "s": "Datafolha 20/Jun 1T 3% (G1). CNT/MDA 16/Jun 1T 2% (Estadão). Terceira via não decola, Times Brasil/CNBC (Vinícius Torres Freire). Polymarket ao vivo 20/Jun.",
+      "pc": "#8B5CF6",
+      "mc": ""
+    },
+    {
+      "n": "Haddad (PT)",
+      "p": "Datafolha 20/Jun não lista Haddad no presidencial (foco SP) | Genial/Quaest 10/Jun não lista | Mantida Vox SP Tarcísio 38% x Haddad 26%",
+      "m": "2.10% (vol USD 5.84M acumulado)",
+      "t": "Sobe de leve a 2.10% (↓0.05pp, vol USD 5.84M), à frente de Camilo Santana (1.75%) como nome do PT depois de Lula. A Datafolha não testa Haddad no presidencial nacional (foco SP). No dia, disse que a PF está 'no papel dela de investigar' no caso Wagner (Folha). O mercado não precifica candidatura presidencial dele.",
+      "s": "Datafolha 20/Jun (sem Haddad presidencial). Haddad sobre o caso Wagner (Folha).",
+      "pc": "#7c3aed",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Datafolha 20/Jun 1T Caiado 3%; 2T Lula 47% x Caiado 41% (gap -6pp) | CNT/MDA 16/Jun 1T 4% | Futura/Apex 16/Jun cenário SEM Flávio 1T 16.5% (lidera a 3ª via) | Genial/Quaest 10/Jun 1T 3%, lidera entre os bolsonaristas | PoderData/AYA 29/Mai 2T empata Lula",
+      "m": "2.00% (vol USD 4.29M acumulado)",
+      "t": "Recua de leve a 2.00% (↓0.25pp, vol USD 4.29M), ainda no piso. A Datafolha deu Caiado 3% no 1T e 2T Lula 47% x Caiado 41% (gap -6pp, competitivo). A Futura/Apex dá 16.5% num cenário sem Flávio: é o nome posicionado para herdar o voto da direita se Flávio não for. No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto.",
+      "s": "Datafolha 20/Jun 1T 3%; 2T 47 x 41 (G1). Futura/Apex sem Flávio 16.5% (Poder360). Polymarket ao vivo 20/Jun.",
+      "pc": "#6B7280",
+      "mc": ""
+    },
+    {
+      "n": "Zema (Novo)",
+      "p": "Datafolha 20/Jun 1T Zema 2%; 2T Lula 48% x Zema 39% (gap -9pp) | CNT/MDA 16/Jun 1T 2.8% | Futura/Apex 16/Jun cenário SEM Flávio 1T 13.3% | Genial/Quaest 10/Jun 1T 2% | PoderData/AYA 29/Mai 2T empata Lula",
+      "m": "1.40% (vol USD 3.79M acumulado)",
+      "t": "Fica estável a 1.40% (vol USD 3.79M), segue no piso da 3ª via. A Datafolha deu Zema 2% no 1T e 2T Lula 48% x Zema 39% (gap -9pp, o mais largo da 3ª via testada). No dia, negou proximidade com Flávio e reacendeu a briga na direita (Estadão). Sem Flávio, a Futura/Apex dá 13.3%, fôlego latente.",
+      "s": "Datafolha 20/Jun 1T 2%; 2T 48 x 39 (G1). Futura/Apex sem Flávio 13.3% (Poder360). Zema nega proximidade com Flávio (Estadão). Polymarket ao vivo 20/Jun.",
+      "pc": "#F59E0B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O 21/Jun foi um domingo estável, sem pesquisa nacional nova no TSE e com o mercado praticamente parado, e o cruzamento confirma a divergência da véspera: a Datafolha de ontem e o Polymarket seguem apontando direções diferentes sobre Flávio. A Datafolha (n=2.004, campo 17-19/Jun, BR-09956/2026) deu 1T Lula 41% x Flávio 31% e 2T 47% x 43% (gap +4pp), o 2º turno mais competitivo entre as nacionais recentes, levando a imprensa a falar em eleição com 'cara de 2º turno' e em Flávio 'estancando o prejuízo' (Folha). No Polymarket, Lula seguiu estável a 51.50% (vol USD 6.57M) e Flávio recuou de leve a 24.90% (↓0.15pp), de modo que o gap abriu a +26.60pp, perto do recorde do ciclo. A leitura é que o mercado precifica a dominância de Lula no topo da corrida bem acima do que a Datafolha mede no 2º turno, com os dois medindo coisas diferentes (probabilidade de vencer x voto). Renan subiu de leve no mercado de vencedor (14.30%, ↓0.05pp) e segue cravado como favorito ao 3º lugar do 1º turno (61.5% no sub-mercado); a Datafolha o mediu a 3% no 1T, estreitando de leve a divergência para ~11.30pp, ainda a maior do dashboard. A 3ª via segue no piso, com Aécio Neves (2%) e Joaquim Barbosa (1%) estreando também no piso. No pano de fundo político, o caso Master segue sem desfecho: Wagner mudou de tom sobre deixar a liderança e o PT vai medir o impacto da operação (Folha, CNN Brasil); Alckmin disse que Lula conduzirá bem o caso (Estadão). STF impeach estável a 3.60%. Nos sub-mercados, Flávio segue na frente do 2º lugar do 1º turno (68.5%), Renan no 3º lugar (61.5%) e o PL lidera o Senado por cadeiras (77.5%). O volume total negociado é de acima de USD 100M no mercado presidencial."
+}
