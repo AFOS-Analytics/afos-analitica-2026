@@ -86,7 +86,7 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs ${compact ? 'border-t border-white/20 pt-6' : ''}`}>
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
-            <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
+            {!compact && <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>}
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{nav.global}</a>
             <a href={`/${locale}/latam`} className="block text-white/60 hover:text-white py-0.5">{nav.latam}</a>
             <a href={`/${locale}/eu`} className="block text-white/60 hover:text-white py-0.5">{nav.eu}</a>
