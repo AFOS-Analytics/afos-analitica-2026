@@ -79,7 +79,7 @@ export function Footer() {
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs md:text-center">
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
@@ -108,9 +108,9 @@ export function Footer() {
         </div>
 
         {/* Redes Sociais */}
-        <div className="border-t border-white/20 pt-4 pb-4 mb-4">
+        <div className="border-t border-white/20 pt-4 pb-4 mb-4 md:text-center">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 md:justify-center">
             {SOCIALS.map(({ name, url, icon }) => (
               <a
                 key={name}
