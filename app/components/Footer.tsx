@@ -79,7 +79,7 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
   const social = SOCIAL_LABELS[locale] || SOCIAL_LABELS['en'];
 
   return (
-    <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
+    <footer className={`bg-primary text-white py-6 px-4 sm:px-8 ${compact ? 'border-t border-white/15' : ''}`} role="contentinfo">
       <div className="max-w-6xl mx-auto">
         {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs">
