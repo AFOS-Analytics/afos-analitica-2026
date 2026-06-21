@@ -66,10 +66,7 @@ const SOCIALS: Array<{ name: string; url: string; icon: SocialIconKey }> = [
   { name: 'Harvard Dataverse', url: 'https://dataverse.harvard.edu/dataverse/afos-analytics', icon: 'dataverse' },
 ]
 
-// compact: usado na landing — esconde Redes Sociais, Fale Conosco, a pílula Harvard
-// e o "Voltar ao topo" (a landing já tem seus próprios sociais/credits no topo do rodapé).
-// Mantém as colunas de navegação (link-juice) + descrição/disclaimer. Default = footer completo.
-export function Footer({ compact = false }: { compact?: boolean } = {}) {
+export function Footer() {
   const { t } = useTranslation();
   const locale = useLocale();
   const nav = NAV_LABELS[locale] || NAV_LABELS['en'];
@@ -82,20 +79,19 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
     <footer className="bg-primary text-white py-6 px-4 sm:px-8" role="contentinfo">
       <div className="max-w-6xl mx-auto">
         {/* BLOCO 1 + 2 + 3, Navegação + Open Source + Legal */}
-        {/* compact (home): divisória no topo das colunas, MESMO padrão das demais (border-white/20, largura do conteúdo) */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs ${compact ? 'border-t border-white/20 pt-6' : ''}`}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 text-xs">
           <div>
             <p className="font-semibold text-white/90 mb-2">{nav.title}</p>
             <a href={`/${locale}/dashboard`} className="block text-white/60 hover:text-white py-0.5">{nav.dashboard}</a>
             <a href={`/${locale}/global`} className="block text-white/60 hover:text-white py-0.5">{nav.global}</a>
             <a href={`/${locale}/latam`} className="block text-white/60 hover:text-white py-0.5">{nav.latam}</a>
             <a href={`/${locale}/eu`} className="block text-white/60 hover:text-white py-0.5">{nav.eu}</a>
-            {!compact && <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>}
+            <a href={`/${locale}/how-it-works`} className="block text-white/60 hover:text-white py-0.5">{nav.howItWorks}</a>
           </div>
           <div>
             <p className="font-semibold text-white/90 mb-2">{oss.title}</p>
-            {!compact && <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.license}</a>}
-            {!compact && <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>}
+            <a href={`${GITHUB_URL}/blob/main/LICENSE`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.license}</a>
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">⭐ {oss.github}</a>
             <a href={`${GITHUB_URL}/blob/main/SECURITY.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.security}</a>
             <a href={`${GITHUB_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.contributing}</a>
             <a href={`${GITHUB_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white py-0.5">{oss.conduct}</a>
@@ -111,8 +107,7 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
           </div>
         </div>
 
-        {/* Redes Sociais (escondido na landing compacta) */}
-        {!compact && (
+        {/* Redes Sociais */}
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
           <div className="flex items-center gap-5">
@@ -133,10 +128,8 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
             ))}
           </div>
         </div>
-        )}
 
-        {/* BLOCO 3, Fale Conosco (escondido na landing compacta) */}
-        {!compact && (
+        {/* BLOCO 3, Fale Conosco */}
         <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{labels.title}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
@@ -151,13 +144,11 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
             ))}
           </div>
         </div>
-        )}
 
         {/* Rodapé, descrição + disclaimer + voltar ao topo */}
         <div className="text-center text-xs border-t border-white/20 pt-4">
           <p>{t('footer.description')}</p>
           <p className="mt-1 text-white/70">{t('footer.disclaimer')} <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="underline hover:text-white" aria-label={t('footer.polymarketLink')}>{t('footer.polymarket')}</a> {t('footer.notAffiliated')}</p>
-          {!compact && (
           <a
             href="https://dataverse.harvard.edu/dataverse/afos-analytics"
             target="_blank"
@@ -169,8 +160,6 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true"><path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" /></svg>
             <span className="text-[11px]"><span className="font-semibold text-white/90">Harvard Dataverse</span> · AFOS Analytics collection</span>
           </a>
-          )}
-          {!compact && (
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-white/30 text-white/80 hover:text-white hover:bg-white/10 transition-all text-xs font-medium"
@@ -181,7 +170,6 @@ export function Footer({ compact = false }: { compact?: boolean } = {}) {
             </svg>
             {t('footer.backToTop')}
           </button>
-          )}
         </div>
       </div>
     </footer>
