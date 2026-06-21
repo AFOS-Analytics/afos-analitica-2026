@@ -134,10 +134,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Redes Sociais */}
-        <div className="border-t border-white/20 pt-4 pb-4 mb-4 md:text-center">
+        {/* Redes Sociais (alinhada à esquerda, igual à seção Fale Conosco) */}
+        <div className="border-t border-white/20 pt-4 pb-4 mb-4">
           <p className="text-[11px] uppercase tracking-widest text-white/50 mb-3 font-semibold">{social.title}</p>
-          <div className="flex items-center gap-5 md:justify-center">
+          <div className="flex items-center gap-5">
             {SOCIALS.map(({ name, url, icon }) => (
               <a
                 key={name}
