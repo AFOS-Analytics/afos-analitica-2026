@@ -110,9 +110,12 @@ export function breadcrumbSchema(locale: Locale, items: { name: string; path: st
   };
 }
 
-/** FAQPage, para GEO (mecanismos generativos) */
-export function faqSchema(locale: Locale) {
-  const faqs: Record<Locale, { q: string; a: string }[]> = {
+/**
+ * Fonte ÚNICA das perguntas/respostas do FAQ. Consumida pelo faqSchema (JSON-LD)
+ * E pelo bloco FAQ visível em /how-it-works — paridade obrigatória (política
+ * FAQPage do Google exige que o texto do schema apareça visível na página).
+ */
+export const FAQ_DATA: Record<Locale, { q: string; a: string }[]> = {
     'pt-BR': [
       { q: 'O que é o AFOS Analytics?', a: 'AFOS Analytics é uma plataforma global de inteligência eleitoral que cruza mercados de previsão com dinheiro real (Polymarket), pesquisas eleitorais de +17 institutos, notícias ao vivo e análises estratégicas em tempo real.' },
       { q: 'O AFOS Analytics é gratuito?', a: 'Sim. O acesso à plataforma é completamente gratuito, sem necessidade de cadastro. O projeto é open source.' },
@@ -134,12 +137,14 @@ export function faqSchema(locale: Locale) {
       { q: '¿Qué elecciones monitorea AFOS?', a: 'AFOS monitorea elecciones en 15 países, incluyendo Brasil 2026, EE.UU., Francia, Alemania, Reino Unido, Canadá, Australia, Corea del Sur, Colombia, Chile, entre otros.' },
       { q: '¿Cómo se actualizan los datos?', a: 'Los datos de mercados de predicción se actualizan cada 30 minutos. Las noticias se actualizan cada 30 minutos. Los análisis se actualizan manualmente con cruce de fuentes.' },
     ],
-  };
+};
 
+/** FAQPage JSON-LD, para GEO (mecanismos generativos). Espelha FAQ_DATA. */
+export function faqSchema(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: (faqs[locale] || faqs['pt-BR']).map(faq => ({
+    mainEntity: (FAQ_DATA[locale] || FAQ_DATA['pt-BR']).map(faq => ({
       '@type': 'Question',
       name: faq.q,
       acceptedAnswer: { '@type': 'Answer', text: faq.a },
