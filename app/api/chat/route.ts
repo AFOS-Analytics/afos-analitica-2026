@@ -43,6 +43,13 @@ function clientIp(req: Request): string {
   return req.headers.get('x-real-ip')?.trim() || 'unknown'
 }
 
+// Garantia determinística anti-IA: remove travessões (em-dash U+2014 e en-dash
+// U+2013) do texto visível, trocando por vírgula. Hífen comum (-) é preservado.
+// Defesa em profundidade — o system prompt já proíbe travessão, isto cobre o que escapar.
+function stripDashes(s: string): string {
+  return s.replace(/\s*[—–]\s*/g, ', ')
+}
+
 export async function POST(req: Request): Promise<Response> {
   if (!isConfigured()) {
     return Response.json({ error: 'chat_not_configured' }, { status: 503 })
@@ -112,7 +119,7 @@ export async function POST(req: Request): Promise<Response> {
           for await (const ev of streamCompletion(messages, TOOL_SPECS, req.signal)) {
             if (ev.type === 'text') {
               assistantText += ev.text
-              send({ type: 'delta', text: ev.text })
+              send({ type: 'delta', text: stripDashes(ev.text) })
             } else {
               toolCalls = ev.toolCalls
             }
