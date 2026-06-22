@@ -16,6 +16,10 @@
     {
       "path": "/api/cron/purge-visitor-state",
       "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/purge-chat-logs",
+      "schedule": "0 5 * * *"
     }
   ]
 }
