@@ -99,7 +99,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Colômbia', en: 'Colombia', es: 'Colombia' },
     iso3: 'COL', flag: '🇨🇴', region: 'Americas',
     elections: [
-      { slug: 'colombia-2026', year: 2026, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2026-05-31', status: 'active', polymarketSlug: '2026-colombian-presidential-election' },
+      { slug: 'colombia-2026', year: 2026, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2026-05-31', status: 'completed', polymarketSlug: '2026-colombian-presidential-election' },
     ],
   },
   {

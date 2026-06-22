@@ -5,7 +5,21 @@
     "first_round": "2026-05-31",
     "runoff": "2026-06-21",
     "matchup": "Abelardo de la Espriella × Iván Cepeda",
-    "status": "active"
+    "status": "completed"
+  },
+  "result": {
+    "round": "runoff",
+    "date": "2026-06-21",
+    "winner": "Abelardo de la Espriella",
+    "espriella_pct": 49.66,
+    "cepeda_pct": 48.7,
+    "margin_pp": 0.96,
+    "counted": "~100%",
+    "note": {
+      "pt-BR": "Contagem quase final; escrutínio oficial do CNE é a formalidade. Posse em 7 de agosto.",
+      "en": "Near-final count; the official CNE escrutinio is the formality. Inauguration on August 7.",
+      "es": "Conteo casi final; el escrutinio oficial del CNE es la formalidad. Toma de posesión el 7 de agosto."
+    }
   },
   "polls_count": 29,
   "market_candidates": 19,
@@ -14,9 +28,9 @@
     "date": "2026-06-11"
   },
   "headline": {
-    "pt-BR": "1º turno (31/mai): De la Espriella 43,7% × Cepeda 40,9%, sem maioria. No 2º turno (21/jun), as pesquisas dão De la Espriella à frente por ~8pp (AtlasIntel 9-11/jun: 50,9% × 43,1%; CNC 14/jun: 48,6% × 44,7%), enquanto o mercado precifica a vitória dele como quase certa (88,5% × 12,5%). A divergência do runoff é grande: o mercado lê o lead de ~8pp como desfecho praticamente selado, bem acima da margem da pesquisa. Resultado real só em 21/jun.",
-    "en": "First round (May 31): De la Espriella 43.7% × Cepeda 40.9%, no majority. In the June 21 runoff, polls put De la Espriella ahead by ~8pp (AtlasIntel Jun 9-11: 50.9% × 43.1%; CNC Jun 14: 48.6% × 44.7%), while the market prices his win as near-certain (88.5% × 12.5%). The runoff divergence is wide: the market reads the ~8pp lead as an all-but-sealed outcome, far above the poll margin. Real result only on June 21.",
-    "es": "Primera vuelta (31 may): De la Espriella 43,7% × Cepeda 40,9%, sin mayoría. En el balotaje del 21 jun, las encuestas dan a De la Espriella adelante por ~8pp (AtlasIntel 9-11 jun: 50,9% × 43,1%; CNC 14 jun: 48,6% × 44,7%), mientras el mercado valora su victoria como casi segura (88,5% × 12,5%). La divergencia del balotaje es amplia: el mercado lee la ventaja de ~8pp como un desenlace prácticamente sellado, muy por encima del margen de la encuesta. Resultado real solo el 21 jun."
+    "pt-BR": "1º turno (31/mai): De la Espriella 43,7% × Cepeda 40,9%, sem maioria, indo a 2º turno. Resultado (2º turno, 21/jun): De la Espriella venceu com 49,66% × 48,70% de Cepeda, margem de ~0,96pp (~250 mil votos), com quase 100% apurado. O cruzamento: no fechamento (14-15/jun) o mercado precificava a vitória de De la Espriella como quase certa (88,5% × 12,5%) e as pesquisas davam ~8pp de vantagem (AtlasIntel 50,9% × 43,1%; CNC 48,6% × 44,7%). Os dois acertaram o vencedor, mas erraram a folga: o desfecho foi um quase-empate de ~1pp, bem abaixo da margem das pesquisas e muito distante da quase-certeza do mercado. Leitura AFOS: direção correta, confiança superestimada, o mercado de forma mais acentuada que a pesquisa.",
+    "en": "First round (May 31): De la Espriella 43.7% × Cepeda 40.9%, no majority, advancing to a runoff. Result (runoff, June 21): De la Espriella won 49.66% × 48.70% over Cepeda, a ~0.96pp margin (~250k votes), with nearly 100% counted. The cross-reference: at the close (June 14-15) the market priced De la Espriella's win as near-certain (88.5% × 12.5%) and polls gave him a ~8pp lead (AtlasIntel 50.9% × 43.1%; CNC 48.6% × 44.7%). Both called the winner correctly but missed the margin: the finish was a ~1pp near-tie, well below the poll lead and far from the market's near-certainty. AFOS read: right direction, overstated confidence, the market more so than the polls.",
+    "es": "Primera vuelta (31 may): De la Espriella 43,7% × Cepeda 40,9%, sin mayoría, pasando a balotaje. Resultado (balotaje, 21 jun): De la Espriella ganó 49,66% × 48,70% a Cepeda, margen de ~0,96pp (~250 mil votos), con casi 100% escrutado. El cruce: al cierre (14-15 jun) el mercado valoraba la victoria de De la Espriella como casi segura (88,5% × 12,5%) y las encuestas le daban ~8pp de ventaja (AtlasIntel 50,9% × 43,1%; CNC 48,6% × 44,7%). Ambos acertaron el ganador pero erraron el margen: el desenlace fue un casi empate de ~1pp, muy por debajo de la ventaja de las encuestas y lejos de la casi certeza del mercado. Lectura AFOS: dirección correcta, confianza sobreestimada, el mercado más que la encuesta."
   },
   "rows": [
     {
