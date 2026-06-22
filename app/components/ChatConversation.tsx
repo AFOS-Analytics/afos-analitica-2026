@@ -115,6 +115,9 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
   const [activeTool, setActiveTool] = useState<string | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const abortRef = useRef<AbortController | null>(null)
+  // ID efêmero de sessão: só agrupa os turnos da conversa no arquivo anônimo do servidor.
+  // Não é cookie, não persiste entre recargas, não identifica o usuário.
+  const sessionIdRef = useRef<string>('')
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
@@ -139,10 +142,16 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
       setMessages((m) => [...m, { role: 'assistant', content: '' }])
 
       try {
+        if (!sessionIdRef.current) {
+          sessionIdRef.current =
+            typeof crypto !== 'undefined' && 'randomUUID' in crypto
+              ? crypto.randomUUID()
+              : `s-${Date.now()}-${Math.random().toString(36).slice(2)}`
+        }
         const res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: nextMessages, locale }),
+          body: JSON.stringify({ messages: nextMessages, locale, sessionId: sessionIdRef.current }),
           signal: controller.signal,
         })
 

@@ -423,3 +423,40 @@ model ModelOutput {
   @@map("model_outputs")
   @@schema("ai")
 }
+
+// ═══════════════════════════════════════════════════════════
+// AI — Arquivo de conversas do chatbot (ANÔNIMO por design)
+// Sem IP, sem user-agent, sem fingerprint, sem vínculo de identidade.
+// sessionId = UUID efêmero do cliente, só agrupa a conversa. Retenção 12 meses.
+// ═══════════════════════════════════════════════════════════
+
+model ChatConversation {
+  id            String        @id @default(uuid()) @db.Uuid
+  sessionId     String        @map("session_id")
+  locale        String        @default("pt-BR")
+  messageCount  Int           @default(0) @map("message_count")
+  startedAt     DateTime      @default(now()) @map("started_at") @db.Timestamptz(6)
+  lastMessageAt DateTime      @default(now()) @map("last_message_at") @db.Timestamptz(6)
+  messages      ChatMessage[]
+
+  @@index([sessionId])
+  @@index([startedAt])
+  @@map("chat_conversations")
+  @@schema("ai")
+}
+
+model ChatMessage {
+  id             String           @id @default(uuid()) @db.Uuid
+  conversationId String           @map("conversation_id") @db.Uuid
+  conversation   ChatConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  role           String
+  content        String
+  tools          Json?
+  sequence       Int
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamptz(6)
+
+  @@index([conversationId])
+  @@index([createdAt])
+  @@map("chat_messages")
+  @@schema("ai")
+}

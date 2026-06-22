@@ -23,6 +23,7 @@ import { detectInjection } from '../../../lib/ai/guardrails'
 import { buildSystemPrompt } from '../../../lib/ai/agent-prompt'
 import { TOOL_SPECS, executeTool, type ToolContext } from '../../../lib/ai/agent-tools'
 import { streamCompletion, isConfigured, type ChatMessage } from '../../../lib/ai/openrouter'
+import { logChatTurn } from '../../../lib/ai/chat-log'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -62,7 +63,7 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   // ─── Validação do payload ─────────────────────────────────────────
-  let body: { messages?: unknown; locale?: unknown }
+  let body: { messages?: unknown; locale?: unknown; sessionId?: unknown }
   try {
     body = await req.json()
   } catch {
@@ -70,6 +71,8 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   const locale: Locale = typeof body.locale === 'string' && isValidLocale(body.locale) ? body.locale : 'pt-BR'
+  // sessionId: UUID efêmero do cliente, só agrupa a conversa no arquivo anônimo (NÃO identifica pessoa).
+  const sessionId = typeof body.sessionId === 'string' ? body.sessionId : ''
 
   if (!Array.isArray(body.messages) || body.messages.length === 0) {
     return Response.json({ error: 'messages_required' }, { status: 400 })
@@ -106,6 +109,8 @@ export async function POST(req: Request): Promise<Response> {
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       let closed = false
+      let finalAnswer = ''
+      const toolsUsed: string[] = []
       const send = (obj: unknown) => {
         if (closed) return
         controller.enqueue(encoder.encode(`data: ${JSON.stringify(obj)}\n\n`))
@@ -127,12 +132,14 @@ export async function POST(req: Request): Promise<Response> {
 
           // Sem ferramentas → resposta final.
           if (toolCalls.length === 0) {
+            finalAnswer = assistantText
             send({ type: 'done' })
             break
           }
 
           // Última volta e ainda quer ferramenta: encerra com o que tiver.
           if (round === MAX_TOOL_ROUNDS - 1) {
+            finalAnswer = assistantText
             if (!assistantText) {
               send({ type: 'delta', text: locale === 'en'
                 ? 'I gathered the data but hit the tool-call limit. Please rephrase or ask a narrower question.'
@@ -147,6 +154,7 @@ export async function POST(req: Request): Promise<Response> {
           // Registra a fala do assistente (com os tool_calls) e executa cada ferramenta.
           messages.push({ role: 'assistant', content: assistantText || null, tool_calls: toolCalls })
           for (const tc of toolCalls) {
+            toolsUsed.push(tc.function.name)
             send({ type: 'tool', name: tc.function.name })
             let result: unknown
             try {
@@ -168,6 +176,11 @@ export async function POST(req: Request): Promise<Response> {
         const msg = err instanceof Error ? err.message : 'unknown_error'
         send({ type: 'error', message: msg.startsWith('openrouter') ? 'O serviço de IA está indisponível no momento.' : 'Ocorreu um erro ao processar sua mensagem.' })
       } finally {
+        // Arquivo ANÔNIMO da conversa (fail-open). Awaited antes de fechar para
+        // garantir a escrita no runtime serverless; não bloqueia o que o usuário já viu.
+        if (sessionId) {
+          await logChatTurn({ sessionId, locale, userText: lastUser.content, assistantText: finalAnswer, tools: toolsUsed })
+        }
         closed = true
         controller.close()
       }
