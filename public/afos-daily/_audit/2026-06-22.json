@@ -1,0 +1,42 @@
+{
+  "date": "2026-06-22",
+  "factCheckGate": {
+    "candidates": [
+      {
+        "evento": "Lula deve recomendar a saída de Jaques Wagner da liderança do governo no Senado após operação da PF no caso Master",
+        "verificacao1": "Wagner aparece em 19/Jun, 20/Jun, 21/Jun (41 menções); Master em 20/Jun, 21/Jun (33 menções) => continuidade",
+        "verificacao2": "Folha (www1.folha.uol.com.br/poder/2026/06/jaques-wagner-resiste-em-se-afastar-da-lideranca...), data=2026-06-22, tipo=análise/desdobramento (verbo 'deve recomendar' = esperado, não consumado)",
+        "segundaFonte": "CartaCapital — PT já articula a sucessão de Wagner na liderança (independente)",
+        "decisao": "incorporar como desdobramento/continuidade, NÃO como divisor de águas"
+      },
+      {
+        "evento": "Pesquisa Ipsos-Ipec (avaliação/confiança) publicada 22/Jun",
+        "verificacao1": "publicação de pesquisa nova, não recobrança",
+        "verificacao2": "G1 (g1.globo.com/.../ipsos-ipec-avaliacao-governo-lula-junho.ghtml) + O Globo (oglobo.globo.com/.../ipsos-ipec-56percent...), data=2026-06-22, tipo=evento (divulgação de pesquisa)",
+        "segundaFonte": "Revista Fórum (independente do grupo Globo)",
+        "decisao": "incorporar como pesquisa de avaliação (não intenção de voto) na Seção 2"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificacao2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "'rombo evangélico' (bncamazonas) e 'isola Flávio na direita' (O Cafezinho) são enquadramentos de opinião com fonte única, atribuídos explicitamente ao veículo; demais âncoras têm 2 fontes (Master/Wagner: Folha + CartaCapital; Ipsos-Ipec: G1/O Globo + Revista Fórum)",
+    "numericalErrors": "reconcile-claims.ts rodado, só falsos positivos (sub-mercados, bandas de inflação, números Ipsos-Ipec do G1, deltas pp); Lula 55,50% / Flávio 23,75% / gap +31,75pp / Renan 13,70% reconciliam com o JSON",
+    "fontesInventadas": "3 conferidas (Folha Wagner URL primária real; G1 Ipsos-Ipec .ghtml real; O Cafezinho redirect do cache) => OK",
+    "quotesLiterais": "nenhuma (títulos de matéria parafraseados com atribuição ao veículo)",
+    "causacaoEspuria": "nenhuma (salto +4,00pp de Lula tratado como reprecificação/digestão, 'Correlação não autoriza causa' explícito)",
+    "verbosCriticos": "'deve recomendar' (esperado, não consumado) desambiguado; sem preso/indicou/rejeitou/morreu indevidos",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "OK (1 warning low-link-density 62%, não-bloqueante) em PT/EN/ES",
+    "reconcileClaims": "OK (só falsos positivos)"
+  },
+  "preview": "https://afos-analitica-2026-8kt4avukj-andre-felipes-projects-6b6d4469.vercel.app",
+  "approval": "usuário aprovou em 22/Jun (PT) + traduções EN/ES aprovadas para deploy"
+}
