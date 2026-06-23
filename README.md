@@ -78,6 +78,7 @@ Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the publi
 | `/[locale]/chat` | **AFOS Chat**, conversational agent with live data access via tool-calling (Polymarket odds, TSE polls, validated cases & divergence, news, AFOS Daily); every answer cites its source. Streamed responses (SSE), trilingual, OpenRouter / DeepSeek V4 Flash. Also mounted site-wide as a **floating chat bubble** (lazy-loaded, hidden on this dedicated page) |
 | `/[locale]/country/[country]` | Country page (15 countries) |
 | `/[locale]/how-it-works` | Didactic methodology guide (3 languages), "The Method". In-page language selector (PT-BR/EN/ES). 14-section platform tour including the AFOS Daily card (`#afos-daily-card`), the **AFOS Tradeoff** weekly-brief section (`#afos-tradeoff-card`), the **AFOS Global** section (`#afos-global-card`) documenting the validated-cases layer (the probability-of-winning vs vote-share concept, the country & election divergence pages, and the open datasets), and polling institute evaluation criteria (`#criterios-institutos`); the "Start here" onboarding orients readers to both the Daily and the Tradeoff. Closes with a visible **FAQ section** (`#faq`) rendered from the same source as the FAQPage JSON-LD (text-visible × schema parity for the rich result). Uses shared Tailwind constants (`styles.ts`) for cross-language visual consistency |
+| `/[locale]/white-paper` | **White Paper**, the project's goals-and-method document (3 languages), a citable working note: the question (markets vs polls), the falsifiable thesis (*the divergence is the signal*), what we integrate, validation **including the failures** (e.g. the US 2024 popular-vote market), open data, goals, open questions and limitations. Reading-page shell with in-page PT-EN-ES language switcher and light / Sapphire Blue theme toggle (shared `afos-daily-theme`) |
 | `/[locale]/methodology/automated-governance` | Public governance page (3 languages), how the hosted platform enforces editorial integrity via code (automated validators + versioned prompt rules), the 2 interaction paths (Fork / Country Onboarding), and the 3 human-intervention exceptions |
 | `/[locale]/latam` · `/[locale]/eu` | Regional hubs (Latin America, Europe), 3 languages. AFOS wordmark + "Dashboard" button header. **Monitored countries** as clickable cards (SVG flag + name + region + next election + "View country →" CTA → `/country/[country]`) and **related elections** as rows (SVG flag + localized colored status badge, Active / Completed / Upcoming, + "View election →" → `/election/[slug]`), plus an institutional-intelligence button grid. Shared `RegionPage` component; flags via `ISO3_TO_CC` → `/flags/{cc}.svg` (no emoji, Windows-safe) |
 
@@ -270,6 +271,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 | Institutional (7 × 3) | 21 | 0.8 |
 | Region (2 × 3) | 6 | 0.85 |
 | How It Works (1 × 3) | 3 | 0.85 |
+| White Paper (1 × 3) | 3 | 0.85 |
 
 ---
 

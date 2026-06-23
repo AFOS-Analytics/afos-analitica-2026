@@ -78,6 +78,7 @@ Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: 
 | `/[locale]/chat` | **AFOS Chat**, agente conversacional com acesso a dados ao vivo via tool-calling (odds Polymarket, pesquisas TSE, casos validados & divergencia, noticias, AFOS Daily); toda resposta cita a fonte. Respostas em streaming (SSE), trilingue, OpenRouter / DeepSeek V4 Flash. Tambem montado no site todo como **bolha de chat flutuante** (lazy-load, oculta nesta pagina dedicada) |
 | `/[locale]/country/[country]` | Pagina por pais (15 paises) |
 | `/[locale]/how-it-works` | Guia didatico da metodologia (3 idiomas), "O Metodo". Seletor de idioma na pagina (PT-BR/EN/ES). Tour pela plataforma com 14 secoes incluindo o card AFOS Daily (`#afos-daily-card`), a secao do **AFOS Tradeoff** semanal (`#afos-tradeoff-card`), a secao do **AFOS Global** (`#afos-global-card`) documentando a camada de casos validados (o conceito de probabilidade-de-vencer vs participacao-de-votos, as paginas de divergencia por pais e eleicao, e os datasets abertos) e criterios de avaliacao dos institutos (`#criterios-institutos`); o "Comece por aqui" orienta o leitor tanto ao Daily quanto ao Tradeoff. Encerra com uma **seção FAQ** visível (`#faq`) renderizada da mesma fonte do JSON-LD FAQPage (paridade texto-visível × schema para o rich result). Usa constantes Tailwind compartilhadas (`styles.ts`) para consistencia visual entre idiomas |
+| `/[locale]/white-paper` | **White Paper**, o documento de objetivos e método do projeto (3 idiomas), uma nota de trabalho citável: a pergunta (mercados vs pesquisas), a tese falseável (*a divergência é o sinal*), o que integramos, validação **inclusive das falhas** (ex.: o mercado de voto popular dos EUA em 2024), dados abertos, objetivos, questões em aberto e limitações. Shell de página de leitura com seletor de idioma PT-EN-ES na página e toggle de tema claro / Sapphire Blue (chave compartilhada `afos-daily-theme`) |
 | `/[locale]/methodology/automated-governance` | Pagina publica de governanca (3 idiomas), como a plataforma hospedada aplica integridade editorial via codigo (validadores automaticos + prompt rules versionadas), os 2 caminhos de interacao (Fork / Country Onboarding) e as 3 excecoes onde o humano intervem |
 | `/[locale]/latam` · `/[locale]/eu` | Hubs regionais (America Latina, Europa), 3 idiomas. Wordmark AFOS + header com botao "Dashboard". **Paises monitorados** como cards clicaveis (bandeira SVG + nome + regiao + proxima eleicao + CTA "Ver pais →" → `/country/[country]`) e **eleicoes relacionadas** como linhas (bandeira SVG + badge de status colorido e localizado, Ativa / Concluida / Proxima, + "Ver eleicao →" → `/election/[slug]`), mais uma grade de botoes de inteligencia institucional. Componente `RegionPage` compartilhado; bandeiras via `ISO3_TO_CC` → `/flags/{cc}.svg` (sem emoji, Windows-safe) |
 
@@ -270,6 +271,7 @@ Organization, WebApplication, Dataset, WebSite, FAQPage, BreadcrumbList, Article
 | Institucional (7 × 3) | 21 | 0.8 |
 | Regiao (2 × 3) | 6 | 0.85 |
 | Como Funciona (1 × 3) | 3 | 0.85 |
+| White Paper (1 × 3) | 3 | 0.85 |
 
 ---
 
