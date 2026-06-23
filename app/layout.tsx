@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { organizationSchema, webAppSchema, datasetSchema, combineSchemas } from '../lib/seo/schema';
 import "./globals.css";
 
@@ -94,7 +95,7 @@ export default async function RootLayout(
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /></body>
+      <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /><SpeedInsights /></body>
     </html>
   );
 }
