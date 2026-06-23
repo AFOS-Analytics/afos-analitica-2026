@@ -307,6 +307,15 @@ Os casos concluidos (✓) sao o metodo **validado contra o resultado real**, exi
 
 Na plataforma, as paginas `/country/[country]` e `/election/[slug]` de cada eleicao concluida renderizam o **snapshot do Polymarket no dia da eleicao** (candidatos, barras, volume acumulado), a tabela de **divergencia mercado × pesquisa** e um **grafico nativo de trajetoria de odds** (probabilidade implicita do Polymarket ao longo da campanha para os principais concorrentes, com volume total apostado), tudo theme-aware (light / Sapphire), com a marca AFOS e a bandeira do pais.
 
+### Contexto estrutural (World Bank WGI + WDI)
+
+Cada pagina de pais validado tambem traz um bloco **Contexto estrutural**, indicadores oficiais, abertos e citaveis do World Bank que enquadram o pais *ao lado* do sinal de mercado (nao como previsor dele). Duas colunas:
+
+- **Governanca** (seis **Worldwide Governance Indicators**, escala 0-100, com barras): estabilidade politica, voz e democracia, estado de direito, efetividade do governo, qualidade regulatoria, controle de corrupcao.
+- **Economia e Educacao** (**World Development Indicators**): PIB, PIB per capita, inflacao; gasto publico em educacao (% do PIB) e expectativa de anos de escola.
+
+Sao **indicadores estruturais anuais que contextualizam o pais, nao preveem o resultado eleitoral** (dito explicitamente na linha de fonte do bloco), trilingues (PT-BR / EN / ES) com formatacao numerica por idioma, e theme-aware. Os dados sao buscados sem chave em duas superficies do World Bank: **WGI pela nova [API Data360](https://data360api.worldbank.org/)** (os codigos antigos do WGI no v2 foram arquivados) e **WDI pela [API v2 classica](https://api.worldbank.org/v2/)**, ambas de licenca aberta e citaveis, alinhadas ao ethos open-data da AFOS (um feed proprietario de terminal, ex.: Bloomberg, seria nao-redistribuivel e incompativel com os datasets publicados). Os cards do hub ficam intactos de proposito; o bloco vive apenas na pagina de detalhe do pais, como informacao complementar.
+
 ---
 
 ## Analytics
@@ -380,7 +389,8 @@ Cron 3x/dia (6h, 12h, 18h)
 | **Polymarket API** | Mercados de previsao (18 mercados, 15 paises) |
 | **Google News RSS + Firecrawl** | Noticias ao vivo |
 | **OpenRouter (DeepSeek V4 Flash)** | AFOS Chat, agente conversacional (tool-calling) sobre dados ao vivo |
-| **Vercel Analytics** | Metricas de trafego |
+| **World Bank (WGI via Data360 + WDI v2)** | Contexto estrutural nas paginas validadas, governanca (WGI 0-100) + economia e educacao (WDI). Sem chave, licenca aberta |
+| **Vercel Analytics + Speed Insights** | Metricas de trafego + Core Web Vitals (performance de usuario real) |
 
 ---
 

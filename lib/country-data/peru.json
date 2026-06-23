@@ -473,6 +473,16 @@
         "year": 2024
       }
     },
+    "education": {
+      "gov_expenditure_pct_gdp": {
+        "value": 4.35778999328613,
+        "year": 2024
+      },
+      "expected_years_schooling": {
+        "value": 14.99071,
+        "year": 2017
+      }
+    },
     "sources": {
       "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
       "wdi": "https://data.worldbank.org/"

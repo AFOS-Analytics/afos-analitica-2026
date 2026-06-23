@@ -25,23 +25,23 @@ const DTEXTS: Record<string, { title: string; subtitle: string; candidate: strin
 }
 
 const GOV_ORDER = ['political_stability', 'voice_accountability', 'rule_of_law', 'government_effectiveness', 'regulatory_quality', 'control_of_corruption'] as const
-const CTEXTS: Record<string, { title: string; gov: string; eco: string; note: string; gov_labels: Record<string, string>; gdp: string; gdppc: string; infl: string; locale: string }> = {
+const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: string; note: string; gov_labels: Record<string, string>; gdp: string; gdppc: string; infl: string; edu_spend: string; edu_schooling: string; edu_years: string; locale: string }> = {
   'pt-BR': {
-    title: 'Contexto estrutural', gov: 'Governança (escala 0–100)', eco: 'Economia', locale: 'pt-BR',
+    title: 'Contexto estrutural', gov: 'Governança (escala 0–100)', eco: 'Economia', edu: 'Educação', locale: 'pt-BR',
     note: 'Fonte: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estruturais anuais que contextualizam o país; não preveem o resultado eleitoral.',
-    gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação',
+    gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação', edu_spend: 'Gasto público em educação (% PIB)', edu_schooling: 'Expectativa de anos de escola', edu_years: 'anos',
     gov_labels: { political_stability: 'Estabilidade política', voice_accountability: 'Voz e democracia', rule_of_law: 'Estado de direito', government_effectiveness: 'Efetividade do governo', regulatory_quality: 'Qualidade regulatória', control_of_corruption: 'Controle de corrupção' },
   },
   en: {
-    title: 'Structural context', gov: 'Governance (0–100 scale)', eco: 'Economy', locale: 'en-US',
+    title: 'Structural context', gov: 'Governance (0–100 scale)', eco: 'Economy', edu: 'Education', locale: 'en-US',
     note: 'Source: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Annual structural indicators that contextualize the country; they do not predict the electoral outcome.',
-    gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation',
+    gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation', edu_spend: 'Public education spending (% GDP)', edu_schooling: 'Expected years of schooling', edu_years: 'years',
     gov_labels: { political_stability: 'Political stability', voice_accountability: 'Voice & accountability', rule_of_law: 'Rule of law', government_effectiveness: 'Government effectiveness', regulatory_quality: 'Regulatory quality', control_of_corruption: 'Control of corruption' },
   },
   es: {
-    title: 'Contexto estructural', gov: 'Gobernanza (escala 0–100)', eco: 'Economía', locale: 'es-ES',
+    title: 'Contexto estructural', gov: 'Gobernanza (escala 0–100)', eco: 'Economía', edu: 'Educación', locale: 'es-ES',
     note: 'Fuente: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estructurales anuales que contextualizan el país; no predicen el resultado electoral.',
-    gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación',
+    gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación', edu_spend: 'Gasto público en educación (% PIB)', edu_schooling: 'Años esperados de escolaridad', edu_years: 'años',
     gov_labels: { political_stability: 'Estabilidad política', voice_accountability: 'Voz y rendición de cuentas', rule_of_law: 'Estado de derecho', government_effectiveness: 'Efectividad del gobierno', regulatory_quality: 'Calidad regulatoria', control_of_corruption: 'Control de corrupción' },
   },
 }
@@ -192,6 +192,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           if (ctx.macro.gdp_usd) macro.push({ label: ct.gdp, val: fmtUsdCompact(ctx.macro.gdp_usd.value, tag) })
           if (ctx.macro.gdp_per_capita_usd) macro.push({ label: ct.gdppc, val: fmtUsd(ctx.macro.gdp_per_capita_usd.value, tag) })
           if (ctx.macro.inflation_pct) macro.push({ label: ct.infl, val: fmtPct(ctx.macro.inflation_pct.value, tag) })
+          const edu: { label: string; val: string }[] = []
+          if (ctx.education?.gov_expenditure_pct_gdp) edu.push({ label: ct.edu_spend, val: fmtPct(ctx.education.gov_expenditure_pct_gdp.value, tag) })
+          if (ctx.education?.expected_years_schooling) edu.push({ label: ct.edu_schooling, val: `${new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(ctx.education.expected_years_schooling.value)} ${ct.edu_years}` })
           return (
             <section className={`${card} border rounded-xl p-6 mb-8`}>
               <h2 className={`text-xl font-bold ${heading} mb-4`}>{ct.title}</h2>
@@ -210,16 +213,31 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                     ))}
                   </div>
                 </div>
-                <div>
-                  <p className={`text-[11px] uppercase tracking-wide ${textMuted} mb-3`}>{ct.eco}</p>
-                  <div className="space-y-2.5">
-                    {macro.map(({ label, val }) => (
-                      <div key={label} className="flex items-baseline justify-between gap-3">
-                        <span className={`text-sm ${textMain}`}>{label}</span>
-                        <span className={`text-sm font-semibold tabular-nums ${textMain}`}>{val}</span>
-                      </div>
-                    ))}
+                <div className="space-y-6">
+                  <div>
+                    <p className={`text-[11px] uppercase tracking-wide ${textMuted} mb-3`}>{ct.eco}</p>
+                    <div className="space-y-2.5">
+                      {macro.map(({ label, val }) => (
+                        <div key={label} className="flex items-baseline justify-between gap-3">
+                          <span className={`text-sm ${textMain}`}>{label}</span>
+                          <span className={`text-sm font-semibold tabular-nums ${textMain}`}>{val}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
+                  {edu.length > 0 && (
+                    <div>
+                      <p className={`text-[11px] uppercase tracking-wide ${textMuted} mb-3`}>{ct.edu}</p>
+                      <div className="space-y-2.5">
+                        {edu.map(({ label, val }) => (
+                          <div key={label} className="flex items-baseline justify-between gap-3">
+                            <span className={`text-sm ${textMain}`}>{label}</span>
+                            <span className={`text-sm font-semibold tabular-nums ${textMain} shrink-0`}>{val}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               <p className={`text-xs ${isBlue ? 'text-blue-300/60' : 'text-gray-400'} mt-5`}>
