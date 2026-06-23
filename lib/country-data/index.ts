@@ -23,6 +23,16 @@ export interface DivergenceRow {
 }
 export interface MarketSnapshotRow { candidate: string; market_pct: number; volume_usd: number }
 export interface MarketTrajectory { dates: string[]; series: { name: string; pct: number[] }[] }
+export interface ContextMetric { value: number; year: number }
+// Contexto estrutural do país (World Bank): governança (WGI, escala 0-100) + macro (WDI).
+// Camada complementar à divergência, fonte oficial aberta e citável. Gerado por
+// .cache/gen-country-context.mjs. Opcional: só os países enriquecidos exibem a seção.
+export interface CountryContext {
+  governance: Partial<Record<'political_stability' | 'voice_accountability' | 'rule_of_law' | 'government_effectiveness' | 'regulatory_quality' | 'control_of_corruption', ContextMetric>>
+  macro: Partial<Record<'gdp_usd' | 'gdp_per_capita_usd' | 'inflation_pct', ContextMetric>>
+  sources: { wgi: string; wdi: string }
+  latest_year: number | null
+}
 export interface CountryDivergence {
   iso3: string
   hf: string
@@ -35,6 +45,7 @@ export interface CountryDivergence {
   rows: DivergenceRow[]
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
   market_trajectory?: MarketTrajectory
+  context?: CountryContext
 }
 
 // chave = iso3 (bate com CountrySEO.iso3). Casos validados: USA PER CHL COL DEU CAN GBR MEX (EUA 2024 add 19/Jun, lidera = maior mercado eleitoral da história).
