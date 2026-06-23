@@ -128,12 +128,12 @@
       "institute": "Indexa Pesquisas",
       "date": "2026-06-23",
       "sample": 2000,
-      "margin": 2,
+      "margin": 2.2,
       "register": null,
       "reliability": 3,
-      "method": "Online/painel",
-      "fieldDates": "junho de 2026 (publicada 23/Jun)",
-      "note": "Indexa Pesquisas nacional publicada 23/Jun (JOTA, Bnews, viva.com.br, UOL/Carla Araújo, Blog do Esmael). Lula amplia a vantagem e venceria todos os rivais no 2º turno: 1T Lula 42% x Flávio 31% (gap +11pp), com Lula a 48.8% dos votos válidos e perto de discutir vitória no 1º turno. 2T Lula 47% x Flávio 40% (gap +7pp). A leitura central do instituto é que 'Lula melhora, mas rejeição cresce' (JOTA), com a polarização se consolidando por voto fiel entre Lula e Flávio (UOL/Carla Araújo). Reforça a direção das nacionais de 15-20/Jun. Instituto registrado no TSE, não Tier 1.",
+      "method": "Telefônica",
+      "fieldDates": "2026-06-18 a 2026-06-20",
+      "note": "Indexa Pesquisas nacional publicada 23/Jun (JOTA, Bnews, viva.com.br, UOL/Carla Araújo, Blog do Esmael). Lula amplia a vantagem e venceria todos os rivais no 2º turno: 1T Lula 42% x Flávio 31% (gap +11pp), com Lula a 48.8% dos votos válidos e perto de discutir vitória no 1º turno. 2T Lula 47% x Flávio 40% (gap +7pp). Rejeição alta para os dois: Lula e Flávio são rejeitados por 49% cada. A leitura central do instituto é que 'Lula melhora, mas rejeição cresce' (JOTA), com a polarização se consolidando por voto fiel entre Lula e Flávio (UOL/Carla Araújo). Campo 18-20/Jun, n=2.000, telefônica, margem 2.2pp, 95% de confiança. Instituto registrado no TSE, não Tier 1.",
       "scenarios": [
         {
           "name": "Cenário Principal (1º turno)",

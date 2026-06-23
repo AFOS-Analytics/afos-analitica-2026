@@ -1,0 +1,59 @@
+{
+  "date": "2026-06-23",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Pesquisa Indexa nacional (1T Lula 42 x Flávio 31; 2T 47 x 40; 48,8% válidos)",
+        "v1_crossRef": "menções anteriores eram calendário/Indexa de maio → novidade (resultado de hoje)",
+        "v2_fetch": "viva.com.br (campo 18-20/Jun, n=2.000) + WebSearch JOTA; data=2026-06-23; tipo=evento/pesquisa",
+        "secondSource": "JOTA + Bnews + Blog do Esmael (48,8% válidos)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "RTBD Rio Grande do Sul (2T Flávio 51 x Lula 42; 1T 42 x 39)",
+        "v1_crossRef": "novidade",
+        "v2_fetch": "CNN Brasil (campo 20-22/Jun, n=1.600 RS); tipo=evento/pesquisa estadual",
+        "secondSource": "DMA Notícias + R7",
+        "decision": "incorporar como contexto estadual (não entra no polls-data nacional)"
+      },
+      {
+        "event": "Flávio inscrição em audiência nos EUA sobre tarifaço",
+        "v1_crossRef": "'tarifaço' sem menção em 7 dailies → novidade",
+        "v2_fetch": "O Globo (URL primária 23/Jun); tipo=evento procedimental",
+        "secondSource": "Folha (Painel) + Valor + Estadão",
+        "decision": "incorporar (não divisor de águas)"
+      },
+      {
+        "event": "TSE manda retirar posts ligando Flávio ao crime organizado/rachadinha",
+        "v1_crossRef": "linha de remoção já recorrente (Dino/Mendonça) → continuidade temática",
+        "v2_fetch": "Valor (URL primária 23/Jun); tipo=decisão eleitoral",
+        "secondSource": "Pleno.News + CartaCapital",
+        "decision": "incorporar como pauta institucional, não divisor"
+      },
+      {
+        "event": "Operação PF sobre Jaques Wagner",
+        "v1_crossRef": "47 menções em 7 dailies → continuidade",
+        "decision": "tratar como continuidade, não evento novo"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerified": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileRun": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims marcou apenas sub-mercados (71,5/60,5/76,5) e referências a ontem (23,75→25,55) — falsos positivos legítimos; %s de mercado batem com o JSON",
+    "fabricatedSources": "nenhuma; todas do cache/WebSearch verificadas",
+    "literalQuotes": "apenas paráfrases de manchete atribuídas (JOTA, VEJA)",
+    "spuriousCausation": "nenhuma; reversão descrita como correção de gap esticado + frentes RS/EUA",
+    "criticalVerbs": "OK; sem prisão/morte/decisão nova; 'manda retirar posts' com data + fonte (Valor)",
+    "decision": "aprovado para preview, depois aprovado pelo usuário para publish"
+  },
+  "validation": {
+    "validateAfosDaily": "exit 0 (OK), 2 warnings não-bloqueantes (link-density 45%, volume-total heurística)",
+    "totalPresidentialVolumeUSD": "104.1M"
+  }
+}
