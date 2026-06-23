@@ -303,7 +303,7 @@ Public, auditable **electoral-divergence** datasets, *prediction markets × poll
 
 The **Brazil 2026** and **USA 2024** datasets additionally have curated, citable academic releases on **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, grouped under the **AFOS Analytics** collection, Brazil DOI [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) and USA DOI [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), each a versioned and permanent snapshot of its live Hugging Face mirror, deposited in the largest social-science data repository. To our knowledge the Brazil 2026 deposit is the first on Harvard Dataverse to cross-reference prediction markets × registered polls × press coverage to measure explicit divergence in a Brazilian election.
 
-The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, **two odds charts** (probability trajectory + eve-of-vote market×poll snapshot, with total bet volume), a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
+The completed cases (✓) are the method **validated against the real result**, surfaced as **"Validated cases"** on the [`/global`](https://www.afos-analytics.com/en/global) hub. Each carries the full poll history, daily Polymarket odds, the market×poll divergence time-series, **two odds charts** (probability trajectory + eve-of-vote market×poll snapshot, with total bet volume), a **`data/{country}-structural-context.csv`** (World Bank WGI governance + WDI economy & education), a `DATA_DICTIONARY.md` and a `CITATION.cff`. Outside Brazil the depth is topline-only (no equivalent to Brazil's TSE open-data registry).
 
 On-platform, every completed election's `/country/[country]` and `/election/[slug]` pages render its **election-day Polymarket snapshot** (candidates, bars, accumulated volume), the **market×poll divergence** table, and a **native odds-trajectory chart** (Polymarket implied probability over the campaign for the top contenders, with total bet volume), all theme-aware (light / Sapphire), with the AFOS brand and country flag.
 
@@ -315,6 +315,12 @@ Each validated country page also carries a **Structural context** block, officia
 - **Economy & Education** (**World Development Indicators**): GDP, GDP per capita, inflation; public education spending (% of GDP) and expected years of schooling.
 
 These are **annual structural indicators that contextualize the country, they do not predict the electoral outcome** (stated explicitly in the source line of the block), trilingual (PT-BR / EN / ES) with locale-aware number formatting, and theme-aware. The data is fetched keyless from two World Bank surfaces: **WGI via the new [Data360 API](https://data360api.worldbank.org/)** (the legacy v2 WGI codes were archived) and **WDI via the classic [v2 API](https://api.worldbank.org/v2/)**, both open-licensed and citable, matching the AFOS open-data ethos (a proprietary terminal feed, e.g. Bloomberg, would be non-redistributable and incompatible with the published datasets). Hub cards are intentionally left unchanged; the block lives only on the country detail page as complementary information.
+
+**Open-data parity (published to all three surfaces).** The structural context is not just rendered on the site, it is published alongside every validated dataset so it is reproducible from the open files:
+
+- **Hugging Face** — each of the 8 datasets ships a `data/{country}-structural-context.csv` (long/tidy: `category, indicator, label, value, unit, year, source, iso3`, 11 indicators per country), documented in its `DATA_DICTIONARY.md`.
+- **Academic bundle (multi-country repo)** — a per-country `structural-context.csv` in each country folder, with the same dictionary entry.
+- **Neon Postgres** — an isolated `{country}.structural_indicator` table per country schema (Brazil's `public` schema untouched).
 
 ---
 

@@ -303,7 +303,7 @@ Datasets publicos e auditaveis de **divergencia eleitoral**, *mercados de previs
 
 Os datasets **Brasil 2026** e **USA 2024** tem, adicionalmente, versoes academicas curadas e citaveis no **[Harvard Dataverse](https://dataverse.harvard.edu/dataverse/afos-analytics)**, agrupadas na colecao **AFOS Analytics**, DOI do Brasil [10.7910/DVN/2D0UK7](https://doi.org/10.7910/DVN/2D0UK7) e DOI dos EUA [10.7910/DVN/3DJCW5](https://doi.org/10.7910/DVN/3DJCW5), cada um um snapshot versionado e permanente do seu mirror ao vivo do Hugging Face, depositado no maior repositorio de dados de ciencias sociais. Ate onde verificamos, o deposito do Brasil 2026 e o primeiro no Harvard Dataverse a cruzar mercados de previsao × pesquisas registradas × cobertura de imprensa para medir divergencia explicita numa eleicao brasileira.
 
-Os casos concluidos (✓) sao o metodo **validado contra o resultado real**, exibidos como **"Casos validados"** no hub [`/global`](https://www.afos-analytics.com/pt-BR/global). Cada um carrega o historico completo de pesquisas, as odds diarias do Polymarket, a serie temporal da divergencia mercado × pesquisa, **dois graficos de odds** (trajetoria de probabilidade + snapshot mercado × pesquisa na vespera, com volume total apostado), um `DATA_DICTIONARY.md` e um `CITATION.cff`. Fora do Brasil a profundidade e apenas topline (sem equivalente ao registro de open-data do TSE brasileiro).
+Os casos concluidos (✓) sao o metodo **validado contra o resultado real**, exibidos como **"Casos validados"** no hub [`/global`](https://www.afos-analytics.com/pt-BR/global). Cada um carrega o historico completo de pesquisas, as odds diarias do Polymarket, a serie temporal da divergencia mercado × pesquisa, **dois graficos de odds** (trajetoria de probabilidade + snapshot mercado × pesquisa na vespera, com volume total apostado), um **`data/{pais}-structural-context.csv`** (governanca World Bank WGI + economia e educacao WDI), um `DATA_DICTIONARY.md` e um `CITATION.cff`. Fora do Brasil a profundidade e apenas topline (sem equivalente ao registro de open-data do TSE brasileiro).
 
 Na plataforma, as paginas `/country/[country]` e `/election/[slug]` de cada eleicao concluida renderizam o **snapshot do Polymarket no dia da eleicao** (candidatos, barras, volume acumulado), a tabela de **divergencia mercado × pesquisa** e um **grafico nativo de trajetoria de odds** (probabilidade implicita do Polymarket ao longo da campanha para os principais concorrentes, com volume total apostado), tudo theme-aware (light / Sapphire), com a marca AFOS e a bandeira do pais.
 
@@ -315,6 +315,12 @@ Cada pagina de pais validado tambem traz um bloco **Contexto estrutural**, indic
 - **Economia e Educacao** (**World Development Indicators**): PIB, PIB per capita, inflacao; gasto publico em educacao (% do PIB) e expectativa de anos de escola.
 
 Sao **indicadores estruturais anuais que contextualizam o pais, nao preveem o resultado eleitoral** (dito explicitamente na linha de fonte do bloco), trilingues (PT-BR / EN / ES) com formatacao numerica por idioma, e theme-aware. Os dados sao buscados sem chave em duas superficies do World Bank: **WGI pela nova [API Data360](https://data360api.worldbank.org/)** (os codigos antigos do WGI no v2 foram arquivados) e **WDI pela [API v2 classica](https://api.worldbank.org/v2/)**, ambas de licenca aberta e citaveis, alinhadas ao ethos open-data da AFOS (um feed proprietario de terminal, ex.: Bloomberg, seria nao-redistribuivel e incompativel com os datasets publicados). Os cards do hub ficam intactos de proposito; o bloco vive apenas na pagina de detalhe do pais, como informacao complementar.
+
+**Paridade open-data (publicado nas tres superficies).** O contexto estrutural nao fica so renderizado no site, ele e publicado junto de cada dataset validado, reproduzivel a partir dos arquivos abertos:
+
+- **Hugging Face**, cada um dos 8 datasets traz um `data/{pais}-structural-context.csv` (long/tidy: `category, indicator, label, value, unit, year, source, iso3`, 11 indicadores por pais), documentado no `DATA_DICTIONARY.md`.
+- **Bundle academico (repo multi-pais)**, um `structural-context.csv` por pasta de pais, com a mesma entrada no dicionario.
+- **Neon Postgres**, uma tabela isolada `{pais}.structural_indicator` por schema de pais (o schema `public` do Brasil fica intocado).
 
 ---
 
