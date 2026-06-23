@@ -312,7 +312,7 @@ Na plataforma, as paginas `/country/[country]` e `/election/[slug]` de cada elei
 Cada pagina de pais validado tambem traz um bloco **Contexto estrutural**, indicadores oficiais, abertos e citaveis do World Bank que enquadram o pais *ao lado* do sinal de mercado (nao como previsor dele). Duas colunas:
 
 - **Governanca** (seis **Worldwide Governance Indicators**, escala 0-100, com barras): estabilidade politica, voz e democracia, estado de direito, efetividade do governo, qualidade regulatoria, controle de corrupcao.
-- **Economia e Educacao** (**World Development Indicators**): PIB, PIB per capita, inflacao; gasto publico em educacao (% do PIB) e expectativa de anos de escola.
+- **Economia e Educacao** (**World Development Indicators**): populacao, PIB, PIB per capita, inflacao; gasto publico em educacao (% do PIB) e expectativa de anos de escola.
 
 Sao **indicadores estruturais anuais que contextualizam o pais, nao preveem o resultado eleitoral** (dito explicitamente na linha de fonte do bloco), trilingues (PT-BR / EN / ES) com formatacao numerica por idioma, e theme-aware. Os dados sao buscados sem chave em duas superficies do World Bank: **WGI pela nova [API Data360](https://data360api.worldbank.org/)** (os codigos antigos do WGI no v2 foram arquivados) e **WDI pela [API v2 classica](https://api.worldbank.org/v2/)**, ambas de licenca aberta e citaveis, alinhadas ao ethos open-data da AFOS (um feed proprietario de terminal, ex.: Bloomberg, seria nao-redistribuivel e incompativel com os datasets publicados). Os cards do hub ficam intactos de proposito; o bloco vive apenas na pagina de detalhe do pais, como informacao complementar.
 

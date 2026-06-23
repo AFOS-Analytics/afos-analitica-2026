@@ -451,6 +451,10 @@
       }
     },
     "macro": {
+      "population": {
+        "value": 52886363,
+        "year": 2024
+      },
       "gdp_usd": {
         "value": 418818154879.271,
         "year": 2024

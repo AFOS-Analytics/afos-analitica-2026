@@ -29,7 +29,7 @@ export interface ContextMetric { value: number; year: number }
 // .cache/gen-country-context.mjs. Opcional: só os países enriquecidos exibem a seção.
 export interface CountryContext {
   governance: Partial<Record<'political_stability' | 'voice_accountability' | 'rule_of_law' | 'government_effectiveness' | 'regulatory_quality' | 'control_of_corruption', ContextMetric>>
-  macro: Partial<Record<'gdp_usd' | 'gdp_per_capita_usd' | 'inflation_pct', ContextMetric>>
+  macro: Partial<Record<'population' | 'gdp_usd' | 'gdp_per_capita_usd' | 'inflation_pct', ContextMetric>>
   education?: Partial<Record<'gov_expenditure_pct_gdp' | 'expected_years_schooling', ContextMetric>>
   sources: { wgi: string; wdi: string }
   latest_year: number | null

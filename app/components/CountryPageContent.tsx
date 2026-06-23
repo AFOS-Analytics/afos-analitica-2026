@@ -25,23 +25,23 @@ const DTEXTS: Record<string, { title: string; subtitle: string; candidate: strin
 }
 
 const GOV_ORDER = ['political_stability', 'voice_accountability', 'rule_of_law', 'government_effectiveness', 'regulatory_quality', 'control_of_corruption'] as const
-const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: string; note: string; gov_labels: Record<string, string>; gdp: string; gdppc: string; infl: string; edu_spend: string; edu_schooling: string; edu_years: string; locale: string }> = {
+const CTEXTS: Record<string, { title: string; gov: string; eco: string; edu: string; note: string; gov_labels: Record<string, string>; pop: string; gdp: string; gdppc: string; infl: string; edu_spend: string; edu_schooling: string; edu_years: string; locale: string }> = {
   'pt-BR': {
     title: 'Contexto estrutural', gov: 'Governança (escala 0–100)', eco: 'Economia', edu: 'Educação', locale: 'pt-BR',
     note: 'Fonte: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estruturais anuais que contextualizam o país; não preveem o resultado eleitoral.',
-    gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação', edu_spend: 'Gasto público em educação (% PIB)', edu_schooling: 'Expectativa de anos de escola', edu_years: 'anos',
+    pop: 'População', gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação', edu_spend: 'Gasto público em educação (% PIB)', edu_schooling: 'Expectativa de anos de escola', edu_years: 'anos',
     gov_labels: { political_stability: 'Estabilidade política', voice_accountability: 'Voz e democracia', rule_of_law: 'Estado de direito', government_effectiveness: 'Efetividade do governo', regulatory_quality: 'Qualidade regulatória', control_of_corruption: 'Controle de corrupção' },
   },
   en: {
     title: 'Structural context', gov: 'Governance (0–100 scale)', eco: 'Economy', edu: 'Education', locale: 'en-US',
     note: 'Source: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Annual structural indicators that contextualize the country; they do not predict the electoral outcome.',
-    gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation', edu_spend: 'Public education spending (% GDP)', edu_schooling: 'Expected years of schooling', edu_years: 'years',
+    pop: 'Population', gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation', edu_spend: 'Public education spending (% GDP)', edu_schooling: 'Expected years of schooling', edu_years: 'years',
     gov_labels: { political_stability: 'Political stability', voice_accountability: 'Voice & accountability', rule_of_law: 'Rule of law', government_effectiveness: 'Government effectiveness', regulatory_quality: 'Regulatory quality', control_of_corruption: 'Control of corruption' },
   },
   es: {
     title: 'Contexto estructural', gov: 'Gobernanza (escala 0–100)', eco: 'Economía', edu: 'Educación', locale: 'es-ES',
     note: 'Fuente: World Bank — Worldwide Governance Indicators + World Development Indicators ({year}). Indicadores estructurales anuales que contextualizan el país; no predicen el resultado electoral.',
-    gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación', edu_spend: 'Gasto público en educación (% PIB)', edu_schooling: 'Años esperados de escolaridad', edu_years: 'años',
+    pop: 'Población', gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación', edu_spend: 'Gasto público en educación (% PIB)', edu_schooling: 'Años esperados de escolaridad', edu_years: 'años',
     gov_labels: { political_stability: 'Estabilidad política', voice_accountability: 'Voz y rendición de cuentas', rule_of_law: 'Estado de derecho', government_effectiveness: 'Efectividad del gobierno', regulatory_quality: 'Calidad regulatoria', control_of_corruption: 'Control de corrupción' },
   },
 }
@@ -55,6 +55,9 @@ function fmtUsd(v: number, tag: string) {
 }
 function fmtPct(v: number, tag: string) {
   return new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v) + '%'
+}
+function fmtCountCompact(v: number, tag: string) {
+  return new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 }).format(v)
 }
 
 function ThemeToggle({ theme, onChoose, isBlue, labels }: { theme: Theme; onChoose: (t: Theme) => void; isBlue: boolean; labels: { group: string; light: string; blue: string } }) {
@@ -189,6 +192,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           const barFill = isBlue ? 'bg-blue-300' : 'bg-primary'
           const govRows = GOV_ORDER.filter((k) => ctx.governance[k]).map((k) => ({ k, label: ct.gov_labels[k], v: ctx.governance[k]!.value }))
           const macro: { label: string; val: string }[] = []
+          if (ctx.macro.population) macro.push({ label: ct.pop, val: fmtCountCompact(ctx.macro.population.value, tag) })
           if (ctx.macro.gdp_usd) macro.push({ label: ct.gdp, val: fmtUsdCompact(ctx.macro.gdp_usd.value, tag) })
           if (ctx.macro.gdp_per_capita_usd) macro.push({ label: ct.gdppc, val: fmtUsd(ctx.macro.gdp_per_capita_usd.value, tag) })
           if (ctx.macro.inflation_pct) macro.push({ label: ct.infl, val: fmtPct(ctx.macro.inflation_pct.value, tag) })
