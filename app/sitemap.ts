@@ -157,6 +157,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
+  // White Paper — project goals and method (static, citable research artifact)
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/white-paper`,
+      lastModified: staticLastMod,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+      alternates: { languages: hreflang((l) => `/${l}/white-paper`) },
+    })
+  }
+
   // AFOS Daily — synthesis index per locale (dynamic — sempre nova daily)
   for (const loc of locales) {
     entries.push({
