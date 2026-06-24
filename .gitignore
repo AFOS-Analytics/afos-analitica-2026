@@ -80,3 +80,6 @@ docs/launch-texts/0*.md
 
 # Working/scratch dir (scripts efêmeros + tokens — NUNCA commitar)
 .cache/
+
+# Config local pessoal (hooks/paths da maquina), nao versionar
+.claude/settings.local.json
