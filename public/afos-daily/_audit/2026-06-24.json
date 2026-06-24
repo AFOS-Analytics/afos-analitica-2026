@@ -1,0 +1,64 @@
+{
+  "date": "2026-06-24",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Pesquisa Gerp nacional (1T Lula 37 x Flávio 34; 2T Flávio 42 x Lula 40, empate técnico)",
+        "v1_crossRef": "menções anteriores eram o calendário (scheduled) → novidade (resultado hoje)",
+        "v2_fetch": "Exame + Poder360 + CNN Brasil + Gazeta do Povo (URLs primárias); campo 15-20/Jun, n=2.000, margem 2,19pp; tipo=evento/pesquisa",
+        "secondSource": "múltiplos outlets independentes (Jovem Pan, Revista Oeste, NOVO Notícias)",
+        "decision": "incorporar com ressalva de OUTLIER vs consenso Tier 1 (Indexa/Datafolha/CNT-MDA/Nexus)"
+      },
+      {
+        "event": "Vídeo de IA do Neymar (Flávio resgata Neymar após crítica de Lula)",
+        "v1_crossRef": "'Neymar' sem menção em 7 dailies → novidade",
+        "v2_fetch": "G1, VEJA, O Globo, Poder360, Valor; tipo=evento simbólico/cultural",
+        "secondSource": "múltiplos",
+        "decision": "incorporar como contexto, não divisor"
+      },
+      {
+        "event": "Flávio giro internacional (encontro com Milei, ida aos EUA contra o tarifaço, compara Lula a Biden)",
+        "v1_crossRef": "novidade",
+        "v2_fetch": "Folha + Poder360; tipo=evento procedimental",
+        "secondSource": "Folha + Poder360",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Renan Santos: 'bolsonarismo morreu', Flávio 'inviável'",
+        "v2_fetch": "Estadão + O Globo; tipo=declaração",
+        "secondSource": "Estadão + O Globo + Imirante",
+        "decision": "incorporar como fala atribuída"
+      },
+      {
+        "event": "Operação contra Jaques Wagner",
+        "v1_crossRef": "recorrente → continuidade",
+        "decision": "continuidade, não divisor"
+      },
+      {
+        "event": "Caso Master/BRB",
+        "v1_crossRef": "busca específica voltou vazia hoje",
+        "decision": "quieto, não tratar como evento"
+      }
+    ],
+    "selfCheck": {
+      "anchorsVerified": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileRun": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma (Gerp 5+ outlets; Neymar 4; Flávio intl 2; Renan 3)",
+    "numericalErrors": "reconcile marcou apenas sub-mercado (58,5%) e valores corretos lidos truncados (57,50/22,90/12,35) — falsos positivos; tudo bate com o JSON",
+    "fabricatedSources": "nenhuma; todas do cache/WebSearch verificadas",
+    "literalQuotes": "paráfrases/citações atribuídas ('bolsonarismo morreu', 'inviável', 'defender empresas')",
+    "spuriousCausation": "nenhuma; salto recorde de Lula descrito explicitamente como movimento técnico sem evento triggador (a Gerp foi desfavorável a ele)",
+    "criticalVerbs": "OK; sem prisão/morte/decisão nova",
+    "decision": "aprovado para preview; lede EN/ES corrigido (bug do tradutor: ## + duplicação PT+ES + links no lede); aprovado pelo usuário para publish"
+  },
+  "validation": {
+    "validateAfosDaily": "exit 0 (OK), 2 warnings não-bloqueantes (link-density 45%, volume-total heurística)",
+    "totalPresidentialVolumeUSD": "105.1M",
+    "gerpField": "15-20/Jun, n=2.000, margem 2,19pp"
+  }
+}
