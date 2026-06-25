@@ -31,7 +31,7 @@ export interface NavItem { id: string; label: string; href?: string; action?: st
 export interface NavGroup { id: string; label: string; color?: string; items: NavItem[] }
 // links dos nós de DADO para o dataset (ex.: HF do Brasil), por tipo de nó. Estilo Obsidian:
 // cada nó aponta para o arquivo/seção que o alimenta.
-export interface DataLinks { election?: string; market?: string; poll?: string; press?: string; candidate?: string; context?: string }
+export interface DataLinks { election?: string; market?: string; poll?: string; press?: string; candidate?: string; context?: string; result?: string }
 
 const TYPE_COLOR: Record<NodeType, string> = {
   election: '#0F52BA',
@@ -163,7 +163,7 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   const winner = ELECTION_WINNER[d.iso3]
   if (winner && d.rows.some((r) => r.candidate === winner)) {
     const winnerShort = winner.split(' ').pop() || winner
-    add({ id: 'result', label: lbl.result(winnerShort), type: 'result', r: 18, color: TYPE_COLOR.result })
+    add({ id: 'result', label: lbl.result(winnerShort), type: 'result', r: 18, color: TYPE_COLOR.result, href: dataLinks.result })
     links.push({ source: 'election', target: 'result', kind: 'tree' })
     links.push({ source: 'result', target: `c_${winner}`, kind: 'correct' })
   }

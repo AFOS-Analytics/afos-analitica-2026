@@ -82,7 +82,8 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
     poll: `${div.hf}/tree/main/polls`,
     press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : undefined,
     candidate: `${div.hf}/tree/main/data`,
-    context: `${div.hf}/tree/main/data`,
+    context: '#sec-contexto',
+    result: `${div.hf}/tree/main/data`,
   } : {}
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
@@ -207,7 +208,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
         )}
 
         {div?.context && (
-          <StructuralContext context={div.context} locale={loc} isBlue={isBlue} className="mb-8" />
+          <div id="sec-contexto" className="scroll-mt-20">
+            <StructuralContext context={div.context} locale={loc} isBlue={isBlue} className="mb-8" />
+          </div>
         )}
 
         {enriched && div && (div.rows || []).length > 0 && (
