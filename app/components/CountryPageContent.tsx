@@ -6,6 +6,7 @@ import type { CountryDivergence } from '../../lib/country-data'
 import { GRAPH_ENABLED } from '../../lib/country-data'
 import { OddsTrajectoryChart } from './OddsTrajectoryChart'
 import { CountryGraph } from './CountryGraph'
+import type { NavGroup, DataLinks } from './CountryGraph'
 import { StructuralContext } from './StructuralContext'
 
 type Theme = 'light' | 'blue'
@@ -65,6 +66,24 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const oddsL = { who: oddsCompleted ? oddsWho.won : oddsWho.wins, vol: loc === 'es' ? 'Volumen' : 'Volume' }
   // país no allowlist recebe o pacote novo (grafo + barras de odds + SEO oculto)
   const enriched = GRAPH_ENABLED.has(country.iso3)
+  // EUA: cluster clicável Harvard Dataverse (coleção + DOI EUA) no grafo (Brasil e EUA têm depósito)
+  const graphNav: NavGroup[] = country.iso3 === 'USA' ? [
+    { id: 'nav_harvard', label: 'Harvard Dataverse', color: '#A51C30', items: [
+      { id: 'h_coll', label: loc === 'en' ? 'AFOS collection' : loc === 'es' ? 'Colección AFOS' : 'Coleção AFOS', href: 'https://dataverse.harvard.edu/dataverse/afos-analytics' },
+      { id: 'h_us', label: loc === 'en' ? 'USA DOI 2024' : loc === 'es' ? 'DOI EE.UU. 2024' : 'DOI EUA 2024', href: 'https://doi.org/10.7910/DVN/3DJCW5' },
+    ] },
+  ] : []
+  // cada nó de dado aponta para a pasta correspondente no dataset do país no HF (estilo Obsidian).
+  // Estrutura padrão dos casos validados: data/ (mercado, divergência, structural-context.csv),
+  // polls/ (pesquisas), press/ (só EUA).
+  const graphLinks: DataLinks = div?.hf ? {
+    election: div.hf,
+    market: `${div.hf}/tree/main/data`,
+    poll: `${div.hf}/tree/main/polls`,
+    press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : undefined,
+    candidate: `${div.hf}/tree/main/data`,
+    context: `${div.hf}/tree/main/data`,
+  } : {}
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const textMain = isBlue ? 'text-white' : 'text-dark'
@@ -203,7 +222,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 ? 'La elección en el centro, con mercados, encuestas, prensa y contexto estructural alrededor. La divergencia entre mercado y encuesta es la línea de color, con el Δpp encima.'
                 : 'A eleição no centro, com mercados, pesquisas, imprensa e contexto estrutural em volta. A divergência entre mercado e pesquisa é a linha colorida, com o Δpp em cima.'}
             </p>
-            <CountryGraph data={div} electionLabel={`${name} ${election?.year ?? ''}`.trim()} locale={loc} isBlue={isBlue} />
+            <CountryGraph data={div} electionLabel={`${name} ${election?.year ?? ''}`.trim()} locale={loc} isBlue={isBlue} navGroups={graphNav} dataLinks={graphLinks} />
           </div>
         )}
 

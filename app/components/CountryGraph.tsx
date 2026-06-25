@@ -49,7 +49,28 @@ const TYPE_COLOR: Record<NodeType, string> = {
 // paleta para candidatos sem cor explícita (por índice)
 const PALETTE = ['#0F52BA', '#c0392b', '#16a34a', '#d97706', '#7c3aed', '#0891b2', '#db2777', '#475569']
 // cores explícitas conhecidas (partidárias)
-const CAND_COLOR: Record<string, string> = { Trump: '#c0392b', Harris: '#2563eb' }
+// cores por candidato/partido nos casos validados (esq./trabalhista = vermelho, dir./conservador =
+// azul; EUA segue a convenção local R=vermelho, D=azul). Sem correspondência → paleta por índice.
+const CAND_COLOR: Record<string, string> = {
+  // EUA
+  Trump: '#c0392b', Harris: '#2563eb',
+  // Brasil
+  Lula: '#c0392b', 'Flávio Bolsonaro': '#2563eb', 'Renan Santos': '#f59e0b', 'Ronaldo Caiado': '#16a34a', 'Romeu Zema': '#f97316',
+  // Chile
+  'Jeannette Jara': '#c0392b', 'José Antonio Kast': '#2563eb', 'Evelyn Matthei': '#0891b2', 'Johannes Kaiser': '#7c3aed', 'Franco Parisi': '#f97316', 'Eduardo Artés': '#991b1b',
+  // Colômbia
+  'Abelardo de la Espriella': '#2563eb', 'Iván Cepeda': '#c0392b',
+  // Peru
+  'Keiko Fujimori': '#f97316', 'Roberto Sánchez': '#c0392b', 'Rafael López Aliaga': '#2563eb', 'Carlos Álvarez': '#0891b2', 'Ricardo Belmont': '#7c3aed',
+  // Alemanha (cores partidárias)
+  'CDU/CSU': '#1f2937', AfD: '#2563eb', SPD: '#c0392b', 'Grüne': '#16a34a', FDP: '#eab308', BSW: '#7c3aed',
+  // Canadá
+  Liberal: '#c0392b', Conservative: '#2563eb', NDP: '#f97316', 'Bloc Québécois': '#38bdf8', Green: '#16a34a', "People's Party": '#7c3aed',
+  // México
+  Sheinbaum: '#c0392b', 'Gálvez': '#2563eb', 'Máynez': '#f97316',
+  // Reino Unido (Conservative já mapeado acima, mesmo azul)
+  Labour: '#c0392b', Reform: '#06b6d4', 'Lib Dems': '#f59e0b',
+}
 
 // cor da aresta de divergência: |div|>=6 vermelho, 3-6 âmbar, <3 verde (convergência)
 function divColor(div: number): string {
@@ -208,7 +229,8 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
 
 export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean }) {
   const ref = useRef<SVGSVGElement | null>(null)
-  const H = navGroups.length ? 760 : 580
+  const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
+  const H = navCount > 6 ? 760 : 580
 
   useEffect(() => {
     if (!ref.current) return
@@ -228,13 +250,20 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     const zoom = d3.zoom<SVGSVGElement, unknown>().scaleExtent([0.4, 3]).on('zoom', (e) => root.attr('transform', e.transform.toString()))
     svg.call(zoom as never)
 
+    // hover estilo Obsidian: o nó e os fios conectados acendem em azul reluzente, o resto esmaece
+    const HL = '#2563eb'
+    const eid = (x: unknown): string => (typeof x === 'object' && x ? (x as GNode).id : (x as string))
+    const baseStroke = (l: GLink) => l.kind === 'divergence' ? divColor(l.div ?? 0) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : l.kind === 'nav' ? (isBlue ? '#6366f1' : '#c7d2fe') : pal.tree
+    const baseWidth = (l: GLink) => l.kind === 'divergence' ? (l.w ?? 2) : l.kind === 'correct' ? 3 : 1.5
+    const baseOpacity = (l: GLink) => l.kind === 'divergence' ? 0.95 : l.kind === 'tree' ? 0.45 : 0.8
+
     const linkSel = root.append('g').attr('fill', 'none')
       .selectAll('line').data(links).join('line')
-      .attr('stroke', (l) => l.kind === 'divergence' ? divColor(l.div ?? 0) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : l.kind === 'nav' ? (isBlue ? '#6366f1' : '#c7d2fe') : pal.tree)
-      .attr('stroke-width', (l) => l.kind === 'divergence' ? (l.w ?? 2) : l.kind === 'correct' ? 3 : 1.5)
+      .attr('stroke', baseStroke)
+      .attr('stroke-width', baseWidth)
       .attr('stroke-dasharray', (l) => l.kind === 'poll' || l.kind === 'wrong' ? '4 4' : null)
       .attr('stroke-linecap', 'round')
-      .attr('opacity', (l) => l.kind === 'divergence' ? 0.95 : l.kind === 'tree' ? 0.45 : 0.8)
+      .attr('opacity', baseOpacity)
 
     // rótulo Δpp sobre a aresta de divergência (o cruzamento mercado × pesquisa, a estrela do AFOS)
     const divLinks = links.filter((l) => l.kind === 'divergence')
@@ -277,7 +306,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
 
     const sim = d3.forceSimulation<GNode>(nodes)
       .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => l.kind === 'divergence' ? 115 : l.kind === 'tree' ? ((l.source as unknown as GNode).id === 'election' ? 125 : 80) : 95).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(navGroups.length ? -540 : -380))
+      .force('charge', d3.forceManyBody().strength(navCount > 6 ? -540 : -380))
       .force('center', d3.forceCenter(W / 2, H / 2))
       .force('collide', d3.forceCollide<GNode>().radius((n) => n.r + 26))
       .force('x', d3.forceX(W / 2).strength(0.04))
@@ -300,6 +329,23 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .on('drag', (e, n) => { n.fx = e.x; n.fy = e.y })
       .on('end', (e, n) => { if (!e.active) sim.alphaTarget(0); n.fx = null; n.fy = null })
     nodeSel.call(drag as never)
+
+    // realce ao passar o mouse (espelha o Obsidian): nó + arestas incidentes em azul; vizinhos em
+    // foco, o resto esmaecido
+    function highlight(hoverId: string, on: boolean) {
+      const inc = (l: GLink) => eid(l.source) === hoverId || eid(l.target) === hoverId
+      linkSel
+        .attr('stroke', (l) => (on && inc(l)) ? HL : baseStroke(l))
+        .attr('stroke-width', (l) => (on && inc(l)) ? Math.max(2.5, baseWidth(l) + 1) : baseWidth(l))
+        .attr('opacity', (l) => on ? (inc(l) ? 1 : baseOpacity(l) * 0.16) : baseOpacity(l))
+      const nb = new Set<string>([hoverId])
+      if (on) for (const l of links) { const s = eid(l.source), t = eid(l.target); if (s === hoverId) nb.add(t); if (t === hoverId) nb.add(s) }
+      nodeSel.attr('opacity', (d) => on ? (nb.has(d.id) ? 1 : 0.22) : 1)
+      nodeSel.select<SVGCircleElement>('circle')
+        .attr('stroke', (d) => (on && d.id === hoverId) ? HL : pal.nodeStroke)
+        .attr('stroke-width', (d) => (on && d.id === hoverId) ? 3.5 : 2)
+    }
+    nodeSel.on('mouseover', (_e, n) => highlight(n.id, true)).on('mouseout', () => highlight('', false))
 
     return () => { sim.stop() }
   }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks])
