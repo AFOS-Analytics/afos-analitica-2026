@@ -230,11 +230,12 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
 export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean }) {
   const ref = useRef<SVGSVGElement | null>(null)
   const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
-  const H = navCount > 6 ? 760 : 580
+  const dense = navCount > 6
+  const W = dense ? 1140 : 900
+  const H = dense ? 820 : 580
 
   useEffect(() => {
     if (!ref.current) return
-    const W = 900
     const lbl = LBL[locale] || LBL['en']
     const tag = TAG[locale] || 'en-US'
     const dec = (v: number | string) => locale === 'en' ? String(v) : String(v).replace('.', ',')
@@ -305,10 +306,10 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .attr('paint-order', 'stroke').attr('stroke', pal.halo).attr('stroke-width', 2.5)
 
     const sim = d3.forceSimulation<GNode>(nodes)
-      .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => l.kind === 'divergence' ? 115 : l.kind === 'tree' ? ((l.source as unknown as GNode).id === 'election' ? 125 : 80) : 95).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(navCount > 6 ? -540 : -380))
+      .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => l.kind === 'divergence' ? 115 : l.kind === 'nav' ? ((l.source as unknown as GNode).id === 'election' ? 150 : 105) : l.kind === 'tree' ? ((l.source as unknown as GNode).id === 'election' ? 125 : 80) : 95).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
+      .force('charge', d3.forceManyBody().strength(dense ? -720 : -380))
       .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('collide', d3.forceCollide<GNode>().radius((n) => n.r + 26))
+      .force('collide', d3.forceCollide<GNode>().radius((n) => (n.type === 'nav' || n.type === 'navhub') ? n.r + 42 : n.r + 26))
       .force('x', d3.forceX(W / 2).strength(0.04))
       .force('y', d3.forceY(H / 2).strength(0.04))
 
@@ -353,7 +354,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const lbl = LBL[locale] || LBL['en']
   return (
     <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
-      <svg ref={ref} viewBox={`0 0 900 ${H}`} className="w-full" style={{ height: 'auto', display: 'block', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
+      <svg ref={ref} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', display: 'block', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
