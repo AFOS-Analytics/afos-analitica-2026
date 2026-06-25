@@ -68,7 +68,7 @@ export function getCountryDivergence(iso3: string): CountryDivergence | null {
 // Allowlist dos países com o pacote novo ligado (grafo do cruzamento + barras de odds no card
 // de divergência + textos de SEO ocultos). País fora da lista = inalterado em produção.
 // Rollout um de cada vez: adicionar o iso3 após aprovação do preview.
-export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN'])
+export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN', 'MEX'])
 
 // Vencedor real de cada caso validado (para o nó "Resultado real" no grafo). O nome deve bater
 // com um candidato em `rows`. Países sem entrada não exibem o nó de resultado.
@@ -78,4 +78,5 @@ export const ELECTION_WINNER: Record<string, string> = {
   COL: 'Abelardo de la Espriella',
   DEU: 'CDU/CSU',
   CAN: 'Liberal',
+  MEX: 'Sheinbaum',
 }
