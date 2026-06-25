@@ -97,7 +97,6 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const tdRow = isBlue ? 'border-blue-400/15' : 'border-light-border/40'
   const tdNum = isBlue ? 'text-blue-100/80' : 'text-gray-600'
   const elCard = isBlue ? 'bg-blue-800/40 border-blue-400/30 hover:bg-blue-800/60' : 'bg-blue-50 border-blue-200 hover:bg-blue-100'
-  const instCard = isBlue ? 'bg-blue-900/40 border-blue-400/30 hover:border-blue-200 text-white' : 'bg-light-bg border-light-border hover:border-primary text-dark'
   const pos = isBlue ? 'text-emerald-400' : 'text-emerald-600'
   const neg = isBlue ? 'text-red-400' : 'text-red-600'
   // bloco SEO: oculto (sr-only) nos países enriquecidos, visível nos demais
@@ -254,9 +253,11 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           </div>
         )}
 
-        <div className="grid sm:grid-cols-2 gap-3">
-          <a href={`/${loc}/political-risk`} className={`${instCard} border rounded-lg p-3 text-sm font-semibold transition-colors`}>→ {l.politicalRisk}</a>
-          <a href={`/${loc}/for-investors`} className={`${instCard} border rounded-lg p-3 text-sm font-semibold transition-colors`}>→ {l.forInvestors}</a>
+        {/* Links institucionais ocultos visualmente (sr-only): presentes no HTML para SEO e
+            internal-linking, mas sem interesse visual para o usuário na página de país. */}
+        <div className="sr-only">
+          <a href={`/${loc}/political-risk`}>{l.politicalRisk}</a>
+          <a href={`/${loc}/for-investors`}>{l.forInvestors}</a>
         </div>
       </div>
     </div>
