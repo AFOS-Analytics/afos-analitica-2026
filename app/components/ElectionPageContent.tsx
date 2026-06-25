@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import type { CountrySEO, ElectionSEO } from '../../lib/seo/countries'
 import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
+import { GRAPH_ENABLED } from '../../lib/country-data'
 import { OddsTrajectoryChart } from './OddsTrajectoryChart'
 
 type Theme = 'light' | 'blue'
@@ -19,9 +20,9 @@ function ThemeToggle({ theme, onChoose, isBlue, labels }: { theme: Theme; onChoo
 }
 
 const L: Record<string, { themeAria: string; themeLight: string; themeBlue: string; backToCountry: string; date: string; status: string; marketTitle: string; whoWins: string; volume: string; snapshotNote: (d: string) => string; viewOn: string; context: string; implications: string; institutional: string; whyPrediction: string; ctx: (n: string, t: string, y: number) => string; impl: (n: string) => string; inst: (n: string) => string; why: string }> = {
-  'pt-BR': { themeAria: 'Tema', themeLight: 'Tema claro', themeBlue: 'Tema Sapphire', backToCountry: '← Ver país', date: 'Data', status: 'Status', marketTitle: 'Mercado de previsão (Polymarket)', whoWins: 'Quem vence?', volume: 'Volume', snapshotNote: (d) => `Foto do mercado em ${d}, pré-resultado (mercado encerrado).`, viewOn: 'Ver no Polymarket', context: 'Contexto político', implications: 'Implicações de mercado', institutional: 'Relevância institucional', whyPrediction: 'Por que mercados de previsão', ctx: (n, t, y) => `A eleição ${t.toLowerCase()} de ${n} em ${y} é monitorada pela AFOS Analytics com dados de mercados de previsão, pesquisas eleitorais e análise de eventos críticos.`, impl: (n) => `Resultados eleitorais em ${n} impactam diretamente percepção de risco soberano, fluxos de capital e decisões de investidores globais. Mercados de previsão precificam cenários prováveis em tempo real.`, inst: (n) => `Fundos, bancos e consultorias estratégicas usam sinais eleitorais para antecipar movimentos de mercado. A AFOS Analytics consolida esses sinais em uma interface acessível.`, why: 'Mercados de previsão com dinheiro real (como Polymarket) são historicamente competitivos com as pesquisas. Refletem onde as pessoas colocam seu dinheiro, não apenas sua opinião; e a divergência entre os dois é o sinal que a AFOS acompanha.' },
-  en: { themeAria: 'Theme', themeLight: 'Light theme', themeBlue: 'Sapphire theme', backToCountry: '← View country', date: 'Date', status: 'Status', marketTitle: 'Prediction market (Polymarket)', whoWins: 'Who wins?', volume: 'Volume', snapshotNote: (d) => `Market snapshot on ${d}, pre-result (market closed).`, viewOn: 'View on Polymarket', context: 'Political context', implications: 'Market implications', institutional: 'Institutional relevance', whyPrediction: 'Why prediction markets', ctx: (n, t, y) => `The ${t.toLowerCase()} election in ${n} ${y} is monitored by AFOS Analytics with prediction market data, electoral polls, and critical event analysis.`, impl: (n) => `Election outcomes in ${n} directly impact sovereign risk perception, capital flows, and global investor decisions. Prediction markets price likely scenarios in real time.`, inst: (n) => `Funds, banks, and strategic consultancies use election signals to anticipate market movements. AFOS Analytics consolidates these signals into an accessible interface.`, why: 'Real-money prediction markets (like Polymarket) are historically competitive with polls. They reflect where people put their money, not just their opinion; and the divergence between the two is the signal AFOS tracks.' },
-  es: { themeAria: 'Tema', themeLight: 'Tema claro', themeBlue: 'Tema Sapphire', backToCountry: '← Ver país', date: 'Fecha', status: 'Estado', marketTitle: 'Mercado de predicción (Polymarket)', whoWins: '¿Quién gana?', volume: 'Volumen', snapshotNote: (d) => `Foto del mercado el ${d}, pre-resultado (mercado cerrado).`, viewOn: 'Ver en Polymarket', context: 'Contexto político', implications: 'Implicaciones de mercado', institutional: 'Relevancia institucional', whyPrediction: 'Por qué mercados de predicción', ctx: (n, t, y) => `La elección ${t.toLowerCase()} de ${n} en ${y} es monitoreada por AFOS Analytics con datos de mercados de predicción, encuestas electorales y análisis de eventos críticos.`, impl: (n) => `Los resultados electorales en ${n} impactan directamente la percepción de riesgo soberano, flujos de capital y decisiones de inversores globales. Los mercados de predicción precifican escenarios probables en tiempo real.`, inst: (n) => `Fondos, bancos y consultorías estratégicas usan señales electorales para anticipar movimientos de mercado. AFOS Analytics consolida esas señales en una interfaz accesible.`, why: 'Los mercados de predicción con dinero real (como Polymarket) son históricamente competitivos con las encuestas. Reflejan dónde las personas ponen su dinero, no solo su opinión; y la divergencia entre ambos es la señal que AFOS sigue.' },
+  'pt-BR': { themeAria: 'Tema', themeLight: 'Tema claro', themeBlue: 'Tema Sapphire', backToCountry: '← Ver país', date: 'Data', status: 'Status', marketTitle: 'Mercado de previsão (Polymarket)', whoWins: 'Quem venceu?', volume: 'Volume', snapshotNote: (d) => `Foto do mercado em ${d}, pré-resultado (mercado encerrado).`, viewOn: 'Ver no Polymarket', context: 'Contexto político', implications: 'Implicações de mercado', institutional: 'Relevância institucional', whyPrediction: 'Por que mercados de previsão', ctx: (n, t, y) => `A eleição ${t.toLowerCase()} de ${n} em ${y} é monitorada pela AFOS Analytics com dados de mercados de previsão, pesquisas eleitorais e análise de eventos críticos.`, impl: (n) => `Resultados eleitorais em ${n} impactam diretamente percepção de risco soberano, fluxos de capital e decisões de investidores globais. Mercados de previsão precificam cenários prováveis em tempo real.`, inst: (n) => `Fundos, bancos e consultorias estratégicas usam sinais eleitorais para antecipar movimentos de mercado. A AFOS Analytics consolida esses sinais em uma interface acessível.`, why: 'Mercados de previsão com dinheiro real (como Polymarket) são historicamente competitivos com as pesquisas. Refletem onde as pessoas colocam seu dinheiro, não apenas sua opinião; e a divergência entre os dois é o sinal que a AFOS acompanha.' },
+  en: { themeAria: 'Theme', themeLight: 'Light theme', themeBlue: 'Sapphire theme', backToCountry: '← View country', date: 'Date', status: 'Status', marketTitle: 'Prediction market (Polymarket)', whoWins: 'Who won?', volume: 'Volume', snapshotNote: (d) => `Market snapshot on ${d}, pre-result (market closed).`, viewOn: 'View on Polymarket', context: 'Political context', implications: 'Market implications', institutional: 'Institutional relevance', whyPrediction: 'Why prediction markets', ctx: (n, t, y) => `The ${t.toLowerCase()} election in ${n} ${y} is monitored by AFOS Analytics with prediction market data, electoral polls, and critical event analysis.`, impl: (n) => `Election outcomes in ${n} directly impact sovereign risk perception, capital flows, and global investor decisions. Prediction markets price likely scenarios in real time.`, inst: (n) => `Funds, banks, and strategic consultancies use election signals to anticipate market movements. AFOS Analytics consolidates these signals into an accessible interface.`, why: 'Real-money prediction markets (like Polymarket) are historically competitive with polls. They reflect where people put their money, not just their opinion; and the divergence between the two is the signal AFOS tracks.' },
+  es: { themeAria: 'Tema', themeLight: 'Tema claro', themeBlue: 'Tema Sapphire', backToCountry: '← Ver país', date: 'Fecha', status: 'Estado', marketTitle: 'Mercado de predicción (Polymarket)', whoWins: '¿Quién ganó?', volume: 'Volumen', snapshotNote: (d) => `Foto del mercado el ${d}, pre-resultado (mercado cerrado).`, viewOn: 'Ver en Polymarket', context: 'Contexto político', implications: 'Implicaciones de mercado', institutional: 'Relevancia institucional', whyPrediction: 'Por qué mercados de predicción', ctx: (n, t, y) => `La elección ${t.toLowerCase()} de ${n} en ${y} es monitoreada por AFOS Analytics con datos de mercados de predicción, encuestas electorales y análisis de eventos críticos.`, impl: (n) => `Los resultados electorales en ${n} impactan directamente la percepción de riesgo soberano, flujos de capital y decisiones de inversores globales. Los mercados de predicción precifican escenarios probables en tiempo real.`, inst: (n) => `Fondos, bancos y consultorías estratégicas usan señales electorales para anticipar movimientos de mercado. AFOS Analytics consolida esas señales en una interfaz accesible.`, why: 'Los mercados de predicción con dinero real (como Polymarket) son históricamente competitivos con las encuestas. Reflejan dónde las personas ponen su dinero, no solo su opinión; y la divergencia entre ambos es la señal que AFOS sigue.' },
 }
 
 export function ElectionPageContent({ locale, country, election, div }: { locale: string; country: CountrySEO; election: ElectionSEO; div: CountryDivergence | null }) {
@@ -53,6 +54,13 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
   const linkCard = isBlue ? 'bg-blue-900/40 border-blue-400/30 hover:border-blue-200 text-white' : 'bg-light-bg border-light-border hover:border-primary text-dark'
 
   const max = snap ? Math.max(...snap.candidates.map((c) => c.market_pct || 0), 1) : 1
+  // país no allowlist: bloco SEO oculto (sr-only); demais mantêm visível
+  const enriched = GRAPH_ENABLED.has(country.iso3)
+  const seoWrap = enriched ? 'sr-only' : 'space-y-6 mb-8'
+  const seoH = enriched ? undefined : `text-lg font-bold ${heading} mb-2`
+  const seoH3 = enriched ? undefined : `text-base font-bold ${textMain} mb-2`
+  const seoP = enriched ? undefined : `text-sm ${textMain} leading-relaxed`
+  const seoPmuted = enriched ? undefined : `text-sm ${textMuted} leading-relaxed`
 
   return (
     <div className={`min-h-screen ${pageBg} transition-colors`}>
@@ -110,22 +118,24 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
           </section>
         )}
 
-        <div className="space-y-6 mb-8">
+        {/* Bloco descritivo para SEO e leitores de tela: presente no HTML (indexável e acessível),
+            porém oculto visualmente via sr-only por ser repetitivo/sem interesse para o usuário. */}
+        <div className={seoWrap}>
           <div>
-            <h2 className={`text-lg font-bold ${heading} mb-2`}>{l.context}</h2>
-            <p className={`text-sm ${textMain} leading-relaxed`}>{l.ctx(name, type, election.year)}</p>
+            <h2 className={seoH}>{l.context}</h2>
+            <p className={seoP}>{l.ctx(name, type, election.year)}</p>
           </div>
           <div>
-            <h2 className={`text-lg font-bold ${heading} mb-2`}>{l.implications}</h2>
-            <p className={`text-sm ${textMain} leading-relaxed`}>{l.impl(name)}</p>
+            <h2 className={seoH}>{l.implications}</h2>
+            <p className={seoP}>{l.impl(name)}</p>
           </div>
           <div>
-            <h2 className={`text-lg font-bold ${heading} mb-2`}>{l.institutional}</h2>
-            <p className={`text-sm ${textMain} leading-relaxed`}>{l.inst(name)}</p>
+            <h2 className={seoH}>{l.institutional}</h2>
+            <p className={seoP}>{l.inst(name)}</p>
           </div>
           <div>
-            <h3 className={`text-base font-bold ${textMain} mb-2`}>{l.whyPrediction}</h3>
-            <p className={`text-sm ${textMuted} leading-relaxed`}>{l.why}</p>
+            <h3 className={seoH3}>{l.whyPrediction}</h3>
+            <p className={seoPmuted}>{l.why}</p>
           </div>
         </div>
 

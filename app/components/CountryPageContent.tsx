@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react'
 import type { CountrySEO } from '../../lib/seo/countries'
 import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
+import { GRAPH_ENABLED } from '../../lib/country-data'
 import { OddsTrajectoryChart } from './OddsTrajectoryChart'
+import { CountryGraph } from './CountryGraph'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
@@ -87,6 +89,12 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const l = LABELS[loc] || LABELS['en']
   const t = TEXTS(name)[loc] || TEXTS(name)['en']
   const ds = DTEXTS[loc] || DTEXTS['en']
+  // foto do mercado (barras "Quem vence?") embutida no card de divergência
+  const snap = div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
+  const snapMax = snap ? Math.max(...snap.candidates.map((c) => c.market_pct || 0), 1) : 1
+  const oddsL = ({ 'pt-BR': { who: 'Quem venceu?', vol: 'Volume' }, en: { who: 'Who won?', vol: 'Volume' }, es: { who: '¿Quién ganó?', vol: 'Volumen' } } as Record<string, { who: string; vol: string }>)[loc] || { who: 'Who won?', vol: 'Volume' }
+  // país no allowlist recebe o pacote novo (grafo + barras de odds + SEO oculto)
+  const enriched = GRAPH_ENABLED.has(country.iso3)
 
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const textMain = isBlue ? 'text-white' : 'text-dark'
@@ -102,6 +110,10 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const instCard = isBlue ? 'bg-blue-900/40 border-blue-400/30 hover:border-blue-200 text-white' : 'bg-light-bg border-light-border hover:border-primary text-dark'
   const pos = isBlue ? 'text-emerald-400' : 'text-emerald-600'
   const neg = isBlue ? 'text-red-400' : 'text-red-600'
+  // bloco SEO: oculto (sr-only) nos países enriquecidos, visível nos demais
+  const seoWrap = enriched ? 'sr-only' : 'space-y-6 mb-8'
+  const seoH2 = enriched ? undefined : `text-lg font-bold ${heading} mb-2`
+  const seoP = enriched ? undefined : `text-sm ${textMain} leading-relaxed`
 
   return (
     <div className={`min-h-screen ${pageBg} transition-colors`}>
@@ -173,6 +185,27 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 </tbody>
               </table>
             </div>
+            {enriched && snap && snap.candidates.length > 0 && (
+              <div className="mt-6">
+                <div className="flex items-baseline justify-between gap-3 mb-3">
+                  <h3 className={`text-base font-bold ${heading}`}>🏆 {oddsL.who}</h3>
+                  <span className={`text-sm ${textMuted}`}>{oddsL.vol}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{snap.total_volume_usd >= 1e9 ? `$${(snap.total_volume_usd / 1e9).toFixed(1)}B` : `$${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M`}</strong></span>
+                </div>
+                <div className="space-y-2.5">
+                  {snap.candidates.slice(0, 8).map((c, i) => (
+                    <div key={c.candidate}>
+                      <div className="flex justify-between text-sm mb-1">
+                        <span className={`font-medium ${textMain}`}>{c.candidate}</span>
+                        <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{c.market_pct ?? 0}%</span>
+                      </div>
+                      <div className={`w-full ${isBlue ? 'bg-blue-950/50' : 'bg-gray-200'} rounded-full h-2.5`}>
+                        <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(((c.market_pct || 0) / snapMax) * 100, 100)}%`, backgroundColor: i === 0 ? '#0F52BA' : (isBlue ? '#3b6fd4' : '#94a3b8') }} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
             {div.market_trajectory && (
               <OddsTrajectoryChart trajectory={div.market_trajectory} volume={div.market_snapshot?.total_volume_usd || 0} locale={loc} isBlue={isBlue} />
             )}
@@ -253,11 +286,29 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           )
         })()}
 
-        <div className="space-y-6 mb-8">
+        {enriched && div && (div.rows || []).length > 0 && (
+          <div className="mb-8">
+            <h2 className={`text-xl font-bold ${heading} mb-1`}>
+              {loc === 'en' ? 'Cross-reference graph' : loc === 'es' ? 'Grafo del cruce' : 'Grafo do cruzamento'}
+            </h2>
+            <p className={`text-sm ${isBlue ? 'text-blue-200/70' : 'text-gray-500'} mb-4`}>
+              {loc === 'en'
+                ? 'The election at the center, with markets, polls, press and structural context around it. The divergence between market and poll is the colored line, with the Δpp on it.'
+                : loc === 'es'
+                ? 'La elección en el centro, con mercados, encuestas, prensa y contexto estructural alrededor. La divergencia entre mercado y encuesta es la línea de color, con el Δpp encima.'
+                : 'A eleição no centro, com mercados, pesquisas, imprensa e contexto estrutural em volta. A divergência entre mercado e pesquisa é a linha colorida, com o Δpp em cima.'}
+            </p>
+            <CountryGraph data={div} electionLabel={`${name} ${election?.year ?? ''}`.trim()} locale={loc} isBlue={isBlue} />
+          </div>
+        )}
+
+        {/* Bloco descritivo para SEO e leitores de tela: presente no HTML (indexável e acessível),
+            porém oculto visualmente via sr-only por ser repetitivo/sem interesse para o usuário. */}
+        <div className={seoWrap}>
           {([['overview', t.overview], ['risk', t.risk], ['market', t.market], ['why', t.why]] as const).map(([k, body]) => (
             <div key={k}>
-              <h2 className={`text-lg font-bold ${heading} mb-2`}>{l[k]}</h2>
-              <p className={`text-sm ${textMain} leading-relaxed`}>{body}</p>
+              <h2 className={seoH2}>{l[k]}</h2>
+              <p className={seoP}>{body}</p>
             </div>
           ))}
         </div>
