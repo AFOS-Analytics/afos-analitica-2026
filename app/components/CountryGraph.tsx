@@ -10,8 +10,8 @@ import { ELECTION_WINNER } from '../../lib/country-data'
 // linha fina colorida pela magnitude (vermelho alta, amarelo média, verde convergência) com o Δpp
 // em destaque sobre a própria linha. Localizado PT/EN/ES e theme-aware (claro/Sapphire).
 
-type NodeType = 'election' | 'market' | 'candidate' | 'poll' | 'press' | 'context' | 'indicator' | 'result'
-type LinkKind = 'tree' | 'divergence' | 'poll' | 'correct' | 'wrong'
+type NodeType = 'election' | 'market' | 'candidate' | 'poll' | 'press' | 'context' | 'indicator' | 'result' | 'navhub' | 'nav'
+type LinkKind = 'tree' | 'divergence' | 'poll' | 'correct' | 'wrong' | 'nav'
 
 interface GNode {
   id: string
@@ -20,9 +20,18 @@ interface GNode {
   type: NodeType
   r: number
   color: string
+  href?: string
+  action?: string
   x?: number; y?: number; fx?: number | null; fy?: number | null
 }
 interface GLink { source: string; target: string; kind: LinkKind; div?: number; w?: number }
+
+// grupos de navegação opcionais (usado no dashboard do Brasil: o grafo vira mapa navegável)
+export interface NavItem { id: string; label: string; href?: string; action?: string }
+export interface NavGroup { id: string; label: string; color?: string; items: NavItem[] }
+// links dos nós de DADO para o dataset (ex.: HF do Brasil), por tipo de nó. Estilo Obsidian:
+// cada nó aponta para o arquivo/seção que o alimenta.
+export interface DataLinks { election?: string; market?: string; poll?: string; press?: string; candidate?: string; context?: string }
 
 const TYPE_COLOR: Record<NodeType, string> = {
   election: '#0F52BA',
@@ -33,6 +42,8 @@ const TYPE_COLOR: Record<NodeType, string> = {
   context: '#0891b2',
   indicator: '#94a3b8',
   result: '#16a34a',
+  navhub: '#4f46e5',
+  nav: '#818cf8',
 }
 
 // paleta para candidatos sem cor explícita (por índice)
@@ -93,19 +104,19 @@ const LBL: Record<string, Lbl> = {
 
 const TAG: Record<string, string> = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' }
 
-function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: string, dec: (v: number | string) => string): { nodes: GNode[]; links: GLink[] } {
+function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: string, dec: (v: number | string) => string, navGroups: NavGroup[] = [], dataLinks: DataLinks = {}): { nodes: GNode[]; links: GLink[] } {
   const nodes: GNode[] = []
   const links: GLink[] = []
   const add = (n: GNode) => { nodes.push(n); return n.id }
   const isUSA = d.iso3 === 'USA'
 
-  add({ id: 'election', label: electionLabel, type: 'election', r: 30, color: TYPE_COLOR.election })
+  add({ id: 'election', label: electionLabel, type: 'election', r: 30, color: TYPE_COLOR.election, href: dataLinks.election })
 
   // camadas
-  add({ id: 'L_market', label: lbl.market, type: 'market', r: 16, color: TYPE_COLOR.market })
-  add({ id: 'L_poll', label: lbl.poll, sub: lbl.pollsN(d.polls_count), type: 'poll', r: 16, color: TYPE_COLOR.poll })
-  add({ id: 'L_press', label: lbl.press, sub: isUSA ? lbl.pressSub : '', type: 'press', r: 15, color: TYPE_COLOR.press })
-  add({ id: 'L_ctx', label: lbl.ctx, type: 'context', r: 15, color: TYPE_COLOR.context })
+  add({ id: 'L_market', label: lbl.market, type: 'market', r: 16, color: TYPE_COLOR.market, href: dataLinks.market })
+  add({ id: 'L_poll', label: lbl.poll, sub: lbl.pollsN(d.polls_count), type: 'poll', r: 16, color: TYPE_COLOR.poll, href: dataLinks.poll })
+  add({ id: 'L_press', label: lbl.press, sub: isUSA ? lbl.pressSub : '', type: 'press', r: 15, color: TYPE_COLOR.press, href: dataLinks.press })
+  add({ id: 'L_ctx', label: lbl.ctx, type: 'context', r: 15, color: TYPE_COLOR.context, href: dataLinks.context })
   for (const t of ['L_market', 'L_poll', 'L_press', 'L_ctx']) links.push({ source: 'election', target: t, kind: 'tree' })
 
   // EUA: 2 mercados que discordaram (colégio acertou, voto popular errou), antes dos candidatos
@@ -122,7 +133,7 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   d.rows.forEach((row, i) => {
     const cid = `c_${row.candidate}`
     const col = CAND_COLOR[row.candidate] || PALETTE[i % PALETTE.length]
-    add({ id: cid, label: row.candidate, sub: `${lbl.mkt(dec(row.market_pct) + '%')} · ${lbl.pollPct(dec(row.poll_pct) + '%')}`, type: 'candidate', r: 12 + Math.min(13, row.market_pct / 5), color: col })
+    add({ id: cid, label: row.candidate, sub: `${lbl.mkt(dec(row.market_pct) + '%')} · ${lbl.pollPct(dec(row.poll_pct) + '%')}`, type: 'candidate', r: 12 + Math.min(13, row.market_pct / 5), color: col, href: dataLinks.candidate })
     links.push({ source: marketParent, target: cid, kind: 'divergence', div: row.divergence_pp, w: 1.5 + Math.min(1.3, Math.abs(row.divergence_pp) / 6) })
     links.push({ source: 'L_poll', target: cid, kind: 'poll' })
   })
@@ -153,9 +164,9 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
     education?: Record<string, { value: number }>
   } | undefined
   if (ctx) {
-    add({ id: 'g_gov', label: lbl.gov, type: 'context', r: 11, color: '#0e7490' })
-    add({ id: 'g_eco', label: lbl.eco, type: 'context', r: 11, color: '#0e7490' })
-    add({ id: 'g_edu', label: lbl.edu, type: 'context', r: 11, color: '#0e7490' })
+    add({ id: 'g_gov', label: lbl.gov, type: 'context', r: 11, color: '#0e7490', href: dataLinks.context })
+    add({ id: 'g_eco', label: lbl.eco, type: 'context', r: 11, color: '#0e7490', href: dataLinks.context })
+    add({ id: 'g_edu', label: lbl.edu, type: 'context', r: 11, color: '#0e7490', href: dataLinks.context })
     for (const t of ['g_gov', 'g_eco', 'g_edu']) links.push({ source: 'L_ctx', target: t, kind: 'tree' })
 
     const usd0 = new Intl.NumberFormat(tag, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
@@ -181,19 +192,31 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
     if (e?.expected_years_schooling) { add({ id: 'i_eduyrs', label: lbl.eduYears, sub: lbl.eduYearsSub(pct1.format(e.expected_years_schooling.value)), type: 'indicator', r: 7, color: TYPE_COLOR.indicator }); links.push({ source: 'g_edu', target: 'i_eduyrs', kind: 'tree' }) }
   }
 
+  // grupos de navegação (mapa do AFOS): hub por grupo + itens clicáveis (href ou ação/modal)
+  for (const g of navGroups) {
+    if (!g.items.length) continue
+    add({ id: g.id, label: g.label, type: 'navhub', r: 13, color: g.color || TYPE_COLOR.navhub })
+    links.push({ source: 'election', target: g.id, kind: 'nav' })
+    for (const it of g.items) {
+      add({ id: it.id, label: it.label, type: 'nav', r: 8, color: TYPE_COLOR.nav, href: it.href, action: it.action })
+      links.push({ source: g.id, target: it.id, kind: 'nav' })
+    }
+  }
+
   return { nodes, links }
 }
 
-export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean }) {
+export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean }) {
   const ref = useRef<SVGSVGElement | null>(null)
+  const H = navGroups.length ? 760 : 580
 
   useEffect(() => {
     if (!ref.current) return
-    const W = 900, H = 580
+    const W = 900
     const lbl = LBL[locale] || LBL['en']
     const tag = TAG[locale] || 'en-US'
     const dec = (v: number | string) => locale === 'en' ? String(v) : String(v).replace('.', ',')
-    const { nodes, links } = buildGraph(data, electionLabel, lbl, tag, dec)
+    const { nodes, links } = buildGraph(data, electionLabel, lbl, tag, dec, navGroups, dataLinks)
     const pal = isBlue
       ? { tree: '#3f6cb0', label: '#f1f5f9', halo: '#082a5e', sub: '#93c5fd', nodeStroke: '#0a3d8f' }
       : { tree: '#cbd5e1', label: '#1e293b', halo: '#ffffff', sub: '#64748b', nodeStroke: '#ffffff' }
@@ -207,7 +230,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
 
     const linkSel = root.append('g').attr('fill', 'none')
       .selectAll('line').data(links).join('line')
-      .attr('stroke', (l) => l.kind === 'divergence' ? divColor(l.div ?? 0) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : pal.tree)
+      .attr('stroke', (l) => l.kind === 'divergence' ? divColor(l.div ?? 0) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : l.kind === 'nav' ? (isBlue ? '#6366f1' : '#c7d2fe') : pal.tree)
       .attr('stroke-width', (l) => l.kind === 'divergence' ? (l.w ?? 2) : l.kind === 'correct' ? 3 : 1.5)
       .attr('stroke-dasharray', (l) => l.kind === 'poll' || l.kind === 'wrong' ? '4 4' : null)
       .attr('stroke-linecap', 'round')
@@ -222,7 +245,12 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .attr('fill', (l) => divColor(l.div ?? 0))
       .attr('paint-order', 'stroke').attr('stroke', '#fff').attr('stroke-width', 4)
 
-    const nodeSel = root.append('g').selectAll<SVGGElement, GNode>('g').data(nodes).join('g').style('cursor', 'grab')
+    const nodeSel = root.append('g').selectAll<SVGGElement, GNode>('g').data(nodes).join('g')
+      .style('cursor', (n) => n.href || n.action ? 'pointer' : 'grab')
+    nodeSel.on('click', (_e, n) => {
+      if (n.href) { if (/^https?:\/\//.test(n.href)) window.open(n.href, '_blank', 'noopener'); else window.location.href = n.href }
+      else if (n.action) { onNav?.(n.action) }
+    })
 
     nodeSel.append('circle')
       .attr('r', (n) => n.r)
@@ -234,8 +262,8 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .text((n) => n.label)
       .attr('text-anchor', 'middle')
       .attr('dy', (n) => n.r + 12)
-      .attr('font-size', (n) => n.type === 'election' ? 13 : n.type === 'indicator' ? 9 : 11)
-      .attr('font-weight', (n) => n.type === 'election' || n.type === 'result' ? 700 : 500)
+      .attr('font-size', (n) => n.type === 'election' ? 13 : (n.type === 'indicator' || n.type === 'nav') ? 9 : 11)
+      .attr('font-weight', (n) => n.type === 'election' || n.type === 'result' || n.type === 'navhub' ? 700 : 500)
       .attr('fill', pal.label)
       .attr('paint-order', 'stroke').attr('stroke', pal.halo).attr('stroke-width', 3)
 
@@ -249,7 +277,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
 
     const sim = d3.forceSimulation<GNode>(nodes)
       .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => l.kind === 'divergence' ? 115 : l.kind === 'tree' ? ((l.source as unknown as GNode).id === 'election' ? 125 : 80) : 95).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(-380))
+      .force('charge', d3.forceManyBody().strength(navGroups.length ? -540 : -380))
       .force('center', d3.forceCenter(W / 2, H / 2))
       .force('collide', d3.forceCollide<GNode>().radius((n) => n.r + 26))
       .force('x', d3.forceX(W / 2).strength(0.04))
@@ -267,19 +295,19 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
         .attr('y', (l) => ((l.source as unknown as GNode).y! + (l.target as unknown as GNode).y!) / 2)
     })
 
-    const drag = d3.drag<SVGGElement, GNode>()
+    const drag = d3.drag<SVGGElement, GNode>().clickDistance(6)
       .on('start', (e, n) => { if (!e.active) sim.alphaTarget(0.3).restart(); n.fx = n.x; n.fy = n.y })
       .on('drag', (e, n) => { n.fx = e.x; n.fy = e.y })
       .on('end', (e, n) => { if (!e.active) sim.alphaTarget(0); n.fx = null; n.fy = null })
     nodeSel.call(drag as never)
 
     return () => { sim.stop() }
-  }, [data, electionLabel, locale, isBlue])
+  }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks])
 
   const lbl = LBL[locale] || LBL['en']
   return (
-    <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : 'border-light-border bg-white'}`}>
-      <svg ref={ref} viewBox="0 0 900 580" className="w-full" style={{ height: 'auto', display: 'block', background: isBlue ? '#0b327a' : '#f8fafc' }} />
+    <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
+      <svg ref={ref} viewBox={`0 0 900 ${H}`} className="w-full" style={{ height: 'auto', display: 'block', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
@@ -287,6 +315,9 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
         <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5" style={{ background: '#16a34a' }} /> {lbl.legend.hit}</span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5 border-t border-dashed" style={{ borderColor: '#ef4444' }} /> {lbl.legend.miss}</span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#ea580c' }} /> {lbl.legend.press}</span>
+        {navGroups.length > 0 && (
+          <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#818cf8' }} /> {locale === 'en' ? 'navigation (click)' : locale === 'es' ? 'navegación (clic)' : 'navegação (clique)'}</span>
+        )}
         <span className={`ml-auto ${isBlue ? 'text-blue-300/60' : 'text-gray-400'}`}>{lbl.legend.hint}</span>
       </div>
     </div>
