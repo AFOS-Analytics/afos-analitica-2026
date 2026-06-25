@@ -92,7 +92,9 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   // foto do mercado (barras "Quem vence?") embutida no card de divergência
   const snap = div?.market_snapshot?.candidates?.length ? div.market_snapshot : null
   const snapMax = snap ? Math.max(...snap.candidates.map((c) => c.market_pct || 0), 1) : 1
-  const oddsL = ({ 'pt-BR': { who: 'Quem venceu?', vol: 'Volume' }, en: { who: 'Who won?', vol: 'Volume' }, es: { who: '¿Quién ganó?', vol: 'Volumen' } } as Record<string, { who: string; vol: string }>)[loc] || { who: 'Who won?', vol: 'Volume' }
+  const oddsCompleted = div?.election?.status === 'completed'
+  const oddsWho = ({ 'pt-BR': { won: 'Quem venceu?', wins: 'Quem vence?' }, en: { won: 'Who won?', wins: 'Who wins?' }, es: { won: '¿Quién ganó?', wins: '¿Quién gana?' } } as Record<string, { won: string; wins: string }>)[loc] || { won: 'Who won?', wins: 'Who wins?' }
+  const oddsL = { who: oddsCompleted ? oddsWho.won : oddsWho.wins, vol: loc === 'es' ? 'Volumen' : 'Volume' }
   // país no allowlist recebe o pacote novo (grafo + barras de odds + SEO oculto)
   const enriched = GRAPH_ENABLED.has(country.iso3)
 
