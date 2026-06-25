@@ -1,0 +1,61 @@
+{
+  "governance": {
+    "political_stability": {
+      "value": 57,
+      "year": 2024
+    },
+    "voice_accountability": {
+      "value": 62.4,
+      "year": 2024
+    },
+    "rule_of_law": {
+      "value": 49.3,
+      "year": 2024
+    },
+    "government_effectiveness": {
+      "value": 47,
+      "year": 2024
+    },
+    "regulatory_quality": {
+      "value": 50.2,
+      "year": 2024
+    },
+    "control_of_corruption": {
+      "value": 39.6,
+      "year": 2024
+    }
+  },
+  "macro": {
+    "population": {
+      "value": 211998573,
+      "year": 2024
+    },
+    "gdp_usd": {
+      "value": 2185821648943.86,
+      "year": 2024
+    },
+    "gdp_per_capita_usd": {
+      "value": 10310.5488778166,
+      "year": 2024
+    },
+    "inflation_pct": {
+      "value": 4.36746407652336,
+      "year": 2024
+    }
+  },
+  "education": {
+    "gov_expenditure_pct_gdp": {
+      "value": 5.61920976638794,
+      "year": 2022
+    },
+    "expected_years_schooling": {
+      "value": 13.93065,
+      "year": 2011
+    }
+  },
+  "sources": {
+    "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+    "wdi": "https://data.worldbank.org/"
+  },
+  "latest_year": 2024
+}

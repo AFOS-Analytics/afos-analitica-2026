@@ -1,5 +1,7 @@
 import { DashboardClient } from './DashboardClient';
 import { loadPollsData, loadAnalysisCards, loadAnalysisCriteriosa } from '../../../lib/dashboard/static-data';
+import brazilContext from '../../../lib/dashboard/brazil-context.json';
+import type { CountryContext } from '../../../lib/country-data';
 
 // Server component: lê os 3 JSONs estáticos (pesquisas + cards) no servidor e os
 // passa como props iniciais → renderizam no 1º paint, sem o spinner global que
@@ -13,6 +15,7 @@ export const revalidate = 7200;
 export default function DashboardPage() {
   return (
     <DashboardClient
+      brazilContext={brazilContext as CountryContext}
       initialPolls={loadPollsData()}
       initialAc={loadAnalysisCards()}
       initialCrit={loadAnalysisCriteriosa()}

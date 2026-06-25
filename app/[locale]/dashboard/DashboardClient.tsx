@@ -20,6 +20,8 @@ import { SentimentSection } from '../../components/SentimentSection';
 import { InssSection } from '../../components/InssSection';
 import { BancoMasterSection } from '../../components/BancoMasterSection';
 import { StfSection } from '../../components/StfSection';
+import { StructuralContext } from '../../components/StructuralContext';
+import type { CountryContext } from '../../../lib/country-data';
 import { LogicLink } from '../../components/LogicLink';
 import { EmailPopup } from '../../components/EmailPopup';
 import { DashboardGate } from '../../components/DashboardGate';
@@ -29,9 +31,10 @@ interface DashboardClientProps {
   initialPolls: PollData | null;
   initialAc: AnalysisData | null;
   initialCrit: CritData | null;
+  brazilContext: CountryContext;
 }
 
-function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardClientProps) {
+function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext }: DashboardClientProps) {
   const { t, locale } = useTranslation();
   // Estáticos (polls/ac/crit) vêm do SSR via props; só poly/news são fetch client.
   const { poly, polls, news, ac, crit, polyLoading, newsLoading } = useDashboardData({ initialPolls, initialAc, initialCrit });
@@ -107,6 +110,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit }: DashboardCli
           <SectionErrorBoundary name="INSS"><InssSection inss={inss} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
           <SectionErrorBoundary name="Banco Master"><BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} /></SectionErrorBoundary>
           <SectionErrorBoundary name="STF"><StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} /></SectionErrorBoundary>
+          <SectionErrorBoundary name="Contexto estrutural"><StructuralContext context={brazilContext} locale={locale} isBlue={false} /></SectionErrorBoundary>
         </main>
 
         <Footer />
