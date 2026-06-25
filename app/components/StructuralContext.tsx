@@ -1,4 +1,5 @@
 import type { CountryContext } from '../../lib/country-data'
+import { LogicLink } from './LogicLink'
 
 // Bloco "Contexto estrutural" (World Bank WGI + WDI), reutilizado nas páginas de país
 // (CountryPageContent) e no dashboard do Brasil. Trilíngue (PT-BR/EN/ES) e theme-aware.
@@ -31,7 +32,7 @@ function fmtUsd(v: number, tag: string) { return new Intl.NumberFormat(tag, { st
 function fmtPct(v: number, tag: string) { return new Intl.NumberFormat(tag, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(v) + '%' }
 function fmtCountCompact(v: number, tag: string) { return new Intl.NumberFormat(tag, { notation: 'compact', maximumFractionDigits: 1 }).format(v) }
 
-export function StructuralContext({ context, locale, isBlue = false, className = '' }: { context: CountryContext; locale: string; isBlue?: boolean; className?: string }) {
+export function StructuralContext({ context, locale, isBlue = false, className = '', logicAnchor }: { context: CountryContext; locale: string; isBlue?: boolean; className?: string; logicAnchor?: string }) {
   const ctx = context
   const ct = CTEXTS[locale] || CTEXTS['en']
   const tag = ct.locale
@@ -55,7 +56,10 @@ export function StructuralContext({ context, locale, isBlue = false, className =
 
   return (
     <section className={`${card} border rounded-xl p-6 ${className}`}>
-      <h2 className={`text-xl font-bold ${heading} mb-4`}>{ct.title}</h2>
+      <div className="flex items-baseline justify-between gap-3 mb-4">
+        <h2 className={`text-xl font-bold ${heading}`}>{ct.title}</h2>
+        {logicAnchor && <LogicLink anchor={logicAnchor} />}
+      </div>
       <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
         <div>
           <p className={`text-[11px] uppercase tracking-wide ${textMuted} mb-3`}>{ct.gov}</p>

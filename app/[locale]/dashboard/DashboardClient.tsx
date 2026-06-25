@@ -144,13 +144,16 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
           {brazilDivergence.rows.length > 0 && (
             <SectionErrorBoundary name="Grafo do cruzamento">
               <section>
-                <h2 className="text-xl font-bold text-primary mb-1">{locale === 'en' ? 'Cross-reference graph' : locale === 'es' ? 'Grafo del cruce' : 'Grafo do cruzamento'}</h2>
+                <div className="flex items-baseline justify-between gap-3 mb-1">
+                  <h2 className="text-xl font-bold text-primary">{locale === 'en' ? 'Cross-reference graph' : locale === 'es' ? 'Grafo del cruce' : 'Grafo do cruzamento'}</h2>
+                  <LogicLink anchor="grafo-cruzamento" />
+                </div>
                 <p className="text-sm text-gray-500 mb-4">{locale === 'en' ? 'A navigable map of AFOS: Brazil 2026 at the center, the market×poll divergence (colored edge with the Δpp), structural context, and clickable nodes to the products and dashboard sections.' : locale === 'es' ? 'Un mapa navegable de AFOS: Brasil 2026 en el centro, la divergencia mercado×encuesta (línea de color con el Δpp), contexto estructural y nodos clicables a los productos y secciones del panel.' : 'Um mapa navegável do AFOS: Brasil 2026 no centro, a divergência mercado×pesquisa (linha colorida com o Δpp), o contexto estrutural e nós clicáveis para os produtos e seções do dashboard.'}</p>
                 <CountryGraph data={brazilDivergence} electionLabel={locale === 'en' ? 'Brazil 2026' : 'Brasil 2026'} locale={locale} isBlue={false} navGroups={navGroups} onNav={onNav} dataLinks={BR_DATA_LINKS} dim />
               </section>
             </SectionErrorBoundary>
           )}
-          <div id="sec-contexto" className="scroll-mt-20"><SectionErrorBoundary name="Contexto estrutural"><StructuralContext context={brazilContext} locale={locale} isBlue={false} /></SectionErrorBoundary></div>
+          <div id="sec-contexto" className="scroll-mt-20"><SectionErrorBoundary name="Contexto estrutural"><StructuralContext context={brazilContext} locale={locale} isBlue={false} logicAnchor="contexto-estrutural" /></SectionErrorBoundary></div>
           <div id="sec-pesquisas" className="scroll-mt-20"><SectionErrorBoundary name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary></div>
           <div id="sec-candidatos" className="scroll-mt-20"><SectionErrorBoundary name="Candidatos"><CandidatesSection /></SectionErrorBoundary></div>
 
