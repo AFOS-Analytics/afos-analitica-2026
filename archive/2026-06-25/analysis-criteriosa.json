@@ -1,0 +1,141 @@
+{
+  "updatedAt": "25/06/2026, 17:30",
+  "subtitle": "ATUALIZAÇÃO 25/Jun 17:30 BRT D+42 launch AFOS. Reversão parcial após o recorde de ontem. O Polymarket devolveu parte do movimento: Lula recua a 56.50% (↓1.00pp, vol USD 6.9M acumulado) e Flávio sobe a 23.45% (↑0.55pp, vol USD 7.0M), de modo que o gap Lula x Flávio fecha a +33.05pp (vinha do recorde +34.60pp). A reversão veio no dia em que a pesquisa nacional PoderData/Aya apertou a corrida: 1T Lula 40% x Flávio 36% (gap +4pp) e 2T empate técnico Lula 46% x Flávio 43% (gap +3pp), com Lula empatando também com Zema e Caiado no 2º turno (Poder360, CNN Brasil). É a 2ª pesquisa seguida (após a Gerp 24/Jun) a mostrar 2º turno apertado, e o mercado devolveu parte do prêmio, mas Lula segue dominante (56.50%) e o consenso Tier 1 (Indexa 2T 47x40, Datafolha 2T 47x43) dá folga maior. Michelle Bolsonaro entra no book a 2.65% após o vídeo e o pedido de desculpas de Flávio (Folha, BBC). STF impeach a 2.55%. Inflação esperada cede mais: a banda baixa 4.50-4.99% agora LIDERA a 44.85% (era 32.85% em 24/Jun). Volume total acima de USD 105M no presidencial.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 56.50% (↓1.00pp, vol USD 6.9M acumulado), reversão parcial após o pico recorde de ontem, com o gap sobre Flávio fechando a +33.05pp (vinha de +34.60pp). A devolução veio no dia em que a PoderData/Aya apertou a corrida (1T 40% x 36%; 2T empate técnico 46% x 43%, Poder360/CNN). O mercado corrigiu o gap esticado, mas segue cravando Lula dominante no topo, bem acima do 2º turno apertado das pesquisas. O consenso Tier 1 (Indexa 2T 47x40, Datafolha 2T 47x43) dá folga maior que a PoderData.",
+      "fortes": [
+        "📊 LIDERANÇA MANTIDA APESAR DA REVERSÃO: mesmo recuando a 56.50% (↓1.00pp), Lula segue com gap de +33.05pp sobre Flávio, ainda perto do recorde. O mercado corrigiu o exagero de ontem, não a tendência. A dominância no topo segue intacta.",
+        "🗳️ CONSENSO TIER 1 DÁ FOLGA MAIOR QUE A PODERDATA: Indexa 23/Jun (2T 47% x 40%), Datafolha 20/Jun (2T 47% x 43%), CNT/MDA 16/Jun (2T 49.3% x 36.8%) e BTG/Nexus 15/Jun (2T 49% x 43%, aprovação 48% x 47%): o recorte recente tem Lula confortável, com vantagem maior que a PoderData/Aya (2T 46% x 43%) e a Gerp (empate).",
+        "📈 INFLAÇÃO ESPERADA CEDE MAIS: no mercado de inflação 2026, a banda MAIS BAIXA 4.50-4.99% agora LIDERA a 44.85% (era 32.85% em 24/Jun), e a 5.00-5.49% cai ao 2º lugar (37.9%), sinal de expectativa de inflação menor, pano de fundo macro favorável. STF impeach a 2.55%, risco institucional no piso."
+      ],
+      "fracos": [
+        "🚨 SEGUNDA PESQUISA SEGUIDA APERTA O 2º TURNO: a PoderData/Aya deu 2T empate técnico Lula 46% x Flávio 43% (gap +3pp), com Lula empatando também com Zema e Caiado. Somada à Gerp de ontem (empate), são duas pesquisas seguidas com 2º turno apertado, o contraponto à dominância do mercado. O Polymarket devolveu parte do prêmio do recorde.",
+        "🚨 RUÍDO E NARRATIVA EXTERNA: o tema corrupção segue vivo nas redes, e a narrativa de interferência de Trump nas eleições ganhou o dia (assessor de Lula diz que tentativa de intervenção pode ter efeito contrário, BBC; Jornal GGN). O caso Master e a batalha do PIX no TSE seguem em aberto.",
+        "🏛️ REJEIÇÃO PERSISTE: a rejeição de Lula segue alta no recorte (47% na Gerp, 46% na Datafolha). É o teto que o mercado, ao manter o gap largo, opta por não precificar. Em MG, Lula segue sem palanque definido."
+      ],
+      "analise": "Em 25/Jun, o mercado fez uma reversão parcial: Lula recuou a 56.50% (↓1.00pp, vol USD 6.9M) e o gap sobre Flávio fechou a +33.05pp, devolvendo parte do recorde de ontem (+34.60pp). A reversão veio no dia em que a PoderData/Aya apertou a corrida, com 2º turno em empate técnico (Lula 46% x Flávio 43%) e Lula empatando também com Zema e Caiado. É a 2ª pesquisa seguida (após a Gerp) com 2º turno apertado, mas a leitura segue: o consenso Tier 1 (Indexa, Datafolha, CNT/MDA, BTG/Nexus) dá a Lula folga maior, e é esse consenso, não a pesquisa apertada do dia, que sustenta a dominância de Lula no topo do mercado. O pano de fundo foi a narrativa de interferência de Trump (BBC) e o drama Michelle/Flávio. STF impeach a 2.55% e inflação esperada cedendo (banda baixa 4.50-4.99% agora lidera a 44.85%)."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 23.45% (↑0.55pp, vol USD 7.0M acumulado), recuperando parte do piso de ontem, e o gap para Lula fecha a +33.05pp (vinha do recorde +34.60pp). A alta acompanhou a PoderData/Aya, que pôs Flávio em empate técnico no 2º turno (43% x 46%, Poder360/CNN). No dia, porém, o foco foi pessoal: Flávio pediu desculpas após o vídeo de Michelle, negou humilhação e disse não ser correspondido por ela (Folha, BBC). Mantém isolado o 2º lugar do 1º turno (78.5%).",
+      "fortes": [
+        "🗳️ PODERDATA DÁ EMPATE TÉCNICO NO 2º TURNO: a pesquisa do dia colocou Flávio a 3pp de Lula no 2º turno (43% x 46%) e a 4pp no 1º (36% x 40%), o ativo que sustenta a tese de corrida competitiva (Poder360, CNN). Somada à Gerp de ontem, são duas pesquisas seguidas com 2º turno apertado.",
+        "📈 MERCADO RECUPERA DO PISO: Flávio subiu a 23.45% (↑0.55pp) na sessão de reversão, acompanhando a PoderData. O gap para Lula recuou do recorde para +33.05pp.",
+        "🏛️ CAPILARIDADE INSTITUCIONAL: o PL segue como a maior legenda, lidera o 2º lugar do 1º turno no sub-mercado (78.5%) e o Senado por cadeiras (76.5%)."
+      ],
+      "fracos": [
+        "💥 DRAMA PESSOAL DOMINA O DIA: o foco de Flávio foi o vídeo de Michelle e o pedido de desculpas público, em que negou humilhação e admitiu não ser correspondido (Folha, BBC). O episódio pessoal ofuscou a agenda política e expôs atritos na família Bolsonaro (Folha).",
+        "🌎 NARRATIVA DE TRUMP COMO PASSIVO: o negociador de Lula explora o enquadramento de que 'com Flávio, Trump tentará interferir nas eleições', e que a tentativa pode ter efeito contrário (BBC, GGN). A imprensa também registra incoerência (apoiou o tarifaço, agora diz que vai 'defender empresas', VEJA).",
+        "🚨 MERCADO AINDA NO PISO E REJEIÇÃO ALTA: mesmo com a PoderData favorável, Flávio segue a 23.45%, com gap de +33.05pp para Lula. O consenso Tier 1 lhe dá desvantagem maior (Datafolha 2T 43%, Indexa 2T 40%), e a rejeição segue a maior do páreo (BTG/Nexus 52%, Datafolha 48%)."
+      ],
+      "analise": "Em 25/Jun, Flávio recuperou parte do piso no mercado (23.45%, ↑0.55pp), acompanhando a PoderData/Aya, que lhe deu empate técnico no 2º turno (43% x 46%). Mas o dia dele foi pessoal: pediu desculpas após o vídeo de Michelle, negou humilhação e disse não ser correspondido por ela (Folha, BBC), num episódio que ofuscou a política e expôs atritos na família. No pano de fundo, a narrativa de que 'com Flávio, Trump interfere nas eleições' ganhou tração (BBC, GGN). A leitura segue a mesma: o mercado o corrige um pouco para cima, mas o consenso Tier 1 lhe dá desvantagem maior que a pesquisa apertada do dia, e a rejeição alta (48-52%) segue como teto. Mantém o 2º lugar do 1º turno (78.5%) e o PL lidera o Senado (76.5%)."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 11.45% (↓0.90pp, vol USD 7.5M acumulado) no mercado de vencedor, e seu favoritismo ao 3º lugar do 1º turno CAIU a 44% no sub-mercado (vinha de 58.5%), embora siga o maior volume acumulado do presidencial. A PoderData/Aya deu Renan 4% no 1º turno; as demais nacionais o medem em 2-3%, mantendo a divergência mais larga do dashboard (mercado 11.45% x pesquisa ~4%, ~7.45pp).",
+      "fortes": [
+        "🔥 POLYMARKET MANTÉM O SINAL DE 3º LUGAR: mesmo recuando a 11.45% (↓0.90pp) e com o favoritismo ao 3º lugar caindo a 44% no sub-mercado, Renan segue o terceiro nome do 1º turno no mercado e detém o maior volume acumulado do presidencial (USD 7.5M), bem acima dos ~4% das pesquisas.",
+        "🗣️ ESPAÇO DA DIREITA EM DISPUTA: Renan se posiciona como alternativa do campo anti-Lula e aposta na migração do voto antipetista, aproveitando os atritos internos da família Bolsonaro expostos no episódio Michelle.",
+        "INFLAÇÃO 2026 no mercado indica expectativa menor (banda baixa 4.50-4.99% lidera a 44.85%), pano de fundo para o discurso fiscal da direita liberal. STF impeach 2.55%."
+      ],
+      "fracos": [
+        "🚨 FAVORITISMO AO 3º LUGAR ENCOLHE: o sub-mercado de 3º lugar do 1º turno recuou Renan de 58.5% para 44%, com Caiado (12.5%) e Zema (11%) ganhando terreno. O sinal de que ele seria o 3º colocado, antes cravado, ficou mais disputado.",
+        "🚨 PESQUISAS NO PISO: a PoderData/Aya deu 4% no 1T, e as demais (Datafolha 3%, CNT/MDA 2%) o mantêm embolado no piso da 3ª via. A divergência mercado x pesquisa segue a maior do dashboard (~7.45pp).",
+        "↔️ SINAL DE NICHO, NÃO DE VITÓRIA: o mercado o precifica como provável 3º colocado (44% no sub-mercado, em queda), mas sem chance real de vencer (11.45% no vencedor, em queda). Capital de nicho, dependente do tropeço alheio."
+      ],
+      "analise": "Em 25/Jun, Renan recuou no vencedor a 11.45% (↓0.90pp, vol USD 7.5M, o maior do presidencial), e seu favoritismo ao 3º lugar do 1º turno caiu de 58.5% para 44% no sub-mercado, com Caiado e Zema ganhando terreno. A PoderData/Aya o mediu a 4% no 1º turno; as demais nacionais o mantêm em 2-3%. A divergência mercado x pesquisa segue a mais larga do dashboard (~7.45pp), mas tanto o vencedor quanto o sub-mercado de 3º lugar recuaram, sinal de que o espaço da direita está mais disputado. A leitura é a mesma: provável 3º colocado, sem chance real de vencer, com capital de nicho que depende do tropeço alheio, e o episódio Michelle reabre a briga interna do campo bolsonarista."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: a 3ª via sobe de leve do piso. No mercado, Caiado a 1.65% (↑0.20pp, vol USD 4.4M), Haddad a 1.25% (↓0.20pp, vol USD 5.9M), Camilo Santana 1.15% e Zema a 1.15% (↑0.20pp, vol USD 3.9M). A PoderData/Aya deu novo argumento ao grupo: Lula empata tecnicamente com Caiado e Zema no 2º turno. Haddad confirmou Márcio França como vice na chapa de SP (Folha, Brasil de Fato), e Zema negou aliança com Flávio e Caiado (Estadão).",
+      "subtitle": "25/Jun D+42: mercado reverte de leve para o topo da direita e a 3ª via sobe do piso. Caiado 1.65% (↑0.20pp), Haddad 1.25% (↓0.20pp), Camilo Santana 1.15%, Zema 1.15% (↑0.20pp). A PoderData dá empate técnico de Lula com Caiado e Zema no 2º turno. Haddad confirma França vice em SP; Zema nega aliança com Flávio e Caiado.",
+      "caiado": {
+        "label": "CAIADO (PSD) — Poly presidencial 1.65% (↑0.20pp, vol USD 4.4M) | PoderData/Aya 25/Jun 1T 4%; 2T empate técnico com Lula | sem Flávio a Futura/Apex dá 16.5%",
+        "fortes": "A PoderData/Aya reforçou o argumento de Caiado: além dos 4% no 1º turno, ele empata tecnicamente com Lula no 2º turno (Poder360, CNN). Os cenários sem Flávio seguem como o melhor ativo (Futura/Apex 16/Jun: 16.5%, lidera a 3ª via). É o nome posicionado para herdar o voto da direita se Flávio não for, e subiu de leve no mercado a 1.65% (↑0.20pp).",
+        "fracos": "Caiado presidencial Polymarket a 1.65% (↑0.20pp, vol USD 4.4M), ainda no piso: o mercado precifica baixa a hipótese de Flávio sair. No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto, e o favoritismo ao 3º lugar de Renan caindo (44%) mostra a briga pelo mesmo espaço."
+      },
+      "haddad": {
+        "label": "HADDAD (PT) — Poly presidencial 1.25% (↓0.20pp, vol USD 5.9M) | foco no governo de SP | confirmou Márcio França (PSB) como vice (Folha, Brasil de Fato)",
+        "fortes": "Haddad confirmou Márcio França (PSB) como vice na chapa pelo governo de SP, com Tebet e Marina cogitados para o Senado (Folha, Brasil de Fato), consolidando a aliança de centro-esquerda no estado mais importante. Segue como nome de reserva do PT no mercado depois de Lula. A aprovação do governo no patamar de 44-48% reforça a gestão econômica em que Haddad é peça central.",
+        "fracos": "O mercado não precifica candidatura presidencial de Haddad, que recuou a 1.25% (↓0.20pp) como nome do PT depois de Lula. O foco é estadual (SP), e a Vox SP 30/Mai deu 2T estadual Tarcísio 48.3% x Haddad 36.5%. O tema corrupção segue como ruído para a articulação do PT."
+      },
+      "zema": {
+        "label": "ZEMA (Novo) — Poly presidencial 1.15% (↑0.20pp, vol USD 3.9M) | PoderData/Aya 25/Jun 2T empate técnico com Lula | sem Flávio a Futura/Apex dá 13.3%",
+        "fortes": "A PoderData/Aya deu novo argumento a Zema: ele empata tecnicamente com Lula no 2º turno (CNN). O cenário sem Flávio segue forte (Futura/Apex 13.3%), e Zema subiu de leve no mercado a 1.15% (↑0.20pp). A inflação esperada recuando (banda baixa lidera a 44.85%) dá lastro ao discurso fiscal do Novo.",
+        "fracos": "Zema segue no piso do mercado a 1.15%. A Datafolha 20/Jun o mediu a 2% no 1T (2T Lula 48% x Zema 39%). Na disputa bipolarizada Lula x Flávio o Novo não encontra tração, e Zema negou aliança com Flávio e Caiado, prometendo anunciar o vice na próxima semana (Estadão)."
+      },
+      "analise": "Em 25/Jun, a 3ª via subiu de leve do piso enquanto o mercado revertia para o topo da direita: Caiado a 1.65% (↑0.20pp), Zema a 1.15% (↑0.20pp), Haddad a 1.25% (↓0.20pp) e Camilo Santana a 1.15%. A PoderData/Aya deu o melhor argumento do grupo: Lula empata tecnicamente com Caiado e Zema no 2º turno, sinal de competitividade no cenário sem Flávio (Futura: Caiado 16.5%, Zema 13.3%). No campo político, Haddad confirmou Márcio França como vice em SP (Folha, Brasil de Fato) e Zema negou aliança com Flávio e Caiado, prometendo o vice na próxima semana (Estadão). No cenário com Flávio, porém, o 'paradoxo da direita' (G1) segue valendo, e o recuo do favoritismo de Renan ao 3º lugar (44%) mostra que o espaço da direita está em disputa interna."
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "PoderData/Aya 25/Jun 1T 40% x Flávio 36% (gap +4pp); 2T 46% x 43% (empate técnico), também empata com Zema e Caiado (Poder360, CNN) | Gerp 24/Jun 2T 40% (empate) | Indexa 23/Jun 2T 47% x 40% | Datafolha 20/Jun 2T 47% x 43% | CNT/MDA 16/Jun 2T 49.3% x 36.8% | BTG/Nexus 15/Jun 2T 49% x 43%, aprovação 48% x 47%",
+      "m": "56.50% (vol USD 6.9M acumulado)",
+      "t": "Recua a 56.50% (↓1.00pp, vol USD 6.9M) do pico de ontem, e o gap Lula x Flávio fecha a +33.05pp (vinha do recorde +34.60pp). A reversão veio no dia da PoderData/Aya (2T apertado 46% x 43%): o mercado devolveu parte do prêmio do recorde, mas segue cravando Lula dominante, bem acima do 2º turno apertado das pesquisas.",
+      "s": "PoderData/Aya 25/Jun (Poder360, CNN Brasil, CartaCapital). Indexa 23/Jun (JOTA). Datafolha 20/Jun BR-09956/2026 (G1, Folha). Narrativa de interferência de Trump (BBC). Polymarket ao vivo 25/Jun.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio (PL)",
+      "p": "PoderData/Aya 25/Jun 1T 36% (gap -4pp); 2T 43% (Lula 46% x 43%, empate técnico) | Gerp 24/Jun 2T 42% | Datafolha 20/Jun 2T 43%, rejeição 48% | Indexa 23/Jun 2T 40% | BTG/Nexus 15/Jun rejeição 52%",
+      "m": "23.45% (vol USD 7.0M acumulado)",
+      "t": "Sobe a 23.45% (↑0.55pp, vol USD 7.0M) na sessão de reversão, e o gap para Lula fecha a +33.05pp. A alta acompanhou a PoderData (2T empate técnico 43% x 46%). No dia, pediu desculpas após o vídeo de Michelle e negou humilhação (Folha, BBC). Mantém o 2º lugar do 1º turno (78.5%).",
+      "s": "PoderData/Aya 25/Jun 2T 46% x 43% (Poder360, CNN). Flávio pede desculpas após vídeo de Michelle (Folha, BBC). Narrativa de interferência de Trump (BBC, GGN). Polymarket ao vivo 25/Jun.",
+      "pc": "#0F52BA",
+      "mc": ""
+    },
+    {
+      "n": "Renan (Missão)",
+      "p": "PoderData/Aya 25/Jun 1T 4%; demais nacionais no piso (2-3%); divergência mercado 11.45% x pesquisa ~4% (~7.45pp), a mais larga do dashboard",
+      "m": "11.45% (vol USD 7.5M acumulado)",
+      "t": "Recua no vencedor a 11.45% (↓0.90pp, vol USD 7.5M, o maior do presidencial) e seu favoritismo ao 3º lugar do 1º turno cai a 44% no sub-mercado (vinha de 58.5%), com Caiado e Zema ganhando terreno. As pesquisas o medem a ~4% no 1T, mantendo a maior divergência do dashboard.",
+      "s": "PoderData/Aya 25/Jun 1T 4%. Polymarket ao vivo 25/Jun (3º lugar caiu a 44%).",
+      "pc": "#8B5CF6",
+      "mc": ""
+    },
+    {
+      "n": "Haddad (PT)",
+      "p": "Nacionais não listam Haddad no presidencial (foco SP) | No dia, confirmou Márcio França (PSB) como vice na chapa de SP, Tebet/Marina ao Senado (Folha, Brasil de Fato)",
+      "m": "1.25% (vol USD 5.9M acumulado)",
+      "t": "Recua de leve a 1.25% (↓0.20pp, vol USD 5.9M), na faixa de Camilo Santana (1.15%) como nome do PT depois de Lula. Confirmou França vice em SP. O mercado não precifica candidatura presidencial dele.",
+      "s": "Folha, Brasil de Fato 25/Jun (Haddad confirma França vice).",
+      "pc": "#7c3aed",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "PoderData/Aya 25/Jun 1T 4%; 2T empate técnico com Lula | Datafolha 20/Jun 2T Lula 47% x Caiado 41% | Futura/Apex 16/Jun cenário SEM Flávio 1T 16.5% (lidera a 3ª via)",
+      "m": "1.65% (vol USD 4.4M acumulado)",
+      "t": "Sobe a 1.65% (↑0.20pp, vol USD 4.4M), ainda no piso. A PoderData o pôs em empate técnico com Lula no 2º turno, e a Futura/Apex dá 16.5% sem Flávio: o nome posicionado para herdar a direita se Flávio não for. No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto.",
+      "s": "PoderData/Aya 25/Jun (Poder360). Futura/Apex sem Flávio 16.5% (Poder360). Polymarket ao vivo 25/Jun.",
+      "pc": "#6B7280",
+      "mc": ""
+    },
+    {
+      "n": "Zema (Novo)",
+      "p": "PoderData/Aya 25/Jun 2T empate técnico com Lula | Datafolha 20/Jun 1T 2%; 2T Lula 48% x Zema 39% | Futura/Apex 16/Jun cenário SEM Flávio 1T 13.3%",
+      "m": "1.15% (vol USD 3.9M acumulado)",
+      "t": "Sobe a 1.15% (↑0.20pp, vol USD 3.9M), saindo do piso. A PoderData o pôs em empate técnico com Lula no 2º turno, e a Futura/Apex dá 13.3% sem Flávio. Negou aliança com Flávio e Caiado e prometeu o vice na próxima semana (Estadão).",
+      "s": "PoderData/Aya 25/Jun (CNN). Estadão 25/Jun (Zema nega aliança). Polymarket ao vivo 25/Jun.",
+      "pc": "#F59E0B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O 25/Jun trouxe uma reversão parcial após o recorde de ontem. O Polymarket devolveu parte do movimento: Lula recuou ↓1.00pp para 56.50% (vol USD 6.9M) e Flávio subiu a 23.45% (↑0.55pp), de modo que o gap fechou a +33.05pp (vinha do recorde +34.60pp). A reversão veio no dia em que a pesquisa nacional PoderData/Aya apertou a corrida: 1T Lula 40% x Flávio 36% (gap +4pp) e 2T empate técnico Lula 46% x Flávio 43% (gap +3pp), com Lula empatando também com Zema e Caiado no 2º turno (Poder360, CNN Brasil). É a 2ª pesquisa seguida (após a Gerp) com 2º turno apertado, e o mercado devolveu parte do prêmio, mas Lula segue dominante (56.50%) e o consenso Tier 1 (Indexa 2T 47x40, Datafolha 2T 47x43) dá folga maior que a pesquisa do dia. Renan recuou no vencedor (11.45%, ↓0.90pp) e seu favoritismo ao 3º lugar caiu de 58.5% para 44% no sub-mercado, com Caiado e Zema ganhando terreno; a 3ª via subiu de leve (Caiado 1.65%, Zema 1.15%, Haddad 1.25%). No pano de fundo: o drama Michelle/Flávio dominou o dia (Flávio pediu desculpas e negou humilhação, Folha/BBC), a narrativa de interferência de Trump nas eleições ganhou tração (BBC, GGN), Haddad confirmou Márcio França como vice em SP (Folha, Brasil de Fato), Zema negou aliança com Flávio e Caiado (Estadão) e a Colômbia proclamou De la Espriella presidente (G1). STF impeach a 2.55% e inflação esperada cedendo mais (banda baixa 4.50-4.99% agora lidera a 44.85%). Sub-mercados: Flávio no 2º lugar do 1º turno (78.5%), Renan no 3º (44%, em queda), o PL lidera o Senado por cadeiras (76.5%). Volume total acima de USD 105M no presidencial."
+}
