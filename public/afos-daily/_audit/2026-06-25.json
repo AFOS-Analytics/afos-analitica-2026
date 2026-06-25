@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-25",
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "PoderData/Aya nacional (1T Lula 40% x Flávio 36%; 2T 46% x 43%)",
+        "crossRef": "registrada no calendário (23/Jun), agora publicada — novidade",
+        "fetch": "Poder360 + CNN Brasil + CartaCapital + Jovem Pan, 2026-06-25, campo 21-24/Jun, n=2400, 617 municípios, margem 2pp",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Haddad confirma Márcio França (PSB) vice em SP, Marina/Tebet ao Senado",
+        "crossRef": "nenhuma menção em 7 dailies — novidade",
+        "fetch": "JOTA + Gazeta do Povo + Correio Braziliense + Brasil de Fato, 2026-06-25, evento (anúncio após reunião com Lula)",
+        "secondSource": "independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Flávio pede desculpas a Michelle (racha exposto, alianças PL no Ceará)",
+        "crossRef": "nenhuma menção a Michelle em 7 dailies — novidade",
+        "fetch": "Terra + Jornal de Brasília + Brasil de Fato, 2026-06-25, evento (pedido público no X)",
+        "secondSource": "independentes",
+        "decision": "incorporar (sem verbo crítico)"
+      },
+      {
+        "event": "Narrativa de interferência de Trump nas eleições",
+        "crossRef": "8 menções em dailies — continuidade",
+        "decision": "incorporar como contexto, não como divisor de águas"
+      },
+      {
+        "event": "Colômbia proclama De la Espriella presidente",
+        "decision": "incorporar só como contexto internacional (caso validado AFOS)"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "AtlasIntel (VEJA) citado sem números; Renan/Estadão e Colômbia/G1 baixo risco",
+    "numericalErrors": "reconcile-claims: 3 falsos positivos (sub-mercado 12,5%; rejeição PoderData 50% verificada; título)",
+    "fontesInventadas": "verificados 3 (Poder360, CartaCapital, JOTA) — reais",
+    "quotesLiterais": "'bolsonarismo morreu'/'inviável' (Estadão); 'não correspondido' (Folha/Terra) — verificados",
+    "causacaoEspuria": "nenhuma — reversão do mercado como leitura técnica",
+    "verbosCriticos": "prisão de vereador só na lista de fontes, não no corpo; 'proclamou' (Colômbia) factual",
+    "decision": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "OK (1 warning low-link-density, mitigado com 2 links Polymarket na Seção 1)",
+    "reconcileClaims": "3 falsos positivos legítimos",
+    "urlGate": "OK (CNN trocada para Google News redirect após HEAD falhar)"
+  },
+  "approval": {
+    "pt": "aprovado pelo usuário (André)",
+    "enEs": "aprovado pelo usuário após preview das traduções"
+  }
+}
