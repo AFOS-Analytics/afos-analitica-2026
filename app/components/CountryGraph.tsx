@@ -130,7 +130,8 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   // nó de resultado real (vencedor), genérico por país
   const winner = ELECTION_WINNER[d.iso3]
   if (winner && d.rows.some((r) => r.candidate === winner)) {
-    add({ id: 'result', label: lbl.result(winner), type: 'result', r: 18, color: TYPE_COLOR.result })
+    const winnerShort = winner.split(' ').pop() || winner
+    add({ id: 'result', label: lbl.result(winnerShort), type: 'result', r: 18, color: TYPE_COLOR.result })
     links.push({ source: 'election', target: 'result', kind: 'tree' })
     links.push({ source: 'result', target: `c_${winner}`, kind: 'correct' })
   }
