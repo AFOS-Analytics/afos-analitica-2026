@@ -91,7 +91,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Coreia do Sul', en: 'South Korea', es: 'Corea del Sur' },
     iso3: 'KOR', flag: '🇰🇷', region: 'Asia-Pacific',
     elections: [
-      { slug: 'south-korea-2025', year: 2025, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2025-06-03', status: 'active', polymarketSlug: 'next-south-korean-presidential-election' },
+      { slug: 'south-korea-2025', year: 2025, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2025-06-03', status: 'completed', polymarketSlug: 'next-president-of-south-korea' },
     ],
   },
   {

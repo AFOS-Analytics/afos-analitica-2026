@@ -13,6 +13,7 @@ import canada from './canada.json'
 import uk from './uk.json'
 import mexico from './mexico.json'
 import usa from './usa.json'
+import southKorea from './south-korea.json'
 
 export interface DivergenceRow {
   candidate: string
@@ -59,6 +60,7 @@ export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
   CAN: canada as CountryDivergence,
   GBR: uk as CountryDivergence,
   MEX: mexico as CountryDivergence,
+  KOR: southKorea as unknown as CountryDivergence,
 }
 
 export function getCountryDivergence(iso3: string): CountryDivergence | null {
@@ -68,7 +70,7 @@ export function getCountryDivergence(iso3: string): CountryDivergence | null {
 // Allowlist dos países com o pacote novo ligado (grafo do cruzamento + barras de odds no card
 // de divergência + textos de SEO ocultos). País fora da lista = inalterado em produção.
 // Rollout um de cada vez: adicionar o iso3 após aprovação do preview.
-export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN', 'MEX', 'GBR'])
+export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN', 'MEX', 'GBR', 'KOR'])
 
 // Vencedor real de cada caso validado (para o nó "Resultado real" no grafo). O nome deve bater
 // com um candidato em `rows`. Países sem entrada não exibem o nó de resultado.
@@ -80,4 +82,5 @@ export const ELECTION_WINNER: Record<string, string> = {
   CAN: 'Liberal',
   MEX: 'Sheinbaum',
   GBR: 'Labour',
+  KOR: 'Lee Jae-myung',
 }

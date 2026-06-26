@@ -80,7 +80,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
     election: div.hf,
     market: `${div.hf}/tree/main/data`,
     poll: `${div.hf}/tree/main/polls`,
-    press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : ['COL', 'MEX', 'CHL', 'PER', 'CAN', 'GBR', 'DEU'].includes(country.iso3) ? `${div.hf}/tree/main/news` : undefined,
+    press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : ['COL', 'MEX', 'CHL', 'PER', 'CAN', 'GBR', 'DEU', 'KOR'].includes(country.iso3) ? `${div.hf}/tree/main/news` : undefined,
     candidate: `${div.hf}/tree/main/data`,
     context: '#sec-contexto',
     result: `${div.hf}/tree/main/data`,

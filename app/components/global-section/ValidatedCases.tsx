@@ -58,6 +58,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: "Sheinbaum won the 2024 presidency with about 59.8%, the largest vote count in Mexican history. From January the market already gave her about 90% to win, while polls measured her vote share around 50%. The market called the outcome early and the result outran the polls.",
     es: 'Sheinbaum ganó la presidencia de 2024 con cerca del 59,8%, la mayor votación en la historia de México. Desde enero el mercado ya la daba en cerca del 90% de ganar, mientras la encuesta medía su voto en torno al 50%. El mercado fijó el desenlace temprano y el resultado superó a las encuestas.',
   },
+  KOR: {
+    'pt-BR': 'Lee Jae-myung venceu a presidencial antecipada de 2025, convocada após a crise da lei marcial. O mercado deu a Lee cerca de 95% de vencer e cravou até a margem (faixa de 8 a 11pp; a real foi 8,27pp), enquanto a pesquisa media seu voto em torno de 49%. Um dos maiores mercados eleitorais já vistos fora dos EUA (**~US$ 290M**).',
+    en: 'Lee Jae-myung won the 2025 snap election, called after the martial-law crisis. The market gave Lee about 95% to win and even nailed the margin (the 8-to-11pp band; the actual margin was 8.27pp), while polls measured his vote share around 49%. One of the largest election markets ever outside the US (**~US$290M**).',
+    es: 'Lee Jae-myung ganó la elección anticipada de 2025, convocada tras la crisis de la ley marcial. El mercado dio a Lee cerca del 95% de ganar e incluso acertó el margen (la franja de 8 a 11pp; el real fue 8,27pp), mientras la encuesta medía su voto en torno al 49%. Uno de los mayores mercados electorales fuera de EE. UU. (**~US$290M**).',
+  },
 };
 
 // Renderiza a tagline com suporte a **negrito** (marcador markdown simples), bolando o destaque de volume.
