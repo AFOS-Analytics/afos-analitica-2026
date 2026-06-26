@@ -1,0 +1,44 @@
+{
+  "date": "2026-06-26",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Jaques Wagner deixa a liderança do governo no Senado, Teresa Leitão assume",
+        "crossRef": "Wagner = 40 menções em 7 dailies (operação PF = continuidade desde 18/Jun); Teresa Leitão = 0 menções (substituição é nova)",
+        "verification2": "WebSearch: saída anunciada 24/Jun (após reunião com Lula), Teresa Leitão nomeada 25/Jun (G1 path 2026/06/25)",
+        "secondSource": "Poder360 + CNN Brasil + O Tempo + ISTOÉ (múltiplas independentes)",
+        "decision": "incorporar como aftermath datado 24-25/Jun, NÃO como fato do dia 26/Jun"
+      },
+      {
+        "event": "Moraes abre inquérito contra Flávio por post sobre Lula",
+        "crossRef": "inquérito = 0 menções",
+        "verification2": "post de 03/Jan/26; Agência Brasil data a decisão em abril/2026; Migalhas re-reportando hoje",
+        "secondSource": "conflito de datas (abril x agora), não confirmado como evento do dia",
+        "decision": "NÃO incorporar (risco de recobrança)"
+      },
+      {
+        "event": "100 dias da eleição (marco de calendário, 26/Jun = 100 dias de 4/Out)",
+        "crossRef": "marco de calendário",
+        "verification2": "G1 path 2026/06/26, Poder360, CartaCapital, Correio Braziliense, Congresso em Foco",
+        "secondSource": "múltiplos veículos",
+        "decision": "incorporar como eixo do dia"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma crítica (Wagner/Teresa Leitão multi-fonte; 100 dias G1+Poder360)",
+    "numericalErrors": "reconcile-claims OK (6 flags = artefatos do parser)",
+    "fontesInventadas": "nenhuma (todas com matéria no cache)",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma (STF impeach +0,85pp tratado como leitura técnica, no piso; Wagner datado 24-25/Jun)",
+    "verbosCriticos": "OK (deixou a liderança em 24/Jun datado; inquérito Moraes omitido)",
+    "decisao": "prosseguir para preview"
+  },
+  "validations": {
+    "reconcileClaims": "OK",
+    "validateAfosDaily": "OK (1 warning low: link density 64%)",
+    "tldr": "3 bullets",
+    "volumeTotalNoLede": true,
+    "fontesSecundarias": "60% (4 âncora / 6 secundárias)"
+  }
+}
