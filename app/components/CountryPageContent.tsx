@@ -75,12 +75,12 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   ] : []
   // cada nó de dado aponta para a pasta correspondente no dataset do país no HF (estilo Obsidian).
   // Estrutura padrão dos casos validados: data/ (mercado, divergência, structural-context.csv),
-  // polls/ (pesquisas). Imprensa: EUA usa press/; COL, MEX, CHL, PER, CAN usam news/ (têm a pasta no HF).
+  // polls/ (pesquisas). Imprensa: EUA usa press/; os demais 7 validados usam news/ (todos têm a pasta no HF).
   const graphLinks: DataLinks = div?.hf ? {
     election: div.hf,
     market: `${div.hf}/tree/main/data`,
     poll: `${div.hf}/tree/main/polls`,
-    press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : ['COL', 'MEX', 'CHL', 'PER', 'CAN'].includes(country.iso3) ? `${div.hf}/tree/main/news` : undefined,
+    press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : ['COL', 'MEX', 'CHL', 'PER', 'CAN', 'GBR', 'DEU'].includes(country.iso3) ? `${div.hf}/tree/main/news` : undefined,
     candidate: `${div.hf}/tree/main/data`,
     context: '#sec-contexto',
     result: `${div.hf}/tree/main/data`,
