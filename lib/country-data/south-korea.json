@@ -21,21 +21,21 @@
   "rows": [
     {
       "candidate": "Lee Jae-myung",
-      "poll_pct": 49,
+      "poll_pct": 47.1,
       "market_pct": 94.7,
-      "divergence_pp": 45.7
+      "divergence_pp": 47.6
     },
     {
       "candidate": "Kim Moon-soo",
-      "poll_pct": 35,
+      "poll_pct": 38.2,
       "market_pct": 5.2,
-      "divergence_pp": -29.8
+      "divergence_pp": -33
     },
     {
       "candidate": "Lee Jun-seok",
-      "poll_pct": 11,
+      "poll_pct": 9.8,
       "market_pct": 0.2,
-      "divergence_pp": -10.8
+      "divergence_pp": -9.6
     }
   ],
   "market_snapshot": {
@@ -384,66 +384,5 @@
         ]
       }
     ]
-  },
-  "context": {
-    "governance": {
-      "political_stability": {
-        "value": 76.8,
-        "year": 2024
-      },
-      "voice_accountability": {
-        "value": 71,
-        "year": 2024
-      },
-      "rule_of_law": {
-        "value": 76.2,
-        "year": 2024
-      },
-      "government_effectiveness": {
-        "value": 80.2,
-        "year": 2024
-      },
-      "regulatory_quality": {
-        "value": 70.8,
-        "year": 2024
-      },
-      "control_of_corruption": {
-        "value": 65.1,
-        "year": 2024
-      }
-    },
-    "macro": {
-      "population": {
-        "value": 51751065,
-        "year": 2024
-      },
-      "gdp_usd": {
-        "value": 1875388209406.8,
-        "year": 2024
-      },
-      "gdp_per_capita_usd": {
-        "value": 36238.639908315,
-        "year": 2024
-      },
-      "inflation_pct": {
-        "value": 2.32174328643542,
-        "year": 2024
-      }
-    },
-    "education": {
-      "gov_expenditure_pct_gdp": {
-        "value": 5.40910005569458,
-        "year": 2022
-      },
-      "expected_years_schooling": {
-        "value": 16.49396,
-        "year": 2018
-      }
-    },
-    "sources": {
-      "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
-      "wdi": "https://data.worldbank.org/"
-    },
-    "latest_year": 2024
   }
 }
