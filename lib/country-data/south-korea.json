@@ -7,11 +7,11 @@
     "matchup": "Presidencial antecipada: Lee Jae-myung × Kim Moon-soo × Lee Jun-seok",
     "status": "completed"
   },
-  "polls_count": 14,
+  "polls_count": 82,
   "market_candidates": 3,
   "latest_poll": {
-    "pollster": "Gallup Korea",
-    "date": "2025-05-27"
+    "pollster": "Metavoice / JTBC",
+    "date": "2025-06-03"
   },
   "headline": {
     "pt-BR": "Lee Jae-myung venceu a eleição presidencial antecipada de 3 de junho de 2025 com 49,42% dos votos, convocada após a crise da lei marcial de Yoon Suk-yeol e sua destituição pelo Tribunal Constitucional. O sinal foi forte e cedo: desde o início de abril o mercado já dava a Lee cerca de 80% de probabilidade de vencer, subindo a cerca de 95% no fechamento, enquanto as pesquisas mediam seu voto em torno de 46-49%. O mercado tratou a corrida como decidida, e até a margem ele cravou (a faixa de 8 a 11 pontos; a real foi 8,27pp). Foi um dos maiores mercados eleitorais que a AFOS já acompanhou fora dos EUA (cerca de US$ 290 milhões). Mercado mede probabilidade de vencer, pesquisa mede voto; essa diferença, candidato a candidato na tabela, é o sinal que a AFOS acompanha. Ressalva: a lei coreana proíbe coreanos de apostar no Polymarket, então o volume é majoritariamente internacional.",
@@ -384,5 +384,66 @@
         ]
       }
     ]
+  },
+  "context": {
+    "governance": {
+      "political_stability": {
+        "value": 76.8,
+        "year": 2024
+      },
+      "voice_accountability": {
+        "value": 71,
+        "year": 2024
+      },
+      "rule_of_law": {
+        "value": 76.2,
+        "year": 2024
+      },
+      "government_effectiveness": {
+        "value": 80.2,
+        "year": 2024
+      },
+      "regulatory_quality": {
+        "value": 70.8,
+        "year": 2024
+      },
+      "control_of_corruption": {
+        "value": 65.1,
+        "year": 2024
+      }
+    },
+    "macro": {
+      "population": {
+        "value": 51751065,
+        "year": 2024
+      },
+      "gdp_usd": {
+        "value": 1875388209406.8,
+        "year": 2024
+      },
+      "gdp_per_capita_usd": {
+        "value": 36238.639908315,
+        "year": 2024
+      },
+      "inflation_pct": {
+        "value": 2.32174328643542,
+        "year": 2024
+      }
+    },
+    "education": {
+      "gov_expenditure_pct_gdp": {
+        "value": 5.40910005569458,
+        "year": 2022
+      },
+      "expected_years_schooling": {
+        "value": 16.49396,
+        "year": 2018
+      }
+    },
+    "sources": {
+      "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+      "wdi": "https://data.worldbank.org/"
+    },
+    "latest_year": 2024
   }
 }
