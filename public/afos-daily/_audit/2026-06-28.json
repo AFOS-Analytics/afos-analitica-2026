@@ -1,0 +1,48 @@
+{
+  "date": "2026-06-28",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Flávio faltou a 43% das votações nominais do Senado em 2026",
+        "verificacao1_crossRef": "keyword Senado tem histórico, mas o dado 43% é novo (não aparece em dailies anteriores) → novidade",
+        "verificacao2_fetch": { "url": "https://valor.globo.com/politica/noticia/2026/06/28/flavio-bolsonaro-se-ausentou-em-43percent-das-votacoes-nominais-do-senado-em-2026.ghtml", "data": "2026-06-28", "tipo": "evento/dado" },
+        "segundaFonte": "Folha + Jornal de Brasília + Estado de Minas + Bem Paraná (WebSearch, independentes)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Mendonça deve enviar à PGR pedido sobre financiamento do filme Dark Horse por Vorcaro",
+        "verificacao1_crossRef": "Dark Horse sem menção em 7 dailies → possível novidade",
+        "verificacao2_fetch": { "url": "https://g1.globo.com/politica/noticia/2026/06/28/mendonca-deve-enviar-a-pgr-nesta-semana-investigacao-sobre-financiamento-de-vorcaro-ao-filme-dark-horse.ghtml", "data": "2026-06-28", "tipo": "análise/desdobramento (ação pendente, deve enviar)" },
+        "segundaFonte": "não verificado em 2ª fonte independente (G1 único)",
+        "decisao": "incorporar como front institucional aberto, NÃO como decisão judicial consumada"
+      },
+      {
+        "evento": "Crise Michelle x Flávio (espólio/estrutura do PL)",
+        "verificacao1_crossRef": "Michelle 17 menções → continuidade",
+        "verificacao2_fetch": { "url": "https://oglobo.globo.com/politica/noticia/2026/06/28/em-conflito-com-flavio-michelle-usa-estrutura-do-pl-na-disputa-por-espolio-de-bolsonaro.ghtml", "data": "2026-06-28", "tipo": "desdobramento" },
+        "segundaFonte": "O Globo (reportagem + coluna Miriam Leitão)",
+        "decisao": "incorporar como continuidade, NÃO como divisor de águas"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Lula alianças 25x14 (CNN), Renan vaquinha/MBL/Faria Lima (Estadão), Quaest 51% independentes (Fórum), não-polarizados 27% (O Globo) — descritivas/cross-tab, atribuídas; âncora alto impacto (Flávio 43%) tem 5+ fontes",
+    "numericalErrors": "reconcile-claims rodou; só números legítimos fora dos JSONs (gap +2,5pp, Indexa 40%, 27% não-polarizados, 43% ausências, sub-mercado 12,05%)",
+    "fontesInventadas": "verificadas 3 (Valor, G1, CNN) — matérias reais do dia no cache",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma — salto de Lula tratado como fluxo pró-Lula do dia, não causação por evento único",
+    "verbosCriticos": "deve enviar (Dark Horse=pendente), faltou/ausentou (dado de registro); sem uso indevido de preso/morreu/indicou",
+    "decisao": "prosseguir"
+  },
+  "postProductionFixes": [
+    "Volume total corrigido de >USD 105M para ~USD 107M (valor real USD 106,88M) nas 3 versões",
+    "Bug 9: lede EN saiu em PT, reescrito em inglês",
+    "Bug de link: tradutor partiu o link da Quaest (ES quebrou render; EN perdeu 2 links inline) — ES religado num único link, EN restaurado com Quaest + O Globo não-polarizados"
+  ]
+}
