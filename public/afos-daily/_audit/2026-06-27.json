@@ -1,0 +1,47 @@
+{
+  "date": "2026-06-27",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "PF conclui que Flávio caluniou Lula (relatório final)",
+        "verification1_crossref": "calúnia Flávio não aparece nas últimas 7 dailies → novidade",
+        "verification2_fetch": {
+          "sources": [
+            "https://credited.com.br/noticias/2026/06/27/policia-federal-conclui-que-flavio-bolsonaro-caluniou-lula/",
+            "https://www.portalaz.com.br/noticia/geral/95821/pf-conclui-que-flavio-bolsonaro-caluniou-lula-em-postagem-nas-redes/"
+          ],
+          "realDate": "2026-06-26",
+          "note": "Relatório enviado em 26/Jun a Moraes, divulgado e coberto no fim de semana (27/Jun). Corrige a datação 'hoje' do /atualizar.",
+          "type": "evento/desdobramento"
+        },
+        "decision": "incorporar (datado 26/Jun; verbo desambiguado: conclusão investigativa da PF, PGR decide)"
+      },
+      {
+        "event": "Vox Brasil divulga pesquisa nacional",
+        "verification1_crossref": "Vox Brasil aparece 6x nas dailies como CALENDÁRIO (pub prevista 27/Jun); agora é resultado publicado → novidade",
+        "verification2_fetch": {
+          "sources": ["Exame (1T e 2T)", "Poder360", "Brasil 247", "Jovem Pan", "WSCOM"],
+          "numbers": "1T Lula 38,3 x Flávio 32,2; 2T Lula 45,3 x Flávio 42,8 (empate técnico)"
+        },
+        "decision": "incorporar"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma alegação não-trivial com fonte única dirigindo a narrativa (PF e Vox multi-fonte)",
+    "numericalErrors": "reconcile-claims exit 0; flags são falsos positivos (2T de pesquisas Tier 1 antigas + 12,05% de sub-mercado)",
+    "fontesInventadas": "checados 3 (Valor, Credited, Gazeta do Povo) — todos reais",
+    "quotesLiterais": "'só quem sabe o que você fez é você' está na própria manchete da Folha (sourced)",
+    "causacaoEspuria": "box de divergências enquadra o recuo de Flávio como digestão gradual, não 'caiu porque a PF concluiu'",
+    "verbosCriticos": "'caluniou' desambiguado (conclusão da PF, PGR decide); sem 'preso/condenado'",
+    "datasR8": "corrigidas 2 ocorrências de 'véspera' para data explícita (26/Jun)",
+    "decision": "prosseguir para preview e, após aprovação do usuário, produção"
+  },
+  "technicalChecks": {
+    "validateAfosDaily": "exit 0 (1 warning não-bloqueante: link-density 62%, estrutural)",
+    "reconcileClaims": "exit 0",
+    "translations": "EN + ES geradas",
+    "urlGate": "passou (Write não bloqueado)"
+  },
+  "approval": "André aprovou para produção em 27/Jun/2026"
+}
