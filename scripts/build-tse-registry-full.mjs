@@ -25,13 +25,32 @@ const CSV_NAME = 'pesquisa_eleitoral_2026_BRASIL.csv'
 const OUT = join(process.cwd(), 'hf-assets', 'polls')
 const CACHE = join(process.cwd(), '.cache', 'tse-extract', CSV_NAME)
 
+// O TSE Dados Abertos é instável (ConnectTimeout/502 intermitentes). Sem retry, um único
+// timeout derruba o mirror inteiro antes do upload — dataset público fica defasado no dia.
+// Retry com backoff + timeout por tentativa generoso; o caller trata o esgotamento como
+// degradação graciosa (mantém o registry já versionado), nunca como falha do workflow.
+async function fetchTseZip(url, { attempts = 4, perAttemptMs = 30000 } = {}) {
+  const backoff = [0, 3000, 8000, 15000]
+  let lastErr
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url, { signal: AbortSignal.timeout(perAttemptMs) })
+      if (!res.ok) throw new Error(`TSE HTTP ${res.status}`)
+      return Buffer.from(await res.arrayBuffer())
+    } catch (e) {
+      lastErr = e
+      console.log(`⚠️  TSE tentativa ${i}/${attempts} falhou: ${e.message}`)
+      if (i < attempts) await new Promise((r) => setTimeout(r, backoff[i] ?? 15000))
+    }
+  }
+  throw lastErr
+}
+
 async function loadCsv() {
   // usa cache local se existir (rodadas manuais); senão baixa do TSE (CI)
   if (existsSync(CACHE)) { console.log('📄 usando CSV em cache:', CACHE); return readFileSync(CACHE, 'latin1') }
   console.log('⬇️  baixando do TSE Dados Abertos…')
-  const res = await fetch(TSE_URL)
-  if (!res.ok) throw new Error(`TSE HTTP ${res.status}`)
-  const zip = await JSZip.loadAsync(Buffer.from(await res.arrayBuffer()))
+  const zip = await JSZip.loadAsync(await fetchTseZip(TSE_URL))
   const file = zip.file(CSV_NAME)
   if (!file) throw new Error(`${CSV_NAME} ausente no ZIP`)
   const buf = await file.async('nodebuffer')
@@ -142,8 +161,18 @@ function enrich22(reg) {
   console.log(`✅ national-polls enriquecido: ${nP} protocolo + ${nF} instituto+data + ${nN} sem match`)
 }
 
-const csv = await loadCsv()
-const rows = parseCSV(csv)
-const reg = buildRegistry(rows)
-enrich22(reg)
-console.log('🏁 build-tse-registry-full concluído.')
+// Degradação graciosa: se o TSE estiver indisponível mesmo após os retries, NÃO derruba o
+// mirror. O tse-registry.csv/json e o national-polls.json já versionados em hf-assets/polls/
+// permanecem intactos, e o export do dia segue com eles (dados de mercado/pesquisa/divergência
+// do dia publicam normalmente; só o registro TSE fica na versão anterior). Mesmo princípio
+// defensivo do build-poll-enrichment.mjs. Exit 0.
+try {
+  const csv = await loadCsv()
+  const rows = parseCSV(csv)
+  const reg = buildRegistry(rows)
+  enrich22(reg)
+  console.log('🏁 build-tse-registry-full concluído.')
+} catch (e) {
+  console.log(`::warning::TSE Dados Abertos indisponível (${e.message}). Mantendo tse-registry/national-polls já versionados; o mirror segue com os dados do dia. Sem fail.`)
+  process.exit(0)
+}
