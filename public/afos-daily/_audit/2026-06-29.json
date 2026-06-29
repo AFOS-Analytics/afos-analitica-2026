@@ -1,0 +1,50 @@
+{
+  "date": "2026-06-29",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Pesquisa BTG/Nexus 29/Jun (1T 42x34; 2T 47x44 empate técnico; aprovação 48x48; rejeição 51/49)",
+        "crossRef": "BTG/Nexus aparece 8x nas últimas 7 dailies, mas como rodadas anteriores/comparações; esta (n=2.009, campo 26-28/Jun, BR-08521/2026) é novidade",
+        "fetch": "nexus.fsb.com.br + Exame (2 matérias) + CNN, data=2026-06-29, tipo=evento (publicação de pesquisa)",
+        "secondSource": "Exame, CNN Brasil, Folha (independentes)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Encontro Flávio x Milei (Quinta de Olivos, 'onda azul')",
+        "crossRef": "Milei citado 24/Jun (giro planejado); encontro de hoje é evento efetivo, novidade",
+        "fetch": "WebSearch, data=2026-06-29 (segunda), tipo=evento simbólico",
+        "secondSource": "CNN, Poder360, Metrópoles, Correio Braziliense, Jovem Pan",
+        "decision": "incorporar (contexto, não movedor de mercado)"
+      },
+      {
+        "event": "Teresa Leitão assume liderança do governo no Senado",
+        "crossRef": "citada 26/Jun (Wagner saiu 24/Jun); efetivação = desdobramento/continuidade",
+        "fetch": "cache (Líder no Senado / Mais Região), data=2026-06-29, tipo=evento institucional",
+        "secondSource": "Poder360, Mais Região",
+        "decision": "incorporar como continuidade, não divisor de águas"
+      },
+      {
+        "event": "Moraes dá 15 dias à PGR após PF concluir que Flávio caluniou Lula",
+        "crossRef": "inquérito de Moraes contra Flávio já citado em dailies anteriores; desdobramento procedimental",
+        "fetch": "O Globo + Pleno.News, data=2026-06-29, tipo=desdobramento judicial (procedimental, não mérito)",
+        "secondSource": "O Globo, Pleno.News",
+        "decision": "incorporar com desambiguação ('deu 15 dias para a PGR se manifestar', não 'condenou')"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificacao2": true,
+      "semCausacaoEspuria": "recuo do mercado atribuído à digestão da nova pesquisa (timing compatível, ambos 29/Jun), não ao Milei nem ao STF",
+      "verbosCriticosDesambiguados": "Moraes 'deu 15 dias' (procedimental); Wagner 'deixou o posto em 24/Jun' (datado); sem 'preso/condenou/morreu'",
+      "reconcileClaims": "exit 0, todos os claims batem (+-0.05pp)"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma; todas as âncoras multi-fonte",
+    "numericalErrors": "reconcile-claims.ts exit 0, OK",
+    "fontesInventadas": "checados 3 (Folha BTG/Nexus, O Globo Moraes, Correio Braziliense Milei) — todas reais e do dia",
+    "quotesLiterais": "'onda azul'/'maré azul' confirmadas por CNN/Poder360/Metrópoles/Jovem Pan",
+    "causacaoEspuria": "nenhuma; recuo atribuído à digestão da pesquisa, não a Milei/STF",
+    "verbosCriticos": "OK; Moraes 'deu 15 dias' procedimental, nada de 'preso/condenou'",
+    "decision": "prosseguir para preview"
+  }
+}
