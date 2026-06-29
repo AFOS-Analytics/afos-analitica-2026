@@ -310,11 +310,11 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
         const srcId = (l.source as unknown as GNode).id
         if (l.kind === 'divergence') return 115
-        if (l.kind === 'nav') return srcId === 'election' ? (dense ? 205 : 150) : (dense ? 132 : 105)
+        if (l.kind === 'nav') return srcId === 'election' ? (dense ? 165 : 150) : (dense ? 116 : 105)
         if (l.kind === 'tree') return srcId === 'election' ? 125 : 80
         return 95
       }).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(veryDense ? -1020 : dense ? -760 : -380))
+      .force('charge', d3.forceManyBody().strength(veryDense ? -640 : dense ? -560 : -380))
       .force('center', d3.forceCenter(W / 2, H / 2))
       // colisão proporcional ao rótulo nos nós de navegação: labels longos (ex.: "DOI Colômbia 2026")
       // recebem raio maior, evitando sobreposição de texto quando o hub tem muitos filhos.
@@ -326,6 +326,27 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .force('x', d3.forceX(W / 2).strength(0.04))
       .force('y', d3.forceY(H / 2).strength(0.04))
 
+    // enquadra TODO o conteúdo dentro do quadro (nada cortado): calcula a bounding box dos nós
+    // incluindo raio e largura estimada do rótulo, e ajusta o zoom para caber, centralizado.
+    let fitted = false
+    function fit() {
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
+      for (const n of nodes) {
+        if (n.x == null || n.y == null) return
+        const halfW = Math.max(n.r, (n.label?.length ?? 0) * 3.4)
+        minX = Math.min(minX, n.x - halfW); maxX = Math.max(maxX, n.x + halfW)
+        minY = Math.min(minY, n.y - n.r - 6); maxY = Math.max(maxY, n.y + n.r + 28) // rótulo abaixo do nó
+      }
+      if (!isFinite(minX)) return
+      const pad = 28
+      const bw = (maxX - minX) + pad * 2, bh = (maxY - minY) + pad * 2
+      const scale = Math.min(W / bw, H / bh, 1.25)
+      const tx = W / 2 - scale * (minX + maxX) / 2
+      const ty = H / 2 - scale * (minY + maxY) / 2
+      svg.transition().duration(450).call(zoom.transform as never, d3.zoomIdentity.translate(tx, ty).scale(scale))
+    }
+
+    let tickCount = 0
     sim.on('tick', () => {
       linkSel
         .attr('x1', (l) => (l.source as unknown as GNode).x!)
@@ -336,7 +357,9 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       linkLabelSel
         .attr('x', (l) => ((l.source as unknown as GNode).x! + (l.target as unknown as GNode).x!) / 2)
         .attr('y', (l) => ((l.source as unknown as GNode).y! + (l.target as unknown as GNode).y!) / 2)
+      if (!fitted && ++tickCount === 200) { fitted = true; fit() }
     })
+    sim.on('end', () => { if (!fitted) { fitted = true; fit() } })
 
     const drag = d3.drag<SVGGElement, GNode>().clickDistance(6)
       .on('start', (e, n) => { if (!e.active) sim.alphaTarget(0.3).restart(); n.fx = n.x; n.fy = n.y })
