@@ -238,7 +238,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const dense = navCount > 6 || candDense
   const veryDense = navCount > 12
   const W = veryDense ? 1320 : dense ? 1140 : 900
-  const H = veryDense ? 980 : dense ? 820 : 580
+  const H = veryDense ? 800 : dense ? 760 : 580
 
   useEffect(() => {
     if (!ref.current) return
@@ -401,7 +401,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const lbl = LBL[locale] || LBL['en']
   return (
     <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
-      <svg ref={ref} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', display: 'block', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
+      <svg ref={ref} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '82vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
