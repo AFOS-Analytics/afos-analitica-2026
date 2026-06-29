@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-06-28",
+  "lastUpdate": "2026-06-29",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -124,6 +124,54 @@
     }
   ],
   "polls": [
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-06-29",
+      "sample": 2009,
+      "margin": 2,
+      "register": "BR-08521/2026",
+      "reliability": 4,
+      "method": "Pesquisa nacional",
+      "fieldDates": "2026-06-26 a 2026-06-28",
+      "note": "BTG/Nexus nacional publicada 29/Jun (CNN Brasil, Folha, Exame, JOTA, VEJA, CartaCapital, Gazeta do Povo, Poder360), patrocinada pelo Banco BTG Pactual. Flávio reduz a diferença e o 2º turno volta ao empate técnico: 1T Lula 42% x Flávio 34% (gap +8pp), com Caiado 5%, Renan Santos 4% e Zema 3%. 2T Lula 47% x Flávio 44% (gap +3pp, empate técnico dentro da margem). Frente à própria rodada de 15/Jun (1T 42x33, 2T 49x43), Lula manteve o 1T mas perdeu 2pp no 2º turno e Flávio ganhou 1pp, estreitando a disputa, na mesma direção em que o mercado recuou do recorde no dia. Aprovação do governo 48% x desaprovação 48% (empate, ante 48x47 em 15/Jun). Rejeição: Flávio 51% (a maior do páreo), Lula 49%. Campo 26-28/Jun, n=2.009, cobertura nos 27 estados, margem +/-2pp, 95% de confiança. Protocolo TSE BR-08521/2026, contratante Banco BTG Pactual.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 42
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        }
+      ],
+      "source": "BTG/Nexus via CNN Brasil, Folha de S.Paulo, Exame, JOTA, VEJA, CartaCapital, Gazeta do Povo 29/Jun"
+    },
     {
       "institute": "Vox Brasil",
       "date": "2026-06-27",
@@ -630,13 +678,13 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação Lula no patamar de 48%: a Datafolha 20/Jun (n=2.004, BR-09956/2026) deu aprova 48% × reprova 49%, e a Ipsos-Ipec apontou queda da rejeição e aumento da avaliação regular (Revista Fórum). Na série BTG/Nexus 15/Jun (n=2.017, campo 12-14/Jun, BR-06645/2026): aprova 48% × desaprova 47%, a aprovação superou a desaprovação pela 1ª vez no ciclo (JOTA, Metrópoles), com avaliação ótima/boa 38% / regular 21% / ruim/péssima 41%. Confirma a direção da Genial/Quaest 10/Jun (47% × 48%) e da Real Time Big Data 01/Jun (42% × 52%): trajetória de melhora ao longo de quatro rodadas. Rejeição na BTG/Nexus: Flávio 52%, Aécio 62%, Lula 47%.",
-    "source": "Datafolha (20/Jun/2026, n=2.004, BR-09956/2026, 48% × 49%) + Ipsos-Ipec (Revista Fórum) + BTG/Nexus (15/Jun, n=2.017, BR-06645/2026, 48% × 47%) + Genial/Quaest (10/Jun) + Real Time Big Data (01/Jun)",
-    "date": "2026-06-15",
+    "note": "Aprovação de Lula em empate técnico no patamar de 48%: a BTG/Nexus 29/Jun (n=2.009, campo 26-28/Jun, BR-08521/2026) deu aprova 48% × desaprova 48% (empate, ante 48% × 47% na rodada de 15/Jun do próprio instituto), com a desaprovação subindo 1pp. Confirma a leitura do platô: Datafolha 20/Jun (n=2.004, BR-09956/2026) aprova 48% × reprova 49%; BTG/Nexus 15/Jun 48% × 47%; Genial/Quaest 10/Jun 47% × 48%; Real Time Big Data 01/Jun 42% × 52%, uma trajetória de melhora ao longo de cinco rodadas até estabilizar perto do empate. A Quaest deu 51% de aprovação entre os independentes (Revista Fórum). Rejeição na BTG/Nexus 29/Jun: Flávio 51% (a maior do páreo), Lula 49%.",
+    "source": "BTG/Nexus (29/Jun/2026, n=2.009, BR-08521/2026, 48% × 48%) + Datafolha (20/Jun, n=2.004, BR-09956/2026, 48% × 49%) + BTG/Nexus (15/Jun, 48% × 47%) + Genial/Quaest (10/Jun, 47% × 48%) + Real Time Big Data (01/Jun, 42% × 52%) + Quaest (51% entre independentes, Revista Fórum)",
+    "date": "2026-06-29",
     "results": {
       "aprovacao": 48,
-      "desaprovacao": 47,
-      "naoSabe": 5,
+      "desaprovacao": 48,
+      "naoSabe": 4,
       "otimoBom": 38,
       "ruimPessimo": 41,
       "regular": 21
@@ -665,57 +713,57 @@
       {
         "president": "Lula (2026)",
         "approval6m": 48,
-        "disapproval6m": 47
+        "disapproval6m": 48
       }
     ],
-    "lastUpdate": "2026-06-15"
+    "lastUpdate": "2026-06-29"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 28/Jun 13:50 BRT), a 98 dias do 1º turno. O mercado levou Lula a um novo recorde: ele SOBE a 57.5% (alta 1.00pp, vol USD 7.0M) e Flávio fica quase parado a 22.25% (alta 0.10pp, vol USD 7.1M), com o gap se alargando a +35.25pp (alta 0.90pp), o mais largo do recorte. Domingo de noticiário mais leve, mas firmemente pró-Lula: Flávio faltou a 43% das votações nominais do Senado em 2026 (Folha, Valor), a crise na família Bolsonaro persiste (Michelle x Flávio disputam o espólio e a estrutura do PL, O Globo), Lula fechou alianças em 25 estados contra 14 de Flávio (CNN), e a Quaest deu Lula com 51% de aprovação entre independentes e 35% das mulheres anti-Flávio (Revista Fórum). Sem pesquisa nacional nova: a última segue a Vox Brasil de 27/Jun (2T empate técnico, 45.3% x 42.8%), e a AtlasIntel nacional foi adiada para 01/Jul. No institucional, o caso Master segue aberto (Mendonça prepara para enviar à PGR o pedido sobre o financiamento do filme Dark Horse por Vorcaro, G1); STF impeach estável a 2.65%. Michelle Bolsonaro 2.95% (baixa 0.15pp). Renan praticamente parado a 11.60% (baixa 0.05pp) e mantém o favoritismo ao 3º lugar do 1T a 49.5% no sub-mercado, com folga (Caiado 16%, Zema 13%). Inflação 2026: a banda 5.00-5.49% sobe e lidera a 38.65% (consenso 4.50-5.49% soma 69.60%). Sub-mercados: Flávio 2º lugar do 1T (75.5%, baixa 1pp); o PL lidera o Senado por cadeiras (76.5%). Volume total do presidencial acima de USD 105M.",
-    "sources": "Polymarket ao vivo (fetchedAt 28/Jun). Base de pesquisa (última nacional): Vox Brasil 27/Jun n=2.100 (Exame, Poder360, Brasil 247): 1T Lula 38.3% x Flávio 32.2%; 2T Lula 45.3% x Flávio 42.8% (empate técnico, o mais apertado do ciclo). PoderData/Aya 25/Jun n=2.400 2T Lula 46% x Flávio 43% (empate). Consenso Tier 1: Indexa 23/Jun 2T 47x40; Datafolha 20/Jun BR-09956/2026 2T 47x43; CNT/MDA 16/Jun 2T 49.3x36.8; BTG/Nexus 15/Jun 2T 49x43. AtlasIntel nacional adiada para 01/Jul (novo questionário no TSE mede o conflito Michelle x Flávio e o caso Jaques Wagner, Revista Fórum). Contexto 28/Jun (98 dias da eleição): Flávio faltou a 43% das votações nominais do Senado em 2026 (Folha, Valor); crise Michelle x Flávio pelo espólio e pela estrutura do PL (O Globo); Lula com alianças em 25 estados x 14 de Flávio (CNN); Quaest 51% de aprovação entre independentes e 35% das mulheres anti-Flávio (Revista Fórum); não polarizados somam 27% (O Globo); Mendonça prepara pedido à PGR sobre o financiamento do Dark Horse por Vorcaro (G1); Renan aposta em vaquinha, base do MBL e Faria Lima (Estadão).",
+    "note": "Cruzamento Polymarket (live 29/Jun 17:14 BRT), a 97 dias do 1º turno. Dia de convergência: o mercado recuou do recorde na mesma direção da nova pesquisa. Lula CEDE a 56.5% (baixa 1.00pp, vol USD 7.0M) e Flávio SOBE a 23.55% (alta 1.30pp, vol USD 7.1M), de modo que o gap se ESTREITA a +32.95pp (baixa 2.30pp), saindo do recorde de +35.25pp. No mesmo dia, a BTG/Nexus 29/Jun (n=2.009, campo 26-28/Jun, BR-08521/2026) deu Flávio reduzindo a diferença: 1T Lula 42% x Flávio 34% (gap +8pp) e 2T Lula 47% x Flávio 44% (empate técnico, gap +3pp), ante 2T 49x43 na rodada de 15/Jun do próprio instituto. Pesquisa e mercado se moveram juntos rumo a Flávio, ainda que o nível siga divergente (mercado +32.95pp x pesquisa +3pp no 2º turno). No contexto, Flávio se encontrou com Milei na Argentina, que falou em 'onda azul' para o Brasil (Folha), enquanto Milei é rejeitado por 60% dos argentinos (Revista Fórum). Renan SOBE a 12.55% (alta 0.95pp, vol USD 7.6M, o maior do presidencial) e amplia o favoritismo ao 3º lugar do 1T a 53.5% no sub-mercado (Caiado 18%, Zema 10.5%). No institucional, o caso Master segue aberto (Mendonça prepara o pedido à PGR sobre o financiamento do filme Dark Horse por Vorcaro, G1); STF impeach sobe de leve a 2.90% (alta 0.25pp). Michelle Bolsonaro 3.15% (alta 0.20pp). Aprovação de Lula em empate (48% x 48%, BTG/Nexus). Inflação 2026: a banda 5.00-5.49% lidera a 36.00% (consenso 4.50-5.49% soma 65.05%). Sub-mercados: Flávio 2º lugar do 1T (78.5%, alta 3pp); o PL lidera o Senado por cadeiras (75.5%, baixa 1pp). Volume total do presidencial acima de USD 107M.",
+    "sources": "Polymarket ao vivo (fetchedAt 29/Jun 17:14 BRT). Base de pesquisa (última nacional, NOVA): BTG/Nexus 29/Jun n=2.009 campo 26-28/Jun BR-08521/2026 (CNN Brasil, Folha, Exame, JOTA, VEJA, CartaCapital): 1T Lula 42% x Flávio 34%; 2T Lula 47% x Flávio 44% (empate técnico); aprovação 48% x 48%; rejeição Flávio 51% x Lula 49%. Antecedentes: Vox Brasil 27/Jun 2T 45.3x42.8 (empate); PoderData/Aya 25/Jun 2T 46x43 (empate); Indexa 23/Jun 2T 47x40; Datafolha 20/Jun BR-09956/2026 2T 47x43; CNT/MDA 16/Jun 2T 49.3x36.8; BTG/Nexus 15/Jun 2T 49x43. AtlasIntel nacional prevista para 01/Jul (novo questionário no TSE mede o conflito Michelle x Flávio e o caso Jaques Wagner, Revista Fórum). Contexto 29/Jun (97 dias da eleição): nova BTG/Nexus mostra Flávio reduzindo a diferença, e o mercado recua do recorde na mesma direção; Flávio se encontrou com Milei na Argentina ('onda azul', Folha), com Milei rejeitado por 60% dos argentinos (Revista Fórum); Teresa Leitão assume a liderança do governo no Senado; Trump e a tensão Brasil-EUA viram motor de engajamento para Lula e Flávio nas redes (BBC); Nordeste vira desafio para Flávio com palanques frágeis (Folha); Quaest 51% de aprovação entre independentes (Revista Fórum); Mendonça prepara pedido à PGR sobre o financiamento do Dark Horse por Vorcaro (G1).",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-49%",
-        "polymarket": "57.50%",
-        "tendenciaPesquisa": "Vox Brasil 27/Jun (n=2.100, última nacional): 1T Lula 38.3% x Flávio 32.2% (gap +6.1pp); 2T Lula 45.3% x Flávio 42.8% (gap +2.5pp, empate técnico, o mais apertado do ciclo). PoderData/Aya 25/Jun 2T Lula 46% x 43% (empate), também empata com Zema e Caiado. Consenso Tier 1 com folga maior: Indexa 23/Jun 2T 47% x 40%; Datafolha 20/Jun 2T 47% x 43%; CNT/MDA 2T 49.3%; BTG/Nexus 49% (aprovação 48% x 47%). Quaest: 51% de aprovação entre independentes (Revista Fórum). AtlasIntel nacional adiada p/ 01/Jul.",
-        "tendenciaPolymarket": "SOBE a 57.5% (alta 1.00pp, vol USD 7.0M), em novo recorde a 98 dias da eleição, e o gap se alarga a +35.25pp (alta 0.90pp), o mais largo do recorte. Num domingo pró-Lula (Flávio faltoso no Senado, Lula à frente em alianças, Quaest favorável), o mercado ampliou a vantagem, ainda contra a última pesquisa (Vox 27/Jun, 2º turno empate técnico).",
-        "odds": 57.5,
-        "percentage": 38,
-        "lastUpdate": "2026-06-28",
-        "value": 57.5
+        "pesquisaRange": "42-49%",
+        "polymarket": "56.50%",
+        "tendenciaPesquisa": "BTG/Nexus 29/Jun (n=2.009, NOVA, última nacional): 1T Lula 42% x Flávio 34% (gap +8pp); 2T Lula 47% x Flávio 44% (gap +3pp, empate técnico), recuando 2pp no 2º turno frente à própria rodada de 15/Jun (49x43). Aprovação 48% x 48% (empate). Antecedentes: Vox 27/Jun 2T 45.3x42.8 (empate); PoderData/Aya 25/Jun 2T 46x43 (empate); Indexa 23/Jun 2T 47x40; Datafolha 20/Jun 2T 47x43; CNT/MDA 49.3%. Quaest: 51% de aprovação entre independentes (Revista Fórum).",
+        "tendenciaPolymarket": "CEDE a 56.5% (baixa 1.00pp, vol USD 7.0M), recuando do recorde de 57.5%, e o gap sobre Flávio ESTREITA a +32.95pp (baixa 2.30pp). Dia de convergência: o mercado recuou na mesma direção da nova BTG/Nexus, que mostrou Flávio reduzindo a diferença e o 2º turno em empate técnico. Lula segue dominante, mas o dinheiro real aproximou-se da pesquisa.",
+        "odds": 56.5,
+        "percentage": 42,
+        "lastUpdate": "2026-06-29",
+        "value": 56.5
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "31-43%",
-        "polymarket": "22.25%",
-        "tendenciaPesquisa": "Vox Brasil 27/Jun (última nacional): 1T 32.2% (gap -6.1pp); 2T 42.8% (Lula 45.3% x 42.8%, empate técnico, subindo 1.5pp frente à própria rodada de 05/Jun). PoderData/Aya 25/Jun 2T 43% (empate). Datafolha 20/Jun 2T 43%, rejeição 48%. Indexa 23/Jun 2T 40%. Quaest: 35% das mulheres anti-Flávio (Revista Fórum). Rejeição segue a maior do páreo (BTG/Nexus 52%).",
-        "tendenciaPolymarket": "Quase parado a 22.25% (alta 0.10pp, vol USD 7.1M) num dia em que Lula subiu, e o gap para Lula vai a +35.25pp, o mais largo do recorte. O domingo foi adverso: faltou a 43% das votações nominais do Senado em 2026 (Folha, Valor), a crise com Michelle persiste (O Globo) e Lula o supera em coalizão (25 estados x 14, CNN). Mantém o 2º lugar do 1º turno (75.5%, baixa 1pp).",
-        "odds": 22.25,
-        "percentage": 32,
-        "lastUpdate": "2026-06-28",
-        "value": 22.25
+        "pesquisaRange": "34-44%",
+        "polymarket": "23.55%",
+        "tendenciaPesquisa": "BTG/Nexus 29/Jun (NOVA, última nacional): 1T 34% (gap -8pp), 2T 44% (Lula 47% x 44%, empate técnico), ganhando 1pp no 2º turno frente à própria rodada de 15/Jun (43%). Rejeição 51%, a maior do páreo. Antecedentes: Vox 27/Jun 2T 42.8% (empate); PoderData/Aya 25/Jun 2T 43% (empate); Datafolha 20/Jun 2T 43%, rejeição 48%; Indexa 23/Jun 2T 40%. Quaest: 35% das mulheres anti-Flávio (Revista Fórum).",
+        "tendenciaPolymarket": "SOBE a 23.55% (alta 1.30pp, vol USD 7.1M) num dia em que Lula recuou, estreitando o gap para Lula a +32.95pp (saindo do recorde de +35.25pp). O movimento acompanha a nova BTG/Nexus, que o pôs reduzindo a diferença (2º turno empate técnico). Encontrou-se com Milei na Argentina, que falou em 'onda azul' para o Brasil (Folha). Amplia o 2º lugar do 1º turno (78.5%, alta 3pp).",
+        "odds": 23.55,
+        "percentage": 34,
+        "lastUpdate": "2026-06-29",
+        "value": 23.55
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-4%",
-        "polymarket": "11.60%",
-        "tendenciaPesquisa": "PoderData/Aya 25/Jun deu Renan 4% no 1T; demais nacionais na faixa de 2-3% (Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 11.60% x pesquisa ~4% (~7.60pp), ainda a mais larga do dashboard.",
-        "tendenciaPolymarket": "Praticamente parado a 11.60% (baixa 0.05pp, vol USD 7.5M, o maior volume acumulado do presidencial) e mantém o favoritismo ao 3º lugar do 1º turno a 49.5% no sub-mercado, com folga sobre Caiado (16%) e Zema (13%). As pesquisas o medem a ~4% no 1T, mantendo a divergência mais larga do dashboard. Aposta em vaquinha, MBL e Faria Lima sem máquina partidária (Estadão). Provável 3º colocado, sem chance real de vencer.",
-        "odds": 11.6,
+        "polymarket": "12.55%",
+        "tendenciaPesquisa": "BTG/Nexus 29/Jun deu Renan 4% no 1T; PoderData/Aya 25/Jun também 4%; demais nacionais na faixa de 2-3% (Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 12.55% x pesquisa ~4% (~8.55pp), a mais larga do dashboard e em alta no dia.",
+        "tendenciaPolymarket": "SOBE a 12.55% (alta 0.95pp, vol USD 7.6M, o maior volume acumulado do presidencial) e amplia o favoritismo ao 3º lugar do 1º turno a 53.5% no sub-mercado (alta 4pp), com folga sobre Caiado (18%) e Zema (10.5%). As pesquisas o medem a ~4% no 1T, alargando a divergência do dashboard a ~8.55pp. Aposta em vaquinha, MBL e Faria Lima sem máquina partidária (Estadão). Provável 3º colocado, sem chance real de vencer.",
+        "odds": 12.55,
         "percentage": 4,
-        "lastUpdate": "2026-06-28",
-        "value": 11.6
+        "lastUpdate": "2026-06-29",
+        "value": 12.55
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6.9%",
         "polymarket": "1.25%",
-        "tendenciaPesquisa": "PoderData/Aya 25/Jun: Caiado 4% no 1T, e empata tecnicamente com Lula no 2º turno (Poder360, CNN). Datafolha 20/Jun: 1T 3%; 2T Lula 47% x Caiado 41% (competitivo). Sem Flávio, a Futura/Apex dá Caiado 16.5%.",
-        "tendenciaPolymarket": "Recua a 1.25% (baixa 0.05pp, vol USD 4.5M), ainda no piso, e segue atrás no sub-mercado de 3º lugar do 1º turno (16%). A PoderData o pôs em empate técnico com Lula no 2º turno, sinal de competitividade no cenário sem Flávio (Futura sem Flávio 16.5%). Em Goiás, o MP entrou com ação contra o uso de policiais como seguranças dele (Folha).",
+        "tendenciaPesquisa": "BTG/Nexus 29/Jun: Caiado 5% no 1T, o melhor da 3ª via. PoderData/Aya 25/Jun: 4% no 1T, e empata tecnicamente com Lula no 2º turno (Poder360, CNN). Datafolha 20/Jun: 1T 3%; 2T Lula 47% x Caiado 41% (competitivo). Sem Flávio, a Futura/Apex dá Caiado 16.5%.",
+        "tendenciaPolymarket": "Estável a 1.25% (vol USD 4.5M), ainda no piso, mas sobe no sub-mercado de 3º lugar do 1º turno (18%, vinha de 16%). A BTG/Nexus 29/Jun o deu a 5% no 1T (o melhor da 3ª via) e a PoderData o pôs em empate técnico com Lula no 2º turno, sinal de competitividade no cenário sem Flávio (Futura sem Flávio 16.5%).",
         "odds": 1.25,
-        "percentage": 4,
-        "lastUpdate": "2026-06-28",
+        "percentage": 5,
+        "lastUpdate": "2026-06-29",
         "value": 1.25
       },
       {
@@ -723,35 +771,35 @@
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "As nacionais não destacam Tarcísio no presidencial nacional (foco reeleição SP). Vox SP 30/Mai 2T estadual Tarcísio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estável 0.15% no presidencial (anomalia de legado, vol USD 13M lifetime, o maior do mercado). Foco na reeleição em SP, onde nova pesquisa testa Tarcísio x Haddad (VEJA). No mercado de Senado por cadeiras, o PL segue na liderança (76.5%), sinal de capilaridade institucional da legenda.",
+        "tendenciaPolymarket": "Estável 0.15% no presidencial (anomalia de legado, vol USD 13M lifetime, o maior do mercado). Foco na reeleição em SP, onde nova pesquisa testa Tarcísio x Haddad (VEJA). No mercado de Senado por cadeiras, o PL segue na liderança (75.5%, baixa 1pp), sinal de capilaridade institucional da legenda.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-06-28",
+        "lastUpdate": "2026-06-29",
         "value": "0.15"
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-2.8%",
         "polymarket": "1.15%",
-        "tendenciaPesquisa": "PoderData/Aya 25/Jun: Zema empata tecnicamente com Lula no 2º turno (CNN). Datafolha 20/Jun: 1T 2%; 2T Lula 48% x Zema 39%. Sem Flávio, a Futura dá Zema 13.3%. Prometeu anunciar o vice nesta semana (Estadão).",
-        "tendenciaPolymarket": "Cede a 1.15% (baixa 0.10pp, vol USD 4.0M) e recua no sub-mercado de 3º lugar do 1º turno (13%, vinha de 15%). A PoderData o pôs em empate técnico com Lula no 2º turno, mas na disputa com Flávio o Novo não encontra tração no mercado.",
-        "odds": 1.15,
-        "percentage": 2,
-        "lastUpdate": "2026-06-28",
-        "value": 1.15
+        "tendenciaPesquisa": "BTG/Nexus 29/Jun: Zema 3% no 1T. PoderData/Aya 25/Jun: empata tecnicamente com Lula no 2º turno (CNN). Datafolha 20/Jun: 1T 2%; 2T Lula 48% x Zema 39%. Sem Flávio, a Futura dá Zema 13.3%. Prometeu anunciar o vice nesta semana (Estadão).",
+        "tendenciaPolymarket": "Sobe de leve a 1.20% (alta 0.05pp, vol USD 4.0M) mas recua no sub-mercado de 3º lugar do 1º turno (10.5%, vinha de 13%), ultrapassado por Caiado (18%). A PoderData o pôs em empate técnico com Lula no 2º turno, mas na disputa com Flávio o Novo não encontra tração no mercado.",
+        "odds": 1.2,
+        "percentage": 3,
+        "lastUpdate": "2026-06-29",
+        "value": 1.2
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "1.05%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial nacional (foco governo de SP). Confirmou Márcio França (PSB) como vice na chapa de SP, com Tebet/Marina cogitados para o Senado (Folha, Brasil de Fato). Nova pesquisa testa Tarcísio x Haddad em SP (VEJA).",
-        "tendenciaPolymarket": "Cede a 1.05% (baixa 0.10pp, vol USD 6.0M) como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é a disputa por SP, com França confirmado como vice. A um mês das convenções, os presidenciáveis negociam vice (G1).",
+        "tendenciaPolymarket": "Estável a 1.05% (vol USD 6.0M) como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é a disputa por SP, com França confirmado como vice. A um mês das convenções, os presidenciáveis negociam vice (G1).",
         "odds": 1.05,
         "percentage": 0,
-        "lastUpdate": "2026-06-28",
+        "lastUpdate": "2026-06-29",
         "value": 1.05
       }
     ],
-    "updatedAt": "2026-06-28T13:55"
+    "updatedAt": "2026-06-29T17:14"
   }
 }
