@@ -230,10 +230,12 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
 export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean }) {
   const ref = useRef<SVGSVGElement | null>(null)
   const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
-  // "denso" também quando há muitos candidatos (5+): dá ao cluster central o mesmo respiro
-  // que a Coreia do Sul (3 candidatos) tem naturalmente. Vale p/ Chile/Alemanha/Canadá/UK/Peru.
+  // "candDense" = grafo de PAÍS com muitos candidatos (5+) e poucos nós de navegação:
+  // dá ao cluster central o respiro que a Coreia do Sul (3 candidatos) tem naturalmente,
+  // SEM mexer no dashboard (que é denso por navegação, navCount alto — deixar como está).
   const candCount = data.rows?.length ?? 0
-  const dense = navCount > 6 || candCount >= 5
+  const candDense = candCount >= 5 && navCount < 10
+  const dense = navCount > 6 || candDense
   const veryDense = navCount > 12
   const W = veryDense ? 1320 : dense ? 1140 : 900
   const H = veryDense ? 980 : dense ? 820 : 580
@@ -312,10 +314,11 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     const sim = d3.forceSimulation<GNode>(nodes)
       .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
         const srcId = (l.source as unknown as GNode).id
-        if (l.kind === 'divergence') return dense ? 170 : 145
-        if (l.kind === 'poll') return dense ? 150 : 130
+        // distâncias maiores SÓ no candDense (país com muitos candidatos); dashboard mantém os valores aprovados
+        if (l.kind === 'divergence') return candDense ? 170 : 145
+        if (l.kind === 'poll') return candDense ? 150 : 130
         if (l.kind === 'nav') return srcId === 'election' ? (dense ? 165 : 150) : (dense ? 116 : 105)
-        if (l.kind === 'tree') return srcId === 'election' ? (dense ? 155 : 125) : 80
+        if (l.kind === 'tree') return srcId === 'election' ? (candDense ? 155 : 125) : 80
         return 95
       }).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
       .force('charge', d3.forceManyBody().strength(veryDense ? -640 : dense ? -560 : -380))
