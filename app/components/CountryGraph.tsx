@@ -231,8 +231,9 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const ref = useRef<SVGSVGElement | null>(null)
   const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
   const dense = navCount > 6
-  const W = dense ? 1140 : 900
-  const H = dense ? 820 : 580
+  const veryDense = navCount > 12
+  const W = veryDense ? 1320 : dense ? 1140 : 900
+  const H = veryDense ? 980 : dense ? 820 : 580
 
   useEffect(() => {
     if (!ref.current) return
@@ -306,10 +307,22 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .attr('paint-order', 'stroke').attr('stroke', pal.halo).attr('stroke-width', 2.5)
 
     const sim = d3.forceSimulation<GNode>(nodes)
-      .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => l.kind === 'divergence' ? 115 : l.kind === 'nav' ? ((l.source as unknown as GNode).id === 'election' ? 150 : 105) : l.kind === 'tree' ? ((l.source as unknown as GNode).id === 'election' ? 125 : 80) : 95).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(dense ? -720 : -380))
+      .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
+        const srcId = (l.source as unknown as GNode).id
+        if (l.kind === 'divergence') return 115
+        if (l.kind === 'nav') return srcId === 'election' ? (dense ? 205 : 150) : (dense ? 132 : 105)
+        if (l.kind === 'tree') return srcId === 'election' ? 125 : 80
+        return 95
+      }).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
+      .force('charge', d3.forceManyBody().strength(veryDense ? -1020 : dense ? -760 : -380))
       .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('collide', d3.forceCollide<GNode>().radius((n) => (n.type === 'nav' || n.type === 'navhub') ? n.r + 42 : n.r + 26))
+      // colisão proporcional ao rótulo nos nós de navegação: labels longos (ex.: "DOI Colômbia 2026")
+      // recebem raio maior, evitando sobreposição de texto quando o hub tem muitos filhos.
+      .force('collide', d3.forceCollide<GNode>().radius((n) => {
+        if (n.type === 'navhub') return n.r + (dense ? 52 : 42)
+        if (n.type === 'nav') return Math.max(n.r + 40, n.label.length * 3.1)
+        return n.r + 26
+      }).iterations(2))
       .force('x', d3.forceX(W / 2).strength(0.04))
       .force('y', d3.forceY(H / 2).strength(0.04))
 
