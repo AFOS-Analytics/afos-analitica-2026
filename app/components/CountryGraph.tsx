@@ -309,7 +309,8 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     const sim = d3.forceSimulation<GNode>(nodes)
       .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
         const srcId = (l.source as unknown as GNode).id
-        if (l.kind === 'divergence') return 115
+        if (l.kind === 'divergence') return 145
+        if (l.kind === 'poll') return 130
         if (l.kind === 'nav') return srcId === 'election' ? (dense ? 165 : 150) : (dense ? 116 : 105)
         if (l.kind === 'tree') return srcId === 'election' ? 125 : 80
         return 95
@@ -321,8 +322,12 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .force('collide', d3.forceCollide<GNode>().radius((n) => {
         if (n.type === 'navhub') return n.r + (dense ? 52 : 42)
         if (n.type === 'nav') return Math.max(n.r + 40, n.label.length * 3.1)
-        return n.r + 26
-      }).iterations(2))
+        // candidatos têm sub-rótulo largo ("mercado 57,5% · pesquisa 38%"): reservar espaço pela largura do texto
+        if (n.type === 'candidate') return Math.max(n.r + 30, (n.sub?.length ?? n.label.length) * 2.2)
+        // indicadores (Governança/Economia/Educação) têm rótulos que se tocam: reservar pela largura do nome
+        if (n.type === 'indicator') return Math.max(n.r + 24, n.label.length * 3.0)
+        return n.r + 28
+      }).iterations(3))
       .force('x', d3.forceX(W / 2).strength(0.04))
       .force('y', d3.forceY(H / 2).strength(0.04))
 
