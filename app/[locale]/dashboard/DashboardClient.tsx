@@ -112,6 +112,13 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         { id: 'h_coll', label: L('Coleção AFOS', 'AFOS collection', 'Colección AFOS'), href: 'https://dataverse.harvard.edu/dataverse/afos-analytics' },
         { id: 'h_br', label: L('DOI Brasil 2026', 'Brazil DOI 2026', 'DOI Brasil 2026'), href: 'https://doi.org/10.7910/DVN/2D0UK7' },
         { id: 'h_us', label: L('DOI EUA 2024', 'USA DOI 2024', 'DOI EE.UU. 2024'), href: 'https://doi.org/10.7910/DVN/3DJCW5' },
+        { id: 'h_co', label: L('DOI Colômbia 2026', 'Colombia DOI 2026', 'DOI Colombia 2026'), href: 'https://doi.org/10.7910/DVN/X7JUEG' },
+        { id: 'h_kr', label: L('DOI Coreia do Sul 2025', 'South Korea DOI 2025', 'DOI Corea del Sur 2025'), href: 'https://doi.org/10.7910/DVN/WRBDVI' },
+        { id: 'h_cl', label: L('DOI Chile 2025', 'Chile DOI 2025', 'DOI Chile 2025'), href: 'https://doi.org/10.7910/DVN/5PLWZ7' },
+        { id: 'h_de', label: L('DOI Alemanha 2025', 'Germany DOI 2025', 'DOI Alemania 2025'), href: 'https://doi.org/10.7910/DVN/W9XGXM' },
+        { id: 'h_ca', label: L('DOI Canadá 2025', 'Canada DOI 2025', 'DOI Canadá 2025'), href: 'https://doi.org/10.7910/DVN/BBO36K' },
+        { id: 'h_gb', label: L('DOI Reino Unido 2024', 'UK DOI 2024', 'DOI Reino Unido 2024'), href: 'https://doi.org/10.7910/DVN/CUKDRJ' },
+        { id: 'h_mx', label: L('DOI México 2024', 'Mexico DOI 2024', 'DOI México 2024'), href: 'https://doi.org/10.7910/DVN/5A4LLJ' },
       ] },
     ];
   }, [locale]);

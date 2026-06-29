@@ -66,11 +66,18 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   const oddsL = { who: oddsCompleted ? oddsWho.won : oddsWho.wins, vol: loc === 'es' ? 'Volumen' : 'Volume' }
   // país no allowlist recebe o pacote novo (grafo + barras de odds + SEO oculto)
   const enriched = GRAPH_ENABLED.has(country.iso3)
-  // EUA: cluster clicável Harvard Dataverse (coleção + DOI EUA) no grafo (Brasil e EUA têm depósito)
-  const graphNav: NavGroup[] = country.iso3 === 'USA' ? [
+  // Cluster clicável Harvard Dataverse (coleção + DOI do próprio país) no grafo.
+  // Todos os 9 casos validados têm depósito; cada grafo mostra o DOI do seu país.
+  const HARVARD_DOI: Record<string, string> = {
+    USA: '10.7910/DVN/3DJCW5', BRA: '10.7910/DVN/2D0UK7', COL: '10.7910/DVN/X7JUEG',
+    KOR: '10.7910/DVN/WRBDVI', CHL: '10.7910/DVN/5PLWZ7', DEU: '10.7910/DVN/W9XGXM',
+    CAN: '10.7910/DVN/BBO36K', GBR: '10.7910/DVN/CUKDRJ', MEX: '10.7910/DVN/5A4LLJ',
+  }
+  const harvardDoi = HARVARD_DOI[country.iso3]
+  const graphNav: NavGroup[] = harvardDoi ? [
     { id: 'nav_harvard', label: 'Harvard Dataverse', color: '#A51C30', items: [
       { id: 'h_coll', label: loc === 'en' ? 'AFOS collection' : loc === 'es' ? 'Colección AFOS' : 'Coleção AFOS', href: 'https://dataverse.harvard.edu/dataverse/afos-analytics' },
-      { id: 'h_us', label: loc === 'en' ? 'USA DOI 2024' : loc === 'es' ? 'DOI EE.UU. 2024' : 'DOI EUA 2024', href: 'https://doi.org/10.7910/DVN/3DJCW5' },
+      { id: 'h_doi', label: loc === 'en' ? `${name} DOI` : `DOI ${name}`, href: `https://doi.org/${harvardDoi}` },
     ] },
   ] : []
   // cada nó de dado aponta para a pasta correspondente no dataset do país no HF (estilo Obsidian).
