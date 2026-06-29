@@ -1,0 +1,120 @@
+poll_id,register_tse,institute,poll_date,field_midpoint,dimension,category,pct,quota_detail_level
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,sex,male,47.2,full_percentages
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,sex,female,52.8,full_percentages
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,age,16 anos,0.15,full_percentages
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,education,Analfabeto,3.6,full_percentages
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,sex,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,age,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,education,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,income,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,region,"(declared, no % in registry)",,mentioned_no_pct
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,sex,"(declared, no % in registry)",,mentioned_no_pct
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,age,"(declared, no % in registry)",,mentioned_no_pct
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,education,"(declared, no % in registry)",,mentioned_no_pct
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,income,"(declared, no % in registry)",,mentioned_no_pct
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,sex,male,47.2,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,sex,female,52.8,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,age,Entre 16 a 24 anos,11.9,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,age,Entre 25 a 34 anos,19.3,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,age,Entre 35 a 44 anos,20.1,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,age,Entre 45 a 59 anos,25.5,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,age,60 ou mais,23.2,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,education,Ensino Fundamental completo ou incompleto e eleitores sem educação formal,33.8,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,education,Ensino Médio completo ou incompleto,40.7,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,education,Ensino Superior completo ou incompleto,25.5,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,income,Renda familiar mensal até R$2000,22.4,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,income,Mais de R$2.000 a R$3.000,17.1,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,income,Mais de R$3.000 a R$5.000,23.1,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,income,Mais de R$5.000 a R$10.000,23.9,full_percentages
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,income,Mais de R$10.000,13.5,full_percentages
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,sex,"(declared, no % in registry)",,mentioned_no_pct
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,age,"(declared, no % in registry)",,mentioned_no_pct
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,age,| Entre 25 e 34 anos,19,full_percentages
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,age,| Entre 35 e 44 anos,20,full_percentages
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,age,| Entre 45 e 59 anos,26,full_percentages
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,age,| Com 60 anos ou mais,23,full_percentages
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,education,| Ensino médio incompleto ou completo,45,full_percentages
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,sex,male,47.17,full_percentages
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,sex,female,52.83,full_percentages
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,age,16 anos,0.23,full_percentages
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,education,Analfabeto,3.54,full_percentages
+Meio/Ideia-2026-05-06,BR053562026,Meio/Ideia,2026-05-06,2026-05-03,sex,male,47,full_percentages
+Meio/Ideia-2026-05-06,BR053562026,Meio/Ideia,2026-05-06,2026-05-03,sex,female,53,full_percentages
+Meio/Ideia-2026-05-06,BR053562026,Meio/Ideia,2026-05-06,2026-05-03,education,Fundamental,38,full_percentages
+Meio/Ideia-2026-05-06,BR053562026,Meio/Ideia,2026-05-06,2026-05-03,education,Médio,40,full_percentages
+Meio/Ideia-2026-05-06,BR053562026,Meio/Ideia,2026-05-06,2026-05-03,income,Economicamente Ativo,62,full_percentages
+Genial/Quaest-2026-05-06,BR035982026,Genial/Quaest,2026-05-06,2026-05-09,sex,"(declared, no % in registry)",,mentioned_no_pct
+Genial/Quaest-2026-05-06,BR035982026,Genial/Quaest,2026-05-06,2026-05-09,age,"(declared, no % in registry)",,mentioned_no_pct
+Genial/Quaest-2026-05-06,BR035982026,Genial/Quaest,2026-05-06,2026-05-09,education,"(declared, no % in registry)",,mentioned_no_pct
+Genial/Quaest-2026-05-06,BR035982026,Genial/Quaest,2026-05-06,2026-05-09,income,"(declared, no % in registry)",,mentioned_no_pct
+Genial/Quaest-2026-05-06,BR035982026,Genial/Quaest,2026-05-06,2026-05-09,region,"(declared, no % in registry)",,mentioned_no_pct
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,age,| Entre 25 e 34 anos,19,full_percentages
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,age,| Entre 35 e 44 anos,19,full_percentages
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,age,| Entre 45 e 59 anos,26,full_percentages
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,age,| Com 60 anos ou mais,25,full_percentages
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,education,| Ensino médio incompleto ou completo,44,full_percentages
+Quaest-2026-05-08,BR035982026,Quaest,2026-05-08,2026-05-09,sex,"(declared, no % in registry)",,mentioned_no_pct
+Quaest-2026-05-08,BR035982026,Quaest,2026-05-08,2026-05-09,age,"(declared, no % in registry)",,mentioned_no_pct
+Quaest-2026-05-08,BR035982026,Quaest,2026-05-08,2026-05-09,education,"(declared, no % in registry)",,mentioned_no_pct
+Quaest-2026-05-08,BR035982026,Quaest,2026-05-08,2026-05-09,income,"(declared, no % in registry)",,mentioned_no_pct
+Quaest-2026-05-08,BR035982026,Quaest,2026-05-08,2026-05-09,region,"(declared, no % in registry)",,mentioned_no_pct
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,age,| Entre 25 e 34 anos,19,full_percentages
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,age,| Entre 35 e 44 anos,19,full_percentages
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,age,| Entre 45 e 59 anos,26,full_percentages
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,age,| Com 60 anos ou mais,25,full_percentages
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,education,| Ensino médio incompleto ou completo,44,full_percentages
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,sex,"(declared, no % in registry)",,mentioned_no_pct
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,age,"(declared, no % in registry)",,mentioned_no_pct
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,education,"(declared, no % in registry)",,mentioned_no_pct
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,income,"(declared, no % in registry)",,mentioned_no_pct
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,region,"(declared, no % in registry)",,mentioned_no_pct
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,sex,male,48.2,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,sex,female,51.8,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,age,Entre 16 a 24 anos,14.4,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,age,Entre 25 a 34 anos,19.4,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,age,Entre 35 a 44 anos,20.2,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,age,Entre 45 a 59 anos,24.3,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,age,60 ou mais,21.7,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,education,Ensino Fundamental completo ou incompleto e eleitores sem educação formal,43.8,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,education,Ensino Médio completo ou incompleto,36.5,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,education,Ensino Superior completo ou incompleto,19.8,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,income,Renda familiar mensal até R$2000,31.8,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,income,Mais de R$2.000 a R$3.000,22.3,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,income,Mais de R$3.000 a R$5.000,21.7,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,income,Mais de R$5.000 a R$10.000,16.7,full_percentages
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,income,Mais de R$10.000,7.6,full_percentages
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,sex,male,47.18,full_percentages
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,sex,female,52.82,full_percentages
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,sex,"(declared, no % in registry)",,mentioned_no_pct
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,age,"(declared, no % in registry)",,mentioned_no_pct
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,education,"(declared, no % in registry)",,mentioned_no_pct
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,income,"(declared, no % in registry)",,mentioned_no_pct
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,region,"(declared, no % in registry)",,mentioned_no_pct
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,sex,"(declared, no % in registry)",,mentioned_no_pct
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,age,"(declared, no % in registry)",,mentioned_no_pct
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,education,"(declared, no % in registry)",,mentioned_no_pct
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,income,"(declared, no % in registry)",,mentioned_no_pct
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,sex,male,47,full_percentages
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,sex,female,53,full_percentages
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,education,Fundamental,38,full_percentages
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,education,Médio,40,full_percentages
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,income,Economicamente Ativo,62,full_percentages
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,sex,male,47.18,full_percentages
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,sex,female,52.82,full_percentages
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,age,16 anos,0.34,full_percentages
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,education,Analfabeto,3.52,full_percentages
+BR-08016/2026,BR080162026,Vox Brasil,2026-06-05,2026-06-02,sex,male,47.18,full_percentages
+BR-08016/2026,BR080162026,Vox Brasil,2026-06-05,2026-06-02,sex,female,52.82,full_percentages

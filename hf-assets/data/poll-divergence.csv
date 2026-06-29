@@ -1,0 +1,71 @@
+poll_id,register_tse,institute,poll_date,field_midpoint,days_to_first_round,scenario,candidate,poll_pct,polymarket_pct,polymarket_date,naive_gap_pp,gap_type
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Lula,40,37.5,2026-05-03,-2.5,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Flávio,34,43.95,2026-05-03,9.95,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Caiado,5,1.35,2026-05-03,-3.65,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Zema,4,3.75,2026-05-03,-0.25,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Renan,3,5.65,2026-05-03,2.65,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,148,Cenário SP (1º turno),Flávio,39.3,43.65,2026-05-09,4.35,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,148,Cenário SP (1º turno),Lula,36,37.5,2026-05-09,1.5,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,148,Cenário MT (1º turno),Flávio,44.6,43.65,2026-05-09,-0.95,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,148,Cenário MT (1º turno),Lula,29.8,37.5,2026-05-09,7.7,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Lula,39,37.5,2026-05-09,-1.5,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Flávio,33,43.65,2026-05-09,10.65,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Caiado,4,1.45,2026-05-09,-2.55,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Zema,4,4.35,2026-05-09,0.35,naive_winprob_minus_voteshare
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,144,Cenário Principal (1º turno),Lula,39,45.5,2026-05-13,6.5,naive_winprob_minus_voteshare
+BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,144,Cenário Principal (1º turno),Flávio,35,28.45,2026-05-13,-6.55,naive_winprob_minus_voteshare
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Lula,47,42.5,2026-05-15,-4.5,naive_winprob_minus_voteshare
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Flávio,34.3,33.35,2026-05-15,-0.95,naive_winprob_minus_voteshare
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Lula,46.8,44.5,2026-05-17,-2.3,naive_winprob_minus_voteshare
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Flávio,38.1,31.3,2026-05-17,-6.8,naive_winprob_minus_voteshare
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,136,Cenário Principal (1º turno),Lula,40,45.5,2026-05-21,5.5,naive_winprob_minus_voteshare
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,136,Cenário Principal (1º turno),Flávio,31,24.75,2026-05-21,-6.25,naive_winprob_minus_voteshare
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,134,Cenário Principal (1º turno),Lula,39,45.5,2026-05-23,6.5,naive_winprob_minus_voteshare
+Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,134,Cenário Principal (1º turno),Flávio,30,27.75,2026-05-23,-2.25,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Lula,38.5,39.5,2026-05-25,1,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Flávio,31.5,27.65,2026-05-25,-3.85,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Caiado,5.5,1.65,2026-05-25,-3.85,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Zema,2.4,4.75,2026-05-25,2.35,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Renan,2.1,13.05,2026-05-25,10.95,naive_winprob_minus_voteshare
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Lula,38,40.5,2026-05-29,2.5,naive_winprob_minus_voteshare
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Flávio,31,28.65,2026-05-29,-2.35,naive_winprob_minus_voteshare
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Caiado,6,1.35,2026-05-29,-4.65,naive_winprob_minus_voteshare
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Renan,6,15.6,2026-05-29,9.6,naive_winprob_minus_voteshare
+BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Zema,4,2.75,2026-05-29,-1.25,naive_winprob_minus_voteshare
+BR-08016/2026,BR080162026,Vox Brasil,2026-06-05,2026-06-02,124,Cenário Principal (1º turno),Lula,42.1,39.5,2026-06-02,-2.6,naive_winprob_minus_voteshare
+BR-08016/2026,BR080162026,Vox Brasil,2026-06-05,2026-06-02,124,Cenário Principal (1º turno),Flávio,33.6,33.4,2026-06-02,-0.2,naive_winprob_minus_voteshare
+BR-08016/2026,BR080162026,Vox Brasil,2026-06-05,2026-06-02,124,Cenário Principal (1º turno),Caiado,6.9,2,2026-06-02,-4.9,naive_winprob_minus_voteshare
+Quaest/Genial-2026-06-10,,Quaest/Genial,2026-06-10,,116,Cenário Principal (1º turno),Lula,39,44.5,2026-06-10,5.5,naive_winprob_minus_voteshare
+Quaest/Genial-2026-06-10,,Quaest/Genial,2026-06-10,,116,Cenário Principal (1º turno),Flávio,29,28.65,2026-06-10,-0.35,naive_winprob_minus_voteshare
+Quaest/Genial-2026-06-10,,Quaest/Genial,2026-06-10,,116,Cenário Principal (1º turno),Renan,3,16.65,2026-06-10,13.65,naive_winprob_minus_voteshare
+Quaest/Genial-2026-06-10,,Quaest/Genial,2026-06-10,,116,Cenário Principal (1º turno),Caiado,3,1.75,2026-06-10,-1.25,naive_winprob_minus_voteshare
+Quaest/Genial-2026-06-10,,Quaest/Genial,2026-06-10,,116,Cenário Principal (1º turno),Zema,2,1.85,2026-06-10,-0.15,naive_winprob_minus_voteshare
+BR-06645/2026,066452026,BTG/Nexus,2026-06-15,,111,Cenário Principal (1º turno),Lula,42,51.5,2026-06-15,9.5,naive_winprob_minus_voteshare
+BR-06645/2026,066452026,BTG/Nexus,2026-06-15,,111,Cenário Principal (1º turno),Flávio,33,25.55,2026-06-15,-7.45,naive_winprob_minus_voteshare
+BR-04256/2026,042562026,CNT/MDA,2026-06-16,,110,Cenário Principal (1º turno),Lula,41.8,51.5,2026-06-16,9.7,naive_winprob_minus_voteshare
+BR-04256/2026,042562026,CNT/MDA,2026-06-16,,110,Cenário Principal (1º turno),Flávio,28.2,25.35,2026-06-16,-2.85,naive_winprob_minus_voteshare
+BR-04256/2026,042562026,CNT/MDA,2026-06-16,,110,Cenário Principal (1º turno),Caiado,4,1.95,2026-06-16,-2.05,naive_winprob_minus_voteshare
+BR-04256/2026,042562026,CNT/MDA,2026-06-16,,110,Cenário Principal (1º turno),Zema,2.8,1.35,2026-06-16,-1.45,naive_winprob_minus_voteshare
+BR-04256/2026,042562026,CNT/MDA,2026-06-16,,110,Cenário Principal (1º turno),Renan,2,14.05,2026-06-16,12.05,naive_winprob_minus_voteshare
+BR-01461/2026,014612026,Futura/Apex,2026-06-16,,110,Cenário Principal (1º turno),Lula,41.6,51.5,2026-06-16,9.9,naive_winprob_minus_voteshare
+BR-01461/2026,014612026,Futura/Apex,2026-06-16,,110,Cenário Principal (1º turno),Flávio,34.1,25.35,2026-06-16,-8.75,naive_winprob_minus_voteshare
+BR-09956/2026,099562026,Datafolha,2026-06-20,,106,Cenário Principal (1º turno),Lula,41,51.5,2026-06-20,10.5,naive_winprob_minus_voteshare
+BR-09956/2026,099562026,Datafolha,2026-06-20,,106,Cenário Principal (1º turno),Flávio,31,25.05,2026-06-20,-5.95,naive_winprob_minus_voteshare
+BR-09956/2026,099562026,Datafolha,2026-06-20,,106,Cenário Principal (1º turno),Caiado,3,2.25,2026-06-20,-0.75,naive_winprob_minus_voteshare
+BR-09956/2026,099562026,Datafolha,2026-06-20,,106,Cenário Principal (1º turno),Renan,3,14.35,2026-06-20,11.35,naive_winprob_minus_voteshare
+BR-09956/2026,099562026,Datafolha,2026-06-20,,106,Cenário Principal (1º turno),Zema,2,1.45,2026-06-20,-0.55,naive_winprob_minus_voteshare
+Indexa Pesquisas-2026-06-23,,Indexa Pesquisas,2026-06-23,,103,Cenário Principal (1º turno),Lula,42,53.5,2026-06-23,11.5,naive_winprob_minus_voteshare
+Indexa Pesquisas-2026-06-23,,Indexa Pesquisas,2026-06-23,,103,Cenário Principal (1º turno),Flávio,31,25.55,2026-06-23,-5.45,naive_winprob_minus_voteshare
+Gerp-2026-06-24,,Gerp,2026-06-24,,102,Cenário Principal (1º turno),Lula,37,57.5,2026-06-24,20.5,naive_winprob_minus_voteshare
+Gerp-2026-06-24,,Gerp,2026-06-24,,102,Cenário Principal (1º turno),Flávio,34,22.9,2026-06-24,-11.1,naive_winprob_minus_voteshare
+PoderData/Aya-2026-06-25,,PoderData/Aya,2026-06-25,,101,Cenário Principal (1º turno),Lula,40,56.5,2026-06-25,16.5,naive_winprob_minus_voteshare
+PoderData/Aya-2026-06-25,,PoderData/Aya,2026-06-25,,101,Cenário Principal (1º turno),Flávio,36,23.45,2026-06-25,-12.55,naive_winprob_minus_voteshare
+PoderData/Aya-2026-06-25,,PoderData/Aya,2026-06-25,,101,Cenário Principal (1º turno),Renan,4,11.45,2026-06-25,7.45,naive_winprob_minus_voteshare
+PoderData/Aya-2026-06-25,,PoderData/Aya,2026-06-25,,101,Cenário Principal (1º turno),Caiado,4,1.65,2026-06-25,-2.35,naive_winprob_minus_voteshare
+Vox Brasil-2026-06-27,,Vox Brasil,2026-06-27,,99,Cenário Principal (1º turno),Lula,38.3,56.5,2026-06-27,18.2,naive_winprob_minus_voteshare
+Vox Brasil-2026-06-27,,Vox Brasil,2026-06-27,,99,Cenário Principal (1º turno),Flávio,32.2,22.15,2026-06-27,-10.05,naive_winprob_minus_voteshare
+BR-08521/2026,085212026,BTG/Nexus,2026-06-29,,97,Cenário Principal (1º turno),Lula,42,56.5,2026-06-29,14.5,naive_winprob_minus_voteshare
+BR-08521/2026,085212026,BTG/Nexus,2026-06-29,,97,Cenário Principal (1º turno),Flávio,34,23.55,2026-06-29,-10.45,naive_winprob_minus_voteshare
+BR-08521/2026,085212026,BTG/Nexus,2026-06-29,,97,Cenário Principal (1º turno),Caiado,5,1.25,2026-06-29,-3.75,naive_winprob_minus_voteshare
+BR-08521/2026,085212026,BTG/Nexus,2026-06-29,,97,Cenário Principal (1º turno),Renan,4,12.55,2026-06-29,8.55,naive_winprob_minus_voteshare
+BR-08521/2026,085212026,BTG/Nexus,2026-06-29,,97,Cenário Principal (1º turno),Zema,3,1.2,2026-06-29,-1.8,naive_winprob_minus_voteshare
