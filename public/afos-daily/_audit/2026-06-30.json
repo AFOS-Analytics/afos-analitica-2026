@@ -1,0 +1,65 @@
+{
+  "date": "2026-06-30",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Caiado vai oficializar Gilberto Kassab (PSD) como vice em chapa pura do PSD à Presidência",
+        "verification1_crossref": "Kassab: 0 menções nas 7 dailies anteriores → novidade",
+        "verification2_fetch": {
+          "url": "https://www.cartacapital.com.br/politica/caiado-e-kassab-formarao-chapa-pura-do-psd-para-a-disputa-pela-presidencia/",
+          "eventDate": "2026-07-01",
+          "detail": "coletiva 11h Brasília; lead em tempo FUTURO ('deve oficializar', 'anúncio previsto')",
+          "type": "evento (anúncio futuro/decidido)"
+        },
+        "secondSource": "WebSearch multi-veículo (Folha, Jornal de Brasília, Diário do Grande ABC 30/06, Diário do Poder, Jornal Opção)",
+        "decision": "INCORPORAR com enquadramento de futuro ('deve oficializar nesta quarta, 01/Jul'), não como fato consumado de hoje"
+      },
+      {
+        "event": "AtlasIntel nacional (BR-04582/2026, n=5.000)",
+        "verification1_crossref": "24 menções em dailies 25-29/Jun (calendário + adiamento) → continuidade",
+        "verification2_fetch": {
+          "url": "https://revistaforum.com.br/politica/nova-pesquisa-atlasintel-briga-michelle-flavio/",
+          "eventDate": "adiada de 2026-06-30 para 2026-07-01",
+          "type": "explainer/anúncio de pesquisa futura (sem números publicados)"
+        },
+        "secondSource": "viva.com.br — Atlasintel sai na quarta-feira com Michelle no cenário",
+        "decision": "NÃO incorporar números (não existem); registrar no calendário como prevista p/ 01/Jul"
+      },
+      {
+        "event": "PF conclui que Flávio caluniou Lula nas redes",
+        "verification1_crossref": "coberto 27/Jun (relatório PF) e 29/Jun (Moraes deu 15 dias / enviou à PGR) → desdobramento/recobrança",
+        "verification2_fetch": {
+          "url": "https://news.google.com (Rondônia Dinâmica 30/Jun)",
+          "type": "desdobramento (reprise de conclusão já noticiada)"
+        },
+        "secondSource": "O Globo 29/Jun (já citada na daily anterior)",
+        "decision": "NÃO tratar como evento novo; mencionar como continuidade do inquérito, sem causação com movimento de mercado"
+      },
+      {
+        "event": "Milei desiste de ir à Cúpula do Mercosul onde está Lula",
+        "verification1_crossref": "encontro Flávio×Milei foi 29/Jun (9 menções) → desdobramento",
+        "verification2_fetch": {
+          "url": "https://news.google.com (BPMoney 30/Jun)",
+          "type": "desdobramento do encontro já noticiado"
+        },
+        "secondSource": "nn1.com.br — Após Flávio, Milei evita Lula no Mercosul",
+        "decision": "incorporar como contexto de continuidade, não divisor de águas"
+      }
+    ],
+    "selfCheck": {
+      "allAnchorsVerification2": true,
+      "noSpuriousCausation": true,
+      "criticalVerbsDisambiguated": true,
+      "reconcileClaimsRun": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma frágil; Kassab tem 2+ fontes; recortes BTG/Nexus derivados de rodada já confirmada 29/Jun",
+    "numericalErrors": "reconcile-claims.ts OK (±0,05pp); 4 NAMED-CHECK são falsos positivos (+3pp gap 2T; parsing 2,45%/0,70pp)",
+    "fabricatedSources": "3 conferidas no cache: Brasil 61, comunhao.com.br, BPMoney — todas existem",
+    "literalQuotes": "'nome universal' (Caiado, G1, linkado); 'Dark Horse' (nome do filme) — OK",
+    "spuriousCausation": "recuo de Lula enquadrado como 2º dia de convergência/saída técnica do pico, não evento único; queda de Michelle contrastada como divergência, não causada",
+    "criticalVerbs": "'deve oficializar'/'vai anunciar' (futuro, Kassab 01/Jul); 'concluiu' (PF) como desdobramento datado; 'adiada' (AtlasIntel) datado",
+    "decision": "prosseguir para preview"
+  }
+}
