@@ -512,6 +512,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
 
   const isBlue = theme === 'blue'
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
+  const ctaBg = isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
   const harvardPill = isBlue
     ? 'bg-white/15 text-white hover:bg-white/25 border-white/20'
@@ -533,7 +534,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-7 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
+          <a href={`/${locale}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
           <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 
@@ -730,11 +731,11 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">
           {/* Navegação de edição como botões (mesmo estilo do botão Dashboard do masthead) */}
           {nav?.previous ? (
-            <a href={`/${locale}/tradeoff/${nav.previous}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navPrev}</a>
+            <a href={`/${locale}/tradeoff/${nav.previous}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navPrev}</a>
           ) : <span />}
-          <a href={`/${locale}/tradeoff`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navArchive}</a>
+          <a href={`/${locale}/tradeoff`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navArchive}</a>
           {nav?.next ? (
-            <a href={`/${locale}/tradeoff/${nav.next}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">{t.navNext}</a>
+            <a href={`/${locale}/tradeoff/${nav.next}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navNext}</a>
           ) : <span />}
         </nav>
       </article>

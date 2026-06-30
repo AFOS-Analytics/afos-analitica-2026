@@ -153,7 +153,7 @@ export function TradeoffArchiveShell({
             AFOS Analytics
           </a>
           <div className="flex items-center gap-3">
-            <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">
+            <a href={`/${locale}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>
               Dashboard
             </a>
             <LanguagePicker locale={locale} isBlue={isBlue} langAria={strings.langAria} />

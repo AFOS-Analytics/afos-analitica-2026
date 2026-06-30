@@ -220,7 +220,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
+          <a href={`/${locale}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
           <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 
@@ -291,15 +291,15 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
         <div className={`mt-12 pt-6 border-t ${footerBorder} flex flex-wrap items-center justify-between gap-3 text-sm`}>
           {/* Navegação de edição como botões (mesmo estilo do botão Dashboard do masthead) */}
           {nav?.previous ? (
-            <a href={`/${locale}/daily/${nav.previous}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">
+            <a href={`/${locale}/daily/${nav.previous}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>
               {NAV_LABEL[locale].prev}
             </a>
           ) : <span />}
-          <a href={`/${locale}/daily`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">
+          <a href={`/${locale}/daily`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>
             {NAV_LABEL[locale].archive}
           </a>
           {nav?.next ? (
-            <a href={`/${locale}/daily/${nav.next}`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">
+            <a href={`/${locale}/daily/${nav.next}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>
               {NAV_LABEL[locale].next}
             </a>
           ) : <span />}
