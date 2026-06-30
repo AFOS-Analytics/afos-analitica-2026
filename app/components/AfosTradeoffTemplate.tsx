@@ -17,6 +17,11 @@ import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-tradeoff-theme'
 
+// Link canônico do dataset BR2026 no Harvard Dataverse (DOI permanente).
+// Pílula no masthead do Tradeoff = lastro acadêmico dos dados que sustentam a edição.
+// Mesma pílula do hero do AFOS Daily (consistência entre as duas superfícies).
+const HARVARD_DOI_URL = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7'
+
 interface NavDates {
   previous?: string
   next?: string
@@ -508,6 +513,9 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
   const isBlue = theme === 'blue'
   const pageBg = isBlue ? 'bg-[#0a3d8f]' : 'bg-white'
   const linkColor = isBlue ? 'text-blue-200 hover:text-white' : 'text-primary hover:underline'
+  const harvardPill = isBlue
+    ? 'bg-white/15 text-white hover:bg-white/25 border-white/20'
+    : 'bg-primary/10 text-primary hover:bg-primary/20 border-primary/15'
 
   const weekRange = formatWeekRange(data.weekStart, data.weekEnd, locale)
   const isDraft = data.status !== 'published'
@@ -546,6 +554,21 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
               </span>
             ))}
           </p>
+          {/* Harvard Dataverse, lastro acadêmico dos dados de divergência da edição.
+              Link, não badge de imagem, p/ acessibilidade e theme-awareness. Mesma pílula do Daily. */}
+          <div className="flex justify-center mb-3.5">
+            <a
+              href={HARVARD_DOI_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border transition-colors ${harvardPill}`}
+            >
+              <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
+                <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
+              </svg>
+              Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
+            </a>
+          </div>
           <div className={`flex flex-wrap gap-2.5 justify-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
             <span className="font-semibold">{t.issueLabel} №{data.issueNumber}</span>
             <span>·</span>
