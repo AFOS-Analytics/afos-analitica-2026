@@ -2,6 +2,14 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-06-30, June poll wave + coverage refresh
+
+### Added / Updated
+- **+10 national polls (Jun 10 to 29, through BTG/Nexus 29/Jun).** `polls/national-polls.json` now **32 polls**; `polls/national-poll-results-firstround.csv` **196 rows** and `-secondround.csv` **50 rows**.
+- **`polls/tse-registry.csv` / `.json`** grown to **399 presidential records** (from 382). Registration metadata only.
+- **`polls/sample-demographics.csv`** extended through 29/Jun (**159 rows**; `full_percentages` 15/32 · `mentioned_no_pct` 17/32). Still layer A (sample composition/weighting), not vote-by-demographic crosstabs (layer B, absent from TSE open data).
+- **Time-series refreshed:** `data/market-odds-timeseries.csv` (2026-04-04 to 2026-06-29), `data/divergence-timeseries.csv` and `data/poll-divergence.csv` re-paired on the fieldwork midpoint.
+
 ## 2026-06-13 — Poll-centric research enrichment
 
 ### Added

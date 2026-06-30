@@ -145,7 +145,7 @@ Three additions for methodological/research use. They **add** depth; nothing in 
 |-------|------|-------|
 | `field_window` | object/null | `{ start, end }` — fieldwork dates from the poll's TSE registration. |
 | `field_midpoint` | date | Midpoint of the fieldwork window. A poll is best dated by its field midpoint, not its publication date. |
-| `dating_source` | string | `field_midpoint` (all 22 current polls), `publication_date` (fallback), or `unavailable`. |
+| `dating_source` | string | `field_midpoint` (all 32 current polls), `publication_date` (fallback), or `unavailable`. |
 | `days_to_first_round` | int | Days from `field_midpoint` to the 1st round (2026-10-04). Positive = before election. |
 | `days_to_runoff` | int | Days from `field_midpoint` to the runoff (2026-10-25). |
 | `tse_registration.sample_design` | object | Sample composition/weighting (layer A) — see below. |
@@ -154,7 +154,7 @@ Three additions for methodological/research use. They **add** depth; nothing in 
 Parsed from the TSE `sampling_plan` registration text. **This is the declared composition/weighting of the SAMPLE (quota frame), NOT vote-by-demographic crosstabs (layer B).** Layer B is not part of Brazil's TSE open data — institutes publish it separately — so it is intentionally absent here.
 | Field | Type | Notes |
 |-------|------|-------|
-| `quota_detail_level` | string | `full_percentages` (institute declared quotas with %; 12/22 polls), `mentioned_no_pct` (controls named, no % in registry; 10/22), or `not_in_sampling_text`. |
+| `quota_detail_level` | string | `full_percentages` (institute declared quotas with %; 15/32 polls), `mentioned_no_pct` (controls named, no % in registry; 17/32), or `not_in_sampling_text`. |
 | `control_variables` | object | Booleans for `sex`, `age`, `education`, `income`, `region` — whether the design controls/weights on each. |
 | `sex_quota` | object/null | `{ male_pct, female_pct }` where declared. |
 | `age_quota` / `education_quota` / `income_quota` | array/null | `[{ label, pct }]` where declared (each declared dimension sums to ~100%). |
