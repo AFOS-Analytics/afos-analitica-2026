@@ -293,7 +293,7 @@ Public, auditable **electoral-divergence** datasets, *prediction markets × poll
 
 | Dataset | Election | What the divergence shows |
 |---|---|---|
-| [brazil-2026](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence) | Brazil 2026 (live) | Daily market × poll divergence + full TSE registry (350 polls × 20 public fields) |
+| [brazil-2026](https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence) | Brazil 2026 (live) | Daily market × poll divergence + full TSE registry (399 polls × 22 public fields) |
 | [peru-2026](https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence) | Peru 2026 ✓ | The market's sustained favorite (López Aliaga) missed the runoff; the Jun 7 Fujimori × Sánchez runoff is a near-tie (~50.1% × 49.9%), winner not yet proclaimed |
 | [colombia-2026](https://huggingface.co/datasets/AFOS-Analytics1/colombia-2026-electoral-divergence) | Colombia 2026 (1st round) | The market matched de la Espriella's first-round win |
 | [chile-2025](https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence) | Chile 2025 ✓ | Market priced Kast ~66% to win while polls led with Jara, and Kast won |
@@ -350,7 +350,7 @@ Executive dashboard: point-in-time counts of leads, prices, audit logs, LLM runs
 ```
 Cron 3x/day (6am, 12pm, 6pm)
   → cdn.tse.jus.br/pesquisa_eleitoral_2026.zip
-  → Parse CSV (350 presidential polls, ALL public fields:
+  → Parse CSV (399 presidential polls, ALL public fields:
      methodology + sampling/weighting plan + statistician/CONRE, un-truncated)
   → Neon: research.sources + research_runs + research_findings
   → Cross-reference: recent polls (15 days) × Polymarket odds
