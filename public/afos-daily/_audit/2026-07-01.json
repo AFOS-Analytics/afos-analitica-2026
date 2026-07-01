@@ -1,0 +1,37 @@
+{
+  "date": "2026-07-01",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "AtlasIntel nacional publicada 01/Jul",
+        "verificacao1": "aparecia como 'adiada p/ 01/Jul' nas dailies 28-30/Jun; hoje publicada de fato = novidade",
+        "verificacao2": { "url": "https://www.poder360.com.br/poder-eleicoes/lula-tem-488-e-flavio-423-em-eventual-2o-turno-diz-pesquisa/", "data": "2026-07-01", "tipo": "evento" },
+        "segundaFonte": "Gazeta do Povo + Revista Fórum (3 fontes independentes)",
+        "decisao": "incorporar"
+      },
+      {
+        "event": "Caiado oficializa Kassab como vice em chapa pura do PSD",
+        "verificacao1": "30/Jun era 'deve oficializar' (futuro); hoje ato consumado = novidade",
+        "verificacao2": { "url": "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/7/1/kassab-e-anunciado-como-vice-na-chapa-de-caiado-e-diz-que-a-republica-esta-podre", "data": "2026-07-01", "tipo": "evento" },
+        "segundaFonte": "Diário do Grande ABC + Jornal de Brasília + Tribuna do Norte (evento em Brasília, terça)",
+        "decisao": "incorporar"
+      },
+      {
+        "event": "Crise Michelle x Flávio",
+        "verificacao1": "34 mencoes nas 7 dailies = continuidade (crise em curso desde os videos)",
+        "verificacao2": { "url": "BBC (disputa Ceara) + Folha (fala aliado)", "data": "2026-07-01", "tipo": "desdobramento" },
+        "segundaFonte": "BBC + Folha",
+        "decisao": "incorporar como continuidade/contexto, nao divisor de aguas"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Ancoras (AtlasIntel, Kassab) multi-fonte; contexto menor (Geracao Z, gastos R$ 2,6 tri) single-source mas atribuido explicitamente, nao load-bearing",
+    "numericalErrors": "reconcile-claims exit 0; 3 flags = figuras especificas da pesquisa (Renan 7,8% 1T Atlas, desaprovacao 52,3%, DF 40%), legitimas",
+    "fontesInventadas": "verificados 3 (Gazeta do Povo, O Tempo, JOTA) - todos com materia real do dia",
+    "quotesLiterais": "nenhuma aspas literal atribuida",
+    "causacaoEspuria": "nenhuma - usado 'coincide com', 'veio acompanhado', 'no meio da crise'",
+    "verbosCriticos": "'oficializou' (data 01/Jul, 2 fontes); 'repudiou' (atribuido a Folha); nenhum verbo de prisao/morte/decisao judicial",
+    "decisao": "prosseguir para preview"
+  }
+}
