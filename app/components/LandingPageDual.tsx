@@ -524,6 +524,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
         </div>
       </nav>
 
+      <main id="main-content">
       {/* ─── Hero ────────────────────────────────────────────── */}
       <section className="pt-28 sm:pt-36 pb-2 sm:pb-3 px-4">
         <div className="max-w-4xl mx-auto text-center">
@@ -642,6 +643,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
           </a>
         </div>
       </section>
+      </main>
 
       {/* ─── Footer ──────────────────────────────────────────── */}
       <footer className={`border-t py-8 px-4 transition-colors duration-500 ${tk.footerBg}`}>

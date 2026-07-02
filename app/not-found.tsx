@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   title: 'Página não encontrada — AFOS Analytics',
@@ -7,30 +8,57 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 }
 
-export default function NotFound() {
+// Textos por locale. pt-BR = cópia original preservada; en/es adicionados (aditivo).
+const T = {
+  'pt-BR': {
+    title: 'Página não encontrada',
+    body: 'O endereço que você acessou não existe ou foi movido. Confira o link ou volte para a página inicial.',
+    home: 'Página inicial',
+    dash: 'Dashboard',
+  },
+  en: {
+    title: 'Page not found',
+    body: 'The address you visited does not exist or was moved. Check the link or return to the home page.',
+    home: 'Home',
+    dash: 'Dashboard',
+  },
+  es: {
+    title: 'Página no encontrada',
+    body: 'La dirección que visitaste no existe o fue movida. Revisa el enlace o vuelve a la página de inicio.',
+    home: 'Inicio',
+    dash: 'Dashboard',
+  },
+}
+
+export default async function NotFound() {
+  // O middleware propaga o locale da rota via header x-pathname-locale.
+  const h = await headers()
+  const seg = h.get('x-pathname-locale')
+  const locale = seg === 'en' || seg === 'es' || seg === 'pt-BR' ? seg : 'pt-BR'
+  const t = T[locale as keyof typeof T]
+
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">
       <div className="max-w-md">
         <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">404</p>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-dark mb-4">
-          Página não encontrada
+          {t.title}
         </h1>
         <p className="text-sm text-gray-600 mb-8 leading-relaxed">
-          O endereço que você acessou não existe ou foi movido. Confira o link
-          ou volte para a página inicial.
+          {t.body}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
-            href="/pt-BR"
+            href={`/${locale}`}
             className="px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors"
           >
-            Página inicial
+            {t.home}
           </Link>
           <Link
-            href="/pt-BR/dashboard"
+            href={`/${locale}/dashboard`}
             className="px-5 py-2.5 rounded-lg border border-gray-200 text-dark text-sm font-semibold hover:bg-gray-50 transition-colors"
           >
-            Dashboard
+            {t.dash}
           </Link>
         </div>
         <p className="text-xs text-gray-400 mt-12">

@@ -91,7 +91,7 @@ export function ValidatedCases({ locale }: { locale: Locale }) {
             <a key={c.iso3} href={`/${locale}/country/${slug}`} className="block border border-light-border rounded-xl p-4 bg-light-bg hover:border-primary/40 hover:shadow-sm transition-all">
               <div className="flex items-center justify-between mb-2 gap-2">
                 <div className="flex items-center gap-2 min-w-0">
-                  {cc && <img src={`/flags/${cc}.svg`} alt="" aria-hidden="true" width={24} height={16} className="rounded-sm object-cover shadow-sm flex-shrink-0" style={{ width: 24, height: 16 }} />}
+                  {cc && <img src={`/flags/${cc}.svg`} alt="" aria-hidden="true" width={24} height={16} loading="lazy" decoding="async" className="rounded-sm object-cover shadow-sm flex-shrink-0" style={{ width: 24, height: 16 }} />}
                   <div className="flex items-baseline gap-1.5 min-w-0">
                     <span className="font-bold text-dark text-sm truncate">{name}</span>
                     {year && <span className="text-xs font-semibold text-dark flex-shrink-0">{year}</span>}

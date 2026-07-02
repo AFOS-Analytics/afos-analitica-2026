@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslation } from '../i18n/context';
+
 export function SectionTitle({ children, icon, rightSlot }: { children: React.ReactNode; icon?: string; rightSlot?: React.ReactNode }) {
   return (
     <div className="flex items-baseline justify-between gap-3 flex-wrap mb-4">
@@ -21,12 +23,15 @@ export function Card({ children, className = '', style }: { children: React.Reac
 }
 
 export function HBar({ value, max, color, label, suffix = '%' }: { value: number; max: number; color: string; label: string; suffix?: string }) {
+  const { locale } = useTranslation();
   const pct = max > 0 ? (value / max) * 100 : 0;
+  // Separador decimal por locale: en usa ponto; pt-BR/es usam vírgula.
+  const num = locale === 'en' ? value.toFixed(1) : value.toFixed(1).replace('.', ',');
   return (
-    <div className="mb-3" role="meter" aria-label={`${label}: ${value.toFixed(1)}${suffix}`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
+    <div className="mb-3" role="meter" aria-label={`${label}: ${num}${suffix}`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
       <div className="flex justify-between text-sm mb-1">
         <span className="font-semibold text-dark">{label}</span>
-        <span className="font-bold" style={{ color }}>{value.toFixed(1)}{suffix}</span>
+        <span className="font-bold" style={{ color }}>{num}{suffix}</span>
       </div>
       <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden">
         <div className="h-full rounded-full transition-all duration-700" style={{ width: `${Math.min(pct, 100)}%`, backgroundColor: color }} />

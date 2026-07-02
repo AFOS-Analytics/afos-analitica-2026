@@ -40,7 +40,7 @@ export function GlobalMapTooltip({ data }: Props) {
         }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={22} height={15} className="rounded-sm object-cover" style={{ width: 22, height: 15 }} />
+          <img src={`/flags/${c.flag}.svg`} alt={c.countryName} width={22} height={15} loading="lazy" decoding="async" className="rounded-sm object-cover" style={{ width: 22, height: 15 }} />
           <div>
             <div className="font-semibold text-sm" style={{ color: MAP_TOKENS.text }}>{c.countryName}</div>
             <div className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{c.electionType}, {c.electionDate}</div>

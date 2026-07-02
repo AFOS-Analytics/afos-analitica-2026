@@ -147,9 +147,9 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         <AfosTradeoffHeroCard />
 
         <main id="main-content" className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12" role="main">
-          <SectionErrorBoundary name="Polymarket"><PolymarketSection poly={poly} loading={polyLoading} /></SectionErrorBoundary>
+          <SectionErrorBoundary locale={locale} name="Polymarket"><PolymarketSection poly={poly} loading={polyLoading} /></SectionErrorBoundary>
           {brazilDivergence.rows.length > 0 && (
-            <SectionErrorBoundary name="Grafo do cruzamento">
+            <SectionErrorBoundary locale={locale} name="Grafo do cruzamento">
               <section>
                 <div className="flex items-baseline justify-between gap-3 mb-1">
                   <h2 className="text-xl font-bold text-primary">{locale === 'en' ? 'Cross-reference graph' : locale === 'es' ? 'Grafo del cruce' : 'Grafo do cruzamento'}</h2>
@@ -160,9 +160,9 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
               </section>
             </SectionErrorBoundary>
           )}
-          <div id="sec-contexto" className="scroll-mt-20"><SectionErrorBoundary name="Contexto estrutural"><StructuralContext context={brazilContext} locale={locale} isBlue={false} logicAnchor="contexto-estrutural" /></SectionErrorBoundary></div>
-          <div id="sec-pesquisas" className="scroll-mt-20"><SectionErrorBoundary name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary></div>
-          <div id="sec-candidatos" className="scroll-mt-20"><SectionErrorBoundary name="Candidatos"><CandidatesSection /></SectionErrorBoundary></div>
+          <div id="sec-contexto" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Contexto estrutural"><StructuralContext context={brazilContext} locale={locale} isBlue={false} logicAnchor="contexto-estrutural" /></SectionErrorBoundary></div>
+          <div id="sec-pesquisas" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Pesquisas"><PollsSection polls={polls} crit={crit} /></SectionErrorBoundary></div>
+          <div id="sec-candidatos" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Candidatos"><CandidatesSection /></SectionErrorBoundary></div>
 
           {/* SEO internal links, country pages */}
           <section className="bg-light-bg border border-light-border rounded-xl p-4">
@@ -193,17 +193,17 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
               ].map((c) => (
                 <a key={c.slug} href={`/${locale}/country/${c.slug}`} className="flex items-center gap-1.5 bg-white border border-light-border rounded-lg px-3 py-1.5 text-xs font-medium text-dark hover:border-primary hover:text-primary transition-colors">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/flags/${c.code}.svg`} alt="" aria-hidden={true} width={18} height={12} className="rounded-sm object-cover" style={{ width: 18, height: 12 }} />{c.name}
+                  <img src={`/flags/${c.code}.svg`} alt="" aria-hidden={true} width={18} height={12} loading="lazy" decoding="async" className="rounded-sm object-cover" style={{ width: 18, height: 12 }} />{c.name}
                 </a>
               ))}
             </div>
           </section>
 
-          <div id="sec-news" className="scroll-mt-20"><SectionErrorBoundary name="Notícias"><NewsSection news={news} loading={newsLoading} /></SectionErrorBoundary></div>
-          <div id="sec-clima" className="scroll-mt-20"><SectionErrorBoundary name="Sentimento"><SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
-          <div id="sec-inss" className="scroll-mt-20"><SectionErrorBoundary name="INSS"><InssSection inss={inss} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
-          <div id="sec-master" className="scroll-mt-20"><SectionErrorBoundary name="Banco Master"><BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
-          <div id="sec-stf" className="scroll-mt-20"><SectionErrorBoundary name="STF"><StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} /></SectionErrorBoundary></div>
+          <div id="sec-news" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Notícias"><NewsSection news={news} loading={newsLoading} /></SectionErrorBoundary></div>
+          <div id="sec-clima" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Sentimento"><SentimentSection sentimento={sentimento} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
+          <div id="sec-inss" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="INSS"><InssSection inss={inss} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
+          <div id="sec-master" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="Banco Master"><BancoMasterSection bancoMaster={bancoMaster} updatedAt={ac?.updatedAt} /></SectionErrorBoundary></div>
+          <div id="sec-stf" className="scroll-mt-20"><SectionErrorBoundary locale={locale} name="STF"><StfSection stf={stf} updatedAt={ac?.updatedAt} polyStf={poly?.stf} /></SectionErrorBoundary></div>
         </main>
 
         <Footer />
