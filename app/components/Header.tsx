@@ -64,7 +64,7 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
               </div>
             </div>
           </div>
-          <p className="text-blue-300 text-xs mt-2">
+          <p className="text-blue-300 text-xs mt-2" suppressHydrationWarning>
             <Link href={`/${locale}/how-it-works`} className="hover:text-white focus:outline-2 focus:outline-offset-2 focus:outline-white transition-colors">
               {HOW_IT_WORKS_LABEL[locale] ?? HOW_IT_WORKS_LABEL['pt-BR']}
             </Link>

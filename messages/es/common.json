@@ -60,11 +60,11 @@
     "cta": "Continuar",
     "placeholder": "Tu mejor email",
     "consent": "Quiero recibir alertas y comunicaciones de AFOS Analytics por email.",
-    "success": "Acceso concedido!",
-    "errorInvalid": "Ingresa un email valido.",
+    "success": "¡Acceso concedido!",
+    "errorInvalid": "Ingresa un email válido.",
     "errorConsent": "Marca la casilla de consentimiento.",
-    "errorConnection": "Error de conexion. Intentalo de nuevo.",
-    "errorGeneric": "Algo salio mal. Intentalo de nuevo.",
+    "errorConnection": "Error de conexión. Inténtalo de nuevo.",
+    "errorGeneric": "Algo salió mal. Inténtalo de nuevo.",
     "errorRateLimit": "Demasiados intentos. Espera unos minutos."
   },
   "modal": {

@@ -38,7 +38,7 @@
     "calendarList": [
       "impacto en el tipo de cambio",
       "movimientos de mercado",
-      "reprecificación de riesgo geopolítico"
+      "revalorización de riesgo geopolítico"
     ],
     "calendarFooter": "El resultado es un flujo continuo de eventos con impacto económico real.",
     "purposeTitle": "Finalidad Estratégica",
@@ -52,7 +52,7 @@
     ],
     "execTitle": "Traducción Ejecutiva",
     "execLine1": "La política genera volatilidad.",
-    "execLine2": "La volatilidad genera reprecificación de activos.",
+    "execLine2": "La volatilidad genera revalorización de activos.",
     "execDesc": "El Global organiza esa complejidad en una interfaz que permite:",
     "execList": [
       "ver",
