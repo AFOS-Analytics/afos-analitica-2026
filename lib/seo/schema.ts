@@ -21,8 +21,8 @@ export function organizationSchema() {
     logo: {
       '@type': 'ImageObject',
       url: `${BASE_URL}/brand/logo-icon-512.png`,
-      width: 512,
-      height: 512,
+      width: 1024,
+      height: 1024,
     },
     description: 'Global Electoral Political Risk Intelligence, Open-Source. Cross-references Polymarket, 17+ polls, and live news. Brazil 2026 + 15 countries.',
     foundingDate: '2026',
@@ -45,7 +45,9 @@ export function organizationSchema() {
       'https://github.com/AFOS-Analytics/afos-analitica-2026',
       'https://x.com/AFOS_Analytics',
       'https://bsky.app/profile/afos-analytics.com',
+      'https://huggingface.co/AFOS-Analytics1',
       'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
+      'https://dataverse.harvard.edu/dataverse/afos-analytics',
     ],
   };
 }
@@ -55,8 +57,10 @@ export function websiteSchema(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${BASE_URL}/#website`,
     name: 'AFOS Analytics',
     url: `${BASE_URL}/${locale}`,
+    publisher: { '@id': `${BASE_URL}/#organization` },
     inLanguage: locale === 'es' ? 'es' : locale === 'en' ? 'en' : 'pt-BR',
     description: locale === 'en'
       ? 'Global Electoral Political Risk Intelligence, Open-Source'
@@ -188,6 +192,8 @@ export function countryDatasetSchema(countryName: string, hf: string) {
     isAccessibleForFree: true,
     creator: { '@type': 'Organization', name: 'AFOS Analytics', url: BASE_URL },
     publisher: { '@id': `${BASE_URL}/#organization` },
+    temporalCoverage: '2024/..',
+    spatialCoverage: { '@type': 'Place', name: countryName },
     sameAs: hf,
     distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: hf },
   };
@@ -207,7 +213,20 @@ export function aboutPageSchema(locale: Locale, name: string, description: strin
   };
 }
 
-/** Combina múltiplos schemas em um array JSON-LD */
+/**
+ * Serializa JSON-LD escapando os caracteres que quebrariam a tag <script>
+ * (o "<" de um eventual "</script>" no conteúdo) e os separadores de linha/
+ * parágrafo Unicode. O navegador desescapa < de volta para "<" ao parsear,
+ * então o dado estruturado permanece idêntico e nenhum texto visível muda.
+ */
+export function safeJsonLd(value: unknown): string {
+  return JSON.stringify(value)
+    .replace(/</g, '\\u003c')
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029');
+}
+
+/** Combina múltiplos schemas em um array JSON-LD (com escaping seguro) */
 export function combineSchemas(...schemas: Record<string, unknown>[]): string {
-  return JSON.stringify(schemas);
+  return safeJsonLd(schemas);
 }

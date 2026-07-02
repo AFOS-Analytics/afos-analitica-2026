@@ -17,17 +17,17 @@ function safeEqual(a: string, b: string): boolean {
  * ever stopped stripping that header on inbound public requests, anyone could
  * forge a cron run. Bearer-only is the safer default.
  *
- * In non-Vercel envs (`process.env.VERCEL` unset = local dev) auth is bypassed
- * so scripts can hit the route without setting headers.
+ * Auth é exigida sempre que CRON_SECRET estiver configurado (qualquer host:
+ * Vercel, staging ou outro provedor). O bypass só vale em dev local sem segredo
+ * configurado, para scripts baterem na rota sem header. Isso substitui o antigo
+ * `!process.env.VERCEL` (que desligava a auth em qualquer host não-Vercel).
  *
  * EVAL 06/Jun: a comparação agora é constant-time (timingSafeEqual), consistente
  * com os /api/admin/* (antes era `!==`, side-channel de timing no mesmo segredo que
- * protege endpoints de deleção/LGPD). NOTA: o bypass por `!process.env.VERCEL` é
- * conveniência de dev — se a plataforma migrar pra fora da Vercel, trocar por um
- * sinal explícito (ex.: exigir CRON_SECRET sempre que setado).
+ * protege endpoints de deleção/LGPD).
  */
 export function requireCronAuth(request: Request): NextResponse | null {
-  if (!process.env.VERCEL) return null
+  if (!process.env.CRON_SECRET) return null
   const authHeader = request.headers.get('authorization')
   const cronSecret = process.env.CRON_SECRET
   if (!cronSecret || !authHeader || !safeEqual(authHeader, `Bearer ${cronSecret}`)) {

@@ -34,7 +34,7 @@ export async function GET() {
     {
       status: allHealthy ? 'healthy' : 'degraded',
       timestamp: new Date().toISOString(),
-      subscribers: { total: subscriberCount },
+      subscribers: { ok: subscriberCount >= 0 },
       components: {
         redis: { ok: redisOk },
         cron: {

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { isValidLocale } from '../../../lib/afos-daily/loader'
 import { StaticPageHeader } from '../../components/StaticPageHeader'
 import { Footer } from '../../components/Footer'
-import { aboutPageSchema, organizationSchema, breadcrumbSchema, combineSchemas } from '../../../lib/seo/schema'
+import { aboutPageSchema, breadcrumbSchema, combineSchemas } from '../../../lib/seo/schema'
 import { buildMetadata } from '../../../lib/seo/metadata'
 import type { Locale } from '../../../lib/i18n/config'
 
@@ -63,7 +63,6 @@ export default async function AboutPage(props: Props) {
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
   const aboutCrumbName = params.locale === 'pt-BR' ? 'Sobre' : params.locale === 'es' ? 'Acerca de' : 'About'
   const jsonLd = combineSchemas(
-    organizationSchema(),
     aboutPageSchema(params.locale as Locale, c.title, c.description),
     breadcrumbSchema(params.locale as Locale, [
       { name: params.locale === 'pt-BR' ? 'Início' : params.locale === 'es' ? 'Inicio' : 'Home', path: '' },

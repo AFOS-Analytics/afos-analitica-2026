@@ -4,6 +4,8 @@ import { CountryGraph } from '../../components/CountryGraph'
 export const dynamic = 'force-static'
 
 // PREVIEW (não indexado): grafo estilo Obsidian do cruzamento AFOS, caso EUA 2024.
+// noindex explícito: página herda index:true do root layout se não sobrescrever.
+export const metadata = { robots: { index: false, follow: false } }
 export default function GraphPreviewPage() {
   const data = getCountryDivergence('USA')
   return (

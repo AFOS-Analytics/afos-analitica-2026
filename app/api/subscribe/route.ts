@@ -45,7 +45,9 @@ export async function POST(request: Request) {
     }
 
     // Rate limit: 5 cadastros por IP por hora (Redis — efêmero)
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
+    // x-real-ip (edge Vercel, não forjável) tem prioridade; fallback = último hop do XFF.
+    const ip = request.headers.get('x-real-ip')?.trim() ||
+               request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown'
     const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
     const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 

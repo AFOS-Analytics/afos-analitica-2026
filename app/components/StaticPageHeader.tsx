@@ -23,9 +23,9 @@ export function StaticPageHeader() {
             aria-label={t('header.backToHome')}
             className="block hover:opacity-90 focus:outline-2 focus:outline-offset-2 focus:outline-white rounded transition-opacity"
           >
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <p className="text-3xl md:text-4xl font-extrabold tracking-tight">
               {t('header.title')}
-            </h1>
+            </p>
             <p className="text-blue-200 mt-1 text-xs md:text-sm">{t('header.subtitle')}</p>
           </Link>
 

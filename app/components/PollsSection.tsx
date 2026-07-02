@@ -114,9 +114,12 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           com escopo nacional explícito passam. */}
       {(() => {
         const isStatePoll = (p: Poll): boolean => {
-          const note = (p.note || '').toLowerCase()
-          if (note.includes('estadual') || note.includes('cenário ') && !note.includes('cenário nacional')) return true
-          if (note.match(/\b(mt|sp|rj|mg|rs|pr|sc|ba|ce|pe|go|am|pa|ma|pi|al|se|rn|pb|to|ro|rr|ap|ac|ms|es|df)\b/i)) {
+          const noteRaw = p.note || ''
+          const note = noteRaw.toLowerCase()
+          if (note.includes('estadual')) return true
+          // UF explícita em CAIXA ALTA (ex.: "Cenário SP"); testar no texto original evita
+          // colisão com stopwords minúsculas do português (se/to/pa/ma/al) que abreviam UFs.
+          if (/\b(MT|SP|RJ|MG|RS|PR|SC|BA|CE|PE|GO|AM|PA|MA|PI|AL|SE|RN|PB|TO|RO|RR|AP|AC|MS|ES|DF)\b/.test(noteRaw)) {
             if (!note.includes('nacional')) return true
           }
           if (p.scenarios?.some((s: { name?: string }) => /\(.*[A-Z]{2}.*\)/.test(s.name || ''))) return true

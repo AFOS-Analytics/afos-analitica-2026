@@ -124,8 +124,8 @@ export async function middleware(request: NextRequest) {
 
   if (shouldSkip(pathname)) {
     if (pathname.startsWith('/api/')) {
-      const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-                 request.headers.get('x-real-ip') || 'unknown';
+      const ip = request.headers.get('x-real-ip')?.trim() ||
+                 request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown';
       const rl = await checkRateLimit(ip);
       if (rl === 'limited') {
         return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers: { 'Retry-After': '60' } });

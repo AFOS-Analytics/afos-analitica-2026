@@ -39,9 +39,14 @@ interface IncomingMessage {
 }
 
 function clientIp(req: Request): string {
+  // x-real-ip é setado pela edge da Vercel a partir do socket (não forjável).
+  // Só então cai para o ÚLTIMO segmento do XFF (hop de confiança), nunca o
+  // primeiro, que o cliente pode injetar para rotacionar o "IP" e furar o limite.
+  const real = req.headers.get('x-real-ip')?.trim()
+  if (real) return real
   const fwd = req.headers.get('x-forwarded-for')
-  if (fwd) return fwd.split(',')[0].trim()
-  return req.headers.get('x-real-ip')?.trim() || 'unknown'
+  if (fwd) return fwd.split(',').pop()?.trim() || 'unknown'
+  return 'unknown'
 }
 
 // Garantia determinística anti-IA: remove travessões (em-dash U+2014 e en-dash

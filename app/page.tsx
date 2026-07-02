@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       'pt-BR': 'https://www.afos-analytics.com/pt-BR',
       en: 'https://www.afos-analytics.com/en',
       es: 'https://www.afos-analytics.com/es',
-      'x-default': 'https://www.afos-analytics.com/en',
+      'x-default': 'https://www.afos-analytics.com/pt-BR',
     },
   },
   // Don't compete with /en in search results — canonical handles consolidation
