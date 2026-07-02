@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import * as d3 from 'd3'
+import { select } from 'd3-selection'
+import { zoom as d3zoom, zoomIdentity } from 'd3-zoom'
+import { forceSimulation, forceLink, forceManyBody, forceCenter, forceCollide, forceX, forceY } from 'd3-force'
+import { drag as d3drag } from 'd3-drag'
 import type { CountryDivergence } from '../../lib/country-data'
 import { ELECTION_WINNER } from '../../lib/country-data'
 
@@ -250,11 +253,11 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       ? { tree: '#3f6cb0', label: '#f1f5f9', halo: '#082a5e', sub: '#93c5fd', nodeStroke: '#0a3d8f' }
       : { tree: '#cbd5e1', label: '#1e293b', halo: '#ffffff', sub: '#64748b', nodeStroke: '#ffffff' }
 
-    const svg = d3.select(ref.current)
+    const svg = select(ref.current)
     svg.selectAll('*').remove()
     const root = svg.append('g')
 
-    const zoom = d3.zoom<SVGSVGElement, unknown>().scaleExtent([0.4, 3]).on('zoom', (e) => root.attr('transform', e.transform.toString()))
+    const zoom = d3zoom<SVGSVGElement, unknown>().scaleExtent([0.4, 3]).on('zoom', (e) => root.attr('transform', e.transform.toString()))
     svg.call(zoom as never)
 
     // hover estilo Obsidian: o nó e os fios conectados acendem em azul reluzente, o resto esmaece
@@ -311,8 +314,8 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .attr('fill', pal.sub)
       .attr('paint-order', 'stroke').attr('stroke', pal.halo).attr('stroke-width', 2.5)
 
-    const sim = d3.forceSimulation<GNode>(nodes)
-      .force('link', d3.forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
+    const sim = forceSimulation<GNode>(nodes)
+      .force('link', forceLink<GNode, GLink>(links).id((n) => n.id).distance((l) => {
         const srcId = (l.source as unknown as GNode).id
         // distâncias maiores SÓ no candDense (país com muitos candidatos); dashboard mantém os valores aprovados
         if (l.kind === 'divergence') return candDense ? 170 : 145
@@ -321,11 +324,11 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
         if (l.kind === 'tree') return srcId === 'election' ? (candDense ? 155 : 125) : 80
         return 95
       }).strength((l) => l.kind === 'divergence' ? 0.3 : 0.55))
-      .force('charge', d3.forceManyBody().strength(veryDense ? -640 : dense ? -560 : -380))
-      .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('charge', forceManyBody().strength(veryDense ? -640 : dense ? -560 : -380))
+      .force('center', forceCenter(W / 2, H / 2))
       // colisão proporcional ao rótulo nos nós de navegação: labels longos (ex.: "DOI Colômbia 2026")
       // recebem raio maior, evitando sobreposição de texto quando o hub tem muitos filhos.
-      .force('collide', d3.forceCollide<GNode>().radius((n) => {
+      .force('collide', forceCollide<GNode>().radius((n) => {
         if (n.type === 'navhub') return n.r + (dense ? 52 : 42)
         if (n.type === 'nav') return Math.max(n.r + 40, n.label.length * 3.1)
         // candidatos têm sub-rótulo largo ("mercado 57,5% · pesquisa 38%"): reservar espaço pela largura do texto
@@ -334,8 +337,8 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
         if (n.type === 'indicator') return Math.max(n.r + 24, n.label.length * 3.0)
         return n.r + 28
       }).iterations(3))
-      .force('x', d3.forceX(W / 2).strength(0.04))
-      .force('y', d3.forceY(H / 2).strength(0.04))
+      .force('x', forceX(W / 2).strength(0.04))
+      .force('y', forceY(H / 2).strength(0.04))
 
     // enquadra TODO o conteúdo dentro do quadro (nada cortado): calcula a bounding box dos nós
     // incluindo raio e largura estimada do rótulo, e ajusta o zoom para caber, centralizado.
@@ -354,7 +357,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       const scale = Math.min(W / bw, H / bh, 1.25)
       const tx = W / 2 - scale * (minX + maxX) / 2
       const ty = H / 2 - scale * (minY + maxY) / 2
-      svg.transition().duration(450).call(zoom.transform as never, d3.zoomIdentity.translate(tx, ty).scale(scale))
+      svg.transition().duration(450).call(zoom.transform as never, zoomIdentity.translate(tx, ty).scale(scale))
     }
 
     let tickCount = 0
@@ -372,7 +375,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     })
     sim.on('end', () => { if (!fitted) { fitted = true; fit() } })
 
-    const drag = d3.drag<SVGGElement, GNode>().clickDistance(6)
+    const drag = d3drag<SVGGElement, GNode>().clickDistance(6)
       .on('start', (e, n) => { if (!e.active) sim.alphaTarget(0.3).restart(); n.fx = n.x; n.fy = n.y })
       .on('drag', (e, n) => { n.fx = e.x; n.fy = e.y })
       .on('end', (e, n) => { if (!e.active) sim.alphaTarget(0); n.fx = null; n.fy = null })
@@ -401,7 +404,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
   const lbl = LBL[locale] || LBL['en']
   return (
     <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
-      <svg ref={ref} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '74vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
+      <svg ref={ref} role="img" aria-label={electionLabel} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '74vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
         <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
