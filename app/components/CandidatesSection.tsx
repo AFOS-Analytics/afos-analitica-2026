@@ -15,60 +15,60 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "57.50%",
-    poll: "Lula reafirma a dominância: Poly 57.50% (↑2.00pp, vol USD 7.1M acumulado), com o gap sobre Flávio voltando a alargar a +34.55pp (↑3.00pp), agora a apenas 0.70pp do recorde de +35.25pp (28/Jun), a 95 dias do 1º turno. O movimento reverte os dois dias de convergência e desta vez é acompanhado pela pesquisa: a AtlasIntel nacional 01/Jul (n=5.000) deu Lula ampliando (1T 46.3% × 36.6%; 2T 48.8% × 42.3%), com Flávio caindo 5.7pp no 2º turno em meio à crise com Michelle. Aprovação Atlas online pior (aprova 45.9% × desaprova 52.3%) que o platô das presenciais (48% × 48%). Dinheiro real e pesquisa apontam para o mesmo lado.",
+    polymarket: "60.50%",
+    poll: "Lula rompe 60%: Poly 60.50% (↑3.00pp, vol USD 7.2M acumulado), a 1ª vez acima de 60%, com o gap sobre Flávio disparando a +38.65pp (↑4.10pp), NOVO RECORDE, 3.40pp acima do pico anterior de +35.25pp (28/Jun), a 94 dias do 1º turno. Não houve pesquisa nacional nova: o movimento é de momentum, com a base ainda na AtlasIntel 01/Jul (Lula ampliando, 1T 46.3% × 36.6%; 2T 48.8% × 42.3%). O motor foi a continuidade da crise Michelle × Flávio, que a imprensa aponta desgastando o adversário (BBC), enquanto o mercado ignora os ruídos institucionais.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 01/Jul D+48: a 95 dias do 1º turno, reversão da convergência. Lula subiu (57.50%, ↑2.00pp) e o gap voltou a +34.55pp (↑3.00pp), a 0.70pp do recorde de +35.25pp, acompanhado pela AtlasIntel nacional (1T 46.3×36.6; 2T 48.8×42.3, Flávio -5.7pp no 2T). Ressalvas: aprovação online Atlas pior (desaprova 52.3%), Reuters aponta afastamento da Geração Z (Blog do BG), e parte das presenciais ainda vê 2º turno apertado (no DF 41×40, Poder360). Rejeição 49%. Liberou R$ 520 mi para propaganda antes da eleição (Folha). Convenções começam em 20/Jul. STF impeach a 2.75% (↑0.10pp). Volume no presidencial acima de USD 107M."
+    risk: "EVENTOS 02/Jul D+49: a 94 dias do 1º turno, NOVO RECORDE. Lula rompeu 60% (60.50%, ↑3.00pp) e o gap disparou a +38.65pp (↑4.10pp), 3.40pp acima do pico anterior de +35.25pp. Sem pesquisa nova, movido por momentum e pela crise Michelle × Flávio (BBC). Ressalvas: aprovação online Atlas pior (desaprova 52.3%), Reuters aponta afastamento da Geração Z (Blog do BG), e parte das presenciais ainda vê 2º turno apertado (no RJ 41.6×38.6, Band/Poder360). Rejeição 49%. O mercado ignorou a nova frente do Master (alegações sobre a esposa de Moraes, Gazeta do Povo). STF impeach estável a 2.75%. Volume no presidencial acima de USD 107M."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "22.95%",
-    poll: "Flávio cede pelo dia: Poly 22.95% (↓1.00pp, vol USD 7.2M acumulado), com o gap para Lula voltando a alargar a +34.55pp (↑3.00pp), perto do recorde de +35.25pp. A AtlasIntel 01/Jul o deu caindo 5.7pp no 2º turno (2T 42.3%, 1T 36.6%) em meio à crise com Michelle: o vídeo dela e a disputa por apoio no Ceará escalaram a guerra interna (BBC), e Flávio repudiou fala de aliado sobre 'mulher votar mal' (Folha). Ainda assim amplia o 2º lugar do 1º turno (82.5%, ↑4.00pp), adversário certo, mas a PF concluiu que ele caluniou Lula nas redes (Rondônia Dinâmica) e a rejeição segue a maior do páreo (BTG/Nexus 51%).",
+    polymarket: "21.85%",
+    poll: "Flávio cede pelo dia: Poly 21.85% (↓1.10pp, vol USD 7.2M acumulado), com o gap para Lula batendo o RECORDE de +38.65pp (↑4.10pp). A crise com Michelle segue cobrando preço: o prolongamento da briga desgasta o senador e, segundo a BBC, abala o plano bolsonarista de Senado anti-STF; a AtlasIntel/Bloomberg já apontava respingos do Master e da crise (Seu Dinheiro). Flávio pediu a Trump para segurar o tarifaço até depois da eleição, admitindo que daria vitória a Lula (Folha, CartaCapital). RECUA também no 2º lugar do 1º turno (78.5%, ↓4.00pp), mas segue o adversário certo; rejeição a maior do páreo (BTG/Nexus 51%).",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 01/Jul: Flávio CEDE no mercado (22.95%, ↓1.00pp) e o gap para Lula voltou a +34.55pp (↑3.00pp), perto do recorde, na esteira da AtlasIntel (caindo 5.7pp no 2º turno, 2T 42.3%) e da crise familiar. O vídeo de Michelle e a briga por apoio no Ceará escalaram o conflito (BBC), e ele repudiou fala de aliado sobre 'mulher votar mal' (Folha). Amplia o 2º lugar do 1º turno (82.5%, ↑4.00pp), adversário certo, mas a PF concluiu calúnia contra Lula (Rondônia Dinâmica) e a rejeição segue a maior do páreo (51%). STF impeach a 2.75%. Próximo teste: Datafolha SP a partir de 05/Jul."
+    risk: "EVENTOS 02/Jul: Flávio CEDE (21.85%, ↓1.10pp) e o gap para Lula bate o RECORDE de +38.65pp (↑4.10pp). Sem pesquisa nova, o motor foi a crise familiar: o prolongamento da briga com Michelle desgasta o senador e abala o plano bolsonarista de Senado anti-STF (BBC); a AtlasIntel/Bloomberg apontava respingos do Master e da crise (Seu Dinheiro). Pediu a Trump para adiar o tarifaço para pós-eleição, admitindo que ajudaria Lula (Folha, CartaCapital). RECUA no 2º lugar do 1º turno (78.5%, ↓4.00pp). Rejeição 51%. STF impeach 2.75%. Próximo teste: Datafolha SP a partir de 05/Jul."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "10.45%",
-    poll: "Renan presidencial Poly 10.45% (↓2.00pp, vol USD 7.7M acumulado) no mercado de vencedor, mas DISPARA no sub-mercado de 3º lugar do 1º turno a 65% (↑8.00pp), com folga sobre Caiado (14%) e Zema (8.5%), seguindo com o maior volume acumulado do presidencial. A BTG/Nexus 29/Jun e a PoderData/Aya deram Renan 4% no 1º turno; as demais nacionais o medem em 2-3%, e a divergência do dashboard estreita a ~6.45pp. Chamou Flávio de corrupto e atacou Lula (Portal Arauto); aposta em vaquinha, base do MBL e Faria Lima sem máquina partidária (Estadão).",
+    polymarket: "10.15%",
+    poll: "Renan presidencial Poly 10.15% (↓0.30pp, vol USD 7.8M acumulado) no mercado de vencedor, mas mantém o favoritismo ao 3º lugar do 1º turno (66%, ↑1.00pp), à frente de Caiado (16.5%) e Zema (7.5%), seguindo com o maior volume acumulado do presidencial. As nacionais o medem em 2-4% no 1º turno, e a divergência do dashboard segue a mais larga (~6.15pp). Definiu o vice: o tenente-coronel da reserva Aroldo Medina (Folha), num dia em que só 3 de 13 pré-candidatos fecharam a chapa (G1). Aposta em vaquinha, base do MBL e Faria Lima sem máquina partidária (Estadão).",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "01/Jul: Renan CEDEU no vencedor (10.45%, ↓2.00pp) mas DISPAROU no favoritismo ao 3º lugar do 1º turno (65%, ↑8.00pp), com folga sobre Caiado (14%) e Zema (8.5%). As pesquisas o medem a ~4% no 1T (BTG/Nexus 4%, PoderData/Aya 4%), e a divergência do dashboard estreitou a ~6.45pp. A aposta em vaquinha, MBL e Faria Lima (Estadão) confirma a ausência de máquina partidária. A 95 dias, com a 3ª via no piso e a crise na família Bolsonaro, o espaço anti-Lula segue em disputa. A leitura segue: provável 3º colocado, sem chance real de vencer (capital de nicho, dependente do tropeço alheio). STF impeach 2.75%."
+    risk: "02/Jul: Renan CEDEU de leve no vencedor (10.15%, ↓0.30pp) mas manteve o favoritismo ao 3º lugar do 1º turno (66%, ↑1.00pp), à frente de Caiado (16.5%) e Zema (7.5%). Definiu o vice (ten-cel Aroldo Medina, Folha); só 3 de 13 pré-candidatos fecharam a chapa (G1). As pesquisas o medem a ~4% no 1T, e a divergência do dashboard segue a mais larga (~6.15pp). A leitura segue: provável 3º colocado, sem chance real de vencer (capital de nicho, dependente do tropeço alheio). STF impeach 2.75%."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "0.95%",
-    poll: "Haddad estável a Poly 0.95% (vol USD 6.0M acumulado) como nome do PT depois de Lula no mercado presidencial. As nacionais não testam Haddad no presidencial nacional (foco governo de SP). Confirmou Márcio França (PSB) como vice na chapa pelo governo de SP, com Tebet e Marina cogitados para o Senado (Folha, Brasil de Fato), consolidando a aliança de centro-esquerda no estado. A Datafolha divulga pesquisa presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1).",
+    polymarket: "1.05%",
+    poll: "Haddad sobe de leve a Poly 1.05% (↑0.10pp, vol USD 6.1M acumulado) como nome do PT depois de Lula no mercado presidencial. As nacionais não testam Haddad no presidencial nacional (foco governo de SP). Confirmou Márcio França (PSB) como vice na chapa pelo governo de SP, com Tebet e Marina cogitados para o Senado (Folha, Brasil de Fato), consolidando a aliança de centro-esquerda no estado. A Datafolha divulga pesquisa presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad estável a 0.95%, como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é estadual. Confirmou França vice na chapa de SP, com Tebet/Marina ao Senado (Folha, Brasil de Fato). A Datafolha divulga pesquisa presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1). A um mês das convenções (que começam em 20/Jul), os presidenciáveis negociam vice (G1). STF impeach 2.75%."
+    risk: "Haddad sobe de leve a 1.05% (↑0.10pp), como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é estadual. Confirmou França vice na chapa de SP, com Tebet/Marina ao Senado (Folha, Brasil de Fato). A Datafolha divulga pesquisa presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1). Só 3 de 13 pré-candidatos definiram vice (G1). STF impeach 2.75%."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.35%",
-    poll: "Caiado CEDE a Poly 1.35% (↓0.20pp, vol USD 4.5M acumulado) e perde o 2º lugar no sub-mercado de 3º lugar do 1º turno (14%, ↓4.5pp, ultrapassado por Renan a 65%), mesmo no dia da oficialização. FATO CONSUMADO: OFICIALIZOU Gilberto Kassab (PSD) como vice em chapa pura do PSD à Presidência e disse que Flávio perderia para Lula no 2º turno (Folha, G1), e afirmou que a centro-direita não tem 'nome universal' para concorrer (G1). A BTG/Nexus 29/Jun deu Caiado 5% no 1T, o melhor da 3ª via; a PoderData/Aya 25/Jun o pôs em empate técnico com Lula no 2º turno (Poder360, CNN). Num cenário SEM Flávio, a Futura/Apex dá Caiado 16.5% (lidera a 3ª via). É o nome posicionado para herdar o voto da direita se Flávio não for.",
+    polymarket: "1.25%",
+    poll: "Caiado CEDE de leve a Poly 1.25% (↓0.10pp, vol USD 4.6M acumulado) no mercado de vencedor, mas SOBE no sub-mercado de 3º lugar do 1º turno (16.5%, ↑2.5pp), recuperando o 2º posto atrás de Renan (66%). Tem chapa pura do PSD formalizada (Kassab vice, Folha, G1). A BTG/Nexus 29/Jun deu Caiado 5% no 1T, o melhor da 3ª via; a PoderData/Aya 25/Jun o pôs em empate técnico com Lula no 2º turno (Poder360, CNN). Num cenário SEM Flávio, a Futura/Apex dá Caiado 16.5% (lidera a 3ª via). É o nome posicionado para herdar o voto da direita se Flávio não for.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "Caiado CEDE a 1.35% (↓0.20pp, vol USD 4.5M) e perde o 2º lugar no sub-mercado de 3º lugar do 1º turno (14%, ↓4.5pp, ultrapassado por Renan a 65%), mesmo no dia da oficialização. FATO CONSUMADO: OFICIALIZOU Kassab (PSD) como vice em chapa pura do PSD à Presidência e disse que Flávio perderia para Lula no 2º turno (Folha, G1), afirmando que a centro-direita não tem 'nome universal' (G1). A BTG/Nexus 29/Jun o deu a 5% no 1T (melhor da 3ª via) e a PoderData o pôs em empate técnico com Lula no 2º turno, sinal de competitividade no cenário sem Flávio (Futura 16.5%). No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto. STF impeach 2.75%."
+    risk: "Caiado CEDE de leve a 1.25% (↓0.10pp, vol USD 4.6M) no vencedor, mas SOBE no sub-mercado de 3º lugar do 1º turno (16.5%, ↑2.5pp), recuperando o 2º posto atrás de Renan (66%). Tem chapa pura do PSD formalizada (Kassab vice, Folha, G1). A BTG/Nexus 29/Jun o deu a 5% no 1T (melhor da 3ª via) e a PoderData o pôs em empate técnico com Lula no 2º turno, sinal de competitividade no cenário sem Flávio (Futura 16.5%). No cenário com Flávio, o 'paradoxo da direita' (G1) explica o teto. STF impeach 2.75%."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "1.15%",
-    poll: "Zema sobe de leve a Poly 1.15% (↑0.10pp, vol USD 4.1M) mas recua no sub-mercado de 3º lugar do 1º turno (8.5%, ↓1.0pp, atrás de Renan a 65% e Caiado a 14%). A BTG/Nexus 29/Jun deu Zema 3% no 1T. A PoderData/Aya 25/Jun o pôs em empate técnico com Lula no 2º turno (CNN). A Datafolha 20/Jun deu 2% no 1T e 2T Lula 48% × Zema 39%. Sem Flávio, a Futura/Apex dá Zema 13.3%. Prometeu anunciar o vice (Estadão).",
+    polymarket: "1.65%",
+    poll: "Zema sobe a Poly 1.65% (↑0.50pp, vol USD 4.2M), o maior avanço da 3ª via no dia, mas recua no sub-mercado de 3º lugar do 1º turno (7.5%, ↓1.0pp, atrás de Renan a 66% e Caiado a 16.5%). A BTG/Nexus 29/Jun deu Zema 3% no 1T. A PoderData/Aya 25/Jun o pôs em empate técnico com Lula no 2º turno (CNN). A Datafolha 20/Jun deu 2% no 1T e 2T Lula 48% × Zema 39%. Sem Flávio, a Futura/Apex dá Zema 13.3%. Prometeu anunciar o vice (Estadão).",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema subiu de leve a 1.15% (↑0.10pp, vol USD 4.1M) mas recuou no sub-mercado de 3º lugar (8.5%, ↓1.0pp, atrás de Renan a 65% e Caiado a 14%). A BTG/Nexus 29/Jun o deu a 3% no 1T. A PoderData o pôs em empate técnico com Lula no 2º turno, mas na disputa bipolarizada com Flávio o Novo não encontra tração. No cenário sem Flávio, a Futura/Apex dá Zema 13.3%, fôlego latente. Prometeu anunciar o vice (Estadão). STF impeach 2.75%."
+    risk: "Zema subiu a 1.65% (↑0.50pp, vol USD 4.2M), o maior avanço da 3ª via no dia, mas recuou no sub-mercado de 3º lugar (7.5%, ↓1.0pp, atrás de Renan a 66% e Caiado a 16.5%). A BTG/Nexus 29/Jun o deu a 3% no 1T. A PoderData o pôs em empate técnico com Lula no 2º turno, mas na disputa bipolarizada com Flávio o Novo não encontra tração. No cenário sem Flávio, a Futura/Apex dá Zema 13.3%, fôlego latente. Prometeu anunciar o vice (Estadão). STF impeach 2.75%."
   },
   {
     name: "Tarcísio de Freitas",
@@ -78,7 +78,7 @@ const candidates: CandidateProfile[] = [
     polymarket: "0.15%",
     poll: "Tarcísio presidencial 0.15% Poly estável (vol USD ~13.2M acumulado, o maior do mercado, anomalia de legado). As nacionais não destacam Tarcísio no presidencial nacional (foco reeleição SP). A Datafolha divulga pesquisa presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1), com Haddad confirmando França como vice no PT. Mantida Vox SP 30/Mai 2T estadual Tarcísio 48.3% × Haddad 36.5% (Poder360).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 13.2M). A disputa por SP ganha um teste a partir de domingo 05/Jul (Datafolha presidencial/governo/Senado, G1), com Haddad confirmando França como vice (Folha). No mercado de Senado por número de cadeiras, o PL segue na liderança (74.5%, ↓1.00pp), sinal de capilaridade institucional da legenda. STF impeach 2.75%."
+    risk: "Tarcísio segue focado na reeleição em SP, onde lidera, e o mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 13.2M). A disputa por SP ganha um teste a partir de domingo 05/Jul (Datafolha presidencial/governo/Senado, G1), com Haddad confirmando França como vice (Folha). No mercado de Senado por número de cadeiras, o PL segue na liderança (73.5%, ↓1.00pp), sinal de capilaridade institucional da legenda. STF impeach 2.75%."
   },
 ];
 
