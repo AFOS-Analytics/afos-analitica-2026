@@ -10,11 +10,53 @@ Antes de executar este comando, o `/atualizar` do mesmo dia já deve ter sido ex
 
 Se o `/atualizar` de hoje ainda não rodou, PARAR e pedir ao usuário para executar `/atualizar` primeiro.
 
+⚠️ O `/atualizar` é o **ponto de partida** (estrutura dos JSONs + cache de notícias), NÃO a palavra final sobre o mercado: o snapshot dele pode ter minutos/horas. A **ETAPA 1.1 re-fetcha o Polymarket ao vivo** e rebaseia os JSONs se o mercado tiver andado, antes de escrever o Daily.
+
 ## ETAPA 1: Ler dados de baseline
 
 1. Ler `public/analysis-criteriosa.json` (campo `cruzamento`, `subtitle`, `candidates[].analise`)
 2. Ler `public/analysis-data.json` (cards `sentimento`, `inss`, `bancoMaster`, `stf`)
 3. Extrair data de hoje em formato `YYYY-MM-DD` (usar `updatedAt` dos JSONs)
+
+## ETAPA 1.1: RE-FETCH POLYMARKET AO VIVO (obrigatório — anti-snapshot-stale)
+
+**Instalado 03/Jul/2026** após o Daily de 03/Jul: o `/atualizar` rodou às 18:39 (consolidação, Lula 60,50%), mas ao publicar o Daily às 19:07 o mercado tinha andado 1pp (Lula rompeu 61%, gap virou recorde +39,55pp). O André pegou a defasagem conferindo o volume. **Lição gravada** em `feedback_atualizar_vs_daily_factcheck_gap.md`: o snapshot do `/atualizar` pode ter minutos/horas e o Polymarket é vivo. **O Daily NÃO herda cegamente o número do `/atualizar` — re-verifica ao vivo na hora de escrever.**
+
+### Passo 1 — Re-fetch ao vivo (proxy AFOS, NUNCA gamma-api direto)
+
+```bash
+curl -s "https://www.afos-analytics.com/api/polymarket"
+```
+
+Extrair, do snapshot ao vivo: **% e volume dos top candidatos presidenciais** (Lula, Flávio, Renan, Michelle, Caiado, Zema, Haddad), **gap Lula×Flávio**, **volume TOTAL do presidencial** (soma dos `volumeNum`, ~USD XXM), e os sub-mercados (2º/3º lugar, STF impeach, Senado, inflação). Anotar o horário do `fetchedAt` (converter p/ BRT) — ele vira o `updatedAt` do Daily e dos JSONs se houver rebaseline.
+
+### Passo 2 — Reconciliar contra a baseline dos JSONs
+
+Comparar os valores ao vivo com o que está em `analysis-criteriosa.json` / `analysis-data.json` (gerados pelo `/atualizar`). Calcular o delta de: Lula %, Flávio %, gap, Renan %, e volume total.
+
+### Passo 3 — GATE de rebaseline
+
+**Se QUALQUER um destes disparar, é OBRIGATÓRIO rebaseline ANTES de escrever o Daily:**
+- Lula, Flávio, Renan ou o gap moveram **≥ 0,50pp** vs o JSON; **ou**
+- um **recorde foi rompido/desfeito** (ex.: gap cruza o pico anterior, candidato cruza uma marca redonda tipo 60%/10%); **ou**
+- o **enquadramento muda** (ex.: "consolidação" no JSON vira "novo recorde" ao vivo, ou vice-versa); **ou**
+- o volume total diverge de forma visível do que o JSON/Daily citaria.
+
+**Rebaseline = mini-`/atualizar` pro snapshot ao vivo:** reescrever os campos numéricos + narrativa afetados em **TODOS os 5 arquivos** — `analysis-criteriosa.json` (subtitle, cruzamento, headers/analise/fortes/fracos, quadroComparativo m/t), `analysis-data.json` (sentimento, stf, bancoMaster — vírgula decimal), `polls-data.json` (`polymarketComparison` note + candidates), `app/components/CandidatesSection.tsx` (dot decimal) — e ajustar `updatedAt`/horário pro `fetchedAt` ao vivo. Usar scripts Node (fs) para os JSONs/TSX (evita o revert silencioso do OneDrive e garante vírgula/ponto decimal correto por arquivo). Rodar `npx tsx scripts/validate-polls-data.ts` (exit 0) depois.
+
+**Se nenhum gate disparar** (mercado praticamente parado desde o `/atualizar`), seguir com a baseline do JSON e apenas **atualizar o volume total** pro número ao vivo se estiver mais preciso.
+
+### Passo 4 — Log obrigatório no chat
+
+Emitir um mini-bloco de reconciliação antes de prosseguir:
+
+```
+## Re-fetch Polymarket — log [{fetchedAt BRT}]
+- Lula: JSON X% → live Y% (Δ) | Flávio: … | gap: … | Renan: … | vol total: USD …M
+- Gate de rebaseline: [DISPAROU (motivo) → rebaseline nos 5 arquivos | não disparou → mantém baseline]
+```
+
+**Regra de causação (herda da 1.5):** um movimento intradiário sem evento triggador claro é **momentum**, não reação a notícia — descrever como "saída/entrada de faixa por momentum", nunca "subiu PORQUE o evento X".
 
 ## ETAPA 1.5: FACT-CHECK GATE (obrigatório)
 
