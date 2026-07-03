@@ -76,6 +76,7 @@ export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU',
 // com um candidato em `rows`. Países sem entrada não exibem o nó de resultado.
 export const ELECTION_WINNER: Record<string, string> = {
   USA: 'Trump',
+  PER: 'Keiko Fujimori',
   CHL: 'José Antonio Kast',
   COL: 'Abelardo de la Espriella',
   DEU: 'CDU/CSU',
