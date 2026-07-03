@@ -65,5 +65,10 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "fast-uri": ">=3.1.2",
+    "hono": ">=4.12.25",
+    "@hono/node-server": ">=1.19.13"
   }
 }

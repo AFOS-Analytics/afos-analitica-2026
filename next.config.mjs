@@ -24,7 +24,15 @@ const nextConfig = {
           // Content-Language is set dynamically per-locale via middleware.ts,
           // not hardcoded here (would conflict with /en, /es routes).
           // Content Security Policy
-          // Em dev, unsafe-eval é necessário para React Fast Refresh (HMR)
+          // Em dev, unsafe-eval é necessário para React Fast Refresh (HMR).
+          // NOTA (EVAL 02/Jul): script-src mantém 'unsafe-inline' de propósito.
+          // CSP com nonce por-request é INCOMPATÍVEL com static generation: o HTML
+          // das páginas SSG (daily, país, about, glossary, how-it-works…) é gerado no
+          // build, mas o nonce seria novo a cada request → mismatch → o CSP bloquearia
+          // os próprios scripts do Next nas estáticas (hidratação morta). Além disso,
+          // não há sink de XSS ativo (react-markdown SEM rehype-raw; os únicos scripts
+          // inline são JSON-LD estático de dados). object-src/base-uri/frame-ancestors
+          // já fecham as vias de injeção que importam.
           {
             key: 'Content-Security-Policy',
             value: [
@@ -34,6 +42,7 @@ const nextConfig = {
               "img-src 'self' data: blob:",
               "font-src 'self'",
               "connect-src 'self' https://gamma-api.polymarket.com https://news.google.com https://api.firecrawl.dev https://*.upstash.io" + (isDev ? " ws://localhost:*" : ""),
+              "object-src 'none'",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",
