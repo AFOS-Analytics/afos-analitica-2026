@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import { isValidLocale, type Locale } from '../../lib/i18n/config';
 import { getMessages } from '../../lib/i18n/get-messages';
 import { buildMetadata, PAGE_SEO } from '../../lib/seo/metadata';
-import { websiteSchema, combineSchemas } from '../../lib/seo/schema';
+import { websiteSchema } from '../../lib/seo/schema';
+import { JsonLd } from '../components/JsonLd';
 import { I18nProvider } from '../i18n/context';
 import { ChatWidget } from '../components/ChatWidget';
 
@@ -30,14 +31,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       {/* Schema.org per locale: WebSite + Breadcrumb. FAQPage NÃO entra aqui (era injetado
           site-wide → risco de spam de structured-data; Google exige FAQ visível na página).
           O FAQ fica só em /how-it-works, que renderiza as perguntas. (SEO EVAL 06/Jun) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: combineSchemas(
-            websiteSchema(loc)
-          ),
-        }}
-      />
+      <JsonLd data={[websiteSchema(loc)]} />
       {children}
       <ChatWidget locale={loc} />
     </I18nProvider>

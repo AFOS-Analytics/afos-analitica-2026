@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { isValidLocale, defaultLocale } from '../lib/i18n/config'
 
 // Textos por locale. pt-BR = cópia original preservada; en/es adicionados (aditivo).
 const T = {
@@ -43,8 +44,8 @@ export default function GlobalError({
 
   const pathname = usePathname()
   const seg = (pathname || '').split('/')[1]
-  const locale = seg === 'en' || seg === 'es' || seg === 'pt-BR' ? seg : 'pt-BR'
-  const t = T[locale as keyof typeof T]
+  const locale = isValidLocale(seg) ? seg : defaultLocale
+  const t = T[locale]
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">

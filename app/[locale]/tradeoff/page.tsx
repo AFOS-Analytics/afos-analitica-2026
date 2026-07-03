@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '../../components/JsonLd'
 import { redirect } from 'next/navigation'
 import { getLatestDate, listPublishedTradeoffs, loadTradeoff, isValidLocale, SUPPORTED_LOCALES } from '../../../lib/afos-tradeoff/loader'
 import { getOgImageUrl } from '../../../lib/afos-daily/schema'
-import { safeJsonLd, breadcrumbSchema } from '../../../lib/seo/schema'
+import { breadcrumbSchema } from '../../../lib/seo/schema'
 import { MONTHS, type MonthsLocale } from '../../../lib/i18n/months'
 import { TradeoffArchiveShell, type TradeoffArchiveGroup, type TradeoffArchiveStrings, type TradeoffArchiveItem } from '../../components/TradeoffArchiveShell'
 
@@ -213,7 +214,7 @@ export default async function TradeoffArchivePage(props: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd([collectionSchema, breadcrumb]) }} />
+      <JsonLd data={[collectionSchema, breadcrumb]} />
       <TradeoffArchiveShell locale={loc} strings={strings} latest={latestItem} groups={groups} />
     </>
   )

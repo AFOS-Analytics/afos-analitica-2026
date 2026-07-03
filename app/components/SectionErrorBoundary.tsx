@@ -1,6 +1,7 @@
 'use client';
 
 import { Component, type ReactNode } from 'react';
+import { isValidLocale, defaultLocale } from '../../lib/i18n/config';
 
 interface Props {
   name: string;
@@ -38,7 +39,7 @@ export class SectionErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      const loc = this.props.locale === 'en' || this.props.locale === 'es' ? this.props.locale : 'pt-BR';
+      const loc = this.props.locale && isValidLocale(this.props.locale) ? this.props.locale : defaultLocale;
       const m = FALLBACK_MSG[loc];
       return (
         <section className="bg-amber-50 border border-amber-200 rounded-xl p-4 my-4">

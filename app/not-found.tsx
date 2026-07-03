@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { headers } from 'next/headers'
+import { isValidLocale, defaultLocale } from '../lib/i18n/config'
 
 export const metadata: Metadata = {
   title: 'Página não encontrada — AFOS Analytics',
@@ -34,8 +35,8 @@ export default async function NotFound() {
   // O middleware propaga o locale da rota via header x-pathname-locale.
   const h = await headers()
   const seg = h.get('x-pathname-locale')
-  const locale = seg === 'en' || seg === 'es' || seg === 'pt-BR' ? seg : 'pt-BR'
-  const t = T[locale as keyof typeof T]
+  const locale = seg && isValidLocale(seg) ? seg : defaultLocale
+  const t = T[locale]
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '../../components/JsonLd'
 import { locales, isValidLocale, type Locale } from '../../../lib/i18n/config'
 import { HowItWorksPtBR } from './content-pt-BR'
 import { HowItWorksEn } from './content-en'
 import { HowItWorksEs } from './content-es'
 import { ThemeShell } from './ThemeShell'
 import { HowItWorksFaq } from './HowItWorksFaq'
-import { safeJsonLd, faqSchema } from '../../../lib/seo/schema'
+import { faqSchema } from '../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 const SLUG = 'how-it-works'
@@ -182,10 +183,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
-      />
+      <JsonLd data={[articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]} />
       <ThemeShell loc={loc} slug={SLUG}>
         <Content />
         <HowItWorksFaq loc={loc} />

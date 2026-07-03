@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { organizationSchema, webAppSchema, datasetSchema, combineSchemas } from '../lib/seo/schema';
+import { organizationSchema, webAppSchema, datasetSchema } from '../lib/seo/schema';
+import { JsonLd } from './components/JsonLd';
 import "./globals.css";
 
 // Real Inter from Google Fonts (subsetted, self-hosted by Next). Replaces
@@ -88,12 +89,7 @@ export default async function RootLayout(
         <meta name="theme-color" content="#0F52BA" />
         <meta name="google-site-verification" content="9Fyuh0VcblSnhBhJADUisYYzPG24CuRieNWPyPhJyxE" />
         {/* Schema.org: Organization + WebApplication + Dataset (static, safe) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: combineSchemas(organizationSchema(), webAppSchema(), datasetSchema()),
-          }}
-        />
+        <JsonLd data={[organizationSchema(), webAppSchema(), datasetSchema()]} />
       </head>
       <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /><SpeedInsights /></body>
     </html>

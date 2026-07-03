@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { safeJsonLd } from '../../../../lib/seo/schema'
+import { JsonLd } from '../../../components/JsonLd'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { AutomatedGovPtBR } from './content-pt-BR'
 import { AutomatedGovEn } from './content-en'
@@ -133,10 +133,7 @@ export default async function AutomatedGovernancePage({ params }: { params: Prom
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd([articleSchema(loc), breadcrumbSchema(loc)]) }}
-      />
+      <JsonLd data={[articleSchema(loc), breadcrumbSchema(loc)]} />
       <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
         <nav className="mb-8 flex flex-wrap items-center justify-between gap-3 text-sm">
           <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
