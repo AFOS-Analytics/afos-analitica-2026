@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { defaultLocale, COOKIE_NAME, isValidLocale, normalizeLocale, locales } from './lib/i18n/config';
+import { clientIp } from './lib/net/client-ip';
 
 const VISITOR_COOKIE_NAME = 'afos_visitor_id';
 const VISITOR_COOKIE_MAX_AGE = 365 * 24 * 60 * 60;
@@ -124,8 +125,7 @@ export async function middleware(request: NextRequest) {
 
   if (shouldSkip(pathname)) {
     if (pathname.startsWith('/api/')) {
-      const ip = request.headers.get('x-real-ip')?.trim() ||
-                 request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown';
+      const ip = clientIp(request.headers);
       const rl = await checkRateLimit(ip);
       if (rl === 'limited') {
         return NextResponse.json({ error: 'Too many requests' }, { status: 429, headers: { 'Retry-After': '60' } });

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { redirect } from 'next/navigation'
 import { getLatestDate, listPublishedDailies, loadDaily, isValidLocale, SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
 import { getOgImageUrl } from '../../../lib/afos-daily/schema'
-import { breadcrumbSchema } from '../../../lib/seo/schema'
+import { safeJsonLd, breadcrumbSchema } from '../../../lib/seo/schema'
 import { MONTHS, type MonthsLocale } from '../../../lib/i18n/months'
 import { DailyArchiveShell, type ArchiveGroup, type ArchiveStrings } from '../../components/DailyArchiveShell'
 
@@ -213,7 +213,7 @@ export default async function DailyArchivePage(props: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([collectionSchema, breadcrumb]) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd([collectionSchema, breadcrumb]) }} />
       <DailyArchiveShell locale={loc} strings={strings} latest={latestItem} oldest={oldest} groups={groups} />
     </>
   )

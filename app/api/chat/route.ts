@@ -24,6 +24,7 @@ import { buildSystemPrompt } from '../../../lib/ai/agent-prompt'
 import { TOOL_SPECS, executeTool, type ToolContext } from '../../../lib/ai/agent-tools'
 import { streamCompletion, isConfigured, type ChatMessage } from '../../../lib/ai/openrouter'
 import { logChatTurn } from '../../../lib/ai/chat-log'
+import { clientIp } from '../../../lib/net/client-ip'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -36,17 +37,6 @@ const TOOL_RESULT_CAP = 12_000
 interface IncomingMessage {
   role: 'user' | 'assistant'
   content: string
-}
-
-function clientIp(req: Request): string {
-  // x-real-ip é setado pela edge da Vercel a partir do socket (não forjável).
-  // Só então cai para o ÚLTIMO segmento do XFF (hop de confiança), nunca o
-  // primeiro, que o cliente pode injetar para rotacionar o "IP" e furar o limite.
-  const real = req.headers.get('x-real-ip')?.trim()
-  if (real) return real
-  const fwd = req.headers.get('x-forwarded-for')
-  if (fwd) return fwd.split(',').pop()?.trim() || 'unknown'
-  return 'unknown'
 }
 
 // Garantia determinística anti-IA: remove travessões (em-dash U+2014 e en-dash
@@ -62,7 +52,7 @@ export async function POST(req: Request): Promise<Response> {
   }
 
   // ─── Rate-limit (fail-open se Redis ausente) ──────────────────────
-  const ip = clientIp(req)
+  const ip = clientIp(req.headers)
   if (await isRateLimited(`chat:${ip}`, 20, 3600)) {
     return Response.json({ error: 'rate_limited', message: 'Muitas mensagens. Tente novamente em alguns minutos.' }, { status: 429 })
   }

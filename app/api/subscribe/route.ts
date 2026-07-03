@@ -13,6 +13,7 @@ import { randomBytes } from 'crypto'
 import { createSubscriber } from '../../lib/email/subscribers'
 import { sendWelcomeEmail } from '../../lib/email/resend'
 import { subscribeSchema } from '../../../lib/validations'
+import { clientIp } from '../../../lib/net/client-ip'
 import { audit } from '../../../lib/audit'
 import { locales } from '../../../lib/i18n/config'
 
@@ -45,9 +46,7 @@ export async function POST(request: Request) {
     }
 
     // Rate limit: 5 cadastros por IP por hora (Redis — efêmero)
-    // x-real-ip (edge Vercel, não forjável) tem prioridade; fallback = último hop do XFF.
-    const ip = request.headers.get('x-real-ip')?.trim() ||
-               request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown'
+    const ip = clientIp(request.headers)
     const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
     const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { safeJsonLd } from '../../../../lib/seo/schema'
 import { notFound } from 'next/navigation'
 import { AfosDailyTemplate } from '../../../components/AfosDailyTemplate'
 import { DailyBody, DailyLede, DailyTldr } from '../../../components/DailyMarkdown'
@@ -118,7 +119,7 @@ export default async function DailyByDatePage(props: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd([schema, breadcrumb]) }}
       />
       <AfosDailyTemplate
         data={data}

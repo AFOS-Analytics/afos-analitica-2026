@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { safeJsonLd } from '../../../../lib/seo/schema'
 import { notFound } from 'next/navigation'
 import { AfosTradeoffTemplate, type TradeoffRenderedMd } from '../../../components/AfosTradeoffTemplate'
 import { Inline, InlineSpan, Body } from '../../../components/TradeoffMarkdown'
@@ -138,7 +139,7 @@ export default async function TradeoffByDatePage(props: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([schema, breadcrumb]) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd([schema, breadcrumb]) }}
       />
       <AfosTradeoffTemplate data={data} nav={nav} md={md} />
     </>

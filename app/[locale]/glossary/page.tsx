@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { safeJsonLd } from '../../../lib/seo/schema'
 import { notFound } from 'next/navigation'
 import { loadGlossary, type GlossaryEntry } from '../../../lib/glossary/loader'
 import { isValidLocale, SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
@@ -145,7 +146,7 @@ export default async function GlossaryPage(props: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
       />
       <div className="min-h-screen bg-slate-50">
         <article className="max-w-[760px] mx-auto px-5 md:px-10 py-12 md:py-14">

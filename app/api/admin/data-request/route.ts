@@ -12,6 +12,7 @@ import { Redis } from '@upstash/redis'
 import { prisma } from '../../../../lib/db'
 import { anonymizeUser, exportUserData, processDeletionRequest } from '../../../../lib/governance/data-lifecycle'
 import { audit } from '../../../../lib/audit'
+import { clientIp } from '../../../../lib/net/client-ip'
 
 function safeCompare(a: string, b: string): boolean {
   try {
@@ -25,8 +26,7 @@ function safeCompare(a: string, b: string): boolean {
 const ALLOWED_ORIGINS = ['https://www.afos-analytics.com', 'https://afos-analytics.com']
 
 export async function POST(request: Request) {
-  const ip = request.headers.get('x-real-ip')?.trim() ||
-             request.headers.get('x-forwarded-for')?.split(',').pop()?.trim() || 'unknown'
+  const ip = clientIp(request.headers)
 
   // Origin whitelist (cron e Postman não enviam origin → passam)
   const origin = request.headers.get('origin')

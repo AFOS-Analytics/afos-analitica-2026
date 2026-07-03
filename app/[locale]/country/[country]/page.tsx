@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
-import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
+import { safeJsonLd, breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { CountryPageContent } from '../../../components/CountryPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
@@ -73,8 +73,8 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      {div?.hf && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(countryDatasetSchema(name, div.hf)) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }} />
+      {div?.hf && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(countryDatasetSchema(name, div.hf)) }} />}
       <CountryPageContent locale={loc} country={country} div={div} />
     </>
   )

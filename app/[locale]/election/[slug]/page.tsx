@@ -5,7 +5,7 @@ import { getElectionBySlug, COUNTRIES_SEO, ISO3_TO_CC } from '../../../../lib/se
 import { getCountryDivergence } from '../../../../lib/country-data'
 import { ElectionPageContent } from '../../../components/ElectionPageContent'
 import { socialMeta } from '../../../../lib/seo/metadata'
-import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
+import { safeJsonLd, breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 
@@ -92,8 +92,8 @@ export default async function ElectionPage({ params }: { params: Promise<{ local
   ])
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
-      {div?.hf && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(countryDatasetSchema(name, div.hf)) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }} />
+      {div?.hf && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(countryDatasetSchema(name, div.hf)) }} />}
       <ElectionPageContent locale={loc} country={country} election={election} div={div} />
     </>
   )

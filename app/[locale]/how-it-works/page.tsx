@@ -5,7 +5,7 @@ import { HowItWorksEn } from './content-en'
 import { HowItWorksEs } from './content-es'
 import { ThemeShell } from './ThemeShell'
 import { HowItWorksFaq } from './HowItWorksFaq'
-import { faqSchema } from '../../../lib/seo/schema'
+import { safeJsonLd, faqSchema } from '../../../lib/seo/schema'
 
 const BASE_URL = 'https://www.afos-analytics.com'
 const SLUG = 'how-it-works'
@@ -184,7 +184,7 @@ export default async function HowItWorksPage({ params }: { params: Promise<{ loc
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd([articleSchema(loc), breadcrumbSchema(loc), faqSchema(loc)]) }}
       />
       <ThemeShell loc={loc} slug={SLUG}>
         <Content />
