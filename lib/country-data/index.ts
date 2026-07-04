@@ -43,12 +43,13 @@ export interface CountryDivergence {
   hf: string
   harvard?: string // DOI do dataset no Harvard Dataverse (ex.: USA 2024); só países com depósito acadêmico próprio
   election: { first_round: string; runoff: string; matchup: string; status: string }
-  polls_count: number
+  polls_count: number // total de pesquisas do dataset (1º turno + 2º turno, quando houver)
+  polls_first_round?: number // pesquisas só do 1º turno (para o breakdown por turno na página)
   market_candidates: number
   latest_poll: { pollster: string; date: string }
   headline: Record<string, string>
   rows: DivergenceRow[]
-  rows_runoff?: { date: string; candidates: RunoffRow[]; note?: Record<string, string> }
+  rows_runoff?: { date: string; polls?: number; candidates: RunoffRow[]; note?: Record<string, string> }
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
   market_trajectory?: MarketTrajectory
   context?: CountryContext

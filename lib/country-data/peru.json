@@ -7,11 +7,11 @@
     "matchup": "Keiko Fujimori × Roberto Sánchez",
     "status": "completed"
   },
-  "polls_count": 36,
+  "polls_count": 52,
   "market_candidates": 16,
   "latest_poll": {
-    "pollster": "Ipsos Perú/Perú 21",
-    "date": "2026-04-06"
+    "pollster": "Datum Internacional",
+    "date": "2026-06-06"
   },
   "headline": {
     "pt-BR": "No 1º turno (12/abr, com 35 candidatos), por meses o mercado fez de Rafael López Aliaga o favorito absoluto a vencer (chegou a 40%–55% de probabilidade), mas ele naufragou na reta final e terminou em 3º, fora do 2º turno: a maior divergência do ciclo entre o que o dinheiro precificava e o voto real. Avançaram Keiko Fujimori (Fuerza Popular, 1ª com 17,2%) e Roberto Sánchez (Juntos por el Perú, 12,0%). No 2º turno (07/jun), o Peru teve um dos resultados mais apertados de sua história: as pesquisas davam empate técnico, enquanto o mercado favorecia Fujimori. A apuração terminou num quase-empate e Sánchez contestou — pediu a nulidade do voto no exterior, recorreu das atas observadas e chegou a acionar a CIDH. O JNE rejeitou todos os recursos, resolveu as atas observadas e, em 03/jul, proclamou Keiko Fujimori presidente eleita (2026–2031) com 50,135% contra 49,865% de Sánchez, uma diferença de pouco mais de 49 mil votos; a posse é em 28/jul. As tabelas abaixo mostram as duas divergências: a do 1º turno (mercado = probabilidade de vencer × pesquisa = voto) e a do 2º turno (pesquisa × mercado × resultado). Onde o mercado e a pesquisa divergem está o sinal que a AFOS acompanha, não um erro de pesquisa.",
@@ -453,6 +453,9 @@
       "pt-BR": "Pesquisa e resultado em % de votos válidos (Ipsos, 31/mai, empate técnico); mercado em probabilidade de vitória. As pesquisas cravaram a foto-finish (~51 × 49), enquanto o mercado, a 68,5% para Fujimori, superestimou a folga: acertou a direção (Fujimori venceu), mas errou a calibragem — o resultado foi coin-flip (50,1 × 49,9).",
       "en": "Poll and result in % of valid votes (Ipsos, May 31, statistical tie); market in win probability. The polls nailed the photo finish (~51 vs 49), while the market, at 68.5% for Fujimori, overstated her cushion: right on direction (Fujimori won), wrong on calibration — the result was a coin-flip (50.1 vs 49.9).",
       "es": "Encuesta y resultado en % de votos válidos (Ipsos, 31 may, empate técnico); mercado en probabilidad de victoria. Las encuestas clavaron el final de fotografía (~51 vs 49), mientras el mercado, con 68,5% para Fujimori, sobreestimó su ventaja: acertó la dirección (Fujimori ganó), pero erró la calibración — el resultado fue un empate (50,1 vs 49,9)."
-    }
-  }
+    },
+    "polls": 16
+  },
+  "polls_first_round": 36,
+  "harvard": "https://doi.org/10.7910/DVN/JBBGXV"
 }

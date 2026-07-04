@@ -22,10 +22,10 @@ const TEXTS = (name: string): Record<string, Record<string, string>> => ({
   en: { overview: `Track ${name}'s election with prediction market data, electoral polls, and political risk analysis.`, risk: `${name}'s political landscape is monitored with prediction market signals, public sentiment, and critical events that may impact FX, investments, and governance.`, market: `Elections in ${name} directly impact capital flows, FX, and sovereign risk perception. Prediction markets offer early signals on likely scenarios.`, why: `${name} is one of the markets monitored by AFOS Analytics. Cross-referencing prediction markets and polls enables more informed decisions for investors, analysts, and citizens.` },
   es: { overview: `Siga la elección de ${name} con datos de mercados de predicción, encuestas electorales y análisis de riesgo político.`, risk: `El escenario político de ${name} es monitoreado con señales de mercados de predicción, sentimiento público y eventos críticos que pueden impactar divisas, inversiones y gobernanza.`, market: `Las elecciones en ${name} impactan directamente flujos de capital, tipo de cambio y percepción de riesgo soberano. Los mercados de predicción ofrecen señales anticipadas sobre escenarios probables.`, why: `${name} es uno de los mercados monitoreados por AFOS Analytics. Cruzar mercados de predicción y encuestas permite decisiones más informadas para inversores, analistas y ciudadanos.` },
 })
-const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; result: string; firstRoundTitle: string; runoffTitle: string; dataset: string; harvard: string; source: (p: string, d: string, n: number) => string }> = {
-  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', result: 'Resultado', firstRoundTitle: 'Divergência do 1º turno', runoffTitle: 'Divergência do 2º turno', dataset: 'Dataset aberto', harvard: 'Harvard DOI', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
-  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', result: 'Result', firstRoundTitle: 'First-round divergence', runoffTitle: 'Runoff divergence', dataset: 'Open dataset', harvard: 'Harvard DOI', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
-  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', result: 'Resultado', firstRoundTitle: 'Divergencia de primera vuelta', runoffTitle: 'Divergencia del balotaje', dataset: 'Dataset abierto', harvard: 'Harvard DOI', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
+const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; result: string; firstRoundTitle: string; runoffTitle: string; pollsLabel: string; dataset: string; harvard: string; source: (p: string, d: string, n: number) => string }> = {
+  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', result: 'Resultado', firstRoundTitle: 'Divergência do 1º turno', runoffTitle: 'Divergência do 2º turno', pollsLabel: 'pesquisas', dataset: 'Dataset aberto', harvard: 'Harvard DOI', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
+  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', result: 'Result', firstRoundTitle: 'First-round divergence', runoffTitle: 'Runoff divergence', pollsLabel: 'polls', dataset: 'Open dataset', harvard: 'Harvard DOI', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
+  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', result: 'Resultado', firstRoundTitle: 'Divergencia de primera vuelta', runoffTitle: 'Divergencia del balotaje', pollsLabel: 'encuestas', dataset: 'Dataset abierto', harvard: 'Harvard DOI', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
 }
 
 // Contexto estrutural (CTEXTS, formatadores, JSX) movido para o componente
@@ -69,7 +69,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   // Cluster clicável Harvard Dataverse (coleção + DOI do próprio país) no grafo.
   // Todos os 9 casos validados têm depósito; cada grafo mostra o DOI do seu país.
   const HARVARD_DOI: Record<string, string> = {
-    USA: '10.7910/DVN/3DJCW5', BRA: '10.7910/DVN/2D0UK7', COL: '10.7910/DVN/X7JUEG',
+    USA: '10.7910/DVN/3DJCW5', PER: '10.7910/DVN/JBBGXV', BRA: '10.7910/DVN/2D0UK7', COL: '10.7910/DVN/X7JUEG',
     KOR: '10.7910/DVN/WRBDVI', CHL: '10.7910/DVN/5PLWZ7', DEU: '10.7910/DVN/W9XGXM',
     CAN: '10.7910/DVN/BBO36K', GBR: '10.7910/DVN/CUKDRJ', MEX: '10.7910/DVN/5A4LLJ',
   }
@@ -158,7 +158,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
             {div.rows_runoff && (
               <>
                 <h3 className={`text-base font-bold ${heading} mb-0.5`}>{ds.firstRoundTitle}</h3>
-                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.election?.first_round}</p>
+                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.election?.first_round}{div.polls_first_round ? ` · ${div.polls_first_round} ${ds.pollsLabel}` : ''}</p>
               </>
             )}
             <div className="overflow-x-auto">
@@ -191,7 +191,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
             {div.rows_runoff && div.rows_runoff.candidates?.length > 0 && (
               <div className="mt-7">
                 <h3 className={`text-base font-bold ${heading} mb-0.5`}>{ds.runoffTitle}</h3>
-                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.rows_runoff.date}</p>
+                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.rows_runoff.date}{div.rows_runoff.polls ? ` · ${div.rows_runoff.polls} ${ds.pollsLabel}` : ''}</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
