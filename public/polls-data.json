@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-03",
+  "lastUpdate": "2026-07-04",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -689,41 +689,41 @@
     "lastUpdate": "2026-07-01"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 03/Jul 19:07 BRT), a 93 dias do 1º turno. NOVO RECORDE: Lula ROMPE 61% a 61.50% (alta 1.00pp) e o gap sobre Flávio dispara ao novo recorde, a +39.55pp (alta 1.00pp), acima do pico anterior de +38.65pp (02/Jul). Flávio estável a 21.95% (vol USD 7.2M) e Renan volta acima de 10% a 10.05% (alta 0.10pp, vol USD 7.8M). Sem pesquisa nacional nova: a base segue a AtlasIntel 01/Jul (2T 48.8% x 42.3%) e a Datafolha de campo 17-18/Jun (2T 47% x 43%), então o movimento é de momentum. A divergência de NÍVEL se amplia: o dinheiro real precifica Lula com folga recorde enquanto as presenciais dão 2º turno apertado (Datafolha 47x43, BTG/Nexus 29/Jun empate 47x44). O motor de notícia migrou para o tarifaço: Lula reagiu à carta de Flávio a Trump chamando de entreguismo inaceitável e o PT fez da soberania o eixo da campanha (Estadão, CartaCapital); Flávio revidou (Lula quer deixar o Brasil igual a Cuba, Poder360). No caso Master, Toffoli impôs sigilo absoluto ao pedido da defesa de Vorcaro e a PF sinalizou preocupação em evitar anulação (Migalhas, CNN Brasil), MAS o mercado não reprecifica: STF impeach estável a 2.75%. No exterior, Keiko Fujimori foi proclamada presidente do Peru e Flávio a parabenizou (a próxima peça é o Brasil, G1). Volume total do presidencial acima de USD 109.8M.",
+    "note": "Cruzamento Polymarket (live 04/Jul 20:26 BRT), a 92 dias do 1º turno. REVERSÃO: o mercado devolve parte do recorde de véspera. Lula recua a 60.50% (baixa 1.00pp) e o gap sobre Flávio cai a +38.10pp (baixa 1.45pp), abaixo do pico de +39.55pp (03/Jul), com Flávio subindo a 22.40% (alta 0.45pp) e recuperando o 2º lugar do 1º turno (78.5%). Renan volta abaixo de 10% a 9.95% (baixa 0.10pp). Sem pesquisa nacional nova: a base segue a AtlasIntel 01/Jul (2T 48.8% x 42.3%) e a Datafolha de campo 17-18/Jun (2T 47% x 43%), então foi movimento de mercado. A divergência de NÍVEL persiste: o dinheiro real precifica Lula com folga grande enquanto as presenciais dão 2º turno apertado (Datafolha 47x43, BTG/Nexus 29/Jun empate 47x44). O motor de notícia foi o calendário: o defeso começou hoje (vedações a Lula e governadores, G1) e a janela partidária fortaleceu o PL (Gazeta do Povo). Lula voltou a criticar Flávio no tarifaço (2026 será o ano da verdade, Poder360), num pano de fundo em que a crise com Michelle segue (BBC) e uma comissão do Congresso dos EUA acusou Moraes de censura. STF impeach estável a 2.80%. Volume total do presidencial acima de USD 110M.",
     "sources": "Polymarket ao vivo (fetchedAt 02/Jul 15:01 BRT). Base de pesquisa (última nacional, sem rodada nova em 02/Jul): AtlasIntel/Bloomberg 01/Jul n=5.000 campo 25-30/Jun BR-04582/2026: 1T Lula 46.3% x Flávio 36.6%; 2T Lula 48.8% x Flávio 42.3%; aprovação 45.9% x desaprovação 52.3%. Antecedentes: BTG/Nexus 29/Jun 1T 42x34, 2T 47x44 (empate); Vox 27/Jun 2T 45.3x42.8; PoderData/Aya 25/Jun 2T 46x43; Datafolha 20/Jun 2T 47x43. Datafolha presidencial/governo/Senado em SP a partir de domingo 05/Jul (G1). Contexto 02/Jul (94 dias da eleição): sem pesquisa nacional nova, o mercado levou o gap a um novo recorde (+38.65pp) por momentum, com a crise Michelle x Flávio seguindo como motor (BBC: Lula pode 'jogar parado' com o prolongamento da crise; a briga abala o plano bolsonarista de Senado anti-STF, BBC; AtlasIntel/Bloomberg: respingos do Master e crise com Michelle cobram preço, Seu Dinheiro); Flávio pediu a Trump para adiar o tarifaço para depois da eleição, reconhecendo que ajudaria Lula (Folha, CartaCapital); Renan definiu o vice (tenente-coronel Aroldo Medina, Folha) e só 3 de 13 pré-candidatos definiram vice (G1); no institucional, jornal e PF alegam que a esposa de Moraes (Viviane Barci) negociou contrato de R$129mi com Vorcaro (Gazeta do Povo). No RJ, uma pesquisa deu Lula 41.6% x Flávio 38.6% (Band, Poder360, empate técnico).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "42-49%",
-        "polymarket": "61.50%",
+        "polymarket": "60.50%",
         "tendenciaPesquisa": "AtlasIntel 01/Jul (Atlas/Bloomberg, n=5.000, última nacional; sem rodada nova em 02/Jul): 1T Lula 46.3% x Flávio 36.6% (gap +9.7pp); 2T Lula 48.8% x Flávio 42.3% (gap +6.5pp). Aprovação Atlas: aprova 45.9% x desaprova 52.3% (pior que o platô 48% x 48% das presenciais). Antecedentes: BTG/Nexus 29/Jun 2T 47x44 (empate); Vox 27/Jun 2T 45.3x42.8. No RJ, uma pesquisa deu Lula 41.6% x Flávio 38.6% (Band, Poder360, empate técnico).",
-        "tendenciaPolymarket": "ROMPE 61% a 61.50% (novo recorde, alta 1.00pp, vol USD 7.2M) e o gap sobre Flávio dispara ao novo recorde, a +39.55pp (alta 1.00pp), acima do pico anterior de +38.65pp (02/Jul). Momentum sem pesquisa nacional nova: o dinheiro real leva Lula ao topo enquanto as presenciais dão 2º turno apertado (Datafolha 47x43, BTG/Nexus 47x44), ampliando a divergência de nível. O noticiário migrou para o tarifaço, com Lula chamando a carta de Flávio a Trump de entreguismo inaceitável e o PT fazendo da soberania o eixo da campanha (Estadão, CartaCapital).",
-        "odds": 61.5,
+        "tendenciaPolymarket": "Recua a 60.50% (baixa 1.00pp, vol USD 7.2M) e o gap sobre Flávio cai a +38.10pp (baixa 1.45pp), abaixo do pico de +39.55pp (03/Jul), devolvendo parte do recorde. Movimento de mercado sem pesquisa nova: o dinheiro real segue Lula com folga grande enquanto as presenciais dão 2º turno apertado (Datafolha 47x43, BTG/Nexus 47x44), mantendo a divergência de nível. O noticiário foi o calendário eleitoral (defeso começa, janela partidária fortalece o PL) e o tarifaço (Lula critica Flávio, ano da verdade, Poder360).",
+        "odds": 60.5,
         "percentage": 46,
         "lastUpdate": "2026-07-03",
-        "value": 61.5
+        "value": 60.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "36-42%",
-        "polymarket": "21.95%",
+        "polymarket": "22.40%",
         "tendenciaPesquisa": "AtlasIntel 01/Jul (última nacional): 1T 36.6% (gap -9.7pp), 2T 42.3% (Lula 48.8% x 42.3%), caindo 5.7pp no 2º turno frente à rodada anterior da Atlas, no auge da crise com Michelle. Rejeição segue a maior do páreo (BTG/Nexus 29/Jun 51%). No RJ, uma pesquisa deu Flávio 38.6% x Lula 41.6% (empate técnico, Band, Poder360). Antecedentes: BTG/Nexus 29/Jun 2T 44% (empate); Vox 27/Jun 2T 42.8%.",
-        "tendenciaPolymarket": "Estável a 21.95% (vol USD 7.2M), com o gap para Lula disparando ao novo recorde de +39.55pp (Lula rompe 61%). A crise com Michelle segue no radar (é a mulherada que manda, após fala machista de aliado, Folha), e Flávio revidou o tarifaço dizendo que Lula quer deixar o Brasil igual a Cuba (Poder360). Parabenizou Keiko Fujimori, proclamada presidente do Peru: a próxima peça é o Brasil (G1). No 2º lugar do 1º turno (73.0%, baixa 5.5pp) segue o adversário certo de Lula.",
-        "odds": 21.95,
+        "tendenciaPolymarket": "Sobe a 22.40% (alta 0.45pp, vol USD 7.2M), com o gap para Lula recuando a +38.10pp (Lula devolve parte do recorde). Recupera o 2º lugar do 1º turno (78.5%, alta 5.5pp), reforçando a condição de adversário certo. A crise com Michelle segue no radar (Folha), e Lula voltou a atacá-lo no tarifaço (ano da verdade, Poder360). A janela partidária fortaleceu o PL (Gazeta do Povo). Segue o adversário certo de Lula no 2º turno.",
+        "odds": 22.4,
         "percentage": 37,
         "lastUpdate": "2026-07-03",
-        "value": 21.95
+        "value": 22.4
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-4%",
-        "polymarket": "10.05%",
-        "tendenciaPesquisa": "As nacionais o medem a 2-4% no 1º turno (BTG/Nexus 29/Jun e PoderData/Aya 25/Jun 4%; Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 10.05% x pesquisa ~4% (~6.15pp), ainda a mais larga do dashboard.",
-        "tendenciaPolymarket": "Sobe a 10.05% (alta 0.10pp, vol USD 7.8M, o maior volume do presidencial), de volta acima de 10%, mantendo a maior divergência do dashboard (mercado 10.05% x pesquisa ~4%, ~6pp) e o favoritismo ao 3º lugar do 1º turno (65.5%). Vice definido: ten-cel Aroldo Medina (Folha).",
-        "odds": 10.05,
+        "polymarket": "9.95%",
+        "tendenciaPesquisa": "As nacionais o medem a 2-4% no 1º turno (BTG/Nexus 29/Jun e PoderData/Aya 25/Jun 4%; Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 9.95% x pesquisa ~4% (~6.15pp), ainda a mais larga do dashboard.",
+        "tendenciaPolymarket": "Volta abaixo de 10% a 9.95% (baixa 0.10pp, vol USD 7.8M, o maior volume do presidencial), mantendo a maior divergência do dashboard (mercado 9.95% x pesquisa ~4%, ~6pp) e o favoritismo ao 3º lugar do 1º turno (62.5%). Vice definido: ten-cel Aroldo Medina (Folha).",
+        "odds": 9.95,
         "percentage": 4,
         "lastUpdate": "2026-07-03",
-        "value": 10.05
+        "value": 9.95
       },
       {
         "name": "Ronaldo Caiado",
@@ -770,6 +770,6 @@
         "value": 0.75
       }
     ],
-    "updatedAt": "2026-07-03T19:07"
+    "updatedAt": "2026-07-04T20:26"
   }
 }
