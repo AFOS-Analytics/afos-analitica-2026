@@ -41,6 +41,7 @@ const COUNTRIES = {
       { p: 'structural-context.csv', dir: '' },
       { p: 'odds-trajectory.png', dir: '' },
       { p: 'odds-snapshot.png', dir: '' },
+      { p: 'banner.png', dir: '', src: '../AFOS-Analytics1/peru-2026-electoral-divergence/banner.png' },
       { p: 'peru-first-round-polls.csv', dir: 'polls' },
       { p: 'peru-runoff-polls.csv', dir: 'polls' },
       { p: 'peru-polls.json', dir: 'polls' },
