@@ -27,6 +27,27 @@ const kw = (v) => ({ keywordValue: { typeName: 'keywordValue', multiple: false, 
 
 // Config por país. Bundle = .cache/zaid-repo/<país>. Sem travessão nos metadados (anti-AI).
 const COUNTRIES = {
+  peru: {
+    dir: '.cache/zaid-repo/peru',
+    title: 'AFOS · Peru 2026 Electoral Divergence Dataset',
+    description: 'AFOS Analytics is global-by-design open-source civic infrastructure for electoral political-risk intelligence: wherever there is an election, there is a signal. This dataset is the Peru 2026 general election release (first round 12 April 2026 with 35 candidates; runoff 7 June 2026, Keiko Fujimori vs Roberto Sanchez). It cross-references prediction markets (Polymarket, total volume near US$ 106.9 million), named polling institutes, and press coverage, flagging explicit divergence between sources instead of smoothed averages. Peru is a rare case with two opposite divergences in one election. In the first round the market made Rafael Lopez Aliaga the runaway favorite to win (40 to 55 percent probability for months), yet he collapsed down the stretch and finished third, out of the runoff, the biggest gap of the cycle between what the market priced and the actual vote. In the runoff the market favored Fujimori (near 68 percent to win on election day) while the final publishable polls showed a statistical tie (Ipsos valid-vote simulacro near 51.4 to 48.6), and the vote itself was a photo finish. Roberto Sanchez contested the count, seeking to void the overseas vote and petitioning the Inter-American Commission on Human Rights; the National Jury of Elections (JNE) rejected the appeals, resolved the observed tally sheets, and on 3 July 2026 proclaimed Keiko Fujimori president-elect for 2026 to 2031 with 50.135 percent to Sanchez 49.865 percent, a margin near 0.27pp (just over 49,000 votes), one of the closest results in Peruvian history; the inauguration is set for 28 July 2026. The lesson is double: in the first round the market misread the frontrunner, and in the runoff it was right on direction but overstated the margin, while the polls near-tie matched the outcome. Divergence and overstated confidence are the signal, not a polling error. Includes first-round and runoff polls in long format, a daily market-odds time series, a market-versus-poll divergence series, a structured press-coverage index, and structural context. Poll figures were compiled deterministically from the public Wikipedia aggregation (CC BY-SA); each figure traces to a named pollster. Contains only public electoral data: no personal data. Observational research, not investment advice or voting guidance. DOI-backed release of the live mirror maintained at Hugging Face.',
+    keywords: ['elections', 'Peru', 'prediction markets', 'polls', 'political risk', 'electoral divergence', 'Latin America', 'Polymarket', 'open data'],
+    files: [
+      { p: 'README.md', dir: '' },
+      { p: 'DATA_DICTIONARY.md', dir: '' },
+      { p: 'LICENSE-CC-BY-4.0', dir: '' },
+      { p: 'LICENSE-APACHE-2.0', dir: '' },
+      { p: 'peru-2026-press-coverage.csv', dir: '' },
+      { p: 'structural-context.csv', dir: '' },
+      { p: 'odds-trajectory.png', dir: '' },
+      { p: 'odds-snapshot.png', dir: '' },
+      { p: 'peru-first-round-polls.csv', dir: 'polls' },
+      { p: 'peru-runoff-polls.csv', dir: 'polls' },
+      { p: 'peru-polls.json', dir: 'polls' },
+      { p: 'peru-market-odds-timeseries.csv', dir: 'data' },
+      { p: 'peru-divergence-timeseries.csv', dir: 'data' },
+    ],
+  },
   colombia: {
     dir: '.cache/zaid-repo/colombia',
     title: 'AFOS · Colombia 2026 Electoral Divergence Dataset',
