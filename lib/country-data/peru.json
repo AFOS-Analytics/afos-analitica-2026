@@ -14,9 +14,9 @@
     "date": "2026-04-06"
   },
   "headline": {
-    "pt-BR": "Por meses o mercado fez de Rafael López Aliaga o favorito a vencer (40% a 55%), mas ele terminou em 3º e ficou fora do 2º turno: a maior divergência do ciclo entre o que o mercado precificava e o voto real. No 2º turno (07/jun), Keiko Fujimori e Roberto Sánchez terminaram em empate técnico, e em 03/jul o JNE proclamou Keiko Fujimori presidente eleita, com 50,135% contra 49,865% de Sánchez (cerca de 50 mil votos de diferença), um dos resultados mais apertados da história peruana; a posse está marcada para 28/jul. A tabela abaixo é a foto final do 1º turno. Onde o mercado (probabilidade de vencer) e a pesquisa (voto de 1º turno) divergem está o sinal que a AFOS acompanha, não um erro de pesquisa.",
-    "en": "For months the market made Rafael López Aliaga its favorite to win (40% to 55%), yet he finished third and missed the runoff: the biggest gap of the cycle between what the market priced and the actual vote. In the June 7 runoff, Keiko Fujimori and Roberto Sánchez finished in a virtual tie, and on July 3 the JNE proclaimed Keiko Fujimori president-elect, with 50.135% to Sánchez's 49.865% (about 50,000 votes apart), one of the closest results in Peruvian history; she is set to be inaugurated on July 28. The table below is the final first-round snapshot. Where the market (probability of winning) and the poll (first-round vote) diverge is the signal AFOS tracks, not a polling error.",
-    "es": "Durante meses el mercado hizo de Rafael López Aliaga su favorito a ganar (40% a 55%), pero terminó tercero y quedó fuera del balotaje: la mayor divergencia del ciclo entre lo que el mercado valoraba y el voto real. En la segunda vuelta (7 jun), Keiko Fujimori y Roberto Sánchez terminaron en empate técnico, y el 3 de julio el JNE proclamó a Keiko Fujimori presidenta electa, con 50,135% frente al 49,865% de Sánchez (unos 50 mil votos de diferencia), uno de los resultados más ajustados de la historia peruana; la investidura está prevista para el 28 de julio. La tabla es la foto final de primera vuelta. Donde el mercado (probabilidad de ganar) y la encuesta (voto de primera vuelta) divergen está la señal que AFOS sigue, no un error de encuesta."
+    "pt-BR": "No 1º turno (12/abr, com 35 candidatos), por meses o mercado fez de Rafael López Aliaga o favorito absoluto a vencer (chegou a 40%–55% de probabilidade), mas ele naufragou na reta final e terminou em 3º, fora do 2º turno: a maior divergência do ciclo entre o que o dinheiro precificava e o voto real. Avançaram Keiko Fujimori (Fuerza Popular, 1ª com 17,2%) e Roberto Sánchez (Juntos por el Perú, 12,0%). No 2º turno (07/jun), o Peru teve um dos resultados mais apertados de sua história: as pesquisas davam empate técnico, enquanto o mercado favorecia Fujimori. A apuração terminou num quase-empate e Sánchez contestou — pediu a nulidade do voto no exterior, recorreu das atas observadas e chegou a acionar a CIDH. O JNE rejeitou todos os recursos, resolveu as atas observadas e, em 03/jul, proclamou Keiko Fujimori presidente eleita (2026–2031) com 50,135% contra 49,865% de Sánchez, uma diferença de pouco mais de 49 mil votos; a posse é em 28/jul. As tabelas abaixo mostram as duas divergências: a do 1º turno (mercado = probabilidade de vencer × pesquisa = voto) e a do 2º turno (pesquisa × mercado × resultado). Onde o mercado e a pesquisa divergem está o sinal que a AFOS acompanha, não um erro de pesquisa.",
+    "en": "In the first round (April 12, with 35 candidates), the market had for months made Rafael López Aliaga the runaway favorite to win (peaking at 40%–55% probability), yet he collapsed down the stretch and finished third, out of the runoff: the biggest gap of the cycle between what money priced and the actual vote. Keiko Fujimori (Fuerza Popular, first with 17.2%) and Roberto Sánchez (Juntos por el Perú, 12.0%) advanced. The June 7 runoff produced one of the closest results in Peruvian history: polls showed a dead heat, while the market favored Fujimori. The count ended in a near-tie and Sánchez contested it — seeking to void the overseas vote, appealing observed tally sheets, and even petitioning the Inter-American Commission on Human Rights. The JNE rejected every appeal, resolved the observed tally sheets, and on July 3 proclaimed Keiko Fujimori president-elect (2026–2031) with 50.135% to Sánchez's 49.865%, a margin of just over 49,000 votes; she is inaugurated on July 28. The tables below show both divergences: the first round (market = probability of winning × poll = vote) and the runoff (poll × market × result). Where the market and the poll diverge is the signal AFOS tracks, not a polling error.",
+    "es": "En la primera vuelta (12 abr, con 35 candidatos), durante meses el mercado hizo de Rafael López Aliaga el favorito absoluto a ganar (llegó a 40%–55% de probabilidad), pero se desplomó en la recta final y terminó tercero, fuera del balotaje: la mayor divergencia del ciclo entre lo que el dinero valoraba y el voto real. Pasaron Keiko Fujimori (Fuerza Popular, primera con 17,2%) y Roberto Sánchez (Juntos por el Perú, 12,0%). La segunda vuelta (7 jun) dio uno de los resultados más ajustados de la historia peruana: las encuestas marcaban empate técnico, mientras el mercado favorecía a Fujimori. El conteo terminó en un casi empate y Sánchez lo impugnó — pidió anular el voto en el extranjero, apeló actas observadas e incluso recurrió a la CIDH. El JNE rechazó todos los recursos, resolvió las actas observadas y, el 3 de julio, proclamó a Keiko Fujimori presidenta electa (2026–2031) con 50,135% frente al 49,865% de Sánchez, una diferencia de poco más de 49 mil votos; la investidura es el 28 de julio. Las tablas siguientes muestran ambas divergencias: la de primera vuelta (mercado = probabilidad de ganar × encuesta = voto) y la del balotaje (encuesta × mercado × resultado). Donde el mercado y la encuesta divergen está la señal que AFOS sigue, no un error de encuesta."
   },
   "rows": [
     {
@@ -56,78 +56,18 @@
     }
   ],
   "market_snapshot": {
-    "date": "2026-03-29",
-    "total_volume_usd": 87597396,
+    "date": "2026-06-07",
+    "total_volume_usd": 106880000,
     "candidates": [
       {
-        "candidate": "Rafael López Aliaga",
-        "market_pct": 37.5,
-        "volume_usd": 13880454
-      },
-      {
         "candidate": "Keiko Fujimori",
-        "market_pct": 16.5,
-        "volume_usd": 18911020
-      },
-      {
-        "candidate": "Alfonso López Chau",
-        "market_pct": 12.4,
-        "volume_usd": 2316316
+        "market_pct": 68.5,
+        "volume_usd": 21660000
       },
       {
         "candidate": "Roberto Sánchez",
-        "market_pct": 12.4,
-        "volume_usd": 29547202
-      },
-      {
-        "candidate": "Jorge Nieto",
-        "market_pct": 7.1,
-        "volume_usd": 5777944
-      },
-      {
-        "candidate": "Carlos Álvarez",
-        "market_pct": 6.3,
-        "volume_usd": 13157687
-      },
-      {
-        "candidate": "Enrique Valderrama",
-        "market_pct": 0.8,
-        "volume_usd": 266138
-      },
-      {
-        "candidate": "Fernando Olivera",
-        "market_pct": 0.7,
-        "volume_usd": 472562
-      },
-      {
-        "candidate": "Yonhy Lescano",
-        "market_pct": 0.7,
-        "volume_usd": 439432
-      },
-      {
-        "candidate": "Mesías Guevara",
-        "market_pct": 0.6,
-        "volume_usd": 327092
-      },
-      {
-        "candidate": "Marisol Pérez Tello",
-        "market_pct": 0.6,
-        "volume_usd": 1741368
-      },
-      {
-        "candidate": "Vladimir Cerrón",
-        "market_pct": 0.3,
-        "volume_usd": 252942
-      },
-      {
-        "candidate": "Roberto Chiabra",
-        "market_pct": 0.3,
-        "volume_usd": 137391
-      },
-      {
-        "candidate": "José Luna",
-        "market_pct": 0.3,
-        "volume_usd": 369848
+        "market_pct": 31.6,
+        "volume_usd": 36492000
       }
     ]
   },
@@ -492,5 +432,27 @@
       "wdi": "https://data.worldbank.org/"
     },
     "latest_year": 2024
+  },
+  "rows_runoff": {
+    "date": "2026-06-07",
+    "candidates": [
+      {
+        "candidate": "Keiko Fujimori",
+        "poll_pct": 51.4,
+        "market_pct": 68.5,
+        "result_pct": 50.1
+      },
+      {
+        "candidate": "Roberto Sánchez",
+        "poll_pct": 48.6,
+        "market_pct": 31.6,
+        "result_pct": 49.9
+      }
+    ],
+    "note": {
+      "pt-BR": "Pesquisa e resultado em % de votos válidos (Ipsos, 31/mai, empate técnico); mercado em probabilidade de vitória. As pesquisas cravaram a foto-finish (~51 × 49), enquanto o mercado, a 68,5% para Fujimori, superestimou a folga: acertou a direção (Fujimori venceu), mas errou a calibragem — o resultado foi coin-flip (50,1 × 49,9).",
+      "en": "Poll and result in % of valid votes (Ipsos, May 31, statistical tie); market in win probability. The polls nailed the photo finish (~51 vs 49), while the market, at 68.5% for Fujimori, overstated her cushion: right on direction (Fujimori won), wrong on calibration — the result was a coin-flip (50.1 vs 49.9).",
+      "es": "Encuesta y resultado en % de votos válidos (Ipsos, 31 may, empate técnico); mercado en probabilidad de victoria. Las encuestas clavaron el final de fotografía (~51 vs 49), mientras el mercado, con 68,5% para Fujimori, sobreestimó su ventaja: acertó la dirección (Fujimori ganó), pero erró la calibración — el resultado fue un empate (50,1 vs 49,9)."
+    }
   }
 }

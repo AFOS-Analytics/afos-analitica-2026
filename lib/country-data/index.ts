@@ -23,6 +23,9 @@ export interface DivergenceRow {
   note?: Record<string, string> // ressalva por linha (ex.: spike transitório de mercado fino), trilíngue
 }
 export interface MarketSnapshotRow { candidate: string; market_pct: number; volume_usd: number }
+// Divergência do 2º turno (head-to-head), para eleições com balotaje: pesquisa (voto) × mercado
+// (probabilidade de vencer) × resultado oficial. Opcional; só países com 2º turno preenchem.
+export interface RunoffRow { candidate: string; poll_pct: number; market_pct: number; result_pct: number }
 export interface MarketTrajectory { dates: string[]; series: { name: string; pct: number[] }[] }
 export interface ContextMetric { value: number; year: number }
 // Contexto estrutural do país (World Bank): governança (WGI, escala 0-100) + macro (WDI).
@@ -45,6 +48,7 @@ export interface CountryDivergence {
   latest_poll: { pollster: string; date: string }
   headline: Record<string, string>
   rows: DivergenceRow[]
+  rows_runoff?: { date: string; candidates: RunoffRow[]; note?: Record<string, string> }
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
   market_trajectory?: MarketTrajectory
   context?: CountryContext

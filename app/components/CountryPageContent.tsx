@@ -22,10 +22,10 @@ const TEXTS = (name: string): Record<string, Record<string, string>> => ({
   en: { overview: `Track ${name}'s election with prediction market data, electoral polls, and political risk analysis.`, risk: `${name}'s political landscape is monitored with prediction market signals, public sentiment, and critical events that may impact FX, investments, and governance.`, market: `Elections in ${name} directly impact capital flows, FX, and sovereign risk perception. Prediction markets offer early signals on likely scenarios.`, why: `${name} is one of the markets monitored by AFOS Analytics. Cross-referencing prediction markets and polls enables more informed decisions for investors, analysts, and citizens.` },
   es: { overview: `Siga la elección de ${name} con datos de mercados de predicción, encuestas electorales y análisis de riesgo político.`, risk: `El escenario político de ${name} es monitoreado con señales de mercados de predicción, sentimiento público y eventos críticos que pueden impactar divisas, inversiones y gobernanza.`, market: `Las elecciones en ${name} impactan directamente flujos de capital, tipo de cambio y percepción de riesgo soberano. Los mercados de predicción ofrecen señales anticipadas sobre escenarios probables.`, why: `${name} es uno de los mercados monitoreados por AFOS Analytics. Cruzar mercados de predicción y encuestas permite decisiones más informadas para inversores, analistas y ciudadanos.` },
 })
-const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; dataset: string; harvard: string; source: (p: string, d: string, n: number) => string }> = {
-  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', dataset: 'Dataset aberto', harvard: 'Harvard DOI', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
-  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', dataset: 'Open dataset', harvard: 'Harvard DOI', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
-  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', dataset: 'Dataset abierto', harvard: 'Harvard DOI', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
+const DTEXTS: Record<string, { title: string; subtitle: string; candidate: string; poll: string; market: string; div: string; result: string; firstRoundTitle: string; runoffTitle: string; dataset: string; harvard: string; source: (p: string, d: string, n: number) => string }> = {
+  'pt-BR': { title: 'Análise de divergência', subtitle: 'Mercado de previsão × pesquisas', candidate: 'Candidato', poll: 'Pesquisa', market: 'Mercado', div: 'Divergência', result: 'Resultado', firstRoundTitle: 'Divergência do 1º turno', runoffTitle: 'Divergência do 2º turno', dataset: 'Dataset aberto', harvard: 'Harvard DOI', source: (p, d, n) => `Pesquisa mais recente (${p}, ${d}) cruzada com odds do Polymarket. Dataset aberto com ${n} pesquisas.` },
+  en: { title: 'Divergence analysis', subtitle: 'Prediction market × polls', candidate: 'Candidate', poll: 'Poll', market: 'Market', div: 'Divergence', result: 'Result', firstRoundTitle: 'First-round divergence', runoffTitle: 'Runoff divergence', dataset: 'Open dataset', harvard: 'Harvard DOI', source: (p, d, n) => `Latest poll (${p}, ${d}) cross-referenced with Polymarket odds. Open dataset with ${n} polls.` },
+  es: { title: 'Análisis de divergencia', subtitle: 'Mercado de predicción × encuestas', candidate: 'Candidato', poll: 'Encuesta', market: 'Mercado', div: 'Divergencia', result: 'Resultado', firstRoundTitle: 'Divergencia de primera vuelta', runoffTitle: 'Divergencia del balotaje', dataset: 'Dataset abierto', harvard: 'Harvard DOI', source: (p, d, n) => `Encuesta más reciente (${p}, ${d}) cruzada con odds de Polymarket. Dataset abierto con ${n} encuestas.` },
 }
 
 // Contexto estrutural (CTEXTS, formatadores, JSX) movido para o componente
@@ -155,6 +155,12 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
             <h2 className={`text-xl font-bold ${heading} mb-0.5`}>{ds.title}</h2>
             <p className={`text-xs ${textMuted} uppercase tracking-wide mb-4`}>{ds.subtitle}</p>
             <p className={`text-sm ${textMain} leading-relaxed mb-5`}>{div.headline?.[loc] || div.headline?.['en']}</p>
+            {div.rows_runoff && (
+              <>
+                <h3 className={`text-base font-bold ${heading} mb-0.5`}>{ds.firstRoundTitle}</h3>
+                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.election?.first_round}</p>
+              </>
+            )}
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
@@ -182,6 +188,37 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                 </tbody>
               </table>
             </div>
+            {div.rows_runoff && div.rows_runoff.candidates?.length > 0 && (
+              <div className="mt-7">
+                <h3 className={`text-base font-bold ${heading} mb-0.5`}>{ds.runoffTitle}</h3>
+                <p className={`text-xs ${textMuted} uppercase tracking-wide mb-3`}>{div.rows_runoff.date}</p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className={`text-[11px] uppercase border-b ${thRow}`}>
+                        <th className="text-left font-medium py-2">{ds.candidate}</th>
+                        <th className="text-right font-medium px-2">{ds.poll}</th>
+                        <th className="text-right font-medium px-2">{ds.market}</th>
+                        <th className="text-right font-medium pl-2">{ds.result}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {div.rows_runoff.candidates.map((r, i) => (
+                        <tr key={r.candidate} className={`border-b ${tdRow}`}>
+                          <td className={`py-2 font-medium ${textMain}`}>{r.candidate}</td>
+                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.poll_pct}%</td>
+                          <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.market_pct}%</td>
+                          <td className={`text-right tabular-nums font-semibold pl-2 ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMain}`}>{r.result_pct}%</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                {div.rows_runoff.note && (div.rows_runoff.note[loc] || div.rows_runoff.note['en']) && (
+                  <p className={`text-xs ${textMuted} italic mt-2 leading-snug`}>{div.rows_runoff.note[loc] || div.rows_runoff.note['en']}</p>
+                )}
+              </div>
+            )}
             {enriched && snap && snap.candidates.length > 0 && (
               <div className="mt-6">
                 <div className="flex items-baseline justify-between gap-3 mb-3">
