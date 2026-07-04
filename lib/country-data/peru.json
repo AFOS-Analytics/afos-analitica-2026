@@ -1,461 +1,461 @@
 {
-  "iso3": "PER",
-  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence",
-  "election": {
-    "first_round": "2026-04-12",
-    "runoff": "2026-06-07",
-    "matchup": "Keiko Fujimori × Roberto Sánchez",
-    "status": "completed"
-  },
-  "polls_count": 52,
-  "market_candidates": 16,
-  "latest_poll": {
-    "pollster": "Datum Internacional",
-    "date": "2026-06-06"
-  },
-  "headline": {
-    "pt-BR": "No 1º turno (12/abr, com 35 candidatos), por meses o mercado fez de Rafael López Aliaga o favorito absoluto a vencer (chegou a 40%–55% de probabilidade), mas ele naufragou na reta final e terminou em 3º, fora do 2º turno: a maior divergência do ciclo entre o que o dinheiro precificava e o voto real. Avançaram Keiko Fujimori (Fuerza Popular, 1ª com 17,2%) e Roberto Sánchez (Juntos por el Perú, 12,0%). No 2º turno (07/jun), o Peru teve um dos resultados mais apertados de sua história: as pesquisas davam empate técnico, enquanto o mercado favorecia Fujimori. A apuração terminou num quase-empate e Sánchez contestou — pediu a nulidade do voto no exterior, recorreu das atas observadas e chegou a acionar a CIDH. O JNE rejeitou todos os recursos, resolveu as atas observadas e, em 03/jul, proclamou Keiko Fujimori presidente eleita (2026–2031) com 50,135% contra 49,865% de Sánchez, uma diferença de pouco mais de 49 mil votos; a posse é em 28/jul. As tabelas abaixo mostram as duas divergências: a do 1º turno (mercado = probabilidade de vencer × pesquisa = voto) e a do 2º turno (pesquisa × mercado × resultado). Onde o mercado e a pesquisa divergem está o sinal que a AFOS acompanha, não um erro de pesquisa.",
-    "en": "In the first round (April 12, with 35 candidates), the market had for months made Rafael López Aliaga the runaway favorite to win (peaking at 40%–55% probability), yet he collapsed down the stretch and finished third, out of the runoff: the biggest gap of the cycle between what money priced and the actual vote. Keiko Fujimori (Fuerza Popular, first with 17.2%) and Roberto Sánchez (Juntos por el Perú, 12.0%) advanced. The June 7 runoff produced one of the closest results in Peruvian history: polls showed a dead heat, while the market favored Fujimori. The count ended in a near-tie and Sánchez contested it — seeking to void the overseas vote, appealing observed tally sheets, and even petitioning the Inter-American Commission on Human Rights. The JNE rejected every appeal, resolved the observed tally sheets, and on July 3 proclaimed Keiko Fujimori president-elect (2026–2031) with 50.135% to Sánchez's 49.865%, a margin of just over 49,000 votes; she is inaugurated on July 28. The tables below show both divergences: the first round (market = probability of winning × poll = vote) and the runoff (poll × market × result). Where the market and the poll diverge is the signal AFOS tracks, not a polling error.",
-    "es": "En la primera vuelta (12 abr, con 35 candidatos), durante meses el mercado hizo de Rafael López Aliaga el favorito absoluto a ganar (llegó a 40%–55% de probabilidad), pero se desplomó en la recta final y terminó tercero, fuera del balotaje: la mayor divergencia del ciclo entre lo que el dinero valoraba y el voto real. Pasaron Keiko Fujimori (Fuerza Popular, primera con 17,2%) y Roberto Sánchez (Juntos por el Perú, 12,0%). La segunda vuelta (7 jun) dio uno de los resultados más ajustados de la historia peruana: las encuestas marcaban empate técnico, mientras el mercado favorecía a Fujimori. El conteo terminó en un casi empate y Sánchez lo impugnó — pidió anular el voto en el extranjero, apeló actas observadas e incluso recurrió a la CIDH. El JNE rechazó todos los recursos, resolvió las actas observadas y, el 3 de julio, proclamó a Keiko Fujimori presidenta electa (2026–2031) con 50,135% frente al 49,865% de Sánchez, una diferencia de poco más de 49 mil votos; la investidura es el 28 de julio. Las tablas siguientes muestran ambas divergencias: la de primera vuelta (mercado = probabilidad de ganar × encuesta = voto) y la del balotaje (encuesta × mercado × resultado). Donde el mercado y la encuesta divergen está la señal que AFOS sigue, no un error de encuesta."
-  },
-  "rows": [
-    {
-      "candidate": "Keiko Fujimori",
-      "poll_pct": 16,
-      "market_pct": 22,
-      "divergence_pp": 6
-    },
-    {
-      "candidate": "Ricardo Belmont",
-      "poll_pct": 9,
-      "market_pct": 5.1,
-      "divergence_pp": -3.9
-    },
-    {
-      "candidate": "Carlos Álvarez",
-      "poll_pct": 8,
-      "market_pct": 31.6,
-      "divergence_pp": 23.6,
-      "note": {
-        "pt-BR": "O 31,6% foi um spike de 1 dia em mercado fino (~05-06/abr); caiu a ~0% em poucos dias. Ruído transitório, não sinal sustentado.",
-        "en": "The 31.6% was a one-day thin-market spike (~Apr 5-6); it fell to ~0% within days. Transient noise, not a sustained signal.",
-        "es": "El 31,6% fue un pico de 1 día en mercado poco líquido (~5-6 abr); cayó a ~0% en pocos días. Ruido transitorio, no señal sostenida."
-      }
-    },
-    {
-      "candidate": "Roberto Sánchez",
-      "poll_pct": 7,
-      "market_pct": 7.7,
-      "divergence_pp": 0.7
-    },
-    {
-      "candidate": "Rafael López Aliaga",
-      "poll_pct": 7,
-      "market_pct": 15,
-      "divergence_pp": 8
-    }
-  ],
-  "market_snapshot": {
-    "date": "2026-06-07",
-    "total_volume_usd": 106880000,
-    "candidates": [
-      {
-        "candidate": "Keiko Fujimori",
-        "market_pct": 68.5,
-        "volume_usd": 21660000
-      },
-      {
-        "candidate": "Roberto Sánchez",
-        "market_pct": 31.6,
-        "volume_usd": 36492000
-      }
-    ]
-  },
-  "market_trajectory": {
-    "dates": [
-      "2025-12-17",
-      "2025-12-21",
-      "2025-12-25",
-      "2025-12-29",
-      "2026-01-02",
-      "2026-01-06",
-      "2026-01-10",
-      "2026-01-14",
-      "2026-01-18",
-      "2026-01-22",
-      "2026-01-26",
-      "2026-01-30",
-      "2026-02-03",
-      "2026-02-07",
-      "2026-02-11",
-      "2026-02-15",
-      "2026-02-19",
-      "2026-02-23",
-      "2026-02-27",
-      "2026-03-03",
-      "2026-03-07",
-      "2026-03-11",
-      "2026-03-15",
-      "2026-03-19",
-      "2026-03-23",
-      "2026-03-27",
-      "2026-03-31",
-      "2026-04-04",
-      "2026-04-08",
-      "2026-04-12",
-      "2026-04-16",
-      "2026-04-20",
-      "2026-04-24",
-      "2026-04-28",
-      "2026-05-02",
-      "2026-05-06",
-      "2026-05-10",
-      "2026-05-14",
-      "2026-05-18",
-      "2026-05-22",
-      "2026-05-26",
-      "2026-05-30",
-      "2026-06-03",
-      "2026-06-07",
-      "2026-06-10"
-    ],
-    "series": [
-      {
-        "name": "Keiko Fujimori",
-        "pct": [
-          43.5,
-          24.5,
-          22,
-          21.5,
-          21.5,
-          18.5,
-          14.5,
-          16.5,
-          13.5,
-          14,
-          13.5,
-          11.5,
-          11.5,
-          16,
-          13.5,
-          14,
-          14,
-          15.5,
-          14,
-          14.5,
-          14.5,
-          14.5,
-          13,
-          13.5,
-          15.5,
-          15.5,
-          16.5,
-          22,
-          22,
-          31.5,
-          31.5,
-          66.5,
-          66.5,
-          64.5,
-          65.5,
-          64.5,
-          61.5,
-          61.5,
-          64.5,
-          75.5,
-          71.5,
-          78.5,
-          75.5,
-          68.5,
-          91.5
-        ]
-      },
-      {
-        "name": "Rafael López Aliaga",
-        "pct": [
-          20.5,
-          42.5,
-          38.5,
-          46.5,
-          49.5,
-          50,
-          54,
-          50,
-          49,
-          38.5,
-          45,
-          47,
-          46,
-          46,
-          44.5,
-          42.5,
-          45.5,
-          41.5,
-          43.5,
-          42.5,
-          44.5,
-          43,
-          40,
-          40.5,
-          39,
-          35.5,
-          34.5,
-          22.5,
-          17.5,
-          14.5,
-          16.5,
-          8.5,
-          3.1,
-          2,
-          2,
-          2.5,
-          1.7,
-          0.5,
-          0.6,
-          1.1,
-          1.1,
-          1.1,
-          1,
-          0.4,
-          0.1
-        ]
-      },
-      {
-        "name": "Roberto Sánchez",
-        "pct": [
-          42,
-          2.5,
-          2.6,
-          2,
-          1.5,
-          1.1,
-          0.9,
-          1,
-          2.3,
-          2,
-          1.8,
-          1.7,
-          1,
-          1,
-          3.2,
-          3,
-          3.5,
-          3.4,
-          3.7,
-          7.6,
-          6.8,
-          3.7,
-          7.8,
-          6.9,
-          4.2,
-          15.6,
-          9.9,
-          7.7,
-          7.7,
-          8.2,
-          8.2,
-          22.6,
-          24.4,
-          33.2,
-          31.7,
-          33.8,
-          36.1,
-          35.3,
-          35,
-          22.2,
-          28.8,
-          21.9,
-          25,
-          31.6,
-          7.4
-        ]
-      },
-      {
-        "name": "Alfonso López Chau",
-        "pct": [
-          7,
-          3.7,
-          3.8,
-          3.7,
-          2.8,
-          9.3,
-          12.9,
-          11.5,
-          9.5,
-          10.5,
-          9.1,
-          21.8,
-          21.5,
-          23.7,
-          24.2,
-          21.3,
-          16.8,
-          22.2,
-          16.8,
-          20.2,
-          17.9,
-          17.7,
-          16.8,
-          15.8,
-          16,
-          14.7,
-          12.4,
-          12.4,
-          12.4,
-          2.3,
-          2.3,
-          2.3,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      },
-      {
-        "name": "Carlos Álvarez",
-        "pct": [
-          8,
-          3,
-          3,
-          4.2,
-          3.6,
-          5.7,
-          2.8,
-          5.6,
-          8.7,
-          6.7,
-          6.2,
-          3.2,
-          3.5,
-          3.6,
-          5.2,
-          3.9,
-          3.3,
-          4.4,
-          4,
-          5.2,
-          4,
-          3.8,
-          3.1,
-          1.4,
-          5.3,
-          6,
-          6.3,
-          6.3,
-          31.6,
-          12.4,
-          12.4,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      }
-    ]
-  },
-  "context": {
-    "governance": {
-      "political_stability": {
-        "value": 54.7,
-        "year": 2024
-      },
-      "voice_accountability": {
-        "value": 57.6,
-        "year": 2024
-      },
-      "rule_of_law": {
-        "value": 48.3,
-        "year": 2024
-      },
-      "government_effectiveness": {
-        "value": 47.4,
-        "year": 2024
-      },
-      "regulatory_quality": {
-        "value": 56.2,
-        "year": 2024
-      },
-      "control_of_corruption": {
-        "value": 33.3,
-        "year": 2024
-      }
-    },
-    "macro": {
-      "population": {
-        "value": 34217848,
-        "year": 2024
-      },
-      "gdp_usd": {
-        "value": 289221969062.941,
-        "year": 2024
-      },
-      "gdp_per_capita_usd": {
-        "value": 8452.37167056621,
-        "year": 2024
-      },
-      "inflation_pct": {
-        "value": 2.00770739412712,
-        "year": 2024
-      }
-    },
-    "education": {
-      "gov_expenditure_pct_gdp": {
-        "value": 4.35778999328613,
-        "year": 2024
-      },
-      "expected_years_schooling": {
-        "value": 14.99071,
-        "year": 2017
-      }
-    },
-    "sources": {
-      "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
-      "wdi": "https://data.worldbank.org/"
-    },
-    "latest_year": 2024
-  },
-  "rows_runoff": {
-    "date": "2026-06-07",
-    "candidates": [
-      {
-        "candidate": "Keiko Fujimori",
-        "poll_pct": 51.4,
-        "market_pct": 68.5,
-        "result_pct": 50.1
-      },
-      {
-        "candidate": "Roberto Sánchez",
-        "poll_pct": 48.6,
-        "market_pct": 31.6,
-        "result_pct": 49.9
-      }
-    ],
-    "note": {
-      "pt-BR": "Pesquisa e resultado em % de votos válidos (Ipsos, 31/mai, empate técnico); mercado em probabilidade de vitória. As pesquisas cravaram a foto-finish (~51 × 49), enquanto o mercado, a 68,5% para Fujimori, superestimou a folga: acertou a direção (Fujimori venceu), mas errou a calibragem — o resultado foi coin-flip (50,1 × 49,9).",
-      "en": "Poll and result in % of valid votes (Ipsos, May 31, statistical tie); market in win probability. The polls nailed the photo finish (~51 vs 49), while the market, at 68.5% for Fujimori, overstated her cushion: right on direction (Fujimori won), wrong on calibration — the result was a coin-flip (50.1 vs 49.9).",
-      "es": "Encuesta y resultado en % de votos válidos (Ipsos, 31 may, empate técnico); mercado en probabilidad de victoria. Las encuestas clavaron el final de fotografía (~51 vs 49), mientras el mercado, con 68,5% para Fujimori, sobreestimó su ventaja: acertó la dirección (Fujimori ganó), pero erró la calibración — el resultado fue un empate (50,1 vs 49,9)."
-    },
-    "polls": 16
-  },
-  "polls_first_round": 36,
-  "harvard": "https://doi.org/10.7910/DVN/JBBGXV"
+ "iso3": "PER",
+ "hf": "https://huggingface.co/datasets/AFOS-Analytics1/peru-2026-electoral-divergence",
+ "election": {
+ "first_round": "2026-04-12",
+ "runoff": "2026-06-07",
+ "matchup": "Keiko Fujimori × Roberto Sánchez",
+ "status": "completed"
+ },
+ "polls_count": 52,
+ "market_candidates": 16,
+ "latest_poll": {
+ "pollster": "Datum Internacional",
+ "date": "2026-06-06"
+ },
+ "headline": {
+ "pt-BR": "No 1º turno (12/abr, com 35 candidatos), por meses o mercado fez de Rafael López Aliaga o favorito absoluto a vencer (chegou a 40%-55% de probabilidade), mas ele naufragou na reta final e terminou em 3º, fora do 2º turno: a maior divergência do ciclo entre o que o dinheiro precificava e o voto real. Avançaram Keiko Fujimori (Fuerza Popular, 1ª com 17,2%) e Roberto Sánchez (Juntos por el Perú, 12,0%). No 2º turno (07/jun), o Peru teve um dos resultados mais apertados de sua história: as pesquisas davam empate técnico, enquanto o mercado favorecia Fujimori. A apuração terminou num quase-empate e Sánchez contestou, pediu a nulidade do voto no exterior, recorreu das atas observadas e chegou a acionar a CIDH. O JNE rejeitou todos os recursos, resolveu as atas observadas e, em 03/jul, proclamou Keiko Fujimori presidente eleita (2026-2031) com 50,135% contra 49,865% de Sánchez, uma diferença de pouco mais de 49 mil votos; a posse é em 28/jul. As tabelas abaixo mostram as duas divergências: a do 1º turno (mercado = probabilidade de vencer × pesquisa = voto) e a do 2º turno (pesquisa × mercado × resultado). Onde o mercado e a pesquisa divergem está o sinal que a AFOS acompanha, não um erro de pesquisa.",
+ "en": "In the first round (April 12, with 35 candidates), the market had for months made Rafael López Aliaga the runaway favorite to win (peaking at 40%-55% probability), yet he collapsed down the stretch and finished third, out of the runoff: the biggest gap of the cycle between what money priced and the actual vote. Keiko Fujimori (Fuerza Popular, first with 17.2%) and Roberto Sánchez (Juntos por el Perú, 12.0%) advanced. The June 7 runoff produced one of the closest results in Peruvian history: polls showed a dead heat, while the market favored Fujimori. The count ended in a near-tie and Sánchez contested it, seeking to void the overseas vote, appealing observed tally sheets, and even petitioning the Inter-American Commission on Human Rights. The JNE rejected every appeal, resolved the observed tally sheets, and on July 3 proclaimed Keiko Fujimori president-elect (2026-2031) with 50.135% to Sánchez's 49.865%, a margin of just over 49,000 votes; she is inaugurated on July 28. The tables below show both divergences: the first round (market = probability of winning × poll = vote) and the runoff (poll × market × result). Where the market and the poll diverge is the signal AFOS tracks, not a polling error.",
+ "es": "En la primera vuelta (12 abr, con 35 candidatos), durante meses el mercado hizo de Rafael López Aliaga el favorito absoluto a ganar (llegó a 40%-55% de probabilidad), pero se desplomó en la recta final y terminó tercero, fuera del balotaje: la mayor divergencia del ciclo entre lo que el dinero valoraba y el voto real. Pasaron Keiko Fujimori (Fuerza Popular, primera con 17,2%) y Roberto Sánchez (Juntos por el Perú, 12,0%). La segunda vuelta (7 jun) dio uno de los resultados más ajustados de la historia peruana: las encuestas marcaban empate técnico, mientras el mercado favorecía a Fujimori. El conteo terminó en un casi empate y Sánchez lo impugnó, pidió anular el voto en el extranjero, apeló actas observadas e incluso recurrió a la CIDH. El JNE rechazó todos los recursos, resolvió las actas observadas y, el 3 de julio, proclamó a Keiko Fujimori presidenta electa (2026-2031) con 50,135% frente al 49,865% de Sánchez, una diferencia de poco más de 49 mil votos; la investidura es el 28 de julio. Las tablas siguientes muestran ambas divergencias: la de primera vuelta (mercado = probabilidad de ganar × encuesta = voto) y la del balotaje (encuesta × mercado × resultado). Donde el mercado y la encuesta divergen está la señal que AFOS sigue, no un error de encuesta."
+ },
+ "rows": [
+ {
+ "candidate": "Keiko Fujimori",
+ "poll_pct": 16,
+ "market_pct": 22,
+ "divergence_pp": 6
+ },
+ {
+ "candidate": "Ricardo Belmont",
+ "poll_pct": 9,
+ "market_pct": 5.1,
+ "divergence_pp": -3.9
+ },
+ {
+ "candidate": "Carlos Álvarez",
+ "poll_pct": 8,
+ "market_pct": 31.6,
+ "divergence_pp": 23.6,
+ "note": {
+ "pt-BR": "O 31,6% foi um spike de 1 dia em mercado fino (~05-06/abr); caiu a ~0% em poucos dias. Ruído transitório, não sinal sustentado.",
+ "en": "The 31.6% was a one-day thin-market spike (~Apr 5-6); it fell to ~0% within days. Transient noise, not a sustained signal.",
+ "es": "El 31,6% fue un pico de 1 día en mercado poco líquido (~5-6 abr); cayó a ~0% en pocos días. Ruido transitorio, no señal sostenida."
+ }
+ },
+ {
+ "candidate": "Roberto Sánchez",
+ "poll_pct": 7,
+ "market_pct": 7.7,
+ "divergence_pp": 0.7
+ },
+ {
+ "candidate": "Rafael López Aliaga",
+ "poll_pct": 7,
+ "market_pct": 15,
+ "divergence_pp": 8
+ }
+ ],
+ "market_snapshot": {
+ "date": "2026-06-07",
+ "total_volume_usd": 106880000,
+ "candidates": [
+ {
+ "candidate": "Keiko Fujimori",
+ "market_pct": 68.5,
+ "volume_usd": 21660000
+ },
+ {
+ "candidate": "Roberto Sánchez",
+ "market_pct": 31.6,
+ "volume_usd": 36492000
+ }
+ ]
+ },
+ "market_trajectory": {
+ "dates": [
+ "2025-12-17",
+ "2025-12-21",
+ "2025-12-25",
+ "2025-12-29",
+ "2026-01-02",
+ "2026-01-06",
+ "2026-01-10",
+ "2026-01-14",
+ "2026-01-18",
+ "2026-01-22",
+ "2026-01-26",
+ "2026-01-30",
+ "2026-02-03",
+ "2026-02-07",
+ "2026-02-11",
+ "2026-02-15",
+ "2026-02-19",
+ "2026-02-23",
+ "2026-02-27",
+ "2026-03-03",
+ "2026-03-07",
+ "2026-03-11",
+ "2026-03-15",
+ "2026-03-19",
+ "2026-03-23",
+ "2026-03-27",
+ "2026-03-31",
+ "2026-04-04",
+ "2026-04-08",
+ "2026-04-12",
+ "2026-04-16",
+ "2026-04-20",
+ "2026-04-24",
+ "2026-04-28",
+ "2026-05-02",
+ "2026-05-06",
+ "2026-05-10",
+ "2026-05-14",
+ "2026-05-18",
+ "2026-05-22",
+ "2026-05-26",
+ "2026-05-30",
+ "2026-06-03",
+ "2026-06-07",
+ "2026-06-10"
+ ],
+ "series": [
+ {
+ "name": "Keiko Fujimori",
+ "pct": [
+ 43.5,
+ 24.5,
+ 22,
+ 21.5,
+ 21.5,
+ 18.5,
+ 14.5,
+ 16.5,
+ 13.5,
+ 14,
+ 13.5,
+ 11.5,
+ 11.5,
+ 16,
+ 13.5,
+ 14,
+ 14,
+ 15.5,
+ 14,
+ 14.5,
+ 14.5,
+ 14.5,
+ 13,
+ 13.5,
+ 15.5,
+ 15.5,
+ 16.5,
+ 22,
+ 22,
+ 31.5,
+ 31.5,
+ 66.5,
+ 66.5,
+ 64.5,
+ 65.5,
+ 64.5,
+ 61.5,
+ 61.5,
+ 64.5,
+ 75.5,
+ 71.5,
+ 78.5,
+ 75.5,
+ 68.5,
+ 91.5
+ ]
+ },
+ {
+ "name": "Rafael López Aliaga",
+ "pct": [
+ 20.5,
+ 42.5,
+ 38.5,
+ 46.5,
+ 49.5,
+ 50,
+ 54,
+ 50,
+ 49,
+ 38.5,
+ 45,
+ 47,
+ 46,
+ 46,
+ 44.5,
+ 42.5,
+ 45.5,
+ 41.5,
+ 43.5,
+ 42.5,
+ 44.5,
+ 43,
+ 40,
+ 40.5,
+ 39,
+ 35.5,
+ 34.5,
+ 22.5,
+ 17.5,
+ 14.5,
+ 16.5,
+ 8.5,
+ 3.1,
+ 2,
+ 2,
+ 2.5,
+ 1.7,
+ 0.5,
+ 0.6,
+ 1.1,
+ 1.1,
+ 1.1,
+ 1,
+ 0.4,
+ 0.1
+ ]
+ },
+ {
+ "name": "Roberto Sánchez",
+ "pct": [
+ 42,
+ 2.5,
+ 2.6,
+ 2,
+ 1.5,
+ 1.1,
+ 0.9,
+ 1,
+ 2.3,
+ 2,
+ 1.8,
+ 1.7,
+ 1,
+ 1,
+ 3.2,
+ 3,
+ 3.5,
+ 3.4,
+ 3.7,
+ 7.6,
+ 6.8,
+ 3.7,
+ 7.8,
+ 6.9,
+ 4.2,
+ 15.6,
+ 9.9,
+ 7.7,
+ 7.7,
+ 8.2,
+ 8.2,
+ 22.6,
+ 24.4,
+ 33.2,
+ 31.7,
+ 33.8,
+ 36.1,
+ 35.3,
+ 35,
+ 22.2,
+ 28.8,
+ 21.9,
+ 25,
+ 31.6,
+ 7.4
+ ]
+ },
+ {
+ "name": "Alfonso López Chau",
+ "pct": [
+ 7,
+ 3.7,
+ 3.8,
+ 3.7,
+ 2.8,
+ 9.3,
+ 12.9,
+ 11.5,
+ 9.5,
+ 10.5,
+ 9.1,
+ 21.8,
+ 21.5,
+ 23.7,
+ 24.2,
+ 21.3,
+ 16.8,
+ 22.2,
+ 16.8,
+ 20.2,
+ 17.9,
+ 17.7,
+ 16.8,
+ 15.8,
+ 16,
+ 14.7,
+ 12.4,
+ 12.4,
+ 12.4,
+ 2.3,
+ 2.3,
+ 2.3,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1
+ ]
+ },
+ {
+ "name": "Carlos Álvarez",
+ "pct": [
+ 8,
+ 3,
+ 3,
+ 4.2,
+ 3.6,
+ 5.7,
+ 2.8,
+ 5.6,
+ 8.7,
+ 6.7,
+ 6.2,
+ 3.2,
+ 3.5,
+ 3.6,
+ 5.2,
+ 3.9,
+ 3.3,
+ 4.4,
+ 4,
+ 5.2,
+ 4,
+ 3.8,
+ 3.1,
+ 1.4,
+ 5.3,
+ 6,
+ 6.3,
+ 6.3,
+ 31.6,
+ 12.4,
+ 12.4,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1,
+ 0.1
+ ]
+ }
+ ]
+ },
+ "context": {
+ "governance": {
+ "political_stability": {
+ "value": 54.7,
+ "year": 2024
+ },
+ "voice_accountability": {
+ "value": 57.6,
+ "year": 2024
+ },
+ "rule_of_law": {
+ "value": 48.3,
+ "year": 2024
+ },
+ "government_effectiveness": {
+ "value": 47.4,
+ "year": 2024
+ },
+ "regulatory_quality": {
+ "value": 56.2,
+ "year": 2024
+ },
+ "control_of_corruption": {
+ "value": 33.3,
+ "year": 2024
+ }
+ },
+ "macro": {
+ "population": {
+ "value": 34217848,
+ "year": 2024
+ },
+ "gdp_usd": {
+ "value": 289221969062.941,
+ "year": 2024
+ },
+ "gdp_per_capita_usd": {
+ "value": 8452.37167056621,
+ "year": 2024
+ },
+ "inflation_pct": {
+ "value": 2.00770739412712,
+ "year": 2024
+ }
+ },
+ "education": {
+ "gov_expenditure_pct_gdp": {
+ "value": 4.35778999328613,
+ "year": 2024
+ },
+ "expected_years_schooling": {
+ "value": 14.99071,
+ "year": 2017
+ }
+ },
+ "sources": {
+ "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+ "wdi": "https://data.worldbank.org/"
+ },
+ "latest_year": 2024
+ },
+ "rows_runoff": {
+ "date": "2026-06-07",
+ "candidates": [
+ {
+ "candidate": "Keiko Fujimori",
+ "poll_pct": 51.4,
+ "market_pct": 68.5,
+ "result_pct": 50.1
+ },
+ {
+ "candidate": "Roberto Sánchez",
+ "poll_pct": 48.6,
+ "market_pct": 31.6,
+ "result_pct": 49.9
+ }
+ ],
+ "note": {
+ "pt-BR": "Pesquisa e resultado em % de votos válidos (Ipsos, 31/mai, empate técnico); mercado em probabilidade de vitória. As pesquisas cravaram a foto-finish (~51 × 49), enquanto o mercado, a 68,5% para Fujimori, superestimou a folga: acertou a direção (Fujimori venceu), mas errou a calibragem, o resultado foi coin-flip (50,1 × 49,9).",
+ "en": "Poll and result in % of valid votes (Ipsos, May 31, statistical tie); market in win probability. The polls nailed the photo finish (~51 vs 49), while the market, at 68.5% for Fujimori, overstated her cushion: right on direction (Fujimori won), wrong on calibration, the result was a coin-flip (50.1 vs 49.9).",
+ "es": "Encuesta y resultado en % de votos válidos (Ipsos, 31 may, empate técnico); mercado en probabilidad de victoria. Las encuestas clavaron el final de fotografía (~51 vs 49), mientras el mercado, con 68,5% para Fujimori, sobreestimó su ventaja: acertó la dirección (Fujimori ganó), pero erró la calibración, el resultado fue un empate (50,1 vs 49,9)."
+ },
+ "polls": 16
+ },
+ "polls_first_round": 36,
+ "harvard": "https://doi.org/10.7910/DVN/JBBGXV"
 }
