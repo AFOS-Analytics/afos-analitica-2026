@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-04",
+  "reviewedAt": "2026-07-04T20:43:00-03:00",
+  "refetch": {
+    "fetchedAt": "2026-07-04T23:43:30Z",
+    "live": { "lula": 60.50, "flavio": 22.35, "gap": 38.15, "renan": 9.95, "volTotalUSD": "110.1M" },
+    "baseline": { "lula": 60.50, "flavio": 22.40, "gap": 38.10, "renan": 9.95 },
+    "rebaselineGate": "não disparou (deltas < 0,50pp, mercado estável desde /atualizar 20:26)"
+  },
+  "factCheck": {
+    "events": [
+      { "event": "Defeso eleitoral começa 04/Jul", "v1": "0 menções em 7 dailies", "v2": "TSE oficial + Diário Digital, evento calendário 04/Jul", "decision": "incorporar" },
+      { "event": "Comissão do Congresso EUA acusa Moraes", "v1": "0 menções", "v2": "fetch revela report de ABRIL/2026 (Comitê Judiciário/Jim Jordan), recirculado hoje", "decision": "NÃO incorporar (recobrança, evita erro Vorcaro)" },
+      { "event": "Janela partidária fortalece PL", "v1": "0 menções", "v2": "análise Gazeta do Povo 04/Jul", "decision": "incorporar como análise atribuída" },
+      { "event": "Lula critica Flávio (ano da verdade)", "v1": "0 menções", "v2": "declaração política Poder360 04/Jul", "decision": "incorporar atribuído" }
+    ]
+  },
+  "adversarialPass": {
+    "singleSource": "OK (defeso 2 fontes; tarifaço/janela = declaração/análise atribuída)",
+    "numericalErrors": "reconcile-claims OK nas top-lines; flags são sub-mercados fora do polymarketComparison",
+    "invented": "OK (todas fontes reais)",
+    "quotes": "OK ('ano da verdade' e 'é a mulherada que manda' atribuídas a manchete)",
+    "spuriousCausation": "OK (reversão = movimento de mercado, não 'recuou porque defeso')",
+    "criticalVerbs": "OK (defeso 'começa/impõe vedações'; Comissão 'acusou' report de abril, barrada)",
+    "decision": "prosseguir para preview"
+  },
+  "postApprovalFixes": [
+    "Glue-bug de tradução EN/ES (header secundárias colado no bullet Folha) corrigido",
+    "Calendário de pesquisas: protocolos TSE reais (13 linhas, amostra >=1.500 de 21 estaduais na janela), confiança real da base",
+    "Citação Datafolha: link de MARÇO (recobrança, 'cresce e empata', campo 3-5/Mar) trocado pela matéria correta de junho (campo 17-18/Jun, publicada 20/Jun, Lula 47x43), texto e fonte corrigidos nas 3 versões — lição gravada em feedback_afos_daily_poll_citation_recobranca"
+  ]
+}
