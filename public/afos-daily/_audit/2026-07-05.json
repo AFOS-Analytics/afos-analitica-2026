@@ -1,0 +1,33 @@
+{
+  "date": "2026-07-05",
+  "refetchPolymarket": {
+    "fetchedAtBRT": "05/Jul 16:54",
+    "reconciliation": "Lula 60,50%→60,50% (0,00pp); Flávio 22,30%→22,05% (↓0,25pp); gap +38,20→+38,45pp (↑0,25pp); Renan 9,85%→9,85%; vol total USD 110,2M",
+    "gate": "NÃO disparou (nenhum top ≥0,50pp; nenhum recorde rompido; enquadramento inalterado) → mantém baseline do JSON, atualiza vol total"
+  },
+  "factCheckGate": {
+    "eventos": [
+      {"evento": "Datafolha SP (governo): Tarcísio 46% x Haddad 30%, rejeição Haddad 47%, aprovação Tarcísio 45%", "v1": "Datafolha recorre (21) mas rodada SP é publicação de hoje; já registrada no calendário 04/Jul (TSE n=1.608 BR-06481/2026)", "v2": "cross-ref 3 grupos independentes: Folha (Grupo Folha), Estadão (Grupo Estado), O Globo (Grupo Globo, URL direta datada); WebFetch não resolveu (JS redirect/anti-bot)", "decisao": "incorporar (estadual → Seção 2)"},
+      {"evento": "Flávio em audiência nos EUA sobre tarifaço, acusa Lula de querer a taxa por ganho político", "v1": "tarifaço continuidade (14); viagem/audiência EUA é ângulo novo", "v2": "cross-ref O Globo + O Tempo + Diário de Pernambuco + iG", "decisao": "incorporar como fala atribuída de Flávio"}
+    ],
+    "selfCheck": "âncoras cross-ref multi-veículo; sem causação espúria (mercado parado); verbos críticos ok; reconcile-claims OK"
+  },
+  "adversarialPass": {
+    "singleSource": "nenhuma não-trivial",
+    "numericalErrors": "reconcile-claims [OK], batem com JSON ±0,05pp",
+    "fontesInventadas": "verificados 3, todos reais no cache",
+    "quotesLiterais": "nenhuma sem confirmação",
+    "causacaoEspuria": "nenhuma (mercado parado)",
+    "verbosCriticos": "nenhum de prisão/morte/decisão judicial",
+    "decisao": "prosseguir"
+  },
+  "translationReview": {
+    "urlCorruption": "EN Acesse Política (W→U); ES Portal O Dia (Y→Z) + defeso (p→a) — restauradas do PT",
+    "linkDropped": "EN Polymarket 3º-lugar substituído por glossário — restaurado",
+    "semanticError": "EN lede '2º lugar' virou '2º turno' — corrigido para 'second place'",
+    "ptLeak": "ES 'estável'→'estable'; gramática 'sin repreciar'/'ante Renan'",
+    "finalParity": "URLs 0 corrupt/0 missing EN e ES; protocolos 12/12/12"
+  },
+  "model": "claude-opus-4-8[1m]",
+  "approvedBy": "André (explícito)"
+}
