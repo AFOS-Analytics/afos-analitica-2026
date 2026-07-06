@@ -1,0 +1,15 @@
+{
+  "date": "2026-07-06",
+  "refetchPolymarket": {"fetchedAtBRT": "06/Jul 17:28", "reconciliation": "mercado 100% parado vs /atualizar 17:15 (Lula 61,50%, gap +39,05pp, Renan 9,55%, vol USD 110,4M)", "gate": "NÃO disparou → mantém baseline"},
+  "factCheckGate": {
+    "eventos": [
+      {"evento": "PGR pede que a PF ouça Flávio (calúnia contra Lula)", "v1": "calúnia recorre (29/Jun Moraes→PGR) → DESDOBRAMENTO, não caso novo", "v2": "G1 + Estadão + Tribuna do Sertão independentes; WebFetch não resolve", "decisao": "incorporar como desdobramento"},
+      {"evento": "Lula chama Flávio de traidor da pátria", "v1": "traidor novo", "v2": "só Canal MyNews (fonte única)", "decisao": "incorporar ATRIBUÍDO ao MyNews, sem cravar como fato"},
+      {"evento": "Master mira Ciro Nogueira", "v1": "Ciro novo; Master continuidade", "v2": "CNN + O Globo (URL direta datada) independentes", "decisao": "incorporar (novo alvo)"}
+    ],
+    "selfCheck": "âncoras institucionais multi-fonte; traidor atribuído; sem causação espúria (momentum); verbos ok; reconcile OK"
+  },
+  "adversarialPass": {"singleSource": "só traidor (atribuído)", "numericalErrors": "reconcile [OK]", "fontesInventadas": "3 verificadas reais", "quotesLiterais": "traidor/batalha espiritual atribuídos", "causacaoEspuria": "nenhuma", "verbosCriticos": "ouça/inquérito desambiguados", "decisao": "prosseguir"},
+  "translationReview": {"urlCorruption": "EN 3 (MyNews/Estadão/CNN), ES 1 (CNN) — restauradas do PT", "esFooterPtLeak": "Fontes técnicas/citadas + Método + Histórico estavam em PT → corrigidos p/ ES", "precisionVolume": "USD 110M → 110,4M em Daily+dashboard", "finalParity": "URLs 0/0 EN e ES"},
+  "model": "claude-opus-4-8[1m]", "approvedBy": "André (explícito)"
+}
