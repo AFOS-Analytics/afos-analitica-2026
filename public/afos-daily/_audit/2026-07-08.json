@@ -1,0 +1,34 @@
+{
+  "date": "2026-07-08",
+  "generatedAt": "2026-07-08T19:35:00-03:00",
+  "refetch": {
+    "fetchedAt": "2026-07-08T19:35 BRT",
+    "lula": 61.50,
+    "flavio": 22.45,
+    "renan": 9.65,
+    "gap": 39.05,
+    "totalVolumeUSD": 111200000,
+    "rebaselineTriggered": false,
+    "note": "Mercado idêntico ao snapshot do /atualizar (Δ0.00). Sem rebaseline."
+  },
+  "factCheckGate": {
+    "events": [
+      {"evento": "Pesquisa Meio/Ideia nacional (Lula lidera 1T 40,4x32, 2T 45x40)", "verif1": "novidade (0 menções em 7 dailies)", "verif2": "WebSearch: campo 3-6/Jul n=1.500; JOTA/Estadão/CartaCapital/Correio/Brasil de Fato 08/Jul, tipo=evento", "segundaFonte": "múltiplas independentes", "decisao": "incorporar"},
+      {"evento": "Datafolha SP presidencial (1T empate 35x35; 2T SP Flávio 46x43; Lula rejeição 51%)", "verif1": "Datafolha keyword recorrente, mas pesquisa SP 08/Jul é evento novo", "verif2": "WebSearch: campo 01-03/Jul n=1.608; Folha/G1/CNN/Revista Fórum 08/Jul, tipo=evento (estadual)", "segundaFonte": "múltiplas independentes", "decisao": "incorporar (estadual, não nacional)"},
+      {"evento": "Aécio descarta candidatura do PSDB à Presidência (mira 2030)", "verif1": "0 menções em 7 dailies", "verif2": "O Tempo (decisão ~início Jul) + Estadão (cobertura 08/Jul)", "decisao": "incorporar como CONTEXTO (não evento do dia)"},
+      {"evento": "Camilo Santana oficializado líder do PT no Senado", "verif1": "3 menções (nome), oficialização é fato novo", "verif2": "Pleno.News 08/Jul, tipo=evento", "decisao": "incorporar como contexto"},
+      {"evento": "PF confirma origem do vazamento de Vorcaro na CPI do INSS", "verif1": "Vorcaro 19 menções = desdobramento", "verif2": "MundoBA + Farol da Bahia 08/Jul", "decisao": "incorporar como desdobramento"}
+    ],
+    "selfCheck": {"todasAncorasVerif2": true, "semCausacaoEspuria": true, "verbosCriticosDesambiguados": true, "reconcileRodado": true}
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma (todos os eixos com 2+ fontes independentes)",
+    "numericalErrors": "reconcile flagou só números de pesquisa/sub-mercado (Datafolha SP, Meio/Ideia, MDB, threshold 10%) = falsos positivos; odds do mercado batem com o JSON",
+    "fontesInventadas": "verificadas 3 (Correio Braziliense, Revista Fórum, O Tempo) via WebSearch — reais",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "declarado que o mercado NÃO reagiu à pesquisa (digestão, não reação)",
+    "verbosCriticos": "'descartou' (Aécio, datado), 'vazamento' atribuído à PF/veículos, 'oficializado' (Camilo); sem preso/morreu",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {"validateAfosDaily": "exit 0 (warning link-density 62%)", "reconcileClaims": "exit 0 (falsos positivos de pesquisa/sub-mercado)"}
+}
