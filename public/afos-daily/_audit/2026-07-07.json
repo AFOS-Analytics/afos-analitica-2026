@@ -1,0 +1,41 @@
+{
+  "date": "2026-07-07",
+  "generatedAt": "2026-07-07T21:30:00-03:00",
+  "refetch": {
+    "fetchedAt": "2026-07-07T21:30 BRT",
+    "lula": 61.50,
+    "flavio": 22.20,
+    "renan": 9.70,
+    "gap": 39.30,
+    "totalVolumeUSD": 110895357,
+    "rebaselineTriggered": false,
+    "note": "Nenhum gate de rebaseline disparou (movimento <0,50pp vs JSON). Baseline do dashboard mantida; volume total atualizado para USD 110,9M live."
+  },
+  "factCheckGate": {
+    "events": [
+      {"evento": "Flávio testemunha em audiência do USTR nos EUA (tarifaço ajudaria Lula, defende Pix)", "verif1": "continuidade (desdobramento da viagem 05-06/Jul; testemunho é o fato novo)", "verif2": "Estado de Minas 2026-07-07, tipo=evento", "segundaFonte": "BBC + Estadão + Folha (independentes)", "decisao": "incorporar"},
+      {"evento": "Moraes determina PF ouvir Flávio em 10 dias (calúnia contra Lula, post de 03/Jan)", "verif1": "desdobramento (concretiza pedido da PGR de 06/Jul)", "verif2": "Agência Brasil 2026-07-07, tipo=evento (decisão judicial)", "segundaFonte": "Sul21 + G1 + CNN", "decisao": "incorporar (post-alvo 03/Jan, ordem é 07/Jul, NÃO recobrança)"},
+      {"evento": "PF acha indícios de vazamento de Vorcaro via CPI do INSS", "verif1": "desdobramento (novo ângulo do caso Master)", "verif2": "Estadão 2026-07-07, tipo=evento", "segundaFonte": "Portal 98 FM / Times Brasil", "decisao": "incorporar"},
+      {"evento": "Emendas recorde ~R$ 34 bi antes do defeso", "verif1": "novidade (sem histórico recente)", "verif2": "CNN 2026-07-07", "segundaFonte": "Jornal Opção (R$ 33,89 bi) / GP1", "decisao": "incorporar como contexto"}
+    ],
+    "selfCheck": {
+      "todasAncorasVerif2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma (todos os eixos com 2+ fontes independentes)",
+    "numericalErrors": "reconcile exit 0; único flag MDB 11,3% = sub-mercado Senado live não estruturado no JSON (falso positivo)",
+    "fontesInventadas": "verificadas 3 (Estado de Minas, Agência Brasil, Gazeta do Povo) — todas reais",
+    "quotesLiterais": "'pior momento' (Flávio, Folha/Estadão/em.com.br); 'político-eleitoral' (governo, G1) — com fonte",
+    "causacaoEspuria": "declarado explicitamente que o mercado NÃO reagiu (momentum já precificado)",
+    "verbosCriticos": "'determinou que a PF ouça em 10 dias' desambiguado; post 'de 03 de janeiro' data explícita; sem preso/morreu/confessou",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "exit 0 (warning link-density 64%)",
+    "reconcileClaims": "exit 0 (1 warn MDB 11,3% falso positivo)"
+  }
+}
