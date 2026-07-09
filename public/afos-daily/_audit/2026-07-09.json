@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-09",
+  "generatedAt": "2026-07-09T20:00:00-03:00",
+  "refetch": {
+    "fetchedAt": "2026-07-09T20:09 BRT",
+    "lula": 61.50,
+    "flavio_json": 22.95,
+    "flavio_live": 22.55,
+    "renan": 8.25,
+    "caiado": 1.95,
+    "gap_json": 38.55,
+    "gap_live": 38.95,
+    "totalVolumeUSD": 111700000,
+    "rebaselineTriggered": false,
+    "note": "Flávio devolveu 0.40pp do pico intradia (22.95→22.55), sub-limite de 0.50pp; sem cruzar recorde. Mantida baseline do JSON; Daily faz hedge no % do Flávio via 'gap ~+38,5pp'. Renan/Caiado (o movimento do dia) estáveis."
+  },
+  "factCheckGate": {
+    "events": [
+      {"evento": "Aécio desiste / PSDB adota neutralidade", "verif1": "formalização (PSDB confirma 09/Jul)", "verif2": "InfoMoney/Metrópoles/Folha/Brasil247/Revista Fórum 09/Jul, tipo=evento", "segundaFonte": "múltiplas independentes", "decisao": "incorporar"},
+      {"evento": "Federação União-PP avalia neutralidade na eleição nacional", "verif1": "novidade", "verif2": "Estadão + Correio Braziliense 09/Jul", "decisao": "incorporar"},
+      {"evento": "Caiado lidera em Goiás (pesquisa estadual)", "verif1": "novidade", "verif2": "VEJA + Terra/Poder360 09/Jul, tipo=evento (estadual)", "decisao": "incorporar como contexto estadual"},
+      {"evento": "Eurasia eleva chance de reeleição de Lula a 60%", "verif1": "novidade", "verif2": "Diário do Centro do Mundo (1 fonte), tipo=análise/consultoria", "decisao": "incorporar atribuído"},
+      {"evento": "'Nova pesquisa Quaest'", "verif1": "recorrente", "verif2": "WebFetch (no /atualizar) = re-cobertura da Quaest 10/Jun campo 5-8/Jun BR-07661", "decisao": "NÃO incorporar como nova (evita recobrança)"},
+      {"evento": "Movimento de mercado (Renan ↓1,40pp, Caiado ↑)", "verif1": "sem trigger claro", "decisao": "descrever como rearranjo/momentum, NÃO reação"}
+    ],
+    "selfCheck": {"todasAncorasVerif2": true, "semCausacaoEspuria": true, "verbosCriticosDesambiguados": true, "reconcileRodado": true}
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Eurasia 60% = 1 fonte, atribuída como leitura da consultoria; demais com 2+ fontes",
+    "numericalErrors": "reconcile só MDB 11,6% (sub-mercado Senado live) = falso positivo; odds principais batem",
+    "fontesInventadas": "verificadas 3 (InfoMoney/Metrópoles via WebSearch, VEJA/Goiás via cache) — reais",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "rearranjo Renan/Caiado declarado como momentum; pesquisa pró-Caiado é estadual (Goiás)",
+    "verbosCriticos": "'desistiu'/'PSDB confirmou' datado 09/Jul; 'avalia neutralidade'; 'elevou para 60%'; sem preso/morreu",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {"validateAfosDaily": "exit 0 (link-density 60%)", "reconcileClaims": "exit 0 (MDB falso positivo)"}
+}
