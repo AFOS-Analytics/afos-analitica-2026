@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-10",
+  "generatedAt": "2026-07-10T21:57:00-03:00",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Operação da PF contra publicitário ligado a Vorcaro (dossiês/intimidação)",
+        "crossRef": "'Compliance Zero' 0 menções em 7 dailies → novidade",
+        "verify2": "Confirmado por Brasil247, ndmais, Terra, Folha, O Globo; data 10/Jul; tipo evento/desdobramento; Mendonça 'contornos de máfia'; alvo Thiago Miranda",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Milei confirma viagem ao Brasil (25/Jul) para lançamento de Flávio",
+        "crossRef": "'Milei' 0 menções em 7 dailies → novidade",
+        "verify2": "Confirmado por CNN Brasil, Correio Braziliense, Revista Fórum, Gazeta do Povo, Brasil247, Folha, G1; anúncio 10/Jul, viagem 25/Jul; tipo evento (declaração)",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Flávio a Washington / tarifaço (Estadão 'armadilha')",
+        "crossRef": "'tarifaço' 20 menções (06-07/Jul, USTR ~07/Jul) → continuidade",
+        "verify2": "Estadão = análise; CartaCapital contextualiza cenários do governo; tipo análise/desdobramento",
+        "secondSource": "atribuído",
+        "decision": "incorporar como contexto/análise atribuída, sem causação de mercado"
+      },
+      {
+        "event": "Caiado ataca Lula e Flávio ('farinha do mesmo saco')",
+        "crossRef": "declaração de campanha",
+        "verify2": "Poder360, Rádio Itatiaia, Se Ligue Bahia (múltiplas)",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar (fala atribuída)"
+      },
+      {
+        "event": "Aécio desiste da Presidência",
+        "crossRef": "continuidade (08-09/Jul)",
+        "verify2": "n/a",
+        "secondSource": "n/a",
+        "decision": "contexto apenas (não novidade)"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "PF, Milei e Caiado multi-fonte; Estadão/armadilha, O Globo/Alckmin, Renan/'criminoso', PP-União/neutros de veículo único mas atribuídos explicitamente",
+    "numericalErrors": "reconcile-claims rodado; divergências = números de pesquisa (40,4/42,3/44%) e 2º lugar live 76,5% vs JSON 77,0% (snapshot 21:57 vs 19:22, legítimos); sem % inventada",
+    "inventedSources": "checados 3 (O Globo/Alckmin, Brasil247/Mendonça, CNN/Milei) → todos reais com URL verificada",
+    "literalQuotes": "'farinha do mesmo saco' (Caiado, multi-fonte), 'contornos de máfia' (Mendonça, Brasil247/O Globo), 'criminoso' (Renan, Money Times) → confirmados/atribuídos",
+    "spuriousCausation": "reversão da 3ª via = momentum (sem evento-motor); tarifaço/PF explicitamente não ligados a movimento de mercado ('mercado não reprecificou'); nenhuma",
+    "criticalVerbs": "'operação da PF / aprofundou investigação' (não 'prendeu'); Milei 'confirmou vinda' (data futura 25/Jul explícita); Aécio continuidade; OK",
+    "decision": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "exit 0 (1 warning low-link-density, market section)",
+    "reconcileClaims": "só falsos positivos (números de pesquisa + snapshot live)"
+  }
+}
