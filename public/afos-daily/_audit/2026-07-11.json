@@ -1,0 +1,56 @@
+{
+  "date": "2026-07-11",
+  "generatedAt": "2026-07-11T16:25:00-03:00",
+  "factCheckGate": {
+    "candidateEvents": [
+      {
+        "event": "Carta de Jair, lida por Flávio, nomeando-o porta-voz e candidato (crise com Michelle)",
+        "crossRef": "'porta-voz' 0 menções em 7 dailies → novidade",
+        "verify2": "Folha + O Globo + CartaCapital + Poder360 (íntegra), data 11/Jul, tipo=evento; Jair fala em 'momento de deixar de lado as diferenças'",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Caiado diz que candidatura de Flávio está 'afundando' / 'peru de Natal'",
+        "crossRef": "'afundando'/'peru de Natal' 0 menções → novidade",
+        "verify2": "Money Times, BPMoney, O Globo, Muita Informação (múltiplas)",
+        "secondSource": "múltiplas independentes",
+        "decision": "incorporar (declaração atribuída)"
+      },
+      {
+        "event": "Febraban vê extrema gravidade no dossiê contra CEO do Itaú e reforça apoio ao BC",
+        "crossRef": "'Febraban' 0 menções → novidade",
+        "verify2": "Folha (direta), tipo=desdobramento Master",
+        "secondSource": "cache (Jornal do Tocantins)",
+        "decision": "incorporar (desdobramento Master)"
+      },
+      {
+        "event": "Tarifaço (governo vê capítulo final; Flávio China/carne 67%)",
+        "crossRef": "continuidade (tarifaço tema recorrente 06-07/Jul)",
+        "verify2": "Poder360, 93 Notícias; tipo=continuidade/análise atribuída",
+        "secondSource": "atribuído",
+        "decision": "incorporar como contexto atribuído, sem causação de mercado"
+      },
+      {
+        "event": "Milei confirma vinda 25/Jul para lançar Flávio",
+        "crossRef": "continuidade (10/Jul)",
+        "verify2": "CartaCapital (re-cobertura)",
+        "secondSource": "n/a",
+        "decision": "contexto (continuidade)"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "carta, Caiado e Haddad multi-fonte; Febraban (Folha) e China/carne (Poder360+93 Notícias) atribuídos",
+    "numericalErrors": "reconcile = drift live (Flávio 22,95% 16:25 vs JSON 23,15% 15:00, gate não disparou) + números de pesquisa; sem % inventada",
+    "inventedSources": "checados 3 (Folha/carta, O Globo/carta, Folha/Febraban) → reais com URL direta verificada no cache",
+    "literalQuotes": "'porta-voz', 'momento de deixar de lado as diferenças' (O Globo), 'afundando'/'peru de Natal' (Money Times), 'agressão gratuita' (G1), 'extrema gravidade' (Folha) → confirmados/atribuídos",
+    "spuriousCausation": "a carta 'acompanhou' a recuperação, não 'causou'; Renan = momentum; Seção 4 diz que o mercado mal se mexeu apesar do noticiário; nenhuma",
+    "criticalVerbs": "'divulgou carta' (não 'preso'); status legal de Jair não asserido; 'condenou o dossiê' (fala Febraban); OK",
+    "decision": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "exit 0 (1 warning low-link-density, market section)",
+    "reconcileClaims": "só falsos positivos (drift live + números de pesquisa)"
+  }
+}
