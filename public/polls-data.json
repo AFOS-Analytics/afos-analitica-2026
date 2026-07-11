@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-10",
+  "lastUpdate": "2026-07-11",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -612,58 +612,6 @@
         }
       ],
       "source": "BTG/Nexus via JOTA, VEJA, Estadão, Poder360, Metrópoles, GZH 15/Jun"
-    },
-    {
-      "institute": "Quaest/Genial",
-      "date": "2026-06-10",
-      "sample": 2004,
-      "margin": 2,
-      "register": null,
-      "reliability": 5,
-      "method": "Presencial",
-      "fieldDates": "2026-06-05 a 2026-06-08",
-      "note": "Genial/Quaest nacional publicada 10/Jun (G1, Folha, CNN Brasil, Estadão, Poder360, Metrópoles, CartaCapital), o 1º print nacional Tier 1 desde a Vox 05/Jun. 1T Lula 39% × Flávio 29% (gap +10pp); a 3ª via aparece embolada e baixa, com Renan Santos e Ronaldo Caiado em 3%, Aécio Neves e Romeu Zema em 2%. 2T Lula 44% × Flávio 38% (gap +6pp), Lula vence todos os cenários e abre 13pp entre os independentes no 2T. Aprovação do governo melhora a 47% × desaprovação 48% (vinha de 42% × 52% na RTBD 01/Jun), com queda da rejeição entre evangélicos. A pesquisa aponta acerto do governo em associar Flávio a Vorcaro e às ameaças de tarifaço de Trump: 12% dizem que a relação com Vorcaro diminui a vontade de votar nele. Margem ±2pp, 95% de confiança.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 29
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3
-            },
-            {
-              "candidate": "Aécio Neves (PSDB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 38
-        }
-      ],
-      "source": "Genial/Quaest via G1, Folha de S.Paulo, CNN Brasil, Estadão, Poder360, Metrópoles 10/Jun"
     }
   ],
   "approvalData": {
@@ -708,62 +656,62 @@
     "lastUpdate": "2026-07-01"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 10/Jul 19:22 BRT), a 86 dias do 1º turno. Dia de reversão parcial do rearranjo de ontem na 3ª via, com o tarifaço dominando a pauta e sem pesquisa nacional nova com números (BTG/Nexus e Quaest divulgam só na próxima semana, Money Times). Lula recuou de leve a 60.50% (baixa 1.00pp) e Flávio a 22.55% (baixa 0.40pp), estreitando o gap a +37.95pp por queda dos dois. Renan REVERTEU e subiu forte a 10.05% (alta 1.80pp), reconquistando o 3º lugar do 1º turno (61.5%, alta 2.0pp), enquanto Caiado devolveu o ganho a 1.25% (baixa 0.70pp) e recuou no 3º lugar (15.5%, baixa 3.0pp). Jair Bolsonaro subiu a 2.65% (alta 0.80pp). Contexto: tarifaço dos EUA domina, Flávio foi a Washington num movimento que o Estadão vê como armadilha, Caiado atacou Lula e Flávio como 'farinha do mesmo saco' (Poder360), Milei viria lançar Flávio (Revista Fórum); nova operação da PF no caso Master (Compliance Zero). A divergência de NÍVEL persiste (mercado dá Lula +37.95pp x nacionais 2º turno de +5 a +6pp). STF impeach no piso a 2.75%. Volume total do presidencial em USD 111.9M.",
-    "sources": "Polymarket ao vivo (fetchedAt 10/Jul 19:22 BRT). Sem pesquisa presidencial nacional nova com números em 10/Jul: BTG/Nexus e Genial/Quaest divulgam nova rodada presidencial só na próxima semana (Money Times); a 'nova Quaest' que voltou à imprensa (Valor) segue sendo prévia/re-cobertura, não números novos. Base nacional: Meio/Ideia 08/Jul 1T 40.4x32, 2T 45x40; AtlasIntel 01/Jul 2T 48.8x42.3; BTG/Nexus 29/Jun 2T 47x44; Quaest 10/Jun 2T 44x38. Contexto 10/Jul (86 dias): o tarifaço dos EUA dominou a pauta, com Flávio indo a Washington num movimento que o Estadão vê como possível armadilha e Caiado atacando Lula e Flávio como 'farinha do mesmo saco' (Poder360); Milei viria ao Brasil lançar Flávio (Revista Fórum); nova operação da PF (Compliance Zero) mirou publicitário ligado a Vorcaro no caso Master, com Mendonça vendo 'contornos de máfia'. Movimento de mercado: Renan reverte para cima, Caiado devolve o ganho na 3ª via.",
+    "note": "Cruzamento Polymarket (live 11/Jul 15:00 BRT), a 85 dias do 1º turno. Sábado de consolidação da oposição em torno de Flávio e de continuidade do momentum na 3ª via, sem pesquisa nacional nova com números (as nacionais NEXUS, 100 Cidades e Quaest saem entre 13 e 15/Jul). Lula ficou estável em 60.50% e Flávio SEGUIU recuperando a 23.15% (alta 0.60pp), estreitando o gap a +37.35pp. Renan Santos ESTENDEU a alta para o 2º dia a 11.35% (alta 1.30pp), consolidando dois dígitos folgados e a liderança do 3º lugar do 1º turno (61.5%), enquanto Caiado subiu a 1.65% (alta 0.40pp) no vencedor mas recuou no 3º lugar (16.0%) e Jair Bolsonaro recuou a 1.50%. Contexto: Jair divulgou carta lida por Flávio nomeando-o porta-voz e candidato e pedindo união em meio à crise com Michelle (Folha); Caiado disse que a candidatura de Flávio está afundando e o comparou a um peru de Natal que Lula cuida para o 2º turno (O Globo); tarifaço segue (China pode elevar tarifa da carne a 67%, Poder360). A divergência de NÍVEL persiste (mercado dá Lula +37.35pp x nacionais 2º turno de +5 a +6pp). STF impeach no piso a 2.75%. Volume total do presidencial em USD 112.1M.",
+    "sources": "Polymarket ao vivo (fetchedAt 11/Jul 15:00 BRT). Sem pesquisa presidencial nacional nova com números em 11/Jul: as nacionais NEXUS (13/Jul), 100 Cidades (14/Jul) e Genial/Quaest (15/Jul) estão registradas no TSE para a próxima semana. Base nacional: Meio/Ideia 08/Jul 1T 40.4x32, 2T 45x40; AtlasIntel 01/Jul 2T 48.8x42.3; BTG/Nexus 29/Jun 2T 47x44. Contexto 11/Jul (85 dias): Jair Bolsonaro divulgou uma carta lida por Flávio nomeando-o seu porta-voz e candidato e pedindo união em meio à crise com Michelle (Folha); Caiado elevou o tom dizendo que a candidatura de Flávio está afundando e o comparou a um peru de Natal (O Globo, Money Times); o tarifaço seguiu na pauta, com o governo vendo um capítulo final próximo e Flávio alertando que a China pode elevar a tarifa da carne a 67% (Poder360); no caso Master, a Febraban viu gravidade no dossiê contra o CEO do Itaú e reforçou apoio ao BC. Movimento de mercado: Renan estende a alta na 3ª via, Flávio recupera terreno.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "40-49%",
         "polymarket": "60.50%",
         "tendenciaPesquisa": "Meio/Ideia 08/Jul (n=1.500, última nacional): 1T Lula 40.4% x Flávio 32% (gap +8.4pp); 2T Lula 45% x Flávio 40% (gap +5pp); 2T Lula 45% x Michelle 36%. Antes: AtlasIntel 01/Jul 2T 48.8x42.3; BTG/Nexus 29/Jun 2T 47x44 (empate); Datafolha 20/Jun 2T 47x43. Em SP a Datafolha 08/Jul deu empate 35x35 no presidencial (estadual), com rejeição maior de Lula.",
-        "tendenciaPolymarket": "Recua de leve a 60.50% (baixa 1.00pp, vol USD 7.3M). O gap sobre Flávio ESTREITOU a +37.95pp (baixa 0.60pp) por queda dos dois principais, com o movimento do dia concentrado na 3ª via. Sem pesquisa nacional nova com números (BTG/Nexus e Quaest só na próxima semana, Money Times): o dinheiro real mantém Lula com folga grande enquanto as nacionais dão 2º turno de +5 a +6pp (Meio/Ideia 45x40; AtlasIntel 48.8x42.3). No noticiário, Caiado atacou Lula e Flávio no debate do tarifaço (Poder360). A divergência de nível persiste.",
+        "tendenciaPolymarket": "Estável em 60.50% (vol USD 7.3M). O gap sobre Flávio ESTREITOU a +37.35pp (baixa 0.60pp), com Flávio recuperando pelo 2º dia e o movimento concentrado na consolidação da oposição e na 3ª via. Sem pesquisa nacional nova com números (as nacionais saem entre 13 e 15/Jul): o dinheiro real mantém Lula com folga grande enquanto as nacionais dão 2º turno de +5 a +6pp (Meio/Ideia 45x40; AtlasIntel 48.8x42.3). O governo vê um capítulo final do tarifaço nos próximos dias. A divergência de nível persiste.",
         "odds": 60.5,
         "percentage": 46,
-        "lastUpdate": "2026-07-10",
+        "lastUpdate": "2026-07-11",
         "value": 60.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "32-42%",
-        "polymarket": "22.55%",
+        "polymarket": "23.15%",
         "tendenciaPesquisa": "Meio/Ideia 08/Jul (última nacional): 1T 32% (gap -8.4pp), 2T 40% (Lula 45% x 40%). Antes: AtlasIntel 01/Jul 2T 42.3%; BTG/Nexus 29/Jun 2T 44% (empate). Em SP a Datafolha 08/Jul deu empate 35x35 no presidencial (2T SP Flávio 46x43). Rejeição nacional segue a maior do páreo (BTG/Nexus 51%).",
-        "tendenciaPolymarket": "Cede de leve a 22.55% (baixa 0.40pp, vol USD 7.3M) após dois dias de alta, com o gap para Lula em +37.95pp. Recuou também no 2º lugar do 1º turno (77.0%, baixa 2.5pp), mas segue rival certo. No dia, foi a Washington pelo tarifaço num movimento que o Estadão vê como possível armadilha, Caiado o atacou junto com Lula (Poder360) e Milei viria ao Brasil para lançá-lo (Revista Fórum).",
-        "odds": 22.55,
+        "tendenciaPolymarket": "Segue recuperando a 23.15% (alta 0.60pp, vol USD 7.3M), estreitando o gap para Lula a +37.35pp. Mantém a maior fatia do 2º lugar do 1º turno (76.5%). No dia, ganhou um selo de unidade: Jair divulgou uma carta lida por Flávio nomeando-o porta-voz e candidato e pedindo união em meio à crise com Michelle (Folha). Mas Caiado disse que a candidatura está afundando e o comparou a um peru de Natal que Lula cuida para o 2º turno (O Globo). Flávio alertou tarifa da China sobre a carne a 67% (Poder360).",
+        "odds": 23.15,
         "percentage": 37,
-        "lastUpdate": "2026-07-10",
-        "value": 22.55
+        "lastUpdate": "2026-07-11",
+        "value": 23.15
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-4%",
-        "polymarket": "10.05%",
-        "tendenciaPesquisa": "As nacionais o medem a 2-4% no 1º turno (Meio/Ideia 08/Jul 2%; BTG/Nexus 29/Jun e PoderData/Aya 25/Jun 4%; Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 10.05% x pesquisa 2-4%, ainda a mais larga do dashboard.",
-        "tendenciaPolymarket": "REVERTE e sobe forte a 10.05% (alta 1.80pp, vol USD 8.0M), a maior variação individual do dia, revertendo a queda de ontem, e reconquista força no 3º lugar do 1º turno (61.5%, alta 2.0pp), com Caiado recuando (15.5%). Foi reprecificação por momentum na 3ª via, sem evento-motor claro. Mantém a maior divergência do dashboard (mercado 10.05% x pesquisa 2-4%).",
-        "odds": 10.05,
+        "polymarket": "11.35%",
+        "tendenciaPesquisa": "As nacionais o medem a 2-4% no 1º turno (Meio/Ideia 08/Jul 2%; BTG/Nexus 29/Jun e PoderData/Aya 25/Jun 4%; Datafolha 20/Jun 3%; CNT/MDA 16/Jun 2%). Divergência mercado 11.35% x pesquisa 2-4%, a mais larga do dashboard.",
+        "tendenciaPolymarket": "ESTENDE a alta para o 2º dia a 11.35% (alta 1.30pp, vol USD 8.0M), consolidando dois dígitos folgados, e segue líder do 3º lugar do 1º turno (61.5%), bem à frente de Caiado (16.0%). Foi momentum na 3ª via por 2 dias (alta acumulada de 3.10pp), sem evento-motor específico, embalado pelo discurso duro contra Flávio. Mantém a maior divergência do dashboard (mercado 11.35% x pesquisa 2-4%); preço esticado que depende de lastro futuro.",
+        "odds": 11.35,
         "percentage": 4,
-        "lastUpdate": "2026-07-10",
-        "value": 10.05
+        "lastUpdate": "2026-07-11",
+        "value": 11.35
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6.9%",
-        "polymarket": "1.25%",
+        "polymarket": "1.65%",
         "tendenciaPesquisa": "Meio/Ideia 08/Jul: Caiado 4% no 1T, empatado como o melhor da 3ª via. BTG/Nexus 29/Jun 5%; PoderData/Aya 25/Jun 4%, e empata tecnicamente com Lula no 2º turno (Poder360, CNN). Forte em Goiás: uma estadual o dá liderando em casa contra Lula e Flávio (Poder360, VEJA). Sem Flávio, a Futura/Apex dá Caiado 16.5%. Chapa pura do PSD (Kassab vice, Folha, G1).",
-        "tendenciaPolymarket": "DEVOLVE o ganho de ontem: cai a 1.25% (baixa 0.70pp, vol USD 4.8M) e recua no sub-mercado de 3º lugar do 1º turno (15.5%, baixa 3.0pp), cedendo espaço de volta a Renan (61.5%). Fora do mercado, foi protagonista da pauta: atacou Lula e Flávio no debate do tarifaço ('farinha do mesmo saco', Poder360) e virou o 3º presidenciável mais citado nas redes. Melhor da 3ª via na Meio/Ideia (1T 4%) e no cenário sem Flávio (Futura 16.5%); chapa pura do PSD com Kassab vice.",
-        "odds": 1.25,
+        "tendenciaPolymarket": "Sobe a 1.65% (alta 0.40pp, vol USD 4.8M) no vencedor, mas recua no sub-mercado de 3º lugar do 1º turno (16.0%), atrás de Renan (61.5%). Foi dia de ofensiva retórica: elevou o tom contra Flávio dizendo que a candidatura está afundando, que aliados já pulam fora e comparando-o a um peru de Natal que Lula cuida para o 2º turno (O Globo, Money Times, Bnews). Melhor da 3ª via na Meio/Ideia (1T 4%) e no cenário sem Flávio (Futura 16.5%); chapa pura do PSD com Kassab vice.",
+        "odds": 1.65,
         "percentage": 5,
-        "lastUpdate": "2026-07-10",
-        "value": 1.25
+        "lastUpdate": "2026-07-11",
+        "value": 1.65
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "As nacionais não destacam Tarcísio no presidencial nacional (foco reeleição SP). Datafolha SP 05/Jul (estadual): no governo, Tarcísio lidera com 46% x Haddad 30%, com aprovação da gestão a 45% (segurança e saúde empatam como maiores problemas); a Vox SP 30/Mai dera 2T estadual Tarcísio 48.3% x Haddad 36.5%.",
-        "tendenciaPolymarket": "Estável 0.15% no presidencial (anomalia de legado, vol USD 13.4M lifetime, o maior do mercado). Foco na reeleição em SP, onde a Datafolha 05/Jul o dá liderando o governo (46% x Haddad 30%). No Senado por cadeiras, o PL segue líder (87.5%).",
+        "tendenciaPolymarket": "Estável 0.15% no presidencial (anomalia de legado, vol USD 13.4M lifetime, o maior do mercado). Foco na reeleição em SP, onde a Datafolha 05/Jul o dá liderando o governo (46% x Haddad 30%). Trocou ataques com Marina e Tebet na disputa ao Senado por SP. No Senado por cadeiras, o PL segue líder (87.5%).",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-10",
+        "lastUpdate": "2026-07-11",
         "value": "0.15"
       },
       {
@@ -771,24 +719,24 @@
         "pesquisaRange": "2-3%",
         "polymarket": "0.95%",
         "tendenciaPesquisa": "Meio/Ideia 08/Jul: Zema 2.5% no 1T. BTG/Nexus 29/Jun 3%. PoderData/Aya 25/Jun: empata tecnicamente com Lula no 2º turno (CNN). Datafolha 20/Jun: 1T 2%; 2T Lula 48% x Zema 39%. Sem Flávio, a Futura dá Zema 13.3%. Prometeu anunciar o vice (Estadão).",
-        "tendenciaPolymarket": "Sobe de leve a 0.95% (alta 0.05pp, vol USD 4.3M) no mercado de vencedor, seguindo no piso, atrás de Renan e Caiado na 3ª via. A PoderData o pôs em empate técnico com Lula no 2º turno, mas na bipolarização o Novo não encontra tração no vencedor.",
+        "tendenciaPolymarket": "Estável a 0.95% (vol USD 4.3M) no mercado de vencedor, seguindo no piso, atrás de Renan e Caiado na 3ª via. A PoderData o pôs em empate técnico com Lula no 2º turno, mas na bipolarização o Novo não encontra tração no vencedor.",
         "odds": 0.95,
         "percentage": 3,
-        "lastUpdate": "2026-07-10",
+        "lastUpdate": "2026-07-11",
         "value": 0.95
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "0.75%",
-        "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial nacional (foco governo de SP). O PT reforça a aposta em Alckmin para impulsionar Haddad e Lula no interior de SP após a Datafolha (Folha). No governo de SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30%, com Haddad na maior rejeição do estado (47%). Mantém Márcio França (PSB) como vice na chapa de SP.",
+        "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial nacional (foco governo de SP). No dia, rebateu Tarcísio após ataques do governador a Marina e Tebet, chamando de agressão gratuita (Revista Fórum). No governo de SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30%, com Haddad na maior rejeição do estado (47%). Mantém Márcio França (PSB) como vice na chapa de SP.",
         "tendenciaPolymarket": "Estável a 0.75% (vol USD 6.2M) como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; foco em SP (França vice), onde a Datafolha 05/Jul dá Tarcísio 46% x Haddad 30% no governo.",
         "odds": 0.75,
         "percentage": 0,
-        "lastUpdate": "2026-07-10",
+        "lastUpdate": "2026-07-11",
         "value": 0.75
       }
     ],
-    "updatedAt": "2026-07-10T19:22"
+    "updatedAt": "2026-07-11T15:00"
   }
 }
