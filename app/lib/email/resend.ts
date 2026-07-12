@@ -116,16 +116,41 @@ export function sendDailySummary(to: string, data: {
  * Sent in batch by scripts/broadcast-afos-daily.ts after publish flips draft→published.
  * Subject + body localized via `locale` (fallback 'en'). Link points to /{locale}/daily/{date}.
  */
+/**
+ * O `lede` vem do frontmatter do Daily e é MARKDOWN: a PÁGINA o renderiza (glossário,
+ * negrito), mas o e-mail interpolava a string CRUA no HTML. Resultado: o assinante via
+ * "[1º turno](/en/glossary#primeiro-turno)" literal no corpo do e-mail.
+ * Só não estourou no envio de 12/Jul porque os 19 leads eram todos pt-BR (o lede PT não
+ * tem link); o tradutor injeta links de glossário no lede EN/ES, então o primeiro
+ * assinante internacional receberia markdown quebrado.
+ *
+ * Converte para HTML seguro: escapa primeiro (o lede não é conteúdo confiável para HTML),
+ * depois reabilita só negrito e transforma link markdown em texto puro (e-mail de teaser
+ * não deve levar o leitor para âncora de glossário; o CTA é o único link).
+ */
+function ledeToEmailHtml(lede: string): string {
+  const escaped = lede
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return escaped
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')   // [texto](url) -> texto
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    .replace(/(?<!\*)\*(?!\*)([^*]+)\*(?!\*)/g, '$1') // itálico solto -> texto
+    .replace(/—/g, '-');                       // travessão (regra anti-AI da casa)
+}
+
 export function sendDailyTeaser(to: string, data: {
   date: string;
   locale: 'pt-BR' | 'en' | 'es';
   title: string;
   lede: string;
 }, unsubscribeToken?: string): Promise<boolean> {
+  // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
-    'pt-BR': { subject: `AFOS Daily — ${data.date}`, cta: 'Ler o AFOS Daily', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
-    'en':    { subject: `AFOS Daily — ${data.date}`, cta: 'Read AFOS Daily',   why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
-    'es':    { subject: `AFOS Daily — ${data.date}`, cta: 'Leer AFOS Daily',   why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
+    'pt-BR': { subject: `AFOS Daily: ${data.date}`, cta: 'Ler o AFOS Daily', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
+    'en':    { subject: `AFOS Daily: ${data.date}`, cta: 'Read AFOS Daily',   why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
+    'es':    { subject: `AFOS Daily: ${data.date}`, cta: 'Leer AFOS Daily',   why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
   } as const;
   const L = localeLabels[data.locale];
   const url = `${PUBLIC_URL}/${data.locale}/daily/${data.date}`;
@@ -133,7 +158,7 @@ export function sendDailyTeaser(to: string, data: {
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
   <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.5rem;font-weight:700;">${data.title}</h1>
-  <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${data.lede}</p>
+  <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${ledeToEmailHtml(data.lede)}</p>
   <a href="${url}" style="display:inline-block;padding:12px 24px;background-color:#0F52BA;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;">${L.cta} →</a>
   <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0 1rem;" />
   <p style="color:#94a3b8;font-size:0.8rem;margin:0;">${L.why} <a href="${PUBLIC_URL}" style="color:#94a3b8;">afos-analytics.com</a>. <a href="${unsubUrl}" style="color:#94a3b8;">${L.unsubscribe}</a>.</p>
