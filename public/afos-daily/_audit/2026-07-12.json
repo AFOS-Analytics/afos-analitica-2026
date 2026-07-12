@@ -1,0 +1,53 @@
+{
+  "date": "2026-07-12",
+  "generatedAt": "2026-07-12T18:04:00-03:00",
+  "polymarketFetchedAt": "2026-07-12T21:04:52.191Z",
+  "rebaseline": {
+    "triggered": true,
+    "reason": "Gate de ENQUADRAMENTO. Os tres principais nao moveram (Lula 60.50 / Flavio 23.25 / Renan 10.25 / gap +37.25pp, todos delta 0 vs o /atualizar das 17:14), mas Jair Bolsonaro caiu de 2.10% para 1.65% (delta -0.45pp), desfazendo a alta que os JSONs afirmavam. Publicar o Daily com 2.10% seria citar numero que o mercado ja tinha devolvido.",
+    "filesRebaselined": ["public/analysis-criteriosa.json", "public/analysis-data.json", "public/polls-data.json"],
+    "note": "app/components/CandidatesSection.tsx nao tem entrada para Jair Bolsonaro, entao nao foi tocado."
+  },
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "PT pede ao STF revogacao da prisao domiciliar de Jair Bolsonaro por causa da carta lida por Flavio",
+        "crossRef": "'carta' tem 18 mencoes nas 7 dailies (incl. 11/Jul) = CONTINUIDADE. O pedido de revogacao nao aparece = NOVIDADE.",
+        "verification2": "Confirmado em 6+ fontes independentes: Estadao, G1 (Valdo Cruz), Gazeta do Povo, Metropoles, CartaCapital, O Antagonista, Brasil 247, Revista Forum. Tipo = evento.",
+        "factsLocked": "Jair cumpre prisao domiciliar humanitaria, prorrogada por Moraes em 03/Jul/2026, com proibicao de manifestacao em redes sociais direta ou por terceiros. Em 11/Jul Flavio leu carta manuscrita no YouTube. Lindbergh Farias (PT-RJ) protocolou em 11/Jul pedido a Moraes de revogacao + retorno ao regime fechado + multa de R$ 100 mil a Flavio.",
+        "criticalConstraint": "E PEDIDO, NAO DECISAO. O STF nao deliberou. Proibido escrever que a domiciliar foi revogada.",
+        "decision": "incorporar com desambiguacao explicita do verbo critico"
+      },
+      {
+        "event": "Dino manda bloquear R$ 6,15 mi de Eduardo Cunha",
+        "crossRef": "'Cunha' sem mencao nas 7 dailies = NOVIDADE.",
+        "verification2": "G1, O Globo, VEJA, Folha (ancoras) + Pleno.News, Brasil 247, O Antagonista. Tipo = evento.",
+        "factsLocked": "Decisao ASSINADA em 06/Jul, TORNADA PUBLICA em 12/Jul. Valor R$ 6,15 milhoes. Emendas da Comissao de Saude da Camara. Mesmo inquerito (desdobramento da Operacao Transparencia) que bloqueou R$ 119 mi de Valdemar Costa Neto. Cunha e pre-candidato a deputado e nega irregularidades.",
+        "decision": "incorporar datando os dois momentos (assinatura e publicidade)"
+      },
+      {
+        "event": "Lula lanca campanha a reeleicao em Sao Bernardo",
+        "verification2": "CONFLITO DE DATAS entre fontes: Folha (12/Jul) diz 'deve lancar em 16 de agosto'; CNN diz 1 de agosto; InfoMoney diz 2 de agosto. O LOCAL (Sao Bernardo) e consistente em todas.",
+        "decision": "incorporar SOMENTE o local, em modo prospectivo. NAO cravar data."
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. Os 2 eventos de alto impacto tem 2+ fontes independentes cada.",
+    "numericalErrors": "reconcile-claims.ts exit 0. Os 3 alertas sao falsos positivos (regex pegou '33%' dentro de '33,40%', '23%' dentro de '23,25%', '1pp' dentro de '1,10pp').",
+    "inventedSources": "verificadas 3 aleatorias (G1/Dino, O Globo/Cunha, Estadao/Lindbergh): todas com URL direta e materia real datada de 12/Jul.",
+    "literalQuotes": "duas, ambas atribuidas ao veiculo e nao ao AFOS: 'lideranca nao se herda' (CartaCapital) e 'mandato clandestino' (O Globo).",
+    "spuriousCausation": "nenhuma. A queda de Renan (-1,10pp) e descrita explicitamente como saida de faixa por MOMENTUM, sem evento-motor. A oscilacao de Jair (2,10% -> 1,65%) NAO e atribuida ao pedido do Lindbergh, apesar da tentacao narrativa.",
+    "criticalVerbs": "desambiguados: 'prisao domiciliar' (humanitaria, prorrogada 03/Jul, com o escopo da proibicao); 'pediu' e nao 'decidiu' (frase explicita no corpo: 'E um pedido, nao uma decisao: o STF nao deliberou sobre o tema'); 'bloquear' (assinada 06/Jul, publica 12/Jul).",
+    "decision": "prosseguir para preview"
+  },
+  "validators": {
+    "validate-afos-daily": "exit 0. 1 warning: link-density 77% (regra 80%). Os paragrafos sem link sao analise propria (leitura de momentum, divergencias), sem fonte externa a linkar.",
+    "reconcile-claims": "exit 0",
+    "validate-polls-data": "exit 0",
+    "wordCount": "1204 palavras no corpo editorial (alvo 600-900). Acima do alvo, assumido: 3 historias grandes e verificadas no mesmo dia (correcao da Gerp + Cunha/Dino + prisao domiciliar). Duas passadas de corte aplicadas.",
+    "emDashes": "0 (regra anti-AI; os 19 estruturais do template foram trocados por traco comum a pedido do usuario)",
+    "mojibake": "0"
+  },
+  "editorialAngle": "O preco parou e o dado se mexeu. A Gerp/AESP de 08/Jul entra no dashboard apos correcao de um bug de classificacao de escopo na ingestao do TSE (commits 0ed2f13 + efa6b1b) e quebra a unanimidade das nacionais: duas pesquisas publicadas no MESMO dia com vencedores OPOSTOS no 2o turno. O mercado ignorou duas frentes judiciais pesadas."
+}
