@@ -16,6 +16,42 @@ const THROTTLE_MS = 3000
 const FETCH_TIMEOUT_MS = 120000
 const MAX_RETRIES = 3
 
+/**
+ * RESOLVER REDIRECT ANTES DE ARQUIVAR (instalado 12/Jul/2026).
+ *
+ * O Daily cita muitas matérias por URL de REDIRECT, não pela URL da matéria:
+ *   - Google News: https://news.google.com/rss/articles/CBM...  (invólucro)
+ *   - Folha:       https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha...
+ *
+ * O Wayback NÃO arquiva invólucro: não há página ali, só um salto. O resultado é que
+ * o relatório dizia "16/23 arquivados" enquanto a matéria real ficava desprotegida.
+ * Auditoria de 12/Jul: das 11 URLs que faltavam no Wayback, 8 eram redirect do Google
+ * News e 1 era o redirect da Folha. Submetendo a URL DIRETA da Folha, arquivou na hora.
+ *
+ * Ou seja: estávamos preservando o carimbo do correio em vez da carta.
+ */
+async function resolveRedirect(url: string): Promise<string> {
+  // Folha embute a URL final depois de um '*' — extrair sem rede.
+  const folha = url.match(/^https?:\/\/redir\.folha\.com\.br\/.*?\*(https?:\/\/.+)$/)
+  if (folha) return folha[1]
+
+  // Google News: seguir o redirect até a matéria do veículo.
+  if (url.includes('news.google.com/rss/articles/')) {
+    try {
+      const res = await fetch(url, {
+        redirect: 'follow',
+        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36' },
+        signal: AbortSignal.timeout(20000),
+      })
+      const final = res.url
+      if (final && !final.includes('news.google.com')) return final
+    } catch {
+      // rede falhou: cair para a URL original (melhor tentar que pular)
+    }
+  }
+  return url
+}
+
 async function archiveOnce(url: string): Promise<{ ok: boolean; error?: string }> {
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
@@ -71,10 +107,15 @@ async function main() {
   let ok = 0
   let fail = 0
 
+  let resolvidas = 0
+
   for (let i = 0; i < urls.length; i++) {
-    const url = urls[i]
+    const citada = urls[i]
+    // Arquivar a MATÉRIA, não o invólucro de redirect.
+    const url = await resolveRedirect(citada)
+    if (url !== citada) resolvidas++
     const short = url.length > 70 ? url.slice(0, 67) + '...' : url
-    process.stdout.write(`  [${i + 1}/${urls.length}] ${short} `)
+    process.stdout.write(`  [${i + 1}/${urls.length}] ${short}${url !== citada ? ' (resolvida)' : ''} `)
     const result = await archiveUrl(url)
     if (result.ok) {
       console.log(result.attempts > 1 ? `OK (retry ${result.attempts})` : 'OK')
@@ -87,6 +128,7 @@ async function main() {
   }
 
   console.log(`\nResumo: ${ok}/${urls.length} arquivados${fail > 0 ? `, ${fail} falharam` : ''}.`)
+  if (resolvidas > 0) console.log(`${resolvidas} URL(s) de redirect resolvidas para a matéria antes de arquivar.`)
   process.exit(fail > 0 ? 1 : 0)
 }
 

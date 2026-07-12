@@ -31,6 +31,72 @@ async function translateChunk(text: string, locale: TargetLocale, glossary: Arra
   })
 }
 
+/**
+ * GUARD DE INTEGRIDADE DE URL (instalado 12/Jul/2026).
+ *
+ * O modelo CORROMPE tokens base64 dentro das URLs do Google News ao traduzir:
+ * "...RlJRdU85U2N4..." virou "...RlJRdU81S2N4..." (85 -> 81). O link continua com
+ * cara de válido, passa em qualquer validador de formato, e simplesmente NÃO RESOLVE.
+ * É corrupção SILENCIOSA: só quebra quando o leitor clica. Aconteceu em 9 URLs no
+ * Daily de 12/Jul (5 no EN, 4 no ES).
+ *
+ * Também observado: o modelo troca links EXTERNOS por links internos de glossário
+ * (ex.: [Polymarket](/es/glossary#polymarket)) e dropa links inteiros.
+ *
+ * Estratégia: as URLs são dados, não texto a traduzir. Toda URL do texto traduzido é
+ * casada com a do original por prefixo comum mais longo e SUBSTITUÍDA pela original.
+ * URL sem match suficiente aborta a tradução em vez de gravar link quebrado.
+ */
+function enforceUrlIntegrity(translated: string, source: string, locale: string): string {
+  const URL_RE = /https?:\/\/[^\s)\]]+/g
+  const srcUrls = [...new Set(source.match(URL_RE) ?? [])]
+  if (srcUrls.length === 0) return translated
+
+  const lcp = (a: string, b: string) => {
+    let i = 0
+    while (i < a.length && i < b.length && a[i] === b[i]) i++
+    return i
+  }
+
+  let restauradas = 0
+  const orfas: string[] = []
+  const out = translated.replace(URL_RE, (u) => {
+    if (srcUrls.includes(u)) return u
+    let best: string | null = null
+    let bestLen = 0
+    for (const s of srcUrls) {
+      const n = lcp(u, s)
+      if (n > bestLen) { bestLen = n; best = s }
+    }
+    // 40 chars de prefixo comum: suficiente para identificar o host + caminho inicial
+    // sem correr o risco de casar duas URLs distintas do mesmo domínio.
+    if (best && bestLen >= 40) { restauradas++; return best }
+    orfas.push(u)
+    return u
+  })
+
+  if (restauradas > 0) console.log(`   🔧 [${locale}] ${restauradas} URL(s) corrompida(s) pelo modelo, restauradas do original`)
+  if (orfas.length > 0) {
+    console.error(`\n❌ [${locale}] ${orfas.length} URL(s) no texto traduzido não existem no original e não puderam ser casadas:`)
+    orfas.forEach(u => console.error(`   ${u}`))
+    console.error('   O modelo inventou ou destruiu essas URLs. Abortando para não gravar link quebrado.')
+    process.exit(1)
+  }
+
+  // Nenhuma URL do original pode SUMIR na tradução (o modelo dropa links).
+  const outUrls = out.match(URL_RE) ?? []
+  const count = (arr: string[], u: string) => arr.filter(x => x === u).length
+  const srcAll = source.match(URL_RE) ?? []
+  const perdidas = srcUrls.filter(u => count(outUrls, u) < count(srcAll, u))
+  if (perdidas.length > 0) {
+    console.error(`\n⚠️  [${locale}] ${perdidas.length} URL(s) do original aparecem MENOS vezes na tradução (link dropado pelo modelo):`)
+    perdidas.forEach(u => console.error(`   original=${count(srcAll, u)}x  traduzido=${count(outUrls, u)}x  ${u.slice(0, 80)}`))
+    console.error('   Corrigir manualmente antes de publicar (o texto foi gravado mesmo assim).')
+  }
+
+  return out
+}
+
 async function main() {
   const date = process.argv[2]
   const locale = process.argv[3] as TargetLocale
@@ -193,7 +259,18 @@ async function main() {
     }
   }
   yamlLines.push('---', '', '') // 5. Blank line between frontmatter close and content (lede blockquote rendering)
-  const outMd = yamlLines.join('\n') + translatedBody.trim() + '\n'
+  let outMd = yamlLines.join('\n') + translatedBody.trim() + '\n'
+
+  // URLs são DADOS, não texto: restaurar do original qualquer uma que o modelo tenha
+  // corrompido (tokens base64 do Google News) ou trocado por link de glossário.
+  outMd = enforceUrlIntegrity(outMd, raw, locale)
+
+  // O modelo reintroduz travessão mesmo quando o original não tem (regra anti-AI da casa).
+  const travessoes = (outMd.match(/—/g) ?? []).length
+  if (travessoes > 0) {
+    outMd = outMd.replace(/ — /g, ' - ').replace(/—/g, '-')
+    console.log(`   🔧 [${locale}] ${travessoes} travessão(ões) reintroduzido(s) pelo modelo, trocado(s) por traço comum`)
+  }
 
   const outPath = join(DAILY_DIR, `${date}.${locale}.md`)
   writeFileSync(outPath, outMd, 'utf-8')
