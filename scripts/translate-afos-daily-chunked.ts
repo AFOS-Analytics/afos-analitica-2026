@@ -237,6 +237,20 @@ async function main() {
   // 2. Restore ### Calendar heading split into '#\n\n## 📅' or '## 📅'
   translatedBody = translatedBody.replace(/\n#\n+## 📅/g, '\n\n### 📅')
   translatedBody = translatedBody.replace(/^## 📅 /gm, '### 📅 ')
+  // 2b. Fronteira D1→D2: os chunks são concatenados SEM separador (ver a soma acima) e o
+  // modelo não devolve a quebra de linha final. Resultado: o heading em negrito das fontes
+  // secundárias COLA no fim do último bullet de âncora, na mesma linha:
+  //   "- [Folha - ...](url)**Secondary stories (Google News redirect...):**"
+  // Bug visível em produção no Daily de 12/Jul (EN e ES), pego pelo André na tela.
+  //
+  // ⚠️ O padrão genérico /\)(\*\*...\*\*)/ NÃO serve: ele casa prosa legítima do TL;DR,
+  // onde o ')' está DENTRO do negrito ("**empate no 1º turno (36% × 36%)** e **...").
+  // Ali o '**' é FECHAMENTO, não abertura, e a quebra corromperia a frase.
+  // Por isso o match exige o texto do heading de fontes secundárias.
+  translatedBody = translatedBody.replace(
+    /\)(\*\*[^\n*]*(?:secundári|secundaria|Secondary)[^\n*]*\*\*)/gi,
+    ')\n\n$1',
+  )
   // 3. Em-dash auto-replacement: standalone — used as section separator
   translatedBody = translatedBody.replace(/^—$/gm, '---')
   translatedBody = translatedBody.replace(/^—{2,}$/gm, '---')
