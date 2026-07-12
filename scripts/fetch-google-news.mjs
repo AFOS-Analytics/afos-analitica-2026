@@ -61,6 +61,51 @@ const PRESTIGE_FEEDS = [
 const FETCH_TIMEOUT_MS = 30000  // 30s timeout per query — Google News RSS pode estar lento
 const MAX_RETRIES = 2  // 1 retry em transient (429/5xx/network)
 
+// res.text() do Node decodifica SEMPRE como UTF-8, ignorando o charset declarado.
+// A Folha serve os feeds em ISO-8859-1 e manda `content-type: text/xml` SEM charset,
+// com o encoding só na declaração XML. Resultado: todo acento virava U+FFFD e o cache
+// de notícias ficava com "S�o Bernardo"/"Fl�vio", sujando o AFOS Daily.
+// Ordem de deteccao: charset do Content-Type > declaração XML > UTF-8 (default).
+// (Os demais veículos, O Globo/G1/Estadão/Valor/VEJA, já são UTF-8 e passam intactos.)
+async function decodeBody(res) {
+  const buf = Buffer.from(await res.arrayBuffer())
+  const ctCharset = (res.headers.get('content-type') || '').match(/charset=["']?([\w-]+)/i)?.[1]
+  const xmlCharset = buf.subarray(0, 200).toString('latin1').match(/encoding=["']([\w-]+)["']/i)?.[1]
+  const raw = (ctCharset || xmlCharset || 'utf-8').toLowerCase()
+  // ISO-8859-1 e latin1 sao rotulos do mesmo windows-1252 na pratica dos veiculos BR
+  const charset = /^(iso-8859-1|latin1|windows-1252)$/.test(raw) ? 'windows-1252' : raw
+  try {
+    return new TextDecoder(charset).decode(buf)
+  } catch {
+    return buf.toString('utf8')  // charset exotico/desconhecido: nao derrubar o fetch
+  }
+}
+
+// Decodifica entidades XML/HTML em UMA passada. Passada unica de proposito:
+// decodificar &amp; antes das outras faria "&amp;apos;" (que e o literal "&apos;")
+// virar aspa, corrompendo o texto original.
+const NAMED_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+  aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú',
+  atilde: 'ã', otilde: 'õ', ccedil: 'ç', acirc: 'â', ecirc: 'ê', ocirc: 'ô',
+  agrave: 'à', hellip: '…', ldquo: '“', rdquo: '”', lsquo: '‘', rsquo: '’',
+  ndash: '-', mdash: '-',  // travessao vira traco comum (regra anti-AI da casa)
+}
+function decodeEntities(s) {
+  return (s || '').replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (full, code) => {
+    if (code[0] === '#') {
+      const n = code[1] === 'x' || code[1] === 'X'
+        ? parseInt(code.slice(2), 16)
+        : parseInt(code.slice(1), 10)
+      if (!Number.isFinite(n)) return full
+      const ch = String.fromCodePoint(n)
+      return ch === '—' || ch === '–' ? '-' : ch  // sem travessao no cache
+    }
+    const named = NAMED_ENTITIES[code.toLowerCase()]
+    return named !== undefined ? named : full  // entidade desconhecida: deixar literal
+  })
+}
+
 async function fetchRSS(query, attempt = 0) {
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=pt-BR&gl=BR&ceid=BR:pt-419`
   const controller = new AbortController()
@@ -80,7 +125,7 @@ async function fetchRSS(query, attempt = 0) {
       }
       throw new Error(`HTTP ${res.status} for ${query}`)
     }
-    return await res.text()
+    return await decodeBody(res)
   } catch (err) {
     clearTimeout(timeoutId)
     // AbortError (timeout) ou network failure — retry se atrás do limite
@@ -103,7 +148,9 @@ function parseItems(xml) {
     const block = match[1]
 
     // Extrair tag content, lidando com CDATA wrapping. Pega greedy o conteúdo
-    // entre <tag> e </tag>, depois remove <![CDATA[...]]> wrapper se existir.
+    // entre <tag> e </tag>, depois remove <![CDATA[...]]> wrapper se existir,
+    // e decodifica as entidades XML/HTML (senão o titulo chega ao Daily como
+    // "&apos;Bolsonaro e que tem os votos&apos;" e as aspas curvas viram &#8220;).
     const getTag = (tag) => {
       const tagRe = new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`)
       const m = block.match(tagRe)
@@ -112,7 +159,7 @@ function parseItems(xml) {
       // Remove CDATA wrapper se presente (preserva ]]> internos no conteúdo)
       const cdataMatch = content.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/)
       if (cdataMatch) content = cdataMatch[1]
-      return content.trim()
+      return decodeEntities(content.trim())
     }
 
     // Source tag tem atributo url + content text
@@ -124,7 +171,7 @@ function parseItems(xml) {
       let content = sourceMatch[2]
       const cdataMatch = content.match(/^\s*<!\[CDATA\[([\s\S]*?)\]\]>\s*$/)
       if (cdataMatch) content = cdataMatch[1]
-      sourceName = content.trim()
+      sourceName = decodeEntities(content.trim())
     }
 
     items.push({
@@ -167,7 +214,7 @@ async function fetchPrestigeRSSFeed(feedUrl, sourceName, attempt = 0) {
       }
       throw new Error(`HTTP ${res.status} for ${feedUrl}`)
     }
-    return await res.text()
+    return await decodeBody(res)
   } catch (err) {
     clearTimeout(timeoutId)
     if (attempt < MAX_RETRIES && (err.name === 'AbortError' || err.code === 'ECONNRESET')) {
