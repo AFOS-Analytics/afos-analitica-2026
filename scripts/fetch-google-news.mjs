@@ -26,7 +26,12 @@ const QUERIES = [
   { id: 'flavio-lula', q: 'Flávio Bolsonaro Lula 2026 when:1d' },
   { id: 'master-vorcaro', q: 'Banco Master Vorcaro STF INSS CPI when:1d' },
   { id: 'pesquisas', q: 'pesquisa eleitoral Datafolha AtlasIntel Quaest 2026 when:2d' },
-  { id: 'aprovacao', q: 'Lula aprovação rejeição governo redes sociais when:1d' },
+  // A query antiga ('Lula aprovação rejeição governo redes sociais when:1d') devolvia
+  // ZERO itens: o Google News faz AND de todos os termos, e exigir "redes sociais"
+  // junto de aprovação E rejeição, numa janela de 1 dia, nao casava com nada.
+  // Verificado 12/Jul/2026: 0 itens. Com OR e janela de 2d (igual a query 'pesquisas',
+  // porque pauta de aprovação é esparsa e não sai todo dia): 51 itens.
+  { id: 'aprovacao', q: 'Lula (aprovação OR rejeição) governo when:2d' },
   { id: 'estaduais', q: 'governador senado eleição 2026 when:1d' },
 ]
 
@@ -47,7 +52,11 @@ const PRESTIGE_FEEDS = [
   // G1
   { id: 'prestige-g1-politica', source: 'G1', url: 'https://g1.globo.com/rss/g1/politica/' },
   // Estadão (URL via meta tag rss+xml descoberta na home — endpoint Arc CMS)
-  { id: 'prestige-estadao-geral', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/geral/?body=%7B%22layout%22:%22google-news%22%7D' },
+  // REMOVIDO 12/Jul/2026: a seção /geral/ é um feed MORTO. Devolve HTTP 200 com 20
+  // itens, mas TODOS são de 2015 ("Os 88 anos do poeta Paulo Bomfim"). O filtro de
+  // janela descartava os 20 corretamente, e o script avisava "zero items" todo dia,
+  // um falso alarme recorrente. A seção /politica/ do mesmo Arc CMS está saudável.
+  // { id: 'prestige-estadao-geral', source: 'Estadão', url: '.../sections/geral/...' },
   { id: 'prestige-estadao-politica', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/politica/?body=%7B%22layout%22:%22google-news%22%7D' },
   { id: 'prestige-estadao-economia', source: 'Estadão', url: 'https://www.estadao.com.br/arc/outboundfeeds/feeds/rss/sections/economia/?body=%7B%22layout%22:%22google-news%22%7D' },
   // Valor (feed único)
