@@ -29,7 +29,13 @@ async function main() {
     const { scope: newScope, source } = classifyScope(poll.metodologia, poll.planoAmostral, poll.dadoMunicipio)
     if (oldScope === newScope) continue
 
-    const texto = { methodology: poll.metodologia, sampling_plan: poll.planoAmostral, dado_municipio: poll.dadoMunicipio }[source] || poll.metodologia || poll.dadoMunicipio || ''
+    // `source` pode ser 'none' (nenhuma fonte decidiu); nesse caso caímos no primeiro texto disponível.
+    const porFonte: Record<string, string> = {
+      methodology: poll.metodologia,
+      sampling_plan: poll.planoAmostral,
+      dado_municipio: poll.dadoMunicipio,
+    }
+    const texto = porFonte[source] || poll.metodologia || poll.dadoMunicipio || ''
     console.log(`\n${oldScope} -> ${newScope}   ${poll.protocolo}  ${poll.instituto}`)
     console.log(`   n=${poll.amostra}  div=${poll.divulgacao}  via=${source}`)
     console.log(`   universo: "${texto.replace(/\s+/g, ' ').slice(0, 180)}"`)
