@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-11",
+  "lastUpdate": "2026-07-12",
   "lastSyncedAt": "2026-05-31T18:40:00-03:00",
   "institutes": [
     {
@@ -182,6 +182,111 @@
         }
       ],
       "source": "Meio/Ideia via JOTA, Estadão, CartaCapital, Correio Braziliense, Brasil de Fato, Poder360, Revista Fórum 08/Jul"
+    },
+    {
+      "institute": "Gerp",
+      "date": "2026-07-08",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-03067/2026",
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "2026-07-03 a 2026-07-07",
+      "note": "Gerp/AESP nacional publicada 08/Jul (Poder360, Gazeta do Povo, Exame, CNN Brasil, CartaCapital). Empate no 1T: Lula 36% x Flávio 36%; Caiado 4%, Renan Santos e Zema 2%, Cury e Joaquim Barbosa 1%; não sabe 11%, nenhum deles 6%. No 2T, Flávio 45% x Lula 42% (Flávio à frente, mas dentro da margem de 2,2pp). Lula vence os demais cenários de 2T (Michelle 45x41, Caiado 40x36, Zema 41x36, Damares 41x34, Pontes 42x34, Marinho 41x32, Renan 41x30). Campo 3-7/Jul, n=2.000, margem 2,2pp, 95% de confiança, contratada pela AESP (Associação das Empresas de Rádio e Televisão de SP), custo R$ 34.899. Protocolo TSE BR-03067/2026. CONTEXTO CRÍTICO: publicada no MESMO DIA que a Meio/Ideia (BR-05628/2026), com vencedor OPOSTO no 2º turno (Ideia dá Lula 45x40; Gerp dá Flávio 45x42). A Gerp mantém o padrão de OUTLIER já registrado na rodada de 24/Jun: é consistentemente mais favorável a Flávio que o consenso Tier 1 (Datafolha, Indexa, BTG/Nexus, CNT/MDA), todas com Lula confortável. Instituto de menor porte, reliability 3. DIVERGÊNCIA MÁXIMA COM O MERCADO: enquanto a Gerp tem empate no 1T e Flávio ganhando o 2T, o Polymarket precifica Lula 60,5% x Flávio 23,25% (gap 37,25pp em 12/Jul). É o maior descolamento mercado x pesquisa do ciclo até aqui. Entrada adicionada em 12/Jul após auditoria de escopo: o registro veio do TSE sem texto de metodologia (scope_source=none), foi classificado como unknown e ficou fora do corte nacional; escopo NACIONAL confirmado em 2 primárias independentes (Poder360 + Gazeta do Povo).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 36
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 36
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            },
+            {
+              "candidate": "Joaquim Barbosa (DC)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45
+        },
+        {
+          "matchup": "Lula vs Michelle",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Michelle Bolsonaro",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 40,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 36
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Romeu Zema",
+          "percent2": 36
+        },
+        {
+          "matchup": "Lula vs Damares",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Damares Alves",
+          "percent2": 34
+        },
+        {
+          "matchup": "Lula vs Marcos Pontes",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Marcos Pontes",
+          "percent2": 34
+        },
+        {
+          "matchup": "Lula vs Rogério Marinho",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Rogério Marinho",
+          "percent2": 32
+        },
+        {
+          "matchup": "Lula vs Renan Santos",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Renan Santos",
+          "percent2": 30
+        }
+      ],
+      "source": "Gerp/AESP via Poder360, Gazeta do Povo, Exame, CNN Brasil, CartaCapital 08/Jul"
     },
     {
       "institute": "AtlasIntel",

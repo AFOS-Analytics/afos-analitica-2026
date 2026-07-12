@@ -51,7 +51,13 @@ export async function fetchTSEPolls(year: number = CURRENT_YEAR): Promise<TSEPol
       const brasilFile = zip.file(`pesquisa_eleitoral_${year}_BRASIL.csv`)
       if (!brasilFile) throw new Error('BRASIL.csv not found in ZIP')
 
-      return parseCSV(await brasilFile.async('text'))
+      // O CSV do TSE é latin-1. Decodificar como UTF-8 (default do JSZip em 'text')
+      // corrompe todo acento, e o classificador de escopo perde os sinais acentuados
+      // de universo nacional ("todas as regiões do Brasil", "âmbito nacional").
+      // Estadual sobrevive porque seus sinais são sem acento. Resultado: nacionais
+      // viravam scope=unknown e sumiam do dashboard (incidente Gerp BR-03067/2026).
+      const bytes = await brasilFile.async('uint8array')
+      return parseCSV(new TextDecoder('windows-1252').decode(bytes))
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
       // Fail-fast: 4xx (URL errada) ou ZIP estrutural — não adianta retentar
