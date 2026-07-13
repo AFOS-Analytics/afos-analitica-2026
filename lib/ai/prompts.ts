@@ -90,11 +90,16 @@ CRITICAL RULES:
    - Spanish (es): "28 de abril", "27 de abril de 2026", "22 de enero"
    - Source uses Brazilian conventions like "27/Abr", "22 de abril de 2026" — convert these.
 
-4. **Preserve inline link URLs identically.** Translate only the [text] portion of [text](url). Never invent or change URLs.
+4. **Link targets are OPAQUE TOKENS. Copy them verbatim.** Every link target in the input has been replaced by a token of the form ⟦U0⟧, ⟦U1⟧, ⟦U2⟧… You will NOT see any real URL. Rules, no exceptions:
+   - Copy each token EXACTLY as-is, character for character: [texto](⟦U3⟧) becomes [translated text](⟦U3⟧).
+   - NEVER replace a token with a URL, a path, or a glossary anchor. A token is not a placeholder to fill in; it is the final value.
+   - NEVER delete a link that has a token. Every ⟦Un⟧ in the input must appear exactly once in your output.
+   - NEVER write a URL yourself (no http://, no https://). If you emit a URL, the output is rejected.
+   - Translate only the [text] portion.
 
 5. **Brazilian glossary terms — KEEP IN PORTUGUESE and link to glossary.** For each occurrence of these terms, use the exact replacement shown:
 ${glossaryRules}
-   **CRITICAL — Apply ONLY to plain text occurrences (bare terms NOT inside any markdown link).** NEVER inject a glossary link inside an existing markdown link of the form [text](url), even if the glossary term appears in the link's [text] portion. Markdown does not support nested links — output like [outer text [Term](glossary-url)](outer-url) breaks the parser, exposing raw URLs to readers. If a glossary term appears anywhere inside an existing [...](...), leave it as plain text within that link. Examples:
+   **CRITICAL — Apply ONLY to plain text occurrences (bare terms NOT inside any markdown link).** In particular, if a term already sits inside a link with a token target, such as [TSE](⟦U5⟧), LEAVE IT ALONE: do not swap ⟦U5⟧ for a glossary anchor. That link points to a primary source and the glossary anchor would destroy it. NEVER inject a glossary link inside an existing markdown link of the form [text](url), even if the glossary term appears in the link's [text] portion. Markdown does not support nested links — output like [outer text [Term](glossary-url)](outer-url) breaks the parser, exposing raw URLs to readers. If a glossary term appears anywhere inside an existing [...](...), leave it as plain text within that link. Examples:
    - Correct (term in plain text): "Lula nomeou ministro do STF" becomes "Lula nomeou ministro do [STF](/${targetLocale}/glossary#stf)".
    - Wrong (nested link in body): "[reabrindo a tensão entre STF e Congresso](https://example.com/article)" must NOT become "[reabrindo a tensão entre [STF](/en/glossary#stf) e Congresso](https://example.com/article)" — leave STF as plain text inside the existing link.
    - Wrong (nested link in source list/footer): "[O Globo — PL formaliza chapa](https://...)" must NOT become "[O Globo — [PL](/en/glossary#pl) formaliza chapa](https://...)" — same rule applies in source citation lists.

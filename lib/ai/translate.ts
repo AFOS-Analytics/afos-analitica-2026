@@ -6,6 +6,7 @@
  */
 
 import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt, afosDailyTranslationPrompt } from './prompts'
+import { shieldLinks, unshieldLinks, stripNestedGlossaryLinks } from './link-shield'
 import { createHash } from 'crypto'
 import { prisma } from '../db'
 
@@ -189,12 +190,19 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
     console.warn('[translate] Injection pattern detected in input, proceeding with flag')
   }
 
+  // ── LINK SHIELD ─────────────────────────────────────────────────────────────
+  // O modelo NÃO vê URL. Todo destino de link vira token opaco (⟦U0⟧, ⟦U1⟧…) antes
+  // da chamada e é restaurado do original depois. Sem isso o modelo corrompe tokens
+  // base64, sequestra link externo para âncora de glossário, aninha link e derruba
+  // link, tudo em silêncio. Ver lib/ai/link-shield.ts para o histórico completo.
+  const { masked: shieldedText, links: shieldedLinks } = shieldLinks(req.sourceText)
+
   const userPrompt =
     req.type === 'ui'
-      ? uiTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
+      ? uiTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
       : req.type === 'afos-daily'
-        ? afosDailyTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale, req.glossaryEntries ?? [])
-        : editorialTranslationPrompt(req.sourceText, req.sourceLocale, req.targetLocale)
+        ? afosDailyTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale, req.glossaryEntries ?? [])
+        : editorialTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
 
   // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
   const maxTokens = req.type === 'afos-daily' ? 8192 : 2048
@@ -226,15 +234,37 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
 
   if (!result.text) throw new Error('empty_translation')
 
-  // Defense-in-depth: ainda que o prompt PROIBA glossary tags dentro de markdown
-  // links (rule 5 em prompts.ts), Haiku pode slip. Pós-resposta, removemos
-  // qualquer [term](/lang/glossary#anchor) que esteja aninhado dentro de outro
-  // [...](url) — mantém só o texto do termo. Loop até estável (múltiplos
-  // aninhados na mesma linha precisam de iteração).
-  let cleanText = result.text
-  if (req.type === 'afos-daily') {
-    cleanText = stripNestedGlossaryTags(cleanText)
+  // ── RESTAURAÇÃO DOS LINKS + GATE DE ADULTERAÇÃO ─────────────────────────────
+  // Restaura os destinos originais e reporta toda tentativa do modelo de mexer neles.
+  // Link perdido ou URL inventada ABORTAM: melhor falhar alto do que publicar link
+  // morto ou fabricado.
+  const { text: unshielded, report } = unshieldLinks(result.text, shieldedLinks)
+
+  if (report.repaired.length > 0) {
+    for (const r of report.repaired) {
+      console.warn(
+        `[link-shield] SEQUESTRO revertido: âncora "${r.anchor}" teve o destino trocado ` +
+        `por "${r.hijackedBy}"; restaurado para "${r.url}"`,
+      )
+    }
   }
+  if (report.hallucinated.length > 0) {
+    throw new Error(
+      `link_hallucinated: o modelo escreveu ${report.hallucinated.length} URL(s) que não existem no original ` +
+      `(ele não viu URL nenhuma): ${report.hallucinated.join(', ')}`,
+    )
+  }
+  if (report.unrecoverable.length > 0) {
+    throw new Error(
+      `link_lost: o modelo destruiu ${report.unrecoverable.length} link(s) sem possibilidade de reparo: ` +
+      report.unrecoverable.map((l) => `[${l.anchor}](${l.url})`).join(', '),
+    )
+  }
+
+  // Aninhamento de glossário dentro de outro link quebra o parser markdown.
+  // Agora aplicado a TODOS os tipos (antes só a afos-daily), porque o Tradeoff
+  // sofre do mesmo defeito.
+  const cleanText = stripNestedGlossaryLinks(unshielded)
 
   setCache(key, cleanText)
 
@@ -247,35 +277,4 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
     provider: config.provider,
     meta: { tokensIn: result.tokensIn, tokensOut: result.tokensOut, latencyMs },
   }
-}
-
-const GLOSSARY_TAG_RE = /\[([^\[\]]+)\]\(\/(?:en|es|pt-BR)\/glossary#[^)]+\)/g
-
-/**
- * Remove glossary tags `[term](/lang/glossary#anchor)` aninhadas dentro de outro
- * markdown link `[outer](url)`. Tags standalone são preservadas.
- *
- * Estratégia: para cada match de glossary tag, conta `[` não fechados no texto
- * anterior. Se depth > 0, está aninhada (strip → mantém só o term). Se depth = 0,
- * standalone (preservar). Funciona corretamente com múltiplos tags no mesmo outer
- * link, ao contrário de regex puro.
- */
-function stripNestedGlossaryTags(text: string): string {
-  let result = ''
-  let lastIdx = 0
-  let match: RegExpExecArray | null
-  GLOSSARY_TAG_RE.lastIndex = 0
-  while ((match = GLOSSARY_TAG_RE.exec(text)) !== null) {
-    const before = text.slice(0, match.index)
-    let depth = 0
-    for (let i = 0; i < before.length; i++) {
-      if (before[i] === '[') depth++
-      else if (before[i] === ']' && depth > 0) depth--
-    }
-    result += text.slice(lastIdx, match.index)
-    result += depth > 0 ? match[1] : match[0]
-    lastIdx = match.index + match[0].length
-  }
-  result += text.slice(lastIdx)
-  return result
 }
