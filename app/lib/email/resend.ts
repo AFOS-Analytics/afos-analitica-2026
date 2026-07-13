@@ -180,16 +180,29 @@ export function sendTradeoffTeaser(to: string, data: {
   sinalDaSemana: string;
   issueNumber: number;
 }, unsubscribeToken?: string): Promise<boolean> {
+  // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
-    'pt-BR': { subject: `AFOS Tradeoff — Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
-    'en':    { subject: `AFOS Tradeoff — Issue #${data.issueNumber}`,  cta: 'Read the Tradeoff', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
-    'es':    { subject: `AFOS Tradeoff — Edición №${data.issueNumber}`, cta: 'Leer el Tradeoff', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
+    'pt-BR': { subject: `AFOS Tradeoff: Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
+    'en':    { subject: `AFOS Tradeoff: Issue №${data.issueNumber}`,  cta: 'Read the Tradeoff', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
+    'es':    { subject: `AFOS Tradeoff: Edición №${data.issueNumber}`, cta: 'Leer el Tradeoff', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
   } as const;
   const L = localeLabels[data.locale];
   const url = `${PUBLIC_URL}/${data.locale}/tradeoff/${data.date}`;
   const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
-  // Strip markdown bold/links from sinalDaSemana for plain HTML preview
-  const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 400);
+  // O sinalDaSemana é MARKDOWN e vai para dentro de HTML: escapar ANTES (não é conteúdo
+  // confiável para interpolar), depois reduzir a texto puro (link vira texto: num teaser
+  // o CTA deve ser o único link) e cortar em fronteira de palavra, não no meio dela.
+  const sinalPlain = (() => {
+    const escaped = data.sinalDaSemana
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const flat = escaped
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/—/g, '-');
+    if (flat.length <= 400) return flat;
+    const corte = flat.slice(0, 400);
+    return corte.slice(0, corte.lastIndexOf(' ')) + '…';
+  })();
 
   const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
   <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.5rem;font-weight:700;">${data.title}</h1>
