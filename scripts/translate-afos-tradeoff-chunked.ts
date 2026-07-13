@@ -95,13 +95,63 @@ function localizeMonthAbbrInline(text: string, locale: TargetLocale): string {
   return text
 }
 
+// Separador '·' (igual ao título PT: "AFOS Tradeoff · Edição №N · Semana de ...").
+// Antes usava travessão, o que quebrava a regra anti-AI da casa E divergia do PT.
 function buildTitle(date: string, issueNumber: number, weekStart: string, weekEnd: string, locale: TargetLocale): string {
   const [, , dStart] = weekStart.split('-').map(Number)
   const [yEnd, mEnd, dEnd] = weekEnd.split('-').map(Number)
   if (locale === 'en') {
-    return `AFOS Tradeoff — Issue #${issueNumber} · Week of ${MONTHS.en[mEnd - 1]} ${dStart}-${dEnd}, ${yEnd}`
+    return `AFOS Tradeoff · Issue №${issueNumber} · Week of ${MONTHS.en[mEnd - 1]} ${dStart}-${dEnd}, ${yEnd}`
   }
-  return `AFOS Tradeoff — Edición №${issueNumber} · Semana del ${dStart}-${dEnd} de ${MONTHS.es[mEnd - 1]} de ${yEnd}`
+  return `AFOS Tradeoff · Edición №${issueNumber} · Semana del ${dStart}-${dEnd} de ${MONTHS.es[mEnd - 1]} de ${yEnd}`
+}
+
+/**
+ * GUARD DE INTEGRIDADE DE URL (instalado 12/Jul/2026, mesma família do bug do Daily).
+ *
+ * O comentário do topo diz que as DATAS não são enviadas ao tradutor, mas as URLs SÃO.
+ * O modelo corrompe caracteres dentro de tokens de URL (visto no Daily: um token base64
+ * do Google News teve "dU85" trocado por "dU81"). O link continua com cara de válido e
+ * NÃO resolve: quebra só quando o leitor clica. Aqui as URLs são de veículos e do
+ * Polymarket/TSE, mas o risco é o mesmo.
+ *
+ * URLs são DADO, não texto a traduzir: toda URL do traduzido é casada com a do original
+ * por prefixo comum e substituída pela original. Órfã aborta em vez de gravar link morto.
+ */
+function enforceUrlIntegrity(translated: string, source: string, locale: string): string {
+  const URL_RE = /https?:\/\/[^\s)\]"']+/g
+  const srcUrls = [...new Set(source.match(URL_RE) ?? [])]
+  if (srcUrls.length === 0) return translated
+
+  const lcp = (a: string, b: string) => {
+    let i = 0
+    while (i < a.length && i < b.length && a[i] === b[i]) i++
+    return i
+  }
+
+  let restauradas = 0
+  const orfas: string[] = []
+  const out = translated.replace(URL_RE, (u) => {
+    if (srcUrls.includes(u)) return u
+    let best: string | null = null
+    let bestLen = 0
+    for (const s of srcUrls) {
+      const n = lcp(u, s)
+      if (n > bestLen) { bestLen = n; best = s }
+    }
+    if (best && bestLen >= 40) { restauradas++; return best }
+    orfas.push(u)
+    return u
+  })
+
+  if (restauradas > 0) console.log(`   🔧 [${locale}] ${restauradas} URL(s) corrompida(s) pelo modelo, restauradas do original`)
+  if (orfas.length > 0) {
+    console.error(`\n❌ [${locale}] ${orfas.length} URL(s) do traduzido não existem no original:`)
+    orfas.forEach(u => console.error(`   ${u}`))
+    console.error('   Abortando para não gravar link quebrado.')
+    process.exit(1)
+  }
+  return out
 }
 
 interface TranslateContext {
@@ -366,7 +416,18 @@ async function main() {
   if (trackRecord) outFm.trackRecord = trackRecord
   if (additionalReading) outFm.additionalReading = additionalReading
 
-  const outMd = matter.stringify(translatedBody, outFm)
+  let outMd = matter.stringify(translatedBody, outFm)
+
+  // URLs são DADO: restaurar do original qualquer uma que o modelo tenha corrompido.
+  outMd = enforceUrlIntegrity(outMd, raw, locale)
+
+  // O modelo reintroduz travessão mesmo quando o original não tem (regra anti-AI).
+  const travessoes = (outMd.match(/—/g) ?? []).length
+  if (travessoes > 0) {
+    outMd = outMd.replace(/ — /g, ' - ').replace(/—/g, '-')
+    console.log(`   🔧 [${locale}] ${travessoes} travessão(ões) reintroduzido(s) pelo modelo, trocado(s) por traço comum`)
+  }
+
   const outPath = join(TRADEOFF_DIR, `${date}.${locale}.md`)
   writeFileSync(outPath, outMd, 'utf-8')
   console.log(`   ✅ ${outPath} written (${outMd.length} chars)`)
