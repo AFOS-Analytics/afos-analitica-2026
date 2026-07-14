@@ -1,13 +1,13 @@
 {
-  "updatedAt": "13/07/2026, 21:32",
-  "subtitle": "ATUALIZAÇÃO 13/Jul 21:32 BRT D+60. A 83 dias do 1º turno, o dia teve pesquisa nova E decisão do STF, e o mercado se moveu pela SEGUNDA, não pela primeira. PESQUISA: a BTG/Nexus (n=2.003, BR-07981/2026, campo 10-12/Jul, margem 2pp) deu 1º turno Lula 40% (queda de 2pp ante os 42% de 29/Jun) x Flávio 34% (estável), e 2º turno Lula 47% x Flávio 44%, EMPATE TÉCNICO dentro da margem. É a primeira das quatro nacionais da semana e CONFIRMA o estreitamento que a Gerp de 08/Jul sinalizou, agora vindo de instituto do primeiro escalão e não de outlier. Dado pouco citado: o voto decidido caiu de 74% para 70%. STF: Moraes suspendeu por 90 DIAS as visitas de Flávio a Jair Bolsonaro, por ele ter usado o direito de visita para divulgar a carta política de 11/Jul. Flávio fica barrado até meados de outubro, o que cobre a reta final da campanha, e a defesa tem 48h para explicar. A prisão domiciliar NÃO foi revogada. MERCADO: Lula estável em 60,50% (vol USD 7,3M), Flávio a 23,85% (alta 0,60pp), gap em +36,65pp (baixa 0,60pp). O movimento forte foi na SUCESSÃO FAMILIAR: Michelle Bolsonaro DOBROU para 2,25% (alta 1,20pp) e Jair caiu a 1,05% (baixa 0,60pp), no mesmo dia em que o STF cortou o contato entre pai e filho. Flávio saltou no 2º lugar do 1º turno para 83,50% (alta 5,0pp). Renan ampliou o 3º lugar para 70,50%. STF impeach segue no piso a 2,75%. Volume total do presidencial em USD 112,5M. Faltam três nacionais: 100 Cidades 14/Jul, Quaest 15/Jul e PoderData 16/Jul.",
+  "updatedAt": "14/07/2026, 14:18",
+  "subtitle": "ATUALIZAÇÃO 14/Jul 14:18 BRT D+61. A 82 dias do 1º turno, a TERCEIRA pesquisa nacional seguida apontou estreitamento e o mercado não se moveu um centavo. PESQUISA: a Futura/Apex (n=2.000, BR-07294/2026, campo 07-11/Jul, margem 2,2pp) deu 2º turno Lula 46,3% x Flávio 46,1%, diferença de 0,2 ponto, o empate mais apertado do ciclo. No 1º turno, Lula 40,1% x Flávio 36,8%, com os intervalos se sobrepondo. Vem depois da Gerp de 08/Jul (Flávio vencendo o returno) e da BTG/Nexus de 13/Jul (47x44, empate técnico). MERCADO: Lula parado em 60,50% pelo quinto dia (vol USD 7,3M), Flávio 24,85% (alta 1,00pp, vol USD 7,4M), Renan 10,15%. Gap de +35,65pp, o mais estreito em duas semanas. Volume total acumulado no presidencial em USD 112,8M. IMPRENSA: Flávio mudou de estratégia após o veto às visitas e ampliou os ataques ao STF; Michelle ganhou protagonismo e Damares saiu em sua defesa; Caiado subiu o tom para se firmar como alternativa; Lula fechou palanques em 25 estados e no DF. O TSE propôs um selo de qualidade para institutos de pesquisa, depois do caso AtlasIntel.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "Polymarket 60.50% (estável pelo 4º dia, vol USD 7,3M acumulado), a 83 dias da eleição. Gap sobre Flávio em +36.65pp (baixa 0,60pp). A BTG/Nexus 13/Jul o põe em EMPATE TÉCNICO no 2º turno (47% x 44%) e o faz cair 2pp no 1º.",
+      "header": "Polymarket 60.50% (PARADO pelo 5º dia, vol USD 7,3M acumulado), a 82 dias da eleição. Gap sobre Flávio cai a +35,65pp (baixa 1,00pp), o mais estreito em duas semanas. Não se moveu com nenhuma das três pesquisas que apontaram estreitamento.",
       "fortes": [
         "Segue à frente em todas as nacionais recentes no 1º turno: 40% na BTG/Nexus 13/Jul, contra 34% de Flávio.",
         "Vence o 2º turno na BTG/Nexus (47% x 44%), na Meio/Ideia 08/Jul (45% x 40%) e na AtlasIntel 01/Jul (48,8% x 42,3%).",
@@ -29,7 +29,7 @@
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "Polymarket 23.85% (alta 0,60pp, vol USD 7,4M acumulado) e SALTO no 2º lugar do 1º turno para 83.50% (alta 5,0pp). A BTG/Nexus o põe a 3pp de Lula no 2º turno (44% x 47%), em empate técnico.",
+      "header": "Polymarket 24.85% (alta 1,00pp, vol USD 7,4M acumulado) e 84,50% no 2º lugar do 1º turno (alta 1,00pp). Foi ele que se moveu, não o Lula. A Futura/Apex o põe a 0,2 ponto no returno.",
       "fortes": [
         "SALTO no 2º lugar do 1º turno para 83,50% (alta 5,0pp), a maior variação individual do dia: adversário certo de Lula.",
         "Duas nacionais consecutivas o põem a 3pp ou menos no 2º turno: BTG/Nexus 13/Jul (44% x 47%, empate técnico) e Gerp 08/Jul (45% x 42%, vencendo).",
@@ -51,7 +51,7 @@
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "Polymarket 10.05% (baixa 0,20pp, vol USD 8,1M acumulado) e AMPLIAÇÃO do 3º lugar do 1º turno para 70.50% (alta 4,0pp). A BTG/Nexus o mede em 4%, atrás de Caiado (5%).",
+      "header": "Polymarket 10.15% (alta 0,10pp, vol USD 8,1M acumulado) e 71,00% no 3º lugar do 1º turno (alta 0,50pp). Segue valendo no mercado o triplo do que mede na urna.",
       "fortes": [
         "AMPLIOU o favoritismo ao 3º lugar do 1º turno para 70,50% (alta 4,0pp), muito à frente de Caiado (16,50%).",
         "Maior volume acumulado individual entre os contendores vivos (USD 8,1M), à frente de Lula e Flávio.",
@@ -70,7 +70,7 @@
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "Polymarket: Caiado 1.45% (baixa 0,15pp) mas o MELHOR da 3ª via na BTG/Nexus (5%, à frente de Renan). Michelle DOBROU para 2.25% (alta 1,20pp) e Jair caiu a 1.05% (baixa 0,60pp) no dia da decisão de Moraes.",
+      "header": "Polymarket: Caiado 1.35% (baixa 0,10pp, vol USD 4,9M), Zema 0.85%, Haddad 0.80%. Na Futura/Apex, Caiado é de novo o melhor da 3ª via (5,0%), à frente de Zema (3,7%) e Renan (2,6%).",
       "subtitle": "11/Jul D+58, a 85 dias: Caiado 1.65% (↑0.40pp) no vencedor, mas 16.0% no 3º lugar do 1º turno (atrás de Renan). Ofensiva retórica: disse que a candidatura de Flávio está afundando e o comparou a peru de Natal que Lula cuida para o 2º turno (O Globo). Zema 0.95%; Haddad 0.75%. Renan segue líder da 3ª via (11.35%). Argumentos: cenário sem Flávio (Futura: Caiado 16.5%, Zema 13.3%) e empate técnico de Lula com Caiado e Zema no 2º turno (PoderData/Aya).",
       "caiado": {
         "label": "CAIADO (PSD), Poly presidencial 1.65% (↑0.40pp, vol USD 4.8M) | 3º lugar do 1º turno 16.0% (atrás de Renan) | disse que candidatura de Flávio está afundando, comparou a peru de Natal (O Globo) | Meio/Ideia 08/Jul 1T 4% | sem Flávio a Futura dá 16.5%",
@@ -105,46 +105,46 @@
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "BTG/Nexus 13/Jul (n=2.003, BR-07981/2026, campo 10-12/Jul, margem 2pp): 1T Lula 40% (queda de 2pp) x Flávio 34%; 2T Lula 47% x Flávio 44%, EMPATE TÉCNICO dentro da margem. Confirma o estreitamento que a Gerp de 08/Jul sinalizou, agora vindo do primeiro escalão. Voto decidido caiu de 74% para 70%. | Gerp 08/Jul 2T 42x45 (perde) | Meio/Ideia 08/Jul 2T 45x40 | AtlasIntel 01/Jul 2T 48.8x42.3. Dispersão do 2º turno vai de derrota por 3pp a vitória por 6.5pp, a maior do ciclo.",
+      "p": "Futura/Apex 14/Jul (n=2.000, BR-07294/2026, campo 07-11/Jul, margem 2,2pp): 1T Lula 40,1% x Flávio 36,8%, intervalos sobrepostos; 2T Lula 46,3% x Flávio 46,1%, diferença de 0,2 ponto, o EMPATE MAIS APERTADO do ciclo. É a TERCEIRA nacional seguida a apontar estreitamento. | BTG/Nexus 13/Jul 2T 47x44 (empate técnico) | Gerp 08/Jul 2T 42x45 (perde) | Meio/Ideia 08/Jul 2T 45x40 | AtlasIntel 01/Jul 2T 48,8x42,3.",
       "m": "60.50% (vol USD 7,3M acumulado)",
-      "t": "Estável em 60,50% pelo 4º dia; gap sobre Flávio estreita a +36,65pp (baixa 0,60pp). O mercado não reagiu à pesquisa, reagiu ao STF.",
-      "s": "83 dias da eleição. A BTG/Nexus o põe em empate técnico no 2º turno e o faz cair 2pp no 1º. Faltam três nacionais na semana. Polymarket ao vivo 13/Jul.",
+      "t": "PARADO em 60,50% pelo 5º dia. Não se moveu com a Gerp, não se moveu com a BTG/Nexus, não se moveu com a Futura/Apex. O gap caiu a +35,65pp (baixa 1,00pp) porque Flávio subiu, não porque ele cedeu.",
+      "s": "82 dias da eleição. Três institutos, três metodologias, uma direção: o returno virou empate. O mercado segue dando 60,50%. Quaest 15/Jul e PoderData 16/Jul são o próximo teste. Polymarket ao vivo 14/Jul.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "BTG/Nexus 13/Jul: 1T 34% (estável); 2T 44% x Lula 47%, empate técnico. Gerp 08/Jul: 2T 45% (VENCE). Duas nacionais consecutivas o põem a 3pp ou menos no returno.",
-      "m": "23.85% (vol USD 7,4M acumulado)",
-      "t": "Sobe a 23,85% (alta 0,60pp) e SALTA no 2º lugar do 1º turno para 83,50% (alta 5,0pp), a maior variação do dia.",
-      "s": "Moraes suspendeu por 90 dias suas visitas a Jair Bolsonaro, até meados de outubro, por ter divulgado a carta política. Valdemar e Michelle cercam a candidatura. Milei confirma agenda em 25/Jul.",
+      "p": "Futura/Apex 14/Jul: 1T 36,8%; 2T 46,1% contra 46,3% de Lula, diferença de 0,2 ponto. BTG/Nexus 13/Jul: 2T 44x47. Gerp 08/Jul: 2T 45% (VENCE). Três nacionais consecutivas o põem a 3pp ou menos no returno, e a última quase empata.",
+      "m": "24.85% (vol USD 7,4M acumulado)",
+      "t": "Sobe a 24,85% (alta 1,00pp) e amplia o 2º lugar do 1º turno para 84,50% (alta 1,00pp). Foi o único movimento relevante do dia no presidencial.",
+      "s": "Mudou de estratégia após o veto de Moraes às visitas ao pai e ampliou os ataques ao STF. Mourão cobra prestação de contas sobre a Dark Horse. Zema chamou a decisão de perseguição política.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "BTG/Nexus 13/Jul: 4% no 1º turno, ATRÁS de Caiado (5%). Nenhuma nacional o mediu acima de 4% no ciclo.",
-      "m": "10.05% (vol USD 8,1M acumulado)",
-      "t": "Parado no vencedor (baixa 0,20pp) mas AMPLIOU o 3º lugar do 1º turno para 70,50% (alta 4,0pp).",
-      "s": "A divergência se aprofundou: mercado 10,05% x 4% declarados, a mais larga do dashboard. O favorito do mercado ao 3º lugar é o TERCEIRO nome da 3ª via na urna.",
+      "p": "Futura/Apex 14/Jul: 2,6% no 1º turno, ATRÁS de Caiado (5,0%) e de Zema (3,7%). É a terceira colocação dele na 3ª via em pesquisa nacional.",
+      "m": "10.15% (vol USD 8,1M acumulado)",
+      "t": "Sobe de leve no vencedor (alta 0,10pp) e amplia o 3º lugar do 1º turno para 71,00% (alta 0,50pp).",
+      "s": "A divergência segue sendo a mais larga do dashboard: mercado 10,15% contra 2,6% declarados. O favorito do mercado ao 3º lugar é o TERCEIRO nome da 3ª via na urna.",
       "pc": "#F59E0B",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "BTG/Nexus 13/Jul: 5% no 1º turno, o MELHOR da 3ª via, à frente de Renan (4%) e Zema (4%). Gerp 08/Jul: menor margem de derrota no 2º turno (40x36).",
-      "m": "1.45% (vol USD 4,9M)",
-      "t": "Recuou de leve no vencedor (baixa 0,15pp) mas subiu no 3º lugar do 1º turno (16,50%, alta 1,0pp).",
-      "s": "Lidera a 3ª via na urna declarada e vale um sétimo de Renan no mercado. O contraste que o define ficou mais nítido.",
+      "p": "Futura/Apex 14/Jul: 5,0% no 1º turno, o MELHOR da 3ª via de novo, à frente de Zema (3,7%) e Renan (2,6%). Repete o padrão da BTG/Nexus de 13/Jul (5%).",
+      "m": "1.35% (vol USD 4,9M)",
+      "t": "Recuou de leve no vencedor (baixa 0,10pp) e caiu no 3º lugar do 1º turno para 16,50%.",
+      "s": "Subiu o tom para se firmar como alternativa a Flávio. Lidera a 3ª via na urna declarada e vale um sétimo de Renan no mercado. O contraste que o define não se desfez.",
       "pc": "#16A34A",
       "mc": ""
     },
     {
       "n": "Michelle Bolsonaro (PL)",
-      "p": "Não é pré-candidata declarada à Presidência. Nas nacionais aparece só em cenários alternativos de 2º turno, perdendo para Lula (Gerp 08/Jul: 41% x 45%).",
-      "m": "2.25% (vol USD 8,9M)",
-      "t": "DOBROU no dia (alta 1,20pp), a maior variação relativa do painel, enquanto Jair caiu a 1,05% (baixa 0,60pp).",
-      "s": "Moraes cortou o contato entre Flávio e o pai por 90 dias. Valdemar e Michelle cercam a candidatura, e Damares a defende publicamente. O mercado reprecificou a sucessão familiar, não a corrida.",
+      "p": "Não é pré-candidata declarada à Presidência. A Futura/Apex não a testa no cenário principal.",
+      "m": "1.90% (vol USD 9,0M)",
+      "t": "Devolveu parte do salto de ontem (baixa 0,35pp, de 2,25% para 1,90%). Jair segue em 1,05%.",
+      "s": "Ganhou protagonismo após a decisão de Moraes e Damares saiu publicamente em sua defesa. O mercado reprecificou a sucessão familiar ontem e recuou hoje: foi reação, não tendência.",
       "pc": "#7C3AED",
       "mc": ""
     },
@@ -152,11 +152,11 @@
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
       "m": "2.75% (vol USD 82 mil)",
-      "t": "Cravado no piso a 2,75%, sem reagir a nada.",
-      "s": "Nem a decisão de Moraes suspendendo as visitas, nem a PF afirmando que a assessora tinha aval da presidência da Câmara para desviar emendas a Cunha moveram o preço. O dinheiro real precifica atrito, não ruptura.",
+      "t": "Cravado no piso a 2,75% pelo segundo dia, sem reagir a nada.",
+      "s": "Nem a escalada de Flávio contra o STF, nem Zema chamando a decisão de perseguição política moveram o preço. O dinheiro real precifica atrito, não ruptura.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "O dia 13/Jul teve pesquisa nova e decisão do STF, e o mercado se moveu pela SEGUNDA, não pela primeira. Isso é o dado. Na pesquisa, a BTG/Nexus (n=2.003, campo 10-12/Jul, margem 2pp, BR-07981/2026) trouxe o resultado mais importante do ciclo até aqui: Lula caiu 2pp no 1º turno (42% para 40%), Flávio ficou estável em 34%, e o 2º turno deu Lula 47% x Flávio 44%. Três pontos, dentro da margem: EMPATE TÉCNICO. O peso disso não está no número, está na procedência. Ontem, ao incorporar a Gerp de 08/Jul (que dá Flávio VENCENDO o returno), a ressalva obrigatória era que se tratava de instituto de menor porte e outlier conhecido. Hoje o mesmo estreitamento aparece num instituto do PRIMEIRO ESCALÃO. A Gerp deixou de estar isolada, e o cenário que o AFOS Tradeoff №8 colocou em 30% de probabilidade começou a se materializar na primeira das quatro nacionais da semana. O leque do 2º turno agora vai de derrota por 3pp (Gerp) a vitória por 6,5pp (AtlasIntel), com empate técnico (BTG/Nexus) e vitória por 5pp (Meio/Ideia) no meio: é a maior dispersão entre institutos do ciclo, e ela é informação, não ruído. Um dado que quase ninguém citou reforça: o voto decidido caiu de 74% para 70%. No institucional, Moraes suspendeu por 90 dias as visitas de Flávio a Jair Bolsonaro, por entender que o senador usou o direito de visita para produzir e divulgar a carta política de 11/Jul, violando a proibição de o pai se manifestar por terceiros. Flávio fica barrado até meados de outubro, prazo que cobre a reta final da campanha, e a defesa tem 48 horas para explicar. A prisão domiciliar não foi revogada, por ora. O gesto que pretendia consagrar a sucessão terminou cortando o acesso ao consagrador. E o mercado leu exatamente isso: Michelle Bolsonaro DOBROU, de 1,05% para 2,25% (alta 1,20pp), enquanto Jair caiu de 1,65% para 1,05% (baixa 0,60pp). Nenhum dos dois movimentos tem a ver com a pesquisa; os dois têm a ver com a decisão. No topo, Lula ficou estável em 60,50% pelo quarto dia e Flávio subiu a 23,85% (alta 0,60pp), com o gap estreitando a +36,65pp (baixa 0,60pp) e o volume total em USD 112,5M. Flávio saltou no 2º lugar do 1º turno para 83,50% (alta 5,0pp) e Renan ampliou o 3º lugar para 70,50% (alta 4,0pp), apesar de a BTG/Nexus medi-lo em 4%, ATRÁS de Caiado (5%). A divergência de nível, que já era a maior do ciclo, ficou mais aguda: o dinheiro real dá 60,50% de probabilidade a quem a intenção declarada põe em empate técnico no returno. Faltam três nacionais nesta semana (100 Cidades 14/Jul, Quaest 15/Jul, PoderData 16/Jul), e a Quaest, com a maior confiabilidade metodológica das quatro, é a que decide se o estreitamento é tendência ou coincidência de dois institutos."
+  "cruzamento": "O dado de 14/Jul não é a pesquisa. É o silêncio do mercado diante dela. A Futura/Apex (n=2.000, campo 07-11/Jul, margem 2,2pp, BR-07294/2026) põe o 2º turno em Lula 46,3% x Flávio 46,1%. São 0,2 ponto de diferença, o empate mais apertado já medido neste ciclo, e o 1º turno tem os intervalos se sobrepondo (40,1% x 36,8% contra margem de 2,2pp). É a TERCEIRA nacional consecutiva a apontar na mesma direção: a Gerp de 08/Jul deu Flávio vencendo o returno, a BTG/Nexus de 13/Jul deu empate técnico (47x44), e agora a Futura/Apex quase zera a distância. Em 12/Jul a ressalva obrigatória era que a Gerp é instituto pequeno e outlier conhecido. Essa ressalva não existe mais. Três institutos, três metodologias, uma direção. E o Polymarket segue dando a Lula 60,50%, exatamente o mesmo número de cinco dias atrás. Ele não se mexeu com a Gerp, não se mexeu com a BTG/Nexus e não se mexeu com a Futura/Apex. O que se mexeu foi o Flávio, que subiu 1,00pp para 24,85% e chegou a 84,50% no sub-mercado de 2º lugar do 1º turno. O gap caiu para +35,65pp, o mais estreito em duas semanas, mas continua absurdo diante de um empate de 0,2 ponto na urna declarada. Probabilidade de vitória e margem de voto medem coisas diferentes, e a comparação é de direção e convicção, não ponto a ponto. Um candidato pode ter 60% de chance de vencer uma eleição apertada. Mas a distância de nível aqui é a mais aguda do ciclo, ela sobreviveu a três dados novos consecutivos que a contradizem, e isso é informação, não ruído. O mercado está carregando uma convicção que a intenção declarada não sustenta, e agora tem três institutos dizendo isso. O próximo teste chega amanhã: Quaest 15/Jul (n=2.004) e PoderData 16/Jul (n=2.400)."
 }
