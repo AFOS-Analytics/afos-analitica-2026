@@ -16,29 +16,29 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "60.50%",
-    poll: "Lula segura o topo: Poly 60.50% (estável pelo 3º dia, vol USD 7.3M acumulado), com o gap sobre Flávio em +37.25pp, a 84 dias do 1º turno. O movimento do dia não foi de preço, foi de dado: entrou no dashboard a Gerp/AESP 08/Jul (n=2.000, BR-03067/2026), nacional que estava ausente por um erro de classificação de escopo na nossa ingestão do TSE, já corrigido. Ela dá EMPATE no 1º turno (36% × 36%) e Flávio vencendo o 2º (45% × 42%). No mesmo dia, a Meio/Ideia deu Lula 45% × 40% no 2º turno: duas nacionais, mesma data, vencedores opostos.",
+    poll: "Lula estável pelo 4º dia: Poly 60.50% (vol USD 7,3M acumulado), com o gap sobre Flávio estreitando a +36.65pp (↓0,60pp), a 83 dias do 1º turno. Mas o dado do dia é a pesquisa: a BTG/Nexus (n=2.003, campo 10-12/Jul, margem 2pp, BR-07981/2026) o dá com 40% no 1º turno, queda de 2pp ante os 42% de 29/Jun, e com 47% x 44% de Flávio no 2º turno, três pontos e dentro da margem, ou seja, EMPATE TÉCNICO. Confirma o estreitamento que a Gerp de 08/Jul sinalizou, agora vindo do primeiro escalão. O voto decidido caiu de 74% para 70%.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "EVENTOS 12/Jul D+59: a 84 dias do 1º turno, domingo de acomodação no mercado e correção na base de pesquisas. Lula ficou estável a 60.50% e o gap fechou em +37.25pp. A novidade é a entrada da Gerp/AESP 08/Jul, que o EMPATA no 1º turno (36% × 36%) e o faz PERDER o 2º (42% × 45%), a primeira nacional do ciclo a pôr Flávio na frente. Ressalva de método: a Gerp é instituto de menor porte (reliability 3) e já era outlier em 24/Jun, destoando do consenso Tier 1. Lula escolheu São Bernardo para a largada da campanha de reeleição (Folha). Ressalvas: aprovação em empate técnico a 48%, rejeição 49%. Semana traz 4 nacionais (13 a 16/Jul). STF impeach no piso a 2.75%. Volume no presidencial USD 112.2M."
+    risk: "EVENTOS 13/Jul D+60: a 83 dias do 1º turno, o dia teve pesquisa nova E decisão do STF, e o mercado se moveu pela segunda. Lula ficou estável a 60.50% e o gap fechou em +36.65pp. A BTG/Nexus o põe em EMPATE TÉCNICO no 2º turno (47% x 44%) e o faz cair 2pp no 1º (42% para 40%). A Gerp de 08/Jul deixou de estar isolada: o estreitamento agora vem de instituto do primeiro escalão. O leque do 2º turno vai de derrota por 3pp (Gerp) a vitória por 6,5pp (AtlasIntel), a maior dispersão do ciclo. Ressalvas: voto decidido caiu de 74% para 70%, e sustentar 60,50% de probabilidade com um returno dentro da margem exige convergência que ainda não veio. Faltam três nacionais (100 Cidades 14/Jul, Quaest 15/Jul, PoderData 16/Jul). STF impeach no piso a 2.75%. Volume no presidencial USD 112,5M."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "23.25%",
-    poll: "Flávio sobe de leve: Poly 23.25% (alta 0.10pp, vol USD 7.3M acumulado), 4º dia de recuperação, com o gap para Lula em +37.25pp. AMPLIOU o domínio do 2º lugar do 1º turno para 78.5% (alta 2.0pp). Ganhou a PRIMEIRA nacional do ciclo que o põe vencendo o 2º turno: a Gerp/AESP 08/Jul dá empate no 1º turno (36% × 36%) e Flávio 45% × Lula 42% no returno. Mas a Meio/Ideia, do mesmo 08/Jul, dá Lula 45% × 40%, e a Gerp é outlier conhecido (reliability 3). Rejeição segue a maior do páreo (51%).",
+    polymarket: "23.85%",
+    poll: "Flávio sobe: Poly 23.85% (↑0,60pp, vol USD 7,4M acumulado) e SALTA no 2º lugar do 1º turno para 83.50% (↑5,0pp), a maior variação individual do dia. Nas urnas, a BTG/Nexus 13/Jul o mantém em 34% no 1º turno e o põe a apenas 3pp de Lula no 2º (44% x 47%), dentro da margem: empate técnico. Somada à Gerp de 08/Jul, que o dá VENCENDO o returno (45% x 42%), são duas nacionais consecutivas que o colocam a 3pp ou menos. Rejeição segue a maior do páreo.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "EVENTOS 12/Jul: Flávio subiu a 23.25% (alta 0.10pp) e ampliou o 2º lugar do 1º turno para 78.5%. Ganhou a primeira nacional do ciclo que o poe vencendo o 2º turno (Gerp/AESP 08/Jul, 45% × 42%), mas o instituto é outlier conhecido e a Meio/Ideia do mesmo dia dá resultado oposto (perde 45×40). No campo político o dia foi ambíguo: Caiado disse que a carta de Jair mostra a FRAGILIDADE da candidatura (Folha), lendo o gesto como socorro e não coroação, e o Republicanos negou acordo, reforçando a neutralidade em 2026 (Jornal Opção). Do lado positivo, ganhou 3 vezes mais seguidores que Lula no 1º semestre, alta de 5,6 milhões (Poder360). Rejeição nacional 51%, o teto estrutural. STF impeach 2.75%."
+    risk: "EVENTOS 13/Jul: Flávio subiu a 23.85% e saltou no 2º lugar do 1º turno para 83.50%. Nas urnas, duas nacionais consecutivas o põem a 3pp ou menos de Lula no returno (BTG/Nexus 44x47 empate técnico; Gerp 45x42 vencendo). Mas o dia foi de desgaste institucional: MORAES SUSPENDEU POR 90 DIAS suas visitas a Jair Bolsonaro, por entender que ele usou o direito de visita para produzir e divulgar a carta política lida em 11/Jul, violando a proibição de o pai se manifestar por terceiros. Fica barrado até meados de outubro, prazo que cobre a reta final da campanha, e a defesa tem 48h para explicar. A prisão domiciliar NÃO foi revogada. O gesto que buscava consagrar a sucessão cortou o acesso ao consagrador. No partido, Valdemar e Michelle cercam a candidatura e Damares diz que ele AINDA é sua pré-candidata. Michelle dobrou no mercado (2.25%). Milei confirmou agenda em 25/Jul. STF impeach 2.75%."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "10.25%",
-    poll: "Renan DEVOLVE a alta: Poly 10.25% (baixa 1.10pp, vol USD 8.0M acumulado), apagando parte do salto de 3.10pp em dois dias, correção esperável num movimento sem evento-motor. Mas não devolveu a posição estrutural: segurou os dois dígitos e AMPLIOU a liderança do 3º lugar do 1º turno para 66.5% (alta 5.0pp), abrindo distância de Caiado (15.5%). As nacionais o medem a 2-4% no 1º turno (a Gerp 08/Jul e a Meio/Ideia 08/Jul o põem em 2%), então a divergência segue a mais larga do dashboard (10.25% × 2-4%).",
+    polymarket: "10.05%",
+    poll: "Renan parado no vencedor: Poly 10.05% (↓0,20pp, vol USD 8,1M acumulado, o maior volume individual entre os contendores vivos), mas AMPLIOU o favoritismo ao 3º lugar do 1º turno para 70.50% (↑4,0pp). As urnas discordam: a BTG/Nexus 13/Jul o mede em 4% no 1º turno, ATRÁS de Caiado (5%) e empatado com Zema (4%). O favorito folgado do mercado ao 3º lugar é o TERCEIRO nome da 3ª via na pesquisa mais recente.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "12/Jul: Renan devolveu 1.10pp e caiu a 10.25% no vencedor, o que confirma que a alta de dois dias não tinha lastro em evento. Ainda assim segurou os dois dígitos e AMPLIOU o 3º lugar do 1º turno para 66.5% (alta 5.0pp): o mercado corrigiu o preço mas reforçou a leitura de que ele é o nome da 3ª via. Segue com o maior volume acumulado do presidencial (USD 8.0M). Na Gerp 08/Jul perde o 2º turno para Lula por 41% × 30%, a pior margem entre os adversários testados. A leitura não muda: provável 3º colocado, sem chance real de vencer, com preço que depende de lastro futuro. As 4 nacionais de 13 a 16/Jul são o teste. STF impeach 2.75%."
+    risk: "13/Jul: Renan ficou parado a 10.05% no vencedor e AMPLIOU o 3º lugar do 1º turno para 70.50% (↑4,0pp). A divergência não se estreitou, se APROFUNDOU: mercado 10,05% contra 4% na BTG/Nexus, onde ele aparece ATRÁS de Caiado (5%). É a mais larga do dashboard. Nenhuma nacional o mediu acima de 4% no ciclo inteiro. Segue com o maior volume acumulado individual entre os contendores vivos (USD 8,1M), o que dá densidade ao preço mas não substitui lastro eleitoral. Faltam três nacionais nesta semana: se ele não aparecer acima de 4% em nenhuma, o preço de dois dígitos fica descoberto. Perde o 2º turno para Lula por larga margem em todos os cenários (Gerp 08/Jul: 41% x 30%). STF impeach 2.75%."
   },
   {
     name: "Fernando Haddad",
@@ -46,29 +46,29 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0.75%",
-    poll: "Haddad estável a Poly 0.75% (vol USD 6.2M acumulado), como nome do PT depois de Lula. Não aparece nos cenários presidenciais da Gerp 08/Jul nem da Meio/Ideia 08/Jul: as nacionais não o testam no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% × Haddad 30%, e Haddad tem a maior rejeição do estado (47%). Mantém Márcio França (PSB) como vice na chapa de SP.",
+    poll: "Haddad estável a Poly 0.75% (vol USD 6,2M acumulado), como nome do PT depois de Lula. Não aparece nos cenários presidenciais da BTG/Nexus 13/Jul nem das nacionais de 08/Jul: as pesquisas não o testam no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%, com Haddad na maior rejeição do estado (47%).",
     position: "Centro-esquerda. Indicado a disputar governo de SP. Fora da corrida presidencial direta.",
-    risk: "Haddad estável a 0.75%, como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é estadual. Não é testado no presidencial pelas nacionais recentes (Gerp e Meio/Ideia 08/Jul não o incluem nos cenários). No governo de SP, a Datafolha 05/Jul deu Tarcísio 46% × Haddad 30%, com Haddad na maior rejeição do estado (47%). Mantém França vice na chapa de SP. STF impeach 2.75%."
+    risk: "Haddad estável a 0.75%, como nome do PT depois de Lula. O mercado não precifica candidatura presidencial dele; o foco é estadual. Não é testado no presidencial por nenhuma das nacionais recentes (BTG/Nexus 13/Jul, Gerp e Meio/Ideia 08/Jul). No governo de SP, a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30%, com Haddad na maior rejeição do estado (47%). Mantém França vice na chapa de SP. STF impeach 2.75%."
   },
   {
     name: "Ronaldo Caiado",
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "1.60%",
-    poll: "Caiado praticamente parado: Poly 1.60% (baixa 0.05pp, vol USD 4.8M acumulado) no vencedor, e RECUOU no sub-mercado de 3º lugar do 1º turno para 15.5%, cedendo espaço a Renan (66.5%). Na Gerp 08/Jul é o melhor da 3ª via no 1º turno (4%) e tem a MENOR margem de derrota no 2º turno contra Lula (40% × 36%), o que sustenta a tese de que é o nome mais competitivo do campo caso Flávio saia da equação. Chapa pura do PSD (Kassab vice).",
+    polymarket: "1.45%",
+    poll: "Caiado recua de leve no vencedor: Poly 1.45% (↓0,15pp, vol USD 4,9M acumulado), mas sobe no 3º lugar do 1º turno (16.50%, ↑1,0pp). E é o MELHOR da 3ª via na BTG/Nexus 13/Jul, com 5% no 1º turno, à frente de Renan (4%) e Zema (4%). Na Gerp 08/Jul tem a MENOR margem de derrota no 2º turno contra Lula entre os adversários alternativos (40% x 36%). Chapa pura do PSD (Kassab vice).",
     position: "Centro-direita. Agronegócio, gestão fiscal. Pré-candidato oficial pelo PSD.",
-    risk: "12/Jul: Caiado ficou parado no vencedor (1.60%, baixa 0.05pp) e recuou no 3º lugar do 1º turno para 15.5%, atrás de Renan (66.5%). É o mais barulhento da 3ª via e o que menos converte barulho em preço. No dia, disse que a carta de Jair Bolsonaro mostra a FRAGILIDADE da candidatura de Flávio (Folha), leitura que inverte o sentido do gesto. Na Gerp 08/Jul aparece com 4% no 1º turno (melhor da 3ª via) e perde o 2º turno para Lula por 40% × 36%, a menor margem entre os adversários alternativos. Sem Flávio, a Futura/Apex dá 16.5%. STF impeach 2.75%."
+    risk: "13/Jul: Caiado recuou de leve no vencedor (1.45%) mas subiu no 3º lugar do 1º turno (16.50%). O contraste que o define ficou mais nítido: é o MELHOR da 3ª via na urna declarada (5% na BTG/Nexus, à frente de Renan e Zema) e vale um sétimo de Renan no mercado (1,45% contra 10,05%). O mercado precifica notoriedade, não intenção de voto. Na Gerp 08/Jul tem a menor margem de derrota no 2º turno contra Lula (40x36), o que o sustenta como o nome mais competitivo do campo num cenário de enfraquecimento de Flávio, e o dia trouxe justamente isso: Moraes suspendeu as visitas de Flávio ao pai por 90 dias. STF impeach 2.75%."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "0.95%",
-    poll: "Zema estável a Poly 0.95% (vol USD 4.3M) no vencedor, seguindo no piso, atrás de Renan e Caiado na 3ª via. Na Gerp 08/Jul aparece com 2% no 1º turno e perde o 2º turno para Lula por 41% × 36%. A Meio/Ideia 08/Jul deu 2.5% no 1T. A PoderData/Aya 25/Jun o pôs em empate técnico com Lula no 2º turno (CNN). Sem Flávio, a Futura/Apex dá Zema 13.3%. Ainda não anunciou o vice (Estadão).",
+    polymarket: "0.85%",
+    poll: "Zema no piso: Poly 0.85% (vol USD 4,3M). Mas marca 4% no 1º turno da BTG/Nexus 13/Jul, o MESMO de Renan Santos, que vale 10.05% no mercado. É a maior distorção relativa entre urna declarada e preço no painel da 3ª via. Na Gerp 08/Jul aparece com 2% e perde o 2º turno para Lula por 41% x 36%. Ainda não anunciou o vice.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Zema ficou estável a 0.95% (vol USD 4.3M) no vencedor, no piso, atrás de Renan e Caiado na 3ª via. Na Gerp 08/Jul aparece com 2% no 1º turno e perde o 2º turno para Lula por 41% × 36%. A PoderData o pôs em empate técnico com Lula no 2º turno, mas na disputa bipolarizada com Flávio o Novo não encontra tração: bons cenários de 2º turno não viram preço. No cenário sem Flávio, a Futura/Apex dá Zema 13.3%, fôlego latente. Ainda não anunciou o vice (Estadão). STF impeach 2.75%."
+    risk: "13/Jul: Zema segue no piso a 0.85% no vencedor. A BTG/Nexus o dá com 4% no 1º turno, exatamente o mesmo de Renan Santos, que o mercado precifica em 10,05%. Ou seja: mesma intenção de voto declarada, um doze avos do preço. É a maior distorção relativa do painel e um caso limpo da tese do AFOS, porque a divergência aqui não é entre mercado e pesquisa em geral, é entre dois candidatos com a MESMA medição de urna e preços incomparáveis. Sem vice anunciado. STF impeach 2.75%."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0.15%",
-    poll: "Tarcísio estável a Poly 0.15% no presidencial (anomalia de legado, vol USD 13.4M acumulado, o maior do book). Não aparece nos cenários presidenciais da Gerp 08/Jul nem da Meio/Ideia 08/Jul: o foco é a reeleição em SP, onde a Datafolha 05/Jul o dá liderando o governo com 46% × Haddad 30% e aprovação de 45%. No mercado de Senado por cadeiras, o PL segue líder (87.5%).",
+    poll: "Tarcísio estável a Poly 0.15% no presidencial (anomalia de legado, vol USD 13,4M acumulado, o maior do book). Não aparece nos cenários presidenciais da BTG/Nexus 13/Jul nem das nacionais de 08/Jul. O foco é a reeleição em SP, onde a Datafolha 05/Jul o dá liderando o governo com 46% x Haddad 30% e aprovação de 45%. No Senado por cadeiras, o PL segue líder (87.50%).",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Tarcísio segue focado na reeleição em SP, onde lidera: a Datafolha 05/Jul o dá no governo com 46% × Haddad 30% e aprovação de 45%. O mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 13.4M). Não é testado no presidencial pelas nacionais recentes. No mercado de Senado por número de cadeiras, o PL segue na liderança (87.5%), sinal de capilaridade institucional da legenda. STF impeach 2.75%."
+    risk: "Tarcísio segue focado na reeleição em SP, onde lidera (Datafolha 05/Jul: 46% x Haddad 30%, aprovação de 45%). O mercado mantém o presidencial em 0.15% (anomalia de legado, volume herdado de apostas antigas, o maior do book a USD 13,4M). Não é testado no presidencial por nenhuma nacional recente. No mercado de Senado por número de cadeiras, o PL segue na liderança (87.50%), sinal de capilaridade institucional da legenda num dia em que a cúpula do partido (Valdemar) aparece cercando a candidatura de Flávio. STF impeach 2.75%."
   },
 ];
 

@@ -249,7 +249,13 @@ function filterByDateWindow(items, targetDate) {
 
 async function main() {
   const argDate = process.argv[2]
-  const date = argDate || new Date().toISOString().slice(0, 10)
+  // Data padrão em BRT, não em UTC. `toISOString()` é UTC: rodando às 21:35 de Brasília
+  // (00:35 UTC do dia seguinte) o cache era gravado com a data de AMANHÃ, e o /afos-daily,
+  // que lê o cache pela data do dia, não encontrava nada. Bug silencioso: só aparecia em
+  // execução noturna. Pego em 13/Jul/2026, quando o /atualizar das 21:35 gerou
+  // news-cache/2026-07-14.json.
+  const hojeBRT = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }) // YYYY-MM-DD
+  const date = argDate || hojeBRT
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     console.error(`Invalid date: ${date}. Use YYYY-MM-DD.`)
     process.exit(1)
