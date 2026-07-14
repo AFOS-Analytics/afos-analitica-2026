@@ -1,0 +1,105 @@
+{
+  "date": "2026-07-14",
+  "generatedAt": "14/07/2026, 14:36 BRT",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "Pesquisa Futura/Apex (2º turno 46,3% x 46,1%)",
+      "TSE propõe selo de acurácia para institutos",
+      "Moraes suspende visitas de Flávio (90 dias)",
+      "Damares defende Michelle",
+      "Mourão cobra contas sobre a Dark Horse"
+    ],
+    "eventos": [
+      {
+        "evento": "Pesquisa Futura/Apex: 2º turno Lula 46,3% x Flávio 46,1%, o empate mais apertado do ciclo",
+        "verificacao1_crossref": "check-recurrence 'Futura': nenhuma menção em 7 dailies (2026-07-07 a 2026-07-13) → NOVIDADE",
+        "verificacao2_fetch": {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/futura-inteligencia-presidente-julho-2026/",
+          "data": "2026-07-14",
+          "tipo": "evento",
+          "extraido": "1T estimulado Lula 40,1% x Flávio 36,8%, Caiado 5,0%, Zema 3,7%, Renan 2,6%. 2T Lula 46,3% x Flávio 46,1%."
+        },
+        "segundaFonte": "Registro PRIMÁRIO no TSE via API AFOS: protocolo BR-07294/2026, n=2.000, campo 07-11/Jul, margem 2,2pp, confiança 95%, universo eleitorado brasileiro 16+. Mais Exame, Metrópoles, Revista Fórum, Brasil 247, Jovem Pan.",
+        "decisao": "INCORPORAR (âncora do dia)"
+      },
+      {
+        "evento": "TSE (Kássio Nunes Marques) propõe selo de acurácia para institutos de pesquisa",
+        "verificacao1_crossref": "check-recurrence 'selo': nenhuma menção em 7 dailies → NOVIDADE",
+        "verificacao2_fetch": {
+          "data": "2026-07-14",
+          "tipo": "evento",
+          "extraido": "Proposta apresentada em 14/Jul em reunião com diretores de 19 institutos. Selo entregue após o 2º turno; avalia apenas pesquisas dos 7 dias anteriores ao pleito e exit polls efetivamente divulgados; exclui empresas condenadas por irregularidade grave. Reunião convocada após ele suspender, em junho, pesquisa da AtlasIntel por suspeita de indução. Institutos têm até 17/Jul para contribuir. Especialistas criticaram: pesquisa mede intenção num momento, não é previsão da urna."
+        },
+        "segundaFonte": "JOTA, Gazeta do Povo, Jornal de Brasília, Revista Fórum, Brasil 247 (independentes entre si)",
+        "decisao": "INCORPORAR"
+      },
+      {
+        "evento": "Moraes suspende por 90 dias as visitas de Flávio a Jair Bolsonaro",
+        "verificacao1_crossref": "check-recurrence 'Moraes': aparece em 2026-07-07 e 2026-07-13 → CONTINUIDADE",
+        "verificacao2_fetch": {
+          "url": "https://oglobo.globo.com/politica/noticia/2026/07/14/flavio-muda-estrategia-apos-veto-de-visitas-a-bolsonaro-e-deve-ampliar-ataques-ao-stf-para-reforcar-tom-de-perseguicao-a-tres-meses-da-eleicao.ghtml",
+          "data": "2026-07-14",
+          "tipo": "análise/desdobramento"
+        },
+        "segundaFonte": "O Globo (Zema classifica como perseguição política), 14/Jul",
+        "decisao": "INCORPORAR APENAS COMO CONTEXTO DE DESDOBRAMENTO. Decisão é de 13/Jul, já coberta. NÃO tratar como divisor de águas."
+      },
+      {
+        "evento": "Damares defende Michelle",
+        "verificacao1_crossref": "check-recurrence 'Damares': aparece em 2026-07-13 (inclusive na lista de fontes) → CONTINUIDADE",
+        "verificacao2_fetch": null,
+        "segundaFonte": null,
+        "decisao": "NÃO INCORPORAR como novidade. Já publicado em 13/Jul."
+      },
+      {
+        "evento": "Mourão diz que Flávio precisa prestar contas sobre a Dark Horse",
+        "verificacao1_crossref": "check-recurrence 'Mourão': nenhuma menção em 7 dailies → NOVIDADE",
+        "verificacao2_fetch": {
+          "url": "https://oglobo.globo.com/politica/noticia/2026/07/14/entrevista-campanha-de-flavio-e-muito-turbulenta-e-precisa-prestar-contas-sobre-dark-horse-diz-mourao.ghtml",
+          "data": "2026-07-14",
+          "tipo": "entrevista"
+        },
+        "segundaFonte": "NÃO VERIFICADO. FONTE ÚNICA.",
+        "decisao": "INCORPORAR COM ATRIBUIÇÃO EXPLÍCITA. O Daily declara literalmente: 'A declaração é de fonte única e é reproduzida aqui como tal.'"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "Uma, e está sinalizada NO TEXTO: a declaração de Mourão sobre a Dark Horse (O Globo). Todo o resto tem 2+ fontes independentes.",
+    "2_numericalErrors": "reconcile-claims exit 0. Um WARN: PL do Senado em 86,50%. FALSO POSITIVO: os JSONs não rastreiam o mercado de Senado; o valor veio do snapshot ao vivo (14:36 BRT). Demais percentuais batem com os JSONs.",
+    "3_fontesInventadas": "Conferidos 3 ao acaso (O Globo/Zema, JOTA/selo, Exame/Futura). Os três existem no news-cache de 2026-07-14 e o título bate com o texto.",
+    "4_quotesLiterais": "Nenhuma. Não há aspas de fala em nenhum ponto do texto.",
+    "5_causacaoEspuria": "Nenhuma, e é a espinha do texto: o mercado NÃO se moveu, então não há movimento a atribuir a evento. A única alta (Flávio, +1,00pp) é descrita como movimento, sem causa atribuída.",
+    "6_verbosCriticos": "OK. 'suspendeu' desambiguado como decisão de 13/Jul já em vigor, tratada como continuidade. 'propôs' (selo do TSE) é proposta em consulta pública, com prazo aberto até 17/Jul, e está escrito assim.",
+    "decisao": "prosseguir para preview"
+  },
+  "metricas": {
+    "palavras": 618,
+    "usdMencoesSecao1": 11,
+    "volumeTotalNoLede": true,
+    "volumeTotalNaSecao1": true,
+    "tldrBullets": 3,
+    "fontesSecundarias": "71% (regra: >= 50%)",
+    "validateAfosDaily": "exit 0, zero violações",
+    "reconcileClaims": "exit 0",
+    "gateRebaselinePolymarket": "NÃO disparou (Lula, Flávio, Renan e gap com Δ 0,00pp vs JSON). Ajuste pontual em Michelle (1,90% -> 1,85%) e Jair (1,05% -> 0,55%), fora da lista do gate."
+  },
+  "mercadoAoVivo": {
+    "fetchedAt": "14/07/2026, 14:36:43 BRT",
+    "lula": "60.50% (USD 7,34M), parado pelo 5º dia",
+    "flavio": "24.85% (USD 7,38M), alta 1,00pp",
+    "renan": "10.15% (USD 8,09M), alta 0,10pp",
+    "michelle": "1.85% (USD 8,96M), baixa 0,40pp",
+    "jair": "0.55%, caiu pela metade (era 1,05%)",
+    "caiado": "1.35% (USD 4,86M)",
+    "zema": "0.85% (USD 4,35M)",
+    "haddad": "0.75% (USD 6,20M)",
+    "gap": "+35.65pp (baixa 1,00pp), por alta de Flávio",
+    "volumeTotalPresidencial": "USD 112,8M",
+    "segundoLugar1T": "Flávio 84.50% (USD 180 mil), alta 1,00pp",
+    "terceiroLugar1T": "Renan 71.00% (USD 140 mil), alta 0,50pp; Caiado 16.50%",
+    "stfImpeach": "2.75% (USD 82 mil), no piso pelo 2º dia",
+    "senado": "PL 86.50% (USD 251 mil)",
+    "inflacao2026": "bandas 4,50-5,49% somam 62,40%; cauda >= 7% em 3,60%"
+  }
+}

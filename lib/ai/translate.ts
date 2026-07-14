@@ -197,11 +197,36 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
   // link, tudo em silêncio. Ver lib/ai/link-shield.ts para o histórico completo.
   const { masked: shieldedText, links: shieldedLinks } = shieldLinks(req.sourceText)
 
+  // ── COLISÃO GLOSSÁRIO × ÂNCORA (bug determinístico, diagnosticado 14/Jul/2026) ──
+  // A v2 do shield resolveu a âncora que CONTÉM termo de glossário ("2º lugar do 1º turno").
+  // Faltava o caso inverso: a âncora que É um termo de glossário.
+  //
+  // Quando o texto traz [Polymarket](url) e o glossário manda "para cada ocorrência de
+  // Polymarket, escreva [Polymarket](/en/glossary#polymarket)", as duas regras se excluem.
+  // O modelo obedece ao glossário e DESCARTA o token do shield: o link externo morre.
+  // Sintoma observado: 4 tentativas seguidas derrubaram os MESMOS 6 links, e todas as
+  // âncoras perdidas eram termos do glossário (Polymarket, TSE, Quaest) enquanto TODAS as
+  // que sobreviveram não eram (Gerp, BTG/Nexus, Futura/Apex, BR-07294/2026).
+  //
+  // Conserto: um termo que já está servindo de ÂNCORA neste texto sai da regra de glossário
+  // DESTE texto. Não se pede ao modelo que faça duas coisas incompatíveis com a mesma palavra.
+  // Trade-off assumido e correto: se "Polymarket" aparecer também em texto puro no mesmo chunk,
+  // ele perde a tag de glossário ali. Integridade de link externo vale mais que tag de glossário.
+  const ancoras = new Set(shieldedLinks.map((l) => l.anchor.trim().toLowerCase()).filter(Boolean))
+  const glossarioSemColisao = (req.glossaryEntries ?? []).filter((e) => !ancoras.has(e.term.trim().toLowerCase()))
+  const removidos = (req.glossaryEntries ?? []).length - glossarioSemColisao.length
+  if (removidos > 0) {
+    console.warn(
+      `[link-shield] ${removidos} termo(s) de glossário saíram da regra neste chunk por colidirem com âncoras de link: ` +
+      (req.glossaryEntries ?? []).filter((e) => ancoras.has(e.term.trim().toLowerCase())).map((e) => e.term).join(', '),
+    )
+  }
+
   const userPrompt =
     req.type === 'ui'
       ? uiTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
       : req.type === 'afos-daily'
-        ? afosDailyTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale, req.glossaryEntries ?? [])
+        ? afosDailyTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale, glossarioSemColisao)
         : editorialTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
 
   // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
@@ -209,36 +234,14 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
   // 120s timeout: dailies grandes (>15k chars com seção "Fontes consultadas") podem levar 80-100s no Haiku 4.5.
   const timeoutMs = req.type === 'afos-daily' ? 120000 : 30000
 
-  const start = Date.now()
-  // Retry with exponential backoff on transient failures (429 / network).
-  // 3 attempts: 0ms, 1500ms, 4500ms — total ~6s additional ceiling under load.
-  let result: Awaited<ReturnType<typeof callProvider>> | null = null
-  let lastErr: unknown = null
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey, maxTokens, timeoutMs)
-      break
-    } catch (err) {
-      lastErr = err
-      // Retry only on transient signals: 429, 5xx, network/timeout abort.
-      // 4xx other than 429 (bad key, malformed body) never recovers.
-      const msg = err instanceof Error ? err.message : String(err)
-      const name = err instanceof Error ? err.name : ''
-      const transient = msg === 'rate_limited' || /_(429|5\d\d)$/.test(msg) || name === 'AbortError' || name === 'TimeoutError'
-      if (!transient || attempt === 2) throw err
-      await new Promise((r) => setTimeout(r, 1500 * 3 ** attempt))
-    }
-  }
-  if (!result) throw lastErr ?? new Error('translate_failed')
-  const latencyMs = Date.now() - start
-
-  if (!result.text) throw new Error('empty_translation')
-
   // ── TRADUÇÃO DAS ÂNCORAS (passada dedicada, SEM regra de glossário) ─────────
   // As âncoras não vão na chamada principal: se fossem, o modelo aplicaria a regra 5
   // DENTRO delas, destruiria o link externo e ainda erraria o sentido
   // ("2º lugar" virou "2º turno" em 13/Jul). Aqui elas viajam sozinhas, com um prompt
   // que proíbe markdown e glossário e exige tradução literal.
+  //
+  // Fica FORA do laço de integridade abaixo: as âncoras vêm do texto-fonte e não
+  // dependem da chamada principal, então repeti-la a cada tentativa seria desperdício.
   const anchors = shieldedLinks.map((l) => l.anchor)
   let translatedAnchors: string[] = []
   if (anchors.some((a) => a)) {
@@ -263,26 +266,86 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
     }
   }
 
-  // ── REMONTAGEM DOS LINKS + GATE DE ADULTERAÇÃO ─────────────────────────────
-  const { text: unshielded, report } = unshieldLinks(result.text, shieldedLinks, translatedAnchors)
+  // ── LAÇO DE INTEGRIDADE: repetir sob verificação ────────────────────────────
+  // O modelo é ESTOCÁSTICO com os tokens do shield. Em 14/Jul, um chunk com 11 links
+  // em 3.042 chars (um token a cada ~276 chars) derrubou 6 tokens numa passada, e
+  // preservou os 11 numa passada idêntica logo em seguida. Não é defeito determinístico
+  // de prompt: é variância do modelo sob alta densidade de tokens.
+  //
+  // Antes, `link_lost` abortava a tradução inteira na primeira falha, e o operador tinha
+  // que rodar de novo à mão. Agora repetimos a chamada principal, e cada tentativa passa
+  // pelo MESMO gate. Repetir é seguro justamente porque o shield verifica: nunca sai daqui
+  // uma tradução com link perdido ou inventado. O gate não afrouxou, só ganhou paciência.
+  const MAX_TENTATIVAS_INTEGRIDADE = 4
+  let cleanText: string | null = null
+  let latencyMs = 0
+  let ultimaFalha = ''
+  // Contadores da tentativa que PASSOU no gate (o `result` vive dentro do laço).
+  let tokensIn: number | undefined
+  let tokensOut: number | undefined
 
-  if (report.hallucinated.length > 0) {
+  for (let tentativa = 1; tentativa <= MAX_TENTATIVAS_INTEGRIDADE; tentativa++) {
+    const start = Date.now()
+
+    // Retry interno: falhas TRANSITÓRIAS de rede/API (429, 5xx, timeout).
+    // 3 tentativas: 0ms, 1500ms, 4500ms.
+    let result: Awaited<ReturnType<typeof callProvider>> | null = null
+    let lastErr: unknown = null
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        result = await callProvider(SYSTEM_PROMPT, userPrompt, config.provider, config.apiKey, maxTokens, timeoutMs)
+        break
+      } catch (err) {
+        lastErr = err
+        // 4xx que não seja 429 (chave ruim, body malformado) nunca se recupera.
+        const msg = err instanceof Error ? err.message : String(err)
+        const name = err instanceof Error ? err.name : ''
+        const transient = msg === 'rate_limited' || /_(429|5\d\d)$/.test(msg) || name === 'AbortError' || name === 'TimeoutError'
+        if (!transient || attempt === 2) throw err
+        await new Promise((r) => setTimeout(r, 1500 * 3 ** attempt))
+      }
+    }
+    if (!result) throw lastErr ?? new Error('translate_failed')
+    if (!result.text) throw new Error('empty_translation')
+
+    // ── REMONTAGEM DOS LINKS + GATE DE ADULTERAÇÃO ───────────────────────────
+    const { text: unshielded, report } = unshieldLinks(result.text, shieldedLinks, translatedAnchors)
+
+    if (report.hallucinated.length === 0 && report.lost.length === 0) {
+      // Aninhamento de glossário dentro de outro link quebra o parser markdown.
+      cleanText = stripNestedGlossaryLinks(unshielded)
+      latencyMs = Date.now() - start
+      tokensIn = result.tokensIn
+      tokensOut = result.tokensOut
+      if (tentativa > 1) {
+        console.warn(`[link-shield] integridade OK na tentativa ${tentativa}/${MAX_TENTATIVAS_INTEGRIDADE}.`)
+      }
+      break
+    }
+
+    ultimaFalha = [
+      report.lost.length > 0
+        ? `${report.lost.length} link(s) destruído(s): ${report.lost.map((l) => `[${l.anchor}](${l.url})`).join(', ')}`
+        : '',
+      report.hallucinated.length > 0
+        ? `${report.hallucinated.length} URL(s) inventada(s): ${report.hallucinated.join(', ')}`
+        : '',
+    ].filter(Boolean).join(' | ')
+
+    console.warn(
+      `[link-shield] tentativa ${tentativa}/${MAX_TENTATIVAS_INTEGRIDADE} REPROVADA no gate. ${ultimaFalha}`,
+    )
+    if (tentativa < MAX_TENTATIVAS_INTEGRIDADE) {
+      await new Promise((r) => setTimeout(r, 1000 * tentativa))
+    }
+  }
+
+  // Falhar ALTO depois de esgotar as tentativas. Melhor abortar do que publicar link morto.
+  if (!cleanText) {
     throw new Error(
-      `link_hallucinated: o modelo escreveu ${report.hallucinated.length} URL(s) que não existem no original ` +
-      `(ele não viu URL nenhuma): ${report.hallucinated.join(', ')}`,
+      `link_integrity_failed: o gate reprovou as ${MAX_TENTATIVAS_INTEGRIDADE} tentativas. Última falha: ${ultimaFalha}`,
     )
   }
-  if (report.lost.length > 0) {
-    throw new Error(
-      `link_lost: o modelo destruiu ${report.lost.length} link(s): ` +
-      report.lost.map((l) => `[${l.anchor}](${l.url})`).join(', '),
-    )
-  }
-
-  // Aninhamento de glossário dentro de outro link quebra o parser markdown.
-  // Agora aplicado a TODOS os tipos (antes só a afos-daily), porque o Tradeoff
-  // sofre do mesmo defeito.
-  const cleanText = stripNestedGlossaryLinks(unshielded)
 
   setCache(key, cleanText)
 
@@ -293,6 +356,6 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
     translatedText: cleanText,
     cached: false,
     provider: config.provider,
-    meta: { tokensIn: result.tokensIn, tokensOut: result.tokensOut, latencyMs },
+    meta: { tokensIn, tokensOut, latencyMs },
   }
 }
