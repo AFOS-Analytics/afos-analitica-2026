@@ -1,0 +1,52 @@
+{
+  "date": "2026-07-13",
+  "generatedAt": "2026-07-13T21:45:00-03:00",
+  "polymarketFetchedAt": "2026-07-14T00:45:49Z",
+  "rebaseline": {
+    "triggered": false,
+    "reason": "Mercado parado nos 13 minutos entre o /atualizar (21:32) e o re-fetch do Daily (21:45). Lula 60,50 / Flavio 23,85 / Renan 10,05 / Michelle 2,25 / gap +36,65pp / vol USD 112,5M: delta 0,00 em todos. Nenhum gate disparou."
+  },
+  "factCheckGate": {
+    "events": [
+      {
+        "event": "Moraes suspende por 90 dias as visitas de Flavio a Jair Bolsonaro",
+        "crossRef": "'visitas' = ZERO mencoes nas 7 dailies -> NOVIDADE. 'domiciliar' aparece em 12/Jul, mas ali era PEDIDO (do PT), nao decisao. A decisao e nova.",
+        "verification2": "O Globo (URL direta, 13/Jul) + G1 + BBC + Agencia Brasil + Brasil de Fato + JB. Seis fontes independentes. Tipo = evento.",
+        "factsLocked": "Decisao de 13/Jul. Suspende visitas por 90 dias (ate meados de outubro, cobre a reta final da campanha). Motivo: Flavio usou o direito de visita para produzir e divulgar a carta de 11/Jul, violando a proibicao de Jair se manifestar por terceiros. 48h para a defesa explicar. Moraes TAMBEM mandou apurar possivel propaganda eleitoral antecipada.",
+        "criticalConstraint": "A PRISAO DOMICILIAR NAO FOI REVOGADA. Advogados ouvidos por O Globo (Miriam Leitao) dizem que o beneficio pode ser perdido se ficar comprovado que Jair sabia da divulgacao, mas isso e prospeccao, nao decisao.",
+        "decision": "incorporar com desambiguacao explicita do verbo critico"
+      },
+      {
+        "event": "BTG/Nexus publicada (1a das quatro nacionais da semana)",
+        "crossRef": "'Nexus' aparece em 10/Jul, mas como pesquisa PREVISTA. A publicacao e novidade.",
+        "verification2": "Site do proprio instituto (nexus.fsb.com.br, fonte primaria) + Folha + Poder360 + VEJA + Gazeta do Povo + CartaCapital. Tipo = evento.",
+        "factsLocked": "BR-07981/2026, n=2.003, campo 10-12/Jul, margem 2pp, telefonica em todas as regioes. 1T: Lula 40% (queda de 2pp ante os 42% de 29/Jun), Flavio 34% (estavel), Caiado 5%, Renan 4%, Zema 4%. 2T: Lula 47% x Flavio 44% (tres pontos, DENTRO da margem: empate tecnico). Voto decidido caiu de 74% para 70%.",
+        "leitura": "O peso nao esta no numero, esta na PROCEDENCIA. A Gerp de 08/Jul (mesmo estreitamento) era instituto de menor porte e outlier. A BTG/Nexus e primeiro escalao. A Gerp deixou de estar isolada.",
+        "decision": "incorporar"
+      },
+      {
+        "event": "PF diz que assessora tinha aval da presidencia da Camara para desviar emendas a Cunha",
+        "verification2": "Folha (URL direta). Cunha responde chamando a operacao de politica e negando provas (Folha, materia separada).",
+        "decision": "incorporar como AFIRMACAO DA PF em investigacao em curso, NAO como fato provado, com a resposta de Cunha na sequencia"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. Moraes tem 6 fontes independentes; a BTG/Nexus tem a fonte primaria do instituto + 5 veiculos.",
+    "numericalErrors": "reconcile-claims.ts exit 0. Os 9 alertas foram inspecionados UM A UM e sao artefato do regex, que associa o numero ao nome mais proximo (le 'Flavio 44%) e tirou 2pp' como 'Flavio = 2pp') e pega numeros dentro de TITULOS de materia na lista de fontes. Nenhum numero inventado.",
+    "inventedSources": "verificadas 3 aleatorias (O Globo/Moraes, Folha/PF, Nexus/FSB): todas com materia real datada de 13/Jul.",
+    "literalQuotes": "uma: o 'ainda' de Damares ('Flavio ainda e seu pre-candidato'), entre aspas e atribuido a Folha.",
+    "spuriousCausation": "NENHUMA, e este era o risco central do dia. Michelle DOBROU (+1,20pp) e Jair CAIU (-0,60pp) no MESMO dia da decisao de Moraes. A tentacao narrativa e obvia. O texto diz explicitamente: 'Nao ha como estabelecer causa a partir do preco, e o Daily nao a afirma: registra-se a coincidencia temporal'. Registra o fato, nao inventa o mecanismo.",
+    "criticalVerbs": "desambiguados: 'suspendeu' (decisao monocratica de 13/Jul, 90 dias, escopo explicito); 'a prisao domiciliar NAO foi revogada' (frase literal no corpo); 'mandou apurar' (nao e condenacao); 'a PF afirma' (alegacao em investigacao, com a resposta de Cunha imediatamente depois).",
+    "decision": "prosseguir para preview"
+  },
+  "validators": {
+    "validate-afos-daily": "exit 0. 1 warning: link-density 76% (regra 80%). Os paragrafos sem link sao analise propria (divergencias, sintese), sem fonte externa a linkar.",
+    "reconcile-claims": "exit 0",
+    "wordCount": "1184 palavras no corpo editorial (alvo 600-900). Acima do alvo, assumido e declarado ao usuario: o dia teve a pesquisa mais relevante do ciclo E uma decisao do STF que reconfigura a sucessao do maior campo de oposicao. Duas passadas de corte aplicadas.",
+    "fontes": "7 ancora + 7 secundarias = 50% secundario (piso da regra)",
+    "emDashes": "0",
+    "mojibake": "0"
+  },
+  "editorialAngle": "O dia teve pesquisa E decisao, e o mercado se moveu pela DECISAO. A BTG/Nexus da empate tecnico no 2o turno (47x44) e tira 2pp de Lula no 1o, mas o contrato de vencedor dele nao se moveu um ponto-base. O que se moveu foi a cauda: Michelle DOBROU (2,25%) e Jair CAIU (1,05%), no mesmo dia em que Moraes cortou o contato entre pai e filho. E a Gerp de 08/Jul deixou de estar isolada: o estreitamento que um outlier sinalizou agora vem do primeiro escalao."
+}

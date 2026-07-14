@@ -1,49 +1,47 @@
 /**
- * LINK SHIELD — o modelo nunca mais vê uma URL.
+ * LINK SHIELD — o modelo nunca vê uma URL, nem a âncora de um link.
  *
  * ── Por que isto existe ──────────────────────────────────────────────────────
  * O tradutor pedia ao modelo que fosse o AUTOR dos links (prompts.ts, regra 5:
- * "para cada ocorrência destes termos, use a substituição exata [Termo](/xx/glossary#id)").
- * Enquanto o modelo tem a caneta, ele produz quatro famílias de defeito, TODAS
- * silenciosas (o resultado parece válido e está errado, nenhum validador de formato pega):
+ * "para cada ocorrência destes termos, use [Termo](/xx/glossary#id)"). Enquanto o
+ * modelo tem a caneta, ele produz defeitos SILENCIOSOS (o resultado parece válido e
+ * está errado; nenhum validador de formato pega):
  *
- *   1. CORRUPÇÃO DE TOKEN. Altera caracteres dentro da URL. Um token base64 do Google
- *      News teve "dU85" trocado por "dU81". O link continua com cara de válido e NÃO
- *      resolve. Só quebra quando o leitor clica. (9 URLs no Daily de 12/Jul.)
- *   2. SEQUESTRO DE LINK EXTERNO. Vê `[TSE](https://divulgacandcontas...)` e, obedecendo
- *      à regra 5, troca o destino por `/en/glossary#tse`. A fonte primária vira âncora
- *      interna e o leitor perde o documento oficial.
- *   3. LINK ANINHADO. Injeta glossário DENTRO de outro link. Markdown não suporta, o
- *      parser quebra no primeiro `]` e a URL vaza como texto.
- *   4. LINK DERRUBADO. Simplesmente some com o link.
+ *   1. CORRUPÇÃO DE TOKEN. Altera caracteres dentro da URL (um token base64 do Google
+ *      News teve "dU85" trocado por "dU81"). O link continua com cara de válido e NÃO
+ *      resolve. Só quebra quando o leitor clica.
+ *   2. SEQUESTRO. Vê [TSE](https://divulgacandcontas...) e troca o destino por
+ *      /en/glossary#tse. A fonte primária vira âncora interna.
+ *   3. ANINHAMENTO. Injeta glossário DENTRO de outro link. Markdown não suporta.
+ *   4. DERRUBADA + ERRO FACTUAL. Este é o pior, e só apareceu quando o shield v1
+ *      (que protegia só a URL) abortou uma tradução em 13/Jul/2026. Diagnóstico:
  *
- * O prompt já tinha um aviso longo contra o item 3, e existia um `stripNestedGlossaryTags`
- * como remendo pós-resposta. Ou seja: a batalha já vinha sendo travada na SAÍDA do modelo,
- * e perdida. Prompt não resolve, porque o problema não é falta de instrução, é excesso de
- * poder: o modelo não deveria ter permissão de escrever uma URL.
+ *        entrada : [2º lugar do 1º turno](⟦U0⟧)
+ *        saída   : [2º turno](/en/glossary#segundo-turno) sub-market of
+ *                  [1º turno](/en/glossary#primeiro-turno)
  *
- * ── O que este módulo faz ────────────────────────────────────────────────────
- * ANTES da chamada: todo destino de link e toda URL nua viram tokens opacos (⟦U0⟧, ⟦U1⟧…).
- * O TEXTO da âncora continua visível, para o modelo traduzir com contexto e sem perder
- * fluência ("segundo a [CartaCapital](⟦U3⟧), ...").
+ *      A ÂNCORA continha termos do glossário. O modelo aplicou a regra 5 DENTRO dela,
+ *      destruiu o link externo e, de quebra, trocou "2º lugar" (segunda colocação) por
+ *      "2º turno" (returno). Erro FACTUAL, não só link quebrado.
  *
- * DEPOIS da chamada: os tokens são restaurados a partir do original. Com isso:
- *   - (1) e (2) ficam IMPOSSÍVEIS de passar despercebidos: a URL nunca esteve lá para ser
- *     corrompida, e se o modelo trocar o token por um link de glossário, o token SOME e
- *     nós detectamos com certeza e reparamos pela âncora.
- *   - (4) vira erro explícito em vez de perda silenciosa.
- *   - (3) segue tratado pelo strip de aninhamento, agora aplicado a todos os tipos.
+ * ── Conclusão de arquitetura ─────────────────────────────────────────────────
+ * Proteger só a URL não basta: enquanto a ÂNCORA for prosa visível, a regra de
+ * glossário briga com o nosso link. O link inteiro precisa ser opaco.
  *
- * O modelo CONTINUA podendo criar links de glossário em texto puro (é o recurso desejado):
- * esses nascem com destino real (/xx/glossary#id), não com token, então são distinguíveis
- * de um sequestro.
+ * ANTES da chamada: cada link vira UM token (⟦L0⟧, ⟦L1⟧…). O modelo traduz a prosa ao
+ * redor e não tem como tocar em nada do link.
+ * DEPOIS: as âncoras são traduzidas numa passada PRÓPRIA, sem regra de glossário, e o
+ * link é remontado com a URL original. Token que sumir ABORTA: melhor falhar alto do
+ * que publicar link morto ou fato errado.
+ *
+ * O glossário em TEXTO PURO continua funcionando: é o recurso desejado e não colide
+ * com nada, porque ali não há link a destruir.
  */
 
-/** Um destino de link protegido do modelo. */
 interface ShieldedLink {
   /** URL original, exatamente como no texto-fonte. */
   url: string
-  /** Texto da âncora no original (vazio quando era URL nua). Usado no reparo. */
+  /** Texto da âncora no original. Vazio quando era URL nua. */
   anchor: string
 }
 
@@ -54,39 +52,29 @@ export interface ShieldResult {
 
 export interface UnshieldReport {
   restored: number
-  /** Tokens que o modelo destruiu e que reparamos pela âncora (sequestro de link). */
-  repaired: Array<{ anchor: string; url: string; hijackedBy: string }>
-  /** URLs que o modelo inventou (não existiam no original). */
+  /** URLs que o modelo inventou (ele não viu URL nenhuma). */
   hallucinated: string[]
-  /** Tokens perdidos que NÃO foi possível reparar. Se houver, a tradução é inválida. */
-  unrecoverable: Array<{ anchor: string; url: string }>
+  /** Tokens que o modelo destruiu. Se houver, a tradução é inválida. */
+  lost: Array<{ anchor: string; url: string }>
 }
 
-const TOKEN = (i: number) => `⟦U${i}⟧`
-// Restauração tolerante: o modelo às vezes insere espaço dentro do token.
-const TOKEN_RE = /⟦\s*U\s*(\d+)\s*⟧/g
-// Link markdown: [âncora](destino). Destino sem parêntese interno (URLs do projeto não têm).
+const TOKEN = (i: number) => `⟦L${i}⟧`
+/** Restauração tolerante: o modelo às vezes insere espaço dentro do token. */
+const TOKEN_RE = /⟦\s*L\s*(\d+)\s*⟧/g
 const MD_LINK_RE = /\[([^\]]*)\]\(([^)]+)\)/g
 const BARE_URL_RE = /https?:\/\/[^\s)\]<>"']+/g
 
-/**
- * Substitui TODO destino de link e URL nua por tokens opacos.
- * O texto da âncora permanece visível e traduzível.
- */
+/** Substitui CADA LINK INTEIRO (âncora + destino) por um token opaco. */
 export function shieldLinks(text: string): ShieldResult {
   const links: ShieldedLink[] = []
 
-  // 1) destinos de links markdown
-  let masked = text.replace(MD_LINK_RE, (full, anchor: string, target: string) => {
-    // Já é um token (reentrância defensiva): não remascarar.
-    if (TOKEN_RE.test(target)) { TOKEN_RE.lastIndex = 0; return full }
-    TOKEN_RE.lastIndex = 0
+  let masked = text.replace(MD_LINK_RE, (_full, anchor: string, target: string) => {
     const i = links.length
     links.push({ url: target, anchor })
-    return `[${anchor}](${TOKEN(i)})`
+    return TOKEN(i)
   })
 
-  // 2) URLs nuas remanescentes (fora de link markdown)
+  // URLs nuas remanescentes (fora de link markdown)
   masked = masked.replace(BARE_URL_RE, (url) => {
     const i = links.length
     links.push({ url, anchor: '' })
@@ -96,57 +84,35 @@ export function shieldLinks(text: string): ShieldResult {
   return { masked, links }
 }
 
-/** Normaliza âncora para comparação entre idiomas (TSE, Polymarket, STF são idênticos). */
-const norm = (s: string) =>
-  s.normalize('NFD').replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase()
-
 /**
- * Restaura os destinos originais e reporta toda tentativa de adulteração.
- * Nunca grava link inventado nem link perdido em silêncio.
+ * Remonta os links com as âncoras traduzidas e as URLs ORIGINAIS.
+ * `translatedAnchors` é paralelo a `links`; entrada vazia ou ausente cai na âncora original.
  */
-export function unshieldLinks(translated: string, links: ShieldedLink[]): { text: string; report: UnshieldReport } {
-  const report: UnshieldReport = { restored: 0, repaired: [], hallucinated: [], unrecoverable: [] }
-
-  // ⚠️ NÃO retornar cedo quando o original não tem links. O caso mais perigoso é
-  // justamente esse: texto SEM link nenhum e o modelo inventando uma URL do nada.
-  // (Peguei isso no teste 6 depois de escrever um early-return que pulava a checagem.)
+export function unshieldLinks(
+  translated: string,
+  links: ShieldedLink[],
+  translatedAnchors: string[] = [],
+): { text: string; report: UnshieldReport } {
+  const report: UnshieldReport = { restored: 0, hallucinated: [], lost: [] }
 
   const seen = new Set<number>()
-
-  // 1) restauração direta dos tokens sobreviventes
-  let out = translated.replace(TOKEN_RE, (full, idx: string) => {
+  const out = translated.replace(TOKEN_RE, (full, idx: string) => {
     const i = Number(idx)
     const link = links[i]
-    if (!link) return full // token inventado pelo modelo: deixa visível para o gate pegar
+    if (!link) return full // token inventado: cai no gate de perdidos/alucinação
     seen.add(i)
     report.restored++
-    return link.url
+    if (!link.anchor) return link.url // era URL nua
+    const anchor = (translatedAnchors[i] || '').trim() || link.anchor
+    return `[${anchor}](${link.url})`
   })
 
-  // 2) tokens sumidos = o modelo destruiu o link (tipicamente sequestro para glossário)
-  const perdidos = links.map((l, i) => ({ ...l, i })).filter((l) => !seen.has(l.i))
+  // Token que sumiu = o modelo destruiu o link. Sem ambiguidade, sem reparo heurístico.
+  links.forEach((l, i) => {
+    if (!seen.has(i)) report.lost.push({ anchor: l.anchor || '(url nua)', url: l.url })
+  })
 
-  for (const perdido of perdidos) {
-    if (!perdido.anchor) { report.unrecoverable.push({ anchor: '(url nua)', url: perdido.url }); continue }
-
-    // Procurar um link cuja âncora bate com a do original e cujo destino NÃO é nosso token.
-    // É o padrão do sequestro: [TSE](⟦U3⟧) virou [TSE](/en/glossary#tse).
-    let reparado = false
-    out = out.replace(MD_LINK_RE, (full, anchor: string, target: string) => {
-      if (reparado) return full
-      if (target === perdido.url) { reparado = true; return full } // já está correto
-      if (norm(anchor) !== norm(perdido.anchor)) return full
-      // Âncora idêntica e destino diferente do original: sequestrado. Reverter.
-      reparado = true
-      report.repaired.push({ anchor: perdido.anchor, url: perdido.url, hijackedBy: target })
-      return `[${anchor}](${perdido.url})`
-    })
-
-    if (!reparado) report.unrecoverable.push({ anchor: perdido.anchor, url: perdido.url })
-  }
-
-  // 3) URL inventada: o modelo não viu URL nenhuma, então qualquer http que ele tenha
-  //    escrito e que não esteja no original é alucinação.
+  // O modelo não viu URL nenhuma: qualquer http na saída que não seja nossa é invenção.
   const conhecidas = new Set(links.map((l) => l.url))
   for (const u of out.match(BARE_URL_RE) ?? []) {
     if (!conhecidas.has(u)) report.hallucinated.push(u)
@@ -158,14 +124,11 @@ export function unshieldLinks(translated: string, links: ShieldedLink[]): { text
 const GLOSSARY_TAG_RE = /\[([^[\]]+)\]\(\/(?:en|es|pt-BR)\/glossary#[^)]+\)/g
 
 /**
- * Remove link de glossário ANINHADO dentro de outro link (markdown não suporta
- * aninhamento: o parser fecha no primeiro `]` e a URL vaza como texto).
- * Tags standalone (o recurso desejado) são preservadas.
+ * Remove link de glossário ANINHADO dentro de outro link (markdown não suporta:
+ * o parser fecha no primeiro `]` e a URL vaza como texto). Tags standalone ficam.
  *
- * Conta `[` não fechados antes do match para saber se está dentro de outro link.
  * Contagem de profundidade, não regex: um regex ingênuo erra quando há MAIS DE UM
- * termo aninhado no mesmo link externo. (Algoritmo herdado do stripNestedGlossaryTags
- * original de translate.ts, que estava certo; só mudou de casa.)
+ * termo aninhado no mesmo link externo.
  */
 export function stripNestedGlossaryLinks(text: string): string {
   let result = ''
@@ -180,10 +143,33 @@ export function stripNestedGlossaryLinks(text: string): string {
       else if (before[i] === ']' && depth > 0) depth--
     }
     result += text.slice(lastIdx, match.index)
-    // depth > 0 → está dentro de outro link: manter só o texto do termo.
     result += depth > 0 ? match[1] : match[0]
     lastIdx = match.index + match[0].length
   }
   result += text.slice(lastIdx)
   return result
+}
+
+/**
+ * Prompt da passada dedicada de tradução de âncoras.
+ * SEM regra de glossário, SEM markdown: só o texto do rótulo. É isso que impede o
+ * modelo de transformar "2º lugar do 1º turno" em dois links de glossário e, de quebra,
+ * em "2º turno".
+ */
+export function anchorTranslationPrompt(anchors: string[], targetLocale: string): string {
+  const lang = targetLocale === 'es' ? 'Spanish (es)' : 'English (en)'
+  const numbered = anchors.map((a, i) => `${i + 1}. ${a}`).join('\n')
+  return `Translate each link label below from Brazilian Portuguese to ${lang}.
+
+RULES, no exceptions:
+- Output EXACTLY ${anchors.length} lines, numbered "1." to "${anchors.length}.", in the same order. Nothing else.
+- Translate LITERALLY and PRECISELY. These are link labels; a wrong word breaks a factual claim.
+  Critical: "2º lugar" means SECOND PLACE (ranking), NOT "2º turno" (runoff). Never swap them.
+- Keep proper nouns in Portuguese: person names, party names, outlet names (Folha de S.Paulo, O Globo,
+  G1, VEJA, Poder360, Estadão), institution names (TSE, STF, Polymarket), institute names.
+- NEVER output markdown, brackets, parentheses with URLs, or glossary links. Plain text only.
+- If a label is a news headline, translate it as a headline.
+
+Labels:
+${numbered}`
 }

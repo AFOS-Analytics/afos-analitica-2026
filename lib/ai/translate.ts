@@ -6,7 +6,7 @@
  */
 
 import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt, afosDailyTranslationPrompt } from './prompts'
-import { shieldLinks, unshieldLinks, stripNestedGlossaryLinks } from './link-shield'
+import { shieldLinks, unshieldLinks, stripNestedGlossaryLinks, anchorTranslationPrompt } from './link-shield'
 import { createHash } from 'crypto'
 import { prisma } from '../db'
 
@@ -234,30 +234,48 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
 
   if (!result.text) throw new Error('empty_translation')
 
-  // ── RESTAURAÇÃO DOS LINKS + GATE DE ADULTERAÇÃO ─────────────────────────────
-  // Restaura os destinos originais e reporta toda tentativa do modelo de mexer neles.
-  // Link perdido ou URL inventada ABORTAM: melhor falhar alto do que publicar link
-  // morto ou fabricado.
-  const { text: unshielded, report } = unshieldLinks(result.text, shieldedLinks)
-
-  if (report.repaired.length > 0) {
-    for (const r of report.repaired) {
-      console.warn(
-        `[link-shield] SEQUESTRO revertido: âncora "${r.anchor}" teve o destino trocado ` +
-        `por "${r.hijackedBy}"; restaurado para "${r.url}"`,
+  // ── TRADUÇÃO DAS ÂNCORAS (passada dedicada, SEM regra de glossário) ─────────
+  // As âncoras não vão na chamada principal: se fossem, o modelo aplicaria a regra 5
+  // DENTRO delas, destruiria o link externo e ainda erraria o sentido
+  // ("2º lugar" virou "2º turno" em 13/Jul). Aqui elas viajam sozinhas, com um prompt
+  // que proíbe markdown e glossário e exige tradução literal.
+  const anchors = shieldedLinks.map((l) => l.anchor)
+  let translatedAnchors: string[] = []
+  if (anchors.some((a) => a)) {
+    try {
+      const ares = await callProvider(
+        SYSTEM_PROMPT,
+        anchorTranslationPrompt(anchors, req.targetLocale),
+        config.provider, config.apiKey, 2048, 60000,
       )
+      const linhas = ares.text.split('\n').map((l) => l.replace(/^\s*\d+\.\s*/, '').trim()).filter(Boolean)
+      if (linhas.length === anchors.length) {
+        translatedAnchors = linhas
+      } else {
+        console.warn(
+          `[link-shield] passada de âncoras devolveu ${linhas.length} linhas para ${anchors.length} âncoras; ` +
+          'mantendo as âncoras originais em português (link intacto, só o rótulo não traduzido).',
+        )
+      }
+    } catch (err) {
+      console.warn('[link-shield] passada de âncoras falhou; mantendo âncoras originais:',
+        err instanceof Error ? err.message : err)
     }
   }
+
+  // ── REMONTAGEM DOS LINKS + GATE DE ADULTERAÇÃO ─────────────────────────────
+  const { text: unshielded, report } = unshieldLinks(result.text, shieldedLinks, translatedAnchors)
+
   if (report.hallucinated.length > 0) {
     throw new Error(
       `link_hallucinated: o modelo escreveu ${report.hallucinated.length} URL(s) que não existem no original ` +
       `(ele não viu URL nenhuma): ${report.hallucinated.join(', ')}`,
     )
   }
-  if (report.unrecoverable.length > 0) {
+  if (report.lost.length > 0) {
     throw new Error(
-      `link_lost: o modelo destruiu ${report.unrecoverable.length} link(s) sem possibilidade de reparo: ` +
-      report.unrecoverable.map((l) => `[${l.anchor}](${l.url})`).join(', '),
+      `link_lost: o modelo destruiu ${report.lost.length} link(s): ` +
+      report.lost.map((l) => `[${l.anchor}](${l.url})`).join(', '),
     )
   }
 
