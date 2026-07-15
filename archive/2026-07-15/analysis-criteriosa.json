@@ -1,0 +1,162 @@
+{
+  "updatedAt": "15/07/2026, 19:35",
+  "subtitle": "ATUALIZAÇÃO 15/Jul 19:35 BRT D+62. A 81 dias do 1º turno, a pesquisa de MAIOR confiabilidade da semana quebrou a sequência de estreitamento e reabriu a folga de Lula, e o mercado andou junto. PESQUISA: a Genial/Quaest (n=2.004, campo 10-13/Jul, margem 2pp) deu 2º turno Lula 45% x Flávio 37% (gap +8pp), a maior folga de julho, e 1º turno Lula 40% x Flávio 28% (gap +12pp). Vem depois de Gerp 08/Jul, BTG/Nexus 13/Jul e Futura/Apex 14/Jul, que sugeriam empate. Rejeição na Quaest: Flávio 57%, Lula 50%. MERCADO: Lula sobe a 61,50% (alta 1,00pp, vol USD 7,4M), Flávio 25,30% (alta 0,45pp), Renan Santos CAI a 8,50% (queda 1,65pp). Gap +36,20pp. Volume acumulado no presidencial acima de USD 113M. IMPRENSA: Flávio detonou a Quaest, chamou o PT de Partido do Tarifaço e lançou plano para romper resistência feminina; Bolsonaro contradisse o filho sobre a carta e Moraes pediu manifestação da PGR; Flávio e Lula organizaram chapas ao Senado (Portinho no RJ, Cid Gomes no CE).",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 61.50% (alta 1,00pp, vol USD 7,4M acumulado), a 81 dias da eleição. Voltou ao topo do intervalo de duas semanas no dia em que a Quaest, a pesquisa mais confiável do recorte, reabriu a folga no returno (45% x 37%).",
+      "fortes": [
+        "Genial/Quaest 15/Jul: 1º turno Lula 40% x Flávio 28% (gap +12pp), a maior vantagem de 1º turno de julho.",
+        "Genial/Quaest 2º turno Lula 45% x Flávio 37% (gap +8pp), a maior folga do returno em julho, reabrindo a distância.",
+        "A melhor pesquisa da semana foi na direção oposta às três anteriores que sugeriam empate: o estreitamento não se confirmou no instituto de maior reliability.",
+        "Aprovação do governo em leve melhora: 48% contra 47% de desaprovação na Quaest, com Lula igualando aprovação e desaprovação entre independentes (Estadão).",
+        "Vence todos os cenários de 2º turno em todas as nacionais recentes, e a Quaest aponta pela primeira vez uma chance de vitória no 1º turno."
+      ],
+      "fracos": [
+        "A distância de nível ainda é grande: 61,50% de probabilidade implícita contra uma vantagem de 8pp na urna declarada.",
+        "As três nacionais imediatamente anteriores (Gerp, BTG/Nexus, Futura/Apex) puseram o 2º turno em empate ou derrota, e ainda estão no recorte.",
+        "Rejeição alta e estável (50% na Quaest), num eleitorado ainda com voto disponível a menos de 90 dias da urna.",
+        "A PoderData de 16/Jul (n=2.400) ainda vai testar se a reabertura da folga é tendência ou oscilação de um instituto.",
+        "A dispersão entre institutos segue a maior do ciclo, do empate (Futura/Apex) a Lula +8 (Quaest)."
+      ],
+      "analise": "Lula subiu a 61,50% (alta 1,00pp, vol USD 7,4M acumulado) e voltou ao topo do intervalo de duas semanas. Mas o número que importa hoje não é o preço, é a pesquisa. A Genial/Quaest (n=2.004, campo 10-13/Jul, margem 2pp), o instituto de maior confiabilidade do recorte, deu Lula com 40% no 1º turno contra 28% de Flávio (gap +12pp) e 45% contra 37% no 2º turno (gap +8pp), a maior folga do returno em julho. E o que torna isso pesado é o timing. Nos últimos dias, três nacionais consecutivas (Gerp 08/Jul, BTG/Nexus 13/Jul e Futura/Apex 14/Jul) apontavam estreitamento, uma delas com Flávio vencendo o returno e as outras em empate técnico. A leitura de ontem era que o mercado carregava uma convicção que a intenção declarada não sustentava. A Quaest inverteu esse enredo: a melhor pesquisa da semana não confirmou o estreitamento, foi na direção oposta e reabriu a folga. Por isso hoje houve convergência parcial. A direção do dinheiro real (Lula à frente) ganhou o respaldo do dado mais confiável, e o mercado ainda corrigiu para baixo a distorção de Renan Santos, que nenhuma nacional sustentou. O que não se resolveu foi a distância de NÍVEL: 61,50% de probabilidade é muito para uma vantagem de 8pp numa eleição a 81 dias. A pergunta deixou de ser se o mercado está certo na direção, e passou a ser se ele exagera na convicção. A PoderData de amanhã é o próximo teste."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 25.30% (alta 0,45pp, vol USD 7,4M acumulado) e 83,00% no 2º lugar do 1º turno. O preço subiu de leve apesar da pior pesquisa da semana, na qual aparece a 8pp de Lula e com 57% de rejeição.",
+      "fortes": [
+        "Segue líder folgado do 2º lugar do 1º turno (83,00%): a condição de adversário certo de Lula no returno está precificada.",
+        "O preço no vencedor não recuou apesar da Quaest adversa, sustentado pela polarização estrutural.",
+        "Organizou a chapa ao Senado no RJ com Carlos Portinho e fez gestos ao União Brasil, buscando reaproximação (Estadão).",
+        "Milei mantém agenda com ele no Brasil, com potencial de mobilização do campo.",
+        "Lançou um plano para tentar romper a resistência feminina, o flanco onde mais perde (CartaCapital)."
+      ],
+      "fracos": [
+        "Genial/Quaest 15/Jul: 28% no 1º turno e 37% no 2º, a 8pp de Lula, a pior marca dele nas nacionais de julho.",
+        "Rejeição de 57% na Quaest, a maior do páreo, o teto estrutural que trava o preço em 25%.",
+        "A VEJA falou em tempestade negativa perfeita: aliados avaliam que ele precisa recuperar espaço na direita não-bolsonarista e entre independentes (G1).",
+        "Bolsonaro CONTRADISSE o filho e disse a Moraes que a carta foi lida sem sua autorização, e Moraes pediu manifestação da PGR sobre descumprimento.",
+        "Segue suspenso por 90 dias das visitas ao pai, até meados de outubro, o que cobre a reta final da campanha."
+      ],
+      "analise": "Flávio subiu de leve a 25,30% (alta 0,45pp, vol USD 7,4M acumulado) e segue líder folgado do sub-mercado de 2º lugar do 1º turno (83,00%). O preço no vencedor não recuou apesar de a pior pesquisa da semana ter saído contra ele, o que mostra que o mercado o sustenta pela condição estrutural de adversário certo de Lula, não pelo número da urna do dia. E o número foi ruim. A Genial/Quaest o pôs com 28% no 1º turno e 37% no 2º, a 8pp de Lula, com 57% de rejeição, a maior do páreo. A VEJA resumiu como tempestade negativa perfeita, e aliados admitem ao G1 que ele precisa recuperar espaço na direita não-bolsonarista e entre independentes. A reação dele foi política: detonou a pesquisa, ironizou que o povo está feliz com Lula e mirou o campo econômico, chamando o PT de Partido do Tarifaço. No STF o dia foi adverso: Bolsonaro contradisse o filho e disse a Moraes que a carta que buscava consagrar a sucessão foi lida sem sua autorização, e Moraes pediu manifestação da PGR sobre possível descumprimento. O gesto que era para unificar o campo virou fonte de atrito dentro da própria família."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 8.50% (queda 1,65pp, vol USD 8,1M acumulado), o maior movimento do dia. O mercado começou a corrigir a distorção que as urnas nunca sustentaram.",
+      "fortes": [
+        "Segue favorito do 3º lugar do 1º turno (69,00%), à frente de Caiado (13,50%).",
+        "Maior volume acumulado individual entre os contendores vivos (USD 8,1M).",
+        "Ainda o nome mais precificado da 3ª via no mercado, mesmo após a queda."
+      ],
+      "fracos": [
+        "Genial/Quaest 15/Jul: 3% no 1º turno, ATRÁS de Caiado (4%). Nenhuma nacional o mediu acima de 4% no ciclo.",
+        "CAIU 1,65pp no vencedor, o maior movimento individual do dia: o mercado iniciou a correção que as pesquisas pediam.",
+        "Recuou também no 3º lugar do 1º turno (69,00%, queda 2,0pp).",
+        "A divergência segue a mais larga do painel (8,50% contra 3%), mas pela primeira vez em semanas estreitou em vez de aprofundar."
+      ],
+      "analise": "Renan teve o maior movimento individual do dia, e foi de queda: caiu a 8,50% no vencedor (queda 1,65pp, vol USD 8,1M acumulado) e recuou no 3º lugar do 1º turno para 69,00% (queda 2,0pp). Este é um caso didático da tese do AFOS funcionando ao contrário do que costuma parecer. Durante semanas o mercado precificou Renan em dois dígitos enquanto nenhuma nacional o mediu acima de 4%, e a leitura era que o preço estava descolado da urna. Hoje o descolamento começou a se resolver, e resolveu na direção da pesquisa: a Genial/Quaest o pôs em 3%, atrás de Caiado (4%), e o mercado respondeu tirando 1,65pp do preço. A divergência segue a mais larga do painel, mas estreitou pela primeira vez em semanas. Não é que a pesquisa tenha vencido o mercado, é que o mercado, diante de dado novo e crível, ajustou a convicção. O preço de dois dígitos que sobreviveu a tantas nacionais fracas cedeu quando veio a mais forte. Se a PoderData de 16/Jul confirmar a faixa de 2 a 4%, a correção tende a continuar."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1.40% (vol USD 4,9M), Haddad 1.10% (alta 0,30pp), Zema 0.80%. Na Genial/Quaest, Caiado é de novo o melhor da 3ª via (4%), à frente de Renan (3%) e Zema (2%).",
+      "subtitle": "15/Jul D+62, a 81 dias: Caiado 1.40% no vencedor e 13.50% no 3º lugar do 1º turno (atrás de Renan). Foi o melhor da 3ª via na Quaest (1T 4%) pela terceira pesquisa seguida, à frente de Renan e Zema. Saiu em defesa de Damares e criticou os tarifaços de EUA, UE e China. Haddad 1.10%; Zema 0.80% no piso. Renan segue líder da 3ª via no mercado (8.50%), mas em queda.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1.40% (vol USD 4,9M) | 3º lugar do 1º turno 13.50% (atrás de Renan) | melhor da 3ª via na Quaest (1T 4%) | saiu em defesa de Damares e criticou tarifaços de EUA, UE e China (Correio Braziliense)",
+        "fortes": "Caiado foi de novo o melhor da 3ª via na urna declarada: 4% no 1º turno da Genial/Quaest, à frente de Renan (3%) e Zema (2%), a terceira pesquisa seguida em que lidera o pelotão. Subiu no sub-mercado de 3º lugar do 1º turno para 13,50%. Mantém a chapa pura do PSD (Kassab vice) e foi ativo na pauta, saindo em defesa de Damares após ataques e criticando os tarifaços de EUA, UE e China (Correio Braziliense).",
+        "fracos": "Apesar de liderar a 3ª via na urna, Caiado segue no piso do mercado de vencedor (1,40%), valendo cerca de um sexto de Renan (8,50%), que mede menos na pesquisa. O contraste que o define persiste: o mercado precifica notoriedade, não intenção de voto. A força dele segue concentrada no plano estadual (Goiás)."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 1.10% (alta 0,30pp, vol USD 6,2M) | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad subiu a 1,10% (alta 0,30pp) como nome de reserva do PT depois de Lula no mercado. Mantém Márcio França (PSB) como vice na chapa pelo governo de SP e segue como principal quadro do partido no maior colégio eleitoral do país.",
+        "fracos": "O mercado não precifica candidatura presidencial de Haddad, e as nacionais não o testam no cenário presidencial. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na maior rejeição do estado (47%)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0.80% no piso (vol USD 4,3M) | Genial/Quaest 15/Jul 1T 2% | sem vice anunciado",
+        "fortes": "A Genial/Quaest deu Zema 2% no 1º turno. Em pesquisas anteriores marcou voto igual ou acima de Renan (Futura/Apex 14/Jul 3,7%, BTG/Nexus 13/Jul 4%), o que mantém latente a distorção entre o que ele mede na urna e o que vale no mercado.",
+        "fracos": "Zema segue no piso a 0,80% no vencedor, atrás de Renan e Caiado na disputa da 3ª via. Na bipolarização Lula x Flávio o Novo não encontra tração, e o vice ainda não saiu."
+      },
+      "analise": "Na cauda, o dia teve dois movimentos. O primeiro foi a correção de Renan, que perdeu 1,65pp e ancorou a leitura da 3ª via no que a urna declara. O segundo foi a confirmação de Caiado como o melhor do pelotão na pesquisa: 4% na Genial/Quaest, à frente de Renan (3%) e Zema (2%), o terceiro dado seguido nesse sentido. E ainda assim Caiado vale 1,40% no mercado, contra 8,50% de Renan. O contraste que define o pelotão não se desfez, mas hoje ele encolheu, porque o preço de Renan andou na direção da urna. Caiado foi também protagonista político, saindo em defesa de Damares e batendo nos tarifaços. Zema segue no piso, marcando 2% na Quaest e sem vice. Haddad subiu de leve no mercado (1,10%) mas segue fora da corrida presidencial, focado em SP. A leitura geral é que a bipolarização não abriu: nenhum nome da cauda passa de 1,40% no vencedor, contra 61,50% de Lula e 25,30% de Flávio.",
+      "fortes": [
+        "Caiado é o MELHOR da 3ª via na Genial/Quaest (4%), à frente de Renan (3%) e Zema (2%), pela terceira pesquisa seguida.",
+        "Caiado subiu no 3º lugar do 1º turno (13,50%) e foi protagonista político, em defesa de Damares e contra os tarifaços.",
+        "Haddad subiu de leve no mercado (1,10%, alta 0,30pp) como nome de reserva do PT.",
+        "Zema mantém latente a distorção entre urna e preço, marcando voto próximo ao de Renan em várias nacionais."
+      ],
+      "fracos": [
+        "Caiado segue sem converter urna em preço: 4% na pesquisa e 1,40% no mercado, contra 8,50% de Renan com 3%.",
+        "Nenhum nome da cauda passa de 1,40% no vencedor, contra 61,50% de Lula e 25,30% de Flávio.",
+        "Zema segue no piso (0,80%) e sem vice anunciado.",
+        "Haddad não é testado no presidencial por nenhuma nacional, com foco estadual em SP."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Genial/Quaest 15/Jul (n=2.004, campo 10-13/Jul, margem 2pp): 1T Lula 40% x Flávio 28% (gap +12pp); 2T Lula 45% x Flávio 37% (gap +8pp), a maior folga de julho. Reabre a distância depois de Gerp 08/Jul, BTG/Nexus 13/Jul (47x44) e Futura/Apex 14/Jul (46,3x46,1), que sugeriam empate.",
+      "m": "61.50% (vol USD 7,4M acumulado)",
+      "t": "Sobe a 61,50% (alta 1,00pp) e volta ao topo do intervalo de duas semanas. O gap sobre Flávio fica em +36,20pp. Hoje o mercado andou na mesma direção da melhor pesquisa.",
+      "s": "81 dias da eleição. A pesquisa de maior reliability reabriu a folga e o mercado subiu junto. A distância de nível segue grande. PoderData 16/Jul é o próximo teste. Polymarket ao vivo 15/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Genial/Quaest 15/Jul: 1T 28%; 2T 37%, a 8pp de Lula. Rejeição 57%, a maior do páreo. A pior marca dele nas nacionais de julho, depois de Futura/Apex (empate) e BTG/Nexus (empate técnico).",
+      "m": "25.30% (vol USD 7,4M acumulado)",
+      "t": "Sobe de leve a 25,30% (alta 0,45pp) e segue líder do 2º lugar do 1º turno (83,00%). O preço não recuou apesar da pesquisa adversa.",
+      "s": "Detonou a Quaest e chamou o PT de Partido do Tarifaço. Bolsonaro contradisse o filho sobre a carta e Moraes pediu manifestação da PGR. Organizou a chapa ao Senado no RJ com Portinho.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "Genial/Quaest 15/Jul: 3% no 1º turno, ATRÁS de Caiado (4%). Nenhuma nacional o mediu acima de 4% no ciclo.",
+      "m": "8.50% (vol USD 8,1M acumulado)",
+      "t": "CAI 1,65pp no vencedor, o maior movimento do dia, e recua no 3º lugar do 1º turno para 69,00%.",
+      "s": "O mercado começou a corrigir a distorção. A divergência segue a mais larga do painel (8,50% contra 3%), mas estreitou pela primeira vez em semanas.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Genial/Quaest 15/Jul: 4% no 1º turno, o MELHOR da 3ª via de novo, à frente de Renan (3%) e Zema (2%). Terceira pesquisa seguida na liderança do pelotão.",
+      "m": "1.40% (vol USD 4,9M)",
+      "t": "Praticamente estável no vencedor e sobe no 3º lugar do 1º turno para 13,50%.",
+      "s": "Saiu em defesa de Damares e criticou os tarifaços de EUA, UE e China. Lidera a 3ª via na urna e vale um sexto de Renan no mercado.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. A Quaest não a testa no cenário principal do 1º turno.",
+      "m": "1.30% (vol USD 9,0M)",
+      "t": "Recuou a 1,30% (queda 0,55pp) no vencedor, devolvendo parte do salto da semana passada.",
+      "s": "Mantém o projeto ao Senado pelo PL e segue como peça da estratégia da família. O mercado tratou a sucessão familiar como reação pontual, não como tendência.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "2.80% (vol USD 82 mil)",
+      "t": "Segue cravado no piso, sem reagir ao atrito da carta nem ao pedido de manifestação da PGR.",
+      "s": "Nem a escalada de Flávio contra o STF nem o acionamento da PGR moveram o preço. O dinheiro real precifica atrito, não ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dado de 15/Jul é uma inversão. Durante quatro dias a leitura foi a de um mercado teimoso: três nacionais consecutivas apontavam estreitamento no 2º turno, uma delas com Flávio vencendo, e o Polymarket seguia dando a Lula 60% e pouco de probabilidade, ignorando as pesquisas. Hoje veio a Genial/Quaest, a de maior confiabilidade do recorte (n=2.004, campo 10-13/Jul, margem 2pp), e ela não confirmou o estreitamento. Deu Lula 40% x Flávio 28% no 1º turno e 45% x 37% no 2º, a maior folga de julho, com Flávio na maior rejeição do páreo (57%). O mercado andou junto: Lula subiu a 61,50% (alta 1,00pp) e, mais importante, Renan Santos caiu 1,65pp para 8,50%, o maior movimento do dia. Ou seja, o preço de dois dígitos que sobreviveu a semanas de pesquisas fracas cedeu diante da mais forte. Isso é convergência, e é interessante porque mostra os dois lados do sinal do AFOS. Na direção, mercado e a melhor pesquisa passaram a concordar: Lula à frente e reabrindo folga. No nível, a divergência persiste, porque 61,50% de probabilidade ainda é muito para uma vantagem de 8pp a 81 dias da urna. A pergunta mudou de lugar. Não é mais se o mercado está certo sobre quem lidera, e sim se ele exagera na convicção do tamanho. Probabilidade de vitória e margem de voto medem coisas diferentes, e a comparação é de direção e convicção, não ponto a ponto. O próximo teste chega amanhã, com a PoderData 16/Jul (n=2.400): se confirmar a Quaest, a convergência de direção se firma, e o debate fica só no nível."
+}
