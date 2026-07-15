@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-15",
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "Genial/Quaest 15/Jul (pesquisa nacional nova)",
+        "verificacao1": "cross-ref: 'Quaest' aparece 09-10/Jul como recobrança; a de hoje (campo 10-13/Jul, pub 15/Jul) é nova",
+        "classificacao": "novidade",
+        "verificacao2": "G1/CNN/Folha/VEJA/Poder360/Estadao, 2026-07-15, tipo=evento",
+        "segundaFonte": "sim (dezenas de veiculos independentes)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Moraes aciona a PGR sobre a carta + Bolsonaro contradiz Flavio",
+        "verificacao1": "cross-ref: 'PGR' nenhuma mencao em 7 dailies (novidade); 'carta/Moraes' continuidade 11-14/Jul",
+        "classificacao": "novidade (desdobramento)",
+        "verificacao2": "CartaCapital + O Globo + BBC/O Povo, 2026-07-15, tipo=evento/desdobramento",
+        "segundaFonte": "sim (3 fontes independentes)",
+        "decisao": "incorporar como desdobramento, nao divisor de aguas"
+      }
+    ],
+    "master": "7 mencoes nas dailies, continuidade, nao tratado como novidade"
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "duas menores fora da tese central, enquadramento tentativo: STF pauta-bomba (Folha), plano resistencia feminina (CartaCapital)",
+    "numericalErrors": "reconcile-claims exit 0; divergentes sao falsos positivos (numeros de pesquisa e PL 84,50 vs 84 cosmetico)",
+    "fontesInventadas": "verificadas 3 (G1 Quaest 2T, Poder360 rejeicao, O Globo carta), todas reais",
+    "quotesLiterais": "'Povo esta feliz com Lula' e 'Partido do Tarifaco' atribuidas e presentes nas manchetes-fonte",
+    "causacaoEspuria": "corrigida: mercado 'andou junto com a pesquisa' (nao 'reagiu'); correcao de Renan descrita como direcional",
+    "verbosCriticos": "'detonou'->'criticou'; sem 'preso'/'condenou'/'suspendeu' indevidos; carta e suspensao sempre datadas",
+    "decisao": "prosseguir para preview"
+  },
+  "rebaselineGate": {
+    "disparou": false,
+    "motivo": "Lula delta 0,00pp, Renan delta 0,00pp, Flavio delta -0,05pp, gap delta +0,05pp; todos < 0,50pp",
+    "fetchedAt": "2026-07-15 16:58 BRT"
+  }
+}
