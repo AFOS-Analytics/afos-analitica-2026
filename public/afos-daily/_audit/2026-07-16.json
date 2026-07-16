@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-16",
+  "reviewedAt": "2026-07-16T19:05:00-03:00",
+  "refetch": {
+    "fetchedAt": "2026-07-16T21:59:55Z",
+    "live": {
+      "lula": 60.5,
+      "flavio": 25.45,
+      "gap": 35.05,
+      "renan": 8.15,
+      "stf": 3.65,
+      "volTotalUSD": "113.3M"
+    },
+    "baseline": {
+      "lula": 60.5,
+      "flavio": 25.45,
+      "gap": 35.05,
+      "renan": 8.4,
+      "stf": 3.35
+    },
+    "rebaselineGate": "não disparou (Lula/Flávio/gap com delta 0,00pp; Renan 0,25pp e STF 0,30pp, ambos < 0,50pp; nenhum recorde rompido; enquadramento inalterado). Mantida a baseline do JSON, volume total atualizado para o valor ao vivo (USD 113,3M)."
+  },
+  "factCheck": {
+    "events": [
+      {
+        "event": "Tarifa de 25% dos EUA sobre produtos brasileiros",
+        "v1": "aparece em 10/Jul e 11/Jul das últimas 7 dailies -> continuidade, não novidade",
+        "v2": "Poder360 (fetch): USTR confirmou em 15/Jul/2026. CNN Brasil (2a fonte independente, fetch): proposta em 01/Jun/2026 via Seção 301, audiência 06/Jul, prazo 15/Jul. Isentos: carne, café, frutas, castanhas, especiarias, petróleo, minérios, partes de aeronaves. Tipo=evento.",
+        "decision": "incorporar COM data explícita de 15/Jul. NÃO é evento de 16/Jul.",
+        "correcaoAplicada": "os JSONs do /atualizar diziam 'o novo tarifaço de 25% de Trump' sem data, sugerindo evento do dia. Reescritos em analysis-criteriosa.json, analysis-data.json e CandidatesSection.tsx com 'confirmada pelo USTR em 15 de julho, proposta em 1º de junho na Seção 301'."
+      },
+      {
+        "event": "Foto de Flávio Bolsonaro ao lado de 'Sicário' (caso Master/Vorcaro)",
+        "v1": "0 menções em 7 dailies -> possível novidade",
+        "v2": "ICL Notícias (fetch): divulgada em 15/Jul/2026, foto TIRADA EM 2022 em hotel na zona sul do Rio. Tipo=evento com desdobramento investigativo.",
+        "fonte2": "Folha de Alagoas (URL /2026/07/15/) e Revista Fórum, independentes, consistentes na data",
+        "decision": "incorporar COM desambiguação obrigatória do codebook",
+        "codebook": "'Sicário' é Luiz Phillipi Machado de Moraes Mourão, PRESO em março de 2026 na Operação Compliance Zero e MORTO dias depois em cela da PF após tentativa de suicídio. Verbos 'preso' e 'morreu' exigem data explícita. Flávio NEGA conhecê-lo e questiona a origem da imagem.",
+        "correcaoAplicada": "os JSONs do /atualizar diziam 'Em 16/Jul, o caso Master ganhou imagem' (data errada: foi 15/Jul), descreviam o homem no presente como 'chefe da milícia' sem registrar que morreu em março de 2026, e omitiam a negativa de Flávio. Reescritos nos 3 arquivos."
+      },
+      {
+        "event": "PoderData/Aya nacional publicada",
+        "v1": "aparece em 11, 12, 13 e 14/Jul APENAS nas tabelas de calendário (pesquisa anunciada, não publicada) -> a publicação de 16/Jul é novidade",
+        "v2": "Poder360 (fetch): 16/Jul/2026, n=2.400, campo 12-15/Jul, 685 municípios nos 27 estados, margem 2pp, 95%, BR-00059/2026. Tipo=evento.",
+        "fonte2": "CNN Brasil, mesmos números (1T 40x34, 2T 45x43)",
+        "decision": "incorporar"
+      },
+      {
+        "event": "Moraes assume presidência do STF no recesso",
+        "v1": "Moraes aparece em 12, 13 e 15/Jul -> continuidade",
+        "v2": "Folha de S.Paulo, URL primária. Tipo=evento institucional.",
+        "decision": "incorporar como desdobramento, NÃO como divisor de águas"
+      },
+      {
+        "event": "Senado aprova pauta-bomba e entra em recesso",
+        "v1": "pauta-bomba aparece em 15/Jul -> continuidade",
+        "v2": "Gazeta do Povo + Folha de S.Paulo (Alcolumbre segura promulgação). Tipo=evento.",
+        "decision": "incorporar como desdobramento"
+      }
+    ],
+    "ressalvaDeJanelaDescoberta": "NENHUMA das duas pesquisas mediu reação à tarifa CONFIRMADA. O campo da Quaest fechou em 13/Jul e o da PoderData em 15/Jul, o mesmo dia da confirmação. Quando a Quaest mede que o tarifaço reduz a vontade de votar em Flávio, ela mediu a DISPUTA, não a tarifa confirmada. Ressalva incorporada ao Daily e aos JSONs."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. A foto do Sicário tem ICL como originador mas data e conteúdo confirmados em Folha de Alagoas e Revista Fórum. A tarifa tem 2 corpos lidos (Poder360, CNN Brasil) mais WaPo/Washington Times/Axios na busca.",
+    "numericalErrors": "reconcile-claims.ts: [OK] todos os claims numéricos batem com o JSON (tolerância ±0.05pp). validate-afos-daily.ts: nenhuma violação detectada.",
+    "fontesInventadas": "8 verificadas no news-cache do dia, incluindo 3 ao acaso. Todas existem com título correspondente.",
+    "quotesLiterais": "'sabotagem com o próximo governo' (Renan Santos), 'ministro comunista' (Flávio sobre Dino), 'tariflávio' (apelido). As três batem com manchete de veículo no cache. Nenhuma inventada.",
+    "causacaoEspuria": "nenhuma. O único vínculo causal afirmado é o recuo de Lula após a PoderData, com timing compatível (pesquisa 10h30, preço medido 18h59). A causação tentadora foi explicitamente NEGADA: Master e STF não moveram o preço de Flávio, e o Daily diz isso.",
+    "verbosCriticos": "'preso' e 'morreu' (caso Sicário) desambiguados com data explícita e contexto. Zero uso de 'destruiu', 'atacou', 'humilhou'. R8 cumprida: zero 'ontem'/'hoje', todas as datas explícitas.",
+    "errosDoAutorCorrigidos": [
+      "escrevi 'Rodrigo Pacheco segurou a promulgação'; é Davi Alcolumbre. Corrigido antes da validação.",
+      "candidato 3 do analysis-criteriosa.json tem schema próprio (subtitle + objetos aninhados caiado/haddad/zema) que o /atualizar NÃO atualizou, deixando valores de 15/Jul no ar (Caiado 1.40%, 3º lugar 13.50%, Renan 8.50%). O validator não detecta: ele só confere 4 candidatos e 6 linhas do quadroComparativo. Corrigido."
+    ],
+    "proporcaoFontes": "6 âncora / 10 secundárias = 63% secundário (regra: >=50%)",
+    "decisao": "prosseguir para preview"
+  }
+}
