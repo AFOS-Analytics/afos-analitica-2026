@@ -46,3 +46,8 @@ jobs:
 
       - name: Run AFOS Daily edge case tests
         run: npx tsx scripts/test-afos-daily-edge-cases.ts
+
+      # scope.mjs é FONTE ÚNICA de 3 consumidores (cron, backfill do Neon, dataset
+      # HF/Zaid). Regressão aqui apaga pesquisa do dashboard em silêncio.
+      - name: Run TSE scope classifier tests
+        run: npx tsx scripts/test-tse-scope.mjs
