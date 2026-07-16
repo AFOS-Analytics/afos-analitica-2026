@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-15",
+  "lastUpdate": "2026-07-16",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,58 @@
     }
   ],
   "polls": [
+    {
+      "institute": "PoderData/Aya",
+      "date": "2026-07-16",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-00059/2026",
+      "reliability": 3,
+      "method": "Telefônico (RDD)",
+      "fieldDates": "2026-07-12 a 2026-07-15",
+      "note": "PoderData/Aya nacional publicada 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital, ND Mais). 1T Lula 40% x Flávio 34% (gap +6pp), com Renan Santos 6%, Caiado 4%, Zema 4%, Augusto Cury 3%. 2T Lula 45% x Flávio 43% (gap +2pp), empate técnico pela margem de 2pp. Campo 12-15/Jul, n=2.400, telefônico (celular e fixo), 685 municípios nos 27 estados, margem 2pp, 95% de confiança, registro BR-00059/2026. CONTRADIZ A QUAEST DE ONTEM: 24 horas depois da Genial/Quaest dar 1T +12pp e 2T +8pp, a PoderData devolve o returno ao empate técnico. Lula é IDÊNTICO nas duas (40% no 1T, 45% no 2T). A discordância inteira está no Flávio: 28% contra 34% no 1T, 37% contra 43% no 2T, seis pontos de distância entre as duas melhores leituras da semana. EFEITO DE CASA, não viragem: na série da própria PoderData, Flávio sai de 36% (25/Jun) para 34%, ou seja, também CAI, só que de um patamar mais alto. As duas casas concordam na direção (Flávio recuando) e discordam no nível. Comparar Quaest de ontem com PoderData de hoje e chamar a diferença de movimento é trocar de régua no meio da medição. RENAN SANTOS a 6%, a MAIOR marca dele em qualquer nacional do ciclo (antes o teto era 4%), e alta dentro da própria casa (4% em 25/Jun). APROVAÇÃO diverge forte: 42% aprova x 51% desaprova, contra 48% x 47% da Quaest de ontem, nove pontos de diferença na desaprovação. REJEIÇÃO: Lula e Flávio empatados em 48%, contra os 57% de Flávio na Quaest.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        }
+      ],
+      "source": "PoderData/Aya via Poder360, CNN Brasil, Gazeta do Povo, CartaCapital, ND Mais 16/Jul"
+    },
     {
       "institute": "Quaest/Genial",
       "date": "2026-07-15",
@@ -832,47 +884,11 @@
         }
       ],
       "source": "Futura/Apex via Poder360, JOTA, CNN Brasil, Exame, Congresso em Foco 16/Jun"
-    },
-    {
-      "institute": "BTG/Nexus",
-      "date": "2026-06-15",
-      "sample": 2017,
-      "margin": 2,
-      "register": "BR-06645/2026",
-      "reliability": 4,
-      "method": "Pesquisa nacional",
-      "fieldDates": "2026-06-12 a 2026-06-14",
-      "note": "BTG/Nexus nacional publicada 15/Jun (JOTA, VEJA, Estadão, Poder360, Metrópoles, GZH, Gazeta do Povo), patrocinada pelo Banco BTG Pactual. Lula amplia a vantagem no 1º e no 2º turno e consolida a liderança do ciclo: 1T Lula 42% × Flávio 33% (gap +9pp) no cenário principal, com leitura alternativa 43% × 34%. 2T Lula 49% × Flávio 43% (gap +6pp), Lula fora da margem. Aprovação do governo 48% × desaprovação 47%, a aprovação supera a desaprovação pela 1ª vez no ciclo (JOTA). Avaliação ótima/boa 38%, regular 21%, ruim/péssima 41%. Rejeição cresce contra a oposição: Flávio 52%, Aécio Neves 62%, ante Lula 47%. Campo 12-14/Jun, margem ±2pp, 95% de confiança. Protocolo TSE BR-06645/2026, contratante Banco BTG Pactual.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 42
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 33
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 49,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        }
-      ],
-      "source": "BTG/Nexus via JOTA, VEJA, Estadão, Poder360, Metrópoles, GZH 15/Jun"
     }
   ],
   "approvalData": {
-    "note": "Aprovação de Lula em leve melhora na pesquisa mais recente: a Genial/Quaest 15/Jul (n=2.004, campo 10-13/Jul, margem 2pp) deu aprovação de 48% contra 47% de desaprovação, com Lula igualando aprovação e desaprovação entre os independentes (Estadão) e melhora ante rodadas anteriores. O platô das presenciais se manteve perto do empate ao longo de julho: BTG/Nexus 29/Jun (n=2.009, BR-08521/2026) 48% x 48%; Datafolha 20/Jun (n=2.004, BR-09956/2026) 48% x 49%; a AtlasIntel online 01/Jul (n=5.000, BR-04582/2026) deu leitura mais negativa, desaprova 52,3% x aprova 45,9%, padrão histórico do método online. Rejeição na Quaest 15/Jul: Flávio 57% (a maior do páreo), Lula 50%.",
-    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%) + BTG/Nexus (29/Jun, n=2.009, BR-08521/2026, 48% x 48%) + Datafolha (20/Jun, n=2.004, BR-09956/2026, 48% x 49%)",
+    "note": "Aprovação de Lula com DUAS leituras conflitantes em 24 horas. A Genial/Quaest 15/Jul (n=2.004, campo 10-13/Jul, presencial, margem 2pp) deu aprova 48% x desaprova 47%, o melhor patamar do ano (VEJA), com Lula igualando aprovação e desaprovação entre os independentes (Estadão). A PoderData/Aya 16/Jul (n=2.400, campo 12-15/Jul, telefônica, BR-00059/2026) deu aprova 42% x desaprova 51%, nove pontos de diferença na desaprovação. O painel exibe a Quaest por ser a de maior confiabilidade do recorte e por sustentar a série histórica; a PoderData fica registrada como divergência de método (presencial x telefônico), não como correção. O platô das presenciais se manteve perto do empate ao longo de julho: BTG/Nexus 29/Jun (n=2.009, BR-08521/2026) 48% x 48%; Datafolha 20/Jun (n=2.004, BR-09956/2026) 48% x 49%; a AtlasIntel online 01/Jul (n=5.000, BR-04582/2026) deu leitura mais negativa, desaprova 52,3% x aprova 45,9%, padrão histórico do método online. REJEIÇÃO também diverge: Quaest 15/Jul dá Flávio 57% (a maior do páreo) x Lula 50%; a PoderData 16/Jul empata os dois em 48%.",
+    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%, divergência) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%) + BTG/Nexus (29/Jun, n=2.009, BR-08521/2026, 48% x 48%) + Datafolha (20/Jun, n=2.004, BR-09956/2026, 48% x 49%)",
     "date": "2026-07-15",
     "results": {
       "aprovacao": 48,
@@ -909,90 +925,90 @@
         "disapproval6m": 47
       }
     ],
-    "lastUpdate": "2026-07-15"
+    "lastUpdate": "2026-07-16"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 15/Jul 22:35 UTC), a 81 dias do 1º turno. A Genial/Quaest, a nacional de MAIOR confiabilidade da semana, QUEBROU a sequência de estreitamento das três anteriores. Pesquisa: Quaest (n=2.004, campo 10-13/Jul, margem 2pp) deu 1T Lula 40% x Flávio 28% (gap +12pp) e 2T Lula 45% x Flávio 37% (gap +8pp), a maior folga de julho, depois de Gerp 08/Jul (Flávio à frente no 2T), BTG/Nexus 13/Jul (47x44) e Futura/Apex 14/Jul (46,3x46,1, empate). Mercado: Lula sobe a 61,50% (alta 1,00pp), Flávio 25,30% (alta 0,45pp), Renan Santos CAI a 8,50% (queda 1,65pp), o maior movimento do dia. Gap Lula x Flávio em +36,20pp. Volume total acumulado no presidencial acima de USD 113M. A leitura: probabilidade de vitória e margem de voto medem coisas diferentes, e a comparação é de direção e convicção, não ponto a ponto. Hoje houve CONVERGÊNCIA parcial: a melhor pesquisa passou a respaldar a direção do mercado (Lula à frente e reabrindo folga), e o mercado corrigiu para baixo a distorção de Renan Santos, que nenhuma nacional sustentou. A distância de NÍVEL segue grande (61,50% de probabilidade contra +8pp de voto), mas ela deixou de ser contrariada pelo dado mais confiável.",
-    "sources": "Polymarket ao vivo (fetchedAt 15/Jul 22:35 UTC, não degradado). Base nacional: Genial/Quaest 15/Jul (n=2.004) 1T 40x28, 2T 45x37; Futura/Apex 14/Jul (n=2.000, BR-07294/2026) 1T 40,1x36,8, 2T 46,3x46,1 (empate); BTG/Nexus 13/Jul (n=2.003, BR-07981/2026) 1T 40x34, 2T 47x44 (empate técnico); Gerp/AESP 08/Jul (n=2.000, BR-03067/2026) 1T 36x36, 2T Flávio 45x42; Meio/Ideia 08/Jul (n=1.500) 1T 40,4x32, 2T 45x40; AtlasIntel 01/Jul (n=5.000) 2T 48,8x42,3. Sai amanhã: PoderData 16/Jul (n=2.400). Contexto: Moraes suspendeu por 90 dias as visitas de Flávio a Jair (vale até meados de outubro); Michelle e Valdemar cercam a candidatura; caso Master/Vorcaro segue no STF e na PF.",
+    "note": "Cruzamento Polymarket (live 16/Jul 21:25 UTC, degraded false), a 80 dias do 1º turno. O dia entregou a peça que faltava: a PoderData/Aya 16/Jul (n=2.400, campo 12-15/Jul, BR-00059/2026), que era o teste anunciado ontem, CONTRADIZ a Quaest. 1T Lula 40% x Flávio 34% (gap +6pp, contra +12pp da Quaest) e 2T Lula 45% x Flávio 43%, empate técnico, contra os +8pp da Quaest. Lula é IDÊNTICO nas duas (40 e 45): a discordância inteira está no Flávio, seis pontos entre as duas melhores leituras da semana. Não é viragem, é efeito de casa: na série da própria PoderData, Flávio sai de 36% (25/Jun) para 34%, também caindo, de um patamar mais alto. As duas casas concordam na DIREÇÃO e discordam no NÍVEL. Mercado: Lula CAI a 60,50% (queda 1,00pp) e devolve a alta de ontem, andando na direção da pesquisa do dia. Flávio estável a 25,45%, Renan Santos cai a 8,40%. Gap Lula x Flávio em +35,05pp. Volume acumulado no presidencial acima de USD 113M. A LEITURA: probabilidade de vitória e margem de voto medem coisas diferentes, e a comparação é de direção e convicção, não ponto a ponto. Duas convergências reais hoje. Primeira: o mercado recuou quando a nacional do dia apertou o returno, em vez de ignorá-la. Segunda: a divergência de Renan Santos estreitou pelos DOIS lados no mesmo dia, o preço vindo de 10,15% para 8,40% em duas sessões e a urna subindo de 3% (Quaest) para 6% (PoderData), a maior marca dele no ciclo. A distância de NÍVEL segue grande (60,50% de probabilidade contra um returno em empate técnico), e agora ela volta a ser contrariada pela pesquisa mais recente, ainda que não pela de maior confiabilidade.",
+    "sources": "Polymarket via proxy AFOS (live 16/Jul 21:25 UTC, degraded false, failedCount 0) + PoderData/Aya 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA)",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "40-49%",
-        "polymarket": "61.50%",
-        "tendenciaPesquisa": "Genial/Quaest 15/Jul (n=2.004, campo 10-13/Jul, margem 2pp): 1T Lula 40% x Flávio 28% (gap +12pp); 2T Lula 45% x Flávio 37% (gap +8pp), a maior folga de julho. Reabre a distância depois de três nacionais que apontavam estreitamento (Gerp 08/Jul, BTG/Nexus 13/Jul, Futura/Apex 14/Jul). Vence todos os cenários de 2º turno em todas as nacionais recentes.",
-        "tendenciaPolymarket": "Sobe a 61,50% (alta 1,00pp, vol USD 7,4M) e volta ao topo do intervalo de duas semanas. O gap sobre Flávio fica em +36,20pp. Hoje o mercado e a melhor pesquisa apontam na mesma direção (Lula à frente e reabrindo folga), depois de dias em que o preço parado destoava das pesquisas de empate. A distância de nível segue grande, mas deixou de ser contrariada pelo dado mais confiável. Próximo teste: PoderData 16/Jul.",
-        "odds": 61.5,
+        "polymarket": "60.50%",
+        "tendenciaPesquisa": "DUAS nacionais em 24h e Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (gap +12pp), 2T 45% x 37% (gap +8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3): 1T 40% x 34% (gap +6pp), 2T 45% x 43%, empate técnico. O leque do 2º turno de julho vai de empate (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest). Vence todos os cenários de 2º turno em todas as nacionais recentes, mas a margem depende de qual casa mede.",
+        "tendenciaPolymarket": "CAI a 60,50% (queda 1,00pp, vol USD 7,4M) e devolve a alta de ontem. O mercado andou na direção da PoderData: quando a nacional do dia devolveu o returno ao empate técnico, o preço recuou. Gap sobre Flávio em +35,05pp. A distância de nível segue a maior do ciclo (60,50% de probabilidade contra +2pp de voto no returno da PoderData), mas o movimento do dia foi de correção, não de teimosia.",
+        "odds": 60.5,
         "percentage": 45,
-        "lastUpdate": "2026-07-15",
-        "value": 61.5
+        "lastUpdate": "2026-07-16",
+        "value": 60.5
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "28-45%",
-        "polymarket": "25.30%",
-        "tendenciaPesquisa": "Genial/Quaest 15/Jul: 1T 28% (a pior marca dele nas nacionais de julho) e 2T 37%, a 8pp de Lula. A VEJA falou em tempestade negativa perfeita. Antes: Futura/Apex 14/Jul 2T 46,1% (empate), BTG/Nexus 13/Jul 44% (empate técnico), Gerp 08/Jul 45% (vencendo). A Quaest interrompe a sequência que o vinha aproximando.",
-        "tendenciaPolymarket": "Sobe de leve a 25,30% (alta 0,45pp, vol USD 7,4M) e segue líder folgado do 2º lugar do 1º turno (83,00%). O preço não recuou apesar da pior pesquisa da semana, sustentado pela condição de adversário certo de Lula no returno. Rejeição segue a maior do páreo, o teto estrutural do preço.",
-        "odds": 25.3,
-        "percentage": 37,
-        "lastUpdate": "2026-07-15",
-        "value": 25.3
+        "pesquisaRange": "28-43%",
+        "polymarket": "25.45%",
+        "tendenciaPesquisa": "É NELE que as duas melhores pesquisas da semana discordam, e por seis pontos. Quaest 15/Jul: 1T 28%, 2T 37%. PoderData/Aya 16/Jul: 1T 34%, 2T 43%, empate técnico com Lula. Lula é igual nas duas, o Flávio não. EFEITO DE CASA, não viragem: na série da própria PoderData ele sai de 36% (25/Jun) para 34%, também caindo, de um patamar mais alto. As duas casas concordam na direção (recuo) e discordam no nível. Rejeição: 57% na Quaest, a maior do páreo; 48% na PoderData, empatado com Lula.",
+        "tendenciaPolymarket": "Praticamente estável a 25,45% (alta 0,15pp, vol USD 7,4M) e segue líder folgado do 2º lugar do 1º turno (83,50%, alta 0,50pp). O preço não reagiu nem à pior leitura (Quaest) nem à melhor (PoderData) da semana. O mercado precifica a condição de adversário certo de Lula no returno, não a oscilação de nível entre casas.",
+        "odds": 25.45,
+        "percentage": 43,
+        "lastUpdate": "2026-07-16",
+        "value": 25.45
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "2-4%",
-        "polymarket": "8.50%",
-        "tendenciaPesquisa": "Genial/Quaest 15/Jul: 3% no 1º turno, ATRÁS de Caiado (4%). As nacionais o mantêm na faixa de 2-4%, e nenhuma o mediu acima de 4% no ciclo.",
-        "tendenciaPolymarket": "CAI a 8,50% (queda 1,65pp, vol USD 8,1M), o maior movimento individual do dia, e recua no 3º lugar do 1º turno para 69,00% (queda 2,0pp). O mercado começou a corrigir a distorção que as urnas nunca sustentaram: saiu de dois dígitos rumo ao que a pesquisa declara. A divergência segue a mais larga do painel (8,50% contra 3%), mas estreitou pela primeira vez em semanas.",
-        "odds": 8.5,
-        "percentage": 3,
-        "lastUpdate": "2026-07-15",
-        "value": 8.5
+        "pesquisaRange": "2-6%",
+        "polymarket": "8.40%",
+        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 6%, a MAIOR marca dele em qualquer nacional do ciclo. O teto anterior era 4%, e a Quaest de ontem deu 3%, atrás de Caiado. Sobe também dentro da própria casa (4% em 25/Jun). A faixa das nacionais abre de 2-4% para 2-6%.",
+        "tendenciaPolymarket": "CAI de novo a 8,40% (queda 0,10pp, vol USD 8,1M) e recua no 3º lugar do 1º turno para 68,50%. A divergência que era a mais larga do painel estreitou pelos DOIS lados no mesmo dia: o mercado veio de 10,15% para 8,40% em duas sessões, e a urna declarada subiu de 3% (Quaest) para 6% (PoderData). De 8,50% contra 3% ontem para 8,40% contra 6% hoje. Segue distorção, mas é a primeira convergência bilateral do ciclo.",
+        "odds": 8.4,
+        "percentage": 6,
+        "lastUpdate": "2026-07-16",
+        "value": 8.4
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5%",
-        "polymarket": "1.40%",
-        "tendenciaPesquisa": "Genial/Quaest 15/Jul: 4% no 1º turno, de novo o MELHOR da 3ª via, à frente de Renan (3%) e Zema (2%). Repete o padrão da Futura/Apex 14/Jul (5%) e da BTG/Nexus 13/Jul (5%).",
-        "tendenciaPolymarket": "Praticamente estável a 1,40% (alta 0,05pp, vol USD 4,9M), e sobe no 3º lugar do 1º turno para 13,50%. O contraste que o define persiste: lidera a 3ª via na urna declarada e vale um sexto de Renan no mercado de vencedor. O mercado precifica notoriedade, não intenção de voto.",
-        "odds": 1.4,
+        "polymarket": "1.25%",
+        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Zema e ATRÁS de Renan (6%), o que quebra a sequência em que liderava a 3ª via. Quaest 15/Jul: 4%, à frente de Renan (3%). As duas casas o dão em 4%, mas discordam de quem está na frente do pelotão.",
+        "tendenciaPolymarket": "Recua a 1,25% (queda 0,15pp, vol USD 4,9M) e sobe no 3º lugar do 1º turno para 14,00%. O contraste que o define persiste: mede voto igual ou próximo de Renan na urna e vale um sétimo dele no mercado de vencedor.",
+        "odds": 1.25,
         "percentage": 4,
-        "lastUpdate": "2026-07-15",
-        "value": 1.4
+        "lastUpdate": "2026-07-16",
+        "value": 1.25
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais. Foco na reeleição em SP, onde a Datafolha 05/Jul o dá com 46% x Haddad 30% e aprovação de 45%.",
-        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,4M lifetime, o maior do book). No Senado por cadeiras, o PL segue líder (84,50%).",
+        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,4M lifetime, o maior do book). No Senado por cadeiras, o PL sobe a 86,00% (alta 1,50pp), o maior movimento do dia entre os sub-mercados.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-15",
+        "lastUpdate": "2026-07-16",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
-        "polymarket": "0.80%",
-        "tendenciaPesquisa": "Genial/Quaest 15/Jul: 2% no 1º turno. Futura/Apex 14/Jul: 3,7%, à frente de Renan (2,6%). BTG/Nexus 13/Jul: 4%, empatado com Renan. Ainda sem vice anunciado.",
-        "tendenciaPolymarket": "No piso, a 0,80% (vol USD 4,3M). Marca voto igual ou acima de Renan em várias nacionais e vale uma fração dele no mercado de vencedor. Segue uma das maiores distorções relativas entre urna declarada e preço.",
-        "odds": 0.8,
-        "percentage": 2,
-        "lastUpdate": "2026-07-15",
-        "value": 0.8
+        "polymarket": "0.65%",
+        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Caiado e à frente do que a Quaest deu a ele ontem (2%). Futura/Apex 14/Jul: 3,7%. BTG/Nexus 13/Jul: 4%. Ainda sem vice anunciado.",
+        "tendenciaPolymarket": "Recua a 0,65% (queda 0,15pp, vol USD 4,4M). Marca 4% na PoderData, dois terços do que Renan mede na mesma pesquisa, e vale um treze avos dele no mercado de vencedor. Segue uma das maiores distorções relativas entre urna declarada e preço.",
+        "odds": 0.65,
+        "percentage": 4,
+        "lastUpdate": "2026-07-16",
+        "value": 0.65
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "1.10%",
+        "polymarket": "1.25%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%.",
-        "tendenciaPolymarket": "Sobe a 1,10% (alta 0,30pp, vol USD 6,2M) como nome do PT depois de Lula, mas o mercado não precifica candidatura presidencial dele. O foco segue estadual.",
-        "odds": 1.1,
+        "tendenciaPolymarket": "Sobe a 1,25% (alta 0,15pp, vol USD 6,2M) como nome do PT depois de Lula, mas o mercado não precifica candidatura presidencial dele. O foco segue estadual.",
+        "odds": 1.25,
         "percentage": 0,
-        "lastUpdate": "2026-07-15",
-        "value": 1.1
+        "lastUpdate": "2026-07-16",
+        "value": 1.25
       }
     ],
-    "updatedAt": "2026-07-15T22:35"
+    "updatedAt": "2026-07-16"
   }
 }
