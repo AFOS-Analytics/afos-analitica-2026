@@ -29,9 +29,9 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     es: 'El favorito del mercado por meses (López Aliaga) quedó 3º y no llegó al balotaje: divergencia sostenida, no ruido. En el balotaje del 7 jun el mercado dio a Fujimori ~68% mientras las encuestas veían empate técnico, y ganó por ~0,27pp: el JNE proclamó a Keiko Fujimori (50,135% × 49,865%) el 3 jul. Acertó la dirección, sobreestimó la ventaja. Volumen total del mercado: **~US$107M**.',
   },
   COL: {
-    'pt-BR': 'De la Espriella venceu o 1º turno (31/mai, 43,7%) e o mercado já o precificava como favorito (43,5%): divergência quase nula entre mercado e resultado. Disputa o 2º turno em 21/jun contra Cepeda; desfecho ainda em aberto. Volume total do mercado: **~US$ 37M**.',
-    en: 'De la Espriella won the first round (May 31, 43.7%) and the market had already priced him as favorite (43.5%): near-zero divergence between market and result. He faces the June 21 runoff against Cepeda; the outcome is still open. Total market volume: **~US$37M**.',
-    es: 'De la Espriella ganó la primera vuelta (31/may, 43,7%) y el mercado ya lo valoraba como favorito (43,5%): divergencia casi nula entre mercado y resultado. Disputa el balotaje del 21/jun contra Cepeda; el desenlace sigue abierto. Volumen total del mercado: **~US$37M**.',
+    'pt-BR': 'De la Espriella venceu o 1º turno (31/mai, 43,7%), com o mercado já o precificando favorito (43,5%): divergência quase nula. No 2º turno (21/jun) venceu por ~0,96pp (49,66% × 48,70%), mas o mercado dava vitória quase certa (88,5%): acertou o vencedor, superestimou a folga. Volume total do mercado: **~US$ 37M**.',
+    en: 'De la Espriella won the first round (May 31, 43.7%), with the market already pricing him favorite (43.5%): near-zero divergence. In the June 21 runoff he won by ~0.96pp (49.66% × 48.70%), though the market gave near-certain victory (88.5%): right winner, overstated margin. Total market volume: **~US$37M**.',
+    es: 'De la Espriella ganó la primera vuelta (31/may, 43,7%), con el mercado ya valorándolo favorito (43,5%): divergencia casi nula. En el balotaje del 21/jun ganó por ~0,96pp (49,66% × 48,70%), aunque el mercado le daba victoria casi segura (88,5%): acertó el ganador, sobreestimó la ventaja. Volumen total del mercado: **~US$37M**.',
   },
   CHL: {
     'pt-BR': 'Jara liderou o voto de 1º turno, mas o mercado precificava Kast em ~66% para vencer, e Kast venceu o runoff 58×42. A diferença foi o sinal. Volume total do mercado: **~US$ 49M**.',
