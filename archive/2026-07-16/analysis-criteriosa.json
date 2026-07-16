@@ -1,0 +1,167 @@
+{
+  "updatedAt": "16/07/2026, 18:30",
+  "subtitle": "ATUALIZAÇÃO 16/Jul 18:30 BRT D+63. A 80 dias do 1º turno, a PoderData/Aya (16/Jul, n=2.400, campo 12-15/Jul) contradiz a Genial/Quaest de ontem e devolve o 2º turno ao empate técnico (45% x 43%). Lula é idêntico nas duas pesquisas (40% no 1T, 45% no 2T): a discordância inteira está no Flávio, seis pontos entre as duas melhores leituras da semana. O mercado recuou junto (Lula 60,50%, queda 1,00pp). Cruzamento com Polymarket ao vivo, Genial/Quaest 15/Jul e PoderData/Aya 16/Jul.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 60.50% (queda 1,00pp, vol USD 7,4M acumulado), a 80 dias da eleição. Devolveu a alta de ontem no dia em que a PoderData pôs o 2º turno de volta em empate técnico (45% x 43%), 24 horas depois de a Quaest dar folga de 8pp.",
+      "fortes": [
+        "Lidera o 1º turno com 40% nas DUAS nacionais da semana, Quaest 15/Jul e PoderData 16/Jul, número idêntico em casas de método oposto (presencial e telefônica).",
+        "Lidera o 2º turno com 45% nas duas, também idêntico. A estabilidade dele é o dado mais sólido do recorte.",
+        "Vence todos os cenários de 2º turno em todas as nacionais recentes, contra Flávio, Zema, Caiado e Michelle.",
+        "A Quaest 15/Jul (reliability 5, a maior do recorte) dá a maior folga de julho: 1T +12pp e 2T +8pp, e aponta pela primeira vez chance de vitória no 1º turno.",
+        "A Quaest 15/Jul mede aprovação de 48% contra 47% de desaprovação, o melhor patamar do ano (VEJA), e o tarifaço de Trump é atribuído a Flávio pela maioria (CartaCapital, Estadão)."
+      ],
+      "fracos": [
+        "A PoderData 16/Jul devolve o 2º turno ao empate técnico: 45% x 43%, dentro da margem de 2pp. O returno não está resolvido.",
+        "A distância de nível segue a maior do ciclo: 60,50% de probabilidade implícita contra um returno que a pesquisa mais recente dá como empate.",
+        "A aprovação diverge por nove pontos na desaprovação: 47% na Quaest contra 51% na PoderData. O platô perto do empate depende de qual casa mede.",
+        "O leque do 2º turno de julho vai de empate técnico (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest 15/Jul). A dispersão entre institutos segue a maior do ciclo.",
+        "Rejeição alta: 50% na Quaest, 48% na PoderData, empatado com Flávio nesta última, num eleitorado com voto ainda disponível a menos de 90 dias."
+      ],
+      "analise": "Lula caiu a 60,50% (queda 1,00pp, vol USD 7,4M acumulado) e devolveu exatamente a alta de ontem. O motivo tem nome e hora: a PoderData/Aya saiu às 10h30 e contradisse a Quaest. Ontem, o painel do AFOS registrou que a PoderData de 16/Jul seria o teste da reabertura de folga da Quaest. O teste veio e deu no contrário. A PoderData (n=2.400, campo 12-15/Jul, telefônica, 685 municípios nos 27 estados, BR-00059/2026) deu 1º turno Lula 40% x Flávio 34%, gap de +6pp contra os +12pp da Quaest, e 2º turno 45% x 43%, empate técnico pela margem de 2pp, contra os +8pp da Quaest. Agora repare no que NÃO mudou, porque é aí que está o achado. Lula marca 40% no 1º turno e 45% no 2º nas DUAS pesquisas. Número idêntico, em casas de método oposto, uma presencial e outra telefônica, com campos que se sobrepõem. A discordância inteira está no Flávio: 28% contra 34% no 1º turno, 37% contra 43% no returno. Seis pontos entre as duas melhores leituras da semana, sobre o mesmo candidato, no mesmo período. Isso não é viragem, é efeito de casa. E dá para provar, em vez de supor: na série da própria PoderData, Flávio sai de 36% em 25/Jun para 34% agora, ou seja, também está caindo, só que de um patamar mais alto. As duas casas concordam na DIREÇÃO (Flávio recuando) e discordam no NÍVEL. Quem comparar a Quaest de ontem com a PoderData de hoje e chamar a diferença de movimento está trocando de régua no meio da medição. O movimento do Flávio só se mede Quaest contra Quaest, PoderData contra PoderData. O que o mercado fez, porém, merece registro. Ele recuou. Não ignorou. Durante semanas a leitura aqui foi a de um preço teimoso, que sustentava Lula acima de 60% enquanto as nacionais apontavam empate. Hoje a nacional do dia apertou o returno e o preço cedeu 1,00pp na mesma direção, dentro de horas. É pouco em magnitude e é muito em significado: o dinheiro real está lendo as pesquisas, e não apenas o próprio momento. A distância de nível continua enorme, 60,50% de probabilidade contra um returno em empate técnico, e ela volta a ser contrariada pela pesquisa mais recente, ainda que não pela de maior confiabilidade. Essa é a tensão honesta do dia: a melhor pesquisa (Quaest, reliability 5) apoia o mercado, e a mais recente (PoderData, reliability 3) o contraria. Não há uma resposta única, e fingir que há seria o erro."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 25.45% (alta 0,15pp, vol USD 7,4M acumulado) e 83,50% no 2º lugar do 1º turno. É nele que as duas melhores pesquisas da semana discordam, e por seis pontos: 28% na Quaest contra 34% na PoderData.",
+      "fortes": [
+        "A PoderData 16/Jul o põe a 2pp de Lula no 2º turno (45% x 43%), empate técnico, e a 6pp no 1º turno (40% x 34%).",
+        "Segue líder folgado do 2º lugar do 1º turno no mercado (83,50%, alta 0,50pp), a condição de adversário certo de Lula no returno.",
+        "O preço não recuou nem diante da pior leitura da semana (Quaest, 28%), o que sugere que o mercado já descontava o efeito de casa.",
+        "Na PoderData, a rejeição dele empata com a de Lula em 48%, bem abaixo dos 57% que a Quaest mede.",
+        "O PL sobe a 86,00% (alta 1,50pp) no mercado de mais cadeiras no Senado, o maior movimento do dia entre os sub-mercados."
+      ],
+      "fracos": [
+        "As duas casas concordam que ele está CAINDO: Quaest de 29% (Jun) para 28%, PoderData de 36% (25/Jun) para 34%. A direção é a mesma, e é contra ele.",
+        "A Quaest 15/Jul, a de maior confiabilidade do recorte, o dá com 28% no 1T e rejeição de 57%, a maior do páreo.",
+        "A Quaest mede que o tarifaço de Trump REDUZ a vontade de votar nele, e que a maioria atribui a culpa a ele, não a Lula (Estadão, CartaCapital).",
+        "Perde todos os cenários de 2º turno em todas as nacionais recentes, mesmo na leitura mais favorável a ele.",
+        "Passou o dia em atrito interno: chamou Dino de ministro comunista, disse não ter relação com Michelle, e a campanha usará o veto a visita para isolá-la (Folha de S.Paulo)."
+      ],
+      "analise": "Flávio ficou praticamente parado no mercado, 25,45% (alta 0,15pp, vol USD 7,4M acumulado), e essa imobilidade é mais informativa do que parece. Em 24 horas ele recebeu a pior e a melhor leitura da semana e o preço não se mexeu em nenhuma das duas direções. Ontem a Genial/Quaest o deu com 28% no 1º turno e rejeição de 57%, a maior do páreo. Hoje a PoderData/Aya o deu com 34% e o pôs a 2pp de Lula no returno, empate técnico, com rejeição de 48%, empatada com a do próprio Lula. Seis pontos de diferença sobre o mesmo candidato, no mesmo período de campo, entre as duas melhores pesquisas da semana. A tentação é escolher uma e chamar de verdade. O AFOS não faz isso. O que se pode afirmar com o dado é mais estreito e mais firme: as duas casas concordam que ele está caindo. Na Quaest ele sai de 29% em junho para 28% em julho. Na PoderData, de 36% em 25/Jun para 34% agora. Cada casa mede num patamar diferente, e cada uma mede queda. A direção é robusta, o nível não é. Quem quiser saber se Flávio subiu ou desceu tem de comparar Quaest com Quaest e PoderData com PoderData, nunca uma com a outra. O contexto do dia joga contra ele nas duas leituras. O novo tarifaço de 25% de Trump virou munição direta: a Quaest mediu que a maioria concorda com a versão de Lula e atribui a culpa a Flávio, e que o episódio reduz a vontade de votar nele (Estadão, CartaCapital). Ele reagiu retuitando Rubio e culpando Lula, o que rendeu o apelido de tariflávio na Folha. Somou-se a isso o desgaste do caso Master, com a publicação de foto ao lado de Sicário, apontado como capanga de Daniel Vorcaro (Estadão), e o atrito aberto com Michelle, a quem disse não ter relação e a quem a campanha pretende isolar. O mercado, mesmo assim, o mantém em 83,50% como 2º colocado do 1º turno. A leitura é que o preço não precifica o nível de voto dele, e sim a certeza de que ele é o adversário de Lula no returno. Essas são apostas diferentes, e é por isso que a pesquisa ruim não derruba o preço."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 8.40% (queda 0,10pp, vol USD 8,1M acumulado). A divergência mais larga do painel estreitou pelos DOIS lados no mesmo dia: o preço veio de 10,15% para 8,40% em duas sessões e a urna subiu de 3% (Quaest) para 6% (PoderData).",
+      "fortes": [
+        "PoderData/Aya 16/Jul: 6% no 1º turno, a MAIOR marca dele em qualquer nacional do ciclo. O teto anterior era 4%.",
+        "Sobe também dentro da própria casa: a PoderData o media em 4% em 25/Jun. É movimento real, medido com a mesma régua.",
+        "Na PoderData ele passa Caiado (4%) e Zema (4%) e lidera o pelotão da 3ª via pela primeira vez numa nacional.",
+        "Segue líder folgado do 3º lugar do 1º turno no mercado (68,50%), com volume acumulado de USD 8,1M, o maior entre os candidatos do book presidencial.",
+        "Ganhou espaço no noticiário criticando a pauta-bomba no Senado e a postura de Lula e da família Bolsonaro na negociação do tarifaço (G1)."
+      ],
+      "fracos": [
+        "A Quaest 15/Jul, a de maior confiabilidade do recorte, o dá com 3%, ATRÁS de Caiado (4%). As duas casas discordam de quem lidera a 3ª via.",
+        "Mesmo na melhor leitura da vida dele (6%), o mercado ainda o precifica a 8,40%, acima do que qualquer urna declarada sustenta.",
+        "A Quaest registra que Caiado, Zema e Renan não decolam mesmo com Flávio caindo 20 pontos na direita não-bolsonarista em dois meses.",
+        "A faixa das nacionais vai de 2% a 6%: a dispersão sobre ele é proporcionalmente a maior do painel.",
+        "O recuo do preço em duas sessões (de 10,15% para 8,40%) mostra que o próprio mercado trata o nível anterior como insustentável."
+      ],
+      "analise": "Renan Santos entregou hoje o movimento mais interessante do painel, e ele não veio do preço. Veio da urna. A PoderData/Aya o mediu em 6% no 1º turno, a maior marca dele em qualquer nacional do ciclo, quebrando um teto de 4% que durava meses. E o ponto que importa: sobe também dentro da própria casa, que o media em 4% em 25/Jun. Isso não é efeito de casa, é movimento medido com a mesma régua. Ao mesmo tempo, o mercado seguiu corrigindo para baixo: 8,40% hoje (queda 0,10pp), depois da queda de 1,65pp de ontem, acumulando uma descida de 10,15% para 8,40% em duas sessões. O resultado é uma convergência bilateral, a primeira do ciclo. Ontem a divergência dele era 8,50% de probabilidade contra 3% de voto. Hoje é 8,40% contra 6%. Os dois lados caminharam um na direção do outro no mesmo dia, e por motivos independentes: o preço cedendo ao peso acumulado das pesquisas fracas, a urna reagindo à exposição dele no debate do tarifaço e da pauta-bomba. É o caso mais limpo do que o AFOS existe para mostrar. Uma divergência não se resolve necessariamente com o mercado se rendendo à pesquisa, nem com a pesquisa validando o mercado. Às vezes as duas medidas estavam parcialmente certas e se encontram no meio. Dito isso, a distorção não acabou. Mesmo na leitura mais generosa que já recebeu, 6%, ele ainda vale 8,40% no mercado de vencedor, e continua sendo o candidato com maior distância relativa entre preço e urna no painel. E há uma discordância que não se pode varrer para debaixo do tapete: a Quaest, o instituto de maior confiabilidade do recorte, o deu com 3% ontem, atrás de Caiado. As duas melhores casas da semana discordam sobre quem lidera a 3ª via. Enquanto isso não se resolver em rodadas sucessivas da MESMA casa, a faixa honesta dele é de 2% a 6%, e não um número."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1.25% (queda 0,15pp, vol USD 4,9M), Haddad 1.25% (alta 0,15pp), Zema 0.65% (queda 0,15pp). Na PoderData 16/Jul, Caiado e Zema empatam em 4% e ficam ATRÁS de Renan (6%), invertendo o que a Quaest deu ontem.",
+      "subtitle": "15/Jul D+62, a 81 dias: Caiado 1.40% no vencedor e 13.50% no 3º lugar do 1º turno (atrás de Renan). Foi o melhor da 3ª via na Quaest (1T 4%) pela terceira pesquisa seguida, à frente de Renan e Zema. Saiu em defesa de Damares e criticou os tarifaços de EUA, UE e China. Haddad 1.10%; Zema 0.80% no piso. Renan segue líder da 3ª via no mercado (8.50%), mas em queda.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1.40% (vol USD 4,9M) | 3º lugar do 1º turno 13.50% (atrás de Renan) | melhor da 3ª via na Quaest (1T 4%) | saiu em defesa de Damares e criticou tarifaços de EUA, UE e China (Correio Braziliense)",
+        "fortes": "Caiado foi de novo o melhor da 3ª via na urna declarada: 4% no 1º turno da Genial/Quaest, à frente de Renan (3%) e Zema (2%), a terceira pesquisa seguida em que lidera o pelotão. Subiu no sub-mercado de 3º lugar do 1º turno para 13,50%. Mantém a chapa pura do PSD (Kassab vice) e foi ativo na pauta, saindo em defesa de Damares após ataques e criticando os tarifaços de EUA, UE e China (Correio Braziliense).",
+        "fracos": "Apesar de liderar a 3ª via na urna, Caiado segue no piso do mercado de vencedor (1,40%), valendo cerca de um sexto de Renan (8,50%), que mede menos na pesquisa. O contraste que o define persiste: o mercado precifica notoriedade, não intenção de voto. A força dele segue concentrada no plano estadual (Goiás)."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 1.10% (alta 0,30pp, vol USD 6,2M) | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad subiu a 1,10% (alta 0,30pp) como nome de reserva do PT depois de Lula no mercado. Mantém Márcio França (PSB) como vice na chapa pelo governo de SP e segue como principal quadro do partido no maior colégio eleitoral do país.",
+        "fracos": "O mercado não precifica candidatura presidencial de Haddad, e as nacionais não o testam no cenário presidencial. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na maior rejeição do estado (47%)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0.80% no piso (vol USD 4,3M) | Genial/Quaest 15/Jul 1T 2% | sem vice anunciado",
+        "fortes": "A Genial/Quaest deu Zema 2% no 1º turno. Em pesquisas anteriores marcou voto igual ou acima de Renan (Futura/Apex 14/Jul 3,7%, BTG/Nexus 13/Jul 4%), o que mantém latente a distorção entre o que ele mede na urna e o que vale no mercado.",
+        "fracos": "Zema segue no piso a 0,80% no vencedor, atrás de Renan e Caiado na disputa da 3ª via. Na bipolarização Lula x Flávio o Novo não encontra tração, e o vice ainda não saiu."
+      },
+      "analise": "O pelotão da 3ª via saiu do dia com uma inversão que vale registrar. Ontem, a Quaest dava Caiado 4%, Renan 3% e Zema 2%, com Caiado liderando o grupo pela terceira pesquisa seguida. Hoje, a PoderData dá Renan 6%, Caiado 4% e Zema 4%, ou seja, Renan na frente e Zema dobrando. As duas casas discordam sobre a ordem do pelotão, e concordam apenas que nenhum deles decola. A Quaest cravou o diagnóstico: Caiado, Zema e Renan não crescem nem quando Flávio perde 20 pontos na direita não-bolsonarista em dois meses. Esse é o dado estrutural do grupo, e ele sobrevive à divergência de casa. O eleitor que sai de Flávio não está indo para eles. No mercado, o contraste segue gritante e vale a pena dizê-lo com número. Caiado mede 4% de voto nas DUAS nacionais da semana e vale 1,25% no vencedor. Zema mede 4% na PoderData e vale 0,65%. Renan mede 6% na mesma pesquisa e vale 8,40%. Ou seja: Zema marca dois terços do voto de Renan na mesma pesquisa e vale um treze avos dele no preço. Essa desproporção não é sobre intenção de voto, é sobre notoriedade e narrativa, que é o que um mercado fino precifica quando o volume é baixo. Haddad é caso à parte e merece cautela editorial: ele sobe a 1,25% no mercado presidencial sem que nenhuma nacional o teste nesse cargo. O foco dele é o governo de São Paulo, onde a Datafolha de 05/Jul o dá com 30% contra 46% de Tarcísio. O preço dele aqui é resíduo de nome conhecido, não sinal de candidatura.",
+      "fortes": [
+        "Caiado e Zema empatam em 4% na PoderData 16/Jul, e Zema dobra o que a Quaest lhe deu ontem (2%).",
+        "Caiado mede 4% nas duas casas da semana, o número mais estável do pelotão da 3ª via.",
+        "Caiado sobe no 3º lugar do 1º turno para 14,00% (alta 0,50pp), segundo colocado atrás de Renan.",
+        "Zema marca 4% na PoderData, dois terços do que Renan mede na MESMA pesquisa, e vale um treze avos dele no mercado de vencedor.",
+        "Haddad sobe a 1,25% (alta 0,15pp) como nome do PT depois de Lula, embora o foco dele siga estadual (Datafolha SP 05/Jul: Tarcísio 46% x Haddad 30%)."
+      ],
+      "fracos": [
+        "A PoderData quebra a sequência em que Caiado liderava a 3ª via: agora ele está atrás de Renan (6%) e empatado com Zema.",
+        "A Quaest registra que Caiado, Zema e Renan não decolam mesmo com Flávio caindo 20 pontos na direita não-bolsonarista em dois meses.",
+        "O mercado precifica os três no piso: juntos, Caiado, Zema e Haddad somam 3,15% no vencedor, contra 8,40% de Renan sozinho.",
+        "Nenhum deles é testado no 2º turno da PoderData contra Lula, e a Quaest os põe todos perdendo o returno.",
+        "Haddad não é testado no presidencial pelas nacionais: o mercado o precifica sem lastro de urna declarada."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "DUAS nacionais em 24h, Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (+12pp), 2T 45% x 37% (+8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3, BR-00059/2026): 1T 40% x 34% (+6pp), 2T 45% x 43%, empate técnico. A discordância está toda no Flávio, não nele.",
+      "m": "60.50% (vol USD 7,4M acumulado)",
+      "t": "CAI a 60,50% (queda 1,00pp) e devolve a alta de ontem. O mercado andou na direção da PoderData: quando a nacional do dia apertou o returno, o preço cedeu em horas. Gap sobre Flávio em +35,05pp.",
+      "s": "80 dias da eleição. A melhor pesquisa (Quaest) apoia o mercado, a mais recente (PoderData) o contraria. A distância de nível segue a maior do ciclo. Polymarket ao vivo 16/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "É NELE que as duas melhores pesquisas da semana discordam, por seis pontos. Quaest 15/Jul: 1T 28%, 2T 37%, rejeição 57%. PoderData 16/Jul: 1T 34%, 2T 43% (empate técnico), rejeição 48%, empatada com Lula. As duas concordam que ele CAI: Quaest 29 para 28, PoderData 36 para 34.",
+      "m": "25.45% (vol USD 7,4M acumulado)",
+      "t": "Estável a 25,45% (alta 0,15pp) e segue líder do 2º lugar do 1º turno (83,50%, alta 0,50pp). O preço não reagiu nem à pior nem à melhor leitura da semana.",
+      "s": "Tarifaço de 25% de Trump vira munição: a Quaest mede que a maioria culpa ele, não Lula, e que o episódio reduz a vontade de votar nele. Foto com Sicário no caso Master e atrito aberto com Michelle.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "PoderData/Aya 16/Jul: 6% no 1º turno, a MAIOR marca dele no ciclo (teto anterior 4%), e alta dentro da própria casa (4% em 25/Jun). Quaest 15/Jul: 3%, atrás de Caiado. As duas casas discordam de quem lidera a 3ª via.",
+      "m": "8.40% (vol USD 8,1M acumulado)",
+      "t": "CAI de novo a 8,40% (queda 0,10pp) e recua no 3º lugar do 1º turno para 68,50%. Acumula queda de 10,15% para 8,40% em duas sessões.",
+      "s": "CONVERGÊNCIA BILATERAL, a primeira do ciclo: o preço desceu e a urna subiu no mesmo dia. De 8,50% x 3% ontem para 8,40% x 6% hoje. Segue a maior distorção relativa do painel.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "PoderData 16/Jul: 4%, empatado com Zema e ATRÁS de Renan (6%), o que inverte a Quaest de ontem (Caiado 4%, Renan 3%). Mede 4% nas duas casas, o número mais estável do pelotão.",
+      "m": "1.25% (vol USD 4,9M)",
+      "t": "Recua a 1,25% (queda 0,15pp) e sobe no 3º lugar do 1º turno para 14,00%.",
+      "s": "A Quaest crava o diagnóstico do grupo: Caiado, Zema e Renan não decolam nem com Flávio perdendo 20 pontos na direita não-bolsonarista em dois meses.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. Nem a Quaest nem a PoderData a testam no cenário principal do 1º turno.",
+      "m": "1.40% (vol USD 9,0M)",
+      "t": "Sobe a 1,40% (alta 0,10pp) no vencedor, recuperando parte do recuo de ontem.",
+      "s": "Atrito aberto com Flávio, que disse não ter relação com ela. A campanha dele usará o veto a visita para isolá-la (Folha). Valdemar diz que ela está eleita ao Senado.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "3.35% (vol USD 84 mil)",
+      "t": "SOBE a 3,35% (alta 0,55pp), o maior movimento relativo do painel, mas segue perto do piso.",
+      "s": "Flávio chamou Dino de ministro comunista, Toffoli ficou isolado após a crise do Master e Moraes assumiu a presidência no recesso. O dinheiro real subiu o preço do atrito e segue sem precificar ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dado de 16/Jul é um teste que deu no contrário, e o painel do AFOS tinha anunciado o teste na véspera. Ontem, a Genial/Quaest reabriu a folga de Lula (1T +12pp, 2T +8pp) e o registro aqui dizia, com todas as letras, que a PoderData de 16/Jul iria testar se aquilo era tendência ou oscilação de um instituto. O teste veio às 10h30 e contradisse: 1º turno Lula 40% x Flávio 34% (+6pp) e 2º turno 45% x 43%, empate técnico dentro da margem de 2pp. Agora, o achado do dia não é qual das duas está certa. É o que elas concordam. Lula marca 40% no 1º turno e 45% no 2º NAS DUAS, número idêntico, em casas de método oposto (Quaest presencial, PoderData telefônica), com campos que se sobrepõem. A discordância inteira, seis pontos, está no Flávio: 28% contra 34% no 1º turno, 37% contra 43% no returno. Quando duas pesquisas concordam sobre um candidato e divergem sobre o outro, o que está na mesa não é movimento do eleitorado, é medição. Isso tem nome e tem prova: efeito de casa. Na série da própria PoderData, Flávio sai de 36% (25/Jun) para 34% agora. Na série da própria Quaest, sai de 29% (Jun) para 28%. Cada casa mede num patamar diferente e cada uma mede QUEDA. As duas concordam na direção e discordam no nível. Quem pegar a Quaest de ontem e a PoderData de hoje e chamar a diferença de virada está trocando de régua no meio da medição, e é um erro que a cobertura eleitoral comete toda semana. O movimento do Flávio só existe Quaest contra Quaest, PoderData contra PoderData. O mercado, por sua vez, fez algo que não vinha fazendo: recuou. Lula caiu 1,00pp para 60,50%, devolvendo a alta da véspera, poucas horas depois da PoderData. Durante semanas a leitura aqui foi a de um preço teimoso, sustentando Lula acima de 60% enquanto as nacionais apontavam empate. É pouco em magnitude e muito em significado: o dinheiro real leu a pesquisa e se moveu na direção dela. A distância de nível segue enorme, 60,50% de probabilidade contra um returno em empate técnico, e a tensão honesta é esta: a pesquisa de MAIOR confiabilidade (Quaest, reliability 5) apoia o mercado, e a MAIS RECENTE (PoderData, reliability 3) o contraria. Não há resposta única hoje, e fingir que há seria o erro. O caso mais limpo do dia, porém, é Renan Santos. A divergência mais larga do painel estreitou pelos DOIS lados ao mesmo tempo. O preço veio de 10,15% para 8,40% em duas sessões, corrigindo o que nenhuma urna sustentava. E a urna subiu: a PoderData o mediu em 6%, a maior marca dele no ciclo, e alta também dentro da própria casa (4% em 25/Jun), o que descarta efeito de casa e caracteriza movimento real. De 8,50% contra 3% ontem para 8,40% contra 6% hoje. É a primeira convergência bilateral do ciclo, e ela mostra o que o AFOS existe para mostrar: uma divergência nem sempre se resolve com o mercado se rendendo à pesquisa ou a pesquisa validando o mercado. Às vezes as duas medidas estavam parcialmente certas e se encontram no meio. O pano de fundo do dia foi o novo tarifaço de 25% de Trump, e ele não é ruído. A Quaest mediu que a maioria concorda com a versão de Lula e atribui a culpa a Flávio, e que o episódio reduz a vontade de votar nele (Estadão, CartaCapital). Flávio retuitou Rubio, culpou Lula e virou tariflávio na Folha. Somaram-se a foto ao lado de Sicário, capanga apontado de Daniel Vorcaro no caso Master, o atrito aberto com Michelle e a escalada contra o STF, com Dino chamado de ministro comunista. O mercado de impeachment de ministro subiu a 3,35% (alta 0,55pp), o maior movimento relativo do painel, e continua perto do piso. O dinheiro real segue precificando atrito, não ruptura. Próximos testes: Indexa e Real Time Big Data publicam nacionais em 21/Jul, na terça, com campos que só fecham dia 19 e 20."
+}
