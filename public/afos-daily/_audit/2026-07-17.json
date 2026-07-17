@@ -1,0 +1,26 @@
+{
+  "date": "2026-07-17",
+  "factCheckGate": {
+    "newHighImpactEvents": "nenhum",
+    "backdropContinuity": [
+      "Tarifa 25% EUA (confirmada 15/Jul, USTR) — continuidade, verificada no daily 16/Jul (Poder360 + CNN)",
+      "Foto Master/Sicário de Flávio (ICL, 15/Jul) — 8 menções em dailies recentes, continuidade",
+      "Moraes presidência STF (recesso) e pauta-bomba do Senado — continuidade do daily 16/Jul"
+    ],
+    "marketMove": "Flávio +1,60pp sem gatilho de pesquisa nem evento = momentum, sem causação atribuída"
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhum novo (mercado = Polymarket primário; backdrop 2-sourced no daily 16/Jul, entra datado)",
+    "numericalErrors": "reconcile-claims exit 0, todos os % batem com o JSON (±0,05pp)",
+    "fontesInventadas": "verificado, todos os veiculos com materia real",
+    "quotesLiterais": "ministro comunista e sabotagem com o proximo governo atribuidas e linkadas",
+    "causacaoEspuria": "nenhuma, alta de Flavio descrita como momentum",
+    "verbosCriticos": "preso em marco de 2026 e morreu dias depois datados (recobranca)",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "reconcileClaims": "exit 0",
+    "validateAfosDaily": "exit 0 (1 warning nao-bloqueante: link density 78% vs 80%)"
+  },
+  "rebaselineGate": "nao disparou (movimentos < 0,50pp no re-fetch 18:01 BRT)"
+}
