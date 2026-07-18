@@ -1,6 +1,7 @@
 {
   "iso3": "FRA",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/france-2024-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/N51NQF",
   "election": {
     "first_round": "2024-06-30",
     "runoff": "2024-07-07",
