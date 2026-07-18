@@ -1,6 +1,7 @@
 {
   "iso3": "CAN",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/canada-2025-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/BBO36K",
   "election": {
     "first_round": "2025-04-28",
     "runoff": "",

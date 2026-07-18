@@ -1,6 +1,7 @@
 {
   "iso3": "CHL",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/chile-2025-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/5PLWZ7",
   "election": {
     "first_round": "2025-11-16",
     "runoff": "2025-12-14",

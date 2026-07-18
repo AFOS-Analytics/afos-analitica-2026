@@ -1,6 +1,7 @@
 {
   "iso3": "COL",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/colombia-2026-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/X7JUEG",
   "election": {
     "first_round": "2026-05-31",
     "runoff": "2026-06-21",

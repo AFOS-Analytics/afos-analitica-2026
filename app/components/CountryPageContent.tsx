@@ -67,11 +67,12 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   // país no allowlist recebe o pacote novo (grafo + barras de odds + SEO oculto)
   const enriched = GRAPH_ENABLED.has(country.iso3)
   // Cluster clicável Harvard Dataverse (coleção + DOI do próprio país) no grafo.
-  // Todos os 9 casos validados têm depósito; cada grafo mostra o DOI do seu país.
+  // Todos os 10 casos validados (+ Brasil ao vivo) têm depósito; cada grafo mostra o DOI do seu país.
   const HARVARD_DOI: Record<string, string> = {
     USA: '10.7910/DVN/3DJCW5', PER: '10.7910/DVN/JBBGXV', BRA: '10.7910/DVN/2D0UK7', COL: '10.7910/DVN/X7JUEG',
     KOR: '10.7910/DVN/WRBDVI', CHL: '10.7910/DVN/5PLWZ7', DEU: '10.7910/DVN/W9XGXM',
     CAN: '10.7910/DVN/BBO36K', GBR: '10.7910/DVN/CUKDRJ', MEX: '10.7910/DVN/5A4LLJ',
+    FRA: '10.7910/DVN/N51NQF',
   }
   const harvardDoi = HARVARD_DOI[country.iso3]
   const graphNav: NavGroup[] = harvardDoi ? [
@@ -84,7 +85,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
   // Estrutura padrão dos casos validados: data/ (mercado, divergência, structural-context.csv),
   // polls/ (pesquisas). Imprensa: EUA usa press/; os demais 7 validados usam news/ (todos têm a pasta no HF).
   const graphLinks: DataLinks = div?.hf ? {
-    election: div.harvard || div.hf,
+    election: div.hf,
     market: `${div.hf}/tree/main/data`,
     poll: `${div.hf}/tree/main/polls`,
     press: country.iso3 === 'USA' ? `${div.hf}/tree/main/press` : ['COL', 'MEX', 'CHL', 'PER', 'CAN', 'GBR', 'DEU', 'KOR', 'FRA'].includes(country.iso3) ? `${div.hf}/tree/main/news` : undefined,

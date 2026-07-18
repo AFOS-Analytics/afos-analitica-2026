@@ -1,6 +1,7 @@
 {
   "iso3": "DEU",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/germany-2025-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/W9XGXM",
   "election": {
     "first_round": "2025-02-23",
     "runoff": "",

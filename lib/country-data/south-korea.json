@@ -1,6 +1,7 @@
 {
   "iso3": "KOR",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/south-korea-2025-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/WRBDVI",
   "election": {
     "first_round": "2025-06-03",
     "runoff": "",
