@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-18",
+  "reFetch": { "fetchedAtBRT": "18/Jul 14:35", "lula": 60.50, "flavio": 26.50, "renan": 8.30, "gap": 34.00, "volTotalUSDm": 113.7, "gate": "nao disparou (movimentos <0,50pp)" },
+  "factCheckGate": {
+    "events": [
+      { "event": "Moraes nega visita de Milei a Bolsonaro", "v1": "tema Milei 3x (continuidade), decisao nova de 18/Jul", "v2": "Correio Braziliense + Poder360 + PortalR3, tipo=evento", "decisao": "incorporar" },
+      { "event": "PF aciona Interpol por bens de Vorcaro", "v1": "Interpol 0 mencoes (novidade)", "v2": "Correio Braziliense + InfoMoney + Revista Forum, tipo=desdobramento", "decisao": "incorporar como desdobramento" },
+      { "event": "Tarifaco EUA", "decisao": "continuidade, contexto" }
+    ]
+  },
+  "adversarialReview": {
+    "singleSource": "nenhuma alegacao central em fonte unica",
+    "numericalErrors": "reconcile-claims OK, todos batem com JSON",
+    "fontesInventadas": "todos os veiculos com materia correspondente (WebSearch/cache)",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma, movimentos descritos como momentum",
+    "verbosCriticos": "negou (Moraes) desambiguado decisao monocratica; acionou Interpol (PF em curso)",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": { "validateAfosDaily": "exit 0 (1 warning soft link-density 62%)", "reconcileClaims": "OK", "volumeTotal": "presente Lede + Secao 1" }
+}
