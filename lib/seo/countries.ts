@@ -50,6 +50,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'França', en: 'France', es: 'Francia' },
     iso3: 'FRA', flag: '🇫🇷', region: 'Europe',
     elections: [
+      { slug: 'france-2024', year: 2024, type: { 'pt-BR': 'Legislativa (Assembleia)', en: 'Legislative (Assembly)', es: 'Legislativa (Asamblea)' }, date: '2024-06-30', status: 'completed', polymarketSlug: 'which-party-wins-the-most-seats-in-french-election' },
       { slug: 'france-2027', year: 2027, type: { 'pt-BR': 'Presidencial', en: 'Presidential', es: 'Presidencial' }, date: '2027-04-10', status: 'upcoming', polymarketSlug: '2027-french-presidential-election' },
     ],
   },

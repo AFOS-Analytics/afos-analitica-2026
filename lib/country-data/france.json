@@ -1,0 +1,335 @@
+{
+  "iso3": "FRA",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/france-2024-electoral-divergence",
+  "election": {
+    "first_round": "2024-06-30",
+    "runoff": "2024-07-07",
+    "matchup": "Legislativa (Assembleia Nacional): qual PARTIDO isolado tem a maior bancada",
+    "status": "completed"
+  },
+  "polls_count": 50,
+  "market_candidates": 6,
+  "latest_poll": {
+    "pollster": "Ipsos / Toluna projeção de cadeiras",
+    "date": "2024-07-05"
+  },
+  "headline": {
+    "pt-BR": "Por PARTIDO isolado, o Rassemblement National (RN) de Marine Le Pen foi a maior bancada da Assembleia (143 cadeiras), e o mercado mais fundo (US$ 917 mil) precificou isso com quase 99% de probabilidade na véspera, do começo ao fim. Acertou. O que virou de cabeça para baixo foi o GOVERNO, não o maior partido: a coligação de esquerda Nova Frente Popular (NFP) somou a maior bancada por COLIGAÇÃO (182 cadeiras) graças ao front républicain, o voto tático em que 134 candidatos da NFP e 82 do Ensemble se retiraram dos triangulares para bloquear o RN. A divergência sensacional que dominou a cobertura, a projeção de uma quase-maioria do RN (230 a 270 cadeiras nas pesquisas iniciais), viveu nas pesquisas e nos mercados rasos e NÃO sobreviveu no mercado de maior volume. É a lição do AFOS: o dinheiro fundo não comprou o hype, e a divergência que não aparece no alto volume não é robusta.",
+    "en": "By SINGLE party, Marine Le Pen's National Rally (RN) was the largest group in the Assembly (143 seats), and the deepest market (USD 917k) priced that at nearly 99% on the eve, start to finish. It was right. What flipped was the GOVERNMENT, not the largest party: the left-wing New Popular Front (NFP) coalition held the most seats by COALITION (182) thanks to the front républicain, the tactical voting in which 134 NFP and 82 Ensemble candidates withdrew from three-way runoffs to block the RN. The sensational divergence that dominated coverage, projections of a near-RN-majority (230 to 270 seats in early polls), lived in polls and thin markets and did NOT survive in the highest-volume market. That is the AFOS lesson: deep money did not buy the hype, and a divergence that does not appear at high volume is not robust.",
+    "es": "Por PARTIDO individual, la Agrupación Nacional (RN) de Marine Le Pen fue la mayor bancada de la Asamblea (143 escaños), y el mercado más profundo (USD 917 mil) lo valoró en casi 99% en la víspera, de principio a fin. Acertó. Lo que se dio vuelta fue el GOBIERNO, no el mayor partido: la coalición de izquierda Nuevo Frente Popular (NFP) sumó la mayor bancada por COALICIÓN (182) gracias al front républicain, el voto táctico en que 134 candidatos de la NFP y 82 de Ensemble se retiraron de los balotajes a tres para bloquear al RN. La divergencia sensacional que dominó la cobertura, la proyección de una casi-mayoría del RN (230 a 270 escaños en las encuestas iniciales), vivió en las encuestas y en los mercados finos y NO sobrevivió en el mercado de mayor volumen. Esa es la lección de AFOS: el dinero profundo no compró el hype, y una divergencia que no aparece en alto volumen no es robusta."
+  },
+  "rows": [
+    {
+      "candidate": "Rassemblement National",
+      "poll_pct": 33.2,
+      "market_pct": 98.8,
+      "divergence_pp": 65.6,
+      "note": {
+        "pt-BR": "Maior partido isolado (143 cadeiras), como o mercado precificou. Voto de 1º turno 33,2%.",
+        "en": "Largest single party (143 seats), as the market priced. First-round vote 33.2%.",
+        "es": "Mayor partido individual (143 escaños), como valoró el mercado. Voto de 1ª vuelta 33,2%."
+      }
+    },
+    {
+      "candidate": "La France Insoumise",
+      "poll_pct": 28.2,
+      "market_pct": 0.85,
+      "divergence_pp": -27.4,
+      "note": {
+        "pt-BR": "Voto da coligação NFP (28,2%). A NFP fez a MAIOR bancada por coligação (182), mas por partido isolado a LFI (74) ficou atrás do RN.",
+        "en": "NFP coalition vote (28.2%). NFP held the most seats by coalition (182), but as a single party LFI (74) trailed the RN.",
+        "es": "Voto de la coalición NFP (28,2%). La NFP tuvo la mayor bancada por coalición (182), pero como partido individual LFI (74) quedó detrás del RN."
+      }
+    },
+    {
+      "candidate": "Renaissance",
+      "poll_pct": 21.3,
+      "market_pct": 0.4,
+      "divergence_pp": -20.9,
+      "note": {
+        "pt-BR": "Voto da coligação Ensemble (21,3%); Renaissance é o partido central. Ensemble fez 159-163 cadeiras.",
+        "en": "Ensemble coalition vote (21.3%); Renaissance is the core party. Ensemble took 159-163 seats.",
+        "es": "Voto de la coalición Ensemble (21,3%); Renaissance es el partido central. Ensemble obtuvo 159-163 escaños."
+      }
+    },
+    {
+      "candidate": "Les Républicains",
+      "poll_pct": 6.6,
+      "market_pct": 0.25,
+      "divergence_pp": -6.35
+    }
+  ],
+  "market_snapshot": {
+    "date": "2024-07-06",
+    "total_volume_usd": 917600,
+    "candidates": [
+      {
+        "candidate": "Rassemblement National",
+        "market_pct": 98.8,
+        "volume_usd": 522500
+      },
+      {
+        "candidate": "Other",
+        "market_pct": 0.4,
+        "volume_usd": 137300
+      },
+      {
+        "candidate": "Renaissance",
+        "market_pct": 0.4,
+        "volume_usd": 96100
+      },
+      {
+        "candidate": "Les Républicains",
+        "market_pct": 0.25,
+        "volume_usd": 61200
+      },
+      {
+        "candidate": "La France Insoumise",
+        "market_pct": 0.85,
+        "volume_usd": 58900
+      },
+      {
+        "candidate": "Parti Socialiste",
+        "market_pct": 0.3,
+        "volume_usd": 41600
+      }
+    ]
+  },
+  "press": [
+    {
+      "outlet": "CNN",
+      "url": "https://www.cnn.com/world/live-news/france-election-runoff-results-07-07-24-intl/index.html",
+      "note": {
+        "pt-BR": "NFP fez a maior bancada, bloco de Macron em 2º, RN de Le Pen em 3º.",
+        "en": "NFP won most seats, Macron's bloc second, Le Pen's RN third.",
+        "es": "La NFP obtuvo más escaños, el bloque de Macron segundo, el RN de Le Pen tercero."
+      }
+    },
+    {
+      "outlet": "France 24",
+      "url": "https://www.france24.com/en/france/20240707-france-s-leftist-new-popular-front-wins-a-shock-victory-%E2%80%93-but-now-the-hard-part-begins",
+      "note": {
+        "pt-BR": "A NFP de esquerda vence de forma surpreendente; começa o impasse de governo.",
+        "en": "The leftist NFP wins a shock victory; the hard part of governing begins.",
+        "es": "La NFP de izquierda gana de forma sorpresiva; empieza lo difícil de gobernar."
+      }
+    },
+    {
+      "outlet": "Bloomberg",
+      "url": "https://www.bloomberg.com/graphics/2024-french-election-results/",
+      "note": {
+        "pt-BR": "Aliança de esquerda faz mais cadeiras; extrema-direita não converte a vitória do 1º turno.",
+        "en": "Leftist alliance wins most seats; the far right fails to carry its first-round lead.",
+        "es": "La alianza de izquierda gana más escaños; la extrema derecha no capitaliza su ventaja de 1ª vuelta."
+      }
+    },
+    {
+      "outlet": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/liveblog/2024/7/7/france-legislative-election-2024-live-country-holds-breath-for-election-results",
+      "note": {
+        "pt-BR": "Boca-de-urna aponta liderança da coligação de esquerda.",
+        "en": "Exit polls point to the left-wing coalition leading.",
+        "es": "Las encuestas a boca de urna apuntan a la coalición de izquierda al frente."
+      }
+    },
+    {
+      "outlet": "House of Commons Library",
+      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10112/",
+      "note": {
+        "pt-BR": "Explica o front républicain: 134 candidatos da NFP e 82 do Ensemble se retiraram para bloquear o RN.",
+        "en": "Explains the front républicain: 134 NFP and 82 Ensemble candidates withdrew to block the RN.",
+        "es": "Explica el front républicain: 134 candidatos de la NFP y 82 de Ensemble se retiraron para bloquear al RN."
+      }
+    }
+  ],
+  "market_trajectory": {
+    "dates": [
+      "2024-06-11",
+      "2024-06-12",
+      "2024-06-13",
+      "2024-06-14",
+      "2024-06-15",
+      "2024-06-16",
+      "2024-06-17",
+      "2024-06-18",
+      "2024-06-19",
+      "2024-06-20",
+      "2024-06-21",
+      "2024-06-22",
+      "2024-06-23",
+      "2024-06-24",
+      "2024-06-25",
+      "2024-06-26",
+      "2024-06-27",
+      "2024-06-28",
+      "2024-06-29",
+      "2024-06-30",
+      "2024-07-01",
+      "2024-07-02",
+      "2024-07-03",
+      "2024-07-04",
+      "2024-07-05",
+      "2024-07-06",
+      "2024-07-07"
+    ],
+    "series": [
+      {
+        "name": "Rassemblement National",
+        "pct": [
+          47.5,
+          77,
+          87.5,
+          88.5,
+          89,
+          89.5,
+          91,
+          93.5,
+          93.5,
+          91.5,
+          94,
+          93.5,
+          95.5,
+          96.9,
+          96.25,
+          96.2,
+          97.35,
+          97.15,
+          97.1,
+          97.15,
+          96.8,
+          97.2,
+          97.25,
+          98.2,
+          98.4,
+          98.8,
+          99.4
+        ]
+      },
+      {
+        "name": "Renaissance",
+        "pct": [
+          47.5,
+          19,
+          11,
+          7.5,
+          7.5,
+          8.5,
+          7,
+          6.5,
+          6,
+          5.5,
+          2,
+          1.55,
+          1.55,
+          0.85,
+          1,
+          1.05,
+          1.15,
+          1.25,
+          1,
+          0.85,
+          1.25,
+          0.4,
+          0.4,
+          0.3,
+          0.3,
+          0.25,
+          0.4
+        ]
+      },
+      {
+        "name": "La France Insoumise",
+        "pct": [
+          3.95,
+          0.4,
+          0.6,
+          0.75,
+          0.55,
+          0.65,
+          0.65,
+          0.3,
+          0.6,
+          1.6,
+          2.2,
+          2.25,
+          2.25,
+          2.15,
+          2.05,
+          1.95,
+          1.95,
+          1.95,
+          1.9,
+          1.75,
+          3.95,
+          0.7,
+          0.7,
+          0.65,
+          0.15,
+          0.25,
+          0.85
+        ]
+      }
+    ]
+  },
+  "context": {
+    "governance": {
+      "political_stability": {
+        "value": 61.8,
+        "year": 2024
+      },
+      "voice_accountability": {
+        "value": 77,
+        "year": 2024
+      },
+      "rule_of_law": {
+        "value": 73.8,
+        "year": 2024
+      },
+      "government_effectiveness": {
+        "value": 74.7,
+        "year": 2024
+      },
+      "regulatory_quality": {
+        "value": 72.9,
+        "year": 2024
+      },
+      "control_of_corruption": {
+        "value": 72.5,
+        "year": 2024
+      }
+    },
+    "macro": {
+      "population": {
+        "value": 68551653,
+        "year": 2024
+      },
+      "gdp_usd": {
+        "value": 3160442622465.08,
+        "year": 2024
+      },
+      "gdp_per_capita_usd": {
+        "value": 46103.0840855884,
+        "year": 2024
+      },
+      "inflation_pct": {
+        "value": 1.99904942291463,
+        "year": 2024
+      }
+    },
+    "education": {
+      "gov_expenditure_pct_gdp": {
+        "value": 5.32434988021851,
+        "year": 2022
+      },
+      "expected_years_schooling": {
+        "value": 15.79594,
+        "year": 2018
+      }
+    },
+    "sources": {
+      "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+      "wdi": "https://data.worldbank.org/"
+    },
+    "latest_year": 2024
+  }
+}

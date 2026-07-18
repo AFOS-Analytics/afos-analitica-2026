@@ -63,6 +63,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'Lee Jae-myung won the 2025 snap election, called after the martial-law crisis. The market gave Lee about 95% to win and even nailed the margin (the 8-to-11pp band; the actual margin was 8.27pp), while polls measured his vote share around 49%. One of the largest election markets ever outside the US (**~US$290M**).',
     es: 'Lee Jae-myung ganó la elección anticipada de 2025, convocada tras la crisis de la ley marcial. El mercado dio a Lee cerca del 95% de ganar e incluso acertó el margen (la franja de 8 a 11pp; el real fue 8,27pp), mientras la encuesta medía su voto en torno al 49%. Uno de los mayores mercados electorales fuera de EE. UU. (**~US$290M**).',
   },
+  FRA: {
+    'pt-BR': 'Por PARTIDO isolado, o RN de Le Pen foi a maior bancada (143 cadeiras), e o mercado mais fundo (**~US$ 917k**) precificou isso em ~99% e acertou. O que virou foi o GOVERNO: a coligação de esquerda NFP fez a maior bancada por coligação (182) via front républicain. O hype de uma quase-maioria do RN (230-270 cadeiras) viveu nas pesquisas e nos mercados rasos e não sobreviveu no volume.',
+    en: 'By SINGLE party, Le Pen’s RN was the largest group (143 seats), and the deepest market (**~US$917k**) priced that at ~99% and was right. What flipped was the GOVERNMENT: the left-wing NFP coalition held the most seats by coalition (182) via the front républicain. The near-RN-majority hype (230-270 seats) lived in polls and thin markets and did not survive at volume.',
+    es: 'Por PARTIDO individual, el RN de Le Pen fue la mayor bancada (143 escaños), y el mercado más profundo (**~US$917k**) lo valoró en ~99% y acertó. Lo que se dio vuelta fue el GOBIERNO: la coalición de izquierda NFP tuvo la mayor bancada por coalición (182) vía front républicain. El hype de casi-mayoría del RN (230-270 escaños) vivió en encuestas y mercados finos y no sobrevivió al volumen.',
+  },
 };
 
 // Renderiza a tagline com suporte a **negrito** (marcador markdown simples), bolando o destaque de volume.

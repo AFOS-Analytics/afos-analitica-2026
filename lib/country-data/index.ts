@@ -14,6 +14,7 @@ import uk from './uk.json'
 import mexico from './mexico.json'
 import usa from './usa.json'
 import southKorea from './south-korea.json'
+import france from './france.json'
 
 export interface DivergenceRow {
   candidate: string
@@ -23,6 +24,9 @@ export interface DivergenceRow {
   note?: Record<string, string> // ressalva por linha (ex.: spike transitório de mercado fino), trilíngue
 }
 export interface MarketSnapshotRow { candidate: string; market_pct: number; volume_usd: number }
+// Pé de imprensa do cruzamento (mercado × pesquisa × NOTÍCIA). Veículos que cobriram a eleição
+// e a divergência. Opcional; só casos com curadoria de imprensa exibem a seção.
+export interface PressItem { outlet: string; url: string; note?: Record<string, string> }
 // Divergência do 2º turno (head-to-head), para eleições com balotaje: pesquisa (voto) × mercado
 // (probabilidade de vencer) × resultado oficial. Opcional; só países com 2º turno preenchem.
 export interface RunoffRow { candidate: string; poll_pct: number; market_pct: number; result_pct: number }
@@ -52,6 +56,7 @@ export interface CountryDivergence {
   rows_runoff?: { date: string; polls?: number; candidates: RunoffRow[]; note?: Record<string, string> }
   market_snapshot?: { date: string; total_volume_usd: number; candidates: MarketSnapshotRow[] }
   market_trajectory?: MarketTrajectory
+  press?: PressItem[]
   context?: CountryContext
 }
 
@@ -66,6 +71,7 @@ export const COUNTRY_DIVERGENCE: Record<string, CountryDivergence> = {
   GBR: uk as CountryDivergence,
   MEX: mexico as CountryDivergence,
   KOR: southKorea as unknown as CountryDivergence,
+  FRA: france as unknown as CountryDivergence,
 }
 
 export function getCountryDivergence(iso3: string): CountryDivergence | null {
@@ -75,7 +81,7 @@ export function getCountryDivergence(iso3: string): CountryDivergence | null {
 // Allowlist dos países com o pacote novo ligado (grafo do cruzamento + barras de odds no card
 // de divergência + textos de SEO ocultos). País fora da lista = inalterado em produção.
 // Rollout um de cada vez: adicionar o iso3 após aprovação do preview.
-export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN', 'MEX', 'GBR', 'KOR'])
+export const GRAPH_ENABLED = new Set<string>(['USA', 'CHL', 'COL', 'PER', 'DEU', 'CAN', 'MEX', 'GBR', 'KOR', 'FRA'])
 
 // Vencedor real de cada caso validado (para o nó "Resultado real" no grafo). O nome deve bater
 // com um candidato em `rows`. Países sem entrada não exibem o nó de resultado.
@@ -89,4 +95,5 @@ export const ELECTION_WINNER: Record<string, string> = {
   MEX: 'Sheinbaum',
   GBR: 'Labour',
   KOR: 'Lee Jae-myung',
+  FRA: 'Rassemblement National',
 }
