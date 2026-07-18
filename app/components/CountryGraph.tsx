@@ -181,6 +181,15 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
     for (const [id, label] of anchors) { add({ id, label, type: 'press', r: 7, color: '#fb923c' }); links.push({ source: 'L_press', target: id, kind: 'tree' }) }
   }
 
+  // imprensa real: veículos que cobriram a eleição (campo `press` do bundle), como sub-nós da camada de imprensa
+  if (!isUSA && Array.isArray(d.press) && d.press.length) {
+    d.press.forEach((p, i) => {
+      const id = `press_${i}`
+      add({ id, label: p.outlet, type: 'press', r: 7, color: '#fb923c', href: p.url })
+      links.push({ source: 'L_press', target: id, kind: 'tree' })
+    })
+  }
+
   // contexto estrutural agrupado: Governança (WGI) + Economia + Educação
   const ctx = d.context as unknown as {
     governance?: Record<string, { value: number }>
