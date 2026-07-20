@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-19",
+  "lastUpdate": "2026-07-20",
   "institutes": [
     {
       "name": "Datafolha",
@@ -840,15 +840,15 @@
     "lastUpdate": "2026-07-16"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 19/Jul 20:56 UTC, degraded false, failedCount 0), a 77 dias do 1º turno. Terceiro dia seguido sem pesquisa nacional nova: as últimas seguem a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. O mercado abriu o gap pelo lado do adversário: Flávio recuou 0,85pp para 25,65%, a maior queda diária dele na semana, com Lula imóvel em 60,50%, e a distância foi a +34,85pp, alta no dia mas ainda bem abaixo do pico do ciclo, os +39,5pp de 03/Jul. O gap alargou por queda do adversário, não por alta do favorito, e essas duas coisas não são a mesma informação. Sem gatilho de pesquisa nem evento de urna, é momentum, não reação. O AFOS não inventa causa onde não há gatilho. Volume acumulado no presidencial em USD 113,8M.",
-    "sources": "Polymarket via proxy AFOS (live 19/Jul 20:56 UTC, degraded false, failedCount 0) + PoderData/Aya 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA) + registro TSE de pesquisas nacionais previstas para 21, 22 e 24/Jul",
+    "note": "Cruzamento Polymarket (live 20/Jul 22:48 UTC, degraded false, failedCount 0), a 76 dias do 1º turno. Quarto dia sem pesquisa nacional de intenção nova: as últimas seguem a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. Hoje o movimento veio de novo do adversário, mas na direção oposta à dos dias anteriores: Flávio subiu 0,60pp para 26,25%, com Lula imóvel em 60,50%, e o gap ESTREITOU para +34,25pp, ainda bem abaixo do pico do ciclo (+39,5pp em 03/Jul). Sem gatilho de pesquisa nem evento de urna, é momentum, não reação. As convenções partidárias abriram hoje e vão até 05/Ago, a fase mais estrutural do ciclo, e Flávio deve realizar a própria no sábado 25/Jul ainda sem vice definido. Volume acumulado no presidencial em USD 113,8M.",
+    "sources": "Polymarket via proxy AFOS (live 20/Jul 22:48 UTC, degraded false, failedCount 0) + PoderData/Aya 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA) + convenções partidárias abertas 20/Jul (Diário da Guanabara, CNN Brasil) + registro TSE de pesquisas nacionais previstas para 21, 22 e 24/Jul",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "40-49%",
         "polymarket": "60.50%",
         "tendenciaPesquisa": "DUAS nacionais em 24h e Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (gap +12pp), 2T 45% x 37% (gap +8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3): 1T 40% x 34% (gap +6pp), 2T 45% x 43%, empate técnico. O leque do 2º turno de julho vai de empate (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest). Vence todos os cenários de 2º turno em todas as nacionais recentes, mas a margem depende de qual casa mede.",
-        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M) pelo segundo pregão seguido, em terceiro dia sem pesquisa nova. O gap sobre Flávio foi a +34,85pp, inteiramente por queda do adversário. Na série do ciclo o gap segue estreitando desde os +39,5pp de 03/Jul. O preço dele não subiu um centésimo em dois dias.",
+        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M) e no book todo o movimento veio do adversário. O gap sobre Flávio recuou para +34,25pp, longe do pico do ciclo de +39,5pp (03/Jul), por alta do adversário e não por passo próprio. O preço de Lula não se mexe há dias.",
         "odds": 60.5,
         "percentage": 45,
         "lastUpdate": "2026-07-19",
@@ -857,31 +857,31 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28-43%",
-        "polymarket": "25.65%",
+        "polymarket": "26.25%",
         "tendenciaPesquisa": "É NELE que as duas melhores pesquisas da semana discordam, e por seis pontos. Quaest 15/Jul: 1T 28%, 2T 37%. PoderData/Aya 16/Jul: 1T 34%, 2T 43%, empate técnico com Lula. Lula é igual nas duas, o Flávio não. EFEITO DE CASA, não viragem: na série da própria PoderData ele sai de 36% (25/Jun) para 34%, também caindo, de um patamar mais alto. As duas casas concordam na direção (recuo) e discordam no nível. Rejeição: 57% na Quaest, a maior do páreo; 48% na PoderData, empatado com Lula.",
-        "tendenciaPolymarket": "RECUOU 0,85pp para 25,65% (vol USD 7,5M), a maior queda diária da semana e a terceira sessão seguida de perda, sem gatilho de urna. No 2º lugar do 1º turno cedeu a 81,00% (queda 0,50pp). O repique de 17/Jul foi inteiramente devolvido e algo mais.",
-        "odds": 25.65,
+        "tendenciaPolymarket": "SUBIU 0,60pp para 26,25% (vol USD 7,5M), devolvendo parte das três sessões seguidas de perda até 19/Jul, de novo sem gatilho de urna. Segue sendo ele quem move o painel, num book onde Lula está travado. No 2º lugar do 1º turno segue folgado em 79,00%.",
+        "odds": 26.25,
         "percentage": 43,
         "lastUpdate": "2026-07-19",
-        "value": 25.65
+        "value": 26.25
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-6%",
-        "polymarket": "8.15%",
+        "polymarket": "8.65%",
         "tendenciaPesquisa": "PoderData/Aya 16/Jul: 6%, a maior marca dele entre as nacionais do recorte de 30 dias. O teto anterior era 4%, e a Quaest de ontem deu 3%, atrás de Caiado. Sobe também dentro da própria casa (4% em 25/Jun). A faixa das nacionais abre de 2-4% para 2-6%.",
-        "tendenciaPolymarket": "Cedeu 0,15pp no vencedor, para 8,15% (vol USD 8,2M), mas DESABOU 4,00pp no 3º lugar do 1º turno, de 68,50% para 64,50%, a maior variação isolada do painel. Divergência do dia: Ciro Gomes o citou como possibilidade de voto no MESMO pregão em que o dinheiro real reduziu a aposta na colocação dele.",
-        "odds": 8.15,
+        "tendenciaPolymarket": "SUBIU 0,50pp para 8,65% (vol USD 8,2M), o segundo maior preço do book presidencial, atrás só de Lula e Flávio. A distorção com a urna persiste: vale 8,65% no mercado contra teto de 6% na melhor nacional do recorte de 30 dias.",
+        "odds": 8.65,
         "percentage": 6,
         "lastUpdate": "2026-07-19",
-        "value": 8.15
+        "value": 8.65
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5%",
         "polymarket": "1.35%",
         "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Zema e ATRÁS de Renan (6%), o que quebra a sequência em que liderava a 3ª via. Quaest 15/Jul: 4%, à frente de Renan (3%). As duas casas o dão em 4%, mas discordam de quem está na frente do pelotão.",
-        "tendenciaPolymarket": "Praticamente parado, cede 0,05pp para 1,35% (vol USD 5,0M), e recua no 3º lugar do 1º turno para 16,00% (queda 0,50pp). Ciro Gomes o citou como possibilidade de voto e o preço não se mexeu: o mercado não trata declaração de apoio como fato precificável a 77 dias.",
+        "tendenciaPolymarket": "Estável em 1,35% (0,00pp, vol USD 5,0M), entrando na semana das convenções sem novidade de preço. Mede 4% na PoderData 16/Jul, atrás de Renan, e vale cerca de um sexto dele no mercado de vencedor.",
         "odds": 1.35,
         "percentage": 4,
         "lastUpdate": "2026-07-19",
@@ -892,7 +892,7 @@
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais. Foco na reeleição em SP, onde a Datafolha 05/Jul o dá com 46% x Haddad 30% e aprovação de 45%.",
-        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,5M lifetime, o maior entre os contratos do painel). No Senado por cadeiras, o PL segue em 85,50% (estável), a liderança folgada do mercado de mais cadeiras.",
+        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,5M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras, o PL segue em 85,50% (estável), a liderança folgada do mercado de mais cadeiras.",
         "odds": 0.15,
         "percentage": 0,
         "lastUpdate": "2026-07-19",
@@ -903,7 +903,7 @@
         "pesquisaRange": "2-4%",
         "polymarket": "0.65%",
         "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Caiado e à frente do que a Quaest deu a ele ontem (2%). Futura/Apex 14/Jul: 3,7%. BTG/Nexus 13/Jul: 4%. Ainda sem vice anunciado.",
-        "tendenciaPolymarket": "Sobe 0,10pp para 0,65% (vol USD 4,4M), devolvendo parte da queda de ontem. Marca 4% na PoderData, dois terços do que Renan mede na mesma pesquisa, e vale cerca de um doze avos dele no mercado de vencedor. Michelle descartou ser vice dele a um dia da abertura das convenções.",
+        "tendenciaPolymarket": "Estável em 0,65% (0,00pp, vol USD 4,4M). Marca 4% na PoderData, dois terços do que Renan mede na mesma pesquisa, e vale cerca de um treze avos dele no mercado de vencedor. A chapa entra nas convenções sem vice definido.",
         "odds": 0.65,
         "percentage": 4,
         "lastUpdate": "2026-07-19",
@@ -914,7 +914,7 @@
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "0.55%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%.",
-        "tendenciaPolymarket": "Sobe 0,10pp para 0,55% (vol USD 6,3M), devolvendo parte da queda de 0,80pp de ontem sem que nada tenha acontecido entre as duas pontas. A oscilação confirma que o preço aqui é resíduo de nome conhecido num book fino, não sinal de candidatura. O foco segue estadual.",
+        "tendenciaPolymarket": "Estável em 0,55% (0,00pp, vol USD 6,3M). O preço aqui é resíduo de nome conhecido num book fino, não sinal de candidatura, e o foco segue estadual.",
         "odds": 0.55,
         "percentage": 0,
         "lastUpdate": "2026-07-19",
