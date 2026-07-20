@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-19",
+  "reviewedAt": "2026-07-19T21:31:00Z",
+  "polymarketRefetch": {
+    "fetchedAt": "2026-07-19T21:31:00Z",
+    "fetchedAtBRT": "19/07/2026 18:31",
+    "degraded": false,
+    "failedCount": 0,
+    "reconciliation": {
+      "lula": { "json": 60.50, "live": 60.50, "delta": 0.00 },
+      "flavio": { "json": 25.65, "live": 25.65, "delta": 0.00 },
+      "gap": { "json": 34.85, "live": 34.85, "delta": 0.00 },
+      "renan": { "json": 8.15, "live": 7.85, "delta": -0.30 },
+      "stfImpeach": { "json": 3.75, "live": 3.65, "delta": -0.10 },
+      "volumeTotalPresidencial": "USD 113.8M"
+    },
+    "rebaselineGate": "NAO DISPAROU",
+    "rebaselineReason": "Maior delta foi Renan em 0,30pp, abaixo do piso de 0,50pp. Nenhum recorde rompido ou desfeito. Enquadramento inalterado."
+  },
+  "factCheckGate": {
+    "eventosCandidatos": 2,
+    "eventos": [
+      {
+        "evento": "Ciro Gomes cita Caiado e Renan Santos como possibilidades de voto e nao menciona Flavio Bolsonaro",
+        "verificacao1_crossRef": "nao aparece nas ultimas 7 dailies",
+        "classificacao": "novidade",
+        "verificacao2_fetch": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/07/ciro-gomes-cita-caiado-e-renan-santos-como-possibilidades-de-voto-e-ignora-flavio-bolsonaro.shtml",
+          "data": "2026-07-19",
+          "dataDeclaracao": "2026-07-18",
+          "tipo": "evento"
+        },
+        "segundaFonte": [
+          "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/07/19/pivo-de-briga-entre-flavio-e-michelle-ciro-gomes-avalia-apoiar-candidaturas-de-caiado-ou-renan-santos-na-presidencia.ghtml",
+          "https://www.gazetadopovo.com.br/eleicoes/2026/ciro-sinaliza-apoio-caiado-renan-deixa-flavio-bolsonaro-fora-do-radar/",
+          "https://revistaoeste.com/politica/ciro-diz-que-votaria-em-caiado-para-presidente-mas-nao-cita-flavio/"
+        ],
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Caiado diz que Flavio Bolsonaro tem que se explicar sobre o caso do Banco Master (Valor, 18/Jul)",
+        "verificacao1_crossRef": "nao aparece nas 7 dailies, MAS busca revela cobrancas equivalentes de Caiado em maio e junho/2026",
+        "classificacao": "continuidade",
+        "verificacao2_fetch": {
+          "url": "https://valor.globo.com/politica/noticia/2026/07/18/caiado-diz-que-flvio-bolsonaro-tem-que-se-explicar-sobre-caso-do-banco-master.ghtml",
+          "resultado": "inacessivel ao fetch",
+          "tipo": "nao determinado"
+        },
+        "segundaFonte": "NAO VERIFICADO. Revista Forum retorna 403. Nenhum veiculo aberto confirma declaracao nova em 18/Jul; resultados acessiveis sao de maio/junho.",
+        "decisao": "UNVERIFIED, nao incorporar como fato novo. Tema entra apenas pelo historico verificado de maio/junho."
+      }
+    ]
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. Aceno de Ciro tem 5 fontes independentes. Cobranca de Caiado EXCLUIDA por falhar na two-source rule.",
+    "2_numericalErrors": "reconcile-claims.ts exit 0. Todos os claims batem com os JSONs (tolerancia +-0.05pp). 6 avisos named-check sao artefato de regex (le '25%' dentro de '25,65%'), verificados um a um.",
+    "3_fontesInventadas": "conferidas 3 aleatorias contra o cache: Poder360/derrotas Congresso, Estadao/pacote R$ 145 bi, Frances News/Michelle. Todas existem com a URL citada.",
+    "4_quotesLiterais": "nenhuma aspa literal no texto. Falas de Ciro em discurso indireto.",
+    "5_causacaoEspuria": "caso critico e Renan (queda de 4,00pp no 3o lugar no mesmo pregao do aceno de Ciro). Texto declara EXPLICITAMENTE que nao ha evidencia de reacao do mercado ao gesto e que o mais provavel e serem eventos independentes.",
+    "6_verbosCriticos": "OK. Sem prisao, morte ou decisao judicial nova. 'Suspenso das visitas' vem com data da decisao (13/Jul) e validade (meados de outubro).",
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "validate-afos-daily": "exit 0, 1 warning: low-link-density 60% (meta 80%)",
+    "reconcile-claims": "exit 0",
+    "validate-polls-data": "exit 0, 1 warning pre-existente: approvalData soma 95 (5% nao sabe da Quaest, dado real)"
+  },
+  "correcoesDoDia": [
+    "Ressalva falsa sobre falha de coleta do caso Master removida (commit 63a8553): a serie de 8 dias mostra 0 ou 1 item como estado normal da query master-vorcaro, nao anomalia.",
+    "Afirmacao de que a cobranca de Caiado era 'primeira cobranca publica e nominal' removida: falsa em dois pontos (ja ocorrera em maio e junho; fala de 18/Jul nao confirmavel por segunda fonte)."
+  ],
+  "notas": "Warning de densidade de links mantido deliberadamente em 60%. Parágrafos sem link sao as 4 divergencias e a sintese, que sao analise propria sobre numeros ja linkados na Secao 1. Preferido warning a link decorativo."
+}
