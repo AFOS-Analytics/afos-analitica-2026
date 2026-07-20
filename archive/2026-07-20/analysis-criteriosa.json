@@ -1,0 +1,170 @@
+{
+  "updatedAt": "20/07/2026, 19:48",
+  "subtitle": "ATUALIZAÇÃO 20/Jul 19:48 BRT, a 76 dias do 1º turno. Quarto dia seguido sem pesquisa nacional de intenção nova: as últimas seguem sendo a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. Hoje o movimento veio de novo do adversário, na direção inversa à dos dias anteriores: Flávio subiu 0,60pp para 26,25%, com Lula imóvel em 60,50%, e o gap ESTREITOU para +34,25pp, ainda bem abaixo do pico do ciclo (+39,5pp em 03/Jul). Renan subiu 0,50pp no vencedor, para 8,65%. No noticiário, as convenções partidárias ABRIRAM hoje 20/Jul e vão até 05/Ago, com a de Flávio marcada para sábado 25/Jul ainda sem vice, e no caso Master ele pediu a suspeição de Moraes. Atenção ao que é registro e o que é resultado: a Datafolha está EM CAMPO de 22 a 24/Jul, com divulgação prevista para 24/Jul, e as matérias de hoje antecipam o levantamento, não publicam números. Cruzamento com Polymarket ao vivo 20/Jul. Próximas nacionais: Indexa e Real Time Big Data em 21/Jul, Gerp em 22/Jul, Datafolha em 24/Jul.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 60,50% (estável, 0,00pp, vol USD 7,5M acumulado), a 76 dias da eleição. Imóvel no dia em que Flávio subiu 0,60pp e estreitou o gap. A distância entre os dois recuou para +34,25pp, ainda longe do pico do ciclo (+39,5pp em 03/Jul), com o movimento vindo do adversário. Segue sem pesquisa nova para reagir.",
+      "fortes": [
+        "Lidera o 1º turno com 40% nas DUAS nacionais da semana, Quaest 15/Jul e PoderData 16/Jul, número idêntico em casas de método oposto (presencial e telefônica).",
+        "Lidera o 2º turno com 45% nas duas, também idêntico. A estabilidade dele é o dado mais sólido do recorte.",
+        "Vence todos os cenários de 2º turno em todas as nacionais recentes, contra Flávio, Zema, Caiado e Michelle.",
+        "A Quaest 15/Jul (reliability 5, a maior do recorte) dá a maior folga de julho: 1T +12pp e 2T +8pp, e aponta pela primeira vez chance de vitória no 1º turno.",
+        "A Quaest 15/Jul mede aprovação de 48% contra 47% de desaprovação, o melhor patamar do ano (VEJA), com a alta puxada por homens e faixas de renda mais alta (Blog do Magno), e mede que a maioria atribui a Flávio, não a Lula, a culpa pela disputa tarifária com os EUA (CartaCapital, Estadão). Ressalva de janela: o campo da Quaest fechou em 13 de julho, antes de o USTR confirmar a tarifa de 25% em 15 de julho."
+      ],
+      "fracos": [
+        "A PoderData 16/Jul devolve o 2º turno ao empate técnico: 45% x 43%, dentro da margem de 2pp. O returno não está resolvido.",
+        "A distância de nível se agravou hoje: 60,50% de probabilidade implícita contra um returno que a pesquisa mais recente dá como empate, com o gap sobre Flávio ainda abaixo do pico do ciclo.",
+        "A aprovação diverge por nove pontos na desaprovação: 47% na Quaest contra 51% na PoderData. O platô perto do empate depende de qual casa mede.",
+        "O leque do 2º turno de julho vai de empate técnico (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest 15/Jul). A dispersão entre institutos segue elevada.",
+        "Rejeição alta: 50% na Quaest, 48% na PoderData, empatado com Flávio nesta última. O Estadão resume o quadro como cenário do nem-nem, insatisfação com o governo somada a rejeição ao adversário.",
+        "A agenda no Congresso segue travada: mais de 20 derrotas no 3º mandato (Poder360), quatro MPs caducadas em julho, e um pacote de crédito de R$ 145 bi por fora do arcabouço em ano eleitoral (Estadão)."
+      ],
+      "analise": "Lula ficou imóvel a 60,50% (0,00pp, vol USD 7,5M acumulado), em quarto dia sem pesquisa nacional de intenção nova. Toda a variação do painel veio do denominador: hoje Flávio subiu 0,60pp, devolvendo parte da queda recente, e o gap recuou de +34,85pp para +34,25pp, ainda bem abaixo do pico do ciclo, os +39,5pp de 03/Jul. Vale dizer o que isso é e o que não é. O mercado não ficou menos confiante em Lula, o preço dele não se moveu; o que houve foi recuperação parcial de convicção no adversário. Um gap que oscila por movimento do outro lado é uma informação diferente de um gap que se move pelo favorito, e tratar os dois como a mesma coisa seria ler errado o que o dinheiro está dizendo. Sem pesquisa nova e sem evento de urna, também não há gatilho identificável para a alta do Flávio, e o AFOS não vai inventar causa. O pano de fundo do voto não mudou, e a tensão honesta segue a mesma: a melhor pesquisa da semana (Quaest, reliability 5) apoia a folga que o mercado precifica, e a mais recente (PoderData, reliability 3) devolve o returno ao empate. Lula segue idêntico nas duas leituras, 40% no 1º turno e 45% no 2º, o dado mais estável do recorte. Uma Quaest de expectativa desta semana mostra 55% achando que Lula vence, contra 25% para Flávio (G1), leitura de percepção, não de intenção de voto. O calendário passou a mandar hoje, com a abertura das convenções partidárias, e o próximo teste de urna são as nacionais de 21, 22 e 24 de julho."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 26,25% (alta 0,60pp, vol USD 7,5M acumulado) e 79,00% no 2º lugar do 1º turno. Devolveu parte das três sessões seguidas de perda até 19/Jul, sem pesquisa nova nem evento de urna por trás. O gap para Lula recuou para +34,25pp, longe do pico do ciclo.",
+      "fortes": [
+        "A PoderData 16/Jul o põe a 2pp de Lula no 2º turno (45% x 43%), empate técnico, e a 6pp no 1º turno (40% x 34%).",
+        "Segue líder folgado do 2º lugar do 1º turno no mercado (81,00%), a condição de adversário certo de Lula no returno, mesmo cedendo na margem.",
+        "O preço não recuou quando saiu a pior leitura da semana (Quaest, 28%), o que sugere que o mercado já descontava o efeito de casa.",
+        "Na PoderData, a rejeição dele empata com a de Lula em 48%, bem abaixo dos 57% que a Quaest mede.",
+        "O PL segue folgado a 85,50% no mercado de mais cadeiras no Senado, o ativo mais sólido do campo dele em todo o painel."
+      ],
+      "fracos": [
+        "As duas casas concordam que ele está CAINDO: Quaest de 29% (Jun) para 28%, PoderData de 36% (25/Jun) para 34%. A direção é a mesma, e é contra ele.",
+        "A Quaest 15/Jul, a de maior confiabilidade do recorte, o dá com 28% no 1T e rejeição de 57%, a maior do páreo.",
+        "A Quaest mede que a disputa tarifária com os EUA REDUZ a vontade de votar nele, e que a maioria atribui a culpa a ele, não a Lula (Estadão, CartaCapital). Ressalva: o campo dela fechou em 13 de julho, antes da confirmação da tarifa de 25% pelo USTR em 15 de julho.",
+        "Perde todos os cenários de 2º turno em todas as nacionais recentes, mesmo na leitura mais favorável a ele.",
+        "Ciro Gomes citou Caiado e Renan Santos como possibilidades de voto e o deixou de fora (Folha, Gazeta do Povo), sinal de que o voto anti-Lula de centro não migra automaticamente para ele.",
+        "Michelle descartou ser vice de Zema, e o atrito interno dele com ela segue aberto. As convenções, que abriram em 20/Jul, cobram definição de palanque com Jair preso e ele suspenso das visitas até outubro."
+      ],
+      "analise": "Flávio entregou de novo o movimento do dia, desta vez para cima: subiu 0,60pp para 26,25%, devolvendo parte das três sessões seguidas de perda até 19/Jul, e o gap para Lula recuou de +34,85pp para +34,25pp. Não houve fato de urna nem pesquisa nova por trás, e segue sendo ele quem move o painel, num book onde Lula está travado. O pano de fundo do voto segue desfavorável no nível: as duas melhores pesquisas da semana discordam sobre ele por seis pontos (Quaest 28%, PoderData 34% no 1º turno) e concordam na direção, que é de queda dentro de cada casa (Quaest de 29% para 28%, PoderData de 36% para 34%). Uma Quaest de expectativa mostra só 25% achando que ele vence, contra 55% para Lula (G1). E a semana que começou é a mais estrutural do ciclo até aqui: as convenções abriram em 20/Jul e vão até 05/Ago, com a dele marcada para o sábado 25/Jul ainda sem vice definido (Folha), e o PL precisando fechar chapa com Jair preso e Flávio suspenso das visitas ao pai até meados de outubro, um teste de comando à distância. No caso Master, ele pediu a suspeição de Moraes (MSN), enquanto a PF revelou repasses milionários do banco a consultoria (Revista Oeste). O 2º lugar do 1º turno, a aposta de que ele é o adversário certo de Lula no returno, segue folgado em 79,00%."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 8,65% (alta 0,50pp, vol USD 8,2M acumulado), o segundo maior preço do book presidencial, atrás só de Lula e Flávio. A distorção com a urna persiste: vale 8,65% no mercado contra teto de 6% na melhor nacional do recorte de 30 dias.",
+      "fortes": [
+        "PoderData/Aya 16/Jul: 6% no 1º turno, a maior marca dele entre as nacionais do recorte de 30 dias. O teto anterior era 4%.",
+        "Sobe também dentro da própria casa: a PoderData o media em 4% em 25/Jun. É movimento real, medido com a mesma régua.",
+        "Na PoderData ele passa Caiado (4%) e Zema (4%) e lidera o pelotão da 3ª via pela primeira vez numa nacional.",
+        "Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Caiado, deixando Flávio de fora (Folha, Gazeta do Povo). É o primeiro aceno de um quadro nacional de centro-esquerda ao nome dele.",
+        "Segue líder do 3º lugar do 1º turno no mercado (64,50%), com volume acumulado de USD 8,2M, o maior entre os candidatos do book presidencial."
+      ],
+      "fracos": [
+        "A Quaest 15/Jul, a de maior confiabilidade do recorte, o dá com 3%, ATRÁS de Caiado (4%). As duas casas discordam de quem lidera a 3ª via.",
+        "Mesmo na melhor leitura da vida dele (6%), o mercado ainda o precifica a 8,65%, acima do que qualquer urna declarada sustenta.",
+        "O 3º lugar do 1º turno desabou 4,00pp hoje, de 68,50% para 64,50%, a maior variação isolada do painel, sem pesquisa nova por trás.",
+        "A Quaest registra que Caiado, Zema e Renan não decolam mesmo com Flávio caindo 20 pontos na direita não-bolsonarista em dois meses.",
+        "A faixa das nacionais vai de 2% a 6%: a dispersão sobre ele é proporcionalmente a maior do painel."
+      ],
+      "analise": "Renan Santos segue sendo o caso mais limpo do painel. Hoje subiu 0,50pp no vencedor, para 8,65%, consolidando-se como o terceiro maior preço do book presidencial, atrás só de Lula e Flávio. Do lado da urna, a última leitura segue sendo os 6% que a PoderData lhe deu em 16/Jul, a maior marca dele entre as nacionais do recorte de 30 dias e alta dentro da própria casa (4% em 25/Jun), o que caracteriza movimento real. A distorção com a urna não só não acabou como se ampliou: vale 8,65% no mercado contra 6% na melhor urna que já recebeu, a maior distância relativa do painel. É o retrato mais didático de tudo o que separa notoriedade de intenção de voto, e do que um mercado precifica quando um nome vira aposta de cauda. E a discordância de fundo continua sem resolução: a Quaest, a casa de maior confiabilidade da semana, o deu com 3%, atrás de Caiado. Enquanto isso não se decidir em rodadas sucessivas da MESMA casa, a faixa honesta dele é de 3% a 6%, não um número. A Quaest cravou, aliás, que Caiado, Zema e Renan não decolam nem com Flávio perdendo terreno na direita não-bolsonarista."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,35% (estável, vol USD 5,0M), Michelle 1,45% (vol USD 9,1M), Haddad 0,55% (estável), Zema 0,65% (estável). Quarto dia sem pesquisa nova: a última segue a PoderData 16/Jul, com Caiado e Zema em 4% e atrás de Renan (6%). No mercado, o pelotão residual ficou parado, sem movimento que mereça leitura.",
+      "subtitle": "20/Jul, a 76 dias: Caiado 1,35% no vencedor (queda 0,05pp) e 16,00% no 3º lugar do 1º turno (queda 0,50pp). Sem pesquisa nova, o pano de fundo segue a PoderData 16/Jul, que deu Caiado 4%, empatado com Zema (4%) e atrás de Renan (6%). O sinal do dia foi político, não de preço: Ciro Gomes citou Caiado e Renan como possibilidades de voto e ignorou Flávio, e Michelle descartou ser vice de Zema. As convenções abriram em 20/Jul e vão cobrar definição de chapa de todo o pelotão.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,35% (queda 0,05pp, vol USD 5,0M) | 3º lugar do 1º turno 16,00% (queda 0,50pp, atrás de Renan) | PoderData 16/Jul 1T 4%, empatado com Zema e atrás de Renan (6%) | Quaest 15/Jul 1T 4%, à frente de Renan (3%)",
+        "fortes": "Caiado mede 4% no 1º turno nas DUAS nacionais da semana, Quaest 15/Jul e PoderData 16/Jul, o número mais estável do pelotão da 3ª via. Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Renan, deixando Flávio de fora (Folha, Gazeta do Povo), o primeiro aceno explícito de um quadro nacional de centro-esquerda ao nome dele. Segue segundo colocado no sub-mercado de 3º lugar do 1º turno, com 16,00%. Mantém a chapa pura do PSD (Kassab vice) e a força concentrada no plano estadual (Goiás).",
+        "fracos": "Sem pesquisa nova, segue a foto da PoderData 16/Jul, que o pôs atrás de Renan (6%) e empatado com Zema (4%), quebrando a sequência em que liderava a 3ª via. As duas casas discordam da ordem do pelotão e concordam que nenhum decola, e a Quaest cravou o diagnóstico ao medir que Caiado, Zema e Renan não crescem nem com Flávio perdendo 20 pontos na direita não-bolsonarista em dois meses. No mercado segue no piso (1,35%), valendo cerca de um sexto de Renan (8,65%), que mede 6% na mesma pesquisa em que Caiado mede 4%. O aceno de Ciro não moveu o preço dele em nenhuma direção."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,55% (alta 0,10pp, vol USD 6,3M) | não testado no presidencial pela Quaest 15/Jul nem pela PoderData 16/Jul | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad segue como principal quadro do PT no maior colégio eleitoral do país, com Márcio França (PSB) como vice na chapa pelo governo de SP. É o nome de reserva do partido depois de Lula, embora o mercado não precifique candidatura presidencial dele. Recuperou 0,10pp hoje, devolvendo parte da queda de ontem, o que confirma que aquele movimento era ruído de nome residual.",
+        "fracos": "O mercado não precifica candidatura presidencial dele, e nenhuma nacional da semana o testa nesse cargo. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na maior rejeição do estado (47%). O preço dele no presidencial é resíduo de nome conhecido, e a oscilação de 0,80pp para baixo ontem e 0,10pp para cima hoje, sem qualquer fato entre as duas pontas, mostra exatamente o que um book fino faz com nomes que ninguém está realmente negociando."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,65% (alta 0,10pp, vol USD 4,4M) | PoderData 16/Jul 1T 4%, o dobro da Quaest | Quaest 15/Jul 1T 2% | sem vice anunciado, e Michelle descartou a vaga",
+        "fortes": "A última leitura de urna, a PoderData 16/Jul, deu Zema 4% no 1º turno, o dobro dos 2% da Quaest, e o empatou com Caiado. Também marcou 3,7% na Futura/Apex 14/Jul e 4% na BTG/Nexus 13/Jul, o que sustenta a leitura de que a Quaest é a casa que menos o mede, não que ele tenha caído. Defende pauta de privatização de Petrobras e Banco do Brasil em eventual governo (Jornal do Brasil), posição que o diferencia no pelotão.",
+        "fracos": "Michelle Bolsonaro descartou publicamente ser vice dele, sem nenhuma possibilidade nas palavras dela, e a chapa segue sem vice a um dia da abertura das convenções. Segue a distorção relativa mais gritante do painel na mesma régua: na MESMA PoderData, Zema marca 4% e Renan 6%, ou seja, dois terços do voto dele, e vale 0,65% contra 8,65% no preço, cerca de um doze avos. Isso não é sobre intenção de voto, é sobre notoriedade e narrativa, que é o que um mercado fino precifica. Na bipolarização Lula x Flávio o Novo não encontra tração."
+      },
+      "analise": "O pelotão de baixo não teve pesquisa nova pelo quarto dia, então o pano de fundo da urna segue o da PoderData 16/Jul: Renan 6%, Caiado 4% e Zema 4%, com Caiado e Zema empatados e atrás de Renan, e a Quaest dando a ordem inversa no topo (Caiado 4%, Renan 3%). As duas casas discordam de quem lidera a 3ª via e concordam que nenhum deles decola, o dado estrutural do grupo: a Quaest cravou que Caiado, Zema e Renan não crescem nem com Flávio perdendo terreno na direita não-bolsonarista em dois meses. No mercado, o grupo ficou imóvel hoje, sem variação que mereça leitura. O sinal do dia foi de calendário e não de preço: as convenções partidárias abriram em 20/Jul e vão até 05/Ago, e Zema chega a elas ainda sem vice, depois de Michelle ter descartado a hipótese. O contraste que define o grupo persiste com número: Caiado mede 4% de voto nas duas nacionais da semana e vale 1,35% no vencedor; Zema mede 4% na PoderData e vale 0,65%; Renan mede 6% na mesma pesquisa e vale 8,65%. As convenções são o primeiro teste estrutural desse pelotão: é quando pré-candidatura vira chapa registrada, ou não vira.",
+      "fortes": [
+        "Caiado e Zema empatam em 4% na PoderData 16/Jul, e Zema dobra o que a Quaest lhe deu (2%). Caiado mede 4% nas duas casas da semana, o número mais estável do pelotão.",
+        "Ciro Gomes citou Caiado e Renan como possibilidades de voto, ignorando Flávio, o primeiro aceno de um quadro nacional de centro-esquerda ao pelotão.",
+        "Caiado segue segundo colocado no 3º lugar do 1º turno, com 16,00%, atrás apenas de Renan.",
+        "Zema marca 4% na PoderData, dois terços do que Renan mede na MESMA pesquisa, e vale cerca de um doze avos dele no preço.",
+        "Terceiro dia sem pesquisa nova: o pano de fundo do grupo segue o da Quaest 15/Jul e da PoderData 16/Jul."
+      ],
+      "fracos": [
+        "A última nacional (PoderData 16/Jul) põe Caiado atrás de Renan (6%) e empatado com Zema, quebrando a sequência em que liderava a 3ª via.",
+        "A Quaest registra que Caiado, Zema e Renan não decolam mesmo com Flávio caindo 20 pontos na direita não-bolsonarista em dois meses.",
+        "O mercado precifica os três no piso: juntos, Caiado, Zema e Haddad somam 2,55% no vencedor, contra 8,65% de Renan sozinho.",
+        "Michelle descartou ser vice de Zema, que chega à abertura das convenções sem vice definido.",
+        "O aceno de Ciro a Caiado não moveu o preço dele em nenhuma direção, o que sugere que o mercado não trata declaração de apoio como fato precificável a essa distância.",
+        "Nenhum deles é testado no 2º turno da PoderData contra Lula, e a Quaest os põe todos perdendo o returno."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "DUAS nacionais na semana, Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (+12pp), 2T 45% x 37% (+8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3, BR-00059/2026): 1T 40% x 34% (+6pp), 2T 45% x 43%, empate técnico. A discordância está toda no Flávio, não nele.",
+      "m": "60.50% (vol USD 7,5M acumulado)",
+      "t": "ESTÁVEL a 60,50% (0,00pp). O gap sobre Flávio recuou para +34,25pp, ainda abaixo do pico do ciclo de +39,5pp (03/Jul), com o movimento vindo do adversário, não de alta dele.",
+      "s": "76 dias da eleição. Quarto dia sem pesquisa de intenção nova: a melhor pesquisa (Quaest) apoia o mercado, a mais recente (PoderData) o contraria. Uma Quaest de expectativa dá 55% achando que Lula vence. Polymarket ao vivo 20/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "É NELE que as duas melhores pesquisas da semana discordam, por seis pontos. Quaest 15/Jul: 1T 28%, 2T 37%, rejeição 57%. PoderData 16/Jul: 1T 34%, 2T 43% (empate técnico), rejeição 48%, empatada com Lula. As duas concordam que ele CAI: Quaest 29 para 28, PoderData 36 para 34.",
+      "m": "26.25% (vol USD 7,5M acumulado)",
+      "t": "SOBE a 26,25% (alta 0,60pp), devolvendo parte das três sessões seguidas de perda até 19/Jul, e segue folgado no 2º lugar do 1º turno (79,00%). Sem pesquisa nem evento de urna por trás.",
+      "s": "As convenções abriram em 20/Jul, com a dele no sábado 25/Jul ainda sem vice, Jair preso e ele suspenso das visitas até outubro. No caso Master, pediu a suspeição de Moraes.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "PoderData/Aya 16/Jul: 6% no 1º turno, a maior marca dele nas nacionais do recorte de 30 dias (teto anterior 4%), e alta dentro da própria casa (4% em 25/Jun). Quaest 15/Jul: 3%, atrás de Caiado. As duas casas discordam de quem lidera a 3ª via.",
+      "m": "8.65% (vol USD 8,2M acumulado)",
+      "t": "SOBE 0,50pp no vencedor, para 8,65%, o segundo maior preço do book presidencial atrás de Lula e Flávio.",
+      "s": "A distorção com a urna se ampliou: vale 8,65% no mercado contra teto de 6% na melhor urna. Notoriedade e aposta de cauda, não intenção de voto.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "PoderData 16/Jul: 4%, empatado com Zema e ATRÁS de Renan (6%), o que inverte a Quaest (Caiado 4%, Renan 3%). Mede 4% nas duas casas, o número mais estável do pelotão.",
+      "m": "1.35% (vol USD 5,0M)",
+      "t": "Estável em 1,35% (0,00pp), entrando na semana das convenções sem novidade de preço.",
+      "s": "Mede 4% de voto nas duas nacionais da semana e vale 1,35% no vencedor, cerca de um sexto de Renan. As convenções abriram em 20/Jul.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. Nem a Quaest nem a PoderData a testam no cenário principal do 1º turno.",
+      "m": "1.45% (vol USD 9,1M)",
+      "t": "ESTÁVEL a 1,45% no vencedor, sem movimento no dia.",
+      "s": "Descartou ser vice de Zema, sem nenhuma possibilidade nas palavras dela. O atrito com Flávio segue aberto, e Valdemar diz que ela está eleita ao Senado.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "2.95% (vol USD 83 mil)",
+      "t": "CAI 0,80pp para 2,95%, devolvendo a alta recente e voltando para perto do piso, sem ato individual novo de ministro que explique o movimento.",
+      "s": "Ressalva de método decisiva: com volume acumulado de USD 83 mil, ordens de grandeza abaixo dos USD 7,5M do presidencial, a variação não sustenta narrativa. O dinheiro real segue precificando atrito, não ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dado de 20/Jul é o quarto dia seguido sem pesquisa nacional de intenção nova, e o que o mercado faz sem ela. Desde a rodada em que a Quaest (15/Jul) e a PoderData (16/Jul) discordaram sobre o Flávio, nenhuma casa nova entrou em campo com resultado publicado, e o painel inteiro se moveu sozinho. Hoje o movimento inverteu o sinal dos dias anteriores: Flávio subiu 0,60pp para 26,25%, devolvendo parte da queda recente, e o gap sobre Lula recuou de +34,85pp para +34,25pp. Lula não se moveu, ficou em 60,50%. Aqui está o ponto que o AFOS não abre mão, e ele tem duas partes. A primeira: não houve gatilho. Nenhuma pesquisa, nenhum fato de urna que explique a alta do Flávio, e chamar isso de reação seria inventar causa. A segunda: o gap se moveu por conta do adversário, não do favorito. O preço de Lula não se mexe há dias, e o gap de hoje segue bem abaixo do pico do ciclo, os +39,5pp de 03/Jul. Um gap que oscila porque o outro lado recupera convicção é uma informação diferente de um movimento do favorito, e tratar os dois como a mesma coisa é ler errado o que o dinheiro está dizendo. Renan Santos subiu 0,50pp no vencedor, para 8,65%, consolidando-se como o terceiro maior preço do book, e a distorção dele com a urna se ampliou: vale 8,65% contra 6% na melhor nacional do recorte. O pano de fundo do voto é o mesmo: Lula segue idêntico nas duas leituras (40% e 45%), com a discordância inteira concentrada no Flávio, seis pontos, efeito de casa que só se mede casa contra casa. O mercado de impeachment de ministro do STF caiu 0,80pp para 2,95%, devolvendo a alta recente, mas com volume acumulado de USD 83 mil contra USD 7,5M do presidencial essa variação não sustenta leitura, e registramos como ruído de book. No caso Master, o desenho de fundo segue vivo: a cobrança sobre Flávio vem de dentro da própria direita desde maio, pela voz de Caiado, e nesta segunda ele pediu a suspeição de Moraes (MSN), enquanto a PF revelou repasses milionários do banco a consultoria (Revista Oeste). O mercado não precificou nada disso. O calendário passou a mandar: as convenções partidárias abriram em 20/Jul e vão até 05/Ago, o primeiro evento estrutural do ciclo, quando pré-candidatura vira chapa registrada. E o próximo teste de urna vem em sequência: Indexa e Real Time Big Data em 21/Jul, Gerp em 22/Jul e Datafolha em 24/Jul, esta última com campo de 22 a 24/Jul. Registro não é publicação, e a diferença entre as duas coisas é o tipo de erro que derruba a credibilidade de um painel."
+}
