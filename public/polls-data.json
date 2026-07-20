@@ -840,7 +840,7 @@
     "lastUpdate": "2026-07-16"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 19/Jul 20:56 UTC, degraded false, failedCount 0), a 77 dias do 1º turno. Terceiro dia seguido sem pesquisa nacional nova: as últimas seguem a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. O mercado abriu o gap pelo lado do adversário: Flávio recuou 0,85pp para 25,65%, a maior queda diária dele na semana, com Lula imóvel em 60,50%, e a distância foi a +34,85pp, a mais larga do ciclo. O gap alargou por queda do adversário, não por alta do favorito, e essas duas coisas não são a mesma informação. Sem gatilho de pesquisa nem evento de urna, é momentum, não reação. O AFOS não inventa causa onde não há gatilho. Volume acumulado no presidencial em USD 113,8M.",
+    "note": "Cruzamento Polymarket (live 19/Jul 20:56 UTC, degraded false, failedCount 0), a 77 dias do 1º turno. Terceiro dia seguido sem pesquisa nacional nova: as últimas seguem a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. O mercado abriu o gap pelo lado do adversário: Flávio recuou 0,85pp para 25,65%, a maior queda diária dele na semana, com Lula imóvel em 60,50%, e a distância foi a +34,85pp, alta no dia mas ainda bem abaixo do pico do ciclo, os +39,5pp de 03/Jul. O gap alargou por queda do adversário, não por alta do favorito, e essas duas coisas não são a mesma informação. Sem gatilho de pesquisa nem evento de urna, é momentum, não reação. O AFOS não inventa causa onde não há gatilho. Volume acumulado no presidencial em USD 113,8M.",
     "sources": "Polymarket via proxy AFOS (live 19/Jul 20:56 UTC, degraded false, failedCount 0) + PoderData/Aya 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA) + registro TSE de pesquisas nacionais previstas para 21, 22 e 24/Jul",
     "candidates": [
       {
@@ -848,7 +848,7 @@
         "pesquisaRange": "40-49%",
         "polymarket": "60.50%",
         "tendenciaPesquisa": "DUAS nacionais em 24h e Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (gap +12pp), 2T 45% x 37% (gap +8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3): 1T 40% x 34% (gap +6pp), 2T 45% x 43%, empate técnico. O leque do 2º turno de julho vai de empate (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest). Vence todos os cenários de 2º turno em todas as nacionais recentes, mas a margem depende de qual casa mede.",
-        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M) pelo segundo pregão seguido, em terceiro dia sem pesquisa nova. O gap sobre Flávio foi a +34,85pp, o mais largo do ciclo, inteiramente por queda do adversário. O preço dele não subiu um centésimo em dois dias.",
+        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M) pelo segundo pregão seguido, em terceiro dia sem pesquisa nova. O gap sobre Flávio foi a +34,85pp, inteiramente por queda do adversário. Na série do ciclo o gap segue estreitando desde os +39,5pp de 03/Jul. O preço dele não subiu um centésimo em dois dias.",
         "odds": 60.5,
         "percentage": 45,
         "lastUpdate": "2026-07-19",

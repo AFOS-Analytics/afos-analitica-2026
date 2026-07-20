@@ -105,6 +105,27 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 - Atualizar `approvalData.results` se aprovação Lula mudou (AtlasIntel/Quaest mais recentes)
 - Atualizar `polymarketComparison.candidates` com % Polymarket atuais (já tem dados em ETAPA 1)
 
+**Guardrail #3 (SUPERLATIVO — instalado 20/Jul/2026 após bug em produção):**
+
+⚠️ A prosa de `polymarketComparison.note` e de `tendenciaPolymarket`/`tendenciaPesquisa` é **escrita por modelo, não gerada por script**. O validator checa SCHEMA, não checa AFIRMAÇÃO. Ou seja: nada impede uma frase falsa de ir para produção, e foi exatamente o que aconteceu.
+
+**Regra:** nenhum superlativo entra sem checagem contra a **SÉRIE COMPLETA**. Vale para "a mais larga/o mais largo", "recorde", "a maior queda", "o maior volume", "primeiro/última vez", "do ciclo", "do ano".
+
+Antes de escrever qualquer um deles:
+```bash
+# série do ciclo (o cap de 1000 pontos TRUNCA days=90; puxar em duas janelas e juntar)
+curl -s "https://www.afos-analytics.com/api/market/history?candidate=Lula&days=90"
+curl -s "https://www.afos-analytics.com/api/market/history?candidate=Lula&days=18"
+curl -s "https://www.afos-analytics.com/api/market/history?candidate=Fl%C3%A1vio&days=18"
+```
+Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada dia, comparar contra **todo** o histórico disponível. Nome acentuado e URL-encoded (`memory/reference_market_history_api_prefix_accent.md`).
+
+**Se não der para verificar, não use superlativo.** "Alta no dia", "acima da semana passada" e "perto do topo recente" custam zero e não podem ser desmentidos.
+
+**Precisar a JANELA sempre.** "A mais larga da semana" é uma afirmação; "a mais larga" sem janela vira "do ciclo" na cabeça de quem lê.
+
+**Incidente que originou a regra (20/Jul/2026):** a nota de 19/Jul afirmou que o gap Lula−Flávio de +34,85pp era "a mais larga do ciclo". Era FALSO: o pico foi +39,5pp em 03/Jul e a série vinha ESTREITANDO havia duas semanas. Ficou no ar até 20/Jul, e só foi pego porque o André mandou verificar uma frase de e-mail que reciclava o mesmo enquadramento. O post de 14/Jul nas 4 plataformas repetia o erro com um terceiro número (+35,25pp). Detalhe em `memory/project_bug_dashboard_widest_of_cycle_20jul.md` e regra geral em `memory/feedback_verify_every_number_before_sending.md`.
+
 **Guardrail #2 (schema canônico — OBRIGATÓRIO, instalado 21/Mai/2026 após 2ª regressão em 72h):**
 
 ⚠️ **PROTOCOLO TEMPLATE-FIRST — NÃO NEGOCIÁVEL.** Antes de inserir QUALQUER nova entry em `polls[]`:

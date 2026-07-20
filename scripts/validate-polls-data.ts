@@ -119,6 +119,39 @@ if (data.polymarketComparison !== undefined) {
   }
 }
 
+// Guardrail #3 (20/Jul/2026): superlativo sem janela declarada.
+// A prosa de polymarketComparison é ESCRITA POR MODELO, não gerada por script, e o resto
+// deste validator só checa SHAPE. Nada impedia uma AFIRMAÇÃO falsa de ir a produção, e não
+// impediu: a nota de 19/Jul disse que um gap de +34,85pp era "a mais larga do ciclo" quando
+// o pico real era +39,5pp em 03/Jul e a série vinha estreitando havia duas semanas.
+// Isto é um WARNING, não um erro: superlativo pode ser legítimo, mas tem que ser CONFERIDO
+// contra a série completa (/api/market/history) antes de publicar. Ver
+// memory/project_bug_dashboard_widest_of_cycle_20jul.md
+const SUPERLATIVOS = /\b(a mais larga|o mais largo|a maior|o maior|a menor|o menor|recorde|in[ée]dit[oa]|pela primeira vez|nunca ante[sr])\b/gi
+const JANELA_OK = /\b(da semana|do dia|no dia|do m[êe]s|desde \d|nas [úu]ltimas|em \d+ dias|do recorte|da rodada)\b/i
+
+function checarSuperlativos(texto: unknown, label: string) {
+  if (typeof texto !== 'string') return
+  for (const frase of texto.split(/(?<=[.!?])\s+/)) {
+    const achados = frase.match(SUPERLATIVOS)
+    if (achados && !JANELA_OK.test(frase)) {
+      warnings.push(`${label}: superlativo "${achados[0]}" sem janela declarada. CONFERIR contra a série completa antes de publicar. Frase: "${frase.trim().slice(0, 110)}"`)
+    }
+  }
+}
+
+if (data.polymarketComparison && typeof data.polymarketComparison === 'object') {
+  const pc = data.polymarketComparison
+  checarSuperlativos(pc.note, 'polymarketComparison.note')
+  if (Array.isArray(pc.candidates)) {
+    pc.candidates.forEach((c: any, i: number) => {
+      const who = c?.name || `#${i}`
+      checarSuperlativos(c?.tendenciaPolymarket, `polymarketComparison.candidates[${who}].tendenciaPolymarket`)
+      checarSuperlativos(c?.tendenciaPesquisa, `polymarketComparison.candidates[${who}].tendenciaPesquisa`)
+    })
+  }
+}
+
 // Hardening 06/Jun pós-EVAL D+21: validar TAMBÉM analysis-criteriosa.json.
 // PollsSection.tsx renderiza crit.quadroComparativo.map, crit.candidates[].fortes/.fracos.map
 // e c.caiado/c.haddad — o /atualizar reescreve esse arquivo todo dia, mesma classe de
