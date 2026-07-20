@@ -1,0 +1,21 @@
+{
+  "date": "2026-07-20",
+  "factCheckGate": {
+    "events": [
+      {"event": "Convenções partidárias abrem (20/Jul)", "crossRef": "7 menções (antecipação); hoje é a abertura real", "verification2": "TSE+CNN+InfoMoney+Brasil de Fato", "decision": "incorporar"},
+      {"event": "Flávio pede suspeição de Moraes no caso Master", "crossRef": "0 menções em 7 dailies", "verification2": "Band/CartaCapital/GazetaDoPovo datam de 01/Jun/2026; manchete MSN de hoje é recirculação", "decision": "NÃO incorporar (recobrança); removido também da produção do /atualizar"},
+      {"event": "Quaest expectativa 55% Lula / 25% Flávio", "verification2": "G1/CartaCapital/Brasil247", "decision": "incorporar com rótulo 'expectativa, não intenção'"}
+    ]
+  },
+  "adversarialReview": {
+    "singleSource": "nenhuma (convenções com 3 fontes, Quaest com G1+websearch)",
+    "numericalErrors": "reconcile-claims OK, todos batem com JSON (±0,05pp)",
+    "invented": "CNN, InfoMoney, Revista Oeste verificados",
+    "quotes": "nenhuma aspa literal",
+    "causation": "movimento descrito como momentum, sem causação espúria",
+    "criticalVerbs": "'pediu' (suspeição Moraes) removido por recobrança; 'preso' com estado contínuo correto",
+    "decision": "prosseguir"
+  },
+  "reconcileClaims": "OK — todos os claims numéricos batem com o JSON (tolerância ±0,05pp)",
+  "refetchGate": "não disparou; mercado parado desde /atualizar; volume total ajustado para USD 114,0M"
+}
