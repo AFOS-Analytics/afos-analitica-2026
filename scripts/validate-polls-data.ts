@@ -127,15 +127,29 @@ if (data.polymarketComparison !== undefined) {
 // Isto é um WARNING, não um erro: superlativo pode ser legítimo, mas tem que ser CONFERIDO
 // contra a série completa (/api/market/history) antes de publicar. Ver
 // memory/project_bug_dashboard_widest_of_cycle_20jul.md
-const SUPERLATIVOS = /\b(a mais larga|o mais largo|a maior|o maior|a menor|o menor|recorde|in[ée]dit[oa]|pela primeira vez|nunca ante[sr])\b/gi
-const JANELA_OK = /\b(da semana|do dia|no dia|do m[êe]s|desde \d|nas [úu]ltimas|em \d+ dias|do recorte|da rodada)\b/i
+const SUPERLATIVOS = /\b(a mais larga|o mais largo|a mais estreita|a maior|o maior|a menor|o menor|recorde|in[ée]dit[oa]|pela primeira vez|nunca ante[sr]|teto|piso hist[óo]rico)\b/gi
+
+// ⚠️ ESCOPO TEMPORAL é o PERIGOSO, e o contra-intuitivo desta regra.
+// A frase que causou o incidente ("a mais larga DO CICLO") DECLARAVA janela. Declarar
+// escopo não torna a afirmação verdadeira, só a torna checável. Escopo temporal exige
+// varrer a SÉRIE INTEIRA (/api/market/history em 2 janelas, o cap de 1000 pontos trunca
+// days=90) ou o histórico de pesquisas no Neon, que NÃO está no polls-data.json: o arquivo
+// só guarda 30 dias. Por isso "do ciclo" sempre alerta.
+const ESCOPO_TEMPORAL = /\b(do ciclo|do ano|da s[ée]rie|hist[óo]ric[oa]|de todos os tempos|at[ée] aqui|em qualquer)\b/i
+// Escopo interno ao documento se confere na própria frase (ex.: "a maior do páreo" dentro
+// de uma pesquisa, "a maior variação do painel" dentro do mesmo pregão). Risco menor.
+const ESCOPO_LOCAL = /\b(do p[áa]reo|do painel|do book|da rodada|do recorte|da semana|do dia|no dia|do m[êe]s|desde \d|nas [úu]ltimas|em \d+ dias|desta pesquisa|do levantamento)\b/i
 
 function checarSuperlativos(texto: unknown, label: string) {
   if (typeof texto !== 'string') return
-  for (const frase of texto.split(/(?<=[.!?])\s+/)) {
+  for (const frase of texto.split(/(?<=[.!?;])\s+/)) {
     const achados = frase.match(SUPERLATIVOS)
-    if (achados && !JANELA_OK.test(frase)) {
-      warnings.push(`${label}: superlativo "${achados[0]}" sem janela declarada. CONFERIR contra a série completa antes de publicar. Frase: "${frase.trim().slice(0, 110)}"`)
+    if (!achados) continue
+    const trecho = frase.trim().slice(0, 110)
+    if (ESCOPO_TEMPORAL.test(frase)) {
+      warnings.push(`🔴 ${label}: superlativo "${achados[0]}" com ESCOPO TEMPORAL. Exige varrer a série COMPLETA (não a janela recente, não os 30 dias deste arquivo). Frase: "${trecho}"`)
+    } else if (!ESCOPO_LOCAL.test(frase)) {
+      warnings.push(`${label}: superlativo "${achados[0]}" sem escopo declarado. Declare a janela ou confira. Frase: "${trecho}"`)
     }
   }
 }
@@ -150,6 +164,18 @@ if (data.polymarketComparison && typeof data.polymarketComparison === 'object') 
       checarSuperlativos(c?.tendenciaPesquisa, `polymarketComparison.candidates[${who}].tendenciaPesquisa`)
     })
   }
+}
+
+// A 1ª versão desta trava (20/Jul) só varria polymarketComparison e DEIXOU PASSAR três
+// ocorrências do mesmo erro em polls[].note, incluindo duas falsas que ficaram no ar.
+// Varrer TODO campo de texto livre.
+if (Array.isArray(data.polls)) {
+  data.polls.forEach((p: any) => {
+    checarSuperlativos(p?.note, `polls[${p?.date} ${p?.institute}].note`)
+  })
+}
+if (data.approvalData && typeof data.approvalData === 'object') {
+  checarSuperlativos((data.approvalData as any).note, 'approvalData.note')
 }
 
 // Hardening 06/Jun pós-EVAL D+21: validar TAMBÉM analysis-criteriosa.json.
