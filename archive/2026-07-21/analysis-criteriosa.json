@@ -1,0 +1,170 @@
+{
+  "updatedAt": "21/07/2026, 18:24",
+  "subtitle": "ATUALIZAÇÃO 21/Jul 18:24 BRT, a 75 dias do 1º turno. Duas nacionais quebraram o jejum de pesquisa no mesmo dia. Indexa: 1T Lula 41% x Flávio 30% (+11pp), 2T Lula 46% x Flávio 39% (+7pp). Real Time Big Data: 1T Lula 40% x Flávio 33% (+7pp), 2T 45% x 42% (empate técnico). Concordam no 1º turno e divergem no 2º. O achado do dia é o Renan: a Real Time o deu com 9% no 1º turno, praticamente o preço do Polymarket (8,85%), enquanto a Indexa o mede em 3%, seis pontos abaixo. A distorção mercado x urna não convergiu, se partiu em duas leituras opostas na mesma data. A Real Time ainda mostra Caiado numericamente à frente de Lula num 2º turno direto (44x43). O mercado quase não reagiu: Lula 60,50% (estável), Flávio 26,15% (queda 0,10pp), gap +34,35pp, ainda longe do pico do ciclo (+39,5pp em 03/Jul). As convenções partidárias correm até 05/Ago, a de Flávio no sábado 25/Jul ainda sem vice. Cruzamento com Polymarket ao vivo 21/Jul.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 60,50% (estável, 0,00pp, vol USD 7,5M acumulado), a 75 dias da eleição. Não reagiu às duas pesquisas do dia, que o dão liderando o 1º turno com 40-41%. A distância sobre Flávio alargou para +34,35pp por queda do adversário, ainda longe do pico do ciclo (+39,5pp em 03/Jul).",
+      "fortes": [
+        "Lidera o 1º turno nas DUAS nacionais de 21/Jul: 41% na Indexa e 40% na Real Time, com Flávio em 30% e 33%. As duas casas concordam na liderança e no patamar.",
+        "Vence o 2º turno contra Flávio nas duas: Indexa 46% x 39% (+7pp), Real Time 45% x 42% (empate técnico). A Indexa dá folga confortável, a Real Time devolve ao empate.",
+        "Na Indexa 21/Jul vence também Zema, Caiado e Renan no returno, mantendo a liderança em todos os cenários de 2º turno testados por essa casa.",
+        "O preço no mercado é o dado mais estável do painel: 60,50%, sem se mexer há dias, mesmo com duas pesquisas novas e o barulho das convenções.",
+        "A aprovação parou de piorar: as quatro leituras da semana ficam entre 42% e 49%, com a Indexa 21/Jul dando a menos negativa (aprova 49% x desaprova 48%, empate dentro da margem)."
+      ],
+      "fracos": [
+        "A Real Time 21/Jul devolve o 2º turno contra Flávio ao empate técnico (45% x 42%), e traz um sinal pior: Lula empata tecnicamente com Caiado e fica numericamente ATRÁS dele (43% x 44%) num returno direto.",
+        "A distância de nível persiste: 60,50% de probabilidade implícita contra um 2º turno que a leitura mais dura do dia (Real Time) dá como empate, e um adversário alternativo (Caiado) que o supera na margem.",
+        "A aprovação não deu folga: Real Time 21/Jul dá desaprova 50% x aprova 46%, e 51% dizem à Indexa que Lula não merece mais quatro anos. O platô perto do empate depende de qual casa mede.",
+        "As duas nacionais do dia divergem no 2º turno: Indexa +7pp, Real Time empate. A dispersão entre institutos segue elevada mesmo quando o 1º turno converge.",
+        "Rejeição alta e estável: 49% na Indexa e 48% na Real Time, empatado ou quase com Flávio nas duas. O quadro do nem-nem, insatisfação com o governo somada a rejeição ao adversário, segue de pé.",
+        "A agenda no Congresso segue travada: mais de 20 derrotas no 3º mandato (Poder360), quatro MPs caducadas em julho, e um pacote de crédito de R$ 145 bi por fora do arcabouço em ano eleitoral (Estadão)."
+      ],
+      "analise": "Lula ficou imóvel a 60,50% (0,00pp, vol USD 7,5M acumulado) no dia em que duas nacionais quebraram cinco dias sem pesquisa. As duas confirmam a liderança dele no 1º turno com 40-41% e o mercado não se moveu, o que por si só é informação: nem a folga de +11pp da Indexa nem o empate de 2º turno da Real Time tiraram o preço do lugar. Vale separar o que as pesquisas dizem. No 1º turno elas concordam, Lula em 40-41 e Flávio em 30-33. No 2º elas se afastam: a Indexa dá Lula +7pp (46x39), a Real Time devolve ao empate técnico (45x42). E a Real Time traz o dado que mais desafia o consenso, um returno direto em que Caiado aparece numericamente à frente de Lula (44x43), com a VEJA registrando que o adversário mais competitivo de Lula não é Flávio. É uma leitura só, de casa reliability 3, e precisa de confirmação, mas é o tipo de sinal que o AFOS não esconde. O gap no mercado alargou de +34,25pp para +34,35pp, e de novo por conta do adversário, não de passo de Lula: o preço dele não se mexe há dias e segue bem abaixo do pico do ciclo, os +39,5pp de 03/Jul. Um gap que oscila pelo outro lado é uma informação diferente de um movimento do favorito. A aprovação, com quatro leituras na semana, ficou presa entre 42% e 49%, sem dar folga e sem abrir rejeição em disparada. O calendário manda agora: as convenções correm até 05/Ago, e as próximas urnas vêm em sequência, Gerp em 22/Jul e Datafolha em 24/Jul."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 26,15% (queda 0,10pp, vol USD 7,5M acumulado) e 78,00% no 2º lugar do 1º turno (queda 1,00pp). Praticamente parado apesar das duas pesquisas do dia, que o dão em 30-33% no 1º turno. O gap para Lula alargou para +34,35pp, ainda longe do pico do ciclo.",
+      "fortes": [
+        "A Real Time 21/Jul o põe a 3pp de Lula no 2º turno (45% x 42%), empate técnico, e a 7pp no 1º turno (40% x 33%), a leitura mais favorável a ele no dia.",
+        "Segue líder do 2º lugar do 1º turno no mercado (78,00%), a aposta de que ele é o adversário de Lula no returno, mesmo tendo cedido 1,00pp.",
+        "O preço não caiu com a folga de +11pp que a Indexa deu a Lula no 1º turno, o que sugere que o mercado já descontava leituras de distância larga.",
+        "Na Real Time a rejeição dele (50%) fica perto da de Lula (48%), e não nos 57% que a Quaest mediu na semana passada.",
+        "O PL subiu para 86,00% no mercado de mais cadeiras no Senado, o ativo mais sólido do campo dele em todo o painel."
+      ],
+      "fracos": [
+        "As duas nacionais do dia o mantêm em queda de patamar: 30% na Indexa e 33% na Real Time, contra os 34-36% em que já esteve, e perde o 2º turno contra Lula nas duas.",
+        "O dado político do dia é contra ele: na Real Time, quem empata tecnicamente com Lula no returno e aparece numericamente à frente é Caiado (44% x 43%), não Flávio. A VEJA cravou que o adversário mais competitivo de Lula não é ele.",
+        "Rejeição de 50% nas duas pesquisas do dia, a maior do páreo em ambas, teto que não cede desde junho.",
+        "Perde o 2º turno contra Lula em todas as nacionais recentes, mesmo na leitura mais favorável a ele (Real Time, empate técnico).",
+        "Caiado e Renan sobem no 1º turno (Caiado a 6-7%, Renan a 3-9%) enquanto ele recua, sinal de que o voto da direita não-bolsonarista não está indo automaticamente para ele.",
+        "Michelle descartou ser vice de Zema, e o atrito interno dele com ela segue aberto. As convenções cobram definição de palanque com Jair preso e ele suspenso das visitas até outubro, e a dele é sábado 25/Jul ainda sem vice."
+      ],
+      "analise": "Flávio quase não se moveu no mercado no dia em que duas pesquisas saíram: recuou 0,10pp para 26,15%, e o 2º lugar do 1º turno cedeu de 79,00% para 78,00%. As duas nacionais o mantêm num patamar mais baixo do que já ocupou, 30% na Indexa e 33% na Real Time, e ele perde o 2º turno contra Lula nas duas. O golpe do dia, porém, não é de nível, é de posição: a Real Time testou um 2º turno direto Lula x Caiado e deu Caiado numericamente à frente (44x43), com a VEJA registrando que o adversário mais competitivo de Lula não é Flávio. Se essa leitura se confirmar em outra casa, ela ataca justamente o ativo central da candidatura dele, a premissa de que ele é o nome da direita no returno, que o mercado ainda precifica a 78% no 2º lugar do 1º turno. Por ora é uma pesquisa só, reliability 3, e o AFOS trata como sinal a confirmar, não como fato consolidado. O pano de fundo segue desfavorável: rejeição de 50% nas duas do dia, a maior do páreo, e Caiado e Renan subindo no 1º turno enquanto ele recua. A semana é a mais estrutural do ciclo: as convenções correm até 05/Ago, a dele é sábado 25/Jul ainda sem vice (Folha), e o PL fecha chapa com Jair preso e Flávio suspenso das visitas ao pai até outubro, um teste de comando à distância. No caso Master, a PF revelou repasses milionários do banco a consultoria (Revista Oeste), desgaste de fundo que não virou fato novo do dia."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 8,65% no vencedor (alta 0,20pp, vol USD 8,2M acumulado), o segundo maior preço do book presidencial. O ACHADO do dia: a Real Time 21/Jul o deu com 9% no 1º turno, praticamente o preço do mercado, mas a Indexa do mesmo dia o mede em 3%. A distorção não convergiu, se partiu em duas.",
+      "fortes": [
+        "Real Time Big Data 21/Jul: 9% no 1º turno, a maior marca dele numa nacional do recorte de 30 dias (o teto anterior era 6% na PoderData 16/Jul). A VEJA chamou de salto surpreendente.",
+        "Esse 9% praticamente iguala o que o Polymarket já lhe dava (8,85%): pela primeira vez, uma urna sustenta o nível de preço que o mercado bancava sozinho.",
+        "Na Real Time ele aparece à frente de Caiado (7%) no 1º turno, liderando numericamente o pelotão da 3ª via naquela casa.",
+        "Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Caiado, deixando Flávio de fora (Folha, Gazeta do Povo), aceno de um quadro nacional de centro-esquerda ao nome dele.",
+        "Segue líder do 3º lugar do 1º turno no mercado (63,50%), com volume acumulado de USD 8,2M no book de vencedor."
+      ],
+      "fracos": [
+        "A Indexa do MESMO dia o dá com apenas 3%, seis pontos abaixo da Real Time. As duas casas discordam sobre ele mais do que sobre qualquer outro nome do painel.",
+        "A leitura que valida o mercado é uma só, de casa reliability 3. Convergência de verdade exige duas fontes na mesma direção, e a outra fonte do dia vai na direção oposta.",
+        "A faixa das nacionais explodiu de 2-6% para 3-9%: em vez de estreitar, a incerteza sobre ele aumentou com as duas pesquisas.",
+        "No 2º turno direto contra Lula, a Real Time o dá perdendo com folga (44% x 35%), bem diferente do empate que a mesma pesquisa dá a Caiado.",
+        "O 3º lugar do 1º turno recuou de 64,50% para 63,50% mesmo no dia da melhor leitura de urna dele, sinal de que o mercado não tratou o 9% como virada."
+      ],
+      "analise": "Renan Santos continua sendo o caso mais instrutivo do painel, mas por um motivo novo. Durante semanas o AFOS registrou a distorção dele como o exemplo mais gritante de mercado descolado da urna: valia perto de 9% no Polymarket contra um teto de 6% nas pesquisas. Hoje essa distorção foi parcialmente testada, e o resultado não é convergência limpa, é uma divisão. A Real Time Big Data deu a ele 9% no 1º turno, praticamente o preço do mercado (8,85%), a primeira vez que uma urna encosta no nível que o dinheiro real bancava. No mesmo dia, a Indexa o mediu em 3%. Seis pontos de distância entre duas casas na mesma data é a maior discordância do painel sobre um único nome, e ela importa: quem quiser dizer que o mercado acertou tem a Real Time, quem quiser dizer que o mercado exagera tem a Indexa. O AFOS não escolhe o lado que confirma a tese, registra que agora existe uma urna do lado do mercado e que ela ainda não tem segunda fonte. A régua honesta dele deixou de ser 3-6% e passou a 3-9%, com dispersão maior, não menor. E há um contrapeso no próprio dia: no 2º turno direto, a Real Time o dá perdendo de Lula por 44 a 35, enquanto dá empate a Caiado, ou seja, o salto de notoriedade dele no 1º turno não se traduz em competitividade no returno. O preço subiu só 0,20pp, para 8,65%, e o 3º lugar do 1º turno até recuou, o que sugere que o mercado leu o 9% como confirmação do que já pensava, não como novidade."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,85% (alta 0,50pp, vol USD 5,0M), Michelle 1,45% (vol USD 9,1M), Zema 0,85% (alta 0,20pp), Haddad 0,35% (queda 0,20pp). As duas nacionais de 21/Jul sobem Caiado (6-7%) e, na Real Time, o dão empatando tecnicamente com Lula no 2º turno, à frente de Flávio. Foi o pelotão que mais se mexeu no dia.",
+      "subtitle": "21/Jul, a 75 dias: Caiado 1,85% no vencedor (alta 0,50pp) e 16,50% no 3º lugar do 1º turno (alta 0,50pp). As duas pesquisas do dia o sobem: 6% na Indexa, 7% na Real Time, o dobro dos 3-4% em que vinha. O dado político do dia é dele: na Real Time empata tecnicamente com Lula num 2º turno direto (44% x 43%, numericamente à frente), e a VEJA registra que o adversário mais competitivo de Lula não é Flávio. Zema fica em 3% na Indexa. As convenções correm até 05/Ago e vão cobrar definição de chapa de todo o pelotão.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,85% (alta 0,50pp, vol USD 5,0M) | 3º lugar do 1º turno 16,50% (alta 0,50pp) | Indexa 21/Jul 1T 6% | Real Time 21/Jul 1T 7% e 2º turno direto Lula 43% x Caiado 44% (empate técnico, à frente)",
+        "fortes": "Caiado sobe nas duas nacionais de 21/Jul, 6% na Indexa e 7% na Real Time, o dobro dos 3-4% em que vinha. O dado do dia é dele: na Real Time empata tecnicamente com Lula num 2º turno direto (44% x 43%, numericamente à frente), e a VEJA registra que o adversário mais competitivo de Lula no returno não é Flávio. Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Renan, deixando Flávio de fora (Folha, Gazeta do Povo). Subiu 0,50pp no vencedor e no 3º lugar do 1º turno. Mantém a chapa pura do PSD (Kassab vice) e a base em Goiás.",
+        "fracos": "O 2º turno competitivo é leitura de uma casa só (Real Time, reliability 3) e precisa de confirmação: na Indexa do mesmo dia ele fica em 6% no 1º turno, sem esse cenário de returno testado. No mercado segue no piso apesar da alta (1,85%), valendo cerca de um quarto de Renan (8,85%). O salto de intenção de voto no 1º turno não se converteu em preço de vencedor, o que sugere que o mercado ainda não acredita em viabilidade de 2º turno. Segue sem tração fora do eixo Centro-Oeste."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,35% (queda 0,20pp, vol USD 6,3M) | não testado no presidencial pela Indexa nem pela Real Time 21/Jul | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad segue como principal quadro do PT no maior colégio eleitoral do país, com Márcio França (PSB) como vice na chapa pelo governo de SP. É o nome de reserva do partido depois de Lula, embora o mercado não precifique candidatura presidencial dele.",
+        "fracos": "O mercado não precifica candidatura presidencial dele, e nenhuma nacional do dia o testa nesse cargo. Recuou 0,20pp para 0,35%, de novo sem fato por trás, a assinatura de um book fino com nome residual. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na rejeição mais alta do estado (47%)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,85% (alta 0,20pp, vol USD 4,4M) | Indexa 21/Jul 1T 3% | atrás de Renan (9%) e Caiado (7%) no cenário da Real Time | sem vice anunciado, e Michelle descartou a vaga",
+        "fortes": "Subiu 0,20pp no vencedor, para 0,85%. A Indexa 21/Jul o deu com 3% no 1º turno, e ele vinha marcando 3,7% na Futura/Apex 14/Jul e 4% na BTG/Nexus 13/Jul. Defende pauta de privatização de Petrobras e Banco do Brasil em eventual governo (Jornal do Brasil), posição que o diferencia no pelotão.",
+        "fracos": "Ficou para trás na corrida da 3ª via no dia: enquanto Caiado (6-7%) e Renan (9% na Real Time) subiram, ele marcou 3% na Indexa e não apareceu destacado no cenário da Real Time. Michelle Bolsonaro descartou publicamente ser vice dele, e a chapa segue sem vice com as convenções correndo. No mercado vale 0,85%, cerca de um décimo de Renan (8,85%), sinal de que a bipolarização Lula x Flávio e a ascensão de Caiado e Renan não deixam espaço para o Novo."
+      },
+      "analise": "O pelotão da 3ª via foi o que mais se mexeu no dia, e num sentido novo. Com duas nacionais publicadas, Caiado sobe para 6% na Indexa e 7% na Real Time, e Renan salta para 9% na Real Time, ambos deixando os 3-4% em que o grupo vinha preso. Zema fica para trás, com 3% na Indexa. O dado que muda o enquadramento é o 2º turno direto da Real Time: Caiado empata tecnicamente com Lula e aparece numericamente à frente (44% x 43%), com a VEJA registrando que o adversário mais competitivo de Lula não é Flávio. É uma leitura só, de casa reliability 3, e o AFOS trata como sinal a confirmar, não como virada, mas é a primeira vez no ciclo que um nome do pelotão encosta em Lula num returno. No mercado, o grupo reagiu na margem: Caiado subiu 0,50pp para 1,85%, Zema 0,20pp para 0,85%, e o 3º lugar do 1º turno de Caiado subiu para 16,50%. Ainda assim o preço fica bem abaixo da intenção de voto declarada, o padrão do painel: Caiado mede 6-7% e vale 1,85%, Renan mede 9% na Real Time e vale 8,85%. As convenções, que correm até 05/Ago, são o teste estrutural desse pelotão: é quando pré-candidatura vira chapa registrada, ou não vira, e Zema chega a elas sem vice depois de Michelle ter descartado a hipótese.",
+      "fortes": [
+        "Caiado sobe nas duas de 21/Jul (6% na Indexa, 7% na Real Time) e, na Real Time, empata tecnicamente com Lula no 2º turno (44% x 43%), à frente de Flávio.",
+        "Renan salta para 9% no 1º turno da Real Time, a maior marca do pelotão numa nacional do recorte, praticamente o nível que o mercado já lhe dava.",
+        "Ciro Gomes citou Caiado e Renan como possibilidades de voto, ignorando Flávio, aceno de um quadro nacional de centro-esquerda ao pelotão.",
+        "Caiado subiu para 16,50% no 3º lugar do 1º turno e 1,85% no vencedor, a maior mexida do grupo no mercado no dia.",
+        "As duas nacionais tiraram o pelotão do 3-4% em que vinha preso há semanas, ao menos em Caiado e Renan."
+      ],
+      "fracos": [
+        "Os dois sinais fortes do dia vêm de uma casa só (Real Time): o 2º turno competitivo de Caiado e o 9% de Renan precisam de confirmação em outra fonte.",
+        "A Indexa do mesmo dia contradiz a Real Time no pelotão: dá Renan com 3% (contra 9%) e não testa o 2º turno de Caiado, então não há convergência, há dispersão.",
+        "Zema ficou para trás na corrida do dia (3% na Indexa) e chega às convenções sem vice, depois de Michelle ter descartado a hipótese.",
+        "O mercado ainda precifica o pelotão bem abaixo da urna: Caiado mede 6-7% e vale 1,85%, sinal de que o dinheiro real não acredita em viabilidade de 2º turno.",
+        "Haddad recuou para 0,35% e segue como nome residual sem lastro de urna presidencial, com foco estadual em SP.",
+        "No 2º turno direto contra Lula, a Real Time dá Renan perdendo com folga (44% x 35%), muito diferente do empate de Caiado."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "DUAS nacionais em 21/Jul concordam na liderança do 1º turno. Indexa (n=2.000, BR-02904/2026): 1T 41% x 30% (+11pp), 2T 46% x 39% (+7pp). Real Time Big Data (n=2.000, BR-09247/2026): 1T 40% x 33% (+7pp), 2T 45% x 42% (empate técnico). Divergem no 2º turno, e a Real Time o dá empatando com Caiado (43% x 44%).",
+      "m": "60.50% (vol USD 7,5M acumulado)",
+      "t": "ESTÁVEL a 60,50% (0,00pp), sem reagir às duas pesquisas. O gap sobre Flávio alargou para +34,35pp, ainda abaixo do pico do ciclo de +39,5pp (03/Jul), por queda do adversário, não por alta dele.",
+      "s": "75 dias da eleição. Duas nacionais confirmam a liderança no 1º turno; a aprovação das quatro leituras da semana fica entre 42% e 49%. Polymarket ao vivo 21/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "As duas de 21/Jul o mantêm em 30-33% no 1º turno: Indexa 30% (2T 39%), Real Time 33% (2T 42%, empate técnico). Perde o returno contra Lula nas duas. Novidade da Real Time: quem empata com Lula no 2º turno é Caiado, não ele. Rejeição de 50% nas duas, a maior do páreo.",
+      "m": "26.15% (vol USD 7,5M acumulado)",
+      "t": "RECUA a 26,15% (queda 0,10pp), quase parado apesar das pesquisas, e o 2º lugar do 1º turno cedeu de 79,00% para 78,00%.",
+      "s": "As convenções correm até 05/Ago, com a dele no sábado 25/Jul ainda sem vice, Jair preso e ele suspenso das visitas até outubro.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "O ACHADO do dia. Real Time 21/Jul: 9% no 1º turno, praticamente o preço do mercado (8,85%) e a maior marca dele numa nacional do recorte. Indexa 21/Jul: 3%, seis pontos abaixo. As duas casas do dia discordam sobre ele mais do que sobre qualquer outro nome.",
+      "m": "8.85% (vol USD 8,2M acumulado)",
+      "t": "SOBE 0,20pp no vencedor, para 8,85%, o segundo maior preço do book presidencial.",
+      "s": "A distorção com a urna não convergiu, se partiu: uma casa (Real Time) validou o nível do mercado, a outra (Indexa) o manteve. Falta segunda fonte na direção do 9%.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Sobe nas duas de 21/Jul: 6% na Indexa, 7% na Real Time, o dobro dos 3-4% em que vinha. Na Real Time empata tecnicamente com Lula num 2º turno direto (44% x 43%, numericamente à frente), a leitura mais competitiva de qualquer adversário de Lula no dia.",
+      "m": "1.85% (vol USD 5,0M)",
+      "t": "SOBE a 1,85% (alta 0,50pp) e a 16,50% no 3º lugar do 1º turno (alta 0,50pp), na esteira do 2º turno competitivo da Real Time.",
+      "s": "Mede 6-7% de voto e vale menos de 2% no vencedor: o mercado ainda não precifica viabilidade de 2º turno. O cenário competitivo é de casa reliability 3, falta confirmar.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. Nem a Indexa nem a Real Time a testam no cenário principal do 1º turno de 21/Jul.",
+      "m": "1.45% (vol USD 9,1M)",
+      "t": "ESTÁVEL a 1,45% no vencedor, sem movimento no dia.",
+      "s": "Descartou ser vice de Zema, sem nenhuma possibilidade nas palavras dela. O atrito com Flávio segue aberto, e Valdemar diz que ela está eleita ao Senado.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "2.95% (vol USD 83 mil)",
+      "t": "ESTÁVEL a 2,95% (0,00pp), perto do piso, sem ato individual novo de ministro que mova o preço.",
+      "s": "Ressalva de método decisiva: com volume acumulado de USD 83 mil, ordens de grandeza abaixo dos USD 7,5M do presidencial, a variação não sustenta narrativa. O dinheiro real segue precificando atrito, não ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dado de 21/Jul é o dia em que a urna voltou a falar, com duas nacionais publicadas ao mesmo tempo, e o que elas dizem quando cruzadas com o mercado. Indexa e Real Time Big Data concordam no 1º turno, Lula em 40-41% e Flávio em 30-33%, e divergem no 2º: a Indexa dá Lula +7pp (46x39), a Real Time devolve ao empate técnico (45x42). O mercado quase não reagiu, e isso é informação: Lula ficou em 60,50%, Flávio recuou 0,10pp para 26,15%, e o gap alargou de +34,25pp para +34,35pp por queda do adversário, não por passo do favorito, ainda longe do pico do ciclo, os +39,5pp de 03/Jul. Um gap que oscila pelo outro lado é diferente de um movimento do favorito, e tratar os dois como a mesma coisa é ler errado o que o dinheiro está dizendo. O centro do dia, porém, é o Renan. Durante semanas ele foi o exemplo mais gritante de mercado descolado da urna: valia perto de 9% no Polymarket contra teto de 6% nas pesquisas. Hoje a Real Time lhe deu 9% no 1º turno, praticamente o preço do mercado, a primeira urna a encostar naquele nível. Mas a Indexa do mesmo dia o mede em 3%. Não é convergência, é uma divisão: quem quiser dizer que o mercado acertou tem a Real Time, quem quiser dizer que exagera tem a Indexa, e o AFOS registra que agora existe uma urna do lado do mercado, sem segunda fonte ainda. Convergência de verdade precisa de duas leituras na mesma direção, e não é o caso. O segundo sinal da Real Time desafia o consenso de outra forma: num 2º turno direto, Caiado empata tecnicamente com Lula e aparece numericamente à frente (44x43), com a VEJA cravando que o adversário mais competitivo de Lula não é Flávio. Ataca a premissa central da candidatura de Flávio, que o mercado ainda banca a 78% no 2º lugar do 1º turno. É leitura de uma casa reliability 3, sinal a confirmar, não fato consolidado. A aprovação, com quatro leituras na semana, ficou entre 42% e 49%, sem folga e sem rejeição em disparada. O mercado de impeachment de ministro do STF segue perto do piso, a 2,95%, com volume de USD 83 mil contra USD 7,5M do presidencial, ruído de book que não sustenta leitura. E o calendário manda: as convenções correm até 05/Ago, com a de Flávio no sábado 25/Jul ainda sem vice, e as próximas urnas vêm em sequência, Gerp em 22/Jul e Datafolha em 24/Jul. É nelas que se vai saber se o 9% de Renan e o 2º turno de Caiado eram sinal ou ruído."
+}
