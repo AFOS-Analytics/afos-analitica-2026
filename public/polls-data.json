@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-20",
+  "lastUpdate": "2026-07-21",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,120 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Indexa Pesquisas",
+      "date": "2026-07-21",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-02904/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-07-16 a 2026-07-19",
+      "note": "Indexa Pesquisas nacional publicada 21/Jul (JOTA, CartaCapital, Gazeta do Povo, Diário do Grande ABC, UOL, Money Times, Poder360), uma das DUAS nacionais que saíram no mesmo dia, quebrando cinco dias sem intenção de voto nova. 1T Lula 41% x Flávio 30% (gap +11pp), com Caiado 6%, Zema 3%, Renan Santos 3%, Augusto Cury e Joaquim Barbosa 1%. 2T Lula 46% x Flávio 39% (gap +7pp), e Lula vence também Zema, Caiado e Renan no returno. Aprovação 49% x desaprovação 48%, empate dentro da margem, a leitura menos negativa do recorte. Rejeição: Flávio 50%, Lula 49%, empate técnico. 51% dizem que Lula não merece mais quatro anos. Sobre a crise tarifária com os EUA, 30% responsabilizam Flávio e 28% Lula. Campo 16-19/Jul, n=2.000, telefônica, margem 2,2pp, 95% de confiança, registro BR-02904/2026. LEITURA: é a mesma casa que em 23/Jun deu 1T 42x31 e 2T 47x40, agora com leve estreitamento dentro da própria régua (1T +11pp, 2T +7pp). Diverge da Real Time do mesmo dia justamente no 2º turno: Indexa dá Lula +7, Real Time dá empate técnico +3. As duas concordam no 1º turno (Lula 40-41, Flávio 30-33).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 6
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            },
+            {
+              "candidate": "Joaquim Barbosa (DC)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 39
+        }
+      ],
+      "source": "Indexa Pesquisas via JOTA, CartaCapital, Gazeta do Povo, Diário do Grande ABC, UOL, Money Times, Poder360 21/Jul. Registro TSE BR-02904/2026."
+    },
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-07-21",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-09247/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-07-18 a 2026-07-20",
+      "note": "Real Time Big Data nacional publicada 21/Jul (Exame, CNN Brasil, Brasil 247, CartaCapital, Gazeta do Povo, Poder360, InfoMoney, VEJA, GZH), a segunda das duas nacionais do dia. 1T Lula 40% x Flávio 33% (gap +7pp), com Renan Santos a 9% e Caiado a 7%. 2T Lula 45% x Flávio 42% (gap +3pp, empate técnico); Lula 43% x Caiado 44% (Caiado numericamente à frente, empate técnico dentro da margem); Lula 44% x Renan 35%. Aprovação 46% x desaprovação 50%. Rejeição: Flávio 50%, Lula 48%. Campo 18-20/Jul, n=2.000, telefônica, margem 2pp, 95% de confiança, registro BR-09247/2026. DOIS ACHADOS: (1) Renan Santos sobe para 9% no 1º turno, a maior marca dele numa nacional do recorte de 30 dias (o teto anterior era 6% na PoderData 16/Jul) e praticamente o nível que o Polymarket já lhe dava (8,85%). A distorção mercado x urna que vinha sendo o caso mais gritante do painel foi validada por ESTA casa, mas a Indexa do MESMO dia o dá com 3%, seis pontos de distância, então é dispersão entre institutos, não convergência. (2) Caiado aparece numericamente à frente de Lula num 2º turno direto (44% x 43%), e a VEJA registra que o adversário mais competitivo de Lula no returno não é Flávio. As duas leituras de hoje concordam no 1º turno (Lula 40-41, Flávio 30-33) e divergem no 2º (Indexa Lula +7, Real Time empate).",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 9
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 7
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Renan Santos",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Renan Santos",
+          "percent2": 35
+        }
+      ],
+      "source": "Real Time Big Data via Exame, CNN Brasil, Brasil 247, CartaCapital, Gazeta do Povo, Poder360, InfoMoney, VEJA, GZH 21/Jul. Registro TSE BR-09247/2026."
+    },
     {
       "institute": "PoderData/Aya",
       "date": "2026-07-16",
@@ -726,81 +840,11 @@
         }
       ],
       "source": "Indexa via JOTA, Bnews, viva.com.br, UOL, Blog do Esmael 23/Jun"
-    },
-    {
-      "institute": "Datafolha",
-      "date": "2026-06-20",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-09956/2026",
-      "reliability": 5,
-      "method": "Presencial",
-      "fieldDates": "2026-06-17 a 2026-06-19",
-      "note": "Datafolha nacional publicada sábado 20/Jun (G1, Folha, CartaCapital, Brasil de Fato, Gazeta do Povo). Lula lidera em todos os cenários: 1T Lula 41% x Flávio 31% (gap +10pp), com Caiado e Renan Santos a 3%, Zema e Aécio Neves a 2% e Joaquim Barbosa a 1%. 2T Lula 47% x Flávio 43% (gap +4pp, o mais apertado entre as nacionais recentes); Lula 47% x Caiado 41%; Lula 48% x Zema 39%. Rejeição: Flávio 48% (a maior do páreo), Lula 46%. A Folha avalia que a eleição já tem cara de 2º turno e que Flávio estancou o prejuízo das semanas anteriores. Campo 17-19/Jun, n=2.004, margem 2pp, 95% de confiança. Protocolo TSE BR-09956/2026, contratante Folha da Manhã.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 41
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 31
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Aécio Neves (PSDB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Joaquim Barbosa (DC)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 41
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 48,
-          "candidate2": "Romeu Zema",
-          "percent2": 39
-        }
-      ],
-      "source": "Datafolha via G1, Folha de S.Paulo, CartaCapital, Brasil de Fato, Gazeta do Povo 20/Jun"
     }
   ],
   "approvalData": {
-    "note": "Aprovação de Lula com DUAS leituras conflitantes em 24 horas. A Genial/Quaest 15/Jul (n=2.004, campo 10-13/Jul, presencial, margem 2pp) deu aprova 48% x desaprova 47%, o melhor patamar do ano (VEJA), com Lula igualando aprovação e desaprovação entre os independentes (Estadão). A PoderData/Aya 16/Jul (n=2.400, campo 12-15/Jul, telefônica, BR-00059/2026) deu aprova 42% x desaprova 51%, nove pontos de diferença na desaprovação. O painel exibe a Quaest por ser a de maior confiabilidade do recorte e por sustentar a série histórica; a PoderData fica registrada como divergência de método (presencial x telefônico), não como correção. O platô das presenciais se manteve perto do empate ao longo de julho: BTG/Nexus 29/Jun (n=2.009, BR-08521/2026) 48% x 48%; Datafolha 20/Jun (n=2.004, BR-09956/2026) 48% x 49%; a AtlasIntel online 01/Jul (n=5.000, BR-04582/2026) deu leitura mais negativa, desaprova 52,3% x aprova 45,9%, padrão histórico do método online. REJEIÇÃO também diverge: Quaest 15/Jul dá Flávio 57% (a maior do páreo) x Lula 50%; a PoderData 16/Jul empata os dois em 48%.",
-    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%, divergência) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%) + BTG/Nexus (29/Jun, n=2.009, BR-08521/2026, 48% x 48%) + Datafolha (20/Jun, n=2.004, BR-09956/2026, 48% x 49%)",
+    "note": "Aprovação de Lula presa numa faixa estreita perto do empate, com quatro leituras em uma semana, todas entre 42% e 49% de aprovação. As duas nacionais de 21/Jul: Indexa deu aprova 49% x desaprova 48% (empate dentro da margem, a menos negativa do recorte, com 51% dizendo que Lula não merece mais quatro anos), e a Real Time Big Data deu aprova 46% x desaprova 50%. Antes delas, a Genial/Quaest 15/Jul (n=2.004, presencial, reliability 5) marcou aprova 48% x desaprova 47%, o melhor patamar do ano (VEJA), e a PoderData/Aya 16/Jul (n=2.400, telefônica, BR-00059/2026) deu aprova 42% x desaprova 51%. O painel exibe a Quaest por ser a de maior confiabilidade do recorte e por sustentar a série histórica; as demais ficam registradas como divergência de método, não como correção. A faixa das quatro é aprova 42-49% x desaprova 47-51%: o eleitor não deu a Lula folga de aprovação, mas também não abriu rejeição em disparada. REJEIÇÃO dos candidatos: Indexa 21/Jul dá Flávio 50% e Lula 49% (empate técnico); Real Time 21/Jul dá Flávio 50% e Lula 48%; Quaest 15/Jul dá Flávio 57% (a maior do páreo) e Lula 50%.",
+    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + Indexa (21/Jul, n=2.000, BR-02904/2026, aprova 49% x desaprova 48%) + Real Time Big Data (21/Jul, n=2.000, BR-09247/2026, aprova 46% x desaprova 50%) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%)",
     "date": "2026-07-15",
     "results": {
       "aprovacao": 48,
@@ -837,90 +881,90 @@
         "disapproval6m": 47
       }
     ],
-    "lastUpdate": "2026-07-16"
+    "lastUpdate": "2026-07-21"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 20/Jul 22:48 UTC, degraded false, failedCount 0), a 76 dias do 1º turno. Quarto dia sem pesquisa nacional de intenção nova: as últimas seguem a Genial/Quaest 15/Jul (reliability 5) e a PoderData/Aya 16/Jul. Hoje o movimento veio de novo do adversário, mas na direção oposta à dos dias anteriores: Flávio subiu 0,60pp para 26,25%, com Lula imóvel em 60,50%, e o gap ESTREITOU para +34,25pp, ainda bem abaixo do pico do ciclo (+39,5pp em 03/Jul). Sem gatilho de pesquisa nem evento de urna, é momentum, não reação. As convenções partidárias abriram hoje e vão até 05/Ago, a fase mais estrutural do ciclo, e Flávio deve realizar a própria no sábado 25/Jul ainda sem vice definido. Volume acumulado no presidencial em USD 113,8M.",
-    "sources": "Polymarket via proxy AFOS (live 20/Jul 22:48 UTC, degraded false, failedCount 0) + PoderData/Aya 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA) + convenções partidárias abertas 20/Jul (Diário da Guanabara, CNN Brasil) + registro TSE de pesquisas nacionais previstas para 21, 22 e 24/Jul",
+    "note": "Cruzamento Polymarket (live 21/Jul 21:24 UTC, degraded false, failedCount 0), a 75 dias do 1º turno, no dia em que DUAS nacionais quebraram o jejum de pesquisa. Indexa 21/Jul (n=2.000): 1T Lula 41% x Flávio 30% (+11pp), 2T Lula 46% x Flávio 39% (+7pp). Real Time Big Data 21/Jul (n=2.000): 1T Lula 40% x Flávio 33% (+7pp), 2T 45% x 42% (empate técnico). As duas concordam no 1º turno e divergem no 2º. O mercado quase não reagiu: Lula ficou imóvel em 60,50%, Flávio recuou 0,10pp para 26,15% e o gap alargou de +34,25pp para +34,35pp por queda do adversário, ainda bem abaixo do pico do ciclo (+39,5pp em 03/Jul). O achado do dia está no Renan: a Real Time o deu com 9% no 1º turno, praticamente o preço que o Polymarket já lhe dava (8,85%), enquanto a Indexa do mesmo dia o mede em 3%. A distorção mercado x urna que era o caso mais gritante do painel não convergiu, ela se partiu em duas leituras opostas na mesma data. As convenções partidárias correm até 05/Ago, com a de Flávio marcada para sábado 25/Jul ainda sem vice. Volume acumulado no presidencial em USD 114,2M.",
+    "sources": "Polymarket via proxy AFOS (live 21/Jul 21:24 UTC, degraded false, failedCount 0) + Indexa 21/Jul (JOTA, CartaCapital, Gazeta do Povo, Diário do Grande ABC, UOL, Money Times, Poder360) + Real Time Big Data 21/Jul (Exame, CNN Brasil, Brasil 247, CartaCapital, Gazeta do Povo, Poder360, InfoMoney, VEJA, GZH) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, Estadão, VEJA) + convenções partidárias (Diário da Guanabara, CNN Brasil)",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "40-49%",
+        "pesquisaRange": "40-46%",
         "polymarket": "60.50%",
-        "tendenciaPesquisa": "DUAS nacionais em 24h e Lula IDÊNTICO nas duas: 40% no 1T e 45% no 2T. Genial/Quaest 15/Jul (n=2.004, reliability 5): 1T 40% x 28% (gap +12pp), 2T 45% x 37% (gap +8pp). PoderData/Aya 16/Jul (n=2.400, reliability 3): 1T 40% x 34% (gap +6pp), 2T 45% x 43%, empate técnico. O leque do 2º turno de julho vai de empate (PoderData 16/Jul, Futura/Apex 14/Jul) a Lula +8 (Quaest). Vence todos os cenários de 2º turno em todas as nacionais recentes, mas a margem depende de qual casa mede.",
-        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M) e no book todo o movimento veio do adversário. O gap sobre Flávio recuou para +34,25pp, longe do pico do ciclo de +39,5pp (03/Jul), por alta do adversário e não por passo próprio. O preço de Lula não se mexe há dias.",
+        "tendenciaPesquisa": "As DUAS nacionais de 21/Jul o dão liderando o 1º turno com 40-41% e vencendo o returno. Indexa 21/Jul (n=2.000): 1T 41% x 30% (+11pp), 2T 46% x 39% (+7pp). Real Time Big Data 21/Jul (n=2.000): 1T 40% x 33% (+7pp), 2T 45% x 42% (empate técnico). Concordam no 1º turno e divergem no 2º: Indexa dá folga de +7pp, Real Time devolve ao empate. Vence Flávio em todos os cenários de returno, mas na Real Time empata tecnicamente com Caiado (43% x 44%).",
+        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M), sem reagir às duas pesquisas do dia. O gap sobre Flávio alargou para +34,35pp por queda do adversário, não por passo próprio, e segue bem abaixo do pico do ciclo de +39,5pp (03/Jul). O preço de Lula não se mexe há dias.",
         "odds": 60.5,
-        "percentage": 45,
-        "lastUpdate": "2026-07-19",
+        "percentage": 46,
+        "lastUpdate": "2026-07-21",
         "value": 60.5
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "28-43%",
-        "polymarket": "26.25%",
-        "tendenciaPesquisa": "É NELE que as duas melhores pesquisas da semana discordam, e por seis pontos. Quaest 15/Jul: 1T 28%, 2T 37%. PoderData/Aya 16/Jul: 1T 34%, 2T 43%, empate técnico com Lula. Lula é igual nas duas, o Flávio não. EFEITO DE CASA, não viragem: na série da própria PoderData ele sai de 36% (25/Jun) para 34%, também caindo, de um patamar mais alto. As duas casas concordam na direção (recuo) e discordam no nível. Rejeição: 57% na Quaest, a maior do páreo; 48% na PoderData, empatado com Lula.",
-        "tendenciaPolymarket": "SUBIU 0,60pp para 26,25% (vol USD 7,5M), devolvendo parte das três sessões seguidas de perda até 19/Jul, de novo sem gatilho de urna. Segue sendo ele quem move o painel, num book onde Lula está travado. No 2º lugar do 1º turno segue folgado em 79,00%.",
-        "odds": 26.25,
-        "percentage": 43,
-        "lastUpdate": "2026-07-19",
-        "value": 26.25
+        "pesquisaRange": "30-42%",
+        "polymarket": "26.15%",
+        "tendenciaPesquisa": "As duas nacionais de 21/Jul concordam que ele fica no 30-33% do 1º turno: Indexa 30% (2T 39%, gap +7pp), Real Time 33% (2T 42%, empate técnico +3pp). Perde o returno contra Lula nas duas, mas na Real Time a novidade é outra: NÃO é ele o adversário mais competitivo, e sim Caiado, que empata tecnicamente com Lula (44% x 43%). Rejeição alta e estável: 50% na Indexa e 50% na Real Time, a maior do páreo nas duas.",
+        "tendenciaPolymarket": "RECUOU 0,10pp para 26,15% (vol USD 7,5M), praticamente parado apesar das duas pesquisas. Segue folgado no 2º lugar do 1º turno, embora este tenha cedido de 79,00% para 78,00%. É o único book com liquidez suficiente para mover o gap, e hoje moveu para baixo.",
+        "odds": 26.15,
+        "percentage": 42,
+        "lastUpdate": "2026-07-21",
+        "value": 26.15
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "2-6%",
-        "polymarket": "8.65%",
-        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 6%, a maior marca dele entre as nacionais do recorte de 30 dias. O teto anterior era 4%, e a Quaest de ontem deu 3%, atrás de Caiado. Sobe também dentro da própria casa (4% em 25/Jun). A faixa das nacionais abre de 2-4% para 2-6%.",
-        "tendenciaPolymarket": "SUBIU 0,50pp para 8,65% (vol USD 8,2M), o segundo maior preço do book presidencial, atrás só de Lula e Flávio. A distorção com a urna persiste: vale 8,65% no mercado contra teto de 6% na melhor nacional do recorte de 30 dias.",
-        "odds": 8.65,
-        "percentage": 6,
-        "lastUpdate": "2026-07-19",
-        "value": 8.65
+        "pesquisaRange": "3-9%",
+        "polymarket": "8.85%",
+        "tendenciaPesquisa": "O ACHADO DO DIA. A Real Time Big Data 21/Jul o deu com 9% no 1º turno, a maior marca dele numa nacional do recorte de 30 dias (o teto anterior era 6% na PoderData 16/Jul) e praticamente o nível que o mercado já lhe dava. Mas a Indexa do MESMO dia o mede em 3%, seis pontos abaixo. A faixa das nacionais explodiu de 2-6% para 3-9%: as duas casas do dia discordam sobre ele mais do que sobre qualquer outro nome.",
+        "tendenciaPolymarket": "SUBIU 0,20pp para 8,85% (vol USD 8,2M), o segundo maior preço do book presidencial. A distorção com a urna, que era o caso mais gritante do painel, NÃO convergiu: uma casa (Real Time, 9%) validou o nível do mercado, a outra (Indexa, 3%) o manteve. O preço deixou de estar sozinho, mas ainda não tem confirmação de duas fontes.",
+        "odds": 8.85,
+        "percentage": 9,
+        "lastUpdate": "2026-07-21",
+        "value": 8.85
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "4-5%",
-        "polymarket": "1.35%",
-        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Zema e ATRÁS de Renan (6%), o que quebra a sequência em que liderava a 3ª via. Quaest 15/Jul: 4%, à frente de Renan (3%). As duas casas o dão em 4%, mas discordam de quem está na frente do pelotão.",
-        "tendenciaPolymarket": "Estável em 1,35% (0,00pp, vol USD 5,0M), entrando na semana das convenções sem novidade de preço. Mede 4% na PoderData 16/Jul, atrás de Renan, e vale cerca de um sexto dele no mercado de vencedor.",
-        "odds": 1.35,
-        "percentage": 4,
-        "lastUpdate": "2026-07-19",
-        "value": 1.35
+        "pesquisaRange": "6-7%",
+        "polymarket": "1.85%",
+        "tendenciaPesquisa": "Sobe nas duas de 21/Jul: 6% na Indexa e 7% na Real Time, o dobro dos 3-4% em que vinha. Na Real Time é o dado político do dia: empata tecnicamente com Lula num 2º turno direto (44% x 43%, Caiado numericamente à frente), a leitura mais competitiva de qualquer adversário de Lula no returno, à frente do próprio Flávio.",
+        "tendenciaPolymarket": "SUBIU 0,50pp para 1,85% (vol USD 5,0M), na esteira do 2º turno competitivo que a Real Time lhe deu, mais do que Zema e Renan andaram no dia. Ainda assim o mercado o precifica bem abaixo do que a urna sugere: mede 6-7% de voto e vale menos de 2% no book de vencedor.",
+        "odds": 1.85,
+        "percentage": 7,
+        "lastUpdate": "2026-07-21",
+        "value": 1.85
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais. Foco na reeleição em SP, onde a Datafolha 05/Jul o dá com 46% x Haddad 30% e aprovação de 45%.",
-        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,5M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras, o PL segue em 85,50% (estável), a liderança folgada do mercado de mais cadeiras.",
+        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,5M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras, o PL subiu para 86,00% (alta 0,50pp), a liderança folgada do mercado de mais cadeiras.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-19",
+        "lastUpdate": "2026-07-21",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "2-4%",
-        "polymarket": "0.65%",
-        "tendenciaPesquisa": "PoderData/Aya 16/Jul: 4%, empatado com Caiado e à frente do que a Quaest deu a ele ontem (2%). Futura/Apex 14/Jul: 3,7%. BTG/Nexus 13/Jul: 4%. Ainda sem vice anunciado.",
-        "tendenciaPolymarket": "Estável em 0,65% (0,00pp, vol USD 4,4M). Marca 4% na PoderData, dois terços do que Renan mede na mesma pesquisa, e vale cerca de um treze avos dele no mercado de vencedor. A chapa entra nas convenções sem vice definido.",
-        "odds": 0.65,
-        "percentage": 4,
-        "lastUpdate": "2026-07-19",
-        "value": 0.65
+        "pesquisaRange": "3-4%",
+        "polymarket": "0.85%",
+        "tendenciaPesquisa": "Indexa 21/Jul: 3% no 1º turno. Não aparece destacado no cenário principal da Real Time, atrás de Renan (9%) e Caiado (7%). Segue no pelotão de baixo da 3ª via, ainda sem vice anunciado depois de Michelle ter descartado a vaga.",
+        "tendenciaPolymarket": "SUBIU 0,20pp para 0,85% (vol USD 4,4M). Marca 3% na Indexa e vale menos de 1% no mercado de vencedor. A chapa entra nas convenções sem vice definido.",
+        "odds": 0.85,
+        "percentage": 3,
+        "lastUpdate": "2026-07-21",
+        "value": 0.85
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "0.55%",
+        "polymarket": "0.35%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%.",
-        "tendenciaPolymarket": "Estável em 0,55% (0,00pp, vol USD 6,3M). O preço aqui é resíduo de nome conhecido num book fino, não sinal de candidatura, e o foco segue estadual.",
-        "odds": 0.55,
+        "tendenciaPolymarket": "RECUOU 0,20pp para 0,35% (vol USD 6,3M). O preço aqui é resíduo de nome conhecido num book fino, não sinal de candidatura, e o foco segue estadual.",
+        "odds": 0.35,
         "percentage": 0,
-        "lastUpdate": "2026-07-19",
-        "value": 0.55
+        "lastUpdate": "2026-07-21",
+        "value": 0.35
       }
     ],
-    "updatedAt": "2026-07-19"
+    "updatedAt": "2026-07-21"
   }
 }
