@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-21",
+  "reconcile_polymarket": {
+    "fetchedAt_BRT": "21/07 18:54",
+    "lula": { "json": 60.50, "live": 60.50, "delta_pp": 0.00 },
+    "flavio": { "json": 26.15, "live": 26.15, "delta_pp": 0.00 },
+    "gap_pp": { "json": 34.35, "live": 34.35, "delta_pp": 0.00 },
+    "renan": { "json": 8.85, "live": 8.90, "delta_pp": 0.05 },
+    "caiado": { "json": 1.85, "live": 2.05, "delta_pp": 0.20 },
+    "vol_total_presidencial_usd_m": { "json": 114.2, "live": 114.22 },
+    "rebaseline_gate": "NAO_DISPAROU",
+    "rebaseline_reason": "nenhum de Lula/Flavio/Renan/gap moveu >=0,50pp; sem recorde rompido; sem mudanca de enquadramento; volume identico. Baseline dos JSONs mantida."
+  },
+  "factcheck_gate": {
+    "eventos": [
+      {
+        "evento": "Indexa nacional 21/Jul (1T Lula 41 x Flavio 30)",
+        "verificacao1_crossref": "so calendario nas dailies 19-20/Jul; resultado publicado hoje = novidade",
+        "verificacao2_fetch": { "fontes": ["CartaCapital", "JOTA", "Diario do Grande ABC", "Gazeta do Povo"], "data": "2026-07-21", "tipo": "evento" },
+        "duas_fontes": true,
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Real Time Big Data nacional 21/Jul (1T Lula 40 x Flavio 33, Renan 9%, Caiado empata 2T)",
+        "verificacao1_crossref": "so calendario antes; resultado publicado hoje = novidade",
+        "verificacao2_fetch": { "fontes": ["Exame", "CNN Brasil", "Poder360", "VEJA", "Gazeta do Povo"], "data": "2026-07-21", "tipo": "evento" },
+        "duas_fontes": true,
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Missao oficializa Renan Santos candidato (convencao antecipada de 01/Ago para 20/Jul, vice Aroldo Medina, motivo ameacas de faccao)",
+        "verificacao1_crossref": "oficializacao e fato novo; antes so pre-candidatura = novidade",
+        "verificacao2_fetch": { "fontes": ["Folha", "Revista Oeste", "Jovem Pan", "Capital News", "O Tempo"], "data": "2026-07-20", "tipo": "evento" },
+        "duas_fontes": true,
+        "decisao": "incorporar como contexto, SEM causacao com o preco (mercado moveu <0,1pp)"
+      }
+    ],
+    "self_check": {
+      "toda_ancora_verificacao2": true,
+      "sem_causacao_espuria": true,
+      "verbos_criticos_desambiguados": true,
+      "reconcile_claims_exit0": true
+    }
+  },
+  "adversarial_review": {
+    "single_source_claims": "Caiado 44x43 e Renan 9% de UMA casa (Real Time); marcado 'a confirmar' nas 3 ocorrencias. OK",
+    "numerical_errors": "reconcile-claims exit 0; 5 named-checks sao falsos positivos (fragmento 'Flavio Bolsonaro' + numero de titulo). OK",
+    "fontes_inventadas": "3 conferidas (Folha/Renan, Exame/Real Time, VEJA/Caiado), todas reais do dia. OK",
+    "quotes_literais": "nenhuma. OK",
+    "causacao_espuria": "nenhuma; mercado descrito como nao-reagente (Renan +0,05pp). OK",
+    "verbos_criticos": "'preso desde marco' (Jair), 'suspenso das visitas ate outubro' (Flavio), 'oficializou em 20/Jul' (Missao). OK",
+    "decisao": "prosseguir"
+  }
+}
