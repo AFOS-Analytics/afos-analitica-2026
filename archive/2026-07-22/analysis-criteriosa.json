@@ -1,0 +1,170 @@
+{
+  "updatedAt": "22/07/2026, 14:15",
+  "subtitle": "ATUALIZAÇÃO 22/Jul 14:15 BRT, a 74 dias do 1º turno. A Gerp publicou a 3ª nacional da semana. Gerp/AESP (n=2.000, campo 15-17/Jul, BR-05026/2026), instituto outlier pró-Flávio: 1T Lula 38% x Flávio 38% (empate), 2T Flávio 46% x Lula 45% (empate técnico). O caso Renan se fechou na direção da urna: a Gerp o mede em 3%, o mesmo que a Indexa 21/Jul, contra os 9% da Real Time, então duas das três recentes o dão em 3%. E o mercado andou na direção oposta: Renan SUBIU para 10,70% (alta 1,85pp), então a distorção mercado x urna não convergiu, ela se ALARGOU. Flávio recuou 1,20pp para 24,95% e o gap de Lula abriu para +35,55pp, ainda abaixo do pico do ciclo (+39,5pp em 03/Jul). Lula estável em 60,50%. No Senado por cadeiras, o PL caiu de 86,00% para 75,00%. A Datafolha (Tier 1) vem em 24/Jul. Cruzamento com Polymarket ao vivo 22/Jul.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 60,50% (estável, 0,00pp, vol USD 7,5M acumulado), a 74 dias da eleição. Não reagiu à Gerp, que o dá empatado no 1º turno (38x38) e atrás por 1pp no 2º turno direto. A distância sobre Flávio abriu para +35,55pp por queda do adversário, ainda longe do pico do ciclo (+39,5pp em 03/Jul).",
+      "fortes": [
+        "Vence quase todos os cenários de 2º turno na Gerp 22/Jul, a casa mais favorável ao adversário: bate Caiado (44x41), Zema (44x38) e Renan (45x35), e perde para Flávio por só 1pp (45x46), empate técnico.",
+        "As duas de 21/Jul o davam liderando o 1º turno com 40-41%, e o consenso Tier 1 mais forte segue sendo a Quaest 15/Jul, que lhe deu +12pp no 1º turno e +8pp no 2º.",
+        "O preço no mercado é o dado mais estável do painel: 60,50%, sem se mexer há dias, mesmo com a Gerp publicada e o barulho das convenções.",
+        "O gap sobre Flávio abriu para +35,55pp, e desta vez por queda do adversário, que recuou 1,20pp no dia da própria pesquisa favorável a ele.",
+        "A Gerp, mesmo sendo outlier pró-Flávio, deu rejeição de 47% a Lula, praticamente empatada com os 46% de Flávio, sem abrir vantagem de rejeição para o adversário."
+      ],
+      "fracos": [
+        "A Gerp o coloca em empate no 1º turno (38x38) e atrás no 2º turno direto (45x46), a leitura mais dura do recorte contra ele, ainda que venha da casa outlier pró-Flávio.",
+        "A distância de nível persiste: 60,50% de probabilidade implícita contra pesquisas que vão de +12pp (Quaest) a desvantagem no 2º turno direto (Gerp).",
+        "A aprovação não deu folga e depende de qual casa mede: variou de 42% (PoderData 16/Jul) a 49% (Indexa 21/Jul) nas leituras recentes.",
+        "A dispersão entre institutos segue elevada: no 1º turno as recentes vão de empate 38x38 (Gerp) a Lula +12pp (Quaest), o que mantém a incerteza sobre o tamanho real da liderança.",
+        "Rejeição alta e estável: 47% na Gerp, 49% na Indexa, 48% na Real Time, sempre perto da de Flávio. O quadro do nem-nem segue de pé.",
+        "A agenda no Congresso segue travada: mais de 20 derrotas no 3º mandato (Poder360), MPs caducadas em julho, e um pacote de crédito de R$ 145 bi por fora do arcabouço em ano eleitoral (Estadão)."
+      ],
+      "analise": "Lula ficou imóvel a 60,50% (0,00pp, vol USD 7,5M acumulado) no dia em que a Gerp publicou a 3ª nacional da semana. A Gerp é o instituto outlier pró-Flávio já documentado, e mesmo assim entrega um quadro que o mercado não comprou: empate no 1º turno (38x38) e Flávio à frente por 1pp no 2º turno direto (46x45), enquanto Lula vence com folga Caiado, Zema e Renan. O preço não se moveu, e o gap sobre Flávio abriu para +35,55pp, de novo por conta do adversário, que recuou 1,20pp no próprio dia da pesquisa favorável a ele, não por passo de Lula. É a segunda vez na semana que o gap alarga pelo lado do adversário, e isso é informação diferente de um movimento do favorito. Vale a leitura cruzada: no 1º turno, a Gerp (38) destoa para baixo do que Indexa e Real Time deram na véspera (40-41), coerente com o efeito-casa dela, enquanto a Quaest 15/Jul, a de maior reliability do recorte, deu Lula +12pp. O leque das nacionais recentes vai de empate a folga de dois dígitos, e o AFOS exibe a Quaest por confiabilidade sem esconder a Gerp. A aprovação segue presa entre 42% e 49%, sem folga e sem rejeição em disparada. O calendário manda agora: a Datafolha (Tier 1) sai em 24/Jul e as convenções correm até 05/Ago."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 24,95% (queda 1,20pp, vol USD 7,5M acumulado) e 78,00% no 2º lugar do 1º turno. Recuou no dia MESMO com a Gerp favorável, que o empata com Lula no 1º turno (38x38) e o põe à frente no 2º direto (46x45). O gap para Lula abriu para +35,55pp.",
+      "fortes": [
+        "A Gerp 22/Jul é a leitura mais favorável a ele do recorte: empata Lula no 1º turno (38x38) e fica à frente no 2º turno direto (46x45), a única pesquisa recente a colocá-lo na frente em qualquer cenário.",
+        "Segue líder folgado do 2º lugar do 1º turno no mercado (78,00%), a aposta de que ele é o adversário de Lula no returno, sem rival próximo nesse sub-book.",
+        "A rejeição dele na Gerp (46%) ficou até abaixo da de Lula (47%), a leitura menos negativa do recorte para ele.",
+        "O 1º turno empatado da Gerp reforça a tese de estreitamento que ela e a Futura/Apex já vinham sinalizando, ainda que contra o consenso Tier 1.",
+        "Mesmo com a queda no preço presidencial, o campo dele mantém o ativo mais sólido do painel no Senado, onde o PL lidera o mercado de mais cadeiras."
+      ],
+      "fracos": [
+        "A queda de preço no próprio dia da pesquisa favorável a ele é o dado mais revelador: recuou 1,20pp para 24,95%, o maior movimento do book, sinal de que o mercado não comprou o número da casa outlier.",
+        "A Gerp é reliability 3 e sistematicamente pró-Flávio: o empate no 1º turno e a dianteira no 2º contrastam com o consenso Tier 1, que na Quaest 15/Jul deu Lula +8pp no returno.",
+        "As duas de 21/Jul o mantêm em 30-33% no 1º turno e perdendo o 2º contra Lula, patamar mais baixo do que já ocupou.",
+        "Rejeição alta e persistente: 46% na Gerp e 50% nas duas de 21/Jul, sempre no topo ou perto do topo do páreo.",
+        "Caiado e Renan seguem medindo no 1º turno mais do que convém a ele (pelotão em 3-7%), sinal de que o voto da direita não-bolsonarista não migra automaticamente.",
+        "As convenções cobram palanque com Jair preso e ele suspenso das visitas até outubro, e a dele é sábado 25/Jul ainda sem vice (Folha). No caso Master, a PF acionou a Interpol atrás dos bens de Vorcaro."
+      ],
+      "analise": "Flávio viveu o paradoxo do dia: recebeu a pesquisa mais favorável a ele de todo o recorte e mesmo assim CAIU no mercado. A Gerp 22/Jul, o instituto outlier pró-Flávio, o empatou com Lula no 1º turno (38x38) e o colocou à frente no 2º turno direto (46x45), a única leitura recente a pôr o nome dele na frente em qualquer cenário. Ainda assim o preço recuou 1,20pp para 24,95%, o maior movimento do book presidencial no dia. A leitura é direta: o mercado não trata a Gerp como sinal, e sim como o outlier que ela é, reliability 3, sistematicamente mais generosa com ele que o consenso Tier 1, que na Quaest 15/Jul deu Lula +8pp no returno. Some-se que o sinal da véspera contra ele, o Caiado empatando com Lula na Real Time, também não se confirmou: a Gerp dá Lula à frente de Caiado (44x41). O pano de fundo segue desfavorável: as duas de 21/Jul o mantêm em 30-33% no 1º turno, a rejeição fica alta (46-50% nas três recentes), e o pelotão da 3ª via mede mais que ele gostaria no 1º turno. A semana é a mais estrutural do ciclo: as convenções correm até 05/Ago, a dele é sábado 25/Jul ainda sem vice (Folha), e o PL fecha chapa com Jair preso e Flávio suspenso das visitas ao pai até outubro, um teste de comando à distância. No caso Master, a PF acionou a Interpol atrás dos bens de Vorcaro, desgaste de fundo que não virou fato novo do dia."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 10,70% no vencedor (alta 1,85pp, vol USD 8,3M acumulado), o segundo maior preço do book presidencial. A GERP DECIDE o caso: ela o mede em 3%, o mesmo que a Indexa 21/Jul, contra os 9% da Real Time. Duas das três nacionais recentes o dão em 3%, e o mercado subiu no mesmo dia. A distorção não convergiu, ALARGOU.",
+      "fortes": [
+        "Segue líder folgado do 3º lugar do 1º turno no mercado (63,50%), o segundo maior preço do book presidencial, com volume acumulado de USD 8,3M.",
+        "Uma das três nacionais recentes, a Real Time 21/Jul, sustenta 9% no 1º turno, mostrando que o nível de preço não é impossível na urna, ainda que isolado.",
+        "Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Caiado, deixando Flávio de fora (Folha, Gazeta do Povo).",
+        "O mercado segue bancando o nome dele como a principal aposta da 3ª via, à frente de Caiado e Zema com folga.",
+        "Mantém a notoriedade de fundador do MBL e alcance em redes, base do argumento de teto mais alto que o pelotão tradicional."
+      ],
+      "fracos": [
+        "A Gerp 22/Jul o mede em 3%, o mesmo que a Indexa 21/Jul. Duas das três nacionais mais recentes o dão em 3%, e só a Real Time deu 9%: a leitura que validava o preço ficou isolada.",
+        "A distorção mercado x urna, longe de convergir, ALARGOU: o preço subiu 1,85pp para 10,70% no MESMO dia em que a nova pesquisa o mede em 3%.",
+        "O 9% da Real Time passa a parecer o ponto fora da curva entre as pesquisas, não confirmação do mercado. Convergência exige duas fontes na mesma direção, e a direção majoritária da urna é 3%.",
+        "No 2º turno direto, a Gerp o dá perdendo de Lula por 35 a 45, sem competitividade de returno, o mesmo que a Real Time apontara (44x35).",
+        "O mercado banca dois dígitos (10,70%) para um nome que a maioria das pesquisas coloca em 3%, o descolamento de nível mais agudo do painel entre preço e voto declarado."
+      ],
+      "analise": "Renan Santos volta a ser o caso mais instrutivo do painel, e agora com um veredito. Durante semanas o AFOS registrou a distorção dele como o exemplo mais gritante de mercado descolado da urna: valia perto de 9% no Polymarket contra um teto de 6% nas pesquisas. Em 21/Jul o caso se partiu, a Real Time deu 9% e a Indexa deu 3%. Hoje a Gerp desempatou, e desempatou contra o mercado: 3%, o mesmo que a Indexa. Duas das três nacionais mais recentes medem Renan em 3%, e só a Real Time deu 9%. A leitura que sustentava o preço ficou isolada, e o que era candidato a convergência virou o contrário: no MESMO dia em que a Gerp o mede em 3%, o preço SUBIU 1,85pp, para 10,70%. A distorção não convergiu, ela alargou, com o mercado agora bancando dois dígitos para um nome que a maioria da urna coloca em 3%. O AFOS não escolhe o lado que confirma a tese: registra que a evidência de urna, quando somada, aponta para 3%, e que o 9% da Real Time passou a parecer o ponto fora da curva entre as pesquisas, não a confirmação do dinheiro real. Há ainda o contrapeso de returno: a Gerp o dá perdendo de Lula por 35 a 45, sem competitividade de 2º turno, o mesmo que a Real Time apontara. O preço subiu, mas a base de urna que o justificaria ficou mais fraca, não mais forte. É o tipo de descolamento que só o cruzamento sistemático mostra, e que a próxima Tier 1, a Datafolha de 24/Jul, pode consolidar ou desmentir."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,50% (queda 0,35pp, vol USD 5,0M), Michelle 1,25% (vol USD 9,1M), Zema 0,50% (queda 0,35pp), Haddad 0,40% (alta 0,05pp). A Gerp 22/Jul devolveu o pelotão a 3% cada (Caiado, Renan, Zema) e NÃO confirmou o 2º turno competitivo de Caiado da véspera (dá Lula 44 x Caiado 41). O grupo recuou no mercado no dia.",
+      "subtitle": "22/Jul, a 74 dias: Caiado 1,50% no vencedor (queda 0,35pp) e 16,50% no 3º lugar do 1º turno. A Gerp o dá com 3% no 1º turno e Lula à frente no 2º turno direto (44x41), NÃO o empate (44x43) que a Real Time apontara na véspera, então o sinal competitivo dele segue de uma casa só. Zema fica em 3% na Gerp e na Indexa. As convenções correm até 05/Ago e vão cobrar definição de chapa de todo o pelotão.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,50% (queda 0,35pp, vol USD 5,0M) | 3º lugar do 1º turno 16,50% | Gerp 22/Jul 1T 3% e 2º turno Lula 44% x Caiado 41% | Indexa 21/Jul 1T 6% | Real Time 21/Jul 1T 7% e 2º turno 43x44",
+        "fortes": "Caiado marcou 6-7% nas duas de 21/Jul (Indexa 6, Real Time 7), o dobro dos 3-4% em que vinha, embora a Gerp 22/Jul o traga de volta a 3%. Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Renan, deixando Flávio de fora (Folha, Gazeta do Povo). Mantém a chapa pura do PSD (Kassab vice) e a base em Goiás.",
+        "fracos": "O 2º turno competitivo contra Lula não se confirmou: a Gerp 22/Jul dá Lula à frente (44x41), não o empate (44x43) da Real Time, então o sinal segue de uma casa só. A Gerp ainda o devolve a 3% no 1º turno. No mercado recuou 0,35pp para 1,50%, valendo bem menos que a intenção de voto declarada (3-7%). Segue sem tração fora do eixo Centro-Oeste."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,40% (alta 0,05pp, vol USD 6,3M) | não testado no presidencial pelas nacionais | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad segue como principal quadro do PT no maior colégio eleitoral do país, com Márcio França (PSB) como vice na chapa pelo governo de SP. É o nome de reserva do partido depois de Lula, embora o mercado não precifique candidatura presidencial dele.",
+        "fracos": "O mercado não precifica candidatura presidencial dele, e nenhuma nacional o testa nesse cargo. Subiu 0,05pp para 0,40%, ruído de book fino com nome residual. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na rejeição mais alta do estado (47%)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,50% (queda 0,35pp, vol USD 4,5M) | Gerp 22/Jul 1T 3% e 2º turno Lula 44% x Zema 38% | Indexa 21/Jul 1T 3% | sem vice anunciado, e Michelle descartou a vaga",
+        "fortes": "Marca 3% de forma consistente nas recentes (Gerp e Indexa), além de 3,7% na Futura/Apex 14/Jul e 4% na BTG/Nexus 13/Jul. Defende pauta de privatização de Petrobras e Banco do Brasil em eventual governo (Jornal do Brasil), posição que o diferencia no pelotão.",
+        "fracos": "Recuou 0,35pp para 0,50% no vencedor e segue no fundo do pelotão da 3ª via, com 3% na urna. Perde o 2º turno para Lula por 38x44 na Gerp. Michelle Bolsonaro descartou publicamente ser vice dele, e a chapa segue sem vice com as convenções correndo. No mercado vale cerca de um vinte avos de Renan (10,70%)."
+      },
+      "analise": "O pelotão da 3ª via recuou no mercado no dia em que a Gerp o devolveu a 3%. Depois de Caiado e Renan terem subido nas duas de 21/Jul (Caiado 6-7%, Renan 9% na Real Time), a Gerp 22/Jul recolocou os três em 3% cada no 1º turno e, o mais importante, NÃO confirmou o 2º turno competitivo de Caiado: dá Lula à frente (44x41), não o empate (44x43) que a Real Time apontara. O sinal mais forte do pelotão na semana, portanto, segue de uma casa só. No mercado, o grupo reagiu recuando: Caiado caiu 0,35pp para 1,50%, Zema 0,35pp para 0,50%, na esteira da pesquisa que esvaziou os sinais da véspera. O padrão do painel se mantém: o pelotão mede 3-7% de voto e vale bem menos no mercado de vencedor, e o único nome que o mercado empurrou para cima no dia, Renan, é justamente o que a urna nova não sustentou. As convenções, que correm até 05/Ago, são o teste estrutural desse pelotão: é quando pré-candidatura vira chapa registrada, ou não vira, e Zema chega a elas sem vice depois de Michelle ter descartado a hipótese.",
+      "fortes": [
+        "O pelotão medira 6-9% nas leituras de 21/Jul (Caiado 6-7%, Renan 9% na Real Time), sinal de que existe teto acima dos 3-4% históricos em algumas casas.",
+        "Ciro Gomes citou Caiado e Renan como possibilidades de voto, ignorando Flávio, aceno de um quadro nacional ao pelotão.",
+        "Renan segue como a principal aposta da 3ª via no mercado (10,70%), à frente de Caiado e Zema com folga.",
+        "Zema mantém pauta própria de privatizações que o diferencia, e Caiado a base sólida no Centro-Oeste com chapa pura do PSD.",
+        "Haddad ancora o PT no maior colégio eleitoral do país (SP), como quadro de reserva do partido."
+      ],
+      "fracos": [
+        "A Gerp 22/Jul devolveu o pelotão a 3% cada (Caiado, Renan, Zema), esvaziando os saltos de 21/Jul.",
+        "O 2º turno competitivo de Caiado (Real Time, 44x43) não se confirmou: a Gerp dá Lula à frente (44x41), então segue de uma casa só.",
+        "O 9% de Renan na Real Time ficou isolado: Gerp e Indexa o dão em 3%, e o mercado que o banca a 10,70% se descolou ainda mais da urna.",
+        "O mercado precifica o pelotão bem abaixo da urna: Caiado mede 3-7% e vale 1,50%, sinal de que o dinheiro real não vê viabilidade de 2º turno.",
+        "Zema chega às convenções sem vice, depois de Michelle ter descartado a hipótese, e recuou no mercado.",
+        "Haddad segue como nome residual sem lastro de urna presidencial, com foco estadual em SP."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "A Gerp 22/Jul (n=2.000, BR-05026/2026, outlier pró-Flávio) o empata no 1º turno (38x38) e o dá atrás por 1pp no 2º direto (45x46), mas vencendo Caiado (44x41), Zema (44x38) e Renan (45x35). As duas de 21/Jul o davam liderando (40-41%); a Quaest 15/Jul deu +12pp no 1T. Datafolha vem em 24/Jul.",
+      "m": "60.50% (vol USD 7,5M acumulado)",
+      "t": "ESTÁVEL a 60,50% (0,00pp), sem reagir à Gerp. O gap sobre Flávio abriu para +35,55pp, ainda abaixo do pico do ciclo de +39,5pp (03/Jul), por queda do adversário, não por alta dele.",
+      "s": "74 dias da eleição. A Gerp saiu como 3ª nacional da semana; a aprovação das leituras recentes fica entre 42% e 49%. Polymarket ao vivo 22/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "A Gerp 22/Jul, casa outlier pró-Flávio, é a leitura mais favorável a ele do recorte: empate no 1T (38x38) e à frente no 2T direto (46x45). As duas de 21/Jul o mantêm em 30-33% no 1T e perdendo o 2º contra Lula. Rejeição de 46-50% nas três recentes, a maior ou perto da maior do páreo.",
+      "m": "24.95% (vol USD 7,5M acumulado)",
+      "t": "RECUA a 24,95% (queda 1,20pp), o maior movimento do book, MESMO com a Gerp favorável, sinal de que o mercado não comprou a casa outlier. Segue no 2º lugar do 1º turno a 78,00%.",
+      "s": "As convenções correm até 05/Ago, com a dele no sábado 25/Jul ainda sem vice, Jair preso e ele suspenso das visitas até outubro.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "A GERP DECIDE. Gerp 22/Jul: 3% no 1º turno, o mesmo que a Indexa 21/Jul, contra os 9% da Real Time. Duas das três nacionais recentes o dão em 3%, e o 9% ficou isolado. No 2º turno perde de Lula por 35x45.",
+      "m": "10.70% (vol USD 8,3M acumulado)",
+      "t": "SOBE 1,85pp para 10,70%, o 2º maior preço do book, no MESMO dia em que a Gerp o mede em 3%.",
+      "s": "A distorção mercado x urna não convergiu, ALARGOU: o preço subiu e a urna majoritária aponta 3%. O mercado banca dois dígitos sozinho. Datafolha 24/Jul pode consolidar.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "A Gerp 22/Jul o devolve a 3% no 1º turno e dá Lula à frente no 2º turno direto (44x41), NÃO confirmando o empate (44x43) da Real Time. Faixa nas três recentes: 3-7% (Gerp 3, Indexa 6, Real Time 7).",
+      "m": "1.50% (vol USD 5,0M)",
+      "t": "RECUA a 1,50% (queda 0,35pp) depois que a Gerp não confirmou o 2º turno competitivo da véspera.",
+      "s": "Mede 3-7% de voto e vale 1,5% no vencedor: o mercado ainda não precifica viabilidade de 2º turno. O cenário competitivo segue de casa reliability 3.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. As nacionais não a testam no cenário principal do 1º turno.",
+      "m": "1.25% (vol USD 9,1M)",
+      "t": "RECUOU a 1,25% (queda 0,20pp) no vencedor.",
+      "s": "Descartou ser vice de Zema, sem nenhuma possibilidade nas palavras dela. O atrito com Flávio segue aberto, e Valdemar diz que ela está eleita ao Senado.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "2.95% (vol USD 83 mil)",
+      "t": "ESTÁVEL a 2,95% (0,00pp), perto do piso, sem ato individual novo de ministro que mova o preço.",
+      "s": "Ressalva de método decisiva: com volume acumulado de USD 83 mil, ordens de grandeza abaixo dos USD 7,5M do presidencial, a variação não sustenta narrativa. O dinheiro real segue precificando atrito, não ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dado de 22/Jul é a Gerp, a 3ª nacional da semana, e o que ela diz quando cruzada com o mercado fecha o caso que estava em aberto. A Gerp/AESP (n=2.000, campo 15-17/Jul, BR-05026/2026) é o instituto outlier pró-Flávio já documentado: 1T Lula 38% x Flávio 38% (empate), 2T Flávio 46% x Lula 45% (empate técnico), e Lula vencendo Caiado, Zema e Renan nos demais cenários. O centro do dia é o Renan. Durante semanas ele foi o exemplo mais gritante de mercado descolado da urna, valia perto de 9% no Polymarket contra teto de 6% nas pesquisas. Em 21/Jul o caso se partiu (Real Time 9%, Indexa 3%), e hoje a Gerp desempatou contra o mercado: 3%, o mesmo que a Indexa. Duas das três nacionais mais recentes medem Renan em 3%, e só a Real Time deu 9%. A leitura que sustentava o preço ficou isolada. E o mercado, no MESMO dia, foi na direção oposta: o preço de Renan SUBIU 1,85pp, para 10,70%. A distorção não convergiu, ela alargou, com o dinheiro real bancando dois dígitos para um nome que a maioria da urna coloca em 3%. O AFOS não escolhe o lado que confirma a tese: registra que a evidência de urna somada aponta para 3%, e que o 9% da Real Time passou a parecer o ponto fora da curva. O segundo sinal da véspera, o Caiado empatando com Lula na Real Time (44x43), também não se confirmou: a Gerp dá Lula à frente (44x41). Os dois sinais fortes de 21/Jul, portanto, seguem de uma casa só. Há um contraste que vale sublinhar: a Gerp entregou a Flávio a leitura mais favorável do recorte (empate no 1T, dianteira no 2T direto), e ainda assim o preço dele CAIU 1,20pp para 24,95%, o maior movimento do book, sinal de que o mercado lê a Gerp como o outlier que ela é, não como virada. O gap de Lula abriu para +35,55pp, de novo por queda do adversário, ainda abaixo do pico do ciclo (+39,5pp em 03/Jul). Nos sub-mercados, o PL no Senado por cadeiras caiu de 86,00% para 75,00%, o maior movimento do dia. O STF impeach segue perto do piso, a 2,95%, com volume de USD 83 mil contra USD 7,5M do presidencial, ruído de book que não sustenta leitura. E o calendário manda: as convenções correm até 05/Ago, com a de Flávio no sábado 25/Jul ainda sem vice, e a próxima urna de peso é a Datafolha (Tier 1) em 24/Jul, que pode consolidar ou desmentir o quadro de hoje."
+}
