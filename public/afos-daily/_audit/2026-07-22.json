@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-22",
+  "factCheckGate": {
+    "highImpactEvents": "nenhum evento de alto impacto novo (prisão/morte/decisão judicial/indicação)",
+    "dayAnchor": "Publicação da pesquisa Gerp/AESP nacional",
+    "gerp": {
+      "verificacao1_crossref": "aparecia só como item de calendário nas dailies anteriores; hoje é publicação real → novidade",
+      "verificacao2_fetch": "confirmado em 2 fontes primárias independentes (Gazeta do Povo + Exame), números idênticos, campo 15-17/Jul, BR-05026/2026",
+      "decisao": "incorporar"
+    },
+    "continuidade": "caso Master/Vorcaro (foto 2022 de 15/Jul), convenções (Renan oficializado 21/Jul, Flávio 25/Jul), Datafolha (calendário, 24/Jul)"
+  },
+  "adversarialReview": {
+    "single_source": "Jaques Wagner linkado ao Terra (corroborado por Folha no cache), contexto sem causação de mercado; Smartmatic fonte única explicadora; Gerp 2 fontes. Aceitável.",
+    "numerical_errors": "reconcile-claims exit 0, todos os números batem com o JSON (tolerância +-0.05pp)",
+    "fontes_inventadas": "CORRIGIDO: rótulo 'BBC' para a matéria do Smartmatic removido por não confirmação do veículo",
+    "quotes_literais": "apenas 'tomar medida urgente' (manchete O Globo, atribuída)",
+    "causacao_espuria": "nenhuma; mercado não reagiu a evento, Flávio recuou no dia da própria pesquisa favorável (leitura técnica)",
+    "verbos_criticos": "'intimou a depor' (factual, sourced), 'indiciamento' (futuro, atribuído g1); 'preso' não usado",
+    "decisao": "prosseguir para preview após correção do veículo"
+  },
+  "gates": {
+    "validate_afos_daily": "exit 0 (1 warning low-link-density 62%, não bloqueante)",
+    "reconcile_claims": "exit 0",
+    "refetch_polymarket": "14:42 BRT, gate de rebaseline NÃO disparou (movimentos <0,50pp)"
+  },
+  "approval": "André aprovou o preview em 22/Jul e autorizou publicação + broadcast"
+}
