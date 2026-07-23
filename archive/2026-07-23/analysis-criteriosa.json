@@ -1,0 +1,155 @@
+{
+  "updatedAt": "23/07/2026, 17:40",
+  "subtitle": "ATUALIZAÇÃO 23/Jul 17:40 BRT, a 73 dias do 1º turno. Nenhuma nacional nova de intenção de voto foi publicada hoje, então a urna mais recente segue sendo a Gerp 22/Jul. O fato novo é judicial e atinge Flávio: André Mendonça (STF) autorizou inquérito da PF sobre os repasses de Daniel Vorcaro, cerca de R$ 61 milhões entre fevereiro e maio de 2025, para o filme sobre Jair Bolsonaro, feitos a pedido de Flávio (Correio Braziliense, Terra, Diário do Nordeste, 23/Jul). No mesmo dia Flávio teve a maior queda do book: 2,10pp, para 22,85%, e desabou 7,50pp no 2º lugar do 1º turno, de 78,00% para 70,50%. Renan subiu 1,15pp para 11,85% e Caiado 0,55pp para 2,05%. Lula ficou parado em 60,50% pelo segundo dia. O gap sobre Flávio abriu para +37,65pp, o maior desde 11/Jul, ainda abaixo do pico do ciclo de +39,5pp (03/Jul). A PoderData publicou aprovação em 22/Jul (campo 18-20/Jul, n=2.500, sem registro TSE por não medir intenção de voto): pessoal 46% x 47%, com a desaprovação recuando 3pp. A AtlasIntel do pós-tarifaço NÃO foi divulgada, está registrada para 28/Jul. Datafolha (Tier 1) sai em 24/Jul. Cruzamento com Polymarket ao vivo 23/Jul.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 60,50% (estável pelo 2º dia, 0,00pp, vol USD 7,61M acumulado), a 73 dias da eleição. O gap sobre Flávio abriu para +37,65pp, o maior desde 11/Jul, e de novo inteiramente por queda do adversário, não por passo dele. Ainda abaixo do pico do ciclo (+39,5pp em 03/Jul).",
+      "fortes": [
+        "O preço é o dado mais estável do painel: 60,50% pelo segundo dia seguido, sem se mexer nem com a Gerp desfavorável de ontem nem com o inquérito contra o adversário hoje.",
+        "O gap sobre Flávio chegou a +37,65pp, o maior desde 11/Jul (37,80pp), depois de três semanas de estreitamento contínuo. A direção da série virou.",
+        "A PoderData 22/Jul (campo 18-20/Jul, n=2.500, IVR) mostrou melhora na avaliação pessoal: desaprovação caiu de 50% para 47% e a avaliação ruim ou péssima do trabalho recuou de 47% para 37%, dez pontos numa semana, no pós-tarifaço.",
+        "Na urna mais recente, a Gerp 22/Jul, mesmo sendo a casa outlier pró-Flávio, ele vence Caiado (44x41), Zema (44x38) e Renan (45x35), perdendo só o returno direto por 1pp.",
+        "O consenso Tier 1 mais forte do recorte segue sendo a Quaest 15/Jul (n=2.004, presencial, reliability 5), que lhe deu +12pp no 1º turno e +8pp no 2º."
+      ],
+      "fracos": [
+        "A estabilidade tem outro lado: o gap abriu 2,10pp sem que ele ganhasse um único ponto. Todo o movimento veio da queda de Flávio, e um gap que cresce por fraqueza alheia é menos sólido do que um que cresce por força própria.",
+        "A distância de nível persiste: 60,50% de probabilidade implícita contra pesquisas que vão de +12pp (Quaest 15/Jul) a desvantagem no 2º turno direto (Gerp 22/Jul).",
+        "A aprovação melhorou mas não virou: a PoderData ainda dá o governo em 43% aprova contra 51% desaprova, e a avaliação positiva do trabalho (36%) segue abaixo da negativa (37%).",
+        "A dispersão entre institutos segue elevada: no 1º turno as recentes vão de empate 38x38 (Gerp) a Lula +12pp (Quaest), o que mantém a incerteza sobre o tamanho real da liderança.",
+        "Rejeição alta e estável nas três últimas nacionais: 47% na Gerp, 49% na Indexa, 48% na Real Time, sempre perto da de Flávio.",
+        "A agenda no Congresso segue travada: mais de 20 derrotas no 3º mandato (Poder360), MPs caducadas em julho, e um pacote de crédito de R$ 145 bi por fora do arcabouço em ano eleitoral (Estadão)."
+      ],
+      "analise": "Lula fechou o segundo dia consecutivo imóvel em 60,50% (0,00pp, vol USD 7,61M acumulado), e ainda assim o gap sobre Flávio abriu 2,10pp, para +37,65pp. Vale insistir na leitura correta: ele não subiu, o adversário caiu. Pela terceira vez em uma semana o alargamento vem do outro lado do book, e isso é informação diferente de um movimento do favorito. O que muda hoje é a direção da série. O gap vinha estreitando desde 03/Jul, quando marcou o pico do ciclo de +39,5pp, e chegou a 33,40pp em 17/Jul. Os +37,65pp de agora são o maior valor desde 11/Jul, ou seja, três semanas de convergência foram devolvidas em seis dias. Na urna nada mudou hoje, porque nenhuma nacional de intenção de voto foi publicada, e a referência segue sendo a Gerp 22/Jul, a casa outlier pró-Flávio, que o empata no 1º turno (38x38) e o dá atrás por 1pp no returno direto. O dado novo de opinião veio da PoderData 22/Jul (campo 18-20/Jul, n=2.500, IVR, sem registro TSE porque não mede intenção de voto): a desaprovação pessoal recuou de 50% para 47% e a avaliação ruim ou péssima do trabalho caiu de 47% para 37%, uma queda de dez pontos em uma semana que o instituto associa ao pós-tarifaço. É a leitura mais favorável a ele em semanas, e ainda assim o governo segue reprovado por 51%. O calendário aperta: a Datafolha (Tier 1) sai em 24/Jul, a AtlasIntel do pós-tarifaço em 28/Jul, e as convenções correm até 05/Ago."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 22,85% (queda 2,10pp, vol USD 7,62M acumulado), a maior queda do book pelo segundo dia seguido. No 2º lugar do 1º turno desabou 7,50pp, de 78,00% para 70,50%, o maior movimento isolado de todo o painel. No mesmo dia, Mendonça autorizou inquérito da PF sobre os repasses de Vorcaro ao filme sobre Jair feitos a pedido dele.",
+      "fortes": [
+        "Segue líder folgado do 2º lugar do 1º turno (70,50%), a aposta de que ele é o adversário de Lula no returno, com Renan em 17,40% bem atrás.",
+        "A urna mais recente ainda é favorável a ele: a Gerp 22/Jul o empata com Lula no 1º turno (38x38) e o põe à frente no 2º turno direto (46x45).",
+        "Sergio Moro afirmou que ele é o único capaz de derrotar Lula (Gazeta do Povo, 23/Jul), aceno de um quadro com capital próprio na direita.",
+        "A rejeição dele na Gerp (46%) ficou abaixo da de Lula (47%), a leitura menos negativa do recorte para ele.",
+        "O campo dele mantém o ativo mais sólido do painel no Senado, onde o PL segue líder do mercado de mais cadeiras a 72,00%."
+      ],
+      "fracos": [
+        "Perdeu 2,10pp no vencedor e 7,50pp no 2º lugar do 1º turno no mesmo dia, os dois maiores recuos do painel na data, sem nenhuma pesquisa nova para explicar.",
+        "O fato novo é judicial e nominal: Mendonça autorizou inquérito da PF sobre cerca de R$ 61 milhões repassados por Vorcaro entre fevereiro e maio de 2025 para o filme sobre Jair, a pedido dele, com a PF querendo saber se o dinheiro foi mesmo para o filme (Correio Braziliense, Terra, Diário do Nordeste, 23/Jul). Ele nega vantagem indevida e diz que os recursos eram privados.",
+        "O PP sinalizou que deve adotar neutralidade na disputa presidencial (Valor, 23/Jul), sinal de que a consolidação do centro-direita em torno do nome dele não está fechada.",
+        "Dora Kramer registrou que a direita profissional o considera amador (Folha, 23/Jul), leitura de bastidor que circula na própria base.",
+        "As duas nacionais de 21/Jul o mantêm em 30-33% no 1º turno e perdendo o 2º contra Lula, patamar mais baixo do que já ocupou.",
+        "A convenção dele é sábado 25/Jul, ainda sem vice definido, com Jair preso e ele suspenso das visitas ao pai até outubro."
+      ],
+      "analise": "Flávio teve o pior dia do ciclo no mercado, e desta vez há um fato novo verificado no mesmo dia. André Mendonça autorizou a PF a abrir inquérito sobre os repasses de Daniel Vorcaro para o filme sobre Jair Bolsonaro, cerca de R$ 61 milhões entre fevereiro e maio de 2025, feitos a pedido de Flávio, e a investigação quer esclarecer se o dinheiro foi efetivamente aplicado no filme ou se parte foi para outro destino (Correio Braziliense, Terra, Diário do Nordeste, 23/Jul). Ele nega ter combinado vantagem indevida e sustenta que os recursos eram privados. No mesmo pregão o preço dele caiu 2,10pp, para 22,85%, e o sub-mercado de 2º lugar no 1º turno recuou 7,50pp, de 78,00% para 70,50%, o maior movimento isolado de todo o painel. O AFOS registra a coincidência temporal e para por aí: o mercado não anuncia motivo, e atribuir causalidade a partir de um único dia é exatamente o erro que este painel existe para evitar. O que se pode afirmar é que a queda é grande, é dupla, e não tem contrapartida na urna, porque nenhuma nacional foi publicada hoje e a última, a Gerp 22/Jul, é favorável a ele. Vale notar o padrão dos dois dias: ontem ele caiu no dia da pesquisa mais generosa que já recebeu, hoje caiu de novo e mais forte. O mercado vem descontando o nome dele de forma consistente enquanto a única urna que o favorece é a casa outlier. Ao redor, o quadro político endureceu: o PP sinalizou neutralidade (Valor), Dora Kramer registrou que a direita profissional o acha amador (Folha), e Moro saiu em defesa dizendo que ele é o único capaz de derrotar Lula (Gazeta do Povo). A convenção do PL é sábado 25/Jul, ainda sem vice."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 11,85% no vencedor (alta 1,15pp, vol USD 8,34M acumulado), o segundo maior preço do book e o maior volume individual entre os nomes competitivos. No 3º lugar do 1º turno subiu 4,50pp, para 68,00%. É o quinto dia seguido de alta, mas o patamar NÃO é recorde: o pico do ciclo foi 17,9% em 09/Jun.",
+      "fortes": [
+        "Quinto dia seguido de alta: saiu de 7,8% em 17/Jul para 11,85% hoje, avanço de 4,05pp em menos de uma semana, a maior recuperação do book no período.",
+        "Consolidou o 3º lugar do 1º turno em 68,00% (alta 4,50pp), e ainda aparece em 17,40% no sub-mercado de 2º lugar, o único do pelotão a ser precificado como alternativa a Flávio no returno.",
+        "Tem o maior volume acumulado entre os nomes competitivos do book presidencial, USD 8,34M, acima de Lula (7,61M) e de Flávio (7,62M).",
+        "Uma das três nacionais recentes, a Real Time 21/Jul, sustenta 9% no 1º turno, mostrando que o nível de preço não é impossível na urna, ainda que isolado.",
+        "Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Caiado, deixando Flávio de fora (Folha, Gazeta do Povo)."
+      ],
+      "fracos": [
+        "A urna majoritária segue em 3%: Gerp 22/Jul e Indexa 21/Jul o medem em 3%, e só a Real Time deu 9%. Nada na urna mudou desde ontem, e o preço subiu de novo.",
+        "A distorção mercado x urna, que já havia alargado ontem, alargou mais: o mercado agora paga 11,85% por um nome que duas das três nacionais recentes colocam em 3%.",
+        "O preço passou a ficar acima até da leitura de urna mais alta do ciclo (os 9% da Real Time), então não há mais nenhuma pesquisa que sustente o patamar atual.",
+        "No 2º turno direto, a Gerp o dá perdendo de Lula por 35 a 45, sem competitividade de returno, o mesmo que a Real Time apontara (44x35).",
+        "O patamar de hoje não é novidade histórica: ele já valeu 17,9% em 09/Jun e 12,8% em 01/Jul, então a alta atual é recuperação de um piso recente (7,8% em 17/Jul), não descoberta do mercado."
+      ],
+      "analise": "Renan Santos segue como o caso mais instrutivo do painel, e hoje ele exige uma correção de enquadramento que o próprio AFOS precisa fazer. O preço subiu pelo quinto dia seguido, 1,15pp, para 11,85%, e o 3º lugar do 1º turno avançou 4,50pp, para 68,00%. Na urna, nada mudou: nenhuma nacional saiu hoje, e as referências continuam sendo Gerp 22/Jul (3%), Indexa 21/Jul (3%) e Real Time 21/Jul (9%). Ou seja, a distorção alargou de novo, e agora o preço está acima até da leitura de urna mais alta do ciclo, de modo que não existe hoje nenhuma pesquisa que dê lastro aos 11,85%. Até aqui é a continuação do que se registrou ontem. A correção necessária é de série: os 11,85% NÃO são recorde nem novidade. A série do próprio mercado mostra Renan a 17,9% em 09/Jun e a 12,8% em 01/Jul, com queda contínua até o piso de 7,8% em 17/Jul. O que se vê agora é recuperação de um piso recente, não descoberta. Tratar a alta como movimento inédito seria o mesmo erro de comparar vazão recente com estoque histórico que este painel já cometeu e corrigiu. A leitura honesta, portanto, tem duas partes: o descolamento entre preço e voto declarado está no ponto mais agudo do ciclo, porque nenhuma urna sustenta o patamar, e ao mesmo tempo o patamar em si já foi visto e desfeito duas vezes desde junho. A Datafolha de 24/Jul é a próxima chance de a urna falar."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 2,05% (alta 0,55pp, vol USD 5,10M), Michelle 0,95% (queda 0,30pp, vol USD 9,17M), Zema 0,45% (queda 0,05pp), Haddad 0,35% (queda 0,05pp). O pelotão se partiu: Caiado teve a segunda maior alta do book, enquanto Zema e Haddad recuaram na margem. Nenhuma urna nova para explicar o movimento.",
+      "subtitle": "23/Jul, a 73 dias: Caiado subiu 0,55pp para 2,05% no vencedor e segue em 16,50% no 3º lugar do 1º turno. Não houve pesquisa nova hoje, então o movimento é do mercado, não da urna: a referência segue sendo Gerp 3% (22/Jul), Indexa 6% e Real Time 7% (21/Jul), com a Gerp dando Lula à frente no 2º turno direto (44x41). As convenções correm até 05/Ago e vão cobrar definição de chapa de todo o pelotão.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 2,05% (alta 0,55pp, vol USD 5,10M) | 3º lugar do 1º turno 16,50% (estável) | Gerp 22/Jul 1T 3% e 2º turno Lula 44% x Caiado 41% | Indexa 21/Jul 1T 6% | Real Time 21/Jul 1T 7% e 2º turno 43x44",
+        "fortes": "Caiado teve a segunda maior alta do book hoje, 0,55pp, chegando a 2,05%, o maior patamar dele no ciclo recente, e sem nenhuma pesquisa nova para justificar. Marcou 6-7% nas duas de 21/Jul (Indexa 6, Real Time 7), o dobro dos 3-4% em que vinha. Ciro Gomes o citou nominalmente como possibilidade de voto, ao lado de Renan, deixando Flávio de fora (Folha, Gazeta do Povo). Mantém a chapa pura do PSD (Kassab vice) e a base em Goiás.",
+        "fracos": "O 2º turno competitivo contra Lula segue sem confirmação de segunda fonte: a Gerp 22/Jul dá Lula à frente (44x41), não o empate (44x43) da Real Time. A Gerp ainda o devolve a 3% no 1º turno. Mesmo com a alta, vale 2,05% num mercado onde mede 3-7% de voto declarado. Segue sem tração fora do eixo Centro-Oeste, e chega às convenções sem ter resolvido o problema de alcance nacional."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,35% (queda 0,05pp, vol USD 6,33M) | não testado no presidencial pelas nacionais | foco no governo de SP | vice Márcio França (PSB)",
+        "fortes": "Haddad segue como principal quadro do PT no maior colégio eleitoral do país, com Márcio França (PSB) como vice na chapa pelo governo de SP. É o nome de reserva do partido depois de Lula, embora o mercado não precifique candidatura presidencial dele.",
+        "fracos": "O mercado não precifica candidatura presidencial dele, e nenhuma nacional o testa nesse cargo. Recuou 0,05pp para 0,35%, ruído de book fino com nome residual. O foco é estadual: em SP a Datafolha 05/Jul deu Tarcísio 46% x Haddad 30% no governo, com Haddad na rejeição mais alta do estado (47%)."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,45% (queda 0,05pp, vol USD 4,49M) | Gerp 22/Jul 1T 3% e 2º turno Lula 44% x Zema 38% | Indexa 21/Jul 1T 3% | sem vice anunciado, e Michelle descartou a vaga",
+        "fortes": "Marca 3% de forma consistente nas recentes (Gerp e Indexa), além de 3,7% na Futura/Apex 14/Jul e 4% na BTG/Nexus 13/Jul. Defende pauta de privatização de Petrobras e Banco do Brasil em eventual governo (Jornal do Brasil), posição que o diferencia no pelotão.",
+        "fracos": "Recuou 0,05pp para 0,45% e ficou de fora da rotação que beneficiou Caiado e Renan hoje, sinal de que o mercado separa o pelotão em vez de tratá-lo como bloco. Perde o 2º turno para Lula por 38x44 na Gerp. Michelle Bolsonaro descartou publicamente ser vice dele, e a chapa segue sem vice com as convenções correndo. Vale cerca de um vinte e seis avos de Renan (11,85%)."
+      },
+      "analise": "O pelotão da 3ª via se partiu hoje, e essa é a informação. Caiado subiu 0,55pp para 2,05%, a segunda maior alta do book, enquanto Zema (queda 0,05pp) e Haddad (queda 0,05pp) ficaram parados no fundo. Renan, que o mercado também trata como 3ª via, subiu 1,15pp. Não houve nenhuma pesquisa nova hoje para explicar qualquer um desses movimentos, o que significa que a rotação é interna ao mercado, e a direção dela é clara: sai preço de Flávio, que perdeu 2,10pp no vencedor e 7,50pp no 2º lugar do 1º turno, e entra preço nas alternativas de direita e centro-direita. O contraste com a urna permanece intacto e é o ponto que o AFOS insiste em registrar: o pelotão mede 3-7% de voto declarado nas nacionais recentes e vale entre 0,45% e 2,05% no mercado de vencedor, exceto Renan, que faz o caminho oposto e vale mais do que mede. Sobre o cenário competitivo de Caiado, nada avançou: a Gerp 22/Jul dá Lula à frente no 2º turno direto (44x41), então o empate que a Real Time apontou (44x43) segue de uma casa só. As convenções, que correm até 05/Ago, são o teste estrutural do pelotão, e chegam com Zema ainda sem vice depois de Michelle ter descartado a hipótese."
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Nenhuma nacional nova hoje. A urna mais recente segue sendo a Gerp 22/Jul (n=2.000, BR-05026/2026, outlier pró-Flávio), que o empata no 1º turno (38x38) e o dá atrás por 1pp no 2º direto (45x46), mas vencendo Caiado (44x41), Zema (44x38) e Renan (45x35). A PoderData 22/Jul melhorou a avaliação pessoal dele: desaprovação de 50% para 47%. Datafolha vem em 24/Jul.",
+      "m": "60.50% (vol USD 7,61M acumulado)",
+      "t": "ESTÁVEL a 60,50% (0,00pp) pelo 2º dia. O gap sobre Flávio abriu para +37,65pp, o maior desde 11/Jul, inteiramente por queda do adversário. Ainda abaixo do pico do ciclo de +39,5pp (03/Jul).",
+      "s": "73 dias da eleição. Três semanas de estreitamento do gap foram devolvidas em seis dias, mas sem ele ganhar um ponto sequer. Polymarket ao vivo 23/Jul.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Sem urna nova hoje. A Gerp 22/Jul, casa outlier pró-Flávio, segue sendo a leitura mais favorável a ele do recorte: empate no 1T (38x38) e à frente no 2T direto (46x45). As duas de 21/Jul o mantêm em 30-33% no 1T e perdendo o 2º contra Lula. Rejeição de 46-50% nas três recentes.",
+      "m": "22.85% (vol USD 7,62M acumulado)",
+      "t": "CAI 2,10pp para 22,85%, a maior queda do book pelo 2º dia seguido. No 2º lugar do 1º turno DESABOU 7,50pp, de 78,00% para 70,50%, o maior movimento isolado do painel.",
+      "s": "Mendonça autorizou hoje inquérito da PF sobre os repasses de Vorcaro (cerca de R$ 61 mi) ao filme sobre Jair, feitos a pedido dele. Convenção do PL sábado 25/Jul, ainda sem vice.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "Sem urna nova hoje. A referência majoritária segue em 3%: Gerp 22/Jul e Indexa 21/Jul, contra os 9% isolados da Real Time 21/Jul. No 2º turno perde de Lula por 35x45. O preço passou a estar acima até da leitura de urna mais alta do ciclo.",
+      "m": "11.85% (vol USD 8,34M acumulado)",
+      "t": "SOBE 1,15pp para 11,85%, 5º dia seguido de alta, e 4,50pp no 3º lugar do 1º turno (68,00%). Atenção à série: NÃO é recorde, o pico do ciclo foi 17,9% em 09/Jun.",
+      "s": "A distorção alargou de novo sem nenhuma urna nova. É o descolamento de nível mais agudo do painel, mas o patamar já foi visto e desfeito duas vezes desde junho. Datafolha 24/Jul decide.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Sem urna nova hoje. A faixa nas três recentes segue em 3-7% (Gerp 3, Indexa 6, Real Time 7), e a Gerp dá Lula à frente no 2º turno direto (44x41), não o empate (44x43) da Real Time.",
+      "m": "2.05% (vol USD 5,10M)",
+      "t": "SOBE 0,55pp para 2,05%, a 2ª maior alta do book, sem nenhuma pesquisa nova para justificar. Estável a 16,50% no 3º lugar do 1º turno.",
+      "s": "O pelotão se partiu: Caiado e Renan subiram, Zema e Haddad ficaram parados. A rotação é interna ao mercado, saindo de Flávio.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência. As nacionais não a testam no cenário principal do 1º turno.",
+      "m": "0.95% (vol USD 9,17M)",
+      "t": "RECUA 0,30pp para 0,95%, caindo abaixo de 1% e acompanhando a queda do campo de Flávio no dia.",
+      "s": "Descartou ser vice de Zema. O atrito com Flávio segue aberto, e Valdemar diz que ela está eleita ao Senado.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "2.95% (vol USD 83 mil)",
+      "t": "ESTÁVEL a 2,95% (0,00pp), perto do piso, mesmo no dia em que um ministro do STF autorizou inquérito contra o entorno do principal candidato da oposição.",
+      "s": "Ressalva de método decisiva: com volume acumulado de USD 83 mil, ordens de grandeza abaixo dos USD 7,62M do presidencial, a variação não sustenta narrativa. O dinheiro real segue precificando atrito, não ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O dia 23/Jul não teve urna: nenhuma pesquisa nacional de intenção de voto foi publicada, e a referência segue sendo a Gerp 22/Jul. Teve, em compensação, o maior movimento de preço do ciclo recente, e um fato novo verificado que o acompanha no calendário. André Mendonça (STF) autorizou a PF a investigar os repasses de Daniel Vorcaro para o filme sobre Jair Bolsonaro, cerca de R$ 61 milhões entre fevereiro e maio de 2025, feitos a pedido de Flávio, com a apuração voltada a esclarecer se o dinheiro foi mesmo aplicado no filme (Correio Braziliense, Terra, Diário do Nordeste, 23/Jul). Flávio nega vantagem indevida e afirma que os recursos eram privados. No mesmo dia, ele caiu 2,10pp no vencedor, para 22,85%, e 7,50pp no 2º lugar do 1º turno, de 78,00% para 70,50%, o maior movimento isolado de todo o painel. O AFOS registra a coincidência de calendário e não afirma causalidade: um mercado não declara motivo, e inferir causa de um único dia é o erro que este cruzamento existe para evitar. O que se pode afirmar com a série na mão é o destino do dinheiro. Renan subiu 1,15pp, para 11,85%, quinto dia seguido de alta, e Caiado subiu 0,55pp, para 2,05%, a segunda maior alta do book, enquanto Zema e Haddad ficaram parados. Sai preço de Flávio, entra preço nas alternativas de direita, e Lula não recebeu nada: ficou parado em 60,50% pelo segundo dia. Justamente por isso o gap de Lula sobre Flávio, que abriu para +37,65pp e é o maior desde 11/Jul, precisa ser lido pelo que é. Ele cresceu 2,10pp sem Lula ganhar um ponto. E segue abaixo do pico do ciclo, +39,5pp em 03/Jul, ainda que tenha devolvido em seis dias quase todo o estreitamento das três semanas anteriores. No caso Renan, a distorção alargou pela terceira vez seguida sem nenhuma pesquisa nova: o preço de 11,85% está agora acima até dos 9% da Real Time, a leitura de urna mais alta do ciclo, então não existe hoje uma única pesquisa que dê lastro ao patamar. Aqui cabe a correção que a própria série impõe: 11,85% não é recorde. Renan valeu 17,9% em 09/Jun e 12,8% em 01/Jul, e caiu ao piso de 7,8% em 17/Jul. O que se vê é recuperação, não descoberta, e tratar como inédito seria confundir movimento recente com máximo histórico. A pauta de opinião trouxe a PoderData 22/Jul (campo 18-20/Jul, n=2.500, IVR, sem registro TSE por não medir intenção de voto): a desaprovação pessoal de Lula caiu de 50% para 47% e a avaliação ruim ou péssima do trabalho recuou de 47% para 37%, dez pontos em uma semana, no pós-tarifaço, ainda que o governo siga reprovado por 51%. Nos sub-mercados, o PL no Senado por cadeiras caiu de 75,00% para 72,00% e o MDB subiu para 20,90%. O STF impeach ficou parado em 2,95%, com volume de USD 83 mil contra USD 7,62M do presidencial, ruído de book que não sustenta leitura, e é notável que não tenha se movido nem no dia em que um ministro do Supremo abriu inquérito contra o entorno do principal candidato da oposição. Uma ressalva de calendário fecha o dia: circulou muita matéria sobre uma nova AtlasIntel do pós-tarifaço, mas ela NÃO foi divulgada. Está registrada no TSE sob BR-08602/2026, com campo de 22 a 27/Jul e publicação prevista para 28/Jul. Registro não é publicação, e nenhum número dela entra neste painel até a divulgação. A próxima urna de peso é a Datafolha (Tier 1) em 24/Jul, seguida da JOTA em 26/Jul e da Nexus em 27/Jul."
+}
