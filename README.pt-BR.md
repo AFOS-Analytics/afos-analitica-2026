@@ -110,11 +110,25 @@ Apos cadastro: Acesso ilimitado, sem popup/gate
 | `POST /api/visitor/migrate` | Migra inscritos antigos (localStorage → backend) |
 | `useVisitorState` hook | Estado central no cliente (cookie + backend) |
 | `VisitorStateProvider` | Context React para dashboard |
-| `SubscribeForm` | Formulario compartilhado (popup + gate + landing) |
+| `SubscribeForm` | Formulario compartilhado (popup + gate + landing + inline) |
+| `InlineSubscribe` | Bloco no fim das edicoes do AFOS Daily e do Tradeoff |
 | `DashboardGate` | Blur overlay na 4a sessao |
 | `EmailPopup` | Popup suave nas 3 sessoes livres |
 
 **Seguranca:** Backend e fonte de verdade (nao localStorage). Timeout 3s com fallback. Dedup atomico via Redis SET NX. Honeypot anti-bot. Rate limiting.
+
+**Inscricao inline (fim de cada edicao publicada).** O AFOS Daily e o Tradeoff sao o
+conteudo recorrente da plataforma e, ate julho de 2026, eram as unicas superficies sem
+caminho de assinatura na propria pagina. O `InlineSubscribe` fecha essa lacuna: ele
+envolve o mesmo `SubscribeForm`, entao herda honeypot, validacao inline, consentimento
+explicito LGPD, correcao de erro de digitacao e o redirecionamento para `/welcome`,
+**onde o assinante escolhe o idioma em que quer receber** (portugues, ingles ou espanhol).
+A copy existe nos tres idiomas e o bloco se adapta aos dois temas da pagina (claro e
+Sapphire Blue).
+
+O `captureSource` separa `daily` e `tradeoff` de `popup`, `gate` e `landing`, o que
+permite medir se o conteudo recorrente converte, sem nenhum pixel de rastreamento em
+e-mail.
 
 ### Pipeline de Dados (Cron + Upstash Redis + Neon)
 
@@ -166,6 +180,7 @@ app/
 │   ├── DashboardGate.tsx              # Gate blur overlay
 │   ├── EmailPopup.tsx                 # Popup suave
 │   ├── SubscribeForm.tsx              # Formulario compartilhado
+│   ├── InlineSubscribe.tsx            # Bloco de inscricao no fim das edicoes (Daily + Tradeoff)
 │   ├── FlagImg.tsx                    # Bandeira SVG cross-platform
 │   ├── Header.tsx / Footer.tsx        # Header e footer traduzidos
 │   ├── PolymarketSection.tsx          # Odds ao vivo

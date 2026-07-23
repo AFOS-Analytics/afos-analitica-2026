@@ -13,7 +13,7 @@ import { trackEvent } from '../lib/analytics/events';
 
 interface SubscribeFormProps {
   visitorId?: string;
-  captureSource: 'popup' | 'gate' | 'landing';
+  captureSource: 'popup' | 'gate' | 'landing' | 'daily' | 'tradeoff';
   onSuccess?: () => void;
   variant?: 'default' | 'gate';
   className?: string;
@@ -38,7 +38,12 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
   const prefix = variant === 'gate' ? 'gate' : 'popup';
   const suggestion = useMemo(() => suggestEmailCorrection(email), [email]);
 
-  const eventBase = captureSource === 'landing' ? 'landing_subscribe' : variant === 'gate' ? 'gate' : 'popup';
+  const eventBase =
+    captureSource === 'landing' ? 'landing_subscribe'
+    : captureSource === 'daily' ? 'daily_subscribe'
+    : captureSource === 'tradeoff' ? 'tradeoff_subscribe'
+    : variant === 'gate' ? 'gate'
+    : 'popup';
   const submitEventName = `${eventBase}_submit` as const;
   const successEventName = `${eventBase}_success` as const;
   const errorEventName = `${eventBase}_error` as const;

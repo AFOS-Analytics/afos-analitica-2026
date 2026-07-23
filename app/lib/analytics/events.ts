@@ -18,7 +18,15 @@ type EventName =
   | 'gate_error'
   | 'landing_subscribe_submit'
   | 'landing_subscribe_success'
-  | 'landing_subscribe_error';
+  | 'landing_subscribe_error'
+  // Bloco de inscrição no fim das edições publicadas (22/Jul/2026).
+  // Origem separada para medir se o conteúdo recorrente converte.
+  | 'daily_subscribe_submit'
+  | 'daily_subscribe_success'
+  | 'daily_subscribe_error'
+  | 'tradeoff_subscribe_submit'
+  | 'tradeoff_subscribe_success'
+  | 'tradeoff_subscribe_error';
 
 type Props = Record<string, string | number | boolean | null>;
 

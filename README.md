@@ -110,11 +110,24 @@ After signup: Unlimited access, no popup/gate
 | `POST /api/visitor/migrate` | Migrates legacy subscribers (localStorage → backend) |
 | `useVisitorState` hook | Central client state (cookie + backend) |
 | `VisitorStateProvider` | React Context for dashboard |
-| `SubscribeForm` | Shared form (popup + gate + landing) |
+| `SubscribeForm` | Shared form (popup + gate + landing + inline) |
+| `InlineSubscribe` | End-of-edition block on AFOS Daily and Tradeoff |
 | `DashboardGate` | Blur overlay on 4th session |
 | `EmailPopup` | Soft popup on first 3 sessions |
 
 **Security:** Backend is source of truth (not localStorage). 3s timeout with fallback. Atomic dedup via Redis SET NX. Honeypot anti-bot. Rate limiting.
+
+**Inline subscribe (end of each published edition).** AFOS Daily and Tradeoff are the
+recurring content of the platform and, until July 2026, were the only surfaces with no
+way to subscribe on the page itself. `InlineSubscribe` closes that gap: it wraps the same
+`SubscribeForm`, so it inherits honeypot, inline validation, explicit LGPD consent, typo
+correction and the redirect to `/welcome`, **where the subscriber picks the language they
+want to receive** (English, Portuguese or Spanish). Copy is written for all three locales
+and the block adapts to both page themes (light and Sapphire Blue).
+
+`captureSource` distinguishes `daily` and `tradeoff` from `popup`, `gate` and `landing`,
+which makes it possible to measure whether recurring content converts, without any
+tracking pixel in email.
 
 ### Data Pipeline (Cron + Upstash Redis + Neon)
 
@@ -166,6 +179,7 @@ app/
 │   ├── DashboardGate.tsx              # Gate blur overlay
 │   ├── EmailPopup.tsx                 # Soft popup
 │   ├── SubscribeForm.tsx              # Shared form
+│   ├── InlineSubscribe.tsx            # End-of-edition subscribe block (Daily + Tradeoff)
 │   ├── FlagImg.tsx                    # Cross-platform SVG flag
 │   ├── Header.tsx / Footer.tsx        # Translated header and footer
 │   ├── PolymarketSection.tsx          # Live odds

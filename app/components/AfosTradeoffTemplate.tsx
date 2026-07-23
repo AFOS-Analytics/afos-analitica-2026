@@ -13,6 +13,7 @@ import type {
   AdditionalReadingBlock,
 } from '../../lib/afos-tradeoff/loader'
 import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
+import { InlineSubscribe } from './InlineSubscribe'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-tradeoff-theme'
@@ -726,6 +727,8 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
             </div>
           </div>
         </div>
+
+        <InlineSubscribe locale={locale} isBlue={isBlue} product="tradeoff" />
 
         {/* Edition navigation (archive link always present) */}
         <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">

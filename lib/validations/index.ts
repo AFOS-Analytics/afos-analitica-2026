@@ -23,7 +23,9 @@ export const subscribeSchema = z.object({
   consent: z.literal(true, { message: 'Consent must be explicitly granted (LGPD)' }),
   _hp: z.string().max(500).optional(),
   visitorId: z.string().uuid().optional(),
-  captureSource: z.enum(['popup', 'gate', 'landing']).optional(),
+  // 'daily' e 'tradeoff' = bloco de inscrição no fim das edições publicadas.
+  // Separar a origem permite medir se o conteúdo converte, sem tracking em e-mail.
+  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff']).optional(),
 })
 
 // ── Visitor ───────────────────────────────────────────────

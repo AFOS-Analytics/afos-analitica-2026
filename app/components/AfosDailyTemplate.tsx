@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState, type ReactNode } from 'react'
 import { MONTHS, type MonthsLocale } from '../../lib/i18n/months'
+import { InlineSubscribe } from './InlineSubscribe'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-daily-theme'
@@ -326,6 +327,8 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
             <a href={`/${locale}/glossary`} className={linkColor}>{t.glossaryLink} →</a>
           </p>
         </div>
+
+        <InlineSubscribe locale={locale} isBlue={isBlue} product="daily" />
 
         <div className="mt-12 text-center">
           <a
