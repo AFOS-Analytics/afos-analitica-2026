@@ -21,19 +21,19 @@ import { SubscribeForm } from './SubscribeForm'
 const T = {
   'pt-BR': {
     eyebrow: 'Receba por e-mail',
-    daily: 'O AFOS Daily cruza mercados de previsão, pesquisas registradas no TSE e a cobertura do dia. Sai todos os dias, de graça.',
+    daily: 'Todos os dias, o AFOS Daily cruza mercados de previsão, pesquisas registradas no TSE, imprensa e a cobertura do dia.',
     tradeoff: 'O AFOS Tradeoff é a leitura semanal de risco político do Brasil, para quem decide com base em dado, não em manchete.',
     langNote: 'Depois do cadastro você escolhe se quer receber em português, inglês ou espanhol.',
   },
   en: {
     eyebrow: 'Get it by email',
-    daily: 'AFOS Daily cross-references prediction markets, polls registered with the Brazilian electoral court and the day’s coverage. Every day, free.',
+    daily: 'Every day, AFOS Daily cross-references prediction markets, polls registered with the Brazilian electoral court, the press and the day’s coverage.',
     tradeoff: 'AFOS Tradeoff is the weekly read on Brazilian political risk, for people who decide on data rather than headlines.',
     langNote: 'After signing up you choose whether to receive it in English, Portuguese or Spanish.',
   },
   es: {
     eyebrow: 'Recíbelo por correo',
-    daily: 'AFOS Daily cruza mercados de predicción, encuestas registradas en el TSE y la cobertura del día. Todos los días, gratis.',
+    daily: 'Todos los días, AFOS Daily cruza mercados de predicción, encuestas registradas en el TSE, la prensa y la cobertura del día.',
     tradeoff: 'AFOS Tradeoff es la lectura semanal de riesgo político de Brasil, para quien decide con datos y no con titulares.',
     langNote: 'Después del registro eliges si quieres recibirlo en español, portugués o inglés.',
   },

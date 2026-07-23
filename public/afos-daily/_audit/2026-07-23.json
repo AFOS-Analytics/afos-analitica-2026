@@ -1,0 +1,54 @@
+{
+  "date": "2026-07-23",
+  "factCheckGate": {
+    "highImpactEvents": "1 evento judicial novo (decisão de ministro do STF) + 1 pesquisa de avaliação publicada + 1 pesquisa NÃO publicada barrada",
+    "dayAnchor": "André Mendonça (STF) autorizou abertura de inquérito da PF sobre repasses de Daniel Vorcaro ao filme sobre Jair Bolsonaro, feitos a pedido de Flávio Bolsonaro",
+    "mendonca_inquerito": {
+      "verificacao1_crossref": "'Mendonça' e 'filme' = zero menções nas 7 dailies anteriores → novidade. 'Vorcaro' = 12 menções (caso Master é continuidade), mas o ato judicial é novo.",
+      "verificacao2_fetch": "Correio Braziliense (grupo Diários Associados), publicada 2026-07-23, tipo=evento. Detalha R$ 61 mi liberados entre fev-mai/2025, US$ 24 mi acordados inicialmente, PF apura se recursos custearam Eduardo Bolsonaro nos EUA.",
+      "segunda_fonte": "Diário do Nordeste (grupo Verdes Mares), publicada 2026-07-23, tipo=evento, cobertura independente. Terceira: Folha de S.Paulo.",
+      "ressalva": "NENHUMA das fontes fixa a data da DECISÃO, apenas a da publicação. Redigido como 'noticiada em 23 de julho', nunca 'decidiu hoje'.",
+      "contraditorio": "Coordenador da campanha de Flávio classificou a abertura como 'ótima' (Folha). Flávio nega irregularidades e sustenta que os recursos eram privados. Ambos incorporados.",
+      "decisao": "incorporar"
+    },
+    "poderdata": {
+      "verificacao1_crossref": "33 menções ao instituto em dailies anteriores → continuidade de série, mas rodada nova",
+      "verificacao2_fetch": "Poder360 (primária), campo 18-20/Jul, n=2.500, IVR, 147 municípios em 27 UFs, margem 2pp, SEM registro TSE por medir avaliação e não intenção de voto",
+      "segunda_fonte": "CNN Brasil + SBT News",
+      "decisao": "incorporar em approvalData e na Seção 2; NÃO entra em polls[] por não ter cenário de intenção de voto"
+    },
+    "atlasintel": {
+      "verificacao1_crossref": "4 menções, todas linhas de calendário de pesquisas estaduais → não é publicação",
+      "verificacao2_fetch": "VEJA publicou peça de título literal 'quando será divulgada', ou seja, a pesquisa AINDA NÃO saiu. TSE: BR-08602/2026, campo 22-27/Jul, publicação prevista 28/Jul.",
+      "decisao": "NÃO incorporar nenhum número. Registrada como 'registrada ≠ publicada'. Mesma armadilha do incidente Datafolha de 15/Mai/2026."
+    },
+    "pt_tse_urnas": {
+      "verificacao1_crossref": "desdobramento da fala sobre Smartmatic já registrada na daily de 22/Jul → continuidade com ato novo",
+      "verificacao2_fetch": "Folha de S.Paulo, feed prestige direto, 2026-07-23, tipo=evento",
+      "decisao": "incorporar como desdobramento, não como divisor de águas. Qualificação 'informações falsas' do veículo NÃO adotada como fato próprio; texto usa 'alegações sobre as urnas'."
+    }
+  },
+  "adversarialReview": {
+    "single_source": "Moro (Gazeta do Povo), PP neutralidade (Valor), ausência de Michelle (Folha), Ibaneis (G1), Cleitinho (Estadão). Todas com atribuição nominal explícita ao veículo no corpo, nenhuma apresentada como apuração do AFOS. A âncora do dia tem 3 fontes de grupos distintos.",
+    "numerical_errors": "reconcile-claims rodado. 1 divergência na linha 26 ('46% a 45%') = números do 2º turno da Gerp, dado de pesquisa e não de mercado. Falso positivo confirmado.",
+    "fontes_inventadas": "3 verificadas ao acaso (CNN/PoderData, Valor/PP, Estadão/Cleitinho), todas presentes no news-cache/2026-07-23.json com URL íntegra. HEAD check do validator sem erro.",
+    "quotes_literais": "apenas 'ótima' (título da Folha) e 'Dark Horse' (nome do filme). Ambas ancoradas.",
+    "causacao_espuria": "nenhuma. A simultaneidade entre o inquérito e a queda de 2,10pp de Flávio está descrita com não-atribuição explícita na Seção 4: 'um mercado não declara motivo, e um único dia de negociação não distingue reação a notícia de momentum acumulado'.",
+    "verbos_criticos": "'autorizou a abertura de inquérito' (não indiciou, não condenou), 'noticiada em 23 de julho' (data de publicação, não de decisão), 'nega irregularidades', 'acionou o TSE'. Verbo 'preso' não usado.",
+    "regra_R8_datas": "zero ocorrências de ontem/amanhã/esta semana/semana passada. Duas ocorrências de 'hoje' corrigidas para data explícita antes do preview.",
+    "decisao": "prosseguir para preview"
+  },
+  "guardrailSerie": {
+    "contexto": "Guardrail #3 do /atualizar aplicado também à daily, contra a série completa de 88 dias (/api/market/history, slug brazil-presidential-election, 6 janelas de 18 a 90 dias, buracos apenas em 04/Mai, 29/Mai e 04/Jun).",
+    "gap_lula_flavio": "+37,65pp declarado como 'o maior desde 11 de julho' (37,80pp naquela data), verificado, e explicitamente situado abaixo do pico do ciclo de +39,5pp em 03/Jul.",
+    "renan_nao_e_recorde": "CORREÇÃO DE ENQUADRAMENTO: os 11,85% NÃO são recorde. Série mostra 17,9% em 09/Jun, 12,8% em 01/Jul e piso de 7,8% em 17/Jul. A daily declara isso em bloco próprio de divergência para impedir leitura de 'movimento inédito'. O que é inédito e foi afirmado: o preço superou a leitura de urna mais alta do ciclo (9% da Real Time), então nenhuma pesquisa sustenta o patamar.",
+    "superlativo_removido": "'a maior queda simultânea nos dois books desde que o AFOS acompanha o par' foi REMOVIDO dos JSONs por não ser verificável (não há série do sub-mercado de 2º lugar). Substituído por 'os dois maiores recuos do painel na data'."
+  },
+  "gates": {
+    "refetch_polymarket": "18:12 BRT. Gate de rebaseline NÃO disparou: Lula 0,00pp, Flávio +0,10pp, Renan -0,05pp, gap -0,10pp, todos abaixo do limiar de 0,50pp. Baseline do JSON mantida, volume total atualizado para USD 115,26M.",
+    "validate_afos_daily": "exit 0 (1 warning low-link-density 62%, idêntico ao da daily de 22/Jul, não bloqueante)",
+    "reconcile_claims": "1 warning, falso positivo de número de pesquisa (ver acima)",
+    "check_recurrence": "rodado para Mendonça, Vorcaro, filme, PoderData e AtlasIntel"
+  },
+  "approval": "André aprovou o preview em 23/Jul e autorizou commit, push e deploy por CLI"
+}
