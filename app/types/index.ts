@@ -51,7 +51,7 @@ export interface AnalysisSection {
   text1?: string; text2?: string; text3?: string; text4?: string;
   direita?: string; esquerda?: string; terceiraVia?: string; polymarket?: string;
   impactoLula?: string; impactoGestao?: string; conclusao?: string;
-  toffoli?: string; moraes?: string; gilmar?: string; dino?: string; nexo?: string; analise?: string;
+  toffoli?: string; moraes?: string; gilmar?: string; dino?: string; mendonca?: string; nexo?: string; analise?: string;
 }
 
 export interface AnalysisData {

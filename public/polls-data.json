@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-22",
+  "lastUpdate": "2026-07-23",
   "institutes": [
     {
       "name": "Datafolha",
@@ -928,8 +928,8 @@
     }
   ],
   "approvalData": {
-    "note": "Aprovação de Lula presa numa faixa estreita perto do empate, com quatro leituras em uma semana, todas entre 42% e 49% de aprovação. As duas nacionais de 21/Jul: Indexa deu aprova 49% x desaprova 48% (empate dentro da margem, a menos negativa do recorte, com 51% dizendo que Lula não merece mais quatro anos), e a Real Time Big Data deu aprova 46% x desaprova 50%. Antes delas, a Genial/Quaest 15/Jul (n=2.004, presencial, reliability 5) marcou aprova 48% x desaprova 47%, o melhor patamar do ano (VEJA), e a PoderData/Aya 16/Jul (n=2.400, telefônica, BR-00059/2026) deu aprova 42% x desaprova 51%. O painel exibe a Quaest por ser a de maior confiabilidade do recorte e por sustentar a série histórica; as demais ficam registradas como divergência de método, não como correção. A faixa das quatro é aprova 42-49% x desaprova 47-51%: o eleitor não deu a Lula folga de aprovação, mas também não abriu rejeição em disparada. REJEIÇÃO dos candidatos: Indexa 21/Jul dá Flávio 50% e Lula 49% (empate técnico); Real Time 21/Jul dá Flávio 50% e Lula 48%; Quaest 15/Jul dá Flávio 57% (a maior do páreo) e Lula 50%; Gerp 22/Jul dá Lula 47% e Flávio 46% (empate técnico, sem divulgar aprovação).",
-    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + Indexa (21/Jul, n=2.000, BR-02904/2026, aprova 49% x desaprova 48%) + Real Time Big Data (21/Jul, n=2.000, BR-09247/2026, aprova 46% x desaprova 50%) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%)",
+    "note": "A leitura nova é a PoderData de 22/Jul (campo 18-20/Jul, n=2.500, IVR, 147 municípios em 27 UFs, margem de 2pp), que NÃO tem registro no TSE por medir avaliação e não intenção de voto: aprovação pessoal de Lula 46% x desaprovação 47%, com a desaprovação recuando 3pp ante os 50% da semana anterior, e a avaliação ruim ou péssima do trabalho caindo de 47% para 37%, dez pontos em uma semana, movimento que o instituto associa ao pós-tarifaço. É a leitura mais favorável a Lula em semanas, mas o governo segue reprovado por 51% contra 43% de aprovação, então a melhora é de avaliação pessoal, não de gestão. As anteriores: Indexa 21/Jul aprova 49% x desaprova 48% (empate na margem, com 51% dizendo que Lula não merece mais quatro anos), Real Time 21/Jul aprova 46% x desaprova 50%, Genial/Quaest 15/Jul (n=2.004, presencial, reliability 5) aprova 48% x desaprova 47%, o melhor patamar do ano (VEJA), e PoderData/Aya 16/Jul (n=2.400, BR-00059/2026) aprova 42% x desaprova 51%. O painel exibe a Quaest por ser a de maior confiabilidade do recorte e por sustentar a série histórica; as demais ficam registradas como divergência de método, não como correção. REJEIÇÃO dos candidatos: Indexa 21/Jul dá Flávio 50% e Lula 49% (empate técnico); Real Time 21/Jul dá Flávio 50% e Lula 48%; Quaest 15/Jul dá Flávio 57% (a maior do páreo) e Lula 50%; Gerp 22/Jul dá Lula 47% e Flávio 46% (empate técnico, sem divulgar aprovação).",
+    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + PoderData (22/Jul, campo 18-20/Jul, n=2.500, IVR, sem registro TSE por medir avaliação e não intenção de voto, aprovação pessoal 46% x desaprovação 47%, governo 43% x 51%, fontes Poder360, CNN Brasil, SBT News) + Indexa (21/Jul, n=2.000, BR-02904/2026, aprova 49% x desaprova 48%) + Real Time Big Data (21/Jul, n=2.000, BR-09247/2026, aprova 46% x desaprova 50%) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%)",
     "date": "2026-07-15",
     "results": {
       "aprovacao": 48,
@@ -966,90 +966,90 @@
         "disapproval6m": 47
       }
     ],
-    "lastUpdate": "2026-07-22"
+    "lastUpdate": "2026-07-23"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 22/Jul 17:07 UTC, degraded false, failedCount 0), a 74 dias do 1º turno, no dia em que a Gerp publicou a 3ª nacional da semana. Gerp/AESP (n=2.000, campo 15-17/Jul, BR-05026/2026), o instituto outlier pró-Flávio: 1T Lula 38% x Flávio 38% (empate), 2T Flávio 46% x Lula 45% (empate técnico). O mercado andou na direção OPOSTA à urna no caso mais gritante do painel: Renan Santos SUBIU para 10,70% (alta 1,85pp) enquanto a Gerp o mede em 3%, o mesmo que a Indexa 21/Jul. Duas das três nacionais mais recentes dão Renan a 3% (Indexa e Gerp), só a Real Time deu 9%. A distorção mercado x urna não convergiu, ela se ALARGOU: o preço subiu e a urna não acompanhou, e o 9% da Real Time é que passa a parecer o ponto fora da curva. Flávio recuou 1,20pp para 24,95% e o gap de Lula abriu para +35,55pp por queda do adversário, ainda abaixo do pico do ciclo (+39,5pp em 03/Jul). Lula ficou estável em 60,50%. Nos sub-mercados, o PL no Senado por cadeiras caiu de 86,00% para 75,00%. A Datafolha (Tier 1) vem em 24/Jul e é o próximo teste de peso. Volume acumulado no presidencial em USD 114,55M.",
-    "sources": "Polymarket via proxy AFOS (live 22/Jul 17:07 UTC, degraded false, failedCount 0) + Gerp/AESP 22/Jul (Exame, Gazeta do Povo, CNN Brasil, Poder360, CartaCapital, Jovem Pan, Revista Oeste, BR-05026/2026) + Indexa 21/Jul (JOTA, CartaCapital, Gazeta do Povo, UOL, Poder360, BR-02904/2026) + Real Time Big Data 21/Jul (Exame, CNN Brasil, CartaCapital, Poder360, VEJA, GZH, BR-09247/2026) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, VEJA) + convenções partidárias (CNN Brasil)",
+    "note": "Cruzamento Polymarket (live 23/Jul 20:23 UTC, degraded false, failedCount 0), a 73 dias do 1º turno, num dia SEM urna: nenhuma pesquisa nacional de intenção de voto foi publicada, e a mais recente segue sendo a Gerp 22/Jul. O movimento veio todo do mercado. Flávio caiu 2,10pp para 22,85% e recuou 7,50pp no 2º lugar do 1º turno, de 78,00% para 70,50%, os dois maiores recuos do painel na data, no mesmo dia em que André Mendonça (STF) autorizou inquérito da PF sobre os repasses de Daniel Vorcaro ao filme sobre Jair Bolsonaro, cerca de R$ 61 milhões, feitos a pedido de Flávio (Correio Braziliense, Terra, Diário do Nordeste). O AFOS registra a coincidência de calendário e NÃO afirma causalidade: um único dia não estabelece causa. O preço que saiu de Flávio foi para as alternativas de direita, não para o favorito: Renan subiu 1,15pp para 11,85% e Caiado 0,55pp para 2,05%, enquanto Lula ficou parado em 60,50% pelo segundo dia. Por isso o gap de Lula sobre Flávio, que abriu para +37,65pp e é o maior desde 11/Jul (37,80pp), precisa ser lido pelo que é: cresceu 2,10pp sem Lula ganhar um ponto, e segue abaixo do pico do ciclo de +39,5pp (03/Jul). No caso Renan a distorção alargou pela terceira vez seguida sem nenhuma urna nova, e o preço agora está acima até dos 9% da Real Time 21/Jul, a leitura de urna mais alta do ciclo, de modo que nenhuma pesquisa sustenta o patamar. RESSALVA DE SÉRIE, obrigatória: os 11,85% NÃO são recorde. Renan valeu 17,9% em 09/Jun e 12,8% em 01/Jul, e caiu ao piso de 7,8% em 17/Jul, então o que se vê é recuperação de piso recente, não descoberta. Nos sub-mercados, o PL no Senado por cadeiras caiu de 75,00% para 72,00% e o MDB subiu para 20,90%. O STF impeach ficou parado em 2,95% (vol USD 83 mil) mesmo no dia da decisão de Mendonça. Ressalva de calendário: a nova AtlasIntel do pós-tarifaço NÃO foi divulgada, está registrada sob BR-08602/2026 com publicação prevista para 28/Jul. A Datafolha (Tier 1) vem em 24/Jul. Volume acumulado no presidencial em USD 115,24M.",
+    "sources": "Polymarket via proxy AFOS (live 23/Jul 20:23 UTC, degraded false, failedCount 0) + série histórica /api/market/history, slug brazil-presidential-election, janelas de 18 a 90 dias, 88 dias de cobertura + inquérito Vorcaro/filme autorizado por André Mendonça (Correio Braziliense, Terra, Diário do Nordeste, Tribuna de Minas, 23/Jul) + PoderData 22/Jul (Poder360, CNN Brasil, SBT News) + Gerp/AESP 22/Jul (Exame, Gazeta do Povo, CNN Brasil, Poder360, BR-05026/2026) + Indexa 21/Jul (JOTA, CartaCapital, UOL, BR-02904/2026) + Real Time Big Data 21/Jul (Exame, CNN Brasil, VEJA, BR-09247/2026) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, VEJA) + registro TSE via /api/polls/tse",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-46%",
         "polymarket": "60.50%",
-        "tendenciaPesquisa": "A Gerp 22/Jul, casa outlier pró-Flávio, o dá empatado no 1º turno (38% x 38%) e perdendo o returno direto por 45% x 46%, mas vencendo Caiado (44x41), Zema (44x38) e Renan (45x35). Antes, as duas de 21/Jul o davam liderando o 1º turno com 40-41%: Indexa 1T 41x30 (2T +7pp), Real Time 1T 40x33 (2T empate técnico). O consenso Tier 1 mais forte segue sendo a Quaest 15/Jul (Lula +12pp no 1T). A Datafolha vem em 24/Jul.",
-        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,5M), sem reagir à Gerp. O gap sobre Flávio abriu para +35,55pp por queda do adversário, não por passo próprio, e segue abaixo do pico do ciclo de +39,5pp (03/Jul). O preço de Lula não se mexe há dias.",
+        "tendenciaPesquisa": "Sem urna nova em 23/Jul. A referência segue sendo a Gerp 22/Jul, casa outlier pró-Flávio, que o dá empatado no 1º turno (38% x 38%) e perdendo o returno direto por 45% x 46%, mas vencendo Caiado (44x41), Zema (44x38) e Renan (45x35). As duas de 21/Jul o davam liderando o 1º turno com 40-41%, e o consenso Tier 1 mais forte segue sendo a Quaest 15/Jul (Lula +12pp no 1T). A PoderData 22/Jul melhorou a avaliação pessoal dele, com a desaprovação caindo de 50% para 47%. A Datafolha vem em 24/Jul.",
+        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,61M) pelo segundo dia seguido. O gap sobre Flávio abriu 2,10pp, para +37,65pp, o maior desde 11/Jul, mas inteiramente por queda do adversário: ele não ganhou um ponto. Segue abaixo do pico do ciclo de +39,5pp (03/Jul). Três semanas de estreitamento foram devolvidas em seis dias sem passo próprio dele.",
         "odds": 60.5,
         "percentage": 45,
-        "lastUpdate": "2026-07-22",
+        "lastUpdate": "2026-07-23",
         "value": 60.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-46%",
-        "polymarket": "24.95%",
-        "tendenciaPesquisa": "A Gerp 22/Jul é a leitura mais favorável a ele do recorte: empata Lula no 1º turno (38x38) e fica à frente no returno direto (46x45), mas é o instituto outlier pró-Flávio, reliability 3, sistematicamente mais generoso com ele que o Tier 1. As duas de 21/Jul o mantêm em 30-33% no 1º turno e perdendo o 2º contra Lula. Rejeição alta e estável: Gerp 46%, Indexa e Real Time 50%.",
-        "tendenciaPolymarket": "RECUOU 1,20pp para 24,95% (vol USD 7,5M), o maior movimento do book presidencial no dia, mesmo com a Gerp favorável. Segue no 2º lugar do 1º turno a 78,00%. É o único nome com liquidez para mover o gap, e hoje moveu para baixo.",
-        "odds": 24.95,
+        "polymarket": "22.85%",
+        "tendenciaPesquisa": "Sem urna nova em 23/Jul. A Gerp 22/Jul segue sendo a leitura mais favorável a ele do recorte: empata Lula no 1º turno (38x38) e fica à frente no returno direto (46x45), mas é o instituto outlier pró-Flávio, reliability 3, sistematicamente mais generoso com ele que o Tier 1. As duas de 21/Jul o mantêm em 30-33% no 1º turno e perdendo o 2º contra Lula. Rejeição alta e estável: Gerp 46%, Indexa e Real Time 50%.",
+        "tendenciaPolymarket": "DESPENCOU 2,10pp para 22,85% (vol USD 7,62M), a maior queda do book pelo segundo dia seguido, e recuou 7,50pp no 2º lugar do 1º turno, de 78,00% para 70,50%. São os dois maiores recuos do painel na data, e nenhuma pesquisa nova os explica. Coincidem com a autorização, por Mendonça, do inquérito da PF sobre os repasses de Vorcaro ao filme sobre Jair feitos a pedido dele, coincidência de calendário que o AFOS registra sem afirmar causalidade.",
+        "odds": 22.85,
         "percentage": 46,
-        "lastUpdate": "2026-07-22",
-        "value": 24.95
+        "lastUpdate": "2026-07-23",
+        "value": 22.85
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-9%",
-        "polymarket": "10.70%",
-        "tendenciaPesquisa": "A GERP DECIDE O CASO. Ela o mede em 3% no 1º turno, o mesmo que a Indexa 21/Jul, contra os 9% da Real Time. Duas das três nacionais mais recentes o dão em 3%, e só uma deu 9%. A leitura que validava o preço do mercado ficou isolada, e o 9% da Real Time passa a parecer o ponto fora da curva entre as pesquisas.",
-        "tendenciaPolymarket": "SUBIU 1,85pp para 10,70% (vol USD 8,3M), o segundo maior preço do book presidencial, no MESMO dia em que a Gerp o mede em 3%. A distorção mercado x urna não convergiu, ela se ALARGOU: o preço subiu e a urna não acompanhou. É de novo o caso mais gritante do painel, agora com o mercado ainda mais isolado.",
-        "odds": 10.7,
+        "polymarket": "11.85%",
+        "tendenciaPesquisa": "Sem urna nova em 23/Jul. A referência majoritária segue em 3%: Gerp 22/Jul e Indexa 21/Jul, contra os 9% isolados da Real Time 21/Jul. Aos 11,85%, o preço passou a estar acima até dos 9%, a leitura de urna mais alta do ciclo, de modo que hoje não existe uma única pesquisa que dê lastro ao patamar. No 2º turno direto a Gerp o dá perdendo de Lula por 35x45.",
+        "tendenciaPolymarket": "SUBIU 1,15pp para 11,85% (vol USD 8,34M, acima dos volumes de Lula e de Flávio), quinto dia seguido de alta, e 4,50pp no 3º lugar do 1º turno (68,00%). A distorção alargou pela terceira vez seguida sem nenhuma urna nova. RESSALVA DE SÉRIE: NÃO é recorde. Renan valeu 17,9% em 09/Jun e 12,8% em 01/Jul, e caiu ao piso de 7,8% em 17/Jul, então isto é recuperação de piso recente, não descoberta do mercado.",
+        "odds": 11.85,
         "percentage": 9,
-        "lastUpdate": "2026-07-22",
-        "value": 10.7
+        "lastUpdate": "2026-07-23",
+        "value": 11.85
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1.50%",
-        "tendenciaPesquisa": "A Gerp 22/Jul o dá com 3% no 1º turno e Lula à frente no 2º turno direto (44x41), NÃO confirmando o empate que a Real Time 21/Jul apontara (44x43, Caiado à frente). O sinal mais competitivo do pelotão segue sendo de uma casa só. A faixa dele nas três recentes é 3-7% (Gerp 3, Indexa 6, Real Time 7).",
-        "tendenciaPolymarket": "RECUOU 0,35pp para 1,50% (vol USD 5,0M), devolvendo parte da alta da véspera depois que a Gerp não confirmou o 2º turno competitivo. Mede 3-7% de voto e vale 1,5% no book de vencedor.",
-        "odds": 1.5,
+        "polymarket": "2.05%",
+        "tendenciaPesquisa": "Sem urna nova em 23/Jul. A faixa nas três recentes segue em 3-7% (Gerp 3, Indexa 6, Real Time 7), e a Gerp dá Lula à frente no 2º turno direto (44x41), não o empate (44x43) que a Real Time apontara. O sinal competitivo dele segue de uma casa só.",
+        "tendenciaPolymarket": "SUBIU 0,55pp para 2,05% (vol USD 5,10M), a segunda maior alta do book, sem nenhuma pesquisa nova para justificar: absorveu parte do preço que saiu de Flávio. Estável a 16,50% no 3º lugar do 1º turno. Mede 3-7% de voto declarado e vale 2,05% no book de vencedor.",
+        "odds": 2.05,
         "percentage": 7,
-        "lastUpdate": "2026-07-22",
-        "value": 1.5
+        "lastUpdate": "2026-07-23",
+        "value": 2.05
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais. Foco na reeleição em SP, onde a Datafolha 05/Jul o dá com 46% x Haddad 30% e aprovação de 45%.",
-        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,5M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras, o PL CAIU de 86,00% para 75,00%, o maior recuo dos sub-mercados no dia, embora siga folgado na liderança de mais cadeiras.",
+        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,55M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras, o PL caiu de 75,00% para 72,00% e o MDB subiu para 20,90%, acompanhando o desgaste do campo de Flávio, embora o PL siga folgado na liderança.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-22",
+        "lastUpdate": "2026-07-23",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3%",
-        "polymarket": "0.50%",
-        "tendenciaPesquisa": "A Gerp 22/Jul o dá com 3% no 1º turno e perdendo o returno para Lula por 38x44, mesmo patamar da Indexa 21/Jul (3%). Segue no pelotão de baixo da 3ª via, sem vice anunciado depois de Michelle ter descartado a vaga.",
-        "tendenciaPolymarket": "RECUOU 0,35pp para 0,50% (vol USD 4,5M). Marca 3% na urna e vale meio ponto no mercado de vencedor. A chapa entra nas convenções sem vice definido.",
-        "odds": 0.5,
+        "polymarket": "0.45%",
+        "tendenciaPesquisa": "Sem urna nova em 23/Jul. A Gerp 22/Jul o dá com 3% no 1º turno e perdendo o returno para Lula por 38x44, mesmo patamar da Indexa 21/Jul (3%). Segue no pelotão de baixo da 3ª via, sem vice anunciado depois de Michelle ter descartado a vaga.",
+        "tendenciaPolymarket": "RECUOU 0,05pp para 0,45% (vol USD 4,49M) e ficou de fora da rotação que levou preço de Flávio para Renan e Caiado, sinal de que o mercado separa o pelotão em vez de tratá-lo como bloco. Marca 3% na urna e vale menos de meio ponto no mercado de vencedor.",
+        "odds": 0.45,
         "percentage": 3,
-        "lastUpdate": "2026-07-22",
-        "value": 0.5
+        "lastUpdate": "2026-07-23",
+        "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sem dados nacionais",
-        "polymarket": "0.40%",
+        "polymarket": "0.35%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%.",
-        "tendenciaPolymarket": "SUBIU 0,05pp para 0,40% (vol USD 6,3M). O preço aqui é resíduo de nome conhecido num book fino, não sinal de candidatura, e o foco segue estadual.",
-        "odds": 0.4,
+        "tendenciaPolymarket": "RECUOU 0,05pp para 0,35% (vol USD 6,33M). Ficou de fora da rotação do dia, e o preço aqui segue sendo resíduo de nome conhecido num book fino, não sinal de candidatura. O foco é estadual.",
+        "odds": 0.35,
         "percentage": 0,
-        "lastUpdate": "2026-07-22",
-        "value": 0.4
+        "lastUpdate": "2026-07-23",
+        "value": 0.35
       }
     ],
-    "updatedAt": "2026-07-22"
+    "updatedAt": "2026-07-23"
   }
 }

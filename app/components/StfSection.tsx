@@ -36,6 +36,7 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
             { name: 'Alexandre de Moraes', desc: stf?.moraes || '' },
             { name: 'Gilmar Mendes', desc: stf?.gilmar || '' },
             { name: 'Flávio Dino', desc: stf?.dino || '' },
+            ...(stf?.mendonca ? [{ name: 'André Mendonça', desc: stf.mendonca }] : []),
           ].map(m => (
             <div key={m.name} className="bg-red-50 rounded-lg p-3">
               <div className="font-semibold text-sm text-dark">{m.name}</div>
