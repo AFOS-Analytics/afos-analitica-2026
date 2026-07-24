@@ -68,6 +68,11 @@ const TAGLINE: Record<string, Record<Locale, string>> = {
     en: 'By SINGLE party, Le Pen’s RN was the largest group (143 seats), and the deepest market (**~US$917k**) priced that at ~99% and was right. What flipped was the GOVERNMENT: the left-wing NFP coalition held the most seats by coalition (182) via the front républicain. The near-RN-majority hype (230-270 seats) lived in polls and thin markets and did not survive at volume.',
     es: 'Por PARTIDO individual, el RN de Le Pen fue la mayor bancada (143 escaños), y el mercado más profundo (**~US$917k**) lo valoró en ~99% y acertó. Lo que se dio vuelta fue el GOBIERNO: la coalición de izquierda NFP tuvo la mayor bancada por coalición (182) vía front républicain. El hype de casi-mayoría del RN (230-270 escaños) vivió en encuestas y mercados finos y no sobrevivió al volumen.',
   },
+  IND: {
+    'pt-BR': 'A maior eleição da história (~980 milhões de eleitores aptos). O mercado (**~US$ 835 mil**) e as pesquisas concordaram entre si e superestimaram juntos: acertaram o vencedor (a NDA, de Modi) e erraram muito o tamanho, previram 350 a 400 das 543 cadeiras e deu ~293. O BJP perdeu a maioria que governava sozinho (240). No voto foi quase-empate (43,8% × 41,48%): a oposição se uniu, e o voto estável de Modi virou derrota de cadeira.',
+    en: 'The largest election in history (~980M eligible voters). The market (**~US$835k**) and the polls agreed with each other and overestimated together: right on the winner (Modi’s NDA), very wrong on the size, projecting 350 to 400 of 543 seats against ~293. The BJP lost the single-party majority it governed with (240). The vote was a near-tie (43.8% × 41.48%): the opposition unified, and Modi’s stable vote became a seat defeat.',
+    es: 'La mayor elección de la historia (~980 millones de electores). El mercado (**~US$835k**) y las encuestas coincidieron entre sí y sobreestimaron juntos: acertaron el ganador (la NDA, de Modi) y erraron mucho el tamaño, proyectaron 350 a 400 de 543 escaños y fueron ~293. El BJP perdió la mayoría propia (240). En votos fue casi empate (43,8% × 41,48%): la oposición se unió y el voto estable de Modi se volvió derrota de escaños.',
+  },
 };
 
 // Renderiza a tagline com suporte a **negrito** (marcador markdown simples), bolando o destaque de volume.

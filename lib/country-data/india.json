@@ -1,0 +1,499 @@
+{
+  "iso3": "IND",
+  "hf": "https://huggingface.co/datasets/AFOS-Analytics1/india-2024-lok-sabha-electoral-divergence",
+  "election": {
+    "first_round": "2024-04-19",
+    "runoff": "",
+    "matchup": "Geral (Lok Sabha): quantas cadeiras a aliança NDA, de Modi, faz das 543",
+    "status": "completed"
+  },
+  "polls_count": 44,
+  "market_candidates": 7,
+  "latest_poll": {
+    "pollster": "Média dos exit polls (14 casas)",
+    "date": "2024-06-01"
+  },
+  "headline": {
+    "pt-BR": "A maior eleição da história (cerca de 980 milhões de eleitores aptos, 642 milhões votaram) virou o caso mais franco do acervo: o mercado de apostas e as pesquisas concordaram entre si e superestimaram juntos. Acertaram o vencedor, a aliança NDA de Modi, mas erraram muito o tamanho: previram de 350 a 400 das 543 cadeiras, e a aliança fez cerca de 293. O partido do próprio Modi, o BJP, perdeu a maioria que governava sozinho (240 cadeiras), pela primeira vez desde 2014. Pesando as faixas pela probabilidade, o mercado (US$ 835 mil, dinheiro real) esperava cerca de 361 cadeiras, e o mercado isolado de maior volume, o \"BJP mantém a maioria?\", ficou entre 80% e 96% no SIM e errou. A causa: no voto foi quase-empate (43,8% contra 41,48%), e a oposição, que saíra de 27,5% em 2019 para 41,48%, se uniu; o voto estável de Modi virou derrota de cadeira. O que valida o caso é o resultado oficial, não as ferramentas terem acertado.",
+    "en": "The largest election in history (about 980 million eligible voters, 642 million votes cast) produced the frankest case in the collection: the betting market and the polls agreed with each other and overestimated together. They called the winner, Modi's NDA alliance, but got the size very wrong: they projected 350 to 400 of the 543 seats, and the alliance won about 293. Modi's own party, the BJP, lost the single-party majority it had governed with (240 seats), for the first time since 2014. Weighting the ranges by probability, the market (US$835k of real money) expected about 361 seats, and its deepest single market, \"will the BJP keep its majority?\", sat between 80% and 96% YES and was wrong. The cause: the vote was a near-tie (43.8% to 41.48%), and the opposition, up from 27.5% in 2019 to 41.48%, had unified; Modi's stable vote became a seat defeat. What validates the case is the official result, not the tools getting it right.",
+    "es": "La mayor elección de la historia (cerca de 980 millones de electores habilitados, 642 millones votaron) dio el caso más franco del acervo: el mercado de apuestas y las encuestas coincidieron entre sí y sobreestimaron juntos. Acertaron el ganador, la alianza NDA de Modi, pero erraron mucho el tamaño: proyectaron de 350 a 400 de los 543 escaños, y la alianza obtuvo cerca de 293. El partido del propio Modi, el BJP, perdió la mayoría propia con que gobernaba (240 escaños), por primera vez desde 2014. Ponderando las franjas por probabilidad, el mercado (US$835 mil de dinero real) esperaba cerca de 361 escaños, y su mercado individual de mayor volumen, \"¿mantiene el BJP la mayoría?\", estuvo entre 80% y 96% en SÍ y se equivocó. La causa: en votos fue casi empate (43,8% contra 41,48%), y la oposición, que pasó de 27,5% en 2019 a 41,48%, se unió; el voto estable de Modi se volvió derrota de escaños. Lo que valida el caso es el resultado oficial, no que las herramientas acertaran."
+  },
+  "rows": [
+    {
+      "candidate": "NDA",
+      "poll_pct": 65.4,
+      "market_pct": 66.5,
+      "divergence_pp": 1.1,
+      "note": {
+        "pt-BR": "Participação em CADEIRAS (não voto), das 543. Média dos exit polls: 355 cadeiras (65,4%). Mercado: cerca de 361 (66,5%). Mercado e pesquisas quase não divergiram entre si, e é esse o ponto: erraram juntos. Resultado real: 293 cadeiras (54,0%).",
+        "en": "Share of SEATS (not votes), out of 543. Exit-poll average: 355 seats (65.4%). Market: about 361 (66.5%). Market and polls barely diverged from each other, and that is the point: they were wrong together. Actual result: 293 seats (54.0%).",
+        "es": "Participación en ESCAÑOS (no votos), de 543. Promedio de encuestas a boca de urna: 355 escaños (65,4%). Mercado: cerca de 361 (66,5%). Mercado y encuestas casi no divergieron entre sí, y ese es el punto: se equivocaron juntos. Resultado real: 293 escaños (54,0%)."
+      }
+    },
+    {
+      "candidate": "INDIA",
+      "poll_pct": 25.6,
+      "market_pct": 30.6,
+      "divergence_pp": 5,
+      "note": {
+        "pt-BR": "Participação em CADEIRAS, das 543. Média dos exit polls para a oposição: 139 cadeiras (25,6%). O mercado não precificava a oposição diretamente; 30,6% é o que sobra depois das faixas da NDA. Resultado real: 234 cadeiras (43,1%), muito acima do previsto.",
+        "en": "Share of SEATS, out of 543. Exit-poll average for the opposition: 139 seats (25.6%). The market did not price the opposition directly; 30.6% is the residual left by the NDA ranges. Actual result: 234 seats (43.1%), far above what was projected.",
+        "es": "Participación en ESCAÑOS, de 543. Promedio de encuestas a boca de urna para la oposición: 139 escaños (25,6%). El mercado no valoraba a la oposición directamente; 30,6% es el residuo que dejan las franjas de la NDA. Resultado real: 234 escaños (43,1%), muy por encima de lo proyectado."
+      }
+    }
+  ],
+  "market_snapshot": {
+    "date": "2024-06-04",
+    "total_volume_usd": 835496,
+    "candidates": [
+      {
+        "candidate": "NDA 351-375 cadeiras",
+        "market_pct": 46,
+        "volume_usd": 72068
+      },
+      {
+        "candidate": "NDA 376-400 cadeiras",
+        "market_pct": 34,
+        "volume_usd": 66383
+      },
+      {
+        "candidate": "NDA mais de 400",
+        "market_pct": 22,
+        "volume_usd": 79905
+      },
+      {
+        "candidate": "NDA 326-350 cadeiras",
+        "market_pct": 14,
+        "volume_usd": 126460
+      },
+      {
+        "candidate": "NDA menos de 300 (real)",
+        "market_pct": 6,
+        "volume_usd": 134650
+      },
+      {
+        "candidate": "NDA 300-325 cadeiras",
+        "market_pct": 6,
+        "volume_usd": 111206
+      }
+    ]
+  },
+  "press": [
+    {
+      "outlet": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2024/6/4/modis-bjp-loses-majority-in-india-election-shock-needs-allies-for",
+      "note": {
+        "pt-BR": "Dia do resultado: o BJP perde a maioria sozinho e precisa de aliados.",
+        "en": "Result day: the BJP loses its single-party majority and needs allies.",
+        "es": "Día del resultado: el BJP pierde su mayoría propia y necesita aliados."
+      }
+    },
+    {
+      "outlet": "Business Today",
+      "url": "https://www.businesstoday.in/india/story/poll-of-exit-polls-2024-nda-india-bloc-bjp-congress-seat-count-axis-my-india-cvoter-todays-chanakya-431785-2024-06-01",
+      "note": {
+        "pt-BR": "Média dos exit polls (1/jun): NDA projetada em 361-401 pela Axis.",
+        "en": "Poll of exit polls (1 Jun): NDA projected 361-401 by Axis.",
+        "es": "Promedio de encuestas a boca de urna (1 jun): NDA proyectada en 361-401 por Axis."
+      }
+    },
+    {
+      "outlet": "Business Standard",
+      "url": "https://www.business-standard.com/markets/news/stock-market-live-updates-june-4-sensex-nifty-lok-sabha-election-results-2024-psu-stocks-nse-124060400081_1.html",
+      "note": {
+        "pt-BR": "Na apuração, o Sensex desaba 4.390 pontos, o pior dia em quatro anos.",
+        "en": "On counting day the Sensex crashes 4,390 points, its worst day in four years.",
+        "es": "El día del conteo el Sensex se desploma 4.390 puntos, su peor día en cuatro años."
+      }
+    },
+    {
+      "outlet": "Down To Earth",
+      "url": "https://www.downtoearth.org.in/governance/why-did-2024-lok-sabha-predictions-miss-the-mark-heres-the-science-behind-exit-polls",
+      "note": {
+        "pt-BR": "Análise de por que os exit polls de 2024 erraram tanto.",
+        "en": "Analysis of why the 2024 exit polls missed the mark.",
+        "es": "Análisis de por qué las encuestas a boca de urna de 2024 fallaron tanto."
+      }
+    }
+  ],
+  "market_trajectory": {
+    "dates": [
+      "2024-04-19",
+      "2024-04-20",
+      "2024-04-21",
+      "2024-04-22",
+      "2024-04-23",
+      "2024-04-24",
+      "2024-04-25",
+      "2024-04-26",
+      "2024-04-27",
+      "2024-04-28",
+      "2024-04-29",
+      "2024-04-30",
+      "2024-05-01",
+      "2024-05-02",
+      "2024-05-03",
+      "2024-05-04",
+      "2024-05-05",
+      "2024-05-06",
+      "2024-05-07",
+      "2024-05-08",
+      "2024-05-09",
+      "2024-05-10",
+      "2024-05-11",
+      "2024-05-12",
+      "2024-05-13",
+      "2024-05-14",
+      "2024-05-15",
+      "2024-05-16",
+      "2024-05-17",
+      "2024-05-18",
+      "2024-05-19",
+      "2024-05-20",
+      "2024-05-21",
+      "2024-05-22",
+      "2024-05-23",
+      "2024-05-24",
+      "2024-05-25",
+      "2024-05-26",
+      "2024-05-27",
+      "2024-05-28",
+      "2024-05-29",
+      "2024-05-30",
+      "2024-05-31",
+      "2024-06-01",
+      "2024-06-02",
+      "2024-06-03",
+      "2024-06-04",
+      "2024-06-05"
+    ],
+    "series": [
+      {
+        "name": "NDA < 300 (resultado real)",
+        "pct": [
+          10,
+          3,
+          4,
+          2.8,
+          3.5,
+          3.5,
+          4,
+          4,
+          6.5,
+          7.4,
+          7.4,
+          7.5,
+          7.5,
+          7.5,
+          8,
+          8.6,
+          8,
+          11,
+          11.5,
+          11.4,
+          11.4,
+          11.4,
+          11.5,
+          11.4,
+          11.4,
+          11.4,
+          11.5,
+          11.4,
+          11.5,
+          11.7,
+          11.6,
+          13.1,
+          17.6,
+          17.3,
+          17.3,
+          17.3,
+          16.9,
+          14.5,
+          14.5,
+          14.5,
+          16.5,
+          17.2,
+          18,
+          15,
+          2,
+          2.9,
+          5.9,
+          97.8
+        ]
+      },
+      {
+        "name": "NDA 351-375",
+        "pct": [
+          32.5,
+          31,
+          33,
+          32,
+          30,
+          29.5,
+          31,
+          30.5,
+          26,
+          25.5,
+          24.5,
+          23.5,
+          23.5,
+          23,
+          23,
+          22.5,
+          22.5,
+          21,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          21.5,
+          22,
+          22.5,
+          22.5,
+          22,
+          22.5,
+          22.5,
+          22,
+          23.5,
+          23,
+          30.5,
+          23,
+          22.5,
+          23,
+          23,
+          22.5,
+          22,
+          19.5,
+          18,
+          31,
+          16,
+          46.5,
+          0.5
+        ]
+      },
+      {
+        "name": "NDA 376-400",
+        "pct": [
+          65,
+          43,
+          43,
+          42,
+          40,
+          39.5,
+          40.5,
+          39.5,
+          37,
+          35.5,
+          34.5,
+          34.5,
+          34.5,
+          34,
+          34,
+          33.5,
+          33.5,
+          33,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          32,
+          31.5,
+          31.5,
+          31,
+          29,
+          27,
+          27,
+          26.5,
+          16.5,
+          16.5,
+          17,
+          19,
+          24.5,
+          22,
+          22.5,
+          22,
+          16,
+          15,
+          15.5,
+          17,
+          39,
+          51,
+          33.5,
+          0.5
+        ]
+      },
+      {
+        "name": "NDA > 400",
+        "pct": [
+          7.5,
+          13.5,
+          14,
+          14,
+          13,
+          12.5,
+          15,
+          15,
+          15.5,
+          15.5,
+          15,
+          15,
+          15,
+          15,
+          14,
+          14.5,
+          14.5,
+          15,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          14.5,
+          15,
+          14.5,
+          15,
+          15,
+          15,
+          15,
+          14.5,
+          14.5,
+          14.5,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          24.5,
+          24.5,
+          21.5,
+          0.5
+        ]
+      },
+      {
+        "name": "BJP mantém maioria",
+        "pct": [
+          91.5,
+          92.5,
+          92.5,
+          92.5,
+          92.5,
+          92.5,
+          93,
+          93,
+          93,
+          89,
+          90.5,
+          90.5,
+          90,
+          91,
+          91.5,
+          91,
+          92,
+          92,
+          92,
+          92,
+          92,
+          92,
+          92,
+          92,
+          92,
+          90.5,
+          89,
+          87,
+          85,
+          80.5,
+          82,
+          83.5,
+          82.5,
+          82,
+          82,
+          82.5,
+          83,
+          83,
+          86,
+          86.5,
+          83.5,
+          85,
+          83.5,
+          81,
+          96,
+          88.9,
+          95.5,
+          0.8
+        ]
+      }
+    ]
+  },
+  "context": {
+    "governance": {
+      "political_stability": {
+        "value": 52.5,
+        "year": 2024
+      },
+      "voice_accountability": {
+        "value": 55.5,
+        "year": 2024
+      },
+      "rule_of_law": {
+        "value": 56.3,
+        "year": 2024
+      },
+      "government_effectiveness": {
+        "value": 59.2,
+        "year": 2024
+      },
+      "regulatory_quality": {
+        "value": 53.3,
+        "year": 2024
+      },
+      "control_of_corruption": {
+        "value": 41.9,
+        "year": 2024
+      }
+    },
+    "macro": {
+      "population": {
+        "value": 1450935791,
+        "year": 2024
+      },
+      "gdp_usd": {
+        "value": 3760813470500.86,
+        "year": 2024
+      },
+      "gdp_per_capita_usd": {
+        "value": 2591.9916607122,
+        "year": 2024
+      },
+      "inflation_pct": {
+        "value": 4.95303550973661,
+        "year": 2024
+      }
+    },
+    "education": {
+      "gov_expenditure_pct_gdp": {
+        "value": 4.09865814174589,
+        "year": 2022
+      },
+      "expected_years_schooling": {
+        "value": 11.46347,
+        "year": 2019
+      }
+    },
+    "sources": {
+      "wgi": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+      "wdi": "https://data.worldbank.org/"
+    },
+    "latest_year": 2024
+  }
+}

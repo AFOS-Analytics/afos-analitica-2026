@@ -124,6 +124,7 @@ export const COUNTRIES_SEO: CountrySEO[] = [
     name: { 'pt-BR': 'Índia', en: 'India', es: 'India' },
     iso3: 'IND', flag: '🇮🇳', region: 'Asia-Pacific',
     elections: [
+      { slug: 'india-2024', year: 2024, type: { 'pt-BR': 'Geral (Lok Sabha)', en: 'General (Lok Sabha)', es: 'General (Lok Sabha)' }, date: '2024-04-19', status: 'completed', polymarketSlug: 'indian-election-how-many-seats-will-the-nda-win' },
       { slug: 'india-2029', year: 2029, type: { 'pt-BR': 'Geral', en: 'General Election', es: 'General' }, date: '2029-04-01', status: 'upcoming', polymarketSlug: 'next-indian-general-election' },
     ],
   },
