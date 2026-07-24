@@ -1,0 +1,38 @@
+{
+  "date": "2026-07-24",
+  "factCheckGate": {
+    "eventos": [
+      {"evento": "Neutralidade da federação União Progressista (PP e União Brasil)", "crossRef": "sem menção em 7 dailies", "verificacao2": {"url": "https://www.poder360.com.br/poder-eleicoes-2026/pp-e-uniao-brasil-decidem-manter-neutralidade-sobre-apoio-a-flavio/", "data": "2026-07-22", "tipo": "evento"}, "segundaFonte": "https://www.metropoles.com/brasil/uniao-e-pp-optam-por-neutralidade-e-ficam-fora-do-palanque-de-flavio", "decisao": "NAO incorporar como evento de 24/Jul; é de 22/Jul (reunião em 21/Jul). Incorporado apenas o desdobramento de 24/Jul (articulação do governo)"},
+      {"evento": "Acordo de reconciliação entre Flávio e Michelle", "crossRef": "19 menções em 7 dailies", "verificacao2": {"url": "https://www.gazetadopovo.com.br/eleicoes/2026/michelle-responde-ao-apelo-de-flavio-vamos-unir-forcas/", "data": "2026-07-23", "tipo": "evento"}, "segundaFonte": "https://www.metropoles.com/colunas/grande-angular/michelle-grava-video-aceitando-desculpas-de-flavio-ela-deve-entrar-na-campanha", "decisao": "incorporar como desdobramento; pedido de desculpas e aceite em 23/Jul, vídeo conjunto noticiado em 24/Jul"},
+      {"evento": "Javier Milei desembarca no Brasil em apoio a Flávio", "crossRef": "7 menções, todas sobre evento distinto (Moraes negou visita em 18/Jul)", "verificacao2": {"url": "https://www.cartacapital.com.br/cartaexpressa/javier-milei-vem-ao-brasil-para-encontro-com-nomes-da-extrema-direita-confira-agenda/", "data": "2026-07-24", "tipo": "evento"}, "segundaFonte": "https://www1.folha.uol.com.br/poder/2026/07/milei-chega-ao-brasil-para-apoiar-candidatura-de-flavio-em-meio-a-avanco-da-direita-na-regiao.shtml", "decisao": "incorporar"},
+      {"evento": "Escopo do inquérito Dark Horse (corrupção e lavagem)", "crossRef": "2 menções em 23/Jul", "verificacao2": {"url": "https://www1.folha.uol.com.br/poder/2026/07/inquerito-sobre-dark-horse-vai-apurar-corrupcao-e-lavagem-e-mirar-flavio-eduardo-e-vorcaro.shtml", "data": "2026-07-24", "tipo": "desdobramento"}, "decisao": "incorporar como desdobramento, não como divisor de águas"}
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims rodado; 16 pares apontados são falsos positivos do extrator (corta 22,95% em 22%) e números de pesquisas estaduais fora dos JSONs nacionais",
+    "fontesInventadas": "3 conferidas ao acaso (Poder360, Metrópoles, Estadão); todas existem na data declarada",
+    "quotesLiterais": "uma (pau-mandado de Lula), atribuída à Gazeta do Povo com link",
+    "causacaoEspuria": "nenhuma; alta de Lula descrita como momentum sem triggador; queda do PL no Senado como correlação com ressalva de volume",
+    "verbosCriticos": "autorizou inquérito datado em 23/Jul; decidiu neutralidade datada em 22/Jul; nenhum verbo de privação de liberdade ou morte",
+    "decisao": "prosseguir"
+  },
+  "leituraIntegralPT": {
+    "defeitosEncontrados": 3,
+    "detalhe": [
+      "ERRO FACTUAL: afirmava que duas pesquisas deixaram de sair em dois dias, juntando Datafolha (data 24/Jul, não saiu) e AtlasIntel (data registrada 28/Jul, ainda não chegou). Corrigido no blockquote e no bullet de síntese",
+      "frase sem verbo principal no parágrafo do Amapá, resultado de edição para densidade de links",
+      "faltava explicitar que os números do Amapá são estaduais"
+    ]
+  },
+  "revisaoTraducoes": {
+    "totalDefeitos": 35,
+    "en": ["exit poll (boca de urna) onde era opinion poll", "inquérito traduzido como poll", "she/he invertido em quem aceitou as desculpas", "link interno apontando para /pt-BR", "that a his statement", "by accuse", "artigo duplicado em Lula's puppet", "artigo indevido antes de nomes próprios (3x)", "hífen espúrio no fim do arquivo", "vírgula decimal no TL;DR (reincidência de 23/Jul)"],
+    "es": ["levantamiento (=insurreição) por encuesta (4x)", "inquérito (pt)", "notició (não existe em espanhol, 3x)", "que una su discurso", "dice respecto (lusismo)", "e fue (pt)", "despliegue noticiado", "parado (=desempregado, 6x)", "urna metafórica obscura em espanhol (3x)", "regência de datas en/el (4x)", "voto en Flávio por votar por Flávio", "artigo faltando/indevido (5x)", "hífen espúrio no fim"]
+  },
+  "validators": {
+    "validate-afos-daily": "0 violações",
+    "validate-polls-data": "exit 0",
+    "urls": "95 idênticas nas 3 versões, nenhuma corrompida"
+  }
+}
