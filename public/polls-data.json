@@ -933,59 +933,59 @@
     "lastUpdate": "2026-07-24"
   },
   "polymarketComparison": {
-    "note": "Cruzamento Polymarket (live 24/Jul 18:38 UTC, degraded false, failedCount 0), a 72 dias do 1º turno, no SEGUNDO dia seguido sem pesquisa nacional de intenção de voto publicada. A Datafolha (Tier 1) estava registrada no TSE para publicação hoje (BR-01166/2026, n=2.004, campo 22 a 24/Jul) e NÃO havia sido divulgada até a captura: o que circulou foram matérias de anúncio, e nenhum número dela entra neste painel enquanto não sair. A urna mais recente segue sendo a Gerp 22/Jul. No topo do book o dia foi de quase imobilidade: Lula ficou em 60,50% pelo terceiro dia (0,00pp), Flávio devolveu 0,20pp da queda de ontem e voltou a 23,05%, Renan subiu 0,10pp para 11,95% e Caiado 0,05pp para 2,10%. O gap de Lula sobre Flávio ficou em +37,45pp, praticamente igual aos +37,65pp de ontem, e segue abaixo do pico do ciclo de +39,5pp (03/Jul). O movimento do dia está nos sub-mercados e nos nomes pequenos, e tem uma direção: o campo bolsonarista foi reprecificado para dentro. Flávio recuperou 4,50pp no 2º lugar do 1º turno, de 70,50% para 75,00%, devolvendo o tombo de ontem, enquanto Renan DESABOU 10,25pp nesse mesmo mercado, de 17,40% para 7,15%, mantendo 67,00% no 3º lugar. O mercado deixou de precificar Renan como alternativa a Flávio no returno e passou a tratá-lo como terceiro colocado. Michelle subiu 0,30pp para 1,25% e Jair 0,15pp para 1,20%, no dia em que Flávio fechou acordo com Michelle, pediu desculpas e ela prometeu apoio, com vídeo de reconciliação a caminho (Folha de S.Paulo, 24/Jul). Zema mais que dobrou, de 0,45% para 0,95%. Em sentido oposto, o PL no Senado por cadeiras caiu 11,50pp, de 72,00% para 60,50%, e o MDB caiu 5,25pp, para 15,65%, no dia em que a federação União Progressista (PP e União Brasil) definiu neutralidade na disputa presidencial, com articulação do governo Lula (G1, Folha de S.Paulo, 24/Jul). O AFOS registra a coincidência de calendário e NÃO afirma causa, com a ressalva de base: o book inteiro do Senado tem volume acumulado de USD 291 mil contra USD 115,46M do presidencial, então variação grande em percentual não significa dinheiro grande. O STF impeach subiu 0,55pp para 3,50% (vol USD 83 mil). Volume acumulado no presidencial em USD 115,46M.",
-    "sources": "Polymarket via proxy AFOS (live 24/Jul 18:38 UTC, degraded false, failedCount 0) + série histórica /api/market/history, slug brazil-presidential-election, janela de 18 dias + registro TSE via /api/polls/tse (Datafolha BR-01166/2026 registrada para 24/Jul, sem divulgação até a captura) + União Progressista neutra na presidencial (G1, Folha de S.Paulo, 24/Jul) + acordo entre Flávio e Michelle (Folha de S.Paulo, 24/Jul) + inquérito do filme Dark Horse com apuração de corrupção e lavagem mirando Flávio, Eduardo e Vorcaro (Folha de S.Paulo, 24/Jul) + Milei no Brasil em apoio a Flávio (Folha de S.Paulo, 24/Jul) + Gerp/AESP 22/Jul (Exame, Gazeta do Povo, CNN Brasil, Poder360, BR-05026/2026) + Indexa 21/Jul (JOTA, CartaCapital, BR-02904/2026) + Real Time Big Data 21/Jul (Exame, CNN Brasil, VEJA, BR-09247/2026) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, VEJA)",
+    "note": "Cruzamento Polymarket (live 24/Jul 20:31 UTC, degraded false, failedCount 0), a 72 dias do 1º turno, no SEGUNDO dia seguido sem pesquisa nacional de intenção de voto publicada. A Datafolha (Tier 1) estava registrada no TSE para publicação hoje (BR-01166/2026, n=2.004, campo 22 a 24/Jul) e NÃO havia sido divulgada até a captura: o que circulou foram matérias de anúncio, e nenhum número dela entra neste painel enquanto não sair. A urna mais recente segue sendo a Gerp 22/Jul. O movimento do dia foi de Lula: depois de três pregões travado em 60,50%, rompeu a faixa e fechou em 61,50% (alta 1,00pp), o maior valor dele desde 15/Jul, enquanto Flávio ficou praticamente parado em 22,95% (alta 0,10pp). O gap subiu para +38,55pp, o maior desde 09/Jul (38,60pp), e segue abaixo do pico do ciclo de +39,5pp (03/Jul). A diferença em relação a 23/Jul é de natureza: ontem o gap abriu porque o adversário caiu, hoje abriu porque o favorito subiu. Não há evento triggador identificado no horário, então a leitura é momentum de mercado. O segundo movimento foi um rearranjo no sub-mercado de 2º lugar do 1º turno: Flávio recuperou 3,50pp, para 74,00%, e Renan caiu 6,00pp, de 17,40% para 11,40%, mantendo 67,00% no 3º lugar, ou seja, o mercado reduziu a hipótese de Renan substituir Flávio no returno sem mexer no preço principal dele (11,75%, queda 0,10pp). No pelotão só Zema subiu, mais que dobrando para 0,95%, enquanto Caiado devolveu a alta da véspera (1,75%), Michelle recuou (0,85%) e Haddad ficou parado (0,35%). Na política, reportagens de 24/Jul mostraram que a neutralidade da federação União Progressista (PP e União Brasil), decidida em 22/Jul, saiu de articulação do governo Lula, e que a vice de Flávio segue travada pela falta de apoio do centrão (G1, Folha de S.Paulo, UOL, O Globo); também em 24/Jul, Javier Milei desembarcou no Brasil para discursar na convenção do PL de 25/Jul (Folha de S.Paulo, CartaCapital) e a reconciliação com Michelle avançou para vídeo conjunto, depois do pedido de desculpas de 23/Jul (Gazeta do Povo, Metrópoles). Nenhum desses fatos teve contrapartida clara de preço. No Senado por cadeiras o PL caiu 3,50pp, para 68,50%, e o MDB 5,45pp, para 15,45%, com a ressalva de base: esse book soma USD 292 mil de volume acumulado contra USD 115,55M do presidencial. O STF impeach subiu 0,60pp para 3,55% (vol USD 83 mil). Volume acumulado no presidencial em USD 115,55M.",
+    "sources": "Polymarket via proxy AFOS (live 24/Jul 20:31 UTC, degraded false, failedCount 0) + série histórica /api/market/history, slug brazil-presidential-election, janelas de 22 e 90 dias + registro TSE via /api/polls/tse (Datafolha BR-01166/2026 registrada para 24/Jul, sem divulgação até a captura) + articulação do governo por trás da neutralidade da União Progressista, decidida em 22/Jul (G1, Folha de S.Paulo, O Globo, 24/Jul; decisão confirmada por Poder360 e Metrópoles em 22/Jul) + reconciliação entre Flávio e Michelle avançando para vídeo conjunto após o pedido de desculpas de 23/Jul (Gazeta do Povo, Metrópoles, 24/Jul) + inquérito do filme Dark Horse com apuração de corrupção e lavagem mirando Flávio, Eduardo e Vorcaro (Folha de S.Paulo, 24/Jul) + Milei desembarcando no Brasil em 24/Jul para discursar na convenção do PL de 25/Jul (Folha de S.Paulo, CartaCapital, Metrópoles) + Gerp/AESP 22/Jul (Exame, Gazeta do Povo, CNN Brasil, Poder360, BR-05026/2026) + Indexa 21/Jul (JOTA, CartaCapital, BR-02904/2026) + Real Time Big Data 21/Jul (Exame, CNN Brasil, VEJA, BR-09247/2026) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, VEJA)",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-46%",
-        "polymarket": "60.50%",
+        "polymarket": "61.50%",
         "tendenciaPesquisa": "Segundo dia seguido sem urna nova, e a Datafolha registrada para hoje não saiu até a captura. A referência segue sendo a Gerp 22/Jul, casa outlier pró-Flávio, que o dá empatado no 1º turno (38% x 38%) e perdendo o returno direto por 45% x 46%, mas vencendo Caiado (44x41), Zema (44x38) e Renan (45x35). As duas de 21/Jul o davam liderando o 1º turno com 40-41%, e o consenso Tier 1 mais forte segue sendo a Quaest 15/Jul (Lula +12pp no 1T). A avaliação mais recente é a PoderData 22/Jul, com a desaprovação pessoal caindo de 50% para 47%.",
-        "tendenciaPolymarket": "ESTÁVEL a 60,50% (0,00pp, vol USD 7,61M) pelo TERCEIRO dia seguido. O gap sobre Flávio recuou 0,20pp, para +37,45pp, porque o adversário devolveu parte da queda de ontem. Ele não se mexe há três pregões: nem o tombo de Flávio na véspera nem a recomposição do campo bolsonarista hoje tiraram o preço dele do lugar. Segue abaixo do pico do ciclo de +39,5pp (03/Jul).",
-        "odds": 60.5,
+        "tendenciaPolymarket": "SOBE 1,00pp para 61,50% (vol USD 7,63M), rompendo os 61% pela primeira vez desde 15/Jul depois de três pregões travado em 60,50%. O gap sobre Flávio subiu para +38,55pp, o maior desde 09/Jul (38,60pp), e desta vez por passo próprio: o adversário ficou parado. Segue abaixo do pico do ciclo de +39,5pp (03/Jul). Sem evento triggador identificado no horário, a leitura é momentum de mercado.",
+        "odds": 61.5,
         "percentage": 45,
         "lastUpdate": "2026-07-24",
-        "value": 60.5
+        "value": 61.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-46%",
-        "polymarket": "23.05%",
+        "polymarket": "22.95%",
         "tendenciaPesquisa": "Segundo dia sem urna nova, e a Datafolha registrada para hoje não saiu até a captura. A Gerp 22/Jul segue sendo a leitura mais favorável a ele do recorte: empata Lula no 1º turno (38x38) e fica à frente no returno direto (46x45), mas é o instituto outlier pró-Flávio, reliability 3, sistematicamente mais generoso com ele que o Tier 1. As duas de 21/Jul o mantêm em 30-33% no 1º turno e perdendo o 2º contra Lula. Rejeição alta e estável: Gerp 46%, Indexa e Real Time 50%.",
-        "tendenciaPolymarket": "RECUPERA 0,20pp, para 23,05% (vol USD 7,63M), depois de dois dias de queda, e volta a 75,00% no 2º lugar do 1º turno, alta de 4,50pp que devolve os 7,50pp perdidos ontem. O dia foi de recomposição do campo dele: Michelle subiu 0,30pp e Jair 0,15pp, na data do acordo com Michelle. Em sentido contrário, o PL no Senado por cadeiras caiu 11,50pp, para 60,50%, no dia em que a federação União Progressista declarou neutralidade na presidencial.",
-        "odds": 23.05,
+        "tendenciaPolymarket": "PRATICAMENTE PARADO em 22,95% (alta 0,10pp, vol USD 7,64M) depois do tombo de 2,10pp da véspera, e o gap sobre ele cresceu mesmo assim porque quem andou foi Lula. A recuperação apareceu num lugar só: voltou a 74,00% no 2º lugar do 1º turno (alta 3,50pp), com Renan caindo de 17,40% para 11,40% ali. O mercado devolveu a ele a condição de adversário provável no returno, sem devolver probabilidade de vitória.",
+        "odds": 22.95,
         "percentage": 46,
         "lastUpdate": "2026-07-24",
-        "value": 23.05
+        "value": 22.95
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-9%",
-        "polymarket": "11.95%",
+        "polymarket": "11.75%",
         "tendenciaPesquisa": "Segundo dia sem urna nova, e a Datafolha, que era o teste do caso, não saiu até a captura. A referência majoritária segue em 3%: Gerp 22/Jul e Indexa 21/Jul, contra os 9% isolados da Real Time 21/Jul. Aos 11,95%, o preço segue acima até dos 9%, a leitura de urna mais alta do ciclo, de modo que nenhuma pesquisa dá lastro ao patamar. No 2º turno direto a Gerp o dá perdendo de Lula por 35x45.",
-        "tendenciaPolymarket": "SUBIU 0,10pp para 11,95% no vencedor (vol USD 8,43M, o maior do book entre os nomes competitivos), mas o dado do dia é outro: DESABOU 10,25pp no 2º lugar do 1º turno, de 17,40% para 7,15%, mantendo 67,00% no 3º lugar (queda de 1,00pp). O mercado o realocou, deixou de precificá-lo como alternativa a Flávio no returno e passou a tratá-lo como terceiro colocado. RESSALVA DE SÉRIE, medida na série completa do ciclo: 11,95% não é o máximo do ciclo. Renan valeu 17,9% em 09/Jun e 12,8% em 01/Jul, e caiu ao piso de 7,8% em 17/Jul.",
-        "odds": 11.95,
+        "tendenciaPolymarket": "QUASE PARADO no vencedor, 11,75% (queda 0,10pp, vol USD 8,45M, o maior do book entre os nomes competitivos), mas o dado do dia é outro: CAIU 6,00pp no 2º lugar do 1º turno, de 17,40% para 11,40%, mantendo 67,00% no 3º lugar (queda de 1,00pp). O mercado reduziu a hipótese dele como substituto de Flávio no returno e o manteve como terceiro colocado. RESSALVA DE SÉRIE, medida na série completa do ciclo: 11,75% não é o máximo do ciclo. Renan valeu 17,9% em 09/Jun e 12,8% em 01/Jul, e caiu ao piso de 7,8% em 17/Jul.",
+        "odds": 11.75,
         "percentage": 9,
         "lastUpdate": "2026-07-24",
-        "value": 11.95
+        "value": 11.75
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "2.10%",
+        "polymarket": "1.75%",
         "tendenciaPesquisa": "Segundo dia sem urna nova. A faixa nas três recentes segue em 3-7% (Gerp 3, Indexa 6, Real Time 7), e a Gerp dá Lula à frente no 2º turno direto (44x41), não o empate (44x43) que a Real Time apontara. Fez campanha contra o adversário do próprio campo hoje, dizendo que voto em Flávio ajuda a reeleger Lula (Blog do Esmael) e acusando Lula e Flávio de explorarem a crise tarifária (iG).",
-        "tendenciaPolymarket": "SUBIU 0,05pp para 2,10% (vol USD 5,11M), alta miúda que mantém o patamar mais alto dele no ciclo recente, e ficou estável a 16,50% no 3º lugar do 1º turno. Mede 3-7% de voto declarado e vale 2,10% no book de vencedor.",
-        "odds": 2.1,
+        "tendenciaPolymarket": "CAI 0,30pp para 1,75% (vol USD 5,11M), devolvendo a alta da véspera, e recua 0,50pp no 3º lugar do 1º turno, para 16,00%. Mede 3-7% de voto declarado e vale 1,75% no book de vencedor.",
+        "odds": 1.75,
         "percentage": 7,
         "lastUpdate": "2026-07-24",
-        "value": 2.1
+        "value": 1.75
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "sem dados nacionais (foco SP)",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais. Foco na reeleição em SP, onde a Datafolha 05/Jul o dá com 46% x Haddad 30% e aprovação de 45%. A Datafolha divulgou em 24/Jul novas rodadas estaduais de São Paulo, para governador e para o Senado, que ficam fora deste painel nacional.",
-        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,56M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras houve o maior deslocamento percentual do dia: o PL caiu 11,50pp, de 72,00% para 60,50%, e o MDB caiu 5,25pp, para 15,65%, na data em que a federação União Progressista definiu neutralidade na presidencial. Ressalva de base, e ela é decisiva: o book inteiro do Senado soma USD 291 mil de volume acumulado contra USD 115,46M do presidencial, então movimento grande em percentual não significa dinheiro grande.",
+        "tendenciaPolymarket": "Estável a 0,15% no presidencial (anomalia de legado, vol USD 13,57M lifetime, o maior volume individual do book presidencial). No Senado por cadeiras o PL caiu 3,50pp, de 72,00% para 68,50%, e o MDB caiu 5,45pp, para 15,45%, na data em que se soube da articulação do governo por trás da neutralidade da federação União Progressista, decidida em 22/Jul. Ressalva de base, e ela é decisiva: o book inteiro do Senado soma USD 292 mil de volume acumulado contra USD 115,55M do presidencial, então movimento em percentual não significa dinheiro grande.",
         "odds": 0.15,
         "percentage": 0,
         "lastUpdate": "2026-07-24",
@@ -996,7 +996,7 @@
         "pesquisaRange": "3%",
         "polymarket": "0.95%",
         "tendenciaPesquisa": "Segundo dia sem urna nova. A Gerp 22/Jul o dá com 3% no 1º turno e perdendo o returno para Lula por 38x44, mesmo patamar da Indexa 21/Jul (3%). Segue no pelotão de baixo da 3ª via, sem vice anunciado depois de Michelle ter descartado a vaga.",
-        "tendenciaPolymarket": "MAIS QUE DOBROU, de 0,45% para 0,95% (alta 0,50pp, vol USD 4,52M), a maior variação relativa do book presidencial no dia, e sem nenhuma pesquisa nova para justificar. Continua medindo 3% na urna, então a alta é do mercado, não do voto declarado. Ontem ele havia ficado de fora da rotação, hoje foi o nome pequeno que mais se moveu.",
+        "tendenciaPolymarket": "MAIS QUE DOBROU, de 0,45% para 0,95% (alta 0,50pp, vol USD 4,52M), a maior variação relativa do book presidencial no dia e o único nome do pelotão a subir, sem nenhuma pesquisa nova para justificar. Continua medindo 3% na urna, então a alta é do mercado, não do voto declarado.",
         "odds": 0.95,
         "percentage": 3,
         "lastUpdate": "2026-07-24",
@@ -1007,7 +1007,7 @@
         "pesquisaRange": "sem dados nacionais",
         "polymarket": "0.35%",
         "tendenciaPesquisa": "As nacionais não testam Haddad no presidencial (foco no governo de SP). Na Datafolha SP 05/Jul, Tarcísio lidera com 46% x Haddad 30%. A Datafolha divulgou nova rodada estadual de São Paulo em 24/Jul, fora do escopo deste painel nacional.",
-        "tendenciaPolymarket": "ESTÁVEL a 0,35% (vol USD 6,33M). Ficou de fora da recomposição do dia, que se concentrou no campo bolsonarista e em Zema. O preço aqui segue sendo resíduo de nome conhecido num book fino, não sinal de candidatura presidencial.",
+        "tendenciaPolymarket": "ESTÁVEL a 0,35% (vol USD 6,33M) no dia em que Lula subiu 1,00pp, sinal de que o mercado não trata o preço dele como derivado do desempenho do PT. Segue sendo resíduo de nome conhecido num book fino, não sinal de candidatura presidencial.",
         "odds": 0.35,
         "percentage": 0,
         "lastUpdate": "2026-07-24",
