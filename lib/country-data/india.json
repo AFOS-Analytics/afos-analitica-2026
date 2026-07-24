@@ -1,6 +1,7 @@
 {
   "iso3": "IND",
   "hf": "https://huggingface.co/datasets/AFOS-Analytics1/india-2024-lok-sabha-electoral-divergence",
+  "harvard": "https://doi.org/10.7910/DVN/CNLXZJ",
   "election": {
     "first_round": "2024-04-19",
     "runoff": "",

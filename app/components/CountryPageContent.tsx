@@ -72,7 +72,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
     USA: '10.7910/DVN/3DJCW5', PER: '10.7910/DVN/JBBGXV', BRA: '10.7910/DVN/2D0UK7', COL: '10.7910/DVN/X7JUEG',
     KOR: '10.7910/DVN/WRBDVI', CHL: '10.7910/DVN/5PLWZ7', DEU: '10.7910/DVN/W9XGXM',
     CAN: '10.7910/DVN/BBO36K', GBR: '10.7910/DVN/CUKDRJ', MEX: '10.7910/DVN/5A4LLJ',
-    FRA: '10.7910/DVN/N51NQF',
+    FRA: '10.7910/DVN/N51NQF', IND: '10.7910/DVN/CNLXZJ',
   }
   const harvardDoi = HARVARD_DOI[country.iso3]
   const graphNav: NavGroup[] = harvardDoi ? [
