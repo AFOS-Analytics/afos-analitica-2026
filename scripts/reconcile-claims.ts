@@ -24,6 +24,8 @@
  *   npx tsx scripts/reconcile-claims.ts 2026-05-01 --strict   # falha em qualquer divergencia
  */
 import { readFileSync, existsSync } from 'fs'
+// parseFloat NAO serve aqui: parseFloat('22,95') === 22. Ver scripts/lib/numeric.ts.
+import { parseNumeric } from './lib/numeric'
 import { join } from 'path'
 import { isValidDate, readDailyMarkdown } from './lib/daily-files'
 
@@ -52,8 +54,8 @@ function extractClaimsFromMarkdown(text: string): Claim[] {
     let m: RegExpExecArray | null
     re.lastIndex = 0
     while ((m = re.exec(line)) !== null) {
-      const v = parseFloat(m[1])
-      if (Number.isNaN(v)) continue
+      const v = parseNumeric(m[1], 'pt')
+      if (v === null) continue
       // Captura ~80 chars de contexto antes da match
       const start = Math.max(0, m.index - 80)
       const ctx = line.slice(start, m.index + m[0].length).trim()
@@ -79,8 +81,8 @@ function extractValuesFromJson(obj: unknown, accumulator: Set<number>): void {
     const re = /(?<![\d.,])([+-]?\d+(?:[.,]\d+)?)\s*(%|pp)(?![A-Za-z0-9])/g
     let m: RegExpExecArray | null
     while ((m = re.exec(obj)) !== null) {
-      const v = parseFloat(m[1])
-      if (!Number.isNaN(v)) accumulator.add(Math.round(v * 100) / 100)
+      const v = parseNumeric(m[1], 'pt')
+      if (v !== null) accumulator.add(Math.round(v * 100) / 100)
     }
     return
   }
@@ -159,8 +161,8 @@ function extractNamedClaims(text: string, source: 'markdown' | 'json'): NamedCla
     let m: RegExpExecArray | null
     re.lastIndex = 0
     while ((m = re.exec(line)) !== null) {
-      const v = parseFloat(m[1])
-      if (Number.isNaN(v)) continue
+      const v = parseNumeric(m[1], 'pt')
+      if (v === null) continue
       // Procurar entidade nas 80 chars anteriores
       const start = Math.max(0, m.index - 80)
       const before = line.slice(start, m.index)
