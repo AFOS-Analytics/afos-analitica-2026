@@ -12,6 +12,7 @@
  */
 import { readFileSync, existsSync } from 'fs'
 import { join } from 'path'
+import { checkStaleSurvivors } from './lib/stale-survivors'
 
 const path = join(process.cwd(), 'public', 'polls-data.json')
 const raw = readFileSync(path, 'utf-8')
@@ -226,6 +227,19 @@ if (!existsSync(critPath)) {
       else if (typeof r.n !== 'string') errors.push(`analysis-criteriosa.quadroComparativo[${i}]: campo 'n' (nome) ausente/inválido`)
     })
   }
+}
+
+// Valor obsoleto sobrevivente a rebaseline. Compara a prosa de cada candidato
+// contra o preço da revisão anterior do arquivo. Instalado em 24/Jul/2026,
+// depois que o rebaseline daquele dia deixou "Aos 11,95%" numa frase enquanto
+// o preço já era 11,75%, e a frase foi para produção. Backtestado contra o
+// incidente: detecta, e não acusa a versão corrigida.
+try {
+  errors.push(...checkStaleSurvivors(data))
+} catch (err) {
+  // Fora de repositório git ou histórico indisponível: a checagem não roda,
+  // mas isso não pode derrubar o validador inteiro.
+  warnings.push(`stale-survivors não pôde rodar: ${err instanceof Error ? err.message : String(err)}`)
 }
 
 if (warnings.length > 0) {

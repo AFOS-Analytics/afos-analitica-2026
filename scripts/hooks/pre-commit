@@ -12,7 +12,11 @@ set -e
 # Lista arquivos staged. Se polls-data.json não está no commit, sai 0 (passa).
 STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || echo "")
 
-if echo "$STAGED" | grep -qE '(^|/)public/(polls-data|analysis-criteriosa)\.json$'; then
+# Os 4 arquivos carregam os MESMOS números. Antes o hook só disparava em 2
+# deles, então um commit que mexesse apenas em analysis-data.json ou no
+# CandidatesSection.tsx passava sem validação nenhuma. Só não apareceu porque
+# o /atualizar commita os quatro juntos; qualquer correção pontual escapava.
+if echo "$STAGED" | grep -qE '(^|/)(public/(polls-data|analysis-criteriosa|analysis-data)\.json|app/components/CandidatesSection\.tsx)$'; then
   echo "🔍 pre-commit: polls-data/analysis-criteriosa staged — validando schema canônico..."
   if ! npx tsx scripts/validate-polls-data.ts; then
     echo ""
