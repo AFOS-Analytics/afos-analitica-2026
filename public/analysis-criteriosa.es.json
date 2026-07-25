@@ -1,0 +1,160 @@
+{
+  "updatedAt": "24/07/2026, 17:31",
+  "subtitle": "ACTUALIZACIÓN 24/Jul 17:31 BRT, a 72 días de la [primera vuelta](/es/glossary#primeiro-turno). Segundo día seguido sin encuesta nacional nueva de intención de voto: la [Datafolha](/es/glossary#datafolha) (Tier 1) estaba registrada en el [TSE](/es/glossary#tse) para hoy (BR-01166/2026, n=2.004, campo del 22 al 24 de julio) y NO fue divulgada hasta la captura de mercado, así que ningún número suyo entra aquí y la encuesta más reciente sigue siendo la Gerp del 22 de julio. El movimiento del día fue de Lula, que rompió el 61% por primera vez desde el 15 de julio y cerró la captura en 61,50% (alza de 1,00pp), mientras Flávio quedó prácticamente estancado en 22,95% (alza de 0,10pp). La brecha subió a +38,55pp, la mayor desde el 9 de julio (38,60pp) y todavía por debajo del pico del ciclo de +39,5pp (3 de julio). Distinto de ayer, cuando la brecha se abrió por caída del adversario, hoy se abrió por alza del favorito. Renan quedó casi inmóvil en el ganador (11,75%, caída de 0,10pp), pero perdió 6,00pp en el 2º lugar de la 1ª vuelta, de 17,40% a 11,40%, con Flávio recuperando 3,50pp allí (74,00%). En el pelotón, solo Zema subió, más que duplicando a 0,95%; Caiado retrocedió a 1,75% y Michelle a 0,85%. En el Senado por escaños el [PL](/es/glossary#pl) cayó 3,50pp, a 68,50%, en la semana en que la federación União Progressista cerró la neutralidad en la presidencial, decidida el 22 de julio, y el día en que se supo de la actuación del gobierno de Lula para producir ese resultado (G1, Folha de S.Paulo, 24 de julio), con la salvedad de que ese book suma apenas USD 292 mil de volumen. Cruce con [Polymarket](/es/glossary#polymarket) en vivo 24 de julio 20:31 UTC.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "[Polymarket](/es/glossary#polymarket) 61,50% (alza de 1,00pp, vol USD 7,63M acumulado), a 72 días de la elección. Rompió el 61% por primera vez desde el 15 de julio. La brecha sobre Flávio subió a +38,55pp, la mayor desde el 9 de julio (38,60pp) y por debajo del pico del ciclo (+39,5pp el 3 de julio).",
+      "fortes": [
+        "Salió del rango en el que estaba atrapado: 61,50% después de tres días inmóvil en 60,50%, y es el mayor valor suyo desde el 15 de julio.",
+        "Distinto de ayer, la brecha se abrió por alza propia y no por caída del adversario. Ganó 1,00pp mientras Flávio quedó prácticamente estancado.",
+        "La brecha de +38,55pp es la mayor desde el 9 de julio, cuando marcó 38,60pp, y recuperó casi toda la convergencia de las tres semanas anteriores.",
+        "La articulación política apareció por escrito: reportajes del 24 de julio mostraron la actuación directa del gobierno para alejar al [centrão](/es/glossary#centrao) de Flávio, esfuerzo que resultó en la neutralidad de la federación União Progressista, decidida el 22 de julio (G1, Folha de S.Paulo).",
+        "En la encuesta más reciente, la Gerp del 22 de julio, aun siendo la casa outlier pro-Flávio, le gana a Caiado (44x41), Zema (44x38) y Renan (45x35), perdiendo solo la segunda vuelta directa por 1pp.",
+        "El consenso Tier 1 más fuerte del recorte sigue siendo la [Quaest](/es/glossary#quaest) del 15 de julio (n=2.004, presencial, reliability 5), que le dio +12pp en la 1ª vuelta y +8pp en la 2ª."
+      ],
+      "fracos": [
+        "El alza no tiene evento disparador identificado en el horario: es momentum de mercado, no reacción declarada a un hecho nuevo, y un movimiento sin causa documentada se deshace con la misma facilidad con que vino.",
+        "La distancia de nivel persiste: 61,50% de probabilidad implícita contra encuestas que van de +12pp ([Quaest](/es/glossary#quaest) 15 de julio) a desventaja en la segunda vuelta directa (Gerp 22 de julio).",
+        "La prueba de urnas que estaba marcada para hoy no ocurrió. La [Datafolha](/es/glossary#datafolha) quedó registrada y no divulgada, así que el panel entra en el fin de semana con la última lectura viniendo de una casa outlier.",
+        "La aprobación mejoró pero no se dio vuelta: la PoderData del 22 de julio todavía da al gobierno en 43% aprueba contra 51% desaprueba.",
+        "La dispersión entre institutos sigue elevada: en la 1ª vuelta las recientes van de empate 38x38 (Gerp) a Lula +12pp (Quaest), lo que mantiene la incertidumbre sobre el tamaño real de la ventaja.",
+        "Rechazo alto y estable en las tres últimas nacionales: 47% en la Gerp, 49% en la Indexa, 48% en la Real Time, siempre cerca del de Flávio.",
+        "La agenda en el Congreso sigue trabada: más de 20 derrotas en su tercer mandato (Poder360), medidas provisorias caducadas en julio, y un paquete de crédito de R$ 145 mil millones por fuera del marco fiscal en año electoral (Estadão)."
+      ],
+      "analise": "Después de tres sesiones inmóvil en 60,50%, Lula rompió el rango y cerró la captura en 61,50% (alza de 1,00pp, vol USD 7,63M acumulado), el mayor valor suyo desde el 15 de julio. La diferencia respecto de los dos días anteriores es de naturaleza, no de tamaño: ayer la brecha se abrió 2,10pp porque Flávio cayó, hoy se abrió 0,90pp porque Lula subió, con el adversario prácticamente inmóvil. La brecha llegó a +38,55pp, la mayor desde el 9 de julio, cuando marcó 38,60pp, y sigue por debajo del pico del ciclo de +39,5pp el 3 de julio. No hay evento disparador identificado en el horario del movimiento, así que la lectura correcta es momentum de mercado, y AFOS no atribuye el alza a ninguna noticia específica. La prueba que estaba en el calendario no vino: la [Datafolha](/es/glossary#datafolha) estaba registrada en el [TSE](/es/glossary#tse) para publicación hoy, con n=2.004 y campo del 22 al 24 de julio, y hasta la captura lo que circuló fueron notas de anuncio, ningún resultado. Vale aquí la misma vara aplicada ayer a la [AtlasIntel](/es/glossary#atlasintel): registro no es publicación, y ningún número entra antes de la divulgación. La encuesta más reciente sigue siendo la Gerp del 22 de julio, la casa outlier pro-Flávio, que lo empata en la 1ª vuelta (38x38) y lo pone 1pp atrás en la segunda vuelta directa. En el terreno político el día fue bueno para él: reportajes del 24 de julio mostraron que el gobierno actuó directamente para alejar al [centrão](/es/glossary#centrao) de Flávio, esfuerzo que resultó en la neutralidad de la federación União Progressista, decidida el 22 de julio (G1, Folha de S.Paulo). Las convenciones corren hasta el 5 de agosto, y la del [PL](/es/glossary#pl) es mañana, 25 de julio."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "[Polymarket](/es/glossary#polymarket) 22,95% (alza de 0,10pp, vol USD 7,64M acumulado), prácticamente inmóvil tras la caída de ayer. En el 2º lugar de la 1ª vuelta recuperó 3,50pp, de 70,50% a 74,00%, y la brecha de Lula sobre él subió a +38,55pp porque el favorito se movió, no porque él cayera de nuevo.",
+      "fortes": [
+        "Contuvo la caída: después de perder 2,10pp el 23 de julio, quedó prácticamente inmóvil en 22,95% (alza de 0,10pp).",
+        "Recuperó 3,50pp en el 2º lugar de la 1ª vuelta, a 74,00%, con Renan cayendo de 17,40% a 11,40% en el mismo mercado.",
+        "La reconciliación con Michelle Bolsonaro avanzó: después del pedido de disculpas en video la tarde del 23 de julio y de la aceptación de ella esa misma noche, los dos deben grabar un video juntos y ella debe entrar en la campaña (Folha de S.Paulo, Gazeta do Povo, Metrópoles, 24 de julio).",
+        "Javier Milei desembarcó en Brasil el 24 de julio y fue invitado a disertar en la convención del [PL](/es/glossary#pl) del 25 de julio, cuando la candidatura será oficializada (Folha de S.Paulo, CartaCapital, Metrópoles).",
+        "La encuesta más reciente todavía le es favorable: la Gerp del 22 de julio lo empata con Lula en la 1ª vuelta (38x38) y lo pone al frente en la segunda vuelta directa (46x45).",
+        "Su rechazo en la Gerp (46%) quedó por debajo del de Lula (47%), la lectura menos negativa del recorte para él."
+      ],
+      "fracos": [
+        "La neutralidad de la federación União Progressista (PP y [União Brasil](/es/glossary#uniao-brasil)), decidida el 22 de julio, apareció el 24 de julio como resultado de una articulación del gobierno de Lula para alejar de él al [centrão](/es/glossary#centrao) (G1, Folha de S.Paulo), y el [PL](/es/glossary#pl) resiste sin conseguir revertirla (O Globo, 24 de julio). El PL cayó 3,50pp en el book del Senado por escaños en la misma fecha.",
+        "La definición de la vicepresidencia choca justamente con la falta de apoyo del centrão (UOL, 24 de julio), y la convención del PL es mañana, 25 de julio, todavía sin nombre.",
+        "La investigación autorizada el 23 de julio por Mendonça ganó alcance: va a indagar corrupción y lavado de dinero y apunta a él, a Eduardo Bolsonaro y a Daniel Vorcaro (Folha de S.Paulo, 24 de julio). Él niega ventaja indebida y sostiene que los recursos eran privados.",
+        "Subió el tono contra la Policía Federal, llamando al director general [pau-mandado](/es/glossary#pau-mandado) de Lula (Gazeta do Povo, 24 de julio), en un momento en que es blanco de una investigación de la propia [PF](/es/glossary#pf).",
+        "Su frase con dato falso sobre las urnas electrónicas incomodó a diplomáticos, que ven potencial de efecto sobre la elección, y Eduardo Bolsonaro volvió a desacreditar el sistema electoral a continuación (Folha de S.Paulo, 24 de julio).",
+        "No capturó nada de la recomposición: su precio quedó inmóvil mientras Lula subía 1,00pp, y la brecha volvió al mayor nivel desde el 9 de julio.",
+        "Las dos nacionales del 21 de julio lo mantienen en 30-33% en la 1ª vuelta y perdiendo la segunda contra Lula, un nivel más bajo del que ya ocupó."
+      ],
+      "analise": "Flávio contuvo la caída sin revertir nada. Después de perder 2,10pp el 23 de julio, quedó prácticamente inmóvil hoy, en 22,95% (alza de 0,10pp, vol USD 7,64M acumulado), y la brecha de Lula sobre él subió igual, a +38,55pp, porque quien se movió fue el favorito. La recuperación apareció en un solo lugar, el submercado de 2º lugar de la 1ª vuelta, donde volvió de 70,50% a 74,00%, alza de 3,50pp, con contrapartida directa en Renan, que cayó de 17,40% a 11,40% allí. Es decir, el mercado le devolvió la condición de adversario probable de Lula en la segunda vuelta, sin devolverle probabilidad de victoria. En el terreno político el día trajo dos noticias buenas y varias malas. Buenas: la reconciliación con Michelle avanzó hacia un video conjunto, después del pedido de disculpas de él y de la aceptación de ella el 23 de julio, y Javier Milei desembarcó en Brasil el 24 de julio para disertar en la convención del [PL](/es/glossary#pl) (Folha de S.Paulo, Gazeta do Povo, CartaCapital). Malas: reportajes del 24 de julio mostraron que la neutralidad de la federación União Progressista, decidida el 22 de julio, salió de una articulación del gobierno de Lula, y la elección de la vicepresidencia sigue trabada por la misma falta de apoyo del [centrão](/es/glossary#centrao) (G1, UOL), la investigación autorizada el 23 de julio apareció hoy con alcance de corrupción y lavado apuntando a él, a Eduardo y a Vorcaro (Folha), y llamó al director general de la [PF](/es/glossary#pf) [pau-mandado](/es/glossary#pau-mandado) de Lula (Gazeta do Povo). En el mercado, el PL cayó 3,50pp en el book del Senado por escaños, de 72,00% a 68,50%, con la salvedad obligatoria de que ese mercado tiene volumen acumulado de USD 292 mil, órdenes de magnitud por debajo del presidencial. La convención del PL es mañana, todavía sin vicepresidente."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "[Polymarket](/es/glossary#polymarket) 11,75% en el ganador (caída de 0,10pp, vol USD 8,45M acumulado), el segundo mayor precio del book y el mayor volumen individual entre los nombres competitivos. El movimiento del día fue en el submercado: cayó 6,00pp en el 2º lugar de la 1ª vuelta, de 17,40% a 11,40%, manteniendo 67,00% en el 3º lugar.",
+      "fortes": [
+        "Sostuvo el nivel reciente en el ganador: 11,75% después de haber salido del piso de 7,8% el 17 de julio, un avance de casi 4pp en poco más de una semana.",
+        "Sigue firme en el 3º lugar de la 1ª vuelta, con 67,00%, un nivel que cayó solo 1,00pp incluso con el reordenamiento del día.",
+        "Tiene el mayor volumen acumulado entre los nombres competitivos del book presidencial, USD 8,45M, por encima de Lula (7,63M) y de Flávio (7,64M).",
+        "Una de las tres nacionales recientes, la Real Time del 21 de julio, sostiene 9% en la 1ª vuelta, mostrando que el nivel de precio no es imposible en las urnas, por aislado que esté.",
+        "Ciro Gomes lo citó por su nombre como posibilidad de voto, junto a Caiado, dejando a Flávio fuera (Folha, Gazeta do Povo)."
+      ],
+      "fracos": [
+        "Perdió 6,00pp en el 2º lugar de la 1ª vuelta, de 17,40% a 11,40%, el mayor retroceso del panel en la fecha, mientras Flávio recuperaba 3,50pp en el mismo mercado.",
+        "La lectura mayoritaria sigue en 3%: Gerp 22 de julio e Indexa 21 de julio lo miden en 3%, y solo la Real Time dio 9%. Nada en las encuestas cambió, porque ninguna nacional salió.",
+        "El precio de 11,75% sigue por encima de la lectura de encuestas más alta del ciclo (el 9% de la Real Time), así que no hay ninguna encuesta que sostenga el nivel actual.",
+        "La prueba que decidiría el caso no vino: la [Datafolha](/es/glossary#datafolha) estaba registrada para hoy (BR-01166/2026) y no fue divulgada hasta la captura, así que la distorsión entra en el fin de semana sin arbitraje de encuestas.",
+        "En la segunda vuelta directa, la Gerp lo da perdiendo con Lula por 35 a 45, sin competitividad, lo mismo que había apuntado la Real Time (44x35).",
+        "Medido en la serie completa del ciclo, el nivel de hoy no es máximo: ya valió 17,9% el 9 de junio y 12,8% el 1 de julio, y cerró el 23 de julio en 12,0%."
+      ],
+      "analise": "El caso Renan cambió de forma hoy, y vale distinguir lo que se movió de lo que no. En el mercado de ganador quedó prácticamente inmóvil, en 11,75% (caída de 0,10pp), y la distorsión contra las encuestas sigue exactamente donde estaba: dos de las tres nacionales recientes lo miden en 3%, la tercera en 9%, y el precio está por encima de todas ellas. Lo que cambió fue el diseño de la apuesta. En el submercado de 2º lugar de la 1ª vuelta cayó 6,00pp, de 17,40% a 11,40%, mientras Flávio recuperaba 3,50pp en el mismo mercado, y al mismo tiempo mantuvo 67,00% en el 3º lugar. En términos claros: el mercado redujo la hipótesis de que sustituiría a Flávio en la segunda vuelta y lo mantuvo como tercer colocado firme. Es un reordenamiento interno, no una corrección del desacople, y la diferencia importa porque el precio principal casi no se movió. La prueba que decidiría la cuestión no vino. La [Datafolha](/es/glossary#datafolha) estaba registrada en el [TSE](/es/glossary#tse) para publicación hoy, con campo del 22 al 24 de julio, y no fue divulgada hasta la captura de mercado, de modo que la distorsión atraviesa el fin de semana sin ninguna encuesta nueva para arbitrarla. Queda en pie la salvedad de serie que este panel pasó a hacer: medido en el ciclo entero, 11,75% no es máximo, porque Renan valió 17,9% el 9 de junio y 12,8% el 1 de julio antes de caer al piso de 7,8% el 17 de julio. Lo que existe es un precio sin respaldo de encuestas, en un nivel que ya se vio y se deshizo dos veces desde junio."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "[Polymarket](/es/glossary#polymarket): Caiado 1,75% (caída de 0,30pp, vol USD 5,11M), Zema 0,95% (alza de 0,50pp, vol USD 4,52M), Michelle 0,85% (caída de 0,10pp, vol USD 9,23M), Haddad 0,35% (estable, vol USD 6,33M). Solo Zema subió, y más que duplicó su precio. Ninguna encuesta nueva para explicar el movimiento.",
+      "subtitle": "24 de julio, a 72 días: segundo día seguido sin encuesta nacional, con la [Datafolha](/es/glossary#datafolha) registrada para hoy y no divulgada hasta la captura. Zema más que duplicó, de 0,45% a 0,95%; Caiado devolvió el alza de ayer y volvió a 1,75%; Michelle retrocedió a 0,85% y Haddad quedó estancado en 0,35%. La referencia de encuestas sigue siendo Gerp 3% (22 de julio), Indexa 6% y Real Time 7% (21 de julio), con la Gerp dando a Lula al frente en la segunda vuelta directa (44x41). Las convenciones corren hasta el 5 de agosto, y la del [PL](/es/glossary#pl) es mañana.",
+      "caiado": {
+        "label": "CAIADO ([PSD](/es/glossary#psd)), Poly presidencial 1,75% (caída de 0,30pp, vol USD 5,11M) | 3º lugar de la 1ª vuelta 16,00% (caída de 0,50pp) | Gerp 22 de julio 1ª vuelta 3% y segunda vuelta Lula 44% x Caiado 41% | Indexa 21 de julio 1ª vuelta 6% | Real Time 21 de julio 1ª vuelta 7% y segunda vuelta 43x44",
+        "fortes": "Marcó 6-7% en las dos nacionales del 21 de julio (Indexa 6, Real Time 7), el doble del 3-4% en que venía, y mantiene la fórmula pura del [PSD](/es/glossary#psd) (Kassab de vice) con base en Goiás. Hizo campaña directa contra el rival del propio campo, afirmando que votar por Flávio ayuda a reelegir a Lula (Blog do Esmael, 24 de julio), y acusó a Lula y a Flávio de explotar la crisis con Estados Unidos (iG, 24 de julio).",
+        "fracos": "Devolvió el alza de la víspera: cayó 0,30pp, a 1,75%, y retrocedió 0,50pp en el 3º lugar de la 1ª vuelta, a 16,00%. La segunda vuelta competitiva contra Lula sigue sin confirmación de segunda fuente: la Gerp del 22 de julio da a Lula al frente (44x41), no el empate (44x43) de la Real Time, y esa misma Gerp lo devuelve a 3% en la 1ª vuelta. Mide 3-7% de voto declarado y vale 1,75% en el book de ganador."
+      },
+      "haddad": {
+        "label": "HADDAD ([PT](/es/glossary#pt)), Poly presidencial 0,35% (estable, vol USD 6,33M) | no testeado en la presidencial por las nacionales | foco en la gobernación de São Paulo | vice Márcio França ([PSB](/es/glossary#psb))",
+        "fortes": "Haddad sigue siendo el principal cuadro del [PT](/es/glossary#pt) en el mayor padrón electoral del país, con Márcio França ([PSB](/es/glossary#psb)) de vice en la fórmula por la gobernación de São Paulo. Es el nombre de reserva del partido después de Lula, aunque el mercado no le asigne precio a una candidatura presidencial suya.",
+        "fracos": "El mercado no le asigna precio a una candidatura presidencial suya, y ninguna nacional lo testea en ese cargo. Quedó inmóvil en 0,35% el día en que Lula subió 1,00pp, lo que muestra que el mercado no trata su precio como derivado del desempeño del [PT](/es/glossary#pt). El foco es estatal: en São Paulo la [Datafolha](/es/glossary#datafolha) del 5 de julio dio Tarcísio 46% x Haddad 30% en la gobernación, con Haddad en el rechazo más alto del estado (47%), y el instituto divulgó una nueva ronda paulista el 24 de julio, fuera del alcance de este panel nacional."
+      },
+      "zema": {
+        "label": "ZEMA ([Novo](/es/glossary#novo)), Poly presidencial 0,95% (alza de 0,50pp, vol USD 4,52M) | Gerp 22 de julio 1ª vuelta 3% y segunda vuelta Lula 44% x Zema 38% | Indexa 21 de julio 1ª vuelta 3% | sin vice anunciado, y Michelle descartó el puesto",
+        "fortes": "Más que duplicó su precio en el día, de 0,45% a 0,95%, la mayor variación relativa del book presidencial, y fue el único del pelotón en subir. Marca 3% de forma consistente en las recientes (Gerp e Indexa), además de 3,7% en la Futura/Apex del 14 de julio y 4% en la BTG/[Nexus](/es/glossary#nexus-btg) del 13 de julio. Defiende una agenda de privatización de Petrobras y Banco do Brasil en un eventual gobierno (Jornal do Brasil), posición que lo diferencia en el pelotón.",
+        "fracos": "El alza no tiene ninguna encuesta nueva detrás, así que es movimiento de mercado y no de voto declarado, en un nombre que sigue midiendo 3% en las urnas. Pierde la segunda vuelta con Lula por 38x44 en la Gerp. Michelle Bolsonaro descartó públicamente ser su vice, y la fórmula sigue sin vice con las convenciones corriendo hasta el 5 de agosto."
+      },
+      "analise": "El pelotón no se movió junto hoy, y el único que subió fue el que ayer había quedado estancado. Zema más que duplicó, de 0,45% a 0,95%, la mayor variación relativa del book presidencial. Caiado devolvió el alza de la víspera y cayó 0,30pp, a 1,75%, retrocediendo también en el 3º lugar de la 1ª vuelta, a 16,00%. Michelle retrocedió 0,10pp, a 0,85%, y Haddad quedó inmóvil en 0,35%. Ninguna encuesta nueva explica ninguno de esos movimientos, así que todo eso es rotación interna al mercado, en un día en que el precio salió de las alternativas y fue hacia el favorito. El contraste con las encuestas permanece intacto y es el punto que AFOS insiste en registrar: el pelotón mide 3-7% de voto declarado en las nacionales recientes y vale entre 0,35% y 1,75% en el mercado de ganador, excepto Renan, que hace el camino opuesto y vale más de lo que mide. Sobre el escenario competitivo de Caiado, nada avanzó: la Gerp del 22 de julio da a Lula al frente en la segunda vuelta directa (44x41), así que el empate que apuntó la Real Time (44x43) sigue siendo de una sola casa. Lo que Caiado hizo hoy fue político, no numérico: dijo que votar por Flávio ayuda a reelegir a Lula (Blog do Esmael) y acusó a los dos de explotar la crisis tarifaria (iG). Las convenciones, que corren hasta el 5 de agosto, son la prueba estructural del pelotón, y llegan con Zema todavía sin vice después de que Michelle descartara la hipótesis."
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Segundo día sin nacional nueva, y la [Datafolha](/es/glossary#datafolha) registrada para hoy (BR-01166/2026) no fue divulgada hasta la captura. La encuesta más reciente sigue siendo la Gerp del 22 de julio (n=2.000, BR-05026/2026, outlier pro-Flávio), que lo empata en la 1ª vuelta (38x38) y lo pone 1pp atrás en la 2ª directa (45x46), pero ganándole a Caiado (44x41), Zema (44x38) y Renan (45x35).",
+      "m": "61,50% (vol USD 7,63M acumulado)",
+      "t": "SUBE 1,00pp a 61,50%, rompiendo el 61% por primera vez desde el 15 de julio después de tres días inmóvil. La brecha sobre Flávio subió a +38,55pp, la mayor desde el 9 de julio (38,60pp), todavía por debajo del pico del ciclo de +39,5pp (3 de julio).",
+      "s": "72 días de la elección. Distinto de ayer, la brecha se abrió por alza suya y no por caída del adversario. Sin evento disparador en el horario: momentum de mercado. [Polymarket](/es/glossary#polymarket) en vivo 24 de julio 20:31 UTC.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Segundo día sin encuesta nueva. La Gerp del 22 de julio, casa outlier pro-Flávio, sigue siendo la lectura más favorable a él del recorte: empate en la 1ª vuelta (38x38) y al frente en la 2ª directa (46x45). Las dos del 21 de julio lo mantienen en 30-33% en la 1ª y perdiendo la segunda contra Lula. Rechazo de 46-50% en las tres recientes.",
+      "m": "22,95% (vol USD 7,64M acumulado)",
+      "t": "PRÁCTICAMENTE INMÓVIL en 22,95% (alza de 0,10pp) tras la caída de ayer, pero recupera 3,50pp en el 2º lugar de la 1ª vuelta, de 70,50% a 74,00%, con Renan cayendo de 17,40% a 11,40% allí.",
+      "s": "Milei desembarcó el 24 de julio para disertar en la convención del 25 de julio, y la reconciliación con Michelle avanzó hacia un video conjunto (Folha, Gazeta do Povo). En contra: la neutralidad de la União Progressista, decidida el 22 de julio, apareció como articulación del gobierno, y la vicepresidencia sigue trabada por falta del [centrão](/es/glossary#centrao) (G1, UOL). Convención del [PL](/es/glossary#pl) mañana, 25 de julio, todavía sin vice.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "Segundo día sin encuesta nueva, y la [Datafolha](/es/glossary#datafolha) que testearía el caso no salió hasta la captura. La referencia mayoritaria sigue en 3%: Gerp 22 de julio e Indexa 21 de julio, contra el 9% aislado de la Real Time del 21 de julio. En la segunda vuelta pierde con Lula por 35x45.",
+      "m": "11,75% (vol USD 8,45M acumulado)",
+      "t": "CASI INMÓVIL en el ganador (caída de 0,10pp a 11,75%), pero CAE 6,00pp en el 2º lugar de la 1ª vuelta, de 17,40% a 11,40%, manteniendo 67,00% en el 3º lugar. Medido en el ciclo entero, 11,75% no es máximo: el pico fue 17,9% el 9 de junio.",
+      "s": "El mercado redujo la hipótesis de él como sustituto de Flávio en la segunda vuelta y lo mantuvo como tercer colocado. La distorsión contra las encuestas no se corrigió y atraviesa el fin de semana sin encuesta nueva.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Segundo día sin encuesta nueva. La franja en las tres recientes sigue en 3-7% (Gerp 3, Indexa 6, Real Time 7), y la Gerp da a Lula al frente en la segunda vuelta directa (44x41), no el empate (44x43) de la Real Time.",
+      "m": "1,75% (vol USD 5,11M)",
+      "t": "CAE 0,30pp a 1,75%, devolviendo el alza de la víspera, y retrocede 0,50pp en el 3º lugar de la 1ª vuelta, a 16,00%.",
+      "s": "Dijo que votar por Flávio ayuda a reelegir a Lula (Blog do Esmael) y acusó a Lula y a Flávio de explotar la crisis tarifaria (iG). En el pelotón, solo Zema subió en el día.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "No es precandidata declarada a la Presidencia. Las nacionales no la testean en el escenario principal de la 1ª vuelta.",
+      "m": "0,85% (vol USD 9,23M)",
+      "t": "RETROCEDE 0,10pp a 0,85%, siguiendo por debajo del 1% incluso el día del acuerdo con Flávio.",
+      "s": "Aceptó el 23 de julio el pedido de disculpas de Flávio y debe grabar un video conjunto con él, según reportajes del 24 de julio (Gazeta do Povo, Metrópoles). El precio no reaccionó al acuerdo.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sin encuesta. Mercado de impeachment de ministro del [STF](/es/glossary#stf) antes de 2027.",
+      "m": "3,55% (vol USD 83 mil)",
+      "t": "SUBE 0,60pp a 3,55%, reaccionando con un día de atraso a la investigación autorizada el 23 de julio y al alcance de corrupción y lavado divulgado hoy, pero todavía cerca del piso.",
+      "s": "Salvedad de método decisiva: con volumen acumulado de USD 83 mil, órdenes de magnitud por debajo de los USD 7,64M del presidencial, la variación no sostiene narrativa. El dinero real sigue descontando fricción, no ruptura.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "El 24 de julio fue el segundo día seguido sin encuestas, y esta vez por un motivo que hay que decir con todas las letras: la [Datafolha](/es/glossary#datafolha) estaba registrada en el [TSE](/es/glossary#tse) para publicación hoy, con protocolo BR-01166/2026, n=2.004 y campo del 22 al 24 de julio, y no fue divulgada hasta la captura de mercado. Lo que circuló fueron notas de anuncio, diciendo que la encuesta saldría. AFOS aplica aquí la misma vara que aplicó el 23 de julio a la [AtlasIntel](/es/glossary#atlasintel): registro no es publicación, y ningún número entra en este panel antes de la divulgación efectiva. La encuesta más reciente sigue siendo la Gerp del 22 de julio. En el mercado, el movimiento del día fue de Lula. Después de tres sesiones atrapado en 60,50%, rompió el rango y cerró la captura en 61,50%, alza de 1,00pp, el mayor valor suyo desde el 15 de julio, mientras Flávio quedó prácticamente inmóvil en 22,95% (alza de 0,10pp). La brecha subió a +38,55pp, la mayor desde el 9 de julio, cuando marcó 38,60pp, y sigue por debajo del pico del ciclo de +39,5pp el 3 de julio. La diferencia respecto de ayer es de naturaleza, no de tamaño: el 23 de julio la brecha se abrió porque el adversario cayó, hoy se abrió porque el favorito subió. No hay evento disparador identificado en el horario del movimiento, así que la lectura es momentum de mercado, y AFOS no atribuye el alza a ninguna noticia específica. El segundo movimiento del día fue un reordenamiento en el submercado de 2º lugar de la 1ª vuelta: Flávio recuperó 3,50pp, a 74,00%, y Renan cayó 6,00pp, de 17,40% a 11,40%, manteniendo 67,00% en el 3º lugar. El mercado redujo la hipótesis de que Renan sustituya a Flávio en la segunda vuelta sin mover su precio principal, que quedó en 11,75% (caída de 0,10pp). La distorsión del caso Renan, por lo tanto, no se corrigió: el precio sigue por encima del 9% de la Real Time del 21 de julio, la lectura de encuestas más alta del ciclo, con Gerp e Indexa midiendo 3%, y ahora atraviesa el fin de semana sin ninguna encuesta nueva para arbitrarla. En el pelotón, solo Zema subió, más que duplicando de 0,45% a 0,95%, mientras Caiado devolvió el alza de la víspera y cayó a 1,75%, Michelle retrocedió a 0,85% y Haddad quedó inmóvil en 0,35%. En la política, el hecho del día fue documental: reportajes del 24 de julio mostraron que la neutralidad de la federación União Progressista, que reúne a PP y [União Brasil](/es/glossary#uniao-brasil), decidida el 22 de julio, salió de una articulación directa del gobierno de Lula para alejar al [centrão](/es/glossary#centrao) de Flávio, y que el [PL](/es/glossary#pl) resiste sin conseguir revertirla, con la elección de la vicepresidencia trabada por la misma razón (G1, Folha de S.Paulo, UOL, O Globo). También el 24 de julio, Javier Milei desembarcó en Brasil para disertar en la convención del PL del 25 de julio (Folha de S.Paulo, CartaCapital), y la reconciliación con Michelle avanzó hacia un video conjunto, después del pedido de disculpas de él y de la aceptación de ella el 23 de julio (Gazeta do Povo, Metrópoles). Ninguno de esos hechos tuvo contrapartida clara de precio: Michelle cayó 0,10pp y Flávio quedó inmóvil. En el book del Senado por escaños el PL cayó 3,50pp, a 68,50%, y el [MDB](/es/glossary#mdb) cayó 5,45pp, a 15,45%, con la salvedad de base que ese número exige, ya que el book entero tiene volumen acumulado de USD 292 mil contra USD 115,55M del presidencial. El [STF](/es/glossary#stf) impeach subió 0,60pp a 3,55%, con volumen de USD 83 mil, reaccionando con un día de atraso a la investigación autorizada por Mendonça, cuyo alcance fue detallado hoy como indagación de corrupción y lavado apuntando a Flávio, Eduardo Bolsonaro y Daniel Vorcaro (Folha de S.Paulo, 24 de julio). Queda en pie la lectura que el panel viene sosteniendo: el dinero real descuenta fricción institucional, no ruptura. La convención del PL es mañana, 25 de julio, todavía sin vice, y las próximas encuestas de peso son la JOTA el 26 de julio (n=6.000), la Nexus el 27 de julio y la AtlasIntel el 28 de julio (n=5.000), además de la propia Datafolha, cuando salga."
+}
