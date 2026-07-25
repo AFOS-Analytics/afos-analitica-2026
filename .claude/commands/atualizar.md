@@ -170,17 +170,23 @@ Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada
 
 **Instalado 24/Jul/2026.** Até essa data os 3 JSONs eram únicos e servidos aos três idiomas: o `/en/dashboard` e o `/es/dashboard` renderizavam a moldura traduzida e a análise inteira em português.
 
-```bash
-npx tsx scripts/translate-dashboard-json.ts
-```
+**A tradução é feita NA SESSÃO, lendo o pt-BR e escrevendo o `.en.json` e o `.es.json`.** É como a tradução do AFOS sempre foi feita, não consome crédito de conta de API e não depende de saldo nenhum. Gera 6 arquivos: `analysis-data`, `analysis-criteriosa` e `polls-data`, cada um em `.en.json` e `.es.json`. Roda **depois** da ETAPA 3 (o pt-BR precisa estar no disco) e **antes** do build (os arquivos vão no deploy).
 
-Gera `public/{arquivo}.en.json` e `public/{arquivo}.es.json` a partir do pt-BR recém-escrito. Roda **depois** da ETAPA 3 (os JSONs precisam já estar no disco) e **antes** do build (os arquivos vão no deploy).
+**Método que funcionou em 25/Jul e evita o maior risco:** não redigitar o arquivo inteiro. Fornecer só o mapa `caminho -> tradução` e deixar o código copiar byte a byte tudo que não se traduz, abortando se algum caminho do mapa não existir na origem. Redigitar 52 KB de dado numérico para traduzir 86 campos cria risco sem necessidade.
+
+O `scripts/translate-dashboard-json.ts` faz a mesma coisa chamando a API e **existe como alternativa, não como caminho padrão**: ele consome saldo da conta de API (`console.anthropic.com`), que é conta separada da assinatura mensal. Use só se o André pedir.
 
 **Gate numérico, não negociável:** a tradução nunca pode alterar um número. O script compara o multiconjunto de valores com unidade (%, pp, USD) de cada string. Divergiu, o arquivo daquele idioma **não é escrito** e o `readLocalized` (`lib/dashboard/static-data.ts`) devolve o pt-BR. Melhor servir português do que publicar número traduzido errado: tradução é hoje a maior fonte de defeito do pipeline (37 defeitos na daily de 24/Jul, incluindo vírgula decimal escapando no TL;DR do inglês).
 
 **Descarte NÃO bloqueia o deploy.** O script sai com exit 0 mesmo descartando: o fallback para pt-BR é a decisão de projeto, não uma falha. Seguir para a ETAPA 4 normalmente e registrar no resumo final quais idiomas caíram para português.
 
-**Se abortar por falha de CONTA** (saldo zerado, chave inválida, sem permissão), o script diz isso na cara e nem tenta os idiomas restantes. Nesse caso o deploy segue e os dois idiomas servem pt-BR até o saldo voltar. Recarga é em console.anthropic.com, seção Plans & Billing, que é conta separada da assinatura mensal do Claude.
+**Convenções travadas** (conferidas contra a daily publicada, não inventadas): EN usa ponto decimal e vírgula de milhar; ES mantém vírgula decimal e ponto de milhar. `pesquisa` vira `poll`/`encuesta`, nunca `research`/`investigación`; `urna` vira `polling`, nunca `exit poll` (mas `urna eletrônica` é `voting machine`). Em ES, `notificar` é intimar juridicamente (use `informar`), `parado` é desempregado (use `estancado`), `estadual` é `estatal`, e o verbo de mercado é `descontar`, nunca `precificar`.
+
+**Glossário:** termo brasileiro SEM tradução fica em português com link na própria expressão (`centrão`, `pauta-bomba`, `pau-mandado`, `penduricalhos`). Termo COM tradução é traduzido e leva o link mesmo assim (`1º turno` vira `first round` / `primera vuelta`). Linkar só a PRIMEIRA ocorrência de cada termo por campo: em cartão pequeno, repetir o mesmo link três vezes enterra os números.
+
+**Antes de dar por pronto, rodar as 5 checagens** que pegaram defeito real em 25/Jul: gate numérico zerado; nenhum id de glossário inexistente (âncora morta); nenhum link apontando para outro locale; nenhum homóglifo cirílico; separador decimal 100% consistente com o idioma. Varrer sobre os VALORES traduzidos, não sobre o texto cru do arquivo: no cru, nome de chave e nome próprio de instituto dão falso positivo.
+
+⚠️ **Traduzir PARCIALMENTE o inglês não é opção.** Campo deixado em português carrega vírgula decimal, que lida em convenção inglesa vira outro número (`45,9%` vira 459) e reprova o arquivo inteiro no gate. O EN é tudo ou nada. O ES tolera parcial, porque compartilha a convenção decimal do português.
 
 ## ETAPA 4: Build + Deploy + Commit + Persistência Neon
 
