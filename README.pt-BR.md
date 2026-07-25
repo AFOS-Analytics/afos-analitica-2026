@@ -242,6 +242,41 @@ public/
 - **Content-Language**: header dinamico por locale no middleware
 - **Geo tags**: `geo.region` e `geo.placename` por locale (BR/Global/LATAM)
 
+### O conteudo editorial, nao so a moldura
+
+Ate julho de 2026 a interface era traduzida, mas a **analise** do dashboard nao: o `/en` e o `/es` renderizavam o texto editorial inteiro em portugues. Os tres JSONs editoriais passaram a ter um arquivo por idioma, lidos pelo `readLocalized` em `lib/dashboard/static-data.ts`:
+
+```
+public/analysis-data.{en,es}.json          cartoes de sentimento, INSS, Banco Master, STF
+public/analysis-criteriosa.{en,es}.json    analise por candidato + quadro comparativo
+public/polls-data.{en,es}.json             registro de pesquisas, aprovacao, cruzamento
+```
+
+**O fallback e deliberado:** se o arquivo do idioma nao existe ou foi descartado, o leitor recebe pt-BR. Servir portugues e melhor do que servir numero traduzido errado.
+
+### Gate numerico
+
+O `scripts/lib/json-number-gate.ts` compara o **multiconjunto de valores com unidade** (%, pp, USD) de cada string contra a origem. Qualquer divergencia descarta o arquivo inteiro daquele idioma. Ele conhece o idioma porque as armadilhas sao:
+
+- `61,50%` lido em convencao inglesa vira **6150**
+- `billon` em espanhol e **10¹²**, entao `R$ 145 bi` e `145 mil millones`, nunca `145 billones`
+- separador decimal: EN usa ponto, ES mantem a virgula, campo a campo
+
+### Links de glossario
+
+Termo brasileiro linka para o verbete **na propria expressao**, o mesmo padrao do AFOS Daily e do Tradeoff. A regra tem dois lados:
+
+| Termo | Tratamento | Exemplo |
+|---|---|---|
+| Sem equivalente em EN/ES | fica em portugues **e** linka | `[centrão](/en/glossary#centrao)` |
+| Com equivalente | e traduzido **e** linka mesmo assim | `[first round](/en/glossary#primeiro-turno)` |
+
+Os cartoes renderizam isso pelo `app/components/GlossaryText.tsx`, que reconhece link de glossario **e nada mais**: negrito, italico e cabecalho seguem sem efeito nos JSONs, de proposito. URL externa ou id inexistente aparece literal na tela, para o defeito ser visivel em vez de silencioso.
+
+### Legado conhecido
+
+O `app/components/CandidatesSection.tsx` tem a prosa editorial **dentro do componente**, nao em JSON, entao a secao de perfis ainda renderiza em portugues no `/en` e no `/es`. Isso esta congelado de proposito e nao sera reescrito. O `scripts/check-hardcoded-ptbr.ts` roda no pre-commit e reprova qualquer **outro** componente que ganhe prosa em portugues, para o problema nao crescer. Conteudo editorial novo vai para JSON, que tem o pipeline de traducao.
+
 ---
 
 ## SEO / GEO

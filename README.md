@@ -241,6 +241,41 @@ public/
 - **Content-Language**: dynamic header per locale in middleware
 - **Geo tags**: `geo.region` and `geo.placename` per locale (BR/Global/LATAM)
 
+### Editorial content, not just the frame
+
+Until July 2026 the UI was translated but the dashboard **analysis** was not: `/en` and `/es` rendered the entire editorial text in Portuguese. The three editorial JSONs now ship one file per locale, loaded by `readLocalized` in `lib/dashboard/static-data.ts`:
+
+```
+public/analysis-data.{en,es}.json          market sentiment, INSS, Banco Master, STF cards
+public/analysis-criteriosa.{en,es}.json    per-candidate analysis + comparison table
+public/polls-data.{en,es}.json             poll registry, approval series, market cross-reference
+```
+
+**Fallback is deliberate:** if a locale file is missing or was discarded, the reader gets pt-BR. Serving Portuguese beats serving a mistranslated number.
+
+### Numeric gate
+
+`scripts/lib/json-number-gate.ts` compares the **multiset of unit-bearing values** (%, pp, USD) of every string against the source. Any divergence discards the whole locale file. It is locale-aware because the traps are:
+
+- `61,50%` read under English convention becomes **6150**
+- Spanish `billón` is **10¹²**, so `R$ 145 bi` is `145 mil millones`, never `145 billones`
+- decimal separator: EN uses a dot, ES keeps the comma, per field
+
+### Glossary links
+
+Brazilian terms link to the glossary **on the expression itself**, the same standard used by AFOS Daily and Tradeoff. The rule has two sides:
+
+| Term | Treatment | Example |
+|---|---|---|
+| No English/Spanish equivalent | stays in Portuguese **and** links | `[centrão](/en/glossary#centrao)` |
+| Has an equivalent | is translated **and** still links | `[first round](/en/glossary#primeiro-turno)` |
+
+Dashboard cards render these through `app/components/GlossaryText.tsx`, which recognises glossary links **and nothing else**: bold, italics and headings remain inert in the JSONs by design. An external URL or an unknown glossary id renders literally, so a broken link is visible rather than silent.
+
+### Known legacy
+
+`app/components/CandidatesSection.tsx` holds its editorial prose **inside the component** rather than in a JSON, so the pre-candidate profile section still renders in Portuguese on `/en` and `/es`. This is frozen on purpose and is not being rewritten. `scripts/check-hardcoded-ptbr.ts` runs on pre-commit and fails any **other** component that gains Portuguese prose, so the gap cannot grow. New editorial content goes to JSON, which has the translation pipeline.
+
 ---
 
 ## SEO / GEO
