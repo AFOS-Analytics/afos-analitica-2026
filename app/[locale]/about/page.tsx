@@ -6,6 +6,15 @@ import { Footer } from '../../components/Footer'
 import { aboutPageSchema, breadcrumbSchema, combineSchemas } from '../../../lib/seo/schema'
 import { buildMetadata } from '../../../lib/seo/metadata'
 import type { Locale } from '../../../lib/i18n/config'
+import { SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
+
+// Sem isto o Next nao sabe quais locales pre-renderizar e serve a pagina sob
+// demanda a cada requisicao, mesmo ela sendo conteudo estatico. Instalado
+// 25/Jul/2026, ao medir que 11 paginas caiam nesse caso.
+export async function generateStaticParams() {
+  return SUPPORTED_LOCALES.map(locale => ({ locale }))
+}
+
 
 interface Props { params: Promise<{ locale: string }> }
 
