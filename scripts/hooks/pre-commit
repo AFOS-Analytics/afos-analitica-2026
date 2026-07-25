@@ -65,4 +65,20 @@ if echo "$STAGED" | grep -qE '^scripts/lib/json-number-gate\.ts$'; then
   fi
 fi
 
+# Backup do Neon indo para um repositorio PUBLICO. A classificacao por tabela
+# dentro do backup-neon.ts e a primeira barreira, mas ela confia em quem
+# classificou. Esta e a segunda: olha o CONTEUDO. Um e-mail pode aparecer dentro
+# de um JSON de research sem ninguem prever, e uma vez empurrado para um repo
+# publico nao ha como despublicar.
+if echo "$STAGED" | grep -qE '^backup/neon/'; then
+  echo "🔍 pre-commit: backup do Neon staged — varrendo atrás de dado pessoal..."
+  if ! npx tsx scripts/check-backup-sem-pii.ts; then
+    echo ""
+    echo "❌ pre-commit BLOQUEADO: possível dado pessoal no backup."
+    echo "   O repositório é PÚBLICO. Reclassifique a tabela em scripts/backup-neon.ts"
+    echo "   e gere o backup de novo. NÃO use --no-verify aqui."
+    exit 1
+  fi
+fi
+
 exit 0

@@ -1,0 +1,70 @@
+name: Backup Neon
+
+# POR QUE ESTE WORKFLOW EXISTE
+# Os JSON editoriais e as dailies vivem em três lugares (repo, Vercel, Neon) e
+# sobrevivem à perda de qualquer um. A série de preços do Polymarket NÃO: ela é
+# acumulada de meia em meia hora e, se o banco sumir, não há como reconstruí-la.
+#
+# ⚠️ O REPOSITÓRIO É PÚBLICO. Por isso o job roda DUAS travas antes de commitar:
+# a classificação por tabela (dentro do backup-neon.ts) e uma varredura do
+# CONTEÚDO atrás de dado pessoal. Se qualquer uma reprovar, nada é commitado.
+
+on:
+  schedule:
+    # 15:00 UTC = 12:00 BRT, uma hora depois do cron de persist-analysis (14:00
+    # UTC), para o backup pegar o snapshot do dia já gravado.
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: backup-neon
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Gerar backup
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npx tsx scripts/backup-neon.ts
+
+      - name: Conferir integridade (checksum de cada arquivo)
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npx tsx scripts/backup-neon.ts --verificar
+
+      - name: TRAVA — nenhum dado pessoal no backup
+        run: npx tsx scripts/check-backup-sem-pii.ts
+
+      - name: TRAVA — o backup precisa RESTAURAR
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: npx tsx scripts/check-backup-restauravel.ts
+
+      - name: Commitar se mudou
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add backup/neon
+          if git diff --cached --quiet; then
+            echo "Nada mudou no backup. Sem commit."
+            exit 0
+          fi
+          LINHAS=$(jq -r '.totalLinhas' backup/neon/MANIFEST.json)
+          git commit -m "Backup Neon: ${LINHAS} linhas" \
+                     -m "Gerado por .github/workflows/backup-neon.yml. Travas de dado pessoal e de restauracao passaram."
+          git push
