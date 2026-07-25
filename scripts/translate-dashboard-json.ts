@@ -38,7 +38,7 @@ type Locale = typeof LOCALES[number]
 /** Chaves cujo valor é identificador ou dado bruto: nunca traduzir. */
 const CHAVES_LITERAIS = new Set([
   'name', 'n', 'institute', 'register', 'protocolo', 'source', 'sources', 'date',
-  'fieldDates', 'lastUpdate', 'updatedAt', 'polymarket', 'pc', 'mc', 'color',
+  'fieldDates', 'lastUpdate', 'updatedAt', 'pc', 'mc', 'color',
   'party', 'candidate', 'candidate1', 'candidate2', 'matchup', 'rank', 'slug',
 ])
 
@@ -60,8 +60,15 @@ const CHAVES_LITERAIS = new Set([
  * "Misto", "sem dados nacionais", "Metodologia digital.") e o piso de 25
  * caracteres do filtro os deixava em português no /en/dashboard. Valor sem
  * nada a traduzir, como "38-46%", volta idêntico e o gate deixa passar.
+ *
+ * `polymarket` saiu de CHAVES_LITERAIS em 25/Jul, quando o pt-BR foi
+ * normalizado para vírgula decimal. Enquanto ele gravava "61.50%" com ponto,
+ * ser literal dava certo por acidente: a cópia crua já saía correta em
+ * inglês. Com o pt-BR em "61,50%", copiar cru levaria a vírgula para o
+ * /en/dashboard. O valor é puro número, então volta do tradutor só com o
+ * separador do idioma.
  */
-const CHAVES_DISPLAY = new Set(['m', 'method', 'type', 'note', 'pesquisaRange'])
+const CHAVES_DISPLAY = new Set(['m', 'method', 'type', 'note', 'pesquisaRange', 'polymarket'])
 
 /**
  * Vale a pena traduzir? Exige texto de verdade, não rótulo nem número formatado.

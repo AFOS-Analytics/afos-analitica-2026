@@ -939,7 +939,7 @@
       {
         "name": "Lula",
         "pesquisaRange": "38-46%",
-        "polymarket": "61.50%",
+        "polymarket": "61,50%",
         "tendenciaPesquisa": "Segundo día seguido sin encuesta nueva, y la [Datafolha](/es/glossary#datafolha) registrada para hoy no salió hasta la captura. La referencia sigue siendo la Gerp del 22 de julio, casa outlier pro-Flávio, que lo da empatado en la [primera vuelta](/es/glossary#primeiro-turno) (38% x 38%) y perdiendo la segunda vuelta directa por 45% x 46%, pero ganando a Caiado (44x41), Zema (44x38) y Renan (45x35). Las dos del 21 de julio lo daban liderando la primera vuelta con 40-41%, y el consenso Tier 1 más fuerte sigue siendo la [Quaest](/es/glossary#quaest) del 15 de julio (Lula +12pp en la 1ª). La evaluación más reciente es la PoderData del 22 de julio, con la desaprobación personal cayendo de 50% a 47%.",
         "tendenciaPolymarket": "SUBE 1,00pp a 61,50% (vol USD 7,63M), rompiendo el 61% por primera vez desde el 15 de julio después de tres sesiones atrapado en 60,50%. La brecha sobre Flávio subió a +38,55pp, la mayor desde el 9 de julio (38,60pp), y esta vez por paso propio: el adversario quedó inmóvil. Sigue por debajo del pico del ciclo de +39,5pp (3 de julio). Sin evento disparador identificado en el horario, la lectura es momentum de mercado.",
         "odds": 61.5,
@@ -950,7 +950,7 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "33-46%",
-        "polymarket": "22.95%",
+        "polymarket": "22,95%",
         "tendenciaPesquisa": "Segundo día sin encuesta nueva, y la [Datafolha](/es/glossary#datafolha) registrada para hoy no salió hasta la captura. La Gerp del 22 de julio sigue siendo la lectura más favorable a él del recorte: empata a Lula en la [primera vuelta](/es/glossary#primeiro-turno) (38x38) y queda al frente en la segunda vuelta directa (46x45), pero es el instituto outlier pro-Flávio, reliability 3, sistemáticamente más generoso con él que el Tier 1. Las dos del 21 de julio lo mantienen en 30-33% en la primera vuelta y perdiendo la segunda contra Lula. Rechazo alto y estable: Gerp 46%, Indexa y Real Time 50%.",
         "tendenciaPolymarket": "PRÁCTICAMENTE INMÓVIL en 22,95% (alza de 0,10pp, vol USD 7,64M) después de la caída de 2,10pp de la víspera, y la brecha sobre él creció igual porque quien se movió fue Lula. La recuperación apareció en un solo lugar: volvió a 74,00% en el 2º lugar de la 1ª vuelta (alza de 3,50pp), con Renan cayendo de 17,40% a 11,40% allí. El mercado le devolvió la condición de adversario probable en la segunda vuelta, sin devolverle probabilidad de victoria.",
         "odds": 22.95,
@@ -961,7 +961,7 @@
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-9%",
-        "polymarket": "11.75%",
+        "polymarket": "11,75%",
         "tendenciaPesquisa": "Segundo día sin encuesta nueva, y la [Datafolha](/es/glossary#datafolha), que era la prueba del caso, no salió hasta la captura. La referencia mayoritaria sigue en 3%: Gerp 22 de julio e Indexa 21 de julio, contra el 9% aislado de la Real Time del 21 de julio. En 11,75%, el precio sigue por encima incluso del 9%, la lectura de encuestas más alta del ciclo, de modo que ninguna encuesta da respaldo al nivel. En la segunda vuelta directa la Gerp lo da perdiendo con Lula por 35x45.",
         "tendenciaPolymarket": "CASI INMÓVIL en el ganador, 11,75% (caída de 0,10pp, vol USD 8,45M, el mayor del book entre los nombres competitivos), pero el dato del día es otro: CAYÓ 6,00pp en el 2º lugar de la 1ª vuelta, de 17,40% a 11,40%, manteniendo 67,00% en el 3º lugar (caída de 1,00pp). El mercado redujo la hipótesis de él como sustituto de Flávio en la segunda vuelta y lo mantuvo como tercer colocado. SALVEDAD DE SERIE, medida en la serie completa del ciclo: 11,75% no es el máximo del ciclo. Renan valió 17,9% el 9 de junio y 12,8% el 1 de julio, y cayó al piso de 7,8% el 17 de julio.",
         "odds": 11.75,
@@ -972,7 +972,7 @@
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1.75%",
+        "polymarket": "1,75%",
         "tendenciaPesquisa": "Segundo día sin encuesta nueva. La franja en las tres recientes sigue en 3-7% (Gerp 3, Indexa 6, Real Time 7), y la Gerp da a Lula al frente en la segunda vuelta directa (44x41), no el empate (44x43) que la Real Time había apuntado. Hizo campaña contra el adversario del propio campo hoy, diciendo que votar por Flávio ayuda a reelegir a Lula (Blog do Esmael) y acusando a Lula y a Flávio de explotar la crisis tarifaria (iG).",
         "tendenciaPolymarket": "CAE 0,30pp a 1,75% (vol USD 5,11M), devolviendo el alza de la víspera, y retrocede 0,50pp en el 3º lugar de la 1ª vuelta, a 16,00%. Mide 3-7% de voto declarado y vale 1,75% en el book de ganador.",
         "odds": 1.75,
@@ -983,7 +983,7 @@
       {
         "name": "Tarcísio",
         "pesquisaRange": "sin datos nacionales (foco São Paulo)",
-        "polymarket": "0.15%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "No aparece en los escenarios presidenciales de las nacionales. Foco en la reelección en São Paulo, donde la [Datafolha](/es/glossary#datafolha) del 5 de julio lo da con 46% x Haddad 30% y aprobación de 45%. La Datafolha divulgó el 24 de julio nuevas rondas estatales de São Paulo, para gobernador y para el Senado, que quedan fuera de este panel nacional.",
         "tendenciaPolymarket": "Estable en 0,15% en el presidencial (anomalía de legado, vol USD 13,57M lifetime, el mayor volumen individual del book presidencial). En el Senado por escaños el [PL](/es/glossary#pl) cayó 3,50pp, de 72,00% a 68,50%, y el [MDB](/es/glossary#mdb) cayó 5,45pp, a 15,45%, en la fecha en que se supo de la articulación del gobierno detrás de la neutralidad de la federación União Progressista, decidida el 22 de julio. Salvedad de base, y es decisiva: el book entero del Senado suma USD 292 mil de volumen acumulado contra USD 115,55M del presidencial, así que movimiento en porcentaje no significa dinero grande.",
         "odds": 0.15,
@@ -994,7 +994,7 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3%",
-        "polymarket": "0.95%",
+        "polymarket": "0,95%",
         "tendenciaPesquisa": "Segundo día sin encuesta nueva. La Gerp del 22 de julio lo da con 3% en la [primera vuelta](/es/glossary#primeiro-turno) y perdiendo la segunda vuelta con Lula por 38x44, mismo nivel que la Indexa del 21 de julio (3%). Sigue en el pelotón de abajo de la 3ª vía, sin vice anunciado después de que Michelle descartara el puesto.",
         "tendenciaPolymarket": "MÁS QUE DUPLICÓ, de 0,45% a 0,95% (alza de 0,50pp, vol USD 4,52M), la mayor variación relativa del book presidencial en el día y el único nombre del pelotón en subir, sin ninguna encuesta nueva que lo justifique. Sigue midiendo 3% en las urnas, así que el alza es del mercado, no del voto declarado.",
         "odds": 0.95,
@@ -1005,7 +1005,7 @@
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "sin datos nacionales",
-        "polymarket": "0.35%",
+        "polymarket": "0,35%",
         "tendenciaPesquisa": "Las nacionales no testean a Haddad en el presidencial (foco en la gobernación de São Paulo). En la [Datafolha](/es/glossary#datafolha) São Paulo del 5 de julio, Tarcísio lidera con 46% x Haddad 30%. La Datafolha divulgó una nueva ronda estatal de São Paulo el 24 de julio, fuera del alcance de este panel nacional.",
         "tendenciaPolymarket": "ESTABLE en 0,35% (vol USD 6,33M) el día en que Lula subió 1,00pp, señal de que el mercado no trata su precio como derivado del desempeño del [PT](/es/glossary#pt). Sigue siendo residuo de nombre conocido en un book fino, no señal de candidatura presidencial.",
         "odds": 0.35,
