@@ -58,6 +58,85 @@ function setCache(key: string, text: string) {
 
 type Provider = 'anthropic' | 'openai'
 
+// ─── Erro do provedor: status + o que a API respondeu ──────────────
+//
+// Até 24/Jul/2026 qualquer resposta não-ok virava `anthropic_400` e o CORPO da
+// resposta era jogado fora. Naquela noite as 3 rodadas de tradução do dashboard
+// falharam com esse código, e só foi possível descobrir o motivo real repetindo
+// a chamada à mão com curl: era saldo zerado na conta de API. Um número de
+// status sozinho não distingue "sem crédito" de "chave revogada" de "body
+// malformado", e as três pedem providências diferentes. Agora o motivo vem
+// junto, na primeira falha.
+
+export interface ErroProvedor extends Error {
+  status?: number
+  /** `error.type` devolvido pela API (ex.: invalid_request_error). */
+  tipoApi?: string
+  /** `error.message` devolvido pela API, já limpo e truncado. */
+  detalhe?: string
+}
+
+const SEM_CREDITO_RE = /credit balance|insufficient (?:credit|quota|funds)|purchase credits|billing/i
+
+/** Traduz o status em uma frase que diz O QUE FAZER, não só o que houve. */
+function explicarFalha(status: number, detalhe: string): string {
+  if (SEM_CREDITO_RE.test(detalhe)) {
+    return 'SEM CRÉDITO na conta de API. Recarregar saldo em console.anthropic.com, seção Plans & Billing. ' +
+      'Atenção: a assinatura mensal do Claude é outra conta e NÃO abastece esse saldo.'
+  }
+  if (status === 429) return 'rate_limited: limite de requisições do provedor; repetir com espera.'
+  if (status === 401) return 'chave de API inválida ou revogada. Conferir TRANSLATION_API_KEY / ANTHROPIC_API_KEY no .env.local.'
+  if (status === 403) return 'a chave não tem permissão para este modelo ou workspace.'
+  if (status === 404) return 'modelo inexistente ou endpoint errado.'
+  if (status === 413) return 'requisição grande demais: reduzir o tamanho do texto enviado.'
+  if (status >= 500) return 'falha do lado do provedor, provavelmente transitória; repetir resolve.'
+  return 'requisição rejeitada pelo provedor.'
+}
+
+/** Lê o corpo da resposta com falha e monta o erro já explicado. */
+async function falhaDoProvedor(res: Response, provider: Provider): Promise<ErroProvedor> {
+  let tipoApi: string | undefined
+  let detalhe = ''
+  try {
+    const corpo = await res.text()
+    try {
+      const j = JSON.parse(corpo)
+      tipoApi = j?.error?.type
+      detalhe = j?.error?.message ?? corpo
+    } catch {
+      detalhe = corpo
+    }
+  } catch {
+    // Corpo ilegível: sobra o status, que já é mais do que tínhamos antes.
+  }
+  detalhe = String(detalhe).replace(/\s+/g, ' ').trim().slice(0, 300)
+
+  // O prefixo `provider_status` é preservado de propósito: logs, greps e o
+  // backoff do translate-afos-tradeoff-chunked (que casa por `includes`)
+  // continuam funcionando como antes.
+  const err = new Error(
+    `${provider}_${res.status}: ${explicarFalha(res.status, detalhe)}` +
+    (detalhe ? ` [API: ${detalhe}]` : ''),
+  ) as ErroProvedor
+  err.status = res.status
+  err.tipoApi = tipoApi
+  err.detalhe = detalhe
+  return err
+}
+
+/**
+ * true quando repetir NÃO adianta: saldo zerado, chave inválida, sem permissão.
+ * Quem chama em lote usa isso para abortar a rodada inteira em vez de queimar
+ * uma falha por arquivo e por idioma.
+ */
+export function falhaDeConta(err: unknown): boolean {
+  const e = err as ErroProvedor | undefined
+  if (!e) return false
+  if (e.tipoApi === 'authentication_error' || e.tipoApi === 'permission_error') return true
+  if (e.status === 401 || e.status === 403) return true
+  return SEM_CREDITO_RE.test(String(e.detalhe ?? e.message ?? ''))
+}
+
 function getProvider(): { provider: Provider; apiKey: string } | null {
   const key = process.env.TRANSLATION_API_KEY ?? process.env.ANTHROPIC_API_KEY
   if (!key) return null
@@ -93,8 +172,7 @@ async function callProvider(
         }),
         signal: controller.signal,
       })
-      if (res.status === 429) throw new Error('rate_limited')
-      if (!res.ok) throw new Error(`anthropic_${res.status}`)
+      if (!res.ok) throw await falhaDoProvedor(res, 'anthropic')
       const data = await res.json()
       return {
         text: (data.content?.[0]?.text || '').trim(),
@@ -121,8 +199,7 @@ async function callProvider(
         }),
         signal: controller.signal,
       })
-      if (res.status === 429) throw new Error('rate_limited')
-      if (!res.ok) throw new Error(`openai_${res.status}`)
+      if (!res.ok) throw await falhaDoProvedor(res, 'openai')
       const data = await res.json()
       return {
         text: (data.choices?.[0]?.message?.content || '').trim(),
@@ -297,10 +374,22 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
         break
       } catch (err) {
         lastErr = err
-        // 4xx que não seja 429 (chave ruim, body malformado) nunca se recupera.
+        // 4xx que não seja 429 (chave ruim, sem saldo, body malformado) nunca se recupera.
+        //
+        // A classificação lê o campo `status` do erro, não o texto da mensagem.
+        // O texto agora carrega o motivo devolvido pela API, e a regra antiga
+        // (`/_(429|5\d\d)$/`, ancorada no FIM) deixaria de casar assim que o
+        // motivo fosse anexado: 429 e 5xx parariam de ser repetidos em silêncio.
+        // As checagens por texto ficam como rede para erros de outra origem.
+        const status = (err as ErroProvedor)?.status
         const msg = err instanceof Error ? err.message : String(err)
         const name = err instanceof Error ? err.name : ''
-        const transient = msg === 'rate_limited' || /_(429|5\d\d)$/.test(msg) || name === 'AbortError' || name === 'TimeoutError'
+        const transient =
+          status === 429 ||
+          (typeof status === 'number' && status >= 500) ||
+          (status === undefined && (msg === 'rate_limited' || /_(429|5\d\d)\b/.test(msg))) ||
+          name === 'AbortError' ||
+          name === 'TimeoutError'
         if (!transient || attempt === 2) throw err
         await new Promise((r) => setTimeout(r, 1500 * 3 ** attempt))
       }
