@@ -12,13 +12,17 @@ import type { CountryContext } from '../../../lib/country-data';
 // é folgado e bate com o revalidate dos /api/* correspondentes.
 export const revalidate = 7200;
 
-export default function DashboardPage() {
+export default async function DashboardPage({ params }: { params: Promise<{ locale: string }> }) {
+  // A análise editorial tem variante por idioma (analysis-data.en.json etc.),
+  // gerada no /atualizar. Se a tradução do dia não existir, o loader devolve
+  // pt-BR em vez de quebrar: é melhor servir português do que número errado.
+  const { locale } = await params;
   return (
     <DashboardClient
       brazilContext={brazilContext as CountryContext}
-      initialPolls={loadPollsData()}
-      initialAc={loadAnalysisCards()}
-      initialCrit={loadAnalysisCriteriosa()}
+      initialPolls={loadPollsData(locale)}
+      initialAc={loadAnalysisCards(locale)}
+      initialCrit={loadAnalysisCriteriosa(locale)}
     />
   );
 }

@@ -166,13 +166,29 @@ Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada
 
 **Por que a regra de frescor existe:** dashboard prometendo "tempo real" mostrando pesquisa de 2 meses atrás mata credibilidade. Pesquisa eleitoral perde relevância em ~3 semanas. Histórico fica no Neon (já temos).
 
+## ETAPA 3.5: Traduzir os JSONs para EN e ES (obrigatório, antes do build)
+
+**Instalado 24/Jul/2026.** Até essa data os 3 JSONs eram únicos e servidos aos três idiomas: o `/en/dashboard` e o `/es/dashboard` renderizavam a moldura traduzida e a análise inteira em português.
+
+```bash
+npx tsx scripts/translate-dashboard-json.ts
+```
+
+Gera `public/{arquivo}.en.json` e `public/{arquivo}.es.json` a partir do pt-BR recém-escrito. Roda **depois** da ETAPA 3 (os JSONs precisam já estar no disco) e **antes** do build (os arquivos vão no deploy).
+
+**Gate numérico, não negociável:** a tradução nunca pode alterar um número. O script compara o multiconjunto de valores com unidade (%, pp, USD) de cada string. Divergiu, o arquivo daquele idioma **não é escrito** e o `readLocalized` (`lib/dashboard/static-data.ts`) devolve o pt-BR. Melhor servir português do que publicar número traduzido errado: tradução é hoje a maior fonte de defeito do pipeline (37 defeitos na daily de 24/Jul, incluindo vírgula decimal escapando no TL;DR do inglês).
+
+**Descarte NÃO bloqueia o deploy.** O script sai com exit 0 mesmo descartando: o fallback para pt-BR é a decisão de projeto, não uma falha. Seguir para a ETAPA 4 normalmente e registrar no resumo final quais idiomas caíram para português.
+
+**Se abortar por falha de CONTA** (saldo zerado, chave inválida, sem permissão), o script diz isso na cara e nem tenta os idiomas restantes. Nesse caso o deploy segue e os dois idiomas servem pt-BR até o saldo voltar. Recarga é em console.anthropic.com, seção Plans & Billing, que é conta separada da assinatura mensal do Claude.
+
 ## ETAPA 4: Build + Deploy + Commit + Persistência Neon
 
 Execute em sequência:
 0. **VALIDATOR-FIRST (bloqueante):** `npx tsx scripts/validate-polls-data.ts`. Se exit 1, NÃO prosseguir — corrigir entry malformada e rodar de novo. Mais barato que crashar prod (incidente 21/Mai).
 1. `rm -rf .next && npm run build`
 2. `npx vercel --yes --prod`
-3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json`
+3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json` e, se a ETAPA 3.5 gerou algum, `git add public/*.en.json public/*.es.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
 5. `git push origin main`
 6. **Persistir snapshots no Neon** (após deploy concluir):
