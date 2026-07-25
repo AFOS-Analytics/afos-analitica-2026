@@ -1,0 +1,18 @@
+# O deploy por CLI (vercel --prod) NÃO honra o .gitignore: ele sobe o diretório
+# de trabalho. Sem este arquivo, 51 MB de public/news-cache/ subiam a cada deploy
+# e ficavam publicamente acessíveis em /news-cache/{data}.json, apesar de o
+# diretório estar ignorado pelo git. Verificado em 24/Jul/2026.
+
+# Cache de raspagem de notícias: insumo do /atualizar, não é ativo do site.
+public/news-cache/
+
+# Caches locais e artefatos de build
+.next
+.cache
+.poly-cache
+tsconfig.tsbuildinfo
+
+# Não fazem parte do runtime do site
+hf-assets/
+tests/
+docs/

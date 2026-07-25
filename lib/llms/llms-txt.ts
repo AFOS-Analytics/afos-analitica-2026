@@ -431,8 +431,15 @@ const BUILDERS: Record<FeedLocale, (p: Parts) => string> = {
 }
 
 export function buildLlmsTxt(loc: FeedLocale): string {
-  const lastUpdated = new Date().toISOString().slice(0, 10)
-  const todayLong = new Date().toLocaleDateString(LOCALE_TAG[loc], { year: 'numeric', month: 'long', day: 'numeric' })
+  // Datas em BRT, não em UTC. Com toISOString() o arquivo se autodatava no dia
+  // seguinte a partir das 21:00 BRT (verificado em 24/Jul: servia "2026-07-25").
+  const BRT = 'America/Sao_Paulo'
+  const lastUpdated = new Intl.DateTimeFormat('en-CA', {
+    timeZone: BRT, year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(new Date())
+  const todayLong = new Date().toLocaleDateString(LOCALE_TAG[loc], {
+    timeZone: BRT, year: 'numeric', month: 'long', day: 'numeric',
+  })
   const parts: Parts = {
     dailyEntries: dailyEntriesFor(loc),
     tradeoffEntries: tradeoffEntriesFor(loc),
