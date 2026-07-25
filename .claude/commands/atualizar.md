@@ -106,6 +106,11 @@ Com os dados coletados, atualize os 3 arquivos JSON:
   - **stf**: toffoli, moraes, gilmar, dino, nexo, analise (incluir % impeachment atualizado)
 
 ### 3.3 `app/components/CandidatesSection.tsx` — Perfil dos candidatos (array `candidates`, linhas ~10-82)
+
+⚠️ **LEGADO CONGELADO (decisão do André, 25/Jul/2026).** Este é o ÚNICO componente com prosa editorial escrita dentro do código, e por isso a seção de perfis aparece **em português** no `/en/dashboard` e no `/es/dashboard`. O legado fica como está, não se reescreve.
+
+**A regra para frente:** conteúdo editorial NOVO vai para JSON em `public/`, que tem pipeline de tradução (ETAPA 3.5). Componente é layout, não texto. Nunca acrescentar campo de prosa novo aqui. A trava `scripts/check-hardcoded-ptbr.ts` roda no pre-commit e reprova qualquer OUTRO componente que ganhe prosa em português; este arquivo está na lista `LEGADO` dela.
+
 - Atualize `polymarket` de cada candidato com % ao vivo
 - Atualize `poll` se houver pesquisa nova
 - Atualize `risk` com informações relevantes do dia

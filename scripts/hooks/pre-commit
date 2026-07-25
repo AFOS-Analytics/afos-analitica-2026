@@ -29,4 +29,23 @@ if echo "$STAGED" | grep -qE '(^|/)(public/(polls-data|analysis-criteriosa|analy
   echo "✅ pre-commit: polls-data.json OK"
 fi
 
+# Prosa em português embutida em componente NOVO.
+#
+# Em 25/Jul/2026 o dashboard ganhou versão EN e ES, mas o CandidatesSection
+# tem a prosa escrita DENTRO do componente e por isso ficou de fora: a seção
+# de perfis aparece em português para quem lê em inglês. O André decidiu
+# preservar o legado e travar o crescimento. Conteúdo editorial novo vai para
+# JSON em public/, que tem pipeline de tradução na ETAPA 3.5 do /atualizar.
+if echo "$STAGED" | grep -qE '^app/components/.*\.tsx$'; then
+  echo "🔍 pre-commit: componente staged — checando prosa pt-BR embutida..."
+  if ! npx tsx scripts/check-hardcoded-ptbr.ts; then
+    echo ""
+    echo "❌ pre-commit BLOQUEADO: componente novo com prosa em português."
+    echo "   Conteúdo editorial vai para JSON em public/ (tem tradução EN/ES)."
+    echo "   Se for legado que precisa ficar, adicione o arquivo em LEGADO"
+    echo "   dentro de scripts/check-hardcoded-ptbr.ts, com justificativa."
+    exit 1
+  fi
+fi
+
 exit 0
