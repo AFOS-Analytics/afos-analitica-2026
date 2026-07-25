@@ -36,8 +36,12 @@ fi
 # de perfis aparece em português para quem lê em inglês. O André decidiu
 # preservar o legado e travar o crescimento. Conteúdo editorial novo vai para
 # JSON em public/, que tem pipeline de tradução na ETAPA 3.5 do /atualizar.
-if echo "$STAGED" | grep -qE '^app/components/.*\.tsx$'; then
-  echo "🔍 pre-commit: componente staged — checando prosa pt-BR embutida..."
+# O gatilho cobre app/ INTEIRO, não só app/components/. O guard varre as 102
+# .tsx recursivamente, incluindo as páginas de app/[locale]/, que é onde uma
+# seção nova nasceria; disparar só em components/ deixaria justamente esse caso
+# passar sem checagem.
+if echo "$STAGED" | grep -qE '^app/.*\.tsx$'; then
+  echo "🔍 pre-commit: .tsx staged — checando prosa pt-BR embutida..."
   if ! npx tsx scripts/check-hardcoded-ptbr.ts; then
     echo ""
     echo "❌ pre-commit BLOQUEADO: componente novo com prosa em português."

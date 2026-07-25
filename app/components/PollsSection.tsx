@@ -120,9 +120,14 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           // O `note` chega TRADUZIDO quando o locale é en/es (readLocalized em
           // lib/dashboard/static-data.ts), então procurar só "estadual" deixaria
           // a rede furada fora do pt-BR: uma estadual que o painel português
-          // barra passaria no inglês. Hoje nenhuma das 14 é barrada nos três
-          // idiomas, mas a rede não pode depender do idioma. Instalado 25/Jul.
-          if (/estadual|estatal|state[- ]level|state poll|statewide/.test(note)) return true
+          // barra passaria no inglês. Instalado 25/Jul.
+          //
+          // ⚠️ `state` no SINGULAR, de propósito. O plural "states" aparece em
+          // pesquisa NACIONAL ("across 27 states", 3 das 14 entradas de hoje),
+          // e casá-lo sumiria com pesquisa nacional do painel, que é um erro
+          // pior do que o buraco que a regra fecha. `estatal` sem \b no fim
+          // cobre "estatales".
+          if (/estadual|estatal|statewide|\bstate\b/.test(note)) return true
           // UF explícita em CAIXA ALTA (ex.: "Cenário SP"); testar no texto original evita
           // colisão com stopwords minúsculas do português (se/to/pa/ma/al) que abreviam UFs.
           if (/\b(MT|SP|RJ|MG|RS|PR|SC|BA|CE|PE|GO|AM|PA|MA|PI|AL|SE|RN|PB|TO|RO|RR|AP|AC|MS|ES|DF)\b/.test(noteRaw)) {

@@ -1,5 +1,5 @@
 /**
- * Trava contra prosa em PORTUGUÊS embutida em componente.
+ * Trava contra prosa em PORTUGUÊS embutida em componente ou página.
  *
  * POR QUE EXISTE
  * Em 25/Jul/2026 o dashboard foi traduzido para EN e ES: os 3 JSONs editoriais
@@ -12,25 +12,28 @@
  * trava existe para o problema NÃO CRESCER. Conteúdo editorial novo vai para
  * JSON, que tem pipeline de tradução; componente é layout, não texto.
  *
- * O QUE ELA FAZ
- * Procura marcador de prosa portuguesa dentro de string literal longa nos
- * componentes. O legado conhecido está em LEGADO e é ignorado. Qualquer
- * componente NOVO que ganhe prosa em português reprova.
- *
  * Uso:  npx tsx scripts/check-hardcoded-ptbr.ts
  */
-import { readdirSync, readFileSync } from 'fs'
-import { join } from 'path'
+import { readdirSync, readFileSync, existsSync, statSync } from 'fs'
+import { join, relative, sep } from 'path'
 
-const DIR = 'app/components'
+const RAIZ = 'app'
 
 /**
  * Legado congelado em 25/Jul/2026. Entrar nesta lista exige decisão explícita:
  * significa que aquele arquivo vai renderizar português para leitor de EN/ES.
+ * Caminho relativo à raiz do repositório.
  */
 const LEGADO = new Set([
-  'CandidatesSection.tsx',
+  'app/components/CandidatesSection.tsx',
 ])
+
+/**
+ * Arquivo cujo NOME declara ser conteúdo de um idioma só. O projeto usa esse
+ * padrão de propósito (content-pt-BR.tsx ao lado de content-en.tsx), então
+ * português ali é a intenção, não defeito.
+ */
+const NOME_DE_IDIOMA = /[.-](pt-BR|pt|en|es)\.tsx$/
 
 /**
  * Palavra funcional portuguesa que praticamente não aparece em inglês, em
@@ -57,24 +60,49 @@ function semComentarios(src: string): string {
 }
 
 /**
- * Dicionário de i18n definido no próprio componente é localização legítima,
- * não defeito: o português ali convive com o inglês e o espanhol.
+ * Dicionário de i18n definido no próprio arquivo é localização legítima, não
+ * defeito: o português ali convive com o inglês e o espanhol.
+ *
+ * A chave pode vir com ou sem aspas: `'pt-BR': {` e `es: {` convivem no mesmo
+ * objeto. A primeira versão exigia aspas nas duas e deixou passar o
+ * LandingPageDual, que tem dicionário completo dos três idiomas.
  */
 function temDicionarioI18n(src: string): boolean {
-  // A chave pode vir com ou sem aspas: `'pt-BR': {` e `es: {` convivem no mesmo
-  // objeto. A primeira versão exigia aspas nas duas e deixou passar o
-  // LandingPageDual, que tem dicionário completo dos três idiomas.
   const temChave = (k: string) =>
     new RegExp(`(?:^|[{,\\s])['"]?${k}['"]?\\s*:`, 'm').test(src)
   return temChave('pt-BR') && temChave('en') && temChave('es')
 }
 
+/** Varre RECURSIVAMENTE. A 1ª versão só olhava o topo de app/components/ e
+ *  deixava de fora 7 componentes em subpasta e as 52 páginas de app/[locale]/,
+ *  que é justamente onde uma seção nova nasceria. */
+function listarTsx(dir: string, out: string[] = []): string[] {
+  for (const nome of readdirSync(dir)) {
+    const caminho = join(dir, nome)
+    if (statSync(caminho).isDirectory()) { listarTsx(caminho, out); continue }
+    if (nome.endsWith('.tsx')) out.push(caminho.split(sep).join('/'))
+  }
+  return out
+}
+
+// Allowlist que aponta para arquivo inexistente é allowlist podre: o arquivo
+// pode ter sido renomeado e o guard passaria a cobrir nada sem avisar.
+const legadoAusente = [...LEGADO].filter(f => !existsSync(f))
+if (legadoAusente.length > 0) {
+  console.error('❌ LEGADO aponta para arquivo que não existe mais:')
+  legadoAusente.forEach(f => console.error(`   ${f}`))
+  console.error('\nRenomeado ou removido? Atualize a lista em scripts/check-hardcoded-ptbr.ts.')
+  process.exit(1)
+}
+
 interface Achado { arquivo: string; marcadores: number; amostra: string }
 
 const achados: Achado[] = []
-for (const arquivo of readdirSync(DIR).filter(f => f.endsWith('.tsx')).sort()) {
+for (const arquivo of listarTsx(RAIZ).sort()) {
   if (LEGADO.has(arquivo)) continue
-  const bruto = readFileSync(join(DIR, arquivo), 'utf-8')
+  if (NOME_DE_IDIOMA.test(arquivo)) continue
+
+  const bruto = readFileSync(arquivo, 'utf-8')
   if (temDicionarioI18n(bruto)) continue
   const texto = semComentarios(bruto)
 
@@ -86,21 +114,22 @@ for (const arquivo of readdirSync(DIR).filter(f => f.endsWith('.tsx')).sort()) {
     marcadores += hits.length
     if (!amostra) amostra = s.slice(1, 120).replace(/\s+/g, ' ')
   }
-  if (marcadores > 0) achados.push({ arquivo, marcadores, amostra })
+  if (marcadores > 0) achados.push({ arquivo: relative('.', arquivo).split(sep).join('/'), marcadores, amostra })
 }
 
 if (achados.length === 0) {
-  console.log(`✅ Nenhum componente novo com prosa pt-BR embutida.`)
+  console.log('✅ Nenhum arquivo novo com prosa pt-BR embutida.')
+  console.log(`   Varridos: ${listarTsx(RAIZ).length} .tsx em ${RAIZ}/ (recursivo)`)
   console.log(`   Legado preservado e ignorado: ${[...LEGADO].join(', ')}`)
   process.exit(0)
 }
 
-console.error('❌ Prosa em PORTUGUÊS embutida em componente fora do legado:\n')
+console.error('❌ Prosa em PORTUGUÊS embutida, fora do legado:\n')
 for (const a of achados) {
   console.error(`   ${a.arquivo}  (${a.marcadores} marcador(es))`)
   console.error(`      ...${a.amostra}...`)
 }
 console.error('\nConteúdo editorial vai para JSON em public/, que tem pipeline de tradução')
 console.error('(ETAPA 3.5 do /atualizar). Componente é layout, não texto.')
-console.error('Se for legado que precisa ficar, adicione o arquivo em LEGADO com justificativa.')
+console.error('Se for legado que precisa ficar, adicione o caminho em LEGADO com justificativa.')
 process.exit(1)

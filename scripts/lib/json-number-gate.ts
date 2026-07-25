@@ -151,6 +151,22 @@ export function compararNumeros(
     for (const k of Object.keys(o)) {
       out.push(...compararNumeros(o[k], t[k], locDestino, caminho ? `${caminho}.${k}` : k))
     }
+    // Chave que existe SÓ no traduzido não era vista: o laço acima percorre as
+    // chaves do original. Campo inventado pela tradução entraria no arquivo
+    // publicado sem passar por conferência nenhuma. Chave a menos já era pega
+    // (vira `undefined` do lado traduzido); chave a mais, não.
+    if (traduzido && typeof traduzido === 'object' && !Array.isArray(traduzido)) {
+      for (const k of Object.keys(t)) {
+        if (Object.prototype.hasOwnProperty.call(o, k)) continue
+        out.push({
+          caminho: caminho ? `${caminho}.${k}` : k,
+          original: [],
+          traduzido: [],
+          trechoOriginal: '(chave não existe no original)',
+          trechoTraduzido: String(t[k]).slice(0, 80),
+        })
+      }
+    }
     return out
   }
 
