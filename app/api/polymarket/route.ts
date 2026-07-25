@@ -1,6 +1,16 @@
 import { NextResponse } from 'next/server';
 
-export const revalidate = 7200;
+// Sem `export const revalidate`: com ele a rota virava ISR e o Cache-Control
+// montado no fim desta função NUNCA chegava ao cliente (produção servia
+// `public, max-age=0` e o mesmo fetchedAt por até 2h). Efeito colateral grave:
+// o `s-maxage=60` do caminho degradado era código morto, e um payload degradado
+// ficava preso na borda por 2 horas. Verificado em 24/Jul/2026.
+// Ler searchParams já torna a rota dinâmica, então o header abaixo passa a valer.
+export const dynamic = 'force-dynamic';
+
+// Janela de frescor do caminho normal. 30 min é o que a página /data-sources
+// promete ao leitor; antes eram 2h, ou seja, o texto público era falso.
+const REVALIDATE_S = 1800;
 
 const slugs = [
   'brazil-presidential-election',
@@ -17,7 +27,7 @@ function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug);
 }
 
-async function fetchEvent(slug: string) {
+async function fetchEvent(slug: string, fresh = false) {
   if (!isValidSlug(slug)) {
     console.error(`[polymarket] Invalid slug rejected: ${slug}`);
     return null;
@@ -28,7 +38,11 @@ async function fetchEvent(slug: string) {
     const timeout = setTimeout(() => controller.abort(), 10000);
 
     const res = await fetch(`https://gamma-api.polymarket.com/events?slug=${slug}&limit=1`, {
-      next: { revalidate: 7200 },
+      // `?fresh=1` ignora o cache de dados. Serve à trava de captura, que precisa
+      // de DUAS leituras genuinamente independentes para decidir se o book está
+      // estável. Sem isso a trava leria o mesmo cache duas vezes e aprovaria
+      // qualquer snapshot, inclusive um capturado com spread largo.
+      ...(fresh ? { cache: 'no-store' as const } : { next: { revalidate: REVALIDATE_S } }),
       signal: controller.signal,
     });
     clearTimeout(timeout);
@@ -110,7 +124,8 @@ async function fetchFromProdProxy() {
   }
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const fresh = new URL(request.url).searchParams.has('fresh');
   if (process.env.NODE_ENV === 'development') {
     const proxied = await fetchFromProdProxy();
     if (proxied) {
@@ -118,7 +133,7 @@ export async function GET() {
     }
   }
 
-  const results = await Promise.all(slugs.map(fetchEvent));
+  const results = await Promise.all(slugs.map(slug => fetchEvent(slug, fresh)));
   const data: Record<string, unknown> = {};
   keys.forEach((key, i) => {
     data[key] = results[i];
@@ -137,9 +152,11 @@ export async function GET() {
     },
     {
       headers: {
-        'Cache-Control': degraded
-          ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
-          : 'public, max-age=0, s-maxage=7200, stale-while-revalidate=86400',
+        'Cache-Control': fresh
+          ? 'no-store'
+          : degraded
+            ? 'public, max-age=0, s-maxage=60, stale-while-revalidate=600'
+            : `public, max-age=0, s-maxage=${REVALIDATE_S}, stale-while-revalidate=86400`,
       },
     }
   );

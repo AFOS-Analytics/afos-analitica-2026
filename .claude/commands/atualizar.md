@@ -28,6 +28,29 @@ Mapa slug → chave (referência; o `gamma-api` direto só serve de fallback man
 
 NOTA: o proxy também forwarda `liquidityNum` (profundidade do order book) desde 21/Mai/2026, **mas o uso editorial está suspenso** após pushback de consultor de mercado em 21/Mai noite. Razão: liquidez baixa em Polymarket NÃO significa preço errado — o mercado é arbitrado continuamente em minutos, e expor o número técnico para leitor leigo gera misread "AFOS mostra mercado quebrado" quando na verdade indica arbitragem ativa. Campo segue disponível na API para análise interna de anomalia, mas NUNCA citar inline na narrativa do dashboard ou daily.
 
+## ETAPA 1.7: TRAVA DE CAPTURA (obrigatória, bloqueante)
+
+**Instalada em 24/Jul/2026, depois do incidente do snapshot das 15h38.** Naquele dia o `/atualizar` capturou o book num momento de spread largo e publicou. Metade dos deltas estava errada e **dois tinham o sinal invertido**: Michelle e Caiado foram publicados em ALTA e fecharam o dia em QUEDA. O snapshot passou por todos os validadores, porque era internamente coerente: os deltas batiam com os valores. **O erro estava na entrada, não na aritmética.** Nenhuma checagem sobre o JSON pega isso.
+
+O Polymarket é arbitrado em minutos. Logo: duas leituras independentes que concordam são um preço; que discordam são um book em trânsito.
+
+```bash
+npx tsx scripts/capture-guard.ts
+```
+
+Padrão: 2 leituras com 8 minutos de intervalo, tolerância de 0,20pp, ignorando nomes abaixo de 0,5% (ruído de book fino). As duas leituras usam `?fresh=1`, que ignora o cache de dados do proxy.
+
+**Interpretação do resultado, sem exceção:**
+
+- **exit 0**: as leituras concordam. Prosseguir usando os valores da **segunda** leitura, que é a mais recente e sobreviveu à confirmação.
+- **exit 1**: NÃO publicar. A saída lista o motivo por mercado, com os dois preços e a divergência em pp. Recapturar. Se persistir em duas rodadas, o book está instável agora e o correto é registrar isso, não publicar número.
+
+⚠️ **A trava também falha fechada quando ela própria não consegue confirmar.** Se as duas leituras vierem com o mesmo `fetchedAt`, significa que saíram do mesmo cache e nada foi verificado; nesse caso ela bloqueia e avisa. Tratar como bloqueio de verdade, não como falso positivo.
+
+⚠️ **Não pular a trava por pressa.** Ela custa 8 minutos. O incidente que ela evita custou duas horas de dado errado em produção mais o retrabalho de rebaseline em 22 pontos de 4 arquivos.
+
+Para uso dentro de pipeline, `--json` devolve `{ ok, motivos, fetchedAt, precos }`. O `--intervalo=N` ajusta os minutos, mas **reduzir o intervalo enfraquece a trava**: com 1 minuto, um book em trânsito pode não ter se resolvido ainda e a concordância vira falso OK.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
