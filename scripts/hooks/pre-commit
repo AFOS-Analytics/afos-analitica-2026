@@ -52,4 +52,17 @@ if echo "$STAGED" | grep -qE '^app/.*\.tsx$'; then
   fi
 fi
 
+# Gate numerico: e a unica coisa entre uma traducao errada e o leitor. Se o
+# arquivo dele for tocado, a bateria roda. Cada caso da bateria corresponde a
+# um defeito real de 24 e 25/Jul, entao regressao ali sai caro.
+if echo "$STAGED" | grep -qE '^scripts/lib/json-number-gate\.ts$'; then
+  echo "🔍 pre-commit: gate numérico staged — rodando bateria..."
+  if ! npx tsx scripts/test-json-number-gate.ts; then
+    echo ""
+    echo "❌ pre-commit BLOQUEADO: o gate numérico regrediu."
+    echo "   NÃO relaxe o caso de teste: ele existe porque o defeito aconteceu."
+    exit 1
+  fi
+fi
+
 exit 0

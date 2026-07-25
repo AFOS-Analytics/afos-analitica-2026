@@ -15,7 +15,7 @@
  * Uso:  npx tsx scripts/check-hardcoded-ptbr.ts
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'fs'
-import { join, relative, sep } from 'path'
+import { join, sep } from 'path'
 
 const RAIZ = 'app'
 
@@ -97,8 +97,9 @@ if (legadoAusente.length > 0) {
 
 interface Achado { arquivo: string; marcadores: number; amostra: string }
 
+const arquivos = listarTsx(RAIZ).sort()
 const achados: Achado[] = []
-for (const arquivo of listarTsx(RAIZ).sort()) {
+for (const arquivo of arquivos) {
   if (LEGADO.has(arquivo)) continue
   if (NOME_DE_IDIOMA.test(arquivo)) continue
 
@@ -114,12 +115,12 @@ for (const arquivo of listarTsx(RAIZ).sort()) {
     marcadores += hits.length
     if (!amostra) amostra = s.slice(1, 120).replace(/\s+/g, ' ')
   }
-  if (marcadores > 0) achados.push({ arquivo: relative('.', arquivo).split(sep).join('/'), marcadores, amostra })
+  if (marcadores > 0) achados.push({ arquivo, marcadores, amostra })
 }
 
 if (achados.length === 0) {
   console.log('✅ Nenhum arquivo novo com prosa pt-BR embutida.')
-  console.log(`   Varridos: ${listarTsx(RAIZ).length} .tsx em ${RAIZ}/ (recursivo)`)
+  console.log(`   Varridos: ${arquivos.length} .tsx em ${RAIZ}/ (recursivo)`)
   console.log(`   Legado preservado e ignorado: ${[...LEGADO].join(', ')}`)
   process.exit(0)
 }

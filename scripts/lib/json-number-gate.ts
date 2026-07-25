@@ -36,7 +36,52 @@ import { parseNumeric } from './numeric'
  * espanhol de volta para o português. Detectado em 25/Jul/2026, antes de gerar
  * o primeiro ES.
  */
-const ESCALAS = 'mil millones|mil millón|mil milhões|mil milhoes|billones|billón|billon|bilhões|bilhoes|bilhão|bilhao|billion|millones|milhões|milhoes|milhão|milhao|million|thousand|mil|MM|bi|mi|M|k|B'
+/**
+ * UMA fonte para a alternância do regex E para o cálculo do fator.
+ *
+ * Antes eram duas estruturas que precisavam ficar em sincronia à mão: a string
+ * de alternância e uma cadeia de ifs, ambas com ordenação load-bearing
+ * garantida só por comentário. Acrescentar uma escala na posição errada
+ * reintroduzia o bug silenciosamente. Agora a ordem é DERIVADA (mais longa
+ * primeiro, ver ESCALAS abaixo), então o invariante é do código, não da
+ * disciplina de quem edita.
+ */
+const ESCALA_FATOR: ReadonlyArray<readonly [string, number]> = [
+  // Composto do espanhol: "mil millones" é bilhão. Precisa vencer "mil", e
+  // vence por ser mais longo.
+  ['mil millones', 1e9], ['mil millón', 1e9], ['mil milhões', 1e9], ['mil milhoes', 1e9],
+  // "billón" entra aqui com 1e9 e é SOBRESCRITO para 1e12 quando o idioma é
+  // espanhol (ver fatorDe). Em pt e en, "billion"/"bilhão" são 1e9 mesmo.
+  ['billones', 1e9], ['billón', 1e9], ['billon', 1e9],
+  ['bilhões', 1e9], ['bilhoes', 1e9], ['bilhão', 1e9], ['bilhao', 1e9], ['billion', 1e9],
+  ['millones', 1e6], ['milhões', 1e6], ['milhoes', 1e6], ['milhão', 1e6], ['milhao', 1e6], ['million', 1e6],
+  ['thousand', 1e3], ['mil', 1e3],
+  ['MM', 1e6], ['bi', 1e9], ['mi', 1e6], ['M', 1e6], ['k', 1e3], ['B', 1e9],
+]
+
+/** Mais longa primeiro: sem isso "mi" casa dentro de "mil" e 77 mil vira 77 milhões. */
+const ESCALAS = [...ESCALA_FATOR]
+  .sort((a, b) => b[0].length - a[0].length)
+  .map(([forma]) => forma.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+  .join('|')
+
+const FATOR = new Map(ESCALA_FATOR.map(([forma, f]) => [forma.toLowerCase(), f]))
+
+/**
+ * FALSO AMIGO CARO: "billón" em espanhol é um MILHÃO de milhões (1e12), não
+ * 1e9. Antes o gate lia "145 billones" como 145 bilhões e APROVAVA uma
+ * tradução que dizia mil vezes o valor certo.
+ */
+const BILHAO_ES = /^(billones|billón|billon)$/
+
+function fatorDe(escala: string, locale: 'pt' | 'en' | 'es'): number {
+  // Espaço interno normalizado: a escala pode vir com espaço duplo do texto.
+  const e = escala.toLowerCase().replace(/\s+/g, ' ').trim()
+  if (!e) return 1
+  if (locale === 'es' && BILHAO_ES.test(e)) return 1e12
+  return FATOR.get(e) ?? 1
+}
+
 const TOKEN_RE =
   new RegExp(String.raw`(?<![\w.,])([+\-−↑↓]?)\s*(\d+(?:[.,]\d+)*)\s*(${ESCALAS})?\s*(%|pp|p\.p\.)?`, 'giu')
 
@@ -54,23 +99,7 @@ function tokensDe(texto: string, locale: 'pt' | 'en' | 'es'): number[] {
     if (!unidade && !moeda) continue          // número sem unidade: fora
     const base = parseNumeric((sinal || '') + num, decimal)
     if (base === null) continue
-    // Espaço interno normalizado: a escala pode vir com espaço duplo do texto.
-    const e = (escala ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
-    // O COMPOSTO VEM PRIMEIRO. "mil millones" começa com "mi", então cairia no
-    // ramo de milhão logo abaixo e valeria 1e6 em vez de 1e9. A ordem aqui é
-    // load-bearing, exatamente como a da alternância em ESCALAS.
-    const fator =
-      /^mil (millones|millón|milhões|milhoes)$/.test(e) ? 1e9
-      : /^(mil|k|thousand)$/.test(e) ? 1e3
-      // FALSO AMIGO CARO: "billón" em espanhol é um MILHÃO de milhões (1e12),
-      // não 1e9. Antes disso o gate lia "145 billones" como 145 bilhões e
-      // APROVAVA uma tradução que dizia mil vezes o valor certo. Só o espanhol
-      // entra neste ramo: "bilhão" (pt) e "billion" (en) continuam 1e9.
-      : locale === 'es' && /^(billones|billón|billon)$/.test(e) ? 1e12
-      : /^(bilh|billion|bi|b)/.test(e) ? 1e9
-      : /^(milh|million|millones|mm|mi|m)/.test(e) ? 1e6
-      : 1
-    out.push(Number((base * fator).toFixed(4)))
+    out.push(Number((base * fatorDe(escala ?? '', locale)).toFixed(4)))
   }
   return out.sort((a, b) => a - b)
 }
@@ -95,9 +124,6 @@ export function compararNumeros(
   caminho = '',
 ): DivergenciaNumerica[] {
   const out: DivergenciaNumerica[] = []
-  // O idioma REAL do destino, não o mapeamento para a convenção decimal:
-  // o tokenizador precisa saber que é espanhol para tratar "billón" como 1e12.
-  const locT: 'pt' | 'en' | 'es' = locDestino
 
   if (typeof original === 'string') {
     // IGUAL BYTE A BYTE: a tradução não tocou nesta string, logo não pode ter
@@ -123,7 +149,9 @@ export function compararNumeros(
       return out
     }
     const a = tokensDe(original, 'pt')
-    const b = tokensDe(traduzido, locT)
+    // O idioma REAL do destino, não o mapeamento para a convenção decimal:
+    // o tokenizador precisa saber que é espanhol para tratar "billón" como 1e12.
+    const b = tokensDe(traduzido, locDestino)
     if (a.length !== b.length || a.some((v, i) => Math.abs(v - b[i]) > 0.0001)) {
       out.push({
         caminho,
