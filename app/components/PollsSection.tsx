@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { PollData, CritData, Poll, Scenario, SecondRound, Institute } from '../types';
 import { SectionTitle, Card, HBar, Stars } from './ui';
 import { LogicLink } from './LogicLink';
+import { GlossaryText } from './GlossaryText';
 import { getColor } from '../lib/utils';
 import { useTranslation, useLocale } from '../i18n/context';
 
@@ -50,8 +51,8 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
                   <div className="font-semibold py-1 border-t border-gray-100">{c.name}</div>
                   <div className="text-center py-1 border-t border-gray-100">{c.pesquisaRange}</div>
                   <div className="text-center py-1 border-t border-gray-100 font-bold text-primary">{c.polymarket}</div>
-                  <div className="text-center py-1 border-t border-gray-100">{c.tendenciaPesquisa}</div>
-                  <div className="text-center py-1 border-t border-gray-100">{c.tendenciaPolymarket}</div>
+                  <div className="text-center py-1 border-t border-gray-100"><GlossaryText>{c.tendenciaPesquisa}</GlossaryText></div>
+                  <div className="text-center py-1 border-t border-gray-100"><GlossaryText>{c.tendenciaPolymarket}</GlossaryText></div>
                 </div>
               ))}
             </div>
@@ -64,8 +65,8 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
                 <div className="grid grid-cols-2 gap-1 text-xs">
                   <span className="text-gray-500">{t('sections.pollsLabel')}</span><span className="font-medium">{c.pesquisaRange}</span>
                   <span className="text-gray-500">Polymarket:</span><span className="font-bold text-primary">{c.polymarket}</span>
-                  <span className="text-gray-500">{t('sections.tendPoll')}:</span><span>{c.tendenciaPesquisa}</span>
-                  <span className="text-gray-500">{t('sections.tendPoly')}:</span><span>{c.tendenciaPolymarket}</span>
+                  <span className="text-gray-500">{t('sections.tendPoll')}:</span><span><GlossaryText>{c.tendenciaPesquisa}</GlossaryText></span>
+                  <span className="text-gray-500">{t('sections.tendPoly')}:</span><span><GlossaryText>{c.tendenciaPolymarket}</GlossaryText></span>
                 </div>
               </div>
             ))}
@@ -116,7 +117,12 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         const isStatePoll = (p: Poll): boolean => {
           const noteRaw = p.note || ''
           const note = noteRaw.toLowerCase()
-          if (note.includes('estadual')) return true
+          // O `note` chega TRADUZIDO quando o locale é en/es (readLocalized em
+          // lib/dashboard/static-data.ts), então procurar só "estadual" deixaria
+          // a rede furada fora do pt-BR: uma estadual que o painel português
+          // barra passaria no inglês. Hoje nenhuma das 14 é barrada nos três
+          // idiomas, mas a rede não pode depender do idioma. Instalado 25/Jul.
+          if (/estadual|estatal|state[- ]level|state poll|statewide/.test(note)) return true
           // UF explícita em CAIXA ALTA (ex.: "Cenário SP"); testar no texto original evita
           // colisão com stopwords minúsculas do português (se/to/pa/ma/al) que abreviam UFs.
           if (/\b(MT|SP|RJ|MG|RS|PR|SC|BA|CE|PE|GO|AM|PA|MA|PI|AL|SE|RN|PB|TO|RO|RR|AP|AC|MS|ES|DF)\b/.test(noteRaw)) {
@@ -207,28 +213,28 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         <h3 className="text-xl font-bold text-dark flex items-center gap-2"><span>🔬</span> {t('sections.critAnalysis')}</h3>
         <LogicLink anchor="analise-criteriosa" />
       </div>
-      <p className="text-xs text-gray-500 mb-4">{crit.subtitle}</p>
+      <p className="text-xs text-gray-500 mb-4"><GlossaryText>{crit.subtitle}</GlossaryText></p>
 
       {/* CANDIDATOS 1-3 (dinâmico via JSON) */}
       {crit.candidates.filter(c => !c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
-          <h3 className="font-bold text-lg text-dark mb-1">{['1️⃣','2️⃣','3️⃣','4️⃣'][Number(c.rank)-1]} {c.header}</h3>
+          <h3 className="font-bold text-lg text-dark mb-1">{['1️⃣','2️⃣','3️⃣','4️⃣'][Number(c.rank)-1]} <GlossaryText>{c.header}</GlossaryText></h3>
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div className="bg-green-50 rounded-lg p-4">
               <h4 className="font-bold text-green-700 text-sm mb-2">✅ {t('sections.strengths')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
-                {asArray(c.fortes).map((f, i) => <li key={i}>• {f}</li>)}
+                {asArray(c.fortes).map((f, i) => <li key={i}>• <GlossaryText>{f}</GlossaryText></li>)}
               </ul>
             </div>
             <div className="bg-red-50 rounded-lg p-4">
               <h4 className="font-bold text-red-700 text-sm mb-2">❌ {t('sections.weaknesses')}</h4>
               <ul className="text-xs text-gray-700 space-y-1.5">
-                {asArray(c.fracos).map((f, i) => <li key={i}>• {f}</li>)}
+                {asArray(c.fracos).map((f, i) => <li key={i}>• <GlossaryText>{f}</GlossaryText></li>)}
               </ul>
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3 mt-3">
-            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> <GlossaryText>{c.analise}</GlossaryText></p>
           </div>
         </Card>
       ))}
@@ -236,30 +242,30 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       {/* CANDIDATO 4, CAIADO/HADDAD (formato especial) */}
       {crit.candidates.filter(c => c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
-          <h3 className="font-bold text-lg text-dark mb-1">4️⃣ {c.header}</h3>
-          {c.subtitle && <p className="text-xs text-gray-500 mb-3">{c.subtitle}</p>}
+          <h3 className="font-bold text-lg text-dark mb-1">4️⃣ <GlossaryText>{c.header}</GlossaryText></h3>
+          {c.subtitle && <p className="text-xs text-gray-500 mb-3"><GlossaryText>{c.subtitle}</GlossaryText></p>}
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div>
-              <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 {c.caiado?.label}</h4>
+              <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 <GlossaryText>{c.caiado?.label}</GlossaryText></h4>
               <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.caiado?.fortes}</p>
+                <p className="text-xs text-gray-700"><strong>Fortes:</strong> <GlossaryText>{c.caiado?.fortes}</GlossaryText></p>
               </div>
               <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.caiado?.fracos}</p>
+                <p className="text-xs text-gray-700"><strong>Fracos:</strong> <GlossaryText>{c.caiado?.fracos}</GlossaryText></p>
               </div>
             </div>
             <div>
-              <h4 className="font-bold text-sm text-danger mb-2">🔴 {c.haddad?.label}</h4>
+              <h4 className="font-bold text-sm text-danger mb-2">🔴 <GlossaryText>{c.haddad?.label}</GlossaryText></h4>
               <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> {c.haddad?.fortes}</p>
+                <p className="text-xs text-gray-700"><strong>Fortes:</strong> <GlossaryText>{c.haddad?.fortes}</GlossaryText></p>
               </div>
               <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> {c.haddad?.fracos}</p>
+                <p className="text-xs text-gray-700"><strong>Fracos:</strong> <GlossaryText>{c.haddad?.fracos}</GlossaryText></p>
               </div>
             </div>
           </div>
           <div className="bg-gray-50 rounded-lg p-3 mt-3">
-            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> {c.analise}</p>
+            <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> <GlossaryText>{c.analise}</GlossaryText></p>
           </div>
         </Card>
       ))}
@@ -280,10 +286,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             {asArray(crit.quadroComparativo).map((r, i) => (
               <div key={i} className="contents">
                 <div className="font-semibold py-1 border-t border-gray-100">{r.n}</div>
-                <div className="text-center py-1 border-t border-gray-100" style={{color: r.pc || undefined, fontWeight: r.pc ? 700 : undefined}}>{r.p}</div>
+                <div className="text-center py-1 border-t border-gray-100" style={{color: r.pc || undefined, fontWeight: r.pc ? 700 : undefined}}><GlossaryText>{r.p}</GlossaryText></div>
                 <div className="text-center py-1 border-t border-gray-100" style={{color: r.mc || undefined, fontWeight: r.mc ? 700 : undefined}}>{r.m}</div>
-                <div className="text-center py-1 border-t border-gray-100">{r.t}</div>
-                <div className="text-center py-1 border-t border-gray-100" style={{color: r.mc || undefined, fontWeight: r.mc ? 700 : undefined}}>{r.s}</div>
+                <div className="text-center py-1 border-t border-gray-100"><GlossaryText>{r.t}</GlossaryText></div>
+                <div className="text-center py-1 border-t border-gray-100" style={{color: r.mc || undefined, fontWeight: r.mc ? 700 : undefined}}><GlossaryText>{r.s}</GlossaryText></div>
               </div>
             ))}
           </div>
@@ -293,16 +299,16 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div key={i} className="bg-white rounded-lg p-3 border border-gray-100">
               <div className="font-semibold text-sm mb-1">{r.n}</div>
               <div className="grid grid-cols-2 gap-1 text-xs">
-                <span className="text-gray-500">{pl.survey}:</span><span className="font-medium">{r.p}</span>
+                <span className="text-gray-500">{pl.survey}:</span><span className="font-medium"><GlossaryText>{r.p}</GlossaryText></span>
                 <span className="text-gray-500">Polymarket:</span><span className="font-bold text-primary">{r.m}</span>
-                <span className="text-gray-500">{pl.trend}:</span><span>{r.t}</span>
-                <span className="text-gray-500">{pl.secondRound}:</span><span>{r.s}</span>
+                <span className="text-gray-500">{pl.trend}:</span><span><GlossaryText>{r.t}</GlossaryText></span>
+                <span className="text-gray-500">{pl.secondRound}:</span><span><GlossaryText>{r.s}</GlossaryText></span>
               </div>
             </div>
           ))}
         </div>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-3">
-          <p className="text-xs text-primary font-semibold">📌 {crit.cruzamento}</p>
+          <p className="text-xs text-primary font-semibold">📌 <GlossaryText>{crit.cruzamento}</GlossaryText></p>
         </div>
       </Card>
       </div>
