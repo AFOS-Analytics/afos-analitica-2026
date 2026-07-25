@@ -1,0 +1,104 @@
+{
+  "date": "2026-07-25",
+  "generatedAt": "2026-07-25T19:30:00.000Z",
+  "refetchPolymarket": {
+    "fetchedAt": "2026-07-25T19:30:18.934Z",
+    "fetchedAtBRT": "25/07/2026, 16:30",
+    "baselineCapture": "2026-07-25T18:51:32.963Z",
+    "captureGuard": {
+      "rodada1": "BLOQUEOU — senate:Partido Liberal (PL) divergiu 0,50pp (70,00% -> 70,50%)",
+      "rodada2": "PASSOU — exit 0, ok=true, motivos=[]",
+      "observacao": "Duas leituras do presidencial no intervalo deram 62,50% e 61,50% com 7 minutos de diferenca. O book estava em transito e a trava tinha razao."
+    },
+    "gateRebaseline": "NAO DISPAROU",
+    "deltas": {
+      "Lula": "62,50% -> 62,50% (0,00pp)",
+      "Flavio": "22,85% -> 22,85% (0,00pp)",
+      "Renan": "10,35% -> 10,35% (0,00pp)",
+      "gap": "39,65pp -> 39,65pp (0,00pp)",
+      "volTotal": "USD 115,79M -> USD 115,87M (atualizado na sintese)"
+    }
+  },
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Itamaraty nega visto a dois funcionarios do Departamento de Estado americano",
+        "verificacao1": "keywords 'Itamaraty' e 'visto' com ZERO mencoes em 7 dailies -> novidade",
+        "verificacao2": {
+          "url": "https://www.correiobraziliense.com.br/politica/2026/07/7467969-itamaraty-nega-vistos-de-dois-funcionarios-dos-eua-para-discutir-liberdade-de-expressao-eleitoral.html",
+          "data": "2026-07-25",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://sbtnews.sbt.com.br/noticia/mundo/itamaraty-rejeita-vistos-funcionarios-eua-eleicoes-brasil",
+        "notaDeIndependencia": "Estado de Minas foi DESCARTADO como segunda fonte por ser do mesmo grupo (Diarios Associados) do Correio Braziliense. SBT News e de grupo distinto.",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Convencao do PL oficializa Flavio; discurso de Milei; video de Jair por IA",
+        "verificacao1": "'Milei' 11 mencoes e 'convencao' 15, ambas em 24/Jul -> continuidade do tema; o discurso e a oficializacao sao fato novo",
+        "verificacao2": {
+          "url": "https://www.metropoles.com/sao-paulo/milei-critica-esquerda-e-diz-que-confia-em-flavio-para-frear-lula",
+          "data": "2026-07-25",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.cnnbrasil.com.br/eleicoes/pl-apresenta-video-de-ia-com-mensagem-de-jair-bolsonaro-em-convencao/",
+        "correcaoAplicada": "Michelle Bolsonaro participou APENAS por video, nao presencialmente. A apuracao inicial dizia 'apoio de Michelle' de forma ambigua; O Globo titula 'sem presenca de Michelle'. Corrigido antes de publicar.",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Datafolha divulgada",
+        "verificacao1": "23 mencoes, presente em 24/Jul -> continuidade do tema; em 24/Jul estava 'registrada e nao divulgada', a divulgacao e o fato novo",
+        "verificacao2": {
+          "url": "https://ohoje.com/2026/07/24/pesquisa-datafolha-lula-tem-48-e-flavio-bolsonaro-43-no-2o-turno/",
+          "data": "2026-07-24",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/07/24/datafolha-rejeicao-flavio-bolsonaro-lula.ghtml",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Justica do Rio bloqueia ate R$ 135 milhoes (caso Rioprevidencia/Master)",
+        "verificacao1": "'Rioprevidencia' com ZERO mencoes em 7 dailies -> novidade",
+        "verificacao2": {
+          "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-07/justica-do-rio-determina-bloqueio-de-contas-do-banco-master",
+          "data": "2026-07-25",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.gazetadopovo.com.br/republica/justica-do-rio-determina-bloqueio-de-r-135-milhoes-do-banco-master-por-perdas-no-rioprevidencia/",
+        "decisao": "incorporar como decisao de 23/Jul, nao como fato de 25/Jul"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma; as 4 ancoras tem duas fontes independentes",
+    "numericalErrors": "reconcile-claims.ts OK, todos os claims batem com o JSON em +-0,05pp",
+    "fontesInventadas": "3 verificadas por fetch real (Correio Braziliense, SBT News, Metropoles), todas HTTP 200 com conteudo correspondente",
+    "quotesLiterais": [
+      "'somente Flavio pode parar Lula' (Metropoles/O Globo)",
+      "'lixo careca' sobre Moraes (Jornal de Brasilia/Folha)",
+      "'vai apanhar muito' (Correio Braziliense)"
+    ],
+    "causacaoEspuria": "NENHUMA. A alta de Lula NAO e atribuida a convencao: o texto declara que a captura e das 15:51, que a convencao correu na tarde e que o gap ja subia desde 20/Jul (+33,60pp).",
+    "verbosCriticos": "'prisao domiciliar' com decisao datada 18/Jul; 'bloqueio' com valor e data 23/Jul; 'negou visto' com pedido 20/Jul e negativa 24/Jul. Zero ocorrencias de 'ontem'/'hoje' no corpo.",
+    "superlativo": {
+      "afirmacao": "gap +39,65pp e o maior da serie",
+      "comoFoiConferido": "scripts/check-superlativo.ts consultando o Neon SEM cap de janela",
+      "cobertura": "99 dias, 14/Abr a 25/Jul",
+      "picoAnterior": "+39,50pp em 03/Jul",
+      "limitacaoDeclarada": "o /api/market/history trava days em 90 (Math.min) e o take:1000 pega os pontos mais ANTIGOS, entao ele NAO consegue provar 'do ciclo'. A sintese escreve 'o maior da serie' com a janela nomeada, nunca 'do ciclo'."
+    },
+    "ressalvaAssumida": "densidade de links em 77%, abaixo da regua de 80%. Os paragrafos sem link sao analiticos (explicacao da janela de 90 dias, ressalva de causacao). Toda alegacao factual esta linkada; nao foram acrescentados links decorativos so para bater a metrica.",
+    "decisao": "prosseguir"
+  },
+  "validacao": {
+    "validateAfosDaily": "exit 0 (1 warning: low-link-density 77%)",
+    "reconcileClaims": "exit 0, OK",
+    "urlGate": "bloqueou 1 URL do Google News truncada por mim (448 de 605 chars, HTTP 400); substituida pelas URLs primarias curtas de G1 e O Globo",
+    "checagensLocale": "5/5 limpas nas 3 versoes (ancora de glossario, locale cruzado, cirilico, invisivel, separador decimal)"
+  },
+  "fontes": {
+    "ancora": 5,
+    "secundaria": 11,
+    "proporcaoSecundaria": "69%"
+  }
+}
