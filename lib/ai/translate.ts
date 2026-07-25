@@ -15,7 +15,12 @@ export interface TranslationRequest {
   sourceLocale: string
   targetLocale: string
   type: 'ui' | 'editorial' | 'afos-daily'
-  /** For type='afos-daily' only — terms to keep in PT and link to glossary */
+  /**
+   * Termos que ficam em português e viram link para o verbete.
+   * Vale para 'afos-daily' e para 'editorial' (JSONs do dashboard). Em
+   * 'editorial' o bloco só entra se esta lista vier preenchida, então quem não
+   * passa nada continua com o prompt de antes.
+   */
   glossaryEntries?: Array<{ term: string; id: string }>
 }
 
@@ -304,7 +309,7 @@ export async function translate(req: TranslationRequest): Promise<TranslationRes
       ? uiTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
       : req.type === 'afos-daily'
         ? afosDailyTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale, glossarioSemColisao)
-        : editorialTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale)
+        : editorialTranslationPrompt(shieldedText, req.sourceLocale, req.targetLocale, glossarioSemColisao)
 
   // AFOS Daily syntheses are 600-900 words and contain dense markdown — give them more budget.
   const maxTokens = req.type === 'afos-daily' ? 8192 : 2048

@@ -27,12 +27,23 @@ import { parseNumeric } from './numeric'
  * As escalas dos três idiomas entram juntas de propósito: "83 mil" em pt e
  * "83 thousand" ou "83k" em en são o MESMO valor, e o gate não pode reprovar
  * uma tradução por ter escrito a escala no idioma certo.
+ *
+ * ⚠️ COMPOSTO DO ESPANHOL: "mil millones" é bilhão. Em espanhol "billón" é um
+ * MILHÃO de milhões, então a tradução correta de "R$ 145 bi" é "R$ 145 mil
+ * millones", nunca "145 billones". Sem o composto na frente da alternância, o
+ * gate casava só o "mil" e lia 145 mil contra 145 bilhões do português: uma
+ * divergência falsa que descartaria uma tradução correta e mandaria o leitor
+ * espanhol de volta para o português. Detectado em 25/Jul/2026, antes de gerar
+ * o primeiro ES.
  */
-const ESCALAS = 'bilhões|bilhoes|bilhão|bilhao|billion|millones|milhões|milhoes|milhão|milhao|million|thousand|mil|MM|bi|mi|M|k|B'
+const ESCALAS = 'mil millones|mil millón|mil milhões|mil milhoes|billones|billón|billon|bilhões|bilhoes|bilhão|bilhao|billion|millones|milhões|milhoes|milhão|milhao|million|thousand|mil|MM|bi|mi|M|k|B'
 const TOKEN_RE =
   new RegExp(String.raw`(?<![\w.,])([+\-−↑↓]?)\s*(\d+(?:[.,]\d+)*)\s*(${ESCALAS})?\s*(%|pp|p\.p\.)?`, 'giu')
 
-function tokensDe(texto: string, locale: 'pt' | 'en'): number[] {
+function tokensDe(texto: string, locale: 'pt' | 'en' | 'es'): number[] {
+  // Separador decimal: o espanhol segue a convenção do português (vírgula).
+  // A ESCALA, porém, NÃO segue, e é por isso que o idioma real chega aqui.
+  const decimal: 'pt' | 'en' = locale === 'en' ? 'en' : 'pt'
   const out: number[] = []
   // URLs carregam dígitos que não são dado editorial.
   const limpo = texto.replace(/https?:\/\/[^\s)\]]+/g, ' ')
@@ -41,11 +52,21 @@ function tokensDe(texto: string, locale: 'pt' | 'en'): number[] {
     const antes = limpo.slice(Math.max(0, (m.index ?? 0) - 12), m.index ?? 0)
     const moeda = /(USD|R\$|US\$)\s*$/i.test(antes)
     if (!unidade && !moeda) continue          // número sem unidade: fora
-    const base = parseNumeric((sinal || '') + num, locale)
+    const base = parseNumeric((sinal || '') + num, decimal)
     if (base === null) continue
-    const e = (escala ?? '').toLowerCase()
+    // Espaço interno normalizado: a escala pode vir com espaço duplo do texto.
+    const e = (escala ?? '').toLowerCase().replace(/\s+/g, ' ').trim()
+    // O COMPOSTO VEM PRIMEIRO. "mil millones" começa com "mi", então cairia no
+    // ramo de milhão logo abaixo e valeria 1e6 em vez de 1e9. A ordem aqui é
+    // load-bearing, exatamente como a da alternância em ESCALAS.
     const fator =
-      /^(mil|k|thousand)$/.test(e) ? 1e3
+      /^mil (millones|millón|milhões|milhoes)$/.test(e) ? 1e9
+      : /^(mil|k|thousand)$/.test(e) ? 1e3
+      // FALSO AMIGO CARO: "billón" em espanhol é um MILHÃO de milhões (1e12),
+      // não 1e9. Antes disso o gate lia "145 billones" como 145 bilhões e
+      // APROVAVA uma tradução que dizia mil vezes o valor certo. Só o espanhol
+      // entra neste ramo: "bilhão" (pt) e "billion" (en) continuam 1e9.
+      : locale === 'es' && /^(billones|billón|billon)$/.test(e) ? 1e12
       : /^(bilh|billion|bi|b)/.test(e) ? 1e9
       : /^(milh|million|millones|mm|mi|m)/.test(e) ? 1e6
       : 1
@@ -74,9 +95,29 @@ export function compararNumeros(
   caminho = '',
 ): DivergenciaNumerica[] {
   const out: DivergenciaNumerica[] = []
-  const locT: 'pt' | 'en' = locDestino === 'en' ? 'en' : 'pt'
+  // O idioma REAL do destino, não o mapeamento para a convenção decimal:
+  // o tokenizador precisa saber que é espanhol para tratar "billón" como 1e12.
+  const locT: 'pt' | 'en' | 'es' = locDestino
 
   if (typeof original === 'string') {
+    // IGUAL BYTE A BYTE: a tradução não tocou nesta string, logo não pode ter
+    // alterado número nenhum, e comparar seria comparar a string consigo mesma
+    // sob duas convenções decimais diferentes.
+    //
+    // Sem isto, os campos que o script mantém em português de propósito
+    // (`source`, `protocolo`, `institute`, metadados de procedência que nenhum
+    // componente renderiza) reprovavam o arquivo inglês inteiro: o
+    // `approvalData.source` de polls-data.json traz "aprova 45,9%", que lido em
+    // convenção inglesa vira 459 contra os 45,9 do português. Uma divergência
+    // que não existe descartaria a tradução e mandaria o /en/dashboard de volta
+    // para o português. Detectado em 25/Jul/2026.
+    //
+    // LIMITE ACEITO: se o tradutor devolvesse uma string LONGA sem tocar em
+    // nada, o gate não acusaria a vírgula decimal não convertida. Na prática
+    // prosa traduzida nunca volta idêntica; campo de dado, sim, e é justamente
+    // esse o caso que se quer deixar passar.
+    if (original === traduzido) return out
+
     if (typeof traduzido !== 'string') {
       out.push({ caminho, original: [], traduzido: [], trechoOriginal: original.slice(0, 80), trechoTraduzido: '(não é string)' })
       return out

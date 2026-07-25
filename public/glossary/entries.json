@@ -327,5 +327,49 @@
       "en": "Primeiro Comando da Capital (PCC) and Comando Vermelho (CV) are Brazils two largest criminal factions. They entered the 2026 electoral debate after the United States designated them terrorist organizations — a move championed by Flávio Bolsonaro and used as a campaign weapon by both sides (the Lula government and the opposition).",
       "es": "Primeiro Comando da Capital (PCC) y Comando Vermelho (CV) son las dos mayores facciones criminales de Brasil. Entraron en el debate electoral de 2026 después de que Estados Unidos las clasificara como organizaciones terroristas — una medida defendida por Flávio Bolsonaro y utilizada como arma electoral por ambos lados (el gobierno de Lula y la oposición)."
     }
+  },
+  "centrao": {
+    "id": "centrao",
+    "term": "centrão",
+    "type": "institutional",
+    "firstSeen": "2026-07-25",
+    "definitions": {
+      "pt-BR": "Bloco informal de partidos de centro no Congresso brasileiro, sem programa ideológico fixo, que negocia apoio ao governo de turno em troca de cargos e de emendas ao Orçamento. Não é partido nem federação registrada: é uma articulação variável, cuja composição muda a cada legislatura. Em 2026 reúne siglas como PP, União Brasil, Republicanos e PSD.",
+      "en": "Informal bloc of centrist parties in the Brazilian Congress, with no fixed ideological platform, which negotiates support for whichever government is in office in exchange for appointments and budget earmarks. It is neither a party nor a registered federation: it is a shifting arrangement whose membership changes with each legislature. In 2026 it includes parties such as PP, União Brasil, Republicanos and PSD.",
+      "es": "Bloque informal de partidos de centro en el Congreso brasileño, sin programa ideológico fijo, que negocia apoyo al gobierno de turno a cambio de cargos y de enmiendas al Presupuesto. No es un partido ni una federación registrada: es una articulación variable, cuya composición cambia en cada legislatura. En 2026 reúne siglas como PP, União Brasil, Republicanos y PSD."
+    }
+  },
+  "pauta-bomba": {
+    "id": "pauta-bomba",
+    "term": "pauta-bomba",
+    "type": "institutional",
+    "firstSeen": "2026-07-25",
+    "definitions": {
+      "pt-BR": "Conjunto de projetos aprovados pelo Congresso que aumentam despesa ou reduzem receita da União sem indicar de onde sai o dinheiro, estourando as metas fiscais do governo. O nome é jornalístico e descreve o efeito sobre o Orçamento, não a intenção declarada de quem propôs. Costuma aparecer em ano eleitoral.",
+      "en": "Set of bills passed by Congress that raise federal spending or cut federal revenue without identifying where the money comes from, blowing through the government's fiscal targets. The name is journalistic and describes the effect on the budget, not the stated intent of those who proposed it. It typically appears in an election year.",
+      "es": "Conjunto de proyectos aprobados por el Congreso que aumentan el gasto o reducen los ingresos de la Unión sin indicar de dónde sale el dinero, desbordando las metas fiscales del gobierno. El nombre es periodístico y describe el efecto sobre el Presupuesto, no la intención declarada de quien los propuso. Suele aparecer en año electoral."
+    }
+  },
+  "pau-mandado": {
+    "id": "pau-mandado",
+    "term": "pau-mandado",
+    "type": "neologism",
+    "firstSeen": "2026-07-25",
+    "definitions": {
+      "pt-BR": "Expressão coloquial brasileira para quem cumpre ordem de outro sem autonomia própria. É acusação política corrente no debate brasileiro, usada para sugerir que uma autoridade age por conta de terceiro. Não tem sentido jurídico e não descreve cargo nem função.",
+      "en": "Brazilian colloquial expression for someone who carries out another person's orders with no autonomy of their own. It is a common political accusation in Brazilian debate, used to suggest that an official is acting on behalf of a third party. It has no legal meaning and describes neither a post nor a function.",
+      "es": "Expresión coloquial brasileña para quien cumple órdenes de otro sin autonomía propia. Es una acusación política corriente en el debate brasileño, usada para sugerir que una autoridad actúa por cuenta de un tercero. No tiene sentido jurídico y no describe cargo ni función."
+    }
+  },
+  "penduricalhos": {
+    "id": "penduricalhos",
+    "term": "penduricalhos",
+    "type": "neologism",
+    "firstSeen": "2026-07-25",
+    "definitions": {
+      "pt-BR": "Nome dado às verbas pagas a magistrados e a membros do Ministério Público além do salário, como auxílios e indenizações, que não entram na conta do teto constitucional do funcionalismo. O termo é jornalístico: nos contracheques esses valores aparecem sob rubricas técnicas variadas.",
+      "en": "Name given to payments made to judges and prosecutors on top of salary, such as allowances and indemnities, which fall outside the constitutional pay ceiling for public servants. The term is journalistic: on payslips these amounts appear under a variety of technical headings.",
+      "es": "Nombre dado a los pagos hechos a magistrados y a miembros del Ministerio Público por encima del salario, como auxilios e indemnizaciones, que quedan fuera del tope constitucional de la función pública. El término es periodístico: en las nóminas esos montos aparecen bajo rúbricas técnicas variadas."
+    }
   }
 }

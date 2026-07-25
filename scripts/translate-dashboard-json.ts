@@ -24,6 +24,7 @@ dotenv({ path: '.env.local' })
 import { readFileSync, writeFileSync, existsSync, unlinkSync } from 'fs'
 import { join } from 'path'
 import { translate, falhaDeConta } from '../lib/ai/translate'
+import { loadGlossary } from '../lib/glossary/loader'
 import { compararNumeros } from './lib/json-number-gate'
 
 /** Falha de conta (saldo, chave, permissão) aborta a rodada: repetir não muda nada. */
@@ -37,9 +38,30 @@ type Locale = typeof LOCALES[number]
 /** Chaves cujo valor é identificador ou dado bruto: nunca traduzir. */
 const CHAVES_LITERAIS = new Set([
   'name', 'n', 'institute', 'register', 'protocolo', 'source', 'sources', 'date',
-  'fieldDates', 'lastUpdate', 'updatedAt', 'polymarket', 'm', 'pc', 'mc', 'color',
+  'fieldDates', 'lastUpdate', 'updatedAt', 'polymarket', 'pc', 'mc', 'color',
   'party', 'candidate', 'candidate1', 'candidate2', 'matchup', 'rank', 'slug',
 ])
+
+/**
+ * Chaves de EXIBIÇÃO: valor curto, mas que aparece na tela e mistura número com
+ * palavra. Traduz SEMPRE, ignorando o filtro `ehTextoEditorial`.
+ *
+ * Existe por causa do `m` do quadroComparativo, renderizado em PollsSection
+ * como "Polymarket: {r.m}". O valor é "61.50% (vol USD 7,63M acumulado)":
+ *   1. "acumulado" é português e apareceria cru no /en/dashboard;
+ *   2. pior, "7,63M" com vírgula seria lido pelo gate em convenção inglesa
+ *      como 763 milhões, divergindo dos 7,63 milhões do português. O arquivo
+ *      EN inteiro seria DESCARTADO e o dashboard cairia para pt-BR.
+ * O filtro editorial sozinho não pegava: a string tem só uma palavra de 4+
+ * letras e era rejeitada como "não é texto".
+ *
+ * `method`, `type`, `note` e `pesquisaRange` entraram pelo mesmo motivo, em
+ * 25/Jul: são rótulos de tela CURTOS ("Presencial", "Telefônica (CATI)",
+ * "Misto", "sem dados nacionais", "Metodologia digital.") e o piso de 25
+ * caracteres do filtro os deixava em português no /en/dashboard. Valor sem
+ * nada a traduzir, como "38-46%", volta idêntico e o gate deixa passar.
+ */
+const CHAVES_DISPLAY = new Set(['m', 'method', 'type', 'note', 'pesquisaRange'])
 
 /**
  * Vale a pena traduzir? Exige texto de verdade, não rótulo nem número formatado.
@@ -65,6 +87,10 @@ function coletar(obj: unknown, caminho = '', out: Item[] = []): Item[] {
   if (obj && typeof obj === 'object') {
     for (const [k, v] of Object.entries(obj as Record<string, unknown>)) {
       if (CHAVES_LITERAIS.has(k) && typeof v === 'string') continue
+      if (CHAVES_DISPLAY.has(k) && typeof v === 'string') {
+        out.push({ caminho: caminho ? `${caminho}.${k}` : k, texto: v })
+        continue
+      }
       coletar(v, caminho ? `${caminho}.${k}` : k, out)
     }
   }
@@ -98,6 +124,10 @@ function aplicar(obj: unknown, mapa: Map<string, string>, caminho = ''): unknown
  * construção, ao campo que a originou.
  */
 async function traduzirCampos(itens: Item[], locale: Locale, concorrencia = 3): Promise<Map<string, string>> {
+  // Glossário INTEIRO, como o Daily faz (translate-afos-daily-chunked.ts).
+  // Termo brasileiro sem tradução fica em português e vira link para o verbete.
+  // Sem isto o script apagaria os links a cada /atualizar.
+  const glossaryEntries = loadGlossary().map(e => ({ term: e.term, id: e.id }))
   const mapa = new Map<string, string>()
   let feitos = 0
   let erro: Error | null = null
@@ -111,9 +141,10 @@ async function traduzirCampos(itens: Item[], locale: Locale, concorrencia = 3): 
           sourceText: item.texto,
           sourceLocale: 'pt-BR',
           targetLocale: locale,
-          // 'editorial' e não 'afos-daily': aqui não há frontmatter nem
-          // glossário com link, é prosa de análise e não markdown de publicação.
+          // 'editorial' e não 'afos-daily': aqui não há frontmatter nem chunking
+          // de markdown, é prosa de análise. O glossário vale nos dois.
           type: 'editorial',
+          glossaryEntries,
         })
         const txt = r.translatedText.trim()
         if (!txt) throw new Error(`campo ${item.caminho} voltou vazio`)

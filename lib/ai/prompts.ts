@@ -55,11 +55,36 @@ ${sanitize(sourceText)}
 </source_text>`;
 }
 
-/** Prompt para tradução editorial longa (descrições, análises) */
-export function editorialTranslationPrompt(sourceText: string, sourceLocale: string, targetLocale: string): string {
+/**
+ * Prompt para tradução editorial longa (descrições, análises).
+ *
+ * `glossaryEntries` é OPCIONAL e o bloco de glossário só entra quando vem
+ * preenchido. Isso é deliberado: /api/translations também usa type 'editorial'
+ * para conteúdo avulso, e injetar link de glossário ali mudaria o resultado de
+ * um consumidor que não pediu nada. Sem verbetes, o prompt é byte a byte o que
+ * era antes de 25/Jul/2026.
+ *
+ * Quando vem preenchido (JSONs do dashboard), vale a mesma regra do AFOS Daily:
+ * termo brasileiro sem tradução fica em português e vira link para o verbete.
+ */
+export function editorialTranslationPrompt(
+  sourceText: string,
+  sourceLocale: string,
+  targetLocale: string,
+  glossaryEntries: Array<{ term: string; id: string }> = []
+): string {
+  const glossario = glossaryEntries.length === 0 ? '' : `
+
+**Brazilian glossary terms — KEEP IN PORTUGUESE and link to the glossary.** For each occurrence of these terms in plain text, use the exact replacement shown:
+${glossaryEntries.map(g => `  - "${g.term}" → [${g.term}](/${targetLocale}/glossary#${g.id})`).join('\n')}
+   - Do NOT translate the term itself. The reader gets the Portuguese word plus a link that explains it, which is the AFOS standard.
+   - Link ONLY THE FIRST occurrence of each term in this text; leave later occurrences as plain Portuguese, unlinked. These strings render inside small dashboard cards, where repeating the same link three times in one paragraph buries the numbers the reader came for.
+   - NEVER nest a glossary link inside another markdown link. Markdown does not support nested links and the output would break the parser.
+   - Only the terms listed above. Do NOT invent glossary anchors for other words, and do NOT emit any other kind of URL.`;
+
   return `Translate the following editorial content from ${sourceLocale} to ${targetLocale}.
 Maintain the analytical, institutional tone. Preserve all data points, numbers, percentages, and proper nouns exactly.
-Return ONLY the translation, nothing else.
+Return ONLY the translation, nothing else.${glossario}
 
 <source_text>
 ${sanitize(sourceText)}

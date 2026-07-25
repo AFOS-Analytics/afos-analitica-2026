@@ -3,6 +3,7 @@
 import type { AnalysisSection, PolyEvent } from '../types';
 import { SectionTitle, Card } from './ui';
 import { LogicLink } from './LogicLink';
+import { GlossaryText } from './GlossaryText';
 import { useTranslation } from '../i18n/context';
 
 interface Props {
@@ -51,16 +52,16 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
           ].map(m => (
             <div key={m.name} className="bg-red-50 rounded-lg p-3">
               <div className="font-semibold text-sm text-dark">{m.name}</div>
-              <p className="text-xs text-gray-600 mt-1">{m.desc}</p>
+              <p className="text-xs text-gray-600 mt-1"><GlossaryText>{m.desc}</GlossaryText></p>
             </div>
           ))}
         </div>
         <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-3">
           <h4 className="font-bold text-xs text-danger mb-2">🏦 {t('sections.stfNexus')}</h4>
-          <p className="text-xs text-gray-700 leading-relaxed">{stf?.nexo || ''}</p>
+          <p className="text-xs text-gray-700 leading-relaxed"><GlossaryText>{stf?.nexo}</GlossaryText></p>
         </div>
         <div className="bg-gray-50 rounded-lg p-3">
-          <p className="text-sm text-dark leading-relaxed">{stf?.analise || ''}</p>
+          <p className="text-sm text-dark leading-relaxed"><GlossaryText>{stf?.analise}</GlossaryText></p>
         </div>
       </Card>
     </section>

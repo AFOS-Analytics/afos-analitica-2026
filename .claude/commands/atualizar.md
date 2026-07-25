@@ -207,7 +207,8 @@ Execute em sequência:
 
 ## ESTILO TEXTUAL (anti-AI tells)
 
-- NÃO usar markdown bold (`**...**`) dentro de strings dos JSONs — renderiza como literal `**` na UI do dashboard. Use texto plano com vírgulas, dois pontos ou frases curtas para destacar.
+- NÃO usar markdown bold (`**...**`) dentro de strings dos JSONs — renderiza como literal `**` na UI do dashboard. Use texto plano com vírgulas, dois pontos ou frases curtas para destacar. **Isso continua valendo:** os cartões NÃO passam por markdown, e negrito, itálico, cabeçalho e lista seguem sem efeito.
+- ⚠️ **ÚNICA exceção, instalada 25/Jul/2026: link de glossário.** O `GlossaryText` (`app/components/GlossaryText.tsx`) reconhece exatamente `[termo](/{locale}/glossary#{id})` e mais nada. Serve à regra do AFOS de que termo brasileiro sem tradução fica em português e vira link para o verbete, igual ao Daily e ao Tradeoff. Só vale nos arquivos traduzidos (`.en.json`, `.es.json`), gerados na ETAPA 3.5; o pt-BR não leva link, porque para o leitor brasileiro o termo não precisa de verbete. Id inválido ou URL externa NÃO viram link: aparecem como texto literal na tela, de propósito, para o defeito ser visível.
 - NÃO usar travessão (—) como separador. Use vírgula, ponto, ou parênteses.
 - Variações em pp (↑0.55pp / ↓2.5pp) são bem-vindas — formato técnico claro, não AI tell.
 - Evitar sentence fragments para "ênfase" e parallel structure exagerado.
