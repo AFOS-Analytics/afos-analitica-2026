@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-24",
+  "lastUpdate": "2026-07-25",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,84 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Datafolha",
+      "date": "2026-07-24",
+      "sample": 2004,
+      "margin": 2,
+      "register": "BR-01166/2026",
+      "reliability": 5,
+      "method": "In person",
+      "fieldDates": "2026-07-22 a 2026-07-24",
+      "note": "National [Datafolha](/en/glossary#datafolha) released on the evening of Jul 24 (G1, Folha de S.Paulo, Estadão, CNN Brasil, O Globo, CartaCapital), the first Tier 1 poll after party conventions began and after the new round of US tariffs. In the [first round](/en/glossary#primeiro-turno): Lula 40%, Flávio Bolsonaro 32%, Caiado 4%, Zema 3%, Renan Santos 3%, Augusto Cury 2%, Samara Martins, Cabo Daciolo and Rui Costa Pimenta 1% each, Hertz Dias, Edmilson Costa and Leonardo Avalanche 0%; blank and null 8%, don't know 3%. In the head-to-head [runoff](/en/glossary#segundo-turno), Lula 48% x Flávio 43%. Lula wins the other scenarios tested: 47% x Caiado 40% and 48% x Zema 40%. Rejection: Flávio 48%, Lula 46%, Zema 13%, Caiado 12%, Cabo Daciolo 12%, Renan Santos 12%. Fieldwork Jul 22-24, n=2,004, face-to-face, 2pp margin, 95% confidence, [TSE](/en/glossary#tse) filing BR-01166/2026. READING: this is STABILITY, not a reversal. Against the previous Datafolha (Jun 20, fieldwork Jun 17-19, same n and same margin), Lula goes from 41% to 40% and Flávio from 31% to 32% in the first round, while in the runoff Lula goes from 47% to 48% and Flávio stays at 43%. The two readings moved in OPPOSITE directions and both inside the margin, which is the signature of sampling noise and not of a trend. Rejection came in identical to June for both names (48% and 46%). IT SETTLES THE RENAN CASE: with Renan at 3%, Datafolha joins Gerp Jul 22 and Indexa Jul 21, meaning three of the four most recent national polls measure him at 3%, and the 9% from Real Time Jul 21 is left isolated. It is the heaviest polling reading in the set and the one that most tightens the distortion against his market price.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 32
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 1
+            },
+            {
+              "candidate": "Cabo Daciolo (Mobiliza)",
+              "percent": 1
+            },
+            {
+              "candidate": "Rui Costa Pimenta (PCO)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Romeu Zema",
+          "percent2": 40
+        }
+      ],
+      "source": "Datafolha via G1, Folha de S.Paulo, Estadão, CNN Brasil, O Globo, CartaCapital Jul 24. TSE filing BR-01166/2026."
+    },
     {
       "institute": "Gerp",
       "date": "2026-07-22",
@@ -853,55 +931,19 @@
         }
       ],
       "source": "PoderData/Aya via Poder360, CNN Brasil, CartaCapital 25/Jun"
-    },
-    {
-      "institute": "Gerp",
-      "date": "2026-06-24",
-      "sample": 2000,
-      "margin": 2,
-      "register": null,
-      "reliability": 3,
-      "method": "Mixed",
-      "fieldDates": "junho de 2026 (publicada 24/Jun)",
-      "note": "Gerp national poll published June 24 (CNN Brasil, Poder360, Exame, Jovem Pan, Gazeta do Povo, O Brasilianista, CartaCapital). [Statistical tie](/en/glossary#empate-tecnico): R1 Lula 37% x Flávio 34% (gap +3pp); R2 Flávio 42% x Lula 40% (Flávio numerically ahead, within the margin). Lula's approval 44%, rejection 47% (Pleno.News). It is an OUTLIER against the recent Tier 1 consensus (Indexa June 23 42x31 and R2 47x40; [Datafolha](/en/glossary#datafolha) June 20 41x31 and R2 47x43; CNT/MDA; BTG/[Nexus](/en/glossary#nexus-btg)), all with Lula comfortable. Smaller institute, registered with the [TSE](/en/glossary#tse), reliability 3; margin ~2pp for n=2,000 (statistical tie).",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 37
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 40,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42
-        }
-      ],
-      "source": "Gerp via CNN Brasil, Poder360, Exame, Jovem Pan, Gazeta do Povo 24/Jun"
     }
   ],
   "approvalData": {
-    "note": "The new reading is PoderData of July 22 (fieldwork July 18-20, n=2,500, IVR, 147 municipalities across 27 states, margin 2pp), which does NOT have a [TSE](/en/glossary#tse) registration because it measures ratings and not voting intention: Lula's personal approval 46% x disapproval 47%, with disapproval receding 3pp from the 50% of the previous week, and the poor-or-terrible rating of his performance falling from 47% to 37%, ten points in one week, a movement the institute links to the aftermath of the tariff shock. It is the most favorable reading for Lula in weeks, but the administration remains disapproved by 51% against 43% approval, so the improvement is in personal ratings, not in governing. The previous ones: Indexa July 21 approve 49% x disapprove 48% (a tie within the margin, with 51% saying Lula does not deserve another four years), Real Time July 21 approve 46% x disapprove 50%, Genial/[Quaest](/en/glossary#quaest) July 15 (n=2,004, in person, reliability 5) approve 48% x disapprove 47%, the best level of the year (VEJA), and PoderData/Aya July 16 (n=2,400, BR-00059/2026) approve 42% x disapprove 51%. The panel displays Quaest because it has the highest reliability in the window and because it sustains the historical series; the others are recorded as method divergence, not as a correction. CANDIDATE REJECTION: Indexa July 21 gives Flávio 50% and Lula 49% ([statistical tie](/en/glossary#empate-tecnico)); Real Time July 21 gives Flávio 50% and Lula 48%; Quaest July 15 gives Flávio 57% (the highest in the field) and Lula 50%; Gerp July 22 gives Lula 47% and Flávio 46% (statistical tie, without releasing approval).",
-    "source": "Genial/Quaest (15/Jul/2026, n=2.004, aprova 48% x desaprova 47%, exibida no painel) + PoderData (22/Jul, campo 18-20/Jul, n=2.500, IVR, sem registro TSE por medir avaliação e não intenção de voto, aprovação pessoal 46% x desaprovação 47%, governo 43% x 51%, fontes Poder360, CNN Brasil, SBT News) + Indexa (21/Jul, n=2.000, BR-02904/2026, aprova 49% x desaprova 48%) + Real Time Big Data (21/Jul, n=2.000, BR-09247/2026, aprova 46% x desaprova 50%) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprova 42% x desaprova 51%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprova 45,9% x desaprova 52,3%)",
-    "date": "2026-07-15",
+    "note": "The new reading, and now the heaviest in the set, is the Datafolha of Jul 24 (fieldwork Jul 22-24, n=2,004, face-to-face, 2pp margin, BR-01166/2026): Lula's approval 49% x disapproval 48%, with 3% who don't know. In the previous Datafolha it was the reverse, 48% x 49%. In other words, the two ends swapped places by 1pp in a survey with a 2pp margin, which is a statistical tie in both rounds and not a reversal: the correct reading is stability, exactly as the institute and the coverage recorded in the face of the new US tariffs. On the assessment of the administration, which is a different question from personal approval, the picture remains negative: 38% consider the government poor or terrible, 32% excellent or good and 28% fair. The distance between the two indicators is the figure that matters, because voters approve of the person more than of the administration. The earlier ones: PoderData Jul 22 (fieldwork Jul 18-20, n=2,500, IVR, no TSE filing because it measures assessment and not vote intention) personal approval 46% x 47% and government 43% x 51%; Indexa Jul 21 approval 49% x disapproval 48%; Real Time Jul 21 approval 46% x disapproval 50%; Genial/[Quaest](/en/glossary#quaest) Jul 15 approval 48% x disapproval 47%; PoderData/Aya Jul 16 approval 42% x disapproval 51%. CANDIDATE REJECTION in the Jul 24 Datafolha: Flávio 48% and Lula 46%, figures identical to the June Datafolha, with no movement in either man's veto. In the others: Indexa Jul 21 gives Flávio 50% and Lula 49%; Real Time Jul 21 gives Flávio 50% and Lula 48%; Quaest Jul 15 gives Flávio 57% and Lula 50%; Gerp Jul 22 gives Lula 47% and Flávio 46%.",
+    "source": "Datafolha (Jul 24, 2026, fieldwork Jul 22-24, n=2,004, face-to-face, 2pp margin, BR-01166/2026, approval 49% x disapproval 48%, administration 32% excellent/good x 38% poor/terrible x 28% fair, shown in the panel, sources G1, Folha de S.Paulo, Estadão, CNN Brasil, O Globo) + PoderData (Jul 22, fieldwork Jul 18-20, n=2,500, IVR, no TSE filing, personal approval 46% x 47%, government 43% x 51%) + Indexa (Jul 21, n=2,000, BR-02904/2026, approval 49% x disapproval 48%) + Real Time Big Data (Jul 21, n=2,000, BR-09247/2026, approval 46% x disapproval 50%) + Genial/Quaest (Jul 15, n=2,004, approval 48% x disapproval 47%) + PoderData/Aya (Jul 16, n=2,400, BR-00059/2026, approval 42% x disapproval 51%) + AtlasIntel/Bloomberg (Jul 1, n=5,000, BR-04582/2026, approval 45.9% x disapproval 52.3%)",
+    "date": "2026-07-24",
     "results": {
-      "aprovacao": 48,
-      "desaprovacao": 47,
-      "naoSabe": 5,
-      "otimoBom": 38,
-      "ruimPessimo": 41,
-      "regular": 21
+      "aprovacao": 49,
+      "desaprovacao": 48,
+      "naoSabe": 3,
+      "otimoBom": 32,
+      "ruimPessimo": 38,
+      "regular": 28
     },
     "historicalComparison": [
       {
@@ -926,22 +968,22 @@
       },
       {
         "president": "Lula (2026)",
-        "approval6m": 48,
-        "disapproval6m": 47
+        "approval6m": 49,
+        "disapproval6m": 48
       }
     ],
-    "lastUpdate": "2026-07-24"
+    "lastUpdate": "2026-07-25"
   },
   "polymarketComparison": {
-    "note": "[Polymarket](/en/glossary#polymarket) cross-reference (live July 24, 20:31 UTC, degraded false, failedCount 0), at 72 days until the [first round](/en/glossary#primeiro-turno), on the SECOND consecutive day without a published national voting-intention poll. [Datafolha](/en/glossary#datafolha) (Tier 1) was registered with the [TSE](/en/glossary#tse) for publication today (BR-01166/2026, n=2,004, fieldwork July 22-24) and had NOT been released by the time of the capture: what circulated were announcement stories, and no number of theirs enters this panel until it comes out. The most recent polling remains the Gerp of July 22. The move of the day was Lula's: after three trading sessions stuck at 60.50%, he broke the range and closed at 61.50% (up 1.00pp), his highest value since July 15, while Flávio stayed virtually flat at 22.95% (up 0.10pp). The gap rose to +38.55pp, the largest since July 9 (38.60pp), and remains below the cycle peak of +39.5pp (July 3). The difference relative to July 23 is one of nature: yesterday the gap widened because the challenger fell, today it widened because the frontrunner rose. There is no triggering event identified at the time, so the reading is market momentum. The second move was a rearrangement in the second-place-in-the-first-round sub-market: Flávio recovered 3.50pp, to 74.00%, and Renan fell 6.00pp, from 17.40% to 11.40%, holding 67.00% in third place, meaning the market reduced the hypothesis of Renan replacing Flávio in the runoff without moving his main price (11.75%, down 0.10pp). In the field only Zema rose, more than doubling to 0.95%, while Caiado gave back the previous day's gain (1.75%), Michelle retreated (0.85%) and Haddad stayed flat (0.35%). In politics, reports on July 24 showed that the neutrality of the Progressive Union federation (PP and [União Brasil](/en/glossary#uniao-brasil)), decided on July 22, came out of maneuvering by the Lula administration, and that Flávio's running mate remains stalled by the lack of [centrão](/en/glossary#centrao) support (G1, Folha de S.Paulo, UOL, O Globo); also on July 24, Javier Milei landed in Brazil to speak at the [PL](/en/glossary#pl) convention on July 25 (Folha de S.Paulo, CartaCapital) and the reconciliation with Michelle advanced to a joint video, after the July 23 apology (Gazeta do Povo, Metrópoles). None of these facts had a clear price counterpart. In the Senate by seats the PL fell 3.50pp, to 68.50%, and the [MDB](/en/glossary#mdb) 5.45pp, to 15.45%, with the caveat about the base: this book adds up to USD 292 thousand in accumulated volume against USD 115.55M in the presidential race. [STF](/en/glossary#stf) impeach rose 0.60pp to 3.55% (vol USD 83 thousand). Accumulated volume in the presidential race at USD 115.55M.",
-    "sources": "Polymarket via proxy AFOS (live 24/Jul 20:31 UTC, degraded false, failedCount 0) + série histórica /api/market/history, slug brazil-presidential-election, janelas de 22 e 90 dias + registro TSE via /api/polls/tse (Datafolha BR-01166/2026 registrada para 24/Jul, sem divulgação até a captura) + articulação do governo por trás da neutralidade da União Progressista, decidida em 22/Jul (G1, Folha de S.Paulo, O Globo, 24/Jul; decisão confirmada por Poder360 e Metrópoles em 22/Jul) + reconciliação entre Flávio e Michelle avançando para vídeo conjunto após o pedido de desculpas de 23/Jul (Gazeta do Povo, Metrópoles, 24/Jul) + inquérito do filme Dark Horse com apuração de corrupção e lavagem mirando Flávio, Eduardo e Vorcaro (Folha de S.Paulo, 24/Jul) + Milei desembarcando no Brasil em 24/Jul para discursar na convenção do PL de 25/Jul (Folha de S.Paulo, CartaCapital, Metrópoles) + Gerp/AESP 22/Jul (Exame, Gazeta do Povo, CNN Brasil, Poder360, BR-05026/2026) + Indexa 21/Jul (JOTA, CartaCapital, BR-02904/2026) + Real Time Big Data 21/Jul (Exame, CNN Brasil, VEJA, BR-09247/2026) + Genial/Quaest 15/Jul (G1, CNN Brasil, Folha de S.Paulo, VEJA)",
+    "note": "[Polymarket](/en/glossary#polymarket) cross-check (live Jul 25, 6:51pm UTC, degraded false, failedCount 0, capture confirmed by a double reading 8 minutes apart), 71 days from the first round, on the day the polling returned and the PL formalized Flávio Bolsonaro's candidacy. THE POLLING: Datafolha (Tier 1) was released on the evening of Jul 24 (n=2,004, fieldwork Jul 22-24, 2pp margin, 95% confidence, BR-01166/2026) and it shows STABILITY. Lula 40% and Flávio 32% in the first round, against 41% and 31% in the June Datafolha; in the head-to-head runoff, Lula 48% and Flávio 43%, against 47% and 43%. The two readings moved one point in OPPOSITE directions and both inside the margin, which is the signature of sampling noise and not of a trend. Rejection came in identical to June for both names, Flávio 48% and Lula 46%. THE MARKET went the other way from that reading of stability: Lula rose 1.00pp and closed at 62.50%, and Flávio fell 0.10pp to 22.85%. The gap went to +39.65pp, the widest in the entire AFOS series, which covers 99 days since Apr 14 and had a previous peak of +39.50pp on Jul 3. The window is declared on purpose: the public history API caps queries at 90 days, so a superlative checked through it measures 90 days and calls it a cycle. This check was run directly against the 99-day database, and what the database does NOT prove is what happened before Apr 14, which is why AFOS writes widest of the series and never widest of the cycle. Lula at 62.50% also broke the 61.50% ceiling the series had carried since Jul 3. The day's second move was Renan Santos, who fell 1.40pp to 10.35%, the sharpest drop in the book, on the same day Datafolha measured him at 3%, putting three of the four recent national polls at that level and isolating the 9% from Real Time Jul 21. In the sub-markets, Flávio rose 2.50pp for second place in the first round (76.50%) and Renan 0.60pp (12.00%), while for third place Renan gave up 1.00pp (66.00%) and Caiado stood still at 16.00%. In the chasing pack, Michelle (0.30pp, to 1.15%), Haddad (0.30pp, to 0.65%), Jair (0.20pp, to 1.25%) and Caiado (0.15pp, to 1.90%) all rose; only Zema fell (0.20pp, to 0.75%). The STF impeachment market was virtually flat at 3.50% (down 0.05pp) on volume of just USD 83 thousand. In the Senate seats book the PL rose 2.00pp, to 70.50%, and the MDB 1.80pp, to 17.25%, in a book totalling USD 290 thousand against USD 115.79M for the presidential market, meaning a large percentage move in a thin market is not big money. CONTEXT, with no attribution of cause: all of this happened on the day of the convention that formalized Flávio in São Paulo, with an AI-generated video of Jair Bolsonaro, backing from Michelle and a speech by Javier Milei, and on the day it emerged that Itamaraty had denied visas to two US State Department officials who intended to discuss the Brazilian electoral system. The capture is from 3:51pm and the gap had been widening since Jul 20, when it stood at +33.60pp, so reaction to an event cannot be separated from continuation of a trend with the data available. Total accumulated volume in the presidential market at USD 115.79M.",
+    "sources": "Polymarket via AFOS proxy (live Jul 25, 6:51pm UTC, double reading confirmed by scripts/capture-guard.ts) + Datafolha Jul 24 (BR-01166/2026, n=2,004) + Gerp Jul 22 (BR-05026/2026) + Indexa Jul 21 (BR-02904/2026) + Real Time Big Data Jul 21 (BR-09247/2026) + Genial/Quaest Jul 15. Historical series checked with scripts/check-superlativo.ts, a 99-day base since Apr 14.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-46%",
-        "polymarket": "61.50%",
-        "tendenciaPesquisa": "Second consecutive day without new polling, and the [Datafolha](/en/glossary#datafolha) registered for today did not come out before the capture. The reference remains the Gerp of July 22, a pro-Flávio outlier house, which has him tied in the [first round](/en/glossary#primeiro-turno) (38% x 38%) and losing the head-to-head runoff 45% x 46%, but beating Caiado (44x41), Zema (44x38) and Renan (45x35). The two of July 21 had him leading the first round with 40-41%, and the strongest Tier 1 consensus remains [Quaest](/en/glossary#quaest) July 15 (Lula +12pp in R1). The most recent ratings reading is PoderData July 22, with personal disapproval falling from 50% to 47%.",
-        "tendenciaPolymarket": "UP 1.00pp to 61.50% (vol USD 7.63M), breaking through 61% for the first time since July 15 after three trading sessions stuck at 60.50%. The gap over Flávio rose to +38.55pp, the largest since July 9 (38.60pp), and this time by a step of his own: the challenger stayed flat. It remains below the cycle peak of +39.5pp (July 3). With no triggering event identified at the time, the reading is market momentum.",
+        "pesquisaRange": "38-48%",
+        "polymarket": "62.50%",
+        "tendenciaPesquisa": "The Datafolha of Jul 24 (n=2,004, fieldwork Jul 22-24, BR-01166/2026) puts him at 40% in the first round and 48% in the head-to-head runoff against 43% for Flávio, also beating Caiado (47x40) and Zema (48x40). Against the June Datafolha, he fell 1pp in the first round and rose 1pp in the runoff, both inside the 2pp margin, which is stability. Personal approval 49% x 48% disapproval, with the ends swapping places relative to June, when it was 48% x 49%, also inside the margin. The assessment of the administration, a different question, remains negative: 32% excellent or good against 38% poor or terrible. The earlier polls put him between 38% (Gerp Jul 22, a pro-Flávio outlier house) and 45% (Quaest Jul 15) in the first round.",
+        "tendenciaPolymarket": "UP 1.00pp to 62.50% (vol USD 7.64M), breaking the ceiling that had stood at 61.50% since Jul 3. It is his highest price across the entire AFOS series, which covers 99 days since Apr 14. The gap over Flávio went to +39.65pp and passed the previous peak of +39.50pp from Jul 3, becoming the widest of that same 99-day series. The rise came on the day of the opponent's convention, but the capture is from 3:51pm and the gap had been widening since Jul 20 (+33.60pp), so the data does not separate reaction to an event from continuation of a trend.",
         "odds": 61.5,
         "percentage": 45,
         "lastUpdate": "2026-07-24",
@@ -949,10 +991,10 @@
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "33-46%",
-        "polymarket": "22.95%",
-        "tendenciaPesquisa": "Second day without new polling, and the [Datafolha](/en/glossary#datafolha) registered for today did not come out before the capture. The Gerp of July 22 remains the reading most favorable to him in the window: it ties Lula in the [first round](/en/glossary#primeiro-turno) (38x38) and puts him ahead in the head-to-head runoff (46x45), but it is the pro-Flávio outlier institute, reliability 3, systematically more generous to him than Tier 1. The two of July 21 keep him at 30-33% in the first round and losing the second against Lula. Rejection high and stable: Gerp 46%, Indexa and Real Time 50%.",
-        "tendenciaPolymarket": "VIRTUALLY FLAT at 22.95% (up 0.10pp, vol USD 7.64M) after the 2.10pp tumble of the previous day, and the gap over him grew anyway because the one who moved was Lula. The recovery showed up in one place only: he went back to 74.00% in second place in the first round (up 3.50pp), with Renan falling from 17.40% to 11.40% there. The market gave him back the standing of likely opponent in the runoff, without giving back probability of victory.",
+        "pesquisaRange": "30-38%",
+        "polymarket": "22.85%",
+        "tendenciaPesquisa": "The Datafolha of Jul 24 puts him at 32% in the first round, one point above June, and at 43% in the head-to-head runoff, the same level as June. The number that did not move is the one that weighs most: 48% rejection, identical to June and the highest among all names tested, above Lula's 46%. Gerp Jul 22, a pro-Flávio outlier house, is still the most favourable reading in the set, with a tie in the first round (38x38) and a lead in the runoff (46x45). The two polls from Jul 21 kept him between 30% and 33%.",
+        "tendenciaPolymarket": "DOWN 0.10pp to 22.85% (vol USD 7.65M) on the very day the PL formalized his candidacy, leaving him 0.85pp above the 22.00% floor the series records on Jul 3. The gain appeared in one place only: up 2.50pp for second place in the first round, to 76.50%, in a book worth USD 202 thousand against the USD 7.65M of his main price, a difference in size that calls for caution in the reading.",
         "odds": 22.95,
         "percentage": 46,
         "lastUpdate": "2026-07-24",
@@ -961,9 +1003,9 @@
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-9%",
-        "polymarket": "11.75%",
-        "tendenciaPesquisa": "Second day without new polling, and the [Datafolha](/en/glossary#datafolha), which was the test for the case, did not come out before the capture. The majority reference remains at 3%: Gerp July 22 and Indexa July 21, against the isolated 9% from Real Time July 21. At 11.75%, the price remains above even the 9%, the highest polling reading of the cycle, so no poll gives backing to the level. In the head-to-head runoff Gerp has him losing to Lula 35x45.",
-        "tendenciaPolymarket": "ALMOST FLAT in the winner market, 11.75% (down 0.10pp, vol USD 8.45M, the largest in the book among the competitive names), but the data point of the day is another: he FELL 6.00pp in second place in the first round, from 17.40% to 11.40%, holding 67.00% in third place (down 1.00pp). The market reduced the hypothesis of him as Flávio's replacement in the runoff and kept him as third-place finisher. SERIES CAVEAT, measured on the full cycle series: 11.75% is not the cycle maximum. Renan was worth 17.9% on June 9 and 12.8% on July 1, and fell to the floor of 7.8% on July 17.",
+        "polymarket": "10.35%",
+        "tendenciaPesquisa": "The Datafolha of Jul 24 measures him at 3% in the first round, confirming Gerp Jul 22 and Indexa Jul 21. That puts three of the four most recent national polls at 3%, and leaves the 9% from Real Time on Jul 21 isolated. It is the heaviest polling reading in the set and the one that most tightens the distortion against his price. His rejection is 12%, a quarter of Flávio's, which preserves room to grow that the top two candidates do not have.",
+        "tendenciaPolymarket": "DOWN 1.40pp to 10.35% (vol USD 8.50M), the sharpest drop in the presidential book on the day, in the same session in which Datafolha measured him at 3%. The distortion against the polling NARROWED, but through a move in the price and not in the poll, and it remains the widest on the panel. Series caveat, measured against the whole base: 10.35% is neither a high nor a low, with a peak of 17.90% on Jun 9 and a floor of 5.30% on Apr 26. He rises 0.60pp for second place (12.00%) and gives up 1.00pp for third place (66.00%). He holds the largest accumulated volume among the competitive names in the book.",
         "odds": 11.75,
         "percentage": 9,
         "lastUpdate": "2026-07-24",
@@ -972,9 +1014,9 @@
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1.75%",
-        "tendenciaPesquisa": "Second day without new polling. The range in the three recent ones remains 3-7% (Gerp 3, Indexa 6, Real Time 7), and Gerp puts Lula ahead in the head-to-head runoff (44x41), not the tie (44x43) Real Time had indicated. He campaigned against the rival in his own camp today, saying that a vote for Flávio helps re-elect Lula (Blog do Esmael) and accusing Lula and Flávio of exploiting the tariff crisis (iG).",
-        "tendenciaPolymarket": "FALLS 0.30pp to 1.75% (vol USD 5.11M), giving back the previous day's gain, and retreats 0.50pp in third place in the first round, to 16.00%. He measures 3-7% of declared vote and is worth 1.75% in the winner book.",
+        "polymarket": "1.90%",
+        "tendenciaPesquisa": "The Datafolha of Jul 24 gives him 4% in the first round, the best in the chasing pack, and shows him losing the runoff to Lula 47% to 40%, a margin WIDER than Flávio's 5pp, which cuts against the thesis that a centrist name would be the more competitive opponent. His 12% rejection is among the lowest in the field and is the figure supporting the opposite reading, because it indicates room to grow. The range in the earlier polls was 3% (Gerp) to 7% (Real Time).",
+        "tendenciaPolymarket": "UP 0.15pp to 1.90% (vol USD 5.12M), giving back the previous day's fall, and holds 16.00% for third place in the first round, unchanged. The contrast persists: he measures 4% of declared vote and is worth 1.90% of implied probability.",
         "odds": 1.75,
         "percentage": 7,
         "lastUpdate": "2026-07-24",
@@ -982,10 +1024,10 @@
       },
       {
         "name": "Tarcísio",
-        "pesquisaRange": "no national data (São Paulo focus)",
+        "pesquisaRange": "n/a",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "He does not appear in the presidential scenarios of the national polls. Focus on re-election in São Paulo, where [Datafolha](/en/glossary#datafolha) July 5 gives him 46% x Haddad 30% and approval of 45%. Datafolha released new São Paulo state rounds on July 24, for governor and for the Senate, which fall outside this national panel.",
-        "tendenciaPolymarket": "Flat at 0.15% in the presidential race (a legacy anomaly, vol USD 13.57M lifetime, the largest individual volume in the presidential book). In the Senate by seats the [PL](/en/glossary#pl) fell 3.50pp, from 72.00% to 68.50%, and the [MDB](/en/glossary#mdb) fell 5.45pp, to 15.45%, on the date when the government maneuvering behind the neutrality of the Progressive Union federation, decided on July 22, became known. A caveat about the base, and it is decisive: the entire Senate book adds up to USD 292 thousand in accumulated volume against USD 115.55M in the presidential race, so a movement in percentage terms does not mean big money.",
+        "tendenciaPesquisa": "He does not appear in the presidential scenarios of the national polls, including the Datafolha of Jul 24. He is running for re-election in São Paulo, and state polling does not enter this panel, which is national in scope.",
+        "tendenciaPolymarket": "FLAT at 0.15% in the presidential market, a legacy anomaly with the largest individual volume in the book. It serves as a standing reminder of method: accumulated volume measures traded history, not current conviction.",
         "odds": 0.15,
         "percentage": 0,
         "lastUpdate": "2026-07-24",
@@ -993,10 +1035,10 @@
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "3%",
-        "polymarket": "0.95%",
-        "tendenciaPesquisa": "Second day without new polling. Gerp July 22 has him at 3% in the [first round](/en/glossary#primeiro-turno) and losing the runoff to Lula 38x44, the same level as Indexa July 21 (3%). He remains in the lower group of the third way, with no running mate announced after Michelle ruled out the slot.",
-        "tendenciaPolymarket": "MORE THAN DOUBLED, from 0.45% to 0.95% (up 0.50pp, vol USD 4.52M), the largest relative variation in the presidential book on the day and the only name in the field to rise, with no new poll to justify it. He continues to measure 3% in polling, so the rise belongs to the market, not to declared vote.",
+        "pesquisaRange": "3-4%",
+        "polymarket": "0.75%",
+        "tendenciaPesquisa": "The Datafolha of Jul 24 measures him at 3% in the first round and shows him losing the runoff to Lula 48% to 40%, the widest margin among the three runoff scenarios tested. His 13% rejection is low by the standards of this field, but it is the highest in the chasing pack. He had been polling 3% in Gerp Jul 22 and Indexa Jul 21, 3.7% in Futura/Apex Jul 14 and 4% in BTG/Nexus Jul 13.",
+        "tendenciaPolymarket": "DOWN 0.20pp to 0.75% (vol USD 4.53M), the ONLY name in the chasing pack to fall on a day of broad gains, giving back part of the Jul 24 jump, when he had more than doubled. He reaches the conventions still without a running mate.",
         "odds": 0.95,
         "percentage": 3,
         "lastUpdate": "2026-07-24",
@@ -1004,16 +1046,16 @@
       },
       {
         "name": "Fernando Haddad",
-        "pesquisaRange": "no national data",
-        "polymarket": "0.35%",
-        "tendenciaPesquisa": "The national polls do not test Haddad in the presidential race (focus on the São Paulo governorship). In [Datafolha](/en/glossary#datafolha) São Paulo July 5, Tarcísio leads with 46% x Haddad 30%. Datafolha released a new São Paulo state round on July 24, outside the scope of this national panel.",
-        "tendenciaPolymarket": "FLAT at 0.35% (vol USD 6.33M) on the day Lula rose 1.00pp, a sign that the market does not treat his price as derived from the [PT](/en/glossary#pt)'s performance. It remains a residue of a well-known name in a thin book, not a signal of a presidential candidacy.",
+        "pesquisaRange": "n/a",
+        "polymarket": "0.65%",
+        "tendenciaPesquisa": "He does not appear in the presidential scenarios of the national polls, including the Datafolha of Jul 24: no poll tests him for president, and his price is the residue of a well-known name. The focus is the São Paulo state race, whose ticket was formalized at a PT convention in Campinas on Jul 25, with Márcio França as running mate and Lula in attendance. State races do not enter this panel, which is national in scope.",
+        "tendenciaPolymarket": "UP 0.30pp to 0.65% (vol USD 6.35M), on the day of the convention that formalized his candidacy for the São Paulo state government. The coincidence of dates is recorded, with no attribution of cause, not least because the office priced here is a different one.",
         "odds": 0.35,
         "percentage": 0,
         "lastUpdate": "2026-07-24",
         "value": 0.35
       }
     ],
-    "updatedAt": "2026-07-24"
+    "updatedAt": "25/07/2026, 15:51"
   }
 }

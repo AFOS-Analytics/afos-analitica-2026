@@ -1,0 +1,169 @@
+/** Mapa ES de analysis-criteriosa.json — /atualizar 25/Jul/2026. */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-criteriosa', 'es', {
+  subtitle:
+    `ACTUALIZACIÓN 25/Jul 15:51 BRT, a 71 días de la ${G('primera vuelta', 'primeiro-turno')}. Se acabó el ayuno de encuestas: ${G('Datafolha', 'datafolha')} (Tier 1) fue divulgada la noche del 24/Jul, con n=2.004, campo del 22 al 24/Jul, margen de 2pp y registro ${G('TSE', 'tse')} BR-01166/2026, y lo que muestra es ESTABILIDAD, no un vuelco. Contra la Datafolha de junio, Lula pasa de 41% a 40% en la primera vuelta y Flávio de 31% a 32%, mientras que en el balotaje directo Lula pasa de 47% a 48% y Flávio queda en 43%: los dos cortes se movieron en direcciones opuestas y ambos dentro del margen, que es la firma del ruido muestral y no de una tendencia. El rechazo quedó idéntico al de junio en los dos nombres, Flávio 48% y Lula 46%. El mismo día en que el ${G('PL', 'pl')} oficializó la candidatura de Flávio en São Paulo, con discurso del presidente argentino Javier Milei en el palco, el mercado fue en dirección contraria: Lula subió 1,00pp y cerró la captura en 62,50%, su mayor precio en toda la serie de AFOS, que comienza el 14/Abr, y Flávio retrocedió 0,10pp hasta 22,85%, cerca del piso de 22,00% que marcó el 03/Jul. La brecha llegó a +39,65pp y superó los +39,50pp del 03/Jul, convirtiéndose en la mayor de los 99 días de serie disponibles. Salvedad obligatoria: coincidir en el calendario no es causar, y AFOS no tiene cómo atribuir el movimiento al evento. Renan Santos perdió 1,40pp y cayó a 10,35%, el mismo día en que Datafolha lo midió en 3%, lo que pone a tres de las cuatro nacionales recientes en el mismo lugar y deja aislado el 9% de Real Time. En el plano institucional, Itamaraty negó la visa a dos funcionarios del Departamento de Estado estadounidense que pretendían venir a Brasil a cuestionar el sistema electoral, y Lula respondió que quien se meta en la elección brasileña va a recibir una paliza. Volumen total acumulado en el presidencial en USD 115,79M. Cruce con ${G('Polymarket', 'polymarket')} en vivo 25/Jul 18:51 UTC, confirmado por doble lectura.`,
+
+  'candidates[0].header':
+    `Polymarket 62,50% (alza de 1,00pp, vol USD 7,64M acumulado), a 71 días de la elección. Es su mayor precio en toda la serie de AFOS, que cubre 99 días desde el 14/Abr y cuyo tope anterior era 61,50%, marcado el 03/Jul y repetido el 24/Jul. La brecha sobre Flávio llegó a +39,65pp y también se convirtió en la mayor de la serie, por encima de los +39,50pp del 03/Jul. En las encuestas, la Datafolha del 24/Jul lo da con 40% en la primera vuelta y 48% en el balotaje directo contra 43% de Flávio.`,
+  'candidates[0].fortes[0]':
+    'Rompió el techo de la serie: 62,50% es su mayor precio en los 99 días de histórico de AFOS, por encima del 61,50% del 03/Jul que venía siendo el límite superior.',
+  'candidates[0].fortes[1]':
+    'La brecha de +39,65pp superó el pico anterior de +39,50pp (03/Jul) y es la mayor de la serie disponible. La ventana está declarada a propósito: la serie empieza el 14/Abr y no prueba nada antes de eso.',
+  'candidates[0].fortes[2]':
+    'La Datafolha del 24/Jul lo mantiene adelante en los tres escenarios de balotaje evaluados: 48% x 43% contra Flávio, 47% x 40% contra Caiado y 48% x 40% contra Zema.',
+  'candidates[0].fortes[3]':
+    'Aprobación personal en 49% contra 48% de desaprobación en la Datafolha, con las dos puntas cambiando de lugar respecto de junio, cuando era 48% x 49%.',
+  'candidates[0].fortes[4]':
+    'El alza llegó el día en que el principal adversario hizo su convención de lanzamiento, o sea, el mercado no reaccionó al evento del otro lado con transferencia de precio.',
+  'candidates[0].fracos[0]':
+    'El cambio de aprobación y desaprobación es de 1pp en un relevamiento de margen 2pp: es empate técnico en las dos rondas y no un vuelco. Tratarlo como estabilidad.',
+  'candidates[0].fracos[1]':
+    'La evaluación de la GESTIÓN sigue siendo negativa y es una pregunta distinta de la aprobación personal: 38% considera al gobierno malo o pésimo contra 32% de excelente o bueno.',
+  'candidates[0].fracos[2]':
+    'La distancia entre precio y encuesta continúa: 62,50% de probabilidad implícita conviviendo con una Datafolha que da 5pp de ventaja en el balotaje, diferencia que cabe dentro de la suma de los márgenes.',
+  'candidates[0].fracos[3]':
+    'En la primera vuelta la Datafolha muestra a Lula cayendo de 41% a 40% y a Flávio subiendo de 31% a 32%, o sea, el único corte que se estrechó fue justamente el del voto declarado.',
+  'candidates[0].fracos[4]':
+    'No hay cómo atribuir el alza al evento del día. La captura es de las 15:51 y la convención corrió por la tarde: coincidencia de fechas no establece causa, y un movimiento sin causa documentada se deshace con la misma facilidad con que llegó.',
+  'candidates[0].analise':
+    `El día entregó las dos mitades que faltaban, y no apuntan al mismo lugar. Las encuestas volvieron después de dos días de ayuno y lo que dicen es estabilidad: la Datafolha del 24/Jul (n=2.004, campo del 22 al 24/Jul, margen 2pp, BR-01166/2026) pone a Lula en 40% en la primera vuelta contra 41% en junio, y en 48% en el balotaje contra 47% en junio. Los dos cortes se movieron 1pp en direcciones OPUESTAS, ambos dentro del margen, lo que es la firma clásica del ruido muestral. El rechazo no se movió en ninguno de los dos nombres, quedando idéntico al de junio. El mercado, en el mismo intervalo, hizo lo contrario de quedarse quieto: subió 1,00pp y cerró en 62,50%, rompiendo el 61,50% que era el techo de toda la serie de AFOS desde el 14/Abr, y llevó la brecha a +39,65pp, por encima del pico anterior de +39,50pp del 03/Jul. Esa ventana hay que decirla con precisión, y por un motivo práctico: la API pública de AFOS limita la consulta de histórico a 90 días, así que quien verifica un superlativo por ahí mide 90 días y lo llama ciclo. La verificación se hizo directamente contra la base, que tiene 99 días, y en ella el número de hoy es el mayor. Lo que la base NO prueba es qué pasó antes del 14/Abr, y por eso aquí se lee mayor de la serie, no mayor del ciclo. Sobre la causa, AFOS no va más allá de lo que el dato sostiene: el alza ocurrió el día de la convención que oficializó al adversario, con un jefe de Estado extranjero en el palco, pero la captura es de las 15:51 y no hay cómo separar reacción a un evento de continuación de tendencia, ya que la brecha venía subiendo desde el 20/Jul, cuando estaba en +33,60pp. Se registra la coincidencia y nada más. Su volumen acumulado es de USD 7,64M, en un presidencial que suma USD 115,79M.`,
+
+  'candidates[1].header':
+    `Polymarket 22,85% (baja de 0,10pp, vol USD 7,65M acumulado), el día en que el PL oficializó su candidatura en São Paulo con discurso de Javier Milei. El precio está cerca del piso de 22,00% que marcó el 03/Jul, el menor de toda la serie de 99 días. En las encuestas, la Datafolha del 24/Jul lo da con 32% en la primera vuelta y 43% en el balotaje directo contra 48% de Lula.`,
+  'candidates[1].fortes[0]':
+    'La Datafolha registra el único movimiento a su favor en el día: subió de 31% a 32% en la primera vuelta contra la ronda de junio, aunque dentro del margen.',
+  'candidates[1].fortes[1]':
+    'En el balotaje directo queda en 43%, el mismo nivel de junio, o sea, no perdió terreno declarado pese a la secuencia de hechos procesales de las últimas semanas.',
+  'candidates[1].fortes[2]':
+    'Recuperó 2,50pp en el submercado de segundo puesto de la primera vuelta, llegando a 76,50%, lo que consolida su posición como quien llega al balotaje si lo hay.',
+  'candidates[1].fortes[3]':
+    'La convención salió con apoyo internacional explícito: Milei habló desde el palco y dijo confiar en él para frenar a Lula, lo que le da al lanzamiento un alcance de prensa que ningún otro precandidato del campo tuvo.',
+  'candidates[1].fortes[4]':
+    'La candidatura fue formalizada, lo que cierra la fase de precandidatura y libera el calendario de campaña.',
+  'candidates[1].fracos[0]':
+    'El precio cayó el propio día de la convención de lanzamiento: 22,85%, a 0,85pp del piso histórico de 22,00% marcado el 03/Jul.',
+  'candidates[1].fracos[1]':
+    'El rechazo no cedió nada: 48% en la Datafolha del 24/Jul, exactamente el mismo número de junio, y es el más alto entre todos los nombres evaluados, por encima del 46% de Lula.',
+  'candidates[1].fracos[2]':
+    'Llegó a la convención SIN candidato a vice. Tereza Cristina rechazó la invitación, y su precio en el libro presidencial sigue en 0,15%.',
+  'candidates[1].fracos[3]':
+    'La brecha contra Lula llegó al mayor valor de la serie, +39,65pp, justamente en la fecha en que debería capitalizar el lanzamiento.',
+  'candidates[1].fracos[4]':
+    'La presencia de Milei vino acompañada de un ataque directo a un ministro de la Corte Suprema, llamado "basura calva" desde el palco, lo que desplaza la cobertura del lanzamiento hacia la fricción institucional.',
+  'candidates[1].analise':
+    `El día estaba hecho para él y el precio no acompañó. El PL oficializó la candidatura en São Paulo, con video de Jair Bolsonaro generado por inteligencia artificial, apoyo de Michelle y un discurso de unos 30 minutos del presidente argentino Javier Milei, que dijo confiar en él para frenar a Lula y se refirió a Alexandre de Moraes como "basura calva" por no haber autorizado la visita a Jair en prisión domiciliaria (Folha de S.Paulo, O Globo, CartaCapital, Metrópoles, 25/Jul). El mercado cerró la captura con él en 22,85%, baja de 0,10pp, a menos de 1pp del piso de toda la serie. La encuesta, medida ANTES de la convención, es la parte buena: la Datafolha del 24/Jul lo pone en 32% en la primera vuelta, un punto por encima de junio, y mantiene el 43% del balotaje. Pero también muestra el techo: su rechazo quedó en 48%, sin mover un dígito respecto de junio, y es el más alto del campo. Ese es el número que explica por qué subir en la primera vuelta no lo acerca al balotaje. Dos problemas estructurales atravesaron la convención sin solución. El primero es el vice: llegó al lanzamiento sin nombre definido, después de que Tereza Cristina rechazara la invitación, y su preferencia declarada por una mujer sigue sin destinataria. El segundo es el ${G('centrão', 'centrao')}, con la federación União Progressista habiendo cerrado neutralidad el 22/Jul. En el submercado de segundo puesto hubo una ganancia real, de 2,50pp hasta 76,50%, pero ese libro vale USD 202 mil, contra USD 7,65M de su precio principal, y la diferencia de tamaño pide cautela en la lectura. El contraste que queda registrado, sin juicio de valor: la candidatura fue lanzada con respaldo internacional y el dinero real se movió en dirección opuesta el mismo día.`,
+
+  'candidates[2].header':
+    `Polymarket 10,35% en el ganador (baja de 1,40pp, vol USD 8,50M acumulado), la mayor caída del libro presidencial en el día. La Datafolha del 24/Jul lo midió en 3% en la primera vuelta, y con eso tres de las cuatro nacionales recientes lo ponen en ese nivel. La distorsión entre precio y encuesta se estrechó por primera vez en días, pero por movimiento del precio y no de la encuesta.`,
+  'candidates[2].fortes[0]':
+    'Sigue con el tercer mayor precio del libro presidencial y el mayor volumen acumulado entre los nombres competitivos, USD 8,50M, por encima de Lula y de Flávio.',
+  'candidates[2].fortes[1]':
+    'Mantiene 66,00% en el submercado de tercer puesto de la primera vuelta, o sea, el mercado sigue tratando su posición en el pelotón como consolidada.',
+  'candidates[2].fortes[2]':
+    'Subió 0,60pp en el segundo puesto de la primera vuelta, hasta 12,00%, manteniendo viva la hipótesis de balotaje pese a la caída en el precio principal.',
+  'candidates[2].fortes[3]':
+    'Su rechazo en la Datafolha es de 12%, un cuarto del de Flávio, lo que preserva un espacio de crecimiento que los dos primeros no tienen.',
+  'candidates[2].fracos[0]':
+    'Perdió 1,40pp en el día, la mayor caída del libro, y volvió a la franja del 10%.',
+  'candidates[2].fracos[1]':
+    'La Datafolha, que es la encuesta de mayor peso del conjunto, lo midió en 3%, confirmando a Gerp 22/Jul y a Indexa 21/Jul y aislando el 9% de Real Time 21/Jul.',
+  'candidates[2].fracos[2]':
+    'La distorsión contra la encuesta sigue siendo la mayor del panel: 10,35% de precio contra 3% de voto declarado en las tres lecturas convergentes.',
+  'candidates[2].fracos[3]':
+    'Medido en la serie entera, 10,35% está bastante por debajo del pico de 17,90% del 09/Jun, así que el precio actual no es un punto alto, es un retroceso desde un nivel ya perdido.',
+  'candidates[2].analise':
+    `Llegó la prueba que faltaba y fue en la dirección que las otras encuestas ya venían señalando. La Datafolha del 24/Jul, la nacional de mayor peso del conjunto, midió a Renan Santos en 3% en la primera vuelta. Con eso, tres de las cuatro nacionales más recientes (Datafolha 24/Jul, Gerp 22/Jul e Indexa 21/Jul) lo ponen en 3%, y el 9% de Real Time del 21/Jul queda solo. El mercado respondió el mismo día: el precio cayó 1,40pp, la mayor baja del libro presidencial, y volvió a 10,35%. Vale registrar con precisión qué pasó con la distorsión que AFOS venía siguiendo: se estrechó, pero quien se movió fue el PRECIO, no la encuesta. La distancia entre el 10,35% de probabilidad implícita y el 3% de voto declarado sigue siendo la mayor del panel, y sigue siendo una comparación entre magnitudes distintas, probabilidad de victoria contra intención de voto, lo que exige cautela en cualquier lectura de error. El reordenamiento interno de los submercados fue en dirección contraria al precio principal: subió 0,60pp en el segundo puesto, hasta 12,00%, y cedió 1,00pp en el tercero, hasta 66,00%. Salvedad de serie, medida contra la base entera y no contra la ventana corta: 10,35% no es máximo ni mínimo suyo. El pico fue 17,90% el 09/Jun y el piso de la serie es 5,30% el 26/Abr. Tiene el mayor volumen acumulado entre los nombres competitivos del libro, USD 8,50M, lo que significa historia negociada, no convicción actual.`,
+
+  'candidates[3].header':
+    `Polymarket: Caiado 1,90% (alza de 0,15pp, vol USD 5,12M), Michelle 1,15% (alza de 0,30pp, vol USD 9,25M), Jair 1,25% (alza de 0,20pp, vol USD 5,24M), Zema 0,75% (baja de 0,20pp, vol USD 4,53M), Haddad 0,65% (alza de 0,30pp, vol USD 6,35M), Tarcísio 0,15%. En la Datafolha del 24/Jul, Caiado tiene 4%, Zema 3% y ambos pierden el balotaje ante Lula, 47x40 y 48x40.`,
+  'candidates[3].subtitle':
+    `25/Jul, a 71 días: las encuestas volvieron y le dieron al pelotón la medición más completa en semanas. La Datafolha del 24/Jul pone a Caiado en 4%, a Zema en 3% y a Augusto Cury en 2%, y en los balotajes evaluados Lula le gana a Caiado 47% a 40% y a Zema 48% a 40%, márgenes MAYORES que los 5pp contra Flávio. En el libro el día fue de alzas repartidas: Caiado en 1,90% (alza de 0,15pp), Michelle en 1,15% (alza de 0,30pp), Jair en 1,25% (alza de 0,20pp) y Haddad en 0,65% (alza de 0,30pp), siendo Zema el único en retroceder, 0,20pp hasta 0,75%.`,
+  'candidates[3].caiado.label':
+    'CAIADO (PSD), Polymarket presidencial 1,90% (alza de 0,15pp, vol USD 5,12M) | tercer puesto de la primera vuelta 16,00% (estable) | Datafolha 24/Jul primera vuelta 4% y balotaje Lula 47% x Caiado 40%, rechazo 12% | Gerp 22/Jul primera vuelta 3% | Indexa 21/Jul primera vuelta 6% | Real Time 21/Jul primera vuelta 7%',
+  'candidates[3].caiado.fortes':
+    'Es el nombre mejor medido del pelotón en la Datafolha del 24/Jul, con 4% en la primera vuelta, y tiene uno de los rechazos más bajos del campo, 12%, contra 48% de Flávio y 46% de Lula. Ese espacio de crecimiento es justamente lo que el mercado descuenta cuando lo mantiene vivo pese al bajo voto declarado. Devolvió la baja de la víspera, subiendo 0,15pp hasta 1,90%, y mantuvo 16,00% en el tercer puesto de la primera vuelta. Mantiene la fórmula pura del PSD (Kassab de vice) con base en Goiás.',
+  'candidates[3].caiado.fracos':
+    'La Datafolha desarmó la tesis del balotaje competitivo: Lula le gana 47% a 40%, siete puntos, margen MAYOR que los cinco puntos contra Flávio. Es decir, la lectura de que un nombre del centro sería un adversario más fuerte no se sostiene en esta encuesta. Mide 4% de voto declarado y vale 1,90% en el libro de ganador, contraste que persiste sin señal de corrección.',
+  'candidates[3].haddad.label':
+    'HADDAD (PT), Polymarket presidencial 0,65% (alza de 0,30pp, vol USD 6,35M) | no evaluado para presidente por ninguna nacional, incluida la Datafolha 24/Jul | foco en el gobierno de São Paulo | fórmula oficializada el 25/Jul con vice Márcio França (PSB)',
+  'candidates[3].haddad.fortes':
+    'Tuvo su fórmula al gobierno de São Paulo oficializada en una convención del PT en Campinas este 25/Jul, con Márcio França (PSB) de vice y presencia de Lula, cerrando meses de negociación (Poder360, CartaCapital, Estadão). Sigue siendo el principal cuadro del PT en el mayor padrón electoral del país y subió 0,30pp en el libro presidencial, hasta 0,65%.',
+  'candidates[3].haddad.fracos':
+    'Ninguna nacional lo evalúa para presidente, incluida la Datafolha del 24/Jul, así que su precio es residuo de un nombre conocido y no tiene respaldo de encuesta en el cargo descontado. El alza de 0,30pp coincidió con la convención estatal, pero se registra la coincidencia sin atribuir causa, entre otras cosas porque el cargo es otro. La disputa de São Paulo no entra en este panel, que es de alcance nacional.',
+  'candidates[3].zema.label':
+    'ZEMA (Novo), Polymarket presidencial 0,75% (baja de 0,20pp, vol USD 4,53M) | Datafolha 24/Jul primera vuelta 3% y balotaje Lula 48% x Zema 40%, rechazo 13% | Gerp 22/Jul primera vuelta 3% | Indexa 21/Jul primera vuelta 3% | sin vice anunciado, y Michelle descartó el lugar',
+  'candidates[3].zema.fortes':
+    'Mantiene un rechazo bajo para el estándar del campo, 13% en la Datafolha del 24/Jul, en una carrera donde los dos primeros están por encima de 45%. Marca 3% de forma consistente en las nacionales recientes (Datafolha, Gerp e Indexa), además de 3,7% en Futura/Apex 14/Jul y 4% en BTG/Nexus 13/Jul, o sea, su nivel es estable y no errático. Defiende privatizar Petrobras y Banco do Brasil en un eventual gobierno (Jornal do Brasil), posición que lo diferencia en el pelotón.',
+  'candidates[3].zema.fracos':
+    'Fue el ÚNICO del pelotón en retroceder en el día, devolviendo 0,20pp del salto del 24/Jul y volviendo a 0,75%, mientras Caiado, Michelle, Jair y Haddad subían. En la Datafolha pierde el balotaje ante Lula por 48% a 40%, el mayor margen entre los tres escenarios de segunda vuelta evaluados, y su rechazo de 13% es el más alto del pelotón. Michelle Bolsonaro descartó públicamente ser su vice, y la fórmula sigue sin vice con las convenciones corriendo hasta el 05/Ago.',
+  'candidates[3].analise':
+    `La Datafolha le dio al pelotón la medición más completa en semanas, y el resultado es un techo claro. Caiado aparece con 4% en la primera vuelta, Zema con 3% y Augusto Cury con 2%. En los balotajes evaluados, Lula le gana a Caiado 47% a 40% y a Zema 48% a 40%, márgenes MAYORES que los 5pp contra Flávio, lo que contradice la tesis de que un nombre del centro sería un adversario más competitivo. El dato que sostiene la tesis contraria, y que hay que registrar junto, es el rechazo: Caiado tiene 12% y Zema 13%, contra 48% de Flávio y 46% de Lula, o sea, tienen espacio de crecimiento que los dos primeros no tienen, y es ese espacio el que el mercado descuenta cuando los mantiene vivos pese al bajo voto declarado. En el libro, el día fue de alzas repartidas en el pelotón: Caiado subió 0,15pp, Michelle 0,30pp, Jair 0,20pp y Haddad 0,30pp, siendo Zema el único en retroceder, 0,20pp. Que Michelle suba el día en que apareció apoyando a Flávio en la convención es un registro de coincidencia, no de causa. Haddad tuvo su fórmula al gobierno de São Paulo oficializada en una convención del PT en Campinas, con Márcio França de vice y presencia de Lula, pero eso es una disputa estatal y no entra en el panel nacional, que trata solo del cargo presidencial. En todo el pelotón vale la misma salvedad de método: son precios de 0,65% a 1,90% en un libro donde el favorito vale 62,50%, así que una variación en puntos porcentuales parece grande en términos relativos y es pequeña en dinero.`,
+  'candidates[3].fortes[0]':
+    'Caiado es el nombre mejor medido del pelotón en la Datafolha, con 4% en la primera vuelta, y tiene el segundo rechazo más bajo del campo, 12%.',
+  'candidates[3].fortes[1]':
+    'Michelle subió 0,30pp el día de la convención en que apareció apoyando a Flávio, la mayor ganancia relativa entre los nombres del pelotón.',
+  'candidates[3].fortes[2]':
+    'Zema mantiene un rechazo bajo, 13% en la Datafolha, en un campo donde los dos primeros están por encima de 45%.',
+  'candidates[3].fortes[3]':
+    'Haddad subió 0,30pp, hasta 0,65%, el día de la convención que oficializó su fórmula al gobierno de São Paulo con Márcio França de vice.',
+  'candidates[3].fracos[0]':
+    'Ninguno de ellos pasa de 4% en la Datafolha, y los dos evaluados en el balotaje pierden por 7pp y 8pp, márgenes mayores que el de Flávio.',
+  'candidates[3].fracos[1]':
+    'Zema cayó 0,20pp y fue el único del pelotón en retroceder en el día, llegando a las convenciones aún sin vice definido.',
+  'candidates[3].fracos[2]':
+    'Caiado mide 4% en la encuesta y vale 1,90% en el ganador, contraste que persiste sin señal de corrección.',
+  'candidates[3].fracos[3]':
+    'Haddad sigue sin respaldo nacional: ninguna encuesta lo evalúa para presidente, y el precio es residuo de un nombre conocido.',
+  'candidates[3].fracos[4]':
+    'Tarcísio sigue en 0,15% en el presidencial con el mayor volumen individual del libro, recordatorio de que el volumen acumulado mide historia negociada y no convicción actual.',
+
+  'quadroComparativo[0].p':
+    'Datafolha 24/Jul (n=2.004, campo 22-24/Jul, BR-01166/2026): 40% en la primera vuelta y 48% en el balotaje directo contra 43% de Flávio. También le gana a Caiado (47x40) y a Zema (48x40). Aprobación personal 49% x 48%, gestión 32% excelente o buena contra 38% mala o pésima. Contra la Datafolha de junio, cayó 1pp en la primera vuelta y subió 1pp en el balotaje, ambos dentro del margen de 2pp.',
+  'quadroComparativo[0].m': '62,50% (vol USD 7,64M acumulado)',
+  'quadroComparativo[0].t':
+    'SUBE 1,00pp hasta 62,50%, su mayor precio en toda la serie de AFOS, que cubre 99 días desde el 14/Abr y tenía techo de 61,50%. La brecha sobre Flávio llegó a +39,65pp y superó el pico anterior de +39,50pp (03/Jul).',
+  'quadroComparativo[0].s':
+    'A 71 días de la elección. El alza ocurrió el día de la convención que oficializó al adversario, con Milei en el palco, pero la captura es de las 15:51 y la coincidencia de fechas no establece causa. La brecha venía subiendo desde el 20/Jul, cuando estaba en +33,60pp. Polymarket en vivo 25/Jul 18:51 UTC, doble lectura.',
+  'quadroComparativo[1].p':
+    'Datafolha 24/Jul: 32% en la primera vuelta, un punto por encima de junio, y 43% en el balotaje directo, el mismo nivel de junio. Rechazo de 48%, idéntico al de junio y el más alto entre todos los nombres evaluados. Las tres nacionales anteriores lo mantenían entre 30% y 38% en la primera vuelta.',
+  'quadroComparativo[1].m': '22,85% (vol USD 7,65M acumulado)',
+  'quadroComparativo[1].t':
+    'CAE 0,10pp hasta 22,85% el propio día de la convención de lanzamiento, a 0,85pp del piso de 22,00% de la serie (03/Jul). En compensación sube 2,50pp en el segundo puesto de la primera vuelta, hasta 76,50%.',
+  'quadroComparativo[1].s':
+    'El PL oficializó la candidatura en São Paulo con video de Jair generado por IA, apoyo de Michelle y discurso de Milei, que llamó a Moraes "basura calva". Llegó al lanzamiento SIN vice: Tereza Cristina rechazó la invitación. La federación União Progressista sigue neutral desde el 22/Jul.',
+  'quadroComparativo[2].p':
+    'La Datafolha del 24/Jul lo mide en 3% en la primera vuelta, confirmando a Gerp 22/Jul y a Indexa 21/Jul. Tres de las cuatro nacionales recientes lo ponen en 3%, y el 9% de Real Time 21/Jul queda aislado. Rechazo de 12%, un cuarto del de Flávio.',
+  'quadroComparativo[2].m': '10,35% (vol USD 8,50M acumulado)',
+  'quadroComparativo[2].t':
+    'CAE 1,40pp hasta 10,35%, la mayor baja del libro presidencial en el día, respondiendo a la Datafolha que lo puso en 3%. Sube 0,60pp en el segundo puesto (12,00%) y cede 1,00pp en el tercero (66,00%).',
+  'quadroComparativo[2].s':
+    'La distorsión contra la encuesta se estrechó, pero por movimiento del PRECIO y no de la encuesta, y sigue siendo la mayor del panel. Salvedad de serie: 10,35% no es máximo ni mínimo. El pico fue 17,90% el 09/Jun y el piso 5,30% el 26/Abr.',
+  'quadroComparativo[3].p':
+    'Datafolha 24/Jul: 4% en la primera vuelta, el mejor del pelotón, y pierde el balotaje ante Lula por 47% a 40%, margen mayor que el de Flávio. Rechazo de 12%, de los más bajos del campo, lo que preserva espacio de crecimiento.',
+  'quadroComparativo[3].m': '1,90% (vol USD 5,12M)',
+  'quadroComparativo[3].t':
+    'SUBE 0,15pp hasta 1,90%, devolviendo la baja de la víspera, y mantiene 16,00% en el tercer puesto de la primera vuelta.',
+  'quadroComparativo[3].s':
+    'Mide 4% de voto declarado y vale 1,90% en el ganador. El balotaje competitivo contra Lula no se confirmó en la Datafolha, que dio 7pp de ventaja al adversario.',
+  'quadroComparativo[4].p':
+    'No es precandidata declarada a la Presidencia y no es evaluada en el escenario principal de la primera vuelta por las nacionales.',
+  'quadroComparativo[4].m': '1,15% (vol USD 9,25M)',
+  'quadroComparativo[4].t':
+    'SUBE 0,30pp hasta 1,15%, volviendo a cruzar la marca de 1% el día en que apareció apoyando a Flávio en la convención del PL.',
+  'quadroComparativo[4].s':
+    'Coincidencia de fechas registrada, sin atribución de causa. Su volumen acumulado, USD 9,25M, es el mayor del libro presidencial entre los nombres que no son Tarcísio, pese al precio por debajo de 1,5%.',
+  'quadroComparativo[5].p':
+    'Sin encuesta. Mercado de impeachment de un ministro de la Corte Suprema antes de 2027.',
+  'quadroComparativo[5].m': '3,50% (vol USD 83 mil)',
+  'quadroComparativo[5].t':
+    'CAE 0,05pp hasta 3,50%, prácticamente quieto, sin devolver ni ampliar el alza de 0,60pp del 24/Jul.',
+  'quadroComparativo[5].s':
+    'Salvedad de método decisiva: con USD 83 mil de volumen acumulado, contra USD 115,79M del presidencial, la variación no sostiene una narrativa. Quedarse quieto el día en que Milei atacó a Moraes nominalmente desde el palco es el registro que interesa.',
+
+  cruzamento:
+    `El 25/Jul entregó el cruce más nítido del mes, y es de DIVERGENCIA entre lo que mide la encuesta y lo que descuenta el dinero real. Empiece por la encuesta, porque es la novedad: después de dos días de ayuno, Datafolha fue divulgada la noche del 24/Jul (n=2.004, campo del 22 al 24/Jul, margen 2pp, 95% de confianza, BR-01166/2026) y lo que muestra es estabilidad. Lula 40% y Flávio 32% en la primera vuelta, contra 41% y 31% en junio. En el balotaje directo, Lula 48% y Flávio 43%, contra 47% y 43%. Los dos cortes se movieron un punto en direcciones OPUESTAS, los dos dentro del margen: la primera vuelta se estrechó y el balotaje se abrió. Cuando dos cortes de la misma encuesta se mueven en sentidos contrarios y ambos caben en el margen, la lectura correcta es ruido muestral, no tendencia. El rechazo lo refuerza: Flávio 48% y Lula 46%, números idénticos a los de junio, sin un dígito de diferencia. Ahora el mercado, el mismo día. Lula subió 1,00pp y cerró la captura en 62,50%, rompiendo el 61,50% que era el techo de toda la serie de AFOS. Flávio cayó 0,10pp hasta 22,85%, a menos de 1pp del piso de la serie. La brecha llegó a +39,65pp, por encima del pico anterior de +39,50pp del 03/Jul, y se convirtió en la mayor de los 99 días de base disponible. La ventana hay que nombrarla, y aquí va el porqué técnico: la API pública de histórico de AFOS limita la consulta a 90 días, de modo que cualquier superlativo verificado por ella mide 90 días y lo llama ciclo. La verificación de hoy se hizo directamente contra la base, que guarda 99 días desde el 14/Abr, y en ella el número es el mayor. Lo que la base no prueba es qué pasó antes del 14/Abr, y por eso AFOS registra mayor de la serie, nunca mayor del ciclo. Sume el contexto y la divergencia queda evidente: todo esto ocurrió el día en que el PL oficializó a Flávio en São Paulo, con video de Jair Bolsonaro generado por IA, apoyo de Michelle y discurso de Javier Milei, que pidió votos para frenar a Lula y llamó a Alexandre de Moraes "basura calva". La candidatura fue lanzada con respaldo de un jefe de Estado extranjero y el precio del candidato cayó en la misma rueda. AFOS relata la coincidencia y NO atribuye causa: la captura es de las 15:51, la convención corrió por la tarde, y la brecha ya venía subiendo desde el 20/Jul, cuando estaba en +33,60pp. Separar reacción a un evento de continuación de tendencia no es posible con el dato disponible. El tercer eje del día fue institucional y se cruza con los dos anteriores. Itamaraty negó la visa a dos funcionarios del Departamento de Estado estadounidense, el secretario adjunto Riley M. Barnes y el vicesecretario adjunto Samuel Samson, que la pidieron el 20/Jul y pretendían tratar el sistema electoral brasileño (Washington Post, Correio Braziliense, Estadão, SBT News). Lula respondió en una convención que quien venga de afuera a meterse en la elección brasileña va a recibir una paliza, recordando que 157 millones de electores deciden el resultado. El cuarto eje, en el caso Master, es el bloqueo de hasta R$ 135 millones determinado por la Justicia de Río el 23/Jul contra el banco, Trustee, Axor Asset y dos socios, por pérdidas de Rioprevidência en un fondo concentrado en acciones de Ambipar. Por último, un contraste de escala que el panel debe mantener a la vista: en el Senado por bancas el PL subió 2,00pp, hasta 70,50%, y el MDB 1,80pp, hasta 17,25%, pero ese libro entero suma USD 290 mil, contra USD 115,79M del presidencial. Una variación porcentual grande en un mercado fino no es dinero grande, y no es señal. La síntesis, sin juicio de valor de ninguna especie: la encuesta dice que la carrera está quieta y ajustada en el balotaje, el mercado dice que está en el punto más desigual de toda la serie, y ambas cosas se midieron en la misma semana.`,
+})
