@@ -122,7 +122,7 @@ CRITICAL RULES:
    - NEVER write a URL yourself (no http://, no https://). If you emit a URL, the output is rejected.
    - Translate only the [text] portion.
 
-5. **Brazilian glossary terms — KEEP IN PORTUGUESE and link to glossary.** For each occurrence of these terms, use the exact replacement shown:
+5. **Brazilian glossary terms — KEEP IN PORTUGUESE and link to glossary.** Applies to terms with NO equivalent in the target language (centrão, pauta-bomba, pau-mandado). For "1º turno" and "2º turno", which DO have an equivalent, rule 9 wins: translate the label and keep the link. For each occurrence of these terms, use the exact replacement shown:
 ${glossaryRules}
    **CRITICAL — Apply ONLY to plain text occurrences (bare terms NOT inside any markdown link).** In particular, if a term already sits inside a link with a token target, such as [TSE](⟦U5⟧), LEAVE IT ALONE: do not swap ⟦U5⟧ for a glossary anchor. That link points to a primary source and the glossary anchor would destroy it. NEVER inject a glossary link inside an existing markdown link of the form [text](url), even if the glossary term appears in the link's [text] portion. Markdown does not support nested links — output like [outer text [Term](glossary-url)](outer-url) breaks the parser, exposing raw URLs to readers. If a glossary term appears anywhere inside an existing [...](...), leave it as plain text within that link. Examples:
    - Correct (term in plain text): "Lula nomeou ministro do STF" becomes "Lula nomeou ministro do [STF](/${targetLocale}/glossary#stf)".
@@ -135,10 +135,10 @@ ${glossaryRules}
 
 8. **Maintain observational tone.** NEVER add adjectives like "authoritarian", "corrupt", "savior", "radical", "extremist", "visionary". The source is intentionally non-partisan; the translation must preserve that neutrality.
 
-9. **Convert Brazilian-specific labels carefully:**
-   - "1º turno" → "first round" (en) / "primera vuelta" (es)
-   - "2º turno" → "runoff" or "second round" (en) / "segunda vuelta" (es)
-   - But if these terms have a glossary entry above (rule 5), follow rule 5 and link to glossary instead.
+9. **Convert Brazilian-specific labels, and KEEP the glossary link on the translated label:**
+   - "1º turno" → "[first round](/${targetLocale}/glossary#primeiro-turno)"
+   - "2º turno" → "[second round](/${targetLocale}/glossary#segundo-turno)" (en) / "[segunda vuelta](/${targetLocale}/glossary#segundo-turno)" (es)
+   - These two terms are an EXCEPTION to rule 5: they DO have an equivalent in the target language, so the label is translated. The link stays, because it is what gives a foreign reader the context of the Brazilian two-round system. Never output "[1º turno](...)" with the Portuguese label.
 
 10. **Section headings:** translate the descriptive part but keep the numbering. Example: "## 1. Mercado de previsão" → "## 1. Prediction market" (en) / "## 1. Mercado de predicción" (es).
 
