@@ -14,11 +14,22 @@ interface Props {
 export function StfSection({ stf, updatedAt, polyStf }: Props) {
   const { t } = useTranslation();
 
-  // Percentual ao vivo do Polymarket (yesPrice do primeiro market ativo)
+  // Percentual ao vivo do Polymarket (yesPrice do primeiro market ativo).
+  // 2 casas decimais: este mercado se move em centésimos (3,55% -> 3,65%) e o
+  // Math.round() anterior achatava tudo para "4%", escondendo o movimento.
   const livePrice = polyStf?.markets?.[0]?.outcomePrices?.[0];
-  const livePct = livePrice != null ? `${Math.round(Number(livePrice) * 100)}%` : null;
-  // Fallback: regex do texto editorial (dado estático)
-  const displayPct = livePct || stf?.analise?.match(/(\d+\.?\d*)%/)?.[0] || ', ';
+  const liveNum = livePrice == null ? NaN : Number(livePrice);
+  const livePct = Number.isFinite(liveNum)
+    ? `${(liveNum * 100).toFixed(2).replace('.', ',')}%`
+    : null;
+
+  // Fallback: percentual citado no texto editorial do dia (dado estático).
+  // A classe [.,] é OBRIGATÓRIA. O texto é pt-BR e usa vírgula decimal, então
+  // a expressão anterior /(\d+\.?\d*)%/ casava apenas o "55" de "3,55%" e o
+  // cartão publicava 55% de probabilidade de impeachment de ministro do STF,
+  // quinze vezes o valor real, sem nenhum aviso. Verificado em 24/Jul/2026.
+  const fallbackPct = stf?.analise?.match(/\d+(?:[.,]\d+)?\s*%/)?.[0];
+  const displayPct = livePct || fallbackPct || ', ';
 
   return (
     <section>
