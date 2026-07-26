@@ -1,0 +1,165 @@
+{
+  "updatedAt": "26/07/2026, 14:12",
+  "subtitle": "ATUALIZAÇÃO 26/Jul 14:12 BRT, a 70 dias do 1º turno. Domingo sem urna nova: a Datafolha de 24/Jul (n=2.004, campo 22 a 24/Jul, margem de 2pp, BR-01166/2026) segue sendo a nacional mais recente, com Lula 40% e Flávio 32% no 1º turno e 48% x 43% no returno. O registro do TSE mostra que isso muda já na segunda: quatro nacionais com publicação declarada em cinco dias, Nexus em 27/Jul, AtlasIntel em 28/Jul com n=5.000, PoderData em 30/Jul e Vox Brasil em 31/Jul, três delas com campo aberto agora e portanto medindo depois da convenção do PL. No mercado, o dia foi de rearranjo interno: Lula ficou EXATAMENTE parado em 62,50%, que é o topo da série do AFOS, enquanto Flávio subiu 0,80pp para 23,65% e Renan Santos caiu exatamente 0,80pp para 9,55%. Movimento de mesmo tamanho e sinal contrário entre dois nomes do mesmo campo, com o favorito imóvel, descreve disputa DENTRO de um campo e não transferência entre campos. O gap recuou para +38,85pp, saindo do pico de +39,65pp registrado ontem. O fato do dia foi a convenção nacional do PSD, que oficializou Ronaldo Caiado à Presidência com Gilberto Kassab de vice, e cujo preço no book CAIU 0,15pp, para 1,75%, no próprio pregão. É o segundo lançamento seguido terminando em queda, depois de Flávio ter caído 0,10pp na véspera, e nas duas vezes a coincidência é registrada sem afirmação de causa. No plano institucional, a escalada com a Argentina avançou: depois do ataque de Javier Milei a Alexandre de Moraes em palanque brasileiro, o presidente do STF, Edson Fachin, respondeu em público e o governo convocou o embaixador em Buenos Aires para consultas. Volume total acumulado no presidencial em USD 115,95M. Cruzamento com Polymarket ao vivo 26/Jul 17:12 UTC, aprovado por dupla leitura com 8 minutos de intervalo.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 62,50% (estável, vol USD 7,65M acumulado), a 70 dias da eleição. Ficou exatamente parado no topo da série do AFOS, patamar que alcançou em 25/Jul e que nenhum dia anterior tinha atingido. O gap sobre Flávio recuou para +38,85pp, abaixo do pico de +39,65pp da véspera. Na urna, a Datafolha de 24/Jul segue sendo a referência, com 40% no 1º turno e 48% no returno direto contra 43% de Flávio.",
+      "fortes": [
+        "Segurou o topo da série sem devolver nada: 62,50% pelo segundo dia, com volume acumulado de USD 7,65M.",
+        "O movimento do dia aconteceu inteiramente entre o segundo e o terceiro colocados, sem tocar no preço dele, o que indica disputa interna do campo adversário.",
+        "A Datafolha de 24/Jul o mantém à frente nos três cenários de returno testados: 48% x 43% contra Flávio, 47% x 40% contra Caiado e 48% x 40% contra Zema.",
+        "O lançamento de um terceiro candidato competitivo, Caiado pelo PSD, não produziu transferência de preço contra ele: quem cedeu no book foi o próprio pelotão.",
+        "Aprovação pessoal de 49% contra 48% de desaprovação na leitura mais recente, com as pontas trocando de lugar em relação a junho."
+      ],
+      "fracos": [
+        "O gap recuou 0,80pp e saiu do pico da véspera, ou seja, o recorde de ontem durou um dia.",
+        "Não houve urna nova para testar o patamar de 62,50%, e a distância entre preço e voto declarado continua sem medição fresca desde 24/Jul.",
+        "A avaliação da GESTÃO segue negativa e é pergunta diferente da aprovação pessoal: 38% de ruim ou péssimo contra 32% de ótimo ou bom.",
+        "A trocada de aprovação e desaprovação é de 1pp num levantamento de margem 2pp, o que é empate técnico e não virada.",
+        "A semana traz quatro nacionais em cinco dias, três com campo posterior à convenção do PL, o que significa que o patamar atual entra em teste imediato."
+      ],
+      "analise": "O domingo dele foi de imobilidade completa, e isso é mais informativo do que parece. O preço ficou em 62,50%, exatamente onde fechou na véspera, num fim de semana que teve convenção de lançamento de um terceiro candidato, escalada diplomática com a Argentina e resposta pública do presidente do STF a um chefe de Estado estrangeiro. Nada disso moveu o favorito. Todo o movimento do book aconteceu entre Flávio, que subiu 0,80pp, e Renan Santos, que caiu exatamente 0,80pp, o que é o desenho típico de realocação dentro de um campo e não de transferência entre campos. O gap recuou para +38,85pp e saiu do pico de +39,65pp de ontem, o que precisa ser dito com a mesma clareza com que o recorde foi registrado: o topo durou um pregão. Na urna não houve novidade, e a Datafolha de 24/Jul (n=2.004, campo 22 a 24/Jul, margem 2pp, BR-01166/2026) segue sendo a leitura de maior peso, com 40% no 1º turno, 48% no returno contra Flávio e aprovação pessoal de 49% contra 48%. O teste chega rápido: o registro do TSE mostra quatro nacionais com publicação declarada entre 27 e 31 de julho, sendo a AtlasIntel de 28/Jul a maior em amostra, com n=5.000, e a primeira grande cujo campo é inteiramente posterior à convenção do PL. Volume acumulado dele em USD 7,65M, num presidencial que soma USD 115,95M."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 23,65% (alta 0,80pp, vol USD 7,67M acumulado), um dia depois da convenção que oficializou sua candidatura. Recuperou o terreno perdido no próprio dia do lançamento e afastou-se do piso de 22,00% que a série registra em 03/Jul. Consolidou o 2º lugar do 1º turno em 78,00%, alta de 1,50pp. Na urna, a Datafolha de 24/Jul o dá com 32% no 1º turno e 43% no returno direto contra 48% de Lula.",
+      "fortes": [
+        "Maior alta do book no dia: subiu 0,80pp para 23,65%, recuperando com folga a queda de 0,10pp registrada no dia da própria convenção.",
+        "Consolidou o 2º lugar do 1º turno em 78,00%, alta de 1,50pp, o que reforça a leitura de que ele é quem chega ao returno se ele existir.",
+        "A alta dele espelha exatamente a queda de Renan Santos, o que indica que o mercado o vê recolhendo o espaço do concorrente no mesmo campo.",
+        "A Datafolha de 24/Jul o registra em 32% no 1º turno, um ponto acima de junho, e mantém os 43% do returno direto.",
+        "A candidatura está formalizada desde 25/Jul, o que encerra a fase de pré-candidatura e libera o calendário de campanha."
+      ],
+      "fracos": [
+        "A alta veio um dia DEPOIS do evento, o que enfraquece qualquer leitura de que a convenção tenha sido lida pelo mercado como ganho.",
+        "O ganho tem origem identificável no campo dele mesmo: Renan cedeu 0,80pp, exatamente o que ele subiu, e Lula não se moveu. Não houve avanço sobre o favorito.",
+        "A rejeição segue sendo o teto: 48% na Datafolha de 24/Jul, idêntica à de junho e a mais alta entre todos os nomes testados.",
+        "O entorno familiar recuou no mesmo dia: Jair caiu 0,20pp para 1,05% e Michelle caiu 0,40pp para 0,75%, saindo da casa de 1%.",
+        "Segue sem vice definida depois da recusa de Tereza Cristina, cujo preço no book presidencial continua em 0,15%, com as convenções correndo até 05/Ago."
+      ],
+      "analise": "Ele teve a maior alta do dia e a origem dela é o dado que importa. Subiu 0,80pp para 23,65% (vol USD 7,67M), recuperando com folga a queda de 0,10pp que havia registrado no próprio dia da convenção. Mas Renan Santos caiu exatamente 0,80pp no mesmo pregão, e Lula não se moveu um centésimo. Quando dois nomes do mesmo campo trocam a mesma quantidade de preço entre si e o favorito fica imóvel, o que se está vendo é consolidação interna, não avanço sobre o adversário. É uma boa notícia para ele e é uma notícia menor do que o tamanho do número sugere. No sub-mercado de 2º lugar do 1º turno o movimento foi na mesma direção e mais forte, com alta de 1,50pp para 78,00%, embora esse book valha USD 4,27M contra os USD 7,67M do preço principal. O timing também merece registro honesto: a alta veio um dia depois da convenção, não no dia dela, o que torna difícil sustentar que o mercado tenha lido o evento como ganho. Na urna nada mudou, porque não houve pesquisa nova, e a Datafolha de 24/Jul segue mostrando o problema estrutural dele intacto: rejeição de 48%, a mais alta do páreo, sem um dígito de variação contra junho. E o entorno recuou no mesmo dia em que ele subiu, com Jair cedendo 0,20pp e Michelle 0,40pp, o que é coerente com um mercado consolidando um nome só no campo."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 9,55% no vencedor (queda 0,80pp, vol USD 8,53M acumulado), a maior queda do book no dia e o segundo pregão seguido de perda. Perdeu também 1,50pp no 3º lugar do 1º turno, indo a 64,50%. A urna mais recente, a Datafolha de 24/Jul, o mede em 3% no 1º turno, e com isso três das quatro nacionais recentes o põem nesse patamar.",
+      "fortes": [
+        "Mantém o terceiro maior preço do book presidencial e o maior volume acumulado entre os nomes competitivos, USD 8,53M, acima de Lula e de Flávio.",
+        "Segue dominante no sub-mercado de 3º lugar do 1º turno, com 64,50%, muito à frente do segundo colocado ali, que é Caiado com 15,50%.",
+        "Subiu 0,10pp no 2º lugar do 1º turno, para 11,85%, mantendo viva a hipótese de returno mesmo com a queda no preço principal.",
+        "A rejeição dele na Datafolha é de 12%, um quarto da de Flávio, o que preserva espaço de crescimento que os dois primeiros colocados não têm."
+      ],
+      "fracos": [
+        "Segundo dia seguido de queda: perdeu 1,40pp na véspera e mais 0,80pp hoje, saindo de 11,75% para 9,55% em dois pregões.",
+        "Perdeu a casa dos 10% e cedeu 1,50pp no 3º lugar do 1º turno, ou seja, a perda não ficou restrita ao contrato de vencedor.",
+        "A queda de hoje tem contrapartida exata na alta de Flávio, o que descreve um mercado realocando dentro do campo e escolhendo o outro nome.",
+        "A distorção contra a urna continua sendo a maior do painel, 9,55% de preço contra 3% de voto declarado, ainda que tenha estreitado por movimento do preço.",
+        "Medido na série inteira, 9,55% está bem abaixo do pico de 17,90% de 09/Jun, então o nível atual é recuo de um patamar já perdido."
+      ],
+      "analise": "Foi o segundo pregão seguido de perda e, somados, os dois desenham um movimento consistente: caiu 1,40pp na véspera, quando a Datafolha o mediu em 3%, e mais 0,80pp hoje, saindo de 11,75% para 9,55% em dois dias. O detalhe que dá sentido à queda de hoje é a contrapartida: Flávio subiu exatamente 0,80pp no mesmo pregão, e Lula não se moveu. Não é o campo dele encolhendo contra o favorito, é o mercado escolhendo outro nome dentro do mesmo campo. Isso ganha contexto com a leitura política que circulou no fim de semana, de que o PT avalia Renan como ameaça direta a Flávio e não a Lula, mas o AFOS registra a coincidência de enquadramento e não afirma que uma coisa causou a outra. A perda não ficou no contrato de vencedor: ele cedeu 1,50pp no 3º lugar do 1º turno, para 64,50%, e ganhou apenas 0,10pp no 2º lugar, para 11,85%. Sobre a distorção que o painel acompanha, ela seguiu estreitando pelo mesmo mecanismo de ontem, ou seja, pelo PREÇO e não pela pesquisa: 9,55% de probabilidade implícita contra 3% de voto declarado nas três nacionais convergentes. Continua sendo a maior distância do painel e continua sendo comparação entre grandezas diferentes, probabilidade de vitória contra intenção de voto. Ressalva de série: 9,55% não é máximo nem mínimo dele, com pico de 17,90% em 09/Jun e piso de 5,30% em 26/Abr. Ele tem o maior volume acumulado entre os nomes competitivos, USD 8,53M, o que mede história negociada e não convicção atual."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,75% (queda 0,15pp, vol USD 5,14M), Jair 1,05% (queda 0,20pp, vol USD 5,24M), Michelle 0,75% (queda 0,40pp, vol USD 9,26M), Zema 0,65% (queda 0,10pp, vol USD 4,53M), Camilo Santana 0,45%, Haddad 0,35% (queda 0,30pp, vol USD 6,36M), Alckmin 0,25%, Tarcísio 0,15%. Na Datafolha de 24/Jul, Caiado tem 4%, Zema 3% e ambos perdem o returno para Lula, 47x40 e 48x40.",
+      "subtitle": "26/Jul, a 70 dias: o pelotão teve o dia mais movimentado do calendário e o menos movimentado no preço. O PSD oficializou Ronaldo Caiado à Presidência com Gilberto Kassab de vice, em convenção nacional, e no primeiro discurso como candidato ele atacou os dois primeiros colocados, dizendo que Lula provoca Trump e que Flávio ataca autoridades (Folha de S.Paulo, G1, Times Brasil). No book, TODOS os nomes do pelotão recuaram: Caiado 0,15pp para 1,75%, Jair 0,20pp para 1,05%, Michelle 0,40pp para 0,75%, Zema 0,10pp para 0,65% e Haddad 0,30pp para 0,35%. O dinheiro que saiu do pelotão e de Renan Santos apareceu em um lugar só, que foi Flávio.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,75% (queda 0,15pp, vol USD 5,14M) | 3º lugar do 1º turno 15,50% (queda 0,50pp) | OFICIALIZADO candidato em convenção nacional do PSD em 26/Jul, com Kassab de vice | Datafolha 24/Jul 1T 4% e 2º turno Lula 47% x Caiado 40%, rejeição 12%",
+        "fortes": "Passou de pré-candidato a candidato: a convenção nacional do PSD oficializou a chapa em 26/Jul, com Gilberto Kassab de vice, chapa pura do partido e sem depender de federação. É o nome mais bem medido do pelotão na Datafolha de 24/Jul, com 4% no 1º turno, e tem uma das rejeições mais baixas do páreo, 12%, contra 48% de Flávio e 46% de Lula. Esse espaço de crescimento é o que o mercado precifica ao mantê-lo vivo apesar do voto declarado baixo. No primeiro discurso como candidato mirou nos dois primeiros colocados ao mesmo tempo, tentando ocupar o espaço entre eles.",
+        "fracos": "O preço CAIU no próprio dia da convenção que o oficializou, 0,15pp para 1,75%, e cedeu mais 0,50pp no 3º lugar do 1º turno, indo a 15,50%. É o segundo lançamento seguido do calendário em que o candidato oficializado termina o pregão em queda. A Datafolha desmontou a tese do returno competitivo: Lula o bate por 47% a 40%, sete pontos, margem MAIOR que os cinco pontos contra Flávio. Mede 4% de voto declarado e vale 1,75% no book de vencedor, contraste que persiste sem sinal de correção."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,35% (queda 0,30pp, vol USD 6,36M) | não testado no presidencial por nenhuma nacional, incluindo a Datafolha 24/Jul | foco no governo de SP, com chapa oficializada em 25/Jul e Márcio França (PSB) de vice",
+        "fortes": "Segue como principal quadro do PT no maior colégio eleitoral do país, com a chapa ao governo de São Paulo oficializada em convenção em Campinas no dia 25/Jul, com Márcio França de vice e presença de Lula, o que encerrou meses de negociação.",
+        "fracos": "Devolveu inteiramente a alta da véspera e mais um pouco: caiu 0,30pp para 0,35%, saindo da casa de meio ponto. A leitura de ontem já registrava que a alta coincidia com a convenção ESTADUAL e que o cargo precificado no book é outro; a devolução no dia seguinte é consistente com isso. Nenhuma nacional o testa para presidente, incluindo a Datafolha de 24/Jul, então o preço dele é resíduo de nome conhecido e não tem lastro de urna no cargo precificado."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,65% (queda 0,10pp, vol USD 4,53M) | 3º lugar do 1º turno 4,75% | Datafolha 24/Jul 1T 3% e 2º turno Lula 48% x Zema 40%, rejeição 13% | segue SEM vice anunciado, com convenções até 05/Ago",
+        "fortes": "Mantém rejeição baixa para o padrão do páreo, 13% na Datafolha de 24/Jul, num campo em que os dois primeiros colocados estão acima de 45%. Marca 3% de forma consistente nas nacionais recentes (Datafolha, Gerp e Indexa), além de 3,7% na Futura/Apex 14/Jul e 4% na BTG/Nexus 13/Jul, ou seja, o patamar é estável e não errático.",
+        "fracos": "Terceiro pregão de recuo em quatro dias: caiu mais 0,10pp e chegou a 0,65%, o menor patamar dele desde o salto de 24/Jul. Na Datafolha perde o returno para Lula por 48% a 40%, a maior margem entre os três cenários de 2º turno testados, e sua rejeição de 13% é a mais alta do pelotão. Segue sem vice anunciado enquanto o calendário de convenções corre até 05/Ago, e agora com um concorrente direto no mesmo espaço já oficializado, o que reduz o tempo para se diferenciar."
+      },
+      "analise": "O pelotão viveu o paradoxo do dia: teve o calendário mais cheio e o preço mais fraco. O PSD oficializou Caiado à Presidência com Kassab de vice, chapa pura, em convenção nacional, e no primeiro discurso como candidato ele atacou Lula e Flávio ao mesmo tempo, tentando ocupar o espaço entre os dois (Folha de S.Paulo, G1, Times Brasil, 26/Jul). O mercado respondeu com queda de 0,15pp, para 1,75%, e ainda cortou 0,50pp da posição dele no 3º lugar do 1º turno. E não foi só ele: TODOS os nomes do pelotão recuaram no mesmo pregão, com Jair cedendo 0,20pp, Michelle 0,40pp, Zema 0,10pp e Haddad 0,30pp. O dinheiro que saiu do pelotão e de Renan Santos apareceu em um lugar só, que foi Flávio, com alta de 0,80pp. A leitura que o dado sustenta é de consolidação: o mercado está concentrando o campo não governista num nome só, e fez isso justamente no dia em que um concorrente foi formalmente lançado. Sobre a urna, nada mudou, e a Datafolha de 24/Jul continua sendo o teto medido do pelotão, com Caiado em 4%, Zema em 3% e Augusto Cury em 2%, além de returnos em que Lula bate Caiado por 47% a 40% e Zema por 48% a 40%, margens maiores que os 5pp contra Flávio. O contraponto honesto segue sendo a rejeição: Caiado 12% e Zema 13%, contra 48% de Flávio e 46% de Lula, ou seja, eles têm espaço de crescimento que os dois primeiros não têm. Vale a ressalva de método de sempre: são preços entre 0,35% e 1,75% num book onde o favorito vale 62,50%, então variação em pontos percentuais parece grande em termos relativos e é pequena em dinheiro.",
+      "fortes": [
+        "Caiado deixou de ser pré-candidato: a convenção nacional do PSD oficializou a chapa com Kassab de vice em 26/Jul, sem depender de federação.",
+        "Caiado é o nome mais bem medido do pelotão na Datafolha, com 4% no 1º turno, e tem uma das rejeições mais baixas do páreo, 12%.",
+        "Zema mantém rejeição baixa, 13% na Datafolha, num campo em que os dois primeiros colocados estão acima de 45%.",
+        "Renan Santos, apesar da queda, segue dominante no 3º lugar do 1º turno, com 64,50% contra 15,50% de Caiado."
+      ],
+      "fracos": [
+        "TODOS os nomes do pelotão recuaram no mesmo pregão, e o dinheiro apareceu concentrado num nome só, que foi Flávio.",
+        "Caiado caiu 0,15pp no próprio dia da convenção que o oficializou, e perdeu mais 0,50pp no 3º lugar do 1º turno.",
+        "Haddad devolveu inteiramente a alta da véspera, caindo 0,30pp para 0,35%, o que confirma que aquela alta era ruído de convenção estadual.",
+        "Michelle caiu 0,40pp e saiu da casa de 1%, apesar de manter o maior volume acumulado do book entre os nomes que não são Tarcísio.",
+        "Nenhum deles passa de 4% na Datafolha, e os dois testados no returno perdem por 7pp e 8pp, margens maiores que a de Flávio."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Sem urna nova neste domingo. A referência segue sendo a Datafolha 24/Jul (n=2.004, campo 22-24/Jul, BR-01166/2026): 40% no 1º turno e 48% no returno direto contra 43% de Flávio, vencendo também Caiado (47x40) e Zema (48x40). Aprovação pessoal 49% x 48%, gestão 32% ótimo ou bom contra 38% ruim ou péssimo.",
+      "m": "62,50% (vol USD 7,65M acumulado)",
+      "t": "ESTÁVEL em 62,50%, sem variação, segurando o topo da série do AFOS pelo segundo dia. O gap sobre Flávio recuou para +38,85pp, abaixo do pico de +39,65pp da véspera.",
+      "s": "70 dias da eleição. Todo o movimento do book ficou entre Flávio e Renan, sem tocar no preço dele. O governo convocou o embaixador na Argentina após o ataque de Milei a Moraes, e o mercado não precificou nada disso. Polymarket ao vivo 26/Jul 17:12 UTC, dupla leitura.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Datafolha 24/Jul: 32% no 1º turno, um ponto acima de junho, e 43% no returno direto, mesmo patamar de junho. Rejeição de 48%, idêntica à de junho e a mais alta entre todos os nomes testados. Sem pesquisa nova posterior à convenção do PL até agora.",
+      "m": "23,65% (vol USD 7,67M acumulado)",
+      "t": "SOBE 0,80pp para 23,65%, a maior alta do book, um dia DEPOIS da convenção de lançamento. Sobe também 1,50pp no 2º lugar do 1º turno, para 78,00%.",
+      "s": "A alta espelha exatamente a queda de 0,80pp de Renan Santos, com Lula imóvel, o que descreve realocação dentro do campo e não avanço sobre o favorito. O entorno recuou no mesmo dia: Jair 0,20pp e Michelle 0,40pp. Segue sem vice após a recusa de Tereza Cristina.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "Datafolha 24/Jul o mede em 3% no 1º turno, confirmando Gerp 22/Jul e Indexa 21/Jul. Três das quatro nacionais recentes o põem em 3%, e os 9% da Real Time 21/Jul ficam isolados. Rejeição de 12%, um quarto da de Flávio.",
+      "m": "9,55% (vol USD 8,53M acumulado)",
+      "t": "CAI 0,80pp para 9,55%, segundo pregão seguido de perda, saindo de 11,75% para 9,55% em dois dias. Cede 1,50pp no 3º lugar (64,50%) e sobe 0,10pp no 2º lugar (11,85%).",
+      "s": "A queda tem contrapartida exata na alta de Flávio, com o favorito imóvel: é o mercado escolhendo outro nome dentro do mesmo campo. A distorção contra a urna segue sendo a maior do painel. Ressalva de série: pico de 17,90% em 09/Jun e piso de 5,30% em 26/Abr.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "Datafolha 24/Jul: 4% no 1º turno, o melhor do pelotão, e perde o returno para Lula por 47% a 40%, margem maior que a de Flávio. Rejeição de 12%, das mais baixas do páreo, o que preserva espaço de crescimento.",
+      "m": "1,75% (vol USD 5,14M)",
+      "t": "CAI 0,15pp para 1,75% no próprio dia em que o PSD oficializou sua candidatura, e cede 0,50pp no 3º lugar do 1º turno, para 15,50%.",
+      "s": "Convenção nacional do PSD oficializou a chapa com Kassab de vice, chapa pura e sem federação. É o segundo lançamento seguido do calendário terminando com o candidato em queda no book. Mede 4% de voto declarado e vale 1,75% no vencedor.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência e não é testada no cenário principal do 1º turno pelas nacionais.",
+      "m": "0,75% (vol USD 9,26M)",
+      "t": "CAI 0,40pp para 0,75%, devolvendo com folga a alta da véspera e saindo da casa de 1%. É a maior queda relativa do pelotão no dia.",
+      "s": "A queda vem no dia seguinte à convenção do PL, da qual ela participou apenas por vídeo. O volume acumulado dela, USD 9,26M, segue sendo o maior do book presidencial entre os nomes que não são Tarcísio, apesar do preço abaixo de 1%.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "3,40% (vol USD 83 mil)",
+      "t": "CAI 0,10pp para 3,40%, terceiro dia praticamente parado.",
+      "s": "Ressalva de método decisiva: com USD 83 mil de volume acumulado, contra USD 115,95M do presidencial, a variação não sustenta narrativa. Ficar parado em 48 horas que tiveram ataque de chefe de Estado estrangeiro a ministro, resposta pública de Fachin e embaixador convocado é o registro que interessa.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O 26/Jul foi um domingo de calendário cheio, urna vazia e mercado se rearranjando por dentro. Comece pelo que NÃO houve: nenhuma pesquisa nacional nova foi publicada, e a Datafolha de 24/Jul (n=2.004, campo 22 a 24/Jul, margem 2pp, 95% de confiança, BR-01166/2026) segue sendo a leitura de maior peso, com Lula 40% e Flávio 32% no 1º turno e 48% x 43% no returno direto. Isso muda imediatamente: o registro do TSE mostra quatro nacionais com publicação declarada em cinco dias, Nexus em 27/Jul com n=2.000, AtlasIntel em 28/Jul com n=5.000, PoderData em 30/Jul com n=2.400 e Vox Brasil em 31/Jul com n=2.100. Três delas estão com campo aberto neste momento, o que significa que serão as primeiras a medir o eleitorado depois da convenção do PL. Vale a ressalva de método: essas datas são o que cada instituto declarou ao TSE ao registrar a pesquisa, e registro não é publicação. Agora o mercado, e aqui está o achado do dia. Lula ficou EXATAMENTE parado em 62,50% (vol USD 7,65M), segurando o topo da série do AFOS pelo segundo pregão. Flávio subiu 0,80pp para 23,65% (vol USD 7,67M) e Renan Santos caiu exatamente 0,80pp para 9,55% (vol USD 8,53M). Dois nomes do mesmo campo trocando a mesma quantidade de preço entre si, com o favorito imóvel, é o desenho de uma disputa DENTRO de um campo, não de uma transferência entre campos. O gap recuou para +38,85pp e saiu do pico de +39,65pp registrado ontem, e isso precisa ser dito com a mesma clareza com que o recorde foi anunciado: o topo durou um pregão. O terceiro elemento é o fato político do dia, e ele produziu o cruzamento mais interessante. A convenção nacional do PSD oficializou Ronaldo Caiado à Presidência com Gilberto Kassab de vice, chapa pura do partido, e no primeiro discurso como candidato ele atacou os dois primeiros colocados ao mesmo tempo, dizendo que Lula provoca Trump e que Flávio ataca autoridades (Folha de S.Paulo, G1, Times Brasil, 26/Jul). O preço dele CAIU 0,15pp no próprio pregão, para 1,75%, e ele ainda perdeu 0,50pp no 3º lugar do 1º turno. É o segundo lançamento seguido em que isso acontece, porque Flávio também caiu, 0,10pp, no dia da própria convenção. Duas ocorrências não fazem padrão e a causa não é afirmada em nenhuma das duas: são books pequenos e capturas de um instante. Mas o registro é honesto e vale acompanhar nas convenções que faltam, até 05/Ago. Some a isso o comportamento do pelotão inteiro: TODOS recuaram no mesmo pregão, Caiado 0,15pp, Jair 0,20pp, Michelle 0,40pp, Zema 0,10pp e Haddad 0,30pp, e o dinheiro apareceu concentrado num nome só. O que o dado descreve é um mercado consolidando o campo não governista em Flávio, justamente no dia em que um concorrente foi formalmente lançado. O quarto eixo é institucional e escalou em três tempos ao longo do fim de semana, sem contrapartida nenhuma de preço. Depois de Javier Milei chamar Alexandre de Moraes de lixo careca no palanque da convenção do PL, o presidente do STF, Edson Fachin, respondeu em público que a fala é incompatível com a civilidade (G1, Estadão, Folha de S.Paulo, 25/Jul). Na sequência, o governo americano negou ter intenção de minar as eleições no Brasil, respondendo à recusa de vistos pelo Itamaraty (Folha de S.Paulo, 25/Jul). E neste domingo o governo brasileiro convocou o embaixador na Argentina para consultas (Folha de S.Paulo, 26/Jul). O mercado de impeachment de ministro do STF ficou em 3,40%, queda de 0,10pp, praticamente parado pelo terceiro dia, num book de USD 83 mil que não sustenta narrativa nenhuma. Um contraste de escala que o painel mantém à vista: no Senado por cadeiras o PL oscilou entre 69% e 70% dentro da própria janela de captura, movimento de 1pp em treze minutos num book que soma USD 292 mil. Essa instabilidade é, ela mesma, o argumento para não construir leitura sobre esse mercado. Uma ressalva final de coleta, porque omiti-la seria pior que registrá-la: a consulta de notícias sobre o caso Master voltou com ZERO itens hoje, o que pode ser janela curta ou bloqueio do agregador. O painel manteve o quadro anterior do caso em vez de declarar dia vazio, porque ausência de resultado na busca não é evidência de ausência de fato. A síntese, sem juízo de valor: a urna não falou, o mercado não mudou de opinião sobre quem ganha e passou o domingo decidindo quem perde melhor, e a semana que começa traz quatro medições para testar as duas coisas."
+}
