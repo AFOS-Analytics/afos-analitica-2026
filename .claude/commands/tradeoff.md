@@ -139,18 +139,19 @@ NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explíc
 
 **Ordem correta firmada após Edição №1 (24/Mai):** traduzir EN+ES PRIMEIRO (em draft), DEPOIS flip publish em todos os 3 locales de uma vez. Inverter essa ordem cria estado inconsistente onde PT já está published mas EN/ES seguem draft — sitemap/RSS/llms.txt entram em descompasso tri-locale.
 
-1. **Traduzir EN+ES (sequencial, NÃO paralelo):**
-```bash
-# IMPORTANTE: rodar sequencial. Paralelo trip rate-limit Anthropic Tier 1.
-npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD en
-# Aguardar EN completar (~3 min), depois ES
-npx tsx scripts/translate-afos-tradeoff-chunked.ts YYYY-MM-DD es
-```
+1. **Traduzir EN+ES NA PRÓPRIA SESSÃO** (ler o `{date}.md` e escrever o `{date}.en.md` e o `{date}.es.md`, ambos em `status: draft`).
 
-⚠️ **Rate-limit gotcha (firmado 24/Mai/2026):** Tradutor faz ~36 chamadas API por locale. Anthropic Tier 1 trip em ~30 chamadas back-to-back (50k input TPM, 50 RPM). Script já tem throttle 3s + retry exponencial (30s/60s/90s) embutido, mas:
-- **Nunca rodar EN+ES em paralelo** — soma de calls trip imediato
-- Se falhar mesmo sequencial: aguardar 2 min cooldown e retry
-- Output `failed exit code 1` no Bash background é tipicamente false-positive do `cwd warning` — verificar o arquivo `.{locale}.md` foi escrito; se sim, está OK
+**A tradução do AFOS sempre foi feita assim, desde o lançamento, pela assinatura mensal do Claude Code.**
+
+⛔ **NÃO usar `scripts/translate-afos-tradeoff-chunked.ts`.** Ele chama uma conta de API avulsa, que **nunca** foi o caminho da tradução do AFOS. Se for executado e falhar com `SEM CRÉDITO` ou com rate-limit, isso **não é bloqueio nem pendência do André**: é a ferramenta errada. ⛔ **NÃO sugerir recarregar crédito, NÃO citar saldo, NÃO listar como pendência e NÃO reabrir o assunto**, encerrado pelo André em 25/Jul/2026 e reafirmado em 26/Jul. Regra completa em `memory/feedback_openrouter_key_e_do_chatbot_nao_da_traducao.md`.
+📌 Com a tradução feita na sessão, o gotcha de rate-limit de 24/Mai deixa de existir: não há chamada de API, então não há throttle, retry nem risco de trip do Tier 1.
+
+**Convenções e gate, iguais aos da daily** (`.claude/commands/afos-daily.md`, ETAPA 3.7):
+- Ler o pt-BR INTEIRO antes de traduzir, e as três versões inteiras antes de dar por pronto. Varredura automática não basta.
+- **EN** usa ponto decimal e vírgula de milhar; **ES** mantém vírgula decimal e ponto de milhar. Conferir também colunas de tabela, que já esconderam separador errado.
+- URLs, protocolos TSE e slugs de mercado não mudam entre idiomas.
+- **Gate numérico obrigatório:** todo número seguido de unidade (`%`, `pp`, `M`, `mil`/`thousand`) tem que dar multiconjunto idêntico nos três idiomas, normalizado pela convenção de cada um. Divergiu, corrigir antes de publicar.
+- Conferir também: nenhuma âncora de glossário inexistente, nenhum link apontando para outro locale, nenhum homóglifo cirílico.
 
 2. **Flip status:draft → published nos 3 locales de uma vez:**
 ```bash
