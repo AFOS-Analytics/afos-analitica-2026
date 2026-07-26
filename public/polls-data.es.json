@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-25",
+  "lastUpdate": "2026-07-26",
   "institutes": [
     {
       "name": "Datafolha",
@@ -887,50 +887,6 @@
         }
       ],
       "source": "Vox Brasil/Vox Populi via Exame, Poder360, Brasil 247, Jovem Pan, Jornal do Brasil, WSCOM 27/Jun"
-    },
-    {
-      "institute": "PoderData/Aya",
-      "date": "2026-06-25",
-      "sample": 2400,
-      "margin": 2,
-      "register": null,
-      "reliability": 3,
-      "method": "Telefónico (RDD)",
-      "fieldDates": "junho de 2026 (divulgada 25/Jun)",
-      "note": "PoderData/Aya nacional divulgada el 25 de junio (Poder360, CNN Brasil, CartaCapital). 1ª vuelta Lula 40% x Flávio 36% (brecha +4pp), Renan 4%, Caiado 4%. 2ª vuelta en [empate técnico](/es/glossary#empate-tecnico): Lula 46% x Flávio 43% (brecha +3pp); Lula también empata técnicamente con Zema y Caiado en la segunda vuelta. Es la 2ª encuesta seguida (tras la Gerp del 24 de junio) en mostrar una segunda vuelta ajustada, pero Lula sigue numéricamente al frente. El consenso Tier 1 da una ventaja mayor (Indexa 23 de junio 2ª vuelta 47x40; [Datafolha](/es/glossary#datafolha) 20 de junio 2ª vuelta 47x43). n=2.400, margen ~2pp.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 36
-            },
-            {
-              "candidate": "Renan Santos",
-              "percent": 4
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        }
-      ],
-      "source": "PoderData/Aya via Poder360, CNN Brasil, CartaCapital 25/Jun"
     }
   ],
   "approvalData": {
@@ -975,51 +931,51 @@
     "lastUpdate": "2026-07-25"
   },
   "polymarketComparison": {
-    "note": "Cruce [Polymarket](/es/glossary#polymarket) (live 25/Jul 18:51 UTC, degraded false, failedCount 0, captura confirmada por doble lectura con 8 minutos de intervalo), a 71 días de la primera vuelta, el día en que volvieron las encuestas y en que el PL oficializó la candidatura de Flávio Bolsonaro. LA ENCUESTA: Datafolha (Tier 1) fue divulgada la noche del 24/Jul (n=2.004, campo 22-24/Jul, margen 2pp, 95% de confianza, BR-01166/2026) y muestra ESTABILIDAD. Lula 40% y Flávio 32% en la primera vuelta, contra 41% y 31% en la Datafolha de junio; en el balotaje directo, Lula 48% y Flávio 43%, contra 47% y 43%. Los dos cortes se movieron un punto en direcciones OPUESTAS y ambos dentro del margen, que es la firma del ruido muestral y no de una tendencia. El rechazo quedó idéntico al de junio en los dos nombres, Flávio 48% y Lula 46%. EL MERCADO fue en dirección contraria a esa lectura de estabilidad: Lula subió 1,00pp y cerró en 62,50%, y Flávio cayó 0,10pp hasta 22,85%. La brecha llegó a +39,65pp, la mayor de toda la serie de AFOS, que cubre 99 días desde el 14/Abr y tenía un pico anterior de +39,50pp el 03/Jul. La ventana se declara a propósito: la API pública de histórico limita la consulta a 90 días, así que un superlativo verificado por ella mide 90 días y lo llama ciclo. Esta verificación se hizo directamente contra la base de 99 días, y lo que la base NO prueba es qué pasó antes del 14/Abr, por eso AFOS escribe mayor de la serie y nunca mayor del ciclo. Lula en 62,50% también rompió el techo de 61,50% que la serie traía desde el 03/Jul. El segundo movimiento del día fue Renan Santos, que cayó 1,40pp hasta 10,35%, la mayor baja del libro, el mismo día en que Datafolha lo midió en 3%, poniendo a tres de las cuatro nacionales recientes en ese nivel y aislando el 9% de Real Time 21/Jul. En los submercados, Flávio subió 2,50pp en el segundo puesto de la primera vuelta (76,50%) y Renan 0,60pp (12,00%), mientras que en el tercer puesto Renan cedió 1,00pp (66,00%) y Caiado quedó quieto en 16,00%. En el pelotón subieron Michelle (0,30pp, hasta 1,15%), Haddad (0,30pp, hasta 0,65%), Jair (0,20pp, hasta 1,25%) y Caiado (0,15pp, hasta 1,90%); solo Zema retrocedió (0,20pp, hasta 0,75%). El impeachment del STF quedó prácticamente quieto en 3,50% (baja de 0,05pp) con un volumen de apenas USD 83 mil. En el Senado por bancas el PL subió 2,00pp, hasta 70,50%, y el MDB 1,80pp, hasta 17,25%, en un libro que suma USD 290 mil contra USD 115,79M del presidencial, o sea, una variación porcentual grande en un mercado fino no es dinero grande. CONTEXTO, sin atribución de causa: todo esto ocurrió el día de la convención que oficializó a Flávio en São Paulo, con video de Jair Bolsonaro generado por IA, apoyo de Michelle y discurso de Javier Milei, y el día en que se supo que Itamaraty negó la visa a dos funcionarios del Departamento de Estado estadounidense que pretendían tratar el sistema electoral brasileño. La captura es de las 15:51 y la brecha ya subía desde el 20/Jul, cuando estaba en +33,60pp, así que no es posible separar reacción a un evento de continuación de tendencia con el dato disponible. Volumen total acumulado en el presidencial en USD 115,79M.",
-    "sources": "Polymarket vía proxy AFOS (live 25/Jul 18:51 UTC, doble lectura confirmada por scripts/capture-guard.ts) + Datafolha 24/Jul (BR-01166/2026, n=2.004) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + Genial/Quaest 15/Jul. Serie histórica verificada en scripts/check-superlativo.ts, base de 99 días desde el 14/Abr.",
+    "note": "Cruce con Polymarket (live 26/Jul 17:12 UTC, degraded false, failedCount 0, captura aprobada por doble lectura con 8 minutos de intervalo y confirmada por una tercera lectura), a 70 días de la [primera vuelta](/es/glossary#primeiro-turno), en un domingo de convenciones y sin encuesta nueva. LAS ENCUESTAS: ninguna nacional fue publicada el 26/Jul, y la [Datafolha](/es/glossary#datafolha) del 24/Jul (n=2.004, campo del 22 al 24/Jul, margen 2pp, 95% de confianza, BR-01166/2026) sigue siendo la lectura de mayor peso, con Lula 40% y Flávio 32% en la primera vuelta y 48% x 43% en el [balotaje](/es/glossary#segundo-turno) directo. Eso cambia el lunes: el registro del [TSE](/es/glossary#tse) trae cuatro nacionales con publicación declarada en cinco días, [Nexus](/es/glossary#nexus-btg) el 27/Jul (n=2.000), [AtlasIntel](/es/glossary#atlasintel) el 28/Jul (n=5.000), PoderData el 30/Jul (n=2.400) y Vox Brasil el 31/Jul (n=2.100), tres de ellas con campo abierto ahora y por lo tanto midiendo después de la convención del [PL](/es/glossary#pl). Salvedad: esas fechas son lo que cada instituto declaró al TSE, y registro no es publicación. EL MERCADO: Lula quedó EXACTAMENTE quieto en 62,50% (vol USD 7,65M), sosteniendo el techo de la serie del AFOS por segunda rueda, mientras Flávio subió 0,80pp hasta 23,65% (vol USD 7,67M) y Renan Santos cayó exactamente 0,80pp hasta 9,55% (vol USD 8,53M). Dos nombres del mismo campo intercambiando la misma cantidad de precio entre sí, con el favorito inmóvil, describe disputa DENTRO de un campo y no traspaso entre campos. La brecha retrocedió a +38,85pp, saliendo del pico de +39,65pp de la víspera. EL HECHO DEL DÍA: la convención nacional del PSD oficializó a Ronaldo Caiado a la Presidencia con Gilberto Kassab de vice, y su precio CAYÓ 0,15pp en la misma rueda, hasta 1,75%, además de ceder 0,50pp en el tercer lugar de la primera vuelta. Es el segundo lanzamiento seguido que termina con el candidato a la baja, después de que Flávio cayera 0,10pp el día de su propia convención. Dos ocurrencias no hacen patrón, y la causa no se afirma en ninguna. Todo el pelotón retrocedió el mismo día (Jair 0,20pp, Michelle 0,40pp, Zema 0,10pp, Haddad 0,30pp) y el dinero apareció concentrado en un solo nombre. INSTITUCIONAL: tras el ataque de Javier Milei a Alexandre de Moraes desde un palco brasileño, el presidente del [STF](/es/glossary#stf), Edson Fachin, respondió en público, el gobierno estadounidense negó intención de socavar las elecciones en Brasil y, el 26/Jul, el gobierno brasileño convocó a su embajador en Argentina. El mercado de destitución de un ministro quedó en 3,40%, baja de 0,10pp, en un book de USD 83 mil que no sostiene ningún relato. Volumen total acumulado en el presidencial en USD 115,95M.",
+    "sources": "[Polymarket](/es/glossary#polymarket) vía el proxy AFOS (live 26/Jul 17:12 UTC, degraded false, failedCount 0, doble lectura confirmada por scripts/capture-guard.ts más una tercera lectura de conferencia) + [Datafolha](/es/glossary#datafolha) 24/Jul (BR-01166/2026, n=2.004) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + Genial/[Quaest](/es/glossary#quaest) 15/Jul. Ninguna encuesta nacional nueva fue publicada el 26/Jul. Registro del [TSE](/es/glossary#tse) consultado el 26/Jul para el calendario de la semana. Serie histórica verificada directamente en la base antes de cualquier superlativo.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-48%",
         "polymarket": "62,50%",
-        "tendenciaPesquisa": "La Datafolha del 24/Jul (n=2.004, campo 22-24/Jul, BR-01166/2026) lo da con 40% en la primera vuelta y 48% en el balotaje directo contra 43% de Flávio, ganándole también a Caiado (47x40) y a Zema (48x40). Contra la Datafolha de junio, cayó 1pp en la primera vuelta y subió 1pp en el balotaje, ambos dentro del margen de 2pp, lo que es estabilidad. Aprobación personal 49% x 48% de desaprobación, con las puntas cambiando de lugar respecto de junio, cuando era 48% x 49%, también dentro del margen. La evaluación de la gestión, pregunta distinta, sigue siendo negativa: 32% excelente o buena contra 38% mala o pésima. Las anteriores lo daban entre 38% (Gerp 22/Jul, casa outlier pro-Flávio) y 45% (Quaest 15/Jul) en la primera vuelta.",
-        "tendenciaPolymarket": "SUBE 1,00pp hasta 62,50% (vol USD 7,64M), rompiendo el techo que estaba en 61,50% desde el 03/Jul. Es su mayor precio en toda la serie de AFOS, que cubre 99 días desde el 14/Abr. La brecha sobre Flávio llegó a +39,65pp y superó el pico anterior de +39,50pp del 03/Jul, convirtiéndose en la mayor de esa misma serie de 99 días. El alza llegó el día de la convención del adversario, pero la captura es de las 15:51 y la brecha ya subía desde el 20/Jul (+33,60pp), así que el dato no separa reacción a un evento de continuación de tendencia.",
-        "odds": 61.5,
+        "tendenciaPesquisa": "Sin encuesta nacional nueva el 26/Jul. La referencia sigue siendo la Datafolha del 24/Jul (n=2.004, campo del 22 al 24/Jul, BR-01166/2026), que lo da con 40% en la primera vuelta y 48% en el balotaje directo contra 43% de Flávio, ganándole también a Caiado (47x40) y a Zema (48x40). Aprobación personal 49% contra 48% de desaprobación. La evaluación de la gestión, pregunta distinta, sigue negativa: 32% óptimo o bueno contra 38% malo o pésimo. El nivel entra en prueba inmediata, con cuatro nacionales previstas entre el 27 y el 31 de julio.",
+        "tendenciaPolymarket": "ESTABLE en 62,50% (vol USD 7,65M), sin variación alguna, sosteniendo el techo de la serie del AFOS por segunda rueda. Todo el movimiento del book ocurrió entre el segundo y el tercer colocado, sin tocar su precio. La brecha sobre Flávio retrocedió a +38,85pp, por debajo del pico de +39,65pp de la víspera, es decir, el techo de la brecha duró una rueda. Quedarse inmóvil en un fin de semana con lanzamiento de un tercer candidato y escalada diplomática con Argentina es el registro que interesa.",
+        "odds": 62.5,
         "percentage": 45,
-        "lastUpdate": "2026-07-24",
-        "value": 61.5
+        "lastUpdate": "2026-07-26",
+        "value": 62.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "30-38%",
-        "polymarket": "22,85%",
-        "tendenciaPesquisa": "La Datafolha del 24/Jul lo pone en 32% en la primera vuelta, un punto por encima de junio, y en 43% en el balotaje directo, el mismo nivel de junio. El número que no se movió es el que más pesa: rechazo de 48%, idéntico al de junio y el más alto entre todos los nombres evaluados, por encima del 46% de Lula. Gerp 22/Jul, casa outlier pro-Flávio, sigue siendo la lectura más favorable del conjunto, con empate en la primera vuelta (38x38) y ventaja en el balotaje (46x45). Las dos del 21/Jul lo mantenían entre 30% y 33%.",
-        "tendenciaPolymarket": "CAE 0,10pp hasta 22,85% (vol USD 7,65M) el propio día en que el PL oficializó su candidatura, quedando a 0,85pp del piso de 22,00% que la serie registra el 03/Jul. La ganancia apareció en un solo lugar: subió 2,50pp en el segundo puesto de la primera vuelta, hasta 76,50%, en un libro que vale USD 202 mil contra los USD 7,65M de su precio principal, diferencia de tamaño que pide cautela en la lectura.",
-        "odds": 22.95,
+        "polymarket": "23,65%",
+        "tendenciaPesquisa": "Sin encuesta nueva posterior a la convención del PL. La Datafolha del 24/Jul lo pone en 32% en la primera vuelta, un punto por encima de junio, y en 43% en el balotaje directo, el mismo nivel de junio. El número que no se movió es el que más pesa: rechazo de 48%, idéntico al de junio y el más alto entre todos los nombres testeados, por encima del 46% de Lula. La Gerp del 22/Jul, casa outlier pro Flávio, sigue siendo la lectura más favorable del recorte, con empate en la primera vuelta (38x38).",
+        "tendenciaPolymarket": "SUBE 0,80pp hasta 23,65% (vol USD 7,67M), el alza mayor del book, un día DESPUÉS de la convención que oficializó su candidatura. Sube también 1,50pp en el segundo lugar de la primera vuelta, hasta 78,00%. El detalle que importa es el origen de la ganancia: Renan Santos cayó exactamente 0,80pp en la misma rueda y Lula no se movió, lo que describe reacomodo dentro del campo y no avance sobre el favorito. El entorno retrocedió junto, con Jair cediendo 0,20pp y Michelle 0,40pp.",
+        "odds": 23.65,
         "percentage": 46,
-        "lastUpdate": "2026-07-24",
-        "value": 22.95
+        "lastUpdate": "2026-07-26",
+        "value": 23.65
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-9%",
-        "polymarket": "10,35%",
-        "tendenciaPesquisa": "La Datafolha del 24/Jul lo mide en 3% en la primera vuelta, confirmando a Gerp 22/Jul y a Indexa 21/Jul. Con eso, tres de las cuatro nacionales más recientes lo ponen en 3%, y el 9% de Real Time del 21/Jul queda aislado. Es la lectura de encuesta de mayor peso del conjunto y la que más aprieta la distorsión contra su precio. Su rechazo es de 12%, un cuarto del de Flávio, lo que preserva un espacio de crecimiento que los dos primeros no tienen.",
-        "tendenciaPolymarket": "CAE 1,40pp hasta 10,35% (vol USD 8,50M), la mayor baja del libro presidencial en el día, en la misma rueda en que Datafolha lo midió en 3%. La distorsión contra la encuesta se ESTRECHÓ, pero por movimiento del precio y no de la encuesta, y sigue siendo la mayor del panel. Salvedad de serie, medida contra la base entera: 10,35% no es máximo ni mínimo, con un pico de 17,90% el 09/Jun y un piso de 5,30% el 26/Abr. Sube 0,60pp en el segundo puesto (12,00%) y cede 1,00pp en el tercero (66,00%). Tiene el mayor volumen acumulado entre los nombres competitivos del libro.",
-        "odds": 11.75,
+        "polymarket": "9,55%",
+        "tendenciaPesquisa": "Sin encuesta nueva. La Datafolha del 24/Jul lo mide en 3% en la primera vuelta, confirmando la Gerp del 22/Jul y la Indexa del 21/Jul, lo que pone a tres de las cuatro nacionales más recientes en 3% y aísla el 9% de Real Time del 21/Jul. La distorsión contra el precio sigue siendo la mayor del panel, aunque se haya estrechado dos días seguidos por movimiento del PRECIO y no de la encuesta. Su rechazo es de 12%, un cuarto del de Flávio.",
+        "tendenciaPolymarket": "CAE 0,80pp hasta 9,55% (vol USD 8,53M), segunda rueda seguida de pérdida: pasó de 11,75% a 9,55% en dos días. La caída de hoy tiene contrapartida EXACTA en el alza de Flávio, con Lula inmóvil, lo que describe un mercado eligiendo otro nombre dentro del mismo campo. Cede 1,50pp en el tercer lugar de la primera vuelta, hasta 64,50%, y sube 0,10pp en el segundo lugar, hasta 11,85%. Salvedad de serie: 9,55% no es máximo ni mínimo, con pico de 17,90% el 09/Jun y piso de 5,30% el 26/Abr.",
+        "odds": 9.55,
         "percentage": 9,
-        "lastUpdate": "2026-07-24",
-        "value": 11.75
+        "lastUpdate": "2026-07-26",
+        "value": 9.55
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1,90%",
-        "tendenciaPesquisa": "La Datafolha del 24/Jul lo da con 4% en la primera vuelta, el mejor del pelotón, y lo muestra perdiendo el balotaje ante Lula por 47% a 40%, margen MAYOR que los 5pp de Flávio, lo que contradice la tesis de que un nombre del centro sería un rival más competitivo. Su rechazo de 12% está entre los más bajos del campo y es el dato que sostiene la lectura contraria, porque indica espacio de crecimiento. El rango de las anteriores era 3% (Gerp) a 7% (Real Time).",
-        "tendenciaPolymarket": "SUBE 0,15pp hasta 1,90% (vol USD 5,12M), devolviendo la baja de la víspera, y mantiene 16,00% en el tercer puesto de la primera vuelta, sin variación. El contraste persiste: mide 4% de voto declarado y vale 1,90% de probabilidad implícita.",
+        "polymarket": "1,75%",
+        "tendenciaPesquisa": "Sin encuesta nueva. La Datafolha del 24/Jul lo da con 4% en la primera vuelta, el mejor del pelotón, y lo muestra perdiendo el balotaje contra Lula por 47% a 40%, margen MAYOR que los 5pp de Flávio, lo que contradice la tesis de que un nombre del centro sería un adversario más competitivo. El rechazo de 12% es de los más bajos de la disputa y es el dato que sostiene la lectura contraria, porque indica espacio de crecimiento. La franja de las anteriores era 3% (Gerp) a 7% (Real Time).",
+        "tendenciaPolymarket": "CAE 0,15pp hasta 1,75% (vol USD 5,14M) el MISMO día en que la convención nacional del PSD lo oficializó candidato a la Presidencia con Gilberto Kassab de vice. Cede también 0,50pp en el tercer lugar de la primera vuelta, hasta 15,50%. Es el segundo lanzamiento seguido del calendario en que el candidato oficializado termina la rueda a la baja, después de que Flávio cayera 0,10pp la víspera. Dos ocurrencias no hacen patrón y la causa no se afirma.",
         "odds": 1.75,
         "percentage": 7,
-        "lastUpdate": "2026-07-24",
+        "lastUpdate": "2026-07-26",
         "value": 1.75
       },
       {
@@ -1027,35 +983,35 @@
         "pesquisaRange": "n/d",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "No aparece en los escenarios presidenciales de las nacionales, incluida la Datafolha del 24/Jul. Disputa la reelección en São Paulo, y la encuesta estatal no entra en este panel, que es de alcance nacional.",
-        "tendenciaPolymarket": "ESTABLE en 0,15% en el presidencial, anomalía de legado con el mayor volumen individual del libro. Sirve de recordatorio permanente de método: el volumen acumulado mide historia negociada, no convicción actual.",
+        "tendenciaPolymarket": "ESTABLE en 0,15% en el presidencial, anomalía de legado con el mayor volumen individual del book, USD 13,63M. Sirve de recordatorio permanente de método: el volumen acumulado mide historia negociada, no convicción actual.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-24",
+        "lastUpdate": "2026-07-26",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "3-4%",
-        "polymarket": "0,75%",
-        "tendenciaPesquisa": "La Datafolha del 24/Jul lo mide en 3% en la primera vuelta y lo muestra perdiendo el balotaje ante Lula por 48% a 40%, el mayor margen entre los tres escenarios de segunda vuelta evaluados. Su rechazo de 13% es bajo para el estándar del campo, aunque es el más alto del pelotón. Venía marcando 3% en Gerp 22/Jul y en Indexa 21/Jul, 3,7% en Futura/Apex 14/Jul y 4% en BTG/Nexus 13/Jul.",
-        "tendenciaPolymarket": "CAE 0,20pp hasta 0,75% (vol USD 4,53M), el ÚNICO nombre del pelotón en retroceder en un día de alzas repartidas, devolviendo parte del salto del 24/Jul, cuando había más que duplicado. Llega a las convenciones aún sin candidato a vice.",
-        "odds": 0.95,
+        "polymarket": "0,65%",
+        "tendenciaPesquisa": "Sin encuesta nueva. La Datafolha del 24/Jul lo mide en 3% en la primera vuelta y lo muestra perdiendo el balotaje contra Lula por 48% a 40%, el margen mayor entre los tres escenarios de balotaje testeados. El rechazo de 13% es bajo para el estándar de la disputa, pero es el más alto del pelotón. Venía marcando 3% en la Gerp del 22/Jul y en la Indexa del 21/Jul, 3,7% en Futura/Apex del 14/Jul y 4% en BTG/Nexus del 13/Jul.",
+        "tendenciaPolymarket": "CAE 0,10pp hasta 0,65% (vol USD 4,53M), tercer retroceso en cuatro ruedas, en un día en que todo el pelotón cedió precio. Llega al lanzamiento de un competidor directo en el mismo espacio, Caiado, todavía sin vice anunciado, con las convenciones corriendo hasta el 05/Ago.",
+        "odds": 0.65,
         "percentage": 3,
-        "lastUpdate": "2026-07-24",
-        "value": 0.95
+        "lastUpdate": "2026-07-26",
+        "value": 0.65
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,65%",
-        "tendenciaPesquisa": "No aparece en los escenarios presidenciales de las nacionales, incluida la Datafolha del 24/Jul: ninguna encuesta lo evalúa para presidente, y su precio es residuo de un nombre conocido. El foco es la disputa estatal de São Paulo, cuya fórmula fue oficializada en una convención del PT en Campinas este 25/Jul, con Márcio França de vice y presencia de Lula. Las disputas estatales no entran en este panel, que es de alcance nacional.",
-        "tendenciaPolymarket": "SUBE 0,30pp hasta 0,65% (vol USD 6,35M), el día de la convención que oficializó su candidatura al gobierno de São Paulo. Se registra la coincidencia de fechas, sin atribución de causa, entre otras cosas porque el cargo descontado aquí es otro.",
+        "polymarket": "0,35%",
+        "tendenciaPesquisa": "No aparece en los escenarios presidenciales de las nacionales, incluida la Datafolha del 24/Jul: ninguna encuesta lo testea para presidente, y su precio es residuo de nombre conocido. El foco es la disputa estatal de São Paulo, cuya fórmula fue oficializada el 25/Jul con Márcio França de vice. Disputa estatal no entra en este panel, que es de alcance nacional.",
+        "tendenciaPolymarket": "CAE 0,30pp hasta 0,35% (vol USD 6,36M), devolviendo enteramente el alza de la víspera y saliendo del rango de medio punto. La lectura de ayer ya registraba que aquella alza coincidía con una convención ESTATAL y que el cargo descontado aquí es otro; devolverla al día siguiente es consistente con eso.",
         "odds": 0.35,
         "percentage": 0,
-        "lastUpdate": "2026-07-24",
+        "lastUpdate": "2026-07-26",
         "value": 0.35
       }
     ],
-    "updatedAt": "25/07/2026, 15:51"
+    "updatedAt": "26/07/2026, 14:12"
   }
 }
