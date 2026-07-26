@@ -1,0 +1,66 @@
+{
+  "date": "2026-07-26",
+  "generatedAt": "2026-07-26T16:42:00-03:00",
+  "refetch": {
+    "fetchedAtBRT": "26/07/2026 16:42",
+    "baselineCaptureBRT": "26/07/2026 14:12",
+    "guard": "capture-guard.ts APROVADO: 2 leituras com 8 min de intervalo (17:02:42Z e 17:12:09Z) concordando dentro de 0,20pp, mais 3a leitura de conferencia (17:13:01Z) com o presidencial identico",
+    "deltas": {
+      "lula": "62,50% -> 62,50% (0,00pp)",
+      "flavio": "23,65% -> 23,65% (0,00pp)",
+      "renan": "9,55% -> 9,45% (-0,10pp)",
+      "gap": "38,85pp -> 38,85pp (0,00pp)",
+      "volumeTotal": "USD 115,95M, sem mudanca"
+    },
+    "rebaselineGate": "NAO DISPAROU. Maior deriva 0,10pp, abaixo do limite de 0,50pp; nenhum recorde rompido ou desfeito; enquadramento inalterado. Mantida a baseline das 14:12."
+  },
+  "factCheck": {
+    "eventos": [
+      {
+        "evento": "PSD oficializa Ronaldo Caiado a Presidencia com Gilberto Kassab de vice, em convencao nacional",
+        "verificacao1": "check-recurrence.ts: 'Caiado' com 38 mencoes em 7 dailies (nome e continuidade), 'Kassab' com ZERO mencoes (a oficializacao e novidade)",
+        "verificacao2": {
+          "url": "https://www.brasil247.com/brasil/psd-confirma-candidatura-de-caiado-a-presidencia-com-kassab-de-vice/",
+          "data": "2026-07-26",
+          "tipo": "evento"
+        },
+        "segundaFonte": "Folha de S.Paulo 26/07 11h51 + G1 26/07 14h41 (grupos independentes)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Governo brasileiro convoca o embaixador na Argentina para consultas apos ataque de Milei a Moraes",
+        "verificacao1": "check-recurrence.ts: 'embaixador' e 'Fachin' com ZERO mencoes em 7 dailies, novidade",
+        "verificacao2": {
+          "url": "https://www.otempo.com.br/politica/governo/2026/7/26/itamaraty-chama-embaixador-do-brasil-na-argentina-para-esclarecimentos-apos-declaracoes-de-milei",
+          "data": "2026-07-26",
+          "tipo": "evento",
+          "detalhe": "embaixador nomeado Julio Bitelli; termo tecnico confirmado: consultas"
+        },
+        "segundaFonte": "Estadao 26/07 16h18 (grupo independente)",
+        "decisao": "incorporar"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Uma: 'primeira candidatura propria do PSD desde a fundacao', so no Brasil 247. Ficou ATRIBUIDA em texto ('Segundo o Brasil 247'), nao como fato do AFOS. A leitura do Diario 360 sobre o PT ver Renan como ameaca a Flavio esta marcada no texto como leitura de bastidor, nao fato verificavel.",
+    "numericalErrors": "reconcile-claims.ts: OK, todos os claims numericos batem com o JSON dentro de +-0,05pp",
+    "fontesInventadas": "Conferidos 3 ao acaso (G1 do lancamento, Estadao do embaixador, CartaCapital). Todos existem com a data citada. Write passou pelo gate de URLs, que faz HEAD em cada link.",
+    "quotesLiterais": "Duas, ambas de manchete e multiplamente reportadas: 'lixo careca' e 'minar'.",
+    "causacaoEspuria": "Nenhuma. A alta de Flavio e descrita pela contrapartida exata em Renan, sem evento causal. A queda de Caiado no dia da propria convencao e registrada com a frase explicita de que a causa nao e afirmada.",
+    "verbosCriticos": "'convocou o embaixador para consultas' com nome, data e termo tecnico confirmado na fonte; 'oficializou' com data e convencao; 'respondeu' no lugar de 'atacou' para Fachin. Nenhum verbo de privacao de liberdade, morte ou decisao judicial nova.",
+    "correcoesAplicadas": [
+      "Frase sobre a 2a candidatura de Caiado 37 anos depois estava sem link; recebeu o link do perfil do G1",
+      "Densidade de links subiu de 65% para 74% linkando onde havia fonte real (Polymarket na simetria, TSE no calendario, G1 no perfil). Nenhum link decorativo acrescentado."
+    ],
+    "decisao": "prosseguir para preview"
+  },
+  "validators": {
+    "validateAfosDaily": "OK, 1 warning: low-link-density 74% (regra 80%)",
+    "reconcileClaims": "OK",
+    "urlGateOnWrite": "passou",
+    "palavrasCorpo": 1356,
+    "comparacao": "24/Jul teve 1704 palavras, 25/Jul teve 1848"
+  },
+  "preview": "https://afos-analitica-2026-da7qdyd0y-andre-felipes-projects-6b6d4469.vercel.app/pt-BR/daily/2026-07-26",
+  "aprovacao": "Aprovado pelo Andre em 26/07/2026 apos leitura do preview"
+}
