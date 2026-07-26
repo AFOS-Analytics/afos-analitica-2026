@@ -140,7 +140,7 @@ O campo `tldr` é **obrigatório** em **toda daily a partir de 23/Mai/2026 (incl
 - **Negrito em entidades-chave** via markdown `**...**` (`**Lula 45,50%**`, `**Datafolha**`, `**Caiado ↑+0,60pp**`) — renderizado pelo template
 - **Conteúdo derivado, não inventado:** os 3 bullets sintetizam o que já está no corpo do Daily — proibido criar fato novo no TL;DR que não aparece em alguma seção
 - Renderizado pelo `AfosDailyTemplate.tsx` como `<aside>` callout ANTES da lede (cor primária no light theme, blue-300 no Sapphire theme)
-- Traduzido pelo `translate-afos-daily-chunked.ts` em chunk próprio (bullet a bullet, baixo custo de tokens)
+- Traduzido junto com o resto da daily na ETAPA 3.7, na própria sessão, bullet a bullet
 - Backward compatible: dailies antigas (≤22/Mai/2026) sem `tldr` continuam renderizando sem o bloco — não retroagir
 
 ### Checklist self-check pré-publish (obrigatório)
@@ -315,7 +315,7 @@ Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de U
   - "Matérias com link direto para a notícia" — primárias âncora
   - "Matérias secundárias (URL Google News redirect — clique resolve à matéria)" — secundárias
 
-**Aplicar em PT-BR, EN e ES uniformemente** (traduções via `translate-afos-daily-chunked.ts` mantêm URLs originais — proporção é definida na geração PT, replicada nas traduções).
+**Aplicar em PT-BR, EN e ES uniformemente** (as traduções da ETAPA 3.7 mantêm as URLs originais — a proporção é definida na geração PT e replicada nas traduções).
 
 ### URLs PROIBIDAS (bloqueiam Write — gate Python)
 
@@ -444,6 +444,25 @@ Razão: permalinks são lidos meses/anos depois. "Ontem" sem data é contexto pe
 - Caso de alto perfil envolvido (presidente, ministro STF, candidato top-3)
 - Movimento de mercado forte (>3pp Polymarket) atribuído a evento — risco de causação espúria
 - Pesquisa nacional publicada hoje — confrontar números com mesmo cuidado
+
+## ETAPA 3.7: Traduzir a daily para EN e ES (obrigatório, antes do preview)
+
+**A tradução é feita NA PRÓPRIA SESSÃO**, lendo o `{date}.md` e escrevendo o `{date}.en.md` e o `{date}.es.md`. É como a tradução do AFOS sempre foi feita, desde o lançamento, pela assinatura mensal do Claude Code.
+
+⛔ **NÃO usar `scripts/translate-afos-daily-chunked.ts`.** Ele chama uma conta de API avulsa, que **nunca** foi o caminho. Se for executado e falhar com `anthropic_400: SEM CRÉDITO`, isso **não é bloqueio nem pendência do André**: é a ferramenta errada. ⛔ **NÃO sugerir recarregar crédito, NÃO citar saldo, NÃO listar como pendência, NÃO reabrir o assunto.** Encerrado pelo André em 25/Jul e reafirmado em 26/Jul. Regra completa em `memory/feedback_openrouter_key_e_do_chatbot_nao_da_traducao.md`.
+
+### Como fazer
+
+1. **Ler o pt-BR INTEIRO** antes de traduzir, e depois ler as três versões inteiras antes de dar por pronto. Varredura automática não basta (`memory/feedback_afos_daily_translation_review.md`).
+2. **Espelhar as convenções da daily anterior**, não inventar: `title` traduzido, `locale` correto, `status: draft`, links de glossário no locale certo, e os rótulos do rodapé (`**Fontes citadas:**`, `**Método:**`, `**Histórico:**`) **permanecem em português nos três idiomas**, porque o loader os extrai por esse texto literal.
+3. **EN** usa ponto decimal e vírgula de milhar; **ES** mantém vírgula decimal e ponto de milhar. `pesquisa` vira `poll`/`encuesta`, `1º turno` vira `first round`/`primera vuelta`, `returno` vira `runoff`/`balotaje`.
+4. **URLs e protocolos TSE não mudam** entre idiomas.
+
+### Gate obrigatório antes de seguir
+
+- **Gate numérico:** extrair todo número seguido de unidade (`%`, `pp`, `M`, `mil`/`thousand`) do corpo das três versões, normalizar pela convenção de cada idioma, e comparar. **Tem que dar multiconjunto idêntico.** Divergiu, corrigir antes de publicar.
+- **As 5 checagens:** nenhuma âncora de glossário inexistente; nenhum link apontando para outro locale; nenhum homóglifo cirílico; separador decimal consistente com o idioma (inclusive em colunas de tabela como a de confiança do calendário, que já escapou uma vez); e `tldr` com exatamente 3 bullets nas três versões.
+- Varrer sobre o corpo, **fora do bloco de fontes**, senão título de matéria em português dá falso positivo.
 
 ## ETAPA 4: Gerar preview Vercel (SEM prod)
 

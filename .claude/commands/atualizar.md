@@ -179,7 +179,7 @@ Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada
 
 **Método que funcionou em 25/Jul e evita o maior risco:** não redigitar o arquivo inteiro. Fornecer só o mapa `caminho -> tradução` e deixar o código copiar byte a byte tudo que não se traduz, abortando se algum caminho do mapa não existir na origem. Redigitar 52 KB de dado numérico para traduzir 86 campos cria risco sem necessidade.
 
-O `scripts/translate-dashboard-json.ts` faz a mesma coisa chamando a API e **existe como alternativa, não como caminho padrão**: ele consome saldo da conta de API (`console.anthropic.com`), que é conta separada da assinatura mensal. Use só se o André pedir.
+⛔ **NÃO usar `scripts/translate-dashboard-json.ts`.** Ele chama uma conta de API avulsa, que **nunca** foi o caminho da tradução do AFOS. Se ele for executado e falhar com `SEM CRÉDITO`, isso **não é um bloqueio nem uma pendência do André**: é a ferramenta errada. Traduzir na sessão e seguir. ⛔ **NÃO sugerir recarregar crédito, NÃO citar saldo, NÃO listar isso como pendência e NÃO reabrir o assunto**, que o André encerrou em 25/Jul e reafirmou em 26/Jul. Regra completa em `memory/feedback_openrouter_key_e_do_chatbot_nao_da_traducao.md`.
 
 **Gate numérico, não negociável:** a tradução nunca pode alterar um número. O script compara o multiconjunto de valores com unidade (%, pp, USD) de cada string. Divergiu, o arquivo daquele idioma **não é escrito** e o `readLocalized` (`lib/dashboard/static-data.ts`) devolve o pt-BR. Melhor servir português do que publicar número traduzido errado: tradução é hoje a maior fonte de defeito do pipeline (37 defeitos na daily de 24/Jul, incluindo vírgula decimal escapando no TL;DR do inglês).
 
