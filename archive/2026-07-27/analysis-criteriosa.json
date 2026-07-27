@@ -1,0 +1,165 @@
+{
+  "updatedAt": "27/07/2026, 16:23",
+  "subtitle": "ATUALIZAÇÃO 27/Jul 16:23 BRT, a 69 dias do 1º turno. URNA NOVA: a BTG/Nexus (n=2.004, telefônica, campo 24 a 26/Jul, margem de 2pp, BR-01489/2026) é a primeira nacional com campo inteiramente posterior à convenção do PL. No 1º turno, Lula 42% e Flávio 33%, com Caiado 6%, Renan Santos 5% e Zema 3%. No returno direto, Lula 47% x Flávio 43%. Contra a própria rodada de 13/Jul, Lula sobe 2pp e Flávio cai 1pp, os dois dentro da margem, e o gap do 1º turno abre de 6pp para 9pp. O ACHADO não está no topo: Caiado empata tecnicamente com Lula por 45% a 43%, a diferença mais estreita entre os quatro cenários de 2º turno do levantamento, o que INVERTE a Datafolha de 24/Jul, publicada três dias antes, em que Lula batia Caiado por 47% a 40%. Dois institutos de primeiro escalão, campos separados por dois dias, conclusões opostas sobre qual adversário é o mais competitivo, e o painel registra a divergência sem arbitrar. No MERCADO, o topo ficou parado e o pelotão se mexeu: Lula seguiu em 62,50%, Flávio subiu 0,20pp para 23,85% e o gap ficou em +38,65pp, enquanto Caiado subiu 0,20pp no vencedor, para 1,95%, e saiu de 15,50% para a faixa de 19,00% a 19,50% no 3º lugar do 1º turno, na mesma direção da urna nova. CORREÇÃO DE SÉRIE que o painel deve a quem leu ontem: o topo do preço de Lula na série do AFOS não é 62,50%, é 63,50%, marcado na madrugada de 26/Jul depois da captura, e o maior gap da série é +39,80pp, da mesma madrugada. O FATO DO DIA foi o terceiro lançamento em três dias: o Novo oficializou Romeu Zema em Brasília, ainda sem vice, e o preço dele caiu 0,10pp para 0,55%, o terceiro candidato seguido a ser oficializado e terminar o pregão em queda. Volume total acumulado no presidencial em USD 116,12M. Cruzamento com Polymarket ao vivo 27/Jul 19:23 UTC. RESSALVA DE CAPTURA: a trava de dupla leitura BLOQUEOU as duas rodadas de hoje, na primeira por divergência nos books de 2º e de 3º lugar e na segunda apenas no 3º lugar de Caiado, entre 19,00% e 19,50%. O book presidencial devolveu números IDÊNTICOS nas quatro leituras ao longo de 17 minutos, e por isso os preços de vencedor entram como firmes, enquanto os de colocação entram como faixa.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 62,50% (estável, vol USD 7,68M acumulado), a 69 dias da eleição. Segundo pregão sem variação. O gap sobre Flávio ficou em +38,65pp. O topo da série do AFOS é 63,50%, marcado na madrugada de 26/Jul depois da captura do painel de ontem, e o maior gap da série é +39,80pp, da mesma madrugada. Na urna, a BTG/Nexus de 27/Jul o dá com 42% no 1º turno, dois pontos acima da rodada de 13/Jul do mesmo instituto, e 47% no returno direto contra 43% de Flávio.",
+      "fortes": [
+        "Segurou o topo da série sem devolver nada: 62,50% pelo segundo dia, com volume acumulado de USD 7,65M.",
+        "O movimento do dia aconteceu inteiramente entre o segundo e o terceiro colocados, sem tocar no preço dele, o que indica disputa interna do campo adversário.",
+        "A Datafolha de 24/Jul o mantém à frente nos três cenários de returno testados: 48% x 43% contra Flávio, 47% x 40% contra Caiado e 48% x 40% contra Zema.",
+        "O lançamento de um terceiro candidato competitivo, Caiado pelo PSD, não produziu transferência de preço contra ele: quem cedeu no book foi o próprio pelotão.",
+        "Aprovação pessoal de 49% contra 48% de desaprovação na leitura mais recente, com as pontas trocando de lugar em relação a junho."
+      ],
+      "fracos": [
+        "O gap recuou 0,80pp e saiu do pico da véspera, ou seja, o recorde de ontem durou um dia.",
+        "Não houve urna nova para testar o patamar de 62,50%, e a distância entre preço e voto declarado continua sem medição fresca desde 24/Jul.",
+        "A avaliação da GESTÃO segue negativa e é pergunta diferente da aprovação pessoal: 38% de ruim ou péssimo contra 32% de ótimo ou bom.",
+        "A trocada de aprovação e desaprovação é de 1pp num levantamento de margem 2pp, o que é empate técnico e não virada.",
+        "A semana traz quatro nacionais em cinco dias, três com campo posterior à convenção do PL, o que significa que o patamar atual entra em teste imediato."
+      ],
+      "analise": "O segundo dia parado dele veio acompanhado da primeira urna pós-convenção do PL, e as duas coisas juntas dizem mais do que cada uma sozinha. No preço, nada: 62,50% pelo segundo pregão, com o gap sobre Flávio em +38,65pp. Na urna, a BTG/Nexus (n=2.004, telefônica, campo 24 a 26/Jul, margem 2pp, BR-01489/2026) o mede em 42% no 1º turno contra 33% de Flávio, o que abre a diferença de 6pp para 9pp em relação à rodada de 13/Jul do mesmo instituto. Os dois movimentos que produzem essa abertura, Lula subindo 2pp e Flávio caindo 1pp, estão dentro da margem, então a ampliação é nominal e a leitura correta é estabilidade com viés favorável, não avanço. No returno direto ele fica em 47% contra 43%, quatro pontos, também dentro da margem. O ponto que merece atenção não é o topo, é embaixo: Caiado empata tecnicamente com ele por 45% a 43%, a diferença mais estreita entre os quatro cenários de returno do levantamento, quando a Datafolha de três dias antes dava Lula 47% x Caiado 40%. Na aprovação, a Nexus traz 47% contra 49% de desaprovação, ante 47% x 47% em 13/Jul, enquanto a Datafolha de 24/Jul dava 49% x 48%. Dois empates técnicos com as pontas em ordem trocada descrevem uma faixa estreita em torno de 48%, e não uma virada. Correção de série, feita aqui porque o painel afirmou o contrário ontem: 62,50% não é o topo da série dele. O topo é 63,50%, marcado na madrugada de 26/Jul, depois da captura de ontem. Volume acumulado dele em USD 7,68M, num presidencial que soma USD 116,12M."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 23,85% (alta 0,20pp, vol USD 7,68M acumulado), dois dias depois da convenção que oficializou sua candidatura. No mesmo pregão, caiu 1,50pp no 2º lugar do 1º turno, para 76,50%, e subiu 0,75pp no 3º lugar, para 7,75%. Na urna, a BTG/Nexus de 27/Jul o dá com 33% no 1º turno, um ponto abaixo da rodada de 13/Jul, e 43% no returno direto contra 47% de Lula. Rejeição de 50%, a mais alta do levantamento.",
+      "fortes": [
+        "Maior alta do book no dia: subiu 0,80pp para 23,65%, recuperando com folga a queda de 0,10pp registrada no dia da própria convenção.",
+        "Consolidou o 2º lugar do 1º turno em 78,00%, alta de 1,50pp, o que reforça a leitura de que ele é quem chega ao returno se ele existir.",
+        "A alta dele espelha exatamente a queda de Renan Santos, o que indica que o mercado o vê recolhendo o espaço do concorrente no mesmo campo.",
+        "A Datafolha de 24/Jul o registra em 32% no 1º turno, um ponto acima de junho, e mantém os 43% do returno direto.",
+        "A candidatura está formalizada desde 25/Jul, o que encerra a fase de pré-candidatura e libera o calendário de campanha."
+      ],
+      "fracos": [
+        "A alta veio um dia DEPOIS do evento, o que enfraquece qualquer leitura de que a convenção tenha sido lida pelo mercado como ganho.",
+        "O ganho tem origem identificável no campo dele mesmo: Renan cedeu 0,80pp, exatamente o que ele subiu, e Lula não se moveu. Não houve avanço sobre o favorito.",
+        "A rejeição segue sendo o teto: 48% na Datafolha de 24/Jul, idêntica à de junho e a mais alta entre todos os nomes testados.",
+        "O entorno familiar recuou no mesmo dia: Jair caiu 0,20pp para 1,05% e Michelle caiu 0,40pp para 0,75%, saindo da casa de 1%.",
+        "Segue sem vice definida depois da recusa de Tereza Cristina, cujo preço no book presidencial continua em 0,15%, com as convenções correndo até 05/Ago."
+      ],
+      "analise": "O dia dele foi de sinais cruzados, e isso é o oposto da leitura limpa de ontem. No contrato de vencedor subiu 0,20pp, para 23,85% (vol USD 7,68M). No de 2º lugar do 1º turno caiu 1,50pp, para 76,50%. No de 3º lugar subiu 0,75pp, para 7,75%. Três books do mesmo nome andando em três direções no mesmo pregão não sustentam narrativa única, e o registro honesto é esse. Na urna, a primeira nacional com campo inteiramente posterior à convenção do PL não trouxe o efeito de lançamento: a BTG/Nexus o mede em 33%, um ponto ABAIXO dos 34% da rodada de 13/Jul do mesmo instituto, com a diferença dentro da margem. No returno direto ficou em 43% contra 47% de Lula, mesmo patamar. E o número estrutural não se mexeu: rejeição de 50%, a mais alta do levantamento, acima dos 48% de Lula. Fora do dado, a reportagem que dominou o dia no campo dele: a Folha de S.Paulo publicou que gestores, economistas e executivos ouvidos sob anonimato torcem pela desistência dele em favor de Caiado, citando entre as razões a proximidade com o banqueiro Daniel Vorcaro. O senador Rogério Marinho, coordenador da pré-campanha, respondeu publicamente. É reportagem com fontes anônimas, não apuração de autoridade, e vale como contexto e não como fato processual. O painel não atribui o movimento de preço a ela, porque no mesmo pregão saiu pesquisa nacional nova e um terceiro candidato foi oficializado."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 9,55% no vencedor (estável, vol USD 8,56M acumulado), depois de dois pregões seguidos de queda. Perdeu 2,50pp no 3º lugar do 1º turno, indo a 62,00%, e ganhou 0,80pp no 2º lugar, indo a 12,65%. Na urna nova, a BTG/Nexus de 27/Jul o mede em 5% no 1º turno, acima dos 3% da Datafolha de 24/Jul e abaixo dos 9% da Real Time de 21/Jul.",
+      "fortes": [
+        "Mantém o terceiro maior preço do book presidencial e o maior volume acumulado entre os nomes competitivos, USD 8,53M, acima de Lula e de Flávio.",
+        "Segue dominante no sub-mercado de 3º lugar do 1º turno, com 64,50%, muito à frente do segundo colocado ali, que é Caiado com 15,50%.",
+        "Subiu 0,10pp no 2º lugar do 1º turno, para 11,85%, mantendo viva a hipótese de returno mesmo com a queda no preço principal.",
+        "A rejeição dele na Datafolha é de 12%, um quarto da de Flávio, o que preserva espaço de crescimento que os dois primeiros colocados não têm."
+      ],
+      "fracos": [
+        "Segundo dia seguido de queda: perdeu 1,40pp na véspera e mais 0,80pp hoje, saindo de 11,75% para 9,55% em dois pregões.",
+        "Perdeu a casa dos 10% e cedeu 1,50pp no 3º lugar do 1º turno, ou seja, a perda não ficou restrita ao contrato de vencedor.",
+        "A queda de hoje tem contrapartida exata na alta de Flávio, o que descreve um mercado realocando dentro do campo e escolhendo o outro nome.",
+        "A distorção contra a urna continua sendo a maior do painel, 9,55% de preço contra 3% de voto declarado, ainda que tenha estreitado por movimento do preço.",
+        "Medido na série inteira, 9,55% está bem abaixo do pico de 17,90% de 09/Jun, então o nível atual é recuo de um patamar já perdido."
+      ],
+      "analise": "Depois de dois pregões seguidos de perda, o preço principal dele parou: 9,55%, sem variação. O movimento foi todo nos sub-mercados, e em direções opostas: perdeu 2,50pp no 3º lugar do 1º turno, caindo para 62,00%, e ganhou 0,80pp no 2º lugar, subindo para 12,65%. Lido junto, é o mercado tirando dele a posição de terceiro provável e devolvendo uma fração da hipótese de returno, o que é menos contraditório do que parece: quem perde a terceira colocação para Caiado, que subiu de 15,50% para a faixa de 19,00% a 19,50% ali, não necessariamente perde a chance de chegar em segundo. Na urna, a novidade importa mais que o preço. A BTG/Nexus o mede em 5% no 1º turno, o que quebra a convergência em 3% que a Datafolha de 24/Jul, a Gerp de 22/Jul e a Indexa de 21/Jul tinham formado. Agora o painel tem quatro leituras recentes em três patamares diferentes: 3% em três institutos, 5% na Nexus e 9% na Real Time de 21/Jul. A dispersão entre institutos, que parecia resolvida sexta-feira, voltou a abrir. No returno testado contra ele, Lula ganha por 47% a 39%, a margem mais folgada dos quatro cenários do levantamento. A distorção que o painel acompanha, entre 9,55% de probabilidade implícita e o voto declarado, segue existindo e agora tem numerador menos claro, porque a própria urna discorda de si mesma. Continua sendo comparação entre grandezas diferentes, probabilidade de vitória contra intenção de voto. Ressalva de série: 9,55% não é máximo nem mínimo dele, com pico de 17,90% em 09/Jun e piso de 5,30% em 26/Abr. Volume acumulado de USD 8,56M, o maior entre os nomes competitivos."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,95% (alta 0,20pp, vol USD 5,15M), Jair 1,05% (estável, vol USD 5,25M), Zema 0,55% (queda 0,10pp, vol USD 4,54M), Michelle 0,40% (queda 0,35pp, vol USD 9,29M), Camilo Santana 0,40% (queda 0,05pp), Haddad 0,25% (queda 0,10pp, vol USD 6,38M), Alckmin 0,25%, Tarcísio 0,15% (vol USD 13,64M). Na BTG/Nexus de 27/Jul, Caiado tem 6% no 1º turno e EMPATA tecnicamente com Lula no returno, 45% a 43%, enquanto Zema tem 3% e perde por 46% a 42%.",
+      "subtitle": "27/Jul, a 69 dias: o pelotão teve o melhor dia do ciclo em urna e o primeiro dia de convergência com o preço. A BTG/Nexus colocou Caiado em 6% no 1º turno, o melhor do pelotão, e a dois pontos de Lula no returno (45% a 43%), o cenário mais apertado dos quatro testados no levantamento. No mesmo pregão, o mercado moveu na mesma direção: Caiado subiu 0,20pp no vencedor, para 1,95%, e saiu de 15,50% para a faixa de 19,00% a 19,50% no 3º lugar do 1º turno. Em sentido contrário, o Novo oficializou Romeu Zema à Presidência em convenção em Brasília, ainda sem vice definido e com prazo até 05/Ago, e o preço dele CAIU 0,10pp, para 0,55%. É o terceiro lançamento seguido do calendário em que o candidato oficializado termina o pregão em queda, depois de Flávio em 25/Jul e de Caiado em 26/Jul.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,95% (alta 0,20pp, vol USD 5,15M) | 3º lugar do 1º turno entre 19,00% e 19,50% (alta de 3,50pp a 4,00pp, faixa) | candidato oficializado em convenção nacional do PSD em 26/Jul, com Kassab de vice | BTG/Nexus 27/Jul 1T 6% e 2º turno Lula 45% x Caiado 43%, empate técnico",
+        "fortes": "Teve o melhor dia do pelotão em urna e em preço, e os dois na mesma direção. A BTG/Nexus o coloca em 6% no 1º turno, o melhor do pelotão e um ponto acima da própria rodada de 13/Jul, e o põe a dois pontos de Lula no returno, 45% a 43%, empate técnico dentro da margem de 2pp e o cenário mais apertado dos quatro testados no levantamento. No mercado, subiu 0,20pp no contrato de vencedor e saiu de 15,50% para a faixa de 19,00% a 19,50% no de 3º lugar do 1º turno. É a primeira vez em duas semanas que urna e preço se movem juntos no caso dele. Some a isso a reportagem da Folha de S.Paulo de 27/Jul segundo a qual parte do mercado financeiro prefere a chapa dele à candidatura de Flávio.",
+        "fracos": "O contraste entre institutos é grande demais para tratar a leitura nova como consolidada: três dias antes, a Datafolha de 24/Jul dava Lula 47% x Caiado 40%, sete pontos, e o media em 4% no 1º turno contra os 6% da Nexus. Duas medições de primeiro escalão com campos separados por dois dias não deveriam divergir tanto, e ainda não há terceira leitura para desempatar. No preço, 1,95% no contrato de vencedor segue sendo um patamar baixo em termos absolutos, e a alta de 0,20pp num book desse tamanho é pequena em dinheiro. Vale lembrar que o preço dele havia caído no próprio dia da convenção que o oficializou, em 26/Jul."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,25% (queda 0,10pp, vol USD 6,38M) | não testado no presidencial pela BTG/Nexus de 27/Jul nem pela Datafolha de 24/Jul | foco no governo de SP, com chapa oficializada em 25/Jul e Márcio França (PSB) de vice",
+        "fortes": "Segue como principal quadro do PT no maior colégio eleitoral do país, com a chapa ao governo de São Paulo oficializada em convenção em Campinas no dia 25/Jul, com Márcio França de vice e presença de Lula, o que encerrou meses de negociação.",
+        "fracos": "Segundo pregão seguido de queda: cedeu mais 0,10pp e chegou a 0,25%, saindo do patamar em que estava antes da convenção estadual. Nenhuma nacional o testa para presidente, incluindo a BTG/Nexus desta segunda e a Datafolha de 24/Jul, então o preço dele é resíduo de nome conhecido e não tem lastro de urna no cargo precificado."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,55% (queda 0,10pp, vol USD 4,54M) | 3º lugar do 1º turno 4,65% | BTG/Nexus 27/Jul 1T 3% e 2º turno Lula 46% x Zema 42% | OFICIALIZADO candidato pelo Novo em 27/Jul, em Brasília, ainda SEM vice, com prazo até 05/Ago",
+        "fortes": "Deixou de ser pré-candidato: o Novo oficializou a candidatura dele à Presidência em convenção em Brasília nesta segunda (Poder360, Estado de Minas, Gazeta do Povo, Brasil 247, 27/Jul). Na BTG/Nexus, perde o returno para Lula por 46% a 42%, quatro pontos, a mesma diferença do cenário com Flávio, ou seja, mede tão competitivo quanto o segundo colocado num confronto direto, apesar de ter 3% no 1º turno contra os 33% dele.",
+        "fracos": "O preço CAIU 0,10pp no próprio dia da convenção que o oficializou, para 0,55%, e é o terceiro lançamento seguido do calendário a terminar assim, depois de Flávio em 25/Jul e de Caiado em 26/Jul. Segue SEM vice anunciado, agora com o prazo de 05/Ago à vista e com dois concorrentes do mesmo espaço já formalizados. Na urna, seus 3% no 1º turno são um ponto abaixo dos 4% da própria rodada BTG/Nexus de 13/Jul, e ele foi o único do pelotão a cair na comparação entre as duas rodadas do mesmo instituto."
+      },
+      "analise": "O pelotão inverteu o padrão de ontem: teve o melhor dia em urna do ciclo e, pela primeira vez em duas semanas, o preço acompanhou. O centro disso é Ronaldo Caiado. A BTG/Nexus (n=2.004, campo 24 a 26/Jul, BR-01489/2026) o coloca em 6% no 1º turno, o melhor do pelotão, e a dois pontos de Lula no returno, 45% a 43%, empate técnico e o cenário mais apertado dos quatro do levantamento. No mesmo pregão o mercado subiu o preço dele nos dois books em que ele aparece, 0,20pp no vencedor e, no 3º lugar do 1º turno, de 15,50% para a faixa de 19,00% a 19,50%. Convergência entre urna e preço é mais informativa que preço andando sozinho, e é justamente o que faltava no caso dele. Mas o painel tem obrigação de mostrar o outro lado com a mesma clareza: três dias antes, a Datafolha de 24/Jul dava Lula 47% x Caiado 40%, sete pontos, e o media em 4% no 1º turno. Duas casas de primeiro escalão, campos separados por dois dias, leituras opostas sobre o mesmo adversário, sem terceira medição para desempatar. Registrar a divergência é a função do painel; arbitrá-la não é. Em sentido contrário andou Zema, oficializado candidato pelo Novo em Brasília, ainda sem vice, e com o preço em queda de 0,10pp no próprio dia, o terceiro lançamento seguido a terminar assim. Na urna ele mede 3%, um ponto abaixo da rodada anterior do mesmo instituto, e ao mesmo tempo perde o returno para Lula por apenas quatro pontos, exatamente a mesma margem do cenário com Flávio, o que é o tipo de contraste que a comparação entre intenção de voto e confronto direto costuma produzir. O resto do pelotão recuou: Michelle caiu 0,35pp para 0,40%, Haddad 0,10pp para 0,25% e Camilo Santana 0,05pp para 0,40%. Ressalva de método de sempre: são preços entre 0,25% e 1,95% num book onde o favorito vale 62,50%, então variação em pontos percentuais parece grande em termos relativos e é pequena em dinheiro.",
+      "fortes": [
+        "Caiado teve o melhor dia do pelotão nos dois lados do cruzamento: 6% no 1º turno e empate técnico com Lula no returno (45x43) na BTG/Nexus, mais alta de 0,20pp no vencedor e alta de 3,50pp a 4,00pp no 3º lugar do 1º turno.",
+        "Zema deixou de ser pré-candidato: o Novo oficializou a candidatura dele em convenção em Brasília nesta segunda.",
+        "Na BTG/Nexus, Zema perde o returno para Lula por 46% a 42%, a mesma margem de quatro pontos do cenário com Flávio, apesar de ter 3% no 1º turno.",
+        "Renan Santos, apesar da perda de 2,50pp no 3º lugar, ganhou 0,80pp no 2º lugar do 1º turno e foi medido em 5% pela urna nova, acima dos 3% da Datafolha."
+      ],
+      "fracos": [
+        "Zema caiu 0,10pp no próprio dia da convenção que o oficializou, o terceiro lançamento seguido do calendário a terminar o pregão em queda.",
+        "A leitura nova sobre Caiado contradiz frontalmente a Datafolha de três dias antes (45x43 contra 47x40), e não há terceira medição para desempatar.",
+        "Zema segue sem vice anunciado com o prazo de 05/Ago à vista, e agora com dois concorrentes do mesmo espaço já formalizados.",
+        "Michelle caiu 0,35pp para 0,40%, o menor patamar dela no recorte, apesar de manter o maior volume acumulado do book entre os nomes que não são Tarcísio.",
+        "Nenhum deles passa de 6% no 1º turno da urna nova, e o preço mais alto do pelotão inteiro é 1,95%, contra 62,50% do favorito."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "URNA NOVA: BTG/Nexus 27/Jul (n=2.004, telefônica, campo 24-26/Jul, BR-01489/2026): 42% no 1º turno, dois pontos acima da rodada de 13/Jul do mesmo instituto, e 47% no returno direto contra 43% de Flávio. Vence os quatro cenários testados: 45x43 contra Caiado, 46x42 contra Zema e 47x39 contra Renan. Aprovação pessoal 47% x 49% de desaprovação, contra 49% x 48% na Datafolha de 24/Jul.",
+      "m": "62,50% (vol USD 7,68M acumulado)",
+      "t": "ESTÁVEL em 62,50% pelo segundo pregão, sem variação. O gap sobre Flávio ficou em +38,65pp. O topo da série do AFOS é 63,50% e o maior gap da série é +39,80pp, ambos marcados na madrugada de 26/Jul, depois da captura do painel de ontem.",
+      "s": "69 dias da eleição. A urna nova abre o 1º turno de 6pp para 9pp, com os dois movimentos dentro da margem, e ao mesmo tempo aperta o returno contra Caiado para dois pontos. Polymarket ao vivo 27/Jul 19:23 UTC. O book presidencial repetiu os mesmos números nas quatro leituras de duas rodadas de trava.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "BTG/Nexus 27/Jul: 33% no 1º turno, um ponto ABAIXO dos 34% da rodada de 13/Jul do mesmo instituto, e 43% no returno direto contra 47% de Lula. Rejeição de 50%, a mais alta do levantamento, acima dos 48% de Lula. É a primeira nacional com campo inteiramente posterior à convenção do PL, e não registrou efeito de lançamento.",
+      "m": "23,85% (vol USD 7,68M acumulado)",
+      "t": "SOBE 0,20pp para 23,85% no contrato de vencedor, mas CAI 1,50pp no 2º lugar do 1º turno, para 76,50%, e sobe 0,75pp no 3º lugar, para 7,75%. Três books do mesmo nome em três direções no mesmo pregão.",
+      "s": "A Folha de S.Paulo publicou que gestores, economistas e executivos ouvidos sob anonimato torcem pela desistência dele em favor de Caiado, citando a proximidade com o banqueiro Daniel Vorcaro. Rogério Marinho, coordenador da pré-campanha, respondeu publicamente. É reportagem com fonte anônima, não apuração de autoridade.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "BTG/Nexus 27/Jul o mede em 5% no 1º turno, o que QUEBRA a convergência em 3% formada por Datafolha 24/Jul, Gerp 22/Jul e Indexa 21/Jul. O painel volta a ter três patamares nas leituras recentes: 3% em três institutos, 5% na Nexus e 9% na Real Time 21/Jul. No returno, perde para Lula por 47% a 39%, a margem mais folgada dos quatro cenários do levantamento.",
+      "m": "9,55% (vol USD 8,56M acumulado)",
+      "t": "ESTÁVEL em 9,55% no vencedor, depois de dois pregões de queda. Perde 2,50pp no 3º lugar do 1º turno, para 62,00%, e ganha 0,80pp no 2º lugar, para 12,65%.",
+      "s": "O mercado tirou dele a posição de terceiro provável, que foi para Caiado, e devolveu uma fração da hipótese de returno. A dispersão entre institutos, que parecia resolvida na sexta, voltou a abrir. Ressalva de série: pico de 17,90% em 09/Jun e piso de 5,30% em 26/Abr.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "BTG/Nexus 27/Jul: 6% no 1º turno, o melhor do pelotão e um ponto acima da rodada de 13/Jul, e EMPATE TÉCNICO com Lula no returno, 45% a 43%, o cenário mais apertado dos quatro do levantamento. Isso inverte a Datafolha de 24/Jul, que dava Lula 47% x Caiado 40% e o media em 4% no 1º turno.",
+      "m": "1,95% (vol USD 5,15M)",
+      "t": "SOBE 0,20pp para 1,95% no vencedor e saiu de 15,50% para a faixa de 19,00% a 19,50% no 3º lugar do 1º turno. É o primeiro dia em duas semanas em que urna e preço se movem na mesma direção no caso dele.",
+      "s": "Candidato oficializado em 26/Jul com Kassab de vice. A Folha de S.Paulo publicou que parte do mercado financeiro prefere a chapa dele à candidatura de Flávio. Duas casas de primeiro escalão com campos separados por dois dias divergem sobre ele, e não há terceira medição para desempatar.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Michelle Bolsonaro (PL)",
+      "p": "Não é pré-candidata declarada à Presidência e não é testada no cenário principal do 1º turno pelas nacionais, incluindo a BTG/Nexus de 27/Jul.",
+      "m": "0,40% (vol USD 9,29M)",
+      "t": "CAI 0,35pp para 0,40%, segundo pregão seguido de queda, e chega ao menor patamar dela no recorte.",
+      "s": "O volume acumulado dela, USD 9,29M, segue sendo o maior do book presidencial entre os nomes que não são Tarcísio, apesar do preço abaixo de meio ponto. Volume mede história negociada, não convicção atual.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "3,40% (vol USD 83 mil)",
+      "t": "ESTÁVEL em 3,40%, sem variação contra ontem, quarto dia praticamente parado.",
+      "s": "Ressalva de método decisiva: com USD 83 mil de volume acumulado, contra USD 116,12M do presidencial, a variação não sustenta narrativa. Ficar parado por quatro dias que somam ataque de chefe de Estado estrangeiro a ministro, resposta pública de Fachin, embaixador convocado, recusa de desculpas de Milei e manifestação da China é o registro que interessa.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O 27/Jul foi a segunda-feira que testou o domingo. Comece pelo que faltava e chegou: a BTG/Nexus (n=2.004, telefônica, campo 24 a 26/Jul, margem de 2pp, 95% de confiança, BR-01489/2026, contratante Banco BTG Pactual) é a primeira nacional cujo campo é inteiramente posterior à convenção do PL que oficializou Flávio em 25/Jul. No 1º turno: Lula 42%, Flávio 33%, Caiado 6%, Renan Santos 5% e Zema 3%. No returno direto, Lula 47% x Flávio 43%. Contra a própria rodada de 13/Jul do mesmo instituto, Lula sobe de 40% para 42% e Flávio cai de 34% para 33%, o que abre o gap de 6pp para 9pp. Os dois movimentos estão dentro da margem, então a ampliação é nominal e a leitura correta é estabilidade com viés favorável, não avanço. E a convenção, medida pela primeira vez, não produziu efeito de lançamento no preço de urna de Flávio: ele saiu um ponto abaixo. O ACHADO da pesquisa está embaixo, não no topo. Ronaldo Caiado empata tecnicamente com Lula por 45% a 43%, a diferença mais estreita entre os quatro cenários de 2º turno do levantamento, à frente até do confronto com Flávio (47x43). Isso INVERTE a Datafolha de 24/Jul, publicada três dias antes, em que Lula batia Caiado por 47% a 40%, sete pontos, a folga mais larga daquele levantamento, com Caiado medido em 4% no 1º turno contra os 6% da Nexus. Duas casas de primeiro escalão, campos separados por dois dias, conclusões opostas sobre qual adversário é o mais competitivo, e nenhuma terceira medição para desempatar. O AFOS registra a divergência e não arbitra qual está certa: essa é exatamente a função do painel. Agora o mercado, e aqui está a parte que raramente acontece. Lula ficou em 62,50% (vol USD 7,68M) pelo segundo pregão sem variação, Flávio subiu 0,20pp para 23,85% (vol USD 7,68M) e o gap ficou em +38,65pp. O movimento do dia foi de Caiado, que subiu 0,20pp no contrato de vencedor, para 1,95% (vol USD 5,15M), e saiu de 15,50% para a faixa de 19,00% a 19,50% no de 3º lugar do 1º turno. Ou seja, urna e preço andaram na mesma direção sobre o mesmo nome no mesmo dia, o que não acontecia no caso dele havia duas semanas. Convergência entre as duas fontes é mais informativa do que preço andando sozinho, e vale registrar com o mesmo destaque que uma divergência teria. Uma CORREÇÃO DE SÉRIE que o painel deve a quem leu ontem, e que só apareceu ao varrer a série completa: 62,50% NÃO é o topo do preço de Lula. O topo é 63,50%, marcado na madrugada de 26/Jul, depois da captura que o painel publicou às 17h12 UTC, e o maior gap da série é +39,80pp, da mesma madrugada, não os +39,65pp que o painel registrou ontem. O painel afirmou o contrário e corrige aqui, com o mesmo destaque com que afirmou. O terceiro eixo é o calendário, e ele fechou um padrão. O Novo oficializou Romeu Zema à Presidência em convenção em Brasília nesta segunda, ainda sem vice definido e com prazo até 05/Ago (Poder360, Estado de Minas, Gazeta do Povo, Brasil 247, 27/Jul). O preço dele CAIU 0,10pp no próprio pregão, para 0,55%. É o TERCEIRO lançamento seguido em que o candidato oficializado termina o dia em queda, depois de Flávio em 25/Jul (queda de 0,10pp) e de Caiado em 26/Jul (queda de 0,15pp). Três ocorrências seguidas já não são coincidência isolada, mas continuam sem causa afirmada: são books pequenos, capturas de um instante, e nada garante que a próxima convenção repita. Fica como observação a acompanhar até 05/Ago, não como regra. O quarto eixo é reputacional e veio de reportagem, não de dado. A Folha de S.Paulo publicou nesta segunda que gestores, economistas e executivos ouvidos sob anonimato torcem pela desistência de Flávio em favor da chapa Caiado e Kassab, citando entre as razões o fato de ele ter mentido sobre a proximidade com o banqueiro Daniel Vorcaro, do Banco Master, a quem pediu dinheiro. O senador Rogério Marinho, coordenador da pré-campanha, respondeu publicamente à matéria. É reportagem com fontes anônimas, não peça processual, e é registrada como tal. A coincidência de que, no mesmo dia, a pesquisa e o mercado moveram Caiado para cima é registrada; a causa não é afirmada, porque três eventos no mesmo pregão não permitem separar o que moveu o quê. O quinto eixo é institucional e segue sem contrapartida de preço pelo quarto dia. Depois da recusa de vistos pelo Itamaraty, da negativa americana de que pretenda minar a eleição, do ataque de Milei a Moraes e da convocação do embaixador em Buenos Aires, nesta segunda a imprensa argentina informou que Milei não vai pedir desculpas e a China declarou apoio ao Brasil contra interferência externa (Folha de S.Paulo, 27/Jul). A Datafolha divulgou um recorte da rodada de 22 e 23/Jul em que 52% acreditam que o tarifaço de Trump busca favorecer a candidatura de Flávio, contra 37% que discordam, sendo 73% entre eleitores de Lula e 29% entre eleitores dele. O mercado de impeachment de ministro do STF ficou em 3,40%, sem variação, num book de USD 83 mil que não sustenta narrativa nenhuma. Uma ressalva de método sobre a captura de hoje, porque escondê-la seria pior: a trava de dupla leitura BLOQUEOU as DUAS rodadas de hoje. Na primeira, divergiram o 3º lugar de Flávio (0,75pp) e o 2º lugar de Lula (0,35pp). Na segunda, divergiu apenas o 3º lugar de Caiado, entre 19,00% e 19,50%. O book presidencial devolveu números IDÊNTICOS nas quatro leituras, ao longo de 17 minutos, e por isso os preços de vencedor entram aqui como firmes. Os de colocação entram como faixa, e o de Caiado no 3º lugar é publicado como intervalo justamente por não ter sido confirmado. Os sub-mercados somam USD 4,79M contra USD 116,12M do presidencial. A síntese, sem juízo de valor: a urna confirmou o topo e bagunçou o segundo lugar, o mercado concordou com ela sobre Caiado e discordou dela sobre Renan, e três candidatos foram oficializados em três dias, todos terminando o pregão em queda. A semana ainda traz AtlasIntel em 28/Jul com n=5.000, PoderData em 30/Jul e Vox Brasil em 31/Jul para dizer qual das duas leituras sobre Caiado se sustenta."
+}
