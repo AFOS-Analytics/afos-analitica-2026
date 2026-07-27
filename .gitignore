@@ -85,3 +85,6 @@ docs/launch-texts/0*.md
 
 # Config local pessoal (hooks/paths da maquina), nao versionar
 .claude/settings.local.json
+
+# baseline temporario do build-locale-json (nao versionar)
+scripts/tmp-head/
