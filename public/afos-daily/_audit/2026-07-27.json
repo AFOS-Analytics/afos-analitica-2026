@@ -1,0 +1,101 @@
+{
+  "date": "2026-07-27",
+  "capturedAt": "2026-07-27T20:09:28.356Z",
+  "factCheckGate": {
+    "eventosCandidatos": 4,
+    "itens": [
+      {
+        "evento": "BTG/Nexus nacional publicada (BR-01489/2026, campo 24-26/Jul)",
+        "crossRef": "aparece em 22, 23, 24 e 25/Jul apenas como linha do calendário de pesquisas previstas, nunca como resultado",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "url": "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-27-de-julho-de-2026/",
+          "data": "2026-07-27",
+          "tipo": "evento"
+        },
+        "segundaFonte": [
+          "https://www.moneytimes.com.br/btg-pactual-nexus-pesquisa-27-de-julho-gaep/",
+          "https://www.em.com.br/politica/2026/07/7468485-btg-nexus-desaprovacao-a-lula-e-maior-que-aprovacao.html"
+        ],
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Novo oficializa Romeu Zema à Presidência",
+        "crossRef": "Zema aparece em 20, 21, 24, 25 e 26/Jul como pré-candidato sem vice",
+        "classificacao": "novidade, mudança de status",
+        "verificacao2": {
+          "url": "https://www.em.com.br/politica/2026/07/7468607-novo-oficializa-zema-como-candidato-a-presidencia-da-republica.html",
+          "data": "2026-07-27T12:29",
+          "tipo": "evento",
+          "confirmado": "Brasília, aprovação unânime, vice indefinido"
+        },
+        "segundaFonte": ["https://www.gazetadopovo.com.br/eleicoes/2026/sem-vice-definido-novo-confirma-zema-na-disputa-pela-presidencia/"],
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Reportagem da Folha sobre rejeição a Flávio Bolsonaro na Faria Lima",
+        "crossRef": "nenhuma menção a 'Faria Lima' em 7 dailies",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "url": "https://www.brasil247.com/brasil/faria-lima-torce-pela-desistencia-de-flavio-bolsonaro-e-mira-apoio-a-caiado/",
+          "data": "2026-07-27",
+          "tipo": "reportagem com fontes anônimas, não apuração de autoridade"
+        },
+        "segundaFonte": ["https://oantagonista.com.br/brasil/o-sistema-nao-engole-bolsonaro-diz-rogerio-marinho/"],
+        "decisao": "incorporar como reportagem; sem atribuir movimento de preço a ela"
+      },
+      {
+        "evento": "Milei recusa desculpas ao Brasil + China declara apoio contra interferência externa",
+        "crossRef": "Milei aparece em 24 e 25/Jul",
+        "classificacao": "continuidade / desdobramento",
+        "verificacao2": {
+          "url": "https://g1.globo.com/rj/rio-de-janeiro/eleicoes/2026/noticia/2026/07/27/carmen-lucia-defende-democracia-e-diz-que-ninguem-deve-interferir-no-pais.ghtml",
+          "data": "2026-07-27",
+          "tipo": "desdobramento"
+        },
+        "segundaFonte": ["G1 — Xi Jinping diz a Lula que a China apoia o Brasil na rejeição à interferência externa (Google News redirect)"],
+        "decisao": "incorporar como quarto tempo da mesma sequência, sem tratar como fato estruturante novo"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "reportagem da Faria Lima nasce em fonte única (Folha) com fontes anônimas; mitigado com 2 réplicas independentes e a resposta pública de Rogério Marinho; declarado no texto como reportagem, não apuração",
+    "numericalErrors": "reconcile-claims acusou 2 divergências (Senado PL 71,00% e MDB 18,25%), ambas falso positivo: campos ausentes dos JSONs do dashboard, conferidos nas 4 leituras da trava",
+    "fontesInventadas": "3 verificadas por fetch: Estado de Minas (convenção do Novo), Brasil 247 (Faria Lima), G1 (Cármen Lúcia). Todas existem e são do dia",
+    "quotesLiterais": "duas aspas ('Brasil real', 'jabutis'), ambas do título da matéria linkada; nenhuma fala reproduzida sem fonte",
+    "causacaoEspuria": "nenhuma; o texto declara que três eventos caíram no mesmo pregão e que não é possível separar o que moveu o quê",
+    "verbosCriticos": "nenhum verbo de privação de liberdade, morte ou decisão judicial usado",
+    "decisao": "prosseguir"
+  },
+  "capturaPolymarket": {
+    "travaDuplaLeitura": "BLOQUEOU as duas rodadas",
+    "rodada1": {
+      "fetchedAt": "2026-07-27T19:15:15.502Z",
+      "divergencias": [
+        "thirdPlace:Flávio Bolsonaro 0.75pp (7.00% -> 7.75%)",
+        "secondPlace:Lula 0.35pp (5.10% -> 5.45%)"
+      ]
+    },
+    "rodada2": {
+      "fetchedAt": "2026-07-27T19:23:35.453Z",
+      "divergencias": ["thirdPlace:Ronaldo Caiado 0.50pp (19.50% -> 19.00%)"]
+    },
+    "decisao": "book presidencial idêntico nas 4 leituras ao longo de 17 minutos, publicado como firme; 3º lugar de Caiado publicado como FAIXA (19,00% a 19,50%), não como preço fechado; ressalva escrita no corpo da daily",
+    "reFetchDaily": {
+      "fetchedAt": "2026-07-27T20:09:28.356Z",
+      "gateRebaseline": "não disparou; nenhum movimento >= 0,50pp nos nomes-chave nem no gap"
+    }
+  },
+  "correcaoDeSerie": {
+    "oQueFoiCorrigido": "a edição de 26/Jul afirmou que 62,50% era o topo da série de Lula e que o pico do gap era +39,65pp",
+    "valorReal": "topo 63,50% e gap +39,80pp, ambos marcados em 2026-07-26 22:30 UTC, cinco horas após a captura publicada",
+    "metodo": "varredura de /api/market/history nas janelas de 90 e 18 dias, último ponto de cada dia, 88 dias de série (28/Abr a 27/Jul)",
+    "ondeFoiRegistrado": "Seção 1 da daily, subtitle e cruzamento do analysis-criteriosa, polymarketComparison.note e campos do Lula"
+  },
+  "validacoes": {
+    "validateAfosDaily": "OK, 1 warning de densidade de links (77%, régua 80%)",
+    "gateNumerico3Versoes": "133 tokens idênticos em pt/en/es, zero divergência",
+    "cincoChecagens": "limpas nos 3 idiomas",
+    "urlGate": "bloqueou 1 URL truncada do Poder360 (145 chars); relida completa do news-cache (286 chars) e reescrita"
+  }
+}
