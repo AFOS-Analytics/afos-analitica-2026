@@ -1,0 +1,78 @@
+{
+  "date": "2026-07-28",
+  "capturaPolymarket": {
+    "fetchedAt": "2026-07-28T21:13:57Z",
+    "travaDeCaptura": "APROVADA",
+    "divergencias": 0,
+    "booksCobertos": ["presidential", "secondPlace", "thirdPlace", "stf", "senate"],
+    "reFetchDaily": {
+      "fetchedAt": "2026-07-28T22:13:22Z",
+      "deltas": { "Lula": 0, "Flavio": 0.1, "gap": -0.1, "Renan": 0, "volTotalM": 0.01 },
+      "gateRebaseline": "NAO DISPAROU",
+      "motivo": "nenhum dos quatro passou de 0,10pp; nenhum recorde rompido; enquadramento inalterado; volume equivalente. Dois books finos moveram (3o lugar de Renan +0,50pp, de Flavio -1,00pp) em leitura UNICA nao confirmada pela trava, por isso mantida a baseline verificada das 18:13."
+    }
+  },
+  "factCheckGate": {
+    "eventosAvaliados": 5,
+    "eventos": [
+      {
+        "evento": "Flavio falta ao depoimento na PF, envia defesa escrita ao STF, Moraes aciona a PGR",
+        "verificacao1": "zero mencoes em 7 dailies -> novidade",
+        "verificacao2": { "url": "https://www.cartacapital.com.br/justica/flavio-bolsonaro-falta-a-depoimento-na-pf-e-envia-defesa-por-escrito-ao-stf/", "data": "2026-07-28", "tipo": "evento" },
+        "segundaFonte": "CNN Brasil (independente) + G1",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Mendonca autoriza PF a rastrear bens de Vorcaro no exterior",
+        "verificacao1": "10 mencoes a Vorcaro em 7 dailies -> continuidade, nao divisor de aguas",
+        "verificacao2": { "url": "https://valor.globo.com/financas/noticia/2026/07/28/exclusivo-mendonca-autoriza-pf-a-rastrear-no-exterior-bens-de-vorcaro-e-envolvidos-no-caso-master.ghtml", "data": "2026-07-28", "tipo": "evento (exclusiva de redacao)" },
+        "segundaFonte": "nao verificado",
+        "decisao": "incorporar SOMENTE com atribuicao nominal ao veiculo e ressalva escrita de fonte unica"
+      },
+      {
+        "evento": "Kassio Nunes Marques segura ha 4 meses o mandado de seguranca da CPI do Master; Fachin rejeita afastamento por intempestividade",
+        "verificacao1": "zero mencoes -> novidade",
+        "verificacao2": { "url": "https://oglobo.globo.com/politica/noticia/2026/07/28/kassio-segura-instalacao-da-cpi-do-master-ha-quatro-meses-no-stf.ghtml", "data": "2026-07-28", "tipo": "evento" },
+        "segundaFonte": "Tribuna da Internet + CNN Brasil (decisao de Fachin)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Trump prorroga por um ano a emergencia nacional sobre o Brasil",
+        "verificacao1": "zero mencoes -> novidade",
+        "verificacao2": { "url": "https://www.estadao.com.br/economia/trump-prorrogara-emergencia-nacional-brasil-tarifas/", "data": "2026-07-28", "tipo": "evento" },
+        "segundaFonte": "Metropoles, que precisa: aviso no Federal Register de 29/Jul e SEM criar sancao nova nem restabelecer tarifa",
+        "decisao": "incorporar com a ressalva de que nao cria sancao nova"
+      },
+      {
+        "evento": "Estimativa de 60% de chance de reeleicao de Lula atribuida ao diretor da Quaest",
+        "verificacao1": "13 mencoes a Quaest -> checar",
+        "verificacao2": { "url": "https://www.infomoney.com.br/politica/lula-chega-mais-forte-ao-2o-semestre-mas-disputa-tem-interrogacao-dizem-analistas/", "data": "2026-07-25", "tipo": "evento" },
+        "segundaFonte": "Brasil 247 (27/Jul)",
+        "decisao": "incorporar CORRIGIDO",
+        "erroDetectado": "a versao publicada mais cedo no painel atribuia a fala ao almoco do Lide de 27/Jul e usava 60% exatos para calcular 3,50pp de distancia contra o mercado. A fonte confirmada situa a fala no Expert XP de 24/Jul e diz 'quase 60%'. Corrigidos 12 campos em 3 JSONs + CandidatesSection, traducoes reconstruidas, deploy prod no commit e026e98, ANTES da publicacao desta daily."
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "uma: rastreamento de bens de Vorcaro no exterior (Valor, exclusiva). Publicada com atribuicao nominal e ressalva escrita de ausencia de segunda fonte.",
+    "numericalErrors": "reconcile-claims.ts OK, todos os claims batem com os JSONs (tolerancia +-0,05pp). Unico alerta anterior era artefato de parser lendo '19,00%-19,50%' como negativo; reformatado para 'da faixa de 19,00% a 19,50%'.",
+    "fontesInventadas": "tres conferidas ao acaso: Poder360 Goias, O Globo Kassio e InfoMoney Felipe Nunes, todas existentes (as duas primeiras no cache do dia, a terceira com corpo lido via fetch).",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. A alta de 1,00pp de Lula esta escrita como SEM ancora, com os quatro candidatos a causa listados e nenhum escolhido. A queda do impeachment esta registrada como coincidencia declarada.",
+    "verbosCriticos": "desambiguados: 'faltou ao depoimento', 'rejeitou por intempestividade e sem entrar no merito', 'prorrogara' com data do Federal Register, 'autorizou, segundo o Valor'. Nenhum verbo de privacao de liberdade ou morte usado.",
+    "decisao": "prosseguir para preview"
+  },
+  "gates": {
+    "validateAfosDaily": { "ptBR": "OK", "en": "OK", "es": "OK" },
+    "reconcileClaims": "OK",
+    "gateNumericoTresVersoes": { "ptBR": 108, "en": 108, "es": 108, "resultado": "multiconjunto identico" },
+    "cincoChecagensLocale": "limpas nas tres versoes",
+    "proporcaoFontes": { "secundarias": 13, "ancora": 9, "percentualSecundario": 59 },
+    "densidadeLinks": "100% dos paragrafos substantivos"
+  },
+  "observacoes": [
+    "Corpo com 2.025 palavras, acima das 600-900 da skill e em linha com a daily de 27/Jul (1.969), que serviu de template.",
+    "Nenhuma pesquisa NACIONAL foi divulgada em 28/Jul. As tres do dia sao estaduais e ficam fora do recorte nacional por regra de escopo.",
+    "AtlasIntel BR-08602/2026 (n=5.000) tinha publicacao declarada ao TSE para 28/Jul e NAO foi divulgada. Registrada como ausencia."
+  ]
+}
