@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-28",
+  "lastUpdate": "2026-07-29",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,111 @@
     }
   ],
   "polls": [
+    {
+      "institute": "AtlasIntel",
+      "date": "2026-07-29",
+      "sample": 5021,
+      "margin": 1,
+      "register": "BR-08602/2026",
+      "reliability": 4,
+      "method": "En línea, reclutamiento digital aleatorio (Atlas RDR)",
+      "fieldDates": "2026-07-22 a 2026-07-27",
+      "note": "Encuesta nacional [AtlasIntel](/es/glossary#atlasintel)/Bloomberg divulgada el 29 de julio (CNN Brasil, JOTA, Poder360, Metrópoles, Exame, Estadão, CartaCapital, VEJA, Brasil de Fato), la mayor muestra del recorte con 5.021 entrevistas, por delante de las 5.000 de la propia ronda del instituto del 1 de julio, y con el menor margen del recorte, 1pp, empatada con esa misma ronda del 1 de julio. Tenía publicación declarada al [TSE](/es/glossary#tse) para el 28 de julio y salió un día después, lo que cierra la ausencia que el panel registró ayer. En la [primera vuelta](/es/glossary#primeiro-turno): Lula 44,9%, Flávio Bolsonaro 35,8%, Renan Santos 7,8%, Ronaldo Caiado 3,1%, Romeu Zema 2,8%, Samara Martins 2,1%, Augusto Cury 1,6%, Cabo Daciolo 0,1%, Hertz Dias 0,1%, con 0,6% de nulo o blanco y 1% que no sabe. En un escenario reducido a cinco nombres, Lula llega a 47,4% y Flávio a 37,0% (CNN Brasil). En la [segunda vuelta](/es/glossary#segundo-turno), Lula gana los seis escenarios en los que aparece: 49,2% x 42,9% contra Flávio, 49,2% x 43,9% contra Jair, 48,8% x 42,5% contra Michelle, 48,6% x 39,6% contra Zema, 48,2% x 38,9% contra Caiado y 47,6% x 30,2% contra Renan Santos. En los dos escenarios sin él, Haddad 44,3% x Flávio 43,7%, un [empate técnico](/es/glossary#empate-tecnico), y Alckmin 45,8% x Flávio 42,7%. Rechazo: Flávio 52,9%, Lula 49,4% y Jair 42,6%. Aprobación del desempeño de Lula 47,6% contra 51,2% de desaprobación. Evaluación de la gestión: 37,9% óptimo o bueno, 12,7% regular y 49,3% malo o pésimo. Campo del 22 al 27 de julio, n=5.021, margen de 1pp, 95% de confianza, protocolo BR-08602/2026, costo de R$ 80.000 con financiamiento propio. LECTURA: contra la propia ronda del 1 de julio del instituto (campo del 25 al 30 de junio), caen LOS DOS primeros, Lula de 46,3% a 44,9% y Flávio de 36,6% a 35,8%, y la brecha de la primera vuelta se estrecha de 9,7pp a 9,1pp. En la segunda vuelta directa, Lula pasa de 48,8% a 49,2% y Flávio de 42,3% a 42,9%, con la brecha bajando de 6,5pp a 6,3pp. Con margen de 1pp, todos esos movimientos individuales están dentro del ruido, y la lectura honesta es estabilidad, no avance ni retroceso. Lo que se mueve fuera del margen es la evaluación del gobierno: la aprobación sube 1,7pp, de 45,9% a 47,6%, y la desaprobación cae 1,1pp, de 52,3% a 51,2%, manteniendo la desaprobación adelante por el mismo método. TRES HALLAZGOS PARA EL PANEL: primero, Renan Santos en 7,8% es su segunda lectura nacional más alta del recorte, por debajo del 9% de Real Time del 21 de julio y por encima del 6% de PoderData/Aya del 16 de julio, del 5% de [BTG/Nexus](/es/glossary#nexus-btg) del 27 de julio y del 3% de [Datafolha](/es/glossary#datafolha), Gerp e Indexa, es decir, la dispersión entre institutos sigue abierta y ahora con la mayor muestra del recorte en el medio de ella. Segundo, Caiado aparece en 3,1%, la mitad del 6% que BTG/Nexus midió dos días antes, y en la segunda vuelta pierde 48,2% a 38,9%, bien lejos del empate técnico de 45% a 43% de aquel levantamiento: la divergencia sobre Caiado que el panel registró el 27 de julio entre Nexus y Datafolha gana una tercera medición, y queda del lado de Datafolha. Tercero, Lula gana las seis segundas vueltas en las que aparece y ninguna de esas ventajas cabe dentro del margen de 1pp: la más ajustada es de 5,3pp contra JAIR Bolsonaro (49,2% a 43,9%), y no contra Flávio, que queda en 6,3pp (49,2% a 42,9%). Es decir, por el mismo levantamiento, el padre mide mejor que el hijo en la segunda vuelta, aunque la diferencia entre los dos escenarios, 1,0pp, esté en el límite del margen.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 44.9
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35.8
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 7.8
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3.1
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2.8
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 2.1
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1.6
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 49.2,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42.9
+        },
+        {
+          "matchup": "Lula vs Jair",
+          "candidate1": "Lula",
+          "percent1": 49.2,
+          "candidate2": "Jair Bolsonaro",
+          "percent2": 43.9
+        },
+        {
+          "matchup": "Lula vs Michelle",
+          "candidate1": "Lula",
+          "percent1": 48.8,
+          "candidate2": "Michelle Bolsonaro",
+          "percent2": 42.5
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 48.6,
+          "candidate2": "Romeu Zema",
+          "percent2": 39.6
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 48.2,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 38.9
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 47.6,
+          "candidate2": "Renan Santos",
+          "percent2": 30.2
+        },
+        {
+          "matchup": "Haddad vs Flávio",
+          "candidate1": "Fernando Haddad",
+          "percent1": 44.3,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43.7
+        },
+        {
+          "matchup": "Alckmin vs Flávio",
+          "candidate1": "Geraldo Alckmin",
+          "percent1": 45.8,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42.7
+        }
+      ],
+      "source": "AtlasIntel/Bloomberg vía CNN Brasil, JOTA, Poder360, Metrópoles, Exame, Estadão, CartaCapital, VEJA y Brasil de Fato, 29 de julio. Registro TSE BR-08602/2026."
+    },
     {
       "institute": "BTG/Nexus",
       "date": "2026-07-27",
@@ -923,16 +1028,16 @@
     }
   ],
   "approvalData": {
-    "note": "La lectura nueva es la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul (campo 24-26/Jul, n=2.004, telefónica, margen de 2pp, BR-01489/2026): aprobación personal de Lula 47% x desaprobación 49%, con 4% que no respondieron. En la ronda anterior del mismo instituto, el 13/Jul, era 47% x 47%, es decir, la aprobación quedó estancada y la desaprobación subió 2pp. Y aquí aparece el contraste que el panel registra sin arbitrar: tres días antes, la [Datafolha](/es/glossary#datafolha) del 24/Jul (campo 22-24/Jul, n=2.004, presencial, BR-01166/2026) dio lo INVERSO, 49% de aprobación contra 48% de desaprobación. Las dos encuestas tienen margen de 2pp y las dos están en [empate técnico](/es/glossary#empate-tecnico), así que la lectura honesta no es que hubo vuelco en alguna dirección: es que la aprobación de Lula está en una franja estrecha en torno al 48%, y institutos diferentes captan el orden de los extremos de formas distintas dentro del mismo ruido. En la evaluación de la GESTIÓN, que es una pregunta distinta de la aprobación personal, Nexus trae 36% de óptima o buena (15% óptima, 21% buena), 20% regular y 43% de mala o pésima (9% mala, 34% pésima), contra 35% y 41% en su propia ronda del 13/Jul. La Datafolha del 24/Jul medía 32% x 38% x 28%. Los dos institutos coinciden en lo que más importa aquí: la gestión es evaluada peor que la persona, y la distancia entre los dos indicadores persiste. La comparación histórica del panel sigue montada con la serie Datafolha, para no mezclar métodos diferentes en la misma línea. Las anteriores: PoderData 22/Jul (campo 18-20/Jul, n=2.500, IVR, sin registro [TSE](/es/glossary#tse) por medir evaluación y no intención de voto) aprobación personal 46% x 47% y gobierno 43% x 51%; Indexa 21/Jul aprueba 49% x desaprueba 48%; Real Time 21/Jul aprueba 46% x desaprueba 50%; Genial/[Quaest](/es/glossary#quaest) 15/Jul aprueba 48% x desaprueba 47%; PoderData/Aya 16/Jul aprueba 42% x desaprueba 51%. RECHAZO de los candidatos en la BTG/Nexus del 27/Jul: Flávio 50% y Lula 48%. En la Datafolha del 24/Jul eran Flávio 48% y Lula 46%, idénticos a los de junio. En las demás: Indexa 21/Jul da Flávio 50% y Lula 49%; Real Time 21/Jul da Flávio 50% y Lula 48%; Quaest 15/Jul da Flávio 57% y Lula 50%; Gerp 22/Jul da Lula 47% y Flávio 46%. En todas las lecturas recientes, con excepción de Gerp, el rechazo de Flávio es igual o mayor que el de Lula. ACTUALIZACIÓN DEL 28/Jul, sin lectura nacional nueva de aprobación: los números de arriba siguen siendo los más recientes. El dato adicional sobre el tema es indirecto, viene del propio sector y es de la semana pasada. Felipe Nunes, director de Quaest, afirmó en el Expert XP del 24/Jul que, en el modelo de la casa, que asocia la aprobación del gobierno a la probabilidad de reelección, la probabilidad de Lula pasó de cerca de 38% a cerca de 60%, con el giro empezando en mayo (InfoMoney, 25/Jul; Brasil 247, 27/Jul). El panel lo registra como estimación de un tercero, no como encuesta, y llama la atención sobre lo que permite: poner cerca de 60% al lado de los 63,50% de [Polymarket](/es/glossary#polymarket) es comparar dos estimaciones de la MISMA magnitud, probabilidad de victoria, y no probabilidad contra intención de voto. Los dos números quedan lado a lado y el panel no resta uno del otro, porque cerca de 60% no es un valor exacto.",
-    "source": "BTG/Nexus (27/Jul/2026, campo 24-26/Jul, n=2.004, telefónica, margen 2pp, BR-01489/2026, aprueba 47% x desaprueba 49%, gestión 36% excelente/bueno x 43% malo/pésimo x 20% regular, exhibida en el panel, fuentes sitio del instituto nexus.fsb.com.br, Folha de S.Paulo, CNN Brasil, JOTA, Estado de Minas, Metrópoles) + Datafolha (24/Jul, campo 22-24/Jul, n=2.004, presencial, BR-01166/2026, aprueba 49% x desaprueba 48%, gestión 32% x 38% x 28%, base de la comparación histórica, fuentes G1, Folha de S.Paulo, Estadão, CNN Brasil, O Globo) + PoderData (22/Jul, campo 18-20/Jul, n=2.500, IVR, sin registro TSE, aprobación personal 46% x 47%, gobierno 43% x 51%) + Indexa (21/Jul, n=2.000, BR-02904/2026, aprueba 49% x desaprueba 48%) + Real Time Big Data (21/Jul, n=2.000, BR-09247/2026, aprueba 46% x desaprueba 50%) + Genial/Quaest (15/Jul, n=2.004, aprueba 48% x desaprueba 47%) + PoderData/Aya (16/Jul, n=2.400, BR-00059/2026, aprueba 42% x desaprueba 51%) + AtlasIntel/Bloomberg (01/Jul, n=5.000, BR-04582/2026, aprueba 45,9% x desaprueba 52,3%)",
-    "date": "2026-07-27",
+    "note": "La lectura nueva es [AtlasIntel](/es/glossary#atlasintel)/Bloomberg del 29 de julio (campo del 22 al 27 de julio, n=5.021, en línea por reclutamiento digital aleatorio, margen de 1pp, BR-08602/2026): aprobación del desempeño de Lula 47,6% contra 51,2% de desaprobación, con 1,2% que no sabe. Es la mayor muestra y el menor margen del recorte, y por eso el panel cambia la exhibición hacia ella. Contra la propia ronda del 1 de julio del instituto, la aprobación SUBE 1,7pp, de 45,9% a 47,6%, y la desaprobación CAE 1,1pp, de 52,3% a 51,2%. Esos dos movimientos quedan fuera del margen de 1pp, lo que los diferencia del resto de la ronda, donde la intención de voto se movió dentro del ruido. Aun así, la desaprobación sigue adelante por el mismo método, y el panel no llama a eso un vuelco. En la evaluación de la GESTIÓN, que es una pregunta distinta de la aprobación personal, AtlasIntel trae 37,9% de óptimo o bueno, 12,7% regular y 49,3% de malo o pésimo. El contraste con los demás institutos sigue en pie y el panel lo registra sin arbitrar: [BTG/Nexus](/es/glossary#nexus-btg) del 27 de julio (campo del 24 al 26 de julio, n=2.004, telefónica, margen de 2pp, BR-01489/2026) dio aprobación personal 47% x desaprobación 49%, con 4% que no respondieron, y [Datafolha](/es/glossary#datafolha) del 24 de julio (campo del 22 al 24 de julio, n=2.004, presencial, BR-01166/2026) dio lo INVERSO, 49% de aprobación contra 48% de desaprobación. Sumando las tres lecturas de la semana, la aprobación de Lula está en una franja estrecha entre 47% y 49%, e institutos distintos captan el orden de los dos extremos de maneras distintas dentro de esa franja. En la gestión, Nexus midió 36% de óptimo o bueno, 20% regular y 43% de malo o pésimo, y Datafolha midió 32% x 38% x 28%. Los tres institutos coinciden en lo que más importa aquí: la gestión se evalúa peor que la persona, y la distancia entre los dos indicadores persiste. La comparación histórica del panel sigue armada con la serie Datafolha, para no mezclar métodos distintos en la misma línea. Las anteriores: PoderData del 22 de julio (campo del 18 al 20 de julio, n=2.500, IVR, sin registro en el [TSE](/es/glossary#tse) porque mide evaluación y no intención de voto) aprobación personal 46% x 47% y gobierno 43% x 51%; Indexa del 21 de julio aprueba 49% x desaprueba 48%; Real Time del 21 de julio aprueba 46% x desaprueba 50%; Genial/[Quaest](/es/glossary#quaest) del 15 de julio aprueba 48% x desaprueba 47%; PoderData/Aya del 16 de julio aprueba 42% x desaprueba 51%. RECHAZO de los candidatos en AtlasIntel del 29 de julio: Flávio 52,9%, Lula 49,4% y Jair 42,6%. En BTG/Nexus del 27 de julio eran Flávio 50% y Lula 48%; en Datafolha del 24 de julio, Flávio 48% y Lula 46%, idénticos a los de junio; en Indexa del 21 de julio, Flávio 50% y Lula 49%; en Real Time del 21 de julio, Flávio 50% y Lula 48%; en Quaest del 15 de julio, Flávio 57% y Lula 50%; en Gerp del 22 de julio, Lula 47% y Flávio 46%. En todas las lecturas recientes, con excepción de Gerp, el rechazo de Flávio es igual o mayor que el de Lula, y en AtlasIntel la distancia entre los dos es de 3,5pp, contra 7pp en Quaest del 15 de julio, que es la mayor del recorte. Queda un registro que vale más que la comparación entre institutos: en la misma AtlasIntel, el rechazo de Flávio, 52,9%, queda 17,1pp por encima de su propia intención de voto en la primera vuelta, 35,8%, mientras que en Lula esa distancia es de 4,5pp, 49,4% contra 44,9%. Esa es la restricción estructural de su candidatura, no un dato del día.",
+    "source": "AtlasIntel/Bloomberg (29 de julio de 2026, campo del 22 al 27 de julio, n=5.021, en línea RDR, margen 1pp, BR-08602/2026, aprueba 47,6% x desaprueba 51,2%, gestión 37,9% óptimo/bueno x 49,3% malo/pésimo x 12,7% regular, exhibida en el panel, fuentes CNN Brasil, JOTA, Poder360, Estadão, Exame, CartaCapital) + BTG/Nexus (27 de julio, campo del 24 al 26 de julio, n=2.004, telefónica, margen 2pp, BR-01489/2026, aprueba 47% x desaprueba 49%, gestión 36% x 43% x 20%, fuentes nexus.fsb.com.br, Folha de S.Paulo, CNN Brasil, JOTA, Metrópoles) + Datafolha (24 de julio, campo del 22 al 24 de julio, n=2.004, presencial, BR-01166/2026, aprueba 49% x desaprueba 48%, gestión 32% x 38% x 28%, base de la comparación histórica, fuentes G1, Folha de S.Paulo, Estadão, CNN Brasil, O Globo) + PoderData (22 de julio, campo del 18 al 20 de julio, n=2.500, IVR, sin registro TSE, aprobación personal 46% x 47%, gobierno 43% x 51%) + Indexa (21 de julio, n=2.000, BR-02904/2026, aprueba 49% x desaprueba 48%) + Real Time Big Data (21 de julio, n=2.000, BR-09247/2026, aprueba 46% x desaprueba 50%) + Genial/Quaest (15 de julio, n=2.004, aprueba 48% x desaprueba 47%) + PoderData/Aya (16 de julio, n=2.400, BR-00059/2026, aprueba 42% x desaprueba 51%) + AtlasIntel/Bloomberg (1 de julio, n=5.000, BR-04582/2026, aprueba 45,9% x desaprueba 52,3%)",
+    "date": "2026-07-29",
     "results": {
-      "aprovacao": 47,
-      "desaprovacao": 49,
-      "naoSabe": 4,
-      "otimoBom": 36,
-      "ruimPessimo": 43,
-      "regular": 20
+      "aprovacao": 47.6,
+      "desaprovacao": 51.2,
+      "naoSabe": 1.2,
+      "otimoBom": 37.9,
+      "ruimPessimo": 49.3,
+      "regular": 12.7
     },
     "historicalComparison": [
       {
@@ -961,90 +1066,90 @@
         "disapproval6m": 48
       }
     ],
-    "lastUpdate": "2026-07-27"
+    "lastUpdate": "2026-07-29"
   },
   "polymarketComparison": {
-    "note": "Cruce [Polymarket](/es/glossary#polymarket) (en vivo 28/Jul 21:13 UTC, degraded false, failedCount 0, captura APROBADA por el bloqueo de doble lectura sin ninguna divergencia en los cinco libros que cubre, al contrario de las dos rondas bloqueadas ayer), a 68 días de la [primera vuelta](/es/glossary#primeiro-turno). SIN ENCUESTA NACIONAL HOY: la última sigue siendo la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul (n=2.004, campo 24-26/Jul, BR-01489/2026), con Lula en 42% y Flávio en 33% en la primera vuelta y 47% x 43% en la segunda. Las tres encuestas divulgadas este martes son ESTATALES y por eso no entran en este recorte, pero describen un país partido: la [Genial/Quaest](/es/glossary#quaest) en Pernambuco (n=900, campo 22-26/Jul, margen 3pp, BR-03810/2026) da Lula 55% x Flávio 21% en la primera vuelta; la Genial/Quaest en Minas Gerais (n=1.482, campo 22-26/Jul, margen 3pp, BR-09333/2026) da [empate técnico](/es/glossary#empate-tecnico) en las dos vueltas, 30% x 29% en la primera y 38% x 35% contra Flávio en la segunda, con Romeu Zema numéricamente POR DELANTE de Lula por 39% x 37%; y la Real Time Big Data en Río de Janeiro (n=2.000, campo 23-27/Jul, BR-06074/2026) da Flávio 46% x Lula 42% en la segunda vuelta. Sumando las estatales publicadas, Poder360 registra a Lula liderando en 12 estados y Flávio en 7, con Goiás como el único donde la tercera vía aparece competitiva, valiendo 3,2% del electorado nacional. EL MERCADO: Lula subió 1,00pp hasta 63,50% (vol USD 7,69M) e IGUALA el techo de la serie del AFOS, marcado el 26/Jul a las 22:30 UTC, sin superarlo; la brecha fue a +39,65pp, por debajo de la mayor de la serie, que es +39,80pp de esa misma madrugada. Flávio quedó estancado en 23,85% (vol USD 7,69M) por segunda jornada y subió 1,50pp en el segundo lugar de la primera vuelta, hasta 78,00%. Renan Santos cayó en los TRES libros en que aparece: 8,75% en el de ganador (caída 0,80pp), 12,15% en el de segundo lugar y 60,50% en el de tercero. Caiado salió del rango de 19,00% a 19,50% hasta 26,50% en el tercer lugar de la primera vuelta, sumando 11,00pp allí en dos jornadas, y al mismo tiempo CAYÓ 0,05pp en el contrato de ganador, hasta 1,90%, es decir, el mercado está revalorando quién termina tercero y no quién gana. EL CRUCE RARO DE LA SEMANA no es entre mercado y encuesta, es entre mercado y modelo, y la frase es del 24/Jul y no de hoy: Felipe Nunes, director de Quaest, afirmó en el Expert XP de aquel viernes que la probabilidad de reelección de Lula pasó de cerca de 38% a cerca de 60% (InfoMoney, 25/Jul), y el mercado marca 63,50%. Es la primera vez en este panel en que las dos fuentes estiman la MISMA magnitud, probabilidad de victoria, y los dos números quedan lado a lado, sin resta, porque cerca de 60% no es un valor exacto. INSTITUCIONAL: el mercado de destitución de ministro del [STF](/es/glossary#stf) CAYÓ 0,60pp hasta 2,80% (vol USD 83 mil), rompiendo cuatro días inmóviles, el mismo día en que se informó que Kassio Nunes Marques retiene desde hace cuatro meses el recurso sobre la instalación de la comisión investigadora del [Banco Master](/es/glossary#banco-master) y que Fachin rechazó por extemporáneo el pedido de cuatro senadores para apartarlo. Con USD 83 mil de volumen, ese libro no sostiene ninguna narrativa y la coincidencia se registra sin afirmar causa. AUSENCIA REGISTRADA: la [AtlasIntel](/es/glossary#atlasintel) tenía publicación declarada al [TSE](/es/glossary#tse) para hoy, con n=5.000 y campo del 22 al 27/Jul (BR-08602/2026), y sería la mayor muestra nacional del recorte; NO fue divulgada hasta el cierre de esta captura, y ninguna nota sobre ella apareció entre las 927 piezas recopiladas. Un registro en el TSE no es garantía de publicación. Volumen total acumulado en el presidencial en USD 116,26M.",
-    "sources": "Polymarket vía proxy AFOS (en vivo 28/Jul 21:13 UTC, degraded false, failedCount 0, scripts/capture-guard.ts APROBADO sin divergencias en los cinco libros cubiertos) + BTG/Nexus 27/Jul (BR-01489/2026, n=2.004, campo 24-26/Jul, última nacional) + Datafolha 24/Jul (BR-01166/2026, n=2.004) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + PoderData/Aya 16/Jul (BR-00059/2026) + Genial/Quaest 15/Jul (BR-07181/2026) + Futura/Apex 14/Jul (BR-07294/2026) + AtlasIntel 01/Jul (BR-04582/2026). Estatales del 28/Jul citadas como contexto y fuera del recorte nacional: Genial/Quaest PE (BR-03810/2026 y PE-09649/2026, n=900), Genial/Quaest MG (BR-09333/2026 y MG-03490/2026, n=1.482) y Real Time Big Data RJ (BR-06074/2026, n=2.000). Compilación de liderazgo por estado vía Poder360. Estimación de probabilidad de reelección de un tercero: Felipe Nunes, director de Quaest, en el Expert XP del 24/Jul (InfoMoney, 25/Jul; Brasil 247, 27/Jul). Serie del ciclo verificada en /api/market/history en las ventanas de 90 y de 18 días, con techo de 63,50% y mayor brecha de +39,80pp, ambos el 26/Jul a las 22:30 UTC.",
+    "note": "Cruce [Polymarket](/es/glossary#polymarket) (captura en vivo del 29 de julio, 21:47 UTC, degraded false, failedCount 0), a 67 días de la [primera vuelta](/es/glossary#primeiro-turno). EL DÍA ES EL INVERSO EXACTO DE LA VÍSPERA, y la inversión es el hallazgo. Ayer no hubo encuesta nacional y el precio del favorito SUBIÓ 1,00pp. Hoy salió la mayor encuesta nacional del recorte y el precio del favorito CAYÓ 1,00pp, de 63,50% a 62,50%, con la brecha sobre Flávio bajando de +39,65pp a +38,55pp. LA ENCUESTA DEL DÍA: [AtlasIntel](/es/glossary#atlasintel)/Bloomberg (campo del 22 al 27 de julio, n=5.021, margen de 1pp, BR-08602/2026), la mayor muestra del recorte y el menor margen, empatada en 1pp con la propia ronda del instituto del 1 de julio. En la primera vuelta, Lula 44,9% y Flávio 35,8%, brecha de 9,1pp; Renan Santos 7,8%, Caiado 3,1% y Zema 2,8%. Lula gana las seis [segundas vueltas](/es/glossary#segundo-turno) en las que aparece, y la ventaja más ajustada es de 5,3pp contra JAIR Bolsonaro (49,2% a 43,9%), no contra Flávio, que queda en 6,3pp. Contra la ronda del 1 de julio del mismo instituto, caen LOS DOS primeros, Lula de 46,3% a 44,9% y Flávio de 36,6% a 35,8%, y la brecha de la primera vuelta se estrecha de 9,7pp a 9,1pp. Con margen de 1pp, cada uno de esos movimientos está en el ruido, así que la lectura honesta de la encuesta es estabilidad. LA DIRECCIÓN COINCIDE, EL TAMAÑO NO: la encuesta estrechó la brecha 0,6pp y el mercado la estrechó 1,10pp el mismo día. El panel registra la coincidencia de dirección y NO afirma que la encuesta movió el precio, porque la misma jornada trajo el desarrollo del video de inteligencia artificial de la convención del [PL](/es/glossary#pl), con la defensa de Jair Bolsonaro respondiéndole a Moraes que NO autorizó el uso de su propia imagen y voz, y trajo al gobierno brasileño pasando a leer la prórroga de la emergencia estadounidense como posible preparación de nuevas sanciones. EL HALLAZGO DE MÉTODO DEL DÍA está en Renan Santos: con 7,8% en la encuesta y 8,60% de precio, la distancia entre probabilidad implícita e intención de voto declarada bajó a 0,80pp, y en esta ronda se estrechó por el lado de la ENCUESTA, que subió, y no por el lado del precio. En las semanas anteriores era siempre el precio el que cedía. Sigue siendo una comparación entre magnitudes distintas, y el panel la registra como distancia, no como error de nadie. EL MERCADO EN DETALLE: Lula 62,50% (baja 1,00pp, vol USD 7,73M), Flávio 23,95% (alza 0,10pp, vol USD 7,70M), Renan Santos 8,60% (baja 0,15pp, vol USD 8,59M), Caiado 2,35% (alza 0,45pp, vol USD 5,20M), Zema 0,75% (alza 0,20pp, vol USD 4,57M). CAIADO INVIRTIÓ LA SEÑAL DE AYER: ayer subía en el tercer lugar y caía en el de ganador, hoy SUBIÓ 0,45pp en el de ganador y CAYÓ 1,00pp en el tercer lugar, a 25,50%. El 2,35% de la captura de hoy está por encima de todo cierre diario de la serie del AFOS desde el 20 de junio, cuando la serie marcó 2,30%. Y la encuesta del día fue mala para él: 3,1% en la primera vuelta, la mitad del 6% de [BTG/Nexus](/es/glossary#nexus-btg) dos días antes, y segunda vuelta de 48,2% a 38,9%, lejos del [empate técnico](/es/glossary#empate-tecnico) de 45% a 43% de aquel levantamiento. La divergencia sobre Caiado ganó una tercera medición y quedó del lado de [Datafolha](/es/glossary#datafolha). FLÁVIO subió poco y subió de nuevo: 23,95% es el cuarto cierre diario consecutivo en alza en la serie del AFOS, desde 22,90% el 25 de julio. En los submercados quedó estancado en 78,00% en el segundo lugar de la primera vuelta y cayó 1,50pp en el tercer lugar, a 6,25%. INSTITUCIONAL: el mercado de destitución de un ministro del [STF](/es/glossary#stf) subió 0,05pp, a 2,85% (vol USD 83.000), en el día más denso de la semana en hecho institucional, lo que describe un libro prácticamente inmóvil; con USD 83.000 contra USD 116,49M del presidencial, ni el alza ni la inmovilidad sostienen una narrativa. NOTA DE CAPTURA: el candado de doble lectura RECHAZÓ la primera ronda por una divergencia de 1,00pp en el tercer lugar de Renan Santos (62,50% contra 61,50%) y APROBÓ la segunda ronda sin ninguna divergencia en los cinco libros electorales. Fueron cuatro lecturas en total, y el 61,50% publicado es el valor que se repitió en las tres últimas. Volumen total acumulado en el libro presidencial en USD 116,49M.",
+    "sources": "Polymarket vía el proxy del AFOS (captura en vivo del 29 de julio, 21:47 UTC, degraded false, failedCount 0, scripts/capture-guard.ts rechazado en la primera ronda solo en el tercer lugar de Renan Santos y APROBADO en la segunda sin divergencias) + AtlasIntel/Bloomberg del 29 de julio (BR-08602/2026, n=5.021, campo del 22 al 27 de julio, margen 1pp, última encuesta nacional y mayor muestra del recorte) + BTG/Nexus del 27 de julio (BR-01489/2026, n=2.004, campo del 24 al 26 de julio) + Datafolha del 24 de julio (BR-01166/2026, n=2.004) + Gerp del 22 de julio (BR-05026/2026) + Indexa del 21 de julio (BR-02904/2026) + Real Time Big Data del 21 de julio (BR-09247/2026) + PoderData/Aya del 16 de julio (BR-00059/2026) + Genial/Quaest del 15 de julio (BR-07181/2026) + Futura/Apex del 14 de julio (BR-07294/2026) + AtlasIntel del 1 de julio (BR-04582/2026). Encuestas estatales del 29 de julio citadas como contexto y fuera del recorte nacional: Genial/Quaest SP (BR-09998/2026 y SP-04846/2026, n=1.650, campo del 23 al 27 de julio), Genial/Quaest BA (vía G1) e Ipsos-Ipec CE (BR-07235/2026, n=800, campo del 23 al 26 de julio). Serie del AFOS verificada con scripts/check-superlativo.ts, directo contra Neon y sin tope de ventana: cobertura del 14 de abril al 29 de julio, techo de Lula en 63,50% (26 y 28 de julio) y mayor brecha en +39,80pp (26 de julio).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "36-46%",
-        "polymarket": "63,50%",
-        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL HOY. La última sigue siendo la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul (n=2.004, campo 24-26/Jul, BR-01489/2026), que lo da con 42% en la [primera vuelta](/es/glossary#primeiro-turno) y gana los cuatro escenarios de segunda vuelta probados. Las tres encuestas de este martes son estatales y muestran un país partido: 55% contra 21% de Flávio en Pernambuco, [empate técnico](/es/glossary#empate-tecnico) en Minas Gerais en las dos vueltas, con Zema numéricamente por delante por 39% a 37% en la segunda, y 42% contra 46% de Flávio en Río de Janeiro. Sumando las estatales publicadas, Poder360 registra que lidera en 12 estados y Flávio en 7. En la aprobación no hubo lectura nueva: sigue la franja estrecha en torno al 48%.",
-        "tendenciaPolymarket": "SUBE 1,00pp hasta 63,50% (vol USD 7,69M) e IGUALA el techo de la serie del AFOS, marcado el 26/Jul a las 22:30 UTC. No es techo nuevo, es el mismo techo tocado de nuevo. La brecha sobre Flávio fue a +39,65pp, por debajo de la mayor brecha de la serie, que es +39,80pp de esa misma madrugada. El alza vino SIN encuesta nacional que la anclara, y el panel no elige causa: la misma jornada tuvo la prórroga de la emergencia estadounidense sobre Brasil, las consultas de Brasil en la OMC, tres encuestas estatales y la repercusión de la estimación pública que el director de [Quaest](/es/glossary#quaest) hizo el 24/Jul, de que su probabilidad de reelección está cerca de 60%.",
-        "odds": 63.5,
-        "percentage": 45,
-        "lastUpdate": "2026-07-28",
-        "value": 63.5
+        "polymarket": "62,50%",
+        "tendenciaPesquisa": "ENCUESTA NUEVA, y es la mayor del recorte: [AtlasIntel](/es/glossary#atlasintel)/Bloomberg del 29 de julio (n=5.021, campo del 22 al 27 de julio, margen de 1pp, BR-08602/2026) lo da con 44,9% en la [primera vuelta](/es/glossary#primeiro-turno) contra 35,8% de Flávio, brecha de 9,1pp, y lo pone ganando los seis escenarios de [segunda vuelta](/es/glossary#segundo-turno) en los que aparece. Contra la ronda del 1 de julio del mismo instituto CAE de 46,3% a 44,9%, un movimiento que cabe dentro del margen de 1pp, y por eso el panel lo lee como estabilidad. En las estatales del día, que no entran en este recorte, pierde São Paulo 30% a 34% en la primera vuelta y 35% a 40% en la segunda (Genial/[Quaest](/es/glossary#quaest)), y domina el Nordeste, con 52% en Bahía y 54% en Ceará. En la aprobación, AtlasIntel trae 47,6% contra 51,2% de desaprobación, con la aprobación subiendo 1,7pp contra la propia ronda del 1 de julio.",
+        "tendenciaPolymarket": "CAE 1,00pp a 62,50% (vol USD 7,73M) el día en que salió la mayor encuesta nacional del recorte, el inverso exacto de ayer, cuando subió 1,00pp sin ninguna encuesta. La brecha sobre Flávio bajó de +39,65pp a +38,55pp. No es mínimo ni nada cercano: 62,50% es el mismo nivel del 25 y del 27 de julio, y el techo de la serie del AFOS marcó 63,50% el 26 y el 28 de julio. Por el cierre diario de la serie, la brecha de hoy es la más estrecha desde el 24 de julio. La dirección del precio coincide con la dirección de la encuesta, que también estrechó la brecha, pero el panel no afirma causa: la misma jornada trajo el caso del video de inteligencia artificial en el [STF](/es/glossary#stf) y la lectura del gobierno de que la prórroga de la emergencia estadounidense puede estar preparando nuevas sanciones.",
+        "odds": 62.5,
+        "percentage": 44.9,
+        "lastUpdate": "2026-07-29",
+        "value": 62.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28-38%",
-        "polymarket": "23,85%",
-        "tendenciaPesquisa": "Sin encuesta nacional nueva. La última es la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul, que lo mide en 33% en la [primera vuelta](/es/glossary#primeiro-turno) y 43% en la segunda, con rechazo de 50%. En las estatales de este martes el resultado corta en los dos sentidos: en Río de Janeiro, su estado, Real Time lo pone POR DELANTE de Lula en la segunda vuelta por 46% a 42%; en Pernambuco, la [Genial/Quaest](/es/glossary#quaest) lo mide en 21% contra 55%, treinta y cuatro puntos de distancia. El recorte de género de la [Datafolha](/es/glossary#datafolha) del 24/Jul, publicado este martes, da Lula 50% contra 40% de él entre mujeres en la segunda vuelta, con su rechazo como el más alto en ese grupo.",
-        "tendenciaPolymarket": "ESTANCADO en 23,85% (vol USD 7,69M) por segunda jornada en el contrato de ganador, y SUBE 1,50pp en el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno), hasta 78,00%. Es el inverso exacto de la señal de ayer, cuando subió en el de ganador y cayó en el de segundo lugar. Como el favorito subió 1,00pp y él no se movió, la brecha en su contra se abrió hasta +39,65pp. Dos jornadas seguidas con los libros del mismo nombre moviéndose en direcciones distintas describen un mercado seguro de que él es el segundo colocado e inseguro sobre cuánto vale eso contra la cima.",
-        "odds": 23.85,
-        "percentage": 46,
-        "lastUpdate": "2026-07-28",
-        "value": 23.85
+        "polymarket": "23,95%",
+        "tendenciaPesquisa": "[AtlasIntel](/es/glossary#atlasintel) del 29 de julio lo mide en 35,8% en la [primera vuelta](/es/glossary#primeiro-turno) y en 42,9% en la [segunda vuelta](/es/glossary#segundo-turno) contra 49,2% de Lula, con rechazo de 52,9%, el más alto entre los medidos. Contra la ronda del 1 de julio del instituto CAE de 36,6% a 35,8%, dentro del margen de 1pp. El hallazgo incómodo para él es interno al levantamiento: JAIR Bolsonaro mide mejor en la segunda vuelta, perdiendo por 5,3pp contra los 6,3pp de él, aunque la diferencia de 1,0pp entre los dos escenarios esté en el límite del margen. En las estatales del día, lidera São Paulo, el mayor colegio electoral del país, 34% a 30% en la primera vuelta y 40% a 35% en la segunda (Genial/[Quaest](/es/glossary#quaest), n=1.650, campo del 23 al 27 de julio), y queda muy atrás en el Nordeste, con 18% en Bahía y 23% en Ceará.",
+        "tendenciaPolymarket": "SUBE 0,10pp a 23,95% (vol USD 7,70M), y el movimiento pequeño trae una lectura de serie: es el cuarto cierre diario consecutivo en alza en el historial del AFOS, desde 22,90% el 25 de julio. Como el favorito cayó 1,00pp, la brecha contra él se estrechó 1,10pp y llegó a +38,55pp. En los submercados quedó ESTANCADO en 78,00% en el segundo lugar de la primera vuelta, segunda jornada sin cambio, y CAYÓ 1,50pp en el tercer lugar, a 6,25%. Un nombre que queda inmóvil en el contrato de segundo colocado y cede en el de tercero tiene la posición de segunda vuelta consolidada, no en disputa.",
+        "odds": 23.95,
+        "percentage": 35.8,
+        "lastUpdate": "2026-07-29",
+        "value": 23.95
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-9%",
-        "polymarket": "8,75%",
-        "tendenciaPesquisa": "Sin encuesta nacional nueva que lo ponga a prueba. La última es la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul, que lo mide en 5% en la [primera vuelta](/es/glossary#primeiro-turno). El panel sigue con tres niveles en las lecturas recientes: 3% en [Datafolha](/es/glossary#datafolha) 24/Jul, Gerp 22/Jul e Indexa 21/Jul, 5% en Nexus y 9% en Real Time del 21/Jul. La dispersión entre institutos no se resolvió hoy, y la distorsión entre precio y voto declarado sigue siendo la mayor del panel, ahora estrechándose por movimiento del precio y no de la encuesta.",
-        "tendenciaPolymarket": "CAE 0,80pp hasta 8,75% (vol USD 8,58M) y pierde el umbral del 9%. El punto del día es la consistencia, no el tamaño: cayó en los TRES libros en que aparece, 12,15% en el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) (caída 0,50pp) y 60,50% en el de tercer lugar (caída 1,50pp). Ayer sus libros se movieron en direcciones opuestas, lo que permitía leer reasignación interna; hoy se movieron juntos hacia abajo, lo que es salida de dinero en todos los frentes. Del otro lado de esa cuenta está Caiado, que sumó 11,00pp en el tercer lugar en dos jornadas. Salvedad de serie: pico de 17,90% el 09/Jun y piso de 5,30% el 26/Abr.",
-        "odds": 8.75,
-        "percentage": 5,
-        "lastUpdate": "2026-07-28",
-        "value": 8.75
+        "polymarket": "8,60%",
+        "tendenciaPesquisa": "La lectura nueva es la mejor de él en muestra y la segunda mejor en nivel: [AtlasIntel](/es/glossary#atlasintel) del 29 de julio lo mide en 7,8%, detrás solo del 9% de Real Time del 21 de julio y por delante del 6% de PoderData/Aya del 16 de julio, del 5% de [BTG/Nexus](/es/glossary#nexus-btg) del 27 de julio y del 3% de [Datafolha](/es/glossary#datafolha), Gerp e Indexa. La dispersión entre institutos sigue abierta, y ahora con la mayor muestra del recorte en el medio de ella y no en los extremos. En la [segunda vuelta](/es/glossary#segundo-turno), es el escenario más cómodo de Lula en todo el levantamiento: 47,6% a 30,2%, una distancia de 17,4pp.",
+        "tendenciaPolymarket": "CAE 0,15pp a 8,60% (vol USD 8,59M), y el número que importa hoy no es el precio, es la distancia. Con 7,8% en la encuesta contra 8,60% de precio, la divergencia que el panel sigue desde junio bajó a 0,80pp, y en esta ronda se estrechó por el lado de la ENCUESTA, que subió, y no por el lado del precio, que es como venía estrechándose. En los submercados cayó 0,40pp en el segundo lugar de la primera vuelta, a 11,75%, y RECUPERÓ 1,00pp en el tercer lugar, a 61,50%, revirtiendo parte de la transferencia hacia Caiado. Ese fue el único libro que el candado rechazó en la primera ronda, y el valor publicado se repitió en las tres lecturas siguientes. Advertencia de serie: pico de 17,90% el 9 de junio y piso de 5,30% el 26 de abril.",
+        "odds": 8.6,
+        "percentage": 7.8,
+        "lastUpdate": "2026-07-29",
+        "value": 8.6
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1,90%",
-        "tendenciaPesquisa": "Sin encuesta nacional nueva. La última es la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul, con 6% en la [primera vuelta](/es/glossary#primeiro-turno) y [empate técnico](/es/glossary#empate-tecnico) con Lula en la segunda, 45% a 43%, contra los 47% a 40% de la [Datafolha](/es/glossary#datafolha) del 24/Jul, y sigue sin una tercera medición para desempatar. El contrapunto del día es geográfico y vino de Poder360: lidera en Goiás, y Goiás es el único estado en que la tercera vía aparece competitiva, valiendo 3,2% del electorado nacional. Competitividad nacional medida en escenario de segunda vuelta y competitividad concentrada en un estado no son lo mismo.",
-        "tendenciaPolymarket": "SUBE fuerte en el libro de colocación y CAE en el de ganador, y esa separación es el hallazgo. En el tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) salió del rango de 19,00% a 19,50% hasta 26,50%, sumando 11,00pp en dos jornadas contando el 15,50% del 26/Jul. En el contrato presidencial quedó en 1,90% (vol USD 5,19M), caída de 0,05pp. Es decir, el mercado está revalorando quién termina tercero, no quién gana la elección, y la contrapartida es la caída de Renan Santos en el mismo libro. Salvedad de escala: 1,90% sigue siendo un nivel bajo en absoluto.",
-        "odds": 1.9,
-        "percentage": 6,
-        "lastUpdate": "2026-07-28",
-        "value": 1.9
+        "polymarket": "2,35%",
+        "tendenciaPesquisa": "La tercera medición llegó y desmiente el [empate técnico](/es/glossary#empate-tecnico): [AtlasIntel](/es/glossary#atlasintel) del 29 de julio lo mide en 3,1% en la [primera vuelta](/es/glossary#primeiro-turno), la mitad del 6% de [BTG/Nexus](/es/glossary#nexus-btg) dos días antes, y en la [segunda vuelta](/es/glossary#segundo-turno) lo pone perdiendo 48,2% a 38,9%, una distancia de 9,3pp, lejos del 45% a 43% de aquel levantamiento y más cerca del 47% a 40% de [Datafolha](/es/glossary#datafolha) del 24 de julio. La divergencia que el panel registró el 27 de julio quedó, por lo tanto, del lado de Datafolha. Políticamente fue su mejor día: Tarcísio de Freitas dio el aval para que aliados apoyen su candidatura (CNN Brasil) y él empezó a atacar a Lula y a Flávio en la misma medida (Folha de S.Paulo).",
+        "tendenciaPolymarket": "INVIRTIÓ LA SEÑAL DE AYER, y la inversión es el dato. Ayer subía con fuerza en el libro de colocación y caía en el de ganador; hoy SUBE 0,45pp en el de ganador, a 2,35% (vol USD 5,20M), y CAE 1,00pp en el tercer lugar de la primera vuelta, a 25,50%. El 2,35% de esta captura está por encima de todo cierre diario de la serie del AFOS desde el 20 de junio, cuando la serie marcó 2,30%, y el máximo de la serie es 2,40%, del 14 de abril y del 19 de junio. Es decir, su precio volvió al alto de su propia franja histórica el mismo día en que la encuesta de mayor muestra del recorte lo cortó a la mitad. Advertencia de escala: 2,35% sigue siendo un nivel bajo en términos absolutos.",
+        "odds": 2.35,
+        "percentage": 3.1,
+        "lastUpdate": "2026-07-29",
+        "value": 2.35
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "No es candidato a la Presidencia y no es probado en el escenario principal de la [primera vuelta](/es/glossary#primeiro-turno) por ninguna encuesta nacional. Confirmó su candidatura a la reelección al gobierno de São Paulo, disputa estatal que no entra en este panel, de alcance nacional.",
-        "tendenciaPolymarket": "ESTANCADO en 0,15% (vol USD 13,65M), sin variación. En esta captura, es el volumen acumulado más alto entre todos los mercados del libro presidencial, con el precio en un séptimo de punto porcentual. Es el ejemplo más claro del panel de que el volumen mide historia negociada y no convicción actual.",
+        "tendenciaPesquisa": "No es candidato a la Presidencia y no es medido en el escenario principal de [primera vuelta](/es/glossary#primeiro-turno) por ninguna encuesta nacional, incluida [AtlasIntel](/es/glossary#atlasintel) del 29 de julio. En la carrera estatal de São Paulo, Genial/[Quaest](/es/glossary#quaest) lo da con 41% contra 26% de Haddad en la primera vuelta y con 55% de aprobación contra 29% de desaprobación, una disputa que no entra en este panel de alcance nacional. El hecho del día que sí atraviesa el recorte nacional es político, no de encuesta: dio el aval para que aliados apoyen a Caiado en la carrera presidencial (CNN Brasil).",
+        "tendenciaPolymarket": "ESTANCADO en 0,15% (vol USD 13,66M), sin variación. En esta captura sigue siendo el volumen acumulado más alto entre los nombres con precio vivo en el libro presidencial, con el precio en poco más de un décimo de punto porcentual. Es el ejemplo más claro del panel de que el volumen mide historia negociada y no convicción actual.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-28",
+        "lastUpdate": "2026-07-29",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
-        "polymarket": "0,55%",
-        "tendenciaPesquisa": "Tuvo el mejor dato de encuesta del pelotón, y es ESTATAL. En la [Genial/Quaest](/es/glossary#quaest) de Minas Gerais (n=1.482, campo 22-26/Jul, margen 3pp, BR-09333/2026), aparece con 39% contra 37% de Lula en un escenario de [segunda vuelta](/es/glossary#segundo-turno), numéricamente por delante y dentro del margen, en el estado que gobernó por dos mandatos. Es el único nombre del pelotón por delante de Lula en algún escenario de segunda vuelta en esta ronda. En la última nacional, la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul, tiene 3% en la primera vuelta y pierde la segunda por 46% a 42%.",
-        "tendenciaPolymarket": "ESTANCADO en 0,55% (vol USD 4,55M), sin ninguna reacción a su mejor dato de encuesta del ciclo, y en 4,60% en el tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno). La distancia entre 39% en Minas y 3% en la última nacional es la explicación: un resultado de segunda vuelta en un estado no se transfiere al país. Sigue sin vicepresidente anunciado, con el plazo del 05/Ago a la vista, y el noticiario de este martes cita a un senador y a un politólogo entre los considerados, además de especulación sobre una fórmula con Joaquim Barbosa, sin confirmación.",
-        "odds": 0.55,
-        "percentage": 3,
-        "lastUpdate": "2026-07-28",
-        "value": 0.55
+        "polymarket": "0,75%",
+        "tendenciaPesquisa": "[AtlasIntel](/es/glossary#atlasintel) del 29 de julio lo mide en 2,8% en la [primera vuelta](/es/glossary#primeiro-turno) y lo pone perdiendo la [segunda vuelta](/es/glossary#segundo-turno) contra Lula 48,6% a 39,6%, una distancia de 9,0pp. Eso pone en perspectiva su mejor dato de la víspera, que era estatal: en la encuesta de Genial/[Quaest](/es/glossary#quaest) de Minas Gerais del 28 de julio aparecía numéricamente por delante de Lula 39% a 37% en un escenario de segunda vuelta en el estado que gobernó. Una segunda vuelta en Minas y una segunda vuelta nacional son preguntas distintas, y la encuesta nacional de hoy respondió la segunda.",
+        "tendenciaPolymarket": "SUBE 0,20pp a 0,75% (vol USD 4,57M) y CAE 0,10pp en el tercer lugar de la primera vuelta, a 4,50%. Advertencia de serie, y es grande: 0,75% no es nivel nuevo ni alto. Su máximo en la serie del AFOS es 10,10%, del 26 de abril, y el precio actual está a menos de un décimo de aquel nivel. Un movimiento de 0,20pp en un precio por debajo de 1% parece grande en términos relativos y es poco dinero en términos absolutos. Sigue sin candidato a vicepresidente anunciado, con el plazo del 5 de agosto a menos de una semana.",
+        "odds": 0.75,
+        "percentage": 2.8,
+        "lastUpdate": "2026-07-29",
+        "value": 0.75
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
         "polymarket": "0,25%",
-        "tendenciaPesquisa": "No es probado para presidente por ninguna nacional, incluidas la [BTG/Nexus](/es/glossary#nexus-btg) del 27/Jul y la [Datafolha](/es/glossary#datafolha) del 24/Jul. Su fórmula para el gobierno de São Paulo fue oficializada el 25/Jul, con Márcio França como compañero.",
-        "tendenciaPolymarket": "ESTANCADO en 0,25% (vol USD 6,38M) después de dos jornadas seguidas de caída. En el libro de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) marca 0,85% con USD 687 mil de volumen acumulado, uno de los casos en que un volumen alto convive con un precio cercano a cero. Su precio es residuo de un nombre conocido y no tiene respaldo de encuesta en el cargo que se está descontando.",
+        "tendenciaPesquisa": "No es medido para presidente en el escenario principal de ninguna encuesta nacional, incluida [AtlasIntel](/es/glossary#atlasintel) del 29 de julio. Sí aparece en uno de los dos escenarios de [segunda vuelta](/es/glossary#segundo-turno) SIN Lula del levantamiento, y el resultado es el más ajustado de toda la ronda: Haddad 44,3% contra Flávio 43,7%, un [empate técnico](/es/glossary#empate-tecnico) dentro del margen de 1pp. En la carrera estatal de São Paulo, Genial/[Quaest](/es/glossary#quaest) lo da con 26% contra 41% de Tarcísio en la primera vuelta.",
+        "tendenciaPolymarket": "ESTANCADO en 0,25% (vol USD 6,38M) en el contrato de ganador por segunda jornada, y SUBE 0,35pp en el libro de segundo lugar de la primera vuelta, a 1,20%, con volumen acumulado de USD 687.000. Es un caso de señal cruzada que vale registrar: el mercado no tocó su probabilidad de ganar y sí tocó la de llegar a la segunda vuelta, el mismo día en que [AtlasIntel](/es/glossary#atlasintel) lo mostró en [empate técnico](/es/glossary#empate-tecnico) con Flávio en un escenario sin Lula. El panel registra la coincidencia y no afirma causa, porque ese libro suma USD 4,34M contra USD 116,49M del presidencial.",
         "odds": 0.25,
         "percentage": 0,
-        "lastUpdate": "2026-07-28",
+        "lastUpdate": "2026-07-29",
         "value": 0.25
       }
     ],
-    "updatedAt": "28/07/2026, 18:13"
+    "updatedAt": "29/07/2026, 18:47"
   }
 }
