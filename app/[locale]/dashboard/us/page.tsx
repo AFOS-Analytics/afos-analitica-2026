@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { UsDashboardClient } from './UsDashboardClient';
+import { loadUsPollsData } from '../../../../lib/dashboard/us-static-data';
 import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader';
 import { buildMetadata } from '../../../../lib/seo/metadata';
 import type { Locale } from '../../../../lib/i18n/config';
@@ -38,6 +39,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
+// O generic ballot é lido no SERVIDOR e passa como prop, igual ao painel do
+// Brasil: assim a tabela aparece no 1º paint em vez de piscar um spinner.
+// ISR de 2h acompanha a cadência do script, que roda uma vez por dia.
+export const revalidate = 7200;
+
 export default function UsDashboardPage() {
-  return <UsDashboardClient />;
+  return <UsDashboardClient pollsData={loadUsPollsData()} />;
 }

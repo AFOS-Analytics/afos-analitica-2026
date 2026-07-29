@@ -9,6 +9,8 @@ import { ModalAbout } from '../../../components/ModalAbout';
 import { ModalMetas } from '../../../components/ModalMetas';
 import { LazyAboutMessages } from '../../../components/LazyAboutMessages';
 import { CountrySelector } from '../../../components/CountrySelector';
+import { UsPollsSection } from '../../../components/UsPollsSection';
+import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
 
 /**
  * Casca do painel dos EUA.
@@ -42,7 +44,7 @@ const T = {
   },
 };
 
-function UsDashboardContent() {
+function UsDashboardContent({ pollsData }: { pollsData: UsPollsData | null }) {
   const { locale } = useTranslation();
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T;
   const t = T[tKey];
@@ -75,6 +77,19 @@ function UsDashboardContent() {
             <strong className="text-dark">{t.building}</strong> {t.body}
           </p>
         </section>
+
+        {/*
+          ORDEM DAS SEÇÕES aprovada em 28/Jul: cartão do Tradeoff → Mercado →
+          Cadeiras do Senado → RESSALVA → Pesquisas → Grafo → Contexto
+          estrutural → Imprensa → Limitações.
+
+          Só as Pesquisas existem por enquanto, e elas já trazem a ressalva
+          embutida logo acima do número, que é onde ela precisa estar. Quando a
+          seção de Mercado entrar, ela vem ACIMA desta, e as duas ficam
+          EMPILHADAS: dois números grandes na mesma linha fazem o olho subtrair
+          sozinho, mesmo com o aviso escrito.
+        */}
+        <UsPollsSection data={pollsData} />
       </main>
 
       <Footer />
@@ -82,10 +97,10 @@ function UsDashboardContent() {
   );
 }
 
-export function UsDashboardClient() {
+export function UsDashboardClient({ pollsData }: { pollsData: UsPollsData | null }) {
   return (
     <VisitorStateProvider>
-      <UsDashboardContent />
+      <UsDashboardContent pollsData={pollsData} />
     </VisitorStateProvider>
   );
 }
