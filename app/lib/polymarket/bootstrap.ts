@@ -70,6 +70,55 @@ function extractCandidateName(question: string): string {
   const inflAbove = q.match(/at least (\d+\.\d+%)/);
   if (inflAbove) return `≥ ${inflAbove[1]}`;
 
+  // ── Mercados de FAIXA (distribuição), acrescentados em 28/Jul/2026 ─────────
+  //
+  // 🔴 POR QUE EXISTEM: sem eles, TODAS as faixas de um mesmo mercado voltavam
+  // com o MESMO nome. O padrão genérico `Will (.+?) (win|finish|be)` devolvia
+  // "the Democratic Party" para as 9 faixas democratas do mercado de margem do
+  // voto popular, e "there" para as 12 faixas de comparecimento. Como o nome vira
+  // `outcomeKey`, que é chave única por mercado, as faixas COLAPSAVAM: 14 viravam
+  // 3, 12 viravam 1. Medido em 28/Jul. A distribuição é justamente o dado desses
+  // mercados, e a soma dela é o critério de maturidade do de margem, então
+  // colapsar destrói exatamente o que se queria guardar.
+  //
+  // Vêm ANTES do padrão genérico de propósito, e são específicos o bastante para
+  // não tocarem em mercado de candidato (exigem "popular vote", "House seats",
+  // "governorships" ou "votes cast").
+
+  // Margem do voto popular: "...by between 2% and 4%?" / "...by 16% or more?"
+  const margemRange = q.match(/(Democratic|Republican) Party win the popular vote.*?by between (\d+)% and (\d+)%/);
+  if (margemRange) return `${margemRange[1][0]}+${margemRange[2]}–${margemRange[3]}`;
+  const margemAcima = q.match(/(Democratic|Republican) Party win the popular vote.*?by (\d+)% or more/);
+  if (margemAcima) return `${margemAcima[1][0]}+${margemAcima[2]} ou mais`;
+
+  // Cadeiras e governos: "hold between 190 and 194 House seats" / "fewer than 22
+  // governorships" / "exactly 22 or 23 governorships" / "below 190 House seats"
+  const unidade = /House seats/.test(q) ? 'cad.' : /governorships/.test(q) ? 'gov.' : /Senate seats/.test(q) ? 'cad.' : null;
+  if (unidade) {
+    const entre = q.match(/between (\d+) and (\d+)/);
+    if (entre) return `${entre[1]}–${entre[2]} ${unidade}`;
+    const exato = q.match(/exactly (\d+) or (\d+)/);
+    if (exato) return `${exato[1]} ou ${exato[2]} ${unidade}`;
+    const abaixo = q.match(/(?:below|fewer than|less than) (\d+)/);
+    if (abaixo) return `< ${abaixo[1]} ${unidade}`;
+    const acima = q.match(/(?:above|more than|at least) (\d+)/);
+    if (acima) return `> ${acima[1]} ${unidade}`;
+  }
+
+  // Comparecimento: "between 85m and 90m votes cast" / "less than 85m votes cast"
+  if (/votes cast/.test(q)) {
+    const entre = q.match(/between (\d+)m and (\d+)m/);
+    if (entre) return `${entre[1]}–${entre[2]}m votos`;
+    const menos = q.match(/less than (\d+)m/);
+    if (menos) return `< ${menos[1]}m votos`;
+    const mais = q.match(/more than (\d+)m/);
+    if (mais) return `> ${mais[1]}m votos`;
+  }
+
+  // "Will any other outcome occur...": existe em todo mercado de faixa e é a
+  // válvula de escape da distribuição. Precisa de nome próprio e curto.
+  if (/any other outcome/i.test(q)) return 'Outro resultado';
+
   // Senate / party markets
   const partyMatch = q.match(/Will (.+?) \((\w+)\) win the most seats/);
   if (partyMatch) return partyMatch[2]; // Return party abbreviation
@@ -91,12 +140,22 @@ function extractCandidateName(question: string): string {
 
 // ─── Market → Candidates ────────────────────────────────────────────
 
-function extractCandidates(markets: ParsedMarket[]): CandidateSummary[] {
+/**
+ * Piso de ruído. Em mercado de candidato, 0,5% corta a cauda de nomes que não
+ * disputam nada. Em mercado de DISTRIBUIÇÃO, a cauda fina é parte do dado: cortar
+ * faz a soma das faixas mentir para baixo, e é a soma que diz se o mercado
+ * amadureceu. Por isso o piso cai para 0,05% quando o registro declara faixas.
+ */
+const PISO_RUIDO_CANDIDATO = 0.005;
+const PISO_RUIDO_DISTRIBUICAO = 0.0005;
+
+function extractCandidates(markets: ParsedMarket[], isDistribution = false): CandidateSummary[] {
   const candidates: CandidateSummary[] = [];
+  const piso = isDistribution ? PISO_RUIDO_DISTRIBUICAO : PISO_RUIDO_CANDIDATO;
 
   for (const m of markets) {
     if (m.closed) continue;
-    if (m.yesPrice < 0.005) continue; // Filter noise
+    if (m.yesPrice < piso) continue; // Filter noise
 
     candidates.push({
       name: extractCandidateName(m.question),
@@ -167,7 +226,7 @@ export async function aggregateElectionData(): Promise<AggregationResult> {
       const event = eventMap.get(entry.slug);
       if (!event) continue;
 
-      const candidates = extractCandidates(event.markets);
+      const candidates = extractCandidates(event.markets, entry.isDistribution === true);
       const summary: MarketSummary = {
         slug: entry.slug,
         title: event.title,

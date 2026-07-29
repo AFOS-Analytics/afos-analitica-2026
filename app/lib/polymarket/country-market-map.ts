@@ -16,6 +16,18 @@ export interface ElectionRegistryEntry {
   electionType: string;
   isPrimary: boolean;
   enabled: boolean;
+  /**
+   * Mercado de FAIXAS, não de candidatos: o resultado é uma DISTRIBUIÇÃO
+   * (margem do voto popular, número de cadeiras, comparecimento).
+   *
+   * Muda dois comportamentos, e os dois importam:
+   *  1. O teto de outcomes gravados sobe de 10 para 20, porque cortar faixa
+   *     impede somar a distribuição depois.
+   *  2. O piso de ruído cai de 0,5% para 0,05%, porque numa distribuição a
+   *     cauda fina É parte do dado. Descartá-la faz a soma mentir para baixo,
+   *     e a soma é justamente o critério de maturidade do mercado de margem.
+   */
+  isDistribution?: boolean;
 }
 
 // ─── Static Registry ────────────────────────────────────────────────
@@ -72,6 +84,23 @@ export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   // ── US Senate 2026 ────────────────────
   { slug: 'which-party-will-win-the-senate-in-2026', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'Senate 2026', isPrimary: false, enabled: true },
   { slug: 'texas-republican-senate-primary-winner', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-03-03', electionType: 'Texas Senate Primary', isPrimary: false, enabled: true },
+
+  // ── US midterms 03/Nov/2026 — COLETA ligada em 28/Jul/2026 ──────────
+  // Slugs conferidos um a um pelo proxy /api/polymarket/lookup em 28/Jul.
+  // A coleta começa AGORA, antes de existir tela, porque histórico de mercado
+  // não se recupera: o que não for gravado hoje não existe em outubro.
+  { slug: 'which-party-will-win-the-house-in-2026', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'House 2026', isPrimary: false, enabled: true },
+  { slug: 'republican-senate-seats-after-the-2026-midterm-elections-927', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'Senate Seats 2026', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: 'republican-house-seats-after-the-2026-midterm-elections', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'House Seats 2026', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: 'how-many-republican-governors-after-the-2026-midterm-elections', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'Governors 2026', isPrimary: false, enabled: true, isDistribution: true },
+  // ⭐ O mercado que decide o cruzamento limpo (saída D): mede a MESMA grandeza
+  // do generic ballot. Hoje NÃO serve, e isso está medido: as faixas somam 1,4610
+  // em 28/Jul (1,4975 em 27/Jul) contra ~1,00 de um mercado coerente, com só
+  // USD 112 mil de volume. Entra para GUARDAR SÉRIE, não para publicar. O portão
+  // para subir à tela é soma entre 0,95 e 1,05 E volume acima de um piso.
+  { slug: '2026-midterms-house-popular-vote-margin-of-victory-224', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'House Popular Vote Margin', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: '2026-midterms-house-turnout', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'House Turnout 2026', isPrimary: false, enabled: true, isDistribution: true },
+  { slug: 'will-the-2026-midterm-elections-happen-as-scheduled', iso3: 'USA', countryName: 'United States', flag: 'us', electionDate: '2026-11-03', electionType: 'Midterms As Scheduled', isPrimary: false, enabled: true },
 
   // ── Chile ─────────────────────────────
   { slug: 'chile-presidential-election', iso3: 'CHL', countryName: 'Chile', flag: 'cl', electionDate: '2025-11-16', electionType: 'Presidential', isPrimary: true, enabled: true },

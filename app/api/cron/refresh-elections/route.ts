@@ -46,10 +46,23 @@ export async function GET(request: Request) {
 
     const kvSuccess = await writeGlobalMapData(payload);
 
-    // Snapshot histórico no Neon — fire-and-forget. shouldPersist() em
-    // persist.ts aplica tier inteligente (hot/warm/cold) por mercado.
-    persistMarketData(result.countries).catch((err) => {
+    // Snapshot histórico no Neon. AGUARDADO de propósito, corrigido em 28/Jul/2026.
+    //
+    // 🔴 O QUE ESTAVA ERRADO: isto era fire-and-forget (sem await) e a resposta
+    // voltava antes de a gravação terminar. Em serverless, devolver a resposta
+    // autoriza a plataforma a congelar a instância, e o resto da promise morre no
+    // meio. O sintoma medido em 28/Jul: 7 mercados NOVOS, que não tinham chave de
+    // dedup e portanto tinham obrigação de gravar, saíram do cron com ZERO linha.
+    // Como os países são percorridos em ordem, os últimos da fila eram os que mais
+    // perdiam. Arquivo histórico não se recupera depois, então perda silenciosa
+    // aqui é o pior defeito possível.
+    //
+    // O caminho quente do usuário já foi escrito no KV ACIMA, logo esperar aqui não
+    // atrasa ninguém. Se a gravação falhar ou estourar o tempo, aparece na resposta
+    // em vez de sumir.
+    const persist = await persistMarketData(result.countries).catch((err) => {
       console.warn('[cron] Neon persist failed:', err instanceof Error ? err.message : err);
+      return { persisted: 0, skipped: 0, errors: -1 };
     });
 
     const elapsed = Date.now() - startTime;
@@ -66,6 +79,9 @@ export async function GET(request: Request) {
         markets: `${result.fetchedMarkets}/${result.totalMarkets}`,
         countries: result.countries.length,
         kv: kvSuccess,
+        // Sem isto, o resultado da gravação era descartado e ninguém via que ela
+        // não estava acontecendo. Observabilidade é parte da correção.
+        persist,
         elapsed,
       },
       { status: httpStatus, headers: buildNoCacheHeaders() }
