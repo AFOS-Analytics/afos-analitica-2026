@@ -48,7 +48,7 @@ function buildUrlList() {
   const urls = [];
   for (const loc of LOCALES) {
     urls.push(`https://${HOST}/${loc}`);
-    urls.push(`https://${HOST}/${loc}/dashboard`);
+    urls.push(`https://${HOST}/${loc}/dashboard/br`);
     urls.push(`https://${HOST}/${loc}/daily`);
     urls.push(`https://${HOST}/${loc}/about`);
     urls.push(`https://${HOST}/${loc}/how-it-works`);

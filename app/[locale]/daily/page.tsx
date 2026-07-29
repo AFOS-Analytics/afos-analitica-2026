@@ -142,7 +142,7 @@ export default async function DailyArchivePage(props: Props) {
   const t = T[tLocale(loc)]
 
   const latest = getLatestDate()
-  if (!latest) redirect(`/${loc}/dashboard`)
+  if (!latest) redirect(`/${loc}/dashboard/br`)
 
   // Newest-first list of published editions, with localized lede snippet.
   // Snippet only when the requested-locale file actually exists (data.locale === loc);

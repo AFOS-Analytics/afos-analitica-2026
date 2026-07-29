@@ -72,6 +72,20 @@ const nextConfig = {
         destination: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
         permanent: false,
       },
+      {
+        // Painel multi-país: /dashboard vira /dashboard/br. Nenhum link antigo quebra.
+        // O painel NÃO ganha tela de escolha na frente: é porta de entrada, e escolher
+        // país antes de ver dado é atrito puro (decisão de 27/Jul).
+        //
+        // 307 (permanent: false) DE PROPÓSITO, mesmo motivo do /dataset acima: a própria
+        // decisão prevê revisar para onde este endereço aponta quando houver 3+ países.
+        // 308 fica cacheado duro no navegador, e quem passou por aqui uma vez continuaria
+        // indo para /br mesmo depois da mudança. Endereço de edição publicada (Tradeoff,
+        // Daily) é outro caso: lá o destino é definitivo e o permanente é o certo.
+        source: '/:locale(pt-BR|en|es)/dashboard',
+        destination: '/:locale/dashboard/br',
+        permanent: false,
+      },
     ];
   },
 };

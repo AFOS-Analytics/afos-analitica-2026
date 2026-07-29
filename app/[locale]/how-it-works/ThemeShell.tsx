@@ -57,7 +57,7 @@ export function ThemeShell({ loc, slug, children }: { loc: string; slug: string;
           <nav className="mb-8 flex flex-wrap items-center justify-between gap-4 text-sm">
             <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary dark:text-white">AFOS Analytics</a>
             <div className="flex items-center gap-3">
-              <a href={`/${loc}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 dark:bg-white dark:text-primary dark:hover:bg-blue-50">Dashboard</a>
+              <a href={`/${loc}/dashboard/br`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90 dark:bg-white dark:text-primary dark:hover:bg-blue-50">Dashboard</a>
               <div className="flex items-center gap-1" aria-label={t.langAria}>
                 {(['pt-BR', 'en', 'es'] as const).map((l) => (
                   <a
@@ -80,7 +80,7 @@ export function ThemeShell({ loc, slug, children }: { loc: string; slug: string;
           </nav>
           {children}
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-blue-400/30 text-center">
-            <a href={`/${loc}/dashboard`} className="inline-block bg-primary text-white dark:bg-white dark:text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 dark:hover:bg-blue-50 transition-colors text-sm">
+            <a href={`/${loc}/dashboard/br`} className="inline-block bg-primary text-white dark:bg-white dark:text-primary px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 dark:hover:bg-blue-50 transition-colors text-sm">
               {t.cta}
             </a>
           </div>

@@ -110,7 +110,7 @@ ${p.tradeoffEntries || '- (no editions published yet)'}
 
 - [AFOS Daily archive](${SITE}/en/daily): browsable index of every daily synthesis, newest first (also /pt-BR/daily, /es/daily)
 - [AFOS Tradeoff archive](${SITE}/en/tradeoff): browsable index of every weekly technical brief (also /pt-BR/tradeoff, /es/tradeoff)
-- [Dashboard (main application)](${SITE}/en/dashboard): 6 Polymarket cards (1st round, 2nd place, 3rd place, Supreme Court impeachment, Senate, inflation), in-depth candidate analysis, comparative table, live news feed
+- [Dashboard (main application)](${SITE}/en/dashboard/br): 6 Polymarket cards (1st round, 2nd place, 3rd place, Supreme Court impeachment, Senate, inflation), in-depth candidate analysis, comparative table, live news feed
 - [How it works (didactic guide)](${SITE}/en/how-it-works): complete methodology explanation, cross-referencing logic, ↑↓pp variation interpretation, user profiles, honest limitations
 - [Automated Governance (public methodology)](${SITE}/en/methodology/automated-governance): explains how AFOS enforces editorial integrity via code (automated validators and prompt rules) rather than human editorial review; describes the 2 paths for interacting with the hosted platform (Fork under Apache 2.0, or Country Onboarding contribution) and the 3 exceptions where humans do intervene
 - [AFOS Chat](${SITE}/en/chat): conversational agent answering in natural language with live platform data (Polymarket odds, TSE polls, validated cases and divergence, news, AFOS Daily); every answer cites its source. Also a floating bubble on every page (also /pt-BR/chat, /es/chat)
@@ -231,7 +231,7 @@ ${p.tradeoffEntries || '- (nenhuma edição publicada ainda)'}
 
 - [Arquivo do AFOS Daily](${SITE}/pt-BR/daily): índice navegável de todas as sínteses diárias, mais novas primeiro (também /en/daily, /es/daily)
 - [Arquivo do AFOS Tradeoff](${SITE}/pt-BR/tradeoff): índice navegável de todos os briefs técnicos semanais (também /en/tradeoff, /es/tradeoff)
-- [Dashboard (aplicação principal)](${SITE}/pt-BR/dashboard): 6 cards Polymarket (1º turno, 2º lugar, 3º lugar, impeachment no STF, Senado, inflação), análise aprofundada de candidatos, tabela comparativa, feed de notícias ao vivo
+- [Dashboard (aplicação principal)](${SITE}/pt-BR/dashboard/br): 6 cards Polymarket (1º turno, 2º lugar, 3º lugar, impeachment no STF, Senado, inflação), análise aprofundada de candidatos, tabela comparativa, feed de notícias ao vivo
 - [Como funciona (guia didático)](${SITE}/pt-BR/how-it-works): explicação completa da metodologia, lógica de cruzamento, interpretação de variações ↑↓pp, perfis de usuário, limitações honestas
 - [Governança Automatizada (metodologia pública)](${SITE}/pt-BR/methodology/automated-governance): explica como a AFOS garante integridade editorial via código (validadores automatizados e regras de prompt) em vez de revisão editorial humana; descreve os 2 caminhos para interagir com a plataforma hospedada (Fork sob Apache 2.0, ou contribuição de Onboarding de País) e as 3 exceções em que humanos intervêm
 - [AFOS Chat](${SITE}/pt-BR/chat): agente conversacional que responde em linguagem natural com os dados ao vivo da plataforma (odds Polymarket, pesquisas TSE, casos validados e divergência, notícias, AFOS Daily); toda resposta cita a fonte. Também uma bolha flutuante em todas as páginas (também /en/chat, /es/chat)
@@ -352,7 +352,7 @@ ${p.tradeoffEntries || '- (aún no hay ediciones publicadas)'}
 
 - [Archivo del AFOS Daily](${SITE}/es/daily): índice navegable de todas las síntesis diarias, más nuevas primero (también /pt-BR/daily, /en/daily)
 - [Archivo del AFOS Tradeoff](${SITE}/es/tradeoff): índice navegable de todos los briefs técnicos semanales (también /pt-BR/tradeoff, /en/tradeoff)
-- [Dashboard (aplicación principal)](${SITE}/es/dashboard): 6 tarjetas Polymarket (1ª vuelta, 2º lugar, 3er lugar, impeachment en el STF, Senado, inflación), análisis a fondo de candidatos, tabla comparativa, feed de noticias en vivo
+- [Dashboard (aplicación principal)](${SITE}/es/dashboard/br): 6 tarjetas Polymarket (1ª vuelta, 2º lugar, 3er lugar, impeachment en el STF, Senado, inflación), análisis a fondo de candidatos, tabla comparativa, feed de noticias en vivo
 - [Cómo funciona (guía didáctica)](${SITE}/es/how-it-works): explicación completa de la metodología, lógica de cruce, interpretación de variaciones ↑↓pp, perfiles de usuario, limitaciones honestas
 - [Gobernanza Automatizada (metodología pública)](${SITE}/es/methodology/automated-governance): explica cómo AFOS garantiza la integridad editorial mediante código (validadores automatizados y reglas de prompt) en lugar de revisión editorial humana; describe los 2 caminos para interactuar con la plataforma alojada (Fork bajo Apache 2.0, o contribución de Onboarding de País) y las 3 excepciones en que intervienen humanos
 - [AFOS Chat](${SITE}/es/chat): agente conversacional que responde en lenguaje natural con los datos en vivo de la plataforma (odds Polymarket, encuestas TSE, casos validados y divergencia, noticias, AFOS Daily); cada respuesta cita su fuente. También una burbuja flotante en todas las páginas (también /pt-BR/chat, /en/chat)

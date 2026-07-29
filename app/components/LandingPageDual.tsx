@@ -480,7 +480,7 @@ export function LandingPageDual({ locale: initialLocale = 'pt-BR' }: LandingPage
   const featuresRef = useRef<HTMLElement>(null);
   const tk = useThemeTokens(theme);
 
-  const dashboardUrl = `/${locale}/dashboard`;
+  const dashboardUrl = `/${locale}/dashboard/br`;
 
   useEffect(() => {
     setVisitorId(getOrCreateVisitorId());

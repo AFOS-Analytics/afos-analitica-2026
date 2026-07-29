@@ -1,6 +1,6 @@
 /**
  * Leitura SERVER-SIDE dos 3 JSONs estáticos do dashboard (pesquisas + cards de
- * análise), para o /[locale]/dashboard renderizá-los no 1º paint (SSR/ISR) em vez
+ * análise), para o /[locale]/dashboard/br renderizá-los no 1º paint (SSR/ISR) em vez
  * de buscar via /api no client (que causava "LCP = spinner").
  *
  * Replica a guarda do /api/polls (exige polls[] array), a defesa de 4 camadas

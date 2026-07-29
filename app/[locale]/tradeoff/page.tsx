@@ -148,7 +148,7 @@ export default async function TradeoffArchivePage(props: Props) {
   const t = T[tLocale(loc)]
 
   const latest = getLatestDate()
-  if (!latest) redirect(`/${loc}/dashboard`)
+  if (!latest) redirect(`/${loc}/dashboard/br`)
 
   const dates = listPublishedTradeoffs().slice().reverse()
   const items: TradeoffArchiveItem[] = dates.map((date) => {

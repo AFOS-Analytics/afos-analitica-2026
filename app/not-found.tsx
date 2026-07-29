@@ -56,7 +56,7 @@ export default async function NotFound() {
             {t.home}
           </Link>
           <Link
-            href={`/${locale}/dashboard`}
+            href={`/${locale}/dashboard/br`}
             className="px-5 py-2.5 rounded-lg border border-gray-200 text-dark text-sm font-semibold hover:bg-gray-50 transition-colors"
           >
             {t.dash}

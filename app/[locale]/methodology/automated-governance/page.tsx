@@ -137,12 +137,12 @@ export default async function AutomatedGovernancePage({ params }: { params: Prom
       <article className="max-w-[920px] mx-auto px-5 md:px-10 py-12 md:py-14">
         <nav className="mb-8 flex flex-wrap items-center justify-between gap-3 text-sm">
           <a href={`/${loc}`} aria-label="AFOS Analytics, Home" className="text-base sm:text-lg font-extrabold tracking-tight text-primary">AFOS Analytics</a>
-          <a href={`/${loc}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
+          <a href={`/${loc}/dashboard/br`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
         </nav>
         <Content />
         <div className="mt-16 pt-8 border-t border-gray-200 text-center">
           <a
-            href={`/${loc}/dashboard`}
+            href={`/${loc}/dashboard/br`}
             className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors text-sm"
           >
             {loc === 'pt-BR' ? '← Acessar o Dashboard' : loc === 'es' ? '← Acceder al Dashboard' : '← Access the Dashboard'}

@@ -81,7 +81,7 @@ export function Footer() {
   const byLen = (a: FooterLink, b: FooterLink) =>
     (a.label.length + (a.star ? 2 : 0)) - (b.label.length + (b.star ? 2 : 0));
   const navLinks: FooterLink[] = [
-    { href: `/${locale}/dashboard`, label: nav.dashboard },
+    { href: `/${locale}/dashboard/br`, label: nav.dashboard },
     { href: `/${locale}/global`, label: nav.global },
     { href: `/${locale}/latam`, label: nav.latam },
     { href: `/${locale}/eu`, label: nav.eu },

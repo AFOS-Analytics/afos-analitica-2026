@@ -119,7 +119,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
           <a href={`/${loc}`} className={`text-base sm:text-lg font-extrabold tracking-tight ${isBlue ? 'text-white' : 'text-primary'}`} aria-label="AFOS Analytics, Home">AFOS Analytics</a>
           <div className="flex items-center gap-4">
             <a href={`/${loc}/global`} className={`inline-flex items-center whitespace-nowrap rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}><span className="sm:hidden">{l.backToGlobalShort}</span><span className="hidden sm:inline">{l.backToGlobal}</span></a>
-            <a href={`/${loc}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>Dashboard</a>
+            <a href={`/${loc}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>Dashboard</a>
             <ThemeToggle theme={theme} onChoose={choose} isBlue={isBlue} labels={{ group: l.themeAria, light: l.themeLight, blue: l.themeBlue }} />
           </div>
         </div>

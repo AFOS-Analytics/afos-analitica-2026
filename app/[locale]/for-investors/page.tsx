@@ -75,7 +75,7 @@ export default async function ForInvestorsPage({ params }: { params: Promise<{ l
             </div>
           ))}
         </div>
-        <a href={`/${loc}/dashboard`} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
+        <a href={`/${loc}/dashboard/br`} className="inline-block bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors">{c.cta}</a>
       </div>
     </div>
   )

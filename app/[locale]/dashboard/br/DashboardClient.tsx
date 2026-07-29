@@ -1,33 +1,34 @@
 'use client';
 
 import { useState, useMemo, useCallback } from 'react';
-import { useDashboardData } from '../../hooks/useDashboardData';
-import { useTranslation } from '../../i18n/context';
-import { VisitorStateProvider } from '../../hooks/useVisitorState';
-import type { PollData, AnalysisData, CritData } from '../../types';
-import { Header } from '../../components/Header';
-import { Footer } from '../../components/Footer';
-import { DailyHeroCard } from '../../components/DailyHeroCard';
-import { AfosTradeoffHeroCard } from '../../components/AfosTradeoffHeroCard';
-import { ModalAbout } from '../../components/ModalAbout';
-import { ModalMetas } from '../../components/ModalMetas';
-import { LazyAboutMessages } from '../../components/LazyAboutMessages';
-import { PolymarketSection } from '../../components/PolymarketSection';
-import { PollsSection } from '../../components/PollsSection';
-import { CandidatesSection } from '../../components/CandidatesSection';
-import { NewsSection } from '../../components/NewsSection';
-import { SentimentSection } from '../../components/SentimentSection';
-import { InssSection } from '../../components/InssSection';
-import { BancoMasterSection } from '../../components/BancoMasterSection';
-import { StfSection } from '../../components/StfSection';
-import { StructuralContext } from '../../components/StructuralContext';
-import { CountryGraph } from '../../components/CountryGraph';
-import type { NavGroup } from '../../components/CountryGraph';
-import type { CountryContext, CountryDivergence } from '../../../lib/country-data';
-import { LogicLink } from '../../components/LogicLink';
-import { EmailPopup } from '../../components/EmailPopup';
-import { DashboardGate } from '../../components/DashboardGate';
-import { SectionErrorBoundary } from '../../components/SectionErrorBoundary';
+import { useDashboardData } from '../../../hooks/useDashboardData';
+import { useTranslation } from '../../../i18n/context';
+import { VisitorStateProvider } from '../../../hooks/useVisitorState';
+import type { PollData, AnalysisData, CritData } from '../../../types';
+import { Header } from '../../../components/Header';
+import { Footer } from '../../../components/Footer';
+import { DailyHeroCard } from '../../../components/DailyHeroCard';
+import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
+import { ModalAbout } from '../../../components/ModalAbout';
+import { ModalMetas } from '../../../components/ModalMetas';
+import { LazyAboutMessages } from '../../../components/LazyAboutMessages';
+import { PolymarketSection } from '../../../components/PolymarketSection';
+import { PollsSection } from '../../../components/PollsSection';
+import { CandidatesSection } from '../../../components/CandidatesSection';
+import { NewsSection } from '../../../components/NewsSection';
+import { SentimentSection } from '../../../components/SentimentSection';
+import { InssSection } from '../../../components/InssSection';
+import { BancoMasterSection } from '../../../components/BancoMasterSection';
+import { StfSection } from '../../../components/StfSection';
+import { StructuralContext } from '../../../components/StructuralContext';
+import { CountryGraph } from '../../../components/CountryGraph';
+import type { NavGroup } from '../../../components/CountryGraph';
+import type { CountryContext, CountryDivergence } from '../../../../lib/country-data';
+import { LogicLink } from '../../../components/LogicLink';
+import { EmailPopup } from '../../../components/EmailPopup';
+import { DashboardGate } from '../../../components/DashboardGate';
+import { SectionErrorBoundary } from '../../../components/SectionErrorBoundary';
+import { CountrySelector } from '../../../components/CountrySelector';
 
 // Links dos nós de DADO do grafo para o dataset público do Brasil no HF (estilo Obsidian:
 // cada nó aponta para a pasta/arquivo que o alimenta, atualizada diariamente).
@@ -142,6 +143,8 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
           <ModalAbout show={showSobre} onClose={() => setShowSobre(false)} />
           <ModalMetas show={showMetas} onClose={() => setShowMetas(false)} />
         </LazyAboutMessages>
+
+        <CountrySelector active="br" />
 
         <DailyHeroCard />
         <AfosTradeoffHeroCard />

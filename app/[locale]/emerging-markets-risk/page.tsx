@@ -7,7 +7,7 @@ const p = InstitutionalPage('emerging-markets-risk', {
     h1: 'Risco Político em Mercados Emergentes',
     intro: 'Onde política e mercado se encontram: dados eleitorais em tempo real para mercados emergentes.',
     features: ['Cobertura de mercados emergentes: Brasil, Colômbia, México, Índia, Nigéria', 'Odds de mercados de previsão como proxy de risco político', 'Impacto eleitoral em câmbio e CDS soberano', 'Monitoramento de transição de poder', 'Sinais antecipados de instabilidade política'],
-    cta: '← Acessar Dashboard', ctaHref: '/{locale}/dashboard', icon: '!',
+    cta: '← Acessar Dashboard', ctaHref: '/{locale}/dashboard/br', icon: '!',
   },
   en: {
     metaTitle: 'Emerging Markets Risk | Elections & Political Signals | AFOS Analytics',
@@ -15,7 +15,7 @@ const p = InstitutionalPage('emerging-markets-risk', {
     h1: 'Emerging Markets Political Risk',
     intro: 'Where politics meets markets: real-time election data for emerging economies.',
     features: ['Emerging market coverage: Brazil, Colombia, Mexico, India, Nigeria', 'Prediction market odds as political risk proxy', 'Election impact on FX and sovereign CDS', 'Power transition monitoring', 'Early signals of political instability'],
-    cta: '← Access Dashboard', ctaHref: '/{locale}/dashboard', icon: '!',
+    cta: '← Access Dashboard', ctaHref: '/{locale}/dashboard/br', icon: '!',
   },
   es: {
     metaTitle: 'Riesgo en Mercados Emergentes | Elecciones y Señales Políticas | AFOS Analytics',
@@ -23,7 +23,7 @@ const p = InstitutionalPage('emerging-markets-risk', {
     h1: 'Riesgo Político en Mercados Emergentes',
     intro: 'Donde política y mercado se encuentran: datos electorales en tiempo real para economías emergentes.',
     features: ['Cobertura de mercados emergentes: Brasil, Colombia, México, India, Nigeria', 'Odds de mercados de predicción como proxy de riesgo político', 'Impacto electoral en tipo de cambio y CDS soberano', 'Monitoreo de transición de poder', 'Señales anticipadas de inestabilidad política'],
-    cta: '← Acceder al Dashboard', ctaHref: '/{locale}/dashboard', icon: '!',
+    cta: '← Acceder al Dashboard', ctaHref: '/{locale}/dashboard/br', icon: '!',
   },
 })
 

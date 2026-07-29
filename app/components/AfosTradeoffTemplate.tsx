@@ -535,7 +535,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-7 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
+          <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
           <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 

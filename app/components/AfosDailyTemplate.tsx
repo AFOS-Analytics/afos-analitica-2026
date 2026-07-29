@@ -221,7 +221,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
         <ThemeToggle theme={theme} onChoose={chooseTheme} labels={{ group: t.themeAria, light: t.lightAria, blue: t.blueAria }} />
 
         <nav className="mb-10 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
-          <a href={`/${locale}/dashboard`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
+          <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
           <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
         </nav>
 
@@ -319,7 +319,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
           </p>
           <p>
             <strong className={footerStrong}>{t.integrationLabel}</strong> {t.integrationText1}{' '}
-            <a href={`/${locale}/dashboard`} className={linkColor}>{t.integrationText2}</a>{t.integrationText3}{' '}
+            <a href={`/${locale}/dashboard/br`} className={linkColor}>{t.integrationText2}</a>{t.integrationText3}{' '}
             <a href={`/${locale}/how-it-works`} className={linkColor}>{t.integrationText4}</a>.
           </p>
           <p>
@@ -332,7 +332,7 @@ export function AfosDailyTemplate({ data, nav, renderedTldr, renderedLede, rende
 
         <div className="mt-12 text-center">
           <a
-            href={`/${locale}/dashboard`}
+            href={`/${locale}/dashboard/br`}
             className={`inline-block px-8 py-3 rounded-xl font-semibold transition-colors text-sm ${ctaBg}`}
           >
             {t.accessDashboard}

@@ -55,14 +55,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  // Dashboard: /pt-BR/dashboard (dynamic — cron 30min)
+  // Dashboard: /pt-BR/dashboard/br (dynamic — cron 30min)
+  // O endereço canônico passou a ter país. O /dashboard sem país continua vivo por
+  // redirecionamento, mas NÃO entra no sitemap: sitemap lista destino final, não atalho.
+  // ⚠️ O painel dos EUA fica fora daqui até ser publicado (page.tsx dele é noindex).
   for (const loc of locales) {
     entries.push({
-      url: `${baseUrl}/${loc}/dashboard`,
+      url: `${baseUrl}/${loc}/dashboard/br`,
       lastModified: dynamicLastMod,
       changeFrequency: 'hourly',
       priority: 0.95,
-      alternates: { languages: hreflang((l) => `/${l}/dashboard`) },
+      alternates: { languages: hreflang((l) => `/${l}/dashboard/br`) },
     })
   }
 

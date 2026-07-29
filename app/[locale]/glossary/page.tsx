@@ -148,7 +148,7 @@ export default async function GlossaryPage(props: PageProps) {
       <div className="min-h-screen bg-slate-50">
         <article className="max-w-[760px] mx-auto px-5 md:px-10 py-12 md:py-14">
           <nav className="mb-10 text-sm">
-            <a href={`/${locale}/dashboard`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
+            <a href={`/${locale}/dashboard/br`} className="inline-flex items-center rounded-md bg-primary px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-primary/90">Dashboard</a>
           </nav>
 
           <div className="flex justify-center mb-6">

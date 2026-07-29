@@ -1,8 +1,22 @@
+import type { Metadata } from 'next';
 import { DashboardClient } from './DashboardClient';
-import { loadPollsData, loadAnalysisCards, loadAnalysisCriteriosa } from '../../../lib/dashboard/static-data';
-import brazilContext from '../../../lib/dashboard/brazil-context.json';
-import type { CountryContext } from '../../../lib/country-data';
-import { SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
+import { loadPollsData, loadAnalysisCards, loadAnalysisCriteriosa } from '../../../../lib/dashboard/static-data';
+import brazilContext from '../../../../lib/dashboard/brazil-context.json';
+import type { CountryContext } from '../../../../lib/country-data';
+import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader'
+import { buildMetadata } from '../../../../lib/seo/metadata';
+import type { Locale } from '../../../../lib/i18n/config';
+import { DASHBOARD_SEO } from '../layout';
+
+// O canônico e o hreflang vivem AQUI, não no layout compartilhado com /us: o
+// caminho tem de ser 'dashboard/br', senão a página se declara canônica em
+// /[locale]/dashboard, que redireciona desde 29/Jul. Os textos vêm do layout
+// para não existirem em dois lugares.
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const loc = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as Locale;
+  return buildMetadata({ ...DASHBOARD_SEO[loc], path: 'dashboard/br' }, loc);
+}
 
 // Sem isto o Next nao sabe quais locales pre-renderizar e serve a pagina sob
 // demanda a cada requisicao, mesmo ela sendo conteudo estatico. Instalado

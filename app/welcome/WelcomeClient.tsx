@@ -34,7 +34,7 @@ export default function WelcomeClient({ email }: Props) {
       setError('Network error — redirecting anyway.')
     }
     // Redirect regardless: preference is best-effort, dashboard access is the priority.
-    window.location.href = `/${locale}/dashboard`
+    window.location.href = `/${locale}/dashboard/br`
   }
 
   return (
