@@ -26,6 +26,15 @@ export interface MarketSummary {
   isPrimary: boolean;
   totalVolume: number;
   candidates: CandidateSummary[];
+  /**
+   * Situação DESTE mercado, resolvida do evento dele.
+   *
+   * Antes de 28/Jul/2026 a coleta usava a situação do PAÍS, que vem do mercado
+   * primário. Nos EUA o primário é a presidencial de 2028, então um mercado sem
+   * relação nenhuma com as midterms decidia se elas eram coletadas ou não. Um
+   * primário que fechasse levaria junto a coleta de todos os outros do país.
+   */
+  status: 'live' | 'upcoming' | 'resolved' | 'no-data';
 }
 
 export interface CandidateSummary {
@@ -234,6 +243,7 @@ export async function aggregateElectionData(): Promise<AggregationResult> {
         isPrimary: entry.isPrimary,
         totalVolume: Math.round(event.totalVolume),
         candidates,
+        status: resolveStatus(event, entry),
       };
 
       marketSummaries.push(summary);

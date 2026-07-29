@@ -127,7 +127,9 @@ export async function persistMarketData(
 
   for (const country of countries) {
     for (const mkt of country.markets) {
-      const tier = classifyTier(mkt.slug, country.status)
+      // Situação DO MERCADO, não do país: ver MarketSummary.status.
+      const statusMkt = mkt.status ?? country.status
+      const tier = classifyTier(mkt.slug, statusMkt)
       const leadProb = mkt.candidates[0]?.probability ?? 0
 
       if (!(await shouldPersist(redis, mkt.slug, tier, leadProb))) {
@@ -137,19 +139,27 @@ export async function persistMarketData(
 
       try {
         // Upsert event
-        const eventPolyId = `${country.iso3}:${country.electionType}`
+        // Um evento POR MERCADO, não por país. Antes de 28/Jul/2026 a chave era
+        // o tipo do país, que vem do mercado primário: os 10 mercados americanos
+        // ficavam todos pendurados num evento chamado "USA:Presidential", de 2028.
+        // O agrupamento mentia e não servia para consultar "os mercados das
+        // midterms". Série de preço não era afetada, porque ela pende do mercado.
+        const eventPolyId = `${country.iso3}:${mkt.electionType}`
+        const titulo = `${country.countryName} — ${mkt.electionType}`
         const dbEvent = await prisma.marketEvent.upsert({
           where: { polymarketEventId: eventPolyId },
-          update: { title: `${country.countryName} — ${country.electionType}`, active: country.status === 'live', closed: country.status === 'resolved' },
-          create: { polymarketEventId: eventPolyId, title: `${country.countryName} — ${country.electionType}`, slug: mkt.slug, active: country.status === 'live', closed: country.status === 'resolved' },
+          update: { title: titulo, active: statusMkt === 'live', closed: statusMkt === 'resolved' },
+          create: { polymarketEventId: eventPolyId, title: titulo, slug: mkt.slug, active: statusMkt === 'live', closed: statusMkt === 'resolved' },
           select: { id: true },
         })
 
         // Upsert market
         const dbMarket = await prisma.market.upsert({
           where: { polymarketMarketId: mkt.slug },
-          update: { title: mkt.title || mkt.slug, active: country.status === 'live', closed: country.status === 'resolved' },
-          create: { polymarketMarketId: mkt.slug, eventId: dbEvent.id, slug: mkt.slug, title: mkt.title || mkt.slug, active: country.status === 'live', closed: country.status === 'resolved', category: country.electionType },
+          // eventId também no update: sem isso, mercado já existente ficaria
+          // preso ao agrupamento antigo para sempre.
+          update: { title: mkt.title || mkt.slug, eventId: dbEvent.id, active: statusMkt === 'live', closed: statusMkt === 'resolved', category: mkt.electionType },
+          create: { polymarketMarketId: mkt.slug, eventId: dbEvent.id, slug: mkt.slug, title: mkt.title || mkt.slug, active: statusMkt === 'live', closed: statusMkt === 'resolved', category: mkt.electionType },
           select: { id: true },
         })
 
