@@ -68,7 +68,23 @@ export interface AggregationResult {
 
 // ─── Candidate Name Extraction ──────────────────────────────────────
 
-function extractCandidateName(question: string): string {
+/**
+ * Sufixo estável derivado da pergunta INTEIRA. Serve só para o nome de
+ * emergência, e existe por um motivo específico: o nome vira `outcomeKey`, que
+ * é único por mercado, então dois nomes iguais COLAPSAM em uma faixa só e a
+ * distribuição perde linha sem erro nenhum aparecer. Cortar a pergunta em 50
+ * caracteres, que era o que a função fazia, deixava isso a um caractere de
+ * distância: as 11 perguntas de cadeiras do Senado só divergem depois do 38º.
+ * Determinístico de propósito, para a mesma pergunta cair sempre na mesma
+ * chave entre capturas.
+ */
+function sufixoEstavel(s: string): string {
+  let h = 5381;
+  for (let i = 0; i < s.length; i++) h = ((h * 33) ^ s.charCodeAt(i)) >>> 0;
+  return h.toString(36).slice(0, 6);
+}
+
+export function extractCandidateName(question: string): string {
   const q = question || '';
 
   // Inflation ranges
@@ -102,24 +118,45 @@ function extractCandidateName(question: string): string {
 
   // Cadeiras e governos: "hold between 190 and 194 House seats" / "fewer than 22
   // governorships" / "exactly 22 or 23 governorships" / "below 190 House seats"
+  //
+  // ⚠️ ACRESCENTADO 29/Jul/2026, depois de medir 14 rótulos quebrados na série.
+  // As três formas abaixo têm o NÚMERO NA FRENTE das palavras ("47 or fewer"),
+  // e as regras acima só olhavam palavra-antes-de-número, então escorregavam
+  // até o padrão genérico do fim da função. O mercado de cadeiras do Senado
+  // usa as três e por isso saiu com 11 de 11 rótulos ilegíveis.
+  //   · "47 or fewer Senate seats"  → ≤ 47 (inclui o 47, então NÃO é "<")
+  //   · "57 or more Senate seats"   → ≥ 57
+  //   · "exactly 49 Senate seats"   → número único, sem o "or" que a regra pedia
   const unidade = /House seats/.test(q) ? 'cad.' : /governorships/.test(q) ? 'gov.' : /Senate seats/.test(q) ? 'cad.' : null;
   if (unidade) {
     const entre = q.match(/between (\d+) and (\d+)/);
     if (entre) return `${entre[1]}–${entre[2]} ${unidade}`;
     const exato = q.match(/exactly (\d+) or (\d+)/);
     if (exato) return `${exato[1]} ou ${exato[2]} ${unidade}`;
+    const exatoUnico = q.match(/exactly (\d+)/);
+    if (exatoUnico) return `${exatoUnico[1]} ${unidade}`;
     const abaixo = q.match(/(?:below|fewer than|less than) (\d+)/);
     if (abaixo) return `< ${abaixo[1]} ${unidade}`;
-    const acima = q.match(/(?:above|more than|at least) (\d+)/);
+    const abaixoPos = q.match(/(\d+) or fewer/);
+    if (abaixoPos) return `≤ ${abaixoPos[1]} ${unidade}`;
+    const acimaPos = q.match(/(\d+) or more/);
+    if (acimaPos) return `≥ ${acimaPos[1]} ${unidade}`;
+    const aoMenos = q.match(/at least (\d+)/);
+    if (aoMenos) return `≥ ${aoMenos[1]} ${unidade}`;
+    const acima = q.match(/(?:above|more than) (\d+)/);
     if (acima) return `> ${acima[1]} ${unidade}`;
   }
 
   // Comparecimento: "between 85m and 90m votes cast" / "less than 85m votes cast"
+  // ⚠️ "at least 130m votes cast" acrescentado 29/Jul/2026: era a faixa que
+  // escorregava para o genérico `Will (there) be` e voltava com o nome "there".
   if (/votes cast/.test(q)) {
     const entre = q.match(/between (\d+)m and (\d+)m/);
     if (entre) return `${entre[1]}–${entre[2]}m votos`;
     const menos = q.match(/less than (\d+)m/);
     if (menos) return `< ${menos[1]}m votos`;
+    const aoMenos = q.match(/at least (\d+)m/);
+    if (aoMenos) return `≥ ${aoMenos[1]}m votos`;
     const mais = q.match(/more than (\d+)m/);
     if (mais) return `> ${mais[1]}m votos`;
   }
@@ -127,6 +164,18 @@ function extractCandidateName(question: string): string {
   // "Will any other outcome occur...": existe em todo mercado de faixa e é a
   // válvula de escape da distribuição. Precisa de nome próprio e curto.
   if (/any other outcome/i.test(q)) return 'Outro resultado';
+
+  // ── Midterms EUA, mercados BINÁRIOS. Acrescentado 29/Jul/2026 ──────────────
+  //
+  // Estes três não são faixa e por isso passaram batidos na revisão de 28/Jul,
+  // mas caíam no nome de emergência igual: ficavam gravados como a pergunta
+  // cortada em 50 caracteres. Precisam de regra própria por um motivo que só
+  // apareceu no ensaio: o mercado do Senado tem série desde 14/Abr, e deixar o
+  // rótulo depender do nome de emergência significa que qualquer mudança nele
+  // parte a série em duas.
+  const controle = q.match(/Will the (Democratic|Republican) Party control the (?:House|Senate)/);
+  if (controle) return controle[1] === 'Democratic' ? 'Democratas' : 'Republicanos';
+  if (/Midterm Elections happen as scheduled/i.test(q)) return 'Acontece no prazo';
 
   // Senate / party markets
   const partyMatch = q.match(/Will (.+?) \((\w+)\) win the most seats/);
@@ -144,7 +193,10 @@ function extractCandidateName(question: string): string {
     return name.trim();
   }
 
-  return q.slice(0, 50);
+  // Nome de emergência. Não é só o começo da pergunta: leva um sufixo derivado
+  // da pergunta inteira, senão duas perguntas com o mesmo início viram a mesma
+  // chave e as faixas colapsam caladas. Ver `sufixoEstavel`.
+  return `${q.slice(0, 40).trim()}…#${sufixoEstavel(q)}`;
 }
 
 // ─── Market → Candidates ────────────────────────────────────────────
