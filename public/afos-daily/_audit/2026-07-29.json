@@ -1,0 +1,46 @@
+{
+  "date": "2026-07-29",
+  "capture": {
+    "fetchedAtUTC": "2026-07-29T22:50:31Z",
+    "brt": "29/07/2026, 19:50",
+    "guardRounds": 3,
+    "guardResult": "3a rodada reprovada APENAS no book de Michelle Bolsonaro (0,35% a 0,55%); demais books confirmados e publicados como firmes",
+    "rebaselinedFrom": "18:47 (commit 9fcbdbf)",
+    "rebaselineTrigger": "gate de enquadramento: impeachment de ministro do STF saiu de 2,85% para 3,35%, invalidando a narrativa de 'praticamente imobilidade' publicada as 18:47"
+  },
+  "factCheckGate": {
+    "eventosAltoImpacto": 4,
+    "eventos": [
+      { "evento": "Defesa de Jair Bolsonaro diz ao STF que nao autorizou o video de IA", "crossRef": "video de IA aparece em 25/Jul (a convencao) = continuidade; a manifestacao da defesa e novidade de 29/Jul", "fontes": ["CNN Brasil (blog Gustavo Uribe)", "Metropoles", "Folha de S.Paulo"], "tipo": "evento", "decisao": "incorporar", "correcaoAplicada": "o /atualizar de 18:47 dizia que a resposta coloca a peca 'em contradicao com o proprio pai'. As fontes dizem que a defesa afirmou que ele NAO SE OPOE a familiares produzirem. Nao e desmentido, e defesa contra descumprimento de cautelar." },
+      { "evento": "Moraes deu 48h em 28/Jul e desenhou duas hipoteses excludentes", "fontes": ["Metropoles", "InfoMoney", "Terra"], "tipo": "evento", "decisao": "incorporar", "achado": "se autorizou = cautelar violada com risco de regime fechado; se nao autorizou = deep fake eleitoral com responsabilizacao de Flavio e do PL. A resposta da defesa move a exposicao do pai para o filho e o partido." },
+      { "evento": "Mendonca autorizou cooperacao internacional para rastrear bens de Vorcaro", "crossRef": "'cooperacao internacional' = zero mencoes nas 7 dailies anteriores", "fontes": ["Gazeta do Povo", "Imirante", "Diario de Pernambuco", "Tribuna da Internet"], "tipo": "evento", "decisao": "incorporar", "correcaoAplicada": "decisao ASSINADA EM MAIO, publica apenas em 28/Jul. Via MLAT conduzida pelo DRCI. O /atualizar tratou o ato como se fosse da vespera." },
+      { "evento": "Prorrogacao da emergencia nacional americana sobre o Brasil", "fontes": ["InfoMoney", "Estado de Minas", "Noticias ao Minuto"], "tipo": "evento", "decisao": "incorporar", "correcaoAplicada": "a daily de 28/Jul afirmou que a emergencia e a base juridica das sobretaxas. FALSO: a tarifa de 40% via IEEPA caiu em fevereiro de 2026 apos decisao da Suprema Corte americana; vigoram 25% pela Secao 301 mais 12,5% por investigacao de trabalho forcado. A leitura de 'preparacao de novas sancoes' e avaliacao do governo brasileiro, nao fato." }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "Cleitinho fora do governo de MG linkado apenas ao G1, apesar de cobertura ampla. Nao e alegacao de risco nem sustenta leitura de mercado. Todas as ancoras do dia tem 2+ fontes independentes.",
+    "numericalErrors": "reconcile-claims.ts OK, tolerancia +-0,05pp",
+    "fontesInventadas": "3 conferidas ao acaso por fetch com corpo lido: CNN Brasil (video de IA), Gazeta do Povo (Vorcaro), InfoMoney (emergencia). Existem.",
+    "quotesLiterais": "nenhuma. A peticao da defesa e parafraseada, nao citada entre aspas, por falta de transcricao confirmada em duas fontes.",
+    "causacaoEspuria": "evitada e declarada em 4 pontos: queda de Lula NAO atribuida a AtlasIntel; alta do impeachment NAO atribuida ao caso do video; alta de Caiado NAO atribuida ao aval de Tarcisio; 'preparacao de novas sancoes' entra como avaliacao de governo.",
+    "verbosCriticos": "'nao autorizou' datado com a ressalva de que nao se opoe; 'prisao domiciliar' com o risco de regime fechado atribuido a Moraes; 'autorizou' (Mendonca) com a data real do ato, maio.",
+    "decisao": "prosseguir para publicacao"
+  },
+  "correcoesDeSerie": [
+    "base juridica das sobretaxas americanas (daily de 28/Jul)",
+    "data da decisao sobre rastreamento de bens de Vorcaro (daily de 28/Jul)"
+  ],
+  "gates": {
+    "validateAfosDaily": "OK nos 3 idiomas, 1 warning de densidade de links (64% contra regua de 80%)",
+    "gateNumericoDaily": "169 tokens, zero divergencia em PT x EN e PT x ES",
+    "homoglifos": "zero nos 3 arquivos",
+    "tldr": "3 bullets nos 3 idiomas",
+    "decimais": "zero ocorrencia indevida",
+    "validatePollsData": "OK",
+    "checkLocaleJson": "5/5 nos 6 arquivos traduzidos"
+  },
+  "ressalvas": [
+    "densidade de links em 64% nos 3 idiomas, contra a regua editorial de 80%. Warning, nao erro.",
+    "no ES o link do Dino aponta para o Valor em vez do O Globo, porque o gate de URL tomou rate-limit no host do O Globo (HTTP 503 transitorio, confirmado 200 em 3 tentativas seguintes)."
+  ]
+}
