@@ -1,0 +1,88 @@
+{
+  "date": "2026-07-30",
+  "updatedAt": "30/07/2026, 17:08",
+  "capturaPolymarket": {
+    "fetchedAt": "2026-07-30T20:08:43.855Z",
+    "trava": "scripts/capture-guard.ts, UMA rodada, APROVADA sem divergência nos cinco books cobertos",
+    "observacao": "Primeira aprovação de primeira desde 28/Jul. Nas duas rodadas anteriores a trava bloqueou.",
+    "refetchDaily": {
+      "fetchedAt": "2026-07-30T20:49:13.384Z",
+      "delta": "Lula 0,00pp | Flávio 0,00pp | Renan 0,00pp | gap 0,00pp | vol total 116,58M -> 116,61M",
+      "gateRebaseline": "NÃO disparou. Baseline das 17:08 mantida."
+    }
+  },
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "Federação Brasil da Esperança protocola representação no TSE contra rede de perfis que usa IA contra Lula",
+        "verificacao1": "'inteligência artificial' aparece em 25/Jul e 29/Jul -> eixo é CONTINUIDADE, mas o ato de um partido protocolar é NOVIDADE",
+        "verificacao2": "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/7/30/pt-acusa-flavio-de-colaborar-com-rede-orquestrada-de-perfis-que-usam-ia-para-atacar-lula | data=2026-07-30 | tipo=evento",
+        "segundaFonte": "https://www.metropoles.com/colunas/manoela-alcantara/kassio-vai-relatar-acao-do-pt-sobre-ia-para-desinformacao-contra-lula + O Globo + CNN Brasil + pt.org.br + Revista Fórum + Brasil 247",
+        "divergenciaEntreFontes": "contagem de perfis: 31 na maior parte da cobertura, 'ao menos 32' em O Tempo. Publicado como 31 COM a variação declarada no texto.",
+        "precisaoCorrigida": "os 10 milhões de alcance são o total SOMADO aos seguidores dos políticos nomeados, não o da rede sozinha. Corrigido na redação.",
+        "decisao": "incorporar, com todos os números atribuídos à federação"
+      },
+      {
+        "evento": "Ministros do TSE veem interferência de Moraes; nenhum grupo interno pretende sanção severa a Flávio",
+        "verificacao1": "29/Jul a daily registrou 'ministros do TSE veem ABUSO e querem frear IA'. O enquadramento MUDOU.",
+        "verificacao2": "https://www.cnnbrasil.com.br/eleicoes/tse-ve-interferencia-de-moraes-e-ordem-sobre-ia-de-bolsonaro-gera-mal-estar/ | data=2026-07-30 | tipo=evento/apuração",
+        "segundaFonte": "Folha de S.Paulo (matéria original) + Jornal de Brasília + Tribuna Online",
+        "ressalva": "as replicações podem derivar da mesma apuração da Folha. Texto escreve 'segundo a reportagem' em vez de afirmar.",
+        "decisao": "incorporar, declarando no corpo que CORRIGE o enquadramento de 29/Jul"
+      },
+      {
+        "evento": "PF avalia pedir à Interpol inclusão de Flávio Bolsonaro e Daniel Vorcaro na difusão prateada",
+        "verificacao1": "caso Master é continuidade, mas este ato é NOVIDADE e não aparece em nenhuma das 7 dailies anteriores",
+        "verificacao2": "https://oglobo.globo.com/politica/noticia/2026/07/30/pf-avalia-incluir-flavio-bolsonaro-em-lista-da-interpol-para-rastrear-dinheiro-do-filme-dark-horse-no-exterior.ghtml | data=2026-07-30 | tipo=evento",
+        "segundaFonte": "InfoMoney + Gazeta do Povo + Brasil 247 + Revista Fórum",
+        "travaDeVerbo": "a PF AVALIA, não pediu, e a Interpol não decidiu. Escrito duas vezes no corpo. Difusão PRATEADA localiza bens; a VERMELHA é que prende. Distinção explicitada ao leitor.",
+        "decisao": "incorporar",
+        "consequencia": "ESTE ACHADO CORRIGIU O PAINEL JÁ PUBLICADO. O card do Master das 17:08 dizia que a quinta 'não trouxe fato novo'. Corrigidos bancoMaster.text1, bancoMaster.conclusao e stf.mendonca nos 3 idiomas, commit 42910c9."
+      },
+      {
+        "evento": "PSB oficializa Geraldo Alckmin como vice na chapa de Lula",
+        "verificacao1": "Alckmin aparecia em 29/Jul só como preço de mercado. O ato é novidade.",
+        "verificacao2": "G1 | data=2026-07-29 (quarta), NÃO 30/Jul | tipo=evento",
+        "segundaFonte": "Valor Econômico + Exame + NSC Total",
+        "decisao": "incorporar COM a data correta de 29/Jul"
+      },
+      {
+        "evento": "PF teria recorrido à AGU após decisões de Mendonça",
+        "verificacao2": "fonte única e de baixa qualidade editorial",
+        "decisao": "NÃO incorporar. Registrado no painel que a informação foi vista e não confirmada em segunda fonte independente."
+      }
+    ]
+  },
+  "adversarialPass": {
+    "1_singleSource": [
+      "Kassio Nunes Marques sorteado relator: só no Metrópoles. Mantido com atribuição explícita ao veículo.",
+      "'nenhum grupo interno do TSE pretende sanção severa a Flávio': nasce da apuração da Folha, replicada pela CNN Brasil. Texto usa 'segundo a reportagem'.",
+      "DEIXADO DE FORA: 'Léo Índio foragido na Argentina', que aparece em uma fonte só e não é necessário à síntese."
+    ],
+    "2_numericalErrors": "scripts/reconcile-claims.ts 2026-07-30 -> [OK], todos os claims batem com o JSON dentro de ±0,05pp",
+    "3_fontesInventadas": "três conferidas por fetch real e não por manchete: Metrópoles (Kassio), O Tempo (representação), Gazeta do Povo (Interpol). Todas existem e dizem o que é citado.",
+    "4_quotesLiterais": "uma só, 'ninguém vai meter o bedelho nas eleições', idêntica à manchete da Folha, com link",
+    "5_causacaoEspuria": "nenhuma. O texto afirma que o dia mais denso em fato institucional teve o mercado do impeachment andando para o LADO CONTRÁRIO, e que não há evento triggador para a alta de 1,00pp de Lula.",
+    "6_verbosCriticos": "varredura automática achou só 'indicou', em contexto de suplente de Senado, sem relação com o risco do codebook. Corrigido para trazer a data de 29/Jul. Os dois verbos de risco real do dia estão travados: 'a PF avalia, não pediu' e a distinção prateada x vermelha. Zero datas relativas.",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "urlGate": "BLOQUEOU 1 vez: a URL do UOL tinha sido remontada a partir de saída truncada de terminal e devolvia HTTP 400. Lida inteira do news-cache e o item acabou saindo da síntese.",
+    "gateNumericoTresIdiomas": "61 números idênticos em pt-BR, EN e ES, após normalizar magnitude (USD 83 mil = USD 83,000 = USD 83.000)",
+    "cincoChecagensLocale": "limpas nos três: nenhuma âncora de glossário morta, nenhum link cruzando locale, nenhum homóglifo cirílico, separador decimal consistente, tldr com exatamente 3 bullets",
+    "validadorDaily": "OK nos três idiomas",
+    "densidadeDeLinks": "60% contra a régua de 80%. Warning, não erro: são os parágrafos de leitura de método, que não citam matéria porque não descrevem fato de imprensa."
+  },
+  "ressalvasPublicadas": [
+    "O gap abriu por movimento de um lado só, então NÃO houve reprecificação da candidatura de Flávio",
+    "Lula IGUALA o topo da série pela terceira vez, sem superá-lo em nenhuma das três",
+    "O aperto da urna só aparece trocando de régua entre casas; dentro da PoderData o gap está parado em 6pp desde 16/Jul",
+    "A daily DESFAZ o próprio achado de 29/Jul sobre a convergência de Renan Santos",
+    "Empates técnicos de 2º turno da PoderData contra Zema e Caiado NÃO foram publicados por falta de confirmação em fonte primária",
+    "Movimento grande em book pequeno (PL no Senado, inflação) é registro, não sinal"
+  ],
+  "densidade": {
+    "palavrasCorpoSemTabelaSemUrl": 1873,
+    "notaSobreARegua": "A skill pede 600 a 900 palavras. A série inteira está no dobro: 27/Jul 1.883, 28/Jul 1.926, 29/Jul 2.395. A de 30/Jul é a mais curta das quatro. Descolamento entre régua escrita e prática levado ao André."
+  }
+}
