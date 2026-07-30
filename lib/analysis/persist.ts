@@ -1,9 +1,13 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'us-generic-ballot'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'us-generic-ballot' | 'us-press'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
+  if (type === 'us-press') {
+    const q = data.qualidade as { publicados?: number; lidos?: number; foraDaLista?: number; veiculosRepresentados?: number } | undefined
+    return `Imprensa EUA: ${q?.publicados ?? 0} matérias de ${q?.veiculosRepresentados ?? 0} veículos | ${q?.lidos ?? 0} lidos, ${q?.foraDaLista ?? 0} fora da lista`
+  }
   if (type === 'us-generic-ballot') {
     const m = data.mediaAfos as { dem?: number; rep?: number; vantagemDem?: number; nPesquisas?: number; nInstitutos?: number } | null
     const q = data.qualidade as { publicadas?: number; linhasLidas?: number } | undefined
@@ -27,6 +31,7 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
 
 export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
   if (type === 'us-generic-ballot') return `US generic ballot — ${updatedAtLabel}`
+  if (type === 'us-press') return `Imprensa EUA — ${updatedAtLabel}`
   if (type === 'analysis-cards') return `Análise Cards — ${updatedAtLabel}`
   if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
   if (type === 'afos-daily') return `AFOS Daily — ${updatedAtLabel}`

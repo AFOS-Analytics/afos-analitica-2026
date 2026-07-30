@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { UsDashboardClient } from './UsDashboardClient';
 import { loadUsPollsDataFresh } from '../../../../lib/dashboard/us-static-data';
+import { loadUsPressData } from '../../../../lib/dashboard/us-press-data';
 import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader';
 import { buildMetadata } from '../../../../lib/seo/metadata';
 import type { Locale } from '../../../../lib/i18n/config';
@@ -55,6 +56,7 @@ export default async function UsDashboardPage() {
   return (
     <UsDashboardClient
       pollsData={await loadUsPollsDataFresh()}
+      pressData={await loadUsPressData()}
       context={(usaCase as { context?: unknown }).context as CountryContext | undefined}
     />
   );

@@ -12,6 +12,8 @@ import { CountrySelector } from '../../../components/CountrySelector';
 import { UsPollsSection } from '../../../components/UsPollsSection';
 import { UsMarketSection } from '../../../components/UsMarketSection';
 import { UsLimitationsSection } from '../../../components/UsLimitationsSection';
+import { UsPressSection } from '../../../components/UsPressSection';
+import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
 import type { CountryContext, CountryDivergence } from '../../../../lib/country-data';
@@ -51,7 +53,7 @@ const T = {
   },
 };
 
-function UsDashboardContent({ pollsData, context }: { pollsData: UsPollsData | null; context?: CountryContext }) {
+function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressData | null }) {
   const { locale } = useTranslation();
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T;
   const t = T[tKey];
@@ -210,6 +212,8 @@ function UsDashboardContent({ pollsData, context }: { pollsData: UsPollsData | n
           </section>
         )}
 
+        <UsPressSection data={pressData} />
+
         <UsLimitationsSection data={pollsData} />
       </main>
 
@@ -218,10 +222,10 @@ function UsDashboardContent({ pollsData, context }: { pollsData: UsPollsData | n
   );
 }
 
-export function UsDashboardClient({ pollsData, context }: { pollsData: UsPollsData | null; context?: CountryContext }) {
+export function UsDashboardClient({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressData | null }) {
   return (
     <VisitorStateProvider>
-      <UsDashboardContent pollsData={pollsData} context={context} />
+      <UsDashboardContent pollsData={pollsData} context={context} pressData={pressData} />
     </VisitorStateProvider>
   );
 }
