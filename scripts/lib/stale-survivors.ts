@@ -110,13 +110,52 @@ function checkSelfConsistency(atual: any): string[] {
   return erros
 }
 
+/**
+ * O MESMO preço aparece em TRÊS campos de cada candidato: `polymarket` (string
+ * exibida, vírgula decimal), `odds` (número) e `value` (número). Nada conferia
+ * se os três concordam, e cada consumidor lê um campo diferente:
+ *
+ *   - o dashboard lê `polymarket`
+ *   - o grafo de divergência lê `percentage` x `odds`
+ *   - o EXPORTADOR DO HUGGING FACE lê `c.value ?? c.polymarket ?? c.odds`,
+ *     ou seja, `value` tem PRIORIDADE
+ *
+ * Consequência real, achada em 30/Jul/2026: atualizei `polymarket` e `odds` e
+ * NÃO atualizei `value`, e o dataset acadêmico publicado no HF saiu com o preço
+ * do dia anterior em 5 dos 7 candidatos, enquanto o site mostrava o correto.
+ * O mesmo tipo de desencontro já tinha escapado em 29/Jul, com Renan em
+ * `polymarket="8,70%"` e `odds=8.6`.
+ *
+ * Campo que alimenta consumidor externo e que ninguém confere vira dado errado
+ * publicado em silêncio. Esta checagem existe para isso não se repetir.
+ */
+function checkPrecoTriplo(atual: any): string[] {
+  const erros: string[] = []
+  for (const c of atual?.polymarketComparison?.candidates ?? []) {
+    const str = parseNumeric(String(c?.polymarket ?? '').replace('%', ''), 'pt')
+    if (str === null) continue
+    for (const campo of ['odds', 'value'] as const) {
+      if (c?.[campo] == null) continue
+      const n = Number(c[campo])
+      if (!Number.isFinite(n)) { erros.push(`INCONSISTENTE ${c.name}.${campo}: não é número (${c[campo]})`); continue }
+      if (Math.abs(n - str) >= 0.005) {
+        erros.push(
+          `INCONSISTENTE ${c.name}: polymarket="${c.polymarket}" mas ${campo}=${n}. ` +
+          `Os três campos do mesmo preço têm de concordar; \`value\` é o que o exportador do Hugging Face lê primeiro.`
+        )
+      }
+    }
+  }
+  return erros
+}
+
 export function checkStaleSurvivors(
   atual: any,
   arquivo = 'public/polls-data.json',
   baselineRef?: string,
 ): string[] {
   // Roda sempre, mesmo sem git: é a rede mais confiável das duas.
-  const erros: string[] = checkSelfConsistency(atual)
+  const erros: string[] = [...checkSelfConsistency(atual), ...checkPrecoTriplo(atual)]
 
   const anterior = lerRevisaoAnterior(arquivo, baselineRef)
   if (!anterior) return erros
