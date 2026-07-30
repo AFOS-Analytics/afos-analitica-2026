@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { UsDashboardClient } from './UsDashboardClient';
-import { loadUsPollsData } from '../../../../lib/dashboard/us-static-data';
+import { loadUsPollsDataFresh } from '../../../../lib/dashboard/us-static-data';
 import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader';
 import { buildMetadata } from '../../../../lib/seo/metadata';
 import type { Locale } from '../../../../lib/i18n/config';
@@ -51,10 +51,10 @@ export const revalidate = 7200;
 // indicadores DO PAÍS, não da eleição, então manter duas cópias só criaria
 // chance de divergirem. Mesma safra do contexto do Brasil: WGI, população, PIB
 // e inflação em 2024.
-export default function UsDashboardPage() {
+export default async function UsDashboardPage() {
   return (
     <UsDashboardClient
-      pollsData={loadUsPollsData()}
+      pollsData={await loadUsPollsDataFresh()}
       context={(usaCase as { context?: unknown }).context as CountryContext | undefined}
     />
   );

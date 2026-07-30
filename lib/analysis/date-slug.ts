@@ -5,7 +5,12 @@ export function deriveDateSlug(
   data: Record<string, unknown>,
   fallbackIsoDate?: string,
 ): string {
-  const updatedAt = typeof data.updatedAt === 'string' ? data.updatedAt : undefined
+  // `lastUpdate` cobre o generic ballot dos EUA, que não tem `updatedAt`. Sem
+  // isso o slug cairia sempre no fallback do relógio, e uma rodada logo depois
+  // da virada do dia UTC criaria registro novo em vez de atualizar o do dia.
+  const updatedAt = typeof data.updatedAt === 'string' ? data.updatedAt
+    : typeof data.lastUpdate === 'string' ? data.lastUpdate
+    : undefined
 
   if (updatedAt) {
     const pt = updatedAt.match(PT_BR_DATE)

@@ -1,9 +1,15 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'us-generic-ballot'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
+  if (type === 'us-generic-ballot') {
+    const m = data.mediaAfos as { dem?: number; rep?: number; vantagemDem?: number; nPesquisas?: number; nInstitutos?: number } | null
+    const q = data.qualidade as { publicadas?: number; linhasLidas?: number } | undefined
+    if (!m) return `Generic ballot sem média | ${q?.publicadas ?? 0} de ${q?.linhasLidas ?? 0} linhas`
+    return `Generic ballot: Dem ${m.dem}% x Rep ${m.rep}% (D+${m.vantagemDem}) sobre ${m.nPesquisas} pesquisas de ${m.nInstitutos} institutos | ${q?.publicadas ?? 0} de ${q?.linhasLidas ?? 0} linhas lidas`
+  }
   if (type === 'analysis-cards') {
     const cards = data.cards as Record<string, unknown> | undefined
     if (!cards) return 'Sem dados'
@@ -20,6 +26,7 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
 }
 
 export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
+  if (type === 'us-generic-ballot') return `US generic ballot — ${updatedAtLabel}`
   if (type === 'analysis-cards') return `Análise Cards — ${updatedAtLabel}`
   if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
   if (type === 'afos-daily') return `AFOS Daily — ${updatedAtLabel}`
