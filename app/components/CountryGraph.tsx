@@ -88,9 +88,10 @@ interface Lbl {
   gov: string; eco: string; edu: string; govLabels: Record<string, string>
   pop: string; gdp: string; gdppc: string; infl: string; eduSpend: string; eduSpendSub: (s: string) => string; eduYears: string; eduYearsSub: (s: string) => string
   mkt: (s: string) => string; pollPct: (s: string) => string; result: (w: string) => string
+  mktMudo: (s: string) => string; pollMudo: (s: string) => string
   college: string; collegeSub: string; popular: string; popularSub: string
   anchors: { debate: string; attempt: string; dropout: string; eve: string }
-  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string }
+  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string }
 }
 
 const LBL: Record<string, Lbl> = {
@@ -100,9 +101,10 @@ const LBL: Record<string, Lbl> = {
     govLabels: { political_stability: 'Estabilidade política', voice_accountability: 'Voz e democracia', rule_of_law: 'Estado de direito', government_effectiveness: 'Efetividade do governo', regulatory_quality: 'Qualidade regulatória', control_of_corruption: 'Controle de corrupção' },
     pop: 'População', gdp: 'PIB', gdppc: 'PIB per capita', infl: 'Inflação', eduSpend: 'Gasto em educação', eduSpendSub: (s) => `${s} do PIB`, eduYears: 'Anos de escola', eduYearsSub: (s) => `${s} anos`,
     mkt: (s) => `mercado ${s}`, pollPct: (s) => `pesquisa ${s}`, result: (w) => `Resultado real: ${w} venceu`,
+    mktMudo: (s) => `controle ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colégio eleitoral', collegeSub: '~US$ 3,7 bi · acertou', popular: 'Voto popular', popularSub: 'deu Harris ~74% · errou',
     anchors: { debate: 'Debate Biden×Trump (27/jun)', attempt: 'Atentado a Trump (13/jul)', dropout: 'Biden sai, Harris entra (21/jul)', eve: 'Véspera da eleição (04/nov)' },
-    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom' },
+    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes' },
   },
   en: {
     market: 'Prediction markets', poll: 'Polls', pollsN: (n) => `${n} polls`, press: 'Press', pressSub: 'archived anchors (Wayback)', ctx: 'Structural context',
@@ -110,9 +112,10 @@ const LBL: Record<string, Lbl> = {
     govLabels: { political_stability: 'Political stability', voice_accountability: 'Voice & accountability', rule_of_law: 'Rule of law', government_effectiveness: 'Government effectiveness', regulatory_quality: 'Regulatory quality', control_of_corruption: 'Control of corruption' },
     pop: 'Population', gdp: 'GDP', gdppc: 'GDP per capita', infl: 'Inflation', eduSpend: 'Education spending', eduSpendSub: (s) => `${s} of GDP`, eduYears: 'Years of schooling', eduYearsSub: (s) => `${s} yrs`,
     mkt: (s) => `market ${s}`, pollPct: (s) => `poll ${s}`, result: (w) => `Real result: ${w} won`,
+    mktMudo: (s) => `control ${s}`, pollMudo: (s) => `vote ${s}`,
     college: 'Electoral college', collegeSub: '~US$3.7bn · correct', popular: 'Popular vote', popularSub: 'gave Harris ~74% · wrong',
     anchors: { debate: 'Biden×Trump debate (Jun 27)', attempt: 'Trump assassination attempt (Jul 13)', dropout: 'Biden drops out, Harris in (Jul 21)', eve: 'Election eve (Nov 4)' },
-    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom' },
+    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities' },
   },
   es: {
     market: 'Mercados de predicción', poll: 'Encuestas', pollsN: (n) => `${n} encuestas`, press: 'Prensa', pressSub: 'anclas archivadas (Wayback)', ctx: 'Contexto estructural',
@@ -120,15 +123,16 @@ const LBL: Record<string, Lbl> = {
     govLabels: { political_stability: 'Estabilidad política', voice_accountability: 'Voz y rendición de cuentas', rule_of_law: 'Estado de derecho', government_effectiveness: 'Efectividad del gobierno', regulatory_quality: 'Calidad regulatoria', control_of_corruption: 'Control de corrupción' },
     pop: 'Población', gdp: 'PIB', gdppc: 'PIB per cápita', infl: 'Inflación', eduSpend: 'Gasto en educación', eduSpendSub: (s) => `${s} del PIB`, eduYears: 'Años de escolaridad', eduYearsSub: (s) => `${s} años`,
     mkt: (s) => `mercado ${s}`, pollPct: (s) => `encuesta ${s}`, result: (w) => `Resultado real: ganó ${w}`,
+    mktMudo: (s) => `control ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colegio electoral', collegeSub: '~US$ 3,7 mil M · acertó', popular: 'Voto popular', popularSub: 'dio a Harris ~74% · erró',
     anchors: { debate: 'Debate Biden×Trump (27 jun)', attempt: 'Atentado a Trump (13 jul)', dropout: 'Biden se retira, entra Harris (21 jul)', eve: 'Víspera electoral (4 nov)' },
-    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom' },
+    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas' },
   },
 }
 
 const TAG: Record<string, string> = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' }
 
-function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: string, dec: (v: number | string) => string, navGroups: NavGroup[] = [], dataLinks: DataLinks = {}): { nodes: GNode[]; links: GLink[] } {
+function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: string, dec: (v: number | string) => string, navGroups: NavGroup[] = [], dataLinks: DataLinks = {}, mudo = false): { nodes: GNode[]; links: GLink[] } {
   const nodes: GNode[] = []
   const links: GLink[] = []
   const add = (n: GNode) => { nodes.push(n); return n.id }
@@ -157,7 +161,12 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   d.rows.forEach((row, i) => {
     const cid = `c_${row.candidate}`
     const col = CAND_COLOR[row.candidate] || PALETTE[i % PALETTE.length]
-    add({ id: cid, label: row.candidate, sub: `${lbl.mkt(dec(row.market_pct) + '%')} · ${lbl.pollPct(dec(row.poll_pct) + '%')}`, type: 'candidate', r: 12 + Math.min(13, row.market_pct / 5), color: col, href: dataLinks.candidate })
+    add({ id: cid, label: row.candidate, sub: mudo
+      // Com a aresta muda, as duas pontas medem grandezas DIFERENTES, então o
+      // rótulo do nó tem de dizer QUAL é cada uma. "mercado 85,5% · pesquisa 47,2%"
+      // convida a subtrair; "controle 85,5% · voto 47,2%" não deixa.
+      ? `${lbl.mktMudo(dec(row.market_pct) + '%')} · ${lbl.pollMudo(dec(row.poll_pct) + '%')}`
+      : `${lbl.mkt(dec(row.market_pct) + '%')} · ${lbl.pollPct(dec(row.poll_pct) + '%')}`, type: 'candidate', r: 12 + Math.min(13, row.market_pct / 5), color: col, href: dataLinks.candidate })
     links.push({ source: marketParent, target: cid, kind: 'divergence', div: row.divergence_pp, w: 1.5 + Math.min(1.3, Math.abs(row.divergence_pp) / 6) })
     links.push({ source: 'L_poll', target: cid, kind: 'poll' })
   })
@@ -239,7 +248,22 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   return { nodes, links }
 }
 
-export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean }) {
+/**
+ * ⚠️ `divergenciaMuda` existe por uma decisão de MÉTODO, não de estilo.
+ *
+ * A estrela deste grafo é a aresta de divergência com o Δpp em destaque. Ela
+ * vale onde as duas pontas medem A MESMA GRANDEZA, que é o caso do Brasil e dos
+ * casos validados. Nas midterms dos EUA não é: o mercado precifica a
+ * probabilidade de um partido controlar a casa e a pesquisa mede vantagem em
+ * pontos de voto. Subtrair produz número sem significado, e exibi-lo na peça
+ * mais chamativa da página contradiria a ressalva escrita logo acima.
+ *
+ * Com a flag ligada a aresta CONTINUA existindo, porque a relação existe, mas
+ * fica tracejada, cinza e MUDA, com rótulo fixo em vez de número. Por ser a
+ * única sem número, ela chama atenção justamente para a explicação. Foi assim
+ * que o André aprovou no mockup de 27/Jul.
+ */
+export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = false, navGroups = [], onNav, dataLinks = {}, dim = false, divergenciaMuda = false }: { data: CountryDivergence; electionLabel: string; locale?: string; isBlue?: boolean; navGroups?: NavGroup[]; onNav?: (action: string) => void; dataLinks?: DataLinks; dim?: boolean; divergenciaMuda?: boolean }) {
   const ref = useRef<SVGSVGElement | null>(null)
   const navCount = navGroups.reduce((a, g) => a + g.items.length, 0)
   // "candDense" = grafo de PAÍS com muitos candidatos (5+) e poucos nós de navegação:
@@ -257,7 +281,7 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     const lbl = LBL[locale] || LBL['en']
     const tag = TAG[locale] || 'en-US'
     const dec = (v: number | string) => locale === 'en' ? String(v) : String(v).replace('.', ',')
-    const { nodes, links } = buildGraph(data, electionLabel, lbl, tag, dec, navGroups, dataLinks)
+    const { nodes, links } = buildGraph(data, electionLabel, lbl, tag, dec, navGroups, dataLinks, divergenciaMuda)
     const pal = isBlue
       ? { tree: '#3f6cb0', label: '#f1f5f9', halo: '#082a5e', sub: '#93c5fd', nodeStroke: '#0a3d8f' }
       : { tree: '#cbd5e1', label: '#1e293b', halo: '#ffffff', sub: '#64748b', nodeStroke: '#ffffff' }
@@ -272,25 +296,26 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     // hover estilo Obsidian: o nó e os fios conectados acendem em azul reluzente, o resto esmaece
     const HL = '#2563eb'
     const eid = (x: unknown): string => (typeof x === 'object' && x ? (x as GNode).id : (x as string))
-    const baseStroke = (l: GLink) => l.kind === 'divergence' ? divColor(l.div ?? 0) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : l.kind === 'nav' ? (isBlue ? '#6366f1' : '#c7d2fe') : pal.tree
+    const CINZA_MUDO = '#9ca3af'
+    const baseStroke = (l: GLink) => l.kind === 'divergence' ? (divergenciaMuda ? CINZA_MUDO : divColor(l.div ?? 0)) : l.kind === 'poll' ? '#c4b5fd' : l.kind === 'correct' ? '#16a34a' : l.kind === 'wrong' ? '#ef4444' : l.kind === 'nav' ? (isBlue ? '#6366f1' : '#c7d2fe') : pal.tree
     const baseWidth = (l: GLink) => l.kind === 'divergence' ? (l.w ?? 2) : l.kind === 'correct' ? 3 : 1.5
-    const baseOpacity = (l: GLink) => l.kind === 'divergence' ? 0.95 : l.kind === 'tree' ? 0.45 : 0.8
+    const baseOpacity = (l: GLink) => l.kind === 'divergence' ? (divergenciaMuda ? 0.7 : 0.95) : l.kind === 'tree' ? 0.45 : 0.8
 
     const linkSel = root.append('g').attr('fill', 'none')
       .selectAll('line').data(links).join('line')
       .attr('stroke', baseStroke)
       .attr('stroke-width', baseWidth)
-      .attr('stroke-dasharray', (l) => l.kind === 'poll' || l.kind === 'wrong' ? '4 4' : null)
+      .attr('stroke-dasharray', (l) => (divergenciaMuda && l.kind === 'divergence') ? '6 5' : l.kind === 'poll' || l.kind === 'wrong' ? '4 4' : null)
       .attr('stroke-linecap', 'round')
       .attr('opacity', baseOpacity)
 
     // rótulo Δpp sobre a aresta de divergência (o cruzamento mercado × pesquisa, a estrela do AFOS)
     const divLinks = links.filter((l) => l.kind === 'divergence')
     const linkLabelSel = root.append('g').selectAll<SVGTextElement, GLink>('text').data(divLinks).join('text')
-      .text((l) => `Δ ${dec(Math.abs(l.div ?? 0).toFixed(1))}pp`)
+      .text((l) => divergenciaMuda ? lbl.legend.semDelta : `Δ ${dec(Math.abs(l.div ?? 0).toFixed(1))}pp`)
       .attr('text-anchor', 'middle').attr('dy', -4)
-      .attr('font-size', 12.5).attr('font-weight', 800)
-      .attr('fill', (l) => divColor(l.div ?? 0))
+      .attr('font-size', divergenciaMuda ? 11 : 12.5).attr('font-weight', divergenciaMuda ? 600 : 800)
+      .attr('fill', (l) => divergenciaMuda ? CINZA_MUDO : divColor(l.div ?? 0))
       .attr('paint-order', 'stroke').attr('stroke', '#fff').attr('stroke-width', 4)
 
     const nodeSel = root.append('g').selectAll<SVGGElement, GNode>('g').data(nodes).join('g')
@@ -408,18 +433,39 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
     nodeSel.on('mouseover', (_e, n) => highlight(n.id, true)).on('mouseout', () => highlight('', false))
 
     return () => { sim.stop() }
-  }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks])
+  }, [data, electionLabel, locale, isBlue, navGroups, onNav, dataLinks, divergenciaMuda])
 
   const lbl = LBL[locale] || LBL['en']
   return (
     <div className={`w-full rounded-xl border shadow-sm overflow-hidden ${isBlue ? 'border-blue-400/30 bg-blue-900/40' : dim ? 'border-slate-200 bg-slate-100' : 'border-light-border bg-white'}`}>
       <svg ref={ref} role="img" aria-label={electionLabel} viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ height: 'auto', maxHeight: '74vh', display: 'block', margin: '0 auto', background: isBlue ? '#0b327a' : (dim ? '#edf1f6' : '#f8fafc') }} />
       <div className={`flex flex-wrap gap-x-4 gap-y-1 px-4 py-3 text-[11px] border-t ${isBlue ? 'text-blue-100/80 border-blue-400/20' : 'text-gray-600 border-light-border'}`}>
-        <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
-        <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
+        {divergenciaMuda ? (
+          /* Uma entrada só, e ela diz o que a aresta NÃO afirma. Manter as duas
+             entradas coloridas aqui reintroduziria a ideia de Δ que a aresta
+             acabou de recusar. */
+          <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-0.5 border-t border-dashed" style={{ borderColor: '#9ca3af' }} /> <b>{lbl.legend.semDelta}</b></span>
+        ) : (
+          <>
+            <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#ef4444' }} /> <b>{lbl.legend.div}</b></span>
+            <span className="inline-flex items-center gap-1"><span className="inline-block w-5 h-1 rounded" style={{ background: '#22c55e' }} /> {lbl.legend.conv}</span>
+          </>
+        )}
         <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5 border-t border-dashed" style={{ borderColor: '#a78bfa' }} /> {lbl.legend.poll}</span>
-        <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5" style={{ background: '#16a34a' }} /> {lbl.legend.hit}</span>
-        <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5 border-t border-dashed" style={{ borderColor: '#ef4444' }} /> {lbl.legend.miss}</span>
+        {/* "mercado acertou" e "mercado errou" só fazem sentido onde JÁ existe
+            resultado. Numa eleição que ainda vai acontecer, anunciar essas duas
+            entradas sugere que o painel está dando nota ao mercado, e ele não
+            está: não há o que acertar ainda. Escondidas quando a aresta é muda,
+            que hoje é só o painel das midterms.
+            📌 O mesmo vale para o painel do Brasil, que também é eleição ativa e
+            também exibe as duas. Não mexi lá porque é página no ar e a limpeza
+            é decisão do André, não efeito colateral desta entrega. */}
+        {!divergenciaMuda && (
+          <>
+            <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5" style={{ background: '#16a34a' }} /> {lbl.legend.hit}</span>
+            <span className="inline-flex items-center gap-1"><span className="inline-block w-4 h-0.5 border-t border-dashed" style={{ borderColor: '#ef4444' }} /> {lbl.legend.miss}</span>
+          </>
+        )}
         <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#ea580c' }} /> {lbl.legend.press}</span>
         {navGroups.length > 0 && (
           <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#818cf8' }} /> {locale === 'en' ? 'navigation (click)' : locale === 'es' ? 'navegación (clic)' : 'navegação (clique)'}</span>
