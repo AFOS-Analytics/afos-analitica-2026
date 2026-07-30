@@ -23,6 +23,30 @@ const slugs = [
 
 const keys = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate', 'inflation'] as const;
 
+// ── Midterms EUA, 03/Nov/2026. Acrescentado 30/Jul/2026 ─────────────────────
+//
+// Conjunto separado, escolhido por `?country=us`. SEM parâmetro a rota devolve
+// o Brasil exatamente como antes, porque ela já é consumida pelo painel do
+// Brasil, pela trava de captura e pelo cron. Mexer no padrão mexeria nos três.
+//
+// Os slugs são os mesmos do `ELECTION_REGISTRY`, que é quem manda na coleta.
+// Aqui é só a leitura para a tela.
+const slugsUs = [
+  'which-party-will-win-the-house-in-2026',
+  'which-party-will-win-the-senate-in-2026',
+  'republican-house-seats-after-the-2026-midterm-elections',
+  'republican-senate-seats-after-the-2026-midterm-elections-927',
+  'how-many-republican-governors-after-the-2026-midterm-elections',
+  '2026-midterms-house-turnout',
+  '2026-midterms-house-popular-vote-margin-of-victory-224',
+  'will-the-2026-midterm-elections-happen-as-scheduled',
+];
+
+const keysUs = [
+  'house', 'senate', 'houseSeats', 'senateSeats',
+  'governors', 'turnout', 'popularVoteMargin', 'asScheduled',
+] as const;
+
 function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug);
 }
@@ -105,12 +129,16 @@ async function fetchEvent(slug: string, fresh = false) {
   }
 }
 
-async function fetchFromProdProxy() {
+async function fetchFromProdProxy(country: string) {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
 
-    const res = await fetch('https://www.afos-analytics.com/api/polymarket', {
+    // O país precisa ir junto, senão o dev de `?country=us` recebe o Brasil.
+    const url = country === 'us'
+      ? 'https://www.afos-analytics.com/api/polymarket?country=us'
+      : 'https://www.afos-analytics.com/api/polymarket';
+    const res = await fetch(url, {
       next: { revalidate: 7200 },
       signal: controller.signal,
     });
@@ -125,17 +153,26 @@ async function fetchFromProdProxy() {
 }
 
 export async function GET(request: Request) {
-  const fresh = new URL(request.url).searchParams.has('fresh');
+  const params = new URL(request.url).searchParams;
+  const fresh = params.has('fresh');
+
+  // ⚠️ SEM `?country=us` a resposta é a do Brasil, byte por byte igual à de
+  // antes. Não é detalhe: esta rota é consumida pelo painel do Brasil, pela
+  // trava de captura e pelo cron de coleta. Mudar o padrão mexeria nos três.
+  const country = params.get('country') === 'us' ? 'us' : 'br';
+  const listaSlugs = country === 'us' ? slugsUs : slugs;
+  const listaKeys: readonly string[] = country === 'us' ? keysUs : keys;
+
   if (process.env.NODE_ENV === 'development') {
-    const proxied = await fetchFromProdProxy();
+    const proxied = await fetchFromProdProxy(country);
     if (proxied) {
       return NextResponse.json(proxied);
     }
   }
 
-  const results = await Promise.all(slugs.map(slug => fetchEvent(slug, fresh)));
+  const results = await Promise.all(listaSlugs.map(slug => fetchEvent(slug, fresh)));
   const data: Record<string, unknown> = {};
-  keys.forEach((key, i) => {
+  listaKeys.forEach((key, i) => {
     data[key] = results[i];
   });
   // Surface a degraded flag when some/all upstream events failed so callers
@@ -146,7 +183,7 @@ export async function GET(request: Request) {
   return NextResponse.json(
     {
       ...data,
-      fetchedAt: failed < slugs.length ? new Date().toISOString() : null,
+      fetchedAt: failed < listaSlugs.length ? new Date().toISOString() : null,
       degraded,
       failedCount: failed,
     },

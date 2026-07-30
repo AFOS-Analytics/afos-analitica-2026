@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from '../../../i18n/context';
 import { VisitorStateProvider } from '../../../hooks/useVisitorState';
 import { Header } from '../../../components/Header';
@@ -10,6 +10,8 @@ import { ModalMetas } from '../../../components/ModalMetas';
 import { LazyAboutMessages } from '../../../components/LazyAboutMessages';
 import { CountrySelector } from '../../../components/CountrySelector';
 import { UsPollsSection } from '../../../components/UsPollsSection';
+import { UsMarketSection } from '../../../components/UsMarketSection';
+import type { UsMarketData } from '../../../components/UsMarketSection';
 import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
 
 /**
@@ -52,6 +54,21 @@ function UsDashboardContent({ pollsData }: { pollsData: UsPollsData | null }) {
   const [showSobre, setShowSobre] = useState(false);
   const [showMetas, setShowMetas] = useState(false);
 
+  // Mercado vem por fetch no cliente, igual ao painel do Brasil: é o único dado
+  // desta página que muda de meia em meia hora, e o resto é estático do SSR.
+  const [marketData, setMarketData] = useState<UsMarketData | null>(null);
+  const [marketLoading, setMarketLoading] = useState(true);
+
+  useEffect(() => {
+    let vivo = true;
+    fetch('/api/polymarket?country=us')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (vivo) setMarketData(d); })
+      .catch(() => { if (vivo) setMarketData(null); })
+      .finally(() => { if (vivo) setMarketLoading(false); });
+    return () => { vivo = false; };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header
@@ -83,12 +100,17 @@ function UsDashboardContent({ pollsData }: { pollsData: UsPollsData | null }) {
           Cadeiras do Senado → RESSALVA → Pesquisas → Grafo → Contexto
           estrutural → Imprensa → Limitações.
 
-          Só as Pesquisas existem por enquanto, e elas já trazem a ressalva
-          embutida logo acima do número, que é onde ela precisa estar. Quando a
-          seção de Mercado entrar, ela vem ACIMA desta, e as duas ficam
-          EMPILHADAS: dois números grandes na mesma linha fazem o olho subtrair
-          sozinho, mesmo com o aviso escrito.
+          Mercado e Cadeiras do Senado entraram em 30/Jul, no `UsMarketSection`.
+          As duas seções ficam EMPILHADAS, nunca lado a lado: dois números
+          grandes na mesma linha fazem o olho subtrair sozinho, mesmo com o
+          aviso escrito. A ressalva continua embutida no topo das Pesquisas, que
+          é onde ela precisa estar, porque é ali que aparece o SEGUNDO número.
+
+          Falta: grafo, contexto estrutural, imprensa e limitações.
         */}
+        <div className="mb-8">
+          <UsMarketSection data={marketData} loading={marketLoading} />
+        </div>
         <UsPollsSection data={pollsData} />
       </main>
 
