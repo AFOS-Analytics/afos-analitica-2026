@@ -11,6 +11,7 @@ import { LazyAboutMessages } from '../../../components/LazyAboutMessages';
 import { CountrySelector } from '../../../components/CountrySelector';
 import { UsPollsSection } from '../../../components/UsPollsSection';
 import { UsMarketSection } from '../../../components/UsMarketSection';
+import { UsLimitationsSection } from '../../../components/UsLimitationsSection';
 import type { UsMarketData } from '../../../components/UsMarketSection';
 import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
 
@@ -106,12 +107,16 @@ function UsDashboardContent({ pollsData }: { pollsData: UsPollsData | null }) {
           aviso escrito. A ressalva continua embutida no topo das Pesquisas, que
           é onde ela precisa estar, porque é ali que aparece o SEGUNDO número.
 
-          Falta: grafo, contexto estrutural, imprensa e limitações.
+          Limitações entrou em 30/Jul e fecha a página de propósito: é onde o
+          leitor chega depois de ter visto todos os números.
+
+          Falta: grafo, contexto estrutural e imprensa.
         */}
         <div className="mb-8">
           <UsMarketSection data={marketData} loading={marketLoading} />
         </div>
         <UsPollsSection data={pollsData} />
+        <UsLimitationsSection data={pollsData} />
       </main>
 
       <Footer />
