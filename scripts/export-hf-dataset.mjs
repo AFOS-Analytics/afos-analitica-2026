@@ -180,7 +180,7 @@ try {
 console.log(`🗳️  polls estáticos copiados: ${copyDirInto(join(ASSETS, 'polls'), join(STAGING, 'polls'))} arquivos`)
 
 // ---- docs acadêmicos ----
-for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md']) {
+for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.md']) {
   const src = join(ASSETS, f); if (existsSync(src)) copyFileSync(src, join(STAGING, f))
 }
 

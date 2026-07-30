@@ -287,7 +287,23 @@ Mantidas rigorosamente do piloto 22/Abr:
 - **Tom observacional, não prescritivo** — "segundo X", "dados indicam", "o mercado precificou"
 - **Variações ↑↓pp sempre citadas** quando mudou desde dia anterior
 - **Datas sempre explícitas** — nunca "ontem" ou "semana passada", sempre "21 de abril"
-- **Densidade alvo:** 600-900 palavras, 4-5 min de leitura
+- **Densidade: TETO DE 900 PALAVRAS, e ele é obrigatório a partir de 31/Jul/2026.** Alvo 600-900, 4-5 min de leitura.
+
+  ⚠️ **DECISÃO DO ANDRÉ EM 30/Jul/2026: voltar ao teto de 900.** A régua escrita e a prática estavam descoladas havia pelo menos quatro dias, com a série no DOBRO do teto. Medido, no corpo, sem tabela e sem URL: **27/Jul 1.883 · 28/Jul 1.926 · 29/Jul 2.395 · 30/Jul 1.873**. Nenhuma das quatro cabia na régua.
+
+  **Como medir antes de dar por pronta** (corpo, fora do bloco de fontes, sem a tabela do calendário e sem URLs, que não são leitura):
+
+  ```bash
+  node -e "const fs=require('fs');const t=fs.readFileSync('public/afos-daily/{DATA}.md','utf-8');
+  const c=t.split('## Fontes consultadas')[0].replace(/^---[\s\S]*?\n---\n/,'');
+  const s=c.split('\n').filter(l=>!l.trim().startsWith('|')).join('\n').replace(/\]\([^)]*\)/g,']').replace(/https?:\/\/\S+/g,'');
+  const n=s.split(/\s+/).filter(Boolean).length;
+  console.log(n+' palavras '+(n<=900?'✅':'❌ CORTAR '+(n-900)))"
+  ```
+
+  **Onde cortar primeiro, na ordem:** (1) parágrafos de leitura de método que repetem a ressalva já dita na Seção 1; (2) listas de preço de nomes abaixo de 1%, que cabem numa frase só; (3) repetição do mesmo achado no corpo e em "Em síntese", que existe para resumir e não para reafirmar. **O TL;DR, as Divergências e o rodapé de fontes NÃO se cortam.**
+
+  **Se o corte custar informação verificada, dizer isso ao André em vez de cortar calado.**
 
 ## REGRAS DE URL (não negociáveis — gate técnico bloqueia Write se violado)
 

@@ -121,6 +121,7 @@ Full column-level definitions for every file are in **[`DATA_DICTIONARY.md`](DAT
 - **Editorial stance:** AFOS reports *divergence* between sources rather than a single blended average — the spread is treated as signal, not noise.
 - **Demographics:** *sample-design* demographics — the declared composition/weighting of each poll's sample (layer A) — are included (`polls/sample-demographics.csv`). *Vote-by-demographic crosstabs* (layer B — e.g. vote share by sex/age/income) are **not** part of Brazil's TSE open data; institutes publish those separately, so they are intentionally absent here rather than partially scraped.
 - **Scale caveat (market vs poll):** Polymarket prices *probability of winning*; polls report *vote share*. The two divergence files keep both raw values side by side and flag the naive gap accordingly — they are not a like-for-like error metric.
-- **Updates:** dated and append-only; each daily commit preserves the full history natively (see `CHANGELOG.md`).
+- **Updates:** dated and append-only; each daily commit preserves the full history natively (see `CHANGELOG.md`). The file for the *current* date may be regenerated during the day; files for dates already closed are never modified.
+- **Known errors:** see **`ERRATA.md`**. When a defect is found in a past date, the file is **not** rewritten — the correction is published in the errata instead, so the record stays as distributed and the defect stays discoverable. *Erros conhecidos em `ERRATA.md`. · Errores conocidos en `ERRATA.md`.*
 
 **Sources / Fontes / Fuentes:** Polymarket (live USD markets) · TSE-registered institutes · 400+ press outlets. Method & source code (Apache 2.0): [github.com/AFOS-Analytics](https://github.com/AFOS-Analytics).

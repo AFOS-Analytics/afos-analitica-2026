@@ -2,6 +2,12 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-07-30, errata mechanism
+
+### Added
+- **`ERRATA.md`** (trilingual). Records known defects in already-published dated files. Policy stated explicitly: **files for closed dates are never rewritten**; the correction is published in the errata instead, so the record stays exactly as distributed and the defect stays discoverable. The file for the *current* date may still be regenerated during the day, since the mirror runs more than once daily.
+- **First entry, ERR-2026-001:** `data/divergence-2026-07-29.csv`, row `Renan Santos`, `polymarket_pct` published as `8.6` where the site and the daily synthesis published `8.70%` (`divergence_pp` `0.8` instead of `0.90`). One row of seven on that date; 0.10pp. Cause and prevention documented in `ERRATA.md`.
+
 ## 2026-06-30, June poll wave + coverage refresh
 
 ### Added / Updated
