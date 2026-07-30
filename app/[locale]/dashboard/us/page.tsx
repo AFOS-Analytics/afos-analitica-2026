@@ -4,6 +4,8 @@ import { loadUsPollsData } from '../../../../lib/dashboard/us-static-data';
 import { SUPPORTED_LOCALES } from '../../../../lib/afos-daily/loader';
 import { buildMetadata } from '../../../../lib/seo/metadata';
 import type { Locale } from '../../../../lib/i18n/config';
+import usaCase from '../../../../lib/country-data/usa.json';
+import type { CountryContext } from '../../../../lib/country-data';
 
 export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map(locale => ({ locale }));
@@ -44,6 +46,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 // ISR de 2h acompanha a cadência do script, que roda uma vez por dia.
 export const revalidate = 7200;
 
+// O contexto estrutural do Banco Mundial vem do MESMO arquivo do caso validado
+// de 2024 (`lib/country-data/usa.json`), e isso é de propósito: WGI e WDI são
+// indicadores DO PAÍS, não da eleição, então manter duas cópias só criaria
+// chance de divergirem. Mesma safra do contexto do Brasil: WGI, população, PIB
+// e inflação em 2024.
 export default function UsDashboardPage() {
-  return <UsDashboardClient pollsData={loadUsPollsData()} />;
+  return (
+    <UsDashboardClient
+      pollsData={loadUsPollsData()}
+      context={(usaCase as { context?: unknown }).context as CountryContext | undefined}
+    />
+  );
 }
