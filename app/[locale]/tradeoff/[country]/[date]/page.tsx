@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
-import { JsonLd } from '../../../components/JsonLd'
+import { JsonLd } from '../../../../components/JsonLd'
 import { notFound } from 'next/navigation'
-import { AfosTradeoffTemplate, type TradeoffRenderedMd } from '../../../components/AfosTradeoffTemplate'
-import { Inline, InlineSpan, Body } from '../../../components/TradeoffMarkdown'
+import { AfosTradeoffTemplate, type TradeoffRenderedMd } from '../../../../components/AfosTradeoffTemplate'
+import { Inline, InlineSpan, Body } from '../../../../components/TradeoffMarkdown'
 import {
+  isValidCountry,
+  PAIS_PADRAO,
   loadTradeoff,
   listPublishedTradeoffs,
   isValidDate,
@@ -12,11 +14,11 @@ import {
   isVisibleInProduction,
   tradeoffExists,
   getAdjacentDates,
-} from '../../../../lib/afos-tradeoff/loader'
-import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../lib/afos-tradeoff/schema'
+} from '../../../../../lib/afos-tradeoff/loader'
+import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../../lib/afos-tradeoff/schema'
 
 interface PageProps {
-  params: Promise<{ locale: string; date: string }>
+  params: Promise<{ locale: string; country: string; date: string }>
 }
 
 // Force dynamic rendering. With zero published Tradeoffs initially,
@@ -35,16 +37,17 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
   const params = await props.params;
+  const pais = isValidCountry(params.country) ? params.country : PAIS_PADRAO;
   if (!isValidLocale(params.locale) || !isValidDate(params.date)) {
     return { title: 'AFOS Tradeoff | AFOS Analytics', robots: { index: false, follow: false } }
   }
-  const data = loadTradeoff(params.date, params.locale)
+  const data = loadTradeoff(params.date, params.locale, pais)
   if (!data) return { title: 'AFOS Tradeoff | AFOS Analytics', robots: { index: false, follow: false } }
 
   const isDraft = data.status !== 'published'
 
   const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
-  const url = `https://www.afos-analytics.com/${params.locale}/tradeoff/${params.date}`
+  const url = `https://www.afos-analytics.com/${params.locale}/tradeoff/${pais}/${params.date}`
   const ogImage = getOgImageUrl(params.locale)
   const publishedTime = `${data.date}T00:00:00-03:00`
   const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
@@ -60,7 +63,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       languages: (() => {
         const langs: Record<string, string> = {}
         for (const loc of SUPPORTED_LOCALES) {
-          if (tradeoffExists(params.date, loc)) langs[loc] = `https://www.afos-analytics.com/${loc}/tradeoff/${params.date}`
+          if (tradeoffExists(params.date, loc, pais)) langs[loc] = `https://www.afos-analytics.com/${loc}/tradeoff/${pais}/${params.date}`
         }
         if (langs['pt-BR'] || langs['en'] || langs['es']) {
           langs['x-default'] = langs['pt-BR'] || langs['en'] || langs['es']
@@ -105,10 +108,11 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 export default async function TradeoffByDatePage(props: PageProps) {
   const params = await props.params;
+  const pais = isValidCountry(params.country) ? params.country : PAIS_PADRAO;
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
   if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date)) notFound()
-  const data = loadTradeoff(params.date, params.locale)
+  const data = loadTradeoff(params.date, params.locale, pais)
   if (!data) notFound()
 
   const nav = getAdjacentDates(params.date)

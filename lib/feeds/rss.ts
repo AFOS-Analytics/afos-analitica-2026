@@ -125,7 +125,9 @@ export function buildDailyFeed(loc: FeedLocale): string {
 
 export function buildTradeoffFeed(loc: FeedLocale): string {
   const feedUrl = `${SITE}${feedPath('tradeoff', loc)}`
-  const pageUrl = `${SITE}/${loc}/tradeoff`
+  // País no endereço desde 31/Jul. Apontar para a rota curta faria cada item
+  // do feed passar por um 307, e leitor de RSS não deve seguir redirect à toa.
+  const pageUrl = `${SITE}/${loc}/tradeoff/br`
 
   const dates = listPublishedTradeoffs()
     .slice()
@@ -136,7 +138,7 @@ export function buildTradeoffFeed(loc: FeedLocale): string {
     .map(date => {
       const data = loadTradeoff(date, loc)
       if (!data) return ''
-      const url = `${SITE}/${loc}/tradeoff/${date}`
+      const url = `${SITE}/${loc}/tradeoff/br/${date}`
       const description = cleanTradeoff(data.sinalDaSemana).slice(0, 500)
       return `    <item>
       <title>${escapeXml(data.title)}</title>

@@ -248,11 +248,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // AFOS Tradeoff — weekly synthesis index per locale
   for (const loc of locales) {
     entries.push({
-      url: `${baseUrl}/${loc}/tradeoff`,
+      url: `${baseUrl}/${loc}/tradeoff/br`,
       lastModified: tradeoffIndexLastMod,
       changeFrequency: 'weekly',
       priority: 0.9,
-      alternates: { languages: hreflang((l) => `/${l}/tradeoff`) },
+      alternates: { languages: hreflang((l) => `/${l}/tradeoff/br`) },
     })
   }
 
@@ -263,11 +263,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const lastMod = new Date(`${date}T00:00:00-03:00`)
     for (const loc of locales) {
       entries.push({
-        url: `${baseUrl}/${loc}/tradeoff/${date}`,
+        url: `${baseUrl}/${loc}/tradeoff/br/${date}`,
         lastModified: lastMod,
         changeFrequency: 'monthly',
         priority: isLatest ? 0.95 : 0.7,
-        alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/${date}`, (loc) => tradeoffExists(date, loc)) },
+        alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/br/${date}`, (loc) => tradeoffExists(date, loc)) },
       })
     }
   }

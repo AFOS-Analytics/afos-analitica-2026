@@ -3,6 +3,35 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
+
+/**
+ * ── MULTIPAÍS (31/Jul/2026) ────────────────────────────────────────────────
+ *
+ * A ROTA é simétrica: `/[idioma]/tradeoff/[país]/[data]` para todos, decidido
+ * em 27/Jul. O ARQUIVO não é, e isso é deliberado: o Brasil continua na raiz de
+ * `public/afos-tradeoff/` e cada país novo ganha uma subpasta.
+ *
+ * ⚠️ POR QUE NÃO MOVI OS 30 ARQUIVOS DO BRASIL: eles são lidos e escritos por
+ * `publish-afos-tradeoff.ts`, `persist-afos-tradeoff.ts` e
+ * `broadcast-afos-tradeoff.ts`, que são do ciclo semanal e não deste trabalho.
+ * Mover a pasta quebraria os três em silêncio, e o ganho seria só estético.
+ * Simetria de rota é o que o leitor vê; simetria de pasta não é.
+ *
+ * `country` tem padrão 'br' em TODA função, então quem chamava antes continua
+ * funcionando sem tocar em nada.
+ */
+export const PAIS_PADRAO = 'br'
+export const PAISES_TRADEOFF = ['br', 'us'] as const
+export type PaisTradeoff = (typeof PAISES_TRADEOFF)[number]
+
+export function isValidCountry(c: string): c is PaisTradeoff {
+  return (PAISES_TRADEOFF as readonly string[]).includes(c)
+}
+
+/** Brasil na raiz (histórico), os demais em subpasta com o código do país. */
+function dirDoPais(country: string = PAIS_PADRAO): string {
+  return country === PAIS_PADRAO ? TRADEOFF_DIR : join(TRADEOFF_DIR, country)
+}
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
 export const SUPPORTED_LOCALES = ['pt-BR', 'en', 'es'] as const
@@ -164,24 +193,26 @@ export interface AfosTradeoffData {
 // Cache parity with Daily loader for performance consistency
 const LIST_TTL_MS = 60 * 1000
 const LIST_TTL_EMPTY_MS = 5 * 1000
-let listCache: { list: string[]; expiresAt: number } | null = null
+const listCache = new Map<string, { list: string[]; expiresAt: number }>()
 
-export function listTradeoffs(): string[] {
+export function listTradeoffs(country: string = PAIS_PADRAO): string[] {
   const now = Date.now()
-  if (listCache && now < listCache.expiresAt) return listCache.list
+  const cached = listCache.get(country)
+  if (cached && now < cached.expiresAt) return cached.list
 
-  if (!existsSync(TRADEOFF_DIR)) {
-    listCache = { list: [], expiresAt: now + LIST_TTL_EMPTY_MS }
+  const dir = dirDoPais(country)
+  if (!existsSync(dir)) {
+    listCache.set(country, { list: [], expiresAt: now + LIST_TTL_EMPTY_MS })
     return []
   }
   try {
-    const list = readdirSync(TRADEOFF_DIR)
+    const list = readdirSync(dir)
       .filter(f => f.endsWith('.md'))
       .map(f => f.replace('.md', ''))
       .filter(isValidDate)
       .sort()
     const ttl = list.length > 0 ? LIST_TTL_MS : LIST_TTL_EMPTY_MS
-    listCache = { list, expiresAt: now + ttl }
+    listCache.set(country, { list, expiresAt: now + ttl })
     return list
   } catch (err) {
     console.error('[afos-tradeoff] Failed to list editions:', err)
@@ -193,8 +224,8 @@ const STATUS_RE = /^status:\s*([a-z]+)\s*$/im
 const VALID_STATUSES = new Set(['published', 'draft', 'archived'])
 const statusCache = new Map<string, { mtime: number; status: string }>()
 
-function readStatusFast(date: string): string {
-  const path = join(TRADEOFF_DIR, `${date}.md`)
+function readStatusFast(date: string, country: string = PAIS_PADRAO): string {
+  const path = join(dirDoPais(country), `${date}.md`)
   if (!existsSync(path)) return 'draft'
   let mtime = 0
   try {
@@ -202,44 +233,45 @@ function readStatusFast(date: string): string {
   } catch {
     return 'draft'
   }
-  const cached = statusCache.get(date)
+  const chave = `${country}:${date}`
+  const cached = statusCache.get(chave)
   if (cached && cached.mtime === mtime) return cached.status
   try {
     const head = readFileSync(path, 'utf-8').slice(0, 500)
     const m = head.match(STATUS_RE)
     if (!m) {
-      statusCache.set(date, { mtime, status: 'draft' })
+      statusCache.set(chave, { mtime, status: 'draft' })
       return 'draft'
     }
     const status = m[1].toLowerCase()
     const final = VALID_STATUSES.has(status) ? status : 'draft'
-    statusCache.set(date, { mtime, status: final })
+    statusCache.set(chave, { mtime, status: final })
     return final
   } catch {
     return 'draft'
   }
 }
 
-export function listPublishedTradeoffs(): string[] {
-  return listTradeoffs().filter(d => readStatusFast(d) === 'published')
+export function listPublishedTradeoffs(country: string = PAIS_PADRAO): string[] {
+  return listTradeoffs(country).filter(d => readStatusFast(d, country) === 'published')
 }
 
-export function isVisibleInProduction(date: string): boolean {
-  return readStatusFast(date) === 'published'
+export function isVisibleInProduction(date: string, country: string = PAIS_PADRAO): boolean {
+  return readStatusFast(date, country) === 'published'
 }
 
-export function tradeoffExists(date: string, locale: string): boolean {
+export function tradeoffExists(date: string, locale: string, country: string = PAIS_PADRAO): boolean {
   const filename = locale === 'pt-BR' ? `${date}.md` : `${date}.${locale}.md`
-  return existsSync(join(TRADEOFF_DIR, filename))
+  return existsSync(join(dirDoPais(country), filename))
 }
 
-export function getLatestDate(): string | null {
-  const all = listPublishedTradeoffs()
+export function getLatestDate(country: string = PAIS_PADRAO): string | null {
+  const all = listPublishedTradeoffs(country)
   return all.length ? all[all.length - 1] : null
 }
 
-export function getAdjacentDates(date: string): { previous?: string; next?: string } {
-  const published = listPublishedTradeoffs()
+export function getAdjacentDates(date: string, country: string = PAIS_PADRAO): { previous?: string; next?: string } {
+  const published = listPublishedTradeoffs(country)
   const all = published.includes(date) ? published : [...published, date].sort()
   const idx = all.indexOf(date)
   if (idx === -1) return {}
@@ -422,11 +454,11 @@ function coerceAdditionalReading(raw: unknown): AdditionalReadingBlock | undefin
   }
 }
 
-export function loadTradeoff(date: string, locale?: string): AfosTradeoffData | null {
+export function loadTradeoff(date: string, locale?: string, country: string = PAIS_PADRAO): AfosTradeoffData | null {
   if (!isValidDate(date)) return null
-  const canonical = join(TRADEOFF_DIR, `${date}.md`)
+  const canonical = join(dirDoPais(country), `${date}.md`)
   const localized = locale && locale !== 'pt-BR' && isValidLocale(locale)
-    ? join(TRADEOFF_DIR, `${date}.${locale}.md`)
+    ? join(dirDoPais(country), `${date}.${locale}.md`)
     : null
   const path = localized && existsSync(localized) ? localized : existsSync(canonical) ? canonical : null
   if (!path) return null
