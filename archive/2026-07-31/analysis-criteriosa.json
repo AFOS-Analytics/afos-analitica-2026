@@ -1,0 +1,165 @@
+{
+  "updatedAt": "31/07/2026, 17:33",
+  "subtitle": "ATUALIZAÇÃO 31/Jul 17:33 BRT, a 65 dias do 1º turno. LULA NÃO SE MEXEU E O RESTO DO TABULEIRO SE MEXEU MUITO. O favorito segue em 63,50% pelo segundo dia, e o gap sobre Flávio, que subiu 0,35pp para 24,30%, recua de +39,55pp para +39,20pp. A URNA DO DIA: Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026) dá Lula 40,5% x Flávio 31,2% no 1º turno, com Caiado 5,5%, Zema 3,2% e Renan Santos 3,0%, e Lula 47,5% x Flávio 41,1% no returno. São 9,3pp de gap no 1º turno e 6,4pp no returno. O ACHADO É RENAN SANTOS, e ele é de sequência. TRÊS institutos seguidos cortaram Renan Santos, e é a sequência que importa, não o número isolado: AtlasIntel 7,8% em 29/Jul, PoderData 4% em 30/Jul e Vox Brasil 3,0% em 31/Jul. Com o preço em 8,15%, a distância entre mercado e urna vai a 5,15pp, a maior do recorte. Em 29/Jul o painel registrou essa distância em 0,90pp e chamou de convergência. Três institutos depois, ela quadruplicou. E há uma contradição DENTRO do próprio mercado que o painel registra sem resolver: no mesmo dia em que o contrato de vencedor dele cede 0,30pp, o book de 2º lugar do 1º turno SOBE 3,25pp, de 6,10% para 9,35%. CAIADO DEVOLVEU TUDO: caiu 0,80pp e voltou a 1,75%, desfazendo em um pregão a alta de dois dias, e a série do AFOS mostra que 1,75% é a faixa normal dele desde 22/Jul, enquanto os 2,55% de ontem é que eram o desvio. No mesmo dia, a Vox lhe dá 5,5%, a melhor urna nacional dele no recorte. DOIS NOMES DO CAMPO DO LULA SUBIRAM JUNTOS: Camilo Santana foi a 2,20% e Geraldo Alckmin a 1,10%, no dia em que o PCdoB formalizou apoio à chapa Lula-Alckmin. Sobre o Camilo, a ressalva de série é obrigatória e desfaz a leitura fácil: 2,20% NÃO é recorde dele, o máximo da série é 4,10%, de 03/Mai, e o que houve foi recuperação do MÍNIMO histórico, que era 0,50% e foi marcado ontem. TEREZA CRISTINA aparece em 0,55% no contrato presidencial no dia em que Flávio Bolsonaro diz que ela aceitou ser vice dele, ela mesma diz que conversou e que a chapa depende do PL e do PP-União, e a cúpula do PP descarta. Volume total acumulado no presidencial em USD 117,03M. Cruzamento com Polymarket ao vivo 31/Jul 20:33 UTC. A trava de dupla leitura reprovou as DUAS rodadas de hoje, e por isso vale a regra de faixa. O que repetiu entra FIRME e o que divergiu entra como FAIXA declarada. Divergiu um book só, o do MDB no Senado, que oscilou entre 25,20% e 26,60% em três leituras. O contrato presidencial inteiro repetiu nas QUATRO leituras, então o dado principal do painel está firme.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 63,50% (estável, vol USD 7,77M acumulado) pelo segundo pregão seguido, a 65 dias da eleição. O gap sobre Flávio recua para +39,20pp por movimento do adversário. A urna do dia, Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026), dá 40,5% no 1º turno e 47,5% x 41,1% no returno.",
+      "fortes": [
+        "Segundo pregão seguido ESTÁVEL em 63,50%, mantendo o valor que iguala o topo da série do AFOS, marcado em 26, 28 e 30/Jul.",
+        "A Vox Brasil dá 47,5% x 41,1% no returno, e os 6,4pp ficam FORA da margem somada, então esta leitura NÃO descreve empate técnico.",
+        "Duas das três casas da semana medem o gap do 1º turno em torno de 9pp, 9,1pp na AtlasIntel e 9,3pp na Vox, e a que destoa é a PoderData, com 6pp.",
+        "O PCdoB formalizou apoio à chapa Lula-Alckmin, somando-se ao PSB, que oficializou Alckmin como vice em 29/Jul.",
+        "O instituto registra que, entre maio e julho, Lula cresceu 7,3pp e Flávio recuou 2,7pp na série da própria casa, invertendo uma vantagem que era do senador."
+      ],
+      "fracos": [
+        "O gap recuou de +39,55pp para +39,20pp, e recuou porque o adversário subiu, não por movimento dele.",
+        "Os 40,5% da Vox no 1º turno seguem abaixo dos 50% mais um voto, ou seja, a leitura descreve returno e não vitória direta.",
+        "A rodada da Vox NÃO publicou aprovação nem rejeição, então o quadro de avaliação segue o de 30/Jul, com duas casas apontando para lados opostos na mesma semana.",
+        "Os 40,5% ficam abaixo dos 44,9% que a AtlasIntel mediu em 29/Jul, e a comparação entre casas diferentes não autoriza chamar isso de queda.",
+        "O preço não reagiu a nenhuma das três urnas da semana, o que deixa o painel sem qualquer evidência de que o mercado esteja lendo essas pesquisas."
+      ],
+      "analise": "O dia dele é o de quem não se moveu enquanto o resto do tabuleiro se movia. O contrato de vencedor ficou em 63,50% pelo segundo pregão seguido, mantendo o valor que iguala o topo da série do AFOS, e o gap recuou para +39,20pp porque Flávio subiu, não porque ele caiu. A URNA. Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026) dá 40,5% x 31,2% no 1º turno e 47,5% x 41,1% no returno. A vantagem de 6,4pp no returno fica FORA da margem somada das duas pontas, então esta leitura não descreve empate técnico, ao contrário da PoderData de 30/Jul, que dava 3pp. E aqui está o registro que organiza a semana: TRÊS casas mediram o gap do 1º turno em 9,1pp (AtlasIntel, 29/Jul), 6pp (PoderData, 30/Jul) e 9,3pp (Vox, 31/Jul). Duas delas concordam em torno de 9pp e uma destoa, e a que destoa é a PoderData. O painel registra isso sem descartar nenhuma. O instituto informa ainda que, entre maio e julho, Lula cresceu 7,3pp e Flávio recuou 2,7pp na série da própria casa, invertendo uma vantagem que era do senador; reproduzimos como afirmação do instituto, porque é comparação interna dele e não conferimos a série. DOIS NOMES DO CAMPO DELE SUBIRAM NO MERCADO no mesmo dia, Camilo Santana a 2,20% e Geraldo Alckmin a 1,10%, e o PCdoB formalizou apoio à chapa Lula-Alckmin. O painel registra a coincidência e não afirma causa. Sobre Camilo, a ressalva de série é obrigatória e desfaz a leitura fácil: 2,20% NÃO é recorde dele, o máximo da série é 4,10%, de 03/Mai, e o que houve foi recuperação do MÍNIMO histórico, 0,50%, marcado ontem mesmo."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 24,30% (alta 0,35pp, vol USD 7,76M acumulado). Estreita o gap para +39,20pp, mas CAI nos dois books de colocação: 1,00pp no 2º lugar do 1º turno, para 78,00%, e 0,60pp no 3º lugar, para 5,65%. A Vox Brasil o dá em 31,2% no 1º turno e 41,1% no returno.",
+      "fortes": [
+        "SOBE 0,35pp no contrato de vencedor, para 24,30%, e é ele quem estreita o gap, que vai a +39,20pp.",
+        "Os 41,1% dele no returno da Vox ficam a 6,4pp de Lula, e é a segunda melhor marca de returno dele no recorte.",
+        "Anunciou que Tereza Cristina aceitou ser vice na chapa dele, movimento que, se confirmado pelos partidos, resolveria o prazo de 05/Ago.",
+        "Mantém 78,00% no book de 2º lugar do 1º turno, ou seja, a posição de returno segue consolidada e não em disputa.",
+        "O PL subiu 6,50pp no mercado do Senado, para 72,00%, a maior marca da legenda naquele contrato no acompanhamento do painel."
+      ],
+      "fracos": [
+        "CAI 1,00pp no book de 2º lugar do 1º turno, para 78,00%, e CAI 0,60pp no de 3º lugar, para 5,65%: sobe na vitória e cede nas duas colocações.",
+        "A senadora Tereza Cristina não confirmou o que ele afirmou: disse que houve conversa e que a decisão depende do PL e do PP-União.",
+        "A cúpula do PP avalia que ela aceitou o convite justamente por saber que o partido barraria a chapa, o que esvazia o anúncio.",
+        "Os 31,2% da Vox no 1º turno ficam abaixo dos 35,8% da AtlasIntel e dos 35% da PoderData, ainda que a comparação seja entre casas diferentes.",
+        "Segue SEM vice efetivamente definida, com o prazo de 05/Ago a menos de uma semana."
+      ],
+      "analise": "O sinal dele hoje é cruzado e vale registrar assim, sem resolver. SOBE 0,35pp no contrato de vencedor, para 24,30%, e é ele quem estreita o gap, que vai de +39,55pp para +39,20pp. E ao mesmo tempo CAI 1,00pp no book de 2º lugar do 1º turno, para 78,00% (vol USD 216 mil), e CAI 0,60pp no de 3º lugar, para 5,65%. Subir na chance de ganhar e ceder nas duas de colocação é combinação incomum. A contrapartida da queda no book de 2º lugar é a alta de 3,25pp de Renan Santos no mesmo contrato, o que sugere realocação interna daquele book e não leitura nova sobre quem vai ao returno. NA URNA, a Vox o traz em 31,2% no 1º turno e 41,1% no returno, e os 6,4pp que o separam de Lula ficam fora da margem somada, o que afasta a leitura de empate técnico que a PoderData sustentava na véspera. O DIA DELE, porém, foi de arranjo de chapa, e há TRÊS versões do mesmo fato. Ele afirmou que Tereza Cristina aceitou ser vice na chapa dele. A senadora disse que houve conversa e que a decisão depende do PL e do PP-União. E a cúpula do PP avalia que ela aceitou justamente por saber que o partido barraria. O painel registra as três e não escolhe. No mercado, Tereza Cristina aparece em 0,55% no contrato PRESIDENCIAL, e a distinção importa: aquele contrato mede quem ganha a Presidência, não quem ocupa a vaga de vice, então o movimento é de nome em circulação e não de cargo. O prazo de 05/Ago para definição de vice está a menos de uma semana."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 8,15% no vencedor (queda 0,30pp, vol USD 8,63M acumulado). TRÊS institutos seguidos o cortaram, de 7,8% para 4% e agora 3,0% na Vox, e a distância entre preço e urna vai a 5,15pp, a maior do recorte. Mas o book de 2º lugar do 1º turno SOBE 3,25pp, para 9,35%, contradizendo a urna no mesmo dia.",
+      "fortes": [
+        "SOBE 3,25pp no book de 2º lugar do 1º turno, para 9,35%, recuperando dois terços do que havia perdido na véspera.",
+        "Fica ESTÁVEL em 62,00% no book de 3º lugar do 1º turno, mantendo folga sobre Caiado, que tem 26,50%.",
+        "Mantém o maior volume acumulado entre os nomes competitivos do presidencial, USD 8,63M, acima de Lula e de Flávio.",
+        "Segue com o terceiro maior preço do book presidencial, à frente de todo o pelotão."
+      ],
+      "fracos": [
+        "TRÊS institutos seguidos o cortaram: 7,8% na AtlasIntel de 29/Jul, 4% na PoderData de 30/Jul e 3,0% na Vox de 31/Jul.",
+        "A distância entre preço e urna chega a 5,15pp, a maior do recorte, contra os 0,90pp que este painel registrou em 29/Jul e chamou de convergência.",
+        "As três leituras mais recentes são também as três mais baixas do recorte, o que descreve tendência de queda e não dispersão entre casas.",
+        "CAI 0,30pp no contrato de vencedor, para 8,15%, o quarto pregão seguido de queda naquele contrato.",
+        "O mercado contradisse a si mesmo no caso dele em 24 horas, o que enfraquece qualquer leitura de reprecificação estável."
+      ],
+      "analise": "Este é o verbete do dia e ele tem duas partes que apontam para lados opostos. A PRIMEIRA é a urna, e ela é uma sequência, não um número isolado. TRÊS institutos seguidos cortaram Renan Santos, e é a sequência que importa, não o número isolado: AtlasIntel 7,8% em 29/Jul, PoderData 4% em 30/Jul e Vox Brasil 3,0% em 31/Jul. Com o preço em 8,15%, a distância entre mercado e urna vai a 5,15pp, a maior do recorte. Em 29/Jul o painel registrou essa distância em 0,90pp e chamou de convergência. Três institutos depois, ela quadruplicou. Em 29/Jul este painel escreveu que a distância tinha caído a 0,90pp e chamou aquilo de convergência, sublinhando que o estreitamento vinha pelo lado da urna. Três institutos depois, a distância quadruplicou. Fica registrado que a leitura de 29/Jul não se sustentou, e que a dispersão que o painel vinha chamando de dispersão virou outra coisa: as três leituras mais recentes são também as três mais baixas do recorte, o que descreve tendência de queda e não ruído entre casas. A SEGUNDA parte é o mercado, e ele contradisse a si mesmo. No contrato de vencedor ele cedeu 0,30pp, para 8,15%. No book de 2º lugar do 1º turno, porém, SUBIU 3,25pp, de 6,10% para 9,35% (vol USD 1,09M), recuperando dois terços do que havia perdido 24 horas antes. E ficou ESTÁVEL em 62,00% no 3º lugar (vol USD 164 mil). Ontem o painel escreveu que o dinheiro o havia reclassificado, tirando dele a chance de returno e cravando-o em terceiro. Hoje o mesmo dinheiro devolveu boa parte dessa chance, no dia em que a urna o cortou pela terceira vez seguida. O painel registra as duas direções e não arbitra qual está certa, porque não tem como. Ele mantém o maior volume acumulado entre os nomes competitivos do presidencial, USD 8,63M, acima de Lula e de Flávio."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,75% (queda 0,80pp, vol USD 5,22M), Camilo Santana 2,20% (vol USD 4,16M), Alckmin 1,10% (vol USD 4,98M), Jair 0,95%, Tereza Cristina 0,55%, Zema 0,45% (queda 0,10pp), Haddad 0,30% (alta 0,15pp). Na urna, a Vox dá a Caiado 5,5%, a melhor leitura nacional dele no recorte.",
+      "subtitle": "31/Jul, a 65 dias: o pelotão teve o dia mais movimentado da semana, e nenhum dos movimentos aponta na mesma direção. Caiado devolveu em um pregão a alta de dois dias no mesmo dia em que recebeu a melhor urna do recorte. Camilo Santana e Alckmin subiram juntos, no dia do apoio formal do PCdoB à chapa Lula-Alckmin. Zema caiu pelo terceiro pregão seguido, num dia em que perdeu o cabeça de chapa ao Senado em Minas.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,75% (queda 0,80pp, vol USD 5,22M) | 3º lugar do 1º turno 26,50% (alta 1,00pp, vol USD 37 mil) | 2º lugar 0,90% | candidato oficializado em 26/Jul, com Kassab de vice | última nacional: Vox Brasil 31/Jul, 1T 5,5%",
+        "fortes": "A urna do dia é a MELHOR leitura nacional dele no recorte. A Vox Brasil lhe dá 5,5% no 1º turno, acima dos 5% da PoderData de 30/Jul e bem acima dos 3,1% da AtlasIntel de 29/Jul. E o book de 3º lugar do 1º turno acompanhou: SOBE 1,00pp, para 26,50%, a maior marca dele naquele contrato no acompanhamento do painel. A divergência entre institutos sobre ele segue aberta em QUATRO níveis dentro do mesmo mês, 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel, e a leitura de hoje é a mais alta das quatro.",
+        "fracos": "O contrato de vencedor CAIU 0,80pp, para 1,75%, e devolveu em um único pregão toda a alta acumulada em dois dias. A ressalva de série é obrigatória e ela corta para os dois lados: 1,75% está dentro da faixa normal dele desde 22/Jul, quando a série do AFOS registrou 1,80%, e os 2,55% de ontem é que eram o desvio para cima. Ou seja, não houve colapso hoje, houve devolução de um desvio. O que fica é a leitura de que o mercado o realocou de candidato a vencedor para candidato a terceiro colocado, subindo no book de colocação e caindo no de vitória, e que a urna não acompanhou essa realocação: ela lhe deu justamente hoje a melhor marca do recorte."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,30% (alta 0,15pp) | 2º lugar do 1º turno 1,00% | não testado pela Vox Brasil em nenhum cenário, porque disputa o governo de São Paulo",
+        "fortes": "SOBE 0,15pp no contrato de vencedor, para 0,30%, dobrando o valor da véspera, e vai a 1,00% no book de 2º lugar do 1º turno. É o segundo pregão seguido de alta no book de colocação.",
+        "fracos": "A Vox Brasil não o testa em nenhum cenário, nem de 1º turno nem de returno, então ele não tem urna nova nesta rodada, e ausência de teste numa nacional é informação que o painel registra em vez de repetir o dado da véspera como se fosse novo. O agravante de leitura permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece nas pesquisas é hipótese e não candidatura em curso. Num preço de 0,30%, uma alta de 0,15pp tem valor informativo quase nulo."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,45% (queda 0,10pp, vol USD 4,58M) | 3º lugar do 1º turno 4,45% | Vox Brasil 31/Jul: 1T 3,2% | oficializado pelo Novo em 27/Jul, ainda SEM vice, prazo até 05/Ago",
+        "fortes": "Na urna ele fica estável: os 3,2% da Vox são praticamente os mesmos 3% da PoderData de 30/Jul e ficam acima dos 2,8% da AtlasIntel de 29/Jul. Mantém 4,45% no book de 3º lugar do 1º turno, à frente de todo o pelotão exceto Caiado, e segue oficializado pelo Novo desde 27/Jul.",
+        "fracos": "CAI 0,10pp no contrato de vencedor, para 0,45%, no TERCEIRO pregão seguido de queda. E o dia foi ruim no arranjo partidário: Marcelo Aro deixou a chapa dele ao Senado para disputar o governo de Minas Gerais, movimento que Zema chamou publicamente de traição, e o Novo descartou Barbosa como vice, caminhando para uma chapa puro-sangue. Segue SEM vice definida, com o prazo de 05/Ago a menos de uma semana. Ressalva de série, e ela é grande: o máximo dele na série do AFOS é 10,10%, de 26/Abr, então 0,45% é menos de um vigésimo daquele nível e movimentos de 0,10pp nessa faixa têm valor informativo quase nulo."
+      },
+      "analise": "O pelotão teve o dia mais movimentado da semana e nenhum dos movimentos aponta na mesma direção. CAIADO caiu 0,80pp no vencedor, para 1,75%, devolvendo em um pregão a alta de dois dias, e SUBIU 1,00pp no 3º lugar, para 26,50%, no mesmo dia em que a Vox lhe deu 5,5%, a melhor urna nacional dele no recorte. Três sinais, duas direções. A leitura que se sustenta é que o mercado o realocou de candidato a vencedor para candidato a terceiro colocado, e que a urna não acompanhou. CAMILO SANTANA subiu a 2,20% e GERALDO ALCKMIN a 1,10%, os dois no dia em que o PCdoB formalizou apoio à chapa Lula-Alckmin, e o painel registra a coincidência sem afirmar causa. Sobre Camilo cabe a ressalva de série, que desfaz a leitura fácil: 2,20% não é recorde, o máximo dele é 4,10%, de 03/Mai, e o que houve foi recuperação do MÍNIMO da série, 0,50%, marcado ontem. TEREZA CRISTINA aparece em 0,55% no contrato presidencial no dia em que Flávio disse que ela aceitou ser vice dele, ela disse que conversou e que depende do PL e do PP-União, e o PP descartou. O contrato mede quem ganha a Presidência, não quem é vice, então isso é nome em circulação e não cargo. ZEMA caiu pelo terceiro pregão seguido, para 0,45%, perdendo no mesmo dia o cabeça de chapa ao Senado em Minas. HADDAD subiu 0,15pp, para 0,30%, e segue sem ser testado pelas nacionais.",
+      "fortes": [
+        "Caiado recebeu a MELHOR urna nacional do recorte, 5,5% na Vox, acima dos 5% da PoderData e dos 3,1% da AtlasIntel.",
+        "Caiado SOBE 1,00pp no book de 3º lugar do 1º turno, para 26,50%, a maior marca dele naquele contrato no acompanhamento do painel.",
+        "Camilo Santana subiu a 2,20% e Alckmin a 1,10% no dia em que o PCdoB formalizou apoio à chapa Lula-Alckmin.",
+        "Haddad subiu 0,15pp no vencedor e chegou a 1,00% no book de 2º lugar do 1º turno."
+      ],
+      "fracos": [
+        "Caiado CAIU 0,80pp no contrato de vencedor e devolveu em um pregão toda a alta de dois dias.",
+        "Nenhum nome do pelotão passa de 2,20% no contrato presidencial, contra 63,50% do favorito.",
+        "Zema caiu pelo TERCEIRO pregão seguido, para 0,45%, e perdeu Marcelo Aro da chapa ao Senado em Minas, movimento que chamou de traição.",
+        "Zema segue SEM vice, com o prazo de 05/Ago a menos de uma semana, e o Novo descartou Barbosa para a vaga.",
+        "Os 2,20% de Camilo Santana NÃO são recorde: o máximo da série é 4,10%, de 03/Mai, e o movimento é recuperação do mínimo histórico marcado ontem."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "URNA NOVA: Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026) dá 40,5% no 1º turno e 47,5% x 41,1% no returno, gap de 6,4pp que fica fora da margem somada e por isso não é empate técnico. Na semana, três casas mediram o gap do 1º turno em 9,1pp (AtlasIntel), 6pp (PoderData) e 9,3pp (Vox), o que coloca a PoderData como a fora da curva e não a Vox. O instituto registra ainda que, entre maio e julho, Lula cresceu 7,3pp e Flávio recuou 2,7pp na série da própria casa, invertendo uma vantagem que era do senador. O painel reproduz essa comparação como afirmação do instituto, porque é série interna dele.",
+      "m": "63,50% (vol USD 7,77M acumulado)",
+      "t": "ESTÁVEL em 63,50% pelo segundo pregão seguido, mantendo o valor que iguala o topo da série do AFOS. O gap sobre Flávio recuou de +39,55pp para +39,20pp, e recuou por movimento do adversário, não dele. Segundo dia consecutivo sem mudança no contrato de vencedor, o que é raro numa semana em que o resto do book se mexeu bastante.",
+      "s": "65 dias da eleição. A urna nova amplia o gap contra o que a PoderData mediu na véspera, e o preço não reagiu a nenhuma das duas. O painel registra a estabilidade do preço diante de duas leituras de urna que discordam entre si em 3,3pp no mesmo recorte semanal. Polymarket ao vivo 31/Jul 20:33 UTC.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Vox Brasil de 31/Jul: 31,2% no 1º turno e 41,1% no returno contra 47,5% de Lula. A diferença de 6,4pp no returno fica fora da margem somada, então esta leitura NÃO descreve empate técnico, ao contrário da PoderData da véspera, que dava 3pp. Nas estaduais e no arranjo de chapa, o dia foi movimentado: ele afirmou que Tereza Cristina aceitou ser vice, a senadora disse que conversou e que a decisão depende do PL e do PP-União, e a cúpula do PP avalia que ela aceitou sabendo que o partido barraria.",
+      "m": "24,30% (vol USD 7,76M acumulado)",
+      "t": "SOBE 0,35pp para 24,30% e estreita o gap, que vai de +39,55pp para +39,20pp. Nos sub-mercados o sinal é cruzado: CAI 1,00pp no 2º lugar do 1º turno, para 78,00%, e CAI 0,60pp no 3º lugar, para 5,65%. Ou seja, sobe na chance de ganhar e cede nas duas de colocação.",
+      "s": "Subir no vencedor e cair no 2º lugar ao mesmo tempo é combinação incomum e o painel registra sem explicar. A contrapartida da queda dele no book de 2º lugar é a alta de 3,25pp de Renan Santos no mesmo contrato, o que sugere realocação dentro daquele book e não leitura nova sobre o returno.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "A Vox dá 3,0% e fecha a sequência: TRÊS institutos seguidos o cortaram, de 7,8% na AtlasIntel de 29/Jul para 4% na PoderData de 30/Jul e 3,0% agora. Com preço em 8,15%, a distância entre mercado e urna chega a 5,15pp, a maior do recorte. A dispersão entre institutos, que o painel vinha registrando, deixou de ser dispersão e virou tendência de queda: as três leituras mais recentes são também as três mais baixas.",
+      "m": "8,15% (vol USD 8,63M acumulado)",
+      "t": "CAI 0,30pp no vencedor, para 8,15%, mas o movimento do dia é o oposto no book de colocação: SOBE 3,25pp no 2º lugar do 1º turno, de 6,10% para 9,35%, recuperando dois terços do que perdera na véspera, e fica ESTÁVEL em 62,00% no 3º lugar. O mercado desfez parte da reclassificação que fizera ontem.",
+      "s": "É a contradição do dia e ela é interna ao próprio mercado: a urna o corta pelo terceiro instituto seguido enquanto o dinheiro devolve a ele parte da chance de returno que tinha retirado 24 horas antes. O painel registra as duas direções e não arbitra qual está certa.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "A Vox dá 5,5%, a melhor urna nacional dele no recorte, acima dos 5% da PoderData e bem acima dos 3,1% da AtlasIntel. E o mercado fez o contrário no mesmo dia. A divergência sobre ele segue aberta em quatro níveis no mês: 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel.",
+      "m": "1,75% (vol USD 5,22M)",
+      "t": "CAI 0,80pp para 1,75% e DEVOLVE em um pregão toda a alta de dois dias. A ressalva de série desfaz a leitura de colapso: 1,75% está dentro da faixa normal dele desde 22/Jul, quando a série registrou 1,80%, e os 2,55% de ontem é que eram o desvio. No 3º lugar do 1º turno ele SOBE 1,00pp, para 26,50%, o que torna o sinal cruzado.",
+      "s": "Sobe na urna e cai no preço de vencedor, no mesmo dia, e ainda sobe no book de terceiro colocado. Três sinais, duas direções. A leitura honesta é que o mercado o realocou de candidato a vencedor para candidato a terceiro lugar, e que a urna não acompanhou essa realocação.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Romeu Zema (Novo)",
+      "p": "Vox Brasil de 31/Jul: 3,2% no 1º turno, praticamente o mesmo dos 3% da PoderData e acima dos 2,8% da AtlasIntel. O dia foi ruim no arranjo partidário: Marcelo Aro deixou a chapa dele ao Senado para disputar o governo de Minas Gerais, movimento que Zema chamou publicamente de traição, e o Novo descartou Barbosa como vice, caminhando para uma chapa puro-sangue. O prazo de 05/Ago para definição de vice está a menos de uma semana.",
+      "m": "0,45% (vol USD 4,58M)",
+      "t": "CAI 0,10pp para 0,45% e fica em 4,45% no 3º lugar do 1º turno. Terceiro pregão seguido de queda no contrato de vencedor.",
+      "s": "A urna o mantém estável em torno de 3% enquanto o preço cede pelo terceiro dia. Ressalva de série, e ela é grande: o máximo dele na série do AFOS é 10,10%, de 26/Abr, então 0,45% é menos de um vigésimo daquele nível e movimentos de 0,10pp nessa faixa têm valor informativo quase nulo.",
+      "pc": "#0EA5E9",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "3,10% (vol USD 83 mil)",
+      "t": "ESTÁVEL em 3,10% pelo segundo pregão, sem nenhuma variação nas quatro leituras da trava de hoje.",
+      "s": "Dia sem fato institucional novo no eixo do STF, e o preço acompanhou a ausência. Com USD 83 mil de volume acumulado contra USD 117,03M do presidencial, este book só é registrável quando se move de forma sustentada, e hoje ele não se moveu.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O CRUZAMENTO DE 31/JUL tem uma assimetria como marca: o favorito não se mexeu e quase todo o resto do tabuleiro se mexeu. Lula ficou ESTÁVEL em 63,50% (vol USD 7,77M) pelo segundo pregão seguido, mantendo o valor que iguala o topo da série do AFOS. Flávio SUBIU 0,35pp, para 24,30% (vol USD 7,76M), e o gap recuou de +39,55pp para +39,20pp por movimento dele. A URNA. Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026) dá Lula 40,5% x Flávio 31,2% no 1º turno, com Caiado 5,5%, Zema 3,2% e Renan Santos 3,0%, e Lula 47,5% x Flávio 41,1% no returno. A vantagem de 6,4pp no returno fica FORA da margem somada, então esta leitura NÃO descreve empate técnico, ao contrário da PoderData de 30/Jul. E o registro que organiza a semana é este: TRÊS casas mediram o gap do 1º turno em 9,1pp, 6pp e 9,3pp. Duas concordam em torno de 9pp e a que destoa é a PoderData. Em 30/Jul o painel escreveu, corretamente, que comparar casas diferentes e chamar a diferença de movimento é trocar de régua; a Vox de hoje reforça essa disciplina por outro caminho, mostrando que a PoderData é que estava fora do conjunto. O ACHADO É RENAN SANTOS, e ele é de sequência, não de número isolado. TRÊS institutos seguidos cortaram Renan Santos, e é a sequência que importa, não o número isolado: AtlasIntel 7,8% em 29/Jul, PoderData 4% em 30/Jul e Vox Brasil 3,0% em 31/Jul. Com o preço em 8,15%, a distância entre mercado e urna vai a 5,15pp, a maior do recorte. Em 29/Jul o painel registrou essa distância em 0,90pp e chamou de convergência. Três institutos depois, ela quadruplicou. Em 29/Jul este painel chamou aquela distância de convergência e sublinhou que ela estreitava pelo lado da urna. Três institutos depois, ela quadruplicou. Fica registrado que a leitura de 29/Jul não se sustentou. E há uma contradição DENTRO do próprio mercado: no mesmo dia em que a urna o corta pela terceira vez, o book de 2º lugar do 1º turno SOBE 3,25pp, de 6,10% para 9,35% (vol USD 1,09M), devolvendo dois terços do que fora retirado na véspera, enquanto o de 3º lugar fica ESTÁVEL em 62,00%. Ontem o painel escreveu que o dinheiro o havia reclassificado; hoje o mesmo dinheiro desfez parte disso. As duas direções ficam registradas e nenhuma é arbitrada. CAIADO DEVOLVEU TUDO: caiu 0,80pp, para 1,75% (vol USD 5,22M), desfazendo em um pregão a alta de dois dias, e SUBIU 1,00pp no 3º lugar, para 26,50%. A ressalva de série corta para os dois lados e é necessária: 1,75% está dentro da faixa normal dele desde 22/Jul e os 2,55% de ontem é que eram o desvio, então não houve colapso, houve devolução de desvio. No mesmo dia, a Vox lhe deu 5,5%, a melhor urna nacional dele no recorte, e a divergência entre institutos sobre ele segue aberta em QUATRO níveis no mesmo mês: 6%, 5,5%, 5% e 3,1%. DOIS NOMES DO CAMPO DO GOVERNO SUBIRAM JUNTOS, Camilo Santana a 2,20% (vol USD 4,16M) e Geraldo Alckmin a 1,10% (vol USD 4,98M), no dia em que o PCdoB formalizou apoio à chapa Lula-Alckmin. O painel registra a coincidência e não afirma causa. Sobre Camilo, a ressalva de série é obrigatória: 2,20% NÃO é recorde, o máximo dele é 4,10%, de 03/Mai, e o movimento é recuperação do MÍNIMO da série, 0,50%, marcado ontem. O EIXO PARTIDÁRIO foi o do dia, e ele tem TRÊS versões do mesmo fato. Flávio afirmou que Tereza Cristina aceitou ser vice dele; a senadora disse que houve conversa e que a decisão depende do PL e do PP-União; e a cúpula do PP avalia que ela aceitou por saber que o partido barraria. O painel registra as três e não escolhe. No mercado ela aparece em 0,55% no contrato PRESIDENCIAL, e a distinção importa: aquele contrato mede quem ganha a Presidência, não quem ocupa a vaga de vice. Em Minas Gerais, Marcelo Aro deixou a chapa de Zema ao Senado para disputar o governo, movimento que Zema chamou publicamente de traição, e o Novo descartou Barbosa como vice. O prazo de 05/Ago para definição de vices organiza os próximos dias e vale para Flávio e para Zema. NOS DEMAIS MERCADOS, o impeachment de ministro do STF ficou ESTÁVEL em 3,10% (vol USD 83 mil), sem variação nas quatro leituras da trava, num dia sem fato institucional novo nesse eixo. No Senado, o PL SUBIU 6,50pp, para 72,00% (vol USD 258 mil), e o MDB entra como FAIXA declarada de 25,20% a 26,60%: somados, os dois passam de 97% de probabilidade atribuída a apenas duas legendas, o que por si só indica spread largo. Na inflação, a faixa modal segue em 5,00% a 5,49%, com 38,30%, e a de 4,50% a 4,99% subiu 1,20pp, para 33,70%, num book de USD 81 mil não coberto pela trava. UMA NOTA DE CAPTURA, e ela é a razão da faixa. A trava de dupla leitura reprovou as DUAS rodadas de hoje, e por isso vale a regra de faixa. O que repetiu entra FIRME e o que divergiu entra como FAIXA declarada. Divergiu um book só, o do MDB no Senado, que oscilou entre 25,20% e 26,60% em três leituras. O contrato presidencial inteiro repetiu nas QUATRO leituras, então o dado principal do painel está firme. Volume total acumulado no presidencial em USD 117,03M."
+}
