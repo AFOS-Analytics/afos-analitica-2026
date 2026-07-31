@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-30",
+  "lastUpdate": "2026-07-31",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,54 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Vox Brasil",
+      "date": "2026-07-31",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-01084/2026",
+      "reliability": 3,
+      "method": "Presencial",
+      "fieldDates": "2026-07-26 a 2026-07-28",
+      "note": "Vox Brasil nacional publicada 31/Jul (Metrópoles, Revista Fórum, Contracs). 1T Lula 40,5% x Flávio 31,2% (gap +9,3pp), com Caiado 5,5%, Zema 3,2% e Renan Santos 3,0%. 2T Lula 47,5% x Flávio 41,1% (gap +6,4pp), diferença que fica FORA da margem somada e por isso NÃO é empate técnico, ao contrário da PoderData de 30/Jul, que dava 3pp. Campo 26-28/Jul, n=2.100, margem 2,15pp, 95% de confiança, registro BR-01084/2026. A SEMANA TEM TRÊS LEITURAS DE GAP NO 1º TURNO E ELAS NÃO CONCORDAM: 9,1pp na AtlasIntel de 29/Jul, 6pp na PoderData de 30/Jul e 9,3pp aqui. A fora da curva é a PoderData, não a Vox. RENAN SANTOS a 3,0% fecha a sequência de TRÊS institutos seguidos cortando: 7,8% na AtlasIntel, 4% na PoderData e 3,0% agora. Com preço em 8,15%, a distância entre mercado e urna vai a 5,15pp, a maior do recorte, contra os 0,90pp que o painel registrou em 29/Jul. CAIADO a 5,5% tem aqui a MELHOR urna nacional do recorte, acima dos 5% da PoderData e dos 3,1% da AtlasIntel, no mesmo dia em que o preço dele caiu 0,80pp. O instituto informa ainda que, entre maio e julho, Lula cresceu 7,3pp e Flávio recuou 2,7pp na série da própria casa, invertendo uma vantagem que era do senador; o painel reproduz como afirmação do instituto, porque é comparação interna dele. Esta rodada NÃO publicou aprovação nem rejeição.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40.5
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 31.2
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5.5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3.2
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.5,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41.1
+        }
+      ],
+      "source": "Vox Brasil via Metrópoles, Revista Fórum, Contracs 31/Jul"
+    },
     {
       "institute": "PoderData/Aya",
       "date": "2026-07-30",
@@ -1073,87 +1121,87 @@
     "lastUpdate": "2026-07-29"
   },
   "polymarketComparison": {
-    "note": "Cruzamento de 30/Jul: o preço subiu e a urna não mexeu. Lula SOBE 1,00pp e volta a 63,50% (vol USD 7,74M), igualando pela terceira vez o topo da série do AFOS (26, 28 e 30/Jul) sem superá-lo, e o gap sobre Flávio, ESTÁVEL em 23,95% (vol USD 7,71M), abre de +38,55pp para +39,55pp, a 0,25pp do máximo da série. Registrar que o gap abriu por movimento de um lado só é obrigatório: não houve reprecificação da candidatura de Flávio hoje, e a sequência de quatro altas diárias dele foi interrompida sem queda. A URNA: PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, 95% de confiança, BR-07845/2026, telefônica em celular e fixo, 677 municípios nos 27 estados) dá Lula 41% x Flávio 35% no 1º turno e 46% x 43% no returno. A comparação que vale é a da PoderData contra ela mesma, e nela o gap do 1º turno NÃO se mexeu: eram 6pp em 16/Jul (40% x 34%) e são 6pp agora (41% x 35%), com os dois primeiros subindo 1pp, dentro da margem de 2pp. O aperto só aparece se a régua for trocada no meio da medição, comparando a PoderData de hoje com a AtlasIntel de ontem, que deu 9,1pp. Isso é efeito de casa, não movimento, e o painel não soma as duas. O ACHADO DE MÉTODO É RENAN SANTOS, e ele DESFAZ o de ontem. Em 29/Jul o painel registrou a distância entre preço e urna caindo a 0,90pp, com a AtlasIntel dando 7,8%. A PoderData dá 4% e a distância REABRE para 4,45pp. Dentro da própria PoderData ele cai de 6% para 4%, a maior variação individual da rodada, e o mercado foi na mesma direção no lugar onde isso importa: o book de 2º lugar do 1º turno DESABOU de 11,70% para 6,10%, queda de 5,60pp (vol USD 1,09M), enquanto o de 3º lugar SUBIU 0,50pp, para 62,00% (vol USD 164 mil). O dinheiro não o eliminou, o reclassificou. Convergência medida contra um único levantamento não é tendência, e a dispersão entre institutos segue com seis pontos de amplitude no mesmo mês: 7,8%, 6%, 5%, 4% e 3%. CAIADO é o único nome em que preço e urna subiram juntos: 5% na PoderData, alta de 1pp dentro da casa, e 2,55% no mercado (vol USD 5,20M), alta de 0,20pp. A divergência sobre ele não fechou e segue em três níveis. O MERCADO NO DETALHE: Lula 63,50% (alta 1,00pp), Flávio 23,95% (estável), Renan Santos 8,45% (queda 0,25pp, vol USD 8,59M), Caiado 2,55% (alta 0,20pp), Jair 1,05% (estável), Zema 0,55% (queda 0,20pp), Haddad 0,15% (queda 0,10pp). INSTITUCIONAL: o impeachment de ministro do STF CAIU 0,25pp, para 3,10% (vol USD 83 mil), no dia em que a Federação Brasil da Esperança protocolou no TSE uma representação de mais de 200 páginas contra uma rede de perfis que, segundo alega, usa inteligência artificial contra Lula. Preço e acúmulo foram para lados opostos, e num book de USD 83 mil isso é ruído, não sinal. DOIS BOOKS FINOS se mexeram muito: o PL caiu 5,50pp no Senado, para 65,50% (vol USD 258 mil), e na inflação a faixa de 4,50% a 4,99% caiu 2,40pp, para 32,50%, num book de USD 81 mil não coberto pela trava. NOTA DE CAPTURA: A trava de dupla leitura rodou uma vez e APROVOU sem nenhuma divergência nos cinco books cobertos, o que não acontecia desde 28/Jul: nas duas rodadas anteriores ela bloqueou. Todos os preços entram FIRMES, sem faixa declarada. Volume total acumulado no presidencial em USD 116,58M.",
-    "sources": "Polymarket via proxy AFOS (captura ao vivo 30/Jul 20:08 UTC, degraded false, failedCount 0, scripts/capture-guard.ts em uma rodada, APROVADA sem divergência nos cinco books cobertos) + PoderData/Aya 30/Jul (BR-07845/2026, n=2.400, campo 26-29/Jul, margem 2pp, última nacional) + AtlasIntel/Bloomberg 29/Jul (BR-08602/2026, n=5.021, campo 22-27/Jul, margem 1pp, maior amostra do recorte) + BTG/Nexus 27/Jul (BR-01489/2026, n=2.004) + Datafolha 24/Jul (BR-01166/2026, n=2.004) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + PoderData/Aya 16/Jul (BR-00059/2026) + Genial/Quaest 15/Jul (BR-07181/2026) + Futura/Apex 14/Jul (BR-07294/2026) + AtlasIntel 01/Jul (BR-04582/2026). Estaduais de 30/Jul citadas como contexto e fora do recorte nacional: Genial/Quaest em dez estados, com Rio Grande do Sul, Ceará e Goiás usados no painel. Série do AFOS conferida em scripts/check-superlativo.ts, direto no Neon, sem cap de janela: cobertura de 14/Abr a 30/Jul, topo de Lula em 63,50% (26, 28 e 30/Jul) e maior gap em +39,80pp (26/Jul).",
+    "note": "Cruzamento de 31/Jul: o favorito não se mexeu e quase todo o resto se mexeu. Lula ESTÁVEL em 63,50% (vol USD 7,77M) pelo segundo pregão, e o gap recua de +39,55pp para +39,20pp porque Flávio SUBIU 0,35pp, indo a 24,30% (vol USD 7,76M). A URNA: Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) dá Lula 40,5% x Flávio 31,2% no 1º turno e 47,5% x 41,1% no returno, e os 6,4pp do returno ficam FORA da margem somada, o que afasta a leitura de empate técnico da véspera. A SEMANA TEM TRÊS GAPS DE 1º TURNO E ELES NÃO CONCORDAM: 9,1pp na AtlasIntel, 6pp na PoderData e 9,3pp na Vox. A fora da curva é a PoderData. O ACHADO É RENAN SANTOS, e é de sequência: TRÊS institutos seguidos o cortaram, de 7,8% para 4% e agora 3,0%, e com preço em 8,15% a distância entre mercado e urna chega a 5,15pp, a maior do recorte, contra os 0,90pp que este painel chamou de convergência em 29/Jul. Aquela leitura não se sustentou. E o mercado se contradisse: no mesmo dia, o book de 2º lugar do 1º turno dele SUBIU 3,25pp, de 6,10% para 9,35%, devolvendo dois terços do que fora retirado na véspera. CAIADO devolveu tudo: caiu 0,80pp, para 1,75%, desfazendo em um pregão a alta de dois dias, e subiu 1,00pp no 3º lugar, passando a 26,50%, no mesmo dia em que a Vox lhe deu 5,5%, a melhor urna nacional dele no recorte. A ressalva de série diz que 1,75% é a faixa normal dele desde 22/Jul e que os 2,55% de 30/Jul é que eram o desvio. CAMILO SANTANA subiu a 2,20% e ALCKMIN a 1,10%, no dia em que o PCdoB formalizou apoio à chapa Lula-Alckmin, e o painel registra a coincidência sem afirmar causa; sobre Camilo, os 2,20% ficam ABAIXO do máximo da série dele, que é 4,10% de 03/Mai e o movimento é recuperação do mínimo da série, 0,50%, marcado ontem. NOS DEMAIS MERCADOS: impeachment de ministro do STF ESTÁVEL em 3,10% (vol USD 83 mil), sem variação nas quatro leituras da trava; no Senado o PL subiu 6,50pp, indo a 72,00% (vol USD 258 mil), e o MDB entra como FAIXA declarada de 25,20% a 26,60%; na inflação a faixa de 4,50% a 4,99% subiu 1,20pp, para 33,70%. NOTA DE CAPTURA: a trava de dupla leitura REPROVOU as duas rodadas de hoje, e por isso vale a regra de faixa. O único book divergente foi o do MDB no Senado, que oscilou entre 25,20% e 26,60% em três leituras. O contrato presidencial inteiro repetiu nas QUATRO leituras, então o dado principal está firme. Volume total acumulado no presidencial em USD 117,03M.",
+    "sources": "Polymarket via proxy AFOS (captura ao vivo 31/Jul 20:33 UTC, degraded false, failedCount 0, scripts/capture-guard.ts em DUAS rodadas, ambas reprovadas; único book divergente foi senate:MDB, publicado como faixa; o presidencial repetiu nas quatro leituras) + Vox Brasil 31/Jul (BR-01084/2026, n=2.100, campo 26-28/Jul, margem 2,15pp, última nacional) + PoderData/Aya 30/Jul (BR-07845/2026, n=2.400) + AtlasIntel/Bloomberg 29/Jul (BR-08602/2026, n=5.021, maior amostra do recorte) + BTG/Nexus 27/Jul (BR-01489/2026) + Datafolha 24/Jul (BR-01166/2026) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + PoderData/Aya 16/Jul (BR-00059/2026) + Genial/Quaest 15/Jul (BR-07181/2026) + Futura/Apex 14/Jul (BR-07294/2026) + AtlasIntel 01/Jul (BR-04582/2026). Série do AFOS conferida em scripts/check-superlativo.ts, direto no Neon, sem cap de janela: máximo de Camilo Santana em 4,10% (03/Mai) e mínimo em 0,50% (30/Jul); faixa de Caiado desde 22/Jul entre 1,80% e 2,10%; máximo de Zema em 10,10% (26/Abr).",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "36-46%",
         "polymarket": "63,50%",
-        "tendenciaPesquisa": "URNA NOVA: PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, 95% de confiança, BR-07845/2026, telefônica em celular e fixo, 677 municípios nos 27 estados) dá Lula 41% no 1º turno contra 35% de Flávio, e 46% x 43% no returno. A comparação que vale é a da PoderData contra ela mesma, e nela o gap do 1º turno NÃO se mexeu: eram 6pp em 16/Jul (40% x 34%) e são 6pp agora (41% x 35%), com os dois primeiros subindo 1pp, dentro da margem de 2pp. O aperto só aparece se a régua for trocada no meio da medição, comparando a PoderData de hoje com a AtlasIntel de ontem, que deu 9,1pp. Isso é efeito de casa, não movimento, e o painel não soma as duas. O que se mexeu na rodada não foi a intenção de voto, foi a avaliação: aprovação pessoal cai a 43% contra 49% de desaprovação, e a avaliação da GESTÃO piora forte, com ruim ou péssimo em 47%, alta de 10pp contra a rodada de 22/Jul do instituto. A rejeição EMPATA em 49% com a de Flávio.",
-        "tendenciaPolymarket": "SOBE 1,00pp e volta a 63,50% (vol USD 7,74M), valor que IGUALA pela terceira vez o topo da série do AFOS, marcado em 26, em 28 e agora em 30/Jul, sem superá-lo em nenhuma das três. O gap sobre Flávio abre de +38,55pp para +39,55pp e fica a 0,25pp do máximo da série, os +39,80pp de 26/Jul. É o terceiro dia em sete em que o preço anda um ponto inteiro, e nos três a evidência de urna, lida dentro da mesma casa, estava parada. O painel registra o padrão e não afirma causa: não houve evento triggador claro nesta quinta.",
+        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) dá 40,5% no 1º turno e 47,5% x 41,1% no returno. A vantagem de 6,4pp no returno fica FORA da margem somada das duas pontas, então esta leitura NÃO descreve empate técnico, ao contrário da PoderData de 30/Jul, que dava 3pp. O registro que organiza a semana: TRÊS casas mediram o gap do 1º turno em 9,1pp (AtlasIntel, 29/Jul), 6pp (PoderData, 30/Jul) e 9,3pp (Vox, hoje). Duas concordam em torno de 9pp e a que destoa é a PoderData. Esta rodada não publicou aprovação nem rejeição.",
+        "tendenciaPolymarket": "ESTÁVEL em 63,50% pelo segundo pregão seguido, mantendo o valor que iguala o topo da série do AFOS, marcado em 26, 28 e 30/Jul. O gap sobre Flávio recuou de +39,55pp para +39,20pp, e recuou por movimento do adversário e não dele. Dois pregões sem qualquer variação no contrato de vencedor, numa semana em que o resto do book se mexeu bastante, e o preço não reagiu a nenhuma das três urnas nacionais publicadas nos últimos três dias.",
         "odds": 63.5,
-        "percentage": 41,
-        "lastUpdate": "2026-07-30",
+        "percentage": 40.5,
+        "lastUpdate": "2026-07-31",
         "value": 63.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28-38%",
-        "polymarket": "23,95%",
-        "tendenciaPesquisa": "PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, BR-07845/2026, telefônica, 677 municípios nos 27 estados) o traz em 35% no 1º turno, ante 34% da própria casa em 16/Jul, e em 43% no returno contra 46% de Lula, diferença de 3pp que cabe na margem somada e caracteriza empate técnico. A NOVIDADE é a REJEIÇÃO: 49%, EMPATADA com a de Lula, quando a AtlasIntel de 29/Jul dava 52,9% contra 49,4%. Em todas as nacionais recentes, com exceção da Gerp de 22/Jul, a rejeição dele vinha igual ou acima da de Lula, e o painel vinha tratando essa assimetria como restrição estrutural da candidatura. Uma leitura não desfaz a série, mas nesta ela não apareceu.",
-        "tendenciaPolymarket": "ESTÁVEL em 23,95% (vol USD 7,71M), interrompendo sem queda quatro fechamentos diários seguidos em alta, que vinham de 22,90% em 25/Jul. O gap contra ele abriu 1,00pp no dia, para +39,55pp, por movimento do adversário e não dele: registrar isso é obrigatório, porque gap que abre por um lado só não é reprecificação da candidatura. Nos sub-mercados, SOBE 0,50pp no book de 2º lugar do 1º turno, que passa a 79,00% num contrato de USD 215 mil, a maior marca dele ali no acompanhamento do painel, e fica parado em 6,25% no 3º lugar. A alta no book de 2º lugar tem contrapartida direta no desabamento de Renan Santos no mesmo contrato: o mercado está concentrando nele a segunda vaga do returno.",
-        "odds": 23.95,
-        "percentage": 35,
-        "lastUpdate": "2026-07-30",
-        "value": 23.95
+        "polymarket": "24,30%",
+        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) o traz em 31,2% no 1º turno e 41,1% no returno. Os 6,4pp que o separam de Lula ficam fora da margem somada, o que afasta a leitura de empate técnico que a PoderData sustentava na véspera. O dia dele, porém, foi de arranjo de chapa e tem TRÊS versões do mesmo fato: ele afirmou que Tereza Cristina aceitou ser vice, a senadora disse que houve conversa e que a decisão depende do PL e do PP-União, e a cúpula do PP avalia que ela aceitou por saber que o partido barraria. O prazo de 05/Ago está a menos de uma semana.",
+        "tendenciaPolymarket": "SOBE 0,35pp e vai a 24,30% (vol USD 7,76M), e é ele quem estreita o gap, que passa a +39,20pp. Nos sub-mercados o sinal é CRUZADO: cede 1,00pp no book de 2º lugar do 1º turno, que passa a 78,00% num contrato de USD 216 mil, e cede 0,60pp no de 3º lugar, que passa a 5,65%. Subir na chance de ganhar e ceder nas duas de colocação é combinação incomum, e a contrapartida da queda no book de 2º lugar é a alta de 3,25pp de Renan Santos no mesmo contrato, o que sugere realocação interna e não leitura nova sobre o returno.",
+        "odds": 24.3,
+        "percentage": 31.2,
+        "lastUpdate": "2026-07-31",
+        "value": 24.3
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-9%",
-        "polymarket": "8,45%",
-        "tendenciaPesquisa": "PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, BR-07845/2026, telefônica, 677 municípios nos 27 estados) o dá em 4%, contra 6% da própria casa em 16/Jul. Essa queda de 2pp é a variação individual mais forte da rodada e, por ser dentro da MESMA casa e do mesmo método, é a comparação que vale. Ela DESFAZ o que o painel registrou em 29/Jul, quando os 7,8% da AtlasIntel tinham estreitado a distância entre preço e urna para 0,90pp: com 4% de urna e 8,45% de preço, a distância REABRE para 4,45pp. A lição de método é que convergência medida contra um único levantamento não é tendência. A dispersão entre institutos segue sem se resolver e tem seis pontos de amplitude no mesmo mês: 7,8% na AtlasIntel, 6% na Nexus, 5% na Indexa, 4% na PoderData e 3% na Datafolha.",
-        "tendenciaPolymarket": "CAI 0,25pp no contrato de vencedor, para 8,45% (vol USD 8,59M), abaixo de todo fechamento diário da última semana. Mas o movimento do dia não está aí: está no book de 2º lugar do 1º turno, que DESABOU de 11,70% para 6,10%, queda de 5,60pp num contrato de USD 1,09M, e é o maior movimento isolado do dia em todo o painel. No mesmo pregão, o book de 3º lugar SUBIU 0,50pp e passa a 62,00% num contrato de USD 164 mil. Somados, os três dizem a mesma coisa: o dinheiro não o tirou da eleição, o RECLASSIFICOU, retirando dele a chance de disputar o returno e consolidando-o como terceiro colocado. Mantém, nesta captura, o maior volume acumulado entre os nomes competitivos do presidencial, USD 8,59M, acima de Lula e de Flávio.",
-        "odds": 8.45,
-        "percentage": 4,
-        "lastUpdate": "2026-07-30",
-        "value": 8.45
+        "polymarket": "8,15%",
+        "tendenciaPesquisa": "TRÊS institutos seguidos o cortaram, e é a sequência que importa, não o número isolado: 7,8% na AtlasIntel de 29/Jul, 4% na PoderData de 30/Jul e 3,0% na Vox Brasil de 31/Jul. Com o preço em 8,15%, a distância entre mercado e urna chega a 5,15pp, a maior do recorte. Em 29/Jul este painel registrou essa mesma distância em 0,90pp e a chamou de convergência; três institutos depois, ela quadruplicou, e fica registrado que aquela leitura não se sustentou. A dispersão entre casas deixou de ser dispersão: as três leituras mais recentes são também as três mais baixas, o que descreve tendência de queda.",
+        "tendenciaPolymarket": "CAI 0,30pp e vai a 8,15% (vol USD 8,63M), quarto pregão seguido de queda no contrato de vencedor. Mas o movimento do dia é o oposto no book de colocação: SOBE 3,25pp no de 2º lugar do 1º turno, de 6,10% para 9,35% num contrato de USD 1,09M, recuperando dois terços do que perdera na véspera, e fica ESTÁVEL em 62,00% no de 3º lugar. Ontem o painel registrou que o dinheiro o havia reclassificado, tirando dele a chance de returno; hoje o mesmo dinheiro devolveu boa parte dela, no dia em que a urna o cortou pela terceira vez seguida. As duas direções ficam registradas e nenhuma é arbitrada. Mantém, nesta captura, o maior volume acumulado entre os nomes competitivos do presidencial, USD 8,63M.",
+        "odds": 8.15,
+        "percentage": 3,
+        "lastUpdate": "2026-07-31",
+        "value": 8.15
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "2,55%",
-        "tendenciaPesquisa": "PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, BR-07845/2026, telefônica, 677 municípios nos 27 estados) o devolve a 5%, alta de 1pp dentro da própria casa contra a rodada de 16/Jul, e isso vem 24 horas depois de a AtlasIntel o ter cortado a 3,1%, metade dos 6% da BTG/Nexus. A divergência sobre ele, portanto, NÃO fechou a favor da leitura baixa: seguem no ar 6%, 5% e 3,1%. O dado estadual da quinta é o descompasso mais nítido da rodada: a Genial/Quaest o dá LIDERANDO Goiás com 33%, à frente de Flávio (27%) e de Lula (23%), no mesmo levantamento em que a desaprovação do governo estadual dele é de 59%.",
-        "tendenciaPolymarket": "SOBE 0,20pp no contrato de vencedor, para 2,55% (vol USD 5,20M), acumulando 0,65pp em dois pregões, de 1,90% em 28/Jul. É o ÚNICO nome do painel em que preço e urna subiram juntos hoje. Fica PARADO em 25,50% no book de 3º lugar do 1º turno (vol USD 37 mil), ou seja, a alta não apareceu no contrato em que ele de fato disputa posição, e Renan Santos subiu 0,50pp ali no mesmo pregão. Sobe 0,30pp no book de 2º lugar, para 0,90%. A ressalva de tamanho vem antes de qualquer leitura: 5% de urna com margem de 2pp e 2,55% de preço são grandezas diferentes medindo coisas diferentes, e coincidência de direção não é confirmação.",
-        "odds": 2.55,
-        "percentage": 5,
-        "lastUpdate": "2026-07-30",
-        "value": 2.55
+        "polymarket": "1,75%",
+        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) lhe dá 5,5% no 1º turno, a MELHOR leitura nacional dele no recorte, acima dos 5% da PoderData de 30/Jul e bem acima dos 3,1% da AtlasIntel de 29/Jul. A divergência entre institutos sobre ele segue aberta em QUATRO níveis dentro do mesmo mês: 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel, e a leitura de hoje é a mais alta das quatro.",
+        "tendenciaPolymarket": "CAI 0,80pp e vai a 1,75% (vol USD 5,22M), devolvendo em um único pregão toda a alta acumulada em dois dias. A ressalva de série é obrigatória e corta para os dois lados: 1,75% está dentro da faixa normal dele desde 22/Jul, quando a série do AFOS registrou 1,80%, e o que a série registrou em 30/Jul, 2,55%, é que era o desvio para cima. Não houve colapso, houve devolução de desvio. E o sinal é cruzado, porque no book de 3º lugar do 1º turno ele SOBE 1,00pp, passando a 26,50% num contrato de USD 37 mil. A leitura que se sustenta é de realocação: o mercado o move de candidato a vencedor para candidato a terceiro colocado, e a urna não acompanha, porque lhe deu justamente hoje a melhor marca do recorte.",
+        "odds": 1.75,
+        "percentage": 5.5,
+        "lastUpdate": "2026-07-31",
+        "value": 1.75
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "Não aparece nos cenários presidenciais das nacionais e a PoderData de 30/Jul não o testa. Em 28/Jul ele liberou aliados e prefeitos da base para apoiarem a candidatura de Caiado, reiterando que o candidato dele segue sendo Flávio.",
-        "tendenciaPolymarket": "ESTÁVEL em 0,15% no presidencial, com o volume acumulado mais alto do book presidencial nesta captura, USD 13,66M. É a anomalia de legado que serve de lembrete permanente de método: volume mede história negociada e não convicção atual. O contrato acumulou esse valor ao longo de meses em que ele era tratado como candidato provável, e o preço de hoje diz que o mercado não o considera mais na disputa.",
+        "tendenciaPesquisa": "A Vox Brasil de 31/Jul não o testa em nenhum cenário presidencial. Em 28/Jul ele liberou aliados e prefeitos da base para apoiarem a candidatura de Caiado, reiterando que o candidato dele segue sendo Flávio.",
+        "tendenciaPolymarket": "ESTÁVEL em 0,15%, com o maior volume acumulado do book presidencial nesta captura, USD 13,68M. É a anomalia de legado que serve de lembrete permanente de método: volume mede história negociada e não convicção atual. O contrato acumulou esse valor ao longo de meses em que ele era tratado como candidato provável, e o preço de hoje diz que o mercado não o considera mais na disputa.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-07-30",
+        "lastUpdate": "2026-07-31",
         "value": 0.15
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
-        "polymarket": "0,55%",
-        "tendenciaPesquisa": "PoderData/Aya de 30/Jul (n=2.400, campo 26 a 29/Jul, margem de 2pp, BR-07845/2026, telefônica, 677 municípios nos 27 estados) o corta de 4% para 3% dentro da própria casa. É o segundo instituto seguido a medi-lo abaixo de 3%, depois dos 2,8% da AtlasIntel de 29/Jul, que ainda o colocou perdendo o returno nacional para Lula por 48,6% a 39,6%. Segue oficializado pelo Novo desde 27/Jul e SEM vice, com o prazo de 05/Ago a menos de uma semana.",
-        "tendenciaPolymarket": "CAI 0,20pp no contrato presidencial, para 0,55% (vol USD 4,57M), devolvendo exatamente o que subira na véspera, e fica em 4,50% no book de 3º lugar do 1º turno. É o único nome do painel que caiu nas DUAS medidas no mesmo dia, urna e preço. Ressalva de série, e ela é grande: o máximo dele na série do AFOS é 10,10%, de 26/Abr, então 0,55% está a pouco mais de um vigésimo daquele nível, e movimentos de 0,20pp nessa faixa têm baixíssimo valor informativo.",
-        "odds": 0.55,
-        "percentage": 3,
-        "lastUpdate": "2026-07-30",
-        "value": 0.55
+        "polymarket": "0,45%",
+        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) o traz em 3,2% no 1º turno, praticamente os mesmos 3% da PoderData de 30/Jul e acima dos 2,8% da AtlasIntel de 29/Jul. Na urna ele está estável. No arranjo partidário o dia foi ruim: Marcelo Aro deixou a chapa dele ao Senado para disputar o governo de Minas Gerais, movimento que Zema chamou publicamente de traição, e o Novo descartou Barbosa como vice, caminhando para chapa puro-sangue. Segue SEM vice, com o prazo de 05/Ago a menos de uma semana.",
+        "tendenciaPolymarket": "CAI 0,10pp e vai a 0,45% (vol USD 4,58M), no TERCEIRO pregão seguido de queda no contrato de vencedor, e fica em 4,45% no book de 3º lugar do 1º turno. Ressalva de série, e ela é grande: o máximo dele na série do AFOS é 10,10%, de 26/Abr, então 0,45% é menos de um vigésimo daquele nível, e movimentos de 0,10pp nessa faixa têm valor informativo quase nulo.",
+        "odds": 0.45,
+        "percentage": 3.2,
+        "lastUpdate": "2026-07-31",
+        "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,15%",
-        "tendenciaPesquisa": "A PoderData de 30/Jul NÃO o testa em nenhum cenário, nem de 1º turno nem de returno, então ele não tem urna nova nesta rodada, e ausência de teste numa nacional é informação que o painel registra em vez de repetir o dado da véspera como se fosse novo. A leitura favorável mais recente segue sendo a da AtlasIntel de 29/Jul, num dos dois cenários de returno SEM Lula, onde aparece com 44,3% contra 43,7% de Flávio, empate técnico dentro da margem de 1pp. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo.",
-        "tendenciaPolymarket": "CAI nos dois contratos em que aparece: 0,10pp no de vencedor, para 0,15%, e 0,30pp no de 2º lugar do 1º turno, para 0,85%. É a inversão do sinal cruzado que o painel registrou em 29/Jul, quando ele subira no book de colocação e ficara parado no de vencedor. Cair nos dois é sinal coerente, e o coerente aqui é para baixo.",
-        "odds": 0.15,
+        "polymarket": "0,30%",
+        "tendenciaPesquisa": "A Vox Brasil de 31/Jul NÃO o testa em nenhum cenário, nem de 1º turno nem de returno, então ele não tem urna nova nesta rodada, e ausência de teste numa nacional é informação que o painel registra em vez de repetir o dado da véspera como se fosse novo. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece é hipótese de pesquisa e não candidatura em curso.",
+        "tendenciaPolymarket": "SOBE 0,15pp e vai a 0,30%, dobrando o valor da véspera, e chega a 1,00% no book de 2º lugar do 1º turno, no segundo pregão seguido de alta naquele contrato. A ressalva de escala é obrigatória: num preço de 0,30%, uma alta de 0,15pp tem valor informativo quase nulo, e o movimento só é registrado porque é o segundo dia seguido na mesma direção.",
+        "odds": 0.3,
         "percentage": 0,
-        "lastUpdate": "2026-07-30",
-        "value": 0.15
+        "lastUpdate": "2026-07-31",
+        "value": 0.3
       }
     ],
-    "updatedAt": "30/07/2026, 17:08"
+    "updatedAt": "31/07/2026, 17:33"
   }
 }
