@@ -109,6 +109,25 @@ async function main() {
 
   let resolvidas = 0
 
+  /**
+   * DISJUNTOR, instalado 31/Jul/2026.
+   *
+   * Quando o archive.org bloqueia por excesso de requisição, ele para de
+   * responder no host inteiro: `web.archive.org` devolve 000 e a API de
+   * disponibilidade devolve 429. Nesse estado a retentativa NÃO recupera nada,
+   * ela só triplica o volume contra quem já está bloqueando, e o bloqueio dura
+   * mais. Em 31/Jul uma rodada de 38 URLs disparou até 114 requisições numa
+   * parede e voltou com 7/38, contra 25/38 na véspera.
+   *
+   * Falha de host é diferente de falha de URL. Se N seguidas forem de host,
+   * a rodada aborta e o que não foi tentado fica para depois, intacto.
+   */
+  const LIMITE_FALHA_HOST = 5
+  const ehFalhaDeHost = (e?: string) =>
+    !!e && /fetch failed|429|ECONNRESET|ETIMEDOUT|socket hang up|AbortError/i.test(e)
+  let seguidasDeHost = 0
+  let abortou = false
+
   for (let i = 0; i < urls.length; i++) {
     const citada = urls[i]
     // Arquivar a MATÉRIA, não o invólucro de redirect.
@@ -120,14 +139,27 @@ async function main() {
     if (result.ok) {
       console.log(result.attempts > 1 ? `OK (retry ${result.attempts})` : 'OK')
       ok++
+      seguidasDeHost = 0
     } else {
       console.log(`FAIL after ${result.attempts} attempts (${result.error})`)
       fail++
+      seguidasDeHost = ehFalhaDeHost(result.error) ? seguidasDeHost + 1 : 0
+      if (seguidasDeHost >= LIMITE_FALHA_HOST) {
+        abortou = true
+        console.error(
+          `\n🛑 DISJUNTOR: ${LIMITE_FALHA_HOST} falhas de HOST seguidas. O archive.org está nos bloqueando.\n` +
+          `   Abortando com ${urls.length - i - 1} URL(s) ainda não tentadas, para não aprofundar o bloqueio.\n` +
+          `   Conferir antes de tentar de novo:\n` +
+          `     curl -s -o /dev/null -w "%{http_code}" https://web.archive.org\n` +
+          `   200 = liberado. 000 ou 429 = ainda bloqueado, ESPERAR.`
+        )
+        break
+      }
     }
     if (i < urls.length - 1) await sleep(THROTTLE_MS)
   }
 
-  console.log(`\nResumo: ${ok}/${urls.length} arquivados${fail > 0 ? `, ${fail} falharam` : ''}.`)
+  console.log(`\nResumo: ${ok}/${urls.length} arquivados${fail > 0 ? `, ${fail} falharam` : ''}${abortou ? ' (rodada ABORTADA pelo disjuntor)' : ''}.`)
   if (resolvidas > 0) console.log(`${resolvidas} URL(s) de redirect resolvidas para a matéria antes de arquivar.`)
   process.exit(fail > 0 ? 1 : 0)
 }
