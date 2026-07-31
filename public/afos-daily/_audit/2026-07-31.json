@@ -1,0 +1,97 @@
+{
+  "date": "2026-07-31",
+  "capturaPolymarket": "2026-07-31T22:25:20Z",
+  "travaDeCaptura": {
+    "rodadas": 4,
+    "resultado": "todas reprovadas",
+    "detalhe": "A 3a rodada (22:07:56 -> 22:15:57 UTC) reprovou porque Lula estava em transito de 63,50% para 64,50%. A 4a (22:16:48 -> 22:24:49 UTC) repetiu o contrato presidencial inteiro e reprovou apenas senate:MDB, com 2,00pp de divergencia.",
+    "publicadoFirme": "contrato presidencial inteiro, incluindo Lula em 64,50%",
+    "publicadoComoFaixa": "senate:MDB, de 24,65% a 26,65%"
+  },
+  "superlativosConferidos": [
+    {
+      "afirmacao": "Lula 64,50% rompe o topo da serie",
+      "ferramenta": "scripts/check-superlativo.ts Lula",
+      "serie": "2026-04-14 a 2026-07-31",
+      "maximoAnterior": "63,50%, igualado em 26, 28, 30 e 31/Jul, nunca superado",
+      "veredito": "confirmado"
+    },
+    {
+      "afirmacao": "gap +40,15pp e o mais largo da serie e o primeiro acima de 40pp",
+      "ferramenta": "/api/market/history em duas janelas (90 e 18 dias), Lula menos Flavio por dia",
+      "serie": "2026-05-03 a 2026-07-31, 87 dias com os dois nomes",
+      "maximoAnterior": "+39,80pp em 2026-07-26",
+      "veredito": "confirmado, com a janela declarada no texto"
+    },
+    {
+      "afirmacao": "1,60% do Caiado esta dentro da faixa normal dele desde 22/Jul",
+      "ferramenta": "scripts/check-superlativo.ts \"Ronaldo Caiado\"",
+      "serie": "2026-04-14 a 2026-07-31, minimo 0,90% em 09/Jul, maximo 2,40%",
+      "veredito": "REPROVADO. A faixa desde 22/Jul e de 1,80% a 2,40%, entao 1,60% fica ABAIXO dela. A afirmacao foi corrigida em 5 campos do painel antes da publicacao."
+    }
+  ],
+  "factCheckGate": [
+    {
+      "evento": "PF aponta 74 ligacoes entre o senador Jaques Wagner e Augusto Lima, ex-socio do Banco Master, em 555 dias; Mendonca retira o sigilo de parte da investigacao e autoriza monitorar a localizacao do celular do senador; Novo pede processo no Conselho de Etica",
+      "data": "2026-07-31",
+      "crossRef": "zero mencoes nas 7 dailies anteriores",
+      "classificacao": "novidade",
+      "fontes": [
+        "https://www.otempo.com.br/politica/judiciario/2026/7/31/pf-identifica-74-ligacoes-e-mais-de-5h30-de-conversas-entre-jaques-wagner-e-ex-socio-do-master",
+        "https://www.correiobraziliense.com.br/politica/2026/07/7471322-pf-detectou-74-ligacoes-entre-jaques-wagner-e-ex-socio-do-master.html",
+        "https://www.metropoles.com/brasil/pf-aponta-74-ligacoes-entre-jaques-wagner-e-ex-socio-de-daniel-vorcaro"
+      ],
+      "decisao": "incorporar",
+      "nota": "O painel publicado as 17:33 dizia que o dia nao teve ato novo no caso Master. Estava errado e foi corrigido no rebaseline das 19:25."
+    },
+    {
+      "evento": "PP anuncia neutralidade, nao convoca Convencao Nacional e com isso veta a chapa que teria Tereza Cristina como vice de Flavio; a senadora acata",
+      "data": "2026-07-31",
+      "crossRef": "1 mencao a Tereza Cristina em 25/Jul, em outro contexto",
+      "classificacao": "novidade",
+      "fontes": [
+        "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/07/31/respeito-mas-nao-desisto-nunca-diz-flavio-apos-pp-vetar-tereza-cristina-como-vice.ghtml",
+        "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPSXYtS1RDTWl5czhFWFFFOUI4UmdLWWdPVVRVVENWVW1tZE9fa3hlMG1YZXQ3SVhjQzFBeFJGRlBhbVJuNk1iMWhXRlg0VEs5RDJleGE3OTlvbGQtQWxZZjRialdraVVoS3MwcUtwbE51V2dqVm90ZlNuaWx1X2VhZEVUbEl1elZid1lRVTNpZ3FkUG1sYjA2RVFCM05TY2w2VFRtWHBtQV9aZEN4LWI5cy1WdU9FeXNUcFBCQ0dIRllYNU5hNWRPU1JnaGY5NklMdWMxRExUd3VmUQ?oc=5"
+      ],
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Republicanos marca convencao nacional para 04/Ago com a maioria dos diretorios estaduais consultados defendendo neutralidade, encaminhando a recusa de alianca com Flavio",
+      "data": "2026-07-31",
+      "crossRef": "4 mencoes, sendo a de 24/Jul o registro de que Flavio buscava Republicanos e Podemos apos perder a federacao Uniao-PP",
+      "classificacao": "desdobramento",
+      "fontes": [
+        "https://www.congressoemfoco.com.br/noticia/120417/republicanos-nega-alianca-com-flavio-e-indica-neutralidade-na-eleicao",
+        "https://www.metropoles.com/colunas/andreza-matais/republicanos-apoio-flavio-bolsonaro-stf-isolamento-lula-neutralidade"
+      ],
+      "decisao": "incorporar com o verbo condicional: o PP decidiu, o Republicanos ainda nao"
+    },
+    {
+      "evento": "Mendonca autoriza inquerito para apurar trafico de influencia de Fabio Luis Lula da Silva, o Lulinha, junto ao Ministerio da Saude e a Presidencia",
+      "data": "2026-07-30",
+      "crossRef": "zero mencoes nas 7 dailies anteriores",
+      "classificacao": "novidade para o leitor, com a data da autorizacao explicitada como 30/Jul",
+      "fontes": [
+        "https://www.poder360.com.br/poder-justica/pf-pede-ao-stf-para-investigar-lulinha-por-trafico-de-influencia/",
+        "https://www.jornaldocomercio.com/politica/2026/07/1258192-mendonca-autoriza-pf-a-abrir-inquerito-para-apurar-trafico-de-influencia-de-lulinha-no-governo.html"
+      ],
+      "decisao": "incorporar"
+    }
+  ],
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims.ts exit 0, todos os claims batem com o JSON dentro de 0,05pp",
+    "fontesInventadas": "conferidos 3 ao acaso (O Tempo, Congresso em Foco, Poder360), todos com materia do dia",
+    "quotesLiterais": "nenhuma aspa literal",
+    "causacaoEspuria": "nenhuma; o texto registra coincidencia de data e nao afirma causa",
+    "verbosCriticos": "retirou o sigilo, autorizou inquerito e autorizou monitorar desambiguados com a frase de que nenhum ato e condenacao; caminha para recusar nunca aparece como recusou",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "validateAfosDaily": "OK, 1 warning de densidade de link (50%, regra pede 80%)",
+    "reconcileClaims": "OK",
+    "gateNumericoEntreIdiomas": "56 valores em % e pp identicos nos tres idiomas; 7 mencoes USD em cada",
+    "tldr": "3 bullets em pt-BR, EN e ES",
+    "tetoDePalavras": "1065 palavras no corpo, 165 acima do teto de 900. Corte interrompido no ponto em que passaria a custar informacao verificada, e o fato foi comunicado ao Andre em vez de cortar em silencio."
+  }
+}
