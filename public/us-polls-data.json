@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-07-29",
-  "fetchedAt": "2026-07-29T19:11:04.659Z",
+  "lastUpdate": "2026-07-31",
+  "fetchedAt": "2026-07-31T21:40:32.795Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-06-29",
+    "desde": "2026-07-01",
     "nPesquisas": 21,
-    "nInstitutos": 20,
-    "dem": 47.19,
-    "rep": 40.62,
-    "vantagemDem": 6.57,
+    "nInstitutos": 21,
+    "dem": 47.9,
+    "rep": 42.33,
+    "vantagemDem": 5.57,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -39,7 +39,6 @@
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
-      "Focaldata/Financial Times",
       "HarrisX/2WAY",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
@@ -48,22 +47,37 @@
       "Morning Consult |June 29 – July 5, 2026 |24,000 (RV) |± 1.0% |46% |42% |12% |4% |- |Manhattan Institute",
       "Pew Research Center",
       "Quantus Insights (R)",
+      "Quinnipiac University",
       "RMG Research",
       "Reuters/Ipsos",
       "Talker Research",
+      "The Argument/Verasight",
       "The Economist/YouGov",
       "The Washington Post/Ipsos",
       "Zogby Analytics"
     ]
   },
   "qualidade": {
-    "linhasLidas": 276,
-    "publicadas": 275,
+    "linhasLidas": 279,
+    "publicadas": 278,
     "descartadasPorForma": 1,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível, tipicamente rowspan fora de sincronia na origem",
     "semFontePrimaria": 0
   },
   "polls": [
+    {
+      "instituto": "Quinnipiac University",
+      "campoInicio": "2026-07-23",
+      "campoFim": "2026-07-27",
+      "amostra": 963,
+      "amostraTipo": "RV",
+      "margemErro": 4.1,
+      "dem": 48,
+      "rep": 41,
+      "outros": 11,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3964"
+    },
     {
       "instituto": "Reuters/Ipsos",
       "campoInicio": "2026-07-24",
@@ -89,6 +103,32 @@
       "outros": 32,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Reuters%20Ipsos%20July%20Core%20Political%20Topline%207.27.26.pdf"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-07-20",
+      "campoFim": "2026-07-26",
+      "amostra": 3000,
+      "amostraTipo": "RV",
+      "margemErro": 2,
+      "dem": 54,
+      "rep": 46,
+      "outros": null,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.theargumentmag.com/p/americans-know-who-the-real-elite"
+    },
+    {
+      "instituto": "The Argument/Verasight",
+      "campoInicio": "2026-07-20",
+      "campoFim": "2026-07-26",
+      "amostra": null,
+      "amostraTipo": null,
+      "margemErro": 17,
+      "dem": 1,
+      "rep": 3,
+      "outros": 52,
+      "vantagemDem": -2,
+      "fontePrimaria": "https://www.theargumentmag.com/p/americans-know-who-the-real-elite"
     },
     {
       "instituto": "Emerson College",
