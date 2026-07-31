@@ -29,14 +29,16 @@ import type { UsPollsData } from '../../lib/dashboard/us-static-data'
 
 const T = {
   'pt-BR': {
-    titulo: 'Pesquisas: generic ballot',
+    titulo: 'Pesquisas: voto para a Câmara',
     ressalvaTitulo: 'Antes do número, a ressalva',
     ressalva:
       'O mercado precifica a PROBABILIDADE de um partido controlar a Câmara. A pesquisa mede a VANTAGEM EM PONTOS de voto. São grandezas diferentes, e este painel não subtrai uma da outra: o resultado não teria significado. Em 2012 os democratas tiveram mais votos e menos cadeiras, porque a diferença pode ser inteiramente geografia. O que se cruza aqui é DIREÇÃO e MOVIMENTO, nunca nível.',
-    mediaTitulo: 'Média AFOS',
+    mediaTitulo: 'Média AFOS · intenção de voto para a Câmara',
     janela: (d: number, desde: string) => `últimos ${d} dias, desde ${desde}`,
     base: (p: number, i: number) => `${p} pesquisas de ${i} institutos`,
     vantagem: 'Vantagem democrata',
+    deQueE: 'Estes dois números são a intenção de voto nacional para a CÂMARA. A pergunta feita ao eleitor é em quem ele votaria para o Congresso no distrito dele, e a resposta é lida como voto nacional para a Câmara. Não é Senado, e não é a soma dos dois.',
+    semSenado: 'Não existe equivalente para o Senado. Cada assento é disputado estado a estado e pesquisado assim, então uma média nacional de Senado seria invenção. Por isso o mercado aqui mostra Câmara e Senado, e as pesquisas mostram só a Câmara.',
     metodoTitulo: 'Como esta média é calculada',
     recentes: 'Pesquisas mais recentes',
     colInstituto: 'Instituto',
@@ -56,14 +58,16 @@ const T = {
     tipos: 'LV = provável votante · RV = eleitor registrado · A = adultos',
   },
   en: {
-    titulo: 'Polling: generic ballot',
+    titulo: 'Polling: House vote',
     ressalvaTitulo: 'The caveat comes before the number',
     ressalva:
       'The market prices the PROBABILITY of a party controlling the House. Polling measures a VOTE MARGIN in points. These are different quantities, and this panel does not subtract one from the other: the result would have no meaning. In 2012 Democrats won more votes and fewer seats, because the gap can be entirely geography. What is cross-read here is DIRECTION and MOVEMENT, never level.',
-    mediaTitulo: 'AFOS average',
+    mediaTitulo: 'AFOS average · House vote intention',
     janela: (d: number, desde: string) => `last ${d} days, since ${desde}`,
     base: (p: number, i: number) => `${p} polls from ${i} institutes`,
     vantagem: 'Democratic margin',
+    deQueE: 'These two numbers are the national vote intention for the HOUSE. Voters are asked whom they would back for Congress in their own district, and the answer is read as the national House vote. It is not the Senate, and it is not the two added together.',
+    semSenado: 'There is no equivalent for the Senate. Each seat is contested state by state and polled that way, so a national Senate average would be an invention. That is why the market here shows House and Senate, while the polls show only the House.',
     metodoTitulo: 'How this average is calculated',
     recentes: 'Most recent polls',
     colInstituto: 'Institute',
@@ -83,14 +87,16 @@ const T = {
     tipos: 'LV = likely voter · RV = registered voter · A = adults',
   },
   es: {
-    titulo: 'Encuestas: generic ballot',
+    titulo: 'Encuestas: voto para la Cámara',
     ressalvaTitulo: 'Antes del número, la salvedad',
     ressalva:
       'El mercado descuenta la PROBABILIDAD de que un partido controle la Cámara. La encuesta mide una VENTAJA EN PUNTOS de voto. Son magnitudes distintas, y este panel no resta una de la otra: el resultado no tendría significado. En 2012 los demócratas tuvieron más votos y menos escaños, porque la diferencia puede ser enteramente geografía. Lo que se cruza aquí es DIRECCIÓN y MOVIMIENTO, nunca nivel.',
-    mediaTitulo: 'Promedio AFOS',
+    mediaTitulo: 'Promedio AFOS · intención de voto para la Cámara',
     janela: (d: number, desde: string) => `últimos ${d} días, desde ${desde}`,
     base: (p: number, i: number) => `${p} encuestas de ${i} institutos`,
     vantagem: 'Ventaja demócrata',
+    deQueE: 'Estos dos números son la intención de voto nacional para la CÁMARA. Se le pregunta al votante a quién apoyaría para el Congreso en su propio distrito, y la respuesta se lee como voto nacional para la Cámara. No es el Senado, y no es la suma de los dos.',
+    semSenado: 'No existe equivalente para el Senado. Cada escaño se disputa estado por estado y se encuesta así, de modo que un promedio nacional de Senado sería una invención. Por eso el mercado aquí muestra Cámara y Senado, mientras que las encuestas muestran solo la Cámara.',
     metodoTitulo: 'Cómo se calcula este promedio',
     recentes: 'Encuestas más recientes',
     colInstituto: 'Instituto',
@@ -184,6 +190,15 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
           <p className="mt-3 text-sm text-dark">
             <strong>{t.vantagem}: D+{fmt(m.vantagemDem, locale, 2)}</strong>
           </p>
+
+          {/* ⚠️ O André achou isto revisando em 31/Jul: o número estava certo e
+              a etiqueta não dizia de que ele era. "Dem 47,90% x Rep 42,33%" de
+              quê? Câmara, Senado, os dois somados? Sem esta linha, o leitor
+              tinha de adivinhar. */}
+          <p className="mt-3 rounded-lg bg-slate-50 p-3 text-xs leading-snug text-slate-700">
+            {t.deQueE}
+          </p>
+          <p className="mt-2 text-xs leading-snug text-gray-600">{t.semSenado}</p>
 
           <details className="mt-3">
             <summary className="cursor-pointer text-xs font-semibold text-primary">
