@@ -129,7 +129,12 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
 
   return (
     <div className="min-h-screen bg-white">
+      {/* O horário da leitura do mercado vive no relógio da testeira, o mesmo do
+          painel do Brasil, em vez de numa linha própria dentro da seção. O André
+          pediu assim em 31/Jul, depois de mandar tirar a linha que o exibia: o
+          dado de quando o preço foi capturado continua à vista, e num lugar só. */}
       <Header
+        fetchedAt={marketData?.fetchedAt ?? undefined}
         onShowSobre={() => setShowSobre(true)}
         onShowMetas={() => setShowMetas(true)}
       />
