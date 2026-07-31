@@ -79,7 +79,7 @@ export function UsPressSection({ data }: { data: UsPressData | null }) {
   if (!data || data.itens.length === 0) {
     return (
       <section>
-        <SectionTitle icon="📰">{t.titulo}</SectionTitle>
+        <SectionTitle>{t.titulo}</SectionTitle>
         <Card>
           <p className="text-sm text-gray-600">{t.semDado}</p>
         </Card>
@@ -91,7 +91,7 @@ export function UsPressSection({ data }: { data: UsPressData | null }) {
 
   return (
     <section>
-      <SectionTitle icon="📰">{t.titulo}</SectionTitle>
+      <SectionTitle>{t.titulo}</SectionTitle>
 
       {/* A regra vem antes das manchetes, pelo mesmo motivo da ressalva nas
           pesquisas: é o instante em que o leitor vê texto de terceiro dentro de

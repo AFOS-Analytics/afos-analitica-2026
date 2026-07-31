@@ -235,7 +235,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
 
         {usDivergence && (
           <section>
-            <SectionTitle icon="🕸️">{tGrafo.titulo}</SectionTitle>
+            <SectionTitle>{tGrafo.titulo}</SectionTitle>
             <p className="mb-3 text-xs text-gray-500">{tGrafo.nota}</p>
             <CountryGraph
               data={usDivergence}
@@ -249,9 +249,12 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
           </section>
         )}
 
+        {/* Sem SectionTitle no contexto: o `StructuralContext` já renderiza o
+            próprio h2 "Contexto estrutural", e o meu por cima duplicava o
+            título na tela. Achado em 31/Jul porque o André contou 6 seções e a
+            página tinha 7 cabeçalhos. */}
         {context && (
           <section id="sec-contexto" className="scroll-mt-20">
-            <SectionTitle icon="🏛️">{tGrafo.contexto}</SectionTitle>
             <p className="mb-3 text-xs text-gray-500">{tGrafo.contextoNota}</p>
             <StructuralContext context={context} locale={locale} />
           </section>

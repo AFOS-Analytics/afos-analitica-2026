@@ -291,7 +291,7 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
   if (!data || (!data.house && !data.senate)) {
     return (
       <section>
-        <SectionTitle icon="📈">{t.titulo}</SectionTitle>
+        <SectionTitle>{t.titulo}</SectionTitle>
         <Card>
           {loading ? (
             <div className="space-y-2 animate-pulse" aria-hidden="true">
@@ -314,7 +314,7 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
 
   return (
     <section>
-      <SectionTitle icon="📈">{t.titulo}</SectionTitle>
+      <SectionTitle>{t.titulo}</SectionTitle>
 
       <p className="mb-4 text-xs leading-snug text-gray-600">{t.clicavel}</p>
 

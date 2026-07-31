@@ -139,7 +139,7 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
   if (!data || !Array.isArray(data.polls) || data.polls.length === 0) {
     return (
       <section>
-        <SectionTitle icon="🗳️">{t.titulo}</SectionTitle>
+        <SectionTitle>{t.titulo}</SectionTitle>
         <Card>
           <p className="text-sm text-gray-600">{t.semDado}</p>
         </Card>
@@ -152,7 +152,7 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
 
   return (
     <section>
-      <SectionTitle icon="🗳️">{t.titulo}</SectionTitle>
+      <SectionTitle>{t.titulo}</SectionTitle>
 
       {/* A ressalva vem ANTES do número, de propósito. */}
       <div className="mb-4 rounded-xl border-l-4 border-amber-400 bg-amber-50 p-4">

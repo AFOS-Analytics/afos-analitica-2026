@@ -149,7 +149,7 @@ export function UsLimitationsSection({ data }: { data: UsPollsData | null }) {
 
   return (
     <section>
-      <SectionTitle icon="⚖️">{t.titulo}</SectionTitle>
+      <SectionTitle>{t.titulo}</SectionTitle>
       <Card>
         <p className="mb-4 text-sm leading-snug text-gray-800">{t.intro}</p>
 
