@@ -13,6 +13,7 @@ import { UsPollsSection } from '../../../components/UsPollsSection';
 import { UsMarketSection } from '../../../components/UsMarketSection';
 import { UsLimitationsSection } from '../../../components/UsLimitationsSection';
 import { UsPressSection } from '../../../components/UsPressSection';
+import { UsIntroCard } from '../../../components/UsIntroCard';
 import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
@@ -35,28 +36,10 @@ import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
  * trabalhar em cima dela com o site no ar.
  */
 
-const T = {
-  'pt-BR': {
-    title: 'Painel Estados Unidos',
-    building: 'Em construção.',
-    body: 'As eleições de meio de mandato são em 3 de novembro de 2026. Esta página ainda não está publicada e não deve ser divulgada.',
-  },
-  en: {
-    title: 'United States panel',
-    building: 'Under construction.',
-    body: 'The midterm elections are on November 3, 2026. This page is not published yet and should not be shared.',
-  },
-  es: {
-    title: 'Panel Estados Unidos',
-    building: 'En construcción.',
-    body: 'Las elecciones de medio término son el 3 de noviembre de 2026. Esta página aún no está publicada y no debe difundirse.',
-  },
-};
 
 function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressData | null }) {
   const { locale } = useTranslation();
-  const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T;
-  const t = T[tKey];
+  const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as 'pt-BR' | 'en' | 'es';
 
   const tGrafo = {
     'pt-BR': {
@@ -163,12 +146,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
         className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12"
         role="main"
       >
-        <section className="bg-light-bg border border-light-border rounded-xl p-5">
-          <h1 className="text-xl font-bold text-primary mb-2">{t.title}</h1>
-          <p className="text-sm text-gray-800 leading-snug">
-            <strong className="text-dark">{t.building}</strong> {t.body}
-          </p>
-        </section>
+        <UsIntroCard />
 
         {/*
           ORDEM DAS SEÇÕES aprovada em 28/Jul: cartão do Tradeoff → Mercado →
