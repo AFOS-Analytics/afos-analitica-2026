@@ -53,6 +53,8 @@ interface Props {
   data: AfosTradeoffData
   nav?: NavDates
   md: TradeoffRenderedMd
+  /** Código do país da edição, para a bandeira do masthead. Padrão: Brasil. */
+  country?: string
 }
 
 // ────────────────────────────────────────────────────────────────────
@@ -497,7 +499,33 @@ function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale:
 // Main template
 // ────────────────────────────────────────────────────────────────────
 
-export function AfosTradeoffTemplate({ data, nav, md }: Props) {
+/**
+ * Bandeira do país da edição, no masthead.
+ *
+ * ⚠️ SVG, NUNCA emoji. A bandeira em emoji não renderiza no Windows, que é onde
+ * o André trabalha, e é regra da casa em todas as superfícies. Os arquivos
+ * vivem em `/public/flags/{cc}.svg`.
+ *
+ * `aria-hidden` porque o nome do país já está escrito ao lado: leitor de tela
+ * anunciando "bandeira do Brasil, Brasil" é ruído, não acessibilidade.
+ */
+/**
+ * Assinatura do produto por país. O eyebrow do masthead nasceu "Brazil Political
+ * Risk Weekly" quando só existia o Brasil; com o produto por país ele passa a
+ * dizer de qual eleição a edição trata, senão a edição americana se anuncia
+ * como brasileira.
+ */
+const PAIS_EYEBROW: Record<string, string> = {
+  br: 'AFOS Tradeoff · Brazil Political Risk Weekly',
+  us: 'AFOS Tradeoff · USA-2026 midterms Political Risk Weekly',
+}
+
+const PAIS_ROTULO: Record<string, Record<string, string>> = {
+  br: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' },
+  us: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
+}
+
+export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
   const locale = (data.locale === 'en' || data.locale === 'es' ? data.locale : 'pt-BR') as 'pt-BR' | 'en' | 'es'
   const t = T[locale]
 
@@ -542,7 +570,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Masthead */}
         <header className={`text-center pb-6 mb-7 border-b-[3px] ${isBlue ? 'border-blue-300' : 'border-primary'}`}>
           <div className={`text-[11px] font-extrabold tracking-[4px] uppercase mb-3.5 ${isBlue ? 'text-blue-200' : 'text-primary'}`}>
-            {t.eyebrow}
+            {PAIS_EYEBROW[country] ?? t.eyebrow}
           </div>
           <h1 className={`text-[32px] md:text-[44px] font-extrabold tracking-tight leading-none mb-3.5 ${isBlue ? 'text-white' : 'text-primary'}`}>
             <a href={`/${locale}`} aria-label={t.homeAriaLabel} className="hover:opacity-90 transition-opacity">AFOS Analytics</a>
@@ -571,7 +599,19 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
               Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
             </a>
           </div>
-          <div className={`flex flex-wrap gap-2.5 justify-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
+          <div className={`flex flex-wrap gap-2.5 justify-center items-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
+            <span className="inline-flex items-center gap-1.5 font-semibold">
+              <img
+                src={`/flags/${country}.svg`}
+                alt=""
+                aria-hidden="true"
+                width={20}
+                height={14}
+                className="inline-block h-[14px] w-[20px] rounded-[2px] object-cover align-[-2px] shadow-sm"
+              />
+              {PAIS_ROTULO[country]?.[locale] ?? country.toUpperCase()}
+            </span>
+            <span>·</span>
             <span className="font-semibold">{t.issueLabel} №{data.issueNumber}</span>
             <span>·</span>
             <span className="font-semibold">{t.weekLabel} {weekRange}</span>
@@ -594,7 +634,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 1, Executive Summary */}
         {data.summaryCards && data.summaryCards.length > 0 && (
           <>
-            <SectionHeading num={1} title={t.section[1]} isBlue={isBlue} />
+            <SectionHeading num={1} title={data.sectionTitles?.[1] ?? t.section[1]} isBlue={isBlue} />
             <SummaryCards cards={data.summaryCards} isBlue={isBlue} />
             {data.execSummaryIntro && (
               <div className={`text-[15px] leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
@@ -607,7 +647,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 2, Por que o AFOS não suaviza */}
         {(data.antiAvg || data.antiAvgIntro) && (
           <>
-            <SectionHeading num={2} title={t.section[2]} isBlue={isBlue} />
+            <SectionHeading num={2} title={data.sectionTitles?.[2] ?? t.section[2]} isBlue={isBlue} />
             {data.antiAvgIntro && (
               <div className={`text-[15px] leading-relaxed mb-3 ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
                 {md.antiAvgIntro}
@@ -633,7 +673,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 3, Cenários ponderados */}
         {data.scenarios && data.scenarios.length > 0 && (
           <>
-            <SectionHeading num={3} title={t.section[3]} isBlue={isBlue} />
+            <SectionHeading num={3} title={data.sectionTitles?.[3] ?? t.section[3]} isBlue={isBlue} />
             {data.scenariosIntro && (
               <div className={`text-[15px] leading-relaxed mb-3 ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
                 {md.scenariosIntro}
@@ -646,7 +686,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 4, Indicator Grid */}
         {data.indicatorGrid && data.indicatorGrid.length > 0 && (
           <>
-            <SectionHeading num={4} title={t.section[4]} isBlue={isBlue} />
+            <SectionHeading num={4} title={data.sectionTitles?.[4] ?? t.section[4]} isBlue={isBlue} />
             <IndicatorGrid rows={data.indicatorGrid} headers={t.indicatorHeaders} isBlue={isBlue} />
           </>
         )}
@@ -654,7 +694,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 5, Liquidez */}
         {data.liquidity && (
           <>
-            <SectionHeading num={5} title={t.section[5]} isBlue={isBlue} />
+            <SectionHeading num={5} title={data.sectionTitles?.[5] ?? t.section[5]} isBlue={isBlue} />
             <Liquidity block={data.liquidity} totalSuffix={t.liquidityTotalSuffix} anomalyLabel={t.liquidityAnomalyLabel} isBlue={isBlue} anomaly={md.liquidityAnomaly} footer={md.liquidityFooter} />
           </>
         )}
@@ -662,7 +702,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 6, Calendário */}
         {data.calendar && data.calendar.length > 0 && (
           <>
-            <SectionHeading num={6} title={t.section[6]} isBlue={isBlue} />
+            <SectionHeading num={6} title={data.sectionTitles?.[6] ?? t.section[6]} isBlue={isBlue} />
             <Calendar rows={data.calendar} headers={t.calendarHeaders} isBlue={isBlue} />
             {data.calendarFooter && (
               <div className={`text-xs ${isBlue ? 'text-blue-200' : 'text-slate-500'}`}>
@@ -675,7 +715,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 7, Watch list */}
         {data.watchList && data.watchList.length > 0 && (
           <>
-            <SectionHeading num={7} title={t.section[7]} isBlue={isBlue} />
+            <SectionHeading num={7} title={data.sectionTitles?.[7] ?? t.section[7]} isBlue={isBlue} />
             <WatchList items={data.watchList} isBlue={isBlue} />
           </>
         )}
@@ -683,7 +723,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 8, Metodologia */}
         {data.methodology && (
           <>
-            <SectionHeading num={8} title={t.section[8]} isBlue={isBlue} />
+            <SectionHeading num={8} title={data.sectionTitles?.[8] ?? t.section[8]} isBlue={isBlue} />
             <div className={`text-[15px] leading-relaxed ${isBlue ? 'text-blue-50' : 'text-slate-700'}`}>
               {md.methodology}
             </div>
@@ -693,7 +733,7 @@ export function AfosTradeoffTemplate({ data, nav, md }: Props) {
         {/* Section 9, Leitura adicional */}
         {data.additionalReading && (
           <>
-            <SectionHeading num={9} title={t.section[9]} isBlue={isBlue} />
+            <SectionHeading num={9} title={data.sectionTitles?.[9] ?? t.section[9]} isBlue={isBlue} />
             <AdditionalReading block={data.additionalReading} paywallLabel={t.paywall} isBlue={isBlue} intro={md.additionalIntro} footer={md.additionalFooter} />
           </>
         )}

@@ -160,6 +160,17 @@ export interface AfosTradeoffData {
   locale: string        // "pt-BR" | "en" | "es"
   status: string        // "published" | "draft"
   sinalDaSemana: string // Tradeoff equivalent of Daily's lede (1-2 paragraphs)
+  /**
+   * Título de seção sobrescrito pela edição, por número (ex.: { 2: '...' }).
+   *
+   * ⚠️ EXISTE POR NECESSIDADE DE MÉTODO, não de estilo. Os títulos são fixos no
+   * template e nasceram do Brasil: a seção 2 se chama "Por que o AFOS não
+   * suaviza" e a 6, "Calendário de prints price-relevant". Na edição dos EUA o
+   * conteúdo dessas duas muda (duas grandezas que não se subtraem, e calendário
+   * eleitoral em vez de prints registrados), então manter o rótulo faria o
+   * título contradizer o texto logo abaixo. Sem sobrescrita, o padrão continua.
+   */
+  sectionTitles?: Record<string, string>
   // Section 1 — Executive Summary
   summaryCards?: SummaryCard[]
   execSummaryIntro?: string         // free paragraph after the cards
@@ -500,6 +511,9 @@ export function loadTradeoff(date: string, locale?: string, country: string = PA
     scenariosIntro: str(fm.scenariosIntro) || undefined,
     scenarios: coerceScenarios(fm.scenarios),
     indicatorGrid: coerceIndicatorGrid(fm.indicatorGrid),
+    sectionTitles: (fm.sectionTitles && typeof fm.sectionTitles === 'object')
+      ? Object.fromEntries(Object.entries(fm.sectionTitles as Record<string, unknown>).map(([k, v]) => [k, String(v)]))
+      : undefined,
     liquidity: coerceLiquidity(fm.liquidity),
     calendar: coerceCalendar(fm.calendar),
     calendarFooter: str(fm.calendarFooter) || undefined,

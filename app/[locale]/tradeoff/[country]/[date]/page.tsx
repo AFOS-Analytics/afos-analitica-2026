@@ -111,7 +111,11 @@ export default async function TradeoffByDatePage(props: PageProps) {
   const pais = isValidCountry(params.country) ? params.country : PAIS_PADRAO;
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
-  if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date)) notFound()
+  // ⚠️ O país precisa ir junto: sem ele a checagem de rascunho lia o arquivo do
+  // BRASIL com a mesma data. Hoje isso acerta por acidente (o arquivo não
+  // existe, então cai em draft), e erraria feio no dia em que as duas edições
+  // coincidissem de data.
+  if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date, pais)) notFound()
   const data = loadTradeoff(params.date, params.locale, pais)
   if (!data) notFound()
 
@@ -142,7 +146,7 @@ export default async function TradeoffByDatePage(props: PageProps) {
   return (
     <>
       <JsonLd data={[schema, breadcrumb]} />
-      <AfosTradeoffTemplate data={data} nav={nav} md={md} />
+      <AfosTradeoffTemplate country={pais} data={data} nav={nav} md={md} />
     </>
   )
 }
