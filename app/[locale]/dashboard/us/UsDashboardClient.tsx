@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from '../../../i18n/context';
 import { VisitorStateProvider } from '../../../hooks/useVisitorState';
 import { Header } from '../../../components/Header';
@@ -18,6 +18,7 @@ import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
 import type { CountryContext, CountryDivergence } from '../../../../lib/country-data';
+import type { NavGroup } from '../../../components/CountryGraph';
 import { StructuralContext } from '../../../components/StructuralContext';
 import type { UsMarketData } from '../../../components/UsMarketSection';
 import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
@@ -43,21 +44,21 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
 
   const tGrafo = {
     'pt-BR': {
-      titulo: 'O cruzamento',
+      titulo: 'Grafo do cruzamento',
       eleicao: 'EUA 2026 · Câmara',
       nota: 'A linha entre o mercado e cada partido é tracejada e não traz número. É de propósito: o mercado precifica a probabilidade de controlar a Câmara e a pesquisa mede vantagem em pontos de voto, então não existe diferença para calcular. A ligação existe, o número não.',
       contexto: 'Contexto estrutural',
       contextoNota: 'Indicadores do Banco Mundial sobre o país, não sobre a eleição. Ficam ao lado do sinal para dar escala ao terreno, e nunca como previsor: nada aqui prevê resultado eleitoral.',
     },
     en: {
-      titulo: 'The crossing',
+      titulo: 'Cross-reference graph',
       eleicao: 'US 2026 · House',
       nota: 'The line between the market and each party is dashed and carries no number. That is deliberate: the market prices the probability of controlling the House and the poll measures a lead in vote points, so there is no difference to compute. The link exists, the number does not.',
       contexto: 'Structural context',
       contextoNota: 'World Bank indicators about the country, not about the election. They sit alongside the signal to give scale to the terrain, never as a predictor: nothing here forecasts an electoral result.',
     },
     es: {
-      titulo: 'El cruce',
+      titulo: 'Grafo del cruce',
       eleicao: 'EE.UU. 2026 · Cámara',
       nota: 'La línea entre el mercado y cada partido es punteada y no trae número. Es a propósito: el mercado fija la probabilidad de controlar la Cámara y la encuesta mide ventaja en puntos de voto, así que no hay diferencia que calcular. La conexión existe, el número no.',
       contexto: 'Contexto estructural',
@@ -97,6 +98,62 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
    * não mostra número e a espessura dela deixa de depender do valor. O número
    * não existe para este par, e é por isso que ele não aparece.
    */
+  const onNav = useCallback((action: string) => {
+    if (action === 'about') setShowSobre(true);
+    else if (action === 'metas') setShowMetas(true);
+  }, []);
+
+  /**
+   * Nós clicáveis, como no painel do Brasil.
+   *
+   * ⚠️ SÓ ENTRA O QUE EXISTE. Não há Tradeoff dos EUA nem dataset das midterms,
+   * então esses nós não aparecem: nó que leva a lugar nenhum é pior que nó
+   * ausente. O AFOS Daily também fica fora, porque hoje é conteúdo do Brasil e
+   * mandar o leitor do painel americano para lá seria desvio, não navegação.
+   */
+  const navGroups = useMemo<NavGroup[]>(() => {
+    const pre = `/${locale}`;
+    const L = (pt: string, en: string, es: string) => (locale === 'en' ? en : locale === 'es' ? es : pt);
+    return [
+      {
+        id: 'nav_secoes',
+        label: L('Seções deste painel', 'Sections of this panel', 'Secciones de este panel'),
+        color: '#0F52BA',
+        items: [
+          { id: 's_mercado', label: L('Mercado de previsão', 'Prediction market', 'Mercado de predicción'), href: '#sec-mercado' },
+          { id: 's_pesquisas', label: L('Pesquisas', 'Polling', 'Encuestas'), href: '#sec-pesquisas' },
+          { id: 's_contexto', label: L('Contexto estrutural', 'Structural context', 'Contexto estructural'), href: '#sec-contexto' },
+          { id: 's_imprensa', label: L('Imprensa', 'Press', 'Prensa'), href: '#sec-imprensa' },
+          { id: 's_limites', label: L('Limitações declaradas', 'Declared limitations', 'Limitaciones declaradas'), href: '#sec-limitacoes' },
+        ],
+      },
+      {
+        id: 'nav_afos',
+        label: 'AFOS',
+        color: '#4f46e5',
+        items: [
+          { id: 'a_metodo', label: L('Método', 'Method', 'Método'), href: `${pre}/how-it-works` },
+          { id: 'a_global', label: 'AFOS Global', href: `${pre}/global` },
+          { id: 'a_gov', label: L('Governança', 'Governance', 'Gobernanza'), href: `${pre}/methodology/automated-governance` },
+          { id: 'a_sobre', label: L('Sobre', 'About', 'Acerca de'), action: 'about' },
+          { id: 'a_metas', label: L('Metas', 'Goals', 'Metas'), action: 'metas' },
+        ],
+      },
+    ];
+  }, [locale]);
+
+  /**
+   * Os nós de tipo levam à seção correspondente da própria página. `election` e
+   * `candidate` ficam de fora: no Brasil eles apontam para o dataset publicado,
+   * e as midterms ainda não têm dataset.
+   */
+  const usDataLinks = useMemo(() => ({
+    market: '#sec-mercado',
+    poll: '#sec-pesquisas',
+    press: '#sec-imprensa',
+    context: '#sec-contexto',
+  }), []);
+
   const usDivergence = useMemo<CountryDivergence | null>(() => {
     const media = pollsData?.mediaAfos;
     const casa = marketData?.house?.markets;
@@ -169,10 +226,12 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
 
           Falta: grafo, contexto estrutural e imprensa.
         */}
-        <div className="mb-8">
+        <div id="sec-mercado" className="mb-8 scroll-mt-20">
           <UsMarketSection data={marketData} loading={marketLoading} />
         </div>
-        <UsPollsSection data={pollsData} />
+        <div id="sec-pesquisas" className="scroll-mt-20">
+          <UsPollsSection data={pollsData} />
+        </div>
 
         {usDivergence && (
           <section>
@@ -182,22 +241,29 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
               data={usDivergence}
               electionLabel={tGrafo.eleicao}
               locale={locale}
+              navGroups={navGroups}
+              onNav={onNav}
+              dataLinks={usDataLinks}
               divergenciaMuda
             />
           </section>
         )}
 
         {context && (
-          <section>
+          <section id="sec-contexto" className="scroll-mt-20">
             <SectionTitle icon="🏛️">{tGrafo.contexto}</SectionTitle>
             <p className="mb-3 text-xs text-gray-500">{tGrafo.contextoNota}</p>
             <StructuralContext context={context} locale={locale} />
           </section>
         )}
 
-        <UsPressSection data={pressData} />
+        <div id="sec-imprensa" className="scroll-mt-20">
+          <UsPressSection data={pressData} />
+        </div>
 
-        <UsLimitationsSection data={pollsData} />
+        <div id="sec-limitacoes" className="scroll-mt-20">
+          <UsLimitationsSection data={pollsData} />
+        </div>
       </main>
 
       <Footer />
