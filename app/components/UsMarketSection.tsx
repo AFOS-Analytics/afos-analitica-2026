@@ -51,7 +51,7 @@ const T = {
     prazo: 'A eleição acontece na data prevista',
     volume: 'Volume',
     soma: 'soma das faixas',
-    clicavel: 'Cada quadro abaixo é clicável e abre a aposta real no Polymarket, com as cotações ao vivo.',
+    clicavel: 'Clique em qualquer ponto de um quadro para abrir a aposta real no Polymarket, com as cotações ao vivo.',
     abrirEm: 'abrir no Polymarket',
     foraDoPortao: 'Este mercado não entra na tela porque os preços dele não fecham',
     foraDoPortaoDetalhe: (s: string) =>
@@ -79,7 +79,7 @@ const T = {
     prazo: 'The election happens as scheduled',
     volume: 'Volume',
     soma: 'bands total',
-    clicavel: 'Every box below is clickable and opens the real market on Polymarket, with live odds.',
+    clicavel: 'Click anywhere on a box to open the real market on Polymarket, with live odds.',
     abrirEm: 'open on Polymarket',
     foraDoPortao: 'This market stays off the screen because its prices do not add up',
     foraDoPortaoDetalhe: (s: string) =>
@@ -107,7 +107,7 @@ const T = {
     prazo: 'La elección ocurre en la fecha prevista',
     volume: 'Volumen',
     soma: 'suma de las bandas',
-    clicavel: 'Cada recuadro de abajo es clicable y abre la apuesta real en Polymarket, con las cotizaciones en vivo.',
+    clicavel: 'Haga clic en cualquier punto de un recuadro para abrir la apuesta real en Polymarket, con las cotizaciones en vivo.',
     abrirEm: 'abrir en Polymarket',
     foraDoPortao: 'Este mercado no entra en la pantalla porque sus precios no cierran',
     foraDoPortaoDetalhe: (s: string) =>
@@ -161,6 +161,18 @@ function linkDo(ev: PolyEvento | null): string | null {
  * Título do quadro. Vira link quando existe o mercado real do outro lado, e o
  * link abre em aba nova: o leitor está no meio de uma leitura e não deve perder
  * o lugar dela.
+ *
+ * 🔴 O CARD INTEIRO É CLICÁVEL, e a técnica importa. O `after:absolute
+ * after:inset-0` estica uma camada invisível DESTA âncora por cima de todo o
+ * card, que é `relative`. Resultado: clicar em qualquer ponto do card abre o
+ * mercado.
+ *
+ * ⚠️ POR QUE NÃO EMBRULHAR O CARD NUM <a>, que seria o caminho óbvio: o link
+ * passaria a ter como nome acessível TODO o texto de dentro. Num quadro de
+ * distribuição isso vira um link chamado "Cadeiras republicanas no Senado ≤ 47
+ * cad. 23,50% 48 cad. 11,50%..." e quem usa leitor de tela ouve a tabela
+ * inteira como se fosse o nome do link. Com a camada esticada, o nome
+ * continua sendo só o título.
  */
 function TituloQuadro({ texto, href, abrirEm }: { texto: string; href: string | null; abrirEm: string }) {
   if (!href) return <h4 className="text-sm font-bold text-dark">{texto}</h4>
@@ -169,7 +181,7 @@ function TituloQuadro({ texto, href, abrirEm }: { texto: string; href: string | 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group text-sm font-bold text-dark hover:text-primary"
+      className="text-sm font-bold text-dark after:absolute after:inset-0 after:content-[''] group-hover:text-primary"
       title={abrirEm}
     >
       {texto}{' '}
@@ -239,7 +251,7 @@ function Distribuicao({
   const passou = soma >= SOMA_MIN && soma <= SOMA_MAX
 
   return (
-    <Card className="mb-3">
+    <Card className={`mb-3 ${linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
         <TituloQuadro texto={titulo} href={linkDo(ev)} abrirEm={t.abrirEm} />
         <span className="text-[11px] text-gray-500">
@@ -316,7 +328,7 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
           const fs = faixas(ev).sort((a, b) => b.pct - a.pct)
           if (!fs.length) return null
           return (
-            <Card key={rotulo}>
+            <Card key={rotulo} className={linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}>
               <div className="mb-2 flex items-baseline justify-between gap-2">
                 <TituloQuadro texto={rotulo} href={linkDo(ev)} abrirEm={t.abrirEm} />
                 <span className="text-[11px] text-gray-500">
@@ -348,7 +360,7 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
       <Distribuicao titulo={t.margem} ev={data.popularVoteMargin} locale={locale} t={t} />
 
       {prazo && (
-        <Card className="mb-3">
+        <Card className={`mb-3 ${linkDo(data.asScheduled) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
           <div className="flex items-baseline justify-between gap-2">
             <TituloQuadro texto={t.prazo} href={linkDo(data.asScheduled)} abrirEm={t.abrirEm} />
             <span className="text-lg font-bold text-dark tabular-nums">{fmt(prazo.pct, locale)}%</span>
