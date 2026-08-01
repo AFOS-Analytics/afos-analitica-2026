@@ -1,0 +1,100 @@
+{
+  "date": "2026-08-01",
+  "capturaPolymarket": "2026-08-01T16:49:09Z",
+  "travaDeCaptura": {
+    "rodadas": 2,
+    "resultado": "1a reprovada, 2a APROVADA",
+    "detalhe": "A 1a rodada (16:32 -> 16:40 UTC) reprovou com Renan Santos em transito de 7,15% para 7,60% e o 3o lugar de Caiado entre 22,00% e 22,50%. A 2a (16:40 -> 16:48 UTC) aprovou, com todos os books dentro de 0,20pp.",
+    "publicadoFirme": "todos os precos, sem faixa declarada"
+  },
+  "refetchDaily": {
+    "fetchedAt": "2026-08-01T17:15:59Z",
+    "gate": "NAO disparou",
+    "detalhe": "Mercado congelado nos 26 minutos desde a captura. Lula, Flavio e gap com 0,00pp de variacao; Renan +0,05pp; volume total identico em USD 117,52M.",
+    "ressalva": "O MDB no Senado marcou 22,75% ao vivo contra os 21,35% da captura, num book de USD 8 mil. Fora do gate e sem sustentacao para leitura; a daily nao cita o MDB."
+  },
+  "superlativosConferidos": [
+    {
+      "afirmacao": "Lula 65,50% e maximo da serie do AFOS pelo 2o dia seguido",
+      "ferramenta": "scripts/check-superlativo.ts Lula",
+      "serie": "2026-04-14 a 2026-08-01, 107 dias",
+      "veredito": "confirmado, maximo em 2026-08-01"
+    },
+    {
+      "afirmacao": "gap +40,75pp e maximo da serie",
+      "ferramenta": "/api/market/history em duas janelas, Lula menos Flavio por dia",
+      "serie": "2026-05-03 a 2026-08-01, 88 dias com os dois nomes",
+      "maximoAnterior": "+40,10pp em 2026-07-31",
+      "veredito": "confirmado, com a janela declarada no texto"
+    },
+    {
+      "afirmacao": "Renan Santos em 7,60% e o menor valor dele DESDE 14/Mai",
+      "ferramenta": "/api/market/history, serie completa",
+      "detalhe": "Ultimo dia com valor <= 7,60% antes de hoje foi 2026-05-14, com 7,2%. Antes disso a serie tem valores menores, com minimo de 5,30% em 26/Abr, e por isso a janela declarada e 'desde 14/Mai' e NAO 'da serie'.",
+      "veredito": "confirmado com janela"
+    },
+    {
+      "afirmacao": "Camilo Santana em 0,45% e o minimo da serie dele",
+      "ferramenta": "scripts/check-superlativo.ts \"Camilo Santana\"",
+      "detalhe": "Minimo anterior era 0,50% em 30/Jul; 0,45% de hoje passa a ser o novo minimo",
+      "veredito": "confirmado"
+    },
+    {
+      "afirmacao": "Tarcisio em 0,05% seria o menor dele",
+      "ferramenta": "scripts/check-superlativo.ts \"Tarcisio de Freitas\"",
+      "detalhe": "A serie do AFOS tem apenas TRES dias para esse nome, entre 28/Abr e 14/Mai. Nao sustenta superlativo.",
+      "veredito": "NAO AFIRMADO. O painel e a daily registram o nivel e dizem por que nao vao alem disso."
+    }
+  ],
+  "factCheckGate": [
+    {
+      "evento": "Republicanos oficializa a candidatura de Tarcisio de Freitas a REELEICAO no governo de Sao Paulo, com Flavio Bolsonaro presente; Tarcisio evita nacionalizar o discurso",
+      "data": "2026-08-01",
+      "crossRef": "\"Tarcisio\" so aparece em listas de preco nas dailies; \"convencao\" aparece em 25/Jul, referindo-se a do PL",
+      "classificacao": "novidade",
+      "fontes": [
+        "https://oglobo.globo.com/politica/noticia/2026/08/01/ao-lado-de-flavio-tarcisio-chega-a-convencao-do-republicanos-em-sao-paulo.ghtml",
+        "Folha de S.Paulo, 01/Ago 14:35, via Google News redirect",
+        "Estadao, 31/Jul 23:00, via Google News redirect"
+      ],
+      "decisao": "incorporar SEPARANDO estadual de nacional",
+      "nota": "A convencao de sabado e do diretorio de SP e trata do governo estadual. A convencao NACIONAL do Republicanos, que decide alianca presidencial, e em 04/Ago e ainda nao ocorreu. A daily faz essa separacao de forma explicita."
+    },
+    {
+      "evento": "Mendonca autoriza um SEGUNDO inquerito da PF sobre Fabio Luis Lula da Silva, o Lulinha, quanto a atuacao junto a Dataprev",
+      "data": "2026-07-31",
+      "crossRef": "\"Dataprev\" com zero mencoes em 7 dailies",
+      "classificacao": "novidade",
+      "fontes": [
+        "https://g1.globo.com/politica/noticia/2026/07/31/mendonca-autoriza-pf-a-investigar-suposto-trafico-de-influencia-de-lulinha-no-governo.ghtml",
+        "https://www.estadao.com.br/politica/blog-do-fausto-macedo/pf-pede-segundo-inquerito-para-apurar-trafico-de-influencia-de-lulinha-e-empresario-na-dataprev/",
+        "https://oglobo.globo.com/politica/noticia/2026/07/31/medonca-autoriza-investigacao-da-pf-sobre-atuacao-de-lulinha-na-dataprev-por-suspeita-de-trafico-de-influencia.ghtml"
+      ],
+      "decisao": "incorporar com a data da autorizacao (31/Jul) e com a palavra inquerito, nunca condenacao"
+    },
+    {
+      "evento": "Datafolha em Pernambuco: Lula 57% x Flavio 22% no estado; governo com Raquel Lyra 48% x Joao Campos 42%",
+      "data": "2026-07-31",
+      "classificacao": "evento, escopo ESTADUAL",
+      "fontes": ["g1 via Google News redirect", "Jornal do Commercio via Google News redirect"],
+      "decisao": "incorporar apenas na Secao 2, como estadual. NAO entra no polls-data, que e so nacional."
+    }
+  ],
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma; os tres fatos tem duas fontes independentes cada",
+    "numericalErrors": "reconcile-claims.ts exit 0",
+    "fontesInventadas": "conferidos O Globo, Estadao e g1, todos com materia do dia e URL respondendo",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. A terceira divergencia trata explicitamente da coincidencia entre convencao e topo de preco e RECUSA a causa, seguindo o que a serie ja fez em 25/Jul com a convencao do PL.",
+    "verbosCriticos": "oficializou e sempre de reeleicao estadual, nunca de alianca nacional; autorizou inquerito vem com a frase de que inquerito nao e condenacao; rompeu o topo tem serie e janela declaradas",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "validateAfosDaily": "OK, 1 warning de densidade de link",
+    "reconcileClaims": "OK",
+    "gateNumericoEntreIdiomas": "39 valores em % e pp identicos nos tres idiomas; 8 mencoes USD em cada",
+    "tldr": "3 bullets em pt-BR, EN e ES",
+    "tetoDePalavras": "900 palavras exatas, DENTRO do teto."
+  },
+  "notaSobreOTeto": "Em 31/Jul a daily fechou em 1.065 e eu argumentei ao Andre que os 165 restantes so sairiam tirando fato verificado. Em 01/Ago repeti o argumento em 1.062 e PROPUS subir o teto para 1.100. O Andre manteve os 900. Cortei os 162 e os tres blocos que eu havia declarado incortaveis continuam todos na daily: o segundo inquerito sobre Lulinha, a representacao contra Jaques Wagner e o achado de serie do Renan. Saiu redacao, nao fato. O que eu chamei de piso natural era o ponto onde eu tinha parado de cortar."
+}

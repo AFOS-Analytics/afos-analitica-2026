@@ -291,6 +291,8 @@ Mantidas rigorosamente do piloto 22/Abr:
 
   ⚠️ **DECISÃO DO ANDRÉ EM 30/Jul/2026: voltar ao teto de 900.** A régua escrita e a prática estavam descoladas havia pelo menos quatro dias, com a série no DOBRO do teto. Medido, no corpo, sem tabela e sem URL: **27/Jul 1.883 · 28/Jul 1.926 · 29/Jul 2.395 · 30/Jul 1.873**. Nenhuma das quatro cabia na régua.
 
+  🔒 **REAFIRMADO EM 01/Ago/2026, e este é o ponto.** Eu levei a decisão de volta ao André propondo subir o teto para 1.100, com o argumento de que 31/Jul e 01/Ago pararam no mesmo lugar (1.065 e 1.062) depois de cortar toda a gordura. **Ele manteve os 900.** A leitura correta é que dois dias parando em ~1.060 não provam que 1.060 é o tamanho natural do dia: provam que eu parei de cortar cedo demais e comecei a chamar de "fato verificado" o que ainda era redação. Em 01/Ago, depois da reafirmação, a daily chegou a 900 SEM perder nenhum dos três blocos que eu tinha declarado incortáveis, só comprimindo. **Não repropor o teto.**
+
   **Como medir antes de dar por pronta** (corpo, fora do bloco de fontes, sem a tabela do calendário e sem URLs, que não são leitura):
 
   ```bash
