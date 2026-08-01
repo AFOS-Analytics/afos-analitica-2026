@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dailyDates = listPublishedDailies()
   const latestDate = dailyDates.length ? dailyDates[dailyDates.length - 1] : null
   const tradeoffDates = listPublishedTradeoffs()
+  const tradeoffDatesUs = listPublishedTradeoffs('us')
   const latestTradeoff = tradeoffDates.length ? tradeoffDates[tradeoffDates.length - 1] : null
   const dailyIndexLastMod = latestDate ? new Date(`${latestDate}T00:00:00-03:00`) : dynamicLastMod
   const tradeoffIndexLastMod = latestTradeoff ? new Date(`${latestTradeoff}T00:00:00-03:00`) : dynamicLastMod
@@ -258,6 +259,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // AFOS Tradeoff — permalinks per edition (3 locales × N editions)
   // Latest edition gets higher priority. Published-only filter.
+  // Tradeoff dos EUA. Entrou no sitemap em 31/Jul, junto com a publicação da
+  // Edição №1. O índice `/tradeoff/us` e cada edição, com hreflang só para os
+  // idiomas que existem em disco.
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/tradeoff/us`,
+      lastModified: tradeoffDatesUs.length ? new Date(`${tradeoffDatesUs[tradeoffDatesUs.length - 1]}T00:00:00-03:00`) : dynamicLastMod,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+      alternates: { languages: hreflang((l) => `/${l}/tradeoff/us`) },
+    })
+  }
+  for (const date of tradeoffDatesUs) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/tradeoff/us/${date}`,
+        lastModified: new Date(`${date}T00:00:00-03:00`),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/us/${date}`, (loc) => tradeoffExists(date, loc, 'us')) },
+      })
+    }
+  }
+
   for (const date of tradeoffDates) {
     const isLatest = date === latestTradeoff
     const lastMod = new Date(`${date}T00:00:00-03:00`)

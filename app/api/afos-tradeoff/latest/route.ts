@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { loadTradeoff, listPublishedTradeoffs, isValidLocale } from '../../../../lib/afos-tradeoff/loader'
+import { loadTradeoff, listPublishedTradeoffs, isValidLocale, isValidCountry, PAIS_PADRAO } from '../../../../lib/afos-tradeoff/loader'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -12,8 +12,12 @@ export async function GET(request: Request) {
   const url = new URL(request.url)
   const locale = url.searchParams.get('locale') || 'pt-BR'
   const safeLocale = isValidLocale(locale) ? locale : 'pt-BR'
+  // País no endereço desde 31/Jul. Sem o parâmetro, responde o Brasil, que é
+  // quem já consumia esta rota.
+  const pedido = url.searchParams.get('country') || PAIS_PADRAO
+  const pais = isValidCountry(pedido) ? pedido : PAIS_PADRAO
 
-  const published = listPublishedTradeoffs()
+  const published = listPublishedTradeoffs(pais)
   if (published.length === 0) {
     return NextResponse.json({
       ok: true,
@@ -26,7 +30,7 @@ export async function GET(request: Request) {
 
   const latestDate = published[published.length - 1]
   const previousDate = published.length > 1 ? published[published.length - 2] : null
-  const data = loadTradeoff(latestDate, safeLocale)
+  const data = loadTradeoff(latestDate, safeLocale, pais)
   if (!data) {
     return NextResponse.json({ ok: false, error: 'load_failed' }, { status: 500 })
   }

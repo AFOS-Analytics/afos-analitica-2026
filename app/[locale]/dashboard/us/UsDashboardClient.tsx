@@ -14,6 +14,7 @@ import { UsMarketSection } from '../../../components/UsMarketSection';
 import { UsLimitationsSection } from '../../../components/UsLimitationsSection';
 import { UsPressSection } from '../../../components/UsPressSection';
 import { UsIntroCard } from '../../../components/UsIntroCard';
+import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
@@ -106,9 +107,10 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
   /**
    * Nós clicáveis, como no painel do Brasil.
    *
-   * ⚠️ SÓ ENTRA O QUE EXISTE. Não há Tradeoff dos EUA nem dataset das midterms,
-   * então esses nós não aparecem: nó que leva a lugar nenhum é pior que nó
-   * ausente. O AFOS Daily também fica fora, porque hoje é conteúdo do Brasil e
+   * ⚠️ SÓ ENTRA O QUE EXISTE. O Tradeoff dos EUA entrou em 31/Jul, quando a
+   * Edição №1 foi publicada; antes disso o nó não existia, porque nó que leva a
+   * lugar nenhum é pior que nó ausente. O dataset das midterms continua fora,
+   * porque não existe. O AFOS Daily também, porque hoje é conteúdo do Brasil e
    * mandar o leitor do painel americano para lá seria desvio, não navegação.
    */
   const navGroups = useMemo<NavGroup[]>(() => {
@@ -132,6 +134,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
         label: 'AFOS',
         color: '#4f46e5',
         items: [
+          { id: 'a_tradeoff', label: 'AFOS Tradeoff', href: `${pre}/tradeoff/us` },
           { id: 'a_metodo', label: L('Método', 'Method', 'Método'), href: `${pre}/how-it-works` },
           { id: 'a_global', label: 'AFOS Global', href: `${pre}/global` },
           { id: 'a_gov', label: L('Governança', 'Governance', 'Gobernanza'), href: `${pre}/methodology/automated-governance` },
@@ -208,6 +211,13 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
         className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 py-6 sm:py-8 space-y-8 sm:space-y-12"
         role="main"
       >
+        {/* O cartão do Tradeoff é o PRIMEIRO item da ordem aprovada em 28/Jul,
+            como no painel do Brasil. Ficou vago até 31/Jul porque o Tradeoff dos
+            EUA não existia; a Edição №1 destravou. O cartão de apresentação
+            desceu uma posição e continua: ele diz o que o painel é, e isso o
+            Tradeoff não diz. */}
+        <AfosTradeoffHeroCard country="us" />
+
         <UsIntroCard />
 
         {/*

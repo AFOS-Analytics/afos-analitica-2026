@@ -83,7 +83,12 @@ function formatWeekRange(start: string, end: string, locale: 'pt-BR' | 'en' | 'e
   return `${d1} ${month1} - ${d2} ${month}`
 }
 
-export function AfosTradeoffHeroCard() {
+/**
+ * `country` entrou em 31/Jul, com o Tradeoff virando um produto por país. O
+ * padrão é 'br' para que a landing e o painel do Brasil, que já usavam este
+ * cartão, continuem funcionando sem alteração.
+ */
+export function AfosTradeoffHeroCard({ country = 'br' }: { country?: string } = {}) {
   const { locale } = useTranslation()
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
   const t = T[tKey]
@@ -91,7 +96,7 @@ export function AfosTradeoffHeroCard() {
 
   useEffect(() => {
     const ctrl = new AbortController()
-    fetch(`/api/afos-tradeoff/latest?locale=${tKey}`, { signal: ctrl.signal })
+    fetch(`/api/afos-tradeoff/latest?locale=${tKey}&country=${country}`, { signal: ctrl.signal })
       .then(r => r.ok ? r.json() : null)
       .then(d => {
         if (d?.ok) setMeta(d)
@@ -100,7 +105,7 @@ export function AfosTradeoffHeroCard() {
         if (err?.name !== 'AbortError') console.error('[AfosTradeoffHeroCard] fetch failed:', err)
       })
     return () => ctrl.abort()
-  }, [tKey])
+  }, [tKey, country])
 
   // Placeholder reservando a altura (evita CLS quando o fetch client popula este
   // card no topo, logo abaixo do DailyHeroCard).
@@ -138,7 +143,7 @@ export function AfosTradeoffHeroCard() {
             <strong className="text-dark">{t.prePrimeiraTitle} {dateShort}.</strong> {t.prePrimeiraDesc}
           </p>
           <a
-            href={`/${tKey}/tradeoff/${meta.firstEditionDate}`}
+            href={`/${tKey}/tradeoff/${country}/${meta.firstEditionDate}`}
             className="text-sm font-semibold text-primary hover:underline"
           >
             {t.cta} →
@@ -151,7 +156,7 @@ export function AfosTradeoffHeroCard() {
   // Estado B, tem edição publicada
   const dateShort = formatDateShort(meta.date!, tKey)
   const weekRange = formatWeekRange(meta.weekStart!, meta.weekEnd!, tKey)
-  const linkHref = `/${tKey}/tradeoff/${meta.date}`
+  const linkHref = `/${tKey}/tradeoff/${country}/${meta.date}`
   const ariaLabel = tKey === 'en'
     ? `Read AFOS Tradeoff issue ${meta.issueNumber} for ${dateShort}`
     : tKey === 'es'
@@ -187,7 +192,7 @@ export function AfosTradeoffHeroCard() {
       </a>
       <div className="mt-2 flex items-center justify-between gap-3">
         <a
-          href={`/${tKey}/tradeoff`}
+          href={`/${tKey}/tradeoff/${country}`}
           aria-label={t.seeAll}
           className="text-xs font-medium text-gray-500 hover:text-primary hover:underline"
         >
