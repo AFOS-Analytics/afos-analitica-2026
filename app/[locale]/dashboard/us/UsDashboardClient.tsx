@@ -216,7 +216,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
             EUA não existia; a Edição №1 destravou. O cartão de apresentação
             desceu uma posição e continua: ele diz o que o painel é, e isso o
             Tradeoff não diz. */}
-        <AfosTradeoffHeroCard country="us" />
+        <AfosTradeoffHeroCard country="us" semContainer />
 
         <UsIntroCard />
 

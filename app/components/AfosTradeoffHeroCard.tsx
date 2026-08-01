@@ -88,10 +88,20 @@ function formatWeekRange(start: string, end: string, locale: 'pt-BR' | 'en' | 'e
  * padrão é 'br' para que a landing e o painel do Brasil, que já usavam este
  * cartão, continuem funcionando sem alteração.
  */
-export function AfosTradeoffHeroCard({ country = 'br' }: { country?: string } = {}) {
+export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: { country?: string; semContainer?: boolean } = {}) {
   const { locale } = useTranslation()
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
   const t = T[tKey]
+
+  /**
+   * ⚠️ O cartão nasceu na LANDING, onde ele mesmo precisa criar a coluna, por
+   * isso traz `max-w-6xl mx-auto px-3 sm:px-4 md:px-8`. Dentro de uma página que
+   * JÁ tem essa coluna, como o painel, o padding é aplicado duas vezes e o
+   * cartão fica visivelmente mais estreito que os vizinhos. Foi o que o André
+   * viu em 31/Jul. Com `semContainer`, ele apenas ocupa a largura de quem o
+   * contém.
+   */
+  const embrulho = semContainer ? 'w-full' : 'w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4'
   const [meta, setMeta] = useState<TradeoffMeta | null>(null)
 
   useEffect(() => {
@@ -110,7 +120,7 @@ export function AfosTradeoffHeroCard({ country = 'br' }: { country?: string } = 
   // Placeholder reservando a altura (evita CLS quando o fetch client popula este
   // card no topo, logo abaixo do DailyHeroCard).
   if (!meta) return (
-    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4" aria-hidden="true">
+    <div className={embrulho} aria-hidden="true">
       <div className="min-h-[140px] sm:min-h-[116px] rounded-xl border border-orange-100 bg-orange-50/60 p-4 md:p-5 animate-pulse">
         <div className="mb-3 h-4 w-2/5 rounded bg-orange-100" />
         <div className="mb-1.5 h-3 w-full rounded bg-orange-100/70" />
@@ -123,7 +133,7 @@ export function AfosTradeoffHeroCard({ country = 'br' }: { country?: string } = 
   if (!meta.hasEdition) {
     const dateShort = meta.firstEditionDate ? formatDateShort(meta.firstEditionDate, tKey) : ''
     return (
-      <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4">
+      <div className={embrulho}>
         <div
           className="block bg-orange-50 border border-orange-100 rounded-xl p-4 md:p-5"
           aria-label={`${t.eyebrow}: ${t.prePrimeiraTitle} ${dateShort}`}
@@ -164,7 +174,7 @@ export function AfosTradeoffHeroCard({ country = 'br' }: { country?: string } = 
       : `Ler AFOS Tradeoff edição ${meta.issueNumber} de ${dateShort}`
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4">
+    <div className={embrulho}>
       <link rel="alternate" type="text/html" href={linkHref} title={meta.title} hrefLang={tKey} />
       <a
         href={linkHref}
