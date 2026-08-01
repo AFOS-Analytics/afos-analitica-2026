@@ -15,6 +15,7 @@ import { UsLimitationsSection } from '../../../components/UsLimitationsSection';
 import { UsPressSection } from '../../../components/UsPressSection';
 import { UsIntroCard } from '../../../components/UsIntroCard';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
+import { AfosWeeklyHeroCard } from '../../../components/AfosWeeklyHeroCard';
 import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
@@ -215,6 +216,17 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
             desceu uma posição e continua: ele diz o que o painel é, e isso o
             Tradeoff não diz. */}
         <AfosTradeoffHeroCard country="us" semContainer />
+
+        {/* 🆕 Cartão do AFOS Weekly, o produto editorial para o eleitor comum,
+            distinto do Tradeoff, que é para mercado e agências de risco. Cor
+            teal contra o âmbar do Tradeoff, para o leitor separar de relance.
+
+            ⚠️ EM PRODUÇÃO ELE NÃO APARECE ENQUANTO NÃO HOUVER EDIÇÃO PUBLICADA:
+            a rota `/api/afos-weekly/latest` só conta rascunho fora de produção,
+            e sem edição o componente devolve o estado de pré-lançamento. Como o
+            produto está em piloto e a Edição №1 é rascunho, no ar isto fica
+            invisível e no preview aparece completo. */}
+        <AfosWeeklyHeroCard country="us" semContainer />
 
         <UsIntroCard />
 
