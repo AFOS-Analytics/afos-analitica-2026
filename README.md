@@ -532,10 +532,12 @@ npm run dev
 
 | Command | Description |
 |---------|-------------|
-| `/atualizar` | Full AFOS Analytics update (Polymarket + Google News + JSONs + deploy) |
-| `/atualizar-pesquisas` | TSE electoral polls ingestion |
+| `/atualizar-brz` | Full AFOS Analytics update for **Brazil** (Polymarket + Google News + JSONs + deploy) |
+| `/atualizar-pesquisas-brz` | TSE electoral polls ingestion (**Brazil**) |
 | `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily), cross-references markets, polls and news with auditable links per claim |
-| `/tradeoff` | Generate the weekly technical reading (AFOS Tradeoff), 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
+| `/tradeoff-brz` | Generate the weekly technical reading (AFOS Tradeoff) for **Brazil**, 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
+
+> The `-brz` suffix marks the commands that act on the **Brazil** panel and dataset. It was added on 01/Aug/2026, when the platform gained a second live country (US midterms), so that a country-specific command can never be mistaken for a platform-wide one. `/afos-daily` has no suffix because it is not country-scoped.
 
 ---
 

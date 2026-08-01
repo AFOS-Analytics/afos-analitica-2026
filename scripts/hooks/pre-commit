@@ -15,7 +15,7 @@ STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null || echo "")
 # Os 4 arquivos carregam os MESMOS números. Antes o hook só disparava em 2
 # deles, então um commit que mexesse apenas em analysis-data.json ou no
 # CandidatesSection.tsx passava sem validação nenhuma. Só não apareceu porque
-# o /atualizar commita os quatro juntos; qualquer correção pontual escapava.
+# o /atualizar-brz commita os quatro juntos; qualquer correção pontual escapava.
 if echo "$STAGED" | grep -qE '(^|/)(public/(polls-data|analysis-criteriosa|analysis-data)\.json|app/components/CandidatesSection\.tsx)$'; then
   echo "🔍 pre-commit: polls-data/analysis-criteriosa staged — validando schema canônico..."
   if ! npx tsx scripts/validate-polls-data.ts; then
@@ -35,7 +35,7 @@ fi
 # tem a prosa escrita DENTRO do componente e por isso ficou de fora: a seção
 # de perfis aparece em português para quem lê em inglês. O André decidiu
 # preservar o legado e travar o crescimento. Conteúdo editorial novo vai para
-# JSON em public/, que tem pipeline de tradução na ETAPA 3.5 do /atualizar.
+# JSON em public/, que tem pipeline de tradução na ETAPA 3.5 do /atualizar-brz.
 # O gatilho cobre app/ INTEIRO, não só app/components/. O guard varre as 102
 # .tsx recursivamente, incluindo as páginas de app/[locale]/, que é onde uma
 # seção nova nasceria; disparar só em components/ deixaria justamente esse caso

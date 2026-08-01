@@ -2,7 +2,7 @@
  * Confere superlativo contra a série INTEIRA, direto no Neon.
  *
  * POR QUE EXISTE
- * O Guardrail #3 do /atualizar manda verificar "o maior do ciclo" com
+ * O Guardrail #3 do /atualizar-brz manda verificar "o maior do ciclo" com
  * /api/market/history. Esse endpoint NÃO consegue provar isso:
  *
  *   - `days` é travado em 90 por Math.min (app/api/market/history/route.ts:23),

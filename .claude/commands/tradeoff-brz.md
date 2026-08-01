@@ -6,11 +6,11 @@ Gerar edição semanal técnica do AFOS Tradeoff seguindo o template HTML previe
 
 Antes de executar este comando:
 
-1. **O Daily da semana** deve estar atualizado — `/atualizar` rodado nos últimos 1-2 dias com dados frescos dos JSONs (`public/analysis-criteriosa.json`, `public/analysis-data.json`, `public/polls-data.json`).
-2. **Snapshot Polymarket atual** — preço/volume USD de cada contrato relevante da semana. Se mais de ~12h desde último `/atualizar`, refazer.
+1. **O Daily da semana** deve estar atualizado — `/atualizar-brz` rodado nos últimos 1-2 dias com dados frescos dos JSONs (`public/analysis-criteriosa.json`, `public/analysis-data.json`, `public/polls-data.json`).
+2. **Snapshot Polymarket atual** — preço/volume USD de cada contrato relevante da semana. Se mais de ~12h desde último `/atualizar-brz`, refazer.
 3. **Histórico Neon** — séries de Δ semana exigem snapshots persistidos. Verificar via API ou Neon direto que tem dados da semana inteira.
 
-Se faltar qualquer pré-requisito, PARAR e pedir ao usuário para rodar `/atualizar` primeiro.
+Se faltar qualquer pré-requisito, PARAR e pedir ao usuário para rodar `/atualizar-brz` primeiro.
 
 ## ETAPA 1: Coletar baseline da semana
 
@@ -40,11 +40,13 @@ sinalDaSemana: "[1-2 parágrafos sintetizando o sinal mais relevante da semana �
 ```
 
 ⚠️ **REGRA DE PUBLICAÇÃO (Fase 1.1 — publish gate):** Toda edição nova começa como `status: draft`. Isso garante:
-- Página `/[locale]/tradeoff/{data}` retorna 404 em produção (mas acessível em Vercel preview pra revisão)
+- Página `/[locale]/tradeoff/br/{data}` retorna 404 em produção (mas acessível em Vercel preview pra revisão)
 - `sitemap.xml` NÃO lista a draft (Google não indexa)
 - `/feed/tradeoff.xml` NÃO inclui draft (subscritores RSS não recebem push)
 - `llms.txt` NÃO inclui draft (LLM crawlers não veem)
-- `getLatestDate()` NÃO retorna draft (redirect `/tradeoff` continua na última publicada)
+- `getLatestDate()` NÃO retorna draft (redirect `/tradeoff` → `/tradeoff/br` continua na última publicada)
+
+⚠️ **A rota ganhou país em 01/Ago/2026.** Este comando é o do BRASIL: as edições ficam em `/[locale]/tradeoff/br/{data}` e os arquivos seguem na RAIZ de `public/afos-tradeoff/` (só os outros países vão para subpasta). Ver `project_tradeoff_multipais_arquitetura` na memória.
 
 Flip pra `published` via:
 ```bash

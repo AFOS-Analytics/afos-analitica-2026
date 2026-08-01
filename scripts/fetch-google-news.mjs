@@ -11,7 +11,7 @@
  *
  * Output: public/news-cache/{YYYY-MM-DD}.json
  *
- * Usado pelo skill /atualizar e /afos-daily para evitar coleta sem URL primária.
+ * Usado pelo skill /atualizar-brz e /afos-daily para evitar coleta sem URL primária.
  *
  * Uso:
  *   node scripts/fetch-google-news.mjs           # data = hoje

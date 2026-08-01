@@ -131,6 +131,6 @@ for (const a of achados) {
   console.error(`      ...${a.amostra}...`)
 }
 console.error('\nConteúdo editorial vai para JSON em public/, que tem pipeline de tradução')
-console.error('(ETAPA 3.5 do /atualizar). Componente é layout, não texto.')
+console.error('(ETAPA 3.5 do /atualizar-brz). Componente é layout, não texto.')
 console.error('Se for legado que precisa ficar, adicione o caminho em LEGADO com justificativa.')
 process.exit(1)

@@ -4,13 +4,13 @@ Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + 
 
 ## Pré-requisito obrigatório
 
-Antes de executar este comando, o `/atualizar` do mesmo dia já deve ter sido executado — o conteúdo vem dos JSONs atualizados:
+Antes de executar este comando, o `/atualizar-brz` do mesmo dia já deve ter sido executado — o conteúdo vem dos JSONs atualizados:
 - `public/analysis-criteriosa.json`
 - `public/analysis-data.json`
 
-Se o `/atualizar` de hoje ainda não rodou, PARAR e pedir ao usuário para executar `/atualizar` primeiro.
+Se o `/atualizar-brz` de hoje ainda não rodou, PARAR e pedir ao usuário para executar `/atualizar-brz` primeiro.
 
-⚠️ O `/atualizar` é o **ponto de partida** (estrutura dos JSONs + cache de notícias), NÃO a palavra final sobre o mercado: o snapshot dele pode ter minutos/horas. A **ETAPA 1.1 re-fetcha o Polymarket ao vivo** e rebaseia os JSONs se o mercado tiver andado, antes de escrever o Daily.
+⚠️ O `/atualizar-brz` é o **ponto de partida** (estrutura dos JSONs + cache de notícias), NÃO a palavra final sobre o mercado: o snapshot dele pode ter minutos/horas. A **ETAPA 1.1 re-fetcha o Polymarket ao vivo** e rebaseia os JSONs se o mercado tiver andado, antes de escrever o Daily.
 
 ## ETAPA 1: Ler dados de baseline
 
@@ -20,7 +20,7 @@ Se o `/atualizar` de hoje ainda não rodou, PARAR e pedir ao usuário para execu
 
 ## ETAPA 1.1: RE-FETCH POLYMARKET AO VIVO (obrigatório — anti-snapshot-stale)
 
-**Instalado 03/Jul/2026** após o Daily de 03/Jul: o `/atualizar` rodou às 18:39 (consolidação, Lula 60,50%), mas ao publicar o Daily às 19:07 o mercado tinha andado 1pp (Lula rompeu 61%, gap virou recorde +39,55pp). O André pegou a defasagem conferindo o volume. **Lição gravada** em `feedback_atualizar_vs_daily_factcheck_gap.md`: o snapshot do `/atualizar` pode ter minutos/horas e o Polymarket é vivo. **O Daily NÃO herda cegamente o número do `/atualizar` — re-verifica ao vivo na hora de escrever.**
+**Instalado 03/Jul/2026** após o Daily de 03/Jul: o `/atualizar-brz` rodou às 18:39 (consolidação, Lula 60,50%), mas ao publicar o Daily às 19:07 o mercado tinha andado 1pp (Lula rompeu 61%, gap virou recorde +39,55pp). O André pegou a defasagem conferindo o volume. **Lição gravada** em `feedback_atualizar_vs_daily_factcheck_gap.md`: o snapshot do `/atualizar-brz` pode ter minutos/horas e o Polymarket é vivo. **O Daily NÃO herda cegamente o número do `/atualizar-brz` — re-verifica ao vivo na hora de escrever.**
 
 ### Passo 1 — Re-fetch ao vivo (proxy AFOS, NUNCA gamma-api direto)
 
@@ -32,7 +32,7 @@ Extrair, do snapshot ao vivo: **% e volume dos top candidatos presidenciais** (L
 
 ### Passo 2 — Reconciliar contra a baseline dos JSONs
 
-Comparar os valores ao vivo com o que está em `analysis-criteriosa.json` / `analysis-data.json` (gerados pelo `/atualizar`). Calcular o delta de: Lula %, Flávio %, gap, Renan %, e volume total.
+Comparar os valores ao vivo com o que está em `analysis-criteriosa.json` / `analysis-data.json` (gerados pelo `/atualizar-brz`). Calcular o delta de: Lula %, Flávio %, gap, Renan %, e volume total.
 
 ### Passo 3 — GATE de rebaseline
 
@@ -42,9 +42,9 @@ Comparar os valores ao vivo com o que está em `analysis-criteriosa.json` / `ana
 - o **enquadramento muda** (ex.: "consolidação" no JSON vira "novo recorde" ao vivo, ou vice-versa); **ou**
 - o volume total diverge de forma visível do que o JSON/Daily citaria.
 
-**Rebaseline = mini-`/atualizar` pro snapshot ao vivo:** reescrever os campos numéricos + narrativa afetados em **TODOS os 5 arquivos** — `analysis-criteriosa.json` (subtitle, cruzamento, headers/analise/fortes/fracos, quadroComparativo m/t), `analysis-data.json` (sentimento, stf, bancoMaster — vírgula decimal), `polls-data.json` (`polymarketComparison` note + candidates), `app/components/CandidatesSection.tsx` (dot decimal) — e ajustar `updatedAt`/horário pro `fetchedAt` ao vivo. Usar scripts Node (fs) para os JSONs/TSX (evita o revert silencioso do OneDrive e garante vírgula/ponto decimal correto por arquivo). Rodar `npx tsx scripts/validate-polls-data.ts` (exit 0) depois.
+**Rebaseline = mini-`/atualizar-brz` pro snapshot ao vivo:** reescrever os campos numéricos + narrativa afetados em **TODOS os 5 arquivos** — `analysis-criteriosa.json` (subtitle, cruzamento, headers/analise/fortes/fracos, quadroComparativo m/t), `analysis-data.json` (sentimento, stf, bancoMaster — vírgula decimal), `polls-data.json` (`polymarketComparison` note + candidates), `app/components/CandidatesSection.tsx` (dot decimal) — e ajustar `updatedAt`/horário pro `fetchedAt` ao vivo. Usar scripts Node (fs) para os JSONs/TSX (evita o revert silencioso do OneDrive e garante vírgula/ponto decimal correto por arquivo). Rodar `npx tsx scripts/validate-polls-data.ts` (exit 0) depois.
 
-**Se nenhum gate disparar** (mercado praticamente parado desde o `/atualizar`), seguir com a baseline do JSON e apenas **atualizar o volume total** pro número ao vivo se estiver mais preciso.
+**Se nenhum gate disparar** (mercado praticamente parado desde o `/atualizar-brz`), seguir com a baseline do JSON e apenas **atualizar o volume total** pro número ao vivo se estiver mais preciso.
 
 ### Passo 4 — Log obrigatório no chat
 
@@ -365,7 +365,7 @@ WebSearch({
 
 Resultado típico: URL bonita tipo `https://www.estadao.com.br/politica/carolina-brigido/.../titulo-slug/` — leva direto à matéria.
 
-**Passo 3 — Para matérias secundárias (suplementares ao texto), usar URL Google News redirect do cache.** O `/atualizar` gera `public/news-cache/{YYYY-MM-DD}.json` com todas as matérias coletadas e suas URLs primárias preservadas (`news.google.com/rss/articles/CBM...`). Ler e cruzar título→URL.
+**Passo 3 — Para matérias secundárias (suplementares ao texto), usar URL Google News redirect do cache.** O `/atualizar-brz` gera `public/news-cache/{YYYY-MM-DD}.json` com todas as matérias coletadas e suas URLs primárias preservadas (`news.google.com/rss/articles/CBM...`). Ler e cruzar título→URL.
 
 ```javascript
 // Pseudocódigo de leitura do cache

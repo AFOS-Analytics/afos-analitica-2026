@@ -133,7 +133,7 @@ function aplicar(obj: unknown, mapa: Map<string, string>, caminho = ''): unknown
 async function traduzirCampos(itens: Item[], locale: Locale, concorrencia = 3): Promise<Map<string, string>> {
   // Glossário INTEIRO, como o Daily faz (translate-afos-daily-chunked.ts).
   // Termo brasileiro sem tradução fica em português e vira link para o verbete.
-  // Sem isto o script apagaria os links a cada /atualizar.
+  // Sem isto o script apagaria os links a cada /atualizar-brz.
   const glossaryEntries = loadGlossary().map(e => ({ term: e.term, id: e.id }))
   const mapa = new Map<string, string>()
   let feitos = 0

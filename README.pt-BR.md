@@ -533,10 +533,12 @@ npm run dev
 
 | Comando | Descricao |
 |---------|-----------|
-| `/atualizar` | Atualizacao completa do AFOS Analytics (Polymarket + Google News + JSONs + deploy) |
-| `/atualizar-pesquisas` | Ingestao de pesquisas eleitorais do TSE |
+| `/atualizar-brz` | Atualizacao completa do AFOS Analytics para o **Brasil** (Polymarket + Google News + JSONs + deploy) |
+| `/atualizar-pesquisas-brz` | Ingestao de pesquisas eleitorais do TSE (**Brasil**) |
 | `/afos-daily` | Gera a sintese narrativa diaria (AFOS Daily), cruza mercados, pesquisas e noticias com link auditavel por alegacao |
-| `/tradeoff` | Gera a leitura tecnica semanal (AFOS Tradeoff), 9 secoes estruturadas, reporta os tres sinais separadamente, analise de cenarios ponderados para leitores institucionais |
+| `/tradeoff-brz` | Gera a leitura tecnica semanal (AFOS Tradeoff) do **Brasil**, 9 secoes estruturadas, reporta os tres sinais separadamente, analise de cenarios ponderados para leitores institucionais |
+
+> O sufixo `-brz` marca os comandos que agem sobre o painel e o dataset do **Brasil**. Foi criado em 01/Ago/2026, quando a plataforma ganhou um segundo pais ao vivo (midterms dos EUA), para que um comando de um pais so nunca seja confundido com um comando da plataforma inteira. O `/afos-daily` fica sem sufixo porque nao e de um pais so.
 
 ---
 

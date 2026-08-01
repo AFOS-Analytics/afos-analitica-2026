@@ -1,4 +1,4 @@
-# AFOS Analytics — Atualização de Pesquisas Eleitorais (TSE)
+# AFOS Analytics — Atualização de Pesquisas Eleitorais (TSE, BRASIL)
 
 Executar ingestão de pesquisas eleitorais do TSE e cruzamento com Polymarket.
 

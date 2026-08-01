@@ -1,4 +1,4 @@
-# AFOS Analytics — Atualização Completa
+# AFOS Analytics — Atualização Completa (BRASIL)
 
 Execute uma análise profunda cruzando TODAS as fontes e atualize o projeto para os usuários.
 
@@ -30,7 +30,7 @@ NOTA: o proxy também forwarda `liquidityNum` (profundidade do order book) desde
 
 ## ETAPA 1.7: TRAVA DE CAPTURA (obrigatória, bloqueante)
 
-**Instalada em 24/Jul/2026, depois do incidente do snapshot das 15h38.** Naquele dia o `/atualizar` capturou o book num momento de spread largo e publicou. Metade dos deltas estava errada e **dois tinham o sinal invertido**: Michelle e Caiado foram publicados em ALTA e fecharam o dia em QUEDA. O snapshot passou por todos os validadores, porque era internamente coerente: os deltas batiam com os valores. **O erro estava na entrada, não na aritmética.** Nenhuma checagem sobre o JSON pega isso.
+**Instalada em 24/Jul/2026, depois do incidente do snapshot das 15h38.** Naquele dia o `/atualizar-brz` capturou o book num momento de spread largo e publicou. Metade dos deltas estava errada e **dois tinham o sinal invertido**: Michelle e Caiado foram publicados em ALTA e fecharam o dia em QUEDA. O snapshot passou por todos os validadores, porque era internamente coerente: os deltas batiam com os valores. **O erro estava na entrada, não na aritmética.** Nenhuma checagem sobre o JSON pega isso.
 
 O Polymarket é arbitrado em minutos. Logo: duas leituras independentes que concordam são um preço; que discordam são um book em trânsito.
 
@@ -127,7 +127,7 @@ Com os dados coletados, atualize os 3 arquivos JSON:
   - Se `date` tem >30 dias: **REMOVER** (mover histórico para Neon via cron de persist; dashboard mostra só pesquisas ≤30 dias)
   - Se `date` ≤7 dias: manter
   - Se 7-30 dias: avaliar caso a caso (manter se for nacional grande tipo AtlasIntel/Quaest). Estaduais NUNCA entram, independente de relevância (Guardrail #0 — vão pro Daily)
-- Adicionar pesquisas novas que apareceram desde último /atualizar (use os dados que `/atualizar-pesquisas` registrou no Neon, OU que apareceram no JSON `analysis-criteriosa.json` na seção de pesquisas)
+- Adicionar pesquisas novas que apareceram desde último /atualizar-brz (use os dados que `/atualizar-pesquisas-brz` registrou no Neon, OU que apareceram no JSON `analysis-criteriosa.json` na seção de pesquisas)
 - **Sem inventar números**: cada pesquisa precisa ter números verificáveis em fonte primária (Bloomberg/G1/CNN/site do instituto). Se não conseguir confirmar números detalhados, mantenha estrutura mínima (apenas 1T sem detalhes 2T).
 - Atualizar `lastUpdate` para data de hoje (formato `YYYY-MM-DD`)
 - Atualizar `approvalData.results` se aprovação Lula mudou (AtlasIntel/Quaest mais recentes)

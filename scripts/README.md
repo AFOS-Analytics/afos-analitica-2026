@@ -7,7 +7,7 @@ Scripts utilitários e de manutenção do AFOS Analytics. Todos rodam via `tsx` 
 | Script | Propósito | Quando rodar |
 |--------|-----------|--------------|
 | **persist-afos-daily.ts** | Persiste arquivos `public/afos-daily/{date}.md` no Neon (tabela `analysis_reports`) com slug `afos-daily-DD-MM-YYYY`. | Após criar/editar uma síntese AFOS Daily e antes de fazer commit/deploy. |
-| **persist-analysis.ts** | Persiste `analysis-data.json` e `analysis-criteriosa.json` no Neon como snapshots diários. | Manualmente após `/atualizar`. Roda automaticamente via cron Vercel às 14:00 UTC. |
+| **persist-analysis.ts** | Persiste `analysis-data.json` e `analysis-criteriosa.json` no Neon como snapshots diários. | Manualmente após `/atualizar-brz`. Roda automaticamente via cron Vercel às 14:00 UTC. |
 | **translate-afos-daily-chunked.ts** | Traduz uma síntese AFOS Daily PT-BR → EN/ES via Claude Haiku 4.5 com chunking automático por seção (`## 1.`, `## 2.`, etc) — necessário para dailies >7k chars que excediam max_tokens=8192 da versão antiga não-chunked. Lê `ANTHROPIC_API_KEY` do `.env.local`. Post-process inline corrige 5 bugs cumulativos do translator (header newlines, em-dash separators, ### Calendar split, table separator, blank line antes lede). | Após executar `/afos-daily` em PT-BR e aprovar a síntese — gera as 2 traduções. |
 | **test-afos-daily-edge-cases.ts** | 42 testes de edge cases do loader AFOS Daily + glossário (path traversal, datas inválidas, locale fallback, etc.). | Antes de qualquer commit que toque `lib/afos-daily/`. CI roda automaticamente. |
 | **seed-dev.ts** | Popula tabelas Neon com dados de teste para desenvolvimento local. | Após `npx prisma migrate dev` em ambiente novo. |
