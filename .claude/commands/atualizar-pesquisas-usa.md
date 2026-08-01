@@ -28,20 +28,36 @@ node scripts/parse-us-generic-ballot.mjs
 
 Opções: `--dias=30` (janela da média, padrão 30) e `--out=caminho` (padrão `public/us-polls-data.json`).
 
-## Passo 2 (BLOQUEANTE): conferir que a leitura não colapsou
+## Passo 2 (BLOQUEANTE): conferir que a leitura não colapsou NEM se contaminou
 
 🔴 **O script NÃO tem portão de segurança, e o cron TEM.** Esta assimetria é real e é a razão deste passo existir.
 
-A rota do cron se recusa a gravar leitura vazia por cima de uma boa: Wikipédia fora do ar, mudança de estrutura da página ou parse quebrado chegam como zero pesquisas, e ela devolve 502 sem gravar. **O script escreve o arquivo de qualquer jeito.** Se a leitura vier vazia e alguém commitar, o piso de segurança do painel vira um arquivo vazio.
+A rota do cron se recusa a gravar leitura vazia por cima de uma boa: Wikipédia fora do ar, mudança de estrutura da página ou parse quebrado chegam como zero pesquisas, e ela devolve 502 sem gravar. **O script escreve o arquivo de qualquer jeito.**
 
-Antes de commitar, comparar com o que estava lá:
+⚠️ **São DOIS defeitos possíveis, e só um deles encolhe o arquivo.** Em 01/Ago/2026 a coleta CRESCEU de 278 para 282 linhas e mesmo assim publicou lixo. Conferir só o tamanho não basta.
 
 ```bash
 git diff --stat public/us-polls-data.json
-node -e "const a=require('./public/us-polls-data.json');console.log('publicadas',a.qualidade.publicadas,'de',a.qualidade.linhasLidas,'| media',a.mediaAfos&&a.mediaAfos.vantagemDem,'| institutos',a.mediaAfos&&a.mediaAfos.nInstitutos)"
+node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const s=a.polls.slice(0,5).map(p=>p.dem+p.rep+(p.outros||0));console.log('soma D+R+outros das 5 primeiras (tem que dar ~100):',s.join(' '))"
 ```
 
-**Regra:** se `publicadas` caiu para 0, ou caiu para menos da metade do que era, ou `mediaAfos` veio nulo, **não commitar**. Desfazer com `git checkout -- public/us-polls-data.json` e investigar a origem antes de tentar de novo.
+**Regra de colapso:** se `publicadas` foi a 0, ou caiu para menos da metade, ou `mediaAfos` veio nulo, não commitar.
+
+**Regra de contaminação:** se sobrar linha fora da régua entre as publicadas, ou se a soma Dem+Rep+outros não fechar perto de 100, **não commitar**. Soma que não fecha é a assinatura de coluna deslizada.
+
+Desfazer com `git checkout -- public/us-polls-data.json` e investigar a origem.
+
+### 📐 A régua, e por que a soma é o melhor teste
+O portão de valor exige percentual entre **15% e 70%** para os dois partidos, e soma dos dois até 100. É folgado de propósito: existe recorte legítimo de adultos com muito indeciso (D=33 x R=28).
+
+Mas o teste mais forte não é a régua, é a **soma com os outros**: numa linha bem lida, Dem + Rep + outros fecha em 99 ou 100. Quando a coluna desliza, a soma desanda. É o jeito mais rápido de saber se a origem mudou de formato.
+
+### 🔴 O defeito de 01/Ago, para reconhecer se voltar
+A coleta publicou **"Big Data Poll · D 914 x R 3,2"**. O 914 era o TAMANHO DA AMOSTRA e o 3,2 era a MARGEM DE ERRO.
+
+**Causa:** o `rowspan` da Wikipédia não fica só no instituto e nas datas, fica **também na margem de erro** (`rowspan="3"|–`). Nas linhas seguintes do grupo a célula da margem não existe, tudo desliza uma coluna, e o leitor gravava o REPUBLICANO no lugar do democrata e o OUTROS no lugar do republicano. Assim "Focaldata/FT, Dem 51 x Rep 44, outros 5" virava "D=42 x R=9".
+
+O leitor passou a resolver `rowspan` **por índice de coluna**, o que consertou a raiz: os descartes por valor caíram de 35 para 0 e a leitura subiu para 304 de 307. **Se `descartadasPorValor` voltar a subir, a origem mudou de formato de novo** e o lugar de olhar é o `parseTabela`.
 
 ## Passo 3: forçar o Neon, se não puder esperar as 07:10 UTC
 

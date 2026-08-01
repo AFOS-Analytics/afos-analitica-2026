@@ -69,7 +69,19 @@ Rodar o `/atualizar-pesquisas-usa`, ou direto:
 node scripts/parse-us-generic-ballot.mjs
 ```
 
-🔴 **Conferir que a leitura não colapsou antes de commitar.** O script escreve o arquivo de qualquer jeito; quem tem portão contra leitura vazia é o cron, não ele. Se `qualidade.publicadas` foi a zero ou caiu para menos da metade, ou se `mediaAfos` veio nulo, desfazer com `git checkout -- public/us-polls-data.json` e investigar a origem.
+🔴 **Conferir antes de commitar, e são DOIS defeitos possíveis.** O script escreve o arquivo de qualquer jeito; quem tem portão contra leitura vazia é o cron, não ele.
+
+⚠️ **Só um dos dois encolhe o arquivo.** Em 01/Ago/2026 a coleta CRESCEU de 278 para 282 linhas e publicou lixo mesmo assim: uma linha saiu como **"Big Data Poll · D 914 x R 3,2"**, com o 914 sendo a amostra e o 3,2 a margem de erro. Conferir só o tamanho não pega isso.
+
+```bash
+node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('fora da regua entre as PUBLICADAS:',mau.length);console.log('soma D+R+outros das 5 primeiras (~100):',a.polls.slice(0,5).map(p=>p.dem+p.rep+(p.outros||0)).join(' '))"
+```
+
+**Não commitar** se: `publicadas` foi a zero ou caiu pela metade; `mediaAfos` veio nulo; sobrou linha fora da régua entre as publicadas; ou a soma Dem+Rep+outros não fecha perto de 100. **Soma que não fecha é a assinatura de coluna deslizada na origem.**
+
+📌 **`descartadasPorValor` é o sinal de alarme.** Ele deve ficar em 0. Se subir, a Wikipédia mudou o formato da tabela e o lugar de olhar é o `parseTabela` do `lib/us-polls/collect.mjs`, não a régua.
+
+⚠️ **Conserto de leitor exige DEPLOY.** O cron das 07:10 UTC roda o código publicado, não o do disco. Corrigir e só commitar deixa o robô publicando errado no dia seguinte.
 
 ## ETAPA 3: Imprensa
 

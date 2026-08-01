@@ -54,7 +54,7 @@ const T = {
     semDado: 'Dado de pesquisa indisponível nesta captura.',
     atualizado: (d: string) => `Índice lido em ${d}`,
     total: (n: number, desc: number) =>
-      `${n} pesquisas no arquivo${desc > 0 ? `, ${desc} linha(s) descartada(s) por forma ilegível na origem` : ''}`,
+      `${n} pesquisas no arquivo${desc > 0 ? `, ${desc} linha(s) descartada(s) na leitura da origem` : ''}`,
     tipos: 'LV = provável votante · RV = eleitor registrado · A = adultos',
   },
   en: {
@@ -83,7 +83,7 @@ const T = {
     semDado: 'Polling data unavailable in this capture.',
     atualizado: (d: string) => `Index read on ${d}`,
     total: (n: number, desc: number) =>
-      `${n} polls on file${desc > 0 ? `, ${desc} row(s) discarded for unreadable shape at the source` : ''}`,
+      `${n} polls on file${desc > 0 ? `, ${desc} row(s) discarded while reading the source` : ''}`,
     tipos: 'LV = likely voter · RV = registered voter · A = adults',
   },
   es: {
@@ -112,7 +112,7 @@ const T = {
     semDado: 'Dato de encuesta no disponible en esta captura.',
     atualizado: (d: string) => `Índice leído el ${d}`,
     total: (n: number, desc: number) =>
-      `${n} encuestas en el archivo${desc > 0 ? `, ${desc} línea(s) descartada(s) por forma ilegible en el origen` : ''}`,
+      `${n} encuestas en el archivo${desc > 0 ? `, ${desc} línea(s) descartada(s) en la lectura del origen` : ''}`,
     tipos: 'LV = votante probable · RV = elector registrado · A = adultos',
   },
 }
@@ -294,7 +294,10 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
         </ul>
         <p className="mt-3 text-[11px] text-gray-500">
           {t.atualizado(fmtData(data.lastUpdate, locale))} ·{' '}
-          {t.total(data.qualidade.publicadas, data.qualidade.descartadasPorForma)} ·{' '}
+          {/* `descartadas` é o TOTAL dos dois portões, forma e valor. O `??`
+              cobre registro do Neon gravado antes de 01/Ago/2026, que só tem o
+              de forma: sem ele a linha ficaria vazia em vez de declarar algo. */}
+          {t.total(data.qualidade.publicadas, data.qualidade.descartadas ?? data.qualidade.descartadasPorForma)} ·{' '}
           <a
             href={data.procedencia.indice}
             target="_blank"

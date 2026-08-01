@@ -56,6 +56,11 @@ export interface UsPollsData {
     linhasLidas: number
     publicadas: number
     descartadasPorForma: number
+    // ⚠️ OPCIONAIS de propósito. Chegaram em 01/Ago/2026 com o portão de valor,
+    // e o Neon pode ter registro gravado ANTES disso. Marcar como obrigatórios
+    // faria a tela confiar num campo que o registro antigo não tem.
+    descartadasPorValor?: number
+    descartadas?: number
     motivoDescarte: string
     semFontePrimaria: number
   }
