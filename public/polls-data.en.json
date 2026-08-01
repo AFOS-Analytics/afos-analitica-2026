@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-07-31",
+  "lastUpdate": "2026-08-01",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1041,42 +1041,6 @@
         }
       ],
       "source": "Gerp/AESP via Poder360, Gazeta do Povo, Exame, CNN Brasil, CartaCapital 08/Jul"
-    },
-    {
-      "institute": "AtlasIntel",
-      "date": "2026-07-01",
-      "sample": 5000,
-      "margin": 1,
-      "register": "BR-04582/2026",
-      "reliability": 4,
-      "method": "Online/Big Data",
-      "fieldDates": "2026-06-25 a 2026-06-30",
-      "note": "[AtlasIntel](/en/glossary#atlasintel) (Atlas/Bloomberg) national poll published July 1 (CNN Brasil, JOTA, Valor Econômico, Estadão, CartaCapital, VEJA, GZH, Poder360, Sul21), the same round previously suspended and postponed, now with Michelle in the scenario and questions about the video. Lula widens his advantage in both rounds: R1 Lula 46.3% x Flávio 36.6% (gap +9.7pp); R2 Lula 48.8% x Flávio 42.3% (gap +6.5pp). Flávio falls 5.7pp in the runoff compared with Atlas's previous round, in the middle of the crisis with Michelle (Brasil de Fato, VEJA). Government approval and disapproval: disapprove 52.3% x approve 45.9% (CNN Brasil), a more negative reading than that of the recent in-person polls (BTG/[Nexus](/en/glossary#nexus-btg) June 29 48% x 48%), a historical pattern of Atlas's online method. Fieldwork June 25-30, n=5,000, margin ~1pp, 95% confidence. [TSE](/en/glossary#tse) protocol BR-04582/2026. It is the largest national sample in the window and the first to measure the impact of the Michelle x Flávio crisis, moving in the same direction as the market, which on the same day widened the gap in Lula's favor again.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 46.3
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 36.6
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 48.8,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42.3
-        }
-      ],
-      "source": "AtlasIntel/Bloomberg via CNN Brasil, JOTA, Valor Econômico, Estadão, CartaCapital, VEJA, GZH, Poder360, Sul21 01/Jul"
     }
   ],
   "approvalData": {
@@ -1121,70 +1085,70 @@
     "lastUpdate": "2026-07-29"
   },
   "polymarketComparison": {
-    "note": "Cross-reading of Jul 31, 19:25 capture: the front-runner BROKE the series top. Lula ROSE 1.00pp to 64.50% (vol USD 7.77M), passing for the first time since Apr 14 the 63.50% the AFOS series had been matching without exceeding on Jul 26, 28, 30 and 31. Flávio ROSE 0.40pp, to 24.35% (vol USD 7.76M), and even so the gap WIDENED from +39.55pp to +40.15pp, the widest in the series that holds both names, which begins on May 3, and the first reading above 40pp. THE POLL: Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, margin of 2.15pp, BR-01084/2026) gives Lula 40.5% x Flávio 31.2% in the [first round](/en/glossary#primeiro-turno) and 47.5% x 41.1% in the [runoff](/en/glossary#segundo-turno), and the 6.4pp of the runoff fall outside the two margins added together, so this reading does not describe a statistical tie. Renan Santos was cut by THREE consecutive institutes, 7.8%, 4% and 3.0%, and with the price at 8.15% the distance between market and poll reaches 5.15pp, against the 0.90pp this panel called convergence on Jul 29. On the day, Flávio lost the PP, which announced neutrality and vetoed the ticket with Tereza Cristina, and Republicanos called a convention for Aug 4 heading toward the same refusal. The double-reading capture guard ran FOUR rounds today and failed all of them. The third failed precisely because Lula was in transit from 63.50% to 64.50%; the fourth repeated the entire presidential contract and failed a single book, the MDB in the Senate. That is why the presidential market goes in FIRM, including the 64.50%, and the MDB goes in as a declared RANGE of 24.65% to 26.65%. Live capture Jul 31, 22:25 UTC.",
-    "sources": "Polymarket via AFOS proxy (live capture Jul 31, 22:25 UTC, degraded false, failedCount 0, scripts/capture-guard.ts across FOUR rounds, all failed; in the last one the only divergent book was senate:MDB, published as a range of 24.65% to 26.65%, and the entire presidential contract repeated, including Lula at 64.50%) + Vox Brasil Jul 31 (BR-01084/2026, n=2,100, field Jul 26-28, margin 2.15pp, latest national) + PoderData/Aya Jul 30 (BR-07845/2026, n=2,400) + AtlasIntel/Bloomberg Jul 29 (BR-08602/2026, n=5,021, largest sample of the window) + BTG/Nexus Jul 27 (BR-01489/2026) + Datafolha Jul 24 (BR-01166/2026) + Gerp Jul 22 (BR-05026/2026) + Indexa Jul 21 (BR-02904/2026) + Real Time Big Data Jul 21 (BR-09247/2026) + PoderData/Aya Jul 16 (BR-00059/2026) + Genial/Quaest Jul 15 (BR-07181/2026) + Futura/Apex Jul 14 (BR-07294/2026) + AtlasIntel Jul 1 (BR-04582/2026). AFOS series checked with scripts/check-superlativo.ts, directly against Neon, with no window cap: Camilo Santana maximum at 4.10% (May 3) and minimum at 0.50% (Jul 30); Caiado band between Jul 22 and Jul 30 of 1.80% to 2.40%, with series minimum at 0.90% (Jul 9); Zema maximum at 10.10% (Apr 26).",
+    "note": "Cross-reading of Aug 1, 13:49 capture: a second consecutive day of a new top. Lula ROSE 1.00pp to 65.50% (vol USD 7.82M), the MAXIMUM of the AFOS series, which runs from Apr 14 to today. Flávio ROSE 0.40pp, to 24.75% (vol USD 7.79M), and even so the gap WIDENED from +40.15pp to +40.75pp, also the maximum of the series that holds both names, which begins on May 3. On both days the record came with the opponent rising too. NO NEW POLL: no national poll has been published since Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, margin of 2.15pp, BR-01084/2026), so the price moved 2.00pp across two sessions with no voting-intention reading in between, and the panel asserts no cause. RENAN SANTOS fell 0.55pp to 7.60% (vol USD 8.72M), his lowest value since May 14, and the fall is one of sequence: 12.00% on Jul 23, with 4.40pp given up across nine sessions. Before May 14 the series records lower values, which is why the window is declared. With his polling at 3.0%, the distance between market and poll NARROWED from 5.15pp to 4.60pp, and it narrowed from the price side. The whole chasing pack shrank: Caiado at 1.35%, with a 5.00pp fall in the third-place book, and Camilo Santana at 0.45%, his lowest value in the series. Politically, Flávio remains without a running mate four days from the Aug 5 deadline, and Republicanos made Tarcísio's re-election bid in São Paulo official, leaving the presidential-alliance decision for the national convention on Aug 4. The double-reading capture guard failed the first round, with Renan Santos in transit from 7.15% to 7.60% and Caiado's third-place book between 22.00% and 22.50%, and APPROVED the second. All prices go in firm, with no declared range. Live capture Aug 1, 16:49 UTC.",
+    "sources": "Polymarket via AFOS proxy (live capture Aug 1, 16:49 UTC, degraded false, failedCount 0, scripts/capture-guard.ts across TWO rounds: the first failed, with Renan Santos in transit from 7.15% to 7.60% and Caiado's third place between 22.00% and 22.50%, and the second APPROVED, with every book within 0.20pp) + Vox Brasil Jul 31 (BR-01084/2026, n=2,100, field Jul 26-28, margin 2.15pp, latest national) + PoderData/Aya Jul 30 (BR-07845/2026, n=2,400) + AtlasIntel/Bloomberg Jul 29 (BR-08602/2026, n=5,021, largest sample of the window) + BTG/Nexus Jul 27 (BR-01489/2026) + Datafolha Jul 24 (BR-01166/2026) + Gerp Jul 22 (BR-05026/2026) + Indexa Jul 21 (BR-02904/2026) + Real Time Big Data Jul 21 (BR-09247/2026) + PoderData/Aya Jul 16 (BR-00059/2026) + Genial/Quaest Jul 15 (BR-07181/2026) + Futura/Apex Jul 14 (BR-07294/2026) + AtlasIntel Jul 1 (BR-04582/2026). AFOS series checked with scripts/check-superlativo.ts, directly against Neon, with no window cap: Lula maximum at 65.50% (Aug 1) and gap maximum at +40.75pp (Aug 1); Renan Santos at 7.60% today, his lowest since May 14, with a maximum of 17.90% on Jun 9; Camilo Santana maximum at 4.10% (May 3) and minimum now at 0.45% (Aug 1); Caiado minimum at 0.90% (Jul 9); Zema maximum at 10.10% (Apr 26). For Tarcísio de Freitas the series holds only three days, between Apr 28 and May 14, and for that reason no superlative is asserted about him.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "36-46%",
-        "polymarket": "64.50%",
+        "polymarket": "65.50%",
         "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, 2.15pp margin, BR-01084/2026) gives 40.5% in the [first round](/en/glossary#primeiro-turno) and 47.5% x 41.1% in the [runoff](/en/glossary#segundo-turno). The 6.4pp lead in the runoff falls OUTSIDE the two margins added together, so this reading does NOT describe a statistical tie, unlike PoderData of Jul 30, which gave 3pp. The record that organizes the week: THREE houses measured the first-round gap at 9.1pp (AtlasIntel, Jul 29), 6pp (PoderData, Jul 30) and 9.3pp (Vox, today). Two agree around 9pp and the one that departs is PoderData. This round published neither approval nor rejection.",
-        "tendenciaPolymarket": "ROSE 1.00pp to 64.50% (vol USD 7.77M), passing for the first time since Apr 14 the 63.50% the AFOS series had been matching without exceeding on Jul 26, 28, 30 and 31. The gap over Flávio WIDENED from +39.55pp to +40.15pp, the widest in the series that holds both names, which begins on May 3 and whose previous maximum was +39.80pp on Jul 26, and the first reading above 40pp. The gap widened with the opponent ALSO rising, which describes demand for the front-runner and not deterioration on the other side.",
-        "odds": 64.5,
+        "tendenciaPolymarket": "ROSE 1.00pp to 65.50% (vol USD 7.82M), the MAXIMUM of the AFOS series for a second consecutive day. The gap over Flávio WIDENED from +40.15pp to +40.75pp, also the maximum of the series that holds both names, which begins on May 3. On both days the record came with the opponent rising too, which describes demand for the front-runner and not deterioration on the other side. And the price moved 2.00pp across two sessions with NO national poll in between, an asymmetry the panel records without asserting cause.",
+        "odds": 65.5,
         "percentage": 40.5,
         "lastUpdate": "2026-07-31",
-        "value": 64.5
+        "value": 65.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28-38%",
-        "polymarket": "24.35%",
-        "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, 2.15pp margin, BR-01084/2026) brings him to 31.2% in the [first round](/en/glossary#primeiro-turno) and 41.1% in the [runoff](/en/glossary#segundo-turno). The 6.4pp separating him from Lula fall outside the two margins added together, which rules out the statistical-tie reading PoderData supported the previous day. His day, however, was about ticket-building. The PP VETOED it, and the case closed on the same day. On the morning of Jul 31, Flávio Bolsonaro said Tereza Cristina had accepted the running-mate invitation the night before, with the caveat that talks continued to see whether the party would move forward. Minutes later, the PP announced NEUTRALITY in the election, saying it had consulted its state branches and decided not to call a National Convention, which blocks the ticket. The senator, who leads the PP in the Senate, shared the party statement and complied. Flávio replied that he respects it and that he does not give up. The Aug 5 deadline still has the running mate undefined, now with a door closed.",
-        "tendenciaPolymarket": "RISES 0.40pp to 24.35% (vol USD 7.76M), a fifth consecutive session without a fall, and even so SEES THE GAP WIDEN to +40.15pp, because Lula rose more in the same session. In the sub-markets the signal is CROSSED: he gives up 0.50pp in the [first-round](/en/glossary#primeiro-turno) second-place book, which goes to 78.50% in a contract of USD 216,000, and stays at 5.65% in the third-place book. The counterpart to the fall in the second-place book is Renan Santos rising 3.25pp in that same contract, which suggests internal reallocation rather than a fresh reading on the [runoff](/en/glossary#segundo-turno).",
-        "odds": 24.35,
+        "polymarket": "24.75%",
+        "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, margin of 2.15pp, BR-01084/2026) has him at 31.2% in the [first round](/en/glossary#primeiro-turno) and 41.1% in the [runoff](/en/glossary#segundo-turno). The 6.4pp separating him from Lula fall outside the two margins added together, which moves away from the statistical-tie reading PoderData supported on Jul 30. No new national poll since then. On ticket-building, the PP announced NEUTRALITY and with that blocked the ticket that would have had Tereza Cristina as running mate; she publicly regretted the end of the arrangement, saying that what happened is settled, and he thanked her and said he is negotiating with other parties. On Saturday, Republicanos made official Tarcísio de Freitas's bid for RE-ELECTION as governor of São Paulo, with him present on the platform, but the party's national convention, which decides the presidential alliance, is only on Aug 4. The Aug 5 deadline still has the running mate undefined.",
+        "tendenciaPolymarket": "RISES 0.40pp to 24.75% (vol USD 7.79M), a sixth consecutive session without a fall, and even so SEES THE GAP WIDEN to +40.75pp, because Lula rose more. In the sub-markets the signal favoured him: he RISES 1.00pp in the [first-round](/en/glossary#primeiro-turno) second-place book, which goes to 79.50% in a contract of USD 216,000, his highest mark there in the panel's tracking, and gives way to 4.95% in the third-place book. The [runoff](/en/glossary#segundo-turno) position became more consolidated, not less. Politically, he remains WITHOUT a running mate four days from the Aug 5 deadline.",
+        "odds": 24.75,
         "percentage": 31.2,
         "lastUpdate": "2026-07-31",
-        "value": 24.35
+        "value": 24.75
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-9%",
-        "polymarket": "8.15%",
-        "tendenciaPesquisa": "THREE consecutive institutes cut him, and it is the sequence that matters, not the isolated number: 7.8% at AtlasIntel of Jul 29, 4% at PoderData of Jul 30 and 3.0% at Vox Brasil of Jul 31. With the price at 8.15%, the distance between market and polling reaches 5.15pp, the widest in the window. On Jul 29 this panel recorded that same distance at 0.90pp and called it convergence; three institutes later it has quadrupled, and it is on the record that the earlier reading did not hold. The spread between houses has stopped being a spread: the three most recent readings are also the three lowest, which describes a downward trend.",
-        "tendenciaPolymarket": "FALLS 0.30pp to 8.15% (vol USD 8.63M), a fourth consecutive session of decline in the winner contract. But the move of the day is the opposite in the placing book: it RISES 3.25pp in the [first-round](/en/glossary#primeiro-turno) second-place book, from 6.10% to 9.35% in a contract of USD 1.09M, recovering two thirds of what it had lost the day before, and stays at 61.50% in the third-place book. On Jul 30 the panel recorded that the money had reclassified him, taking away his [runoff](/en/glossary#segundo-turno) chance; today the same money gave much of it back, on the day the polling cut him for the third consecutive time. Both directions are recorded and neither is arbitrated. He holds, in this capture, the largest accumulated volume among the competitive names in the presidential market, USD 8.63M.",
-        "odds": 8.15,
+        "polymarket": "7.60%",
+        "tendenciaPesquisa": "THREE consecutive institutes cut him, and it is the sequence that matters, not the isolated figure: 7.8% at AtlasIntel on Jul 29, 4% at PoderData on Jul 30 and 3.0% at Vox Brasil on Jul 31. There has been no new national poll since then, but the price moved: with the market now at 7.60%, the distance between market and poll NARROWED from 5.15pp to 4.60pp, and it narrowed from the price side, not the polling side. On Jul 29 this panel recorded that same distance at 0.90pp and called it convergence; it went on to quadruple and is now receding, and it is on the record that the Jul 29 reading did not hold. The dispersion between houses stopped being dispersion: the three most recent readings are also the three lowest, which describes a downward trend.",
+        "tendenciaPolymarket": "FALLS 0.55pp to 7.60% (vol USD 8.72M), his lowest value since May 14, in a fifth consecutive session of decline. The fall is one of sequence, not of a single session: on Jul 23 he stood at 12.00% and has since given ground in eight of nine rounds, adding up to 4.40pp. Before May 14 the series records lower values, which is why the window is declared. In the [first-round](/en/glossary#primeiro-turno) second-place book he gives up 0.80pp, to 8.55%, a third direction in three sessions in that contract, and stays FLAT at 61.50% in third place. With the polling at 3.0%, the distance between market and poll NARROWED from 5.15pp to 4.60pp, from the price side.",
+        "odds": 7.6,
         "percentage": 3,
         "lastUpdate": "2026-07-31",
-        "value": 8.15
+        "value": 7.6
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
-        "polymarket": "1.60%",
+        "polymarket": "1.35%",
         "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, 2.15pp margin, BR-01084/2026) gives him 5.5% in the [first round](/en/glossary#primeiro-turno), his BEST national reading of the window, above PoderData's 5% of Jul 30 and well above AtlasIntel's 3.1% of Jul 29. The divergence between institutes about him remains open at FOUR levels within the same month: 6% at Nexus, 5.5% at Vox, 5% at PoderData and 3.1% at AtlasIntel, and today's reading is the highest of the four.",
-        "tendenciaPolymarket": "FALLS 0.95pp against the 2.55% of Jul 30 and goes to 1.60% (vol USD 5.22M), giving back more than the gain accumulated over two days. The series caveat is mandatory and cuts both ways: 1.60% is his lowest value since Jul 22 and sits BELOW the 1.80% to 2.40% band in which he traded over that period, but it remains well above the series minimum, 0.90%, from Jul 9. The 2.55% of Jul 30 was an upward deviation, and the price gave that deviation back and also lost its recent floor. And the signal is crossed, because in the [first-round](/en/glossary#primeiro-turno) third-place book he RISES 2.00pp, going to 27.50% in a contract of USD 37,000. The reading that holds is reallocation: the market moves him from candidate to win to candidate to finish third, and the polling does not follow, because it gave him precisely today the best mark of the window.",
-        "odds": 1.6,
+        "tendenciaPolymarket": "FALLS 0.25pp to 1.35% (vol USD 5.24M), and COLLAPSES 5.00pp in the [first-round](/en/glossary#primeiro-turno) third-place book, from 27.50% to 22.50% in a contract of USD 37,000, undoing in a single session the entire gain the panel recorded the day before. The series caveat is mandatory and does not describe a collapse: his minimum in the AFOS series is 0.90%, from Jul 9, so 1.35% remains above the floor, even if below the 1.80% to 2.40% band in which he traded between Jul 22 and Jul 30. Yesterday's reallocation, from winner to third place, was undone within 24 hours, and he now gives way in both books at the same time.",
+        "odds": 1.35,
         "percentage": 5.5,
         "lastUpdate": "2026-07-31",
-        "value": 1.6
+        "value": 1.35
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/a",
-        "polymarket": "0.15%",
+        "polymarket": "0.05%",
         "tendenciaPesquisa": "Vox Brasil of Jul 31 does not test him in any presidential scenario. On Jul 28 he released allies and base mayors to back Caiado's candidacy, reiterating that his own candidate is still Flávio.",
-        "tendenciaPolymarket": "FLAT at 0.15%, with the highest accumulated volume in the presidential book in this capture, USD 13.68M. It is the legacy anomaly that serves as a permanent reminder of method: volume measures traded history, not current conviction. The contract accumulated that figure over months in which he was treated as a likely candidate, and today's price says the market no longer considers him in the race.",
-        "odds": 0.15,
+        "tendenciaPolymarket": "Goes to 0.05%, with the largest accumulated volume in the presidential book, USD 13.69M. It is the legacy anomaly that serves as a permanent reminder of method: volume measures traded history, not current conviction. On Saturday, Republicanos made official his bid for RE-ELECTION as governor of São Paulo. The panel records the level and does NOT claim it is his lowest: the AFOS series holds only three days for this name, between Apr 28 and May 14, and does not support a superlative.",
+        "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "2026-07-31",
-        "value": 0.15
+        "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
         "polymarket": "0.35%",
         "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, field Jul 26 to 28, 2.15pp margin, BR-01084/2026) brings him to 3.2% in the [first round](/en/glossary#primeiro-turno), essentially the same 3% as PoderData of Jul 30 and above AtlasIntel's 2.8% of Jul 29. In the polling he is stable. On the party front the day was bad: Marcelo Aro left his Senate ticket to run for the government of Minas Gerais, a move Zema publicly called betrayal, and Novo ruled out Barbosa as running mate, heading for a single-party ticket. He still has NO running mate, with the Aug 5 deadline less than a week away.",
-        "tendenciaPolymarket": "FALLS 0.20pp to 0.35% (vol USD 4.59M), in the FOURTH consecutive session of decline in the winner contract, and stays at 4.45% in the [first-round](/en/glossary#primeiro-turno) third-place book. A series caveat, and it is a large one: his maximum in the AFOS series is 10.10%, from Apr 26, so 0.35% is less than a twentieth of that level, and moves of 0.20pp in that range carry almost no informational value.",
+        "tendenciaPolymarket": "Stays FLAT at 0.35% (vol USD 4.61M), interrupting four consecutive sessions of decline in the winner contract, and RISES to 4.60% in the [first-round](/en/glossary#primeiro-turno) third-place book. A series caveat, and it is a large one: his maximum in the AFOS series is 10.10%, from Apr 26, so 0.35% is less than a twentieth of that level and moves in this range carry almost no informational value. He remains WITHOUT a running mate, with the Aug 5 deadline four days away.",
         "odds": 0.35,
         "percentage": 3.2,
         "lastUpdate": "2026-07-31",
@@ -1195,7 +1159,7 @@
         "pesquisaRange": "n/a",
         "polymarket": "0.25%",
         "tendenciaPesquisa": "Vox Brasil of Jul 31 does NOT test him in any scenario, neither [first round](/en/glossary#primeiro-turno) nor [runoff](/en/glossary#segundo-turno), so he has no new polling in this round, and the absence of a test in a national poll is information the panel records rather than repeating the previous day's figure as if it were new. The caveat stands and needs saying plainly: he is NOT a presidential candidate, he is running for governor of São Paulo, and the scenario that favours him is a polling hypothesis and not a candidacy in progress.",
-        "tendenciaPolymarket": "RISES 0.10pp to 0.25%, and stays at 1.00% in the [first-round](/en/glossary#primeiro-turno) second-place book. The scale caveat is mandatory: at a price of 0.25%, a rise of 0.10pp carries almost no informational value, and the move is recorded only because it is the third day in the same direction.",
+        "tendenciaPolymarket": "Stays FLAT at 0.25% and holds 1.00% in the [first-round](/en/glossary#primeiro-turno) second-place book, interrupting the run of gains without giving ground. The scale caveat still applies: at this price level, a move of 0.05pp or 0.10pp carries almost no informational value, and the panel records the level, not the swing.",
         "odds": 0.25,
         "percentage": 0,
         "lastUpdate": "2026-07-31",
