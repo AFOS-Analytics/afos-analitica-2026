@@ -17,7 +17,6 @@ export interface UsPressItem {
 export interface UsPressVeiculo {
   casa: string
   tipo: string
-  inclinacao: string
 }
 
 export interface UsPressData {

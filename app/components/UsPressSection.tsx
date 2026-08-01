@@ -14,10 +14,28 @@ import type { UsPressData } from '../../lib/dashboard/us-press-data'
  * Sem esse aviso, manchete dentro de um painel de dado passa a parecer
  * apuração do painel.
  *
- * A LISTA FICA VISÍVEL, num detalhe expansível com a inclinação declarada de
- * cada veículo. Escolher veículo é juízo editorial, e juízo editorial escondido
- * é o que o AFOS não faz. Quem discordar da curadoria discorda de uma lista à
- * vista, não de um critério secreto.
+ * A LISTA FICA VISÍVEL, num detalhe expansível. Escolher veículo é juízo
+ * editorial, e juízo editorial escondido é o que o AFOS não faz. Quem discordar
+ * da curadoria discorda de uma lista à vista, não de um critério secreto.
+ *
+ * ⛔ NÃO EXISTE COLUNA DE INCLINAÇÃO, e a remoção foi decisão do André em
+ * 01/Ago/2026. Até então cada veículo carregava um rótulo nosso ("centro",
+ * "centro-esquerda", "direita"). Duas razões para tirar:
+ *
+ *  1. O rótulo era NOSSO e não tinha fonte. Ao cruzar contra o AllSides, que é
+ *     a referência mais citada, 13 dos 22 divergiam, e para os DOIS lados: nós
+ *     púnhamos Fox News e Washington Examiner mais à direita do que eles, e AP,
+ *     Politico, ABC e CBS no centro quando eles os põem à esquerda. Rótulo sem
+ *     fonte sobre organização de imprensa nomeada é briga comprada.
+ *  2. Rotular é PRESUMIR: diz antes da leitura o que esperar do veículo. É o
+ *     contrário do método da casa, que mede primeiro e relata depois.
+ *
+ * 📌 O que FICA é o `tipo` (agência, jornal, especializada, tv/rádio, opinião,
+ * análise), porque ele é FATO sobre o que a organização é, não juízo sobre onde
+ * ela se posiciona. Reuters é agência; isso não se discute.
+ *
+ * 🔒 E fica a LISTA FIXA em si, que é a trava de verdade: ela decide no CÓDIGO
+ * quais veículos podem entrar, então ninguém escolhe a dedo a cada rodada.
  */
 
 const T = {
@@ -25,10 +43,9 @@ const T = {
     titulo: 'Imprensa',
     regra: 'O AFOS não resume nem interpreta estas matérias. Elas entram automaticamente, apenas de veículos de uma lista fixa, e o link leva à matéria do veículo. A leitura é de quem publicou.',
     verLista: 'A lista de veículos, e por que ela é equilibrada',
-    listaNota: 'Escolher veículo é juízo editorial. Uma lista torta faria este painel ter opinião sem declarar que tem, então ela reúne agência, jornal de referência, imprensa especializada em Congresso, televisão e opinião declarada dos dois lados. A inclinação de cada um está escrita.',
+    listaNota: 'Escolher veículo é juízo editorial. Uma lista torta faria este painel ter opinião sem declarar que tem, então ela reúne agência, jornal de referência, imprensa especializada em Congresso, televisão e opinião dos dois lados. A lista é fixa e vale igual em todas as rodadas, então ninguém escolhe veículo a dedo depois de ver a notícia. O AFOS não classifica veículo por inclinação política: quem lê vê o nome de quem publicou e julga por conta própria.',
     colCasa: 'Veículo',
     colTipo: 'Papel',
-    colInclinacao: 'Inclinação',
     semDado: 'Sem matéria disponível nesta captura.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} matérias de ${casas} veículos, no máximo ${teto} por veículo. De ${lidos} itens lidos, ${fora} eram de veículos fora da lista e ficaram de fora. Páginas de acompanhamento, como "últimas pesquisas" e "resultados ao vivo", são descartadas: mudam sozinhas e não são notícia do dia.`,
@@ -38,10 +55,9 @@ const T = {
     titulo: 'Press',
     regra: 'AFOS does not summarize or interpret these stories. They enter automatically, only from outlets on a fixed list, and the link goes to the outlet’s own article. The reading belongs to whoever published it.',
     verLista: 'The outlet list, and why it is balanced',
-    listaNota: 'Choosing outlets is an editorial judgement. A skewed list would give this panel an opinion without declaring one, so it gathers wire services, newspapers of record, congressional trade press, broadcast, and declared opinion from both sides. Each leaning is written down.',
+    listaNota: 'Choosing outlets is an editorial judgement. A skewed list would give this panel an opinion without declaring one, so it gathers wire services, newspapers of record, congressional trade press, broadcast, and opinion from both sides. The list is fixed and applies identically on every run, so no outlet is cherry-picked after the news breaks. AFOS does not classify outlets by political leaning: readers see who published and judge for themselves.',
     colCasa: 'Outlet',
     colTipo: 'Role',
-    colInclinacao: 'Leaning',
     semDado: 'No stories available in this capture.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} stories from ${casas} outlets, at most ${teto} per outlet. Of ${lidos} items read, ${fora} came from outlets off the list and were dropped. Tracker pages such as "latest polls" and "live results" are discarded: they change on their own and are not news of the day.`,
@@ -51,10 +67,9 @@ const T = {
     titulo: 'Prensa',
     regra: 'El AFOS no resume ni interpreta estas notas. Entran automáticamente, solo de medios de una lista fija, y el enlace lleva a la nota del medio. La lectura es de quien publicó.',
     verLista: 'La lista de medios, y por qué está equilibrada',
-    listaNota: 'Elegir medios es un juicio editorial. Una lista torcida haría que este panel tuviera opinión sin declararlo, así que reúne agencias, diarios de referencia, prensa especializada en el Congreso, televisión y opinión declarada de ambos lados. La inclinación de cada uno está escrita.',
+    listaNota: 'Elegir medios es un juicio editorial. Una lista torcida haría que este panel tuviera opinión sin declararlo, así que reúne agencias, diarios de referencia, prensa especializada en el Congreso, televisión y opinión de ambos lados. La lista es fija y rige igual en todas las rondas, de modo que nadie elige medios a dedo después de conocer la noticia. El AFOS no clasifica a los medios por inclinación política: quien lee ve quién publicó y juzga por su cuenta.',
     colCasa: 'Medio',
     colTipo: 'Papel',
-    colInclinacao: 'Inclinación',
     semDado: 'Sin notas disponibles en esta captura.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} notas de ${casas} medios, como máximo ${teto} por medio. De ${lidos} ítems leídos, ${fora} eran de medios fuera de la lista y quedaron afuera. Las páginas de seguimiento, como "últimas encuestas" y "resultados en vivo", se descartan: cambian solas y no son noticia del día.`,
@@ -141,16 +156,14 @@ export function UsPressSection({ data }: { data: UsPressData | null }) {
                 <thead>
                   <tr className="text-[10px] uppercase tracking-wider text-gray-500">
                     <th className="py-1 pr-3 font-semibold">{t.colCasa}</th>
-                    <th className="py-1 pr-3 font-semibold">{t.colTipo}</th>
-                    <th className="py-1 font-semibold">{t.colInclinacao}</th>
+                    <th className="py-1 font-semibold">{t.colTipo}</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">
                   {data.veiculos.map((v) => (
                     <tr key={v.casa} className="border-t border-light-border">
                       <td className="py-1 pr-3">{v.casa}</td>
-                      <td className="py-1 pr-3 text-gray-500">{v.tipo}</td>
-                      <td className="py-1 text-gray-500">{v.inclinacao}</td>
+                      <td className="py-1 text-gray-500">{v.tipo}</td>
                     </tr>
                   ))}
                 </tbody>
