@@ -6,6 +6,7 @@ import { Inline, InlineSpan, Body } from '../../../../components/TradeoffMarkdow
 import {
   isValidCountry,
   PAIS_PADRAO,
+  PAISES_TRADEOFF,
   loadTradeoff,
   listPublishedTradeoffs,
   isValidDate,
@@ -31,8 +32,8 @@ interface PageProps {
 export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
-  const dates = listPublishedTradeoffs()
-  return SUPPORTED_LOCALES.flatMap(locale => dates.map(date => ({ locale, date })))
+  const dates = PAISES_TRADEOFF.flatMap((c) => listPublishedTradeoffs(c).map((date) => ({ country: c, date })))
+  return SUPPORTED_LOCALES.flatMap(locale => dates.map(({ country, date }) => ({ locale, country, date })))
 }
 
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
@@ -119,7 +120,9 @@ export default async function TradeoffByDatePage(props: PageProps) {
   const data = loadTradeoff(params.date, params.locale, pais)
   if (!data) notFound()
 
-  const nav = getAdjacentDates(params.date)
+  // ⚠️ Com o país: sem ele a edição dos EUA oferecia "edição anterior" numa
+  // data do BRASIL, que no caminho `/tradeoff/us/...` não existe e dava 404.
+  const nav = getAdjacentDates(params.date, pais)
   const schema = buildArticleSchema(data, params.locale)
   const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)
 

@@ -478,7 +478,7 @@ function ThemeToggle({ theme, onChoose, labels }: { theme: Theme; onChoose: (t: 
   )
 }
 
-function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale: string; currentDate: string; isBlue: boolean }) {
+function LanguagePicker({ currentLocale, currentDate, isBlue, country }: { currentLocale: string; currentDate: string; isBlue: boolean; country: string }) {
   const locales: Array<'pt-BR' | 'en' | 'es'> = ['pt-BR', 'en', 'es']
   const linkBase = isBlue ? 'text-blue-200 hover:text-white' : 'text-gray-500 hover:text-primary'
   const activeBase = isBlue ? 'text-white font-bold' : 'text-primary font-bold'
@@ -488,7 +488,7 @@ function LanguagePicker({ currentLocale, currentDate, isBlue }: { currentLocale:
       {locales.map((loc, i) => (
         <span key={loc} className="flex items-center gap-2">
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
-          <a href={`/${loc}/tradeoff/${currentDate}`} className={loc === currentLocale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
+          <a href={`/${loc}/tradeoff/${country}/${currentDate}`} className={loc === currentLocale ? activeBase : linkBase}>{LANG_LABEL[loc]}</a>
         </span>
       ))}
     </div>
@@ -564,7 +564,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
 
         <nav className="mb-7 text-sm flex flex-wrap items-center justify-between gap-3 pr-20">
           <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>Dashboard</a>
-          <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} />
+          <LanguagePicker currentLocale={locale} currentDate={data.date} isBlue={isBlue} country={country} />
         </nav>
 
         {/* Masthead */}
@@ -774,11 +774,11 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
         <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">
           {/* Navegação de edição como botões (mesmo estilo do botão Dashboard do masthead) */}
           {nav?.previous ? (
-            <a href={`/${locale}/tradeoff/${nav.previous}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navPrev}</a>
+            <a href={`/${locale}/tradeoff/${country}/${nav.previous}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navPrev}</a>
           ) : <span />}
-          <a href={`/${locale}/tradeoff`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navArchive}</a>
+          <a href={`/${locale}/tradeoff/${country}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navArchive}</a>
           {nav?.next ? (
-            <a href={`/${locale}/tradeoff/${nav.next}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navNext}</a>
+            <a href={`/${locale}/tradeoff/${country}/${nav.next}`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${ctaBg}`}>{t.navNext}</a>
           ) : <span />}
         </nav>
       </article>

@@ -34,7 +34,7 @@ export interface TradeoffArchiveStrings {
   langAria: string
 }
 
-function LanguagePicker({ locale, isBlue, langAria }: { locale: string; isBlue: boolean; langAria: string }) {
+function LanguagePicker({ locale, isBlue, langAria, country }: { locale: string; isBlue: boolean; langAria: string; country?: string }) {
   const locales: Array<'pt-BR' | 'en' | 'es'> = ['pt-BR', 'en', 'es']
   return (
     <div className="flex items-center gap-2 text-xs" aria-label={langAria}>
@@ -42,7 +42,7 @@ function LanguagePicker({ locale, isBlue, langAria }: { locale: string; isBlue: 
         <span key={loc} className="flex items-center gap-2">
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
-            href={`/${loc}/tradeoff`}
+            href={`/${loc}/tradeoff/${country ?? 'br'}`}
             aria-label={LANG_LABEL[loc]}
             className={
               loc === locale
@@ -105,11 +105,14 @@ export function TradeoffArchiveShell({
   strings,
   latest,
   groups,
+  country,
 }: {
   locale: string
   strings: TradeoffArchiveStrings
   latest: TradeoffArchiveItem
   groups: TradeoffArchiveGroup[]
+  /** Código do país, para a bandeira no título do arquivo. */
+  country?: string
 }) {
   const [theme, setTheme] = useState<Theme>('light')
   useEffect(() => {
@@ -156,20 +159,34 @@ export function TradeoffArchiveShell({
             <a href={`/${locale}/dashboard/br`} className={`inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${isBlue ? 'bg-white text-primary hover:bg-blue-50' : 'bg-primary text-white hover:bg-primary/90'}`}>
               Dashboard
             </a>
-            <LanguagePicker locale={locale} isBlue={isBlue} langAria={strings.langAria} />
+            <LanguagePicker locale={locale} isBlue={isBlue} langAria={strings.langAria} country={country} />
             <ThemeToggle theme={theme} onChoose={chooseTheme} isBlue={isBlue} strings={strings} />
           </div>
         </div>
 
         <header className={`mt-6 border-b pb-6 ${headerBorder}`}>
           <p className={`text-xs font-bold uppercase tracking-[0.14em] ${eyebrow}`}>{strings.eyebrow}</p>
-          <h1 className={`mt-2 text-3xl font-bold sm:text-4xl ${titleColor}`}>{strings.title}</h1>
+          <h1 className={`mt-2 flex items-center justify-center gap-2.5 text-3xl font-bold sm:text-4xl ${titleColor}`}>
+            {/* Bandeira SVG, nunca emoji: emoji de bandeira não renderiza no
+                Windows. `alt` vazio porque o país já está escrito no subtítulo. */}
+            {country && (
+              <img
+                src={`/flags/${country}.svg`}
+                alt=""
+                aria-hidden="true"
+                width={36}
+                height={25}
+                className="inline-block h-[25px] w-[36px] rounded-[3px] object-cover shadow-sm"
+              />
+            )}
+            {strings.title}
+          </h1>
           <p className={`mt-2 ${subtitleColor}`}>{strings.subtitle}</p>
         </header>
 
         {/* Latest edition highlight */}
         <a
-          href={`/${locale}/tradeoff/${latest.date}`}
+          href={`/${locale}/tradeoff/${country ?? 'br'}/${latest.date}`}
           className={`mt-7 block rounded-xl border p-5 transition-colors ${latestCard}`}
         >
           <div className="flex items-center justify-between gap-3">
@@ -189,7 +206,7 @@ export function TradeoffArchiveShell({
               <ul className={`divide-y border-y ${listDivide}`}>
                 {group.items.map((ed) => (
                   <li key={ed.date}>
-                    <a href={`/${locale}/tradeoff/${ed.date}`} className={`group block rounded px-2 py-3.5 transition-colors ${rowHover}`}>
+                    <a href={`/${locale}/tradeoff/${country ?? 'br'}/${ed.date}`} className={`group block rounded px-2 py-3.5 transition-colors ${rowHover}`}>
                       <div className="flex items-baseline justify-between gap-3">
                         <span className="flex flex-wrap items-baseline gap-x-2">
                           <span className={`font-semibold ${rowPrimary}`}>{ed.primary}</span>
