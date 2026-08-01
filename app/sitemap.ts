@@ -56,10 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  // Dashboard: /pt-BR/dashboard/br (dynamic — cron 30min)
+  // Dashboard por país: /pt-BR/dashboard/br e /pt-BR/dashboard/us
   // O endereço canônico passou a ter país. O /dashboard sem país continua vivo por
   // redirecionamento, mas NÃO entra no sitemap: sitemap lista destino final, não atalho.
-  // ⚠️ O painel dos EUA fica fora daqui até ser publicado (page.tsx dele é noindex).
+  // O Brasil vem primeiro e com prioridade maior porque tem urna em 2026 e cron de
+  // 30min; o dos EUA atualiza em ritmo diário até as midterms de 03/11/2026.
   for (const loc of locales) {
     entries.push({
       url: `${baseUrl}/${loc}/dashboard/br`,
@@ -67,6 +68,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'hourly',
       priority: 0.95,
       alternates: { languages: hreflang((l) => `/${l}/dashboard/br`) },
+    })
+  }
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/dashboard/us`,
+      lastModified: dynamicLastMod,
+      changeFrequency: 'daily',
+      priority: 0.9,
+      alternates: { languages: hreflang((l) => `/${l}/dashboard/us`) },
     })
   }
 

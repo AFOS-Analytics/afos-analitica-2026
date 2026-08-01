@@ -9,10 +9,10 @@ import { useTranslation } from '../i18n/context'
  * tela intermediária: painel é porta de entrada, e pôr escolha na frente de quem
  * quer ver dado é atrito puro (decisão de 27/Jul).
  *
- * ⚠️ UM LUGAR SÓ PARA LIGAR OS EUA: a flag `ready` abaixo. Enquanto ela for false,
- * o item aparece como "em breve" e NÃO é clicável, então nenhum visitante do painel
- * do Brasil é mandado para uma página em construção. Ligar quando o painel dos EUA
- * tiver conteúdo publicável.
+ * ⚠️ UM LUGAR SÓ PARA LIGAR UM PAÍS: a flag `ready`. Enquanto for false, o item
+ * aparece como "em breve" e NÃO é clicável, então ninguém é mandado para uma
+ * página em construção. Os EUA foram ligados em 01/Ago/2026, junto com robots,
+ * sitemap, llms.txt e IndexNow — a flag sozinha só resolve o caminho humano.
  */
 
 type CountryCode = 'br' | 'us'
@@ -25,7 +25,7 @@ interface CountryEntry {
 
 const COUNTRIES: CountryEntry[] = [
   { code: 'br', ready: true, label: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' } },
-  { code: 'us', ready: false, label: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' } },
+  { code: 'us', ready: true, label: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' } },
 ]
 
 const T = {

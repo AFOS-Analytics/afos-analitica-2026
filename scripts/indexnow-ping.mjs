@@ -23,7 +23,7 @@ const ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 // Build URL list:
 //  - landing 3 locales
-//  - dashboard 3 locales
+//  - dashboard br + us, 3 locales each
 //  - daily index 3 locales
 //  - about 3 locales
 //  - how-it-works 3 locales
@@ -49,6 +49,7 @@ function buildUrlList() {
   for (const loc of LOCALES) {
     urls.push(`https://${HOST}/${loc}`);
     urls.push(`https://${HOST}/${loc}/dashboard/br`);
+    urls.push(`https://${HOST}/${loc}/dashboard/us`);
     urls.push(`https://${HOST}/${loc}/daily`);
     urls.push(`https://${HOST}/${loc}/about`);
     urls.push(`https://${HOST}/${loc}/how-it-works`);

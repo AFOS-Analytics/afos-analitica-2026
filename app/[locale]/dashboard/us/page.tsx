@@ -12,9 +12,10 @@ export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map(locale => ({ locale }));
 }
 
-// NÃO PUBLICADA enquanto não houver conteúdo. Fora de buscador por enquanto, e
-// também fora do sitemap, do llms.txt e do IndexNow. Tirar as três coisas juntas
-// no dia em que o painel subir, senão a página existe e ninguém a encontra.
+// PUBLICADA em 01/Ago/2026. As 5 chaves foram viradas no mesmo commit — robots,
+// sitemap, llms.txt, IndexNow e o `ready` do seletor de país — porque virar
+// uma só deixa a página existindo sem ninguém a encontrar, ou anunciada em
+// lugar nenhum. Se algum dia precisar despublicar, são as mesmas 5.
 //
 // O canônico é declarado aqui, com 'dashboard/us', e NÃO herdado do layout: o
 // layout embrulha /br e /us, e um caminho fixo faria esta página apontar para o
@@ -36,10 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: 'Panel de las elecciones de medio término de Estados Unidos del 3 de noviembre de 2026: mercado de predicción y encuestas lado a lado, sin restar magnitudes distintas.',
     },
   };
-  return {
-    ...buildMetadata({ ...SEO[loc], path: 'dashboard/us' }, loc),
-    robots: { index: false, follow: false },
-  };
+  return buildMetadata({ ...SEO[loc], path: 'dashboard/us' }, loc);
 }
 
 // O generic ballot é lido no SERVIDOR e passa como prop, igual ao painel do

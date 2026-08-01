@@ -27,15 +27,13 @@ import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
 /**
  * Casca do painel dos EUA.
  *
- * ⚠️ NÃO PUBLICADA. A página existe para as peças do bloco 5 irem pousando nela
- * (mercado, pesquisas, grafo, contexto estrutural, imprensa), na ordem de seções
- * que o André aprovou em 28/Jul. Enquanto isso:
- *   - `robots: noindex` no page.tsx,
- *   - fora do sitemap, do llms.txt e do IndexNow,
- *   - e o seletor do painel do Brasil mostra "em breve" SEM link, então nenhum
- *     visitante chega aqui por navegação.
- * Só quem digitar o endereço vê esta tela, que é exatamente o que se quer para
- * trabalhar em cima dela com o site no ar.
+ * PUBLICADA em 01/Ago/2026. Traz as peças do bloco 5 (mercado, pesquisas, grafo,
+ * contexto estrutural, imprensa) na ordem de seções que o André aprovou em 28/Jul.
+ *
+ * Ela passou julho inteiro no ar mas invisível, para ser construída com o site
+ * publicado. Isso dependia de CINCO travas, e é a lista para reverter se um dia
+ * precisar: `robots` no page.tsx, sitemap, llms.txt, IndexNow e a flag `ready`
+ * do CountrySelector. Virar uma só não publica nem despublica de verdade.
  */
 
 
