@@ -4,16 +4,30 @@
  * Usage:
  *   npx tsx scripts/publish-afos-tradeoff.ts 2026-05-25
  *   npx tsx scripts/publish-afos-tradeoff.ts 2026-05-25 --all-locales
+ *   npx tsx scripts/publish-afos-tradeoff.ts 2026-08-03 --pais=us --all-locales
  *
  * Mirror of publish-afos-daily.ts but for Tradeoff editions. Drafts are
- * gated out of sitemap, RSS feed, llms.txt, and prod /[locale]/tradeoff/[date]
- * until a human flips the status. This script is the manual-flip step.
+ * gated out of sitemap, RSS feed, llms.txt, and prod
+ * /[locale]/tradeoff/[country]/[date] until a human flips the status. This
+ * script is the manual-flip step.
+ *
+ * ⚠️ PASTA ASSIMÉTRICA, DE PROPÓSITO. O Brasil fica na RAIZ de
+ * public/afos-tradeoff/ e cada país novo ganha subpasta. A rota é simétrica
+ * (/tradeoff/br e /tradeoff/us), a pasta não: mover as edições do Brasil
+ * quebraria em silêncio este script, o persist- e o broadcast-. Mesma regra do
+ * `dirDoPais()` em lib/afos-tradeoff/loader.ts.
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { join } from 'path'
 
-const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
+const TRADEOFF_RAIZ = join(process.cwd(), 'public', 'afos-tradeoff')
+const PAIS_PADRAO = 'br'
 const LOCALES = ['', '.en', '.es'] as const
+
+/** Brasil na raiz; qualquer outro país em subpasta com o código dele. */
+function dirDoPais(pais: string): string {
+  return pais === PAIS_PADRAO ? TRADEOFF_RAIZ : join(TRADEOFF_RAIZ, pais)
+}
 
 function flipFile(path: string): 'flipped' | 'already-published-warn' | 'already-published-clean' | 'no-status-line' | 'missing' {
   if (!existsSync(path)) return 'missing'
@@ -39,17 +53,28 @@ function flipFile(path: string): 'flipped' | 'already-published-warn' | 'already
 function main() {
   const date = process.argv[2]
   const allLocales = process.argv.includes('--all-locales')
+  const pais = (process.argv.find((a) => a.startsWith('--pais='))?.split('=')[1] || PAIS_PADRAO).toLowerCase()
 
   if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
-    console.error('❌ Usage: npx tsx scripts/publish-afos-tradeoff.ts YYYY-MM-DD [--all-locales]')
+    console.error('❌ Usage: npx tsx scripts/publish-afos-tradeoff.ts YYYY-MM-DD [--pais=us] [--all-locales]')
+    process.exit(1)
+  }
+  if (!/^[a-z]{2}$/.test(pais)) {
+    console.error(`❌ --pais inválido: "${pais}". Use o código de 2 letras, ex.: --pais=us`)
+    process.exit(1)
+  }
+
+  const dir = dirDoPais(pais)
+  if (!existsSync(dir)) {
+    console.error(`❌ pasta do país não existe: ${dir}`)
     process.exit(1)
   }
 
   const targets = allLocales
-    ? LOCALES.map((suffix) => join(TRADEOFF_DIR, `${date}${suffix}.md`))
-    : [join(TRADEOFF_DIR, `${date}.md`)]
+    ? LOCALES.map((suffix) => join(dir, `${date}${suffix}.md`))
+    : [join(dir, `${date}.md`)]
 
-  console.log(`🚦 Flipping status: draft → published for AFOS Tradeoff ${date}${allLocales ? ' (all locales)' : ' (PT-BR only — pass --all-locales for EN/ES too)'}\n`)
+  console.log(`🚦 Flipping status: draft → published for AFOS Tradeoff ${pais.toUpperCase()} ${date}${allLocales ? ' (all locales)' : ' (PT-BR only — pass --all-locales for EN/ES too)'}\n`)
 
   let anyFlipped = false
   for (const path of targets) {

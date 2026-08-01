@@ -537,8 +537,13 @@ npm run dev
 | `/atualizar-pesquisas-brz` | Ingestao de pesquisas eleitorais do TSE (**Brasil**) |
 | `/afos-daily` | Gera a sintese narrativa diaria (AFOS Daily), cruza mercados, pesquisas e noticias com link auditavel por alegacao |
 | `/tradeoff-brz` | Gera a leitura tecnica semanal (AFOS Tradeoff) do **Brasil**, 9 secoes estruturadas, reporta os tres sinais separadamente, analise de cenarios ponderados para leitores institucionais |
+| `/atualizar-usa` | Passada completa no painel das midterms dos **EUA**: leitura do mercado ao vivo (8 contratos do Polymarket), trava de captura, generic ballot, imprensa e conferencia da tela nos 3 idiomas |
+| `/atualizar-pesquisas-usa` | Ingestao do generic ballot da Camara (**EUA**). Nao existe equivalente para o Senado, e isso e declarado |
+| `/tradeoff-usa` | Gera a leitura tecnica semanal das midterms dos **EUA**, com as 4 trocas de template: bloco das duas grandezas no lugar da anti-media, calendario eleitoral no lugar do calendario de prints, sem historico de acertos, cenarios lidos da distribuicao de cadeiras |
 
-> O sufixo `-brz` marca os comandos que agem sobre o painel e o dataset do **Brasil**. Foi criado em 01/Ago/2026, quando a plataforma ganhou um segundo pais ao vivo (midterms dos EUA), para que um comando de um pais so nunca seja confundido com um comando da plataforma inteira. O `/afos-daily` fica sem sufixo porque nao e de um pais so.
+> O sufixo `-brz` / `-usa` marca sobre qual painel e qual dataset o comando age. Foi criado em 01/Ago/2026, quando a plataforma ganhou um segundo pais ao vivo (midterms dos EUA), para que um comando de um pais so nunca seja confundido com um comando da plataforma inteira. O `/afos-daily` fica sem sufixo porque nao e de um pais so.
+>
+> Os comandos dos EUA **nao** sao copia dos do Brasil. O `/atualizar-brz` ESCREVE prosa editorial em tres JSONs; o painel dos EUA nao tem prosa editorial por rodada, ele le dado medido do Neon (mercado a cada 30 min, generic ballot uma vez por dia, imprensa 3x por dia) e desenha. Por isso **nao existe etapa de traducao** do lado dos EUA: o arquivo de dados dele nao tem variante por idioma, de proposito.
 
 ---
 

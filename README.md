@@ -536,8 +536,13 @@ npm run dev
 | `/atualizar-pesquisas-brz` | TSE electoral polls ingestion (**Brazil**) |
 | `/afos-daily` | Generate the daily narrative synthesis (AFOS Daily), cross-references markets, polls and news with auditable links per claim |
 | `/tradeoff-brz` | Generate the weekly technical reading (AFOS Tradeoff) for **Brazil**, 9 structured sections, reports the three signals separately, weighted-scenario analysis for institutional readers |
+| `/atualizar-usa` | Full pass over the **US** midterms panel: live market read (8 Polymarket contracts), capture guard, generic ballot, press, on-screen check in 3 languages |
+| `/atualizar-pesquisas-usa` | House generic-ballot ingestion (**US**). No Senate equivalent exists, by design |
+| `/tradeoff-usa` | Generate the weekly technical reading for the **US** midterms, with the 4 template swaps: two-quantities block instead of anti-average, electoral calendar instead of poll-print calendar, no accuracy history, scenarios read off the seat distribution |
 
-> The `-brz` suffix marks the commands that act on the **Brazil** panel and dataset. It was added on 01/Aug/2026, when the platform gained a second live country (US midterms), so that a country-specific command can never be mistaken for a platform-wide one. `/afos-daily` has no suffix because it is not country-scoped.
+> The `-brz` / `-usa` suffix marks which country's panel and dataset a command acts on. It was added on 01/Aug/2026, when the platform gained a second live country (US midterms), so that a country-specific command can never be mistaken for a platform-wide one. `/afos-daily` has no suffix because it is not country-scoped.
+>
+> The US commands are **not** copies of the Brazil ones. Brazil's `/atualizar-brz` *writes* editorial prose into three JSONs; the US panel has no per-run editorial prose at all — it reads measured data from Neon (market every 30 min, generic ballot daily, press 3×/day) and draws it. As a result there is **no translation stage** on the US side: its data file is deliberately language-free.
 
 ---
 

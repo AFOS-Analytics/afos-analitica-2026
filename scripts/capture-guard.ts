@@ -18,7 +18,8 @@
  * isso a trava leria o mesmo cache duas vezes e aprovaria qualquer coisa.
  *
  * USO
- *   npx tsx scripts/capture-guard.ts                 # padrão, 8 min de intervalo
+ *   npx tsx scripts/capture-guard.ts                 # padrão, Brasil, 8 min
+ *   npx tsx scripts/capture-guard.ts --pais=us       # midterms dos EUA
  *   npx tsx scripts/capture-guard.ts --intervalo=3   # intervalo em minutos
  *   npx tsx scripts/capture-guard.ts --json          # saída JSON para pipeline
  *
@@ -27,7 +28,7 @@
  *   exit 1 = discordam ou proxy degradado, NÃO publicar
  */
 
-const PROXY = 'https://www.afos-analytics.com/api/polymarket?fresh=1'
+const PROXY_BASE = 'https://www.afos-analytics.com/api/polymarket?fresh=1'
 
 /** Divergência tolerada entre as duas leituras, em pontos percentuais. */
 const TOLERANCIA_PP = 0.20
@@ -35,7 +36,20 @@ const TOLERANCIA_PP = 0.20
 /** Só vale a pena vigiar quem tem preço relevante. Abaixo disso é ruído de book fino. */
 const PISO_RELEVANCIA_PCT = 0.5
 
-const BOOKS = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate'] as const
+/**
+ * ⚠️ MERCADO DE DISTRIBUIÇÃO FICA DE FORA, nos dois países.
+ *
+ * No Brasil a `inflation` nunca esteve nesta lista, e a razão vale igual para os
+ * EUA: uma distribuição tem dezenas de faixas finas, cada uma com book raso, e
+ * elas oscilam entre si sem que o preço da eleição tenha mudado. Vigiá-las com
+ * tolerância de 0,20pp produziria bloqueio constante por ruído, e trava que
+ * bloqueia todo dia é trava que alguém aprende a pular.
+ *
+ * O que segura a qualidade das faixas é OUTRO portão, o de coerência: a seção
+ * só mostra a distribuição se as faixas somarem entre 95% e 105%.
+ */
+const BOOKS_BR = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate'] as const
+const BOOKS_US = ['house', 'senate', 'asScheduled'] as const
 
 interface Leitura {
   precos: Map<string, number>
@@ -53,13 +67,13 @@ function limpaNome(q: string): string {
     .trim()
 }
 
-async function ler(): Promise<Leitura> {
-  const res = await fetch(PROXY, { cache: 'no-store' })
+async function ler(proxy: string, books: readonly string[]): Promise<Leitura> {
+  const res = await fetch(proxy, { cache: 'no-store' })
   if (!res.ok) throw new Error(`proxy devolveu HTTP ${res.status}`)
   const j = await res.json() as Record<string, any>
 
   const precos = new Map<string, number>()
-  for (const book of BOOKS) {
+  for (const book of books) {
     for (const m of j?.[book]?.markets ?? []) {
       const p = Number(m?.outcomePrices?.[0])
       if (!Number.isFinite(p)) continue
@@ -80,19 +94,34 @@ async function main() {
   const minutos = Number(args.find(a => a.startsWith('--intervalo='))?.split('=')[1] ?? 8)
   const log = (s: string) => { if (!jsonOut) console.log(s) }
 
+  // ⚠️ O padrão continua sendo o Brasil, sem parâmetro nenhum. Quem já chama
+  // esta trava (o /atualizar-brz e quem a roda à mão) não pode mudar de
+  // comportamento por causa da chegada dos EUA.
+  const pais = args.find(a => a.startsWith('--pais='))?.split('=')[1] === 'us' ? 'us' : 'br'
+  const proxy = pais === 'us' ? `${PROXY_BASE}&country=us` : PROXY_BASE
+  const books: readonly string[] = pais === 'us' ? BOOKS_US : BOOKS_BR
+
   const motivos: string[] = []
 
-  log(`Trava de captura: 2 leituras com ${minutos} min de intervalo, tolerância ${TOLERANCIA_PP}pp.`)
+  log(`Trava de captura (${pais.toUpperCase()}): 2 leituras com ${minutos} min de intervalo, tolerância ${TOLERANCIA_PP}pp.`)
+  log(`Books vigiados: ${books.join(', ')}`)
   log('')
 
-  const a = await ler()
+  const a = await ler(proxy, books)
   log(`  1a leitura: ${a.precos.size} mercados, fetchedAt=${a.fetchedAt}`)
   if (a.degraded) motivos.push(`1a leitura veio degradada (failedCount=${a.failedCount}). Não publicar.`)
+
+  // ⛔ Falha fechada: sem book nenhum não há o que confirmar. Sem isto, um erro
+  // no nome de um book faria a trava ler zero preços, achar zero divergências e
+  // APROVAR com exit 0, que é o pior desfecho possível para uma trava.
+  if (a.precos.size === 0) {
+    motivos.push(`a 1a leitura não trouxe preço nenhum de ${books.join('/')}. A trava não tem o que confirmar.`)
+  }
 
   log(`  aguardando ${minutos} min...`)
   await new Promise(r => setTimeout(r, minutos * 60_000))
 
-  const b = await ler()
+  const b = await ler(proxy, books)
   log(`  2a leitura: ${b.precos.size} mercados, fetchedAt=${b.fetchedAt}`)
   if (b.degraded) motivos.push(`2a leitura veio degradada (failedCount=${b.failedCount}). Não publicar.`)
 
