@@ -1,0 +1,207 @@
+/**
+ * Traduz a daily de 02/Ago/2026 para EN e ES, na sessão.
+ *
+ * Substitui BLOCOS de texto sobre o pt-BR e preserva as URLs byte a byte, que é
+ * o que evita o defeito clássico de redigitar URL do Google News e truncar o
+ * token. Aborta se algum bloco não casar.
+ */
+import { readFileSync, writeFileSync } from 'fs'
+import { join } from 'path'
+
+const base = join(process.cwd(), 'public', 'afos-daily')
+const pt = readFileSync(join(base, '2026-08-02.md'), 'utf-8')
+
+function aplicar(texto: string, pares: Array<[string, string]>, locale: string): string {
+  let out = texto
+  const faltando: string[] = []
+  for (const [de, para] of pares) {
+    if (!out.includes(de)) { faltando.push(de.slice(0, 70)); continue }
+    out = out.split(de).join(para)
+  }
+  if (faltando.length) {
+    console.error(`\n❌ ${locale}: ${faltando.length} bloco(s) não casaram:`)
+    faltando.forEach(f => console.error(`   ${f}...`))
+    process.exit(1)
+  }
+  return out
+}
+
+// ── EN: ponto decimal, vírgula de milhar ────────────────────────────
+const EN: Array<[string, string]> = [
+  ['title: AFOS Daily — 2 de agosto de 2026', 'title: AFOS Daily — August 2, 2026'],
+  ['locale: pt-BR', 'locale: en'],
+  ['lede: "O PT oficializou Lula e Alckmin em convenção nacional, e o mercado não se mexeu: o favorito ficou parado em 65,50% e a distância sobre Flávio abriu para +40,95pp porque o adversário caiu, não porque ele subiu. Num book de USD 118,11M acumulados, o topo da série continua sendo o de 1 de agosto, e o dia terminou abaixo dele."',
+   'lede: "The PT formally launched Lula and Alckmin at its national convention, and the market did not move: the favourite held at 65.50% and the gap over Flávio widened to +40.95pp because the rival fell, not because he rose. In a book with USD 118.11M accumulated, the series high still belongs to August 1, and the day closed below it."'],
+  ['  - "**Mercado:** **Lula 65,50% (estável)** e **Flávio 24,55% (↓0,20pp)**: o gap foi a **+40,95pp** pelo lado do adversário, e segue abaixo do máximo da série, **+41,80pp** de 1 de agosto. **Renan 7,95% (↑0,35pp)** rompe nove rodadas de queda."',
+   '  - "**Market:** **Lula 65.50% (flat)** and **Flávio 24.55% (↓0.20pp)**: the gap went to **+40.95pp** from the rival\'s side, and stays below the series high, **+41.80pp** on August 1. **Renan 7.95% (↑0.35pp)** breaks nine rounds of decline."'],
+  ['  - "**Pesquisas+Eventos:** nenhuma nacional nova, e a varredura do **TSE** leu 538 registros sem inserir um. **Quatro nacionais publicam entre 3 e 5 de agosto.** O **PT** oficializou Lula com **Alckmin** e sete partidos; **Flávio** foi à convenção do **PL** na Paraíba."',
+   '  - "**Polls+Events:** no fresh national poll, and the **TSE** sweep read 538 filings without inserting one. **Four national polls publish between August 3 and 5.** The **PT** formally launched Lula with **Alckmin** and seven parties; **Flávio** went to the **PL** convention in Paraíba."'],
+  ['  - "**Divergência:** o preço do favorito parou no dia da convenção dele, e o único nome que se moveu com força, **Renan Santos**, subiu num dia sem urna e sem evento próprio."',
+   '  - "**Divergence:** the favourite\'s price stood still on the day of his own convention, and the only name that moved with force, **Renan Santos**, rose on a day with no polling and no event of his own."'],
+  ['# AFOS Daily · Síntese do Dia\n\n**2 de agosto de 2026**', '# AFOS Daily · Daily Brief\n\n**August 2, 2026**'],
+  ['## 1. Mercado de previsão', '## 1. Prediction market'],
+  ['O domingo inverteu o mecanismo dos dois pregões anteriores. [Lula](', 'Sunday inverted the mechanism of the two previous sessions. [Lula]('],
+  [') ficou **estável em 65,50% (USD 7,90M)** e **Flávio Bolsonaro caiu 0,20pp, para 24,55% (USD 7,82M)**, interrompendo seis pregões sem queda: a distância abriu para **+40,95pp** pelo lado do adversário, não do favorito. O topo da série ficou para trás, e a janela precisa ser dita: o máximo de Lula é **66,50%** e o do gap é **+41,80pp**, ambos do fechamento de 1 de agosto, numa série de 108 dias conferida direto no banco. O volume total acumulado no presidencial soma **USD 118,11M**.',
+   ') held **flat at 65.50% (USD 7.90M)** and **Flávio Bolsonaro fell 0.20pp, to 24.55% (USD 7.82M)**, breaking six sessions without a decline: the gap widened to **+40.95pp** from the rival\'s side, not the favourite\'s. The series high is now behind us, and the window has to be stated: Lula\'s maximum is **66.50%** and the gap maximum is **+41.80pp**, both from the August 1 close, in a 108-day series checked straight against the database. Total accumulated volume in the presidential market is **USD 118.11M**.'],
+  ['**Renan Santos foi o único movimento forte: subiu 0,35pp, para 7,95% (USD 8,82M)**, rompendo nove rodadas de queda e subindo nos três books, com **63,50% no [3º lugar](',
+   '**Renan Santos was the only strong move: up 0.35pp, to 7.95% (USD 8.82M)**, breaking nine rounds of decline and rising in all three books, with **63.50% in [third place]('],
+  [') (USD 168 mil)**. A virada não desfaz o arco: ele saiu de 12,00% em 23 de julho e tocou 7,10% em 1 de agosto, e não é mínimo de série, que é 5,30%, de 26 de abril.',
+   ') (USD 168K)**. The turn does not undo the arc: he came from 12.00% on July 23 and touched 7.10% on August 1, and it is not a series low, which is 5.30%, from April 26.'],
+  ['**[Caiado](', '**[Caiado]('],
+  [') tocou o piso da série dentro do próprio dia:** a coleta das 11h30 UTC gravou **0,90%**, o menor valor desde 14 de abril, e a captura travada das 19h42 traz **1,15% (USD 5,27M)**. O painel publica a travada e registra o piso intradiário.',
+   ') touched the series floor within the day itself:** the 11:30 UTC collection recorded **0.90%**, the lowest value since April 14, and the locked capture at 19:42 shows **1.15% (USD 5.27M)**. The panel publishes the locked one and records the intraday floor.'],
+  ['O pelotão se dividiu: Camilo Santana e Jair subiram para 0,65%, Zema caiu para 0,25% e Tarcísio segue em 0,05%, com **USD 13,70M**, o maior volume do book. O [impeachment de ministro do STF](',
+   'The chasing pack split: Camilo Santana and Jair rose to 0.65%, Zema fell to 0.25% and Tarcísio remains at 0.05%, with **USD 13.70M**, the largest volume in the book. The [impeachment of an STF justice]('],
+  [') ficou estável em **3,10% (USD 83 mil)** pelo quarto pregão. Na [inflação](', ') held flat at **3.10% (USD 83K)** for a fourth session. On [inflation]('],
+  ['), as dez faixas somam **94,15%**, abaixo do piso de 95% que o AFOS exige para ler distribuição como probabilidade legível.',
+   '), the ten bands add up to **94.15%**, below the 95% floor AFOS requires before reading a distribution as legible probability.'],
+  ['## 2. O que os institutos registraram', '## 2. What the pollsters recorded'],
+  ['Não houve pesquisa nacional nova, e a ausência foi confirmada por duas vias: a varredura do TSE leu **538 registros e não inseriu nenhum**, e nenhum veículo publicou números nacionais inéditos. A última segue sendo a **Vox Brasil de 31 de julho** (n=2.100, BR-01084/2026), com Lula 40,5% x Flávio 31,2% e 47,5% x 41,1% no returno. As do dia são estaduais e não entram aqui: a [Datafolha em Pernambuco](',
+   'There was no fresh national poll, and the absence was confirmed two ways: the TSE sweep read **538 filings and inserted none**, and no outlet published new national numbers. The most recent remains **Vox Brasil of July 31** (n=2,100, BR-01084/2026), with Lula 40.5% x Flávio 31.2% and 47.5% x 41.1% in the runoff. The day\'s polls are state-level and do not enter here: [Datafolha in Pernambuco]('],
+  [') dá Lula 57% contra 22% de Flávio no estado, e a [Genial/Quaest](', ') gives Lula 57% against 22% for Flávio in that state, and [Genial/Quaest]('],
+  [') mostra Lula à frente em quatro estados e Flávio em um.', ') shows Lula ahead in four states and Flávio in one.'],
+  ['### 📅 Calendário de pesquisas — próximos 7 dias', '### 📅 Polling calendar — next 7 days'],
+  ['Publicação prevista entre 03/Ago e 06/Ago; inclusão não significa publicação confirmada. Filtro: **nacionais ≥ 1.000** e **estaduais ≥ 1.500**, o que deixa de fora **9 estaduais** entre 1.000 e 1.499. Nenhuma atinge 3.000.',
+   'Publication scheduled between Aug 3 and Aug 6; inclusion does not mean publication is confirmed. Filter: **national ≥ 1,000** and **state-level ≥ 1,500**, which leaves out **9 state-level polls** between 1,000 and 1,499. None in the window reaches 3,000.'],
+  ['| Data | Instituto | Amostra | Escopo | Protocolo TSE | Conf. |', '| Date | Pollster | Sample | Scope | TSE filing | Conf. |'],
+  ['Fonte: registro público [TSE](', 'Source: public [TSE]('],
+  [') via API AFOS. Status "registrada ≠ publicada": citar números exige duas fontes primárias.',
+   ') filings via the AFOS API. Status "filed ≠ published": citing numbers requires two primary sources.'],
+  ['## 3. O que a imprensa cobriu', '## 3. What the press covered'],
+  ['O fato do dia é a convenção nacional do PT, em São Paulo, que [oficializou Lula](', 'The fact of the day is the PT national convention, in São Paulo, which [formally launched Lula]('],
+  [') na oitava candidatura dele, com Alckmin de vice e [**sete partidos na coligação**](', ') in his eighth run, with Alckmin as running mate and [**seven parties in the coalition**]('],
+  ['), a maior aliança de esquerda e centro-esquerda desde 1989. Na [Folha de S.Paulo](', '), the largest left and centre-left alliance since 1989. In [Folha de S.Paulo]('],
+  ['), ele diz que não quer ser presidente do Bolsa Família e promete disputar emendas com o Congresso.',
+   '), he says he does not want to be the Bolsa Família president and promises to fight Congress over budget earmarks.'],
+  ['Flávio Bolsonaro passou o domingo na [convenção estadual do PL na Paraíba](', 'Flávio Bolsonaro spent Sunday at the [PL state convention in Paraíba]('],
+  ['), que lançou Efraim Filho ao governo e Marcelo Queiroga ao Senado. O [Poder360](', '), which launched Efraim Filho for governor and Marcelo Queiroga for the Senate. [Poder360]('],
+  [') registra a ida como estratégia de ampliar a presença dele no Nordeste, reduto histórico do adversário. Ele segue **sem vice a três dias do prazo**. O [Valor Econômico](',
+   ') records the trip as a strategy to widen his presence in the Northeast, the rival\'s historic stronghold. He still has **no running mate three days from the deadline**. [Valor Econômico]('],
+  [') resume o ciclo: os dois chegaram à reta final sem ampliar alianças, com o Centrão neutro.',
+   ') sums up the cycle: the two reached the final stretch without broadening alliances, with the Centrão neutral.'],
+  ['Em 1 de agosto, e não hoje, Lula e Flávio [pediram voto antes do prazo legal](', 'On August 1, and not today, Lula and Flávio [asked for votes ahead of the legal window]('],
+  ['), na Bahia e em Santa Catarina; a campanha só abre em 16 de agosto. No mesmo dia, o Missão [lançou Renan Santos](',
+   '), in Bahia and in Santa Catarina; the campaign only opens on August 16. On that same day, Missão [launched Renan Santos]('],
+  ['), depois de oficializá-lo em convenção antecipada em 20 de julho.', '), after formally confirming him at a convention brought forward to July 20.'],
+  ['No eixo judicial, a [Folha de S.Paulo](', 'On the judicial axis, [Folha de S.Paulo]('],
+  [') registra que os dois inquéritos sobre Lulinha, de 30 e 31 de julho, acirraram a tensão entre Mendonça e a Polícia Federal. Inquérito não é condenação. No caso Master, o [O Globo](',
+   ') records that the two inquiries into Lulinha, of July 30 and 31, sharpened the tension between Mendonça and the Federal Police. An inquiry is not a conviction. In the Master case, [O Globo]('],
+  [') informa que a PF aponta interesse de Vorcaro em emendas no Senado, e o [PT admitiu](', ') reports that the Federal Police points to Vorcaro\'s interest in Senate amendments, and the [PT admitted]('],
+  [') que o acordo para manter o caso fora da eleição na Bahia ruiu.', ') that the deal to keep the case out of the Bahia race collapsed.'],
+  ['## 4. Divergências do dia', '## 4. Divergences of the day'],
+  ['> **Mercado × evento:** o preço do favorito ficou parado exatamente no dia em que o partido dele o oficializou, com sete legendas no palanque. O painel registra a coincidência de datas e não a transforma em causa.',
+   '> **Market × event:** the favourite\'s price stood still on exactly the day his party formally launched him, with seven parties on stage. The panel records the coincidence of dates and does not turn it into a cause.'],
+  ['> **Mercado × urna:** Renan subiu 0,35pp num dia sem pesquisa e sem evento próprio, porque o lançamento dele foi em 1 de agosto. Com a urna em 3,0% e o preço em 7,95%, a distância voltou a abrir, de 4,60pp para 4,95pp, pelo lado do preço.',
+   '> **Market × polling:** Renan rose 0.35pp on a day with no poll and no event of his own, because his launch was on August 1. With polling at 3.0% and the price at 7.95%, the distance widened again, from 4.60pp to 4.95pp, on the price side.'],
+  ['> **Painel × painel:** duas ressalvas de coleta mudam o que se pode afirmar hoje, e são do AFOS, não do mercado. A série não tem ponto de 1 de agosto para Camilo Santana nem depois de 30 de julho para Zema, e por isso o painel não repete sobre Camilo a frase de mínimo de série que publicou na véspera.',
+   '> **Panel × panel:** two collection caveats change what can be asserted today, and they belong to AFOS, not to the market. The series has no August 1 point for Camilo Santana and no point after July 30 for Zema, which is why the panel does not repeat about Camilo the series-low sentence it published the day before.'],
+  ['## Em síntese', '## In summary'],
+  ['1. O gap foi a **+40,95pp** porque Flávio cedeu, e segue abaixo do máximo de **+41,80pp**, de 1 de agosto.',
+   '1. The gap went to **+40.95pp** because Flávio gave ground, and stays below the maximum of **+41.80pp**, from August 1.'],
+  ['2. **Renan Santos** rompeu nove rodadas de queda sem urna e sem evento na data.',
+   '2. **Renan Santos** broke nine rounds of decline with no polling and no event on the date.'],
+  ['3. A urna está parada, mas com hora marcada: **quatro nacionais publicam até 5 de agosto**.',
+   '3. Polling is stalled, but with a time set: **four national polls publish by August 5**.'],
+  ['## Fontes consultadas', '## Sources consulted'],
+  ['**matérias com link direto para a notícia (veículos âncora):**', '**stories with a direct link to the article (anchor outlets):**'],
+  ['**matérias secundárias (URL Google News redirect — clique resolve à matéria):**', '**secondary stories (Google News redirect URL — the click resolves to the article):**'],
+  ['**Fontes técnicas:** [Polymarket](', '**Technical sources:** [Polymarket]('],
+  [') (cotações ao vivo via proxy AFOS, fetched 02/Ago 17:14 BRT), [registro TSE](', ') (live quotes via the AFOS proxy, fetched Aug 2 at 17:14 BRT), [TSE filings]('],
+  [') (pesquisas eleitorais oficiais).', ') (official electoral polls).'],
+  ['**Método:** Síntese gerada com assistência de IA cruzando mercados de previsão, pesquisas registradas no TSE e cobertura editorial. Cada alegação factual linka diretamente à fonte primária. Fonte do método e código aberto em afos-analytics.com.',
+   '**Método:** Brief produced with AI assistance, cross-referencing prediction markets, polls filed with the TSE and editorial coverage. Every factual claim links directly to its primary source. Method and open source at afos-analytics.com.'],
+  ['**Histórico:** Síntese 1 de agosto disponível em /pt-BR/daily/2026-08-01. Arquivo completo em /pt-BR/daily.',
+   '**Histórico:** The August 1 brief is available at /en/daily/2026-08-01. Full archive at /en/daily.'],
+]
+
+// ── ES: mantém vírgula decimal e ponto de milhar ────────────────────
+const ES: Array<[string, string]> = [
+  ['title: AFOS Daily — 2 de agosto de 2026', 'title: AFOS Daily — 2 de agosto de 2026'],
+  ['locale: pt-BR', 'locale: es'],
+  ['lede: "O PT oficializou Lula e Alckmin em convenção nacional, e o mercado não se mexeu: o favorito ficou parado em 65,50% e a distância sobre Flávio abriu para +40,95pp porque o adversário caiu, não porque ele subiu. Num book de USD 118,11M acumulados, o topo da série continua sendo o de 1 de agosto, e o dia terminou abaixo dele."',
+   'lede: "El PT oficializó a Lula y Alckmin en convención nacional, y el mercado no se movió: el favorito quedó quieto en 65,50% y la distancia sobre Flávio se abrió hasta +40,95pp porque el rival cayó, no porque él subiera. En un libro con USD 118,11M acumulados, el techo de la serie sigue siendo el del 1 de agosto, y el día terminó por debajo."'],
+  ['  - "**Mercado:** **Lula 65,50% (estável)** e **Flávio 24,55% (↓0,20pp)**: o gap foi a **+40,95pp** pelo lado do adversário, e segue abaixo do máximo da série, **+41,80pp** de 1 de agosto. **Renan 7,95% (↑0,35pp)** rompe nove rodadas de queda."',
+   '  - "**Mercado:** **Lula 65,50% (estancado)** y **Flávio 24,55% (↓0,20pp)**: la brecha fue a **+40,95pp** por el lado del rival, y sigue por debajo del máximo de la serie, **+41,80pp** del 1 de agosto. **Renan 7,95% (↑0,35pp)** rompe nueve rondas de caída."'],
+  ['  - "**Pesquisas+Eventos:** nenhuma nacional nova, e a varredura do **TSE** leu 538 registros sem inserir um. **Quatro nacionais publicam entre 3 e 5 de agosto.** O **PT** oficializou Lula com **Alckmin** e sete partidos; **Flávio** foi à convenção do **PL** na Paraíba."',
+   '  - "**Encuestas+Eventos:** ninguna nacional nueva, y el barrido del **TSE** leyó 538 registros sin insertar uno. **Cuatro nacionales publican entre el 3 y el 5 de agosto.** El **PT** oficializó a Lula con **Alckmin** y siete partidos; **Flávio** fue a la convención del **PL** en Paraíba."'],
+  ['  - "**Divergência:** o preço do favorito parou no dia da convenção dele, e o único nome que se moveu com força, **Renan Santos**, subiu num dia sem urna e sem evento próprio."',
+   '  - "**Divergencia:** el precio del favorito se detuvo el día de su propia convención, y el único nombre que se movió con fuerza, **Renan Santos**, subió en un día sin encuesta y sin evento propio."'],
+  ['# AFOS Daily · Síntese do Dia\n\n**2 de agosto de 2026**', '# AFOS Daily · Síntesis del Día\n\n**2 de agosto de 2026**'],
+  ['## 1. Mercado de previsão', '## 1. Mercado de predicción'],
+  ['O domingo inverteu o mecanismo dos dois pregões anteriores. [Lula](', 'El domingo invirtió el mecanismo de las dos jornadas anteriores. [Lula]('],
+  [') ficou **estável em 65,50% (USD 7,90M)** e **Flávio Bolsonaro caiu 0,20pp, para 24,55% (USD 7,82M)**, interrompendo seis pregões sem queda: a distância abriu para **+40,95pp** pelo lado do adversário, não do favorito. O topo da série ficou para trás, e a janela precisa ser dita: o máximo de Lula é **66,50%** e o do gap é **+41,80pp**, ambos do fechamento de 1 de agosto, numa série de 108 dias conferida direto no banco. O volume total acumulado no presidencial soma **USD 118,11M**.',
+   ') quedó **estancado en 65,50% (USD 7,90M)** y **Flávio Bolsonaro cayó 0,20pp, hasta 24,55% (USD 7,82M)**, interrumpiendo seis jornadas sin caída: la distancia se abrió hasta **+40,95pp** por el lado del rival, no del favorito. El techo de la serie quedó atrás, y la ventana debe decirse: el máximo de Lula es **66,50%** y el de la brecha es **+41,80pp**, ambos del cierre del 1 de agosto, en una serie de 108 días verificada directamente contra la base. El volumen total acumulado en el presidencial suma **USD 118,11M**.'],
+  ['**Renan Santos foi o único movimento forte: subiu 0,35pp, para 7,95% (USD 8,82M)**, rompendo nove rodadas de queda e subindo nos três books, com **63,50% no [3º lugar](',
+   '**Renan Santos fue el único movimiento fuerte: subió 0,35pp, hasta 7,95% (USD 8,82M)**, rompiendo nueve rondas de caída y subiendo en los tres libros, con **63,50% en el [tercer lugar]('],
+  [') (USD 168 mil)**. A virada não desfaz o arco: ele saiu de 12,00% em 23 de julho e tocou 7,10% em 1 de agosto, e não é mínimo de série, que é 5,30%, de 26 de abril.',
+   ') (USD 168 mil)**. El giro no deshace el arco: venía de 12,00% el 23 de julio y tocó 7,10% el 1 de agosto, y no es mínimo de serie, que es 5,30%, del 26 de abril.'],
+  [') tocou o piso da série dentro do próprio dia:** a coleta das 11h30 UTC gravou **0,90%**, o menor valor desde 14 de abril, e a captura travada das 19h42 traz **1,15% (USD 5,27M)**. O painel publica a travada e registra o piso intradiário.',
+   ') tocó el piso de la serie dentro del propio día:** la recolección de las 11h30 UTC registró **0,90%**, el menor valor desde el 14 de abril, y la captura trabada de las 19h42 trae **1,15% (USD 5,27M)**. El panel publica la trabada y registra el piso intradiario.'],
+  ['O pelotão se dividiu: Camilo Santana e Jair subiram para 0,65%, Zema caiu para 0,25% e Tarcísio segue em 0,05%, com **USD 13,70M**, o maior volume do book. O [impeachment de ministro do STF](',
+   'El pelotón se dividió: Camilo Santana y Jair subieron hasta 0,65%, Zema cayó hasta 0,25% y Tarcísio sigue en 0,05%, con **USD 13,70M**, el mayor volumen del libro. La [destitución de un ministro del STF]('],
+  [') ficou estável em **3,10% (USD 83 mil)** pelo quarto pregão. Na [inflação](', ') quedó estancada en **3,10% (USD 83 mil)** por cuarta jornada. En la [inflación]('],
+  ['), as dez faixas somam **94,15%**, abaixo do piso de 95% que o AFOS exige para ler distribuição como probabilidade legível.',
+   '), las diez bandas suman **94,15%**, por debajo del piso de 95% que el AFOS exige para leer una distribución como probabilidad legible.'],
+  ['## 2. O que os institutos registraram', '## 2. Lo que registraron los institutos'],
+  ['Não houve pesquisa nacional nova, e a ausência foi confirmada por duas vias: a varredura do TSE leu **538 registros e não inseriu nenhum**, e nenhum veículo publicou números nacionais inéditos. A última segue sendo a **Vox Brasil de 31 de julho** (n=2.100, BR-01084/2026), com Lula 40,5% x Flávio 31,2% e 47,5% x 41,1% no returno. As do dia são estaduais e não entram aqui: a [Datafolha em Pernambuco](',
+   'No hubo encuesta nacional nueva, y la ausencia fue confirmada por dos vías: el barrido del TSE leyó **538 registros y no insertó ninguno**, y ningún medio publicó números nacionales inéditos. La última sigue siendo la de **Vox Brasil del 31 de julio** (n=2.100, BR-01084/2026), con Lula 40,5% x Flávio 31,2% y 47,5% x 41,1% en la segunda vuelta. Las del día son estatales y no entran aquí: la de [Datafolha en Pernambuco]('],
+  [') dá Lula 57% contra 22% de Flávio no estado, e a [Genial/Quaest](', ') da Lula 57% frente a 22% de Flávio en ese estado, y la de [Genial/Quaest]('],
+  [') mostra Lula à frente em quatro estados e Flávio em um.', ') muestra a Lula por delante en cuatro estados y a Flávio en uno.'],
+  ['### 📅 Calendário de pesquisas — próximos 7 dias', '### 📅 Calendario de encuestas — próximos 7 días'],
+  ['Publicação prevista entre 03/Ago e 06/Ago; inclusão não significa publicação confirmada. Filtro: **nacionais ≥ 1.000** e **estaduais ≥ 1.500**, o que deixa de fora **9 estaduais** entre 1.000 e 1.499. Nenhuma atinge 3.000.',
+   'Publicación prevista entre el 03/Ago y el 06/Ago; la inclusión no significa publicación confirmada. Filtro: **nacionales ≥ 1.000** y **estatales ≥ 1.500**, lo que deja fuera **9 estatales** entre 1.000 y 1.499. Ninguna alcanza 3.000.'],
+  ['| Data | Instituto | Amostra | Escopo | Protocolo TSE | Conf. |', '| Fecha | Instituto | Muestra | Alcance | Protocolo TSE | Conf. |'],
+  ['Fonte: registro público [TSE](', 'Fuente: registro público del [TSE]('],
+  [') via API AFOS. Status "registrada ≠ publicada": citar números exige duas fontes primárias.',
+   ') vía API AFOS. Estatus "registrada ≠ publicada": citar números exige dos fuentes primarias.'],
+  ['## 3. O que a imprensa cobriu', '## 3. Lo que cubrió la prensa'],
+  ['O fato do dia é a convenção nacional do PT, em São Paulo, que [oficializou Lula](', 'El hecho del día es la convención nacional del PT, en São Paulo, que [oficializó a Lula]('],
+  [') na oitava candidatura dele, com Alckmin de vice e [**sete partidos na coligação**](', ') en su octava candidatura, con Alckmin de vice y [**siete partidos en la coalición**]('],
+  ['), a maior aliança de esquerda e centro-esquerda desde 1989. Na [Folha de S.Paulo](', '), la mayor alianza de izquierda y centroizquierda desde 1989. En [Folha de S.Paulo]('],
+  ['), ele diz que não quer ser presidente do Bolsa Família e promete disputar emendas com o Congresso.',
+   '), dice que no quiere ser el presidente del Bolsa Família y promete disputar las enmiendas con el Congreso.'],
+  ['Flávio Bolsonaro passou o domingo na [convenção estadual do PL na Paraíba](', 'Flávio Bolsonaro pasó el domingo en la [convención estatal del PL en Paraíba]('],
+  ['), que lançou Efraim Filho ao governo e Marcelo Queiroga ao Senado. O [Poder360](', '), que lanzó a Efraim Filho al gobierno y a Marcelo Queiroga al Senado. [Poder360]('],
+  [') registra a ida como estratégia de ampliar a presença dele no Nordeste, reduto histórico do adversário. Ele segue **sem vice a três dias do prazo**. O [Valor Econômico](',
+   ') registra el viaje como estrategia de ampliar su presencia en el Nordeste, reducto histórico del adversario. Sigue **sin vice a tres días del plazo**. [Valor Econômico]('],
+  [') resume o ciclo: os dois chegaram à reta final sem ampliar alianças, com o Centrão neutro.',
+   ') resume el ciclo: los dos llegaron al tramo final sin ampliar alianzas, con el Centrão neutral.'],
+  ['Em 1 de agosto, e não hoje, Lula e Flávio [pediram voto antes do prazo legal](', 'El 1 de agosto, y no hoy, Lula y Flávio [pidieron votos antes del plazo legal]('],
+  ['), na Bahia e em Santa Catarina; a campanha só abre em 16 de agosto. No mesmo dia, o Missão [lançou Renan Santos](',
+   '), en Bahía y en Santa Catarina; la campaña solo se abre el 16 de agosto. Ese mismo día, Missão [lanzó a Renan Santos]('],
+  ['), depois de oficializá-lo em convenção antecipada em 20 de julho.', '), después de oficializarlo en convención adelantada el 20 de julio.'],
+  ['No eixo judicial, a [Folha de S.Paulo](', 'En el eje judicial, [Folha de S.Paulo]('],
+  [') registra que os dois inquéritos sobre Lulinha, de 30 e 31 de julho, acirraram a tensão entre Mendonça e a Polícia Federal. Inquérito não é condenação. No caso Master, o [O Globo](',
+   ') registra que las dos investigaciones sobre Lulinha, del 30 y 31 de julio, agudizaron la tensión entre Mendonça y la Policía Federal. Una investigación no es una condena. En el caso Master, [O Globo]('],
+  [') informa que a PF aponta interesse de Vorcaro em emendas no Senado, e o [PT admitiu](', ') informa que la PF apunta al interés de Vorcaro en enmiendas del Senado, y el [PT admitió]('],
+  [') que o acordo para manter o caso fora da eleição na Bahia ruiu.', ') que el acuerdo para mantener el caso fuera de la elección en Bahía se rompió.'],
+  ['## 4. Divergências do dia', '## 4. Divergencias del día'],
+  ['> **Mercado × evento:** o preço do favorito ficou parado exatamente no dia em que o partido dele o oficializou, com sete legendas no palanque. O painel registra a coincidência de datas e não a transforma em causa.',
+   '> **Mercado × evento:** el precio del favorito quedó quieto exactamente el día en que su partido lo oficializó, con siete partidos en el palco. El panel registra la coincidencia de fechas y no la transforma en causa.'],
+  ['> **Mercado × urna:** Renan subiu 0,35pp num dia sem pesquisa e sem evento próprio, porque o lançamento dele foi em 1 de agosto. Com a urna em 3,0% e o preço em 7,95%, a distância voltou a abrir, de 4,60pp para 4,95pp, pelo lado do preço.',
+   '> **Mercado × encuesta:** Renan subió 0,35pp en un día sin encuesta y sin evento propio, porque su lanzamiento fue el 1 de agosto. Con la encuesta en 3,0% y el precio en 7,95%, la distancia volvió a abrirse, de 4,60pp a 4,95pp, por el lado del precio.'],
+  ['> **Painel × painel:** duas ressalvas de coleta mudam o que se pode afirmar hoje, e são do AFOS, não do mercado. A série não tem ponto de 1 de agosto para Camilo Santana nem depois de 30 de julho para Zema, e por isso o painel não repete sobre Camilo a frase de mínimo de série que publicou na véspera.',
+   '> **Panel × panel:** dos salvedades de recolección cambian lo que se puede afirmar hoy, y son del AFOS, no del mercado. La serie no tiene punto del 1 de agosto para Camilo Santana ni después del 30 de julio para Zema, y por eso el panel no repite sobre Camilo la frase de mínimo de serie que publicó la víspera.'],
+  ['## Em síntese', '## En síntesis'],
+  ['1. O gap foi a **+40,95pp** porque Flávio cedeu, e segue abaixo do máximo de **+41,80pp**, de 1 de agosto.',
+   '1. La brecha fue a **+40,95pp** porque Flávio cedió, y sigue por debajo del máximo de **+41,80pp**, del 1 de agosto.'],
+  ['2. **Renan Santos** rompeu nove rodadas de queda sem urna e sem evento na data.',
+   '2. **Renan Santos** rompió nueve rondas de caída sin encuesta y sin evento en la fecha.'],
+  ['3. A urna está parada, mas com hora marcada: **quatro nacionais publicam até 5 de agosto**.',
+   '3. La encuesta está detenida, pero con hora marcada: **cuatro nacionales publican hasta el 5 de agosto**.'],
+  ['## Fontes consultadas', '## Fuentes consultadas'],
+  ['**matérias com link direto para a notícia (veículos âncora):**', '**notas con enlace directo a la noticia (medios ancla):**'],
+  ['**matérias secundárias (URL Google News redirect — clique resolve à matéria):**', '**notas secundarias (URL Google News redirect — el clic resuelve a la nota):**'],
+  ['**Fontes técnicas:** [Polymarket](', '**Fuentes técnicas:** [Polymarket]('],
+  [') (cotações ao vivo via proxy AFOS, fetched 02/Ago 17:14 BRT), [registro TSE](', ') (cotizaciones en vivo vía proxy AFOS, fetched 02/Ago 17:14 BRT), [registro TSE]('],
+  [') (pesquisas eleitorais oficiais).', ') (encuestas electorales oficiales).'],
+  ['**Método:** Síntese gerada com assistência de IA cruzando mercados de previsão, pesquisas registradas no TSE e cobertura editorial. Cada alegação factual linka diretamente à fonte primária. Fonte do método e código aberto em afos-analytics.com.',
+   '**Método:** Síntesis generada con asistencia de IA cruzando mercados de predicción, encuestas registradas en el TSE y cobertura editorial. Cada afirmación factual enlaza directamente a la fuente primaria. Método y código abierto en afos-analytics.com.'],
+  ['**Histórico:** Síntese 1 de agosto disponível em /pt-BR/daily/2026-08-01. Arquivo completo em /pt-BR/daily.',
+   '**Histórico:** La síntesis del 1 de agosto está disponible en /es/daily/2026-08-01. Archivo completo en /es/daily.'],
+]
+
+writeFileSync(join(base, '2026-08-02.en.md'), aplicar(pt, EN, 'EN'), 'utf-8')
+console.log('✅ 2026-08-02.en.md')
+writeFileSync(join(base, '2026-08-02.es.md'), aplicar(pt, ES, 'ES'), 'utf-8')
+console.log('✅ 2026-08-02.es.md')

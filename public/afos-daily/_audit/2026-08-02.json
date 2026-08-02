@@ -1,0 +1,98 @@
+{
+  "date": "2026-08-02",
+  "capturedAt": "2026-08-02T20:14:21.854Z",
+  "captureBRT": "02/08 17:14",
+  "refetch": {
+    "gateRebaseline": "nao disparou",
+    "deltas": {
+      "lula": { "json": 65.5, "live": 65.5, "delta": 0 },
+      "flavio": { "json": 24.55, "live": 24.55, "delta": 0 },
+      "gap": { "json": 40.95, "live": 40.95, "delta": 0 },
+      "renan": { "json": 7.95, "live": 7.95, "delta": 0 },
+      "caiado": { "json": 1.15, "live": 1.2, "delta": 0.05 },
+      "volumeTotalM": { "json": 118.11, "live": 118.12 }
+    },
+    "nota": "unico movimento foi Caiado a 0,05pp, um decimo do gate de 0,50pp"
+  },
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "Convencao nacional do PT oficializa Lula e Alckmin",
+        "verificacao1": "cross-ref: 'convencao' aparece em 31/Jul e 01/Ago referida a convencoes ESTADUAIS e a do Republicanos -> novidade",
+        "verificacao2": { "url": "https://www.poder360.com.br/poder-eleicoes-2026/pt-formaliza-candidatura-de-lula-neste-domingo-em-sao-paulo/", "data": "2026-08-02", "tipo": "evento" },
+        "segundaFonte": "https://www.cnnbrasil.com.br/eleicoes/lula-e-lancado-a-presidencia-em-reuniao-interna-do-pt-antes-de-evento/",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Missao lanca Renan Santos",
+        "verificacao1": "cross-ref: 30 mencoes em dailies anteriores -> exige fetch",
+        "verificacao2": { "url": "https://www.cnnbrasil.com.br/eleicoes/missao-oficializa-renan-santos-como-candidato-a-presidente-em-convencao/", "data": "2026-07-20", "tipo": "evento", "nota": "oficializacao em convencao antecipada em 20/Jul; evento de lancamento de campanha em 01/Ago" },
+        "segundaFonte": "pubDate do cache local: Folha 01/Ago 21:32 GMT, Valor 01/Ago 21:44, Pleno 01/Ago 21:11",
+        "decisao": "NAO incorporar como fato de hoje"
+      },
+      {
+        "evento": "Flavio Bolsonaro em convencao do PL",
+        "verificacao2": { "url": "https://www.poder360.com.br/poder-eleicoes-2026/ao-vivo-pl-realiza-convencao-estadual-na-paraiba/", "data": "2026-08-02", "tipo": "evento", "nota": "Paraiba, Joao Pessoa, 8h22; Efraim Filho ao governo e Marcelo Queiroga ao Senado" },
+        "segundaFonte": "cnnbrasil.com.br, mesma data e mesmos nomes",
+        "decisao": "incorporar; corrigir que Santa Catarina foi 01/Ago"
+      },
+      {
+        "evento": "Pedidos de voto antes do prazo legal",
+        "verificacao2": { "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-repete-lula-e-tambem-pede-voto-antes-do-prazo-permitido/", "data": "2026-08-01", "tipo": "evento", "nota": "Lula na Bahia e Flavio em Santa Catarina, ambos em 01/Ago; campanha abre 16/Ago; TSE multou Lula em R$ 15 mil em 28/Jul" },
+        "segundaFonte": "materia independente do mesmo veiculo sobre a multa + registro do cache",
+        "decisao": "incorporar com a data de 01/Ago"
+      },
+      {
+        "evento": "Video de IA com Jair Bolsonaro",
+        "verificacao2": { "url": "https://www.cnnbrasil.com.br/eleicoes/pl-apresenta-video-de-ia-com-mensagem-de-jair-bolsonaro-em-convencao/", "data": "2026-07-25", "tipo": "evento", "nota": "convencao NACIONAL do PL em 25/Jul; questionamento de Moraes remonta a 11/Jul" },
+        "segundaFonte": "nao verificado para o 'novo video' de hoje",
+        "decisao": "NAO incorporar"
+      },
+      {
+        "evento": "Inqueritos sobre Lulinha e atrito com a PF",
+        "verificacao1": "cross-ref: aparece em 31/Jul e 01/Ago -> continuidade",
+        "decisao": "incorporar apenas como desdobramento"
+      }
+    ],
+    "correcaoAplicada": "O /atualizar-brz publicou duas alegacoes de data erradas, corrigidas nos 4 arquivos pt-BR e nos 6 locales antes de escrever a daily: (1) 'Renan subiu no mesmo dia em que o Missao oficializou a candidatura dele' e (2) convencao do PL de Santa Catarina datada como de hoje. Tambem saiu a atribuicao a Tebet, com fonte unica."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": ["PF aponta interesse de Vorcaro em emendas no Senado (apenas O Globo); mantida com atribuicao dupla explicita e verbo nao conclusivo"],
+    "numericalErrors": "reconcile-claims.ts: OK, todos os claims batem com o JSON, tolerancia +-0,05pp",
+    "fontesInventadas": "tres conferidas ao acaso (Poder360/Paraiba, CNN/Missao, Folha/Lulinha); as tres existem, duas lidas por fetch",
+    "quotesLiterais": "nenhuma; o trecho do Bolsa Familia esta em discurso indireto atribuido a Folha",
+    "causacaoEspuria": "nenhuma; a daily afirma o oposto duas vezes",
+    "verbosCriticos": "oficializou, lancou, pediram voto, aponta, admitiu, acirraram. Nenhum de privacao de liberdade ou morte. 'Inquerito nao e condenacao' declarado no corpo. Datas todas explicitas.",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "capturaTravada": { "script": "scripts/capture-guard.ts", "resultado": "APROVADO", "motivos": 0, "fetchedAt": "2026-08-02T19:42:18.211Z" },
+    "palavras": 894,
+    "tetoPalavras": 900,
+    "validateAfosDaily": "OK, 1 warning de densidade de links (57%, regra pede 80%)",
+    "reconcileClaims": "OK",
+    "gateNumericoTraducao": "51 numeros com unidade, identicos nas 3 versoes",
+    "cincoChecagensLocale": "5/5 limpas nas 3 versoes",
+    "validatePollsData": "exit 0",
+    "defeitoPego": "coluna de confianca do calendario estava com ponto decimal em pt-BR e ES; 12 celulas corrigidas em cada"
+  },
+  "seriesConferidas": {
+    "script": "scripts/check-superlativo.ts",
+    "cobertura": "2026-04-14 a 2026-08-02, 108 dias com dado",
+    "lula": { "max": 66.5, "maxData": "2026-08-01", "min": 35.5, "minData": "2026-04-27" },
+    "gap": { "max": 41.8, "maxData": "2026-08-01", "min": -7.8, "minData": "2026-05-05" },
+    "renan": { "max": 17.9, "maxData": "2026-06-09", "min": 5.3, "minData": "2026-04-26" },
+    "caiado": { "piso": 0.9, "tocadoEm": ["2026-07-05 a 2026-07-09", "2026-08-02 11:30 UTC"] },
+    "ressalvasDeColeta": [
+      "serie sem ponto de 01/Ago para Camilo Santana",
+      "serie sem ponto depois de 30/Jul para Zema",
+      "serie de apenas tres dias para Tarcisio de Freitas (28/Abr a 14/Mai)"
+    ]
+  },
+  "coletaNoticias": {
+    "total": 607,
+    "falhas": ["query master-vorcaro retornou 0 itens", "query pesquisas retornou 2 itens"],
+    "mitigacao": "eixo Master pescado nas buscas por veiculo (prestige-folha-poder, prestige-oglobo-politica)"
+  },
+  "fontes": { "ancora": 6, "secundarias": 9, "percentualSecundario": 60 }
+}
