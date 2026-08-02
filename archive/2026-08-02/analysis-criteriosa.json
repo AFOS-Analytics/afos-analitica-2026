@@ -1,0 +1,165 @@
+{
+  "updatedAt": "02/08/2026, 16:45",
+  "subtitle": "ATUALIZAÇÃO 02/Ago 16:45 BRT, a 63 dias do 1º turno. O GAP ABRIU PELO OUTRO LADO. Lula ficou ESTÁVEL em 65,50% (vol USD 7,90M) e o gap sobre Flávio ABRIU de +40,95pp, contra +40,75pp na captura publicada ontem, mas abriu porque FLÁVIO CAIU 0,20pp, e não porque o favorito subiu. Nos dois pregões anteriores o recorde vinha com o adversário subindo junto; hoje é o contrário, e o mecanismo importa mais que a direção. O TOPO DA SÉRIE FICOU PARA TRÁS e a janela precisa ser dita inteira: o máximo de Lula é 66,50% e o do gap é +41,80pp, ambos do FECHAMENTO de 01/Ago, e ambos acima do que este painel publica hoje. A série do AFOS cobre de 14/Abr a hoje, 108 dias, e foi conferida direto no banco, sem o limite de 90 dias da API. RENAN SANTOS é o movimento do dia: SUBIU 0,35pp e foi a 7,95% (vol USD 8,82M), INTERROMPENDO uma sequência de queda que durava nove rodadas, no mesmo dia em que o Missão oficializou a candidatura dele em São Paulo. O painel registra a coincidência de datas e não afirma causa. A virada não desfaz o arco: ele saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago, e não é mínimo de série, porque o mínimo é 5,30%, de 26/Abr. O PELOTÃO SE DIVIDIU, ao contrário de ontem, quando encolheu inteiro: Camilo Santana subiu 0,20pp, para 0,65%, Jair Bolsonaro subiu 0,10pp, para 0,65%, e Haddad subiu 0,05pp, para 0,30%, enquanto Caiado caiu 0,20pp, para 1,15%, Zema caiu 0,10pp, para 0,25%, e Michelle e Tereza Cristina caíram 0,10pp cada, as duas para 0,15%. CAIADO TOCOU O PISO DA SÉRIE DENTRO DO PRÓPRIO DIA: a coleta das 11:30 UTC gravou 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a captura travada e registra o piso intradiário em vez de escolher um dos dois. NOS BOOKS DE COLOCAÇÃO, Flávio subiu 1,00pp no 2º lugar do 1º turno, para 80,50%, a maior marca dele ali no acompanhamento do painel, e Renan subiu 2,00pp no 3º lugar, para 63,50%, com Caiado subindo os mesmos 2,00pp, para 24,50%. O DIA POLÍTICO FOI DE CONVENÇÃO NACIONAL DOS DOIS LADOS: o PT oficializou Lula com Alckmin em São Paulo, reunindo sete partidos, na oitava candidatura dele à Presidência, e o Missão oficializou Renan Santos, também em São Paulo. Flávio Bolsonaro esteve na convenção do PL em Santa Catarina, onde ele e Carlos Bolsonaro criticaram o STF, e usou um novo vídeo com Jair depois de ser questionado por Moraes sobre o anterior, gerado por inteligência artificial. Lula e Flávio PEDIRAM VOTO ANTES DO PRAZO LEGAL, que só abre em 16/Ago, e o registro é dos dois, não de um. Flávio e Zema seguem SEM vice a três dias do prazo de 05/Ago, e o Valor Econômico registra que os dois principais chegaram à reta final das convenções sem ampliar alianças, com o Centrão ainda neutro. A URNA NACIONAL NÃO SE MOVEU e agora tem data para se mover: a última segue sendo a Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026), a varredura do TSE de hoje leu 538 registros e não inseriu NENHUM novo, e QUATRO nacionais estão com campo aberto agora, duas da Nexus, uma da Quaest e uma da Ideia/Canal Meio, com publicação declarada entre 03 e 05/Ago. Data declarada no registro não é publicação. Volume total acumulado no presidencial em USD 118,11M. A trava de dupla leitura APROVOU a rodada sem nenhum motivo de bloqueio, com os dois books dentro de 0,20pp. Todos os preços entram firmes, sem faixa declarada. Captura ao vivo 02/Ago 19:42 UTC.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "Polymarket 65,50% (estável, vol USD 7,90M acumulado), a 63 dias da eleição, no dia em que o PT oficializou a candidatura dele em convenção nacional. O gap sobre Flávio abre para +40,95pp, mas abre por queda do adversário. O preço está 1,00pp ABAIXO do topo da série, que é 66,50%, do fechamento de 01/Ago. Sem urna nacional nova: a última segue sendo a Vox Brasil de 31/Jul (n=2.100), com 40,5% no 1º turno e 47,5% x 41,1% no returno.",
+      "fortes": [
+        "O PT oficializou a candidatura dele em convenção nacional em São Paulo, com Alckmin de vice e sete partidos na aliança, na oitava vez que ele disputa a Presidência.",
+        "A Vox Brasil dá 47,5% x 41,1% no returno, e os 6,4pp ficam FORA da margem somada, então esta leitura NÃO descreve empate técnico.",
+        "Duas das três casas da semana medem o gap do 1º turno em torno de 9pp, 9,1pp na AtlasIntel e 9,3pp na Vox, e a que destoa é a PoderData, com 6pp.",
+        "Ficou ESTÁVEL num pregão em que o adversário cedeu, o que abriu o gap sem que ele precisasse subir.",
+        "No campo dele o mercado subiu: Camilo Santana ganhou 0,20pp, indo a 0,65%, e Haddad ganhou 0,05pp, indo a 0,30%."
+      ],
+      "fracos": [
+        "O preço está 1,00pp ABAIXO do topo da série, que é 66,50%, do fechamento de 01/Ago, e o gap está 0,85pp abaixo do máximo, que é +41,80pp do mesmo dia.",
+        "O gap abriu por queda de Flávio, e não por alta dele, o que descreve um mecanismo mais fraco que o dos dois pregões anteriores.",
+        "Os 40,5% da Vox no 1º turno seguem abaixo dos 50% mais um voto, ou seja, a leitura descreve returno e não vitória direta.",
+        "Nenhuma nacional publicou aprovação ou rejeição desde 30/Jul, então o quadro de avaliação segue com duas casas apontando para lados opostos na mesma semana.",
+        "Pediu voto antes do prazo legal, que só abre em 16/Ago, no mesmo dia em que Flávio fez o mesmo, e o painel registra os dois."
+      ],
+      "analise": "O dia dele foi de convenção e de preço parado, e o cruzamento das duas coisas é o registro. O contrato de vencedor ficou ESTÁVEL em 65,50% (vol USD 7,90M) no mesmo domingo em que o PT oficializou a candidatura dele em São Paulo, com Alckmin de vice e sete partidos na aliança. O gap ABRIU para +40,95pp, mas abriu porque Flávio caiu 0,20pp, e não porque ele subiu, o que inverte o mecanismo dos dois pregões anteriores. O TOPO FICOU PARA TRÁS e a janela precisa ser dita: o máximo da série é 66,50%, do fechamento de 01/Ago, e o preço de hoje está 1,00pp abaixo dele. A série do AFOS cobre de 14/Abr a hoje, 108 dias. SEM URNA NOVA, e agora com data para a próxima: nenhuma nacional foi publicada desde a Vox Brasil de 31/Jul, a varredura do TSE de hoje não inseriu nenhum registro novo, e quatro nacionais estão com campo aberto, com publicação declarada entre 03 e 05/Ago. NA CONVENÇÃO, ele disse que não quer ser presidente do Bolsa Família e prometeu disputar emendas com o Congresso, e Tebet chamou Flávio de golpista do palanque. Ele pediu voto antes do prazo legal, que abre em 16/Ago, e Flávio fez o mesmo no mesmo dia. NO EIXO JUDICIAL, os dois inquéritos sobre Lulinha acirraram a tensão entre Mendonça e a Polícia Federal, o advogado dele acusa setores da PF de tentar interferir na eleição e Roberta Luchsinger pediu apuração de vazamento de conversas. Inquérito não é condenação e o painel não o trata como tal."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "Polymarket 24,55% (queda 0,20pp, vol USD 7,82M acumulado), interrompendo seis pregões sem queda, e é essa queda que ABRE o gap para +40,95pp, porque Lula ficou parado. SOBE 1,00pp no 2º lugar do 1º turno, para 80,50%, maior marca dele ali, e fica em 4,90% no 3º lugar. Segue SEM vice a três dias do prazo de 05/Ago.",
+      "fortes": [
+        "SOBE 1,00pp no book de 2º lugar do 1º turno, para 80,50%, a maior marca dele naquele contrato no acompanhamento do painel.",
+        "Os 41,1% dele no returno da Vox ficam a 6,4pp de Lula, e é a segunda melhor marca de returno dele no recorte.",
+        "O PL segue ESTÁVEL em 72,50% no mercado do Senado, num book de USD 259 mil, que é o mais fundo entre os sub-mercados.",
+        "A queda de hoje é de 0,20pp e vem depois de seis pregões sem queda, o que a mantém dentro da faixa em que ele oscila desde o fim de julho."
+      ],
+      "fracos": [
+        "CAIU 0,20pp no contrato de vencedor e foi a própria queda dele que ABRIU o gap para +40,95pp, com o favorito parado.",
+        "Segue SEM vice a três dias do prazo de 05/Ago, depois de o PP declarar neutralidade e vetar a chapa com Tereza Cristina.",
+        "O Valor Econômico registra que ele e Lula chegaram à reta final das convenções sem ampliar alianças, com o Centrão ainda neutro.",
+        "A convenção nacional do Republicanos, que decide aliança presidencial, é só em 04/Ago, um dia antes do prazo de registro das chapas.",
+        "Foi questionado por Moraes sobre o vídeo gerado por inteligência artificial exibido na convenção do PL, e respondeu com um vídeo novo com Jair Bolsonaro."
+      ],
+      "analise": "O sinal dele hoje é de queda na chance de ganhar e alta na de chegar ao returno, no mesmo pregão, e o painel registra os dois sem escolher qual vale mais. CAI 0,20pp no contrato de vencedor, para 24,55% (vol USD 7,82M), interrompendo seis pregões sem queda, e é essa queda que ABRE o gap para +40,95pp, porque Lula ficou parado. É a primeira vez em três pregões que o gap se move pelo lado dele, e não pelo do favorito. Nos books de colocação ele SOBE 1,00pp no 2º lugar do 1º turno, para 80,50% (vol USD 217 mil), a maior marca dele ali no acompanhamento do painel, e fica praticamente parado no 3º lugar, em 4,90%. No arranjo de chapa, segue SEM vice a três dias do prazo de 05/Ago, e o saldo do ciclo de convenções é registrado pelo Valor Econômico: ele e Lula chegaram à reta final sem ampliar alianças, com o Centrão ainda neutro. A convenção nacional do Republicanos, que trata de aliança presidencial, é em 04/Ago. NA CONVENÇÃO DO PL EM SANTA CATARINA, ele pediu voto antes do prazo legal, que só abre em 16/Ago, e usou um novo vídeo com Jair Bolsonaro depois de ser questionado por Moraes sobre o vídeo anterior, gerado por inteligência artificial. Carlos Bolsonaro criticou o STF no mesmo palanque. Na urna, a leitura mais recente segue sendo a Vox Brasil de 31/Jul, com 31,2% no 1º turno e 41,1% no returno."
+    },
+    {
+      "rank": "3",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "Polymarket 7,95% no vencedor (alta 0,35pp, vol USD 8,82M acumulado), INTERROMPENDO nove rodadas de queda, no dia em que o Missão oficializou a candidatura dele. Sobe também nos dois books de colocação: 8,75% no 2º lugar do 1º turno e 63,50% no 3º lugar, onde é favorito isolado.",
+      "fortes": [
+        "SOBE 0,35pp no contrato de vencedor, para 7,95%, interrompendo uma sequência de queda que durava nove rodadas.",
+        "SOBE 2,00pp no book de 3º lugar do 1º turno, para 63,50%, onde é favorito isolado, com folga sobre Caiado.",
+        "Mantém o maior volume acumulado entre os nomes competitivos do presidencial, USD 8,82M, acima de Lula e de Flávio.",
+        "O Missão oficializou a candidatura dele em São Paulo neste domingo, e o painel registra a coincidência de datas com a alta sem afirmar causa.",
+        "Segue com o terceiro maior preço do book presidencial, à frente de todo o pelotão."
+      ],
+      "fracos": [
+        "A alta de hoje não desfaz o arco: ele saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago, com 4,05pp cedidos no caminho.",
+        "As três urnas mais recentes são também as três mais baixas do recorte, 7,8% na AtlasIntel, 4% na PoderData e 3,0% na Vox, o que descreve tendência e não dispersão.",
+        "Com o preço subindo e a urna parada em 3,0%, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp.",
+        "Não houve urna nacional nova para acompanhar a alta, então não há leitura de intenção de voto que a sustente.",
+        "É estreante em eleições, e o mercado precifica um nome sem histórico de desempenho em urna nacional."
+      ],
+      "analise": "RENAN SANTOS é o movimento do dia. SUBIU 0,35pp e foi a 7,95% (vol USD 8,82M), INTERROMPENDO uma sequência de queda que durava nove rodadas, no mesmo domingo em que o Missão oficializou a candidatura dele em São Paulo. O painel registra a coincidência de datas e não afirma que uma coisa causou a outra. A alta foi geral nos três books dele: 0,20pp no 2º lugar do 1º turno, para 8,75%, e 2,00pp no 3º lugar, para 63,50% (vol USD 168 mil), onde é favorito isolado. A VIRADA NÃO DESFAZ O ARCO, e a janela precisa ser dita: ele saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago, que é o piso desse arco, e o de hoje é o primeiro pregão de alta em dez. NÃO é mínimo nem máximo de série: o mínimo é 5,30%, de 26/Abr, e o máximo é 17,90%, de 09/Jun. Sobre a urna, nada mudou: a última nacional segue sendo a Vox Brasil de 31/Jul, que lhe deu 3,0%, e as três leituras mais recentes são também as três mais baixas do recorte. Com o preço subindo e a urna parada, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp, e abriu pelo lado do preço, do mesmo jeito que havia fechado. No lançamento, ele atacou Lula e Flávio, chamou Moro de vassalo, disse que vai tirar Flávio do returno e prometeu matar quem roubar."
+    },
+    {
+      "rank": "4",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "Polymarket: Caiado 1,15% (queda 0,20pp, vol USD 5,27M), Jair 0,65% (alta 0,10pp), Camilo Santana 0,65% (alta 0,20pp), Alckmin 0,35% (estável), Haddad 0,30% (alta 0,05pp), Zema 0,25% (queda 0,10pp), Michelle 0,15% (queda 0,10pp), Tereza Cristina 0,15% (queda 0,10pp), Tarcísio 0,05% (estável). O pelotão se DIVIDIU, e nenhum nome passa de 1,15%.",
+      "subtitle": "02/Ago, a 63 dias: o pelotão se dividiu, e essa é a diferença em relação à véspera, quando encolheu inteiro. Camilo Santana, Jair Bolsonaro e Haddad subiram; Caiado, Zema, Michelle e Tereza Cristina caíram; Alckmin e Tarcísio ficaram parados. Caiado tocou o piso da série dentro do próprio dia, com 0,90% na coleta das 11:30 UTC e 1,15% na captura travada das 19:42 UTC. Nenhum nome do pelotão passa de 1,15%.",
+      "caiado": {
+        "label": "CAIADO (PSD), Poly presidencial 1,15% (queda 0,20pp, vol USD 5,27M) | 3º lugar do 1º turno 24,50% (alta 2,00pp, vol USD 37 mil) | 2º lugar 1,10% | candidato oficializado em 26/Jul, com Kassab de vice | última nacional: Vox Brasil 31/Jul, 1T 5,5%",
+        "fortes": "A melhor urna nacional do recorte segue sendo dele, os 5,5% da Vox Brasil de 31/Jul, acima dos 5% da PoderData de 30/Jul e bem acima dos 3,1% da AtlasIntel de 29/Jul. No book de 3º colocado do 1º turno ele SOBE 2,00pp, para 24,50%, recuperando a queda da véspera e mantendo o segundo lugar, atrás apenas de Renan Santos. E a divergência entre institutos sobre ele segue aberta em QUATRO níveis dentro do mesmo mês, 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel.",
+        "fracos": "O contrato de vencedor CAIU 0,20pp, para 1,15%, no quarto pregão seguido de queda. E hoje ele TOCOU O PISO DA SÉRIE dentro do próprio dia: a coleta das 11:30 UTC gravou 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a captura travada e registra o piso intradiário em vez de escolher um dos dois. O que fica é que ele cede no book de vencedor pelo quarto pregão enquanto sobe no de terceiro colocado, e a urna não acompanha nenhum dos dois movimentos."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), Poly presidencial 0,30% (alta 0,05pp, vol USD 6,63M) | 2º lugar do 1º turno 1,05% | não testado pela Vox Brasil em nenhum cenário, porque disputa o governo de São Paulo",
+        "fortes": "SOBE 0,05pp no contrato de vencedor, para 0,30%, e mantém 1,05% no book de 2º lugar do 1º turno. O volume acumulado dele, USD 6,63M, é maior que o de vários nomes com preço acima do dele.",
+        "fracos": "A Vox Brasil não o testa em nenhum cenário, nem de 1º turno nem de returno, e nenhuma nacional foi publicada desde então, então ele segue sem urna nova. O agravante de leitura permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece nas pesquisas é hipótese e não candidatura em curso. Num preço de 0,30%, uma alta de 0,05pp tem valor informativo quase nulo, e o volume alto mede história negociada, não convicção atual."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), Poly presidencial 0,25% (queda 0,10pp, vol USD 4,64M) | 3º lugar do 1º turno 4,60% (estável) | Vox Brasil 31/Jul: 1T 3,2% | oficializado pelo Novo em 27/Jul, ainda SEM vice, prazo até 05/Ago",
+        "fortes": "Na urna ele fica estável: os 3,2% da Vox de 31/Jul são praticamente os mesmos 3% da PoderData de 30/Jul e ficam acima dos 2,8% da AtlasIntel de 29/Jul. Fica ESTÁVEL em 4,60% no book de 3º lugar do 1º turno, à frente de todo o pelotão exceto Caiado.",
+        "fracos": "CAI 0,10pp no contrato de vencedor, para 0,25%. Segue SEM vice, com o prazo de 05/Ago a três dias, depois de o Novo descartar Barbosa para a vaga e de Marcelo Aro deixar a chapa dele ao Senado, movimento que Zema chamou publicamente de traição. Ressalva de série, e ela é grande: o máximo dele é 10,10%, de 26/Abr, então 0,25% é menos de um quarentavo daquele nível e movimentos nessa faixa têm valor informativo quase nulo. Ressalva de coleta, e ela é do painel e não do mercado: a série do AFOS para esse nome NÃO tem ponto depois de 30/Jul, então o preço de hoje entra pela captura travada e sem comparação com fechamento de série."
+      },
+      "analise": "O pelotão se DIVIDIU, e essa é a diferença em relação a ontem, quando encolheu inteiro. CAMILO SANTANA subiu 0,20pp, para 0,65% (vol USD 4,27M), JAIR BOLSONARO subiu 0,10pp, para 0,65%, e HADDAD subiu 0,05pp, para 0,30%. Do outro lado, CAIADO caiu 0,20pp, para 1,15% (vol USD 5,27M), no quarto pregão seguido de queda, ZEMA caiu 0,10pp, para 0,25%, e MICHELLE e TEREZA CRISTINA caíram 0,10pp cada, as duas para 0,15%. ALCKMIN ficou estável em 0,35%. O registro de série do dia é do Caiado: ele TOCOU O PISO dentro do próprio 02/Ago, com a coleta das 11:30 UTC gravando 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, enquanto a captura travada das 19:42 UTC traz 1,15%. O painel publica a captura travada e registra o piso intradiário. Sobre CAMILO SANTANA cabe uma ressalva de coleta que muda o que se pode afirmar: a série do AFOS NÃO tem ponto de 01/Ago para esse nome, então o painel não repete a frase de mínimo de série que publicou ontem. O mesmo vale para ZEMA, cuja série não tem ponto depois de 30/Jul. Tarcísio de Freitas segue em 0,05% no contrato presidencial, com USD 13,70M de volume acumulado, o maior do book. O painel registra o nível e não afirma que é o menor dele: a série do AFOS tem apenas três dias para esse nome, entre 28/Abr e 14/Mai, e não sustenta superlativo.",
+      "fortes": [
+        "Caiado segue com a melhor urna nacional do recorte, os 5,5% da Vox Brasil de 31/Jul, acima dos 5% da PoderData e dos 3,1% da AtlasIntel.",
+        "Caiado SOBE 2,00pp no book de 3º colocado do 1º turno, para 24,50%, recuperando a queda da véspera e mantendo o segundo lugar ali.",
+        "Camilo Santana subiu 0,20pp, para 0,65%, e Jair Bolsonaro subiu 0,10pp, para 0,65%, no dia da convenção nacional do PT.",
+        "Zema fica ESTÁVEL em 4,60% no book de 3º lugar do 1º turno, à frente de todo o pelotão exceto Caiado."
+      ],
+      "fracos": [
+        "Caiado CAIU 0,20pp no vencedor, para 1,15%, no quarto pregão seguido de queda, e tocou 0,90% na coleta das 11:30 UTC, que iguala o piso da série.",
+        "Nenhum nome do pelotão passa de 1,15% no contrato presidencial, contra 65,50% do favorito.",
+        "Zema caiu 0,10pp, para 0,25%, e segue SEM vice, com o prazo de 05/Ago a três dias, depois de o Novo descartar Barbosa para a vaga.",
+        "Michelle Bolsonaro e Tereza Cristina caíram 0,10pp cada, as duas para 0,15%.",
+        "A série do AFOS não tem ponto de 01/Ago para Camilo Santana nem ponto depois de 30/Jul para Zema, o que impede afirmar superlativo sobre os dois."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "SEM URNA NOVA. A última nacional segue sendo a Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, 95% de confiança, BR-01084/2026), com 40,5% no 1º turno e 47,5% x 41,1% no returno. A varredura do TSE de hoje não inseriu nenhum registro novo, e quatro nacionais estão em campo, com publicação declarada entre 03 e 05/Ago.",
+      "m": "65,50% (vol USD 7,90M acumulado)",
+      "t": "ESTÁVEL em 65,50%. O gap sobre Flávio ABRIU para +40,95pp, mas abriu por queda do adversário. O preço está 1,00pp abaixo do topo da série, que é 66,50%, do fechamento de 01/Ago.",
+      "s": "63 dias da eleição. O PT oficializou a candidatura dele em convenção nacional em São Paulo, com Alckmin de vice e sete partidos na aliança. O painel registra a coincidência de datas com o preço parado e não atribui causa. Polymarket ao vivo 02/Ago 19:42 UTC.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "Vox Brasil de 31/Jul: 31,2% no 1º turno e 41,1% no returno contra 47,5% de Lula. A diferença de 6,4pp no returno fica fora da margem somada, então esta leitura NÃO descreve empate técnico. Sem urna nacional nova desde então.",
+      "m": "24,55% (vol USD 7,82M acumulado)",
+      "t": "CAI 0,20pp, para 24,55%, interrompendo seis pregões sem queda, e é essa queda que ABRE o gap para +40,95pp. SOBE 1,00pp no 2º lugar do 1º turno, para 80,50%, e fica em 4,90% no 3º lugar.",
+      "s": "Cair no vencedor e subir na chance de returno no mesmo pregão é o registro do dia, e o painel não escolhe entre os dois. No arranjo político, segue sem vice a três dias do prazo, e a convenção do Republicanos que decide aliança presidencial é em 04/Ago.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "A Vox de 31/Jul deu 3,0% e fechou a sequência: TRÊS institutos seguidos o cortaram, de 7,8% na AtlasIntel de 29/Jul para 4% na PoderData de 30/Jul e 3,0% agora. Sem urna nova desde então. Com o preço em 7,95%, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp, e abriu pelo lado do preço.",
+      "m": "7,95% (vol USD 8,82M acumulado)",
+      "t": "SOBE 0,35pp, para 7,95%, INTERROMPENDO nove rodadas de queda. Sobe 0,20pp no 2º lugar do 1º turno, para 8,75%, e 2,00pp no 3º lugar, para 63,50%.",
+      "s": "É o movimento do dia, e veio no mesmo domingo em que o Missão oficializou a candidatura dele. A virada não desfaz o arco: saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago. Não é mínimo de série, que é 5,30%, de 26/Abr.",
+      "pc": "#F59E0B",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "A Vox de 31/Jul deu 5,5%, a melhor urna nacional dele no recorte, acima dos 5% da PoderData e bem acima dos 3,1% da AtlasIntel. Sem urna nova desde então, e a divergência entre institutos sobre ele segue aberta em quatro níveis dentro do mesmo mês.",
+      "m": "1,15% (vol USD 5,27M)",
+      "t": "CAI 0,20pp no vencedor, para 1,15%, no quarto pregão seguido de queda, e SOBE 2,00pp no book de 3º lugar, para 24,50%, recuperando a queda da véspera.",
+      "s": "TOCOU O PISO DA SÉRIE dentro do próprio dia: a coleta das 11:30 UTC gravou 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a travada e registra o piso intradiário.",
+      "pc": "#16A34A",
+      "mc": ""
+    },
+    {
+      "n": "Romeu Zema (Novo)",
+      "p": "Vox Brasil de 31/Jul: 3,2% no 1º turno, praticamente o mesmo dos 3% da PoderData e acima dos 2,8% da AtlasIntel. Sem urna nova desde então.",
+      "m": "0,25% (vol USD 4,64M)",
+      "t": "CAI 0,10pp, para 0,25%, e fica ESTÁVEL em 4,60% no book de 3º lugar do 1º turno.",
+      "s": "Ressalva de série, e ela é grande: o máximo dele é 10,10%, de 26/Abr, então movimentos nesta faixa têm valor informativo quase nulo. Ressalva de coleta: a série do AFOS não tem ponto depois de 30/Jul para esse nome. Segue sem vice, com prazo em 05/Ago.",
+      "pc": "#0EA5E9",
+      "mc": ""
+    },
+    {
+      "n": "STF impeachment",
+      "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
+      "m": "3,10% (vol USD 83 mil)",
+      "t": "ESTÁVEL em 3,10% pelo quarto pregão, sem variação nas duas leituras da trava de hoje.",
+      "s": "Quarto pregão seguido no mesmo valor. O eixo judicial produziu fato no período, com dois inquéritos sobre Lulinha e atrito aberto entre o relator e a Polícia Federal, mas nenhum deles mira integrante da Corte, que é o objeto deste contrato. Com USD 83 mil contra USD 118,11M do presidencial, preço parado diante de fato que não toca o objeto é o esperado.",
+      "pc": "#64748B",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "O CRUZAMENTO DE 02/AGO tem um eixo claro e ele é de MECANISMO, não de direção. Lula ficou ESTÁVEL em 65,50% (vol USD 7,90M) e o gap sobre Flávio ABRIU para +40,95pp, contra +40,75pp na captura publicada ontem, mas abriu porque FLÁVIO CAIU 0,20pp, indo a 24,55% (vol USD 7,82M) e interrompendo seis pregões sem queda. Nos dois pregões anteriores o gap abria com o adversário subindo junto, o que descrevia demanda pelo favorito; hoje ele abre com o adversário cedendo, o que é outra coisa. O TOPO DA SÉRIE FICOU PARA TRÁS, e a janela precisa ser dita inteira: o máximo de Lula é 66,50% e o do gap é +41,80pp, ambos do FECHAMENTO de 01/Ago, e ambos acima do que este painel publica hoje. A série do AFOS cobre de 14/Abr a hoje, 108 dias, e foi conferida direto no banco, sem o limite de 90 dias da API. RENAN SANTOS é o movimento do dia: SUBIU 0,35pp e foi a 7,95% (vol USD 8,82M), INTERROMPENDO uma sequência de queda que durava nove rodadas, no mesmo domingo em que o Missão oficializou a candidatura dele em São Paulo. O painel registra a coincidência de datas e não afirma causa. A alta foi geral nos três books dele: 0,20pp no 2º lugar do 1º turno, para 8,75%, e 2,00pp no 3º lugar, para 63,50%, onde é favorito isolado. A VIRADA NÃO DESFAZ O ARCO: ele saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago, e não é mínimo de série, porque o mínimo é 5,30%, de 26/Abr, e o máximo é 17,90%, de 09/Jun. Com o preço subindo e a urna parada em 3,0%, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp, e abriu pelo lado do preço, do mesmo jeito que havia fechado. O PELOTÃO SE DIVIDIU, e é a diferença em relação a ontem, quando encolheu inteiro. Camilo Santana subiu 0,20pp, para 0,65% (vol USD 4,27M), Jair Bolsonaro subiu 0,10pp, para 0,65%, e Haddad subiu 0,05pp, para 0,30% (vol USD 6,63M). Caiado caiu 0,20pp, para 1,15% (vol USD 5,27M), no quarto pregão seguido de queda, Zema caiu 0,10pp, para 0,25%, e Michelle e Tereza Cristina caíram 0,10pp cada, as duas para 0,15%. Alckmin ficou estável em 0,35%. CAIADO TOCOU O PISO DA SÉRIE DENTRO DO PRÓPRIO DIA: a coleta das 11:30 UTC gravou 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a captura travada e registra o piso intradiário em vez de escolher um dos dois. DUAS RESSALVAS DE COLETA mudam o que se pode afirmar hoje, e elas são do painel e não do mercado: a série do AFOS NÃO tem ponto de 01/Ago para Camilo Santana, e NÃO tem ponto depois de 30/Jul para Zema. Por isso o painel não repete sobre Camilo a frase de mínimo de série que publicou ontem. Tarcísio de Freitas segue em 0,05% no contrato presidencial, com USD 13,70M de volume acumulado, o maior do book, e a série de três dias que ele tem não sustenta superlativo. O DIA POLÍTICO FOI DE CONVENÇÃO NACIONAL DOS DOIS LADOS. O PT oficializou Lula com Alckmin em São Paulo, reunindo sete partidos, na oitava candidatura dele à Presidência e na busca do quarto mandato; ele disse que não quer ser presidente do Bolsa Família e prometeu disputar emendas com o Congresso, e Tebet chamou Flávio de golpista do palanque. O Missão oficializou Renan Santos, também em São Paulo, e ele atacou Lula e Flávio, chamou Moro de vassalo e prometeu matar quem roubar. Flávio Bolsonaro esteve na convenção do PL em Santa Catarina, onde ele e Carlos Bolsonaro criticaram o STF, e usou um novo vídeo com Jair depois de ser questionado por Moraes sobre o anterior, gerado por inteligência artificial. LULA E FLÁVIO PEDIRAM VOTO ANTES DO PRAZO LEGAL, que só abre em 16/Ago, e o registro é dos dois, não de um. O saldo do ciclo de convenções é registrado pelo Valor Econômico: os dois principais chegaram à reta final sem ampliar alianças, com o Centrão ainda neutro. Flávio e Zema seguem SEM vice a três dias do prazo de 05/Ago, e a convenção nacional do Republicanos, que decide aliança presidencial, é em 04/Ago. NO EIXO JUDICIAL, o fato do período é de atrito institucional: os dois inquéritos sobre Lulinha, autorizados por André Mendonça em 30 e 31/Jul, elevaram a tensão entre o relator e a Polícia Federal, o advogado de Fábio Luís Lula da Silva acusa setores da PF de tentar interferir na eleição de 2026, e Roberta Luchsinger pediu apuração de suposto vazamento de conversas. Nada disso é condenação e o painel não trata como tal. NO CASO MASTER, a Polícia Federal aponta interesse de Daniel Vorcaro em emendas apresentadas no Senado, num projeto que regulamentava o mercado de carbono, e o PT admitiu que o acordo para deixar o caso fora da eleição na Bahia RUIU: na convenção estadual de 01/Ago, Lula pediu voto para Jaques Wagner, chamou o aliado de líder do governo e disse que o Senado está num baixo nível, enquanto Geraldo Júnior foi o único a não citar Wagner no discurso. A representação do Novo contra o senador segue no Conselho de Ética. NA URNA, nada se moveu e agora há data para se mover: a última nacional segue sendo a Vox Brasil de 31/Jul, a varredura do TSE de hoje leu 538 registros e não inseriu NENHUM novo, e QUATRO nacionais estão com campo aberto, duas da Nexus, uma da Quaest e uma da Ideia/Canal Meio, com publicação declarada entre 03 e 05/Ago. Data declarada no registro não é publicação, e o painel vai conferir uma a uma. As pesquisas do dia são estaduais e por isso não entram aqui: a Datafolha de Pernambuco dá Lula 57% x Flávio 22% no estado, e a Genial/Quaest mostra Lula à frente em quatro estados e Flávio em um. NOS DEMAIS MERCADOS, o impeachment de ministro do STF ficou ESTÁVEL em 3,10% (vol USD 83 mil) pelo quarto pregão. No Senado, o PL ficou ESTÁVEL em 72,50% (vol USD 259 mil) e o MDB CAIU 2,60pp, para 18,75%, num book de USD 8 mil que não sustenta leitura. Na inflação, a faixa modal segue em 5,00% a 5,49%, que caiu 3,45pp e foi a 34,75%, e a de 4,50% a 4,99% caiu 7,00pp, para 27,00%; as dez faixas somam 94,15%, abaixo do piso de 95% que o AFOS usa para tratar distribuição como probabilidade legível, então os níveis entram como registro de coleta e não como leitura de expectativa. A trava de dupla leitura APROVOU a rodada sem nenhum motivo de bloqueio, com as duas leituras dentro de 0,20pp em todos os books vigiados. Todos os preços entram firmes, sem faixa declarada. Captura ao vivo 02/Ago 19:42 UTC. Volume total acumulado no presidencial em USD 118,11M."
+}
