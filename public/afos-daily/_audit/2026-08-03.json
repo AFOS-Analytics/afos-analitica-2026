@@ -1,0 +1,73 @@
+{
+  "date": "2026-08-03",
+  "factCheckGate": {
+    "eventosAltoImpacto": 4,
+    "itens": [
+      {
+        "evento": "BTG/Nexus publica a 8a rodada: gap do 1o turno cai de 9pp para 4pp",
+        "crossRef": "\"Nexus\" aparece em 2026-07-27 nas ultimas 7 dailies",
+        "classificacao": "continuidade de serie, rodada nova",
+        "fetchUrl": "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-3-de-agosto-de-2026/",
+        "dataEvento": "2026-08-03",
+        "tipo": "evento",
+        "segundaFonte": "Money Times, CNN Brasil, UOL Noticias (grupos independentes)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "PF pede ao STF abertura de 3o inquerito contra Lulinha por trafico de influencia",
+        "crossRef": "\"Lulinha\" aparece em 2026-07-31",
+        "classificacao": "novidade, o inquerito e novo",
+        "fetchUrl": "https://www1.folha.uol.com.br/poder/2026/08/pf-pede-ao-stf-abertura-de-3o-inquerito-contra-lulinha-sob-suspeita-de-trafico-de-influencia.shtml",
+        "dataEvento": "2026-08-03",
+        "tipo": "evento",
+        "segundaFonte": "Metropoles, CNN Brasil, Correio Braziliense, ndmais",
+        "decisao": "incorporar",
+        "ressalva": "valor dos contratos NAO incorporado: fontes divergem entre R$ 55,7M e R$ 85,7M"
+      },
+      {
+        "evento": "Caiado e Zema oficializados em convencao; Caiado promete anistia",
+        "crossRef": "\"anistia\" NAO aparece nas 7 dailies; \"Caiado\" e \"Zema\" sao continuidade",
+        "classificacao": "novidade",
+        "fetchUrl": "G1, integra dos dois discursos",
+        "dataEvento": "2026-08-03",
+        "tipo": "evento",
+        "segundaFonte": "Valor Economico",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "PF adia depoimento de Augusto Lima, ex-socio de Vorcaro",
+        "crossRef": "\"Vorcaro\" aparece desde 2026-07-27",
+        "classificacao": "continuidade",
+        "fetchUrl": "https://g1.globo.com/politica/noticia/2026/08/03/pf-adia-depoimento-de-ex-socio-de-vorcaro-augusto-lima.ghtml",
+        "dataEvento": "2026-08-03",
+        "tipo": "evento",
+        "segundaFonte": "nao verificado",
+        "decisao": "incorporar atribuido ao G1, sem peso de virada"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": [
+      "adiamento do depoimento do ex-socio de Vorcaro (so G1)",
+      "derrota da familia de Moraes em acao judicial (so VEJA)"
+    ],
+    "numericalErrors": "reconcile-claims.ts OK, todos os claims batem com o JSON, tolerancia +-0.05pp",
+    "fontesInventadas": "conferidos 3 ao acaso (Poder360, Valor, VEJA): os 3 tem materia no news-cache de 2026-08-03 com pubDate do dia",
+    "quotesLiterais": "uma, o 'sabor agro' de Caiado, citacao do Valor Economico, entre aspas e com link",
+    "causacaoEspuria": "nenhuma. O preco de Flavio subiu ANTES da publicacao da Nexus, entao o texto registra coincidencia de DIRECAO e nao reacao a pesquisa",
+    "verbosCriticos": "\"preso\" nao aparece. \"pediu inquerito\" mantido distinto de \"abriu inquerito\": quem abre e o STF, e ainda nao abriu",
+    "correcoesAplicadas": [
+      "Renan descrito como tendo 'um oitavo do preco' de Lula; a razao real e 8,79. Trocado por 'cujo preco e quase nove vezes o dele'",
+      "Relato de falha da trava de captura REMOVIDO do texto de leitor por decisao do Andre: lede, Secao 1 e Em sintese. A descricao do metodo fica, o relato de falha sai"
+    ],
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "validateAfosDaily": "sem violacao",
+    "reconcileClaims": "OK",
+    "gateNumericoTriLocale": "83 numeros, 51 valores distintos, multiconjunto identico nos 3 idiomas",
+    "cincoChecagens": "5/5 limpas nos 3 idiomas (ancora de glossario, locale cruzado, homoglifo cirilico, separador decimal, tldr com 3 bullets)",
+    "palavras": { "pt-BR": 854, "en": 852, "es": 898, "teto": 900 },
+    "proporcaoFontes": "8 secundarias contra 4 ancora, 67% de acesso aberto"
+  }
+}
