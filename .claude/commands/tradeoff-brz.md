@@ -123,7 +123,16 @@ No final do `body` markdown, ANTES do footer de sources, sempre incluir bloco ca
 - **Datas explícitas** — "17/Mai noite" não "ontem"
 - **Variações ↑↓pp sempre citadas** com janela temporal (em 20h, em semana, em 72h)
 - **Anti-AI tells:** evitar travessão como separador, evitar parallel structure forçado, evitar adjetivos partidários, evitar bold markdown dentro de JSON quando aplicável
-- **Densidade alvo:** 1500-2500 palavras corpo + 3 summary cards + 1 indicator grid + 1 liquidez block + 1 calendar table
+- **Densidade alvo:** **2.500 a 3.000 palavras de corpo, com 3.000 de TETO**, mais 3 summary cards + 1 indicator grid (7-9 linhas) + 1 liquidez block + 1 calendar table.
+
+  ⚠️ **A régua anterior dizia 1.500-2.500 e não valia há cinco edições.** Medido em 02/Ago/2026: №6 2.385 · №7 2.507 · №8 3.002 · №9 3.150 · №10 3.515 · №11 3.179. O André decidiu em 02/Ago voltar ao patamar da №8/№9 e **parar a escalada**, e a régua acima é essa decisão. Se uma edição passar de 3.000, cortar antes de publicar.
+
+  **O corte sai da REPETIÇÃO ENTRE SEÇÕES, não do fato.** As 9 seções obrigatórias fazem a mesma história aparecer até cinco vezes (lede, exec summary, card, linha da grade, watch list). Na №11 saíram 691 palavras e nenhum número. Ordem de corte: watch list (recapitula) → exec summary (repete a lede, régua de ~150 palavras) → leituras da grade e do calendário → rodapés do anti-média e da liquidez. **Nunca cortar ressalva de tamanho de book, superlativo com janela declarada, nem registro de erro de edição anterior.**
+
+  **Como medir** (conta só os campos de texto do frontmatter, sem URLs):
+  ```bash
+  node -e "const m=require('gray-matter'),f=require('fs');const d=m(f.readFileSync('public/afos-tradeoff/DATA.md','utf8')).data;const t=[];const go=v=>{if(typeof v==='string')t.push(v);else if(Array.isArray(v))v.forEach(go);else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(!['contractLink','printLink','link','totalLink','deltaDirection','locale','status','unit'].includes(k))go(x)})};go(d);console.log(t.join(' ').replace(/https?:\/\/\S+/g,'').replace(/[*\[\]()#]/g,' ').split(/\s+/).filter(Boolean).length)"
+  ```
 
 ## ETAPA 4: Preview Vercel (SEM prod)
 
@@ -150,7 +159,12 @@ NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explíc
 
 **Convenções e gate, iguais aos da daily** (`.claude/commands/afos-daily.md`, ETAPA 3.7):
 - Ler o pt-BR INTEIRO antes de traduzir, e as três versões inteiras antes de dar por pronto. Varredura automática não basta.
-- **EN** usa ponto decimal e vírgula de milhar; **ES** mantém vírgula decimal e ponto de milhar. Conferir também colunas de tabela, que já esconderam separador errado.
+- 🔢 **DECIMAL: o Tradeoff usa PONTO nos TRÊS idiomas, inclusive no pt-BR e no ES.** Não é a regra da daily. Medido em 02/Ago/2026 sobre as edições №8, №9 e №10: **zero vírgula decimal em pt-BR e em ES**, 102 valores com ponto em cada idioma da №10. O que muda entre idiomas é só o **separador de MILHAR**: EN vírgula (`n=2,004`, `USD 7,913,520`), pt-BR e ES ponto (`n=2.004`, `USD 7.913.520`).
+  ⚠️ **A armadilha:** `polls-data.json` guarda os números em formato brasileiro (`44,9`, `7,8%`, `2,15pp`). Copiar de lá direto para o pt-BR mistura as duas convenções dentro do MESMO arquivo. Aconteceu na №11 e foram 27 vírgulas para converter. Normalizar o pt-BR ANTES de traduzir:
+  ```bash
+  node -e "const f=require('fs'),p='public/afos-tradeoff/DATA.md';let t=f.readFileSync(p,'utf8');console.log('convertendo',(t.match(/[0-9],[0-9]/g)||[]).length);f.writeFileSync(p,t.replace(/([0-9]),([0-9])/g,'\$1.\$2'),'utf8')"
+  ```
+  Conferir depois que nenhum separador de milhar virou decimal (`grep -o "n=[0-9.]*\|USD [0-9][0-9.]*"`). Conferir também colunas de tabela, que já esconderam separador errado.
 - URLs, protocolos TSE e slugs de mercado não mudam entre idiomas.
 - **Gate numérico obrigatório:** todo número seguido de unidade (`%`, `pp`, `M`, `mil`/`thousand`) tem que dar multiconjunto idêntico nos três idiomas, normalizado pela convenção de cada um. Divergiu, corrigir antes de publicar.
 - Conferir também: nenhuma âncora de glossário inexistente, nenhum link apontando para outro locale, nenhum homóglifo cirílico.
