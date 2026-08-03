@@ -56,6 +56,18 @@ type UpsertOpts = {
    * não criar registro novo quando a rodada cruza a virada do dia UTC.
    */
   slugIsoDate?: string
+  /**
+   * Título pronto, que substitui o do `buildTitle`.
+   *
+   * Mesma razão do `slugIsoDate`: no Tradeoff a data da edição e a da captura
+   * são dias diferentes, e o título montado a partir de `updatedAt` sozinho não
+   * diz DE QUE a data é. O campo não é lido por nenhuma tela, mas vai para o
+   * backup público do Neon, então quem audita o arquivo lê esse rótulo.
+   *
+   * Os outros tipos NÃO devem passar: para eles captura e produto são o mesmo
+   * dia e o `buildTitle` já está certo.
+   */
+  titleOverride?: string
 }
 
 export async function upsertAnalysisReport(
@@ -69,7 +81,7 @@ export async function upsertAnalysisReport(
     ? `${type}-${iso[3]}-${iso[2]}-${iso[1]}`
     : `${type}-${deriveDateSlug(data, opts.fallbackIsoDate)}`
   const updatedAtLabel = (data.updatedAt as string) || new Date().toISOString()
-  const title = buildTitle(type, updatedAtLabel)
+  const title = opts.titleOverride ?? buildTitle(type, updatedAtLabel)
   const executiveSummary = truncate(buildSummary(type, data))
   const bodyMarkdown = JSON.stringify(data)
   const publishedAt = opts.publishedAt ?? new Date()

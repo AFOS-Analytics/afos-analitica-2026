@@ -18,6 +18,23 @@ function str(v: unknown, fallback = ''): string {
   return typeof v === 'string' ? v : fallback
 }
 
+/**
+ * Título do snapshot, com as DUAS datas rotuladas.
+ *
+ * "AFOS Tradeoff №11 · edição 03/08/2026 · captura 02/08/2026, 19:47"
+ *
+ * O rótulo existe porque as duas datas diferem por desenho e o formato antigo
+ * ("AFOS Tradeoff — 02/08/2026, 19:47") mostrava só a captura, sem dizer que
+ * era captura, o que lia como se a edição fosse de 02/08.
+ */
+export function buildTradeoffTitle(fm: Record<string, unknown>, dateIso: string): string {
+  const [y, m, d] = dateIso.split('-')
+  const edicao = y && m && d ? `${d}/${m}/${y}` : dateIso
+  const n = typeof fm.issueNumber === 'number' ? `№${fm.issueNumber} · ` : ''
+  const captura = str(fm.updatedAt)
+  return `AFOS Tradeoff ${n}edição ${edicao}${captura ? ` · captura ${captura}` : ''}`
+}
+
 async function persistOne(prisma: PrismaClient, filePath: string, dateIso: string) {
   const raw = readFileSync(filePath, 'utf-8')
   const { fm, body } = parseFrontmatter(raw)
@@ -47,6 +64,7 @@ async function persistOne(prisma: PrismaClient, filePath: string, dateIso: strin
     createdBy: 'afos-tradeoff',
     fallbackIsoDate: dateIso,
     slugIsoDate: dateIso,
+    titleOverride: buildTradeoffTitle(fm, dateIso),
   })
 
   return { slug: result.slug, id: result.id }
@@ -86,4 +104,12 @@ async function main() {
   await prisma.$disconnect()
 }
 
-main().catch((e) => { console.error(e); process.exit(1) })
+// ⚠️ NÃO chamar main() no topo sem guarda. Este módulo exporta
+// `buildTradeoffTitle`, e em 02/Ago/2026 um script de ENSAIO importou essa
+// função só para comparar títulos: o import executou o main() e a rodada de
+// conferência GRAVOU no Neon. Ensaio que escreve não é ensaio. Com a guarda,
+// importar o módulo é livre de efeito e só a execução direta persiste.
+const executadoDireto = /persist-afos-tradeoff\.ts$/.test(process.argv[1] ?? '')
+if (executadoDireto) {
+  main().catch((e) => { console.error(e); process.exit(1) })
+}
