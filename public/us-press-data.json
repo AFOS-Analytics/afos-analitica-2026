@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-03",
-  "fetchedAt": "2026-08-03T04:02:37.897Z",
+  "fetchedAt": "2026-08-03T06:10:35.629Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -17,15 +17,18 @@
     },
     {
       "casa": "The New York Times",
-      "tipo": "jornal"
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
     },
     {
       "casa": "The Washington Post",
-      "tipo": "jornal"
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
     },
     {
       "casa": "The Wall Street Journal",
-      "tipo": "jornal"
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
     },
     {
       "casa": "USA TODAY",
@@ -33,43 +36,53 @@
     },
     {
       "casa": "Politico",
-      "tipo": "especializada"
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
     },
     {
       "casa": "The Hill",
-      "tipo": "especializada"
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
     },
     {
       "casa": "Roll Call",
-      "tipo": "especializada"
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
     },
     {
       "casa": "Axios",
-      "tipo": "especializada"
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
     },
     {
       "casa": "NPR",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
     },
     {
       "casa": "ABC News",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
     },
     {
       "casa": "CBS News",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
     },
     {
       "casa": "NBC News",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
     },
     {
       "casa": "CNN",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
     },
     {
       "casa": "Fox News",
-      "tipo": "tv/rádio"
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
     },
     {
       "casa": "Washington Examiner",
@@ -77,11 +90,13 @@
     },
     {
       "casa": "National Review",
-      "tipo": "opinião"
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
     },
     {
       "casa": "The Guardian",
-      "tipo": "opinião"
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
     },
     {
       "casa": "The Cook Political Report",
@@ -93,85 +108,99 @@
     }
   ],
   "qualidade": {
-    "lidos": 145,
-    "naLista": 40,
-    "foraDaLista": 105,
+    "lidos": 158,
+    "naLista": 50,
+    "foraDaLista": 108,
     "publicados": 10,
     "descartadosPorAcompanhamento": 14,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
-    "consultasComFalha": []
+    "consultasComFalha": [],
+    "feedsProprios": 15,
+    "lidosEmFeedProprio": 14,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4
   },
   "itens": [
     {
-      "titulo": "Ohio Senator Calls Former Son-in-Law Accused of Abuse Unfit for Office",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcU83cVhiZUJXNktaYjlxMU5maGMtUjZyS2N3a25Ud2hMN2xoemdiVzZkWHNGTTk0Ulh6NEdRQmRTNmhjM3BrcXd1X1pqXzhHOUFuOGl1TG1Dd1kxenJHaVZwcXA4b0NTRlppR0hkak1aeEQyUHlEc09Jb3hLal8zVUpoYWx3aWFVdl8xTlhnUjhOQm9EM2JUd3dMNA?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-02T23:55:48.000Z",
-      "consulta": "midterms"
+      "titulo": "Maryland lawmakers to consider steps toward partisan redistricting for 2028",
+      "url": "https://abcnews.com/Politics/wireStory/maryland-lawmakers-steps-partisan-redistricting-2028-135316749",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-03T06:02:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
     },
     {
-      "titulo": "Bernie Sanders says he’s confident socialists can win in purple states",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcGV0SkpvcVU4MTlQcURMYmE1eThxLV8ydzZSM3JLN3pWSmJEWC1WMkRkd0Z2MHJZWmlsVDVRa2tvT0Nzbm0yMllDNk5kckhHUWpJYlBPWk1PYnJRM1BPb2d4U0xwT0ZWQlhKUEF1YndzY2F3MEtrU1hMWExpNllPSU55NEFVWUNnTldZU2thcEJNdnBrVmk3REZZekpWajlBVEtnaWFGSDcybk1xX25tejVjMWxwdkQzUkE3eXBNTWlTMzA?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-02T22:50:00.000Z",
-      "consulta": "midterms"
+      "titulo": "Kay Granger, first GOP woman from Texas to win House seat, dies at 83",
+      "url": "https://www.washingtonpost.com/obituaries/2026/08/02/kay-granger-first-gop-woman-texas-win-house-seat-dies-83/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-03T02:48:04.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Senate leaders reach funding deal to avoid shutdown during campaign season",
+      "url": "https://abcnews.com/Politics/wireStory/senate-leaders-reach-funding-deal-avoid-shutdown-campaign-135312105",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-02T23:30:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
     },
     {
       "titulo": "Senate finalizes funding patch that would block Trump’s grant overhaul",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUEhDZnBsakhWbWJRZnhqZXVEQmg1aHNiMlpLTDkzSlljVEZaU1hzcG1jVTNwMC0zWFlWSHdfZ2U5akx1SjkxRWRXT0dfWWRINVlUY3VqXzkxcGVINFdUcVRVc3pkN25UNUVFTkhBTzFOYXJFclpYUVFCNEdXMUl3WTlfWlpRcWVIOURrdEc2WkI0UkpOSzdRaXFEUmZFcFBJT2JXdFRGSHlrSzIybXdWb3dRTnVPWnhRVEdr?oc=5",
       "casa": "Politico",
       "publicadoEm": "2026-08-02T20:00:00.000Z",
-      "consulta": "midterms"
+      "consulta": "midterms",
+      "origem": "google"
+    },
+    {
+      "titulo": "Entire Squad endorses Abdul El-Sayed days before Michigan Democratic Senate primary",
+      "url": "https://www.foxnews.com/politics/squad-endorses-abdul-el-sayed-days-before-michigan-democratic-senate-primary",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-02T18:41:15.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
     },
     {
       "titulo": "Democrats’ path to win the Senate runs through the Midwest",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMFZyMGVKbFJJRHBrMUNvLTdHc3VPblRyVXpQdUU1WjBVV3JXMEVqekNyX2NoUXJ4MGViM2hrd3M4TE43cmFQeVByU0J3U3RKUVhXS3lOd3RISzZhZGhURFpxOW5aZ0NYdDUzZGdZVWRMbzRPa0xHQXNPYWRYVFhJSGNMa3F4RC1GZUE?oc=5",
       "casa": "Politico",
       "publicadoEm": "2026-08-02T18:00:00.000Z",
-      "consulta": "senate-races"
+      "consulta": "senate-races",
+      "origem": "google"
     },
     {
       "titulo": "Opinion | Closing arguments in Michigan’s much-watched Democratic Senate primary",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPck9kMjFrN3ozS01ReXN3eXdBVGZiNEZmcmw1QnZqUklITENJbDQ5ZzRLcW9ZYnhjQUlTZWhHNE5rQUFoQmZneHI0TGM3c1I2S01xSzFqYlFEOE1PRjVjd3BidW5hZDJyMTJadEZ0Mjc5NHVlcEhreVBjMENnV3o4NzNpYzJsQ2hrN3B6NUQ3akZMNVJYYjBrYXJHSDVUV3FmNlBnUWVET05DQ0Y5b1gyUw?oc=5",
       "casa": "The Washington Post",
       "publicadoEm": "2026-08-02T17:45:00.000Z",
-      "consulta": "senate-races"
+      "consulta": "senate-races",
+      "origem": "google"
     },
     {
-      "titulo": "A democratic socialist in the White House? Activists are thinking big.",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPa1N0UjdPWXZSRDFLVFRHZFZzRjFPbnhyZC02OTBfSmR5SlktQVZBMk5IRTJFcWRLbUVXYTdpU0tPNHZzT25KZ1RfQUJhcW8yRHZrYkd4NHZpVFlsalhwR3BNdkVqMEFXZmJEeGUxaThuZTVMbWdxYV9TZExIQld1NFVQSGh6SnJIaUF3Y28wYVNicnlFYXRFQlc5TTA4WllKUW1Pam5rTWVLWmhna1Nuag?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-02T17:00:01.000Z",
-      "consulta": "midterms"
-    },
-    {
-      "titulo": "‘We are knifing each other’: Trump’s showdown with Senate GOP leader splinters unity ahead of midterms",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1CcGk1Y1V0d1lQSk1Xckl0bmRvNTBxX1A4SUh1RkRvN3BhY1lPb1hxbEg0elAwdjRybm1jbTVxUXFKV2hwTm93bzI2NUNDLVFRWTQ2YU9RdUpRZFE1REd1b0p4VVFkUm9FR2t4Y3VZcWduZw?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-08-02T10:30:26.000Z",
-      "consulta": "midterms"
-    },
-    {
-      "titulo": "The fight for Michigan: How a marquee Senate primary became the Democrats’ latest proxy war",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMnQwXy1iTFBQRUxoZ1RzWlZHTFllNnQwNG5Cdy1mc3QxVGNTdHBpWXZQZEIzcGllbTlOb0RWSnBzeTN3ZGdoN1JSSGktV216TkR2T3g4MkZ4aFRidjVNMndXWThReWhRSGpwbmFua2NTUXo4OGFaLTBKUGpmRFFyQnprNW1fR0tlOGFPQjEyQ1YtQW56dHZJWGVB?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-08-02T10:30:25.000Z",
-      "consulta": "senate-races"
-    },
-    {
-      "titulo": "Democrats face most contentious – and crucial – test yet with Michigan primary",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5SZnNKS1M0VUlac29VSnA5ZVFQUGNuaGtsbGs1VXg0OXlPWEpSTlVtTkJsc29XTENNa1FfNDZwYkhqUFM1cXV1UFVqdUNqTHhLeXNRY05WSjRzb28tc0xmTWFyUGtZVTVqUWR3Y1E1MVhwS2lwbnFudS1Kck05TFk?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-02T10:01:00.000Z",
-      "consulta": "midterms"
-    },
-    {
-      "titulo": "Five Big Moments in Michigan’s Democratic Senate Primary",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaVgxTzdoeGJaZUdWV3pmTE40eUxqTHFGZ1VNeGhVemZVMzRyNmMyTlNYcDh2WDgtWm0ycWhUUURYa3JBb0F1dm9DeW9zQWZhSFZXODJjUzJwaHZwR2hhemFCYk5wVmtrVm13bUVRQ0h3M2txNTJINGhPTHpCMU9lRUJUNThXcExXNGtxM0QzR2lvQ1RoUHFrNEpLWWk2YXAyRmQyeE5n?oc=5",
+      "titulo": "Ohio Senator Calls Former Son-in-Law Accused of Abuse Unfit for Office",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcU83cVhiZUJXNktaYjlxMU5maGMtUjZyS2N3a25Ud2hMN2xoemdiVzZkWHNGTTk0Ulh6NEdRQmRTNmhjM3BrcXd1X1pqXzhHOUFuOGl1TG1Dd1kxenJHaVZwcXA4b0NTRlppR0hkak1aeEQyUHlEc09Jb3hLal8zVUpoYWx3aWFVdl8xTlhnUjhOQm9EM2JUd3dMNA?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-02T09:01:40.000Z",
-      "consulta": "senate-races"
+      "publicadoEm": "2026-08-02T16:24:07.000Z",
+      "consulta": "midterms",
+      "origem": "google"
+    },
+    {
+      "titulo": "Politics chat: Will Democrats use the war and high prices for their midterm strategy?",
+      "url": "https://www.npr.org/2026/08/02/nx-s1-5911749/politics-chat-will-democrats-use-the-war-and-high-prices-for-their-midterm-strategy",
+      "casa": "NPR",
+      "publicadoEm": "2026-08-02T12:08:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Trump demand puts vulnerable Republicans in impossible spot ahead of midterms",
+      "url": "https://www.foxnews.com/politics/trump-demand-puts-vulnerable-republicans-impossible-spot-ahead-midterms",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-02T12:00:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
     }
   ]
 }
