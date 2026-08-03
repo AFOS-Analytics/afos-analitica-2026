@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-03",
-  "fetchedAt": "2026-08-03T04:02:04.488Z",
+  "fetchedAt": "2026-08-03T17:45:42.400Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -27,11 +27,11 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-07-04",
-    "nPesquisas": 23,
+    "nPesquisas": 26,
     "nInstitutos": 23,
-    "dem": 48,
-    "rep": 42,
-    "vantagemDem": 6,
+    "dem": 47.77,
+    "rep": 42.08,
+    "vantagemDem": 5.69,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -45,14 +45,14 @@
       "HarrisX/2WAY",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
-      "Morning Consult |July 10–13, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
-      "Morning Consult |July 17–19, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" Strength In Numbers/Verasight",
-      "Morning Consult |June 29 – July 5, 2026 |24,000 (RV) |± 1.0% |46% |42% |12% |4% |- |Manhattan Institute",
+      "Manhattan Institute",
+      "Morning Consult",
       "Pew Research Center",
       "Quantus Insights (R)",
       "Quinnipiac University",
       "RMG Research",
       "Reuters/Ipsos",
+      "Strength In Numbers/Verasight",
       "The Argument/Verasight",
       "The Economist/YouGov",
       "The Washington Post/Ipsos",
@@ -60,13 +60,13 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 307,
-    "publicadas": 304,
-    "descartadasPorForma": 3,
+    "linhasLidas": 351,
+    "publicadas": 351,
+    "descartadasPorForma": 0,
     "descartadasPorValor": 0,
-    "descartadas": 3,
+    "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
-    "semFontePrimaria": 0
+    "semFontePrimaria": 2
   },
   "polls": [
     {
@@ -278,7 +278,20 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ESdiNMa.pdf#page=9"
     },
     {
-      "instituto": "Morning Consult |July 17–19, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" Strength In Numbers/Verasight",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-07-17",
+      "campoFim": "2026-07-19",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Strength In Numbers/Verasight",
       "campoInicio": "2026-07-14",
       "campoFim": "2026-07-17",
       "amostra": 1364,
@@ -291,7 +304,7 @@
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-07-21-july-strength-in-numbers-verasight-poll"
     },
     {
-      "instituto": "Morning Consult |July 17–19, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" Strength In Numbers/Verasight",
+      "instituto": "Strength In Numbers/Verasight",
       "campoInicio": "2026-07-14",
       "campoFim": "2026-07-17",
       "amostra": 1514,
@@ -330,7 +343,20 @@
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-47-percent-gop-45-dems-still-have-healthy-enthusiasm-edge"
     },
     {
-      "instituto": "Morning Consult |July 10–13, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-07-10",
+      "campoFim": "2026-07-13",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-07-10",
       "campoFim": "2026-07-13",
       "amostra": 1447,
@@ -343,7 +369,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ie0SzVb.pdf#page=4"
     },
     {
-      "instituto": "Morning Consult |July 10–13, 2026 |2,200 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-07-10",
       "campoFim": "2026-07-13",
       "amostra": 1612,
@@ -512,7 +538,7 @@
       "fontePrimaria": "https://quantusinsights.org/polling/f/trump-approval-and-wrong-track-majority-gives-democrats-2026-edge"
     },
     {
-      "instituto": "Morning Consult |June 29 – July 5, 2026 |24,000 (RV) |± 1.0% |46% |42% |12% |4% |- |Manhattan Institute",
+      "instituto": "Manhattan Institute",
       "campoInicio": "2026-07-01",
       "campoFim": "2026-07-06",
       "amostra": 1121,
@@ -523,6 +549,19 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://manhattan.institute/article/american-attitudes-on-welfare-waste-crime-and-the-political-environment"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-29",
+      "campoFim": "2026-07-05",
+      "amostra": 24000,
+      "amostraTipo": "RV",
+      "margemErro": 1,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
     },
     {
       "instituto": "Zogby Analytics",
@@ -642,7 +681,20 @@
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a45343447bbe264a1f2fbcd_NIAP-30June2026-Toplines-updated2.pdf"
     },
     {
-      "instituto": "Morning Consult |June 26–28, 2026 |2,202 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-26",
+      "campoFim": "2026-06-28",
+      "amostra": 2202,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-06-26",
       "campoFim": "2026-06-28",
       "amostra": 2604,
@@ -655,7 +707,7 @@
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/"
     },
     {
-      "instituto": "Morning Consult |June 26–28, 2026 |2,202 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-06-26",
       "campoFim": "2026-06-28",
       "amostra": 2604,
@@ -668,7 +720,7 @@
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/"
     },
     {
-      "instituto": "Morning Consult |June 26–28, 2026 |2,202 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-06-26",
       "campoFim": "2026-06-28",
       "amostra": 2971,
@@ -681,7 +733,7 @@
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/"
     },
     {
-      "instituto": "Morning Consult |June 26–28, 2026 |2,202 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-06-26",
       "campoFim": "2026-06-28",
       "amostra": 2971,
@@ -694,7 +746,20 @@
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/"
     },
     {
-      "instituto": "Morning Consult |June 22–28, 2026 |24,000 (RV) |– |46% |42% |12% |4% |- |ActiVote",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-22",
+      "campoFim": "2026-06-28",
+      "amostra": 24000,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "ActiVote",
       "campoInicio": "2026-06-06",
       "campoFim": "2026-06-28",
       "amostra": 1000,
@@ -733,7 +798,20 @@
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/06/National-June-Presentation-RELEASE-June-2026.pdf"
     },
     {
-      "instituto": "Morning Consult |June 19–22, 2026 |– (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-19",
+      "campoFim": "2026-06-22",
+      "amostra": null,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-06-19",
       "campoFim": "2026-06-22",
       "amostra": 1517,
@@ -746,7 +824,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_v8p0Pe8.pdf#page=58"
     },
     {
-      "instituto": "Morning Consult |June 19–22, 2026 |– (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-06-19",
       "campoFim": "2026-06-22",
       "amostra": 1679,
@@ -928,7 +1006,20 @@
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/June%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4"
     },
     {
-      "instituto": "Morning Consult |June 8–14, 2026 |24,000 (RV) |– |46% |42% |12% |4% |- |Emerson College",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-08",
+      "campoFim": "2026-06-14",
+      "amostra": 24000,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Emerson College",
       "campoInicio": "2026-06-07",
       "campoFim": "2026-06-08",
       "amostra": 1200,
@@ -993,7 +1084,20 @@
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-06/Reuters%20Ipsos%20Large%20Issue%20Topline%20June%202026%206.8%20release.pdf"
     },
     {
-      "instituto": "Morning Consult |June 1–7, 2026 |24,849 (RV) |– |46% |42% |12% |4% |- |Hart Research Associates (D)/ Public Opinion Strategies (R)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-06-01",
+      "campoFim": "2026-06-07",
+      "amostra": 24849,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "campoInicio": "2026-05-29",
       "campoFim": "2026-06-07",
       "amostra": 2400,
@@ -1266,7 +1370,20 @@
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/06/HHP_May2026_KeyResults.pdf#page=20"
     },
     {
-      "instituto": "Morning Consult |May 25–31, 2026 |– (RV) |– |45% |42% |13% |3% |- |I&I/TIPP Insights (R)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-05-25",
+      "campoFim": "2026-05-31",
+      "amostra": null,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "I&I/TIPP Insights (R)",
       "campoInicio": "2026-05-26",
       "campoFim": "2026-05-28",
       "amostra": 1332,
@@ -1617,7 +1734,33 @@
       "fontePrimaria": "https://www.wsj.com/politics/policy/trump-republican-congress-control-98a13bd9"
     },
     {
-      "instituto": "Morning Consult |May 15–17, 2026 |2,203 (RV) |– |47% |41% |12% |6% |- |Morning Consult |May 11–17, 2026 |28,525 (RV) |– |46% |42% |12% |4% |- |CBS News/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-05-15",
+      "campoFim": "2026-05-17",
+      "amostra": 2203,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 47,
+      "rep": 41,
+      "outros": 12,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-05-11",
+      "campoFim": "2026-05-17",
+      "amostra": 28525,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "CBS News/YouGov",
       "campoInicio": "2026-05-13",
       "campoFim": "2026-05-15",
       "amostra": 1397,
@@ -1864,7 +2007,20 @@
       "fontePrimaria": "https://www.documentcloud.org/documents/28114951-cnn-poll-conducted-by-ssrs-affordability/"
     },
     {
-      "instituto": "Morning Consult |April 30 – May 3, 2026 |2,201 (RV) |– |46% |43% |11% |3% |- |Marist University",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-30",
+      "campoFim": "2026-05-03",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Marist University",
       "campoInicio": "2026-04-27",
       "campoFim": "2026-04-30",
       "amostra": 1155,
@@ -1994,7 +2150,20 @@
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Core%20Political%20April%202026%20Topline.pdf"
     },
     {
-      "instituto": "Morning Consult |April 24–27, 2026 |2,201 (RV) |– |45% |42% |13% |3% |- |Public Opinion Strategies (R)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-24",
+      "campoFim": "2026-04-27",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Public Opinion Strategies (R)",
       "campoInicio": "2026-04-21",
       "campoFim": "2026-04-27",
       "amostra": 1000,
@@ -2150,7 +2319,59 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_I24AWdp.pdf#page=65"
     },
     {
-      "instituto": "Morning Consult |April 13–19, 2026 |27,869 (RV) |– |45% |42% |13% |3% |- |John Zogby Strategies",
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-04-15",
+      "campoFim": "2026-04-20",
+      "amostra": 3577,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 41,
+      "rep": 38,
+      "outros": 21,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Large%20Issue%20April%202026%20Topline%204.21%20Release_1.pdf"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-04-15",
+      "campoFim": "2026-04-20",
+      "amostra": 4557,
+      "amostraTipo": "A",
+      "margemErro": 1.5,
+      "dem": 35,
+      "rep": 31,
+      "outros": 34,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Large%20Issue%20April%202026%20Topline%204.21%20Release_1.pdf"
+    },
+    {
+      "instituto": "KFF",
+      "campoInicio": "2026-04-14",
+      "campoFim": "2026-04-19",
+      "amostra": 1107,
+      "amostraTipo": "RV",
+      "margemErro": 4,
+      "dem": 43,
+      "rep": 34,
+      "outros": 23,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.kff.org/public-opinion/kff-health-tracking-poll-health-care-costs-and-the-midterms/"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-13",
+      "campoFim": "2026-04-19",
+      "amostra": 27869,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "John Zogby Strategies",
       "campoInicio": "2026-04-17",
       "campoFim": "2026-04-18",
       "amostra": 1001,
@@ -2160,7 +2381,7 @@
       "rep": 44,
       "outros": 8,
       "vantagemDem": 4,
-      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+      "fontePrimaria": null
     },
     {
       "instituto": "Marquette University Law School",
@@ -2267,7 +2488,20 @@
       "fontePrimaria": "https://www.survey160.com/methodological-research-blog/survey-160-tracking-poll-april-2026"
     },
     {
-      "instituto": "Morning Consult |April 6–12, 2026 |12,505 (RV) |– |46% |42% |12% |4% |- |Tavern Research (D)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-06",
+      "campoFim": "2026-04-12",
+      "amostra": 12505,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Tavern Research (D)",
       "campoInicio": "2026-04-06",
       "campoFim": "2026-04-09",
       "amostra": 502,
@@ -2280,7 +2514,20 @@
       "fontePrimaria": "https://www.tavernresearch.com/research-and-writings/cutting-room-floor-april-10-2026"
     },
     {
-      "instituto": "Morning Consult |April 6–9, 2026 |2,200 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" RMG Research",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-06",
+      "campoFim": "2026-04-09",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "RMG Research",
       "campoInicio": "2026-04-06",
       "campoFim": "2026-04-09",
       "amostra": 2000,
@@ -2293,7 +2540,7 @@
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-45-percent-gop-42-dems-also-more-enthusiastic"
     },
     {
-      "instituto": "Morning Consult |April 6–9, 2026 |2,200 (RV) |– |46% |42% |12% |4% |- |style=\"text-align:left;\" RMG Research",
+      "instituto": "RMG Research",
       "campoInicio": "2026-04-06",
       "campoFim": "2026-04-09",
       "amostra": 2000,
@@ -2319,7 +2566,7 @@
       "fontePrimaria": "https://netchoice.org/wp-content/uploads/2026/04/NetChoice-Apr-2026-National-Antitrust-Survey-Topline.pdf"
     },
     {
-      "instituto": "Morning Consult |April 3–4, 2026 |2,203 (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-04-03",
       "campoFim": "2026-04-06",
       "amostra": 1558,
@@ -2332,7 +2579,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SVRZJH8.pdf#page=30"
     },
     {
-      "instituto": "Morning Consult |April 3–4, 2026 |2,203 (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-04-03",
       "campoFim": "2026-04-06",
       "amostra": 1745,
@@ -2343,6 +2590,32 @@
       "outros": 26,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SVRZJH8.pdf#page=30"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-03-30",
+      "campoFim": "2026-04-05",
+      "amostra": 12505,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-04-03",
+      "campoFim": "2026-04-04",
+      "amostra": 2203,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
     },
     {
       "instituto": "Cygnal (R)",
@@ -2358,7 +2631,7 @@
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/04/23738-Cygnal-National-Apr26-NVT-Deck-Public.pdf#page=23"
     },
     {
-      "instituto": "Morning Consult |March 30 – April 5, 2026 |12,505 (RV) |– |45% |42% |13% |2% |- |UMass Lowell/YouGov",
+      "instituto": "UMass Lowell/YouGov",
       "campoInicio": "2026-03-26",
       "campoFim": "2026-03-30",
       "amostra": 1000,
@@ -2514,7 +2787,33 @@
       "fontePrimaria": "https://youthpoll.yale.edu/spring-2026-results"
     },
     {
-      "instituto": "Reuters/Ipsos |March 20–22, 2026 |985 (RV) |– |40% |38% |22% |2% |- |1,272 (A) |± 2.8% |35% |31% |34% |4% |- |Morning Consult",
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-03-20",
+      "campoFim": "2026-03-22",
+      "amostra": 985,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 40,
+      "rep": 38,
+      "outros": 22,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20March%202026%20Topline.pdf"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-03-20",
+      "campoFim": "2026-03-22",
+      "amostra": 1272,
+      "amostraTipo": "A",
+      "margemErro": 2.8,
+      "dem": 35,
+      "rep": 31,
+      "outros": 34,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20March%202026%20Topline.pdf"
+    },
+    {
+      "instituto": "Morning Consult",
       "campoInicio": "2026-03-17",
       "campoFim": "2026-03-22",
       "amostra": 15029,
@@ -2524,10 +2823,62 @@
       "rep": 42,
       "outros": 11,
       "vantagemDem": 5,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20March%202026%20Topline.pdf"
+      "fontePrimaria": "https://www.gamblingisnotinvesting.com/morning-consult-poll-reveals-americans-concerns-with-prediction-markets/"
     },
     {
-      "instituto": "Reuters/Ipsos |March 17–19, 2026 |1,206 (RV) |– |40% |37% |23% |rowspan=\"2\" 3% |- |1,545 (A) |± 2.5% |35% |32% |33% |- |John Zogby Strategies",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-03-16",
+      "campoFim": "2026-03-22",
+      "amostra": 26406,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Impact Research (D)/ BSP Research (D)",
+      "campoInicio": "2026-03-10",
+      "campoFim": "2026-03-20",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 41,
+      "outros": 14,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.thirdway.org/memo/president-trumps-immigration-problem"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-03-17",
+      "campoFim": "2026-03-19",
+      "amostra": 1206,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 40,
+      "rep": 37,
+      "outros": 23,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Iran%20Poll%20March%202026%20Topline.pdf"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-03-17",
+      "campoFim": "2026-03-19",
+      "amostra": 1545,
+      "amostraTipo": "A",
+      "margemErro": 2.5,
+      "dem": 35,
+      "rep": 32,
+      "outros": 33,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Iran%20Poll%20March%202026%20Topline.pdf"
+    },
+    {
+      "instituto": "John Zogby Strategies",
       "campoInicio": "2026-03-17",
       "campoFim": "2026-03-18",
       "amostra": 1000,
@@ -2537,7 +2888,20 @@
       "rep": 46,
       "outros": 8,
       "vantagemDem": 0,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Iran%20Poll%20March%202026%20Topline.pdf"
+      "fontePrimaria": null
+    },
+    {
+      "instituto": "Quantus Insights (R)",
+      "campoInicio": "2026-03-17",
+      "campoFim": "2026-03-18",
+      "amostra": 1064,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 47,
+      "rep": 42,
+      "outros": 11,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://quantusinsights.org/f/national-survey-a-divided-country-and-a-motivated-electorate#ddfaccf9-bede-412a-8ce9-6f9ddda07554"
     },
     {
       "instituto": "Strength In Numbers/Verasight",
@@ -2618,7 +2982,20 @@
       "fontePrimaria": "https://www.theargumentmag.com/p/americans-would-trade-jobs-for-cheaper"
     },
     {
-      "instituto": "Morning Consult |March 13–16, 2026 |2,201 (RV) |– |48% |40% |12% |8% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-03-13",
+      "campoFim": "2026-03-16",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 48,
+      "rep": 40,
+      "outros": 12,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-03-13",
       "campoFim": "2026-03-16",
       "amostra": 1427,
@@ -2631,7 +3008,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_CwWXhS2.pdf#page=58"
     },
     {
-      "instituto": "Morning Consult |March 13–16, 2026 |2,201 (RV) |– |48% |40% |12% |8% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-03-13",
       "campoFim": "2026-03-16",
       "amostra": 1593,
@@ -2683,7 +3060,20 @@
       "fontePrimaria": "https://www.survey160.com/methodological-research-blog/survey-160-tracking-poll-march-2026"
     },
     {
-      "instituto": "Morning Consult |March 9–15, 2026 |26,63 (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" Focaldata",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-03-09",
+      "campoFim": "2026-03-15",
+      "amostra": 2663,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Focaldata",
       "campoInicio": "2026-03-06",
       "campoFim": "2026-03-10",
       "amostra": 1456,
@@ -2696,7 +3086,7 @@
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-increase-lead-and-rubio-stock-surges-amid-iran-war"
     },
     {
-      "instituto": "Morning Consult |March 9–15, 2026 |26,63 (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" Focaldata",
+      "instituto": "Focaldata",
       "campoInicio": "2026-03-06",
       "campoFim": "2026-03-10",
       "amostra": 1534,
@@ -2709,7 +3099,7 @@
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-increase-lead-and-rubio-stock-surges-amid-iran-war"
     },
     {
-      "instituto": "Morning Consult |March 9–15, 2026 |26,63 (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" Focaldata",
+      "instituto": "Focaldata",
       "campoInicio": "2026-03-06",
       "campoFim": "2026-03-10",
       "amostra": 1782,
@@ -2761,7 +3151,20 @@
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/03/National-March-Presentation-RELEASE-03-10-26.pdf"
     },
     {
-      "instituto": "Morning Consult |March 2–8, 2026 |25,948 (RV) |– |45% |42% |13% |3% |- |Clarity Campaign Labs (D)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-03-02",
+      "campoFim": "2026-03-08",
+      "amostra": 25948,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Clarity Campaign Labs (D)",
       "campoInicio": "2026-02-26",
       "campoFim": "2026-03-07",
       "amostra": 1004,
@@ -2891,7 +3294,20 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ubu5DXD.pdf#page=62"
     },
     {
-      "instituto": "Morning Consult |February 23 – March 1, 2026 |– (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" The Public Sentiment Institute",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-02-23",
+      "campoFim": "2026-03-01",
+      "amostra": null,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Public Sentiment Institute",
       "campoInicio": "2026-02-28",
       "campoFim": "2026-02-28",
       "amostra": 249,
@@ -2904,7 +3320,7 @@
       "fontePrimaria": "https://tpsiofficial.substack.com/p/what-america-is-actually-thinking"
     },
     {
-      "instituto": "Morning Consult |February 23 – March 1, 2026 |– (RV) |– |45% |42% |13% |3% |- |style=\"text-align:left;\" The Public Sentiment Institute",
+      "instituto": "The Public Sentiment Institute",
       "campoInicio": "2026-02-28",
       "campoFim": "2026-02-28",
       "amostra": 316,
@@ -3034,7 +3450,33 @@
       "fontePrimaria": "https://democracy.psu.edu/poll-report-archive/democrats-have-edge-in-congressional-generic-ballot/"
     },
     {
-      "instituto": "Reuters/Ipsos |February 18–23, 2026 |3,686 (RV) |± 2.0% |40% |38% |22% |2% |- |4,638 (A) |± 1.5% |35% |32% |34% |3% |- |Emerson College",
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-02-18",
+      "campoFim": "2026-02-23",
+      "amostra": 3686,
+      "amostraTipo": "RV",
+      "margemErro": 2,
+      "dem": 40,
+      "rep": 38,
+      "outros": 22,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Large%20Issue%20Topline%20Feb%202026.pdf"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-02-18",
+      "campoFim": "2026-02-23",
+      "amostra": 4638,
+      "amostraTipo": "A",
+      "margemErro": 1.5,
+      "dem": 35,
+      "rep": 32,
+      "outros": 34,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Large%20Issue%20Topline%20Feb%202026.pdf"
+    },
+    {
+      "instituto": "Emerson College",
       "campoInicio": "2026-02-21",
       "campoFim": "2026-02-22",
       "amostra": 1000,
@@ -3044,7 +3486,33 @@
       "rep": 42,
       "outros": 8,
       "vantagemDem": 8,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Large%20Issue%20Topline%20Feb%202026.pdf"
+      "fontePrimaria": "https://emersoncollegepolling.com/february-2026-national-poll-trump-approval-steady-as-disapproval-rises-vance-leads-gop-field-while-democrats-hold-midterm-edge/"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-02-20",
+      "campoFim": "2026-02-22",
+      "amostra": 2202,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Global Strategy Group (D)",
+      "campoInicio": "2026-02-17",
+      "campoFim": "2026-02-22",
+      "amostra": 1051,
+      "amostraTipo": "LV",
+      "margemErro": 3.5,
+      "dem": 48,
+      "rep": 40,
+      "outros": 12,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://cdn.sanity.io/files/ifn0l6bs/production/20f8baa5c94f1c43cfef74a1573ab942b9024b12.pdf"
     },
     {
       "instituto": "Strength In Numbers/Verasight",
@@ -3229,7 +3697,20 @@
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-02/Reuters%20Ipsos%20Core%20Political%20Topline%20February%202026_1.pdf"
     },
     {
-      "instituto": "Morning Consult |February 13–16, 2026 |2,200 (RV) |– |45% |43% |12% |2% |- |style=\"text-align:left;\" Quantus Insights (R)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-02-13",
+      "campoFim": "2026-02-16",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 43,
+      "outros": 12,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Quantus Insights (R)",
       "campoInicio": "2026-02-12",
       "campoFim": "2026-02-13",
       "amostra": 1515,
@@ -3242,7 +3723,7 @@
       "fontePrimaria": "https://quantusinsights.org/f/quantus-insights-national-survey-2026-midterms-break-democrat"
     },
     {
-      "instituto": "Morning Consult |February 13–16, 2026 |2,200 (RV) |– |45% |43% |12% |2% |- |style=\"text-align:left;\" Quantus Insights (R)",
+      "instituto": "Quantus Insights (R)",
       "campoInicio": "2026-02-12",
       "campoFim": "2026-02-13",
       "amostra": 1515,
@@ -3372,7 +3853,20 @@
       "fontePrimaria": "https://www.theargumentmag.com/p/the-trans-rights-backlash-is-real"
     },
     {
-      "instituto": "Morning Consult |February 6–9, 2026 |2,200 (RV) |– |45% |41% |14% |4% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-02-06",
+      "campoFim": "2026-02-09",
+      "amostra": 2200,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 41,
+      "outros": 14,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-02-06",
       "campoFim": "2026-02-09",
       "amostra": 1549,
@@ -3385,7 +3879,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_vNnwPx2.pdf#page=95"
     },
     {
-      "instituto": "Morning Consult |February 6–9, 2026 |2,200 (RV) |– |45% |41% |14% |4% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-02-06",
       "campoFim": "2026-02-09",
       "amostra": 1728,
@@ -3398,7 +3892,20 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_vNnwPx2.pdf#page=95"
     },
     {
-      "instituto": "Morning Consult |February 2–8, 2026 |29,303 (RV) |– |45% |42% |13% |3% |- |John Zogby Strategies",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-02-02",
+      "campoFim": "2026-02-08",
+      "amostra": 29303,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "John Zogby Strategies",
       "campoInicio": "2026-02-04",
       "campoFim": "2026-02-05",
       "amostra": 1000,
@@ -3450,7 +3957,20 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_DDIQ8jz.pdf#page=91"
     },
     {
-      "instituto": "Morning Consult |January 30 – February 1, 2026 |2,201 (RV) |– |47% |42% |11% |5% |- |Public Policy Polling (D)",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-01-30",
+      "campoFim": "2026-02-01",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 47,
+      "rep": 42,
+      "outros": 11,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Public Policy Polling (D)",
       "campoInicio": "2026-01-29",
       "campoFim": "2026-01-30",
       "amostra": 652,
@@ -3671,7 +4191,33 @@
       "fontePrimaria": "https://echelonin.wpenginepowered.com/wp-content/uploads/January-2026-Voter-Omnibus-Topline.pdf#page=4"
     },
     {
-      "instituto": "Reuters/Ipsos |January 23–25, 2026 |906 (RV) |– |41% |37% |22% |4% |- |Morning Consult |January 23–25, 2026 |2,201 (RV) |– |45% |43% |12% |2% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-01-23",
+      "campoFim": "2026-01-25",
+      "amostra": 906,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 41,
+      "rep": 37,
+      "outros": 22,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.reuters.com/data/which-party-do-americans-want-run-congress-2025-11-05/#12-08-2025"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-01-23",
+      "campoFim": "2026-01-25",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 43,
+      "outros": 12,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-01-22",
       "campoFim": "2026-01-24",
       "amostra": 2909,
@@ -3684,7 +4230,7 @@
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-solidify-lead-over-republicans-on-first-2026-generic-ballot/"
     },
     {
-      "instituto": "Reuters/Ipsos |January 23–25, 2026 |906 (RV) |– |41% |37% |22% |4% |- |Morning Consult |January 23–25, 2026 |2,201 (RV) |– |45% |43% |12% |2% |- |style=\"text-align:left;\" Big Data Poll (R)",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-01-22",
       "campoFim": "2026-01-24",
       "amostra": 2909,
@@ -3801,7 +4347,20 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_WCk0aqK.pdf#page=96"
     },
     {
-      "instituto": "Morning Consult |January 16–18, 2026 |2,201 (RV) |– |45% |43% |14% |2% |- |New York Times/Siena College",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-01-16",
+      "campoFim": "2026-01-18",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 43,
+      "outros": 14,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "New York Times/Siena College",
       "campoInicio": "2026-01-12",
       "campoFim": "2026-01-17",
       "amostra": 1625,
@@ -3827,7 +4386,7 @@
       "fontePrimaria": "https://progressactionfund.com/new-poll-independent-voters-would-rather-shut-down-the-government-than-fund-ice-by-16-points/"
     },
     {
-      "instituto": "Reuters/Ipsos |January 12–13, 2026 |941 (RV) |– |40% |38% |22% |2% |- |Rasmussen Reports (R)",
+      "instituto": "Rasmussen Reports (R)",
       "campoInicio": "2026-01-07",
       "campoFim": "2026-01-14",
       "amostra": 2273,
@@ -3838,6 +4397,19 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_jan19"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-01-12",
+      "campoFim": "2026-01-13",
+      "amostra": 941,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 40,
+      "rep": 38,
+      "outros": 22,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://www.reuters.com/data/which-party-do-americans-want-run-congress-2025-11-05/#12-08-2025"
     },
     {
       "instituto": "Impact Research (D)/ National Research Inc. (R)",
@@ -3866,7 +4438,20 @@
       "fontePrimaria": "https://www.cnn.com/2026/01/18/politics/cnn-poll-democrats-are-deeply-motivated-for-the-midterms-despite-having-dismal-views-of-party-leaders"
     },
     {
-      "instituto": "Morning Consult |January 9–12, 2026 |2,201 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-01-09",
+      "campoFim": "2026-01-12",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-01-09",
       "campoFim": "2026-01-12",
       "amostra": 1433,
@@ -3879,7 +4464,7 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_qsNv5iE.pdf#page=82"
     },
     {
-      "instituto": "Morning Consult |January 9–12, 2026 |2,201 (RV) |– |46% |43% |11% |3% |- |style=\"text-align:left;\" The Economist/YouGov",
+      "instituto": "The Economist/YouGov",
       "campoInicio": "2026-01-09",
       "campoFim": "2026-01-12",
       "amostra": 1597,
@@ -3983,7 +4568,33 @@
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_aY8mpiN.pdf#page=59"
     },
     {
-      "instituto": "Morning Consult |January 2–4, 2026 |2,201 (RV) |– |45% |42% |13% |3% |- |Morning Consult |December 29, 2025 – January 4, 2026 |22,709 (RV) |– |44% |42% |14% |2% |- |style=\"text-align:left;\" The Bullfinch Group",
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-01-02",
+      "campoFim": "2026-01-04",
+      "amostra": 2201,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 45,
+      "rep": 42,
+      "outros": 13,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2025-12-29",
+      "campoFim": "2026-01-04",
+      "amostra": 22709,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 44,
+      "rep": 42,
+      "outros": 14,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
+      "instituto": "The Bullfinch Group",
       "campoInicio": "2025-12-30",
       "campoFim": "2026-01-01",
       "amostra": 1000,
@@ -3996,7 +4607,7 @@
       "fontePrimaria": "https://cdn.prod.website-files.com/68d1c32ec01e1d1f6a86e801/6957e70d6a2531a1b867adaa_ICV%202026%20Nationwide%20250th%20Study%20Toplines%20-%20FINAL.pdf"
     },
     {
-      "instituto": "Morning Consult |January 2–4, 2026 |2,201 (RV) |– |45% |42% |13% |3% |- |Morning Consult |December 29, 2025 – January 4, 2026 |22,709 (RV) |– |44% |42% |14% |2% |- |style=\"text-align:left;\" The Bullfinch Group",
+      "instituto": "The Bullfinch Group",
       "campoInicio": "2025-12-30",
       "campoFim": "2026-01-01",
       "amostra": 1200,
@@ -4009,7 +4620,7 @@
       "fontePrimaria": "https://cdn.prod.website-files.com/68d1c32ec01e1d1f6a86e801/6957e70d6a2531a1b867adaa_ICV%202026%20Nationwide%20250th%20Study%20Toplines%20-%20FINAL.pdf"
     },
     {
-      "instituto": "Reuters/Ipsos |April 15–20, 2026 |3,577 (RV) |– |41% |38% |21% |3% |- |4,557 (A) |± 1.5% |35% |31% |34% |4% |- |Hart Research Associates (D)/ Public Opinion Strategies (R)",
+      "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "campoInicio": "2025-04-15",
       "campoFim": "2025-04-19",
       "amostra": 1000,
@@ -4019,7 +4630,7 @@
       "rep": 45,
       "outros": 6,
       "vantagemDem": 4,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Large%20Issue%20April%202026%20Topline%204.21%20Release_1.pdf"
+      "fontePrimaria": "https://fm.cnbc.com/applications/cnbc.com/resources/editorialfiles/2026/04/23/Toplines_260142_CNBC_AAES_Q1_2026_Topline.pdf"
     }
   ]
 }

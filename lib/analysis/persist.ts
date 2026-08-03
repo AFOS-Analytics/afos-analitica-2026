@@ -74,6 +74,25 @@ type UpsertOpts = {
    * dia e o `buildTitle` já está certo.
    */
   titleOverride?: string
+  /**
+   * 🌍 Pedaço que entra no slug ENTRE o tipo e a data, para separar países.
+   *
+   * 🔴 EXISTE POR CAUSA DE UMA COLISÃO REAL, em 03/Ago/2026. O Tradeoff virou
+   * multipaís e passou a ter duas edições na MESMA data: o Brasil publica na
+   * segunda e os EUA também. Sem qualificador, as duas geram
+   * `afos-tradeoff-03-08-2026`, e como o upsert é por slug **a segunda apaga a
+   * primeira sem erro nenhum**.
+   *
+   * ⚠️ O BRASIL NÃO PASSA ESTE CAMPO, e isso é de propósito. As 11 edições
+   * brasileiras já arquivadas usam o slug sem país; acrescentar 'br' agora
+   * criaria 11 registros novos e deixaria os antigos órfãos. Mesma assimetria
+   * da pasta, em que o Brasil fica na raiz e cada país novo ganha subpasta.
+   *
+   * 📌 O AFOS Weekly tem a MESMA armadilha esperando: hoje só existe `us`, então
+   * o slug dele ainda é `afos-weekly-DD-MM-YYYY`. No dia em que entrar um
+   * segundo país, ele precisa passar por aqui antes de arquivar.
+   */
+  slugQualifier?: string
 }
 
 export async function upsertAnalysisReport(
@@ -83,9 +102,10 @@ export async function upsertAnalysisReport(
   opts: UpsertOpts = {},
 ) {
   const iso = opts.slugIsoDate?.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  const qual = opts.slugQualifier ? `-${opts.slugQualifier}` : ''
   const slug = iso
-    ? `${type}-${iso[3]}-${iso[2]}-${iso[1]}`
-    : `${type}-${deriveDateSlug(data, opts.fallbackIsoDate)}`
+    ? `${type}${qual}-${iso[3]}-${iso[2]}-${iso[1]}`
+    : `${type}${qual}-${deriveDateSlug(data, opts.fallbackIsoDate)}`
   const updatedAtLabel = (data.updatedAt as string) || new Date().toISOString()
   const title = opts.titleOverride ?? buildTitle(type, updatedAtLabel)
   const executiveSummary = truncate(buildSummary(type, data))

@@ -68,9 +68,9 @@ antiAvgIntro: "..."
 antiAvg: { title, leftLabel, leftValue, leftUnit, leftDetails[], rightLabel, rightValue, rightUnit, rightDetails[] }
 antiAvgClosing: "..."
 scenariosIntro: "..."
-scenarios:             # type: base | contrarian | tail
+scenarios:             # 🔴 type: base | bear | tail  (NÃO existe 'contrarian')
   - { type, label, text }
-indicatorGrid:         # label / value / note
+indicatorGrid:         # 🔴 contract / value / delta / deltaDirection / volume / reading  (+ contractLink, highlight)
 liquidity:             # totalLabel, totalLink, total, rows[{rank,name,probability,amount,barWidth}]
 calendar:              # date / print / sample / reading / highlight / printLink
 calendarFooter: "..."
@@ -82,9 +82,32 @@ additionalReading: { intro, items[{source, description, link}] }
 
 `sinalDaSemana`, `date`, `title` e `issueNumber` são obrigatórios: sem eles o loader descarta a edição inteira com um aviso no console.
 
+### 🔴 O loader DESCARTA bloco com nome de campo errado, em silêncio
+
+Descoberto em 03/Ago/2026, e a Edição №1 ficou **três dias em produção, nos três idiomas, sem a seção 4 inteira**.
+
+Cada bloco passa por um `coerce*` que filtra por UM campo obrigatório. Se o nome não bate, a linha some sem erro, sem aviso e sem log. A página monta bonita, só que menor, e nada na tela diz que faltou.
+
+| Bloco | Campo que o filtro exige | O que já foi escrito errado |
+|---|---|---|
+| `indicatorGrid` | **`contract`** | `label` → **as 6 linhas sumiram** |
+| `scenarios` | `label` **e** `text`, com `type` em `base\|bear\|tail` | `contrarian` → virou `base` calado, e a peça mostrou dois cenários-base |
+| `additionalReading.items` | `source` **e** `link` | |
+| `calendar` | `date` **e** `print` | |
+| `summaryCards` | `label` **e** `headline` | |
+| `liquidity` | `total` **e** `rows[]` com `name` | |
+
+📌 **Conferir contando, não olhando.** Depois de escrever, rodar o loader e comparar a contagem de cada bloco com o que o arquivo tem:
+
+```bash
+npx tsx -e "const {loadTradeoff}=require('./lib/afos-tradeoff/loader');const d=loadTradeoff('YYYY-MM-DD','pt-BR','us');console.log(Object.entries({summaryCards:d.summaryCards,scenarios:d.scenarios,indicatorGrid:d.indicatorGrid,watchList:d.watchList,calendar:d.calendar}).map(([k,v])=>k+'='+(v?.length??0)).join(' '))"
+```
+
+Bloco com 0 é bloco que não vai aparecer. **Ver a página no preview não pega isso**, porque seção ausente é indistinguível de seção que não foi escrita.
+
 ## Numeração
 
-A **Edição №1 (31/Jul/2026) é de ABERTURA**, sem recorte semanal. Motivo declarado nela: a coleta de mercado foi ligada em 28/Jul, a série cobria 3 dos 5 pregões e os dois contratos principais andaram 0,00pp. Reportar "a semana" com três dias seria vender cobertura que não existia. **A numeração semanal começa na №2.**
+A **Edição №1 (31/Jul/2026) é de ABERTURA**, sem recorte semanal. Motivo declarado nela: a coleta de mercado foi ligada em 28/Jul e o primeiro ponto gravado é de 29/Jul, a série cobria 3 dos 5 pregões e os dois contratos principais andaram 0,00pp. Reportar "a semana" com três dias seria vender cobertura que não existia. **A numeração semanal começa na №2.**
 
 ## A armadilha da série, ao calcular Δ
 
@@ -96,7 +119,9 @@ curl -s "https://www.afos-analytics.com/api/market/history?candidate=Democratas&
 curl -s "https://www.afos-analytics.com/api/market/history?candidate=Republicanos&country=which-party-will-win-the-senate&days=30"
 ```
 
-📏 **A série da Câmara começa em 28/Jul/2026.** Superlativo sobre ela é "o maior **desde 28/Jul**", nunca "do ciclo". Escrever sempre "da série", com a data de início. O `days` da rota trava em 90 de qualquer forma.
+📏 **A série da Câmara começa em 29/Jul/2026**, medido na própria rota em 03/Ago. Superlativo sobre ela é "o maior **desde 29/Jul**", nunca "do ciclo". Escrever sempre "da série", com a data de início. O `days` da rota trava em 90 de qualquer forma.
+
+⚠️ **A régua dizia 28/Jul até 03/Ago/2026 e estava errada.** A coleta foi ligada em 28, mas o primeiro ponto GRAVADO é de 29. Conferir na rota antes de escrever a data, nunca copiar da edição anterior: superlativo com data de início errada é afirmação falsa sobre a série.
 
 ## Portão de publicação
 
@@ -114,7 +139,21 @@ npx tsx scripts/publish-afos-tradeoff.ts YYYY-MM-DD --pais=us --all-locales
 
 ⚠️ **Sem `--pais=us` o script procura na RAIZ**, que é o Brasil, e responde "file not found, skipping" nos três arquivos. Isso não é erro do script: é o país errado.
 
+Arquivar no Neon, **também com `--pais=us`**:
+
+```bash
+npx tsx scripts/persist-afos-tradeoff.ts YYYY-MM-DD --pais=us
+```
+
+🔴 **O slug do Brasil e o dos EUA colidiam, e o conserto é de 03/Ago/2026.** Os dois países publicam na segunda, então os dois têm edição na MESMA data. O slug era `afos-tradeoff-DD-MM-AAAA`, sem país, e como o upsert é por slug **a segunda gravação apagaria a primeira sem erro nenhum**. Agora os EUA gravam como `afos-tradeoff-us-DD-MM-AAAA` e o **Brasil segue sem qualificador**, para não deixar órfãs as 11 edições já arquivadas.
+
+⚠️ Antes disso o script **ignorava `--pais` em silêncio**, lia a raiz e respondia `✅ persistido` tendo regravado a edição BRASILEIRA. Conferir o slug na saída: tem que aparecer `afos-tradeoff-us-`. Se vier sem `us`, o país não chegou.
+
 Depois: `npx vercel --yes --prod`, e conferir os três idiomas.
+
+🔢 **DECIMAL: PONTO nos três idiomas**, inclusive pt-BR e ES, como no Tradeoff do Brasil desde 02/Ago/2026. ⚠️ A **Edição №1 dos EUA usa VÍRGULA** em pt-BR e ES porque foi escrita em 31/Jul, antes da decisão. Não copiar a convenção dela.
+
+⚠️ **Editar o arquivo com Python em Windows converte a árvore inteira para CRLF**, e aí o `publish-afos-tradeoff.ts` responde `no status line in frontmatter`, porque o `\r` quebra a âncora do regex. Se isso aparecer, normalizar para LF antes de culpar o frontmatter.
 
 ## Conferência antes de dar por pronto
 
