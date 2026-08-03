@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-02",
+  "lastUpdate": "2026-08-03",
   "institutes": [
     {
       "name": "Datafolha",
@@ -123,6 +123,75 @@
     }
   ],
   "polls": [
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-08-03",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-02874/2026",
+      "reliability": 4,
+      "method": "Telefônica (CATI), todas as regiões",
+      "fieldDates": "2026-07-31 a 2026-08-02",
+      "note": "BTG/Nexus nacional publicada 03/Ago, 8ª rodada da série, e é a primeira das quatro nacionais que o registro do TSE previa entre 03 e 05/Ago. 1T Lula 41% x Flávio 37%, com Caiado 5%, Renan Santos 4% e Zema 3%. 2T Lula 46% x Flávio 45%, diferença de 1pp que fica DENTRO da margem de 2pp e por isso é empate técnico. Campo 31/Jul a 02/Ago, n=2.002, telefônica, margem 2pp, 95% de confiança, registro BR-02874/2026. O QUE MUDA A SEMANA É A COMPARAÇÃO COM A PRÓPRIA CASA: o gap do 1º turno CAIU DE 9pp PARA 4pp em uma rodada, contra os 42% x 33% de 27/Jul. E o movimento é quase todo de um lado só, porque LULA CEDEU 1pp e FLÁVIO SUBIU 4pp. No returno o aperto é ainda mais forte, de 4pp para 1pp, com Lula saindo de 47% para 46% e Flávio de 43% para 45%. Os outros returnos da rodada: Lula 46% x Caiado 42%, Lula 46% x Zema 40% e Lula 47% x Renan Santos 37%. CONTRA AS OUTRAS CASAS, entre as quatro nacionais publicadas desde 29/Jul esta é a que mostra a disputa mais apertada no 1º turno: 4pp aqui, contra 6pp na PoderData de 30/Jul, 9,1pp na AtlasIntel de 29/Jul e 9,3pp na Vox Brasil de 31/Jul. A distância entre a leitura mais alta e a mais baixa vai a 5,3pp e é maior que qualquer movimento de preço do período. ⚠️ REJEIÇÃO NÃO PUBLICADA POR ESTE PAINEL: as fontes secundárias DIVERGEM. Poder360, CNN Brasil e Correio Braziliense reportam 49% para cada um dos dois; a Money Times reporta 50% para Lula e 51% para Flávio. A nota de divulgação do instituto não traz o dado, então não foi possível fechar em fonte primária e o número fica de fora, com a divergência declarada aqui. Esta rodada também não publicou aprovação nem desaprovação do governo.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Romeu Zema",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        }
+      ],
+      "source": "BTG/Nexus via site do instituto (nexus.fsb.com.br), Folha de S.Paulo, Estadão, CNN Brasil, JOTA, CartaCapital, Poder360, VEJA, Exame, Correio Braziliense e Money Times 03/Ago. Registro TSE BR-02874/2026."
+    },
     {
       "institute": "Vox Brasil",
       "date": "2026-07-31",
@@ -1085,15 +1154,15 @@
     "lastUpdate": "2026-07-29"
   },
   "polymarketComparison": {
-    "note": "Cruzamento de 02/Ago, captura travada das 19:42 UTC: o gap abriu pelo OUTRO lado. Lula ficou ESTÁVEL em 65,50% (vol USD 7,90M) e o gap sobre Flávio ABRIU para +40,95pp, contra +40,75pp na captura publicada em 01/Ago, mas abriu porque FLÁVIO CAIU 0,20pp, e não porque o favorito subiu. Nos dois pregões anteriores o gap abria com o adversário subindo junto; hoje é o contrário. O TOPO DA SÉRIE FICOU PARA TRÁS: o máximo de Lula é 66,50% e o do gap é +41,80pp, ambos do FECHAMENTO de 01/Ago, e ambos acima do que este painel publica hoje. A série cobre de 14/Abr a 02/Ago, 108 dias, conferida direto no banco. RENAN SANTOS é o movimento do dia: SUBIU 0,35pp e foi a 7,95% (vol USD 8,82M), INTERROMPENDO nove rodadas de queda, e SEM evento dele na data: o Missão oficializou a candidatura em 20/Jul e fez o lançamento de campanha em 01/Ago. Com a urna dele parada em 3,0%, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp, pelo lado do preço. O pelotão se DIVIDIU: Camilo Santana, Jair Bolsonaro e Haddad subiram, Caiado, Zema, Michelle e Tereza Cristina caíram. CAIADO tocou o piso da série dentro do próprio dia, com 0,90% na coleta das 11:30 UTC, que iguala o menor valor desde 14/Abr, e 1,15% na captura travada. SEM URNA NOVA: a última nacional segue sendo a Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026), e quatro nacionais publicam entre 03 e 05/Ago. No dia político, o PT oficializou Lula com Alckmin em São Paulo e o Missão oficializou Renan, enquanto Flávio esteve na convenção do PL em Santa Catarina; os dois principais pediram voto antes do prazo legal, que abre em 16/Ago, e seguem sem ampliar alianças, com o Centrão neutro. A trava de dupla leitura APROVOU a rodada sem nenhum motivo de bloqueio. Todos os preços entram firmes, sem faixa declarada. Captura ao vivo 02/Ago 19:42 UTC.",
-    "sources": "Polymarket via proxy AFOS (captura ao vivo 02/Ago 19:42 UTC, degraded false, failedCount 0, scripts/capture-guard.ts APROVADO em rodada única, com as duas leituras dentro de 0,20pp em todos os books vigiados e nenhum motivo de bloqueio) + Vox Brasil 31/Jul (BR-01084/2026, n=2.100, campo 26-28/Jul, margem 2,15pp, última nacional publicada) + PoderData/Aya 30/Jul (BR-07845/2026, n=2.400) + AtlasIntel/Bloomberg 29/Jul (BR-08602/2026, n=5.021, maior amostra do recorte) + BTG/Nexus 27/Jul (BR-01489/2026) + Datafolha 24/Jul (BR-01166/2026) + Gerp 22/Jul (BR-05026/2026) + Indexa 21/Jul (BR-02904/2026) + Real Time Big Data 21/Jul (BR-09247/2026) + PoderData/Aya 16/Jul (BR-00059/2026) + Genial/Quaest 15/Jul (BR-07181/2026) + Futura/Apex 14/Jul (BR-07294/2026) + AtlasIntel 01/Jul (BR-04582/2026). Em campo agora, sem publicação: Nexus (BR-05573/2026, n=1.200, campo 30/Jul a 02/Ago, publicação declarada 04/Ago), Nexus (BR-02874/2026, n=2.000, campo 31/Jul a 02/Ago, publicação declarada 03/Ago), Quaest (BR-06591/2026, n=2.004, campo 31/Jul a 03/Ago, publicação declarada 05/Ago) e Ideia/Canal Meio (BR-04579/2026, n=1.500, campo 31/Jul a 03/Ago, publicação declarada 05/Ago). Série do AFOS conferida em scripts/check-superlativo.ts, direto no Neon, sem cap de janela, cobertura de 14/Abr a 02/Ago com 108 dias de dado: máximo de Lula em 66,50% (01/Ago) e mínimo em 35,50% (27/Abr); máximo do gap em +41,80pp (01/Ago) e mínimo em -7,80pp (05/Mai); Renan Santos com máximo de 17,90% (09/Jun) e mínimo de 5,30% (26/Abr); piso de Caiado em 0,90%, tocado entre 05 e 09/Jul e de novo em 02/Ago às 11:30 UTC; máximo de Camilo Santana em 4,10% (03/Mai); máximo de Zema em 10,10% (26/Abr). RESSALVA DE COLETA, do painel e não do mercado: a série não tem ponto de 01/Ago para Camilo Santana nem ponto depois de 30/Jul para Zema, e por isso nenhum superlativo é afirmado sobre os dois. Para Tarcísio de Freitas a série tem apenas três dias, entre 28/Abr e 14/Mai, e também não sustenta superlativo.",
+    "note": "Cruzamento de 03/Ago, captura travada das 19:11 UTC, aprovada só na TERCEIRA tentativa: as duas primeiras foram BLOQUEADAS pelo book de 2º lugar, que oscilou 0,50pp entre leituras separadas por oito minutos. O dia tem um cruzamento raro, porque as DUAS medições andaram para o MESMO LADO e pelo MESMO MOTIVO. A BTG/Nexus publicou hoje e o gap do 1º turno dela caiu de 9pp para 4pp contra a própria rodada de 27/Jul, com Lula cedendo 1pp e Flávio subindo 4pp. No mercado, o gap fechou de +40,95pp para +40,05pp, e fechou exatamente do mesmo jeito: LULA FICOU PARADO em 65,50% (vol USD 7,92M) e FLÁVIO SUBIU 0,90pp, para 25,45% (vol USD 7,86M). Na série diária, o gap não ficava abaixo disso desde 30/Jul, quando marcou +39,50pp. Registrar o que isso NÃO é: convergência de nível. O mercado paga 65,50% de chance de vitória e a urna mede 41% de intenção no 1º turno, e essas duas grandezas não se subtraem nem se comparam em nível. O que coincidiu foi DIREÇÃO e CAUSA, os dois apertando pelo avanço do mesmo nome. O TOPO DA SÉRIE SEGUE PARA TRÁS: o máximo de Lula é 66,50% e o do gap é +41,80pp, ambos do fechamento de 01/Ago. O topo do Flávio na série é bem mais antigo e bem mais alto, 45,20% em 07/Mai, e o piso é 22,00% em 03/Jul, então os 25,45% de hoje são recuperação dentro de um patamar rebaixado, não retomada de patamar. RENAN SANTOS caiu 0,50pp e foi a 7,45% (vol USD 8,86M), desfazendo a alta de ontem, e a urna dele na Nexus deu 4%, o que deixa a distância entre preço e urna em 3,45pp. CAIADO está em 1,15% (vol USD 5,30M) no dia em que foi oficializado candidato em convenção e prometeu anistiar Bolsonaro. HADDAD caiu de 0,30% para 0,15%. O contrato de 2º lugar tem Flávio em 80,50% e o de 3º lugar tem Renan em 60,50% contra Caiado em 25,00%.",
+    "sources": "Polymarket via proxy AFOS, captura travada das 19:11 UTC de 03/Ago (scripts/capture-guard.ts, 2 leituras com 8 min de intervalo e tolerância de 0,20pp). Pesquisa BTG/Nexus de 03/Ago, registro TSE BR-02874/2026, via nexus.fsb.com.br. Série de mercado conferida em duas janelas, por causa do teto de 1.000 pontos da rota de histórico.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "36-46%",
+        "pesquisaRange": "41-46%",
         "polymarket": "65,50%",
-        "tendenciaPesquisa": "SEM URNA NACIONAL NOVA. A última segue sendo a Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026), com 40,5% no 1º turno e 47,5% x 41,1% no returno. A vantagem de 6,4pp no returno fica FORA da margem somada das duas pontas, então esta leitura NÃO descreve empate técnico. A varredura do TSE de hoje leu 538 registros e não inseriu nenhum novo, o que confirma pelo lado do registro o que a imprensa confirma pelo lado da publicação. QUATRO nacionais estão com campo aberto, duas da Nexus, uma da Quaest e uma da Ideia/Canal Meio, com publicação declarada entre 03 e 05/Ago. Data declarada no registro não é publicação. As pesquisas do dia são ESTADUAIS e não entram aqui: a Datafolha de Pernambuco dá 57% a ele no estado, e a Genial/Quaest o mostra à frente em quatro estados.",
-        "tendenciaPolymarket": "Fica ESTÁVEL em 65,50% (vol USD 7,90M) no dia em que o PT oficializou a candidatura dele em convenção nacional. O gap sobre Flávio ABRIU para +40,95pp, mas abriu por queda do adversário, e não por alta dele, o que inverte o mecanismo dos dois pregões anteriores. O TOPO FICOU PARA TRÁS e a janela precisa ser dita: o máximo da série é 66,50%, do fechamento de 01/Ago, e o preço de hoje está 1,00pp abaixo dele. A série do AFOS cobre de 14/Abr a hoje, 108 dias.",
+        "tendenciaPesquisa": "URNA NOVA E ELA APERTOU. A BTG/Nexus de 03/Ago (n=2.002, campo 31/Jul a 02/Ago, telefônica, margem 2pp, BR-02874/2026) dá 41% no 1º turno, contra 42% na própria rodada de 27/Jul, e 46% no returno contra Flávio, contra 47% antes. As duas quedas são de 1pp e ficam dentro da margem, ou seja, isoladas não são movimento. O que é movimento é o outro lado: Flávio subiu 4pp no 1º turno e 2pp no returno na mesma rodada, e por isso o gap caiu de 9pp para 4pp e o returno virou empate técnico de 1pp. Entre as quatro nacionais publicadas desde 29/Jul, esta é a que mostra a disputa mais apertada no 1º turno: 4pp aqui, 6pp na PoderData de 30/Jul, 9,1pp na AtlasIntel de 29/Jul e 9,3pp na Vox Brasil de 31/Jul.",
+        "tendenciaPolymarket": "PARADO em 65,50% (vol USD 7,92M), pelo segundo pregão seguido, na captura travada das 19:11 UTC. O gap sobre Flávio fechou 0,90pp e foi a +40,05pp, mas fechou SEM o favorito ceder: o movimento inteiro é do adversário. Na série diária, o gap não ficava abaixo disso desde 30/Jul, quando marcou +39,50pp. O topo da série continua sendo 66,50%, do fechamento de 01/Ago.",
         "odds": 65.5,
         "percentage": 40.5,
         "lastUpdate": "2026-07-31",
@@ -1101,32 +1170,32 @@
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "28-38%",
-        "polymarket": "24,55%",
-        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) o traz em 31,2% no 1º turno e 41,1% no returno. Os 6,4pp que o separam de Lula ficam fora da margem somada, o que afasta a leitura de empate técnico que a PoderData sustentava em 30/Jul. Sem urna nacional nova desde então, e quatro em campo com publicação declarada entre 03 e 05/Ago. No arranjo de chapa, segue SEM vice a três dias do prazo de 05/Ago, depois de o PP declarar neutralidade e vetar a chapa com Tereza Cristina, e o Valor Econômico registra que ele e Lula chegaram à reta final das convenções sem ampliar alianças, com o Centrão ainda neutro. A convenção nacional do Republicanos, que decide aliança presidencial, é em 04/Ago. Neste domingo esteve na convenção ESTADUAL do PL na Paraíba, em João Pessoa, que lançou Efraim Filho ao governo e Marcelo Queiroga ao Senado, numa estratégia declarada de ampliar a presença dele no Nordeste. Em 01/Ago, na convenção do PL em Santa Catarina, ele pedira voto antes do prazo legal, que só abre em 16/Ago.",
-        "tendenciaPolymarket": "CAI 0,20pp e vai a 24,55% (vol USD 7,82M), interrompendo seis pregões sem queda, e é a própria queda dele que ABRE o gap para +40,95pp, porque Lula ficou parado. Nos sub-mercados o sinal é o inverso: SOBE 1,00pp no book de 2º lugar do 1º turno, que passa a 80,50% num contrato de USD 217 mil, a maior marca dele ali no acompanhamento do painel, e fica praticamente parado no 3º lugar, em 4,90%. Cede na chance de ganhar e sobe na de chegar ao returno, no mesmo pregão, e o painel não escolhe entre os dois.",
-        "odds": 24.55,
+        "pesquisaRange": "31-45%",
+        "polymarket": "25,45%",
+        "tendenciaPesquisa": "O MOVIMENTO DO DIA É DELE. A BTG/Nexus de 03/Ago dá 37% no 1º turno, contra 33% na rodada de 27/Jul da mesma casa, alta de 4pp que é o dobro da margem de 2pp e portanto não se explica por ruído amostral. No returno vai de 43% para 45% e fica a 1pp de Lula, dentro da margem, o que caracteriza empate técnico. A leitura precisa de contexto de casa: as outras três nacionais desde 29/Jul dão gap de 6pp a 9,3pp no 1º turno, então esta é a mais favorável a ele, e a distância entre a leitura mais alta e a mais baixa chega a 5,3pp.",
+        "tendenciaPolymarket": "SUBIU 0,90pp e foi a 25,45% (vol USD 7,86M), o movimento mais forte do pregão entre os dois primeiros. Andou no MESMO SENTIDO da urna e no mesmo dia, o que é raro neste painel. Ressalva de série, que importa: o topo dele é 45,20% em 07/Mai e o piso é 22,00% em 03/Jul, então 25,45% é recuperação dentro de um patamar rebaixado, não retomada de patamar. No contrato de 2º lugar ele está em 80,50%.",
+        "odds": 25.45,
         "percentage": 31.2,
         "lastUpdate": "2026-07-31",
-        "value": 24.55
+        "value": 25.45
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "2-9%",
-        "polymarket": "7,95%",
-        "tendenciaPesquisa": "TRÊS institutos seguidos o cortaram, e é a sequência que importa, não o número isolado: 7,8% na AtlasIntel de 29/Jul, 4% na PoderData de 30/Jul e 3,0% na Vox Brasil de 31/Jul. Não houve urna nacional nova desde então, mas o preço subiu: com o mercado agora em 7,95%, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp, e abriu pelo lado do preço, do mesmo jeito que havia fechado. Em 29/Jul este painel registrou essa mesma distância em 0,90pp e a chamou de convergência; ela quadruplicou, recuou e agora volta a abrir, e fica registrado que a leitura de 29/Jul não se sustentou. O Missão oficializou a candidatura dele em 20/Jul e fez o evento de lançamento de campanha em 01/Ago, quando ele atacou Lula e Flávio, chamou Moro de vassalo, disse que vai tirar Flávio do returno e prometeu matar quem roubar.",
-        "tendenciaPolymarket": "SOBE 0,35pp e vai a 7,95% (vol USD 8,82M), INTERROMPENDO uma sequência de queda que durava nove rodadas. NÃO houve evento dele na data: o Missão oficializou a candidatura em 20/Jul, em convenção antecipada, e fez o evento de lançamento de campanha em 01/Ago. A alta de hoje é movimento de mercado sem fato novo para acompanhar. A alta foi geral nos três books: 0,20pp no 2º lugar do 1º turno, para 8,75%, e 2,00pp no 3º lugar, para 63,50%, onde é favorito isolado. A virada NÃO desfaz o arco: saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago. Não é mínimo de série, que é 5,30%, de 26/Abr, nem máximo, que é 17,90%, de 09/Jun.",
-        "odds": 7.95,
+        "polymarket": "7,45%",
+        "tendenciaPesquisa": "A BTG/Nexus de 03/Ago dá 4%, contra 5% na rodada de 27/Jul da mesma casa. Continua na faixa de 3% a 4% que os institutos vêm medindo desde o fim de julho, depois dos 7,8% da AtlasIntel de 29/Jul. No returno contra Lula é a pior das quatro simulações da rodada: 47% x 37%.",
+        "tendenciaPolymarket": "CAIU 0,50pp e foi a 7,45% (vol USD 8,86M), desfazendo a alta de 0,35pp de ontem, que tinha interrompido nove rodadas de queda. Com a urna em 4%, a distância entre preço e urna fica em 3,45pp. O volume acumulado dele, de USD 8,86M, está acima do de Lula, que tem USD 7,92M, embora o preço seja um oitavo. Ele é o favorito do contrato de 3º lugar, com 60,50%.",
+        "odds": 7.45,
         "percentage": 3,
         "lastUpdate": "2026-07-31",
-        "value": 7.95
+        "value": 7.45
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-7%",
         "polymarket": "1,15%",
-        "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) lhe dá 5,5% no 1º turno, a MELHOR leitura nacional dele no recorte, acima dos 5% da PoderData de 30/Jul e bem acima dos 3,1% da AtlasIntel de 29/Jul. Sem urna nova desde então. A divergência entre institutos sobre ele segue aberta em QUATRO níveis dentro do mesmo mês: 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel. Nesta semana ele disse que Lula e Flávio brincam de esconde-esconde e preferem discutir Trump a discutir educação.",
-        "tendenciaPolymarket": "CAI 0,20pp e vai a 1,15% (vol USD 5,27M), no quarto pregão seguido de queda, e SOBE 2,00pp no book de 3º lugar do 1º turno, para 24,50% num contrato de USD 37 mil, recuperando a queda da véspera. O registro de série é intradiário e o painel publica os dois lados: a coleta das 11:30 UTC gravou 0,90%, que IGUALA o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a travada e registra o piso do dia em vez de escolher um dos dois.",
+        "tendenciaPesquisa": "A BTG/Nexus de 03/Ago dá 5% no 1º turno, contra 6% na rodada de 27/Jul da mesma casa. No returno contra Lula, 46% x 42%. Entre as nacionais desde 29/Jul, fica atrás apenas dos 5,5% da Vox Brasil de 31/Jul.",
+        "tendenciaPolymarket": "Em 1,15% (vol USD 5,30M), acima do piso de 0,90% que a série tocou dentro do dia 02/Ago. O nível se sustenta no dia em que ele foi oficializado candidato em convenção, prometeu anistiar Bolsonaro e os condenados do 8 de Janeiro, e disputou com Flávio o voto do agronegócio. É o segundo nome do contrato de 3º lugar, com 25,00%.",
         "odds": 1.15,
         "percentage": 5.5,
         "lastUpdate": "2026-07-31",
@@ -1157,15 +1226,15 @@
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,30%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "A Vox Brasil de 31/Jul NÃO o testa em nenhum cenário, nem de 1º turno nem de returno, e nenhuma nacional foi publicada desde então, então ele segue sem urna nova. Ausência de teste numa nacional é informação que o painel registra em vez de repetir o dado da véspera como se fosse novo. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece é hipótese de pesquisa e não candidatura em curso.",
-        "tendenciaPolymarket": "SOBE 0,05pp e vai a 0,30% (vol USD 6,63M), e mantém 1,05% no book de 2º lugar do 1º turno. A ressalva de escala continua valendo: nesse nível de preço, movimento de 0,05pp tem valor informativo quase nulo, e o painel registra o nível, não a oscilação. O volume acumulado dele é maior que o de vários nomes com preço acima do dele, o que mede história negociada e não convicção atual.",
-        "odds": 0.3,
+        "tendenciaPolymarket": "RECUOU 0,15pp e está em 0,15% (vol USD 6,64M). Ele não é candidato e o contrato precifica cenário de substituição, então o nível diz respeito à percepção de risco sobre a chapa do PT, não a uma disputa em curso.",
+        "odds": 0.15,
         "percentage": 0,
         "lastUpdate": "2026-07-31",
-        "value": 0.3
+        "value": 0.15
       }
     ],
-    "updatedAt": "02/08/2026, 16:45"
+    "updatedAt": "03/08/2026, 19:11 UTC"
   }
 }

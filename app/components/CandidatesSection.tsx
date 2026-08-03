@@ -16,39 +16,39 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "65,50%",
-    poll: "Lula fica ESTÁVEL em Poly 65,50% (vol USD 7,90M acumulado), a 63 dias do 1º turno, no dia em que o PT oficializou a candidatura dele em convenção nacional em São Paulo, com Alckmin de vice. O gap sobre Flávio ABRE para +40,95pp, mas abre por queda do adversário, e não por alta dele. A urna nacional segue sendo a Vox Brasil (n=2.100, campo 26-28/Jul, margem 2,15pp, BR-01084/2026): 40,5% x 31,2% no 1º turno e 47,5% x 41,1% no returno.",
+    poll: "Lula fica PARADO em Poly 65,50% (vol USD 7,92M acumulado) pelo segundo pregão, a 62 dias do 1º turno, no dia em que a urna apertou. O gap sobre Flávio FECHA 0,90pp e vai a +40,05pp, mas fecha por ALTA do adversário, e não por queda dele. A urna nova é a BTG/Nexus (n=2.002, campo 31/Jul a 02/Ago, telefônica, margem 2pp, BR-02874/2026): 41% x 37% no 1º turno e 46% x 45% no returno, que é empate técnico dentro da margem.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "O TOPO DA SÉRIE FICOU PARA TRÁS E ISSO PRECISA SER DITO COM A JANELA CERTA: o máximo é 66,50%, do fechamento de 01/Ago, e o preço de hoje está 1,00pp abaixo dele. A série do AFOS cobre de 14/Abr a hoje, 108 dias. Contra a captura publicada ontem, de 65,50%, o preço não se moveu. Nenhuma urna nacional foi publicada desde a Vox de 31/Jul, e quatro nacionais estão com campo aberto agora, com publicação declarada entre 03 e 05/Ago. Na convenção, no Expo Center Norte, a chapa com Alckmin foi homologada e a coligação reuniu SETE partidos (PT, PCdoB, PV, PSB, PDT, PSOL e Rede), a maior da esquerda e do centro-esquerda desde 1989. Segundo a Folha de S.Paulo, ele disse que não quer ser presidente do Bolsa Família e prometeu disputar emendas com o Congresso. O pedido de voto antes do prazo legal foi em 01/Ago, na convenção da Bahia, e Flávio fez o mesmo no mesmo dia, em Santa Catarina."
+    risk: "AS DUAS MEDIÇÕES ANDARAM PARA O MESMO LADO HOJE, o que é raro, e o mecanismo é idêntico nas duas: ele não cedeu e o adversário subiu. Na urna perdeu 1pp no 1º turno e 1pp no returno, quedas DENTRO da margem de 2pp que isoladas não são movimento. No preço ficou exatamente parado. A JANELA PRECISA SER DITA: o topo da série é 66,50%, do fechamento de 01/Ago, e o preço de hoje está 1,00pp abaixo dele; o topo do gap é +41,80pp, da mesma data, e o de hoje está 1,75pp abaixo. Na série diária, o gap não ficava abaixo dos +40,05pp desde 30/Jul, quando marcou +39,50pp. A RESSALVA QUE IMPEDE A LEITURA FÁCIL é a dispersão entre casas: os 4pp da Nexus contrastam com 6pp na PoderData de 30/Jul, 9,1pp na AtlasIntel de 29/Jul e 9,3pp na Vox Brasil de 31/Jul, e a distância entre a mais alta e a mais baixa chega a 5,3pp. Uma casa medindo diferente das outras três não é virada de patamar. As duas nacionais que faltam da janela, Quaest e Ideia/Canal Meio, publicam em 05/Ago. Fora da disputa, a PF pediu ao STF a abertura de um terceiro inquérito contra Lulinha, sob suspeita de tráfico de influência, e o painel registra sem atribuir efeito eleitoral."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "24,55%",
-    poll: "Flávio CAI 0,20pp para Poly 24,55% (vol USD 7,82M acumulado), interrompendo seis pregões sem queda, e é essa queda que ABRE o gap para +40,95pp, porque Lula ficou parado. Nos sub-mercados o sinal é o inverso: SOBE 1,00pp no 2º lugar do 1º turno, para 80,50%, a maior marca dele naquele contrato no acompanhamento do painel, e fica praticamente parado no 3º lugar, em 4,90%.",
+    polymarket: "25,45%",
+    poll: "Flávio SOBE 0,90pp para Poly 25,45% (vol USD 7,86M acumulado), o movimento mais forte do pregão entre os dois primeiros, e é essa alta que FECHA o gap para +40,05pp, porque Lula ficou parado. Na urna da BTG/Nexus subiu 4pp, para 37% no 1º turno, e foi de 43% para 45% no returno, encostando a 1pp de Lula. Nos sub-mercados fica ESTÁVEL em 80,50% no 2º lugar do 1º turno e em 4,90% no 3º lugar.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "CEDE NA CHANCE DE GANHAR E SOBE NA DE CHEGAR AO RETURNO, no mesmo pregão, e o painel registra os dois sem escolher qual vale mais. Segue SEM vice a três dias do prazo de 05/Ago. O Valor Econômico registra que ele e Lula chegaram à reta final das convenções sem ampliar alianças, com o Centrão ainda neutro, e a convenção nacional do Republicanos, que trata de aliança presidencial, é em 04/Ago. HOJE ELE FOI À PARAÍBA, à convenção ESTADUAL do PL em João Pessoa, que lançou Efraim Filho ao governo e Marcelo Queiroga ao Senado, numa estratégia declarada de ampliar a presença dele no Nordeste, que é reduto histórico do adversário. Em 01/Ago, na convenção do PL em Santa Catarina, ele pedira voto antes do prazo legal, que abre em 16/Ago. Na urna, a Vox o traz em 31,2% no 1º turno e 41,1% no returno."
+    risk: "SUBIU NAS DUAS MEDIÇÕES NO MESMO DIA, o que não vinha acontecendo neste painel, e a alta de 4pp na urna é o DOBRO da margem de 2pp, então não se explica por ruído amostral. DUAS RESSALVAS MUDAM A LEITURA. A primeira é de série: o topo dele no mercado é 45,20%, de 07/Mai, e o piso é 22,00%, de 03/Jul, então 25,45% é recuperação DENTRO de um patamar já rebaixado, e chamar isso de retomada seria trocar a régua. A segunda é de dispersão: os 37% são a leitura mais favorável a ele entre as quatro nacionais publicadas desde 29/Jul, e as outras três dão gap de 6pp a 9,3pp no 1º turno, contra 4pp aqui. Ele perde os QUATRO cenários de returno da própria rodada de hoje. Recebeu apoio declarado de Javier Milei, que voltou a atacar Lula publicamente em 02 e 03/Ago, segundo Folha e O Globo. É favorito folgado do contrato de 2º lugar, com 80,50%, o que descreve um returno tratado como quase certo pelo mercado."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "7,95%",
-    poll: "Renan SOBE 0,35pp para Poly 7,95% (vol USD 8,82M acumulado) e INTERROMPE a sequência de queda que durava nove rodadas, SEM evento dele na data: o Missão oficializou a candidatura em 20/Jul e fez o lançamento de campanha em 01/Ago. Sobe também nos dois books de colocação: 0,20pp no 2º lugar do 1º turno, para 8,75%, e 2,00pp no 3º lugar, para 63,50%, onde é o favorito isolado.",
+    polymarket: "7,45%",
+    poll: "Renan CAI 0,50pp para Poly 7,45% (vol USD 8,86M acumulado) e DESFAZ a alta de 0,35pp de ontem, que tinha interrompido nove rodadas de queda. Nos books de colocação, sobe 0,45pp no 2º lugar do 1º turno, para 9,20%, e CAI 3,00pp no 3º lugar, para 60,50%, onde segue favorito isolado. Na urna, a BTG/Nexus deu 4%, contra 5% na rodada de 27/Jul da mesma casa.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "A VIRADA DE HOJE NÃO DESFAZ O ARCO: ele saiu de 12,00% em 23/Jul e tocou 7,10% no fechamento de 01/Ago, que é o piso desse arco, e o de hoje é o primeiro pregão de alta em dez. NÃO é mínimo de série, e a janela precisa ser dita: o mínimo é 5,30%, de 26/Abr, e o máximo é 17,90%, de 09/Jun. Na urna, três institutos seguidos o cortaram, 7,8% na AtlasIntel de 29/Jul, 4% na PoderData de 30/Jul e 3,0% na Vox de 31/Jul, e não houve leitura nova desde então. Com o preço subindo e a urna parada, a distância entre mercado e urna VOLTOU A ABRIR, de 4,60pp para 4,95pp. No evento de lançamento de campanha, em 01/Ago, ele atacou Lula e Flávio, chamou Moro de vassalo, disse que vai tirar Flávio do returno e prometeu matar quem roubar. A alta de hoje NÃO tem fato do dia para acompanhar, e o painel registra isso em vez de emprestar causa a um evento de outra data."
+    risk: "A SEQUÊNCIA DA URNA É O QUE MAIS PESA E ELA JÁ TEM QUATRO LEITURAS: depois dos 7,8% da AtlasIntel de 29/Jul, quatro nacionais seguidas o mediram entre 3% e 4%, com a PoderData em 4%, a Vox Brasil em 3,0% e a Nexus de hoje em 4%. Uma leitura isolada alta contra quatro baixas é o padrão de fora da curva, e o painel registra assim. A distância entre preço e urna fica em 3,45pp, contra 4,95pp ontem, e ela estreitou pelo lado do PREÇO cedendo, não da urna subindo. Ele perde o returno contra Lula por 47% x 37%, a pior das quatro simulações da rodada. O VOLUME SEGUE SENDO A ANOMALIA: com USD 8,86M acumulados, ele tem mais dinheiro negociado que Lula, que tem USD 7,92M, com preço um oitavo do dele. Volume alto com preço em queda descreve posição antiga que ficou aberta, não convicção de agora. Ressalva de série, e ela é grande: o mínimo é 5,30%, de 26/Abr, e o máximo é 17,90%, de 09/Jun."
   },
   {
     name: "Fernando Haddad",
     party: "PT",
     age: 63,
     role: "Pré-candidato Gov. SP",
-    polymarket: "0,30%",
-    poll: "Haddad SOBE 0,05pp para Poly 0,30% (vol USD 6,63M acumulado) e fica em 1,05% no 2º lugar do 1º turno. A Vox Brasil não o testa em nenhum cenário, nem de 1º turno nem de returno, e nenhuma nacional foi publicada desde então, então ele segue sem urna nova.",
+    polymarket: "0,15%",
+    poll: "Haddad RECUA 0,15pp para Poly 0,15% (vol USD 6,64M acumulado) e fica em 0,95% no 2º lugar do 1º turno. A BTG/Nexus não o testa em nenhum cenário, nem de 1º turno nem de returno, então ele segue sem urna própria.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
-    risk: "O agravante de leitura permanece e o painel repete: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece é hipótese de pesquisa e não candidatura em curso. Nesse nível de preço, alta de 0,05pp tem valor informativo quase nulo, e o painel registra o nível, não a oscilação. O volume acumulado dele, USD 6,63M, é maior que o de vários nomes com preço acima do dele, o que mede história negociada e não convicção atual."
+    risk: "O agravante de leitura permanece e o painel repete: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e o cenário que o favorece é hipótese de pesquisa e não candidatura em curso. Nesse nível de preço, queda de 0,15pp tem valor informativo quase nulo, e o painel registra o nível, não a oscilação. O volume acumulado dele, USD 6,64M, é maior que o de vários nomes com preço acima do dele, o que mede história negociada e não convicção atual."
   },
   {
     name: "Ronaldo Caiado",
@@ -56,9 +56,9 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "1,15%",
-    poll: "Caiado CAI 0,20pp para Poly 1,15% (vol USD 5,27M) no quarto pregão seguido de queda, e ao mesmo tempo SOBE 2,00pp no 3º lugar do 1º turno, para 24,50%, recuperando a queda da véspera. Na urna, a Vox lhe dá 5,5%, a melhor leitura nacional dele no recorte, e não houve nacional nova desde então.",
+    poll: "Caiado fica ESTÁVEL em Poly 1,15% (vol USD 5,30M) e SOBE 0,50pp no 3º lugar do 1º turno, para 25,00%, onde é o segundo nome atrás de Renan Santos. Na urna, a BTG/Nexus dá 5% no 1º turno, contra 6% na rodada de 27/Jul da mesma casa, e 46% x 42% no returno contra Lula.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "HOJE ELE TOCOU O PISO DA SÉRIE e depois se recuperou dentro do próprio dia, e as duas coisas são do mesmo 02/Ago: a coleta das 11:30 UTC gravou 0,90%, que iguala o menor valor desde 14/Abr, já registrado entre 05 e 09/Jul, e a captura travada das 19:42 UTC traz 1,15%. O painel publica a captura travada e registra o piso intradiário em vez de escolher um dos dois. O mercado segue realocando ele de candidato a vencedor para candidato a terceiro colocado, e a urna não acompanha: a divergência entre institutos sobre ele continua aberta em quatro níveis dentro do mesmo mês, 6% na Nexus, 5,5% na Vox, 5% na PoderData e 3,1% na AtlasIntel."
+    risk: "FOI OFICIALIZADO CANDIDATO EM CONVENÇÃO HOJE E O MERCADO NÃO REAGIU. No discurso, chamou a resposta institucional aos atos golpistas de maior desastre da história e prometeu anistiar Bolsonaro e os condenados do 8 de Janeiro, segundo o Valor Econômico. No mesmo dia disputou com Flávio o voto do agronegócio, dizendo ser a raiz e não o sabor agro, segundo o G1. O CRUZAMENTO QUE INTERESSA É ESSE: ele foi buscar exatamente o eleitorado em que Flávio subiu 4pp na urna e 0,90pp no preço, e nem a urna nem o mercado registraram ganho para ele. O preço de 1,15% está acima do piso de 0,90% que a série tocou dentro do dia 02/Ago, já registrado também entre 05 e 09/Jul. A divergência entre institutos sobre ele segue aberta em quatro níveis dentro do mesmo mês: 6% na Nexus de 27/Jul, 5,5% na Vox, 5% na Nexus de hoje e na PoderData, e 3,1% na AtlasIntel."
   },
   {
     name: "Romeu Zema",
@@ -66,9 +66,9 @@ const candidates: CandidateProfile[] = [
     age: 56,
     role: "Ex-Gov. Minas Gerais",
     polymarket: "0,25%",
-    poll: "Zema CAI 0,10pp para Poly 0,25% (vol USD 4,64M) e fica ESTÁVEL em 4,60% no 3º lugar do 1º turno. A Vox o traz em 3,2% no 1º turno, praticamente o mesmo dos 3% da PoderData, e não houve nacional nova desde então.",
+    poll: "Zema fica ESTÁVEL em Poly 0,25% (vol USD 4,66M) e ESTÁVEL em 4,60% no 3º lugar do 1º turno. A BTG/Nexus o traz em 3% no 1º turno, o mesmo da rodada de 27/Jul da mesma casa, e em 46% x 40% no returno contra Lula.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Segue SEM vice, com o prazo de 05/Ago a três dias, depois de o Novo descartar Barbosa para a vaga e de Marcelo Aro deixar a chapa dele ao Senado, movimento que Zema chamou publicamente de traição. Ressalva de série, e ela é grande: o máximo dele é 10,10%, de 26/Abr, então 0,25% é menos de um quarentavo daquele nível e movimentos nessa faixa têm valor informativo quase nulo. Ressalva de coleta, e ela é do painel, não do mercado: a série do AFOS para esse nome NÃO tem ponto depois de 30/Jul, então o preço de hoje entra pela captura travada e sem comparação com fechamento de série."
+    risk: "FOI OFICIALIZADO CANDIDATO EM CONVENÇÃO HOJE, anunciou mudança de Belo Horizonte para São Paulo por causa da campanha, segundo O Globo, e o preço não se moveu nem no dia da própria convenção. Ressalva de série, e ela é grande: o máximo dele é 10,10%, de 26/Abr, então 0,25% é menos de um quarentavo daquele nível e movimentos nessa faixa têm valor informativo quase nulo. O Globo registra ainda que o Novo perde espaço como partido antissistema e vê Renan Santos se contrapor a ele nesse espaço."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,7 +76,7 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "Tarcísio fica ESTÁVEL em Poly 0,05% no presidencial, com o maior volume acumulado do book nesta captura, USD 13,70M. Não é testado pela Vox Brasil em nenhum cenário presidencial. Foi oficializado pelo Republicanos em 01/Ago à REELEIÇÃO no governo de São Paulo, e a convenção nacional do partido, que decide aliança presidencial, é em 04/Ago.",
+    poll: "Tarcísio fica ESTÁVEL em Poly 0,05% no presidencial, com o maior volume acumulado do book nesta captura, USD 13,72M. Não é testado pela BTG/Nexus em nenhum cenário presidencial. Foi oficializado pelo Republicanos em 01/Ago à REELEIÇÃO no governo de São Paulo, e a convenção nacional do partido, que decide aliança presidencial, é em 04/Ago.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
     risk: "O presidencial dele em 0,05% com o maior volume acumulado do book é a anomalia de legado que serve de lembrete permanente de método: volume mede história negociada e não convicção atual. O contrato acumulou esse valor ao longo de meses em que ele era tratado como candidato provável, e o preço de hoje diz que o mercado não o considera mais na disputa. NENHUM superlativo é afirmado sobre ele, e a razão é de coleta: a série do AFOS tem apenas três dias para esse nome, entre 28/Abr e 14/Mai, e não sustenta dizer que este é o menor valor dele."
   },
