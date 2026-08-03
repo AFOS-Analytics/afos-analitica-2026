@@ -2,6 +2,26 @@
 
 Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 e validado pelo piloto de 7 dias (decisão GO em 28/04/2026 noite).
 
+## 🥇 Pré-requisito ZERO: o WAYBACK ATRASADO roda ANTES da daily
+
+**Ordem do André em 03/Ago/2026, literal: "roda o wayback amanhã antes da daily".**
+
+O arquivamento das dailies anteriores vem **antes** de escrever a do dia, não depois. A ETAPA 6 continua tendo o Wayback da daily nova; isto aqui é o **passivo acumulado**, que é outra coisa.
+
+```bash
+# 1. pré-check: bate no /save/, NUNCA na raiz. A raiz responde 200 com o save bloqueado.
+curl -s -o /dev/null -w "%{http_code}\n" -m 45 "https://web.archive.org/save/https://example.com"
+
+# 2. se deu 200, rodar a fila do mais antigo para o mais novo
+npx tsx scripts/wayback-archive.ts 2026-07-29   # e assim por diante
+```
+
+⛔ **Se o pré-check der 000 ou 429, NÃO rodar e NÃO insistir.** Avisar o André **no começo da sessão**, não no fim. Rodar bloqueado não arquiva nada e aprofunda o bloqueio.
+
+⚠️ **A armadilha do disjuntor:** as cinco primeiras URLs de qualquer daily são do Polymarket, que é domínio anti-robô. Quando ele aborta com "5 falhas de HOST seguidas", parece defeito daquelas cinco. Um teste único distingue: salvar uma URL de notícia comum. Se também der 000, é bloqueio global. Regra completa em `memory/feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo.md`.
+
+📌 **Por que virou pré-requisito:** o passivo chegou a **cinco dias** (29-31/Jul, 01 e 03/Ago) porque o arquivamento ficava sempre para o fim da sessão, competindo com o deploy e com o cansaço. Rodar primeiro custa minutos.
+
 ## Pré-requisito obrigatório
 
 Antes de executar este comando, o `/atualizar-brz` do mesmo dia já deve ter sido executado — o conteúdo vem dos JSONs atualizados:
