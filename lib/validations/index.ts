@@ -25,7 +25,7 @@ export const subscribeSchema = z.object({
   visitorId: z.string().uuid().optional(),
   // 'daily' e 'tradeoff' = bloco de inscrição no fim das edições publicadas.
   // Separar a origem permite medir se o conteúdo converte, sem tracking em e-mail.
-  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff']).optional(),
+  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'weekly']).optional(),
 })
 
 // ── Visitor ───────────────────────────────────────────────

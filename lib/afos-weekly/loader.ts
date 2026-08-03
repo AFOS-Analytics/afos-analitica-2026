@@ -75,11 +75,28 @@ export interface WeeklyClaim {
  */
 export interface WeeklyCoverage {
   subject: string
+  /**
+   * 🔴 OBRIGATÓRIO. O que a imprensa cobriu na janela, atribuído por veículo,
+   * no modelo da Seção 3 do AFOS Daily.
+   *
+   * ⚠️ MUDOU EM 03/Ago/2026, por decisão do André. Até aqui a seção tinha
+   * `noDivergence` como INTERRUPTOR DE CONTEÚDO: quando ligava, o template
+   * trocava a seção inteira por um parágrafo dizendo que não houve divergência.
+   * Ou seja, com 22 veículos monitorados e matéria coletada, o leitor recebia
+   * uma desculpa. Divergência é o caso EXTRA, nunca a condição para a seção
+   * existir.
+   *
+   * Cada parágrafo atribui o que afirma ao veículo que publicou, com data
+   * explícita. Sem juízo de valor e sem rótulo de inclinação.
+   */
+  narrative: string[]
+  /**
+   * Divergência conferível, quando existir. Vazio é estado normal e não gera
+   * texto de desculpa: a seção já tem a narrativa acima.
+   */
   claims: WeeklyClaim[]
-  /** O número medido pela casa que fica ao lado das afirmações. */
-  measurement: string
-  /** Quando não houve divergência conferível na janela, isto é declarado. */
-  noDivergence?: boolean
+  /** O número medido pela casa, que fica ao lado das afirmações divergentes. */
+  measurement?: string
 }
 
 export interface WeeklyCrossing {
@@ -106,7 +123,7 @@ export interface AfosWeeklyData {
   coverage?: WeeklyCoverage
   crossings: WeeklyCrossing[]
   howToRead?: { title: string; text: string }
-  sources: { label: string; items: { source: string; description: string; link: string }[] }[]
+  sources: { label: string; items: { source: string; description: string; link: string; paywall?: boolean; hideUrl?: boolean }[] }[]
   methodology: string
 }
 

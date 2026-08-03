@@ -31,7 +31,7 @@ const T = {
     oQueE:
       'Este painel põe lado a lado o que o mercado de previsão precifica e o que as pesquisas medem sobre a disputa pelo Congresso americano.',
     regra:
-      'As duas coisas não são somadas nem subtraídas, porque medem grandezas diferentes: o mercado dá a probabilidade de um partido controlar a casa, e a pesquisa dá a vantagem em pontos de voto. O que se cruza aqui é direção e movimento, nunca nível.',
+      'As duas coisas não são somadas nem subtraídas, porque medem grandezas diferentes: o mercado de previsão dá a probabilidade de um partido controlar a casa, e a pesquisa dá a vantagem em pontos de voto. O que se cruza aqui é direção e movimento, nunca nível.',
     naoFaz:
       'O AFOS relata o cruzamento. Não faz previsão, não recomenda posição e não diz quem vai ganhar.',
     fonte:
@@ -44,7 +44,7 @@ const T = {
     oQueE:
       'This panel places side by side what the prediction market prices and what the polls measure about the race for the American Congress.',
     regra:
-      'The two are neither added nor subtracted, because they measure different quantities: the market gives the probability of a party controlling the chamber, and the poll gives the lead in vote points. What is crossed here is direction and movement, never level.',
+      'The two are neither added nor subtracted, because they measure different quantities: the prediction market gives the probability of a party controlling the chamber, and the poll gives the lead in vote points. What is crossed here is direction and movement, never level.',
     naoFaz:
       'AFOS reports the crossing. It does not forecast, does not recommend a position, and does not say who will win.',
     fonte:
@@ -57,7 +57,7 @@ const T = {
     oQueE:
       'Este panel pone lado a lado lo que el mercado de predicción fija y lo que las encuestas miden sobre la disputa por el Congreso estadounidense.',
     regra:
-      'Las dos cosas no se suman ni se restan, porque miden magnitudes distintas: el mercado da la probabilidad de que un partido controle la cámara, y la encuesta da la ventaja en puntos de voto. Lo que se cruza aquí es dirección y movimiento, nunca nivel.',
+      'Las dos cosas no se suman ni se restan, porque miden magnitudes distintas: el mercado de predicción da la probabilidad de que un partido controle la cámara, y la encuesta da la ventaja en puntos de voto. Lo que se cruza aquí es dirección y movimiento, nunca nivel.',
     naoFaz:
       'El AFOS relata el cruce. No hace pronósticos, no recomienda posiciones y no dice quién va a ganar.',
     fonte:

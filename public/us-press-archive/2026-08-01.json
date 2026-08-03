@@ -1,0 +1,177 @@
+{
+  "lastUpdate": "2026-08-01",
+  "fetchedAt": "2026-08-01T20:58:51.307Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 126,
+    "naLista": 49,
+    "foraDaLista": 77,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 28,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": []
+  },
+  "itens": [
+    {
+      "titulo": "Dems are increasingly desperate to get their Senate candidates to drop out in these races",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckl6M3JBNmIyYUY5cXNfcVFyT3ZKcGRwLTQ3VHAtaWdiZ2J5NVJqdDNON2huOGZDR29VbkJwT21yX0hLNjhzbU5pMWpnVE81X1M0RG5KTWFSZk5VU2ZMVmlHV19pTnRIRW8xOENtRkZVelE3QnFUMFIyY1BOdGc2NEhONEItNVREelRYdENfdTcxUFNCNGRuaGdQUEg4WlhpVFE?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-01T11:00:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "In the race for Senate in Michigan, multiple party fights are colliding for Democrats",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWkhiNXhkcGZzcDcxTElUbkcteVB6SGtGaVFRX1Q5VmxzYlJlYkZRWXpEOG9tcXczM28tWGlDUmduOVhxd0VqQ0M3UmNmWll0R0FvbHViTXh6bzdNY0s4bDV6cS1HaHY2MFRueTRlSDE3blBKOVBJMEtrNUVaVTcyX2F6cU5DX0xXS3JVMndZcnhwQ0w4WXZob3JHQWdBN1Yzd1E?oc=5",
+      "casa": "NPR",
+      "publicadoEm": "2026-08-01T09:00:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Divided Democrats face a moment of truth in Michigan Senate primary",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnpFZWF1TE5LV2M1bTA0dGFwZVRxeEVkTldPSW95aGxfVHBqM1Atd1RwdTRyaTMwLU1qM0F3d052cjBqRlp3RjVvSUZPX3BBbEJKQjRLUWROc3NIRk44eEtnWFh1cERSN3d1Zml5UVRhUmNaM3NzalJYOWp4bF92cF9FbDJrZ0dya3hn?oc=5",
+      "casa": "Axios",
+      "publicadoEm": "2026-08-01T03:45:08.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "What Worries Democrats as the Midterms Heat Up",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYmhNNmlWTl9RYjduSEJMWF9EUzZDb1I5VXo2b0FVdlVBYjczbWVld3AzN05hQ1JkR2I0MEdSd1ZHNXhFQks4MElFVW1uVVctU2p2eHc4VnNMVjhuQnZHXzJ5NzJvSnVoVC1MRlhWT05RUVl1a0RSdmZDWUpEME9EZ3VWUGhUVlB6c1kwaFJUelNQdw?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-31T22:02:04.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Democrat Mandela Barnes drops out of Wisconsin governor’s race",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNUFWaTJrSXB1dWt3N21DT1pwUVZfaE1tT2FkeWl1Y0gxTXNlSWxYUkdGRk4tbnRhX3dVVkpoNUxrdC1say1TWVNaWUtZR3lMNVNqVEs5X3NjbWhGam1oNGw3dEUwYWxXZG55dks0ZDVUNHJPWkU4MURuTkRjRFlYR0M0Z09nY2NEOHBoaTRZSHBwUm5lRnh4NWFwdGtQUGZVYzhycGRWaHpGenBLZEVPNnJR?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-07-31T17:35:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Trump-stamped passport coming to appointments near you. See where",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNRDd6LXhHeGVoQlJkMlFKUWs5TGlabmlwYXpvNTBiUUFOV2FuRS1ERUNMZHNFaGN5Qk5HRVNvc21zSXBtM1VVYjBxZWE5Q3JsNzhMMFdxM1dYV1ZvUFYza2pxV2VSMURBTGE2Zld2UzY4dVhQQjdFR1F2YkhISjZEUXNOdUUzYmlnbXBrd2dPaHhSajVqcTNzM1A0NWJiOXlBbzM2a3hfYy0?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-07-31T16:57:00.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Democrats show divisions on Israel amid competitive midterm elections",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQdk5rMWFWZFFFZVZRS3V0ZUwyTS1vS2diaVZSUUVlaVFSWEpWbDFyakJvTW1nU0YweGV0R0djRmNKT25VUVFmdW5RQkZxTERiSjBWcnRHbnowTGhLSDFiVnhJMUh2b3FlQXFXQmJJMUN3WWxXTzI5azJGRGJiTVFVU01Wc1Bfbk9rQmtqbEtZLWlKVXVsVi0xZA?oc=5",
+      "casa": "NPR",
+      "publicadoEm": "2026-07-31T09:00:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Fox News Poll: GOP divisions shape Texas Senate race",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQU01VQjNiNWhzYVBIZkhWc01lRU1fWG96dGprSmRBekNyVkx2ZFg1Sjk3WHpWdnk1OUg4ZTlfZmhmQkF4RHhmOEtSalMzLUV2N0p0ZzF0WVBDN29pcmh2SlhfVmNiQ3RZT1I0b3BkWWNQdGhvQWQ0Q2pRemFTWHNyQmRaem9XTlFxaExLSNIBkgFBVV95cUxNOWtTekNEbVoyV1pSMTZ0R28wSlFBY1l5eVdRY3JQSVVvTk9TZzBHeFJSdWo4aTE2M2xVb2ZrZTBfMTBEbFdNVnlnZXNIZExFbkN4R0FLUVhlY05Pc0dNM2xCcUdYQ0RmMnVhSHlVVTliYmNxTU91bDhObkstdHlHZzdOZk1IdTNFYmhFckllRlBCdw?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-07-30T22:00:03.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Has Donald Trump pleaded the Fifth? Yes, here's why",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaDRZc2tCbm1sN2hScURoSmdMcWJDZEJGbTFhN3RnYUtTZnJmMEtoMndqY1h0Z1FrVEh6b292YUh4dWtCY2tsQzRRemRrV2dDYWtFRGx5QzNZUXN5QWFISUhoTzdIeEs0Tk40eXhZNGtpcG5MY2dPQ0RISElHaXVaUWFVZHh6OGtsdjVwT1c2WWp2TFNfQ2lRblAwWnhRR3JkSl9qREtn?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-07-30T17:21:00.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Ossoff reelection bid, 5 House seats move toward Democrats: Sabato’s Crystal Ball",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOUkh6bzZhbEFlWG9EVENBN3F1czd2aDF6eHFJMF9tYlBiaFZhbWZ1eDZEeEM3OXpvdGJHRWkyX19oQU45NE52NUU5LVdaTmJsdENLZHhvVFBmLXNxLXlWaS1MdE1veG9sSDIwUFNfNFJCZ3JTNmVYekNOeTR1NTNSRC1oaXUzSUZMMXlLUWVHd9IBlAFBVV95cUxNbWEtT0wzUllXY1I5NzRkREhXM25nUDd1QnJ2dEhFc21UTm4wR3lxLUtSZE5fdHlFYms5MlZZcXV5aUtDajB0eXRxTnhWZG5CdlN2QmFnYzFoZzhRYTNmbGVLSFBMdl80dW16U3VudWE0UGc1dnVIRTNzMlpLNUlJeWJHdFlpUVNUUTdIaGswajh6cDN3?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-07-30T15:55:00.000Z",
+      "consulta": "generic-ballot"
+    }
+  ]
+}

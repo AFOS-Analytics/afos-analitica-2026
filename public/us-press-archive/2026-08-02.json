@@ -1,0 +1,156 @@
+{
+  "lastUpdate": "2026-08-02",
+  "fetchedAt": "2026-08-02T19:20:42.464Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 125,
+    "naLista": 65,
+    "foraDaLista": 60,
+    "publicados": 7,
+    "descartadosPorAcompanhamento": 39,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": []
+  },
+  "itens": [
+    {
+      "titulo": "The fight for Michigan: How a marquee Senate primary became the Democrats’ latest proxy war",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMnQwXy1iTFBQRUxoZ1RzWlZHTFllNnQwNG5Cdy1mc3QxVGNTdHBpWXZQZEIzcGllbTlOb0RWSnBzeTN3ZGdoN1JSSGktV216TkR2T3g4MkZ4aFRidjVNMndXWThReWhRSGpwbmFua2NTUXo4OGFaLTBKUGpmRFFyQnprNW1fR0tlOGFPQjEyQ1YtQW56dHZJWGVB?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-02T10:30:25.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Democrats face most contentious – and crucial – test yet with Michigan primary",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5SZnNKS1M0VUlac29VSnA5ZVFQUGNuaGtsbGs1VXg0OXlPWEpSTlVtTkJsc29XTENNa1FfNDZwYkhqUFM1cXV1UFVqdUNqTHhLeXNRY05WSjRzb28tc0xmTWFyUGtZVTVqUWR3Y1E1MVhwS2lwbnFudS1Kck05TFk?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-02T10:01:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "The Democrats have one last chance to halt the erosion of US democracy – and it’s less than 100 days away",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOaHRiblhKemt1aHl2ak04bTE3YTBRRTJrLXptZTJFRnZWbUFpRmI1YnMyaENxcWpOcUF2bnlGbFZKRXNyT2t1OE1rZzM1WVk0TXBPVkNKaDFkMGk3bnYwVkJMNjlNWFhycUVEYm03cG51d1pCUjVRcE9Gcm5SSjR0bGp3cXMyaHdCdXlfZmRxU0xadw?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-01T14:48:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Dems are increasingly desperate to get their Senate candidates to drop out in these races",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNckl6M3JBNmIyYUY5cXNfcVFyT3ZKcGRwLTQ3VHAtaWdiZ2J5NVJqdDNON2huOGZDR29VbkJwT21yX0hLNjhzbU5pMWpnVE81X1M0RG5KTWFSZk5VU2ZMVmlHV19pTnRIRW8xOENtRkZVelE3QnFUMFIyY1BOdGc2NEhONEItNVREelRYdENfdTcxUFNCNGRuaGdQUEg4WlhpVFE?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-01T11:00:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "In the race for Senate in Michigan, multiple party fights are colliding for Democrats",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWkhiNXhkcGZzcDcxTElUbkcteVB6SGtGaVFRX1Q5VmxzYlJlYkZRWXpEOG9tcXczM28tWGlDUmduOVhxd0VqQ0M3UmNmWll0R0FvbHViTXh6bzdNY0s4bDV6cS1HaHY2MFRueTRlSDE3blBKOVBJMEtrNUVaVTcyX2F6cU5DX0xXS3JVMndZcnhwQ0w4WXZob3JHQWdBN1Yzd1E?oc=5",
+      "casa": "NPR",
+      "publicadoEm": "2026-08-01T09:00:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "What Worries Democrats as the Midterms Heat Up",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNYmhNNmlWTl9RYjduSEJMWF9EUzZDb1I5VXo2b0FVdlVBYjczbWVld3AzN05hQ1JkR2I0MEdSd1ZHNXhFQks4MElFVW1uVVctU2p2eHc4VnNMVjhuQnZHXzJ5NzJvSnVoVC1MRlhWT05RUVl1a0RSdmZDWUpEME9EZ3VWUGhUVlB6c1kwaFJUelNQdw?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-31T22:02:04.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Trump-stamped passport coming to appointments near you. See where",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNRDd6LXhHeGVoQlJkMlFKUWs5TGlabmlwYXpvNTBiUUFOV2FuRS1ERUNMZHNFaGN5Qk5HRVNvc21zSXBtM1VVYjBxZWE5Q3JsNzhMMFdxM1dYV1ZvUFYza2pxV2VSMURBTGE2Zld2UzY4dVhQQjdFR1F2YkhISjZEUXNOdUUzYmlnbXBrd2dPaHhSajVqcTNzM1A0NWJiOXlBbzM2a3hfYy0?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-07-31T16:57:00.000Z",
+      "consulta": "generic-ballot"
+    }
+  ]
+}

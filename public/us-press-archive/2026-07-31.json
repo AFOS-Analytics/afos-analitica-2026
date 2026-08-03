@@ -1,0 +1,199 @@
+{
+  "lastUpdate": "2026-07-31",
+  "fetchedAt": "2026-07-31T19:20:12.512Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "inclinacao": "centro-direita"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "inclinacao": "esquerda"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise",
+      "inclinacao": "centro"
+    }
+  ],
+  "qualidade": {
+    "lidos": 160,
+    "naLista": 77,
+    "foraDaLista": 83,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 40,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": []
+  },
+  "itens": [
+    {
+      "titulo": "Democrat Mandela Barnes drops out of Wisconsin governor’s race",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQNUFWaTJrSXB1dWt3N21DT1pwUVZfaE1tT2FkeWl1Y0gxTXNlSWxYUkdGRk4tbnRhX3dVVkpoNUxrdC1say1TWVNaWUtZR3lMNVNqVEs5X3NjbWhGam1oNGw3dEUwYWxXZG55dks0ZDVUNHJPWkU4MURuTkRjRFlYR0M0Z09nY2NEOHBoaTRZSHBwUm5lRnh4NWFwdGtQUGZVYzhycGRWaHpGenBLZEVPNnJR?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-07-31T17:35:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Who is Ahead in Florida's 8th Congressional District?",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPOGtFdE9TcEdBNURrdHFaYWhQVG5CMVhTdnR6UlFoSzdTNVdWaDJmMDV4blRNaXBzUWV0QjRvZ3U3dnQ3cmNIU2NTMm5kZzRVeTdCaWtqbmJKVU9URl85ZGV1N2NEOVpBbnR1b1NPT3c5WmpGeFNWX1lMTk94dUZkYlRR?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-31T15:43:05.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Divided Democrats face a moment of truth in Michigan Senate primary",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOMnpFZWF1TE5LV2M1bTA0dGFwZVRxeEVkTldPSW95aGxfVHBqM1Atd1RwdTRyaTMwLU1qM0F3d052cjBqRlp3RjVvSUZPX3BBbEJKQjRLUWROc3NIRk44eEtnWFh1cERSN3d1Zml5UVRhUmNaM3NzalJYOWp4bF92cF9FbDJrZ0dya3hn?oc=5",
+      "casa": "Axios",
+      "publicadoEm": "2026-07-31T09:00:52.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Bakari Sellers: ‘Don’t ever get optimistic about Democrats’",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPejB4M3hVM0RtejA5ZkFUdndjdEwyQlFDajljbFZNVkFfQTJONnlBNHNaNGZGME1oSXUzS2ZrS2lyWEQ2VnplQk5UaU5BSWUwaGxINGdQR0hOTlUzTERlTlJmTG9nUklQVnNLQ3pVb3haQnlQMDB6enlhSGozMUxscmwycmE4V1BJNTlhZV9KelMzTTIwZTZ0aDRrakRSUjFUeGdN?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-07-31T02:46:36.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Fox News Poll: GOP divisions shape Texas Senate race",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQU01VQjNiNWhzYVBIZkhWc01lRU1fWG96dGprSmRBekNyVkx2ZFg1Sjk3WHpWdnk1OUg4ZTlfZmhmQkF4RHhmOEtSalMzLUV2N0p0ZzF0WVBDN29pcmh2SlhfVmNiQ3RZT1I0b3BkWWNQdGhvQWQ0Q2pRemFTWHNyQmRaem9XTlFxaExLSNIBkgFBVV95cUxNOWtTekNEbVoyV1pSMTZ0R28wSlFBY1l5eVdRY3JQSVVvTk9TZzBHeFJSdWo4aTE2M2xVb2ZrZTBfMTBEbFdNVnlnZXNIZExFbkN4R0FLUVhlY05Pc0dNM2xCcUdYQ0RmMnVhSHlVVTliYmNxTU91bDhObkstdHlHZzdOZk1IdTNFYmhFckllRlBCdw?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-07-30T22:00:03.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "4 major Latino organizations joining forces for first time to mobilize voters ahead of 2026 midterms",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQjFFWXl3ZjdHOGlUSXczVjNZYXVPWUxCNEFFd1dnWHZtdk1icmRkTkdydkdPMkp6YTczSk5LSDNaTUpERklfdW5QVTRqN25BWWRBSkF0M1BtSHJpWDA2VHcxZTlFZGlfQ1Q4ZExacEpMdFYzSVJ2b1VPcnEzMm1FMThadFFTblU?oc=5",
+      "casa": "CBS News",
+      "publicadoEm": "2026-07-30T19:03:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Elon Musk Plans at Least $100 Million in Midterm Spending to Help Republicans",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOUFJFWnpldmY0aV9vSHpnS0w2UTJUZkQ3WnYzY3VraHNJWVpickRPeFJ0dDNsaGFTamVqZWVMcm9mSWJ0dzMtZ1VmX19DLVprckRhWGc4WksxUG1JanpmQTVyUEhhV04zZUtuVlBYcFB3RXRkNS16eTFoSVJ2YzZSTG5ObVZNVENXQnc?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-30T17:03:16.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Democratic Senate candidates pursue a new strategy in rural states: Dropping out",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQT1J1SjFVSTl1ZTk4TFdXM3ZYaVVIQjhJdmJWTVNHenNFcGdzMkRQVFlRQ19Sd2JvMHJFd0RfZl92bEplTTgyVkxuMkU3eE1sRzVhX1o5eU9HTnBpUTQyV25qUmRERmVoTnJXSDJ6SXlZOUw3NlRQU3RscTZEMDdkVFFxZlNGanM2UGZ6Z04wM1BzdXd6Y2wwcVBKN1R4TFpDVDloQlNnS0V3N0hyYlN5d0NmQTh6VmZXMWtFczlsZmNCcjU5VFdJ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-07-30T16:48:37.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Analysis | A divided field threatens Democrats’ Montana Senate hopes",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWlE4cF9CQXpqblF0dU91cDZEWGVEdHdfSlZ0TjgtY3hINnlBQ0p0YzJaSVUweWlIMVZBRVJrRG1LOS12bDgzbDN1QXljM2hCSlk2MUtYOTNHR1lCWE9rLUFWMUw5enlTdzRzenN0VW55dnc5VU1FMjlDWmdfTldJSFlhb3hEY3BRNFdhT2R4NFZfQ2xsSGRsblhuZUdHV3AyeVhvVnhoRWc1ZzdCdUhjaXdaTExoV0N4TXc?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-07-30T16:36:36.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Ossoff reelection bid, 5 House seats move toward Democrats: Sabato’s Crystal Ball",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOUkh6bzZhbEFlWG9EVENBN3F1czd2aDF6eHFJMF9tYlBiaFZhbWZ1eDZEeEM3OXpvdGJHRWkyX19oQU45NE52NUU5LVdaTmJsdENLZHhvVFBmLXNxLXlWaS1MdE1veG9sSDIwUFNfNFJCZ3JTNmVYekNOeTR1NTNSRC1oaXUzSUZMMXlLUWVHd9IBlAFBVV95cUxNbWEtT0wzUllXY1I5NzRkREhXM25nUDd1QnJ2dEhFc21UTm4wR3lxLUtSZE5fdHlFYms5MlZZcXV5aUtDajB0eXRxTnhWZG5CdlN2QmFnYzFoZzhRYTNmbGVLSFBMdl80dW16U3VudWE0UGc1dnVIRTNzMlpLNUlJeWJHdFlpUVNUUTdIaGswajh6cDN3?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-07-30T15:55:00.000Z",
+      "consulta": "midterms"
+    }
+  ]
+}

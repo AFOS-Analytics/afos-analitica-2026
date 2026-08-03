@@ -16,7 +16,7 @@ import { UsPressSection } from '../../../components/UsPressSection';
 import { UsIntroCard } from '../../../components/UsIntroCard';
 import { AfosTradeoffHeroCard } from '../../../components/AfosTradeoffHeroCard';
 import { AfosWeeklyHeroCard } from '../../../components/AfosWeeklyHeroCard';
-import type { UsPressData } from '../../../../lib/dashboard/us-press-data';
+import type { UsPressLeitura } from '../../../../lib/dashboard/us-press-data';
 import { CountryGraph } from '../../../components/CountryGraph';
 import { SectionTitle } from '../../../components/ui';
 import type { CountryContext, CountryDivergence } from '../../../../lib/country-data';
@@ -38,7 +38,7 @@ import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
  */
 
 
-function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressData | null }) {
+function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressLeitura }) {
   const { locale } = useTranslation();
   const tKey = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as 'pt-BR' | 'en' | 'es';
 
@@ -46,21 +46,21 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
     'pt-BR': {
       titulo: 'Grafo do cruzamento',
       eleicao: 'EUA 2026 · Câmara',
-      nota: 'A linha entre o mercado e cada partido é tracejada e não traz número. É de propósito: o mercado precifica a probabilidade de controlar a Câmara e a pesquisa mede vantagem em pontos de voto, então não existe diferença para calcular. A ligação existe, o número não.',
+      nota: 'A linha entre o mercado e cada partido é tracejada e não traz número. É de propósito: o mercado de previsão precifica a probabilidade de controlar a Câmara e a pesquisa mede vantagem em pontos de voto, então não existe diferença para calcular. A ligação existe, o número não.',
       contexto: 'Contexto estrutural',
       contextoNota: 'Indicadores do Banco Mundial sobre o país, não sobre a eleição. Ficam ao lado do sinal para dar escala ao terreno, e nunca como previsor: nada aqui prevê resultado eleitoral.',
     },
     en: {
       titulo: 'Cross-reference graph',
       eleicao: 'US 2026 · House',
-      nota: 'The line between the market and each party is dashed and carries no number. That is deliberate: the market prices the probability of controlling the House and the poll measures a lead in vote points, so there is no difference to compute. The link exists, the number does not.',
+      nota: 'The line between the market and each party is dashed and carries no number. That is deliberate: the prediction market prices the probability of controlling the House and the poll measures a lead in vote points, so there is no difference to compute. The link exists, the number does not.',
       contexto: 'Structural context',
       contextoNota: 'World Bank indicators about the country, not about the election. They sit alongside the signal to give scale to the terrain, never as a predictor: nothing here forecasts an electoral result.',
     },
     es: {
       titulo: 'Grafo del cruce',
       eleicao: 'EE.UU. 2026 · Cámara',
-      nota: 'La línea entre el mercado y cada partido es punteada y no trae número. Es a propósito: el mercado fija la probabilidad de controlar la Cámara y la encuesta mide ventaja en puntos de voto, así que no hay diferencia que calcular. La conexión existe, el número no.',
+      nota: 'La línea entre el mercado y cada partido es punteada y no trae número. Es a propósito: el mercado de predicción fija la probabilidad de controlar la Cámara y la encuesta mide ventaja en puntos de voto, así que no hay diferencia que calcular. La conexión existe, el número no.',
       contexto: 'Contexto estructural',
       contextoNota: 'Indicadores del Banco Mundial sobre el país, no sobre la elección. Están al lado de la señal para dar escala al terreno, nunca como predictor: nada aquí pronostica un resultado electoral.',
     },
@@ -281,7 +281,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
         )}
 
         <div id="sec-imprensa" className="scroll-mt-20">
-          <UsPressSection data={pressData} />
+          <UsPressSection leitura={pressData} />
         </div>
 
         <div id="sec-limitacoes" className="scroll-mt-20">
@@ -294,7 +294,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
   );
 }
 
-export function UsDashboardClient({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressData | null }) {
+export function UsDashboardClient({ pollsData, context, pressData }: { pollsData: UsPollsData | null; context?: CountryContext; pressData: UsPressLeitura }) {
   return (
     <VisitorStateProvider>
       <UsDashboardContent pollsData={pollsData} context={context} pressData={pressData} />

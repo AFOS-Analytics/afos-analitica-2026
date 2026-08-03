@@ -1,0 +1,199 @@
+{
+  "lastUpdate": "2026-07-30",
+  "fetchedAt": "2026-07-30T19:54:44.595Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "inclinacao": "centro-direita"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "inclinacao": "centro-esquerda"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "inclinacao": "direita"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "inclinacao": "esquerda"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise",
+      "inclinacao": "centro"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise",
+      "inclinacao": "centro"
+    }
+  ],
+  "qualidade": {
+    "lidos": 133,
+    "naLista": 54,
+    "foraDaLista": 79,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 29,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": []
+  },
+  "itens": [
+    {
+      "titulo": "Trump’s failures on affordability are sinking the GOP ship for the midterms",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT0FacktMc2pnWmt6VU9CRHdRaDVnQ2Zid0dYZnM4ck53Zlc3MmJ1aDJseENMM2RnWjNpS0hTU0V3dHp3QmNuQVZaaF95WlhjSWFhbHJ1ZXdOb1VGbmQwSkZkZWFlSDYxaEpYZndCblB5b1ZqYXZBMVE1dTlXNlN3UDBUVnhhcTlfSTVLaHk2RFFVSm93YVUwWjF1N0hLaVBNUUxhZ0pKU1RsSFphaE9Vc1JBNE00aFI5eVk4RkVOc01pNHdZdTVWY2ln?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-07-30T18:57:00.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Democratic Senate candidates pursue a new strategy in rural states: Dropping out",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQT1J1SjFVSTl1ZTk4TFdXM3ZYaVVIQjhJdmJWTVNHenNFcGdzMkRQVFlRQ19Sd2JvMHJFd0RfZl92bEplTTgyVkxuMkU3eE1sRzVhX1o5eU9HTnBpUTQyV25qUmRERmVoTnJXSDJ6SXlZOUw3NlRQU3RscTZEMDdkVFFxZlNGanM2UGZ6Z04wM1BzdXd6Y2wwcVBKN1R4TFpDVDloQlNnS0V3N0hyYlN5d0NmQTh6VmZXMWtFczlsZmNCcjU5VFdJ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-07-30T16:48:37.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "CNN Poll: Voters favor Democrats by an 8-point margin heading into the midterms",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPOGpZVW9tSC0tUHhUR0syQjRMdHk1cTczV3F0aGRmZ2tPZlZPN05FWWwxYzZlMFNkbkJIQVAtVFA0WDV1OUZMUndlNjZ4VjJzZ3pkYWVkRDRiU0kxREU5dG5fX3MxVXpwdWJYQnQ5cXFzQUNEZE1WcXVDZlVBbEpzNG91ZjRGVkpYQVVoaUIyaFVHS0JsdTNNRHhZYjRubGJlU1E?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-07-30T10:00:26.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Two looming primaries will test pro-Israel Democrats’ role in the party",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaE1EcnZWRDhzVy1JWkJFelVXazRqMTN0TmtTYml1MUNHS2gwUk90dmVjNUZHRFR5ZFlaVEpyMkFwV09SNGNhVzR6WmVGLWtfYW04Rnp1YnBEb24waFFYUkJHWnp1TDAwLXZtWFVicl82UzJEMk1wMl9renRMWnhOSm5PZFhaRFViTC1nQlFIZlZDU3lrVTJScw?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-07-30T08:45:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Idaho Democrat is latest Senate nominee to drop out in boost to independent rival",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQdkJkdkVWY1ZvODNpczBXNUVCMXNIXy05S1VHRWRmR2JuN1EweG1keC1TbHBtYVYzSG1meVV3bElTNTZJY3Z4eTdUeTNpT0J4UEk2eXZUN3NLMnU2T25sclJkVEZqa0UzNzNtODNGRmhwUUR3TWhKOFVoR1RsRGJUSjg2aUhxSUkyUTBzbTlsaVU2SHZIRHFuajBfVUFueXpvYlJxU1NqS2JLXzNqdjJjWUp5VWU?oc=5",
+      "casa": "Roll Call",
+      "publicadoEm": "2026-07-29T21:07:42.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "See crowds, cars and campaigns in Michigan Senate race",
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOUEFyNk9sNGM3RUpNZ0V2a3JkWk5VWEU2YmdlMmt3UG5HU0xYdkx2bXFaSF94VGdLc0kxWXVNOG5BRk5zblpvbl9uNGF6ZWkxWUNoQlpNWEdXeDEzS0NXeHAxeXBWck9DOFV6Zy13ZE9oUTZWZnlGZmJhUUNnX1lNSGR1LWhSbFk4Xy1YMGJLeV9ieU01OGhRYjA1UFRaYldjTHRzOE9icXRXYU5oVzhTOGVuR0tGdVF0YUNTSHctZ05pTHhocDlrakVPbUZ1NThsS3MwcA?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-07-29T19:42:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Why Republicans Aren’t Funding the Texas Senate Race Yet",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQbi1RYXZkeDB4VldVMy04TFRqbVR2b0dTU1loeF9pd19xNFBxUl9WRHhQdVNKM3lHbkZwTDhBU0pwcFVWNHUyRFBjU0F0NDRWVTZJU3N6aTdBVzl1UHpsZDhRVjdwZXkwQnRGU0lQVXBFTWxUVkN1T3d5ZjdVcHFYajZjOVppT1RzaE5QMg?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-29T17:51:09.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Obama Endorses Josh Turek in Iowa Senate Race With Basketball Video",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOejlXdXRTX2FHOFRKR3QxUXRRaEZPN3A5Zi11aF9Jb3BrR1R5Uk9rWWpkekM5azJRS3p4UlVqR1lydFQ3OFZRcnN0bTl5Y3VmSjRNQVE5aTI2MkdzcGxDVnNTQ09tYmRBdG5BMjFvbTdqUEdNemZxdUozRDQwS2VmNm9MMTZhSnhEUkU5Tg?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-07-29T17:00:12.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Majority of Americans ‘afraid or pessimistic’ about country’s future under Trump",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQb2p0ZVpDTDBxZndJekhRNmJTX29jUEhQdVA4ZWxoaGdNR19LN0VQa2dCZVA3ZUd6LUs5R0xxcklTSFp5MzAyS0tOR0FNWTRxamVMNHV2VHpZaVVhWnZZcUI1QzdLcFE3Z2VZMktzRmY5VDVtdkxrcFljY0tpSERIVTJZRVpSVHJ4bzdDcmVFUE1XOGwxMVNPOWY5eUhIeXF4LUV4aGlVRTdLdExiWThwTnAwcTRxZVBIclVwOQ?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-07-29T16:10:00.000Z",
+      "consulta": "generic-ballot"
+    },
+    {
+      "titulo": "Trump's approval hits new low in latest poll",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUFBZS3VXYkFPX2FTd2E3RHNIXzU0bFZSUEZ4amFPWXBvU1RERWJLaDc2N3p3ekFDYlpIQVZmT1h0dzZJeHlBNlhZUmdPTlpJQTFZQ2gyVkROQ19VT2NnVEJ6RFlteW9qVG5uSzZDZEFoTm9yUk51UzVzeng0d2xmMnZFSVNJcE5EUXhFa3djdGZFLUNnYk5DLTBFc2pKMlBNOWtBTnJrOXEzc1k5dUd6NFRUZ0EtOXNWRDVHcVdCdnQ?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-07-29T12:27:00.000Z",
+      "consulta": "generic-ballot"
+    }
+  ]
+}

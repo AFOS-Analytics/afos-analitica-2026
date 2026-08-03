@@ -25,6 +25,10 @@ type EventName =
   | 'daily_subscribe_success'
   | 'daily_subscribe_error'
   | 'tradeoff_subscribe_submit'
+  // AFOS Weekly (EUA), acrescentado em 03/Ago/2026 junto do rodapé de captura
+  | 'weekly_subscribe_submit'
+  | 'weekly_subscribe_success'
+  | 'weekly_subscribe_error'
   | 'tradeoff_subscribe_success'
   | 'tradeoff_subscribe_error';
 

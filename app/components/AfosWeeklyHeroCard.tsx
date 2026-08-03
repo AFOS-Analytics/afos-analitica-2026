@@ -39,7 +39,7 @@ const T = {
     weekPrefix: 'Week of',
     updatedAt: 'Reading:',
     preTitle: 'First issue on',
-    preDesc: 'Where the money, the polls and the press disagree about the midterms, and what each one actually measures. Written for voters, not for trading desks.',
+    preDesc: 'Where the prediction market, the polls and the press disagree about the midterms, and what each one actually measures. Written for voters, not for trading desks.',
     draft: 'DRAFT · preview only',
   },
   'pt-BR': {
@@ -51,7 +51,7 @@ const T = {
     weekPrefix: 'Semana de',
     updatedAt: 'Leitura:',
     preTitle: 'Primeira edição em',
-    preDesc: 'Onde o dinheiro, as pesquisas e a imprensa discordam sobre as midterms, e o que cada um mede de fato. Escrito para o eleitor, não para mesa de operação.',
+    preDesc: 'Onde o mercado de previsão, as pesquisas e a imprensa discordam sobre as midterms, e o que cada um mede de fato. Escrito para o eleitor, não para mesa de operação.',
     draft: 'RASCUNHO · só no preview',
   },
   es: {
@@ -63,7 +63,7 @@ const T = {
     weekPrefix: 'Semana del',
     updatedAt: 'Lectura:',
     preTitle: 'Primera edición el',
-    preDesc: 'Dónde el dinero, las encuestas y la prensa discrepan sobre las midterms, y qué mide cada uno en realidad. Escrito para el votante, no para una mesa de operaciones.',
+    preDesc: 'Dónde el mercado de predicción, las encuestas y la prensa discrepan sobre las midterms, y qué mide cada uno en realidad. Escrito para el votante, no para una mesa de operaciones.',
     draft: 'BORRADOR · solo en preview',
   },
 }

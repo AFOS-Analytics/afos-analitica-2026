@@ -61,7 +61,7 @@ export default async function WeeklyEditionPage(props: PageProps) {
 
   return (
     <main className="min-h-screen bg-white">
-      <AfosWeeklyTemplate data={data} locale={p.locale} />
+      <AfosWeeklyTemplate data={data} locale={p.locale} country={p.country} />
     </main>
   )
 }

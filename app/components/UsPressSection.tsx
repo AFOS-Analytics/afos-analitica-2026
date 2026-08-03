@@ -3,16 +3,18 @@
 import { useState } from 'react'
 import { useTranslation } from '../i18n/context'
 import { SectionTitle, Card } from './ui'
-import type { UsPressData } from '../../lib/dashboard/us-press-data'
+import type { UsPressLeitura } from '../../lib/dashboard/us-press-data'
 
 /**
  * Imprensa das midterms.
  *
- * ⚠️ A REGRA QUE O LEITOR PRECISA VER, e por isso ela abre a seção: aqui o AFOS
- * NÃO resume e NÃO interpreta. Ele lista o que veículos de uma lista fixa
+ * O AFOS NÃO resume e NÃO interpreta: lista o que veículos de uma lista fixa
  * publicaram, com link para a matéria. A leitura é do veículo, não da casa.
- * Sem esse aviso, manchete dentro de um painel de dado passa a parecer
- * apuração do painel.
+ *
+ * ⛔ E isso NÃO é dito por escrito na tela. Havia uma tarja abrindo a seção com
+ * essa regra, retirada pelo André em 03/Ago/2026: cada manchete já mostra o nome
+ * do veículo e leva ao site dele, e a lista fixa está aberta logo abaixo. A
+ * estrutura comunica a regra sem precisar enunciá-la.
  *
  * A LISTA FICA VISÍVEL, num detalhe expansível. Escolher veículo é juízo
  * editorial, e juízo editorial escondido é o que o AFOS não faz. Quem discordar
@@ -41,36 +43,36 @@ import type { UsPressData } from '../../lib/dashboard/us-press-data'
 const T = {
   'pt-BR': {
     titulo: 'Imprensa',
-    regra: 'O AFOS não resume nem interpreta estas matérias. Elas entram automaticamente, apenas de veículos de uma lista fixa, e o link leva à matéria do veículo. A leitura é de quem publicou.',
     verLista: 'A lista de veículos, e por que ela é equilibrada',
     listaNota: 'Escolher veículo é juízo editorial. Uma lista torta faria este painel ter opinião sem declarar que tem, então ela reúne agência, jornal de referência, imprensa especializada em Congresso, televisão e opinião dos dois lados. A lista é fixa e vale igual em todas as rodadas, então ninguém escolhe veículo a dedo depois de ver a notícia. O AFOS não classifica veículo por inclinação política: quem lê vê o nome de quem publicou e julga por conta própria.',
     colCasa: 'Veículo',
     colTipo: 'Papel',
-    semDado: 'Sem matéria disponível nesta captura.',
+    semColeta: 'A coleta rodou e não encontrou matéria de veículo da lista nesta janela.',
+    indisponivel: 'Não foi possível ler a coleta de imprensa agora. Isto é falha de leitura, não ausência de notícia, e o registro do erro está no log do servidor.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} matérias de ${casas} veículos, no máximo ${teto} por veículo. De ${lidos} itens lidos, ${fora} eram de veículos fora da lista e ficaram de fora. Páginas de acompanhamento, como "últimas pesquisas" e "resultados ao vivo", são descartadas: mudam sozinhas e não são notícia do dia.`,
     atualizado: (d: string) => `Coletado em ${d}`,
   },
   en: {
     titulo: 'Press',
-    regra: 'AFOS does not summarize or interpret these stories. They enter automatically, only from outlets on a fixed list, and the link goes to the outlet’s own article. The reading belongs to whoever published it.',
     verLista: 'The outlet list, and why it is balanced',
     listaNota: 'Choosing outlets is an editorial judgement. A skewed list would give this panel an opinion without declaring one, so it gathers wire services, newspapers of record, congressional trade press, broadcast, and opinion from both sides. The list is fixed and applies identically on every run, so no outlet is cherry-picked after the news breaks. AFOS does not classify outlets by political leaning: readers see who published and judge for themselves.',
     colCasa: 'Outlet',
     colTipo: 'Role',
-    semDado: 'No stories available in this capture.',
+    semColeta: 'The collection ran and found no story from a listed outlet in this window.',
+    indisponivel: 'The press collection could not be read right now. This is a read failure, not an absence of news, and the error is recorded in the server log.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} stories from ${casas} outlets, at most ${teto} per outlet. Of ${lidos} items read, ${fora} came from outlets off the list and were dropped. Tracker pages such as "latest polls" and "live results" are discarded: they change on their own and are not news of the day.`,
     atualizado: (d: string) => `Collected on ${d}`,
   },
   es: {
     titulo: 'Prensa',
-    regra: 'El AFOS no resume ni interpreta estas notas. Entran automáticamente, solo de medios de una lista fija, y el enlace lleva a la nota del medio. La lectura es de quien publicó.',
     verLista: 'La lista de medios, y por qué está equilibrada',
     listaNota: 'Elegir medios es un juicio editorial. Una lista torcida haría que este panel tuviera opinión sin declararlo, así que reúne agencias, diarios de referencia, prensa especializada en el Congreso, televisión y opinión de ambos lados. La lista es fija y rige igual en todas las rondas, de modo que nadie elige medios a dedo después de conocer la noticia. El AFOS no clasifica a los medios por inclinación política: quien lee ve quién publicó y juzga por su cuenta.',
     colCasa: 'Medio',
     colTipo: 'Papel',
-    semDado: 'Sin notas disponibles en esta captura.',
+    semColeta: 'La recolección se ejecutó y no encontró notas de medios de la lista en esta ventana.',
+    indisponivel: 'No fue posible leer la recolección de prensa ahora. Esto es una falla de lectura, no ausencia de noticias, y el error queda registrado en el log del servidor.',
     rodape: (pub: number, lidos: number, fora: number, casas: number, teto: number) =>
       `${pub} notas de ${casas} medios, como máximo ${teto} por medio. De ${lidos} ítems leídos, ${fora} eran de medios fuera de la lista y quedaron afuera. Las páginas de seguimiento, como "últimas encuestas" y "resultados en vivo", se descartan: cambian solas y no son noticia del día.`,
     atualizado: (d: string) => `Recolectado el ${d}`,
@@ -85,18 +87,25 @@ function fmtData(iso: string, locale: string): string {
   return locale === 'en' ? `${mes}/${dia}` : `${dia}/${mes}`
 }
 
-export function UsPressSection({ data }: { data: UsPressData | null }) {
+export function UsPressSection({ leitura }: { leitura: UsPressLeitura }) {
   const { locale } = useTranslation()
   const k = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
   const t = T[k]
   const [verLista, setVerLista] = useState(false)
 
-  if (!data || data.itens.length === 0) {
+  const { estado, data } = leitura
+
+  // Os dois estados vazios dizem coisas DIFERENTES, e essa é a correção de
+  // 03/Ago/2026: antes qualquer um dos dois virava "sem matéria disponível", e
+  // banco fora do ar ficava indistinguível de janela sem notícia.
+  if (estado !== 'ok' || !data) {
     return (
       <section>
         <SectionTitle>{t.titulo}</SectionTitle>
         <Card>
-          <p className="text-sm text-gray-600">{t.semDado}</p>
+          <p className="text-sm text-gray-600">
+            {estado === 'vazio' ? t.semColeta : t.indisponivel}
+          </p>
         </Card>
       </section>
     )
@@ -108,12 +117,18 @@ export function UsPressSection({ data }: { data: UsPressData | null }) {
     <section>
       <SectionTitle>{t.titulo}</SectionTitle>
 
-      {/* A regra vem antes das manchetes, pelo mesmo motivo da ressalva nas
-          pesquisas: é o instante em que o leitor vê texto de terceiro dentro de
-          uma página de dado. */}
-      <div className="mb-4 rounded-xl border-l-4 border-slate-400 bg-slate-50 p-4">
-        <p className="text-sm leading-snug text-slate-800">{t.regra}</p>
-      </div>
+      {/* ⛔ DUAS TARJAS SAÍRAM DAQUI em 03/Ago/2026, as duas por decisão do André,
+          e as duas pelo mesmo motivo: diziam ao leitor coisa que a própria tela
+          já mostra.
+
+          1. "Exibindo a última coleta arquivada": o rodapé já imprime
+             "Coletado em DD/MM" em toda rodada, então a data nunca esteve
+             escondida. A origem da leitura segue registrada no log do servidor,
+             que é onde ela serve para alguma coisa.
+          2. A regra de que o AFOS não resume nem interpreta: o leitor vê
+             manchete com nome do veículo e link para o veículo, e a lista fixa
+             continua aberta no detalhe expansível logo abaixo. Explicar por
+             escrito o que a estrutura já diz é ruído. */}
 
       <Card>
         <ul className="divide-y divide-light-border">

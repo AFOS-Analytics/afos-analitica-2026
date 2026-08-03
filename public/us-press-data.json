@@ -1,0 +1,177 @@
+{
+  "lastUpdate": "2026-08-03",
+  "fetchedAt": "2026-08-03T04:02:37.897Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 145,
+    "naLista": 40,
+    "foraDaLista": 105,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 14,
+    "veiculosRepresentados": 6,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": []
+  },
+  "itens": [
+    {
+      "titulo": "Ohio Senator Calls Former Son-in-Law Accused of Abuse Unfit for Office",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcU83cVhiZUJXNktaYjlxMU5maGMtUjZyS2N3a25Ud2hMN2xoemdiVzZkWHNGTTk0Ulh6NEdRQmRTNmhjM3BrcXd1X1pqXzhHOUFuOGl1TG1Dd1kxenJHaVZwcXA4b0NTRlppR0hkak1aeEQyUHlEc09Jb3hLal8zVUpoYWx3aWFVdl8xTlhnUjhOQm9EM2JUd3dMNA?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-02T23:55:48.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Bernie Sanders says he’s confident socialists can win in purple states",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOcGV0SkpvcVU4MTlQcURMYmE1eThxLV8ydzZSM3JLN3pWSmJEWC1WMkRkd0Z2MHJZWmlsVDVRa2tvT0Nzbm0yMllDNk5kckhHUWpJYlBPWk1PYnJRM1BPb2d4U0xwT0ZWQlhKUEF1YndzY2F3MEtrU1hMWExpNllPSU55NEFVWUNnTldZU2thcEJNdnBrVmk3REZZekpWajlBVEtnaWFGSDcybk1xX25tejVjMWxwdkQzUkE3eXBNTWlTMzA?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-08-02T22:50:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Senate finalizes funding patch that would block Trump’s grant overhaul",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUEhDZnBsakhWbWJRZnhqZXVEQmg1aHNiMlpLTDkzSlljVEZaU1hzcG1jVTNwMC0zWFlWSHdfZ2U5akx1SjkxRWRXT0dfWWRINVlUY3VqXzkxcGVINFdUcVRVc3pkN25UNUVFTkhBTzFOYXJFclpYUVFCNEdXMUl3WTlfWlpRcWVIOURrdEc2WkI0UkpOSzdRaXFEUmZFcFBJT2JXdFRGSHlrSzIybXdWb3dRTnVPWnhRVEdr?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-02T20:00:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Democrats’ path to win the Senate runs through the Midwest",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNMFZyMGVKbFJJRHBrMUNvLTdHc3VPblRyVXpQdUU1WjBVV3JXMEVqekNyX2NoUXJ4MGViM2hrd3M4TE43cmFQeVByU0J3U3RKUVhXS3lOd3RISzZhZGhURFpxOW5aZ0NYdDUzZGdZVWRMbzRPa0xHQXNPYWRYVFhJSGNMa3F4RC1GZUE?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-08-02T18:00:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Opinion | Closing arguments in Michigan’s much-watched Democratic Senate primary",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPck9kMjFrN3ozS01ReXN3eXdBVGZiNEZmcmw1QnZqUklITENJbDQ5ZzRLcW9ZYnhjQUlTZWhHNE5rQUFoQmZneHI0TGM3c1I2S01xSzFqYlFEOE1PRjVjd3BidW5hZDJyMTJadEZ0Mjc5NHVlcEhreVBjMENnV3o4NzNpYzJsQ2hrN3B6NUQ3akZMNVJYYjBrYXJHSDVUV3FmNlBnUWVET05DQ0Y5b1gyUw?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-02T17:45:00.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "A democratic socialist in the White House? Activists are thinking big.",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPa1N0UjdPWXZSRDFLVFRHZFZzRjFPbnhyZC02OTBfSmR5SlktQVZBMk5IRTJFcWRLbUVXYTdpU0tPNHZzT25KZ1RfQUJhcW8yRHZrYkd4NHZpVFlsalhwR3BNdkVqMEFXZmJEeGUxaThuZTVMbWdxYV9TZExIQld1NFVQSGh6SnJIaUF3Y28wYVNicnlFYXRFQlc5TTA4WllKUW1Pam5rTWVLWmhna1Nuag?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-02T17:00:01.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "‘We are knifing each other’: Trump’s showdown with Senate GOP leader splinters unity ahead of midterms",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1CcGk1Y1V0d1lQSk1Xckl0bmRvNTBxX1A4SUh1RkRvN3BhY1lPb1hxbEg0elAwdjRybm1jbTVxUXFKV2hwTm93bzI2NUNDLVFRWTQ2YU9RdUpRZFE1REd1b0p4VVFkUm9FR2t4Y3VZcWduZw?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-02T10:30:26.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "The fight for Michigan: How a marquee Senate primary became the Democrats’ latest proxy war",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPMnQwXy1iTFBQRUxoZ1RzWlZHTFllNnQwNG5Cdy1mc3QxVGNTdHBpWXZQZEIzcGllbTlOb0RWSnBzeTN3ZGdoN1JSSGktV216TkR2T3g4MkZ4aFRidjVNMndXWThReWhRSGpwbmFua2NTUXo4OGFaLTBKUGpmRFFyQnprNW1fR0tlOGFPQjEyQ1YtQW56dHZJWGVB?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-02T10:30:25.000Z",
+      "consulta": "senate-races"
+    },
+    {
+      "titulo": "Democrats face most contentious – and crucial – test yet with Michigan primary",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5SZnNKS1M0VUlac29VSnA5ZVFQUGNuaGtsbGs1VXg0OXlPWEpSTlVtTkJsc29XTENNa1FfNDZwYkhqUFM1cXV1UFVqdUNqTHhLeXNRY05WSjRzb28tc0xmTWFyUGtZVTVqUWR3Y1E1MVhwS2lwbnFudS1Kck05TFk?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-02T10:01:00.000Z",
+      "consulta": "midterms"
+    },
+    {
+      "titulo": "Five Big Moments in Michigan’s Democratic Senate Primary",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaVgxTzdoeGJaZUdWV3pmTE40eUxqTHFGZ1VNeGhVemZVMzRyNmMyTlNYcDh2WDgtWm0ycWhUUURYa3JBb0F1dm9DeW9zQWZhSFZXODJjUzJwaHZwR2hhemFCYk5wVmtrVm13bUVRQ0h3M2txNTJINGhPTHpCMU9lRUJUNThXcExXNGtxM0QzR2lvQ1RoUHFrNEpLWWk2YXAyRmQyeE5n?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-02T09:01:40.000Z",
+      "consulta": "senate-races"
+    }
+  ]
+}
