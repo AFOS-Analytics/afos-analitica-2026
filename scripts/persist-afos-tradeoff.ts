@@ -39,9 +39,14 @@ async function persistOne(prisma: PrismaClient, filePath: string, dateIso: strin
     markdown: fullMarkdown,
   }
 
+  // O slug sai da DATA DA EDIÇÃO (nome do arquivo), não do `updatedAt`. No
+  // Tradeoff as duas são diferentes por desenho: a edição sai na segunda e o
+  // snapshot de mercado é do domingo, então sem `slugIsoDate` a edição de
+  // 03/Ago era gravada como `afos-tradeoff-02-08-2026`.
   const result = await upsertAnalysisReport(prisma, 'afos-tradeoff', data, {
     createdBy: 'afos-tradeoff',
     fallbackIsoDate: dateIso,
+    slugIsoDate: dateIso,
   })
 
   return { slug: result.slug, id: result.id }

@@ -43,6 +43,19 @@ type UpsertOpts = {
   createdBy?: string
   publishedAt?: Date
   fallbackIsoDate?: string
+  /**
+   * Data ISO que MANDA no slug, ignorando `updatedAt`.
+   *
+   * Existe por causa do Tradeoff, o único tipo em que a data da edição e a data
+   * da captura são diferentes por desenho: a edição sai na segunda e o snapshot
+   * de mercado é do domingo. Sem isto o slug saía da captura, e a edição de
+   * 03/Ago virava `afos-tradeoff-02-08-2026`.
+   *
+   * Os outros tipos NÃO devem passar este campo: para daily, cards e os produtos
+   * dos EUA o `updatedAt` é a data certa, e `deriveDateSlug` depende dele para
+   * não criar registro novo quando a rodada cruza a virada do dia UTC.
+   */
+  slugIsoDate?: string
 }
 
 export async function upsertAnalysisReport(
@@ -51,7 +64,10 @@ export async function upsertAnalysisReport(
   data: Record<string, unknown>,
   opts: UpsertOpts = {},
 ) {
-  const slug = `${type}-${deriveDateSlug(data, opts.fallbackIsoDate)}`
+  const iso = opts.slugIsoDate?.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  const slug = iso
+    ? `${type}-${iso[3]}-${iso[2]}-${iso[1]}`
+    : `${type}-${deriveDateSlug(data, opts.fallbackIsoDate)}`
   const updatedAtLabel = (data.updatedAt as string) || new Date().toISOString()
   const title = buildTitle(type, updatedAtLabel)
   const executiveSummary = truncate(buildSummary(type, data))
