@@ -18,7 +18,22 @@ import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendTradeoffTeaser } from '../app/lib/email/resend'
 
-const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
+const PAIS_PADRAO = 'br'
+
+/**
+ * 📁 Pasta assimétrica: o Brasil fica na RAIZ e cada país novo ganha subpasta.
+ *
+ * 🔴 Até 03/Ago/2026 este script era preso à raiz e não conhecia `--pais`.
+ * Rodá-lo para a edição dos EUA leria os arquivos do BRASIL da mesma data e
+ * dispararia a peça brasileira para a lista inteira, reportando sucesso. Como
+ * os dois países publicam na MESMA segunda, a data existe dos dois lados e
+ * nada denunciaria a troca.
+ */
+function dirDoPais(pais: string): string {
+  return pais === PAIS_PADRAO
+    ? join(process.cwd(), 'public', 'afos-tradeoff')
+    : join(process.cwd(), 'public', 'afos-tradeoff', pais)
+}
 
 // Adaptive throttle — espelha broadcast-afos-daily.ts (fix 31/Mai commits 01c319b/81f0bd8).
 // Limite REAL do Resend = 5 req/s. interSendMs é stagger cumulativo (interSendMs*idx dentro do
@@ -43,8 +58,8 @@ interface TradeoffContent {
   issueNumber: number
 }
 
-function readTradeoffFrontmatter(date: string, locale: Locale): TradeoffContent | null {
-  const path = join(TRADEOFF_DIR, `${date}${LOCALE_SUFFIX[locale]}.md`)
+function readTradeoffFrontmatter(date: string, locale: Locale, pais: string): TradeoffContent | null {
+  const path = join(dirDoPais(pais), `${date}${LOCALE_SUFFIX[locale]}.md`)
   if (!existsSync(path)) return null
   const raw = readFileSync(path, 'utf-8')
   const { data } = matter(raw)
@@ -64,10 +79,18 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run')
   if (dryRun) console.log('🔵 DRY-RUN mode — no emails will be sent.\n')
 
+  const pais = process.argv.find(a => a.startsWith('--pais='))?.split('=')[1] ?? PAIS_PADRAO
+  const dir = dirDoPais(pais)
+  if (!existsSync(dir)) {
+    console.error(`❌ SEM PASTA: ${dir}`)
+    process.exit(1)
+  }
+  console.log(`🌍 país=${pais} · pasta=${dir}\n`)
+
   const content: Record<Locale, TradeoffContent | null> = {
-    'pt-BR': readTradeoffFrontmatter(date, 'pt-BR'),
-    'en':    readTradeoffFrontmatter(date, 'en'),
-    'es':    readTradeoffFrontmatter(date, 'es'),
+    'pt-BR': readTradeoffFrontmatter(date, 'pt-BR', pais),
+    'en':    readTradeoffFrontmatter(date, 'en', pais),
+    'es':    readTradeoffFrontmatter(date, 'es', pais),
   }
   if (!content.en) {
     console.error(`❌ EN Tradeoff not published for ${date}. Publish first with: npx tsx scripts/publish-afos-tradeoff.ts ${date} --all-locales`)
@@ -131,7 +154,7 @@ async function main() {
 
       const ok = await sendTradeoffTeaser(
         lead.email,
-        { date, locale, title: c.title, sinalDaSemana: c.sinalDaSemana, issueNumber: c.issueNumber },
+        { date, locale, title: c.title, sinalDaSemana: c.sinalDaSemana, issueNumber: c.issueNumber, pais },
         lead.unsubscribeToken || undefined,
       )
       return { ok, lead }

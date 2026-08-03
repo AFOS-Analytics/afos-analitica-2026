@@ -173,21 +173,48 @@ export function sendDailyTeaser(to: string, data: {
   });
 }
 
+/**
+ * 🌍 Rótulo do país no ASSUNTO, por idioma. O Brasil é string vazia de propósito:
+ * os assinantes já receberam dezenas de "AFOS Tradeoff: Edição №N" sem país, e
+ * mudar isso agora quebraria o agrupamento por assunto na caixa de entrada deles.
+ */
+const PAIS_NO_ASSUNTO: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
+  br: { 'pt-BR': '', en: '', es: '' },
+  us: { 'pt-BR': ' EUA', en: ' US', es: ' EE.UU.' },
+};
+
 export function sendTradeoffTeaser(to: string, data: {
   date: string;
   locale: 'pt-BR' | 'en' | 'es';
   title: string;
   sinalDaSemana: string;
   issueNumber: number;
+  /** Slug do país da edição. Default 'br' para não mudar chamadas antigas. */
+  pais?: string;
 }, unsubscribeToken?: string): Promise<boolean> {
+  const pais = data.pais ?? 'br';
+  const p = (PAIS_NO_ASSUNTO[pais] ?? PAIS_NO_ASSUNTO.br)[data.locale];
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
-    'pt-BR': { subject: `AFOS Tradeoff: Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
-    'en':    { subject: `AFOS Tradeoff: Issue №${data.issueNumber}`,  cta: 'Read the Tradeoff', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
-    'es':    { subject: `AFOS Tradeoff: Edición №${data.issueNumber}`, cta: 'Leer el Tradeoff', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
+    'pt-BR': { subject: `AFOS Tradeoff${p}: Edição №${data.issueNumber}`, cta: 'Ler o Tradeoff', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
+    'en':    { subject: `AFOS Tradeoff${p}: Issue №${data.issueNumber}`,  cta: 'Read the Tradeoff', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
+    'es':    { subject: `AFOS Tradeoff${p}: Edición №${data.issueNumber}`, cta: 'Leer el Tradeoff', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
   } as const;
   const L = localeLabels[data.locale];
-  const url = `${PUBLIC_URL}/${data.locale}/tradeoff/${data.date}`;
+  /**
+   * 🔴 O PAÍS NA URL É OBRIGATÓRIO, e a falta dele não dava erro: dava a PEÇA ERRADA.
+   *
+   * A rota virou `/[idioma]/tradeoff/[pais]/[data]` em 01/Ago/2026, e a antiga
+   * `/[idioma]/tradeoff/[data]` continua viva como redirect de compatibilidade,
+   * que manda para o BRASIL. Como Brasil e EUA publicam na mesma segunda, em
+   * 03/Ago as duas edições existiam na mesma data: medido, `/en/tradeoff/2026-08-03`
+   * respondia 307 e entregava a **Edição №11 do Brasil**.
+   *
+   * O leitor receberia manchete dos EUA e abriria a peça brasileira. Sem 404,
+   * sem link quebrado, sem nada que denunciasse. Nunca voltar a montar esta URL
+   * sem o país.
+   */
+  const url = `${PUBLIC_URL}/${data.locale}/tradeoff/${pais}/${data.date}`;
   const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
   // O sinalDaSemana é MARKDOWN e vai para dentro de HTML: escapar ANTES (não é conteúdo
   // confiável para interpolar), depois reduzir a texto puro (link vira texto: num teaser
