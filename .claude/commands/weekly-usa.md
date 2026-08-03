@@ -134,7 +134,14 @@ Quintas: **06/Ago** (№1, piloto) · **13/Ago** (№2, piloto, **decisão de se
 
 ⛔ **Enquanto o piloto durar, publicar NÃO põe a edição em busca.** Três travas em série, de propósito: o portão de rascunho devolve 404 em produção, a rota `latest` só conta rascunho fora de produção, e a página é **`noindex` mesmo depois de publicada**. O flip só tira o 404.
 
-**Não existe ainda:** arquivo de edições, RSS e broadcast. Os três foram aprovados no desenho e não construídos. Não prometer ao leitor o que não está no ar.
+**Não existe ainda:** arquivo de edições e RSS. Os dois foram aprovados no desenho e não construídos. Não prometer ao leitor o que não está no ar.
+
+📮 **BROADCAST: decisão do André em 03/Ago/2026, será construído NA QUINTA 06/Ago, junto da publicação da №1.** Não é para construir antes nem para publicar a №1 sem ele.
+
+⚠️ **Duas coisas a resolver naquele dia, e as duas antes de disparar:**
+
+1. **Construir e enviar no mesmo dia não deixa margem.** O broadcast do Tradeoff tem `--dry-run` obrigatório antes do envio real, e aqui isso vale em dobro, porque o código será novo. Rodar o dry-run, conferir a contagem e só então enviar.
+2. **🔴 QUEM RECEBE, e isso NÃO está decidido.** A base é de assinantes do AFOS Daily, e no último disparo os **20 estavam em pt-BR**. O Weekly é escrito em INGLÊS, para eleitor americano. Mandar a peça das midterms em inglês para uma base brasileira é decisão editorial, não detalhe de implementação. As saídas possíveis: disparar a versão traduzida conforme o idioma do assinante, criar opt-in separado, ou não disparar para essa base. **Perguntar ao André antes de escrever a primeira linha do script.**
 
 ## Memórias relacionadas
 
