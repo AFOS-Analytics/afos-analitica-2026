@@ -1,7 +1,7 @@
 import { deriveDateSlug, truncate } from './date-slug'
 import type { PrismaClient } from '@prisma/client'
 
-export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'us-generic-ballot' | 'us-press'
+export type AnalysisType = 'analysis-cards' | 'analysis-criteriosa' | 'afos-hoje' | 'afos-daily' | 'afos-tradeoff' | 'afos-weekly' | 'us-generic-ballot' | 'us-press'
 
 export function buildSummary(type: AnalysisType, data: Record<string, unknown>): string {
   if (type === 'us-press') {
@@ -19,9 +19,13 @@ export function buildSummary(type: AnalysisType, data: Record<string, unknown>):
     if (!cards) return 'Sem dados'
     return `Cards: ${Object.keys(cards).join(', ')} | Atualizado: ${data.updatedAt || 'N/A'}`
   }
-  if (type === 'afos-hoje' || type === 'afos-daily' || type === 'afos-tradeoff') {
+  if (type === 'afos-hoje' || type === 'afos-daily' || type === 'afos-tradeoff' || type === 'afos-weekly') {
     const lede = data.lede as string | undefined
-    const fallback = type === 'afos-daily' ? 'AFOS Daily' : type === 'afos-tradeoff' ? 'AFOS Tradeoff' : 'AFOS Hoje'
+    const fallback =
+      type === 'afos-daily' ? 'AFOS Daily'
+      : type === 'afos-tradeoff' ? 'AFOS Tradeoff'
+      : type === 'afos-weekly' ? 'AFOS Weekly'
+      : 'AFOS Hoje'
     return lede ? lede.slice(0, 200) : `${fallback} — ${data.updatedAt || data.date || 'N/A'}`
   }
   const candidates = data.candidates as Array<{ name: string }> | undefined
@@ -36,6 +40,8 @@ export function buildTitle(type: AnalysisType, updatedAtLabel: string): string {
   if (type === 'afos-hoje') return `AFOS Hoje — ${updatedAtLabel}`
   if (type === 'afos-daily') return `AFOS Daily — ${updatedAtLabel}`
   if (type === 'afos-tradeoff') return `AFOS Tradeoff — ${updatedAtLabel}`
+  // O Weekly passa `titleOverride`, então este ramo é só a rede de segurança.
+  if (type === 'afos-weekly') return `AFOS Weekly — ${updatedAtLabel}`
   return `Análise Criteriosa — ${updatedAtLabel}`
 }
 
