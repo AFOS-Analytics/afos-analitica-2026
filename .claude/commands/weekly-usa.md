@@ -136,12 +136,13 @@ Quintas: **06/Ago** (№1, piloto) · **13/Ago** (№2, piloto, **decisão de se
 
 **Não existe ainda:** arquivo de edições e RSS. Os dois foram aprovados no desenho e não construídos. Não prometer ao leitor o que não está no ar.
 
-📮 **BROADCAST: decisão do André em 03/Ago/2026, será construído NA QUINTA 06/Ago, junto da publicação da №1.** Não é para construir antes nem para publicar a №1 sem ele.
+📮 **BROADCAST: decisão do André em 03/Ago/2026, construído NA QUINTA 06/Ago, junto da publicação da №1.** Não construir antes, e não publicar a №1 sem ele.
 
-⚠️ **Duas coisas a resolver naquele dia, e as duas antes de disparar:**
+✅ **QUEM RECEBE, decidido em 03/Ago: TODOS os assinantes, cada um na versão do SEU idioma.** Sem opt-in separado e sem recorte de base, mesma regra do Tradeoff. O `broadcast-afos-tradeoff.ts` já resolve locale por lead (a saída mostra `[DRY] jss*** → pt-BR`), então é esse o padrão a espelhar.
 
-1. **Construir e enviar no mesmo dia não deixa margem.** O broadcast do Tradeoff tem `--dry-run` obrigatório antes do envio real, e aqui isso vale em dobro, porque o código será novo. Rodar o dry-run, conferir a contagem e só então enviar.
-2. **🔴 QUEM RECEBE, e isso NÃO está decidido.** A base é de assinantes do AFOS Daily, e no último disparo os **20 estavam em pt-BR**. O Weekly é escrito em INGLÊS, para eleitor americano. Mandar a peça das midterms em inglês para uma base brasileira é decisão editorial, não detalhe de implementação. As saídas possíveis: disparar a versão traduzida conforme o idioma do assinante, criar opt-in separado, ou não disparar para essa base. **Perguntar ao André antes de escrever a primeira linha do script.**
+🔴 **A consequência operacional, e ela é dura:** com envio por idioma, **as três versões precisam estar prontas e aprovadas ANTES do disparo**. No Weekly o inglês é a origem e pt-BR e es são derivados, então uma tradução atrasada não atrasa só ela: **trava o broadcast inteiro**. Traduzir é etapa bloqueante da quinta, não acabamento.
+
+⚠️ **`--dry-run` é obrigatório antes do envio real**, e aqui vale em dobro porque o código será novo no mesmo dia. Rodar, conferir a contagem e a distribuição por idioma, e só então disparar.
 
 ## Memórias relacionadas
 
