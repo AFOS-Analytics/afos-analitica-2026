@@ -1164,7 +1164,7 @@
         "tendenciaPesquisa": "FRESH POLLING AND IT TIGHTENED. [BTG/Nexus](/en/glossary#nexus-btg) of Aug 3 (n=2,002, fieldwork Jul 31 to Aug 2, telephone, 2pp margin, BR-02874/2026) gives 41% in the first round, against 42% in the institute's own Jul 27 round, and 46% in the runoff against Flávio, against 47% before. Both declines are 1pp and fall within the margin, meaning that in isolation they are not movement. What is movement is the other side: Flávio gained 4pp in the first round and 2pp in the runoff in the same round, and that is why the gap fell from 9pp to 4pp and the runoff became a 1pp [statistical tie](/en/glossary#empate-tecnico). Among the four national polls released since Jul 29, this is the one showing the tightest first round: 4pp here, 6pp in PoderData of Jul 30, 9.1pp in [AtlasIntel](/en/glossary#atlasintel) of Jul 29 and 9.3pp in Vox Brasil of Jul 31.",
         "tendenciaPolymarket": "STANDING STILL at 65.50% (vol USD 7.92M), for a second straight session, in the capture locked at 19:11 UTC. The gap over Flávio closed 0.90pp and went to +40.05pp, but it closed WITHOUT the front-runner giving ground: the entire move belongs to the challenger. In the daily series, the gap had not been below that since Jul 30, when it marked +39.50pp. The series peak is still 66.50%, from the Aug 1 close.",
         "odds": 65.5,
-        "percentage": 40.5,
+        "percentage": 41,
         "lastUpdate": "2026-07-31",
         "value": 65.5
       },
@@ -1175,7 +1175,7 @@
         "tendenciaPesquisa": "THE MOVE OF THE DAY IS HIS. [BTG/Nexus](/en/glossary#nexus-btg) of Aug 3 gives 37% in the first round, against 33% in the institute's own Jul 27 round, a 4pp rise that is DOUBLE the 2pp margin and therefore not explained by sampling noise. In the runoff he goes from 43% to 45% and sits 1pp behind Lula, within the margin, which qualifies as a [statistical tie](/en/glossary#empate-tecnico). The reading needs house context: the other three national polls since Jul 29 give first-round gaps of 6pp to 9.3pp, so this is the most favourable to him, and the distance between the highest and the lowest reading reaches 5.3pp.",
         "tendenciaPolymarket": "ROSE 0.90pp to 25.45% (vol USD 7.86M), the strongest move of the session among the top two. It moved in the SAME DIRECTION as the polling and on the same day, which is rare on this panel. A series caveat that matters: his peak is 45.20% on May 7 and his floor is 22.00% on Jul 3, so 25.45% is recovery inside a lowered range, not a return to the previous range. In the second-place contract he stands at 80.50%.",
         "odds": 25.45,
-        "percentage": 31.2,
+        "percentage": 37,
         "lastUpdate": "2026-07-31",
         "value": 25.45
       },
@@ -1186,7 +1186,7 @@
         "tendenciaPesquisa": "[BTG/Nexus](/en/glossary#nexus-btg) of Aug 3 gives 4%, against 5% in the institute's own Jul 27 round. He stays in the 3% to 4% band that institutes have been measuring since the end of July, after the 7.8% of [AtlasIntel](/en/glossary#atlasintel) on Jul 29. In the runoff against Lula it is the worst of the round's four simulations: 47% x 37%.",
         "tendenciaPolymarket": "FELL 0.50pp to 7.45% (vol USD 8.86M), undoing yesterday's 0.35pp rise, which had broken nine straight sessions of decline. With polling at 4%, the distance between price and polling stands at 3.45pp. His accumulated volume, at USD 8.86M, sits above Lula's, which is USD 7.92M, even though the price is one eighth of it. He is the favourite in the third-place contract, at 60.50%.",
         "odds": 7.45,
-        "percentage": 3,
+        "percentage": 4,
         "lastUpdate": "2026-07-31",
         "value": 7.45
       },
@@ -1197,7 +1197,7 @@
         "tendenciaPesquisa": "[BTG/Nexus](/en/glossary#nexus-btg) of Aug 3 gives 5% in the first round, against 6% in the institute's own Jul 27 round. In the runoff against Lula, 46% x 42%. Among the national polls since Jul 29, he trails only the 5.5% of Vox Brasil on Jul 31.",
         "tendenciaPolymarket": "At 1.15% (vol USD 5.30M), above the 0.90% floor the series touched intraday on Aug 2. The level holds on the day he was formally nominated at his party convention, promised to pardon Bolsonaro and those convicted over Jan 8, and contested the agribusiness vote with Flávio. He is the second name in the third-place contract, at 25.00%.",
         "odds": 1.15,
-        "percentage": 5.5,
+        "percentage": 5,
         "lastUpdate": "2026-07-31",
         "value": 1.15
       },
@@ -1219,7 +1219,7 @@
         "tendenciaPesquisa": "Vox Brasil of Jul 31 (n=2,100, fieldwork Jul 26 to 28, 2.15pp margin, BR-01084/2026) has him at 3.2% in the [first round](/en/glossary#primeiro-turno), practically the same as the 3% from PoderData of Jul 30 and above the 2.8% from AtlasIntel of Jul 29. In polling he is steady, and there has been no fresh national reading since. On the party front, he still has NO running mate with the Aug 5 deadline three days away, after the [Novo](/en/glossary#novo) ruled out Barbosa for the slot and Marcelo Aro left his Senate ticket to run for governor of Minas Gerais, a move Zema publicly called betrayal.",
         "tendenciaPolymarket": "FALLS 0.10pp to 0.25% (vol USD 4.64M), and holds FLAT at 4.60% in the third-place book of the [first round](/en/glossary#primeiro-turno). Series caveat, and it is a large one: his maximum is 10.10%, from Apr 26, so 0.25% is less than a fortieth of that level and moves in this range carry almost no informational value. Collection caveat, belonging to the panel and not to the market: the AFOS series has NO point after Jul 30 for that name, so the price enters through the locked capture and without comparison to a series close. He still has NO running mate, with the Aug 5 deadline three days away.",
         "odds": 0.25,
-        "percentage": 3.2,
+        "percentage": 3,
         "lastUpdate": "2026-07-31",
         "value": 0.25
       },

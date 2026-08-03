@@ -1164,7 +1164,7 @@
         "tendenciaPesquisa": "URNA NOVA E ELA APERTOU. A BTG/Nexus de 03/Ago (n=2.002, campo 31/Jul a 02/Ago, telefônica, margem 2pp, BR-02874/2026) dá 41% no 1º turno, contra 42% na própria rodada de 27/Jul, e 46% no returno contra Flávio, contra 47% antes. As duas quedas são de 1pp e ficam dentro da margem, ou seja, isoladas não são movimento. O que é movimento é o outro lado: Flávio subiu 4pp no 1º turno e 2pp no returno na mesma rodada, e por isso o gap caiu de 9pp para 4pp e o returno virou empate técnico de 1pp. Entre as quatro nacionais publicadas desde 29/Jul, esta é a que mostra a disputa mais apertada no 1º turno: 4pp aqui, 6pp na PoderData de 30/Jul, 9,1pp na AtlasIntel de 29/Jul e 9,3pp na Vox Brasil de 31/Jul.",
         "tendenciaPolymarket": "PARADO em 65,50% (vol USD 7,92M), pelo segundo pregão seguido, na captura travada das 19:11 UTC. O gap sobre Flávio fechou 0,90pp e foi a +40,05pp, mas fechou SEM o favorito ceder: o movimento inteiro é do adversário. Na série diária, o gap não ficava abaixo disso desde 30/Jul, quando marcou +39,50pp. O topo da série continua sendo 66,50%, do fechamento de 01/Ago.",
         "odds": 65.5,
-        "percentage": 40.5,
+        "percentage": 41,
         "lastUpdate": "2026-07-31",
         "value": 65.5
       },
@@ -1175,7 +1175,7 @@
         "tendenciaPesquisa": "O MOVIMENTO DO DIA É DELE. A BTG/Nexus de 03/Ago dá 37% no 1º turno, contra 33% na rodada de 27/Jul da mesma casa, alta de 4pp que é o dobro da margem de 2pp e portanto não se explica por ruído amostral. No returno vai de 43% para 45% e fica a 1pp de Lula, dentro da margem, o que caracteriza empate técnico. A leitura precisa de contexto de casa: as outras três nacionais desde 29/Jul dão gap de 6pp a 9,3pp no 1º turno, então esta é a mais favorável a ele, e a distância entre a leitura mais alta e a mais baixa chega a 5,3pp.",
         "tendenciaPolymarket": "SUBIU 0,90pp e foi a 25,45% (vol USD 7,86M), o movimento mais forte do pregão entre os dois primeiros. Andou no MESMO SENTIDO da urna e no mesmo dia, o que é raro neste painel. Ressalva de série, que importa: o topo dele é 45,20% em 07/Mai e o piso é 22,00% em 03/Jul, então 25,45% é recuperação dentro de um patamar rebaixado, não retomada de patamar. No contrato de 2º lugar ele está em 80,50%.",
         "odds": 25.45,
-        "percentage": 31.2,
+        "percentage": 37,
         "lastUpdate": "2026-07-31",
         "value": 25.45
       },
@@ -1186,7 +1186,7 @@
         "tendenciaPesquisa": "A BTG/Nexus de 03/Ago dá 4%, contra 5% na rodada de 27/Jul da mesma casa. Continua na faixa de 3% a 4% que os institutos vêm medindo desde o fim de julho, depois dos 7,8% da AtlasIntel de 29/Jul. No returno contra Lula é a pior das quatro simulações da rodada: 47% x 37%.",
         "tendenciaPolymarket": "CAIU 0,50pp e foi a 7,45% (vol USD 8,86M), desfazendo a alta de 0,35pp de ontem, que tinha interrompido nove rodadas de queda. Com a urna em 4%, a distância entre preço e urna fica em 3,45pp. O volume acumulado dele, de USD 8,86M, está acima do de Lula, que tem USD 7,92M, embora o preço seja um oitavo. Ele é o favorito do contrato de 3º lugar, com 60,50%.",
         "odds": 7.45,
-        "percentage": 3,
+        "percentage": 4,
         "lastUpdate": "2026-07-31",
         "value": 7.45
       },
@@ -1197,7 +1197,7 @@
         "tendenciaPesquisa": "A BTG/Nexus de 03/Ago dá 5% no 1º turno, contra 6% na rodada de 27/Jul da mesma casa. No returno contra Lula, 46% x 42%. Entre as nacionais desde 29/Jul, fica atrás apenas dos 5,5% da Vox Brasil de 31/Jul.",
         "tendenciaPolymarket": "Em 1,15% (vol USD 5,30M), acima do piso de 0,90% que a série tocou dentro do dia 02/Ago. O nível se sustenta no dia em que ele foi oficializado candidato em convenção, prometeu anistiar Bolsonaro e os condenados do 8 de Janeiro, e disputou com Flávio o voto do agronegócio. É o segundo nome do contrato de 3º lugar, com 25,00%.",
         "odds": 1.15,
-        "percentage": 5.5,
+        "percentage": 5,
         "lastUpdate": "2026-07-31",
         "value": 1.15
       },
@@ -1219,7 +1219,7 @@
         "tendenciaPesquisa": "Vox Brasil de 31/Jul (n=2.100, campo 26 a 28/Jul, margem de 2,15pp, BR-01084/2026) o traz em 3,2% no 1º turno, praticamente os mesmos 3% da PoderData de 30/Jul e acima dos 2,8% da AtlasIntel de 29/Jul. Na urna ele está estável, e não houve nacional nova desde então. No arranjo partidário, segue SEM vice com o prazo de 05/Ago a três dias, depois de o Novo descartar Barbosa para a vaga e de Marcelo Aro deixar a chapa dele ao Senado para disputar o governo de Minas Gerais, movimento que Zema chamou publicamente de traição.",
         "tendenciaPolymarket": "CAI 0,10pp e vai a 0,25% (vol USD 4,64M), e fica ESTÁVEL em 4,60% no book de 3º lugar do 1º turno. Ressalva de série, e ela é grande: o máximo dele é 10,10%, de 26/Abr, então 0,25% é menos de um quarentavo daquele nível e movimentos nessa faixa têm valor informativo quase nulo. Ressalva de coleta, e ela é do painel e não do mercado: a série do AFOS NÃO tem ponto depois de 30/Jul para esse nome, então o preço entra pela captura travada e sem comparação com fechamento de série. Segue SEM vice, com o prazo de 05/Ago a três dias.",
         "odds": 0.25,
-        "percentage": 3.2,
+        "percentage": 3,
         "lastUpdate": "2026-07-31",
         "value": 0.25
       },
