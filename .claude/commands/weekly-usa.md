@@ -140,6 +140,20 @@ Quintas: **06/Ago** (№1, piloto) · **13/Ago** (№2, piloto, **decisão de se
 
 ✅ **QUEM RECEBE, decidido em 03/Ago: TODOS os assinantes, cada um na versão do SEU idioma.** Sem opt-in separado e sem recorte de base, mesma regra do Tradeoff. O `broadcast-afos-tradeoff.ts` já resolve locale por lead (a saída mostra `[DRY] jss*** → pt-BR`), então é esse o padrão a espelhar.
 
+📌 **Base medida em 03/Ago: 20 leads ativos, TODOS em pt-BR.** Ou seja, na prática a versão que sai é a portuguesa, e o inglês da origem não chega a ninguém por e-mail. Isso não muda a regra de traduzir antes, mas muda a prioridade da revisão.
+
+### 🔴🌍 As TRÊS armadilhas de país, medidas no Tradeoff em 03/Ago
+
+O broadcast do Tradeoff foi espelhado dos EUA nesse dia e **os três furos abaixo estavam lá**. O Weekly vai herdar todos se for copiado sem cuidado, e nenhum deles dá erro.
+
+1. **Pasta presa à raiz.** O script lia `public/afos-tradeoff/` e ignorava `--pais` em silêncio. Como Brasil e EUA publicam na mesma data, ele **mandaria a peça brasileira para a lista inteira reportando sucesso**. O Weekly já nasce com subpasta por país, então aqui é só não esquecer de passar o país adiante.
+
+2. **Slug do Neon sem país.** `afos-weekly-DD-MM-AAAA` funciona **enquanto só existir `us`**. País novo colide e o upsert apaga um sem erro. O conserto já existe: `slugQualifier` em `lib/analysis/persist.ts`.
+
+3. ⚠️ **A URL do e-mail sem país, que foi a pior.** O teaser do Tradeoff montava `/[idioma]/tradeoff/[data]`, e a rota antiga sobrevive como **redirect de compatibilidade que aponta para o Brasil**. Medido em produção: `/en/tradeoff/2026-08-03` respondia **307 e entregava a edição BRASILEIRA**. Manchete de um país, peça de outro, sem 404 e sem link quebrado.
+
+**Antes de disparar, sempre:** `curl` em cada um dos 3 links e conferir o **`og:title`**, não só o código HTTP. 🔴 **307 e 200 são as duas respostas de sucesso**, então código sozinho não prova nada.
+
 🔴 **A consequência operacional, e ela é dura:** com envio por idioma, **as três versões precisam estar prontas e aprovadas ANTES do disparo**. No Weekly o inglês é a origem e pt-BR e es são derivados, então uma tradução atrasada não atrasa só ela: **trava o broadcast inteiro**. Traduzir é etapa bloqueante da quinta, não acabamento.
 
 ⚠️ **`--dry-run` é obrigatório antes do envio real**, e aqui vale em dobro porque o código será novo no mesmo dia. Rodar, conferir a contagem e a distribuição por idioma, e só então disparar.
