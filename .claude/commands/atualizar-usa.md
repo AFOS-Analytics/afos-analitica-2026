@@ -12,6 +12,7 @@ Esta é a diferença que muda tudo em relação ao `/atualizar-brz`. **No Brasil
 | Generic ballot | cron `refresh-us-polls` → Neon | 07:10 UTC, automático |
 | Imprensa | cron `refresh-us-press` → Neon | 07:20, 13:20 e 19:20 UTC, automático |
 | `public/us-polls-data.json` | **este comando** | manual, é o piso de segurança |
+| `public/us-press-archive/{data}.json` | **este comando**, ETAPA 3.1 | manual. É o ARQUIVO da imprensa e o piso do painel |
 
 Ou seja: **na maioria dos dias não há nada a publicar, e isso é sucesso, não falha.** Este comando serve para conferir que os três automatismos estão vivos, atualizar o piso versionado e relatar o que se moveu. Se a conclusão honesta for "tudo em dia, nada a commitar", essa é a entrega.
 
@@ -85,7 +86,7 @@ node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.
 
 ## ETAPA 3: Imprensa
 
-Não existe script manual: a coleta vive na rota do cron.
+A coleta vive na rota do cron:
 
 ```bash
 curl -s https://www.afos-analytics.com/api/cron/refresh-us-press \
@@ -94,7 +95,36 @@ curl -s https://www.afos-analytics.com/api/cron/refresh-us-press \
 
 Grava no Neon sob a chave `us-press`. Resposta boa tem `ok: true`, `lastUpdate` e o bloco `qualidade`. Resposta com `motivo: "nenhum item na lista; nada foi gravado"` **é o portão funcionando**: nada foi apagado.
 
-**Regras da seção, que não se negociam por rodada:** lista fixa de veículos, escolhida em 30/Jul, com o papel e a inclinação de cada um declarados; no máximo 2 matérias por veículo; e o coletor **não resume, não interpreta e não escolhe manchete por relevância**. Escolher veículo já é juízo editorial, e uma lista torta faria o painel ter opinião sem declarar que tem.
+### 3.1 ARQUIVAR a coleta, obrigatório (03/Ago/2026)
+
+```bash
+npx tsx scripts/snapshot-us-press.ts            # ensaio, não escreve
+npx tsx scripts/snapshot-us-press.ts --apply
+```
+
+🔴 **Isto NÃO é opcional e não é só backup.** Sem este passo a imprensa existe apenas como linha de banco, que o upsert do dia sobrescreve. O script grava cada coleta em `public/us-press-archive/{data}.json` e atualiza `public/us-press-data.json`, que é o **piso de leitura** do painel quando o banco não responde.
+
+**Contrato, igual ao do dataset do Hugging Face:** a data **corrente** pode ser regerada no dia, porque o cron roda 3x; **data encerrada nunca é reescrita**. O script mostra `🔒 data encerrada` para as antigas e avisa se alguma divergir do banco, preservando o arquivo. Erro em data passada se corrige por **errata**, não por reescrita.
+
+⚠️ **O cron NÃO escreve esses arquivos**: em serverless o disco é efêmero. Quem versiona é este comando, e por isso os arquivos entram no commit da ETAPA 6.
+
+### O que conferir na resposta
+
+Além de `publicados` e `veiculosRepresentados`, olhar os campos de **procedência**, que existem desde 03/Ago:
+
+| campo | o que diz |
+|---|---|
+| `publicadosComLinkCanonico` | vieram do RSS do próprio veículo, com a URL da matéria |
+| `publicadosViaGoogleNews` | vieram do agregador, com link de redirecionamento opaco |
+| `lidosEmFeedProprio` | quantos os 15 feeds próprios entregaram antes do filtro |
+
+📌 **`publicadosComLinkCanonico` em ZERO é alarme, não resultado.** Significa que os 15 feeds próprios não entregaram nada e tudo veio do Google, e a causa costuma ser feed que mudou de endereço, não semana sem notícia. Medido em 03/Ago em produção: **6 canônicos de 10**.
+
+**Regras da seção, que não se negociam por rodada:** lista fixa de veículos, escolhida em 30/Jul, com o **papel** de cada um declarado; no máximo 2 matérias por veículo; e o coletor **não resume, não interpreta e não escolhe manchete por relevância**. Escolher veículo já é juízo editorial, e uma lista torta faria o painel ter opinião sem declarar que tem.
+
+⛔ **A lista NÃO carrega inclinação política**, e o campo foi removido em 01/Ago/2026 por decisão do André: o rótulo era nosso e sem fonte, e divergia do AllSides em 13 de 22, para os dois lados. Fica o `tipo`, que é fato sobre o que a organização é.
+
+⛔ **Não forjar user-agent de navegador** para passar pelos veículos que devolvem 403 (Washington Examiner, Cook Political Report, Sabato's). É bloqueio deliberado deles, e eles seguem entrando pelo Google News, que é acesso que autorizaram ao agregador.
 
 ## ETAPA 4: Superlativo, com a armadilha da série
 
@@ -133,11 +163,11 @@ Sete seções, nesta ordem, aprovada pelo André em 28/Jul: cartão de apresenta
 
 ## ETAPA 6: Publicar, só se algo mudou
 
-Se `public/us-polls-data.json` mudou:
+Se `public/us-polls-data.json` **ou** os arquivos de imprensa da ETAPA 3.1 mudaram:
 
 1. `rm -rf .next && npm run build`
 2. `npx vercel --yes --prod`
-3. `git add public/us-polls-data.json`
+3. `git add public/us-polls-data.json public/us-press-archive public/us-press-data.json`
 4. `git commit` com resumo do que se moveu, com Co-Authored-By
 5. `git push origin main`
 
