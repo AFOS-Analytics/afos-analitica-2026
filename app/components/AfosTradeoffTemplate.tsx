@@ -18,10 +18,33 @@ import { InlineSubscribe } from './InlineSubscribe'
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-tradeoff-theme'
 
-// Link canônico do dataset BR2026 no Harvard Dataverse (DOI permanente).
-// Pílula no masthead do Tradeoff = lastro acadêmico dos dados que sustentam a edição.
-// Mesma pílula do hero do AFOS Daily (consistência entre as duas superfícies).
-const HARVARD_DOI_URL = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7'
+/**
+ * 🏛️ A pílula do Harvard é POR PAÍS, e isso foi corrigido em 03/Ago/2026.
+ *
+ * Antes ela era uma constante só, com o DOI `10.7910/DVN/2D0UK7`, que é o do
+ * dataset do BRASIL. A edição americana exibia esse DOI como se fosse o lastro
+ * dela: um produto sobre as midterms citando a base brasileira como fonte
+ * acadêmica. Num projeto que se vende como camada auditável, isso é exatamente
+ * o tipo de detalhe que derruba a confiança de quem for conferir.
+ *
+ * O Brasil mantém o DOI, que existe. Os EUA apontam para a **coleção**, sem
+ * prometer prazo: o dataset das midterms ainda não foi depositado, e escrever
+ * "em breve" seria assumir uma data que ninguém assumiu.
+ *
+ * 📌 QUANDO O DOI DAS MIDTERMS EXISTIR, ele entra AQUI, na entrada `us`, e o
+ * rótulo passa a exibi-lo como o do Brasil já faz. É a única mudança necessária.
+ */
+const HARVARD_COLECAO_URL = 'https://dataverse.harvard.edu/dataverse/afos-analytics'
+const HARVARD_POR_PAIS: Record<string, { url: string; rotulo: string }> = {
+  br: {
+    url: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7',
+    rotulo: 'Harvard Dataverse · DOI 10.7910/DVN/2D0UK7',
+  },
+  us: {
+    url: HARVARD_COLECAO_URL,
+    rotulo: 'Harvard Dataverse · collection',
+  },
+}
 
 interface NavDates {
   previous?: string
@@ -588,7 +611,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
               Link, não badge de imagem, p/ acessibilidade e theme-awareness. Mesma pílula do Daily. */}
           <div className="flex justify-center mb-3.5">
             <a
-              href={HARVARD_DOI_URL}
+              href={(HARVARD_POR_PAIS[country] ?? { url: HARVARD_COLECAO_URL }).url}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full border transition-colors ${harvardPill}`}
@@ -596,7 +619,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
               <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 shrink-0" fill="currentColor" aria-hidden="true">
                 <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
               </svg>
-              Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
+              {(HARVARD_POR_PAIS[country] ?? { rotulo: 'Harvard Dataverse · collection' }).rotulo}
             </a>
           </div>
           <div className={`flex flex-wrap gap-2.5 justify-center items-center text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>

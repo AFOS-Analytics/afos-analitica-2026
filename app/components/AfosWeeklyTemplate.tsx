@@ -176,7 +176,20 @@ const PAIS_ROTULO: Record<string, Record<string, string>> = {
   us: { 'pt-BR': 'Estados Unidos', en: 'United States', es: 'Estados Unidos' },
 }
 
-const HARVARD_DOI_URL = 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2D0UK7'
+/**
+ * 🏛️ Aponta para a COLEÇÃO do AFOS, não para um DOI específico.
+ *
+ * A pílula nasceu copiada do Tradeoff com o DOI `10.7910/DVN/2D0UK7`, que é o do
+ * dataset do BRASIL. Um produto sobre as midterms americanas exibindo a base
+ * brasileira como lastro acadêmico é o tipo de detalhe que derruba a confiança
+ * de quem for conferir. O dataset das midterms ainda não foi depositado, e o
+ * rótulo diz "collection" sem prometer prazo: escrever "em breve" seria assumir
+ * uma data que ninguém assumiu.
+ *
+ * 📌 QUANDO O DOI DAS MIDTERMS EXISTIR, ele substitui esta constante e o rótulo
+ * passa a exibi-lo, como o do Brasil já faz no Tradeoff.
+ */
+const HARVARD_COLECAO_URL = 'https://dataverse.harvard.edu/dataverse/afos-analytics'
 
 export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: AfosWeeklyData; locale: string; country?: string }) {
   const k = (locale === 'pt-BR' || locale === 'es' ? locale : 'en') as keyof typeof T
@@ -260,7 +273,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
           </p>
           <div className="mb-3.5 flex justify-center">
             <a
-              href={HARVARD_DOI_URL}
+              href={HARVARD_COLECAO_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${harvardPill}`}
@@ -268,7 +281,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 shrink-0" fill="currentColor" aria-hidden="true">
                 <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
               </svg>
-              Harvard Dataverse · DOI 10.7910/DVN/2D0UK7
+              Harvard Dataverse · collection
             </a>
           </div>
           <div className={`flex flex-wrap items-center justify-center gap-2.5 text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>

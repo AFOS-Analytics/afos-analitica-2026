@@ -293,6 +293,8 @@ Cada pagina gera metadata nativa no idioma correto via `buildMetadata()`:
 - Description com posicionamento unico
 - Canonical + hreflang cruzado (pt-BR, en, es, x-default)
 - Open Graph + Twitter Card
+- 🌍 **Cartao social com escopo de PAIS (corrigido em 03/Ago/2026).** As paginas editoriais (Daily, Tradeoff, Weekly) montam o proprio `openGraph`/`twitter` a partir da edicao, e as tags de assunto seguem o pais dela: `US 2026 midterms` em `/us/`, `Brazil 2026 election` em `/br/`. Antes disso o Weekly nao declarava `openGraph` nenhum e herdava o layout raiz, entao compartilhar um link das midterms no WhatsApp mostrava um cartao dizendo **"Brazil 2026 Elections"** acima da URL certa, e o Tradeoff levava a tag brasileira fixa na edicao americana. ⚠️ `robots: noindex` **nao** protege disso: ele tira a pagina do buscador e nao tem efeito sobre o scraper social, entao piloto fora de busca continua perfeitamente compartilhavel
+- 🏛️ **Pilula do Harvard e por pais.** `/br/` mostra o DOI do Brasil, que existe; `/us/` aponta para a colecao do AFOS com o rotulo `collection`, sem prometer prazo, porque o dataset das midterms ainda nao foi depositado
 - Geo tags por locale
 
 ### Google Search Console

@@ -292,6 +292,8 @@ Each page generates native metadata in the correct language via `buildMetadata()
 - Description with unique positioning
 - Canonical + cross-linked hreflang (pt-BR, en, es, x-default)
 - Open Graph + Twitter Card
+- 🌍 **Country-scoped social cards (fixed 03/Aug/2026).** Editorial pages (Daily, Tradeoff, Weekly) build their own `openGraph`/`twitter` from the edition itself, and the subject tags follow the edition country: `US 2026 midterms` on `/us/`, `Brazil 2026 election` on `/br/`. Before this, the Weekly declared no `openGraph` at all and inherited the root layout, so sharing a US midterms link on WhatsApp showed a card reading **"Brazil 2026 Elections"** above the correct URL, and the Tradeoff carried a hardcoded Brazilian tag on its American edition. ⚠️ `robots: noindex` does **not** protect against this: it removes the page from search and has no effect on the social scraper, so a pilot kept out of search is still fully shareable
+- 🏛️ **Harvard pill is per country.** `/br/` shows the Brazil DOI, which exists; `/us/` points to the AFOS collection labelled `collection`, with no promised date, because the midterms dataset has not been deposited yet
 - Geo tags per locale
 
 ### Google Search Console

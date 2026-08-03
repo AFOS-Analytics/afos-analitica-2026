@@ -18,6 +18,12 @@ import {
 } from '../../../../../lib/afos-tradeoff/loader'
 import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../../lib/afos-tradeoff/schema'
 
+/** 🏷️ Assunto do cartão social, POR PAÍS. Ver comentário no bloco openGraph. */
+const TAGS_POR_PAIS: Record<string, string[]> = {
+  br: ['Brazil 2026 election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+  us: ['US 2026 midterms', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+}
+
 interface PageProps {
   params: Promise<{ locale: string; country: string; date: string }>
 }
@@ -88,7 +94,11 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       modifiedTime,
       authors: ['AFOS Analytics'],
       section: 'Politics',
-      tags: ['Brazil 2026 election', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
+      // 🏷️ POR PAÍS. Era fixo em "Brazil 2026 election" e ia junto na edição
+      // americana, dizendo ao scraper social que a peça era sobre outra eleição.
+      // Corrigido em 03/Ago/2026, no mesmo dia em que o cartão do Weekly foi
+      // pego anunciando o Brasil num link das midterms.
+      tags: TAGS_POR_PAIS[pais] ?? TAGS_POR_PAIS.br,
       images: [
         {
           url: ogImage,
