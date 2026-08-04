@@ -216,6 +216,29 @@ Execute em sequência:
 - Informe ao final: Mostre tabela resumo com principais mudanças
 - **Volume Polymarket — regra firmada 17/Mai/2026 D+3:** ao escrever os campos `subtitle`, `header`, `analise` e `t` (trend) em `analysis-criteriosa.json` e os textos dos cards em `analysis-data.json`, citar volume USD acumulado quando o número agregar contexto. Formato canônico: `Lula 45,50% (vol USD 5,69M acumulado)`. Volume reforça tese "dinheiro real" diferenciando AFOS de agregadores. Aplicação contextual, não exaustiva — em parágrafos de fechamento da `analise` de cada candidato top 4 e em sub-mercados onde volume sinaliza distorção (vol baixo = sinal a contextualizar). NÃO citar `liquidityNum` no texto editorial — decisão 21/Mai/2026 noite após pushback do consultor de mercado: liquidez baixa em Polymarket não significa preço errado (arbitragem ativa em minutos), e expor o número gera misread "AFOS mostra mercado quebrado" no leitor leigo. Liquidity segue disponível na API para análise interna de anomalia.
 
+## ⛔ A MÁQUINA INTERNA NÃO VAI PARA O TEXTO DE LEITOR
+
+**Decisão do André em 03/Ago/2026, e eu a quebrei em 04/Ago. Está aqui porque foi NESTE comando que escorreguei.**
+
+| Fica, constrói confiança | Sai, destrói |
+|---|---|
+| "os preços desta página são da leitura de 03/Ago, 19:11 UTC" | "a trava de captura bloqueou quatro rodadas" |
+| "o AFOS só publica preço que duas leituras independentes confirmem" | "aprovada só na terceira tentativa" |
+| "esta rodada não publica número novo para ele" | "o book do Caiado oscilou entre 1,65% e 2,30% em oito minutos" |
+| "o preço dele mais se moveu hoje" | "book em trânsito", "rodadas bloqueadas" |
+
+**O critério:** a DESCRIÇÃO do método é diferencial da casa. O RELATO DE FALHA é a máquina reclamando, e o leitor lê como sistema quebrado. **A data da leitura fica sempre**, porque é procedência.
+
+🔴 **A armadilha específica desta rotina, e é como eu caí:** quando a trava bloqueia, é preciso explicar por que o preço é de ontem. **A explicação certa é "não há leitura nova em DD/Mmm", e ponto.** Por que não há é problema nosso. Eu me convenci de que ali a máquina virava informação necessária, e enchi 9 arquivos com 28 menções por idioma.
+
+**Antes de commitar, grepar:**
+
+```bash
+grep -o -i "trava de captura bloque\|bloqueou quatro\|rodadas bloquead\|book em trânsito\|capture lock blocked\|blocked four\|book in transit" public/analysis-*.json public/polls-data*.json | wc -l
+```
+
+Tem que dar **0**. Regra completa em `memory/feedback_descrever_o_metodo_sim_relatar_a_falha_nao.md`.
+
 ## ESTILO TEXTUAL (anti-AI tells)
 
 - NÃO usar markdown bold (`**...**`) dentro de strings dos JSONs — renderiza como literal `**` na UI do dashboard. Use texto plano com vírgulas, dois pontos ou frases curtas para destacar. **Isso continua valendo:** os cartões NÃO passam por markdown, e negrito, itálico, cabeçalho e lista seguem sem efeito.
