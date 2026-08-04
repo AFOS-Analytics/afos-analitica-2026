@@ -19,6 +19,11 @@ const FOOTER_SOURCES_RE = /\*\*(?:Fontes citadas|Sources cited|Cited sources|Fue
 const PARAGRAPH_BREAK_RE = /\n\n+/
 const SOURCES_BULLET_RE = /^- \[/
 const HR_OR_HEADING_RE = /^(?:#{1,6}\s|[-*_]{3,}$)/
+// Rótulo estrutural do rodapé, do tipo "**matérias secundárias (...):**". É legenda
+// de subseção, não prosa, e não pode carregar link por definição. Em pt-BR ele tem
+// 78 caracteres e escapava do corte de 80; em EN e ES passa de 80 e era contado como
+// parágrafo sem fonte, rebaixando a densidade dos dois idiomas em toda daily.
+const BOLD_LABEL_RE = /^\*\*[^*\n]+:\*\*$/
 
 function extractAllLinks(body: string): { text: string; url: string }[] {
   return Array.from(body.matchAll(MARKDOWN_LINK_RE), (m) => ({ text: m[1], url: m[2] }))
@@ -55,6 +60,7 @@ function countParagraphsAndLinks(body: string): { substantialParagraphs: number;
     if (trimmed.length < 80) continue
     if (HR_OR_HEADING_RE.test(trimmed)) continue
     if (SOURCES_BULLET_RE.test(trimmed)) continue
+    if (BOLD_LABEL_RE.test(trimmed)) continue
     substantial++
     const hasExternal = extractAllLinks(trimmed).some((l) => !isInternalUrl(l.url))
     if (hasExternal) withLink++
