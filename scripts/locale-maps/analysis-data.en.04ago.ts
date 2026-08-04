@@ -1,0 +1,59 @@
+/** Mapa EN de analysis-data.json — /atualizar-brz 04/Ago/2026. Ponto decimal, vírgula de milhar. */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+const NEXUS = G('BTG/Nexus', 'nexus-btg')
+const STF = G('STF', 'stf')
+const NOVO = G('Novo', 'novo')
+const PF = G('Federal Police', 'pf')
+
+construir('analysis-data', 'en', {
+  'cards.sentimento.text1':
+    `With 61 days to the first round, the fresh data point is APPROVAL, and it came from yesterday's round. ${NEXUS} released, in the Aug 4 coverage and from the same round BR-02874/2026 (n=2,002, fieldwork Jul 31 to Aug 2), government approval at 47% against 48% disapproval. On administration ratings, which is a different question, 37% excellent or good, 18% average and 43% poor or terrible.`,
+  'cards.sentimento.text2':
+    `THE FINDING IS NOT THE LEVEL, IT IS THE STILLNESS. Inside ${NEXUS} itself, approval has been at 47% across the last three rounds: 47% x 47% on Jul 13, 47% x 49% on Jul 27 and 47% x 48% now. What moved was disapproval, inside the 2pp margin both times. Three readings without movement describe a divided and stable electorate, not a trend.`,
+  'cards.sentimento.text3':
+    `⚠️ THE MARKET DOES NOT ENTER THIS ROUND. The capture lock blocked four times on Aug 4, with Caiado's book swinging between 1.65% and 2.30% across eight minutes. The prices this panel shows are from the capture locked at 19:11 UTC on Aug 3, and they are marked as such. The panel does not publish a price that two independent readings fail to confirm.`,
+  'cards.sentimento.direita':
+    `A DAY OF PARTY ISOLATION FOR FLÁVIO. Republicanos confirmed neutrality in the election and refused to join the ticket, and Podemos did the same shortly after, having resisted naming its own president as running mate. He remains WITHOUT A RUNNING MATE and says he will decide by August 15. Michelle Bolsonaro called Ciro Nogueira to press for Tereza Cristina in the slot. In the polling he is still the move of the week, with a 4pp rise in the ${NEXUS} first round, but that is the most favourable reading for him among the four national polls since Jul 29.`,
+  'cards.sentimento.esquerda':
+    `Government approval at 47% against 48%, stuck at 47% for three ${NEXUS} rounds. ⚠️ The panel changed source on this field, which through yesterday carried the Jul 29 reading, and therefore publishes no variation: comparing different houses would be changing the yardstick. PoderData/Aya of Jul 30 still shows a harsher picture, 43% x 49%. On the judicial axis, Dino AUTHORISED the third inquiry into Lulinha and opened an investigation into leaks, and Lula told an aide to explain a loan taken from a friend of Lulinha under investigation.`,
+  'cards.sentimento.terceiraVia':
+    `THE SPACE GAINED PARTY DEFINITION TODAY. ZEMA announced his running mate, Senator Eduardo Girão of the ${NOVO} party, and he is the first of the three to close a ticket, and to close it inside his own party at that. CAIADO is the name whose price moves most, and he is precisely why the lock blocked: four rounds, with readings between 1.65% and 2.30%. The panel does not publish that number. In yesterday's ${NEXUS} polling, Caiado has 5% and Zema 3%, and Lula beats both in the runoff, 46% x 42% and 46% x 40%.`,
+  'cards.sentimento.polymarket':
+    `⚠️ Prices from Aug 3, from the capture locked at 19:11 UTC, not from today: Lula 65.50% (vol USD 7.92M), Flávio 25.45% (vol USD 7.86M), Renan Santos 7.45% (vol USD 8.86M), Caiado 1.15% (vol USD 5.30M), Zema 0.25% (vol USD 4.66M), Haddad 0.15% (vol USD 6.64M), ${STF} impeachment 3.10% (vol USD 83 thousand). Lula's gap over Flávio +40.05pp. On Aug 4 the lock blocked four rounds and no fresh price was published.`,
+  'cards.inss.text1':
+    `The fiscal agenda produced no development that moved prices this Tuesday, and the market does not enter this round in any case: the capture lock blocked four times on Aug 4. The day's record comes from the party-political side, where the board moved more than the polling did.`,
+  'cards.inss.text2':
+    `ZEMA closed his ticket with Senator Eduardo Girão of the ${NOVO} party, and is the first third-way name to settle the running-mate question. FLÁVIO took two refusals on the same day, from Republicanos and Podemos, both confirming neutrality in the election, and remains without a running mate eleven days from the deadline he himself declared.`,
+  'cards.inss.text3':
+    `GOVERNMENT APPROVAL came in at 47% against 48% disapproval in ${NEXUS}, released today but collected between Jul 31 and Aug 2. It has been stuck at 47% for three rounds of the same house, which describes stability rather than movement. Administration ratings remain at 37% excellent or good against 43% poor or terrible.`,
+  'cards.inss.text4':
+    `⚠️ This panel's market figures are from Aug 3 and are marked as such. In that capture, the Senate had the ${G('PL', 'pl')} at 75.00% (vol USD 259 thousand) and the annual inflation contract concentrated 36.60% in the 5.00% to 5.49% band, with the bands adding to 99.65%. On Aug 4 there is no confirmed reading to compare against.`,
+  'cards.inss.impactoLula':
+    `Fresh approval data and it is still: 47% against 48%, with approval stuck at 47% across the last three ${NEXUS} rounds. ⚠️ The panel changed source on this field and therefore publishes no variation against the previous reading, which was from Jul 29 and from another house. ${G('Quaest', 'quaest')} (n=2,004) and Ideia/Canal Meio (n=1,500) publish on Aug 5 and are the next national readings.`,
+  'cards.inss.impactoGestao':
+    `Administration ratings at 37% excellent or good, 18% average and 43% poor or terrible in ${NEXUS} of Aug 3, against 36% and 43% in the institute's Jul 27 round. All but still. PoderData/Aya of Jul 30 still carries a harsher reading, 34% against 47%, and the panel records both without arbitrating which is right.`,
+  'cards.inss.conclusao':
+    `With 61 days to the election, the day was one of party definition and immobile approval. Zema closed his ticket, Flávio lost two parties and remains without a running mate, and government approval did not move for the third straight round of the same house. The market stayed out because the lock blocked four times, and the third way, where the board moved most, is precisely where the book is in transit. Tomorrow's round, with Quaest and Ideia, is the one that will measure whether any of it turned into votes.`,
+  'cards.bancoMaster.text1':
+    `The judicial axis moved, and it moved by decision rather than by request: DINO AUTHORISED the opening of a third inquiry into Fábio Luís Lula da Silva, known as Lulinha, and also opened an investigation into leaks (Folha de S.Paulo, Aug 4). Yesterday the panel recorded that the ${PF} had REQUESTED it, and the distinction between requesting and opening is what separates the news from the fact.`,
+  'cards.bancoMaster.text2':
+    `On the same axis, the president told an aide to publicly explain a loan taken from Roberta, a friend of Lulinha under investigation by the ${PF}. The former chief of staff confirmed the loan. The panel records the fact and attributes no electoral effect, because there is no confirmed price today against which to measure a reaction.`,
+  'cards.bancoMaster.text3':
+    `In the ${G('Banco Master', 'banco-master')} case there was no fresh development this Tuesday. The writ on installing the congressional inquiry is still undecided, and the absence remains the record. Flávio Bolsonaro named Moraes, Dino and Zanin while publicly defending the impeachment of ${STF} justices, which keeps the theme on the political agenda without a fresh price to measure it.`,
+  'cards.bancoMaster.conclusao':
+    `⚠️ The ${STF} impeachment contract has NO fresh price today, because the capture lock blocked four rounds. In the capture locked on Aug 3 it stood at 3.10% (vol USD 83 thousand). It is on the record that, on the same day, a third inquiry into the president's son was authorised and the runner-up in the race publicly defended impeaching justices, without the panel being able to say whether the market priced either.`,
+  'cards.stf.toffoli':
+    `Toffoli remains isolated on the ${STF} after the Master crisis, with no fresh individual ruling captured this Tuesday.`,
+  'cards.stf.moraes':
+    `No fresh ruling from Moraes in the period. He was named directly by Flávio Bolsonaro, alongside Dino and Zanin, in a public defence of impeaching justices of the court.`,
+  'cards.stf.dino':
+    `HE IS THE JUSTICE OF THE DAY. Dino AUTHORISED the opening of the third inquiry into Lulinha, on suspicion of influence peddling, and opened a parallel investigation into leaks. He was also named by Flávio in the defence of impeaching justices.`,
+  'cards.stf.mendonca':
+    `Still the rapporteur in the Master case inquiry, with no fresh ruling this Tuesday.`,
+  'cards.stf.nexo':
+    `This Tuesday's link is the distance between a board that moved a great deal and a market that could not be measured. Politically, Zema closed his ticket with Eduardo Girão and Flávio lost Republicanos and Podemos on the same day. Judicially, Dino authorised the third inquiry into Lulinha and Flávio publicly defended impeaching three justices, naming them. In the polling, government approval did not move for the third straight round. And the price, which would be the crossing of all of it, stayed out: the capture lock blocked four times.`,
+  'cards.stf.analise':
+    `⚠️ NO FRESH PRICE FOR THE IMPEACHMENT CONTRACT this round. In the capture locked on Aug 3 it was FLAT at 3.10% (vol USD 83 thousand), and that is the figure the panel shows, marked with its date. Worth recording as method: on a day carrying the authorisation of an inquiry into the president's son and the runner-up naming three justices he wants impeached, it would be tempting to estimate a reaction. The panel does not estimate. Without two readings that agree there is no price, and without a price there is no crossing. The usual caveat: at USD 83 thousand accumulated, this is the thinnest contract the panel publishes.`,
+})
