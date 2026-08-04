@@ -74,6 +74,21 @@ jobs:
         # senão a regeneração de national-polls.json apagaria o enriquecimento).
         run: node scripts/build-tse-registry-full.mjs
 
+      - name: Remover CPF de pessoa física do registro do TSE (LGPD)
+        # ⛔ BLOQUEANTE, e roda DEPOIS do passo acima de propósito: aquele passo
+        # REGENERA o registro a partir do ZIP do TSE, então redigir antes seria
+        # apagado a cada espelhamento.
+        #
+        # A salvaguarda anti-Lead do export é DB-free, ou seja, protege a tabela de
+        # assinantes. Ela não olha o CONTEÚDO do que vem do TSE, e o TSE publica o
+        # CPF do estatístico responsável dentro do texto livre de `methodology` e
+        # `sampling_plan`. Público na origem não deixa de ser dado pessoal quando
+        # republicado em massa. CNPJ de instituto FICA: identifica empresa, e é ele
+        # que dá auditabilidade. Detectado em 04/Ago/2026, ERR-2026-002.
+        run: |
+          node scripts/redigir-cpf-tse-registry.mjs
+          node scripts/redigir-cpf-tse-registry.mjs --check
+
       - name: Build public export (DB-free — sem acesso a Lead)
         env:
           HF_HISTORY_DIR: archive-history

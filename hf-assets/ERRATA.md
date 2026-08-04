@@ -8,6 +8,25 @@ Scope note on "append-only": the file for the **current** date may be regenerate
 
 ## EN
 
+### ERR-2026-002 · `polls/tse-registry.csv` + `.json` · personal data
+
+| | Value |
+|---|---|
+| **Affected field** | free text in `methodology` and `sampling_plan` |
+| **Published** | the CPF (Brazilian individual taxpayer number) of the responsible statistician, written into the prose of the filing |
+| **Correct** | `[CPF removido]` |
+| **Rows affected** | 7 occurrences, 4 distinct individuals, out of 533 filings |
+| **Detected** | 2026-08-04 |
+| **Status** | **Corrected in place.** This is not a dated file, so the append-only rule does not apply to it. Earlier mirrors did distribute the numbers. |
+
+**Cause.** The exporter's safeguard is DB-free: it guarantees the pipeline never touches the subscriber table. It says nothing about the *content* arriving from the TSE, and the TSE publishes the statistician's CPF inside the free-text description of the filing. Public at the source does not stop being personal data once republished in bulk in an open dataset.
+
+**What was kept, and why.** Institute **CNPJ** (company registration) is kept: it identifies a company, not a person, and it is what makes the filing auditable. The TSE labels that column `CNPJ/CPF` and fills it with a CNPJ, so redacting by label would have destroyed the institute identifier. The statistician's **name** is also kept: it is professional activity, it is already its own column (`statistician`), and it is what lets a reader audit who signed off on a poll.
+
+**Prevention.** `scripts/redigir-cpf-tse-registry.mjs` runs in the mirror workflow between the registry rebuild and the export, and a second `--check` pass fails the build if any 11-digit CPF survives.
+
+---
+
 ### ERR-2026-001 · `data/divergence-2026-07-29.csv` · Renan Santos
 
 | | Value |
@@ -29,6 +48,25 @@ Scope note on "append-only": the file for the **current** date may be regenerate
 ---
 
 ## PT-BR
+
+### ERR-2026-002 · `polls/tse-registry.csv` + `.json` · dado pessoal
+
+| | Valor |
+|---|---|
+| **Campo afetado** | texto livre de `methodology` e `sampling_plan` |
+| **Publicado** | o CPF do estatístico responsável, escrito dentro da prosa do registro |
+| **Correto** | `[CPF removido]` |
+| **Linhas afetadas** | 7 ocorrências, 4 pessoas distintas, em 533 registros |
+| **Detectado** | 04/08/2026 |
+| **Situação** | **Corrigido no próprio arquivo.** Ele não é datado, então a regra de só acrescentar não se aplica a ele. Espelhamentos anteriores distribuíram os números. |
+
+**Causa.** A salvaguarda do exportador é DB-free: garante que o processo nunca toca a tabela de assinantes. Ela não diz nada sobre o **conteúdo** que chega do TSE, e o TSE publica o CPF do estatístico dentro da descrição em texto livre do registro. Público na origem não deixa de ser dado pessoal quando republicado em massa num dataset aberto.
+
+**O que ficou, e por quê.** O **CNPJ** do instituto fica: identifica empresa, não pessoa, e é ele que torna o registro auditável. O TSE rotula essa coluna como `CNPJ/CPF` e a preenche com CNPJ, então redigir pelo rótulo teria apagado o identificador do instituto. O **nome** do estatístico também fica: é atuação profissional, já é coluna própria (`statistician`), e é o que permite auditar quem assinou a pesquisa.
+
+**Prevenção.** O `scripts/redigir-cpf-tse-registry.mjs` roda no espelhamento entre a reconstrução do registro e o export, e uma segunda passada com `--check` reprova a publicação se sobrar qualquer CPF de 11 dígitos.
+
+---
 
 ### ERR-2026-001 · `data/divergence-2026-07-29.csv` · Renan Santos
 
@@ -53,6 +91,25 @@ Este conjunto de dados é **datado e aditivo**. Arquivos de datas já encerradas
 ---
 
 ## ES
+
+### ERR-2026-002 · `polls/tse-registry.csv` + `.json` · dato personal
+
+| | Valor |
+|---|---|
+| **Campo afectado** | texto libre de `methodology` y `sampling_plan` |
+| **Publicado** | el CPF (número de contribuyente individual brasileño) del estadístico responsable, escrito dentro de la prosa del registro |
+| **Correcto** | `[CPF removido]` |
+| **Filas afectadas** | 7 apariciones, 4 personas distintas, de 533 registros |
+| **Detectado** | 04/08/2026 |
+| **Situación** | **Corregido en el propio archivo.** No es un archivo fechado, así que la regla de solo agregar no se le aplica. Los espejados anteriores sí distribuyeron los números. |
+
+**Causa.** La salvaguarda del exportador es DB-free: garantiza que el proceso nunca toca la tabla de suscriptores. No dice nada sobre el **contenido** que llega del TSE, y el TSE publica el CPF del estadístico dentro de la descripción en texto libre del registro. Público en el origen no deja de ser dato personal cuando se republica en masa en un dataset abierto.
+
+**Qué se conservó, y por qué.** El **CNPJ** del instituto se conserva: identifica a una empresa, no a una persona, y es lo que hace auditable el registro. El TSE rotula esa columna como `CNPJ/CPF` y la llena con un CNPJ, así que redactar por rótulo habría destruido el identificador del instituto. El **nombre** del estadístico también se conserva: es actividad profesional, ya es columna propia (`statistician`), y es lo que permite auditar quién firmó una encuesta.
+
+**Prevención.** `scripts/redigir-cpf-tse-registry.mjs` corre en el espejado entre la reconstrucción del registro y el export, y una segunda pasada con `--check` reprueba la publicación si sobrevive algún CPF de 11 dígitos.
+
+---
 
 ### ERR-2026-001 · `data/divergence-2026-07-29.csv` · Renan Santos
 
