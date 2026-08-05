@@ -2,6 +2,17 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-08-04, data-minimisation rule for the TSE registry
+
+### Changed
+- **`polls/tse-registry.{csv,json}`: individual taxpayer numbers (CPF) are no longer carried.** Where the TSE Open Data source contains a CPF inside the free-text `methodology` or `sampling_plan`, the number is replaced by the literal marker `[CPF removido]`. This applies to the current file and to every file published from this date onward.
+
+  **Why.** The registry is published openly by the TSE under Lei 9.504/1997 art. 33; collecting it is correct and unchanged. A CPF, however, is not a field the TSE publishes: `statistician` is its own named column, and the number only ever reached the file because a pollster typed it into prose describing the sampling design. Nothing in this dataset is joined on CPF, so carrying it serves no analytical purpose. This is data minimisation, not a correction of a defect.
+
+  **What is unaffected.** The `cnpj` column and every company registration number are unchanged: a CNPJ identifies a legal entity, is published deliberately by the TSE, is filled in every row, and is the only reliable join key (legal names differ from the trade names institutes are known by). The `statistician` column is unchanged: it is professional activity and it is what lets a reader audit who signed off on a poll. Redaction is decided by **digit count**, never by label, because the TSE labels part of the free text `CNPJ/CPF` and fills it with a CNPJ.
+
+  **Scope.** Only the two long free-text columns can contain the marker. No numeric column, no date, no identifier and no row count changed.
+
 ## 2026-07-30, errata mechanism
 
 ### Added
