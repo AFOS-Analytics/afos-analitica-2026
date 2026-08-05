@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-05",
-  "fetchedAt": "2026-08-05T01:27:30.894Z",
+  "lastUpdate": "2026-08-04",
+  "fetchedAt": "2026-08-04T19:20:42.364Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,97 +108,97 @@
     }
   ],
   "qualidade": {
-    "lidos": 242,
-    "naLista": 105,
-    "foraDaLista": 137,
+    "lidos": 179,
+    "naLista": 63,
+    "foraDaLista": 116,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 9,
+    "descartadosPorAcompanhamento": 7,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 63,
-    "publicadosComLinkCanonico": 10,
-    "publicadosViaGoogleNews": 0
+    "lidosEmFeedProprio": 30,
+    "publicadosComLinkCanonico": 9,
+    "publicadosViaGoogleNews": 1
   },
   "itens": [
     {
-      "titulo": "Maryland lawmakers approve redistricting referendum",
-      "url": "https://thehill.com/homenews/campaign/6009593-maryland-redistricting-referendum-approved/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-05T01:27:01.000Z",
+      "titulo": "What to Watch in Virginia’s First Primary Since Redistricting Battle",
+      "url": "https://www.nytimes.com/2026/08/04/us/politics/virginia-primary-first-election-redistricting.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-04T19:16:58.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "Wesley Bell beats Cori Bush in Missouri Democratic House primary rematch",
-      "url": "https://www.cbsnews.com/news/wesley-bell-cori-bush-missouri-1st-district-results-st-louis/",
+      "titulo": "Embattled GOP rep takes dramatic step to &apos;clear my name&apos; as abuse allegations engulf House race",
+      "url": "https://www.foxnews.com/politics/embattled-gop-rep-takes-dramatic-step-clear-name-abuse-allegations-engulf-house-race",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-04T18:34:49.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Pence: Upcoming midterms &#039;couldn’t be more important in the life of the nation&#039;",
+      "url": "https://thehill.com/homenews/campaign/6008611-pence-criticizes-gop-democrats/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-04T18:12:52.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Maryland House approves constitutional amendment clarifying redistricting rules",
+      "url": "https://thehill.com/homenews/campaign/6008559-maryland-house-passes-redistricting-referendum/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-08-04T18:04:32.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Behind closed doors, Trump, White House aides hope Rep. Max Miller exits race",
+      "url": "https://www.cbsnews.com/news/max-miller-trump-reelection-white-house/",
       "casa": "CBS News",
-      "publicadoEm": "2026-08-05T01:22:21.000Z",
+      "publicadoEm": "2026-08-04T18:02:02.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "Bell fends off Bush in House Democratic primary rematch in Missouri",
-      "url": "https://thehill.com/homenews/campaign/5988350-bell-fends-off-bush-missouri-house-primary/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-05T01:19:09.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "GOP dukes it out in red state primary to reclaim governor&apos;s mansion",
-      "url": "https://www.foxnews.com/politics/conservative-heavyweights-duked-red-state-primary-reclaim-governors-mansion-democrats",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-05T01:15:14.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Polls close in Michigan with eyes on high-stakes Democratic primary for US Senate seat – live updates",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/04/midterm-primary-elections-updates-michigan-senate",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-05T01:11:08.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Wesley Bell wins Missouri House primary as Cori Bush comeback bid fails",
-      "url": "https://www.theguardian.com/us-news/2026/aug/04/wesley-bell-missouri-democratic-primary-congress",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-05T01:09:10.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Michigan’s top election official wins Democratic primary for governor, advances to battleground race",
-      "url": "https://www.foxnews.com/politics/michigans-top-election-official-wins-democratic-primary-governor-advances-battleground-race",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-05T01:06:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Pastor Adam Hamilton Wins Kansas Democratic Senate Primary",
-      "url": "https://www.nytimes.com/2026/08/04/us/politics/hamilton-marshall-kansas-senate-election.html",
+      "titulo": "Democrats and Republicans Battle to Reshape Congress in 2026 Midterms",
+      "url": "https://www.nytimes.com/live/2026/08/04/us/midterms-elections-michigan-virginia/democrats-republicans-reshape-congress-midterms",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-05T01:02:45.000Z",
+      "publicadoEm": "2026-08-04T17:55:22.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "Trump-backed Ty Masterson wins Republican nomination for Kansas governor",
-      "url": "https://www.nbcnews.com/politics/2026-election/kansas-governor-masterson-trump-holscher-corson-republican-democrat-rcna590030",
-      "casa": "NBC News",
-      "publicadoEm": "2026-08-05T01:00:31.000Z",
+      "titulo": "Michigan votes in key Senate primary as Democrats battle over party’s future",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZFJRU3dRazl1N0RUT3hMdFVfUU5OaVhFRTZiV2VqeUhTSmRZS3FXMnM5Q1hwV3pHTVpFY0NGazE1YlkxWWVYSmRXTnlqeU9RSy1pRlp5ZmJNbnZaZTlMVm9IaGgzbVhlRFBFa05FdFBVemlFV0pmSjA1WU5UdTh3YjJoZEUtRDlaOVgxMXRaQWR4TG9UeFFyYnVqOGZTUQ?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-04T16:28:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
+    },
+    {
+      "titulo": "Senate candidate Haley Stevens stands firm on backing U.S. military aid to Israel",
+      "url": "https://www.cbsnews.com/news/haley-stevens-stands-firm-israel-military-aid-claims-el-sayed-equivocates/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-08-04T11:34:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "The Michigan Senate primary pits old-guard Democrats against a rising coalition.",
-      "url": "https://www.nytimes.com/live/2026/08/04/us/midterms-elections-michigan-virginia/the-michigan-senate-primary-pits-old-guard-democrats-against-a-rising-coalition",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-05T00:31:12.000Z",
+      "titulo": "Virginia Democrats pick nominees in 2 US House seats they hope to flip in midterms",
+      "url": "https://abcnews.com/Politics/wireStory/virginia-democrats-pick-nominees-2-us-house-seats-135344004",
+      "casa": "ABC News",
+      "publicadoEm": "2026-08-04T11:13:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "WATCH: GOP senator unloads on &apos;creature of Washington&apos; challenger in critical Senate showdown",
+      "url": "https://www.foxnews.com/politics/gop-senator-unloads-creature-washington-challenger-critical-senate-showdown",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-04T11:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     }
