@@ -1,0 +1,97 @@
+{
+  "date": "2026-08-05",
+  "auditedAt": "2026-08-05T21:45:00.000Z",
+  "factCheckGate": {
+    "eventosCandidatos": 8,
+    "incorporados": 6,
+    "rejeitados": 2,
+    "eventos": [
+      {
+        "evento": "Flávio Bolsonaro anuncia Alfredo Gaspar (PL-AL), relator da CPMI do INSS, como vice",
+        "verificacao1": "check-recurrence 'Alfredo Gaspar': zero mencoes em 7 dailies (2026-07-29 a 2026-08-04)",
+        "classificacao": "novidade",
+        "verificacao2": { "fonte": "Poder360", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "BBC News Brasil e Gazeta do Povo, grupos independentes",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Genial/Quaest nacional BR-06591/2026: 1T 39% x 30%, 2T 44% x 39%",
+        "verificacao1": "check-recurrence 'Quaest': aparece em 29, 30 e 31/Jul, mas como rodadas ESTADUAIS e como linha do calendario da daily de 31/Jul, que ja listava BR-06591/2026 para 05/Ago",
+        "classificacao": "rodada nacional e novidade; o instituto e continuidade",
+        "verificacao2": { "fonte": "CNN Brasil", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "Money Times, grupo independente",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Meio/Ideia nacional BR-04579/2026: 1T 43% x 35%, 2T 48,5% x 43%",
+        "verificacao2": { "fonte": "Gazeta do Povo", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "Exame, grupo independente",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Mendonca, vice-presidente do TSE, manda governo abrir dados de publicidade institucional em 10 dias e NEGA o pedido do PL de barrar novos empenhos",
+        "verificacao2": { "fonte": "Gazeta do Povo", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "Poder360, Terra, CNN Brasil e CartaCapital",
+        "decisao": "incorporar",
+        "nota": "deferimento PARCIAL: concede a exibicao, nega a proibicao"
+      },
+      {
+        "evento": "Renan Santos declara que nao cumprira decisoes monocraticas do STF",
+        "verificacao2": { "fonte": "g1 e GloboNews, veiculo que conduziu a entrevista", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "Brasil 247, CNN Brasil e Gazeta do Povo",
+        "decisao": "incorporar",
+        "nota": "a expressao 'parasitas' sai da manchete do g1 e NAO foi corroborada de forma independente. REMOVIDA do corpo da daily."
+      },
+      {
+        "evento": "Lula e Alcolumbre se reunem na casa de Moraes",
+        "verificacao2": { "fonte": "Poder360", "data": "2026-08-04", "tipo": "evento" },
+        "segundaFonte": "Correio Braziliense, CNN Brasil, Gazeta do Povo",
+        "decisao": "incorporar com data explicita",
+        "nota": "DATA DO EVENTO e 04/Ago; a noticia e de 05/Ago. Armadilha de data de cache contra data de evento, reincidente no projeto."
+      },
+      {
+        "evento": "Mendonca nega pedido da PF na operacao sobre Claudio Castro",
+        "verificacao2": { "fonte": "O Globo, blog da Malu Gaspar", "data": "2026-08-05", "tipo": "evento" },
+        "segundaFonte": "NAO VERIFICADO; busca independente nao confirmou",
+        "decisao": "NAO incorporar",
+        "nota": "fonte unica. Registrado no painel COMO relato de fonte unica, nao como fato. Gerou errata no commit 78d27ae, que tambem corrigiu atribuicao errada a Folha."
+      },
+      {
+        "evento": "PL impulsionando video que associa Lula ao PCC e ao CV",
+        "verificacao1": "item apareceu no cache com pubDate de 05/Ago",
+        "verificacao2": { "fonte": "Poder360, Gazeta do Povo, Revista Oeste", "data": "2026-06-19", "tipo": "recobranca" },
+        "decisao": "NAO incorporar",
+        "nota": "decisao e de 19 a 21/Jun/2026. Seria o segundo erro de data do mesmo tipo no mesmo dia."
+      }
+    ],
+    "foraDoCorpoPorDecisao": [
+      "Carter Center desistiu de observar as eleicoes de 2026 mesmo convidado pelo TSE. Duas fontes (Poder360 e Folha). Fora por causa do teto de 900 palavras.",
+      "Boulos resgatou acusacoes criminais antigas contra Alfredo Gaspar. Acusacao nao julgada, levantada por adversario, fonte unica no cache (Valor). Fora por decisao editorial, aguardando ordem."
+    ]
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "Uma, e atribuida no texto: o calculo de 'mais de um minuto a menos de TV' aparece em O Globo e Valor, que sao do MESMO grupo e portanto contam como uma fonte. Esta no texto como calculo de O Globo, nomeado.",
+    "2_numericalErrors": "reconcile-claims.ts: [OK] todos os claims numericos batem com o JSON, tolerancia +-0,05pp. Os 6 pares apontados sao falsos positivos de proximidade, e um deles fez consertar uma ambiguidade real na frase da rejeicao.",
+    "3_fontesInventadas": "Conferidos tres ao acaso: g1 da entrevista do Renan, O Globo da publicidade e VEJA do vice. Todos com materia do dia e URL primaria do feed.",
+    "4_quotesLiterais": "Uma: 'decisao ilegal nao se cumpre', da entrevista ao g1 e a GloboNews, veiculo que a conduziu, com a substancia corroborada por tres outros grupos.",
+    "5_causacaoEspuria": "Nenhuma. Sem preco novo, nenhum movimento de mercado e atribuido a evento, e a Secao 4 declara isso.",
+    "6_verbosCriticos": "'negou' com objeto e data, 'se reuniram' com 04/Ago explicito, 'mandou apresentar' com prazo e autor. Nenhum verbo de privacao de liberdade, morte ou confissao.",
+    "decisao": "prosseguir"
+  },
+  "capturaDeMercado": {
+    "travaDeCaptura": "BLOQUEADA nas duas rodadas",
+    "rodada1": { "leitura1": "2026-08-05T19:15:53.702Z", "leitura2": "2026-08-05T19:23:54.486Z", "motivos": ["presidential:Flavio Bolsonaro 26.40% -> 26.65% (0.25pp)", "presidential:Ronaldo Caiado 1.50% -> 1.25% (0.25pp)"] },
+    "rodada2": { "fetchedAt": "2026-08-05T19:32:00.668Z", "motivos": ["senate:MDB 18.70% -> 19.40% (0.70pp)", "presidential:Michelle Bolsonaro 0.55% -> 0.85% (0.30pp)"] },
+    "gateDeRebaseline": "DISPAROU por magnitude (Lula -1,00pp, Flavio +0,95pp, gap -1,95pp, Caiado +0,55pp) e NAO foi aplicado: a trava de captura, que e a regra mais nova e mais estrita, governa. Precos publicados sao os de 03/Ago as 19:11 UTC, marcados um a um.",
+    "volumeTotal": "USD 119,95M, MEDIDO em 2026-08-05T21:41:17Z (18:41 BRT). Contador cumulativo, nao e preco, logo nao depende da trava. Substituiu o USD 118,32M, que era herdado da daily de 04/Ago e nao medido, e o USD 119,66M, que era medicao das 17:17 BRT ja envelhecida."
+  },
+  "portoes": {
+    "palavras": 898,
+    "teto": 900,
+    "validateAfosDaily": "nenhuma violacao",
+    "gateNumericoTraducao": "85 tokens com unidade, multiconjunto identico em pt-BR, en e es",
+    "cincoChecagens": "5/5 limpas",
+    "proporcaoDeFontes": "10 secundarias e 5 ancora, 67% de acesso aberto",
+    "waybackDaDaily": "NAO EXECUTADO: host bloqueado, 429 na sondagem de 05/Ago, terceiro dia seguido. Rodar bloqueado nao arquiva e aprofunda o bloqueio."
+  }
+}
