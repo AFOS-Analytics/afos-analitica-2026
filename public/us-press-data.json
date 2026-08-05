@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-05",
-  "fetchedAt": "2026-08-05T01:27:30.894Z",
+  "fetchedAt": "2026-08-05T22:42:00.700Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,97 +108,97 @@
     }
   ],
   "qualidade": {
-    "lidos": 242,
+    "lidos": 251,
     "naLista": 105,
-    "foraDaLista": 137,
+    "foraDaLista": 146,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 9,
+    "descartadosPorAcompanhamento": 8,
     "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 63,
-    "publicadosComLinkCanonico": 10,
-    "publicadosViaGoogleNews": 0
+    "lidosEmFeedProprio": 59,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3
   },
   "itens": [
     {
-      "titulo": "Maryland lawmakers approve redistricting referendum",
-      "url": "https://thehill.com/homenews/campaign/6009593-maryland-redistricting-referendum-approved/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-05T01:27:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Wesley Bell beats Cori Bush in Missouri Democratic House primary rematch",
-      "url": "https://www.cbsnews.com/news/wesley-bell-cori-bush-missouri-1st-district-results-st-louis/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-08-05T01:22:21.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Bell fends off Bush in House Democratic primary rematch in Missouri",
-      "url": "https://thehill.com/homenews/campaign/5988350-bell-fends-off-bush-missouri-house-primary/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-05T01:19:09.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "GOP dukes it out in red state primary to reclaim governor&apos;s mansion",
-      "url": "https://www.foxnews.com/politics/conservative-heavyweights-duked-red-state-primary-reclaim-governors-mansion-democrats",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-05T01:15:14.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Polls close in Michigan with eyes on high-stakes Democratic primary for US Senate seat – live updates",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/04/midterm-primary-elections-updates-michigan-senate",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-05T01:11:08.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Wesley Bell wins Missouri House primary as Cori Bush comeback bid fails",
-      "url": "https://www.theguardian.com/us-news/2026/aug/04/wesley-bell-missouri-democratic-primary-congress",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-08-05T01:09:10.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Michigan’s top election official wins Democratic primary for governor, advances to battleground race",
-      "url": "https://www.foxnews.com/politics/michigans-top-election-official-wins-democratic-primary-governor-advances-battleground-race",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-05T01:06:01.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Pastor Adam Hamilton Wins Kansas Democratic Senate Primary",
-      "url": "https://www.nytimes.com/2026/08/04/us/politics/hamilton-marshall-kansas-senate-election.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-05T01:02:45.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Trump-backed Ty Masterson wins Republican nomination for Kansas governor",
-      "url": "https://www.nbcnews.com/politics/2026-election/kansas-governor-masterson-trump-holscher-corson-republican-democrat-rcna590030",
+      "titulo": "Trump reacts to Abdul El-Sayed's win in Michigan Democratic Senate primary",
+      "url": "https://www.nbcnews.com/video/trump-reacts-to-abdul-el-sayed-s-win-in-michigan-democratic-senate-primary-267844165655",
       "casa": "NBC News",
-      "publicadoEm": "2026-08-05T01:00:31.000Z",
+      "publicadoEm": "2026-08-05T22:05:52.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "The Michigan Senate primary pits old-guard Democrats against a rising coalition.",
-      "url": "https://www.nytimes.com/live/2026/08/04/us/midterms-elections-michigan-virginia/the-michigan-senate-primary-pits-old-guard-democrats-against-a-rising-coalition",
+      "titulo": "How Abdul El-Sayed went from political oblivion to progressive breakthrough in Michigan Senate race",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOb21OakF0VFB5eUd5WV84MmZLTDJUaTA5SjhMbjVKX3pOMGczZWE0X2tjZkplbV94TkJjejZNbmpVNkREc242Zk9MTDI0SVhid1ViUjVucFpIazNGdld1a2pHY1JvaEZfZjE3YmlVajlLU0pJV2FfMVdYbVl4cmttRGVRQk1JYXY5VVVjS2o1TzhRY3A0SkJZd0FjVC1tRmFX?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-08-05T21:54:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
+    },
+    {
+      "titulo": "Three key takeaways from Michigan's Democratic Senate primary – video explainer",
+      "url": "https://www.theguardian.com/us-news/video/2026/aug/05/michigan-democratic-senate-primary-video-explainer",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-05T21:19:41.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "El-Sayed’s Michigan Senate Primary Win Sets Up the Left’s Biggest Test of the Fall",
+      "url": "https://www.nytimes.com/2026/08/05/us/politics/el-sayed-michigan-senate-primary-win.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-05T00:31:12.000Z",
+      "publicadoEm": "2026-08-05T21:00:11.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Lawsuit over Missouri’s congressional map could throw a wrench into midterms",
+      "url": "https://www.washingtonpost.com/politics/2026/08/05/lawsuit-over-missouris-congressional-map-could-throw-wrench-into-midterms/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-05T20:59:10.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "SEE IT: Michigan Dem predicts far-left El-Sayed will win Senate race after backing his primary rival",
+      "url": "https://www.foxnews.com/politics/michigan-dem-predicts-far-left-el-sayed-win-senate-race-backing-primary-rival",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-05T20:10:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Michigan Senate primary shows Democratic establishment has lost its grip",
+      "url": "https://www.washingtonpost.com/politics/2026/08/05/michigan-senate-primary-shows-democratic-establishment-has-lost-its-grip/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-05T19:53:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Takeaways from Tuesday's elections: El-Sayed pulls off narrow victory over Democratic establishment",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNSVhzbjFSb011WlRldWhpNWU5UkJvTEM2UUpwRG11UTQ5VUZzd3VVRWFxd1dUUFBiUTc1X09zWUI3NEhLZlcxbVp5Y3ZfWHNJQUtPS0VHSWRVUFdHRTVUUDdaNkgtaFpGZGNhaTdrNVNQMlRlRVphTVc1Q283bHVzQU5iRGlLQ0dVTFJ1MWdEQlQ3RDdzWExfbnFCanlNblpHU2I1cy10R1ZNeTkyWkM5bVpOSDRLQmJZNWc?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-08-05T19:53:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
+    },
+    {
+      "titulo": "Abdul El-Sayed wins Michigan Senate primary in defining race for Democrats",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNXzFNSG4zTFNIZEYwZ0RqekVULTZ6MkNnSFJJZ0RUakZPMWR3bERUQVY0cUxzSzFUSkJPVlZ5VHByZzZLNlE3bGdWT25VRUhKaVNXcHhvSjMyUHkwVGJyb3g5STlBcVFWaU9rOGszaU5DQVNYdW43ZldJT0szQW9UV0w2UTNVa2ZiWFZVN1Z4dEV4Tjd5YUNhbl9B?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-05T18:35:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
+    },
+    {
+      "titulo": "Dem drops US Senate bid, leaving independent candidate as lone challenger to incumbent GOP Sen Mike Rounds",
+      "url": "https://www.foxnews.com/politics/dem-drops-us-senate-bid-leaving-independent-candidate-lone-challenger-incumbent-gop-sen-mike-rounds",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-05T18:19:12.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     }
