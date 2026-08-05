@@ -1,0 +1,86 @@
+/**
+ * Mapa ES de 05/Ago para analysis-data.json.
+ * Convenções: vírgula decimal e ponto de milhar, iguais ao pt. Datas "03/Ago".
+ * "pesquisa" vira "encuesta", nunca "investigación". "estadual" é "estatal",
+ * "parado" é "estancado", e o verbo de mercado é "descontar", nunca "precificar".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1':
+    `A 60 días de la ${G('1ª vuelta', 'primeiro-turno')} salieron DOS encuestas nacionales el mismo día, ambas con campo en la misma ventana, del 31/Jul al 03/Ago. ${G('Genial/Quaest', 'quaest')} (n=2.004, presencial, margen 2pp, BR-06591/2026) da una 1ª vuelta de 39% para Lula y 30% para Flávio, diferencia de 9pp, y una segunda vuelta de 44% x 39%. Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026) da 43% x 35%, diferencia de 8pp, y segunda vuelta de 48,5% x 43%.`,
+
+  'cards.sentimento.text2':
+    `LAS DOS APRETARON LA CARRERA, PERO POR MOTIVOS DISTINTOS, y esa distinción es el hallazgo. En Quaest, la diferencia cayó de 12pp a 9pp porque Lula cedió 1pp y Flávio subió 2pp. En Ideia, la diferencia quedó igual, de 8,4pp a 8pp, y subieron LOS DOS, Lula de 40,4% a 43% y Flávio de 32% a 35%. Es decir, una casa mide traspaso de voto entre los dos y la otra mide concentración de voto en los dos.`,
+
+  'cards.sentimento.text3':
+    `LA APROBACIÓN REPITIÓ EL NÚMERO EXACTO DE TRES SEMANAS ANTES. En Quaest, 48% aprueba y 47% desaprueba, los mismos 48% x 47% de su propia ronda del 15/Jul, y la evaluación de la gestión repite 36% positiva, 26% regular y 36% negativa. ${G('BTG/Nexus', 'nexus-btg')} del 03/Ago da la imagen espejo, 47% x 48%, y está estancada en 47% desde hace tres rondas. Las dos casas discrepan en el signo del saldo, ambas dentro del margen, y ninguna registra movimiento. Los precios de esta página son de la lectura del 03/Ago, a las 19:11 UTC, y cada uno está marcado como tal.`,
+
+  'cards.sentimento.direita':
+    `FLÁVIO CERRÓ FÓRMULA EN EL ÚLTIMO DÍA DEL PLAZO. El candidato a vicepresidente es Alfredo Gaspar, diputado del ${G('PL', 'pl')} por Alagoas, ex procurador general y ex secretario de Seguridad Pública del estado, relator de la comisión de investigación del INSS. Es una fórmula de un solo partido, después de que ${G('Republicanos', 'republicanos')}, PP, Podemos y União Brasil declararan neutralidad, y siete partidos ya están fuera de la disputa presidencial. La elección pone el caso INSS y las investigaciones sobre Lulinha en el centro de su campaña. Efecto colateral registrado: con fórmula pura tendrá más de un minuto menos de tiempo de televisión que Lula. En las urnas sube 2pp en Quaest y 3pp en Ideia, dentro de cada casa. Su rechazo sigue en 54%.`,
+
+  'cards.sentimento.esquerda':
+    `Aprobación en 48% contra 47% en Quaest, número idéntico al de la ronda del 15/Jul de la misma casa, con la gestión repitiendo 36% x 26% x 36%. Lula lidera todos los escenarios de las dos rondas: vence a Flávio, Zema, Caiado y Renan Santos en las segundas vueltas de ambas. Su rechazo es de 52%, contra 45% que declara voto. En el eje judicial, se reunió con Alcolumbre en la casa de Moraes tras la ruptura, y aliados admiten desgaste de campaña por las investigaciones sobre Lulinha y el caso Marcola.`,
+
+  'cards.sentimento.terceiraVia':
+    `EL ESPACIO NO SE MOVIÓ EN LAS URNAS Y SE VOLVIÓ MÁS ESTRIDENTE EN EL DISCURSO. Renan Santos aparece con 4% en Quaest y 4,7% en Ideia, Caiado con 4% y 5,7%, Zema con 2% y 2,6%. Ninguno pasa de 5,7% en ninguna de las dos. En las segundas vueltas, Lula vence a los tres en ambas rondas. Renan Santos declaró este miércoles que, si es elegido, no cumplirá decisiones monocráticas del ${G('STF', 'stf')}, que va a pactar con el Centrão y llamó parásitos a los parlamentarios. Caiado ironizó sobre Lula y Flávio diciendo que los dos están más preocupados por salvar a la familia que al país.`,
+
+  'cards.sentimento.polymarket':
+    `Precios de la lectura del 03/Ago, de las 19:11 UTC, no de hoy: Lula 65,50% (vol USD 7,92M), Flávio 25,45% (vol USD 7,86M), Renan Santos 7,45% (vol USD 8,86M), Caiado 1,15% (vol USD 5,30M), Zema 0,25% (vol USD 4,66M), Haddad 0,15% (vol USD 6,64M), destitución en el STF 3,10% (vol USD 83 mil). Diferencia de Lula sobre Flávio en +40,05pp. No hay lectura de mercado nueva el 04 y el 05/Ago. En la serie diaria de 88 días, el máximo de Lula es 66,50% y la diferencia máxima es +41,80pp, ambos del cierre del 01/Ago.`,
+
+  'cards.inss.text1':
+    `El INSS volvió al centro de la elección por una vía partidaria, no fiscal. El candidato a vice de Flávio Bolsonaro es Alfredo Gaspar, relator de la comisión de investigación del INSS, y la prensa leyó la elección como una apuesta a convertir el caso en eje de campaña, junto con las investigaciones sobre Fábio Luís Lula da Silva.`,
+
+  'cards.inss.text2':
+    `LA ELECCIÓN TIENE UN PRECIO INSTITUCIONAL DECLARADO. Gaspar entró en la política de la mano del grupo de los Calheiros en Alagoas y usó la comisión para desgastar al gobierno. Ya atacó a ministros del ${G('STF', 'stf')} y llamó al tribunal dictadura judicial. Y la fórmula de un solo partido cuesta tiempo de televisión: la prensa calcula más de un minuto menos que Lula.`,
+
+  'cards.inss.text3':
+    `LA APROBACIÓN DEL GOBIERNO NO SE MOVIÓ EN NINGUNA DE LAS DOS CASAS RECIENTES. La ${G('Genial/Quaest', 'quaest')} de hoy da 48% x 47%, exactamente lo que ella misma medía el 15/Jul, con la gestión en 36% positiva, 26% regular y 36% negativa, también idéntica. ${G('BTG/Nexus', 'nexus-btg')} del 03/Ago da 47% x 48% y está en 47% desde hace tres rondas seguidas. PoderData/Aya del 30/Jul sigue siendo la lectura más dura del conjunto, 43% x 49%.`,
+
+  'cards.inss.text4':
+    `Los números de mercado de este panel son del 03/Ago y están marcados con la fecha. En aquella lectura, el Senado tenía al PL en 75,00% (vol USD 259 mil) y el contrato de inflación anual concentraba 36,60% en la franja de 5,00% a 5,49%, con las franjas sumando 99,65%, dentro del portón de coherencia. No hay lectura confirmada el 04 y el 05/Ago para comparar.`,
+
+  'cards.inss.impactoLula':
+    `Aprobación en 48% contra 47% en Quaest, con 5% sin respuesta. El dato relevante no es el nivel, es que repite el de su propia ronda del 15/Jul en los dos indicadores. En las urnas, Lula lidera los cuatro escenarios de segunda vuelta de las dos rondas de hoy: 44% x 39% y 48,5% x 43% contra Flávio, y vence a Zema, Caiado y Renan Santos en todos.`,
+
+  'cards.inss.impactoGestao':
+    `Gestión en 36% positiva, 26% regular y 36% negativa en Quaest, reparto idéntico al del 15/Jul. En BTG/Nexus del 03/Ago son 37% de excelente o buena contra 43% de mala o pésima. Las dos casas miden la gestión de forma distinta y el panel registra las dos sin arbitrar, porque la comparación válida es la de cada casa consigo misma.`,
+
+  'cards.inss.conclusao':
+    `A 60 días de la elección, el día respondió una pregunta y abrió otra. RESPONDIÓ: los 4pp que ${G('BTG/Nexus', 'nexus-btg')} midió el 03/Ago son un caso atípico en el NIVEL, porque Quaest dio 9pp e Ideia dio 8pp, y el conjunto de las nacionales desde el 29/Jul va de 4pp a 9,3pp. LA DIRECCIÓN, esa sí tiene confirmación, porque Quaest apretó 3pp dentro de su propia serie. ABRIÓ: Flávio resolvió la vicepresidencia en el último día del plazo, con un nombre que carga el caso INSS y ataca al STF, y al mismo tiempo aceptó una fórmula de un solo partido que le cuesta tiempo de televisión. Nada de eso pasó por un precio, porque no hay lectura de mercado nueva.`,
+
+  'cards.bancoMaster.text1':
+    `En el caso Master hubo acto judicial y es de negativa: André Mendonça NEGÓ un pedido de la Policía Federal en la operación que involucra a Cláudio Castro (Folha de S.Paulo, 05/Ago). El panel registra la decisión y mantiene la distinción entre pedir y obtener, que es lo que separa la noticia del hecho.`,
+
+  'cards.bancoMaster.text2':
+    `En el desdoblamiento patrimonial, la prensa informó que Daniel Vorcaro perdió el control de un yate valuado en cerca de R$ 2 mil millones, y que el dinero puede quedar con un multimillonario canadiense. Es registro de patrimonio en disputa, sin efecto electoral atribuido.`,
+
+  'cards.bancoMaster.text3':
+    `El recurso de amparo sobre la instalación de la comisión de investigación sigue sin decisión, y la ausencia continúa siendo el registro. La recolección de noticias de hoy trajo cero ítems en la consulta específica de Master, Vorcaro, STF, INSS y comisión, lo que es información sobre el flujo del día y está anotado como tal, en vez de volverse silencio.`,
+
+  'cards.bancoMaster.conclusao':
+    `El contrato de destitución de un ministro del ${G('STF', 'stf')} no tiene precio nuevo. En la lectura del 03/Ago estaba en 3,10% (vol USD 83 mil), el contrato más delgado entre los que el panel publica. Queda registrado que el candidato a vice anunciado hoy en la fórmula del segundo colocado ya llamó al STF dictadura judicial, y que el candidato de la tercera vía con mayor precio de mercado declaró que no cumplirá decisiones monocráticas. Son dos hechos de campaña sobre el poder judicial el mismo día, y ningún precio confirmado para decir si el mercado descontó alguno de los dos.`,
+
+  'cards.stf.toffoli':
+    `Toffoli sigue aislado en el STF tras la crisis del Master, sin acto individual nuevo capturado este miércoles.`,
+
+  'cards.stf.moraes':
+    `Moraes recibió en su casa el encuentro entre Lula y el presidente del Senado, Davi Alcolumbre, tras la ruptura entre los dos, en una reunión articulada por ministros del tribunal. Alcolumbre habló de secreto sobre el contenido.`,
+
+  'cards.stf.gilmar':
+    `Sin acto individual de Gilmar en el período. Permanece el voto conjunto reciente, con Dino, Moraes y Zanin, que redujo restricciones al embargo de bienes.`,
+
+  'cards.stf.dino':
+    `Sin acto nuevo este miércoles. El 04/Ago autorizó la apertura del tercer expediente contra Fábio Luís Lula da Silva y abrió en paralelo una investigación sobre filtraciones, y ese es el hito que sigue valiendo.`,
+
+  'cards.stf.mendonca':
+    `ES EL MINISTRO DEL DÍA. Mendonça NEGÓ un pedido de la ${G('Policía Federal', 'pf')} en la operación que involucra a Cláudio Castro, dentro del expediente del caso Master, del que sigue siendo relator.`,
+
+  'cards.stf.nexo':
+    `El nexo de este miércoles es que el poder judicial entró en la campaña por la boca de los candidatos, y no por una decisión nueva. Flávio eligió como vice a un nombre que ya llamó al STF dictadura judicial. Renan Santos declaró que, si es elegido, no cumplirá decisiones monocráticas del tribunal. Del lado del gobierno, Lula y Alcolumbre se reencontraron en la casa de Moraes, con ministros del STF articulando el acercamiento. En las urnas, las dos rondas nacionales del día muestran aprobación estancada y la diferencia apretando dentro de cada casa. Y el precio, que sería el cruce de todo eso, no entra, porque no hay lectura de mercado confirmada.`,
+
+  'cards.stf.analise':
+    `SIN PRECIO NUEVO PARA EL CONTRATO DE DESTITUCIÓN en esta ronda. En la lectura del 03/Ago estaba en 3,10% (vol USD 83 mil), y ese es el número que el panel muestra, marcado con la fecha. La nota de método vale la repetición: en un día en que el candidato a vice del segundo colocado es alguien que acusó al tribunal de dictadura judicial, y en que el tercer nombre más caro del libro declaró que desobedecerá decisiones monocráticas, sería tentador estimar una reacción de precio. El panel no estima. La reserva de siempre: con USD 83 mil acumulados, este es el contrato más delgado entre los que el panel publica, y los movimientos en él tienen menos lastre que los del libro presidencial.`,
+})

@@ -1,0 +1,88 @@
+/**
+ * Mapa ES de 05/Ago para polls-data.json.
+ * Vírgula decimal e ponto de milhar, iguais ao pt. Datas "03/Ago".
+ * "pesquisa" vira "encuesta". "estadual" é "estatal". "precificar" é "descontar".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('polls-data', 'es', {
+  'polls[0].method': 'Presencial, 120 municipios',
+
+  'polls[0].note':
+    `Encuesta nacional de ${G('Genial/Quaest', 'quaest')} publicada el 05/Ago (G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, VEJA, JOTA, Money Times, Poder360, Brasil de Fato). ${G('1ª vuelta', 'primeiro-turno')} Lula 39% x Flávio 30% (diferencia +9pp), con Caiado 4%, Renan Santos 4%, Zema 2%, Augusto Cury 1%, Cabo Daciolo 1%, Samara Martins 1%, blancos y nulos 8%, indecisos 10%. ${G('Segunda vuelta', 'segundo-turno')} Lula 44% x Flávio 39% (diferencia +5pp, blancos y nulos 13%, indecisos 4%); Lula 46% x Zema 34%; Lula 45% x Caiado 37%; Lula 45% x Renan Santos 35%. Lula gana los cuatro escenarios de segunda vuelta. RECHAZO: 54% no votaría por Flávio y 41% sí; 52% no votaría por Lula y 45% sí. COMPARACIÓN DENTRO DE LA CASA, que es la única válida: en la ronda del 15/Jul eran 40% x 28%, diferencia de +12pp, y en la segunda vuelta 45% x 37%, diferencia de +8pp. Es decir, la diferencia de la 1ª vuelta cayó 3pp y la de la segunda vuelta cayó 3pp, y el movimiento es del contendiente, que sube 2pp en la 1ª vuelta y 2pp en la segunda mientras Lula cede 1pp en cada una. APROBACIÓN DEL GOBIERNO: 48% aprueba y 47% desaprueba, con 5% sin respuesta, números IDÉNTICOS a los de su propia ronda del 15/Jul. La evaluación de la gestión también repite exactamente: 36% positiva, 26% regular, 36% negativa, 2% sin respuesta. Dos rondas de la misma casa con el mismo número en ambos indicadores describen inmovilidad, no tendencia. Campo del 31/Jul al 03/Ago, n=2.004, presencial, margen 2pp, 95% de confianza, contratante Banco Genial, registro ${G('TSE', 'tse')} BR-06591/2026.`,
+
+  'polls[0].source':
+    'Genial/Quaest vía G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, JOTA, Money Times 05/Ago',
+
+  'polls[1].note':
+    `Meio/Ideia (Instituto Ideia con el Canal Meio) encuesta nacional publicada el 05/Ago (Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo, CartaCapital, Congresso em Foco). ${G('1ª vuelta', 'primeiro-turno')} Lula 43% x Flávio 35% (diferencia +8pp), con Caiado 5,7%, Renan Santos 4,7%, Zema 2,6%, Augusto Cury 1,7%, Cabo Daciolo 0,6%, Samara Martins 0,3%, Edmilson Costa 0,2%, Hertz Dias y Rui Costa Pimenta 0,1% cada uno, blancos y nulos 2%, no saben 4%. VOTO ESPONTÁNEO, que es una pregunta distinta y no se mezcla con el estimulado: Lula 34,4%, Flávio 23%, indecisos 27,7%. ${G('Segunda vuelta', 'segundo-turno')} Lula 48,5% x Flávio 43% (diferencia +5,5pp); Lula 48,5% x Zema 37%; Lula 48,5% x Caiado 40%; Lula 48% x Renan Santos 34,7%. Lula gana los cuatro. COMPARACIÓN DENTRO DE LA CASA: en la ronda del 08/Jul eran 40,4% x 32%, diferencia de +8,4pp, y en la segunda vuelta 45% x 40%, diferencia de +5pp. La diferencia de la 1ª vuelta prácticamente no se movió, de +8,4pp a +8pp, y la de la segunda tampoco, de +5pp a +5,5pp. Lo que subió fueron LOS DOS: Lula de 40,4% a 43% y Flávio de 32% a 35%, lo que describe concentración de voto en los dos primeros y no ventaja de uno sobre el otro. Campo del 31/Jul al 03/Ago, n=1.500, telefónica, margen 2,5pp, 95% de confianza, registro ${G('TSE', 'tse')} BR-04579/2026.`,
+
+  'polls[1].source':
+    'Meio/Ideia vía Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo 05/Ago',
+
+  'approvalData.note':
+    `APROBACIÓN NUEVA, DE OTRA CASA, Y EL HALLAZGO SE REPITE: INMOVILIDAD. La ${G('Genial/Quaest', 'quaest')} del 05/Ago (n=2.004, campo del 31/Jul al 03/Ago, presencial, margen 2pp, BR-06591/2026) da 48% de aprobación del gobierno contra 47% de desaprobación, con 5% sin respuesta. En la evaluación de la gestión, que es una pregunta distinta y no se mezcla con la aprobación, 36% positiva, 26% regular, 36% negativa y 2% sin respuesta. ⚠️ EL NÚMERO ES IDÉNTICO AL DE SU PROPIA RONDA DEL 15/Jul, en los dos indicadores: eran los mismos 48% x 47% de aprobación y el mismo reparto 36% x 26% x 36% en la gestión. Dos rondas de la misma casa, separadas por tres semanas, con el mismo número en ambos indicadores. Eso describe inmovilidad, no tendencia. LAS DOS CASAS RECIENTES DISCREPAN EN EL SIGNO Y COINCIDEN EN EL ESTANCAMIENTO. ${G('BTG/Nexus', 'nexus-btg')} del 03/Ago dio 47% de aprobación contra 48% de desaprobación, la imagen espejo de Quaest, y en su propia serie la aprobación está en 47% desde hace tres rondas: 47% x 47% el 13/Jul, 47% x 49% el 27/Jul y 47% x 48% el 03/Ago. Es decir, una casa mide saldo positivo de 1pp y la otra mide saldo negativo de 1pp, ambas dentro del margen, y ninguna registra movimiento. El panel no arbitra cuál está en lo correcto: registra que las dos describen un electorado partido por la mitad y estable. La comparación válida es siempre la de una casa consigo misma, y las dos, hechas así, dan el mismo resultado. PoderData/Aya del 30/Jul sigue siendo la lectura más dura del conjunto, con 43% x 49% de aprobación personal y 34% x 47% de gestión, y sigue apuntando hacia otro lado.`,
+
+  'approvalData.source':
+    'Genial/Quaest 05/Ago/2026 (campo del 31/Jul al 03/Ago, n=2.004, presencial, 120 municipios, margen 2pp, 95% de confianza, contratante Banco Genial, BR-06591/2026), divulgada por G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Money Times y Poder360. Comparación dentro de la casa contra la ronda Genial/Quaest del 15/Jul (campo del 10 al 13/Jul, n=2.004, BR-07181/2026), vía Poder360. La lectura de BTG/Nexus del 03/Ago (BR-02874/2026) se mantiene en el texto como segunda casa.',
+
+  'polymarketComparison.note':
+    `⚠️ LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA DEL 03/Ago, DE LAS 19:11 UTC, Y NO DE HOY. AFOS solo publica un precio que dos lecturas independientes confirmen, y no hay lectura de mercado nueva el 04 y el 05/Ago. EL LADO DE LAS URNAS ES DE HOY, y ahí está el hecho del día. --- DOS ENCUESTAS NACIONALES SALIERON HOY Y LAS DOS APRETARON LA CARRERA, cada una en su nivel. ${G('Genial/Quaest', 'quaest')} (n=2.004, BR-06591/2026) da una ${G('1ª vuelta', 'primeiro-turno')} de 39% x 30%, diferencia de +9pp, y una ${G('segunda vuelta', 'segundo-turno')} de 44% x 39%, diferencia de +5pp. Meio/Ideia (n=1.500, BR-04579/2026) da 43% x 35%, diferencia de +8pp, y segunda vuelta de 48,5% x 43%, diferencia de +5,5pp. Las dos tuvieron campo en la misma ventana, del 31/Jul al 03/Ago. --- LA COMPARACIÓN QUE VALE ES DENTRO DE LA CASA, y separa a quien se movió de quien no. En Quaest, la diferencia de 1ª vuelta cayó de +12pp a +9pp y la de segunda vuelta de +8pp a +5pp, con Lula cediendo 1pp y Flávio subiendo 2pp en cada una. En Ideia, la diferencia quedó casi igual, de +8,4pp a +8pp, y subieron LOS DOS, Lula de 40,4% a 43% y Flávio de 32% a 35%, lo que describe concentración de voto en los dos primeros y no ventaja de uno. --- Y LA PREGUNTA DE AYER QUEDÓ RESPONDIDA. ${G('BTG/Nexus', 'nexus-btg')} del 03/Ago había medido una diferencia de 4pp en la 1ª vuelta, la más apretada del conjunto. Con Quaest en 9pp e Ideia en 8pp, el cuadro de las nacionales desde el 29/Jul queda así: ${G('AtlasIntel', 'atlasintel')} 9,1pp, PoderData 6pp, Vox Brasil 9,3pp, Nexus 4pp, Quaest 9pp e Ideia 8pp. El nivel de 4pp sigue siendo de una sola casa. LA DIRECCIÓN, esa sí tiene confirmación: Quaest apretó 3pp dentro de su propia serie. --- LA APROBACIÓN DEL GOBIERNO REPITE EL NÚMERO EXACTO DE TRES SEMANAS ANTES. En Quaest, 48% x 47% hoy y 48% x 47% el 15/Jul, con la gestión en 36% x 26% x 36% en las dos. Nexus da la imagen espejo, 47% x 48%, y está estancada en 47% desde hace tres rondas. Dos casas discrepan en el signo del saldo, ambas dentro del margen, y ninguna registra movimiento. --- EN EL TABLERO, FLÁVIO CERRÓ FÓRMULA en el último día del plazo de las convenciones: el candidato a vice es Alfredo Gaspar, diputado del ${G('PL', 'pl')} por Alagoas y relator de la comisión de investigación del INSS. Es una fórmula de un solo partido, después de que ${G('Republicanos', 'republicanos')}, PP, Podemos y União Brasil declararan neutralidad. Siete partidos ya están fuera de la disputa presidencial. El panel registra el hecho y no estima efecto, porque no hay precio confirmado para medirlo.`,
+
+  'polymarketComparison.sources':
+    `Precios de ${G('Polymarket', 'polymarket')} vía el proxy de AFOS, captura trabada de las 19:11 UTC del 03/Ago (scripts/capture-guard.ts). No hay lectura de mercado confirmada el 04 y el 05/Ago. Encuestas: Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, ambas del 05/Ago, campo del 31/Jul al 03/Ago, divulgadas por G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Exame, Gazeta do Povo y JOTA. Barrido del TSE del 05/Ago: 537 registros, ninguno insertado nuevo.`,
+
+  'polymarketComparison.candidates[0].pesquisaRange': '39-46%',
+
+  'polymarketComparison.candidates[0].tendenciaPesquisa':
+    `DOS ENCUESTAS NACIONALES NUEVAS HOY, las dos con él al frente en todos los escenarios. ${G('Genial/Quaest', 'quaest')} (n=2.004, campo del 31/Jul al 03/Ago, presencial, margen 2pp, BR-06591/2026): 39% en la ${G('1ª vuelta', 'primeiro-turno')} y 44% x 39% en la ${G('segunda vuelta', 'segundo-turno')} contra Flávio, venciendo también a Zema por 46% x 34%, a Caiado por 45% x 37% y a Renan Santos por 45% x 35%. Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026): 43% en la 1ª vuelta y 48,5% x 43% en la segunda, ganando los cuatro escenarios. DENTRO DE LA CASA, que es la comparación válida: en Quaest cede 1pp en la 1ª vuelta, de 40% a 39%, y 1pp en la segunda, de 45% a 44%, las dos dentro del margen de 2pp; en Ideia SUBE, de 40,4% a 43%. Las dos casas le dan movimientos de signo contrario en la misma ventana de campo, lo que es información sobre método y no sobre el electorado. APROBACIÓN en 48% contra 47% en Quaest, número idéntico al de su propia ronda del 15/Jul, con la gestión repitiendo 36% positiva, 26% regular y 36% negativa.`,
+
+  'polymarketComparison.candidates[0].tendenciaPolymarket':
+    `[precio del 03/Ago] En 65,50% (vol USD 7,92M), de la captura trabada de las 19:11 UTC. No hay lectura de mercado confirmada el 04 y el 05/Ago. Lo que la serie diaria registra es que su máximo sigue siendo 66,50%, del cierre del 01/Ago, y que la diferencia máxima es +41,80pp, de la misma fecha. La serie cubre 88 días, del 08/May a hoy, y por eso el panel habla del máximo de la serie disponible y no del máximo del ciclo.`,
+
+  'polymarketComparison.candidates[1].pesquisaRange': '30-39%',
+
+  'polymarketComparison.candidates[1].tendenciaPesquisa':
+    `LAS DOS ENCUESTAS NACIONALES DE HOY lo ponen en alza dentro de su propia casa. En ${G('Genial/Quaest', 'quaest')} va de 28% a 30% en la ${G('1ª vuelta', 'primeiro-turno')} y de 37% a 39% en la ${G('segunda vuelta', 'segundo-turno')}, alza de 2pp en cada una, lo que queda en el límite del margen de 2pp y por lo tanto no se separa del ruido con seguridad. En Meio/Ideia va de 32% a 35% en la 1ª vuelta y de 40% a 43% en la segunda, alza de 3pp, por encima del margen de 2,5pp. La diferencia contra Lula queda en 9pp en Quaest y 8pp en Ideia, contra los 4pp que ${G('BTG/Nexus', 'nexus-btg')} midió el 03/Ago: el nivel de 4pp sigue siendo de una sola casa, y lo que las dos rondas de hoy confirman es la DIRECCIÓN, no el nivel. RECHAZO en la ronda de Quaest: 54% dice que no votaría por él y 41% sí. Lula tiene 52% de rechazo y 45% de intención. Entre los DOS PRIMEROS COLOCADOS de esta ronda, que son los únicos cuyos números de rechazo fueron divulgados, el de él es el más alto. La ronda no publicó rechazo de los demás nombres, así que el panel no extiende la comparación al resto del campo.`,
+
+  'polymarketComparison.candidates[1].tendenciaPolymarket':
+    `[precio del 03/Ago] En 25,45% (vol USD 7,86M), de la captura trabada de las 19:11 UTC. Sin lectura confirmada el 04 y el 05/Ago. La reserva de serie sigue valiendo y pesa más que cualquier variación diaria: en la serie disponible de 88 días su máximo es 44,30%, del 08/May, y su mínimo es 22,00%, del 03/Jul. En el contrato de 2º lugar estaba en 80,50% en la lectura del 03/Ago.`,
+
+  'polymarketComparison.candidates[2].pesquisaRange': '4-4,7%',
+
+  'polymarketComparison.candidates[2].tendenciaPesquisa':
+    `Las dos encuestas nacionales de hoy lo miden en la misma franja estrecha: 4% en ${G('Genial/Quaest', 'quaest')}, contra 3% en su propia ronda del 15/Jul, y 4,7% en Meio/Ideia, contra 2% en su propia ronda del 08/Jul. En las segundas vueltas es el peor colocado de las dos rondas: pierde contra Lula por 45% x 35% en Quaest y por 48% x 34,7% en Ideia. Con eso, seis encuestas nacionales seguidas lo miden entre 3% y 4,7%, después del 7,8% de ${G('AtlasIntel', 'atlasintel')} del 29/Jul, y la lectura aislada alta sigue siendo la excepción del conjunto. Declaró este miércoles que, si es elegido, no cumplirá decisiones monocráticas del ${G('STF', 'stf')} y que va a pactar con el Centrão.`,
+
+  'polymarketComparison.candidates[2].tendenciaPolymarket':
+    `[precio del 03/Ago] En 7,45% (vol USD 8,86M), de la captura trabada de las 19:11 UTC, sin lectura confirmada el 04 y el 05/Ago. La distancia entre el precio de 7,45% y las urnas, que hoy están entre 4% y 4,7%, queda entre 2,75pp y 3,45pp, y es del lado del precio. Su volumen acumulado sigue por encima del de Lula, USD 8,86M contra USD 7,92M, con un precio que es un octavo: el volumen mide historia negociada, no convicción actual.`,
+
+  'polymarketComparison.candidates[3].pesquisaRange': '4-5,7%',
+
+  'polymarketComparison.candidates[3].tendenciaPesquisa':
+    `${G('Genial/Quaest', 'quaest')} da 4% en la ${G('1ª vuelta', 'primeiro-turno')}, lo mismo que su propia ronda del 15/Jul, y Meio/Ideia da 5,7%, contra 4% en su propia ronda del 08/Jul. En las segundas vueltas pierde contra Lula por 45% x 37% en Quaest y por 48,5% x 40% en Ideia. La discrepancia entre casas sobre él sigue abierta dentro de la misma ventana de campo: 4% en una casa y 5,7% en la otra, con las dos con campo del 31/Jul al 03/Ago. Ironizó sobre Lula y Flávio este miércoles, diciendo que los dos están más preocupados por salvar a la familia que al país.`,
+
+  'polymarketComparison.candidates[3].tendenciaPolymarket':
+    `[precio del 03/Ago] En 1,15% (vol USD 5,30M), de la captura trabada de las 19:11 UTC, sin lectura confirmada el 04 y el 05/Ago. Sigue siendo el segundo nombre del contrato de 3º lugar de la 1ª vuelta, que estaba en 25,00% en la lectura del 03/Ago.`,
+
+  'polymarketComparison.candidates[4].tendenciaPesquisa':
+    `Ni ${G('Genial/Quaest', 'quaest')} ni Meio/Ideia lo prueban en ningún escenario presidencial, de 1ª vuelta o de segunda. La ausencia de prueba en dos encuestas nacionales el mismo día es información que el panel registra, en vez de repetir un dato antiguo como si fuera nuevo. Él disputa la REELECCIÓN al gobierno de São Paulo, oficializada por ${G('Republicanos', 'republicanos')} el 01/Ago.`,
+
+  'polymarketComparison.candidates[4].tendenciaPolymarket':
+    `[precio del 03/Ago] En 0,05% (vol USD 13,70M), de la captura trabada de las 19:11 UTC, sin lectura confirmada el 04 y el 05/Ago. Sigue siendo la anomalía heredada del libro presidencial: el mayor volumen acumulado de todos y el menor precio entre los nombres citados. Sirve de recordatorio permanente de método, porque el volumen mide historia negociada y no convicción actual. El panel registra el nivel y NO lo compara con su propia historia: la serie de AFOS tiene pocos puntos para ese nombre y no sostiene una afirmación de extremo.`,
+
+  'polymarketComparison.candidates[5].pesquisaRange': '2-2,6%',
+
+  'polymarketComparison.candidates[5].tendenciaPesquisa':
+    `${G('Genial/Quaest', 'quaest')} da 2% en la ${G('1ª vuelta', 'primeiro-turno')}, lo mismo que su propia ronda del 15/Jul, y Meio/Ideia da 2,6%, contra 2,5% en su propia ronda del 08/Jul. En las segundas vueltas es el adversario al que Lula vence con más holgura en Quaest, por 46% x 34%, y pierde por 48,5% x 37% en Ideia. En las urnas está estancado en las dos casas. Cerró fórmula el 04/Ago con el senador Eduardo Girão, del ${G('Novo', 'novo')}, y fue el primero de los nombres de la tercera vía en resolver la vicepresidencia.`,
+
+  'polymarketComparison.candidates[5].tendenciaPolymarket':
+    `[precio del 03/Ago] En 0,25% (vol USD 4,66M), de la captura trabada de las 19:11 UTC, sin lectura confirmada el 04 y el 05/Ago. En el libro de 3º lugar de la 1ª vuelta estaba en 4,60% en esa lectura. La reserva de serie es grande: su máximo es 10,10%, del 26/Abr, así que 0,25% es una fracción pequeña de ese nivel y las variaciones en esta franja tienen valor informativo casi nulo.`,
+
+  'polymarketComparison.candidates[6].tendenciaPesquisa':
+    `Ni ${G('Genial/Quaest', 'quaest')} ni Meio/Ideia lo prueban en ningún escenario, de 1ª vuelta o de segunda, así que sigue sin urnas. La reserva permanece y hay que decirla con claridad: él NO es candidato a la Presidencia, disputa el gobierno de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta, no candidatura en curso.`,
+
+  'polymarketComparison.candidates[6].tendenciaPolymarket':
+    `[precio del 03/Ago] En 0,15% (vol USD 6,64M), de la captura trabada de las 19:11 UTC, sin lectura confirmada el 04 y el 05/Ago. Él no es candidato, así que el contrato descuenta un escenario de sustitución en la fórmula del ${G('PT', 'pt')} y no una disputa en curso.`,
+})

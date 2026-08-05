@@ -1,0 +1,259 @@
+/**
+ * Mapa EN de 05/Ago para analysis-criteriosa.json.
+ * Ponto decimal, vírgula de milhar, datas "Aug 3". "pesquisa" vira "poll",
+ * "urna" vira "polling", "returno" vira "runoff".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+
+construir('analysis-criteriosa', 'en', {
+  subtitle:
+    `UPDATE Aug 5 17:00, with 60 days to the ${G('first round', 'primeiro-turno')}. THE POLLING SIDE IS FROM TODAY AND IT CAME DOUBLE: two national polls published on the same day, both fielded in the same window, Jul 31 to Aug 3. ${G('Genial/Quaest', 'quaest')} (n=2,004, BR-06591/2026) gives 39% x 30% in the first round and 44% x 39% in the runoff. Meio/Ideia (n=1,500, BR-04579/2026) gives 43% x 35% and 48.5% x 43%. APPROVAL REPEATED THE NUMBER FROM THREE WEEKS EARLIER: 48% x 47% at Quaest, identical to Jul 15, with administration ratings at 36% x 26% x 36%, also identical. On the board, FLÁVIO CLOSED HIS TICKET on the last day of the convention deadline, with Alfredo Gaspar, rapporteur of the INSS joint congressional inquiry. The prices on this page are from the Aug 3 reading, at 19:11 UTC, and each one is labelled as such.`,
+
+  'candidates[0].header':
+    `DOUBLE POLLING TODAY: 39% in the ${G('first round', 'primeiro-turno')} at Genial/Quaest and 43% at Meio/Ideia, with runoffs of 44% x 39% and 48.5% x 43%. APPROVAL at 48% against 47% at Quaest, a number identical to its own Jul 15 round. Aug 3 price: ${G('Polymarket', 'polymarket')} 65.50% (vol USD 7.92M accumulated), from the 19:11 UTC reading.`,
+
+  'candidates[0].fortes[0]':
+    `He leads BOTH first-round scenarios today and wins the EIGHT runoff scenarios of the two rounds combined, without exception: 44% x 39%, 46% x 34%, 45% x 37% and 45% x 35% at Quaest, and 48.5% x 43%, 48.5% x 37%, 48.5% x 40% and 48% x 34.7% at Ideia.`,
+
+  'candidates[0].fortes[1]':
+    `At Meio/Ideia he ROSE within his own house, from 40.4% to 43% in the first round, and the gap against Flávio held almost exactly, from 8.4pp to 8pp.`,
+
+  'candidates[0].fortes[2]':
+    `His rejection is LOWER than the second-placed candidate's in the Quaest round: 52% against 54%, with 45% declaring a vote against Flávio's 41%.`,
+
+  'candidates[0].fortes[3]':
+    `Government approval did not slip in either of the two recent houses: 48% x 47% at Quaest, repeating the Jul 15 number, and 47% x 48% at ${G('BTG/Nexus', 'nexus-btg')}, stuck at 47% for three rounds.`,
+
+  'candidates[0].fortes[4]':
+    `On the unprompted vote at Meio/Ideia, which is a harder question because it offers no list, he has 34.4% against Flávio's 23%, with 27.7% undecided.`,
+
+  'candidates[0].fracos[0]':
+    `At ${G('Genial/Quaest', 'quaest')} he SLIPPED within his own house: from 40% to 39% in the first round and from 45% to 44% in the runoff. Both drops are 1pp and sit inside the 2pp margin, so on their own they are not movement.`,
+
+  'candidates[0].fracos[1]':
+    `The runoff gap at Quaest fell from 8pp to 5pp, and that 3pp drop is larger than the poll's margin.`,
+
+  'candidates[0].fracos[2]':
+    `The two houses measure movements of OPPOSITE SIGN for him in the same fieldwork window, rising at Ideia and slipping at Quaest, which is information about method and does not allow a claim about direction.`,
+
+  'candidates[0].fracos[3]':
+    `Neither round puts him above 43% in the first round, so the possibility of winning outright remains unsupported by today's numbers.`,
+
+  'candidates[0].fracos[4]':
+    `Allies admit campaign damage from the investigations into Fábio Luís Lula da Silva and from the Marcola case, and he met Alcolumbre at Moraes's home after the falling out between the two.`,
+
+  'candidates[0].analise':
+    `His day has two polling readings and none from the market, and the three things need to be kept apart. ${G('GENIAL/QUAEST', 'quaest')} (n=2,004, fieldwork Jul 31 to Aug 3, in person across 120 municipalities, 2pp margin, commissioned by Banco Genial, BR-06591/2026) puts him at 39% in the ${G('first round', 'primeiro-turno')} and 44% x 39% in the ${G('runoff', 'segundo-turno')} against Flávio, also beating Zema 46% x 34%, Caiado 45% x 37% and Renan Santos 45% x 35%. MEIO/IDEIA (n=1,500, telephone, 2.5pp margin, BR-04579/2026) puts him at 43% and 48.5% x 43%, also winning all four. WITHIN EACH HOUSE, WHICH IS THE ONLY VALID COMPARISON, the movements oppose each other: at Quaest he gives up 1pp in the first round and 1pp in the runoff, against the Jul 15 round; at Ideia he rises from 40.4% to 43%, against the Jul 8 round. Two houses measuring the same window and pointing in different directions is information about the ruler, not about the electorate, and the panel records both without choosing. WHAT DID NOT MOVE WAS APPROVAL, and here the data point is strong precisely because it repeats: Quaest gives 48% approval against 47% disapproval, the SAME 48% x 47% it measured on Jul 15, and administration ratings repeat the exact split of 36% positive, 26% average and 36% negative. ${G('BTG/Nexus', 'nexus-btg')} on Aug 3 gives the mirror image, 47% x 48%, and in its series approval has been at 47% for three rounds. The two houses disagree on the sign of the balance, both inside the margin, and agree that it is not moving. PoderData/Aya on Jul 30 remains the harshest reading of the set, at 43% x 49%. THE PRICE DOES NOT ENTER TODAY: what the panel publishes is the Aug 3 reading, with him at 65.50% (vol USD 7.92M accumulated) and a gap of +40.05pp. On the 88-day daily series, from May 8 to today, his high remains 66.50% and the maximum gap +41.80pp, both from the Aug 1 close.`,
+
+  'candidates[1].header':
+    `HE CLOSED HIS TICKET ON THE LAST DAY OF THE DEADLINE: the running mate is Alfredo Gaspar, a ${G('PL', 'pl')} congressman from Alagoas and rapporteur of the INSS joint congressional inquiry. It is a single-party ticket. In the polling he rises within both houses: 30% at Quaest, against 28% on Jul 15, and 35% at Ideia, against 32% on Jul 8. Aug 3 price: ${G('Polymarket', 'polymarket')} 25.45% (vol USD 7.86M accumulated).`,
+
+  'candidates[1].fortes[0]':
+    `He ROSE at both houses within their own series: from 28% to 30% in the first round at Quaest and from 32% to 35% at Ideia, and from 37% to 39% and from 40% to 43% in the respective runoffs.`,
+
+  'candidates[1].fortes[1]':
+    `The 3pp gain at Meio/Ideia is larger than the poll's 2.5pp margin, so it is not explained by sampling noise.`,
+
+  'candidates[1].fortes[2]':
+    `HE SETTLED THE RUNNING MATE, which was the declared hole in his campaign, on the last day of the convention deadline, and settled it with a name that carries the INSS case, a subject where the government is the target.`,
+
+  'candidates[1].fortes[3]':
+    `He is the comfortable favourite of the second-place contract, which stood at 80.50% in the Aug 3 reading, describing a runoff the market treats as near certain.`,
+
+  'candidates[1].fortes[4]':
+    `On the unprompted vote at Meio/Ideia he has 23%, the second highest, behind Lula's 34.4%.`,
+
+  'candidates[1].fracos[0]':
+    `REJECTION IS HIS HARDEST NUMBER: 54% say they would not vote for him at Quaest, against 41% who would. Lula has 52% rejection and 45% voting intention. Among the top two candidates, the only ones with rejection released in this round, his is the higher.`,
+
+  'candidates[1].fracos[1]':
+    `He loses the EIGHT runoff scenarios of today's two rounds, and the best of them is still a 5pp defeat, at Quaest, 44% x 39%.`,
+
+  'candidates[1].fracos[2]':
+    `THE SINGLE-PARTY TICKET has a declared institutional price: the press calculates he will have more than a minute less TV time than Lula in the campaign.`,
+
+  'candidates[1].fracos[3]':
+    `Seven parties have already declared neutrality in the presidential race, among them ${G('Republicanos', 'republicanos')}, PP, Podemos and União Brasil, and it was that run of refusals that led him to close the ticket inside his own PL.`,
+
+  'candidates[1].fracos[4]':
+    `His market series dismantles any reading of a comeback: over the available 88-day series, the high is 44.30%, from May 8, and the low is 22.00%, from Jul 3.`,
+
+  'candidates[1].fracos[5]':
+    `The 2pp gain at Quaest sits exactly at the edge of the 2pp margin, so at that house the movement cannot be separated from noise with confidence.`,
+
+  'candidates[1].analise':
+    `His day is the day of closing the account that was open, and it closed on the narrowest side. HE ANNOUNCED A RUNNING MATE on the last day of the convention deadline: Alfredo Gaspar, federal congressman for the ${G('PL', 'pl')} of Alagoas, 52 years old, born in Maceió, former attorney general and former public security secretary of the state, rapporteur of the INSS joint congressional inquiry. IT IS A SINGLE-PARTY TICKET, and he got there after ${G('Republicanos', 'republicanos')}, PP, Podemos and União Brasil declared neutrality, in a picture where seven parties have already left the presidential race. The reading of the choice, as the press describes it, is one of radicalisation and focus: Gaspar entered politics through the Calheiros group, used the inquiry to wear the government down, has already called the ${G('STF', 'stf')} a judicial dictatorship, and the declared bet is to turn the INSS and the investigations into the president's son into a campaign axis. The cost shows up on the same page: with a pure ticket he will have more than a minute less TV time than Lula, and evangelical leaders would have preferred a woman in the slot. IN THE POLLING HE ROSE AT BOTH HOUSES, and the size has to be stated precisely: 2pp at Quaest, from 28% to 30%, which sits at the edge of the 2pp margin and therefore does not separate from noise with confidence; and 3pp at Ideia, from 32% to 35%, which passes the 2.5pp margin and is movement. THE GAP AGAINST LULA LANDED AT 9pp AT QUAEST AND 8pp AT IDEIA. That matters because ${G('BTG/Nexus', 'nexus-btg')} on Aug 3 had measured 4pp, the tightest of the set, and the open question was whether that was a trend or a house. With today's two, the picture for national polls since Jul 29 looks like this: ${G('AtlasIntel', 'atlasintel')} 9.1pp, PoderData 6pp, Vox Brasil 9.3pp, Nexus 4pp, Quaest 9pp and Ideia 8pp. THE LEVEL of 4pp still belongs to one house alone. DIRECTION, that one is confirmed, because Quaest tightened 3pp within its own series. THE PRICE DOES NOT ENTER TODAY: the Aug 3 reading stands, with him at 25.45% (vol USD 7.86M accumulated).`,
+
+  'candidates[2].header':
+    `Today's two national polls measure him between 4% and 4.7%, and he loses both runoffs by a wide margin: 45% x 35% at Quaest and 48% x 34.7% at Ideia. He declared that, if elected, he will not comply with single-justice ${G('STF', 'stf')} rulings. Aug 3 price: ${G('Polymarket', 'polymarket')} 7.45% (vol USD 8.86M accumulated).`,
+
+  'candidates[2].fortes[0]':
+    `He ROSE at both houses within their own series: from 3% to 4% at Quaest, against the Jul 15 round, and from 2% to 4.7% at Ideia, against the Jul 8 round.`,
+
+  'candidates[2].fortes[1]':
+    `At Meio/Ideia he sits ahead of Zema, with 4.7% against 2.6%, and behind only Caiado, who has 5.7%.`,
+
+  'candidates[2].fortes[2]':
+    `He remains the favourite of the first-round third-place contract, which stood at 60.50% in the Aug 3 reading, well ahead of Caiado.`,
+
+  'candidates[2].fortes[3]':
+    `He has the largest accumulated volume among names priced above 1%, at USD 8.86M, above Lula's own USD 7.92M.`,
+
+  'candidates[2].fortes[4]':
+    `The 7.45% price remains far above the polling, which today sits between 4% and 4.7%, describing a market paying for a scenario that declared intention does not yet show.`,
+
+  'candidates[2].fracos[0]':
+    `He loses today's two runoff scenarios by 10pp and by 13.3pp, and he is the opponent Lula beats by the widest margin in the Meio/Ideia round.`,
+
+  'candidates[2].fracos[1]':
+    `With today's two, six consecutive national polls measure him between 3% and 4.7%, after the 7.8% from ${G('AtlasIntel', 'atlasintel')} on Jul 29. The isolated high reading remains the exception of the set.`,
+
+  'candidates[2].fracos[2]':
+    `The distance between the 7.45% price and the polling lands between 2.75pp and 3.45pp, and it is on the price side, not the polling side.`,
+
+  'candidates[2].fracos[3]':
+    `He declared on Wednesday that, if elected, he will not comply with single-justice STF rulings, that he will deal with the Centrão and called members of Congress parasites, which strains his own anti-establishment message.`,
+
+  'candidates[2].fracos[4]':
+    `High accumulated volume with a price that fell through July describes an old open position, not current conviction.`,
+
+  'candidates[2].analise':
+    `His case remains the widest distance between what the market pays and what the polling measures, and today's two rounds narrowed that distance from the polling side, not the price side. AT QUAEST he goes to 4%, against 3% in that house's Jul 15 round. AT MEIO/IDEIA he goes to 4.7%, against 2% in the Jul 8 round, and moves ahead of Zema. Those are gains within each series, and it is the first time in this set that both houses move him up in the same fieldwork window. Even so, THE SEQUENCE remains what weighs most: adding today's two, six consecutive national polls measure him between 3% and 4.7%, after the 7.8% AtlasIntel measured on Jul 29. One isolated high reading against six consistent ones in the low band is the outlier pattern, and the panel records it that way instead of treating the exception as a scenario. IN THE RUNOFFS he is the worst placed of the two rounds: he loses to Lula 45% x 35% at Quaest and 48% x 34.7% at Ideia. IN RHETORIC, he made on Wednesday the hardest statement of his campaign so far: he said that, if elected, he will not comply with single-justice ${G('STF', 'stf')} rulings, that he will deal with the Centrão and called members of Congress parasites. The panel records the statement and does not estimate an effect, because there is no confirmed price to measure it. THE PRICE AND THE VOLUME remain the anomaly of the piece: in the Aug 3 reading he was at 7.45% with USD 8.86M accumulated, more money traded than Lula, who has USD 7.92M, at a price that is one eighth. Volume measures traded history, not current conviction.`,
+
+  'candidates[3].header':
+    `Aug 3 prices: Caiado 1.15% (vol USD 5.30M), Zema 0.25% (vol USD 4.66M) and Haddad 0.15% (vol USD 6.64M), from the 19:11 UTC reading. In today's polling, Caiado has 4% at Quaest and 5.7% at Meio/Ideia, Zema has 2% and 2.6%, and Haddad is tested by neither.`,
+
+  'candidates[3].subtitle':
+    `Aug 5, with 60 days to go: the pack did not move in the polling and got louder in the rhetoric. None of the three goes above 5.7% in either of the day's national polls, and Lula wins the six runoff scenarios in which they appear. Zema is the only one of the three with a closed ticket, since Aug 4, with senator Eduardo Girão. Today was the last day of the convention deadline, and the next phase is candidate registration.`,
+
+  'candidates[3].caiado.label':
+    `CAIADO (${G('PSD', 'psd')}), presidential Poly 1.15% (vol USD 5.30M, Aug 3 price) | first-round third place 25.00% in the Aug 3 reading | candidate confirmed in convention, with Kassab as running mate | today's polling: Quaest 4%, Meio/Ideia 5.7%`,
+
+  'candidates[3].caiado.fortes':
+    `He is the most voted name of the pack in BOTH of today's national polls: 5.7% at Meio/Ideia, ahead of Renan Santos, and 4% at Quaest, tied with him. In the Meio/Ideia runoff he has 40% against Lula's 48.5%, the SMALLEST distance among the four opponents tested in that round, and at Quaest he has 37% against 45%. He remains the second name on the first-round third-place contract, which stood at 25.00% in the Aug 3 reading. He mocked Lula and Flávio on Wednesday, saying both are more worried about saving the family than the country, which is third-way positioning in its purest form.`,
+
+  'candidates[3].caiado.fracos':
+    `THE DISAGREEMENT BETWEEN HOUSES ABOUT HIM REMAINS OPEN INSIDE THE SAME FIELDWORK WINDOW: 4% at one house and 5.7% at the other, with both fielding from Jul 31 to Aug 3, and across the whole month the range runs from 3.1% at AtlasIntel to 6% at Nexus. On the winner contract he stood at 1.15% in the Aug 3 reading, and there is no confirmed reading after it. He loses both of today's runoffs. At Quaest he did not move within his own house, staying at the same 4% as Jul 15, and the promise to grant amnesty to Bolsonaro and to those convicted over Jan 8 puts him competing for the same electorate as Flávio, who closed his ticket today and rose at both houses.`,
+
+  'candidates[3].haddad.label':
+    `HADDAD (${G('PT', 'pt')}), presidential Poly 0.15% (vol USD 6.64M, Aug 3 price) | first-round second place 1.05% in the Aug 3 reading | NOT tested by Quaest or Meio/Ideia, because he is running for governor of São Paulo`,
+
+  'candidates[3].haddad.fortes':
+    `His accumulated volume, USD 6.64M, is larger than that of several names priced above him, which keeps the contract with trading ballast despite the low level.`,
+
+  'candidates[3].haddad.fracos':
+    `NEITHER of today's national polls tests him, in any scenario, first round or runoff. Absence of testing in two rounds on the same day is information the panel records, instead of repeating old data as if it were new. The caveat stands and needs to be said plainly: he is NOT a presidential candidate, he is running for governor of São Paulo, and any scenario including him is a poll hypothesis and not a candidacy under way. At a price of 0.15%, variations carry almost no informational value, and high volume measures traded history, not current conviction.`,
+
+  'candidates[3].zema.label':
+    `ZEMA (${G('Novo', 'novo')}), presidential Poly 0.25% (vol USD 4.66M, Aug 3 price) | first-round third place 4.60% in the Aug 3 reading | today's polling: Quaest 2%, Meio/Ideia 2.6% | ticket closed on Aug 4 with senator Eduardo Girão`,
+
+  'candidates[3].zema.fortes':
+    `He is the ONLY one of the three with the ticket settled, since Aug 4, when he announced senator Eduardo Girão, of Novo, and settled it inside his own party, without depending on an alliance. In the polling he is flat at both houses: 2% at Quaest, the same as Jul 15, and 2.6% at Ideia, practically the 2.5% of Jul 8. On the first-round third-place book he stood at 4.60% in the Aug 3 reading, ahead of the whole pack except Caiado.`,
+
+  'candidates[3].zema.fracos':
+    `He is the opponent Lula beats by the WIDEST margin in the Quaest round, 46% x 34%, and he loses 48.5% x 37% at Ideia. In the polling he has not moved for a month at either house. On the winner contract he stood at 0.25% in the Aug 3 reading. The series caveat is a large one: his maximum is 10.10%, from Apr 26, so 0.25% is a small fraction of that level and variations in this range carry almost no informational value.`,
+
+  'candidates[3].analise':
+    `The third way had the day when it became clear that its space is not the one that moves. IN TODAY'S TWO NATIONAL POLLS, fielded in the same window, none of the three goes above 5.7%: Caiado has 4% at Quaest and 5.7% at Meio/Ideia, Zema has 2% and 2.6%, and Haddad is tested by neither. Adding up the scenarios, Lula wins the six runoffs in which the three appear. AND THE DISAGREEMENT BETWEEN HOUSES ABOUT CAIADO REMAINS THE MOST INTERESTING DATA POINT OF THE PACK: 4% at one house and 5.7% at the other, with both fielding from Jul 31 to Aug 3, and across the month the range runs from 3.1% to 6%. Two rulers measuring the same week and arriving at numbers 1.7pp apart is exactly the kind of thing this panel exists to record. ON THE BOARD, today was the last day of the convention deadline, and the next phase is candidate registration. Zema remains the only one of the three with a closed ticket, since Aug 4, with Eduardo Girão. Caiado mocked Lula and Flávio, saying both are more worried about saving the family than the country. Haddad is still not a candidate, and that contract prices a replacement scenario on the ${G('PT', 'pt')} ticket. THE CROSSING THAT MATTERS: the third-way space gained party definition over the last two days, with Zema closing his ticket and Flávio closing his inside his own party, and the effect of that on the price cannot be measured this round, because there is no confirmed market reading on Aug 4 and Aug 5.`,
+
+  'candidates[3].fortes[0]':
+    `CAIADO is the most voted name of the pack in today's two national polls, with 5.7% at Meio/Ideia and 4% at Quaest, and he has the smallest distance to Lula among the four opponents tested at Ideia, 48.5% x 40%.`,
+
+  'candidates[3].fortes[1]':
+    `ZEMA is the only one of the three with a closed ticket, with senator Eduardo Girão, settled inside his own party on Aug 4.`,
+
+  'candidates[3].fortes[2]':
+    `In the polling, Zema is flat at both houses, with 2% at Quaest and 2.6% at Ideia, without falling at either.`,
+
+  'candidates[3].fortes[3]':
+    `Caiado remains the second name on the first-round third-place contract, which stood at 25.00% in the Aug 3 reading.`,
+
+  'candidates[3].fortes[4]':
+    `Haddad's accumulated volume, USD 6.64M, keeps trading ballast in the contract despite the 0.15% price.`,
+
+  'candidates[3].fracos[0]':
+    `None of the three goes above 5.7% in either of today's national polls, and Lula wins the six runoff scenarios in which they appear.`,
+
+  'candidates[3].fracos[1]':
+    `The disagreement between houses about CAIADO remains open inside the same fieldwork window, with 4% at one house and 5.7% at the other, and a monthly range of 3.1% to 6%.`,
+
+  'candidates[3].fracos[2]':
+    `ZEMA is the opponent Lula beats by the widest margin at Quaest, 46% x 34%, and he has not moved in the polling for a month at either house.`,
+
+  'candidates[3].fracos[3]':
+    `HADDAD is tested by neither of today's rounds, and he is still not a presidential candidate.`,
+
+  'candidates[3].fracos[4]':
+    `In the Aug 3 reading the three combined did not reach 1.60% on the market, against Flávio's 25.45%, describing a third space the price does not treat as competitive.`,
+
+  'quadroComparativo[0].p':
+    `TWO NATIONAL POLLS TODAY. ${G('Genial/Quaest', 'quaest')} (n=2,004, BR-06591/2026): 39% in the ${G('first round', 'primeiro-turno')} and 44% x 39% in the runoff. Meio/Ideia (n=1,500, BR-04579/2026): 43% and 48.5% x 43%. APPROVAL 48% x 47% at Quaest, IDENTICAL to its own Jul 15 round. Administration 36% positive, 26% average, 36% negative, also identical. Rejection 52%.`,
+
+  'quadroComparativo[0].m': '65.50% (vol USD 7.92M accumulated), Aug 3 price',
+
+  'quadroComparativo[0].t':
+    `No fresh market reading on Aug 4 and Aug 5. The Aug 3 reading stands, at 19:11 UTC, with a gap of +40.05pp. On the 88-day series, the high is 66.50% and the maximum gap +41.80pp, both from Aug 1.`,
+
+  'quadroComparativo[0].s':
+    `60 days to the election. He wins the EIGHT runoff scenarios of the two rounds. He met Alcolumbre at Moraes's home after the falling out. Allies admit damage from the investigations into Lulinha.`,
+
+  'quadroComparativo[1].p':
+    `Quaest: 30% in the first round, against 28% on Jul 15 at the same house, a gain at the EDGE of the 2pp margin. Meio/Ideia: 35%, against 32% on Jul 8, a 3pp gain above the 2.5pp margin. Runoffs: 39% and 43%, and he loses both. REJECTION 54%, the higher of the top two candidates.`,
+
+  'quadroComparativo[1].m': '25.45% (vol USD 7.86M accumulated), Aug 3 price',
+
+  'quadroComparativo[1].t':
+    `No fresh market reading on Aug 4 and Aug 5. The series caveat still stands: over the available 88-day series, his high is 44.30% on May 8 and his low is 22.00% on Jul 3.`,
+
+  'quadroComparativo[1].s':
+    `HE CLOSED HIS TICKET on the last day of the deadline: the running mate is Alfredo Gaspar, of the ${G('PL', 'pl')} of Alagoas, rapporteur of the INSS joint congressional inquiry. Single-party ticket, after ${G('Republicanos', 'republicanos')}, PP, Podemos and União Brasil went neutral. He will have more than a minute less TV time than Lula.`,
+
+  'quadroComparativo[2].p':
+    `Quaest: 4%, against 3% on Jul 15 at the same house. Meio/Ideia: 4.7%, against 2% on Jul 8. With those two, SIX consecutive national polls measure him between 3% and 4.7%. He loses the runoffs 45% x 35% and 48% x 34.7%.`,
+
+  'quadroComparativo[2].m': '7.45% (vol USD 8.86M accumulated), Aug 3 price',
+
+  'quadroComparativo[2].t':
+    `No fresh market reading on Aug 4 and Aug 5. The distance between the 7.45% price and today's polling lands between 2.75pp and 3.45pp, and it is on the price side.`,
+
+  'quadroComparativo[2].s':
+    `He declared that, if elected, he will NOT comply with single-justice ${G('STF', 'stf')} rulings, that he will deal with the Centrão and called members of Congress parasites. Largest accumulated volume among names above 1%, above Lula's.`,
+
+  'quadroComparativo[3].p':
+    `Quaest: 4% in the first round, the same as Jul 15 at the same house. Meio/Ideia: 5.7%, against 4% on Jul 8. In the runoffs, 37% against 45% and 40% against 48.5%, the latter the smallest distance among the four opponents tested at Ideia.`,
+
+  'quadroComparativo[3].m': '1.15% (vol USD 5.30M accumulated), Aug 3 price',
+
+  'quadroComparativo[3].t':
+    `No fresh market reading on Aug 4 and Aug 5. He was the second name on the first-round third-place contract, at 25.00% in the Aug 3 reading.`,
+
+  'quadroComparativo[3].s':
+    `He mocked Lula and Flávio, saying both are more worried about saving the family than the country. The disagreement between houses about him remains open in the same window: 4% at one house and 5.7% at the other.`,
+
+  'quadroComparativo[4].p':
+    `Quaest: 2% in the first round, the same as Jul 15 at the same house. Meio/Ideia: 2.6%, practically the 2.5% of Jul 8. In the runoffs, 34% against 46% and 37% against 48.5%, and he is the opponent Lula beats by the widest margin at Quaest.`,
+
+  'quadroComparativo[4].m': '0.25% (vol USD 4.66M accumulated), Aug 3 price',
+
+  'quadroComparativo[4].t':
+    `No fresh market reading on Aug 4 and Aug 5. The series caveat is a large one: his maximum is 10.10% on Apr 26, so variations in this range carry almost no informational value.`,
+
+  'quadroComparativo[4].s':
+    `He is the ONLY third-way name with a closed ticket, since Aug 4, with senator Eduardo Girão, of ${G('Novo', 'novo')}, settled inside his own party.`,
+
+  'quadroComparativo[5].p':
+    `No poll. Market on the impeachment of an ${G('STF', 'stf')} justice before 2027.`,
+
+  'quadroComparativo[5].m': '3.10% (vol USD 83 thousand), Aug 3 price',
+
+  'quadroComparativo[5].t':
+    `No fresh market reading on Aug 4 and Aug 5. It is the thinnest contract among those the panel publishes.`,
+
+  'quadroComparativo[5].s':
+    `Mendonça DENIED a ${G('Federal Police', 'pf')} request in the operation involving Cláudio Castro. The running mate announced today on Flávio's ticket has already called the STF a judicial dictatorship. Renan Santos said he will not comply with single-justice rulings of the court.`,
+
+  cruzamento:
+    `THIS ROUND PUBLISHES HALF THE CROSSING, AND IT SAYS WHICH HALF. The POLL side is from today and it came double. The MARKET side is from Aug 3, from the 19:11 UTC reading, and each price is labelled with the date. --- TWO NATIONAL POLLS ON THE SAME DAY, IN THE SAME WINDOW, JUL 31 TO AUG 3. ${G('Genial/Quaest', 'quaest')} (n=2,004, in person across 120 municipalities, 2pp margin, commissioned by Banco Genial, BR-06591/2026) gives a ${G('first round', 'primeiro-turno')} of 39% x 30%, a 9pp gap, and a ${G('runoff', 'segundo-turno')} of 44% x 39%. Meio/Ideia (n=1,500, telephone, 2.5pp margin, BR-04579/2026) gives 43% x 35%, an 8pp gap, and a runoff of 48.5% x 43%. Lula wins the EIGHT runoff scenarios of the two combined. --- THE OPEN QUESTION IS NOW ANSWERED, AND THE ANSWER HAS TWO PARTS. ${G('BTG/Nexus', 'nexus-btg')} on Aug 3 measured a 4pp first-round gap, the tightest of the set, and the doubt was whether that was a trend or a house effect. With today's two, the picture for national polls since Jul 29 looks like this: ${G('AtlasIntel', 'atlasintel')} 9.1pp, PoderData 6pp, Vox Brasil 9.3pp, Nexus 4pp, Quaest 9pp and Ideia 8pp. The LEVEL of 4pp still belongs to one house alone. DIRECTION is confirmed, because Quaest tightened 3pp within its own series, from 12pp to 9pp in the first round and from 8pp to 5pp in the runoff. --- AND THE TWO HOUSES TIGHTENED FOR DIFFERENT REASONS, which is the finest finding of the day. At Quaest there was switching: Lula gave up 1pp and Flávio gained 2pp. At Ideia there was concentration: the gap held, from 8.4pp to 8pp, and BOTH rose, Lula from 40.4% to 43% and Flávio from 32% to 35%. One house describes vote changing sides and the other describes vote leaving the pack for the top two. The panel records both without choosing which is right. --- APPROVAL REPEATED THE EXACT NUMBER FROM THREE WEEKS EARLIER. At Quaest, 48% approve and 47% disapprove, the SAME 48% x 47% as Jul 15, and administration ratings repeat the identical split of 36% positive, 26% average and 36% negative. BTG/Nexus gives the mirror image, 47% x 48%, and has been at 47% for three rounds. Two houses disagree on the SIGN of the balance, both inside the margin, and neither records movement. Convergence about immobility is not the same as confidence in the level, and the panel does not treat the two as one. PoderData/Aya on Jul 30 remains harsher, at 43% x 49%. --- THE BOARD CLOSED TODAY, BECAUSE TODAY WAS THE DEADLINE. Flávio announced a running mate on the last day of the conventions: Alfredo Gaspar, congressman for the ${G('PL', 'pl')} of Alagoas, rapporteur of the INSS joint congressional inquiry, former attorney general and former public security secretary of the state. It is a single-party ticket, and he got there after ${G('Republicanos', 'republicanos')}, PP, Podemos and União Brasil declared neutrality, in a picture of seven parties out of the presidential race. The cost comes with it: with a pure ticket he will have more than a minute less TV time than Lula. Zema remains the only third-way name with a closed ticket, since Aug 4, with Eduardo Girão. The next phase is candidate registration. --- ON THE JUDICIAL AXIS, the judiciary entered the campaign through the candidates' mouths and not through a fresh ruling. Mendonça DENIED a ${G('Federal Police', 'pf')} request in the operation involving Cláudio Castro, inside the Master case inquiry. The running mate announced today has already called the ${G('STF', 'stf')} a judicial dictatorship. Renan Santos declared that, if elected, he will not comply with single-justice rulings of the court and that he will deal with the Centrão. On the government side, Lula and Alcolumbre met again at Moraes's home, with STF justices brokering the rapprochement. Without a confirmed price, there is no way to say whether the market priced any of those things, and the panel says so instead of estimating.`,
+})

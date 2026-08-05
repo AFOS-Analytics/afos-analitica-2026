@@ -1,0 +1,85 @@
+/**
+ * Mapa EN de 05/Ago para analysis-data.json.
+ * Convenções: ponto decimal, vírgula de milhar, datas no formato "Aug 3".
+ * "pesquisa" vira "poll", nunca "research". "urna" vira "polling".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+
+construir('analysis-data', 'en', {
+  'cards.sentimento.text1':
+    `With 60 days to the ${G('first round', 'primeiro-turno')}, TWO national polls came out on the same day, both fielded in the same window, Jul 31 to Aug 3. ${G('Genial/Quaest', 'quaest')} (n=2,004, in person, 2pp margin, BR-06591/2026) gives a first round of 39% for Lula and 30% for Flávio, a 9pp gap, and a runoff of 44% x 39%. Meio/Ideia (n=1,500, telephone, 2.5pp margin, BR-04579/2026) gives 43% x 35%, an 8pp gap, and a runoff of 48.5% x 43%.`,
+
+  'cards.sentimento.text2':
+    `BOTH TIGHTENED THE RACE, BUT FOR DIFFERENT REASONS, and that distinction is the finding. At Quaest, the gap fell from 12pp to 9pp because Lula gave up 1pp and Flávio gained 2pp. At Ideia, the gap held, from 8.4pp to 8pp, and BOTH rose, Lula from 40.4% to 43% and Flávio from 32% to 35%. In other words, one house measures vote switching between the two and the other measures vote concentrating on the two.`,
+
+  'cards.sentimento.text3':
+    `APPROVAL REPEATED THE EXACT NUMBER FROM THREE WEEKS EARLIER. At Quaest, 48% approve and 47% disapprove, the same 48% x 47% from its own Jul 15 round, and administration ratings repeat 36% positive, 26% average and 36% negative. ${G('BTG/Nexus', 'nexus-btg')} on Aug 3 gives the mirror image, 47% x 48%, and has been stuck at 47% for three rounds. The two houses disagree on the sign of the balance, both inside the margin, and neither records movement. The prices on this page are from the Aug 3 reading, at 19:11 UTC, and each one is labelled as such.`,
+
+  'cards.sentimento.direita':
+    `FLÁVIO CLOSED HIS TICKET ON THE LAST DAY OF THE DEADLINE. The running mate is Alfredo Gaspar, a ${G('PL', 'pl')} congressman from Alagoas, former attorney general and former public security secretary of the state, rapporteur of the INSS joint congressional inquiry. It is a single-party ticket, after ${G('Republicanos', 'republicanos')}, PP, Podemos and União Brasil declared neutrality, and seven parties are now out of the presidential race. The choice puts the INSS case and the investigations into Lulinha at the centre of his campaign. Registered side effect: with a pure ticket he will have more than a minute less TV time than Lula. In the polling he rises 2pp at Quaest and 3pp at Ideia, within each house. His rejection stays at 54%.`,
+
+  'cards.sentimento.esquerda':
+    `Approval at 48% against 47% at Quaest, a number identical to that house's Jul 15 round, with administration ratings repeating 36% x 26% x 36%. Lula leads every scenario in both rounds: he beats Flávio, Zema, Caiado and Renan Santos in the runoffs of both. His rejection is 52%, against 45% who declare a vote. On the judicial axis, he met Alcolumbre at Moraes's home after their falling out, and allies admit campaign damage from the investigations into Lulinha and the Marcola case.`,
+
+  'cards.sentimento.terceiraVia':
+    `THE SPACE DID NOT MOVE IN THE POLLING AND GOT LOUDER IN THE RHETORIC. Renan Santos comes in at 4% at Quaest and 4.7% at Ideia, Caiado at 4% and 5.7%, Zema at 2% and 2.6%. None goes above 5.7% in either one. In the runoffs, Lula beats all three in both rounds. Renan Santos declared on Wednesday that, if elected, he will not comply with single-justice ${G('STF', 'stf')} rulings, that he will deal with the Centrão and called members of Congress parasites. Caiado mocked Lula and Flávio, saying both are more worried about saving the family than the country.`,
+
+  'cards.sentimento.polymarket':
+    `Prices from the Aug 3 reading, at 19:11 UTC, not from today: Lula 65.50% (vol USD 7.92M), Flávio 25.45% (vol USD 7.86M), Renan Santos 7.45% (vol USD 8.86M), Caiado 1.15% (vol USD 5.30M), Zema 0.25% (vol USD 4.66M), Haddad 0.15% (vol USD 6.64M), STF impeachment 3.10% (vol USD 83 thousand). Lula's gap over Flávio at +40.05pp. There is no fresh market reading on Aug 4 and Aug 5. On the 88-day daily series, Lula's high is 66.50% and the maximum gap is +41.80pp, both from the Aug 1 close.`,
+
+  'cards.inss.text1':
+    `The INSS returned to the centre of the election through a party route, not a fiscal one. Flávio Bolsonaro's running mate is Alfredo Gaspar, rapporteur of the INSS joint congressional inquiry, and the press read the choice as a bet on turning the case into a campaign axis, alongside the investigations into Fábio Luís Lula da Silva.`,
+
+  'cards.inss.text2':
+    `THE CHOICE HAS A DECLARED INSTITUTIONAL PRICE. Gaspar entered politics through the Calheiros group in Alagoas and used the inquiry to wear the government down. He has attacked ${G('STF', 'stf')} justices and called the court a judicial dictatorship. And the single-party ticket costs TV time: the press calculates more than a minute less than Lula.`,
+
+  'cards.inss.text3':
+    `GOVERNMENT APPROVAL DID NOT MOVE IN EITHER OF THE TWO RECENT HOUSES. Today's ${G('Genial/Quaest', 'quaest')} gives 48% x 47%, exactly what it measured on Jul 15, with administration ratings at 36% positive, 26% average and 36% negative, also identical. ${G('BTG/Nexus', 'nexus-btg')} on Aug 3 gives 47% x 48% and has been at 47% for three straight rounds. PoderData/Aya on Jul 30 remains the harshest reading of the set, 43% x 49%.`,
+
+  'cards.inss.text4':
+    `The market numbers on this panel are from Aug 3 and are labelled with that date. In that reading, the Senate had the PL at 75.00% (vol USD 259 thousand) and the annual inflation contract concentrated 36.60% in the 5.00% to 5.49% band, with the bands summing to 99.65%, inside the coherence gate. There is no confirmed reading on Aug 4 and Aug 5 to compare against.`,
+
+  'cards.inss.impactoLula':
+    `Approval at 48% against 47% at Quaest, with 5% no answer. The relevant point is not the level, it is that it repeats that house's own Jul 15 round on both indicators. In the polling, Lula leads the four runoff scenarios of both of today's rounds: 44% x 39% and 48.5% x 43% against Flávio, and he beats Zema, Caiado and Renan Santos in all of them.`,
+
+  'cards.inss.impactoGestao':
+    `Administration ratings at 36% positive, 26% average and 36% negative at Quaest, a split identical to Jul 15. At BTG/Nexus on Aug 3 it is 37% excellent or good against 43% poor or terrible. The two houses measure the administration differently and the panel records both without arbitrating, because the valid comparison is each house against itself.`,
+
+  'cards.inss.conclusao':
+    `With 60 days to the election, the day answered one question and opened another. IT ANSWERED: the 4pp that ${G('BTG/Nexus', 'nexus-btg')} measured on Aug 3 is an outlier in LEVEL, because Quaest gave 9pp and Ideia gave 8pp, and the set of national polls since Jul 29 runs between 4pp and 9.3pp. DIRECTION, that one is confirmed, because Quaest tightened 3pp within its own series. IT OPENED: Flávio settled the running mate on the last day of the deadline, with a name that carries the INSS case and attacks the STF, and at the same time accepted a single-party ticket that costs him TV time. None of that passed through a price, because there is no fresh market reading.`,
+
+  'cards.bancoMaster.text1':
+    `In the Master case there was a judicial act and it is a denial: André Mendonça DENIED a Federal Police request in the operation involving Cláudio Castro (Folha de S.Paulo, Aug 5). The panel records the ruling and keeps the distinction between requesting and obtaining, which is what separates the news from the fact.`,
+
+  'cards.bancoMaster.text2':
+    `On the asset side, the press reported that Daniel Vorcaro lost control of a yacht valued at around R$ 2 billion, and that the money may end up with a Canadian billionaire. It is a record of assets under dispute, with no electoral effect attributed.`,
+
+  'cards.bancoMaster.text3':
+    `The injunction request on installing the congressional inquiry remains undecided, and the absence continues to be the record. Today's news collection returned zero items on the specific query covering Master, Vorcaro, STF, INSS and the inquiry, which is information about the day's flow and is noted as such, instead of turning into silence.`,
+
+  'cards.bancoMaster.conclusao':
+    `The contract on the impeachment of an ${G('STF', 'stf')} justice has no fresh price. In the Aug 3 reading it was at 3.10% (vol USD 83 thousand), the thinnest contract among those the panel publishes. It is on the record that the running mate announced today on the second-placed candidate's ticket has already called the STF a judicial dictatorship, and that the third-way candidate with the highest market price declared he will not comply with single-justice rulings. Those are two campaign facts about the judiciary on the same day, and no confirmed price to say whether the market priced either of them.`,
+
+  'cards.stf.toffoli':
+    `Toffoli remains isolated on the STF after the Master crisis, with no fresh individual act captured on Wednesday.`,
+
+  'cards.stf.moraes':
+    `Moraes hosted at his home the meeting between Lula and the Senate president, Davi Alcolumbre, after the falling out between the two, in a meeting brokered by justices of the court. Alcolumbre spoke of secrecy about the content.`,
+
+  'cards.stf.gilmar':
+    `No individual act by Gilmar in the period. What remains is the recent joint vote, with Dino, Moraes and Zanin, that reduced restrictions on asset seizure.`,
+
+  'cards.stf.dino':
+    `No fresh act on Wednesday. On Aug 4 he authorised the opening of the third inquiry into Fábio Luís Lula da Silva and opened a parallel investigation into leaks, and that is the marker that still stands.`,
+
+  'cards.stf.mendonca':
+    `HE IS THE JUSTICE OF THE DAY. Mendonça DENIED a ${G('Federal Police', 'pf')} request in the operation involving Cláudio Castro, inside the Master case inquiry, of which he remains rapporteur.`,
+
+  'cards.stf.nexo':
+    `Wednesday's connection is that the judiciary entered the campaign through the candidates' mouths, and not through a fresh ruling. Flávio picked as running mate a name who has already called the STF a judicial dictatorship. Renan Santos declared that, if elected, he will not comply with single-justice rulings of the court. On the government side, Lula and Alcolumbre met again at Moraes's home, with STF justices brokering the rapprochement. In the polling, the day's two national rounds show approval standing still and the gap tightening within each house. And the price, which would be the crossing of all that, does not enter, because there is no confirmed market reading.`,
+
+  'cards.stf.analise':
+    `NO FRESH PRICE FOR THE IMPEACHMENT CONTRACT this round. In the Aug 3 reading it was at 3.10% (vol USD 83 thousand), and that is the number the panel shows, labelled with the date. The method note is worth repeating: on a day when the second-placed candidate's running mate is someone who accused the court of judicial dictatorship, and when the third most expensive name on the book declared he will disobey single-justice rulings, it would be tempting to estimate a price reaction. The panel does not estimate. The standing caveat: with USD 83 thousand accumulated, this is the thinnest contract among those the panel publishes, and moves in it carry less ballast than those on the presidential book.`,
+})
