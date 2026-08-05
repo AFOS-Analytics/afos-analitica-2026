@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-03",
-  "fetchedAt": "2026-08-03T17:45:42.400Z",
+  "lastUpdate": "2026-08-05",
+  "fetchedAt": "2026-08-05T01:04:12.614Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-04",
-    "nPesquisas": 26,
-    "nInstitutos": 23,
-    "dem": 47.77,
-    "rep": 42.08,
-    "vantagemDem": 5.69,
+    "desde": "2026-07-06",
+    "nPesquisas": 24,
+    "nInstitutos": 22,
+    "dem": 48.08,
+    "rep": 42.33,
+    "vantagemDem": 5.75,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -55,8 +55,7 @@
       "Strength In Numbers/Verasight",
       "The Argument/Verasight",
       "The Economist/YouGov",
-      "The Washington Post/Ipsos",
-      "Zogby Analytics"
+      "The Washington Post/Ipsos"
     ]
   },
   "qualidade": {
