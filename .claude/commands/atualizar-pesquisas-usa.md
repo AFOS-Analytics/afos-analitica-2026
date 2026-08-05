@@ -38,7 +38,7 @@ A rota do cron se recusa a gravar leitura vazia por cima de uma boa: Wikipédia 
 
 ```bash
 git diff --stat public/us-polls-data.json
-node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const s=a.polls.slice(0,5).map(p=>p.dem+p.rep+(p.outros||0));console.log('soma D+R+outros das 5 primeiras (tem que dar ~100):',s.join(' '))"
+node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const somas=a.polls.map(p=>p.dem+p.rep+(p.outros||0));const fora=somas.filter(s=>s<97||s>102);console.log('soma D+R+outros FORA da faixa 97-102:',fora.length,'de',somas.length,fora.length?'-> valores '+[...new Set(fora)].slice(0,10).join(' '):'');console.log('semFontePrimaria (contador do ARQUIVO):',a.qualidade.semFontePrimaria)"
 ```
 
 **Regra de colapso:** se `publicadas` foi a 0, ou caiu para menos da metade, ou `mediaAfos` veio nulo, não commitar.
@@ -52,6 +52,12 @@ O portão de valor exige percentual entre **15% e 70%** para os dois partidos, e
 
 Mas o teste mais forte não é a régua, é a **soma com os outros**: numa linha bem lida, Dem + Rep + outros fecha em 99 ou 100. Quando a coluna desliza, a soma desanda. É o jeito mais rápido de saber se a origem mudou de formato.
 
+⚠️ **A soma se confere em TODAS as linhas, não numa amostra.** A versão antiga deste comando olhava as 5 primeiras, que são sempre as mais recentes e as mais bem formatadas. Coluna deslizada aparece onde a origem mudou de formato, e isso costuma ser no meio ou no fim da tabela. Em 04/Ago/2026, varrer as 351 achou 2 fora da faixa que a amostra de 5 nunca mostraria.
+
+📌 **Soma fora da faixa NÃO é automaticamente defeito.** As 2 de 04/Ago eram RMG Research somando 94 e Reuters/Ipsos somando 92, as duas com o indeciso fora de "outros". Antes de desfazer, abrir a linha: se `dem` e `rep` são plausíveis e `amostra` e `margemErro` estão nos campos deles, é recorte do instituto, não coluna deslizada. **Coluna deslizada tem assinatura própria: a amostra ou a margem aparecem COMO intenção de voto.**
+
+🏷️ **O campo da fonte chama `fontePrimaria`, não `fonte`.** Contar com o nome errado devolve "351 de 351 sem fonte primária", que parece achado gravíssimo e é laço vazio. **Usar o contador que o próprio arquivo declara, `qualidade.semFontePrimaria`**, em vez de recalcular por conta própria. Campos reais de uma linha: `instituto`, `campoInicio`, `campoFim`, `amostra`, `amostraTipo`, `margemErro`, `dem`, `rep`, `outros`, `vantagemDem`, `fontePrimaria`.
+
 ### 🔴 O defeito de 01/Ago, para reconhecer se voltar
 A coleta publicou **"Big Data Poll · D 914 x R 3,2"**. O 914 era o TAMANHO DA AMOSTRA e o 3,2 era a MARGEM DE ERRO.
 
@@ -61,20 +67,31 @@ O leitor passou a resolver `rowspan` **por índice de coluna**, o que consertou 
 
 ## Passo 3: forçar o Neon, se não puder esperar as 07:10 UTC
 
+🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente. Chamar com `$CRON_SECRET` cru devolve **`{"error":"Unauthorized"}` com HTTP 401**, e o 401 é fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:
+
 ```bash
+S=$(grep '^CRON_SECRET=' .env.local | head -1 | cut -d= -f2- | tr -d '"'"'"'\r')
 curl -s https://www.afos-analytics.com/api/cron/refresh-us-polls \
-  -H "Authorization: Bearer $CRON_SECRET" | jq .
+  -H "Authorization: Bearer $S" | jq .
 ```
+
+O `tr -d '\r'` não é enfeite: arquivo `.env` gravado no Windows carrega CR no fim da linha, e o CR entra no cabeçalho e derruba a autenticação com o mesmo 401. Medido em 04/Ago/2026.
 
 Resposta boa traz `ok: true`, `lastUpdate`, `lidas`, `publicadas`, `descartadasPorForma`, `semFontePrimaria` e o bloco `media` com `dem`, `rep`, `vantagemDem`, `nPesquisas`, `nInstitutos`.
 
 **Resposta 502 com `motivo: "leitura vazia ou sem média; nada foi gravado"` não é falha do comando: é o portão funcionando.** Nada foi sobrescrito. Investigar a origem, não repetir a chamada.
+
+⚠️ **401 e 502 querem coisas opostas.** O 502 manda investigar a origem e NÃO repetir. O 401 é só o segredo não ter chegado: corrigir a chamada e repetir é o certo. Confundir os dois faz perder uma rodada.
 
 ## Passo 4: relatar
 
 Reportar sempre, com os números do arquivo e não de memória:
 
 - média da casa (`vantagemDem`), no formato **D+X,XX** ou **R+X,XX**, e a variação contra a leitura anterior em pp
+
+⚠️ **Dizer SEMPRE de onde veio a variação, porque a janela de 30 dias rola sozinha.** A média muda sem nenhuma pesquisa nova: basta uma antiga sair pela borda. Em 04/Ago/2026 a média foi de D+5,69 para D+5,75 com **zero pesquisa nova**, só porque `nPesquisas` caiu de 26 para 24. Reportar "a média subiu" ali seria falso: quem mudou foi o conjunto, não a intenção de voto.
+
+Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever qualquer verbo de movimento. Se caíram, a variação é de **composição** até prova em contrário. E citar a **data de campo mais recente da base**: se ela tem vários dias, a régua está parada e a média mexer é alerta, não sinal.
 - quantas pesquisas e quantos institutos entraram na janela, e qual é a janela em dias
 - quantas linhas foram lidas e quantas foram descartadas por forma, com o motivo
 - quantas ficaram **sem fonte primária**
