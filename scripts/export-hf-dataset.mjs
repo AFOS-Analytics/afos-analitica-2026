@@ -43,6 +43,45 @@ function divergenceCsv(polls, date) {
   return [head, ...rows.map((r) => r.map(csvEscape).join(','))].join('\n') + '\n'
 }
 
+/**
+ * PROCEDÊNCIA DO PREÇO, instalada 05/Ago/2026 depois de defeito PUBLICADO.
+ *
+ * O `updatedAt` do JSON é a data em que o PAINEL foi atualizado, e NÃO a data em
+ * que o preço foi medido. Quando a trava de captura bloqueia, o painel publica
+ * de propósito o preço da última leitura confirmada e diz isso no próprio campo
+ * `m`, por exemplo "65,50% (vol USD 7,92M acumulado), preço de 03/Ago".
+ *
+ * O extrator antigo lia o número, DESCARTAVA essa marcação e estampava o
+ * `updatedAt`. Resultado medido no dataset publicado: 01, 04 e 05/Ago receberam
+ * o preço e o volume de capturas anteriores como se fossem do dia, 6 linhas cada.
+ * Em 04 e 05/Ago os seis nomes repetiam 03/Ago valor por valor, volume incluído.
+ *
+ * Pior no `divergence-timeseries.csv`, que tem coluna `polymarket_date`: ela
+ * AFIRMAVA a data errada, e o `divergence_pp` era calculado sobre ela.
+ *
+ * Consertar aqui arruma os dois arquivos, porque o divergence deriva daqui.
+ */
+const MESES_PT = { jan: 1, fev: 2, mar: 3, abr: 4, mai: 5, jun: 6, jul: 7, ago: 8, set: 9, out: 10, nov: 11, dez: 12 }
+
+/**
+ * Lê a data de procedência declarada no campo `m`. Devolve `YYYY-MM-DD` ou null.
+ * Aceita as formas que o painel usa: "preço de 03/Ago", "preços de 03/Ago",
+ * "[preço de 03/Ago]", "da leitura de 03/Ago", "captura travada de 03/Ago".
+ * O ano vem do snapshot; se a data resultante ficar no futuro, é do ano anterior
+ * (vira o ano em dezembro/janeiro).
+ */
+function precoDeclaradoEm(mRaw, dataDoSnapshot) {
+  const m = String(mRaw).match(/(?:pre[çc]os?|leitura|captura)\s+(?:travada\s+)?d[eoa]\s*(\d{1,2})\/([A-Za-zç]{3})/i)
+  if (!m) return null
+  const dia = Number(m[1])
+  const mes = MESES_PT[m[2].toLowerCase()]
+  if (!mes || !dia) return null
+  let ano = Number(String(dataDoSnapshot).slice(0, 4))
+  const iso = (a) => `${a}-${String(mes).padStart(2, '0')}-${String(dia).padStart(2, '0')}`
+  if (iso(ano) > dataDoSnapshot) ano -= 1
+  return iso(ano)
+}
+
 // Série temporal de odds de mercado (Polymarket presidencial), minerada do quadroComparativo[].m
 // de cada analysis-criteriosa.json. O campo `m` segue o formato "45.50% (vol USD 5.72M acumulado)"
 // (ou "39.5% (estável)" no legado pré-22/Mai, sem volume). Extração por regex, sem fabricar números.
@@ -53,8 +92,11 @@ function marketRowsFromCrit(crit, date) {
     const pct = (mRaw.match(/(\d+(?:[.,]\d+)?)\s*%/) || [])[1]
     const vol = (mRaw.match(/USD\s+([\d.,]+)\s*M/i) || [])[1]
     const nm = String(c.n ?? '').match(/^(.+?)\s*\((.+)\)\s*$/)
+    // A data da linha é a da MEDIÇÃO, não a da publicação do painel.
+    const declarada = precoDeclaradoEm(mRaw, date)
     return {
-      date,
+      date: declarada || date,
+      reatribuida: declarada != null && declarada !== date ? date : null,
       candidate: nm ? nm[1].trim() : String(c.n ?? '').trim(),
       party: nm ? nm[2].trim() : '',
       polymarket_pct: pct != null ? num(pct) : null,
@@ -62,6 +104,28 @@ function marketRowsFromCrit(crit, date) {
     }
   }).filter((r) => r.candidate && r.polymarket_pct != null)
 }
+
+/**
+ * Uma linha por (data, candidato). Necessário porque painéis de dias diferentes
+ * podem declarar a MESMA captura: sem isto, 04 e 05/Ago reatribuídos a 03/Ago
+ * criariam três linhas idênticas para 03/Ago.
+ *
+ * Em colisão, vence a que veio do painel do PRÓPRIO dia, que é a medição
+ * original, em vez da que foi reatribuída de um painel posterior.
+ */
+function dedupMarketRows(rows) {
+  const porChave = new Map()
+  let colisoes = 0
+  for (const r of rows) {
+    const k = `${r.date}|${r.candidate}`
+    const atual = porChave.get(k)
+    if (!atual) { porChave.set(k, r); continue }
+    colisoes++
+    if (atual.reatribuida && !r.reatribuida) porChave.set(k, r)
+  }
+  return { linhas: [...porChave.values()], colisoes }
+}
+
 function marketTimeseriesCsv(rows) {
   const head = 'date,candidate,party,polymarket_pct,volume_usd_m'
   const sorted = [...rows].sort((a, b) =>
@@ -168,11 +232,32 @@ if (HISTORY_DIR && existsSync(join(HISTORY_DIR, 'archive'))) {
 }
 
 // ---- séries temporais agregadas (núcleo da robustez) ----
-writeFileSync(join(STAGING, 'data', 'market-odds-timeseries.csv'), marketTimeseriesCsv(marketRows))
-console.log(`📈 market-odds-timeseries: ${marketRows.length} linhas, ${new Set(marketRows.map((r) => r.date)).size} datas`)
+//
+// Dedup por (data, candidato) DEPOIS do backfill: painéis de dias diferentes podem
+// declarar a mesma captura, e sem isto a reatribuição criaria linhas repetidas.
+const reatribuidas = marketRows.filter((r) => r.reatribuida)
+const { linhas: marketRowsFinal, colisoes } = dedupMarketRows(marketRows)
+
+if (reatribuidas.length) {
+  const porPar = new Map()
+  for (const r of reatribuidas) {
+    const k = `${r.reatribuida} -> ${r.date}`
+    porPar.set(k, (porPar.get(k) || 0) + 1)
+  }
+  console.log(`🕐 procedência: ${reatribuidas.length} linha(s) REATRIBUÍDA(S) à data da medição, não à do painel:`)
+  for (const [k, n] of porPar) console.log(`     ${k}  (${n} nome(s))`)
+  console.log('     Motivo: o campo `m` declara preço de outra data (trava de captura bloqueada).')
+}
+if (colisoes) console.log(`🔁 dedup: ${colisoes} colisão(ões) de (data, candidato) resolvida(s), preferindo a medição original`)
+
+writeFileSync(join(STAGING, 'data', 'market-odds-timeseries.csv'), marketTimeseriesCsv(marketRowsFinal))
+console.log(`📈 market-odds-timeseries: ${marketRowsFinal.length} linhas, ${new Set(marketRowsFinal.map((r) => r.date)).size} datas`)
 try {
   const np = readJSON(join(ASSETS, 'polls', 'national-polls.json'))
-  writeFileSync(join(STAGING, 'data', 'divergence-timeseries.csv'), divergenceTimeseriesCsv(np.polls, marketRows))
+  // usa as linhas JÁ corrigidas: assim o `polymarket_date` passa a dizer a data
+  // em que o preço foi medido, e o `divergence_pp` para de ser calculado sobre
+  // uma contemporaneidade que não existia.
+  writeFileSync(join(STAGING, 'data', 'divergence-timeseries.csv'), divergenceTimeseriesCsv(np.polls, marketRowsFinal))
   console.log(`📊 divergence-timeseries reconstruída de ${np.polls?.length || 0} pesquisas nacionais`)
 } catch (e) { console.log('⚠️ divergence-timeseries pulado:', e.message) }
 
