@@ -31,14 +31,26 @@ const csvEscape = (v) => { const s = String(v ?? ''); return /[",\n]/.test(s) ? 
 const num = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); return Number.isFinite(n) ? n : null }
 
 // divergência mercado × pesquisa por candidato, a partir do polls-data.json (polymarketComparison)
+//
+// A coluna `polymarket_date` foi ACRESCENTADA em 05/Ago/2026, por decisão do André.
+// Antes, o arquivo tinha só `date`, que é a data do SNAPSHOT, e a procedência do
+// preço ficava sem declaração nenhuma. Isso criava assimetria com os outros dois
+// arquivos de divergência, que já traziam `polymarket_date`, e era justamente a
+// assimetria que deixava o leitor sem saber se o preço era ou não do dia.
+//
+// A procedência sai do `polymarketComparison.updatedAt` do próprio painel, que já
+// dizia "03/08/2026, 19:11 UTC" enquanto o `lastUpdate` do arquivo dizia
+// 2026-08-05. O dado estava lá; o extrator antigo não olhava.
 function divergenceCsv(polls, date) {
   const cands = polls?.polymarketComparison?.candidates || []
-  const head = 'date,candidate,polymarket_pct,poll_pct,divergence_pp'
+  // data em que o PREÇO foi medido; cai para a data do snapshot se o painel não declarar
+  const priceDate = deriveDate(polls?.polymarketComparison) || date
+  const head = 'date,candidate,polymarket_pct,poll_pct,divergence_pp,polymarket_date'
   const rows = cands.map((c) => {
     const poly = num(c.value ?? c.polymarket ?? c.odds)
     const poll = num(c.percentage)
     const div = (poly != null && poll != null) ? Math.round((poly - poll) * 100) / 100 : ''
-    return [date, c.name, poly ?? '', poll ?? '', div]
+    return [date, c.name, poly ?? '', poll ?? '', div, priceDate]
   }).filter((r) => r[1])
   return [head, ...rows.map((r) => r.map(csvEscape).join(','))].join('\n') + '\n'
 }

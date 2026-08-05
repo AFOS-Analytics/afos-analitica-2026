@@ -97,6 +97,8 @@ Este conjunto de datos es **fechado y aditivo**. Los archivos de fechas ya cerra
 
 **Prevention.** Since 2026-08-05, `scripts/export-hf-dataset.mjs` reads the declared provenance out of the `m` field (`precoDeclaradoEm`) and dates each row by the **measurement**, not by the panel update. A companion `dedupMarketRows` keeps one row per `(date, candidate)` and prefers the original measurement over a re-attributed one. Verified on 14 unit cases including the December-to-January year boundary and the pre-2026-05-22 legacy format without a marker, end to end against the live panel, and under a simulated CI backfill that produced 12 collisions and resolved all 12.
 
+**Second prevention, added the same day.** The first fix covered the two timeseries but **not** `data/divergence-{date}.csv`, which is built by a different function and would have been regenerated with the same flaw. That file now carries a **`polymarket_date`** column, taken from the panel's own `polymarketComparison.updatedAt`, so the price provenance is declared there too. It is appended as the last column; files published before 2026-08-05 do not have it. See `CHANGELOG.md`.
+
 ---
 
 ## PT-BR
@@ -122,6 +124,8 @@ Este conjunto de dados é **datado e aditivo**. Arquivos de datas já encerradas
 
 **Prevenção.** Desde 05/08/2026 o `scripts/export-hf-dataset.mjs` lê a procedência declarada no campo `m` (`precoDeclaradoEm`) e data cada linha pela **medição**, não pela atualização do painel. Um `dedupMarketRows` mantém uma linha por `(data, candidato)` e prefere a medição original à reatribuída. Verificado em 14 casos unitários, incluindo a virada de dezembro para janeiro e o formato legado anterior a 22/05/2026 sem marcação, ponta a ponta contra o painel vivo, e sob backfill simulado do CI que gerou 12 colisões e resolveu as 12.
 
+**Segunda prevenção, do mesmo dia.** O primeiro conserto cobriu as duas séries temporais, mas **não** o `data/divergence-{date}.csv`, que é montado por outra função e teria sido regenerado com a mesma falha. Esse arquivo passa a trazer a coluna **`polymarket_date`**, tirada do próprio `polymarketComparison.updatedAt` do painel, de modo que a procedência do preço fica declarada ali também. Ela é acrescentada como última coluna; arquivos publicados antes de 05/08/2026 não a têm. Ver `CHANGELOG.md`.
+
 ---
 
 ## ES
@@ -146,6 +150,8 @@ Este conjunto de datos es **fechado y aditivo**. Los archivos de fechas ya cerra
 **Nota de alcance, para evitar corrección excesiva.** El 01 y el 02/08/2026 fueron sospechados y **descartados**: sus filas son únicas en los seis nombres, así que son capturas legítimas de sus propios días. Difieren del cierre de la serie diaria de AFOS porque el conjunto de datos registra la captura trabada intradiaria del panel, que es un punto de muestreo distinto del cierre del día. `data/poll-divergence.csv` **no está afectado** (anclado en el punto medio de campo; su `polymarket_date` más reciente es 01/08/2026). Los archivos en `snapshots/` **no están afectados**: preservan el panel íntegro, con la marca de procedencia, y por lo tanto se autodocumentan.
 
 **Prevención.** Desde el 05/08/2026 `scripts/export-hf-dataset.mjs` lee la procedencia declarada en el campo `m` (`precoDeclaradoEm`) y fecha cada fila por la **medición**, no por la actualización del panel. Un `dedupMarketRows` mantiene una fila por `(fecha, candidato)` y prefiere la medición original a la reatribuida. Verificado en 14 casos unitarios, incluyendo el cambio de diciembre a enero y el formato heredado anterior al 22/05/2026 sin marca, de punta a punta contra el panel vivo, y bajo un backfill simulado del CI que generó 12 colisiones y resolvió las 12.
+
+**Segunda prevención, del mismo día.** El primer arreglo cubrió las dos series temporales, pero **no** el `data/divergence-{date}.csv`, que se arma con otra función y habría sido regenerado con la misma falla. Ese archivo pasa a traer la columna **`polymarket_date`**, tomada del propio `polymarketComparison.updatedAt` del panel, de modo que la procedencia del precio queda declarada allí también. Se agrega como última columna; los archivos publicados antes del 05/08/2026 no la tienen. Ver `CHANGELOG.md`.
 
 ---
 

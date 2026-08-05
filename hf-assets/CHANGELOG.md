@@ -2,6 +2,17 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-08-05, price provenance is now dated everywhere
+
+### Fixed
+- **`data/market-odds-timeseries.csv` and `data/divergence-timeseries.csv`: rows are now dated by the day the price was MEASURED, not by the day the panel was updated.** When the capture lock blocks, the panel deliberately republishes the last confirmed price and says so in its own text. The exporter used to read the number and discard that declaration, stamping the panel's update date instead. Rows for 2026-08-04 and 2026-08-05 therefore carried the 2026-08-03 capture, and `divergence-timeseries.polymarket_date` asserted a date on which no price was confirmed. **Documented in `ERRATA.md` as ERR-2026-002**; the already-published dated files are not rewritten.
+
+  **If you built a daily market series from this dataset before 2026-08-05, re-pull it.** Two dates that previously had rows no longer do, because no capture was confirmed on them.
+
+### Added
+- **`polymarket_date` column in `data/divergence-{date}.csv`.** The per-day snapshot previously carried only `date`, the snapshot date, leaving the price provenance undeclared — an asymmetry with the other two divergence files, which already had the column. It is appended as the last column, so readers indexing by position are unaffected. **Files published before 2026-08-05 do not have it**, and for those the provenance is not recoverable from the file alone.
+- **`DATA_DICTIONARY.md`: full column table for `data/divergence-{date}.csv`**, replacing the one-line description, and stating explicitly that `date` is the snapshot date and does not assert when the price was measured.
+
 ## 2026-08-04, data-minimisation rule for the TSE registry
 
 ### Changed

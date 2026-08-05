@@ -120,7 +120,16 @@ Polymarket presidential **winner** odds per candidate, daily.
 
 ## `data/divergence-{date}.csv`
 
-Per-day snapshot: `date, candidate, polymarket_pct, poll_pct, divergence_pp`.
+Per-day snapshot: `date, candidate, polymarket_pct, poll_pct, divergence_pp, polymarket_date`.
+
+| Column | Type | Notes |
+|--------|------|-------|
+| `date` | date | **Snapshot date** — the day the panel was published. It does **not** assert that the price was measured that day. |
+| `candidate` | string | Candidate as named on the panel. |
+| `polymarket_pct` | number | Market implied probability on `polymarket_date`, %. |
+| `poll_pct` | number | Poll figure the panel carried as current on `date`, %. |
+| `divergence_pp` | number | `polymarket_pct − poll_pct`, percentage points. Same scale caveat as `data/poll-divergence.csv`: the market prices **P(win)** and the poll reports **vote share**, so the gap is not scale-reconciled. |
+| `polymarket_date` | date | **Date the price was measured.** Added 2026-08-05. Differs from `date` whenever the capture lock blocked and the panel deliberately republished the last confirmed price. Files published **before 2026-08-05 do not have this column**, and for those the price provenance is not recoverable from the file alone. |
 
 ---
 
