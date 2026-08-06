@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-05",
-  "fetchedAt": "2026-08-05T01:04:12.614Z",
+  "lastUpdate": "2026-08-06",
+  "fetchedAt": "2026-08-06T14:53:28.675Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-06",
-    "nPesquisas": 24,
-    "nInstitutos": 22,
-    "dem": 48.08,
-    "rep": 42.33,
-    "vantagemDem": 5.75,
+    "desde": "2026-07-07",
+    "nPesquisas": 31,
+    "nInstitutos": 24,
+    "dem": 47.65,
+    "rep": 42.1,
+    "vantagemDem": 5.55,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -42,10 +42,12 @@
       "Clarity Campaign Labs (D)",
       "Echelon Insights",
       "Emerson College",
+      "Focaldata",
       "HarrisX/2WAY",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
-      "Manhattan Institute",
+      "Marquette University Law School",
+      "McLaughlin & Associates (R)",
       "Morning Consult",
       "Pew Research Center",
       "Quantus Insights (R)",
@@ -59,8 +61,8 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 351,
-    "publicadas": 351,
+    "linhasLidas": 363,
+    "publicadas": 363,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
@@ -68,6 +70,84 @@
     "semFontePrimaria": 2
   },
   "polls": [
+    {
+      "instituto": "Quantus Insights (R)",
+      "campoInicio": "2026-08-03",
+      "campoFim": "2026-08-04",
+      "amostra": 1048,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 49,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://quantusinsights.org/polling/f/latest-survey-democrats-hold-the-midterm-edge"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-07-31",
+      "campoFim": "2026-08-03",
+      "amostra": 1472,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_2NFOXQ5.pdf#page=28"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-07-31",
+      "campoFim": "2026-08-03",
+      "amostra": 1607,
+      "amostraTipo": "A",
+      "margemErro": 3.3,
+      "dem": 41,
+      "rep": 33,
+      "outros": 26,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_2NFOXQ5.pdf#page=28"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-07-29",
+      "campoFim": "2026-08-03",
+      "amostra": 3542,
+      "amostraTipo": "RV",
+      "margemErro": 1.7,
+      "dem": 42,
+      "rep": 37,
+      "outros": 21,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Large%20Sample%20Topline%208.4.26.pdf"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-07-29",
+      "campoFim": "2026-08-03",
+      "amostra": 4505,
+      "amostraTipo": "A",
+      "margemErro": 1.5,
+      "dem": 36,
+      "rep": 30,
+      "outros": 34,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Large%20Sample%20Topline%208.4.26.pdf"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-07-27",
+      "campoFim": "2026-08-02",
+      "amostra": 24000,
+      "amostraTipo": "RV",
+      "margemErro": 1,
+      "dem": 46,
+      "rep": 42,
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
     {
       "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-07-27",
@@ -119,6 +199,45 @@
       "outros": 19,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trumps-approval-hits-new-low-amid-iran-war-restart-higher-gas-prices/"
+    },
+    {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-07-22",
+      "campoFim": "2026-07-29",
+      "amostra": 572,
+      "amostraTipo": "LV",
+      "margemErro": 4.4,
+      "dem": 51,
+      "rep": 45,
+      "outros": 4,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/"
+    },
+    {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-07-22",
+      "campoFim": "2026-07-29",
+      "amostra": 886,
+      "amostraTipo": "RV",
+      "margemErro": 3.5,
+      "dem": 46,
+      "rep": 44,
+      "outros": 10,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/"
+    },
+    {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-07-22",
+      "campoFim": "2026-07-29",
+      "amostra": 1076,
+      "amostraTipo": "A",
+      "margemErro": 3.2,
+      "dem": 45,
+      "rep": 41,
+      "outros": 14,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/"
     },
     {
       "instituto": "CNN/SSRS",
@@ -173,6 +292,19 @@
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Reuters%20Ipsos%20July%20Core%20Political%20Topline%207.27.26.pdf"
     },
     {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-07-20",
+      "campoFim": "2026-07-26",
+      "amostra": 24000,
+      "amostraTipo": "RV",
+      "margemErro": 1,
+      "dem": 46,
+      "rep": 43,
+      "outros": 11,
+      "vantagemDem": 3,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls"
+    },
+    {
       "instituto": "The Argument/Verasight",
       "campoInicio": "2026-07-20",
       "campoFim": "2026-07-26",
@@ -225,6 +357,19 @@
       "fontePrimaria": "https://go.claritycampaigns.com/hubfs/Omnibus%20Surveys/Clarity%20Omnibus%20Overview%20-%20July%202026%20-%20PUBLIC.pdf#page=18"
     },
     {
+      "instituto": "McLaughlin & Associates (R)",
+      "campoInicio": "2026-07-15",
+      "campoFim": "2026-07-21",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 44,
+      "outros": 10,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/07/National-July-Presentation-RELEASE-7-22-26.pdf"
+    },
+    {
       "instituto": "Emerson College",
       "campoInicio": "2026-07-19",
       "campoFim": "2026-07-20",
@@ -275,6 +420,19 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ESdiNMa.pdf#page=9"
+    },
+    {
+      "instituto": "Focaldata",
+      "campoInicio": "2026-07-14",
+      "campoFim": "2026-07-20",
+      "amostra": 2064,
+      "amostraTipo": "A",
+      "margemErro": null,
+      "dem": 44,
+      "rep": 36,
+      "outros": 20,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.focaldata.com/blog/focaldata---coinbase---clarity-act-and-crypto-attitudes-poll---july-2026"
     },
     {
       "instituto": "Morning Consult",
