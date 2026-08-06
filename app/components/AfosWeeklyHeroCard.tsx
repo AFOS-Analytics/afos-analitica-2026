@@ -146,8 +146,18 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
     </div>
   )
 
+  /**
+   * ⚠️ UM ÚNICO ELEMENTO NA RAIZ, e isto não é preferência de estilo.
+   *
+   * Isto devolvia um Fragment com DOIS filhos, o quadro e a fileira de
+   * navegação. O painel envolve os cartões num container com
+   * `space-y-8 sm:space-y-12`, e esse espaçamento entra ENTRE irmãos: os dois
+   * filhos soltos ganhavam 48px de distância, e o "Todas as edições" ficava
+   * boiando longe do quadro. O cartão do Tradeoff nunca teve isso porque
+   * sempre devolveu um `div` só. Pego pelo André em 06/Ago/2026.
+   */
   const cartao = (
-    <>
+    <div>
       {href ? (
         <a href={href} className="group block">
           {corpo}
@@ -180,7 +190,7 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
           )}
         </div>
       )}
-    </>
+    </div>
   )
 
   if (semContainer) return cartao

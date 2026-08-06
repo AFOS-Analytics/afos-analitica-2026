@@ -51,6 +51,17 @@ const T = {
     prazo: 'A eleição acontece na data prevista',
     volume: 'Volume',
     soma: 'soma das faixas',
+    participacao: 'participação no livro',
+    excessoNota: (s: string) => `As faixas somam ${s}, então aparecem como participação no livro, não como probabilidade.`,
+    porQue: 'Por que não é probabilidade',
+    porQueTexto: (s: string) =>
+      `Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. O excesso é a margem de quem opera o livro, e ele cresce quando há pouco dinheiro e pouca negociação. Dividindo cada faixa pela soma, a FORMA se preserva e dá para ver onde o dinheiro se concentra. O que não se preserva é o NÍVEL de cada faixa, e é por isso que a etiqueta muda de nome.`,
+    naoParticao: 'Fora da tela, e não é por causa da soma',
+    naoParticaoCurto: (s: string) =>
+      `As faixas somam ${s} e se sobrepõem: uma delas é "qualquer outro resultado" e as demais são cumulativas. Coletado todo dia; entra quando a estrutura mudar.`,
+    metodoFaixasTitulo: 'Quando as faixas não somam 100%',
+    metodoFaixas:
+      'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando passam disso, o excesso é a margem de quem opera o livro, e ele cresce onde há pouco dinheiro e pouca negociação. Nesse caso o AFOS divide cada faixa pela soma e troca a etiqueta: o que aparece é participação no livro, nunca probabilidade. A forma se preserva, e dá para ver onde o dinheiro se concentra; o nível de cada faixa é que não pode ser lido como chance. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há um caso em que nem isso vale: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas. Ali dividir pela soma inventaria significado, então o mercado fica fora da tela e segue sendo coletado todo dia.',
     clicavel: 'Clique em qualquer ponto de um quadro para abrir a aposta real no Polymarket, com as cotações ao vivo.',
     abrirEm: 'abrir no Polymarket',
     foraDoPortao: 'Este mercado não entra na tela porque os preços dele não fecham',
@@ -79,6 +90,17 @@ const T = {
     prazo: 'The election happens as scheduled',
     volume: 'Volume',
     soma: 'bands total',
+    participacao: 'share of the book',
+    excessoNota: (s: string) => `The bands total ${s}, so they are shown as share of the book, not as probability.`,
+    porQue: 'Why this is not probability',
+    porQueTexto: (s: string) =>
+      `Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. Here they add to ${s}. The excess is the margin of whoever runs the book, and it grows when there is little money and little trading. Dividing each band by the total preserves the SHAPE, so you can still see where the money concentrates. What it does not preserve is the LEVEL of each band, which is why the label changes.`,
+    naoParticao: 'Off the screen, and not because of the total',
+    naoParticaoCurto: (s: string) =>
+      `The bands add to ${s} and overlap: one is "any other outcome" and the rest are cumulative. Collected daily; it appears when the structure changes.`,
+    metodoFaixasTitulo: 'When the bands do not add to 100%',
+    metodoFaixas:
+      'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they exceed that, the excess is the margin of whoever runs the book, and it grows where there is little money and little trading. In that case AFOS divides each band by the total and changes the label: what you see is share of the book, never probability. The shape survives, so you can still read where the money concentrates; the level of each band is what cannot be read as a chance. The raw total stays printed on every panel, so the arithmetic remains checkable. There is one case where even that does not hold: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones. There, dividing by the total would invent meaning, so the market stays off the screen and continues to be collected daily.',
     clicavel: 'Click anywhere on a box to open the real market on Polymarket, with live odds.',
     abrirEm: 'open on Polymarket',
     foraDoPortao: 'This market stays off the screen because its prices do not add up',
@@ -107,6 +129,17 @@ const T = {
     prazo: 'La elección ocurre en la fecha prevista',
     volume: 'Volumen',
     soma: 'suma de las bandas',
+    participacao: 'participación en el libro',
+    excessoNota: (s: string) => `Las bandas suman ${s}, así que aparecen como participación en el libro, no como probabilidad.`,
+    porQue: 'Por qué no es probabilidad',
+    porQueTexto: (s: string) =>
+      `Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. El exceso es el margen de quien opera el libro, y crece cuando hay poco dinero y poca negociación. Dividiendo cada banda por la suma, la FORMA se preserva y se puede ver dónde se concentra el dinero. Lo que no se preserva es el NIVEL de cada banda, y por eso cambia la etiqueta.`,
+    naoParticao: 'Fuera de la pantalla, y no por la suma',
+    naoParticaoCurto: (s: string) =>
+      `Las bandas suman ${s} y se superponen: una es "cualquier otro resultado" y las demás son acumulativas. Se recolecta a diario; entra cuando cambie la estructura.`,
+    metodoFaixasTitulo: 'Cuando las bandas no suman 100%',
+    metodoFaixas:
+      'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando pasan de ahí, el exceso es el margen de quien opera el libro, y crece donde hay poco dinero y poca negociación. En ese caso AFOS divide cada banda por la suma y cambia la etiqueta: lo que aparece es participación en el libro, nunca probabilidad. La forma se preserva, y se puede ver dónde se concentra el dinero; el nivel de cada banda es lo que no puede leerse como una chance. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso en el que ni eso vale: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas. Ahí dividir por la suma inventaría significado, así que el mercado queda fuera de la pantalla y se sigue recolectando a diario.',
     clicavel: 'Haga clic en cualquier punto de un recuadro para abrir la apuesta real en Polymarket, con las cotizaciones en vivo.',
     abrirEm: 'abrir en Polymarket',
     foraDoPortao: 'Este mercado no entra en la pantalla porque sus precios no cierran',
@@ -240,15 +273,44 @@ function BarraFaixa({ nome, pct, max, locale }: { nome: string; pct: number; max
   )
 }
 
+/**
+ * 🔴 A DISTINÇÃO QUE O PORTÃO SOZINHO NÃO FAZIA: PARTIÇÃO ou NÃO.
+ *
+ * Até 06/Ago/2026 toda distribuição que somasse fora de 95-105 recebia o mesmo
+ * bloco âmbar de sete linhas, e o leitor saía sem número nenhum. O André leu a
+ * tela e disse o que ela comunicava: descrédito, sem dado.
+ *
+ * O ponto técnico é que somar mais de 100% inutiliza o NÍVEL, não a FORMA. E há
+ * dois casos diferentes caindo no mesmo balde:
+ *
+ *   PARTIÇÃO (cadeiras no Senado, na Câmara, governos, comparecimento): as
+ *   faixas são exclusivas e cobrem todos os desfechos. O excesso é margem de
+ *   quem opera o livro. Dividir cada faixa pela soma preserva onde o dinheiro
+ *   está, e o que muda é a ETIQUETA: vira "participação no livro", nunca
+ *   "probabilidade".
+ *
+ *   NÃO PARTIÇÃO (margem do voto popular): tem um "qualquer outro resultado" e
+ *   faixas cumulativas que se sobrepõem. Aqui normalizar inventaria significado,
+ *   então continua fora, com o motivo ESPECÍFICO no lugar do texto genérico.
+ *
+ * ⚠️ A soma BRUTA continua impressa no cabeçalho em todos os casos. O leitor
+ * recebe o dado e a ressalva no mesmo lugar, e nada é consertado em silêncio.
+ */
 function Distribuicao({
-  titulo, ev, locale, t,
-}: { titulo: string; ev: PolyEvento | null; locale: string; t: (typeof T)['pt-BR'] }) {
+  titulo, ev, locale, t, particao = true,
+}: { titulo: string; ev: PolyEvento | null; locale: string; t: (typeof T)['pt-BR']; particao?: boolean }) {
   const fs = faixas(ev)
   if (!fs.length) return null
 
   const soma = fs.reduce((a, f) => a + f.pct, 0)
   const vol = volumeDe(ev)
   const passou = soma >= SOMA_MIN && soma <= SOMA_MAX
+  const somaTexto = `${fmt(soma, locale, 1)}%`
+
+  // Normalização só quando as faixas formam partição e a soma não é zero.
+  const normalizar = !passou && particao && soma > 0
+  const exibidas = normalizar ? fs.map((f) => ({ ...f, pct: (f.pct / soma) * 100 })) : fs
+  const mostrarBarras = passou || normalizar
 
   return (
     <Card className={`mb-3 ${linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
@@ -256,27 +318,38 @@ function Distribuicao({
         <TituloQuadro texto={titulo} href={linkDo(ev)} abrirEm={t.abrirEm} />
         <span className="text-[11px] text-gray-500">
           {t.volume}: ${vol >= 1e6 ? `${fmt(vol / 1e6, locale)}M` : `${Math.round(vol / 1000)}k`} ·{' '}
-          {t.soma} {fmt(soma, locale, 1)}%
+          {t.soma} {somaTexto}
+          {normalizar && <> · <span className="font-semibold text-gray-600">{t.participacao}</span></>}
         </span>
       </div>
 
-      {passou ? (
+      {mostrarBarras && (
         <div className="space-y-1.5">
-          {fs
+          {exibidas
             .sort((a, b) => ordemFaixa(a.nome) - ordemFaixa(b.nome))
             .map((f) => (
-              <BarraFaixa key={f.nome} nome={f.nome} pct={f.pct} max={Math.max(...fs.map((x) => x.pct))} locale={locale} />
+              <BarraFaixa key={f.nome} nome={f.nome} pct={f.pct} max={Math.max(...exibidas.map((x) => x.pct))} locale={locale} />
             ))}
         </div>
-      ) : (
-        <div className="rounded-lg border-l-4 border-amber-400 bg-amber-50 p-3">
-          <p className="text-xs font-bold text-amber-900">
-            {t.foraDoPortao} {fmt(soma, locale, 1)}%
-          </p>
-          <p className="mt-1 text-xs leading-snug text-amber-900">
-            {t.foraDoPortaoDetalhe(`${fmt(soma, locale, 1)}%`)}
-          </p>
-        </div>
+      )}
+
+      {/* 🔴 NADA DE ELEMENTO INTERATIVO DENTRO DO CARD, e isto é regra do André
+          em 06/Ago/2026: o card inteiro é área de clique para abrir a aposta no
+          Polymarket, via `after:inset-0` no título. Um "por quê" que abre seria
+          um segundo alvo competindo com o primeiro, e roubaria o clique numa
+          faixa do quadro. Aqui vai só texto estático, curto. A explicação longa
+          vive UMA vez em "Como o portão funciona", no fim da seção, em vez de
+          ser repetida palavra por palavra em cada card que reprova. */}
+      {normalizar && (
+        <p className="mt-2.5 border-t border-gray-100 pt-2 text-[11px] leading-snug text-gray-500">
+          {t.excessoNota(somaTexto)}
+        </p>
+      )}
+
+      {!mostrarBarras && (
+        <p className="rounded-lg bg-gray-50 p-2.5 text-[11px] leading-snug text-gray-600">
+          <span className="font-semibold text-gray-700">{t.naoParticao}.</span> {t.naoParticaoCurto(somaTexto)}
+        </p>
       )}
     </Card>
   )
@@ -357,7 +430,10 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
       <Distribuicao titulo={t.cadeirasCamara} ev={data.houseSeats} locale={locale} t={t} />
       <Distribuicao titulo={t.governadores} ev={data.governors} locale={locale} t={t} />
       <Distribuicao titulo={t.comparecimento} ev={data.turnout} locale={locale} t={t} />
-      <Distribuicao titulo={t.margem} ev={data.popularVoteMargin} locale={locale} t={t} />
+      {/* 🔴 O ÚNICO que NÃO é partição: tem faixa "qualquer outro resultado" e
+          as demais são cumulativas, que se sobrepõem. Normalizar aqui seria
+          inventar significado, então ele segue fora da tela, com motivo próprio. */}
+      <Distribuicao titulo={t.margem} ev={data.popularVoteMargin} locale={locale} t={t} particao={false} />
 
       {prazo && (
         <Card className={`mb-3 ${linkDo(data.asScheduled) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
@@ -383,6 +459,13 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
               {t.limitacaoTitulo}
             </p>
             <p className="mt-1 text-xs leading-snug text-gray-700">{t.limitacao}</p>
+            {/* A explicação longa das faixas vive AQUI, uma vez. Antes ela era
+                repetida palavra por palavra dentro de cada quadro que reprovava,
+                e dois blocos idênticos de sete linhas dominavam a seção. */}
+            <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-gray-600">
+              {t.metodoFaixasTitulo}
+            </p>
+            <p className="mt-1 text-xs leading-snug text-gray-700">{t.metodoFaixas}</p>
           </div>
         )}
       </Card>
