@@ -256,6 +256,81 @@ export function sendTradeoffTeaser(to: string, data: {
   });
 }
 
+/**
+ * 📰 Teaser do AFOS Weekly. Construído em 06/Ago/2026, junto da publicação da
+ * Edição №1, que é quando o André decidiu que ele seria feito.
+ *
+ * ⚠️ NÃO É CÓPIA DO TRADEOFF, e três coisas mudam:
+ *
+ * 1. O produto é para o ELEITOR COMUM, não para mesa. Nada de aviso financeiro
+ *    e nada de linguagem de operação.
+ * 2. O corpo vem do `tldr[0]`, porque o Weekly não tem `sinalDaSemana`.
+ * 3. O país entra no ASSUNTO sempre. O Tradeoff deixa o Brasil sem rótulo para
+ *    não quebrar o agrupamento na caixa de entrada de quem já recebia; aqui não
+ *    há histórico para preservar, e o leitor precisa saber de que eleição é.
+ */
+export function sendWeeklyTeaser(to: string, data: {
+  date: string;
+  locale: 'pt-BR' | 'en' | 'es';
+  title: string;
+  resumo: string;
+  issueNumber: number;
+  /** 🔴 OBRIGATÓRIO. Ver a nota em sendTradeoffTeaser: país errado no e-mail não volta atrás. */
+  pais: string;
+}, unsubscribeToken?: string): Promise<boolean> {
+  const rotuloPais: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
+    us: { 'pt-BR': ' EUA', en: ' US', es: ' EE.UU.' },
+  };
+  const p = (rotuloPais[data.pais] ?? { 'pt-BR': '', en: '', es: '' })[data.locale];
+  // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
+  const localeLabels = {
+    'pt-BR': { subject: `AFOS Weekly${p}: Edição №${data.issueNumber}`, cta: 'Ler a edição', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
+    'en':    { subject: `AFOS Weekly${p}: Issue №${data.issueNumber}`,  cta: 'Read the issue', why: 'You receive this because you subscribed at', unsubscribe: 'Unsubscribe' },
+    'es':    { subject: `AFOS Weekly${p}: Edición №${data.issueNumber}`, cta: 'Leer la edición', why: 'Recibe esto porque se suscribió en', unsubscribe: 'Cancelar suscripción' },
+  } as const;
+  const L = localeLabels[data.locale];
+
+  /**
+   * 🔴 O PAÍS NA URL É OBRIGATÓRIO. A rota do Weekly é
+   * `/[idioma]/weekly/[pais]/[data]` desde o primeiro dia, e ela NÃO tem rota
+   * antiga sem país, o que aqui é sorte e não desenho: no Tradeoff a rota
+   * antiga sobrevive como redirect para o Brasil e já entregou a peça errada.
+   * Montar sempre com o país, para o dia em que existir um segundo país.
+   */
+  const url = `${PUBLIC_URL}/${data.locale}/weekly/${data.pais}/${data.date}`;
+  const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;
+
+  // O resumo é MARKDOWN e vai para dentro de HTML: escapar ANTES, depois achatar
+  // para texto puro (o CTA deve ser o único link) e cortar em fronteira de palavra.
+  const resumoPlain = (() => {
+    const escaped = data.resumo
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const flat = escaped
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/—/g, '-');
+    if (flat.length <= 400) return flat;
+    const corte = flat.slice(0, 400);
+    return corte.slice(0, corte.lastIndexOf(' ')) + '…';
+  })();
+
+  const html = `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1e293b;line-height:1.6;">
+  <h1 style="color:#0F52BA;font-size:1.5rem;margin:0 0 0.5rem;font-weight:700;">${data.title}</h1>
+  <p style="color:#475569;font-size:0.95rem;margin:0 0 1.5rem;">${resumoPlain}</p>
+  <a href="${url}" style="display:inline-block;padding:12px 24px;background-color:#0F52BA;color:#fff;text-decoration:none;border-radius:8px;font-weight:600;">${L.cta} →</a>
+  <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0 1rem;" />
+  <p style="color:#94a3b8;font-size:0.8rem;margin:0;">${L.why} <a href="${PUBLIC_URL}" style="color:#94a3b8;">afos-analytics.com</a>. <a href="${unsubUrl}" style="color:#94a3b8;">${L.unsubscribe}</a>.</p>
+</div>`;
+
+  return send({
+    to,
+    subject: L.subject,
+    html,
+    unsubscribeToken,
+    replyTo: EMAIL_CONTACT,
+  });
+}
+
 export function sendSystemAlert(to: string, data: {
   type: string;
   message: string;
