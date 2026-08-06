@@ -189,10 +189,18 @@ export function sendTradeoffTeaser(to: string, data: {
   title: string;
   sinalDaSemana: string;
   issueNumber: number;
-  /** Slug do país da edição. Default 'br' para não mudar chamadas antigas. */
-  pais?: string;
+  /**
+   * Slug do país da edição. 🔴 OBRIGATÓRIO, e era opcional com default 'br'.
+   *
+   * Aqui o esquecimento não fica na tela, sai por e-mail e não volta: assunto
+   * e link de país errado chegam à base inteira. O default silencioso é
+   * exatamente o mecanismo que já entregou peça brasileira em contexto
+   * americano. Obrigatório, o TypeScript recusa a chamada incompleta no build.
+   * Regra do André em 06/Ago/2026: as duas eleições são independentes.
+   */
+  pais: string;
 }, unsubscribeToken?: string): Promise<boolean> {
-  const pais = data.pais ?? 'br';
+  const pais = data.pais;
   const p = (PAIS_NO_ASSUNTO[pais] ?? PAIS_NO_ASSUNTO.br)[data.locale];
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {

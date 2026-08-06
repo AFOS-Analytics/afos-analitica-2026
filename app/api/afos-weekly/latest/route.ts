@@ -45,6 +45,9 @@ export async function GET(request: Request) {
   }
 
   const ultima = disponiveis[disponiveis.length - 1]
+  // Penúltima, para o "Ver edição anterior" do cartão. Com uma edição só, vem
+  // null e o cartão simplesmente não imprime o link.
+  const anterior = disponiveis.length > 1 ? disponiveis[disponiveis.length - 2] : null
   const data = loadWeekly(ultima, safeLocale, pedido)
   if (!data) {
     return NextResponse.json({ ok: false, error: 'load_failed' }, { status: 500 })
@@ -60,6 +63,7 @@ export async function GET(request: Request) {
       ok: true,
       hasEdition: true,
       date: data.date,
+      previousDate: anterior,
       country: pedido,
       issueNumber: data.issueNumber,
       weekStart: data.weekStart,

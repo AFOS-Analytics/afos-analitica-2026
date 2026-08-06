@@ -210,7 +210,13 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
         </a>
         {meta.previousDate && (
           <a
-            href={`/${tKey}/tradeoff/${meta.previousDate}`}
+            /* 🔴 O PAÍS FALTAVA AQUI, e o link de cima já o tinha. Sem ele o
+               endereço vira /{idioma}/tradeoff/{data}, que é a rota ANTIGA e
+               redireciona para o BRASIL. No painel dos EUA, "ver edição
+               anterior" entregava a edição brasileira: 307 e 200, sem 404 e
+               sem link quebrado, então nenhum teste de código HTTP pegaria.
+               Pego pelo André em 06/Ago/2026. */
+            href={`/${tKey}/tradeoff/${country}/${meta.previousDate}`}
             aria-label={`${t.seePrevious} (${meta.previousDate})`}
             className="text-xs text-gray-500 hover:text-primary hover:underline"
           >

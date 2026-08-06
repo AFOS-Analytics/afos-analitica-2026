@@ -154,7 +154,20 @@ export default async function WeeklyArchivePage(props: Props) {
     <main className="mx-auto max-w-3xl px-4 py-12">
       <header className="mb-8 border-b border-gray-200 pb-6">
         <p className="mb-1 text-xs font-bold uppercase tracking-wider text-teal-700">{t.eyebrow}</p>
-        <h1 className="text-3xl font-bold text-primary">{t.title}</h1>
+        <h1 className="flex items-center gap-2.5 text-3xl font-bold text-primary">
+          {/* Bandeira SVG, NUNCA emoji: emoji de bandeira não renderiza no
+              Windows. Mesma convenção do arquivo do Tradeoff. `alt` vazio e
+              aria-hidden porque o país já está dito no texto ao redor. */}
+          <img
+            src={`/flags/${p.country}.svg`}
+            alt=""
+            aria-hidden="true"
+            width={36}
+            height={25}
+            className="inline-block h-[25px] w-[36px] rounded-[3px] object-cover shadow-sm"
+          />
+          {t.title}
+        </h1>
         <p className="mt-2 text-sm text-gray-600">{t.subtitle(itens.length)}</p>
       </header>
 

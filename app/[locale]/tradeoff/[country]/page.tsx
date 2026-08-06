@@ -280,7 +280,13 @@ export default async function TradeoffArchivePage(props: Props) {
   return (
     <>
       <JsonLd data={[collectionSchema, breadcrumb]} />
-      <TradeoffArchiveShell locale={loc} strings={strings} latest={latestItem} groups={groups} />
+      {/* 🔴 `country` PRECISA ser passado, e não era. O shell já sabia usá-lo,
+          mas a página nunca o entregava, então ele caía no padrão `?? 'br'`.
+          Consequência em /en/tradeoff/us: a bandeira sumia, o seletor de idioma
+          voltava para o Brasil e, o pior, TODOS os links de edição apontavam
+          para /tradeoff/BR/{data}. O arquivo dos EUA levava às edições
+          BRASILEIRAS, sem 404 e sem link quebrado. Pego em 06/Ago/2026. */}
+      <TradeoffArchiveShell locale={loc} strings={strings} latest={latestItem} groups={groups} country={pais} />
     </>
   )
 }

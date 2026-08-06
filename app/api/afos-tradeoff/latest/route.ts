@@ -14,8 +14,22 @@ export async function GET(request: Request) {
   const safeLocale = isValidLocale(locale) ? locale : 'pt-BR'
   // País no endereço desde 31/Jul. Sem o parâmetro, responde o Brasil, que é
   // quem já consumia esta rota.
+  // Sem o parâmetro, responde o Brasil, que é quem já consumia esta rota antes
+  // de o país existir no endereço. Isso é compatibilidade e continua valendo.
   const pedido = url.searchParams.get('country') || PAIS_PADRAO
-  const pais = isValidCountry(pedido) ? pedido : PAIS_PADRAO
+  /**
+   * 🔴 País PEDIDO e INVÁLIDO é erro, não é Brasil.
+   *
+   * Isto caía em `PAIS_PADRAO`, então quem pedisse `?country=usa` (em vez de
+   * `us`) recebia os dados do BRASIL com `ok: true` e nunca saberia. Regra do
+   * André em 06/Ago/2026: as duas eleições são independentes e não se
+   * misturam. Ausência de parâmetro é compatibilidade; parâmetro errado é
+   * defeito, e defeito tem que aparecer. Espelha o 400 da rota do Weekly.
+   */
+  if (!isValidCountry(pedido)) {
+    return NextResponse.json({ ok: false, error: 'invalid_country' }, { status: 400 })
+  }
+  const pais = pedido
 
   const published = listPublishedTradeoffs(pais)
   if (published.length === 0) {

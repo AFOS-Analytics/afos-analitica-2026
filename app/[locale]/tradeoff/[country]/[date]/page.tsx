@@ -119,9 +119,19 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 export default async function TradeoffByDatePage(props: PageProps) {
   const params = await props.params;
-  const pais = isValidCountry(params.country) ? params.country : PAIS_PADRAO;
   if (!isValidLocale(params.locale)) notFound()
   if (!isValidDate(params.date)) notFound()
+  /**
+   * 🔴 PAÍS INVÁLIDO É 404, NUNCA O BRASIL.
+   *
+   * Isto caía em `PAIS_PADRAO`, então um endereço com país errado servia a
+   * edição BRASILEIRA com HTTP 200. Regra do André em 06/Ago/2026: o que é da
+   * eleição brasileira é brasileiro, o que é da americana é americano, e as
+   * duas são independentes. Errar o país tem que doer na hora, não entregar a
+   * peça do outro país calado.
+   */
+  if (!isValidCountry(params.country)) notFound()
+  const pais = params.country;
   // ⚠️ O país precisa ir junto: sem ele a checagem de rascunho lia o arquivo do
   // BRASIL com a mesma data. Hoje isso acerta por acidente (o arquivo não
   // existe, então cai em draft), e erraria feio no dia em que as duas edições

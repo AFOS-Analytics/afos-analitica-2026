@@ -164,7 +164,24 @@ export function DailyArchiveShell({
 
         <header className={`mt-6 border-b pb-6 ${headerBorder}`}>
           <p className={`text-xs font-bold uppercase tracking-[0.14em] ${eyebrow}`}>{strings.eyebrow}</p>
-          <h1 className={`mt-2 text-3xl font-bold sm:text-4xl ${titleColor}`}>{strings.title}</h1>
+          {/* 🇧🇷 O AFOS Daily é um produto BRASILEIRO e só. Diferente do
+              Tradeoff e do Weekly, aqui a bandeira é fixa, porque não existe
+              país no endereço para variar.
+
+              Bandeira SVG, NUNCA emoji: emoji de bandeira não renderiza no
+              Windows. `alt` vazio e aria-hidden porque o país já está dito no
+              texto ao redor, e leitor de tela não deve ouvir "BR" solto. */}
+          <h1 className={`mt-2 flex items-center justify-center gap-2.5 text-3xl font-bold sm:text-4xl ${titleColor}`}>
+            <img
+              src="/flags/br.svg"
+              alt=""
+              aria-hidden="true"
+              width={36}
+              height={25}
+              className="inline-block h-[25px] w-[36px] rounded-[3px] object-cover shadow-sm"
+            />
+            {strings.title}
+          </h1>
           <p className={`mt-2 ${subtitleColor}`}>{strings.subtitle}</p>
         </header>
 

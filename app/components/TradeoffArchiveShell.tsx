@@ -42,7 +42,7 @@ function LanguagePicker({ locale, isBlue, langAria, country }: { locale: string;
         <span key={loc} className="flex items-center gap-2">
           {i > 0 && <span className={isBlue ? 'text-blue-400/50' : 'text-gray-300'}>·</span>}
           <a
-            href={`/${loc}/tradeoff/${country ?? 'br'}`}
+            href={`/${loc}/tradeoff/${country}`}
             aria-label={LANG_LABEL[loc]}
             className={
               loc === locale
@@ -111,8 +111,16 @@ export function TradeoffArchiveShell({
   strings: TradeoffArchiveStrings
   latest: TradeoffArchiveItem
   groups: TradeoffArchiveGroup[]
-  /** Código do país, para a bandeira no título do arquivo. */
-  country?: string
+  /**
+   * Código do país. 🔴 OBRIGATÓRIO, e era opcional com padrão `?? 'br'`.
+   *
+   * Enquanto foi opcional, a página esqueceu de passá-lo e TODOS os links do
+   * arquivo dos EUA apontaram para `/tradeoff/br/{data}`: o leitor pedia o
+   * arquivo americano e recebia as edições brasileiras, com 200 e sem link
+   * quebrado. Obrigatório, o TypeScript pega o esquecimento no build em vez de
+   * o leitor pegar no site.
+   */
+  country: string
 }) {
   const [theme, setTheme] = useState<Theme>('light')
   useEffect(() => {
@@ -186,7 +194,7 @@ export function TradeoffArchiveShell({
 
         {/* Latest edition highlight */}
         <a
-          href={`/${locale}/tradeoff/${country ?? 'br'}/${latest.date}`}
+          href={`/${locale}/tradeoff/${country}/${latest.date}`}
           className={`mt-7 block rounded-xl border p-5 transition-colors ${latestCard}`}
         >
           <div className="flex items-center justify-between gap-3">
@@ -206,7 +214,7 @@ export function TradeoffArchiveShell({
               <ul className={`divide-y border-y ${listDivide}`}>
                 {group.items.map((ed) => (
                   <li key={ed.date}>
-                    <a href={`/${locale}/tradeoff/${country ?? 'br'}/${ed.date}`} className={`group block rounded px-2 py-3.5 transition-colors ${rowHover}`}>
+                    <a href={`/${locale}/tradeoff/${country}/${ed.date}`} className={`group block rounded px-2 py-3.5 transition-colors ${rowHover}`}>
                       <div className="flex items-baseline justify-between gap-3">
                         <span className="flex flex-wrap items-baseline gap-x-2">
                           <span className={`font-semibold ${rowPrimary}`}>{ed.primary}</span>
