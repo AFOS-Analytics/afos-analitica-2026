@@ -1,6 +1,6 @@
 {
-  "updatedAt": "05/08/2026, 17:00",
-  "subtitle": "ACTUALIZACIÓN 05/Ago 17:00, a 60 días de la [1ª vuelta](/es/glossary#primeiro-turno). EL LADO DE LAS URNAS ES DE HOY Y VINO DOBLE: dos encuestas nacionales publicadas el mismo día, ambas con campo en la misma ventana, del 31/Jul al 03/Ago. [Genial/Quaest](/es/glossary#quaest) (n=2.004, BR-06591/2026) da 39% x 30% en la 1ª vuelta y 44% x 39% en la segunda. Meio/Ideia (n=1.500, BR-04579/2026) da 43% x 35% y 48,5% x 43%. LA APROBACIÓN REPITIÓ EL NÚMERO DE TRES SEMANAS ANTES: 48% x 47% en Quaest, idéntico al del 15/Jul, con la gestión en 36% x 26% x 36%, también idéntica. En el tablero, FLÁVIO CERRÓ FÓRMULA en el último día del plazo de las convenciones, con Alfredo Gaspar, relator de la comisión de investigación del INSS. Los precios de esta página son de la lectura del 03/Ago, a las 19:11 UTC, y cada uno está marcado como tal.",
+  "updatedAt": "06/08/2026, 16:45",
+  "subtitle": "ACTUALIZACIÓN 6/Ago 16:45, a 59 días de la [primera vuelta](/es/glossary#primeiro-turno). EL PRECIO VOLVIÓ A SER DEL DÍA tras tres días sirviendo la lectura del 3/Ago: Lula 64,50%, Flávio 26,75%, brecha de +37,75pp contra +40,05pp el 3/Ago. La brecha se estrechó cinco días seguidos desde el máximo de +41,80pp del 1/Ago. No hay encuesta nacional nueva: las últimas son Genial/[Quaest](/es/glossary#quaest) y Meio/Ideia, ambas del 5/Ago. El tablero cerró con 13 fórmulas registradas y Folha informando que solo un candidato tendrá alianza con otros partidos.",
   "candidates": [
     {
       "rank": "1",
@@ -112,8 +112,8 @@
     {
       "n": "Lula (PT)",
       "p": "DOS ENCUESTAS NACIONALES HOY. [Genial/Quaest](/es/glossary#quaest) (n=2.004, BR-06591/2026): 39% en la [1ª vuelta](/es/glossary#primeiro-turno) y 44% x 39% en la segunda. Meio/Ideia (n=1.500, BR-04579/2026): 43% y 48,5% x 43%. APROBACIÓN 48% x 47% en Quaest, IDÉNTICA a la de su propia ronda del 15/Jul. Gestión 36% positiva, 26% regular, 36% negativa, también idéntica. Rechazo 52%.",
-      "m": "65,50% (vol USD 7,92M acumulado), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. Vale la del 03/Ago, de las 19:11 UTC, con diferencia de +40,05pp. En la serie de 88 días, el máximo es 66,50% y la diferencia máxima +41,80pp, ambos del 01/Ago.",
+      "m": "64,50% (vol USD 8,09M acumulado), lectura del 6/Ago",
+      "t": "Precio del día, confirmado por tres lecturas idénticas. Cayó 1,00pp contra la lectura del 3/Ago y la brecha sobre Flávio pasó de +40,05pp a +37,75pp. En la serie de 88 días, que empieza el 9/May, su techo sigue siendo 66,50% y la brecha máxima +41,80pp, ambos del 1/Ago.",
       "s": "60 días de la elección. Gana los OCHO escenarios de segunda vuelta de las dos rondas. Se reunió con Alcolumbre en la casa de Moraes el 04/Ago, tras la ruptura. Aliados admiten desgaste por las investigaciones sobre Lulinha.",
       "pc": "#DC2626",
       "mc": ""
@@ -121,8 +121,8 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "Quaest: 30% en la 1ª vuelta, contra 28% el 15/Jul de la misma casa, alza en el LÍMITE del margen de 2pp. Meio/Ideia: 35%, contra 32% el 08/Jul, alza de 3pp por encima del margen de 2,5pp. Segundas vueltas: 39% y 43%, pierde las dos. RECHAZO 54%, el más alto entre los dos primeros colocados.",
-      "m": "25,45% (vol USD 7,86M acumulado), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. La reserva de serie sigue valiendo: en la serie disponible de 88 días, su máximo es 44,30% el 08/May y su mínimo es 22,00% el 03/Jul.",
+      "m": "26,75% (vol USD 8,05M), lectura del 6/Ago",
+      "t": "Subió 1,30pp contra el 3/Ago y volvió al nivel de aquel día. No es extremo: en la serie de 88 días, 34 de ellos tuvieron valor igual o mayor, con techo de 43,30% el 9/May y piso de 22,00% el 3/Jul. En el contrato de 2.º lugar está en 87,50%, contra 80,50% el 3/Ago.",
       "s": "CERRÓ FÓRMULA en el último día del plazo: el vice es Alfredo Gaspar, del [PL](/es/glossary#pl) de Alagoas, relator de la comisión de investigación del INSS. Fórmula de un solo partido, después de que [Republicanos](/es/glossary#republicanos), PP, Podemos y União Brasil quedaran neutros. Tendrá más de un minuto menos de televisión que Lula.",
       "pc": "#2563EB",
       "mc": ""
@@ -130,8 +130,8 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "Quaest: 4%, contra 3% el 15/Jul de la misma casa. Meio/Ideia: 4,7%, contra 2% el 08/Jul. Con las dos, SEIS encuestas nacionales seguidas lo miden entre 3% y 4,7%. Pierde las segundas vueltas por 45% x 35% y 48% x 34,7%.",
-      "m": "7,45% (vol USD 8,86M acumulado), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. La distancia entre el precio de 7,45% y las urnas de hoy queda entre 2,75pp y 3,45pp, y es del lado del precio.",
+      "m": "6,85% (vol USD 9,10M), lectura del 6/Ago",
+      "t": "Cayó 0,60pp contra el 3/Ago. La distancia entre el precio y la urna, que lo mide entre 4% y 4,7%, va de 2,15pp a 2,85pp, y está del lado del precio. En el contrato de 3.er lugar de la primera vuelta AFOS publica FRANJA y no número: su precio resbaló de 57,50% a 56,50% dentro de la misma ventana, y sin dos lecturas coincidentes no sale como firme.",
       "s": "Declaró que, si es elegido, NO cumplirá decisiones monocráticas del [STF](/es/glossary#stf), que va a pactar con el Centrão y llamó parásitos a los parlamentarios. Mayor volumen acumulado entre los nombres por encima de 1%, superior al de Lula.",
       "pc": "#F59E0B",
       "mc": ""
@@ -139,8 +139,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "Quaest: 4% en la 1ª vuelta, lo mismo que el 15/Jul de la misma casa. Meio/Ideia: 5,7%, contra 4% el 08/Jul. En las segundas vueltas, 37% contra 45% y 40% contra 48,5%, esta la menor distancia entre los cuatro adversarios probados en Ideia.",
-      "m": "1,15% (vol USD 5,30M acumulado), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. Era el segundo nombre del contrato de 3º lugar de la 1ª vuelta, con 25,00% en la lectura del 03/Ago.",
+      "m": "1,85% (vol USD 5,56M), lectura del 6/Ago",
+      "t": "Subió 0,70pp contra el 3/Ago, y en el contrato de 3.er lugar de la primera vuelta pasó de 25,00% a 32,50%, alza de 7,50pp. El nivel sigue bajo: su precio presidencial es un treintavo del de Lula.",
       "s": "Ironizó sobre Lula y Flávio diciendo que los dos están más preocupados por salvar a la familia que al país. La discrepancia entre casas sobre él sigue abierta en la misma ventana: 4% en una casa y 5,7% en la otra.",
       "pc": "#16A34A",
       "mc": ""
@@ -148,8 +148,8 @@
     {
       "n": "Romeu Zema (Novo)",
       "p": "Quaest: 2% en la 1ª vuelta, lo mismo que el 15/Jul de la misma casa. Meio/Ideia: 2,6%, prácticamente el 2,5% del 08/Jul. En las segundas vueltas, 34% contra 46% y 37% contra 48,5%, y es el adversario al que Lula vence con más holgura en Quaest.",
-      "m": "0,25% (vol USD 4,66M acumulado), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. La reserva de serie es grande: su máximo es 10,10% el 26/Abr, así que las variaciones en esta franja tienen valor informativo casi nulo.",
+      "m": "0,45% (vol USD 4,82M), lectura del 6/Ago",
+      "t": "Subió 0,20pp contra el 3/Ago, lo que en esta franja tiene valor informativo casi nulo. Salvedad de serie que sigue valiendo: su máximo es 10,10%, del 26/Abr.",
       "s": "Es el ÚNICO nombre de la tercera vía con fórmula cerrada, desde el 04/Ago, con el senador Eduardo Girão, del [Novo](/es/glossary#novo), resuelta dentro de su propio partido.",
       "pc": "#0EA5E9",
       "mc": ""
@@ -157,8 +157,8 @@
     {
       "n": "STF impeachment",
       "p": "Sin encuesta. Mercado de destitución de un ministro del [STF](/es/glossary#stf) antes de 2027.",
-      "m": "3,10% (vol USD 83 mil), precio del 03/Ago",
-      "t": "Sin lectura de mercado nueva el 04 y el 05/Ago. Es el contrato más delgado entre los que el panel publica.",
+      "m": "2,75% (vol USD 83 mil), lectura del 6/Ago",
+      "t": "Cayó 0,35pp contra el 3/Ago. Es el contrato más fino entre los que el panel publica, con volumen acumulado que no llega a una milésima del presidencial.",
       "s": "Mendonça, vicepresidente del TSE, ordenó al gobierno abrir los datos de publicidad institucional en 10 días y NEGÓ el pedido del [PL](/es/glossary#pl) de bloquear nuevos compromisos. El candidato a vice anunciado hoy en la fórmula de Flávio ya llamó al STF dictadura judicial. Renan Santos dijo que no cumplirá decisiones monocráticas del tribunal.",
       "pc": "#64748B",
       "mc": ""

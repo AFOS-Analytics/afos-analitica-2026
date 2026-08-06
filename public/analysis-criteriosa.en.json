@@ -1,6 +1,6 @@
 {
-  "updatedAt": "05/08/2026, 17:00",
-  "subtitle": "UPDATE Aug 5 17:00, with 60 days to the [first round](/en/glossary#primeiro-turno). THE POLLING SIDE IS FROM TODAY AND IT CAME DOUBLE: two national polls published on the same day, both fielded in the same window, Jul 31 to Aug 3. [Genial/Quaest](/en/glossary#quaest) (n=2,004, BR-06591/2026) gives 39% x 30% in the first round and 44% x 39% in the runoff. Meio/Ideia (n=1,500, BR-04579/2026) gives 43% x 35% and 48.5% x 43%. APPROVAL REPEATED THE NUMBER FROM THREE WEEKS EARLIER: 48% x 47% at Quaest, identical to Jul 15, with administration ratings at 36% x 26% x 36%, also identical. On the board, FLÁVIO CLOSED HIS TICKET on the last day of the convention deadline, with Alfredo Gaspar, rapporteur of the INSS joint congressional inquiry. The prices on this page are from the Aug 3 reading, at 19:11 UTC, and each one is labelled as such.",
+  "updatedAt": "06/08/2026, 16:45",
+  "subtitle": "UPDATE Aug 6, 16:45, 59 days from the [first round](/en/glossary#primeiro-turno). THE PRICE IS FROM TODAY AGAIN after three days serving the Aug 3 reading: Lula 64.50%, Flávio 26.75%, a gap of +37.75pp against +40.05pp on Aug 3. The gap has narrowed five days running from the +41.80pp peak of Aug 1. There is no new national poll: the latest are Genial/[Quaest](/en/glossary#quaest) and Meio/Ideia, both from Aug 5. The board closed with 13 tickets registered and Folha reporting that only one candidate will have an alliance with other parties.",
   "candidates": [
     {
       "rank": "1",
@@ -112,8 +112,8 @@
     {
       "n": "Lula (PT)",
       "p": "TWO NATIONAL POLLS TODAY. [Genial/Quaest](/en/glossary#quaest) (n=2,004, BR-06591/2026): 39% in the [first round](/en/glossary#primeiro-turno) and 44% x 39% in the runoff. Meio/Ideia (n=1,500, BR-04579/2026): 43% and 48.5% x 43%. APPROVAL 48% x 47% at Quaest, IDENTICAL to its own Jul 15 round. Administration 36% positive, 26% average, 36% negative, also identical. Rejection 52%.",
-      "m": "65.50% (vol USD 7.92M accumulated), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. The Aug 3 reading stands, at 19:11 UTC, with a gap of +40.05pp. On the 88-day series, the high is 66.50% and the maximum gap +41.80pp, both from Aug 1.",
+      "m": "64.50% (vol USD 8.09M cumulative), reading of Aug 6",
+      "t": "Today’s price, confirmed by three identical readings. Down 1.00pp against the Aug 3 reading, and the gap over Flávio went from +40.05pp to +37.75pp. In the 88-day series, which starts on May 9, his peak remains 66.50% and the maximum gap +41.80pp, both from Aug 1.",
       "s": "60 days to the election. He wins the EIGHT runoff scenarios of the two rounds. He met Alcolumbre at Moraes's home on Aug 4, after the falling out. Allies admit damage from the investigations into Lulinha.",
       "pc": "#DC2626",
       "mc": ""
@@ -121,8 +121,8 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "Quaest: 30% in the first round, against 28% on Jul 15 at the same house, a gain at the EDGE of the 2pp margin. Meio/Ideia: 35%, against 32% on Jul 8, a 3pp gain above the 2.5pp margin. Runoffs: 39% and 43%, and he loses both. REJECTION 54%, the higher of the top two candidates.",
-      "m": "25.45% (vol USD 7.86M accumulated), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. The series caveat still stands: over the available 88-day series, his high is 44.30% on May 8 and his low is 22.00% on Jul 3.",
+      "m": "26.75% (vol USD 8.05M), reading of Aug 6",
+      "t": "Up 1.30pp against Aug 3, back to that day’s level. It is not an extreme: in the 88-day series, 34 days matched or beat it, with a peak of 43.30% on May 9 against a floor of 22.00% on Jul 3. In the second-place contract he sits at 87.50%, against 80.50% on Aug 3.",
       "s": "HE CLOSED HIS TICKET on the last day of the deadline: the running mate is Alfredo Gaspar, of the [PL](/en/glossary#pl) of Alagoas, rapporteur of the INSS joint congressional inquiry. Single-party ticket, after [Republicanos](/en/glossary#republicanos), PP, Podemos and União Brasil went neutral. He will have more than a minute less TV time than Lula.",
       "pc": "#2563EB",
       "mc": ""
@@ -130,8 +130,8 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "Quaest: 4%, against 3% on Jul 15 at the same house. Meio/Ideia: 4.7%, against 2% on Jul 8. With those two, SIX consecutive national polls measure him between 3% and 4.7%. He loses the runoffs 45% x 35% and 48% x 34.7%.",
-      "m": "7.45% (vol USD 8.86M accumulated), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. The distance between the 7.45% price and today's polling lands between 2.75pp and 3.45pp, and it is on the price side.",
+      "m": "6.85% (vol USD 9.10M), reading of Aug 6",
+      "t": "Down 0.60pp against Aug 3. The distance between the price and the ballot, which puts him between 4% and 4.7%, runs from 2.15pp to 2.85pp, and it sits on the price side. In the third-place contract for the first round AFOS publishes a RANGE and not a number: his price slipped from 57.50% to 56.50% inside the same window, and without two agreeing readings it does not go out as firm.",
       "s": "He declared that, if elected, he will NOT comply with single-justice [STF](/en/glossary#stf) rulings, that he will deal with the Centrão and called members of Congress parasites. Largest accumulated volume among names above 1%, above Lula's.",
       "pc": "#F59E0B",
       "mc": ""
@@ -139,8 +139,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "Quaest: 4% in the first round, the same as Jul 15 at the same house. Meio/Ideia: 5.7%, against 4% on Jul 8. In the runoffs, 37% against 45% and 40% against 48.5%, the latter the smallest distance among the four opponents tested at Ideia.",
-      "m": "1.15% (vol USD 5.30M accumulated), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. He was the second name on the first-round third-place contract, at 25.00% in the Aug 3 reading.",
+      "m": "1.85% (vol USD 5.56M), reading of Aug 6",
+      "t": "Up 0.70pp against Aug 3, and in the third-place contract for the first round he went from 25.00% to 32.50%, a rise of 7.50pp. The level is still low: his presidential price is a thirtieth of Lula’s.",
       "s": "He mocked Lula and Flávio, saying both are more worried about saving the family than the country. The disagreement between houses about him remains open in the same window: 4% at one house and 5.7% at the other.",
       "pc": "#16A34A",
       "mc": ""
@@ -148,8 +148,8 @@
     {
       "n": "Romeu Zema (Novo)",
       "p": "Quaest: 2% in the first round, the same as Jul 15 at the same house. Meio/Ideia: 2.6%, practically the 2.5% of Jul 8. In the runoffs, 34% against 46% and 37% against 48.5%, and he is the opponent Lula beats by the widest margin at Quaest.",
-      "m": "0.25% (vol USD 4.66M accumulated), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. The series caveat is a large one: his maximum is 10.10% on Apr 26, so variations in this range carry almost no informational value.",
+      "m": "0.45% (vol USD 4.82M), reading of Aug 6",
+      "t": "Up 0.20pp against Aug 3, which at this level carries almost no informational value. A series caveat that still holds: his maximum is 10.10%, from Apr 26.",
       "s": "He is the ONLY third-way name with a closed ticket, since Aug 4, with senator Eduardo Girão, of [Novo](/en/glossary#novo), settled inside his own party.",
       "pc": "#0EA5E9",
       "mc": ""
@@ -157,8 +157,8 @@
     {
       "n": "STF impeachment",
       "p": "No poll. Market on the impeachment of an [STF](/en/glossary#stf) justice before 2027.",
-      "m": "3.10% (vol USD 83 thousand), Aug 3 price",
-      "t": "No fresh market reading on Aug 4 and Aug 5. It is the thinnest contract among those the panel publishes.",
+      "m": "2.75% (vol USD 83 thousand), reading of Aug 6",
+      "t": "Down 0.35pp against Aug 3. It is the thinnest contract this panel publishes, with cumulative volume that does not reach a thousandth of the presidential book.",
       "s": "Mendonça, vice-president of the TSE, ordered the government to open its institutional advertising data within 10 days and DENIED the [PL](/en/glossary#pl) request to bar new commitments. The running mate announced today on Flávio's ticket has already called the STF a judicial dictatorship. Renan Santos said he will not comply with single-justice rulings of the court.",
       "pc": "#64748B",
       "mc": ""

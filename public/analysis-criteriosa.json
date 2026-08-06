@@ -1,6 +1,6 @@
 {
-  "updatedAt": "05/08/2026, 17:00",
-  "subtitle": "ATUALIZAÇÃO 05/Ago 17:00, a 60 dias do 1º turno. O LADO DA URNA É DE HOJE E ELE VEIO DOBRADO: duas nacionais publicadas no mesmo dia, colhidas no mesmo campo, de 31/Jul a 03/Ago. Genial/Quaest (n=2.004, BR-06591/2026) dá 39% x 30% no 1º turno e 44% x 39% no returno. Meio/Ideia (n=1.500, BR-04579/2026) dá 43% x 35% e 48,5% x 43%. A APROVAÇÃO REPETIU O NÚMERO DE TRÊS SEMANAS ANTES: 48% x 47% na Quaest, idêntico ao de 15/Jul, com a gestão em 36% x 26% x 36%, também idêntica. No tabuleiro, FLÁVIO FECHOU CHAPA no último dia do prazo das convenções, com Alfredo Gaspar, relator da CPMI do INSS. Os preços desta página são da leitura de 03/Ago, às 19:11 UTC, e estão marcados um a um.",
+  "updatedAt": "06/08/2026, 16:45",
+  "subtitle": "ATUALIZAÇÃO 06/Ago 16:45, a 59 dias do 1º turno. O PREÇO VOLTOU A SER DO DIA depois de três dias servindo a leitura de 03/Ago: Lula 64,50%, Flávio 26,75%, gap de +37,75pp contra +40,05pp em 03/Ago. O gap encolheu cinco dias seguidos, do máximo de +41,80pp em 01/Ago. Não há pesquisa nacional nova: as últimas são Genial/Quaest e Meio/Ideia, ambas de 05/Ago. O tabuleiro fechou com 13 chapas registradas e a Folha apurando que só um candidato terá aliança com outros partidos.",
   "candidates": [
     {
       "rank": "1",
@@ -74,7 +74,7 @@
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "Preços de 03/Ago: Caiado 1,15% (vol USD 5,30M), Zema 0,25% (vol USD 4,66M) e Haddad 0,15% (vol USD 6,64M), da leitura das 19:11 UTC. Na urna de hoje, Caiado tem 4% na Quaest e 5,7% na Ideia, Zema tem 2% e 2,6%, e Haddad não é testado por nenhuma das duas.",
+      "header": "Preços de 03/Ago: Caiado 1,15% (vol USD 5,30M), Zema 0,25% (vol USD 4,66M) e Haddad 0,15% (vol USD 6,74M), da leitura das 19:11 UTC. Na urna de hoje, Caiado tem 4% na Quaest e 5,7% na Ideia, Zema tem 2% e 2,6%, e Haddad não é testado por nenhuma das duas.",
       "subtitle": "05/Ago, a 60 dias: o pelotão não se mexeu na urna e ficou mais estridente no discurso. Nenhum dos três passa de 5,7% em nenhuma das duas nacionais do dia, e Lula vence os seis cenários de returno em que eles aparecem. Zema é o único dos três com chapa fechada, desde 04/Ago, com o senador Eduardo Girão. Hoje foi o último dia do prazo das convenções, e a fase seguinte é o registro de candidaturas.",
       "caiado": {
         "label": "CAIADO (PSD), Poly presidencial 1,15% (vol USD 5,30M, preço de 03/Ago) | 3º lugar do 1º turno 25,00% na leitura de 03/Ago | candidato oficializado em convenção, com Kassab de vice | urna de hoje: Quaest 4%, Meio/Ideia 5,7%",
@@ -82,8 +82,8 @@
         "fracos": "A DIVERGÊNCIA ENTRE INSTITUTOS SOBRE ELE SEGUE ABERTA DENTRO DO MESMO CAMPO: 4% numa casa e 5,7% na outra, com as duas colhendo de 31/Jul a 03/Ago, e no mês inteiro o leque vai de 3,1% na AtlasIntel a 6% na Nexus. No contrato de vencedor ele estava em 1,15% na leitura de 03/Ago, e não há leitura confirmada depois dela. Perde os dois returnos de hoje. Na Quaest ele não se moveu dentro da própria casa, ficando nos mesmos 4% de 15/Jul, e a promessa de anistiar Bolsonaro e os condenados do 8 de Janeiro o põe a disputar o mesmo eleitorado de Flávio, que fechou chapa hoje e subiu nas duas casas."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 6,64M, preço de 03/Ago) | 2º lugar do 1º turno 1,05% na leitura de 03/Ago | NÃO testado por Quaest nem por Meio/Ideia, porque disputa o governo de São Paulo",
-        "fortes": "O volume acumulado dele, USD 6,64M, é maior que o de vários nomes com preço acima do dele, o que mantém o contrato com lastro de negociação apesar do nível baixo.",
+        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 6,74M, preço de 03/Ago) | 2º lugar do 1º turno 1,05% na leitura de 03/Ago | NÃO testado por Quaest nem por Meio/Ideia, porque disputa o governo de São Paulo",
+        "fortes": "O volume acumulado dele, USD 6,74M, é maior que o de vários nomes com preço acima do dele, o que mantém o contrato com lastro de negociação apesar do nível baixo.",
         "fracos": "NENHUMA das duas nacionais de hoje o testa, em nenhum cenário, nem de 1º turno nem de returno. Ausência de teste em duas rodadas no mesmo dia é informação que o painel registra, em vez de repetir dado antigo como se fosse novo. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e qualquer cenário que o inclua é hipótese de pesquisa e não candidatura em curso. Num preço de 0,15%, variações têm valor informativo quase nulo, e o volume alto mede história negociada, não convicção atual."
       },
       "zema": {
@@ -97,7 +97,7 @@
         "ZEMA é o único dos três com chapa fechada, com o senador Eduardo Girão, resolvida dentro do próprio partido em 04/Ago.",
         "Na urna, Zema está estável nas duas casas, com 2% na Quaest e 2,6% na Ideia, sem cair em nenhuma delas.",
         "Caiado segue como segundo nome do contrato de 3º lugar do 1º turno, que na leitura de 03/Ago estava em 25,00%.",
-        "O volume acumulado de Haddad, USD 6,64M, mantém lastro de negociação no contrato apesar do preço de 0,15%."
+        "O volume acumulado de Haddad, USD 6,74M, mantém lastro de negociação no contrato apesar do preço de 0,15%."
       ],
       "fracos": [
         "Nenhum dos três passa de 5,7% em nenhuma das duas nacionais de hoje, e Lula vence os seis cenários de returno em que eles aparecem.",
@@ -112,8 +112,8 @@
     {
       "n": "Lula (PT)",
       "p": "DUAS NACIONAIS HOJE. Genial/Quaest (n=2.004, BR-06591/2026): 39% no 1º turno e 44% x 39% no returno. Meio/Ideia (n=1.500, BR-04579/2026): 43% e 48,5% x 43%. APROVAÇÃO 48% x 47% na Quaest, IDÊNTICA à da própria rodada de 15/Jul. Gestão 36% positiva, 26% regular, 36% negativa, também idêntica. Rejeição 52%.",
-      "m": "65,50% (vol USD 7,92M acumulado), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. Vale a de 03/Ago, das 19:11 UTC, com gap de +40,05pp. Na série de 88 dias, o topo é 66,50% e o gap máximo +41,80pp, os dois de 01/Ago.",
+      "m": "64,50% (vol USD 8,09M acumulado), leitura de 06/Ago",
+      "t": "Preço do dia, confirmado por três leituras idênticas. Caiu 1,00pp contra a leitura de 03/Ago e o gap sobre Flávio foi de +40,05pp para +37,75pp. Na série de 88 dias, que começa em 09/Mai, o topo dele segue sendo 66,50% e o gap máximo +41,80pp, os dois de 01/Ago.",
       "s": "60 dias da eleição. Vence os OITO cenários de returno das duas rodadas. Reuniu-se com Alcolumbre na casa de Moraes em 04/Ago, depois do rompimento. Aliados admitem desgaste com as investigações sobre Lulinha.",
       "pc": "#DC2626",
       "mc": ""
@@ -121,8 +121,8 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "Quaest: 30% no 1º turno, contra 28% em 15/Jul da mesma casa, alta no LIMITE da margem de 2pp. Meio/Ideia: 35%, contra 32% em 08/Jul, alta de 3pp acima da margem de 2,5pp. Returnos: 39% e 43%, perde os dois. REJEIÇÃO 54%, a mais alta entre os dois primeiros colocados.",
-      "m": "25,45% (vol USD 7,86M acumulado), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. Ressalva de série que segue valendo: na série disponível de 88 dias, o topo dele é 44,30% em 08/Mai e o piso é 22,00% em 03/Jul.",
+      "m": "26,75% (vol USD 8,05M), leitura de 06/Ago",
+      "t": "Subiu 1,30pp contra 03/Ago e voltou ao nível daquele dia. Não é extremo: na série de 88 dias, 34 deles tiveram valor igual ou maior, e o topo é 43,30%, de 09/Mai, contra piso de 22,00% em 03/Jul. No contrato de 2º lugar ele está em 87,50%, contra 80,50% em 03/Ago.",
       "s": "FECHOU CHAPA no último dia do prazo: vice é Alfredo Gaspar, do PL de Alagoas, relator da CPMI do INSS. Chapa de um partido só, depois de Republicanos, PP, Podemos e União Brasil ficarem neutros. Terá mais de um minuto menos de TV que Lula.",
       "pc": "#2563EB",
       "mc": ""
@@ -130,8 +130,8 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "Quaest: 4%, contra 3% em 15/Jul da mesma casa. Meio/Ideia: 4,7%, contra 2% em 08/Jul. Com as duas, SEIS nacionais seguidas o medem entre 3% e 4,7%. Perde os returnos por 45% x 35% e 48% x 34,7%.",
-      "m": "7,45% (vol USD 8,86M acumulado), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. A distância entre o preço de 7,45% e a urna de hoje fica entre 2,75pp e 3,45pp, e ela é do lado do preço.",
+      "m": "6,85% (vol USD 9,10M), leitura de 06/Ago",
+      "t": "Caiu 0,60pp contra 03/Ago. A distância entre o preço e a urna, que o mede entre 4% e 4,7%, fica entre 2,15pp e 2,85pp, e ela é do lado do preço. No contrato de 3º lugar do 1º turno o AFOS publica FAIXA e não número: o preço dele escorregou de 57,50% para 56,50% dentro da mesma janela, e sem duas leituras concordantes ele não sai como firme.",
       "s": "Declarou que, se eleito, NÃO cumprirá decisões monocráticas do STF, que vai compor com o Centrão e chamou parlamentares de parasitas. Maior volume acumulado entre os nomes acima de 1%, acima do de Lula.",
       "pc": "#F59E0B",
       "mc": ""
@@ -139,8 +139,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "Quaest: 4% no 1º turno, o mesmo de 15/Jul da mesma casa. Meio/Ideia: 5,7%, contra 4% em 08/Jul. Nos returnos, 37% contra 45% e 40% contra 48,5%, esta a menor distância entre os quatro adversários testados na Ideia.",
-      "m": "1,15% (vol USD 5,30M acumulado), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. Era o segundo nome do contrato de 3º lugar do 1º turno, com 25,00% na leitura de 03/Ago.",
+      "m": "1,85% (vol USD 5,56M), leitura de 06/Ago",
+      "t": "Subiu 0,70pp contra 03/Ago, e no contrato de 3º lugar do 1º turno foi de 25,00% para 32,50%, alta de 7,50pp. O nível segue baixo: o preço presidencial dele é um trigésimo do de Lula.",
       "s": "Ironizou Lula e Flávio dizendo que os dois estão mais preocupados em salvar a família do que o país. A divergência entre institutos sobre ele segue aberta no mesmo campo: 4% numa casa e 5,7% na outra.",
       "pc": "#16A34A",
       "mc": ""
@@ -148,8 +148,8 @@
     {
       "n": "Romeu Zema (Novo)",
       "p": "Quaest: 2% no 1º turno, o mesmo de 15/Jul da mesma casa. Meio/Ideia: 2,6%, praticamente os 2,5% de 08/Jul. Nos returnos, 34% contra 46% e 37% contra 48,5%, e é o adversário que Lula bate com mais folga na Quaest.",
-      "m": "0,25% (vol USD 4,66M acumulado), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. Ressalva de série, e ela é grande: o máximo dele é 10,10% em 26/Abr, então variações nesta faixa têm valor informativo quase nulo.",
+      "m": "0,45% (vol USD 4,82M), leitura de 06/Ago",
+      "t": "Subiu 0,20pp contra 03/Ago, o que nesta faixa tem valor informativo quase nulo. Ressalva de série que segue valendo: o máximo dele é 10,10%, de 26/Abr.",
       "s": "É o ÚNICO nome da terceira via com chapa fechada, desde 04/Ago, com o senador Eduardo Girão, do Novo, resolvida dentro do próprio partido.",
       "pc": "#0EA5E9",
       "mc": ""
@@ -157,8 +157,8 @@
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,10% (vol USD 83 mil), preço de 03/Ago",
-      "t": "Sem leitura de mercado nova em 04 e 05/Ago. É o contrato mais fino entre os que o painel publica.",
+      "m": "2,75% (vol USD 83 mil), leitura de 06/Ago",
+      "t": "Caiu 0,35pp contra 03/Ago. É o contrato mais fino entre os que o painel publica, com volume acumulado que não chega a um milésimo do presidencial.",
       "s": "Mendonça, vice-presidente do TSE, mandou o governo abrir dados de publicidade institucional em 10 dias e NEGOU o pedido do PL de barrar novos empenhos. O vice anunciado hoje na chapa de Flávio já chamou o STF de ditadura judicial. Renan Santos disse que não cumprirá decisões monocráticas do tribunal.",
       "pc": "#64748B",
       "mc": ""
