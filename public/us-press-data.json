@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-06",
-  "fetchedAt": "2026-08-06T15:03:13.485Z",
+  "fetchedAt": "2026-08-06T21:38:15.705Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -108,25 +108,33 @@
     }
   ],
   "qualidade": {
-    "lidos": 247,
-    "naLista": 96,
-    "foraDaLista": 151,
+    "lidos": 239,
+    "naLista": 100,
+    "foraDaLista": 139,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 7,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 11,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 15,
-    "lidosEmFeedProprio": 50,
+    "lidosEmFeedProprio": 52,
     "publicadosComLinkCanonico": 7,
     "publicadosViaGoogleNews": 3
   },
   "itens": [
     {
-      "titulo": "Michigan Senate primary results spotlight Democratic divide: Join the live discussion",
-      "url": "https://thehill.com/homenews/campaign/data-nerds/6013510-michigan-senate-primary-democratic-divide-live-discussion/",
+      "titulo": "Francesca Hong scrutinized over ‘cancel Thanksgiving’ post in Wisconsin governor race",
+      "url": "https://www.washingtonpost.com/politics/2026/08/06/wisconsin-governor-hopeful-francesca-hong-faces-scrutiny-over-thanksgiving-post/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-08-06T20:32:18.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Iowa Democratic Senate nominee slams Democrats on Agriculture panel over farm bill failure",
+      "url": "https://thehill.com/homenews/campaign/6015055-iowa-senate-farm-bill-clash/",
       "casa": "The Hill",
-      "publicadoEm": "2026-08-06T14:22:30.000Z",
+      "publicadoEm": "2026-08-06T20:31:43.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
@@ -134,28 +142,36 @@
       "titulo": "El-Sayed and Stevens Project Party Unity After Divisive Race",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWkMzeXN5RWNSU3JyUGxpZXJZNngwc3RaOVZjR1JKb2tkRU9zN3ZRVUZ2MDlOVzdZNVRmQVdBUEgxbHF3VWtLbG9Fci1PS19NR1dPX3h4QnkzZDdnQ09Fd3kxbzQtUW1lcmplUTlJQ0xYOWE3RS1lXzJ6SjZock5FOC1R?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-06T14:07:00.000Z",
+      "publicadoEm": "2026-08-06T20:17:00.000Z",
       "consulta": "midterms",
       "origem": "google"
     },
     {
-      "titulo": "Sherrill unveils first set of midterm endorsements",
-      "url": "https://thehill.com/homenews/campaign/6013472-nj-gov-backs-national-security-candidates/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-06T14:06:01.000Z",
+      "titulo": "Democrats targeting 12 additional red districts in midterms push to retake House",
+      "url": "https://www.foxnews.com/politics/democrats-targeting-12-additional-red-districts-midterms-push-retake-house",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-06T18:21:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
     {
-      "titulo": "Tennessee’s Andy Ogles Faces Well-Funded Opposition in House Primary Thursday",
-      "url": "https://www.nytimes.com/2026/08/06/us/politics/tennessee-republican-primary-andy-ogles.html",
+      "titulo": "'Fake' moderate Talarico's Texas surge tests Paxton in fight to hold crucial GOP Senate seat",
+      "url": "https://www.foxnews.com/politics/fake-moderate-talarico-texas-surge-tests-paxton-fight-hold-crucial-gop-senate-seat",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-06T17:25:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed"
+    },
+    {
+      "titulo": "Tennessee U.S. Senate Primary 2026: Live Election Results",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOM0dLSVQxVXpYVkp4Ui1FZTJHOG1zVGVXTG5hZVdYZ1ZCa3djSVZQOE1JMEt6V1dxV2Y1TFFxM1FrOEhuSHowWHp2bmZiREFvdmFJZzFkTFRSVTJJVnZZcmZtczUzaXhrcjdtRjI4dkFTeUVNOWtWbERVZ3BCV2VISTlWeFFOZTNuUFdIY0pUM0tEZmF2QkR4NzBQMUxvN0p4d0E?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-08-06T14:01:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
+      "publicadoEm": "2026-08-06T15:41:28.000Z",
+      "consulta": "senate-races",
+      "origem": "google"
     },
     {
-      "titulo": "El-Sayed wins Michigan&apos;s primary. And, Fauci faces contempt of Congress vote",
+      "titulo": "El-Sayed wins Michigan's primary. And, Fauci faces contempt of Congress vote",
       "url": "https://www.npr.org/2026/08/06/g-s1-137574/up-first-newsletter-anthony-fauci-erica-schwartz-abdul-el-sayed-las-vegas-economy-stewart-rhodes",
       "casa": "NPR",
       "publicadoEm": "2026-08-06T11:30:59.000Z",
@@ -163,26 +179,10 @@
       "origem": "feed"
     },
     {
-      "titulo": "El-Sayed wins Michigan's primary. And, Fauci faces contempt of Congress vote",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNNEU1R3lXMDF1WEFTYm9iRXhUbVpjb1BSWWxINHNXM295U2d1MDA4OUJ5MTBpaHoxaDVvd1M5Q0FVY0pvazJrMXI5MDNqM0w4LU9vRnA3MXNMT1Y4Z1l6bFVOcFNuQmxNZVgzUzloWDRWb0NXaGg2N19OYXZ5djVoVzhMWVFCZXRTWlQtMXU5MEZJVElsdHpZSEVJWW1NYzJsU01lNDZFSEFtWDFHb3VLcGdEZnRRM2lhY09TeWhMM0ljVEtJT0toeDB3ckR3RG93Q2thWnFB?oc=5",
-      "casa": "NPR",
-      "publicadoEm": "2026-08-06T11:30:59.000Z",
-      "consulta": "senate-races",
-      "origem": "google"
-    },
-    {
       "titulo": "Sherrill enters national political fray with first midterm endorsements",
       "url": "https://www.cbsnews.com/news/new-jersey-mikie-sherrill-midterm-pac-endorsements-veterans-democrats/",
       "casa": "CBS News",
       "publicadoEm": "2026-08-06T11:07:54.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed"
-    },
-    {
-      "titulo": "Trump&apos;s endorsement collides with $2M effort to oust House ally",
-      "url": "https://www.foxnews.com/politics/trumps-endorsement-collides-1-3m-effort-oust-house-ally",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-06T11:00:55.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     },
@@ -195,10 +195,10 @@
       "origem": "google"
     },
     {
-      "titulo": "Primary showdown: Conservative firebrand Marsha Blackburn eyes governor&apos;s office in Tennessee",
-      "url": "https://www.foxnews.com/politics/primary-showdown-conservative-firebrand-marsha-blackburn-eyes-governors-office-tennessee",
-      "casa": "Fox News",
-      "publicadoEm": "2026-08-06T10:00:58.000Z",
+      "titulo": "Political consultant talks about the Democratic Party's road to the midterms",
+      "url": "https://www.npr.org/2026/08/06/nx-s1-5922187/political-consultant-talks-about-the-democratic-partys-road-to-the-midterms",
+      "casa": "NPR",
+      "publicadoEm": "2026-08-06T10:46:09.000Z",
       "consulta": "feed-proprio",
       "origem": "feed"
     }
