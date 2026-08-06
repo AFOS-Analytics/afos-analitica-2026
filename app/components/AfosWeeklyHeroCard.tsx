@@ -6,10 +6,11 @@ import { useTranslation } from '../i18n/context'
 /**
  * Cartão do AFOS Weekly, no mesmo padrão dos cartões do Daily e do Tradeoff.
  *
- * 🎨 A COR É O QUE SEPARA OS TRÊS PRODUTOS na mesma página. O Tradeoff usa o
- * amarelo/âmbar; este usa o verde-azulado (teal), para o leitor distinguir de
- * relance sem precisar ler o rótulo. Mesma altura, mesma estrutura interna e
- * mesmo comportamento de pré-lançamento dos outros dois.
+ * 🎨 A COR SEPARA PAÍS, NÃO PRODUTO (decisão do André em 06/Ago/2026, que
+ * substitui a régua de 01/Ago). Painel dos EUA em verde-azulado, painel do
+ * Brasil em âmbar. O Tradeoff acompanha: ele é âmbar no Brasil e teal nos EUA.
+ * O que separa Tradeoff de Weekly é o nome e a pílula do dia da semana, que já
+ * estão à vista no cabeçalho do cartão.
  *
  * ⚠️ Se não houver edição, ele mostra o estado de "primeira edição em ...", em
  * vez de sumir. Cartão que some deixa buraco no layout aprovado.
@@ -100,10 +101,8 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
    * + atualização à direita), mesmo corpo em duas linhas e a mesma fileira de
    * navegação embaixo do cartão.
    *
-   * 🎨 O QUE NÃO SE ESPELHA É A COR, e isso foi reafirmado no mesmo dia: o
-   * Tradeoff é âmbar e o Weekly é verde-azulado. Os dois cartões ficam vizinhos
-   * no painel dos EUA, e a cor é o que separa os produtos de relance, sem o
-   * leitor precisar ler o rótulo.
+   * 🎨 A cor também se igualou, e por outro motivo: no painel dos EUA os dois
+   * cartões são verde-azulados, porque a cor passou a dizer PAÍS.
    */
   const linhaMeta = meta.hasEdition ? (
     <>
@@ -147,14 +146,13 @@ export function AfosWeeklyHeroCard({ country = 'us', semContainer = false }: { c
   )
 
   /**
-   * ⚠️ UM ÚNICO ELEMENTO NA RAIZ, e isto não é preferência de estilo.
+   * ⚠️ CARD E NAVEGAÇÃO NUM ÚNICO ELEMENTO, e não num fragmento.
    *
-   * Isto devolvia um Fragment com DOIS filhos, o quadro e a fileira de
-   * navegação. O painel envolve os cartões num container com
-   * `space-y-8 sm:space-y-12`, e esse espaçamento entra ENTRE irmãos: os dois
-   * filhos soltos ganhavam 48px de distância, e o "Todas as edições" ficava
-   * boiando longe do quadro. O cartão do Tradeoff nunca teve isso porque
-   * sempre devolveu um `div` só. Pego pelo André em 06/Ago/2026.
+   * Isto era `<>card + nav</>`. O painel dos EUA empilha os filhos com
+   * `space-y-8 sm:space-y-12`, e um fragmento entrega DOIS filhos, então o
+   * "Todas as edições" levava 3rem de distância do próprio cartão e parecia
+   * solto no meio da página. O cartão do Tradeoff sempre embrulhou os dois
+   * juntos, e por isso o dele ficava colado. Pego pelo André em 06/Ago/2026.
    */
   const cartao = (
     <div>

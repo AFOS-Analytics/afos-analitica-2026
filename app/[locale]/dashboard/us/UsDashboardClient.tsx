@@ -218,8 +218,11 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
         <AfosTradeoffHeroCard country="us" semContainer />
 
         {/* 🆕 Cartão do AFOS Weekly, o produto editorial para o eleitor comum,
-            distinto do Tradeoff, que é para mercado e agências de risco. Cor
-            teal contra o âmbar do Tradeoff, para o leitor separar de relance.
+            distinto do Tradeoff, que é para mercado e agências de risco.
+
+            🎨 Desde 06/Ago/2026 a cor diz PAÍS, não produto: aqui os dois
+            cartões são verde-azulados, e no painel do Brasil o Tradeoff é
+            âmbar. Quem separa os dois produtos é o nome e a pílula do dia.
 
             ⚠️ EM PRODUÇÃO ELE NÃO APARECE ENQUANTO NÃO HOUVER EDIÇÃO PUBLICADA:
             a rota `/api/afos-weekly/latest` só conta rascunho fora de produção,

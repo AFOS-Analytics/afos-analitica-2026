@@ -102,6 +102,25 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
    * contém.
    */
   const embrulho = semContainer ? 'w-full' : 'w-full max-w-6xl mx-auto px-3 sm:px-4 md:px-8 mt-3 sm:mt-4'
+
+  /**
+   * 🎨 A COR SEPARA PAÍS, NÃO PRODUTO. Decisão do André em 06/Ago/2026, e ela
+   * substitui a régua de 01/Ago.
+   *
+   * Antes: âmbar era Tradeoff e verde-azulado era Weekly, para o leitor separar
+   * os PRODUTOS de relance. Na prática o painel dos EUA ficou com um cartão
+   * âmbar e um teal colados, e o painel do Brasil com um âmbar, então a cor não
+   * dizia em que país o leitor estava.
+   *
+   * Agora: painel do Brasil em âmbar, painel dos EUA em verde-azulado, os dois
+   * produtos juntos. O que separa Tradeoff de Weekly é o nome e a pílula do dia
+   * da semana, que já estão à vista. É coerente com a régua de que as duas
+   * eleições são independentes uma da outra.
+   */
+  const eUS = country === 'us'
+  const c = eUS
+    ? { fundo: 'bg-teal-50', hover: 'hover:bg-teal-100', borda: 'border-teal-100', pilula: 'bg-teal-200/60', esqueleto: 'bg-teal-100', esqueletoFraco: 'bg-teal-100/70', fundoFraco: 'bg-teal-50/60' }
+    : { fundo: 'bg-orange-50', hover: 'hover:bg-orange-100', borda: 'border-orange-100', pilula: 'bg-orange-200/60', esqueleto: 'bg-orange-100', esqueletoFraco: 'bg-orange-100/70', fundoFraco: 'bg-orange-50/60' }
   const [meta, setMeta] = useState<TradeoffMeta | null>(null)
 
   useEffect(() => {
@@ -121,10 +140,10 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
   // card no topo, logo abaixo do DailyHeroCard).
   if (!meta) return (
     <div className={embrulho} aria-hidden="true">
-      <div className="min-h-[140px] sm:min-h-[116px] rounded-xl border border-orange-100 bg-orange-50/60 p-4 md:p-5 animate-pulse">
-        <div className="mb-3 h-4 w-2/5 rounded bg-orange-100" />
-        <div className="mb-1.5 h-3 w-full rounded bg-orange-100/70" />
-        <div className="h-3 w-4/6 rounded bg-orange-100/70" />
+      <div className={`min-h-[140px] sm:min-h-[116px] rounded-xl border ${c.borda} ${c.fundoFraco} p-4 md:p-5 animate-pulse`}>
+        <div className={`mb-3 h-4 w-2/5 rounded ${c.esqueleto}`} />
+        <div className={`mb-1.5 h-3 w-full rounded ${c.esqueletoFraco}`} />
+        <div className={`h-3 w-4/6 rounded ${c.esqueletoFraco}`} />
       </div>
     </div>
   )
@@ -135,7 +154,7 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
     return (
       <div className={embrulho}>
         <div
-          className="block bg-orange-50 border border-orange-100 rounded-xl p-4 md:p-5"
+          className={`block ${c.fundo} border ${c.borda} rounded-xl p-4 md:p-5`}
           aria-label={`${t.eyebrow}: ${t.prePrimeiraTitle} ${dateShort}`}
         >
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
@@ -143,7 +162,7 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
               <span className="text-base md:text-lg font-extrabold text-primary uppercase tracking-[0.12em]">
                 {t.eyebrow}
               </span>
-              <span className="text-xs font-semibold text-dark uppercase tracking-wider px-2 py-0.5 bg-orange-200/60 rounded whitespace-nowrap">
+              <span className={`text-xs font-semibold text-dark uppercase tracking-wider px-2 py-0.5 ${c.pilula} rounded whitespace-nowrap`}>
                 {t.badge}
               </span>
             </div>
@@ -179,14 +198,14 @@ export function AfosTradeoffHeroCard({ country = 'br', semContainer = false }: {
       <a
         href={linkHref}
         aria-label={ariaLabel}
-        className="block bg-orange-50 hover:bg-orange-100 border border-orange-100 rounded-xl p-4 md:p-5 transition-colors group"
+        className={`block ${c.fundo} ${c.hover} border ${c.borda} rounded-xl p-4 md:p-5 transition-colors group`}
       >
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
           <div className="flex items-baseline gap-x-3 flex-nowrap">
             <span className="text-base md:text-lg font-extrabold text-primary uppercase tracking-[0.12em]">
               {t.eyebrow}
             </span>
-            <span className="text-xs font-semibold text-dark uppercase tracking-wider px-2 py-0.5 bg-orange-200/60 rounded whitespace-nowrap">
+            <span className={`text-xs font-semibold text-dark uppercase tracking-wider px-2 py-0.5 ${c.pilula} rounded whitespace-nowrap`}>
               {t.badge}
             </span>
           </div>
