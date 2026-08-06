@@ -1,0 +1,58 @@
+{
+  "date": "2026-08-06",
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "Convenções fecharam com 13 chapas para a Presidência",
+        "crossRef": "keyword 'chapas' ausente nas 7 dailies anteriores -> novidade",
+        "verificacao2": { "url": "https://www.cartacapital.com.br/politica/lista-final-da-disputa-pelo-planalto-tem-13-chapas-definidas-conheca-os-candidatos-e-os-vices/", "data": "2026-08-06", "tipo": "evento" },
+        "segundaFonte": "https://www.em.com.br/politica/2026/08/7474925-eleicoes-2026-veja-quem-ja-teve-a-candidatura-oficializada-para-presidente.html",
+        "decisao": "incorporar CORRIGIDO",
+        "correcao": "Eu havia publicado no painel que 'o prazo de registro fechou'. FALSO: encerrou a janela de CONVENCOES (05/Ago); o registro na Justica Eleitoral vai ate 15/Ago as 19h. Corrigido nos 9 arquivos do painel antes de escrever a daily."
+      },
+      {
+        "evento": "Gilmar Mendes autoriza procedimento preliminar sobre Alfredo Gaspar",
+        "crossRef": "keyword 'Gaspar' com 9 mencoes em 2026-08-05 -> CONTINUIDADE, nao divisor de aguas",
+        "verificacao2": { "url": "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/8/6/gilmar-autoriza-procedimento-preliminar-de-investigacao-para-apurar-acusacao-contra-alfredo-gaspar", "data": "2026-08-06", "tipo": "evento", "trechoLiteral": "nao significa o mesmo que a instauracao de um inquerito, ou seja, Gaspar ainda nao foi formalmente denunciado pela PGR e nao e reu ou investigado no caso" },
+        "segundaFonte": "https://www.brasildefato.com.br/2026/08/05/alfredo-gaspar-vice-de-flavio-bolsonaro-e-acusado-de-estupro-em-processo-que-esta-parado-no-stf-aguardando-manifestacao-da-pgr/",
+        "decisao": "incorporar com verbo desambiguado",
+        "nota": "A materia NAO informa a data da decisao, entao a daily escreve 'noticiado em 06/Ago' e nao 'decidiu em 06/Ago'."
+      },
+      {
+        "evento": "So um candidato a presidente tera alianca com outros partidos",
+        "crossRef": "keyword 'alianca' com 8 mencoes -> continuidade tematica, dado numerico novo",
+        "verificacao2": { "url": "https://www1.folha.uol.com.br/poder/2026/08/pela-primeira-vez-em-10-eleicoes-so-um-candidato-a-presidente-tera-aliancas-com-outros-partidos.shtml", "data": "2026-08-06", "tipo": "evento/apuracao" },
+        "segundaFonte": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/08/06/entenda-aliancas-partidarias-lula-e-flavio-bolsonaro.ghtml",
+        "decisao": "incorporar atribuido a Folha"
+      },
+      {
+        "evento": "Caiado com Gilberto Kassab de vice",
+        "verificacao2": { "data": "2026-07-26", "tipo": "evento antigo" },
+        "decisao": "NAO incorporar como evento do dia, e de dez dias atras"
+      }
+    ],
+    "selfCheck": {
+      "ancorasVerificadas": true,
+      "causacaoEspuria": "nenhuma: estreitamento do gap descrito como momentum, com a frase 'nao ha evento na janela que explique o movimento'",
+      "verbosCriticos": "'autorizou procedimento preliminar' desambiguado no texto com 'nao e inquerito e nao e denuncia' e 'nao e reu nem investigado'",
+      "reconcileClaims": "rodado; 3 sinalizacoes, todas verificadas como legitimas (delta calculado de Flavio 1,40pp; topo de serie de Lula 66,50%; mercado do Senado PL 73,00%, que nao vive nos JSONs do painel)"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims OK apos verificacao caso a caso",
+    "fontesInventadas": "3 conferidas ao acaso (JOTA, CNN, O Tempo), todas com materia correspondente",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma",
+    "verbosCodebook": "OK",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "palavrasCorpo": 878,
+    "tetoPalavras": 900,
+    "validatorDaily": "OK, 1 warning de densidade de link (74% vs 80%)",
+    "gateNumericoTraducao": "58 tokens identicos em pt/en/es",
+    "cincoChecagens": "passaram",
+    "waybackAtrasado": "NAO sondado. Terceiro 429 em 05/Ago; regua manda pausa de 3 a 4 dias sem sondagem. Fila de 7 dias volta por volta de 09/Ago."
+  }
+}
