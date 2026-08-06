@@ -167,7 +167,21 @@ function lerStatus(date: string, pais: string): string {
   const cached = statusCache.get(chave)
   if (cached && cached.mtime === mtime) return cached.status
   try {
-    const head = readFileSync(path, 'utf-8').slice(0, 500)
+    // 🔴 LER O BLOCO DE FRONTMATTER INTEIRO, não um pedaço de tamanho fixo.
+    //
+    // Isto lia os 500 primeiros caracteres. Em 06/Ago/2026 a Edição №1 saiu
+    // com título de 125 caracteres e um comentário no topo, o `status:` caiu
+    // no byte 558, o regex não achou, o padrão 'draft' entrou e a página
+    // devolveu 404 nos TRÊS idiomas em produção, já publicada.
+    //
+    // ⚠️ E o estrago é sempre nos três: este portão lê só o arquivo de ORIGEM,
+    // sem sufixo de idioma, então quem decide a visibilidade das traduções é
+    // o inglês. Um campo fora da janela derruba a edição inteira.
+    //
+    // Falha para o lado seguro: sem `---` de fechamento, cai em 'draft'.
+    const bruto = readFileSync(path, 'utf-8')
+    const fim = bruto.indexOf('\n---', 3)
+    const head = fim === -1 ? '' : bruto.slice(0, fim)
     const m = head.match(STATUS_RE)
     const status = m && VALIDOS.has(m[1].toLowerCase()) ? m[1].toLowerCase() : 'draft'
     statusCache.set(chave, { mtime, status })
