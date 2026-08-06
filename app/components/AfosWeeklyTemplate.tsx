@@ -46,6 +46,7 @@ const T = {
     methodology: 'Method',
     issue: 'Issue',
     week: 'Week of',
+    weekTo: 'to',
     high: 'Widest',
     low: 'Narrowest',
     amplitude: 'Spread between institutes',
@@ -71,6 +72,7 @@ const T = {
     methodology: 'Método',
     issue: 'Edição',
     week: 'Semana de',
+    weekTo: 'a',
     high: 'Maior',
     low: 'Menor',
     amplitude: 'Distância entre institutos',
@@ -96,6 +98,7 @@ const T = {
     methodology: 'Método',
     issue: 'Edición',
     week: 'Semana del',
+    weekTo: 'al',
     high: 'Mayor',
     low: 'Menor',
     amplitude: 'Distancia entre institutos',
@@ -195,7 +198,10 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
   const k = (locale === 'pt-BR' || locale === 'es' ? locale : 'en') as keyof typeof T
   const t = T[k]
   const caiuParaOrigem = data.servedLocale !== locale
-  const semanaIntervalo = data.weekStart && data.weekEnd ? `${data.weekStart} a ${data.weekEnd}` : data.updatedAt
+  // ⚠️ O separador do intervalo vem do bloco T. Ele estava cravado como ' a ',
+  // que é português, e na página EM INGLÊS saía "Week of 2026-07-30 a 2026-08-06".
+  // Defeito de idioma que nenhum gate numérico pega, porque não é número.
+  const semanaIntervalo = data.weekStart && data.weekEnd ? `${data.weekStart} ${t.weekTo} ${data.weekEnd}` : data.updatedAt
 
   const [theme, setTheme] = useState<Theme>('light')
   useEffect(() => {
@@ -348,7 +354,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
                 Tradeoff (decisão de 24/Mai). Eles NÃO mudam com o tema: no tema
                 azul ganham só uma borda clara para não sumirem no fundo. O delta
                 vai em AMARELO, que destaca o movimento sem dizer se ele é bom. */}
-            <div className="grid gap-3 sm:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {data.cards.map((c) => (
                 <div key={c.label} className={`rounded-lg border bg-primary p-4 ${isBlue ? 'border-blue-300/40' : 'border-primary'}`}>
                   <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-blue-200">{c.label}</p>
@@ -361,10 +367,28 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
                       {seta(c.deltaDirection)} {c.delta}
                     </p>
                   )}
-                  {c.desc && <p className="mt-2 text-xs leading-snug text-blue-100">{c.desc}</p>}
+                  {/* ⚠️ Passa pelo WeeklyMarkdown como todo campo de prosa deste
+                      template. Antes saía como texto puro, então um `**USD 0,31M**`
+                      escrito no arquivo aparecia com os asteriscos à vista no card.
+                      Pego pelo André no preview de 06/Ago/2026. */}
+                  {c.desc && (
+                    <p className="mt-2 text-xs leading-snug text-blue-100">
+                      <WeeklyMarkdown text={c.desc} />
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
+
+            {/* Preço publicado que não merece card próprio entra aqui, em pílula,
+                abaixo da grade. Decisão do André em 06/Ago/2026: o contrato de
+                calendário quase não se move e um quinto card quebrava a simetria
+                da grade sem acrescentar leitura. A informação continua na página. */}
+            {data.moneyFootnote && (
+              <p className={`mt-3 rounded-lg px-3 py-2 text-xs leading-snug ${isBlue ? 'bg-blue-900/50 text-blue-50' : 'bg-primary/5 text-dark'}`}>
+                <WeeklyMarkdown text={data.moneyFootnote} />
+              </p>
+            )}
           </section>
         )}
 

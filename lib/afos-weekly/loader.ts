@@ -118,6 +118,12 @@ export interface AfosWeeklyData {
   tldr: string[]
   moneyIntro: string
   cards: WeeklyCard[]
+  /**
+   * Linha em pílula abaixo da grade de cards. Serve ao preço publicado que
+   * precisa aparecer mas não sustenta um card próprio, como o contrato de
+   * calendário. Decisão do André em 06/Ago/2026, por simetria da grade.
+   */
+  moneyFootnote?: string
   pollsIntro: string
   dispersion?: { high: string; low: string; amplitude: string; note?: string }
   coverage?: WeeklyCoverage
@@ -259,6 +265,7 @@ export function loadWeekly(date: string, locale: string, pais: string): AfosWeek
     tldr: arr<string>(fm.tldr).map(x => String(x)),
     moneyIntro: str(fm.moneyIntro),
     cards: arr<WeeklyCard>(fm.cards),
+    moneyFootnote: str(fm.moneyFootnote) || undefined,
     pollsIntro: str(fm.pollsIntro),
     dispersion: (fm.dispersion as AfosWeeklyData['dispersion']) || undefined,
     coverage: (fm.coverage as WeeklyCoverage) || undefined,
