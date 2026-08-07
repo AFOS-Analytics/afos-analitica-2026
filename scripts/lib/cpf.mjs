@@ -8,11 +8,10 @@
  * foi exatamente o que aconteceu: a do backup só via CPF PONTUADO e deixou
  * passar CPF cru para o repositório público durante três meses.
  *
- * 🔴 PENDENTE, e está escrito aqui para não virar promessa esquecida: hoje quem
- * usa este primitivo são `scripts/backup-neon.ts` e `scripts/check-backup-sem-pii.ts`.
- * O `redigir-cpf-tse-registry.mjs`, do Hugging Face, AINDA tem a cópia antiga.
- * Enquanto ele não migrar, a duplicação que causou este defeito segue de pé do
- * lado do dataset.
+ * ✅ QUEM USA (07/Ago/2026, migração concluída): `scripts/backup-neon.ts`,
+ * `scripts/check-backup-sem-pii.ts` e `scripts/redigir-cpf-tse-registry.mjs`.
+ * Não existe mais cópia da regra fora daqui. Se aparecer um quarto lugar que
+ * precise detectar CPF, ele importa deste arquivo; não copia.
  *
  * 🧮 O QUE SAI E O QUE FICA
  *   SAI  CPF de pessoa física (11 dígitos), pontuado ou cru.

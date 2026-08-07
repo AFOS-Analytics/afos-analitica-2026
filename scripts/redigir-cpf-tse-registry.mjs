@@ -8,20 +8,38 @@
  * `sampling_plan`, o CPF do estatístico responsável. Dado público na origem não
  * deixa de ser dado pessoal quando republicado em massa num dataset aberto.
  *
- * 🧮 O QUE SAI E O QUE FICA:
- *   SAI  o CPF de pessoa física (11 dígitos), em qualquer formatação.
- *   FICA o CNPJ (14 dígitos), que identifica empresa e não pessoa. Cuidado real:
- *        o TSE rotula o campo como "CNPJ/CPF" e preenche com CNPJ. Redigir por
- *        rótulo apagaria o identificador do instituto, que é justamente o que dá
- *        auditabilidade ao dataset.
- *   FICA o NOME do estatístico, que é atuação profissional e já é campo próprio
- *        (`statistician`). É ele que permite auditar quem assinou a pesquisa.
+ * 🧩 A RÉGUA NÃO MORA MAIS AQUI (migrado em 07/Ago/2026). Ela é o primitivo
+ * único de `scripts/lib/cpf.mjs`, o MESMO que o backup do Neon e a trava de PII
+ * usam. Antes desta migração havia duas cópias da mesma regra, e elas divergiram
+ * exatamente como se temia: a do backup só via CPF PONTUADO e deixou passar CPF
+ * cru para o repositório público durante três meses.
+ *
+ * 🔢 O QUE MUDOU NA PRÁTICA, e foi MEDIDO antes de trocar
+ * A régua antiga era "11 dígitos em qualquer formatação". A nova exige DÍGITO
+ * VERIFICADOR e fronteira de PALAVRA. Comparadas sobre o texto cru do TSE:
+ *   - os CPFs reais: os MESMOS nos dois, nenhum a menos;
+ *   - a antiga redigia ainda 3 números que NÃO são CPF, entre eles fragmento de
+ *     UUID e um número dentro da citação de uma fonte do TSE.
+ * Ou seja, a nova protege igual e para de destruir dado legítimo. Um desses
+ * falsos positivos está publicado no dataset: o `tse-registry` traz
+ * "...home?session=1156 [CPF removido] e IBGE", onde o número redigido reprova
+ * no dígito verificador. Como o `tse-registry` é regenerado a cada espelhamento
+ * e não é arquivo datado, o próximo espelho o devolve correto.
+ *
+ * 🧮 O QUE SAI E O QUE FICA continua igual:
+ *   SAI  o CPF de pessoa física (11 dígitos), pontuado ou cru, e também o número
+ *        ROTULADO como CPF mesmo com dígito verificador inválido.
+ *   FICA o CNPJ (14 dígitos), que identifica empresa e não pessoa. O TSE rotula
+ *        o campo como "CNPJ/CPF" e preenche com CNPJ: redigir por RÓTULO
+ *        apagaria o identificador do instituto, que é o que dá auditabilidade.
+ *   FICA o NOME do estatístico, que é atuação profissional e campo próprio.
  *
  * Uso: node scripts/redigir-cpf-tse-registry.mjs [--check]
  *   --check  não escreve, só relata (exit 1 se achar CPF)
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { redigirCpf } from './lib/cpf.mjs'
 
 const CHECK = process.argv.includes('--check')
 const DIR = join(process.cwd(), 'hf-assets', 'polls')
@@ -51,28 +69,11 @@ const DIR = join(process.cwd(), 'hf-assets', 'polls')
  */
 const ARQS = ['tse-registry.csv', 'tse-registry.json', 'national-polls.json']
 
-// 11 dígitos = CPF. 14 = CNPJ, não mexe. O \d{14} na alternativa da frente
-// consome o CNPJ antes de a alternativa do CPF tentar casar um pedaço dele.
-const CNPJ = /\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}/
-const CPF = /\d{3}\.?\d{3}\.?\d{3}-?\d{2}/
-
-function redigir(texto) {
-  let n = 0
-  const saida = texto.replace(/\d[\d.\-/]{9,19}\d/g, (m) => {
-    const digitos = m.replace(/\D/g, '')
-    if (digitos.length === 14 && CNPJ.test(m)) return m // CNPJ de empresa: fica
-    if (digitos.length !== 11 || !CPF.test(m)) return m
-    n++
-    return '[CPF removido]'
-  })
-  return { saida, n }
-}
-
 let total = 0
 for (const arq of ARQS) {
   const p = join(DIR, arq)
   const antes = readFileSync(p, 'utf8')
-  const { saida, n } = redigir(antes)
+  const { saida, n } = redigirCpf(antes)
   total += n
   if (n && !CHECK) writeFileSync(p, saida, 'utf8')
   console.log(`${arq.padEnd(22)} CPF encontrados: ${n}${n && !CHECK ? ' (removidos)' : ''}`)
