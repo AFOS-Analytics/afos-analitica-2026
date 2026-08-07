@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-06",
-  "fetchedAt": "2026-08-06T14:53:28.675Z",
+  "lastUpdate": "2026-08-07",
+  "fetchedAt": "2026-08-07T21:56:53.846Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-07",
-    "nPesquisas": 31,
+    "desde": "2026-07-08",
+    "nPesquisas": 30,
     "nInstitutos": 24,
-    "dem": 47.65,
+    "dem": 47.67,
     "rep": 42.1,
-    "vantagemDem": 5.55,
+    "vantagemDem": 5.57,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
