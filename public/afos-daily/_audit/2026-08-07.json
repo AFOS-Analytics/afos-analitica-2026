@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-07",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "registro de candidatura do Zema",
+      "Dino manda PF investigar emendas Pix",
+      "PF indicia seis no 2o inquerito do INSS",
+      "atrito entre a PF e Mendonca"
+    ],
+    "verificacoes": [
+      {
+        "evento": "Zema registra candidatura, R$ 178,7 milhoes de patrimonio",
+        "v1CrossRef": "22 mencoes a Zema nas 7 dailies, mas o registro em si e novo",
+        "v2Fetch": "WebSearch confirmou 06/Ago (quinta), NAO 07/Ago",
+        "fontes": [
+          "Diario do Grande ABC",
+          "A Critica de Campo Grande",
+          "Portal Noticias Bahia",
+          "VEJA",
+          "Money Times"
+        ],
+        "decisao": "incorporar com a data corrigida",
+        "defeitoCorrigido": "o painel tinha publicado 07/Ago; a data veio do feed RSS e nao do evento"
+      },
+      {
+        "evento": "Zema foi o primeiro presidenciavel a registrar candidatura",
+        "v2Fetch": "FALSO. Gazeta do Parana: Renan Santos e o primeiro candidato a presidente registrado no TSE",
+        "decisao": "NAO incorporar",
+        "defeitoCorrigido": "superlativo falso publicado no painel em 3 idiomas, removido"
+      },
+      {
+        "evento": "Dino manda PF investigar emendas Pix apontadas pelo TCU",
+        "v1CrossRef": "zero mencoes em 7 dailies, novidade real",
+        "v2Fetch": "confirmado 07/Ago. TCU auditou 100 transferencias de 2020 a 2024, irregularidade em 82%",
+        "fontes": ["g1", "O Globo", "Metropoles", "InfoMoney", "Brasil de Fato", "Revista Forum"],
+        "ressalva": "Alfredo Gaspar NAO tem pedido de investigacao aberto; a emenda aparece na lista da auditoria",
+        "decisao": "incorporar com a ressalva explicita no corpo"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "Gaspar nao tem pedido de investigacao aberto vem de uma fonte. Mantido por ser a direcao exculpatoria: retirar deixaria implicacao mais forte que a apuracao sustenta.",
+    "numericalErrors": "reconcile-claims OK, tolerancia +-0,05pp. Os 5 pares sinalizados sao deltas (0,10pp e 4,50pp), nao niveis, e conferem.",
+    "fontesInventadas": "conferidos 3 ao acaso, todos com materia do dia: VEJA (Zema), g1 (Dino), Folha (indiciamento INSS)",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O texto diz sem evento na janela, e momentum, e a divergencia 3 diz coincidencia de data, nao a causa.",
+    "verbosCriticos": "indiciou, mandou investigar, nao tem pedido aberto. Todos precisos. Sem preso, morreu ou condenou.",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasCorpo": 897,
+    "tetoPalavras": 900,
+    "validateAfosDaily": "OK nos 3 idiomas",
+    "reconcileClaims": "OK",
+    "gateNumericoPtEnEs": "44 tokens, multiconjunto identico",
+    "cincoChecagens": "limpas nos 3 idiomas",
+    "urlsIdenticasEntreIdiomas": "56 links, byte a byte",
+    "mixDeFontes": "10 ancora, 7 secundarias",
+    "avisoNaoBloqueante": "densidade de link em 78%, contra a regua de 80%. 18 de 23 paragrafos."
+  },
+  "mercado": {
+    "leitura": "2026-08-07T19:44:00Z",
+    "confirmadaPorDuasLeituras": true,
+    "gateRebaselineDisparou": false,
+    "motivo": "nenhum dos quatro campos do gate (Lula, Flavio, Renan, gap) moveu 0,50pp; volume total identico"
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "host em pausa por bloqueio de volume ate ~09/Ago. Sondar hoje aprofunda o bloqueio.",
+    "filaEmDebito": 8
+  }
+}
