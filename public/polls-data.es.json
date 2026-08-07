@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-06",
+  "lastUpdate": "2026-08-07",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1316,87 +1316,87 @@
     "lastUpdate": "2026-08-05"
   },
   "polymarketComparison": {
-    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA DEL 6/Ago, DE LAS 20:44 UTC. AFOS solo publica precio que dos lecturas independientes confirmen, y esta ronda confirmó todos los libros, incluido el de 3.er lugar de la [primera vuelta](/es/glossary#primeiro-turno), que se movió toda la tarde y solo ahora se estabilizó. El precio de Renan Santos allí cayó cuatro escalones seguidos, de 57,50% a 56,00%, mientras el de Caiado subió de 25,00% el 3/Ago a 35,50%: el contrato está transfiriendo la probabilidad de 3.er lugar de un nombre al otro. EL LADO DE LA URNA NO ES DE HOY: no hay encuesta nacional nueva desde el 5/Ago, cuando salieron Genial/[Quaest](/es/glossary#quaest) y Meio/Ideia. Las cuatro nacionales en campo terminan entre el 9 y el 10/Ago.",
-    "sources": "Precios de [Polymarket](/es/glossary#polymarket) vía el proxy de AFOS, captura trabada de las 19:11 UTC del 03/Ago (scripts/capture-guard.ts). No hay lectura de mercado confirmada el 04 y el 05/Ago. Encuestas: Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, ambas del 05/Ago, campo del 31/Jul al 03/Ago, divulgadas por G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Exame, Gazeta do Povo y JOTA. Barrido del TSE del 05/Ago: 537 registros, ninguno insertado nuevo.",
+    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA DEL 7/Ago, DE LAS 19:44 UTC. AFOS solo publica precio que dos lecturas independientes confirmen, tomadas con ocho minutos de intervalo. LA BRECHA DE LULA SOBRE FLÁVIO SE REDUJO POR SEXTO DÍA CONSECUTIVO, de +41,80pp el 1/Ago a +37,55pp hoy, y la causa está en un solo extremo: Flávio subió de 24,70% a 26,95% en el período y Lula sigue estancado en 64,50% desde el 4/Ago. EL MAYOR MOVIMIENTO DEL DÍA NO FUE EN EL CONTRATO DE GANADOR: el de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) cayó 4,50pp para Flávio, de 87,50% a 83,00%, mientras su precio de ganador subía. En el de tercer lugar hubo un intercambio en espejo, con Renan Santos subiendo 2,50pp, a 58,50%, y Caiado cayendo 2,00pp, a 33,50%, lo inverso exacto de lo que ambos hicieron el 6/Ago. EL LADO DE LAS ENCUESTAS NO ES DE HOY: no hay encuesta nacional nueva desde el 5/Ago, cuando salieron [Genial/Quaest](/es/glossary#quaest) y Meio/Ideia. Cinco encuestas nacionales están registradas en el [TSE](/es/glossary#tse) para el 10 y el 11/Ago, y cuatro de ellas seguían en campo este viernes.",
+    "sources": "Precios de [Polymarket](/es/glossary#polymarket) vía el proxy de AFOS, captura confirmada por dos lecturas, la más reciente a las 19:44 UTC del 7/Ago (scripts/capture-guard.ts). Encuestas: Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, ambas del 5/Ago, campo del 31/Jul al 3/Ago, divulgadas por G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Exame, Gazeta do Povo y JOTA. Cruces de Genial/Quaest divulgados el 6 y el 7/Ago por Folha de S.Paulo, Estadão y G1. Barrido del TSE del 7/Ago: 559 registros, ninguno insertado nuevo, 11 nacionales en la ventana de 15 días y cinco de ellas con divulgación prevista para el 10 y el 11/Ago.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "39-46%",
         "polymarket": "64,50%",
-        "tendenciaPesquisa": "DOS ENCUESTAS NACIONALES NUEVAS HOY, las dos con él al frente en todos los escenarios. [Genial/Quaest](/es/glossary#quaest) (n=2.004, campo del 31/Jul al 03/Ago, presencial, margen 2pp, BR-06591/2026): 39% en la [1ª vuelta](/es/glossary#primeiro-turno) y 44% x 39% en la [segunda vuelta](/es/glossary#segundo-turno) contra Flávio, venciendo también a Zema por 46% x 34%, a Caiado por 45% x 37% y a Renan Santos por 45% x 35%. Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026): 43% en la 1ª vuelta y 48,5% x 43% en la segunda, ganando los cuatro escenarios. DENTRO DE LA CASA, que es la comparación válida: en Quaest cede 1pp en la 1ª vuelta, de 40% a 39%, y 1pp en la segunda, de 45% a 44%, las dos dentro del margen de 2pp; en Ideia SUBE, de 40,4% a 43%. Las dos casas le dan movimientos de signo contrario en la misma ventana de campo, lo que es información sobre método y no sobre el electorado. APROBACIÓN en 48% contra 47% en Quaest, número idéntico al de su propia ronda del 15/Jul, con la gestión repitiendo 36% positiva, 26% regular y 36% negativa.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 64,50% (vol USD 8,09M acumulado). Cayó 1,00pp contra la lectura del 3/Ago. La brecha sobre Flávio pasó de +40,05pp a +37,65pp, quinto día seguido de estrechamiento desde el máximo de +41,80pp del 1/Ago. En la serie de 88 días su techo es 66,50%, del 1/Ago.",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes las dos del 5/Ago: [Genial/Quaest](/es/glossary#quaest) (n=2.004, campo del 31/Jul al 3/Ago, presencial, margen 2pp, BR-06591/2026) con 39% en la [primera vuelta](/es/glossary#primeiro-turno) y 44% x 39% en el balotaje contra Flávio, ganando también a Zema por 46% x 34%, a Caiado por 45% x 37% y a Renan Santos por 45% x 35%; y Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026) con 43% y 48,5% x 43%, ganando los cuatro escenarios. LO QUE LLEGÓ NUEVO FUERON LOS CRUCES de Quaest, divulgados el 6 y el 7/Ago: lidera entre los mayores, entre los católicos y entre quienes no tienen religión, y abre más de 16 puntos de ventaja entre las mujeres. La misma ronda midió que el apoyo declarado de Trump a su rival NO amplía la intención de voto. La APROBACIÓN sigue en 48% contra 47% en Quaest, con la gestión en 36% positiva, 26% regular y 36% negativa.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 64,50% (vol USD 8,11M acumulado). ESTANCADO en el mismo valor por cuarto día consecutivo, del 4 al 7/Ago. La brecha sobre Flávio pasó de +37,65pp a +37,55pp, sexto estrechamiento consecutivo desde el máximo de +41,80pp del 1/Ago, y en este tramo final el estrechamiento entero viene de la subida del otro. En la serie de 88 días, del 10/May a hoy, su techo es 66,50%, del 1/Ago, y solo 8 de los 88 días tuvieron valor igual o mayor que el actual.",
         "odds": 64.5,
         "percentage": 39,
-        "lastUpdate": "2026-08-06",
+        "lastUpdate": "2026-08-07",
         "value": 64.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "30-39%",
-        "polymarket": "26,85%",
-        "tendenciaPesquisa": "LAS DOS ENCUESTAS NACIONALES DE HOY lo ponen en alza dentro de su propia casa. En [Genial/Quaest](/es/glossary#quaest) va de 28% a 30% en la [1ª vuelta](/es/glossary#primeiro-turno) y de 37% a 39% en la [segunda vuelta](/es/glossary#segundo-turno), alza de 2pp en cada una, lo que queda en el límite del margen de 2pp y por lo tanto no se separa del ruido con seguridad. En Meio/Ideia va de 32% a 35% en la 1ª vuelta y de 40% a 43% en la segunda, alza de 3pp, por encima del margen de 2,5pp. La diferencia contra Lula queda en 9pp en Quaest y 8pp en Ideia, contra los 4pp que [BTG/Nexus](/es/glossary#nexus-btg) midió el 03/Ago: el nivel de 4pp sigue siendo de una sola casa, y lo que las dos rondas de hoy confirman es la DIRECCIÓN, no el nivel. RECHAZO en la ronda de Quaest: 54% dice que no votaría por él y 41% sí. Lula tiene 52% de rechazo y 45% de intención. Entre los DOS PRIMEROS COLOCADOS de esta ronda, que son los únicos cuyos números de rechazo fueron divulgados, el de él es el más alto. La ronda no publicó rechazo de los demás nombres, así que el panel no extiende la comparación al resto del campo.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 26,85% (vol USD 8,05M acumulado). Subió 1,40pp contra la lectura del 3/Ago y volvió al nivel de aquel día. No es extremo: 34 de los 88 días de la serie tuvieron valor igual o mayor, con techo de 43,30% el 9/May y piso de 22,00% el 3/Jul. En el contrato de 2.º lugar está en 87,50%, contra 80,50% el 3/Ago.",
-        "odds": 26.85,
+        "polymarket": "26,95%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes los 30% en la [primera vuelta](/es/glossary#primeiro-turno) de [Genial/Quaest](/es/glossary#quaest), contra 28% en la propia ronda del 15/Jul de esa casa, y los 35% de Meio/Ideia, contra 32% en su propia ronda del 8/Jul, con balotajes de 39% y 43%. La brecha contra Lula queda en 9pp en Quaest y 8pp en Ideia, contra los 4pp de [BTG/Nexus](/es/glossary#nexus-btg) del 3/Ago: el nivel de 4pp sigue siendo de una sola casa. EN LOS CRUCES divulgados el 6 y el 7/Ago gana entre los evangélicos, y es el único segmento grande en el que aparece por delante. El RECHAZO sigue en 54%, contra 52% de Lula, y entre los dos primeros, los únicos con rechazo divulgado en esa ronda, el suyo es el más alto.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 26,95% (vol USD 8,08M acumulado). Subió 0,10pp contra el 6/Ago y completó seis días de acercamiento, de 24,70% el 1/Ago a 26,95% hoy. No es extremo: 28 de los 88 días de la serie tuvieron valor igual o mayor, con techo de 43,30% el 12/May y piso de 22,00% el 3/Jul. EN EL CONTRATO DE SEGUNDO LUGAR CAYÓ 4,50pp, de 87,50% a 83,00%, el mayor movimiento del panel desde la lectura del 6/Ago.",
+        "odds": 26.95,
         "percentage": 30,
-        "lastUpdate": "2026-08-06",
-        "value": 26.85
+        "lastUpdate": "2026-08-07",
+        "value": 26.95
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-4,7%",
-        "polymarket": "6,90%",
-        "tendenciaPesquisa": "Las dos encuestas nacionales de hoy lo miden en la misma franja estrecha: 4% en [Genial/Quaest](/es/glossary#quaest), contra 3% en su propia ronda del 15/Jul, y 4,7% en Meio/Ideia, contra 2% en su propia ronda del 08/Jul. En las segundas vueltas es el peor colocado de las dos rondas: pierde contra Lula por 45% x 35% en Quaest y por 48% x 34,7% en Ideia. Con eso, seis encuestas nacionales seguidas lo miden entre 3% y 4,7%, después del 7,8% de [AtlasIntel](/es/glossary#atlasintel) del 29/Jul, y la lectura aislada alta sigue siendo la excepción del conjunto. Declaró este miércoles que, si es elegido, no cumplirá decisiones monocráticas del [STF](/es/glossary#stf) y que va a pactar con el Centrão.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 6,90% (vol USD 9,10M acumulado). Cayó 0,55pp contra la lectura del 3/Ago. En el contrato de 3.er lugar de la [primera vuelta](/es/glossary#primeiro-turno) está en 56,00%, confirmado por dos lecturas, tras caer cuatro escalones seguidos desde 57,50% en la tarde de hoy.",
-        "odds": 6.9,
+        "polymarket": "7,25%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes los 4% de [Genial/Quaest](/es/glossary#quaest), contra 3% en la propia ronda del 15/Jul de esa casa, y los 4,7% de Meio/Ideia, contra 2% en su propia ronda del 8/Jul. En los balotajes es el peor colocado de las dos rondas: pierde ante Lula por 45% x 35% en Quaest y por 48% x 34,7% en Ideia. Con eso, seis nacionales seguidas lo miden entre 3% y 4,7%, después del 7,8% de [AtlasIntel](/es/glossary#atlasintel) del 29/Jul, y la lectura aislada alta sigue siendo la excepción del conjunto.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 7,25% (vol USD 9,19M acumulado). Subió 0,35pp contra el 6/Ago, y en el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 2,50pp, de 56,00% a 58,50%. Con las encuestas estancadas entre 4% y 4,7%, la distancia entre precio e intención declarada AUMENTÓ hoy, yendo de 2,55pp a 3,25pp, siempre del lado del precio. En la serie de 88 días su máximo es 17,90% y su mínimo 5,50%.",
+        "odds": 7.25,
         "percentage": 4,
-        "lastUpdate": "2026-08-06",
-        "value": 6.9
+        "lastUpdate": "2026-08-07",
+        "value": 7.25
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5,7%",
-        "polymarket": "1,85%",
-        "tendenciaPesquisa": "[Genial/Quaest](/es/glossary#quaest) da 4% en la [1ª vuelta](/es/glossary#primeiro-turno), lo mismo que su propia ronda del 15/Jul, y Meio/Ideia da 5,7%, contra 4% en su propia ronda del 08/Jul. En las segundas vueltas pierde contra Lula por 45% x 37% en Quaest y por 48,5% x 40% en Ideia. La discrepancia entre casas sobre él sigue abierta dentro de la misma ventana de campo: 4% en una casa y 5,7% en la otra, con las dos con campo del 31/Jul al 03/Ago. Ironizó sobre Lula y Flávio este miércoles, diciendo que los dos están más preocupados por salvar a la familia que al país.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 1,85% (vol USD 5,56M acumulado). Subió 0,70pp contra la lectura del 3/Ago. En el contrato de 3.er lugar de la primera vuelta pasó de 25,00% a 35,50%, alza de 10,50pp.",
-        "odds": 1.85,
+        "polymarket": "1,55%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes los 4% de [Genial/Quaest](/es/glossary#quaest), lo mismo que en su propia ronda del 15/Jul, y los 5,7% de Meio/Ideia, contra 4% en su propia ronda del 8/Jul. En los balotajes pierde ante Lula por 45% x 37% en Quaest y por 48,5% x 40% en Ideia. La divergencia entre institutos sobre él sigue abierta dentro de la misma ventana de campo: 4% en una casa y 5,7% en la otra, con ambas recogiendo del 31/Jul al 3/Ago. Su campaña anunció que Roberto Azevêdo coordinará el área internacional.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 1,55% (vol USD 5,58M acumulado). CAYÓ en los dos libros: 0,30pp en el presidencial y 2,00pp en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), de 35,50% a 33,50%. Esa caída es el espejo exacto de la subida de Renan Santos en el mismo contrato, lo que describe una transferencia entre los dos nombres y no un movimiento del pelotón.",
+        "odds": 1.55,
         "percentage": 4,
-        "lastUpdate": "2026-08-06",
-        "value": 1.85
+        "lastUpdate": "2026-08-07",
+        "value": 1.55
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "Ni [Genial/Quaest](/es/glossary#quaest) ni Meio/Ideia lo prueban en ningún escenario presidencial, de 1ª vuelta o de segunda. La ausencia de prueba en dos encuestas nacionales el mismo día es información que el panel registra, en vez de repetir un dato antiguo como si fuera nuevo. Él disputa la REELECCIÓN al gobierno de São Paulo, oficializada por [Republicanos](/es/glossary#republicanos) el 01/Ago.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 0,05% (vol USD 13,87M acumulado), sin variación contra la lectura del 3/Ago. Sigue siendo la anomalía heredada del libro presidencial: el mayor volumen acumulado de todos y el menor precio entre los nombres citados. El volumen mide historia negociada, no convicción actual.",
+        "tendenciaPesquisa": "Ni [Genial/Quaest](/es/glossary#quaest) ni Meio/Ideia lo prueban en ningún escenario presidencial, de [primera vuelta](/es/glossary#primeiro-turno) o de balotaje, y no hay encuesta nacional nueva desde entonces. La ausencia de prueba es información que el panel registra, en vez de repetir dato viejo como si fuera nuevo. Disputa la REELECCIÓN al gobierno de São Paulo, oficializada por [Republicanos](/es/glossary#republicanos) el 1/Ago.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 0,05% (vol USD 13,87M acumulado). Sin variación contra el 6/Ago. El nivel es lo bastante bajo para que las variaciones en esta banda tengan valor informativo casi nulo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-06",
+        "lastUpdate": "2026-08-07",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-2,6%",
         "polymarket": "0,45%",
-        "tendenciaPesquisa": "[Genial/Quaest](/es/glossary#quaest) da 2% en la [1ª vuelta](/es/glossary#primeiro-turno), lo mismo que su propia ronda del 15/Jul, y Meio/Ideia da 2,6%, contra 2,5% en su propia ronda del 08/Jul. En las segundas vueltas es el adversario al que Lula vence con más holgura en Quaest, por 46% x 34%, y pierde por 48,5% x 37% en Ideia. En las urnas está estancado en las dos casas. Cerró fórmula el 04/Ago con el senador Eduardo Girão, del [Novo](/es/glossary#novo), y fue el primero de los nombres de la tercera vía en resolver la vicepresidencia.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 0,45% (vol USD 4,82M acumulado). Subió 0,20pp contra la lectura del 3/Ago, lo que en esta franja tiene valor informativo casi nulo. Salvedad de serie que sigue valiendo: su máximo es 10,10%, del 26/Abr.",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes los 2% de [Genial/Quaest](/es/glossary#quaest), lo mismo que en su propia ronda del 15/Jul, y los 2,6% de Meio/Ideia, contra 2,5% en su propia ronda del 8/Jul. En los balotajes es el rival al que Lula gana con más holgura en Quaest, por 46% x 34%, y pierde por 48,5% x 37% en Ideia. FUE EL PRIMER PRESIDENCIABLE EN REGISTRAR CANDIDATURA, el 7/Ago, declarando R$ 178,7 millones de patrimonio, en un plazo que va hasta el 15/Ago. Ese mismo día, Nikolas Ferreira empezó a intentar convencerlo de cambiar la carrera presidencial por el Senado.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 0,45% (vol USD 4,83M acumulado). Estancado en el mismo valor del 6/Ago, y en esta banda las variaciones tienen valor informativo casi nulo. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) está en 3,70%. La salvedad de serie sigue vigente: su máximo fue 10,10%, el 26/Abr.",
         "odds": 0.45,
         "percentage": 2,
-        "lastUpdate": "2026-08-06",
+        "lastUpdate": "2026-08-07",
         "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "Ni [Genial/Quaest](/es/glossary#quaest) ni Meio/Ideia lo prueban en ningún escenario, de 1ª vuelta o de segunda, así que sigue sin urnas. La reserva permanece y hay que decirla con claridad: él NO es candidato a la Presidencia, disputa el gobierno de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta, no candidatura en curso.",
-        "tendenciaPolymarket": "[lectura del 6/Ago, 20:44 UTC] En 0,15% (vol USD 6,74M acumulado), sin variación contra la lectura del 3/Ago. No es candidato, así que el contrato descuenta un escenario de sustitución en la fórmula del PT y no una disputa en curso.",
+        "tendenciaPesquisa": "Ni [Genial/Quaest](/es/glossary#quaest) ni Meio/Ideia lo prueban en ningún escenario, de [primera vuelta](/es/glossary#primeiro-turno) o de balotaje, y no hay encuesta nacional nueva desde entonces, así que sigue sin encuestas propias. El agravante permanece y hay que decirlo con claridad: NO es candidato a la Presidencia, disputa el gobierno de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta, no candidatura en curso.",
+        "tendenciaPolymarket": "[lectura del 7/Ago, 19:44 UTC] En 0,15% (vol USD 6,77M acumulado). Sin variación contra el 6/Ago. El nivel es lo bastante bajo para que las variaciones en esta banda tengan valor informativo casi nulo.",
         "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-08-06",
+        "lastUpdate": "2026-08-07",
         "value": 0.15
       }
     ],
-    "updatedAt": "06/08/2026, 20:44 UTC"
+    "updatedAt": "07/08/2026, 19:44 UTC"
   }
 }

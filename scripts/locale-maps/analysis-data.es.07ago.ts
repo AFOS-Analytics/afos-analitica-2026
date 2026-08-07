@@ -1,0 +1,85 @@
+/**
+ * Mapa ES de 07/Ago para analysis-data.json.
+ * Convenções: vírgula decimal e ponto de milhar, como o pt. Datas "7/Ago".
+ * "pesquisa" vira "encuesta". "parado" vira "estancado". "precificar" vira "descontar".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1':
+    `A 58 días de la ${G('primera vuelta', 'primeiro-turno')}, el día fue de mercado y de tablero, no de urnas. No salió encuesta nacional nueva: siguen vigentes ${G('Genial/Quaest', 'quaest')} (n=2.004, presencial, margen 2pp, BR-06591/2026) con 39% x 30% en la primera vuelta y 44% x 39% en el balotaje, y Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026) con 43% x 35% y 48,5% x 43%, ambas del 5/Ago.`,
+
+  'cards.sentimento.text2':
+    `LA BRECHA DE MERCADO SE REDUJO POR SEXTO DÍA CONSECUTIVO, Y LA CAUSA ESTÁ EN UN SOLO EXTREMO. La secuencia desde el máximo es 41,80pp el 1/Ago, 40,90pp, 38,90pp, 38,60pp, 38,50pp, 37,90pp y 37,55pp hoy. En esos seis días Flávio pasó de 24,70% a 26,95% y Lula sigue estancado en 64,50% desde el 4/Ago. El estrechamiento del tramo final es subida del segundo, no caída del primero, y eso difiere de la primera mitad del movimiento, cuando Lula bajó de 66,50% a 64,50%.`,
+
+  'cards.sentimento.text3':
+    `LOS CRUCES DE QUAEST DIVULGADOS EL 6 Y EL 7/Ago DIBUJAN LA GEOGRAFÍA DEL VOTO. Lula lidera entre los mayores, entre los católicos y entre quienes no tienen religión, y abre más de 16 puntos de ventaja entre las mujeres. Flávio gana entre los evangélicos, y es el único segmento grande en el que aparece por delante (Folha de S.Paulo, Estadão y Revista Fórum, 7/Ago). La misma ronda midió que el apoyo declarado de Trump a Flávio NO amplía la intención de voto para él, y registró mayoría a favor de la independencia frente a Estados Unidos.`,
+
+  'cards.sentimento.direita':
+    `EL COMPAÑERO DE FÓRMULA SE CONVIRTIÓ EN EL PROBLEMA DE LA SEMANA DE FLÁVIO. La defensa de Alfredo Gaspar pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas para descartar una acusación de violación (Folha de S.Paulo, 6/Ago). El ${G('PL', 'pl')} dejó una rendija para que vuelva a disputar el Senado (Pleno.News, 7/Ago). O Globo reveló el 7/Ago que la elección fue de última hora, sin llamada del propio candidato y con vuelo de madrugada, y usó la expresión candidatura de fachada para describir el registro anterior del diputado. El propio Flávio dijo el 6/Ago que intentó tener una mujer como compañera de fórmula y que Gaspar entró a última hora, atribuyendo la falla a los caciques del ${G('Centrão', 'centrao')}. Y Dino ordenó a la ${G('PF', 'pf')} investigar indicios de delito en enmiendas Pix señaladas por el TCU, con una transferencia hecha por el compañero de fórmula en la lista.`,
+
+  'cards.sentimento.esquerda':
+    `EL RIESGO DEL DÍA CONTRA LULA ES JUDICIAL Y ES SOBRE EL HIJO. Estadão publicó el 7/Ago la reconstrucción del día en que la PF sospechó de los negocios de Fábio Luís Lula da Silva, la PF va a citar a un exjefe de gabinete del presidente para declarar sobre transferencias de un lobista, y la campaña rival evalúa llevar el caso al estreno del espacio electoral gratuito. En las encuestas nada cambió: aprobación en 48% contra 47% en Quaest, y gana los ocho escenarios de balotaje de las dos rondas vigentes. En el Congreso, el gobierno espera para el lunes la conversación entre él y Alcolumbre, y el fin de la jornada 6x1 ya quedó para después de la elección.`,
+
+  'cards.sentimento.terceiraVia':
+    `EL ESPACIO ENTRÓ EN LA FASE DE REGISTRO Y ZEMA FUE EL PRIMERO EN PRESENTARLO, el 7/Ago, declarando R$ 178,7 millones de patrimonio (Money Times y VEJA, 7/Ago), en un plazo que solo cierra el 15/Ago. Ese mismo día llamó al Poder Judicial un poder incendiario, después de una entrevista con g1 y GloboNews el 6/Ago en la que defendió privatizarlo todo empezando por Petrobras. Y, el mismo día en que se registró, apareció la noticia de que Nikolas Ferreira intenta convencerlo de abandonar la carrera presidencial y disputar el Senado. En las encuestas nada se movió: Caiado sigue con 4% en Quaest y 5,7% en Ideia, Renan Santos con 4% y 4,7%, Zema con 2% y 2,6%.`,
+
+  'cards.sentimento.polymarket':
+    `Precios de la lectura del 7/Ago, de las 19:44 UTC: Lula 64,50% (vol USD 8,11M acumulado), Flávio 26,95% (vol USD 8,08M), Renan Santos 7,25% (vol USD 9,19M), Caiado 1,55% (vol USD 5,58M), Zema 0,45% (vol USD 4,83M), Haddad 0,15% (vol USD 6,77M), destitución en el STF 3,10% (vol USD 83 mil). Volumen total del libro presidencial en USD 120,64M. Brecha de Lula sobre Flávio en +37,55pp, el sexto estrechamiento consecutivo desde los +41,80pp del 1/Ago. AFOS solo publica precio que dos lecturas independientes confirmen, tomadas con ocho minutos de intervalo, y la que vale es siempre la más reciente. EL MOVIMIENTO MAYOR DEL DÍA NO FUE EN EL CONTRATO DE GANADOR: el de segundo lugar de la ${G('primera vuelta', 'primeiro-turno')} cayó 4,50pp para Flávio, de 87,50% a 83,00%, mientras su precio de ganador subía. En el de tercer lugar hubo un intercambio en espejo, con Renan Santos subiendo 2,50pp, a 58,50%, y Caiado cayendo 2,00pp, a 33,50%, lo inverso exacto de lo que ambos hicieron el 6/Ago.`,
+
+  'cards.inss.text1':
+    `El ${G('INSS', 'inss')} tuvo hecho propio hoy, y no solo electoral. La ${G('PF', 'pf')} imputó a seis personas en la segunda investigación sobre descuentos ilegales en jubilaciones (Folha de S.Paulo, 6/Ago). Y el caso sigue siendo el eje declarado de la campaña rival, porque el compañero de fórmula de Flávio Bolsonaro es Alfredo Gaspar, relator de la comisión parlamentaria mixta de investigación del INSS.`,
+
+  'cards.inss.text2':
+    `LA ELECCIÓN DEL COMPAÑERO DE FÓRMULA PASÓ DE APUESTA A PASIVO EN DOS DÍAS. La defensa de Gaspar pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas para descartar una acusación de violación. El ${G('PL', 'pl')} dejó una rendija para que vuelva a disputar el Senado. O Globo reveló que la designación fue de última hora, sin llamada del propio Flávio y con vuelo de madrugada. Y Dino ordenó a la PF investigar indicios de delito en enmiendas Pix señaladas por el TCU, con una transferencia hecha por él en la lista.`,
+
+  'cards.inss.text3':
+    `LA APROBACIÓN DEL GOBIERNO NO TIENE MEDICIÓN NUEVA. Siguen vigentes ${G('Genial/Quaest', 'quaest')} del 5/Ago, con 48% x 47% y la gestión en 36% positiva, 26% regular y 36% negativa, Meio/Ideia de la misma ventana, con 48,5% x 49%, y ${G('BTG/Nexus', 'nexus-btg')} del 3/Ago, con 47% x 48%. Las tres quedan dentro de cualquier margen una de otra, y por eso el signo del saldo depende de la casa. PoderData/Aya del 30/Jul sigue con el cuadro más duro del recorte, 43% x 49%.`,
+
+  'cards.inss.text4':
+    `Los números de mercado de este panel son de la lectura del 7/Ago a las 19:44 UTC. El Senado tiene al ${G('PL', 'pl')} en 73,00% (vol USD 259 mil), contra 75,00% en la lectura del 3/Ago, y al ${G('MDB', 'mdb')} en 18,70%. El contrato de inflación anual de 2026 no entra en la confirmación por dos lecturas, así que el panel publica el REPARTO DEL LIBRO en vez de tratar cada banda como probabilidad: la banda de 5,00% a 5,49% concentra 43,5% del libro, la de 5,50% a 5,99% concentra 22,5% y la de 4,50% a 4,99% concentra 19,3%. Las bandas suman 104,85% en precio bruto, y por eso la lectura correcta allí es participación, no probabilidad.`,
+
+  'cards.inss.impactoLula':
+    `Sin medición nueva de aprobación. Siguen vigentes los 48% contra 47% de la Quaest del 5/Ago, con 5% sin respuesta, y lo relevante sigue siendo que ese número repetía el de su propia ronda del 15/Jul en los dos indicadores. En las encuestas, Lula lidera los cuatro escenarios de balotaje de las dos rondas vigentes y gana a Zema, Caiado y Renan Santos en todos.`,
+
+  'cards.inss.impactoGestao':
+    `Gestión en 36% positiva, 26% regular y 36% negativa en la Quaest del 5/Ago, reparto idéntico al del 15/Jul. En ${G('BTG/Nexus', 'nexus-btg')} del 3/Ago son 37% de excelente o bueno contra 43% de malo o pésimo. Las dos casas miden la gestión de forma distinta y el panel registra ambas sin arbitrar, porque la comparación válida es de cada casa consigo misma. BTG/Nexus vuelve a campo esta semana, con divulgación prevista para el 10/Ago.`,
+
+  'cards.inss.conclusao':
+    `A 58 días de la elección, el día tuvo precio para los dos lados y mala noticia para los dos lados. La brecha se redujo por sexto día consecutivo, y la causa está en un solo extremo: Flávio subió de 24,70% a 26,95% desde el 1/Ago, mientras Lula sigue estancado en 64,50% desde el 4/Ago. En el noticiero, Flávio recibió golpes por el compañero de fórmula y Lula por el hijo, y el mercado movió 0,10pp en el contrato de ganador. El panel registra los hechos y el tamaño del movimiento, y no afirma que uno explique al otro. LA PRUEBA LLEGA EL LUNES Y EL MARTES: cinco encuestas nacionales están registradas en el ${G('TSE', 'tse')} para el 10 y el 11/Ago, una de ellas con n=5.000, y cuatro de ellas seguían en campo este viernes.`,
+
+  'cards.bancoMaster.text1':
+    `EL HECHO DEL DÍA EN EL ${G('CASO MASTER', 'banco-master')} ES INSTITUCIONAL: la tensión entre la Policía Federal y el ministro André Mendonça, relator de la investigación, llegó al punto de que el ministro de Justicia se ofreciera a mediar un acuerdo entre Mendonça y el director general de la ${G('PF', 'pf')} (noticiero del 7/Ago). El 6/Ago, Mendonça manifestó preocupación por la independencia de la PF en una reunión con el ministro de Justicia, y superintendentes de la corporación salieron en defensa de su dirección.`,
+
+  'cards.bancoMaster.text2':
+    `La declaración de Jaques Wagner ante la PF sobre el caso Master fue APLAZADA a pedido de la defensa, que alegó falta de acceso al expediente (noticiero del 7/Ago). Es el segundo aplazamiento de un acto de instrucción registrado por este panel en esta investigación, y no tiene efecto electoral atribuido.`,
+
+  'cards.bancoMaster.text3':
+    `El recurso de amparo sobre la instalación de la comisión de investigación sigue sin decisión, y la ausencia sigue siendo el registro. En el eje legislativo, Gilmar Mendes propuso una doctrina vinculante para frenar las ${G('pautas-bomba', 'pauta-bomba')} y otros ministros señalaron apoyo (Folha de S.Paulo, 7/Ago), lo que toca el costo fiscal de las decisiones del Congreso y no la investigación.`,
+
+  'cards.bancoMaster.conclusao':
+    `El contrato de destitución de un ministro del ${G('STF', 'stf')} está en 3,10% (vol USD 83 mil) en la lectura del 7/Ago a las 19:44 UTC, contra 2,75% el 6/Ago, una subida de 0,35pp. Es el contrato más fino entre los que el panel publica, con volumen acumulado que no llega a una milésima del libro presidencial, así que los movimientos allí tienen menos lastre que los del presidencial. Queda registrado que la subida ocurrió el mismo día en que la PF y el relator del caso Master entraron en fricción pública. El panel registra la coincidencia de fecha y no afirma causa.`,
+
+  'cards.stf.toffoli':
+    `Toffoli sigue sin acto individual nuevo capturado este viernes.`,
+
+  'cards.stf.moraes':
+    `Moraes tuvo una derrota registrada en el pleno: el ${G('STF', 'stf')} abrió una rendija para beneficiar a acusados del 8 de Enero, en contra de su posición (noticiero del 7/Ago). Sigue vigente el registro del 4/Ago, cuando recibió en su casa el encuentro entre Lula y Alcolumbre, en una cena articulada por él y por Zanin.`,
+
+  'cards.stf.gilmar':
+    `ES EL MINISTRO DEL DÍA EN EL EJE FISCAL. Gilmar Mendes propuso una doctrina vinculante para frenar las ${G('pautas-bomba', 'pauta-bomba')}, y otros ministros señalaron apoyo (Folha de S.Paulo, 7/Ago). La propuesta apunta al costo de las decisiones del Congreso, y no a las investigaciones electorales.`,
+
+  'cards.stf.dino':
+    `Ordenó a la ${G('PF', 'pf')} investigar indicios de delito en enmiendas Pix señaladas por el TCU, y una transferencia hecha por el compañero de fórmula de Flávio Bolsonaro está en la lista (noticiero del 7/Ago). También pidió vista en el juicio sobre juegos de azar, para que el caso se analice junto a las acciones contra las casas de apuestas. Sigue vigente el hito del 4/Ago, cuando autorizó la tercera investigación sobre Fábio Luís Lula da Silva.`,
+
+  'cards.stf.mendonca':
+    `ES EL MINISTRO DEL DÍA EN EL EJE PENAL. Su tensión con la Policía Federal en las investigaciones del ${G('Master', 'banco-master')} y del ${G('INSS', 'inss')} llegó al punto de que el ministro de Justicia se ofreciera a mediar un acuerdo entre él y el director general de la corporación. El 6/Ago manifestó preocupación por la independencia de la PF, y superintendentes salieron en defensa de la dirección del órgano. Sigue siendo relator de la investigación del caso Master.`,
+
+  'cards.stf.nexo':
+    `El hilo de este viernes es que el Poder Judicial apareció en los DOS lados de la disputa el mismo día, y por actos concretos, no por declaraciones. Contra Flávio: Dino ordenó investigar enmiendas Pix con una transferencia del compañero de fórmula en la lista, y la defensa de este tuvo que acudir a la PGR y al ${G('STF', 'stf')} pidiendo examen de ADN en un plazo de 72 horas. Contra Lula: la ${G('PF', 'pf')} va a citar a un exjefe de gabinete suyo para declarar sobre transferencias de un lobista, y el caso del hijo volvió al centro del noticiero. De fondo, la PF y el relator del caso Master entraron en fricción abierta, hasta exigir mediación del ministro de Justicia. En las encuestas, nada de esto tiene medición nueva. En el precio, el contrato de ganador movió 0,10pp.`,
+
+  'cards.stf.analise':
+    `EL CONTRATO DE DESTITUCIÓN SUBIÓ 0,35pp, de 2,75% a 3,10% (vol USD 83 mil), en la lectura del 7/Ago a las 19:44 UTC. El movimiento coincide con el día de mayor fricción pública entre la Policía Federal y el relator del caso ${G('Master', 'banco-master')}, y el panel registra la coincidencia de fecha sin afirmar causa, porque en un contrato con USD 83 mil acumulados la distancia entre movimiento y ruido es corta. La salvedad de siempre sigue vigente y es el motivo de repetirla: este es el contrato más fino entre los que el panel publica, con volumen que no llega a una milésima del libro presidencial, y por eso es el último lugar donde se debe buscar confirmación de una tesis política.`,
+})

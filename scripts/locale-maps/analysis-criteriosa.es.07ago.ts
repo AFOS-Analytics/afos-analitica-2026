@@ -1,0 +1,208 @@
+/**
+ * Mapa ES de 07/Ago para analysis-criteriosa.json.
+ * Convenções: vírgula decimal e ponto de milhar, como o pt. Datas "7/Ago".
+ * "pesquisa" vira "encuesta". "parado" vira "estancado". "urna" vira "encuestas".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-criteriosa', 'es', {
+  subtitle:
+    `ACTUALIZACIÓN 7/Ago 19:44 UTC, a 58 días de la ${G('primera vuelta', 'primeiro-turno')}. EL PRECIO ES DEL DÍA: Lula 64,50%, Flávio 26,95%, brecha de +37,55pp. La brecha se redujo por SEXTO día consecutivo, desde el máximo de +41,80pp del 1/Ago, y los dos extremos lo hicieron solos, porque no hay encuesta nacional nueva: las últimas siguen siendo ${G('Genial/Quaest', 'quaest')} y Meio/Ideia, ambas del 5/Ago. El tablero entró en la fase de REGISTRO, que va hasta el 15/Ago, y Zema fue el primer presidenciable en registrarse, declarando R$ 178,7 millones de patrimonio. Cinco encuestas nacionales están registradas en el ${G('TSE', 'tse')} para el 10 y el 11/Ago.`,
+
+  'candidates[0].header':
+    `PRECIO ESTANCADO Y ENCUESTAS ESTANCADAS: ${G('Polymarket', 'polymarket')} 64,50% (vol USD 8,11M acumulado), de la lectura del 7/Ago a las 19:44 UTC, el mismo valor del 4, el 5 y el 6/Ago. En las encuestas siguen vigentes 39% en la ${G('primera vuelta', 'primeiro-turno')} de Genial/Quaest y 43% en la de Meio/Ideia, con balotajes de 44% x 39% y 48,5% x 43%. APROBACIÓN en 48% contra 47% en Quaest.`,
+
+  'candidates[0].fortes[0]':
+    `Su precio es el único de la cima del libro que no se movió en cuatro días seguidos, quedando en 64,50% del 4 al 7/Ago, mientras el del segundo subía en el mismo intervalo.`,
+  'candidates[0].fortes[1]':
+    `Lidera los DOS escenarios de ${G('primera vuelta', 'primeiro-turno')} vigentes y gana los OCHO escenarios de balotaje de las dos rondas del 5/Ago, sin excepción: 44% x 39%, 46% x 34%, 45% x 37% y 45% x 35% en Quaest, y 48,5% x 43%, 48,5% x 37%, 48,5% x 40% y 48% x 34,7% en Ideia.`,
+  'candidates[0].fortes[2]':
+    `Los cruces de Quaest divulgados el 6 y el 7/Ago lo muestran por delante entre los mayores, entre los católicos y entre quienes no tienen religión, y con más de 16 puntos de ventaja entre las mujeres (Folha de S.Paulo, Estadão y Revista Fórum, 7/Ago).`,
+  'candidates[0].fortes[3]':
+    `La misma ronda midió que el apoyo declarado de Trump a su rival NO amplía la intención de voto para él, y registró mayoría a favor de la independencia frente a Estados Unidos (Quaest, divulgado el 7/Ago).`,
+  'candidates[0].fortes[4]':
+    `Su rechazo es MENOR que el del segundo en la ronda de Quaest: 52% contra 54%, con 45% declarando voto contra 41% de Flávio.`,
+
+  'candidates[0].fracos[0]':
+    `Las investigaciones sobre Fábio Luís Lula da Silva se volvieron el eje del día contra él: Estadão publicó el 7/Ago la reconstrucción del día en que la ${G('PF', 'pf')} sospechó de los negocios del hijo del presidente, y la PF va a citar a un exjefe de gabinete suyo para declarar sobre transferencias de un lobista.`,
+  'candidates[0].fracos[1]':
+    `La campaña del rival evalúa llevar el caso al estreno del espacio electoral gratuito, lo que convierte una investigación en pieza de propaganda antes de cualquier desenlace judicial.`,
+  'candidates[0].fracos[2]':
+    `La brecha de mercado sobre el segundo se redujo por SEXTO día consecutivo, de +41,80pp el 1/Ago a +37,55pp hoy, y el estrechamiento vino entero de la subida del otro, porque su propio precio no se movió.`,
+  'candidates[0].fracos[3]':
+    `En ${G('Genial/Quaest', 'quaest')} CEDIÓ dentro de la propia casa, de 40% a 39% en la ${G('primera vuelta', 'primeiro-turno')} y de 45% a 44% en el balotaje, y la brecha del balotaje cayó de 8pp a 5pp, caída mayor que el margen.`,
+  'candidates[0].fracos[4]':
+    `Ninguna de las dos rondas vigentes lo coloca por encima de 43% en la ${G('primera vuelta', 'primeiro-turno')}, así que la hipótesis de victoria en una sola vuelta sigue sin sustento en los números disponibles.`,
+
+  'candidates[0].analise':
+    `Su día es de precio estancado y encuestas estancadas, con todo el movimiento viniendo del noticiero judicial. EN EL MERCADO está en 64,50% (vol USD 8,11M acumulado), en la lectura del 7/Ago a las 19:44 UTC, y es el CUARTO día seguido en el mismo valor: 4, 5, 6 y 7/Ago cerraron todos en 64,50%. Eso importa porque la brecha sobre Flávio se redujo en esos mismos días, lo que significa que el estrechamiento no es caída suya, es subida del otro. En la serie de 88 días, del 10/May a hoy, su techo sigue siendo 66,50%, del cierre del 1/Ago, y solo 8 de los 88 días tuvieron valor igual o mayor que el 64,50% actual. EN LAS ENCUESTAS nada cambió, porque no salió encuesta nacional nueva: valen ${G('Genial/Quaest', 'quaest')} (n=2.004, campo del 31/Jul al 3/Ago, presencial en 120 municipios, margen 2pp, BR-06591/2026) con 39% y balotaje de 44% x 39%, y Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026) con 43% y 48,5% x 43%. LO QUE LLEGÓ NUEVO FUERON LOS CRUCES de Quaest, publicados el 6 y el 7/Ago, y describen dónde está fuerte cada uno: lidera entre los mayores, entre los católicos y entre quienes no tienen religión, y abre más de 16 puntos entre las mujeres; el rival gana entre los evangélicos. La misma ronda midió que el apoyo declarado de Trump al rival no amplía la intención de voto, y que la mayoría quiere independencia frente a Estados Unidos. EL RIESGO DEL DÍA ES JUDICIAL Y ES SOBRE EL HIJO. Estadão publicó la reconstrucción del día en que la PF sospechó de los negocios de Fábio Luís, la PF va a citar a un exjefe de gabinete del presidente para declarar sobre transferencias de un lobista, y la campaña rival evalúa llevar el asunto al estreno del espacio electoral gratuito. El panel registra que ocurrió y no estima efecto: su precio no se movió hoy, y atribuir la inmovilidad a una causa sería inventar una relación que el dato no muestra. EN EL CONGRESO, el gobierno espera para el lunes la conversación entre él y Alcolumbre, y el fin de la jornada 6x1 ya quedó para después de la elección.`,
+
+  'candidates[1].header':
+    `SUBIÓ DE NUEVO EN EL PRECIO: ${G('Polymarket', 'polymarket')} 26,95% (vol USD 8,08M acumulado), lectura del 7/Ago a las 19:44 UTC, contra 26,85% el 6/Ago. Es el sexto día seguido de acercamiento. Pero el contrato de segundo lugar ANDUVO EN DIRECCIÓN CONTRARIA, de 87,50% a 83,00%. En las encuestas siguen vigentes 30% en Quaest y 35% en Ideia.`,
+
+  'candidates[1].fortes[0]':
+    `Es el extremo que produjo el estrechamiento de la brecha: en seis días pasó de 24,70% el 1/Ago a 26,95% hoy, mientras el precio de Lula quedó estancado en los últimos cuatro.`,
+  'candidates[1].fortes[1]':
+    `Gana entre los evangélicos en los cruces de ${G('Genial/Quaest', 'quaest')} divulgados el 6 y el 7/Ago, y es el único segmento grande en el que aparece por delante (Estadão, 7/Ago).`,
+  'candidates[1].fortes[2]':
+    `En las dos nacionales vigentes SUBIÓ dentro de la propia serie: de 28% a 30% en Quaest y de 32% a 35% en Ideia, y de 37% a 39% y de 40% a 43% en los respectivos balotajes.`,
+  'candidates[1].fortes[3]':
+    `Sigue siendo favorito holgado del contrato de segundo lugar de la ${G('primera vuelta', 'primeiro-turno')}, con 83,00% (vol USD 237 mil), lo que describe un balotaje que el mercado trata como casi seguro.`,
+  'candidates[1].fortes[4]':
+    `La fórmula está cerrada y el plazo de convenciones pasó, así que entra en la fase de registro sin el pendiente que cargó todo julio.`,
+
+  'candidates[1].fracos[0]':
+    `EL CONTRATO DE SEGUNDO LUGAR CAYÓ 4,50pp EN UN DÍA, de 87,50% el 6/Ago a 83,00% hoy, y es el mayor movimiento del panel desde la lectura del 6/Ago. El precio de ganador subió y el de segundo lugar cayó el mismo día.`,
+  'candidates[1].fracos[1]':
+    `EL COMPAÑERO DE FÓRMULA SE VOLVIÓ EL PROBLEMA DE LA SEMANA. La defensa de Alfredo Gaspar pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas para descartar una acusación de violación (Folha de S.Paulo, 6/Ago), y el ${G('PL', 'pl')} dejó una rendija para que vuelva a disputar el Senado (Pleno.News, 7/Ago).`,
+  'candidates[1].fracos[2]':
+    `O Globo reveló el 7/Ago que la elección fue de última hora, sin llamada del propio candidato y con vuelo de madrugada, y usó la expresión candidatura de fachada para describir el registro anterior de Gaspar.`,
+  'candidates[1].fracos[3]':
+    `Él mismo dijo el 6/Ago que INTENTÓ tener una mujer como compañera de fórmula y que Gaspar fue elegido a última hora, atribuyendo la falla a los caciques del ${G('Centrão', 'centrao')} (Folha de S.Paulo, 6/Ago).`,
+  'candidates[1].fracos[4]':
+    `Dino ordenó a la ${G('PF', 'pf')} investigar indicios de delito en enmiendas Pix señaladas por el TCU, y una transferencia hecha por su compañero de fórmula está en la lista (noticiero del 7/Ago).`,
+  'candidates[1].fracos[5]':
+    `El rechazo sigue siendo el número más duro: 54% dicen que no votarían por él en Quaest, contra 52% de Lula, y pierde los OCHO escenarios de balotaje de las dos rondas vigentes.`,
+
+  'candidates[1].analise':
+    `Su día tiene dos precios andando hacia lados opuestos, y esa es la información. EN EL CONTRATO DE GANADOR subió de nuevo, a 26,95% (vol USD 8,08M acumulado) en la lectura del 7/Ago a las 19:44 UTC, contra 26,85% el 6/Ago. Sumando desde el 1/Ago, salió de 24,70% y llegó a 26,95%, y es esa subida, y no una caída de Lula, la que produjo SEIS días seguidos de brecha reduciéndose, de +41,80pp a +37,55pp. EN EL CONTRATO DE SEGUNDO LUGAR DE LA ${G('PRIMERA VUELTA', 'primeiro-turno')} fue en dirección contraria y cayó 4,50pp en un día, de 87,50% a 83,00%. Los dos movimientos conviven sin contradicción aritmética, porque ganar posibilidad de vencer quita posibilidad de quedar segundo, pero 4,50pp es el mayor movimiento del panel desde la lectura del 6/Ago y merece decirse con el tamaño que tiene. LO QUE LLENÓ EL NOTICIERO FUE EL COMPAÑERO DE FÓRMULA, y el balance es malo para la campaña. La defensa de Alfredo Gaspar pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas para descartar una acusación de violación. El ${G('PL', 'pl')} dejó una rendija para que vuelva a disputar el Senado. O Globo reveló que la elección fue de última hora, sin llamada del propio Flávio y con vuelo de madrugada, y describió como candidatura de fachada el registro anterior del diputado. El propio Flávio dijo que intentó tener una mujer como compañera de fórmula y que Gaspar entró a última hora, atribuyendo la falla a los caciques del ${G('Centrão', 'centrao')}. Y Dino ordenó a la ${G('PF', 'pf')} investigar indicios de delito en enmiendas Pix señaladas por el TCU, con una transferencia hecha por el compañero de fórmula en la lista. EN LAS ENCUESTAS nada cambió, porque no hay encuesta nacional nueva: valen los 30% de Quaest y los 35% de Ideia, y los cruces divulgados en los dos últimos días muestran que el segmento en el que gana es el evangélico. EL CUADRO DE LAS NACIONALES desde el 29/Jul sigue igual: ${G('AtlasIntel', 'atlasintel')} 9,1pp, PoderData 6pp, Vox Brasil 9,3pp, ${G('Nexus', 'nexus-btg')} 4pp, Quaest 9pp e Ideia 8pp. Las cinco rondas registradas para el 10 y el 11/Ago son la próxima prueba de ese cuadro.`,
+
+  'candidates[2].header':
+    `SUBIÓ EN LOS DOS LIBROS: presidencial en 7,25% (vol USD 9,19M acumulado) en la lectura del 7/Ago a las 19:44 UTC, contra 6,90% el 6/Ago, y tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} en 58,50%, contra 56,00%. En las encuestas siguen vigentes 4% en Quaest y 4,7% en Ideia, así que la distancia entre el precio y la intención declarada AUMENTÓ hoy.`,
+
+  'candidates[2].fortes[0]':
+    `Subió 0,35pp en el contrato presidencial y 2,50pp en el de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')}, los dos en la misma dirección, lo que es raro en un libro fino.`,
+  'candidates[2].fortes[1]':
+    `Sigue siendo el favorito del contrato de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')}, con 58,50% (vol USD 176 mil), por delante del 33,50% de Caiado.`,
+  'candidates[2].fortes[2]':
+    `Tiene el mayor volumen acumulado del libro presidencial entre los nombres con precio por encima de 1%, con USD 9,19M, por encima de los USD 8,11M de Lula.`,
+  'candidates[2].fortes[3]':
+    `En las dos nacionales vigentes subió dentro de la propia serie, de 3% a 4% en Quaest y de 2% a 4,7% en Ideia.`,
+  'candidates[2].fortes[4]':
+    `En Meio/Ideia queda por delante de Zema, con 4,7% contra 2,6%.`,
+
+  'candidates[2].fracos[0]':
+    `LA DISTANCIA ENTRE EL PRECIO Y LAS ENCUESTAS CRECIÓ HOY: con 7,25% en el mercado y de 4% a 4,7% en las encuestas, el vano va de 2,55pp a 3,25pp, y está del lado del precio.`,
+  'candidates[2].fracos[1]':
+    `Seis nacionales seguidas lo miden entre 3% y 4,7%, después del 7,8% de ${G('AtlasIntel', 'atlasintel')} del 29/Jul. La lectura aislada alta sigue siendo la excepción del conjunto.`,
+  'candidates[2].fracos[2]':
+    `En la serie de 88 días del libro presidencial, su máximo es 17,90% y su mínimo 5,50%, así que el 7,25% de hoy está en la mitad baja de su propio histórico.`,
+  'candidates[2].fracos[3]':
+    `Pierde los dos escenarios de balotaje vigentes por 10pp y por 13,3pp, y es el rival al que Lula gana con más holgura en la ronda de Meio/Ideia.`,
+  'candidates[2].fracos[4]':
+    `Volumen acumulado alto con precio bastante por debajo del techo de su propio histórico describe posición antigua abierta, no convicción corriente.`,
+
+  'candidates[2].analise':
+    `Su caso sigue siendo la mayor distancia entre lo que el mercado paga y lo que las encuestas miden, y HOY ESA DISTANCIA AUMENTÓ, porque el precio subió y las encuestas quedaron donde estaban. EN EL MERCADO fue a 7,25% (vol USD 9,19M acumulado) en la lectura del 7/Ago a las 19:44 UTC, contra 6,90% el 6/Ago, y en el contrato de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} fue a 58,50% (vol USD 176 mil), contra 56,00%. Los dos libros anduvieron hacia arriba el mismo día. EN LAS ENCUESTAS sigue entre 4% en Quaest y 4,7% en Meio/Ideia, y el vano entre precio e intención declarada pasó a ir de 2,55pp a 3,25pp, siempre del lado del precio. LA SECUENCIA sigue siendo lo que más pesa contra la lectura de crecimiento: seis nacionales consecutivas lo miden entre 3% y 4,7%, después del 7,8% que ${G('AtlasIntel', 'atlasintel')} midió el 29/Jul. Una lectura aislada alta contra seis consistentes en la banda baja es el patrón de valor atípico, y el panel lo registra así en vez de tratar la excepción como escenario. LA SERIE DE MERCADO da la vara que falta: en 88 días su precio presidencial fue de 17,90% en el máximo a 5,50% en el mínimo, así que el 7,25% de hoy no describe recuperación, describe oscilación dentro de la mitad baja de su propio histórico. EL VOLUMEN sigue siendo la anomalía de la pieza: con USD 9,19M acumulados negoció más que Lula, que tiene USD 8,11M, con un precio que es menos de un noveno. El volumen mide historia negociada, no convicción corriente. Las cinco nacionales registradas para el 10 y el 11/Ago son la próxima oportunidad de que las encuestas se acerquen al precio, o de que la distancia quede como está.`,
+
+  'candidates[3].header':
+    `Precios del 7/Ago a las 19:44 UTC: Caiado 1,55% (vol USD 5,58M), Zema 0,45% (vol USD 4,83M) y Haddad 0,15% (vol USD 6,77M). Caiado CAYÓ 0,30pp en el presidencial y 2,00pp en el contrato de tercer lugar. En las encuestas siguen vigentes 4% y 5,7% para Caiado, 2% y 2,6% para Zema, y Haddad no es probado por ninguna de las dos rondas vigentes.`,
+
+  'candidates[3].subtitle':
+    `7/Ago, a 58 días: el pelotón entró en la fase de REGISTRO y Zema fue el primer presidenciable en registrar candidatura, declarando R$ 178,7 millones de patrimonio. Ese mismo día volvió a atacar al ${G('STF', 'stf')}, llamando al Poder Judicial un poder incendiario, y un diputado de su propio campo intenta convencerlo de cambiar la carrera presidencial por el Senado. El plazo de registro va hasta el 15/Ago.`,
+
+  'candidates[3].caiado.label':
+    `CAIADO (${G('PSD', 'psd')}), Poly presidencial 1,55% (vol USD 5,58M, lectura del 7/Ago 19:44 UTC) | tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} 33,50% | candidato oficializado en convención, con Kassab de vice | encuestas vigentes: Quaest 4%, Meio/Ideia 5,7%`,
+  'candidates[3].caiado.fortes':
+    `Es el nombre más votado del pelotón en las DOS nacionales vigentes: 5,7% en Meio/Ideia, por delante de Renan Santos, y 4% en Quaest, empatado con él. En el balotaje de Meio/Ideia tiene 40% contra 48,5% de Lula, la MENOR distancia entre los cuatro rivales probados en esa ronda, y en el de Quaest tiene 37% contra 45%. Sigue siendo el segundo nombre del contrato de tercer lugar de la primera vuelta, con 33,50%. Su campaña anunció que Roberto Azevêdo coordinará el área internacional, el movimiento de cuadros más concreto del pelotón esta semana.`,
+  'candidates[3].caiado.fracos':
+    `SUS DOS PRECIOS CAYERON HOY: el presidencial de 1,85% a 1,55%, y el de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} de 35,50% a 33,50%, movimiento reflejado exactamente en la subida de Renan Santos en el mismo libro. La divergencia entre institutos sobre él sigue abierta dentro de la misma ventana de campo, con 4% en una casa y 5,7% en la otra, ambas recogiendo del 31/Jul al 3/Ago, y en el mes el abanico va de 3,1% en ${G('AtlasIntel', 'atlasintel')} a 6% en ${G('Nexus', 'nexus-btg')}. Pierde los dos balotajes vigentes. En Quaest no se movió dentro de la propia casa, quedando en el mismo 4% del 15/Jul.`,
+
+  'candidates[3].haddad.label':
+    `HADDAD (${G('PT', 'pt')}), Poly presidencial 0,15% (vol USD 6,77M, lectura del 7/Ago 19:44 UTC) | segundo lugar de la ${G('primera vuelta', 'primeiro-turno')} 0,25% | NO probado por Quaest ni por Meio/Ideia, porque disputa el gobierno de São Paulo`,
+  'candidates[3].haddad.fortes':
+    `Su volumen acumulado, USD 6,77M, es mayor que el de varios nombres con precio por encima del suyo, lo que mantiene el contrato con lastre de negociación pese al nivel bajo.`,
+  'candidates[3].haddad.fracos':
+    `NINGUNA de las dos nacionales vigentes lo prueba, en ningún escenario, ni de ${G('primera vuelta', 'primeiro-turno')} ni de balotaje. El agravante permanece y hay que decirlo con claridad: NO es candidato a la Presidencia, disputa el gobierno de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta y no candidatura en curso. Con un precio de 0,15%, las variaciones tienen valor informativo casi nulo, y el volumen alto mide historia negociada, no convicción corriente.`,
+
+  'candidates[3].zema.label':
+    `ZEMA (${G('Novo', 'novo')}), Poly presidencial 0,45% (vol USD 4,83M, lectura del 7/Ago 19:44 UTC) | tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} 3,70% | encuestas vigentes: Quaest 2%, Meio/Ideia 2,6% | fórmula con el senador Eduardo Girão | PRIMER presidenciable en registrar candidatura, el 7/Ago`,
+  'candidates[3].zema.fortes':
+    `FUE EL PRIMER PRESIDENCIABLE EN REGISTRAR CANDIDATURA, el 7/Ago, declarando R$ 178,7 millones de patrimonio (Money Times y VEJA, 7/Ago), en un plazo que solo se cierra el 15/Ago. Fue el segundo entrevistado de la serie de g1 y GloboNews con presidenciables, el 6/Ago, y ocupó espacio editorial grande en dos días seguidos. En las encuestas está estable en las dos casas, con 2% en Quaest y 2,6% en Ideia. En el libro de tercer lugar de la primera vuelta está en 3,70%, por delante de todo el pelotón excepto Caiado.`,
+  'candidates[3].zema.fracos':
+    `UN DIPUTADO DE SU PROPIO CAMPO INTENTA SACARLO DE LA DISPUTA: Nikolas Ferreira trabaja para convencerlo de abandonar la carrera presidencial y disputar el Senado (noticiero del 7/Ago). Es el rival al que Lula gana con MÁS HOLGURA en la ronda de Quaest, por 46% x 34%, y pierde por 48,5% x 37% en Ideia. En las encuestas no se mueve hace un mes en ninguna de las dos casas. En el contrato de ganador está en 0,45%, y la salvedad de serie es grande: su máximo fue 10,10%, el 26/Abr, así que las variaciones en esa banda tienen valor informativo casi nulo.`,
+
+  'candidates[3].analise':
+    `El pelotón tuvo el día más movido del tablero y el más quieto del precio, y las dos cosas juntas dicen algo. EL TABLERO ENTRÓ EN LA FASE DE REGISTRO, que va hasta el 15/Ago, y ZEMA FUE EL PRIMER PRESIDENCIABLE EN REGISTRARSE, el 7/Ago, declarando R$ 178,7 millones de patrimonio. Ese mismo día volvió a atacar al Poder Judicial, llamándolo poder incendiario, después de una entrevista con g1 y GloboNews el 6/Ago en la que defendió privatizarlo todo empezando por Petrobras y represalias contra Estados Unidos por el alza arancelaria. Y, el mismo día en que se registró, apareció la noticia de que Nikolas Ferreira intenta convencerlo de abandonar la presidencial y disputar el Senado. Registrar candidatura y ser presionado a dejarla el mismo viernes es el retrato del espacio que ocupa. EN EL PRECIO, EL MOVIMIENTO FUE TODO DE CAIADO, Y HACIA ABAJO: presidencial de 1,85% a 1,55%, y tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} de 35,50% a 33,50%. Esa caída de 2,00pp en el libro de tercer lugar es el espejo exacto de la subida de 2,50pp de Renan Santos en el mismo contrato, lo que describe transferencia de probabilidad entre los dos nombres y no movimiento del pelotón como bloque. Zema quedó estancado en 0,45% y Haddad en 0,15%. EN LAS ENCUESTAS NADA CAMBIÓ, porque no hay encuesta nacional nueva: Caiado sigue con 4% en Quaest y 5,7% en Meio/Ideia, Zema con 2% y 2,6%, y Haddad no es probado por ninguna de las dos. La divergencia entre institutos sobre Caiado sigue siendo el dato más interesante del pelotón, con 4% en una casa y 5,7% en la otra recogiendo en la misma ventana, y abanico mensual de 3,1% a 6%. EL CRUCE QUE INTERESA: los tres sumados valen 2,15% en el contrato de ganador, contra 26,95% del segundo, y esa proporción no se movió con la convención cerrada, con la fórmula definida ni con el registro presentado. El tablero anduvo y el precio del tercer espacio no.`,
+
+  'candidates[3].fortes[0]':
+    `CAIADO es el nombre más votado del pelotón en las dos nacionales vigentes, con 5,7% en Meio/Ideia y 4% en Quaest, y tiene la menor distancia a Lula entre los cuatro rivales probados en Ideia, por 48,5% x 40%.`,
+  'candidates[3].fortes[1]':
+    `ZEMA fue el primer presidenciable en registrar candidatura, el 7/Ago, declarando R$ 178,7 millones de patrimonio, en un plazo que va hasta el 15/Ago.`,
+  'candidates[3].fortes[2]':
+    `En las encuestas, Zema está estable en las dos casas, con 2% en Quaest y 2,6% en Ideia, sin caer en ninguna.`,
+  'candidates[3].fortes[3]':
+    `Caiado sigue como segundo nombre del contrato de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')}, con 33,50%.`,
+  'candidates[3].fortes[4]':
+    `El volumen acumulado de Haddad, USD 6,77M, mantiene lastre de negociación en el contrato pese al precio de 0,15%.`,
+
+  'candidates[3].fracos[0]':
+    `Ninguno de los tres pasa de 5,7% en ninguna de las dos nacionales vigentes, y Lula gana los seis escenarios de balotaje en los que aparecen.`,
+  'candidates[3].fracos[1]':
+    `CAIADO cayó en los dos libros hoy, 0,30pp en el presidencial y 2,00pp en el de tercer lugar, de 35,50% a 33,50%, reflejando exactamente la subida de Renan Santos.`,
+  'candidates[3].fracos[2]':
+    `ZEMA es el rival al que Lula gana con más holgura en Quaest, por 46% x 34%, y no se mueve en las encuestas hace un mes en ninguna de las dos casas.`,
+  'candidates[3].fracos[3]':
+    `HADDAD no es probado por ninguna de las dos rondas vigentes, y sigue sin ser candidato a la Presidencia.`,
+  'candidates[3].fracos[4]':
+    `En la lectura del 7/Ago los tres sumados valían 2,15% en el mercado, contra 26,95% de Flávio, lo que describe un tercer espacio que el precio no trata como competitivo.`,
+
+  'quadroComparativo[0].p':
+    `SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes ${G('Genial/Quaest', 'quaest')} (n=2.004, BR-06591/2026) con 39% en la ${G('primera vuelta', 'primeiro-turno')} y 44% x 39% en el balotaje, y Meio/Ideia (n=1.500, BR-04579/2026) con 43% y 48,5% x 43%. APROBACIÓN 48% x 47% en Quaest. Cruces divulgados el 6 y el 7/Ago: lidera entre los mayores, los católicos y quienes no tienen religión, y abre más de 16pp entre las mujeres.`,
+  'quadroComparativo[0].m':
+    `64,50% (vol USD 8,11M acumulado), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[0].t':
+    `Estancado por CUARTO día consecutivo en el mismo valor, del 4 al 7/Ago. La brecha sobre Flávio pasó de +37,65pp a +37,55pp, y el estrechamiento vino de la subida del otro. En la serie de 88 días, del 10/May a hoy, su techo es 66,50%, del 1/Ago, y solo 8 de los 88 días tuvieron valor igual o mayor que el actual.`,
+  'quadroComparativo[0].s':
+    `58 días de la elección. El eje del día contra él es judicial: Estadão reconstruyó el día en que la ${G('PF', 'pf')} sospechó de los negocios de Fábio Luís, y la PF va a citar a un exjefe de gabinete suyo para declarar sobre transferencias de un lobista. En el Congreso, la conversación con Alcolumbre se espera para el lunes.`,
+
+  'quadroComparativo[1].p':
+    `SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes 30% en Quaest, contra 28% en la propia ronda del 15/Jul de esa casa, y 35% en Meio/Ideia, contra 32% el 8/Jul. Balotajes de 39% y 43%, pierde los dos. RECHAZO 54%, el más alto entre los dos primeros. En los cruces divulgados el 6 y el 7/Ago, gana entre los evangélicos.`,
+  'quadroComparativo[1].m':
+    `26,95% (vol USD 8,08M), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[1].t':
+    `Subió 0,10pp y completó SEIS días de acercamiento, de 24,70% el 1/Ago a 26,95% hoy. No es extremo: en la serie de 88 días, 28 de ellos tuvieron valor igual o mayor, con techo de 43,30% el 12/May y piso de 22,00% el 3/Jul. En el contrato de segundo lugar CAYÓ 4,50pp, de 87,50% a 83,00%.`,
+  'quadroComparativo[1].s':
+    `EL COMPAÑERO DE FÓRMULA SE VOLVIÓ EL PROBLEMA: la defensa de Alfredo Gaspar pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas contra una acusación de violación, el ${G('PL', 'pl')} dejó una rendija para que vuelva al Senado, y Dino ordenó a la ${G('PF', 'pf')} investigar enmiendas Pix con una transferencia suya en la lista. Flávio dijo que intentó tener una mujer como compañera de fórmula y culpó a los caciques del ${G('Centrão', 'centrao')}.`,
+
+  'quadroComparativo[2].p':
+    `SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes 4% en Quaest, contra 3% el 15/Jul, y 4,7% en Meio/Ideia, contra 2% el 8/Jul. Con las dos, SEIS nacionales seguidas lo miden entre 3% y 4,7%. Pierde los balotajes por 45% x 35% y 48% x 34,7%.`,
+  'quadroComparativo[2].m':
+    `7,25% (vol USD 9,19M), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[2].t':
+    `Subió 0,35pp y el vano hacia las encuestas AUMENTÓ, yendo de 2,55pp a 3,25pp, siempre del lado del precio. En el contrato de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} subió 2,50pp, de 56,00% a 58,50%. En la serie de 88 días su máximo es 17,90% y su mínimo 5,50%, así que el valor de hoy está en la mitad baja de su propio histórico.`,
+  'quadroComparativo[2].s':
+    `Mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, con USD 9,19M, por encima del de Lula. Sigue vigente la declaración de que, si es elegido, no cumplirá decisiones monocráticas del ${G('STF', 'stf')}.`,
+
+  'quadroComparativo[3].p':
+    `SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes 4% en Quaest, lo mismo que el 15/Jul, y 5,7% en Meio/Ideia, contra 4% el 8/Jul. En los balotajes, 37% contra 45% y 40% contra 48,5%, esta la menor distancia entre los cuatro rivales probados en Ideia.`,
+  'quadroComparativo[3].m':
+    `1,55% (vol USD 5,58M), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[3].t':
+    `CAYÓ en los dos libros: 0,30pp en el presidencial y 2,00pp en el de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')}, de 35,50% a 33,50%. Esa caída refleja exactamente la subida de Renan Santos en el mismo contrato, lo que describe una transferencia entre los dos nombres.`,
+  'quadroComparativo[3].s':
+    `Roberto Azevêdo coordinará el área internacional de su campaña. La divergencia entre institutos sobre él sigue abierta dentro de la misma ventana de campo: 4% en una casa y 5,7% en la otra.`,
+
+  'quadroComparativo[4].p':
+    `SIN ENCUESTA NACIONAL NUEVA. Siguen vigentes 2% en Quaest, lo mismo que el 15/Jul, y 2,6% en Meio/Ideia, prácticamente el 2,5% del 8/Jul. En los balotajes, 34% contra 46% y 37% contra 48,5%, y es el rival al que Lula gana con más holgura en Quaest.`,
+  'quadroComparativo[4].m':
+    `0,45% (vol USD 4,83M), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[4].t':
+    `Estancado en el mismo valor del 6/Ago. En esta banda, las variaciones tienen valor informativo casi nulo. La salvedad de serie sigue vigente: su máximo fue 10,10%, el 26/Abr. En el libro de tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} está en 3,70%.`,
+  'quadroComparativo[4].s':
+    `PRIMER presidenciable en registrar candidatura, el 7/Ago, declarando R$ 178,7 millones de patrimonio. Ese mismo día llamó al Poder Judicial un poder incendiario, y Nikolas Ferreira intenta convencerlo de cambiar la carrera presidencial por el Senado.`,
+
+  'quadroComparativo[5].p':
+    `Sin encuesta. Mercado de destitución de un ministro del ${G('STF', 'stf')} antes de 2027.`,
+  'quadroComparativo[5].m':
+    `3,10% (vol USD 83 mil), lectura del 7/Ago 19:44 UTC`,
+  'quadroComparativo[5].t':
+    `Subió 0,35pp contra el 6/Ago. Es el contrato más fino entre los que el panel publica, con volumen acumulado que no llega a una milésima del presidencial, así que los movimientos allí tienen menos lastre que los del libro presidencial.`,
+  'quadroComparativo[5].s':
+    `La tensión del día es entre la ${G('PF', 'pf')} y Mendonça en las investigaciones del ${G('Master', 'banco-master')} y del ${G('INSS', 'inss')}: el ministro de Justicia intentará mediar un acuerdo entre los dos, superintendentes salieron en defensa de la dirección de la PF, y la declaración de Jaques Wagner sobre el caso Master fue aplazada. Gilmar propuso una doctrina vinculante para frenar las ${G('pautas-bomba', 'pauta-bomba')}, con apoyo señalado por otros ministros.`,
+
+  cruzamento:
+    `HOY EL CRUCE SALE ENTERO, Y LOS DOS LADOS DICEN COSAS DISTINTAS. El lado del MERCADO es de la lectura del 7/Ago a las 19:44 UTC. El lado de las ENCUESTAS es del 5/Ago, porque no salió nacional nueva, y está marcado como tal en cada línea. --- LA BRECHA SE REDUJO POR SEXTO DÍA CONSECUTIVO, Y LA CAUSA ESTÁ EN UN SOLO EXTREMO. La secuencia desde el máximo es 41,80pp el 1/Ago, 40,90pp, 38,90pp, 38,60pp, 38,50pp, 37,90pp y 37,55pp hoy. En esos seis días el precio de Flávio salió de 24,70% y llegó a 26,95%, y el de Lula está estancado en 64,50% desde el 4/Ago. Es decir, el estrechamiento entero del tramo final es subida del segundo, no caída del primero, y eso es distinto de lo que ocurrió en la primera mitad del movimiento, cuando Lula cayó de 66,50% a 64,50%. --- Y EL MISMO CANDIDATO ANDUVO HACIA ATRÁS EN EL OTRO LIBRO. Mientras el contrato de ganador subía 0,10pp para él, el contrato de segundo lugar de la ${G('primera vuelta', 'primeiro-turno')} cayó 4,50pp, de 87,50% a 83,00%. No hay contradicción aritmética, porque ganar posibilidad de vencer quita posibilidad de quedar segundo, pero 4,50pp es el mayor movimiento del panel desde la lectura del 6/Ago y merece decirse con el tamaño que tiene. --- EL TERCER LUGAR CAMBIÓ DE MANOS OTRA VEZ, Y EN ESPEJO. Renan Santos subió 2,50pp, de 56,00% a 58,50%, y Caiado cayó 2,00pp, de 35,50% a 33,50%. El 6/Ago el movimiento había sido el inverso, con Caiado subiendo 10,50pp y Renan Santos cayendo cuatro escalones. Dos días seguidos de transferencia entre los mismos dos nombres, en direcciones opuestas, describen un libro disputado, y el panel registra los dos lados del movimiento en vez de contar solo el de hoy. --- LAS ENCUESTAS NO ENTRAN HOY PORQUE NO HUBO ENCUESTAS. Siguen vigentes ${G('Genial/Quaest', 'quaest')} y Meio/Ideia, ambas del 5/Ago, con brechas de 9pp y 8pp en la primera vuelta. Lo que llegó nuevo fueron los CRUCES de Quaest, divulgados el 6 y el 7/Ago, y dibujan la geografía del voto: Lula lidera entre los mayores, los católicos y quienes no tienen religión, y abre más de 16 puntos entre las mujeres; Flávio gana entre los evangélicos. La misma ronda midió que el apoyo declarado de Trump a Flávio NO amplía la intención de voto para él. --- LA PRÓXIMA PRUEBA TIENE FECHA. Cinco encuestas nacionales están registradas en el ${G('TSE', 'tse')} para divulgación el 10 y el 11/Ago: Gerp con n=2.400, ${G('BTG/Nexus', 'nexus-btg')} con n=2.000 y Palver con n=5.000 el día 10, y MDA con n=2.002 y 100 Cidades con n=2.000 el día 11. Cuatro de ellas seguían en campo este viernes. Es la mayor concentración de nacionales desde el comienzo del ciclo, y es la que va a decir si el estrechamiento del precio tiene correspondencia en las encuestas. --- EL TABLERO ENTRÓ EN LA FASE DE REGISTRO, que va hasta el 15/Ago, y Zema fue el primer presidenciable en presentarlo, declarando R$ 178,7 millones de patrimonio. Ese mismo día, un diputado de su propio campo pasó a intentar convencerlo de cambiar la carrera presidencial por el Senado. --- EN EL EJE JUDICIAL, EL DÍA FUE PESADO PARA LOS DOS PRIMEROS. Contra Flávio: la defensa del compañero de fórmula pidió a la PGR y al ${G('STF', 'stf')} un examen de ADN en un plazo de 72 horas para descartar una acusación de violación, el ${G('PL', 'pl')} dejó una rendija para que el compañero de fórmula vuelva a disputar el Senado, O Globo reveló que la elección fue de última hora y sin llamada del propio candidato, y Dino ordenó a la ${G('PF', 'pf')} investigar enmiendas Pix con una transferencia del compañero de fórmula en la lista. Contra Lula: Estadão reconstruyó el día en que la PF sospechó de los negocios de Fábio Luís, la PF va a citar a un exjefe de gabinete del presidente para declarar sobre transferencias de un lobista, y la campaña rival evalúa llevar el caso al estreno del espacio electoral gratuito. Sumando los dos precios, el mercado movió 0,10pp en un día en que los dos lados recibieron golpes. El panel registra los hechos y el tamaño del movimiento, y no afirma que uno explique al otro.`,
+})
