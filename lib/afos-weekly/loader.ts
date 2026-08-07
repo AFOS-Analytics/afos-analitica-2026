@@ -218,6 +218,22 @@ export function getAdjacentDates(date: string, pais: string): { previous?: strin
 function str(v: unknown, fb = ''): string {
   return typeof v === 'string' ? v : fb
 }
+
+/**
+ * 🔴 YAML SEM ASPAS VIRA `Date`, e o `str()` acima devolve '' calado.
+ *
+ * Foi assim que o cabeçalho da Edição №1 saiu com "Week of 06/08/2026, 15:19
+ * UTC" em vez do intervalo da semana: `weekStart` e `weekEnd` chegavam como
+ * objeto `Date`, viravam '' e o template caía para o `updatedAt`.
+ *
+ * O Tradeoff e o Daily já tinham esta coerção; o Weekly era o único sem ela.
+ * Ter aspas no arquivo resolve o caso de hoje, mas não impede o próximo: a
+ * coerção é a rede que sobra quando alguém escrever a data sem aspas de novo.
+ */
+function coerceDate(v: unknown, fb = ''): string {
+  if (v instanceof Date && !isNaN(v.getTime())) return v.toISOString().slice(0, 10)
+  return typeof v === 'string' ? v : fb
+}
 function num(v: unknown, fb: number): number {
   return typeof v === 'number' && Number.isFinite(v) ? v : fb
 }
@@ -268,10 +284,10 @@ export function loadWeekly(date: string, locale: string, pais: string): AfosWeek
   }
 
   return {
-    date: str(fm.date, date),
+    date: coerceDate(fm.date, date),
     issueNumber: num(fm.issueNumber, 1),
-    weekStart: str(fm.weekStart),
-    weekEnd: str(fm.weekEnd),
+    weekStart: coerceDate(fm.weekStart),
+    weekEnd: coerceDate(fm.weekEnd),
     updatedAt: str(fm.updatedAt),
     title: str(fm.title),
     locale: str(fm.locale, alvo.servido),
@@ -283,7 +299,19 @@ export function loadWeekly(date: string, locale: string, pais: string): AfosWeek
     moneyFootnote: str(fm.moneyFootnote) || undefined,
     pollsIntro: str(fm.pollsIntro),
     dispersion: (fm.dispersion as AfosWeeklyData['dispersion']) || undefined,
-    coverage: (fm.coverage as WeeklyCoverage) || undefined,
+    // 🔴 NORMALIZAR, não fazer cast cru. O template desreferencia
+    // `coverage.claims.length` e `coverage.narrative` direto: um frontmatter
+    // sem `claims:` derrubava a edição inteira, e nos TRÊS idiomas, porque o
+    // cast engana o TypeScript e o defeito só aparece em runtime.
+    // Aqui o pior caso vira seção vazia, que o template já sabe tratar.
+    coverage: fm.coverage
+      ? {
+          ...(fm.coverage as WeeklyCoverage),
+          subject: str((fm.coverage as WeeklyCoverage).subject),
+          narrative: arr<string>((fm.coverage as WeeklyCoverage).narrative).map((x) => String(x)),
+          claims: arr<WeeklyClaim>((fm.coverage as WeeklyCoverage).claims),
+        }
+      : undefined,
     crossings: arr<WeeklyCrossing>(fm.crossings),
     howToRead: (fm.howToRead as AfosWeeklyData['howToRead']) || undefined,
     sources: arr<AfosWeeklyData['sources'][number]>(fm.sources),

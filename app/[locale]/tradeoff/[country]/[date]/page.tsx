@@ -143,8 +143,8 @@ export default async function TradeoffByDatePage(props: PageProps) {
   // ⚠️ Com o país: sem ele a edição dos EUA oferecia "edição anterior" numa
   // data do BRASIL, que no caminho `/tradeoff/us/...` não existe e dava 404.
   const nav = getAdjacentDates(params.date, pais)
-  const schema = buildArticleSchema(data, params.locale)
-  const breadcrumb = buildBreadcrumbSchema(params.date, params.locale)
+  const schema = buildArticleSchema(data, params.locale, pais)
+  const breadcrumb = buildBreadcrumbSchema(params.date, params.locale, pais)
 
   // Markdown renderizado no servidor (react-markdown fora do bundle client).
   const md: TradeoffRenderedMd = {

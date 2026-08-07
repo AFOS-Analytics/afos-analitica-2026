@@ -66,6 +66,11 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     description: descricao,
     // Piloto: fora de buscador até a decisão de seguir, na edição No 2.
     robots: { index: false, follow: false },
+    // ⚠️ CANÔNICO PRÓPRIO. Sem este bloco a página herdava o do layout raiz e
+    // TODA edição do Weekly declarava a HOME como sua canônica. `noindex` não
+    // resolve isso: quem recebe o link, e qualquer agregador que leia o head,
+    // continua vendo a identidade errada da página.
+    alternates: { canonical: url },
     // 🔴 SEM ESTE BLOCO o card social herdava o do layout raiz, que anuncia
     // "Brazil 2026 Elections". Quem compartilhasse esta edição no WhatsApp via a
     // eleição ERRADA no cartão, com o link das midterms logo abaixo. `noindex`

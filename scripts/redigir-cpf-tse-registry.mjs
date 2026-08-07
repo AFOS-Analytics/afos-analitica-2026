@@ -25,7 +25,31 @@ import { join } from 'node:path'
 
 const CHECK = process.argv.includes('--check')
 const DIR = join(process.cwd(), 'hf-assets', 'polls')
-const ARQS = ['tse-registry.csv', 'tse-registry.json']
+
+/**
+ * 🔴 TODO ARQUIVO QUE CARREGA TEXTO LIVRE DO TSE ENTRA AQUI.
+ *
+ * A lista tinha só os dois `tse-registry.*` e deixava de fora o
+ * `national-polls.json`, que o `build-tse-registry-full.mjs` escreve no MESMO
+ * passo anterior e que embala os mesmos campos crus dentro de
+ * `tse_registration`: `methodology`, `sampling_plan` e `control_system`,
+ * presentes nos 48 registros. É nesses três que o CPF do estatístico aparece.
+ *
+ * Medido em 06/Ago/2026: pela lógica deste próprio redator o arquivo estava
+ * com ZERO CPF naquele dia, então a falha era ESTRUTURAL e latente, não
+ * vazamento ativo. Latente é pior de achar: passa verde até o dia em que o TSE
+ * publicar um registro com CPF no texto e ninguém estiver olhando.
+ *
+ * Régua do André: preservar o legado e, do presente para o futuro, não coletar
+ * CPF. A trava é a parte do "para o futuro", então ela precisa cobrir tudo que
+ * sai daqui para o dataset público.
+ *
+ * ⚠️ NÃO mover este passo para depois do `export-hf-dataset.mjs`: o `DIR` é
+ * fixo em `hf-assets/polls`, e depois do export o que vai para o ar é a cópia
+ * em `.cache/hf-dataset/polls`. Redigir aqui depois da cópia limparia o
+ * original e publicaria a cópia suja.
+ */
+const ARQS = ['tse-registry.csv', 'tse-registry.json', 'national-polls.json']
 
 // 11 dígitos = CPF. 14 = CNPJ, não mexe. O \d{14} na alternativa da frente
 // consome o CNPJ antes de a alternativa do CPF tentar casar um pedaço dele.

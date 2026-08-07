@@ -144,7 +144,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     robots: { index: true, follow: true },
     alternates: {
       canonical,
-      languages: langAlternates('tradeoff'),
+      // ⚠️ COM O PAÍS. Sem ele o hreflang do arquivo dos EUA declarava que as
+      // versões em outro idioma eram o arquivo do BRASIL, e ainda contradizia
+      // o canonical da própria página, que já traz `/us`.
+      languages: langAlternates(`tradeoff/${pais}`),
       types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Tradeoff, RSS feed' }] },
     },
     openGraph: {

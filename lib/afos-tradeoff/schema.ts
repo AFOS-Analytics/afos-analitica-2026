@@ -18,8 +18,22 @@ function parseUpdatedAt(updatedAt: string, dateIso: string): string {
 // so GEO crawlers (Perplexity, ChatGPT, Claude) recognize both as journalistic
 // primary source. articleBody assembled from sinalDaSemana + execSummaryIntro
 // + scenarios + methodology, capped at 8000 chars to fit LLM token budgets.
-export function buildArticleSchema(data: AfosTradeoffData, locale: string) {
-  const url = `${SITE}/${locale}/tradeoff/${data.date}`
+/**
+ * 🔴 `pais` É OBRIGATÓRIO, e é posicional de propósito: assim o TypeScript
+ * recusa no build qualquer chamador que esqueça, em vez de o esquecimento
+ * virar URL errada no dado estruturado.
+ *
+ * Medido em produção em 06/Ago/2026, na Edição №2 dos EUA: o JSON-LD declarava
+ * `url` e `mainEntityOfPage` como `/en/tradeoff/2026-08-03`, que é a rota
+ * ANTIGA e responde 307 para o BRASIL, entregando a Edição №11 brasileira. A
+ * manchete americana ficava amarrada ao endereço da peça de outro país, e em
+ * conflito com o canonical da própria página, que já trazia `/us/`.
+ *
+ * É para crawler de busca e de GEO que este schema existe, então declarar a
+ * URL errada é pior que não declarar nada.
+ */
+export function buildArticleSchema(data: AfosTradeoffData, locale: string, pais: string) {
+  const url = `${SITE}/${locale}/tradeoff/${pais}/${data.date}`
   const description = cleanMarkdownText(data.sinalDaSemana).slice(0, 300)
   const datePublished = `${data.date}T00:00:00-03:00`
   const dateModified = parseUpdatedAt(data.updatedAt, data.date)
@@ -74,8 +88,13 @@ export function buildArticleSchema(data: AfosTradeoffData, locale: string) {
     articleSection: 'Politics',
     ...(wordCount > 0 ? { wordCount } : {}),
     ...(articleBody ? { articleBody } : {}),
+    // ⚠️ POR PAÍS. Ficava fixo em "Brazil 2026 election" e a edição dos EUA
+    // anunciava ao crawler a eleição errada, no mesmo objeto em que a URL já
+    // apontava para o Brasil. Espelha o TAGS_POR_PAIS da página da edição.
     keywords: [
-      'Brazil 2026 election',
+      ...(pais === 'us'
+        ? ['US 2026 midterms', 'US Senate', 'US House']
+        : ['Brazil 2026 election', 'Brazilian politics']),
       'prediction markets',
       'electoral polls',
       'political risk',
@@ -93,7 +112,15 @@ export function buildArticleSchema(data: AfosTradeoffData, locale: string) {
 }
 
 // BreadcrumbList: Home > Tradeoff > {date}
-export function buildBreadcrumbSchema(date: string, locale: string) {
+/**
+ * ⚠️ AS DUAS POSIÇÕES PRECISAM DO PAÍS, não só a última.
+ *
+ * Consertar só a posição 3 deixaria o vazamento na 2: `/{idioma}/tradeoff` sem
+ * país também responde 307 e cai no índice do BRASIL. O breadcrumb da edição
+ * americana ficaria com o pai apontando para o Brasil, e a posição 2 deixaria
+ * de ser prefixo da 3, que é justamente o que um breadcrumb precisa ser.
+ */
+export function buildBreadcrumbSchema(date: string, locale: string, pais: string) {
   const safeLocale = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
   const homeName = safeLocale === 'pt-BR' ? 'Início' : safeLocale === 'es' ? 'Inicio' : 'Home'
   return {
@@ -101,8 +128,8 @@ export function buildBreadcrumbSchema(date: string, locale: string) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: homeName, item: `${SITE}/${safeLocale}` },
-      { '@type': 'ListItem', position: 2, name: 'AFOS Tradeoff', item: `${SITE}/${safeLocale}/tradeoff` },
-      { '@type': 'ListItem', position: 3, name: date, item: `${SITE}/${safeLocale}/tradeoff/${date}` },
+      { '@type': 'ListItem', position: 2, name: 'AFOS Tradeoff', item: `${SITE}/${safeLocale}/tradeoff/${pais}` },
+      { '@type': 'ListItem', position: 3, name: date, item: `${SITE}/${safeLocale}/tradeoff/${pais}/${date}` },
     ],
   }
 }

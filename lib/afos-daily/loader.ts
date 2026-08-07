@@ -92,7 +92,21 @@ function readStatusFast(date: string): string {
   const cached = statusCache.get(date)
   if (cached && cached.mtime === mtime) return cached.status
   try {
-    const head = readFileSync(path, 'utf-8').slice(0, 500)
+    // 🔴 LER O FRONTMATTER INTEIRO, nunca uma fatia de tamanho fixo.
+    //
+    // Isto lia os 500 primeiros caracteres. Em 06/Ago/2026 o MESMO defeito, no
+    // loader do Weekly, pôs a Edição №1 em produção com `status: published` e
+    // devolveu 404 nos TRÊS idiomas: o campo caiu no byte 558 por causa de um
+    // título longo mais um bloco de comentário no topo.
+    //
+    // Propagado para cá em 06/Ago, depois de um EVAL medir que a troca é neutra
+    // no acervo: os dois algoritmos sobre os 363 .md dos três produtos deram
+    // ZERO divergência.
+    //
+    // Falha para o lado seguro: sem `---` de fechamento, o status é 'draft'.
+    const bruto = readFileSync(path, 'utf-8')
+    const fim = bruto.indexOf('\n---', 3)
+    const head = fim > 0 ? bruto.slice(0, fim) : ''
     const m = head.match(STATUS_RE)
     if (!m) {
       statusCache.set(date, { mtime, status: 'draft' })
