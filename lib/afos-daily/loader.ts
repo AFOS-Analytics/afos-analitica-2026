@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { lerStatusDoArquivo } from '../frontmatter/status'
+import { str, coerceDate } from '../frontmatter/coerce'
 import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
 
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
@@ -139,9 +140,6 @@ export function getAdjacentDates(date: string): { previous?: string; next?: stri
   }
 }
 
-function str(value: unknown, fallback = ''): string {
-  return typeof value === 'string' ? value : fallback
-}
 
 // Safely coerces frontmatter `tldr` to string[]. Accepts: undefined (returns
 // undefined for backward compat), array of strings, array of any (filtered to
@@ -152,11 +150,6 @@ function coerceTldr(value: unknown): string[] | undefined {
   return filtered.length > 0 ? filtered : undefined
 }
 
-function coerceDate(value: unknown, fallback: string): string {
-  if (value instanceof Date) return value.toISOString().slice(0, 10)
-  if (typeof value === 'string') return value
-  return fallback
-}
 
 // EN: o tradutor produz "Cited sources" (ordem natural), não "Sources cited" —
 // aceitar ambas, senão o rodapé EN vaza como corpo acima da navegação (bug 14/Jun).

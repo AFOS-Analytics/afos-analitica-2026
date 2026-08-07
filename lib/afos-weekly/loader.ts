@@ -24,6 +24,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { lerStatusDoArquivo } from '../frontmatter/status'
+import { str, num, arr, coerceDate } from '../frontmatter/coerce'
 
 export const PAISES_WEEKLY = ['us'] as const
 export type PaisWeekly = (typeof PAISES_WEEKLY)[number]
@@ -187,31 +188,7 @@ export function getAdjacentDates(date: string, pais: string): { previous?: strin
 
 // ─── Leitura ────────────────────────────────────────────────────────
 
-function str(v: unknown, fb = ''): string {
-  return typeof v === 'string' ? v : fb
-}
 
-/**
- * 🔴 YAML SEM ASPAS VIRA `Date`, e o `str()` acima devolve '' calado.
- *
- * Foi assim que o cabeçalho da Edição №1 saiu com "Week of 06/08/2026, 15:19
- * UTC" em vez do intervalo da semana: `weekStart` e `weekEnd` chegavam como
- * objeto `Date`, viravam '' e o template caía para o `updatedAt`.
- *
- * O Tradeoff e o Daily já tinham esta coerção; o Weekly era o único sem ela.
- * Ter aspas no arquivo resolve o caso de hoje, mas não impede o próximo: a
- * coerção é a rede que sobra quando alguém escrever a data sem aspas de novo.
- */
-function coerceDate(v: unknown, fb = ''): string {
-  if (v instanceof Date && !isNaN(v.getTime())) return v.toISOString().slice(0, 10)
-  return typeof v === 'string' ? v : fb
-}
-function num(v: unknown, fb: number): number {
-  return typeof v === 'number' && Number.isFinite(v) ? v : fb
-}
-function arr<T>(v: unknown): T[] {
-  return Array.isArray(v) ? (v as T[]) : []
-}
 
 /**
  * 🔴 A CASCATA DE IDIOMA, e ela é o inverso da dos outros produtos.

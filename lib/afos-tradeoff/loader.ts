@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import { lerStatusDoArquivo } from '../frontmatter/status'
+import { str, num, coerceDate } from '../frontmatter/coerce'
 
 const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
 
@@ -267,19 +268,8 @@ export function getAdjacentDates(date: string, country: string = PAIS_PADRAO): {
   }
 }
 
-function str(value: unknown, fallback = ''): string {
-  return typeof value === 'string' ? value : fallback
-}
 
-function num(value: unknown, fallback: number): number {
-  return typeof value === 'number' && Number.isFinite(value) ? value : fallback
-}
 
-function coerceDate(value: unknown, fallback: string): string {
-  if (value instanceof Date) return value.toISOString().slice(0, 10)
-  if (typeof value === 'string') return value
-  return fallback
-}
 
 const SOURCES_LABEL_RE = /\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*/i
 
