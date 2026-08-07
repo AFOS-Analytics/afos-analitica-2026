@@ -212,15 +212,19 @@ export function sendTradeoffTeaser(to: string, data: {
   /**
    * 🔴 O PAÍS NA URL É OBRIGATÓRIO, e a falta dele não dava erro: dava a PEÇA ERRADA.
    *
-   * A rota virou `/[idioma]/tradeoff/[pais]/[data]` em 01/Ago/2026, e a antiga
-   * `/[idioma]/tradeoff/[data]` continua viva como redirect de compatibilidade,
-   * que manda para o BRASIL. Como Brasil e EUA publicam na mesma segunda, em
-   * 03/Ago as duas edições existiam na mesma data: medido, `/en/tradeoff/2026-08-03`
-   * respondia 307 e entregava a **Edição №11 do Brasil**.
+   * A rota virou `/[idioma]/tradeoff/[pais]/[data]` em 01/Ago/2026. A antiga
+   * `/[idioma]/tradeoff/[data]` sobreviveu por um tempo como redirect de
+   * compatibilidade que mandava para o BRASIL, e foi assim que o defeito
+   * apareceu: como Brasil e EUA publicam na mesma segunda, em 03/Ago as duas
+   * edições existiam na mesma data, e `/en/tradeoff/2026-08-03` respondia
+   * **307 entregando a Edição №11 do Brasil**. O leitor receberia manchete dos
+   * EUA e abriria a peça brasileira, sem 404 e sem link quebrado.
    *
-   * O leitor receberia manchete dos EUA e abriria a peça brasileira. Sem 404,
-   * sem link quebrado, sem nada que denunciasse. Nunca voltar a montar esta URL
-   * sem o país.
+   * ⚠️ ESSA REDE DE SEGURANÇA NÃO EXISTE MAIS: por decisão do André em
+   * 07/Ago/2026 a forma sem país virou **404**. Montar esta URL sem o país
+   * agora não entrega a peça errada, entrega uma página morta para a lista
+   * inteira. O país continua obrigatório, e a consequência de esquecê-lo ficou
+   * mais barulhenta, que é como tem que ser.
    */
   const url = `${PUBLIC_URL}/${data.locale}/tradeoff/${pais}/${data.date}`;
   const unsubUrl = unsubscribeToken ? `${PUBLIC_URL}/api/unsubscribe?token=${encodeURIComponent(unsubscribeToken)}` : `${PUBLIC_URL}/api/unsubscribe`;

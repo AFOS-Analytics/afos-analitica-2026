@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { JsonLd } from '../../../components/JsonLd'
-import { redirect } from 'next/navigation'
-import { getLatestDate, listPublishedTradeoffs, loadTradeoff, isValidLocale, isValidCountry, isValidDate, PAIS_PADRAO, PAISES_TRADEOFF, SUPPORTED_LOCALES } from '../../../../lib/afos-tradeoff/loader'
+import { notFound } from 'next/navigation'
+import { getLatestDate, listPublishedTradeoffs, loadTradeoff, isValidLocale, isValidCountry, PAIS_PADRAO, PAISES_TRADEOFF, SUPPORTED_LOCALES } from '../../../../lib/afos-tradeoff/loader'
 import { getOgImageUrl } from '../../../../lib/afos-daily/schema'
 import { breadcrumbSchema } from '../../../../lib/seo/schema'
 import { MONTHS, type MonthsLocale } from '../../../../lib/i18n/months'
@@ -14,16 +14,34 @@ interface Props {
 }
 
 /**
- * ⚠️ ESTE SEGMENTO ACUMULA DOIS PAPÉIS, e não é escolha de estilo: o Next NÃO
- * aceita `tradeoff/[date]` e `tradeoff/[country]` no mesmo nível, porque são
- * dois nomes dinâmicos disputando a mesma posição. Como os endereços antigos
- * `/tradeoff/2026-07-27` estão publicados e não podem quebrar, o segmento
- * decide pelo FORMATO do que recebe:
+ * ⚠️ ESTE SEGMENTO É O PAÍS, e só o país. O Next não aceita `tradeoff/[date]` e
+ * `tradeoff/[country]` no mesmo nível, porque são dois nomes dinâmicos
+ * disputando a mesma posição, então tudo que chega aqui é lido como país:
  *
  *   `/tradeoff/br`          → arquivo de edições do Brasil
  *   `/tradeoff/us`          → arquivo de edições dos EUA
- *   `/tradeoff/2026-07-27`  → parece data, então é link antigo: 307 para
- *                             `/tradeoff/br/2026-07-27`
+ *   `/tradeoff/2026-07-27`  → 404
+ *
+ * 🔴 O 404 NA FORMA DE DATA É DECISÃO DO ANDRÉ, DE 07/Ago/2026, e substitui um
+ * redirect que mandava tudo para o Brasil.
+ *
+ * Por que o redirect era pior que o 404, apesar de parecer mais gentil: até
+ * 27/Jul só existia o Brasil, então todo endereço sem país era mesmo brasileiro
+ * e o redirect acertava. **A partir de 31/Jul o Tradeoff dos EUA passou a
+ * existir, e em 03/Ago as duas edições caíram na MESMA DATA.** Medido em
+ * produção naquele dia: `/en/tradeoff/2026-08-03` respondia **307 e entregava a
+ * edição BRASILEIRA**, com manchete de um país e peça de outro, sem 404 e sem
+ * link quebrado. Endereço ambíguo resolvido em silêncio é pior que endereço
+ * inexistente: o 404 o leitor entende, a peça errada ele lê como verdade.
+ *
+ * ⚠️ Quem quer o produto sem saber o país continua tendo porta: `/tradeoff`,
+ * sem segmento nenhum, segue redirecionando para o Brasil, que é o país de
+ * origem. O que morre aqui é só a forma AMBÍGUA, nunca a forma CURTA.
+ *
+ * 📌 Isto obrigou dois consertos que não são cosméticos, porque o `llms.txt`
+ * publicava TODA edição do Tradeoff nesta forma antiga. Sem eles, virar 404
+ * mataria de uma vez todos os links do produto entregues a robô de IA. Ver
+ * `lib/llms/llms-txt.ts`.
  */
 
 // Mirror the edition pages (correct <html lang> per locale): prerender per locale
@@ -134,8 +152,18 @@ function langAlternates(path: string): Record<string, string> {
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params
   const loc = isValidLocale(params.locale) ? params.locale : 'pt-BR'
-  const pais = isValidCountry(params.country) ? params.country : PAIS_PADRAO
   const t = T[tLocale(loc)]
+
+  /**
+   * 🔴 Segmento que não é país agora dá 404 na página, e o metadado precisa
+   * dizer a MESMA coisa. Antes daqui saía `?? PAIS_PADRAO`, ou seja, a página
+   * inexistente vinha com canônico do Brasil e `index: true`: um endereço morto
+   * se anunciando ao buscador como o arquivo brasileiro.
+   */
+  if (!isValidCountry(params.country)) {
+    return { title: t.metaTitle, robots: { index: false, follow: false } }
+  }
+  const pais = params.country
   const canonical = `${BASE}/${loc}/tradeoff/${pais}`
   const ogImage = getOgImageUrl(loc)
   return {
@@ -167,11 +195,8 @@ export default async function TradeoffArchivePage(props: Props) {
   const params = await props.params
   const loc = isValidLocale(params.locale) ? params.locale : 'pt-BR'
 
-  // Link antigo: o segmento é uma data, não um país.
-  if (!isValidCountry(params.country)) {
-    if (isValidDate(params.country)) redirect(`/${loc}/tradeoff/${PAIS_PADRAO}/${params.country}`)
-    redirect(`/${loc}/tradeoff/${PAIS_PADRAO}`)
-  }
+  // Não é país: não existe. Ver a nota longa no topo do arquivo.
+  if (!isValidCountry(params.country)) notFound()
   const pais = params.country
   const t = T[tLocale(loc)]
 

@@ -12,7 +12,7 @@
  */
 
 import { listPublishedDailies, loadDaily, dailyExists } from '../afos-daily/loader'
-import { listPublishedTradeoffs, loadTradeoff, tradeoffExists } from '../afos-tradeoff/loader'
+import { listPublishedTradeoffs, loadTradeoff, tradeoffExists, PAISES_TRADEOFF } from '../afos-tradeoff/loader'
 import { cleanMarkdownText } from '../afos-daily/utils'
 import { feedPath, type FeedLocale } from '../feeds/rss'
 
@@ -43,20 +43,43 @@ function dailyEntriesFor(loc: FeedLocale): string {
     .join('\n')
 }
 
+/**
+ * 🔴 O PAÍS PRECISA ATRAVESSAR AS QUATRO CHAMADAS, e antes não atravessava
+ * nenhuma. `listPublishedTradeoffs`, `tradeoffExists` e `loadTradeoff` todos
+ * têm `country = PAIS_PADRAO` por padrão, então este bloco inteiro só via o
+ * Brasil e ainda montava a URL sem país.
+ *
+ * Isso produzia DOIS defeitos de uma vez, e nenhum aparecia como erro:
+ *
+ * 1. As edições dos EUA, publicadas desde 31/Jul/2026, NUNCA entraram no
+ *    `llms.txt`. Um robô de IA perguntado sobre o Tradeoff das midterms não
+ *    tinha o que citar, e o arquivo não dizia que faltava nada.
+ * 2. Toda URL saía como `/[idioma]/tradeoff/[data]`, a forma antiga sem país.
+ *    Ela sobrevivia por redirect, então os links funcionavam, e por isso
+ *    ninguém notou. Quando essa forma virou 404 em 07/Ago/2026, por decisão do
+ *    André, este arquivo passou a ser o único lugar do projeto que ainda a
+ *    publicava: **todos os links do produto entregues a robô de IA morreriam
+ *    de uma vez.** O sitemap e o RSS já tinham migrado; só o `llms.txt` não.
+ *
+ * 📌 Ordem: país por país na ordem de `PAISES_TRADEOFF`, e dentro de cada um da
+ * edição mais nova para a mais antiga. O Brasil vem primeiro por ser o país de
+ * origem do produto e ter a série mais longa.
+ */
 function tradeoffEntriesFor(loc: FeedLocale): string {
-  return listPublishedTradeoffs()
-    .slice()
-    .reverse()
-    .filter(date => tradeoffExists(date, loc))
-    .map(date => {
-      const data = loadTradeoff(date, loc)
-      if (!data) return ''
-      const url = `${SITE}/${loc}/tradeoff/${date}`
-      const sinal = cleanMarkdownText(data.sinalDaSemana).slice(0, 220)
-      return `- [${data.title}](${url}): ${sinal}`
-    })
-    .filter(Boolean)
-    .join('\n')
+  return PAISES_TRADEOFF.flatMap(pais =>
+    listPublishedTradeoffs(pais)
+      .slice()
+      .reverse()
+      .filter(date => tradeoffExists(date, loc, pais))
+      .map(date => {
+        const data = loadTradeoff(date, loc, pais)
+        if (!data) return ''
+        const url = `${SITE}/${loc}/tradeoff/${pais}/${date}`
+        const sinal = cleanMarkdownText(data.sinalDaSemana).slice(0, 220)
+        return `- [${data.title}](${url}): ${sinal}`
+      })
+      .filter(Boolean)
+  ).join('\n')
 }
 
 const LOCALE_TAG: Record<FeedLocale, string> = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' }
