@@ -41,8 +41,30 @@ import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 
 import { gzipSync, gunzipSync } from 'zlib'
 import { createHash } from 'crypto'
 import { join } from 'path'
+// @ts-expect-error primitivo em .mjs, compartilhado com o redator do Hugging Face
+import { redigirCpf } from './lib/cpf.mjs'
 
 const RAIZ = 'backup/neon'
+
+/**
+ * 🛡️ CPF SAI DO BACKUP, por MINIMIZAÇÃO (política do André de 04/Ago/2026).
+ *
+ * O TSE publica `methodology`, `sampling_plan` e `control_system` como texto
+ * livre, e o estatístico responsável às vezes DIGITA o próprio CPF ali dentro. O
+ * dado é público na origem por obrigação da Lei 9.504/1997, e coletar segue
+ * correto; o que não se faz é republicá-lo em massa num repositório aberto sem
+ * necessidade, porque nada aqui é cruzado por CPF.
+ *
+ * A régua vive em scripts/lib/cpf.mjs e é a MESMA do redator do Hugging Face.
+ * Ela exige dígito verificador e fronteira de palavra: medido em 07/Ago/2026,
+ * sem isso a varredura acusava 884 trechos de `marketPrice` que eram pedaços de
+ * ID hexadecimal, e teria corrompido a série de preços, que é justamente o dado
+ * insubstituível que este backup existe para proteger.
+ *
+ * ⚠️ Isto vale do presente para a frente. Os backups JÁ COMMITADOS continuam
+ * com o que tinham, e o que fazer com eles é decisão do André, não deste script.
+ */
+let cpfRedigidos = 0
 
 /**
  * Tabelas que PODEM ir para um repositório público. Cada uma listada com o
@@ -55,7 +77,10 @@ const PUBLICAVEL: Record<string, string> = {
   marketEvent: 'eventos de mercado',
   source: 'fontes de notícia, sem dado de pessoa',
   researchRun: 'execuções de coleta, sem dado de pessoa',
-  researchFinding: 'achados de notícia, sem dado de pessoa',
+  // ⚠️ A classificação dizia "sem dado de pessoa" e isso era FALSO desde que o
+  // ingest do TSE passou a gravar aqui: o texto livre da pesquisa carrega o CPF
+  // do estatístico. Entra no backup com o CPF REDIGIDO, nunca cru.
+  researchFinding: 'achados de notícia e registro do TSE; texto livre entra com CPF redigido',
   analysisReport: 'relatórios editoriais, conteúdo já público no site',
   crossSignalLink: 'ligações entre sinais',
   forecastSnapshot: 'snapshots de previsão',
@@ -91,7 +116,13 @@ function paraCsv(linhas: Array<Record<string, unknown>>): string {
   const celula = (v: unknown): string => {
     if (v === null || v === undefined) return ''
     if (v instanceof Date) return v.toISOString()
-    const s = typeof v === 'object' ? JSON.stringify(v) : String(v)
+    const bruto = typeof v === 'object' ? JSON.stringify(v) : String(v)
+    // A redação vem ANTES do escape de CSV: depois dele a pontuação do CPF
+    // continuaria intacta, mas o texto já teria aspas duplicadas no meio e a
+    // fronteira de palavra passaria a depender do escape, não do dado.
+    const { saida, n } = redigirCpf(bruto)
+    cpfRedigidos += n
+    const s = saida
     return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s
   }
   return [cols.join(','), ...linhas.map((l) => cols.map((c) => celula(l[c])).join(','))].join('\n') + '\n'
@@ -201,6 +232,7 @@ async function main() {
   }, null, 2) + '\n', 'utf-8')
 
   console.log(`\n   ${manifesto.length} arquivo(s), ${(totalGz / 1024).toFixed(0)} KB comprimidos, ${alterados} alterado(s) nesta rodada`)
+  console.log(`   CPF removidos do texto livre do TSE: ${cpfRedigidos}`)
   console.log('\n✅ Backup gravado em backup/neon/. Confira com: npx tsx scripts/backup-neon.ts --verificar')
   await prisma.$disconnect()
 }

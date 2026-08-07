@@ -12,12 +12,31 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
 import { gunzipSync } from 'zlib'
 import { join } from 'path'
+// @ts-expect-error primitivo em .mjs, o MESMO que redige em scripts/backup-neon.ts
+import { cpfValido } from './lib/cpf.mjs'
 
 const RAIZ = 'backup/neon'
 
+/**
+ * 🔴 A CHECAGEM DE CPF ERA CEGA PARA O CPF SEM PONTUAÇÃO, e isso deixou passar.
+ *
+ * Medido em 07/Ago/2026: o padrão antigo era `\d{3}\.\d{3}\.\d{3}-\d{2}`, ou
+ * seja, só o formato pontuado. O texto livre do TSE traz as duas formas, e as
+ * cruas passaram verde para o repositório PÚBLICO em três meses de backup.
+ *
+ * A régua agora é o primitivo de scripts/lib/cpf.mjs, o MESMO que redige, com
+ * dígito verificador e fronteira de palavra. Sem esses dois filtros a varredura
+ * acusaria corrida de dígitos dentro de ID hexadecimal em `marketPrice`, e trava
+ * que acusa dado legítimo é trava que alguém aprende a ignorar.
+ */
 const PADROES: Array<{ nome: string; re: RegExp; nota?: string; filtro?: (s: string) => boolean }> = [
   { nome: 'e-mail', re: /[\w.+-]+@[\w-]+\.[\w.]{2,}/g },
-  { nome: 'CPF formatado', re: /\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/g },
+  {
+    nome: 'CPF',
+    re: /(?<!\w)(\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})(?!\w)/g,
+    nota: 'pontuado ou cru, confirmado por dígito verificador',
+    filtro: (s) => cpfValido(s.replace(/\D/g, '')),
+  },
   { nome: 'telefone BR', re: /\(\d{2}\)\s?9?\d{4}-\d{4}/g },
   { nome: 'segredo de alta entropia', re: /\b[A-Za-z0-9_-]{32,}\b/g, nota: 'possível token ou chave', filtro: pareceSegredo },
   { nome: 'chave de API', re: /\b(sk-[A-Za-z0-9-]{20,}|re_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,})\b/g },
@@ -54,6 +73,13 @@ const PERMITIDOS = [
   // Token de URL do Google News. Já é público: está impresso nas dailies
   // publicadas e serve para o leitor abrir a matéria. Não é segredo.
   /^CBM[A-Za-z0-9_-]+$/,
+  // Nome de arquivo em CDN da Webflow, no formato <id de 24 hex>_<arquivo>.
+  // Aparece dentro da URL de `fontePrimaria` de pesquisa do generic ballot, é a
+  // planilha de topline que o instituto publicou, e já está impressa no
+  // /dashboard/us. Ex.: 6a57c2c3ad28dd5ee3466d0b_ICV_Toplines_July2026.pdf.
+  // Sem esta entrada a trava bloqueia o backup todo dia por causa de uma URL
+  // pública, e trava que bloqueia sempre é trava que alguém aprende a pular.
+  /^[0-9a-f]{24}_[\w.-]+$/i,
 ]
 
 function listar(dir: string, out: string[] = []): string[] {
