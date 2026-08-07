@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { lerStatusDoArquivo } from '../frontmatter/status'
 import type { AfosDailyData } from '../../app/components/AfosDailyTemplate'
 
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
@@ -72,53 +73,14 @@ export function listDailies(): string[] {
  * The case-insensitive match accepts: published, draft, archived (future).
  * Any other value (typo, weird state) is treated as draft.
  */
-const STATUS_RE = /^status:\s*([a-z]+)\s*$/im
-const VALID_STATUSES = new Set(['published', 'draft', 'archived'])
 
 // Memoize per (date, mtime) — sitemap, feed, llms.txt all call this 3× per
 // rebuild. At 100 dailies that's 300 file reads each cold build; index
 // short-circuits the second and third caller.
-const statusCache = new Map<string, { mtime: number; status: string }>()
 
+/** Leitura compartilhada em lib/frontmatter/status desde 06/Ago/2026. */
 function readStatusFast(date: string): string {
-  const path = join(DAILY_DIR, `${date}.md`)
-  if (!existsSync(path)) return 'draft'
-  let mtime = 0
-  try {
-    mtime = statSync(path).mtimeMs
-  } catch {
-    return 'draft'
-  }
-  const cached = statusCache.get(date)
-  if (cached && cached.mtime === mtime) return cached.status
-  try {
-    // 🔴 LER O FRONTMATTER INTEIRO, nunca uma fatia de tamanho fixo.
-    //
-    // Isto lia os 500 primeiros caracteres. Em 06/Ago/2026 o MESMO defeito, no
-    // loader do Weekly, pôs a Edição №1 em produção com `status: published` e
-    // devolveu 404 nos TRÊS idiomas: o campo caiu no byte 558 por causa de um
-    // título longo mais um bloco de comentário no topo.
-    //
-    // Propagado para cá em 06/Ago, depois de um EVAL medir que a troca é neutra
-    // no acervo: os dois algoritmos sobre os 363 .md dos três produtos deram
-    // ZERO divergência.
-    //
-    // Falha para o lado seguro: sem `---` de fechamento, o status é 'draft'.
-    const bruto = readFileSync(path, 'utf-8')
-    const fim = bruto.indexOf('\n---', 3)
-    const head = fim > 0 ? bruto.slice(0, fim) : ''
-    const m = head.match(STATUS_RE)
-    if (!m) {
-      statusCache.set(date, { mtime, status: 'draft' })
-      return 'draft'
-    }
-    const status = m[1].toLowerCase()
-    const final = VALID_STATUSES.has(status) ? status : 'draft'
-    statusCache.set(date, { mtime, status: final })
-    return final
-  } catch {
-    return 'draft'
-  }
+  return lerStatusDoArquivo(join(DAILY_DIR, `${date}.md`))
 }
 
 /**

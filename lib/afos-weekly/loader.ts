@@ -23,6 +23,7 @@
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { lerStatusDoArquivo } from '../frontmatter/status'
 
 export const PAISES_WEEKLY = ['us'] as const
 export type PaisWeekly = (typeof PAISES_WEEKLY)[number]
@@ -150,46 +151,17 @@ export function listWeeklies(pais: string): string[] {
   }
 }
 
-const STATUS_RE = /^status:\s*([a-z]+)\s*$/im
-const VALIDOS = new Set(['published', 'draft', 'archived'])
-const statusCache = new Map<string, { mtime: number; status: string }>()
-
+/**
+ * ⚠️ O portão lê SÓ o arquivo de ORIGEM, sem sufixo de idioma: quem decide a
+ * visibilidade das traduções é o inglês. Por isso um defeito aqui derruba os
+ * três idiomas de uma vez.
+ *
+ * A leitura em si vive em `lib/frontmatter/status`, compartilhada pelos três
+ * produtos desde 06/Ago/2026, quando o mesmo defeito precisou ser consertado
+ * três vezes no mesmo dia. Ver a nota longa naquele arquivo.
+ */
 function lerStatus(date: string, pais: string): string {
-  const path = join(dirDoPais(pais), `${date}.md`)
-  if (!existsSync(path)) return 'draft'
-  let mtime = 0
-  try {
-    mtime = statSync(path).mtimeMs
-  } catch {
-    return 'draft'
-  }
-  const chave = `${pais}:${date}`
-  const cached = statusCache.get(chave)
-  if (cached && cached.mtime === mtime) return cached.status
-  try {
-    // 🔴 LER O FRONTMATTER INTEIRO, nunca uma fatia de tamanho fixo.
-    //
-    // Isto lia os 500 primeiros caracteres. Em 06/Ago/2026 a Edição №1 foi a
-    // produção com `status: published` e devolveu 404 nos TRÊS idiomas: com um
-    // título de 125 caracteres e um bloco de comentário no topo, o campo caiu
-    // no byte 558, o regex não achou, o padrão 'draft' entrou e o portão de
-    // produção chamou notFound. O pt-BR passava por 18 bytes e o espanhol por
-    // 10. Não era margem, era sorte.
-    //
-    // ⚠️ E o estrago é sempre nos três de uma vez, porque este portão lê SÓ o
-    // arquivo de origem, sem sufixo: quem decide a visibilidade das traduções
-    // é o inglês.
-    const bruto = readFileSync(path, 'utf-8')
-    const fim = bruto.indexOf('\n---', 3)
-    // Falha para o lado seguro: sem fechamento de frontmatter, fica 'draft'.
-    const head = fim > 0 ? bruto.slice(0, fim) : ''
-    const m = head.match(STATUS_RE)
-    const status = m && VALIDOS.has(m[1].toLowerCase()) ? m[1].toLowerCase() : 'draft'
-    statusCache.set(chave, { mtime, status })
-    return status
-  } catch {
-    return 'draft'
-  }
+  return lerStatusDoArquivo(join(dirDoPais(pais), `${date}.md`))
 }
 
 export function listPublishedWeeklies(pais: string): string[] {

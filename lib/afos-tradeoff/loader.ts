@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, existsSync, statSync } from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { lerStatusDoArquivo } from '../frontmatter/status'
 
 const TRADEOFF_DIR = join(process.cwd(), 'public', 'afos-tradeoff')
 
@@ -231,51 +232,10 @@ export function listTradeoffs(country: string = PAIS_PADRAO): string[] {
   }
 }
 
-const STATUS_RE = /^status:\s*([a-z]+)\s*$/im
-const VALID_STATUSES = new Set(['published', 'draft', 'archived'])
-const statusCache = new Map<string, { mtime: number; status: string }>()
 
+/** Leitura compartilhada em lib/frontmatter/status desde 06/Ago/2026. */
 function readStatusFast(date: string, country: string = PAIS_PADRAO): string {
-  const path = join(dirDoPais(country), `${date}.md`)
-  if (!existsSync(path)) return 'draft'
-  let mtime = 0
-  try {
-    mtime = statSync(path).mtimeMs
-  } catch {
-    return 'draft'
-  }
-  const chave = `${country}:${date}`
-  const cached = statusCache.get(chave)
-  if (cached && cached.mtime === mtime) return cached.status
-  try {
-    // 🔴 LER O FRONTMATTER INTEIRO, nunca uma fatia de tamanho fixo.
-    //
-    // Isto lia os 500 primeiros caracteres. Em 06/Ago/2026 o MESMO defeito, no
-    // loader do Weekly, pôs a Edição №1 em produção com `status: published` e
-    // devolveu 404 nos TRÊS idiomas: com um título de 125 caracteres e um bloco
-    // de comentário no topo, o campo caiu no byte 558. O pt-BR passava por 18
-    // bytes de folga e o espanhol por 10. Não era margem, era sorte.
-    //
-    // O conserto foi propagado para cá em 06/Ago, depois de um EVAL medir que a
-    // troca é neutra no acervo: os dois algoritmos rodados sobre os 363 .md dos
-    // três produtos deram ZERO divergência. Nenhuma edição muda de status.
-    //
-    // Falha para o lado seguro: sem `---` de fechamento, o status é 'draft'.
-    const bruto = readFileSync(path, 'utf-8')
-    const fim = bruto.indexOf('\n---', 3)
-    const head = fim > 0 ? bruto.slice(0, fim) : ''
-    const m = head.match(STATUS_RE)
-    if (!m) {
-      statusCache.set(chave, { mtime, status: 'draft' })
-      return 'draft'
-    }
-    const status = m[1].toLowerCase()
-    const final = VALID_STATUSES.has(status) ? status : 'draft'
-    statusCache.set(chave, { mtime, status: final })
-    return final
-  } catch {
-    return 'draft'
-  }
+  return lerStatusDoArquivo(join(dirDoPais(country), `${date}.md`))
 }
 
 export function listPublishedTradeoffs(country: string = PAIS_PADRAO): string[] {
