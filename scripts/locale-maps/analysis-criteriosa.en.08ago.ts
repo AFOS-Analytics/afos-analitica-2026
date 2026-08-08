@@ -1,0 +1,186 @@
+/**
+ * Mapa EN de 08/Ago para analysis-criteriosa.json.
+ * Convenções: ponto decimal, vírgula de milhar, datas no formato "Aug 8".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+const PV = G('first round', 'primeiro-turno')
+
+construir('analysis-criteriosa', 'en', {
+  subtitle:
+    `UPDATE Aug 8, 17:32 UTC, with 57 days to the ${PV}. THE PRICE STOPPED: Lula 64.50%, Flávio 26.95%, a gap of +37.55pp, and the SIX-day run of narrowing did not continue. There is no new national poll either: the latest remain ${G('Genial/Quaest', 'quaest')} and Meio/Ideia, both from Aug 5, and there are now SIX national polls registered with the ${G('TSE', 'tse')}, five for Aug 10 and Aug 11 and PoderData for Aug 13. On the board, Lula filed his candidacy on the night of Aug 7, and his ticket is the only one in the race with more than one party.`,
+
+  'candidates[0].header':
+    `PRICE FLAT FOR THE FIFTH DAY: ${G('Polymarket', 'polymarket')} 64.50% (vol USD 8.12M cumulative), from the Aug 8 reading at 17:32 UTC, the same value since Aug 4. HE FILED HIS CANDIDACY with the TSE on the night of Aug 7, with Alckmin as running mate, under the Brasil Pronto Pra Mais coalition. In the polling what still stands is 39% in the ${PV} at Genial/Quaest and 43% at Meio/Ideia.`,
+  'candidates[0].fortes[0]':
+    `HE FILED HIS CANDIDACY with the ${G('TSE', 'tse')} on Aug 7, with Geraldo Alckmin as running mate, and the Brasil Pronto Pra Mais coalition brings together SEVEN parties: PDT, PSB, the PT, PCdoB and PV federation, and the PSOL and Rede federation.`,
+  'candidates[0].fortes[1]':
+    `It is the ONLY ticket in the presidential race with more than one party. All the others run alone, in what the press called the election with the most single-party tickets since redemocratisation (G1, Aug 8).`,
+  'candidates[0].fortes[2]':
+    `His price completed FIVE days flat at 64.50%, Aug 4 to Aug 8, and the six-day run of narrowing in the gap did not continue today.`,
+  'candidates[0].fortes[3]':
+    `He leads BOTH ${PV} scenarios in force and wins the EIGHT runoff scenarios of the two Aug 5 rounds, without exception.`,
+  'candidates[0].fortes[4]':
+    `In the Quaest crosstabs he leads among the elderly, among Catholics and among those with no religion, and opens more than 16 points of advantage among women.`,
+  'candidates[0].fracos[0]':
+    `His son's case is still at the centre. The ${G('PT', 'pt')} petitioned the ${G('STF', 'stf')} demanding an inquiry into the leak of audio of Fábio Luís to his rival, which turns the episode into a procedural dispute before any outcome.`,
+  'candidates[0].fracos[1]':
+    `Mendonça, as vice president of the ${G('TSE', 'tse')}, ordered the delivery of data on a PT meeting and on the Porta-Vozes de Lula project (news cycle of Aug 8).`,
+  'candidates[0].fracos[2]':
+    `Also on the list of Pix earmarks Dino ordered the ${G('PF', 'pf')} to investigate is Rogério Carvalho, former PT leader in the Senate, alongside the rival's running mate and the president of the Chamber.`,
+  'candidates[0].fracos[3]':
+    `At ${G('Genial/Quaest', 'quaest')} he GAVE UP ground inside the house itself, from 40% to 39% in the ${PV} and from 45% to 44% in the runoff, and the runoff gap fell from 8pp to 5pp.`,
+  'candidates[0].fracos[4]':
+    `On the 88-day series, only 8 of the 88 had a value equal to or above the current 64.50%, and his high remains 66.50%, from Aug 1.`,
+  'candidates[0].analise':
+    `His day is about the board, not the price or the polling. IN THE MARKET he sits at 64.50% (vol USD 8.12M cumulative), in the Aug 8 reading at 17:32 UTC, and it is the FIFTH straight day at the same value, since Aug 4. The gap over Flávio held at +37.55pp and the six-day run of narrowing did NOT continue: after leaving +41.80pp on Aug 1 and falling every day through Aug 7, today it stopped. ON THE BOARD he filed his candidacy with the ${G('TSE', 'tse')} on the night of Aug 7, with Alckmin as running mate, under the Brasil Pronto Pra Mais coalition, which brings together seven parties: PDT, PSB, the PT, PCdoB and PV federation, and the PSOL and Rede federation. The official launch is set for Aug 16, at the Vila Euclides stadium in São Bernardo do Campo. And there is a structural fact: his is the ONLY ticket in the race with more than one party, in a picture the press described as the one with the most single-party tickets since redemocratisation. IN THE POLLING nothing changed, because no new national poll has come out since Aug 5: what stands is ${G('Genial/Quaest', 'quaest')} (n=2,004, BR-06591/2026) with 39% and a runoff of 44% x 39%, and Meio/Ideia (n=1,500, BR-04579/2026) with 43% and 48.5% x 43%. ON THE JUDICIAL AXIS the day cut both ways. Against him: the ${G('PT', 'pt')} petitioned the ${G('STF', 'stf')} over the leak of audio of his son to the rival, Mendonça ordered the delivery of data on a party meeting and on the Porta-Vozes de Lula project, and a former PT leader in the Senate is on the list of Pix earmarks Dino ordered investigated. On the symmetry side: that same list has the rival's running mate and the president of the Chamber. The panel records the three names together because separating them would be picking a side of the same judicial decision.`,
+
+  'candidates[1].header':
+    `PRICE FLAT: ${G('Polymarket', 'polymarket')} 26.95% (vol USD 8.08M cumulative), Aug 8 reading at 17:32 UTC, the same as Aug 7. After six days of gains, he stalled. And the runner-up contract FELL AGAIN, from 83.00% to 81.50%, a second straight day of losses in that book. In the polling what still stands is 30% at Quaest and 35% at Ideia.`,
+  'candidates[1].fortes[0]':
+    `He remains the comfortable favourite of the ${PV} runner-up contract, at 81.50% (vol USD 237 thousand), which describes a runoff the market treats as near certain.`,
+  'candidates[1].fortes[1]':
+    `The 26.95% level held after six days of gains, without giving back ground, and on the 88-day series 29 days had a value equal to or above it.`,
+  'candidates[1].fortes[2]':
+    `He wins among evangelicals in the ${G('Genial/Quaest', 'quaest')} crosstabs, and that is the only large segment where he comes out ahead.`,
+  'candidates[1].fortes[3]':
+    `In the two national polls in force he ROSE inside his own series: from 28% to 30% at Quaest and from 32% to 35% at Ideia.`,
+  'candidates[1].fortes[4]':
+    `He talked about appointing women to the ${G('STF', 'stf')} at an event with female allies (Folha de S.Paulo, Aug 8), in a week when the absence of women on his ticket became a topic.`,
+  'candidates[1].fracos[0]':
+    `THE RUNNER-UP CONTRACT FELL FOR THE SECOND DAY RUNNING, from 87.50% on Aug 6 to 83.00% on Aug 7 and 81.50% today. That is 6.00pp in two days, and this time the winner price did not rise alongside.`,
+  'candidates[1].fracos[1]':
+    `HIS TICKET ENTERED A BAD STRUCTURAL FACT: 2026 is the first election this century with no woman on a competitive presidential ticket, and the picture closed when he announced Alfredo Gaspar (CNN Brasil and Jornal de Brasília, Aug 8).`,
+  'candidates[1].fracos[2]':
+    `His running mate is on the list of Pix earmarks Dino ordered the ${G('PF', 'pf')} to investigate, with R$ 6.2 million sent to São José da Laje, in Alagoas, which the TCU audit could not trace.`,
+  'candidates[1].fracos[3]':
+    `Gilmar Mendes said he does not know his running mate (news cycle of Aug 7), which measures how unknown the name was outside Alagoas.`,
+  'candidates[1].fracos[4]':
+    `The ${G('PL', 'pl')} minutes leave an opening for Gaspar to run for the Senate again if the running mate changes, which keeps the ticket open on paper.`,
+  'candidates[1].fracos[5]':
+    `Rejection remains the hardest number: 54% say they would not vote for him at Quaest, against 52% for Lula.`,
+  'candidates[1].analise':
+    `His day is a flat price in the main contract and a falling one in the other. IN THE WINNER CONTRACT he held at 26.95% (vol USD 8.08M cumulative), the same as Aug 7, and with that the six-day run of closing in stopped. He gave back no ground, which is information too: the 26.95% level held. IN THE ${PV.toUpperCase()} RUNNER-UP CONTRACT he fell for the SECOND day running, from 87.50% on Aug 6 to 83.00% on Aug 7 and 81.50% today, adding up to 6.00pp in two days. Yesterday that fall coexisted with a rise in the winner contract; today it coexists with nothing, and it is an isolated fall. WHAT CHANGED ON THE BOARD IS STRUCTURAL AND IT IS ABOUT THE TICKET. With the announcement of Alfredo Gaspar, 2026 became the first election this century with no woman on a competitive presidential ticket, counting as competitive the ticket whose party holds seats in Congress. Since 2002 there has always been at least one. In this cycle, women appear only on tickets of parties without a bench. He answered the subject by talking about appointing women to the ${G('STF', 'stf')} at an event with female allies. AND THE RUNNING MATE IS STILL THE PROBLEM: he is on the list of Pix earmarks Dino ordered the ${G('PF', 'pf')} to investigate, with R$ 6.2 million for São José da Laje that the TCU audit could not trace; Gilmar Mendes said he does not know him; and the ${G('PL', 'pl')} minutes leave an opening for him to return to the Senate race if there is a change. IN THE POLLING nothing changed, because there is no new national poll. The six rounds registered for Aug 10, Aug 11 and Aug 13 are the next test.`,
+
+  'candidates[2].header':
+    `UP AGAIN: presidential at 7.65% (vol USD 9.23M cumulative) in the Aug 8 reading at 17:32 UTC, against 7.25% on Aug 7. It is the second straight day of gains. With the polling flat between 4% and 4.7%, the distance between price and declared intention reached 3.65pp, and it sits on the price side.`,
+  'candidates[2].fortes[0]':
+    `He rose 0.40pp in the presidential contract, a second straight day of gains, and remains the favourite of the ${PV} third place contract, at 58.50% (vol USD 176 thousand).`,
+  'candidates[2].fortes[1]':
+    `In the ${PV} runner-up contract he sits at 8.30%, against Lula's 8.20%, and being above the president in that book is the pattern of the series: it happened on 75 of the 89 days.`,
+  'candidates[2].fortes[2]':
+    `He has the largest cumulative volume in the presidential book among all names priced above 1%, at USD 9.23M, above Lula's USD 8.12M.`,
+  'candidates[2].fortes[3]':
+    `In the two national polls in force he rose inside his own series, from 3% to 4% at Quaest and from 2% to 4.7% at Ideia.`,
+  'candidates[2].fortes[4]':
+    `At Meio/Ideia he comes out ahead of Zema, at 4.7% against 2.6%.`,
+  'candidates[2].fracos[0]':
+    `THE DISTANCE BETWEEN PRICE AND POLLING GREW AGAIN: with 7.65% in the market and 4% to 4.7% in the polls, the gap runs from 2.95pp to 3.65pp, and it sits on the price side.`,
+  'candidates[2].fracos[1]':
+    `Six national polls in a row put him between 3% and 4.7%, after the 7.8% from ${G('AtlasIntel', 'atlasintel')} on Jul 29, and the isolated high reading remains the exception of the set.`,
+  'candidates[2].fracos[2]':
+    `On the 88-day series of the presidential book, his maximum is 17.90% and his minimum is 5.50%, so today's 7.65% still sits in the lower half of his own history.`,
+  'candidates[2].fracos[3]':
+    `He loses the two runoff scenarios in force by 10pp and by 13.3pp.`,
+  'candidates[2].fracos[4]':
+    `High cumulative volume with a price well below the top of his own history describes an old open position, not current conviction.`,
+  'candidates[2].analise':
+    `His case remains the largest distance between what the market pays and what the polling measures, and today that distance grew again. IN THE MARKET he went to 7.65% (vol USD 9.23M cumulative) in the Aug 8 reading at 17:32 UTC, against 7.25% on Aug 7, a second straight day of gains. IN THE POLLING he still sits between 4% at Quaest and 4.7% at Meio/Ideia, so the gap now runs from 2.95pp to 3.65pp, always on the price side. IN THE OTHER BOOK HE IS STILL ABOVE THE PRESIDENT, AND THAT IS NOT NEWS: in the ${PV} runner-up contract he sits at 8.30% against Lula's 8.20%. Being ahead there is the pattern of the series, not the exception: it happened on 75 of the 89 days measured. What changes today is the size of the difference, 0.10pp, which describes a tie between two unlikely hypotheses and not favouritism for either. THE SEQUENCE in the polling remains what weighs most against a growth reading: six consecutive national polls put him between 3% and 4.7%, after the 7.8% ${G('AtlasIntel', 'atlasintel')} measured on Jul 29. THE MARKET SERIES gives the yardstick: over 88 days his presidential price ran from a maximum of 17.90% to a minimum of 5.50%, so 7.65% does not describe a comeback. VOLUME remains the anomaly of the piece: with USD 9.23M cumulative he traded more than Lula, at a price less than an eighth of his.`,
+
+  'candidates[3].header':
+    `Prices from Aug 8 at 17:32 UTC: Caiado 1.35% (vol USD 5.59M), Zema 0.55% (vol USD 5.01M) and Haddad 0.05% (vol USD 6.78M). Caiado FELL for the second day running in both books, and in the ${PV} third place one he went from 33.50% to 31.00%. Zema rose 0.10pp and moved back above the 0.5% cut. In the polling nothing changed.`,
+  'candidates[3].subtitle':
+    `Aug 8, with 57 days to go: the pack had no fact of its own, and what reaches it comes from the wider picture. The registration phase runs to Aug 15, and Zema, who filed on Aug 6, is still the only one of the three with a candidacy filed. The structural fact of the day is that none of the competitive tickets has a woman, which closed with the announcement of the runner-up's running mate.`,
+  'candidates[3].caiado.label':
+    `CAIADO (${G('PSD', 'psd')}), presidential Poly 1.35% (vol USD 5.59M, Aug 8 reading 17:32 UTC) | ${PV} third place 31.00% | candidate confirmed in convention, with Kassab as running mate | polling in force: Quaest 4%, Meio/Ideia 5.7%`,
+  'candidates[3].caiado.fortes':
+    `He is the most voted name of the pack in the two national polls in force: 5.7% at Meio/Ideia, ahead of Renan Santos, and 4% at Quaest, tied with him. In the Meio/Ideia runoff he has 40% against Lula's 48.5%, the SMALLEST distance among the four rivals tested in that round. He remains the second name in the ${PV} third place contract, at 31.00%, and his campaign announced Roberto Azevêdo to coordinate the international area.`,
+  'candidates[3].caiado.fracos':
+    `HE FELL FOR THE SECOND DAY RUNNING IN BOTH BOOKS: the presidential one from 1.55% to 1.35%, and the ${PV} third place one from 33.50% to 31.00%. Adding the two days, he lost 4.50pp in the third place contract while Renan Santos held at 58.50%, so this time the fall was not a transfer between the two. The disagreement between houses about him is still open inside the same field window, with 4% at one and 5.7% at the other, and a monthly spread from 3.1% to 6%. He loses both runoffs in force.`,
+  'candidates[3].haddad.label':
+    `HADDAD (${G('PT', 'pt')}), presidential Poly 0.05% (vol USD 6.78M, Aug 8 reading 17:32 UTC) | ${PV} runner-up 0.25% | NOT tested by Quaest or by Meio/Ideia, because he is running for governor of São Paulo`,
+  'candidates[3].haddad.fortes':
+    `His cumulative volume, USD 6.78M, is still larger than that of several names priced above him, which keeps the contract with trading ballast despite the low level.`,
+  'candidates[3].haddad.fracos':
+    `HE FELL TO 0.05%, the floor of the band the market prices, against 0.15% on Aug 7. Neither of the two national polls in force tests him, in any scenario. The caveat stands and needs to be said plainly: he is NOT a presidential candidate, he is running for governor of São Paulo, and any scenario including him is a poll hypothesis and not a candidacy under way. At that level, a move carries almost no informational value.`,
+  'candidates[3].zema.label':
+    `ZEMA (${G('Novo', 'novo')}), presidential Poly 0.55% (vol USD 5.01M, Aug 8 reading 17:32 UTC) | ${PV} third place 3.40% | polling in force: Quaest 2%, Meio/Ideia 2.6% | ticket with senator Eduardo Girão | filed his candidacy with the TSE on Aug 6`,
+  'candidates[3].zema.fortes':
+    `HE ROSE 0.10pp and moved back above the 0.5% cut the panel itself uses to separate price from noise. He filed his candidacy with the ${G('TSE', 'tse')} on Aug 6, declaring R$ 178.7 million in assets, and is still the only one of the pack with a candidacy filed. In the polling he is stable at both houses, with 2% at Quaest and 2.6% at Ideia.`,
+  'candidates[3].zema.fracos':
+    `He is the rival Lula beats by the WIDEST margin in the Quaest round, at 46% x 34%, and he loses 48.5% x 37% at Ideia. In the polling he has not moved in a month at either house. In the ${PV} third place contract he fell from 3.70% to 3.40%. The series caveat is large: his high was 10.10%, on Apr 26, so 0.55% is a small fraction of that level and moves in that band carry almost no informational value.`,
+  'candidates[3].analise':
+    `The pack spent the day with no fact of its own, and what reaches it comes from the wider picture. IN THE PRICE, THE MOVEMENT WAS ALL CAIADO'S, AND DOWNWARD FOR THE SECOND DAY: presidential from 1.55% to 1.35%, and ${PV} third place from 33.50% to 31.00%. The difference from yesterday matters: yesterday his fall in the third place book was the exact mirror of Renan Santos's rise, and today Renan held at 58.50%. In other words, this time the probability did not migrate between the two, it left the book. Zema rose 0.10pp, to 0.55%, and moved back above the 0.5% cut that separates price from noise. Haddad fell to 0.05%. IN THE POLLING NOTHING CHANGED, because there is no new national poll: Caiado still has 4% at Quaest and 5.7% at Meio/Ideia, Zema 2% and 2.6%, and Haddad is not tested by either. THE STRUCTURAL FACT OF THE DAY REACHES EVERYONE: 2026 is the first election this century with no woman on a competitive presidential ticket, counting as competitive the ticket whose party holds seats in Congress. Women appear only on tickets of parties without a bench. And the registration phase runs to Aug 15, with Zema having filed on Aug 6 and Lula on the night of Aug 7. THE CROSSING THAT MATTERS: the three together are worth 1.95% in the winner contract, against 26.95% for the runner-up. That proportion did not move with the convention closed, with the ticket settled or with the registration filed, and now it has not moved with the calendar entering the registration stretch either.`,
+  'candidates[3].fortes[0]':
+    `CAIADO is the most voted name of the pack in the two national polls in force, with 5.7% at Meio/Ideia and 4% at Quaest, and has the smallest distance to Lula among the four rivals tested at Ideia.`,
+  'candidates[3].fortes[1]':
+    `ZEMA rose 0.10pp, to 0.55%, and moved back above the 0.5% cut the panel uses to separate price from noise.`,
+  'candidates[3].fortes[2]':
+    `Zema filed his candidacy with the ${G('TSE', 'tse')} on Aug 6 and is still the only one of the pack with a candidacy filed.`,
+  'candidates[3].fortes[3]':
+    `Caiado remains the second name in the ${PV} third place contract, at 31.00%.`,
+  'candidates[3].fortes[4]':
+    `Haddad's cumulative volume, USD 6.78M, keeps trading ballast in the contract despite the 0.05% price.`,
+  'candidates[3].fracos[0]':
+    `None of the three goes above 5.7% in either national poll in force, and Lula wins the six runoff scenarios in which they appear.`,
+  'candidates[3].fracos[1]':
+    `CAIADO fell for the second day running in both books, and in the third place one he lost 4.50pp in two days, this time without Renan Santos rising alongside.`,
+  'candidates[3].fracos[2]':
+    `HADDAD fell to 0.05%, the floor the market prices, and is still not a presidential candidate.`,
+  'candidates[3].fracos[3]':
+    `ZEMA is the rival Lula beats by the widest margin at Quaest, at 46% x 34%, and has not moved in the polling for a month.`,
+  'candidates[3].fracos[4]':
+    `In the Aug 8 reading the three together were worth 1.95% in the market, against 26.95% for Flávio, which describes a third space the price does not treat as competitive.`,
+
+  'quadroComparativo[0].p':
+    `NO NEW NATIONAL POLL since Aug 5. What still stands is ${G('Genial/Quaest', 'quaest')} (n=2,004, BR-06591/2026) with 39% in the ${PV} and 44% x 39% in the runoff, and Meio/Ideia (n=1,500, BR-04579/2026) with 43% and 48.5% x 43%. APPROVAL 48% x 47% at Quaest.`,
+  'quadroComparativo[0].m': `64.50% (vol USD 8.12M cumulative), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[0].t':
+    `Flat for the FIFTH straight day, Aug 4 to Aug 8. The gap over Flávio held at +37.55pp and the SIX-day run of narrowing did not continue. On the 88-day series his high is 66.50%, from Aug 1, and only 8 of the 88 days had a value equal to or above the current one.`,
+  'quadroComparativo[0].s':
+    `57 days to the election. HE FILED HIS CANDIDACY with the ${G('TSE', 'tse')} on the night of Aug 7, with Alckmin as running mate, under the Brasil Pronto Pra Mais coalition, which brings together seven parties. It is the only ticket in the race with more than one party. Official launch set for Aug 16, at Vila Euclides.`,
+
+  'quadroComparativo[1].p':
+    `NO NEW NATIONAL POLL. What still stands is 30% at Quaest, against 28% in that house's own Jul 15 round, and 35% at Meio/Ideia, against 32% on Jul 8. Runoffs of 39% and 43%, and he loses both. REJECTION 54%, the highest among the top two.`,
+  'quadroComparativo[1].m': `26.95% (vol USD 8.08M), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[1].t':
+    `IT STOPPED after six days of gains, at the same value as Aug 7, and gave back no ground. It is not extreme: on the 88-day series, 29 days had a value equal to or above it, with a high of 43.30% on May 12 and a low of 22.00% on Jul 3. In the runner-up contract he fell for the second day, from 83.00% to 81.50%.`,
+  'quadroComparativo[1].s':
+    `His ticket closed the picture in which 2026 becomes the first election this century with no woman on a competitive ticket. His running mate is on the list of Pix earmarks Dino ordered investigated, with R$ 6.2 million untraced, and Gilmar Mendes said he does not know him. He talked about appointing women to the ${G('STF', 'stf')}.`,
+
+  'quadroComparativo[2].p':
+    `NO NEW NATIONAL POLL. What still stands is 4% at Quaest, against 3% on Jul 15, and 4.7% at Meio/Ideia, against 2% on Jul 8. With both, SIX national polls in a row put him between 3% and 4.7%. He loses the runoffs 45% x 35% and 48% x 34.7%.`,
+  'quadroComparativo[2].m': `7.65% (vol USD 9.23M), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[2].t':
+    `Up 0.40pp, second straight day of gains, and the gap to the polling widened again, running from 2.95pp to 3.65pp, always on the price side. In the ${PV} runner-up contract he sits at 8.30% against Lula's 8.20%, a 0.10pp difference, and being above the president there is the pattern of the series, on 75 of the 89 days. On the 88-day series his maximum is 17.90% and his minimum is 5.50%.`,
+  'quadroComparativo[2].s':
+    `Largest cumulative volume in the presidential book among names above 1%, at USD 9.23M, above Lula's. His statement that, if elected, he will not comply with single-justice ${G('STF', 'stf')} rulings still stands.`,
+
+  'quadroComparativo[3].p':
+    `NO NEW NATIONAL POLL. What still stands is 4% at Quaest, the same as Jul 15, and 5.7% at Meio/Ideia, against 4% on Jul 8. In the runoffs, 37% against 45% and 40% against 48.5%, the latter the smallest distance among the four rivals tested at Ideia.`,
+  'quadroComparativo[3].m': `1.35% (vol USD 5.59M), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[3].t':
+    `He FELL for the second day running in both books: 0.20pp in the presidential one and 2.50pp in the ${PV} third place one, from 33.50% to 31.00%. Over two days that is 4.50pp lost in that contract, and this time Renan Santos held still, so it was not a transfer between the two.`,
+  'quadroComparativo[3].s':
+    `Roberto Azevêdo will coordinate the international area of his campaign. The disagreement between houses about him is still open inside the same field window: 4% at one and 5.7% at the other.`,
+
+  'quadroComparativo[4].p':
+    `NO NEW NATIONAL POLL. What still stands is 2% at Quaest, the same as Jul 15, and 2.6% at Meio/Ideia, practically the 2.5% of Jul 8. In the runoffs, 34% against 46% and 37% against 48.5%, and he is the rival Lula beats by the widest margin at Quaest.`,
+  'quadroComparativo[4].m': `0.55% (vol USD 5.01M), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[4].t':
+    `Up 0.10pp and back above the 0.5% cut the panel uses to separate price from noise. In the ${PV} third place contract he fell from 3.70% to 3.40%. The series caveat still applies: his high was 10.10%, on Apr 26.`,
+  'quadroComparativo[4].s':
+    `He filed his candidacy with the ${G('TSE', 'tse')} on Aug 6, declaring R$ 178.7 million in assets, and is still the only one of the pack with a candidacy filed. The window runs to Aug 15.`,
+
+  'quadroComparativo[5].p':
+    `No poll. Market on the impeachment of an ${G('STF', 'stf')} justice before 2027.`,
+  'quadroComparativo[5].m': `3.10% (vol USD 83 thousand), Aug 8 reading 17:32 UTC`,
+  'quadroComparativo[5].t':
+    `Flat at the same value as Aug 7. It is the thinnest contract among those the panel publishes, with cumulative volume that does not reach a thousandth of the presidential one, so moves in it carry less ballast than those in the presidential book.`,
+  'quadroComparativo[5].s':
+    `Dino ordered the ${G('PF', 'pf')} to investigate R$ 55.4 million in Pix earmarks flagged by the TCU, and the list has Flávio's running mate, the president of the Chamber and a former ${G('PT', 'pt')} leader in the Senate. Mendonça ordered the delivery of data on a PT meeting. Moraes denied Bolsonaro a visit from his children on Father's Day.`,
+
+  cruzamento:
+    `TODAY BOTH SIDES OF THE CROSSING STOOD STILL, AND WHAT MOVED WAS THE BOARD. The MARKET side is from the Aug 8 reading at 17:32 UTC. The POLLING side is from Aug 5, because no new national poll came out, and it is labelled as such on every line. --- THE SIX-DAY RUN OF NARROWING IN THE GAP DID NOT CONTINUE. It came from +41.80pp on Aug 1 and fell every day through Aug 7; today the gap held at +37.55pp, with Lula flat at 64.50% for the fifth day and Flávio flat at 26.95%. Neither gave back ground, which is information too: the runner-up's new level held without needing a poll to confirm it. --- THE MOVE OF THE DAY IS IN THE PLACEMENT BOOKS, AND IT CONTRADICTS YESTERDAY'S READING. In the ${PV} runner-up contract, Flávio fell for the second day running, from 87.50% on Aug 6 to 83.00% on Aug 7 and 81.50% today, adding up to 6.00pp in two days. Yesterday that fall coexisted with a rise in the winner contract and could be described as a swap between the two books; today the winner price held still, so the fall is isolated. --- AND IN THE THIRD PLACE CONTRACT THE TRANSFER STOPPED. Caiado fell 2.50pp, from 33.50% to 31.00%, and Renan Santos did NOT rise alongside: he held at 58.50%. On the two previous days the two moved as mirror images, one losing what the other gained. Today the probability left the book instead of migrating inside it, and that distinction is what separates a contest between two names from a loss of conviction about the scenario itself. --- A FIGURE THAT LOOKS LIKE NEWS AND IS NOT. In the runner-up contract, Renan Santos sits at 8.30% against Lula's 8.20%. Being above the president in that book is the PATTERN of the series, not the exception: it happened on 75 of the 89 days measured. What the day brings is the size of the difference, 0.10pp, between two low values. The panel says both things together because the first alone would read as a turnaround. --- THE POLLING DOES NOT ENTER TODAY BECAUSE THERE WAS NO POLLING, but the calendar got bigger. On top of the five national polls registered for Aug 10 and Aug 11, PoderData came in for Aug 13, with n=2,400 and fieldwork from Aug 9 to Aug 12. That is SIX national rounds in four days, and none of them has a result yet: all are in the field or about to be. --- ON THE BOARD, THE REGISTRATION PHASE MOVED. Lula filed on the night of Aug 7, with Alckmin as running mate, under the Brasil Pronto Pra Mais coalition, which brings together PDT, PSB, the PT, PCdoB and PV federation, and the PSOL and Rede federation. His is the ONLY ticket in the race with more than one party, in a picture described as the one with the most single-party tickets since redemocratisation. Zema had filed on Aug 6. The window runs to Aug 15. --- AND THERE IS A STRUCTURAL FACT THAT REACHES EVERY TICKET: 2026 is the first election this century with no woman on a competitive presidential ticket, counting as competitive the ticket whose party holds seats in Congress. Since 2002 there has always been at least one. In this cycle, women appear only on tickets of parties without a bench. --- ON THE JUDICIAL AXIS, THE DECISION OF THE DAY REACHES BOTH SIDES THROUGH THE SAME ACT. Dino ordered the ${G('PF', 'pf')} to investigate R$ 55.4 million in Pix earmarks flagged by a TCU audit, and the list has Flávio's running mate, with R$ 6.2 million untraced, the president of the Chamber, and a former ${G('PT', 'pt')} leader in the Senate, plus six other deputies, two senators and four former lawmakers. The panel names the three together because citing only one would be picking a side of the same decision. Adding it all up, the winner contract did not move today.`,
+})
