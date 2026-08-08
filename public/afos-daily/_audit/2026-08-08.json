@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-08",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "registro da candidatura de Lula",
+      "eleicao sem mulher em chapa competitiva",
+      "alcance da decisao de Dino sobre emendas Pix"
+    ],
+    "verificacoes": [
+      {
+        "evento": "PT registra candidatura de Lula com Alckmin",
+        "v1CrossRef": "Alckmin com 4 mencoes e registro com 35 nas 7 dailies; o ato e novo",
+        "v2Fetch": "A MANCHETE e de 08/Ago e o ATO e de 07/Ago as 23h20, pelo comprovante do sistema do TSE",
+        "detalhes": "Coligacao Brasil Pronto Pra Mais, sete partidos: PDT, PSB, federacao PT-PCdoB-PV, federacao PSOL-Rede. Lancamento em 16/Ago na Vila Euclides",
+        "fontes": ["g1", "Brasil 247", "Revista Forum", "Poder360"],
+        "decisao": "incorporar com a data do ATO, nao a da manchete",
+        "nota": "mesmo defeito reincidente que me pegou com o Zema em 07/Ago"
+      },
+      {
+        "evento": "2026 e a primeira eleicao do seculo sem mulher em chapa competitiva",
+        "v2Fetch": "confirmado COM a definicao: competitiva e a chapa cujo partido tem representacao no Congresso. Desde 2002 sempre houve ao menos uma. Em 2026 mulheres aparecem so em partidos sem bancada",
+        "fontes": ["CNN Brasil", "Jornal de Brasilia"],
+        "decisao": "incorporar com a definicao junto, porque sem ela o superlativo fica sem regua"
+      },
+      {
+        "evento": "Dino manda PF investigar emendas Pix",
+        "v2Fetch": "R$ 55,4 milhoes. A lista tem Alfredo Gaspar (R$ 6,2 mi a Sao Jose da Laje), Hugo Motta e Rogerio Carvalho, mais seis deputados, dois senadores e quatro ex-parlamentares",
+        "fontes": ["Folha de S.Paulo", "Metropoles", "InfoMoney", "Brasil de Fato"],
+        "decisao": "incorporar NOMEANDO os tres",
+        "corrigeDefeitoAnterior": "em 07/Ago o painel citou so o vice de Flavio, o que era escolher um lado do mesmo ato judicial"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "delegados nao veem risco vem de uma coluna. Mantido porque REDUZ o alarme em vez de criar, e esta atribuido a Folha.",
+    "numericalErrors": "reconcile-claims OK, 24 claims, tolerancia +-0,05pp",
+    "fontesInventadas": "conferidos 3 ao acaso, todos com materia do dia: g1 (registro), Folha (Dino), Estadao (Vorcaro)",
+    "quotesLiterais": "uma, 'Nao o conheco', de Gilmar Mendes, com veiculo e link",
+    "causacaoEspuria": "nenhuma. O texto diz que o gap parou, nao por que parou",
+    "verbosCriticos": "protocolou, mandou investigar, negou, liquidada. Investigar NAO e ser investigado, e o texto diz que a lista alcanca tres campos",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasCorpo": 899,
+    "tetoPalavras": 900,
+    "cortadas": 133,
+    "validateAfosDaily": "OK nos 3 idiomas",
+    "reconcileClaims": "OK",
+    "gateNumericoPtEnEs": "32 tokens, multiconjunto identico",
+    "cincoChecagens": "limpas nos 3 idiomas",
+    "urlsIdenticasEntreIdiomas": "48 links, byte a byte",
+    "avisoNaoBloqueante": "densidade de link em 79%, contra a regua de 80%. 19 de 24 paragrafos."
+  },
+  "mercado": {
+    "leitura": "2026-08-08T17:32:56Z",
+    "confirmadaPorDuasLeituras": true,
+    "travaBloqueouAntes": true,
+    "motivoDoBloqueio": "secondPlace:Lula divergiu 0,35pp entre as duas leituras. Recaptura aprovou.",
+    "gateRebaselineDisparou": false,
+    "reFetch": "as 21:08 UTC os books finos tinham andado (3o lugar Caiado 26,50%, Renan 60,50%, STF 3,80%), mas sao leituras UNICAS. A edicao ancora nas duas capturas CONFIRMADAS."
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "host em pausa por bloqueio de volume ate ~09/Ago",
+    "filaEmDebito": 9
+  }
+}
