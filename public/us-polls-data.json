@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-07",
-  "fetchedAt": "2026-08-07T21:56:53.846Z",
+  "lastUpdate": "2026-08-08",
+  "fetchedAt": "2026-08-08T16:36:57.955Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,7 +26,7 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-08",
+    "desde": "2026-07-09",
     "nPesquisas": 30,
     "nInstitutos": 24,
     "dem": 47.67,

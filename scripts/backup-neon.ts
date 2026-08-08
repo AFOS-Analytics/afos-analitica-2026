@@ -41,7 +41,9 @@ import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 
 import { gzipSync, gunzipSync } from 'zlib'
 import { createHash } from 'crypto'
 import { join } from 'path'
-// @ts-expect-error primitivo em .mjs, compartilhado com o redator do Hugging Face
+// Primitivo em .mjs, compartilhado com a trava de PII e com o redator do
+// Hugging Face. Não colocar diretiva de supressão de tipo aqui: o TypeScript
+// resolve o .mjs sozinho, e supressão sem erro para suprimir REPROVA o build.
 import { redigirCpf } from './lib/cpf.mjs'
 
 const RAIZ = 'backup/neon'

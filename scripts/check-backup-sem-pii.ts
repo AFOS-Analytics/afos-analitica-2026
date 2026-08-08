@@ -12,7 +12,9 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'fs'
 import { gunzipSync } from 'zlib'
 import { join } from 'path'
-// @ts-expect-error primitivo em .mjs, o MESMO que redige em scripts/backup-neon.ts
+// Primitivo em .mjs, o MESMO que redige em scripts/backup-neon.ts.
+// Não colocar diretiva de supressão de tipo aqui: o TypeScript resolve o .mjs
+// sozinho, e supressão sem erro para suprimir REPROVA o build.
 import { cpfValido } from './lib/cpf.mjs'
 
 const RAIZ = 'backup/neon'
