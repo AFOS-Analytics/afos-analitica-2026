@@ -6,6 +6,13 @@ on:
     paths:
       - 'public/analysis-data.json'
       - 'public/analysis-criteriosa.json'
+      # polls-data.json NAO e arquivado aqui (o archive so guarda os dois acima),
+      # mas dispara este workflow de proposito: o mirror do Hugging Face encadeia
+      # na conclusao dele, e o export LE polls-data.json, inclusive a historia git
+      # dele, que e de onde saem as pesquisas removidas pela regra de frescor.
+      # Sem esta linha, um commit so de frescor (b400c62, 08/Ago/2026) nao acorda
+      # ninguem e o dataset publico so alcanca o painel no cron do dia seguinte.
+      - 'public/polls-data.json'
   schedule:
     - cron: '0 14 * * *'
   workflow_dispatch:
