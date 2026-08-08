@@ -1,0 +1,19 @@
+/**
+ * 08/Ago, complemento: as duas rodadas de 08/Jul passaram de 30 dias e saíram
+ * do `polls[]` pelo Guardrail #1 de frescor. A estrutura do arquivo do idioma
+ * acompanha sozinha, porque o construtor a copia do pt-BR; só a `note` mudou.
+ */
+import { construir } from '../build-locale-json'
+
+const EN = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+const ES = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('polls-data', 'en', {
+  'polymarketComparison.note':
+    `THE PRICES IN THIS SECTION ARE FROM THE AUG 8 READING, AT 17:32 UTC. AFOS only publishes a price that two independent readings confirm, taken eight minutes apart. THE SIX-DAY RUN OF NARROWING IN THE GAP DID NOT CONTINUE: it came from +41.80pp on Aug 1 and fell every day through Aug 7, and today it held at +37.55pp, with Lula flat at 64.50% for the fifth day and Flávio flat at 26.95%. Neither gave back ground. THE MOVE OF THE DAY IS IN THE PLACEMENT BOOKS, and it contradicts yesterday's reading: in the ${EN('first round', 'primeiro-turno')} runner-up book, Flávio fell for the second day running, from 87.50% on Aug 6 to 81.50% today, and this time his winner price did not rise alongside; in the third place book, Caiado fell 2.50pp and Renan Santos did NOT rise, he held at 58.50%, so the probability left the book instead of migrating inside it. Also in the runner-up book, Renan Santos sits at 8.30% against Lula's 8.20%, a 0.10pp difference between two low values, and being above the president there is the pattern of the series, not news: it happened on 75 of the 89 days. THE POLL LIST SHOWS THE LAST 30 DAYS, and the two Jul 8 rounds dropped out today under that cut. Comparisons within the same house still cite the institute's earlier round with the date written out, even when it no longer appears on the list, because that is how you compare an institute with itself. THE POLLING SIDE IS NOT FROM TODAY: there is no new national poll since Aug 5. Six national polls are registered with the ${EN('TSE', 'tse')} for Aug 10, Aug 11 and Aug 13, and none has a result yet.`,
+})
+
+construir('polls-data', 'es', {
+  'polymarketComparison.note':
+    `LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA DEL 8/Ago, DE LAS 17:32 UTC. AFOS solo publica precio que dos lecturas independientes confirmen, tomadas con ocho minutos de intervalo. LA RACHA DE SEIS DÍAS DE ESTRECHAMIENTO DE LA BRECHA NO CONTINUÓ: venía de +41,80pp el 1/Ago y cayó todos los días hasta el 7/Ago, y hoy quedó en +37,55pp, con Lula estancado en 64,50% por quinto día y Flávio estancado en 26,95%. Ninguno de los dos devolvió terreno. EL MOVIMIENTO DEL DÍA ESTÁ EN LOS LIBROS DE COLOCACIÓN, y contradice la lectura de ayer: en el de segundo lugar de la ${ES('primera vuelta', 'primeiro-turno')}, Flávio cayó por segundo día consecutivo, de 87,50% el 6/Ago a 81,50% hoy, y esta vez su precio de ganador no subió junto; en el de tercer lugar, Caiado cayó 2,50pp y Renan Santos NO subió, quedó en 58,50%, así que la probabilidad salió del libro en vez de migrar dentro de él. También en el de segundo lugar, Renan Santos está en 8,30% contra 8,20% de Lula, diferencia de 0,10pp entre dos valores bajos, y estar por encima del presidente allí es el patrón de la serie, no una novedad: ocurrió en 75 de los 89 días. LA LISTA DE ENCUESTAS MUESTRA LOS ÚLTIMOS 30 DÍAS, y las dos rondas del 8/Jul salieron hoy por ese corte. Las comparaciones dentro de la misma casa siguen citando la ronda anterior del instituto con la fecha escrita, aunque ya no aparezca en la lista, porque así se compara un instituto consigo mismo. EL LADO DE LAS ENCUESTAS NO ES DE HOY: no hay encuesta nacional nueva desde el 5/Ago. Seis nacionales están registradas en el ${ES('TSE', 'tse')} para el 10, el 11 y el 13/Ago, y ninguna tiene resultado todavía.`,
+})
