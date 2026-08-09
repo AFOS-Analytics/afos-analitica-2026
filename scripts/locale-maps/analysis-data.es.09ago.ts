@@ -1,0 +1,84 @@
+/**
+ * Mapa ES de 09/Ago para analysis-data.json.
+ * Convenções: vírgula decimal e ponto de milhar. "estancado", nunca "parado".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1':
+    `A 56 días de la ${G('primera vuelta', 'primeiro-turno')}, el precio del líder volvió a moverse y las encuestas siguen sin medición desde hace cuatro días. No salió encuesta nacional nueva desde el 5/Ago: siguen valiendo ${G('Genial/Quaest', 'quaest')} (n=2.004, presencial, margen 2pp, BR-06591/2026) con una primera vuelta de 39% x 30% y una segunda vuelta de 44% x 39%, y Meio/Ideia (n=1.500, telefónica, margen 2,5pp, BR-04579/2026) con 43% x 35% y 48,5% x 43%. La cobertura de hoy sobre Quaest trae recortes por escolaridad y por posicionamiento político, que son lecturas de esa misma ronda del 5/Ago, no medición nueva.`,
+
+  'cards.sentimento.text2':
+    `LA BRECHA VOLVIÓ A ESTRECHARSE, Y POR UN SOLO LADO. Quedó en +36,55pp, contra +37,55pp de ayer, porque LULA CAYÓ 1,00pp, a 63,50%, rompiendo por abajo la meseta de cinco días que duraba desde el 4/Ago. Flávio quedó estancado en 26,95% por tercer día. La distinción importa: cuando la brecha se estrecha por los dos extremos hay transferencia entre los dos nombres; cuando se estrecha solo porque el líder cede, lo que existe es pérdida de precio en el favorito, y la probabilidad puede no haber ido al segundo. Desde el 1/Ago la brecha cayó en SIETE de los ocho días, con un único día quieto, bajando desde +41,80pp.`,
+
+  'cards.sentimento.text3':
+    `EL SEGUNDO MOVIMIENTO DEL DÍA ESTÁ EN EL LIBRO DE TERCER LUGAR, Y CONTRADICE EL DE AYER. Renan Santos saltó 6,00pp, a 64,50%, y Caiado cayó 5,50pp, a 25,50%, en espejo casi exacto. Ayer Caiado cayó 2,50pp y Renan NO subió, y el panel registró que la probabilidad salía del libro en vez de migrar dentro de él. Hoy migró. La dirección fue la misma en los dos días y el mecanismo no, y por eso el panel los describe por separado en vez de sumarlos en una tendencia. En el libro de segundo lugar, Flávio se detuvo en 81,50% tras perder 6,00pp en dos días.`,
+
+  'cards.sentimento.direita':
+    `EL DÍA DE LA OPOSICIÓN FUE DE PAPELEO Y DE RECORTES, SIN HECHO NUEVO DE MERCADO. Flávio completó su tercer día estancado en 26,95%, y el terreno que ganó sobre el líder vino de la caída de este, no de un movimiento propio. Un recorte de ${G('Genial/Quaest', 'quaest')} publicado el 9/Ago muestra a Flávio ampliando ventaja entre votantes con educación secundaria y superior, con la salvedad de que es una lectura de la ronda del 5/Ago, no una encuesta nueva. En el papeleo, Zema declaró R$ 178,7 millones ante el ${G('TSE', 'tse')} y su compañero de fórmula, Girão, R$ 34,1 millones. Y el cuadro estructural se cerró con una cifra: 2026 tiene 92,3% de fórmulas de un solo partido, la mayor proporción desde la redemocratización, con la fórmula del adversario como la única con más de un partido.`,
+
+  'cards.sentimento.esquerda':
+    `LULA DECLARÓ SU PATRIMONIO ANTE EL ${G('TSE', 'tse')}, cerca de R$ 4,7 millones, 35% menos de lo que informó en 2022, con Alckmin declarando R$ 3,3 millones. Poder360 calcula una caída de 60% en términos reales desde 2018. Los medios divergen en el decimal, entre R$ 4,7 millones y R$ 4,8 millones, y el panel registra la divergencia en vez de elegir una cifra. En el mapa, un relevamiento publicado el 9/Ago cuenta 26 plataformas estatales organizadas para él contra 16 del adversario, que es la cara estatal de la misma asimetría que ya aparecía en la composición de la fórmula. El lanzamiento oficial de campaña sigue fijado para el 16/Ago, en Vila Euclides, y el plazo de registro de candidaturas se cierra el 15/Ago.`,
+
+  'cards.sentimento.terceiraVia':
+    `EL ESPACIO VOLVIÓ A ENCOGERSE, Y EL MOVIMIENTO FUE TODO DE CAIADO. Cayó por tercer día seguido en los dos libros: presidencial de 1,35% a 1,25%, y tercer lugar de la ${G('primera vuelta', 'primeiro-turno')} de 31,00% a 25,50%. Solo en ese libro son 10,00pp en tres días, desde el 33,50% del 6/Ago. Zema cayó 0,10pp, a 0,45%, y volvió a quedar POR DEBAJO del corte de 0,5% que el panel usa para separar precio de ruido, tras haber estado por encima un único día. Haddad sigue en 0,05%. En las encuestas nada cambió: Caiado con 4% en Quaest y 5,7% en Ideia, Renan Santos con 4% y 4,7%, Zema con 2% y 2,6%. Los tres sumados valen 1,75% en el contrato de ganador, contra 26,95% del segundo, y esa proporción volvió a encogerse.`,
+
+  'cards.sentimento.polymarket':
+    `Precios de la lectura del 9/Ago, de las 17:34 UTC: Lula 63,50% (vol USD 8,18M acumulado), Flávio 26,95% (vol USD 8,09M), Renan Santos 7,80% (vol USD 9,27M), Caiado 1,25% (vol USD 5,60M), Zema 0,45% (vol USD 5,02M), Haddad 0,05%, destitución en el STF 3,60% (vol USD 83 mil). Volumen total del libro presidencial en USD 121,32M. Brecha de Lula sobre Flávio en +36,55pp, contra +37,55pp de ayer, y el estrechamiento vino solo de la caída del líder. AFOS solo publica un precio que dos lecturas independientes confirmen, tomadas con ocho minutos de intervalo, y la que vale es siempre la más reciente. EN LOS LIBROS DE COLOCACIÓN: en el de segundo lugar, Flávio se detuvo en 81,50%, y Renan Santos abrió distancia sobre Lula, con 8,25% contra 6,75%, una distancia de 1,50pp cuando ayer era de 0,10pp. En el de tercer lugar, Renan Santos SALTÓ a 64,50% y Caiado cayó a 25,50%. En el Senado, el ${G('PL', 'pl')} subió a 74,50% (vol USD 259 mil).`,
+
+  'cards.inss.text1':
+    `El eje de las enmiendas no tuvo decisión nueva hoy. Sigue valiendo la orden de Dino a la ${G('PF', 'pf')} de investigar indicios de delito en R$ 55,4 millones de enmiendas Pix señalados por una auditoría del TCU, y la lista alcanza a los dos lados de la disputa.`,
+
+  'cards.inss.text2':
+    `LA LISTA TIENE TRES NOMBRES QUE IMPORTAN PARA ESTE PANEL, Y CITAR SOLO UNO SERÍA ELEGIR UN LADO. Alfredo Gaspar, compañero de fórmula de Flávio Bolsonaro, con R$ 6,2 millones enviados a São José da Laje, en Alagoas, que la auditoría no logró rastrear. Hugo Motta, presidente de la Cámara. Y Rogério Carvalho, exlíder del ${G('PT', 'pt')} en el Senado. Entran además otros seis diputados federales, dos senadores y cuatro exparlamentarios.`,
+
+  'cards.inss.text3':
+    `LA COBERTURA DE HOY SOBRE EL EJE ES DE ANÁLISIS, NO DE HECHO NUEVO, y el panel lo registra así. Salieron piezas sobre la facilidad de desvío en el diseño de la enmienda Pix y sobre el volumen de menciones al caso del hijo del presidente en las redes, con 397,3 mil en una semana según un relevamiento publicado el 9/Ago. Ninguna de ellas informa decisión, imputación ni acusación nueva.`,
+
+  'cards.inss.text4':
+    `DOS NOTICIAS DE ALTO IMPACTO FUERON VERIFICADAS Y NO ENTRARON. La primera, sobre Moraes derivar el caso a la PGR tras la ausencia de Flávio en la ${G('PF', 'pf')}, circuló hoy en los agregadores, pero el HECHO es de julio: la declaración estaba fijada para el 28/Jul y las notas primarias son de julio. La segunda, sobre el avance de las investigaciones contra el hijo del presidente en el ${G('STF', 'stf')}, tiene fuente única. El panel exige dos fuentes independientes para un hecho de alto impacto, y ninguna de las dos pasó ese criterio hoy.`,
+
+  'cards.inss.impactoLula':
+    `El caso de su hijo sigue siendo el vector de desgaste más citado, y hoy apareció por el volumen de menciones en las redes, no por un acto procesal. El ${G('PT', 'pt')} ya había acudido al ${G('STF', 'stf')} reclamando una investigación sobre la filtración de audios al adversario, lo que convierte el episodio en disputa procesal antes de cualquier desenlace. En el precio, el día trajo una caída de 1,00pp en su contrato, sin que ninguna de las piezas publicadas hoy aporte un hecho capaz de explicar la caída, y el panel no atribuye causa.`,
+
+  'cards.inss.impactoGestao':
+    `La aprobación sigue medida en 48% contra 47% en la ${G('Genial/Quaest', 'quaest')} del 5/Ago, y en 37% de óptimo o bueno contra 43% de malo o pésimo en la BTG/Nexus del 3/Ago. Las dos casas miden la gestión de forma distinta y el panel registra las dos sin arbitrar, porque la comparación válida es de cada casa consigo misma. Ninguna de las dos fue actualizada desde entonces.`,
+
+  'cards.inss.conclusao':
+    `A 56 días de la elección, el precio se movió y las encuestas siguen quietas. La brecha quedó en +36,55pp, séptimo día de caída en ocho desde el 1/Ago, y esta vez el estrechamiento vino solo de la caída del líder, con el segundo inmóvil por tercer día. En los libros de colocación la lectura de ayer se invirtió: la transferencia entre Renan Santos y Caiado en el contrato de tercer lugar, que ayer se había detenido, volvió en espejo casi exacto. LA PRUEBA EMPIEZA MAÑANA: hay TRES encuestas nacionales registradas para el 10/Ago, entre ellas Palver con n=5.000, más dos el 11/Ago y una el 13/Ago. Son seis en cuatro días, y ninguna tiene resultado todavía.`,
+
+  'cards.bancoMaster.text1':
+    `El caso Master no tuvo hecho propio hoy. El último registro sigue siendo la liquidación de la holding de Daniel Vorcaro en las Islas Caimán, informada el 7 y el 8/Ago, con el liquidador avanzando en la búsqueda de bienes y logrando un rastreo de apartamentos en Estados Unidos.`,
+
+  'cards.bancoMaster.text2':
+    `La fricción institucional entre la Policía Federal y André Mendonça, relator del expediente, sigue sin desarrollo nuevo. Vale el registro que reduce la alarma: comisarios consultados por la prensa el 8/Ago dicen que el ambiente se volvió hostil y que aun así no ven riesgo para las investigaciones. El ministro de Justicia intenta mediar.`,
+
+  'cards.bancoMaster.text3':
+    `LA CONSULTA ESPECÍFICA DE MASTER, VORCARO, STF, INSS Y CPI VOLVIÓ VACÍA HOY, y eso fue comprobado antes de convertirse en afirmación. El tema aparece en dos ítems de otros feeds, uno de ellos la propia liquidación en las Islas Caimán, ya registrada ayer. Es decir, es un día sin noticia en ese eje y no una falla de lectura, y el panel anota la diferencia en vez de tratar las dos cosas como lo mismo. La declaración de Jaques Wagner ante la ${G('PF', 'pf')} sigue postergada y el recurso sobre la CPI continúa sin decisión.`,
+
+  'cards.bancoMaster.conclusao':
+    `El contrato de destitución de un juez del ${G('STF', 'stf')} SUBIÓ 0,50pp, a 3,60% (vol USD 83 mil), en la lectura del 9/Ago de las 17:34 UTC, primera variación tras dos días quieto en 3,10%. Es el contrato más fino entre los que el panel publica, con un volumen acumulado que no llega a una milésima del libro presidencial. En un día sin decisión judicial nueva, el precio se movió; ayer, en un día con el Poder Judicial en cuatro frentes, quedó quieto. El panel registra las dos cosas lado a lado justamente porque la secuencia muestra que el movimiento en ese contrato no acompaña el ciclo noticioso, y no concluye nada a partir de él.`,
+
+  'cards.stf.toffoli':
+    `Toffoli sigue sin acto individual nuevo capturado este domingo.`,
+
+  'cards.stf.moraes':
+    `Sin acto nuevo este domingo. Volvió a las páginas de opinión el encuentro entre Lula y Alcolumbre en su casa, registrado el 4/Ago. Una nota sobre él derivando a la PGR la ausencia de Flávio Bolsonaro en la ${G('PF', 'pf')} circuló hoy en los agregadores, pero el hecho es de julio y el panel no lo registra como hecho del día.`,
+
+  'cards.stf.gilmar':
+    `Sin acto nuevo este domingo. Siguen valiendo el registro del 7/Ago, cuando dijo no conocer a Alfredo Gaspar, el compañero de fórmula de Flávio Bolsonaro, y su propuesta de jurisprudencia vinculante para frenar proyectos de ${G('pauta-bomba', 'pauta-bomba')}, que otros jueces señalaron apoyar.`,
+
+  'cards.stf.dino':
+    `Sin acto nuevo este domingo. Sigue valiendo la orden del 8/Ago a la ${G('PF', 'pf')} de investigar indicios de delito en R$ 55,4 millones de enmiendas Pix señalados por el TCU, con el compañero de fórmula de Flávio Bolsonaro, el presidente de la Cámara y un exlíder del ${G('PT', 'pt')} en el Senado en la misma lista, además de otros seis diputados, dos senadores y cuatro exparlamentarios.`,
+
+  'cards.stf.mendonca':
+    `Sin acto nuevo este domingo. Un relevamiento publicado hoy señala que lidera la concesión de habeas corpus en el primer semestre, lo que es dato de perfil y no acto del día. Sigue como relator del expediente del caso Master, y vicepresidente del ${G('TSE', 'tse')}, cargo en el que ordenó el 8/Ago la entrega de datos sobre un encuentro del ${G('PT', 'pt')} y sobre el proyecto Porta-Vozes de Lula.`,
+
+  'cards.stf.nexo':
+    `El hilo de este domingo es la AUSENCIA de acto judicial nuevo, en un día en que el precio se movió. Ninguno de los cinco jueces seguidos tomó una decisión nueva, y las noticias del eje fueron de análisis y de perfil: el diseño de la enmienda Pix, el volumen de menciones al caso del hijo del presidente en las redes, el ranking de habeas corpus. En paralelo, el contrato de destitución SUBIÓ 0,50pp y el contrato presidencial del líder CAYÓ 1,00pp. El panel no conecta una cosa con la otra, porque no hay hecho que conectar, y registra que el movimiento de precio del día no tiene un disparador judicial identificable.`,
+
+  'cards.stf.analise':
+    `EL CONTRATO DE DESTITUCIÓN SUBIÓ 0,50pp, a 3,60% (vol USD 83 mil), primera variación tras dos días en 3,10%. La secuencia de los dos días es el registro que interesa y descarta la lectura fácil: AYER, con el Poder Judicial apareciendo en cuatro frentes distintos, el precio no se movió; HOY, sin ninguna decisión nueva, subió. Con USD 83 mil acumulados, este es el contrato más fino entre los que el panel publica, y una variación de 0,50pp en él cuesta menos dinero que cualquier otra del panel. La salvedad se repite a propósito, porque es el último lugar donde se debe buscar la confirmación de una tesis política.`,
+})
