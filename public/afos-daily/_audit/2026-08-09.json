@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-09",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "declaracao de patrimonio de Lula ao TSE",
+      "recorde de 92,3% de chapas puro-sangue",
+      "contagem de 26 x 16 palanques estaduais",
+      "Moraes aciona a PGR pela ausencia de Flavio na PF",
+      "avanco das investigacoes sobre o filho do presidente"
+    ],
+    "verificacoes": [
+      {
+        "evento": "Lula declara patrimonio ao TSE",
+        "v1CrossRef": "'patrimonio' aparece em 07/Ago com o registro do Zema. Continuidade do tema, novidade do sujeito",
+        "v2Fetch": "poder360.com.br, registro em 2026-08-08, materia publicada 2026-08-08, tipo=evento. Valor R$ 4,78 milhoes, queda de 35,7% em valores correntes e 46% em termos reais, com 69% do total em dois planos VGBL",
+        "fontes": ["Poder360", "Revista Oeste", "MidiaNews", "Folha de S.Paulo"],
+        "decisao": "incorporar como evento de 08/Ago, nao de hoje",
+        "corrigeDefeitoAnterior": "o painel publicado as 17:34 dizia 'cerca de R$ 4,7 milhoes' enquadrado como fato do dia. Errata em 0fd13ce, nos 3 idiomas, antes de escrever a daily"
+      },
+      {
+        "evento": "2026 tem 92,3% de chapas de um so partido",
+        "v1CrossRef": "'puro-sangue' aparece em 08/Ago. Continuidade, com numero novo",
+        "v2Fetch": "brasil247.com: 92,3% de 13 candidaturas. Em 1989 foram 22 candidatos com 86,4%",
+        "fontes": ["Brasil 247", "BNews", "Panorama da Bahia", "Folha de S.Paulo"],
+        "decisao": "incorporar COM a regua junto: e recorde PROPORCIONAL, nao absoluto"
+      },
+      {
+        "evento": "Moraes aciona a PGR pela ausencia de Flavio na PF",
+        "v1CrossRef": "nao aparece nas 7 dailies",
+        "v2Fetch": "correiobraziliense, agenciabrasil, gazetadopovo e jb, TODAS com URL primaria em /2026/07/. Oitiva marcada para 28/Jul, prazo de 15 dias a PGR",
+        "fontes": ["Correio Braziliense", "Agencia Brasil", "Gazeta do Povo", "JB"],
+        "decisao": "NAO incorporar. Recobranca de agregador com pubDate de hoje",
+        "nota": "terceiro dia seguido do mesmo defeito de data de cache contra data de evento, depois do Zema em 07/Ago e do registro em 08/Ago"
+      },
+      {
+        "evento": "avanco das investigacoes sobre o filho do presidente no STF",
+        "v2Fetch": "veja.abril.com.br bloqueia leitura",
+        "fontes": ["Veja"],
+        "decisao": "UNVERIFIED, fonte unica e duas pecas do mesmo grupo. Nao entra como ancora"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "os 26 x 16 palanques vem do Brasil de Fato, uma fonte. Mantido porque a Folha registra o mesmo movimento de fundo e a alegacao esta atribuida. As 397,3 mil mencoes tambem sao de uma fonte, e sao medicao de rede social, nao fato politico",
+    "numericalErrors": "reconcile-claims OK, tolerancia +-0,05pp",
+    "fontesInventadas": "conferidos 3 ao acaso, todos com materia do dia ou de 08/Ago: Folha (patrimonio), G1 (Zema), O Globo (emenda Pix)",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O texto diz que o preco se moveu e que nenhum ministro decidiu nada hoje, sem ligar as duas coisas",
+    "verbosCriticos": "declarou com data explicita, rompeu e estancou sao de preco. Nenhum verbo de privacao de liberdade ou decisao judicial nova",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasCorpo": 897,
+    "tetoPalavras": 900,
+    "palavrasEn": 907,
+    "palavrasEs": 939,
+    "notaSobreTeto": "o teto de 900 e medido no pt-BR. A serie confirma: 878, 897 e 899 nos tres dias anteriores, com en e es entre 911 e 975",
+    "validateAfosDaily": "OK nos 3 idiomas",
+    "reconcileClaims": "OK",
+    "gateNumericoPtEnEs": "66 tokens, multiconjunto identico",
+    "urlsIdenticasEntreIdiomas": "23 unicas, byte a byte, exceto o link do painel do AFOS, que segue o idioma de proposito",
+    "tldr": "3 bullets nas 3 versoes",
+    "proporcaoDeFontes": "8 ancora e 8 secundarias, 50% em acesso aberto",
+    "avisoNaoBloqueante": "densidade de link em 70%, contra a regua de 80%. 16 de 23 paragrafos. A causa e que varios paragrafos descrevem preco, que nao tem materia para linkar"
+  },
+  "mercado": {
+    "leitura": "2026-08-09T17:34:01Z",
+    "confirmadaPorDuasLeituras": true,
+    "leiturasDaTrava": ["2026-08-09T17:26:00Z", "2026-08-09T17:34:01Z"],
+    "travaBloqueouAntes": false,
+    "gateRebaselineDisparou": false,
+    "reFetch": "as 18:03 UTC com fresh=1, fetchedAt distinto, zero variacao em Lula, Flavio, Renan, Caiado, Zema, gap e volume total"
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "429 no /save/ medido em 09/Ago com o fetch do Node, depois de quatro dias de pausa TOTAL. A pausa e necessaria e nao e suficiente",
+    "filaEmDebito": 10,
+    "proximaSondagem": "nao antes de ~14/Ago, uma rodada so, da mais antiga"
+  }
+}
