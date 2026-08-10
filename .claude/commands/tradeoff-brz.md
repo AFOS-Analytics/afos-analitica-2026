@@ -16,7 +16,7 @@ Se faltar qualquer pré-requisito, PARAR e pedir ao usuário para rodar `/atuali
 
 1. Ler `public/analysis-criteriosa.json` (campo `cruzamento`, `subtitle`, `candidates[].analise`)
 2. Ler `public/analysis-data.json` (cards `sentimento`, `inss`, `bancoMaster`, `stf`)
-3. Snapshot Polymarket atual via `/api/polymarket` (cruzar com snapshots históricos Neon pra calcular Δ semana)
+3. Snapshot Polymarket atual via `/api/polymarket?fresh=1` (cruzar com snapshots históricos Neon pra calcular Δ semana). 🔴 **O `?fresh=1` é obrigatório: sem ele a rota devolve o CACHE** e o Δ da semana passa a ser calculado contra uma leitura de minutos atrás. Conferir o `fetchedAt`, não o valor.
 4. Determinar número da edição (`issueNumber`): N + 1 onde N = `listPublishedTradeoffs().length`
 5. Determinar `weekStart` e `weekEnd`: tipicamente seg-sex da semana anterior à publicação (publicação seg = cobre seg-sex anterior)
 6. Cadência fixa: **publicação toda segunda-feira**. Verificar dia da semana antes de gerar

@@ -38,7 +38,7 @@ Faltando qualquer um, PARAR e pedir o `/atualizar-usa` primeiro.
 
 ## ETAPA 1: Coletar
 
-- **Mercado:** `curl -s "https://www.afos-analytics.com/api/polymarket?country=us"` (⚠️ **sem `?country=us` a rota devolve o BRASIL**, bem-formado, e passa despercebido).
+- **Mercado:** `curl -s "https://www.afos-analytics.com/api/polymarket?country=us&fresh=1"` (⚠️ **sem `?country=us` a rota devolve o BRASIL**, bem-formado, e passa despercebido. 🔴 **Sem `&fresh=1` ela devolve o CACHE**, com carimbo antigo: medido em 10/Ago/2026, 19 minutos de atraso e o republicano da Câmara errado em 2.00pp. Conferir o `fetchedAt`, não o valor).
 - **Série, para variação:** 🔴 **filtrar o slug**. Câmara e Senado usam o MESMO nome de desfecho, e sem filtro as duas séries colam:
   ```bash
   curl -s "https://www.afos-analytics.com/api/market/history?candidate=Democratas&country=which-party-will-win-the-house&days=90"

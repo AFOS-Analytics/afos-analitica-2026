@@ -7,8 +7,10 @@ Execute uma análise profunda cruzando TODAS as fontes e atualize o projeto para
 **OBRIGATÓRIO — usar o proxy AFOS, NÃO o `gamma-api` direto.** O `gamma-api.polymarket.com` falha em ambiente local (ECONNREFUSED/ENOTFOUND, ver `memory/feedback_polymarket_local_dns_workaround.md`). O proxy server-side da Vercel resolve e retorna TODOS os 6 mercados numa única chamada:
 
 ```bash
-curl -s "https://www.afos-analytics.com/api/polymarket"
+curl -s "https://www.afos-analytics.com/api/polymarket?fresh=1"
 ```
+
+🔴 **O `?fresh=1` não é opcional: sem ele a rota devolve o CACHE**, com carimbo de tempo antigo, e a captura passa a ser de minutos atrás sem avisar. Medido em 10/Ago/2026 no lado americano: 19 minutos de atraso e um preço errado em 2.00pp. **Conferir o `fetchedAt` da resposta, não o valor**, porque duas chamadas com o mesmo carimbo são a mesma leitura comparada consigo mesma, e diferença zero ali é tautologia e não confirmação.
 
 A resposta traz 6 chaves: `presidential`, `secondPlace`, `thirdPlace`, `stf`, `senate`, `inflation` (+ `fetchedAt`, `degraded`, `failedCount`). Cada uma tem `markets[]` com `question`, `outcomePrices`, `outcomes`, `volumeNum`, `liquidityNum`.
 

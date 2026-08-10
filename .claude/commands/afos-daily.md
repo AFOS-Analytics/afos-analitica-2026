@@ -45,8 +45,12 @@ Se o `/atualizar-brz` de hoje ainda não rodou, PARAR e pedir ao usuário para e
 ### Passo 1 — Re-fetch ao vivo (proxy AFOS, NUNCA gamma-api direto)
 
 ```bash
-curl -s "https://www.afos-analytics.com/api/polymarket"
+curl -s "https://www.afos-analytics.com/api/polymarket?fresh=1"
 ```
+
+🔴 **O `?fresh=1` não é opcional: sem ele a rota devolve o CACHE**, com carimbo de tempo antigo, e o passo se chama "re-fetch ao vivo" sem estar ao vivo. Medido em 10/Ago/2026 no lado americano: a leitura cacheada estava **19 minutos velha** e um dos preços saía errado em 2.00pp. Aqui o efeito é pior que lá, porque o `fetchedAt` desta chamada **vira o `updatedAt` publicado do Daily**: carimbo de cache publicado é data errada na peça, não só número velho.
+
+📌 **Conferir o `fetchedAt`, não o valor.** Duas chamadas com o mesmo carimbo são a mesma leitura comparada consigo mesma.
 
 Extrair, do snapshot ao vivo: **% e volume dos top candidatos presidenciais** (Lula, Flávio, Renan, Michelle, Caiado, Zema, Haddad), **gap Lula×Flávio**, **volume TOTAL do presidencial** (soma dos `volumeNum`, ~USD XXM), e os sub-mercados (2º/3º lugar, STF impeach, Senado, inflação). Anotar o horário do `fetchedAt` (converter p/ BRT) — ele vira o `updatedAt` do Daily e dos JSONs se houver rebaseline.
 
