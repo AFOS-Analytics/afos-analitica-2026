@@ -30,6 +30,7 @@ import matter from 'gray-matter'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendWeeklyTeaser } from '../app/lib/email/resend'
+import { registrarBroadcast, type ResultadoEnvio } from './lib/broadcast-audit'
 
 const PAISES_VALIDOS = ['us']
 
@@ -155,6 +156,8 @@ async function main() {
 
   let sent = 0
   let failed = 0
+  /** Um item por destinatário, para a trilha em contact_events. */
+  const trilha: ResultadoEnvio[] = []
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: lote=${BATCH_SIZE} entreLotes=${BATCH_DELAY_MS}ms entreEnvios=${INTER_SEND_MS}ms\n`)
@@ -178,12 +181,15 @@ async function main() {
         return { ok: true }
       }
 
-      const ok = await sendWeeklyTeaser(
+      const r = await sendWeeklyTeaser(
         lead.email,
         { date, locale: servido, title: c.title, resumo: c.resumo, issueNumber: c.issueNumber, pais },
         lead.unsubscribeToken || undefined,
       )
-      return { ok }
+      // `servido` e não `locale`: a trilha registra o que a pessoa RECEBEU,
+      // não o que ela preferia. A cascata invertida faz os dois divergirem.
+      trilha.push({ leadId: lead.id, locale: servido, ok: r.ok, messageId: r.id, erro: r.erro })
+      return { ok: r.ok }
     }))
 
     sent += results.filter(r => r.ok).length
@@ -193,6 +199,17 @@ async function main() {
   }
 
   console.log(`\n✅ Broadcast ${dryRun ? 'SIMULADO' : 'concluído'}: ${sent} enviados / ${failed} falharam, de ${leads.length} ativos.`)
+
+  if (!dryRun) {
+    await registrarBroadcast(
+      prisma,
+      { produto: 'weekly', edicao: date, pais, issueNumber: content.en?.issueNumber },
+      trilha,
+    )
+  } else {
+    console.log('🧾 trilha: dry-run não grava evento, por desenho.')
+  }
+
   await prisma.$disconnect()
 }
 

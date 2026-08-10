@@ -20,6 +20,7 @@ import matter from 'gray-matter'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendDailyTeaser } from '../app/lib/email/resend'
+import { registrarBroadcast, type ResultadoEnvio } from './lib/broadcast-audit'
 
 const DAILY_DIR = join(process.cwd(), 'public', 'afos-daily')
 
@@ -107,6 +108,8 @@ async function main() {
   let failed = 0
   let skipped = 0
   const failedEmails: string[] = []
+  /** Um item por destinatário, para a trilha em contact_events. */
+  const trilha: ResultadoEnvio[] = []
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
@@ -126,6 +129,7 @@ async function main() {
       const c = content[locale] || content.en!
       if (!c) {
         skipped++
+        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
         return { ok: false, lead, reason: 'no_content' }
       }
 
@@ -134,12 +138,13 @@ async function main() {
         return { ok: true, lead, reason: 'dry_run' }
       }
 
-      const ok = await sendDailyTeaser(
+      const r = await sendDailyTeaser(
         lead.email,
         { date, locale, title: c.title, lede: c.lede },
         lead.unsubscribeToken || undefined,
       )
-      return { ok, lead }
+      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
+      return { ok: r.ok, lead }
     }))
 
     sent += results.filter(r => r.ok).length
@@ -162,6 +167,13 @@ async function main() {
     console.warn(`⚠️  ${failedEmails.length} envios falharam — re-enviar dirigido a:`)
     failedEmails.forEach(e => console.warn(`   ${e}`))
   }
+
+  if (!dryRun) {
+    await registrarBroadcast(prisma, { produto: 'daily', edicao: date, pais: 'br' }, trilha)
+  } else {
+    console.log('🧾 trilha: dry-run não grava evento, por desenho.')
+  }
+
   await prisma.$disconnect()
 }
 

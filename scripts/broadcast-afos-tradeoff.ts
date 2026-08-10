@@ -17,6 +17,7 @@ import matter from 'gray-matter'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { sendTradeoffTeaser } from '../app/lib/email/resend'
+import { registrarBroadcast, type ResultadoEnvio } from './lib/broadcast-audit'
 
 const PAIS_PADRAO = 'br'
 
@@ -127,6 +128,8 @@ async function main() {
   let sent = 0
   let failed = 0
   let skipped = 0
+  /** Um item por destinatário, para a trilha em contact_events. */
+  const trilha: ResultadoEnvio[] = []
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
@@ -144,6 +147,7 @@ async function main() {
       const c = content[locale] || content.en!
       if (!c) {
         skipped++
+        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
         return { ok: false, lead, reason: 'no_content' }
       }
 
@@ -152,12 +156,13 @@ async function main() {
         return { ok: true, lead, reason: 'dry_run' }
       }
 
-      const ok = await sendTradeoffTeaser(
+      const r = await sendTradeoffTeaser(
         lead.email,
         { date, locale, title: c.title, sinalDaSemana: c.sinalDaSemana, issueNumber: c.issueNumber, pais },
         lead.unsubscribeToken || undefined,
       )
-      return { ok, lead }
+      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
+      return { ok: r.ok, lead }
     }))
 
     sent += results.filter(r => r.ok).length
@@ -169,6 +174,18 @@ async function main() {
   }
 
   console.log(`\n✅ Broadcast complete: ${sent} sent / ${failed} failed / ${skipped} skipped of ${leads.length} active leads.`)
+
+  // Trilha: só depois do envio, e só quando houve envio de verdade.
+  if (!dryRun) {
+    await registrarBroadcast(
+      prisma,
+      { produto: 'tradeoff', edicao: date, pais, issueNumber: content['pt-BR']?.issueNumber ?? content.en?.issueNumber },
+      trilha,
+    )
+  } else {
+    console.log('🧾 trilha: dry-run não grava evento, por desenho.')
+  }
+
   await prisma.$disconnect()
 }
 

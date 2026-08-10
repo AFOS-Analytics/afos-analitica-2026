@@ -11,28 +11,42 @@ function getResend(): Resend | null {
 
 type ResendSendResponse = Awaited<ReturnType<Resend['emails']['send']>>;
 
+/**
+ * Resultado de um envio.
+ *
+ * 🔴 O `id` existe por causa da TRILHA DE AUDITORIA. Até 09/Ago/2026 o envio
+ * devolvia só `boolean`, o id do Resend era descartado e os broadcasts não
+ * gravavam nada no banco. O relatório "20 enviados / 0 falhas" era a ÚNICA
+ * evidência de um disparo, e ela morria no terminal: não dava para dizer
+ * depois quem recebeu o quê, nem reconciliar com o painel do Resend.
+ */
+export type SendResult = { ok: boolean; id?: string; erro?: string };
+
 /** Retry exponential backoff (1s/2s/4s). 4xx não retentam exceto 408/429. */
 async function sendWithRetry(
   fn: () => Promise<ResendSendResponse>,
   context: string,
   maxAttempts = 3,
-): Promise<boolean> {
+): Promise<SendResult> {
+  let ultimoErro = '';
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
-      const { error } = await fn();
-      if (!error) return true;
+      const { data, error } = await fn();
+      if (!error) return { ok: true, id: data?.id };
+      ultimoErro = error.message;
       const status = Number((error as { statusCode?: number | null })?.statusCode) || 0;
       if (status >= 400 && status < 500 && status !== 408 && status !== 429) {
         console.error(`[resend] ${context} ${status}, sem retry:`, error.message);
-        return false;
+        return { ok: false, erro: `${status}: ${error.message}` };
       }
       console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} falhou (${status}):`, error.message);
     } catch (err) {
+      ultimoErro = String(err);
       console.warn(`[resend] ${context} tentativa ${attempt}/${maxAttempts} threw:`, err);
     }
     if (attempt < maxAttempts) await new Promise((r) => setTimeout(r, 1000 * 2 ** (attempt - 1)));
   }
-  return false;
+  return { ok: false, erro: ultimoErro || 'esgotou as tentativas' };
 }
 
 /** Headers RFC 8058 — botão "Cancelar inscrição" nativo do Gmail/Outlook. */
@@ -52,11 +66,11 @@ async function send(opts: {
   html: string;
   unsubscribeToken?: string;
   replyTo?: string;
-}): Promise<boolean> {
+}): Promise<SendResult> {
   const resend = getResend();
   if (!resend) {
     console.warn('[resend] API key não configurada');
-    return false;
+    return { ok: false, erro: 'RESEND_API_KEY ausente' };
   }
   return sendWithRetry(
     () => resend.emails.send({
@@ -71,14 +85,21 @@ async function send(opts: {
   );
 }
 
+/**
+ * Quem só precisa do sim/não continua com `Promise<boolean>`, para não
+ * respingar nas rotas de API que já chamam estas funções. Só os TEASERS de
+ * broadcast devolvem `SendResult`, porque só eles gravam trilha.
+ */
+const soOk = (p: Promise<SendResult>): Promise<boolean> => p.then((r) => r.ok);
+
 export function sendWelcomeEmail(to: string, unsubscribeToken?: string): Promise<boolean> {
-  return send({
+  return soOk(send({
     to,
     subject: 'Bem-vindo ao AFOS Analytics',
     html: welcomeTemplate(unsubscribeToken),
     unsubscribeToken,
     replyTo: EMAIL_CONTACT,
-  });
+  }));
 }
 
 export function sendOddsAlert(to: string, data: {
@@ -89,12 +110,12 @@ export function sendOddsAlert(to: string, data: {
   direction: 'up' | 'down';
 }, unsubscribeToken?: string): Promise<boolean> {
   const arrow = data.direction === 'up' ? '↑' : '↓';
-  return send({
+  return soOk(send({
     to,
     subject: `${data.candidate} ${arrow} ${data.newOdds}% — ${data.country}`,
     html: oddsAlertTemplate(data, unsubscribeToken),
     unsubscribeToken,
-  });
+  }));
 }
 
 export function sendDailySummary(to: string, data: {
@@ -102,13 +123,13 @@ export function sendDailySummary(to: string, data: {
   highlights: string[];
   topCandidates: { name: string; odds: number; change: string }[];
 }, unsubscribeToken?: string): Promise<boolean> {
-  return send({
+  return soOk(send({
     to,
     subject: `AFOS Resumo — ${data.date}`,
     html: dailySummaryTemplate(data, unsubscribeToken),
     unsubscribeToken,
     replyTo: EMAIL_CONTACT,
-  });
+  }));
 }
 
 /**
@@ -145,7 +166,7 @@ export function sendDailyTeaser(to: string, data: {
   locale: 'pt-BR' | 'en' | 'es';
   title: string;
   lede: string;
-}, unsubscribeToken?: string): Promise<boolean> {
+}, unsubscribeToken?: string): Promise<SendResult> {
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
   const localeLabels = {
     'pt-BR': { subject: `AFOS Daily: ${data.date}`, cta: 'Ler o AFOS Daily', why: 'Você está recebendo porque se cadastrou em', unsubscribe: 'Cancelar inscrição' },
@@ -199,7 +220,7 @@ export function sendTradeoffTeaser(to: string, data: {
    * Regra do André em 06/Ago/2026: as duas eleições são independentes.
    */
   pais: string;
-}, unsubscribeToken?: string): Promise<boolean> {
+}, unsubscribeToken?: string): Promise<SendResult> {
   const pais = data.pais;
   const p = (PAIS_NO_ASSUNTO[pais] ?? PAIS_NO_ASSUNTO.br)[data.locale];
   // Sem travessão no assunto (regra anti-AI): usar dois-pontos.
@@ -281,7 +302,7 @@ export function sendWeeklyTeaser(to: string, data: {
   issueNumber: number;
   /** 🔴 OBRIGATÓRIO. Ver a nota em sendTradeoffTeaser: país errado no e-mail não volta atrás. */
   pais: string;
-}, unsubscribeToken?: string): Promise<boolean> {
+}, unsubscribeToken?: string): Promise<SendResult> {
   const rotuloPais: Record<string, Record<'pt-BR' | 'en' | 'es', string>> = {
     us: { 'pt-BR': ' EUA', en: ' US', es: ' EE.UU.' },
   };
@@ -340,9 +361,9 @@ export function sendSystemAlert(to: string, data: {
   message: string;
   details: string;
 }): Promise<boolean> {
-  return send({
+  return soOk(send({
     to,
     subject: `⚠️ AFOS Alert: ${data.type}`,
     html: systemAlertTemplate(data),
-  });
+  }));
 }
