@@ -6,9 +6,28 @@
  * so subscribers never get a link to a page that 404s in their language, * same hreflang-truthfulness principle used across the platform.
  *
  * Feed URLs:
- *   PT-BR : /feed/daily.xml        /feed/tradeoff.xml
- *   EN    : /feed/daily.en.xml     /feed/tradeoff.en.xml
- *   ES    : /feed/daily.es.xml     /feed/tradeoff.es.xml
+ *   PT-BR : /feed/daily.xml        /feed/tradeoff.xml     /feed/tradeoff-us.xml
+ *   EN    : /feed/daily.en.xml     /feed/tradeoff.en.xml  /feed/tradeoff-us.en.xml
+ *   ES    : /feed/daily.es.xml     /feed/tradeoff.es.xml  /feed/tradeoff-us.es.xml
+ *
+ * 🔴 PAÍS NO TRADEOFF, consertado em 10/Ago/2026. Até aqui `buildTradeoffFeed`
+ * chamava `listPublishedTradeoffs()` SEM país, caía no default `br` e o feed
+ * emitia só o Brasil. Resultado medido: as três edições dos EUA existiam desde
+ * 31/Jul e NUNCA foram distribuídas por RSS. O sitemap já passava `'us'`
+ * explicitamente, então uma cópia da regra estava certa e a outra não.
+ *
+ * ⚠️ O sintoma é OMISSÃO, não valor errado, e por isso nenhum portão pegou:
+ * portão confere o que foi publicado, e a edição foi publicada. Ausência não
+ * gera divergência.
+ *
+ * ⛔ `/feed/tradeoff.xml` CONTINUA SIGNIFICANDO BRASIL. Já existem assinantes
+ * apontados para ele, e mudar o sentido de um feed vivo quebra quem assinou.
+ * É a mesma razão pela qual o slug do Neon ficou sem qualificador do lado
+ * brasileiro. Os EUA entram em endereço próprio, com o sufixo `-us`.
+ *
+ * 🔑 O país é POSICIONAL E OBRIGATÓRIO em `buildTradeoffFeed` e em
+ * `feedPath('tradeoff', ...)`. Esquecer não compila, que é a única defesa que
+ * funciona contra padrão silencioso de país.
  */
 
 import { listPublishedDailies, loadDaily, dailyExists } from '../afos-daily/loader'
@@ -20,10 +39,20 @@ const SITE = 'https://www.afos-analytics.com'
 
 export type FeedLocale = 'pt-BR' | 'en' | 'es'
 export type FeedKind = 'daily' | 'tradeoff'
+/** Países com edição de Tradeoff própria. O Daily só existe para o Brasil. */
+export type FeedCountry = 'br' | 'us'
 
-/** Path of the RSS feed for a given kind + locale (PT-BR has no suffix). */
-export function feedPath(kind: FeedKind, loc: FeedLocale): string {
-  return `/feed/${kind}${loc === 'pt-BR' ? '' : '.' + loc}.xml`
+/**
+ * Caminho do feed RSS. O Daily não tem país; o Tradeoff EXIGE país.
+ *
+ * O Brasil mantém o endereço histórico sem qualificador (`/feed/tradeoff.xml`)
+ * porque já tem assinantes; os demais países ganham sufixo (`-us`).
+ */
+export function feedPath(kind: 'daily', loc: FeedLocale): string
+export function feedPath(kind: 'tradeoff', loc: FeedLocale, pais: FeedCountry): string
+export function feedPath(kind: FeedKind, loc: FeedLocale, pais?: FeedCountry): string {
+  const base = kind === 'tradeoff' && pais !== 'br' ? `${kind}-${pais}` : kind
+  return `/feed/${base}${loc === 'pt-BR' ? '' : '.' + loc}.xml`
 }
 
 function escapeXml(s: string): string {
@@ -53,10 +82,23 @@ const DAILY_DESC: Record<FeedLocale, string> = {
   es: 'Síntesis narrativa diaria que cruza mercados de predicción, encuestas electorales y noticias. AFOS Analytics, elección presidencial Brasil 2026.',
 }
 
-const TRADEOFF_DESC: Record<FeedLocale, string> = {
-  'pt-BR': 'Leitura técnica semanal cruzando mercados de previsão, pesquisas eleitorais e notícias, sem médias suavizadas. AFOS Analytics, eleição presidencial Brasil 2026.',
-  en: 'Weekly technical reading cross-referencing prediction markets, electoral polls, and news, no smoothed averages. AFOS Analytics, Brazil 2026 presidential election.',
-  es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas electorales y noticias, sin promedios suavizados. AFOS Analytics, elección presidencial Brasil 2026.',
+const TRADEOFF_DESC: Record<FeedCountry, Record<FeedLocale, string>> = {
+  br: {
+    'pt-BR': 'Leitura técnica semanal cruzando mercados de previsão, pesquisas eleitorais e notícias, sem médias suavizadas. AFOS Analytics, eleição presidencial Brasil 2026.',
+    en: 'Weekly technical reading cross-referencing prediction markets, electoral polls, and news, no smoothed averages. AFOS Analytics, Brazil 2026 presidential election.',
+    es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas electorales y noticias, sin promedios suavizados. AFOS Analytics, elección presidencial Brasil 2026.',
+  },
+  us: {
+    'pt-BR': 'Leitura técnica semanal cruzando mercados de previsão, pesquisas de intenção de voto e notícias, sem médias suavizadas. AFOS Analytics, eleições de meio de mandato dos Estados Unidos, 03/Nov/2026.',
+    en: 'Weekly technical reading cross-referencing prediction markets, generic ballot polling, and news, no smoothed averages. AFOS Analytics, United States midterm elections, Nov 3, 2026.',
+    es: 'Lectura técnica semanal que cruza mercados de predicción, encuestas de intención de voto y noticias, sin promedios suavizados. AFOS Analytics, elecciones de medio término de Estados Unidos, 03/Nov/2026.',
+  },
+}
+
+/** Título do canal e categoria geográfica dos itens, por país. */
+const TRADEOFF_CANAL: Record<FeedCountry, { titulo: string; categoria: string }> = {
+  br: { titulo: 'AFOS Tradeoff', categoria: 'Brazil 2026' },
+  us: { titulo: 'AFOS Tradeoff US', categoria: 'US Midterms 2026' },
 }
 
 function channel(opts: {
@@ -123,22 +165,25 @@ export function buildDailyFeed(loc: FeedLocale): string {
   return channel({ title: 'AFOS Daily', desc: DAILY_DESC[loc], loc, pageUrl, feedUrl, ttl: 1440, items })
 }
 
-export function buildTradeoffFeed(loc: FeedLocale): string {
-  const feedUrl = `${SITE}${feedPath('tradeoff', loc)}`
+export function buildTradeoffFeed(loc: FeedLocale, pais: FeedCountry): string {
+  const feedUrl = `${SITE}${feedPath('tradeoff', loc, pais)}`
   // País no endereço desde 31/Jul. Apontar para a rota curta faria cada item
   // do feed passar por um 307, e leitor de RSS não deve seguir redirect à toa.
-  const pageUrl = `${SITE}/${loc}/tradeoff/br`
+  const pageUrl = `${SITE}/${loc}/tradeoff/${pais}`
+  const { titulo, categoria } = TRADEOFF_CANAL[pais]
 
-  const dates = listPublishedTradeoffs()
+  // ⚠️ O `pais` aqui não é enfeite: sem ele esta chamada cai no default `br` e
+  // o feed do país novo sai VAZIO reportando sucesso. Ver o cabeçalho.
+  const dates = listPublishedTradeoffs(pais)
     .slice()
     .reverse()
-    .filter(date => tradeoffExists(date, loc))
+    .filter(date => tradeoffExists(date, loc, pais))
 
   const items = dates
     .map(date => {
-      const data = loadTradeoff(date, loc)
+      const data = loadTradeoff(date, loc, pais)
       if (!data) return ''
-      const url = `${SITE}/${loc}/tradeoff/br/${date}`
+      const url = `${SITE}/${loc}/tradeoff/${pais}/${date}`
       const description = cleanTradeoff(data.sinalDaSemana).slice(0, 500)
       return `    <item>
       <title>${escapeXml(data.title)}</title>
@@ -147,7 +192,7 @@ export function buildTradeoffFeed(loc: FeedLocale): string {
       <pubDate>${toRfc822(data.date, data.updatedAt)}</pubDate>
       <dc:creator>AFOS Analytics</dc:creator>
       <category>Politics</category>
-      <category>Brazil 2026</category>
+      <category>${categoria}</category>
       <category>Weekly Analysis</category>
       <description>${escapeXml(description)}</description>
     </item>`
@@ -155,7 +200,7 @@ export function buildTradeoffFeed(loc: FeedLocale): string {
     .filter(Boolean)
     .join('\n')
 
-  return channel({ title: 'AFOS Tradeoff', desc: TRADEOFF_DESC[loc], loc, pageUrl, feedUrl, ttl: 10080, items })
+  return channel({ title: titulo, desc: TRADEOFF_DESC[pais][loc], loc, pageUrl, feedUrl, ttl: 10080, items })
 }
 
 const RSS_HEADERS = {

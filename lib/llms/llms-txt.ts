@@ -22,7 +22,10 @@ interface Parts {
   dailyEntries: string
   tradeoffEntries: string
   dailyFeed: string
+  /** Feed do Tradeoff BRASIL. O endereço não tem qualificador, por histórico. */
   tradeoffFeed: string
+  /** Feed do Tradeoff ESTADOS UNIDOS, criado em 10/Ago/2026. */
+  tradeoffUsFeed: string
   lastUpdated: string
   todayLong: string
 }
@@ -123,7 +126,7 @@ ${p.dailyEntries}
 
 ## AFOS Tradeoff, weekly technical reading
 
-The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at institutional research, buy-side, and treasury readers. It cross-references the same three signals as AFOS Daily but reports them **separately**, no weighted-average composites, no smoothed consensus trackers. When prediction markets, polls, and news diverge, the divergence *is* the signal. Structured in 9 sections: executive summary cards, anti-average rationale, weighted scenarios, indicator grid (contracts × deltas × volume), liquidity & market structure, polls calendar, watch list, methodology, additional reading. RSS feed: ${p.tradeoffFeed}
+The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at institutional research, buy-side, and treasury readers. It cross-references the same three signals as AFOS Daily but reports them **separately**, no weighted-average composites, no smoothed consensus trackers. When prediction markets, polls, and news diverge, the divergence *is* the signal. Structured in 9 sections: executive summary cards, anti-average rationale, weighted scenarios, indicator grid (contracts × deltas × volume), liquidity & market structure, polls calendar, watch list, methodology, additional reading. RSS feed (Brazil): ${p.tradeoffFeed}. A separate weekly edition covers the United States midterm elections of Nov 3, 2026, with its own RSS feed: ${p.tradeoffUsFeed}
 
 Recent editions (latest first):
 
@@ -245,7 +248,7 @@ ${p.dailyEntries}
 
 ## AFOS Tradeoff, leitura técnica semanal
 
-O AFOS Tradeoff é uma síntese semanal publicada toda segunda-feira, voltada a leitores de research institucional, buy-side e tesouraria. Cruza os mesmos três sinais do AFOS Daily, mas os reporta **separadamente**, sem composições por média ponderada, sem trackers de consenso suavizado. Quando mercados de previsão, pesquisas e notícias divergem, a divergência *é* o sinal. Estruturado em 9 seções: cards de resumo executivo, racional anti-média, cenários ponderados, grid de indicadores (contratos × deltas × volume), liquidez e estrutura de mercado, calendário de pesquisas, watch list, metodologia, leitura adicional. Feed RSS: ${p.tradeoffFeed}
+O AFOS Tradeoff é uma síntese semanal publicada toda segunda-feira, voltada a leitores de research institucional, buy-side e tesouraria. Cruza os mesmos três sinais do AFOS Daily, mas os reporta **separadamente**, sem composições por média ponderada, sem trackers de consenso suavizado. Quando mercados de previsão, pesquisas e notícias divergem, a divergência *é* o sinal. Estruturado em 9 seções: cards de resumo executivo, racional anti-média, cenários ponderados, grid de indicadores (contratos × deltas × volume), liquidez e estrutura de mercado, calendário de pesquisas, watch list, metodologia, leitura adicional. Feed RSS (Brasil): ${p.tradeoffFeed}. Uma edição semanal separada cobre as eleições de meio de mandato dos Estados Unidos de 03/Nov/2026, com feed RSS próprio: ${p.tradeoffUsFeed}
 
 Edições recentes (mais novas primeiro):
 
@@ -367,7 +370,7 @@ ${p.dailyEntries}
 
 ## AFOS Tradeoff, lectura técnica semanal
 
-El AFOS Tradeoff es una síntesis semanal publicada cada lunes, dirigida a lectores de research institucional, buy-side y tesorería. Cruza las mismas tres señales del AFOS Daily pero las reporta **por separado**, sin composiciones por promedio ponderado, sin trackers de consenso suavizado. Cuando los mercados de predicción, las encuestas y las noticias divergen, la divergencia *es* la señal. Estructurado en 9 secciones: tarjetas de resumen ejecutivo, racional anti-promedio, escenarios ponderados, grid de indicadores (contratos × deltas × volumen), liquidez y estructura de mercado, calendario de encuestas, watch list, metodología, lectura adicional. Feed RSS: ${p.tradeoffFeed}
+El AFOS Tradeoff es una síntesis semanal publicada cada lunes, dirigida a lectores de research institucional, buy-side y tesorería. Cruza las mismas tres señales del AFOS Daily pero las reporta **por separado**, sin composiciones por promedio ponderado, sin trackers de consenso suavizado. Cuando los mercados de predicción, las encuestas y las noticias divergen, la divergencia *es* la señal. Estructurado en 9 secciones: tarjetas de resumen ejecutivo, racional anti-promedio, escenarios ponderados, grid de indicadores (contratos × deltas × volumen), liquidez y estructura de mercado, calendario de encuestas, watch list, metodología, lectura adicional. Feed RSS (Brasil): ${p.tradeoffFeed}. Una edición semanal separada cubre las elecciones de medio término de Estados Unidos del 03/Nov/2026, con feed RSS propio: ${p.tradeoffUsFeed}
 
 Ediciones recientes (más nuevas primero):
 
@@ -470,7 +473,8 @@ export function buildLlmsTxt(loc: FeedLocale): string {
     dailyEntries: dailyEntriesFor(loc),
     tradeoffEntries: tradeoffEntriesFor(loc),
     dailyFeed: `${SITE}${feedPath('daily', loc)}`,
-    tradeoffFeed: `${SITE}${feedPath('tradeoff', loc)}`,
+    tradeoffFeed: `${SITE}${feedPath('tradeoff', loc, 'br')}`,
+    tradeoffUsFeed: `${SITE}${feedPath('tradeoff', loc, 'us')}`,
     lastUpdated,
     todayLong,
   }

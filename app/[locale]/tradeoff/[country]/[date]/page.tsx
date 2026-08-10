@@ -17,6 +17,7 @@ import {
   getAdjacentDates,
 } from '../../../../../lib/afos-tradeoff/loader'
 import { buildArticleSchema, buildBreadcrumbSchema, getOgImageUrl, parseUpdatedAt } from '../../../../../lib/afos-tradeoff/schema'
+import { feedPath, type FeedLocale, type FeedCountry } from '../../../../../lib/feeds/rss'
 
 /** 🏷️ Assunto do cartão social, POR PAÍS. Ver comentário no bloco openGraph. */
 const TAGS_POR_PAIS: Record<string, string[]> = {
@@ -77,9 +78,14 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
         }
         return langs
       })(),
+      // ⚠️ COM O PAÍS. Até 10/Ago/2026 esta linha era fixa no feed do BRASIL, e
+      // toda edição dos EUA anunciava um feed que nunca traria a própria peça.
       types: {
         'application/rss+xml': [
-          { url: `https://www.afos-analytics.com/feed/tradeoff${params.locale === 'pt-BR' ? '' : '.' + params.locale}.xml`, title: 'AFOS Tradeoff, RSS feed' },
+          {
+            url: `https://www.afos-analytics.com${feedPath('tradeoff', params.locale as FeedLocale, pais as FeedCountry)}`,
+            title: `AFOS Tradeoff${pais === 'br' ? '' : ' US'}, RSS feed`,
+          },
         ],
       },
     },

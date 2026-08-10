@@ -3,6 +3,7 @@ import { JsonLd } from '../../../components/JsonLd'
 import { notFound } from 'next/navigation'
 import { getLatestDate, listPublishedTradeoffs, loadTradeoff, isValidLocale, isValidCountry, PAIS_PADRAO, PAISES_TRADEOFF, SUPPORTED_LOCALES } from '../../../../lib/afos-tradeoff/loader'
 import { getOgImageUrl } from '../../../../lib/afos-daily/schema'
+import { feedPath, type FeedLocale, type FeedCountry } from '../../../../lib/feeds/rss'
 import { breadcrumbSchema } from '../../../../lib/seo/schema'
 import { MONTHS, type MonthsLocale } from '../../../../lib/i18n/months'
 import { TradeoffArchiveShell, type TradeoffArchiveGroup, type TradeoffArchiveStrings, type TradeoffArchiveItem } from '../../../components/TradeoffArchiveShell'
@@ -176,7 +177,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       // versões em outro idioma eram o arquivo do BRASIL, e ainda contradizia
       // o canonical da própria página, que já traz `/us`.
       languages: langAlternates(`tradeoff/${pais}`),
-      types: { 'application/rss+xml': [{ url: `${BASE}/feed/tradeoff${loc === 'pt-BR' ? '' : '.' + loc}.xml`, title: 'AFOS Tradeoff, RSS feed' }] },
+      // ⚠️ COM O PAÍS, pelo mesmo motivo do hreflang acima. Até 10/Ago/2026
+      // esta linha era fixa no feed do BRASIL, então a página dos EUA anunciava
+      // aos leitores de RSS um feed que nunca traria as edições dela.
+      types: { 'application/rss+xml': [{ url: `${BASE}${feedPath('tradeoff', loc as FeedLocale, pais as FeedCountry)}`, title: `AFOS Tradeoff${pais === 'br' ? '' : ' US'}, RSS feed` }] },
     },
     openGraph: {
       type: 'website',
