@@ -65,6 +65,27 @@ if echo "$STAGED" | grep -qE '^scripts/lib/json-number-gate\.ts$'; then
   fi
 fi
 
+# Portao de ESTRUTURA. Os quatro gates acima comparam VALOR com VALOR, e por
+# isso nenhum deles ve um BLOCO INTEIRO sumir: onde nao sobrou numero, nao ha
+# divergencia para acusar. Em 07/Ago/2026 candidates[3].fortes e .fracos, dez
+# itens de texto, foram para producao nos tres idiomas com os quatro portoes
+# verdes. Este bloco fecha esse buraco.
+#
+# Roda para o JSON pt-BR mesmo quando so o .en/.es foi tocado: a forma do
+# pt-BR e a fonte, e a regra de LOCALE compara as tres contra ela.
+if echo "$STAGED" | grep -qE '^public/(analysis-criteriosa|analysis-data|polls-data|us-polls-data|us-press-data)(\.(en|es))?\.json$'; then
+  echo "🔍 pre-commit: JSON editorial staged — conferindo ESTRUTURA (bloco sumido)..."
+  if ! npx tsx scripts/check-json-structure.ts; then
+    echo ""
+    echo "❌ pre-commit BLOQUEADO: um bloco sumiu do JSON."
+    echo "   Isto e AUSENCIA, nao divergencia, e nenhum gate de valor pega."
+    echo "   Se a remocao for intencional (campo aposentado, card descontinuado),"
+    echo "   commit com --no-verify E registre o porque na mensagem do commit."
+    echo "   Ver memory/feedback_bloco_inteiro_some_do_json_e_nenhum_portao_ve.md"
+    exit 1
+  fi
+fi
+
 # Backup do Neon indo para um repositorio PUBLICO. A classificacao por tabela
 # dentro do backup-neon.ts e a primeira barreira, mas ela confia em quem
 # classificou. Esta e a segunda: olha o CONTEUDO. Um e-mail pode aparecer dentro
