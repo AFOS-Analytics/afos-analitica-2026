@@ -51,17 +51,18 @@ const T = {
     prazo: 'A eleição acontece na data prevista',
     volume: 'Volume',
     soma: 'soma das faixas',
-    participacao: 'participação no livro',
-    excessoNota: (s: string) => `As faixas somam ${s}, então aparecem como participação no livro, não como probabilidade.`,
+    soForma: 'só a forma, sem número',
+    excessoNota: (s: string) => `As faixas somam ${s}. O excesso não está espalhado por igual, ele se concentra na cauda, então dividir tudo pelo mesmo fator não o remove. Fica a forma, onde o dinheiro se concentra, e não o nível de cada faixa.`,
+    faltaNota: (s: string) => `As faixas somam ${s}, abaixo de 100%. Aqui a causa não é margem da casa: é preço velho ou faixa sem preço no livro. Multiplicar para cima entregaria a massa que falta às demais, então fica só a forma.`,
     porQue: 'Por que não é probabilidade',
     porQueTexto: (s: string) =>
-      `Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. O excesso é a margem de quem opera o livro, e ele cresce quando há pouco dinheiro e pouca negociação. Dividindo cada faixa pela soma, a FORMA se preserva e dá para ver onde o dinheiro se concentra. O que não se preserva é o NÍVEL de cada faixa, e é por isso que a etiqueta muda de nome.`,
+      `Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. Este quadro mostra a FORMA, ou seja, o tamanho relativo de cada faixa, e não mostra número, porque o nível não vale. O AFOS já dividiu cada faixa pela soma e parou de fazer isso: dividir supõe que o sobrepreço está espalhado por igual, e a medição mostrou que ele se concentra na cauda.`,
     naoParticao: 'Fora da tela, e não é por causa da soma',
     naoParticaoCurto: (s: string) =>
       `As faixas somam ${s} e se sobrepõem: uma delas é "qualquer outro resultado" e as demais são cumulativas. Coletado todo dia; entra quando a estrutura mudar.`,
     metodoFaixasTitulo: 'Quando as faixas não somam 100%',
     metodoFaixas:
-      'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando passam disso, o excesso é a margem de quem opera o livro, e ele cresce onde há pouco dinheiro e pouca negociação. Nesse caso o AFOS divide cada faixa pela soma e troca a etiqueta: o que aparece é participação no livro, nunca probabilidade. A forma se preserva, e dá para ver onde o dinheiro se concentra; o nível de cada faixa é que não pode ser lido como chance. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há um caso em que nem isso vale: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas. Ali dividir pela soma inventaria significado, então o mercado fica fora da tela e segue sendo coletado todo dia.',
+      'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando não somam, o AFOS mostra a FORMA da distribuição, que é o tamanho relativo das faixas, e NÃO mostra número. Até 10/Ago/2026 o AFOS dividia cada faixa pela soma e trocava a etiqueta. Parou, porque dividir tudo pelo mesmo fator supõe que o sobrepreço está espalhado por igual, e isso dá para testar: se fosse uniforme, a fatia normalizada de um grupo de faixas não mudaria quando a soma bruta mudasse. No book de cadeiras do Senado ela mudou junto, em três leituras, o que localiza o excesso na cauda. Ali dividir por igual não tira o excesso, só o espalha errado. Acima de 100% a causa é a margem de quem opera o livro; abaixo de 100% é outra coisa, preço velho ou faixa sem preço, e nesse caso multiplicar para cima entregaria às demais a massa que falta. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há ainda um caso que fica inteiramente fora: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas.',
     clicavel: 'Clique em qualquer ponto de um quadro para abrir a aposta real no Polymarket, com as cotações ao vivo.',
     abrirEm: 'abrir no Polymarket',
     foraDoPortao: 'Este mercado não entra na tela porque os preços dele não fecham',
@@ -90,17 +91,18 @@ const T = {
     prazo: 'The election happens as scheduled',
     volume: 'Volume',
     soma: 'bands total',
-    participacao: 'share of the book',
-    excessoNota: (s: string) => `The bands total ${s}, so they are shown as share of the book, not as probability.`,
+    soForma: 'shape only, no numbers',
+    excessoNota: (s: string) => `The bands total ${s}. The excess is not spread evenly, it concentrates in the tail, so dividing everything by the same factor does not remove it. What remains is the shape, where the money sits, not the level of each band.`,
+    faltaNota: (s: string) => `The bands total ${s}, below 100%. Here the cause is not the house margin: it is stale prices or a band with no price in the book. Scaling everything up would hand the missing mass to the others, so only the shape remains.`,
     porQue: 'Why this is not probability',
     porQueTexto: (s: string) =>
-      `Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. Here they add to ${s}. The excess is the margin of whoever runs the book, and it grows when there is little money and little trading. Dividing each band by the total preserves the SHAPE, so you can still see where the money concentrates. What it does not preserve is the LEVEL of each band, which is why the label changes.`,
+      `Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. Here they add to ${s}. This card shows the SHAPE, that is, the relative size of each band, and shows no number, because the level does not hold. AFOS used to divide each band by the total and stopped: dividing assumes the overpricing is spread evenly, and measurement showed it concentrates in the tail.`,
     naoParticao: 'Off the screen, and not because of the total',
     naoParticaoCurto: (s: string) =>
       `The bands add to ${s} and overlap: one is "any other outcome" and the rest are cumulative. Collected daily; it appears when the structure changes.`,
     metodoFaixasTitulo: 'When the bands do not add to 100%',
     metodoFaixas:
-      'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they exceed that, the excess is the margin of whoever runs the book, and it grows where there is little money and little trading. In that case AFOS divides each band by the total and changes the label: what you see is share of the book, never probability. The shape survives, so you can still read where the money concentrates; the level of each band is what cannot be read as a chance. The raw total stays printed on every panel, so the arithmetic remains checkable. There is one case where even that does not hold: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones. There, dividing by the total would invent meaning, so the market stays off the screen and continues to be collected daily.',
+      'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they do not, AFOS shows the SHAPE of the distribution, which is the relative size of the bands, and shows NO number. Until Aug 10, 2026 AFOS divided each band by the total and changed the label. It stopped, because dividing everything by the same factor assumes the overpricing is spread evenly, and that can be tested: if it were uniform, the normalized share of a group of bands would not change when the raw total changed. In the Senate seats book it moved along with it, across three readings, which places the excess in the tail. There, dividing evenly does not remove the excess, it just spreads it wrongly. Above 100% the cause is the margin of whoever runs the book; below 100% it is something else, stale prices or a band with no price, and there scaling up would hand the missing mass to the others. The raw total stays printed on every panel, so the arithmetic remains checkable. One case stays out entirely: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones.',
     clicavel: 'Click anywhere on a box to open the real market on Polymarket, with live odds.',
     abrirEm: 'open on Polymarket',
     foraDoPortao: 'This market stays off the screen because its prices do not add up',
@@ -129,17 +131,18 @@ const T = {
     prazo: 'La elección ocurre en la fecha prevista',
     volume: 'Volumen',
     soma: 'suma de las bandas',
-    participacao: 'participación en el libro',
-    excessoNota: (s: string) => `Las bandas suman ${s}, así que aparecen como participación en el libro, no como probabilidad.`,
+    soForma: 'solo la forma, sin números',
+    excessoNota: (s: string) => `Las bandas suman ${s}. El exceso no está repartido por igual, se concentra en la cola, así que dividir todo por el mismo factor no lo remueve. Queda la forma, donde está el dinero, y no el nivel de cada banda.`,
+    faltaNota: (s: string) => `Las bandas suman ${s}, por debajo de 100%. Aquí la causa no es el margen de la casa: es precio viejo o una banda sin precio en el libro. Multiplicar hacia arriba entregaría la masa que falta a las demás, así que queda solo la forma.`,
     porQue: 'Por qué no es probabilidad',
     porQueTexto: (s: string) =>
-      `Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. El exceso es el margen de quien opera el libro, y crece cuando hay poco dinero y poca negociación. Dividiendo cada banda por la suma, la FORMA se preserva y se puede ver dónde se concentra el dinero. Lo que no se preserva es el NIVEL de cada banda, y por eso cambia la etiqueta.`,
+      `Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. Este cuadro muestra la FORMA, es decir, el tamaño relativo de cada banda, y no muestra número, porque el nivel no vale. AFOS dividía cada banda por la suma y dejó de hacerlo: dividir supone que el sobreprecio está repartido por igual, y la medición mostró que se concentra en la cola.`,
     naoParticao: 'Fuera de la pantalla, y no por la suma',
     naoParticaoCurto: (s: string) =>
       `Las bandas suman ${s} y se superponen: una es "cualquier otro resultado" y las demás son acumulativas. Se recolecta a diario; entra cuando cambie la estructura.`,
     metodoFaixasTitulo: 'Cuando las bandas no suman 100%',
     metodoFaixas:
-      'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando pasan de ahí, el exceso es el margen de quien opera el libro, y crece donde hay poco dinero y poca negociación. En ese caso AFOS divide cada banda por la suma y cambia la etiqueta: lo que aparece es participación en el libro, nunca probabilidad. La forma se preserva, y se puede ver dónde se concentra el dinero; el nivel de cada banda es lo que no puede leerse como una chance. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso en el que ni eso vale: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas. Ahí dividir por la suma inventaría significado, así que el mercado queda fuera de la pantalla y se sigue recolectando a diario.',
+      'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando no suman, AFOS muestra la FORMA de la distribución, que es el tamaño relativo de las bandas, y NO muestra número. Hasta el 10/Ago/2026 AFOS dividía cada banda por la suma y cambiaba la etiqueta. Dejó de hacerlo, porque dividir todo por el mismo factor supone que el sobreprecio está repartido por igual, y eso se puede probar: si fuera uniforme, la participación normalizada de un grupo de bandas no cambiaría cuando cambiara la suma bruta. En el libro de escaños del Senado se movió junto con ella, en tres lecturas, lo que ubica el exceso en la cola. Ahí dividir por igual no saca el exceso, solo lo reparte mal. Por encima de 100% la causa es el margen de quien opera el libro; por debajo de 100% es otra cosa, precio viejo o banda sin precio, y ahí multiplicar hacia arriba entregaría a las demás la masa que falta. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso que queda enteramente fuera: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas.',
     clicavel: 'Haga clic en cualquier punto de un recuadro para abrir la apuesta real en Polymarket, con las cotizaciones en vivo.',
     abrirEm: 'abrir en Polymarket',
     foraDoPortao: 'Este mercado no entra en la pantalla porque sus precios no cierran',
@@ -258,17 +261,27 @@ function ordemFaixa(nome: string): number {
   return negativo * Number(n[1])
 }
 
-function BarraFaixa({ nome, pct, max, locale }: { nome: string; pct: number; max: number; locale: string }) {
+/**
+ * ⚠️ `mostrarValor=false` é o modo "forma sem número", usado quando a soma das
+ * faixas reprova o portão. A barra fica, porque o tamanho relativo É a forma e
+ * ela sobrevive ao sobrepreço; o percentual sai, porque seria lido como
+ * probabilidade e o nível é justamente o que não vale.
+ *
+ * 📌 Note que a barra crua já era a forma: normalizar é reescala uniforme e não
+ * muda tamanho relativo nenhum. Ou seja, tirar a normalização não tirou
+ * informação da tela, tirou só o número que não podia ser lido como chance.
+ */
+function BarraFaixa({ nome, pct, max, locale, mostrarValor = true }: { nome: string; pct: number; max: number; locale: string; mostrarValor?: boolean }) {
   return (
     <div className="flex items-center gap-2 text-xs">
       <span className="w-28 shrink-0 text-right text-gray-600 tabular-nums">{nome}</span>
       <div className="h-3 flex-1 rounded bg-gray-100">
         <div
-          className="h-3 rounded bg-slate-500"
+          className={`h-3 rounded ${mostrarValor ? 'bg-slate-500' : 'bg-slate-300'}`}
           style={{ width: `${max > 0 ? Math.max(1, (pct / max) * 100) : 0}%` }}
         />
       </div>
-      <span className="w-14 shrink-0 font-semibold text-dark tabular-nums">{fmt(pct, locale)}%</span>
+      {mostrarValor && <span className="w-14 shrink-0 font-semibold text-dark tabular-nums">{fmt(pct, locale)}%</span>}
     </div>
   )
 }
@@ -284,10 +297,7 @@ function BarraFaixa({ nome, pct, max, locale }: { nome: string; pct: number; max
  * dois casos diferentes caindo no mesmo balde:
  *
  *   PARTIÇÃO (cadeiras no Senado, na Câmara, governos, comparecimento): as
- *   faixas são exclusivas e cobrem todos os desfechos. O excesso é margem de
- *   quem opera o livro. Dividir cada faixa pela soma preserva onde o dinheiro
- *   está, e o que muda é a ETIQUETA: vira "participação no livro", nunca
- *   "probabilidade".
+ *   faixas são exclusivas e cobrem todos os desfechos.
  *
  *   NÃO PARTIÇÃO (margem do voto popular): tem um "qualquer outro resultado" e
  *   faixas cumulativas que se sobrepõem. Aqui normalizar inventaria significado,
@@ -295,6 +305,44 @@ function BarraFaixa({ nome, pct, max, locale }: { nome: string; pct: number; max
  *
  * ⚠️ A soma BRUTA continua impressa no cabeçalho em todos os casos. O leitor
  * recebe o dado e a ressalva no mesmo lugar, e nada é consertado em silêncio.
+ *
+ * ─────────────────────────────────────────────────────────────────────────────
+ * 🔴 REVISÃO DE 10/Ago/2026: A NORMALIZAÇÃO SAIU. Partição que reprova passa a
+ * mostrar FORMA SEM NÚMERO.
+ *
+ * De 06 a 10/Ago, partição reprovada entrava dividida pela soma, com a etiqueta
+ * trocada para "participação no livro". Isso assume que o sobrepreço está
+ * espalhado POR IGUAL entre as faixas, e essa hipótese nunca tinha sido testada.
+ * Foi, e não se sustenta.
+ *
+ * O TESTE, que não precisa de dado externo: se o excesso fosse uniforme, a fatia
+ * normalizada de qualquer subconjunto de faixas seria INVARIANTE à soma bruta,
+ * porque dividir tudo pelo mesmo fator preserva proporção interna. No book de
+ * cadeiras do Senado, em três leituras desde 09/Ago:
+ *
+ *     soma 106.10%  ->  centros (50 e 51) somam 27.80%
+ *     soma 135.15%  ->  24.05%
+ *     soma 109.55%  ->  27.38%
+ *
+ * Monotônico. Logo o excesso NÃO é uniforme: ele mora na CAUDA, o padrão
+ * conhecido como viés de azarão, contrato barato negociando rico. Na mesma foto,
+ * 87.74% do volume estava fora dos dois resultados centrais.
+ *
+ * ⚠️ n=3 é indício, não prova. Basta para parar de tirar número dali, e não
+ * basta para afirmar o tamanho do artefato.
+ *
+ * O QUE MUDA NA TELA: as barras ficam, porque a forma sobrevive; sai o
+ * PERCENTUAL ao lado de cada barra, que era o número que o leitor levaria como
+ * probabilidade.
+ *
+ * ⛔ E ABAIXO DO PISO NUNCA SE NORMALIZA, nem que a regra volte. Acima de 100 o
+ * excesso é margem da casa e dividir é padrão de mercado. Abaixo de 100 a causa
+ * é outra: preço velho ou FAIXA SEM PREÇO no livro. Medido em 10/Ago, o único
+ * mercado abaixo de 100 era o comparecimento, e era o único com faixa sem preço
+ * (11 de 12). Multiplicar todo mundo para cima entregaria a massa da faixa
+ * ausente às demais, ou seja, inventaria probabilidade onde havia ausência de
+ * dado. Piso e teto são falhas de natureza oposta e por isso `faltaNota` existe
+ * separada de `excessoNota`.
  */
 function Distribuicao({
   titulo, ev, locale, t, particao = true,
@@ -307,10 +355,13 @@ function Distribuicao({
   const passou = soma >= SOMA_MIN && soma <= SOMA_MAX
   const somaTexto = `${fmt(soma, locale, 1)}%`
 
-  // Normalização só quando as faixas formam partição e a soma não é zero.
-  const normalizar = !passou && particao && soma > 0
-  const exibidas = normalizar ? fs.map((f) => ({ ...f, pct: (f.pct / soma) * 100 })) : fs
-  const mostrarBarras = passou || normalizar
+  // 🔴 NADA DE NORMALIZAR, e o motivo está no bloco acima: o sobrepreço não é
+  // uniforme, então dividir pela soma não o remove, apenas o redistribui errado.
+  // Partição que reprova entra como FORMA: barras cruas, SEM percentual.
+  const soForma = !passou && particao && soma > 0
+  const abaixoDoPiso = !passou && soma < SOMA_MIN
+  const exibidas = fs
+  const mostrarBarras = passou || soForma
 
   return (
     <Card className={`mb-3 ${linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
@@ -319,7 +370,7 @@ function Distribuicao({
         <span className="text-[11px] text-gray-500">
           {t.volume}: ${vol >= 1e6 ? `${fmt(vol / 1e6, locale)}M` : `${Math.round(vol / 1000)}k`} ·{' '}
           {t.soma} {somaTexto}
-          {normalizar && <> · <span className="font-semibold text-gray-600">{t.participacao}</span></>}
+          {soForma && <> · <span className="font-semibold text-gray-600">{t.soForma}</span></>}
         </span>
       </div>
 
@@ -328,7 +379,7 @@ function Distribuicao({
           {exibidas
             .sort((a, b) => ordemFaixa(a.nome) - ordemFaixa(b.nome))
             .map((f) => (
-              <BarraFaixa key={f.nome} nome={f.nome} pct={f.pct} max={Math.max(...exibidas.map((x) => x.pct))} locale={locale} />
+              <BarraFaixa key={f.nome} nome={f.nome} pct={f.pct} max={Math.max(...exibidas.map((x) => x.pct))} locale={locale} mostrarValor={passou} />
             ))}
         </div>
       )}
@@ -340,9 +391,9 @@ function Distribuicao({
           faixa do quadro. Aqui vai só texto estático, curto. A explicação longa
           vive UMA vez em "Como o portão funciona", no fim da seção, em vez de
           ser repetida palavra por palavra em cada card que reprova. */}
-      {normalizar && (
+      {soForma && (
         <p className="mt-2.5 border-t border-gray-100 pt-2 text-[11px] leading-snug text-gray-500">
-          {t.excessoNota(somaTexto)}
+          {abaixoDoPiso ? t.faltaNota(somaTexto) : t.excessoNota(somaTexto)}
         </p>
       )}
 
