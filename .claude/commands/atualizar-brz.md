@@ -44,6 +44,8 @@ Padrão: 2 leituras com 8 minutos de intervalo, tolerância de 0,20pp, ignorando
 
 **Interpretação do resultado, sem exceção:**
 
+🔑 **LER A ÚLTIMA LINHA, não o código de saída.** A trava termina com `VEREDITO: APROVADO` ou `VEREDITO: BLOQUEADO`, e **essa linha é a fonte de verdade**. O exit code é confirmação e pode se perder no invólucro: medido em 10/Ago/2026 num ambiente onde **todo** comando voltava com exit 1, inclusive um `true`. Desempate rápido: rodar `true` no mesmo shell; se ele também "falha", o exit code ali não vale nada.
+
 - **exit 0**: as leituras concordam. Prosseguir usando os valores da **segunda** leitura, que é a mais recente e sobreviveu à confirmação.
 - **exit 1**: NÃO publicar. A saída lista o motivo por mercado, com os dois preços e a divergência em pp. Recapturar. Se persistir em duas rodadas, o book está instável agora e o correto é registrar isso, não publicar número.
 

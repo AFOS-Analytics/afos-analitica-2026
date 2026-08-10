@@ -7,7 +7,7 @@ O template nasceu do Brasil e **quatro seções mudaram** para os EUA, com aprov
 ## Pré-requisitos
 
 1. **Mercado fresco**: leitura do dia via `curl -s "https://www.afos-analytics.com/api/polymarket?country=us&fresh=1"`. Se passaram mais de ~12h, refazer. **Sem `?country=us` a rota devolve o Brasil.** 🔴 **E sem `&fresh=1` ela devolve o CACHE**, que num pré-requisito chamado "mercado fresco" é o defeito mais fácil de não ver: medido em 10/Ago/2026, a leitura cacheada estava 19 minutos velha e errava o republicano da Câmara em 2.00pp. Conferir o `fetchedAt` da resposta, não o valor.
-2. **Trava de captura aprovada**: `npx tsx scripts/capture-guard.ts --pais=us`. Exit 1 significa não publicar número.
+2. **Trava de captura aprovada**: `npx tsx scripts/capture-guard.ts --pais=us`. 🔑 **Ler a ÚLTIMA LINHA**, que é `VEREDITO: APROVADO` ou `VEREDITO: BLOQUEADO`, e **não o código de saída**: o exit code pode se perder no invólucro e virar 1 sem bloqueio nenhum (medido em 10/Ago/2026, num ambiente onde até um `true` "falhava"). `VEREDITO: BLOQUEADO` significa não publicar número.
 3. **Generic ballot em dia**: `public/us-polls-data.json` ou a leitura do Neon, via `/atualizar-pesquisas-usa`.
 4. **Série de mercado da semana** para calcular Δ, com a armadilha do filtro (ver abaixo).
 

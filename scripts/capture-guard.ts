@@ -24,8 +24,28 @@
  *   npx tsx scripts/capture-guard.ts --json          # saída JSON para pipeline
  *
  * SAÍDA
+ *   Última linha  = `VEREDITO: APROVADO` ou `VEREDITO: BLOQUEADO`
  *   exit 0 = as duas leituras concordam, pode publicar a SEGUNDA
  *   exit 1 = discordam ou proxy degradado, NÃO publicar
+ *
+ * 🔴 A LINHA `VEREDITO:` É A FONTE DE VERDADE. O exit code é confirmação.
+ *
+ * Motivo, medido em 10/Ago/2026: o código de saída **pode se perder no
+ * caminho** e virar 1 sem que a trava tenha bloqueado nada. Aconteceu num
+ * ambiente onde o Git Bash monta o `C:` em `/cygdrive/c` e não em `/c`, o que
+ * é o padrão quando falta o `/etc/fstab` do Git para Windows. O invólucro que
+ * chamava a trava escrevia um arquivo de controle num caminho `/c/...`
+ * inexistente, a escrita falhava e **TODO** comando voltava com exit 1,
+ * inclusive um `true`. A trava imprimiu APROVADO e foi lida como bloqueio.
+ *
+ * ⚠️ Confundir os dois lados custa caro nas DUAS direções: ler um APROVADO
+ * como bloqueio trava uma rodada por nada, e o inverso publicaria número que
+ * não passou. Por isso o veredito agora é explícito no texto, numa linha só,
+ * greppável, e não depende de canal nenhum além do stdout.
+ *
+ * 📌 Como desempatar sem esperar outra rodada de 8 minutos: rodar `true` no
+ * mesmo shell. Se `true` também "falha", o exit code do ambiente não vale nada
+ * e o que manda é a linha `VEREDITO:`.
  */
 
 const PROXY_BASE = 'https://www.afos-analytics.com/api/polymarket?fresh=1'
@@ -174,6 +194,11 @@ async function main() {
       log('')
       log('Recapturar antes de publicar. Se persistir, o book está instável agora.')
     }
+    // 🔑 ÚLTIMA LINHA, E É A FONTE DE VERDADE. Ver o cabeçalho: o exit code
+    // pode se perder no invólucro e virar 1 sem bloqueio nenhum. Esta linha
+    // não se perde, e é o que se deve grepar.
+    log('')
+    log(`VEREDITO: ${ok ? 'APROVADO' : 'BLOQUEADO'}`)
   }
 
   process.exit(ok ? 0 : 1)
@@ -182,5 +207,11 @@ async function main() {
 main().catch(err => {
   console.error('capture-guard falhou:', err instanceof Error ? err.message : err)
   // Falha da própria trava é motivo para NÃO publicar (fail-closed).
+  // ⚠️ O veredito sai também aqui, e em stdout como nos demais casos. Sem isto
+  // uma quebra da trava não produziria linha `VEREDITO:` nenhuma, e AUSÊNCIA de
+  // veredito é ambígua exatamente como o exit code perdido que este mecanismo
+  // existe para substituir.
+  console.log('')
+  console.log('VEREDITO: BLOQUEADO')
   process.exit(1)
 })

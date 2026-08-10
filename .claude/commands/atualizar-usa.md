@@ -63,6 +63,10 @@ Ela faz duas leituras separadas por 8 minutos e só libera se concordarem dentro
 
 **Mercado de distribuição fica de fora**, igual à `inflation` do Brasil: dezenas de faixas finas oscilam entre si sem que a eleição tenha mudado, e vigiá-las com 0,20pp bloquearia todo dia. Trava que bloqueia todo dia é trava que alguém aprende a pular. Quem segura a qualidade das faixas é o portão de coerência de 95-105%.
 
+🔑 **LER A ÚLTIMA LINHA, não o código de saída.** A trava termina com `VEREDITO: APROVADO` ou `VEREDITO: BLOQUEADO`, e **essa linha é a fonte de verdade**. O exit code é confirmação e pode se perder no caminho: medido em 10/Ago/2026 num ambiente onde **todo** comando voltava com exit 1, inclusive um `true`, porque o Git Bash montava o `C:` em `/cygdrive/c` e o invólucro escrevia num `/c/...` inexistente. A trava aprovou e quase foi lida como bloqueio.
+
+⚠️ **Desempate rápido, sem esperar outros 8 minutos:** rodar `true` no mesmo shell. Se `true` também "falha", o exit code do ambiente não vale nada e vale a linha `VEREDITO:`.
+
 - **exit 0**: usar os valores da **segunda** leitura, que é a mais recente e sobreviveu à confirmação.
 - **exit 1**: NÃO publicar. Recapturar. Persistindo em duas rodadas, o correto é registrar que o book está instável, não publicar número.
 - **Ela falha fechada:** se as duas leituras vierem com o mesmo `fetchedAt`, ou se nenhum preço for lido, ela bloqueia e avisa. Tratar como bloqueio de verdade.
