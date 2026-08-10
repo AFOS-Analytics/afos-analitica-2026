@@ -1,0 +1,66 @@
+/**
+ * Mapa EN de 10/Ago para analysis-data.json.
+ * Convenções: ponto decimal, vírgula de milhar, datas no formato "Aug 10".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+
+construir('analysis-data', 'en', {
+  'cards.sentimento.text1':
+    `With 55 days to the ${G('first round', 'primeiro-turno')}, the day brought polling and did not bring price. Two national polls were published on Aug 10: BTG/Nexus (n=2,001, telephone, field Aug 7 to Aug 9, 2pp margin, BR-08428/2026), with 40% x 35% in the first round and 47% x 44% in the runoff, and the debut of Palver (n=5,000, online questionnaire, 3pp margin, BR-06596/2026), with 44% x 40% and a tie at 46% x 46%. The prices on this panel are from the confirmed reading of Aug 9, at 17:34 UTC, because there is no new price reading on Aug 10.`,
+
+  'cards.sentimento.text2':
+    `THE MOST INFORMATIVE NUMBER OF THE WEEK IS A RANGE, NOT A POINT. Adding up the four national polls since Aug 5, Lula comes in between 39% and 44% in the first round and Flávio between 30% and 40%. The runner-up's spread is double the leader's, and in the runoff the distance between them goes from 0pp to 5.5pp depending on the house. Choosing one poll is choosing one conclusion, which is why the panel publishes the set rather than electing the correct reading.`,
+
+  'cards.sentimento.text3':
+    `APPROVAL WORSENED IN BOTH OF TODAY'S READINGS AND WIDENED THE SPREAD: 46% against 49% at BTG/Nexus, compared with 47% x 48% in that house's own Aug 3 round, and 45% against 55% at Palver. Across five readings in eight days the balance runs from 1pp positive to 10pp negative, and disapproval on its own runs from 47% to 55%. Before, the sign of the balance already depended on the house; now the size depends on it too. Rejection stays high for both names: 50% and 48% at Nexus, 51% and 52% at Palver, with the order between them flipping from one house to the other.`,
+
+  'cards.sentimento.direita':
+    `Flávio Bolsonaro has 35% at BTG/Nexus and 40% at Palver, and the 10pp range across the four national polls of the window is the figure that weighs most on him. Inside his own house the move went against him: Nexus had 37% on Aug 3 and now has 35%, and the first round gap widened from 4pp to 5pp because of that. In compensation, Palver gives him the best scenario of the window, with a tie at 46% x 46% in the runoff. Rejection of 50% and 51% across the two rounds.`,
+
+  'cards.sentimento.esquerda':
+    `Lula leads the ${G('first round', 'primeiro-turno')} in all four national polls of the window without exception, and at BTG/Nexus the 5pp advantage falls outside the 2pp margin. He wins or ties every runoff, and the worst of them is the Palver tie. The counterweight is in the government rating: both of today's readings have a negative balance, of 3pp at Nexus and 10pp at Palver, and it is the first time in the window that no house of the day gives him a positive balance.`,
+
+  'cards.sentimento.terceiraVia':
+    `THE METHOD CASE OF THE WEEK IS HERE. Renan Santos comes in at 4% at Quaest in person, 4.7% at Ideia by telephone, 4% at BTG/Nexus by telephone and 10% at Palver over the internet. Palver itself assessed that the digital format may have boosted his performance, since he keeps an active base in that environment, and said it is testing approaches to reduce that effect in online polls. Caiado had the best figure of the chasing pack: BTG/Nexus points to Lula tying with him in the runoff, in the same round in which the leader beats the runner-up.`,
+
+  'cards.sentimento.polymarket':
+    `Prices from the confirmed reading of Aug 9, at 17:34 UTC, with no new reading on Aug 10: Lula 63.50% (vol USD 8.18M cumulative), Flávio 26.95% (vol USD 8.09M), Renan Santos 7.80% (vol USD 9.27M), Caiado 1.25% (vol USD 5.60M) and Zema 0.45% (vol USD 5.02M). THE CROSSING OF DIRECTION IS THE ONE OF THE WEEK: up to that reading the market gap had narrowed on six of the last seven sessions, from +38.90pp on Aug 3 to +36.55pp, while the BTG/Nexus gap widened inside its own house, from 4pp to 5pp in the first round and from 1pp to 3pp in the runoff. The two instruments moved in opposite directions over the same contest, and the panel records that without saying which one is right.`,
+
+  'cards.inss.text1':
+    `The case of the fraudulent association fees deducted from ${G('INSS', 'inss')} benefits remains a management liability, and neither of the two national polls of Aug 10 published a specific cut on it from a closed source.`,
+
+  'cards.inss.text2':
+    `What exists as fresh measurement is indirect and comes from the government rating. Both of today's readings worsened: 46% approval against 49% disapproval at BTG/Nexus, and 45% against 55% at Palver. The panel does not attribute that worsening to the INSS case, because neither round tests that relationship.`,
+
+  'cards.inss.text3':
+    `The distinction the panel has kept from the start still holds: one thing is the effect on the rating of the administration, which is where administrative fraud usually shows up; another is the effect on voting intention, which continues to show the president ahead in all four national polls of the window.`,
+
+  'cards.inss.text4':
+    `With no fresh judicial decision and no fresh number on the case on Aug 10, the panel records an absence of measurement rather than repeating old data as if it were of the day.`,
+
+  'cards.inss.impactoLula':
+    `Not isolable. Across the four national polls since Aug 5 he leads the ${G('first round', 'primeiro-turno')} in all of them, between 39% and 44%, and none of them tests the INSS case as a variable.`,
+
+  'cards.inss.impactoGestao':
+    `The government rating worsened in both readings of Aug 10, with a balance of 3pp negative at BTG/Nexus and 10pp negative at Palver. The cause is not attributed here, because the rounds do not measure cause.`,
+
+  'cards.inss.conclusao':
+    `The case remains in the field of the administration's rating and not of voting intention, and the honest reading on Aug 10 is that there is no fresh data on it. What there is is a worsening in the government rating, measured by two houses, without either of them pointing to why.`,
+
+  'cards.bancoMaster.text1':
+    `The Banco Master case returned to coverage on Aug 10 through two fresh facts, both from the press and none from a judicial decision. Poder360 published that two government ministers favoured a deal that enriched Daniel Vorcaro.`,
+
+  'cards.bancoMaster.text2':
+    `At state level, a legislative assembly is holding up the opening of a CPI to investigate a pension institute's investments in the bank, and a local report says companies founded after 2021 received R$ 870 million from the institution.`,
+
+  'cards.bancoMaster.text3':
+    `Neither of the two national polls of Aug 10 tests the case, and the contract on the impeachment of an ${G('STF', 'stf')} justice has no fresh price reading on the day. Its last confirmed value is the one from Aug 9, at 17:34 UTC, at 3.60% with USD 83 thousand in cumulative volume.`,
+
+  'cards.bancoMaster.conclusao':
+    `The case gained fresh facts of coverage and none of measurement. The panel records both facts with the source and the date, and does not convert coverage into a change of risk, because there is no fresh number to support that conversion.`,
+
+  'cards.stf.analise':
+    `THERE IS NO FRESH PRICE READING ON Aug 10, and so the panel records no change in this contract today. The last confirmed value is the one from Aug 9, at 17:34 UTC: 3.60%, with USD 83 thousand in cumulative volume. At that volume this is the thinnest contract among those tracked, and any movement in it calls for the book-size caveat alongside the number. ON THE FACTS, what still stands is the Dino decision ordering the Federal Police to investigate R$ 55.4 million in Pix earmarks flagged by the TCU, with the runner-up's running mate, the Speaker of the lower house and a former ${G('PT', 'pt')} leader in the Senate on the same list. The panel records the three together because separating them would be choosing one side of the same decision. On Aug 10 there was no fresh judicial act in the case, and what appeared was press coverage of Banco Master, with no decision attached.`,
+})

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-09",
+  "lastUpdate": "2026-08-10",
   "institutes": [
     {
       "name": "Datafolha",
@@ -120,9 +120,103 @@
       "reliability": 2,
       "type": "Online",
       "note": "Digital methodology."
+    },
+    {
+      "name": "Palver",
+      "reliability": 3,
+      "type": "Online",
+      "note": "National debut on Aug 10, 2026, questionnaire over the internet. The institute itself declares an effect of the digital format on a candidate with an active online base."
     }
   ],
   "polls": [
+    {
+      "institute": "Palver",
+      "date": "2026-08-10",
+      "sample": 5000,
+      "margin": 3,
+      "register": "BR-06596/2026",
+      "reliability": 3,
+      "method": "Online, questionnaire over the internet",
+      "fieldDates": "2026-08-03 a 2026-08-09",
+      "note": "PALVER'S DEBUT on the panel, published Aug 10, with n=5,000, the largest sample among the national polls published in August. Over a 30-day window the AtlasIntel of Jul 29 was larger, with n=5,021. First round Lula 44% x Flávio 40%, with Renan Santos alone in third, on 10%. Runoff Lula 46% x Flávio 46%, a tie on the number. Margin 3pp, 95% confidence, register BR-06596/2026. THE TSE REGISTER DECLARES FIELDWORK FROM Aug 3 TO Aug 9 AND THE RELEASE REPORTS Aug 3 TO Aug 7, and the panel records both dates rather than picking one. THE METHOD POINT COMES FROM THE INSTITUTE ITSELF, not from this panel: Palver assessed that the digital format may have boosted Renan Santos' performance, since he keeps an active base in that environment, and said it is testing approaches to reduce that effect in online polls. With that, the same name appears at 4% and 4.7% in the telephone and in-person rounds of Aug 5, at 4% in today's telephone BTG/Nexus, and at 10% here, over the internet. REJECTION with Lula at 52% and Flávio at 51%. GOVERNMENT APPROVAL at 45% against 55% disapproval, the most negative balance among the houses of the window, in which the Genial/Quaest of Aug 5 marked 48% x 47% and today's BTG/Nexus marked 46% x 49%.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 44
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 40
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 10
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 46
+        }
+      ],
+      "source": "Palver released on Aug 10 by Folha de S.Paulo, CNN Brasil, UOL, Exame, JOTA and CartaCapital. TSE register BR-06596/2026."
+    },
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-08-10",
+      "sample": 2001,
+      "margin": 2,
+      "register": "BR-08428/2026",
+      "reliability": 4,
+      "method": "Telephone (CATI), all regions",
+      "fieldDates": "2026-08-07 a 2026-08-09",
+      "note": "BTG/Nexus national poll published Aug 10, the 9th round of the series. First round Lula 40% x Flávio 35%, with Caiado 5%, Renan Santos 4% and Zema 3%. The 5pp difference falls OUTSIDE the 2pp margin. Runoff Lula 47% x Flávio 44%, a 3pp difference that the release itself treats as a technical tie, and the round also points to Lula tying with Caiado in the runoff. Field Aug 7 to Aug 9, n=2,001, telephone, 2pp margin, 95% confidence, register BR-08428/2026. THE WITHIN-HOUSE COMPARISON REVERSES WHAT THE PREVIOUS ROUND SHOWED: on Aug 3 the first round gap had FALLEN from 9pp to 4pp, and now it has widened again, to 5pp. In the runoff the move is larger, from 1pp to 3pp. And both gave way in the first round, Lula from 41% to 40% and Flávio from 37% to 35%, which means the gap widened because the runner-up fell further, not because the leader rose. APPROVAL at 46% against 49% disapproval, against 47% x 48% in that house's own Aug 3 round. REJECTION with Flávio at 50% and Lula at 48%, and this time the figure came with a closed source, unlike the previous round, in which the secondary sources diverged and the panel left the number out.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        }
+      ],
+      "source": "BTG/Nexus released on Aug 10 by Folha de S.Paulo, Estadão, Poder360, CNN Brasil, UOL, JOTA, CartaCapital, VEJA, Metrópoles, GZH, Money Times and Revista Fórum. TSE register BR-08428/2026."
+    },
     {
       "institute": "Quaest/Genial",
       "date": "2026-08-05",
@@ -1111,12 +1205,12 @@
     }
   ],
   "approvalData": {
-    "note": "Genial/Quaest from Aug 5: 48% approve, 47% disapprove, a positive net of 1pp, with performance at 36% positive, 26% fair and 36% negative. Meio/Ideia from the same window: 48.5% approve and 49% disapprove (Estadão, Aug 5), a negative net. BTG/Nexus from Aug 3: 47% x 48%. All three sit within any margin of one another, and that is why the sign of the net depends on the house, not on the electorate.",
-    "source": "Genial/Quaest Aug 5, 2026 (fieldwork Jul 31 to Aug 3, n=2,004, in person, 120 municipalities, 2pp margin, 95% confidence, commissioned by Banco Genial, BR-06591/2026), released by G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Money Times and Poder360. Within-house comparison against the Genial/Quaest round of Jul 15 (fieldwork Jul 10 to Jul 13, n=2,004, BR-07181/2026), via Poder360. The BTG/Nexus reading of Aug 3 (BR-02874/2026) is kept in the text as the second house.",
-    "date": "2026-08-05",
+    "note": "TWO FRESH READINGS ON Aug 10, and they widen the spread rather than narrowing it. BTG/Nexus of Aug 10: 46% approve and 49% disapprove, a balance of 3pp negative, against 47% x 48% in that house's own Aug 3 round. Palver of Aug 10, online: 45% approve and 55% disapprove, a balance of 10pp negative. Also in the picture are the Genial/Quaest of Aug 5, with 48% x 47% and a positive balance of 1pp, and the Meio/Ideia of the same window, with 48.5% x 49%. WHAT THE SET SHOWS: across five readings in eight days the balance runs from 1pp positive to 10pp negative, and disapproval on its own runs from 47% to 55%, a distance of 8pp between houses. Before, the sign of the balance already depended on the house; now the size depends on it too. THE NUMBERS ON THIS CARD COME FROM DIFFERENT SOURCES AND THAT HAS TO BE SAID: approval and disapproval are from the BTG/Nexus of Aug 10, chosen because it is the longest running telephone series and comparable with its own earlier rounds; the rating of the administration, with 36% positive, 26% fair and 36% negative, is still the one from the Genial/Quaest of Aug 5, because neither of today's rounds published that breakdown from a closed source. The panel prefers to declare the mix rather than hide it.",
+    "source": "Approval and disapproval: BTG/Nexus Aug 10, 2026 (field Aug 7 to Aug 9, n=2,001, telephone, 2pp margin, BR-08428/2026), released by Folha de S.Paulo, Estadão, CNN Brasil, UOL, Poder360, JOTA and Metrópoles. Second reading of the day: Palver Aug 10, 2026 (n=5,000, online, 3pp margin, BR-06596/2026), via Folha, CNN Brasil, UOL, Exame, JOTA and CartaCapital. Rating of the administration: Genial/Quaest Aug 5, 2026 (field Jul 31 to Aug 3, n=2,004, in person, 120 municipalities, 2pp margin, commissioned by Banco Genial, BR-06591/2026). Meio/Ideia Aug 5 via Estadão, kept in the text as the fourth house of the window.",
+    "date": "2026-08-10",
     "results": {
-      "aprovacao": 48,
-      "desaprovacao": 47,
+      "aprovacao": 46,
+      "desaprovacao": 49,
       "naoSabe": 5,
       "otimoBom": 36,
       "ruimPessimo": 36,
@@ -1145,94 +1239,95 @@
       },
       {
         "president": "Lula (2026)",
-        "approval6m": 49,
-        "disapproval6m": 48
+        "approval6m": 46,
+        "disapproval6m": 49
       }
     ],
-    "lastUpdate": "2026-08-05"
+    "lastUpdate": "2026-08-10"
   },
   "polymarketComparison": {
-    "note": "THE PRICES IN THIS SECTION ARE FROM THE AUG 9 READING, AT 17:34 UTC. AFOS only publishes a price that two independent readings confirm, taken eight minutes apart. THE GAP NARROWED AGAIN, AND FROM ONE SIDE ONLY: it went to +36.55pp, against +37.55pp yesterday, because Lula fell 1.00pp, to 63.50%, breaking below the five-day plateau that had held since Aug 4, while Flávio stood still at 26.95% for the third day. When the gap narrows from both ends there is a transfer between the two names; when it narrows only because the leader gives way, what exists is a loss of price in the favourite. Since Aug 1 the gap has fallen on SEVEN of the eight days, with a single flat day, coming down from +41.80pp. IN THE POLLING THERE HAS BEEN NO FRESH MEASUREMENT FOR FOUR DAYS: the latest national polls are [Genial/Quaest](/en/glossary#quaest) and Meio/Ideia, both from Aug 5, and today's coverage carries cuts of that same round, not a new poll. THREE national polls are scheduled for Aug 10, among them Palver with n=5,000, plus two on Aug 11 and one on Aug 13. IN THE THIRD PLACE BOOK the move of the day contradicts yesterday's: Renan Santos jumped 6.00pp, to 64.50%, and Caiado fell 5.50pp, to 25.50%, in an almost exact mirror, when yesterday Caiado fell without Renan rising.",
+    "note": "THE PRICES IN THIS SECTION ARE FROM THE CONFIRMED READING OF Aug 9, AT 17:34 UTC, and there is no new price reading on Aug 10. AFOS only publishes a price that two independent readings confirm, taken eight minutes apart. THE DAY BROUGHT POLLING: two national polls were published, BTG/Nexus (n=2,001, telephone) with 40% x 35% in the first round and 47% x 44% in the runoff, and the debut of Palver (n=5,000, over the internet) with 44% x 40% and a tie at 46% x 46%. THREE CROSSINGS COME OUT OF THAT. The first is one of amplitude: across the four national polls since Aug 5 the runner-up varies by 10pp, from 30% to 40%, against 5pp for the leader, and in the runoff the distance between them runs from 0pp to 5.5pp depending on the house. The second is one of method, and it was declared by the institute itself: Renan Santos comes in at 4% and 4.7% by telephone and in person and at 10% over the internet, and Palver assessed that the digital format may have boosted his performance, saying it is testing approaches to reduce the effect. His confirmed price, 7.80%, sits between the two methods, and at the same time near the floor of his own series, with 84 of the 88 days at a value equal to or above it. The third is one of direction: up to the Aug 9 reading the market gap had narrowed on six of the last seven sessions, from +38.90pp to +36.55pp, while the BTG/Nexus gap widened inside its own house, from 4pp to 5pp in the first round and from 1pp to 3pp in the runoff. The two instruments moved in opposite directions over the same contest and in the same window, and the panel records the crossing without saying which one is right.",
     "sources": "[Polymarket](/en/glossary#polymarket) prices via the AFOS proxy, capture confirmed by two readings, the most recent at 17:32 UTC on Aug 8 (scripts/capture-guard.ts). Polls: Genial/Quaest BR-06591/2026 and Meio/Ideia BR-04579/2026, both from Aug 5, fielded Jul 31 to Aug 3, reported by G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Exame, Gazeta do Povo and JOTA. TSE sweep of Aug 8: 565 records, none newly inserted by the manual run, and SIX national polls in the release queue: Palver (n=5,000), Gerp (n=2,400) and BTG/Nexus (n=2,000) on Aug 10, MDA (n=2,002) and 100 Cidades (n=2,000) on Aug 11, and PoderData (n=2,400, BR-06868/2026) on Aug 13.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "39-46%",
+        "pesquisaRange": "39-44%",
         "polymarket": "63.50%",
-        "tendenciaPesquisa": "NO NEW NATIONAL POLL for FOUR days, since Aug 5. The two from that day still stand: [Genial/Quaest](/en/glossary#quaest) (n=2,004, fieldwork Jul 31 to Aug 3, in person, 2pp margin, BR-06591/2026) with 39% in the [first round](/en/glossary#primeiro-turno) and 44% x 39% in the runoff against Flávio, also beating Zema by 46% x 34%, Caiado by 45% x 37% and Renan Santos by 45% x 35%; and Meio/Ideia (n=1,500, telephone, 2.5pp margin, BR-04579/2026) with 43% and 48.5% x 43%. Today's coverage carries cuts of that same round, not fresh measurement. APPROVAL still stands at 48% against 47%. ON THE BOARD, he declared his assets to the [TSE](/en/glossary#tse), around R$ 4.7 million, 35% less than in 2022, with Alckmin reporting R$ 3.3 million, and a survey counts 26 state platforms for him against 16 for his rival.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 63.50% (vol USD 8.18M cumulative). FELL 1.00pp and broke below the five-day plateau that had held since Aug 4, in the first change to his price in five sessions. The gap over Flávio went to +36.55pp, and it narrowed ONLY from this side, because his rival did not move. In the 89-day series, from May 11 to Aug 9, his high is 66.50%, from Aug 1, and 13 of the 89 days had a value equal to or above the current one.",
+        "tendenciaPesquisa": "TWO NEW NATIONAL POLLS ON Aug 10. BTG/Nexus (n=2,001, telephone, field Aug 7 to Aug 9, 2pp margin, BR-08428/2026): 40% in the first round, with the 5pp difference over the runner-up OUTSIDE the margin, and 47% x 44% in the runoff. Palver, a debut on the panel (n=5,000, online questionnaire, 3pp margin, BR-06596/2026): 44% in the first round and a TIE at 46% x 46% in the runoff, the worst runoff scenario any national poll has given him in the window. Adding the four rounds since Aug 5, he runs from 39% to 44%, a 5pp band, and leads the first round in all of them. WITHIN THE HOUSE, BTG/Nexus shows the reverse of last week: the first round gap had fallen from 9pp to 4pp on Aug 3 and has now WIDENED to 5pp, with both giving way and the opponent giving way more. APPROVAL worsened in both of today's readings, 46% x 49% at Nexus and 45% x 55% at Palver, and across five readings in eight days the balance runs from 1pp positive to 10pp negative. The percentage used in the chart is the BTG/Nexus one, chosen because it is the longest running telephone series.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 63.50% (vol USD 8.18M cumulative). THERE IS NO NEW PRICE READING ON Aug 10, and so this line records no change on the day. Up to the Aug 9 reading the gap over Flávio had been narrowing, falling on SIX of the last SEVEN sessions, from +38.90pp on Aug 3 to +36.55pp. In the 88-day series, from May 13 to Aug 10, his peak is 66.50%, from Aug 1, and 14 of the 88 days had a value equal to or above the current one, so the level is not extreme.",
         "odds": 63.5,
-        "percentage": 39,
-        "lastUpdate": "2026-08-09",
+        "percentage": 40,
+        "lastUpdate": "2026-08-10",
         "value": 63.5
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "30-39%",
+        "pesquisaRange": "30-40%",
         "polymarket": "26.95%",
-        "tendenciaPesquisa": "NO NEW NATIONAL POLL for FOUR days. What still stands is the 30% in the [first round](/en/glossary#primeiro-turno) from [Genial/Quaest](/en/glossary#quaest), against 28% in that same house's Jul 15 round, and the 35% from Meio/Ideia, against 32% in its own Jul 8 round, with runoffs of 39% and 43%. The gap against Lula is 9pp at Quaest and 8pp at Ideia. A cut published on Aug 9 shows him widening his advantage among voters with secondary and higher education, and it is a reading of the Aug 5 round, not a new poll. REJECTION still stands at 54%, against Lula's 52%. ON THE BOARD, his running mate remains on the list of Pix earmarks Dino ordered the [PF](/en/glossary#pf) to investigate.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 26.95% (vol USD 8.09M cumulative). THIRD day flat at the same value, after six days of gains that ended on Aug 6. He gained relative ground without moving: the gap narrowed because the leader gave way 1.00pp, not because he rose. It is not an extreme: 30 of the 89 days in the series had a value equal to or above it, with a high of 43.30% on May 12 and a low of 22.00% on Jul 3. IN THE RUNNER-UP CONTRACT the fall STOPPED at 81.50%, after losing 6.00pp between Aug 6 and Aug 8.",
+        "tendenciaPesquisa": "THE RANGE IS THE FIGURE, NOT THE POINT. Across the four national polls since Aug 5 he comes in at 30% at Genial/Quaest, 35% at Meio/Ideia, 35% at today's BTG/Nexus and 40% at today's Palver, an amplitude of 10pp, DOUBLE the leader's. In the runoff the distance between the two runs from 0pp, at Palver, to 5.5pp, at Meio/Ideia. PALVER GAVE HIM THE BEST SCENARIO OF THE WINDOW, with 40% in the first round and a tie at 46% x 46%, and it is the first time a national poll does not point to a runoff defeat for him. AT BTG/NEXUS the move went the other way: he fell from 37% on Aug 3 to 35%, and it is that fall which widens the first round gap from 4pp to 5pp. REJECTION of 50% at Nexus, the highest of the round, and of 51% at Palver. The percentage used in the chart is the BTG/Nexus one, the same reference house as the leader's.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 26.95% (vol USD 8.09M cumulative). THERE IS NO NEW PRICE READING ON Aug 10. The confirmed Aug 9 value closed the third day at the same level, and in the runner-up contract the last confirmed value is 81.50%. It is not extreme: 26 of the 88 days in the series had a value equal to or above it, with a peak of 34.40% on May 13 and a floor of 22.00% on Jul 3.",
         "odds": 26.95,
-        "percentage": 30,
-        "lastUpdate": "2026-08-09",
+        "percentage": 35,
+        "lastUpdate": "2026-08-10",
         "value": 26.95
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "4-4.7%",
+        "pesquisaRange": "4-10%",
         "polymarket": "7.80%",
-        "tendenciaPesquisa": "NO NEW NATIONAL POLL for FOUR days. What still stands is the 4% from [Genial/Quaest](/en/glossary#quaest), against 3% in its own Jul 15 round, and the 4.7% from Meio/Ideia, against 2% in its own Jul 8 round. In the runoffs he is the weakest of the two rounds: he loses to Lula by 45% x 35% at Quaest and by 48% x 34.7% at Ideia. With those, six consecutive national polls measure him between 3% and 4.7%, after the 7.8% from AtlasIntel on Jul 29, and the isolated high reading remains the exception of the set. He declared R$ 795 thousand in assets to the [TSE](/en/glossary#tse), with his running mate reporting R$ 1.6 million.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 7.80% (vol USD 9.27M cumulative). Rose 0.15pp, third day running of gains, and with the polling flat between 4% and 4.7% the distance to declared intention grew again, running from 3.10pp to 3.80pp, always on the price side. HIS MOVE TODAY IS IN THE THIRD PLACE BOOK: he jumped 6.00pp, from 58.50% to 64.50%, while Caiado fell 5.50pp, in an almost exact mirror, when YESTERDAY Caiado fell without him rising. In the runner-up contract he opened up over Lula, with 8.25% against 6.75%. In the 89-day series the high is 17.90% and the low is 5.50%, and 77 of the 89 days had a value equal to or above today's.",
+        "tendenciaPesquisa": "THE METHOD EFFECT OF THE WEEK IS HERE, AND IT WAS DECLARED BY THE INSTITUTE THAT MEASURED HIM HIGH. He comes in at 4% at Genial/Quaest in person on Aug 5, 4.7% at Meio/Ideia by telephone the same day, 4% at BTG/Nexus by telephone on Aug 10, and 10% at Palver over the internet, also on Aug 10. PALVER ASSESSED that the digital format may have boosted his performance, since he keeps an active base in that environment, and said it is testing approaches to reduce that effect in online polls. In its round he sits alone in third. The panel repeats the house's declaration rather than judging the number. The percentage used in the chart is the BTG/Nexus one, to keep the same reference house as the others, and the full range is declared above.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 7.80% (vol USD 9.27M cumulative). THERE IS NO NEW PRICE READING ON Aug 10. WHAT THE CONFIRMED PRICE DOES IS SIT BETWEEN THE TWO METHODS: above the 4% to 4.7% of telephone and in person, below the 10% of the internet. And at the same time near the FLOOR of his own history: in the 88-day series, 84 of them had a value equal to or above it, with a maximum of 17.90% on Jun 9 and a minimum of 6.80% on Aug 6. Ceiling in the polling and floor in the price, in the same week. Largest cumulative volume in the presidential book among the names above 1%.",
         "odds": 7.8,
         "percentage": 4,
-        "lastUpdate": "2026-08-09",
+        "lastUpdate": "2026-08-10",
         "value": 7.8
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5.7%",
         "polymarket": "1.25%",
-        "tendenciaPesquisa": "NO NEW NATIONAL POLL for FOUR days. What still stands is the 4% from [Genial/Quaest](/en/glossary#quaest), the same as its own Jul 15 round, and the 5.7% from Meio/Ideia, against 4% in its own Jul 8 round. In the runoffs he loses to Lula by 45% x 37% at Quaest and by 48.5% x 40% at Ideia. The divergence between institutes about him remains open within the same field: 4% at one house and 5.7% at the other, with both collecting from Jul 31 to Aug 3.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 1.25% (vol USD 5.60M cumulative). FELL for the THIRD day running in both books: 0.10pp in the presidential one and 5.50pp in the [first round](/en/glossary#primeiro-turno) third place one, from 31.00% to 25.50%. In three days that is 10.00pp lost in that contract, since the 33.50% of Aug 6. THE DIFFERENCE FROM YESTERDAY IS THE MECHANISM: today Renan Santos rose 6.00pp against the 5.50pp he lost, which means the probability migrated between the two; yesterday Renan stood still and it left the book.",
+        "tendenciaPesquisa": "HIS FRESH FIGURE IS IN THE RUNOFF: the BTG/Nexus of Aug 10 points to a TIE between Lula and him, in the same round in which the leader beats the runner-up by 47% x 44%. He is the only name outside the top two to manage that in the window. In the first round he has 5% at Nexus, ahead of Renan Santos, on 4%, and of Zema, on 3%. What still stands is the 4% at Genial/Quaest and the 5.7% at Meio/Ideia, from Aug 5, and at Ideia he is the opponent who comes closest in the runoff, with 40% against 48.5%. PALVER DOES NOT TEST HIM in the published scenario, and the panel records the absence rather than repeating old data as if it were fresh.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 1.25% (vol USD 5.60M cumulative). THERE IS NO NEW PRICE READING ON Aug 10. The confirmed Aug 9 value closed the third consecutive day of falls in both books, with 25.50% in the third place one. HE IS THE NAME WITH THE LARGEST DISTANCE BETWEEN POLLING AND PRICE IN THE CHASING PACK: 4% to 5.7% of declared intention against 1.25% of priced probability. The panel records the distance without subtracting one quantity from the other, because the polling measures intention now and the contract measures the probability of winning at the end.",
         "odds": 1.25,
-        "percentage": 4,
-        "lastUpdate": "2026-08-09",
+        "percentage": 5,
+        "lastUpdate": "2026-08-10",
         "value": 1.25
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/a",
         "polymarket": "0.05%",
-        "tendenciaPesquisa": "Neither [Genial/Quaest](/en/glossary#quaest) nor Meio/Ideia tests him in any presidential scenario, [first round](/en/glossary#primeiro-turno) or runoff, and there has been no new national poll since Aug 5. Absence of testing is information the panel records, rather than repeating old data as if it were new. He is running for RE-ELECTION as governor of São Paulo, made official by Republicanos on Aug 1.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 0.05% (vol USD 13.87M cumulative). No change against Aug 8. The level is low enough that changes in this band carry almost no informational value.",
+        "tendenciaPesquisa": "Neither of the two Aug 10 rounds tests him in any presidential scenario, first round or runoff, and the same applies to the two from Aug 5. Absence of a test is information the panel records, rather than repeating old data as if it were fresh. He is running for RE-ELECTION as governor of São Paulo, made official by Republicanos on Aug 1.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 0.05% (vol USD 13.87M cumulative). THERE IS NO NEW PRICE READING ON Aug 10. THE CONTRAST WORTH RECORDING: this is the LARGEST cumulative volume in the whole presidential book, at USD 13.87M, and the price is at the floor. High volume with probability at the floor is conviction already priced in, not movement, and the level is low enough that changes in this band carry almost no informational value.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-09",
+        "lastUpdate": "2026-08-10",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "2-2.6%",
+        "pesquisaRange": "2-3%",
         "polymarket": "0.45%",
-        "tendenciaPesquisa": "NO NEW NATIONAL POLL for FOUR days. What still stands is the 2% from [Genial/Quaest](/en/glossary#quaest), the same as its own Jul 15 round, and the 2.6% from Meio/Ideia, practically the 2.5% of its Jul 8 one. In the runoffs he is the rival Lula beats most comfortably at Quaest, by 46% x 34%, and he loses by 48.5% x 37% at Ideia. He filed his candidacy with the [TSE](/en/glossary#tse) on Aug 6, declaring R$ 178.7 million in assets, with his running mate Girão reporting R$ 34.1 million, and he remains the only one of the pack with a registration filed, in a window that runs to Aug 15.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 0.45% (vol USD 5.02M cumulative). FELL 0.10pp and moved back BELOW the 0.5% cut the panel uses to separate price from noise, having stayed above it for a single day. In the [first round](/en/glossary#primeiro-turno) third place contract he sits at 3.35%. A series caveat that still holds: his high was 10.10%, on Apr 26.",
+        "tendenciaPesquisa": "The BTG/Nexus of Aug 10 gives him 3% in the first round. Palver does not test him in the published scenario. What still stands is the 2% at Genial/Quaest and the 2.6% at Meio/Ideia, from Aug 5, with runoffs of 34% against 46% and 37% against 48.5%. He registered his candidacy with the [TSE](/en/glossary#tse) on Aug 6, declaring R$ 178.7 million in assets, with his running mate Girão declaring R$ 34.1 million, and remains the only one of the chasing pack with a registration filed, in a window that runs to Aug 15.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 0.45% (vol USD 5.02M cumulative). THERE IS NO NEW PRICE READING ON Aug 10. The confirmed value is BELOW the 0.5% cut the panel uses to separate price from noise, and the reading on him is suspended while he sits in that band. Series caveat that still holds: his maximum was 10.10%, on Apr 26.",
         "odds": 0.45,
-        "percentage": 2,
-        "lastUpdate": "2026-08-09",
+        "percentage": 3,
+        "lastUpdate": "2026-08-10",
         "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/a",
         "polymarket": "0.05%",
-        "tendenciaPesquisa": "Neither [Genial/Quaest](/en/glossary#quaest) nor Meio/Ideia tests him in any scenario, [first round](/en/glossary#primeiro-turno) or runoff, and there has been no new national poll since Aug 5, so he remains without polling. The caveat stands and needs to be said plainly: he is NOT a presidential candidate, he is running for governor of São Paulo, and any scenario including him is a polling hypothesis, not a candidacy under way.",
-        "tendenciaPolymarket": "[reading of Aug 9, 17:34 UTC] At 0.05% (vol USD 6.78M cumulative). No change against Aug 8, at the floor the market prices. Change in this band carries no informational value.",
+        "tendenciaPesquisa": "Neither of the two Aug 10 rounds tests him in any scenario, neither first round nor runoff, and the same applied to the two from Aug 5, so he remains without polling. The aggravating point stands and needs to be said plainly: he is NOT a presidential candidate, he is running for the governorship of São Paulo, and any scenario that includes him is a polling hypothesis, not a candidacy under way.",
+        "tendenciaPolymarket": "[confirmed reading of Aug 9, 17:34 UTC] At 0.05% (vol USD 6.78M cumulative). THERE IS NO NEW PRICE READING ON Aug 10, and the confirmed value is at the floor the market prices in. A change in this band carries no informational value.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-09",
+        "lastUpdate": "2026-08-10",
         "value": 0.05
       }
     ],
-    "updatedAt": "08/08/2026, 17:32 UTC"
+    "updatedAt": "08/08/2026, 17:32 UTC",
+    "lastUpdate": "2026-08-10"
   }
 }

@@ -1,0 +1,66 @@
+/**
+ * Mapa ES de 10/Ago para analysis-data.json.
+ * Convenções: vírgula decimal e ponto de milhar. "estancado", nunca "parado".
+ */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1':
+    `A 55 días de la ${G('primera vuelta', 'primeiro-turno')}, el día trajo encuestas y no trajo precio. Dos nacionales fueron publicadas el 10/Ago: BTG/Nexus (n=2.001, telefónica, campo del 7 al 9/Ago, margen 2pp, BR-08428/2026), con 40% x 35% en la primera vuelta y 47% x 44% en la segunda, y el estreno de Palver (n=5.000, cuestionario por internet, margen 3pp, BR-06596/2026), con 44% x 40% y empate en 46% x 46%. Los precios de este panel son de la lectura confirmada del 9/Ago, a las 17:34 UTC, porque no hay lectura de precio nueva el 10/Ago.`,
+
+  'cards.sentimento.text2':
+    `EL NÚMERO MÁS INFORMATIVO DE LA SEMANA ES UN RANGO, NO UN PUNTO. Sumando las cuatro nacionales desde el 5/Ago, Lula aparece entre 39% y 44% en la primera vuelta y Flávio entre 30% y 40%. La amplitud del segundo es el doble que la del primero, y en la segunda vuelta la distancia entre ellos va de 0pp a 5,5pp según la casa. Elegir una encuesta es elegir una conclusión, y por eso el panel publica el conjunto en lugar de elegir la lectura correcta.`,
+
+  'cards.sentimento.text3':
+    `LA APROBACIÓN EMPEORÓ EN LAS DOS LECTURAS DE HOY Y AMPLIÓ LA DISPERSIÓN: 46% contra 49% en BTG/Nexus, frente a 47% x 48% en la propia ronda del 3/Ago, y 45% contra 55% en Palver. En cinco lecturas de ocho días el saldo va de 1pp positivo a 10pp negativo, y la desaprobación aislada va de 47% a 55%. Antes el signo del saldo ya dependía de la casa; ahora el tamaño también depende. El rechazo sigue alto en los dos nombres: 50% y 48% en Nexus, 51% y 52% en Palver, con el orden entre ellos invirtiéndose de una casa a la otra.`,
+
+  'cards.sentimento.direita':
+    `Flávio Bolsonaro tiene 35% en BTG/Nexus y 40% en Palver, y el rango de 10pp entre las cuatro nacionales de la ventana es el dato que más pesa sobre él. Dentro de su propia casa el movimiento fue en su contra: Nexus tenía 37% el 3/Ago y ahora tiene 35%, y la diferencia de la primera vuelta se abrió de 4pp a 5pp por eso. En compensación, Palver le da el mejor escenario de la ventana, con empate en 46% x 46% en la segunda vuelta. Rechazo de 50% y 51% en las dos rondas.`,
+
+  'cards.sentimento.esquerda':
+    `Lula lidera la ${G('primera vuelta', 'primeiro-turno')} en las cuatro nacionales de la ventana sin excepción, y en BTG/Nexus la ventaja de 5pp queda fuera del margen de 2pp. Gana o empata todas las segundas vueltas, y la peor de ellas es el empate de Palver. El contrapeso está en la evaluación de gobierno: las dos lecturas de hoy tienen saldo negativo, de 3pp en Nexus y de 10pp en Palver, y es la primera vez en la ventana que ninguna casa del día le da saldo positivo.`,
+
+  'cards.sentimento.terceiraVia':
+    `EL CASO DE MÉTODO DE LA SEMANA ESTÁ AQUÍ. Renan Santos aparece con 4% en Quaest presencial, 4,7% en Ideia por teléfono, 4% en BTG/Nexus por teléfono y 10% en Palver por internet. La propia Palver evaluó que el formato digital pudo haber impulsado su desempeño, ya que mantiene una base activa en ese entorno, e informó que prueba enfoques para reducir ese efecto en encuestas online. Caiado tuvo el mejor dato del pelotón: BTG/Nexus apunta a un empate de Lula con él en la segunda vuelta, en la misma ronda en la que el líder vence al segundo colocado.`,
+
+  'cards.sentimento.polymarket':
+    `Precios de la lectura confirmada del 9/Ago, a las 17:34 UTC, sin lectura nueva el 10/Ago: Lula 63,50% (vol USD 8,18M acumulado), Flávio 26,95% (vol USD 8,09M), Renan Santos 7,80% (vol USD 9,27M), Caiado 1,25% (vol USD 5,60M) y Zema 0,45% (vol USD 5,02M). EL CRUCE DE DIRECCIÓN ES EL DE LA SEMANA: hasta esa lectura la diferencia de mercado se había estrechado en seis de las siete últimas jornadas, de +38,90pp el 3/Ago a +36,55pp, mientras la diferencia de BTG/Nexus se abrió dentro de su propia casa, de 4pp a 5pp en la primera vuelta y de 1pp a 3pp en la segunda. Los dos instrumentos se movieron en sentidos opuestos sobre la misma disputa, y el panel lo registra sin decir cuál está en lo cierto.`,
+
+  'cards.inss.text1':
+    `El caso de los fraudes en descuentos asociativos del ${G('INSS', 'inss')} sigue siendo un pasivo de gestión, y ninguna de las dos encuestas nacionales del 10/Ago publicó un recorte específico sobre él con fuente cerrada.`,
+
+  'cards.inss.text2':
+    `Lo que existe de medición nueva es indirecto y viene de la evaluación de gobierno. Las dos lecturas de hoy empeoraron: 46% de aprobación contra 49% de desaprobación en BTG/Nexus, y 45% contra 55% en Palver. El panel no atribuye ese empeoramiento al caso del INSS, porque ninguna de las dos rondas prueba esa relación.`,
+
+  'cards.inss.text3':
+    `La distinción que el panel mantiene desde el inicio sigue valiendo: una cosa es el efecto sobre la evaluación de la gestión, que es donde el fraude administrativo suele aparecer; otra es el efecto sobre la intención de voto, que sigue mostrando al presidente por delante en las cuatro nacionales de la ventana.`,
+
+  'cards.inss.text4':
+    `Sin decisión judicial nueva ni número nuevo sobre el caso el 10/Ago, el panel registra ausencia de medición en lugar de repetir dato antiguo como si fuera del día.`,
+
+  'cards.inss.impactoLula':
+    `No aislable. En las cuatro nacionales desde el 5/Ago lidera la ${G('primera vuelta', 'primeiro-turno')} en todas, entre 39% y 44%, y ninguna de ellas prueba el caso del INSS como variable.`,
+
+  'cards.inss.impactoGestao':
+    `La evaluación de gobierno empeoró en las dos lecturas del 10/Ago, con saldo de 3pp negativos en BTG/Nexus y de 10pp negativos en Palver. La causa no se atribuye aquí, porque las rondas no miden causa.`,
+
+  'cards.inss.conclusao':
+    `El caso sigue en el campo de la gestión y no de la intención de voto, y la lectura honesta el 10/Ago es que no hay dato nuevo sobre él. Lo que hay es un empeoramiento en la evaluación de gobierno, medido por dos casas, sin que ninguna de ellas señale por qué.`,
+
+  'cards.bancoMaster.text1':
+    `El caso del Banco Master volvió a la cobertura el 10/Ago por dos hechos nuevos, ambos de prensa y ninguno de decisión judicial. Poder360 publicó que dos ministros del gobierno favorecieron un negocio que enriqueció a Daniel Vorcaro.`,
+
+  'cards.bancoMaster.text2':
+    `En el plano estatal, una asamblea legislativa traba la apertura de una CPI para investigar inversiones de un instituto de previsión en el banco, y un reportaje local señala que empresas fundadas después de 2021 recibieron R$ 870 millones de la institución.`,
+
+  'cards.bancoMaster.text3':
+    `Ninguna de las dos encuestas nacionales del 10/Ago prueba el caso, y el contrato de destitución de un ministro del ${G('STF', 'stf')} no tiene lectura de precio nueva en el día. Su último valor confirmado es el del 9/Ago, a las 17:34 UTC, en 3,60% con USD 83 mil de volumen acumulado.`,
+
+  'cards.bancoMaster.conclusao':
+    `El caso ganó hechos nuevos de cobertura y ninguno de medición. El panel registra los dos hechos con la fuente y la fecha, y no convierte cobertura en variación de riesgo, porque no hay número nuevo que sostenga esa conversión.`,
+
+  'cards.stf.analise':
+    `NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago, y por eso el panel no registra variación en este contrato hoy. El último valor confirmado es el del 9/Ago, a las 17:34 UTC: 3,60%, con USD 83 mil de volumen acumulado. Con ese volumen, este es el contrato más delgado entre los seguidos, y cualquier movimiento en él exige la salvedad de tamaño de libro junto al número. EN EL PLANO DE LOS HECHOS, sigue valiendo la decisión de Dino que ordenó a la Policía Federal investigar R$ 55,4 millones en enmiendas Pix señaladas por el TCU, con el vice del segundo colocado, el presidente de la Cámara y un exlíder del ${G('PT', 'pt')} en el Senado en la misma lista. El panel registra a los tres juntos porque separarlos sería elegir un lado de la misma decisión. El 10/Ago no hubo acto judicial nuevo en el caso, y lo que apareció fue cobertura de prensa sobre el Banco Master, sin decisión asociada.`,
+})
