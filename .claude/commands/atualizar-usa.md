@@ -20,11 +20,18 @@ Ou seja: **na maioria dos dias não há nada a publicar, e isso é sucesso, não
 
 ## ETAPA 1: Ler o mercado ao vivo
 
-**OBRIGATÓRIO usar o proxy AFOS com o parâmetro de país.** Sem `?country=us` a rota devolve o **Brasil**, byte por byte, e a leitura passa despercebida porque vem bem-formada.
+**OBRIGATÓRIO usar o proxy AFOS com o parâmetro de país E com `fresh=1`.** São duas travas diferentes e as duas já falharam.
 
 ```bash
-curl -s "https://www.afos-analytics.com/api/polymarket?country=us"
+curl -s "https://www.afos-analytics.com/api/polymarket?country=us&fresh=1"
 ```
+
+- Sem `?country=us` a rota devolve o **Brasil**, byte por byte, e a leitura passa despercebida porque vem bem-formada.
+- 🔴 **Sem `&fresh=1` a rota devolve o CACHE**, com carimbo de tempo antigo, e a captura é de minutos atrás sem avisar.
+
+⚠️ **O cache não é inofensivo.** Medido em 10/Ago/2026: a leitura sem `fresh=1` às 17:20 UTC voltou com `fetchedAt=17:11:04`, e uma segunda chamada às 17:29 voltou com o **mesmo** carimbo. Com `fresh=1` a Câmara estava em **D 86.50% x R 12.50%**, contra **D 85.50% x R 14.50%** do cache: o lado republicano estava errado em **2.00pp**. As faixas mudaram muito mais, com `houseSeats` indo de 205.55% para 151.65% na mesma chamada.
+
+📌 **Conferir o `fetchedAt`, não o valor.** Duas chamadas com `fetchedAt` idêntico não são duas medições, são a mesma leitura comparada com ela mesma, e diferença zero ali é tautologia e não confirmação. Esta é a mesma defesa que a trava de captura já aplica: ela usa `fresh=1` nas duas leituras e **falha fechada quando os dois `fetchedAt` são iguais**.
 
 Oito chaves, e a natureza delas não é a mesma:
 
