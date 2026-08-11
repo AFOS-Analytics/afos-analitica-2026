@@ -1,0 +1,100 @@
+{
+  "date": "2026-08-11",
+  "updatedAt": "11/08/2026, 18:22",
+  "captura": {
+    "leituraPublicada": "2026-08-11T21:22:23Z",
+    "leituraPublicadaBRT": "11/Ago 18:22 BRT",
+    "trava": "APROVADO",
+    "metodo": "duas leituras independentes com 8 min de intervalo, tolerancia 0,20pp",
+    "leituraAnteriorDoMesmoDia": {
+      "hora": "11/Ago 16:27 BRT",
+      "trava": "APROVADO",
+      "observacao": "publicada no dashboard e depois rebaselinada; as duas leituras estao registradas no texto em vez de descartadas"
+    }
+  },
+  "gateRebaseline": {
+    "disparou": true,
+    "motivos": [
+      "Renan Santos moveu 0,65pp entre 16:27 e 18:22, acima do corte de 0,50pp",
+      "o enquadramento mudou: a alta que o dashboard chamava de maior variacao do book foi devolvida quase inteira"
+    ],
+    "acao": "rebaseline nos 4 arquivos pt-BR e reconstrucao dos 6 traduzidos"
+  },
+  "factCheckGate": {
+    "eventosAvaliados": 5,
+    "incorporados": [
+      {
+        "evento": "FGC diz ao STF que nao e parte do acordo e nao recebeu o balanco do BRB",
+        "verificacao1": "novidade, zero mencoes em 7 dailies",
+        "verificacao2": "Folha/Mercado 11 Aug 2026 15:35 -0300, tipo=evento",
+        "segundaFonte": "Estadao 11 Aug 15:54 e Valor 11 Aug 16:31, tres grupos independentes",
+        "decisao": "incorporar como ancora"
+      },
+      {
+        "evento": "Liquidante do Master amplia cerco a bens de Vorcaro nos EUA",
+        "verificacao1": "novidade dentro de caso continuo",
+        "verificacao2": "Folha/Mercado 11 Aug 2026 04:00 -0300, tipo=evento",
+        "segundaFonte": "nao encontrada fora do grupo Folha",
+        "decisao": "incorporar como secundario, com atribuicao nominal no texto"
+      },
+      {
+        "evento": "Flavio afirma que ira aos debates e que nao deve explicacoes sobre o Master",
+        "verificacao1": "novidade, zero mencoes de 'debates' em 7 dailies",
+        "verificacao2": "UOL 11 Aug 14:42, tipo=evento (declaracao)",
+        "segundaFonte": "Poder360 11 Aug 15:27, grupo independente",
+        "decisao": "incorporar"
+      }
+    ],
+    "recusados": [
+      {
+        "evento": "Delacao de Vorcaro e as condicoes de Gonet",
+        "motivo": "a decisao da PGR de nao negociar e de junho/julho de 2026, entao a materia de 11/Ago e recobranca; alem disso as tres fontes do dia (O Globo, Valor, g1) sao todas do grupo Globo, o que conta como uma fonte",
+        "decisao": "NAO incorporar"
+      },
+      {
+        "evento": "Slogan da campanha de Flavio",
+        "motivo": "ja publicado na daily de 10/Ago, e continuidade e nao novidade",
+        "decisao": "NAO incorporar, e o dashboard que o datava de 11/Ago foi corrigido"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "o cerco do liquidante aos bens nos EUA sai so da Folha; corrigido com atribuicao nominal no corpo",
+    "numericalErrors": "reconcile-claims acusou 64,00%, 80,50% e 82,00%, que sao os books de 2o e 3o lugar e nao existem nos JSONs do dashboard; conferidos contra a saida da trava, sem erro",
+    "fontesInventadas": "as 12 URLs saem literais de public/news-cache/2026-08-11.json, tres conferidas ao acaso",
+    "quotesLiterais": "nenhuma aspa literal no corpo",
+    "causacaoEspuria": "o vaivem de Renan Santos fica explicitamente sem causa atribuida",
+    "verbosCriticos": "nenhuma decisao judicial afirmada; o FGC afirmou ao Supremo; a delacao ficou fora",
+    "decisao": "prosseguir"
+  },
+  "correcoesDeErroProprio": [
+    {
+      "erro": "topo do Flavio publicado as 16:27 como 34,40% em 13/Mai",
+      "medicao": "a serie viva da 32,50% em 13/Mai; o topo da janela de 90 dias e 33,20%, em 02/Jun",
+      "acao": "corrigido no rebaseline, nos tres idiomas"
+    },
+    {
+      "erro": "slogan da campanha de Flavio datado de 11/Ago no dashboard",
+      "medicao": "ja constava na daily de 10/Ago",
+      "acao": "removido do dashboard, com a data real declarada"
+    },
+    {
+      "erro": "operacao da PF sobre o fundo de Maceio e liquidacao da holding em paraiso fiscal listadas como novidades de 11/Ago",
+      "medicao": "sao de 10/Ago e de 08/Ago",
+      "acao": "cartao do Master reescrito, com as datas reais declaradas no texto"
+    }
+  ],
+  "metricas": {
+    "palavrasCorpo": 899,
+    "tetoPalavras": 900,
+    "numerosComUnidade": { "pt": 69, "en": 69, "es": 69 },
+    "gateNumerico": "zerado",
+    "cincoChecagens": "5/5 limpas",
+    "fontesSecundarias": "7 de 11, 64%",
+    "validador": "OK nos tres idiomas, 1 warning de low-link-density"
+  },
+  "pendencias": [
+    "Wayback nao rodou: bloqueio de host valido ate ~14/Ago, fila em dez dias",
+    "registro da Futura Inteligencia no TSE nao confirmado em fonte primaria, declarado como duvida no texto"
+  ]
+}

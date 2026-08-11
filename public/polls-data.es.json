@@ -1366,15 +1366,15 @@
     "lastUpdate": "2026-08-11"
   },
   "polymarketComparison": {
-    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA CONFIRMADA DEL 11/AGO, 16:27 BRT, confirmados por dos lecturas independientes tomadas con ocho minutos de intervalo. EL DÍA TUVO TRES ENCUESTAS NACIONALES Y DISCREPAN ENTRE SÍ MÁS QUE EN CUALQUIER OTRO DÍA DE LA VENTANA. En la segunda vuelta, CNT/MDA da 48% x 39% para el líder, Futura da 46,5% x 44%, y Gerp da 45% x 43% PARA EL SEGUNDO. Son once puntos de distancia entre la lectura más favorable y la más desfavorable, sobre la misma pregunta, el mismo día, y es la primera vez en la ventana que una nacional pone al adversario por delante en la segunda vuelta. En la primera vuelta la distancia es de 9,3pp, entre el 28,7% de CNT/MDA y el 38% de Gerp. ⭐ EL CRUCE CENTRAL ES DE RÉGIMEN, NO DE NIVEL: mientras la encuesta abría esa distancia, el mercado casi no se movió. El líder quedó estancado por tercera jornada, el segundo devolvió 0,30pp, y la mayor variación de todo el libro fue de 0,75pp, en el tercero. Los dos instrumentos midieron la misma semana, y uno de ellos está mucho más incierto que el otro. El panel registra la diferencia de régimen sin decir qué instrumento está en lo cierto, porque no lo sabe, y porque decirlo sería cambiar medición por opinión.",
-    "sources": "Precios de Polymarket vía proxy AFOS, captura confirmada por dos lecturas independientes tomadas con ocho minutos de intervalo, la más reciente a las 16:27 BRT del 11/Ago (scripts/capture-guard.ts). Encuestas del 11/Ago: CNT/MDA BR-06935/2026 (n=2.002, presencial, campo del 5 al 8/Ago), Gerp BR-08045/2026 (n=2.400, telefónica, campo del 6 al 10/Ago) y Futura Inteligência (n=2.000, telefónica, campo del 3 al 7/Ago, registro no confirmado en fuente primaria). Siguen vigentes Palver BR-06596/2026 y BTG/Nexus BR-08428/2026, del 10/Ago, y Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, del 5/Ago. Próxima nacional en la fila de difusión: PoderData (n=2.400, BR-06868/2026) el 13/Ago.",
+    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA CONFIRMADA DEL 11/AGO, 18:22 BRT, confirmados por dos lecturas independientes tomadas con ocho minutos de intervalo. EL DÍA TUVO TRES ENCUESTAS NACIONALES Y DISCREPAN ENTRE SÍ MÁS QUE EN CUALQUIER OTRO DÍA DE LA VENTANA. En la segunda vuelta, CNT/MDA da 48% x 39% para el líder, Futura da 46,5% x 44%, y Gerp da 45% x 43% PARA EL SEGUNDO. Son once puntos de distancia entre la lectura más favorable y la más desfavorable, sobre la misma pregunta, el mismo día, y es la primera vez en la ventana que una nacional pone al adversario por delante en la segunda vuelta. En la primera vuelta la distancia es de 9,3pp, entre el 28,7% de CNT/MDA y el 38% de Gerp. ⭐ EL CRUCE CENTRAL ES DE RÉGIMEN, NO DE NIVEL: mientras la encuesta abría esa distancia, EL MERCADO CERRÓ EL DÍA DONDE EMPEZÓ. El líder quedó estancado por cuarta jornada, el segundo volvió a 27,25% tras marcar 26,95% a las 16:27, y la diferencia cerró en +36,25pp, idéntica a la del 10/Ago. El tercero fue el único en oscilar, y también volvió. Los dos instrumentos midieron la misma semana, y uno de ellos está mucho más incierto que el otro. El panel registra la diferencia de régimen sin decir qué instrumento está en lo cierto, porque no lo sabe, y porque decirlo sería cambiar medición por opinión.",
+    "sources": "Precios de Polymarket vía proxy AFOS, captura confirmada por dos lecturas independientes tomadas con ocho minutos de intervalo, la más reciente a las 18:22 BRT del 11/Ago (scripts/capture-guard.ts). Hubo una lectura confirmada anterior el mismo día, a las 16:27 BRT, y las diferencias entre las dos están registradas en el texto en lugar de descartadas. Encuestas del 11/Ago: CNT/MDA BR-06935/2026 (n=2.002, presencial, campo del 5 al 8/Ago), Gerp BR-08045/2026 (n=2.400, telefónica, campo del 6 al 10/Ago) y Futura Inteligência (n=2.000, telefónica, campo del 3 al 7/Ago, registro no confirmado en fuente primaria). Siguen vigentes Palver BR-06596/2026 y BTG/Nexus BR-08428/2026, del 10/Ago, y Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, del 5/Ago. Próxima nacional en la fila de difusión: PoderData (n=2.400, BR-06868/2026) el 13/Ago.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-44%",
         "polymarket": "63,50%",
         "tendenciaPesquisa": "TRES NACIONALES EL 11/Ago, Y DISCREPAN ENTRE SÍ MÁS QUE EN CUALQUIER DÍA DE LA VENTANA. CNT/MDA (n=2.002, presencial, campo del 5 al 8/Ago, BR-06935/2026): 42,4% en la primera vuelta y 48% x 39% en la segunda, 9pp de ventaja. Futura Inteligência (n=2.000, telefónica, campo del 3 al 7/Ago): 38,8% y 46,5% x 44%, 2,5pp. Gerp (n=2.400, telefónica, campo del 6 al 10/Ago, BR-08045/2026): EMPATE en 38% x 38% en la primera vuelta y DERROTA por 45% x 43% en la segunda. Sumando las siete nacionales desde el 5/Ago va de 38% a 44%, y en la segunda vuelta el resultado va de 9pp a favor a 2pp en contra, es decir, ONCE PUNTOS de distancia entre casas sobre la misma pregunta. APROBACIÓN con 47,3% contra 49,9% en Futura y 53% de desaprobación en Gerp, y CNT/MDA trae la gestión en 35% de excelente o buena contra 36% de mala o pésima. ⚠️ El porcentaje usado en el gráfico es el de Gerp, elegida por ser la ÚNICA de las tres de hoy que publica el campo completo, con todos los nombres; MDA y Futura difundieron solo los dos primeros.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 63,50% (vol USD 8,21M acumulado), ESTANCADO por tercera jornada seguida. La diferencia sobre Flávio volvió a +36,55pp, exactamente el valor del 9/Ago, deshaciendo el estrechamiento de ayer, y de nuevo por la punta del adversario, que devolvió los 0,30pp que había ganado. ⚠️ EL CONTRASTE CON LA ENCUESTA ES EL DATO DE LA RONDA: mientras tres institutos publicaban lecturas separadas por once puntos en la segunda vuelta, su precio no se movió, y la mayor variación de todo el libro fue de 0,75pp. En la serie de 89 días el techo es 66,50%, del 1/Ago, y 15 de los 89 días tuvieron un valor igual o superior al actual, así que el nivel no es extremo.",
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 63,50% (vol USD 8,21M acumulado), ESTANCADO por cuarta jornada seguida. La diferencia sobre Flávio cerró en +36,25pp, exactamente el valor del 10/Ago: un día entero de encuestas no movió la distancia entre los dos. ⚠️ EL CONTRASTE CON LA ENCUESTA ES EL DATO DE LA RONDA: mientras tres institutos publicaban lecturas separadas por once puntos en la segunda vuelta, su precio no se movió en ninguna de las dos lecturas confirmadas del día. En la serie de 90 días el techo es 66,50%, del 1/Ago, y 17 de los 90 días tuvieron un valor igual o superior, así que el nivel no es extremo.",
         "odds": 63.5,
         "percentage": 38,
         "lastUpdate": "2026-08-11",
@@ -1383,31 +1383,31 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "26,95%",
+        "polymarket": "27,25%",
         "tendenciaPesquisa": "SU AMPLITUD CRECIÓ Y AHORA ES DE 11,3pp. En las siete nacionales desde el 5/Ago aparece con 28,7% en la CNT/MDA de hoy, 30% en Genial/Quaest, 34,1% en la Futura de hoy, 35% en Meio/Ideia, 35% en BTG/Nexus, 38% en la Gerp de hoy y 40% en Palver. El 28,7% queda POR DEBAJO del piso que la ventana tenía hasta ayer. EN LA SEGUNDA VUELTA EL DÍA FUE AÚN MÁS EXTREMO: Gerp lo pone POR DELANTE, con 45% contra 43%, y es la primera nacional de la ventana en hacerlo, mientras CNT/MDA lo pone 9pp por detrás el mismo día. Futura queda en el medio, con 44% contra 46,5%. RECHAZO en 47,1% en Futura, empate técnico con el 45,9% del líder. ⚠️ El porcentaje del gráfico es el de Gerp, la misma casa de referencia del primero.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 26,95% (vol USD 8,12M acumulado). CAYÓ 0,30pp y devolvió exactamente lo que había ganado ayer, llevando la diferencia de vuelta a +36,55pp. ⚠️ EL DÍA MUESTRA LOS DOS INSTRUMENTOS EN REGÍMENES DISTINTOS: en la encuesta varía 11,3pp entre casas y llega a liderar una segunda vuelta; en el precio se movió 0,30pp. No es extremo: 30 de los 89 días de la serie tuvieron un valor igual o superior, con un techo de 34,40% el 13/May y un piso de 22,00% el 3/Jul. En el contrato de segundo lugar cayó 1,50pp, a 80,50%.",
-        "odds": 26.95,
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 27,25% (vol USD 8,12M acumulado). EL DÍA FUE DE IDA Y VUELTA Y TERMINÓ EN CERO: marcó 26,95% en la lectura confirmada de las 16:27 y cerró en 27,25%, exactamente donde estaba el 10/Ago. ⚠️ EL DÍA MUESTRA LOS DOS INSTRUMENTOS EN REGÍMENES DISTINTOS: en la encuesta varía 11,3pp entre casas y llega a liderar una segunda vuelta; en el precio cerró sin variación. En la serie de 90 días, 25 tuvieron un valor igual o superior, con un techo de 33,20% el 2/Jun y un piso de 22,00% el 3/Jul. En el contrato de segundo lugar está en 80,50%, contra 82,00% el 10/Ago.",
+        "odds": 27.25,
         "percentage": 38,
         "lastUpdate": "2026-08-11",
-        "value": 26.95
+        "value": 27.25
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-10%",
-        "polymarket": "8,40%",
+        "polymarket": "7,75%",
         "tendenciaPesquisa": "GERP LO PONE EN 5% en la primera vuelta, el segundo mayor valor que obtuvo en la ventana, por detrás solo del 10% de Palver por internet. Siguen vigentes el 4% de Genial/Quaest presencial, el 4,7% de Meio/Ideia por teléfono y el 4% de BTG/Nexus por teléfono. CNT/MDA y Futura no publicaron el campo completo. EL EFECTO DE MÉTODO SIGUE SIENDO LA LECTURA: el mismo nombre va de 4% a 10% según el entorno de la entrevista, y la salvedad fue declarada por la propia Palver, que informó que prueba enfoques para reducir el efecto en encuestas online.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 8,40% (vol USD 9,43M acumulado). SUBIÓ 0,75pp y fue LA MAYOR VARIACIÓN DE TODO EL LIBRO PRESIDENCIAL en la lectura de hoy. ⭐ Y salió del piso: ayer 84 de los 88 días de la serie tenían un valor igual o superior al suyo, y hoy son 72 de 89. El precio sigue ENTRE los dos métodos de la encuesta, por encima del 4% a 5% del teléfono y del presencial y por debajo del 10% de internet. ⚠️ El panel NO atribuye el alza a la discusión pública sobre método que la prensa hizo el 10 y el 11/Ago, porque no midió nada que ligue las dos cosas, y registra la secuencia sin afirmar causa. Mayor volumen acumulado del libro entre los nombres por encima de 1%.",
-        "odds": 8.4,
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 7,75% (vol USD 9,44M acumulado). FUE EL ÚNICO NOMBRE EN OSCILAR EN TODO EL DÍA, Y LA OSCILACIÓN VOLVIÓ: 8,40% en la lectura confirmada de las 16:27 y 7,75% en el cierre, terminando 0,10pp por encima del 10/Ago. ⚠️ Las dos lecturas fueron confirmadas, cada una por dos capturas, así que ninguna está equivocada y el panel registra el camino en lugar de esconder una oscilación de 1,4pp detrás de una sola cifra. En la serie de 90 días, 78 tuvieron un valor igual o superior, con un techo de 17,90% el 9/Jun y un piso de 6,90% el 6/Ago. El precio sigue ENTRE los dos métodos de la encuesta, por encima del 4% a 5% del teléfono y del presencial y por debajo del 10% de internet. ⚠️ El panel NO atribuye ninguna de las dos puntas del vaivén a la discusión pública sobre método que la prensa hizo el 10 y el 11/Ago, porque no midió nada que ligue las dos cosas. Mayor volumen acumulado del libro entre los nombres por encima de 1%.",
+        "odds": 7.75,
         "percentage": 5,
         "lastUpdate": "2026-08-11",
-        "value": 8.4
+        "value": 7.75
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5,7%",
         "polymarket": "1,05%",
         "tendenciaPesquisa": "La Gerp de hoy le da 4% en la primera vuelta, el mismo valor de Genial/Quaest del 5/Ago, y Meio/Ideia sigue con 5,7%. CNT/MDA y Futura no publicaron el campo completo, y Palver no lo probó, así que la base de comparación sobre él se redujo en esta ventana. Sigue vigente el empate de Lula con él en la segunda vuelta de BTG/Nexus del 10/Ago, que es el mejor resultado que un nombre fuera de los dos primeros obtuvo en el período.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 1,05% (vol USD 5,63M acumulado). CAYÓ 0,10pp por tercera jornada seguida, y la distancia entre encuesta y precio sigue siendo la mayor del pelotón: de 4% a 5,7% de intención declarada contra 1,05% de probabilidad descontada. El panel registra la distancia sin restar una magnitud de la otra, porque la encuesta mide intención ahora y el contrato mide probabilidad de ganar al final.",
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 1,05% (vol USD 5,63M acumulado). CEDIÓ 0,10pp por tercera jornada seguida, y la distancia entre encuesta y precio sigue siendo la mayor del pelotón: de 4% a 5,7% de intención declarada contra 1,05% de probabilidad descontada. El panel registra la distancia sin restar una magnitud de la otra, porque la encuesta mide intención ahora y el contrato mide probabilidad de ganar al final.",
         "odds": 1.05,
         "percentage": 4,
         "lastUpdate": "2026-08-11",
@@ -1418,7 +1418,7 @@
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Ninguna de las tres rondas del 11/Ago lo prueba en escenario presidencial, y lo mismo valía para las del 10 y del 5/Ago. La ausencia de prueba es información que el panel registra, en lugar de repetir un dato antiguo como si fuera nuevo. Disputa la REELECCIÓN al gobierno de São Paulo, oficializada por Republicanos el 1/Ago, y la cobertura del 11/Ago trae una encuesta estatal que prueba el escenario paulista tras el primer debate.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 0,05% (vol USD 13,90M acumulado). ⚠️ Sigue siendo el MAYOR volumen acumulado de todo el libro presidencial, con el precio en el piso. Volumen alto con probabilidad en el piso es convicción ya descontada, no movimiento, y las variaciones en esta franja tienen un valor informativo casi nulo.",
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 0,05% (vol USD 13,90M acumulado). ⚠️ Sigue siendo el MAYOR volumen acumulado de todo el libro presidencial, con el precio en el piso. Volumen alto con probabilidad en el piso es convicción ya descontada, no movimiento, y las variaciones en esta franja tienen un valor informativo casi nulo.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "2026-08-11",
@@ -1429,7 +1429,7 @@
         "pesquisaRange": "2-3%",
         "polymarket": "0,35%",
         "tendenciaPesquisa": "La Gerp de hoy le da 2% en la primera vuelta, y la BTG/Nexus del 10/Ago había dado 3%. Siguen vigentes el 2% de Genial/Quaest y el 2,6% de Meio/Ideia, del 5/Ago. Registró su candidatura ante el TSE el 6/Ago, declarando R$ 178,7 millones de patrimonio, y el plazo de registro de los demás se cierra el 15/Ago.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 0,35% (vol USD 5,05M acumulado). CAYÓ 0,10pp y se hundió más por debajo del corte de 0,5% que el panel usa para separar precio de ruido, franja en la que la lectura sobre él sigue suspendida. Salvedad de serie que sigue valiendo: su máximo fue 10,10%, el 26/Abr.",
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 0,35% (vol USD 5,05M acumulado). CEDIÓ 0,10pp y se hundió más por debajo del corte de 0,5% que el panel usa para separar precio de ruido, franja en la que la lectura sobre él sigue suspendida. La ventana de serie que este panel puede verificar empieza el 13/May, así que su pico de abril queda fuera de ella.",
         "odds": 0.35,
         "percentage": 2,
         "lastUpdate": "2026-08-11",
@@ -1440,14 +1440,14 @@
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Ninguna de las tres rondas del 11/Ago lo prueba en escenario presidencial. El agravante permanece y hay que decirlo con claridad: él NO es candidato a la Presidencia, disputa el gobierno de São Paulo, y cualquier escenario que lo incluya es una hipótesis de encuesta, no una candidatura en curso. La cobertura del 11/Ago lo trae en una encuesta estatal paulista, tras el primer debate en Band.",
-        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 16:27 BRT] En 0,05% (vol USD 7,01M acumulado), de vuelta al piso tras un único día por encima de él. La variación en esta franja no tiene valor informativo.",
+        "tendenciaPolymarket": "[lectura confirmada del 11/Ago, 18:22 BRT] En 0,05% (vol USD 7,01M acumulado), de vuelta al piso tras un único día por encima de él. La variación en esta franja no tiene valor informativo.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "2026-08-11",
         "value": 0.05
       }
     ],
-    "updatedAt": "11/08/2026, 16:27 BRT",
+    "updatedAt": "11/08/2026, 18:22 BRT",
     "lastUpdate": "2026-08-11"
   }
 }
