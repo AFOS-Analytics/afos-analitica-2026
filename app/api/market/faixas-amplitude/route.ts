@@ -33,6 +33,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
+// 🔑 A régua vem de UM lugar. Ver o cabeçalho de `lib/us-market/portao.ts`.
+import { fechaOPortao, type AmplitudeFaixas } from '../../../../lib/us-market/portao'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -40,14 +42,7 @@ export const revalidate = 0
 /** Janela padrão. 24h cobre várias capturas do cron sem virar série histórica. */
 const HORAS = 24
 
-export interface AmplitudeFaixas {
-  /** Menor soma das faixas observada na janela, em pontos percentuais. */
-  min: number
-  /** Maior soma observada na janela. */
-  max: number
-  /** Quantas capturas entraram na conta. */
-  n: number
-}
+export type { AmplitudeFaixas } from '../../../../lib/us-market/portao'
 
 export async function GET(req: NextRequest) {
   const slugs = (req.nextUrl.searchParams.get('slugs') || '')
@@ -94,6 +89,7 @@ export async function GET(req: NextRequest) {
         min: Number(Math.min(...somas).toFixed(2)),
         max: Number(Math.max(...somas).toFixed(2)),
         n: somas.length,
+        dentro: somas.filter(fechaOPortao).length,
       }
     }
 

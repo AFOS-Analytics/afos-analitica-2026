@@ -82,7 +82,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
    * falhar, o quadro fica exatamente como era. Por isso nada aqui toca
    * `setMarketLoading`, e o erro é engolido em silêncio deliberado.
    */
-  const [amplitudes, setAmplitudes] = useState<Record<string, { min: number; max: number; n: number }>>({});
+  const [amplitudes, setAmplitudes] = useState<Record<string, { min: number; max: number; n: number; dentro: number }>>({});
 
   useEffect(() => {
     let vivo = true;
@@ -104,7 +104,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
     let vivo = true;
     fetch(`/api/market/faixas-amplitude?slugs=${encodeURIComponent(slugs.join(','))}`)
       .then((r) => (r.ok ? r.json() : {}))
-      .then((d: Record<string, { min: number; max: number; n: number }>) => {
+      .then((d: Record<string, { min: number; max: number; n: number; dentro: number }>) => {
         if (vivo && d && typeof d === 'object') setAmplitudes(d);
       })
       .catch(() => { /* silêncio deliberado: sem amplitude o quadro segue igual */ });

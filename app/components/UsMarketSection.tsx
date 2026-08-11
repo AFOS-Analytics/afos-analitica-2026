@@ -4,7 +4,8 @@ import { useState } from 'react'
 import { useTranslation } from '../i18n/context'
 import { SectionTitle, Card } from './ui'
 import { extractCandidateName } from '../lib/utils'
-import type { AmplitudeFaixas } from '../api/market/faixas-amplitude/route'
+// 🔑 A régua e o tipo vêm de UM lugar. Ver `lib/us-market/portao.ts`.
+import { SOMA_MIN, SOMA_MAX, type AmplitudeFaixas } from '../../lib/us-market/portao'
 
 /**
  * Mercado das midterms dos EUA no painel.
@@ -33,9 +34,6 @@ import type { AmplitudeFaixas } from '../api/market/faixas-amplitude/route'
  * é honesto; filtrar por um piso que eu inventei não seria.
  */
 
-const SOMA_MIN = 95
-const SOMA_MAX = 105
-
 const T = {
   'pt-BR': {
     titulo: 'Mercado de Previsão: midterms',
@@ -53,12 +51,10 @@ const T = {
     volume: 'Volume',
     soma: 'soma das faixas',
     soForma: 'só a forma, sem número',
+    instavelNota: (s: string, fora: number, n: number) => `A soma está em ${s} agora, dentro do portão, mas ficou fora em ${fora} das ${n} leituras das últimas 24 horas. O quadro só mostra número quando o livro fecha em todas elas, para não trocar de estado a cada atualização.`,
     amplitude24h: (a: string, b: string) => `(variou de ${a}% a ${b}% em 24h)`,
     excessoNota: (s: string) => `As faixas somam ${s}, e deveriam somar 100%. O que passa disso não está espalhado por igual: acumula nas faixas de resultado improvável, que costumam negociar caras. Por isso dividir todas pelo mesmo número não conserta. O quadro mostra onde o dinheiro está, não a chance de cada faixa.`,
     faltaNota: (s: string) => `As faixas somam ${s}, e deveriam somar 100%. Faltando, a causa costuma ser preço parado ou faixa que o livro não está cotando. Aumentar todas para fechar a conta daria às outras a parte que está faltando. O quadro mostra onde o dinheiro está, não a chance de cada faixa.`,
-    porQue: 'Por que não é probabilidade',
-    porQueTexto: (s: string) =>
-      `Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. Este quadro mostra a FORMA, ou seja, o tamanho relativo de cada faixa, e não mostra número, porque o nível não vale. O AFOS já dividiu cada faixa pela soma e parou de fazer isso: dividir supõe que o sobrepreço está espalhado por igual, e a medição mostrou que ele se concentra na cauda.`,
     naoParticao: 'Fora da tela, e não é por causa da soma',
     naoParticaoCurto: (s: string) =>
       `As faixas somam ${s} e se sobrepõem: uma delas é "qualquer outro resultado" e as demais são cumulativas. Coletado todo dia; entra quando a estrutura mudar.`,
@@ -67,9 +63,6 @@ const T = {
       'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando não somam, o AFOS mostra a FORMA da distribuição, que é o tamanho relativo das faixas, e NÃO mostra número. Até 10/Ago/2026 o AFOS dividia cada faixa pela soma e trocava a etiqueta. Parou, porque dividir tudo pelo mesmo fator supõe que o sobrepreço está espalhado por igual, e isso dá para testar: se fosse uniforme, a fatia normalizada de um grupo de faixas não mudaria quando a soma bruta mudasse. No book de cadeiras do Senado ela mudou junto, em três leituras, o que localiza o excesso na cauda. Ali dividir por igual não tira o excesso, só o espalha errado. Acima de 100% a causa é a margem de quem opera o livro; abaixo de 100% é outra coisa, preço velho ou faixa sem preço, e nesse caso multiplicar para cima entregaria às demais a massa que falta. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há ainda um caso que fica inteiramente fora: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas.',
     clicavel: 'Clique em qualquer ponto de um quadro para abrir a aposta real no Polymarket, com as cotações ao vivo.',
     abrirEm: 'abrir no Polymarket',
-    foraDoPortao: 'Este mercado não entra na tela porque os preços dele não fecham',
-    foraDoPortaoDetalhe: (s: string) =>
-      `Cada faixa tem um preço que funciona como uma chance. Como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. É como uma previsão do tempo que anuncia 80% de chance de sol e 70% de chance de chuva: as duas não cabem no mesmo dia. Quando as contas não fecham assim, é sinal de mercado com pouco dinheiro e pouca negociação, e mostrar essas faixas como probabilidade daria ao leitor um número que não significa o que parece. O AFOS continua guardando este mercado todo dia, e ele aparece sozinho no dia em que as contas fecharem.`,
     limitacaoTitulo: 'O que este número é, e o que não é',
     limitacao:
       'O volume é do Polymarket, não do mercado americano inteiro. É uma casa entre outras, e o número aqui é a probabilidade que ela precifica, não uma previsão do AFOS. Mercado de faixa fina se move com pouco dinheiro.',
@@ -99,12 +92,10 @@ const T = {
     volume: 'Volume',
     soma: 'bands total',
     soForma: 'shape only, no numbers',
+    instavelNota: (s: string, fora: number, n: number) => `The total is ${s} right now, inside the gate, but it fell outside in ${fora} of the ${n} readings over the last 24 hours. The card only shows numbers when the book closes on all of them, so it does not switch state on every refresh.`,
     amplitude24h: (a: string, b: string) => `(ranged from ${a}% to ${b}% in 24h)`,
     excessoNota: (s: string) => `The bands total ${s}, and should total 100%. What goes beyond that is not spread evenly: it piles up on the unlikely bands, which tend to trade rich. So dividing them all by the same number does not fix it. The card shows where the money sits, not the chance of each band.`,
     faltaNota: (s: string) => `The bands total ${s}, and should total 100%. When they fall short, the cause is usually stale prices or a band the book is not quoting. Scaling them all up to close the gap would hand the missing part to the others. The card shows where the money sits, not the chance of each band.`,
-    porQue: 'Why this is not probability',
-    porQueTexto: (s: string) =>
-      `Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. Here they add to ${s}. This card shows the SHAPE, that is, the relative size of each band, and shows no number, because the level does not hold. AFOS used to divide each band by the total and stopped: dividing assumes the overpricing is spread evenly, and measurement showed it concentrates in the tail.`,
     naoParticao: 'Off the screen, and not because of the total',
     naoParticaoCurto: (s: string) =>
       `The bands add to ${s} and overlap: one is "any other outcome" and the rest are cumulative. Collected daily; it appears when the structure changes.`,
@@ -113,9 +104,6 @@ const T = {
       'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they do not, AFOS shows the SHAPE of the distribution, which is the relative size of the bands, and shows NO number. Until Aug 10, 2026 AFOS divided each band by the total and changed the label. It stopped, because dividing everything by the same factor assumes the overpricing is spread evenly, and that can be tested: if it were uniform, the normalized share of a group of bands would not change when the raw total changed. In the Senate seats book it moved along with it, across three readings, which places the excess in the tail. There, dividing evenly does not remove the excess, it just spreads it wrongly. Above 100% the cause is the margin of whoever runs the book; below 100% it is something else, stale prices or a band with no price, and there scaling up would hand the missing mass to the others. The raw total stays printed on every panel, so the arithmetic remains checkable. One case stays out entirely: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones.',
     clicavel: 'Click anywhere on a box to open the real market on Polymarket, with live odds.',
     abrirEm: 'open on Polymarket',
-    foraDoPortao: 'This market stays off the screen because its prices do not add up',
-    foraDoPortaoDetalhe: (s: string) =>
-      `Each band carries a price that works like a chance. Since one of them will happen, all of them together should add to 100%. Here they add to ${s}. It is like a forecast announcing an 80% chance of sun and a 70% chance of rain: the two do not fit in the same day. When the arithmetic breaks like this, it signals a market with little money and little trading, and showing these bands as probability would hand the reader a number that does not mean what it appears to. AFOS keeps collecting this market every day, and it appears on its own the day the arithmetic closes.`,
     limitacaoTitulo: 'What this number is, and what it is not',
     limitacao:
       'The volume is Polymarket’s, not the entire American market. It is one venue among others, and the number here is the probability it prices, not an AFOS forecast. Thin band markets move on little money.',
@@ -145,12 +133,10 @@ const T = {
     volume: 'Volumen',
     soma: 'suma de las bandas',
     soForma: 'solo la forma, sin números',
+    instavelNota: (s: string, fora: number, n: number) => `La suma está en ${s} ahora, dentro de la compuerta, pero quedó fuera en ${fora} de las ${n} lecturas de las últimas 24 horas. El cuadro solo muestra número cuando el libro cierra en todas ellas, para no cambiar de estado en cada actualización.`,
     amplitude24h: (a: string, b: string) => `(varió de ${a}% a ${b}% en 24h)`,
     excessoNota: (s: string) => `Las bandas suman ${s}, y deberían sumar 100%. Lo que pasa de ahí no está repartido por igual: se acumula en las bandas de resultado improbable, que suelen cotizar caras. Por eso dividirlas todas por el mismo número no arregla. El cuadro muestra dónde está el dinero, no la chance de cada banda.`,
     faltaNota: (s: string) => `Las bandas suman ${s}, y deberían sumar 100%. Cuando falta, la causa suele ser precio detenido o una banda que el libro no está cotizando. Subirlas todas para cerrar la cuenta daría a las otras la parte que falta. El cuadro muestra dónde está el dinero, no la chance de cada banda.`,
-    porQue: 'Por qué no es probabilidad',
-    porQueTexto: (s: string) =>
-      `Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. Este cuadro muestra la FORMA, es decir, el tamaño relativo de cada banda, y no muestra número, porque el nivel no vale. AFOS dividía cada banda por la suma y dejó de hacerlo: dividir supone que el sobreprecio está repartido por igual, y la medición mostró que se concentra en la cola.`,
     naoParticao: 'Fuera de la pantalla, y no por la suma',
     naoParticaoCurto: (s: string) =>
       `Las bandas suman ${s} y se superponen: una es "cualquier otro resultado" y las demás son acumulativas. Se recolecta a diario; entra cuando cambie la estructura.`,
@@ -159,9 +145,6 @@ const T = {
       'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando no suman, AFOS muestra la FORMA de la distribución, que es el tamaño relativo de las bandas, y NO muestra número. Hasta el 10/Ago/2026 AFOS dividía cada banda por la suma y cambiaba la etiqueta. Dejó de hacerlo, porque dividir todo por el mismo factor supone que el sobreprecio está repartido por igual, y eso se puede probar: si fuera uniforme, la participación normalizada de un grupo de bandas no cambiaría cuando cambiara la suma bruta. En el libro de escaños del Senado se movió junto con ella, en tres lecturas, lo que ubica el exceso en la cola. Ahí dividir por igual no saca el exceso, solo lo reparte mal. Por encima de 100% la causa es el margen de quien opera el libro; por debajo de 100% es otra cosa, precio viejo o banda sin precio, y ahí multiplicar hacia arriba entregaría a las demás la masa que falta. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso que queda enteramente fuera: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas.',
     clicavel: 'Haga clic en cualquier punto de un recuadro para abrir la apuesta real en Polymarket, con las cotizaciones en vivo.',
     abrirEm: 'abrir en Polymarket',
-    foraDoPortao: 'Este mercado no entra en la pantalla porque sus precios no cierran',
-    foraDoPortaoDetalhe: (s: string) =>
-      `Cada banda tiene un precio que funciona como una probabilidad. Como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. Es como un pronóstico que anuncia 80% de probabilidad de sol y 70% de lluvia: las dos no caben en el mismo día. Cuando las cuentas no cierran así, es señal de un mercado con poco dinero y poca negociación, y mostrar estas bandas como probabilidad le daría al lector un número que no significa lo que parece. El AFOS sigue guardando este mercado todos los días, y aparece solo el día en que las cuentas cierren.`,
     limitacaoTitulo: 'Qué es este número, y qué no es',
     limitacao:
       'El volumen es de Polymarket, no del mercado estadounidense entero. Es una casa entre otras, y el número aquí es la probabilidad que ella fija, no un pronóstico del AFOS. Un mercado de banda fina se mueve con poco dinero.',
@@ -371,8 +354,33 @@ function Distribuicao({
 
   const soma = fs.reduce((a, f) => a + f.pct, 0)
   const vol = volumeDe(ev)
-  const passou = soma >= SOMA_MIN && soma <= SOMA_MAX
   const somaTexto = `${fmt(soma, locale, 1)}%`
+
+  /**
+   * 🔴 O PORTÃO DECIDE PELA SÉRIE, NÃO PELO INSTANTE. Mudado em 10/Ago/2026.
+   *
+   * Antes bastava a leitura de agora fechar entre 95 e 105. Só que a soma
+   * oscila e o corte é duro, então o quadro trocava de identidade sozinho: no
+   * book do Senado o portão virou SEIS vezes em dez capturas, e três dessas
+   * viradas foram por menos de 1,5 ponto (104,90 → 106,00 → 105,40 → 104,40).
+   * Quem atualizava a página duas vezes no mesmo dia via dois painéis
+   * diferentes sem que nada eleitoral tivesse mudado.
+   *
+   * Agora o quadro só mostra número quando o livro fechou o portão em TODAS as
+   * leituras das últimas 24h. A assimetria é proposital e é a favor da
+   * desconfiança: **uma leitura ruim tira o número, e recuperá-lo exige 24h
+   * limpas**. Rápido para desconfiar, lento para confiar.
+   *
+   * ⚠️ Sem série (`n === 0`), cai na regra do instante. Mercado recém-listado
+   * não pode ficar escondido para sempre por falta de histórico.
+   */
+  const fechaAgora = soma >= SOMA_MIN && soma <= SOMA_MAX
+  const temSerie = !!amplitude && amplitude.n > 0
+  const serieLimpa = temSerie && amplitude!.dentro === amplitude!.n
+  const passou = temSerie ? serieLimpa : fechaAgora
+  /** Fecha agora mas a série não é limpa. Precisa de texto próprio, senão o
+   *  leitor vê uma soma dentro do portão e nenhum número, sem explicação. */
+  const instavel = fechaAgora && temSerie && !serieLimpa
 
   // 🔴 NADA DE NORMALIZAR, e o motivo está no bloco acima: o sobrepreço não é
   // uniforme, então dividir pela soma não o remove, apenas o redistribui errado.
@@ -435,7 +443,11 @@ function Distribuicao({
           ser repetida palavra por palavra em cada card que reprova. */}
       {soForma && (
         <p className="mt-2.5 border-t border-gray-100 pt-2 text-[11px] leading-snug text-gray-500">
-          {abaixoDoPiso ? t.faltaNota(somaTexto) : t.excessoNota(somaTexto)}
+          {instavel
+            ? t.instavelNota(somaTexto, amplitude!.n - amplitude!.dentro, amplitude!.n)
+            : abaixoDoPiso
+              ? t.faltaNota(somaTexto)
+              : t.excessoNota(somaTexto)}
         </p>
       )}
 
