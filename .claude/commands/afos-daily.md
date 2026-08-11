@@ -258,8 +258,15 @@ Regras inflexíveis do rodapé:
 
 1. Consultar `/api/polls/tse?days=10` (ou ler do Neon) e filtrar:
    - `publicationDate` > hoje E ≤ hoje+7
+   - 🔴 **`scope === 'national'` — CORTE OBRIGATÓRIO, e ele é o primeiro**
    - `sampleSize` ≥ 1000 (filtro contra municipais de baixo n)
    - Ordenar por `publicationDate` ascendente, então por `sampleSize` descendente
+
+   ⚠️ **O corte de escopo estava sendo aplicado na PRÁTICA e não estava ESCRITO aqui, e essa é a lacuna que esta linha fecha.** Medido em 10/Ago/2026 sobre os 65 registros dos últimos 15 dias: com `sampleSize ≥ 1000` sozinho entram **11 nacionais e 44 NÃO nacionais**, ou seja, quatro linhas erradas para cada certa. Três delas são de casa Tier 1, que a tabela destaca: uma **Datafolha** (n=1.022, estadual) e duas **AtlasIntel** (n=1.800 e n=1.000, estaduais). O campo `scope` já vem no registro do TSE, com valores `national`, `state` e `unknown`.
+
+   ⛔ **`unknown` NÃO entra.** O `scopeSource` do registro diz de onde o escopo foi inferido (metodologia, plano amostral, dado de município); quando o TSE não permite inferir, o painel registra a ausência em vez de chutar nacional.
+
+   📌 **A coluna Escopo continua na tabela mesmo com o corte.** Ela deixou de ser filtro e passou a ser prova de que o filtro rodou, que é diferente e vale manter.
 
 2. Construir tabela markdown GFM com 6 colunas: **Data · Instituto · Amostra · Escopo · Protocolo TSE · Conf.**
 
@@ -274,15 +281,17 @@ Regras inflexíveis do rodapé:
 ```markdown
 ### 📅 Calendário de pesquisas — próximos 7 dias
 
-Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]. Inclusão na tabela não significa publicação confirmada — institutos podem atrasar ou cancelar divulgação. Filtro aplicado: amostra ≥ 1.000. Cada protocolo linkado à [consulta pública TSE](https://divulgacandcontas.tse.jus.br/divulga/).
+Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]. Inclusão na tabela não significa publicação confirmada, porque institutos podem atrasar ou cancelar divulgação. Filtros aplicados: escopo nacional e amostra ≥ 1.000. Cada protocolo linkado à [consulta pública TSE](https://divulgacandcontas.tse.jus.br/divulga/).
 
 | Data | Instituto | Amostra | Escopo | Protocolo TSE | Conf. |
 |------|-----------|---------|--------|---------------|-------|
 | **DD/Mai** | **Instituto 🔥** | **n** | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 | DD/Mai | Instituto | n | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 
-Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) via API AFOS. 🔥 destaca amostras ≥ 3.000. Status "registrada ≠ publicada" — confirmação de divulgação efetiva exige verificação de duas fontes primárias antes da citação de números.
+Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) via API AFOS. 🔥 destaca amostras ≥ 3.000. A tabela lista as [N] NACIONAIS da janela; [M] registros estaduais do mesmo período ficaram de fora por escopo. O status é "registrada ≠ publicada", e confirmar divulgação efetiva exige duas fontes primárias antes de citar número.
 ```
+
+⚠️ **O rodapé declara os DOIS números, o que entrou e o que ficou de fora.** Dizer só "as N nacionais" esconde o tamanho do corte, e o corte é grande: em 10/Ago eram 11 nacionais contra 44 não nacionais na janela de 15 dias. Quem lê tem direito de saber que a tabela é uma fatia, e qual.
 
 ### Tradução EN/ES
 
