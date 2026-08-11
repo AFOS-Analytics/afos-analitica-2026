@@ -32,10 +32,22 @@
  *   TOPO e PISO      -> máximo e mínimo de TODOS os pontos (é o que "topo" quer dizer)
  *   DIAS >= ALVO     -> contagem sobre o valor representativo do DIA
  *
+ * 📏 A JANELA PUBLICADA É DE 90 DIAS, decisão do André em 11/Ago/2026.
+ * O banco guarda mais que isso (118 dias em 11/Ago, desde 14/Abr), e a série
+ * completa dá OUTROS extremos: o topo do Flávio é 45,50% em 06/Mai na série
+ * inteira e 34,40% em 13/Mai na janela de 90 dias. As duas são verdadeiras, e
+ * publicar uma com a etiqueta da outra é o defeito. Por isso:
+ *
+ *   --dias=90  mede a MESMA janela que o painel publica  <- use este para conferir texto
+ *   sem a flag mede a série inteira do banco, que é mais funda e não é a publicada
+ *
+ * Regra da casa: escrever "na série de 90 dias" e conferir com --dias=90. Se um
+ * dia a janela publicada mudar, muda nos dois lugares no mesmo commit.
+ *
  * Uso:
- *   npx tsx scripts/check-superlativo.ts                       # gap Lula−Flávio
+ *   npx tsx scripts/check-superlativo.ts                          # gap, série inteira
  *   npx tsx scripts/check-superlativo.ts "Renan Santos"
- *   npx tsx scripts/check-superlativo.ts "Flávio" --alvo=27.25 # + contagem de dias
+ *   npx tsx scripts/check-superlativo.ts "Flávio" --dias=90 --alvo=27.25
  */
 import { config } from 'dotenv'
 config({ path: '.env.local' })
@@ -68,12 +80,36 @@ async function main() {
     return Number.isFinite(v) ? v : null
   })()
   const nomeAlvo = args.find(x => !x.startsWith('--'))?.trim()
+  const janelaDias = ((): number | null => {
+    const a = args.find(x => x.startsWith('--dias='))
+    if (!a) return null
+    const v = Number(a.slice(7))
+    return Number.isFinite(v) && v > 0 ? v : null
+  })()
+  /**
+   * Borda DIREITA da janela. Sem isto a janela é contada de AGORA, e uma janela
+   * que rola sozinha faz a frase publicada envelhecer no mesmo dia: em 11/Ago o
+   * topo do Flávio na janela de 90 dias era 34,40% às 18:22 BRT e passou a ser
+   * 33,20% às 20:20 BRT, porque o ponto de 34,40% ficou 3 horas fora da borda.
+   * Para conferir texto publicado, ancorar no CARIMBO DA PEÇA.
+   */
+  const ate = ((): Date | null => {
+    const a = args.find(x => x.startsWith('--ate='))
+    if (!a) return null
+    const d = new Date(a.slice(6))
+    return Number.isNaN(d.getTime()) ? null : d
+  })()
 
   const { prisma } = await import('../lib/db')
   if (!prisma) { console.error('SEM BANCO: DATABASE_URL ausente ou inválida'); process.exit(1) }
 
+  const bordaDireita = ate ?? new Date()
+  const corte = janelaDias != null ? new Date(bordaDireita.getTime() - janelaDias * 86400_000) : null
   const pontos = await prisma.marketPrice.findMany({
-    where: { market: { slug: SLUG } },
+    where: {
+      market: { slug: SLUG },
+      ...(corte ? { snapshotAt: { gte: corte, lte: bordaDireita } } : ate ? { snapshotAt: { lte: bordaDireita } } : {}),
+    },
     select: { price: true, snapshotAt: true, outcome: { select: { outcomeName: true } } },
     orderBy: { snapshotAt: 'asc' },
   })
@@ -126,8 +162,16 @@ async function main() {
   const maxF = fechos.reduce((a, b) => (b.v > a.v ? b : a))
   const minF = fechos.reduce((a, b) => (b.v < a.v ? b : a))
 
-  console.log(`\nSÉRIE INTEIRA (sem cap de janela) — ${rotulo}`)
+  console.log(
+    janelaDias != null
+      ? `\nJANELA DE ${janelaDias} DIAS — ${rotulo}   (a mesma que o painel publica)`
+      : `\nSÉRIE INTEIRA DO BANCO — ${rotulo}   ⚠️ NÃO é a janela publicada; use --dias=90 para conferir texto`
+  )
   console.log(`  cobertura : ${dias[0]} a ${dias[dias.length - 1]}  (${dias.length} dias, ${todos.length} pontos)`)
+  if (janelaDias != null) {
+    console.log(`  borda     : até ${diaBRT(bordaDireita)} ${horaBRT(bordaDireita)} BRT` +
+      (ate ? '  (ancorada por --ate)' : '  ⚠️ ancorada em AGORA; para conferir texto publicado use --ate com o carimbo da peça'))
+  }
   console.log(`\n  📈 TOPO E PISO, sobre TODOS os pontos (é isto que "topo" quer dizer):`)
   console.log(`     TOPO  : ${fmt(maxP.v)}${u} em ${diaBRT(new Date(maxP.t))} às ${horaBRT(new Date(maxP.t))} BRT`)
   console.log(`     PISO  : ${fmt(minP.v)}${u} em ${diaBRT(new Date(minP.t))} às ${horaBRT(new Date(minP.t))} BRT`)
