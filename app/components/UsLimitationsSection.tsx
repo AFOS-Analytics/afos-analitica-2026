@@ -27,7 +27,7 @@ const T = {
       'O volume é do Polymarket, não do mercado de previsão americano inteiro. É uma casa entre outras, e o número mostrado é a probabilidade que ela precifica. Outras casas podem estar em outro preço no mesmo instante.',
       'A Kalshi está fora, e isso é escolha declarada, não esquecimento. Ficar com uma casa só é uma limitação real deste painel, e preferimos dizer isso a somar casas com regras diferentes.',
       'Mercado de faixa fina se move com pouco dinheiro. Onde o volume é baixo, um único participante desloca o preço, e a leitura vale menos do que o número sugere. Por isso o volume aparece ao lado de cada mercado.',
-      'Mercado de faixa só entra na tela se as faixas somarem entre 95% e 105%. Fora disso as faixas não podem ser lidas como probabilidade, e o mercado de previsão fica coletado mas não exibido, com a soma medida à vista.',
+      'As faixas de um mercado só viram número na tela se somarem entre 95% e 105%. Fora disso elas não podem ser lidas como probabilidade, e o quadro passa a mostrar só a forma, ou seja, o tamanho relativo das faixas, sem percentual. A soma medida fica à vista, junto com o quanto ela variou nas últimas 24 horas.',
     ],
     pesquisaTitulo: 'Sobre as pesquisas',
     pesquisa: [
@@ -59,7 +59,7 @@ const T = {
       'The volume is Polymarket’s, not the entire American prediction market. It is one venue among others, and the number shown is the probability it prices. Other venues may sit at a different price at the same moment.',
       'Kalshi is out, and that is a declared choice, not an oversight. Relying on a single venue is a real limitation of this panel, and we would rather say so than add up venues with different rules.',
       'Thin band markets move on little money. Where volume is low, a single participant shifts the price, and the reading is worth less than the number suggests. That is why volume appears next to every market.',
-      'A band market only reaches the screen if its bands total between 95% and 105%. Outside that range the bands cannot be read as probability, so the prediction market keeps being collected but is not displayed, with the measured total in plain sight.',
+      'A market’s bands only become numbers on screen if they total between 95% and 105%. Outside that range they cannot be read as probability, and the card shows shape only, that is, the relative size of the bands, with no percentage. The measured total stays in plain sight, along with how much it moved over the last 24 hours.',
     ],
     pesquisaTitulo: 'On the polls',
     pesquisa: [
@@ -91,7 +91,7 @@ const T = {
       'El volumen es de Polymarket, no del mercado de predicción estadounidense entero. Es una casa entre otras, y el número mostrado es la probabilidad que ella fija. Otras casas pueden estar en otro precio en el mismo instante.',
       'Kalshi queda fuera, y es una elección declarada, no un olvido. Quedarse con una sola casa es una limitación real de este panel, y preferimos decirlo a sumar casas con reglas distintas.',
       'Un mercado de banda fina se mueve con poco dinero. Donde el volumen es bajo, un solo participante desplaza el precio, y la lectura vale menos de lo que el número sugiere. Por eso el volumen aparece junto a cada mercado.',
-      'Un mercado de bandas solo llega a la pantalla si sus bandas suman entre 95% y 105%. Fuera de ese rango las bandas no pueden leerse como probabilidad, así que el mercado de predicción se sigue recolectando pero no se exhibe, con la suma medida a la vista.',
+      'Las bandas de un mercado solo se vuelven número en pantalla si suman entre 95% y 105%. Fuera de ese rango no pueden leerse como probabilidad, y el cuadro pasa a mostrar solo la forma, es decir, el tamaño relativo de las bandas, sin porcentaje. La suma medida queda a la vista, junto con cuánto varió en las últimas 24 horas.',
     ],
     pesquisaTitulo: 'Sobre las encuestas',
     pesquisa: [
