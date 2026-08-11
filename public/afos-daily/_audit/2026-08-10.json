@@ -1,0 +1,76 @@
+{
+  "date": "2026-08-10",
+  "refetch": {
+    "fetchedAtBRT": "10/08/2026 22:45",
+    "gate": "nao disparou",
+    "delta": {
+      "Lula": 0,
+      "Flavio": 0,
+      "Renan": 0,
+      "gap": 0,
+      "volTotal": 0
+    }
+  },
+  "capturaGuard": {
+    "rodadas": 4,
+    "aprovadas": 0,
+    "books_confirmados": [
+      "presidential",
+      "senate"
+    ],
+    "books_omitidos": [
+      "stf",
+      "secondPlace",
+      "thirdPlace"
+    ],
+    "motivo": "contratos finos nao confirmaram entre duas leituras"
+  },
+  "factCheck": [
+    {
+      "evento": "Motta declara apoio a Lula",
+      "verif1": "aparece 08/Ago por OUTRO fato (emendas Pix)",
+      "tipo": "novidade",
+      "verif2": "Gazeta do Povo 2026-08-10, evento",
+      "fonte2": "Metropoles, Revista Forum, Estado de Minas, Jornal do Comercio",
+      "decisao": "incorporar com a distincao de que o partido declarou neutralidade"
+    },
+    {
+      "evento": "BTG/Nexus 9a rodada e estreia Palver",
+      "verif1": "Palver 4x na tabela de calendario; Nexus serie recorrente",
+      "tipo": "dado novo",
+      "verif2": "dezenas de veiculos, registro TSE conferido",
+      "decisao": "incorporar"
+    },
+    {
+      "evento": "Master/Vorcaro, dois ministros",
+      "verif1": "4 mencoes, caso em curso",
+      "tipo": "continuidade",
+      "verif2": "Poder360 2026-08-10, cobertura sem decisao judicial",
+      "decisao": "incorporar como continuidade"
+    }
+  ],
+  "adversarial": {
+    "singleSource": "nenhuma",
+    "numericalErrors": "reconcile aponta PL Senado 75,50%; nao e erro, ausente dos JSONs do dashboard e confirmado pela trava",
+    "fontesInventadas": "nenhuma, 15 URLs resolvidas do cache por titulo com abort se nao casar",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma, mercado parado 73 min e a peca nao atribui movimento a evento",
+    "verbosCriticos": "declarou apoio com data e fonte; favoreceram negocio atribuido ao Poder360"
+  },
+  "gates": {
+    "validador": "zero violacao",
+    "palavras": 852,
+    "teto": 900,
+    "fontes": {
+      "ancora": 5,
+      "secundaria": 10,
+      "pctSecundario": 67
+    },
+    "gateNumerico": "62 numeros, multiconjunto identico nos 3 idiomas",
+    "cincoChecagens": "limpas"
+  },
+  "wayback": {
+    "rodado": false,
+    "motivo": "bloqueio de host, 429 em 09/Ago; nao sondar antes de ~14/Ago"
+  }
+}
