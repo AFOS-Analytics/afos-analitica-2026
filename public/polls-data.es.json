@@ -1246,7 +1246,7 @@
     "lastUpdate": "2026-08-10"
   },
   "polymarketComparison": {
-    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA CONFIRMADA DEL 9/Ago, DE LAS 17:34 UTC, y no hay lectura de precio nueva el 10/Ago. AFOS solo publica un precio que dos lecturas independientes confirmen, tomadas con ocho minutos de intervalo. EL DÍA TRAJO ENCUESTAS: dos nacionales fueron publicadas, la BTG/Nexus (n=2.001, telefónica) con 40% x 35% en la primera vuelta y 47% x 44% en la segunda, y el estreno de Palver (n=5.000, por internet) con 44% x 40% y empate en 46% x 46%. TRES CRUCES SALEN DE AHÍ. El primero es de amplitud: en las cuatro nacionales desde el 5/Ago el segundo colocado varía 10pp, de 30% a 40%, contra 5pp del primero, y en la segunda vuelta la distancia entre ellos va de 0pp a 5,5pp según la casa. El segundo es de método, y fue declarado por el propio instituto: Renan Santos aparece con 4% y 4,7% por teléfono y presencial y con 10% por internet, y Palver evaluó que el formato digital pudo haber impulsado su desempeño, informando que prueba enfoques para reducir el efecto. Su precio confirmado, 7,80%, queda entre los dos métodos, y al mismo tiempo cerca del piso de su propia serie, con 84 de los 88 días en un valor igual o superior. El tercero es de dirección: hasta la lectura del 9/Ago la diferencia de mercado se había estrechado en seis de las siete últimas jornadas, de +38,90pp a +36,55pp, mientras la diferencia de BTG/Nexus se abrió dentro de su propia casa, de 4pp a 5pp en la primera vuelta y de 1pp a 3pp en la segunda. Los dos instrumentos se movieron en sentidos opuestos sobre la misma disputa y en la misma ventana, y el panel registra el cruce sin decir cuál está en lo cierto.",
+    "note": "LOS PRECIOS DE ESTA SECCIÓN SON DE LA LECTURA CONFIRMADA DEL 10/AGO, 21:32 BRT (11/AGO, 00:32 UTC), confirmados por dos lecturas independientes tomadas con ocho minutos de intervalo. EL DÍA TRAJO ENCUESTAS Y TRAJO PRECIO, Y LOS DOS APUNTAN HACIA LADOS DISTINTOS. Dos nacionales fueron publicadas, la BTG/Nexus (n=2.001, telefónica) con 40% x 35% en la primera vuelta y 47% x 44% en la segunda, y el estreno de Palver (n=5.000, por internet) con 44% x 40% y empate en 46% x 46%. CUATRO CRUCES SALEN DE AHÍ. El primero es de amplitud: en las cuatro nacionales desde el 5/Ago el segundo colocado varía 10pp, de 30% a 40%, contra 5pp del primero, y en la segunda vuelta la distancia entre ellos va de 0pp a 5,5pp según la casa. El segundo es de método, y fue declarado por el propio instituto: Renan Santos aparece con 4% y 4,7% por teléfono y presencial y con 10% por internet, y Palver evaluó que el formato digital pudo haber impulsado su desempeño, informando que prueba enfoques para reducir el efecto. Su precio, 7,65%, queda entre los dos métodos, y CAYÓ 0,15pp el mismo día, dejándolo cerca del piso de su propia serie, con 84 de los 88 días en un valor igual o superior. El tercero es EL MECANISMO DE LA DIFERENCIA, que se invirtió en veinticuatro horas: la distancia entre los dos primeros se estrechó a +36,25pp, pero hoy fue porque el SEGUNDO subió 0,30pp con el líder estancado, cuando ayer había sido porque el LÍDER cedió 1,00pp con el segundo estancado. Flávio fue el único nombre del pelotón que subió. El cuarto es de dirección entre instrumentos: en la semana en que la diferencia de mercado se estrechó, en seis de las siete últimas jornadas, la de BTG/Nexus se ABRIÓ dentro de su propia casa, de 4pp a 5pp en la primera vuelta y de 1pp a 3pp en la segunda. Dos instrumentos, la misma disputa, sentidos opuestos, y el panel registra el cruce sin decir cuál está en lo cierto.",
     "sources": "Precios de [Polymarket](/es/glossary#polymarket) vía el proxy de AFOS, captura confirmada por dos lecturas, la más reciente a las 17:32 UTC del 8/Ago (scripts/capture-guard.ts). Encuestas: Genial/Quaest BR-06591/2026 y Meio/Ideia BR-04579/2026, ambas del 5/Ago, campo del 31/Jul al 3/Ago, divulgadas por G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, Exame, Gazeta do Povo y JOTA. Barrido del TSE del 8/Ago: 565 registros, ninguno insertado nuevo por la ronda manual, y SEIS nacionales en la fila de divulgación: Palver (n=5.000), Gerp (n=2.400) y BTG/Nexus (n=2.000) el 10/Ago, MDA (n=2.002) y 100 Cidades (n=2.000) el 11/Ago, y PoderData (n=2.400, BR-06868/2026) el 13/Ago.",
     "candidates": [
       {
@@ -1254,7 +1254,7 @@
         "pesquisaRange": "39-44%",
         "polymarket": "63,50%",
         "tendenciaPesquisa": "DOS NACIONALES NUEVAS EL 10/Ago. BTG/Nexus (n=2.001, telefónica, campo del 7 al 9/Ago, margen 2pp, BR-08428/2026): 40% en la primera vuelta, con la diferencia de 5pp sobre el segundo colocado FUERA del margen, y 47% x 44% en la segunda. Palver, estreno en el panel (n=5.000, cuestionario por internet, margen 3pp, BR-06596/2026): 44% en la primera vuelta y EMPATE en 46% x 46% en la segunda, el peor escenario de segunda vuelta que cualquier nacional le ha dado en la ventana. Sumando las cuatro rondas desde el 5/Ago, va de 39% a 44%, un rango de 5pp, y lidera la primera vuelta en todas. DENTRO DE LA CASA, BTG/Nexus muestra lo inverso de la semana pasada: la diferencia de la primera vuelta había caído de 9pp a 4pp el 3/Ago y ahora se ABRIÓ a 5pp, con los dos cediendo y el adversario cediendo más. LA APROBACIÓN empeoró en las dos lecturas de hoy, 46% x 49% en Nexus y 45% x 55% en Palver, y en cinco lecturas de ocho días el saldo va de 1pp positivo a 10pp negativo. El porcentaje usado en el gráfico es el de BTG/Nexus, elegida por ser la serie telefónica más larga en curso.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 63,50% (vol USD 8,18M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago, y por eso esta línea no registra variación en el día. Hasta la lectura del 9/Ago la diferencia sobre Flávio venía estrechándose, cayendo en SEIS de las SIETE últimas jornadas, de +38,90pp el 3/Ago a +36,55pp. En la serie de 88 días, del 13/May al 10/Ago, su techo es 66,50%, del 1/Ago, y 14 de los 88 días tuvieron un valor igual o superior al actual, así que el nivel no es extremo.",
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 63,50% (vol USD 8,20M acumulado), ESTANCADO en el mismo valor de ayer. LA DIFERENCIA SOBRE FLÁVIO SE ESTRECHÓ A +36,25pp, contra +36,55pp de ayer, PERO EL MECANISMO SE INVIRTIÓ: hoy se estrechó porque el adversario SUBIÓ 0,30pp con él estancado, y ayer porque ÉL cedió 1,00pp con el adversario estancado. El número se mueve hacia el mismo lado por caminos opuestos, y tratar los dos días como la misma tendencia borraría la diferencia. En la ventana desde el 3/Ago la diferencia cayó en seis de las siete jornadas, desde +38,90pp, con un día estancado. En la serie de 88 días su techo es 66,50%, del 1/Ago, y 14 de los 88 días tuvieron un valor igual o superior al actual, así que el nivel no es extremo.",
         "odds": 63.5,
         "percentage": 40,
         "lastUpdate": "2026-08-10",
@@ -1263,42 +1263,42 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "30-40%",
-        "polymarket": "26,95%",
+        "polymarket": "27,25%",
         "tendenciaPesquisa": "EL RANGO ES EL DATO, NO EL PUNTO. En las cuatro nacionales desde el 5/Ago aparece con 30% en Genial/Quaest, 35% en Meio/Ideia, 35% en la BTG/Nexus de hoy y 40% en la Palver de hoy, una amplitud de 10pp, el DOBLE que la del primer colocado. En la segunda vuelta la distancia entre los dos va de 0pp, en Palver, a 5,5pp, en Meio/Ideia. PALVER LE DIO EL MEJOR ESCENARIO DE LA VENTANA, con 40% en la primera vuelta y empate en 46% x 46%, y es la primera vez que una nacional no apunta a una derrota suya en la segunda vuelta. EN BTG/NEXUS el movimiento fue contrario: cayó de 37% el 3/Ago a 35%, y es esa caída la que abre la diferencia de la primera vuelta de 4pp a 5pp. RECHAZO de 50% en Nexus, el más alto de la ronda, y de 51% en Palver. El porcentaje usado en el gráfico es el de BTG/Nexus, la misma casa de referencia que el primer colocado.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 26,95% (vol USD 8,09M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago. El valor confirmado del 9/Ago cerraba el tercer día en el mismo nivel, y en el contrato de segundo lugar el último valor confirmado es 81,50%. No es extremo: 26 de los 88 días de la serie tuvieron un valor igual o superior, con un techo de 34,40% el 13/May y un piso de 22,00% el 3/Jul.",
-        "odds": 26.95,
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 27,25% (vol USD 8,11M acumulado). SUBIÓ 0,30pp y es el ÚNICO nombre del pelotón que subió en la lectura de hoy, tras tres días estancado en 26,95%. Fue esa alza, y no una caída del líder, la que estrechó la diferencia hoy. El alza no cambia el nivel: 26 de los 88 días de la serie tuvieron un valor igual o superior, con un techo de 34,40% el 13/May y un piso de 22,00% el 3/Jul. En el contrato de segundo lugar está en 82,00%.",
+        "odds": 27.25,
         "percentage": 35,
         "lastUpdate": "2026-08-10",
-        "value": 26.95
+        "value": 27.25
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-10%",
-        "polymarket": "7,80%",
+        "polymarket": "7,65%",
         "tendenciaPesquisa": "EL EFECTO DE MÉTODO DE LA SEMANA ESTÁ AQUÍ, Y QUIEN LO DECLARÓ FUE EL INSTITUTO QUE LO MIDIÓ ALTO. Aparece con 4% en Genial/Quaest presencial del 5/Ago, 4,7% en Meio/Ideia por teléfono del mismo día, 4% en BTG/Nexus por teléfono del 10/Ago, y 10% en Palver por internet, también del 10/Ago. PALVER EVALUÓ que el formato digital pudo haber impulsado su desempeño, ya que mantiene una base activa en ese entorno, e informó que prueba enfoques para reducir ese efecto en encuestas online. En su ronda queda aislado en tercer lugar. El panel repite la declaración de la casa en lugar de juzgar el número. El porcentaje usado en el gráfico es el de BTG/Nexus, para mantener la misma casa de referencia que los demás, y el rango completo está declarado arriba.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 7,80% (vol USD 9,27M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago. LO QUE HACE EL PRECIO CONFIRMADO ES QUEDAR ENTRE LOS DOS MÉTODOS: por encima del 4% a 4,7% del teléfono y del presencial, por debajo del 10% de internet. Y al mismo tiempo cerca del PISO de su propia historia: en la serie de 88 días, 84 de ellos tuvieron un valor igual o superior, con un máximo de 17,90% el 9/Jun y un mínimo de 6,80% el 6/Ago. Techo en la encuesta y piso en el precio, en la misma semana. Mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%.",
-        "odds": 7.8,
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 7,65% (vol USD 9,32M acumulado). CAYÓ 0,15pp EL MISMO DÍA en que la encuesta online lo puso en 10%. LO QUE HACE EL PRECIO ES QUEDAR ENTRE LOS DOS MÉTODOS: por encima del 4% a 4,7% del teléfono y del presencial, por debajo del 10% de internet. Y al mismo tiempo cerca del PISO de su propia historia: en la serie de 88 días, 84 de ellos tuvieron un valor igual o superior, con un máximo de 17,90% el 9/Jun y un mínimo de 6,80% el 6/Ago. Techo en la encuesta y piso en el precio, en la misma semana, y las dos cosas son verdad. Mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%.",
+        "odds": 7.65,
         "percentage": 4,
         "lastUpdate": "2026-08-10",
-        "value": 7.8
+        "value": 7.65
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5,7%",
-        "polymarket": "1,25%",
+        "polymarket": "1,15%",
         "tendenciaPesquisa": "SU DATO NUEVO ESTÁ EN LA SEGUNDA VUELTA: la BTG/Nexus del 10/Ago apunta a un EMPATE de Lula con él, en la misma ronda en la que el líder vence al segundo colocado por 47% x 44%. Es el único nombre fuera de los dos primeros que lo consigue en la ventana. En la primera vuelta tiene 5% en Nexus, por delante de Renan Santos, con 4%, y de Zema, con 3%. Siguen valiendo los 4% de Genial/Quaest y los 5,7% de Meio/Ideia, del 5/Ago, y en Ideia es el adversario que más se acerca en la segunda vuelta, con 40% contra 48,5%. PALVER NO LO PRUEBA en el escenario publicado, y el panel registra la ausencia en lugar de repetir dato antiguo como si fuera nuevo.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 1,25% (vol USD 5,60M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago. El valor confirmado del 9/Ago cerraba el tercer día seguido de caída en los dos libros, con 25,50% en el de tercer lugar. ES EL NOMBRE CON LA MAYOR DISTANCIA ENTRE ENCUESTA Y PRECIO DEL PELOTÓN: de 4% a 5,7% de intención declarada contra 1,25% de probabilidad descontada. El panel registra la distancia sin restar una magnitud de la otra, porque la encuesta mide intención ahora y el contrato mide probabilidad de ganar al final.",
-        "odds": 1.25,
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 1,15% (vol USD 5,62M acumulado). CAYÓ 0,10pp. Y LA DISTANCIA ENTRE ENCUESTA Y PRECIO AUMENTÓ el mismo día en que tuvo su mejor segunda vuelta de la ventana, con empate contra Lula en BTG/Nexus: de 4% a 5,7% de intención declarada contra 1,15% de probabilidad descontada. Es la mayor distancia entre las dos magnitudes en todo el pelotón. El panel registra la distancia sin restar una de la otra, porque la encuesta mide intención ahora y el contrato mide probabilidad de ganar al final.",
+        "odds": 1.15,
         "percentage": 5,
         "lastUpdate": "2026-08-10",
-        "value": 1.25
+        "value": 1.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Ninguna de las dos rondas del 10/Ago lo prueba en algún escenario presidencial, de primera o de segunda vuelta, y lo mismo vale para las dos del 5/Ago. La ausencia de prueba es información que el panel registra, en lugar de repetir dato antiguo como si fuera nuevo. Disputa la REELECCIÓN en la gobernación de São Paulo, oficializada por Republicanos el 1/Ago.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 0,05% (vol USD 13,87M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago. EL CONTRASTE QUE VALE REGISTRAR: este es el MAYOR volumen acumulado de todo el libro presidencial, con USD 13,87M, y el precio está en el piso. Volumen alto con probabilidad en el piso es convicción ya descontada, no movimiento, y el nivel es lo bastante bajo para que las variaciones en esta franja tengan un valor informativo casi nulo.",
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 0,05% (vol USD 13,90M acumulado). EL CONTRASTE QUE VALE REGISTRAR: este es el MAYOR volumen acumulado de todo el libro presidencial, con USD 13,90M, y el precio está en el piso. Volumen alto con probabilidad en el piso es convicción ya descontada, no movimiento, y el nivel es lo bastante bajo para que las variaciones en esta franja tengan un valor informativo casi nulo.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "2026-08-10",
@@ -1309,7 +1309,7 @@
         "pesquisaRange": "2-3%",
         "polymarket": "0,45%",
         "tendenciaPesquisa": "La BTG/Nexus del 10/Ago le da 3% en la primera vuelta. Palver no lo prueba en el escenario publicado. Siguen valiendo los 2% de Genial/Quaest y los 2,6% de Meio/Ideia, del 5/Ago, con segundas vueltas de 34% contra 46% y de 37% contra 48,5%. Registró su candidatura ante el [TSE](/es/glossary#tse) el 6/Ago, declarando R$ 178,7 millones de patrimonio, con el vice Girão informando R$ 34,1 millones, y sigue siendo el único del pelotón con registro presentado, en un plazo que va hasta el 15/Ago.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 0,45% (vol USD 5,02M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago. El valor confirmado está POR DEBAJO del corte de 0,5% que el panel usa para separar precio de ruido, y la lectura sobre él queda suspendida mientras esté en esa franja. Salvedad de serie que sigue valiendo: su máximo fue 10,10%, el 26/Abr.",
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 0,45% (vol USD 5,05M acumulado), ESTANCADO. El valor está POR DEBAJO del corte de 0,5% que el panel usa para separar precio de ruido, y la lectura sobre él sigue suspendida mientras esté en esa franja. Salvedad de serie que sigue valiendo: su máximo fue 10,10%, el 26/Abr.",
         "odds": 0.45,
         "percentage": 3,
         "lastUpdate": "2026-08-10",
@@ -1318,13 +1318,13 @@
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,05%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "Ninguna de las dos rondas del 10/Ago lo prueba en algún escenario, ni de primera ni de segunda vuelta, y lo mismo valía para las dos del 5/Ago, así que sigue sin encuesta. El agravante permanece y necesita decirse con claridad: NO es candidato a la Presidencia, disputa la gobernación de São Paulo, y cualquier escenario que lo incluya es una hipótesis de encuesta, no una candidatura en curso.",
-        "tendenciaPolymarket": "[lectura confirmada del 9/Ago, 17:34 UTC] En 0,05% (vol USD 6,78M acumulado). NO HAY LECTURA DE PRECIO NUEVA EL 10/Ago, y el valor confirmado está en el piso que el mercado descuenta. Una variación en esta franja no tiene valor informativo.",
-        "odds": 0.05,
+        "tendenciaPolymarket": "[lectura confirmada del 10/Ago, 21:32 BRT (11/Ago, 00:32 UTC)] En 0,15% (vol USD 6,98M acumulado), alza de 0,10pp en un nivel en el que la variación no tiene valor informativo. Sigue sin encuesta y sin candidatura presidencial, disputando la gobernación de São Paulo.",
+        "odds": 0.15,
         "percentage": 0,
         "lastUpdate": "2026-08-10",
-        "value": 0.05
+        "value": 0.15
       }
     ],
     "updatedAt": "08/08/2026, 17:32 UTC",
