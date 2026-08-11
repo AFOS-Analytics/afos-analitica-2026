@@ -1,0 +1,66 @@
+/**
+ * Mapa EN de 11/Ago para analysis-data.json.
+ * Convenções: ponto decimal, vírgula de milhar, datas no formato "Aug 11".
+ */
+import { construir } from '../build-locale-json'
+
+const S = 'confirmed reading of Aug 11, 16:27 BRT'
+
+construir('analysis-data', 'en', {
+  'cards.sentimento.text1':
+    `54 days from the first round, three national polls were published on the same day and they disagree with one another more than on any other day in this window. CNT/MDA (n=2,002, in person, field Aug 5 to 8, registration BR-06935/2026) gives 42.4% x 28.7% in the first round and 48% x 39% in the runoff. Futura Inteligência (n=2,000, telephone, field Aug 3 to 7) gives 38.8% x 34.1% and 46.5% x 44%. Gerp (n=2,400, telephone, field Aug 6 to 10, registration BR-08045/2026) gives a tie at 38% x 38% and 45% x 43% for the runner-up. The prices on this panel are from the ${S}, confirmed by two independent readings.`,
+
+  'cards.sentimento.text2':
+    `IN THE RUNOFF THE DISTANCE BETWEEN THE THREE IS ELEVEN POINTS, on the same question and in the same week, and it is the first time in the window that a national poll puts the challenger ahead in that scenario. In the first round the distance reaches 9.3 points on the same name, between CNT/MDA's 28.7% and Gerp's 38%. Adding up the seven national polls since Aug 5, the leader runs from 38% to 44%, a 6pp band, and the runner-up runs from 28.7% to 40%, an 11.3pp band, almost double.`,
+
+  'cards.sentimento.text3':
+    `APPROVAL FOLLOWS THE SAME PATTERN: 47.3% against 49.9% at Futura, 53% disapproval at Gerp, and administration rating at 35% excellent or good against 36% poor or terrible at CNT/MDA. Across seven readings in seven days, disapproval runs from 47% to 55%, a distance of 8pp between houses, and the balance runs from 1pp positive to 10pp negative. Rejection also ties within the margin: 47.1% for the runner-up and 45.9% for the leader, at Futura.`,
+
+  'cards.sentimento.direita':
+    `The day brought the best and the worst data point of the window for the runner-up, and the two came out together. Gerp puts him ahead in the runoff, with 45% against 43%, and it is the first national poll of the period to do so, with the release itself treating the 2pp difference as a statistical tie. On the same day CNT/MDA puts him nine points behind. In the first round he runs from 28.7% to 38% across today's three, and the 28.7% opened a new floor for the window. In the price he fell 0.30pp, to 26.95%, giving back what he had gained the day before.`,
+
+  'cards.sentimento.esquerda':
+    `The leader remains ahead or tied in the seven national polls of the window, and today's CNT/MDA brings his best reading of the period, with 13.7pp of advantage in the first round. The counterweight is Gerp, the first national poll to put him behind in the runoff, and the government rating, which still carries a negative balance at every house of the day. In the price he was flat for the third session running, at 63.50%, and the gap returned to the Aug 9 value.`,
+
+  'cards.sentimento.terceiraVia':
+    `THE LARGEST MOVE IN THE WHOLE BOOK CAME FROM THE THIRD-PLACED NAME: he rose 0.75pp, to 8.40%, and came off the floor of his own series, where 84 of 88 days had a value equal to or above his on Aug 10 and now 72 of 89 do. In the polling Gerp gives him 5%, the second highest value of the window, behind only the 10% Palver measured online. The method effect remains the reading on him, and the caveat was declared by Palver itself. Caiado fell 0.10pp for the third session, to 1.05%, and Zema fell to 0.35%, below the 0.5% cut that separates price from noise.`,
+
+  'cards.sentimento.polymarket':
+    `Prices from the ${S}: Lula 63.50% (vol USD 8.21M cumulative), Flávio 26.95% (vol USD 8.12M), Renan Santos 8.40% (vol USD 9.43M), Caiado 1.05% (vol USD 5.63M), Zema 0.35% (vol USD 5.05M) and Haddad 0.05% (vol USD 7.01M). Total volume in the presidential book at USD 122.16M. In the Senate the PL marks 76.50% (vol USD 259 thousand), and in the first-round runner-up contract Flávio fell 1.50pp, to 80.50% (vol USD 245 thousand). THE CENTRAL CROSSING OF THE DAY IS ONE OF REGIME, NOT OF LEVEL: while three institutes opened eleven points of distance between themselves in the runoff, the largest move in the whole market was 0.75pp, and the leader's price did not move. The two instruments measured the same week, and one of them is far more uncertain than the other. The panel records the difference in regime without saying which one is right.`,
+
+  'cards.inss.text1':
+    `The case of fraud in association-fee deductions at the INSS remains an administrative liability, and none of the three national polls of Aug 11 published a specific breakdown on it in a closed source.`,
+
+  'cards.inss.text2':
+    `What fresh measurement exists is indirect and comes from the government rating, which dispersed like everything else: 47.3% approval against 49.9% disapproval at Futura, 53% disapproval at Gerp, and administration rating at 35% excellent or good against 36% poor or terrible at CNT/MDA.`,
+
+  'cards.inss.text3':
+    `The distinction the panel has kept from the start still holds: one thing is the effect on the rating of the administration, which is where administrative fraud usually shows up; another is the effect on voting intention, which still shows the president ahead or tied in the seven national polls of the window.`,
+
+  'cards.inss.text4':
+    `With no fresh judicial decision and no fresh figure on the case on Aug 11, the panel records an absence of measurement instead of repeating old data as if it were from today.`,
+
+  'cards.inss.impactoLula':
+    `Not isolable. In the seven national polls since Aug 5 he leads or ties the first round in all of them, between 38% and 44%, and none of them tests the INSS case as a variable.`,
+
+  'cards.inss.impactoGestao':
+    `The government rating carries a negative balance at every house on Aug 11, but the size varies: 2.6pp negative at Futura and a harsher reading at Gerp. The cause is not attributed here, because the rounds do not measure cause.`,
+
+  'cards.inss.conclusao':
+    `The case remains in the field of the administration's rating and not of voting intention, and the honest reading on Aug 11 is that there is no fresh data on it. What there is is a negative government rating at every house of the day, with sizes that vary considerably between them.`,
+
+  'cards.bancoMaster.text1':
+    `The Banco Master case returned to coverage on Aug 11 with three fresh facts, all of them from investigation and none from a judicial decision. The bank's liquidator widened the net around Daniel Vorcaro's assets in the United States.`,
+
+  'cards.bancoMaster.text2':
+    `The Federal Police pointed out that a consultancy acted to favour Master in a pension fund in Maceió, and the Credit Guarantee Fund stated that it is not a party to the deal under discussion at the Supreme Court, citing a lack of documents for the BRB rescue. In parallel, a tax haven wound up Vorcaro's holding company after a request from a crypto firm pursuing a debt.`,
+
+  'cards.bancoMaster.text3':
+    `On the electoral front, the runner-up stated on Aug 11 that he will attend the debates and that he owes no explanations about the case. None of the three national polls of the day tests the subject.`,
+
+  'cards.bancoMaster.conclusao':
+    `The case gained three fresh facts from investigation and none from a decision. The panel records the facts with source and date, and does not convert investigation into a change in risk, because there is no fresh figure that would support that conversion.`,
+
+  'cards.stf.analise':
+    `THE IMPEACHMENT CONTRACT ROSE 0.20pp, to 3.80% (vol USD 83 thousand), against the last confirmed value, which was 3.60% on Aug 9. With that cumulative volume, it remains the thinnest contract among those tracked, and the caveat about book size travels alongside the figure on purpose: a 0.20pp move there costs less money than any other on the panel, and this is the last place anyone should look for confirmation of a political thesis. ON THE FACTUAL SIDE, the day brought investigation and not decision. Banco Master's liquidator widened the net around Vorcaro's assets in the United States, the Federal Police pointed out a consultancy that acted to favour the bank in a pension fund in Maceió, and the Credit Guarantee Fund stated that it is not a party to the deal under discussion at the Supreme Court over the BRB rescue. Dino's decision ordering the Federal Police to investigate R$ 55.4 million in Pix amendments flagged by the TCU still stands. The panel records the facts without converting them into priced risk, because none of them is a judicial decision.`,
+})
