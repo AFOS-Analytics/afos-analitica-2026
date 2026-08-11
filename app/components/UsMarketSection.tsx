@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslation } from '../i18n/context'
 import { SectionTitle, Card } from './ui'
 import { extractCandidateName } from '../lib/utils'
+import type { AmplitudeFaixas } from '../api/market/faixas-amplitude/route'
 
 /**
  * Mercado das midterms dos EUA no painel.
@@ -52,8 +53,9 @@ const T = {
     volume: 'Volume',
     soma: 'soma das faixas',
     soForma: 'só a forma, sem número',
-    excessoNota: (s: string) => `As faixas somam ${s}. O excesso não está espalhado por igual, ele se concentra na cauda, então dividir tudo pelo mesmo fator não o remove. Fica a forma, onde o dinheiro se concentra, e não o nível de cada faixa.`,
-    faltaNota: (s: string) => `As faixas somam ${s}, abaixo de 100%. Aqui a causa não é margem da casa: é preço velho ou faixa sem preço no livro. Multiplicar para cima entregaria a massa que falta às demais, então fica só a forma.`,
+    amplitude24h: (a: string, b: string) => `(variou de ${a}% a ${b}% em 24h)`,
+    excessoNota: (s: string) => `As faixas somam ${s}, e deveriam somar 100%. O que passa disso não está espalhado por igual: acumula nas faixas de resultado improvável, que costumam negociar caras. Por isso dividir todas pelo mesmo número não conserta. O quadro mostra onde o dinheiro está, não a chance de cada faixa.`,
+    faltaNota: (s: string) => `As faixas somam ${s}, e deveriam somar 100%. Faltando, a causa costuma ser preço parado ou faixa que o livro não está cotando. Aumentar todas para fechar a conta daria às outras a parte que está faltando. O quadro mostra onde o dinheiro está, não a chance de cada faixa.`,
     porQue: 'Por que não é probabilidade',
     porQueTexto: (s: string) =>
       `Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Aqui somam ${s}. Este quadro mostra a FORMA, ou seja, o tamanho relativo de cada faixa, e não mostra número, porque o nível não vale. O AFOS já dividiu cada faixa pela soma e parou de fazer isso: dividir supõe que o sobrepreço está espalhado por igual, e a medição mostrou que ele se concentra na cauda.`,
@@ -72,6 +74,11 @@ const T = {
     limitacao:
       'O volume é do Polymarket, não do mercado americano inteiro. É uma casa entre outras, e o número aqui é a probabilidade que ela precifica, não uma previsão do AFOS. Mercado de faixa fina se move com pouco dinheiro.',
     semDado: 'Dado de mercado não disponível nesta captura.',
+    verPorque: 'por que este quadro não mostra número',
+    metodoExemploTitulo: 'Como sabemos que o excesso está na ponta',
+    metodoExemploCab: ['Soma das faixas', 'Fatia do meio (50 e 51 cadeiras)'],
+    metodoExemploNota: 'Se o exagero fosse parelho, a fatia do meio não mudaria quando a soma subisse, porque dividir tudo pelo mesmo número preserva a proporção. Mas quando o livro inflou para 135,2%, o meio encolheu para 24,1%. O ar que entrou não veio do meio, veio das bordas. São três leituras, então isto é indício e não prova.',
+    metodoExemploFonte: 'Medido no livro de cadeiras do Senado em 09 e 10/Ago/2026.',
     verMetodo: 'Como o portão funciona',
     atualizado: (d: string) => `Leitura de ${d}`,
     degradado: 'Leitura parcial: parte dos mercados não respondeu nesta captura.',
@@ -92,8 +99,9 @@ const T = {
     volume: 'Volume',
     soma: 'bands total',
     soForma: 'shape only, no numbers',
-    excessoNota: (s: string) => `The bands total ${s}. The excess is not spread evenly, it concentrates in the tail, so dividing everything by the same factor does not remove it. What remains is the shape, where the money sits, not the level of each band.`,
-    faltaNota: (s: string) => `The bands total ${s}, below 100%. Here the cause is not the house margin: it is stale prices or a band with no price in the book. Scaling everything up would hand the missing mass to the others, so only the shape remains.`,
+    amplitude24h: (a: string, b: string) => `(ranged from ${a}% to ${b}% in 24h)`,
+    excessoNota: (s: string) => `The bands total ${s}, and should total 100%. What goes beyond that is not spread evenly: it piles up on the unlikely bands, which tend to trade rich. So dividing them all by the same number does not fix it. The card shows where the money sits, not the chance of each band.`,
+    faltaNota: (s: string) => `The bands total ${s}, and should total 100%. When they fall short, the cause is usually stale prices or a band the book is not quoting. Scaling them all up to close the gap would hand the missing part to the others. The card shows where the money sits, not the chance of each band.`,
     porQue: 'Why this is not probability',
     porQueTexto: (s: string) =>
       `Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. Here they add to ${s}. This card shows the SHAPE, that is, the relative size of each band, and shows no number, because the level does not hold. AFOS used to divide each band by the total and stopped: dividing assumes the overpricing is spread evenly, and measurement showed it concentrates in the tail.`,
@@ -112,6 +120,11 @@ const T = {
     limitacao:
       'The volume is Polymarket’s, not the entire American market. It is one venue among others, and the number here is the probability it prices, not an AFOS forecast. Thin band markets move on little money.',
     semDado: 'Market data unavailable in this capture.',
+    verPorque: 'why this card shows no number',
+    metodoExemploTitulo: 'How we know the excess sits at the edges',
+    metodoExemploCab: ['Bands total', 'Middle share (50 and 51 seats)'],
+    metodoExemploNota: 'If the overpricing were even, the middle share would not change when the total rose, because dividing everything by the same number preserves the proportion. But when the book inflated to 135.2%, the middle shrank to 24.1%. The air that came in did not come from the middle, it came from the edges. Three readings, so this is an indication and not proof.',
+    metodoExemploFonte: 'Measured on the Senate seats book on Aug 09 and 10, 2026.',
     verMetodo: 'How the gate works',
     atualizado: (d: string) => `Read at ${d}`,
     degradado: 'Partial read: some markets did not respond in this capture.',
@@ -132,8 +145,9 @@ const T = {
     volume: 'Volumen',
     soma: 'suma de las bandas',
     soForma: 'solo la forma, sin números',
-    excessoNota: (s: string) => `Las bandas suman ${s}. El exceso no está repartido por igual, se concentra en la cola, así que dividir todo por el mismo factor no lo remueve. Queda la forma, donde está el dinero, y no el nivel de cada banda.`,
-    faltaNota: (s: string) => `Las bandas suman ${s}, por debajo de 100%. Aquí la causa no es el margen de la casa: es precio viejo o una banda sin precio en el libro. Multiplicar hacia arriba entregaría la masa que falta a las demás, así que queda solo la forma.`,
+    amplitude24h: (a: string, b: string) => `(varió de ${a}% a ${b}% en 24h)`,
+    excessoNota: (s: string) => `Las bandas suman ${s}, y deberían sumar 100%. Lo que pasa de ahí no está repartido por igual: se acumula en las bandas de resultado improbable, que suelen cotizar caras. Por eso dividirlas todas por el mismo número no arregla. El cuadro muestra dónde está el dinero, no la chance de cada banda.`,
+    faltaNota: (s: string) => `Las bandas suman ${s}, y deberían sumar 100%. Cuando falta, la causa suele ser precio detenido o una banda que el libro no está cotizando. Subirlas todas para cerrar la cuenta daría a las otras la parte que falta. El cuadro muestra dónde está el dinero, no la chance de cada banda.`,
     porQue: 'Por qué no es probabilidad',
     porQueTexto: (s: string) =>
       `Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Aquí suman ${s}. Este cuadro muestra la FORMA, es decir, el tamaño relativo de cada banda, y no muestra número, porque el nivel no vale. AFOS dividía cada banda por la suma y dejó de hacerlo: dividir supone que el sobreprecio está repartido por igual, y la medición mostró que se concentra en la cola.`,
@@ -152,6 +166,11 @@ const T = {
     limitacao:
       'El volumen es de Polymarket, no del mercado estadounidense entero. Es una casa entre otras, y el número aquí es la probabilidad que ella fija, no un pronóstico del AFOS. Un mercado de banda fina se mueve con poco dinero.',
     semDado: 'Dato de mercado no disponible en esta captura.',
+    verPorque: 'por qué este cuadro no muestra número',
+    metodoExemploTitulo: 'Cómo sabemos que el exceso está en los extremos',
+    metodoExemploCab: ['Suma de las bandas', 'Participación del medio (50 y 51 escaños)'],
+    metodoExemploNota: 'Si el sobreprecio fuera parejo, la participación del medio no cambiaría cuando la suma subiera, porque dividir todo por el mismo número preserva la proporción. Pero cuando el libro se infló a 135,2%, el medio se encogió a 24,1%. El aire que entró no vino del medio, vino de los bordes. Son tres lecturas, así que esto es indicio y no prueba.',
+    metodoExemploFonte: 'Medido en el libro de escaños del Senado el 09 y 10/Ago/2026.',
     verMetodo: 'Cómo funciona la compuerta',
     atualizado: (d: string) => `Lectura del ${d}`,
     degradado: 'Lectura parcial: parte de los mercados no respondió en esta captura.',
@@ -345,8 +364,8 @@ function BarraFaixa({ nome, pct, max, locale, mostrarValor = true }: { nome: str
  * separada de `excessoNota`.
  */
 function Distribuicao({
-  titulo, ev, locale, t, particao = true,
-}: { titulo: string; ev: PolyEvento | null; locale: string; t: (typeof T)['pt-BR']; particao?: boolean }) {
+  titulo, ev, locale, t, particao = true, amplitude, onVerPorque,
+}: { titulo: string; ev: PolyEvento | null; locale: string; t: (typeof T)['pt-BR']; particao?: boolean; amplitude?: AmplitudeFaixas; onVerPorque?: () => void }) {
   const fs = faixas(ev)
   if (!fs.length) return null
 
@@ -363,13 +382,36 @@ function Distribuicao({
   const exibidas = fs
   const mostrarBarras = passou || soForma
 
+  // A faixa das 24h SEMPRE contém a soma de agora. Ver o comentário no cabeçalho.
+  const faixa24h = (() => {
+    if (!amplitude || amplitude.n < 1) return null
+    const min = Math.min(amplitude.min, soma)
+    const max = Math.max(amplitude.max, soma)
+    // Faixa degenerada não informa nada e só polui o cabeçalho.
+    return max - min >= 0.05 ? { min, max } : null
+  })()
+
   return (
-    <Card className={`mb-3 ${linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
+    <>
+      <Card className={`mb-3 ${linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
       <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
         <TituloQuadro texto={titulo} href={linkDo(ev)} abrirEm={t.abrirEm} />
         <span className="text-[11px] text-gray-500">
           {t.volume}: ${vol >= 1e6 ? `${fmt(vol / 1e6, locale)}M` : `${Math.round(vol / 1000)}k`} ·{' '}
           {t.soma} {somaTexto}
+          {/* 🔴 A AMPLITUDE DAS ÚLTIMAS 24h, publicada ao lado da soma. O portão
+              decide por UMA leitura, e a soma oscila: no book do Senado ele virou
+              seis vezes em dez capturas, três delas por menos de 1,5 ponto. Em vez
+              de esconder isso, o painel mostra.
+
+              ⚠️ A LEITURA DE AGORA ENTRA NA FAIXA. A série vem do banco, que só
+              tem o que o cron gravou, e a leitura ao vivo é mais nova que a
+              última gravação. Sem isto o quadro chegava a exibir soma de 97,4%
+              ao lado de "variou de 102,3% a 164,4%", ou seja, o número mostrado
+              ficava FORA da própria faixa. Medido no preview de 10/Ago. */}
+          {faixa24h && (
+            <> <span className="text-gray-400">{t.amplitude24h(fmt(faixa24h.min, locale, 1), fmt(faixa24h.max, locale, 1))}</span></>
+          )}
           {soForma && <> · <span className="font-semibold text-gray-600">{t.soForma}</span></>}
         </span>
       </div>
@@ -402,15 +444,53 @@ function Distribuicao({
           <span className="font-semibold text-gray-700">{t.naoParticao}.</span> {t.naoParticaoCurto(somaTexto)}
         </p>
       )}
-    </Card>
+      </Card>
+
+      {/* 🔴 O LINK FICA FORA DO CARD, e isto não é detalhe de layout.
+          Regra do André de 06/Ago: o card inteiro é área de clique para abrir a
+          aposta no Polymarket, via `after:inset-0` no título. Um botão DENTRO
+          seria um segundo alvo competindo com o primeiro e roubaria o clique.
+          Aqui ele vive abaixo, fora da caixa clicável, e some junto com a nota.
+
+          📌 Ele NÃO abre um texto próprio: chama o bloco "Como o portão
+          funciona", que já existe no fim da seção. Uma explicação só, alcançável
+          de onde ela é necessária. Três cópias do mesmo texto é como elas
+          divergem, e foi o que aconteceu hoje quando o método mudou e os textos
+          publicados continuaram descrevendo o método antigo. */}
+      {(soForma || !mostrarBarras) && onVerPorque && (
+        <div className="-mt-2 mb-3 pl-1">
+          <button
+            type="button"
+            onClick={onVerPorque}
+            className="text-[11px] text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-primary hover:decoration-primary"
+          >
+            {t.verPorque}
+          </button>
+        </div>
+      )}
+    </>
   )
 }
 
-export function UsMarketSection({ data, loading }: { data: UsMarketData | null; loading?: boolean }) {
+export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketData | null; loading?: boolean; amplitudes?: Record<string, AmplitudeFaixas> }) {
+  /** Amplitude da soma nas ultimas 24h, por slug. Ausente = quadro como antes. */
+  const amp = (ev: PolyEvento | null) => (ev?.slug && amplitudes ? amplitudes[ev.slug] : undefined)
   const { locale } = useTranslation()
   const k = (locale === 'en' || locale === 'es' ? locale : 'pt-BR') as keyof typeof T
   const t = T[k]
   const [verMetodo, setVerMetodo] = useState(false)
+
+  /**
+   * Abre o bloco do metodo e rola ate ele. E o destino UNICO do link discreto
+   * que aparece abaixo de cada quadro que reprova: em vez de um texto proprio
+   * por quadro, todos apontam para a mesma explicacao.
+   */
+  const abrirMetodo = () => {
+    setVerMetodo(true)
+    requestAnimationFrame(() => {
+      document.getElementById('us-metodo-faixas')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
 
   if (!data || (!data.house && !data.senate)) {
     return (
@@ -475,16 +555,16 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
         Cadeiras do Senado → ressalva → Pesquisas. É a peça sem análogo no
         Brasil, e é a que responde "por quanto", não só "quem".
       */}
-      <Distribuicao titulo={t.cadeirasSenado} ev={data.senateSeats} locale={locale} t={t} />
+      <Distribuicao titulo={t.cadeirasSenado} ev={data.senateSeats} locale={locale} t={t} amplitude={amp(data.senateSeats)} onVerPorque={abrirMetodo} />
 
       <h3 className="mb-2 mt-4 text-sm font-bold text-dark">{t.distribuicoes}</h3>
-      <Distribuicao titulo={t.cadeirasCamara} ev={data.houseSeats} locale={locale} t={t} />
-      <Distribuicao titulo={t.governadores} ev={data.governors} locale={locale} t={t} />
-      <Distribuicao titulo={t.comparecimento} ev={data.turnout} locale={locale} t={t} />
+      <Distribuicao titulo={t.cadeirasCamara} ev={data.houseSeats} locale={locale} t={t} amplitude={amp(data.houseSeats)} onVerPorque={abrirMetodo} />
+      <Distribuicao titulo={t.governadores} ev={data.governors} locale={locale} t={t} amplitude={amp(data.governors)} onVerPorque={abrirMetodo} />
+      <Distribuicao titulo={t.comparecimento} ev={data.turnout} locale={locale} t={t} amplitude={amp(data.turnout)} onVerPorque={abrirMetodo} />
       {/* 🔴 O ÚNICO que NÃO é partição: tem faixa "qualquer outro resultado" e
           as demais são cumulativas, que se sobrepõem. Normalizar aqui seria
           inventar significado, então ele segue fora da tela, com motivo próprio. */}
-      <Distribuicao titulo={t.margem} ev={data.popularVoteMargin} locale={locale} t={t} particao={false} />
+      <Distribuicao titulo={t.margem} ev={data.popularVoteMargin} locale={locale} t={t} particao={false} amplitude={amp(data.popularVoteMargin)} onVerPorque={abrirMetodo} />
 
       {prazo && (
         <Card className={`mb-3 ${linkDo(data.asScheduled) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}`}>
@@ -513,10 +593,40 @@ export function UsMarketSection({ data, loading }: { data: UsMarketData | null; 
             {/* A explicação longa das faixas vive AQUI, uma vez. Antes ela era
                 repetida palavra por palavra dentro de cada quadro que reprovava,
                 e dois blocos idênticos de sete linhas dominavam a seção. */}
-            <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-gray-600">
+            <p id="us-metodo-faixas" className="mt-3 scroll-mt-24 text-[11px] font-bold uppercase tracking-wider text-gray-600">
               {t.metodoFaixasTitulo}
             </p>
             <p className="mt-1 text-xs leading-snug text-gray-700">{t.metodoFaixas}</p>
+
+            {/* 🔬 A MEDIÇÃO, e não só a afirmação. Esta tabela é o que convence:
+                se o exagero fosse parelho, a fatia do meio seria invariante à
+                soma bruta. Ela anda junto, então o excesso está nas pontas.
+
+                ⚠️ O exemplo é DATADO de propósito. Ele é do livro de cadeiras do
+                Senado em 09 e 10/Ago/2026, e vai envelhecer. Exemplo medido com
+                data vale mais que explicação abstrata, e é o que a casa faz em
+                todo lugar; o que não pode é passar por atemporal. */}
+            <p className="mt-3 text-[11px] font-bold uppercase tracking-wider text-gray-600">
+              {t.metodoExemploTitulo}
+            </p>
+            <table className="mt-1.5 w-full max-w-md text-xs tabular-nums">
+              <thead>
+                <tr className="text-left text-gray-500">
+                  <th className="py-1 pr-4 font-medium">{t.metodoExemploCab[0]}</th>
+                  <th className="py-1 font-medium">{t.metodoExemploCab[1]}</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-700">
+                {[['106,1%', '27,8%'], ['135,2%', '24,1%'], ['109,6%', '27,4%']].map(([a, b]) => (
+                  <tr key={a} className="border-t border-gray-100">
+                    <td className="py-1 pr-4">{a}</td>
+                    <td className="py-1">{b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="mt-2 text-xs leading-snug text-gray-700">{t.metodoExemploNota}</p>
+            <p className="mt-1 text-[11px] text-gray-500">{t.metodoExemploFonte}</p>
           </div>
         )}
       </Card>

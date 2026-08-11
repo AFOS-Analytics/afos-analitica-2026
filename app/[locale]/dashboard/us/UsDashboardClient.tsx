@@ -74,6 +74,16 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
   const [marketData, setMarketData] = useState<UsMarketData | null>(null);
   const [marketLoading, setMarketLoading] = useState(true);
 
+  /**
+   * Amplitude da soma das faixas nas últimas 24h, por slug de mercado.
+   *
+   * 🔴 Busca SEPARADA e DEPOIS do mercado, de propósito. Ela depende dos slugs
+   * que só existem depois da primeira resposta, e é informação ADICIONAL: se
+   * falhar, o quadro fica exatamente como era. Por isso nada aqui toca
+   * `setMarketLoading`, e o erro é engolido em silêncio deliberado.
+   */
+  const [amplitudes, setAmplitudes] = useState<Record<string, { min: number; max: number; n: number }>>({});
+
   useEffect(() => {
     let vivo = true;
     fetch('/api/polymarket?country=us')
@@ -83,6 +93,23 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
       .finally(() => { if (vivo) setMarketLoading(false); });
     return () => { vivo = false; };
   }, []);
+
+  useEffect(() => {
+    if (!marketData) return;
+    const slugs = [
+      marketData.senateSeats, marketData.houseSeats, marketData.governors,
+      marketData.turnout, marketData.popularVoteMargin,
+    ].map((e) => e?.slug).filter(Boolean) as string[];
+    if (!slugs.length) return;
+    let vivo = true;
+    fetch(`/api/market/faixas-amplitude?slugs=${encodeURIComponent(slugs.join(','))}`)
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((d: Record<string, { min: number; max: number; n: number }>) => {
+        if (vivo && d && typeof d === 'object') setAmplitudes(d);
+      })
+      .catch(() => { /* silêncio deliberado: sem amplitude o quadro segue igual */ });
+    return () => { vivo = false; };
+  }, [marketData]);
 
   /**
    * Dado do grafo do cruzamento.
@@ -250,7 +277,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
           Falta: grafo, contexto estrutural e imprensa.
         */}
         <div id="sec-mercado" className="mb-8 scroll-mt-20">
-          <UsMarketSection data={marketData} loading={marketLoading} />
+          <UsMarketSection data={marketData} loading={marketLoading} amplitudes={amplitudes} />
         </div>
         <div id="sec-pesquisas" className="scroll-mt-20">
           <UsPollsSection data={pollsData} />
