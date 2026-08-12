@@ -1,0 +1,74 @@
+{
+  "date": "2026-08-12",
+  "updatedAt": "12/08/2026, 16:41",
+  "captura": {
+    "leituraPublicada": "2026-08-12T19:41:47Z",
+    "leituraPublicadaBRT": "12/Ago 16:41 BRT",
+    "trava": "APROVADO na segunda tentativa",
+    "primeiraTentativa": "BLOQUEADO em um unico motivo: stf discordou em 0,20pp exatos (3,55% -> 3,75%). O presidencial e os books de colocacao passaram",
+    "metodo": "duas leituras independentes com 8 min de intervalo, tolerancia 0,20pp"
+  },
+  "gateRebaseline": {
+    "disparou": false,
+    "refetch": "2026-08-12T20:09:57Z (17:09 BRT)",
+    "deltas": "Lula 0,00pp | Flavio 0,00pp | gap 0,00pp | Renan -0,10pp | volume identico",
+    "motivo": "maior movimento de 0,10pp contra corte de 0,50pp; nenhum recorde rompido; enquadramento inalterado"
+  },
+  "factCheckGate": {
+    "eventosAvaliados": 4,
+    "incorporados": [
+      {
+        "evento": "STF manda sete tribunais devolverem penduricalhos",
+        "verificacao1": "novidade: 'penduricalhos' e 'Zanin' com ZERO mencoes em 7 dailies",
+        "verificacao2": "Estadao/Fausto Macedo, 12/Ago, tipo=decisao judicial",
+        "segundaFonte": "Congresso em Foco, O Tempo, CartaCapital, Brasil 247, Revista Oeste, Diario do Grande ABC, mais g1, O Globo e Valor. Muitos grupos independentes",
+        "detalhes": "assinada por Zanin, Gilmar, Dino e Moraes; alcanca GO, MA, PR, RJ, RN, RO e o DF; teto de 70% do subsidio (R$ 46,3 mil); presidentes tem 72 horas para identificar beneficiados",
+        "decisao": "incorporar como ancora"
+      },
+      {
+        "evento": "Flavio sobe 3,50pp no contrato de 2o lugar do 1o turno",
+        "verificacao1": "novidade: 'segundo lugar' sem mencoes em 7 dailies",
+        "verificacao2": "leitura confirmada as 16:41 por duas capturas; o re-fetch das 17:09 devolveu o mesmo valor",
+        "decisao": "incorporar, SEM causa atribuida"
+      },
+      {
+        "evento": "Vorcaro amplia defesa para tentar uma terceira delacao",
+        "verificacao1": "continuidade: 'Vorcaro' com 6 mencoes, inclusive 11/Ago",
+        "verificacao2": "O Globo, 12/Ago 12:58",
+        "segundaFonte": "NAO encontrada fora do grupo Globo",
+        "decisao": "incorporar como secundario, com atribuicao nominal, nunca como ancora. Codebook: proposta EM CURSO, nao acordo celebrado"
+      }
+    ],
+    "recusados": [
+      {
+        "evento": "Nova pesquisa Quaest",
+        "motivo": "duas manchetes de 12/Ago anunciam, mas o proprio g1 informa que ela sai na SEXTA (14). E recobranca",
+        "decisao": "NAO incorporar como pesquisa nova; entra so no calendario"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "terceira proposta de delacao do Vorcaro (so O Globo) e gravacao do Banco Santos (so Estadao). As duas atribuidas nominalmente no texto e nenhuma e ancora",
+    "numericalErrors": "reconcile-claims 2026-08-12 devolveu [OK]: todos os claims batem com o JSON dentro de 0,05pp",
+    "fontesInventadas": "12 URLs, todas do cache ou da busca; conferidas Congresso em Foco, O Tempo e a do g1 sobre a Quaest",
+    "quotesLiterais": "nenhuma aspa literal; 'pagamentos exorbitantes' aparece como termo da decisao, nao como fala atribuida",
+    "causacaoEspuria": "o salto de 3,50pp fica explicitamente sem causa, e o texto declara isso",
+    "verbosCriticos": "'determinaram devolucao' e decisao colegiada com os quatro ministros nomeados; a delacao fica como proposta em curso",
+    "decisao": "prosseguir"
+  },
+  "metricas": {
+    "palavrasCorpo": 880,
+    "tetoPalavras": 900,
+    "numerosComUnidade": { "pt": 63, "en": 63, "es": 63 },
+    "gateNumerico": "zerado",
+    "cincoChecagens": "5/5 limpas",
+    "R8": "limpo, zero ocorrencia de ontem/hoje/amanha no corpo",
+    "validador": "OK nos tres idiomas, 1 warning de low-link-density"
+  },
+  "pendenciasFechadas": [
+    "O registro da Futura no TSE e o BR-08109/2026, confirmado em fonte. A pesquisa e executada pela Futura Inteligencia e contratada pela 100% Cidades, e por isso o protocolo sai no nome da contratante. A duvida havia sido DECLARADA na daily de 11/Ago"
+  ],
+  "pendencias": [
+    "Wayback nao rodou: bloqueio de host valido ate ~14/Ago e hoje e 12. Fila em dez dias"
+  ]
+}
