@@ -66,7 +66,14 @@ export async function POST(request: Request) {
     const rawLocale = request.headers.get('accept-language')?.split(',')[0]?.split(';')[0]?.trim()
     const locale = rawLocale && VALID_LOCALES.includes(rawLocale) ? rawLocale : 'pt-BR'
 
-    const result = await createSubscriber(email, captureSource || 'popup', { ip, userAgent, locale })
+    // A origem vem do COOKIE que o middleware gravou, nunca do corpo do formulário:
+    // o cliente não deve poder declarar de onde veio, senão a métrica é opinião dele.
+    // ⚠️ Aqui o handler recebe `Request`, não `NextRequest`, então não existe
+    // `.cookies`: ler do cabeçalho é o caminho, e o valor já vem sanitizado do middleware.
+    const campaign =
+      request.headers.get('cookie')?.match(/(?:^|;\s*)afos_origin=([a-z0-9_-]{1,32})/)?.[1] || undefined
+
+    const result = await createSubscriber(email, captureSource || 'popup', { ip, userAgent, locale, campaign })
 
     if (!result.success) {
       return NextResponse.json(

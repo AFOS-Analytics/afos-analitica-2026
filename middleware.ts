@@ -19,6 +19,37 @@ function ensureVisitorCookie(request: NextRequest, response: NextResponse): Next
   return response;
 }
 
+const ORIGIN_COOKIE_NAME = 'afos_origin';
+const ORIGIN_COOKIE_MAX_AGE = 90 * 24 * 60 * 60;
+
+/**
+ * Guarda a ORIGEM do tráfego (?from= ou ?utm_source=) num cookie, para que ela
+ * sobreviva ao redirecionamento de idioma e à navegação até o cadastro.
+ *
+ * PRIMEIRO TOQUE VENCE: se o cookie já existe, não sobrescreve. Quem chegou pelo
+ * LinkedIn e voltou depois por busca orgânica continua contando como LinkedIn,
+ * que é a pergunta que interessa ("de onde essa pessoa veio a primeira vez").
+ *
+ * ⚠️ O valor é sanitizado antes de guardar: ele vai parar no banco, em `Lead.campaign`,
+ * e vem inteiro da URL, ou seja, de fora.
+ */
+function ensureOriginCookie(request: NextRequest, response: NextResponse): NextResponse {
+  if (request.cookies.get(ORIGIN_COOKIE_NAME)) return response;
+  const raw =
+    request.nextUrl.searchParams.get('from') || request.nextUrl.searchParams.get('utm_source');
+  if (!raw) return response;
+  const valor = raw.toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 32);
+  if (!valor) return response;
+  response.cookies.set(ORIGIN_COOKIE_NAME, valor, {
+    maxAge: ORIGIN_COOKIE_MAX_AGE,
+    path: '/',
+    sameSite: 'lax',
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+  });
+  return response;
+}
+
 const STRATEGIC_DOCS = new Set([
   '/pipeline-launch-opensource.html',
   '/posicionamento-estrategico-afos.html',
@@ -120,7 +151,11 @@ export async function middleware(request: NextRequest) {
   // leaving LLM crawlers and IM clients that don't follow redirects with empty
   // OG. See app/page.tsx for the redirect logic.
   if (pathname === '/') {
-    return ensureVisitorCookie(request, NextResponse.next());
+    // ⚠️ A RAIZ É ONDE O TRÁFEGO DE FORA CAI, incluindo a pílula do LinkedIn. Ela sai
+    // daqui antes de qualquer redirecionamento, então a origem tem de ser gravada
+    // AQUI: o `app/page.tsx` despacha para /pt-BR ou /en sem carregar a query, e sem
+    // este cookie o ?from=li morre em silêncio. O cookie é o transporte, não a URL.
+    return ensureOriginCookie(request, ensureVisitorCookie(request, NextResponse.next()));
   }
 
   if (shouldSkip(pathname)) {
@@ -148,7 +183,13 @@ export async function middleware(request: NextRequest) {
     const normalized = normalizeLocale(firstSegment);
     if (normalized) {
       segments[0] = normalized;
-      return NextResponse.redirect(new URL('/' + segments.join('/'), request.url));
+      // ⚠️ `search` explícito: `new URL(path, base)` DESCARTA a query, e sem isto todo
+      // parâmetro morre no redirecionamento de idioma (medido em 11/Ago/2026, com o
+      // ?from=li da pílula do LinkedIn sumindo em silêncio).
+      return ensureOriginCookie(
+        request,
+        NextResponse.redirect(new URL('/' + segments.join('/') + request.nextUrl.search, request.url))
+      );
     }
   } else {
     // Set Content-Language header based on locale + propagate locale via x-pathname-locale.
@@ -161,12 +202,15 @@ export async function middleware(request: NextRequest) {
     const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.headers.set('Content-Language', firstSegment);
     response.headers.set('x-pathname-locale', firstSegment);
-    return ensureVisitorCookie(request, response);
+    return ensureOriginCookie(request, ensureVisitorCookie(request, response));
   }
 
   const cookieLocale = request.cookies.get(COOKIE_NAME)?.value;
   if (cookieLocale && isValidLocale(cookieLocale)) {
-    return NextResponse.redirect(new URL(`/${cookieLocale}${pathname}`, request.url));
+    return ensureOriginCookie(
+      request,
+      NextResponse.redirect(new URL(`/${cookieLocale}${pathname}${request.nextUrl.search}`, request.url))
+    );
   }
 
   const acceptLang = request.headers.get('accept-language') || '';
@@ -178,7 +222,10 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.redirect(new URL(`/${detectedLocale}${pathname}`, request.url));
+  return ensureOriginCookie(
+    request,
+    NextResponse.redirect(new URL(`/${detectedLocale}${pathname}${request.nextUrl.search}`, request.url))
+  );
 }
 
 export const config = {

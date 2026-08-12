@@ -31,7 +31,7 @@ export async function subscriberExists(email: string): Promise<boolean> {
 export async function createSubscriber(
   email: string,
   source: string = 'popup',
-  meta?: { ip?: string; userAgent?: string; locale?: string }
+  meta?: { ip?: string; userAgent?: string; locale?: string; campaign?: string }
 ): Promise<{ success: boolean; isNew: boolean; leadId?: string; unsubscribeToken?: string; error?: string }> {
   const normalized = email.toLowerCase().trim()
 
@@ -54,6 +54,11 @@ export async function createSubscriber(
       create: {
         email: normalized,
         captureSource: source,
+        // `captureSource` é a SUPERFÍCIE do site onde a pessoa assinou (popup, gate,
+        // daily). `campaign` é de ONDE ela veio (li, x, newsletter). São perguntas
+        // diferentes e misturar as duas apagaria uma delas.
+        // Só no `create`: origem é de PRIMEIRO toque e não se reescreve depois.
+        campaign: meta?.campaign,
         locale: meta?.locale,
         status: 'active',
         unsubscribeToken: newToken,
