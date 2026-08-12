@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-11",
+  "lastUpdate": "2026-08-12",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1366,62 +1366,62 @@
     "lastUpdate": "2026-08-11"
   },
   "polymarketComparison": {
-    "note": "OS PREÇOS DESTA SEÇÃO SÃO DA LEITURA CONFIRMADA DE 11/AGO, 18:22 BRT, confirmados por duas leituras independentes tomadas com oito minutos de intervalo. O DIA TEVE TRÊS PESQUISAS NACIONAIS E ELAS DISCORDAM ENTRE SI MAIS DO QUE EM QUALQUER OUTRO DIA DA JANELA. No returno, a CNT/MDA dá 48% x 39% para o líder, a Futura dá 46,5% x 44%, e a Gerp dá 45% x 43% PARA O SEGUNDO COLOCADO. São onze pontos de distância entre a leitura mais favorável e a mais desfavorável, sobre a mesma pergunta, no mesmo dia, e é a primeira vez na janela que uma nacional põe o adversário à frente no returno. No 1º turno a distância é de 9,3pp, entre os 28,7% da CNT/MDA e os 38% da Gerp. ⭐ O CRUZAMENTO CENTRAL É DE REGIME, NÃO DE NÍVEL: enquanto a urna abria essa distância, O MERCADO FECHOU O DIA ONDE COMEÇOU. O líder ficou parado pelo quarto pregão, o segundo colocado voltou a 27,25% depois de marcar 26,95% às 16:27, e o gap fechou em +36,25pp, idêntico ao de 10/Ago. O terceiro colocado foi o único a oscilar, e também voltou. Os dois instrumentos mediram a mesma semana, e um deles está muito mais incerto que o outro. O painel registra a diferença de regime sem dizer qual instrumento está certo, porque não sabe, e porque dizer seria trocar medição por opinião.",
-    "sources": "Preços do Polymarket via proxy AFOS, captura confirmada por duas leituras independentes tomadas com oito minutos de intervalo, a mais recente às 18:22 BRT de 11/Ago (scripts/capture-guard.ts). Houve uma leitura confirmada anterior no mesmo dia, às 16:27 BRT, e as diferenças entre as duas estão registradas no texto em vez de descartadas. Pesquisas de 11/Ago: CNT/MDA BR-06935/2026 (n=2.002, presencial, campo 05 a 08/Ago), Gerp BR-08045/2026 (n=2.400, telefônica, campo 06 a 10/Ago) e Futura Inteligência (n=2.000, telefônica, campo 03 a 07/Ago, registro não confirmado em fonte primária). Seguem em vigor a Palver BR-06596/2026 e a BTG/Nexus BR-08428/2026, de 10/Ago, e a Genial/Quaest BR-06591/2026 e a Meio/Ideia BR-04579/2026, de 05/Ago. Próxima nacional na fila de divulgação: PoderData (n=2.400, BR-06868/2026) em 13/Ago.",
+    "note": "OS PREÇOS DESTA SEÇÃO SÃO DA LEITURA CONFIRMADA DE 12/AGO, 16:41 BRT, confirmados por duas leituras independentes tomadas com oito minutos de intervalo. ⚠️ O DIA NÃO TEVE PESQUISA NACIONAL NOVA, então a coluna da urna é a mesma de 11/Ago e a comparação mede só o lado do preço. ⭐ E O PREÇO SE MOVEU ONDE A ELEIÇÃO NÃO É DECIDIDA: no contrato de quem vence, o líder ficou parado pelo quarto dia seguido e o gap encolheu 0,40pp, para 35,85pp; no contrato de quem termina em 2º lugar no 1º turno, o segundo colocado subiu 3,50pp, para 84,00%, e essa foi a maior variação do dia em qualquer book acompanhado. São perguntas diferentes, uma sobre vencer e outra sobre posição, e o painel não as soma. O cruzamento mais interessante é o de Caiado, que CAIU no contrato de vitória e SUBIU no de terceiro lugar no mesmo dia.",
+    "sources": "Preços do Polymarket via proxy AFOS, captura confirmada por duas leituras independentes tomadas com oito minutos de intervalo, a mais recente às 16:41 BRT de 12/Ago (scripts/capture-guard.ts). ⚠️ NENHUMA PESQUISA NACIONAL NOVA EM 12/Ago: seguem em vigor a CNT/MDA BR-06935/2026, a Gerp BR-08045/2026 e a Futura Inteligência BR-08109/2026, todas de 11/Ago, mais a Palver BR-06596/2026 e a BTG/Nexus BR-08428/2026, de 10/Ago, e a Genial/Quaest BR-06591/2026 e a Meio/Ideia BR-04579/2026, de 05/Ago. ✅ O registro da Futura foi CONFIRMADO nesta rodada: a pesquisa é executada pela Futura Inteligência e contratada pela 100% Cidades, e por isso o protocolo do TSE sai no nome da contratante. Próximas nacionais na fila: PoderData (n=2.400, BR-06868/2026) em 13/Ago, Quaest (n=2.004, BR-06773/2026) em 14/Ago e Nexus (n=2.000, BR-03317/2026) em 17/Ago.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-44%",
         "polymarket": "63,50%",
         "tendenciaPesquisa": "TRÊS NACIONAIS EM 11/Ago, E ELAS DISCORDAM MAIS ENTRE SI DO QUE EM QUALQUER DIA DA JANELA. CNT/MDA (n=2.002, presencial, campo 05 a 08/Ago, BR-06935/2026): 42,4% no 1º turno e 48% x 39% no returno, 9pp de vantagem. Futura Inteligência (n=2.000, telefônica, campo 03 a 07/Ago): 38,8% e 46,5% x 44%, 2,5pp. Gerp (n=2.400, telefônica, campo 06 a 10/Ago, BR-08045/2026): EMPATE em 38% x 38% no 1º turno e DERROTA por 45% x 43% no returno. Somando as sete nacionais desde 05/Ago ele vai de 38% a 44%, e no returno o resultado vai de 9pp a favor a 2pp contra, ou seja, ONZE PONTOS de distância entre casas sobre a mesma pergunta. APROVAÇÃO com 47,3% contra 49,9% na Futura e 53% de desaprovação na Gerp, e a CNT/MDA traz a gestão em 35% de ótimo ou bom contra 36% de ruim ou péssimo. ⚠️ O percentual usado no grafo é o da Gerp, escolhida por ser a ÚNICA das três de hoje que publica o campo completo, com todos os nomes; MDA e Futura divulgaram só os dois primeiros.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 63,50% (vol USD 8,21M acumulado), PARADO pelo quarto pregão seguido. O gap sobre Flávio fechou em +36,25pp, exatamente o valor de 10/Ago: o dia inteiro de pesquisas não moveu a distância entre os dois. ⚠️ O CONTRASTE COM A URNA É O DADO DA RODADA: enquanto três institutos publicavam leituras separadas por 11 pontos no returno, o preço dele não se moveu em nenhuma das duas leituras confirmadas do dia. Na série de 90 dias o topo é 66,50%, de 01/Ago, e 17 dos 90 dias tiveram valor igual ou maior, então o nível não é extremo.",
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 63,50% (vol USD 8,22M acumulado), no MESMO VALOR PELO QUARTO DIA SEGUIDO, desde 09/Ago. O gap sobre Flávio caiu 0,40pp, para 35,85pp, e a queda veio inteira da ponta do adversário, porque o preço dele não se moveu. Na série de 90 dias, 17 dos 88 dias tiveram valor igual ou maior, com topo de 66,50% em 01/Ago e piso de 39,50% em 25/Mai. ⚠️ Sem pesquisa nacional nova em 12/Ago, esta linha compara preço com a urna de 11/Ago.",
         "odds": 63.5,
         "percentage": 38,
-        "lastUpdate": "2026-08-11",
+        "lastUpdate": "2026-08-12",
         "value": 63.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "27,25%",
+        "polymarket": "27,65%",
         "tendenciaPesquisa": "A AMPLITUDE DELE CRESCEU E AGORA É DE 11,3pp. Nas sete nacionais desde 05/Ago aparece com 28,7% na CNT/MDA de hoje, 30% na Genial/Quaest, 34,1% na Futura de hoje, 35% na Meio/Ideia, 35% na BTG/Nexus, 38% na Gerp de hoje e 40% na Palver. Os 28,7% ficam ABAIXO do piso que a janela tinha até ontem. NO RETURNO O DIA FOI AINDA MAIS EXTREMO: a Gerp o põe À FRENTE, com 45% contra 43%, e é a primeira nacional da janela a fazê-lo, enquanto a CNT/MDA o põe 9pp atrás no mesmo dia. A Futura fica no meio, com 44% contra 46,5%. REJEIÇÃO em 47,1% na Futura, empate técnico com os 45,9% do líder. ⚠️ O percentual do grafo é o da Gerp, mesma casa de referência do primeiro colocado.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 27,25% (vol USD 8,12M acumulado). O DIA FOI DE IDA E VOLTA E TERMINOU EM ZERO: marcou 26,95% na leitura confirmada das 16:27 e fechou em 27,25%, exatamente onde estava em 10/Ago. ⚠️ O DIA MOSTRA OS DOIS INSTRUMENTOS EM REGIMES DIFERENTES: na urna ele varia 11,3pp entre casas e chega a liderar um returno; no preço fechou sem variação. Na série de 90 dias, 25 tiveram valor igual ou maior, com topo de 34,40% em 13/Mai e piso de 22,00% em 03/Jul. No contrato de 2º lugar está em 80,50%, contra 82,00% em 10/Ago.",
-        "odds": 27.25,
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 27,65% (vol USD 8,13M acumulado). SUBIU 0,40pp no contrato presidencial, e a série de 90 dias tem 22 dos 88 dias com valor igual ou maior, topo de 33,20% em 02/Jun e piso de 22,00% em 02/Jul. ⭐ MAS O MOVIMENTO GRANDE DELE FOI EM OUTRO CONTRATO: no de 2º lugar do 1º turno subiu 3,50pp, de 80,50% para 84,00%, e essa foi a maior variação do dia em qualquer book acompanhado. Vencer e terminar em segundo são perguntas diferentes, e hoje o mercado mexeu na segunda.",
+        "odds": 27.65,
         "percentage": 38,
-        "lastUpdate": "2026-08-11",
-        "value": 27.25
+        "lastUpdate": "2026-08-12",
+        "value": 27.65
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-10%",
-        "polymarket": "7,75%",
+        "polymarket": "7,45%",
         "tendenciaPesquisa": "A GERP O PÕE EM 5% no 1º turno, o segundo maior valor que ele obteve na janela, atrás só dos 10% da Palver pela internet. Seguem valendo os 4% da Genial/Quaest presencial, os 4,7% da Meio/Ideia por telefone e os 4% da BTG/Nexus por telefone. A CNT/MDA e a Futura não publicaram o campo completo. O EFEITO DE MÉTODO SEGUE SENDO A LEITURA: o mesmo nome vai de 4% a 10% conforme o ambiente da entrevista, e a ressalva foi declarada pela própria Palver, que informou testar abordagens para reduzir o efeito em pesquisas online.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 7,75% (vol USD 9,44M acumulado). FOI O ÚNICO NOME A OSCILAR NO DIA, E A OSCILAÇÃO VOLTOU: 8,40% na leitura confirmada das 16:27 e 7,75% no fechamento, terminando 0,10pp acima de 10/Ago. ⚠️ As duas leituras foram confirmadas, cada uma por duas capturas, então nenhuma está errada e o painel registra o caminho em vez de esconder uma oscilação de 1,4pp atrás de um número só. Na série de 90 dias, 78 tiveram valor igual ou maior, com topo de 17,90% em 09/Jun e piso de 6,80% em 06/Ago. O preço segue ENTRE os dois métodos da urna, acima dos 4% a 5% do telefone e do presencial e abaixo dos 10% da internet. ⚠️ O painel NÃO atribui nenhuma das duas pontas do vaivém à discussão pública sobre método que a imprensa fez em 10 e 11/Ago, porque não mediu nada que ligue as duas coisas. Maior volume acumulado do book entre os nomes acima de 1%.",
-        "odds": 7.75,
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 7,45% (vol USD 9,48M acumulado). CAIU 0,30pp no presidencial e cedeu 1,50pp no contrato de 3º lugar do 1º turno, para 62,50%. Na série de 90 dias, mais de 80 dos 88 dias tiveram valor igual ou maior, com topo de 17,90% em 09/Jun e piso de 6,80% em 06/Ago. O preço segue ENTRE os dois métodos da urna, acima dos 4% a 5% do telefone e do presencial e abaixo dos 10% da internet, e ele mantém o maior volume acumulado do book entre os nomes acima de 1%.",
+        "odds": 7.45,
         "percentage": 5,
-        "lastUpdate": "2026-08-11",
-        "value": 7.75
+        "lastUpdate": "2026-08-12",
+        "value": 7.45
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5,7%",
-        "polymarket": "1,05%",
+        "polymarket": "0,95%",
         "tendenciaPesquisa": "A Gerp de hoje lhe dá 4% no 1º turno, mesmo valor da Genial/Quaest de 05/Ago, e a Meio/Ideia segue com 5,7%. A CNT/MDA e a Futura não publicaram o campo completo, e a Palver não o testou, então a base de comparação sobre ele encolheu nesta janela. Segue valendo o empate de Lula com ele no returno da BTG/Nexus de 10/Ago, que é o melhor resultado que um nome fora dos dois primeiros obteve no período.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 1,05% (vol USD 5,63M acumulado). CEDEU 0,10pp pelo terceiro pregão seguido, e a distância entre urna e preço segue sendo a maior do pelotão: de 4% a 5,7% de intenção declarada contra 1,05% de probabilidade precificada. O painel registra a distância sem subtrair uma grandeza da outra, porque a urna mede intenção agora e o contrato mede probabilidade de vencer no fim.",
-        "odds": 1.05,
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 0,95% (vol USD 5,66M acumulado). ⭐ O CRUZAMENTO DELE APONTA PARA DOIS LADOS NO MESMO DIA: caiu 0,10pp no contrato de vitória, ficando ABAIXO de 1% e a 0,05pp do piso da série, que é 0,90% de 07/Jul; e SUBIU 2,00pp no contrato de 3º lugar do 1º turno, para 31,50%. O mercado baixou a chance de ele vencer e levantou a de ele terminar em terceiro. A distância entre urna e preço segue sendo a maior do pelotão: de 4% a 5,7% de intenção declarada contra 0,95% de probabilidade precificada.",
+        "odds": 0.95,
         "percentage": 4,
-        "lastUpdate": "2026-08-11",
-        "value": 1.05
+        "lastUpdate": "2026-08-12",
+        "value": 0.95
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Nenhuma das três rodadas de 11/Ago o testa em cenário presidencial, e o mesmo valia para as de 10 e de 05/Ago. Ausência de teste é informação que o painel registra, em vez de repetir dado antigo como se fosse novo. Ele disputa a REELEIÇÃO no governo de São Paulo, oficializada pelo Republicanos em 01/Ago, e a cobertura de 11/Ago traz pesquisa estadual testando o cenário paulista depois do primeiro debate.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 0,05% (vol USD 13,90M acumulado). ⚠️ Segue sendo o MAIOR volume acumulado de todo o book presidencial, com o preço no piso. Volume alto com probabilidade no piso é convicção já precificada, não movimento, e variações nesta faixa têm valor informativo quase nulo.",
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 0,05% (vol USD 13,91M acumulado). ⚠️ Segue sendo o MAIOR volume acumulado de todo o book presidencial, com o preço no piso. Volume alto com probabilidade no piso é convicção já precificada, não movimento, e variações nesta faixa têm valor informativo quase nulo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-11",
+        "lastUpdate": "2026-08-12",
         "value": 0.05
       },
       {
@@ -1429,25 +1429,25 @@
         "pesquisaRange": "2-3%",
         "polymarket": "0,35%",
         "tendenciaPesquisa": "A Gerp de hoje lhe dá 2% no 1º turno, e a BTG/Nexus de 10/Ago tinha dado 3%. Seguem valendo os 2% da Genial/Quaest e os 2,6% da Meio/Ideia, de 05/Ago. Registrou candidatura no TSE em 06/Ago, declarando R$ 178,7 milhões de patrimônio, e o prazo de registro dos demais se encerra em 15/Ago.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 0,35% (vol USD 5,05M acumulado). CEDEU 0,10pp e afundou mais abaixo do corte de 0,5% que o painel usa para separar preço de ruído, faixa em que a leitura sobre ele segue suspensa. A janela de série que este painel consegue conferir começa em 13/Mai, então o pico dele de abril fica fora dela.",
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 0,35% (vol USD 5,07M acumulado), sem variação. Segue abaixo do corte de 0,5% que o painel usa para separar preço de ruído, faixa em que a leitura sobre ele permanece suspensa. No contrato de 3º lugar do 1º turno marca 4,00%.",
         "odds": 0.35,
         "percentage": 2,
-        "lastUpdate": "2026-08-11",
+        "lastUpdate": "2026-08-12",
         "value": 0.35
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,05%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "Nenhuma das três rodadas de 11/Ago o testa em cenário presidencial. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e qualquer cenário que o inclua é hipótese de pesquisa, não candidatura em curso. A cobertura de 11/Ago o traz em pesquisa estadual paulista, depois do primeiro debate na Band.",
-        "tendenciaPolymarket": "[leitura confirmada de 11/Ago, 18:22 BRT] Em 0,05% (vol USD 7,01M acumulado), de volta ao piso depois de um único dia acima dele. Variação nesta faixa não tem valor informativo.",
-        "odds": 0.05,
+        "tendenciaPolymarket": "[leitura confirmada de 12/Ago, 16:41 BRT] Em 0,15% (vol USD 7,06M acumulado), alta de 0,10pp que sai do piso. Variação nesta faixa não tem valor informativo, e a ressalva de fundo permanece: ele NÃO é candidato à Presidência e disputa o governo de São Paulo.",
+        "odds": 0.15,
         "percentage": 0,
-        "lastUpdate": "2026-08-11",
-        "value": 0.05
+        "lastUpdate": "2026-08-12",
+        "value": 0.15
       }
     ],
-    "updatedAt": "11/08/2026, 18:22 BRT",
+    "updatedAt": "12/08/2026, 16:41 BRT",
     "lastUpdate": "2026-08-11"
   }
 }
