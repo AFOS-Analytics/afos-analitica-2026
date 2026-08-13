@@ -43,9 +43,18 @@ function getRedis(): Redis | null {
  *
  * @param insertedPolls o que `persistPolls` acabou de gravar, com escopo já
  *   classificado na origem. NÃO reclassificar aqui.
+ * @param to destinatário. Padrão é a caixa de alertas, que é o que a ingestão
+ *   usa. ⚠️ EXISTE PARA O TESTE: em 13/Ago/2026 verifiquei o caminho positivo
+ *   mandando para a caixa real, e sujei o `alerts@` com um alerta falso que
+ *   depois não havia como apagar (o correio é Zoho, e o projeto só tem chave de
+ *   ENVIO). Teste que escreve na caixa de produção é teste que suja. Ver
+ *   `scripts/testa-alerta-pesquisa.ts`.
  * @returns quantas geraram aviso. Zero é resultado normal e frequente.
  */
-export async function alertNewNationalPolls(insertedPolls: InsertedPoll[]): Promise<number> {
+export async function alertNewNationalPolls(
+  insertedPolls: InsertedPoll[],
+  to: string = EMAIL_ALERTS,
+): Promise<number> {
   // ⛔ Só NACIONAL. Estadual e escopo indefinido ficam de fora: o painel é de
   // eleição nacional, e uma estadual entrando aqui vira ruído diário.
   const nacionais = insertedPolls.filter((p) => p.scope === 'national')
@@ -82,7 +91,7 @@ export async function alertNewNationalPolls(insertedPolls: InsertedPoll[]): Prom
     )
     .join('\n')
 
-  await sendSystemAlert(EMAIL_ALERTS, {
+  await sendSystemAlert(to, {
     type: `pesquisa nacional nova (${novas.length})`,
     message: `${novas.length} pesquisa(s) presidencial(is) de escopo NACIONAL entraram no banco nesta rodada da ingestão do TSE.`,
     details:
