@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-12",
-  "fetchedAt": "2026-08-12T21:37:05.304Z",
+  "lastUpdate": "2026-08-13",
+  "fetchedAt": "2026-08-13T13:45:19.893Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-13",
-    "nPesquisas": 26,
-    "nInstitutos": 20,
-    "dem": 47.69,
-    "rep": 41.85,
-    "vantagemDem": 5.84,
+    "desde": "2026-07-14",
+    "nPesquisas": 22,
+    "nInstitutos": 18,
+    "dem": 47.5,
+    "rep": 41.55,
+    "vantagemDem": 5.95,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -40,7 +40,6 @@
       "CBS News/YouGov",
       "CNN/SSRS",
       "Clarity Campaign Labs (D)",
-      "Echelon Insights",
       "Emerson College",
       "Focaldata",
       "Marquette University Law School",
@@ -52,8 +51,7 @@
       "Reuters/Ipsos",
       "Strength In Numbers/Verasight",
       "The Argument/Verasight",
-      "The Economist/YouGov",
-      "The Washington Post/Ipsos"
+      "The Economist/YouGov"
     ]
   },
   "qualidade": {
