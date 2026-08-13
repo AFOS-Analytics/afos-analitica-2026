@@ -1,0 +1,84 @@
+/**
+ * Mapa ES de 13/Ago para analysis-data.json.
+ * Convenções: vírgula decimal e ponto de milhar, como no pt-BR. Datas "13 de ago".
+ */
+import { construir } from '../build-locale-json'
+
+const S = 'última lectura confirmada, del 12 de ago, 16:41 BRT'
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1':
+    `A 52 días de la primera vuelta, el día trajo una ENCUESTA NACIONAL NUEVA, la primera desde el 11 de ago. PoderData/Aya, n=2.400, telefónica, campo del 9 al 12 de ago, registro BR-06868/2026: 41% en la primera vuelta para el líder contra 35% del segundo, y 46% x 45% en el balotaje. CNN Brasil y Bnews registran que el líder empata también con Zema y con Caiado en el balotaje, y vence a Renan Santos.`,
+
+  'cards.sentimento.text2':
+    `EL HALLAZGO ESTÁ EN LA CASA COMPARADA CONSIGO MISMA, Y SEPARA LAS DOS VUELTAS. En la primera vuelta la distancia entre los dos primeros no se movió en cuatro semanas: 6pp el 16 de jul (40% x 34%), 6pp el 30 de jul (41% x 35%) y 6pp ahora, con ambos repitiendo exactamente los porcentajes de la ronda anterior. En el balotaje, en el mismo intervalo, la distancia cayó de 3pp a 1pp. Misma casa, mismo método, misma muestra: una vuelta detenida y la otra estrechándose.`,
+
+  'cards.sentimento.text3':
+    `EL RECHAZO SALIÓ EMPATADO EN 48% PARA LOS DOS PRIMEROS, según Poder360, y es el dato que quita la base a cualquier lectura fácil sobre quién tiene más espacio para crecer. APROBACIÓN PERSONAL del presidente en 43% contra 50% de desaprobación. ⚠️ La Revista Oeste informó 51% de desaprobación DEL GOBIERNO en el mismo relevamiento, que es una pregunta distinta de la anterior y no se suma a ella.`,
+
+  'cards.sentimento.direita':
+    `🔴 EL HECHO POLÍTICO DEL DÍA ES EL REGISTRO DEL SEGUNDO. Folha de S.Paulo y G1 informan que él aparece en el registro del TSE afiliado a Missão, el partido por el cual compite el cuarto colocado, sin tener conocimiento de eso, y que esto trabó el registro formal de su candidatura presidencial por el PL. G1 registra que el PL habla de fraude. El plazo de registro se cierra el 15 de ago. Abrió su campaña en Río y volvió a criticar al juez Moraes tras un operativo de la Policía Federal contra una fuente de un periodista.`,
+
+  'cards.sentimento.esquerda':
+    `El líder lanzó su campaña a la reelección en el Estadio Vila Euclides, en São Bernardo, cuna del sindicalismo en la región del ABC, según TVT News y G1, el mismo día en que su adversario abrió la suya en Río. En las encuestas, PoderData lo mantiene al frente en las dos vueltas, con la distancia del balotaje reducida a 1pp, dentro del margen de 2pp de la encuesta.`,
+
+  'cards.sentimento.terceiraVia':
+    `EL PELOTÓN TUVO SU MEJOR DÍA DE LA VENTANA EN EL BALOTAJE. Según CNN Brasil y Bnews, Caiado y Zema EMPATAN con el líder en el balotaje de PoderData, y Renan Santos es el único de los cuatro que pierde. Para Caiado es el segundo empate en cuatro días, después del de BTG/Nexus del 10 de ago. ⚠️ Los porcentajes de primera vuelta de estos nombres en esta ronda no aparecieron en las notas capturadas, y el panel no los estima: siguen valiendo los de las casas anteriores.`,
+
+  'cards.sentimento.polymarket':
+    `SIN LECTURA DE MERCADO NUEVA EL 13 DE AGO. Los precios exhibidos en esta página son los de la ${S}: Lula 63,50% (vol USD 8,22M acumulado), Flávio Bolsonaro 27,65% (vol USD 8,13M), Renan Santos 7,45% (vol USD 9,48M), Ronaldo Caiado 0,95% (vol USD 5,66M), Romeu Zema 0,35% (vol USD 5,07M), Fernando Haddad 0,15% (vol USD 7,06M) y Tarcísio de Freitas 0,05% (vol USD 13,91M). AFOS solo publica precio que dos lecturas independientes confirmen.`,
+
+  'cards.inss.text1':
+    `El caso de los fraudes en descuentos asociativos del INSS tuvo un HECHO NUEVO Y RELEVANTE el 13 de ago, y es policial, no de encuesta. Carlos Lopes, presidente de una asociación acusada de desvíos y de coimas a políticos, estaba prófugo y se entregó a la Policía Federal, quedando detenido. La información salió en G1, O Globo, Folha de S.Paulo y Estadão el mismo día, con reporteo independiente.`,
+
+  'cards.inss.text2':
+    `O Globo informó además que CUATRO DELACIONES del caso están estancadas, a la espera de una definición de la Policía Federal y de la Procuraduría General. Una delación estancada no es una delación homologada, y el panel registra el estado del proceso sin anticipar lo que pueda producir.`,
+
+  'cards.inss.text3':
+    `La distinción que el panel mantiene desde el inicio sigue valiendo: una cosa es el efecto sobre la evaluación de la gestión, que es donde el fraude administrativo suele aparecer; otra es el efecto sobre la intención de voto, que ninguna encuesta de la ventana aísla. PoderData de hoy no trae recorte específico sobre el caso.`,
+
+  'cards.inss.text4':
+    `La evaluación de gobierno más reciente es la de la propia PoderData del 13 de ago, con 43% de aprobación personal contra 50% de desaprobación. Ninguna casa de la ventana probó el caso del INSS como variable explicativa, y por eso el panel no le atribuye ninguna parte de ese saldo.`,
+
+  'cards.inss.impactoLula':
+    `No aislable. En las ocho nacionales desde el 5 de ago él lidera o empata la primera vuelta en todas, entre 38% y 44%, y ninguna prueba el caso del INSS como variable. La detención de hoy es un hecho procesal y no hay medición que la vincule a intención de voto.`,
+
+  'cards.inss.impactoGestao':
+    `La evaluación de gobierno sigue con saldo negativo en todas las casas vigentes, con tamaños que van de 1pp positivo a 10pp negativo entre ocho lecturas de nueve días. La causa no se atribuye aquí, porque ninguna encuesta de la ventana descompone el saldo por tema.`,
+
+  'cards.inss.conclusao':
+    `El caso sigue en el campo de la gestión y de la policía, y no de la intención de voto. El 13 de ago produjo una detención y el registro de cuatro delaciones estancadas, ambos con medio y fecha, y ninguno con efecto medido sobre la urna.`,
+
+  'cards.bancoMaster.text1':
+    `El caso del Banco Master tuvo TRES movimientos distintos el 13 de ago, y ninguno es decisión de fondo. O Globo informó que el gestor que denunció al banco acudió al Supremo pidiendo su inclusión en el programa de protección a víctimas, lo que desplaza la discusión hacia la seguridad de quien denunció.`,
+
+  'cards.bancoMaster.text2':
+    `Folha de S.Paulo informó que un director del Banco Central relató a la Policía Federal un ambiente hostil y temor de filtraciones en torno a la liquidación del banco. Y Estadão informó que el CNJ APARTÓ al juez del caso Banco Santos que aparece en una grabación sugiriendo a los herederos la venta al Master y el cambio de abogados, desprendimiento directo de la grabación publicada el 12 de ago.`,
+
+  'cards.bancoMaster.text3':
+    `⚠️ Los tres hechos tienen medio y fecha, y ninguno es decisión sobre la conducta del banco o de sus controlantes. El apartamiento por el CNJ es una medida administrativa sobre un magistrado, no un juicio del caso. El panel registra los hechos sin convertirlos en pronóstico.`,
+
+  'cards.bancoMaster.conclusao':
+    `El día trajo un pedido de protección del denunciante, un relato de hostilidad dentro del Banco Central y el apartamiento de un juez por el CNJ. Ninguno decide el fondo, y el caso sigue sin efecto medido sobre intención de voto.`,
+
+  'cards.stf.toffoli':
+    `Sin acto individual nuevo capturado este jueves.`,
+
+  'cards.stf.moraes':
+    `Su decisión en el caso del periodista de Maranhão fue el hilo judicial del día. Según Folha de S.Paulo, la orden generó preocupación y dudas entre especialistas y reacción de entidades, y el periodista alcanzado afirmó no haber monitoreado a Dino. El segundo en la disputa presidencial volvió a criticarlo tras el operativo contra la fuente, según Correio Braziliense.`,
+
+  'cards.stf.gilmar':
+    `Sin acto individual nuevo este jueves. Sigue vigente la determinación del 12 de ago, en la que él, Moraes, Dino y Zanin ordenaron a jueces de siete tribunales devolver pagos considerados exorbitantes, conforme Folha de S.Paulo y Estadão.`,
+
+  'cards.stf.dino':
+    `Dijo ser objeto de agresiones e injusticias tras el operativo de la Policía Federal contra la fuente de un periodista, según O Globo, que informó que la fuente fue alcanzada tras un intercambio de mensajes que sustentaron reportajes sobre él. La Asociación Internacional de Radiodifusión pidió protección al ejercicio del periodismo en el caso, según G1.`,
+
+  'cards.stf.mendonca':
+    `O Globo publicó este jueves dos piezas sobre su actuación, una señalando un error que ministros del Supremo identifican en la crisis con la Policía Federal y otra sobre cuál es su papel. Son notas de análisis, no actos judiciales.`,
+
+  'cards.stf.nexo':
+    `El hilo de este jueves es la CONCENTRACIÓN de la cobertura judicial en un único episodio, el operativo de la Policía Federal contra la fuente de un periodista, que involucra a dos de los cinco ministros seguidos en papeles distintos: uno como autor de la decisión y el otro como objeto de los reportajes que la originaron. En paralelo, el gobernador de São Paulo acudió al Supremo contra el presidente por un préstamo citado en un debate, y Valor Econômico informó que Hacienda liberó la operación enseguida.`,
+
+  'cards.stf.analise':
+    `SIN LECTURA DE MERCADO NUEVA EL 13 DE AGO para el contrato de impeachment de un ministro del Supremo. El valor exhibido es el de la ${S}, en 3,90% sobre volumen acumulado de USD 83 mil. Sigue siendo el contrato más fino entre los seguidos, y cualquier movimiento en él exige esa salvedad de tamaño. ⚠️ Vale separar: el episodio del día es grande en la cobertura y no tiene relación directa con la pregunta que este contrato hace, que es la salida de un ministro por impeachment antes de 2027.`,
+})
