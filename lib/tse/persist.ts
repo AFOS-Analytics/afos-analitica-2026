@@ -10,11 +10,21 @@
  */
 
 import { prisma } from '../db'
-import type { TSEPoll } from './ingest'
+import type { TSEPoll, PollScope } from './ingest'
 import { normalizeInstitute, classifyScope } from './ingest'
 
-export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_daily'): Promise<{ inserted: number; skipped: number }> {
-  if (!prisma || polls.length === 0) return { inserted: 0, skipped: 0 }
+/**
+ * Pesquisa recém-inserida, com o escopo JÁ classificado.
+ *
+ * 🔑 O escopo sai daqui junto com a linha de propósito. Quem consome (o alerta
+ * de pesquisa nacional nova) não deve reclassificar por conta própria: duas
+ * cópias da mesma regra convivem sem incidente até o dia em que uma é
+ * corrigida e a outra não. Ver memory/feedback_duas_copias_da_mesma_regra.md.
+ */
+export type InsertedPoll = TSEPoll & { scope: PollScope }
+
+export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_daily'): Promise<{ inserted: number; skipped: number; insertedPolls: InsertedPoll[] }> {
+  if (!prisma || polls.length === 0) return { inserted: 0, skipped: 0, insertedPolls: [] }
 
   // Dedup intra-execução: TSE pode retornar mesma pesquisa 2x (correção)
   const seenProtocolos = new Set<string>()
@@ -68,11 +78,18 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
   const toInsert = uniquePolls.filter((p) => !existingProtocolos.has(p.protocolo))
   const skippedByExisting = uniquePolls.length - toInsert.length
 
+  // Classifica o escopo UMA vez por pesquisa. O resultado alimenta o
+  // normalizedPayload abaixo E o retorno da função, para que o alerta não
+  // reclassifique com uma segunda cópia da regra.
+  const classified = toInsert.map((poll) => ({
+    poll,
+    scopeClass: classifyScope(poll.metodologia, poll.planoAmostral, poll.dadoMunicipio),
+  }))
+
   // Batch 3: createMany com payload completo
   if (toInsert.length > 0) {
     await prisma.researchFinding.createMany({
-      data: toInsert.map((poll) => {
-       const scopeClass = classifyScope(poll.metodologia, poll.planoAmostral, poll.dadoMunicipio)
+      data: classified.map(({ poll, scopeClass }) => {
        return {
         researchRunId: run.id,
         sourceId: sourceByName.get(normalizeInstitute(poll.instituto))!,
@@ -138,7 +155,11 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
     },
   })
 
-  return { inserted: toInsert.length, skipped: totalSkipped }
+  return {
+    inserted: toInsert.length,
+    skipped: totalSkipped,
+    insertedPolls: classified.map(({ poll, scopeClass }) => ({ ...poll, scope: scopeClass.scope })),
+  }
 }
 
 function calculateConfidence(poll: TSEPoll): number {

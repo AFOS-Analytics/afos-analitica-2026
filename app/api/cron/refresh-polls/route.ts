@@ -18,6 +18,7 @@ import { generateCrossAnalysis } from '../../../../lib/tse/cross-polymarket'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { audit } from '../../../../lib/audit'
 import { requireCronAuth } from '../../../../lib/cron/auth'
+import { alertNewNationalPolls } from '../../../lib/cron/poll-alerts'
 
 // Cron baixa CSV TSE + cruza com Polymarket. TSE CDN às vezes lento (10-30s),
 // + Polymarket fetch (10s timeout) + persist Neon. Sem maxDuration explícito,
@@ -41,7 +42,20 @@ export async function GET(request: Request) {
     const historicalPolls = filterHistoricalPolls(allPolls, 15)
 
     // 3. Persistir TODAS no banco (idempotente por protocolo)
-    const { inserted, skipped } = await persistPolls(allPolls, 'tse_daily')
+    const { inserted, skipped, insertedPolls } = await persistPolls(allPolls, 'tse_daily')
+
+    // 3.1 Avisar por email as NACIONAIS novas. Nasce aqui, dentro de quem
+    // insere a linha, e não numa rotina na nuvem que precisaria sair para a
+    // internet buscar o próprio dado deste sistema (e falhava na lista de
+    // egresso). Ver app/lib/cron/poll-alerts.ts.
+    // ⚠️ Best-effort: alerta que falha NÃO derruba a ingestão. Gravar a
+    // pesquisa importa mais que avisar sobre ela.
+    let alertadas = 0
+    try {
+      alertadas = await alertNewNationalPolls(insertedPolls)
+    } catch (err) {
+      console.error('[cron/refresh-polls] alerta de pesquisa nacional falhou:', err)
+    }
 
     // 4. Buscar odds atuais do Polymarket para cruzamento
     // Resolução de base URL com 3 fallbacks:
@@ -99,6 +113,9 @@ export async function GET(request: Request) {
       historical: historicalPolls.length,
       inserted,
       skipped,
+      // quantas das inseridas eram NACIONAIS e geraram email. Zero é o
+      // resultado normal: na maioria dos dias não entra nacional nova.
+      alertadasNacionais: alertadas,
       crossAnalysis: {
         totalRecent: cross.totalPolls,
         topInstitutes: cross.topInstitutes.slice(0, 5),
