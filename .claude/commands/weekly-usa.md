@@ -81,7 +81,13 @@ URL **visível e clicável** como no Tradeoff, com uma exceção: os itens de im
 
 ## ETAPA 3: As travas
 
-**Herdadas do Daily:** 2 fontes independentes para evento de alto impacto (5 manchetes do mesmo agregador = 1 fonte) · link por alegação (≥80%) · **teto de 900 palavras** · data explícita, nunca "ontem" · rascunho por padrão.
+**Herdadas do Daily:** 2 fontes independentes para evento de alto impacto (5 manchetes do mesmo agregador = 1 fonte) · link por alegação (≥80%) · data explícita, nunca "ontem" · rascunho por padrão.
+
+📏 **Teto: 1.100 palavras no corpo.** Decisão do André em 13/Ago/2026, permanente, e ela vale **só para o Weekly**.
+
+⛔ **NÃO propagar este número para a AFOS Daily.** A Daily segue em **900**, e isso foi decidido contra uma proposta minha de subir justamente para 1.100 (ver `memory/feedback_o_ponto_onde_parei_de_cortar_nao_e_o_limite.md`). Mesmo número, dois produtos, decisões opostas: confundir os dois desfaz uma escolha que já foi feita.
+
+O corpo é título, TL;DR, `moneyIntro`, os `desc` dos cards, `moneyFootnote`, `pollsIntro`, a nota de dispersão, a narrativa, as alegações, a medição, os cruzamentos e o `howToRead`. **`methodology` e `sources` ficam fora da conta**, por serem rodapé de procedência e não leitura corrida. Medir, não estimar: o ponto onde se para de cortar não é o limite.
 
 **Específicas dos EUA:**
 - 🔴 **NUNCA subtrair mercado de pesquisa.** O mercado dá probabilidade de controlar a casa; a pesquisa dá vantagem em pontos de voto. A subtração produz número sem unidade. Em 2012 os democratas tiveram mais votos e menos cadeiras: a distância pode ser inteiramente geografia.
