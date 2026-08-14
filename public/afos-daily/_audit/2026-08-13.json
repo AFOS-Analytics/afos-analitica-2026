@@ -1,0 +1,90 @@
+{
+  "date": "2026-08-13",
+  "factCheckGate": {
+    "eventosAltoImpacto": 3,
+    "eventos": [
+      {
+        "evento": "Flávio Bolsonaro aparece no TSE filiado ao Missão sem saber, travando o registro da candidatura pelo PL",
+        "verificacao1": "keyword 'registro de candidatura' sem menção em 7 dailies",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "veiculo": "Folha de S.Paulo",
+          "data": "2026-08-13",
+          "hora": "15:59 GMT",
+          "tipo": "evento"
+        },
+        "segundaFonte": {
+          "veiculo": "G1",
+          "data": "2026-08-13",
+          "hora": "15:42 GMT",
+          "independente": true,
+          "acrescenta": "PL fala em fraude"
+        },
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Prisão de Carlos Lopes, presidente de associação no caso INSS",
+        "verificacao1": "keyword 'Carlos Lopes' sem menção em 7 dailies",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "veiculo": "G1",
+          "data": "2026-08-13",
+          "tipo": "evento",
+          "url": "https://g1.globo.com/politica/noticia/2026/08/13/fraudes-no-inss-pf-prende-foragido-da-operacao-sem-desconto.ghtml"
+        },
+        "segundaFonte": {
+          "veiculos": ["O Globo", "Folha de S.Paulo", "Estadão"],
+          "independente": true
+        },
+        "decisao": "incorporar",
+        "verboDesambiguado": "estava foragido e se entregou à PF, não 'foi preso hoje'"
+      },
+      {
+        "evento": "CNJ afasta juiz do caso Banco Santos",
+        "verificacao1": "keyword 'CNJ' com 4 menções, todas sobre outro assunto",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "veiculo": "Estadão",
+          "data": "2026-08-13",
+          "tipo": "evento",
+          "url": "https://www.estadao.com.br/economia/cnj-afasta-juiz-falencia-banco-santos/"
+        },
+        "segundaFonte": null,
+        "decisao": "incorporar como fato de FONTE ÚNICA, declarado no corpo da daily"
+      }
+    ]
+  },
+  "refetchPolymarket": {
+    "fetchedAtBRT": "13/08/2026, 20:24",
+    "lula": { "json": 63.5, "live": 63.5, "delta": 0 },
+    "flavio": { "json": 27.65, "live": 28.25, "delta": 0.6 },
+    "renan": { "json": 7.45, "live": 7.45, "delta": 0 },
+    "gap": { "json": 35.85, "live": 35.25, "delta": -0.6 },
+    "volumeTotalPresidencial": "USD 122.79M",
+    "gateRebaseline": "DISPAROU por Flávio +0,60pp",
+    "decisao": "NÃO rebaselinear",
+    "motivo": "A trava de captura bloqueou duas rodadas em 13/Ago por discordância entre as duas leituras. Este re-fetch é leitura única, não confirmada. Três leituras do Flávio no mesmo dia deram 26,70% às 19:01, 28,05% às 17:15 e 28,25% às 20:24, o que confirma book em trânsito. Mantida a última leitura confirmada, de 12/Ago 16:41 BRT."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": ["afastamento do juiz pelo CNJ (Estadão), declarado como fonte única no corpo"],
+    "numericalErrors": "reconcile-claims OK após duas correções: (1) valores de sub-mercado da leitura ao vivo misturados em texto que declara preços de 12/Ago; (2) valores que o painel deixou de reafirmar nesta rodada",
+    "fontesInventadas": "3 conferidos ao acaso (G1/INSS, O Globo/Dino, Estadão/CNJ), todos com URL direta e matéria de 13/Ago no cache",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O texto declara que não há leitura confirmada para dizer se o episódio do registro foi precificado",
+    "verbosCriticos": "estava foragido e se entregou à PF; o CNJ afastou (medida administrativa); delações empacadas, não homologadas",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasCorpo": 900,
+    "tetoPalavras": 900,
+    "reconcileClaims": "OK",
+    "validateAfosDaily": "OK, 1 warning de densidade de link em 55% (11/Ago teve 43%, 12/Ago 41%)",
+    "gateNumericoTresIdiomas": "50 números com unidade, multiconjuntos idênticos",
+    "tldrBullets": { "pt-BR": 3, "en": 3, "es": 3 },
+    "proporcaoFontes": "69% secundárias, alvo 50 a 70%"
+  },
+  "wayback": {
+    "executado": false,
+    "motivo": "A ficha feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo determina não sondar antes de ~14/Ago, após 429 em 03, 04, 05 e 09/Ago, este último já depois de uma pausa de quatro dias sem sondagem. Cada pré-check é mais uma requisição contra quem recusa. Fila em dez, sem urgência, porque as dailies seguem publicadas e o arquivamento é preservação."
+  }
+}
