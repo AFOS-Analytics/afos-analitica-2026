@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-14",
+  "capturedAt": "2026-08-14T17:46:00.000Z",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "TSE suspende o processamento de novas filiacoes no sistema Filia",
+        "verificacao1CrossRef": "os termos filiacao e Missao aparecem na daily de 13/Ago, logo o CASO e continuidade; a suspensao do sistema e fato novo",
+        "verificacao2Fetch": {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/tse-suspende-sistema-de-filiacoes-apos-falso-registro-de-flavio-e-tentativa-contra-lula/",
+          "data": "2026-08-13",
+          "horaAtualizacao": "21:56",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.brasildefato.com.br/2026/08/14/tse-suspende-sistema-de-filiacao-partidaria-e-flavio-bolsonaro-pl-tem-candidatura-a-presidencia-registrada-apos-problema-com-o-partido-missao/",
+        "decisao": "incorporar",
+        "correcaoQueProduziu": "o evento e da NOITE DE 13/Ago, nao de 14/Ago; e a causa declarada pelo TSE e uso indevido de credenciais, NAO hackeamento"
+      },
+      {
+        "evento": "candidatura presidencial de Flavio Bolsonaro registrada",
+        "verificacao1CrossRef": "o travamento do registro aparece em 13/Ago; o registro efetivado e novidade",
+        "verificacao2Fetch": {
+          "url": "https://www.brasildefato.com.br/2026/08/14/tse-suspende-sistema-de-filiacao-partidaria-e-flavio-bolsonaro-pl-tem-candidatura-a-presidencia-registrada-apos-problema-com-o-partido-missao/",
+          "data": "2026-08-14",
+          "hora": "08:52",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/08/13/nunes-marques-restabelece-filiacao-de-flavio-ao-pl-e-libera-registro-de-candidatura.ghtml",
+        "decisao": "incorporar",
+        "correcaoQueProduziu": "a decisao de Nunes Marques e de 13/Ago, provada pelo caminho /2026/08/13/ na URL do O Globo; o registro veio horas depois"
+      },
+      {
+        "evento": "OEA envia missao de observacao eleitoral ao Brasil, chefiada por Jose Miguel Insulza",
+        "verificacao1CrossRef": "zero mencoes a OEA e a Nunes Marques em 7 dailies, logo novidade",
+        "verificacao2Fetch": {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/oea-enviara-missao-para-acompanhar-eleicoes-de-2026-no-brasil/",
+          "data": "2026-08-13",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.gazetadopovo.com.br/mundo/oea-enviara-missao-para-observar-eleicoes-presenciais-no-brasil/",
+        "decisao": "incorporar, sem rotulo de inclinacao politica",
+        "detalhe": "quinta missao da OEA no Brasil desde 2018"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "nenhuma. Suspensao do Filia com Gazeta do Povo e Brasil de Fato; registro com Brasil de Fato e O Globo; OEA com CNN Brasil, Folha e Gazeta do Povo",
+    "numericalErrors": "reconcile-claims retornou OK: todos os claims numericos batem com o JSON dentro de +-0.05pp",
+    "fontesInventadas": "conferidas tres. O Globo tem URL primaria com /2026/08/13/ no caminho; Gazeta do Povo e Brasil de Fato lidas por fetch com data e trechos literais",
+    "quotesLiterais": "nenhuma aspa literal na peca",
+    "causacaoEspuria": "nenhuma. A alta de 0,20pp do Flavio junto do desbloqueio do registro esta declarada como ORDEM e nao como causa, na Secao 4",
+    "verbosCriticos": "suspendeu com data e objeto explicitos; registrada com a decisao datada em 13/Ago e atribuida; evitado o verbo fraude como causa, porque o TSE declara uso indevido de credenciais e nao invasao",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasNoCorpo": 851,
+    "tetoPalavras": 900,
+    "reconcileClaims": "OK",
+    "gateNumericoTresIdiomas": "43 numeros identicos em pt, en e es, nenhum sem par",
+    "tldrBullets": { "pt": 3, "en": 3, "es": 3 },
+    "proporcaoFontes": { "secundarias": 7, "ancora": 3, "percentualSecundario": 70 },
+    "avisosNaoBloqueantes": [
+      "low-link-density em 59% contra a regua de 80%, porque paragrafos de metodo nao tem fonte externa",
+      "volume-total-missing no ingles: o detector procura o padrao em portugues, e o texto cita USD 122.91M na Secao 1"
+    ]
+  },
+  "wayback": {
+    "preCheck": 429,
+    "acao": "nao rodado, sem insistir",
+    "passivoEmDias": 11
+  },
+  "correcoesNoPainelJaPublicado": [
+    "a suspensao do Filia foi reancorada de 14/Ago para a noite de 13/Ago",
+    "registro falso e fraude trocados pela causa declarada pelo TSE: uso indevido de credenciais, sem hackeamento",
+    "acrescentado o fato novo de que a candidatura foi registrada, com a decisao de Nunes Marques datada em 13/Ago",
+    "Insulza nomeado no lugar de ex-ministro chileno generico",
+    "ordem invertida corrigida no cartao do STF: a suspensao veio ANTES da decisao, nao depois"
+  ],
+  "defeitoDeMetodoRegistrado": "o mapa de traducao e indexado por CAMINHO, entao ele reescreveu a traducao antiga por cima do campo pt-BR ja corrigido. Corrigir o pt-BR sem corrigir o mapa deixa o defeito vivo nos dois idiomas."
+}
