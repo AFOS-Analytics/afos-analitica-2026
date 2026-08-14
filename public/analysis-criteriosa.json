@@ -1,155 +1,155 @@
 {
-  "updatedAt": "13/08/2026, 19:29",
-  "subtitle": "ATUALIZAÇÃO 13/Ago, a 52 dias do 1º turno. PESQUISA NACIONAL NOVA: PoderData/Aya (n=2.400, telefônica, campo 09 a 12/Ago, registro BR-06868/2026), a primeira desde 11/Ago. PREÇOS: não há leitura de mercado nova em 13/Ago, e os valores exibidos são os da última leitura confirmada, de 12/Ago, 16:41 BRT. 📅 Quaest publica em 14/Ago e Nexus em 17/Ago.",
+  "updatedAt": "14/08/2026, 14:46",
+  "subtitle": "ATUALIZAÇÃO 14/Ago, a 51 dias do 1º turno. PREÇO: há leitura nova para o mercado presidencial, leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC). Para os contratos de 2º e 3º lugar, para o Senado e para o impeachment no STF não há leitura nova em 14/Ago, e os valores exibidos são os da última leitura confirmada, de 12/Ago, 16:41 BRT. PESQUISA: a Quaest divulga hoje uma nacional com 13 candidatos testados, e no momento desta captura os resultados ainda não estavam publicados, então segue valendo a PoderData/Aya de 13/Ago (n=2.400, telefônica, campo 09 a 12/Ago, BR-06868/2026). CARTÓRIO ELEITORAL: o TSE suspendeu o processamento de novas filiações partidárias, segundo G1, O Globo, Gazeta do Povo e CartaCapital, e o prazo de registro de candidaturas termina em 15/Ago.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PESQUISA NACIONAL NOVA EM 13/Ago: PoderData/Aya (n=2.400, telefônica, campo 09 a 12/Ago, registro BR-06868/2026) com 41% no 1º turno e 46% x 45% no returno. Contra a própria casa, o 1º turno repete os 41% x 35% de 30/Jul e o returno estreita de 3pp para 1pp. Rejeição em 48%, empatada com a do adversário. Sem leitura de mercado nova em 13/Ago: o preço exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT.",
+      "header": "PREÇO COM LEITURA NOVA EM 14/Ago: 63,50% (vol USD 8,25M acumulado), o mesmo valor da leitura confirmada de 12/Ago. É o sexto dia consecutivo em 63,50% na série gravada. PESQUISA: segue valendo a PoderData/Aya de 13/Ago, com 41% no 1º turno e 46% x 45% no returno, porque a Quaest de hoje ainda não tinha resultado publicado no momento da captura.",
       "fortes": [
-        "Lidera ou empata o 1º turno nas SETE nacionais desde 05/Ago, e vence o returno em cinco das seis rodadas que o testam.",
+        "O preço dele é o mais estável do book presidencial nesta janela: 63,50% em todas as leituras gravadas de 09 a 14/Ago, seis dias sem variação.",
+        "Lidera ou empata o 1º turno nas OITO nacionais desde 05/Ago, e vence o returno em cinco das seis rodadas que o testam.",
         "A CNT/MDA de 11/Ago segue sendo a melhor leitura dele da janela: 42,4% no 1º turno, com 13,7pp de vantagem, e 48% x 39% no returno.",
-        "Vence ou empata os returnos das quatro rodadas, e no pior deles, a Palver, empata em 46% x 46%.",
-        "A dispersão entre casas é MENOR do lado dele: no 1º turno as quatro leituras cabem numa faixa de 5pp, contra 10pp do adversário.",
-        "Preço da última leitura confirmada, de 12/Ago, 16:41 BRT, em 63,50%, com USD 8,22M acumulados. Entre os 173 pontos gravados desde 16/Mai, 29 tiveram valor igual ou maior, com topo de 66,50% em 01/Ago às 23:00."
+        "A tentativa de fraude identificada pelo TSE mirava a filiação dele ao PT, e foi barrada antes de produzir efeito, segundo G1 e Gazeta do Povo. O registro partidário dele não foi alterado.",
+        "O volume acumulado do contrato dele subiu para USD 8,25M, e ele segue entre os três mais negociados do book presidencial."
       ],
       "fracos": [
-        "A GERP É A PRIMEIRA NACIONAL DA JANELA A PÔ-LO ATRÁS NO RETURNO: 43% contra 45%, dentro da margem de 2pp e tratada como empate técnico pela própria divulgação.",
-        "REJEIÇÃO em 48% na BTG/Nexus e 52% na Palver, e na Palver ele é o MAIS rejeitado dos dois, invertendo a ordem que a Nexus mostra.",
-        "No returno da Palver o empate em 46% x 46% é o pior cenário de returno que qualquer nacional da janela lhe deu.",
-        "Sem leitura de mercado nova em 13/Ago, a distância sobre o segundo colocado não tem medição nova neste dia. A última distância confirmada é a de 12/Ago, 16:41 BRT.",
-        "Ressalva de série, medida sobre todos os 173 pontos gravados desde 16/Mai e não sobre o último de cada dia: 29 tiveram preço igual ou maior que 63,50%, então o nível atual não é extremo da série."
+        "A distância para o segundo colocado encolheu 0,20pp desde a última leitura confirmada, de 35,85pp em 12/Ago para 35,65pp hoje, e quem se moveu foi o adversário.",
+        "A PoderData de 13/Ago mostra o returno a 1pp, o valor mais apertado que a casa já lhe deu na série própria, depois de 3pp em 30/Jul.",
+        "Aprovação pessoal em 43% contra 50% de desaprovação na PoderData de 13/Ago, saldo de 7pp negativos.",
+        "Rejeição em 48%, exatamente igual à do adversário, o que impede leitura fácil sobre quem tem mais teto.",
+        "Empata no returno com Caiado e com Zema na PoderData de 13/Ago, e nenhum dos dois passa de 5,7% no 1º turno em qualquer casa da janela."
       ],
-      "analise": "O DIA TROUXE PESQUISA NACIONAL NOVA E NENHUMA LEITURA DE MERCADO NOVA, e a leitura do dia está inteira na urna. A PoderData/Aya publicou a primeira nacional desde 11/Ago, e o achado está na comparação da casa com ela mesma, que é a comparação que controla método, amostra e questionário. No 1º turno a distância entre ele e o segundo colocado não se mexeu em quatro semanas: 6pp em 16/Jul, 6pp em 30/Jul e 6pp agora, com os dois repetindo exatamente os mesmos percentuais da rodada anterior. No returno, no mesmo intervalo, a distância caiu de 3pp para 1pp, que é dentro da margem de 2pp da pesquisa. Um turno parado e o outro estreitando, na mesma casa. A rejeição saiu empatada em 48% para os dois primeiros, o que retira a base de qualquer leitura fácil sobre quem tem mais espaço para crescer. Ele lançou a campanha à reeleição no Estádio da Vila Euclides, em São Bernardo, segundo TVT News e G1. RESSALVA DE SÉRIE, medida sobre todos os 173 pontos gravados desde 16/Mai e não sobre o último de cada dia: 29 tiveram valor igual ou maior que 63,50%, com topo de 66,50% em 01/Ago às 23:00."
+      "analise": "O PREÇO VOLTOU A TER LEITURA E NÃO SE MOVEU. Em 14/Ago ele está em 63,50% (vol USD 8,25M acumulado), o mesmo valor da leitura confirmada de 12/Ago, e a série gravada mostra 63,50% em todos os dias de 09 a 14/Ago. Seis dias sem variação num contrato com esse volume é informação, e ela diz que o mercado não reagiu a nada do que aconteceu na semana. A distância para o segundo colocado encolheu 0,20pp no período, e o movimento foi inteiramente dele, não do líder. Na urna nada mudou desde ontem, porque a Quaest de hoje ainda não tinha número publicado quando esta página foi montada, e segue valendo a PoderData/Aya de 13/Ago, com 41% no 1º turno e 46% x 45% no returno. O fato do dia sobre ele é de outra natureza e vem do TSE: o tribunal identificou uma tentativa de alterar a filiação partidária dele, dentro do mesmo episódio que atingiu o adversário, e suspendeu o processamento de novas filiações. A tentativa foi barrada e o registro dele no PT não mudou."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PESQUISA NACIONAL NOVA EM 13/Ago: PoderData/Aya lhe dá 35% no 1º turno, o mesmo valor que a casa lhe deu em 30/Jul, e 45% no returno, contra 43% na rodada anterior, a 1pp do líder. Rejeição em 48%, exatamente igual à dele. Sem leitura de mercado nova em 13/Ago: o preço exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT.",
+      "header": "PREÇO COM LEITURA NOVA EM 14/Ago: 27,85% (vol USD 8,20M acumulado). O preço saiu de 27,65% em 12/Ago para 27,85% agora, alta de 0,20pp. Ele foi o único do pelotão de cima a subir. CARTÓRIO: o TSE cancelou o vínculo dele com o Missão e ele voltou a constar filiado ao PL, segundo Folha de S.Paulo e G1, depois de Nunes Marques acolher os pedidos apresentados.",
       "fortes": [
-        "A Gerp de 11/Ago segue sendo a primeira nacional da janela a pô-lo à frente no returno, com 45% contra 43%, e a PoderData de 13/Ago o deixa a 1pp, dentro da margem.",
-        "Somando Gerp e Palver, são duas rodadas em dois dias em que ele não perde o returno, depois de uma janela inteira de derrotas.",
-        "Na BTG/Nexus a distância do returno é de 3pp, que a própria divulgação trata como empate técnico dentro da margem de 2pp.",
-        "A mesma rodada da BTG/Nexus aponta empate dele também no confronto de Lula contra Caiado, o que indica que o problema do returno não é exclusivo do nome dele.",
-        "Preço da última leitura confirmada, de 12/Ago, 16:41 BRT, em 27,65%, com USD 8,13M acumulados. Entre os 172 pontos gravados desde 16/Mai, 51 tiveram valor igual ou maior, com topo de 33,20% em 02/Jun às 19:30 e piso de 22,00% em 03/Jul às 01:00."
+        "Único nome acima de 1% a subir entre a leitura de 12/Ago e a de 14/Ago, com alta de 0,20pp, e o movimento do gap no período foi inteiramente dele.",
+        "A Gerp de 11/Ago segue sendo a primeira nacional da janela a pô-lo à frente no returno, com 45% contra 43%.",
+        "Na PoderData de 13/Ago ele subiu de 43% para 45% no returno contra a própria casa, ficando a 1pp do líder, dentro da margem de 2pp.",
+        "O vínculo indevido com o Missão foi cancelado e a filiação ao PL foi restabelecida, segundo Folha de S.Paulo e G1, o que remove o obstáculo formal ao registro da candidatura.",
+        "Rejeição em 48% na PoderData de 13/Ago, exatamente igual à do líder."
       ],
       "fracos": [
-        "A AMPLITUDE DELE CRESCEU PARA 11,3pp: nas sete nacionais desde 05/Ago aparece com 28,7%, 30%, 34,1%, 35%, 35%, 38% e 40%, e os 28,7% da CNT/MDA ficam abaixo do piso anterior da janela.",
-        "Na BTG/Nexus ele CEDEU 2pp contra a própria rodada de 03/Ago, de 37% para 35%, e o gap do 1º turno abriu de 4pp para 5pp por causa disso.",
-        "A diferença de 5pp no 1º turno da BTG/Nexus fica FORA da margem de 2pp, ou seja, não é empate ali.",
-        "REJEIÇÃO em 50% na BTG/Nexus, a mais alta da rodada, e em 51% na Palver, onde fica atrás apenas do líder.",
-        "A PoderData o mantém parado no 1º turno, com os mesmos 35% de 30/Jul, e o avanço dele no dia é só no returno. Chegar perto no returno e crescer no 1º turno são coisas diferentes, e apenas a segunda mudaria a distância que separa os dois na largada."
+        "Mesmo com a alta, ele está 35,65pp atrás do líder no preço, e a série gravada desde 16/Mai registra 51 pontos em nível igual ou superior aos 27,85% de hoje.",
+        "O topo da série dele segue em 33,20%, medido em 02/Jun às 19:30, bem acima do valor de hoje.",
+        "O registro da candidatura presidencial pelo PL foi travado por um problema cadastral que ele não provocou, e o prazo termina em 15/Ago, sem folga.",
+        "No 1º turno ele repetiu os 35% da própria casa na PoderData, sem avanço entre 30/Jul e 13/Ago.",
+        "A amplitude entre casas sobre ele segue acima de 9pp na janela, de 28,7% na CNT/MDA a 38% na Gerp, o dobro da dispersão medida sobre o líder."
       ],
-      "analise": "🔴 O FATO DO DIA SOBRE ELE NÃO É PREÇO NEM PESQUISA, É REGISTRO. Folha de S.Paulo e G1 informam que ele aparece no cadastro do TSE filiado ao Missão, o partido pelo qual Renan Santos disputa, sem ter conhecimento disso, e que isso travou o registro formal da candidatura presidencial dele pelo PL. O G1 registra que o PL fala em fraude. O prazo de registro se encerra em 15/Ago, o que dá dois dias. NA URNA, a PoderData o mantém parado no 1º turno, com os mesmos 35% de 30/Jul, e o aproxima no returno, de 43% para 45%, deixando a distância em 1pp, dentro da margem. A Exame resumiu como crescimento dele no returno. A REJEIÇÃO EMPATADA EM 48% é o dado que o painel destaca, porque impede a leitura de que um dos dois teria teto maior que o outro. ⚠️ NENHUMA CAUSA É ATRIBUÍDA: não há leitura de mercado nova em 13/Ago para comparar com o episódio do registro, e o painel não converte coincidência de data em relação. RESSALVA DE SÉRIE, sobre os 172 pontos gravados desde 16/Mai: 51 tiveram valor igual ou maior que 27,65%, com topo de 33,20% em 02/Jun às 19:30."
+      "analise": "🔴 O FATO DO DIA SOBRE ELE SAIU DO CARTÓRIO ELEITORAL E VIROU CASO DE SISTEMA. Ontem Folha de S.Paulo e G1 informaram que ele aparecia no cadastro do TSE filiado ao Missão, partido de Renan Santos, sem ter conhecimento disso, e que isso travou o registro formal da candidatura pelo PL. Hoje o desfecho tem duas partes. A primeira é individual: Nunes Marques acolheu os pedidos dele, o vínculo com o Missão foi cancelado e ele voltou a constar filiado ao PL. A segunda é maior que ele: o TSE suspendeu o processamento de novas filiações partidárias em todo o sistema depois de identificar que o caso não era isolado e que houve também uma tentativa de alterar a filiação do líder, segundo G1, O Globo, Gazeta do Povo e CartaCapital. O prazo de registro de candidaturas termina em 15/Ago. No preço, ele é o único nome acima de 1% que subiu desde a última leitura confirmada, com alta de 0,20pp para 27,85% (vol USD 8,20M acumulado), e toda a redução de 0,20pp na distância para o líder veio dele. Ressalva de série: entre os pontos gravados desde 16/Mai, 51 tiveram valor igual ou maior que o de hoje, com topo de 33,20% em 02/Jun."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "A PoderData de 13/Ago o testou no returno e ele é o ÚNICO do pelotão que o líder vence nesse cenário, segundo o Bnews, enquanto empata com os outros três. Os percentuais de 1º turno dele nesta rodada não saíram nas matérias capturadas. Sem leitura de mercado nova em 13/Ago: o preço exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT.",
+      "header": "PREÇO COM LEITURA NOVA EM 14/Ago: 7,15% (vol USD 9,59M acumulado). O preço saiu de 7,45% em 12/Ago para 7,15% agora, queda de 0,30pp. Foi a maior queda do pelotão de cima nesta leitura. Ele segue com o maior volume acumulado do book presidencial entre os nomes acima de 1%.",
       "fortes": [
-        "Mantém o maior volume acumulado do book presidencial entre os nomes acima de 1%, com USD 9,48M na última leitura confirmada, de 12/Ago, 16:41 BRT.",
-        "Ressalva de série: na janela gravada desde 16/Mai o preço dele passou a maior parte do tempo em nível igual ou superior ao atual, com piso de 6,80% em 06/Ago, então o valor de hoje está perto da parte baixa da própria série.",
-        "A Gerp lhe dá 5% no 1º turno, o segundo maior valor da janela, e o preço segue acima de todas as leituras por telefone e presencial.",
-        "Aparece à frente de Caiado e de Zema na Palver, invertendo a ordem que a Ideia de 05/Ago mostrava, em que Caiado tinha 5,7% contra os 4,7% dele.",
-        "A ressalva de método veio da casa que o mediu alto, e não de quem o mede baixo, o que reduz a chance de o número ser leitura enviesada de um lado só."
+        "Mantém o maior volume acumulado do book presidencial entre os nomes acima de 1%, com USD 9,59M, acima dos contratos do líder e do segundo colocado.",
+        "O preço dele segue ENTRE os dois métodos da urna, acima dos 4% a 5% do telefone e do presencial e abaixo dos 10% da Palver pela internet.",
+        "O partido dele, o Missão, ficou no centro do caso cadastral do TSE sem que a legenda fosse apontada como autora, e a Gazeta do Povo publicou o plano de governo dele nesta semana.",
+        "Segue sendo o único nome fora dos dois primeiros com preço acima de 5% no book presidencial.",
+        "A Palver, pela internet, é a única nacional da janela a lhe dar dois dígitos, com 10%, e a própria casa declarou a ressalva de método."
       ],
       "fracos": [
-        "A PRÓPRIA PALVER DECLAROU A RESSALVA: avaliou que o formato digital pode ter impulsionado o desempenho dele, que mantém base ativa nesse ambiente, e informou que testa abordagens para reduzir o efeito em pesquisas online.",
-        "Nas três nacionais por telefone ou presencial da janela ele fica entre 4% e 4,7%, e a leitura de 10% é a única fora desse intervalo.",
-        "O intervalo entre métodos continua aberto: 4% a 5% por telefone e presencial contra 10% pela internet, com a ressalva declarada pela própria Palver.",
-        "Perde os returnos com folga nas rodadas que o testam, e na Quaest de 05/Ago a derrota é de 45% x 35%.",
-        "A imprensa de 10/Ago publicou duas matérias questionando se pesquisa online superdimensiona o desempenho dele, o que torna o número de 10% um dado sob discussão pública, e não um patamar consolidado."
+        "Caiu 0,30pp desde a última leitura confirmada, a maior queda entre os nomes acima de 1%.",
+        "É o único do pelotão que o líder VENCE no returno da PoderData de 13/Ago, segundo o Bnews, enquanto empata com os outros três.",
+        "Nas nacionais por telefone e presenciais ele fica entre 4% e 5%, abaixo do que o preço lhe atribui.",
+        "Os percentuais de 1º turno dele na PoderData de 13/Ago não saíram nas matérias capturadas, então a leitura mais recente sobre ele segue sendo de 11/Ago.",
+        "O partido pelo qual ele disputa é o mesmo em que o adversário do PL apareceu filiado sem saber, episódio que o TSE tratou como fraude e que levou à suspensão do sistema de filiações."
       ],
-      "analise": "O DIA O SEPAROU DO RESTO DO PELOTÃO, E PARA PIOR. A PoderData testou quatro nomes no returno contra o líder e, segundo CNN Brasil e Bnews, três empataram e só ele perdeu. É a primeira vez na janela que o pelotão se divide assim, e a divisão não segue o preço: ele é precificado bem acima de Caiado e de Zema, que empataram. ⚠️ Os percentuais de 1º turno dele nesta rodada não apareceram nas matérias capturadas, e o painel não os estima: seguem valendo os 5% da Gerp de 11/Ago, os 4% da Genial/Quaest e da BTG/Nexus, os 4,7% da Meio/Ideia e os 10% da Palver pela internet. O EFEITO DE MÉTODO SEGUE SENDO A LEITURA SOBRE ELE, com o mesmo nome indo de 4% a 10% conforme o ambiente da entrevista, ressalva declarada pela própria Palver. NO TABULEIRO, a Gazeta do Povo publicou o plano de governo dele, e o partido pelo qual ele disputa é o mesmo em que o segundo colocado apareceu filiado sem saber, no episódio que travou o registro daquele."
+      "analise": "ELE TEVE A MAIOR QUEDA DO PELOTÃO DE CIMA NESTA LEITURA. O preço saiu de 7,45% em 12/Ago para 7,15% em 14/Ago, recuo de 0,30pp, enquanto o líder ficou parado e o segundo colocado subiu. O volume acumulado dele segue sendo o maior do book presidencial entre os nomes acima de 1%, com USD 9,59M, o que mantém o contrato com lastro apesar do recuo. Na urna, a leitura mais recente sobre ele continua sendo a de 11/Ago, porque os percentuais de 1º turno dele na PoderData de 13/Ago não apareceram nas matérias capturadas. O que a PoderData mostrou foi o cenário de returno, e ali ele é o único dos quatro testados que o líder vence, segundo o Bnews, enquanto Caiado, Zema e o segundo colocado empatam. O efeito de método continua sendo a leitura central sobre ele: o mesmo nome vai de 4% no telefone e no presencial a 10% pela internet, e a ressalva foi declarada pela própria Palver. O preço segue posicionado entre os dois métodos."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "⭐ O PELOTÃO TEVE O MELHOR DIA DA JANELA, E ELE VEIO DA URNA. Segundo CNN Brasil e Bnews, a PoderData de 13/Ago põe CAIADO e ZEMA em EMPATE com o líder no returno. Para Caiado é o segundo empate em quatro dias, depois do da BTG/Nexus de 10/Ago. Sem leitura de mercado nova em 13/Ago: os preços exibidos são os da última leitura confirmada, de 12/Ago, 16:41 BRT.",
-      "subtitle": "11/Ago, a 54 dias do 1º turno: das três nacionais publicadas hoje, só a Gerp divulgou o campo completo, e a base de comparação sobre o pelotão encolheu justamente no dia de maior dispersão entre casas. Os três caíram no preço. A fase de registro vai até 15/Ago, e Zema, que protocolou em 06/Ago, segue sendo o único dos três com registro apresentado.",
+      "header": "PREÇO COM LEITURA NOVA EM 14/Ago apenas para CAIADO, que subiu 0,10pp e chegou a 1,05% (vol USD 5,70M acumulado). Para ZEMA e HADDAD não há leitura nova, porque os dois estão abaixo do corte de 0,5% que o painel usa para separar preço de ruído, e os valores exibidos são os da leitura confirmada de 12/Ago. Na urna segue valendo a PoderData de 13/Ago, que põe Caiado e Zema em empate com o líder no returno.",
+      "subtitle": "14/Ago, a 51 dias do 1º turno: Caiado é o único do pelotão com leitura de preço nova, e ele subiu. O contraste que o painel vem registrando não se desfez: empate com o líder no returno de uma nacional e preço de vitória em torno de 1%.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 0,95% (vol USD 5,66M acumulado, leitura confirmada de 12/Ago, 16:41 BRT) | EMPATA com o líder no returno da PoderData de 13/Ago | urna em vigor: Gerp 4%, Genial/Quaest 4%, Meio/Ideia 5,7%, BTG/Nexus 5%",
-        "fortes": "EMPATA COM O LÍDER NO RETURNO da PoderData de 13/Ago, segundo CNN Brasil e Bnews, o segundo empate dele em quatro dias depois do da BTG/Nexus de 10/Ago. É o melhor resultado que um nome fora dos dois primeiros vem obtendo na janela.",
-        "fracos": "A DISTÂNCIA ENTRE URNA E PREÇO SEGUE SENDO A MAIOR DO PELOTÃO NESTA JANELA: de 4% a 5,7% de intenção declarada contra 0,95% precificado na última leitura confirmada. Os percentuais de 1º turno dele na rodada de 13/Ago não saíram nas matérias capturadas, e o painel registra a ausência em vez de estimar."
+        "label": "CAIADO (PSD), Poly presidencial 1,05% (vol USD 5,70M acumulado, leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC)), alta de 0,10pp desde 12/Ago | EMPATA com o líder no returno da PoderData de 13/Ago | urna em vigor: Gerp 4%, Genial/Quaest 4%, Meio/Ideia 5,7%, BTG/Nexus 5%",
+        "fortes": "É o único do pelotão com leitura de preço nova em 14/Ago, e ela é de alta: 1,05%. O preço saiu de 0,95% em 12/Ago para 1,05% agora. EMPATA COM O LÍDER NO RETURNO da PoderData de 13/Ago, segundo CNN Brasil e Bnews, o segundo empate dele em quatro dias depois do da BTG/Nexus de 10/Ago. Na urna ele tem de 4% a 5,7% no 1º turno conforme a casa, à frente dos demais nomes do pelotão.",
+        "fracos": "Mesmo com a alta, o preço de vitória dele segue em 1,05%, contra 4% a 5,7% de intenção declarada no 1º turno. A distância entre urna e preço continua sendo a maior do pelotão nesta janela. Empatar no returno e vencer a eleição são perguntas diferentes, e o painel não as soma."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 7,06M acumulado, leitura confirmada de 12/Ago, 16:41 BRT) | NÃO testado pelas nacionais em vigor, porque disputa o governo de São Paulo",
+        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 7,06M acumulado, leitura confirmada de 12/Ago, 16:41 BRT), sem leitura nova em 14/Ago por estar abaixo do corte de 0,5% | NÃO testado pelas nacionais em vigor, porque disputa o governo de São Paulo",
         "fortes": "O volume acumulado dele segue maior que o de vários nomes com preço acima do dele, o que mantém o contrato com lastro de negociação apesar do preço baixo.",
-        "fracos": "A PoderData de 13/Ago não o testa, e nenhuma nacional da janela o testa em cenário presidencial. O AGRAVANTE PERMANECE E PRECISA SER DITO COM CLAREZA: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e qualquer cenário que o inclua é hipótese de pesquisa, não candidatura em curso."
+        "fracos": "A PoderData de 13/Ago não o testa, e nenhuma nacional da janela o inclui em cenário presidencial. A ressalva de fundo permanece e precisa ser dita com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e qualquer cenário que o inclua é hipótese de pesquisa, não candidatura em curso."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,35% (vol USD 5,07M acumulado, leitura confirmada de 12/Ago, 16:41 BRT) | EMPATA com o líder no returno da PoderData de 13/Ago | urna em vigor: Gerp 2%, Genial/Quaest 2%, Meio/Ideia 2,6%, BTG/Nexus 3%",
-        "fortes": "EMPATA COM O LÍDER NO RETURNO pela primeira vez na janela, segundo CNN Brasil e Bnews. Segue sendo o único do pelotão com registro de candidatura apresentado ao TSE, feito em 06/Ago com R$ 178,7 milhões declarados, num prazo que se encerra em 15/Ago.",
-        "fracos": "O PREÇO SEGUE ABAIXO DO CORTE DE 0,5% que o painel usa para separar preço de ruído, e nessa faixa a variação não sustenta interpretação. Os percentuais de 1º turno dele na rodada de 13/Ago não saíram nas matérias capturadas, e ele segue sendo o nome do pelotão com a menor intenção declarada entre os que as casas testam."
+        "label": "ZEMA (Novo), Poly presidencial 0,35% (vol USD 5,07M acumulado, leitura confirmada de 12/Ago, 16:41 BRT), sem leitura nova em 14/Ago por estar abaixo do corte de 0,5% | EMPATA com o líder no returno da PoderData de 13/Ago | urna em vigor: Gerp 2%, Genial/Quaest 2%, Meio/Ideia 2,6%, BTG/Nexus 3%",
+        "fortes": "EMPATA COM O LÍDER NO RETURNO pela primeira vez na janela, segundo CNN Brasil e Bnews. Segue sendo o único do pelotão com registro de candidatura já apresentado ao TSE, feito em 06/Ago com R$ 178,7 milhões declarados, o que o deixa fora do aperto do prazo que termina em 15/Ago.",
+        "fracos": "O preço dele está abaixo do corte de 0,5% que o painel usa para separar preço de ruído, e por isso não recebe leitura nova nesta rodada. Na urna ele vai de 2% a 3% no 1º turno, a menor faixa do pelotão, e a distância entre empatar no returno e chegar ao returno é justamente o que esses números não cobrem."
       },
-      "analise": "⭐ O CONTRASTE MAIS FORTE DO DIA ESTÁ AQUI, E ELE OPÕE URNA A PREÇO. Caiado e Zema EMPATAM com o líder no returno da PoderData, segundo CNN Brasil e Bnews, e os preços de vitória em vigor para os dois são 0,95% e 0,35%. São perguntas diferentes e o painel não as subtrai: empatar num returno hipotético mede outra coisa que vencer a eleição, e a distância entre as duas medições é justamente o que esta seção existe para mostrar. Para Caiado é o segundo empate em quatro dias, depois do da BTG/Nexus de 10/Ago. ⚠️ Os percentuais de 1º turno desses nomes nesta rodada não saíram nas matérias capturadas, e o painel registra ausência em vez de estimar. NO TABULEIRO, Caiado atacou em São Paulo as trajetórias dos dois primeiros e criticou a atuação do STF, segundo o Goiás 246; Zema segue sendo o único do pelotão com registro apresentado ao TSE, e o prazo dos demais se encerra em 15/Ago.",
+      "analise": "⭐ O CONTRASTE DO PELOTÃO SEGUE DE PÉ, E HOJE ELE GANHOU UM DADO NOVO DO LADO DO PREÇO. Caiado é o único do grupo com leitura nova em 14/Ago e ele SUBIU, de 0,95% para 1,05% (vol USD 5,70M acumulado). É movimento pequeno em termos absolutos, mas é o segundo nome do painel a se mover para cima nesta leitura, junto com o segundo colocado. Na urna nada mudou desde ontem: a PoderData de 13/Ago segue sendo a nacional em vigor, e nela Caiado e Zema EMPATAM com o líder no returno, segundo CNN Brasil e Bnews. Para Caiado é o segundo empate em quatro dias, depois do da BTG/Nexus de 10/Ago; para Zema é o primeiro da janela. A distância entre os dois instrumentos continua sendo o achado: de 4% a 5,7% de intenção declarada no 1º turno contra pouco mais de 1% de preço de vitória. ⚠️ As duas coisas medem perguntas diferentes, empatar no returno e vencer a eleição, e o painel não as soma. Zema e Haddad seguem abaixo do corte de 0,5% e por isso não recebem leitura nova. Zema é o único do pelotão com registro já apresentado ao TSE, feito em 06/Ago, e por isso o prazo de 15/Ago não o pressiona.",
       "fortes": [
-        "A PoderData de 13/Ago põe Caiado e Zema em empate com o líder no returno, segundo CNN Brasil e Bnews, e Caiado segue à frente de Zema em todas as rodadas que publicam o 1º turno dos dois.",
+        "Caiado é o único do pelotão com leitura de preço nova em 14/Ago, e subiu 0,10pp, chegando a 1,05%.",
+        "A PoderData de 13/Ago põe Caiado e Zema em empate com o líder no returno, segundo CNN Brasil e Bnews, e Caiado segue à frente do pelotão no 1º turno.",
         "Caiado tem 5% no 1º turno da BTG/Nexus, à frente de Renan Santos, que tem 4%, e de Zema, com 3%.",
-        "Na Meio/Ideia de 05/Ago Caiado é o adversário que chega mais perto no returno, com 40% contra 48,5%.",
-        "Zema registrou candidatura no TSE em 06/Ago e segue sendo o único do pelotão com registro apresentado, num prazo que se encerra em 15/Ago.",
-        "A Palver de 10/Ago não testa Caiado nem Zema no cenário divulgado, então a ausência de leitura é registrada como ausência, e não preenchida por estimativa."
+        "Zema é o único do pelotão com registro de candidatura já apresentado ao TSE, feito em 06/Ago, e por isso está fora do aperto do prazo que termina em 15/Ago.",
+        "Os contratos do pelotão somam volume acumulado relevante mesmo com preço baixo, o que indica negociação e não abandono."
       ],
       "fracos": [
-        "O preço de Caiado caiu 0,10pp pelo TERCEIRO pregão seguido, para 1,05%, e a distância dele entre urna e preço segue sendo a maior do pelotão.",
-        "Zema caiu 0,10pp, para 0,35%, afundando mais abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
-        "DUAS DAS TRÊS NACIONAIS DE 11/Ago não publicaram o campo completo, e a PoderData de 13/Ago não teve os percentuais de 1º turno deles nas matérias capturadas, então a base de comparação entre casas sobre eles segue estreita.",
-        "HADDAD NÃO É CANDIDATO À PRESIDÊNCIA e disputa o governo de São Paulo, então qualquer cenário que o inclua é hipótese de pesquisa, não candidatura em curso.",
-        "Nenhum dos três aparece nos books secundários com preço que sustente leitura de movimento: os contratos são finos e a variação neles pede ressalva."
+        "A distância entre urna e preço segue sendo a maior do painel: de 4% a 5,7% de intenção declarada para Caiado contra 1,05% de preço de vitória.",
+        "Zema e Haddad estão abaixo do corte de 0,5% e por isso não recebem leitura de preço nova nesta rodada.",
+        "Nenhum nome do pelotão passa de 5,7% no 1º turno em qualquer nacional da janela.",
+        "Haddad não é candidato à Presidência e disputa o governo de São Paulo, então o contrato dele mede uma hipótese, não uma candidatura.",
+        "O empate no returno depende de chegar ao returno, e é exatamente essa etapa que os números de 1º turno do pelotão não sustentam."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "NACIONAL NOVA EM 13/Ago. PoderData/Aya (n=2.400, telefônica, campo 09 a 12/Ago, BR-06868/2026): 41% no 1º turno e 46% x 45% no returno. Contra a própria casa, o 1º turno repete 41% x 35% de 30/Jul e o returno estreita de 3pp para 1pp. Rejeição em 48%, igual à do adversário. Aprovação pessoal em 43% contra 50% de desaprovação.",
-      "m": "63,50% (vol USD 8,22M acumulado), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. O QUE MUDOU HOJE VEIO DA URNA, NÃO DO PREÇO: a PoderData repete o 1º turno da própria casa e estreita o returno de 3pp para 1pp. RESSALVA DE SÉRIE: entre os 173 pontos gravados desde 16/Mai, 29 tiveram valor igual ou maior que 63,50%, com topo de 66,50% em 01/Ago 23:00 e piso de 39,50% em 26/Mai.",
-      "s": "52 dias da eleição. Ele lançou a campanha à reeleição no Estádio da Vila Euclides, em São Bernardo, berço do sindicalismo no ABC, segundo TVT News e G1, no mesmo dia em que o adversário abriu a dele no Rio. 📅 Quaest publica em 14/Ago e Nexus em 17/Ago.",
+      "p": "Segue valendo a PoderData/Aya de 13/Ago (n=2.400, telefônica, campo 09 a 12/Ago, BR-06868/2026): 41% no 1º turno e 46% x 45% no returno. A Quaest divulga hoje uma nacional com 13 candidatos e os resultados não estavam publicados no momento desta captura. Rejeição em 48%, igual à do adversário. Aprovação pessoal em 43% contra 50% de desaprovação.",
+      "m": "63,50% (vol USD 8,25M acumulado), leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC)",
+      "t": "PREÇO PARADO PELO SEXTO DIA. A série gravada registra 63,50% em todos os dias de 09 a 14/Ago. A distância para o segundo colocado encolheu 0,20pp desde 12/Ago, e o movimento foi inteiramente do adversário. RESSALVA DE SÉRIE: entre os pontos gravados desde 16/Mai, o topo é 66,50% em 01/Ago às 23:00 e o piso é 39,50% em 26/Mai.",
+      "s": "51 dias da eleição. O TSE identificou uma tentativa de alterar a filiação partidária dele, barrada antes de produzir efeito, dentro do episódio que levou à suspensão do sistema de filiações. 📅 A Quaest publica hoje e a Nexus em 17/Ago.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "NACIONAL NOVA EM 13/Ago. PoderData/Aya lhe dá 35% no 1º turno, o mesmo valor que a casa lhe deu em 30/Jul, e 45% no returno, contra 43% na rodada anterior. Rejeição em 48%, exatamente igual à do líder. Seguem valendo os 28,7% da CNT/MDA, os 34,1% da Futura e os 38% da Gerp, de 11/Ago.",
-      "m": "27,65% (vol USD 8,13M), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. NA URNA ele repetiu os 35% da própria casa no 1º turno e subiu de 43% para 45% no returno. RESSALVA DE SÉRIE: entre os 172 pontos gravados desde 16/Mai, 51 tiveram valor igual ou maior que 27,65%, com topo de 33,20% em 02/Jun 19:30 e piso de 22,00% em 03/Jul 01:00.",
-      "s": "🔴 O FATO DO DIA É O REGISTRO DELE. Folha de S.Paulo e G1 informam que ele aparece no TSE filiado ao Missão, o partido do MBL e de Renan Santos, sem ter conhecimento disso, o que atrapalhou o registro formal da candidatura presidencial pelo PL. O G1 registra que o PL fala em fraude. O prazo de registro se encerra em 15/Ago. Ele abriu a campanha no Rio e voltou a criticar Moraes após operação contra uma fonte de jornalista.",
+      "p": "Segue valendo a PoderData/Aya de 13/Ago: 35% no 1º turno, o mesmo valor de 30/Jul, e 45% no returno contra 43% na rodada anterior. Seguem valendo os 28,7% da CNT/MDA, os 34,1% da Futura e os 38% da Gerp, de 11/Ago.",
+      "m": "27,85% (vol USD 8,20M acumulado), leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC)",
+      "t": "ÚNICO NOME ACIMA DE 1% A SUBIR, com alta de 0,20pp desde a leitura de 12/Ago, e toda a redução do gap no período veio dele. RESSALVA DE SÉRIE: entre os pontos gravados desde 16/Mai, 51 tiveram valor igual ou maior que 27,85%, com topo de 33,20% em 02/Jun 19:30 e piso de 22,00% em 03/Jul 01:00.",
+      "s": "🔴 O CASO CADASTRAL DELE VIROU CASO DE SISTEMA. Nunes Marques acolheu os pedidos, o vínculo com o Missão foi cancelado e ele voltou ao PL, segundo Folha de S.Paulo e G1. Em seguida o TSE suspendeu o processamento de novas filiações em todo o país. O prazo de registro termina em 15/Ago.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "A PoderData de 13/Ago o testou no returno e é o único do pelotão que Lula VENCE nesse cenário, segundo o Bnews, enquanto empata com os outros três. Os percentuais do 1º turno dele nesta rodada não saíram nas matérias capturadas. Seguem os 5% da Gerp, os 4% da Genial/Quaest e da BTG/Nexus, os 4,7% da Meio/Ideia e os 10% da Palver pela internet.",
-      "m": "7,45% (vol USD 9,48M), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. Ele segue com o maior volume acumulado do book entre os nomes acima de 1%.",
-      "s": "A Gazeta do Povo publicou o plano de governo dele. O partido pelo qual ele disputa, o Missão, é o mesmo em que o adversário do PL apareceu filiado sem saber, segundo Folha e G1, no episódio que travou o registro da candidatura presidencial daquele.",
+      "p": "Os percentuais de 1º turno dele na PoderData de 13/Ago não saíram nas matérias capturadas. Seguem os 5% da Gerp, os 4% da Genial/Quaest e da BTG/Nexus, os 4,7% da Meio/Ideia e os 10% da Palver pela internet.",
+      "m": "7,15% (vol USD 9,59M acumulado), leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC)",
+      "t": "A MAIOR QUEDA DO PELOTÃO DE CIMA NESTA LEITURA, com recuo de 0,30pp desde 12/Ago. Ele segue com o maior volume acumulado do book presidencial entre os nomes acima de 1%, e o preço continua posicionado ENTRE os dois métodos da urna.",
+      "s": "O partido pelo qual ele disputa, o Missão, é o mesmo em que o adversário do PL apareceu filiado sem saber, episódio que o TSE tratou como fraude e que levou à suspensão do sistema de filiações. A Gazeta do Povo publicou o plano de governo dele nesta semana.",
       "pc": "#F59E0B",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A PoderData de 13/Ago o põe em EMPATE com Lula no returno, segundo CNN Brasil e Bnews, o segundo empate dele em quatro dias depois do da BTG/Nexus de 10/Ago. Os percentuais do 1º turno nesta rodada não saíram nas matérias capturadas, e seguem os 4% da Gerp e da Genial/Quaest, os 5,7% da Meio/Ideia e os 5% da BTG/Nexus.",
-      "m": "0,95% (vol USD 5,66M), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. A distância entre urna e preço segue sendo a maior do pelotão nesta janela: de 4% a 5,7% de intenção declarada contra 0,95% precificado, e agora com um empate no returno em duas casas diferentes em quatro dias.",
-      "s": "Em São Paulo, segundo o Goiás 246, ele atacou as trajetórias de Lula e de Flávio Bolsonaro e criticou a atuação do STF.",
+      "p": "A PoderData de 13/Ago o põe em EMPATE com o líder no returno, segundo CNN Brasil e Bnews, o segundo empate em quatro dias depois do da BTG/Nexus de 10/Ago. Seguem os 4% da Gerp e da Genial/Quaest, os 5,7% da Meio/Ideia e os 5% da BTG/Nexus no 1º turno.",
+      "m": "1,05% (vol USD 5,70M acumulado), leitura confirmada de 14/Ago, 14:46 BRT (17:46 UTC)",
+      "t": "ELE SUBIU 0,10pp desde a leitura de 12/Ago e é o único do pelotão com leitura nova nesta rodada. A distância entre urna e preço segue sendo a maior do painel: de 4% a 5,7% de intenção declarada no 1º turno contra pouco mais de 1% de preço de vitória.",
+      "s": "Em São Paulo ele vem atacando as trajetórias dos dois primeiros colocados e criticando a atuação do STF. O prazo de registro de candidaturas termina em 15/Ago.",
       "pc": "#16A34A",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "A PoderData de 13/Ago o põe em EMPATE com Lula no returno, segundo CNN Brasil e Bnews, e é a primeira vez na janela que ele aparece nessa condição. Os percentuais do 1º turno nesta rodada não saíram nas matérias capturadas, e seguem os 2% da Gerp, os 3% da BTG/Nexus, os 2% da Genial/Quaest e os 2,6% da Meio/Ideia.",
-      "m": "0,35% (vol USD 5,07M), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT, e segue abaixo do corte de 0,5% que o painel usa para separar preço de ruído. ⚠️ O CONTRASTE DE HOJE É DELE: empata com o líder no returno e é precificado em 0,35%.",
-      "s": "Segue sendo o único do pelotão com registro de candidatura já apresentado ao TSE, feito em 06/Ago com R$ 178,7 milhões declarados. O prazo dos demais se encerra em 15/Ago, e a partir dali a ausência de registro passa a ser fato, e não pendência.",
+      "p": "A PoderData de 13/Ago o põe em EMPATE com o líder no returno, segundo CNN Brasil e Bnews, a primeira vez na janela. Seguem os 2% da Gerp, os 3% da BTG/Nexus, os 2% da Genial/Quaest e os 2,6% da Meio/Ideia no 1º turno.",
+      "m": "0,35% (vol USD 5,07M acumulado), leitura confirmada de 12/Ago, 16:41 BRT",
+      "t": "NÃO HÁ LEITURA NOVA PARA ELE EM 14/Ago, porque o preço está abaixo do corte de 0,5% que o painel usa para separar preço de ruído. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT.",
+      "s": "Segue sendo o único do pelotão com registro de candidatura já apresentado ao TSE, feito em 06/Ago com R$ 178,7 milhões declarados, e por isso o prazo de 15/Ago não o pressiona.",
       "pc": "#0EA5E9",
       "mc": ""
     },
@@ -157,11 +157,11 @@
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
       "m": "3,90% (vol USD 83 mil), leitura confirmada de 12/Ago, 16:41 BRT",
-      "t": "SEM LEITURA DE MERCADO NOVA EM 13/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. Segue sendo o contrato mais fino entre os acompanhados, e movimento nele exige essa ressalva.",
-      "s": "O fio judicial do dia é a operação da PF contra a fonte de um jornalista, com base em troca de mensagens que embasaram reportagens sobre Dino. O ministro disse ser alvo de agressões e injustiças, segundo O Globo, e a decisão de Moraes no caso gerou reação de entidades e dúvidas entre especialistas, segundo a Folha. Segue valendo a determinação de 12/Ago em que Moraes, Dino, Gilmar Mendes e Zanin mandaram sete tribunais devolverem penduricalhos.",
+      "t": "NÃO HÁ LEITURA NOVA PARA ESTE CONTRATO EM 14/Ago. O valor exibido é o da última leitura confirmada, de 12/Ago, 16:41 BRT. Segue sendo o contrato mais fino entre os acompanhados, e movimento nele exige essa ressalva.",
+      "s": "O fio judicial da semana segue sendo a operação da PF contra a fonte de um jornalista, com base em mensagens que embasaram reportagens sobre Dino, e a reação de entidades à decisão de Moraes no caso. Segue valendo a determinação de 12/Ago em que Moraes, Dino, Gilmar Mendes e Zanin mandaram sete tribunais devolverem penduricalhos.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "O DIA SE DECIDIU NA URNA E NO CARTÓRIO ELEITORAL, NÃO NO PREÇO. Primeiro, a PoderData/Aya publicou a primeira nacional desde 11/Ago e o achado está na comparação da casa com ela mesma: no 1º turno a distância entre os dois primeiros não se mexeu em quatro semanas, foram 6pp em 16/Jul, 6pp em 30/Jul e 6pp agora, com os dois repetindo exatamente os mesmos percentuais da rodada anterior; no returno, no mesmo intervalo, a distância caiu de 3pp para 1pp. Mesma casa, mesmo método, mesma amostra e mesmo registro no TSE, com um turno parado e o outro estreitando. Segundo, a rejeição saiu empatada em 48% para os dois primeiros, o que retira a base de qualquer leitura fácil sobre quem tem mais espaço para crescer. Terceiro, e é o fato político do dia, Folha de S.Paulo e G1 informam que o segundo colocado aparece no registro do TSE filiado ao Missão, o partido pelo qual o quarto colocado disputa, sem ter conhecimento disso, e que isso travou o registro formal da candidatura presidencial dele pelo PL, que fala em fraude. O prazo de registro se encerra em 15/Ago. ⚠️ O PAINEL NÃO ATRIBUI CAUSA: não há aqui nenhuma medição que ligue o episódio do registro a movimento de preço, e não há leitura de mercado nova em 13/Ago para comparar. Os preços exibidos nesta página são os da última leitura confirmada, de 12/Ago, 16:41 BRT."
+  "cruzamento": "O DIA TEVE PREÇO NOVO E TEVE FATO INSTITUCIONAL, E OS DOIS APONTAM PARA LADOS DIFERENTES. No preço, a leitura de 14/Ago confirma um book presidencial praticamente imóvel: o líder em 63,50% pelo sexto dia consecutivo na série gravada, o segundo colocado subindo 0,20pp para 27,85%, Renan Santos caindo 0,30pp para 7,15% e Caiado subindo 0,10pp para 1,05%. A distância entre os dois primeiros encolheu 0,20pp, de 35,85pp para 35,65pp, e todo o movimento veio do segundo colocado, não do líder. ⛔ Sem superlativo: a série gravada desde 16/Mai registra 51 pontos com o segundo colocado em nível igual ou superior ao de hoje, e o topo dele segue em 33,20%, de 02/Jun. Fora do book presidencial não há leitura nova em 14/Ago, e os contratos de 2º e 3º lugar, o do Senado e o de impeachment no STF seguem com os valores da leitura confirmada de 12/Ago. Na urna também não houve novidade: a Quaest divulga hoje uma nacional com 13 candidatos testados, e no momento desta captura os resultados ainda não estavam publicados, então a nacional em vigor continua sendo a PoderData/Aya de 13/Ago. ⭐ O QUE REALMENTE MUDOU HOJE FOI O CARTÓRIO ELEITORAL, E É O MAIOR FATO INSTITUCIONAL DA JANELA. O TSE suspendeu o processamento de novas filiações partidárias em todo o país depois do registro falso do segundo colocado no Missão e da identificação de uma tentativa de alterar a filiação do líder, segundo G1, O Globo, Gazeta do Povo, CartaCapital e Money Times. O vínculo indevido foi cancelado e o segundo colocado voltou a constar filiado ao PL, com Nunes Marques acolhendo os pedidos apresentados. O prazo de registro de candidaturas termina em 15/Ago, ou seja, a suspensão do sistema cai na véspera do fechamento, e a partir de 16/Ago a ausência de registro deixa de ser pendência e passa a ser fato. ⚠️ O painel registra a ordem dos acontecimentos e não atribui causa: o preço do segundo colocado subiu 0,20pp na mesma janela em que o obstáculo cadastral dele foi removido, e essa é uma coincidência de calendário, não uma relação medida. Um terceiro fato entrou hoje e não tem contrapartida no preço: a OEA anunciou em 13/Ago que enviará missão de observação eleitoral ao Brasil, chefiada por um ex-ministro chileno, segundo G1, CNN Brasil e Folha de S.Paulo."
 }
