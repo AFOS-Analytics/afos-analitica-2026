@@ -1,0 +1,84 @@
+{
+  "date": "2026-08-15",
+  "capturedAt": "2026-08-15T16:33:00.000Z",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Genial/Quaest publica nacional com 38% x 31% na 1a volta e 43% x 40% no returno",
+        "verificacao1CrossRef": "Quaest aparece em dailies anteriores como pesquisa ESPERADA; o resultado e novidade",
+        "verificacao2Fetch": {
+          "url": "https://www.metropoles.com/brasil/quaest-lula-e-flavio-bolsonaro-1o-turno",
+          "data": "2026-08-14",
+          "tipo": "evento"
+        },
+        "segundaFonte": "G1, CNN Brasil, Folha de S.Paulo, Valor Economico e Poder360, todos com 43% x 40% no returno",
+        "decisao": "incorporar",
+        "conflitoResolvido": "o Metropoles publica 41% para Flavio no returno e se contradiz na propria materia ao dizer que a vantagem caiu de 5 para 3 pontos; 43 menos 41 da 2. Cinco veiculos publicam 40%, que fecha os 3 pontos. Vale 40%."
+      },
+      {
+        "evento": "STF suspende condenacao de Romero Juca e afasta inelegibilidade",
+        "verificacao1CrossRef": "zero mencoes a Juca em 7 dailies, logo novidade",
+        "verificacao2Fetch": {
+          "url": "https://tribunadonorte.com.br/politica/stf-suspende-condenacao-de-romero-juca-e-afasta-inelegibilidade/",
+          "data": "2026-08-14",
+          "tipo": "evento"
+        },
+        "segundaFonte": "Diario do Grande ABC e correio.rac, via Agencia Estado",
+        "decisao": "incorporar com os dois qualificadores do codebook",
+        "qualificadores": [
+          "decisao MONOCRATICA de Flavio Dino, nao de colegiado",
+          "DEPENDE DE REFERENDO da Primeira Turma para se consolidar",
+          "Dino avocou o processo por entender que o TRF-1 nao tinha competencia",
+          "o STJ concedeu liminar no mesmo sentido, com o ministro Messod Azulay Neto",
+          "Juca e pre-candidato a DEPUTADO FEDERAL por Roraima, nao a Presidencia"
+        ]
+      },
+      {
+        "evento": "prazo de registro de candidaturas termina em 15/Ago",
+        "verificacao1CrossRef": "aparece na daily de 14/Ago, logo continuidade, mas o vencimento e hoje",
+        "verificacao2Fetch": { "url": "GZH via Google News", "data": "2026-08-15", "tipo": "evento" },
+        "decisao": "incorporar como marco de calendario"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "nenhuma. Quaest com G1, Folha, CNN, Valor e Poder360; caso Juca com Tribuna do Norte, Diario do Grande ABC e O Globo",
+    "numericalErrors": "reconcile-claims retornou OK, tudo bate com o JSON dentro de +-0.05pp",
+    "fontesInventadas": "conferidas tres. O Globo e G1 com URL primaria e data no caminho; Tribuna do Norte lida por fetch, com ministro, natureza da decisao e pendencia de referendo",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O preco rompeu ANTES de a Quaest entrar na janela do dia, e a peca nao liga uma coisa a outra",
+    "verbosCriticos": "suspendeu veio com ministro nomeado, decisao monocratica declarada e pendencia de referendo da Primeira Turma",
+    "decisao": "prosseguir"
+  },
+  "trava": {
+    "rodadas": 2,
+    "veredito": "BLOQUEADO nas duas",
+    "rodada1": "presidencial Lula discordou 1,00pp em 8 minutos, de 63,50% para 64,50%",
+    "rodada2": "Lula e Flavio CONFIRMARAM; Renan discordou 0,35pp e Caiado 0,30pp",
+    "decisaoDoAndre": "publicar com 64,50% se a trava aprovasse. A trava aprovou exatamente esses dois nomes na rodada 2, e o metodo aplicado foi o de 10/Ago: publicar o confirmado e omitir o resto",
+    "publicado": ["Lula 64,50%", "Flavio 28,15%"],
+    "omitido": ["Renan Santos", "pelotao", "2o lugar", "3o lugar", "Senado", "STF impeachment"]
+  },
+  "superlativosConferidos": {
+    "metodo": "duas janelas unidas para furar o teto de 1000 pontos da rota",
+    "lula64_50": "17 de 174 pontos desde 18/Mai tiveram valor igual ou maior; topo 66,50% em 01/Ago; ultima vez em 64,50% ou mais foi 08/Ago",
+    "flavio28_15": "23 de 172 pontos tiveram valor igual ou maior; topo 33,20% em 02/Jun; piso 22,00% em 03/Jul",
+    "gap36_35": "32 de 88 dias tiveram distancia igual ou maior; pico 41,80pp em 01/Ago",
+    "conclusao": "nenhum superlativo entrou na peca. O fato publicado e o ROMPIMENTO de um patamar de sete dias, nao um recorde"
+  },
+  "portoes": {
+    "palavrasNoCorpo": 898,
+    "tetoPalavras": 900,
+    "cortesFeitos": "33 palavras, todas de REPETICAO: um trecho de Em sintese que reafirmava o achado da Secao 2 e a cauda do paragrafo do Mendonca",
+    "reconcileClaims": "OK",
+    "gateNumericoTresIdiomas": "70 numeros identicos em pt, en e es, nenhum sem par",
+    "tldrBullets": { "pt": 3, "en": 3, "es": 3 },
+    "proporcaoFontes": { "secundarias": 5, "ancora": 3, "percentualSecundario": 62 },
+    "avisosNaoBloqueantes": [
+      "low-link-density em 57% contra a regua de 80%, porque paragrafos de metodo nao tem fonte externa",
+      "volume-total-missing no ingles: o detector procura o padrao em portugues, e o texto cita USD 123.55M na Secao 1"
+    ]
+  },
+  "wayback": { "preCheck": 429, "acao": "nao rodado, sem insistir", "passivoEmDias": 12 },
+  "achadoEditorial": "A urna encurtou e o preco afastou, no mesmo par de dias. A Quaest reduziu as duas distancias contra a propria casa com movimento SIMETRICO de 1 ponto para cada lado, e o mercado abriu a distancia porque o lider subiu 1,00pp contra 0,30pp do segundo. Segundo achado: efeito de casa, com a PoderData empatando a rejeicao em 48% e a Quaest separando em 54% e 52%, e 5 pontos de diferenca no saldo de aprovacao entre casas separadas por um dia."
+}
