@@ -1,167 +1,167 @@
 {
-  "updatedAt": "14/08/2026, 14:46",
-  "subtitle": "UPDATE Aug 14, 51 days from the first round. PRICE: there is a new reading for the presidential market, confirmed reading of Aug 14, 14:46 BRT (17:46 UTC). For the second and third place contracts, for the Senate and for the STF impeachment contract there is no new reading on Aug 14, and the values displayed are those of the last confirmed reading, from Aug 12, 16:41 BRT. POLLS: Quaest releases a national poll today with 13 candidates tested, and at the time of this capture the results had not yet been published, so PoderData/Aya of Aug 13 remains in force (n=2,400, telephone, fieldwork Aug 9 to Aug 12, BR-06868/2026). ELECTORAL REGISTRY: on the night of Aug 13 the TSE suspended the processing of new affiliations in the Filia system, according to Gazeta do Povo and Brasil de Fato, and the court itself stated that there was NO hacking, but rather improper use of the tool by someone holding the party's credentials. On Aug 13 Nunes Marques restored the PL affiliation and cleared the registration, and Flávio Bolsonaro's presidential candidacy was registered hours later, according to Brasil de Fato on Aug 14. The registration deadline closes on Aug 15.",
+  "updatedAt": "15/08/2026, 13:33",
+  "subtitle": "UPDATE Aug 15, 50 days from the first round. PRICE: there is a new confirmed reading for the leader and for the runner-up, confirmed reading of Aug 15, 13:33 BRT (16:33 UTC). For Renan Santos, for the trailing pack and for the second and third place contracts, the Senate one and the STF impeachment one there is no new reading on Aug 15, and the values of Aug 14, 14:46 BRT still stand. POLLS: Quaest released on Aug 14 at 21:00, after yesterday's capture, with 38% x 31% in the first round and 43% x 40% in the runoff (n=2,004, BR-06773/2026). REGISTRY: the candidate registration deadline closes today, Aug 15.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE WITH A NEW READING ON Aug 14: 63.50% (vol USD 8.25M cumulative), the same value as the confirmed reading of Aug 12. It is the sixth consecutive day at 63.50% in the recorded series. POLLS: PoderData/Aya of Aug 13 remains in force, with 41% in the first round and 46% x 45% in the runoff, because the Quaest poll of today had no published result at the time of capture.",
+      "header": "PRICE WITH A NEW READING ON Aug 15: 64.50% (vol USD 8.29M cumulative). The price went from 63.50% on Aug 14 to 64.50% now, up 1.00pp, breaking a level it had held for seven days. POLLS: Quaest of Aug 14 gives him 38% in the first round and 43% in the runoff, the floor of the window in the first case.",
       "fortes": [
-        "His price is the steadiest in the presidential book in this window: 63.50% in every recorded reading from Aug 9 to Aug 14, six days without variation.",
-        "He leads or ties the first round in the EIGHT national polls since Aug 5, and wins the runoff in five of the six rounds that test it.",
-        "CNT/MDA of Aug 11 remains his best reading of the window: 42.4% in the first round, with a 13.7pp lead, and 48% x 39% in the runoff.",
-        "The attempt identified by the TSE targeted his PT affiliation and was never completed, according to Gazeta do Povo and Brasil de Fato. His party registration was not changed.",
-        "The cumulative volume of his contract rose to USD 8.25M, and he remains among the three most traded names in the presidential book."
+        "He broke upward after seven days stuck at 63.50%, up 1.00pp, returning to the level last seen on Aug 8.",
+        "He remains ahead in all nine national polls since Aug 5, in both rounds, without exception.",
+        "Quaest of Aug 14 shows government approval in a technical tie, 46% against 48%, his best net since Aug 5 and well above the 43% against 50% from PoderData of Aug 13.",
+        "His rejection is LOWER than his opponent's in Quaest, 52% against 54%, and this is the first national poll of the window to separate the two on that indicator.",
+        "The cumulative volume of his contract rose to USD 8.29M, and the distance to the runner-up WIDENED on price even as the polls narrowed it."
       ],
       "fracos": [
-        "The distance to the runner-up narrowed by 0.20pp since the last confirmed reading, from 35.85pp on Aug 12 to 35.65pp today, and the one who moved was his opponent.",
-        "PoderData of Aug 13 shows the runoff at 1pp, the tightest value the house has ever given him in its own series, after 3pp on Jul 30.",
-        "Personal approval at 43% against 50% disapproval in PoderData of Aug 13, a net 7pp negative.",
-        "Rejection at 48%, exactly equal to his opponent's, which blocks any easy reading about who has more room to grow.",
-        "He ties in the runoff with Caiado and with Zema in PoderData of Aug 13, and neither of them goes above 5.7% in the first round in any house in the window."
+        "The 38% from Quaest is the FLOOR of the nine national polls since Aug 5, whose range runs from 38% to 44%.",
+        "Against Quaest's own Aug 5 round he gave up 1 point in the first round and 1 point in the runoff, and both distances narrowed by 2pp.",
+        "In the Quaest runoff the difference is 3pp, with a 2pp margin, that is, close to the threshold of a technical tie.",
+        "Series caveat: among the 174 points recorded since May 18, 17 had a value equal to or above 64.50%, with a peak of 66.50% on Aug 1.",
+        "Government disapproval remains above approval in every house of the window, with a net between 2pp and 7pp negative."
       ],
-      "analise": "THE PRICE HAS A READING AGAIN AND IT DID NOT MOVE. On Aug 14 he stands at 63.50% (vol USD 8.25M cumulative), the same value as the confirmed reading of Aug 12, and the recorded series shows 63.50% on every day from Aug 9 to Aug 14. Six days without variation in a contract of this volume is information, and what it says is that the market did not react to anything that happened during the week. The distance to the runner-up narrowed by 0.20pp over the period, and the movement was entirely his opponent's, not the leader's. In the polls nothing has changed since yesterday, because the Quaest poll of today had no published figure when this page was assembled, and PoderData/Aya of Aug 13 remains in force, with 41% in the first round and 46% x 45% in the runoff. The fact of the day about him is of another nature and comes from the TSE: the court identified an attempt to change his party affiliation, within the same episode that hit his opponent, and suspended the processing of new affiliations. The attempt was blocked and his PT registration did not change."
+      "analise": "THE PRICE BROKE UPWARD AND THE POLLS NARROWED, AND THE TWO MOVED IN OPPOSITE DIRECTIONS. On the market he went from 63.50%, where he had stood for seven days, to 64.50% (vol USD 8.29M cumulative), up 1.00pp, returning to the level last seen on Aug 8. In the polls the opposite happened: Quaest, released on Aug 14 at 21:00, shows both distances NARROWING against the house's own previous round, from 9pp to 7pp in the first round and from 5pp to 3pp in the runoff, and the movement is symmetrical, with him giving up 1 point and his opponent gaining 1 point in each round. His 38% is the floor of the nine national polls since Aug 5. ⚠️ The panel records both movements and does not reconcile them: they are different instruments measuring different questions, and the divergence is the data, not the problem. Series caveat: among the 174 points recorded since May 18, 17 had a value equal to or above today's, and the peak remains 66.50%, from Aug 1. On rejection, Quaest brings the first separation of the window: 52% for him against 54% for his opponent, where PoderData of Aug 13 had tied them at 48%."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE WITH A NEW READING ON Aug 14: 27.85% (vol USD 8.20M cumulative). The price went from 27.65% on Aug 12 to 27.85% now, a rise of 0.20pp. He was the only one in the leading pack to rise. REGISTRY: Nunes Marques restored his PL affiliation on Aug 13 and cleared the registration, and his presidential candidacy was registered hours later, according to Brasil de Fato and Gazeta do Povo.",
+      "header": "PRICE WITH A NEW READING ON Aug 15: 28.15% (vol USD 8.23M cumulative). The price went from 27.85% on Aug 14 to 28.15% now, up 0.30pp. POLLS: Quaest of Aug 14 gives him 31% in the first round and 40% in the runoff, narrowing both distances against the house itself.",
       "fortes": [
-        "The only name above 1% to rise between the reading of Aug 12 and that of Aug 14, up 0.20pp, and the movement of the gap over the period was entirely his.",
-        "Gerp of Aug 11 remains the first national poll of the window to put him ahead in the runoff, with 45% against 43%.",
-        "In PoderData of Aug 13 he rose from 43% to 45% in the runoff against his own house, ending 1pp from the leader, inside the 2pp margin.",
-        "His PL affiliation was restored by a decision of Nunes Marques on Aug 13 and his presidential candidacy was registered hours later, according to Brasil de Fato and Gazeta do Povo.",
-        "Rejection at 48% in PoderData of Aug 13, exactly equal to the leader's."
+        "He rose for the second straight day, 0.30pp on Aug 15 after 0.20pp on Aug 14.",
+        "Quaest of Aug 14 is the first national poll to show him narrowing BOTH rounds against the house itself, from 9pp to 7pp and from 5pp to 3pp.",
+        "In the Quaest runoff he is 3pp from the leader, with a 2pp margin, and Gerp of Aug 11 remains the only national poll of the window to put him ahead.",
+        "Across the nine national polls since Aug 5 he ranged from 30% to 38% in the first round, and Quaest places him at 31%, above the house's own floor.",
+        "His presidential candidacy was registered on Aug 14, hours after Nunes Marques restored his PL affiliation, which closes the registry episode ahead of the Aug 15 deadline."
       ],
       "fracos": [
-        "Even with the rise, he is 35.65pp behind the leader on price, and the series recorded since May 16 shows 51 points at a level equal to or above today's 27.85%.",
-        "The peak of his series remains 33.20%, measured on Jun 2 at 19:30, well above today's value.",
-        "The registration of his presidential candidacy by the PL was blocked by a records problem he did not cause, and the deadline closes on Aug 15, with no slack.",
-        "In the first round he repeated his own house's 35% in PoderData, with no gain between Jul 30 and Aug 13.",
-        "The spread between houses on him remains above 9pp in the window, from 28.7% at CNT/MDA to 38% at Gerp, double the dispersion measured on the leader."
+        "Even while rising, his distance to the leader WIDENED on price, from 35.65pp to 36.35pp, because the leader rose more than he did.",
+        "Quaest gives him the HIGHEST rejection on the board, 54%, above the leader's 52%, and it is the first national poll of the window to separate the two.",
+        "Series caveat: among the 172 points recorded since May 18, 23 had a value equal to or above 28.15%, with a peak of 33.20% on Jun 2 and a floor of 22.00% on Jul 3.",
+        "The spread between houses on him remains above 8pp in the window, from 30% to 38% in the first round.",
+        "In the Quaest first round he has 31%, against the 41% PoderData of Aug 13 gives the leader on the same indicator, and the distance between houses on his own standing is large."
       ],
-      "analise": "🔴 THE FACT OF THE DAY ABOUT HIM CAME OUT OF THE ELECTORAL REGISTRY AND BECAME A SYSTEM-WIDE CASE. Yesterday Folha de S.Paulo and G1 reported that he appeared in the TSE records affiliated with Missão, the party of Renan Santos, without his knowledge, and that this blocked the formal registration of his candidacy by the PL. On Aug 14 the outcome has two parts. The first is individual: Nunes Marques restored the PL affiliation on Aug 13 and cleared the registration, and his presidential candidacy was registered hours later, according to Brasil de Fato. The second is larger than him: on the night of Aug 13 the TSE suspended the processing of new affiliations in the Filia system, and the court itself stated that there was NO hacking, but rather improper use of the tool by someone holding the party's credentials, after also identifying an attempt to change the leader's affiliation that was never completed, according to Gazeta do Povo. The candidate registration deadline closes on Aug 15. On price, he is the only name above 1% that rose since the last confirmed reading, up 0.20pp to 27.85% (vol USD 8.20M cumulative), and the entire 0.20pp reduction in the distance to the leader came from him. Series caveat: among the points recorded since May 16, 51 had a value equal to or above today's, with a peak of 33.20% on Jun 2."
+      "analise": "HE ROSE IN THE POLLS AND ROSE ON PRICE, AND STILL ENDED UP FURTHER BEHIND. The price went from 27.85% to 28.15% (vol USD 8.23M cumulative), up 0.30pp and a second straight day of gains. In the polls, Quaest of Aug 14 is the first national poll to show him narrowing both rounds against the house itself: from 9pp to 7pp in the first round and from 5pp to 3pp in the runoff, with a symmetrical movement of 1 point on each side. ⚠️ And here is the crossing of the day: despite both gains, his distance to the leader on price WIDENED, from 35.65pp to 36.35pp, because the leader rose 1.00pp against his 0.30pp. The polls brought them closer and the price pushed them apart, over the same pair of days. Series caveat: among the 172 points recorded since May 18, 23 had a value equal to or above today's, and the peak remains 33.20%, from Jun 2. At the registry the episode closed: the candidacy was registered on Aug 14, hours after Nunes Marques restored the PL affiliation, and the registration deadline closes on Aug 15. ⛔ Quaest gives him the highest rejection on the board, 54%, and the panel records that alongside the gains, without choosing which of the two counts more."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE WITH A NEW READING ON Aug 14: 7.15% (vol USD 9.59M cumulative). The price went from 7.45% on Aug 12 to 7.15% now, a fall of 0.30pp. It was the largest fall in the leading pack in this reading. He still holds the largest cumulative volume in the presidential book among names above 1%.",
+      "header": "THERE IS NO NEW CONFIRMED READING FOR HIM ON Aug 15, and the value displayed is that of the last confirmed reading, from Aug 14, 14:46 BRT, at 7.15% (vol USD 9.59M cumulative). POLLS: Quaest of Aug 14 gives him 4% in the first round, the same value the house gave him on Aug 5.",
       "fortes": [
-        "He holds the largest cumulative volume in the presidential book among names above 1%, at USD 9.59M, above the contracts of the leader and the runner-up.",
-        "His price remains BETWEEN the two polling methods, above the 4% to 5% of telephone and in-person and below the 10% of Palver online.",
-        "His party, Missão, ended up at the centre of the TSE records case without the party being named as the author, and Gazeta do Povo published his government programme this week.",
+        "He keeps the largest cumulative volume in the presidential book among names above 1%, at USD 9.59M in the last confirmed reading.",
+        "Quaest of Aug 14 keeps him at 4% in the first round, exactly the same value as Aug 5, with no loss against the house itself.",
+        "His price remains BETWEEN the two polling methods, above the 4% of telephone and in-person and below the 10% of Palver online.",
         "He remains the only name outside the top two with a price above 5% in the presidential book.",
-        "Palver, online, is the only national poll of the window to give him double digits, at 10%, and the house itself declared the method caveat."
+        "Gazeta do Povo published his government programme this week, and his party was not named as the author in the TSE records episode."
       ],
       "fracos": [
-        "He fell 0.30pp since the last confirmed reading, the largest fall among names above 1%.",
-        "He is the only one in the pack whom the leader BEATS in the runoff of PoderData of Aug 13, according to Bnews, while tying with the other three.",
+        "There is no new confirmed reading for him on Aug 15, so the panel publishes no movement.",
+        "He tied with himself in Quaest, at 4% on Aug 5 and 4% on Aug 14, with no gain in nine days.",
+        "In PoderData of Aug 13 he is the only one in the pack whom the leader BEATS in the runoff, while the other three tie.",
         "In telephone and in-person national polls he sits between 4% and 5%, below what the price assigns him.",
-        "His first-round percentages in PoderData of Aug 13 did not appear in the reports captured, so the most recent reading on him is still from Aug 11.",
-        "The party he is running for is the same one in which the PL candidate appeared affiliated without his knowledge, an episode the TSE treated as fraud and which led to the suspension of the affiliation system."
+        "The method effect remains the reading on him: the same name runs from 4% to 10% depending on the interview environment."
       ],
-      "analise": "HE HAD THE LARGEST FALL IN THE LEADING PACK IN THIS READING. The price went from 7.45% on Aug 12 to 7.15% on Aug 14, a retreat of 0.30pp, while the leader stayed put and the runner-up rose. His cumulative volume is still the largest in the presidential book among names above 1%, at USD 9.59M, which keeps the contract well backed despite the retreat. In the polls, the most recent reading on him is still that of Aug 11, because his first-round percentages in PoderData of Aug 13 did not appear in the reports captured. What PoderData did show was the runoff scenario, and there he is the only one of the four tested whom the leader beats, according to Bnews, while Caiado, Zema and the runner-up all tie. The method effect remains the central reading on him: the same name runs from 4% on telephone and in person to 10% online, and the caveat was declared by Palver itself. The price remains positioned between the two methods."
+      "analise": "THERE IS NO NEW CONFIRMED READING FOR HIM ON Aug 15, and the value displayed is that of Aug 14, 14:46 BRT, at 7.15% (vol USD 9.59M cumulative). In the polls, Quaest of Aug 14 keeps him at 4% in the first round, exactly the same value the house gave him on Aug 5, which means nine days without any gain against its own ruler. He still holds the largest cumulative volume in the presidential book among names above 1%, and the price remains positioned between the two polling methods, above the 4% of telephone and in-person and below the 10% of Palver online. The method effect remains the central reading on him, and the caveat was declared by Palver itself. In the runoff scenario of PoderData of Aug 13 he is the only one of the four tested whom the leader beats, while Caiado, Zema and the runner-up all tie."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE WITH A NEW READING ON Aug 14 only for CAIADO, who rose 0.10pp and reached 1.05% (vol USD 5.70M cumulative). For ZEMA and HADDAD there is no new reading, because both are below the 0.5% cutoff the panel uses to separate price from noise, and the values displayed are those of the confirmed reading of Aug 12. In the polls PoderData of Aug 13 remains in force, placing Caiado and Zema tied with the leader in the runoff.",
-      "subtitle": "Aug 14, 51 days from the first round: Caiado is the only one in the pack with a new price reading, and it is a rise. The contrast the panel has been recording has not gone away: a tie with the leader in the runoff of a national poll and a winning price of around 1%.",
+      "header": "THERE IS NO NEW CONFIRMED READING ON Aug 15 for any name in the trailing pack, and the values displayed are those of Aug 14, 14:46 BRT. POLLS: Quaest of Aug 14 gives 4% to CAIADO and 2% to ZEMA, and brings a new data point on the first, with rejection at 35% and high non-recognition.",
+      "subtitle": "Aug 15, 50 days from the first round: no new price reading for the pack, and Quaest adds the missing piece about Caiado, which is rejection at 35% on a board where the top two are both above 50%.",
       "caiado": {
-        "label": "CAIADO (PSD), presidential Poly 1.05% (vol USD 5.70M cumulative, confirmed reading of Aug 14, 14:46 BRT (17:46 UTC)), up 0.10pp since Aug 12 | TIES with the leader in the runoff of PoderData of Aug 13 | polls in force: Gerp 4%, Genial/Quaest 4%, Meio/Ideia 5.7%, BTG/Nexus 5%",
-        "fortes": "He is the only one in the pack with a new price reading on Aug 14, and it is a rise: 1.05%. The price went from 0.95% on Aug 12 to 1.05% now. HE TIES WITH THE LEADER IN THE RUNOFF of PoderData of Aug 13, according to CNN Brasil and Bnews, his second tie in four days after the BTG/Nexus one of Aug 10. In the polls he has 4% to 5.7% in the first round depending on the house, ahead of the other names in the pack.",
-        "fracos": "Even with the rise, his winning price remains at 1.05%, against 4% to 5.7% of declared intention in the first round. The distance between polls and price is still the largest in the pack in this window. Tying in the runoff and winning the election are different questions, and the panel does not add them together."
+        "label": "CAIADO (PSD), presidential Poly 1.05% (vol USD 5.70M cumulative, confirmed reading of Aug 14, 14:46 BRT), no new reading on Aug 15 | polls in force: Quaest 4%, Gerp 4%, Meio/Ideia 5.7%, BTG/Nexus 5% | REJECTION at 35% in Quaest of Aug 14",
+        "fortes": "Quaest of Aug 14 gives him 4% in the first round, the same as Gerp and as Quaest's own Aug 5 round, and brings the data point that was missing about him: REJECTION at 35%, well below the 54% and 52% of the top two, with high non-recognition. He continues to tie with the leader in the runoff of PoderData of Aug 13, according to CNN Brasil and Bnews, his second tie in four days.",
+        "fracos": "There is no new price reading for him on Aug 15. Low rejection with high non-recognition is not the same as acceptance: it means most of the electorate has not yet formed an opinion, and an unformed opinion can go either way. He remains at 4% to 5.7% in the first round against a little over 1% of winning price."
       },
       "haddad": {
-        "label": "HADDAD (PT), presidential Poly 0.15% (vol USD 7.06M cumulative, last confirmed reading, from Aug 12, 16:41 BRT), no new reading on Aug 14 because he is below the 0.5% cutoff | NOT tested by the national polls in force, because he is running for the governorship of São Paulo",
+        "label": "HADDAD (PT), presidential Poly 0.15% (vol USD 7.06M cumulative, confirmed reading of Aug 14, 14:46 BRT), no new reading on Aug 15 and below the 0.5% cutoff | NOT tested by the national polls in force, because he is running for the governorship of São Paulo",
         "fortes": "His cumulative volume is still larger than that of several names priced above him, which keeps the contract with trading backing despite the low price.",
-        "fracos": "PoderData of Aug 13 does not test him, and no national poll of the window includes him in a presidential scenario. The underlying caveat remains and must be stated clearly: he is NOT a presidential candidate, he is running for the governorship of São Paulo, and any scenario that includes him is a polling hypothesis, not a candidacy under way."
+        "fracos": "Quaest of Aug 14 does not test him in a presidential scenario, and no national poll of the window includes him. The underlying caveat remains and must be stated clearly: he is NOT a presidential candidate, he is running for the governorship of São Paulo, and any scenario that includes him is a polling hypothesis, not a candidacy under way."
       },
       "zema": {
-        "label": "ZEMA (Novo), presidential Poly 0.35% (vol USD 5.07M cumulative, last confirmed reading, from Aug 12, 16:41 BRT), no new reading on Aug 14 because he is below the 0.5% cutoff | TIES with the leader in the runoff of PoderData of Aug 13 | polls in force: Gerp 2%, Genial/Quaest 2%, Meio/Ideia 2.6%, BTG/Nexus 3%",
-        "fortes": "HE TIES WITH THE LEADER IN THE RUNOFF for the first time in the window, according to CNN Brasil and Bnews. He remains the only one in the pack with a candidacy registration already filed with the TSE, done on Aug 6 with R$ 178.7 million declared, which keeps him out of the squeeze of the deadline closing on Aug 15.",
-        "fracos": "His price is below the 0.5% cutoff the panel uses to separate price from noise, and for that reason he receives no new reading in this round. In the polls he runs from 2% to 3% in the first round, the narrowest band in the pack, and the distance between tying in the runoff and reaching the runoff is exactly what those figures do not cover."
+        "label": "ZEMA (Novo), presidential Poly 0.35% (vol USD 5.07M cumulative, confirmed reading of Aug 14, 14:46 BRT), no new reading on Aug 15 and below the 0.5% cutoff | polls in force: Quaest 2%, Gerp 2%, Meio/Ideia 2.6%, BTG/Nexus 3%",
+        "fortes": "Quaest of Aug 14 keeps him at 2% in the first round, the same value as Aug 5. He remains the only one in the pack with a candidacy registration already filed with the TSE, done on Aug 6 with R$ 178.7 million declared, and for that reason the deadline closing on Aug 15 does not press him.",
+        "fracos": "There is no new reading for him on Aug 15, and the price remains below the 0.5% cutoff the panel uses to separate price from noise. In the polls he runs from 2% to 3% in the first round, the narrowest band in the pack, and he tied with himself in Quaest between Aug 5 and Aug 14."
       },
-      "analise": "⭐ THE PACK'S CONTRAST STILL STANDS, AND TODAY IT GAINED A NEW DATA POINT ON THE PRICE SIDE. Caiado is the only one in the group with a new reading on Aug 14 and he ROSE, from 0.95% to 1.05% (vol USD 5.70M cumulative). It is a small movement in absolute terms, but he is the second name on the panel to move upward in this reading, alongside the runner-up. In the polls nothing changed since yesterday: PoderData of Aug 13 remains the national poll in force, and in it Caiado and Zema TIE with the leader in the runoff, according to CNN Brasil and Bnews. For Caiado it is the second tie in four days, after the BTG/Nexus one of Aug 10; for Zema it is the first of the window. The distance between the two instruments remains the finding: 4% to 5.7% of declared intention in the first round against a little over 1% of winning price. ⚠️ The two measure different questions, tying in the runoff and winning the election, and the panel does not add them together. Zema and Haddad remain below the 0.5% cutoff and therefore receive no new reading. Zema is the only one in the pack with a registration already filed with the TSE, done on Aug 6, and for that reason the Aug 15 deadline does not press him.",
+      "analise": "⭐ QUAEST OF Aug 14 BROUGHT THE PIECE THAT WAS MISSING ABOUT THE PACK, AND IT IS NOT VOTING INTENTION. IT IS REJECTION: Caiado appears at 35%, against 54% for the runner-up and 52% for the leader, and the house itself declares that non-recognition of him is high. ⚠️ The two go together and do not separate: someone who is not known is not rejected, and an unformed opinion can go either way. The panel records the figure and the caveat in the same breath, because publishing only the low rejection would suggest a ceiling the data does not support. On voting intention nothing changed: Caiado repeated the 4% and Zema the 2% that Quaest itself gave them on Aug 5, that is, nine days without movement against the same ruler. There is no new confirmed price reading for any of them on Aug 15, and the values displayed are those of Aug 14. The distance between polls and price remains the largest on the panel.",
       "fortes": [
-        "Caiado is the only one in the pack with a new price reading on Aug 14, and he rose 0.10pp, reaching 1.05%.",
-        "PoderData of Aug 13 places Caiado and Zema tied with the leader in the runoff, according to CNN Brasil and Bnews, and Caiado remains ahead of the pack in the first round.",
-        "Caiado has 5% in the first round at BTG/Nexus, ahead of Renan Santos, who has 4%, and of Zema, with 3%.",
+        "Quaest of Aug 14 brings the piece that was missing about Caiado: rejection at 35%, against 54% and 52% for the top two.",
+        "Caiado remains at 4% to 5.7% in the first round depending on the house, ahead of the other names in the pack.",
         "Zema is the only one in the pack with a candidacy registration already filed with the TSE, done on Aug 6, and for that reason he is outside the squeeze of the deadline closing on Aug 15.",
+        "Neither Caiado nor Zema lost ground against Quaest's own Aug 5 round between Aug 5 and Aug 14; both repeated their previous values.",
         "The pack's contracts carry meaningful cumulative volume even with low prices, which indicates trading rather than abandonment."
       ],
       "fracos": [
-        "The distance between polls and price remains the largest on the panel: 4% to 5.7% of declared intention for Caiado against 1.05% of winning price.",
-        "Zema and Haddad are below the 0.5% cutoff and therefore receive no new price reading in this round.",
-        "No name in the pack goes above 5.7% in the first round in any national poll of the window.",
-        "Haddad is not a presidential candidate and is running for the governorship of São Paulo, so his contract measures a hypothesis, not a candidacy.",
-        "The runoff tie depends on reaching the runoff, and it is exactly that stage the pack's first-round figures do not support."
+        "There is no new confirmed price reading for any name in the pack on Aug 15.",
+        "The distance between polls and price remains the largest on the panel: 4% to 5.7% of declared intention for Caiado against a little over 1% of winning price.",
+        "Low rejection with high non-recognition is not acceptance, and Quaest declares that non-recognition for Caiado.",
+        "No name in the pack goes above 5.7% in the first round in any national poll of the window, and none gained against the house itself.",
+        "Haddad is not a presidential candidate and is running for the governorship of São Paulo, so his contract measures a hypothesis, not a candidacy."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "PoderData/Aya of Aug 13 remains in force (n=2,400, telephone, fieldwork Aug 9 to Aug 12, BR-06868/2026): 41% in the first round and 46% x 45% in the runoff. Quaest releases a national poll today with 13 candidates and the results were not published at the time of this capture. Rejection at 48%, equal to his opponent's. Personal approval at 43% against 50% disapproval.",
-      "m": "63.50% (vol USD 8.25M cumulative), confirmed reading of Aug 14, 14:46 BRT (17:46 UTC)",
-      "t": "PRICE FLAT FOR THE SIXTH DAY. The recorded series shows 63.50% on every day from Aug 9 to Aug 14. The distance to the runner-up narrowed by 0.20pp since Aug 12, and the movement was entirely his opponent's. SERIES CAVEAT: among the points recorded since May 16, the peak is 66.50% on Aug 1 at 23:00 and the floor is 39.50% on May 26.",
-      "s": "51 days to the election. The TSE identified an attempt to change his party affiliation, which was never completed, within the episode that led to the suspension of the affiliation system on the night of Aug 13. 📅 Quaest publishes today and Nexus on Aug 17.",
+      "p": "NEW NATIONAL POLL: Quaest of Aug 14 (n=2,004, fieldwork Aug 10 to Aug 13, BR-06773/2026) with 38% in the first round and 43% in the runoff. Against the house's own Aug 5 round he gives up 1 point in both. Rejection at 52%, below his opponent's 54%. Government approval at 46% against 48% disapproval.",
+      "m": "64.50% (vol USD 8.29M cumulative), confirmed reading of Aug 15, 13:33 BRT (16:33 UTC)",
+      "t": "BROKE UPWARD after seven days at 63.50%, up 1.00pp, returning to the level of Aug 8. SERIES CAVEAT: among the 174 points recorded since May 18, 17 had a value equal to or above 64.50%, with a peak of 66.50% on Aug 1 and a floor of 39.50% on May 26. The distance to the runner-up WIDENED, from 35.65pp to 36.35pp.",
+      "s": "50 days to the election. The 38% from Quaest is the floor of the nine national polls since Aug 5. 📅 Nexus publishes on Aug 17 and Real Time Big Data on Aug 19.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "PoderData/Aya of Aug 13 remains in force: 35% in the first round, the same value as Jul 30, and 45% in the runoff against 43% in the previous round. The 28.7% from CNT/MDA, the 34.1% from Futura and the 38% from Gerp, all from Aug 11, still stand.",
-      "m": "27.85% (vol USD 8.20M cumulative), confirmed reading of Aug 14, 14:46 BRT (17:46 UTC)",
-      "t": "THE ONLY NAME ABOVE 1% TO RISE, up 0.20pp since the reading of Aug 12, and the entire narrowing of the gap over the period came from him. SERIES CAVEAT: among the points recorded since May 16, 51 had a value equal to or above 27.85%, with a peak of 33.20% on Jun 2 at 19:30 and a floor of 22.00% on Jul 3 at 01:00.",
-      "s": "🔴 HIS RECORDS CASE BECAME A SYSTEM-WIDE CASE AND ENDED IN REGISTRATION. Nunes Marques restored the PL affiliation on Aug 13 and cleared the registration, and his presidential candidacy was registered hours later, according to Brasil de Fato. Before that, on the night of Aug 13 the TSE suspended the processing of new affiliations in the Filia system, and the court itself stated that there was NO hacking, but rather improper use of the tool by someone holding the party's credentials, according to Gazeta do Povo. The registration deadline closes on Aug 15.",
+      "p": "NEW NATIONAL POLL: Quaest of Aug 14 gives him 31% in the first round and 40% in the runoff, gaining 1 point in both against the house's own Aug 5 round. REJECTION at 54%, the highest on the board and above the leader's 52%.",
+      "m": "28.15% (vol USD 8.23M cumulative), confirmed reading of Aug 15, 13:33 BRT (16:33 UTC)",
+      "t": "SECOND STRAIGHT DAY OF GAINS, 0.30pp on Aug 15 after 0.20pp on Aug 14. ⚠️ Even while rising he ended up FURTHER from the leader, because the leader rose 1.00pp. SERIES CAVEAT: among the 172 points since May 18, 23 had a value equal to or above 28.15%, with a peak of 33.20% on Jun 2 and a floor of 22.00% on Jul 3.",
+      "s": "His presidential candidacy was registered on Aug 14, hours after Nunes Marques restored his PL affiliation, according to Brasil de Fato. The registration deadline closes today, Aug 15.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "His first-round percentages in PoderData of Aug 13 did not appear in the reports captured. The 5% from Gerp, the 4% from Genial/Quaest and from BTG/Nexus, the 4.7% from Meio/Ideia and the 10% from Palver online all still stand.",
-      "m": "7.15% (vol USD 9.59M cumulative), confirmed reading of Aug 14, 14:46 BRT (17:46 UTC)",
-      "t": "THE LARGEST FALL IN THE LEADING PACK IN THIS READING, down 0.30pp since Aug 12. He still holds the largest cumulative volume in the presidential book among names above 1%, and the price remains positioned BETWEEN the two polling methods.",
-      "s": "The party he is running for, Missão, is the same one in which the PL candidate appeared affiliated without his knowledge, an episode the TSE treated as fraud and which led to the suspension of the affiliation system. Gazeta do Povo published his government programme this week.",
+      "p": "Quaest of Aug 14 keeps him at 4% in the first round, the same value the house gave him on Aug 5. The 5% from Gerp, the 4% from BTG/Nexus, the 4.7% from Meio/Ideia and the 10% from Palver online all still stand.",
+      "m": "7.15% (vol USD 9.59M cumulative), confirmed reading of Aug 14, 14:46 BRT",
+      "t": "THERE IS NO NEW CONFIRMED READING FOR HIM ON Aug 15. The value displayed is that of the last confirmed reading, from Aug 14, 14:46 BRT. He still holds the largest cumulative volume in the presidential book among names above 1%, and the price remains BETWEEN the two polling methods.",
+      "s": "Gazeta do Povo published his government programme this week. He tied with himself in Quaest between Aug 5 and Aug 14, at 4% in both.",
       "pc": "#F59E0B",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "PoderData of Aug 13 places him TIED with the leader in the runoff, according to CNN Brasil and Bnews, his second tie in four days after the BTG/Nexus one of Aug 10. The 4% from Gerp and from Genial/Quaest, the 5.7% from Meio/Ideia and the 5% from BTG/Nexus in the first round all still stand.",
-      "m": "1.05% (vol USD 5.70M cumulative), confirmed reading of Aug 14, 14:46 BRT (17:46 UTC)",
-      "t": "HE ROSE 0.10pp since the reading of Aug 12 and is the only one in the pack with a new reading in this round. The distance between polls and price remains the largest on the panel: 4% to 5.7% of declared intention in the first round against a little over 1% of winning price.",
-      "s": "In São Paulo he has been attacking the records of the top two candidates and criticising the conduct of the STF. The candidate registration deadline closes on Aug 15.",
+      "p": "Quaest of Aug 14 gives him 4% in the first round, the same as Aug 5, and brings the new data point: REJECTION at 35%, with high non-recognition declared by the house. He continues to tie with the leader in the runoff of PoderData of Aug 13.",
+      "m": "1.05% (vol USD 5.70M cumulative), confirmed reading of Aug 14, 14:46 BRT",
+      "t": "THERE IS NO NEW CONFIRMED READING FOR HIM ON Aug 15. The value displayed is that of Aug 14, 14:46 BRT. The distance between polls and price remains the largest on the panel: 4% to 5.7% of declared intention against a little over 1% of winning price.",
+      "s": "⚠️ Rejection at 35% with high non-recognition is not acceptance: it means most of the electorate has not yet formed an opinion about him, and an unformed opinion can go either way.",
       "pc": "#16A34A",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "PoderData of Aug 13 places him TIED with the leader in the runoff, according to CNN Brasil and Bnews, the first time in the window. The 2% from Gerp, the 3% from BTG/Nexus, the 2% from Genial/Quaest and the 2.6% from Meio/Ideia in the first round all still stand.",
-      "m": "0.35% (vol USD 5.07M cumulative), last confirmed reading, from Aug 12, 16:41 BRT",
-      "t": "THERE IS NO NEW READING FOR HIM ON Aug 14, because his price is below the 0.5% cutoff the panel uses to separate price from noise. The value displayed is that of the last confirmed reading, from Aug 12, 16:41 BRT.",
-      "s": "He remains the only one in the pack with a candidacy registration already filed with the TSE, done on Aug 6 with R$ 178.7 million declared, and for that reason the Aug 15 deadline does not press him.",
+      "p": "Quaest of Aug 14 keeps him at 2% in the first round, the same value as Aug 5. The 2% from Gerp, the 3% from BTG/Nexus and the 2.6% from Meio/Ideia all still stand. He ties with the leader in the runoff of PoderData of Aug 13.",
+      "m": "0.35% (vol USD 5.07M cumulative), confirmed reading of Aug 14, 14:46 BRT",
+      "t": "THERE IS NO NEW READING FOR HIM ON Aug 15, and the price remains below the 0.5% cutoff the panel uses to separate price from noise. The value displayed is that of Aug 14, 14:46 BRT.",
+      "s": "He remains the only one in the pack with a candidacy registration already filed with the TSE, done on Aug 6 with R$ 178.7 million declared, and for that reason the deadline closing today does not press him.",
       "pc": "#0EA5E9",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "No polling. Market on the impeachment of a Supreme Court justice before 2027.",
-      "m": "3.90% (vol USD 83 thousand), last confirmed reading, from Aug 12, 16:41 BRT",
-      "t": "THERE IS NO NEW READING FOR THIS CONTRACT ON Aug 14. The value displayed is that of the last confirmed reading, from Aug 12, 16:41 BRT. It remains the thinnest contract among those tracked, and any movement in it requires that caveat.",
-      "s": "The judicial thread of the week remains the Federal Police operation against a journalist's source, based on messages that underpinned reports about Justice Dino, and the reaction of professional bodies to Justice Moraes's decision in the case. The Aug 12 order in which Moraes, Dino, Gilmar Mendes and Zanin required seven courts to return supplementary payments still stands.",
+      "m": "3.90% (vol USD 83 thousand), confirmed reading of Aug 14, 14:46 BRT",
+      "t": "THERE IS NO NEW READING FOR THIS CONTRACT ON Aug 15. The value displayed is that of Aug 14, 14:46 BRT. It remains the thinnest contract among those tracked, and any movement in it requires that caveat.",
+      "s": "The STF suspended the conviction of Romero Jucá, who becomes eligible to run, according to O Globo. Justice Mendonça pledged to handle the Master and INSS cases impartially, according to G1, and the Federal Police opened an inquiry into suspected interference by a senator in an investigation in Maranhão, according to Folha de S.Paulo.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "THE DAY HAD A NEW PRICE AND AN INSTITUTIONAL FACT, AND THE TWO POINT IN DIFFERENT DIRECTIONS. On price, the reading of Aug 14 confirms a presidential book that is practically still: the leader at 63.50% for the sixth consecutive day in the recorded series, the runner-up rising 0.20pp to 27.85%, Renan Santos falling 0.30pp to 7.15% and Caiado rising 0.10pp to 1.05%. The distance between the top two narrowed by 0.20pp, from 35.85pp to 35.65pp, and all of the movement came from the runner-up, not from the leader. ⛔ No superlative: the series recorded since May 16 shows 51 points with the runner-up at a level equal to or above today's, and his peak remains 33.20%, from Jun 2. Outside the presidential book there is no new reading on Aug 14, and the second and third place contracts, the Senate one and the STF impeachment one all keep the values of the confirmed reading of Aug 12. In the polls there was no news either: Quaest releases a national poll today with 13 candidates tested, and at the time of this capture the results had not yet been published, so the national poll in force remains PoderData/Aya of Aug 13. ⭐ WHAT REALLY CHANGED TODAY WAS THE ELECTORAL REGISTRY, AND IT IS THE BIGGEST INSTITUTIONAL FACT OF THE WINDOW. On the night of Aug 13 the TSE suspended the processing of new affiliations in the Filia system, after the improper inclusion of the runner-up in Missão and an attempt to change the leader's affiliation that was never completed, according to Gazeta do Povo and Brasil de Fato. ⚠️ The court itself stated that there was NO hacking, but rather improper use of the tool by someone holding the party's credentials, which is a relevant distinction and not a detail. On Aug 13 Nunes Marques restored the PL affiliation and cleared the registration, and the runner-up's presidential candidacy was registered hours later, according to Brasil de Fato on Aug 14. The candidate registration deadline closes on Aug 15, which means the suspension of the system lands on the eve of the cutoff, and from Aug 16 the absence of a registration stops being a pending matter and becomes a fact. ⚠️ The panel records the order of events and does not attribute cause: the runner-up's price rose 0.20pp in the same window in which his records obstacle was removed, and that is a calendar coincidence, not a measured relationship. A third fact entered today and has no counterpart in the price: the OAS announced on Aug 13 that it will send an electoral observation mission to Brazil, headed by José Miguel Insulza, a former foreign minister of Chile and former Secretary General of the OAS itself, according to CNN Brasil and Gazeta do Povo. It is the fifth OAS mission in Brazil since 2018."
+  "cruzamento": "THE DAY HAS A CLEAN CROSSING, AND IT POINTS IN OPPOSITE DIRECTIONS. In the polls, Quaest released on Aug 14 at 21:00 shows both distances NARROWING against the house's own previous round: in the first round from 9pp to 7pp, with the leader giving up 1 point and the runner-up gaining 1 point, and in the runoff from 5pp to 3pp, by the same symmetrical movement. On price the opposite happened: the distance WIDENED, from 35.65pp to 36.35pp, because the leader rose 1.00pp and the runner-up rose 0.30pp. ⭐ The two instruments moved over the same pair of days and in opposite directions, and that divergence is the data. The panel neither reconciles it nor picks which of the two counts, because they measure different questions: declared voting intention and probability of winning. ⛔ No superlative: the 36.35pp gap is ordinary in the series, with 32 of the 88 recorded days registering an equal or greater value, and the peak remains 41.80pp, from Aug 1. The leader at 64.50% is not an extreme either, with 17 of the 174 points at an equal or higher level and a peak of 66.50%, from Aug 1. What is a fact is the break: he had stood at 63.50% for seven days and returned to the level last seen on Aug 8. Quaest also separated the two on rejection for the first time in the window, at 54% for the runner-up and 52% for the leader, where PoderData of Aug 13 had tied them at 48%, and it brought government approval to 46% against 48%, the best net since Aug 5. ⚠️ Two national polls two days apart disagreeing on the sign of rejection and by 5 points in the approval net is a house effect, not a shift in public opinion, and the panel prefers to show the distance between houses rather than pick one of them. At the electoral registry the candidate registration deadline closes today, Aug 15, and from tomorrow the absence of a registration stops being a pending matter and becomes a fact."
 }

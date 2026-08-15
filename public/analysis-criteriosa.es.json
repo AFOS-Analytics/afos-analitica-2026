@@ -1,167 +1,167 @@
 {
-  "updatedAt": "14/08/2026, 14:46",
-  "subtitle": "ACTUALIZACIÓN 14 de ago, a 51 días de la primera vuelta. PRECIO: hay lectura nueva para el mercado presidencial, lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC). Para los contratos de segundo y tercer lugar, para el Senado y para el impeachment en el STF no hay lectura nueva el 14 de ago, y los valores exhibidos son los de la última lectura confirmada, del 12 de ago, 16:41 BRT. ENCUESTAS: Quaest divulga hoy una nacional con 13 candidatos probados, y al momento de esta captura los resultados aún no estaban publicados, así que sigue vigente la PoderData/Aya del 13 de ago (n=2.400, telefónica, campo del 9 al 12 de ago, BR-06868/2026). REGISTRO ELECTORAL: en la noche del 13 de ago el TSE suspendió el procesamiento de nuevas afiliaciones en el sistema Filia, según Gazeta do Povo y Brasil de Fato, y el propio tribunal declaró que NO hubo hackeo, sino uso indebido de la herramienta por parte de alguien que tenía las credenciales del partido. El 13 de ago Nunes Marques restableció la afiliación al PL y liberó el registro, y la candidatura presidencial de Flávio Bolsonaro fue registrada horas después, según Brasil de Fato el 14 de ago. El plazo de registro termina el 15 de ago.",
+  "updatedAt": "15/08/2026, 13:33",
+  "subtitle": "ACTUALIZACIÓN 15 de ago, a 50 días de la primera vuelta. PRECIO: hay lectura confirmada nueva para el líder y para el segundo, lectura confirmada del 15 de ago, 13:33 BRT (16:33 UTC). Para Renan Santos, para el pelotón y para los contratos de segundo y tercer lugar, el del Senado y el de impeachment en el STF no hay lectura nueva el 15 de ago, y siguen valiendo los valores del 14 de ago, 14:46 BRT. ENCUESTAS: la Quaest se divulgó el 14 de ago a las 21:00, después de la captura de ayer, con 38% x 31% en la primera vuelta y 43% x 40% en el balotaje (n=2.004, BR-06773/2026). REGISTRO: el plazo de registro de candidaturas termina hoy, 15 de ago.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO CON LECTURA NUEVA EL 14 DE AGO: 63,50% (vol USD 8,25M acumulado), el mismo valor de la lectura confirmada del 12 de ago. Es el sexto día consecutivo en 63,50% en la serie registrada. ENCUESTAS: sigue vigente la PoderData/Aya del 13 de ago, con 41% en la primera vuelta y 46% x 45% en el balotaje, porque la Quaest de hoy no tenía resultado publicado al momento de la captura.",
+      "header": "PRECIO CON LECTURA NUEVA EL 15 DE AGO: 64,50% (vol USD 8,29M acumulado). El precio pasó de 63,50% el 14 de ago a 64,50% ahora, un alza de 1,00pp, rompiendo un nivel en el que estaba desde hacía siete días. ENCUESTAS: la Quaest del 14 de ago le da 38% en la primera vuelta y 43% en el balotaje, el piso de la ventana en el primer caso.",
       "fortes": [
-        "Su precio es el más estable del libro presidencial en esta ventana: 63,50% en todas las lecturas registradas del 9 al 14 de ago, seis días sin variación.",
-        "Lidera o empata la primera vuelta en las OCHO nacionales desde el 5 de ago, y gana el balotaje en cinco de las seis rondas que lo prueban.",
-        "La CNT/MDA del 11 de ago sigue siendo su mejor lectura de la ventana: 42,4% en la primera vuelta, con 13,7pp de ventaja, y 48% x 39% en el balotaje.",
-        "El intento identificado por el TSE apuntaba a su afiliación al PT y no llegó a concretarse, según Gazeta do Povo y Brasil de Fato. Su registro partidario no fue alterado.",
-        "El volumen acumulado de su contrato subió a USD 8,25M, y sigue entre los tres más negociados del libro presidencial."
+        "Rompió hacia arriba después de siete días detenido en 63,50%, con alza de 1,00pp, y volvió al nivel visto por última vez el 8 de ago.",
+        "Sigue al frente en las nueve nacionales desde el 5 de ago, en ambas vueltas, sin excepción.",
+        "La Quaest del 14 de ago muestra la aprobación del gobierno en empate técnico, 46% contra 48%, su mejor saldo desde el 5 de ago y bastante por encima del 43% contra 50% de la PoderData del 13 de ago.",
+        "Su rechazo es MENOR que el de su adversario en la Quaest, 52% contra 54%, y es la primera nacional de la ventana en separar a los dos en ese indicador.",
+        "El volumen acumulado de su contrato subió a USD 8,29M, y la distancia hacia el segundo se AMPLIÓ en el precio aun cuando las encuestas la estrecharon."
       ],
       "fracos": [
-        "La distancia hacia el segundo se estrechó 0,20pp desde la última lectura confirmada, de 35,85pp el 12 de ago a 35,65pp hoy, y quien se movió fue el adversario.",
-        "La PoderData del 13 de ago muestra el balotaje a 1pp, el valor más ajustado que la casa le dio en su propia serie, después de 3pp el 30 de jul.",
-        "Aprobación personal en 43% contra 50% de desaprobación en la PoderData del 13 de ago, un saldo de 7pp negativos.",
-        "Rechazo en 48%, exactamente igual al de su adversario, lo que impide cualquier lectura fácil sobre quién tiene más techo.",
-        "Empata en el balotaje con Caiado y con Zema en la PoderData del 13 de ago, y ninguno de los dos pasa de 5,7% en la primera vuelta en ninguna casa de la ventana."
+        "El 38% de la Quaest es el PISO de las nueve nacionales desde el 5 de ago, cuyo rango va de 38% a 44%.",
+        "Contra la propia Quaest del 5 de ago cedió 1 punto en la primera vuelta y 1 punto en el balotaje, y las dos distancias se estrecharon 2pp.",
+        "En el balotaje de la Quaest la diferencia es de 3pp, con margen de 2pp, es decir, cerca del límite del empate técnico.",
+        "Salvedad de serie: entre los 174 puntos registrados desde el 18 de may, 17 tuvieron un valor igual o superior a 64,50%, con un máximo de 66,50% el 1 de ago.",
+        "La desaprobación del gobierno sigue por encima de la aprobación en todas las casas de la ventana, con un saldo entre 2pp y 7pp negativos."
       ],
-      "analise": "EL PRECIO VOLVIÓ A TENER LECTURA Y NO SE MOVIÓ. El 14 de ago está en 63,50% (vol USD 8,25M acumulado), el mismo valor de la lectura confirmada del 12 de ago, y la serie registrada muestra 63,50% en todos los días del 9 al 14 de ago. Seis días sin variación en un contrato con ese volumen es información, y lo que dice es que el mercado no reaccionó a nada de lo que ocurrió en la semana. La distancia hacia el segundo se estrechó 0,20pp en el período, y el movimiento fue enteramente suyo, no del líder. En las encuestas nada cambió desde ayer, porque la Quaest de hoy no tenía número publicado cuando se armó esta página, y sigue vigente la PoderData/Aya del 13 de ago, con 41% en la primera vuelta y 46% x 45% en el balotaje. El hecho del día sobre él es de otra naturaleza y viene del TSE: el tribunal identificó un intento de alterar su afiliación partidaria, dentro del mismo episodio que alcanzó al adversario, y suspendió el procesamiento de nuevas afiliaciones. El intento fue bloqueado y su registro en el PT no cambió."
+      "analise": "EL PRECIO ROMPIÓ Y LAS ENCUESTAS ESTRECHARON, Y LOS DOS ANDUVIERON EN SENTIDOS OPUESTOS. En el mercado pasó de 63,50%, donde estaba desde hacía siete días, a 64,50% (vol USD 8,29M acumulado), un alza de 1,00pp, y volvió al nivel visto por última vez el 8 de ago. En las encuestas ocurrió lo contrario: la Quaest divulgada el 14 de ago a las 21:00 muestra las dos distancias ESTRECHÁNDOSE contra la propia casa, de 9pp a 7pp en la primera vuelta y de 5pp a 3pp en el balotaje, y el movimiento es simétrico, con él cediendo 1 punto y el adversario ganando 1 punto en cada vuelta. Su 38% es el piso de las nueve nacionales desde el 5 de ago. ⚠️ El panel registra los dos movimientos y no los concilia: son instrumentos distintos midiendo preguntas distintas, y la divergencia es el dato, no el problema. Salvedad de serie: entre los 174 puntos registrados desde el 18 de may, 17 tuvieron un valor igual o superior al de hoy, y el máximo sigue en 66,50%, del 1 de ago. En el indicador de rechazo la Quaest trae la primera separación de la ventana: 52% para él contra 54% del adversario, cuando la PoderData del 13 de ago los empataba en 48%."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO CON LECTURA NUEVA EL 14 DE AGO: 27,85% (vol USD 8,20M acumulado). El precio pasó de 27,65% el 12 de ago a 27,85% ahora, un alza de 0,20pp. Fue el único del pelotón de arriba que subió. REGISTRO: Nunes Marques restableció su afiliación al PL el 13 de ago y liberó el registro, y su candidatura presidencial fue registrada horas después, según Brasil de Fato y Gazeta do Povo.",
+      "header": "PRECIO CON LECTURA NUEVA EL 15 DE AGO: 28,15% (vol USD 8,23M acumulado). El precio pasó de 27,85% el 14 de ago a 28,15% ahora, un alza de 0,30pp. ENCUESTAS: la Quaest del 14 de ago le da 31% en la primera vuelta y 40% en el balotaje, estrechando las dos distancias contra la propia casa.",
       "fortes": [
-        "Único nombre por encima de 1% que subió entre la lectura del 12 de ago y la del 14 de ago, con alza de 0,20pp, y el movimiento de la distancia en el período fue enteramente suyo.",
-        "La Gerp del 11 de ago sigue siendo la primera nacional de la ventana que lo pone al frente en el balotaje, con 45% contra 43%.",
-        "En la PoderData del 13 de ago subió de 43% a 45% en el balotaje contra su propia casa, quedando a 1pp del líder, dentro del margen de 2pp.",
-        "Su afiliación al PL fue restablecida por decisión de Nunes Marques el 13 de ago y su candidatura presidencial fue registrada horas después, según Brasil de Fato y Gazeta do Povo.",
-        "Rechazo en 48% en la PoderData del 13 de ago, exactamente igual al del líder."
+        "Subió por segundo día seguido, con 0,30pp el 15 de ago después de 0,20pp el 14 de ago.",
+        "La Quaest del 14 de ago es la primera nacional que lo muestra estrechando las DOS vueltas contra la propia casa, de 9pp a 7pp y de 5pp a 3pp.",
+        "En el balotaje de la Quaest está a 3pp del líder, con margen de 2pp, y la Gerp del 11 de ago sigue siendo la única nacional de la ventana que lo pone al frente.",
+        "En las nueve nacionales desde el 5 de ago fue de 30% a 38% en la primera vuelta, y la Quaest lo coloca en 31%, por encima del piso de la propia casa.",
+        "Su candidatura presidencial fue registrada el 14 de ago, horas después de que Nunes Marques restableciera su afiliación al PL, lo que cierra el episodio registral antes del plazo del 15 de ago."
       ],
       "fracos": [
-        "Aun con el alza, está 35,65pp detrás del líder en el precio, y la serie registrada desde el 16 de may muestra 51 puntos en un nivel igual o superior a los 27,85% de hoy.",
-        "El máximo de su serie sigue en 33,20%, medido el 2 de jun a las 19:30, bastante por encima del valor de hoy.",
-        "El registro de la candidatura presidencial por el PL quedó trabado por un problema registral que él no provocó, y el plazo termina el 15 de ago, sin holgura.",
-        "En la primera vuelta repitió el 35% de su propia casa en la PoderData, sin avance entre el 30 de jul y el 13 de ago.",
-        "La amplitud entre casas sobre él sigue por encima de 9pp en la ventana, de 28,7% en la CNT/MDA a 38% en la Gerp, el doble de la dispersión medida sobre el líder."
+        "Aun subiendo, su distancia hacia el líder se AMPLIÓ en el precio, de 35,65pp a 36,35pp, porque el líder subió más que él.",
+        "La Quaest le da el MAYOR rechazo del cuadro, 54%, por encima del 52% del líder, y es la primera nacional de la ventana en separar a los dos.",
+        "Salvedad de serie: entre los 172 puntos registrados desde el 18 de may, 23 tuvieron un valor igual o superior a 28,15%, con un máximo de 33,20% el 2 de jun y un piso de 22,00% el 3 de jul.",
+        "La amplitud entre casas sobre él sigue por encima de 8pp en la ventana, de 30% a 38% en la primera vuelta.",
+        "En la primera vuelta de la Quaest tiene 31%, contra el 41% que la PoderData del 13 de ago da al líder en el mismo indicador, y la distancia entre casas sobre su propia posición es grande."
       ],
-      "analise": "🔴 EL HECHO DEL DÍA SOBRE ÉL SALIÓ DEL REGISTRO ELECTORAL Y SE VOLVIÓ UN CASO DE SISTEMA. Ayer Folha de S.Paulo y G1 informaron que aparecía en el registro del TSE afiliado a Missão, el partido de Renan Santos, sin tener conocimiento de ello, y que eso trabó el registro formal de la candidatura por el PL. El 14 de ago el desenlace tiene dos partes. La primera es individual: Nunes Marques restableció la afiliación al PL el 13 de ago y liberó el registro, y su candidatura presidencial fue registrada horas después, según Brasil de Fato. La segunda es mayor que él: en la noche del 13 de ago el TSE suspendió el procesamiento de nuevas afiliaciones en el sistema Filia, y el propio tribunal declaró que NO hubo hackeo, sino uso indebido de la herramienta por parte de alguien que tenía las credenciales del partido, tras identificar también un intento de alterar la afiliación del líder que no llegó a concretarse, según Gazeta do Povo. El plazo de registro de candidaturas termina el 15 de ago. En el precio, es el único nombre por encima de 1% que subió desde la última lectura confirmada, con alza de 0,20pp hasta 27,85% (vol USD 8,20M acumulado), y toda la reducción de 0,20pp en la distancia hacia el líder vino de él. Salvedad de serie: entre los puntos registrados desde el 16 de may, 51 tuvieron un valor igual o superior al de hoy, con un máximo de 33,20% el 2 de jun."
+      "analise": "SUBIÓ EN LAS ENCUESTAS Y SUBIÓ EN EL PRECIO, Y AUN ASÍ QUEDÓ MÁS LEJOS. El precio pasó de 27,85% a 28,15% (vol USD 8,23M acumulado), un alza de 0,30pp y segundo día seguido de subida. En las encuestas, la Quaest del 14 de ago es la primera nacional que lo muestra estrechando las dos vueltas contra la propia casa: de 9pp a 7pp en la primera vuelta y de 5pp a 3pp en el balotaje, con un movimiento simétrico de 1 punto de cada lado. ⚠️ Y aquí está el cruce del día: pese a las dos subidas, su distancia hacia el líder en el precio se AMPLIÓ, de 35,65pp a 36,35pp, porque el líder subió 1,00pp contra sus 0,30pp. Las encuestas los acercaron y el precio los alejó, en el mismo par de días. Salvedad de serie: entre los 172 puntos registrados desde el 18 de may, 23 tuvieron un valor igual o superior al de hoy, y el máximo sigue en 33,20%, del 2 de jun. En el registro el episodio se cerró: la candidatura fue registrada el 14 de ago, horas después de que Nunes Marques restableciera la afiliación al PL, y el plazo de registro termina el 15 de ago. ⛔ La Quaest le da el mayor rechazo del cuadro, 54%, y el panel lo registra junto a las subidas, sin elegir cuál de los dos cuenta más."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO CON LECTURA NUEVA EL 14 DE AGO: 7,15% (vol USD 9,59M acumulado). El precio pasó de 7,45% el 12 de ago a 7,15% ahora, una caída de 0,30pp. Fue la mayor caída del pelotón de arriba en esta lectura. Sigue con el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%.",
+      "header": "NO HAY LECTURA CONFIRMADA NUEVA PARA ÉL EL 15 DE AGO, y el valor exhibido es el de la última lectura confirmada, del 14 de ago, 14:46 BRT, en 7,15% (vol USD 9,59M acumulado). ENCUESTAS: la Quaest del 14 de ago le da 4% en la primera vuelta, el mismo valor que la casa le dio el 5 de ago.",
       "fortes": [
-        "Mantiene el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, con USD 9,59M, por encima de los contratos del líder y del segundo.",
-        "Su precio sigue ENTRE los dos métodos de las encuestas, por encima del 4% a 5% del teléfono y del presencial y por debajo del 10% de Palver por internet.",
-        "Su partido, Missão, quedó en el centro del caso registral del TSE sin que la agrupación fuera señalada como autora, y Gazeta do Povo publicó su plan de gobierno esta semana.",
+        "Mantiene el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, con USD 9,59M en la última lectura confirmada.",
+        "La Quaest del 14 de ago lo mantiene en 4% en la primera vuelta, exactamente el mismo valor del 5 de ago, sin pérdida contra la propia casa.",
+        "Su precio sigue ENTRE los dos métodos de las encuestas, por encima del 4% del teléfono y del presencial y por debajo del 10% de Palver por internet.",
         "Sigue siendo el único nombre fuera de los dos primeros con precio por encima de 5% en el libro presidencial.",
-        "Palver, por internet, es la única nacional de la ventana que le da dos dígitos, con 10%, y la propia casa declaró la salvedad de método."
+        "Gazeta do Povo publicó su plan de gobierno esta semana, y su partido no fue señalado como autor en el episodio registral del TSE."
       ],
       "fracos": [
-        "Cayó 0,30pp desde la última lectura confirmada, la mayor caída entre los nombres por encima de 1%.",
-        "Es el único del pelotón al que el líder VENCE en el balotaje de la PoderData del 13 de ago, según Bnews, mientras empata con los otros tres.",
+        "No hay lectura confirmada nueva para él el 15 de ago, así que el panel no publica movimiento.",
+        "Empató consigo mismo en la Quaest, con 4% el 5 de ago y 4% el 14 de ago, sin avance en nueve días.",
+        "En la PoderData del 13 de ago es el único del pelotón al que el líder VENCE en el balotaje, mientras los otros tres empatan.",
         "En las nacionales por teléfono y presenciales queda entre 4% y 5%, por debajo de lo que el precio le atribuye.",
-        "Sus porcentajes de primera vuelta en la PoderData del 13 de ago no aparecieron en las notas capturadas, así que la lectura más reciente sobre él sigue siendo del 11 de ago.",
-        "El partido por el que compite es el mismo en el que el candidato del PL apareció afiliado sin saberlo, episodio que el TSE trató como fraude y que llevó a la suspensión del sistema de afiliaciones."
+        "El efecto de método sigue siendo la lectura sobre él: el mismo nombre va de 4% a 10% según el ambiente de la entrevista."
       ],
-      "analise": "TUVO LA MAYOR CAÍDA DEL PELOTÓN DE ARRIBA EN ESTA LECTURA. El precio pasó de 7,45% el 12 de ago a 7,15% el 14 de ago, un retroceso de 0,30pp, mientras el líder quedó detenido y el segundo subió. Su volumen acumulado sigue siendo el mayor del libro presidencial entre los nombres por encima de 1%, con USD 9,59M, lo que mantiene el contrato con respaldo pese al retroceso. En las encuestas, la lectura más reciente sobre él sigue siendo la del 11 de ago, porque sus porcentajes de primera vuelta en la PoderData del 13 de ago no aparecieron en las notas capturadas. Lo que la PoderData mostró fue el escenario de balotaje, y allí es el único de los cuatro probados al que el líder vence, según Bnews, mientras Caiado, Zema y el segundo empatan. El efecto de método sigue siendo la lectura central sobre él: el mismo nombre va de 4% en teléfono y presencial a 10% por internet, y la salvedad fue declarada por la propia Palver. El precio sigue posicionado entre los dos métodos."
+      "analise": "NO HAY LECTURA CONFIRMADA NUEVA PARA ÉL EL 15 DE AGO, y el valor exhibido es el del 14 de ago, 14:46 BRT, en 7,15% (vol USD 9,59M acumulado). En las encuestas, la Quaest del 14 de ago lo mantiene en 4% en la primera vuelta, exactamente el mismo valor que la casa le dio el 5 de ago, lo que significa nueve días sin avance contra la propia regla. Sigue con el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, y el precio continúa posicionado entre los dos métodos de las encuestas, por encima del 4% del teléfono y del presencial y por debajo del 10% de Palver por internet. El efecto de método permanece como la lectura central sobre él, y la salvedad fue declarada por la propia Palver. En el escenario de balotaje de la PoderData del 13 de ago él es el único de los cuatro probados al que el líder vence, mientras Caiado, Zema y el segundo empatan."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO CON LECTURA NUEVA EL 14 DE AGO solo para CAIADO, que subió 0,10pp y llegó a 1,05% (vol USD 5,70M acumulado). Para ZEMA y HADDAD no hay lectura nueva, porque ambos están por debajo del corte de 0,5% que el panel usa para separar precio de ruido, y los valores exhibidos son los de la lectura confirmada del 12 de ago. En las encuestas sigue vigente la PoderData del 13 de ago, que pone a Caiado y a Zema empatados con el líder en el balotaje.",
-      "subtitle": "14 de ago, a 51 días de la primera vuelta: Caiado es el único del pelotón con lectura de precio nueva, y subió. El contraste que el panel viene registrando no se deshizo: empate con el líder en el balotaje de una nacional y precio de victoria en torno a 1%.",
+      "header": "NO HAY LECTURA CONFIRMADA NUEVA EL 15 DE AGO para ningún nombre del pelotón, y los valores exhibidos son los del 14 de ago, 14:46 BRT. ENCUESTAS: la Quaest del 14 de ago da 4% a CAIADO, 2% a ZEMA y trae un dato nuevo sobre el primero, con rechazo de 35% y alto desconocimiento.",
+      "subtitle": "15 de ago, a 50 días de la primera vuelta: sin lectura de precio nueva para el pelotón, y la Quaest agrega la pieza que faltaba sobre Caiado, que es el rechazo de 35% en un cuadro donde los dos primeros pasan de 50%.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 1,05% (vol USD 5,70M acumulado, lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC)), alza de 0,10pp desde el 12 de ago | EMPATA con el líder en el balotaje de la PoderData del 13 de ago | encuestas vigentes: Gerp 4%, Genial/Quaest 4%, Meio/Ideia 5,7%, BTG/Nexus 5%",
-        "fortes": "Es el único del pelotón con lectura de precio nueva el 14 de ago, y es de alza: 1,05%. El precio pasó de 0,95% el 12 de ago a 1,05% ahora. EMPATA CON EL LÍDER EN EL BALOTAJE de la PoderData del 13 de ago, según CNN Brasil y Bnews, su segundo empate en cuatro días después del de BTG/Nexus del 10 de ago. En las encuestas tiene de 4% a 5,7% en la primera vuelta según la casa, por delante de los demás nombres del pelotón.",
-        "fracos": "Aun con el alza, su precio de victoria sigue en 1,05%, contra 4% a 5,7% de intención declarada en la primera vuelta. La distancia entre encuestas y precio sigue siendo la mayor del pelotón en esta ventana. Empatar en el balotaje y ganar la elección son preguntas distintas, y el panel no las suma."
+        "label": "CAIADO (PSD), Poly presidencial 1,05% (vol USD 5,70M acumulado, lectura confirmada del 14 de ago, 14:46 BRT), sin lectura nueva el 15 de ago | encuestas vigentes: Quaest 4%, Gerp 4%, Meio/Ideia 5,7%, BTG/Nexus 5% | RECHAZO de 35% en la Quaest del 14 de ago",
+        "fortes": "La Quaest del 14 de ago le da 4% en la primera vuelta, lo mismo que la Gerp y que la propia Quaest del 5 de ago, y trae el dato que faltaba sobre él: RECHAZO de 35%, muy por debajo del 54% y del 52% de los dos primeros, con desconocimiento alto. Sigue empatando con el líder en el balotaje de la PoderData del 13 de ago, según CNN Brasil y Bnews, su segundo empate en cuatro días.",
+        "fracos": "No hay lectura de precio nueva para él el 15 de ago. Rechazo bajo con desconocimiento alto no es lo mismo que aceptación: significa que la mayor parte del electorado aún no formó opinión, y una opinión no formada puede ir hacia cualquier lado. Sigue en 4% a 5,7% en la primera vuelta contra poco más de 1% de precio de victoria."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 7,06M acumulado, última lectura confirmada, del 12 de ago, 16:41 BRT), sin lectura nueva el 14 de ago por estar por debajo del corte de 0,5% | NO probado por las nacionales vigentes, porque compite por la gobernación de São Paulo",
+        "label": "HADDAD (PT), Poly presidencial 0,15% (vol USD 7,06M acumulado, lectura confirmada del 14 de ago, 14:46 BRT), sin lectura nueva el 15 de ago y por debajo del corte de 0,5% | NO probado por las nacionales vigentes, porque compite por la gobernación de São Paulo",
         "fortes": "Su volumen acumulado sigue siendo mayor que el de varios nombres con precio por encima del suyo, lo que mantiene el contrato con respaldo de negociación pese al precio bajo.",
-        "fracos": "La PoderData del 13 de ago no lo prueba, y ninguna nacional de la ventana lo incluye en escenario presidencial. La salvedad de fondo permanece y debe decirse con claridad: él NO es candidato a la Presidencia, compite por la gobernación de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta, no candidatura en curso."
+        "fracos": "La Quaest del 14 de ago no lo prueba en escenario presidencial, y ninguna nacional de la ventana lo incluye. La salvedad de fondo permanece y debe decirse con claridad: él NO es candidato a la Presidencia, compite por la gobernación de São Paulo, y cualquier escenario que lo incluya es hipótesis de encuesta, no candidatura en curso."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,35% (vol USD 5,07M acumulado, última lectura confirmada, del 12 de ago, 16:41 BRT), sin lectura nueva el 14 de ago por estar por debajo del corte de 0,5% | EMPATA con el líder en el balotaje de la PoderData del 13 de ago | encuestas vigentes: Gerp 2%, Genial/Quaest 2%, Meio/Ideia 2,6%, BTG/Nexus 3%",
-        "fortes": "EMPATA CON EL LÍDER EN EL BALOTAJE por primera vez en la ventana, según CNN Brasil y Bnews. Sigue siendo el único del pelotón con registro de candidatura ya presentado ante el TSE, hecho el 6 de ago con R$ 178,7 millones declarados, lo que lo deja fuera del apretón del plazo que termina el 15 de ago.",
-        "fracos": "Su precio está por debajo del corte de 0,5% que el panel usa para separar precio de ruido, y por eso no recibe lectura nueva en esta ronda. En las encuestas va de 2% a 3% en la primera vuelta, la franja más estrecha del pelotón, y la distancia entre empatar en el balotaje y llegar al balotaje es justamente lo que esos números no cubren."
+        "label": "ZEMA (Novo), Poly presidencial 0,35% (vol USD 5,07M acumulado, lectura confirmada del 14 de ago, 14:46 BRT), sin lectura nueva el 15 de ago y por debajo del corte de 0,5% | encuestas vigentes: Quaest 2%, Gerp 2%, Meio/Ideia 2,6%, BTG/Nexus 3%",
+        "fortes": "La Quaest del 14 de ago lo mantiene en 2% en la primera vuelta, el mismo valor del 5 de ago. Sigue siendo el único del pelotón con registro de candidatura ya presentado ante el TSE, hecho el 6 de ago con R$ 178,7 millones declarados, y por eso el plazo que termina el 15 de ago no lo presiona.",
+        "fracos": "No hay lectura nueva para él el 15 de ago, y el precio sigue por debajo del corte de 0,5% que el panel usa para separar precio de ruido. En las encuestas va de 2% a 3% en la primera vuelta, la franja más estrecha del pelotón, y empató consigo mismo en la Quaest entre el 5 y el 14 de ago."
       },
-      "analise": "⭐ EL CONTRASTE DEL PELOTÓN SIGUE EN PIE, Y HOY GANÓ UN DATO NUEVO DEL LADO DEL PRECIO. Caiado es el único del grupo con lectura nueva el 14 de ago y SUBIÓ, de 0,95% a 1,05% (vol USD 5,70M acumulado). Es un movimiento pequeño en términos absolutos, pero es el segundo nombre del panel en moverse hacia arriba en esta lectura, junto con el segundo colocado. En las encuestas nada cambió desde ayer: la PoderData del 13 de ago sigue siendo la nacional vigente, y en ella Caiado y Zema EMPATAN con el líder en el balotaje, según CNN Brasil y Bnews. Para Caiado es el segundo empate en cuatro días, después del de BTG/Nexus del 10 de ago; para Zema es el primero de la ventana. La distancia entre los dos instrumentos sigue siendo el hallazgo: de 4% a 5,7% de intención declarada en la primera vuelta contra poco más de 1% de precio de victoria. ⚠️ Ambas miden preguntas distintas, empatar en el balotaje y ganar la elección, y el panel no las suma. Zema y Haddad siguen por debajo del corte de 0,5% y por eso no reciben lectura nueva. Zema es el único del pelotón con registro ya presentado ante el TSE, hecho el 6 de ago, y por eso el plazo del 15 de ago no lo presiona.",
+      "analise": "⭐ LA QUAEST DEL 14 DE AGO TRAJO LA PIEZA QUE FALTABA SOBRE EL PELOTÓN, Y NO ES INTENCIÓN DE VOTO. ES RECHAZO: Caiado aparece con 35%, contra 54% del segundo y 52% del líder, y la propia casa declara que el desconocimiento sobre él es alto. ⚠️ Las dos cosas van juntas y no se separan: quien no es conocido no es rechazado, y una opinión no formada puede ir hacia cualquier lado. El panel registra el número y la salvedad en el mismo aliento, porque publicar solo el rechazo bajo sería sugerir un techo que el dato no sostiene. En intención de voto nada cambió: Caiado repitió el 4% y Zema el 2% que la propia Quaest les dio el 5 de ago, es decir, nueve días sin movimiento contra la misma regla. No hay lectura de precio confirmada nueva para ninguno de ellos el 15 de ago, y los valores exhibidos son los del 14 de ago. La distancia entre encuestas y precio sigue siendo la mayor del panel.",
       "fortes": [
-        "Caiado es el único del pelotón con lectura de precio nueva el 14 de ago, y subió 0,10pp, llegando a 1,05%.",
-        "La PoderData del 13 de ago pone a Caiado y a Zema empatados con el líder en el balotaje, según CNN Brasil y Bnews, y Caiado sigue al frente del pelotón en la primera vuelta.",
-        "Caiado tiene 5% en la primera vuelta de BTG/Nexus, por delante de Renan Santos, que tiene 4%, y de Zema, con 3%.",
+        "La Quaest del 14 de ago trae la pieza que faltaba sobre Caiado: rechazo de 35%, contra 54% y 52% de los dos primeros.",
+        "Caiado sigue en 4% a 5,7% en la primera vuelta según la casa, por delante de los demás nombres del pelotón.",
         "Zema es el único del pelotón con registro de candidatura ya presentado ante el TSE, hecho el 6 de ago, y por eso está fuera del apretón del plazo que termina el 15 de ago.",
+        "Ni Caiado ni Zema perdieron terreno contra la propia Quaest entre el 5 y el 14 de ago; los dos repitieron sus valores anteriores.",
         "Los contratos del pelotón suman volumen acumulado relevante incluso con precio bajo, lo que indica negociación y no abandono."
       ],
       "fracos": [
-        "La distancia entre encuestas y precio sigue siendo la mayor del panel: de 4% a 5,7% de intención declarada para Caiado contra 1,05% de precio de victoria.",
-        "Zema y Haddad están por debajo del corte de 0,5% y por eso no reciben lectura de precio nueva en esta ronda.",
-        "Ningún nombre del pelotón pasa de 5,7% en la primera vuelta en ninguna nacional de la ventana.",
-        "Haddad no es candidato a la Presidencia y compite por la gobernación de São Paulo, así que su contrato mide una hipótesis, no una candidatura.",
-        "El empate en el balotaje depende de llegar al balotaje, y es justamente esa etapa la que los números de primera vuelta del pelotón no sostienen."
+        "No hay lectura de precio confirmada nueva para ningún nombre del pelotón el 15 de ago.",
+        "La distancia entre encuestas y precio sigue siendo la mayor del panel: de 4% a 5,7% de intención declarada para Caiado contra poco más de 1% de precio de victoria.",
+        "Rechazo bajo con desconocimiento alto no es aceptación, y la Quaest declara ese desconocimiento para Caiado.",
+        "Ningún nombre del pelotón pasa de 5,7% en la primera vuelta en ninguna nacional de la ventana, y ninguno avanzó contra la propia casa.",
+        "Haddad no es candidato a la Presidencia y compite por la gobernación de São Paulo, así que su contrato mide una hipótesis, no una candidatura."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Sigue vigente la PoderData/Aya del 13 de ago (n=2.400, telefónica, campo del 9 al 12 de ago, BR-06868/2026): 41% en la primera vuelta y 46% x 45% en el balotaje. Quaest divulga hoy una nacional con 13 candidatos y los resultados no estaban publicados al momento de esta captura. Rechazo en 48%, igual al del adversario. Aprobación personal en 43% contra 50% de desaprobación.",
-      "m": "63,50% (vol USD 8,25M acumulado), lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC)",
-      "t": "PRECIO DETENIDO POR SEXTO DÍA. La serie registrada muestra 63,50% en todos los días del 9 al 14 de ago. La distancia hacia el segundo se estrechó 0,20pp desde el 12 de ago, y el movimiento fue enteramente del adversario. SALVEDAD DE SERIE: entre los puntos registrados desde el 16 de may, el máximo es 66,50% el 1 de ago a las 23:00 y el piso es 39,50% el 26 de may.",
-      "s": "51 días de la elección. El TSE identificó un intento de alterar su afiliación partidaria, que no llegó a concretarse, dentro del episodio que llevó a la suspensión del sistema de afiliaciones en la noche del 13 de ago. 📅 Quaest publica hoy y Nexus el 17 de ago.",
+      "p": "ENCUESTA NACIONAL NUEVA: Quaest del 14 de ago (n=2.004, campo del 10 al 13 de ago, BR-06773/2026) con 38% en la primera vuelta y 43% en el balotaje. Contra la propia casa del 5 de ago cede 1 punto en ambas. Rechazo en 52%, por debajo del 54% del adversario. Aprobación del gobierno en 46% contra 48% de desaprobación.",
+      "m": "64,50% (vol USD 8,29M acumulado), lectura confirmada del 15 de ago, 13:33 BRT (16:33 UTC)",
+      "t": "ROMPIÓ HACIA ARRIBA después de siete días en 63,50%, con alza de 1,00pp, y volvió al nivel del 8 de ago. SALVEDAD DE SERIE: entre los 174 puntos registrados desde el 18 de may, 17 tuvieron un valor igual o superior a 64,50%, con un máximo de 66,50% el 1 de ago y un piso de 39,50% el 26 de may. La distancia hacia el segundo se AMPLIÓ, de 35,65pp a 36,35pp.",
+      "s": "50 días de la elección. El 38% de la Quaest es el piso de las nueve nacionales desde el 5 de ago. 📅 Nexus publica el 17 de ago y Real Time Big Data el 19 de ago.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "Sigue vigente la PoderData/Aya del 13 de ago: 35% en la primera vuelta, el mismo valor del 30 de jul, y 45% en el balotaje contra 43% en la ronda anterior. Siguen vigentes el 28,7% de la CNT/MDA, el 34,1% de Futura y el 38% de la Gerp, del 11 de ago.",
-      "m": "27,85% (vol USD 8,20M acumulado), lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC)",
-      "t": "ÚNICO NOMBRE POR ENCIMA DE 1% QUE SUBIÓ, con alza de 0,20pp desde la lectura del 12 de ago, y toda la reducción de la distancia en el período vino de él. SALVEDAD DE SERIE: entre los puntos registrados desde el 16 de may, 51 tuvieron un valor igual o superior a 27,85%, con un máximo de 33,20% el 2 de jun a las 19:30 y un piso de 22,00% el 3 de jul a las 01:00.",
-      "s": "🔴 SU CASO REGISTRAL SE VOLVIÓ UN CASO DE SISTEMA Y TERMINÓ EN REGISTRO. Nunes Marques restableció la afiliación al PL el 13 de ago y liberó el registro, y su candidatura presidencial fue registrada horas después, según Brasil de Fato. Antes de eso, en la noche del 13 de ago el TSE suspendió el procesamiento de nuevas afiliaciones en el sistema Filia, y el propio tribunal declaró que NO hubo hackeo, sino uso indebido de la herramienta por parte de alguien que tenía las credenciales del partido, según Gazeta do Povo. El plazo de registro termina el 15 de ago.",
+      "p": "ENCUESTA NACIONAL NUEVA: la Quaest del 14 de ago le da 31% en la primera vuelta y 40% en el balotaje, ganando 1 punto en ambas contra la propia casa del 5 de ago. RECHAZO de 54%, el mayor del cuadro y por encima del 52% del líder.",
+      "m": "28,15% (vol USD 8,23M acumulado), lectura confirmada del 15 de ago, 13:33 BRT (16:33 UTC)",
+      "t": "SEGUNDO DÍA SEGUIDO DE SUBIDA, con 0,30pp el 15 de ago después de 0,20pp el 14 de ago. ⚠️ Aun subiendo quedó MÁS LEJOS del líder, porque el líder subió 1,00pp. SALVEDAD DE SERIE: entre los 172 puntos desde el 18 de may, 23 tuvieron un valor igual o superior a 28,15%, con un máximo de 33,20% el 2 de jun y un piso de 22,00% el 3 de jul.",
+      "s": "Su candidatura presidencial fue registrada el 14 de ago, horas después de que Nunes Marques restableciera su afiliación al PL, según Brasil de Fato. El plazo de registro termina hoy, 15 de ago.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "Sus porcentajes de primera vuelta en la PoderData del 13 de ago no aparecieron en las notas capturadas. Siguen el 5% de la Gerp, el 4% de Genial/Quaest y de BTG/Nexus, el 4,7% de Meio/Ideia y el 10% de Palver por internet.",
-      "m": "7,15% (vol USD 9,59M acumulado), lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC)",
-      "t": "LA MAYOR CAÍDA DEL PELOTÓN DE ARRIBA EN ESTA LECTURA, con retroceso de 0,30pp desde el 12 de ago. Sigue con el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, y el precio continúa posicionado ENTRE los dos métodos de las encuestas.",
-      "s": "El partido por el que compite, Missão, es el mismo en el que el candidato del PL apareció afiliado sin saberlo, episodio que el TSE trató como fraude y que llevó a la suspensión del sistema de afiliaciones. Gazeta do Povo publicó su plan de gobierno esta semana.",
+      "p": "La Quaest del 14 de ago lo mantiene en 4% en la primera vuelta, el mismo valor que la casa le dio el 5 de ago. Siguen el 5% de la Gerp, el 4% de BTG/Nexus, el 4,7% de Meio/Ideia y el 10% de Palver por internet.",
+      "m": "7,15% (vol USD 9,59M acumulado), lectura confirmada del 14 de ago, 14:46 BRT",
+      "t": "NO HAY LECTURA CONFIRMADA NUEVA PARA ÉL EL 15 DE AGO. El valor exhibido es el de la última lectura confirmada, del 14 de ago, 14:46 BRT. Sigue con el mayor volumen acumulado del libro presidencial entre los nombres por encima de 1%, y el precio continúa ENTRE los dos métodos de las encuestas.",
+      "s": "Gazeta do Povo publicó su plan de gobierno esta semana. Empató consigo mismo en la Quaest entre el 5 y el 14 de ago, con 4% en ambas.",
       "pc": "#F59E0B",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "La PoderData del 13 de ago lo pone en EMPATE con el líder en el balotaje, según CNN Brasil y Bnews, su segundo empate en cuatro días después del de BTG/Nexus del 10 de ago. Siguen el 4% de la Gerp y de Genial/Quaest, el 5,7% de Meio/Ideia y el 5% de BTG/Nexus en la primera vuelta.",
-      "m": "1,05% (vol USD 5,70M acumulado), lectura confirmada del 14 de ago, 14:46 BRT (17:46 UTC)",
-      "t": "SUBIÓ 0,10pp desde la lectura del 12 de ago y es el único del pelotón con lectura nueva en esta ronda. La distancia entre encuestas y precio sigue siendo la mayor del panel: de 4% a 5,7% de intención declarada en la primera vuelta contra poco más de 1% de precio de victoria.",
-      "s": "En São Paulo viene atacando las trayectorias de los dos primeros colocados y criticando la actuación del STF. El plazo de registro de candidaturas termina el 15 de ago.",
+      "p": "La Quaest del 14 de ago le da 4% en la primera vuelta, lo mismo que el 5 de ago, y trae el dato nuevo: RECHAZO de 35%, con alto desconocimiento declarado por la casa. Sigue empatando con el líder en el balotaje de la PoderData del 13 de ago.",
+      "m": "1,05% (vol USD 5,70M acumulado), lectura confirmada del 14 de ago, 14:46 BRT",
+      "t": "NO HAY LECTURA CONFIRMADA NUEVA PARA ÉL EL 15 DE AGO. El valor exhibido es el del 14 de ago, 14:46 BRT. La distancia entre encuestas y precio sigue siendo la mayor del panel: de 4% a 5,7% de intención declarada contra poco más de 1% de precio de victoria.",
+      "s": "⚠️ Un rechazo de 35% con desconocimiento alto no es aceptación: significa que la mayor parte del electorado aún no formó opinión sobre él, y una opinión no formada puede ir hacia cualquier lado.",
       "pc": "#16A34A",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "La PoderData del 13 de ago lo pone en EMPATE con el líder en el balotaje, según CNN Brasil y Bnews, la primera vez en la ventana. Siguen el 2% de la Gerp, el 3% de BTG/Nexus, el 2% de Genial/Quaest y el 2,6% de Meio/Ideia en la primera vuelta.",
-      "m": "0,35% (vol USD 5,07M acumulado), última lectura confirmada, del 12 de ago, 16:41 BRT",
-      "t": "NO HAY LECTURA NUEVA PARA ÉL EL 14 DE AGO, porque su precio está por debajo del corte de 0,5% que el panel usa para separar precio de ruido. El valor exhibido es el de la última lectura confirmada, del 12 de ago, 16:41 BRT.",
-      "s": "Sigue siendo el único del pelotón con registro de candidatura ya presentado ante el TSE, hecho el 6 de ago con R$ 178,7 millones declarados, y por eso el plazo del 15 de ago no lo presiona.",
+      "p": "La Quaest del 14 de ago lo mantiene en 2% en la primera vuelta, el mismo valor del 5 de ago. Siguen el 2% de la Gerp, el 3% de BTG/Nexus y el 2,6% de Meio/Ideia. Empata con el líder en el balotaje de la PoderData del 13 de ago.",
+      "m": "0,35% (vol USD 5,07M acumulado), lectura confirmada del 14 de ago, 14:46 BRT",
+      "t": "NO HAY LECTURA NUEVA PARA ÉL EL 15 DE AGO, y el precio sigue por debajo del corte de 0,5% que el panel usa para separar precio de ruido. El valor exhibido es el del 14 de ago, 14:46 BRT.",
+      "s": "Sigue siendo el único del pelotón con registro de candidatura ya presentado ante el TSE, hecho el 6 de ago con R$ 178,7 millones declarados, y por eso el plazo que termina hoy no lo presiona.",
       "pc": "#0EA5E9",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sin encuesta. Mercado de impeachment de un ministro del Supremo antes de 2027.",
-      "m": "3,90% (vol USD 83 mil), última lectura confirmada, del 12 de ago, 16:41 BRT",
-      "t": "NO HAY LECTURA NUEVA PARA ESTE CONTRATO EL 14 DE AGO. El valor exhibido es el de la última lectura confirmada, del 12 de ago, 16:41 BRT. Sigue siendo el contrato más delgado entre los acompañados, y cualquier movimiento en él exige esa salvedad.",
-      "s": "El hilo judicial de la semana sigue siendo el operativo de la PF contra la fuente de un periodista, con base en mensajes que sustentaron reportajes sobre Dino, y la reacción de entidades a la decisión de Moraes en el caso. Sigue vigente la determinación del 12 de ago en la que Moraes, Dino, Gilmar Mendes y Zanin ordenaron a siete tribunales devolver los pagos suplementarios.",
+      "m": "3,90% (vol USD 83 mil), lectura confirmada del 14 de ago, 14:46 BRT",
+      "t": "NO HAY LECTURA NUEVA PARA ESTE CONTRATO EL 15 DE AGO. El valor exhibido es el del 14 de ago, 14:46 BRT. Sigue siendo el contrato más delgado entre los acompañados, y cualquier movimiento en él exige esa salvedad.",
+      "s": "El STF suspendió la condena de Romero Jucá, que queda habilitado para competir, según O Globo. El ministro Mendonça se comprometió a conducir los casos Master e INSS con imparcialidad, según G1, y la PF abrió una investigación sobre la sospecha de interferencia de un senador en una pesquisa en Maranhão, según Folha de S.Paulo.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "EL DÍA TUVO PRECIO NUEVO Y TUVO HECHO INSTITUCIONAL, Y LOS DOS APUNTAN HACIA LADOS DISTINTOS. En el precio, la lectura del 14 de ago confirma un libro presidencial prácticamente inmóvil: el líder en 63,50% por sexto día consecutivo en la serie registrada, el segundo subiendo 0,20pp hasta 27,85%, Renan Santos cayendo 0,30pp hasta 7,15% y Caiado subiendo 0,10pp hasta 1,05%. La distancia entre los dos primeros se estrechó 0,20pp, de 35,85pp a 35,65pp, y todo el movimiento vino del segundo, no del líder. ⛔ Sin superlativo: la serie registrada desde el 16 de may muestra 51 puntos con el segundo en un nivel igual o superior al de hoy, y su máximo sigue en 33,20%, del 2 de jun. Fuera del libro presidencial no hay lectura nueva el 14 de ago, y los contratos de segundo y tercer lugar, el del Senado y el de impeachment en el STF siguen con los valores de la lectura confirmada del 12 de ago. En las encuestas tampoco hubo novedad: Quaest divulga hoy una nacional con 13 candidatos probados, y al momento de esta captura los resultados aún no estaban publicados, así que la nacional vigente sigue siendo la PoderData/Aya del 13 de ago. ⭐ LO QUE REALMENTE CAMBIÓ HOY FUE EL REGISTRO ELECTORAL, Y ES EL MAYOR HECHO INSTITUCIONAL DE LA VENTANA. En la noche del 13 de ago el TSE suspendió el procesamiento de nuevas afiliaciones en el sistema Filia, tras la inclusión indebida del segundo en Missão y un intento de alterar la afiliación del líder que no llegó a concretarse, según Gazeta do Povo y Brasil de Fato. ⚠️ El propio tribunal declaró que NO hubo hackeo, sino uso indebido de la herramienta por parte de alguien que tenía las credenciales del partido, lo que es una distinción relevante y no un detalle. El 13 de ago Nunes Marques restableció la afiliación al PL y liberó el registro, y la candidatura presidencial del segundo fue registrada horas después, según Brasil de Fato el 14 de ago. El plazo de registro de candidaturas termina el 15 de ago, es decir, la suspensión del sistema cae en la víspera del cierre, y a partir del 16 de ago la ausencia de registro deja de ser pendencia y pasa a ser hecho. ⚠️ El panel registra el orden de los acontecimientos y no atribuye causa: el precio del segundo subió 0,20pp en la misma ventana en que se removió su obstáculo registral, y eso es una coincidencia de calendario, no una relación medida. Un tercer hecho entró hoy y no tiene contrapartida en el precio: la OEA anunció el 13 de ago que enviará una misión de observación electoral a Brasil, encabezada por José Miguel Insulza, excanciller de Chile y exsecretario general de la propia OEA, según CNN Brasil y Gazeta do Povo. Es la quinta misión de la OEA en Brasil desde 2018."
+  "cruzamento": "EL DÍA TIENE UN CRUCE LIMPIO, Y APUNTA HACIA LADOS OPUESTOS. En las encuestas, la Quaest divulgada el 14 de ago a las 21:00 muestra las dos distancias ESTRECHÁNDOSE contra la propia casa: en la primera vuelta de 9pp a 7pp, con el líder cediendo 1 punto y el segundo ganando 1 punto, y en el balotaje de 5pp a 3pp, por el mismo movimiento simétrico. En el precio ocurrió lo contrario: la distancia se AMPLIÓ, de 35,65pp a 36,35pp, porque el líder subió 1,00pp y el segundo subió 0,30pp. ⭐ Los dos instrumentos se movieron en el mismo par de días y en sentidos opuestos, y esa divergencia es el dato. El panel no la concilia ni elige cuál de los dos vale, porque miden preguntas distintas: intención de voto declarada y probabilidad de victoria. ⛔ Sin superlativo: la distancia de 36,35pp es ordinaria en la serie, con 32 de los 88 días registrados marcando un valor igual o mayor, y el pico sigue en 41,80pp, del 1 de ago. El líder en 64,50% tampoco es un extremo, con 17 de los 174 puntos en un nivel igual o superior y un máximo de 66,50%, del 1 de ago. Lo que es un hecho es la ruptura: estaba en 63,50% desde hacía siete días y volvió al nivel visto por última vez el 8 de ago. La Quaest también separó a los dos en el rechazo por primera vez en la ventana, con 54% para el segundo y 52% para el líder, cuando la PoderData del 13 de ago los empataba en 48%, y trajo la aprobación del gobierno a 46% contra 48%, el mejor saldo desde el 5 de ago. ⚠️ Dos nacionales en dos días discrepando en el signo del rechazo y en 5 puntos en el saldo de aprobación es efecto de casa, no un cambio de opinión pública, y el panel prefiere mostrar la distancia entre las casas a elegir una de ellas. En el registro electoral el plazo de registro de candidaturas termina hoy, 15 de ago, y a partir de mañana la ausencia de registro deja de ser pendencia y pasa a ser hecho."
 }
