@@ -155,7 +155,18 @@ const CANON = [
   ['tarcísio', 'Tarcísio'], ['tarcisio', 'Tarcísio'], ['camilo', 'Camilo Santana'],
   ['ratinho', 'Ratinho Jr'], ['eduardo leite', 'Eduardo Leite'], ['ciro', 'Ciro Gomes'], ['simone', 'Simone Tebet'],
 ]
-const canon = (raw) => { const s = String(raw || '').toLowerCase(); for (const [k, v] of CANON) if (s.includes(k)) return v; return null }
+// Nome que não casa com CANON é DESCARTADO da série, e por muito tempo isso
+// acontecia calado. Instrumentado em 16/Ago/2026: o descarte continua igual, mas
+// agora fica registrado quem caiu, para o próximo nome novo aparecer ANTES de
+// virar defeito. ⚠️ Isto NÃO altera a saída, só a observabilidade.
+const CANON_DESCARTADOS = new Map()
+const canon = (raw) => {
+  const s = String(raw || '').toLowerCase()
+  for (const [k, v] of CANON) if (s.includes(k)) return v
+  const nome = String(raw || '').trim()
+  if (nome) CANON_DESCARTADOS.set(nome, (CANON_DESCARTADOS.get(nome) || 0) + 1)
+  return null
+}
 
 // Divergência mercado × pesquisa por candidato/dia: junta cada resultado de pesquisa nacional (1º turno)
 // à odd Polymarket do candidato na data da pesquisa (nearest on-or-before). Reconstrói o sinal-tema.
@@ -285,5 +296,17 @@ for (const f of ['DATA_DICTIONARY.md', 'CITATION.cff', 'CHANGELOG.md', 'ERRATA.m
 copyFileSync(join(ASSETS, 'README.md'), join(STAGING, 'README.md'))
 copyFileSync(join(ASSETS, 'LICENSE-CC-BY-4.0'), join(STAGING, 'LICENSE-CC-BY-4.0'))
 copyFileSync(join(ROOT, 'LICENSE'), join(STAGING, 'LICENSE-APACHE-2.0'))
+
+// ---- observabilidade do CANON (não altera a saída) ----
+if (CANON_DESCARTADOS.size) {
+  const lista = [...CANON_DESCARTADOS.entries()].sort((a, b) => b[1] - a[1])
+  console.log(`⚠️  canon: ${lista.length} nome(s) fora da lista, ${lista.reduce((s, [, n]) => s + n, 0)} linha(s) descartada(s)`)
+  for (const [nome, n] of lista) console.log(`     ${String(n).padStart(4)}x  ${nome}`)
+  console.log('     ⛔ Descarte é CORRETO para quem não tem contrato no Polymarket:')
+  console.log('        arquivo de DIVERGÊNCIA exige preço, e linha sem preço seria cruzamento fabricado.')
+  console.log('        🔴 Só vira defeito se o nome TIVER contrato e mesmo assim cair aqui.')
+} else {
+  console.log('✅ canon: nenhum nome fora da lista')
+}
 
 console.log(`✅ staging pronto em ${STAGING}`)
