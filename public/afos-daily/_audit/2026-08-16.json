@@ -1,0 +1,124 @@
+{
+  "date": "2026-08-16",
+  "capturedAt": "2026-08-16T19:56:24.000Z",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Campanha eleitoral oficial comeca em 16/Ago, com propaganda nas ruas e na internet liberada",
+        "verificacao1CrossRef": "'campanha' aparece 9 vezes nas 7 dailies anteriores, sempre como agenda futura; o marco legal e de hoje",
+        "verificacao2Fetch": {
+          "url": "https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/eleicoes-2026-propaganda-eleitoral-nas-ruas-e-na-internet-comeca-neste-domingo-16",
+          "data": "2026-08-16",
+          "tipo": "evento"
+        },
+        "segundaFonte": "TRE-PA, orgao distinto, tre-pa.jus.br/comunicacao/noticias/2026/Agosto/eleicoes-2026-propaganda-eleitoral-comeca-neste-domingo-16",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Registro de candidaturas fechou com 20.438 candidaturas e 13 a Presidencia",
+        "verificacao1CrossRef": "sem mencao nas 7 dailies anteriores; novidade",
+        "verificacao2Fetch": {
+          "url": "https://www.poder360.com.br/poder-eleicoes/eleicoes-de-2026-tem-20-438-candidatos-no-fim-do-registro/",
+          "data": "2026-08-15",
+          "tipo": "evento"
+        },
+        "segundaFonte": "TSE para o marco do prazo; Exame e CGN para os 13 presidenciais",
+        "decisao": "incorporar com ressalva",
+        "ressalvaDoCorpo": "O corpo lido qualifica o numero em dois pontos que a manchete omite: 20.438 e a contagem ATE AS 19h30 de 15/Ago, e o proprio veiculo declara que ela segue INCOMPLETA porque a Justica Eleitoral ainda processa pedidos. A daily saiu com as duas ressalvas.",
+        "consequenciaNoPainel": "O painel publicado as 16:56 diz 'o registro fechou com 20.438' sem as ressalvas. Defeito identificado pelo gate da daily, NAO corrigido nesta rodada, aguardando decisao do Andre."
+      },
+      {
+        "evento": "Ato de Flavio Bolsonaro em Copacabana estimado em 8.900 pessoas pelo monitor USP/Cebrap; comicio de Lula sem medicao divulgada",
+        "verificacao1CrossRef": "'Copacabana' e 'Cebrap' com ZERO mencoes nas 7 dailies anteriores; novidade",
+        "verificacao2Fetch": {
+          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOLURNRUhYazVpYVVvcHMtWHJaOFdlNE1sTG1fQlRHeXQ2eHRmQ0hRNkJDbEFuejF2MHVMRS04X2lmS1Z6TXRmUzJreWw3MGlPelBURHRRUzBrRmpmUnRaMjRsSEFmUU1MeUlJT3FkeGFLZ3NtWTctRlpfVTJpSzQ2OVlpRExHTl9ROVdZUVhFeDRNOUNtb0FqbFdZdXNHaDFHUFp0d0oxTVZCTEdQQnNwTmxjNXJyQUdkOEU1WG50QUphZHNiUHFB",
+          "data": "2026-08-16",
+          "tipo": "evento",
+          "observacao": "corpo nao acessivel, Estadao bloqueia robo; a alegacao esta inteira na manchete, com a metodologia nomeada"
+        },
+        "segundaFonte": "NAO VERIFICADO. Busca nao localizou segundo veiculo com o numero. A existencia do monitor USP/Cebrap e do metodo e confirmavel em cobertura anterior, com estimativa de 4,7 mil em ato de 01/Mar/2026 no mesmo local",
+        "decisao": "incorporar como FONTE UNICA DECLARADA",
+        "justificativa": "O ponto editorial nao e o tamanho do ato, e a ASSIMETRIA DE MEDICAO, que esta na propria manchete: um ato tem estimativa metodologica e o outro nao tem nenhuma. A peca nomeia o veiculo e o instituto, e diz que comparacao nao e possivel."
+      },
+      {
+        "evento": "Michelle Bolsonaro registra candidatura ao Senado pelo Distrito Federal",
+        "verificacao1CrossRef": "2 mencoes anteriores, ambas sobre propaganda com Flavio; o registro e novidade",
+        "verificacao2Fetch": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/08/michelle-bolsonaro-da-largada-a-candidatura-ao-senado-missao-que-meu-marido-me-confiou.shtml",
+          "data": "2026-08-16",
+          "tipo": "evento"
+        },
+        "segundaFonte": "O TEMPO, grupo distinto, 16/Ago 12:08",
+        "decisao": "incorporar"
+      }
+    ],
+    "selfCheck": {
+      "ancorasComVerificacao2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaims": "OK, todos os claims batem com o JSON, tolerancia +-0,05pp"
+    }
+  },
+  "adversarialPass": {
+    "singleSourceClaims": [
+      "estimativa de 8.900 pessoas (Estadao citando USP/Cebrap), declarada no texto com veiculo e instituto nomeados",
+      "total de 20.438 candidaturas (Poder360), publicada com as ressalvas do proprio veiculo"
+    ],
+    "numericalErrors": "reconcile-claims OK",
+    "fontesInventadas": "amostra de 3 URLs conferida com HEAD: Valor 200, G1 200, O Globo 200",
+    "quotesLiterais": "nenhuma aspa literal no corpo",
+    "causacaoEspuria": "as unicas ocorrencias de 'por causa' e 'em reacao' no corpo sao NEGACOES de causacao, que e o ponto do dia",
+    "verbosCriticos": "nenhum verbo de privacao de liberdade, morte ou decisao judicial no corpo",
+    "vulnerabilidadeRegistradaNaoCorrigida": "a estimativa de publico tem UMA fonte so e nao foi encontrada segunda. Mantida porque o ponto editorial e a assimetria de medicao, nao o tamanho do ato.",
+    "decisao": "prosseguir para preview"
+  },
+  "trava": {
+    "veredito": "APROVADO",
+    "leitura1": "2026-08-16T19:47:47.958Z",
+    "leitura2": "2026-08-16T19:55:49.036Z",
+    "leituraPublicada": "2026-08-16T19:56:24Z (16:56 BRT)",
+    "observacao": "tres leituras concordando entre 16:42 e 16:56 BRT. As duas unicas divergencias acima de 0,20pp estavam no book de INFLACAO, que e distribuicao de faixas finas e a trava nao vigia, por desenho.",
+    "exitCodeIgnorado": "o involucro devolveu exit 1 em TODAS as chamadas deste ambiente, inclusive nas que deram certo. Vale a linha VEREDITO."
+  },
+  "reFetchGate": {
+    "carimboAtualizarBrz": "16/08/2026 16:56:24 BRT",
+    "carimboAoVivo": "16/08/2026 17:32:15 BRT",
+    "deltas": "Lula 0,00pp | Flavio +0,20pp | gap -0,20pp | Renan -0,35pp | vol 124,32M -> 124,35M",
+    "gate": "NAO DISPAROU",
+    "decisao": "mantida a baseline do JSON e o volume de USD 124,32M, da mesma leitura confirmada das 16:56, para nao misturar preco de um horario com volume de outro"
+  },
+  "superlativosConferidos": [
+    "Lula 66,50% IGUALA o topo da serie: 0 de 174 pontos acima, desde 19/Mai. Unico outro dia no nivel: 01/Ago. Escrito 'iguala', nunca 'supera'",
+    "Flavio 29,45% NAO e recorde: 4 de 173 pontos foram maiores, topo 33,20% em 02/Jun",
+    "gap 37,05pp NAO e recorde: 30 de 89 dias tiveram valor igual ou maior, pico 41,80pp em 01/Ago",
+    "Renan: TRES fechamentos seguidos em baixa, nao cinco. O 8,00% e do fechamento de 11/Ago, nao 12/Ago. 13/Ago fechou ACIMA de 12/Ago e quebrou a sequencia",
+    "Caiado 3o lugar: 31,00% no fechamento de 12/Ago para 37,50%, alta de 6,50pp com quatro fechamentos seguidos em alta",
+    "Renan 3o lugar TAMBEM cai: 65,00% em 09/Ago para 53,00%. A distancia entre os dois naquele book encolheu de 30,50pp para 15,50pp"
+  ],
+  "portoes": {
+    "palavras": 900,
+    "teto": 900,
+    "gateNumerico3Idiomas": "50 tokens, multiconjunto identico em pt/en/es",
+    "cincoChecagensLocale": "limpas nos 3",
+    "tldr": "3 marcadores nos 3 idiomas, todos abaixo de 250 chars",
+    "fontesSecundarias": "50%, no piso da regua",
+    "validator": "OK, 1 warning de densidade de link em 56%, contra 55-59% nas 3 dailies anteriores, ou seja, norma da serie e nao regressao",
+    "densidadeLinkExplicacao": "os paragrafos sem link sao as proprias medicoes do painel e os blocos de sintese, que nao tem fonte externa por natureza"
+  },
+  "correcoesDeConvencao": [
+    "coluna Conf. do calendario estava com ponto decimal no pt-BR, que na convencao portuguesa le errado. Corrigida para virgula; ES acompanha, EN usa ponto",
+    "ES saiu com 'escopo', que e portugues. A daily anterior usa 'ambito'. Corrigido",
+    "'8,9 mil' virou '8.900' nos tres idiomas, para o multiconjunto numerico fechar com a mesma forma"
+  ],
+  "defeitosProprios": [
+    "primeira versao da sintese saiu SEM NENHUM NUMERO, porque cortei para caber no teto de 900 e tirei justamente o lastro. O Andre apontou. Reescrita com os numeros do cruzamento de contrato, e o espaco saiu de duplicacao real, nao de informacao",
+    "duas substituicoes se sobrepuseram no arquivo ingles e a frase virou \"the's rise\". Pego na varredura seguinte e corrigido antes do deploy"
+  ],
+  "wayback": {
+    "preCheck": "404 no /save/ com example.com E com URL de noticia real; 503 na RAIZ do archive.org",
+    "leitura": "o servico deles esta degradado, nao e bloqueio de host contra nos. Diferente dos 429 de 14 e 15/Ago",
+    "acao": "NAO rodada a fila e NAO insistido. Avisado no comeco da sessao",
+    "passivo": "treze dias"
+  },
+  "achadoEditorial": "O primeiro dia de campanha oficial teve movimento grande no preco e nenhum na urna, e o achado nao esta em quem ganha. O lider igualou o topo de 174 pontos em 66,50%, mas o contrato de POSICAO disse mais que o de vitoria: Caiado subiu 6,50pp no 3o lugar enquanto caia 0,45pp na disputa pelo Planalto, e o primeiro do pelotao perde terreno nas DUAS perguntas ao mesmo tempo, com o 3o lugar dele saindo de 65,00% em 09/Ago para 53,00%. A disputa interna do pelotao encolheu de 30,50pp para 15,50pp em quatro dias. Em paralelo, a peca declara a ORDEM DOS FATOS antes de qualquer leitura: o ponto de 66,50% foi gravado as 05:01 BRT, ANTES dos comicios, entao o preco se moveu na virada do dia e nao em reacao aos atos. E registra uma assimetria de medicao que a cobertura nao registrou: os dois maiores atos receberam adjetivos, e so um recebeu numero."
+}
