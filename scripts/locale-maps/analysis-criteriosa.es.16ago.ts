@@ -1,0 +1,141 @@
+/**
+ * Mapa ES de 16/Ago para analysis-criteriosa.json.
+ * Convenções: vírgula decimal e ponto de milhar, como no pt-BR. Datas "16 de ago".
+ */
+import { construir } from '../build-locale-json'
+
+const CAR = 'lectura confirmada del 16 de ago, 16:56 BRT (19:56 UTC)'
+
+construir('analysis-criteriosa', 'es', {
+  subtitle:
+    `ACTUALIZACIÓN 16 de ago, a 49 días de la primera vuelta y en el PRIMER DÍA DE LA CAMPAÑA OFICIAL. PRECIO: hay lectura confirmada nueva para todos los contratos seguidos, ${CAR}. El líder está en 66,50% y el segundo en 29,45%. ENCUESTAS: ninguna nacional nueva; la más reciente sigue siendo la Quaest del 14 de ago, que tuvo cruces nuevos difundidos durante el fin de semana. REGISTRO: el plazo cerró con 20.438 candidaturas en el país y 13 a la Presidencia, según Poder360.`,
+
+  // ---------------- LULA ----------------
+  'candidates[0].header':
+    `PRECIO CON LECTURA NUEVA EL 16 DE AGO: 66,50% (vol USD 8,40M acumulado), ${CAR}. El precio pasó de 64,50% el 15 de ago a 66,50% ahora, un alza de 2,00pp. ⭐ ESE VALOR IGUALA EL MÁXIMO DE LA SERIE: entre los 174 puntos registrados desde el 19 de may, NINGUNO está por encima de 66,50%, y el único otro día que tocó ese nivel fue el 1 de ago. ENCUESTAS: ninguna nacional nueva, y la Quaest del 14 de ago sigue vigente con 38% en la primera vuelta y 43% en el balotaje.`,
+  'candidates[0].fortes[0]': `Alza de 2,00pp en un solo día, de 64,50% a 66,50%, y el valor IGUALA el máximo de una serie de 174 puntos que corre desde el 19 de may, sin ningún punto por encima.`,
+  'candidates[0].fortes[1]': `Un cruce de la Quaest difundido el 15 de ago mide la FIRMEZA del voto, y no solo el nivel: entre sus electores, 77% dicen que la decisión es definitiva y 22% dicen que todavía pueden cambiar, según G1.`,
+  'candidates[0].fortes[2]': `La distancia hacia el segundo en el precio se AMPLIÓ de 36,35pp a 37,05pp, porque él subió 2,00pp y su rival 1,30pp.`,
+  'candidates[0].fortes[3]': `Abrió la campaña en el estadio de Vila Euclides, en São Bernardo do Campo, el mismo escenario de las asambleas de metalúrgicos de fines de los años setenta, según Valor Econômico, y prometió un Ministerio de Seguridad, según G1.`,
+  'candidates[0].fortes[4]': `Volumen acumulado de USD 8,40M en su contrato, dentro de un book presidencial que suma USD 124,32M.`,
+  'candidates[0].fracos[0]': `El 38% de la Quaest del 14 de ago sigue siendo el PISO de las nueve nacionales desde el 5 de ago, cuyo rango va de 38% a 44%, y ninguna encuesta nueva salió desde entonces.`,
+  'candidates[0].fracos[1]': `Contra la propia Quaest del 5 de ago cedió 1 punto en la primera vuelta y 1 punto en el balotaje, y ese movimiento sigue vigente porque no hubo nacional posterior.`,
+  'candidates[0].fracos[2]': `La aprobación del gobierno en la Quaest del 14 de ago está en 46% contra 48% de desaprobación, saldo negativo dentro del margen de 2pp.`,
+  'candidates[0].fracos[3]': `⛔ Sin superlativo de alza: el valor IGUALA el máximo, no lo supera. El piso de la serie sigue en 39,50%, del 25 de may.`,
+  'candidates[0].fracos[4]': `Su acto de campaña no tuvo estimación de público difundida, según Estadão, que publicó medición solo para el acto de su rival.`,
+  'candidates[0].analise':
+    `El día es el primero de la campaña oficial, y su precio cerró en 66,50%, el valor más alto que la serie llegó a registrar, empatado con el 1 de ago. ⚠️ El orden de los hechos importa y el panel lo declara: el punto de 66,50% se registró a las 05:01 BRT, antes de cualquier acto de campaña del día. Es decir, el movimiento ANTECEDE a los actos y no es reacción a ellos. Lo que se puede decir es que el precio subió al entrar el primer día de campaña, no que subió por lo que ocurrió en él. En las encuestas nada cambió, porque no salió ninguna nacional nueva: la Quaest del 14 de ago sigue vigente con 38% y 43%, y es la misma que lo mostró cediendo 1 punto en las dos vueltas contra su propia casa. ⭐ El cruce de firmeza difundido el 15 de ago agrega una dimensión que el panel no tenía: 77% de sus electores llaman definitiva a la decisión. Eso no es intención de voto, es la dureza de la intención, y son cosas distintas.`,
+
+  // ---------------- FLÁVIO ----------------
+  'candidates[1].header':
+    `PRECIO CON LECTURA NUEVA EL 16 DE AGO: 29,45% (vol USD 8,34M acumulado), ${CAR}. El precio pasó de 28,15% el 15 de ago a 29,45% ahora, un alza de 1,30pp y tercer día seguido de subas. ⛔ No es récord: entre los 173 puntos desde el 19 de may, 4 fueron mayores, y el máximo sigue en 33,20%, del 2 de jun. ENCUESTAS: ninguna nacional nueva, y la Quaest del 14 de ago sigue con 31% en la primera vuelta y 40% en el balotaje.`,
+  'candidates[1].fortes[0]': `Tercer día seguido de suba en el precio, con 1,30pp el 16 de ago después de 0,30pp el 15 de ago y 0,20pp el 14 de ago.`,
+  'candidates[1].fortes[1]': `En el cruce de firmeza de la Quaest difundido el 15 de ago, el voto por él aparece entre los dos más consolidados del cuadro, junto al del líder, según G1.`,
+  'candidates[1].fortes[2]': `Sigue con 87,00% en el contrato de segundo lugar de la primera vuelta (vol USD 286 mil), el valor más alto de todo ese book.`,
+  'candidates[1].fortes[3]': `Abrió la campaña en Copacabana, y el acto fue estimado en 8.900 personas por el monitor de USP/Cebrap, según Estadão. Es la única estimación de público publicada en el día.`,
+  'candidates[1].fortes[4]': `La Quaest del 14 de ago sigue siendo la primera nacional que lo muestra acortando LAS DOS vueltas contra su propia casa, ganando 1 punto en cada una.`,
+  'candidates[1].fracos[0]': `Aun con la tercera suba seguida, quedó MÁS LEJOS del líder en el precio: la distancia se amplió de 36,35pp a 37,05pp, porque el líder subió más.`,
+  'candidates[1].fracos[1]': `Su RECHAZO en la Quaest del 14 de ago es de 54%, el más alto del cuadro y por encima del 52% del líder.`,
+  'candidates[1].fracos[2]': `⛔ Sin superlativo: el 29,45% no es el máximo de la serie. Cuatro de los 173 puntos fueron mayores, y el máximo es 33,20%, del 2 de jun.`,
+  'candidates[1].fracos[3]': `El gobernador de São Paulo abrió su campaña a la reelección el mismo día SIN su presencia, según O Globo, y las dos agendas corrieron por separado.`,
+  'candidates[1].fracos[4]': `Su acto fue descrito como poco concurrido por Estadão y como menos numeroso que los de su padre por JOTA. ⚠️ El panel registra que solo su acto tuvo medición difundida, así que no existe comparación medida entre los dos actos del día.`,
+  'candidates[1].analise':
+    `Sube por tercer día seguido y aun así pierde distancia, que es el mismo patrón del 15 de ago: subir 1,30pp no alcanza cuando el otro sube 2,00pp. ⚠️ Como en el caso del líder, el movimiento se registró antes de los actos, así que el panel no lo atribuye al acto. El dato más duro del día sobre él es de PÚBLICO, y viene con una asimetría que hay que decir: el acto de Copacabana recibió una estimación de 8.900 personas del monitor de USP/Cebrap, según Estadão, y el acto de su rival no tuvo ninguna medición difundida. ⛔ Con un número de un lado y ninguno del otro, comparar los dos actos no es posible, y un adjetivo no sustituye una medición. El panel publica la estimación que existe, dice de quién es, y registra la ausencia de la otra.`,
+
+  // ---------------- RENAN ----------------
+  'candidates[2].header':
+    `PRECIO CON LECTURA NUEVA EL 16 DE AGO: 4,70% (vol USD 9,77M acumulado), ${CAR}. 🔴 El precio pasó de 7,15% el 14 de ago a 4,70% ahora y ROMPIÓ HACIA ABAJO EL 5%, en el tercer cierre seguido en baja desde el 8,00% del cierre del 11 de ago. ENCUESTAS: la Quaest del 14 de ago lo mantiene en 4% en la primera vuelta, el mismo valor del 5 de ago.`,
+  'candidates[2].fortes[0]': `Sigue con la mayor probabilidad del contrato de tercer lugar de la primera vuelta, 53,00% (vol USD 181 mil), por delante del 37,50% del segundo de ese book.`,
+  'candidates[2].fortes[1]': `Mantiene el mayor volumen acumulado del book presidencial entre los nombres por encima de 1%, con USD 9,77M.`,
+  'candidates[2].fortes[2]': `En el contrato de segundo lugar tiene 5,40% sobre un volumen de USD 1,12M, el mayor volumen individual de ese book.`,
+  'candidates[2].fortes[3]': `Abrió la campaña en la Facultad de Derecho de la Universidad de São Paulo, en el centro de la ciudad, y dijo que va a enfrentar a los enemigos de la nación, según O Globo y G1.`,
+  'candidates[2].fortes[4]': `Las encuestas no lo derribaron: el 4% de la Quaest del 14 de ago es el mismo del 5 de ago, y siguen el 5% de Gerp y el 4% de BTG/Nexus.`,
+  'candidates[2].fracos[0]': `🔴 Caída de 2,45pp contra la última lectura publicada y tercer cierre seguido en baja, pasando de 8,00% en el cierre del 11 de ago a 4,70%.`,
+  'candidates[2].fracos[1]': `Rompió hacia abajo la marca de 5%, que no había perdido en ningún momento de la ventana reciente.`,
+  'candidates[2].fracos[2]': `La caída ANTECEDE a su acto de campaña: el punto de 5,20% se registró a las 05:01 BRT, antes del evento en la universidad.`,
+  'candidates[2].fracos[3]': `La distancia entre encuestas y precio, que era el argumento a su favor, se achicó por el lado equivocado: el precio cayó hacia el 4% de las encuestas en vez de que las encuestas subieran.`,
+  'candidates[2].fracos[4]': `Llegó al primer acto con chaleco antibalas, según G1, y el panel registra el hecho sin convertirlo en lectura de la disputa.`,
+  'candidates[2].analise':
+    `🔴 Su caída es el segundo hallazgo del día y vale por ser de SERIE, no de instante: son tres cierres seguidos en baja, de 8,00% en el cierre del 11 de ago a 4,70% ahora, y la ruptura del 5% ocurrió en la mañana del primer día de campaña, antes de su propio acto. ⭐ Y hay un cruce interno que el panel separa a propósito: en el contrato de VICTORIA cayó a 4,70%, pero en el contrato de TERCER LUGAR está en 53,00%, todavía el valor más alto de ese book, pero TAMBIÉN cayendo: eran 65,00% el 9 de ago, es decir, 12,00pp en siete días. Sigue por delante del pelotón y pierde terreno en las dos preguntas a la vez. ⛔ El panel no suma las dos cosas ni trata una como contradicción de la otra.`,
+
+  // ---------------- PELOTÓN ----------------
+  'candidates[3].header':
+    `PRECIO CON LECTURA NUEVA EL 16 DE AGO para todo el pelotón, ${CAR}. Caiado en 0,60%, Zema en 0,15% y Haddad en 0,05%, los tres por debajo del corte de 0,5% que el panel usa para separar precio de ruido, con Caiado justo en el borde. ENCUESTAS: ninguna nacional nueva, y la Quaest del 14 de ago sigue dando 4% a Caiado y 2% a Zema.`,
+  'candidates[3].subtitle':
+    `16 de ago, primer día de campaña: los tres abrieron agenda, y en el precio los tres cayeron. El cruce que interesa es de CONTRATO, porque Caiado baja en la victoria y sube en la posición.`,
+  'candidates[3].caiado.label':
+    `CAIADO (PSD), Poly presidencial 0,60% (vol USD 5,92M acumulado, ${CAR}), caída de 0,45pp | tercer lugar de la primera vuelta en 37,50% | encuestas vigentes: Quaest 4%, Gerp 4%, Meio/Ideia 5,7%, BTG/Nexus 5% | RECHAZO de 35% en la Quaest del 14 de ago`,
+  'candidates[3].caiado.fortes':
+    `⭐ Su contrato de TERCER LUGAR está en 37,50%, contra 31,00% en el cierre del 12 de ago, un alza de 6,50pp con cuatro cierres seguidos en alza. Es decir, el mercado lo acercó a la POSICIÓN mientras lo alejaba de la VICTORIA. En las encuestas sigue con 4% en la Quaest del 14 de ago y con el rechazo más bajo del cuadro, 35%. Abrió la campaña con una misa en la catedral de Goiânia y una caravana por Goiás y el entorno del Distrito Federal, según Folha de S.Paulo y G1, y dijo que Estados Unidos no manda en Brasil, según Times Brasil.`,
+  'candidates[3].caiado.fracos':
+    `En el precio de victoria cayó 0,45pp y pasó a 0,60%, rozando el corte de 0,5%. ⚠️ El rechazo de 35% viene con alto desconocimiento declarado por la propia casa, y rechazo bajo con desconocimiento alto no es aceptación: significa que la mayor parte del electorado todavía no formó opinión, y una opinión no formada puede ir para los dos lados. Su contraste sigue siendo el mayor del panel, con 4% a 5,7% de intención declarada contra menos de 1% de precio de victoria.`,
+  'candidates[3].haddad.label':
+    `HADDAD (PT), Poly presidencial 0,05% (vol USD 7,09M acumulado, ${CAR}), caída de 0,10pp y por debajo del corte de 0,5%`,
+  'candidates[3].haddad.fortes':
+    `Su volumen acumulado sigue siendo mayor que el de varios nombres con precio por encima del suyo, lo que mantiene el contrato con respaldo de negociación pese al precio bajo. Habló en el acto de apertura de campaña del presidente, en el ABC, según O Globo.`,
+  'candidates[3].haddad.fracos':
+    `⭐ La salvedad que el panel repetía como inferencia se volvió HECHO FECHADO el 16 de ago: abrió formalmente campaña al GOBIERNO DE SÃO PAULO, según O Globo y Times Brasil. Es decir, no es candidato a la Presidencia, y cualquier escenario presidencial que lo incluya es hipótesis de encuesta, no candidatura en curso. Ninguna nacional de la ventana lo prueba. El precio cayó a 0,05%, y una variación en esa franja no tiene valor informativo.`,
+  'candidates[3].zema.label':
+    `ZEMA (Novo), Poly presidencial 0,15% (vol USD 5,49M acumulado, ${CAR}), caída de 0,20pp y por debajo del corte de 0,5% | tercer lugar de la primera vuelta en 5,00%`,
+  'candidates[3].zema.fortes':
+    `La Quaest del 14 de ago lo mantiene en 2% en la primera vuelta, el mismo valor del 5 de ago, y siguen el 3% de BTG/Nexus y el 2,6% de Meio/Ideia. Fue el primero del pelotón en presentar registro ante la justicia electoral, el 6 de ago. Abrió la campaña con una misa en Montes Claros, en el norte de Minas Gerais, con promesa de una cárcel de máxima seguridad y críticas a ministros del Supremo, según Folha de S.Paulo y Valor Econômico.`,
+  'candidates[3].zema.fracos':
+    `🔴 El cruce de firmeza de la Quaest difundido el 15 de ago señala que tiene el ELECTORADO MENOS CONVENCIDO del cuadro, según G1, lo que habla de la solidez del apoyo y no de su tamaño. En el precio cayó 0,20pp y pasó a 0,15%, por debajo del corte de 0,5%. En el contrato de tercer lugar tiene 5,00%, muy por detrás del 53,00% del primero del pelotón.`,
+  'candidates[3].fortes[0]': `Los tres abrieron agenda de campaña el 16 de ago, con actos fechados y cubiertos por Folha de S.Paulo, G1, Valor Econômico y Times Brasil.`,
+  'candidates[3].fortes[1]': `⭐ Caiado subió en el contrato de tercer lugar, de 31,00% en el cierre del 12 de ago a 37,50%, un alza de 6,50pp, mientras caía en el de victoria.`,
+  'candidates[3].fortes[2]': `Las encuestas no los movieron, porque no hubo nacional nueva: Caiado sigue en 4% y Zema en 2% en la Quaest del 14 de ago.`,
+  'candidates[3].fortes[3]': `Caiado mantiene el rechazo más bajo del cuadro, 35%, contra el 54% y el 52% de los dos primeros.`,
+  'candidates[3].fortes[4]': `Zema fue el primero del pelotón en registrar candidatura, el 6 de ago, y no dependió del plazo final.`,
+  'candidates[3].fracos[0]': `Los tres cayeron en el precio de victoria el mismo día: Caiado 0,45pp, Zema 0,20pp y Haddad 0,10pp.`,
+  'candidates[3].fracos[1]': `Los tres están por debajo del corte de 0,5% que el panel usa para separar precio de ruido, con Caiado en el borde en 0,60%.`,
+  'candidates[3].fracos[2]': `El cruce de firmeza de la Quaest señala a Zema con el electorado menos convencido del cuadro, según G1.`,
+  'candidates[3].fracos[3]': `⚠️ Haddad abrió campaña al gobierno de São Paulo el 16 de ago, lo que confirma por acto público que no disputa la Presidencia.`,
+  'candidates[3].fracos[4]': `La distancia entre encuestas y precio en el caso de Caiado aumentó por el lado del precio, y no por el de las encuestas.`,
+  'candidates[3].analise':
+    `El primer día de campaña derribó a los tres en el precio de victoria, y aun así el hallazgo del pelotón no es la caída, es el CONTRATO. ⭐ Caiado cayó 0,45pp en la victoria y subió 6,50pp en la posición de tercer lugar contra el cierre del 12 de ago. El mercado está diciendo dos cosas a la vez y no se contradicen: quedó más probable de terminar tercero y menos probable de ganar. ⛔ El panel no suma esos dos números ni elige uno de ellos. ⚠️ El otro registro del día es de estado de la disputa y no de precio: Haddad abrió formalmente campaña al gobierno de São Paulo, lo que convierte en acto público fechado la salvedad que el panel venía haciendo por inferencia.`,
+
+  // ---------------- CUADRO COMPARATIVO ----------------
+  'quadroComparativo[0].p':
+    `SIN NACIONAL NUEVA. Sigue la Quaest del 14 de ago (n=2.004, campo del 10 al 13 de ago, BR-06773/2026) con 38% en la primera vuelta y 43% en el balotaje, y ese 38% es el piso de las nueve nacionales desde el 5 de ago. Rechazo en 52%, por debajo del 54% de su rival. ⭐ Cruce difundido el 15 de ago: 77% de sus electores llaman definitiva a la decisión y 22% todavía pueden cambiar, según G1.`,
+  'quadroComparativo[0].m': `66,50% (vol USD 8,40M acumulado), ${CAR}`,
+  'quadroComparativo[0].t':
+    `ALZA DE 2,00pp, de 64,50% a 66,50%. ⭐ El valor IGUALA EL MÁXIMO DE LA SERIE: de los 174 puntos registrados desde el 19 de may, NINGUNO está por encima, y el único otro día en ese nivel fue el 1 de ago. La distancia hacia el segundo se AMPLIÓ, de 36,35pp a 37,05pp. ⚠️ El punto se registró a las 05:01 BRT, antes de los actos de campaña del día.`,
+  'quadroComparativo[0].s':
+    `49 días de la elección y primer día de campaña oficial. Abrió en el estadio de Vila Euclides, en São Bernardo, y prometió un Ministerio de Seguridad, según Valor Econômico y G1. 📅 Nexus publica el 17 de ago y Real Time Big Data el 19 de ago.`,
+  'quadroComparativo[1].p':
+    `SIN NACIONAL NUEVA. Sigue la Quaest del 14 de ago con 31% en la primera vuelta y 40% en el balotaje, habiendo ganado 1 punto en cada una contra su propia casa del 5 de ago. RECHAZO de 54%, el más alto del cuadro. En el cruce de firmeza difundido el 15 de ago el voto por él aparece entre los dos más consolidados, según G1.`,
+  'quadroComparativo[1].m': `29,45% (vol USD 8,34M acumulado), ${CAR}`,
+  'quadroComparativo[1].t':
+    `TERCER DÍA SEGUIDO DE ALZA, con 1,30pp el 16 de ago después de 0,30pp y 0,20pp. ⚠️ Aun subiendo, quedó MÁS LEJOS del líder, porque el líder subió 2,00pp. ⛔ No es récord: de los 173 puntos desde el 19 de may, 4 fueron mayores, y el máximo es 33,20%, del 2 de jun.`,
+  'quadroComparativo[1].s':
+    `Abrió la campaña en Copacabana, y el acto fue estimado en 8.900 personas por el monitor de USP/Cebrap, según Estadão. Es la única estimación de público del día, porque el acto de su rival no tuvo medición difundida.`,
+  'quadroComparativo[2].p':
+    `SIN NACIONAL NUEVA. La Quaest del 14 de ago lo mantiene en 4% en la primera vuelta, el mismo valor del 5 de ago. Siguen el 5% de Gerp, el 4% de BTG/Nexus, el 4,7% de Meio/Ideia y el 10% de Palver por internet.`,
+  'quadroComparativo[2].m': `4,70% (vol USD 9,77M acumulado), ${CAR}`,
+  'quadroComparativo[2].t':
+    `🔴 TRES CIERRES SEGUIDOS EN BAJA y ruptura hacia abajo del 5%. Pasó de 8,00% en el cierre del 11 de ago, y de 7,15% en la última lectura publicada el 14 de ago, a 4,70% ahora. ⭐ En el contrato de TERCER LUGAR, sin embargo, está en 53,00%, todavía la mayor probabilidad de ese book, pero TAMBIÉN EN CAÍDA, porque eran 65,00% el 9 de ago, es decir, 12,00pp perdidos en siete días. Sigue por delante del pelotón y perdiendo terreno en las dos preguntas a la vez.`,
+  'quadroComparativo[2].s':
+    `Abrió la campaña en la Facultad de Derecho de la Universidad de São Paulo y dijo que va a enfrentar a los enemigos de la nación, según O Globo y G1. Llegó al acto con chaleco antibalas, según G1.`,
+  'quadroComparativo[3].p':
+    `SIN NACIONAL NUEVA. La Quaest del 14 de ago le da 4% en la primera vuelta y RECHAZO de 35%, el más bajo del cuadro, con alto desconocimiento declarado por la casa.`,
+  'quadroComparativo[3].m': `0,60% (vol USD 5,92M acumulado), ${CAR}`,
+  'quadroComparativo[3].t':
+    `⭐ EL CRUCE DE CONTRATO DEL DÍA: cayó 0,45pp en la VICTORIA, de 1,05% a 0,60%, y subió 6,50pp en la POSICIÓN, con el tercer lugar de la primera vuelta pasando de 31,00% en el cierre del 12 de ago a 37,50%. Son preguntas distintas y el panel no las suma.`,
+  'quadroComparativo[3].s':
+    `Abrió la campaña con una misa en la catedral de Goiânia y una caravana por Goiás y el entorno del Distrito Federal, según Folha de S.Paulo y G1, y dijo que Estados Unidos no manda en Brasil, según Times Brasil. Declaró R$ 52 millones en bienes ante la justicia electoral, según Valor Econômico.`,
+  'quadroComparativo[4].p':
+    `SIN NACIONAL NUEVA. La Quaest del 14 de ago lo mantiene en 2% en la primera vuelta. 🔴 El cruce de firmeza difundido el 15 de ago señala que tiene el ELECTORADO MENOS CONVENCIDO del cuadro, según G1.`,
+  'quadroComparativo[4].m': `0,15% (vol USD 5,49M acumulado), ${CAR}`,
+  'quadroComparativo[4].t':
+    `CAÍDA de 0,20pp, de 0,35% a 0,15%, y el precio sigue por debajo del corte de 0,5% que el panel usa para separar precio de ruido. En el contrato de tercer lugar tiene 5,00%.`,
+  'quadroComparativo[4].s':
+    `Abrió la campaña con una misa en Montes Claros, en el norte de Minas Gerais, con promesa de una cárcel de máxima seguridad y críticas a ministros del Supremo, según Folha de S.Paulo y Valor Econômico. Fue el primero del pelotón en registrar candidatura, el 6 de ago.`,
+  'quadroComparativo[5].m': `3,40% (vol USD 84 mil), ${CAR}`,
+  'quadroComparativo[5].t':
+    `CAÍDA de 0,50pp, de 3,90% a 3,40%. ⚠️ Sigue siendo el contrato más delgado entre los seguidos, con un volumen tres órdenes de magnitud por debajo del presidencial, y cualquier movimiento en él exige esa salvedad antes de cualquier lectura.`,
+  'quadroComparativo[5].s':
+    `⭐ El tribunal se volvió TEMA DE CAMPAÑA en el primer día: Zema criticó a ministros en el acto de apertura, según Folha de S.Paulo y Valor Econômico, Estadão registró que las críticas al Supremo marcaron la largada, y G1 informó que la estrategia del segundo para el Senado se organiza en torno al enfrentamiento con el tribunal.`,
+
+  cruzamento:
+    `EL PRIMER DÍA DE CAMPAÑA TUVO UN MOVIMIENTO GRANDE EN EL PRECIO Y NINGUNO EN LAS ENCUESTAS, Y EL ORDEN DE LOS HECHOS ES LO QUE EL PANEL NECESITA DECLARAR PRIMERO. El líder subió 2,00pp y cerró en 66,50%, valor que IGUALA el máximo de una serie de 174 puntos desde el 19 de may, sin ningún punto por encima. El segundo subió 1,30pp, en el tercer día seguido de alza, y aun así la distancia entre los dos se AMPLIÓ, de 36,35pp a 37,05pp. ⚠️ CAUSACIÓN: los puntos que produjeron esa alza se registraron a las 05:01 BRT, ANTES de cualquier acto de campaña del día. El panel registra que el precio se movió al entrar el primer día de campaña, y NO que reaccionó a los actos. ⛔ Sin superlativo indebido: la distancia de 37,05pp es ordinaria en la serie, con 30 de los 89 días registrando un valor igual o mayor y un pico de 41,80pp el 1 de ago; y el 29,45% del segundo queda por debajo de 4 de los 173 puntos, con un máximo de 33,20% del 2 de jun. ⭐ EL HALLAZGO DEL DÍA ES DE CONTRATO, NO DE NIVEL, y aparece en dos nombres del pelotón a la vez. El primero del pelotón cayó a 4,70% en el contrato de VICTORIA, tercer cierre seguido en baja desde el 8,00% del cierre del 11 de ago, y en el contrato de TERCER LUGAR está en 53,00%, todavía la mayor probabilidad de ese book pero cayendo desde el 65,00% del 9 de ago. El otro cayó 0,45pp en la victoria y SUBIÓ 6,50pp en la posición, con el tercer lugar pasando de 31,00% en el cierre del 12 de ago a 37,50%. ⛔ Terminar tercero y ganar la elección son preguntas distintas, y el panel no las suma ni trata una como desmentido de la otra. ⭐ EN LAS ENCUESTAS LA NOVEDAD NO ES DE NIVEL, ES DE FIRMEZA. Ninguna nacional nueva salió, y la Quaest del 14 de ago sigue vigente con 38% x 31% y 43% x 40%. Lo que apareció el fin de semana fue un cruce de la misma encuesta, difundido el 15 de ago por G1: entre los electores del líder, 77% llaman definitiva a la decisión y 22% dicen que todavía pueden cambiar, y el electorado menos convencido del cuadro es el del candidato del Novo. Eso mide la dureza de la intención, no su tamaño, y es una dimensión que el panel no tenía. 📌 El panel registra que los dos instrumentos separaron a los mismos dos grupos en esta ventana, con los dos primeros subiendo en el precio y el pelotón cayendo, y el cruce de las encuestas señalando a los dos primeros como los de voto más consolidado. ⛔ Registrar la coincidencia no es afirmar que uno explica al otro, y el panel no hace ese puente. EN EL REGISTRO el plazo cerró con 20.438 candidaturas en el país y 13 a la Presidencia, según Poder360, y tres nombres que aparecen en el book presidencial abrieron campaña para OTROS cargos el 16 de ago: el gobernador de São Paulo a la reelección, el exalcalde al gobierno del mismo estado y la exprimera dama al Senado por el Distrito Federal, según O Globo, Times Brasil y Folha de S.Paulo. ⚠️ Eso convierte en acto público fechado la salvedad que el panel venía haciendo por inferencia sobre ellos.`,
+})

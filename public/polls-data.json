@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-15",
+  "lastUpdate": "2026-08-16",
   "institutes": [
     {
       "name": "Datafolha",
@@ -138,7 +138,7 @@
       "reliability": 5,
       "method": "Presencial, 120 municípios",
       "fieldDates": "2026-08-10 a 2026-08-13",
-      "note": "Genial/Quaest nacional publicada 14/Ago às 21:00 (G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, Correio Braziliense). 1T Lula 38% x Flávio Bolsonaro 31%, uma distância de 7pp. Returno Lula 43% x Flávio 40%, 3pp, com margem de 2pp. ⭐ A COMPARAÇÃO QUE VALE É COM A PRÓPRIA CASA, E ELA É SIMÉTRICA: contra a Quaest de 05/Ago, o 1º turno saiu de 39% x 30% para 38% x 31% e o returno saiu de 44% x 39% para 43% x 40%. Nos dois turnos Lula cedeu 1 ponto e Flávio ganhou 1 ponto, e cada distância encolheu 2pp. Mesma casa, mesmo método presencial e mesma amostra. REJEIÇÃO separada pela primeira vez na janela: Flávio 54%, Lula 52% e Caiado 35%, este último com desconhecimento alto declarado pela casa. APROVAÇÃO DO GOVERNO em 46% contra 48% de desaprovação, empate técnico pela margem. ⚠️ O TSE registra o campo como 10 a 13/Ago e a casa publicou 10 a 12/Ago; o painel exibe o período registrado.",
+      "note": "Genial/Quaest nacional publicada 14/Ago às 21:00 (G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, Correio Braziliense). 1T Lula 38% x Flávio Bolsonaro 31%, uma distância de 7pp, com Renan Santos e Ronaldo Caiado em 4% e Augusto Cury e Romeu Zema em 2%. Returno Lula 43% x Flávio 40%, 3pp, com margem de 2pp. ⭐ A COMPARAÇÃO QUE VALE É COM A PRÓPRIA CASA, E ELA É SIMÉTRICA: contra a Quaest de 05/Ago, o 1º turno saiu de 39% x 30% para 38% x 31% e o returno saiu de 44% x 39% para 43% x 40%. Nos dois turnos Lula cedeu 1 ponto e Flávio ganhou 1 ponto, e cada distância encolheu 2pp. Mesma casa, mesmo método presencial e mesma amostra. REJEIÇÃO separada pela primeira vez na janela: Flávio 54%, Lula 52% e Caiado 35%, este último com desconhecimento alto declarado pela casa. AVALIAÇÃO DO GOVERNO: 46% aprovam e 48% desaprovam; na régua de ótimo/bom, regular e ruim/péssimo, são 36% positivos, 25% regular e 37% negativos, segundo InfoMoney e UOL. ⭐ RECORTES DIVULGADOS DEPOIS, EM 15 E 16/Ago: a firmeza do voto, com 77% dos eleitores de Lula chamando a decisão de definitiva e 22% dizendo que ainda podem mudar, e o eleitorado de Zema aparecendo como o menos convicto do quadro, segundo o G1; e o comportamento entre independentes, faixa em que Flávio marca 35% contra 29% de Lula no returno, segundo O Globo. ⚠️ O TSE registra o campo como 10 a 13/Ago e a casa publicou 10 a 12/Ago; o painel exibe o período registrado.",
       "scenarios": [
         {
           "name": "Cenário Principal (1º turno, estimulado)",
@@ -160,6 +160,10 @@
               "percent": 4
             },
             {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2
+            },
+            {
               "candidate": "Romeu Zema (Novo)",
               "percent": 2
             }
@@ -175,7 +179,7 @@
           "percent2": 40
         }
       ],
-      "source": "Genial/Quaest via G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney e Correio Braziliense, 14/Ago"
+      "source": "Genial/Quaest via G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL e Correio Braziliense, 14 a 16/Ago"
     },
     {
       "institute": "PoderData/Aya",
@@ -1202,62 +1206,10 @@
         }
       ],
       "source": "Real Time Big Data via Exame, CNN Brasil, Brasil 247, CartaCapital, Gazeta do Povo, Poder360, InfoMoney, VEJA, GZH 21/Jul. Registro TSE BR-09247/2026."
-    },
-    {
-      "institute": "PoderData/Aya",
-      "date": "2026-07-16",
-      "sample": 2400,
-      "margin": 2,
-      "register": "BR-00059/2026",
-      "reliability": 3,
-      "method": "Telefônico (RDD)",
-      "fieldDates": "2026-07-12 a 2026-07-15",
-      "note": "PoderData/Aya nacional publicada 16/Jul (Poder360, CNN Brasil, Gazeta do Povo, CartaCapital, ND Mais). 1T Lula 40% x Flávio 34% (gap +6pp), com Renan Santos 6%, Caiado 4%, Zema 4%, Augusto Cury 3%. 2T Lula 45% x Flávio 43% (gap +2pp), empate técnico pela margem de 2pp. Campo 12-15/Jul, n=2.400, telefônico (celular e fixo), 685 municípios nos 27 estados, margem 2pp, 95% de confiança, registro BR-00059/2026. CONTRADIZ A QUAEST DE ONTEM: 24 horas depois da Genial/Quaest dar 1T +12pp e 2T +8pp, a PoderData devolve o returno ao empate técnico. Lula é IDÊNTICO nas duas (40% no 1T, 45% no 2T). A discordância inteira está no Flávio: 28% contra 34% no 1T, 37% contra 43% no 2T, seis pontos de distância entre as duas melhores leituras da semana. EFEITO DE CASA, não viragem: na série da própria PoderData, Flávio sai de 36% (25/Jun) para 34%, ou seja, também CAI, só que de um patamar mais alto. As duas casas concordam na direção (Flávio recuando) e discordam no nível. Comparar Quaest de ontem com PoderData de hoje e chamar a diferença de movimento é trocar de régua no meio da medição. RENAN SANTOS a 6%, a maior marca dele entre as nacionais do recorte de 30 dias (antes o teto era 4%), e alta dentro da própria casa (4% em 25/Jun). APROVAÇÃO diverge forte: 42% aprova x 51% desaprova, contra 48% x 47% da Quaest de ontem, nove pontos de diferença na desaprovação. REJEIÇÃO: Lula e Flávio empatados em 48%, contra os 57% de Flávio na Quaest.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 4
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 3
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        }
-      ],
-      "source": "PoderData/Aya via Poder360, CNN Brasil, Gazeta do Povo, CartaCapital, ND Mais 16/Jul"
     }
   ],
   "approvalData": {
-    "note": "NACIONAL NOVA EM 14/Ago, publicada às 21:00. Genial/Quaest: 46% aprovam e 48% desaprovam o governo Lula, saldo de 2pp negativos e empate técnico pela margem de 2pp, contra 43% x 50% da PoderData/Aya de 13/Ago, que era o par em vigor. ⚠️ SÃO DUAS CASAS EM DOIS DIAS COM 5 PONTOS DE DIFERENÇA NO SALDO, e o painel não escolhe entre elas: a distância entre casas é o dado. REJEIÇÃO na Quaest: Flávio Bolsonaro 54%, Lula 52% e Ronaldo Caiado 35%, este último com desconhecimento alto declarado pela casa. É a primeira nacional da janela a SEPARAR os dois primeiros nesse indicador, depois de a PoderData os ter empatado em 48%. Seguem no quadro a Gerp de 11/Ago com 53% de desaprovação, a BTG/Nexus de 10/Ago com 46% x 49%, a Palver do mesmo dia com 45% x 55% e a Genial/Quaest de 05/Ago com 48% x 47%. O QUE O CONJUNTO MOSTRA: em nove leituras de dez dias a desaprovação vai de 47% a 55%, uma distância de 8pp entre casas, e o saldo vai de 1pp positivo a 10pp negativo. Nenhuma casa mudou de lado. ⚠️ PROCEDÊNCIA DECLARADA: aprovação e desaprovação são da Genial/Quaest de 14/Ago (campo 10 a 13/Ago, n=2.004, presencial, margem 2pp, registro BR-06773/2026), por ser a leitura nacional mais recente; os 6% restantes são o resíduo aritmético entre os dois valores publicados. A avaliação da gestão, com 36% positiva, 26% regular e 36% negativa, segue sendo a da Genial/Quaest de 05/Ago, porque a rodada nova não publicou essa abertura completa nas matérias capturadas. O painel prefere declarar a mistura a escondê-la.",
+    "note": "SEM NACIONAL NOVA EM 16/Ago. Segue em vigor a Genial/Quaest de 14/Ago, publicada às 21:00: 46% aprovam e 48% desaprovam o governo Lula, saldo de 2pp negativos e empate técnico pela margem de 2pp, contra 43% x 50% da PoderData/Aya de 13/Ago. ⚠️ SÃO DUAS CASAS EM DOIS DIAS COM 5 PONTOS DE DIFERENÇA NO SALDO, e o painel não escolhe entre elas: a distância entre casas é o dado. Na régua de ótimo/bom, regular e ruim/péssimo, a Quaest traz 36% positivos, 25% regular e 37% negativos, conforme InfoMoney e UOL. REJEIÇÃO na mesma pesquisa: Flávio Bolsonaro 54%, Lula 52% e Ronaldo Caiado 35%, este último com desconhecimento alto declarado pela casa. ⭐ Um recorte divulgado em 15/Ago acrescenta a FIRMEZA do voto, que é dimensão diferente do nível: entre os eleitores de Lula, 77% dizem que a decisão é definitiva e 22% dizem que ainda podem mudar, e o eleitorado menos convicto do quadro é o de Romeu Zema, segundo o G1. 📅 Nexus publica em 17/Ago e Real Time Big Data em 19/Ago, as duas com campo em andamento.",
     "source": "Aprovação e desaprovação: Genial/Quaest 14/Ago/2026 (campo 10 a 13/Ago, n=2.004, presencial em 120 municípios, margem 2,0pp, registro TSE BR-06773/2026), divulgada por G1, CNN Brasil, Estadão, Correio Braziliense e Poder360. Rejeição: mesma rodada, via G1, Poder360, InfoMoney e O Globo. Avaliação da gestão (ótimo/bom, regular, ruim/péssimo): Genial/Quaest 05/Ago/2026, porque a rodada de 14/Ago não trouxe essa abertura nas matérias capturadas.",
     "date": "2026-08-11",
     "results": {
@@ -1265,8 +1217,8 @@
       "desaprovacao": 48,
       "naoSabe": 6,
       "otimoBom": 36,
-      "ruimPessimo": 36,
-      "regular": 26
+      "ruimPessimo": 37,
+      "regular": 25
     },
     "historicalComparison": [
       {
@@ -1295,91 +1247,91 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "2026-08-11"
+    "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "ATUALIZAÇÃO DE 15/Ago. O CRUZAMENTO DO DIA APONTA PARA LADOS OPOSTOS. Na urna, a Quaest publicada em 14/Ago às 21:00 mostra as duas distâncias ENCOLHENDO contra a própria casa: o 1º turno saiu de 9pp para 7pp e o returno de 5pp para 3pp, com movimento simétrico de 1 ponto para cada lado nos dois casos. No preço aconteceu o contrário: a distância ABRIU, de 35,65pp para 36,35pp, porque o líder subiu 1,00pp e o segundo colocado subiu 0,30pp. ⭐ Os dois instrumentos se moveram no mesmo par de dias e em sentidos opostos, e essa divergência é o dado. O líder rompeu 63,50%, onde estava desde 09/Ago, e voltou ao nível de 08/Ago. ⛔ Sem superlativo: entre os 174 pontos gravados desde 18/Mai, 17 tiveram valor igual ou maior que 64,50%, e entre os 88 dias com gap gravado, 32 tiveram distância igual ou maior que 36,35pp, com pico de 41,80pp em 01/Ago. Para Renan Santos, para o pelotão e para os contratos de 2º e 3º lugar, Senado e impeachment no STF não há leitura confirmada nova em 15/Ago. A Quaest separou os dois primeiros na REJEIÇÃO pela primeira vez na janela, com 54% e 52%, e o prazo de registro de candidaturas termina hoje, 15/Ago.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem. Em 15/Ago há leitura confirmada nova para o líder e para o segundo colocado, às 13:33 BRT (16:33 UTC). Para Renan Santos, para o pelotão e para os contratos de 2º e 3º lugar, Senado e impeachment no STF não há leitura nova em 15/Ago, e os valores exibidos são os da última leitura confirmada, às 14:46 BRT de 14/Ago. ✅ PESQUISA NACIONAL NOVA EM 14/Ago: Genial/Quaest, n=2.004, registro BR-06773/2026, campo 10 a 13/Ago, publicada às 21:00. Seguem em vigor a PoderData/Aya BR-06868/2026 de 13/Ago, a CNT/MDA BR-06935/2026, a Gerp BR-08045/2026 e a Futura Inteligência BR-08109/2026, todas de 11/Ago, mais a Palver BR-06596/2026 e a BTG/Nexus BR-08428/2026, de 10/Ago, e a Meio/Ideia BR-04579/2026, de 05/Ago. Próximas nacionais na fila: Nexus (n=2.000, BR-03317/2026) em 17/Ago e Real Time Big Data (n=1.600, BR-05423/2026) em 19/Ago.",
+    "note": "ATUALIZAÇÃO DE 16/Ago, PRIMEIRO DIA DA CAMPANHA OFICIAL. O MOVIMENTO INTEIRO DO DIA ESTÁ NO PREÇO, porque nenhuma pesquisa nacional nova saiu. O líder subiu 2,00pp e fechou em 66,50%, valor que IGUALA o topo de uma série de 174 pontos desde 19/Mai, sem nenhum ponto acima dele. O segundo colocado subiu 1,30pp e fechou em 29,45%, terceiro dia seguido de alta, e ainda assim a distância entre os dois ABRIU, de 36,35pp para 37,05pp. ⚠️ CAUSAÇÃO, e o painel declara isto antes de qualquer leitura: os pontos que produziram a alta foram gravados às 05:01 BRT, ANTES dos atos de campanha do dia. O preço se moveu na virada para o primeiro dia de campanha, e NÃO em reação aos comícios. ⛔ Sem superlativo indevido: a distância de 37,05pp é ordinária na série, com 30 dos 89 dias registrando valor igual ou maior e pico de 41,80pp em 01/Ago. ⭐ O ACHADO É DE CONTRATO, NÃO DE NÍVEL. O primeiro do pelotão caiu para 4,70% na VITÓRIA, terceiro fechamento seguido em baixa desde os 8,00% do fechamento de 11/Ago, e no contrato de 3º LUGAR está em 53,00%, ainda a maior probabilidade daquele book, mas caindo desde os 65,00% de 09/Ago. Ronaldo Caiado caiu 0,45pp na vitória e SUBIU 6,50pp na posição, com o 3º lugar indo de 31,00% no fechamento de 12/Ago para 37,50%. ⛔ Ficar em terceiro e ganhar a eleição são perguntas diferentes, e o painel não as soma. ⭐ NA URNA A NOVIDADE É DE FIRMEZA: um recorte da Quaest divulgado em 15/Ago mostra 77% dos eleitores do líder chamando a decisão de definitiva e aponta o eleitorado de Romeu Zema como o menos convicto do quadro, segundo o G1. 📌 O painel registra que os dois instrumentos separaram os mesmos dois grupos nesta janela, e registrar a coincidência não é afirmar que um explica o outro.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem. Em 16/Ago há leitura confirmada nova para TODOS os contratos acompanhados, às 16:56 BRT (19:56 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo e Correio Braziliense.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-44%",
-        "polymarket": "64,50%",
-        "tendenciaPesquisa": "NACIONAL NOVA EM 14/Ago, publicada às 21:00. Genial/Quaest (n=2.004, presencial, campo 10 a 13/Ago, BR-06773/2026): 38% no 1º turno e 43% x 40% no returno. ⭐ CONTRA A PRÓPRIA CASA O MOVIMENTO É SIMÉTRICO: em 05/Ago eram 39% x 30% no 1º turno e 44% x 39% no returno, ou seja, ele cedeu 1 ponto e o adversário ganhou 1 ponto em cada turno, e as duas distâncias encolheram 2pp. Os 38% são o PISO das nove nacionais desde 05/Ago, cuja faixa vai de 38% a 44%. REJEIÇÃO em 52%, ABAIXO dos 54% do adversário, e é a primeira nacional da janela a separar os dois nesse indicador. APROVAÇÃO DO GOVERNO em 46% contra 48%, o melhor saldo dele desde 05/Ago.",
-        "tendenciaPolymarket": "LEITURA CONFIRMADA NOVA EM 15/Ago, leitura confirmada de 15/Ago, 13:33 BRT (16:33 UTC). Em 64,50% (vol USD 8,29M acumulado). O preço saiu de 63,50% em 14/Ago para 64,50% agora, alta de 1,00pp, e ROMPEU um patamar em que estava desde 09/Ago, voltando ao nível de 08/Ago. RESSALVA DE SÉRIE, medida sobre todos os pontos gravados e não sobre o último de cada dia: entre os 174 pontos desde 18/Mai, 17 tiveram valor igual ou maior que 64,50%, com topo de 66,50% em 01/Ago e piso de 39,50% em 26/Mai. ⚠️ A distância para o segundo colocado ABRIU, de 35,65pp para 36,35pp, no mesmo par de dias em que a urna a encurtou.",
-        "odds": 64.5,
+        "polymarket": "66,50%",
+        "tendenciaPesquisa": "SEM NACIONAL NOVA EM 16/Ago. Segue a Genial/Quaest de 14/Ago com 38% no 1º turno e 43% no returno, e os 38% são o PISO das nove nacionais desde 05/Ago, cuja faixa vai de 38% a 44%. Rejeição de 52%, abaixo dos 54% do adversário. ⭐ RECORTE NOVO DIVULGADO EM 15/Ago, e ele mede FIRMEZA e não nível: entre os eleitores dele, 77% dizem que a decisão de votar é definitiva e 22% dizem que ainda podem mudar, segundo o G1. É a primeira vez que o painel registra a dureza da intenção, que é dimensão diferente do tamanho dela.",
+        "tendenciaPolymarket": "⭐ ALTA DE 2,00pp EM 16/Ago, de 64,50% para 66,50% (vol USD 8,40M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC). O valor IGUALA O TOPO DA SÉRIE: entre os 174 pontos gravados desde 19/Mai NENHUM está acima de 66,50%, e o único outro dia nesse nível foi 01/Ago. ⛔ O painel diz iguala, não supera. A distância para o segundo colocado ABRIU, de 36,35pp para 37,05pp. ⚠️ CAUSAÇÃO: o ponto foi gravado às 05:01 BRT, ANTES dos atos de campanha do dia, então o movimento antecede os comícios e não é reação a eles.",
+        "odds": 66.5,
         "percentage": 38,
-        "lastUpdate": "2026-08-15",
-        "value": 64.5
+        "lastUpdate": "2026-08-16",
+        "value": 66.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-38%",
-        "polymarket": "28,15%",
-        "tendenciaPesquisa": "NACIONAL NOVA EM 14/Ago. A Genial/Quaest lhe dá 31% no 1º turno e 40% no returno, a 3pp do líder com margem de 2pp. ⭐ É A PRIMEIRA NACIONAL A MOSTRÁ-LO ENCURTANDO OS DOIS TURNOS contra a própria casa: em 05/Ago eram 30% e 39%, então ele ganhou 1 ponto em cada. REJEIÇÃO de 54%, a MAIOR do quadro e acima dos 52% do líder, e é a primeira vez na janela que uma casa separa os dois nesse indicador. Nas nove nacionais desde 05/Ago ele vai de 28,7% a 38% no 1º turno, e a amplitude entre casas sobre a mesma pergunta segue acima de 8pp.",
-        "tendenciaPolymarket": "LEITURA CONFIRMADA NOVA EM 15/Ago, leitura confirmada de 15/Ago, 13:33 BRT (16:33 UTC). Em 28,15% (vol USD 8,23M acumulado). O preço saiu de 27,85% em 14/Ago para 28,15% agora, alta de 0,30pp e SEGUNDO DIA SEGUIDO de alta. ⚠️ E mesmo subindo ele ficou MAIS LONGE do líder, porque o líder subiu 1,00pp: a distância abriu de 35,65pp para 36,35pp. RESSALVA DE SÉRIE, medida sobre todos os pontos gravados: entre os 172 pontos desde 18/Mai, 23 tiveram valor igual ou maior que 28,15%, com topo de 33,20% em 02/Jun e piso de 22,00% em 03/Jul.",
-        "odds": 28.15,
+        "polymarket": "29,45%",
+        "tendenciaPesquisa": "SEM NACIONAL NOVA EM 16/Ago. Segue a Genial/Quaest de 14/Ago com 31% no 1º turno e 40% no returno, tendo ganhado 1 ponto em cada contra a própria casa de 05/Ago, e é a primeira nacional a mostrá-lo encurtando os dois turnos. REJEIÇÃO de 54%, a maior do quadro. ⭐ Nos recortes divulgados depois: o voto nele aparece entre os dois mais consolidados do quadro, segundo o G1, e entre eleitores independentes ele marca 35% contra 29% do líder no returno, segundo O Globo.",
+        "tendenciaPolymarket": "ALTA DE 1,30pp EM 16/Ago, de 28,15% para 29,45% (vol USD 8,34M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), no terceiro dia seguido de alta. ⚠️ Mesmo subindo ele ficou MAIS LONGE do líder, porque o líder subiu 2,00pp e a distância abriu para 37,05pp. ⛔ Sem superlativo: dos 173 pontos desde 19/Mai, 4 foram maiores, e o topo segue em 33,20%, de 02/Jun. Ele mantém 87,00% no contrato de 2º lugar do 1º turno, o valor mais alto daquele book.",
+        "odds": 29.45,
         "percentage": 31,
-        "lastUpdate": "2026-08-15",
-        "value": 28.15
+        "lastUpdate": "2026-08-16",
+        "value": 29.45
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-10%",
-        "polymarket": "7,15%",
-        "tendenciaPesquisa": "A Genial/Quaest de 14/Ago o mantém em 4% no 1º turno, EXATAMENTE o mesmo valor que a casa lhe deu em 05/Ago, ou seja, nove dias sem avanço contra a própria régua. Seguem os 5% da Gerp, os 4% da BTG/Nexus, os 4,7% da Meio/Ideia e os 10% da Palver pela internet. Na PoderData de 13/Ago ele é o ÚNICO dos quatro testados que o líder vence no returno, enquanto os outros três empatam. O efeito de método continua sendo a leitura sobre ele: o mesmo nome vai de 4% a 10% conforme o ambiente da entrevista, e a ressalva foi declarada pela própria Palver.",
-        "tendenciaPolymarket": "NÃO HÁ LEITURA CONFIRMADA NOVA PARA ELE EM 15/Ago. O valor exibido é o da última leitura confirmada, de 14/Ago, 14:46 BRT, em 7,15% (vol USD 9,59M acumulado). Ele mantém o maior volume acumulado do book presidencial entre os nomes acima de 1%. O preço segue ENTRE os dois métodos da urna, acima dos 4% do telefone e do presencial e abaixo dos 10% da internet.",
-        "odds": 7.15,
+        "polymarket": "4,70%",
+        "tendenciaPesquisa": "SEM NACIONAL NOVA EM 16/Ago. A Genial/Quaest de 14/Ago o mantém em 4% no 1º turno, exatamente o mesmo valor de 05/Ago, ou seja, nove dias sem avanço contra a própria régua. Seguem os 5% da Gerp, os 4% da BTG/Nexus, os 4,7% da Meio/Ideia e os 10% da Palver pela internet. O efeito de método continua sendo a leitura sobre ele: o mesmo nome vai de 4% a 10% conforme o ambiente da entrevista, e a ressalva foi declarada pela própria Palver.",
+        "tendenciaPolymarket": "🔴 QUEDA DE 2,45pp EM 16/Ago, para 4,70% (vol USD 9,77M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), com ROMPIMENTO PARA BAIXO DOS 5% no terceiro fechamento seguido em baixa, desde os 8,00% do fechamento de 11/Ago. ⭐ E o contrato de POSIÇÃO conta outra coisa: no 3º lugar do 1º turno ele está em 53,00%, ainda a maior probabilidade daquele book, mas TAMBÉM EM QUEDA, porque eram 65,00% em 09/Ago, ou seja, 12,00pp perdidos em sete dias. Ele perde terreno nas duas perguntas ao mesmo tempo, e o painel não as soma. Ele mantém o maior volume acumulado do book presidencial entre os nomes acima de 1%.",
+        "odds": 4.7,
         "percentage": 4,
-        "lastUpdate": "2026-08-15",
-        "value": 7.15
+        "lastUpdate": "2026-08-16",
+        "value": 4.7
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5,7%",
-        "polymarket": "1,05%",
-        "tendenciaPesquisa": "A Genial/Quaest de 14/Ago lhe dá 4% no 1º turno, o mesmo valor de 05/Ago, e traz o dado que faltava sobre ele: REJEIÇÃO de 35%, contra 54% e 52% dos dois primeiros, com desconhecimento alto declarado pela própria casa. ⚠️ Rejeição baixa com desconhecimento alto NÃO é aceitação: significa que a maior parte do eleitorado ainda não formou opinião, e opinião não formada pode ir para os dois lados. Ele segue empatando com o líder no returno da PoderData de 13/Ago, o segundo empate em quatro dias.",
-        "tendenciaPolymarket": "NÃO HÁ LEITURA CONFIRMADA NOVA PARA ELE EM 15/Ago. O valor exibido é o da última leitura confirmada, de 14/Ago, 14:46 BRT, em 1,05% (vol USD 5,70M acumulado). ⚠️ O CONTRASTE DELE SEGUE SENDO O MAIOR DO PAINEL: de 4% a 5,7% de intenção declarada no 1º turno contra pouco mais de 1% de preço de vitória, e um empate com o líder no returno de uma nacional. Empatar no returno e vencer a eleição são perguntas diferentes, e o painel não as soma.",
-        "odds": 1.05,
+        "polymarket": "0,60%",
+        "tendenciaPesquisa": "SEM NACIONAL NOVA EM 16/Ago. A Genial/Quaest de 14/Ago lhe dá 4% no 1º turno, o mesmo de 05/Ago, e REJEIÇÃO de 35%, a mais baixa do quadro, contra 54% e 52% dos dois primeiros. ⚠️ Rejeição baixa com desconhecimento alto NÃO é aceitação: significa que a maior parte do eleitorado ainda não formou opinião, e opinião não formada pode ir para os dois lados. Ele segue empatando com o líder no returno da PoderData de 13/Ago.",
+        "tendenciaPolymarket": "⭐ O CRUZAMENTO DE CONTRATO DO DIA. No preço de VITÓRIA ele caiu 0,45pp em 16/Ago, de 1,05% para 0,60% (vol USD 5,92M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), encostando no corte de 0,5% que o painel usa para separar preço de ruído. No contrato de POSIÇÃO ele SUBIU: o 3º lugar do 1º turno foi de 31,00%, no fechamento de 12/Ago, para 37,50%, alta de 6,50pp com quatro fechamentos seguidos em alta. ⛔ Ficar em terceiro e ganhar a eleição são perguntas diferentes, e o painel não as soma nem trata uma como desmentido da outra.",
+        "odds": 0.6,
         "percentage": 4,
-        "lastUpdate": "2026-08-15",
-        "value": 1.05
+        "lastUpdate": "2026-08-16",
+        "value": 0.6
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "n/d",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "A PoderData de 13/Ago não o testa em cenário presidencial, e o mesmo valia para as três de 11/Ago e as de 10 e 05/Ago. Ausência de teste é informação que o painel registra, em vez de repetir dado antigo como se fosse novo. Ele disputa a REELEIÇÃO no governo de São Paulo, oficializada pelo Republicanos em 01/Ago. NO TABULEIRO DE HOJE ele acionou o STF contra Lula depois de o empréstimo do Banco do Brasil a São Paulo ser citado em debate, e o Valor Econômico informou que a Fazenda liberou a operação em seguida.",
-        "tendenciaPolymarket": "NÃO HÁ LEITURA CONFIRMADA NOVA PARA ELE EM 15/Ago. O valor exibido é o da última leitura confirmada, de 14/Ago, 14:46 BRT, em 0,05% (vol USD 13,91M acumulado), abaixo do corte de 0,5% que o painel usa para separar preço de ruído. Segue sendo o maior volume acumulado de todo o book presidencial, com o preço no piso. Volume alto com probabilidade no piso é convicção já precificada, não movimento.",
+        "tendenciaPesquisa": "Nenhuma nacional da janela o testa em cenário presidencial, e ausência de teste é informação que o painel registra em vez de repetir dado antigo. ⭐ Em 16/Ago ele abriu campanha à REELEIÇÃO ao governo de São Paulo, o que encerra a dúvida por ato público e não por inferência.",
+        "tendenciaPolymarket": "ESTÁVEL EM 0,05% em 16/Ago (vol USD 13,92M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), abaixo do corte de 0,5%. Segue sendo o maior volume acumulado de todo o book presidencial, com o preço no piso, o que é convicção já precificada e não movimento. ⭐ A ressalva do painel virou ATO PÚBLICO DATADO: em 16/Ago ele abriu formalmente campanha à REELEIÇÃO ao governo de São Paulo, em Osasco, segundo O Globo e a Folha de S.Paulo, e sem a presença do candidato à Presidência apoiado pelo mesmo campo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-15",
+        "lastUpdate": "2026-08-16",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-3%",
-        "polymarket": "0,35%",
-        "tendenciaPesquisa": "A Genial/Quaest de 14/Ago o mantém em 2% no 1º turno, o mesmo valor de 05/Ago. Seguem os 2% da Gerp, os 3% da BTG/Nexus e os 2,6% da Meio/Ideia. Ele empata com o líder no returno da PoderData de 13/Ago. É o único do pelotão com registro de candidatura já apresentado ao TSE, feito em 06/Ago, e por isso o prazo que termina em 15/Ago não o pressiona.",
-        "tendenciaPolymarket": "NÃO HÁ LEITURA CONFIRMADA NOVA PARA ELE EM 15/Ago. O valor exibido é o da última leitura confirmada, de 14/Ago, 14:46 BRT, em 0,35% (vol USD 5,07M acumulado), abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
-        "odds": 0.35,
+        "polymarket": "0,15%",
+        "tendenciaPesquisa": "SEM NACIONAL NOVA EM 16/Ago. A Genial/Quaest de 14/Ago o mantém em 2% no 1º turno, o mesmo valor de 05/Ago. Seguem os 2% da Gerp, os 3% da BTG/Nexus e os 2,6% da Meio/Ideia. 🔴 RECORTE NOVO DIVULGADO EM 15/Ago: ele tem o ELEITORADO MENOS CONVICTO do quadro, segundo o G1, o que é dado sobre a solidez do apoio e não sobre o tamanho dele.",
+        "tendenciaPolymarket": "QUEDA DE 0,20pp em 16/Ago, de 0,35% para 0,15% (vol USD 5,49M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno ele tem 5,00%, muito atrás dos 53,00% do primeiro do pelotão. Abriu a campanha com missa em Montes Claros, no norte de Minas, com promessa de superpresídio e críticas a ministros do STF, segundo Folha de S.Paulo e Valor Econômico.",
+        "odds": 0.15,
         "percentage": 2,
-        "lastUpdate": "2026-08-15",
-        "value": 0.35
+        "lastUpdate": "2026-08-16",
+        "value": 0.15
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "n/d",
-        "polymarket": "0,15%",
-        "tendenciaPesquisa": "A Genial/Quaest de 14/Ago não o testa em cenário presidencial, e nenhuma nacional da janela o inclui. O agravante permanece e precisa ser dito com clareza: ele NÃO é candidato à Presidência, disputa o governo de São Paulo, e qualquer cenário que o inclua é hipótese de pesquisa, não candidatura em curso.",
-        "tendenciaPolymarket": "NÃO HÁ LEITURA CONFIRMADA NOVA PARA ELE EM 15/Ago. O valor exibido é o da última leitura confirmada, de 14/Ago, 14:46 BRT, em 0,15% (vol USD 7,06M acumulado), abaixo do corte de 0,5%. Variação nesta faixa não tem valor informativo.",
-        "odds": 0.15,
+        "polymarket": "0,05%",
+        "tendenciaPesquisa": "Nenhuma nacional da janela o inclui em cenário presidencial. ⭐ Em 16/Ago ele abriu campanha ao GOVERNO DE SÃO PAULO, segundo O Globo e o Times Brasil, o que confirma por ato público datado que ele não disputa a Presidência.",
+        "tendenciaPolymarket": "QUEDA DE 0,10pp em 16/Ago, de 0,15% para 0,05% (vol USD 7,09M acumulado), leitura confirmada de 16/Ago, 16:56 BRT (19:56 UTC), abaixo do corte de 0,5%, e variação nessa faixa não tem valor informativo. ⭐ A ressalva do painel virou ATO PÚBLICO DATADO: em 16/Ago ele abriu formalmente campanha ao GOVERNO DE SÃO PAULO e discursou no ato de abertura do presidente, no ABC, segundo O Globo e o Times Brasil. Ele não é candidato à Presidência, e cenário presidencial que o inclua é hipótese de pesquisa.",
+        "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-15",
-        "value": 0.15
+        "lastUpdate": "2026-08-16",
+        "value": 0.05
       }
     ],
-    "updatedAt": "15/08/2026, 13:33",
-    "lastUpdate": "2026-08-15"
+    "updatedAt": "16/08/2026, 16:56",
+    "lastUpdate": "2026-08-16"
   }
 }

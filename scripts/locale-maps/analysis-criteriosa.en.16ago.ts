@@ -1,0 +1,141 @@
+/**
+ * Mapa EN de 16/Ago para analysis-criteriosa.json.
+ * Convenções: ponto decimal e vírgula de milhar. R$ preservado, escala traduzida.
+ */
+import { construir } from '../build-locale-json'
+
+const CAR = 'confirmed reading of Aug 16, 4:56 pm BRT (7:56 pm UTC)'
+
+construir('analysis-criteriosa', 'en', {
+  subtitle:
+    `UPDATE Aug 16, 49 days from the first round and on the FIRST DAY OF THE OFFICIAL CAMPAIGN. PRICE: there is a new confirmed reading for every contract tracked, ${CAR}. The leader stands at 66.50% and the runner-up at 29.45%. POLLS: no new national one; the most recent remains the Quaest of Aug 14, which had fresh crosstabs released over the weekend. REGISTRY: candidate filing closed with 20,438 candidacies nationwide and 13 for President, according to Poder360.`,
+
+  // ---------------- LULA ----------------
+  'candidates[0].header':
+    `PRICE WITH A NEW READING ON AUG 16: 66.50% (vol USD 8.40M cumulative), ${CAR}. The price moved from 64.50% on Aug 15 to 66.50% now, a 2.00pp rise. ⭐ THAT VALUE MATCHES THE TOP OF THE SERIES: among the 174 points recorded since May 19, NONE sits above 66.50%, and the only other day to touch that level was Aug 1. POLLS: no new national one, and the Quaest of Aug 14 still stands with 38% in the first round and 43% in the runoff.`,
+  'candidates[0].fortes[0]': `A 2.00pp rise in a single day, from 64.50% to 66.50%, and the value MATCHES the top of a 174-point series running since May 19, with no point above it.`,
+  'candidates[0].fortes[1]': `A Quaest crosstab released on Aug 15 measures how FIRM the vote is, not just its level: among his voters, 77% say the decision is final and 22% say they could still change, according to G1.`,
+  'candidates[0].fortes[2]': `The gap to the runner-up in the price WIDENED from 36.35pp to 37.05pp, because he rose 2.00pp and his rival rose 1.30pp.`,
+  'candidates[0].fortes[3]': `He opened the campaign at the Vila Euclides stadium in São Bernardo do Campo, the same ground as the metalworkers' assemblies of the late 1970s, according to Valor Econômico, and promised a Security Ministry, according to G1.`,
+  'candidates[0].fortes[4]': `Cumulative volume of USD 8.40M on his contract, inside a presidential book totalling USD 124.32M.`,
+  'candidates[0].fracos[0]': `The 38% from the Quaest of Aug 14 remains the FLOOR of the nine national polls since Aug 5, whose range runs from 38% to 44%, and no new poll has come out since.`,
+  'candidates[0].fracos[1]': `Against Quaest's own Aug 5 reading he gave up 1 point in the first round and 1 point in the runoff, and that movement still stands because no later national poll has appeared.`,
+  'candidates[0].fracos[2]': `Government approval in the Quaest of Aug 14 stands at 46% against 48% disapproval, a negative balance inside the 2pp margin.`,
+  'candidates[0].fracos[3]': `⛔ No superlative about a high: the value MATCHES the top, it does not beat it. The floor of the series remains 39.50%, from May 25.`,
+  'candidates[0].fracos[4]': `His campaign rally had no crowd estimate released, according to Estadão, which published a measurement only for his rival's rally.`,
+  'candidates[0].analise':
+    `The day is the first of the official campaign, and his price closed at 66.50%, the highest value the series has ever recorded, tied with Aug 1. ⚠️ The order of events matters and the panel states it: the 66.50% point was recorded at 5:01 am BRT, before any campaign rally of the day. In other words, the move PRECEDES the rallies and is not a reaction to them. What can be said is that the price rose going into the first day of campaigning, not that it rose because of what happened in it. Nothing changed in the polling, because no new national poll came out: the Quaest of Aug 14 still stands at 38% and 43%, and it is the same one that showed him giving up 1 point in both rounds against his own house. ⭐ The firmness crosstab released on Aug 15 adds a dimension the panel did not have: 77% of his voters call the decision final. That is not voting intention, it is the hardness of the intention, and they are different things.`,
+
+  // ---------------- FLÁVIO ----------------
+  'candidates[1].header':
+    `PRICE WITH A NEW READING ON AUG 16: 29.45% (vol USD 8.34M cumulative), ${CAR}. The price moved from 28.15% on Aug 15 to 29.45% now, a 1.30pp rise and a third straight day of gains. ⛔ Not a record: among the 173 points since May 19, 4 were higher, and the top remains 33.20%, from Jun 2. POLLS: no new national one, and the Quaest of Aug 14 still stands with 31% in the first round and 40% in the runoff.`,
+  'candidates[1].fortes[0]': `Third straight day of gains in the price, with 1.30pp on Aug 16 after 0.30pp on Aug 15 and 0.20pp on Aug 14.`,
+  'candidates[1].fortes[1]': `In the Quaest firmness crosstab released on Aug 15, the vote for him ranks among the two most settled in the field, alongside the leader's, according to G1.`,
+  'candidates[1].fortes[2]': `He still holds 87.00% in the first-round runner-up contract (vol USD 286 thousand), the highest value in that entire book.`,
+  'candidates[1].fortes[3]': `He opened the campaign in Copacabana, and the rally was estimated at 8,900 people by the USP/Cebrap monitor, according to Estadão. It is the only crowd estimate published on the day.`,
+  'candidates[1].fortes[4]': `The Quaest of Aug 14 remains the first national poll to show him narrowing BOTH rounds against his own house, gaining 1 point in each.`,
+  'candidates[1].fracos[0]': `Even with a third straight gain, he ended up FURTHER from the leader in the price: the gap widened from 36.35pp to 37.05pp, because the leader rose more.`,
+  'candidates[1].fracos[1]': `His REJECTION in the Quaest of Aug 14 is 54%, the highest in the field and above the leader's 52%.`,
+  'candidates[1].fracos[2]': `⛔ No superlative: 29.45% is not the top of the series. Four of the 173 points were higher, and the maximum is 33.20%, from Jun 2.`,
+  'candidates[1].fracos[3]': `The governor of São Paulo opened his re-election campaign the same day WITHOUT him present, according to O Globo, and the two schedules ran separately.`,
+  'candidates[1].fracos[4]': `His rally was described as thin by Estadão and as smaller than his father's by JOTA. ⚠️ The panel notes that only his rally had a measurement released, so no measured comparison exists between the two rallies of the day.`,
+  'candidates[1].analise':
+    `He rises for the third straight day and still loses ground, which is the same pattern as Aug 15: gaining 1.30pp does not help when the other gains 2.00pp. ⚠️ As with the leader, the move was recorded before the rallies, so the panel does not attribute it to the event. The hardest factual item of the day about him concerns CROWD SIZE, and it comes with an asymmetry that has to be stated: the Copacabana rally got an estimate of 8,900 people from the USP/Cebrap monitor, according to Estadão, and his rival's rally had no measurement released at all. ⛔ With a number on one side and none on the other, comparing the two rallies is not possible, and an adjective is no substitute for a measurement. The panel publishes the estimate that exists, says whose it is, and records the absence of the other.`,
+
+  // ---------------- RENAN ----------------
+  'candidates[2].header':
+    `PRICE WITH A NEW READING ON AUG 16: 4.70% (vol USD 9.77M cumulative), ${CAR}. 🔴 The price moved from 7.15% on Aug 14 to 4.70% now and BROKE BELOW 5%, on the third straight lower close since the 8.00% close of Aug 11. POLLS: the Quaest of Aug 14 keeps him at 4% in the first round, the same value as Aug 5.`,
+  'candidates[2].fortes[0]': `He still holds the highest probability in the first-round third-place contract, 53.00% (vol USD 181 thousand), ahead of the 37.50% of that book’s runner-up.`,
+  'candidates[2].fortes[1]': `He keeps the largest cumulative volume in the presidential book among names above 1%, at USD 9.77M.`,
+  'candidates[2].fortes[2]': `In the runner-up contract he has 5.40% on volume of USD 1.12M, the largest single volume in that book.`,
+  'candidates[2].fortes[3]': `He opened the campaign at the University of São Paulo law school, in downtown São Paulo, and said he would confront the nation's enemies, according to O Globo and G1.`,
+  'candidates[2].fortes[4]': `The polling did not knock him down: the 4% from the Quaest of Aug 14 is the same as Aug 5, and Gerp's 5% and BTG/Nexus's 4% still stand.`,
+  'candidates[2].fracos[0]': `🔴 A 2.45pp drop against the last published reading and a third straight lower close, moving from 8.00% at the close of Aug 11 to 4.70%.`,
+  'candidates[2].fracos[1]': `He broke below the 5% mark, which he had not lost at any point in the recent window.`,
+  'candidates[2].fracos[2]': `The decline PRECEDES his own campaign rally: the 5.20% point was recorded at 5:01 am BRT, before the event at the university.`,
+  'candidates[2].fracos[3]': `The distance between polling and price, which was the argument in his favour, narrowed from the wrong side: the price fell towards the polls' 4% instead of the polls rising.`,
+  'candidates[2].fracos[4]': `He arrived at his first rally wearing a bulletproof vest, according to G1, and the panel records the fact without turning it into a reading of the race.`,
+  'candidates[2].analise':
+    `🔴 His decline is the second finding of the day and it counts because it is a SERIES, not an instant: three straight lower closes, from 8.00% at the close of Aug 11 to 4.70% now, and the break below 5% happened on the morning of the first campaign day, before his own rally. ⭐ And there is an internal crossing the panel keeps separate on purpose: in the VICTORY contract he fell to 4.70%, but in the THIRD-PLACE contract he stands at 53.00%, still the highest value in that book, but ALSO falling: it was 65.00% on Aug 9, that is, 12.00pp in seven days. He remains ahead of the chasing pack while losing ground on both questions at once. ⛔ The panel does not add the two together nor treat one as a contradiction of the other.`,
+
+  // ---------------- PELOTÃO ----------------
+  'candidates[3].header':
+    `PRICE WITH A NEW READING ON AUG 16 for the whole chasing pack, ${CAR}. Caiado at 0.60%, Zema at 0.15% and Haddad at 0.05%, all three below the 0.5% cutoff the panel uses to separate price from noise, with Caiado right on the edge. POLLS: no new national one, and the Quaest of Aug 14 still gives 4% to Caiado and 2% to Zema.`,
+  'candidates[3].subtitle':
+    `Aug 16, first day of campaigning: all three opened their schedules, and in the price all three fell. The crossing that matters is about CONTRACTS, because Caiado goes down on victory and up on placing.`,
+  'candidates[3].caiado.label':
+    `CAIADO (PSD), presidential Poly 0.60% (vol USD 5.92M cumulative, ${CAR}), down 0.45pp | first-round third place at 37.50% | polling in force: Quaest 4%, Gerp 4%, Meio/Ideia 5.7%, BTG/Nexus 5% | REJECTION of 35% in the Quaest of Aug 14`,
+  'candidates[3].caiado.fortes':
+    `⭐ His THIRD-PLACE contract stands at 37.50%, against 31.00% at the Aug 12 close, a 6.50pp rise with four straight higher closes. In other words, the market moved him closer on PLACING while moving him away from VICTORY. In the polling he still has 4% in the Quaest of Aug 14 and the lowest rejection in the field, 35%. He opened the campaign with a mass at the Goiânia cathedral and a motorcade through Goiás and the Federal District outskirts, according to Folha de S.Paulo and G1, and said the United States does not rule Brazil, according to Times Brasil.`,
+  'candidates[3].caiado.fracos':
+    `In the victory price he fell 0.45pp and moved to 0.60%, brushing the 0.5% cutoff. ⚠️ The 35% rejection comes with high name-recognition gaps declared by the house itself, and low rejection with high unfamiliarity is not acceptance: it means most of the electorate has not yet formed an opinion, and an unformed opinion can go either way. His contrast remains the widest on the panel, with 4% to 5.7% of declared intention against less than 1% of victory price.`,
+  'candidates[3].haddad.label':
+    `HADDAD (PT), presidential Poly 0.05% (vol USD 7.09M cumulative, ${CAR}), down 0.10pp and below the 0.5% cutoff`,
+  'candidates[3].haddad.fortes':
+    `His cumulative volume remains larger than that of several names priced above him, which keeps the contract with trading depth despite the floor-level price. He spoke at the president's campaign-opening rally in the ABC region, according to O Globo.`,
+  'candidates[3].haddad.fracos':
+    `⭐ The caveat the panel had been repeating as an inference became a DATED FACT on Aug 16: he formally opened a campaign for the GOVERNORSHIP OF SÃO PAULO, according to O Globo and Times Brasil. That is, he is not a presidential candidate, and any presidential scenario that includes him is a polling hypothesis, not a candidacy under way. No national poll in the window tests him. The price fell to 0.05%, and variation in that band carries no informational value.`,
+  'candidates[3].zema.label':
+    `ZEMA (Novo), presidential Poly 0.15% (vol USD 5.49M cumulative, ${CAR}), down 0.20pp and below the 0.5% cutoff | first-round third place at 5.00%`,
+  'candidates[3].zema.fortes':
+    `The Quaest of Aug 14 keeps him at 2% in the first round, the same value as Aug 5, and BTG/Nexus's 3% and Meio/Ideia's 2.6% still stand. He was the first of the chasing pack to file with the electoral court, on Aug 6. He opened the campaign with a mass in Montes Claros, in northern Minas Gerais, promising a maximum-security prison and criticising Supreme Court justices, according to Folha de S.Paulo and Valor Econômico.`,
+  'candidates[3].zema.fracos':
+    `🔴 The Quaest firmness crosstab released on Aug 15 shows he has the LEAST CONVINCED electorate in the field, according to G1, which speaks to how solid his support is rather than how large. In the price he fell 0.20pp and moved to 0.15%, below the 0.5% cutoff. In the third-place contract he has 5.00%, far behind the 53.00% of the chasing pack's leader.`,
+  'candidates[3].fortes[0]': `All three opened campaign schedules on Aug 16, with dated rallies covered by Folha de S.Paulo, G1, Valor Econômico and Times Brasil.`,
+  'candidates[3].fortes[1]': `⭐ Caiado rose in the third-place contract, from 31.00% at the Aug 12 close to 37.50%, a 6.50pp gain, while falling in the victory one.`,
+  'candidates[3].fortes[2]': `The polling did not move them, because there was no new national one: Caiado is still at 4% and Zema at 2% in the Quaest of Aug 14.`,
+  'candidates[3].fortes[3]': `Caiado keeps the lowest rejection in the field, 35%, against the 54% and 52% of the top two.`,
+  'candidates[3].fortes[4]': `Zema was the first of the chasing pack to file his candidacy, on Aug 6, and did not depend on the closing deadline.`,
+  'candidates[3].fracos[0]': `All three fell in the victory price on the same day: Caiado 0.45pp, Zema 0.20pp and Haddad 0.10pp.`,
+  'candidates[3].fracos[1]': `All three sit below the 0.5% cutoff the panel uses to separate price from noise, with Caiado on the edge at 0.60%.`,
+  'candidates[3].fracos[2]': `The Quaest firmness crosstab points to Zema as having the least convinced electorate in the field, according to G1.`,
+  'candidates[3].fracos[3]': `⚠️ Haddad opened a campaign for the governorship of São Paulo on Aug 16, which confirms through a public act that he is not running for President.`,
+  'candidates[3].fracos[4]': `The gap between polling and price in Caiado's case widened from the price side, not the polling side.`,
+  'candidates[3].analise':
+    `The first day of campaigning knocked all three down in the victory price, and even so the finding about the chasing pack is not the fall, it is the CONTRACT. ⭐ Caiado fell 0.45pp on victory and rose 6.50pp on third place against the Aug 12 close. The market is saying two things at once and they do not contradict each other: he became more likely to finish third and less likely to win. ⛔ The panel neither adds these two numbers nor picks one of them. ⚠️ The other item of the day concerns the state of the race rather than price: Haddad formally opened a campaign for the governorship of São Paulo, which turns into a dated public act the caveat the panel had been making by inference.`,
+
+  // ---------------- QUADRO COMPARATIVO ----------------
+  'quadroComparativo[0].p':
+    `NO NEW NATIONAL POLL. The Quaest of Aug 14 still stands (n=2,004, field Aug 10 to 13, BR-06773/2026) with 38% in the first round and 43% in the runoff, the 38% being the floor of the nine national polls since Aug 5. Rejection at 52%, below his rival's 54%. ⭐ Crosstab released Aug 15: 77% of his voters call the decision final and 22% could still change, according to G1.`,
+  'quadroComparativo[0].m': `66.50% (vol USD 8.40M cumulative), ${CAR}`,
+  'quadroComparativo[0].t':
+    `UP 2.00pp, from 64.50% to 66.50%. ⭐ The value MATCHES THE TOP OF THE SERIES: of the 174 points recorded since May 19, NONE is above it, and the only other day at that level was Aug 1. The gap to the runner-up WIDENED, from 36.35pp to 37.05pp. ⚠️ The point was recorded at 5:01 am BRT, before the campaign rallies of the day.`,
+  'quadroComparativo[0].s':
+    `49 days from the election and the first day of the official campaign. He opened at the Vila Euclides stadium in São Bernardo and promised a Security Ministry, according to Valor Econômico and G1. 📅 Nexus publishes on Aug 17 and Real Time Big Data on Aug 19.`,
+  'quadroComparativo[1].p':
+    `NO NEW NATIONAL POLL. The Quaest of Aug 14 still stands with 31% in the first round and 40% in the runoff, having gained 1 point in each against his own house's Aug 5 reading. REJECTION of 54%, the highest in the field. In the firmness crosstab released Aug 15 the vote for him ranks among the two most settled, according to G1.`,
+  'quadroComparativo[1].m': `29.45% (vol USD 8.34M cumulative), ${CAR}`,
+  'quadroComparativo[1].t':
+    `THIRD STRAIGHT DAY OF GAINS, with 1.30pp on Aug 16 after 0.30pp and 0.20pp. ⚠️ Even while rising, he ended up FURTHER from the leader, because the leader gained 2.00pp. ⛔ Not a record: of the 173 points since May 19, 4 were higher, and the top is 33.20%, from Jun 2.`,
+  'quadroComparativo[1].s':
+    `He opened the campaign in Copacabana, and the rally was estimated at 8,900 people by the USP/Cebrap monitor, according to Estadão. It is the only crowd estimate of the day, because his rival's rally had no measurement released.`,
+  'quadroComparativo[2].p':
+    `NO NEW NATIONAL POLL. The Quaest of Aug 14 keeps him at 4% in the first round, the same value as Aug 5. Gerp's 5%, BTG/Nexus's 4%, Meio/Ideia's 4.7% and Palver's 10% by internet still stand.`,
+  'quadroComparativo[2].m': `4.70% (vol USD 9.77M cumulative), ${CAR}`,
+  'quadroComparativo[2].t':
+    `🔴 THREE STRAIGHT LOWER CLOSES and a break below 5%. He moved from 8.00% at the close of Aug 11, and from 7.15% at the last published reading on Aug 14, to 4.70% now. ⭐ In the THIRD-PLACE contract, however, he stands at 53.00%, still the highest probability in that book, but ALSO FALLING, because it was 65.00% on Aug 9, that is, 12.00pp lost in seven days. He remains ahead of the chasing pack while losing ground on both questions at once.`,
+  'quadroComparativo[2].s':
+    `He opened the campaign at the University of São Paulo law school and said he would confront the nation's enemies, according to O Globo and G1. He arrived at the rally in a bulletproof vest, according to G1.`,
+  'quadroComparativo[3].p':
+    `NO NEW NATIONAL POLL. The Quaest of Aug 14 gives him 4% in the first round and REJECTION of 35%, the lowest in the field, with high unfamiliarity declared by the house.`,
+  'quadroComparativo[3].m': `0.60% (vol USD 5.92M cumulative), ${CAR}`,
+  'quadroComparativo[3].t':
+    `⭐ THE CONTRACT CROSSING OF THE DAY: he fell 0.45pp on VICTORY, from 1.05% to 0.60%, and rose 6.50pp on PLACING, with the first-round third place going from 31.00% at the Aug 12 close to 37.50%. These are different questions and the panel does not add them together.`,
+  'quadroComparativo[3].s':
+    `He opened the campaign with a mass at the Goiânia cathedral and a motorcade through Goiás and the Federal District outskirts, according to Folha de S.Paulo and G1, and said the United States does not rule Brazil, according to Times Brasil. He declared R$ 52 million in assets to the electoral court, according to Valor Econômico.`,
+  'quadroComparativo[4].p':
+    `NO NEW NATIONAL POLL. The Quaest of Aug 14 keeps him at 2% in the first round. 🔴 The firmness crosstab released Aug 15 shows he has the LEAST CONVINCED electorate in the field, according to G1.`,
+  'quadroComparativo[4].m': `0.15% (vol USD 5.49M cumulative), ${CAR}`,
+  'quadroComparativo[4].t':
+    `DOWN 0.20pp, from 0.35% to 0.15%, and the price stays below the 0.5% cutoff the panel uses to separate price from noise. In the third-place contract he has 5.00%.`,
+  'quadroComparativo[4].s':
+    `He opened the campaign with a mass in Montes Claros, in northern Minas Gerais, promising a maximum-security prison and criticising Supreme Court justices, according to Folha de S.Paulo and Valor Econômico. He was the first of the chasing pack to file, on Aug 6.`,
+  'quadroComparativo[5].m': `3.40% (vol USD 84 thousand), ${CAR}`,
+  'quadroComparativo[5].t':
+    `DOWN 0.50pp, from 3.90% to 3.40%. ⚠️ It remains the thinnest contract among those tracked, with volume three orders of magnitude below the presidential one, and any movement in it requires that caveat before any reading.`,
+  'quadroComparativo[5].s':
+    `⭐ The court became a CAMPAIGN THEME on day one: Zema criticised justices at his opening rally, according to Folha de S.Paulo and Valor Econômico, Estadão recorded that criticism of the court marked the start, and G1 reported that the runner-up's Senate strategy is built around confronting the court.`,
+
+  cruzamento:
+    `THE FIRST DAY OF CAMPAIGNING BROUGHT A LARGE MOVE IN THE PRICE AND NONE IN THE POLLING, AND THE ORDER OF EVENTS IS WHAT THE PANEL MUST STATE FIRST. The leader rose 2.00pp and closed at 66.50%, a value that MATCHES the top of a 174-point series running since May 19, with no point above it. The runner-up rose 1.30pp, on a third straight day of gains, and even so the gap between them WIDENED, from 36.35pp to 37.05pp. ⚠️ CAUSATION: the points that produced this rise were recorded at 5:01 am BRT, BEFORE any campaign rally of the day. The panel records that the price moved going into the first day of campaigning, and NOT that it reacted to the rallies. ⛔ No undue superlative: the 37.05pp gap is ordinary in the series, with 30 of the 89 days recording an equal or larger value and a peak of 41.80pp on Aug 1; and the runner-up's 29.45% sits below 4 of the 173 points, with a top of 33.20% from Jun 2. ⭐ THE FINDING OF THE DAY IS ABOUT CONTRACTS, NOT LEVELS, and it shows up in two names of the chasing pack at once. Its leader fell to 4.70% in the VICTORY contract, a third straight lower close since the 8.00% close of Aug 11, and in the THIRD-PLACE contract stands at 53.00%, still the highest probability in that book but falling from the 65.00% of Aug 9. The other fell 0.45pp on victory and ROSE 6.50pp on placing, with third place going from 31.00% at the Aug 12 close to 37.50%. ⛔ Finishing third and winning the election are different questions, and the panel neither adds them nor treats one as a rebuttal of the other. ⭐ IN THE POLLING THE NEWS IS NOT ABOUT LEVEL, IT IS ABOUT FIRMNESS. No new national poll came out, and the Quaest of Aug 14 still stands at 38% x 31% and 43% x 40%. What appeared over the weekend was a crosstab of that same poll, released on Aug 15 by G1: among the leader's voters, 77% call the decision final and 22% say they could still change, and the least convinced electorate in the field belongs to the Novo party candidate. That measures the hardness of the intention, not its size, and it is a dimension the panel did not have. 📌 The panel records that both instruments separated the same two groups in this window, with the top two rising in the price and the chasing pack falling, and the polling crosstab pointing to the top two as having the most settled vote. ⛔ Recording the coincidence is not asserting that one explains the other, and the panel does not make that bridge. IN THE REGISTRY, filing closed with 20,438 candidacies nationwide and 13 for President, according to Poder360, and three names that appear in the presidential book opened campaigns for OTHER offices on Aug 16: the governor of São Paulo for re-election, the former mayor for the same state's governorship, and the former first lady for the Senate seat of the Federal District, according to O Globo, Times Brasil and Folha de S.Paulo. ⚠️ That turns into a dated public act the caveat the panel had been making by inference about them.`,
+})
