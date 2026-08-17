@@ -36,6 +36,13 @@ export interface UsPressItem {
   casa: string
   publicadoEm: string
   consulta: string
+  /**
+   * Por qual porta a matéria entrou, a partir de 16/Ago/2026.
+   * `disputa` é cobertura da corrida, `metodo` é cobertura sobre o INSTRUMENTO
+   * (pesquisa e mercado de previsão como assunto). Opcional porque as coletas
+   * anteriores a 16/Ago não têm o campo, e data encerrada não se reescreve.
+   */
+  trilho?: 'disputa' | 'metodo'
 }
 
 export interface UsPressVeiculo {
@@ -58,6 +65,9 @@ export interface UsPressData {
     veiculosRepresentados: number
     tetoPorVeiculo: number
     consultasComFalha: string[]
+    /** Contadores do trilho, a partir de 16/Ago/2026. Ver `UsPressItem.trilho`. */
+    publicadosPorDisputa?: number
+    publicadosPorMetodo?: number
   }
   itens: UsPressItem[]
 }
