@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-08-16T15:01:11.099Z",
+  "geradoEm": "2026-08-17T15:01:24.900Z",
   "observacao": "geradoEm usa o registro mais recente do banco, nao o relogio da maquina, para o backup ser reproduzivel e o diff ficar vazio quando nada mudou",
   "repositorioPublico": true,
   "tabelasExcluidasPorConterDadoPessoal": {
@@ -16,8 +16,8 @@
     "llmRun": "pode conter prompt com dado de usuário",
     "modelOutput": "pode conter resposta sobre dado de usuário"
   },
-  "totalLinhas": 48488,
-  "totalBytesComprimidos": 5704304,
+  "totalLinhas": 49060,
+  "totalBytesComprimidos": 5788143,
   "arquivos": [
     {
       "arquivo": "marketPrice/2026-04.csv.gz",
@@ -45,21 +45,21 @@
     },
     {
       "arquivo": "marketPrice/2026-08.csv.gz",
-      "linhas": 6169,
-      "sha256": "b6cd3186d640cdad",
-      "bytesGz": 342259
+      "linhas": 6512,
+      "sha256": "d70943eef3ced7f0",
+      "bytesGz": 361920
     },
     {
       "arquivo": "marketOutcome/2026-04.csv.gz",
       "linhas": 171,
-      "sha256": "32a6485c3180734d",
-      "bytesGz": 8562
+      "sha256": "7ed334163890cd2e",
+      "bytesGz": 8549
     },
     {
       "arquivo": "marketOutcome/2026-05.csv.gz",
       "linhas": 5,
-      "sha256": "4eacebc8c9e701b4",
-      "bytesGz": 474
+      "sha256": "a3d73538734257b3",
+      "bytesGz": 475
     },
     {
       "arquivo": "marketOutcome/2026-06.csv.gz",
@@ -70,20 +70,20 @@
     {
       "arquivo": "marketOutcome/2026-07.csv.gz",
       "linhas": 60,
-      "sha256": "fbc82e1b7ad7645f",
-      "bytesGz": 2573
+      "sha256": "1b91c74461fd7e21",
+      "bytesGz": 2559
     },
     {
       "arquivo": "marketOutcome/2026-08.csv.gz",
-      "linhas": 2,
-      "sha256": "ef2fe5974aeafd4e",
-      "bytesGz": 268
+      "linhas": 3,
+      "sha256": "6f268522685895e1",
+      "bytesGz": 350
     },
     {
       "arquivo": "market/2026-04.csv.gz",
       "linhas": 18,
-      "sha256": "7286f6492b5e95e7",
-      "bytesGz": 1824
+      "sha256": "1f9a81208f786112",
+      "bytesGz": 1802
     },
     {
       "arquivo": "market/2026-06.csv.gz",
@@ -94,14 +94,14 @@
     {
       "arquivo": "market/2026-07.csv.gz",
       "linhas": 7,
-      "sha256": "5c01344a3169ed6a",
-      "bytesGz": 903
+      "sha256": "e14d68783886084f",
+      "bytesGz": 899
     },
     {
       "arquivo": "marketEvent/2026-04.csv.gz",
       "linhas": 8,
-      "sha256": "da324d4351a15e76",
-      "bytesGz": 704
+      "sha256": "b8f2658a2e2f6348",
+      "bytesGz": 699
     },
     {
       "arquivo": "marketEvent/2026-06.csv.gz",
@@ -112,8 +112,8 @@
     {
       "arquivo": "marketEvent/2026-07.csv.gz",
       "linhas": 15,
-      "sha256": "35af1944056c5a07",
-      "bytesGz": 1164
+      "sha256": "58a7bce3c93a4fee",
+      "bytesGz": 1163
     },
     {
       "arquivo": "source/2026-04.csv.gz",
@@ -141,9 +141,9 @@
     },
     {
       "arquivo": "source/2026-08.csv.gz",
-      "linhas": 4,
-      "sha256": "8f6fa2779bdab91d",
-      "bytesGz": 380
+      "linhas": 5,
+      "sha256": "ddb2551c476419c0",
+      "bytesGz": 434
     },
     {
       "arquivo": "researchRun/2026-04.csv.gz",
@@ -171,9 +171,9 @@
     },
     {
       "arquivo": "researchRun/2026-08.csv.gz",
-      "linhas": 64,
-      "sha256": "37d2a2e634c4b052",
-      "bytesGz": 2958
+      "linhas": 68,
+      "sha256": "08e77b2a2da71ba5",
+      "bytesGz": 3132
     },
     {
       "arquivo": "researchFinding/2026-04.csv.gz",
@@ -201,9 +201,9 @@
     },
     {
       "arquivo": "researchFinding/2026-08.csv.gz",
-      "linhas": 64,
-      "sha256": "b109301534cc84bc",
-      "bytesGz": 97627
+      "linhas": 74,
+      "sha256": "25ba58d5f9fb8a5f",
+      "bytesGz": 106411
     },
     {
       "arquivo": "analysisReport/2026-04.csv.gz",
@@ -231,9 +231,9 @@
     },
     {
       "arquivo": "analysisReport/2026-08.csv.gz",
-      "linhas": 83,
-      "sha256": "20520d27f670de43",
-      "bytesGz": 569153
+      "linhas": 296,
+      "sha256": "421ad1a06a07103f",
+      "bytesGz": 624295
     },
     {
       "arquivo": "crossSignalLink.csv.gz",
