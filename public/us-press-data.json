@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-08-17",
-  "fetchedAt": "2026-08-17T01:39:03.633Z",
+  "fetchedAt": "2026-08-17T18:34:58.392Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,29 +113,83 @@
     }
   ],
   "qualidade": {
-    "lidos": 129,
-    "naLista": 50,
-    "foraDaLista": 79,
+    "lidos": 103,
+    "naLista": 31,
+    "foraDaLista": 72,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 14,
+    "descartadosPorAcompanhamento": 5,
     "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 9,
+    "lidosEmFeedProprio": 6,
     "publicadosComLinkCanonico": 4,
     "publicadosViaGoogleNews": 6,
-    "publicadosPorDisputa": 9,
-    "publicadosPorMetodo": 1
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "This week on The Hill: Florida governor’s race, embattled lawmakers to take spotlight",
-      "url": "https://thehill.com/newsletters/this-week-on-the-hill/6030970-florida-primary-election-donalds-mills-california-redistricting/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-08-16T21:00:00.000Z",
+      "titulo": "A Democrat is leading polls in reliably red Alaska. Meet Mary Peltola",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNWWQ3elk5WU9kU1VhcDBNVWsxU2t6eEhBMW1NT1gzM1ltUkFqZmxjVUdpQWttQXpkVEJzUWNWNWJKZzJJbkRNOHdLbEdKWWxncHVTTllTQVJCQ1dFTklwVGZJZDlBbFpEOTNaVUh3cVNGSXE3RHMyZkhZWlhueHpiZkNERWdvbHVFdDd0bS1tWnVwMHAxQ29JZFJWTmZkQW14M1dlbzVZNGxTZnpSRjg0N2oxZmpmdHppV0pBbTY0VkM5UQ?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-08-17T15:42:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Jeffries promises to caucus with DSA members despite not supporting agenda",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOVDZiSTlEdmJhYWJTLXJ3WnFybnJ0NlcwMlJ5Yk1xckVxU3Q3M1kwVEs5ZVc0Y2QzM1hrQWJoZVR0WVM2azRfSEhQX1pxSWFhM0RKalBSWlNMaU1EUVB6SkR0eWRZRkFWNXFnQjlJejBJalRkamVhOWIzTnpLX1lOTjFjTi1VRC02Q1pMQ0huUktyRGxRR3hRUDcwc1JwOFB1b00yUHlpYTBKTkIzaUpUaVNsSXRHY0N6WWFkSG45eUhzNU01MGVheWM3TXlDc29DSmpEZU81UWNMWjJlR3RLQnpTRFM?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-08-17T15:33:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Older Democrats walloped by midterms anti-establishment revolt",
+      "url": "https://www.axios.com/2026/08/13/democrats-old-age-larson-bronin-young-primaries",
+      "casa": "Axios",
+      "publicadoEm": "2026-08-17T15:20:27.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A tale of two Dan Sullivans: Republicans with same name contest Alaska primary",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOSUZCMndsbjlMSkx6Z0NJMl9uSkFlUXNTSTl5ZENHUWpWcWVvMDJnWVBNMnVZMjg3em1lMlR1M2YzcThEV00xQlowYmotWTh6WjBYaUYxVmNrX3RPMWgxVlR3QklITGR3bXRGalRaMDdYa1hxTXk3eHQwWTJsQ1NFRjRSS2pjZzNuSW1qN3pfWWg?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-08-17T13:44:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Russell Fry endorses ex-rival Darline Graham after failing to advance to special GOP US Senate primary runoff",
+      "url": "https://www.foxnews.com/politics/russell-fry-endorses-ex-rival-darline-graham-failing-advance-special-gop-us-senate-primary-runoff",
+      "casa": "Fox News",
+      "publicadoEm": "2026-08-17T10:00:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democratic Socialists Look for Upsets in Hostile Territory: Florida",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNVXFydGVvRzdTRl81VDBkcVJPUFdjU01nLUY2OVpRLVN4MGpodDBXNHRGVHFWTXAzOFpTMUVCdnMzeUhlTEVoU2F3N2h0SHFLVzA2LXdTLXhIQTZWZUxpeU5UZU1SbFlxTW9uTHZlWUdnMjgtczgtTFRwdW9RUGZWeUhMUlFmMm5GRWc?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-08-17T09:03:46.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Jon Ossoff’s takedown of Trump reveals two very different versions of America",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZaUFBbzNaSG4zeUxWNk01dG9YNmpUYUJwbVZnZVB2TDZrWVVselJ3bWxFQVFpeHF1eS1CME5iTWR3Z0ZqX3I0MkxkRzVveThGb1VIWURSbWItQ1ljWkgwVzNmRThTakY1MHE4c2NTQ0l4cW5Ed1NiekNB?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-08-17T04:00:29.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -144,24 +198,6 @@
       "casa": "The New York Times",
       "publicadoEm": "2026-08-16T19:12:15.000Z",
       "consulta": "generic-ballot",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "A Free-for-All in Alaska as 17 Candidates Compete to Be Governor",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZmhMMmZ2aEcyTGxFejVfZE94YnZES2FpX3B0ZDNUVFBBZm1FSURVcFpNX2pTMWhrWWotbm5HYmVLM2VPME1hS0ZEbHZ1Vzl6dGVOZ2FTSmtVZVNxenN5MVJMMkNyT25nXzJmeEhQc0c3a2k2cWJHYnVXN0ZFbUQ5NkNB?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-08-16T18:36:12.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Senate hopeful Talarico touts his faith. Texas Republicans call it blasphemy.",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQMUFOUHdlams5WGxaWnctRHZYVURIMjMtUTlFVWQ2SjlQdWVCLVIwZ1ZuNnlIdEo4X2wyRGFrdHROUG45QkpBaXhYQXNSeHcwNko3VzJ4LUc4R2pfc1plWDJfQUhxbU1lT1NSS1pfMHBiZDRMb0FZQ3pERmZ0SXNUR1I2RjBteXdERXpNUHZmSVUwWTFseUZQTzdMd2dwSGp1TTgzTHY5WTdZLUl0TTd0dFZFSUNXb3EtZWxaRDU0blFxRDViZXc?oc=5",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-08-16T16:00:00.000Z",
-      "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
@@ -182,42 +218,6 @@
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
-    },
-    {
-      "titulo": "Where Trump could spend his $400 million war chest in 2026",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQlRDY0gwMld6U3RBcG1VLUdSNzVHdlNaaGxINFNQUGlRN2R2ODVLcHdacVJkZFNxQUlpSk43ZTJyUEY1aHJjQWcyXzMwQUQzUC1zX2hnV04wZGU3Y0pTOURfNF9oMHJrc2taUTRSSm14bms4U3RvTkZpR21LalVGS2stN3dFY0tCZm9yZmtBaDl1NG5mcmpuN2IweFdPNlp0WE82M2FBLUZDTnVkMHZtZld6VGdPNXd3S2Jocg?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-16T11:00:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Why the middle of the country is back in the center of American politics",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5EaFFzNlU0a3kwU1R1S2hHZVVSVGNsYk5qSlNCU19HdFhTc0dzWU5ORHpFRlEzUDlfVXR3cUJGNmZ0VjJCUkVGZTRLa0kwZmpWTkptNlhnZVNrR2xaNEREMGdQRUJUVzR1aWxoU2R2MzlPRzNB?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-08-16T10:00:29.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Alaska primary: What to know before Tuesday’s election",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQdDhfSC03MkFnX0YxbTVfbGJSYW1EQzQ5aFdTVktUcFVabm5KejBvanVXSlF6Um1UaDIwX29VTWVNb1FyRmVfcjdQM3VjTTlqbU94NnZ3ZjJRdVBHN3lzQ2l4a0M5WjZyS1piVWxTSC05VXNpYk9Gdzk1Q1RoVnN4QUhjSHg1UDljX1FtTV9wa01rZUNpRWwyZEFucFFNeFJvUUg0cUNFNlRqTGJPMmdSY2N4cWVCX1N0LWI2M1RIYktTdVJnZlJmZXRkSjc2MXdFcmxyeVpXX2JBbVRWUFdPeXF1aw?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-08-16T10:00:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Moderate Dems hard to pin down before primaries, Ipsos exec says",
-      "url": "https://www.newsnationnow.com/politics/moderate-dems-hard-predict-polls/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-08-15T23:33:39.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "metodo"
     }
   ]
 }
