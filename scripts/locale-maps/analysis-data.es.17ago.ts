@@ -1,0 +1,67 @@
+/**
+ * Mapa ES de 17/Ago para analysis-data.json.
+ * Convenções ES: vírgula decimal e ponto de milhar, como no pt-BR.
+ */
+import { construir } from '../build-locale-json'
+
+const CAR = 'lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC)'
+
+construir('analysis-data', 'es', {
+  updatedAt: `17/08/2026, 18:48`,
+
+  // ---------------- SENTIMENTO ----------------
+  'cards.sentimento.text1':
+    `A 48 días de la primera vuelta, el día trajo LAS DOS cosas a la vez, y no coincidieron. Salió la primera encuesta nacional desde el 14 de ago, la BTG/Nexus (n=2.003, campo del 14 al 16 de ago, registro BR-03317/2026, margen de 2pp), y hubo lectura de precio confirmada para todos los contratos.`,
+  'cards.sentimento.text2':
+    `⭐ EL HALLAZGO ES LA DIVERGENCIA DE DIRECCIÓN. La encuesta mostró estabilidad: el líder pasó de 40% a 41%, el segundo de 35% a 36%, y la DISTANCIA entre los dos quedó en los mismos 5 puntos. En el balotaje el resultado repitió 47 a 44, número por número. Cada movimiento de 1 punto cabe entero dentro del margen de 2pp de la propia casa. El mismo día el precio cerró 4,00pp de esa distancia, de 37,05pp a 33,05pp.`,
+  'cards.sentimento.text3':
+    `⛔ EL PANEL NO DICE QUE EL PRECIO REACCIONÓ A LA ENCUESTA, y el motivo es aritmético: la encuesta no achicó nada, así que no explica un achicamiento de 4 puntos. Lo que sí se puede registrar es que la prensa encuadró la ganancia de 1 punto del segundo como avance y disputa más competitiva, y que el precio se movió en la dirección de ese encuadre. Misma dirección no es causa, y la lectura se detiene acá.`,
+  'cards.sentimento.direita':
+    `El segundo subió 2,00pp, de 29,45% a 31,45% (vol USD 8,46M acumulado), ${CAR}, en su cuarto día seguido de alza y en el mayor movimiento del día entre los contratos grandes. ⛔ No es récord: de los 90 días de la serie desde el 19 de may, 2 están por encima, y el máximo es 33,20%, del 2 de jun. En la encuesta llegó a 36%, y la distancia hacia el líder quedó igual.`,
+  'cards.sentimento.esquerda':
+    `El líder cayó 2,00pp, de 66,50% a 64,50% (vol USD 8,52M acumulado), ${CAR}, devolviendo exactamente lo que había subido la víspera. De los 90 días de la serie, 5 están por encima del cierre de hoy, y el máximo sigue en 66,50%, del 1 de ago. En la encuesta llegó a 41% en la primera vuelta y repitió 47% en el balotaje.`,
+  'cards.sentimento.terceiraVia':
+    `🔴 El pelotón volvió a caer en el precio de VICTORIA y se movió al revés en la POSICIÓN. Renan Santos pasó de 4,70% a 4,05%, por debajo del piso de 4,80% registrado en la serie de 90 días, y Ronaldo Caiado pasó de 0,60% a 0,25%, por debajo del piso de 0,50%. ⭐ En el contrato de TERCER LUGAR de la primera vuelta, en cambio, Caiado SUBIÓ de 37,50% a 38,50% y Renan cedió de 53,00% a 52,50%, con la distancia entre ellos achicándose de 15,50pp a 14,00pp. ⭐ Y la encuesta invierte el orden del mercado: la BTG/Nexus le da 5% a Caiado contra 4% de Renan Santos.`,
+  'cards.sentimento.polymarket':
+    `LECTURA CONFIRMADA NUEVA EL 17 DE AGO para TODOS los contratos seguidos, ${CAR}. 📌 La traba de captura se corrió DOS veces, en ventanas separadas, y aprobó en las dos. Volumen acumulado del book presidencial: USD 126,85M. ⚠️ Salvedad de forma declarada: el contrato de Renan Santos es fino y osciló entre 3,75% y 4,15% en menos de diez minutos durante la captura, así que el movimiento en él merece una lectura más floja que la de los dos primeros.`,
+
+  // ---------------- INSS ----------------
+  'cards.inss.text1':
+    `⭐ HECHO NUEVO EL 17 DE AGO, y es de investigación, no de intención de voto. La Policía Federal encontró un mensaje en el que Fábio Luís Lula da Silva y una lobista investigada por fraudes en el INSS tratan de negocios, según Poder360.`,
+  'cards.inss.text2':
+    `El caso entró en la campaña el mismo día: el segundo y su hermano criticaron públicamente el episodio, según Poder360. Es la primera vez desde que el panel sigue el tema que el asunto aparece en el discurso de campaña de los dos lados el mismo día.`,
+  'cards.inss.text3':
+    `La distinción que el panel mantiene desde el inicio sigue vigente: una cosa es el efecto sobre la evaluación de la gestión, otra es el efecto sobre la intención de voto. Las dos no se suman y el panel no las trata como la misma medida.`,
+  'cards.inss.text4':
+    `⚠️ La evaluación de gobierno más reciente es la de la BTG/Nexus de hoy, con 42% de malo o pésimo, 34% de excelente o bueno y 23% de regular. ⛔ El panel NO publica el par aprobación y desaprobación de esta ronda, porque los medios divergieron entre 47% contra 48% y 46% contra 49%, y el sitio de la casa no trajo el dato.`,
+  'cards.inss.impactoLula':
+    `No aislable. En la encuesta de hoy subió 1 punto en la primera vuelta, de 40% a 41%, y repitió 47% en el balotaje. Ninguno de los dos movimientos se distingue de la estabilidad dentro del margen de 2pp, y ninguna pregunta de la ronda atribuye variación a este caso.`,
+  'cards.inss.impactoGestao':
+    `La evaluación sigue con saldo negativo: 42% de malo o pésimo contra 34% de excelente o bueno en la BTG/Nexus de hoy, una distancia de 8 puntos. El panel registra el saldo y no se lo atribuye a este caso, porque la encuesta no hace esa pregunta.`,
+  'cards.inss.conclusao':
+    `El caso salió del campo exclusivamente policial y entró en el discurso de campaña el 17 de ago, con el mensaje encontrado por la Policía Federal siendo usado públicamente por el segundo el mismo día. Sigue sin traducción medible en intención de voto: la única encuesta de la ventana muestra al líder estable dentro del margen.`,
+
+  // ---------------- BANCO MASTER ----------------
+  'cards.bancoMaster.text1':
+    `⭐ EL HECHO NUEVO DEL 17 DE AGO es de ejecución patrimonial. La Policía Federal incautó en Paraguay el avión de Daniel Vorcaro y lo trajo a Brasilia, según Poder360 y Diário do Comércio. La aeronave está valuada en R$ 120 millones y tiene bloqueo judicial.`,
+  'cards.bancoMaster.text2':
+    `El 15 de ago, Valor Econômico ya había informado que la fabricante de un yate de R$ 2 mil millones que perteneció a Vorcaro fue accionada, y el movimiento de hoy es de la misma naturaleza: recuperación de bienes, y no decisión sobre el fondo del caso.`,
+  'cards.bancoMaster.text3':
+    `⚠️ El panel separa las dos cosas a propósito. Incautar un bien es medida cautelar y no es condena, y el caso sigue sin desenlace judicial. Los movimientos anteriores siguen vigentes, entre ellos el efecto regulatorio del 16 de ago, con las previsionales revisando regla de inversión, según Estadão.`,
+  'cards.bancoMaster.conclusao':
+    `El 17 de ago el caso produjo un acto de ejecución patrimonial internacional, con la Policía Federal localizando y repatriando desde Paraguay un avión de R$ 120 millones. Sigue sin traducción alguna en precio: el panel no sigue ningún contrato ligado a este caso, y ninguna encuesta de la ventana pregunta por él.`,
+
+  // ---------------- STF ----------------
+  'cards.stf.toffoli': `Sin acto individual nuevo capturado el 17 de ago.`,
+  'cards.stf.moraes':
+    `⭐ HECHO NUEVO Y VIENE DE AFUERA. El gobierno de los Estados Unidos evalúa imponer nuevas sanciones contra él, según un reportaje del Financial Times publicado en Brasil por Valor Econômico y G1. Es la segunda vez en dos días que el tema aparece en la recolección, tras la información de VEJA el 16 de ago.`,
+  'cards.stf.gilmar':
+    `Sin acto individual nuevo el 17 de ago. Sigue vigente la determinación del 12 de ago, en la que él, Moraes, Dino y Zanin mantuvieron una decisión conjunta.`,
+  'cards.stf.dino':
+    `⭐ Acto nuevo el 17 de ago: apartó al sobrino del gobernador de Maranhão de la presidencia del Tribunal de Cuentas del Estado.`,
+  'cards.stf.mendonca': `Sin acto individual nuevo el 17 de ago.`,
+  'cards.stf.nexo':
+    `⭐ EL NEXO DEL 17 DE AGO TIENE DOS PUNTAS Y SON DE NATURALEZAS DISTINTAS. Una es EXTERNA: los Estados Unidos evaluando nuevas sanciones contra un ministro, o sea presión de otro Estado sobre el tribunal. La otra es INSTITUCIONAL y brasileña: el colegio de abogados de São Paulo propuso al Supremo un mandato de 12 años para los ministros y una edad mínima de 50 años, es decir, una propuesta de cambio en la propia composición de la corte. ⚠️ El panel registra las dos y no las trata como lo mismo: una sanción es un acto de política exterior, una propuesta de mandato es un debate de diseño institucional.`,
+  'cards.stf.analise':
+    `LECTURA CONFIRMADA NUEVA EL 17 DE AGO para el contrato de impeachment de ministro del Supremo, ${CAR}: 3,40% (vol USD 84 mil). QUIETO, sin variación contra el 16 de ago. ⚠️ Sigue siendo el contrato más fino entre los seguidos, con volumen tres órdenes de magnitud por debajo del presidencial, y cualquier movimiento en él exige esa salvedad antes de volverse lectura. 📌 El contraste del día vale el registro: el tribunal tuvo dos noticias relevantes, una de presión externa y una de propuesta de cambio de mandato, y el precio no se movió una centésima.`,
+})

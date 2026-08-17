@@ -1,0 +1,67 @@
+/**
+ * Mapa EN de 17/Ago para analysis-data.json.
+ * Convenções EN: PONTO decimal e VÍRGULA de milhar.
+ */
+import { construir } from '../build-locale-json'
+
+const STAMP = 'confirmed reading of Aug 17, 6:48 PM BRT (9:48 PM UTC)'
+
+construir('analysis-data', 'en', {
+  updatedAt: `08/17/2026, 18:48`,
+
+  // ---------------- SENTIMENTO ----------------
+  'cards.sentimento.text1':
+    `48 days out from the first round, the day brought BOTH things at once, and they disagreed. The first national poll since Aug 14 was released, BTG/Nexus (n=2,003, field Aug 14 to 16, TSE registration BR-03317/2026, margin of 2pp), and there was a confirmed price reading for every contract.`,
+  'cards.sentimento.text2':
+    `⭐ THE FINDING IS THE DISAGREEMENT IN DIRECTION. The poll showed stability: the leader went from 40% to 41%, the runner-up from 35% to 36%, and the DISTANCE between them stayed at the same 5 points. In the runoff scenario the result repeated 47 to 44, number for number. Each 1-point move fits entirely inside the house's own 2pp margin. On the same day the price closed 4.00pp of that distance, from 37.05pp to 33.05pp.`,
+  'cards.sentimento.text3':
+    `⛔ THE PANEL DOES NOT SAY THE PRICE REACTED TO THE POLL, and the reason is arithmetic: the poll shortened nothing, so it does not explain a 4-point shortening. What can be recorded is that the press framed the runner-up's 1-point gain as an advance and a more competitive race, and that the price moved in the direction of that framing. Same direction is not cause, and the reading stops here.`,
+  'cards.sentimento.direita':
+    `The runner-up rose 2.00pp, from 29.45% to 31.45% (vol USD 8.46M accumulated), ${STAMP}, on his fourth straight day of gains and in the largest single move of the day among the big contracts. ⛔ Not a record: of the 90 days in the series since May 19, 2 are above it, and the high is 33.20%, from Jun 2. In the poll he reached 36%, and the distance to the leader stayed the same.`,
+  'cards.sentimento.esquerda':
+    `The leader fell 2.00pp, from 66.50% to 64.50% (vol USD 8.52M accumulated), ${STAMP}, giving back exactly what he had gained the day before. Of the 90 days in the series, 5 are above today's close, and the high remains 66.50%, from Aug 1. In the poll he reached 41% in the first round and repeated 47% in the runoff.`,
+  'cards.sentimento.terceiraVia':
+    `🔴 The pack fell again in the WIN contracts and moved the other way in POSITION. Renan Santos went from 4.70% to 4.05%, below the 4.80% floor recorded in the 90-day series, and Ronaldo Caiado went from 0.60% to 0.25%, below the 0.50% floor. ⭐ In the first-round THIRD PLACE contract, however, Caiado ROSE from 37.50% to 38.50% and Renan gave up ground from 53.00% to 52.50%, with the distance between them closing from 15.50pp to 14.00pp. ⭐ And the poll inverts the market's ordering: BTG/Nexus gives Caiado 5% against Renan Santos's 4%.`,
+  'cards.sentimento.polymarket':
+    `NEW CONFIRMED READING ON Aug 17 for ALL tracked contracts, ${STAMP}. 📌 The capture guard was run TWICE, in separate windows, and approved both times. Accumulated volume in the presidential book: USD 126.85M. ⚠️ Declared caveat on form: the Renan Santos contract is thin and swung between 3.75% and 4.15% in under ten minutes during the capture, so movement in it deserves a looser reading than in the top two.`,
+
+  // ---------------- INSS ----------------
+  'cards.inss.text1':
+    `⭐ NEW DEVELOPMENT ON Aug 17, and it belongs to the investigation, not to vote intention. The Federal Police found a message in which Fábio Luís Lula da Silva and a lobbyist under investigation for INSS fraud discuss business, according to Poder360.`,
+  'cards.inss.text2':
+    `The case entered the campaign the same day: the runner-up and his brother publicly criticised the episode, according to Poder360. It is the first time since the panel began tracking the subject that it appears in campaign speech from both sides on the same day.`,
+  'cards.inss.text3':
+    `The distinction the panel has kept from the start still holds: one thing is the effect on the assessment of the administration, another is the effect on vote intention. The two do not add up and the panel does not treat them as the same measure.`,
+  'cards.inss.text4':
+    `⚠️ The most recent government assessment is the BTG/Nexus released today, with 42% rating it bad or terrible, 34% excellent or good and 23% average. ⛔ The panel does NOT publish the approve-and-disapprove pair from this round, because outlets diverged between 47% against 48% and 46% against 49%, and the pollster's own site did not carry the figure.`,
+  'cards.inss.impactoLula':
+    `Not isolable. In today's poll he rose 1 point in the first round, from 40% to 41%, and repeated 47% in the runoff. Neither move is distinguishable from stability inside the 2pp margin, and no question in the round attributes any variation to this case.`,
+  'cards.inss.impactoGestao':
+    `The assessment still carries a negative balance: 42% bad or terrible against 34% excellent or good in today's BTG/Nexus, a distance of 8 points. The panel records the balance and does not attribute it to this case, because the poll does not ask that question.`,
+  'cards.inss.conclusao':
+    `The case moved out of the purely police sphere and into campaign speech on Aug 17, with the message found by the Federal Police being used publicly by the runner-up the same day. It still has no measurable translation into vote intention: the only poll in the window shows the leader stable inside the margin.`,
+
+  // ---------------- BANCO MASTER ----------------
+  'cards.bancoMaster.text1':
+    `⭐ THE NEW DEVELOPMENT ON Aug 17 is asset enforcement. The Federal Police seized Daniel Vorcaro's aircraft in Paraguay and brought it to Brasília, according to Poder360 and Diário do Comércio. The aircraft is valued at R$ 120 million and is subject to a judicial freeze.`,
+  'cards.bancoMaster.text2':
+    `On Aug 15, Valor Econômico had already reported that the builder of a R$ 2 billion yacht once owned by Vorcaro had been served, and today's move is of the same nature: asset recovery, not a ruling on the merits of the case.`,
+  'cards.bancoMaster.text3':
+    `⚠️ The panel separates the two on purpose. Seizing an asset is a precautionary measure and is not a conviction, and the case still has no judicial outcome. Earlier developments still stand, among them the regulatory effect of Aug 16, with pension funds revising an investment rule, according to Estadão.`,
+  'cards.bancoMaster.conclusao':
+    `On Aug 17 the case produced an act of international asset enforcement, with the Federal Police locating and repatriating a R$ 120 million aircraft from Paraguay. It still has no translation into price: the panel tracks no contract tied to this case, and no poll in the window asks about it.`,
+
+  // ---------------- STF ----------------
+  'cards.stf.toffoli': `No new individual act captured on Aug 17.`,
+  'cards.stf.moraes':
+    `⭐ NEW DEVELOPMENT AND IT COMES FROM ABROAD. The United States government is weighing new sanctions against him, according to a Financial Times report published in Brazil by Valor Econômico and G1. It is the second time in two days the subject appears in the collection, after VEJA's report on Aug 16.`,
+  'cards.stf.gilmar':
+    `No new individual act on Aug 17. The Aug 12 ruling still stands, in which he, Moraes, Dino and Zanin upheld a joint decision.`,
+  'cards.stf.dino':
+    `⭐ New act on Aug 17: he removed the nephew of the governor of Maranhão from the presidency of the State Court of Auditors.`,
+  'cards.stf.mendonca': `No new individual act on Aug 17.`,
+  'cards.stf.nexo':
+    `⭐ THE THROUGH-LINE ON Aug 17 HAS TWO ENDS AND THEY ARE OF DIFFERENT NATURES. One is EXTERNAL: the United States weighing new sanctions against a justice, which is pressure from another state on the court. The other is INSTITUTIONAL and Brazilian: the São Paulo bar association proposed to the Supreme Court a 12-year term for justices and a minimum age of 50, that is, a proposed change to the court's own composition. ⚠️ The panel records both and does not treat them as the same thing: a sanction is an act of foreign policy, a term proposal is a debate about institutional design.`,
+  'cards.stf.analise':
+    `NEW CONFIRMED READING ON Aug 17 for the Supreme Court justice impeachment contract, ${STAMP}: 3.40% (vol USD 84 thousand). FLAT, with no variation against Aug 16. ⚠️ It remains the thinnest contract among those tracked, with volume three orders of magnitude below the presidential book, and any movement in it requires that caveat before it becomes a reading. 📌 The contrast of the day is worth recording: the court had two relevant pieces of news, one of external pressure and one of a proposed change of term, and the price did not move a hundredth.`,
+})
