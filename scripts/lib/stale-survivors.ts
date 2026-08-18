@@ -27,7 +27,31 @@ import { parseNumeric } from './numeric'
  */
 
 const MARCADOR_PASSADO =
-  /\b(depois de|antes de|vinha|estava|desde|ontem|na v[ée]spera|era|fechou|marcou|abriu|partiu|voltou|saiu de|no dia|em \d{1,2}\/\w{3}|de\s+[\d.,]+%\s+para|contra os|ante os|frente aos)\b/i
+  /\b(depois de|antes de|vinha|estava|desde|ontem|na v[ée]spera|era|fechou|marcou|abriu|partiu|voltou|saiu de|no dia|em \d{1,2}\/\w{3}|contra os|ante os|frente aos)\b/i
+
+/**
+ * 🔴 MARCADOR POSPOSTO, e ele existe por um defeito achado em 17/Ago/2026.
+ *
+ * A lista acima tinha `de\s+[\d.,]+%\s+para`, para autorizar a construção
+ * legítima "de 70,50% para 74,00%". Só que a checagem testa os 45 caracteres
+ * ANTES da agulha, e nessa construção o número É a agulha: ele nunca está no
+ * trecho anterior. **O marcador era INALCANÇÁVEL**, e o portão acusava
+ * exatamente a forma que o comentário dele dizia querer permitir.
+ *
+ * Custou quatro falsos positivos numa rodada só, todos em texto correto, e o
+ * padrão morto foi removido daquela lista.
+ *
+ * O que qualifica como referência legítima quando vem DEPOIS do número:
+ *  1. `para Y%`  → é transição, o número citado é o ponto de partida
+ *  2. `, de 01/Ago` ou `, em 01/Ago` → é valor com data declarada, tipicamente
+ *     topo ou piso de série, e não preço em tempo presente
+ *
+ * ⚠️ Nenhum dos dois cobre o defeito que o detector persegue. O caso de 24/Jul
+ * era "Aos 11,95%, o preço segue acima": não tem `para Y%` depois nem data
+ * depois, então continua sendo acusado, que é o certo.
+ */
+const MARCADOR_POSPOSTO =
+  /^\s*(?:para\s+[\d.,]+\s*%|,?\s*(?:de|em)\s+\d{1,2}\/\w{3})/i
 
 export interface Residuo {
   candidato: string
@@ -183,6 +207,8 @@ export function checkStaleSurvivors(
       while ((i = txt.indexOf(agulha, i + 1)) >= 0) {
         const antes = txt.slice(Math.max(0, i - 45), i)
         if (MARCADOR_PASSADO.test(antes)) continue   // referência histórica legítima
+        const depois = txt.slice(i + agulha.length, i + agulha.length + 45)
+        if (MARCADOR_POSPOSTO.test(depois)) continue // "de X% PARA Y%" e "X%, de 01/Ago"
         erros.push(
           `RESÍDUO ${c.name}.${campo}: cita ${agulha} em tempo presente, mas esse era o ` +
           `valor da publicação anterior. O preço atual é ${comoNaProsa(agora)}. ` +
