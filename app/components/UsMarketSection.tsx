@@ -50,6 +50,8 @@ const T = {
     prazo: 'A eleição acontece na data prevista',
     volume: 'Volume',
     soma: 'soma das faixas',
+    somaPar: 'soma do par',
+    normalizado: 'normalizado',
     soForma: 'só a forma, sem número',
     instavelNota: (s: string, fora: number, n: number) => `A soma está em ${s} agora, dentro do portão, mas ficou fora em ${fora} das ${n} leituras das últimas 24 horas. O quadro só mostra número quando o livro fecha em todas elas, para não trocar de estado a cada atualização.`,
     amplitude24h: (a: string, b: string) => `(variou de ${a}% a ${b}% em 24h)`,
@@ -60,7 +62,7 @@ const T = {
       `As faixas somam ${s} e se sobrepõem: uma delas é "qualquer outro resultado" e as demais são cumulativas. Coletado todo dia; entra quando a estrutura mudar.`,
     metodoFaixasTitulo: 'Quando as faixas não somam 100%',
     metodoFaixas:
-      'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando não somam, o AFOS mostra a FORMA da distribuição, que é o tamanho relativo das faixas, e NÃO mostra número. Até 10/Ago/2026 o AFOS dividia cada faixa pela soma e trocava a etiqueta. Parou, porque dividir tudo pelo mesmo fator supõe que o sobrepreço está espalhado por igual, e isso dá para testar: se fosse uniforme, a fatia normalizada de um grupo de faixas não mudaria quando a soma bruta mudasse. No book de cadeiras do Senado ela mudou junto, em três leituras, o que localiza o excesso na cauda. Ali dividir por igual não tira o excesso, só o espalha errado. Acima de 100% a causa é a margem de quem opera o livro; abaixo de 100% é outra coisa, preço velho ou faixa sem preço, e nesse caso multiplicar para cima entregaria às demais a massa que falta. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há ainda um caso que fica inteiramente fora: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas.',
+      'Cada faixa tem um preço que funciona como uma chance, e como uma delas vai acontecer, todas somadas deveriam dar 100%. Quando não somam, o AFOS mostra a FORMA da distribuição, que é o tamanho relativo das faixas, e NÃO mostra número. Até 10/Ago/2026 o AFOS dividia cada faixa pela soma e trocava a etiqueta. Parou, porque dividir tudo pelo mesmo fator supõe que o sobrepreço está espalhado por igual, e isso dá para testar: se fosse uniforme, a fatia normalizada de um grupo de faixas não mudaria quando a soma bruta mudasse. No book de cadeiras do Senado ela mudou junto, em três leituras, o que localiza o excesso na cauda. Ali dividir por igual não tira o excesso, só o espalha errado. Acima de 100% a causa é a margem de quem opera o livro; abaixo de 100% é outra coisa, preço velho ou faixa sem preço, e nesse caso multiplicar para cima entregaria às demais a massa que falta. A soma bruta fica impressa em cada quadro, para a conta continuar conferível. Há ainda um caso que fica inteiramente fora: quando as faixas se sobrepõem, como no mercado de margem do voto popular, que tem um "qualquer outro resultado" e faixas cumulativas. Nos dois contratos de CONTROLE de cada casa é diferente, e desde 18/Ago/2026 eles mostram as duas leituras lado a lado. Ali são só dois desfechos, um para cada partido, e não existe cauda onde o excesso possa se concentrar, então dividir pela soma é a forma padrão de tirar a margem do livro. O quadro traz o PREÇO, que é quanto o contrato custa, e o NORMALIZADO, que é o preço dividido pela soma do par. A diferença aparece nos dias em que os dois lados andam juntos: em 18/Ago os dois subiram 1,00pp, o preço democrata no Senado "subiu" de 50,50% para 51,50%, e normalizado ele foi de 51,01% para 50,99%. Nenhuma das duas leituras é a certa sozinha, e por isso as duas ficam na tela.',
     clicavel: 'Clique em qualquer ponto de um quadro para abrir a aposta real no Polymarket, com as cotações ao vivo.',
     abrirEm: 'abrir no Polymarket',
     limitacaoTitulo: 'O que este número é, e o que não é',
@@ -91,6 +93,8 @@ const T = {
     prazo: 'The election happens as scheduled',
     volume: 'Volume',
     soma: 'bands total',
+    somaPar: 'pair total',
+    normalizado: 'normalized',
     soForma: 'shape only, no numbers',
     instavelNota: (s: string, fora: number, n: number) => `The total is ${s} right now, inside the gate, but it fell outside in ${fora} of the ${n} readings over the last 24 hours. The card only shows numbers when the book closes on all of them, so it does not switch state on every refresh.`,
     amplitude24h: (a: string, b: string) => `(ranged from ${a}% to ${b}% in 24h)`,
@@ -101,7 +105,7 @@ const T = {
       `The bands add to ${s} and overlap: one is "any other outcome" and the rest are cumulative. Collected daily; it appears when the structure changes.`,
     metodoFaixasTitulo: 'When the bands do not add to 100%',
     metodoFaixas:
-      'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they do not, AFOS shows the SHAPE of the distribution, which is the relative size of the bands, and shows NO number. Until Aug 10, 2026 AFOS divided each band by the total and changed the label. It stopped, because dividing everything by the same factor assumes the overpricing is spread evenly, and that can be tested: if it were uniform, the normalized share of a group of bands would not change when the raw total changed. In the Senate seats book it moved along with it, across three readings, which places the excess in the tail. There, dividing evenly does not remove the excess, it just spreads it wrongly. Above 100% the cause is the margin of whoever runs the book; below 100% it is something else, stale prices or a band with no price, and there scaling up would hand the missing mass to the others. The raw total stays printed on every panel, so the arithmetic remains checkable. One case stays out entirely: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones.',
+      'Each band carries a price that works like a chance, and since one of them will happen, all of them together should add to 100%. When they do not, AFOS shows the SHAPE of the distribution, which is the relative size of the bands, and shows NO number. Until Aug 10, 2026 AFOS divided each band by the total and changed the label. It stopped, because dividing everything by the same factor assumes the overpricing is spread evenly, and that can be tested: if it were uniform, the normalized share of a group of bands would not change when the raw total changed. In the Senate seats book it moved along with it, across three readings, which places the excess in the tail. There, dividing evenly does not remove the excess, it just spreads it wrongly. Above 100% the cause is the margin of whoever runs the book; below 100% it is something else, stale prices or a band with no price, and there scaling up would hand the missing mass to the others. The raw total stays printed on every panel, so the arithmetic remains checkable. One case stays out entirely: when the bands overlap, as in the popular-vote margin market, which has an "any other outcome" band alongside cumulative ones. The two CONTROL contracts for each chamber are different, and since 2026-08-18 they show both readings side by side. There are only two outcomes there, one per party, and no tail for the excess to concentrate in, so dividing by the total is the standard way to strip the book operatorâs margin. The card carries the PRICE, which is what the contract costs, and the NORMALIZED value, which is the price divided by the pair total. The difference shows up on days when both sides move together: on 2026-08-18 both rose 1.00pp, the Democratic Senate price "rose" from 50.50% to 51.50%, and normalized it went from 51.01% to 50.99%. Neither reading is the right one on its own, which is why both stay on screen.',
     clicavel: 'Click anywhere on a box to open the real market on Polymarket, with live odds.',
     abrirEm: 'open on Polymarket',
     limitacaoTitulo: 'What this number is, and what it is not',
@@ -132,6 +136,8 @@ const T = {
     prazo: 'La elección ocurre en la fecha prevista',
     volume: 'Volumen',
     soma: 'suma de las bandas',
+    somaPar: 'suma del par',
+    normalizado: 'normalizado',
     soForma: 'solo la forma, sin números',
     instavelNota: (s: string, fora: number, n: number) => `La suma está en ${s} ahora, dentro de la compuerta, pero quedó fuera en ${fora} de las ${n} lecturas de las últimas 24 horas. El cuadro solo muestra número cuando el libro cierra en todas ellas, para no cambiar de estado en cada actualización.`,
     amplitude24h: (a: string, b: string) => `(varió de ${a}% a ${b}% en 24h)`,
@@ -142,7 +148,7 @@ const T = {
       `Las bandas suman ${s} y se superponen: una es "cualquier otro resultado" y las demás son acumulativas. Se recolecta a diario; entra cuando cambie la estructura.`,
     metodoFaixasTitulo: 'Cuando las bandas no suman 100%',
     metodoFaixas:
-      'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando no suman, AFOS muestra la FORMA de la distribución, que es el tamaño relativo de las bandas, y NO muestra número. Hasta el 10/Ago/2026 AFOS dividía cada banda por la suma y cambiaba la etiqueta. Dejó de hacerlo, porque dividir todo por el mismo factor supone que el sobreprecio está repartido por igual, y eso se puede probar: si fuera uniforme, la participación normalizada de un grupo de bandas no cambiaría cuando cambiara la suma bruta. En el libro de escaños del Senado se movió junto con ella, en tres lecturas, lo que ubica el exceso en la cola. Ahí dividir por igual no saca el exceso, solo lo reparte mal. Por encima de 100% la causa es el margen de quien opera el libro; por debajo de 100% es otra cosa, precio viejo o banda sin precio, y ahí multiplicar hacia arriba entregaría a las demás la masa que falta. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso que queda enteramente fuera: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas.',
+      'Cada banda tiene un precio que funciona como una chance, y como una de ellas va a ocurrir, todas sumadas deberían dar 100%. Cuando no suman, AFOS muestra la FORMA de la distribución, que es el tamaño relativo de las bandas, y NO muestra número. Hasta el 10/Ago/2026 AFOS dividía cada banda por la suma y cambiaba la etiqueta. Dejó de hacerlo, porque dividir todo por el mismo factor supone que el sobreprecio está repartido por igual, y eso se puede probar: si fuera uniforme, la participación normalizada de un grupo de bandas no cambiaría cuando cambiara la suma bruta. En el libro de escaños del Senado se movió junto con ella, en tres lecturas, lo que ubica el exceso en la cola. Ahí dividir por igual no saca el exceso, solo lo reparte mal. Por encima de 100% la causa es el margen de quien opera el libro; por debajo de 100% es otra cosa, precio viejo o banda sin precio, y ahí multiplicar hacia arriba entregaría a las demás la masa que falta. La suma bruta queda impresa en cada cuadro, para que la cuenta siga siendo verificable. Hay un caso que queda enteramente fuera: cuando las bandas se superponen, como en el mercado de margen del voto popular, que tiene un "cualquier otro resultado" junto a bandas acumulativas. En los dos contratos de CONTROL de cada cÃ¡mara es distinto, y desde el 18/08/2026 muestran las dos lecturas lado a lado. AllÃ­ son solo dos resultados, uno por partido, y no existe cola donde el exceso pueda concentrarse, asÃ­ que dividir por la suma es la forma estÃ¡ndar de quitar el margen del libro. El cuadro trae el PRECIO, que es cuÃ¡nto cuesta el contrato, y el NORMALIZADO, que es el precio dividido por la suma del par. La diferencia aparece en los dÃ­as en que los dos lados se mueven juntos: el 18/08/2026 los dos subieron 1,00pp, el precio demÃ³crata en el Senado "subiÃ³" de 50,50% a 51,50%, y normalizado fue de 51,01% a 50,99%. Ninguna de las dos lecturas es la correcta por sÃ­ sola, y por eso las dos quedan en pantalla.',
     clicavel: 'Haga clic en cualquier punto de un recuadro para abrir la apuesta real en Polymarket, con las cotizaciones en vivo.',
     abrirEm: 'abrir en Polymarket',
     limitacaoTitulo: 'Qué es este número, y qué no es',
@@ -543,12 +549,45 @@ export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketD
         {controle.map(({ rotulo, ev }) => {
           const fs = faixas(ev).sort((a, b) => b.pct - a.pct)
           if (!fs.length) return null
+
+          /**
+           * 🔴 O PAR BINÁRIO GANHOU O NORMALIZADO AO LADO DO CRU, em 18/Ago/2026,
+           * por decisão do André.
+           *
+           * O que aconteceu naquele dia: os DOIS lados do Senado subiram 1,00pp
+           * cada um, de D 50,50 e R 48,50 para D 51,50 e R 49,50. A soma do par
+           * foi de 99,00% para 101,00%. Lido cru, o democrata "subiu 1,00pp".
+           * Normalizado pela soma, ele foi de 51,0101% para 50,9901%, ou seja
+           * -0,02pp. **O preço subiu um ponto e a probabilidade não subiu nada.**
+           *
+           * ⚠️ POR QUE AQUI SIM E NA DISTRIBUIÇÃO NÃO. A distribuição parou de
+           * ser normalizada em 10/Ago porque o teste do excesso uniforme mostrou
+           * que o sobrepreço se concentra na CAUDA, então dividir tudo pelo mesmo
+           * número espalha errado em vez de remover. **Num par de dois lados não
+           * existe cauda**: são dois desfechos exclusivos que cobrem todos os
+           * casos, e dividir pela soma é a remoção padrão da margem.
+           *
+           * ⛔ Mas o teste do excesso uniforme NÃO É APLICÁVEL a duas faixas: ele
+           * precisa de subgrupos para comparar. Ou seja, aqui a hipótese de que a
+           * margem se reparte proporcionalmente **não pode ser testada pelo mesmo
+           * método**, e por isso as duas leituras aparecem lado a lado em vez de o
+           * normalizado substituir o preço. Quem lê decide qual usar.
+           *
+           * 📌 A soma bruta fica impressa no cabeçalho, como já é na distribuição:
+           * nada é consertado em silêncio.
+           */
+          const somaPar = fs.reduce((a, f) => a + f.pct, 0)
+          // Só faz sentido normalizar se a soma existe e desvia de 100 o bastante
+          // para mudar algum dígito publicado. Desvio menor que isso vira ruído.
+          const valeNormalizar = somaPar > 0 && Math.abs(somaPar - 100) >= 0.1
+
           return (
             <Card key={rotulo} className={linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}>
-              <div className="mb-2 flex items-baseline justify-between gap-2">
+              <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
                 <TituloQuadro texto={rotulo} href={linkDo(ev)} abrirEm={t.abrirEm} />
                 <span className="text-[11px] text-gray-500">
                   {t.volume}: ${fmt(volumeDe(ev) / 1e6, locale)}M
+                  {somaPar > 0 && <> · {t.somaPar} {fmt(somaPar, locale, 1)}%</>}
                 </span>
               </div>
               <div className="space-y-1.5">
@@ -556,6 +595,17 @@ export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketD
                   <BarraFaixa key={f.nome} nome={f.nome} pct={f.pct} max={100} locale={locale} />
                 ))}
               </div>
+              {valeNormalizar && (
+                <p className="mt-2 text-[11px] leading-snug text-gray-500">
+                  {t.normalizado}:{' '}
+                  {fs.map((f, i) => (
+                    <span key={f.nome}>
+                      {i > 0 && ' · '}
+                      {f.nome} <span className="font-semibold tabular-nums text-gray-700">{fmt((f.pct / somaPar) * 100, locale)}%</span>
+                    </span>
+                  ))}
+                </p>
+              )}
             </Card>
           )
         })}
