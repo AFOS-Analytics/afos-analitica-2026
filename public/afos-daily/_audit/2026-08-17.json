@@ -1,0 +1,33 @@
+{
+  "data": "2026-08-17",
+  "passe": "adversarial",
+  "eventos": [
+    {"evento":"Pesquisa BTG/Nexus publicada","crossRef":"12 menções; a daily de 16/Ago já a listava como prevista para hoje","tipo":"novidade de publicação","verificacao2":"fonte primária do instituto, nexus.fsb.com.br, protocolo BR-03317/2026","segundaFonte":"Folha, UOL, Poder360, VEJA, Metrópoles","decisao":"incorporar"},
+    {"evento":"PF apreende avião de Vorcaro no Paraguai","crossRef":"6 menções, continuidade","tipo":"ato novo em caso em curso","verificacao2":"Jornal de Brasília, 17/Ago, R$ 120 mi, Operação Compliance Zero","segundaFonte":"CNN Brasil","decisao":"incorporar como ato patrimonial, não de mérito"},
+    {"evento":"Pablo Marçal na disputa","crossRef":"ZERO menções em 7 dailies","tipo":"novidade real","verificacao2":"registro pelo PRTB em 15/Ago; TRE-SP negou recurso em 05/Ago; inelegível até 2032; sub judice","segundaFonte":"BBC News Brasil, Poder360","decisao":"incorporar COM estado declarado"},
+    {"evento":"EUA avaliam novas sanções a Moraes","crossRef":"9 menções, continuidade","tipo":"desdobramento","verificacao2":"Financial Times","segundaFonte":"Valor Econômico, G1","decisao":"incorporar sem ligar a preço"}
+  ],
+  "adversarial": {
+    "singleSource": "nenhuma",
+    "numericalErrors": "reconcile-claims rodado. PEGOU ERRO REAL: a inflação era citada como parte da captura confirmada, e a trava não vigia livro de distribuição. Removida.",
+    "fontesInventadas": "3 conferidas ao acaso, todas com matéria correspondente",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. A peça declara que a pesquisa não encurtou e por isso NÃO explica o encurtamento do preço",
+    "verbosCriticos": "apreendeu com data, local e operação; inelegível com tribunal e data; negou recurso com data; zero 'ontem'"
+  },
+  "defeitosProprios": [
+    "Escrevi 'Geraldo Alckmin Kassab', misturando dois nomes. Corrigido para Gilberto Kassab, com o cargo na chapa.",
+    "Citei a inflação como parte da captura confirmada das 18:48, e a trava exclui livro de distribuição por desenho.",
+    "Linkei a palavra 'par' para o TSE só para subir a densidade de links. Link que não leva ao que promete. Removido.",
+    "Na primeira versão cortei a síntese para caber no teto, e o André apontou. REINCIDÊNCIA da crítica de 16/Ago. Refeita com 175 palavras, e as palavras vieram da repetição entre seções.",
+    "Meu gate numérico acusou divergência falsa: o regex de USD casava o 'm' de 'mil' como milhão. Corrigido, e aí deu 77 tokens idênticos nos três."
+  ],
+  "capturaEPortoes": {
+    "trava": "APROVADO às 21:39, depois BLOQUEADO duas vezes (fetch failed e discordância de 0,20pp em Flávio)",
+    "decisao": "NÃO rebaselinar. Publicada a captura confirmada das 18:48, com o movimento posterior declarado no corpo",
+    "gateNumerico": "77 tokens idênticos nos três idiomas",
+    "palavras": 898,
+    "emojis": 0,
+    "wayback": "destravou após 14 dias, arquivou 10 de 19 URLs de 04/Ago e voltou a bloquear por rajada"
+  }
+}
