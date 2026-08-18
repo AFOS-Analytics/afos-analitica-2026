@@ -577,9 +577,22 @@ export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketD
            * nada é consertado em silêncio.
            */
           const somaPar = fs.reduce((a, f) => a + f.pct, 0)
-          // Só faz sentido normalizar se a soma existe e desvia de 100 o bastante
-          // para mudar algum dígito publicado. Desvio menor que isso vira ruído.
-          const valeNormalizar = somaPar > 0 && Math.abs(somaPar - 100) >= 0.1
+          /**
+           * 🔴 A LINHA APARECE SEMPRE, decisão do André em 18/Ago/2026.
+           *
+           * A primeira versão só mostrava o normalizado quando a soma desviava
+           * de 100 em 0,1pp ou mais, para não repetir o mesmo número duas vezes.
+           * O efeito colateral era pior que a repetição: **o leitor só descobria
+           * que existe uma segunda leitura nos dias em que o livro abre**, e nos
+           * outros dias o quadro não dizia que aquele preço já tinha sido
+           * conferido contra a soma do par.
+           *
+           * Agora a linha é permanente. Quando a soma fecha em 100, ela repete o
+           * preço, e isso É a informação: diz que naquele dia não havia margem
+           * para tirar. Ausência de diferença medida e ausência de medição
+           * deixam de ter a mesma cara.
+           */
+          const valeNormalizar = somaPar > 0
 
           return (
             <Card key={rotulo} className={linkDo(ev) ? "group relative cursor-pointer transition hover:border-primary/40 hover:shadow-sm" : ""}>
