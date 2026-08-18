@@ -2,6 +2,39 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-08-17, the market series now follows the MARKET, not the panel's table
+
+### Changed — BREAKING for anyone filtering `data/market-odds-timeseries.csv` by name
+
+- **Every person now carries ONE label across the whole series.** On 2026-07-12 the source panel renamed the rows of its comparison table, and the exporter passed those labels through verbatim. The result was that the same person appeared under two names, splitting their series in two with no notice:
+
+  | Was published as | Window | Now |
+  |---|---|---|
+  | `Flávio` / `Flávio Bolsonaro` | split at 2026-07-11 | `Flávio Bolsonaro` |
+  | `Renan` / `Renan Santos` | split at 2026-07-11 | `Renan Santos` |
+  | `Zema` / `Romeu Zema` | split, **plus a 16-day hole** | `Romeu Zema` |
+  | `Caiado` | — | `Ronaldo Caiado` |
+  | `Haddad` | ended 2026-07-11 | `Fernando Haddad` |
+
+  **If you filtered this file by candidate name, re-pull it.** A filter on `Flávio` previously returned 73 of 120 rows and gave no sign that the rest existed.
+
+### Added
+
+- **`polymarketComparison` is now a source for the market series, alongside `quadroComparativo`.** The old single source was the panel's **editorial comparison table**, which carries whoever the day's piece chose to compare. It is not the set of contracts that exist. Consequences, all now fixed:
+
+  - **`Tarcísio` was never in this dataset**, across its entire history, despite carrying **USD 13.93M** of accumulated volume, the highest in the presidential book, above the leader's own. He now has **92 dates, from 2026-04-01**.
+  - **`Fernando Haddad` stopped on 2026-07-11** and now runs to the present, 113 dates.
+  - **`Pablo Marçal`**, who entered the book on 2026-08-17, would not have appeared at all.
+
+  The two sources are a **union, not a replacement**: `quadroComparativo` is the only source for the STF impeachment contract and for `Michelle Bolsonaro`.
+
+- **Coverage is now logged per name at build time**, with first and last date and a warning for any name whose series stops before the latest date. The defect this closes is that **a contract ending and the panel dropping a row looked identical** to anyone downloading the file. `Michelle Bolsonaro` (ends 2026-07-27) and `Jair Bolsonaro` (a single row, 2026-07-12) are real stops, and are now declared as such rather than inferred from silence.
+
+### Fixed
+
+- **`volume_usd_m` for the STF impeachment contract was 1000× too large in 24 rows.** See `ERRATA.md`, ERR-2026-003. Corrected in place, because this file is an aggregate and not one of the dated append-only files.
+
+
 ## 2026-08-05, price provenance is now dated everywhere
 
 ### Fixed

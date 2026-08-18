@@ -13,6 +13,7 @@
  *        datas passadas) + CSV de divergência por dia + dataset card + LICENSEs. Pronto p/ `hf upload`.
  */
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync, statSync } from 'fs'
+import { execSync } from 'child_process'
 import { join } from 'path'
 
 const ROOT = process.cwd()
@@ -102,17 +103,18 @@ function marketRowsFromCrit(crit, date) {
   return q.map((c) => {
     const mRaw = String(c.m ?? '')
     const pct = (mRaw.match(/(\d+(?:[.,]\d+)?)\s*%/) || [])[1]
-    const vol = (mRaw.match(/USD\s+([\d.,]+)\s*M/i) || [])[1]
+    const vol = volumeEmMilhoes(mRaw)
     const nm = String(c.n ?? '').match(/^(.+?)\s*\((.+)\)\s*$/)
     // A data da linha é a da MEDIÇÃO, não a da publicação do painel.
     const declarada = precoDeclaradoEm(mRaw, date)
     return {
       date: declarada || date,
       reatribuida: declarada != null && declarada !== date ? date : null,
-      candidate: nm ? nm[1].trim() : String(c.n ?? '').trim(),
+      candidate: nomeCanonicoSerie(nm ? nm[1].trim() : String(c.n ?? '').trim()),
       party: nm ? nm[2].trim() : '',
+      fonte: 'quadro',
       polymarket_pct: pct != null ? num(pct) : null,
-      volume_usd_m: vol != null ? num(vol) : null,
+      volume_usd_m: vol,
     }
   }).filter((r) => r.candidate && r.polymarket_pct != null)
 }
@@ -125,6 +127,104 @@ function marketRowsFromCrit(crit, date) {
  * Em colisão, vence a que veio do painel do PRÓPRIO dia, que é a medição
  * original, em vez da que foi reatribuída de um painel posterior.
  */
+// ---------------------------------------------------------------------------
+// NOME CANÔNICO DA SÉRIE (17/Ago/2026)
+//
+// Em 12/Jul o painel renomeou as linhas do quadroComparativo, e a série pública
+// partiu cada pessoa em DUAS: "Flávio" até 11/Jul e "Flávio Bolsonaro" a partir
+// de 12/Jul, idem "Renan"/"Renan Santos" e "Zema"/"Romeu Zema". Quem filtrasse a
+// série por um nome recebia metade dela e nada avisava.
+//
+// ⚠️ Casamento por chave EXATA normalizada, nunca por substring: "Michelle
+// Bolsonaro" e "Jair Bolsonaro" não podem cair em Flávio.
+// ⛔ Nome desconhecido NÃO é descartado nem renomeado: passa como veio.
+const semAcento = (t) => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim()
+const ALIAS_SERIE = new Map(Object.entries({
+  'flavio': 'Flávio Bolsonaro', 'flavio bolsonaro': 'Flávio Bolsonaro',
+  'renan': 'Renan Santos', 'renan santos': 'Renan Santos',
+  'zema': 'Romeu Zema', 'romeu zema': 'Romeu Zema',
+  'caiado': 'Ronaldo Caiado', 'ronaldo caiado': 'Ronaldo Caiado',
+  'haddad': 'Fernando Haddad', 'fernando haddad': 'Fernando Haddad',
+  'tarcisio': 'Tarcísio', 'tarcisio de freitas': 'Tarcísio',
+  'lula': 'Lula', 'luiz inacio lula da silva': 'Lula',
+  'michelle': 'Michelle Bolsonaro', 'michelle bolsonaro': 'Michelle Bolsonaro',
+  'marcal': 'Pablo Marçal', 'pablo marcal': 'Pablo Marçal',
+}))
+const nomeCanonicoSerie = (raw) => ALIAS_SERIE.get(semAcento(raw)) || String(raw || '').trim()
+
+// Linhas de mercado vindas de polls-data.json → polymarketComparison.candidates.
+//
+// 🔑 POR QUE ESTA FONTE EXISTE ao lado do quadroComparativo: o quadro é a TABELA
+// EDITORIAL do painel e carrega quem a peça do dia resolveu comparar. O
+// polymarketComparison carrega quem TEM CONTRATO. Tarcísio (USD 13,93M, o maior
+// volume do livro presidencial) nunca entrou no quadro, e por isso nunca existiu
+// na série pública. Marçal entrou no mercado em 17/Ago e também não entraria.
+//
+// As duas fontes se somam, não se substituem: o quadro tem o contrato de
+// impeachment do STF e a Michelle, que o comparativo não tem.
+function marketRowsFromComparison(pollsJson, fallbackDate) {
+  const cs = pollsJson?.polymarketComparison?.candidates
+  if (!Array.isArray(cs)) return []
+  return cs.map((c) => {
+    // cada candidato declara a data da PRÓPRIA medição; o topo do arquivo é o fallback
+    const date = String(c.lastUpdate || pollsJson.lastUpdate || fallbackDate || '').slice(0, 10)
+    const pct = c.odds ?? c.value ?? num((String(c.polymarket ?? '').match(/(\d+(?:[.,]\d+)?)\s*%/) || [])[1])
+    // o volume só existe na PROSA do campo de tendência; ausente vira null, nunca zero
+    const vol = volumeEmMilhoes(c.tendenciaPolymarket)
+    return {
+      date,
+      reatribuida: null,
+      candidate: nomeCanonicoSerie(c.name),
+      party: '',
+      polymarket_pct: pct != null ? num(pct) : null,
+      volume_usd_m: vol,
+      fonte: 'comparativo',
+    }
+  }).filter((r) => r.date && r.candidate && r.polymarket_pct != null)
+}
+
+// Histórico do polymarketComparison, minerado do git de polls-data.json.
+// Mesmo método já usado por build-hf-poll-results.mjs, e pela mesma razão: o
+// branch `archive` só guarda os dois analysis-*.json, então este é o ÚNICO
+// caminho para o histórico de quem nunca esteve no quadroComparativo.
+function marketRowsFromGitHistory() {
+  let shas = []
+  try {
+    shas = execSync('git log --format=%H -- public/polls-data.json', { cwd: ROOT, encoding: 'utf-8' })
+      .trim().split('\n').filter(Boolean)
+  } catch (e) { console.log('⚠️ git indisponível, histórico do comparativo pulado:', e.message); return [] }
+  const linhas = []
+  let lidos = 0
+  for (const sha of shas) {
+    let j
+    try { j = JSON.parse(execSync(`git show ${sha}:public/polls-data.json`, { cwd: ROOT, encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024 })) }
+    catch { continue }
+    const r = marketRowsFromComparison(j, null)
+    if (r.length) { linhas.push(...r); lidos++ }
+  }
+  console.log(`🕰️  histórico do comparativo: ${linhas.length} linha(s) de ${lidos}/${shas.length} versões de polls-data.json`)
+  return linhas
+}
+
+// Volume acumulado, SEMPRE em milhões de USD, que é o nome da coluna.
+//
+// 🔴 17/Ago/2026: o regex antigo era /USD\s+([\d.,]+)\s*M/i e casava o "m" de
+// "MIL". "vol USD 84 mil" virava 84 na coluna volume_usd_m, ou seja USD 84
+// milhões no lugar de USD 84 mil: erro de MIL VEZES, em 24 linhas publicadas da
+// série do impeachment do STF. É o mesmo defeito que o gate numérico da daily
+// teve no mesmo dia, e a causa é a mesma: `i` num casamento de UNIDADE.
+//
+// ⚠️ A ordem importa: "mil" tem que ser testado ANTES de "M", senão "84 mil"
+// volta a casar como milhão.
+function volumeEmMilhoes(texto) {
+  const t = String(texto ?? '')
+  const mil = t.match(/USD\s+([\d.,]+)\s*(?:mil|thousand|k)\b/i)
+  if (mil) { const v = num(mil[1]); return v == null ? null : v / 1000 }
+  const mm = t.match(/USD\s+([\d.,]+)\s*M(?![a-zA-Z])/)
+  if (mm) return num(mm[1])
+  return null
+}
+
 function dedupMarketRows(rows) {
   const porChave = new Map()
   let colisoes = 0
@@ -133,7 +233,11 @@ function dedupMarketRows(rows) {
     const atual = porChave.get(k)
     if (!atual) { porChave.set(k, r); continue }
     colisoes++
-    if (atual.reatribuida && !r.reatribuida) porChave.set(k, r)
+    // Medição original pesa mais que qualquer outra coisa (regra original).
+    // Empatado nisso, vence a linha mais COMPLETA: o quadroComparativo traz
+    // partido e volume, o comparativo às vezes traz só o preço.
+    const nota = (x) => (x.reatribuida ? 0 : 4) + (x.party ? 2 : 0) + (x.volume_usd_m != null ? 1 : 0)
+    if (nota(r) > nota(atual)) porChave.set(k, r)
   }
   return { linhas: [...porChave.values()], colisoes }
 }
@@ -154,6 +258,9 @@ const CANON = [
   ['caiado', 'Caiado'], ['zema', 'Zema'], ['renan', 'Renan'], ['haddad', 'Haddad'],
   ['tarcísio', 'Tarcísio'], ['tarcisio', 'Tarcísio'], ['camilo', 'Camilo Santana'],
   ['ratinho', 'Ratinho Jr'], ['eduardo leite', 'Eduardo Leite'], ['ciro', 'Ciro Gomes'], ['simone', 'Simone Tebet'],
+  // 17/Ago/2026: entrou no livro presidencial (0,90%, USD 1,21M) e a Datafolha de
+  // 21/Ago é a primeira a medi-lo. Sem esta linha, o cruzamento dele nasceria vazio.
+  ['marçal', 'Pablo Marçal'], ['marcal', 'Pablo Marçal'],
 ]
 // Nome que não casa com CANON é DESCARTADO da série, e por muito tempo isso
 // acontecia calado. Instrumentado em 16/Ago/2026: o descarte continua igual, mas
@@ -219,7 +326,10 @@ writeJSON(join(STAGING, 'polls', `polls-data-${date}.json`), polls)
 writeFileSync(join(STAGING, 'data', `divergence-${date}.csv`), divergenceCsv(polls, date))
 
 // série de odds de mercado — começa com hoje, recebe o histórico no backfill abaixo
-const marketRows = marketRowsFromCrit(crit, date)
+const marketRows = [
+  ...marketRowsFromCrit(crit, date),
+  ...marketRowsFromComparison(polls, date),
+]
 
 // notícias: SOMENTE metadados públicos de link (sem corpo). `queries` é objeto → Object.values.
 try {
@@ -254,6 +364,12 @@ if (HISTORY_DIR && existsSync(join(HISTORY_DIR, 'archive'))) {
   console.log('🗄️  backfill: branch archive ausente (em CI ele entra via HF_HISTORY_DIR)')
 }
 
+// ---- BACKFILL do comparativo: git de polls-data.json ----
+// Recupera quem TEM CONTRATO e nunca esteve na tabela editorial. O quadro cobre
+// 108 datas desde 17/Abr; o comparativo cobre 92 desde 01/Abr, e traz Tarcísio,
+// Haddad e Marçal, que o quadro não tem.
+marketRows.push(...marketRowsFromGitHistory())
+
 // ---- séries temporais agregadas (núcleo da robustez) ----
 //
 // Dedup por (data, candidato) DEPOIS do backfill: painéis de dias diferentes podem
@@ -272,6 +388,46 @@ if (reatribuidas.length) {
   console.log('     Motivo: o campo `m` declara preço de outra data (trava de captura bloqueada).')
 }
 if (colisoes) console.log(`🔁 dedup: ${colisoes} colisão(ões) de (data, candidato) resolvida(s), preferindo a medição original`)
+
+// ---- PARTIDO: preenche o que a fonte não trouxe, sem inventar ----
+// O comparativo não tem campo de partido. O índice sai de quem JÁ declara o
+// partido: as linhas do quadroComparativo e o registro de pesquisa do TSE.
+// ⛔ Nome sem partido em nenhuma das duas fontes fica VAZIO, não é chutado.
+const idxPartido = new Map()
+for (const r of marketRowsFinal) if (r.party && !idxPartido.has(r.candidate)) idxPartido.set(r.candidate, r.party)
+try {
+  const np = readJSON(join(ASSETS, 'polls', 'national-polls.json'))
+  for (const pp of np.polls || []) for (const sc of pp.scenarios || []) for (const rr of sc.results || []) {
+    const m = String(rr.candidate ?? '').match(/^(.+?)\s*\((.+)\)\s*$/)
+    if (!m) continue
+    const nome = nomeCanonicoSerie(m[1])
+    if (!idxPartido.has(nome)) idxPartido.set(nome, m[2].trim())
+  }
+} catch {}
+let preenchidos = 0
+for (const r of marketRowsFinal) if (!r.party && idxPartido.has(r.candidate)) { r.party = idxPartido.get(r.candidate); preenchidos++ }
+if (preenchidos) console.log(`🏷️  partido preenchido em ${preenchidos} linha(s) a partir do quadro e do registro TSE`)
+
+// ---- COBERTURA por nome: ausência tem que ser VISÍVEL ----
+// O defeito que este bloco existe para não deixar voltar: a série sumia com um
+// nome e ninguém via, então "o contrato acabou" e "a tabela parou de listar"
+// tinham exatamente a mesma cara para quem baixasse o dataset.
+{
+  const porNome = new Map()
+  for (const r of marketRowsFinal) {
+    const e = porNome.get(r.candidate) || { n: 0, primeira: r.date, ultima: r.date, fontes: new Set() }
+    e.n++; e.fontes.add(r.fonte || '?')
+    if (r.date < e.primeira) e.primeira = r.date
+    if (r.date > e.ultima) e.ultima = r.date
+    porNome.set(r.candidate, e)
+  }
+  const ultimaData = marketRowsFinal.reduce((m, r) => (r.date > m ? r.date : m), '')
+  console.log(`🔍 cobertura da série, ${porNome.size} nomes:`)
+  for (const [nome, e] of [...porNome.entries()].sort((a, b) => b[1].n - a[1].n)) {
+    const encerrado = e.ultima < ultimaData ? `  ⚠️ sem linha desde ${e.ultima}` : ''
+    console.log(`     ${String(e.n).padStart(4)}x  ${nome.padEnd(22)} ${e.primeira} → ${e.ultima}  [${[...e.fontes].join('+')}]${encerrado}`)
+  }
+}
 
 writeFileSync(join(STAGING, 'data', 'market-odds-timeseries.csv'), marketTimeseriesCsv(marketRowsFinal))
 console.log(`📈 market-odds-timeseries: ${marketRowsFinal.length} linhas, ${new Set(marketRowsFinal.map((r) => r.date)).size} datas`)

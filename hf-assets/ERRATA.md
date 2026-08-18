@@ -156,3 +156,62 @@ Este conjunto de datos es **fechado y aditivo**. Los archivos de fechas ya cerra
 ---
 
 *No other errata recorded. · Nenhuma outra errata registrada. · Ninguna otra errata registrada.*
+
+---
+
+## EN
+
+### ERR-2026-003 · `data/market-odds-timeseries.csv` · STF impeachment volume was 1000× too large
+
+| | Value |
+|---|---|
+| **Affected rows** | 24 rows, `candidate = STF impeachment`, 2026-07-12 to 2026-08-17 |
+| **Published** | `volume_usd_m` between `74` and `100` |
+| **Correct** | `volume_usd_m` between `0.074` and `0.100` |
+| **Magnitude** | **factor of 1000** |
+| **Detected** | 2026-08-17 |
+| **Status** | **Corrected in place.** This file is an aggregate, rebuilt on every mirror run, so unlike the dated files it is not append-only. |
+
+**Cause.** The source panel writes this contract's volume as `vol USD 84 mil` (Portuguese for *thousand*), while every other contract is written as `vol USD 8,52M`. The exporter mined the number with `/USD\s+([\d.,]+)\s*M/i`, and the case-insensitive flag made it match the **m of "mil"**. It read 84 thousand as 84 million.
+
+**Reach.** No other file is affected: `volume_usd_m` exists only in this file, and no other contract in the series is quoted in thousands.
+
+**Prevention.** Volume is now parsed by a single function that tests `mil|thousand|k` **before** `M`, requires `M` not to be followed by a letter, and converts thousands to millions rather than dropping them.
+
+## PT-BR
+
+### ERR-2026-003 · `data/market-odds-timeseries.csv` · volume do impeachment do STF saiu MIL VEZES maior
+
+| | Valor |
+|---|---|
+| **Linhas afetadas** | 24 linhas, `candidate = STF impeachment`, de 12/07/2026 a 17/08/2026 |
+| **Publicado** | `volume_usd_m` entre `74` e `100` |
+| **Correto** | `volume_usd_m` entre `0,074` e `0,100` |
+| **Magnitude** | **fator de 1000** |
+| **Detectado** | 17/08/2026 |
+| **Situação** | **Corrigido no lugar.** Este arquivo é agregado e refeito a cada rodada do espelho, então, ao contrário dos arquivos datados, ele não é append-only. |
+
+**Causa.** O painel de origem escreve o volume deste contrato como `vol USD 84 mil`, enquanto todos os outros vêm como `vol USD 8,52M`. O exportador minerava o número com `/USD\s+([\d.,]+)\s*M/i`, e a insensibilidade a maiúscula fez o padrão casar o **"m" de "mil"**. Ele leu 84 mil como 84 milhões.
+
+**Alcance.** Nenhum outro arquivo é afetado: a coluna `volume_usd_m` só existe aqui, e nenhum outro contrato da série é cotado em milhares.
+
+**Prevenção.** O volume passa por uma função única que testa `mil|thousand|k` **antes** de `M`, exige que o `M` não venha seguido de letra, e converte milhar em milhão em vez de descartar.
+
+## ES
+
+### ERR-2026-003 · `data/market-odds-timeseries.csv` · el volumen del impeachment del STF salió MIL VECES mayor
+
+| | Valor |
+|---|---|
+| **Filas afectadas** | 24 filas, `candidate = STF impeachment`, del 12/07/2026 al 17/08/2026 |
+| **Publicado** | `volume_usd_m` entre `74` y `100` |
+| **Correcto** | `volume_usd_m` entre `0,074` y `0,100` |
+| **Magnitud** | **factor de 1000** |
+| **Detectado** | 17/08/2026 |
+| **Situación** | **Corregido en el lugar.** Este archivo es agregado y se rehace en cada corrida del espejo, así que, a diferencia de los archivos fechados, no es append-only. |
+
+**Causa.** El panel de origen escribe el volumen de este contrato como `vol USD 84 mil`, mientras todos los demás vienen como `vol USD 8,52M`. El exportador extraía el número con `/USD\s+([\d.,]+)\s*M/i`, y la insensibilidad a mayúsculas hizo que el patrón capturara la **"m" de "mil"**. Leyó 84 mil como 84 millones.
+
+**Alcance.** Ningún otro archivo se ve afectado: la columna `volume_usd_m` solo existe aquí, y ningún otro contrato de la serie se cotiza en miles.
+
+**Prevención.** El volumen pasa por una función única que prueba `mil|thousand|k` **antes** que `M`, exige que la `M` no vaya seguida de letra, y convierte miles en millones en vez de descartarlos.
