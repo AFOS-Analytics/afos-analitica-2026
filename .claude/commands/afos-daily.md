@@ -1,5 +1,24 @@
 # AFOS Daily — Síntese Narrativa Diária
 
+## 🚫 EMOJI ZERO NO TEXTO DA PEÇA, decisão do André em 17/Ago/2026
+
+Ordem literal: *"excluir os emojis do texto"*, e em 18/Ago ele confirmou: **"decisão serve para sempre"**.
+
+⛔ **A daily publicada não leva emoji em lugar nenhum do conteúdo:** nem no `lede`, nem nos 3 bullets do `tldr`, nem nos títulos de seção, nem no corpo, nem na tabela do calendário, nem no rodapé de fontes.
+
+⚠️ **A armadilha é que DOIS deles vinham deste arquivo, não da peça.** Em 17/Ago saíram 9 emojis e dois eram do template da casa: o do cabeçalho do calendário e o que marcava amostra grande. Os dois foram removidos das instruções abaixo, e a legenda passou a dizer **"amostras >= 3.000 em negrito"**.
+
+🔑 **Ao tirar um símbolo que tinha LEGENDA, a legenda vai junto.** Rodapé que explica um sinal inexistente é pior que o sinal.
+
+✅ **Conferir antes de publicar, nos TRÊS idiomas.** O script das cinco checagens já conta emoji por arquivo, e a coluna tem que dar **0** nos três:
+
+```bash
+node -e "const s=require('fs').readFileSync('public/afos-daily/DATA.md','utf8');const e=s.match(/[\u{1F300}-\u{1FAFF}\u2600-\u27BF\u2B00-\u2BFF\uFE0F]/gu)||[];console.log('emojis:',e.length,e.join(' '))"
+```
+
+📌 **Vale para a PEÇA publicada, não para a conversa nem para as fichas de memória.** O que o André decidiu é sobre o produto.
+
+
 Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + Notícias, seguindo o template aprovado em 22/04/2026 e validado pelo piloto de 7 dias (decisão GO em 28/04/2026 noite).
 
 ## 🥇 Pré-requisito ZERO: o WAYBACK ATRASADO roda ANTES da daily
@@ -270,7 +289,7 @@ Regras inflexíveis do rodapé:
 
 2. Construir tabela markdown GFM com 6 colunas: **Data · Instituto · Amostra · Escopo · Protocolo TSE · Conf.**
 
-3. **Highlight rows ≥ 3.000 amostra:** bold em `Data`, `Instituto` + 🔥 emoji após nome, bold em `Amostra`.
+3. **Highlight rows ≥ 3.000 amostra:** bold em `Data`, `Instituto` e `Amostra`. 🚫 **SEM emoji após o nome**, ver a regra de emoji zero no topo.
 
 4. **Link no protocolo:** cada protocolo TSE linkado à consulta pública `https://divulgacandcontas.tse.jus.br/divulga/` (em PT, EN e ES).
 
@@ -279,16 +298,16 @@ Regras inflexíveis do rodapé:
 ### Template markdown obrigatório
 
 ```markdown
-### 📅 Calendário de pesquisas — próximos 7 dias
+### Calendário de pesquisas — próximos 7 dias
 
 Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]. Inclusão na tabela não significa publicação confirmada, porque institutos podem atrasar ou cancelar divulgação. Filtros aplicados: escopo nacional e amostra ≥ 1.000. Cada protocolo linkado à [consulta pública TSE](https://divulgacandcontas.tse.jus.br/divulga/).
 
 | Data | Instituto | Amostra | Escopo | Protocolo TSE | Conf. |
 |------|-----------|---------|--------|---------------|-------|
-| **DD/Mai** | **Instituto 🔥** | **n** | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
+| **DD/Mai** | **Instituto** | **n** | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 | DD/Mai | Instituto | n | escopo | [BR-XXXXX/2026](https://divulgacandcontas.tse.jus.br/divulga/) | 0.X |
 
-Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) via API AFOS. 🔥 destaca amostras ≥ 3.000. A tabela lista as [N] NACIONAIS da janela; [M] registros estaduais do mesmo período ficaram de fora por escopo. O status é "registrada ≠ publicada", e confirmar divulgação efetiva exige duas fontes primárias antes de citar número.
+Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) via API AFOS. Amostras ≥ 3.000 em negrito. A tabela lista as [N] NACIONAIS da janela; [M] registros estaduais do mesmo período ficaram de fora por escopo. O status é "registrada ≠ publicada", e confirmar divulgação efetiva exige duas fontes primárias antes de citar número.
 ```
 
 ⚠️ **O rodapé declara os DOIS números, o que entrou e o que ficou de fora.** Dizer só "as N nacionais" esconde o tamanho do corte, e o corte é grande: em 10/Ago eram 11 nacionais contra 44 não nacionais na janela de 15 dias. Quem lê tem direito de saber que a tabela é uma fatia, e qual.
