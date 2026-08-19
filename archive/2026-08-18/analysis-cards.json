@@ -1,0 +1,38 @@
+{
+  "updatedAt": "18/08/2026, 21:37",
+  "cards": {
+    "sentimento": {
+      "text1": "⛔ O painel NÃO publica preço novo hoje, e o motivo é a própria trava do AFOS: ela faz duas leituras separadas por 8 minutos e só libera se concordarem dentro de 0,20pp. Rodou CINCO vezes entre 20:30 e 21:37 BRT de 18/Ago e bloqueou as cinco. Os preços na tela são a captura confirmada de 17/Ago, 18:48 BRT.",
+      "text2": "🔑 A instabilidade estava nos contratos FINOS, não no líder. Nas dez leituras da noite o primeiro colocado ficou em 63,50% todas as vezes, amplitude de 0,00pp, e Renan Santos e Ronaldo Caiado também não se moveram no presidencial. Quem discordou entre amostras foi o segundo colocado, entre 32,45% e 32,75%, e Pablo Marçal, entre 0,65% e 1,15%.",
+      "text3": "⚠️ Amplitude de 0,50pp num contrato que vale 1% é quase metade do próprio valor, e isso é espessura de mercado, não sinal eleitoral: livro fino se move com pouco dinheiro. O painel registra a diferença em vez de publicar um número que duas leituras não confirmam.",
+      "direita": "O segundo colocado subiu 2,00pp, de 29,45% para 31,45% (vol USD 8,46M acumulado), leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), no quarto dia seguido de alta e no maior movimento do dia entre os contratos grandes. ⛔ Não é recorde: dos 90 dias da série desde 19/Mai, 2 estão acima, e o topo é 33,20%, de 02/Jun. Na pesquisa ele foi a 36%, e a distância para o líder ficou igual.",
+      "esquerda": "O líder caiu 2,00pp, de 66,50% para 64,50% (vol USD 8,52M acumulado), leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), devolvendo exatamente o que tinha subido na véspera. Dos 90 dias da série, 5 estão acima do fechamento de hoje, e o topo segue em 66,50%, de 01/Ago. Na pesquisa ele foi a 41% no 1º turno e repetiu 47% no 2º.",
+      "terceiraVia": "🔴 O pelotão caiu de novo no preço de VITÓRIA e se moveu ao contrário na POSIÇÃO. Renan Santos foi de 4,70% para 4,05%, abaixo do piso de 4,80% gravado na série de 90 dias, e Caiado foi de 0,60% para 0,25%, abaixo do piso de 0,50%. ⭐ No contrato de 3º lugar do 1º turno, porém, Caiado SUBIU de 37,50% para 38,50% e Renan cedeu de 53,00% para 52,50%, com a distância entre eles fechando de 15,50pp para 14,00pp. ⭐ E a pesquisa inverte a ordem do mercado: a Nexus/BTG dá 5% a Caiado contra 4% de Renan Santos.",
+      "polymarket": "Leitura confirmada de 17/Ago, 18:48 BRT. Em 18/Ago a trava bloqueou cinco vezes e nenhum preço novo foi certificado."
+    },
+    "inss": {
+      "text1": "⭐ FATO NOVO EM 17/Ago, e ele é de investigação, não de intenção de voto. A Polícia Federal encontrou mensagem em que Fábio Luís Lula da Silva e uma lobista investigada por fraudes no INSS tratam de negócios, segundo o Poder360.",
+      "text2": "O caso entrou na campanha no mesmo dia: o segundo colocado e o irmão dele criticaram publicamente o episódio, segundo o Poder360. É a primeira vez desde que o painel acompanha o tema que o assunto aparece na fala de campanha dos dois lados no mesmo dia.",
+      "text3": "A distinção que o painel mantém desde o início continua valendo: uma coisa é o efeito sobre a avaliação da gestão, outra é o efeito sobre a intenção de voto. As duas não se somam e o painel não as trata como a mesma medida.",
+      "text4": "⚠️ A avaliação de governo mais recente é a da Nexus/BTG de hoje, com 42% de ruim ou péssimo, 34% de ótimo ou bom e 23% de regular. ⛔ O painel NÃO publica o par aprovação e desaprovação desta rodada, porque os veículos divergiram entre 47% contra 48% e 46% contra 49%, e o site do instituto não trouxe o dado.",
+      "impactoLula": "Não isolável. Na pesquisa de hoje ele subiu 1 ponto no 1º turno, de 40% para 41%, e repetiu 47% no 2º turno. Nenhum dos dois movimentos se distingue de estabilidade dentro da margem de 2pp, e nenhuma pergunta da rodada atribui variação ao caso.",
+      "impactoGestao": "A avaliação segue com saldo negativo: 42% de ruim ou péssimo contra 34% de ótimo ou bom na Nexus/BTG de hoje, uma distância de 8 pontos. O painel registra o saldo e não o atribui a este caso, porque a pesquisa não faz essa pergunta.",
+      "conclusao": "O caso saiu do campo exclusivamente policial e entrou na fala de campanha em 17/Ago, com a mensagem encontrada pela PF sendo usada publicamente pelo segundo colocado no mesmo dia. Segue sem tradução mensurável em intenção de voto: a única pesquisa da janela mostra o líder estável dentro da margem."
+    },
+    "bancoMaster": {
+      "text1": "⭐ O FATO NOVO DE 17/Ago é de execução patrimonial. A Polícia Federal apreendeu no Paraguai o avião de Daniel Vorcaro e o trouxe para Brasília, segundo Poder360 e Diário do Comércio. A aeronave é avaliada em R$ 120 milhões e é alvo de bloqueio judicial.",
+      "text2": "Em 15/Ago, o Valor Econômico já havia informado que a fabricante de um iate de R$ 2 bilhões que pertenceu a Vorcaro foi acionada, e o movimento de hoje é da mesma natureza: recuperação de bens, e não decisão sobre o mérito do caso.",
+      "text3": "⚠️ O painel separa as duas coisas de propósito. Apreensão de bem é medida cautelar e não é condenação, e o caso segue sem desfecho judicial. Os movimentos anteriores continuam valendo, entre eles o efeito regulatório de 16/Ago, com previdências revendo regra de investimento, segundo o Estadão.",
+      "conclusao": "Em 17/Ago o caso produziu ato de execução patrimonial internacional, com a PF localizando e repatriando do Paraguai um avião de R$ 120 milhões. Segue sem qualquer tradução em preço: o painel não acompanha contrato ligado a este caso, e nenhuma pesquisa da janela pergunta sobre ele."
+    },
+    "stf": {
+      "toffoli": "Sem ato individual novo capturado em 17/Ago.",
+      "moraes": "⭐ FATO NOVO E ELE VEM DE FORA. O governo dos Estados Unidos avalia impor novas sanções contra ele, segundo reportagem do Financial Times publicada no Brasil por Valor Econômico e G1. É a segunda vez em dois dias que o tema aparece na coleta, depois da informação da VEJA em 16/Ago.",
+      "gilmar": "Sem ato individual novo em 17/Ago. Segue valendo a determinação de 12/Ago, em que ele, Moraes, Dino e Zanin mantiveram decisão conjunta.",
+      "dino": "⭐ Ato novo em 17/Ago: afastou o sobrinho do governador do Maranhão da presidência do Tribunal de Contas do Estado.",
+      "mendonca": "Sem ato individual novo em 17/Ago.",
+      "nexo": "⭐ O NEXO DE 17/Ago TEM DUAS PONTAS E ELAS SÃO DE NATUREZAS DIFERENTES. Uma é EXTERNA: os Estados Unidos avaliando novas sanções contra um ministro, o que é pressão de outro Estado sobre o tribunal. A outra é INSTITUCIONAL e brasileira: a OAB-SP propôs ao STF mandato de 12 anos para ministros e idade mínima de 50 anos, ou seja, uma proposta de mudança na própria composição da corte. ⚠️ O painel registra as duas e não as trata como a mesma coisa: sanção é ato de política externa, proposta de mandato é debate de desenho institucional.",
+      "analise": "LEITURA CONFIRMADA NOVA EM 17/Ago para o contrato de impeachment de ministro do STF, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC): 3,40% (vol USD 84 mil). PARADO, sem variação contra 16/Ago. ⚠️ Ele segue sendo o contrato mais fino entre os acompanhados, com volume três ordens de grandeza abaixo do presidencial, e qualquer movimento nele exige essa ressalva antes de virar leitura. 📌 O contraste do dia vale registro: o tribunal teve duas notícias relevantes, uma de pressão externa e uma de proposta de mudança de mandato, e o preço não se moveu um centésimo."
+    }
+  }
+}
