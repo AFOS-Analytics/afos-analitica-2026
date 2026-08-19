@@ -1,0 +1,33 @@
+{
+  "data": "2026-08-19",
+  "captura": {
+    "confirmada": "2026-08-19T17:58:05Z",
+    "brt": "19/08/2026 14:58",
+    "trava": "certificacao POR LIVRO: presidential, thirdPlace, stf e senate APROVADOS; secondPlace BLOQUEADO por 0,50pp no Flavio Bolsonaro",
+    "nota": "Pela regra antiga, all-or-nothing, a rodada inteira ficaria bloqueada por uma oscilacao no livro de 2o lugar, que nao e o da manchete. Publicados os quatro aprovados e NENHUM numero novo de 2o lugar. Cada preco publicado seguiu exigindo duas leituras do proprio contrato dentro de 0,20pp."
+  },
+  "refetch": {
+    "hora": "19/08/2026 15:13 BRT",
+    "gate_rebaseline": "NAO disparou",
+    "maior_delta": "0,05pp no Ronaldo Caiado, contra teto de 0,50pp"
+  },
+  "adversarial": {
+    "1_single_source": "nenhuma. A decisao sobre debates tem Poder360, JOTA e Jornal de Brasilia, independentes entre si, sobre reportagem original da Folha de S.Paulo.",
+    "2_numerical": "reconcile-claims rodado. As 2 divergencias sao PL 78,50% e MDB 16,50%, do livro do Senado, que nao existe nos JSONs do painel: falso positivo conhecido. Ambos sao da captura certificada de 14:58.",
+    "3_fontes_inventadas": "tres conferidas ao acaso, CNN Brasil, VEJA e InfoMoney. Todas com materia no cache de 19/Ago.",
+    "4_quotes": "nenhuma aspa literal.",
+    "5_causacao": "nenhuma, e esta ESCRITO na peca: 'o painel nao atribui o movimento de preco a nenhum desses fatos'.",
+    "6_verbos_criticos": "'decidiu' e 'deve participar' desambiguados. Nenhum verbo de privacao de liberdade, morte ou decisao judicial.",
+    "decisao": "prosseguir"
+  },
+  "enquadramento_corrigido": [
+    "Eu ia escrever que apenas Flavio Bolsonaro limitou debates. A verificacao mostrou que os DOIS limitaram, com motivos declarados diferentes: Flavio so vai a debate em que Lula esteja, e Lula deve ir so ao da Globo em 1o de outubro. A regra de simetria exige os dois lados, e sem a busca a peca sairia torta."
+  ],
+  "superlativos_barrados": [
+    "32,55% do Flavio Bolsonaro NAO e recorde. Dos 88 dias da serie desde 22/Mai, 2 marcaram valor igual ou acima, e o topo segue em 33,20% de 02/Jun. Conferido com as DUAS janelas juntas, porque days=90 sozinho vem truncado pelo teto de 1000 pontos."
+  ],
+  "declarados": [
+    "Wayback: pre-check devolveu 429, limite de taxa. Nao rodei e nao insisti, e avisei no comeco da sessao. O passivo de 05 a 16/Ago segue parado.",
+    "Densidade de link em 48%, contra os 80% da regua. Nao inventei link para subir o numero, que foi o erro de 17/Ago."
+  ]
+}
