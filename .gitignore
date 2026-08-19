@@ -88,3 +88,9 @@ docs/launch-texts/0*.md
 
 # baseline temporario do build-locale-json (nao versionar)
 scripts/tmp-head/
+
+# Playwright: saida de execucao, nunca entra no repositorio
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
