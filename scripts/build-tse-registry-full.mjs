@@ -20,6 +20,22 @@ import { join } from 'path'
 import JSZip from 'jszip'
 import { classifyScope } from '../lib/tse/scope.mjs'
 
+/**
+ * Decodificacao do CSV do TSE, IGUAL a de lib/tse/ingest.ts.
+ *
+ * As duas copias tinham divergido: aqui era 'latin1' e la 'windows-1252'. Elas
+ * so coincidem nos bytes 0x00-0x7F e 0xA0-0xFF; a faixa 0x80-0x9F e onde moram
+ * aspas curvas, travessao e reticencias do Windows, que em latin1 viram
+ * caractere de controle e somem do nome do instituto.
+ *
+ * Fica windows-1252, que e a copia com incidente documentado (Gerp
+ * BR-03067/2026, comentario em lib/tse/ingest.ts). Achado da auditoria EVAL.
+ */
+function decodificar(buf) {
+  return new TextDecoder('windows-1252').decode(buf)
+}
+
+
 const TSE_URL = 'https://cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral/pesquisa_eleitoral_2026.zip'
 const CSV_NAME = 'pesquisa_eleitoral_2026_BRASIL.csv'
 const OUT = join(process.cwd(), 'hf-assets', 'polls')
@@ -48,13 +64,13 @@ async function fetchTseZip(url, { attempts = 4, perAttemptMs = 30000 } = {}) {
 
 async function loadCsv() {
   // usa cache local se existir (rodadas manuais); senão baixa do TSE (CI)
-  if (existsSync(CACHE)) { console.log('📄 usando CSV em cache:', CACHE); return readFileSync(CACHE, 'latin1') }
+  if (existsSync(CACHE)) { console.log('📄 usando CSV em cache:', CACHE); return decodificar(readFileSync(CACHE)) }
   console.log('⬇️  baixando do TSE Dados Abertos…')
   const zip = await JSZip.loadAsync(await fetchTseZip(TSE_URL))
   const file = zip.file(CSV_NAME)
   if (!file) throw new Error(`${CSV_NAME} ausente no ZIP`)
   const buf = await file.async('nodebuffer')
-  return buf.toString('latin1')
+  return decodificar(buf)
 }
 
 // parser CSV completo: respeita aspas com ';' E '\n' embutidos (campos de texto multi-linha)

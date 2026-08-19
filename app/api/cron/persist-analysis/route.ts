@@ -6,6 +6,7 @@ import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
 import { prisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
+import { redigirSegredo } from '../../../../lib/cron/redigir'
 
 export const dynamic = 'force-dynamic'
 // 2 Neon upserts em paralelo costumam <3s; 20s cobre pico + envio de alerta.
@@ -20,7 +21,15 @@ const JOBS: Array<{ type: AnalysisType; file: string }> = [
 
 // describeError extrai detalhes legíveis de Neon WS ErrorEvent (JSON.stringify
 // retorna apenas '[object ErrorEvent]'). Espelha helper do script persist-analysis.
+//
+// 🔴 O retorno vai para o CORPO da resposta, dentro de `results[]`, então passa
+// pela redação antes de sair. É justamente a mensagem de erro de WebSocket do
+// Neon que carrega a string de conexão inteira, com usuário e senha.
 function describeError(err: unknown): string {
+  return redigirSegredo(describeErrorCru(err))
+}
+
+function describeErrorCru(err: unknown): string {
   if (err instanceof Error) {
     return `${err.name}: ${err.message}${err.cause ? ` (cause: ${describeError(err.cause)})` : ''}`
   }

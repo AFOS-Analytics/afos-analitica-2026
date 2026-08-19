@@ -174,6 +174,42 @@ for (const arquivo of ARQUIVOS) {
   }
 }
 
+// ── Régua 5: o carimbo do polls-data acompanha os outros dois.
+//
+// 🔴 Achado da auditoria EVAL: `polymarketComparison.updatedAt` marcava
+// "17/08/2026, 18:48" enquanto os preços logo abaixo eram os de 19/Ago, e o
+// `lastUpdate` do arquivo dizia 2026-08-19. Três carimbos, duas datas.
+//
+// ⚠️ Este campo é `updatedAt`, que está em FORA_DE_TRADUCAO, logo é cópia byte
+// a byte nos três idiomas: conferir o pt-BR cobre os três.
+try {
+  const polls = JSON.parse(readFileSync(join(RAIZ, 'polls-data.json'), 'utf-8')) as {
+    lastUpdate?: string
+    polymarketComparison?: { updatedAt?: string }
+  }
+  const dados = JSON.parse(readFileSync(join(RAIZ, 'analysis-data.json'), 'utf-8')) as { updatedAt?: string }
+  const carimboPolls = String(polls.polymarketComparison?.updatedAt ?? '')
+  if (carimboPolls && dados.updatedAt && carimboPolls !== dados.updatedAt) {
+    falhas.push({
+      arquivo: 'polls-data.json',
+      regra: 'CARIMBO',
+      detalhe: `polymarketComparison.updatedAt é "${carimboPolls}" e o painel do dia é "${dados.updatedAt}". O bloco de preço é o MESMO nos dois arquivos.`,
+    })
+  }
+  // `lastUpdate` é só a data, sem hora: compara o dia.
+  const m = carimboPolls.match(/^(\d{2})\/(\d{2})\/(\d{4})/)
+  const diaDoCarimbo = m ? `${m[3]}-${m[2]}-${m[1]}` : null
+  if (diaDoCarimbo && polls.lastUpdate && diaDoCarimbo !== polls.lastUpdate) {
+    falhas.push({
+      arquivo: 'polls-data.json',
+      regra: 'CARIMBO',
+      detalhe: `lastUpdate é "${polls.lastUpdate}" e polymarketComparison.updatedAt é de ${diaDoCarimbo}. O mesmo arquivo declara dois dias.`,
+    })
+  }
+} catch (e) {
+  falhas.push({ arquivo: 'polls-data.json', regra: 'LEITURA', detalhe: (e as Error).message })
+}
+
 // ── Régua 4: os preços do resumo batem com o quadro, entre os DOIS arquivos.
 try {
   const dados = JSON.parse(readFileSync(join(RAIZ, 'analysis-data.json'), 'utf-8')) as {

@@ -31,8 +31,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
-import { PrismaNeon } from '@prisma/adapter-neon'
+import { prisma } from '../../../../lib/db'
 // 🔑 A régua vem de UM lugar. Ver o cabeçalho de `lib/us-market/portao.ts`.
 import { fechaOPortao, type AmplitudeFaixas } from '../../../../lib/us-market/portao'
 
@@ -50,12 +49,19 @@ export async function GET(req: NextRequest) {
     .map((s) => s.trim())
     .filter(Boolean)
 
-  if (!slugs.length) return NextResponse.json({}, { status: 200 })
+  // 🔑 Os três "vazios" desta rota são estados DIFERENTES, e o corpo é o mesmo
+  // `{}` nos três, de propósito: a amplitude é informação adicional e a ausência
+  // dela deixa o quadro como era antes desta rota existir. O que faltava era
+  // conseguir DISTINGUIR os três em log e em rede, então o motivo vai num
+  // cabeçalho, sem tocar no contrato do corpo.
+  const vazio = (motivo: string) =>
+    NextResponse.json({}, { status: 200, headers: { 'X-AFOS-Motivo': motivo } })
 
-  const url = process.env.DATABASE_URL
-  if (!url) return NextResponse.json({}, { status: 200 })
+  if (!slugs.length) return vazio('sem-slugs')
+  // Teto de sanidade: o consumidor pede cinco. Lista aberta viraria varredura.
+  if (slugs.length > 25) return vazio('slugs-demais')
+  if (!prisma) return vazio('sem-banco')
 
-  const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) })
   try {
     const desde = new Date(Date.now() - HORAS * 3600_000)
     const mercados = (await prisma.market.findMany({
@@ -64,20 +70,28 @@ export async function GET(req: NextRequest) {
     })).filter((m): m is { id: string; slug: string } => typeof m.slug === 'string')
 
     const saida: Record<string, AmplitudeFaixas> = {}
+    if (!mercados.length) return vazio('slug-desconhecido')
+
+    // ⚠️ UMA consulta para todos os mercados, não uma por mercado. O laço
+    // anterior fazia N+1 e só não doía porque o painel pede exatamente cinco
+    // slugs; a rota, porém, aceita a lista que vier.
+    const precos = await prisma.marketPrice.findMany({
+      where: { marketId: { in: mercados.map((m) => m.id) }, snapshotAt: { gte: desde } },
+      select: { marketId: true, snapshotAt: true, price: true },
+    })
+
+    const porMercado = new Map<string, Map<number, number>>()
+    for (const p of precos) {
+      const capturas = porMercado.get(p.marketId) ?? new Map<number, number>()
+      // Uma soma por captura. A chave é o instante, que é como o cron grava.
+      const k = p.snapshotAt.getTime()
+      capturas.set(k, (capturas.get(k) || 0) + p.price)
+      porMercado.set(p.marketId, capturas)
+    }
 
     for (const m of mercados) {
-      const precos = await prisma.marketPrice.findMany({
-        where: { marketId: m.id, snapshotAt: { gte: desde } },
-        select: { snapshotAt: true, price: true },
-      })
-      if (!precos.length) continue
-
-      // Uma soma por captura. A chave é o instante, que é como o cron grava.
-      const porCaptura = new Map<number, number>()
-      for (const p of precos) {
-        const k = p.snapshotAt.getTime()
-        porCaptura.set(k, (porCaptura.get(k) || 0) + p.price)
-      }
+      const porCaptura = porMercado.get(m.id)
+      if (!porCaptura?.size) continue
 
       // ⚠️ Defesa contra as duas escalas: o preço é gravado em pontos
       // percentuais, mas se algum dia vier em 0..1 a soma cairia perto de 1 e o
@@ -96,12 +110,18 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(saida, {
       headers: { 'Cache-Control': 'public, max-age=300, s-maxage=300' },
     })
-  } catch {
+  } catch (e) {
     // 🔑 Falha aqui NÃO pode derrubar a seção de mercado: a amplitude é
     // informação adicional, e a ausência dela deixa o quadro exatamente como
     // era antes desta rota existir. Devolve vazio, sem erro.
-    return NextResponse.json({}, { status: 200 })
-  } finally {
-    await prisma.$disconnect().catch(() => {})
+    //
+    // ⚠️ Mas o erro é REGISTRADO. O `catch` anterior era mudo, e falha calada
+    // aqui era indistinguível de "não há dado na janela".
+    console.error('[market/faixas-amplitude] falhou:', e)
+    return vazio('erro')
   }
+  // ⛔ SEM `$disconnect`. O cliente agora é o compartilhado de lib/db.ts, que é
+  // cacheado no globalThis: desconectá-lo derrubaria a conexão das OUTRAS rotas.
+  // O `new PrismaClient` por requisição que existia aqui montava um pool novo a
+  // cada visita, com o mesmo adaptador Neon que o singleton já usa.
 }

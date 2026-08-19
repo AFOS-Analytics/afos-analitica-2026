@@ -19,6 +19,7 @@ import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { audit } from '../../../../lib/audit'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 import { alertNewNationalPolls } from '../../../lib/cron/poll-alerts'
+import { redigirSegredo } from '../../../../lib/cron/redigir'
 
 // Cron baixa CSV TSE + cruza com Polymarket. TSE CDN às vezes lento (10-30s),
 // + Polymarket fetch (10s timeout) + persist Neon. Sem maxDuration explícito,
@@ -142,14 +143,13 @@ export async function GET(request: Request) {
      *
      * ⚠️ REDAÇÃO ANTES DE DEVOLVER. Mensagem de exceção pode carregar URL com
      * token, e corpo de resposta é lugar onde segredo vaza sem ninguém ver.
-     * Então `Bearer` e sequências longas de hexadecimal saem antes.
+     *
+     * 🔑 A regra mora em `lib/cron/redigir.ts` desde 19/Ago/2026. Ela nasceu
+     * aqui e ficou SÓ aqui: as outras quatro rotas de cron devolviam a exceção
+     * crua, e proteção que existe numa rota e falta na irmã é pior que a
+     * ausência em todas, porque parece que o problema foi tratado.
      */
-    const bruto = error instanceof Error ? error.message : String(error)
-    const motivo = bruto
-      .replace(/Bearer\s+\S+/gi, 'Bearer [redigido]')
-      .replace(/\b[A-Fa-f0-9]{24,}\b/g, '[redigido]')
-      .replace(/([?&](?:token|key|secret|password)=)[^&\s]+/gi, '$1[redigido]')
-      .slice(0, 300)
+    const motivo = redigirSegredo(error)
 
     console.error('[cron/refresh-polls] Error:', error)
     return NextResponse.json(

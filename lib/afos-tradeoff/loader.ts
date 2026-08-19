@@ -305,17 +305,40 @@ function asArray<T>(value: unknown): T[] | undefined {
   return Array.isArray(value) && value.length > 0 ? (value as T[]) : undefined
 }
 
+
+/**
+ * Filtra a lista e AVISA o que caiu.
+ *
+ * Os coercers descartam linha com campo obrigatorio ausente, e isso e proposital:
+ * a peca renderiza menos secoes em vez de quebrar. O que NAO era proposital e
+ * descartar CALADO.
+ *
+ * O custo disso ja foi medido: em 03/Ago/2026 a Edicao no 1 dos EUA ficou TRES
+ * DIAS em producao, nos tres idiomas, sem a secao 4 inteira, porque o bloco fora
+ * escrito com `label` onde o filtro exige `contract`. A pagina montava bonita, so
+ * que menor, e nada na tela nem no log dizia que faltou. Achado da auditoria EVAL.
+ */
+function semDescarteCalado<T>(bloco: string, itens: T[], valido: (x: T) => unknown): T[] {
+  const fica = itens.filter((v) => Boolean(valido(v)))
+  const caiu = itens.length - fica.length
+  if (caiu > 0) {
+    console.warn(`[afos-tradeoff] ${bloco}: ${caiu} de ${itens.length} linha(s) descartada(s) por campo obrigatorio ausente`)
+  }
+  return fica
+}
+
 function coerceSummaryCards(raw: unknown): SummaryCard[] | undefined {
   const arr = asArray<Record<string, unknown>>(raw)
   if (!arr) return undefined
-  return arr.map(r => ({
+  const linhas = arr.map(r => ({
     label: str(r.label),
     headline: str(r.headline),
     unit: str(r.unit) || undefined,
     delta: str(r.delta),
     deltaDirection: isDeltaDirection(r.deltaDirection) ? r.deltaDirection : 'flat',
     desc: str(r.desc),
-  })).filter(c => c.label && c.headline)
+  }))
+  return semDescarteCalado('summaryCards', linhas, (c) => c.label && c.headline)
 }
 
 function coerceAntiAvg(raw: unknown): AntiAvgBlock | undefined {
@@ -339,17 +362,18 @@ function coerceAntiAvg(raw: unknown): AntiAvgBlock | undefined {
 function coerceScenarios(raw: unknown): Scenario[] | undefined {
   const arr = asArray<Record<string, unknown>>(raw)
   if (!arr) return undefined
-  return arr.map(r => ({
+  const linhas = arr.map(r => ({
     type: isScenarioType(r.type) ? r.type : 'base',
     label: str(r.label),
     text: str(r.text),
-  })).filter(s => s.label && s.text)
+  }))
+  return semDescarteCalado('scenarios', linhas, (s) => s.label && s.text)
 }
 
 function coerceIndicatorGrid(raw: unknown): IndicatorRow[] | undefined {
   const arr = asArray<Record<string, unknown>>(raw)
   if (!arr) return undefined
-  return arr.map(r => ({
+  const linhas = arr.map(r => ({
     contract: str(r.contract),
     contractLink: str(r.contractLink) || undefined,
     value: str(r.value),
@@ -358,7 +382,8 @@ function coerceIndicatorGrid(raw: unknown): IndicatorRow[] | undefined {
     volume: str(r.volume, '—'),
     reading: str(r.reading),
     highlight: Boolean(r.highlight),
-  })).filter(i => i.contract)
+  }))
+  return semDescarteCalado('indicatorGrid', linhas, (i) => i.contract)
 }
 
 function coerceLiquidity(raw: unknown): LiquidityBlock | undefined {

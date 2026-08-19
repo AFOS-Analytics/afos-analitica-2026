@@ -4,6 +4,7 @@ import { prisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
+import { redigirSegredo } from '../../../../lib/cron/redigir'
 
 /**
  * Coleta diária do generic ballot dos EUA.
@@ -87,7 +88,10 @@ export async function GET(request: Request) {
       { headers: { 'Cache-Control': 'no-store' } },
     )
   } catch (e) {
-    const msg = e instanceof Error ? `${e.name}: ${e.message}` : String(e)
+    // Redação antes de ir para o CORPO da resposta. Regra única em
+    // lib/cron/redigir.ts: esta rota devolvia a mensagem crua, e mensagem de
+    // driver de banco carrega a string de conexão inteira.
+    const msg = redigirSegredo(e)
     console.error('[cron:refresh-us-polls]', msg)
     return NextResponse.json(
       { ok: false, motivo: msg, ms: Date.now() - t0 },
