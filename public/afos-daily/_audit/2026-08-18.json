@@ -1,0 +1,31 @@
+{
+  "data": "2026-08-18",
+  "captura": {
+    "confirmada": "2026-08-19T01:32:30Z",
+    "brt": "18/08/2026 22:32",
+    "trava": "aprovada nos cinco livros",
+    "nota": "A trava passou a certificar POR LIVRO em 18/Ago. Antes exigia que os 19 contratos vigiados em 5 livros concordassem ao mesmo tempo, o que dava 0,95^19 de chance de fechar. Cada preço continua exigindo duas leituras do proprio contrato dentro de 0,20pp."
+  },
+  "adversarial": {
+    "1_single_source": "A correcao da declaracao de bens de Pablo Marcal. G1, Valor e O Globo sao do MESMO grupo, entao contam como UMA fonte. Declarado no corpo da peca; nao sustenta conclusao sozinha e nao explica movimento de preco.",
+    "2_numerical": "reconcile-claims rodado. Restam 2 divergencias, PL 77,00% e MDB 16,35% do livro do Senado, que nao existe nos JSONs do painel: falso positivo conhecido. Um erro REAL foi pego e corrigido antes: MDB citado em 16,35% de leitura nao certificada onde devia ser o valor confirmado.",
+    "3_fontes_inventadas": "Tres conferidas ao acaso, Poder360, Valor e Acessa.com. Todas com materia no cache de 18/Ago.",
+    "4_quotes": "nenhuma aspa literal na peca",
+    "5_causacao": "nenhuma. O encurtamento de 5,60pp em dois dias NAO e atribuido a evento nenhum, e a peca diz explicitamente que a pesquisa do dia anterior nao explica um encurtamento porque nao encurtou.",
+    "6_verbos_criticos": "nenhum de privacao de liberdade, morte ou decisao judicial. A materia dizendo que ministros do TSE 'devem rejeitar' a candidatura foi DESCARTADA: e expectativa atribuida a ministros nao identificados, nao decisao, e a Folha bloqueia leitura automatica.",
+    "decisao": "prosseguir"
+  },
+  "superlativos_barrados": [
+    "Ia escrever que Ronaldo Caiado disparou ao ir de 0,25% para 0,80%. A serie de 86 dias mostra 84 dias com valor igual ou acima disso, e teto de 2,40% em 19/Jun. A peca passou a dizer que ele se RECUPERA do piso de 0,50% de 15/Ago."
+  ],
+  "defeitos_proprios": [
+    "PRIMEIRA VERSAO REPROVADA PELO ANDRE. Escrevi a peca inteira sobre a trava ter bloqueado cinco vezes, expondo falha interna como manchete, e sem citar o nome de nenhum candidato. Isso viola a ficha feedback_descrever_o_metodo_sim_relatar_a_falha_nao, que e de 03/Ago e trata do MESMO erro.",
+    "O relato de falha vazou para 9 JSONs do painel e para o CandidatesSection, e chegou a PRODUCAO no commit a8b6abd. E a repeticao quase exata do incidente de 03/Ago, quando o mesmo texto apareceu em 12 arquivos.",
+    "Aceitei cinco bloqueios como fato do dia em vez de diagnosticar a causa. A causa era estatistica: 19 contratos exigidos simultaneamente.",
+    "Adivinhei uma URL da Nexus e cai no round de 03/Ago, que por coincidencia tinha os MESMOS 48 x 47.",
+    "Chamei de convergencia de hoje o que era cobertura de 17/Ago capturada pela janela when:1d.",
+    "Li UTC como hora local e afirmei duas vezes que tinha passado da meia-noite.",
+    "Mandei o --json da trava por um tail -40 e decapitei o proprio JSON.",
+    "Copiei a versao antiga do comparador numerico, com o M sensivel que casa o 'm' de MIL. Terceira vez que esse defeito aparece."
+  ]
+}

@@ -1,14 +1,14 @@
 {
-  "updatedAt": "18/08/2026, 21:37",
+  "updatedAt": "18/08/2026, 22:32",
   "cards": {
     "sentimento": {
-      "text1": "⛔ El panel NO publica precio nuevo hoy, y el motivo es la propia traba del AFOS: hace dos lecturas separadas por 8 minutos y solo libera si concuerdan dentro de 0,20pp. Corrió CINCO veces entre las 20:30 y las 21:37 BRT del 18 de ago y bloqueó las cinco. Los precios en pantalla son la captura confirmada del 17 de ago, 18:48 BRT.",
-      "text2": "🔑 La inestabilidad estaba en los contratos FINOS, no en el líder. En las diez lecturas de la noche el primero quedó en 63,50% todas las veces, amplitud de 0,00pp, y Renan Santos y Ronaldo Caiado tampoco se movieron en el presidencial. Quien discrepó entre muestras fue el segundo, entre 32,45% y 32,75%, y Pablo Marçal, entre 0,65% y 1,15%.",
-      "text3": "⚠️ Una amplitud de 0,50pp en un contrato que vale 1% es casi la mitad de su propio valor, y eso es espesor de mercado, no señal electoral: un libro fino se mueve con poco dinero. El panel registra la diferencia en vez de publicar un número que dos lecturas no confirman.",
+      "text1": "La distancia entre LULA y FLÁVIO BOLSONARO se acortó por segundo día seguido y cerró en 31,45pp en la lectura confirmada del 18 de ago, 22:32 BRT. Eran 37,05pp el 16 de ago y 33,05pp el 17 de ago, o sea 5,60pp en dos días, en un libro presidencial que acumula USD 128,96M.",
+      "text2": "La urna dice lo contrario. La Nexus/BTG del 17 de ago, la única nacional de la semana, midió a Lula pasando de 40% a 41% y a Flávio de 35% a 36%: la diferencia entre los dos quedó INTACTA en 5 puntos, y cada movimiento de 1 punto cabe dentro del margen de 2pp de la propia casa.",
+      "text3": "RONALDO CAIADO se movió en los dos sentidos a la vez: más que triplicó en el contrato de victoria, de 0,25% a 0,80%, y cedió en el de tercer lugar, de 38,50% a 37,00%. Ganar la elección y terminar tercero son preguntas distintas, y el panel no las suma.",
       "direita": "El segundo subió 2,00pp, de 29,45% a 31,45% (vol USD 8,46M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC), en su cuarto día seguido de alza y en el mayor movimiento del día entre los contratos grandes. ⛔ No es récord: de los 90 días de la serie desde el 19 de may, 2 están por encima, y el máximo es 33,20%, del 2 de jun. En la encuesta llegó a 36%, y la distancia hacia el líder quedó igual.",
       "esquerda": "El líder cayó 2,00pp, de 66,50% a 64,50% (vol USD 8,52M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC), devolviendo exactamente lo que había subido la víspera. De los 90 días de la serie, 5 están por encima del cierre de hoy, y el máximo sigue en 66,50%, del 1 de ago. En la encuesta llegó a 41% en la primera vuelta y repitió 47% en el balotaje.",
       "terceiraVia": "🔴 El pelotón volvió a caer en el precio de VICTORIA y se movió al revés en la POSICIÓN. Renan Santos pasó de 4,70% a 4,05%, por debajo del piso de 4,80% registrado en la serie de 90 días, y Ronaldo Caiado pasó de 0,60% a 0,25%, por debajo del piso de 0,50%. ⭐ En el contrato de TERCER LUGAR de la primera vuelta, en cambio, Caiado SUBIÓ de 37,50% a 38,50% y Renan cedió de 53,00% a 52,50%, con la distancia entre ellos achicándose de 15,50pp a 14,00pp. ⭐ Y la encuesta invierte el orden del mercado: la BTG/Nexus le da 5% a Caiado contra 4% de Renan Santos.",
-      "polymarket": "Lectura confirmada del 17 de ago, 18:48 BRT. El 18 de ago la traba bloqueó cinco veces y ningún precio nuevo fue certificado."
+      "polymarket": "Lectura confirmada del 18 de ago, 22:32 BRT. Lula 63,50%, Flávio Bolsonaro 32,05%, Renan Santos 4,40%, Pablo Marçal 0,90% y Ronaldo Caiado 0,80%."
     },
     "inss": {
       "text1": "⭐ HECHO NUEVO EL 17 DE AGO, y es de investigación, no de intención de voto. La Policía Federal encontró un mensaje en el que Fábio Luís Lula da Silva y una lobista investigada por fraudes en el INSS tratan de negocios, según Poder360.",

@@ -1298,62 +1298,62 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "⛔ NO CERTIFIED PRICE ON Aug 18, and the values in this table are the confirmed capture of Aug 17, 6:48 PM BRT. The AFOS capture guard takes two readings 8 minutes apart and only clears them if they agree within 0.20pp; it ran FIVE times between 8:30 PM and 9:37 PM on Aug 18 and blocked all five. 🔑 The instability sat in the THIN contracts: across the ten readings of the night the leader came in at 63.50% every time, with 0.00pp of amplitude, while Pablo Marçal was read between 0.65% and 1.15%, that is 0.50pp on a contract worth about 1%. A thin book moves on little money, so this is market depth and not an electoral signal. 📌 POLLS: no new national one. The latest is BTG/Nexus of Aug 17, and Datafolha of Aug 21 will be the first to measure Marçal.",
+    "note": "⭐ CONFIRMED READING OF Aug 18, 10:32 PM BRT. The distance between LULA and FLÁVIO BOLSONARO narrowed 1.60pp and closed at 31.45pp, the SECOND day running of convergence: it was 37.05pp on Aug 16 and 33.05pp on Aug 17, adding up to 5.60pp in two days. 🔑 THE BALLOT BOX SAYS THE OPPOSITE: BTG/Nexus of Aug 17, the only national poll of the week, measured both rising 1 point each, which leaves the difference INTACT at 5 points. A measurement that does not narrow cannot explain a narrowing. ⭐⭐ AND RONALDO CAIADO MOVED BOTH WAYS: he more than tripled in the contract on WINNING, from 0.25% to 0.80%, and GAVE GROUND in the THIRD PLACE one, from 38.50% to 37.00%. 📌 No new national poll came in. Datafolha of Aug 21 will be the first to measure Pablo Marçal.",
     "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm. On Aug 16 there is a new confirmed reading for EVERY tracked contract, at 4:56 pm BRT (7:56 pm UTC): presidential, runner-up, third place, Senate and Supreme Court impeachment. Polls registered with the electoral court and released by the houses, with reporting from G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo and Correio Braziliense.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-44%",
-        "polymarket": "64.50%",
+        "polymarket": "63.50%",
         "tendenciaPesquisa": "NEW NATIONAL POLL ON Aug 17: BTG/Nexus gives him 41% in the first round, up 1 point against the house's own previous round, which had him at 40%, and 47% in the runoff, IDENTICAL to the previous round. ⭐ The distance to the runner-up did NOT change, it stays at 5 points, because both rose 1 point, and each move fits inside the 2pp margin. Quaest of Aug 14 remains in the base with 38%.",
-        "tendenciaPolymarket": "⛔ NO CONFIRMED READING on Aug 18. Across the ten readings between 8:30 PM and 9:37 PM he appeared at 63.50% in ALL of them, 0.00pp of amplitude, the most stable contract in the book, but the guard certifies the whole capture or none of it. The value alongside is the one from Aug 17, 6:48 PM BRT. ⛔ No superlative: the high of the 88-day series is 66.50%, from Aug 1.",
-        "odds": 64.5,
+        "tendenciaPolymarket": "🔴 DOWN 1.00pp on Aug 18, from 64.50% to 63.50% (vol USD 8.67M accumulated), confirmed reading of Aug 18, 10:32 PM BRT. The distance to the runner-up NARROWED 1.60pp to 31.45pp, the second day running of convergence, adding up to 5.60pp since Aug 16. ⛔ No superlative: the high of the 88-day series is still 66.50%, from Aug 1.",
+        "odds": 63.5,
         "percentage": 41,
-        "lastUpdate": "2026-08-17",
-        "value": 64.5
+        "lastUpdate": "2026-08-18",
+        "value": 63.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "31-36%",
-        "polymarket": "31.45%",
+        "polymarket": "32.05%",
         "tendenciaPesquisa": "NEW NATIONAL POLL ON Aug 17: BTG/Nexus takes him from 35% to 36% in the first round and repeats 44% in the runoff. ⚠️ The 1-point gain sits inside the house's 2pp margin, and the distance to the leader stayed the same, at 5 points. Quaest of Aug 14 remains in the base with 31%.",
-        "tendenciaPolymarket": "⛔ NO CONFIRMED READING on Aug 18. He was one of the contracts that blocked certification: read between 32.45% and 32.75% in the presidential book and between 86.50% and 87.50% in the second place book. ⛔ No superlative: the high of the 88-day series is 33.20%, from Jun 2, and no reading tonight passed it.",
-        "odds": 31.45,
+        "tendenciaPolymarket": "🔺 UP 0.60pp on Aug 18, from 31.45% to 32.05% (vol USD 8.62M accumulated), a fifth day running of gains. In the second place contract he marks 88.50%. ⛔ NOT a record: the high of the 88-day series is 33.20%, from Jun 2.",
+        "odds": 32.05,
         "percentage": 36,
-        "lastUpdate": "2026-08-17",
-        "value": 31.45
+        "lastUpdate": "2026-08-18",
+        "value": 32.05
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-5%",
-        "polymarket": "4.05%",
+        "polymarket": "4.40%",
         "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 17: BTG/Nexus keeps him at 4% in the first round and places him BEHIND Caiado, who has 5%. He is tied with Zema, who also has 4%, inside the 2pp margin.",
-        "tendenciaPolymarket": "⛔ NO CONFIRMED READING on Aug 18. In the presidential book he sat still at 3.95% across the ten readings; it was in the PLACEMENT contracts that he moved, 0.50pp in the third place one. 📏 The low of the 88-day series was touched on Aug 18, at 3.60%.",
-        "odds": 4.05,
+        "tendenciaPolymarket": "🔺 UP 0.35pp in the presidential book, to 4.40% (vol USD 10.11M accumulated). ⭐ The strong move was in PLACEMENT: in the third place contract he jumped from 52.50% to 57.00%, and the distance to Caiado REOPENED from 14.00pp to 20.00pp.",
+        "odds": 4.4,
         "percentage": 4,
-        "lastUpdate": "2026-08-17",
-        "value": 4.05
+        "lastUpdate": "2026-08-18",
+        "value": 4.4
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5%",
-        "polymarket": "0.25%",
+        "polymarket": "0.80%",
         "tendenciaPesquisa": "⭐ NEW NATIONAL POLL ON Aug 17: BTG/Nexus gives him 5% in the first round, ABOVE Renan Santos's 4%. In declared intention he becomes the third name in the race, inverting the ordering the market prices.",
-        "tendenciaPolymarket": "⛔ NO CONFIRMED READING on Aug 18. He was STABLE at 0.45% in the presidential book across the ten readings, and swung 0.50pp in the third place contract, between 37.00% and 37.50%. 📌 The poll and the price still disagree about who is third: BTG/Nexus of Aug 17 gives him 5%, above the 4% of Renan Santos.",
-        "odds": 0.25,
+        "tendenciaPolymarket": "⭐ MORE THAN TRIPLED in the contract on WINNING, from 0.25% to 0.80% (vol USD 6.34M accumulated), returning above the panel's 0.5% cut. And he GAVE GROUND in the THIRD PLACE one, from 38.50% to 37.00%. ⛔ No superlative: it is a recovery from the series low, 0.50% on Aug 15, and the high is 2.40%, from Jun 19.",
+        "odds": 0.8,
         "percentage": 5,
-        "lastUpdate": "2026-08-17",
-        "value": 0.25
+        "lastUpdate": "2026-08-18",
+        "value": 0.8
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "not tested",
         "polymarket": "0.90%",
         "tendenciaPesquisa": "🔴 NONE of the panel's 19 polls tests him, and no national poll in the window includes him in a presidential scenario. 📅 The Datafolha scheduled for Aug 21 will be the FIRST to include him, according to Valor Econômico. ⚠️ Until then the panel records absence of measurement, which is different from a measurement equal to zero, and for that reason he stays out of the crossing graph until a poll exists.",
-        "tendenciaPolymarket": "⛔ NO CONFIRMED READING on Aug 18, and he was the MOST UNSTABLE contract of the night: read between 0.65% and 1.15%, that is 0.50pp of amplitude on a contract worth about 1%. 🏷️ ELECTORAL STATUS, updated today: he asked the electoral court to correct his asset declaration and the declared wealth fell from R$ 7.4 billion to R$ 149.9 million, according to G1, Valor and O Globo, all of the same group. He remains INELIGIBLE until 2032, campaigning allowed by injunction and registration still pending. 📅 Datafolha of Aug 21 is the FIRST to measure him.",
+        "tendenciaPolymarket": "STABLE at 0.90% (vol USD 1.66M accumulated), with volume rising from USD 1.21M in one day. 🏷️ ELECTORAL STATUS, updated today: he asked the electoral court to correct his asset declaration and declared wealth fell from R$ 7.4 billion to R$ 149.9 million, according to G1 and Valor Econômico, of the same group. He remains INELIGIBLE until 2032, campaigning allowed by injunction and registration pending. 📅 Datafolha of Aug 21 is the FIRST to measure him.",
         "odds": 0.9,
         "percentage": 0,
-        "lastUpdate": "2026-08-17",
+        "lastUpdate": "2026-08-18",
         "value": 0.9
       },
       {
@@ -1370,13 +1370,13 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "2-4%",
-        "polymarket": "0.25%",
+        "polymarket": "0.15%",
         "tendenciaPesquisa": "NEW NATIONAL POLL ON Aug 17: BTG/Nexus gives him 4% in the first round, above the 2% Quaest measured on Aug 14, and tied with Renan Santos inside the 2pp margin.",
-        "tendenciaPolymarket": "A 0.10pp RISE: it went from 0.15% to 0.25% (vol USD 5.62M accumulated), confirmed reading of Aug 17, 6:48 PM BRT (9:48 PM UTC). The price remains below the 0.5% cut the panel uses to separate price from noise. In the third place contract he has 4.95%.",
-        "odds": 0.25,
+        "tendenciaPolymarket": "DOWN 0.10pp, to 0.15% (vol USD 5.71M accumulated), below the 0.5% cut the panel uses to separate price from noise. In the ballot box BTG/Nexus of Aug 17 gives him 4% in the first round.",
+        "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "2026-08-17",
-        "value": 0.25
+        "lastUpdate": "2026-08-18",
+        "value": 0.15
       },
       {
         "name": "Fernando Haddad",

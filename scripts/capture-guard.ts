@@ -229,11 +229,53 @@ async function main() {
     )
   }
 
+  /**
+   * 🔴 CERTIFICAÇÃO POR LIVRO, instalada em 18/Ago/2026 por ordem do André.
+   *
+   * O PROBLEMA, medido. A trava do Brasil vigia CINCO livros e, com o piso de
+   * 0,5%, isso dá 19 contratos: 4 no presidencial, 4 no de 2º lugar, 5 no de 3º,
+   * 1 no do STF e 5 no do Senado. Ela exigia que os DEZENOVE concordassem ao
+   * mesmo tempo. Mesmo que cada contrato tenha 95% de chance de ficar parado em
+   * 8 minutos, a chance de todos ficarem é 0,95^19, ou seja **38%**. A trava
+   * americana vigia CINCO contratos, e é por isso que ela quase não bloqueia.
+   *
+   * Em 18/Ago isso custou cinco rodadas seguidas bloqueadas, e os bloqueios
+   * vieram espalhados: 3 do livro de 2º lugar, 3 do presidencial e 2 do de 3º.
+   *
+   * 🔑 E O ACOPLAMENTO NUNCA TEVE JUSTIFICATIVA. Uma oscilação no livro de
+   * TERCEIRO LUGAR não tem por que impedir a publicação do preço PRESIDENCIAL:
+   * são mercados distintos, com preços distintos, publicados em lugares
+   * distintos da tela.
+   *
+   * ⛔ O QUE **NÃO** MUDA, e é o ponto: **nenhum número passa a ser publicável
+   * sem confirmação.** Cada preço continua exigindo duas leituras do SEU
+   * PRÓPRIO contrato concordando dentro de 0,20pp. O que deixa de existir é a
+   * regra de que o livro A suprime o livro B. Para cada número publicado, a
+   * garantia é idêntica à de antes.
+   *
+   * 📌 `ok` continua sendo o veredicto GLOBAL, para quem só quer saber se a
+   * captura inteira fechou. Quem publica por livro lê `livros`.
+   */
+  const livrosComProblema = new Set(divergencias.map(d => d.nome.split(':')[0]))
+  const livros: Record<string, { ok: boolean; motivos: string[] }> = {}
+  for (const book of books) {
+    const meus = motivos.filter(m => m.startsWith(`${book}:`))
+    livros[book] = { ok: !livrosComProblema.has(book) && meus.length === 0, motivos: meus }
+  }
+
+  // Problema que não pertence a livro nenhum (leitura degradada, cache repetido,
+  // preço sumido) contamina TODOS: aí não há o que certificar em lugar algum.
+  const motivosGlobais = motivos.filter(m => !books.some(bk => m.startsWith(`${bk}:`)))
+  if (motivosGlobais.length) for (const book of books) livros[book] = { ok: false, motivos: motivosGlobais }
+
   const ok = motivos.length === 0
+  const livrosOk = Object.entries(livros).filter(([, v]) => v.ok).map(([k]) => k)
 
   if (jsonOut) {
     console.log(JSON.stringify({
       ok,
+      livros,
+      livrosOk,
       motivos,
       fetchedAt: b.fetchedAt,
       // A 2a leitura é a que vale: é a mais recente e sobreviveu à confirmação.
@@ -245,10 +287,15 @@ async function main() {
       log(`APROVADO. As duas leituras concordam dentro de ${TOLERANCIA_PP}pp.`)
       log(`Publicar os valores da 2a leitura (fetchedAt=${b.fetchedAt}).`)
     } else {
-      log(`BLOQUEADO. ${motivos.length} motivo(s):`)
+      log(`BLOQUEADO no conjunto. ${motivos.length} motivo(s):`)
       motivos.forEach(m => log(`  - ${m}`))
       log('')
-      log('Recapturar antes de publicar. Se persistir, o book está instável agora.')
+      log('CERTIFICAÇÃO POR LIVRO, e é por ela que se publica:')
+      for (const [book, v] of Object.entries(livros)) {
+        log(`  ${v.ok ? 'APROVADO ' : 'BLOQUEADO'}  ${book}`)
+      }
+      log('')
+      log('Publicar os livros APROVADOS com os valores da 2a leitura. Os bloqueados, não.')
     }
     // 🔑 ÚLTIMA LINHA, E É A FONTE DE VERDADE. Ver o cabeçalho: o exit code
     // pode se perder no invólucro e virar 1 sem bloqueio nenhum. Esta linha
