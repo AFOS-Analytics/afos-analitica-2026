@@ -87,8 +87,40 @@ function limpaNome(q: string): string {
     .trim()
 }
 
-async function ler(proxy: string, books: readonly string[]): Promise<Leitura> {
-  const res = await fetch(proxy, { cache: 'no-store' })
+/**
+ * 🔴 RETENTATIVA DE TRANSPORTE, instalada em 18/Ago/2026 por decisão do André.
+ *
+ * O QUE ACONTECIA. A 2a leitura sai depois de 8 minutos de processo PARADO, e
+ * três vezes (uma em 17/Ago e duas em 18/Ago) ela voltou com `fetch failed`
+ * enquanto o proxy estava saudável: no mesmo minuto, três chamadas manuais
+ * responderam HTTP 200 em menos de 1s, com `degraded: false`. Rodando a mesma
+ * trava com `--intervalo=1`, a 2a leitura funcionou. A causa provável é a
+ * conexão morrer no ócio, e o `fetch` puro não tinha timeout nem retentativa.
+ *
+ * ⛔ O QUE A RETENTATIVA **NÃO** PODE FAZER, e é o ponto inteiro:
+ *
+ *   1. **Não cobre discordância de preço.** Ela vive aqui dentro, no transporte.
+ *      Leitura que CHEGA e discorda continua bloqueando, e é assim que tem que
+ *      ser: a trava existe para isso.
+ *   2. **Não reaproveita leitura.** Cada tentativa é um fetch novo, então o
+ *      `fetchedAt` de cada uma é o do momento dela.
+ *   3. **Não engole falha.** Toda tentativa que falha é IMPRESSA. Se as três
+ *      falharem, a trava bloqueia igual a antes, com o erro na mão.
+ *   4. **Não encurta o intervalo.** Retentativa só ADIA a 2a leitura, o que
+ *      afasta as duas medições em vez de aproximá-las.
+ *
+ * ⚠️ A checagem de `fetchedAt` idêntico segue valendo depois disto: se o proxy
+ * devolver o mesmo carimbo nas duas leituras, não houve medição independente e
+ * a trava falha fechada, com ou sem retentativa.
+ */
+const TENTATIVAS = 3
+const ESPERA_BASE_MS = 4_000
+const TIMEOUT_MS = 45_000
+
+async function lerUmaVez(proxy: string, books: readonly string[]): Promise<Leitura> {
+  // Timeout explícito: sem ele uma conexão pendurada segura a trava para sempre,
+  // e trava que não termina é pior que trava que bloqueia.
+  const res = await fetch(proxy, { cache: 'no-store', signal: AbortSignal.timeout(TIMEOUT_MS) })
   if (!res.ok) throw new Error(`proxy devolveu HTTP ${res.status}`)
   const j = await res.json() as Record<string, any>
 
@@ -106,6 +138,30 @@ async function ler(proxy: string, books: readonly string[]): Promise<Leitura> {
     degraded: !!j?.degraded,
     failedCount: Number(j?.failedCount ?? 0),
   }
+}
+
+async function ler(
+  proxy: string,
+  books: readonly string[],
+  rotulo: string,
+  log: (s: string) => void,
+): Promise<Leitura> {
+  let ultimo: unknown
+  for (let n = 1; n <= TENTATIVAS; n++) {
+    try {
+      const r = await lerUmaVez(proxy, books)
+      // Silêncio quando funciona de primeira; quando precisou de socorro, DIZ.
+      if (n > 1) log(`  ${rotulo}: obtida na tentativa ${n} de ${TENTATIVAS}.`)
+      return r
+    } catch (e) {
+      ultimo = e
+      const m = e instanceof Error ? e.message : String(e)
+      log(`  ⚠️ ${rotulo}: tentativa ${n} de ${TENTATIVAS} falhou no transporte: ${m}`)
+      if (n < TENTATIVAS) await new Promise(r => setTimeout(r, ESPERA_BASE_MS * n))
+    }
+  }
+  const m = ultimo instanceof Error ? ultimo.message : String(ultimo)
+  throw new Error(`${rotulo}: as ${TENTATIVAS} tentativas falharam no transporte. Última: ${m}`)
 }
 
 async function main() {
@@ -127,7 +183,7 @@ async function main() {
   log(`Books vigiados: ${books.join(', ')}`)
   log('')
 
-  const a = await ler(proxy, books)
+  const a = await ler(proxy, books, '1a leitura', log)
   log(`  1a leitura: ${a.precos.size} mercados, fetchedAt=${a.fetchedAt}`)
   if (a.degraded) motivos.push(`1a leitura veio degradada (failedCount=${a.failedCount}). Não publicar.`)
 
@@ -141,7 +197,7 @@ async function main() {
   log(`  aguardando ${minutos} min...`)
   await new Promise(r => setTimeout(r, minutos * 60_000))
 
-  const b = await ler(proxy, books)
+  const b = await ler(proxy, books, '2a leitura', log)
   log(`  2a leitura: ${b.precos.size} mercados, fetchedAt=${b.fetchedAt}`)
   if (b.degraded) motivos.push(`2a leitura veio degradada (failedCount=${b.failedCount}). Não publicar.`)
 
