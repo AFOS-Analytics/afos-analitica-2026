@@ -22,10 +22,10 @@ export function AutomatedGovEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Path</th>
-              <th className={S.th}>What it is</th>
-              <th className={S.th}>AFOS involvement</th>
-              <th className={S.th}>Rules</th>
+              <th scope="col" className={S.th}>Path</th>
+              <th scope="col" className={S.th}>What it is</th>
+              <th scope="col" className={S.th}>AFOS involvement</th>
+              <th scope="col" className={S.th}>Rules</th>
             </tr>
           </thead>
           <tbody>
@@ -133,9 +133,9 @@ export function AutomatedGovEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Validator</th>
-              <th className={S.th}>What it checks</th>
-              <th className={S.th}>Action on failure</th>
+              <th scope="col" className={S.th}>Validator</th>
+              <th scope="col" className={S.th}>What it checks</th>
+              <th scope="col" className={S.th}>Action on failure</th>
             </tr>
           </thead>
           <tbody>

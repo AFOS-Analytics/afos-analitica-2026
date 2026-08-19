@@ -63,9 +63,9 @@ export function HowItWorksPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Fonte</th>
-              <th className={S.th}>O que mede</th>
-              <th className={S.th}>Por que importa</th>
+              <th scope="col" className={S.th}>Fonte</th>
+              <th scope="col" className={S.th}>O que mede</th>
+              <th scope="col" className={S.th}>Por que importa</th>
             </tr>
           </thead>
           <tbody>
@@ -99,8 +99,8 @@ export function HowItWorksPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Situação</th>
-              <th className={S.th}>Interpretação</th>
+              <th scope="col" className={S.th}>Situação</th>
+              <th scope="col" className={S.th}>Interpretação</th>
             </tr>
           </thead>
           <tbody>
@@ -154,9 +154,9 @@ export function HowItWorksPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Variação</th>
-              <th className={S.th}>O que significa</th>
-              <th className={S.th}>O que fazer</th>
+              <th scope="col" className={S.th}>Variação</th>
+              <th scope="col" className={S.th}>O que significa</th>
+              <th scope="col" className={S.th}>O que fazer</th>
             </tr>
           </thead>
           <tbody>
@@ -190,7 +190,7 @@ export function HowItWorksPtBR() {
       <p className={S.p}>No topo da tela você vê o logo <strong>AFOS Analytics</strong> e três botões de navegação:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Botão</th><th className={S.th}>O que faz</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Botão</th><th scope="col" className={S.th}>O que faz</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>Sobre</strong></td><td className={S.td}>Explica a missão do projeto, o problema que resolve e o método</td></tr>
             <tr className={S.trAlt}><td className={S.td}><strong>Metas</strong></td><td className={S.td}>Mostra os objetivos públicos da plataforma (cobertura de países, integração de fontes, roadmap)</td></tr>
@@ -268,7 +268,7 @@ export function HowItWorksPtBR() {
       <p className={S.p}>Na prática, a tabela de divergência do Chile fica assim:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Pesquisa</th><th className={S.th}>Mercado</th><th className={S.th}>Divergência</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidato</th><th scope="col" className={S.th}>Pesquisa</th><th scope="col" className={S.th}>Mercado</th><th scope="col" className={S.th}>Divergência</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>José Antonio Kast (venceu)</strong></td><td className={S.td}>21%</td><td className={S.td}>66%</td><td className={S.td}>+45pp</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Jeannette Jara</td><td className={S.td}>26%</td><td className={S.td}>16.2%</td><td className={S.td}>-9.8pp</td></tr>
@@ -331,7 +331,7 @@ export function HowItWorksPtBR() {
       <p className={S.p}>A plataforma acompanha 17+ institutos brasileiros. Os mais frequentes no último mês:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Instituto</th><th className={S.th}>Pesquisas recentes</th><th className={S.th}>Amostra média</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Instituto</th><th scope="col" className={S.th}>Pesquisas recentes</th><th scope="col" className={S.th}>Amostra média</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Paraná Pesquisas</td><td className={S.td}>3</td><td className={S.td}>1.593 entrevistados</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Datafolha</td><td className={S.td}>2</td><td className={S.td}>1.513</td></tr>
@@ -374,8 +374,8 @@ export function HowItWorksPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Critério</th>
-              <th className={S.th}>O que mede</th>
+              <th scope="col" className={S.th}>Critério</th>
+              <th scope="col" className={S.th}>O que mede</th>
             </tr>
           </thead>
           <tbody>
@@ -393,9 +393,9 @@ export function HowItWorksPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Nível</th>
-              <th className={S.th}>Significado</th>
-              <th className={S.th}>Como ler as pesquisas desse instituto</th>
+              <th scope="col" className={S.th}>Nível</th>
+              <th scope="col" className={S.th}>Significado</th>
+              <th scope="col" className={S.th}>Como ler as pesquisas desse instituto</th>
             </tr>
           </thead>
           <tbody>
@@ -444,7 +444,7 @@ export function HowItWorksPtBR() {
       <p className={S.p}>Uma tabela única que resume candidato por candidato:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Pesquisa vigente</th><th className={S.th}>Polymarket</th><th className={S.th}>Tendência</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidato</th><th scope="col" className={S.th}>Pesquisa vigente</th><th scope="col" className={S.th}>Polymarket</th><th scope="col" className={S.th}>Tendência</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Candidato A (PT)</td><td className={S.td}>37% 1T (Quaest) / 39.2% (CNT/MDA)</td><td className={S.td}>39.5% (estável)</td><td className={S.td}>Empate técnico com Candidato B</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Candidato B (PL)</td><td className={S.td}>32% 1T (Quaest) / 35.9% (Veritá)</td><td className={S.td}>39.6% (↓0.8pp)</td><td className={S.td}>Desinfla salto, mantém liderança mínima</td></tr>
@@ -651,7 +651,7 @@ export function HowItWorksPtBR() {
       <h2 id="diferenciacao" className={S.h2}>O que torna o AFOS diferente de Google News ou um jornal</h2>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}></th><th className={S.th}>Jornal tradicional</th><th className={S.th}>Google News</th><th className={S.th}>AFOS</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}></th><th scope="col" className={S.th}>Jornal tradicional</th><th scope="col" className={S.th}>Google News</th><th scope="col" className={S.th}>AFOS</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Viés editorial</td><td className={S.td}>Alto</td><td className={S.td}>Médio</td><td className={S.td}><strong>Transparente (mostra os 2 lados)</strong></td></tr>
             <tr className={S.trAlt}><td className={S.td}>Integra dinheiro real?</td><td className={S.td}>Não</td><td className={S.td}>Não</td><td className={S.td}><strong>Sim, mercado de previsão</strong></td></tr>

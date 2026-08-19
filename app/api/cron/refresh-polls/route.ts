@@ -20,6 +20,7 @@ import { audit } from '../../../../lib/audit'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 import { alertNewNationalPolls } from '../../../lib/cron/poll-alerts'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
+import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
 
 // Cron baixa CSV TSE + cruza com Polymarket. TSE CDN às vezes lento (10-30s),
 // + Polymarket fetch (10s timeout) + persist Neon. Sem maxDuration explícito,
@@ -125,6 +126,9 @@ export async function GET(request: Request) {
       },
     }, { headers: buildNoCacheHeaders() })
   } catch (error) {
+    // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
+    // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
+    void avisarFalhaDeCron('refresh-polls', 'excecao nao tratada', error)
     /**
      * 🔑 O MOTIVO REAL VIAJA NA RESPOSTA, instalado em 19/Ago/2026.
      *

@@ -283,7 +283,7 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
                             <table className="w-full border-collapse text-xs">{children}</table>
                           </div>
                         ),
-                        th: ({ children }) => <th className="text-left px-2 py-1 font-semibold border-b border-gray-300 dark:border-gray-600">{children}</th>,
+                        th: ({ children }) => <th scope="col" className="text-left px-2 py-1 font-semibold border-b border-gray-300 dark:border-gray-600">{children}</th>,
                         td: ({ children }) => <td className="px-2 py-1 align-top border-b border-gray-200 dark:border-gray-700">{children}</td>,
                         p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
                         ul: ({ children }) => <ul className="list-disc pl-5 mb-2 space-y-1">{children}</ul>,

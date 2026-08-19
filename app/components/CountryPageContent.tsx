@@ -167,10 +167,10 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
               <table className="w-full text-sm">
                 <thead>
                   <tr className={`text-[11px] uppercase border-b ${thRow}`}>
-                    <th className="text-left font-medium py-2">{ds.candidate}</th>
-                    <th className="text-right font-medium px-2">{ds.poll}</th>
-                    <th className="text-right font-medium px-2">{ds.market}</th>
-                    <th className="text-right font-medium pl-2">{ds.div}</th>
+                    <th scope="col" className="text-left font-medium py-2">{ds.candidate}</th>
+                    <th scope="col" className="text-right font-medium px-2">{ds.poll}</th>
+                    <th scope="col" className="text-right font-medium px-2">{ds.market}</th>
+                    <th scope="col" className="text-right font-medium pl-2">{ds.div}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -198,10 +198,10 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                   <table className="w-full text-sm">
                     <thead>
                       <tr className={`text-[11px] uppercase border-b ${thRow}`}>
-                        <th className="text-left font-medium py-2">{ds.candidate}</th>
-                        <th className="text-right font-medium px-2">{ds.poll}</th>
-                        <th className="text-right font-medium px-2">{ds.market}</th>
-                        <th className="text-right font-medium pl-2">{ds.result}</th>
+                        <th scope="col" className="text-left font-medium py-2">{ds.candidate}</th>
+                        <th scope="col" className="text-right font-medium px-2">{ds.poll}</th>
+                        <th scope="col" className="text-right font-medium px-2">{ds.market}</th>
+                        <th scope="col" className="text-right font-medium pl-2">{ds.result}</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -130,6 +130,9 @@ async function main() {
   let skipped = 0
   /** Um item por destinatário, para a trilha em contact_events. */
   const trilha: ResultadoEnvio[] = []
+  /** Espelho do lote corrente, zerado a cada gravacao. */
+  const trilhaDoLote: ResultadoEnvio[] = []
+  const META_TRILHA = { produto: 'tradeoff', edicao: date, pais, issueNumber: content['pt-BR']?.issueNumber ?? content.en?.issueNumber }
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
@@ -147,7 +150,7 @@ async function main() {
       const c = content[locale] || content.en!
       if (!c) {
         skipped++
-        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
+        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' }); trilhaDoLote.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
         return { ok: false, lead, reason: 'no_content' }
       }
 
@@ -161,12 +164,21 @@ async function main() {
         { date, locale, title: c.title, sinalDaSemana: c.sinalDaSemana, issueNumber: c.issueNumber, pais },
         lead.unsubscribeToken || undefined,
       )
-      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
+      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro }); trilhaDoLote.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
       return { ok: r.ok, lead }
     }))
 
     sent += results.filter(r => r.ok).length
     failed += results.filter(r => !r.ok).length
+
+    // A TRILHA SAI POR LOTE, nao no fim. Ate 19/Ago/2026 era gravada uma vez so,
+    // depois do laco inteiro: crash ou 429 no meio deixava ZERO linha, e a lista
+    // de quem ja recebeu se perdia. `createMany` e apendice, entao gravar em
+    // pedacos equivale a gravar no fim, com a diferenca de sobreviver a queda.
+    if (!dryRun && trilhaDoLote.length > 0) {
+      await registrarBroadcast(prisma, META_TRILHA, trilhaDoLote)
+      trilhaDoLote.length = 0
+    }
 
     if (i + BATCH_SIZE < leads.length) {
       await new Promise(r => setTimeout(r, BATCH_DELAY_MS))
@@ -177,11 +189,7 @@ async function main() {
 
   // Trilha: só depois do envio, e só quando houve envio de verdade.
   if (!dryRun) {
-    await registrarBroadcast(
-      prisma,
-      { produto: 'tradeoff', edicao: date, pais, issueNumber: content['pt-BR']?.issueNumber ?? content.en?.issueNumber },
-      trilha,
-    )
+    if (trilhaDoLote.length > 0) await registrarBroadcast(prisma, META_TRILHA, trilhaDoLote)
   } else {
     console.log('🧾 trilha: dry-run não grava evento, por desenho.')
   }

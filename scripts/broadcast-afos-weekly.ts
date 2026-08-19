@@ -158,6 +158,9 @@ async function main() {
   let failed = 0
   /** Um item por destinatário, para a trilha em contact_events. */
   const trilha: ResultadoEnvio[] = []
+  /** Espelho do lote corrente, zerado a cada gravacao. */
+  const trilhaDoLote: ResultadoEnvio[] = []
+  const META_TRILHA = { produto: 'weekly', edicao: date, pais, issueNumber: content.en?.issueNumber }
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: lote=${BATCH_SIZE} entreLotes=${BATCH_DELAY_MS}ms entreEnvios=${INTER_SEND_MS}ms\n`)
@@ -188,12 +191,21 @@ async function main() {
       )
       // `servido` e não `locale`: a trilha registra o que a pessoa RECEBEU,
       // não o que ela preferia. A cascata invertida faz os dois divergirem.
-      trilha.push({ leadId: lead.id, locale: servido, ok: r.ok, messageId: r.id, erro: r.erro })
+      trilha.push({ leadId: lead.id, locale: servido, ok: r.ok, messageId: r.id, erro: r.erro }); trilhaDoLote.push({ leadId: lead.id, locale: servido, ok: r.ok, messageId: r.id, erro: r.erro })
       return { ok: r.ok }
     }))
 
     sent += results.filter(r => r.ok).length
     failed += results.filter(r => !r.ok).length
+
+    // A TRILHA SAI POR LOTE, nao no fim. Ate 19/Ago/2026 era gravada uma vez so,
+    // depois do laco inteiro: crash ou 429 no meio deixava ZERO linha, e a lista
+    // de quem ja recebeu se perdia. `createMany` e apendice, entao gravar em
+    // pedacos equivale a gravar no fim, com a diferenca de sobreviver a queda.
+    if (!dryRun && trilhaDoLote.length > 0) {
+      await registrarBroadcast(prisma, META_TRILHA, trilhaDoLote)
+      trilhaDoLote.length = 0
+    }
 
     if (i + BATCH_SIZE < leads.length) await sleep(BATCH_DELAY_MS)
   }
@@ -201,11 +213,7 @@ async function main() {
   console.log(`\n✅ Broadcast ${dryRun ? 'SIMULADO' : 'concluído'}: ${sent} enviados / ${failed} falharam, de ${leads.length} ativos.`)
 
   if (!dryRun) {
-    await registrarBroadcast(
-      prisma,
-      { produto: 'weekly', edicao: date, pais, issueNumber: content.en?.issueNumber },
-      trilha,
-    )
+    if (trilhaDoLote.length > 0) await registrarBroadcast(prisma, META_TRILHA, trilhaDoLote)
   } else {
     console.log('🧾 trilha: dry-run não grava evento, por desenho.')
   }

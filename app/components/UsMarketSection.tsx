@@ -687,8 +687,8 @@ export function UsMarketSection({ data, loading, amplitudes }: { data: UsMarketD
             <table className="mt-1.5 w-full max-w-md text-xs tabular-nums">
               <thead>
                 <tr className="text-left text-gray-500">
-                  <th className="py-1 pr-4 font-medium">{t.metodoExemploCab[0]}</th>
-                  <th className="py-1 font-medium">{t.metodoExemploCab[1]}</th>
+                  <th scope="col" className="py-1 pr-4 font-medium">{t.metodoExemploCab[0]}</th>
+                  <th scope="col" className="py-1 font-medium">{t.metodoExemploCab[1]}</th>
                 </tr>
               </thead>
               <tbody className="text-gray-700">

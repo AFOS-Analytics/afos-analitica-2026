@@ -110,6 +110,8 @@ async function main() {
   const failedEmails: string[] = []
   /** Um item por destinatário, para a trilha em contact_events. */
   const trilha: ResultadoEnvio[] = []
+  /** Espelho do lote corrente. Zerado a cada gravacao. */
+  const trilhaDoLote: ResultadoEnvio[] = []
 
   const { batchSize: BATCH_SIZE, batchDelayMs: BATCH_DELAY_MS, interSendMs: INTER_SEND_MS } = pickThrottle(leads.length)
   console.log(`🚦 Throttle: batchSize=${BATCH_SIZE} batchDelay=${BATCH_DELAY_MS}ms interSend=${INTER_SEND_MS}ms (${leads.length} leads)`)
@@ -129,7 +131,7 @@ async function main() {
       const c = content[locale] || content.en!
       if (!c) {
         skipped++
-        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
+        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' }); trilhaDoLote.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
         return { ok: false, lead, reason: 'no_content' }
       }
 
@@ -143,7 +145,7 @@ async function main() {
         { date, locale, title: c.title, lede: c.lede },
         lead.unsubscribeToken || undefined,
       )
-      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
+      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro }); trilhaDoLote.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
       return { ok: r.ok, lead }
     }))
 
@@ -155,6 +157,20 @@ async function main() {
     for (const r of results) {
       const reason = 'reason' in r ? r.reason : undefined
       if (!r.ok && reason !== 'dry_run' && reason !== 'no_content') failedEmails.push(r.lead.email)
+    }
+
+    // 🔴 A TRILHA SAI POR LOTE, nao no fim.
+    //
+    // Ate 19/Ago/2026 ela era gravada UMA vez, depois do laco inteiro. Um crash
+    // ou um 429 no lote 5 de 10 deixava zero linha de trilha, e a lista de quem
+    // JA recebeu se perdia: rodar de novo reenviava para todo mundo. Agora cada
+    // lote e gravado assim que fecha, entao o operador sempre sabe onde parou.
+    //
+    // `createMany` e apendice, entao gravar em pedacos e equivalente a gravar
+    // no fim, com a diferenca de sobreviver a interrupcao.
+    if (!dryRun && trilhaDoLote.length > 0) {
+      await registrarBroadcast(prisma, { produto: 'daily', edicao: date, pais: 'br' }, trilhaDoLote)
+      trilhaDoLote.length = 0
     }
 
     if (i + BATCH_SIZE < leads.length) {
@@ -169,7 +185,7 @@ async function main() {
   }
 
   if (!dryRun) {
-    await registrarBroadcast(prisma, { produto: 'daily', edicao: date, pais: 'br' }, trilha)
+    if (trilhaDoLote.length > 0) await registrarBroadcast(prisma, { produto: 'daily', edicao: date, pais: 'br' }, trilhaDoLote)
   } else {
     console.log('🧾 trilha: dry-run não grava evento, por desenho.')
   }

@@ -5,6 +5,7 @@ import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, com a lista fixa de veículos e os filtros.
 import { coletarImprensaUs } from '../../../../lib/us-press/collect.mjs'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
+import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
 
 /**
  * Imprensa das midterms, coleta diária.
@@ -61,6 +62,9 @@ export async function GET(request: Request) {
       { headers: { 'Cache-Control': 'no-store' } },
     )
   } catch (e) {
+    // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
+    // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
+    void avisarFalhaDeCron('refresh-us-press', 'excecao nao tratada', e)
     // Redação antes de ir para o CORPO da resposta. Regra única em
     // lib/cron/redigir.ts: esta rota devolvia a mensagem crua, e mensagem de
     // driver de banco carrega a string de conexão inteira.

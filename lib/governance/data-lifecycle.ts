@@ -64,6 +64,15 @@ export async function anonymizeUser(email: string): Promise<{ success: boolean; 
         where: { leadId: lead.id },
         data: { eventPayload: Prisma.DbNull, leadId: null },
       }))
+
+      // 🔴 `visitor_states` ficava de fora, e ela guarda `leadId` apontando para
+      // o lead que acabou de ser anonimizado. O vínculo sobrevivia à exclusão:
+      // dava para partir da linha de visitante e chegar ao lead de volta.
+      // Encontrado pelo crítico de cobertura do EVAL, em 19/Ago/2026.
+      ops.push(prisma.visitorState.updateMany({
+        where: { leadId: lead.id },
+        data: { leadId: null, subscribed: false },
+      }))
     }
 
     // Consents sem userId mas com email direto

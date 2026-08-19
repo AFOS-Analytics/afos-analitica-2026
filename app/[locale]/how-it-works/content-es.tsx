@@ -61,9 +61,9 @@ export function HowItWorksEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Fuente</th>
-              <th className={S.th}>Qué mide</th>
-              <th className={S.th}>Por qué importa</th>
+              <th scope="col" className={S.th}>Fuente</th>
+              <th scope="col" className={S.th}>Qué mide</th>
+              <th scope="col" className={S.th}>Por qué importa</th>
             </tr>
           </thead>
           <tbody>
@@ -97,8 +97,8 @@ export function HowItWorksEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Situación</th>
-              <th className={S.th}>Interpretación</th>
+              <th scope="col" className={S.th}>Situación</th>
+              <th scope="col" className={S.th}>Interpretación</th>
             </tr>
           </thead>
           <tbody>
@@ -152,9 +152,9 @@ export function HowItWorksEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Variación</th>
-              <th className={S.th}>Qué significa</th>
-              <th className={S.th}>Qué hacer</th>
+              <th scope="col" className={S.th}>Variación</th>
+              <th scope="col" className={S.th}>Qué significa</th>
+              <th scope="col" className={S.th}>Qué hacer</th>
             </tr>
           </thead>
           <tbody>
@@ -188,7 +188,7 @@ export function HowItWorksEs() {
       <p className={S.p}>En la parte superior ves el logo <strong>AFOS Analytics</strong> y tres botones de navegación:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Botón</th><th className={S.th}>Qué hace</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Botón</th><th scope="col" className={S.th}>Qué hace</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>Acerca de</strong></td><td className={S.td}>Explica la misión del proyecto, el problema que resuelve y el método</td></tr>
             <tr className={S.trAlt}><td className={S.td}><strong>Metas</strong></td><td className={S.td}>Muestra los objetivos públicos de la plataforma (cobertura de países, integración de fuentes, roadmap)</td></tr>
@@ -266,7 +266,7 @@ export function HowItWorksEs() {
       <p className={S.p}>En la práctica, la tabla de divergencia de Chile queda así:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Encuesta</th><th className={S.th}>Mercado</th><th className={S.th}>Divergencia</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidato</th><th scope="col" className={S.th}>Encuesta</th><th scope="col" className={S.th}>Mercado</th><th scope="col" className={S.th}>Divergencia</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>José Antonio Kast (ganó)</strong></td><td className={S.td}>21%</td><td className={S.td}>66%</td><td className={S.td}>+45pp</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Jeannette Jara</td><td className={S.td}>26%</td><td className={S.td}>16.2%</td><td className={S.td}>-9.8pp</td></tr>
@@ -329,7 +329,7 @@ export function HowItWorksEs() {
       <p className={S.p}>La plataforma acompaña más de 17 encuestadoras brasileñas. Las más frecuentes en el último mes:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Encuestadora</th><th className={S.th}>Encuestas recientes</th><th className={S.th}>Muestra promedio</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Encuestadora</th><th scope="col" className={S.th}>Encuestas recientes</th><th scope="col" className={S.th}>Muestra promedio</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Paraná Pesquisas</td><td className={S.td}>3</td><td className={S.td}>1.593 entrevistados</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Datafolha</td><td className={S.td}>2</td><td className={S.td}>1.513</td></tr>
@@ -372,8 +372,8 @@ export function HowItWorksEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Criterio</th>
-              <th className={S.th}>Qué mide</th>
+              <th scope="col" className={S.th}>Criterio</th>
+              <th scope="col" className={S.th}>Qué mide</th>
             </tr>
           </thead>
           <tbody>
@@ -391,9 +391,9 @@ export function HowItWorksEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Nivel</th>
-              <th className={S.th}>Significado</th>
-              <th className={S.th}>Cómo leer las encuestas de esta encuestadora</th>
+              <th scope="col" className={S.th}>Nivel</th>
+              <th scope="col" className={S.th}>Significado</th>
+              <th scope="col" className={S.th}>Cómo leer las encuestas de esta encuestadora</th>
             </tr>
           </thead>
           <tbody>
@@ -442,7 +442,7 @@ export function HowItWorksEs() {
       <p className={S.p}>Una única tabla que resume candidato por candidato:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidato</th><th className={S.th}>Encuesta vigente</th><th className={S.th}>Polymarket</th><th className={S.th}>Tendencia</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidato</th><th scope="col" className={S.th}>Encuesta vigente</th><th scope="col" className={S.th}>Polymarket</th><th scope="col" className={S.th}>Tendencia</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Candidato A (PT)</td><td className={S.td}>37% 1ª vuelta (Quaest) / 39.2% (CNT/MDA)</td><td className={S.td}>39.5% (estable)</td><td className={S.td}>Empate técnico con Candidato B</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Candidato B (PL)</td><td className={S.td}>32% 1ª vuelta (Quaest) / 35.9% (Veritá)</td><td className={S.td}>39.6% (↓0.8pp)</td><td className={S.td}>Desinfla salto, mantiene liderazgo mínimo</td></tr>
@@ -649,7 +649,7 @@ export function HowItWorksEs() {
       <h2 id="diferenciacao" className={S.h2}>Qué hace diferente a AFOS de Google News o un periódico</h2>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}></th><th className={S.th}>Periódico tradicional</th><th className={S.th}>Google News</th><th className={S.th}>AFOS</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}></th><th scope="col" className={S.th}>Periódico tradicional</th><th scope="col" className={S.th}>Google News</th><th scope="col" className={S.th}>AFOS</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Sesgo editorial</td><td className={S.td}>Alto</td><td className={S.td}>Medio</td><td className={S.td}><strong>Transparente (muestra ambos lados)</strong></td></tr>
             <tr className={S.trAlt}><td className={S.td}>¿Integra dinero real?</td><td className={S.td}>No</td><td className={S.td}>No</td><td className={S.td}><strong>Sí, mercado de predicción</strong></td></tr>

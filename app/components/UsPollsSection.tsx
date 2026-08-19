@@ -221,14 +221,14 @@ export function UsPollsSection({ data }: { data: UsPollsData | null }) {
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-light-border text-left text-gray-500">
-                <th className="py-2 pr-3 font-semibold">{t.colInstituto}</th>
-                <th className="py-2 pr-3 font-semibold whitespace-nowrap">{t.colCampo}</th>
-                <th className="py-2 pr-3 font-semibold text-right">{t.colAmostra}</th>
-                <th className="py-2 pr-3 font-semibold text-right">{t.colMargem}</th>
-                <th className="py-2 pr-3 font-semibold text-right">{t.colDem}</th>
-                <th className="py-2 pr-3 font-semibold text-right">{t.colRep}</th>
-                <th className="py-2 pr-3 font-semibold text-right">{t.colVantagem}</th>
-                <th className="py-2 font-semibold">{t.colFonte}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold">{t.colInstituto}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold whitespace-nowrap">{t.colCampo}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold text-right">{t.colAmostra}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold text-right">{t.colMargem}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold text-right">{t.colDem}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold text-right">{t.colRep}</th>
+                <th scope="col" className="py-2 pr-3 font-semibold text-right">{t.colVantagem}</th>
+                <th scope="col" className="py-2 font-semibold">{t.colFonte}</th>
               </tr>
             </thead>
             <tbody>

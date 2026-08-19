@@ -16,3 +16,17 @@ tsconfig.tsbuildinfo
 hf-assets/
 tests/
 docs/
+
+# Capturas de tela e GIF que NÃO são referenciados por nenhum código nem pelo
+# README. Somam ~4,8 MB e subiam em todo deploy. Continuam no git, só não
+# viajam. Encontrado em 19/Ago/2026 pelo crítico de cobertura do EVAL.
+#
+# ⛔ `public/demo.mp4`, `demo-en.mp4` e `demo-audio.m4a` NÃO entram aqui, e a
+# medição é o motivo: eles SÃO citados no README.md e no README.pt-BR.md, que é
+# público e renderiza no GitHub apontando para a URL viva. Os três respondem 200
+# em produção. Ignorá-los quebraria a demonstração do repositório.
+public/screenshots/dashboard-full.png
+public/screenshots/dashboard.png
+public/screenshots/global-map.png
+public/screenshots/landing-full.png
+public/demo.gif

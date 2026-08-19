@@ -61,9 +61,9 @@ export function HowItWorksEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Source</th>
-              <th className={S.th}>What it measures</th>
-              <th className={S.th}>Why it matters</th>
+              <th scope="col" className={S.th}>Source</th>
+              <th scope="col" className={S.th}>What it measures</th>
+              <th scope="col" className={S.th}>Why it matters</th>
             </tr>
           </thead>
           <tbody>
@@ -97,8 +97,8 @@ export function HowItWorksEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Situation</th>
-              <th className={S.th}>Interpretation</th>
+              <th scope="col" className={S.th}>Situation</th>
+              <th scope="col" className={S.th}>Interpretation</th>
             </tr>
           </thead>
           <tbody>
@@ -152,9 +152,9 @@ export function HowItWorksEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Variation</th>
-              <th className={S.th}>What it means</th>
-              <th className={S.th}>What to do</th>
+              <th scope="col" className={S.th}>Variation</th>
+              <th scope="col" className={S.th}>What it means</th>
+              <th scope="col" className={S.th}>What to do</th>
             </tr>
           </thead>
           <tbody>
@@ -188,7 +188,7 @@ export function HowItWorksEn() {
       <p className={S.p}>At the top of the screen you see the <strong>AFOS Analytics</strong> logo and three navigation buttons:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Button</th><th className={S.th}>What it does</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Button</th><th scope="col" className={S.th}>What it does</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>About</strong></td><td className={S.td}>Explains the project's mission, the problem it solves, and the method</td></tr>
             <tr className={S.trAlt}><td className={S.td}><strong>Goals</strong></td><td className={S.td}>Shows the platform's public goals (country coverage, source integration, roadmap)</td></tr>
@@ -266,7 +266,7 @@ export function HowItWorksEn() {
       <p className={S.p}>In practice, Chile's divergence table looks like this:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidate</th><th className={S.th}>Poll</th><th className={S.th}>Market</th><th className={S.th}>Divergence</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidate</th><th scope="col" className={S.th}>Poll</th><th scope="col" className={S.th}>Market</th><th scope="col" className={S.th}>Divergence</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}><strong>José Antonio Kast (won)</strong></td><td className={S.td}>21%</td><td className={S.td}>66%</td><td className={S.td}>+45pp</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Jeannette Jara</td><td className={S.td}>26%</td><td className={S.td}>16.2%</td><td className={S.td}>-9.8pp</td></tr>
@@ -329,7 +329,7 @@ export function HowItWorksEn() {
       <p className={S.p}>The platform tracks 17+ Brazilian institutes. The most frequent in the last month:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Institute</th><th className={S.th}>Recent polls</th><th className={S.th}>Average sample</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Institute</th><th scope="col" className={S.th}>Recent polls</th><th scope="col" className={S.th}>Average sample</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Paraná Pesquisas</td><td className={S.td}>3</td><td className={S.td}>1,593 respondents</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Datafolha</td><td className={S.td}>2</td><td className={S.td}>1,513</td></tr>
@@ -372,8 +372,8 @@ export function HowItWorksEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Criterion</th>
-              <th className={S.th}>What it measures</th>
+              <th scope="col" className={S.th}>Criterion</th>
+              <th scope="col" className={S.th}>What it measures</th>
             </tr>
           </thead>
           <tbody>
@@ -391,9 +391,9 @@ export function HowItWorksEn() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Level</th>
-              <th className={S.th}>Meaning</th>
-              <th className={S.th}>How to read polls from this institute</th>
+              <th scope="col" className={S.th}>Level</th>
+              <th scope="col" className={S.th}>Meaning</th>
+              <th scope="col" className={S.th}>How to read polls from this institute</th>
             </tr>
           </thead>
           <tbody>
@@ -442,7 +442,7 @@ export function HowItWorksEn() {
       <p className={S.p}>A single table summarizing candidate by candidate:</p>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}>Candidate</th><th className={S.th}>Current poll</th><th className={S.th}>Polymarket</th><th className={S.th}>Trend</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}>Candidate</th><th scope="col" className={S.th}>Current poll</th><th scope="col" className={S.th}>Polymarket</th><th scope="col" className={S.th}>Trend</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Candidate A (PT)</td><td className={S.td}>37% 1st round (Quaest) / 39.2% (CNT/MDA)</td><td className={S.td}>39.5% (stable)</td><td className={S.td}>Technical tie with Candidate B</td></tr>
             <tr className={S.trAlt}><td className={S.td}>Candidate B (PL)</td><td className={S.td}>32% 1st round (Quaest) / 35.9% (Veritá)</td><td className={S.td}>39.6% (↓0.8pp)</td><td className={S.td}>Surge deflates, holds minimal lead</td></tr>
@@ -649,7 +649,7 @@ export function HowItWorksEn() {
       <h2 id="diferenciacao" className={S.h2}>What makes AFOS different from Google News or a newspaper</h2>
       <div className={S.tableWrap}>
         <table className={S.table}>
-          <thead><tr><th className={S.th}></th><th className={S.th}>Traditional newspaper</th><th className={S.th}>Google News</th><th className={S.th}>AFOS</th></tr></thead>
+          <thead><tr><th scope="col" className={S.th}></th><th scope="col" className={S.th}>Traditional newspaper</th><th scope="col" className={S.th}>Google News</th><th scope="col" className={S.th}>AFOS</th></tr></thead>
           <tbody>
             <tr className={S.trRow}><td className={S.td}>Editorial bias</td><td className={S.td}>High</td><td className={S.td}>Medium</td><td className={S.td}><strong>Transparent (shows both sides)</strong></td></tr>
             <tr className={S.trAlt}><td className={S.td}>Integrates real money?</td><td className={S.td}>No</td><td className={S.td}>No</td><td className={S.td}><strong>Yes, prediction market</strong></td></tr>

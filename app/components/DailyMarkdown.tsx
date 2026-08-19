@@ -74,7 +74,7 @@ export function DailyBody({ markdown }: { markdown: string }) {
         tbody: ({ children }) => <tbody>{children}</tbody>,
         tr: ({ children }) => <tr className="border-b last:border-b-0 amd-tr">{children}</tr>,
         th: ({ children }) => (
-          <th className="text-left px-3 py-2 font-semibold amd-strong">{children}</th>
+          <th scope="col" className="text-left px-3 py-2 font-semibold amd-strong">{children}</th>
         ),
         td: ({ children }) => <td className="px-3 py-2 align-top amd-body">{children}</td>,
         p: ({ children }) => <p className="mb-4 leading-relaxed amd-body">{children}</p>,

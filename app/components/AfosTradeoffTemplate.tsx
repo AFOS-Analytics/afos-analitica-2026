@@ -325,11 +325,11 @@ function IndicatorGrid({ rows, headers, isBlue }: { rows: IndicatorRow[]; header
       <table className={`w-full text-[13px] border-collapse ${isBlue ? 'text-blue-50' : 'text-slate-800'}`}>
         <thead>
           <tr className={isBlue ? 'bg-blue-900 text-white' : 'bg-primary text-white'}>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.contract}</th>
-            <th className="text-right font-semibold px-3 py-2.5">{headers.value}</th>
-            <th className="text-right font-semibold px-3 py-2.5">{headers.delta}</th>
-            <th className="text-right font-semibold px-3 py-2.5">{headers.volume}</th>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.reading}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.contract}</th>
+            <th scope="col" className="text-right font-semibold px-3 py-2.5">{headers.value}</th>
+            <th scope="col" className="text-right font-semibold px-3 py-2.5">{headers.delta}</th>
+            <th scope="col" className="text-right font-semibold px-3 py-2.5">{headers.volume}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.reading}</th>
           </tr>
         </thead>
         <tbody>
@@ -413,10 +413,10 @@ function Calendar({ rows, headers, isBlue }: { rows: CalendarRow[]; headers: { d
       <table className={`w-full text-[13px] border-collapse ${isBlue ? 'text-blue-50' : 'text-slate-800'}`}>
         <thead>
           <tr className={isBlue ? 'bg-blue-900 text-white' : 'bg-primary text-white'}>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.date}</th>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.print}</th>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.sample}</th>
-            <th className="text-left font-semibold px-3 py-2.5">{headers.reading}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.date}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.print}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.sample}</th>
+            <th scope="col" className="text-left font-semibold px-3 py-2.5">{headers.reading}</th>
           </tr>
         </thead>
         <tbody>

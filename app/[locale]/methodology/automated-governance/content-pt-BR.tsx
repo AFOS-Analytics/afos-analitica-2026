@@ -22,10 +22,10 @@ export function AutomatedGovPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Caminho</th>
-              <th className={S.th}>O que é</th>
-              <th className={S.th}>Envolvimento AFOS</th>
-              <th className={S.th}>Regras</th>
+              <th scope="col" className={S.th}>Caminho</th>
+              <th scope="col" className={S.th}>O que é</th>
+              <th scope="col" className={S.th}>Envolvimento AFOS</th>
+              <th scope="col" className={S.th}>Regras</th>
             </tr>
           </thead>
           <tbody>
@@ -132,9 +132,9 @@ export function AutomatedGovPtBR() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Validador</th>
-              <th className={S.th}>O que checa</th>
-              <th className={S.th}>Ação em falha</th>
+              <th scope="col" className={S.th}>Validador</th>
+              <th scope="col" className={S.th}>O que checa</th>
+              <th scope="col" className={S.th}>Ação em falha</th>
             </tr>
           </thead>
           <tbody>

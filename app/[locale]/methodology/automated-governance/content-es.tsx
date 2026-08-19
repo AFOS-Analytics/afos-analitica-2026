@@ -22,10 +22,10 @@ export function AutomatedGovEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Camino</th>
-              <th className={S.th}>Qué es</th>
-              <th className={S.th}>Involucramiento AFOS</th>
-              <th className={S.th}>Reglas</th>
+              <th scope="col" className={S.th}>Camino</th>
+              <th scope="col" className={S.th}>Qué es</th>
+              <th scope="col" className={S.th}>Involucramiento AFOS</th>
+              <th scope="col" className={S.th}>Reglas</th>
             </tr>
           </thead>
           <tbody>
@@ -133,9 +133,9 @@ export function AutomatedGovEs() {
         <table className={S.table}>
           <thead>
             <tr>
-              <th className={S.th}>Validador</th>
-              <th className={S.th}>Qué revisa</th>
-              <th className={S.th}>Acción en fallo</th>
+              <th scope="col" className={S.th}>Validador</th>
+              <th scope="col" className={S.th}>Qué revisa</th>
+              <th scope="col" className={S.th}>Acción en fallo</th>
             </tr>
           </thead>
           <tbody>

@@ -170,8 +170,8 @@ export function UsPressSection({ leitura }: { leitura: UsPressLeitura }) {
               <table className="w-full text-left text-xs">
                 <thead>
                   <tr className="text-[10px] uppercase tracking-wider text-gray-500">
-                    <th className="py-1 pr-3 font-semibold">{t.colCasa}</th>
-                    <th className="py-1 font-semibold">{t.colTipo}</th>
+                    <th scope="col" className="py-1 pr-3 font-semibold">{t.colCasa}</th>
+                    <th scope="col" className="py-1 font-semibold">{t.colTipo}</th>
                   </tr>
                 </thead>
                 <tbody className="text-gray-700">

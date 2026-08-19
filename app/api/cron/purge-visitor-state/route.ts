@@ -12,6 +12,7 @@ import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 import { audit } from '../../../../lib/audit'
 import { requireCronAuth } from '../../../../lib/cron/auth'
+import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
 
 export const maxDuration = 60
 
@@ -50,6 +51,9 @@ export async function GET(request: Request) {
       cutoff: cutoff.toISOString(),
     })
   } catch (error) {
+    // Alerta por email. Este cron falhava em SILENCIO: dos sete declarados,
+    // so `persist-analysis` avisava alguem. Nao bloqueia nem derruba nada.
+    void avisarFalhaDeCron('purge-visitor-state', 'excecao nao tratada', error)
     console.error('[purge-visitor-state] Error:', error)
     return NextResponse.json({ error: 'purge_failed' }, { status: 500 })
   }
