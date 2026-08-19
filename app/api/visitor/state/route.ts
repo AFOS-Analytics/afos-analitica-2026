@@ -6,6 +6,7 @@ import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 import { visitorStateSchema } from '../../../../lib/validations'
 import { computeEligible, shouldShowPopup } from '../../../../lib/visitor/constants'
+import { isRateLimited } from '../../../../lib/rate-limit'
 
 export async function POST(request: Request) {
   if (!prisma) return NextResponse.json({ ok: false, error: 'unavailable' }, { status: 503 })
@@ -17,6 +18,14 @@ export async function POST(request: Request) {
 
   const parsed = visitorStateSchema.safeParse(body)
   if (!parsed.success) return NextResponse.json({ ok: false, error: 'invalid_visitor_id' }, { status: 400 })
+
+  // 🔴 Limite de taxa, que as rotas IRMÃS já tinham e esta não. `dismiss` e
+  // `migrate` limitam por visitorId; esta CRIA linha no banco para qualquer UUID
+  // que chegue, e era a única das três sem freio. Assimetria de proteção entre
+  // rotas irmãs é o defeito, não a ausência em si.
+  if (await isRateLimited(`afos:ratelimit:state:${parsed.data.visitorId}`, 30, 60)) {
+    return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+  }
 
   try {
     const s = await prisma.visitorState.upsert({

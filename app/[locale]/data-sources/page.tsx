@@ -6,6 +6,8 @@ import { Footer } from '../../components/Footer'
 import { buildMetadata } from '../../../lib/seo/metadata'
 import type { Locale } from '../../../lib/i18n/config'
 import { SUPPORTED_LOCALES } from '../../../lib/afos-daily/loader'
+import { JsonLd } from '../../components/JsonLd'
+import { datasetSchema } from '../../../lib/seo/schema'
 
 // Sem isto o Next nao sabe quais locales pre-renderizar e serve a pagina sob
 // demanda a cada requisicao, mesmo ela sendo conteudo estatico. Instalado
@@ -77,6 +79,10 @@ export default async function DataSourcesPage(props: Props) {
   const c = CONTENT[params.locale as keyof typeof CONTENT] ?? CONTENT['pt-BR']
   return (
     <div className="min-h-screen bg-light-bg flex flex-col">
+      {/* O nó Dataset vive AQUI, e só aqui: esta é a página que descreve o dado.
+          Antes ele era injetado no layout raiz e toda página do site declarava o
+          dataset do Brasil, inclusive o painel das midterms. */}
+      <JsonLd data={datasetSchema()} />
       <StaticPageHeader />
       <main id="main-content" className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <h1 className="text-3xl sm:text-4xl font-extrabold text-dark mb-2">{c.h1}</h1>

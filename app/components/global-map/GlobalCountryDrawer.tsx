@@ -3,6 +3,7 @@
 import type { CountryMarketSummary } from '../../types/global-map';
 import { MAP_TOKENS, formatVolume } from '../../lib/map-colors';
 import { useLocale } from '../../i18n/context';
+import { fmtDecimal } from '../../../lib/i18n/numero';
 
 const DRAWER_L: Record<string, { close: string; live: string; upcoming: string; closed: string; candidates: string; noData: string; scheduledFor: string; source: string; sumMarkets: (n: number) => string }> = {
   'pt-BR': { close: 'Fechar painel', live: 'Mercado ao Vivo', upcoming: 'Em Breve', closed: 'Encerrada', candidates: 'Candidatos', noData: 'Sem dados de mercado disponíveis.', scheduledFor: 'Eleição prevista para', source: 'Dados: Polymarket (mercados de previsão com dinheiro real), atualizado continuamente', sumMarkets: (n) => `soma de ${n} mercados` },
@@ -76,7 +77,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
             </span>
             {c.volumeUsd > 0 && (
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>
-                Vol: {formatVolume(c.volumeUsd)}{(c.marketCount ?? 0) > 1 ? ` (${L.sumMarkets(c.marketCount ?? 0)})` : ''}
+                Vol: {formatVolume(c.volumeUsd, locale)}{(c.marketCount ?? 0) > 1 ? ` (${L.sumMarkets(c.marketCount ?? 0)})` : ''}
               </span>
             )}
           </div>
@@ -103,7 +104,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
                       <span className="text-sm font-medium" style={{ color: MAP_TOKENS.text }}>{cd.name}</span>
                     </div>
                     <span className="font-bold text-sm" style={{ color: i === 0 ? MAP_TOKENS.primarySoft : MAP_TOKENS.text }}>
-                      {cd.probability}%
+                      {fmtDecimal(cd.probability, locale, 1)}%
                     </span>
                   </div>
                   <div className="w-full rounded-full h-2 overflow-hidden" style={{ background: 'rgba(148,163,184,0.08)' }}>
@@ -119,7 +120,7 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
                   </div>
                   <div className="text-right mt-0.5">
                     <span className="text-[10px]" style={{ color: MAP_TOKENS.textMuted }}>
-                      {formatVolume(cd.volumeUsd)}
+                      {formatVolume(cd.volumeUsd, locale)}
                     </span>
                   </div>
                 </div>

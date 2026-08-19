@@ -132,6 +132,7 @@
     {
       "institute": "BTG/Nexus",
       "date": "2026-08-17",
+      "scope": "national",
       "sample": 2003,
       "margin": 2,
       "register": "BR-03317/2026",
@@ -180,6 +181,7 @@
     {
       "institute": "Quaest/Genial",
       "date": "2026-08-14",
+      "scope": "national",
       "sample": 2004,
       "margin": 2,
       "register": "BR-06773/2026",
@@ -232,6 +234,7 @@
     {
       "institute": "PoderData/Aya",
       "date": "2026-08-13",
+      "scope": "national",
       "sample": 2400,
       "margin": 2,
       "register": "BR-06868/2026",
@@ -268,6 +271,7 @@
     {
       "institute": "CNT/MDA",
       "date": "2026-08-11",
+      "scope": "national",
       "sample": 2002,
       "margin": 2.2,
       "register": "BR-06935/2026",
@@ -304,6 +308,7 @@
     {
       "institute": "Gerp",
       "date": "2026-08-11",
+      "scope": "national",
       "sample": 2400,
       "margin": 2,
       "register": "BR-08045/2026",
@@ -352,6 +357,7 @@
     {
       "institute": "Futura Inteligência",
       "date": "2026-08-11",
+      "scope": "national",
       "sample": 2000,
       "margin": 2.2,
       "register": "BR-08109/2026",
@@ -388,6 +394,7 @@
     {
       "institute": "Palver",
       "date": "2026-08-10",
+      "scope": "national",
       "sample": 5000,
       "margin": 3,
       "register": "BR-06596/2026",
@@ -428,6 +435,7 @@
     {
       "institute": "BTG/Nexus",
       "date": "2026-08-10",
+      "scope": "national",
       "sample": 2001,
       "margin": 2,
       "register": "BR-08428/2026",
@@ -476,6 +484,7 @@
     {
       "institute": "Quaest/Genial",
       "date": "2026-08-05",
+      "scope": "national",
       "sample": 2004,
       "margin": 2,
       "register": "BR-06591/2026",
@@ -557,6 +566,7 @@
     {
       "institute": "Ideia/Canal Meio",
       "date": "2026-08-05",
+      "scope": "national",
       "sample": 1500,
       "margin": 2.5,
       "register": "BR-04579/2026",
@@ -638,6 +648,7 @@
     {
       "institute": "BTG/Nexus",
       "date": "2026-08-03",
+      "scope": "national",
       "sample": 2002,
       "margin": 2,
       "register": "BR-02874/2026",
@@ -707,6 +718,7 @@
     {
       "institute": "Vox Brasil",
       "date": "2026-07-31",
+      "scope": "national",
       "sample": 2100,
       "margin": 2.15,
       "register": "BR-01084/2026",
@@ -755,6 +767,7 @@
     {
       "institute": "PoderData/Aya",
       "date": "2026-07-30",
+      "scope": "national",
       "sample": 2400,
       "margin": 2,
       "register": "BR-07845/2026",
@@ -807,6 +820,7 @@
     {
       "institute": "AtlasIntel",
       "date": "2026-07-29",
+      "scope": "national",
       "sample": 5021,
       "margin": 1,
       "register": "BR-08602/2026",
@@ -912,6 +926,7 @@
     {
       "institute": "BTG/Nexus",
       "date": "2026-07-27",
+      "scope": "national",
       "sample": 2004,
       "margin": 2,
       "register": "BR-01489/2026",
@@ -981,6 +996,7 @@
     {
       "institute": "Datafolha",
       "date": "2026-07-24",
+      "scope": "national",
       "sample": 2004,
       "margin": 2,
       "register": "BR-01166/2026",
@@ -1059,6 +1075,7 @@
     {
       "institute": "Gerp",
       "date": "2026-07-22",
+      "scope": "national",
       "sample": 2000,
       "margin": 2.19,
       "register": "BR-05026/2026",
@@ -1144,6 +1161,7 @@
     {
       "institute": "Indexa Pesquisas",
       "date": "2026-07-21",
+      "scope": "national",
       "sample": 2000,
       "margin": 2.2,
       "register": "BR-02904/2026",
@@ -1200,6 +1218,7 @@
     {
       "institute": "Real Time Big Data",
       "date": "2026-07-21",
+      "scope": "national",
       "sample": 2000,
       "margin": 2,
       "register": "BR-09247/2026",

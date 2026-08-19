@@ -35,11 +35,35 @@ function readJson(file: string): unknown | null {
  * do pipeline, e número errado num produto de dado custa mais que idioma errado.
  */
 function readLocalized(base: string, locale?: string): unknown | null {
+  const pt = readJson(base)
   if (locale && locale !== 'pt-BR') {
     const traduzido = readJson(base.replace(/\.json$/, `.${locale}.json`))
-    if (traduzido) return traduzido
+    if (traduzido && mesmoCarimbo(pt, traduzido)) return traduzido
   }
-  return readJson(base)
+  return pt
+}
+
+/**
+ * A variante só serve se for da MESMA rodada do pt-BR.
+ *
+ * 🔴 Sem esta comparação, a variante de ONTEM continuava sendo entregue quando a
+ * tradução de HOJE era reprovada pelo gate numérico: o leitor de inglês recebia
+ * a análise da véspera sob o carimbo do dia, e o fallback para português, que é
+ * a decisão declarada acima, nunca acontecia.
+ *
+ * `updatedAt` e `lastUpdate` estão em FORA_DE_TRADUCAO, logo são cópia byte a
+ * byte do pt-BR: comparar as duas strings basta, e é por isso que funciona.
+ */
+function mesmoCarimbo(pt: unknown, traduzido: unknown): boolean {
+  if (!pt || typeof pt !== 'object' || !traduzido || typeof traduzido !== 'object') return true
+  const a = pt as Record<string, unknown>
+  const b = traduzido as Record<string, unknown>
+  for (const campo of ['updatedAt', 'lastUpdate']) {
+    if (typeof a[campo] === 'string' || typeof b[campo] === 'string') {
+      if (a[campo] !== b[campo]) return false
+    }
+  }
+  return true
 }
 
 /** Pesquisas (polls-data.json), mesma guarda do /api/polls: exige polls[] array. */

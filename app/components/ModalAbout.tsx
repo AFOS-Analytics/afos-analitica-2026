@@ -8,19 +8,19 @@ interface ModalAboutProps {
 }
 
 export function ModalAbout({ show, onClose }: ModalAboutProps) {
-  const { t } = useTranslation();
+  const { t, tList } = useTranslation();
   if (!show) return null;
 
-  const whoWeAreList = t('about.whoWeAreList').split(',');
-  const whatForList = t('about.whatForList').split(',');
-  const voterList = t('about.voterList').split(',');
-  const investorList = t('about.investorList').split(',');
-  const analystList = t('about.analystList').split(',');
-  const dashboardItems = t('about.dashboardItems').split(',');
-  const differentialList = t('about.differentialList').split(',');
-  const globalCountries = t('about.globalCountries').split(',');
-  const openSourceList = t('about.openSourceList').split(',');
-  const footerLabels = t('about.footerLabels').split(',');
+  const whoWeAreList = tList('about.whoWeAreList');
+  const whatForList = tList('about.whatForList');
+  const voterList = tList('about.voterList');
+  const investorList = tList('about.investorList');
+  const analystList = tList('about.analystList');
+  const dashboardItems = tList('about.dashboardItems');
+  const differentialList = tList('about.differentialList');
+  const globalCountries = tList('about.globalCountries');
+  const openSourceList = tList('about.openSourceList');
+  const footerLabels = tList('about.footerLabels');
 
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t('about.title')} onClick={onClose}>

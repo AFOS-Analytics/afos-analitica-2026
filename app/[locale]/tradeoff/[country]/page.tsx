@@ -167,9 +167,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const pais = params.country
   const canonical = `${BASE}/${loc}/tradeoff/${pais}`
   const ogImage = getOgImageUrl(loc)
+  // 🔴 O título e a descrição LEVAM O PAÍS. Sem isso, /tradeoff/br e /tradeoff/us
+  // eram duas páginas indexáveis com metadado idêntico byte a byte: o buscador
+  // consolidava as duas e podia mostrar a do país errado, e quem procurava o
+  // brief das midterms recebia um trecho sem a palavra EUA em lugar nenhum.
+  // Só metadado. O H1 "Arquivo de edições" e a lista da página não mudam.
+  const ROTULO_PAIS: Record<string, Record<string, string>> = {
+    br: { 'pt-BR': 'Brasil', en: 'Brazil', es: 'Brasil' },
+    us: { 'pt-BR': 'EUA', en: 'US', es: 'EE. UU.' },
+  }
+  const rotulo = ROTULO_PAIS[pais]?.[loc] ?? ROTULO_PAIS[pais]?.['en'] ?? ''
+  const title = rotulo ? t.metaTitle.replace(' | AFOS', ` · ${rotulo} | AFOS`) : t.metaTitle
+  const description = rotulo ? `${rotulo}. ${t.metaDesc}` : t.metaDesc
   return {
-    title: t.metaTitle,
-    description: t.metaDesc,
+    title,
+    description,
     robots: { index: true, follow: true },
     alternates: {
       canonical,
@@ -184,14 +196,14 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     },
     openGraph: {
       type: 'website',
-      title: t.metaTitle,
-      description: t.metaDesc,
+      title,
+      description,
       url: canonical,
       siteName: 'AFOS Analytics',
       locale: ogLocale(loc),
-      images: [{ url: ogImage, width: 1200, height: 627, alt: t.metaTitle }],
+      images: [{ url: ogImage, width: 1200, height: 627, alt: title }],
     },
-    twitter: { card: 'summary_large_image', title: t.metaTitle, description: t.metaDesc, images: [ogImage] },
+    twitter: { card: 'summary_large_image', title, description, images: [ogImage] },
   }
 }
 
@@ -306,7 +318,11 @@ export default async function TradeoffArchivePage(props: Props) {
   }
   const breadcrumb = breadcrumbSchema(loc as 'pt-BR' | 'en' | 'es', [
     { name: 'AFOS Analytics', path: '' },
-    { name: t.metaTitle, path: 'tradeoff' },
+    // 🔴 `path` LEVA O PAÍS. Sem ele o breadcrumb do arquivo americano declarava
+    // `/en/tradeoff`, que responde 307 e cai no arquivo BRASILEIRO, ou seja, a
+    // página dizia ao buscador que seu endereço de navegação é o do outro país,
+    // em conflito com o próprio canonical. Medido em 19/Ago/2026.
+    { name: t.metaTitle, path: `tradeoff/${pais}` },
   ])
 
   return (

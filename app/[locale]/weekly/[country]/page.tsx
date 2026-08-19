@@ -102,6 +102,29 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description: t.metaDesc,
     // Piloto: fora de buscador, igual à página da edição.
     robots: { index: false, follow: false },
+    // 🔴 Canonical PRÓPRIO. Sem esta linha a página herdava o canonical do
+    // layout de idioma, que aponta para a HOME: o arquivo do Weekly declarava
+    // ser a página inicial do site, nos três idiomas.
+    alternates: {
+      canonical: `https://www.afos-analytics.com/${p.locale}/weekly/${p.country}`,
+      // O arquivo existe nos três idiomas por construção (a página é montada, não
+      // é arquivo), então aqui o trio é sempre verdadeiro. `x-default` em pt-BR
+      // para não criar a única exceção da casa: lib/seo/metadata.ts, sitemap.ts e
+      // a página de país usam pt-BR. Trocar para inglês seria decisão do André,
+      // não correção.
+      languages: {
+        'pt-BR': `https://www.afos-analytics.com/pt-BR/weekly/${p.country}`,
+        en: `https://www.afos-analytics.com/en/weekly/${p.country}`,
+        es: `https://www.afos-analytics.com/es/weekly/${p.country}`,
+        'x-default': `https://www.afos-analytics.com/pt-BR/weekly/${p.country}`,
+      },
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t.metaTitle,
+      description: t.metaDesc,
+      images: [`https://www.afos-analytics.com/brand/og-${chave(p.locale) === 'pt-BR' ? 'pt' : chave(p.locale)}-linkedin-1200x627.png`],
+    },
     openGraph: {
       type: 'website',
       title: t.metaTitle,
@@ -109,7 +132,9 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       url: `https://www.afos-analytics.com/${p.locale}/weekly/${p.country}`,
       siteName: 'AFOS Analytics',
       locale: p.locale === 'es' ? 'es_ES' : p.locale === 'en' ? 'en_US' : 'pt_BR',
-      images: [{ url: `https://www.afos-analytics.com/api/og?locale=${chave(p.locale)}`, width: 1200, height: 630, alt: t.metaTitle }],
+      // Arquivo estático: `/api/og` está sob o Disallow:/api/ do robots.ts e o
+      // rastreador do LinkedIn recusa buscá-lo, deixando o cartão sem imagem.
+      images: [{ url: `https://www.afos-analytics.com/brand/og-${chave(p.locale) === 'pt-BR' ? 'pt' : chave(p.locale)}-linkedin-1200x627.png`, width: 1200, height: 627, alt: t.metaTitle }],
     },
   }
 }

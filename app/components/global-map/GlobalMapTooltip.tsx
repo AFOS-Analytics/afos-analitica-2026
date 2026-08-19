@@ -3,11 +3,12 @@
 import type { MapTooltipData } from '../../types/global-map';
 import { MAP_TOKENS, formatVolume } from '../../lib/map-colors';
 import { useLocale } from '../../i18n/context';
+import { fmtDecimal } from '../../../lib/i18n/numero';
 
-const TT_L: Record<string, { leader: string; probability: string; upcoming: string; closed: string }> = {
-  'pt-BR': { leader: 'Líder', probability: 'Probabilidade', upcoming: 'Em breve, sem dados de mercado', closed: 'Encerrada' },
-  en: { leader: 'Leader', probability: 'Probability', upcoming: 'Upcoming, no market data', closed: 'Completed' },
-  es: { leader: 'Líder', probability: 'Probabilidad', upcoming: 'Próximamente, sin datos de mercado', closed: 'Finalizada' },
+const TT_L: Record<string, { leader: string; probability: string; volume: string; upcoming: string; closed: string }> = {
+  'pt-BR': { leader: 'Líder', probability: 'Probabilidade', volume: 'Volume', upcoming: 'Em breve, sem dados de mercado', closed: 'Encerrada' },
+  en: { leader: 'Leader', probability: 'Probability', volume: 'Volume', upcoming: 'Upcoming, no market data', closed: 'Completed' },
+  es: { leader: 'Líder', probability: 'Probabilidad', volume: 'Volumen', upcoming: 'Próximamente, sin datos de mercado', closed: 'Finalizada' },
 }
 
 interface Props {
@@ -55,11 +56,11 @@ export function GlobalMapTooltip({ data }: Props) {
             </div>
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{L.probability}</span>
-              <span className="font-bold text-sm" style={{ color: MAP_TOKENS.text }}>{c.probability}%</span>
+              <span className="font-bold text-sm" style={{ color: MAP_TOKENS.text }}>{fmtDecimal(c.probability, locale, 1)}%</span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>Volume</span>
-              <span className="text-xs font-medium" style={{ color: MAP_TOKENS.textMuted }}>{formatVolume(c.volumeUsd)}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount} mkts)` : ''}</span>
+              <span className="text-xs" style={{ color: MAP_TOKENS.textMuted }}>{L.volume}</span>
+              <span className="text-xs font-medium" style={{ color: MAP_TOKENS.textMuted }}>{formatVolume(c.volumeUsd, locale)}{c.marketCount && c.marketCount > 1 ? ` (${c.marketCount} mkts)` : ''}</span>
             </div>
           </>
         ) : (

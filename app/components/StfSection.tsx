@@ -13,15 +13,17 @@ interface Props {
 }
 
 export function StfSection({ stf, updatedAt, polyStf }: Props) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
 
   // Percentual ao vivo do Polymarket (yesPrice do primeiro market ativo).
   // 2 casas decimais: este mercado se move em centésimos (3,55% -> 3,65%) e o
   // Math.round() anterior achatava tudo para "4%", escondendo o movimento.
   const livePrice = polyStf?.markets?.[0]?.outcomePrices?.[0];
   const liveNum = livePrice == null ? NaN : Number(livePrice);
+  // 🔢 Separador por IDIOMA. A vírgula estava fixa e saía também no /en, contra
+  // a convenção usada nos outros quatro lugares do painel: EN usa ponto decimal.
   const livePct = Number.isFinite(liveNum)
-    ? `${(liveNum * 100).toFixed(2).replace('.', ',')}%`
+    ? `${locale === 'en' ? (liveNum * 100).toFixed(2) : (liveNum * 100).toFixed(2).replace('.', ',')}%`
     : null;
 
   // Fallback: percentual citado no texto editorial do dia (dado estático).
@@ -30,7 +32,10 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
   // cartão publicava 55% de probabilidade de impeachment de ministro do STF,
   // quinze vezes o valor real, sem nenhum aviso. Verificado em 24/Jul/2026.
   const fallbackPct = stf?.analise?.match(/\d+(?:[.,]\d+)?\s*%/)?.[0];
-  const displayPct = livePct || fallbackPct || ', ';
+  // ⚠️ `null`, não `', '`. Sem preço ao vivo e sem percentual no texto, o padrão
+  // anterior publicava uma pílula vermelha contendo apenas ", ", que parece
+  // número corrompido. Sem valor, a pílula não se desenha.
+  const displayPct = livePct || fallbackPct || null;
 
   return (
     <section>
@@ -38,7 +43,7 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
       {updatedAt && <p className="text-[10px] text-gray-400 -mt-3 mb-3">🔄 {t('sections.analysisUpdated')}: {updatedAt} BRT</p>}
       <Card className="border-l-4 border-l-danger">
         <div className="flex items-center gap-3 mb-4">
-          <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">{displayPct}</div>
+          {displayPct && <div className="bg-red-100 text-red-700 font-bold text-xl px-4 py-2 rounded-lg">{displayPct}</div>}
           <p className="text-sm text-gray-600">{t('sections.stfProb')}</p>
         </div>
         <h4 className="font-bold text-sm text-dark mb-2">{t('sections.stfPressure')}</h4>

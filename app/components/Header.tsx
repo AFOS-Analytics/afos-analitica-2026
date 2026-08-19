@@ -16,6 +16,17 @@ interface HeaderProps {
   onShowMetas: () => void;
 }
 
+/**
+ * Fuso EXPLICITO, e a mesma constante nos dois caminhos.
+ *
+ * O ramo de fallback nao fixava fuso nenhum e caia no fuso do processo. Nao era
+ * caso raro: `fetchedAt` vem de fetch no cliente, entao e `undefined` no SSR e
+ * no primeiro paint de TODA visita. As 21h30 de Brasilia o servidor, que roda em
+ * UTC, entregava "20/08/2026, 00:30" sob o rotulo "Atualizado", com dia errado.
+ * O `suppressHydrationWarning` logo acima escondia justamente esse desencontro.
+ */
+const FUSO_BRT = { timeZone: 'America/Sao_Paulo' } as const
+
 export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
   const { t, locale } = useTranslation();
 
@@ -69,7 +80,7 @@ export function Header({ fetchedAt, onShowSobre, onShowMetas }: HeaderProps) {
               {HOW_IT_WORKS_LABEL[locale] ?? HOW_IT_WORKS_LABEL['pt-BR']}
             </Link>
             {' · '}
-            {t('header.updated')}: {fetchedAt ? new Date(fetchedAt).toLocaleString(dateLocale, { timeZone: 'America/Sao_Paulo' }) : new Date().toLocaleString(dateLocale)}
+            {t('header.updated')}: {new Date(fetchedAt ?? Date.now()).toLocaleString(dateLocale, FUSO_BRT)}
           </p>
         </div>
       </header>

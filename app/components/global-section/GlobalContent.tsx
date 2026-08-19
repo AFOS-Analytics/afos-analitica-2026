@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useTranslation, useLocale } from '../../i18n/context';
 import type { CountryMarketSummary } from '../../types/global-map';
 import { COUNTRIES_SEO } from '../../../lib/seo/countries';
+import { fmtDecimal, fmtVolumeUsd } from '../../../lib/i18n/numero'
 
 const GlobalElectionMap = dynamic(
   () => import('../global-map/GlobalElectionMap').then(mod => mod.GlobalElectionMap),
@@ -28,7 +29,7 @@ interface GlobalContentProps {
 }
 
 export function GlobalContent({ mapData, expandedElection, setExpandedElection, variant = 'modal' }: GlobalContentProps) {
-  const { t } = useTranslation();
+  const { t, tList } = useTranslation();
   const locale = useLocale();
   const slugFor = (iso3: string) => COUNTRIES_SEO.find((x) => x.iso3 === iso3)?.slug[locale];
   const viewLabel = locale === 'pt-BR' ? 'Ver análise →' : locale === 'es' ? 'Ver análisis →' : 'View analysis →';
@@ -69,7 +70,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           const idx = mapData.indexOf(c);
           const isExpanded = expandedElection === idx;
           const vol = c.volumeUsd || 0;
-          const volStr = vol > 1e6 ? '$'+(vol/1e6).toFixed(1)+'M' : '$'+(vol/1e3).toFixed(0)+'K';
+          const volStr = fmtVolumeUsd(vol, locale);
           const colors = ['#0F52BA','#1a6dd4','#3b82f6','#60a5fa','#93c5fd'];
           return (
             <div key={i}
@@ -92,7 +93,10 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
 
               <div className="space-y-1.5">
                 {c.candidates.slice(0, isExpanded ? undefined : 3).map((cand, j) => {
-                  const pct = cand.probability.toFixed(1);
+                  // DUAS variaveis de proposito: a barra de CSS precisa do
+                  // numero cru, e `parseFloat("42,3")` devolveria 42.
+                  const pctNum = cand.probability;
+                  const pct = fmtDecimal(pctNum, locale, 1);
                   return (
                     <div key={j}>
                       <div className="flex justify-between text-xs mb-0.5">
@@ -100,7 +104,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
                         <span className="font-bold flex-shrink-0" style={{color: colors[Math.min(j,4)]}}>{pct}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div className="h-full rounded-full transition-all duration-500" style={{width:`${Math.min(parseFloat(pct),100)}%`, backgroundColor: colors[Math.min(j,4)]}}/>
+                        <div className="h-full rounded-full transition-all duration-500" style={{width:`${Math.min(pctNum,100)}%`, backgroundColor: colors[Math.min(j,4)]}}/>
                       </div>
                     </div>
                   );
@@ -147,7 +151,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <p className="mb-3">{t('global.introDesc')}</p>
           <p className="mb-2">{t('global.introDesc2')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
-            {t('global.introList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.introList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
           <p className="font-semibold text-primary">{t('global.introFooter')}</p>
         </div>
@@ -156,7 +160,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <h4 className="font-bold text-primary mb-3">{t('global.dataTitle')}</h4>
           <p className="mb-2">{t('global.dataDesc')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4">
-            {t('global.dataList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.dataList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
         </div>
 
@@ -165,7 +169,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <p className="mb-3">{t('global.howDesc')}</p>
           <p className="mb-2">{t('global.howDesc2')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
-            {t('global.howColorsList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.howColorsList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
           <p className="text-gray-500 italic">{t('global.howFooter')}</p>
         </div>
@@ -174,7 +178,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <h4 className="font-bold text-primary mb-3">{t('global.clickTitle')}</h4>
           <p className="mb-2">{t('global.clickDesc')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
-            {t('global.clickList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.clickList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
           <p className="font-semibold text-dark">{t('global.clickFooter')}</p>
         </div>
@@ -184,7 +188,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <p className="mb-3">{t('global.calendarDesc')}</p>
           <p className="mb-2">{t('global.calendarDesc2')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4 mb-3">
-            {t('global.calendarList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.calendarList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
           <p className="font-semibold text-dark">{t('global.calendarFooter')}</p>
         </div>
@@ -194,7 +198,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           <p className="mb-2">{t('global.purposeDesc')}</p>
           <p className="mb-2">{t('global.purposeIntro')}</p>
           <ul className="space-y-1.5 text-gray-600 ml-4">
-            {t('global.purposeList').split(',').map((item, i) => <li key={i}>• {item}</li>)}
+            {tList('global.purposeList').map((item, i) => <li key={i}>• {item}</li>)}
           </ul>
         </div>
 
@@ -205,7 +209,7 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
             <p className="text-gray-600 mb-4">{t('global.execLine2')}</p>
             <p className="mb-3">{t('global.execDesc')}</p>
             <div className="flex gap-4 justify-center">
-              {t('global.execList').split(',').map((item, i) => (
+              {tList('global.execList').map((item, i) => (
                 <span key={i} className="bg-white rounded-lg px-5 py-2.5 shadow-sm font-semibold text-primary text-base">{item}</span>
               ))}
             </div>

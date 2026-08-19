@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
+import { COOKIE_NAME, isValidLocale } from '../lib/i18n/config';
+import { negotiateLocale } from '../lib/i18n/negotiate';
 
 // Bare-domain landing for `/`. Renders OG metadata (EN, the international face
 // of the project) so that LLM crawlers and IM clients that don't follow
@@ -43,16 +46,16 @@ export const metadata: Metadata = {
 // Server-side redirect to detected locale based on Accept-Language header.
 // No UI rendered for real users; the blue welcome screen lives at /welcome
 // and only shows for visitors with a valid signup_session_id cookie.
-function detectLocaleFromHeader(acceptLanguage: string | null): 'pt-BR' | 'en' | 'es' {
-  if (!acceptLanguage) return 'en';
-  const first = acceptLanguage.split(',')[0]?.split(';')[0]?.trim().toLowerCase() || '';
-  if (first.startsWith('pt')) return 'pt-BR';
-  if (first.startsWith('es')) return 'es';
-  return 'en';
-}
-
 export default async function RootPage() {
   const h = await headers();
-  const locale = detectLocaleFromHeader(h.get('accept-language'));
-  redirect(`/${locale}`);
+  // 🔑 O COOKIE vem primeiro, como já vinha em todo o resto do site. A raiz era
+  // a única porta que o ignorava: quem trocava o idioma no seletor e depois
+  // abria afos-analytics.com sem prefixo era mandado de volta para o idioma do
+  // navegador, desfazendo a escolha a cada visita.
+  const c = await cookies();
+  const salvo = c.get(COOKIE_NAME)?.value;
+  if (salvo && isValidLocale(salvo)) redirect(`/${salvo}`);
+  // Sem cookie, negocia pelo cabeçalho. Fallback 'en' de propósito: a raiz é a
+  // face internacional e o metadata acima declara canonical em inglês.
+  redirect(`/${negotiateLocale(h.get('accept-language'), 'en')}`);
 }

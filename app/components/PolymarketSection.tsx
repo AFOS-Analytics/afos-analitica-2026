@@ -5,6 +5,7 @@ import { extractCandidateName } from '../lib/utils';
 import { Card, HBar } from './ui';
 import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
+import { fmtVolumeUsd } from '../../lib/i18n/numero'
 
 interface Props {
   poly: PolyData | null;
@@ -14,7 +15,7 @@ interface Props {
 const POLYMARKET_BASE = 'https://polymarket.com/event/';
 
 export function PolymarketSection({ poly, loading }: Props) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   function renderMarkets(event: PolyEvent | null | undefined, title: string, topN?: number) {
     if (!event || !event.markets?.length) return (
       <Card className="mb-4">
@@ -57,7 +58,7 @@ export function PolymarketSection({ poly, loading }: Props) {
           ) : (
             <h3 className="font-bold text-lg text-dark">{title}</h3>
           )}
-          {totalVol > 0 && <span className="text-xs text-gray-500">{t('sections.volume')}: ${(totalVol / 1e6).toFixed(2)}M</span>}
+          {totalVol > 0 && <span className="text-xs text-gray-500">{t('sections.volume')}: {fmtVolumeUsd(totalVol, locale)}</span>}
         </div>
         {display.map((item, i) => (
           <HBar
@@ -84,7 +85,7 @@ export function PolymarketSection({ poly, loading }: Props) {
       </div>
       <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 sm:p-4 mb-4 mx-0">
         <div className="mb-2">
-          <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline hover:text-primary-dark text-sm sm:text-base" aria-label="Polymarket (abre em nova aba)">polymarket.com</a>
+          <a href="https://polymarket.com/politics/brazil" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline hover:text-primary-dark text-sm sm:text-base" aria-label={`Polymarket (${t('sections.opensOnPolymarket')})`}>polymarket.com</a>
         </div>
         <p className="text-xs sm:text-sm text-dark leading-relaxed">
           {t('sections.polymarketDesc')}

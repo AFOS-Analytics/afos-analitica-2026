@@ -169,7 +169,12 @@ export async function POST(req: Request): Promise<Response> {
       } catch (err) {
         console.error('[api/chat] stream error:', err)
         const msg = err instanceof Error ? err.message : 'unknown_error'
-        send({ type: 'error', message: msg.startsWith('openrouter') ? 'O serviço de IA está indisponível no momento.' : 'Ocorreu um erro ao processar sua mensagem.' })
+        // 🔴 CÓDIGO, não prosa. A frase era montada aqui em português e ia para
+        // a tela do leitor de /en e /es tal e qual, apesar de o `locale` estar
+        // disponível nesta mesma função. Quem traduz é o cliente, que já tem
+        // dicionário. `message` continua indo para não quebrar consumidor antigo.
+        const code = msg.startsWith('openrouter') ? 'provider_unavailable' : 'generic'
+        send({ type: 'error', code, message: code === 'provider_unavailable' ? 'O serviço de IA está indisponível no momento.' : 'Ocorreu um erro ao processar sua mensagem.' })
       } finally {
         // Arquivo ANÔNIMO da conversa (fail-open). Awaited antes de fechar para
         // garantir a escrita no runtime serverless; não bloqueia o que o usuário já viu.

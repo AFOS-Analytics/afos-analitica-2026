@@ -32,6 +32,8 @@ export interface Poll {
   register: string | null; reliability: number; method?: string;
   scenarios: Scenario[]; secondRound: SecondRound[];
   fieldDates?: string; note?: string;
+  /** Escopo da pesquisa. Campo de DADO, nunca vai à tela e nunca se traduz. */
+  scope?: 'national' | 'state';
 }
 
 export interface Institute { name: string; reliability: number; type: string; note: string; }
@@ -44,7 +46,7 @@ export interface PolyComparison {
 
 export interface PollData { lastUpdate: string; polls: Poll[]; institutes?: Institute[]; polymarketComparison?: PolyComparison; }
 
-export interface NewsItem { title: string; source: string; url: string; time: string; category: string; summary?: string; }
+export interface NewsItem { title: string; source: string; url: string; time: string; /** Instante ISO 8601 do item. O painel formata no idioma dele; `time` e legado ja formatado em pt-BR. */ timeIso?: string; category: string; summary?: string; }
 export interface NewsData { updatedAt: string; totalNews: number; grouped: Record<string, NewsItem[]>; firecrawlActive: boolean; all: NewsItem[]; }
 
 export interface AnalysisSection {

@@ -27,6 +27,7 @@ type UIStrings = {
   thinking: string
   consulting: string
   errorGeneric: string
+  errorProvider: string
   suggestionsLabel: string
   suggestions: string[]
   toolNames: Record<string, string>
@@ -42,6 +43,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     thinking: 'Pensando…',
     consulting: 'Consultando',
     errorGeneric: 'Não foi possível concluir a resposta. Tente novamente.',
+    errorProvider: 'O serviço de IA está indisponível no momento.',
     suggestionsLabel: 'Sugestões',
     suggestions: [
       'Quais as odds atuais da eleição presidencial de 2026?',
@@ -66,6 +68,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     thinking: 'Thinking…',
     consulting: 'Querying',
     errorGeneric: 'Could not complete the answer. Please try again.',
+    errorProvider: 'The AI service is unavailable right now.',
     suggestionsLabel: 'Suggestions',
     suggestions: [
       'What are the current odds for the 2026 presidential election?',
@@ -90,6 +93,7 @@ const STRINGS: Record<Locale, UIStrings> = {
     thinking: 'Pensando…',
     consulting: 'Consultando',
     errorGeneric: 'No se pudo completar la respuesta. Inténtalo de nuevo.',
+    errorProvider: 'El servicio de IA no está disponible en este momento.',
     suggestionsLabel: 'Sugerencias',
     suggestions: [
       '¿Cuáles son las odds actuales de la elección presidencial de 2026?',
@@ -174,7 +178,7 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
           for (const line of lines) {
             const t = line.trim()
             if (!t.startsWith('data:')) continue
-            let evt: { type: string; text?: string; name?: string; message?: string }
+            let evt: { type: string; text?: string; name?: string; message?: string; code?: string }
             try {
               evt = JSON.parse(t.slice(5).trim())
             } catch {
@@ -191,7 +195,9 @@ export function ChatConversation({ locale, compact = false }: { locale: Locale; 
                 return copy
               })
             } else if (evt.type === 'error') {
-              throw new Error(evt.message || s.errorGeneric)
+              // Traduz pelo CÓDIGO. `evt.message` vem em português do servidor e
+              // era exibido cru em /en e /es; só serve de piso se o código faltar.
+              throw new Error(evt.code === 'provider_unavailable' ? s.errorProvider : evt.code ? s.errorGeneric : evt.message || s.errorGeneric)
             }
           }
         }

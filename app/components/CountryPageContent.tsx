@@ -8,6 +8,7 @@ import { OddsTrajectoryChart } from './OddsTrajectoryChart'
 import { CountryGraph } from './CountryGraph'
 import type { NavGroup, DataLinks } from './CountryGraph'
 import { StructuralContext } from './StructuralContext'
+import { fmtDecimal, fmtVolumeUsd } from '../../lib/i18n/numero'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
@@ -182,7 +183,7 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
                         )}
                       </td>
                       <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.poll_pct}%</td>
-                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{r.market_pct}%{r.note ? '*' : ''}</td>
+                      <td className={`text-right tabular-nums px-2 ${tdNum}`}>{fmtDecimal(r.market_pct, loc, 1)}%{r.note ? '*' : ''}</td>
                       <td className={`text-right tabular-nums font-semibold pl-2 ${r.divergence_pp > 0 ? pos : r.divergence_pp < 0 ? neg : textMuted}`}>{r.divergence_pp > 0 ? '+' : ''}{r.divergence_pp}pp{r.note ? '*' : ''}</td>
                     </tr>
                   ))}
@@ -224,14 +225,14 @@ export function CountryPageContent({ locale, country, div }: { locale: string; c
               <div className="mt-6">
                 <div className="flex items-baseline justify-between gap-3 mb-3">
                   <h3 className={`text-base font-bold ${heading}`}>🏆 {oddsL.who}</h3>
-                  <span className={`text-sm ${textMuted}`}>{oddsL.vol}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{snap.total_volume_usd >= 1e9 ? `$${(snap.total_volume_usd / 1e9).toFixed(1)}B` : `$${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M`}</strong></span>
+                  <span className={`text-sm ${textMuted}`}>{oddsL.vol}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{fmtVolumeUsd(snap.total_volume_usd, loc)}</strong></span>
                 </div>
                 <div className="space-y-2.5">
                   {snap.candidates.slice(0, 8).map((c, i) => (
                     <div key={c.candidate}>
                       <div className="flex justify-between text-sm mb-1">
                         <span className={`font-medium ${textMain}`}>{c.candidate}</span>
-                        <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{c.market_pct ?? 0}%</span>
+                        <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{fmtDecimal(c.market_pct ?? 0, loc, 1)}%</span>
                       </div>
                       <div className={`w-full ${isBlue ? 'bg-blue-950/50' : 'bg-gray-200'} rounded-full h-2.5`}>
                         <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(((c.market_pct || 0) / snapMax) * 100, 100)}%`, backgroundColor: i === 0 ? '#0F52BA' : (isBlue ? '#3b6fd4' : '#94a3b8') }} />

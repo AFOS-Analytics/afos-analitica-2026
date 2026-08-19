@@ -7,6 +7,7 @@ import { LogicLink } from './LogicLink';
 import { GlossaryText } from './GlossaryText';
 import { getColor } from '../lib/utils';
 import { useTranslation, useLocale } from '../i18n/context';
+import { fmtDecimal, fmtMilhar } from '../../lib/i18n/numero'
 
 interface PollsSectionProps {
   polls: PollData | null;
@@ -115,6 +116,13 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           com escopo nacional explícito passam. */}
       {(() => {
         const isStatePoll = (p: Poll): boolean => {
+          // O escopo e DADO, nao prosa. `scope` esta gravado na entrada, esta em
+          // FORA_DE_TRADUCAO (scripts/build-locale-json.ts) e por isso vale igual
+          // nos tres idiomas. Instalado 19/Ago/2026, depois que a heuristica abaixo
+          // renderizou 18 pesquisas no pt-BR, 15 no EN e 19 no ES: ela le o `note`,
+          // que chega TRADUZIDO, e cada idioma perdia entradas diferentes.
+          if (p.scope) return p.scope === 'state'
+          // Piso para entrada sem `scope`. A heuristica de texto fica so como rede.
           const noteRaw = p.note || ''
           const note = noteRaw.toLowerCase()
           // O `note` chega TRADUZIDO quando o locale é en/es (readLocalized em
@@ -130,8 +138,13 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
           if (/estadual|estatal|statewide|\bstate\b/.test(note)) return true
           // UF explícita em CAIXA ALTA (ex.: "Cenário SP"); testar no texto original evita
           // colisão com stopwords minúsculas do português (se/to/pa/ma/al) que abreviam UFs.
-          if (/\b(MT|SP|RJ|MG|RS|PR|SC|BA|CE|PE|GO|AM|PA|MA|PI|AL|SE|RN|PB|TO|RO|RR|AP|AC|MS|ES|DF)\b/.test(noteRaw)) {
-            if (!note.includes('nacional')) return true
+          // Fronteira UNICODE, nao \b: \b e ASCII, entao \bPR\b casava dentro de
+          // "PROPRIO" (o O acentuado nao e word char) e \bTO\b casava a preposicao
+          // inglesa "TO" escrita em caixa alta na enfase editorial.
+          if (/(?<![\p{L}\p{N}])(MT|SP|RJ|MG|RS|PR|SC|BA|CE|PE|GO|AM|PA|MA|PI|AL|SE|RN|PB|TO|RO|RR|AP|AC|MS|ES|DF)(?![\p{L}\p{N}])/u.test(noteRaw)) {
+            // O escape tem de cobrir os TRES idiomas: "nacional" nao existe em ingles
+            // e o plural "nacionais" nao casa com includes('nacional').
+            if (!/nacional|nacionais|national/.test(note)) return true
           }
           if (p.scenarios?.some((s: { name?: string }) => /\(.*[A-Z]{2}.*\)/.test(s.name || ''))) return true
           return false
@@ -147,8 +160,8 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       <div className="flex flex-wrap items-center gap-3 mb-4 text-sm text-gray-600 bg-light-bg rounded-lg p-3">
         <span className="font-bold text-primary text-base">{poll.institute}</span>
         <span>📅 {poll.date}</span>
-        <span>👥 {poll.sample?.toLocaleString(locale === 'es' ? 'es' : locale === 'en' ? 'en' : 'pt-BR')} {pl.respondents}</span>
-        <span>± {poll.margin}pp</span>
+        <span>👥 {fmtMilhar(poll.sample, locale)} {pl.respondents}</span>
+        <span>± {fmtDecimal(poll.margin, locale, 2).replace(/[.,]00$/, '')}pp</span>
         <span><Stars count={poll.reliability} /></span>
         <span className="text-xs text-gray-400">{poll.method}</span>
       </div>
@@ -184,7 +197,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
             <div className="flex items-center gap-2">
               <div className="flex-1">
                 <div className="text-right text-sm font-bold" style={{ color: sr.percent1 > sr.percent2 ? '#0F52BA' : '#6B7280' }}>
-                  {sr.candidate1}, {sr.percent1}%
+                  {sr.candidate1}, {fmtDecimal(sr.percent1, locale, 1)}%
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 mt-1 overflow-hidden flex justify-end">
                   <div className="h-full rounded-full" style={{ width: `${sr.percent1}%`, backgroundColor: sr.percent1 > sr.percent2 ? '#0F52BA' : '#94A3B8' }} />
@@ -193,7 +206,7 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
               <span className="text-xs font-bold text-gray-400">vs</span>
               <div className="flex-1">
                 <div className="text-left text-sm font-bold" style={{ color: sr.percent2 > sr.percent1 ? '#DC2626' : '#6B7280' }}>
-                  {sr.candidate2}, {sr.percent2}%
+                  {sr.candidate2}, {fmtDecimal(sr.percent2, locale, 1)}%
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-4 mt-1 overflow-hidden">
                   <div className="h-full rounded-full" style={{ width: `${sr.percent2}%`, backgroundColor: sr.percent2 > sr.percent1 ? '#DC2626' : '#94A3B8' }} />

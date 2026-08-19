@@ -175,6 +175,33 @@ Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada
 
 **Por que a regra de frescor existe:** dashboard prometendo "tempo real" mostrando pesquisa de 2 meses atrás mata credibilidade. Pesquisa eleitoral perde relevância em ~3 semanas. Histórico fica no Neon (já temos).
 
+## ETAPA 3.4: PORTÃO DE FRESCOR (bloqueante, roda ANTES de traduzir)
+
+```bash
+npm run check:frescor        # ou: npx tsx scripts/check-frescor-editorial.ts
+```
+
+**Instalado em 19/Ago/2026, depois da auditoria de 16 agentes.** Ele pega uma coisa que nenhum outro portão da casa pega: **bloco da rodada ANTERIOR que sobreviveu à regeração do dia**.
+
+🔴 **O caso que o originou, medido em produção:** o `analysis-data.json` carimbava `19/08/2026, 14:58` no topo e **três dos quatro blocos do cartão de clima carregavam a leitura de 17/Ago às 18:48**, com o líder em 64,50% e o segundo em 31,45%, quando o preço do dia era 63,50% e 32,55%. O `analysis-criteriosa.json` carregava as duas camadas ao mesmo tempo: 15 carimbos de 19/Ago convivendo com 3 de 16/Ago, e os rótulos de Caiado e Zema com volume e preço da véspera.
+
+⚠️ **Por que os outros portões passaram batido, e isso é o ponto:** o número estava **internamente coerente**, a aritmética fechava, o schema estava certo, e o gate numérico da tradução compara o pt-BR com o pt-BR traduzido, não com a realidade. **O erro era de IDADE, não de forma nem de conta.** É o mesmo padrão de `feedback_defeito_de_etiqueta_passa_por_todo_portao_de_valor.md`.
+
+As quatro réguas:
+
+| Régua | O que exige |
+|---|---|
+| **CARIMBO** | todo "leitura confirmada de" bate com o `updatedAt` do próprio arquivo |
+| **SÉRIE** | uma única data de início por arquivo. ⚠️ A **contagem** de dias pode variar entre candidatos, porque cada contrato abriu num dia; a data de início, não |
+| **VOLUME** | volume citado ao lado de um candidato bate com o `quadroComparativo`. Volume acumulado só cresce, então valor menor é de rodada anterior |
+| **PREÇO** | preço no mesmo bloco de volume velho, e o resumo do cartão contra o quadro |
+
+🔑 **O valor é sempre amarrado ao CANDIDATO, nunca lido solto.** A primeira versão comparava todo `vol USD X` contra o conjunto de volumes do quadro e acusou cinco: **dois eram reais e três eram falso positivo**, porque Marçal, Tarcísio e Haddad não estão nas 6 linhas do quadro. E o sobrenome sozinho não basta: ele vem exigindo o **partido** junto, porque sobrenome solto colide. → `feedback_o_conferidor_que_eu_escrevo_tambem_e_um_medidor.md`
+
+⛔ **Ele NÃO reescreve nada.** Lê e reprova. Corrigir a prosa é da rodada.
+
+📌 **Fica aqui e não no CI, de propósito:** é portão da RODADA, não do código. No CI ele ficaria vermelho em todo push que não mexe em conteúdo, e trava que acusa sem motivo é trava que alguém aprende a pular.
+
 ## ETAPA 3.5: Traduzir os JSONs para EN e ES (obrigatório, antes do build)
 
 **Instalado 24/Jul/2026.** Até essa data os 3 JSONs eram únicos e servidos aos três idiomas: o `/en/dashboard` e o `/es/dashboard` renderizavam a moldura traduzida e a análise inteira em português.

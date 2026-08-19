@@ -41,8 +41,12 @@ export function HBar({ value, max, color, label, suffix = '%' }: { value: number
 }
 
 export function Stars({ count }: { count: number }) {
+  const { locale } = useTranslation();
+  // aria-label é texto lido em voz alta, e estava fixo em português em todo o
+  // painel. Leitor de tela em /en ouvia "4 de 5 estrelas".
+  const rotulo = locale === 'en' ? `${count} out of 5 stars` : locale === 'es' ? `${count} de 5 estrellas` : `${count} de 5 estrelas`;
   return (
-    <span className="inline-flex gap-0.5 text-sm" aria-label={`${count} de 5 estrelas`}>
+    <span className="inline-flex gap-0.5 text-sm" aria-label={rotulo}>
       {Array.from({ length: 5 }, (_, i) => (
         <span key={i} style={{ color: i < count ? '#0F52BA' : '#D1D5DB' }} aria-hidden="true">★</span>
       ))}

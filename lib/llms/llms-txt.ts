@@ -13,6 +13,7 @@
 
 import { listPublishedDailies, loadDaily, dailyExists } from '../afos-daily/loader'
 import { listPublishedTradeoffs, loadTradeoff, tradeoffExists, PAISES_TRADEOFF } from '../afos-tradeoff/loader'
+import { listPublishedWeeklies, loadWeekly, PAISES_WEEKLY } from '../afos-weekly/loader'
 import { cleanMarkdownText } from '../afos-daily/utils'
 import { feedPath, type FeedLocale } from '../feeds/rss'
 
@@ -21,6 +22,7 @@ const SITE = 'https://www.afos-analytics.com'
 interface Parts {
   dailyEntries: string
   tradeoffEntries: string
+  weeklyEntries: string
   dailyFeed: string
   /** Feed do Tradeoff BRASIL. O endereço não tem qualificador, por histórico. */
   tradeoffFeed: string
@@ -85,6 +87,37 @@ function tradeoffEntriesFor(loc: FeedLocale): string {
   ).join('\n')
 }
 
+
+/**
+ * Edições do AFOS Weekly.
+ *
+ * 🔴 O Weekly não existia neste arquivo. Seis páginas vivas, duas datas em três
+ * idiomas, ficavam sem citação possível por motor de IA. Pior que a ausência: o
+ * único produto americano descrito aqui é o Tradeoff, chamado de "weekly
+ * edition", então o motor tendia a atribuir AO TRADEOFF o conteúdo do Weekly.
+ *
+ * ⚠️ O filtro é `servedLocale`, NUNCA `weeklyExists`. O loader do Weekly cai
+ * para o arquivo de origem em inglês quando falta a tradução, então
+ * `weeklyExists` devolve `true` para os três idiomas SEMPRE, e o llms.pt-BR.txt
+ * passaria a anunciar em português uma edição que só existe em inglês. Isso
+ * viola a regra de veracidade declarada no cabeçalho deste próprio arquivo.
+ */
+function weeklyEntriesFor(loc: FeedLocale): string {
+  return PAISES_WEEKLY.flatMap(pais =>
+    listPublishedWeeklies(pais)
+      .slice()
+      .reverse()
+      .map(date => {
+        const data = loadWeekly(date, loc, pais)
+        if (!data || data.servedLocale !== loc) return ''
+        const url = `${SITE}/${loc}/weekly/${pais}/${date}`
+        const resumo = cleanMarkdownText(data.tldr?.[0] ?? '').slice(0, 220)
+        return `- [${data.title}](${url}): ${resumo}`
+      })
+      .filter(Boolean)
+  ).join('\n')
+}
+
 const LOCALE_TAG: Record<FeedLocale, string> = { 'pt-BR': 'pt-BR', en: 'en-US', es: 'es-ES' }
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -131,6 +164,14 @@ The AFOS Tradeoff is a weekly synthesis published every Monday, targeted at inst
 Recent editions (latest first):
 
 ${p.tradeoffEntries || '- (no editions published yet)'}
+
+## AFOS Weekly
+
+The AFOS Weekly is a separate product from the Tradeoff, with its own publication day and its own editorial structure. It covers the United States midterm elections of Nov 3, 2026, reporting what each source measured and where they crossed, without ranking one above the other. Pilot stage.
+
+Recent editions (latest first):
+
+${p.weeklyEntries || '- (no editions published yet)'}
 
 ## Core pages
 
@@ -254,6 +295,14 @@ Edições recentes (mais novas primeiro):
 
 ${p.tradeoffEntries || '- (nenhuma edição publicada ainda)'}
 
+## AFOS Weekly
+
+O AFOS Weekly é um produto SEPARADO do Tradeoff, com dia de publicação próprio e estrutura editorial própria. Cobre as eleições de meio de mandato dos Estados Unidos de 03/Nov/2026, relatando o que cada fonte mediu e onde elas se cruzaram, sem colocar uma acima da outra. Em fase de piloto.
+
+Edições recentes (mais novas primeiro):
+
+${p.weeklyEntries || '- (nenhuma edição publicada ainda)'}
+
 ## Páginas principais
 
 - [Arquivo do AFOS Daily](${SITE}/pt-BR/daily): índice navegável de todas as sínteses diárias, mais novas primeiro (também /en/daily, /es/daily)
@@ -376,6 +425,14 @@ Ediciones recientes (más nuevas primero):
 
 ${p.tradeoffEntries || '- (aún no hay ediciones publicadas)'}
 
+## AFOS Weekly
+
+El AFOS Weekly es un producto SEPARADO del Tradeoff, con día de publicación propio y estructura editorial propia. Cubre las elecciones de medio término de Estados Unidos del 03/Nov/2026, reportando lo que cada fuente midió y dónde se cruzaron, sin poner una por encima de la otra. En fase piloto.
+
+Ediciones recientes (más nuevas primero):
+
+${p.weeklyEntries || '- (aún no hay ediciones publicadas)'}
+
 ## Páginas principales
 
 - [Archivo del AFOS Daily](${SITE}/es/daily): índice navegable de todas las síntesis diarias, más nuevas primero (también /pt-BR/daily, /en/daily)
@@ -472,6 +529,7 @@ export function buildLlmsTxt(loc: FeedLocale): string {
   const parts: Parts = {
     dailyEntries: dailyEntriesFor(loc),
     tradeoffEntries: tradeoffEntriesFor(loc),
+    weeklyEntries: weeklyEntriesFor(loc),
     dailyFeed: `${SITE}${feedPath('daily', loc)}`,
     tradeoffFeed: `${SITE}${feedPath('tradeoff', loc, 'br')}`,
     tradeoffUsFeed: `${SITE}${feedPath('tradeoff', loc, 'us')}`,

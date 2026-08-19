@@ -39,20 +39,20 @@ jobs:
       - name: Gerar backup
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx tsx scripts/backup-neon.ts
+        run: npx --no-install tsx scripts/backup-neon.ts
 
       - name: Conferir integridade (checksum de cada arquivo)
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx tsx scripts/backup-neon.ts --verificar
+        run: npx --no-install tsx scripts/backup-neon.ts --verificar
 
       - name: TRAVA — nenhum dado pessoal no backup
-        run: npx tsx scripts/check-backup-sem-pii.ts
+        run: npx --no-install tsx scripts/check-backup-sem-pii.ts
 
       - name: TRAVA — o backup precisa RESTAURAR
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: npx tsx scripts/check-backup-restauravel.ts
+        run: npx --no-install tsx scripts/check-backup-restauravel.ts
 
       - name: Commitar se mudou
         run: |

@@ -5,6 +5,7 @@ import { ISO3_TO_CC, STATUS_LABELS as STATUS_L } from '../../lib/seo/countries'
 import type { CountryDivergence } from '../../lib/country-data'
 import { GRAPH_ENABLED } from '../../lib/country-data'
 import { OddsTrajectoryChart } from './OddsTrajectoryChart'
+import { fmtDecimal, fmtVolumeUsd } from '../../lib/i18n/numero'
 
 type Theme = 'light' | 'blue'
 const THEME_KEY = 'afos-country-theme'
@@ -84,14 +85,14 @@ export function ElectionPageContent({ locale, country, election, div }: { locale
           <section className={`${mktCard} border rounded-xl p-6 mb-8`}>
             <div className="flex items-baseline justify-between gap-3 mb-4">
               <h2 className={`text-lg font-bold ${heading}`}>🏆 {div?.election?.status === 'completed' ? l.whoWon : l.whoWins}</h2>
-              <span className={`text-sm ${textMuted}`}>{l.volume}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{snap.total_volume_usd >= 1e9 ? `$${(snap.total_volume_usd / 1e9).toFixed(1)}B` : `$${((snap.total_volume_usd || 0) / 1e6).toFixed(1)}M`}</strong></span>
+              <span className={`text-sm ${textMuted}`}>{l.volume}: <strong className={`font-extrabold ${isBlue ? 'text-blue-100' : 'text-primary'}`}>{fmtVolumeUsd(snap.total_volume_usd, loc)}</strong></span>
             </div>
             <div className="space-y-2.5">
               {snap.candidates.slice(0, 8).map((c, i) => (
                 <div key={c.candidate}>
                   <div className="flex justify-between text-sm mb-1">
                     <span className={`font-medium ${textMain}`}>{c.candidate}</span>
-                    <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{c.market_pct ?? 0}%</span>
+                    <span className={`tabular-nums font-bold ${i === 0 ? (isBlue ? 'text-blue-200' : 'text-primary') : textMuted}`}>{fmtDecimal(c.market_pct ?? 0, loc, 1)}%</span>
                   </div>
                   <div className={`w-full ${track} rounded-full h-2.5`}>
                     <div className="h-full rounded-full transition-all duration-500" style={{ width: `${Math.min(((c.market_pct || 0) / max) * 100, 100)}%`, backgroundColor: i === 0 ? '#0F52BA' : (isBlue ? '#3b6fd4' : '#94a3b8') }} />

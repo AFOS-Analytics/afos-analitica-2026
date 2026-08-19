@@ -7,6 +7,8 @@ interface NewsItem {
   source: string;
   url: string;
   time: string;
+  /** Instante ISO do item: o painel formata no idioma do leitor. */
+  timeIso?: string;
   category: string;
   summary?: string;
 }
@@ -98,12 +100,27 @@ async function fetchGoogleNews(query: string, category: string): Promise<NewsIte
       const source = sourceMatch?.[1]?.trim() || '';
 
       if (title && title !== 'Google Notícias') {
+        // A rota emite o INSTANTE em ISO e o painel formata no idioma dele.
+        //
+        // Antes ela devolvia a data ja formatada com locale fixo 'pt-BR', e a
+        // rota nao aceita parametro de idioma nenhum: uma materia de 05/Ago
+        // chegava ao leitor de /en como "05/08", que em convencao inglesa se le
+        // 8 de MAIO, tres meses errado e sem nada que denunciasse. Era a unica
+        // data do painel que atravessava servidor->cliente ja como string, logo
+        // fora do alcance de qualquer conferencia do frontend.
+        //
+        // `time` continua saindo, com o mesmo conteudo de antes, para nao
+        // quebrar consumidor que ja o le.
         let timeStr = '';
+        let timeIso = '';
         if (pubDate) {
           try {
             const date = new Date(pubDate);
-            timeStr = date.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
-          } catch { timeStr = ''; }
+            if (!Number.isNaN(date.getTime())) {
+              timeIso = date.toISOString();
+              timeStr = date.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+            }
+          } catch { timeStr = ''; timeIso = ''; }
         }
 
         let finalSource = source;
@@ -117,6 +134,7 @@ async function fetchGoogleNews(query: string, category: string): Promise<NewsIte
           source: finalSource || 'Google News',
           url: link,
           time: timeStr,
+          timeIso,
           category,
         });
       }
@@ -252,8 +270,18 @@ export async function GET() {
       timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
     });
 
+    // ⚠️ `updatedAt` é a hora em que ESTA resposta foi montada, e a lista vem de
+    // um `fetch` com `revalidate: 7200`. Ou seja, o carimbo pode ser de agora e a
+    // notícia de duas horas atrás, o que é exatamente o defeito que a casa trata
+    // como grave em outros lugares: carimbo fresco sobre dado velho. O campo
+    // continua saindo, com o nome que já é consumido, e ao lado dele vai a
+    // validade real da coleta, para quem lê saber a diferença.
     return NextResponse.json({
       updatedAt: brTime,
+      geradoEm: now.toISOString(),
+      // Janela de cache da coleta upstream, em segundos: a lista pode ter até
+      // este tempo de idade mesmo com `updatedAt` recém-carimbado.
+      idadeMaximaDaColetaSegundos: 7200,
       totalNews: unique.length,
       grouped,
       firecrawlActive: !!FIRECRAWL_KEY,

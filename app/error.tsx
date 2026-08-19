@@ -13,6 +13,7 @@ const T = {
     body: 'Encontramos um problema ao carregar esta página. Tente novamente em alguns segundos. Se o erro persistir, volte à página inicial.',
     retry: 'Tentar novamente',
     home: 'Página inicial',
+    assinatura: 'AFOS Analytics, Inteligência de Risco Político Eleitoral Global, Open-Source',
   },
   en: {
     eyebrow: 'Error',
@@ -20,6 +21,7 @@ const T = {
     body: 'We hit a problem loading this page. Try again in a few seconds. If the error persists, return to the home page.',
     retry: 'Try again',
     home: 'Home',
+    assinatura: 'AFOS Analytics, Global Electoral Political Risk Intelligence, Open-Source',
   },
   es: {
     eyebrow: 'Error',
@@ -27,6 +29,7 @@ const T = {
     body: 'Tuvimos un problema al cargar esta página. Inténtalo de nuevo en unos segundos. Si el error persiste, vuelve a la página de inicio.',
     retry: 'Intentar de nuevo',
     home: 'Inicio',
+    assinatura: 'AFOS Analytics, Inteligencia de Riesgo Político Electoral Global, Open-Source',
   },
 }
 
@@ -77,7 +80,7 @@ export default function GlobalError({
           </Link>
         </div>
         <p className="text-xs text-gray-400 mt-12">
-          AFOS Analytics, Inteligência de Risco Político Eleitoral Global, Open-Source
+          {t.assinatura}
         </p>
       </div>
     </main>

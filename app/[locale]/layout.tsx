@@ -6,6 +6,7 @@ import { buildMetadata, PAGE_SEO } from '../../lib/seo/metadata';
 import { websiteSchema } from '../../lib/seo/schema';
 import { JsonLd } from '../components/JsonLd';
 import { I18nProvider } from '../i18n/context';
+import { HtmlLangSync } from '../components/layout/HtmlLangSync';
 import { ChatWidget } from '../components/ChatWidget';
 
 interface Props {
@@ -28,6 +29,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <I18nProvider initialLocale={loc} initialMessages={messages}>
+      <HtmlLangSync />
       {/* Schema.org per locale: WebSite + Breadcrumb. FAQPage NÃO entra aqui (era injetado
           site-wide → risco de spam de structured-data; Google exige FAQ visível na página).
           O FAQ fica só em /how-it-works, que renderiza as perguntas. (SEO EVAL 06/Jun) */}

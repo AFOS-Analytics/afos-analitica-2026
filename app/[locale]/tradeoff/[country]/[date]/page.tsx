@@ -145,6 +145,11 @@ export default async function TradeoffByDatePage(props: PageProps) {
   if (process.env.VERCEL_ENV === 'production' && !isVisibleInProduction(params.date, pais)) notFound()
   const data = loadTradeoff(params.date, params.locale, pais)
   if (!data) notFound()
+  // 🔴 O loader cai para o pt-BR quando falta a tradução, e servia a peça em
+  // português sob /en e /es sem nada dizer, com o hreflang da própria página
+  // afirmando que aquela versão existe naquele idioma. É a mesma trava que o
+  // Daily já aplica. Em produção, tradução ausente vira 404, não peça trocada.
+  if (process.env.VERCEL_ENV === 'production' && data.locale !== params.locale) notFound()
 
   // ⚠️ Com o país: sem ele a edição dos EUA oferecia "edição anterior" numa
   // data do BRASIL, que no caminho `/tradeoff/us/...` não existe e dava 404.

@@ -19,7 +19,12 @@ jobs:
 
     steps:
       - name: Checkout
+        # fetch-depth 2 porque check-json-structure.ts compara contra o commit
+        # anterior via git. Com o padrao de 1 commit ele nao tem contra o que
+        # comparar, e a checagem passa sem checar.
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -45,9 +50,61 @@ jobs:
         run: npm run build
 
       - name: Run AFOS Daily edge case tests
-        run: npx tsx scripts/test-afos-daily-edge-cases.ts
+        run: npx --no-install tsx scripts/test-afos-daily-edge-cases.ts
 
       # scope.mjs é FONTE ÚNICA de 3 consumidores (cron, backfill do Neon, dataset
       # HF/Zaid). Regressão aqui apaga pesquisa do dashboard em silêncio.
       - name: Run TSE scope classifier tests
-        run: npx tsx scripts/test-tse-scope.mjs
+        run: npx --no-install tsx scripts/test-tse-scope.mjs
+
+      # Os portoes de CONTEUDO viviam so em .git/hooks/pre-commit, que NAO e
+      # versionado: clone novo, maquina nova ou commit com --no-verify passavam
+      # sem nenhum deles, e o CI nao repetia um so. Aqui rodam sem a condicao de
+      # arquivo staged, porque no CI o recorte e o push inteiro.
+      - name: Schema canonico de polls-data
+        run: npx --no-install tsx scripts/validate-polls-data.ts
+
+      - name: Estrutura dos JSONs contra o commit anterior
+        # --all e OBRIGATORIO no CI: sem argumento o script olha os arquivos
+        # STAGED, e no CI nao ha staging, entao ele imprimiria "nada a fazer" e
+        # passaria verde sem conferir nada, que e coverage de mentira.
+        run: npx --no-install tsx scripts/check-json-structure.ts --all
+
+      - name: Prosa em portugues dentro de componente
+        run: npx --no-install tsx scripts/check-hardcoded-ptbr.ts
+
+      - name: Gate numerico da traducao
+        run: npx --no-install tsx scripts/test-json-number-gate.ts
+
+      - name: Paridade dos JSONs de idioma
+        run: npx --no-install tsx scripts/check-locale-json.ts
+
+  e2e:
+    name: Playwright (i18n e rotas)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Build
+        env:
+          DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
+          KV_REST_API_URL: https://placeholder.upstash.io
+          KV_REST_API_TOKEN: placeholder
+          CRON_SECRET: placeholder
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: npm run build
+      # A suite existia, estava declarada no repositorio e nao rodava em lugar
+      # nenhum: duas assercoes apontavam para strings que nao existem mais, e o
+      # caso de /api/subscribe passava verde sem assercao nenhuma.
+      - name: Testes de ponta a ponta
+        env:
+          DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
+          CRON_SECRET: placeholder
+          NEXT_TELEMETRY_DISABLED: '1'
+        run: npx playwright test

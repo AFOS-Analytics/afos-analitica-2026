@@ -37,7 +37,12 @@ export function GET(req: NextRequest) {
     },
     {
       headers: {
-        'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        // 🔴 `max-age=0` no NAVEGADOR e a validade no CDN. Antes eram 3600 nos
+        // dois: uma correção publicada ficava até uma hora invisível para quem
+        // já tinha aberto a página, sem nenhum jeito de furar o cache dele.
+        // O `s-maxage` mantém o alívio de carga, e o `stale-while-revalidate`
+        // serve o antigo enquanto busca o novo.
+        'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600, must-revalidate',
         'Vary': 'Accept-Language',
       },
     }

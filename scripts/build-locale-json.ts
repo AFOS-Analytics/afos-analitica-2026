@@ -14,7 +14,7 @@
  *
  * Uso: importado por scripts/locale-maps/<arquivo>.<locale>.ts
  */
-import { readFileSync, writeFileSync, existsSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync, renameSync, unlinkSync } from 'fs'
 import { compararNumeros } from './lib/json-number-gate'
 import { caminhosDeString } from './lib/translation-map'
 
@@ -22,9 +22,36 @@ import { caminhosDeString } from './lib/translation-map'
 export const FORA_DE_TRADUCAO = [
   /\.(date|fieldDates|register|reliability|sample|margin|color|pc|mc|rank|party|updatedAt|lastUpdate|id)$/,
   /^(updatedAt|lastUpdate|date)$/,
+  /\.scope$/,
   /\.candidate$/, /\.candidate1$/, /\.candidate2$/, /\.matchup$/,
   /\.institute$/, /\.president$/, /\.name$/, /\.n$/,
 ]
+
+
+/**
+ * Gate reprovou: a variante do dia ANTERIOR não pode continuar servindo.
+ *
+ * 🔴 O `process.exit(1)` sozinho não bastava. O arquivo `.en.json` da rodada
+ * passada permanecia no disco, e `readLocalized` (lib/dashboard/static-data.ts)
+ * entrega o primeiro que existir, sem olhar carimbo: o leitor de inglês recebia
+ * a análise de ONTEM ao lado do carimbo de HOJE, e o fallback para pt-BR, que é
+ * a decisão de projeto, nunca chegava a acontecer.
+ *
+ * ⚠️ RENOMEIA, não apaga: este mesmo arquivo é a memória de tradução lida no
+ * início da próxima rodada. Apagar custaria a memória e forçaria reconstruir
+ * tudo pelo mapa.
+ */
+function tirarDoCaminho(saida: string): void {
+  if (!existsSync(saida)) return
+  const rejeitado = `${saida}.rejeitado`
+  try {
+    if (existsSync(rejeitado)) unlinkSync(rejeitado)
+    renameSync(saida, rejeitado)
+    console.error(`   ↪️  ${saida} movido para ${rejeitado}: o idioma cai para pt-BR até a próxima rodada.`)
+  } catch (e) {
+    console.error(`   ⚠️ não consegui mover ${saida}: ${(e as Error).message}`)
+  }
+}
 
 function valorEm(raiz: any, caminho: string): any {
   const partes = caminho.match(/[^.[\]]+/g)!
@@ -93,6 +120,7 @@ export function construir(
       console.error(`   ${c}  ::  ${String(valorEm(pt, c)).slice(0, 90)}`)
     }
     if (semTraducao.length > 25) console.error(`   ... e mais ${semTraducao.length - 25}`)
+    tirarDoCaminho(saida)
     process.exit(1)
   }
 
@@ -104,6 +132,7 @@ export function construir(
       console.error(`     pt : [${d.original.join(', ')}]  ${d.trechoOriginal}`)
       console.error(`     ${locale} : [${d.traduzido.join(', ')}]  ${d.trechoTraduzido}`)
     }
+    tirarDoCaminho(saida)
     process.exit(1)
   }
 

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { defaultLocale, COOKIE_NAME, isValidLocale, normalizeLocale, locales } from './lib/i18n/config';
+import { negotiateLocale } from './lib/i18n/negotiate';
 import { clientIp } from './lib/net/client-ip';
 
 const VISITOR_COOKIE_NAME = 'afos_visitor_id';
@@ -81,8 +82,20 @@ function checkStrategicDocAuth(request: NextRequest): NextResponse | null {
   } catch {
     return basicAuthChallenge();
   }
-  if (provided !== password) return basicAuthChallenge();
+  // Comparação de tempo constante. `!==` sai no primeiro caractere diferente e
+  // vaza o prefixo correto pelo tempo de resposta. `timingSafeEqual` de
+  // node:crypto não existe no runtime de edge, então a conta é feita à mão: XOR
+  // acumulado sobre o comprimento máximo, sem atalho.
+  if (!comparaConstante(provided, password)) return basicAuthChallenge();
   return null;
+}
+
+/** Igualdade sem atalho: percorre tudo e só decide no fim. */
+function comparaConstante(a: string, b: string): boolean {
+  const n = Math.max(a.length, b.length);
+  let dif = a.length ^ b.length;
+  for (let i = 0; i < n; i++) dif |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
+  return dif === 0;
 }
 
 const memoryRL = new Map<string, { count: number; resetAt: number }>();
@@ -213,14 +226,10 @@ export async function middleware(request: NextRequest) {
     );
   }
 
-  const acceptLang = request.headers.get('accept-language') || '';
-  let detectedLocale = defaultLocale;
-  for (const locale of locales) {
-    if (acceptLang.toLowerCase().includes(locale.split('-')[0].toLowerCase())) {
-      detectedLocale = locale;
-      break;
-    }
-  }
+  // Regra única em lib/i18n/negotiate.ts: respeita q-value e a ordem do LEITOR.
+  // A varredura anterior percorria a NOSSA lista e casava por substring, então
+  // `en-US,en;q=0.9,pt;q=0.3` caía em português.
+  const detectedLocale = negotiateLocale(request.headers.get('accept-language'), defaultLocale);
 
   return ensureOriginCookie(
     request,

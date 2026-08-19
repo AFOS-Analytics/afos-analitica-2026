@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { organizationSchema, webAppSchema, datasetSchema } from '../lib/seo/schema';
+import { organizationSchema, webAppSchema } from '../lib/seo/schema';
 import { JsonLd } from './components/JsonLd';
 import "./globals.css";
 
@@ -88,8 +88,15 @@ export default async function RootLayout(
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0F52BA" />
         <meta name="google-site-verification" content="9Fyuh0VcblSnhBhJADUisYYzPG24CuRieNWPyPhJyxE" />
-        {/* Schema.org: Organization + WebApplication + Dataset (static, safe) */}
-        <JsonLd data={[organizationSchema(), webAppSchema(), datasetSchema()]} />
+        {/* Schema.org: Organization + WebApplication. Os dois descrevem o SITE
+            inteiro e por isso pertencem à raiz.
+            🔴 `datasetSchema()` SAIU daqui em 19/Ago/2026: injetado no layout raiz,
+            ele fazia toda página do site declarar o dataset do BRASIL. O painel
+            das midterms era indexado como sendo sobre o dado brasileiro, e a
+            página da França servia dois Dataset sem @id, um da França e outro do
+            Brasil, sem nada dizer qual era o assunto. Ele agora é emitido só em
+            /[idioma]/data-sources, que é a página que fala do dado. */}
+        <JsonLd data={[organizationSchema(), webAppSchema()]} />
       </head>
       <body className={`${inter.className} bg-white text-dark`}>{children}<Analytics /><SpeedInsights /></body>
     </html>

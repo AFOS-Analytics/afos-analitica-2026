@@ -46,6 +46,13 @@ export async function anonymizeUser(email: string): Promise<{ success: boolean; 
       }))
     }
 
+    // Alcanca o que JA foi gravado antes do conserto de lib/audit.ts: linhas
+    // antigas de audit_logs ainda carregam o endereco em claro no entityId.
+    ops.push(prisma.auditLog.updateMany({
+      where: { entityId: normalized },
+      data: { entityId: anon },
+    }))
+
     if (lead) {
       ops.push(prisma.lead.update({
         where: { email: normalized },

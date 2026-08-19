@@ -44,11 +44,17 @@ export function getCountryOpacity(volumeUsd: number): number {
 /**
  * Format volume for display: $1.2M, $500K, etc.
  */
-export function formatVolume(usd: number): string {
+export function formatVolume(usd: number, locale?: string): string {
   if (!usd || Number.isNaN(usd) || usd <= 0) return '—';
-  if (usd >= 1_000_000_000) return `$${(usd / 1_000_000_000).toFixed(2)}B`;
-  if (usd >= 1_000_000) return `$${(usd / 1_000_000).toFixed(1)}M`;
-  if (usd >= 1_000) return `$${(usd / 1_000).toFixed(0)}K`;
-  if (usd > 0) return `$${usd}`;
-  return '—';
+  // Separador decimal por idioma. Sem o parametro, a funcao devolvia `$1.2M`
+  // nos tres idiomas, contra a regua que pede virgula em pt-BR e es. O `locale`
+  // e opcional para nao quebrar chamador antigo, e a ausencia dele cai em pt-BR.
+  const dec = (n: number, casas: number) => {
+    const s = n.toFixed(casas);
+    return locale === 'en' ? s : s.replace('.', ',');
+  };
+  if (usd >= 1_000_000_000) return `$${dec(usd / 1_000_000_000, 2)}B`;
+  if (usd >= 1_000_000) return `$${dec(usd / 1_000_000, 1)}M`;
+  if (usd >= 1_000) return `$${dec(usd / 1_000, 0)}K`;
+  return `$${Math.round(usd)}`;
 }

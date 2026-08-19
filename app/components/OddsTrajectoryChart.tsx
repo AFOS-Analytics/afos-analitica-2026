@@ -1,5 +1,6 @@
 'use client'
 import type { MarketTrajectory } from '../../lib/country-data'
+import { fmtDecimal } from '../../lib/i18n/numero'
 
 // Paleta viva e legível em AMBOS os temas (fundo branco e fundo Sapphire). Evita azuis escuros que somem no azul.
 const PALETTE = ['#FF5C8A', '#3FA9F5', '#FFA63D', '#34D399', '#B98BFF', '#FBBF24']
@@ -28,7 +29,7 @@ export function OddsTrajectoryChart({ trajectory, volume, locale, isBlue }: {
   const grid = isBlue ? 'rgba(147,197,253,0.16)' : '#eceef3'
   const axisText = isBlue ? 'rgba(191,219,254,0.7)' : '#9aa3b2'
   const lab = L[locale] || L['en']
-  const fmtVol = volume >= 1e9 ? 'US$ ' + (volume / 1e9).toFixed(1) + 'B' : 'US$ ' + (volume / 1e6).toFixed(volume >= 1e8 ? 0 : 1) + 'M'
+  const fmtVol = 'US$ ' + (volume >= 1e9 ? fmtDecimal(volume / 1e9, locale, 1) + 'B' : fmtDecimal(volume / 1e6, locale, volume >= 1e8 ? 0 : 1) + 'M')
   const fmtPct = (p: number) => (p < 1 ? '<1%' : Math.min(99, Math.round(p)) + '%')
   const fmtDate = (d: string) => {
     try { return new Date(d + 'T00:00:00Z').toLocaleDateString(locale === 'pt-BR' ? 'pt-BR' : locale, { month: 'short', year: '2-digit', timeZone: 'UTC' }) } catch { return d }

@@ -34,6 +34,7 @@ import { listPublishedDailies, loadDaily, dailyExists } from '../afos-daily/load
 import { listPublishedTradeoffs, loadTradeoff, tradeoffExists } from '../afos-tradeoff/loader'
 import { cleanMarkdownText as cleanDaily } from '../afos-daily/utils'
 import { cleanMarkdownText as cleanTradeoff } from '../afos-tradeoff/utils'
+import { updatedAtToRfc822 } from '../frontmatter/updated-at'
 
 const SITE = 'https://www.afos-analytics.com'
 
@@ -65,15 +66,9 @@ function escapeXml(s: string): string {
 }
 
 function toRfc822(dateIso: string, updatedAt: string): string {
-  const m = updatedAt.match(/^(\d{2})\/(\d{2})\/(\d{4}),?\s+(\d{2}):(\d{2})$/)
-  let d: Date
-  if (m) {
-    const [, dd, mm, yyyy, hh, mi] = m
-    d = new Date(`${yyyy}-${mm}-${dd}T${hh}:${mi}:00-03:00`)
-  } else {
-    d = new Date(`${dateIso}T00:00:00-03:00`)
-  }
-  return d.toUTCString()
+  // Regra única em lib/frontmatter/updated-at.ts. Esta cópia local montava a
+  // Date sem validar e publicava `<pubDate>Invalid Date</pubDate>`.
+  return updatedAtToRfc822(updatedAt, dateIso)
 }
 
 const DAILY_DESC: Record<FeedLocale, string> = {

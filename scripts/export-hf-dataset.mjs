@@ -192,7 +192,16 @@ function marketRowsFromGitHistory() {
   try {
     shas = execSync('git log --format=%H -- public/polls-data.json', { cwd: ROOT, encoding: 'utf-8' })
       .trim().split('\n').filter(Boolean)
-  } catch (e) { console.log('⚠️ git indisponível, histórico do comparativo pulado:', e.message); return [] }
+  } catch (e) {
+    // Em CI, git indisponível é FALHA, não motivo para devolver série vazia: o
+    // resultado seria republicar o dataset truncado. Localmente segue pulando.
+    if (process.env.HF_HISTORY_DIR) {
+      console.error('❌ git indisponível no CI, histórico do comparativo não pôde ser lido:', e.message)
+      process.exit(1)
+    }
+    console.log('⚠️ git indisponível, histórico do comparativo pulado:', e.message)
+    return []
+  }
   const linhas = []
   let lidos = 0
   for (const sha of shas) {
@@ -360,8 +369,22 @@ if (HISTORY_DIR && existsSync(join(HISTORY_DIR, 'archive'))) {
     if (existsSync(k)) { copyFileSync(k, join(dCards, `${d}.json`)) }
   }
   console.log(`🗄️  backfill: ${n} datas históricas do branch archive`)
+} else if (HISTORY_DIR) {
+  // 🔴 FALHA FECHADA quando o CI PEDIU o histórico e ele não veio.
+  //
+  // O passo de checkout do branch `archive` tem `continue-on-error: true`, então
+  // uma falha dele era silenciosa: o exportador seguia sem o backfill, montava a
+  // série de mercado só com o dia corrente e o mirror PUBLICAVA essa série curta
+  // por cima da completa no Hugging Face. O dataset encolhia sem nenhum erro em
+  // lugar nenhum, e ninguém veria até alguém contar as datas.
+  //
+  // `HISTORY_DIR` definido significa "estamos em CI e o histórico foi pedido".
+  // Sem ele (rodada local), o comportamento antigo continua valendo.
+  console.error('❌ backfill: HF_HISTORY_DIR está definido mas a pasta archive não existe.')
+  console.error('   O checkout do branch `archive` falhou. Publicar agora truncaria a série no Hugging Face.')
+  process.exit(1)
 } else {
-  console.log('🗄️  backfill: branch archive ausente (em CI ele entra via HF_HISTORY_DIR)')
+  console.log('🗄️  backfill: branch archive ausente (rodada local, sem HF_HISTORY_DIR)')
 }
 
 // ---- BACKFILL do comparativo: git de polls-data.json ----

@@ -4,6 +4,7 @@ import type { NewsData, NewsItem } from '../types';
 import { SectionTitle } from './ui';
 import { LogicLink } from './LogicLink';
 import { useTranslation } from '../i18n/context';
+import { tagLocale } from '../../lib/i18n/numero'
 
 /** Validar URL para prevenir javascript: protocol injection (OWASP A03) */
 function isSafeUrl(url: string | undefined): boolean {
@@ -21,8 +22,32 @@ interface Props {
   loading?: boolean;
 }
 
+/**
+ * Hora do item no idioma do leitor, sempre em horario de Brasilia.
+ *
+ * O `timeIso` e o instante que a rota passou a emitir; o `legado` e a string ja
+ * formatada em pt-BR, que continua vindo e serve de piso enquanto o cache da
+ * rota nao vira. O sufixo " BRT" que aparece no cabecalho segue verdadeiro
+ * porque o fuso e fixado aqui.
+ */
+function fmtHora(iso: string | undefined, legado: string | undefined, locale: string): string {
+  if (iso) {
+    const d = new Date(iso)
+    if (!Number.isNaN(d.getTime())) {
+      return d.toLocaleString(tagLocale(locale), {
+        timeZone: 'America/Sao_Paulo',
+        day: '2-digit',
+        month: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    }
+  }
+  return legado || ''
+}
+
 export function NewsSection({ news, loading }: Props) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   if (!news || news.totalNews <= 0) {
     if (!loading) return null;
     // Skeleton enquanto o fetch client (Google News/Firecrawl, ~20s) está em voo.
@@ -65,7 +90,7 @@ export function NewsSection({ news, loading }: Props) {
                 <div className="space-y-2">
                   {newsItems.map((n: NewsItem, i: number) => (
                     <div key={i} className="flex items-start gap-2 text-xs border-b border-gray-100 pb-2">
-                      <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{n.time || ', '}</span>
+                      <span className="text-gray-400 flex-shrink-0 mt-0.5 min-w-[70px]">{fmtHora(n.timeIso, n.time, locale)}</span>
                       <div className="flex-1">
                         {isSafeUrl(n.url) ? (
                           <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-dark hover:text-primary hover:underline leading-snug font-medium">

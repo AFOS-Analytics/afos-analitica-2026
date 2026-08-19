@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { JsonLd } from '../../../components/JsonLd'
-import { notFound } from 'next/navigation'
+import { redirect, notFound } from 'next/navigation'
 import { locales, isValidLocale, type Locale } from '../../../../lib/i18n/config'
 import { getCountryBySlug, COUNTRIES_SEO } from '../../../../lib/seo/countries'
 import { breadcrumbSchema, countryDatasetSchema } from '../../../../lib/seo/schema'
@@ -57,8 +57,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
-    alternates: { canonical: `${BASE_URL}/${loc}/country/${slug}`, languages },
-    ...socialMeta(loc, { title, description, url: `${BASE_URL}/${loc}/country/${slug}` }),
+    // 🔴 O canonical ancora no slug CANÔNICO do idioma, não no slug pedido.
+    // A França tem 3 slugs (franca, france, francia) e 3 idiomas: 9 URLs
+    // respondiam 200, cada uma se declarando original, e a mesma <head> dizia
+    // "minha versão en é /en/country/france" no hreflang enquanto o canonical
+    // dizia "eu sou /en/country/franca". São 30 duplicatas auto-canônicas nos
+    // 15 países. Agora canonical e hreflang[loc] são a MESMA string.
+    alternates: { canonical: `${BASE_URL}/${loc}/country/${country.slug[loc]}`, languages },
+    ...socialMeta(loc, { title, description, url: `${BASE_URL}/${loc}/country/${country.slug[loc]}` }),
   }
 }
 
@@ -67,15 +73,19 @@ export default async function CountryPage({ params }: { params: Promise<{ locale
   const loc = (isValidLocale(locale) ? locale : 'pt-BR') as Locale
   const country = getCountryBySlug(slug)
   if (!country) notFound()
+  // Resolve a duplicata na ORIGEM, não só no canonical: slug de outro idioma sob
+  // este prefixo redireciona para o slug canônico. 307 e não 308, porque o
+  // destino pode mudar e o 308 fica cacheado duro no navegador.
+  if (slug !== country.slug[loc]) redirect(`/${loc}/country/${country.slug[loc]}`)
 
   const name = country.name[loc] || country.name['en']
   const div = getCountryDivergence(country.iso3)
-  const breadcrumb = breadcrumbSchema(loc, [{ name: 'AFOS Analytics', path: '' }, { name, path: `country/${slug}` }])
+  const breadcrumb = breadcrumbSchema(loc, [{ name: 'AFOS Analytics', path: '' }, { name, path: `country/${country.slug[loc]}` }])
 
   return (
     <>
       <JsonLd data={breadcrumb} />
-      {div?.hf && <JsonLd data={countryDatasetSchema(name, div.hf)} />}
+      {div?.hf && <JsonLd data={countryDatasetSchema(name, div.hf, country.iso3, loc, `${BASE_URL}/${loc}/country/${country.slug[loc]}`)} />}
       <CountryPageContent locale={loc} country={country} div={div} />
     </>
   )

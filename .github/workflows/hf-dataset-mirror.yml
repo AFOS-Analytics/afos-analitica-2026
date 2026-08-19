@@ -31,9 +31,12 @@ jobs:
           # do log de public/polls-data.json (precisa de todos os commits)
           fetch-depth: 0
 
+      # ⛔ SEM `continue-on-error`. Ele existia de quando o archive era opcional.
+      # Depois que a série de mercado do CSV passou a ser REGERADA a cada rodada,
+      # archive ausente deixou de degradar o dataset e passou a TRUNCÁ-LO: a
+      # publicação sobrescrevia a série completa por uma de um dia só.
       - name: Checkout branch archive (série histórica de snapshots)
         uses: actions/checkout@v4
-        continue-on-error: true
         with:
           ref: archive
           path: archive-history

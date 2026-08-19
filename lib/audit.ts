@@ -13,6 +13,18 @@ export function audit(
 ) {
   if (!prisma) return
 
+  // 🔴 `entityId` NUNCA guarda e-mail em claro.
+  //
+  // Seis chamadas passavam o endereço cru (webhooks/resend e lib/email/subscribers),
+  // e a tabela governance.audit_logs é justamente a que `anonymizeUser` NÃO
+  // limpava: pedido de exclusão anonimizava Lead, User e ContactEvent e deixava
+  // o endereço legível no log de auditoria, que é o oposto do que a tabela
+  // existe para provar. Hashear aqui fecha as seis de uma vez, e o hash continua
+  // servindo para correlacionar eventos do mesmo titular.
+  const entityIdSeguro = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(entityId)
+    ? `sha256:${createHash('sha256').update(entityId.toLowerCase().trim()).digest('hex').slice(0, 32)}`
+    : entityId
+
   const ipHash = detail?.ip ? createHash('sha256').update(detail.ip).digest('hex').slice(0, 16) : undefined
   const uaHash = detail?.userAgent ? createHash('sha256').update(detail.userAgent).digest('hex').slice(0, 16) : undefined
 
@@ -32,7 +44,7 @@ export function audit(
         actorId: detail?.actorId,
         action,
         entityType,
-        entityId,
+        entityId: entityIdSeguro,
         beforeData: before ?? undefined,
         afterData: after ?? undefined,
         ipHash,

@@ -8,25 +8,25 @@ interface ModalMetasProps {
 }
 
 export function ModalMetas({ show, onClose }: ModalMetasProps) {
-  const { t } = useTranslation();
+  const { t, tList } = useTranslation();
   if (!show) return null;
 
-  const centralThesisLines = t('metas.centralThesisLines').split(',');
-  const economicImpactList = t('metas.economicImpactList').split(',');
-  const economicImpactAllowsList = t('metas.economicImpactAllowsList').split(',');
-  const businessDecisionList = t('metas.businessDecisionList').split(',');
-  const institutionalImpactList = t('metas.institutionalImpactList').split(',');
-  const civicEducationList = t('metas.civicEducationList').split(',');
-  const accountabilityList = t('metas.accountabilityList').split(',');
-  const internationalImpactList = t('metas.internationalImpactList').split(',');
-  const internationalImpactItems = t('metas.internationalImpactItems').split(',');
-  const globalPositioningBridgeList = t('metas.globalPositioningBridgeList').split(',');
-  const valueModelEducates = t('metas.valueModelEducates').split(',');
-  const valueModelFeeds = t('metas.valueModelFeeds').split(',');
-  const systemicEffectChains = t('metas.systemicEffectChains').split(',');
-  const potentialImpactList = t('metas.potentialImpactList').split(',');
-  const synthesisItems = t('metas.synthesisItems').split(',');
-  const positioningList = t('metas.positioningList').split(',');
+  const centralThesisLines = tList('metas.centralThesisLines');
+  const economicImpactList = tList('metas.economicImpactList');
+  const economicImpactAllowsList = tList('metas.economicImpactAllowsList');
+  const businessDecisionList = tList('metas.businessDecisionList');
+  const institutionalImpactList = tList('metas.institutionalImpactList');
+  const civicEducationList = tList('metas.civicEducationList');
+  const accountabilityList = tList('metas.accountabilityList');
+  const internationalImpactList = tList('metas.internationalImpactList');
+  const internationalImpactItems = tList('metas.internationalImpactItems');
+  const globalPositioningBridgeList = tList('metas.globalPositioningBridgeList');
+  const valueModelEducates = tList('metas.valueModelEducates');
+  const valueModelFeeds = tList('metas.valueModelFeeds');
+  const systemicEffectChains = tList('metas.systemicEffectChains');
+  const potentialImpactList = tList('metas.potentialImpactList');
+  const synthesisItems = tList('metas.synthesisItems');
+  const positioningList = tList('metas.positioningList');
 
   return (
     <div className="fixed inset-0 bg-black/60 z-50 flex items-start justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true" aria-label={t('metas.title')} onClick={onClose}>

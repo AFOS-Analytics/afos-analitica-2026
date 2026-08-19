@@ -212,6 +212,20 @@ export function weeklyExists(date: string, locale: string, pais: string): boolea
   return caminhoDoLocale(date, locale, pais) !== null
 }
 
+/**
+ * Existe arquivo NAQUELE idioma, sem a cascata para a origem.
+ *
+ * ⚠️ `weeklyExists` devolve `true` para os três idiomas SEMPRE, porque
+ * `caminhoDoLocale` cai para o inglês quando falta a tradução. Usar aquela
+ * função para montar hreflang faria a página declarar versões que não existem,
+ * que é a única coisa que hreflang não pode fazer.
+ */
+export function weeklyExistsStrict(date: string, locale: string, pais: string): boolean {
+  const dir = dirDoPais(pais)
+  const arquivo = locale === LOCALE_ORIGEM ? `${date}.md` : `${date}.${locale}.md`
+  return existsSync(join(dir, arquivo))
+}
+
 export function loadWeekly(date: string, locale: string, pais: string): AfosWeeklyData | null {
   if (!isValidDate(date) || !isValidCountry(pais)) return null
   const alvo = caminhoDoLocale(date, locale, pais)
@@ -263,7 +277,23 @@ export function loadWeekly(date: string, locale: string, pais: string): AfosWeek
       : undefined,
     crossings: arr<WeeklyCrossing>(fm.crossings),
     howToRead: (fm.howToRead as AfosWeeklyData['howToRead']) || undefined,
-    sources: arr<AfosWeeklyData['sources'][number]>(fm.sources),
+    // 🔴 Normalizado, não `cast` cru. O template faz `bloco.items.map(...)`, então
+    // um bloco de fontes escrito sem `items:` lançava no render e derrubava a
+    // EDIÇÃO INTEIRA, nos três idiomas, e não só a seção de fontes. Agora o pior
+    // caso é o bloco ser descartado, com aviso no log dizendo qual.
+    sources: arr<Record<string, unknown>>(fm.sources)
+      .map((b) => ({
+        label: str(b.label),
+        items: arr<AfosWeeklyData['sources'][number]['items'][number]>(b.items)
+          .filter((it) => it && typeof it.link === 'string' && it.link),
+      }))
+      .filter((b) => {
+        if (b.items.length === 0) {
+          console.warn(`[afos-weekly] bloco de fontes sem itens descartado: "${b.label}"`)
+          return false
+        }
+        return true
+      }),
     methodology: str(fm.methodology),
   }
 }

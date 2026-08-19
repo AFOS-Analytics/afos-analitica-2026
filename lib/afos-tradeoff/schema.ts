@@ -1,17 +1,15 @@
 import type { AfosTradeoffData } from './loader'
 import { cleanMarkdownText } from './utils'
+import { updatedAtToIso } from '../frontmatter/updated-at'
 
 const SITE = 'https://www.afos-analytics.com'
 const ORG_LOGO = `${SITE}/brand/logo-icon-512.png`
 const OG_IMAGE = `${SITE}/brand/footer-preview.png`
 
 function parseUpdatedAt(updatedAt: string, dateIso: string): string {
-  const m = updatedAt.match(/^(\d{2})\/(\d{2})\/(\d{4}),?\s+(\d{2}):(\d{2})$/)
-  if (m) {
-    const [, dd, mm, yyyy, hh, mi] = m
-    return `${yyyy}-${mm}-${dd}T${hh}:${mi}:00-03:00`
-  }
-  return `${dateIso}T00:00:00-03:00`
+  // Regra única em lib/frontmatter/updated-at.ts. Esta cópia local devolvia
+  // `2026-16-08T...`, mês 16, para um updatedAt escrito em MM/DD.
+  return updatedAtToIso(updatedAt, dateIso)
 }
 
 // NewsArticle JSON-LD for a Tradeoff edition. Same shape as the Daily schema
@@ -138,7 +136,12 @@ export function getOgImageUrl(locale?: string): string {
   // Reuses the generic /api/og endpoint — Daily uses the same. Per-edition
   // OG image is a post-launch backlog item (project_post_launch_visualizations.md).
   const safe = (locale === 'en' || locale === 'es') ? locale : 'pt-BR'
-  return `${SITE}/api/og?locale=${safe}`
+  // 🔴 Arquivo ESTÁTICO, não `/api/og`. O robots.ts bloqueia `/api/` para todo
+  // agente, então o LinkedInBot e o facebookexternalhit recusavam buscar a
+  // imagem e o cartão de TODA peça saía sem ela. É a mesma troca que
+  // lib/seo/schema.ts:91 já tinha feito. Medido em 19/Ago/2026.
+  const arquivo = safe === 'pt-BR' ? 'pt' : safe
+  return `${SITE}/brand/og-${arquivo}-linkedin-1200x627.png`
 }
 
 export { parseUpdatedAt }

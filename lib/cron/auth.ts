@@ -27,9 +27,20 @@ function safeEqual(a: string, b: string): boolean {
  * protege endpoints de deleção/LGPD).
  */
 export function requireCronAuth(request: Request): NextResponse | null {
-  if (!process.env.CRON_SECRET) return null
-  const authHeader = request.headers.get('authorization')
   const cronSecret = process.env.CRON_SECRET
+  if (!cronSecret) {
+    // 🔴 FALHA FECHADA em produção. Antes, segredo ausente devolvia `null` e a
+    // rota ABRIA: uma variável de ambiente esquecida num deploy transformava
+    // toda rota de cron, que grava, apaga e purga, em endpoint público, e nada
+    // no comportamento denunciava isso. A validação de lib/env.ts não cobre
+    // este caminho, então a defesa tem de estar aqui.
+    if (process.env.NODE_ENV === 'production') {
+      return NextResponse.json({ error: 'cron_secret_not_configured' }, { status: 503 })
+    }
+    // Só em dev local, para script bater na rota sem cabeçalho.
+    return null
+  }
+  const authHeader = request.headers.get('authorization')
   if (!cronSecret || !authHeader || !safeEqual(authHeader, `Bearer ${cronSecret}`)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }

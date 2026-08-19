@@ -161,6 +161,13 @@ export function datasetSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
+    // 🔴 `@id` e `mainEntityOfPage` acrescentados em 19/Ago/2026, junto com a
+    // saída deste nó do layout raiz. Sem `@id`, a página de um país servia DOIS
+    // Dataset anônimos, um do país e um do Brasil, e nada dizia qual era o
+    // assunto. Sem `mainEntityOfPage`, o nó apontava para a home a partir de
+    // qualquer rota.
+    '@id': `${BASE_URL}/#dataset-afos`,
+    mainEntityOfPage: `${BASE_URL}/pt-BR/data-sources`,
     name: 'AFOS Analytics Election Data',
     description: 'Global electoral political risk intelligence dataset: real-time Polymarket odds, polls from 17+ institutes, and news cross-references across 15 countries.',
     url: BASE_URL,
@@ -175,16 +182,21 @@ export function datasetSchema() {
     distribution: {
       '@type': 'DataDownload',
       encodingFormat: 'text/csv',
-      contentUrl: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence',
+      contentUrl: 'https://huggingface.co/datasets/AFOS-Analytics1/brazil-2026-electoral-divergence/resolve/main/data/market-odds-timeseries.csv',
     },
   };
 }
 
 /** Dataset por país, casos validados (Google Dataset Search / GEO) */
-export function countryDatasetSchema(countryName: string, hf: string) {
+export function countryDatasetSchema(countryName: string, hf: string, iso3?: string, loc?: string, paginaUrl?: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
+    // `@id` estável e IGUAL nos três idiomas: sem ele os nós de países
+    // diferentes eram anônimos e indistinguíveis para o consumidor.
+    ...(iso3 ? { '@id': `${BASE_URL}/#dataset-${iso3}` } : {}),
+    ...(loc ? { inLanguage: loc } : {}),
+    ...(paginaUrl ? { mainEntityOfPage: paginaUrl } : {}),
     name: `AFOS Analytics, ${countryName} electoral divergence dataset`,
     description: `Prediction-market odds cross-referenced with electoral polls (market × poll divergence) for ${countryName}, checked against the real election result. Open dataset, CC BY 4.0.`,
     url: hf,
@@ -195,7 +207,15 @@ export function countryDatasetSchema(countryName: string, hf: string) {
     temporalCoverage: '2024/..',
     spatialCoverage: { '@type': 'Place', name: countryName },
     sameAs: hf,
-    distribution: { '@type': 'DataDownload', encodingFormat: 'text/csv', contentUrl: hf },
+    // 🏷️ A etiqueta do formato tem de dizer a verdade: `hf` é a PÁGINA do
+    // dataset no Hugging Face, que é text/html, e não o arquivo. Antes ela vinha
+    // declarada como `text/csv`, então o consumidor baixava markup achando que
+    // era tabela.
+    // ⛔ E NÃO se inventa aqui a URL do CSV: o caminho do arquivo varia por
+    // dataset, e apontar para um `/resolve/main/...` adivinhado publicaria um
+    // link quebrado, que é pior que a etiqueta errada. Quando cada país
+    // declarar o caminho do próprio arquivo, entra um segundo DataDownload.
+    distribution: { '@type': 'DataDownload', encodingFormat: 'text/html', contentUrl: hf },
   };
 }
 

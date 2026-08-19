@@ -7,6 +7,9 @@ import {
   isValidCountry,
   isValidDate,
   isVisibleInProduction,
+  weeklyExistsStrict,
+  SUPPORTED_LOCALES,
+  LOCALE_ORIGEM,
 } from '../../../../../lib/afos-weekly/loader'
 
 /**
@@ -28,7 +31,12 @@ const TAGS_POR_PAIS: Record<string, string[]> = {
 /** Imagem OG por idioma. Replicada, não importada: este módulo é isolado. */
 function getOgImageUrl(locale?: string): string {
   const safe = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
-  return `https://www.afos-analytics.com/api/og?locale=${safe}`
+  // 🔴 Arquivo ESTÁTICO, não `/api/og`. O robots.ts bloqueia `/api/` para todo
+  // agente, então o LinkedInBot e o facebookexternalhit recusavam buscar a
+  // imagem e o cartão de TODA peça saía sem ela. É a mesma troca que
+  // lib/seo/schema.ts:91 já tinha feito. Medido em 19/Ago/2026.
+  const arquivo = safe === 'pt-BR' ? 'pt' : safe
+  return `https://www.afos-analytics.com/brand/og-${arquivo}-linkedin-1200x627.png`
 }
 
 /**
@@ -70,7 +78,21 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     // TODA edição do Weekly declarava a HOME como sua canônica. `noindex` não
     // resolve isso: quem recebe o link, e qualquer agregador que leia o head,
     // continua vendo a identidade errada da página.
-    alternates: { canonical: url },
+    // 🔴 hreflang POR EXISTÊNCIA REAL do arquivo, nunca por `weeklyExists`, que
+    // devolve `true` sempre por causa da cascata para o inglês. E quando a
+    // tradução NÃO existe, o canônico aponta para a origem em inglês: sem isso,
+    // duas URLs serviriam o MESMO texto inglês cada uma se dizendo original.
+    alternates: (() => {
+      const traduzido = weeklyExistsStrict(p.date, p.locale, p.country)
+      const languages: Record<string, string> = {}
+      for (const l of SUPPORTED_LOCALES) {
+        if (weeklyExistsStrict(p.date, l, p.country)) {
+          languages[l] = `https://www.afos-analytics.com/${l}/weekly/${p.country}/${p.date}`
+        }
+      }
+      const origem = `https://www.afos-analytics.com/${LOCALE_ORIGEM}/weekly/${p.country}/${p.date}`
+      return { canonical: traduzido ? url : origem, languages }
+    })(),
     // 🔴 SEM ESTE BLOCO o card social herdava o do layout raiz, que anuncia
     // "Brazil 2026 Elections". Quem compartilhasse esta edição no WhatsApp via a
     // eleição ERRADA no cartão, com o link das midterms logo abaixo. `noindex`

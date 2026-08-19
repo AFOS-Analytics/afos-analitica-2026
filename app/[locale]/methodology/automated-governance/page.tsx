@@ -73,11 +73,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       publishedTime: '2026-04-21T22:00:00Z',
       modifiedTime: '2026-04-21T23:00:00Z',
       authors: ['AFOS Analytics'],
+      // A página declarava `summary_large_image` e não entregava imagem nenhuma,
+      // nem og:image: o cartão saía vazio. PNG estático, que fica fora do
+      // Disallow:/api/ do robots.
+      images: [{ url: `${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`, width: 1200, height: 627, alt: seo.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
+      images: [`${BASE_URL}/brand/og-${loc === 'pt-BR' ? 'pt' : loc}-linkedin-1200x627.png`],
     },
     robots: {
       index: true,
