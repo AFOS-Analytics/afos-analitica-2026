@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-17",
+  "lastUpdate": "2026-08-18",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1298,7 +1298,7 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "⭐ EL DÍA TIENE UNA DIVERGENCIA DE DIRECCIÓN ENTRE LOS DOS UNIVERSOS, y ese es el hallazgo. La BTG/Nexus del 17 de ago (n=2.003, campo del 14 al 16 de ago, margen de 2pp) mostró ESTABILIDAD: el líder pasó de 40% a 41%, el segundo de 35% a 36%, la distancia quedó en los mismos 5 puntos y el balotaje repitió 47 a 44. El mismo día el precio CERRÓ 4,00pp de esa distancia, de 37,05pp a 33,05pp. ⛔ El panel no afirma que el precio reaccionó a la encuesta: la encuesta no achicó nada, así que no explica un achicamiento de 4 puntos. ⭐ Y hay un segundo cruce, sobre quién es el tercero: la encuesta pone a Caiado en 5% y a Renan Santos en 4%, mientras el mercado le da 4,05% a Renan y 0,25% a Caiado, y en el contrato de tercer lugar 52,50% contra 38,50%. Los dos universos no coinciden sobre el orden del pelotón. 📌 Captura confirmada por DOS pasadas independientes de la traba, en ventanas separadas. 🏷️ ESTADO ELECTORAL DECLARADO POR FILA, desde el 17 de ago: Pablo Marçal entra en la tabla porque es candidato registrado habilitado a hacer campaña por una medida cautelar, aunque INELEGIBLE hasta 2032 y con el registro pendiente ante la justicia electoral. Tarcísio de Freitas y Fernando Haddad PERMANECEN pese a no disputar la Presidencia, porque sus contratos siguen abiertos y negociados, y el del primero carga, en la captura del 17 de ago, el volumen acumulado más alto entre los 18 contratos con precio del book presidencial. ⛔ El panel no borra una fila para quedar prolijo: declara el estado de cada una.",
+    "note": "⛔ SIN PRECIO CERTIFICADO EL 18 de ago, y los valores de esta tabla son la captura confirmada del 17 de ago, 18:48 BRT. La traba de captura del AFOS hace dos lecturas separadas por 8 minutos y solo libera si concuerdan dentro de 0,20pp; corrió CINCO veces entre las 20:30 y las 21:37 del 18 de ago y bloqueó las cinco. 🔑 La inestabilidad estaba en los contratos FINOS: en las diez lecturas de la noche el líder quedó en 63,50% todas las veces, con amplitud de 0,00pp, mientras Pablo Marçal fue leído entre 0,65% y 1,15%, o sea 0,50pp en un contrato que vale cerca de 1%. Un libro fino se mueve con poco dinero, así que esto es espesor de mercado y no señal electoral. 📌 ENCUESTAS: ninguna nacional nueva. La última es la Nexus/BTG del 17 de ago, y la Datafolha del 21 de ago será la primera en medir a Marçal.",
     "sources": "Precios de Polymarket vía el proxy de AFOS, y el panel solo publica un precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen. El 16 de ago hay lectura confirmada nueva para TODOS los contratos seguidos, a las 16:56 BRT (19:56 UTC): presidencial, segundo lugar, tercer lugar, Senado e impeachment en el Supremo. Encuestas registradas ante la justicia electoral y difundidas por las casas, con reporteo de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo y Correio Braziliense.",
     "candidates": [
       {
@@ -1306,7 +1306,7 @@
         "pesquisaRange": "38-44%",
         "polymarket": "64,50%",
         "tendenciaPesquisa": "NACIONAL NUEVA EL 17 DE AGO: la BTG/Nexus le da 41% en la primera vuelta, alza de 1 punto contra la ronda anterior de la propia casa, que lo tenía en 40%, y 47% en el balotaje, IDÉNTICO a la ronda anterior. ⭐ La distancia hacia el segundo NO cambió, sigue en 5 puntos, porque los dos subieron 1 punto, y cada movimiento cabe dentro del margen de 2pp. La Quaest del 14 de ago sigue en la base con 38%.",
-        "tendenciaPolymarket": "🔴 CAÍDA DE 2,00pp EL 17 DE AGO, de 66,50% a 64,50% (vol USD 8,52M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC), con la traba de captura aprobada en DOS pasadas separadas. Devolvió exactamente lo que había subido la víspera. La distancia hacia el segundo SE CERRÓ de 37,05pp a 33,05pp, o sea 4,00pp en cerca de 26 horas. ⛔ Sin superlativo: desde el 19 de may la serie marcó 66,50% como máximo, el 1 de ago, y 5 de los 90 días registrados están por encima del cierre de hoy.",
+        "tendenciaPolymarket": "⛔ SIN LECTURA CONFIRMADA el 18 de ago. En las diez lecturas entre las 20:30 y las 21:37 apareció en 63,50% en TODAS, amplitud de 0,00pp, el contrato más estable del libro, pero la traba certifica la captura entera o ninguna. El valor al lado es el del 17 de ago, 18:48 BRT. ⛔ Sin superlativo: el máximo de la serie de 88 días es 66,50%, del 1 de ago.",
         "odds": 64.5,
         "percentage": 41,
         "lastUpdate": "2026-08-17",
@@ -1317,7 +1317,7 @@
         "pesquisaRange": "31-36%",
         "polymarket": "31,45%",
         "tendenciaPesquisa": "NACIONAL NUEVA EL 17 DE AGO: la BTG/Nexus lo lleva de 35% a 36% en la primera vuelta y repite 44% en el balotaje. ⚠️ La ganancia de 1 punto está dentro del margen de 2pp de la casa, y la distancia hacia el líder quedó igual, en 5 puntos. La Quaest del 14 de ago sigue en la base con 31%.",
-        "tendenciaPolymarket": "🔴 ALZA DE 2,00pp EL 17 DE AGO, de 29,45% a 31,45% (vol USD 8,46M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC). Es el cuarto día seguido de alza y el mayor movimiento del día entre los contratos grandes. ⛔ NO es récord: de los 90 días de la serie desde el 19 de may, 2 están por encima, y el máximo es 33,20%, del 2 de jun. ⚠️ CAUSACIÓN: la encuesta del día NO achicó la distancia entre los dos primeros, que quedó en los mismos 5 puntos, así que no explica el achicamiento de 4,00pp en el precio.",
+        "tendenciaPolymarket": "⛔ SIN LECTURA CONFIRMADA el 18 de ago. Fue uno de los contratos que bloquearon la certificación: leído entre 32,45% y 32,75% en el presidencial y entre 86,50% y 87,50% en el libro de segundo lugar. ⛔ Sin superlativo: el máximo de la serie de 88 días es 33,20%, del 2 de jun, y ninguna lectura de esta noche lo superó.",
         "odds": 31.45,
         "percentage": 36,
         "lastUpdate": "2026-08-17",
@@ -1328,7 +1328,7 @@
         "pesquisaRange": "4-5%",
         "polymarket": "4,05%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 17 DE AGO: la BTG/Nexus lo mantiene en 4% en la primera vuelta y lo ubica DETRÁS de Caiado, que tiene 5%. Queda empatado con Zema, que también tiene 4%, dentro del margen de 2pp.",
-        "tendenciaPolymarket": "🔴 CAÍDA: pasó de 4,70% a 4,05% (vol USD 9,95M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC), y el valor queda POR DEBAJO del piso de 4,80% registrado en la serie de 90 días. ⚠️ SALVEDAD DE FORMA: su book es fino y osciló entre 3,75% y 4,15% en menos de diez minutos durante la captura, así que el movimiento merece una lectura más floja que la de los dos primeros. En el contrato de tercer lugar cedió de 53,00% a 52,50%.",
+        "tendenciaPolymarket": "⛔ SIN LECTURA CONFIRMADA el 18 de ago. En el presidencial quedó quieto en 3,95% en las diez lecturas; fue en los contratos de POSICIÓN donde se movió, 0,50pp en el de tercer lugar. 📏 El piso de la serie de 88 días se tocó el 18 de ago, con 3,60%.",
         "odds": 4.05,
         "percentage": 4,
         "lastUpdate": "2026-08-17",
@@ -1339,7 +1339,7 @@
         "pesquisaRange": "4-5%",
         "polymarket": "0,25%",
         "tendenciaPesquisa": "⭐ NACIONAL NUEVA EL 17 DE AGO: la BTG/Nexus le da 5% en la primera vuelta, POR ENCIMA del 4% de Renan Santos. En la intención declarada pasa a ser el tercer nombre del cuadro, invirtiendo el orden que el mercado descuenta.",
-        "tendenciaPolymarket": "⭐ EL CRUCE DE CONTRATO SE REPITE Y CAMBIA DE SIGNO: pasó de 0,60% a 0,25% en la VICTORIA (vol USD 6,07M acumulado), por debajo del piso de 0,50% de la serie, y SUBIÓ de 37,50% a 38,50% en el contrato de TERCER LUGAR de la primera vuelta. Su distancia hacia el primero de ese book se cerró de 15,50pp a 14,00pp. Son preguntas distintas y el panel no las suma.",
+        "tendenciaPolymarket": "⛔ SIN LECTURA CONFIRMADA el 18 de ago. Quedó ESTABLE en 0,45% en el presidencial en las diez lecturas, y osciló 0,50pp en el contrato de tercer lugar, entre 37,00% y 37,50%. 📌 La encuesta y el precio siguen discrepando sobre quién es el tercero: la Nexus/BTG del 17 de ago le da 5%, por encima del 4% de Renan Santos.",
         "odds": 0.25,
         "percentage": 5,
         "lastUpdate": "2026-08-17",
@@ -1350,7 +1350,7 @@
         "pesquisaRange": "no testeado",
         "polymarket": "0,90%",
         "tendenciaPesquisa": "🔴 NINGUNA de las 19 encuestas del panel lo testea, y ninguna nacional de la ventana lo incluye en escenario presidencial. 📅 La Datafolha prevista para el 21 de ago será la PRIMERA en incluirlo, según Valor Econômico. ⚠️ Mientras tanto el panel registra ausencia de medición, que es distinto de una medición igual a cero, y por eso queda fuera del grafo de cruce hasta que exista encuesta.",
-        "tendenciaPolymarket": "En 0,90% (vol USD 1,21M acumulado), lectura confirmada del 17 de ago, 18:48 BRT (21:48 UTC). Es el único book en el que aparece: no tiene contrato de segundo ni de tercer lugar. 🏷️ SITUACIÓN ELECTORAL DECLARADA: pidió el registro y está entre los 13 que lo hicieron, y una MEDIDA CAUTELAR habilitó la campaña, pero está INELEGIBLE hasta 2032 y el registro sigue PENDIENTE de una decisión de la justicia electoral, según BBC, G1 y Folha de S.Paulo. ⭐ El cruce que produce es el más nítido del panel hoy: el mercado ya le atribuye precio y más de un millón de dólares de volumen, y la urna todavía no lo midió ni una sola vez.",
+        "tendenciaPolymarket": "⛔ SIN LECTURA CONFIRMADA el 18 de ago, y fue el contrato MÁS INESTABLE de la noche: leído entre 0,65% y 1,15%, o sea 0,50pp de amplitud en un contrato que vale cerca de 1%. 🏷️ ESTADO ELECTORAL, actualizado hoy: pidió al tribunal electoral la corrección de su declaración de bienes y el patrimonio declarado cayó de R$ 7,4 mil millones a R$ 149,9 millones, según G1, Valor y O Globo, todos del mismo grupo. Sigue INELEGIBLE hasta 2032, campaña habilitada por medida cautelar y registro aún pendiente. 📅 La Datafolha del 21 de ago es la PRIMERA en medirlo.",
         "odds": 0.9,
         "percentage": 0,
         "lastUpdate": "2026-08-17",
