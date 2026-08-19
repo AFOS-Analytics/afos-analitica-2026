@@ -124,9 +124,36 @@ export async function GET(request: Request) {
       },
     }, { headers: buildNoCacheHeaders() })
   } catch (error) {
+    /**
+     * 🔑 O MOTIVO REAL VIAJA NA RESPOSTA, instalado em 19/Ago/2026.
+     *
+     * O QUE ACONTECIA. A rota devolvia só `{ok:false, error:'ingest_failed'}` e
+     * jogava fora a mensagem da exceção. Em 19/Ago a ingestão falhou e levou
+     * vinte minutos de investigação POR FORA para descobrir o que a rota já
+     * sabia: `TSE CDN returned 403`, um bloqueio de borda da Akamai que atingia
+     * até o robots.txt do domínio. Com o motivo na resposta, o mesmo diagnóstico
+     * é uma linha.
+     *
+     * ⛔ ISTO NÃO APARECE NO PAINEL, e é decisão do André em 19/Ago. Esta rota é
+     * endpoint de cron, chamada com CRON_SECRET, e nenhum componente a consome:
+     * conferido por varredura em `app/`, `lib/`, `components/` e `scripts/`. O
+     * leitor nunca vê relato de falha nossa, que é a regra de
+     * `feedback_descrever_o_metodo_sim_relatar_a_falha_nao`.
+     *
+     * ⚠️ REDAÇÃO ANTES DE DEVOLVER. Mensagem de exceção pode carregar URL com
+     * token, e corpo de resposta é lugar onde segredo vaza sem ninguém ver.
+     * Então `Bearer` e sequências longas de hexadecimal saem antes.
+     */
+    const bruto = error instanceof Error ? error.message : String(error)
+    const motivo = bruto
+      .replace(/Bearer\s+\S+/gi, 'Bearer [redigido]')
+      .replace(/\b[A-Fa-f0-9]{24,}\b/g, '[redigido]')
+      .replace(/([?&](?:token|key|secret|password)=)[^&\s]+/gi, '$1[redigido]')
+      .slice(0, 300)
+
     console.error('[cron/refresh-polls] Error:', error)
     return NextResponse.json(
-      { ok: false, error: 'ingest_failed', elapsed: Date.now() - startTime },
+      { ok: false, error: 'ingest_failed', motivo, elapsed: Date.now() - startTime },
       { status: 500, headers: buildNoCacheHeaders() }
     )
   }
