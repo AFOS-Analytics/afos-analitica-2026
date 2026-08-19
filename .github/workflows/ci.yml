@@ -79,32 +79,23 @@ jobs:
       - name: Paridade dos JSONs de idioma
         run: npx --no-install tsx scripts/check-locale-json.ts
 
-  e2e:
-    name: Playwright (i18n e rotas)
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - name: Build
-        env:
-          DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
-          KV_REST_API_URL: https://placeholder.upstash.io
-          KV_REST_API_TOKEN: placeholder
-          CRON_SECRET: placeholder
-          NEXT_TELEMETRY_DISABLED: '1'
-        run: npm run build
-      # A suite existia, estava declarada no repositorio e nao rodava em lugar
-      # nenhum: duas assercoes apontavam para strings que nao existem mais, e o
-      # caso de /api/subscribe passava verde sem assercao nenhuma.
-      - name: Testes de ponta a ponta
-        env:
-          DATABASE_URL: postgresql://placeholder:placeholder@localhost:5432/placeholder
-          CRON_SECRET: placeholder
-          NEXT_TELEMETRY_DISABLED: '1'
-        run: npx playwright test
+  # A suite Playwright NAO roda no CI, e a decisao e de 19/Ago/2026, tomada
+  # depois de liga-la e ver o resultado: 7 dos 11 casos falharam.
+  #
+  # A causa nao e defeito dos testes, e o AMBIENTE. O job sobe com DATABASE_URL
+  # de placeholder e sem Upstash, entao /api/translations devolve 503 em vez do
+  # 401 que o caso afirma, e as paginas de painel nao renderizam o conteudo que
+  # os seletores procuram. Rodar a suite aqui exigiria banco e cache de verdade
+  # no CI, que e outra decisao, com custo proprio, e nao e minha de tomar.
+  #
+  # NAO se resolve com `continue-on-error`: job que falha e e ignorado e
+  # exatamente a coverage de mentira que esta auditoria removeu de outro lugar
+  # no mesmo dia. Ou o portao vale, ou nao esta aqui.
+  #
+  # O que ficou consertado na suite e vale de qualquer forma: as duas assercoes
+  # obsoletas, que procuravam strings inexistentes; o caso de /api/subscribe,
+  # que passava verde SEM ASSERCAO NENHUMA e escrevia Lead de verdade na base a
+  # cada execucao; e o idioma fixo no playwright.config.ts, sem o qual o
+  # Chromium anuncia en-US e derruba os casos de rota em pt-BR.
+  #
+  # Roda com `npm run test:e2e` contra um ambiente com servicos.
