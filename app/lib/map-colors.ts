@@ -1,3 +1,5 @@
+import { fmtVolumeUsd } from '../../lib/i18n/numero';
+
 // Design tokens for the global map (dark financial theme)
 export const MAP_TOKENS = {
   bg: '#07111f',
@@ -45,16 +47,13 @@ export function getCountryOpacity(volumeUsd: number): number {
  * Format volume for display: $1.2M, $500K, etc.
  */
 export function formatVolume(usd: number, locale?: string): string {
+  // Casca fina sobre `fmtVolumeUsd` de lib/i18n/numero.ts. O nome e a assinatura
+  // ficam porque quatro pontos de chamada os usam; a REGRA de separador por
+  // idioma vive num lugar só.
+  //
+  // ⚠️ O travessão para zero e negativo continua sendo comportamento DESTA
+  // função, não do helper: o mapa desenha país sem volume, e `$0` na etiqueta
+  // seria afirmação, enquanto o travessão é ausência de medida.
   if (!usd || Number.isNaN(usd) || usd <= 0) return '—';
-  // Separador decimal por idioma. Sem o parametro, a funcao devolvia `$1.2M`
-  // nos tres idiomas, contra a regua que pede virgula em pt-BR e es. O `locale`
-  // e opcional para nao quebrar chamador antigo, e a ausencia dele cai em pt-BR.
-  const dec = (n: number, casas: number) => {
-    const s = n.toFixed(casas);
-    return locale === 'en' ? s : s.replace('.', ',');
-  };
-  if (usd >= 1_000_000_000) return `$${dec(usd / 1_000_000_000, 2)}B`;
-  if (usd >= 1_000_000) return `$${dec(usd / 1_000_000, 1)}M`;
-  if (usd >= 1_000) return `$${dec(usd / 1_000, 0)}K`;
-  return `$${Math.round(usd)}`;
+  return fmtVolumeUsd(usd, locale);
 }

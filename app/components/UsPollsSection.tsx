@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslation } from '../i18n/context'
 import { SectionTitle, Card } from './ui'
 import type { UsPollsData } from '../../lib/dashboard/us-static-data'
+import { fmtDecimal } from '../../lib/i18n/numero'
 
 /**
  * Generic ballot dos EUA no painel.
@@ -117,12 +118,10 @@ const T = {
   },
 }
 
-/** Separador decimal por idioma: en usa ponto, pt-BR e es usam vírgula. */
-function fmt(n: number | null | undefined, locale: string, casas = 1): string {
-  if (n === null || n === undefined) return '—'
-  const s = n.toFixed(casas)
-  return locale === 'en' ? s : s.replace('.', ',')
-}
+// Regra unica em lib/i18n/numero.ts. Este nome local fica so para nao mexer
+// nos pontos de chamada; a REGRA de separador por idioma vive num lugar so.
+const fmt = (n: number | null | undefined, locale: string, casas = 1): string =>
+  fmtDecimal(n, locale, casas)
 
 function fmtData(iso: string | null, locale: string): string {
   if (!iso) return '—'

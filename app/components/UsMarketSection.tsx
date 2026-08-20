@@ -6,6 +6,7 @@ import { SectionTitle, Card } from './ui'
 import { extractCandidateName } from '../lib/utils'
 // 🔑 A régua e o tipo vêm de UM lugar. Ver `lib/us-market/portao.ts`.
 import { SOMA_MIN, SOMA_MAX, type AmplitudeFaixas } from '../../lib/us-market/portao'
+import { fmtDecimal } from '../../lib/i18n/numero'
 
 /**
  * Mercado das midterms dos EUA no painel.
@@ -235,10 +236,9 @@ function TituloQuadro({ texto, href, abrirEm }: { texto: string; href: string | 
   )
 }
 
-function fmt(n: number, locale: string, casas = 2): string {
-  const s = n.toFixed(casas)
-  return locale === 'en' ? s : s.replace('.', ',')
-}
+// Regra unica em lib/i18n/numero.ts. Este nome local fica so para nao mexer
+// nos pontos de chamada; a REGRA de separador por idioma vive num lugar so.
+const fmt = (n: number, locale: string, casas = 2): string => fmtDecimal(n, locale, casas)
 
 /** Faixas de um evento, já com o rótulo legível e o preço em pontos percentuais. */
 function faixas(ev: PolyEvento | null): { nome: string; pct: number }[] {

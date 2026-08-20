@@ -128,9 +128,7 @@ async function main() {
   let sent = 0
   let failed = 0
   let skipped = 0
-  /** Um item por destinatário, para a trilha em contact_events. */
-  const trilha: ResultadoEnvio[] = []
-  /** Espelho do lote corrente, zerado a cada gravacao. */
+  /** Um item por destinatário do LOTE corrente, gravado e zerado a cada lote. */
   const trilhaDoLote: ResultadoEnvio[] = []
   const META_TRILHA = { produto: 'tradeoff', edicao: date, pais, issueNumber: content['pt-BR']?.issueNumber ?? content.en?.issueNumber }
 
@@ -150,7 +148,7 @@ async function main() {
       const c = content[locale] || content.en!
       if (!c) {
         skipped++
-        trilha.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' }); trilhaDoLote.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
+        trilhaDoLote.push({ leadId: lead.id, locale, ok: false, pulado: true, erro: 'no_content' })
         return { ok: false, lead, reason: 'no_content' }
       }
 
@@ -164,7 +162,7 @@ async function main() {
         { date, locale, title: c.title, sinalDaSemana: c.sinalDaSemana, issueNumber: c.issueNumber, pais },
         lead.unsubscribeToken || undefined,
       )
-      trilha.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro }); trilhaDoLote.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
+      trilhaDoLote.push({ leadId: lead.id, locale, ok: r.ok, messageId: r.id, erro: r.erro })
       return { ok: r.ok, lead }
     }))
 

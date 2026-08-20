@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from '../i18n/context';
+import { fmtDecimal } from '../../lib/i18n/numero';
 
 export function SectionTitle({ children, icon, rightSlot }: { children: React.ReactNode; icon?: string; rightSlot?: React.ReactNode }) {
   return (
@@ -25,8 +26,8 @@ export function Card({ children, className = '', style }: { children: React.Reac
 export function HBar({ value, max, color, label, suffix = '%' }: { value: number; max: number; color: string; label: string; suffix?: string }) {
   const { locale } = useTranslation();
   const pct = max > 0 ? (value / max) * 100 : 0;
-  // Separador decimal por locale: en usa ponto; pt-BR/es usam vírgula.
-  const num = locale === 'en' ? value.toFixed(1) : value.toFixed(1).replace('.', ',');
+  // Regra unica em lib/i18n/numero.ts.
+  const num = fmtDecimal(value, locale, 1);
   return (
     <div className="mb-3" role="meter" aria-label={`${label}: ${num}${suffix}`} aria-valuenow={value} aria-valuemin={0} aria-valuemax={max}>
       <div className="flex justify-between text-sm mb-1">

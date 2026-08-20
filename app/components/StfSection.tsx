@@ -5,6 +5,7 @@ import { SectionTitle, Card } from './ui';
 import { LogicLink } from './LogicLink';
 import { GlossaryText } from './GlossaryText';
 import { useTranslation } from '../i18n/context';
+import { fmtDecimal } from '../../lib/i18n/numero'
 
 interface Props {
   stf: AnalysisSection | undefined;
@@ -23,7 +24,7 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
   // 🔢 Separador por IDIOMA. A vírgula estava fixa e saía também no /en, contra
   // a convenção usada nos outros quatro lugares do painel: EN usa ponto decimal.
   const livePct = Number.isFinite(liveNum)
-    ? `${locale === 'en' ? (liveNum * 100).toFixed(2) : (liveNum * 100).toFixed(2).replace('.', ',')}%`
+    ? `${fmtDecimal(liveNum * 100, locale, 2)}%`
     : null;
 
   // Fallback: percentual citado no texto editorial do dia (dado estático).
