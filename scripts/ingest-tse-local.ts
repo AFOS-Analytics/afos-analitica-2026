@@ -31,8 +31,18 @@ config({ path: '.env' })
 import { readFileSync, existsSync, statSync } from 'fs'
 import { basename } from 'path'
 import { parseTSEZipBytes, filterRecentPolls, detectScope } from '../lib/tse/ingest'
-import { persistPolls } from '../lib/tse/persist'
 import type { TSEPoll } from '../lib/tse/ingest'
+
+// 🔴 `lib/tse/persist` importa `lib/db`, que resolve a DATABASE_URL NO MOMENTO
+// EM QUE É CARREGADO. Importado no topo, ele carrega antes do dotenv rodar e o
+// prisma nasce nulo. E `persistPolls` devolve `{inserted: 0, skipped: 0}` quando
+// não há banco, ou seja: com `--apply` o script imprimiria "✅ 0 inserida(s)" e
+// NÃO GRAVARIA NADA, reportando sucesso. Pego no primeiro ensaio, pela linha
+// "[db] DATABASE_URL não configurada" que apareceu ANTES do dotenv.
+// Por isso o import é dinâmico, depois do config() acima.
+async function carregarPersist() {
+  return (await import('../lib/tse/persist')).persistPolls
+}
 
 const ANO = 2026
 
@@ -109,9 +119,22 @@ async function main() {
     return
   }
 
+  // 🔒 Sem banco, PARAR. Não deixar o persist devolver zero e isso passar por sucesso.
+  if (!process.env.DATABASE_URL) {
+    console.error('\n❌ DATABASE_URL ausente. Sem banco o persist devolve 0 e pareceria sucesso. Nada foi gravado.')
+    process.exit(1)
+  }
+
   console.log('\n💾 Gravando...')
+  const persistPolls = await carregarPersist()
   const { inserted, skipped } = await persistPolls(polls, 'tse_manual')
   console.log(`✅ ${inserted} inserida(s), ${skipped} já existente(s).`)
+
+  // 🔒 Conferir que o número bate com o que se esperava gravar.
+  if (inserted === 0 && skipped === 0) {
+    console.error('❌ Zero inseridas E zero puladas com arquivo não vazio: o persist não viu o banco. Tratar como FALHA.')
+    process.exit(1)
+  }
   console.log('\n📋 Depois disto: rodar /atualizar-brz para o painel refletir, se algo nacional entrou.')
 }
 
