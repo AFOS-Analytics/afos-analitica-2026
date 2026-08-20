@@ -80,6 +80,13 @@ async function persistOne(prisma: PrismaClient, path: string, dateIso: string, p
     createdBy: 'afos-weekly',
     fallbackIsoDate: dateIso,
     slugIsoDate: dateIso,
+    // 🔴 Os EUA NÃO levam qualificador, os outros países levam, igual ao
+    // `persist-afos-tradeoff.ts`. Sem esta linha o slug era `afos-weekly-DD-MM-AAAA`
+    // para QUALQUER país: como o upsert é por slug, um Weekly de outro país na
+    // mesma quinta sobrescreveria o americano sem erro nenhum. Aqui é no-op
+    // enquanto `us` for o padrão, e as edições №1 a №3 já arquivadas seguem
+    // com o slug sem país, sem virar órfãs.
+    slugQualifier: pais === PAIS_PADRAO ? undefined : pais,
     titleOverride: buildWeeklyTitle(fm, dateIso, pais),
   })
   return { slug: r.slug, id: r.id, status: data.status }
