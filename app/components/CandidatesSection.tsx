@@ -16,29 +16,29 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "63,50%",
-    poll: "NACIONAL NOVA EM 17/Ago: a BTG/Nexus (n=2.003, telefone, campo 14 a 16/Ago, BR-03317/2026, margem de 2pp) lhe dá 41% no 1º turno e 47% no returno. ⭐ CONTRA A PRÓPRIA CASA É ESTABILIDADE: ele saiu de 40% para 41%, o adversário de 35% para 36%, e a DISTÂNCIA ficou nos mesmos 5 pontos. No returno o resultado é IDÊNTICO, 47 a 44. Cada movimento de 1 ponto cabe dentro da margem. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), com a trava aprovada em DUAS passadas. Em 64,50% (vol USD 8,52M acumulado), queda de 2,00pp, devolvendo o que subiu na véspera. A distância para o segundo colocado FECHOU de 37,05pp para 33,05pp. ⛔ Sem superlativo: o topo da série segue em 66,50%, de 01/Ago, e 5 dos 90 dias gravados desde 19/Mai estão acima do fechamento de hoje.",
+    poll: "⭐ NACIONAL NOVA EM 21/Ago: a Veritá (n=3.840, campo 16 a 20/Ago, BR-04006/2026, margem de 2pp) lhe dá 39,3% no 1º turno, contra 39,1% do segundo colocado, ou seja EMPATE TÉCNICO dentro da margem, e 42% no 2º turno contra 47,3%. Quatro dias antes a BTG/Nexus media 41% x 36%, cinco pontos de vantagem. ⚠️ Os dois institutos não medem o mesmo cenário: esta rodada inclui Pablo Marçal e a anterior não, e a Veritá tem confiabilidade 2 na régua da casa contra 4 da BTG/Nexus. O painel publica as duas e declara a diferença. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 63,50% (vol USD 8,80M acumulado), SEM VARIAÇÃO pelo quarto dia seguido.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "SEM VARIAÇÃO pelo segundo dia seguido, em 63,50% (vol USD 8,69M acumulado), leitura confirmada de 19/Ago, 14:58 BRT. A DISTÂNCIA para Flávio Bolsonaro encurtou 0,50pp e foi a 30,95pp, no TERCEIRO dia seguido de aproximação: eram 37,05pp em 16/Ago, 33,05pp em 17/Ago e 31,45pp em 18/Ago, somando 6,10pp em três dias. E O ENCURTAMENTO NÃO VEIO DELE: em dois dias ele não perdeu preço nenhum, e a aproximação inteira é do adversário subindo. A URNA SEGUE MUDA: nenhuma pesquisa nacional nova desde 17/Ago, e aquela mediu a distância entre os dois INALTERADA em 5 pontos. Em pesquisa ESTADUAL do Distrito Federal ele aparece com 39% contra 44% no 2º turno e é aprovado por 54% naquele eleitorado, segundo a CNN Brasil; estadual não entra no painel nacional. SEM SUPERLATIVO: o topo da série de 88 dias segue em 66,50%, de 01/Ago. Datafolha nacional em 21/Ago."
+    risk: "SEM VARIAÇÃO pelo QUARTO dia seguido, em 63,50% (vol USD 8,80M acumulado), leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC). A DISTÂNCIA para Flávio Bolsonaro encurtou 0,20pp e foi a 30,45pp, no QUINTO dia seguido de aproximação: eram 37,05pp em 16/Ago, 33,05pp em 17, 31,45pp em 18, 30,95pp em 19 e 30,65pp em 20, somando 6,60pp em cinco dias. A FONTE DO ENCURTAMENTO MUDOU NO MEIO: dos 6,60pp, 3,00pp saíram dele, todos entre 16 e 18/Ago, e ele está parado há quatro dias. A URNA VOLTOU A FALAR: a Veritá de 21/Ago mede empate técnico no 1º turno, 39,3% contra 39,1%, e o põe atrás no 2º turno, 42% contra 47,3%. SEM SUPERLATIVO: o topo da série segue em 67,50%, de 16/Ago."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "32,55%",
-    poll: "NACIONAL NOVA EM 17/Ago: a BTG/Nexus o leva de 35% para 36% no 1º turno e repete 44% no returno. ⚠️ O ganho de 1 ponto está dentro da margem de 2pp da casa, e a distância para o líder NÃO mudou, segue em 5 pontos. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC). Em 31,45% (vol USD 8,46M acumulado), ALTA DE 2,00pp, quarto dia seguido subindo e o maior movimento do dia entre os contratos grandes. ⛔ NÃO é recorde: dos 90 dias da série desde 19/Mai, 2 estão acima, e o topo é 33,20%, de 02/Jun. ⚠️ CAUSAÇÃO: a pesquisa do dia não encurtou distância nenhuma, então ela não explica o encurtamento de 4,00pp no preço. Passou o dia em atrito no próprio campo, acusando Caiado de ajudar o líder depois de Kassab dizer que Caiado tem chance zero, segundo o Estadão.",
+    polymarket: "33,05%",
+    poll: "⭐ NACIONAL NOVA EM 21/Ago: a Veritá o leva a 39,1% no 1º turno, a 0,2 ponto do líder, e a 47,3% no 2º turno contra 42%. É o primeiro returno deste recorte em que uma nacional o põe à frente. ⚠️ A BTG/Nexus de 17/Ago, de confiabilidade 4 contra 2 da Veritá, o media em 36% e 44%. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 33,05% (vol USD 8,72M acumulado), alta de 0,20pp e quinto dia seguido encurtando a distância para o líder. ⛔ NÃO é recorde: na série de 174 leituras desde 23/Mai, só 2 marcam 33,05% ou acima, e as duas são 33,20%, de 02/Jun e de 18/Ago.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "ALTA de 0,50pp, de 32,05% para 32,55% (vol USD 8,63M acumulado), leitura confirmada de 19/Ago, 14:58 BRT, SEXTO dia seguido subindo. Ele é o único responsável pelo encurtamento da distância nos dois últimos dias, porque o líder ficou parado. NÃO É RECORDE: dos 88 dias da série desde 22/Mai, 2 marcaram valor igual ou acima de 32,55%, e o topo segue em 33,20%, de 02/Jun. NO TABULEIRO ele decidiu limitar a participação em debates do 1º turno e só comparecer quando Lula estiver presente, segundo Folha de S.Paulo e O Globo. Em pesquisa ESTADUAL do Distrito Federal aparece com 44% contra 39% no 2º turno; estadual não entra no painel nacional."
+    risk: "ALTA de 0,20pp, de 32,85% para 33,05% (vol USD 8,72M acumulado), leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), QUINTO dia seguido encurtando a distância para o líder, que foi a 30,45pp. NA URNA, a Veritá de 21/Ago o põe a 0,2 ponto no 1º turno, 39,1% contra 39,3%, e à frente no 2º turno, 47,3% contra 42%. SEM SUPERLATIVO: 33,05% não é recorde, e o topo da série de 174 leituras desde 23/Mai é 33,20%, de 02/Jun e 18/Ago. NÃO HÁ leitura nova confirmada em 21/Ago para o contrato de 2º lugar, que segue em 87,50% desde 20/Ago."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "4,05%",
-    poll: "NACIONAL NOVA EM 17/Ago: a BTG/Nexus o mantém em 4% no 1º turno. 🔴 ELE APARECE ATRÁS DE CAIADO, que tem 5%, e empatado com Zema, que tem 4%. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC). Em 4,05% (vol USD 9,95M acumulado), queda continuada, e o valor fica ABAIXO do piso de 4,80% gravado na série de 90 dias. ⚠️ RESSALVA DE FORMA: o book dele é fino e oscilou entre 3,75% e 4,15% em menos de dez minutos durante a captura, então o movimento merece leitura mais frouxa que a dos dois primeiros. No contrato de 3º LUGAR ele cedeu de 53,00% para 52,50%, e a distância para o segundo daquele book encolheu de 15,50pp para 14,00pp. ⭐ Os dois universos discordam sobre quem é o terceiro: a pesquisa põe Caiado à frente, o mercado põe ele.",
+    polymarket: "4,30%",
+    poll: "⭐ NACIONAL NOVA EM 21/Ago: a Veritá o dá em 3,8% no 1º turno, ATRÁS de Pablo Marçal, que é testado pela primeira vez numa nacional e aparece com 5,2%, e à frente de Ronaldo Caiado, com 3,3%. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 4,30% (vol USD 10,46M acumulado), queda de 0,15pp. No contrato de 3º LUGAR ele segue em 55,50%, contra 35,00% de Caiado. ⭐ Os dois universos discordam de quem é o terceiro, e agora com um nome novo na conta: o mercado o mantém como terceiro provável e a urna põe Marçal nesse lugar.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "QUEDA de 0,35pp, de 4,40% para 4,05% (vol USD 10,14M acumulado), leitura confirmada de 19/Ago, 14:58 BRT, devolvendo o que subiu na véspera. Ele segue perto do piso: 86 dos 88 dias da série estão acima de 4,05%, e o piso foi tocado em 18/Ago, com 3,60%. NO CONTRATO DE 3º LUGAR ele ficou ESTÁVEL em 57,00% e mesmo assim ABRIU distância, de 20,00pp para 21,00pp, porque quem cedeu foi Ronaldo Caiado. A divergência com a urna continua sem resolução: a Nexus/BTG de 17/Ago dá 5% a Caiado e 4% a ele."
+    risk: "QUEDA de 0,15pp, de 4,45% para 4,30% (vol USD 10,46M acumulado), leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC). No contrato de 3º LUGAR segue em 55,50%, contra 35,00% de Ronaldo Caiado, que subiu 0,50pp. NA URNA, a Veritá de 21/Ago o põe em 3,8%, ATRÁS de Pablo Marçal, que estreia com 5,2%: o preço o mantém como terceiro provável e a pesquisa põe outro nome nesse lugar."
   },
   {
     name: "Fernando Haddad",
@@ -46,7 +46,7 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0,05%",
-    poll: "Nenhuma nacional da janela o inclui em cenário presidencial, e a BTG/Nexus de 17/Ago também não. A ressalva do painel segue valendo como ato datado: ele abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. Ele não é candidato à Presidência, e qualquer cenário presidencial que o inclua é hipótese de pesquisa, não candidatura em curso. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC). Em 0,05% (vol USD 7,20M acumulado), estável e abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
+    poll: "Nenhuma nacional da janela o testa em cenário presidencial, e a Veritá de 21/Ago também não. Ausência de teste é informação que o painel registra, em vez de repetir dado antigo como se fosse novo. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 0,05% (vol USD 7,28M acumulado), estável e abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
     risk: "Ele NÃO é candidato à Presidência e disputa o governo de São Paulo, então qualquer cenário presidencial que o inclua é hipótese de pesquisa, não candidatura em curso. O preço segue abaixo do corte de 0,5% que o painel usa para separar preço de ruído, e nessa faixa a variação não sustenta interpretação."
   },
@@ -55,10 +55,10 @@ const candidates: CandidateProfile[] = [
     party: "PSD",
     age: 76,
     role: "Ex-Gov. Goiás",
-    polymarket: "0,55%",
-    poll: "⭐ NACIONAL NOVA EM 17/Ago E ELA O PROMOVE: a BTG/Nexus lhe dá 5% no 1º turno, ACIMA dos 4% de Renan Santos. Na intenção declarada ele passa a ser o terceiro nome do quadro. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), o cruzamento de contrato se repete e troca de sinal: na VITÓRIA ele caiu de 0,60% para 0,25% (vol USD 6,07M acumulado), abaixo do piso de 0,50% da série de 90 dias; na POSIÇÃO ele SUBIU, com o 3º lugar do 1º turno indo de 37,50% para 38,50%, e a distância dele para o primeiro daquele book fechou de 15,50pp para 14,00pp. São perguntas diferentes e o painel não as soma. Kassab, vice na chapa dele, disse que ele tem chance zero e depois afirmou que foi mal interpretado, segundo Folha de S.Paulo e Estadão.",
+    polymarket: "0,45%",
+    poll: "🔴 NACIONAL NOVA EM 21/Ago E ELA O REBAIXA: a Veritá lhe dá 3,3% no 1º turno, atrás de Pablo Marçal (5,2%) e de Renan Santos (3,8%), quando a BTG/Nexus de 17/Ago o tinha em 5% e à frente dos dois. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), o cruzamento de contrato se repete com sinal trocado: na VITÓRIA ele subiu de 0,35% para 0,45% (vol USD 6,42M acumulado), ainda abaixo do piso de 0,5%; na POSIÇÃO, o 3º lugar do 1º turno subiu 0,50pp e está em 35,00%. São perguntas diferentes e o painel não as soma.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "DEVOLVEU o que tinha subido: de 0,80% para 0,55% (vol USD 6,35M acumulado), leitura confirmada de 19/Ago, 14:58 BRT, desfazendo a alta da véspera, e no contrato de TERCEIRO LUGAR cedeu de 37,00% para 36,00%. SEM SUPERLATIVO: 85 dos 86 dias da série desde 22/Mai estão acima de 0,55%, e o teto é 2,40%, de 19/Jun. O PSD confirmou a candidatura dele à Presidência. Na intenção declarada ele segue como o terceiro nome, com 5% na Nexus/BTG de 17/Ago contra 4% de Renan Santos."
+    risk: "ALTA de 0,10pp, de 0,35% para 0,45% (vol USD 6,42M acumulado), leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), ainda abaixo do corte de 0,5% que o painel usa para separar preço de ruído. No contrato de 3º lugar subiu 0,50pp, para 35,00%. NA URNA ele caiu de 5% na BTG/Nexus de 17/Ago para 3,3% na Veritá de 21/Ago, e passou a figurar atrás de Marçal e de Renan Santos."
   },
   {
     name: "Romeu Zema",
@@ -66,9 +66,9 @@ const candidates: CandidateProfile[] = [
     age: 56,
     role: "Ex-Gov. Minas Gerais",
     polymarket: "0,15%",
-    poll: "NACIONAL NOVA EM 17/Ago: a BTG/Nexus lhe dá 4% no 1º turno, acima dos 2% que a Quaest de 14/Ago media, e empatado com Renan Santos dentro da margem de 2pp. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC). Em 0,25% (vol USD 5,62M acumulado), alta de 0,10pp, e o preço segue abaixo do corte de 0,5% que o painel usa para separar preço de ruído. No contrato de 3º lugar ele tem 4,95%. Iniciou a semana de campanha com promessa de superpresídio e críticas a ministros do STF, segundo Folha de S.Paulo e Valor Econômico.",
+    poll: "NACIONAL NOVA EM 21/Ago: a Veritá lhe dá 1,3% no 1º turno, o menor valor dele no recorte de 30 dias, quando a BTG/Nexus de 17/Ago media 4%. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 0,15% (vol USD 5,80M acumulado), sem variação e abaixo do corte de 0,5%. No contrato de 3º lugar ele tem 4,90%.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "SEM VARIAÇÃO em 0,15% (vol USD 5,72M acumulado), leitura confirmada de 19/Ago, 14:58 BRT, abaixo do corte de 0,5% que o painel usa para separar preço de ruído. Nessa faixa a variação não sustenta interpretação. No contrato de 3º lugar ele marca 4,85%. Na urna a Nexus/BTG de 17/Ago lhe dá 4% no 1º turno."
+    risk: "SEM VARIAÇÃO em 0,15% (vol USD 5,80M acumulado), leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), abaixo do corte de 0,5% que o painel usa para separar preço de ruído. No contrato de 3º lugar ele tem 4,90%. NA URNA, a Veritá de 21/Ago lhe dá 1,3%, contra 4% na BTG/Nexus de 17/Ago."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,7 +76,7 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "Nenhuma nacional da janela o testa em cenário presidencial, e a BTG/Nexus de 17/Ago também não. Ausência de teste é informação que o painel registra, em vez de repetir dado antigo como se fosse novo. Ele abriu campanha à REELEIÇÃO ao governo de São Paulo em 16/Ago, segundo O Globo e a Folha de S.Paulo. NO PREÇO, leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC). Em 0,05% (vol USD 13,93M acumulado), estável, abaixo do corte de 0,5% e sobre o MAIOR volume acumulado de todo o book presidencial, conferido nesta captura. Volume alto com probabilidade no piso é convicção já precificada, não movimento.",
+    poll: "Nenhuma nacional da janela o inclui em cenário presidencial, e a Veritá de 21/Ago também não. A ressalva do painel segue valendo como ato datado: ele abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. Ele não é candidato à Presidência, e qualquer cenário presidencial que o inclua é hipótese de pesquisa, não candidatura em curso. NO PREÇO, leitura confirmada de 21/Ago, 15:59 BRT (18:59 UTC), em 0,05% (vol USD 14,00M acumulado), estável, abaixo do corte de 0,5% e sobre o MAIOR volume acumulado de todo o book presidencial.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
     risk: "Ele abriu campanha à REELEIÇÃO ao governo de São Paulo em 16/Ago e não é candidato à Presidência. Em 18/Ago defendeu ajuste fiscal suave e disse que o Brasil não precisa da solução do Milei, segundo o Valor Econômico. O contrato dele segue com preço no piso e sobre o MAIOR volume acumulado de todo o livro presidencial, acima do próprio líder. Volume alto com probabilidade no piso é convicção já precificada num desfecho que a realidade descartou."
   },
