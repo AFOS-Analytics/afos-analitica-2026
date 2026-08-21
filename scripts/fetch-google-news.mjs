@@ -183,13 +183,32 @@ function parseItems(xml) {
       sourceName = decodeEntities(content.trim())
     }
 
+    // 🔴 `description` VAZIO não significa feed sem texto. Medido em 20/Ago/2026:
+    // a Folha entrega 100 de 100 itens com media de 822 caracteres em
+    // `description` e ZERO em `content:encoded`; o Estadao entrega o inverso,
+    // `description` vazio em 20 de 20 e `content:encoded` com media de 2.847
+    // caracteres (5.236 na editoria de economia); a VEJA tem `description` curto,
+    // media de 121 caracteres, e o corpo em `content:encoded`, media de 2.747.
+    // Ler so `description` jogava fora o texto de CINCO feeds (Estadao politica e
+    // economia, VEJA ultimas, politica e economia), ou seja ate 100 materias por dia.
+    // ⚠️ Nao e "o feed do Estadao nao tem resumo": e campo diferente. Ver
+    // feedback_loader_descarta_bloco_com_campo_errado_em_silencio.
+    const desc = getTag('description')
+    const corpo = getTag('content:encoded')
+    // `content:encoded` costuma trazer a MATERIA INTEIRA. Cortar: o cache guarda
+    // 1.000+ itens por dia e o que serve aqui e o lide, nao o texto completo.
+    const TETO = 1200
+    const escolhido = desc.length >= 120 ? desc : (corpo || desc)
+
     items.push({
       title: getTag('title'),
       link: getTag('link'),
       pubDate: getTag('pubDate'),
       sourceName,
       sourceUrl,
-      description: getTag('description'),
+      description: escolhido.length > TETO ? escolhido.slice(0, TETO) + '…' : escolhido,
+      // Declara de onde veio o texto, para a rodada saber o que esta lendo.
+      descriptionFrom: desc.length >= 120 ? 'description' : (corpo ? 'content:encoded' : 'description'),
     })
   }
   return items
