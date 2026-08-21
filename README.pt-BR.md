@@ -277,6 +277,19 @@ O `scripts/lib/json-number-gate.ts` compara o **multiconjunto de valores com uni
 - `billon` em espanhol e **10¹²**, entao `R$ 145 bi` e `145 mil millones`, nunca `145 billones`
 - separador decimal: EN usa ponto, ES mantem a virgula, campo a campo
 
+### Carimbo da mesma rodada
+
+O gate numerico nao e a unica trava. O `readLocalized`, em `lib/dashboard/static-data.ts`, so entrega a variante traduzida quando o `updatedAt` e o `lastUpdate` dela batem com os do pt-BR **byte a byte**:
+
+```ts
+if (traduzido && mesmoCarimbo(pt, traduzido)) return traduzido
+return pt   // cai para o portugues
+```
+
+A razao e que o fallback precisa ser **alcancavel**. Sem essa checagem, quando a traducao de hoje era reprovada pelo gate numerico, a variante de ONTEM continuava sendo entregue sob o carimbo de hoje: o leitor de ingles recebia a analise da vespera, e a queda declarada para o portugues nunca acontecia.
+
+⚠️ **A consequencia para quem edita os arquivos: `updatedAt` e `lastUpdate` NAO se traduzem.** Eles estao em `FORA_DE_TRADUCAO` e sao copia byte a byte. Localizar o carimbo para `08/21/2026, 3:59 PM` enquanto o pt-BR traz `21/08/2026, 15:59` descarta o arquivo inteiro, e a pagina renderiza em portugues com um `.en.json` perfeitamente correto no servidor. Medido em producao em 21/Ago/2026. O gate numerico nao pega isso, porque carimbo nao tem `%`, `pp` nem `USD`.
+
 ### Links de glossario
 
 Termo brasileiro linka para o verbete **na propria expressao**, o mesmo padrao do AFOS Daily e do Tradeoff. A regra tem dois lados:

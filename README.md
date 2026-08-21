@@ -276,6 +276,19 @@ public/polls-data.{en,es}.json             poll registry, approval series, marke
 - Spanish `billón` is **10¹²**, so `R$ 145 bi` is `145 mil millones`, never `145 billones`
 - decimal separator: EN uses a dot, ES keeps the comma, per field
 
+### Same-round stamp
+
+The numeric gate is not the only guard. `readLocalized`, in `lib/dashboard/static-data.ts`, only serves a translated variant when its `updatedAt` and `lastUpdate` match the pt-BR **byte for byte**:
+
+```ts
+if (traduzido && mesmoCarimbo(pt, traduzido)) return traduzido
+return pt   // falls back to Portuguese
+```
+
+The reason is that the fallback has to be **reachable**. Without this check, when today's translation was discarded by the numeric gate, yesterday's variant kept being served under today's stamp: the English reader got the previous day's analysis, and the declared fallback to Portuguese never happened.
+
+⚠️ **The consequence for whoever edits the files: `updatedAt` and `lastUpdate` are never translated.** They are in `FORA_DE_TRADUCAO` and are copied byte for byte. Localising the stamp to `08/21/2026, 3:59 PM` while pt-BR carries `21/08/2026, 15:59` discards the entire file, and the page renders in Portuguese with a perfectly correct `.en.json` sitting on the server. Measured in production on 21/Aug/2026. The numeric gate cannot catch it, because a stamp carries no `%`, `pp` or `USD`.
+
 ### Glossary links
 
 Brazilian terms link to the glossary **on the expression itself**, the same standard used by AFOS Daily and Tradeoff. The rule has two sides:
