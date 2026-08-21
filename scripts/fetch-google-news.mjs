@@ -62,6 +62,30 @@ const PRESTIGE_FEEDS = [
   // Valor (feed único)
   { id: 'prestige-valor', source: 'Valor', url: 'https://valor.globo.com/rss/valor' },
   // VEJA (oficial endpoint via meta tag rss+xml descoberta)
+  // 🗳️ Instalados em 20/Ago/2026 porque são os veículos que MAIS noticiam pesquisa
+  // eleitoral NACIONAL, e sem feed próprio eles chegavam só pelo Google News, cuja
+  // description é o título repetido (85 a 121 caracteres, zero corpo).
+  //
+  // 🔴 O caso que os motivou: em 20/Ago a CartaCapital publicou "A nova pesquisa de
+  // intenção de voto para presidente, com 6 mil entrevistados" e a Gazeta do Povo
+  // "A primeira pesquisa de intenção de voto a presidente com Pablo Marçal". Pelo
+  // Google News as duas chegaram SEM UM NÚMERO, e a rodada quase concluiu que não
+  // havia pesquisa porque o TSE estava bloqueado. ⛔ Conclusão errada: o número da
+  // pesquisa NUNCA veio do TSE, vem da imprensa e do site do instituto. O TSE dá o
+  // REGISTRO. → reference_tse_bloqueio_antirrobo_2026
+  //
+  // ✅ Com o feed próprio, a description da Gazeta respondeu de imediato: "Datafolha
+  // vai divulgar na sexta-feira (21)". Ou seja, não era pesquisa nova, era matéria
+  // SOBRE a pesquisa de amanhã. A leitura substituiu a suposição.
+  //
+  // 📌 Poder360 e Metrópoles entregam o corpo em `content:encoded` (média de 3.141c
+  // e 2.847c); CartaCapital e Gazeta do Povo entregam `description` curta (130 a
+  // 144c), que ainda assim carrega o fato. Medido antes de instalar.
+  { id: 'prestige-cartacapital', source: 'CartaCapital', url: 'https://www.cartacapital.com.br/feed/' },
+  { id: 'prestige-gazetadopovo', source: 'Gazeta do Povo', url: 'https://www.gazetadopovo.com.br/feed/rss/republica.xml' },
+  { id: 'prestige-poder360', source: 'Poder360', url: 'https://www.poder360.com.br/feed/' },
+  { id: 'prestige-metropoles', source: 'Metrópoles', url: 'https://www.metropoles.com/feed' },
+
   { id: 'prestige-veja-ultimas', source: 'VEJA', url: 'https://veja.abril.com.br/ultimas-noticias/rss' },
   { id: 'prestige-veja-politica', source: 'VEJA', url: 'https://veja.abril.com.br/politica/feed/' },
   { id: 'prestige-veja-economia', source: 'VEJA', url: 'https://veja.abril.com.br/economia/feed/' },
