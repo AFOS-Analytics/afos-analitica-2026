@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-20",
-  "fetchedAt": "2026-08-20T13:34:34.308Z",
+  "lastUpdate": "2026-08-21",
+  "fetchedAt": "2026-08-21T17:20:56.759Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,12 +26,12 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-21",
-    "nPesquisas": 14,
-    "nInstitutos": 12,
-    "dem": 47.43,
-    "rep": 41.5,
-    "vantagemDem": 5.93,
+    "desde": "2026-07-22",
+    "nPesquisas": 13,
+    "nInstitutos": 11,
+    "dem": 47.54,
+    "rep": 41.31,
+    "vantagemDem": 6.23,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll (R)",
@@ -39,7 +39,6 @@
       "CNN/SSRS",
       "Clarity Campaign Labs (D)",
       "Marquette University Law School",
-      "McLaughlin & Associates (R)",
       "Morning Consult",
       "Quantus Insights (R)",
       "Quinnipiac University",
