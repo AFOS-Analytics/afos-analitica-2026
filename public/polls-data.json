@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-19",
+  "lastUpdate": "2026-08-20",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1317,7 +1317,7 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "⭐ LEITURA CONFIRMADA DE 19/Ago, 14:58 BRT. A distância entre LULA e FLÁVIO BOLSONARO encurtou 0,50pp e fechou em 30,95pp, no TERCEIRO dia seguido de aproximação: eram 37,05pp em 16/Ago, 33,05pp em 17/Ago e 31,45pp em 18/Ago, somando 6,10pp em três dias. 🔑 E O MOVIMENTO TEM UM LADO SÓ: Lula repetiu 63,50% pelo segundo dia seguido, sem perder preço nenhum, e a aproximação inteira veio do segundo colocado subindo. 📌 A URNA SEGUE MUDA: nenhuma pesquisa nacional nova desde 17/Ago, e aquela mediu a distância INALTERADA em 5 pontos. As duas pesquisas de hoje são ESTADUAIS, do Distrito Federal e de São Paulo. 📅 A Datafolha nacional de 21/Ago é a primeira a medir Pablo Marçal.",
+    "note": "Leitura confirmada de 20/08/2026, 23:19 BRT, aprovada por duas leituras independentes separadas por oito minutos. A distância entre Lula e Flávio Bolsonaro encurtou pelo QUARTO dia seguido e fechou em 30,65pp, contra 37,05pp em 16/Ago. O líder repetiu 63,50% pelo terceiro dia, e a aproximação inteira veio do segundo colocado subindo. ⛔ Sem superlativo: 32,85% não é recorde, e na série unida de 175 leituras desde 23/Mai apenas 2 marcam esse valor ou acima, as duas em 33,20%, de 02/Jun e de 18/Ago. ⚠️ Ronaldo Caiado, Pablo Marçal, Romeu Zema, Tarcísio e Fernando Haddad estão abaixo de 0,5%, que é o piso vigiado pela dupla leitura, então são leitura de book e não preço confirmado.",
     "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem. Em 16/Ago há leitura confirmada nova para TODOS os contratos acompanhados, às 16:56 BRT (19:56 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo e Correio Braziliense.",
     "candidates": [
       {
@@ -1325,65 +1325,65 @@
         "pesquisaRange": "38-44%",
         "polymarket": "63,50%",
         "tendenciaPesquisa": "NACIONAL NOVA EM 17/Ago: a BTG/Nexus lhe dá 41% no 1º turno, alta de 1 ponto contra a própria casa, que o tinha em 40%, e 47% no returno, IDÊNTICO à rodada anterior. ⭐ A distância para o segundo colocado NÃO mudou, segue em 5 pontos, porque os dois subiram 1 ponto, e cada movimento cabe dentro da margem de 2pp. A Quaest de 14/Ago segue na base com 38%.",
-        "tendenciaPolymarket": "➖ SEM VARIAÇÃO pelo segundo dia seguido, em 63,50% (vol USD 8,69M acumulado), leitura confirmada de 19/Ago, 14:58 BRT. A distância para o segundo colocado encurtou 0,50pp e foi a 30,95pp, no TERCEIRO dia seguido de aproximação, somando 6,10pp desde 16/Ago. 🔑 O encurtamento não veio dele: quem subiu foi o adversário. ⛔ Sem superlativo: o topo da série de 88 dias segue em 66,50%, de 01/Ago.",
+        "tendenciaPolymarket": "➖ SEM VARIAÇÃO pelo TERCEIRO dia seguido, em 63,50% (vol USD 8,74M acumulado), leitura confirmada de 20/08/2026, 23:19 BRT. A distância para o segundo colocado encurtou mais 0,30pp e foi a 30,65pp, no QUARTO dia seguido de aproximação, somando 6,40pp desde 16/Ago. 🔑 O encurtamento continua não vindo dele: em três dias não perdeu preço nenhum. O topo da série é 67,50%, de 16/Ago, e 63,50% é o valor mais repetido dela, em 20 das 175 leituras desde 23/Mai.",
         "odds": 63.5,
         "percentage": 41,
-        "lastUpdate": "2026-08-19",
+        "lastUpdate": "20/08/2026, 23:19",
         "value": 63.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "31-36%",
-        "polymarket": "32,55%",
+        "polymarket": "32,85%",
         "tendenciaPesquisa": "NACIONAL NOVA EM 17/Ago: a BTG/Nexus o leva de 35% para 36% no 1º turno e repete 44% no returno. ⚠️ O ganho de 1 ponto está dentro da margem de 2pp da casa, e a distância para o líder ficou igual, em 5 pontos. A Quaest de 14/Ago segue na base com 31%.",
-        "tendenciaPolymarket": "🔺 ALTA de 0,50pp, de 32,05% para 32,55% (vol USD 8,63M acumulado), SEXTO dia seguido subindo, e sozinho responsável pelo encurtamento da distância. ⛔ NÃO é recorde: dos 88 dias da série desde 22/Mai, 2 marcaram valor igual ou acima disso, e o topo segue em 33,20%, de 02/Jun.",
-        "odds": 32.55,
+        "tendenciaPolymarket": "🔺 ALTA de 0,30pp, de 32,55% para 32,85% (vol USD 8,68M acumulado), leitura confirmada de 20/08/2026, 23:19 BRT, no quarto dia seguido encurtando a distância para o líder. ⛔ Não é recorde: na série unida de 175 leituras desde 23/Mai, só 2 marcam 32,85% ou acima, e as duas são 33,20%, de 02/Jun e de 18/Ago. No contrato de 2º lugar está em 87,50%.",
+        "odds": 32.85,
         "percentage": 36,
-        "lastUpdate": "2026-08-19",
-        "value": 32.55
+        "lastUpdate": "20/08/2026, 23:19",
+        "value": 32.85
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "4-5%",
-        "polymarket": "4,05%",
+        "polymarket": "4,45%",
         "tendenciaPesquisa": "🔴 NACIONAL NOVA EM 17/Ago: a BTG/Nexus o mantém em 4% no 1º turno e o coloca ATRÁS de Caiado, que tem 5%. Ele fica empatado com Zema, que também tem 4%, dentro da margem de 2pp.",
-        "tendenciaPolymarket": "🔻 QUEDA de 0,35pp, para 4,05% (vol USD 10,14M acumulado), devolvendo o que subiu na véspera. ⚠️ Perto do piso: 86 dos 88 dias da série estão acima disso. ⭐ No contrato de 3º lugar ficou ESTÁVEL em 57,00% e mesmo assim ABRIU distância, de 20,00pp para 21,00pp, porque quem cedeu foi Caiado.",
-        "odds": 4.05,
+        "tendenciaPolymarket": "🔺 ALTA de 0,40pp, de 4,05% para 4,45% (vol USD 10,28M acumulado), leitura confirmada de 20/08/2026, 23:19 BRT, a maior variação desta leitura entre os três nomes acima de 1%, contra 0,30pp de Flávio Bolsonaro e 0,00pp de Lula. ⭐ No contrato de 3º LUGAR está em 55,50%, contra 34,50% de Ronaldo Caiado, enquanto a última pesquisa nacional, de 17/Ago, dá 5% a Caiado e 4% a ele: preço e urna discordam de quem é o terceiro. O topo da série dele é 17,90%, de 09/Jun.",
+        "odds": 4.45,
         "percentage": 4,
-        "lastUpdate": "2026-08-19",
-        "value": 4.05
+        "lastUpdate": "20/08/2026, 23:19",
+        "value": 4.45
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "4-5%",
-        "polymarket": "0,55%",
+        "polymarket": "0,35%",
         "tendenciaPesquisa": "⭐ NACIONAL NOVA EM 17/Ago: a BTG/Nexus lhe dá 5% no 1º turno, ACIMA dos 4% de Renan Santos. Na intenção declarada ele passa a ser o terceiro nome do quadro, invertendo a ordem que o mercado precifica.",
-        "tendenciaPolymarket": "🔻 DEVOLVEU o que tinha subido: de 0,80% para 0,55% (vol USD 6,35M acumulado), desfazendo a alta da véspera, e no contrato de 3º lugar cedeu de 37,00% para 36,00%. ⛔ Sem superlativo: 85 dos 86 dias da série estão acima de 0,55%, e o teto é 2,40%, de 19/Jun.",
-        "odds": 0.55,
+        "tendenciaPolymarket": "🔻 QUEDA de 0,20pp, de 0,55% para 0,35% (vol USD 6,37M acumulado), leitura de 20/08/2026, 23:19 BRT. ⚠️ Está abaixo de 0,5%, que é o piso vigiado pela dupla leitura, então é leitura de book e não preço confirmado. No contrato de 3º lugar está em 34,50%.",
+        "odds": 0.35,
         "percentage": 5,
-        "lastUpdate": "2026-08-19",
-        "value": 0.55
+        "lastUpdate": "20/08/2026, 23:19",
+        "value": 0.35
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "não testado",
-        "polymarket": "0,75%",
+        "polymarket": "0,25%",
         "tendenciaPesquisa": "🔴 NENHUMA das 19 pesquisas do painel o testa, e nenhuma nacional da janela o inclui em cenário presidencial. 📅 A Datafolha prevista para 21/Ago será a PRIMEIRA a incluí-lo, segundo o Valor Econômico. ⚠️ Enquanto isso, o painel registra ausência de medição, que é diferente de medição igual a zero, e por isso ele fica fora do grafo de cruzamento até que exista pesquisa.",
-        "tendenciaPolymarket": "🔻 QUEDA de 0,15pp, para 0,75% (vol USD 1,72M acumulado), com o volume ainda subindo, de USD 1,66M em um dia. 🏷️ Segue INELEGÍVEL até 2032, campanha liberada por liminar e registro pendente no TSE. 📅 A Datafolha de 21/Ago é a PRIMEIRA a medi-lo: hoje ele tem preço e nenhuma medição de urna.",
-        "odds": 0.75,
+        "tendenciaPolymarket": "🔻 QUEDA de 0,50pp, de 0,75% para 0,25% (vol USD 2,04M acumulado), leitura de 20/08/2026, 23:19 BRT, no dia em que registrou candidatura pelo PRTB e o Ministério Público pediu ao TSE que a barre. ⚠️ Está abaixo do piso de 0,5% da dupla leitura, e a série dele tem apenas 6 leituras, todas entre 0,60% e 1,10%, começando em 17/Ago. É movimento a acompanhar, não medição firme.",
+        "odds": 0.25,
         "percentage": 0,
-        "lastUpdate": "2026-08-19",
-        "value": 0.75
+        "lastUpdate": "20/08/2026, 23:19",
+        "value": 0.25
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ ELE NÃO É CANDIDATO À PRESIDÊNCIA: abriu campanha à REELEIÇÃO ao governo de São Paulo em 16/Ago, segundo O Globo e a Folha de S.Paulo. Nenhuma nacional da janela o testa em cenário presidencial, e ausência de teste é informação que o painel registra em vez de repetir dado antigo como se fosse novo.",
-        "tendenciaPolymarket": "Em 0,05% (vol USD 13,93M acumulado), leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), estável e abaixo do corte de 0,5% que o painel usa para separar preço de ruído. ⭐ E aqui está a razão de a linha PERMANECER no painel mesmo com ele fora da disputa presidencial: na captura de 17/Ago ele tem o volume acumulado mais alto entre os 18 contratos com preço do book presidencial, acima do próprio líder, que tem USD 8,52M. Escopo declarado: comparação feita nesta captura, não ao longo da série. Volume alto com probabilidade no piso, sobre alguém que já registrou candidatura a outro cargo, é convicção precificada num desfecho que a realidade descartou. O painel mostra isso em vez de apagar a linha.",
+        "tendenciaPolymarket": "➖ SEM VARIAÇÃO, em 0,05% (vol USD 13,93M acumulado), leitura de 20/08/2026, 23:19 BRT. ⚠️ Abaixo do piso de 0,5% da dupla leitura. Lidera o volume acumulado do livro presidencial nesta leitura, com USD 13,93M contra USD 10,44M do segundo, Eduardo Bolsonaro, e está entre os menores preços.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-17",
+        "lastUpdate": "20/08/2026, 23:19",
         "value": 0.05
       },
       {
@@ -1391,10 +1391,10 @@
         "pesquisaRange": "2-4%",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "NACIONAL NOVA EM 17/Ago: a BTG/Nexus lhe dá 4% no 1º turno, acima dos 2% que a Quaest de 14/Ago media, e empatado com Renan Santos dentro da margem de 2pp.",
-        "tendenciaPolymarket": "➖ SEM VARIAÇÃO em 0,15% (vol USD 5,72M acumulado), abaixo do corte de 0,5% que o painel usa para separar preço de ruído. No contrato de 3º lugar ele marca 4,85%.",
+        "tendenciaPolymarket": "➖ SEM VARIAÇÃO, em 0,15% (vol USD 5,75M acumulado), leitura de 20/08/2026, 23:19 BRT. ⚠️ Abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar está em 4,35%.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "2026-08-19",
+        "lastUpdate": "20/08/2026, 23:19",
         "value": 0.15
       },
       {
@@ -1402,14 +1402,14 @@
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ ELE NÃO É CANDIDATO À PRESIDÊNCIA: abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. Nenhuma nacional da janela o inclui em cenário presidencial, e qualquer cenário que o incluísse seria hipótese de pesquisa, não candidatura em curso.",
-        "tendenciaPolymarket": "Em 0,05% (vol USD 7,20M acumulado), leitura confirmada de 17/Ago, 18:48 BRT (21:48 UTC), estável e abaixo do corte de 0,5%. O contrato segue aberto e negociado mesmo com ele disputando outro cargo, e o painel mantém a linha para registrar esse fato em vez de escondê-lo.",
+        "tendenciaPolymarket": "➖ SEM VARIAÇÃO, em 0,05% (vol USD 7,28M acumulado), leitura de 20/08/2026, 23:19 BRT. ⚠️ Abaixo do piso de 0,5% da dupla leitura.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "2026-08-17",
+        "lastUpdate": "20/08/2026, 23:19",
         "value": 0.05
       }
     ],
-    "updatedAt": "19/08/2026, 14:58",
+    "updatedAt": "20/08/2026, 23:19",
     "lastUpdate": "2026-08-17"
   }
 }
