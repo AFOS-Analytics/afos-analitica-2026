@@ -21,7 +21,6 @@ tags:
 # (que e metadado, nao dado) e derruba a pagina inteira: medido em 22/Ago/2026,
 # os cinco indicadores em false e 0 de 2,5 MB servidos. A primeira entrada e a que
 # a pagina ABRE, e por isso e a serie de divergencia, que e a identidade do bundle.
-# ⚠️ `polls/sample-demographics.csv` fica de fora enquanto estiver sem linhas.
 configs:
   - config_name: divergence_daily
     data_files:
@@ -47,6 +46,10 @@ configs:
     data_files:
       - split: train
         path: polls/national-poll-results-secondround.csv
+  - config_name: sample_demographics
+    data_files:
+      - split: train
+        path: polls/sample-demographics.csv
   - config_name: tse_registry
     data_files:
       - split: train

@@ -178,10 +178,23 @@ function enrich22(reg) {
 }
 
 // Degradação graciosa: se o TSE estiver indisponível mesmo após os retries, NÃO derruba o
-// mirror. O tse-registry.csv/json e o national-polls.json já versionados em hf-assets/polls/
-// permanecem intactos, e o export do dia segue com eles (dados de mercado/pesquisa/divergência
-// do dia publicam normalmente; só o registro TSE fica na versão anterior). Mesmo princípio
-// defensivo do build-poll-enrichment.mjs. Exit 0.
+// mirror. O tse-registry.csv/json já versionados em hf-assets/polls/ permanecem intactos, e o
+// export do dia segue com eles (dados de mercado/pesquisa/divergência do dia publicam
+// normalmente; só o registro TSE fica na versão anterior).
+//
+// 🔴 O national-polls.json NÃO permanece intacto, e dizer que permanecia foi o defeito.
+// Medido em 22/Ago/2026 no dataset publicado: 61 pesquisas, ZERO com `tse_registration`,
+// e `polls/sample-demographics.csv` no ar com só o cabeçalho. A causa é a ORDEM da esteira:
+// o passo anterior, build-hf-poll-results.mjs, REGENERA o national-polls.json do histórico
+// git a cada rodada, e a regeração não traz `tse_registration`. Então, com o TSE fora do ar,
+// o passo anterior apagava o bloco e este aqui saía por cima achando que preservava.
+//
+// ⚠️ O silêncio era o pior da falha: a demografia não ficava ausente, ficava PRESENTE E VAZIA,
+// e o bundle seguia anunciando uma camada que não existia mais.
+//
+// A saída não depende do TSE estar no ar: o `tse-registry.json` versionado tem os 533 registros
+// com `sampling_plan`, que é tudo de que o enriquecimento precisa. Reenriquecer com ele é
+// medição guardada, não suposição.
 try {
   const csv = await loadCsv()
   const rows = parseCSV(csv)
@@ -189,6 +202,17 @@ try {
   enrich22(reg)
   console.log('🏁 build-tse-registry-full concluído.')
 } catch (e) {
-  console.log(`::warning::TSE Dados Abertos indisponível (${e.message}). Mantendo tse-registry/national-polls já versionados; o mirror segue com os dados do dia. Sem fail.`)
+  console.log(`::warning::TSE Dados Abertos indisponível (${e.message}). Reenriquecendo o national-polls.json com o tse-registry.json JÁ VERSIONADO.`)
+  try {
+    const salvo = JSON.parse(readFileSync(join(OUT, 'tse-registry.json'), 'utf-8'))
+    const recs = salvo.records || []
+    if (!recs.length) throw new Error('tse-registry.json versionado está sem `records`')
+    enrich22(recs)
+    console.log(`✅ national-polls reenriquecido de ${recs.length} registros versionados (TSE fora do ar).`)
+  } catch (e2) {
+    // Aqui NÃO dá para seguir calado: sem `tse_registration` a demografia sai vazia, e o
+    // portão do build-poll-enrichment.mjs vai reprovar logo adiante, que é o desejado.
+    console.log(`::error::registry versionado indisponível (${e2.message}). O national-polls fica SEM tse_registration e a demografia sairá vazia.`)
+  }
   process.exit(0)
 }

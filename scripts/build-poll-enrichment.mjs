@@ -225,6 +225,29 @@ function main() {
   // metadados honestos no JSON
   data.enrichment_note = 'Analytical enrichment for research use: (1) field-midpoint dating + days-to-election; (2) poll-level market-vs-poll pairing anchored on the field midpoint — Polymarket prices P(win) while polls report 1st-round vote share, so naive_gap_pp is NOT scale-reconciled (a modeling choice for the researcher); (3) sample_design = sample composition/weighting (layer A) parsed from the TSE sampling_plan, NOT vote-by-demographic crosstabs (layer B, absent from TSE open data). Election dates: 1st round ' + FIRST_ROUND + ', runoff ' + RUNOFF + '.'
 
+  // 🚦 PORTÃO DA DEMOGRAFIA, instalado 22/Ago/2026. Ele existe porque a falha que
+  // ele pega ficou no ar por tempo indeterminado sem ninguém ver.
+  //
+  // O que aconteceu: quando o TSE Dados Abertos cai, o passo anterior da esteira
+  // regenera o national-polls.json sem o bloco `tse_registration`, e sem ele este
+  // script não emite uma linha de demografia sequer. O CSV saía com o CABEÇALHO E
+  // NADA MAIS, e o bundle seguia anunciando a camada A no datasheet e no README.
+  //
+  // 🔴 Tabela vazia não é ausência de dado, é AFIRMAÇÃO FALSA. Por isso o portão
+  // falha FECHADO, como a trava de captura e como o cron que se recusa a gravar
+  // leitura vazia: melhor o espelho do dia parar e o dataset de ontem continuar
+  // íntegro no ar do que publicar uma camada que não existe.
+  //
+  // ⚠️ Zero linha só é defeito quando HÁ pesquisa para enriquecer. Base vazia é
+  // outro caso e passa.
+  const nPolls = (data.polls || []).length
+  if (nPolls && !demoRows.length) {
+    console.error(`::error::sample-demographics sairia VAZIO com ${nPolls} pesquisas na base. ` +
+      `Pesquisas com bloco tse_registration: ${(data.polls || []).filter((p) => p.tse_registration).length}. ` +
+      `Sem ele não há sampling_plan para ler. Verificar o build-tse-registry-full.mjs antes de publicar.`)
+    process.exit(1)
+  }
+
   mkdirSync(OUT_DIR, { recursive: true }); mkdirSync(DATA_DIR, { recursive: true })
   writeFileSync(POLLS_JSON, JSON.stringify(data, null, 2))
   writeFileSync(join(OUT_DIR, 'sample-demographics.csv'), toCsv(

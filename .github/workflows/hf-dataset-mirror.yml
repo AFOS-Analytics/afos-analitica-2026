@@ -101,7 +101,14 @@ jobs:
         # Roda APÓS o export (lê a série de mercado e o national-polls.json já no staging) e
         # enriquece o staging in-place: cada pesquisa ganha field_midpoint/days-to-election +
         # sample_design (camada A) e gera polls/sample-demographics.csv + data/poll-divergence.csv.
-        # Defensivo (exit 0 em erro) — nunca quebra o mirror; pior caso = dia sem enriquecimento.
+        # Defensivo (exit 0) para erro inesperado: pior caso = dia sem enriquecimento.
+        #
+        # 🚦 EXCEÇÃO, 22/Ago/2026: demografia VAZIA com pesquisas na base falha FECHADO
+        # (exit 1) e para o espelho do dia. O "pior caso" descrito acima não era o pior
+        # caso: o passo vinha falhando TODO DIA em silêncio e publicando
+        # `sample-demographics.csv` com só o cabeçalho, enquanto o datasheet anunciava a
+        # camada. Tabela vazia não é ausência de dado, é afirmação falsa. Parar e deixar
+        # o dataset de ontem no ar é melhor do que publicar camada inexistente.
         env:
           POLLS_JSON: .cache/hf-dataset/polls/national-polls.json
           REGISTRY_JSON: .cache/hf-dataset/polls/tse-registry.json
