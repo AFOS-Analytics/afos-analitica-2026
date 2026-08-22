@@ -13,7 +13,7 @@ import { ELECTION_WINNER } from '../../lib/country-data'
 // linha fina colorida pela magnitude (vermelho alta, amarelo média, verde convergência) com o Δpp
 // em destaque sobre a própria linha. Localizado PT/EN/ES e theme-aware (claro/Sapphire).
 
-type NodeType = 'election' | 'market' | 'candidate' | 'poll' | 'press' | 'context' | 'indicator' | 'result' | 'navhub' | 'nav'
+type NodeType = 'election' | 'market' | 'candidate' | 'poll' | 'press' | 'context' | 'indicator' | 'result' | 'navhub' | 'nav' | 'dataset'
 type LinkKind = 'tree' | 'divergence' | 'poll' | 'correct' | 'wrong' | 'nav'
 
 interface GNode {
@@ -47,6 +47,9 @@ const TYPE_COLOR: Record<NodeType, string> = {
   result: '#16a34a',
   navhub: '#4f46e5',
   nav: '#818cf8',
+  // amarelo do Hugging Face. Nao colide com nenhum outro TIPO de no nem com a
+  // escala das arestas de divergencia, entao o no do dataset se le de longe.
+  dataset: '#eab308',
 }
 
 // paleta para candidatos sem cor explícita (por índice)
@@ -91,6 +94,7 @@ interface Lbl {
   mktMudo: (s: string) => string; pollMudo: (s: string) => string
   college: string; collegeSub: string; popular: string; popularSub: string
   anchors: { debate: string; attempt: string; dropout: string; eve: string }
+  dataset: string
   legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string; dataset: string }
 }
 
@@ -104,6 +108,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `controle ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colégio eleitoral', collegeSub: '~US$ 3,7 bi · acertou', popular: 'Voto popular', popularSub: 'deu Harris ~74% · errou',
     anchors: { debate: 'Debate Biden×Trump (27/jun)', attempt: 'Atentado a Trump (13/jul)', dropout: 'Biden sai, Harris entra (21/jul)', eve: 'Véspera da eleição (04/nov)' },
+    dataset: 'Dataset aberto',
     legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes', dataset: 'dataset aberto (clique abre o Hugging Face)' },
   },
   en: {
@@ -115,6 +120,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `control ${s}`, pollMudo: (s) => `vote ${s}`,
     college: 'Electoral college', collegeSub: '~US$3.7bn · correct', popular: 'Popular vote', popularSub: 'gave Harris ~74% · wrong',
     anchors: { debate: 'Biden×Trump debate (Jun 27)', attempt: 'Trump assassination attempt (Jul 13)', dropout: 'Biden drops out, Harris in (Jul 21)', eve: 'Election eve (Nov 4)' },
+    dataset: 'Open dataset',
     legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities', dataset: 'open dataset (click opens Hugging Face)' },
   },
   es: {
@@ -126,6 +132,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `control ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colegio electoral', collegeSub: '~US$ 3,7 mil M · acertó', popular: 'Voto popular', popularSub: 'dio a Harris ~74% · erró',
     anchors: { debate: 'Debate Biden×Trump (27 jun)', attempt: 'Atentado a Trump (13 jul)', dropout: 'Biden se retira, entra Harris (21 jul)', eve: 'Víspera electoral (4 nov)' },
+    dataset: 'Dataset abierto',
     legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas', dataset: 'dataset abierto (clic abre Hugging Face)' },
   },
 }
@@ -146,6 +153,29 @@ function buildGraph(d: CountryDivergence, electionLabel: string, lbl: Lbl, tag: 
   add({ id: 'L_press', label: lbl.press, sub: isUSA ? lbl.pressSub : '', type: 'press', r: 15, color: TYPE_COLOR.press, href: dataLinks.press })
   add({ id: 'L_ctx', label: lbl.ctx, type: 'context', r: 15, color: TYPE_COLOR.context, href: dataLinks.context })
   for (const t of ['L_market', 'L_poll', 'L_press', 'L_ctx']) links.push({ source: 'election', target: t, kind: 'tree' })
+
+  /**
+   * 🔗 NÓ PRÓPRIO DO DATASET, instalado 22/Ago/2026 por pedido do André.
+   *
+   * 🔴 A HISTÓRIA, porque ela é a razão de ele existir: o link do dataset foi
+   * primeiro pendurado no `href` do nó da eleição. Funcionava e ninguém achava,
+   * porque só o cursor denunciava. Depois ganhou anel tracejado e legenda no
+   * rodapé, e o André respondeu que **texto no rodapé não é nó**: para clicar em
+   * alguma coisa, a coisa precisa estar DENTRO do grafo, com nome.
+   *
+   * 🔑 A lição: num grafo, a unidade de descoberta é o NÓ. Marcar um nó
+   * existente como "também leva a outro lugar" é meta-informação sobre um nó que
+   * já significa outra coisa. O dataset é um destino próprio, e destino próprio
+   * é nó próprio.
+   *
+   * O `href` no nó da eleição CONTINUA, e não é redundância: quem já sabe clica
+   * no centro, e quem não sabe encontra o nó com nome. Os dois levam ao mesmo
+   * lugar.
+   */
+  if (dataLinks.election && /^https?:\/\//.test(dataLinks.election)) {
+    add({ id: 'dataset', label: lbl.dataset, sub: 'Hugging Face', type: 'dataset', r: 17, color: TYPE_COLOR.dataset, href: dataLinks.election })
+    links.push({ source: 'election', target: 'dataset', kind: 'tree' })
+  }
 
   // EUA: 2 mercados que discordaram (colégio acertou, voto popular errou), antes dos candidatos
   if (isUSA) {
