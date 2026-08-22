@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-21",
+  "factCheckGate": {
+    "eventos": [
+      {"evento": "Datafolha nacional (n=2.058, campo 18-20/Ago, BR-04496/2026)", "crossRef": "14 mencoes, todas de antecipacao", "tipo": "evento", "fonte1": "Gazeta do Povo", "fonte2": "G1, Estadao, O Globo, CNN, Valor", "decisao": "incorporar"},
+      {"evento": "Verita nacional (n=3.840, campo 16-20/Ago, BR-04006/2026)", "crossRef": "4 mencoes, todas do calendario TSE", "tipo": "evento", "fonte1": "Wikipedia (indice)", "fonte2": "CNN Brasil, Radio Itatiaia, GP1", "decisao": "incorporar"},
+      {"evento": "Telefonema Lula-Trump", "crossRef": "nao aparece nas 7 dailies", "tipo": "evento", "fonte1": "G1", "fonte2": "BBC News Brasil, InfoMoney", "decisao": "incorporar"},
+      {"evento": "TSE define tempo de TV", "crossRef": "veto a Marcal e de 20/Ago", "tipo": "evento", "fonte1": "O Globo", "fonte2": "G1, vermelho.org.br", "decisao": "incorporar sem numero por candidato"}
+    ]
+  },
+  "adversarialReview": {
+    "singleSource": "nenhuma",
+    "numericalErrors": "reconcile-claims [OK]",
+    "fontesInventadas": "zero. O URL gate bloqueou 8 URLs deduzidas na 1a tentativa; refeito com script que le o news-cache inteiro e aborta se faltar",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O preco andou depois das pesquisas e o texto descreve a sequencia sem afirmar causa",
+    "verbosCriticos": "nenhum de privacao de liberdade, morte ou decisao judicial consolidada",
+    "decisao": "prosseguir"
+  },
+  "superlativosConferidos": [
+    {"claim": "gap furou 30pp pela primeira vez", "veredito": "FALSO, descartado antes de escrever. 29 dias abaixo de 30pp na serie, minimo 6,30pp em 02/Jun", "publicado": "a menor distancia desde 23/Jun"},
+    {"claim": "Flavio 33,45% e o maior da serie", "veredito": "CONFIRMADO nos 175 pontos crus desde 23/Mai, topo anterior 33,20%", "publicado": "sim"}
+  ],
+  "correcoesAntesDePublicar": [
+    "Dado de avaliacao trocado: usei a Folha (encomendante, ruim ou pessimo 38->41%) no lugar do Estadao (aprova/desaprova 47/50), que e outra pergunta",
+    "Calendario: relato de falha da nossa maquina substituido por carimbo de procedencia, apos apontamento do Andre",
+    "Sintese enriquecida de 75 para 185 palavras, com o espaco vindo do corpo"
+  ],
+  "trava": {"veredito": "APROVADO", "leituras": ["2026-08-21T23:54:24Z", "2026-08-22T00:02:25Z"]},
+  "wayback": {"status": "429, bloqueado", "acao": "nao insistido", "passivo": "17 dailies, 05 a 21/Ago"},
+  "palavras": 888,
+  "emojis": 0
+}

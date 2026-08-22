@@ -1466,56 +1466,56 @@
       {
         "name": "Lula",
         "pesquisaRange": "38-45%",
-        "polymarket": "63,50%",
+        "polymarket": "62,50%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá (n=3.840, campo del 16 al 20 de ago) lo da en 39,3% en la primera vuelta, frente a 39,1% de Flávio Bolsonaro, es decir EMPATE TÉCNICO, cuando la Nexus/BTG del 17 de ago lo tenía 5 puntos adelante. En la segunda vuelta aparece detrás, 42% contra 47,3%. ⚠️ Los escenarios no son iguales: esta ronda incluye a Pablo Marçal y la anterior no. Veritá tiene confiabilidad 2 en la regla de la casa.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN por CUARTO día seguido, en 63,50% (vol USD 8,80M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT. La distancia al segundo colocado se acortó otros 0,20pp y fue a 30,45pp, en el QUINTO día seguido de acercamiento, sumando 6,60pp desde el 16 de ago. 🔑 De esos 6,60pp, 3,00pp salieron de él, todos entre el 16 y el 18 de ago, y lleva cuatro días sin moverse: el acortamiento ahora viene solo del otro lado.",
-        "odds": 63.5,
+        "tendenciaPolymarket": "🔻 CAÍDA de 1,00pp, de 63,50% a 62,50% (vol USD 8,83M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). Volvió a perder precio tras cuatro días sin moverse, y la distancia al segundo colocado fue a 29,05pp, en el SEXTO día seguido de acercamiento. ⭐ EL ACUMULADO QUEDÓ SIMÉTRICO: de los 8,00pp acortados desde el 16 de ago, 4,00pp salieron de él y 4,00pp vinieron del adversario. ⛔ Sin superlativo: 29,05pp es la menor desde el 23 de jun, y NO es la menor de la serie, que tiene 6,30pp el 2 de jun.",
+        "odds": 62.5,
         "percentage": 39,
-        "lastUpdate": "21/08/2026, 15:59",
-        "value": 63.5
+        "lastUpdate": "21/08/2026, 21:02",
+        "value": 62.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-40%",
-        "polymarket": "33,05%",
+        "polymarket": "33,45%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá lo lleva a 39,1% en la primera vuelta, a 0,2 punto de Lula, y a 47,3% en la segunda contra 42%, el primer escenario de balotaje de esta ventana en que aparece adelante en una nacional. ⚠️ La casa tiene confiabilidad 2 en la regla del panel, y la Nexus/BTG del 17 de ago, con confiabilidad 4, lo medía en 36%. El panel publica las dos y no elige.",
-        "tendenciaPolymarket": "🔺 ALZA de 0,20pp, de 32,85% a 33,05% (vol USD 8,72M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT, en el quinto día seguido acortando la distancia al líder. ⛔ No es récord: en la serie de 174 lecturas desde el 23 de mayo, solo 2 marcan 33,05% o más, y las dos son 33,20%, del 2 de jun y del 18 de ago. ⚠️ NO HAY lectura nueva confirmada el 21 de ago para el contrato de segundo lugar, así que el panel mantiene el valor del 20 de ago, 87,50%.",
-        "odds": 33.05,
+        "tendenciaPolymarket": "🔺 ALZA de 0,40pp, de 33,05% a 33,45% (vol USD 8,76M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). ⭐ ES EL MAYOR VALOR DE LA SERIE: en los 175 puntos grabados desde el 23 de mayo, el techo anterior era 33,20%, marcado el 2 de jun, el 18 de ago y hoy mismo a las 22:01 UTC. 🔻 En el contrato de SEGUNDO LUGAR, sin embargo, el movimiento fue opuesto: la probabilidad de que termine segundo cayó de 87,50% del 20 de ago hasta 84,50%, en un libro de USD 350 mil. El precio de ganar subió y el de terminar segundo cayó el mismo día.",
+        "odds": 33.45,
         "percentage": 32,
-        "lastUpdate": "21/08/2026, 15:59",
-        "value": 33.05
+        "lastUpdate": "21/08/2026, 21:02",
+        "value": 33.45
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "4,30%",
+        "polymarket": "4,15%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá lo da en 3,8%, DETRÁS de Pablo Marçal, que debuta con 5,2%, y por delante de Ronaldo Caiado, con 3,3%.",
-        "tendenciaPolymarket": "🔻 CAÍDA de 0,15pp, de 4,45% a 4,30% (vol USD 10,46M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT. ⭐ En el contrato de TERCER LUGAR sigue en 55,50%, frente a 35,00% de Ronaldo Caiado, que subió 0,50pp. 🔴 La urna lo pone en 3,8% en la Veritá del 21 de ago, DETRÁS de Pablo Marçal, que tiene 5,2%: el precio y la encuesta ordenan el pelotón de formas distintas.",
-        "odds": 4.3,
+        "tendenciaPolymarket": "🔻 CAÍDA de 0,15pp, de 4,30% a 4,15% (vol USD 10,50M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). En el contrato de TERCER LUGAR sigue en 55,50% (vol USD 186 mil), ahora frente a 38,00% de Ronaldo Caiado, que subió 3,00pp respecto al 20 de ago.",
+        "odds": 4.15,
         "percentage": 4,
-        "lastUpdate": "21/08/2026, 15:59",
-        "value": 4.3
+        "lastUpdate": "21/08/2026, 21:02",
+        "value": 4.15
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0,45%",
+        "polymarket": "0,35%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá lo da en 3,3%, detrás de Pablo Marçal (5,2%) y de Renan Santos (3,8%). La Nexus/BTG del 17 de ago lo tenía en 5% y por delante de los dos.",
-        "tendenciaPolymarket": "🔺 ALZA de 0,10pp, de 0,35% a 0,45% (vol USD 6,42M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT, todavía por debajo del piso de 0,5% que vigila la doble lectura: es lectura de libro, no precio confirmado. En el contrato de TERCER LUGAR subió 0,50pp y está en 35,00%.",
-        "odds": 0.45,
+        "tendenciaPolymarket": "🔻 CAÍDA de 0,10pp, de 0,45% a 0,35% (vol USD 6,43M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC), por debajo del piso de 0,5% de la doble lectura. 🔺 En el contrato de TERCER LUGAR el movimiento es opuesto: subió a 38,00%, frente a 34,50% del 20 de ago.",
+        "odds": 0.35,
         "percentage": 5,
-        "lastUpdate": "21/08/2026, 15:59",
-        "value": 0.45
+        "lastUpdate": "21/08/2026, 21:02",
+        "value": 0.35
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5,2%",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "⭐ TESTADO POR PRIMERA VEZ EN UNA NACIONAL: la Veritá del 21 de ago lo mide en 5,2% en la primera vuelta, lo que lo coloca TERCERO, por delante de Renan Santos y de Ronaldo Caiado. Hasta esta ronda tenía precio y ninguna medición de urna.",
-        "tendenciaPolymarket": "🔻 CAÍDA de 0,10pp, de 0,25% a 0,15% (vol USD 2,20M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT. ⚠️ Está por debajo del piso de 0,5% de la doble lectura, así que es lectura de libro y no precio confirmado. 🔴 Y aquí está la mayor distancia entre los dos instrumentos del panel: la Veritá del 21 de ago lo mide en 5,2% de intención de voto, la primera nacional en testarlo, mientras el precio paga 0,15%. Son magnitudes distintas y no se restan; el panel registra que una lo pone tercero y la otra, séptimo.",
+        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,15% (vol USD 2,23M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC), por debajo del piso de 0,5% de la doble lectura. 🔴 Las dos nacionales del día lo midieron: 2% en Datafolha y 5,2% en Veritá. Urna y precio ordenan el pelotón de formas distintas, y las magnitudes no se restan.",
         "odds": 0.15,
         "percentage": 2,
-        "lastUpdate": "21/08/2026, 15:59",
+        "lastUpdate": "21/08/2026, 21:02",
         "value": 0.15
       },
       {
@@ -1523,10 +1523,10 @@
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña por la REELECCIÓN a la gobernación de São Paulo el 16 de ago, según O Globo y Folha de S.Paulo. Ninguna nacional de la ventana lo testea en escenario presidencial, y la ausencia de test es información que el panel registra en vez de repetir un dato viejo como si fuera nuevo.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN, en 0,05% (vol USD 14,00M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT. Ninguna encuesta nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
+        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,05% (vol USD 14,00M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). Ninguna nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "21/08/2026, 15:59",
+        "lastUpdate": "21/08/2026, 21:02",
         "value": 0.05
       },
       {
@@ -1534,10 +1534,10 @@
         "pesquisaRange": "1-4%",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá lo da en 1,3%, su valor más bajo en la ventana de 30 días.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN, en 0,15% (vol USD 5,80M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT, por debajo del piso de 0,5% de la doble lectura. La Veritá del 21 de ago lo mide en 1,3%.",
+        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,15% (vol USD 5,81M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC), por debajo del piso de 0,5%. En la urna, 3% en Datafolha y 1,3% en Veritá.",
         "odds": 0.15,
         "percentage": 3,
-        "lastUpdate": "21/08/2026, 15:59",
+        "lastUpdate": "21/08/2026, 21:02",
         "value": 0.15
       },
       {
@@ -1545,14 +1545,14 @@
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña a la GOBERNACIÓN DE SÃO PAULO el 16 de ago, según O Globo y Times Brasil. Ninguna nacional de la ventana lo incluye en escenario presidencial, y cualquier escenario que lo incluyera sería una hipótesis de encuesta, no una candidatura en curso.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN, en 0,05% (vol USD 7,28M acumulado), lectura confirmada del 21/08/2026, 15:59 BRT. Ninguna encuesta nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
+        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,05% (vol USD 7,28M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). Ninguna nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "21/08/2026, 15:59",
+        "lastUpdate": "21/08/2026, 21:02",
         "value": 0.05
       }
     ],
-    "updatedAt": "21/08/2026, 15:59",
-    "lastUpdate": "21/08/2026, 15:59"
+    "updatedAt": "21/08/2026, 21:02",
+    "lastUpdate": "21/08/2026, 21:02"
   }
 }
