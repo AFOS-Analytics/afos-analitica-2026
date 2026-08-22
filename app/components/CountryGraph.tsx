@@ -91,7 +91,7 @@ interface Lbl {
   mktMudo: (s: string) => string; pollMudo: (s: string) => string
   college: string; collegeSub: string; popular: string; popularSub: string
   anchors: { debate: string; attempt: string; dropout: string; eve: string }
-  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string }
+  legend: { div: string; conv: string; poll: string; hit: string; miss: string; press: string; hint: string; semDelta: string; dataset: string }
 }
 
 const LBL: Record<string, Lbl> = {
@@ -104,7 +104,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `controle ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colégio eleitoral', collegeSub: '~US$ 3,7 bi · acertou', popular: 'Voto popular', popularSub: 'deu Harris ~74% · errou',
     anchors: { debate: 'Debate Biden×Trump (27/jun)', attempt: 'Atentado a Trump (13/jul)', dropout: 'Biden sai, Harris entra (21/jul)', eve: 'Véspera da eleição (04/nov)' },
-    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes' },
+    legend: { div: 'divergência mercado × pesquisa (Δpp)', conv: 'convergência (Δ baixo)', poll: 'leitura de pesquisa', hit: 'mercado acertou', miss: 'mercado errou', press: 'imprensa (âncoras)', hint: 'arraste os nós · scroll para zoom', semDelta: 'sem Δ: grandezas diferentes', dataset: 'dataset aberto (clique abre o Hugging Face)' },
   },
   en: {
     market: 'Prediction markets', poll: 'Polls', pollsN: (n) => `${n} polls`, press: 'Press', pressSub: 'archived anchors (Wayback)', ctx: 'Structural context',
@@ -115,7 +115,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `control ${s}`, pollMudo: (s) => `vote ${s}`,
     college: 'Electoral college', collegeSub: '~US$3.7bn · correct', popular: 'Popular vote', popularSub: 'gave Harris ~74% · wrong',
     anchors: { debate: 'Biden×Trump debate (Jun 27)', attempt: 'Trump assassination attempt (Jul 13)', dropout: 'Biden drops out, Harris in (Jul 21)', eve: 'Election eve (Nov 4)' },
-    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities' },
+    legend: { div: 'market × poll divergence (Δpp)', conv: 'convergence (low Δ)', poll: 'poll reading', hit: 'market correct', miss: 'market wrong', press: 'press (anchors)', hint: 'drag nodes · scroll to zoom', semDelta: 'no Δ: different quantities', dataset: 'open dataset (click opens Hugging Face)' },
   },
   es: {
     market: 'Mercados de predicción', poll: 'Encuestas', pollsN: (n) => `${n} encuestas`, press: 'Prensa', pressSub: 'anclas archivadas (Wayback)', ctx: 'Contexto estructural',
@@ -126,7 +126,7 @@ const LBL: Record<string, Lbl> = {
     mktMudo: (s) => `control ${s}`, pollMudo: (s) => `voto ${s}`,
     college: 'Colegio electoral', collegeSub: '~US$ 3,7 mil M · acertó', popular: 'Voto popular', popularSub: 'dio a Harris ~74% · erró',
     anchors: { debate: 'Debate Biden×Trump (27 jun)', attempt: 'Atentado a Trump (13 jul)', dropout: 'Biden se retira, entra Harris (21 jul)', eve: 'Víspera electoral (4 nov)' },
-    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas' },
+    legend: { div: 'divergencia mercado × encuesta (Δpp)', conv: 'convergencia (Δ baja)', poll: 'lectura de encuesta', hit: 'mercado acertó', miss: 'mercado erró', press: 'prensa (anclas)', hint: 'arrastra los nodos · scroll para zoom', semDelta: 'sin Δ: magnitudes distintas', dataset: 'dataset abierto (clic abre Hugging Face)' },
   },
 }
 
@@ -331,6 +331,38 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
       .attr('stroke', pal.nodeStroke).attr('stroke-width', 2)
       .attr('opacity', (n) => n.type === 'indicator' ? 0.85 : 1)
 
+    /**
+     * 🔴 ANEL DO NÓ QUE SAI DO SITE, instalado 22/Ago/2026.
+     *
+     * O André abriu o painel dos EUA procurando o link do dataset e não achou.
+     * Ele estava lá e funcionava: o nó central abre o Hugging Face. Mas o ÚNICO
+     * sinal de que um nó é clicável era o cursor virar mãozinha ao passar por
+     * cima, e num grafo de dezenas de bolinhas isso é indistinguível de
+     * decoração. Ninguém varre o mouse por cada nó para descobrir quais
+     * respondem.
+     *
+     * 🔑 A lição, e ela vale além daqui: "implantado" para mim era o `href`
+     * ligado; para quem usa, é o link ENCONTRÁVEL. Eu conferi três idiomas e o
+     * código servido, e não conferi a única coisa que decidia a entrega.
+     *
+     * O anel tracejado marca só os nós que levam para FORA do site, que hoje
+     * são os do dataset aberto. Âncora interna não ganha anel: ela não tira o
+     * leitor da página e já é o comportamento esperado de um painel.
+     */
+    nodeSel.filter((n) => !!n.href && /^https?:\/\//.test(n.href)).append('circle')
+      .attr('r', (n) => n.r + 5)
+      .attr('fill', 'none')
+      .attr('stroke', pal.nodeStroke)
+      .attr('stroke-width', 1.5)
+      .attr('stroke-dasharray', '3 3')
+      .attr('opacity', 0.85)
+
+    // Dica ao pousar o mouse, para o anel não virar enfeite sem explicação.
+    // `<title>` é o tooltip nativo do SVG: não precisa de biblioteca, funciona
+    // com leitor de tela e não muda o layout.
+    nodeSel.filter((n) => !!n.href).append('title')
+      .text((n) => /^https?:\/\//.test(n.href!) ? lbl.legend.dataset : n.label)
+
     nodeSel.append('text')
       .text((n) => n.label)
       .attr('text-anchor', 'middle')
@@ -469,6 +501,17 @@ export function CountryGraph({ data, electionLabel, locale = 'pt-BR', isBlue = f
         <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#ea580c' }} /> {lbl.legend.press}</span>
         {navGroups.length > 0 && (
           <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: '#818cf8' }} /> {locale === 'en' ? 'navigation (click)' : locale === 'es' ? 'navegación (clic)' : 'navegação (clique)'}</span>
+        )}
+        {/* 🔗 A legenda do nó que SAI do site. Só aparece quando existe algum,
+            então painel sem dataset publicado não ganha linha vazia. O quadrado
+            é tracejado de propósito: repete no rodapé o mesmo anel desenhado em
+            volta do nó, e é essa repetição que liga uma coisa à outra sem
+            precisar de texto explicando o desenho. */}
+        {Object.values(dataLinks).some((u) => typeof u === 'string' && /^https?:\/\//.test(u)) && (
+          <span className="inline-flex items-center gap-1">
+            <span className="inline-block w-2.5 h-2.5 rounded-full border border-dashed" style={{ borderColor: isBlue ? '#93c5fd' : '#64748b' }} />
+            {lbl.legend.dataset}
+          </span>
         )}
         <span className={`ml-auto ${isBlue ? 'text-blue-300/60' : 'text-gray-400'}`}>{lbl.legend.hint}</span>
       </div>
