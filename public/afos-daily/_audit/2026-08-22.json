@@ -1,0 +1,57 @@
+{
+  "date": "2026-08-22",
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Delação de lobista ligada ao filho do presidente, no caso INSS",
+        "verificacao1": "aparece nas dailies recentes, inclusive 21/Ago",
+        "classificacao": "continuidade",
+        "verificacao2": "não realizada, decisão foi não incorporar",
+        "decisao": "NÃO incorporar",
+        "motivo": "codebook: 'chance de buscar delação' é proposta em curso, não delação celebrada"
+      },
+      {
+        "evento": "Repercussão da Datafolha de 21/Ago",
+        "verificacao1": "a pesquisa entrou na daily de 21/Ago",
+        "classificacao": "continuidade",
+        "decisao": "incorporar apenas como contexto de imprensa"
+      },
+      {
+        "evento": "PSOL responde a denúncia do Novo sobre vídeo de Flávio Bolsonaro",
+        "classificacao": "desdobramento partidário sem efeito medido",
+        "decisao": "NÃO incorporar"
+      }
+    ],
+    "selfCheck": {
+      "ancorasComVerificacao2": "não aplicável: o dia não tem evento novo como âncora",
+      "causacaoEspuria": "nenhuma; movimento do 3º lugar descrito como estado, não como causa",
+      "verbosCriticos": "'delação' desambiguado e excluído por estar em curso",
+      "reconcileClaims": "rodado; divergências são percentuais de pesquisa e deltas, falsos positivos esperados"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "nenhum; reconcile-claims casa com o JSON",
+    "fontesInventadas": "nenhuma; 4 veículos conferidos na coleta (Folha 183, G1 88, CartaCapital 27, Poder360 24)",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma",
+    "verbosCodebook": "OK",
+    "decisao": "prosseguir"
+  },
+  "correcoesForcadasPeloPasse": [
+    "Contrato de 3º lugar estava com 51,00% e 44,50%, valores de leitura POSTERIOR à trava de captura. Voltou para 49,50% e 46,00%, que foram os confirmados às 19:39Z. Publicar o número mais recente seria publicar número não confirmado.",
+    "Atribuição da matéria sobre migração de votos estava no G1; o veículo real é CartaCapital. Achado pelo injetor de URLs, que lê o veículo do cache em vez de aceitar o texto escrito.",
+    "Síntese reescrita a pedido do André: 3 parágrafos com frase-tese em negrito, no lugar da lista numerada de uma linha."
+  ],
+  "gates": {
+    "travaDeCaptura": "APROVADO, carimbos distintos 19:31:45Z e 19:39:45Z, 67 mercados",
+    "tetoPalavras": { "pt-BR": 900, "en": 874, "es": 894, "limite": 900 },
+    "emoji": { "pt-BR": 0, "en": 0, "es": 0 },
+    "tldr": { "pt-BR": 3, "en": 3, "es": 3 },
+    "gateNumerico": "0 divergências entre pt-BR, EN e ES",
+    "cincoChecagens": "0 homóglifo, 0 link de outro locale, 0 decimal errado",
+    "proporcaoFontes": "63% secundário (alvo 50-70%)",
+    "warningAceito": "low-link-density em 55%: os parágrafos sem link são de síntese e divergência, que resumem o que já foi linkado acima"
+  },
+  "wayback": "NÃO executado: pré-check no /save/ devolveu HTTP 429. Passivo de 18 dailies (05 a 22/Ago) segue parado."
+}
