@@ -520,7 +520,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | `/api/health` | Health check |
 | `/api/translations` | AI translation pipeline |
 | `/api/chat` | AFOS Chat, streaming (SSE) tool-calling agent over live platform data; per-IP rate limited |
-| `/api/market/history` | Odds time series |
+| `/api/market/history` | Odds time series. ⚠️ **Not the full series, and not safe for superlatives.** `days` is capped at 90 by `Math.min`, `country=` matches the slug by PREFIX (so a presidential query also drags in the 2nd- and 3rd-place contracts), and a 1,000-point ceiling then truncates what is left: measured on 22/Aug/2026, a `days=90` call came back `truncated: true` with the presidential series cut six days short. It feeds the on-screen chart. Any claim of "highest/lowest ever" must be checked against `backup/neon/marketPrice/*.csv.gz`, which is incremental per month and holds the record from 14/Apr |
 
 ---
 

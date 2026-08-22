@@ -521,7 +521,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | `/api/health` | Health check |
 | `/api/translations` | Pipeline traducao IA |
 | `/api/chat` | AFOS Chat, agente tool-calling em streaming (SSE) sobre dados ao vivo; rate-limit por IP |
-| `/api/market/history` | Serie temporal odds |
+| `/api/market/history` | Serie temporal de odds. ⚠️ **Nao e a serie completa, e nao serve para superlativo.** O `days` trava em 90 por `Math.min`, o `country=` casa o slug por PREFIXO (entao uma consulta presidencial arrasta junto os contratos de 2o e 3o lugar), e um teto de 1.000 pontos trunca o que sobrou: medido em 22/Ago/2026, uma chamada com `days=90` voltou `truncated: true` com a serie presidencial cortada seis dias antes do fim. Ela alimenta o grafico da tela. Afirmacao de "o maior/o menor de todos" se confere em `backup/neon/marketPrice/*.csv.gz`, que e incremental por mes e guarda o registro desde 14/Abr |
 
 ---
 
