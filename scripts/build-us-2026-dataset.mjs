@@ -216,5 +216,12 @@ console.log('pesquisas: %d linhas, %d institutos, campo de %s a %s',
   resumo.polls.rows, resumo.polls.pollsters, resumo.polls.fieldwork_from, resumo.polls.fieldwork_to)
 console.log('imprensa: %d linhas em %d coletas', resumo.press.rows, resumo.press.collections)
 console.log('mercados:')
-for (const m of resumo.markets) console.log('   %-62s %-8s %5d linhas  %s a %s', m.slug, m.type, m.rows, m.from || '-', m.to || '-')
+// ⚠️ `padEnd`/`padStart` e NÃO `%-62s`: o `console.log` do Node não implementa a
+// largura de campo do printf de C. Ele aceita `%s`, `%d`, `%j` e pouco mais, e
+// deixa `%-62s` passar CRU, imprimindo o próprio código e empurrando os
+// argumentos para o fim da linha. O log saía ilegível e ninguém percebia porque
+// os valores continuavam todos lá, só desalinhados. Defeito meu de 21/Ago.
+for (const m of resumo.markets) {
+  console.log(`   ${String(m.slug).padEnd(62)} ${String(m.type).padEnd(8)} ${String(m.rows).padStart(5)} linhas  ${m.from || '-'} a ${m.to || '-'}`)
+}
 console.log('arquivos gerados:', arquivos.length)
