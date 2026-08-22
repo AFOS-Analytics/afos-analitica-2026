@@ -25,6 +25,13 @@ import { StructuralContext } from '../../../components/StructuralContext';
 import type { UsMarketData } from '../../../components/UsMarketSection';
 import type { UsPollsData } from '../../../../lib/dashboard/us-static-data';
 
+// Dataset público das midterms no Hugging Face, v1 pré-eleitoral, publicada em
+// 21/Ago/2026. O equivalente do Brasil vive em `dashboard/br/DashboardClient`
+// como `BR_HF`; são bundles independentes, e a URL de um NUNCA serve de reserva
+// para a do outro, pela mesma razão que país não se mistura em lugar nenhum
+// deste projeto.
+const US_HF = 'https://huggingface.co/datasets/AFOS-Analytics1/usa-2026-midterms-divergence';
+
 /**
  * Casca do painel dos EUA.
  *
@@ -172,11 +179,31 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
   }, [locale]);
 
   /**
-   * Os nós de tipo levam à seção correspondente da própria página. `election` e
-   * `candidate` ficam de fora: no Brasil eles apontam para o dataset publicado,
-   * e as midterms ainda não têm dataset.
+   * Os nós de TIPO levam à seção correspondente da própria página, e os nós de
+   * DADO levam ao dataset público no Hugging Face. É a mesma divisão do Brasil.
+   *
+   * 🗓️ `election` e `candidate` ficavam vazios com a justificativa de que "as
+   * midterms ainda não têm dataset". Passaram a ter em 21/Ago/2026, quando a v1
+   * pré-eleitoral foi publicada, então o comentário antigo virou dívida e é o
+   * que esta mudança paga.
+   *
+   * ⚠️ O nó da ELEIÇÃO aponta para a RAIZ e não para uma pasta, de propósito: é
+   * de lá que se lê o datasheet, o dicionário de dados e a licença, que é o que
+   * um pesquisador precisa antes de baixar CSV nenhum.
+   *
+   * 📌 `candidate` aponta para `data/`, onde vivem as séries dos dois contratos
+   * de controle (`house-control.csv`, `senate-control.csv`) que ALIMENTAM o
+   * número desses nós. Não aponta para `polls/` porque o rótulo do nó traz o
+   * preço e a pesquisa juntos, e mandar para metade da origem seria pior do que
+   * mandar para a origem do número que dá nome ao nó.
+   *
+   * ⛔ Os nós de tipo NÃO passaram a apontar para o HF. Eles são a navegação
+   * interna da página, decidida assim, e trocá-la por link externo tiraria uma
+   * função sem que ninguém tivesse pedido.
    */
   const usDataLinks = useMemo(() => ({
+    election: US_HF,
+    candidate: `${US_HF}/tree/main/data`,
     market: '#sec-mercado',
     poll: '#sec-pesquisas',
     press: '#sec-imprensa',
