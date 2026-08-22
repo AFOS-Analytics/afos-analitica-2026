@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-21",
+  "lastUpdate": "2026-08-22",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1460,15 +1460,15 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "Cross-reference between the Polymarket price and declared voting intention, on the confirmed reading of 08/21/2026, 3:59 PM BRT, approved by two independent readings eight minutes apart. The presidential book has accumulated USD 130.58M. ⚠️ The poll side now comes from the Veritá of Aug 21 (n=3,840, field Aug 16 to 20, registration BR-04006/2026), which is the MOST RECENT national poll, replacing the BTG/Nexus of Aug 17. The panel's ruler is always the latest national poll, and every name comes from the same poll so the comparison is between equals. 📌 Veritá carries reliability 2 on this house's scale and BTG/Nexus carries 4, and the switch changes the picture: where BTG/Nexus saw 5 points between the top two, Veritá sees 0.2. The panel declares the switch instead of picking the poll that confirms the previous reading. ⭐ PABLO MARÇAL ENTERS THE CROSS-REFERENCE FOR THE FIRST TIME, with 5.2% at the ballot against 0.15% in price. 🔴 The two quantities DO NOT subtract: voting intention and probability of winning measure different things, and what the panel records is that they order the field in opposite ways.",
+    "note": "Polymarket prices at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), with the presidential book at USD 131.16M. The distance between the top two stands at 29.15pp, against 30.45pp in the 21/Aug reading. The move of the day is Renan Santos falling 1.50pp, the largest in the book. The polls cited are the two most recent national polls with a published number, Datafolha and Veritá, both from 21/Aug, and they disagree on the runoff. Five national polls are registered with the TSE for release between 24 and 27/Aug and have no number yet.",
     "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm. On Aug 16 there is a new confirmed reading for EVERY tracked contract, at 4:56 pm BRT (7:56 pm UTC): presidential, runner-up, third place, Senate and Supreme Court impeachment. Polls registered with the electoral court and released by the houses, with reporting from G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo and Correio Braziliense.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-45%",
         "polymarket": "62.50%",
-        "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 21: the Veritá (n=3,840, field Aug 16 to 20) puts him at 39.3% in the first round, against 39.1% for Flávio Bolsonaro, a STATISTICAL TIE, where the BTG/Nexus of Aug 17 had him 5 points ahead. In the runoff he trails, 42% against 47.3%. ⚠️ The scenarios are not the same: this round includes Pablo Marçal and the previous one did not. Veritá carries reliability 2 on this house's scale.",
-        "tendenciaPolymarket": "🔻 DOWN 1.00pp, from 63.50% to 62.50% (vol USD 8.83M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC). He gave back price after four flat days, and the distance to the runner-up went to 29.05pp, a SIXTH straight day of convergence. ⭐ THE RUNNING TOTAL TURNED SYMMETRICAL: of the 8.00pp narrowed since Aug 16, 4.00pp came off him and 4.00pp came from his opponent. ⛔ No superlative: 29.05pp is the narrowest since Jun 23, and NOT the narrowest of the series, which holds 6.30pp on Jun 2.",
+        "tendenciaPesquisa": "The 21/Aug Datafolha (n=2,058, fieldwork 18 to 20/Aug, reliability 5) puts him at 39% in the first round and winning the runoff 47% to 43%. The Veritá of the same day (n=3,840, reliability 2) inverts the runoff. Two national polls from the same day, with overlapping fieldwork, pointing opposite ways. No new poll has been published since.",
+        "tendenciaPolymarket": "62.50% (vol USD 8.86M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), unchanged on the day. In the 83-day series beginning 31/May, the peak is 66.50% from 16/Aug and the floor is 39.50% from 02/Jun.",
         "odds": 62.5,
         "percentage": 39,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1477,31 +1477,31 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-40%",
-        "polymarket": "33.45%",
-        "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 21: the Veritá takes him to 39.1% in the first round, 0.2 point from Lula, and to 47.3% in the runoff against 42%, the first runoff scenario in this window where he leads in a national poll. ⚠️ The house carries reliability 2 on the panel's scale, and the BTG/Nexus of Aug 17, at reliability 4, measured him at 36%. The panel publishes both and does not choose.",
-        "tendenciaPolymarket": "🔺 UP 0.40pp, from 33.05% to 33.45% (vol USD 8.76M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC). ⭐ IT IS THE HIGHEST VALUE OF THE SERIES: across the 175 points recorded since May 23, the previous high was 33.20%, printed on Jun 2, on Aug 18 and earlier today at 10:01 PM UTC. 🔻 In the SECOND PLACE contract, however, the move was the opposite: the probability of him finishing second fell from 87.50% on Aug 20 down to 84.50%, in a book of USD 350 thousand. The price of winning rose and the price of finishing second fell on the same day.",
-        "odds": 33.45,
+        "polymarket": "33.35%",
+        "tendenciaPesquisa": "Datafolha gives him 33% in the first round and 43% in the runoff; Veritá has him winning the runoff. He is the name the two houses disagree about most.",
+        "tendenciaPolymarket": "33.35% (vol USD 8.78M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), down 0.10pp on the day. Today's highest recorded point, 33.80%, is the highest of the 83-day series, against 22.00% on 03/Jul.",
+        "odds": 33.35,
         "percentage": 32,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 33.45
+        "value": 33.35
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "4.15%",
-        "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 21: the Veritá gives him 3.8%, BEHIND Pablo Marçal, who debuts at 5.2%, and ahead of Ronaldo Caiado, at 3.3%.",
-        "tendenciaPolymarket": "🔻 DOWN 0.15pp, from 4.30% to 4.15% (vol USD 10.50M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC). In the THIRD PLACE contract he holds 55.50% (vol USD 186 thousand), now against 38.00% for Ronaldo Caiado, who rose 3.00pp from Aug 20.",
-        "odds": 4.15,
+        "polymarket": "2.65%",
+        "tendenciaPesquisa": "4% in the 21/Aug Datafolha and 3.8% in the Veritá of the same day, meaning both houses measure him at a similar level.",
+        "tendenciaPolymarket": "2.65% (vol USD 10.56M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), DOWN 1.50pp, the largest in the book. Today's lowest recorded point, 3.40%, is the lowest of the 83-day series, against 17.90% on 09/Jun.",
+        "odds": 2.65,
         "percentage": 4,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 4.15
+        "value": 2.65
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
         "polymarket": "0.35%",
-        "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 21: the Veritá gives him 3.3%, behind Pablo Marçal (5.2%) and Renan Santos (3.8%). The BTG/Nexus of Aug 17 had him at 5% and ahead of both.",
-        "tendenciaPolymarket": "🔻 DOWN 0.10pp, from 0.45% to 0.35% (vol USD 6.43M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC), below the 0.5% floor of the double reading. 🔺 In the THIRD PLACE contract the move is the opposite: up to 38.00%, against 34.50% on Aug 20.",
+        "tendenciaPesquisa": "5% in the 21/Aug Datafolha and 3.3% in Veritá.",
+        "tendenciaPolymarket": "0.35% (vol USD 6.44M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), unchanged. In the first-round third-place contract he holds 46.00%, 3.50pp behind Renan Santos.",
         "odds": 0.35,
         "percentage": 5,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1552,7 +1552,7 @@
         "value": 0.05
       }
     ],
-    "updatedAt": "21/08/2026, 21:02",
-    "lastUpdate": "21/08/2026, 21:02"
+    "updatedAt": "22/08/2026, 16:40",
+    "lastUpdate": "2026-08-22"
   }
 }

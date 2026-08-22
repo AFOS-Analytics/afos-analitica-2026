@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-21",
+  "lastUpdate": "2026-08-22",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1460,15 +1460,15 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "Cruzamento entre o preço do Polymarket e a intenção de voto declarada, na leitura confirmada de 21/08/2026, 15:59 BRT, aprovada por duas leituras independentes separadas por oito minutos. O livro presidencial acumula USD 130,58M. ⚠️ O lado da pesquisa passou a vir da Veritá de 21/Ago (n=3.840, campo 16 a 20/Ago, registro BR-04006/2026), que é a nacional MAIS RECENTE, no lugar da Nexus/BTG de 17/Ago. A régua do painel é sempre a última nacional, e todos os nomes vêm da mesma pesquisa para que a comparação seja entre iguais. 📌 A Veritá tem confiabilidade 2 na escala da casa e a Nexus/BTG tem 4, e a troca muda o desenho: onde a Nexus/BTG via 5 pontos entre os dois primeiros, a Veritá vê 0,2. O painel declara a troca em vez de escolher a pesquisa que confirma a leitura anterior. ⭐ PABLO MARÇAL ENTRA NO CRUZAMENTO PELA PRIMEIRA VEZ, com 5,2% de urna contra 0,15% de preço. 🔴 As duas grandezas NÃO se subtraem: intenção de voto e probabilidade de vencer medem coisas diferentes, e o que o painel registra é que elas ordenam o pelotão de formas opostas.",
+    "note": "Preços do Polymarket na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), com o livro presidencial em USD 131,16M. A distância entre os dois primeiros está em 29,15pp, contra 30,45pp na leitura de 21/Ago. O movimento do dia é a queda de 1,50pp de Renan Santos, a maior do livro. As pesquisas citadas são as duas nacionais mais recentes com número publicado, a Datafolha e a Veritá, ambas de 21/Ago, e elas discordam sobre o 2º turno. Cinco nacionais estão registradas no TSE com divulgação prevista entre 24 e 27/Ago e ainda não têm número.",
     "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem. Em 16/Ago há leitura confirmada nova para TODOS os contratos acompanhados, às 16:56 BRT (19:56 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo e Correio Braziliense.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-45%",
         "polymarket": "62,50%",
-        "tendenciaPesquisa": "🔴 NACIONAL NOVA EM 21/Ago: a Veritá (n=3.840, campo 16 a 20/Ago) o dá em 39,3% no 1º turno, contra 39,1% de Flávio Bolsonaro, ou seja EMPATE TÉCNICO, quando a Nexus/BTG de 17/Ago o tinha 5 pontos à frente. No 2º turno ele aparece atrás, 42% contra 47,3%. ⚠️ Os cenários não são iguais: esta rodada inclui Pablo Marçal e a anterior não. A Veritá tem confiabilidade 2 na régua da casa.",
-        "tendenciaPolymarket": "🔻 QUEDA de 1,00pp, de 63,50% para 62,50% (vol USD 8,83M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Ele voltou a perder preço depois de quatro dias parado, e a distância para o segundo colocado foi a 29,05pp, no SEXTO dia seguido de aproximação. ⭐ O ACUMULADO FICOU SIMÉTRICO: dos 8,00pp encurtados desde 16/Ago, 4,00pp saíram dele e 4,00pp vieram do adversário. ⛔ Sem superlativo: 29,05pp é o menor desde 23/Jun, e NÃO é o menor da série, que tem 6,30pp em 02/Jun.",
+        "tendenciaPesquisa": "A Datafolha de 21/Ago (n=2.058, campo 18 a 20/Ago, confiabilidade 5) o dá em 39% no 1º turno e vencendo o 2º por 47% a 43%. A Veritá do mesmo dia (n=3.840, confiabilidade 2) inverte o 2º turno. Duas nacionais do mesmo dia, com campo sobreposto, em direções opostas. Nenhuma pesquisa nova foi publicada desde então.",
+        "tendenciaPolymarket": "62,50% (vol USD 8,86M) na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sem variação no dia. Na série de 83 dias iniciada em 31/Mai, o topo é 66,50% de 16/Ago e o piso é 39,50% de 02/Jun.",
         "odds": 62.5,
         "percentage": 39,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1477,31 +1477,31 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-40%",
-        "polymarket": "33,45%",
-        "tendenciaPesquisa": "🔴 NACIONAL NOVA EM 21/Ago: a Veritá o leva a 39,1% no 1º turno, a 0,2 ponto de Lula, e a 47,3% no 2º turno contra 42%, o primeiro cenário de returno em que ele aparece à frente numa nacional deste recorte. ⚠️ A casa tem confiabilidade 2 na régua do painel, e a Nexus/BTG de 17/Ago, com confiabilidade 4, o media em 36%. O painel publica as duas e não escolhe.",
-        "tendenciaPolymarket": "🔺 ALTA de 0,40pp, de 33,05% para 33,45% (vol USD 8,76M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). ⭐ É O MAIOR VALOR DA SÉRIE: nos 175 pontos gravados desde 23/Mai, o topo anterior era 33,20%, marcado em 02/Jun, em 18/Ago e hoje mesmo às 22:01 UTC. 🔻 No contrato de 2º LUGAR, porém, o movimento foi oposto: a probabilidade de ele terminar em segundo caiu de 87,50% em 20/Ago a 84,50%, num livro de USD 350 mil. O preço de vencer subiu e o de terminar em segundo caiu no mesmo dia.",
-        "odds": 33.45,
+        "polymarket": "33,35%",
+        "tendenciaPesquisa": "A Datafolha lhe dá 33% no 1º turno e 43% no 2º; a Veritá o dá vencendo o 2º turno. É sobre ele que as duas casas mais discordam.",
+        "tendenciaPolymarket": "33,35% (vol USD 8,78M) na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), queda de 0,10pp no dia. O ponto gravado mais alto de hoje, 33,80%, é o maior da série de 83 dias, contra 22,00% em 03/Jul.",
+        "odds": 33.35,
         "percentage": 32,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 33.45
+        "value": 33.35
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "4,15%",
-        "tendenciaPesquisa": "🔴 NACIONAL NOVA EM 21/Ago: a Veritá o dá em 3,8%, ATRÁS de Pablo Marçal, que estreia com 5,2%, e à frente de Ronaldo Caiado, com 3,3%.",
-        "tendenciaPolymarket": "🔻 QUEDA de 0,15pp, de 4,30% para 4,15% (vol USD 10,50M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). No contrato de 3º LUGAR segue em 55,50% (vol USD 186 mil), agora contra 38,00% de Ronaldo Caiado, que subiu 3,00pp em relação a 20/Ago.",
-        "odds": 4.15,
+        "polymarket": "2,65%",
+        "tendenciaPesquisa": "4% na Datafolha de 21/Ago e 3,8% na Veritá do mesmo dia, ou seja as duas casas o medem em patamar parecido.",
+        "tendenciaPolymarket": "2,65% (vol USD 10,56M) na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), QUEDA de 1,50pp, a maior do livro. O ponto gravado mais baixo de hoje, 3,40%, é o menor da série de 83 dias, contra 17,90% em 09/Jun.",
+        "odds": 2.65,
         "percentage": 4,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 4.15
+        "value": 2.65
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
         "polymarket": "0,35%",
-        "tendenciaPesquisa": "🔴 NACIONAL NOVA EM 21/Ago: a Veritá o dá em 3,3%, atrás de Pablo Marçal (5,2%) e de Renan Santos (3,8%). A Nexus/BTG de 17/Ago o tinha em 5% e à frente dos dois.",
-        "tendenciaPolymarket": "🔻 QUEDA de 0,10pp, de 0,45% para 0,35% (vol USD 6,43M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), abaixo do piso de 0,5% da dupla leitura. 🔺 No contrato de 3º LUGAR, o movimento é oposto: subiu para 38,00%, contra 34,50% em 20/Ago.",
+        "tendenciaPesquisa": "5% na Datafolha de 21/Ago e 3,3% na Veritá.",
+        "tendenciaPolymarket": "0,35% (vol USD 6,44M) na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sem variação. No contrato de 3º lugar do 1º turno ele tem 46,00%, a 3,50pp de Renan Santos.",
         "odds": 0.35,
         "percentage": 5,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1552,7 +1552,7 @@
         "value": 0.05
       }
     ],
-    "updatedAt": "21/08/2026, 21:02",
-    "lastUpdate": "21/08/2026, 21:02"
+    "updatedAt": "22/08/2026, 16:40",
+    "lastUpdate": "2026-08-22"
   }
 }

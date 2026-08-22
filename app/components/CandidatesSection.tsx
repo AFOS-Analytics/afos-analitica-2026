@@ -25,7 +25,7 @@ const candidates: CandidateProfile[] = [
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "33,45%",
+    polymarket: "33,35%",
     poll: "⭐ NACIONAL NOVA EM 21/Ago: a Veritá o leva a 39,1% no 1º turno, a 0,2 ponto do líder, e a 47,3% no 2º turno contra 42%. É o primeiro returno deste recorte em que uma nacional o põe à frente. ⚠️ A BTG/Nexus de 17/Ago, de confiabilidade 4 contra 2 da Veritá, o media em 36% e 44%. NO PREÇO, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), em 33,45% (vol USD 8,76M acumulado), alta de 0,20pp e sexto dia seguido encurtando a distância para o líder. ⛔ NÃO é recorde: na série de 174 leituras desde 23/Mai, só 2 marcam 33,45% ou acima, e as duas são 33,20%, de 02/Jun e de 18/Ago.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
     risk: "ALTA de 0,20pp, de 32,85% para 33,45% (vol USD 8,76M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), SEXTO dia seguido encurtando a distância para o líder, que foi a 29,05pp. NA URNA, a Veritá de 21/Ago o põe a 0,2 ponto no 1º turno, 39,1% contra 39,3%, e à frente no 2º turno, 47,3% contra 42%. SEM SUPERLATIVO: 33,45% não é recorde, e o topo da série de 174 leituras desde 23/Mai é 33,20%, de 02/Jun e 18/Ago. NÃO HÁ leitura nova confirmada em 21/Ago para o contrato de 2º lugar, que segue em 87,50% desde 20/Ago."
@@ -35,7 +35,7 @@ const candidates: CandidateProfile[] = [
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "4,15%",
+    polymarket: "2,65%",
     poll: "⭐ NACIONAL NOVA EM 21/Ago: a Veritá o dá em 3,8% no 1º turno, ATRÁS de Pablo Marçal, que é testado pela primeira vez numa nacional e aparece com 5,2%, e à frente de Ronaldo Caiado, com 3,3%. NO PREÇO, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), em 4,15% (vol USD 10,50M acumulado), queda de 0,15pp. No contrato de 3º LUGAR ele segue em 55,50%, contra 35,00% de Caiado. ⭐ Os dois universos discordam de quem é o terceiro, e agora com um nome novo na conta: o mercado o mantém como terceiro provável e a urna põe Marçal nesse lugar.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
     risk: "QUEDA de 0,15pp, de 4,45% para 4,15% (vol USD 10,50M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). No contrato de 3º LUGAR segue em 55,50%, contra 35,00% de Ronaldo Caiado, que subiu 0,50pp. NA URNA, a Veritá de 21/Ago o põe em 3,8%, ATRÁS de Pablo Marçal, que estreia com 5,2%: o preço o mantém como terceiro provável e a pesquisa põe outro nome nesse lugar."

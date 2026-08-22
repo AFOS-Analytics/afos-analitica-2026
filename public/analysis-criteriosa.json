@@ -1,109 +1,106 @@
 {
-  "updatedAt": "21/08/2026, 21:02",
-  "subtitle": "ATUALIZAÇÃO 21/Ago, a 44 dias do 1º turno e no SEXTO DIA DA CAMPANHA OFICIAL. ⭐⭐ DUAS PESQUISAS NACIONAIS NO MESMO DIA, E ELAS SE CONTRADIZEM. A DATAFOLHA (n=2.058, campo 18 a 20/Ago, BR-04496/2026, confiabilidade 5) dá LULA 39% x FLÁVIO BOLSONARO 32% no cenário com Pablo Marçal, e LULA 47% x FLÁVIO 43% no 2º turno. A VERITÁ (n=3.840, campo 16 a 20/Ago, BR-04006/2026, confiabilidade 2), divulgada horas antes, dá EMPATE de 0,2 ponto no 1º turno e o 2º turno INVERTIDO, com FLÁVIO em 47,3% contra 42%. São mais de 9 pontos de diferença entre institutos com campo sobreposto, e o painel publica as duas sem escolher. ⭐ PABLO MARÇAL foi medido pelas duas: 2% na Datafolha e 5,2% na Veritá, enquanto o mercado paga 0,15% nele. NO PREÇO, a distância entre os dois primeiros encurtou pelo SEXTO dia seguido e fechou em 29,05pp, contra 37,05pp em 16/Ago, num livro presidencial que acumula USD 130,88M.",
+  "updatedAt": "22/08/2026, 16:40",
+  "subtitle": "Cruzamento de 22 de agosto de 2026: preço do Polymarket em leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), livro presidencial em USD 131,16M, contra a Datafolha de 21/Ago (n=2.058, campo 18 a 20/Ago, confiabilidade 5) e a Veritá de 21/Ago (n=3.840, campo 16 a 20/Ago, confiabilidade 2), que são as duas nacionais mais recentes com número publicado. Cinco outras nacionais estão registradas no TSE com divulgação prevista entre 24 e 27 de agosto e ainda não têm número.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 62,50% (vol USD 8,83M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC)",
+      "header": "PREÇO: 62,50% (vol USD 8,86M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Sem variação no dia.",
       "fortes": [
-        "A última pesquisa nacional, a Nexus/BTG de 17/Ago (n=2.003, campo 14 a 16/Ago, BR-03317/2026), o coloca em 41% no 1º turno, alta de 1 ponto contra a rodada anterior da mesma casa, que o tinha em 40%.",
-        "No 2º turno estimulado ele aparece com 47% contra 44%, resultado IDÊNTICO ao da rodada anterior da própria casa, mantendo os 3 pontos de vantagem.",
-        "A distância para o segundo colocado na pesquisa segue em 5 pontos, a mesma da rodada anterior, ou seja, o avanço do adversário não encurtou o intervalo medido.",
-        "No preço ele segue muito à frente, com 64,50% contra 31,45%, e o contrato dele acumula USD 8,52M dentro de um book presidencial de USD 126,85M.",
-        "O topo da série é 67,50%, marcado em 16/Ago às 21:00. A leitura de 20/Ago, 62,50%, é o valor mais repetido da série: 20 das 174 leituras desde 23/Mai marcam exatamente esse número."
+        "A Datafolha de 21/Ago (n=2.058, campo 18 a 20/Ago, confiabilidade 5, BR-04496/2026) o coloca em 39% no 1º turno e o dá vencedor do 2º por 47% a 43% contra Flávio Bolsonaro.",
+        "No preço ele segue muito à frente: 62,50% contra 33,35%, uma distância de 29,15pp, com o contrato dele acumulando USD 8,86M dentro de um livro presidencial de USD 131,16M.",
+        "O preço não se moveu hoje, depois de ter perdido 1,00pp na leitura de ontem. Estabilidade num dia em que o segundo colocado marcou o ponto mais alto da série é um resultado a favor dele, não contra.",
+        "No contrato de 2º lugar do 1º turno ele aparece com apenas 6,20%, o que é coerente com um mercado que o vê passando em primeiro.",
+        "Na série de 83 dias iniciada em 31/Mai, o piso dele é 39,50%, medido em 02/Jun. O preço de hoje está 23 pontos acima daquele piso."
       ],
       "fracos": [
-        "🔴 QUEDA de 2,00pp no preço em um dia, de 66,50% para 64,50%, devolvendo exatamente o que tinha subido na véspera.",
-        "A distância para o segundo colocado no preço FECHOU de 37,05pp para 33,05pp, ou seja 4,00pp em cerca de 26 horas.",
-        "A avaliação do governo na Nexus/BTG de 17/Ago tem 42% de ruim ou péssimo contra 34% de ótimo ou bom, com 23% de regular.",
-        "⛔ Nenhum superlativo de alta se aplica: o topo da série é 67,50%, de 16/Ago, e a leitura de 20/Ago está 4,00pp abaixo dele.",
-        "A Polícia Federal encontrou mensagem em que o filho dele e uma lobista investigada por fraudes no INSS tratam de negócios, e o adversário e o irmão dele usaram o caso no mesmo dia, segundo o Poder360."
+        "⛔ Nenhum superlativo de alta se aplica: o topo da série de 83 dias é 66,50%, marcado em 16/Ago, e o preço de hoje está 4,00pp abaixo dele.",
+        "A Veritá de 21/Ago (n=3.840, campo 16 a 20/Ago, confiabilidade 2, BR-04006/2026) contradiz a Datafolha no 2º turno e dá a vitória a Flávio Bolsonaro. Duas nacionais do mesmo dia, com campo sobreposto, em direções opostas.",
+        "O segundo colocado marcou hoje o ponto mais alto da série de 83 dias. A distância entre os dois vem de 30,45pp em 21/Ago para 29,15pp agora.",
+        "Cinco pesquisas nacionais estão registradas no TSE com divulgação prevista entre 24 e 27/Ago, entre elas uma com amostra de 6.000. Nenhuma delas tem número publicado, então o quadro das pesquisas pode mudar dentro de cinco dias.",
+        "A leitura da imprensa de hoje é inteiramente repercussão da Datafolha de ontem, com 164 títulos distintos na coleta. Não houve fato novo que sustente movimento de preço a favor dele."
       ],
-      "analise": "PREÇO em 62,50% (vol USD 8,83M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), SEM VARIAÇÃO pelo QUARTO dia seguido. ⭐ A DISTÂNCIA para o segundo colocado encurtou mais 0,20pp e foi a 29,05pp, no SEXTO dia seguido de aproximação, somando 8,00pp desde 16/Ago. 🔑 A FONTE DO ENCURTAMENTO MUDOU NO MEIO: dos 6,60pp, 3,00pp saíram dele, todos entre 16 e 18/Ago, e ele está parado há quatro dias. ⭐ NA URNA, a Veritá de 21/Ago (n=3.840, campo 16 a 20/Ago) o mede em 39,3% no 1º turno contra 39,1% do segundo colocado, ou seja empate técnico dentro da margem de 2pp, e em 42% no 2º turno contra 47,3%. Quatro dias antes, a Nexus/BTG lhe dava 41% e 5 pontos de vantagem. ⚠️ Os dois institutos não medem o mesmo cenário, porque esta rodada inclui Pablo Marçal, e a Veritá tem confiabilidade 2 na régua da casa contra 4 da Nexus/BTG. O painel publica as duas e declara a diferença."
+      "analise": "PREÇO em 62,50% (vol USD 8,86M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sem variação no dia. A distância para o segundo colocado está em 29,15pp, contra 30,45pp na leitura de ontem.\n\nNa série de 83 dias que começa em 31 de maio, o topo dele é 66,50%, de 16 de agosto, e o piso é 39,50%, de 02 de junho. O preço de hoje está quatro pontos abaixo do próprio topo, então não há superlativo de alta disponível.\n\nNas pesquisas, a Datafolha de 21 de agosto lhe dá 39% no primeiro turno e vitória no segundo por 47% a 43%. A Veritá do mesmo dia, com amostra maior e campo sobreposto, inverte o segundo turno. As duas seguem sendo as nacionais mais recentes com número publicado, e elas discordam."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 33,45% (vol USD 8,76M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC)",
+      "header": "PREÇO: 33,35% (vol USD 8,78M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Queda de 0,10pp no dia, depois de o ponto gravado mais alto de hoje, 33,80%, ter marcado o maior valor da série de 83 dias.",
       "fortes": [
-        "🔴 ALTA DE 2,00pp no preço em um dia, de 29,45% para 31,45%, e é o quarto dia seguido de alta.",
-        "A distância para o líder no preço FECHOU 4,00pp em cerca de 26 horas, de 37,05pp para 33,05pp.",
-        "A Nexus/BTG de 17/Ago o leva de 35% para 36% no 1º turno, e no 2º turno ele repete os 44% da rodada anterior.",
-        "Ele domina o contrato de 2º lugar do 1º turno com 85,50%, muito à frente do segundo daquele book.",
-        "A avaliação negativa do governo adversário está em 42% de ruim ou péssimo na mesma Nexus/BTG."
+        "⭐ O ponto gravado mais alto de hoje, 33,80%, é o maior da série de 83 dias iniciada em 31/Mai. O piso da mesma série é 22,00%, de 03/Jul: são 11,80pp de avanço em menos de dois meses.",
+        "A Veritá de 21/Ago (n=3.840, confiabilidade 2) o dá vencedor do 2º turno, o que nenhuma nacional havia feito antes dela.",
+        "A Datafolha de 21/Ago, que é a de maior confiabilidade das duas, mostra o 2º turno em 47% a 43%, uma diferença de 4 pontos que fica dentro da faixa de empate técnico considerando a margem declarada.",
+        "No contrato de 2º lugar do 1º turno ele tem 84,50%, ou seja, o mercado trata a passagem dele como quase resolvida.",
+        "O Partido Liberal tem 78,50% no mercado de maior bancada no Senado, com vol USD 0,26M, o que dá contexto partidário ao preço presidencial dele."
       ],
       "fracos": [
-        "⛔ Não é recorde: na série unida de 174 leituras desde 23/Mai, apenas 2 marcam 32,85% ou acima, e as duas são 33,20%, de 02/Jun e de 18/Ago. A leitura de 20/Ago é a terceira maior da série.",
-        "Na pesquisa a distância para o líder NÃO mudou: era 5 pontos e continua 5 pontos, porque os dois subiram 1 ponto.",
-        "O ganho de 1 ponto está dentro da margem de 2pp da própria casa, então ele não se distingue de estabilidade.",
-        "No 2º turno ele segue atrás por 3 pontos, 44% contra 47%, exatamente como na rodada anterior.",
-        "A campanha dele passou o dia em disputa com um adversário do próprio campo: ele acusou Caiado de ajudar o líder, depois de Kassab dizer que Caiado tem chance zero, e Kassab respondeu que a campanha dele está preocupada com Caiado, segundo o Estadão."
+        "O preço ao vivo do fim da tarde, 33,35%, está 0,45pp abaixo do ponto mais alto gravado hoje. O dia marcou o topo da série e devolveu parte dele.",
+        "A distância para o líder segue em 29,15pp, e o preço dele é praticamente metade do preço de Lula.",
+        "⛔ O superlativo aqui é de SÉRIE, não de ciclo: a régua começa em 31/Mai e cobre 83 dias. Não há base para dizer \"o maior de todos os tempos\".",
+        "A Datafolha lhe dá 33% no 1º turno contra 39% de Lula, uma distância de 6 pontos que a Veritá mede de outro jeito. As duas casas discordam sobre ele mais do que sobre qualquer outro nome.",
+        "Cinco nacionais registradas no TSE têm divulgação entre 24 e 27/Ago e ainda não têm número. O quadro que sustenta o preço dele pode mudar dentro de cinco dias."
       ],
-      "analise": "PREÇO em 33,45% (vol USD 8,76M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), alta de 0,20pp e quinto dia seguido em que ele encurta a distância para o líder. ⛔ SEM SUPERLATIVO: 33,45% NÃO é recorde. Na série de 174 leituras desde 23/Mai, apenas 2 estão em 33,45% ou acima, e as duas marcam 33,20%, em 02/Jun e em 18/Ago. ⭐ NA URNA, a Veritá de 21/Ago o leva a 39,1% no 1º turno, a 0,2 ponto do líder, e a 47,3% no 2º turno contra 42%: é o primeiro returno deste recorte em que uma nacional o põe à frente. ⚠️ A Nexus/BTG de 17/Ago, com confiabilidade 4 contra 2 da Veritá, o media em 36% e 44%. ⚠️ Não há leitura nova confirmada em 21/Ago para o contrato de 2º lugar, que segue em 87,50% desde 20/Ago."
+      "analise": "PREÇO em 33,35% (vol USD 8,78M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), queda de 0,10pp no dia.\n\n⭐ O número do dia é outro: o ponto gravado mais alto de hoje, 33,80%, é o maior da série de 83 dias que começa em 31 de maio. Em 03 de julho o mesmo contrato pagava 22,00%.\n\nA distância para o líder está em 29,15pp, contra 30,45pp ontem. Nas pesquisas, a Datafolha de 21 de agosto lhe dá 33% no primeiro turno e 43% no segundo, e a Veritá do mesmo dia o dá vencendo o segundo turno. É sobre ele que as duas casas mais discordam."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 4,15% (vol USD 10,50M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC)",
+      "header": "PREÇO: 2,65% (vol USD 10,56M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Queda de 1,50pp no dia, a maior do livro presidencial.",
       "fortes": [
-        "Ele segue à frente no contrato de 3º lugar do 1º turno, com 52,50%, a maior probabilidade daquele book.",
-        "O contrato dele é o de MAIOR volume acumulado do presidencial, com USD 9,95M, acima do próprio líder.",
-        "A Nexus/BTG de 17/Ago o mantém em 4% no 1º turno, mesmo patamar das nacionais recentes.",
-        "Ele abriu campanha em São Paulo em 16/Ago com discurso de segurança, segundo O Globo e o G1.",
-        "Ele avaliou publicamente que a eventual entrada de Pablo Marçal na disputa beneficiaria o adversário da direita, e não ele."
+        "No contrato de 3º lugar do 1º turno ele segue à frente, com 49,50% contra 46,00% de Ronaldo Caiado, uma diferença de 3,50pp.",
+        "O contrato dele acumula USD 10,56M, um dos maiores volumes individuais do livro presidencial, acima do próprio Lula e de Flávio Bolsonaro.",
+        "Na Datafolha de 21/Ago ele aparece com 4% e na Veritá com 3,8%, ou seja, as duas casas o medem em patamar parecido, o que não acontece com vários outros nomes.",
+        "No contrato de 2º lugar do 1º turno ele tem 3,55%, com vol USD 1,14M, o terceiro maior valor daquele mercado."
       ],
       "fracos": [
-        "🔻 QUEDA no preço, de 4,40% para 4,05%, devolvendo o que subiu na véspera. O valor segue perto do piso: 86 dos 88 dias gravados desde 22/Mai estão acima dele, e o piso foi tocado em 18/Ago, com 3,60%.",
-        "⚠️ O book dele é FINO, e isso importa para ler o movimento: no contrato presidencial ele vale pouco mais de 4%, e nessa faixa pouco dinheiro move o preço. A leitura de posição, no contrato de 3º lugar, é onde ele carrega peso de verdade.",
-        "No contrato de 3º lugar ele também cedeu, de 53,00% para 52,50%, e a distância para o segundo daquele book encolheu de 15,50pp para 14,00pp.",
-        "🔴 NA PESQUISA ELE ESTÁ ATRÁS DE CAIADO: a Nexus/BTG de 17/Ago dá 5% a Caiado e 4% a ele, enquanto o mercado paga 55,50% nele e 34,50% em Caiado no contrato de 3º lugar.",
-        "O topo da série dele é 17,90%, de 09/Jun, então a leitura de 20/Ago, 4,45%, é um quarto daquele valor."
+        "🔴 QUEDA de 1,50pp no dia, a maior do livro presidencial. O preço saiu de 4,15% para 2,65%.",
+        "🔴 O ponto gravado mais baixo de hoje, 3,40%, é o MENOR da série de 83 dias iniciada em 31/Mai. O topo da mesma série é 17,90%, de 09/Jun: o preço de hoje é menos de um quinto daquele valor.",
+        "O preço ao vivo, 2,65%, está ainda abaixo do menor ponto gravado no dia, o que indica que a queda não havia se estabilizado no fim da tarde.",
+        "Ele é o nome com maior volume individual entre os que perderam preço hoje. Volume alto e preço em queda significam que o dinheiro que entrou não sustentou o valor.",
+        "A vantagem dele no contrato de 3º lugar, 3,50pp sobre Caiado, é menor do que a distância dos dois no mercado presidencial, o que deixa a posição vulnerável."
       ],
-      "analise": "PREÇO em 4,15% (vol USD 10,50M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), queda de 0,15pp. ⭐ No contrato de 3º LUGAR ele segue em 55,50% (vol USD 186 mil), contra 38,00% de Ronaldo Caiado, que subiu 0,50pp. 🔴 A URNA MUDOU A ORDEM DO PELOTÃO: a Veritá de 21/Ago o põe em 3,8%, ATRÁS de Pablo Marçal, que estreia em nacional com 5,2%, e à frente de Caiado, com 3,3%. O mercado o mantém como terceiro colocado provável e a pesquisa põe outro nome nesse lugar: as duas leituras discordam de quem é o terceiro, e nenhuma delas se converte na outra."
+      "analise": "PREÇO em 2,65% (vol USD 10,56M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), com QUEDA de 1,50pp no dia, a maior do livro presidencial.\n\n🔴 O ponto gravado mais baixo de hoje, 3,40%, é o menor da série de 83 dias que começa em 31 de maio. Em 09 de junho o mesmo contrato pagava 17,90%.\n\nO contraste com o volume é o que dá peso ao movimento: ele acumula USD 10,56M, um dos maiores do livro, acima de Lula e de Flávio Bolsonaro. No contrato de 3º lugar do 1º turno ele ainda está à frente, 49,50% contra 46,00% de Ronaldo Caiado, mas por 3,50pp apenas.\n\nNas pesquisas o quadro é estável: 4% na Datafolha de 21 de agosto e 3,8% na Veritá do mesmo dia."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO para todo o pelotão, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC): Pablo Marçal 0,15% (vol USD 2,23M), Ronaldo Caiado 0,35% (vol USD 6,43M), Romeu Zema 0,15% (vol USD 5,81M), Fernando Haddad 0,05% (vol USD 7,28M) e Tarcísio 0,05% (vol USD 14,00M). ⚠️ Todos abaixo do piso de 0,5% que a dupla leitura confirma.",
-      "subtitle": "20/Ago, quinto dia de campanha: o movimento do pelotão foi todo para BAIXO no preço de vitória, e o nome que mais se moveu foi o que acabou de entrar na disputa.",
+      "header": "PREÇO para todo o pelotão, leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC): Ronaldo Caiado 0,35% (vol USD 6,44M), Romeu Zema 0,15% (vol USD 5,83M), Pablo Marçal 0,15% (vol USD 2,34M), Michelle Bolsonaro 0,15% (vol USD 10,11M) e Tarcísio de Freitas 0,05% (vol USD 14,00M).",
+      "subtitle": "Pelotão de trás na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Nenhum deles se moveu hoje, e todos estão na faixa em que o livro é fino demais para a trava de captura vigiar.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 0,35% (vol USD 6,43M acumulado, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC)), alta de 0,10pp | 3º lugar do 1º turno em 35,00% | ⚠️ abaixo do corte de 0,5% que a dupla leitura vigia | urna em vigor: Veritá de 21/Ago com 3,3% no 1º turno, atrás de Marçal e de Renan Santos",
+        "label": "CAIADO (PSD), Poly presidencial 0,35% (vol USD 6,44M acumulado, leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC)), sem variação no dia. No contrato de 3º lugar do 1º turno ele tem 46,00%, a 3,50pp de Renan Santos.",
         "fortes": "⭐ O contrato de 3º LUGAR dele está em 37,50%, contra 31,00% no fechamento de 12/Ago, uma alta de 6,50pp com quatro fechamentos seguidos em alta. Ou seja, o mercado o aproximou da POSIÇÃO enquanto afastava a VITÓRIA. Na urna ele segue com 4% na Quaest de 14/Ago e com a rejeição mais baixa do quadro, 35%. Abriu a campanha com missa na catedral de Goiânia e carreata por Goiás e pelo Entorno do Distrito Federal, segundo a Folha de S.Paulo e o G1, e disse que os Estados Unidos não mandam no Brasil, segundo o Times Brasil.",
         "fracos": "No preço de vitória ele caiu 0,45pp e passou a 0,60%, encostando no corte de 0,5%. ⚠️ A rejeição de 35% vem com desconhecimento alto declarado pela própria casa, e rejeição baixa com desconhecimento alto não é aceitação: significa que a maior parte do eleitorado ainda não formou opinião, e opinião não formada pode ir para os dois lados. O contraste dele segue sendo o maior do painel, com 4% a 5,7% de intenção declarada contra menos de 1% de preço de vitória."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,28M acumulado), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC), abaixo do corte de 0,5% | nenhuma nacional o testa para presidente",
+        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,28M acumulado), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sem variação. Na Datafolha de 21/Ago ele lidera a corrida ao governo de São Paulo com 27% contra 45% de Tarcísio de Freitas, disputa estadual que não entra no painel nacional.",
         "fortes": "O volume acumulado dele segue maior que o de vários nomes com preço acima do dele, o que mantém o contrato com lastro de negociação apesar do preço no piso. Ele discursou no ato de abertura de campanha do presidente, no ABC, segundo O Globo.",
         "fracos": "⭐ A ressalva que o painel repetia como inferência virou FATO DATADO em 16/Ago: ele abriu formalmente campanha ao GOVERNO DE SÃO PAULO, segundo O Globo e o Times Brasil. Ou seja, ele não é candidato à Presidência, e qualquer cenário presidencial que o inclua é hipótese de pesquisa, não candidatura em curso. Nenhuma nacional da janela o testa. O preço caiu para 0,05%, e variação nessa faixa não tem valor informativo."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 5,81M acumulado, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC)), sem variação e abaixo do corte de 0,5% | 3º lugar do 1º turno em 4,90% | urna em vigor: Veritá de 21/Ago com 1,3% no 1º turno",
+        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 5,83M acumulado, leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC)), sem variação. A Datafolha de 21/Ago lhe dá 3% no 1º turno, o maior descolamento entre pesquisa e preço dentro do pelotão.",
         "fortes": "A Quaest de 14/Ago o mantém em 2% no 1º turno, o mesmo valor de 05/Ago, e seguem os 3% da BTG/Nexus e os 2,6% da Meio/Ideia. Ele foi o primeiro do pelotão a apresentar registro ao TSE, em 06/Ago. Abriu a campanha com missa em Montes Claros, no norte de Minas, com promessa de superpresídio e críticas a ministros do STF, segundo a Folha de S.Paulo e o Valor Econômico.",
         "fracos": "🔴 O recorte de firmeza da Quaest divulgado em 15/Ago aponta que ele tem o ELEITORADO MENOS CONVICTO do quadro, segundo o G1, o que é um dado sobre a solidez do apoio dele e não sobre o tamanho. No preço ele caiu 0,20pp e passou a 0,15%, abaixo do corte de 0,5%. No contrato de 3º lugar ele tem 5,00%, muito atrás dos 53,00% do primeiro do pelotão."
       },
-      "analise": "⭐ O PELOTÃO TEVE O MOVIMENTO MAIS RELEVANTE DO DIA, e ele é de PABLO MARÇAL. ⚠️ O registro dele NÃO é fato novo: o PRTB protocolou em 15/Ago, prazo final, e o painel já registrou isso. O que muda em 20/Ago é o cerco: o TSE concedeu liminar proibindo o uso de recursos oficiais na campanha dele (TSE, 20/Ago), e em 19/Ago o Ministério Público Eleitoral pediu ao TSE que a candidatura seja indeferida e que ele fique fora dos debates (Folha, 19/Ago). O TSE também concedeu liminar proibindo o uso de recursos oficiais na campanha dele (TSE, 20/Ago). 📉 O preço acompanhou: de 0,75% em 19/Ago para 0,25% na leitura de hoje. ⚠️ RESSALVA DE MÉTODO: 0,25% está abaixo do piso de 0,5% que a trava de captura vigia, então é leitura de book e não preço confirmado. A série dele tem só 6 leituras, todas entre 0,60% e 1,10%, e começa em 17/Ago. 📌 RONALDO CAIADO cedeu de 0,55% para 0,35%, e no contrato de 3º lugar está em 34,50%, atrás dos 55,50% de Renan Santos. ROMEU ZEMA repetiu 0,15% e FERNANDO HADDAD repetiu 0,05%.",
+      "analise": "PREÇO do pelotão na leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC): Ronaldo Caiado 0,35% (vol USD 6,44M), Romeu Zema 0,15% (vol USD 5,83M), Pablo Marçal 0,15% (vol USD 2,34M), Michelle Bolsonaro 0,15% (vol USD 10,11M) e Tarcísio de Freitas 0,05% (vol USD 14,00M). Nenhum se moveu hoje.\n\nO contraste que vale registrar é entre volume e preço. Tarcísio de Freitas tem o maior volume individual do livro presidencial, USD 14,00M, e está precificado em 0,05%. Michelle Bolsonaro tem USD 10,11M em 0,15%. Volume acumulado mede quanto dinheiro passou pelo contrato desde a abertura, não a probabilidade que o mercado atribui hoje, e esses dois casos mostram a diferença de forma clara.\n\nCaiado é o único do pelotão com posição relevante em outro mercado: 46,00% no contrato de 3º lugar do 1º turno, a 3,50pp de Renan Santos.",
       "fortes": [
-        "⭐ CAIADO SUBIU NO CONTRATO DE POSIÇÃO: o 3º lugar do 1º turno foi de 37,50% para 38,50%, e a distância dele para o primeiro daquele book fechou de 15,50pp para 14,00pp.",
-        "Na Nexus/BTG de 17/Ago, Caiado tem 5% no 1º turno, ACIMA dos 4% de Renan Santos, invertendo a ordem que o mercado precifica.",
-        "Zema tem 4% na mesma Nexus/BTG, empatado com Renan Santos dentro da margem de 2pp.",
-        "A campanha do segundo colocado tratou Caiado como problema no mesmo dia: Kassab disse que a campanha dele está preocupada com Caiado, segundo o Estadão.",
-        "⭐ O CERCO A PABLO MARÇAL APERTOU, e o registro dele não é o fato novo: foi protocolado em 15/Ago. Em 19/Ago o Ministério Público Eleitoral pediu ao TSE que a candidatura seja indeferida e que ele fique fora dos debates (Folha, 19/Ago), e em 20/Ago o TSE concedeu liminar proibindo o uso de recursos oficiais na campanha dele (TSE, 20/Ago). 📉 No preço ele caiu de 0,75% para 0,25% (vol USD 2,04M acumulado). ⚠️ Está abaixo do corte de 0,5% e a série dele tem 6 leituras, todas entre 0,60% e 1,10%, desde 17/Ago. Ele segue INELEGÍVEL até 2032 e o registro pende de decisão do TSE. A Datafolha de 21/Ago é a primeira a medi-lo."
+        "Ronaldo Caiado tem 46,00% no contrato de 3º lugar do 1º turno, a 3,50pp de Renan Santos, apesar de estar em 0,35% no presidencial. Os dois mercados contam histórias diferentes sobre ele.",
+        "A Datafolha de 21/Ago lhe dá 5% no 1º turno, à frente de Renan Santos, que aparece com 4%.",
+        "Tarcísio de Freitas acumula USD 14,00M, o MAIOR volume individual do livro presidencial, mesmo precificado em 0,05%. Volume alto com preço baixo mede interesse, não probabilidade.",
+        "Michelle Bolsonaro acumula USD 10,11M em 0,15%, outro caso de volume grande com preço mínimo."
       ],
       "fracos": [
-        "🔻 Caiado CAIU de novo no contrato de vitória, de 0,55% para 0,35%, e agora está ABAIXO do corte de 0,5% que a dupla leitura vigia. No contrato de 3º lugar ele está em 34,50%, atrás dos 55,50% de Renan Santos.",
-        "Zema segue em 0,25%, abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
-        "Os dois contratos de vitória do pelotão estão em patamar em que a variação de um centésimo já muda o percentual relativo, e o painel trata isso como forma, não como sinal.",
-        "Kassab, que é vice na chapa de Caiado, disse publicamente que ele tem chance zero na eleição, e depois afirmou que foi mal interpretado, segundo Folha de S.Paulo e Estadão.",
-        "Zema abriu a semana com promessa de superpresídio e críticas a ministros do STF, e segue sem tradução disso em preço, com 4,95% no contrato de 3º lugar."
+        "Todos abaixo do piso de 0,5% da trava de captura, exceto por margem estreita. Nomes nessa faixa entram como registro e não como sinal, porque livro fino oscila sem que a disputa mude.",
+        "Romeu Zema teve 3% na Datafolha de 21/Ago e está em 0,15% no preço, uma distância entre pesquisa e mercado que nenhum outro nome do pelotão apresenta nesse tamanho.",
+        "A Veritá de 21/Ago dá 3,3% a Caiado, abaixo dos 5% da Datafolha. As duas casas discordam sobre o pelotão tanto quanto sobre os primeiros colocados.",
+        "Pablo Marçal aparece com 2% na Datafolha e 5,2% na Veritá, e o preço dele é 0,15%. É o maior descolamento entre as duas pesquisas dentro do pelotão."
       ]
     }
   ],
@@ -111,8 +108,8 @@
     {
       "n": "Lula (PT)",
       "p": "⭐⭐ DUAS NACIONAIS NO MESMO DIA. A Datafolha (n=2.058, campo 18 a 20/Ago, confiabilidade 5) lhe dá 39% no 1º turno e 47% no 2º, contra 43%. A Veritá (n=3.840, campo 16 a 20/Ago, confiabilidade 2) também lhe dá 39,3% no 1º turno, mas mede EMPATE de 0,2 ponto e INVERTE o 2º turno, com ele em 42% contra 47,3%. As duas concordam sobre ele e discordam sobre a distância.",
-      "m": "62,50% (vol USD 8,83M), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Queda de 1,00pp, e ele volta a perder preço.",
-      "t": "➖ QUEDA de 1,00pp, para 62,50%. A distância para o segundo colocado encurtou mais 0,20pp e foi a 29,05pp, no SEXTO dia seguido de aproximação, somando 8,00pp desde 16/Ago. 🔑 Dos 8,00pp, 4,00pp saíram dele e 4,00pp vieram do adversário: o encurtamento ficou simétrico, metade de cada lado.",
+      "m": "62,50% (vol USD 8,86M), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Sem variação em relação à leitura de ontem. Na série de 83 dias, que começa em 31/Mai, o topo dele é 66,50%, medido em 16/Ago, e o piso é 39,50%, de 02/Jun.",
+      "t": "estável no dia, quatro pontos abaixo do topo da série",
       "s": "Quinto dia de campanha oficial, a 45 dias do 1º turno. O caso do filho dele ganhou duas camadas em 20/Ago: a PGR contestou parte da conclusão da PF, segundo o Estadão, e ele processou o adversário por vídeo feito com inteligência artificial, segundo O Globo.",
       "pc": "#DC2626",
       "mc": ""
@@ -120,8 +117,8 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "⭐⭐ DUAS NACIONAIS NO MESMO DIA, E É NELE QUE ELAS DISCORDAM. A Datafolha lhe dá 32% no cenário com Marçal e 33% sem ele, e 43% no 2º turno contra 47%. A Veritá lhe dá 39,1% no 1º turno, a 0,2 ponto do líder, e 47,3% no 2º turno contra 42%. Mais de 6 pontos de diferença no 1º turno e mais de 9 no returno, com campos sobrepostos.",
-      "m": "33,45% (vol USD 8,76M), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Alta de 0,20pp, quinto dia encurtando.",
-      "t": "🔺 ALTA de 0,20pp, de 32,85% para 33,45%, sexto dia seguido encurtando a distância. ⛔ Não é recorde: na série de 174 leituras desde 23/Mai, só 2 marcam 33,45% ou acima, e as duas são 33,20%, de 02/Jun e 18/Ago. ⚠️ Não há leitura nova confirmada em 21/Ago para o contrato de 2º lugar, que segue em 87,50% desde 20/Ago.",
+      "m": "33,35% (vol USD 8,78M), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Queda de 0,10pp no dia. O ponto gravado mais alto de hoje, 33,80%, é o maior da série de 83 dias iniciada em 31/Mai, acima do recuo a 22,00% de 03/Jul.",
+      "t": "no ponto mais alto da série de 83 dias",
       "s": "Ele elogiou Pablo Marçal, \"cara do bem, preparado e bem-intencionado\", segundo o Estadão de 20/Ago, no mesmo dia em que o Ministério Público pediu ao TSE que barrasse a candidatura do outro. E disse olhar para o STF \"com nojo\", falando em ser presidente de transição, segundo a Folha.",
       "pc": "#2563EB",
       "mc": ""
@@ -129,8 +126,8 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "⭐⭐ DUAS NACIONAIS NO MESMO DIA, e as duas o põem no pelotão de trás: 4% na Datafolha e 3,8% na Veritá. A Datafolha o coloca atrás de Ronaldo Caiado, que tem 5%; a Veritá o coloca à frente de Caiado, que tem 3,3%, e atrás de Pablo Marçal, que tem 5,2%.",
-      "m": "4,15% (vol USD 10,50M), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Queda de 0,15pp. No 3º lugar, 55,50%.",
-      "t": "🔻 QUEDA de 0,15pp, de 4,45% para 4,15%. No contrato de 3º LUGAR segue em 55,50%, contra 38,00% de Ronaldo Caiado, que subiu 0,50pp. O topo da série dele é 17,90%, de 09/Jun.",
+      "m": "2,65% (vol USD 10,56M), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Queda de 1,50pp no dia, a maior do livro. O ponto gravado mais baixo de hoje, 3,40%, é o menor da série de 83 dias, contra 17,90% em 09/Jun. Ele segue com um dos maiores volumes individuais do livro.",
+      "t": "no ponto mais baixo da série de 83 dias",
       "s": "📌 A divergência sobre o terceiro lugar mudou de forma, e não desapareceu. O mercado paga 55,50% nele contra 35,00% em Caiado, e a Veritá de 21/Ago põe os dois ATRÁS de Pablo Marçal, que tem 5,2% contra 3,8% dele e 3,3% de Caiado. Preço e urna seguem discordando de quem é o terceiro, agora com um terceiro nome na conta.",
       "pc": "#F59E0B",
       "mc": ""
@@ -138,8 +135,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "⭐⭐ DUAS NACIONAIS NO MESMO DIA, e elas discordam sobre ele: 5% na Datafolha, que o mantém à frente de Renan Santos, e 3,3% na Veritá, que o põe atrás de Renan e de Marçal.",
-      "m": "0,35% (vol USD 6,43M), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Abaixo do piso de 0,5% da dupla leitura. No 3º lugar, 35,00%.",
-      "t": "🔺 ALTA de 0,10pp, de 0,35% para 0,45%, ainda ABAIXO do corte de 0,5% que a dupla leitura vigia. Nessa faixa a variação é leitura de livro e não sustenta tendência. No contrato de 3º lugar subiu 0,50pp, para 35,00%.",
+      "m": "0,35% (vol USD 6,44M), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Sem variação. Abaixo do piso de 0,5% da trava de captura, então o preço dele não é vigiado pela confirmação de duas leituras e entra aqui apenas como registro.",
+      "t": "estável, abaixo do piso de vigilância",
       "s": "A inversão entre os dois instrumentos continua, com o sinal trocado em relação à semana passada: na urna ele caiu de 5% para 3,3% e passou a figurar atrás de Renan Santos e de Marçal, enquanto no contrato de 3º lugar o preço dele SUBIU para 35,00%.",
       "pc": "#16A34A",
       "mc": ""
@@ -147,8 +144,8 @@
     {
       "n": "Pablo Marçal (PRTB)",
       "p": "⭐⭐ MEDIDO PELAS DUAS NACIONAIS DO DIA, COM RESULTADOS DIFERENTES: 2% na Datafolha, no cenário com ele, e 5,2% na Veritá. A Datafolha traz dois cenários e a diferença entre eles é ele mesmo: com Marçal, o segundo colocado tem 32%; sem Marçal, 33%.",
-      "m": "0,15% (vol USD 2,23M), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC). Abaixo do piso de 0,5% da dupla leitura. Série de 7 leituras, desde 17/Ago.",
-      "t": "🔻 QUEDA de 0,10pp, de 0,25% para 0,15%, abaixo do corte de 0,5%. ⚠️ A série dele começa em 17/Ago e é curta demais para tendência.",
+      "m": "0,15% (vol USD 2,34M), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Sem variação. Abaixo do piso de 0,5% da trava de captura.",
+      "t": "estável, abaixo do piso de vigilância",
       "s": "🔴 A MAIOR DISTÂNCIA ENTRE OS DOIS INSTRUMENTOS DO PAINEL ESTÁ NELE. A urna o coloca em terceiro com 5,2% e o preço o coloca em sétimo com 0,15%. ⛔ As duas grandezas não se subtraem, porque intenção de voto e probabilidade de vencer medem coisas diferentes, e o preço dele está abaixo do piso que a dupla leitura confirma. O que o painel registra é a ordem oposta, não um número de diferença. Fora disso, o cerco judicial de 19 e 20/Ago segue sem desfecho.",
       "pc": "#0EA5E9",
       "mc": ""
@@ -156,12 +153,12 @@
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,35% (vol USD 84 mil), leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC).",
-      "t": "➖ SEM VARIAÇÃO em 21/Ago, em 3,35%. 📌 O livro acumula USD 84 mil, e movimento dessa ordem nele não sustenta leitura de tendência.",
+      "m": "3,35% (vol USD 84 mil), leitura confirmada de 22/Ago, 16:40 BRT (19:40 UTC). Sem variação.",
+      "t": "estável",
       "s": "Contrato de impeachment de ministro do STF antes de 2027, mantido no painel como termômetro institucional. Em 20/Ago o ministro André Mendonça decidiu nos dois lados da disputa, no STF e no TSE, e o contrato não se moveu por isso.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "⭐⭐ O DIA ENTREGOU DUAS NACIONAIS E ELAS DISCORDAM UMA DA OUTRA, QUE É EXATAMENTE O QUE ESTE PAINEL EXISTE PARA MOSTRAR. A DATAFOLHA (n=2.058, campo 18 a 20/Ago, registro BR-04496/2026, margem de 2pp, encomendada pela Globo e pela Folha) mede LULA 39% x FLÁVIO BOLSONARO 32% no cenário COM Pablo Marçal e 39% x 33% no cenário SEM ele, com MARÇAL em 2%. No 2º turno: LULA 47% x FLÁVIO 43%. A VERITÁ (n=3.840, campo 16 a 20/Ago, registro BR-04006/2026, margem de 2pp), divulgada horas antes no mesmo dia, mede LULA 39,3% x FLÁVIO 39,1%, empate de 0,2 ponto, e INVERTE o 2º turno: FLÁVIO 47,3% x LULA 42%. 🔴 SÃO MAIS DE 9 PONTOS DE DIFERENÇA NO RETURNO, entre dois institutos cujos campos se sobrepõem em três dias. ⚠️ A Datafolha tem confiabilidade 5 na régua da casa e a Veritá tem 2, e o painel publica as duas com a régua declarada, em vez de escolher a que confirma a leitura anterior. ⭐ E MARÇAL É MEDIDO PELAS DUAS, COM RESULTADOS DIFERENTES: 2% na Datafolha e 5,2% na Veritá, enquanto o preço paga 0,15% nele, abaixo do piso de 0,5% que a dupla leitura confirma. ⛔ As três grandezas não se somam nem se subtraem. NO PREÇO, leitura confirmada de 21/Ago, 21:02 BRT (22/Ago, 00:02 UTC): LULA cedeu 1,00pp e foi a 62,50% (vol USD 8,83M) e FLÁVIO BOLSONARO subiu 0,20pp para 33,45% (vol USD 8,76M). A distância foi a 29,05pp, no SEXTO dia seguido de aproximação: eram 37,05pp em 16/Ago, 33,05pp em 17, 31,45pp em 18, 30,95pp em 19 e 30,65pp em 20, ou seja 8,00pp em seis dias. 🔑 A FONTE DO ENCURTAMENTO MUDOU NO MEIO: dos 8,00pp, 4,00pp saíram do líder e 4,00pp vieram do segundo colocado, metade de cada lado. ⛔ SEM SUPERLATIVO: 33,45% NÃO é recorde, e na série de 174 leituras desde 23/Mai só 2 marcam 33,45% ou acima, as duas em 33,20%. 📌 NO CONTRATO DE 3º LUGAR o mercado paga 55,50% em Renan Santos contra 35,00% em Ronaldo Caiado, e as duas pesquisas do dia põem os dois no pelotão de trás. ⚠️ Não há leitura nova confirmada em 21/Ago para o contrato de 2º lugar, que segue em 87,50% desde 20/Ago. No SENADO o PL está em 78,50% (vol USD 259 mil) e o contrato de impeachment de ministro do STF não se moveu, em 3,35% (vol USD 84 mil). 📊 Na mesma rodada da Datafolha, a rejeição é de 46% para Flávio e 45% para Lula, e a avaliação do governo é de 47% de aprovação contra 50% de desaprovação, ante 49% e 48% em julho."
+  "cruzamento": "O dia tem um movimento só, e ele é grande: Renan Santos caiu 1,50pp e fechou em 2,65%, a maior queda do livro presidencial. Na série de 83 dias que começa em 31 de maio, o ponto mais baixo dele já registrado é o de hoje. Em 09 de junho o mesmo contrato pagava 17,90%.\n\nNo sentido oposto, o ponto gravado mais alto de Flávio Bolsonaro hoje, 33,80%, é o maior da mesma série de 83 dias. O preço ao vivo do fim da tarde recuou para 33,35%, dez centésimos abaixo de ontem, mas a marca do dia fica registrada. Lula não se moveu: 62,50%, os mesmos de ontem, e quatro pontos abaixo do topo de 66,50% que ele marcou em 16 de agosto. A distância entre os dois primeiros está em 29,15pp.\n\nO contrato de terceiro lugar é onde a queda de Renan aparece com outra roupa: ele tem 49,50% e Ronaldo Caiado tem 46,00%, uma diferença de 3,50pp entre dois nomes que no mercado presidencial estão separados por 2,30pp. O mesmo mercado que tirou preço de Renan na disputa principal ainda o mantém à frente na disputa pelo terceiro lugar, e por margem estreita.\n\nDo lado das pesquisas não há número novo. A Datafolha de 21 de agosto e a Veritá do mesmo dia seguem sendo as duas nacionais mais recentes publicadas, e elas discordam: a Datafolha dá 39% a Lula e 33% a Flávio no primeiro turno, com Lula ganhando o segundo por 47% a 43%; a Veritá inverte o segundo turno. Cinco nacionais estão registradas no TSE com divulgação prevista entre 24 e 27 de agosto, entre elas a PoderData registrada hoje e a JOTA Jornalismo com amostra de 6.000. Registro no TSE é obrigatório e anterior à divulgação, então nenhuma delas tem número ainda.\n\nO que a imprensa fez hoje foi repercutir a Datafolha de ontem, com 164 títulos distintos na coleta do dia. Não houve fato novo de mercado nem pesquisa nacional publicada."
 }
