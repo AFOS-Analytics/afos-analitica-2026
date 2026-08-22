@@ -61,7 +61,29 @@ export async function GET(request: Request) {
       })),
     }, {
       headers: {
-        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+        // 🔴 CORRIGIDO 22/Ago/2026. Estava `public, s-maxage=300,
+        // stale-while-revalidate=600`, e o defeito é o que FALTAVA: `s-maxage`
+        // só vale para cache COMPARTILHADO. Sem `max-age`, o navegador não
+        // recebe prazo nenhum e decide por heurística própria, enquanto o
+        // `public` autoriza explicitamente qualquer cache a guardar, incluindo
+        // proxy corporativo e navegador de máquina compartilhada.
+        //
+        // Por que isso importa NESTA rota e não é purismo: ela devolve o texto
+        // livre do TSE, e em 22/Ago ela estava servindo 2 CPFs válidos. Depois
+        // de redigir no banco, a leitura pública continuou entregando o CPF por
+        // mais alguns minutos, de cache. Cache sem prazo no cliente transforma
+        // "corrigido agora" em "corrigido quando o navegador resolver".
+        //
+        // `max-age=0` + `must-revalidate`: o navegador sempre confere antes de
+        // reusar. A CDN segue cacheando 5 min, que é o que dá o ganho real, e
+        // uma correção na origem passa a valer em minutos e não em heurística.
+        // Mesma forma já usada em /api/afos-daily/latest.
+        'Cache-Control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=600, must-revalidate',
+        // A casa declara o cache de CDN em cabeçalho PRÓPRIO (ver
+        // app/lib/cache/headers.ts). Sem eles, a Vercel deriva do Cache-Control
+        // e o `max-age=0` acima poderia encurtar o cache de borda sem querer.
+        'CDN-Cache-Control': 'max-age=300, stale-while-revalidate=600',
+        'Vercel-CDN-Cache-Control': 'max-age=300, stale-while-revalidate=600',
         'X-Content-Type-Options': 'nosniff',
       },
     })
