@@ -1,144 +1,80 @@
 /**
- * ingest-tse-local.ts — ingere o ZIP oficial de pesquisas do TSE a partir de um
- * arquivo LOCAL, quando a coleta automática não consegue alcançar o CDN.
+ * Ingestão das pesquisas do TSE rodando NA MÁQUINA, e não na nuvem.
  *
- * Uso:
- *   npx tsx scripts/ingest-tse-local.ts caminho/para/pesquisa_eleitoral_2026.zip
- *   npx tsx scripts/ingest-tse-local.ts <arquivo> --apply     # grava no Neon
+ * 🔴 POR QUE ELE EXISTE (22/Ago/2026): o TSE pôs proteção anti-robô em toda a
+ * propriedade e devolve 403 para qualquer cliente vindo de faixa de DATACENTER.
+ * O cron `/api/cron/refresh-polls` roda na Vercel e o espelho roda no GitHub
+ * Actions, então os dois apanham. Medido: último sucesso em 18/Ago 18:02 UTC,
+ * 403 constante desde 19/Ago 00:50 UTC.
  *
- * 🔴 POR QUE ISTO EXISTE. Em 18/Ago/2026 às 18h02 o CDN do TSE passou a
- * responder 403 na borda da Akamai, e a ingestão diária parou. Medido: o 403
- * atinge todo host do TSE atrás de `*.edgesuite.net` (`cdn`, `www`,
- * `dadosabertos`, `divulgacandcontas`) e também os TREs, enquanto
- * `sig.tse.jus.br`, que não está atrás da CDN, responde normalmente.
+ * ⭐ E o corte NÃO é entre humano e robô, como se registrou primeiro. Do IP de
+ * uma casa o cliente do Node PASSA e baixa o ZIP inteiro; o `curl` apanha de
+ * qualquer lugar. O que decide é a origem de rede somada à assinatura do
+ * cliente. Por isso este script existe: mesma lógica, outra origem.
  *
- * ⛔ ISTO NÃO É CONTORNO DE BLOQUEIO, e a distinção importa:
- *   - o arquivo é o MESMO ZIP oficial, baixado do Portal de Dados Abertos;
- *   - quem baixa é uma PESSOA, com navegador, que é o uso previsto do portal;
- *   - nada aqui disfarça agente, troca origem ou repete tentativa.
- * O que muda é apenas QUEM foi até o arquivo. O dado e a procedência são os
- * mesmos, e por isso o parser e o persist também são os mesmos: um segundo
- * caminho de gravação seria duas cópias da mesma regra.
+ * ⛔ NÃO forja user-agent, e isso não se negocia. Ele usa o `fetch` do Node como
+ * está, que é o mesmo cliente do cron. A única diferença é de onde a chamada sai.
  *
- * 📌 `runType` sai como `tse_manual` de propósito, para a trilha registrar como
- * a linha entrou. Não é para distinguir a FONTE, que continua sendo o TSE.
+ * 📧 NÃO dispara o alerta de pesquisa nacional nova, de propósito. A rota do
+ * cron dispara a cada rodada, com uma pesquisa ou duas; aqui há dias represados,
+ * e mandar tudo de uma vez seria enxurrada na caixa do assinante. Quem decide
+ * isso é o André, não este script.
+ *
+ * Rodar:  npx tsx scripts/ingest-tse-local.ts [--ensaio]
+ *   --ensaio  baixa e conta, sem escrever nada no banco
  */
-
 import { config } from 'dotenv'
 config({ path: '.env.local' })
-config({ path: '.env' })
 
-import { readFileSync, existsSync, statSync } from 'fs'
-import { basename } from 'path'
-import { parseTSEZipBytes, filterRecentPolls, detectScope } from '../lib/tse/ingest'
-import type { TSEPoll } from '../lib/tse/ingest'
+import { fetchTSEPolls } from '../lib/tse/ingest'
+import { acharCpf } from './lib/cpf.mjs'
 
-// 🔴 `lib/tse/persist` importa `lib/db`, que resolve a DATABASE_URL NO MOMENTO
-// EM QUE É CARREGADO. Importado no topo, ele carrega antes do dotenv rodar e o
-// prisma nasce nulo. E `persistPolls` devolve `{inserted: 0, skipped: 0}` quando
-// não há banco, ou seja: com `--apply` o script imprimiria "✅ 0 inserida(s)" e
-// NÃO GRAVARIA NADA, reportando sucesso. Pego no primeiro ensaio, pela linha
-// "[db] DATABASE_URL não configurada" que apareceu ANTES do dotenv.
-// Por isso o import é dinâmico, depois do config() acima.
-async function carregarPersist() {
-  return (await import('../lib/tse/persist')).persistPolls
-}
+// ⚠️ `lib/tse/persist` puxa `lib/db`, que cria o cliente do Prisma NO MOMENTO DO
+// IMPORT. Import estático é içado para antes de qualquer linha deste arquivo,
+// inclusive do `config()` do dotenv, e o cliente nascia sem `DATABASE_URL`:
+// "banco indisponível", e o `persistPolls` devolveria 0 inserções SEM ERRO.
+// Carga tardia, depois do env montado. Pego no ensaio, que é para isso que ele
+// serve.
+const carregarPersist = () => import('../lib/tse/persist')
 
-const ANO = 2026
-
-// ⚠️ `classifyScope` recebe TRÊS campos e devolve `{scope, source}`; `detectScope`
-// devolve só a string. Passar o objeto da pesquisa inteiro não dá erro: cai em
-// 'unknown' e o contador de nacionais zera CALADO. Ver a mesma família de defeito
-// em feedback_loader_descarta_bloco_com_campo_errado_em_silencio.
-const ehNacional = (p: TSEPoll) =>
-  detectScope(p.metodologia, p.planoAmostral, p.dadoMunicipio) === 'national'
+const ENSAIO = process.argv.includes('--ensaio')
 
 async function main() {
-  const args = process.argv.slice(2)
-  const caminho = args.find(a => !a.startsWith('--'))
-  const aplicar = args.includes('--apply')
+  console.log(ENSAIO ? '🧪 ENSAIO: nada será escrito no banco' : '💾 ingestão real')
+  console.log('⬇️  baixando do TSE…')
+  const polls = await fetchTSEPolls(2026)
+  console.log(`   TSE devolveu ${polls.length} pesquisas presidenciais`)
 
-  if (!caminho) {
-    console.error('❌ Falta o caminho do ZIP.\n   npx tsx scripts/ingest-tse-local.ts pesquisa_eleitoral_2026.zip [--apply]')
-    process.exit(1)
+  // 🆔 Conferência de CPF ANTES de gravar. A redação vive no persist, na origem;
+  // esta contagem existe para o número aparecer no relatório em vez de ficar
+  // implícito. Trava que age calada não deixa ninguém saber que agiu.
+  let comCpf = 0
+  for (const p of polls) {
+    const alvo = `${p.metodologia ?? ''}\n${p.planoAmostral ?? ''}\n${p.controlSystem ?? ''}\n${p.estatistico ?? ''}`
+    if (acharCpf(alvo).length) comCpf++
   }
-  if (!existsSync(caminho)) {
-    console.error(`❌ Arquivo não encontrado: ${caminho}`)
-    process.exit(1)
-  }
+  console.log(`   com CPF no texto livre da origem: ${comCpf} (serão redigidos pelo persist)`)
 
-  const info = statSync(caminho)
-  console.log(`\n📦 ${basename(caminho)}  ${(info.size / 1024 / 1024).toFixed(2)} MB  modificado ${info.mtime.toISOString()}`)
-
-  // ⚠️ Portal de erro devolve HTML com extensão .zip quando alguém salva a
-  // página de 403 por engano. Vale conferir a assinatura antes de culpar o parser.
-  const bytes = readFileSync(caminho)
-  if (!(bytes[0] === 0x50 && bytes[1] === 0x4b)) {
-    console.error('❌ Isto não é um ZIP (faltam os bytes "PK" no início).')
-    console.error('   Se você salvou a página do navegador em vez do arquivo, baixe de novo pelo link do conjunto de dados.')
-    process.exit(1)
-  }
-
-  let polls
-  try {
-    polls = await parseTSEZipBytes(bytes, ANO)
-  } catch (err) {
-    console.error(`❌ Falha ao ler o ZIP: ${err instanceof Error ? err.message : String(err)}`)
-    process.exit(1)
-  }
-
-  const recentes = filterRecentPolls(polls, 15)
-  const nacionais = polls.filter(ehNacional)
-
-  console.log(`\n📊 Presidenciais no arquivo: ${polls.length}`)
-  console.log(`   últimos 15 dias: ${recentes.length}  |  escopo nacional: ${nacionais.length}`)
-
-  // 🔒 Portão de colapso, mesma régua do /atualizar-pesquisas-brz: arquivo que
-  // volta vazio ou quase vazio não sobrescreve base boa.
-  if (polls.length === 0) {
-    console.error('\n❌ ZERO pesquisas presidenciais. NÃO gravar. Conferir se o ZIP é o do ano certo.')
-    process.exit(1)
-  }
-
-  const maisRecente = polls.map(p => p.campoFim).filter(Boolean).sort().pop()
-  console.log(`   campo mais recente no arquivo: ${maisRecente}`)
-
-  const novas = recentes
-    .filter(ehNacional)
-    .sort((a, b) => (b.divulgacao || '').localeCompare(a.divulgacao || ''))
-    .slice(0, 12)
-  if (novas.length) {
-    console.log('\n🗳️  Nacionais recentes no arquivo:')
-    for (const p of novas) {
-      console.log(`   ${p.divulgacao}  ${(p.institutoFantasia || p.instituto).slice(0, 34).padEnd(34)} campo ${p.campoInicio} a ${p.campoFim}  n=${p.amostra}  ${p.protocolo}`)
-    }
-  }
-
-  if (!aplicar) {
-    console.log('\n🔵 ENSAIO: nada foi gravado. Repita com --apply para persistir no Neon.')
+  if (ENSAIO) {
+    const protos = polls.slice(0, 3).map((p) => p.protocolo).join(', ')
+    console.log(`   amostra de protocolos: ${protos}`)
+    console.log('🧪 ensaio encerrado, nada gravado.')
     return
   }
 
-  // 🔒 Sem banco, PARAR. Não deixar o persist devolver zero e isso passar por sucesso.
-  if (!process.env.DATABASE_URL) {
-    console.error('\n❌ DATABASE_URL ausente. Sem banco o persist devolve 0 e pareceria sucesso. Nada foi gravado.')
-    process.exit(1)
-  }
-
-  console.log('\n💾 Gravando...')
-  const persistPolls = await carregarPersist()
-  const { inserted, skipped } = await persistPolls(polls, 'tse_manual')
-  console.log(`✅ ${inserted} inserida(s), ${skipped} já existente(s).`)
-
-  // 🔒 Conferir que o número bate com o que se esperava gravar.
+  console.log('💾 gravando (idempotente por protocolo)…')
+  const { persistPolls } = await carregarPersist()
+  const { inserted, skipped } = await persistPolls(polls, 'tse_manual_local')
+  console.log(`✅ inseridas ${inserted} | já existentes ${skipped} | total lido ${polls.length}`)
   if (inserted === 0 && skipped === 0) {
-    console.error('❌ Zero inseridas E zero puladas com arquivo não vazio: o persist não viu o banco. Tratar como FALHA.')
+    // 🔴 Falha FECHADA: `persistPolls` devolve 0/0 quando o cliente do Prisma é
+    // nulo, e isso é indistinguível de "não havia nada novo" no relatório.
+    console.error('::error::0 inseridas E 0 existentes com ' + polls.length + ' lidas: o banco não respondeu. NÃO tratar como rodada sem novidade.')
     process.exit(1)
   }
-  console.log('\n📋 Depois disto: rodar /atualizar-brz para o painel refletir, se algo nacional entrou.')
 }
 
-main().catch(err => {
-  console.error(err)
+main().catch((e) => {
+  console.error('❌ falhou:', e?.message ?? e)
   process.exit(1)
 })

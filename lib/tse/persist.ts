@@ -12,6 +12,31 @@
 import { prisma } from '../db'
 import type { TSEPoll, PollScope } from './ingest'
 import { normalizeInstitute, classifyScope } from './ingest'
+import { redigirCpf } from '../../scripts/lib/cpf.mjs'
+
+/**
+ * 🆔 REDAÇÃO DE CPF NA ORIGEM, instalada 22/Ago/2026.
+ *
+ * 🔴 POR QUE ESTAVA FALTANDO AQUI: a redação de 04/Ago (ERR-2026-002) foi
+ * instalada no caminho do Hugging Face e no backup do Neon, e ninguém olhou o
+ * caminho de ESCRITA no banco. O TSE publica o CPF do estatístico responsável
+ * dentro do texto livre de `metodologia` e `planoAmostral`, e esses campos são
+ * gravados aqui e **servidos pela API pública** `/api/polls/tse`.
+ *
+ * Medido em 22/Ago/2026 antes desta trava: 8 registros com CPF no banco e
+ * **2 CPFs válidos sendo devolvidos pela API**, um deles na janela padrão de
+ * 15 dias. Público na origem não deixa de ser dado pessoal quando republicado.
+ *
+ * 🧩 Importa o PRIMITIVO ÚNICO (`scripts/lib/cpf.mjs`) em vez de reimplementar:
+ * duas cópias da mesma regra convivem até o dia em que uma é corrigida e a
+ * outra não, que foi exatamente como o CPF cru passou três meses no backup.
+ *
+ * ⚖️ CNPJ FICA (identifica empresa e dá auditabilidade) e o NOME do estatístico
+ * FICA (atuação profissional). Sai só o CPF.
+ */
+function semCpf(texto: string | null | undefined): string {
+  return redigirCpf(String(texto ?? '')).saida
+}
 
 /**
  * Pesquisa recém-inserida, com o escopo JÁ classificado.
@@ -104,11 +129,11 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
           divulgacao: poll.divulgacao,
           amostra: poll.amostra,
           valorPesquisa: poll.valorPesquisa,
-          estatistico: poll.estatistico,
+          estatistico: semCpf(poll.estatistico),
           conre: poll.conre,
-          metodologia: poll.metodologia,
-          planoAmostral: poll.planoAmostral,
-          sistemaControle: poll.controlSystem,
+          metodologia: semCpf(poll.metodologia),
+          planoAmostral: semCpf(poll.planoAmostral),
+          sistemaControle: semCpf(poll.controlSystem),
           dadoMunicipio: poll.dadoMunicipio,
         },
         normalizedPayload: {
@@ -128,11 +153,11 @@ export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_dail
           scopeSource: scopeClass.source,
           // campos públicos completos do TSE (Lei 9.504/97 art. 33), sem truncar
           cnpj: poll.cnpj,
-          statistician: poll.estatistico,
+          statistician: semCpf(poll.estatistico),
           conre: poll.conre,
-          methodology: poll.metodologia,
-          samplingPlan: poll.planoAmostral,
-          controlSystem: poll.controlSystem,
+          methodology: semCpf(poll.metodologia),
+          samplingPlan: semCpf(poll.planoAmostral),
+          controlSystem: semCpf(poll.controlSystem),
         },
         language: 'pt-BR',
         countryCode: 'BRA',
