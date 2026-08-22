@@ -168,10 +168,33 @@ writeFileSync(join(OUT, 'DATA_DICTIONARY.md'), `# Data dictionary
 `)
 
 // ── README ─────────────────────────────────────────────────────────────────────
+// As 12 tabelas, declaradas. A primeira e a default da pagina, e por isso e a
+// camada de pesquisas: e a mais forte do bundle.
+const TABELAS = [
+  ['generic_ballot', 'polls/us-generic-ballot.csv'],
+  ['house_control', 'data/house-control.csv'],
+  ['senate_control', 'data/senate-control.csv'],
+  ['election_as_scheduled', 'data/election-as-scheduled.csv'],
+  ['house_seats_distribution', 'data/house-seats-distribution.csv'],
+  ['senate_seats_distribution', 'data/senate-seats-distribution.csv'],
+  ['governors_distribution', 'data/governors-distribution.csv'],
+  ['turnout_distribution', 'data/turnout-distribution.csv'],
+  ['popular_vote_margin_distribution', 'data/popular-vote-margin-distribution.csv'],
+  ['texas_senate_primary', 'data/texas-senate-primary.csv'],
+  ['distribution_coherence', 'data/distribution-coherence.csv'],
+  ['press_timeline', 'press/us-press-timeline.csv'],
+]
+const yamlConfigs = TABELAS.map(
+  ([nome, caminho]) =>
+    `  - config_name: ${nome}\n    data_files:\n      - split: train\n        path: ${caminho}`
+).join('\n')
+
 writeFileSync(join(OUT, 'README.md'), `---
 license: cc-by-4.0
 language: [en, pt, es]
 tags: [elections, prediction-markets, polling, united-states, midterms-2026, divergence]
+configs:
+${yamlConfigs}
 ---
 
 ![AFOS — US 2026 Midterms Divergence](banner.png)
