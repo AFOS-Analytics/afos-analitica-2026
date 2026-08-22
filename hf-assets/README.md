@@ -16,6 +16,41 @@ tags:
 - divergence
 - civic-tech
 - open-data
+# As tabelas navegaveis, declaradas uma a uma. Sem esta lista o visualizador do
+# HF tenta empilhar TODOS os arquivos num split unico, esbarra no datapackage.json
+# (que e metadado, nao dado) e derruba a pagina inteira: medido em 22/Ago/2026,
+# os cinco indicadores em false e 0 de 2,5 MB servidos. A primeira entrada e a que
+# a pagina ABRE, e por isso e a serie de divergencia, que e a identidade do bundle.
+# ⚠️ `polls/sample-demographics.csv` fica de fora enquanto estiver sem linhas.
+configs:
+  - config_name: divergence_daily
+    data_files:
+      - split: train
+        path: data/divergence-daily-timeseries.csv
+  - config_name: divergence_by_poll
+    data_files:
+      - split: train
+        path: data/divergence-timeseries.csv
+  - config_name: poll_divergence
+    data_files:
+      - split: train
+        path: data/poll-divergence.csv
+  - config_name: market_odds
+    data_files:
+      - split: train
+        path: data/market-odds-timeseries.csv
+  - config_name: polls_first_round
+    data_files:
+      - split: train
+        path: polls/national-poll-results-firstround.csv
+  - config_name: polls_second_round
+    data_files:
+      - split: train
+        path: polls/national-poll-results-secondround.csv
+  - config_name: tse_registry
+    data_files:
+      - split: train
+        path: polls/tse-registry.csv
 ---
 
 ![AFOS — Brazil 2026 Electoral Divergence](banner.png)

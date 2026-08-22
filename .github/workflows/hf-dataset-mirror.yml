@@ -121,13 +121,17 @@ jobs:
             --repo-type=dataset \
             --commit-message "daily mirror — ${DATE}"
 
-      - name: CHECKSUMS.txt (manifesto SHA-256 da arvore publicada)
+      - name: Consolidado diario + CHECKSUMS.txt (sobre a arvore publicada)
         # ⚠️ RODA DEPOIS DO UPLOAD, e nao sobre o staging, de proposito. O staging
         # traz ~206 arquivos e o dataset publicado tem ~366: um manifesto feito
         # sobre o staging cobriria pouco mais da metade e daria impressao de
         # cobrir tudo. Num dataset VIVO, manifesto incompleto ou velho e pior que
         # manifesto ausente, porque quem confere o hash conclui que houve
         # adulteracao. Por isso ele e regerado a cada espelhamento.
+        #
+        # O mesmo passo une as fatias `data/divergence-AAAA-MM-DD.csv` numa serie
+        # unica, e roda aqui pelo mesmo motivo: o staging tem so a fatia do dia.
+        # As fatias NAO sao reescritas, o consolidado e aditivo.
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python scripts/hf-mirror-brazil.py checksums
