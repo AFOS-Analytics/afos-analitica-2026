@@ -10,6 +10,44 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '../../../../lib/db'
 
+/**
+ * 🔴 LISTA BRANCA do `normalizedPayload`, instalada 22/Ago/2026.
+ *
+ * Antes daqui a rota fazia `...(f.normalizedPayload || {})`, espalhando o objeto
+ * INTEIRO. **Foi esse espalhamento que pôs CPF no ar:** o `samplingPlan` passou
+ * a ser gravado com o texto livre do TSE e virou campo público da API sem que
+ * nenhuma linha de código dissesse "sirva o plano amostral". O campo não foi
+ * exposto por decisão, foi exposto por ausência de decisão.
+ *
+ * 🔑 A régua: o que a API publica é ESCOLHA declarada, não consequência de onde
+ * o dado foi parar. Campo novo no payload não aparece aqui sozinho; alguém
+ * precisa acrescentá-lo nesta lista, e nesse momento pensa se deve.
+ *
+ * ⚖️ Esta lista tem EXATAMENTE os 18 campos que a rota já servia em 22/Ago,
+ * conferidos contra os 708 registros do banco. Nada foi removido de propósito:
+ * a correção é do mecanismo, não do conteúdo, e tirar campo é outra decisão.
+ * `ownPoll` e `tseEnrichedFrom` só existem em 350 registros e por isso não
+ * apareciam numa amostra pequena; estão aqui porque foram MEDIDOS, não vistos.
+ *
+ * ⚠️ Os quatro campos de texto livre do TSE (`methodology`, `samplingPlan`,
+ * `controlSystem`, `statistician`) continuam saindo, porque é deles que vem a
+ * auditabilidade do registro. Quem impede o CPF é a redação na ORIGEM, em
+ * lib/tse/persist.ts, não a omissão do campo.
+ */
+const CAMPOS_PUBLICOS = [
+  'institute', 'sampleSize', 'fieldStart', 'fieldEnd', 'publicationDate',
+  'registrationDate', 'cost', 'uf', 'scope', 'scopeSource',
+  'cnpj', 'statistician', 'conre', 'methodology', 'samplingPlan',
+  'controlSystem', 'ownPoll', 'tseEnrichedFrom',
+] as const
+
+function apenasPublicos(payload: unknown): Record<string, unknown> {
+  const p = (payload ?? {}) as Record<string, unknown>
+  const out: Record<string, unknown> = {}
+  for (const c of CAMPOS_PUBLICOS) if (c in p) out[c] = p[c]
+  return out
+}
+
 export async function GET(request: Request) {
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
@@ -57,7 +95,7 @@ export async function GET(request: Request) {
         confidence: f.confidenceScore,
         publicationDate: f.eventDate,
         ingestedAt: f.createdAt,
-        ...(f.normalizedPayload as Record<string, unknown> || {}),
+        ...apenasPublicos(f.normalizedPayload),
       })),
     }, {
       headers: {
