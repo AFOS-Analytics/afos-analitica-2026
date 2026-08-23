@@ -19,6 +19,11 @@
  * cartao fica desencontrado do painel em minutos. A trava de captura exclui
  * distribuicao exatamente por isso.
  *
+ * ⏰ O balde `R >= 51` oscila 0,10pp sozinho e arrasta a soma das faixas com
+ * ele. Nao adianta perseguir: o carimbo do cartao passou a declarar a HORA da
+ * leitura, e nao so o dia, porque e isso que torna o numero permanentemente
+ * verdadeiro em vez de desatualizado.
+ *
  * 🧩 UM CONTRATO POR CARTAO. A versao anterior punha a manchete tirada do
  * mercado de CADEIRAS e a barra tirada do binario de CONTROLE, que sao livros
  * diferentes. Como a tese do texto e que os dois DISCORDAM, o cartao entregava
@@ -168,9 +173,9 @@ const cartaoB = frame(`
   <div class="bar">
     <div class="d" style="flex:53.00">DEMOCRATS 53.00%</div>
     <div class="t" style="flex:12.50">TIE 12.50%</div>
-    <div class="r" style="flex:35.45">REPUBLICANS 35.45%</div>
+    <div class="r" style="flex:35.35">REPUBLICANS 35.35%</div>
   </div>
-  <div class="meta">Seat market, bands sum to 100.95% &middot; confirmed August 23, 2026</div>`, 'tight')
+  <div class="meta">Seat market, bands sum to 100.85% &middot; reading of August 23, 2026, 03:07 UTC</div>`, 'tight')
 
 const browser = await chromium.launch()
 const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
