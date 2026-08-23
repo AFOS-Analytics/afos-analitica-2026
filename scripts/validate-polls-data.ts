@@ -91,8 +91,12 @@ if (data.approvalData !== undefined) {
       } else {
         if (typeof ad.results.aprovacao !== 'number') errors.push(`approvalData.results.aprovacao: deve ser number`)
         if (typeof ad.results.desaprovacao !== 'number') errors.push(`approvalData.results.desaprovacao: deve ser number`)
-        const sum = (ad.results.aprovacao || 0) + (ad.results.desaprovacao || 0)
-        if (sum > 101 || sum < 99) warnings.push(`approvalData.results: aprovacao + desaprovacao = ${sum} (esperado ≈100)`)
+        // 23/Ago/2026: a soma ignorava `naoSabe`, que EXISTE no schema e estava preenchido
+        // (46 + 48 + 6 = 100). O portao acusava um par que fechava certo: o defeito era dele.
+        const temNaoSabe = typeof ad.results.naoSabe === 'number'
+        const sum = (ad.results.aprovacao || 0) + (ad.results.desaprovacao || 0) + (temNaoSabe ? ad.results.naoSabe : 0)
+        const rotulo = temNaoSabe ? 'aprovacao + desaprovacao + naoSabe' : 'aprovacao + desaprovacao'
+        if (sum > 101 || sum < 99) warnings.push(`approvalData.results: ${rotulo} = ${sum} (esperado ≈100)`)
       }
     }
     if (ad.historicalComparison !== undefined && !Array.isArray(ad.historicalComparison)) {
@@ -139,7 +143,20 @@ const SUPERLATIVOS = /\b(a mais larga|o mais largo|a mais estreita|a maior|o mai
 const ESCOPO_TEMPORAL = /\b(do ciclo|do ano|da s[ée]rie|hist[óo]ric[oa]|de todos os tempos|at[ée] aqui|em qualquer)\b/i
 // Escopo interno ao documento se confere na própria frase (ex.: "a maior do páreo" dentro
 // de uma pesquisa, "a maior variação do painel" dentro do mesmo pregão). Risco menor.
-const ESCOPO_LOCAL = /\b(do p[áa]reo|do painel|do book|da rodada|do recorte|da semana|do dia|no dia|do m[êe]s|desde \d|nas [úu]ltimas|em \d+ dias|desta pesquisa|do levantamento)\b/i
+// ⚠️ 23/Ago/2026: esta regex reprovou QUATRO frases que DECLARAVAM escopo, e todas as quatro
+// falharam na PREPOSICAO: o texto dizia "NO recorte de 30 dias", "NO painel", "NA janela", e a
+// lista so aceitava "DO recorte", "DO painel". Portao que acusa frase correta ensina alguem a
+// ignorar o portao. Agora a preposicao e livre (d[eoa]|n[oa]) e entram as formas de escopo que
+// a casa de fato escreve. O que NAO entra continua nao entrando: superlativo solto reprova.
+const ESCOPO_LOCAL = new RegExp(
+  '\\b[dn][oa]s? (p[áa]reo|painel|book|rodada|recorte|janela|semana|dia|m[êe]s|levantamento|livro|quadro|calend[áa]rio)\\b'
+  + '|\\b(desta|nesta|nessa|dessa) (pesquisa|leitura|rodada|janela|edi[çc][ãa]o|tabela)\\b'
+  + '|\\bentre (as|os|essas|esses|estas|estes)\\b'
+  + '|\\bdesde \\d'
+  + '|\\bnas [úu]ltimas\\b'
+  + '|\\bem \\d+ dias\\b'
+  + '|\\bem (janeiro|fevereiro|mar[çc]o|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)\\b'
+  , 'i')
 
 function checarSuperlativos(texto: unknown, label: string) {
   if (typeof texto !== 'string') return
