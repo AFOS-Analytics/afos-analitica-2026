@@ -31,6 +31,9 @@ from urllib.parse import urlparse
 
 
 URL_REGEX = re.compile(r'\[([^\]]+)\]\((https?://[^)]+)\)')
+
+# Avisos da ultima validacao: 403 tolerado em dominio anti-bot. Nunca passa calado.
+LAST_WARNINGS = []
 FOOTER_SOURCES_RE = re.compile(
     r'\*\*(?:Fontes citadas|Sources cited|Fuentes citadas):?\*\*[^\n]*',
     re.IGNORECASE,
@@ -54,6 +57,7 @@ ANTI_BOT_WHITELIST = {
     'eleitor.tse.jus.br',
     'www.tse.jus.br',
     'tse.jus.br',
+    'divulgacandcontas.tse.jus.br',
     # Veículos com Cloudflare strict — funcionam em browser, falham no curl
     'oglobo.globo.com',
     'g1.globo.com',
@@ -142,8 +146,20 @@ def check_url_http(url):
     """Faz HEAD request com User-Agent browser. Retorna (url, ok, reason, final_host).
 
     ok=True se status < 400 OU domínio em ANTI_BOT_WHITELIST.
-    ok=False se 4xx/5xx (sempre bloqueia, mesmo whitelist).
-    Network errors em domínios whitelist passam (true); fora da lista, falham.
+    ok=False se 4xx/5xx, COM UMA EXCEÇÃO: 403 em domínio da whitelist.
+
+    Por que a exceção (23/Ago/2026): 403 não é afirmação sobre o RECURSO, é
+    afirmação sobre o CLIENTE. Naquele dia o `divulgacandcontas.tse.jus.br`
+    passou a responder 403 pela borda da Akamai (corpo assinado por
+    `errors.edgesuite.net`) para o IP residencial, e o `robots.txt` do próprio
+    host também deu 403 — que é a assinatura de bloqueio de BORDA, porque
+    recurso removido não bloqueia o próprio robots.txt. O site estava no ar: o
+    cron da Vercel ingeriu 6 pesquisas do TSE no mesmo dia. Bloquear ali é o
+    portão trocar "nosso IP está barrado" por "o link do leitor está quebrado".
+
+    A exceção é ESTREITA de propósito: vale só para 403, só para domínio já na
+    whitelist, e o caso é sempre REGISTRADO em LAST_WARNINGS. 404 e 410 (link
+    morto de verdade) e 5xx seguem bloqueando em qualquer domínio.
     final_host: hostname final após redirects (None se não resolveu).
     """
     try:
@@ -160,10 +176,14 @@ def check_url_http(url):
             status = resp.status
             final_url = resp.geturl()
             final_host = (urlparse(final_url).hostname or '').lower()
+            if status == 403 and in_whitelist:
+                return (url, True, 'HTTP 403 anti-bot (borda)', final_host)
             if 400 <= status < 600:
                 return (url, False, f'HTTP {status}', final_host)
             return (url, True, f'HTTP {status}', final_host)
     except urllib.error.HTTPError as e:
+        if e.code == 403 and in_whitelist:
+            return (url, True, 'HTTP 403 anti-bot (borda)', None)
         return (url, False, f'HTTP {e.code}', None)
     except Exception as e:
         if in_whitelist:
@@ -246,10 +266,12 @@ def validate_body(content):
     E1: gamma-api URL    — bloqueia
     E2: footer markdown  — bloqueia
     E3: Google News URL truncada (<150 chars) — bloqueia
-    E4: HTTP 4xx/5xx em qualquer URL não-whitelist — bloqueia
+    E4: HTTP 4xx/5xx em qualquer URL não-whitelist — bloqueia (403 em
+    domínio whitelist é exceção declarada e vira AVISO, ver check_url_http)
     E5: Misattribution — link [Folha](url) onde url resolve para outro veículo — bloqueia
     """
     errors = []
+    del LAST_WARNINGS[:]
     all_urls = []  # coleta para E4
     text_url_pairs = []  # coleta (text, url) para E5
 
@@ -299,6 +321,13 @@ def validate_body(content):
             for fut in as_completed(futures):
                 url, ok, reason, final_host = fut.result()
                 final_hosts[url] = final_host
+                if ok and 'anti-bot (borda)' in reason:
+                    LAST_WARNINGS.append(
+                        f'403 de borda em dominio anti-bot conhecido: {url}. '
+                        f'    NAO BLOQUEIA, e NAO VERIFICA: enquanto a borda responder 403 '
+                        f'a todo o host, o portao nao distingue pagina viva de pagina morta ali. '
+                        f'Este link entra DECLARADO como nao verificado, nao como aprovado.'
+                    )
                 if not ok:
                     errors.append(
                         f'URL retornou erro: {reason}. URL: {url}'
@@ -357,6 +386,13 @@ def main():
         }))
         sys.exit(0)
 
+    if LAST_WARNINGS:
+        aviso = ('AFOS Daily URL Gate: Write liberado, com '
+                 + str(len(LAST_WARNINGS))
+                 + ' link(s) NAO VERIFICADO(S) por bloqueio de borda: '
+                 + ' | '.join(LAST_WARNINGS))
+        print(json.dumps({'systemMessage': aviso}))
+
     sys.exit(0)
 
 
@@ -386,6 +422,13 @@ def cli():
         sys.exit(1)
     else:
         print('[OK] Nenhum erro detectado.')
+    if LAST_WARNINGS:
+        print('')
+        print('[AVISO] %d link(s) NAO VERIFICADO(S) por bloqueio de borda:'
+              % len(LAST_WARNINGS))
+        for w in LAST_WARNINGS:
+            print('  - ' + w.encode('ascii', 'replace').decode('ascii'))
+    if not errors:
         sys.exit(0)
 
 
