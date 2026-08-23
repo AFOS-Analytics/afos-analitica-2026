@@ -94,14 +94,14 @@ body { width: ${W}px; height: ${H}px; }
 .body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .pill { display: inline-block; align-self: flex-start; font-size: 20px; font-weight: 700;
         letter-spacing: 2.4px; color: #BFDBFE; border: 2px solid rgba(255,255,255,.3);
-        border-radius: 999px; padding: 6px 17px; margin-bottom: 12px; }
-.big  { font-size: 104px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
-.sub  { font-size: 29px; font-weight: 600; color: #BFDBFE; line-height: 1.30; margin-top: 10px; }
+        border-radius: 999px; padding: 7px 18px; margin-bottom: 16px; }
+.big  { font-size: 124px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
+.sub  { font-size: 30px; font-weight: 600; color: #BFDBFE; line-height: 1.32; margin-top: 12px; }
 .foot { display: flex; justify-content: space-between; align-items: baseline;
         padding-top: 14px; border-top: 2px solid rgba(255,255,255,.22); }
 .url  { font-size: 23px; font-weight: 600; color: #93C5FD; }
 .trio { font-size: 23px; color: rgba(255,255,255,.62); }
-.meta { font-size: 21px; color: rgba(255,255,255,.62); margin-top: 12px; }
+.meta { font-size: 23px; color: rgba(255,255,255,.62); margin-top: 18px; }
 .split { display: flex; gap: 40px; align-items: flex-start; }
 .left  { flex: 1; }
 .card  { width: 420px; background: rgba(255,255,255,.09); border: 2px solid rgba(255,255,255,.24);
@@ -116,13 +116,23 @@ body { width: ${W}px; height: ${H}px; }
 .bar .d { background: #BFDBFE; color: #0A3573; justify-content: flex-start; padding-left: 20px; }
 .bar .r { background: rgba(255,255,255,.10); border: 2px solid rgba(255,255,255,.34); color: #fff;
           justify-content: flex-end; padding-right: 20px; }
+.tight .big  { font-size: 104px; }
+.tight .sub  { font-size: 29px; line-height: 1.30; margin-top: 10px; }
+.tight .pill { padding: 6px 17px; margin-bottom: 12px; }
+.tight .meta { font-size: 21px; margin-top: 12px; }
 .line { font-size: 29px; font-weight: 700; line-height: 1.24; margin-top: 16px; }
 .barcap { font-size: 19px; color: rgba(255,255,255,.6); margin-top: 14px; letter-spacing: .4px; }
 .bar .t { background: rgba(255,255,255,.30); color: #062B63; justify-content: center; font-size: 20px; }
 `
 
-const frame = (body) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
-<body><div class="og">
+/**
+ * ⚠️ O cartao B aperta o espacamento porque tem 2 blocos a mais (a tese em duas
+ * linhas e a barra de tres fatias). Esse aperto vai numa classe PROPRIA: mexer
+ * no CSS da base alterava tambem o cartao A, que ja estava PUBLICADO e anexado
+ * a um post. Arte publicada nao muda por efeito colateral de outra.
+ */
+const frame = (body, extra = '') => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
+<body><div class="og ${extra}">
   <div class="head">
     <div class="mark">AFOS ANALYTICS</div>
     <div class="pais">${bandeira(60)}<div class="prod">US 2026 MIDTERMS</div></div>
@@ -160,7 +170,7 @@ const cartaoB = frame(`
     <div class="t" style="flex:12.50">TIE 12.50%</div>
     <div class="r" style="flex:35.45">REPUBLICANS 35.45%</div>
   </div>
-  <div class="meta">Seat market, bands sum to 100.95% &middot; confirmed August 23, 2026</div>`)
+  <div class="meta">Seat market, bands sum to 100.95% &middot; confirmed August 23, 2026</div>`, 'tight')
 
 const browser = await chromium.launch()
 const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
