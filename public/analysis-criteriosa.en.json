@@ -1,13 +1,13 @@
 {
-  "updatedAt": "22/08/2026, 16:40",
-  "subtitle": "Cross-reference for 22 August 2026: Polymarket price at reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), presidential book at USD 131.16M, against the 21/Aug Datafolha poll (n=2,058, fieldwork 18 to 20/Aug, reliability 5) and the 21/Aug Veritá poll (n=3,840, fieldwork 16 to 20/Aug, reliability 2), which are the two most recent national polls with a published number. Five other national polls are registered with the TSE for release between 24 and 27 August and have no number yet.",
+  "updatedAt": "23/08/2026, 14:58",
+  "subtitle": "Cross-reference for August 23, 2026: Polymarket price from a confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), presidential book at USD 131.76M, against the Datafolha and Veritá polls of Aug 21, which remain the most recent national polls with a number. No new national poll was released, and five are registered with the electoral court for release between August 24 and 27. The fact of the day is not in the price: the first presidential debate takes place tonight at 8 PM, on Band with Estadão, and Lula and Flávio Bolsonaro are widely reported as likely absent.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 62.50% (vol USD 8.86M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). No change on the day.",
+      "header": "PRICE: 62.50% (vol USD 8.89M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). No change on the day.",
       "fortes": [
         "The 21/Aug Datafolha poll (n=2,058, fieldwork 18 to 20/Aug, reliability 5, BR-04496/2026) puts him at 39% in the first round and has him winning the runoff 47% to 43% against Flávio Bolsonaro.",
         "On price he remains far ahead: 62.50% against 33.35%, a distance of 29.15pp, with his contract holding USD 8.86M inside a presidential book of USD 131.16M.",
@@ -22,14 +22,14 @@
         "Five national polls are registered with the TSE for release between 24 and 27/Aug, one of them with a sample of 6,000. None has a published number, so the polling picture can change within five days.",
         "Today’s press reading is entirely follow-up on yesterday’s Datafolha, with 164 distinct headlines in the collection. There was no new fact to support a price move in his favour."
       ],
-      "analise": "PRICE at 62.50% (vol USD 8.86M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), unchanged on the day. The distance to the runner-up stands at 29.15pp, against 30.45pp in yesterday’s reading.\n\nIn the full series, which begins on 14 April, his peak is 70.00%, from 28 April, and his floor is 34.50%, from 25 April. Today’s price sits seven and a half points below his own peak, so no upside superlative is available.\n\nIn the polls, the 21 August Datafolha gives him 39% in the first round and a runoff win of 47% to 43%. The Veritá of the same day, with a larger sample and overlapping fieldwork, inverts the runoff. Both remain the most recent national polls with a published number, and they disagree."
+      "analise": "PRICE at 62.50% (vol USD 8.89M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), no change on the day. The distance to second place stands at 29.25pp, practically the same as yesterday. In the full series, which starts on April 14, his peak is 70.00%, recorded on April 28, so today's price sits 7.50pp below his own maximum. There was no new national poll: Datafolha and Veritá, both from August 21, remain the most recent with a number, and they disagree on the runoff. He is among those reported as likely absent from tonight's debate."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 33.35% (vol USD 8.78M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). Down 0.10pp on the day, after today’s highest recorded point, 33.80%, set the highest value of the 83-day series.",
+      "header": "PRICE: 33.25% (vol USD 8.79M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). Gave up 0.10pp.",
       "fortes": [
         "⭐ Today’s highest recorded point, 33.80%, is the highest since 31/May. ⛔ It is NOT the series peak: the full record begins on 14/Apr and the contract reached 45.50% on 06/May.",
         "The 21/Aug Veritá poll (n=3,840, reliability 2) has him winning the runoff, which no national poll had done before it.",
@@ -44,14 +44,14 @@
         "Datafolha gives him 33% in the first round against Lula’s 39%, a six-point gap that Veritá measures differently. The two houses disagree about him more than about any other name.",
         "Five national polls registered with the TSE are due between 24 and 27/Aug and have no number yet. The picture underpinning his price can change within five days."
       ],
-      "analise": "PRICE at 33.35% (vol USD 8.78M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), down 0.10pp on the day.\n\n⭐ The number of the day is another one: today’s highest recorded point, 33.80%, is the highest since 31 May. ⛔ It is not the series peak: the full record begins on 14 April and the contract reached 45.50% on 06 May.\n\nThe distance to the leader stands at 29.15pp, against 30.45pp yesterday. In the polls, the 21 August Datafolha gives him 33% in the first round and 43% in the runoff, and the Veritá of the same day has him winning the runoff. He is the name the two houses disagree about most."
+      "analise": "PRICE at 33.25% (vol USD 8.79M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), down 0.10pp. The peak of the full series is 45.50%, from May 6, and today's price sits 12.25pp below it. In the second-place contract he pays 86.50%, which is the steadiest reading in the book. No new national poll. Like Lula, he is reported as likely absent from tonight's debate."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 2.65% (vol USD 10.56M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). Down 1.50pp on the day, the largest drop in the presidential book.",
+      "header": "PRICE: 3.45% (vol USD 10.68M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). Rose 0.80pp and gave back yesterday's fall.",
       "fortes": [
         "In the first-round third-place contract he stays ahead, with 49.50% against 46.00% for Ronaldo Caiado, a 3.50pp difference.",
         "His contract holds USD 10.56M, one of the largest individual volumes in the presidential book, above Lula’s and Flávio Bolsonaro’s.",
@@ -65,14 +65,14 @@
         "He is the name with the largest individual volume among those that lost price today. High volume with a falling price means the money that came in did not hold the value.",
         "His lead in the third-place contract, 3.50pp over Caiado, is narrower than the gap between the two in the presidential market, which leaves the position exposed."
       ],
-      "analise": "PRICE at 2.65% (vol USD 10.56M cumulative), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), DOWN 1.50pp on the day, the largest drop in the presidential book.\n\n🔴 Today’s lowest recorded point, 3.40%, is the lowest of the entire recorded series, which begins on 14 April. On 28 April the same contract paid 49.60%.\n\nThe contrast with volume is what gives the move its weight: he holds USD 10.56M, one of the largest in the book, above Lula and Flávio Bolsonaro. In the first-round third-place contract he is still ahead, 49.50% against 46.00% for Ronaldo Caiado, but by only 3.50pp.\n\nIn the polls the picture is stable: 4% in the 21 August Datafolha and 3.8% in the Veritá of the same day."
+      "analise": "PRICE at 3.45% (vol USD 10.68M cumulative), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), up 0.80pp, which gives back the fall recorded yesterday. He carries one of the largest individual volumes in the book, above Lula and Flávio Bolsonaro, and still pays less than four points. In the third-place contract, which is a different market, he pays 56.00% against 41.00% for Ronaldo Caiado. He is one of the names confirmed for tonight's debate."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE for the whole trailing pack, reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC): Ronaldo Caiado 0.35% (vol USD 6.44M), Romeu Zema 0.15% (vol USD 5.83M), Pablo Marçal 0.15% (vol USD 2.34M), Michelle Bolsonaro 0.15% (vol USD 10.11M) and Tarcísio de Freitas 0.05% (vol USD 14.00M).",
+      "header": "PRICE for the whole pack, confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC): Ronaldo Caiado at 0.55% (vol USD 6.46M), Romeu Zema at 0.45% (vol USD 5.91M) and Pablo Marçal at 0.45% (vol USD 2.52M). None of them clears half a point.",
       "subtitle": "Trailing pack at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). None of them moved today, and all sit in the range where the book is too thin for the capture guard to watch.",
       "caiado": {
         "label": "CAIADO (PSD), presidential Poly 0.35% (vol USD 6.44M cumulative, reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC)), unchanged on the day. In the first-round third-place contract he holds 46.00%, 3.50pp behind Renan Santos.",
@@ -89,7 +89,7 @@
         "fortes": "The Quaest of Aug 14 keeps him at 2% in the first round, the same value as Aug 5, and BTG/Nexus's 3% and Meio/Ideia's 2.6% still stand. He was the first of the chasing pack to file with the electoral court, on Aug 6. He opened the campaign with a mass in Montes Claros, in northern Minas Gerais, promising a maximum-security prison and criticising Supreme Court justices, according to Folha de S.Paulo and Valor Econômico.",
         "fracos": "🔴 The Quaest firmness crosstab released on Aug 15 shows he has the LEAST CONVINCED electorate in the field, according to G1, which speaks to how solid his support is rather than how large. In the price he fell 0.20pp and moved to 0.15%, below the 0.5% cutoff. In the third-place contract he has 5.00%, far behind the 53.00% of the chasing pack's leader."
       },
-      "analise": "PRICE for the pack at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC): Ronaldo Caiado 0.35% (vol USD 6.44M), Romeu Zema 0.15% (vol USD 5.83M), Pablo Marçal 0.15% (vol USD 2.34M), Michelle Bolsonaro 0.15% (vol USD 10.11M) and Tarcísio de Freitas 0.05% (vol USD 14.00M). None moved today.\n\nThe contrast worth recording is between volume and price. Tarcísio de Freitas holds the largest individual volume in the presidential book, USD 14.00M, and is priced at 0.05%. Michelle Bolsonaro holds USD 10.11M at 0.15%. Cumulative volume measures how much money has passed through the contract since it opened, not the probability the market assigns today, and these two cases show the difference plainly.\n\nCaiado is the only one in the pack with a meaningful position in another market: 46.00% in the first-round third-place contract, 3.50pp behind Renan Santos.",
+      "analise": "PRICE for the pack, confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC): Ronaldo Caiado at 0.55% (vol USD 6.46M), Romeu Zema at 0.45% (vol USD 5.91M) and Pablo Marçal at 0.45% (vol USD 2.52M). Caiado rose 0.20pp and is the only one in the group with visible movement on the day. In the third-place contract he pays 41.00%, against 56.00% for Renan Santos. Romeu Zema announced his withdrawal from tonight's debate and attributed the decision to the absences of Lula and Flávio Bolsonaro; Caiado is one of those confirmed.",
       "fortes": [
         "Ronaldo Caiado holds 46.00% in the first-round third-place contract, 3.50pp behind Renan Santos, despite sitting at 0.35% in the presidential market. The two markets tell different stories about him.",
         "The 21/Aug Datafolha gives him 5% in the first round, ahead of Renan Santos, who shows 4%.",
@@ -108,7 +108,7 @@
     {
       "n": "Lula (PT)",
       "p": "⭐⭐ TWO NATIONAL POLLS ON THE SAME DAY. The Datafolha (n=2,058, field Aug 18 to 20, reliability 5) gives him 39% in the first round and 47% in the runoff, against 43%. The Veritá (n=3,840, field Aug 16 to 20, reliability 2) also gives him 39.3% in the first round, but measures a 0.2 point TIE and INVERTS the runoff, with him at 42% against 47.3%. The two agree about him and disagree about the distance.",
-      "m": "62.50% (vol USD 8.86M), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). No change from yesterday's reading. In the full series, which begins on 14 April, his peak is 70.00%, measured on 28 April, and his floor is 34.50%, from 25 April.",
+      "m": "62.50% (vol USD 8.89M), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). No change from yesterday's reading. In the full series, which starts on April 14, his peak is 70.00%, recorded on April 28.",
       "t": "flat on the day, 7.50pp below the series peak",
       "s": "Fifth day of the official campaign, 45 days out from the first round. The case involving his son gained two layers on Aug 20: the Prosecutor General's Office contested part of the Federal Police's conclusion, according to Estadão, and he sued his opponent over a video made with artificial intelligence, according to O Globo.",
       "pc": "#DC2626",
@@ -117,7 +117,7 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "⭐⭐ TWO NATIONAL POLLS ON THE SAME DAY, AND HE IS WHERE THEY DISAGREE. The Datafolha gives him 32% in the scenario with Marçal and 33% without him, and 43% in the runoff against 47%. The Veritá gives him 39.1% in the first round, 0.2 point from the leader, and 47.3% in the runoff against 42%. More than 6 points of difference in the first round and more than 9 in the runoff, with overlapping fieldwork.",
-      "m": "33.35% (vol USD 8.78M), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). Down 0.10pp on the day. Today's highest recorded point, 33.80%, is the highest since 31 May, but not the series peak: on 06 May the contract reached 45.50%.",
+      "m": "33.25% (vol USD 8.79M), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). Down 0.10pp. The series peak is 45.50%, from May 6. In the second-place contract he pays 86.50%.",
       "t": "at the highest point since 31/May, below the series peak",
       "s": "He praised Pablo Marçal as \"a good guy, prepared and well-intentioned\", according to Estadão on Aug 20, on the same day the Public Prosecutor's Office asked the TSE to bar the other man's candidacy. And he said he looks at the Supreme Court \"with disgust\", talking about being a transition president, according to Folha.",
       "pc": "#2563EB",
@@ -126,7 +126,7 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "⭐⭐ TWO NATIONAL POLLS ON THE SAME DAY, and both put him at the back of the field: 4% at Datafolha and 3.8% at Veritá. The Datafolha places him behind Ronaldo Caiado, who has 5%; the Veritá places him ahead of Caiado, who has 3.3%, and behind Pablo Marçal, who has 5.2%.",
-      "m": "2.65% (vol USD 10.56M), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). Down 1.50pp on the day, the largest drop in the book. Today's lowest recorded point, 3.40%, is the lowest of the entire recorded series, which begins on 14 April, against 49.60% on 28 April. He still carries one of the largest individual volumes in the book.",
+      "m": "3.45% (vol USD 10.68M), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). Up 0.80pp, which gives back yesterday's fall. In the third-place contract he pays 56.00%, against 41.00% for Caiado.",
       "t": "at the lowest point of the entire series",
       "s": "📌 The disagreement over third place changed shape and did not disappear. The market pays 55.50% on him against 35.00% on Caiado, and the Veritá of Aug 21 puts both BEHIND Pablo Marçal, who has 5.2% against his 3.8% and Caiado's 3.3%. Price and ballot still disagree on who is third, now with a third name in the count.",
       "pc": "#F59E0B",
@@ -135,7 +135,7 @@
     {
       "n": "Caiado (PSD)",
       "p": "⭐⭐ TWO NATIONAL POLLS ON THE SAME DAY, and they disagree about him: 5% at Datafolha, which keeps him ahead of Renan Santos, and 3.3% at Veritá, which puts him behind Renan and Marçal.",
-      "m": "0.35% (vol USD 6.44M), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). No change. Below the 0.5% floor of the capture guard, so his price is not watched by the two-reading confirmation and enters here only as a record.",
+      "m": "0.55% (vol USD 6.46M), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). Up 0.20pp. In the third-place contract he pays 41.00%.",
       "t": "flat, below the watch floor",
       "s": "The inversion between the two instruments continues, with the sign flipped from last week: at the ballot he fell from 5% to 3.3% and now sits behind Renan Santos and Marçal, while in the third place contract his price ROSE to 35.00%.",
       "pc": "#16A34A",
@@ -144,7 +144,7 @@
     {
       "n": "Pablo Marçal (PRTB)",
       "p": "⭐⭐ MEASURED BY BOTH NATIONAL POLLS OF THE DAY, WITH DIFFERENT RESULTS: 2% at Datafolha, in the scenario with him, and 5.2% at Veritá. The Datafolha carries two scenarios and the difference between them is him: with Marçal, the runner-up has 32%; without Marçal, 33%.",
-      "m": "0.15% (vol USD 2.34M), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). No change. Below the 0.5% floor of the capture guard.",
+      "m": "0.45% (vol USD 2.52M), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). No change on the day.",
       "t": "flat, below the watch floor",
       "s": "🔴 THE WIDEST DISTANCE BETWEEN THE PANEL'S TWO INSTRUMENTS IS ON HIM. The ballot puts him third at 5.2% and the price puts him seventh at 0.15%. ⛔ The two quantities do not subtract, because voting intention and probability of winning measure different things, and his price sits below the floor the double reading confirms. What the panel records is the opposite ordering, not a difference figure. Beyond that, the legal squeeze of Aug 19 and 20 remains unresolved.",
       "pc": "#0EA5E9",
@@ -153,12 +153,12 @@
     {
       "n": "STF impeachment",
       "p": "No poll. Market on the impeachment of a Supreme Court justice before 2027.",
-      "m": "3.35% (vol USD 84k), reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC). No change.",
+      "m": "3.35% (vol USD 84 thousand), confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). No change on the day.",
       "t": "flat",
       "s": "Contract on the impeachment of a Supreme Court justice before 2027, kept on the panel as an institutional thermometer. On Aug 20 Justice André Mendonça ruled on both sides of the race, at the Supreme Court and at the Electoral Court, and the contract did not move because of it.",
       "pc": "#64748B",
       "mc": ""
     }
   ],
-  "cruzamento": "The day has a single movement, and it is a big one: Renan Santos fell 1.50pp and closed at 2.65%, the largest drop in the presidential book. In the 83-day series that starts on 31 May, the lowest point ever recorded for him is today's. On 28 April the same contract paid 49.60%.\n\nIn the opposite direction, Flávio Bolsonaro's highest recorded point today, 33.80%, is the highest since 31 May, though not the series peak, which is 45.50% from 06 May. The live price in the late afternoon eased back to 33.35%, ten hundredths below yesterday, but the day's mark stands on the record. Lula did not move: 62.50%, the same as yesterday, and four points below the 66.50% peak he set on 16 August. The distance between the top two stands at 29.15pp.\n\nThe third-place contract is where Renan's fall shows up in another guise: he holds 49.50% and Ronaldo Caiado holds 46.00%, a 3.50pp difference between two names separated by 2.30pp in the presidential market. The same market that took price away from Renan in the main race still keeps him ahead in the race for third, and by a narrow margin.\n\nOn the polling side there is no new number. The 21 August Datafolha and the Veritá of the same day remain the two most recent published national polls, and they disagree: Datafolha gives Lula 39% and Flávio 33% in the first round, with Lula winning the runoff 47% to 43%; Veritá inverts the runoff. Five national polls are registered with the TSE for release between 24 and 27 August, among them the PoderData registered today and JOTA Jornalismo with a sample of 6,000. TSE registration is mandatory and precedes release, so none of them has a number yet.\n\nWhat the press did today was follow up on yesterday's Datafolha, with 164 distinct headlines in the day's collection. There was no new market fact and no national poll published."
+  "cruzamento": "The day has no price movement, and that is the finding. Lula closed at 62.50% with no change at all, Flávio Bolsonaro gave up 0.10pp to 33.25%, and the distance between the two stood at 29.25pp, against 29.15pp yesterday. The presidential book totals USD 131.76M.\n\nThe only one who moved was Renan Santos, from 2.65% to 3.45%, and the move gives back yesterday's fall rather than opening a new one. He still carries USD 10.68M, one of the largest individual volumes in the book and above Lula's own, while paying less than four points.\n\nOne observation on method, because it changes how the series is read. Yesterday's confirmed reading recorded the third-place contract at 49.50% for Renan Santos against 46.00% for Ronaldo Caiado. The full series shows that this was the low point of a band that stood at 55.00% at 3:01 PM and returned to 56.00% at 9:00 PM the same day. Today the contract pays 56.00% against 41.00%. The capture guard proves a price is not in transit; it does not prove the price is the level.\n\nNo new national poll was released. Datafolha and Veritá, both from August 21, remain the most recent with a number, and they continue to disagree on the runoff. Five national polls are registered with the electoral court for release between August 24 and 27, among them one by JOTA with a sample of 6,000, the largest on the calendar, whose fieldwork spans 29 days. Registration precedes release, so none of them has a number yet.\n\nThe fact of the day is in the calendar, not in the price. The first presidential debate of the cycle takes place tonight at 8 PM, hosted by Band with Estadão, and coverage reports Lula and Flávio Bolsonaro as likely absent. Romeu Zema announced his withdrawal and attributed the decision precisely to their absences. The market had repriced none of this as of this afternoon's reading."
 }

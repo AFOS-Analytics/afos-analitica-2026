@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-22",
+  "lastUpdate": "2026-08-23",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1460,7 +1460,7 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), with the presidential book at USD 131.16M. The distance between the top two stands at 29.15pp, against 30.45pp in the 21/Aug reading. The move of the day is Renan Santos falling 1.50pp, the largest in the book. The polls cited are the two most recent national polls with a published number, Datafolha and Veritá, both from 21/Aug, and they disagree on the runoff. Five national polls are registered with the TSE for release between 24 and 27/Aug and have no number yet.",
+    "note": "Polymarket prices from the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), with the presidential book at USD 131.76M. The distance between the top two stands at 29.25pp, against 29.15pp in the Aug 22 reading. The day had no relevant price movement: the only one who moved was Renan Santos, from 2.65% to 3.45%, giving back yesterday's fall. No new national poll was released, and five are registered for release between August 24 and 27.",
     "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm. On Aug 16 there is a new confirmed reading for EVERY tracked contract, at 4:56 pm BRT (7:56 pm UTC): presidential, runner-up, third place, Senate and Supreme Court impeachment. Polls registered with the electoral court and released by the houses, with reporting from G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo and Correio Braziliense.",
     "candidates": [
       {
@@ -1468,7 +1468,7 @@
         "pesquisaRange": "38-45%",
         "polymarket": "62.50%",
         "tendenciaPesquisa": "The 21/Aug Datafolha (n=2,058, fieldwork 18 to 20/Aug, reliability 5) puts him at 39% in the first round and winning the runoff 47% to 43%. The Veritá of the same day (n=3,840, reliability 2) inverts the runoff. Two national polls from the same day, with overlapping fieldwork, pointing opposite ways. No new poll has been published since.",
-        "tendenciaPolymarket": "62.50% (vol USD 8.86M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), unchanged on the day. In the 83-day series beginning 31/May, the peak is 66.50% from 16/Aug and the floor is 39.50% from 02/Jun.",
+        "tendenciaPolymarket": "62.50% (vol USD 8.89M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), no change on the day. In the full series, which starts on April 14, his peak is 70.00%, recorded on April 28, so today's price sits 7.50pp below his own maximum.",
         "odds": 62.5,
         "percentage": 39,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1477,53 +1477,53 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-40%",
-        "polymarket": "33.35%",
+        "polymarket": "33.25%",
         "tendenciaPesquisa": "Datafolha gives him 33% in the first round and 43% in the runoff; Veritá has him winning the runoff. He is the name the two houses disagree about most.",
-        "tendenciaPolymarket": "33.35% (vol USD 8.78M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), down 0.10pp on the day. Today's highest recorded point, 33.80%, is the highest since 31/May. It is not the series peak: on 06/May the contract reached 45.50%.",
-        "odds": 33.35,
+        "tendenciaPolymarket": "33.25% (vol USD 8.79M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), down 0.10pp. The peak of the full series is 45.50%, from May 6. In the first-round second-place contract he pays 86.50%, the steadiest reading in the book.",
+        "odds": 33.25,
         "percentage": 32,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 33.35
+        "value": 33.25
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2.65%",
+        "polymarket": "3.45%",
         "tendenciaPesquisa": "4% in the 21/Aug Datafolha and 3.8% in the Veritá of the same day, meaning both houses measure him at a similar level.",
-        "tendenciaPolymarket": "2.65% (vol USD 10.56M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), DOWN 1.50pp, the largest in the book. Today's lowest recorded point, 3.40%, is the lowest of the entire recorded series, which begins on 14/Apr, against 49.60% on 28/Apr.",
-        "odds": 2.65,
+        "tendenciaPolymarket": "3.45% (vol USD 10.68M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), up 0.80pp, which gives back yesterday's fall. He carries one of the largest individual volumes in the book, above Lula, and pays less than four points. In the first-round third-place contract he has 56.00%.",
+        "odds": 3.45,
         "percentage": 4,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 2.65
+        "value": 3.45
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0.35%",
+        "polymarket": "0.55%",
         "tendenciaPesquisa": "5% in the 21/Aug Datafolha and 3.3% in Veritá.",
-        "tendenciaPolymarket": "0.35% (vol USD 6.44M) at the reading confirmed at 22/Aug, 4:40pm BRT (7:40pm UTC), unchanged. In the first-round third-place contract he holds 46.00%, 3.50pp behind Renan Santos.",
-        "odds": 0.35,
+        "tendenciaPolymarket": "0.55% (vol USD 6.46M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), up 0.20pp. In the first-round third-place contract he has 41.00%, 15.00pp from Renan Santos.",
+        "odds": 0.55,
         "percentage": 5,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.35
+        "value": 0.55
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5.2%",
-        "polymarket": "0.15%",
+        "polymarket": "0.45%",
         "tendenciaPesquisa": "⭐ TESTED FOR THE FIRST TIME IN A NATIONAL POLL: the Veritá of Aug 21 measures him at 5.2% in the first round, which puts him THIRD, ahead of Renan Santos and Ronaldo Caiado. Until this round he had a price and no ballot-box measurement.",
-        "tendenciaPolymarket": "➖ NO CHANGE at 0.15% (vol USD 2.23M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC), below the 0.5% floor of the double reading. 🔴 Both national polls of the day measured him: 2% at Datafolha and 5.2% at Veritá. Ballot and price order the field differently, and the quantities do not subtract.",
-        "odds": 0.15,
+        "tendenciaPolymarket": "0.45% (vol USD 2.52M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), below the 0.5% floor of the double reading, which makes the daily variation noise from a thin book.",
+        "odds": 0.45,
         "percentage": 2,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.15
+        "value": 0.45
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
         "tendenciaPesquisa": "🏷️ HE IS NOT A PRESIDENTIAL CANDIDATE: he opened his campaign for REELECTION as governor of São Paulo on Aug 16, according to O Globo and Folha de S.Paulo. No national poll in the window tests him in a presidential scenario, and absence of testing is information the panel records rather than repeating old data as if it were new.",
-        "tendenciaPolymarket": "➖ NO CHANGE at 0.05% (vol USD 14.00M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC). No national poll tests him for president, so he stays out of the divergence graph.",
+        "tendenciaPolymarket": "0.05% (vol USD 14.03M cumulative) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). It is the largest individual volume among the 18 priced contracts in the presidential book in this reading, and it pays five hundredths of a point: cumulative volume measures how much money passed through, not today's probability.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1532,27 +1532,27 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0.15%",
+        "polymarket": "0.45%",
         "tendenciaPesquisa": "🔴 NEW NATIONAL POLL ON Aug 21: the Veritá gives him 1.3%, his lowest value in the 30 day window.",
-        "tendenciaPolymarket": "➖ NO CHANGE at 0.15% (vol USD 5.81M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC), below the 0.5% floor. At the ballot, 3% at Datafolha and 1.3% at Veritá.",
-        "odds": 0.15,
+        "tendenciaPolymarket": "0.45% (vol USD 5.91M) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC), below the 0.5% floor of the double reading. He announced his withdrawal from the first presidential debate, set for tonight at 8 PM, and attributed the decision to the absences of Lula and Flávio Bolsonaro.",
+        "odds": 0.45,
         "percentage": 3,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.15
+        "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
         "tendenciaPesquisa": "🏷️ HE IS NOT A PRESIDENTIAL CANDIDATE: he opened his campaign for GOVERNOR OF SÃO PAULO on Aug 16, according to O Globo and Times Brasil. No national poll in the window includes him in a presidential scenario, and any scenario that did would be a survey hypothesis, not a candidacy under way.",
-        "tendenciaPolymarket": "➖ NO CHANGE at 0.05% (vol USD 7.28M accumulated), confirmed reading of Aug 21, 9:02 PM BRT (Aug 22, 12:02 AM UTC). No national poll tests him for president, so he stays out of the divergence graph.",
+        "tendenciaPolymarket": "0.05% (vol USD 7.30M cumulative) in the confirmed reading of Aug 23, 2:58 PM BRT (5:58 PM UTC). No national poll tests him for president, so he stays out of the divergence graph.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "21/08/2026, 21:02",
         "value": 0.05
       }
     ],
-    "updatedAt": "22/08/2026, 16:40",
+    "updatedAt": "23/08/2026, 14:58",
     "lastUpdate": "2026-08-22"
   }
 }

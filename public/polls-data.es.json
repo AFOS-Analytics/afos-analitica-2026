@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-22",
+  "lastUpdate": "2026-08-23",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1460,7 +1460,7 @@
     "lastUpdate": "2026-08-16"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), con el libro presidencial en USD 131,16M. La distancia entre los dos primeros está en 29,15pp, contra 30,45pp en la lectura del 21/Ago. El movimiento del día es la caída de 1,50pp de Renan Santos, la mayor del libro. Las encuestas citadas son las dos nacionales más recientes con número publicado, la Datafolha y la Veritá, ambas del 21/Ago, y discrepan sobre la segunda vuelta. Cinco nacionales están registradas en el TSE con difusión prevista entre el 24 y el 27/Ago y todavía no tienen número.",
+    "note": "Precios de Polymarket en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), con el libro presidencial en USD 131,76M. La distancia entre los dos primeros está en 29,25pp, contra 29,15pp en la lectura del 22/Ago. El día no tuvo movimiento de precio relevante: el único que se movió fue Renan Santos, de 2,65% a 3,45%, devolviendo la caída de ayer. Ninguna encuesta nacional nueva salió, y cinco están registradas para difusión entre el 24 y el 27 de agosto.",
     "sources": "Precios de Polymarket vía el proxy de AFOS, y el panel solo publica un precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen. El 16 de ago hay lectura confirmada nueva para TODOS los contratos seguidos, a las 16:56 BRT (19:56 UTC): presidencial, segundo lugar, tercer lugar, Senado e impeachment en el Supremo. Encuestas registradas ante la justicia electoral y difundidas por las casas, con reporteo de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo y Correio Braziliense.",
     "candidates": [
       {
@@ -1468,7 +1468,7 @@
         "pesquisaRange": "38-45%",
         "polymarket": "62,50%",
         "tendenciaPesquisa": "La Datafolha del 21/Ago (n=2.058, campo del 18 al 20/Ago, fiabilidad 5) lo sitúa en 39% en la primera vuelta y ganando la segunda por 47% a 43%. La Veritá del mismo día (n=3.840, fiabilidad 2) invierte la segunda vuelta. Dos nacionales del mismo día, con campo superpuesto, en direcciones opuestas. Ninguna encuesta nueva ha sido publicada desde entonces.",
-        "tendenciaPolymarket": "62,50% (vol USD 8,86M) en la lectura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sin variación en el día. En la serie de 83 días iniciada el 31/May, el techo es 66,50% del 16/Ago y el piso es 39,50% del 02/Jun.",
+        "tendenciaPolymarket": "62,50% (vol USD 8,89M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), sin variación en el día. En la serie completa, que empieza el 14/Abr, su techo es 70,00%, medido el 28/Abr, así que el precio de hoy está 7,50pp por debajo de su propio máximo.",
         "odds": 62.5,
         "percentage": 39,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1477,53 +1477,53 @@
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "29-40%",
-        "polymarket": "33,35%",
+        "polymarket": "33,25%",
         "tendenciaPesquisa": "La Datafolha le da 33% en la primera vuelta y 43% en la segunda; la Veritá lo da ganando la segunda vuelta. Es sobre él que las dos casas más discrepan.",
-        "tendenciaPolymarket": "33,35% (vol USD 8,78M) en la lectura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), caída de 0,10pp en el día. El punto registrado más alto de hoy, 33,80%, es el mayor desde el 31/May. No es el techo de la serie: el 06/May el contrato llegó a 45,50%.",
-        "odds": 33.35,
+        "tendenciaPolymarket": "33,25% (vol USD 8,79M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), con caída de 0,10pp. El techo de la serie completa es 45,50%, del 06/May. En el contrato de 2º lugar de la primera vuelta paga 86,50%, la lectura más estable del libro.",
+        "odds": 33.25,
         "percentage": 32,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 33.35
+        "value": 33.25
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2,65%",
+        "polymarket": "3,45%",
         "tendenciaPesquisa": "4% en la Datafolha del 21/Ago y 3,8% en la Veritá del mismo día, es decir, las dos casas lo miden en un nivel parecido.",
-        "tendenciaPolymarket": "2,65% (vol USD 10,56M) en la lectura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), CAÍDA de 1,50pp, la mayor del libro. El punto registrado más bajo de hoy, 3,40%, es el menor de toda la serie registrada, que empieza el 14/Abr, contra 49,60% el 28/Abr.",
-        "odds": 2.65,
+        "tendenciaPolymarket": "3,45% (vol USD 10,68M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), con alza de 0,80pp que devuelve la caída de ayer. Carga uno de los mayores volúmenes individuales del libro, por encima de Lula, y paga menos de cuatro puntos. En el contrato de 3º lugar de la primera vuelta tiene 56,00%.",
+        "odds": 3.45,
         "percentage": 4,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 2.65
+        "value": 3.45
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0,35%",
+        "polymarket": "0,55%",
         "tendenciaPesquisa": "5% en la Datafolha del 21/Ago y 3,3% en la Veritá.",
-        "tendenciaPolymarket": "0,35% (vol USD 6,44M) en la lectura confirmada de 22/Ago, 16:40 BRT (19:40 UTC), sin variación. En el contrato de tercer lugar de la primera vuelta tiene 46,00%, a 3,50pp de Renan Santos.",
-        "odds": 0.35,
+        "tendenciaPolymarket": "0,55% (vol USD 6,46M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), con alza de 0,20pp. En el contrato de 3º lugar de la primera vuelta tiene 41,00%, a 15,00pp de Renan Santos.",
+        "odds": 0.55,
         "percentage": 5,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.35
+        "value": 0.55
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5,2%",
-        "polymarket": "0,15%",
+        "polymarket": "0,45%",
         "tendenciaPesquisa": "⭐ TESTADO POR PRIMERA VEZ EN UNA NACIONAL: la Veritá del 21 de ago lo mide en 5,2% en la primera vuelta, lo que lo coloca TERCERO, por delante de Renan Santos y de Ronaldo Caiado. Hasta esta ronda tenía precio y ninguna medición de urna.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,15% (vol USD 2,23M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC), por debajo del piso de 0,5% de la doble lectura. 🔴 Las dos nacionales del día lo midieron: 2% en Datafolha y 5,2% en Veritá. Urna y precio ordenan el pelotón de formas distintas, y las magnitudes no se restan.",
-        "odds": 0.15,
+        "tendenciaPolymarket": "0,45% (vol USD 2,52M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), por debajo del piso de 0,5% de la doble lectura, lo que hace de la variación diaria ruido de libro fino.",
+        "odds": 0.45,
         "percentage": 2,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.15
+        "value": 0.45
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña por la REELECCIÓN a la gobernación de São Paulo el 16 de ago, según O Globo y Folha de S.Paulo. Ninguna nacional de la ventana lo testea en escenario presidencial, y la ausencia de test es información que el panel registra en vez de repetir un dato viejo como si fuera nuevo.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,05% (vol USD 14,00M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). Ninguna nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,03M acumulado) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC). Es el mayor volumen individual entre los 18 contratos con precio del libro presidencial en esta lectura, y paga cinco centésimos de punto: el volumen acumulado mide cuánto dinero pasó, no la probabilidad de hoy.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "21/08/2026, 21:02",
@@ -1532,27 +1532,27 @@
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0,15%",
+        "polymarket": "0,45%",
         "tendenciaPesquisa": "🔴 NACIONAL NUEVA EL 21 DE AGO: la Veritá lo da en 1,3%, su valor más bajo en la ventana de 30 días.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,15% (vol USD 5,81M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC), por debajo del piso de 0,5%. En la urna, 3% en Datafolha y 1,3% en Veritá.",
-        "odds": 0.15,
+        "tendenciaPolymarket": "0,45% (vol USD 5,91M) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC), por debajo del piso de 0,5% de la doble lectura. Anunció su desistimiento del primer debate presidencial, marcado para hoy a las 20h, y atribuyó la decisión a las ausencias de Lula y de Flávio Bolsonaro.",
+        "odds": 0.45,
         "percentage": 3,
         "lastUpdate": "21/08/2026, 21:02",
-        "value": 0.15
+        "value": 0.45
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña a la GOBERNACIÓN DE SÃO PAULO el 16 de ago, según O Globo y Times Brasil. Ninguna nacional de la ventana lo incluye en escenario presidencial, y cualquier escenario que lo incluyera sería una hipótesis de encuesta, no una candidatura en curso.",
-        "tendenciaPolymarket": "➖ SIN VARIACIÓN en 0,05% (vol USD 7,28M acumulado), lectura confirmada del 21 de ago, 21:02 BRT (22 de ago, 00:02 UTC). Ninguna nacional lo testa para presidente, así que queda fuera del grafo de divergencia.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,30M acumulado) en la lectura confirmada de 23/Ago, 14:58 BRT (17:58 UTC). Ninguna nacional lo mide para presidente, así que queda fuera del grafo de divergencia.",
         "odds": 0.05,
         "percentage": 0,
         "lastUpdate": "21/08/2026, 21:02",
         "value": 0.05
       }
     ],
-    "updatedAt": "22/08/2026, 16:40",
+    "updatedAt": "23/08/2026, 14:58",
     "lastUpdate": "2026-08-22"
   }
 }
