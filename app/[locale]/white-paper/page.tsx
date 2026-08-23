@@ -27,7 +27,7 @@ const CONTENT: Record<string, PageContent> = {
     description: 'White paper da AFOS Analytics: objetivos e método. A divergência entre mercados de previsão e pesquisas como sinal, validada pelo resultado real.',
     h1: 'White Paper',
     tagline: 'Mercados, pesquisas e o sinal da divergência: objetivos e método do projeto',
-    updated: 'Nota de trabalho, junho de 2026',
+    updated: 'Nota de trabalho, junho de 2026, atualizada em agosto de 2026',
     intro: [
       'Duas décadas de pesquisa sobre mercados de previsão e pesquisas de opinião (Wolfers e Zitzewitz, 2004; Rothschild, POQ 2009) estabeleceram que cada um carrega informação e cada um carrega viés, e que mercados de-enviesados muitas vezes superam pesquisas de-enviesadas no início do ciclo. A pergunta prática que decorre disso tem sido mais difícil de operacionalizar em escala:',
     ],
@@ -57,7 +57,7 @@ const CONTENT: Record<string, PageContent> = {
       {
         heading: 'Validação, inclusive das falhas',
         paras: [
-          'O projeto começou pela validação prática, e não por um modelo. Reconstruímos o quadro mercados-versus-pesquisas para eleições cujos resultados já são conhecidos e conferimos a leitura de divergência contra o desfecho efetivo. O conjunto validado cobre oito eleições nacionais em três continentes (à parte o caso do Brasil): Peru, Colômbia, Chile, Alemanha, Canadá, México 2024, Reino Unido 2024 e Estados Unidos 2024.',
+          'O projeto começou pela validação prática, e não por um modelo. Reconstruímos o quadro mercados-versus-pesquisas para eleições cujos resultados já são conhecidos e conferimos a leitura de divergência contra o desfecho efetivo. O conjunto validado cobre onze eleições nacionais em quatro continentes (à parte o caso do Brasil): Peru, Colômbia, Chile, Alemanha, Canadá, Coreia do Sul, França 2024, Índia 2024, México 2024, Reino Unido 2024 e Estados Unidos 2024.',
           'Dois pontos que tratamos como estruturais:',
         ],
         bullets: [
@@ -107,7 +107,7 @@ const CONTENT: Record<string, PageContent> = {
     description: 'AFOS Analytics white paper: project goals and method. The divergence between prediction markets and polls as a signal, validated by the real outcome.',
     h1: 'White Paper',
     tagline: 'Markets, polls, and the divergence signal: project goals and method',
-    updated: 'Working note, June 2026',
+    updated: 'Working note, June 2026, updated August 2026',
     intro: [
       'Two decades of research on prediction markets and polls (Wolfers and Zitzewitz, 2004; Rothschild, POQ 2009) established that each carries information and each carries bias, and that de-biased markets often outperform de-biased polls early in the cycle. The practical question that follows has been harder to operationalize at scale:',
     ],
@@ -137,7 +137,7 @@ const CONTENT: Record<string, PageContent> = {
       {
         heading: 'Validation, including the failures',
         paras: [
-          'The project began with practical validation rather than a model. We reconstructed the markets-versus-polls picture for elections whose results are now known and checked the divergence reading against the actual outcome. The validated set spans eight national elections across three continents (Brazil context aside): Peru, Colombia, Chile, Germany, Canada, Mexico 2024, the United Kingdom 2024, and the United States 2024.',
+          'The project began with practical validation rather than a model. We reconstructed the markets-versus-polls picture for elections whose results are now known and checked the divergence reading against the actual outcome. The validated set spans eleven national elections across four continents (Brazil context aside): Peru, Colombia, Chile, Germany, Canada, South Korea, France 2024, India 2024, Mexico 2024, the United Kingdom 2024, and the United States 2024.',
           'Two points we treat as load-bearing:',
         ],
         bullets: [
@@ -187,7 +187,7 @@ const CONTENT: Record<string, PageContent> = {
     description: 'White paper de AFOS Analytics: objetivos y método. La divergencia entre mercados de predicción y encuestas como señal, validada por el resultado real.',
     h1: 'White Paper',
     tagline: 'Mercados, encuestas y la señal de la divergencia: objetivos y método del proyecto',
-    updated: 'Nota de trabajo, junio de 2026',
+    updated: 'Nota de trabajo, junio de 2026, actualizada en agosto de 2026',
     intro: [
       'Dos décadas de investigación sobre mercados de predicción y encuestas de opinión (Wolfers y Zitzewitz, 2004; Rothschild, POQ 2009) establecieron que cada uno aporta información y cada uno aporta sesgo, y que los mercados de-sesgados a menudo superan a las encuestas de-sesgadas al inicio del ciclo. La pregunta práctica que se desprende ha sido más difícil de operacionalizar a escala:',
     ],
@@ -217,7 +217,7 @@ const CONTENT: Record<string, PageContent> = {
       {
         heading: 'Validación, incluidas las fallas',
         paras: [
-          'El proyecto empezó por la validación práctica, y no por un modelo. Reconstruimos el cuadro mercados-versus-encuestas para elecciones cuyos resultados ya se conocen y cotejamos la lectura de divergencia contra el desenlace efectivo. El conjunto validado cubre ocho elecciones nacionales en tres continentes (aparte del caso de Brasil): Perú, Colombia, Chile, Alemania, Canadá, México 2024, Reino Unido 2024 y Estados Unidos 2024.',
+          'El proyecto empezó por la validación práctica, y no por un modelo. Reconstruimos el cuadro mercados-versus-encuestas para elecciones cuyos resultados ya se conocen y cotejamos la lectura de divergencia contra el desenlace efectivo. El conjunto validado cubre once elecciones nacionales en cuatro continentes (aparte del caso de Brasil): Perú, Colombia, Chile, Alemania, Canadá, Corea del Sur, Francia 2024, India 2024, México 2024, Reino Unido 2024 y Estados Unidos 2024.',
           'Dos puntos que tratamos como estructurales:',
         ],
         bullets: [
