@@ -12,9 +12,18 @@
  * declarado, a cor volta a ser a da casa. O que separa um cartão do outro é o
  * NÚMERO e a estrutura, nunca a paleta.
  *
- * 🏷️ O balde de 14,35% é `53 OU MAIS`, e por isso o cartão diz NÃO PERDER
- * NENHUMA, não "manter as 53": esta segunda forma sugere exatamente 53 e é
- * afirmação diferente. Portão de valor não pega defeito de etiqueta.
+ * 🏷️ A manchete e 86,50%, que e `R <= 52`, ou seja PERDER AO MENOS UMA.
+ * Medido em 5 leituras: esse numero NAO se moveu uma vez, enquanto o
+ * complemento dele (`53 OU MAIS`) oscilou 0,20pp e a soma das faixas junto.
+ * 🔴 Faixa fina NAO vai para manchete de cartao: ela deriva sozinha e o
+ * cartao fica desencontrado do painel em minutos. A trava de captura exclui
+ * distribuicao exatamente por isso.
+ *
+ * 🧩 UM CONTRATO POR CARTAO. A versao anterior punha a manchete tirada do
+ * mercado de CADEIRAS e a barra tirada do binario de CONTROLE, que sao livros
+ * diferentes. Como a tese do texto e que os dois DISCORDAM, o cartao entregava
+ * a resposta de um deles como se fosse a resposta. Agora tudo sai do mercado
+ * de cadeiras, e a barra mostra a fatia do EMPATE, que e o achado.
  *
  * ⚠️ O cartão do PAINEL carrega preço vivo e por isso leva CARIMBO de data.
  * Quando o preço andar, regerar e trocar a data, senão o cartão vira
@@ -85,14 +94,14 @@ body { width: ${W}px; height: ${H}px; }
 .body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .pill { display: inline-block; align-self: flex-start; font-size: 20px; font-weight: 700;
         letter-spacing: 2.4px; color: #BFDBFE; border: 2px solid rgba(255,255,255,.3);
-        border-radius: 999px; padding: 7px 18px; margin-bottom: 16px; }
-.big  { font-size: 124px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
-.sub  { font-size: 30px; font-weight: 600; color: #BFDBFE; line-height: 1.32; margin-top: 12px; }
+        border-radius: 999px; padding: 6px 17px; margin-bottom: 12px; }
+.big  { font-size: 104px; font-weight: 800; letter-spacing: -4px; line-height: 1; }
+.sub  { font-size: 29px; font-weight: 600; color: #BFDBFE; line-height: 1.30; margin-top: 10px; }
 .foot { display: flex; justify-content: space-between; align-items: baseline;
         padding-top: 14px; border-top: 2px solid rgba(255,255,255,.22); }
 .url  { font-size: 23px; font-weight: 600; color: #93C5FD; }
 .trio { font-size: 23px; color: rgba(255,255,255,.62); }
-.meta { font-size: 23px; color: rgba(255,255,255,.62); margin-top: 18px; }
+.meta { font-size: 21px; color: rgba(255,255,255,.62); margin-top: 12px; }
 .split { display: flex; gap: 40px; align-items: flex-start; }
 .left  { flex: 1; }
 .card  { width: 420px; background: rgba(255,255,255,.09); border: 2px solid rgba(255,255,255,.24);
@@ -101,13 +110,15 @@ body { width: ${W}px; height: ${H}px; }
 .card .l { font-size: 25px; color: #DBEAFE; line-height: 1.32; margin-top: 8px; }
 .card .s { font-size: 19px; color: rgba(255,255,255,.6); margin-top: 10px; }
 .thesis { font-size: 34px; font-weight: 700; line-height: 1.28; margin-top: 26px; }
-.bar { display: flex; gap: 6px; margin-top: 20px; }
-.bar div { height: 50px; border-radius: 7px; display: flex; align-items: center;
+.bar { display: flex; gap: 6px; margin-top: 8px; }
+.bar div { height: 46px; border-radius: 7px; display: flex; align-items: center;
            font-size: 24px; font-weight: 700; letter-spacing: .6px; }
 .bar .d { background: #BFDBFE; color: #0A3573; justify-content: flex-start; padding-left: 20px; }
 .bar .r { background: rgba(255,255,255,.10); border: 2px solid rgba(255,255,255,.34); color: #fff;
           justify-content: flex-end; padding-right: 20px; }
-.line { font-size: 31px; font-weight: 700; margin-top: 26px; }
+.line { font-size: 29px; font-weight: 700; line-height: 1.24; margin-top: 16px; }
+.barcap { font-size: 19px; color: rgba(255,255,255,.6); margin-top: 14px; letter-spacing: .4px; }
+.bar .t { background: rgba(255,255,255,.30); color: #062B63; justify-content: center; font-size: 20px; }
 `
 
 const frame = (body) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${BASE}</style></head>
@@ -140,14 +151,16 @@ const cartaoA = frame(`
 // ── B · o Senado, no painel dos EUA ────────────────────────────────────────
 const cartaoB = frame(`
   <div class="pill">UNITED STATES PANEL</div>
-  <div class="big">14.35%</div>
-  <div class="sub">what the market pays on Republicans not losing<br>a single one of the 53 Senate seats they hold today</div>
-  <div class="line">And yet control of the chamber is a coin flip</div>
+  <div class="big">86.50%</div>
+  <div class="sub">what the market pays on Republicans losing at least one<br>of the 53 Senate seats they hold today</div>
+  <div class="line">And one in eight scenarios ends 50 to 50,<br>with the Vice President breaking it</div>
+  <div class="barcap">how the seat market splits the majority</div>
   <div class="bar">
-    <div class="d" style="flex:49.5">DEMOCRATS 49.50%</div>
-    <div class="r" style="flex:49.5">REPUBLICANS 49.50%</div>
+    <div class="d" style="flex:53.00">DEMOCRATS 53.00%</div>
+    <div class="t" style="flex:12.50">TIE 12.50%</div>
+    <div class="r" style="flex:35.45">REPUBLICANS 35.45%</div>
   </div>
-  <div class="meta">Two independent readings, agreeing within 0.20pp &middot; August 23, 2026</div>`)
+  <div class="meta">Seat market, bands sum to 100.95% &middot; confirmed August 23, 2026</div>`)
 
 const browser = await chromium.launch()
 const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
