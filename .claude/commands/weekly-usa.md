@@ -95,6 +95,28 @@ O corpo é título, TL;DR, `moneyIntro`, os `desc` dos cards, `moneyFootnote`, `
 - **Medir, nunca julgar** veículo.
 - 🏷️ **Todo número diz DE QUE ele é.** "85,50%" não basta: é a probabilidade de os **democratas** controlarem a **Câmara**.
 
+## ETAPA 3.5: CONTAR os blocos pelo LOADER, antes do preview (bloqueante)
+
+🔴 **Instalado em 23/Ago/2026.** A régua de contar bloco existia na skill do `/tradeoff-usa` e **não existia aqui nem no `/tradeoff-brz`**, e foi no produto sem a régua que o defeito sobreviveu seis edições. Regra instalada em um caminho de três protege um caminho de três.
+
+O `coerce*` do loader falha **calado** de duas formas: campo obrigatório com nome errado faz a linha ser **descartada**, e enum com valor inválido **cai para o padrão**, produzindo um valor errado e plausível. A segunda não deixa rastro.
+
+**Rodar antes do preview e comparar com o que o arquivo tem:**
+
+```bash
+cat > scripts/tmp-wk.ts <<'EOF'
+import { loadWeekly } from '../lib/afos-weekly/loader'
+for (const loc of ['en', 'pt-BR', 'es']) {
+  const d: any = loadWeekly('DATA', loc, 'us')   // ordem: (data, IDIOMA, pais)
+  if (!d) { console.log(`  ${loc} LOADER DEVOLVEU NULL`); continue }
+  console.log(`  ${loc.padEnd(6)} tldr=${d.tldr?.length} cards=${d.cards?.length} cruzamentos=${d.crossings?.length} fontes=${d.sources?.length} narrativa=${d.coverage?.narrative ? 'sim' : 'NAO'}`)
+}
+EOF
+npx tsx scripts/tmp-wk.ts; rm -f scripts/tmp-wk.ts
+```
+
+**Bloco com 0, ou `narrativa=NAO`, é bloco que não vai aparecer.** Ver [[feedback_loader_descarta_bloco_com_campo_errado_em_silencio]].
+
 ## ETAPA 4: Preview, SEM prod
 
 ```bash

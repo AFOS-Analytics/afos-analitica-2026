@@ -134,6 +134,44 @@ No final do `body` markdown, ANTES do footer de sources, sempre incluir bloco ca
   node -e "const m=require('gray-matter'),f=require('fs');const d=m(f.readFileSync('public/afos-tradeoff/DATA.md','utf8')).data;const t=[];const go=v=>{if(typeof v==='string')t.push(v);else if(Array.isArray(v))v.forEach(go);else if(v&&typeof v==='object')Object.entries(v).forEach(([k,x])=>{if(!['contractLink','printLink','link','totalLink','deltaDirection','locale','status','unit'].includes(k))go(x)})};go(d);console.log(t.join(' ').replace(/https?:\/\/\S+/g,'').replace(/[*\[\]()#]/g,' ').split(/\s+/).filter(Boolean).length)"
   ```
 
+## ETAPA 3.9: CONTAR os blocos pelo LOADER, antes do preview (bloqueante)
+
+🔴 **Instalado em 23/Ago/2026, e o motivo é que esta régua existia só na skill dos EUA.** O `feedback_loader_descarta_bloco_com_campo_errado_em_silencio` documentava desde 03/Ago que o `coerce*` do loader falha **calado** em duas formas, e dizia "está na régua do `/tradeoff-usa`". Estava mesmo. E não estava aqui. Resultado: as edições **№8 a №13 do Brasil saíram com `type: contrarian`**, que não existe, e o cenário CONTRÁRIO AO PRICING foi ao ar seis vezes pintado com a cor do cenário BASE.
+
+**As duas formas de falha, e a segunda é pior:**
+
+| forma | o que acontece | como aparece |
+|---|---|---|
+| campo obrigatório com nome errado | o `.filter()` **descarta a linha** | seção menor, ou vazia |
+| enum com valor inválido | o coercer **cai para o padrão** | seção do tamanho certo, com o valor **errado e plausível** |
+
+⚠️ **Enum errado não deixa rastro nenhum.** `contrarian` vira `base`, o texto e o rótulo continuam certos, e só a cor muda. Olhar o preview não pega: página com bloco sumido e página com bloco que nunca foi escrito são idênticas.
+
+**Os valores que o loader aceita, e são só estes:**
+
+- `scenarios[].type`: **`base` | `bear` | `tail`**. ⛔ **`contrarian` NÃO existe.** O rótulo em português continua sendo "Contrário ao pricing"; quem muda é só o `type`.
+- `deltaDirection`: `up` | `down` | `flat`.
+
+**Rodar antes do preview, e comparar com o que o arquivo tem:**
+
+```bash
+cat > scripts/tmp-tr.ts <<'EOF'
+import { loadTradeoff } from '../lib/afos-tradeoff/loader'
+for (const loc of ['pt-BR', 'en', 'es']) {
+  const d: any = loadTradeoff('DATA', loc)
+  if (!d) { console.log(`  ${loc} LOADER DEVOLVEU NULL`); continue }
+  console.log(`  ${loc.padEnd(6)} cards=${d.summaryCards?.length} cenarios=${d.scenarios?.length} grade=${d.indicatorGrid?.length} watch=${d.watchList?.length} calendario=${d.calendar?.length} liquidez=${d.liquidity?.rows?.length} leituras=${d.additionalReading?.items?.length} tipos=${d.scenarios?.map((s: any) => s.type).join(',')}`)
+}
+EOF
+npx tsx scripts/tmp-tr.ts; rm -f scripts/tmp-tr.ts
+```
+
+**Bloco com 0 é bloco que não vai aparecer. `tipos` que não der `base,bear,tail` é enum coagido.**
+
+📌 **E a régua vale para as edições JÁ PUBLICADAS**, não só para a nova: em 23/Ago a varredura pegou 18 arquivos, 6 edições vezes 3 idiomas.
+
+⛔ **Consertar `contrarian` NÃO se faz por substring.** Em 23/Ago o `.en` de 10/Ago tinha 3 ocorrências da palavra e o de 17/Ago tinha 2, e as extras eram **prosa em inglês** ("the contrarian got the market right"). Casar só a linha `- type:`, abortar se houver número diferente de 1 por arquivo, e conferir que a contagem da palavra no arquivo caiu em exatamente 1. → [[feedback_rebaseline_por_texto_colide_substring]]
+
 ## ETAPA 4: Preview Vercel (SEM prod)
 
 ```bash
