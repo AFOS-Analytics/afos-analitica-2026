@@ -12,7 +12,7 @@
  * declarado, a cor volta a ser a da casa. O que separa um cartão do outro é o
  * NÚMERO e a estrutura, nunca a paleta.
  *
- * 🏷️ O balde de 14,25% é `53 OU MAIS`, e por isso o cartão diz NÃO PERDER
+ * 🏷️ O balde de 14,35% é `53 OU MAIS`, e por isso o cartão diz NÃO PERDER
  * NENHUMA, não "manter as 53": esta segunda forma sugere exatamente 53 e é
  * afirmação diferente. Portão de valor não pega defeito de etiqueta.
  *
@@ -140,14 +140,14 @@ const cartaoA = frame(`
 // ── B · o Senado, no painel dos EUA ────────────────────────────────────────
 const cartaoB = frame(`
   <div class="pill">UNITED STATES PANEL</div>
-  <div class="big">14.25%</div>
+  <div class="big">14.35%</div>
   <div class="sub">what the market pays on Republicans not losing<br>a single one of the 53 Senate seats they hold today</div>
   <div class="line">And yet control of the chamber is a coin flip</div>
   <div class="bar">
-    <div class="d" style="flex:50.5">DEMOCRATS 50.50%</div>
+    <div class="d" style="flex:49.5">DEMOCRATS 49.50%</div>
     <div class="r" style="flex:49.5">REPUBLICANS 49.50%</div>
   </div>
-  <div class="meta">Confirmed capture, two readings eight minutes apart &middot; August 23, 2026</div>`)
+  <div class="meta">Two independent readings, agreeing within 0.20pp &middot; August 23, 2026</div>`)
 
 const browser = await chromium.launch()
 const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
