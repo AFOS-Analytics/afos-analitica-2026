@@ -115,6 +115,12 @@ export interface AfosWeeklyData {
   title: string
   locale: string
   status: string
+  /**
+   * Cartão social PRÓPRIO desta edição, caminho a partir da raiz do site.
+   * Sem ele a edição cai no cartão genérico por idioma, que é o MESMO que o
+   * painel usa: dois posts no mesmo dia saíam com a imagem idêntica no feed.
+   */
+  ogImage?: string
   /** Idioma realmente servido, que pode ser o de origem se faltar tradução. */
   servedLocale: string
   tldr: string[]
@@ -255,6 +261,7 @@ export function loadWeekly(date: string, locale: string, pais: string): AfosWeek
     title: str(fm.title),
     locale: str(fm.locale, alvo.servido),
     status: str(fm.status, 'draft'),
+    ogImage: str(fm.ogImage) || undefined,
     servedLocale: alvo.servido,
     tldr: arr<string>(fm.tldr).map(x => String(x)),
     moneyIntro: str(fm.moneyIntro),

@@ -28,8 +28,16 @@ const TAGS_POR_PAIS: Record<string, string[]> = {
   us: ['US 2026 midterms', 'prediction markets', 'electoral polls', 'political risk', 'weekly analysis'],
 }
 
-/** Imagem OG por idioma. Replicada, não importada: este módulo é isolado. */
-function getOgImageUrl(locale?: string): string {
+/**
+ * Imagem OG da edição. Replicada, não importada: este módulo é isolado.
+ *
+ * 🔴 O `override` existe porque o cartão genérico por idioma é o MESMO arquivo
+ * que o painel dos EUA serve. Duas peças divulgadas no mesmo dia apareciam com
+ * a imagem idêntica no feed, e quem via o segundo post achava que era repost
+ * do primeiro. Edição com achado próprio declara `ogImage` no frontmatter.
+ */
+function getOgImageUrl(locale?: string, override?: string): string {
+  if (override) return `https://www.afos-analytics.com${override}`
   const safe = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
   // 🔴 Arquivo ESTÁTICO, não `/api/og`. O robots.ts bloqueia `/api/` para todo
   // agente, então o LinkedInBot e o facebookexternalhit recusavam buscar a
@@ -109,13 +117,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       authors: ['AFOS Analytics'],
       section: 'Politics',
       tags: TAGS_POR_PAIS[p.country] ?? ['prediction markets', 'electoral polls', 'political risk'],
-      images: [{ url: getOgImageUrl(p.locale), width: 1200, height: 630, alt: data.title }],
+      images: [{ url: getOgImageUrl(p.locale, data.ogImage), width: 1200, height: 627, alt: data.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: data.title,
       description: descricao,
-      images: [getOgImageUrl(p.locale)],
+      images: [getOgImageUrl(p.locale, data.ogImage)],
     },
   }
 }

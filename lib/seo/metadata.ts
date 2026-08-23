@@ -16,6 +16,13 @@ interface PageSeo {
   title: string;
   description: string;
   path: string; // sem locale prefix (ex: '' para home, 'global' para mapa)
+  /**
+   * Cartão social próprio da página, caminho a partir da raiz do site.
+   * Sem ele a página cai no cartão genérico por idioma, que é compartilhado
+   * com TODAS as outras: dois links divulgados no mesmo dia saem com a mesma
+   * imagem no feed. Página com número próprio deve declarar o seu.
+   */
+  image?: string;
 }
 
 /**
@@ -67,7 +74,7 @@ export function buildMetadata(seo: PageSeo, locale: Locale): Metadata {
       canonical: url,
       languages,
     },
-    ...socialMeta(locale, { title: seo.title, description: seo.description, url }),
+    ...socialMeta(locale, { title: seo.title, description: seo.description, url, image: seo.image ? `${BASE_URL}${seo.image}` : undefined }),
     other: {
       'geo.region': locale === 'pt-BR' ? 'BR' : locale === 'es' ? 'LATAM' : 'Global',
       'geo.placename': locale === 'pt-BR' ? 'Brasil' : locale === 'es' ? 'America Latina' : 'Global',

@@ -37,7 +37,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: 'Panel de las elecciones de medio término de Estados Unidos del 3 de noviembre de 2026: mercado de predicción y encuestas lado a lado, sin restar magnitudes distintas.',
     },
   };
-  return buildMetadata({ ...SEO[loc], path: 'dashboard/us' }, loc);
+  // 🎨 Cartão próprio, e a cor dele vem do PAÍS (verde-azulado = EUA), nunca
+  // do produto. Antes daqui o painel e o AFOS Weekly apontavam para o MESMO
+  // /brand/og-en-linkedin-1200x627.png, e dois posts no mesmo dia apareciam
+  // com a imagem idêntica no feed.
+  // ⚠️ O cartão carrega PREÇO e leva carimbo de data dentro da arte. Quando o
+  // preço andar, regerar com scripts/build-og-cards-us.mjs e trocar a data.
+  return buildMetadata({ ...SEO[loc], path: 'dashboard/us', image: '/brand/og-us-senate-panel-1200x627.png' }, loc);
 }
 
 // O generic ballot é lido no SERVIDOR e passa como prop, igual ao painel do
