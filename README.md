@@ -166,6 +166,12 @@ Each claim in AFOS Daily must link to the **specific article** that supports it,
 
 **Manual validator:** `npx tsx scripts/validate-afos-daily.ts {date} [--locale=en\|es]` exits 1 on critical errors (matches the PreToolUse hook). Used in the operator workflow before commit (pre-commit hook). NOT wired into CI: `ci.yml` does not call it.
 
+**Edge blocks vs dead links (layer 4, Aug 23, 2026).** Layer 4 checks every URL over HTTP and blocks on 4xx/5xx. That rule misclassifies one case: a **CDN edge block**, where the host answers 403 to *us* while serving everyone else. Measured on `divulgacandcontas.tse.jus.br`, the Brazilian electoral court's public registry: 403 to `HEAD` and `GET` alike, 403 to `/robots.txt`, body signed by `errors.edgesuite.net` (Akamai), while the production cron ingested 6 polls from the same host that day.
+
+A 403 is **not a statement about the resource, it is a statement about the client**. So the gate now treats `403` (and only 403) on a domain **already in `ANTI_BOT_WHITELIST`** as an edge block rather than a broken link. The exception is deliberately narrow, and it is never silent: the hook reports those URLs as **NOT VERIFIED**, not as approved. `404` and `410` still block on every domain, including whitelisted ones (verified with negative tests against `oglobo.globo.com` and `www1.folha.uol.com.br`).
+
+Consequence to keep in mind: while a host sits behind an edge block, the gate **cannot distinguish a live page from a dead one there**. It stops blocking, it does not start confirming.
+
 **Editorial source ratio (50/50 rule, firmed May 9, 2026):** each AFOS Daily uses a **minimum 50% anchor outlets via direct RSS** (Folha de S.Paulo, O Globo, G1, Estadão, Valor, VEJA, institutional credibility) **+ minimum 50% secondary outlets via Google News redirect** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc., open access, reproduce anchor coverage without paywall). Refinement of the prior 30/70 rule motivated by the observation that anchor outlets often paywall content for non-subscribers (especially international readers); secondary outlets replicate the same coverage with open access. Applies uniformly to PT-BR / EN / ES. Translations preserve URLs as collected in the source language.
 
 ### Project Structure
