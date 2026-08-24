@@ -14,6 +14,7 @@
 
 import { writeFileSync } from 'fs'
 import { coletarGenericBallot } from '../lib/us-polls/collect.mjs'
+import { medirAtraso } from '../lib/us-polls/atraso.mjs'
 
 const arg = (n, padrao) => {
   const m = process.argv.find((a) => a.startsWith(`--${n}=`))
@@ -30,4 +31,16 @@ console.log(`✅ ${saidaPath}`)
 console.log(`   ${saida.qualidade.publicadas} publicadas de ${saida.qualidade.linhasLidas} lidas · ${saida.qualidade.descartadasPorForma} descartada(s) por forma`)
 if (saida.mediaAfos) {
   console.log(`   média: Dem ${saida.mediaAfos.dem}% x Rep ${saida.mediaAfos.rep}% (D+${saida.mediaAfos.vantagemDem}) sobre ${saida.mediaAfos.nPesquisas} pesquisas de ${saida.mediaAfos.nInstitutos} institutos`)
+}
+
+// ⚠️ ATRASO DA FONTE: medido e IMPRESSO, nunca gravado no arquivo.
+// O `saida` acima vira `public/us-polls-data.json`, que é SERVIDO publicamente.
+// O atraso é diagnóstico de operador. A regra que isto serve: nunca publicar
+// frase que atribui ao MUNDO o que é propriedade da NOSSA coleta.
+// Ver lib/us-polls/atraso.mjs e
+// memory/feedback_descrever_o_metodo_sim_relatar_a_falha_nao.md
+const at = medirAtraso(saida)
+if (at.atrasoDias !== null) {
+  const sinal = at.atrasoDias >= 14 ? '🔴' : at.atrasoDias >= 7 ? '⚠️' : '·'
+  console.log(`   ${sinal} atraso da fonte: ${at.atrasoDias} dia(s), campo mais recente ${at.campoMaisRecente}  [USO INTERNO, nao publicar]`)
 }

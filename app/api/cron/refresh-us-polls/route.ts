@@ -4,6 +4,8 @@ import { prisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
+import { medirAtraso, cruzouMarco } from '../../../../lib/us-polls/atraso.mjs'
+import { avisarAtrasoDaFonte } from '../../../../lib/cron/alerta'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
 
@@ -68,6 +70,29 @@ export async function GET(request: Request) {
       createdBy: 'system:cron-us-polls',
       fallbackIsoDate: dados.lastUpdate,
     })
+
+    // ⚠️ ATRASO DA FONTE: medido, alertado e NUNCA publicado.
+    //
+    // Decidido pelo André em 24/Ago/2026, depois de a Tradeoff EUA №5 sair do
+    // rascunho dizendo em quatro lugares que a base estava "parada há vinte
+    // dias". O argumento dele: nos EUA sai pesquisa todo dia, então dizer isso
+    // não descreve o eleitorado, denuncia a nossa coleta.
+    //
+    // ⛔ O `atraso` NÃO entra em `dados`. Aquele mesmo objeto é o que o script
+    // grava em `public/us-polls-data.json`, servido publicamente. Ele vive só
+    // aqui, no log e no email de alerta.
+    const atraso = medirAtraso(dados)
+    if (atraso.atrasoDias !== null) {
+      console.log(
+        `[cron/refresh-us-polls] atraso da fonte: ${atraso.atrasoDias}d, campo mais recente ${atraso.campoMaisRecente}`,
+      )
+      // Marco EXATO, não nível: o atraso cresce 1 por dia, e alertar por
+      // `>=` dispararia todo dia a partir do primeiro. Alerta que chega todo
+      // dia é alerta que alguém aprende a ignorar.
+      if (cruzouMarco(atraso.atrasoDias)) {
+        void avisarAtrasoDaFonte(atraso.atrasoDias, atraso.campoMaisRecente)
+      }
+    }
 
     return NextResponse.json(
       {
