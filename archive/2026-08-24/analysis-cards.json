@@ -1,0 +1,38 @@
+{
+  "updatedAt": "24/08/2026, 18:25",
+  "cards": {
+    "sentimento": {
+      "text1": "O livro presidencial acumula USD 132,34M e o preço desta página é da leitura confirmada de 24/Ago, 18:25 BRT (21:25 UTC). Lula está em 62,50% (vol USD 8,92M) e Flávio Bolsonaro em 35,05% (vol USD 8,84M), com 27,45pp entre os dois.",
+      "text2": "O dia teve movimento, e ele veio de um lado só. Lula ficou sem variação nenhuma e Flávio Bolsonaro subiu 1,80pp, a maior alta do livro no dia. A distância entre os dois caiu de 29,25pp para 27,45pp, e a compressão inteira é da alta do segundo. Renan Santos cedeu 0,55pp e ficou em 2,90%.",
+      "text3": "Dois superlativos se aplicam hoje, os dois com data conferida contra a série que começa em 14/Abr: os 35,05% de Flávio Bolsonaro são o valor mais alto dele desde 13/Mai, e os 27,45pp de distância são a menor desde 21/Jun pelo critério de fechamento diário. ⚠️ Nenhum dos dois é extremo de série: o topo dele é 45,50%, de 6 de maio, e em 5 de maio a distância chegou a ser NEGATIVA em 7,80pp, com ele à frente. A maior leitura de Lula desde 14/Abr é 67,50%, de 16 de agosto.",
+      "direita": "Flávio Bolsonaro em 35,05% no presidencial, alta de 1,80pp, e 85,50% no contrato de segundo lugar do primeiro turno, queda de 1,00pp. O Partido Liberal tem 77,50% no mercado de maior bancada do Senado.",
+      "esquerda": "Lula em 62,50%, sem variação no dia. No contrato de segundo lugar do primeiro turno ele aparece com 5,95%, o que é coerente com um mercado que o vê passando em primeiro.",
+      "terceiraVia": "Renan Santos em 2,90% depois de ceder 0,55pp, e Ronaldo Caiado em 0,70% depois de subir 0,15pp. No contrato de terceiro lugar do primeiro turno os dois seguem separados por 15,00pp, com 54,00% contra 39,00%, e os dois cederam 2,00pp no dia.",
+      "polymarket": "Preços da leitura confirmada de 24/Ago, 18:25 BRT (21:25 UTC). O AFOS só publica preço que duas leituras independentes, separadas por oito minutos, confirmam dentro de 0,20pp. ⚠️ A trava prova que o preço não está em trânsito; ela não prova que ele é o nível do dia."
+    },
+    "inss": {
+      "text1": "⭐ FATO NOVO EM 24/Ago, e ele é de política pública, não de investigação. O governo avalia aplicar reajuste diferenciado a beneficiários do INSS, segundo InfoMoney e Poder360, que atribuem a informação a reportagem de jornal.",
+      "text2": "No mesmo dia o instituto passou a permitir contratação de consignado sem biometria, com validação por dados bancários, e a barrar empréstimo nos primeiros 90 dias do benefício, segundo a cobertura do dia. São medidas administrativas, e o painel as registra como contexto de gestão, não como desfecho do caso de fraudes.",
+      "text3": "A distinção que o painel mantém desde o início continua valendo: uma coisa é o efeito sobre a avaliação da gestão, outra é o efeito sobre a intenção de voto. ⛔ O painel NÃO atribui ao caso o encurtamento da distância no preço, porque não existe medição que isole esse efeito.",
+      "text4": "⚠️ O caso segue vivo no Judiciário e sem desfecho: a cobertura de 24/Ago registra que uma investigação sobre lavagem de dinheiro do tráfico chegou ao Supremo por possível elo com os casos Master e INSS. Alegação em investigação não é fato provado, e o painel a registra como alegação.",
+      "impactoLula": "Não isolável. A BTG/Nexus de 24/Ago o põe em 41% no 1º turno e à frente no 2º por 46% a 45%, e na mesma rodada ele é o candidato mais rejeitado, com 49%. ⛔ Nenhuma pesquisa da janela isola o efeito do caso sobre esses números, e o painel não o estima.",
+      "impactoGestao": "A avaliação segue com saldo negativo e ele aumentou: 43% de ruim ou péssimo contra 35% de ótimo ou bom na BTG/Nexus de 24/Ago, uma distância de 8 pontos, contra 42% e 34% na rodada da mesma casa em 17/Ago. Aprovação e desaprovação estão em 48% e 49%. O painel registra o saldo e não projeta efeito eleitoral a partir dele.",
+      "conclusao": "O caso segue sem desfecho judicial. O que a semana acrescenta é de outra natureza: medidas administrativas do instituto e discussão de reajuste, que tocam a gestão e não a apuração. O painel mantém as duas coisas separadas."
+    },
+    "bancoMaster": {
+      "text1": "⭐ O FATO NOVO DE 24/Ago É SOCIETÁRIO. Em assembleia geral extraordinária, os acionistas do BRB aprovaram por maioria a adoção de medidas de responsabilização civil contra ex-administradores apontados como responsáveis por danos ao banco em operações do ecossistema Master e Reag, segundo Metrópoles e CNN Brasil.",
+      "text2": "⚠️ A RESSALVA ESTÁ NO PRÓPRIO ATO, e ela importa: a autorização se dá sob o artigo 159 da Lei 6.404/1976 e NÃO representa determinação prévia de responsabilidade de nenhuma pessoa. É rito societário que habilita o banco a processar, não condenação.",
+      "text3": "O painel separa as duas coisas de propósito. Autorização de assembleia é etapa de governança corporativa, apuração criminal corre em outro trilho, e o caso segue sem desfecho judicial. Nenhum contrato do painel precifica esse caso diretamente, então não há preço a citar aqui.",
+      "conclusao": "Em 24/Ago o caso avança por um rito de acionistas, não por ato de investigação nem por decisão de mérito. A cobertura do dia também registra que os desdobramentos dos casos Master e Lulinha seguem alimentando as duas campanhas, com desfechos que a própria imprensa projeta para depois da eleição."
+    },
+    "stf": {
+      "toffoli": "Sem ato individual novo capturado em 24/Ago.",
+      "moraes": "Aparece em 24/Ago na cobertura, não em ato novo: um deputado pediu a ele a investigação de um aliado do clã Bolsonaro preso na Bolívia, segundo a coleta do dia. Pedido protocolado não é decisão.",
+      "gilmar": "Sem ato individual novo em 24/Ago.",
+      "dino": "⭐ O ATO RELEVANTE SEGUE SENDO DELE, e ganhou detalhe em 23/Ago. Flávio Dino reafirmou que é nula a indicação de emendas parlamentares feita por presidentes de partido, ex-deputados ou pessoas sem mandato, citando suspeitas sobre o presidente do PL e um ex-deputado, e fixou prazo improrrogável de cinco dias úteis para os partidos que ainda não se manifestaram, sob multa diária de R$ 100 mil, segundo Poder360 e CNN Brasil. Em 24/Ago ele também autorizou a Polícia Federal a acessar provas da Polícia Civil de São Paulo sobre a produtora do filme Dark Horse.",
+      "mendonca": "Aparece em 24/Ago na cobertura, não em ato novo: a coleta do dia registra que os desdobramentos dos casos Master e Lulinha ampliaram divergências entre ele e o procurador-geral.",
+      "nexo": "⭐ O NEXO SEGUE ORÇAMENTÁRIO, não eleitoral. A decisão sobre emendas atinge a engrenagem que financia base parlamentar em ano de eleição, e agora alcança nominalmente a direção do partido do segundo colocado no preço. ⛔ O painel registra o alcance da decisão e NÃO atribui a ela o movimento de preço do dia: não existe medição que ligue os dois.",
+      "analise": "O contrato de saída de ministro do Supremo por impeachment antes de 2027 está em 3,35% (vol USD 84 mil), sem variação em relação a ontem, na leitura confirmada de 24/Ago, 18:25 BRT (21:25 UTC). O mercado não se moveu nem pela decisão de Dino sobre emendas, de 23/Ago, nem pela decisão do TRE-SP sobre Pablo Marçal, de 24/Ago. Contrato institucional estável num dia em que o presidencial andou 1,80pp de um lado."
+    }
+  }
+}
