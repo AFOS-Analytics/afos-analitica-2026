@@ -177,6 +177,25 @@ Consequencia a nao esquecer: enquanto um host estiver atras de bloqueio de borda
 
 **Razao de fontes editoriais (regra 50/50, firmada em 9/Mai/2026):** cada AFOS Daily usa **no minimo 50% de veiculos-ancora via RSS direto** (Folha de S.Paulo, O Globo, G1, Estadao, Valor, VEJA, credibilidade institucional) **+ no minimo 50% de veiculos secundarios via redirect do Google News** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc., acesso aberto, reproduzem a cobertura-ancora sem paywall). Refinamento da regra anterior 30/70, motivado pela observacao de que veiculos-ancora frequentemente colocam conteudo em paywall para nao-assinantes (sobretudo leitores internacionais); os secundarios replicam a mesma cobertura com acesso aberto. Aplica-se uniformemente a PT-BR / EN / ES. As traducoes preservam as URLs como coletadas no idioma de origem.
 
+### Extremos de série e superlativos
+
+Média, mediana e quantis sobrevivem a uma observação ruim. **Máximo e mínimo não: um único tick os define sozinho.** Toda vez que o painel publica "o topo da série" ou "o piso da série", está publicando o valor de exatamente um registro, e basta esse registro estar errado para a frase inteira ser falsa.
+
+Medido em 24/Ago/2026, no livro presidencial. Dois extremos, conferidos do mesmo jeito, com vereditos opostos:
+
+| Desfecho | Extremo | Vizinhos temporais | Veredito |
+|---|---|---|---|
+| Líder | 70,00% em 28/Abr, 11:45 UTC | 36,50% às 10:15, 36,50% às 12:40 | **artefato de captura** |
+| Segundo | 45,50% em 06/Mai, 19:00 UTC | 43,70% e 44,80% | **legítimo** |
+
+Salto de 33,5pp e volta completa em duas horas e meia, sem nenhum ponto intermediário, não é nível. O segundo maior valor de toda a série é 67,50%, e só 2 dos 343 pontos passam de 67%.
+
+**A conferência é um comando: olhar os vizinhos do extremo antes de publicá-lo.** Extremo legítimo tem vizinhos próximos; extremo espúrio fica isolado. Dois sinais secundários ajudam: valor exatamente redondo num book que negocia em centésimos de ponto, e extremo muito fora da faixa que o resto da série ocupa.
+
+O `scripts/capture-guard.ts` foi instalado em 24/Jul/2026 e exige duas leituras independentes, separadas por oito minutos, concordando dentro de 0,20pp antes de qualquer preço ser publicado. Ele impede que um book em trânsito vire número publicado **daquela data em diante**; o histórico gravado antes dele não tem essa garantia.
+
+Relacionado: a `/api/market/history` não é fonte segura para essa conferência (ver a tabela de APIs). Superlativos são verificados contra o `backup/neon/marketPrice/*.csv.gz`, que guarda o registro completo desde 14/Abr.
+
 ### Estrutura do Projeto
 
 ```
@@ -450,6 +469,12 @@ Cron 3x/dia (6h, 12h, 18h)
   → Neon: research.sources + research_runs + research_findings
   → Cruzamento: pesquisas recentes (15 dias) × odds Polymarket
 ```
+
+---
+
+**Identificar a que onda uma pesquisa pertence (24/Ago/2026).** Trackers semanais repetem patamares. A série BTG/Nexus mediu 41 x 37 no 1º turno e 46 x 45 no 2º turno **tanto** em 03/Ago **quanto** em 24/Ago, com três semanas de diferença. No dia em que a segunda delas saiu, quatro fontes distintas devolveram a onda errada: um resumo de busca misturando três delas, uma URL de veículo cujo slug contém o topline mas é da onda anterior, uma página de veículo em slug mensal e outra em slug genérico.
+
+**A onda se identifica pelo número de registro no TSE, nunca pelo topline e nunca pela URL.** O registro é único por levantamento, aparece na matéria e no ZIP oficial, e é o campo `register` do `public/polls-data.json`. O `fieldDates` é a segunda âncora. A comparação com a onda anterior se faz contra a nossa própria série registrada, não contra o enquadramento de um veículo, porque veículos comparam com bases diferentes sem sempre dizer qual.
 
 ---
 

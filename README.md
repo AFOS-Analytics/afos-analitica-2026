@@ -176,6 +176,25 @@ Consequence to keep in mind: while a host sits behind an edge block, the gate **
 
 **Editorial source ratio (50/50 rule, firmed May 9, 2026):** each AFOS Daily uses a **minimum 50% anchor outlets via direct RSS** (Folha de S.Paulo, O Globo, G1, Estadão, Valor, VEJA, institutional credibility) **+ minimum 50% secondary outlets via Google News redirect** (Poder360, BBC, Canal MyNews, CartaCapital, InfoMoney, CBN, Gazeta do Povo, Exame, etc., open access, reproduce anchor coverage without paywall). Refinement of the prior 30/70 rule motivated by the observation that anchor outlets often paywall content for non-subscribers (especially international readers); secondary outlets replicate the same coverage with open access. Applies uniformly to PT-BR / EN / ES. Translations preserve URLs as collected in the source language.
 
+### Series extremes and superlatives
+
+Mean, median and quantiles survive one bad observation. **Maximum and minimum do not: a single tick defines them on its own.** Every time the panel publishes "the peak of the series" or "the floor of the series", it is publishing the value of exactly one record, so one wrong record makes the whole sentence false.
+
+Measured on 24/Aug/2026, on the presidential book. Two extremes, checked the same way, with opposite verdicts:
+
+| Outcome | Extreme | Temporal neighbours | Verdict |
+|---|---|---|---|
+| Leader | 70.00% on 28/Apr, 11:45 UTC | 36.50% at 10:15, 36.50% at 12:40 | **capture artifact** |
+| Runner-up | 45.50% on 06/May, 19:00 UTC | 43.70% and 44.80% | **legitimate** |
+
+A 33.5pp jump and a full return in two and a half hours, with no intermediate point, is not a level. The second-highest value in the whole series is 67.50%, and only 2 of 343 points exceed 67%.
+
+**The check is one command: look at the neighbours of the extreme before publishing it.** A legitimate extreme has close neighbours; a spurious one sits alone. Two secondary signals help: an exactly round value in a book that trades in hundredths of a point, and an extreme far outside the range the rest of the series occupies.
+
+`scripts/capture-guard.ts` was installed on 24/Jul/2026 and requires two independent readings, eight minutes apart, agreeing within 0.20pp before any price is published. It prevents a book in transit from becoming a published number **from that date forward**; history recorded before it carries no such guarantee.
+
+Related: `/api/market/history` is not a safe source for this check (see the API table). Superlatives are verified against `backup/neon/marketPrice/*.csv.gz`, which holds the full record from 14/Apr.
+
 ### Project Structure
 
 ```
@@ -449,6 +468,12 @@ Cron 3x/day (6am, 12pm, 6pm)
   → Neon: research.sources + research_runs + research_findings
   → Cross-reference: recent polls (15 days) × Polymarket odds
 ```
+
+---
+
+**Identifying which wave a poll belongs to (24/Aug/2026).** Weekly trackers repeat levels. The BTG/Nexus series measured 41 x 37 in the first round and 46 x 45 in the runoff on **both** 03/Aug and 24/Aug, three weeks apart. On the day the second of those was released, four separate sources returned the wrong wave: a search summary blending three of them, a news URL whose slug contains the topline but dates from the earlier wave, an outlet page on a monthly slug, and another on a generic slug.
+
+**A wave is identified by its TSE registration number, never by its topline and never by the URL.** The registration is unique per survey, appears in the article and in the official ZIP, and is the field `register` in `public/polls-data.json`. `fieldDates` is the second anchor. Comparison against the previous wave is made against our own recorded series, not against an outlet's framing, because outlets compare against different baselines without always saying which.
 
 ---
 
