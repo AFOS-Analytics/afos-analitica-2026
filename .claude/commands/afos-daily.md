@@ -201,7 +201,7 @@ Antes de submeter o `.md` para preview, validar mentalmente:
 ### Por que essa regra é não-negociável
 
 1. **Urgência competitiva:** Prediction Circle vai lançar "Daily Prediction Brief" Q1 2026 — formato TL;DR como produto email. AFOS Daily TL;DR antes do PC = reivindicar convenção no mercado PT/EN/ES.
-2. **UX:** dailies têm 600-900 palavras. Maioria dos leitores não lê tudo. TL;DR captura quem ia bouncar.
+2. **UX:** dailies têm 600-1.100 palavras. Maioria dos leitores não lê tudo. TL;DR captura quem ia bouncar.
 3. **GEO/LLM:** estrutura bulletada com entidades em negrito é trivialmente parseável vs prosa — reforça posicionamento machine-readable do AFOS.
 
 Memórias relacionadas: `project_post_launch_visualizations.md` (Fase 0 implementada 23/Mai), `project_prediction_circle_benchmark.md` (urgência competitiva PC), `feedback_tradeoff_implementation_preview_only.md` (sprint Tradeoff onde TL;DR foi implementado como Fase 0).
@@ -339,11 +339,13 @@ Mantidas rigorosamente do piloto 22/Abr:
 - **Tom observacional, não prescritivo** — "segundo X", "dados indicam", "o mercado precificou"
 - **Variações ↑↓pp sempre citadas** quando mudou desde dia anterior
 - **Datas sempre explícitas** — nunca "ontem" ou "semana passada", sempre "21 de abril"
-- **Densidade: TETO DE 900 PALAVRAS, e ele é obrigatório a partir de 31/Jul/2026.** Alvo 600-900, 4-5 min de leitura.
+- **Densidade: TETO DE 1.100 PALAVRAS, decidido pelo André em 24/Ago/2026.** Alvo 700-1.100, 5-6 min de leitura.
 
   ⚠️ **DECISÃO DO ANDRÉ EM 30/Jul/2026: voltar ao teto de 900.** A régua escrita e a prática estavam descoladas havia pelo menos quatro dias, com a série no DOBRO do teto. Medido, no corpo, sem tabela e sem URL: **27/Jul 1.883 · 28/Jul 1.926 · 29/Jul 2.395 · 30/Jul 1.873**. Nenhuma das quatro cabia na régua.
 
-  🔒 **REAFIRMADO EM 01/Ago/2026, e este é o ponto.** Eu levei a decisão de volta ao André propondo subir o teto para 1.100, com o argumento de que 31/Jul e 01/Ago pararam no mesmo lugar (1.065 e 1.062) depois de cortar toda a gordura. **Ele manteve os 900.** A leitura correta é que dois dias parando em ~1.060 não provam que 1.060 é o tamanho natural do dia: provam que eu parei de cortar cedo demais e comecei a chamar de "fato verificado" o que ainda era redação. Em 01/Ago, depois da reafirmação, a daily chegou a 900 SEM perder nenhum dos três blocos que eu tinha declarado incortáveis, só comprimindo. **Não repropor o teto.**
+  🔄 **O TETO MUDOU EM 24/Ago/2026, e o histórico abaixo fica porque a disciplina dele continua valendo.** Ordem literal do André, com a daily do dia já escrita e medida em 900: **"refazer para 1100"**. ⚠️ **A subida se executa DEVOLVENDO conteúdo verificado que foi cortado, nunca escrevendo prosa nova para encher.** Em 24/Ago voltaram o preço do nome abaixo de 1%, um pareamento de 2º turno, o horário de uma desistência, o nome do desembargador e um item inteiro de pauta com as duas fontes. ⛔ **E 1.100 não é licença para parar de cortar cedo:** aquela peça passou por 1.349, 1.228, 1.065, 966 e 900 antes de voltar a 1.099 COM conteúdo, e o 1.065 é exatamente o número que a ficha aponta como o ponto em que eu paro cedo demais.
+
+  🔒 **HISTÓRICO, reafirmação de 01/Ago/2026.** Eu levei a decisão de volta ao André propondo subir o teto para 1.100, com o argumento de que 31/Jul e 01/Ago pararam no mesmo lugar (1.065 e 1.062) depois de cortar toda a gordura. **Ele manteve os 900.** A leitura correta é que dois dias parando em ~1.060 não provam que 1.060 é o tamanho natural do dia: provam que eu parei de cortar cedo demais e comecei a chamar de "fato verificado" o que ainda era redação. Em 01/Ago, depois da reafirmação, a daily chegou a 900 SEM perder nenhum dos três blocos que eu tinha declarado incortáveis, só comprimindo. **Não repropor o teto.**
 
   **Como medir antes de dar por pronta** (corpo, fora do bloco de fontes, sem a tabela do calendário e sem URLs, que não são leitura):
 
@@ -352,7 +354,7 @@ Mantidas rigorosamente do piloto 22/Abr:
   const c=t.split('## Fontes consultadas')[0].replace(/^---[\s\S]*?\n---\n/,'');
   const s=c.split('\n').filter(l=>!l.trim().startsWith('|')).join('\n').replace(/\]\([^)]*\)/g,']').replace(/https?:\/\/\S+/g,'');
   const n=s.split(/\s+/).filter(Boolean).length;
-  console.log(n+' palavras '+(n<=900?'✅':'❌ CORTAR '+(n-900)))"
+  console.log(n+' palavras '+(n<=1100?'✅':'❌ CORTAR '+(n-1100)))"
   ```
 
   **Onde cortar primeiro, na ordem:** (1) parágrafos de leitura de método que repetem a ressalva já dita na Seção 1; (2) listas de preço de nomes abaixo de 1%, que cabem numa frase só; (3) repetição do mesmo achado no corpo e em "Em síntese", que existe para resumir e não para reafirmar. **O TL;DR, as Divergências e o rodapé de fontes NÃO se cortam.**
