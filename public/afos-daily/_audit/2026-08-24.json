@@ -1,0 +1,81 @@
+{
+  "date": "2026-08-24",
+  "leituraConfirmada": "2026-08-24T21:25:23.719Z",
+  "carimboPublicado": "24/08/2026, 18:25",
+  "tetoDePalavras": {
+    "valor": 1100,
+    "medido": 1099,
+    "nota": "Teto elevado de 900 para 1.100 por decisao do Andre em 24/Ago/2026, durante esta rodada. A versao de 900 foi escrita, medida e depois expandida com conteudo verificado que havia sido cortado, nao com redacao nova."
+  },
+  "factCheckGate": {
+    "eventosCandidatos": 5,
+    "itens": [
+      {
+        "evento": "TRE-SP rejeita recursos especiais de Pablo Marcal e do Ministerio Publico Eleitoral",
+        "verificacao1": "1 mencao em 7 dailies (17/Ago, sobre o registro) -> novidade com historico",
+        "verificacao2": "CNN Brasil, publicada 24/08/26 08:40, NAO informa a data da decisao",
+        "segundaFonte": "Metropoles, publicada 21/08/2026 19h30: decisao em 21 de agosto, sumulas 24 e 26 do TSE, multa de R$ 420 mil mantida",
+        "decisao": "INCORPORAR com data CORRIGIDA",
+        "achado": "O ato e de 21/Ago. O 08:40 de 24/Ago era carimbo de PUBLICACAO da CNN, e eu o havia tratado como hora da decisao nos JSONs publicados nesta mesma manha. Corrigido em 9 arquivos antes de escrever a daily."
+      },
+      {
+        "evento": "Acionistas do BRB aprovam responsabilizacao civil contra ex-administradores (caso Master/Reag)",
+        "verificacao1": "nenhuma mencao em 7 dailies -> novidade",
+        "verificacao2": "Metropoles, publicada 24/08/2026 11:11: assembleia geral extraordinaria online, 7.495 acionistas favoraveis e 1 abstencao, artigo 159 da Lei 6.404/1976",
+        "segundaFonte": "CNN Brasil (economia) e Folha de S.Paulo",
+        "decisao": "incorporar",
+        "ressalva": "A propria nota do banco: 'nao representa definicao previa de responsabilizacao de pessoas especificas'. A peca publica essa ressalva."
+      },
+      {
+        "evento": "BTG/Nexus nacional, registro BR-09028/2026",
+        "verificacao1": "tracker citado em 18, 19 e 20/Ago sempre como 'a ultima e a de 17/Ago' -> onda nova e novidade",
+        "verificacao2": "Poder360, 24/08/26 06:36, campo 21 a 23/Ago, n=2.006, margem 2pp",
+        "segundaFonte": "CNN Brasil e Metropoles, ambas com o mesmo registro; registro confere com o ZIP do TSE ingerido em 24/Ago",
+        "decisao": "incorporar",
+        "armadilha": "Quatro fontes distintas devolveram a onda ERRADA durante a apuracao, porque a onda de 03/Ago tem toplines IDENTICOS (41x37 e 46x45). So o registro no TSE separou. Ver feedback_ondas_do_mesmo_tracker_com_toplines_identicos."
+      },
+      {
+        "evento": "Primeiro debate presidencial, Band, 23/Ago as 20h",
+        "verificacao1": "20 mencoes; a daily de 23/Ago anunciava o debate como futuro -> resultado e novo",
+        "verificacao2": "Gazeta do Povo: compareceram Caiado, Renan Santos e Cury; Zema desistiu as 12h01",
+        "segundaFonte": "Poder360 e CNN Brasil; Poder360 registra o menor numero de participantes em estudio desde 1989",
+        "decisao": "incorporar como resultado, nao como divisor de aguas"
+      },
+      {
+        "evento": "Dino reafirma nulidade de emendas indicadas por dirigentes partidarios",
+        "verificacao1": "3 mencoes -> continuidade",
+        "verificacao2": "Poder360, ato de 23/Ago, prazo de cinco dias uteis sob multa diaria de R$ 100 mil",
+        "segundaFonte": "CNN Brasil e Folha de S.Paulo",
+        "decisao": "incorporar como desdobramento datado"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "nenhuma; os cinco eventos tem duas fontes independentes cada",
+    "numericalErrors": "reconcile-claims acusou 2 divergencias, ambas do mercado de inflacao (5,49% e 50,25%). Nao e erro: esse mercado nao e armazenado no analysis-data.json, entao o reconciliador nao tem contra o que comparar. A soma de 104,95% esta declarada na peca.",
+    "fontesInventadas": "3 conferidas ao acaso (Folha/TRE-SP, Folha/BRB, Poder360/returno), todas com materia do dia",
+    "quotesLiterais": "nenhuma aspa literal na peca",
+    "causacaoEspuria": "nenhuma; a alta de 1,80pp nao e atribuida a evento, e a convergencia com a pesquisa e descrita como coincidencia de DIRECAO",
+    "verbosCriticos": "rejeitou (com data 21/Ago, autor e fundamento); autorizou (com quorum, dispositivo legal e a ressalva de nao determinar responsabilidade)",
+    "decisao": "prosseguir"
+  },
+  "superlativosConferidos": [
+    { "afirmacao": "35,05% e o maior valor de Flavio Bolsonaro desde 13/Mai", "fonte": "backup/neon/marketPrice, 341 pontos desde 14/Abr", "metodo": "ponto a ponto, nao pela API" },
+    { "afirmacao": "27,45pp e a menor distancia desde 21/Jun", "fonte": "mesmo backup, fechamento diario", "ressalva": "em 05/Mai a distancia foi NEGATIVA em 7,80pp" },
+    { "afirmacao": "o 1 ponto do 2o turno EMPATA com 03/Ago, nao e minimo", "fonte": "polls-data.json, 5 ondas do tracker com registro TSE" }
+  ],
+  "portoes": {
+    "travaDeCaptura": "APROVADO, dois fetchedAt distintos (21:07:22Z e 21:15:23Z)",
+    "validateAfosDaily": "OK, 1 warning (low-link-density 43%, identico ao da daily de 23/Ago publicada)",
+    "gateNumerico3Idiomas": "89 numeros com unidade identicos em pt-BR, en e es",
+    "emoji": 0,
+    "cincoChecagens": "zero problemas nos 3 idiomas",
+    "checkFrescor": "verde",
+    "validatePollsData": "OK"
+  },
+  "wayback": {
+    "status": "BLOQUEADO",
+    "preCheck": "HTTP 429 em https://web.archive.org/save/",
+    "acao": "nao executado e nao insistido, conforme feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo"
+  }
+}
