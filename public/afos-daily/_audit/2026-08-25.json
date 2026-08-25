@@ -1,0 +1,66 @@
+{
+  "date": "2026-08-25",
+  "factCheckGate": {
+    "eventosCandidatos": 4,
+    "eventos": [
+      {
+        "evento": "Operacao Prescienca: PF cumpre seis mandados de busca e apreensao por aplicacao de R$ 1,2 milhao do Instituto Municipal de Previdencia de Campo Grande em Letras Financeiras do Banco Master",
+        "verificacao1": "check-recurrence 'Campo Grande': nenhuma mencao em 7 dailies -> novidade",
+        "verificacao2": { "url": "https://www.gazetadopovo.com.br/economia/pf-mira-previdencia-campo-grande-aplicacao-1-2-milhao-master/", "data": "2026-08-25", "tipo": "evento", "metodo": "WebFetch" },
+        "segundaFonte": "Folha de S.Paulo, Estadao, Valor, G1 e O Globo, cinco grupos independentes, todos com a cifra de R$ 1,2 milhao",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Sabatinas do Jornal Nacional: calendario 24/8 Zema, 25/8 Caiado, 26/8 Renan Santos, 27/8 Lula, 28/8 Flavio Bolsonaro, 29/8 Augusto Cury. Renata Vasconcellos e Cesar Tralli, 40 minutos cada",
+        "verificacao1": "check-recurrence 'sabatina' e 'Jornal Nacional': nenhuma mencao em 7 dailies -> novidade",
+        "verificacao2": { "url": "https://www.em.com.br/politica/2026/08/7486577-quais-sao-os-proximos-presidenciaveis-entrevistados-no-jornal-nacional.html", "data": "2026-08-25", "tipo": "evento", "metodo": "WebFetch" },
+        "segundaFonte": "Poder360 e Metropoles confirmam o aceite de Lula e Flavio Bolsonaro em 25/Ago; WebSearch confirmou as datas de 27 e 28/Ago",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Sabatina de Romeu Zema por CBN, O Globo e Valor em 25/Ago, sobre pacto federativo",
+        "verificacao1": "novidade",
+        "verificacao2": { "url": "https://www.otempo.com.br/eleicoes/2026/presidentes/2026/8/25/zema-defende-mudancas-no-pacto-federativo-e-cita-compensacao-injusta-a-estados", "data": "2026-08-25", "tipo": "evento", "metodo": "WebSearch" },
+        "segundaFonte": "O Globo, materia propria sobre o inicio das sabatinas transmitidas ao vivo",
+        "decisao": "incorporar como contexto, distinto do Jornal Nacional"
+      },
+      {
+        "evento": "CORRECAO DE ERRO PROPRIO: o painel publicado as 15h22 datava a sabatina do Zema no Jornal Nacional em 25/Ago",
+        "verificacao1": "o ato foi em 24/Ago; a cobertura da BBC e do O Globo e que circulou em 25/Ago",
+        "verificacao2": { "url": "https://www.em.com.br/politica/2026/08/7486577-quais-sao-os-proximos-presidenciaveis-entrevistados-no-jornal-nacional.html", "data": "2026-08-25", "tipo": "evento", "metodo": "WebFetch" },
+        "segundaFonte": "WebSearch confirmou Zema como primeiro entrevistado, segunda-feira 24/8",
+        "decisao": "corrigir os 3 idiomas e o componente ANTES de escrever a daily",
+        "familia": "carimbo de publicacao lido como hora do ato, mesmo defeito de 24/Ago"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. A operacao da PF tem cinco veiculos de grupos distintos; as sabatinas tem Valor, Poder360 e Metropoles; o calendario do JN foi confirmado por fetch",
+    "numericalErrors": "reconcile-claims aponta 3 divergencias, e as 3 sao legitimas: a faixa de inflacao (50,25% e 5,49%) e dado de mercado que nao vive nos JSONs de analise, e o '20%' esta dentro do titulo de uma fonte",
+    "fontesInventadas": "conferidas 3 ao acaso (Gazeta do Povo, Estadao, O Globo); todas com materia do dia e URL primaria que resolve",
+    "quotesLiterais": "uma, de Flavio Bolsonaro sobre o Dark Horse, entre aspas no titulo do G1 e replicada por Folha e Poder360. Na peca aparece em discurso indireto",
+    "causacaoEspuria": "nenhuma. A peca afirma o contrario: que nenhum dos fatos do dia moveu preco, e isso esta na terceira divergencia",
+    "verbosCriticos": "OK. 'cumpriu seis mandados de busca e apreensao' com data e numero; 'apuracao de suspeita, sem decisao de merito'; a decisao de Dino e atribuida e datada. Nenhum verbo de privacao de liberdade",
+    "decisao": "prosseguir"
+  },
+  "refetchPolymarket": {
+    "fetchedAtBRT": "2026-08-25 16:53",
+    "baselinePublicada": "leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), trava APROVADA com carimbos 18:14:04Z e 18:22:05Z",
+    "deltas": { "lula": "0,00pp", "flavio": "0,00pp", "gap": "0,00pp", "renan": "-0,10pp, abaixo do piso de 0,5%", "volTotal": "USD 132,88M -> USD 132,91M" },
+    "gateRebaseline": "NAO disparou. Nada moveu >= 0,50pp, nenhum recorde rompido, enquadramento inalterado"
+  },
+  "portoes": {
+    "palavras": 1058,
+    "tetoPalavras": 1100,
+    "emojis": { "pt": 0, "en": 0, "es": 0 },
+    "gateNumerico": "71 numeros com unidade, multiconjunto IDENTICO nos 3 idiomas",
+    "cincoChecagens": "limpas: tldr com 3 bullets nos 3, zero link para outro locale, zero homoglifo cirilico, separador decimal consistente (os 7 minoritarios sao de milhar, corretamente invertidos entre pt e en), zero ancora de glossario",
+    "fontes": { "ancora": 5, "secundarias": 9, "percentualSecundarias": 64, "piso": 50 },
+    "validador": "OK nos 3 idiomas, com o aviso estrutural de densidade de link em 43%, o mesmo que a daily publicada de 24/Ago carrega"
+  },
+  "wayback": {
+    "status": "BLOQUEADO",
+    "precheck": "HTTP 429 em https://web.archive.org/save/",
+    "acao": "nao rodado e nao insistido, avisado no comeco da sessao. Passivo de 05 a 16/Ago segue parado"
+  }
+}
