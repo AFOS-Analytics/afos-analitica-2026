@@ -18,6 +18,22 @@
  *
  * ⛔ Ele NÃO reescreve texto. Lê e reprova. Corrigir a prosa é da rodada.
  *
+ * 🔬 REGRESSÃO DA RÉGUA 6, rodada em 24/Ago/2026 antes de ela entrar, contra as
+ * 14 versões do `analysis-criteriosa.json` que o git guarda:
+ *
+ *   18/Ago · 19/Ago (x2) · 20/Ago (x2) · 21/Ago (x2) · 22/Ago (x2) · 24/Ago (x2)
+ *      -> CONTRADICAO = 0   (as outras réguas seguem acusando 18 e 19/Ago, que é
+ *                            o incidente para o qual elas foram feitas)
+ *   23/Ago (x2)
+ *      -> CONTRADICAO = 3   e as três são REAIS, conferidas à mão
+ *
+ * 🔑 Portão que acusa dia legítimo é portão que alguém aprende a pular. As duas
+ * primeiras versões desta régua acusavam 20 e 21/Ago, e as duas acusações eram
+ * DELA, não do arquivo: uma lia "o topo da série dele é 17,90%, de 09/Jun" como
+ * afirmação de hoje, e a outra lia "paga 55,50% nele no contrato de 3º lugar"
+ * como preço presidencial, porque só procurava o rótulo do contrato ANTES do
+ * valor. Ambas corrigidas antes de entrar.
+ *
  * Uso:
  *   npx tsx scripts/check-frescor-editorial.ts
  */
@@ -236,8 +252,168 @@ try {
   falhas.push({ arquivo: 'cruzamento', regra: 'LEITURA', detalhe: (e as Error).message })
 }
 
+
+// ── Régua 6: CONTRADIÇÃO INTERNA — o campo de comentário contra o CANÔNICO do
+// MESMO candidato.
+//
+// 🔴 O PONTO CEGO QUE ELA FECHA, medido em 24/Ago/2026. O portão deu VERDE sobre
+// um arquivo que se contradizia. A linha do Renan Santos dizia, no campo `m`,
+// "no contrato de 3º lugar ele paga 56,00%, contra 41,00% de Caiado", e no campo
+// `s` dizia "o mercado paga 55,50% nele contra 35,00% em Caiado". Nenhum dos
+// dois pares era o do dia, que era 54,00% e 39,00%: eram DUAS rodadas anteriores
+// diferentes convivendo no mesmo bloco.
+//
+// ⚠️ Por que as réguas 1 a 3 não viam: elas comparam o campo `m` contra o
+// `quadroComparativo` do dia, e NENHUMA compara `s` contra `m` do mesmo
+// candidato. O `s` é prosa de contexto, não cita carimbo, e por isso escapa
+// também da régua de CARIMBO. Portão que compara o arquivo contra o QUADRO só
+// enxerga o que o quadro cobre; campo de prosa livre é ponto cego por construção.
+//
+// 🔑 O canônico é o `m`, porque é ele que as réguas 1 a 3 já amarram ao dia.
+{
+  const crit = JSON.parse(readFileSync(join(RAIZ, 'analysis-criteriosa.json'), 'utf-8')) as {
+    quadroComparativo?: (LinhaQuadro & { p?: string; s?: string; t?: string })[]
+  }
+  const quadro = crit.quadroComparativo ?? []
+
+  /** "Renan Santos (Missão)" -> "renan". Primeiro nome, sem partido, minúsculo. */
+  const chaveDe = (nome: string): string =>
+    nome.replace(/\s*\(.+\)\s*$/, '').trim().split(/\s+/)[0].toLowerCase()
+
+  const ROTULOS: Array<[RegExp, string]> = [
+    [/contrato de 3º\s*lugar|3º\s*LUGAR|terceiro lugar/gi, '3º lugar'],
+    [/contrato de 2º\s*lugar|2º\s*LUGAR|segundo lugar/gi, '2º lugar'],
+  ]
+
+  // ⛔ Valor citado como HISTÓRICO não é contradição, é narrativa de delta.
+  // "subiu de 41,00% para 39,00%" tem duas verdades, e só a segunda é de hoje.
+  const HISTORICO = /\b(era|vinha de|ontem|na leitura de|no fechamento de|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|m[áa]xim|m[íi]nim|recorde|desde)\b/i
+  const ehHistorico = (texto: string, pos: number): boolean => {
+    const antes = texto.slice(Math.max(0, pos - 45), pos)
+    if (HISTORICO.test(antes)) return true
+    // 🔑 Valor seguido de DATA é referência a outro dia, não afirmação de hoje:
+    // "o topo da série dele é 17,90%, de 09/Jun" (falso positivo medido em 21/Ago).
+    if (/^%?[,;]?\s*(?:de|em)\s+\d{1,2}\/\w{3}/.test(texto.slice(pos).replace(/^\d+,\d+/, ''))) return true
+    // padrão "de X% para Y%": o X é o valor velho
+    return /\bde\s*$/.test(antes) && /^\s*\d+,\d+%\s+para\s+\d/.test(texto.slice(pos))
+  }
+
+  /** Extrai (dono, rótulo, valor) de um texto, com o dono da LINHA como padrão. */
+  const extrai = (texto: string, donoPadrao: string): Array<{ dono: string; rotulo: string; valor: string }> => {
+    const saida: Array<{ dono: string; rotulo: string; valor: string }> = []
+    for (const [re, rotulo] of ROTULOS) {
+      re.lastIndex = 0
+      for (const m of texto.matchAll(re)) {
+        const ini = (m.index ?? 0) + m[0].length
+        // A janela CRUZA a fronteira de frase de propósito: o rótulo costuma
+        // abrir o parágrafo e os valores vêm na frase seguinte. Ela para no
+        // próximo rótulo, para não atribuir valor de 2º lugar ao 3º.
+        let fim = Math.min(texto.length, ini + 300)
+        for (const [re2] of ROTULOS) {
+          re2.lastIndex = 0
+          for (const m2 of texto.slice(ini).matchAll(re2)) {
+            const p = ini + (m2.index ?? 0)
+            if (p > ini && p < fim) fim = p
+          }
+        }
+        // ⛔ E ela para também quando o texto troca de PREÇO para URNA: depois de
+        // "a Veritá" ou "na urna" o que vem é intenção de voto, não cotação.
+        const trocaDeAssunto = texto
+          .slice(ini, fim)
+          .search(/\b(urna|pesquisa|instituto|Datafolha|Verit[áa]|Quaest|Nexus|AtlasIntel|PoderData|Ipsos|Gerp|Indexa)\b/i)
+        if (trocaDeAssunto > 0) fim = ini + trocaDeAssunto
+        const janela = texto.slice(ini, fim)
+        // 🔑 Preço nesta casa é SEMPRE com duas casas ("54,00%"). Número de urna
+        // vem com uma ("5,2%"). Exigir as duas casas separa preço de pesquisa, e
+        // foi o que matou os 2 falsos positivos medidos no teste de 24/Ago.
+        for (const v of janela.matchAll(/(\d+,\d{2})%/g)) {
+          const pos = v.index ?? 0
+          if (ehHistorico(janela, pos)) continue
+          // dono explícito depois do valor: "41,00% de Caiado", "35,00% em Caiado"
+          const depois = janela.slice(pos + v[0].length, pos + v[0].length + 30)
+          const nom = depois.match(/^\s*(?:de|em|para|a)\s+([A-ZÀ-Ú][\wÀ-ÿ]+)/)
+          if (nom) {
+            saida.push({ dono: nom[1].toLowerCase(), rotulo, valor: v[1] })
+            continue
+          }
+          // ⛔ "X contra Y" sem nome depois do Y: o Y é do ADVERSÁRIO, e qual
+          // adversário não está escrito. Valor sem dono NÃO se julga, que é a
+          // mesma regra da régua 3. Sem isto, "54,00% contra 39,00%" acusaria o
+          // dono da linha de citar o preço do outro (falso positivo medido em
+          // 24/Ago, no arquivo que estava CERTO).
+          if (/\bcontra\s*$/i.test(janela.slice(Math.max(0, pos - 12), pos))) continue
+          saida.push({ dono: donoPadrao, rotulo, valor: v[1] })
+        }
+      }
+    }
+    return saida
+  }
+
+  // 1. CANÔNICO, lido só do campo `m`.
+  const canon = new Map<string, string>()
+  const nomeDe = new Map<string, string>()
+  for (const linha of quadro) {
+    const nome = String(linha.n ?? '')
+    const dono = chaveDe(nome)
+    if (dono.length < 3) continue
+    nomeDe.set(dono, nome)
+    const m = String(linha.m ?? '')
+    const preco = m.match(/(\d+,\d+)%/)?.[1]
+    if (preco) canon.set(`${dono}|presidencial`, preco)
+    for (const e of extrai(m, dono)) canon.set(`${e.dono}|${e.rotulo}`, e.valor)
+  }
+
+  // 2. CONFERÊNCIA dos campos de comentário contra o canônico.
+  const jaVisto = new Set<string>()
+  for (const linha of quadro) {
+    const dono = chaveDe(String(linha.n ?? ''))
+    if (dono.length < 3) continue
+    for (const campo of ['s', 't', 'p'] as const) {
+      const texto = String((linha as Record<string, unknown>)[campo] ?? '')
+      if (!texto) continue
+
+      for (const e of extrai(texto, dono)) {
+        const chave = `${e.dono}|${e.rotulo}`
+        const esperado = canon.get(chave)
+        if (!esperado || esperado === e.valor) continue
+        const id = `${chave}|${e.valor}|${campo}`
+        if (jaVisto.has(id)) continue
+        jaVisto.add(id)
+        falhas.push({
+          arquivo: 'analysis-criteriosa.json',
+          regra: 'CONTRADICAO',
+          detalhe: `${nomeDe.get(e.dono) ?? e.dono}, ${e.rotulo}: o campo "${campo}" de ${nomeDe.get(dono) ?? dono} cita ${e.valor}% e o campo "m" canônico diz ${esperado}%. Mesmo candidato, mesmo contrato, dois valores.`,
+        })
+      }
+
+      // preço presidencial citado na prosa, quando governado por marcador de PREÇO
+      // ("o preço", "paga", "precifica"). Sem o marcador seria número de urna.
+      for (const v of texto.matchAll(/(?:o preço|paga|precifica|cotação)[^.!?]{0,60}?(\d+,\d+)%/gi)) {
+        const pos = (v.index ?? 0)
+        if (ehHistorico(texto, pos)) continue
+        // se estiver dentro de janela de rótulo de contrato, já foi tratado acima
+        // ⚠️ O rótulo do contrato pode vir DEPOIS do valor: "paga 55,50% nele no
+        // contrato de 3º lugar". Olhar só para trás dava falso positivo (20/Ago).
+        const ROT = /3º\s*lugar|2º\s*lugar|terceiro lugar|segundo lugar/i
+        if (ROT.test(texto.slice(Math.max(0, pos - 220), pos))) continue
+        if (ROT.test(texto.slice(pos, pos + 80))) continue
+        const esperado = canon.get(`${dono}|presidencial`)
+        if (!esperado || esperado === v[1]) continue
+        const id = `${dono}|presidencial|${v[1]}|${campo}`
+        if (jaVisto.has(id)) continue
+        jaVisto.add(id)
+        falhas.push({
+          arquivo: 'analysis-criteriosa.json',
+          regra: 'CONTRADICAO',
+          detalhe: `${nomeDe.get(dono) ?? dono}, preço presidencial: o campo "${campo}" cita ${v[1]}% e o campo "m" canônico diz ${esperado}%. Mesmo candidato, dois preços.`,
+        })
+      }
+    }
+  }
+}
+
 if (falhas.length === 0) {
-  console.log('✅ frescor: carimbo único por arquivo, série com uma data de início, preço e volume coerentes com o quadro do dia.')
+  console.log('✅ frescor: carimbo único por arquivo, série com uma data de início, preço e volume coerentes com o quadro, e nenhum candidato se contradizendo entre os próprios campos.')
   process.exit(0)
 }
 
