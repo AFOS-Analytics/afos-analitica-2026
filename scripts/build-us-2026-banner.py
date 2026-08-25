@@ -16,11 +16,15 @@ from PIL import Image, ImageDraw, ImageFont
 OUT = os.environ.get('US2026_OUT', os.path.join('.cache', 'us2026-dataset'))
 W, H = 1200, 630
 
-# paleta verde-azulada: EUA
-C_ESQ = (12, 74, 78)
-C_DIR = (7, 46, 58)
+# paleta SAFIRA da marca (#0F52BA), decisao do Andre em 25/Ago/2026.
+# A regua de feedback_cor_separa_pais_nao_produto manda a COR separar PAIS, e ela
+# vale quando nao ha outro sinal. Aqui quem declara o pais e a BANDEIRA mais o
+# rotulo "US 2026 Midterms", explicitos os dois, entao a cor volta a ser a da casa.
+# Mesmo criterio ja aplicado nos cartoes sociais dos EUA em 22/Ago.
+C_ESQ = (15, 82, 186)
+C_DIR = (8, 42, 98)
 BRANCO = (255, 255, 255)
-SUAVE = (168, 205, 208)
+SUAVE = (183, 203, 240)
 
 
 def fonte(tamanho, negrito=False):
@@ -78,20 +82,37 @@ d.text((W - 72 - d.textlength(topo_dir, font=f_td), 68), topo_dir, font=f_td, fi
 
 d.text((72, 240), 'US 2026 Midterms', font=fonte(62, True), fill=BRANCO)
 d.text((72, 312), 'Electoral Divergence', font=fonte(62, True), fill=BRANCO)
-d.text((72, 410), 'Prediction market × polls, before the vote.', font=fonte(28), fill=(226, 242, 243))
+d.text((72, 410), 'Prediction market × polls, before the vote.', font=fonte(28), fill=(222, 233, 250))
 
 # ── pilulas ────────────────────────────────────────────────────────────────────
 x = 72
 for texto in ['Reproducible', 'Pre-electoral', 'EN']:
     f = fonte(21)
     larg = d.textlength(texto, font=f) + 42
-    d.rounded_rectangle([x, 522, x + larg, 568], radius=23, outline=(120, 170, 175), width=2)
-    d.text((x + 21, 534), texto, font=f, fill=(214, 235, 236))
+    d.rounded_rectangle([x, 522, x + larg, 568], radius=23, outline=(126, 158, 219), width=2)
+    d.text((x + 21, 534), texto, font=f, fill=(214, 228, 249))
     x += larg + 16
 
-rodape = 'huggingface.co/AFOS-Analytics1'
-f_r = fonte(22)
-d.text((W - 72 - d.textlength(rodape, font=f_r), 534), rodape, font=f_r, fill=SUAVE)
+# ── rodape ─────────────────────────────────────────────────────────────────────
+# ⛔ SEM URL POR PADRAO, decisao do Andre em 25/Ago/2026.
+#
+# O bundle vai para o HF e para o Harvard, e a regra do deposito e que os dois
+# sejam BYTE A BYTE iguais: o portao de conferencia baixa do Harvard e compara
+# hash com o HF. Banner diferente entre os dois faria `banner.png` E
+# `CHECKSUMS.txt` divergirem de proposito, criando excecao permanente num
+# portao, e excecao em portao e o que faz portao apodrecer.
+#
+# Somado a isso, a moderacao do Harvard bloqueou 9 publicacoes com 403 em
+# 22/Jul por URL em metadado. URL em arquivo historicamente passa, mas nao vale
+# carregar a unica variavel discutivel numa publicacao ja barrada uma vez.
+#
+# ⚠️ O PADRAO E O QUE SE PUBLICA. Antes esta variante era opt-in por env var, e
+# opt-in que ninguem lembra de acionar reintroduz o defeito na rodada seguinte.
+# Quem quiser a versao com rodape pede explicitamente com US2026_COM_URL=1.
+if os.environ.get('US2026_COM_URL'):
+    rodape = 'huggingface.co/AFOS-Analytics1'
+    f_r = fonte(22)
+    d.text((W - 72 - d.textlength(rodape, font=f_r), 534), rodape, font=f_r, fill=SUAVE)
 
 os.makedirs(OUT, exist_ok=True)
 caminho = os.path.join(OUT, 'banner.png')
