@@ -27,12 +27,18 @@ const THEME_KEY = 'afos-tradeoff-theme'
  * acadêmica. Num projeto que se vende como camada auditável, isso é exatamente
  * o tipo de detalhe que derruba a confiança de quem for conferir.
  *
- * O Brasil mantém o DOI, que existe. Os EUA apontam para a **coleção**, sem
- * prometer prazo: o dataset das midterms ainda não foi depositado, e escrever
- * "em breve" seria assumir uma data que ninguém assumiu.
+ * O Brasil mantém o DOI, que existe. Os EUA apontavam para a **coleção**, sem
+ * prometer prazo: o dataset das midterms ainda não tinha sido depositado, e
+ * escrever "em breve" seria assumir uma data que ninguém assumiu.
  *
- * 📌 QUANDO O DOI DAS MIDTERMS EXISTIR, ele entra AQUI, na entrada `us`, e o
- * rótulo passa a exibi-lo como o do Brasil já faz. É a única mudança necessária.
+ * ✅ RESOLVIDO EM 25/Ago/2026. O bundle pré-eleitoral das midterms foi depositado
+ * no Harvard sob `doi:10.7910/DVN/XRUT8U`, e a entrada `us` passou a exibi-lo,
+ * como a do Brasil. Cada país aponta para o SEU depósito, que era o ponto.
+ *
+ * ⚠️ A ENTRADA É POR PAÍS de propósito, e não um valor único. Foi exatamente um
+ * valor único que fez a edição americana exibir o DOI brasileiro como lastro
+ * dela. País novo entra com o DOI dele ou não entra: sem entrada, cai na
+ * coleção, que é verdadeira para todos.
  */
 const HARVARD_COLECAO_URL = 'https://dataverse.harvard.edu/dataverse/afos-analytics'
 const HARVARD_POR_PAIS: Record<string, { url: string; rotulo: string }> = {
@@ -41,8 +47,8 @@ const HARVARD_POR_PAIS: Record<string, { url: string; rotulo: string }> = {
     rotulo: 'Harvard Dataverse · DOI 10.7910/DVN/2D0UK7',
   },
   us: {
-    url: HARVARD_COLECAO_URL,
-    rotulo: 'Harvard Dataverse · collection',
+    url: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XRUT8U',
+    rotulo: 'Harvard Dataverse · DOI 10.7910/DVN/XRUT8U',
   },
 }
 

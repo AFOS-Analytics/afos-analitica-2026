@@ -142,9 +142,21 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
    *
    * ⚠️ SÓ ENTRA O QUE EXISTE. O Tradeoff dos EUA entrou em 31/Jul, quando a
    * Edição №1 foi publicada; antes disso o nó não existia, porque nó que leva a
-   * lugar nenhum é pior que nó ausente. O dataset das midterms continua fora,
-   * porque não existe. O AFOS Daily também, porque hoje é conteúdo do Brasil e
-   * mandar o leitor do painel americano para lá seria desvio, não navegação.
+   * lugar nenhum é pior que nó ausente. O AFOS Daily fica fora, porque hoje é
+   * conteúdo do Brasil e mandar o leitor do painel americano para lá seria
+   * desvio, não navegação.
+   *
+   * ✅ 25/Ago/2026: o Harvard entrou, porque passou a existir. O bundle
+   * pré-eleitoral das midterms foi depositado sob `doi:10.7910/DVN/XRUT8U`.
+   *
+   * 🕸️ E entrou como GRUPO PRÓPRIO, não como atributo de um nó existente. A
+   * régua veio de três entregas em 22/Ago: pendurar `href` num nó que já
+   * significa outra coisa é indistinguível de decoração, e legenda de rodapé
+   * explica o desenho em vez de ser o desenho. Destino próprio é nó próprio.
+   *
+   * 🎨 Vermelho `#A51C30` é o carmesim de Harvard, o mesmo que as páginas de
+   * país já usam no cluster equivalente. A cor identifica o destino, e repetir
+   * a que já existe é o que faz o leitor reconhecer sem legenda.
    */
   const navGroups = useMemo<NavGroup[]>(() => {
     const pre = `/${locale}`;
@@ -173,6 +185,23 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
           { id: 'a_gov', label: L('Governança', 'Governance', 'Gobernanza'), href: `${pre}/methodology/automated-governance` },
           { id: 'a_sobre', label: L('Sobre', 'About', 'Acerca de'), action: 'about' },
           { id: 'a_metas', label: L('Metas', 'Goals', 'Metas'), action: 'metas' },
+        ],
+      },
+      {
+        id: 'nav_harvard',
+        label: 'Harvard Dataverse',
+        color: '#A51C30',
+        items: [
+          {
+            id: 'h_doi',
+            label: L('DOI das midterms', 'Midterms DOI', 'DOI de las midterms'),
+            href: 'https://doi.org/10.7910/DVN/XRUT8U',
+          },
+          {
+            id: 'h_coll',
+            label: L('Coleção AFOS', 'AFOS collection', 'Colección AFOS'),
+            href: 'https://dataverse.harvard.edu/dataverse/afos-analytics',
+          },
         ],
       },
     ];

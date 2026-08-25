@@ -194,6 +194,25 @@ const PAIS_ROTULO: Record<string, Record<string, string>> = {
  */
 const HARVARD_COLECAO_URL = 'https://dataverse.harvard.edu/dataverse/afos-analytics'
 
+/**
+ * Lastro acadêmico da edição, POR PAÍS.
+ *
+ * ⚠️ Era um valor fixo apontando para a coleção. Com um weekly só, no ar, isso
+ * não machucava; com dois, o segundo herdaria silenciosamente o lastro do
+ * primeiro. É o mesmo defeito que o Tradeoff já teve, quando a edição americana
+ * exibia o DOI do dataset BRASILEIRO como se fosse a fonte acadêmica dela.
+ *
+ * 📌 A regra: país com depósito próprio aponta para o DOI dele. País sem
+ * depósito NÃO entra no mapa e cai na coleção, que é verdadeira para todos.
+ * Nunca herdar o DOI de outro país.
+ */
+const HARVARD_POR_PAIS: Record<string, { url: string; rotulo: string }> = {
+  us: {
+    url: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XRUT8U',
+    rotulo: 'Harvard Dataverse · DOI 10.7910/DVN/XRUT8U',
+  },
+}
+
 export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: AfosWeeklyData; locale: string; country?: string }) {
   const k = (locale === 'pt-BR' || locale === 'es' ? locale : 'en') as keyof typeof T
   const t = T[k]
@@ -279,7 +298,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
           </p>
           <div className="mb-3.5 flex justify-center">
             <a
-              href={HARVARD_COLECAO_URL}
+              href={(HARVARD_POR_PAIS[country] ?? { url: HARVARD_COLECAO_URL }).url}
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${harvardPill}`}
@@ -287,7 +306,7 @@ export function AfosWeeklyTemplate({ data, locale, country = 'us' }: { data: Afo
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 shrink-0" fill="currentColor" aria-hidden="true">
                 <path d="M4 10 H7 V17 H4 Z M10 10 H13 V17 H10 Z M16 10 H19 V17 H16 Z M2 19 H21 V22 H2 Z M11.5 1 L2 6 V8 H21 V6 Z" />
               </svg>
-              Harvard Dataverse · collection
+              {(HARVARD_POR_PAIS[country] ?? { rotulo: 'Harvard Dataverse · collection' }).rotulo}
             </a>
           </div>
           <div className={`flex flex-wrap items-center justify-center gap-2.5 text-xs uppercase tracking-wide ${isBlue ? 'text-blue-300/80' : 'text-slate-400'}`}>
