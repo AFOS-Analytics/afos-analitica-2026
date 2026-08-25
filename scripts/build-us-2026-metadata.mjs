@@ -201,6 +201,8 @@ ${yamlConfigs}
 
 # AFOS — US 2026 Midterms Divergence (v${VERSAO}, pre-electoral)
 
+[![Harvard Dataverse DOI](https://img.shields.io/badge/Harvard%20Dataverse-10.7910%2FDVN%2FXRUT8U-a51c30)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/XRUT8U)
+
 What the **market** priced and what the **polls** measured about the same election, day by day, before it happened.
 
 > ⚠️ **Pre-electoral bundle.** The election is on **November 3, 2026**. There is no certified result to score these forecasts against, so this is **not** the gold-standard version. See \`DATASHEET.md\`. The v2, after certification, closes the cycle.
@@ -237,7 +239,11 @@ Both read only files versioned in the AFOS repository. \`CHECKSUMS.txt\` carries
 
 ## Citation
 
-See \`CITATION.cff\`. Data CC BY 4.0, code Apache 2.0.
+See \`CITATION.cff\`. Harvard Dataverse DOI: **[10.7910/DVN/XRUT8U](https://doi.org/10.7910/DVN/XRUT8U)**. Cite: *Felipe, Andre, 2026, "AFOS · USA 2026 Midterms Electoral Divergence Dataset (v1, pre-electoral)", https://doi.org/10.7910/DVN/XRUT8U, Harvard Dataverse.*
+
+⚠️ The citation above names NO version number on purpose: the DOI resolves to the latest release, and a hard-coded version goes stale the next time any file changes.
+
+Data CC BY 4.0, code Apache 2.0.
 `)
 
 // ── datapackage (Frictionless), com schema DECLARADO ───────────────────────────
