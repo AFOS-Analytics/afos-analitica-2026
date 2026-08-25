@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-24",
+  "lastUpdate": "2026-08-25",
   "institutes": [
     {
       "name": "Datafolha",
@@ -142,7 +142,7 @@
       "note": "BTG/Nexus nacional divulgada el 24/Ago a las 6h36, campo del 21 al 23/Ago, registro BR-09028/2026, con 2.006 entrevistas por teléfono y margen de 2pp al 95% de confianza. Contratante: BTG Pactual. Verificada en Poder360, CNN Brasil, Metrópoles, Folha de S.Paulo, CartaCapital y Gazeta do Povo, con el registro coincidiendo en todas. ⭐ LA COMPARACIÓN CON LA PROPIA CASA ES EL DATO, Y NO ES DE MÍNIMO NUEVO: en la primera vuelta la distancia cayó de 5 a 4 puntos y en la segunda de 3 a 1, pero los dos valores EMPATAN con la ronda del 03/Ago, que ya había medido 41 a 37 y 46 a 45. La serie del tracker en la segunda vuelta es 4 puntos el 27/Jul, 1 el 03/Ago, 3 el 10/Ago, 3 el 17/Ago y 1 ahora, es decir el 1 punto de hoy repite un nivel que la casa ya había registrado, y no es el más estrecho de la serie. 🕐 LA ENCUESTA NO MIDE EL DEBATE: el campo cerró el 23/Ago y el primer debate presidencial fue a las 20h de aquel mismo día, en Band, sin Lula y sin Flávio Bolsonaro. Un titular que ligue uno al otro está fuera de la ventana. 📌 Dos escenarios de primera vuelta, y la diferencia entre ellos es Pablo Marçal: sin él, Lula 41% y Flávio 37%; con él, Lula 40% y Flávio 34%, y Marçal aparece con 4%. Segunda vuelta: Lula 46% x Flávio 45%, y Lula 46% x Ronaldo Caiado 42%, este último según Metrópoles. Rechazo en la misma ronda, según Poder360: Lula 49% y Flávio 48%. Evaluación del gobierno en la misma ronda: 35% excelente o buena y 43% mala o pésima, con 48% de aprobación contra 49% de desaprobación.",
       "scenarios": [
         {
-          "name": "Escenario estimulado SIN Pablo Marçal (primera vuelta)",
+          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -175,7 +175,7 @@
           ]
         },
         {
-          "name": "Escenario estimulado CON Pablo Marçal (primera vuelta)",
+          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -223,7 +223,7 @@
       "note": "Datafolha nacional divulgada el 21 de ago a las 18:30, campo del 18 al 20 de ago, registro BR-04496/2026, con 2.058 entrevistas a personas de 16 años o más y margen de 2pp al 95% de confianza. Encargada por Globo y Folha de S.Paulo, es la primera del instituto tras el inicio de la campaña. ⭐ DOS ESCENARIOS, y la diferencia entre ellos es el propio Marçal: con él, Flávio Bolsonaro tiene 32%; sin él, 33%. Marçal aparece con 2%. Segunda vuelta: Lula 47% x Flávio Bolsonaro 43%, distancia en el límite del margen. 🔴 EL HALLAZGO DEL DÍA NO ESTÁ EN ESTA ENCUESTA, ESTÁ ENTRE ELLA Y LA OTRA. La Veritá, divulgada horas antes con campo superpuesto (16 al 20 de ago), midió EMPATE de 0,2 punto en la primera vuelta y dio la segunda INVERTIDA, con Flávio en 47,3% contra 42%. Son más de 9 puntos de diferencia entre dos institutos el mismo día, y el panel publica los dos sin elegir. ⚠️ Datafolha tiene confiabilidad 5 en la regla de la casa y Veritá tiene 2. 📌 Rechazo en la misma ronda: Flávio 46% y Lula 45%. Evaluación del gobierno: 47% aprueba y 50% desaprueba, frente a 49% y 48% en julio. 72% dicen estar decididos y 27% aún pueden cambiar.",
       "scenarios": [
         {
-          "name": "Escenario estimulado CON Pablo Marçal (primera vuelta)",
+          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -256,7 +256,7 @@
           ]
         },
         {
-          "name": "Escenario estimulado SIN Pablo Marçal (primera vuelta)",
+          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -309,7 +309,7 @@
       "note": "Veritá nacional divulgada el 21 de ago, campo del 16 al 20 de ago, registro BR-04006/2026 en el TSE, con 3.840 entrevistas y margen de 2pp al 95% de confianza. ⭐ EMPATE TÉCNICO EN LA PRIMERA VUELTA: Lula 39,3% x Flávio Bolsonaro 39,1%, 0,2 punto de distancia, frente a 5 puntos en la BTG/Nexus del 17 de ago (41% x 36%), cuyo campo cerró cuatro días antes. Los dos institutos no miden el mismo escenario: esta ronda incluye a Pablo Marçal y la de BTG/Nexus no. ⭐ FUE LA PRIMERA NACIONAL DIVULGADA CON PABLO MARÇAL EN EL ESCENARIO, horas antes de la Datafolha del mismo día, y aparece con 5,2%, por delante de Renan Santos (3,8%) y de Ronaldo Caiado (3,3%). 🔴 EL CRUCE CON EL MERCADO ES EL HALLAZGO: la urna da 5,2% a Marçal y el precio paga 0,25% por él, lectura confirmada del 20 de ago a las 23:19 BRT, y ese precio está por debajo del piso de 0,5% que vigila la traba de captura. Son magnitudes distintas, intención de voto y probabilidad de ganar, y no se restan; el panel registra que las dos ordenan el pelotón de formas opuestas, sin decir cuál tiene razón. Segunda vuelta: Flávio Bolsonaro 47,3% x Lula 42%. ⚠️ PROCEDENCIA DECLARADA: el sitio del instituto todavía no había publicado la ronda cuando se actualizó el panel, así que el número no viene de la fuente primaria del instituto. Fue verificado con dos lecturas independientes, la cobertura de prensa (CNN Brasil, Rádio Itatiaia y GP1) y la tabla agregadora de Wikipedia, que registran el mismo campo, la misma muestra y los mismos porcentajes, y la línea de la primera vuelta suma 100,2% con los indecisos, lo que es coherente. ⚠️ Rádio Itatiaia publicó la segunda vuelta como 47%, redondeo de 47,3%. ⚠️ Veritá tiene confiabilidad 2 en la regla de la casa, la de siempre, y no es dato que se lea solo.",
       "scenarios": [
         {
-          "name": "Escenario principal (primera vuelta, estimulado)",
+          "name": "Cenário Principal (1º turno, estimulado)",
           "results": [
             {
               "candidate": "Lula (PT)",
@@ -1260,99 +1260,99 @@
     "lastUpdate": "24/08/2026, 18:25"
   },
   "polymarketComparison": {
-    "note": "Precios del Polymarket en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), con el libro presidencial en USD 132,34M. La distancia entre los dos primeros está en 27,45pp, contra 29,25pp en la lectura del 23/Ago. El movimiento del día es de Flávio Bolsonaro, que subió 1,80pp y llegó a 35,05%, su valor más alto desde el 13/May. El mismo día salió la BTG/Nexus, primera encuesta nacional nueva desde el 21/Ago, midiendo la segunda vuelta en 46% a 45%. Los dos instrumentos se movieron en la misma dirección, y el panel lo registra sin restar uno del otro: probabilidad de ganar e intención de voto miden cosas distintas.",
-    "sources": "Precios de Polymarket vía el proxy de AFOS, y el panel solo publica un precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen. El 16 de ago hay lectura confirmada nueva para TODOS los contratos seguidos, a las 16:56 BRT (19:56 UTC): presidencial, segundo lugar, tercer lugar, Senado e impeachment en el Supremo. Encuestas registradas ante la justicia electoral y difundidas por las casas, con reporteo de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo y Correio Braziliense.",
+    "note": "Precios de Polymarket en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con el libro presidencial en USD 132,88M. No hubo encuesta nacional nueva este martes: la tanda divulgada hoy por Quaest es toda estatal, y este bloque solo cruza ámbito nacional. La distancia entre los dos primeros volvió a abrirse, de 27,45pp a 27,85pp, y se abrió porque el segundo cedió 0,40pp, no porque el primero haya ganado. ⭐ El movimiento del día está en el contrato de tercer lugar de la primera vuelta: Renan Santos cedió 2,50pp hasta 51,50% y Ronaldo Caiado subió 3,00pp hasta 42,00%, llevando la brecha entre ambos de 15,00pp a 9,50pp, hacia el orden que las encuestas ya mostraban. ⚠️ Y eso NO es piso de la serie: el mismo libro estuvo en 3,5pp el 22 de ago a las 19:30, verificado en la copia de seguridad de la base contra la serie que empieza el 14 de abr. Probabilidad de ganar e intención de voto miden cosas distintas, y el panel no resta una de la otra.",
+    "sources": "Precios de Polymarket vía el proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. El 25 de ago hay lectura confirmada nueva para todos los contratos seguidos, a las 15:22 BRT (18:22 UTC): presidencial, segundo lugar, tercer lugar, Senado e impeachment en el Supremo. Encuestas registradas en el TSE y divulgadas por las casas encuestadoras, con reportes de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo y Correio Braziliense.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "38-44,9%",
         "polymarket": "62,50%",
         "tendenciaPesquisa": "La BTG/Nexus del 24/Ago (n=2.006, campo del 21 al 23/Ago, BR-09028/2026, confiabilidad 4) lo da en 41% en la primera vuelta y ganando la segunda por 46% a 45%. Es la primera encuesta nacional nueva desde el 21/Ago. ⭐ Comparada con la ronda anterior de la MISMA casa, del 17/Ago, la distancia en la segunda vuelta cayó de 3 puntos a 1, pero ese 1 punto EMPATA con lo que la casa ya había medido el 03/Ago, así que es repetición de nivel y no mínimo de la serie. 🕐 El campo cerró el 23/Ago y el primer debate presidencial fue a las 20h de aquel día, sin él: la encuesta no mide el debate.",
-        "tendenciaPolymarket": "62,50% (vol USD 8,92M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), sin variación respecto del 23/Ago. Su mayor lectura desde el 14/Abr, cuando empieza la serie, es 67,50%, del 16/Ago, así que el precio de hoy está 5,00pp por debajo de su propio máximo.",
+        "tendenciaPolymarket": "62,50% (vol USD 8,97M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), sin variación por segundo día seguido. Su mayor lectura desde el 14 de abr, cuando empieza la serie, es 67,50%, del 16 de ago. En el contrato de segundo lugar de la primera vuelta aparece con 8,05%, con subida de 2,10pp.",
         "odds": 62.5,
         "percentage": 41,
-        "lastUpdate": "24/08/2026, 18:25",
+        "lastUpdate": "25/08/2026, 15:22",
         "value": 62.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "35,05%",
+        "polymarket": "34,65%",
         "tendenciaPesquisa": "La BTG/Nexus del 24/Ago lo da en 37% en el escenario sin Pablo Marçal y en 34% en el escenario con él, y en 45% en la segunda vuelta contra 46%. Contra la ronda de la misma casa del 17/Ago gana 1 punto en la primera vuelta, movimiento que cabe entero dentro del margen de 2pp. La Veritá del 21/Ago sigue siendo la única de la ventana que lo da ganando la segunda vuelta.",
-        "tendenciaPolymarket": "35,05% (vol USD 8,84M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), con alza de 1,80pp. ⭐ Es su valor más alto desde el 13/May, verificado punto por punto contra los 341 registros de la serie desde el 14/Abr. El techo de la serie es 45,50%, del 06/May. En el contrato de segundo lugar de la primera vuelta paga 85,50%, con caída de 1,00pp.",
-        "odds": 35.05,
+        "tendenciaPolymarket": "34,65% (vol USD 8,89M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con caída de 0,40pp que devuelve parte de la subida de 1,80pp de ayer. El nivel sigue siendo el más alto desde el 13 de may, verificado en la copia de seguridad contra la serie entera desde el 14 de abr, y el techo de la serie es 45,50%, del 6 de may. ⭐ En el contrato de segundo lugar de la primera vuelta fue en la dirección contraria y subió 2,00pp, hasta 87,50%.",
+        "odds": 34.65,
         "percentage": 37,
-        "lastUpdate": "24/08/2026, 18:25",
-        "value": 35.05
+        "lastUpdate": "25/08/2026, 15:22",
+        "value": 34.65
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2,90%",
+        "polymarket": "2,95%",
         "tendenciaPesquisa": "3% en la BTG/Nexus del 24/Ago, su menor valor en la ventana de 30 días del panel, contra 4% en la ronda de la misma casa del 17/Ago. Participó del primer debate presidencial, el 23/Ago, que el campo de esta encuesta no alcanza.",
-        "tendenciaPolymarket": "2,90% (vol USD 10,94M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), con caída de 0,55pp. Carga uno de los mayores volúmenes individuales del libro, por encima del propio Lula, y paga menos de tres puntos. En el contrato de tercer lugar de la primera vuelta tiene 54,00%, con caída de 2,00pp.",
-        "odds": 2.9,
+        "tendenciaPolymarket": "2,95% (vol USD 11,09M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con subida de 0,05pp que queda por debajo de lo que la doble lectura distingue del ruido. 🔴 En el contrato de tercer lugar de la primera vuelta tuvo la mayor pérdida del panel en el día, cediendo 2,50pp hasta 51,50%.",
+        "odds": 2.95,
         "percentage": 3,
-        "lastUpdate": "24/08/2026, 18:25",
-        "value": 2.9
+        "lastUpdate": "25/08/2026, 15:22",
+        "value": 2.95
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3,1-6%",
-        "polymarket": "0,70%",
+        "polymarket": "0,55%",
         "tendenciaPesquisa": "5% en la BTG/Nexus del 24/Ago, mismo valor de la ronda anterior de la casa, lo que lo mantiene por delante de Renan Santos en las urnas. La misma encuesta probó la segunda vuelta contra Lula y midió 46% a 42%, según Metrópoles. Participó del debate del 23/Ago.",
-        "tendenciaPolymarket": "0,70% (vol USD 6,55M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), con alza de 0,15pp. En el contrato de tercer lugar de la primera vuelta tiene 39,00%, con caída de 2,00pp, a 15,00pp de Renan Santos.",
-        "odds": 0.7,
+        "tendenciaPolymarket": "0,55% (vol USD 6,59M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con caída de 0,15pp que lo devuelve al piso de 0,5% de la doble lectura. ⭐ En el contrato de tercer lugar de la primera vuelta hizo la mayor subida del panel en el día, subiendo 3,00pp hasta 42,00%, lo que acerca el precio al orden que las encuestas ya mostraban.",
+        "odds": 0.55,
         "percentage": 5,
-        "lastUpdate": "24/08/2026, 18:25",
-        "value": 0.7
+        "lastUpdate": "25/08/2026, 15:22",
+        "value": 0.55
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5,2%",
-        "polymarket": "0,25%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "Tercera medición nacional suya en la ventana, y las tres discrepan: 2% en la Datafolha del 21/Ago, 5,2% en la Veritá del mismo día y 4% en la BTG/Nexus del 24/Ago, esta en el escenario en que se lo incluye. En el escenario sin él, el segundo colocado tiene 37%; en el escenario con él, 34%.",
-        "tendenciaPolymarket": "0,25% (vol USD 2,58M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), por debajo del piso de 0,5% de la doble lectura, lo que hace que la variación diaria sea ruido de libro fino. 🏛️ El 21/Ago el presidente del tribunal electoral de São Paulo rechazó los recursos especiales de su defensa Y del Ministerio Público Electoral, manteniendo la inelegibilidad hasta 2032, según Metrópoles y CNN Brasil. La cobertura solo circuló el 24/Ago.",
-        "odds": 0.25,
+        "tendenciaPolymarket": "0,15% (vol USD 2,66M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con caída de 0,10pp. Está por debajo del piso de 0,5% de la doble lectura, lo que vuelve la variación diaria ruido de libro delgado.",
+        "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "24/08/2026, 18:25",
-        "value": 0.25
+        "lastUpdate": "25/08/2026, 15:22",
+        "value": 0.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña a la REELECCIÓN al gobierno de São Paulo el 16/Ago, según O Globo y la Folha de S.Paulo. Ninguna encuesta nacional de la ventana lo prueba en escenario presidencial, y la ausencia de prueba es información que el panel registra en vez de repetir un dato viejo como si fuera nuevo.",
-        "tendenciaPolymarket": "0,05% (vol USD 14,03M acumulado) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC). Es el mayor volumen individual del libro presidencial y paga cinco centésimos de punto: el volumen acumulado mide cuánto dinero pasó, no la probabilidad de hoy.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,03M acumulado) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC). Es el mayor volumen individual del libro presidencial y el precio sigue en el suelo, lo que es coherente con un contrato que el mercado ya resolvió.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "24/08/2026, 18:25",
+        "lastUpdate": "25/08/2026, 15:22",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1,3-4%",
-        "polymarket": "0,30%",
+        "polymarket": "0,25%",
         "tendenciaPesquisa": "3% en la BTG/Nexus del 24/Ago, contra 4% en la ronda de la misma casa del 17/Ago y 1,3% en la Veritá del 21/Ago.",
-        "tendenciaPolymarket": "0,30% (vol USD 5,93M) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC), por debajo del piso de 0,5% de la doble lectura. Desistió del primer debate presidencial a las 12h01 del 23/Ago, tras confirmarse las ausencias de Lula y de Flávio Bolsonaro, según la Gazeta do Povo.",
-        "odds": 0.3,
+        "tendenciaPolymarket": "0,25% (vol USD 5,98M) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), con caída de 0,05pp, por debajo del piso de 0,5% de la doble lectura. ⭐ Fue entrevistado durante 40 minutos en Jornal Nacional el 25 de ago, según BBC y O Globo, y el contrato no registró nada de eso.",
+        "odds": 0.25,
         "percentage": 3,
-        "lastUpdate": "24/08/2026, 18:25",
-        "value": 0.3
+        "lastUpdate": "25/08/2026, 15:22",
+        "value": 0.25
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "🏷️ NO ES CANDIDATO A LA PRESIDENCIA: abrió campaña al GOBIERNO DE SÃO PAULO el 16/Ago, según O Globo y el Times Brasil. Ninguna encuesta nacional de la ventana lo incluye en escenario presidencial.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,30M acumulado) en la lectura confirmada del 24/Ago, 18:25 BRT (21:25 UTC). Ninguna encuesta nacional lo prueba para presidente, así que queda fuera del grafo de divergencia.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,30M acumulado) en la lectura confirmada del 25 de ago, 15:22 BRT (18:22 UTC), sin variación. Ninguna nacional lo prueba para presidente.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "24/08/2026, 18:25",
+        "lastUpdate": "25/08/2026, 15:22",
         "value": 0.05
       }
     ],
-    "updatedAt": "24/08/2026, 18:25",
+    "updatedAt": "25/08/2026, 15:22",
     "lastUpdate": "24/08/2026, 18:25"
   }
 }
