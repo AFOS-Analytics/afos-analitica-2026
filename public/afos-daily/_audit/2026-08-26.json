@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-26",
+  "factCheckGate": {
+    "eventosCandidatos": 4,
+    "eventos": [
+      {
+        "evento": "Gerp e Indexa/Broadcast divulgam nacionais no mesmo dia com resultados opostos",
+        "verificacao1": "Gerp em 4 dailies e Indexa em 5, mas como linha do CALENDARIO, nao como resultado. A daily de 24/Ago previu a Gerp para 25/Ago e a de 25/Ago previu a Indexa para 26/Ago",
+        "classificacao": "novidade",
+        "verificacao2": [
+          { "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/gerp-presidente-agosto-2026-2/", "data": "2026-08-26", "tipo": "evento" },
+          { "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-47-e-lula-42-em-2o-turno-diz-pesquisa/", "data": "2026-08-26", "tipo": "evento" },
+          { "url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/indexa-broadcast-presidente-agosto-2026/", "data": "2026-08-26", "tipo": "evento" }
+        ],
+        "registrosConferidos": ["BR-03547/2026", "BR-06366/2026"],
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Depoimento de Daniel Vorcaro a Policia Federal",
+        "verificacao1": "7 mencoes em dailies anteriores",
+        "classificacao": "continuidade",
+        "verificacao2": [
+          { "url": "https://www.otempo.com.br/politica/judiciario/2026/8/19/pf-deve-interrogar-vorcaro-para-concluir-um-dos-inqueritos-sobre-fraudes-do-master", "data": "2026-08-19", "tipo": "evento" },
+          { "url": "https://revistaoeste.com/politica/depoimento-de-vorcaro-a-pf-e-adiado-a-pedido-da-defesa/", "data": "2026-08", "tipo": "evento" },
+          { "url": "https://oglobo.globo.com/politica/noticia/2026/08/26/vorcaro-vai-depor-a-policia-federal-em-inquerito-sobre-fraudes-no-master.ghtml", "data": "2026-08-26", "tipo": "evento" }
+        ],
+        "achadoDoGate": "O depoimento NAO ocorreu em 26/Ago. Estava marcado para 20/Ago, foi ADIADO a pedido da defesa e remarcado para 27/Ago, por videoconferencia. Escrever no passado repetiria o incidente Vorcaro de 01/Mai/2026.",
+        "desambiguacaoCodebook": "Vorcaro esta preso desde 04/Mar/2026, na Papudinha, anexa ao Complexo da Papuda. Nada em 26/Ago altera esse estado.",
+        "decisao": "incorporar como ato MARCADO para 27/Ago"
+      },
+      {
+        "evento": "Lula aciona o TSE contra Renan Santos e Ronaldo Caiado por ataques no debate",
+        "verificacao1": "TSE tem 78 mencoes em dailies anteriores, mas esta acao e nova",
+        "classificacao": "novidade",
+        "verificacao2": [
+          { "url": "https://www1.folha.uol.com.br/poder/2026/08/lula-vai-ao-tse-contra-renan-santos-e-caiado-por-ataques-em-debate-e-pede-retirada-de-posts-em-redes.shtml", "data": "2026-08-26T13:47:00-03:00", "tipo": "evento" },
+          { "url": "https://www.cartacapital.com.br/cartaexpressa/lula-reage-e-vai-ao-tse-contra-renan-santos-e-caiado-por-ataques-em-debate/", "data": "2026-08-26", "tipo": "evento" }
+        ],
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "PF aponta pedido de acao de Lulinha para negocios do Careca do INSS",
+        "verificacao1": "8 mencoes em dailies anteriores",
+        "classificacao": "continuidade, desdobramento de investigacao em curso",
+        "verificacao2": [
+          { "url": "https://www1.folha.uol.com.br/poder/2026/08/lobista-pediu-acao-de-lulinha-para-fechar-negocios-de-careca-do-inss-com-governo.shtml", "data": "2026-08-26", "tipo": "evento" }
+        ],
+        "decisao": "incorporar como desdobramento, nao como divisor de aguas"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. Os quatro eventos de alto impacto tem duas fontes independentes cada",
+    "2_numericalErrors": "reconcile-claims acusou 16 pares (entidade, valor) sem match exato. Conferidos um a um: pareamento com a entidade vizinha, mais dois numeros da captura da noite que a peca declara como leitura separada, e um calculo (9,95pp = 45,50 menos 35,55). Nenhum numero inventado",
+    "3_fontesInventadas": "conferidos tres ao acaso (Folha, CartaCapital, CNN Brasil), os tres com materia correspondente no news-cache de 26/Ago e URL completa",
+    "4_quotesLiterais": "nenhuma aspa literal na peca",
+    "5_causacaoEspuria": "a acao no TSE e a queda no contrato de 3o lugar sao do mesmo dia, e a peca escreve coincidencia de data sem atribuir causa",
+    "6_verbosCriticos": "vai depor no futuro com data, adiado a pedido da defesa, e preso desde 4 de marco de 2026. Nenhum verbo de privacao de liberdade em tempo ambiguo",
+    "decisao": "prosseguir"
+  },
+  "rebaseline": {
+    "gateDisparou": false,
+    "motivo": "Os contratos de vencedor ficaram todos em 0,00pp entre a leitura do painel (18:19Z) e o re-fetch da daily. O que se moveu foi o contrato de 3o lugar, que devolveu 2,00pp de Renan Santos, e dois precos abaixo de 0,5%. Rebaseline por troca de texto foi descartado porque 45,50% aparece 5x na analysis-criteriosa e uma delas e o topo da serie de Flavio Bolsonaro, de 06/Mai: substituicao cega colidiria com ela",
+    "tratamento": "a peca publica a leitura confirmada das 15:19 BRT e reporta a captura da noite, tambem aprovada por trava, com carimbo proprio de 20:08 BRT"
+  },
+  "travaDeCaptura": [
+    { "leitura": "painel", "carimbos": ["2026-08-26T18:11:22.986Z", "2026-08-26T18:19:24.033Z"], "veredito": "APROVADO", "derivaMaxima": "0,00pp" },
+    { "leitura": "noite", "carimbos": ["2026-08-26T22:59:34.175Z", "2026-08-26T23:07:34.970Z"], "veredito": "APROVADO", "derivaMaxima": "0,05pp" }
+  ],
+  "portoes": {
+    "palavras": 1099,
+    "teto": 1100,
+    "emoji": { "pt-BR": 0, "en": 0, "es": 0 },
+    "tldrBullets": { "pt-BR": 3, "en": 3, "es": 3 },
+    "gateNumericoTraducao": "52 tokens numero+unidade, multiconjunto IDENTICO nos tres idiomas",
+    "separadorDecimal": "en com ponto decimal e virgula de milhar; es e pt-BR com virgula decimal e ponto de milhar",
+    "homoglifoCirilico": 0,
+    "linkParaOutroLocale": 0,
+    "validadorDaily": "OK, com 1 warning de densidade de link (62%, regra pede 80%): os paragrafos sem link sao os de sintese e as divergencias, que derivam do corpo"
+  },
+  "wayback": {
+    "preCheck": 429,
+    "acao": "nao rodado, bloqueio de host ativo desde 19/Ago. Nao se insiste"
+  },
+  "cortesDeclarados": [
+    "mercado de inflacao ficou fora da Secao 1 por causa do teto de 1.100 palavras"
+  ]
+}
