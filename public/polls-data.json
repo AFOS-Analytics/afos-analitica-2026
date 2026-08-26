@@ -1377,7 +1377,7 @@
     }
   ],
   "approvalData": {
-    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DESTE BLOCO SÃO DA GENIAL/QUAEST DE 14/Ago, e são eles: 46% de aprovação contra 48% de desaprovação, com 6% de não sabe, e 36% de ótimo ou bom, 25% de regular e 37% de ruim ou péssimo. O painel mantém UMA casa por bloco de propósito, para não somar réguas de institutos diferentes. ⭐ NACIONAL NOVA EM 24/Ago, declarada aqui e NÃO misturada acima: a BTG/Nexus (n=2.006, campo 21 a 23/Ago, BR-09028/2026, margem de 2pp) traz 48% de aprovação contra 49% de desaprovação, e 35% de ótimo ou bom contra 43% de ruim ou péssimo. 📌 DESTA VEZ O PAR APROVAÇÃO E DESAPROVAÇÃO CONVERGE ENTRE OS VEÍCULOS, ao contrário do que houve na rodada de 17/Ago da mesma casa: Poder360, CNN Brasil e Portal VV8 publicam os mesmos 48% e 49%. Ele fica declarado e fora do bloco estruturado porque a régua da casa é uma casa por bloco, e não porque a leitura seja duvidosa. ⛔ O percentual de regular e o de não sabe da BTG/Nexus não foram publicados nas fontes conferidas, então não são estimados aqui. ⭐ A DISTÂNCIA ENTRE AS CASAS SEGUE SENDO O DADO: no campo negativo da régua de ótimo a péssimo, a Quaest de 14/Ago marca 37%, a BTG/Nexus de 17/Ago marcou 42% e a de 24/Ago marca 43%. A PoderData/Aya de 13/Ago trazia 43% de aprovação contra 50% de desaprovação. O painel não escolhe entre elas. 📌 Rejeição na rodada de 24/Ago, segundo Poder360: Lula 49% e Flávio Bolsonaro 48%, ou seja o líder do 1º turno é também o mais rejeitado.",
+    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DESTE BLOCO SÃO DA GENIAL/QUAEST DE 14/Ago, e são eles: 46% de aprovação contra 48% de desaprovação, com 6% de não sabe, e 36% de ótimo ou bom, 25% de regular e 37% de ruim ou péssimo. O painel mantém UMA casa por bloco de propósito, para não somar réguas de institutos diferentes. ⭐ DUAS NACIONAIS NOVAS EM 26/Ago, declaradas aqui e NÃO misturadas acima, e as duas medem o governo em terreno negativo: a Indexa/Broadcast traz 46% de aprovação contra 50% de desaprovação, segundo Estadão e CNN Brasil; a Gerp traz 43% contra 51%, segundo CNN Brasil e Diário de São Paulo. 📌 A leitura anterior, da BTG/Nexus de 24/Ago (n=2.006, campo 21 a 23/Ago, BR-09028/2026), trazia 48% de aprovação contra 49% de desaprovação, e 35% de ótimo ou bom contra 43% de ruim ou péssimo. ⚠️ AS TRÊS CASAS CONCORDAM NO SINAL E DISCORDAM NO TAMANHO: a desaprovação vai de 49% a 51% e a aprovação de 43% a 48%, ou seja cinco pontos de amplitude entre institutos sobre a mesma pergunta na mesma semana. O painel não faz média entre elas.",
     "source": "Aprovação e desaprovação: Genial/Quaest 14/Ago/2026 (campo 10 a 13/Ago, n=2.004, presencial em 120 municípios, margem 2,0pp, registro TSE BR-06773/2026), divulgada por G1, CNN Brasil, Estadão, Correio Braziliense e Poder360. Rejeição: mesma rodada, via G1, Poder360, InfoMoney e O Globo. Avaliação da gestão (ótimo/bom, regular, ruim/péssimo): Genial/Quaest 05/Ago/2026, porque a rodada de 14/Ago não trouxe essa abertura nas matérias capturadas.",
     "date": "2026-08-11",
     "results": {
@@ -1418,99 +1418,99 @@
     "lastUpdate": "24/08/2026, 18:25"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com o livro presidencial em USD 132,88M. Em 26/Ago saíram DUAS nacionais novas e elas se contradizem: a Gerp (BR-03547/2026, campo de 21 a 25/Ago, n=2.400) dá Flávio à frente no 1º turno com 38% contra 37%, e vencendo o 2º turno por 47% a 42%; a Indexa/Broadcast (BR-06366/2026, campo de 20 a 23/Ago, n=2.000) dá Lula à frente com 39% contra 34%, e vencendo o 2º turno por 46% a 41%. São dez pontos de distância entre duas casas sobre a mesma disputa, com janelas de campo que se sobrepõem, e o painel publica as duas sem fazer média. ⚖️ O lado PESQUISA deste bloco segue na BTG/Nexus de 24/Ago, que é a nacional de maior confiabilidade na régua da casa, e não em nenhuma das duas de hoje. A amplitude dos 30 dias foi recalculada com elas dentro, e três pisos cederam: Lula de 38% para 37%, Caiado de 3,1% para 3% e Zema de 1,3% para 1%. A distância entre os dois primeiros voltou a abrir, de 27,45pp para 27,85pp, e abriu porque o segundo cedeu 0,40pp, não porque o primeiro tenha ganhado. ⭐ O movimento de 25/Ago está no contrato de terceiro lugar do 1º turno: Renan Santos cedeu 2,50pp para 51,50% e Ronaldo Caiado subiu 3,00pp para 42,00%, levando o vão entre os dois de 15,00pp para 9,50pp, na direção da ordem que a urna já mostrava. ⚠️ E isso NÃO é piso da série: o mesmo livro esteve em 3,5pp em 22/Ago às 19h30, conferido no backup do banco contra a série que começa em 14/Abr. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. Em 25/Ago há leitura confirmada nova para todos os contratos acompanhados, às 15:22 BRT (18:22 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo Correio Braziliense, Gazeta do Povo, Money Times e CartaCapital. As duas nacionais de 26/Ago foram conferidas em duas fontes cada, com o número de registro do TSE batendo, e cruzadas com a tabela da Wikipédia de pesquisas presidenciais de 2026.",
+    "note": "Preços do Polymarket na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), com o livro presidencial em USD 133,35M. ⭐ O DIA TEVE DUAS NACIONAIS NOVAS E ELAS SE CONTRADIZEM: a Gerp (BR-03547/2026, campo 21 a 25/Ago, n=2.400) dá Flávio à frente no 1º turno com 38% contra 37%, e vencendo o 2º turno por 47% a 42%; a Indexa/Broadcast (BR-06366/2026, campo 20 a 23/Ago, n=2.000) dá Lula à frente com 39% contra 34%, e vencendo o 2º turno por 46% a 41%. São dez pontos de distância entre duas casas sobre a mesma disputa, com janelas de campo que se sobrepõem, e o painel publica as duas sem fazer média. ⚖️ O lado PESQUISA deste bloco segue na BTG/Nexus de 24/Ago, que é a nacional de maior confiabilidade na régua da casa, e não em nenhuma das duas de hoje. A amplitude dos 30 dias foi recalculada com elas dentro, e três pisos cederam: Lula de 38% para 37%, Caiado de 3,1% para 3% e Zema de 1,3% para 1%. 📉 NO PREÇO, A DISTÂNCIA ENTRE OS DOIS PRIMEIROS ESTREITOU DE 27,85pp PARA 26,95pp, e ela é a mais estreita desde 21/Jun, conferida no backup do banco contra a série que começa em 14/Abr. Estreitou por um lado só: o primeiro está parado em 62,50% pelo terceiro dia seguido e o segundo subiu 0,90pp, para 35,55%, o patamar mais alto dele desde 13/Mai. ⭐ E O MAIOR MOVIMENTO DO DIA NÃO ESTÁ NO CONTRATO DE VENCEDOR: no de terceiro lugar do 1º turno, Renan Santos cedeu 6,00pp para 45,50% e Ronaldo Caiado cedeu 3,00pp para 39,00%. Os dois caíram, e mesmo assim o vão entre eles encurtou de 9,50pp para 6,50pp. Nesta quarta Lula acionou o TSE contra os dois por ataques no debate, pedindo a retirada de publicações. O painel registra a coincidência de data e não atribui causa. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. Em 26/Ago há leitura confirmada nova para todos os contratos acompanhados, às 15:19 BRT (18:19 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo, Correio Braziliense, Gazeta do Povo, Money Times e CartaCapital. As duas nacionais de 26/Ago foram conferidas em duas fontes cada, com o número de registro do TSE batendo, e cruzadas com a tabela da Wikipédia de pesquisas presidenciais de 2026. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "37-44,9%",
         "polymarket": "62,50%",
-        "tendenciaPesquisa": "A BTG/Nexus de 24/Ago (n=2.006, campo 21 a 23/Ago, BR-09028/2026, confiabilidade 4) o dá em 41% no 1º turno e vencendo o 2º por 46% a 45%. É a primeira nacional nova desde 21/Ago. ⭐ Comparada com a rodada anterior da MESMA casa, de 17/Ago, a distância no 2º turno caiu de 3 pontos para 1, mas esse 1 ponto EMPATA com o que a casa já havia medido em 03/Ago, então é repetição de patamar e não mínimo da série. 🕐 O campo fechou em 23/Ago e o primeiro debate presidencial foi às 20h daquele dia, sem ele: a pesquisa não mede o debate.",
-        "tendenciaPolymarket": "62,50% (vol USD 8,97M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), sem variação pelo segundo dia seguido. A maior leitura dele desde 14/Abr, quando a série começa, é 67,50%, de 16/Ago. No contrato de 2º lugar do 1º turno ele aparece com 8,05%, alta de 2,10pp.",
+        "tendenciaPesquisa": "DUAS NACIONAIS NOVAS HOJE, E ELAS DISCORDAM SOBRE ELE. A Gerp (BR-03547/2026, campo 21 a 25/Ago, n=2.400) o dá em 37% no 1º turno, atrás de Flávio por 1 ponto, e perdendo o 2º turno por 42% a 47%. A Indexa/Broadcast (BR-06366/2026, campo 20 a 23/Ago, n=2.000) o dá em 39%, à frente por 5, e vencendo o 2º turno por 46% a 41%. As duas ficam abaixo dos 41% da BTG/Nexus de 24/Ago, que segue sendo a nacional de maior confiabilidade da janela e é a que alimenta o número deste bloco.",
+        "tendenciaPolymarket": "62,50% (vol USD 9,03M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), sem variação pelo TERCEIRO dia seguido. O máximo da série é 67,50%, de 16/Ago, conferido no backup contra a série inteira desde 14/Abr. ⭐ A distância dele para o segundo caiu para 26,95pp, e ela é a mais estreita desde 21/Jun: nenhum ponto da série depois daquela data ficou abaixo disso. E ela estreitou sem ele ceder nada, porque quem se moveu foi o outro lado.",
         "odds": 62.5,
         "percentage": 41,
-        "lastUpdate": "25/08/2026, 15:22",
+        "lastUpdate": "26/08/2026, 15:19",
         "value": 62.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "34,65%",
-        "tendenciaPesquisa": "A BTG/Nexus de 24/Ago o dá em 37% no cenário sem Pablo Marçal e em 34% no cenário com ele, e em 45% no 2º turno contra 46%. Contra a rodada da mesma casa em 17/Ago, ele sobe 1 ponto no 1º turno, movimento que cabe inteiro dentro da margem de 2pp. A Veritá de 21/Ago segue sendo a única da janela que o dá vencendo o 2º turno.",
-        "tendenciaPolymarket": "34,65% (vol USD 8,89M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,40pp que devolve parte da alta de 1,80pp de ontem. O patamar segue o mais alto desde 13/Mai, conferido no backup contra a série inteira desde 14/Abr, e o topo da série é 45,50%, de 06/Mai. ⭐ No contrato de 2º lugar do 1º turno ele foi na direção contrária e subiu 2,00pp, para 87,50%.",
-        "odds": 34.65,
+        "polymarket": "35,55%",
+        "tendenciaPesquisa": "As duas nacionais de hoje o medem em lugares opostos. A Gerp o dá em 38% no 1º turno, À FRENTE de Lula pela primeira vez na tabela do painel, e vencendo o 2º turno por 47% a 42%. A Indexa o dá em 34% no cenário sem Pablo Marçal e 33% no cenário com ele, e perdendo o 2º turno por 41% a 46%. A BTG/Nexus de 24/Ago, que alimenta o número deste bloco, o mantém em 37%. 📌 O CEO da Indexa disse ao Estadão que ele vem recuperando eleitores depois do caso Master, e o preço andou na mesma direção nesta quarta.",
+        "tendenciaPolymarket": "35,55% (vol USD 8,94M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), com alta de 0,90pp, a maior variação do dia entre os contratos de vencedor. ⭐ É o patamar mais alto dele desde 13/Mai, conferido no backup: nenhum ponto entre aquela data e hoje ficou acima disto, e o topo da série é 45,50%, de 06/Mai. No contrato de 2º lugar do 1º turno ele ficou parado em 87,50%.",
+        "odds": 35.55,
         "percentage": 37,
-        "lastUpdate": "25/08/2026, 15:22",
-        "value": 34.65
+        "lastUpdate": "26/08/2026, 15:19",
+        "value": 35.55
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2,95%",
-        "tendenciaPesquisa": "3% na BTG/Nexus de 24/Ago, o menor valor dele na janela de 30 dias do painel, contra 4% na rodada da mesma casa em 17/Ago. Ele participou do primeiro debate presidencial, em 23/Ago, que o campo desta pesquisa não alcança.",
-        "tendenciaPolymarket": "2,95% (vol USD 11,09M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com alta de 0,05pp que fica abaixo do que a dupla leitura distingue de ruído. 🔴 No contrato de 3º lugar do 1º turno ele teve a maior perda do painel no dia, cedendo 2,50pp para 51,50%.",
-        "odds": 2.95,
+        "polymarket": "2,75%",
+        "tendenciaPesquisa": "A Gerp o dá em 3% e a Indexa em 4%, contra os 3% da BTG/Nexus de 24/Ago. As três leituras o põem na mesma faixa estreita, e nenhuma delas explica sozinha a queda de 6,00pp no contrato de terceiro lugar.",
+        "tendenciaPolymarket": "2,75% (vol USD 11,23M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), queda de 0,20pp. 🔴 No contrato de 3º lugar do 1º turno a perda é bem maior: 6,00pp em um dia, de 51,50% para 45,50%, a maior variação do painel nesta quarta. O vão dele para Caiado nesse contrato caiu de 9,50pp para 6,50pp, e desta vez OS DOIS cederam.",
+        "odds": 2.75,
         "percentage": 3,
-        "lastUpdate": "25/08/2026, 15:22",
-        "value": 2.95
+        "lastUpdate": "26/08/2026, 15:19",
+        "value": 2.75
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0,55%",
-        "tendenciaPesquisa": "5% na BTG/Nexus de 24/Ago, mesmo valor da rodada anterior da casa, o que o mantém à frente de Renan Santos na urna. A mesma pesquisa testou o 2º turno contra Lula e mediu 46% a 42%, segundo Metrópoles. Ele participou do debate de 23/Ago.",
-        "tendenciaPolymarket": "0,55% (vol USD 6,59M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,15pp que o devolve ao piso de 0,5% da dupla leitura. ⭐ No contrato de 3º lugar do 1º turno ele fez a maior alta do painel no dia, subindo 3,00pp para 42,00%, o que aproxima o preço da ordem que a urna já mostrava.",
-        "odds": 0.55,
+        "polymarket": "0,45%",
+        "tendenciaPesquisa": "A Indexa o dá em 5%, à frente de Renan Santos, e a Gerp o dá em 3%, empatado com ele. A BTG/Nexus de 24/Ago o mantinha em 5%. As duas casas de hoje discordam sobre quem é o terceiro na urna, e é esse par que o contrato de terceiro lugar precifica.",
+        "tendenciaPolymarket": "0,45% (vol USD 6,59M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), queda de 0,10pp, abaixo do piso de 0,5% que a dupla leitura vigia. No contrato de 3º lugar ele cedeu 3,00pp, de 42,00% para 39,00%, e mesmo assim ENCURTOU a distância para Renan Santos, porque o outro caiu o dobro.",
+        "odds": 0.45,
         "percentage": 5,
-        "lastUpdate": "25/08/2026, 15:22",
-        "value": 0.55
+        "lastUpdate": "26/08/2026, 15:19",
+        "value": 0.45
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5,2%",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "Terceira medição nacional dele na janela, e as três divergem: 2% na Datafolha de 21/Ago, 5,2% na Veritá do mesmo dia e 4% na BTG/Nexus de 24/Ago, esta no cenário em que ele é incluído. No cenário sem ele, o segundo colocado tem 37%; no cenário com ele, 34%.",
-        "tendenciaPolymarket": "0,15% (vol USD 2,66M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,10pp. Ele está abaixo do piso de 0,5% da dupla leitura, o que torna a variação diária ruído de book fino.",
+        "tendenciaPesquisa": "A Gerp o dá em 4% e a Indexa em 2%, e as duas mediram na mesma semana. A divergência sobre ele segue sendo a maior em termos relativos da janela, e o preço de 0,15% não distingue entre 2% e 4% de intenção declarada.",
+        "tendenciaPolymarket": "0,15% (vol USD 2,77M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), sem variação. Ele está abaixo do piso de 0,5% da dupla leitura, então o painel não trata movimento desse contrato como sinal.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "25/08/2026, 15:22",
+        "lastUpdate": "26/08/2026, 15:19",
         "value": 0.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "🏷️ ELE NÃO É CANDIDATO À PRESIDÊNCIA: abriu campanha à REELEIÇÃO ao governo de São Paulo em 16/Ago, segundo O Globo e a Folha de S.Paulo. Nenhuma nacional da janela o testa em cenário presidencial, e ausência de teste é informação que o painel registra em vez de repetir dado antigo como se fosse novo.",
-        "tendenciaPolymarket": "0,05% (vol USD 14,03M acumulado) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). É o maior volume individual do livro presidencial e o preço segue no chão, o que é coerente com um contrato que o mercado já resolveu.",
+        "tendenciaPesquisa": "Nenhuma nacional o testa para presidente, inclusive as duas de hoje. Por isso ele fica com 0% neste bloco e sai do grafo, de propósito.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,06M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), sem variação. É o maior volume acumulado do livro presidencial e o preço mais baixo entre os nomes acompanhados, o que descreve um contrato onde muita gente já negociou e o mercado hoje trata a hipótese como encerrada.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "25/08/2026, 15:22",
+        "lastUpdate": "26/08/2026, 15:19",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0,25%",
-        "tendenciaPesquisa": "3% na BTG/Nexus de 24/Ago, contra 4% na rodada da mesma casa em 17/Ago e 1,3% na Veritá de 21/Ago.",
-        "tendenciaPolymarket": "0,25% (vol USD 5,98M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,05pp, abaixo do piso de 0,5% da dupla leitura. ⭐ Ele teve 40 minutos de sabatina no Jornal Nacional em 25/Ago, segundo BBC e O Globo, e o contrato não registrou nada disso.",
-        "odds": 0.25,
+        "polymarket": "0,15%",
+        "tendenciaPesquisa": "A Gerp e a Indexa o medem em 1% cada uma, e a BTG/Nexus de 24/Ago o dava em 3%. O piso da faixa de 30 dias caiu para 1% por causa das duas de hoje.",
+        "tendenciaPolymarket": "0,15% (vol USD 5,99M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), queda de 0,10pp, dentro do ruído de um contrato abaixo do piso de vigilância.",
+        "odds": 0.15,
         "percentage": 3,
-        "lastUpdate": "25/08/2026, 15:22",
-        "value": 0.25
+        "lastUpdate": "26/08/2026, 15:19",
+        "value": 0.15
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "🏷️ ELE NÃO É CANDIDATO À PRESIDÊNCIA: abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. Nenhuma nacional da janela o inclui em cenário presidencial.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,30M acumulado) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), sem variação. Nenhuma nacional o testa para presidente.",
+        "tendenciaPesquisa": "Nenhuma nacional o testa para presidente. A pesquisa do JOTA divulgada hoje testou um cenário de 2º turno com ele no lugar de Lula, mas os números não saíram de forma que o painel pudesse conferir, então ela não entra na tabela.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,30M) na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), sem variação.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "25/08/2026, 15:22",
+        "lastUpdate": "26/08/2026, 15:19",
         "value": 0.05
       }
     ],
-    "updatedAt": "25/08/2026, 15:22",
-    "lastUpdate": "24/08/2026, 18:25"
+    "updatedAt": "26/08/2026, 15:19",
+    "lastUpdate": "26/08/2026, 15:19"
   }
 }

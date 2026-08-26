@@ -1,95 +1,94 @@
 {
-  "updatedAt": "25/08/2026, 15:22",
-  "subtitle": "Cruzamento de 25 de agosto de 2026: preço do Polymarket em leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), livro presidencial em USD 132,88M, contra a BTG/Nexus de 24/Ago, campo de 21 a 23/Ago, que segue sendo a nacional mais recente. Não houve pesquisa nacional nova nesta terça: a leva divulgada hoje pela Quaest é toda estadual, e o painel só cruza escopo nacional. O movimento do dia está no contrato de terceiro lugar.",
+  "updatedAt": "26/08/2026, 15:19",
+  "subtitle": "Cruzamento de 26 de agosto de 2026: preço do Polymarket em leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), livro presidencial em USD 133,35M, contra DUAS nacionais novas divulgadas hoje que se contradizem, a Gerp (BR-03547/2026, campo 21 a 25/Ago, n=2.400) e a Indexa/Broadcast (BR-06366/2026, campo 20 a 23/Ago, n=2.000), mais a BTG/Nexus de 24/Ago (BR-09028/2026, n=2.006), que segue sendo a de maior confiabilidade da janela na régua da casa. Notícias apuradas em 1.091 itens coletados nesta quarta.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 62,50% (vol USD 8,97M acumulado), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Sem variação no dia, segundo dia seguido parado.",
+      "header": "PREÇO: 62,50% (vol USD 9,03M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação no dia, TERCEIRO dia seguido parado. A distância dele para o segundo caiu para 26,95pp, a mais estreita desde 21/Jun.",
       "fortes": [
-        "A BTG/Nexus de 24/Ago (n=2.006, campo 21 a 23/Ago, confiabilidade 4, BR-09028/2026) o coloca em 41% no 1º turno sem Pablo Marçal, 40% no cenário com ele, e vencendo o 2º turno por 46% a 45%. Segue sendo a nacional mais recente, e nesta terça não saiu nenhuma para substituí-la.",
-        "O preço dele não se moveu pelo segundo dia seguido, em 62,50%, enquanto o do segundo colocado cedeu. A distância entre os dois voltou a abrir, de 27,45pp para 27,85pp.",
-        "Ele lidera os dois cenários de 1º turno da rodada mais recente e o 2º turno testado nela.",
-        "Confirmou presença na sabatina do Jornal Nacional, marcada para 27/Ago, segundo Valor Econômico, Poder360 e Metrópoles de 25/Ago. É a primeira aparição confirmada dele num formato de confronto depois de ter faltado ao debate da Band em 23/Ago.",
-        "No contrato de segundo lugar do 1º turno ele aparece com 8,05%, alta de 2,10pp, o que é coerente com um mercado que segue o vendo passar em primeiro."
+        "A Indexa/Broadcast de hoje (n=2.000, telefone, campo 20 a 23/Ago, BR-06366/2026) o coloca em 39% no 1º turno contra 34% do segundo, e o dá vencendo os QUATRO cenários de 2º turno testados: 46% a 41% contra Flávio, 45% a 34% contra Zema, 44% a 38% contra Caiado e 46% a 34% contra Renan Santos.",
+        "A BTG/Nexus de 24/Ago, que é a de maior confiabilidade da janela, o mantém em 41% no 1º turno sem Marçal e vencendo o 2º turno por 46% a 45%.",
+        "O preço segue em 62,50% pelo terceiro dia, e o mercado continua pagando quase dois para um a favor dele. O máximo da série é 67,50%, de 16/Ago, conferido no backup contra o registro completo desde 14/Abr.",
+        "Ele confirmou a sabatina do Jornal Nacional para 27/Ago, segundo Valor Econômico e Poder360, depois de ter faltado ao debate da Band em 23/Ago.",
+        "Nesta quarta ele acionou o TSE contra Renan Santos e Ronaldo Caiado por ataques no debate, pedindo a retirada de publicações nas redes, segundo Folha de S.Paulo. No mesmo dia os dois cederam no contrato de terceiro lugar, e o painel registra a coincidência de data sem atribuir causa."
       ],
       "fracos": [
-        "⚠️ Na BTG/Nexus de 24/Ago ele aparece como o candidato mais rejeitado, com 49% contra 48% do segundo colocado, segundo Poder360. A VEJA registra que é a primeira vez desde abril que ele supera o adversário em rejeição, e a afirmação é da revista, não do painel.",
-        "A avaliação da gestão segue com saldo negativo na mesma rodada: 43% de ruim ou péssimo contra 35% de ótimo ou bom, segundo CNN Brasil.",
-        "A vantagem no 2º turno é de 1 ponto, dentro da margem de 2pp da própria pesquisa, o que a torna empate técnico.",
-        "📌 A Folha de 25/Ago registra que a estratégia do PT no Maranhão poupa senador citado nas fraudes do INSS para evitar mais desgaste a ele, o que mostra o caso ainda pesando na articulação eleitoral.",
-        "🏛️ A Folha de 25/Ago também registra que a investigação sobre o filho dele aponta três tentativas frustradas de fechar contrato no Ministério da Saúde. É apuração em curso, sem desfecho."
+        "⚠️ A Gerp de hoje o coloca ATRÁS pela primeira vez na tabela do painel: 37% contra 38% no 1º turno, dentro da margem de 2pp, e perdendo o 2º turno por 42% a 47%. A única outra leitura em que ele não estava à frente é a própria Gerp de 11/Ago, que deu empate em 38 a 38.",
+        "As DUAS nacionais de hoje o põem abaixo dos 41% da BTG/Nexus: 37% na Gerp e 39% na Indexa. O piso da faixa de 30 dias dele caiu de 38% para 37% por causa disso.",
+        "Aprovação do governo em terreno negativo nas duas casas novas: 46% contra 50% na Indexa, segundo Estadão e CNN Brasil, e 43% contra 51% na Gerp, segundo CNN Brasil e Diário de São Paulo.",
+        "A distância dele para o segundo colocado no preço é a mais estreita desde 21/Jun, e ela estreitou sem que ele cedesse nada: quem se moveu foi o outro lado.",
+        "⚠️ O caso do INSS voltou ao noticiário pelo flanco familiar: a PF afirma que um lobista pediu ação de Lulinha para fechar negócios do Careca do INSS com o governo, e a investigação aponta três tentativas frustradas de contrato no Ministério da Saúde, segundo Folha de S.Paulo e O Globo. A Justiça negou o pedido de Lulinha para derrubar o vídeo em que Flávio trata das suspeitas."
       ],
-      "analise": "O preço dele está parado há dois dias em 62,50% (vol USD 8,97M acumulado) e a distância para o segundo voltou a abrir, de 27,45pp para 27,85pp, sem que ele tenha ganhado nada: quem cedeu foi o outro lado. Contra a série inteira desde 14/Abr, a menor distância já registrada entre os dois é negativa, de 8 pontos a favor do segundo colocado em 06/Mai, então estreitamento e alargamento nesta faixa são movimento comum do livro e não mudança de quadro. A pesquisa mais recente segue sendo a BTG/Nexus de 24/Ago, que o dá em 41% no 1º turno e à frente no 2º por 46% a 45%, e nesta terça não houve nacional nova. O que o dia acrescenta é de agenda e não de número: ele confirmou presença na sabatina do Jornal Nacional, marcada para 27/Ago, depois de ter faltado ao debate de 23/Ago."
+      "analise": "O dia entrega o caso mais limpo do ano para a tese da casa, e ele não é entre mercado e urna: é entre duas urnas. A Gerp e a Indexa mediram a mesma disputa, na mesma semana, com janelas de campo que se sobrepõem, e chegaram a resultados opostos no 2º turno, uma dando o líder perdendo por 5 e a outra dando o líder ganhando por 5. São dez pontos de distância entre institutos, sem nenhum dia entre elas para explicar. O painel publica as duas e não faz média, porque média entre leituras que se invertem esconde exatamente o que há de informativo. No preço, o movimento foi de um lado só: ele está parado em 62,50% pelo terceiro dia e a distância para o segundo caiu para 26,95pp, a mais estreita desde 21/Jun. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 34,65% (vol USD 8,89M acumulado), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Queda de 0,40pp, devolvendo parte da alta de ontem.",
+      "header": "PREÇO: 35,55% (vol USD 8,94M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Alta de 0,90pp, a maior variação do dia entre os contratos de vencedor, e o patamar mais alto dele desde 13/Mai.",
       "fortes": [
-        "Mesmo depois de ceder 0,40pp, os 34,65% seguem no patamar mais alto dele desde 13/Mai. Conferido contra a série inteira desde 14/Abr no backup do banco, e não pela janela da API, que trunca em 90 dias.",
-        "⭐ ELE SUBIU NO CONTRATO DE SEGUNDO LUGAR: 87,50%, alta de 2,00pp, o maior movimento dele no dia. O mercado ficou mais certo de que ele vai ao 2º turno, ao mesmo tempo em que ficou um pouco menos certo de que ele vence.",
-        "A BTG/Nexus de 24/Ago lhe dá 37% no cenário sem Pablo Marçal e 34% no cenário com ele, e 45% no 2º turno contra 46%.",
-        "Na mesma rodada ele aparece menos rejeitado que o primeiro colocado, com 48% contra 49%, segundo Poder360.",
-        "Confirmou presença na sabatina do Jornal Nacional, marcada para 28/Ago ao vivo nos estúdios do Rio, segundo Valor Econômico, Poder360 e Metrópoles de 25/Ago, depois de ter condicionado a presença no debate da Band à ida do adversário."
+        "⭐ A Gerp de hoje (n=2.400, campo 21 a 25/Ago, BR-03547/2026) o coloca À FRENTE no 1º turno pela primeira vez na tabela do painel, com 38% contra 37%, e vencendo o 2º turno por 47% a 42%.",
+        "O preço subiu 0,90pp e chegou a 35,55%, o mais alto desde 13/Mai. Conferido no backup do banco: nenhum ponto entre aquela data e hoje ficou acima disto. O topo da série é 45,50%, de 06/Mai.",
+        "No contrato de 2º lugar do 1º turno ele segue em 87,50%, sem variação. O mercado está seguro de que ele é o segundo colocado e discute só quanto isso vale contra o primeiro.",
+        "O CEO da Indexa disse ao Estadão que ele vem recuperando eleitores depois do caso Master, e é a própria casa que mede ligando o movimento da urna ao caso.",
+        "Na comparação da Gerp com ela mesma, a distância no 2º turno passou de 2 pontos (45% a 43% na rodada de 11/Ago, BR-08045/2026) para 5 pontos agora."
       ],
       "fracos": [
-        "A queda de 0,40pp devolve parte da alta de 1,80pp de ontem, e o saldo dos dois dias é positivo em 1,40pp.",
-        "O topo da série dele é 45,50%, de 06/Mai, e ele está 10,85pp abaixo disso.",
-        "🏛️ O ATO JUDICIAL DO DIA O ALCANÇA: O Globo de 25/Ago registra que ele tenta driblar o desgaste do caso Dark Horse depois da decisão do ministro Flávio Dino, e deixou as explicações para a produtora. O caso envolve suspeitas sobre gastos de Daniel Vorcaro e emendas parlamentares.",
-        "A decisão de Dino sobre nulidade de emendas indicadas por presidentes de partido cita suspeitas sobre o presidente do partido dele, segundo Poder360 e CNN Brasil de 23/Ago.",
-        "📌 A distância dele para o primeiro colocado voltou a abrir nesta terça, de 27,45pp para 27,85pp."
+        "⚠️ A Indexa de hoje o dá em 34% no cenário sem Pablo Marçal e 33% no cenário com ele, perdendo o 2º turno por 41% a 46%. As duas nacionais do dia discordam sobre quem vence, e a diferença entre elas é de dez pontos.",
+        "O caso Master voltou com força nesta quarta: Daniel Vorcaro vai depor à Polícia Federal no inquérito sobre fraudes, a PF fez busca e apreensão em instituto de previdência de Campo Grande por aportes no banco, e o caso Dark Horse no STF envolve suspeitas sobre gastos de Vorcaro e emendas, segundo O Globo.",
+        "Petistas passaram a replicar um jingle que junta Vorcaro, Estados Unidos e rachadinha para atacá-lo, segundo O Globo, o que indica que o tema entrou no repertório de campanha do outro lado.",
+        "A BTG/Nexus de 24/Ago, a de maior confiabilidade da janela, o mantém em 37% e o dá perdendo o 2º turno por 45% a 46%.",
+        "A faixa de 30 dias dele segue larga, de 28,7% a 40%, e essa amplitude entre institutos é maior do que a variação do preço no mesmo período."
       ],
-      "analise": "O dia dele tem dois sinais em direções opostas, e é o achado do painel hoje. No livro presidencial ele cedeu 0,40pp e foi a 34,65% (vol USD 8,89M acumulado), devolvendo parte da alta de 1,80pp de ontem. No contrato de segundo lugar do 1º turno ele fez o movimento contrário e subiu 2,00pp, chegando a 87,50%. Ou seja, o mercado ficou mais convicto de que ele chega ao 2º turno e um pouco menos convicto de que ele ganha. Os dois contratos medem coisas diferentes e não se subtraem. Mesmo com a queda, o patamar segue o mais alto desde 13/Mai, conferido contra a série inteira desde 14/Abr no backup do banco. O que pesa contra ele no dia é judicial: a cobertura de 25/Ago o coloca administrando o desgaste do caso Dark Horse depois da decisão de Flávio Dino."
+      "analise": "Foi o nome que se moveu no dia, e nos dois instrumentos ao mesmo tempo. No preço, alta de 0,90pp para 35,55%, o patamar mais alto desde 13/Mai. Na urna, uma das duas nacionais novas o coloca à frente do líder pela primeira vez desde que o painel monta esta tabela. As duas coisas apontam na mesma direção, e é raro que apontem juntas. A ressalva que vai junto é do mesmo tamanho: a outra nacional do dia, com campo sobreposto, o dá perdendo por cinco no 2º turno, e o caso Master voltou ao noticiário na mesma quarta em que o preço subiu. O CEO da Indexa atribui a recuperação dele justamente ao caso ter saído do centro do noticiário, e o dia mostrou o contrário disso."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 2,95% (vol USD 11,09M acumulado), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Alta de 0,05pp no presidencial, e queda de 2,50pp no contrato de terceiro lugar.",
+      "header": "PREÇO: 2,75% (vol USD 11,23M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,20pp no contrato de vencedor. 🔴 No contrato de 3º lugar do 1º turno a perda é de 6,00pp, a maior variação do painel nesta quarta.",
       "fortes": [
-        "Ele foi um dos três candidatos que compareceram ao primeiro debate presidencial, em 23/Ago, junto com Ronaldo Caiado e Augusto Cury.",
-        "A BBC de 24/Ago registra que ele liderou as atenções nas redes sociais durante o debate, segundo levantamento citado pela reportagem.",
-        "No presidencial ele subiu 0,05pp, para 2,95%, movimento que fica abaixo do que a dupla leitura consegue distinguir de ruído.",
-        "Ele segue à frente no contrato de terceiro lugar, com 51,50% contra 42,00%, mesmo depois de ceder."
+        "Segue à frente de Ronaldo Caiado no contrato de 3º lugar, com 45,50% contra 39,00%.",
+        "A Indexa o mede em 4% no 1º turno, o valor mais alto que ele recebe entre as três nacionais da janela.",
+        "O volume acumulado do contrato dele no livro presidencial é de USD 11,23M, o segundo maior entre os nomes acompanhados, o que descreve um mercado com bastante gente negociando a hipótese.",
+        "Ele quer explorar o caso Lulinha na sabatina do Jornal Nacional, segundo Folha de S.Paulo, e a pauta está viva no noticiário desta quarta."
       ],
       "fracos": [
-        "🔴 A MAIOR PERDA DO DIA É DELE, e está no contrato de terceiro lugar: 51,50%, queda de 2,50pp, enquanto o adversário direto subiu 3,00pp.",
-        "O vão entre os dois no contrato de terceiro lugar caiu de 15,00pp para 9,50pp em um dia.",
-        "⚠️ Isso NÃO é mínimo da série: o mesmo livro registrou 3,5pp em 22/Ago às 19h30, e naquele dia o fechamento marcava 15,5pp. Fechamento de dia esconde piso.",
-        "A BTG/Nexus de 24/Ago o dá em 3%, contra 5% de Ronaldo Caiado, o menor valor dele na janela de 30 dias do painel.",
-        "A divergência entre os dois instrumentos sobre quem é o terceiro continua, mas ela encolheu hoje: o preço andou na direção da ordem que a urna vem mostrando, sem que a ordem tenha se invertido."
+        "🔴 Cedeu 6,00pp no contrato de 3º lugar, de 51,50% para 45,50%, a maior variação do painel no dia. O vão dele para Caiado caiu de 9,50pp para 6,50pp, e desta vez os dois cederam, com ele caindo o dobro.",
+        "No contrato de vencedor cedeu 0,20pp e está em 2,75%.",
+        "A Gerp o mede em 3%, empatado com Caiado, e a BTG/Nexus de 24/Ago também o dava em 3%, atrás dos 5% de Caiado. As duas casas de hoje discordam sobre quem é o terceiro na urna.",
+        "Lula acionou o TSE contra ele e contra Caiado por ataques no debate, pedindo retirada de publicações, segundo Folha de S.Paulo."
       ],
-      "analise": "O nome dele concentra o movimento do dia, e ele não está no livro presidencial, onde subiu 0,05pp irrelevantes para 2,95% (vol USD 11,09M acumulado). Está no contrato de terceiro lugar, onde ele cedeu 2,50pp e foi a 51,50%, enquanto Ronaldo Caiado subiu 3,00pp e chegou a 42,00%. O vão entre os dois caiu de 15,00pp para 9,50pp num único dia. ⚠️ E aqui o painel precisa de uma ressalva, porque a manchete fácil seria falsa: 9,50pp NÃO é o menor vão da série. O mesmo livro esteve em 3,5pp em 22/Ago às 19h30, e o fechamento daquele dia marcava 15,5pp, o que mostra que olhar só o fechamento esconde o piso. O que se pode afirmar é o que o dia fez: o preço andou na direção da ordem que a pesquisa vem mostrando, que põe Caiado à frente com 5% contra 3%, sem que a ordem do contrato tenha se invertido."
+      "analise": "O maior movimento do dia inteiro não está no contrato de vencedor, está no de terceiro lugar, e é dele. Uma queda de 6,00pp em um dia num contrato desse tamanho é grande, e ela veio acompanhada de uma queda menor do adversário direto, o que encurtou o vão entre os dois em vez de alargar. Na urna nada mudou de patamar: as três nacionais da janela o põem entre 3% e 4%. É o tipo de dia em que o preço se mexe mais do que a intenção declarada, e o painel registra os dois sem escolher qual está certo."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO para todo o pelotão, leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC): Caiado 0,55%, Zema 0,25%, Haddad 0,05%.",
-      "subtitle": "Pelotão de trás na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Ronaldo Caiado cedeu 0,15pp e voltou ao piso de 0,5% em que a dupla leitura confirma variação, e Romeu Zema e Fernando Haddad seguem abaixo dele. ⭐ O movimento real do pelotão hoje não está no livro presidencial: está no contrato de terceiro lugar do 1º turno, onde Caiado subiu 3,00pp.",
+      "header": "Pelotão de trás na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Ronaldo Caiado cedeu 0,10pp e está em 0,45%, abaixo do piso de 0,5% que a dupla leitura vigia. Romeu Zema cedeu 0,10pp e está em 0,15%. Fernando Haddad segue em 0,05%.",
+      "subtitle": "Pelotão de trás na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Os três estão abaixo do piso de 0,5% em que a dupla leitura distingue movimento de ruído, então nenhuma variação deles é tratada como sinal pelo painel.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 0,55% (vol USD 6,59M acumulado, leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC)), com queda de 0,15pp. ⭐ No contrato de 3º lugar do 1º turno ele SUBIU 3,00pp e tem 42,00%, a 9,50pp de Renan Santos.",
-        "fortes": "⭐ A MAIOR ALTA DO PAINEL NO DIA É DELE, e está no contrato de 3º lugar do 1º turno: 3,00pp, chegando a 42,00%. O movimento aproxima o preço da ordem que a urna já mostrava, porque a BTG/Nexus de 24/Ago o mantém em 5% no 1º turno contra 3% de Renan Santos. A mesma pesquisa o testou em 2º turno contra o líder e mediu 46% a 42%, segundo Metrópoles. ⭐ E ELE FOI O SABATINADO DO JORNAL NACIONAL EM 25/Ago, o segundo da série que Romeu Zema abriu em 24/Ago, com 40 minutos diante de Renata Vasconcellos e César Tralli. Ele também participou do primeiro debate presidencial, em 23/Ago.",
-        "fracos": "No livro presidencial ele foi na direção contrária e cedeu 0,15pp, voltando a 0,55%, colado no piso de 0,5% em que a dupla leitura consegue distinguir movimento de ruído. ⚠️ E a inversão entre os dois instrumentos continua: na urna ele está à frente de Renan Santos, e no contrato de 3º lugar o preço dele ainda é 9,50pp MENOR que o do adversário. O vão encolheu, mas a ordem não virou. Não houve pesquisa nacional nova nesta terça para testar se a urna se moveu junto."
+        "label": "CAIADO (PSD), Poly presidencial 0,45% (vol USD 6,59M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), com queda de 0,10pp. No contrato de 3º lugar do 1º turno ele cedeu 3,00pp e tem 39,00%, a 6,50pp de Renan Santos.",
+        "fortes": "A Indexa de hoje o mede em 5% no 1º turno, à frente de Renan Santos, e o dá perdendo o 2º turno para Lula por 38% a 44%, que é a menor distância entre os quatro cenários testados pela casa depois do de Flávio. Mesmo cedendo 3,00pp no contrato de terceiro lugar, ele ENCURTOU a distância para Renan Santos, porque o outro caiu o dobro. Nesta quarta ele defendeu a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos ligados ao Master, segundo O Globo, e deu sabatina ao O Globo, CBN e Valor.",
+        "fracos": "A Gerp o mede em 3%, empatado com Renan Santos, contra os 5% da Indexa e os 5% da BTG/Nexus. Cedeu 0,10pp no contrato de vencedor e está em 0,45%, abaixo do piso de vigilância. Lula acionou o TSE contra ele e contra Renan Santos por ataques no debate."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), sem variação. 🏷️ Ele não é candidato à Presidência.",
-        "fortes": "O volume acumulado dele, USD 7,30M, segue maior que o de vários nomes com preço acima do dele, o que mantém o contrato com lastro de negociação apesar do preço no piso. Volume acumulado mede quanto dinheiro passou desde a abertura, não a probabilidade de hoje.",
-        "fracos": "⭐ FATO DATADO EM 16/Ago: ele abriu formalmente campanha ao GOVERNO DE SÃO PAULO, segundo O Globo e o Times Brasil. Ou seja, ele não disputa a Presidência, e qualquer cenário presidencial que o inclua é hipótese de pesquisa e não candidatura em curso. O preço segue em 0,05%, muito abaixo do piso de 0,5% da dupla leitura."
+        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), sem variação.",
+        "fortes": "A pesquisa do JOTA divulgada nesta quarta (BR-07806/2026, 6.000 entrevistas pela internet, campo de 27/Jul a 24/Ago) testou um cenário de 2º turno com ele no lugar de Lula contra Flávio Bolsonaro.",
+        "fracos": "Nenhuma nacional o testa no 1º turno para presidente, então ele não entra no grafo de divergência, de propósito. E os números do cenário do JOTA não saíram de forma que o painel pudesse conferir em fonte, então nada dele foi para a tabela."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,25% (vol USD 5,98M acumulado, leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC)), com queda de 0,05pp. No contrato de 3º lugar do 1º turno ele tem 3,15%.",
-        "fortes": "⭐ A EXPOSIÇÃO DELE FOI EM 24/Ago E A COBERTURA CIRCULOU EM 25/Ago: ele abriu a série de sabatinas do Jornal Nacional, 40 minutos com Renata Vasconcellos e César Tralli, segundo BBC e O Globo. Em 25/Ago foi sabatinado de novo, por CBN, O Globo e Valor, onde defendeu mudanças no pacto federativo. A BTG/Nexus de 24/Ago o mantém em 3% no 1º turno, o mesmo patamar que a casa vem medindo desde 03/Ago.",
-        "fracos": "O preço não registrou nada da sabatina: cedeu 0,05pp e ficou em 0,25%, abaixo do piso de 0,5% da dupla leitura. Na sabatina ele minimizou a situação fiscal de Minas Gerais, criticou o STF, disse que o Judiciário é usado para fazer política, não garantiu aumento real do salário mínimo e buscou se afastar de acusações de ligação da Cemig com o Banco Master, segundo O Globo. 🔴 Ele havia DESISTIDO do primeiro debate presidencial às 12h01 de 23/Ago, depois de confirmadas as ausências dos dois primeiros colocados, segundo a Gazeta do Povo."
+        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 5,99M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), com queda de 0,10pp.",
+        "fortes": "Segue testado pelas nacionais, ao contrário de Tarcísio e Haddad. A Indexa o dá perdendo o 2º turno para Lula por 34% a 45%.",
+        "fracos": "As duas nacionais de hoje o medem em 1%, contra 3% na BTG/Nexus de 24/Ago, e o piso da faixa de 30 dias dele caiu de 1,3% para 1% por causa disso."
       },
-      "analise": "O pelotão tem um nome que se mexeu de verdade hoje, e não foi no livro presidencial. Ronaldo Caiado subiu 3,00pp no contrato de terceiro lugar e chegou a 42,00%, a maior alta do painel no dia, enquanto no presidencial ele cedia 0,15pp para 0,55% (vol USD 6,59M acumulado). O movimento aproxima o preço da ordem que a urna vem registrando, que o põe à frente de Renan Santos por 5% a 3%, sem que o contrato tenha invertido: o adversário segue com 51,50%. Romeu Zema, em 0,25% (vol USD 5,98M acumulado), abriu a série de sabatinas do Jornal Nacional em 24/Ago e foi sabatinado por CBN, O Globo e Valor em 25/Ago, e o preço dele não registrou nada disso. Fernando Haddad segue em 0,05% (vol USD 7,30M acumulado), sem variação.",
+      "analise": "Os três seguem abaixo do piso de 0,5% no contrato de vencedor, e o que se move neles hoje é o contrato de terceiro lugar, onde Caiado cedeu 3,00pp e mesmo assim se aproximou de Renan Santos. Na urna o quadro é outro: as duas nacionais de hoje discordam sobre quem é o terceiro colocado, com a Indexa dando Caiado à frente por 5% a 4% e a Gerp dando empate em 3%. É exatamente esse par que o contrato de terceiro lugar precifica, e ele se moveu no dia em que as duas casas discordaram sobre ele.",
       "fortes": [
         "⭐ Ronaldo Caiado fez a maior alta do dia em qualquer livro do painel: 3,00pp no contrato de terceiro lugar, chegando a 42,00%. No mesmo dia ele foi o sabatinado do Jornal Nacional.",
         "Na urna ele segue à frente de Renan Santos, com 5% contra 3% na BTG/Nexus de 24/Ago, e o preço do contrato de terceiro lugar andou hoje na direção dessa ordem.",
@@ -107,58 +106,58 @@
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "SEM NACIONAL NOVA NESTA TERÇA. A mais recente segue sendo a BTG/Nexus (n=2.006, campo 21 a 23/Ago, confiabilidade 4), que lhe dá 41% no 1º turno sem Marçal, 40% no cenário com ele, e 46% no 2º turno contra 45%. ⚠️ Na mesma rodada ele é o mais rejeitado, com 49% contra 48% do segundo colocado, segundo Poder360.",
-      "m": "62,50% (vol USD 8,97M), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Sem variação, segundo dia seguido parado. A maior leitura dele desde 14/Abr, quando a série começa, é 67,50%, de 16/Ago.",
-      "t": "parado pelo segundo dia, 5,00pp abaixo do máximo da série",
-      "s": "Sétimo dia de campanha oficial, a 43 dias do 1º turno. Ele confirmou presença na sabatina do Jornal Nacional, marcada para 27/Ago, segundo Valor Econômico e Poder360, depois de ter faltado ao debate da Band em 23/Ago.",
+      "p": "DUAS NACIONAIS NOVAS E ELAS DISCORDAM. A Gerp (n=2.400, campo 21 a 25/Ago) o dá em 37% no 1º turno, ATRÁS por 1 ponto, e perdendo o 2º turno por 42% a 47%. A Indexa (n=2.000, campo 20 a 23/Ago) o dá em 39%, à frente por 5, e vencendo o 2º turno por 46% a 41%. A BTG/Nexus de 24/Ago, de maior confiabilidade, o mantém em 41%.",
+      "m": "62,50% (vol USD 9,03M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação, terceiro dia seguido parado. O máximo da série é 67,50%, de 16/Ago.",
+      "t": "parado pelo terceiro dia, e o vão para o segundo é o mais estreito desde 21/Jun",
+      "s": "Oitavo dia de campanha oficial, a 42 dias do 1º turno. Sabatina do Jornal Nacional marcada para 27/Ago. Nesta quarta ele acionou o TSE contra Renan Santos e Caiado por ataques no debate.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "A BTG/Nexus de 24/Ago lhe dá 37% no cenário sem Pablo Marçal e 34% no cenário com ele, e 45% no 2º turno contra 46%. Não houve pesquisa nacional nova para atualizar esses números nesta terça.",
-      "m": "34,65% (vol USD 8,89M), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Queda de 0,40pp, devolvendo parte da alta de ontem. O patamar segue o mais alto desde 13/Mai, conferido no backup contra a série inteira desde 14/Abr. O topo da série é 45,50%, de 06/Mai. ⭐ No contrato de 2º lugar ele SUBIU 2,00pp e paga 87,50%.",
-      "t": "cede no presidencial e sobe no contrato de 2º lugar",
-      "s": "Confirmou presença na sabatina do Jornal Nacional, marcada para 28/Ago, segundo Valor Econômico e Poder360. 🏛️ O Globo de 25/Ago registra que ele administra o desgaste do caso Dark Horse depois da decisão do ministro Flávio Dino, e deixou as explicações para a produtora.",
+      "p": "A Gerp o dá em 38% no 1º turno, À FRENTE pela primeira vez na tabela do painel, e vencendo o 2º turno por 47% a 42%. A Indexa o dá em 34% sem Marçal e 33% com ele, perdendo o 2º turno por 41% a 46%. A BTG/Nexus de 24/Ago o mantém em 37%.",
+      "m": "35,55% (vol USD 8,94M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Alta de 0,90pp, a maior do dia entre os contratos de vencedor, e o patamar mais alto desde 13/Mai. No contrato de 2º lugar ficou parado em 87,50%.",
+      "t": "a maior alta do dia, e o preço mais alto dele desde 13/Mai",
+      "s": "Vorcaro vai depor à PF no inquérito sobre fraudes do Master, e o CEO da Indexa disse ao Estadão que ele vem recuperando eleitores depois do caso.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "A BTG/Nexus o dá em 3%, contra 5% de Ronaldo Caiado. É o menor valor dele na janela de 30 dias do painel. Ele foi um dos três que compareceram ao debate de 23/Ago, e a BBC registra que liderou as atenções nas redes durante o debate.",
-      "m": "2,95% (vol USD 11,09M), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Alta de 0,05pp, abaixo do que a dupla leitura distingue de ruído. 🔴 No contrato de 3º lugar ele CEDEU 2,50pp e paga 51,50%, contra 42,00% de Ronaldo Caiado.",
-      "t": "estável no presidencial, maior perda do dia no contrato de 3º lugar",
-      "s": "📌 A divergência sobre o terceiro lugar ENCOLHEU: o vão no contrato caiu de 15,00pp para 9,50pp, andando na direção da ordem que a urna mostra. ⚠️ Não é piso de série: o mesmo livro esteve em 3,5pp em 22/Ago às 19h30.",
-      "pc": "#F59E0B",
+      "p": "A Gerp o dá em 3% e a Indexa em 4%. A BTG/Nexus de 24/Ago o dava em 3%, atrás dos 5% de Caiado. As duas casas de hoje discordam sobre quem é o terceiro.",
+      "m": "2,75% (vol USD 11,23M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,20pp no contrato de vencedor e de 6,00pp no de 3º lugar, para 45,50%, a maior variação do painel no dia.",
+      "t": "a maior queda do dia, e ela está no contrato de terceiro lugar",
+      "s": "Lula acionou o TSE contra ele por ataques no debate. Ele quer explorar o caso Lulinha na sabatina do Jornal Nacional.",
+      "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A BTG/Nexus o mantém em 5%, à frente de Renan Santos na urna. A mesma pesquisa testou o 2º turno contra Lula e mediu 46% a 42%, segundo Metrópoles. Ele participou do debate de 23/Ago e foi o sabatinado do Jornal Nacional em 25/Ago.",
-      "m": "0,55% (vol USD 6,59M), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Queda de 0,15pp, de volta ao piso de 0,5%. ⭐ No contrato de 3º lugar ele fez a MAIOR ALTA DO DIA em qualquer livro do painel: 3,00pp, chegando a 42,00%.",
-      "t": "cede no presidencial, maior alta do dia no contrato de 3º lugar",
-      "s": "O preço do terceiro lugar andou na direção da ordem que a urna já mostrava, que o põe à frente por 5% a 3%. A ordem do contrato não se inverteu: o adversário segue com 51,50%. ⭐ E ele foi o sabatinado do Jornal Nacional nesta terça, o segundo da série de seis que vai até 29/Ago.",
-      "pc": "#16A34A",
+      "p": "A Indexa o dá em 5%, à frente de Renan Santos, e perdendo o 2º turno para Lula por 38% a 44%. A Gerp o dá em 3%, empatado com Renan.",
+      "m": "0,45% (vol USD 6,59M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,10pp, abaixo do piso de 0,5%. No contrato de 3º lugar cedeu 3,00pp para 39,00% e mesmo assim encurtou a distância para Renan Santos.",
+      "t": "cede nos dois contratos e ainda assim se aproxima do terceiro colocado",
+      "s": "Defendeu a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos ligados ao Master. Foi sabatinado por O Globo, CBN e Valor.",
+      "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "Sem medição nova nesta terça. As três nacionais da janela divergem entre si: 2% na Datafolha de 21/Ago, 5,2% na Veritá do mesmo dia e 4% na BTG/Nexus de 24/Ago.",
-      "m": "0,15% (vol USD 2,66M), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Queda de 0,10pp, e ele está abaixo do piso de 0,5% da dupla leitura, o que torna a variação diária ruído de book fino.",
+      "p": "A Gerp o mede em 4% e a Indexa em 2%, as duas na mesma semana. A BTG/Nexus de 24/Ago o media em 4%. Ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
+      "m": "0,15% (vol USD 2,77M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
       "t": "abaixo do piso de vigilância",
-      "s": "🏛️ O cerco judicial teve desfecho em 21/Ago: o presidente do TRE-SP rejeitou os recursos especiais da defesa dele E do Ministério Público Eleitoral, manteve a inelegibilidade até 2032 e a multa de R$ 420 mil, segundo Metrópoles e CNN Brasil. 🔴 A maior distância entre os dois instrumentos do painel segue nele: a urna o põe em quinto com 4% e o preço em nono com 0,15%. As duas grandezas não se subtraem, e o que o painel registra é a ordem, não um número de diferença.",
-      "pc": "#0EA5E9",
+      "s": "O cenário com ele derruba o segundo colocado em 1 ponto na Indexa e não mexe no primeiro.",
+      "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,40% (vol USD 84 mil), leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC). Alta de 0,05pp, dentro do ruído de um book desse tamanho.",
-      "t": "praticamente estável",
-      "s": "Contrato de impeachment de ministro do STF antes de 2027, mantido no painel como termômetro institucional. Em 25/Ago o caso Dark Horse ganhou detalhe na cobertura, envolvendo suspeitas sobre gastos de Daniel Vorcaro e emendas, segundo O Globo, e o governador de São Paulo declarou que a polícia cumprirá decisão do STF sobre provas de uma ONG ligada ao caso. O contrato não se moveu por isso.",
-      "pc": "#64748B",
+      "m": "3,40% (vol USD 84 mil), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação no dia.",
+      "t": "parado",
+      "s": "Caiado defendeu a possibilidade de impeachment de ministros e pediu quebra de sigilo dos casos ligados ao Master. Mendonça propôs ao TSE uma tese para definir o que é deepfake nas eleições, e vive uma crise com a PF.",
+      "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "O dia não teve pesquisa nacional nova e teve movimento de preço, e os dois fatos juntos definem a leitura. A leva divulgada nesta terça pela Quaest é toda estadual, cobrindo Rio Grande do Norte, Paraná, Rio Grande do Sul, Alagoas, Maranhão e Santa Catarina, e o painel só cruza escopo nacional. A pesquisa mais recente do país segue sendo a BTG/Nexus de 24/Ago.\n\nNo livro presidencial, que soma USD 132,88M, o primeiro colocado ficou parado em 62,50% pelo segundo dia seguido e o segundo cedeu 0,40pp, para 34,65%. A distância entre os dois voltou a abrir, de 27,45pp para 27,85pp, e ela abriu sem que o líder ganhasse nada. Contra a série inteira desde 14/Abr, conferida no backup do banco e não pela janela da API, a menor distância já registrada entre os dois é negativa, de 8 pontos a favor do segundo colocado em 06/Mai. Movimento nesta faixa é rotina deste livro.\n\n⭐ O ACHADO DO DIA ESTÁ NO CONTRATO DE TERCEIRO LUGAR, e ele é de convergência entre instrumentos. Renan Santos cedeu 2,50pp e foi a 51,50%, enquanto Ronaldo Caiado subiu 3,00pp e chegou a 42,00%, a maior alta do painel no dia. O vão entre os dois caiu de 15,00pp para 9,50pp. A pesquisa vem dizendo o contrário do preço nesse ponto há semanas, com Caiado em 5% e Renan Santos em 3% na rodada mais recente, e nesta terça o preço andou na direção da urna sem que a ordem do contrato se invertesse.\n\n⚠️ A RESSALVA QUE A SÉRIE IMPÕE, e sem ela a leitura acima vira manchete falsa: 9,50pp não é o menor vão já registrado neste contrato. O mesmo livro esteve em 3,5pp em 22/Ago às 19h30, e o fechamento daquele dia marcava 15,5pp. Quem olha só o fechamento de cada dia não vê o piso, e teria concluído que hoje é mínimo de série quando não é.\n\nO segundo contrato do segundo colocado andou na direção oposta ao presidencial dele: no livro de segundo lugar do 1º turno ele subiu 2,00pp e chegou a 87,50%. O mercado ficou mais convicto de que ele chega ao 2º turno e um pouco menos convicto de que ele vence. São contratos diferentes, medindo desfechos diferentes, e o painel não subtrai um do outro.\n\nNo lado dos fatos, o dia teve uma reversão de agenda e um ato de investigação. Os dois primeiros colocados confirmaram presença nas sabatinas do Jornal Nacional, Lula em 27/Ago e Flávio Bolsonaro em 28/Ago, segundo Valor Econômico, Poder360 e Metrópoles, depois de ambos terem faltado ao debate da Band em 23/Ago. A série começou em 24/Ago com Romeu Zema e teve Ronaldo Caiado em 25/Ago. E a Polícia Federal fez busca e apreensão no Instituto de Previdência de Campo Grande por aportes no Banco Master, segundo Folha de S.Paulo e O Globo. Nenhum dos dois moveu preço."
+  "cruzamento": "O 26 de agosto entrega o caso mais limpo do ano para o que o AFOS mede, e ele não é entre mercado e urna: é entre duas urnas. A Gerp e a Indexa/Broadcast divulgaram nacionais no mesmo dia, com janelas de campo que se sobrepõem, e chegaram a resultados opostos. No 1º turno a Gerp dá 38% a 37% para Flávio Bolsonaro e a Indexa dá 39% a 34% para Lula. No 2º turno a Gerp dá Flávio ganhando por 47% a 42% e a Indexa dá Lula ganhando por 46% a 41%. São dez pontos de distância entre duas casas sobre a mesma disputa, sem nenhum dia entre elas para explicar a diferença. O painel publica as duas com a régua de confiabilidade declarada e não faz média, porque média entre leituras que se invertem apaga o que há de informativo no dia. A régua da casa dá 3 às duas, e a nacional de maior confiabilidade da janela segue sendo a BTG/Nexus de 24/Ago, que mantém Lula em 41% e é a que alimenta o lado pesquisa do grafo de divergência. No preço, a leitura confirmada de 26/Ago às 15:19 BRT traz o líder parado em 62,50% pelo terceiro dia seguido e o segundo colocado subindo 0,90pp para 35,55%, o patamar mais alto dele desde 13/Mai. A distância entre os dois caiu para 26,95pp, e ela é a mais estreita desde 21/Jun, conferida no backup do banco contra o registro completo desde 14/Abr. Ela estreitou por um lado só, e isso importa: quem se moveu foi o segundo. O maior movimento do dia, porém, não está no contrato de vencedor. Está no de terceiro lugar do 1º turno, onde Renan Santos cedeu 6,00pp para 45,50% e Ronaldo Caiado cedeu 3,00pp para 39,00%. Os dois caíram e o vão entre eles encurtou de 9,50pp para 6,50pp. Nesta mesma quarta Lula acionou o TSE contra os dois por ataques no debate, e as duas nacionais novas discordaram sobre qual dos dois é o terceiro colocado na urna, com a Indexa dando Caiado à frente por 5% a 4% e a Gerp dando empate em 3%. O painel registra a coincidência de data e não atribui causa. No pano de fundo, o caso Master voltou ao noticiário com o depoimento marcado de Daniel Vorcaro à Polícia Federal e uma operação sobre aportes de um instituto de previdência municipal, enquanto o caso do INSS avançou pelo flanco familiar do governo. Aprovação do governo em terreno negativo nas duas casas novas, 46% contra 50% na Indexa e 43% contra 51% na Gerp, com cinco pontos de amplitude entre institutos sobre a mesma pergunta na mesma semana. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra."
 }
