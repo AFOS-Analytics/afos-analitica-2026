@@ -200,6 +200,10 @@ O `scripts/capture-guard.ts` foi instalado em 24/Jul/2026 e exige duas leituras 
 
 Relacionado: a `/api/market/history` não é fonte segura para essa conferência (ver a tabela de APIs). Superlativos são verificados contra o `backup/neon/marketPrice/*.csv.gz`, que guarda o registro completo desde 14/Abr.
 
+Um portão de corte duro sobre grandeza ruidosa se lê pela **série**, não pelo instante. O painel dos EUA só exibe uma distribuição se as faixas somarem entre 95% e 105%, e a distribuição de governos estaduais republicanos ficou dentro em 14 de 14 leituras até 25/Ago/2026, saiu em três capturas do mesmo dia (108,45%, 108,45% e 106,45%) e voltou para dentro em 26/Ago (101,45% e 101,95%). Uma travessia numa leitura é excursão, não mudança de estado: o portão decide por `dentro de n` justamente para não virar penhasco, porque trava que bloqueia todo dia é trava que alguém aprende a pular.
+
+Média de janela móvel se move sem dado novo. A média da casa para o generic ballot é aritmética simples sobre 30 dias, e em 26/Ago/2026 ela foi de D+5,91 para D+6,16 com **zero pesquisa nova**: a janela rolou um dia, três rodadas saíram pela borda (duas delas mediam abaixo da média) e a base caiu de 22 para 19 pesquisas e de 16 para 15 institutos. Antes de escrever qualquer verbo de movimento, comparar `nPesquisas` e `nInstitutos` contra a leitura anterior: se caíram, a variação é de composição até prova em contrário, e escrever "a vantagem democrata cresceu" seria falso.
+
 ### Estrutura do Projeto
 
 ```

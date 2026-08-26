@@ -199,6 +199,10 @@ A 33.5pp jump and a full return in two and a half hours, with no intermediate po
 
 Related: `/api/market/history` is not a safe source for this check (see the API table). Superlatives are verified against `backup/neon/marketPrice/*.csv.gz`, which holds the full record from 14/Apr.
 
+A hard-cut gate on a noisy quantity is read as a **series**, not as an instant. The US panel only displays a distribution if its ranges sum between 95% and 105%, and the distribution of Republican governorships sat inside on 14 of 14 readings until 25/Aug/2026, went out on three captures that same day (108.45%, 108.45% and 106.45%) and came back inside on 26/Aug (101.45% and 101.95%). One crossing on one reading is an excursion, not a change of state: the gate decides on `inside of n` precisely so it does not become a cliff, because a gate that blocks every day is a gate someone learns to skip.
+
+A rolling-window average moves with no new data. The house average for the generic ballot is a simple arithmetic mean over 30 days, and on 26/Aug/2026 it went from D+5.91 to D+6.16 with **zero new polls**: the window rolled one day, three rounds fell off the edge (two of them measuring below the average) and the base dropped from 22 to 19 polls and from 16 to 15 pollsters. Before writing any verb of movement, compare `nPesquisas` and `nInstitutos` against the previous reading: if they fell, the change is composition until proven otherwise, and writing "the Democratic lead grew" would be false.
+
 ### Project Structure
 
 ```
