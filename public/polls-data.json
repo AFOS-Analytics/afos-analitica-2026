@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-25",
+  "lastUpdate": "2026-08-26",
   "institutes": [
     {
       "name": "Datafolha",
@@ -126,9 +126,167 @@
       "reliability": 3,
       "type": "Online",
       "note": "Estreia nacional em 10/Ago/2026, questionário pela internet. O próprio instituto declara efeito do formato digital sobre candidato com base ativa online."
+    },
+    {
+      "name": "Indexa/Broadcast",
+      "reliability": 3,
+      "type": "Telefone",
+      "note": "Instituto Indexa com difusão pela Broadcast, do Grupo Estado. Entrou na tabela em 26/Ago/2026."
     }
   ],
   "polls": [
+    {
+      "institute": "Gerp",
+      "date": "2026-08-26",
+      "scope": "national",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-03547/2026",
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "2026-08-21 a 2026-08-25",
+      "note": "Gerp nacional divulgada em 26/Ago, registro BR-03547/2026, com 2.400 entrevistas e margem de 2pp a 95% de confiança, custo de R$ 20.000 com recursos próprios. Conferida em Poder360 e Gazeta do Povo, com o registro batendo nas duas. ⭐ É A PRIMEIRA DA NOSSA TABELA EM QUE FLÁVIO APARECE À FRENTE NO 1º TURNO, com 38% contra 37% de Lula, dentro da margem. A única outra em que ele não estava atrás é a própria Gerp de 11/Ago, que deu empate em 38 a 38. 📊 A COMPARAÇÃO COM A PRÓPRIA CASA: no 2º turno a distância foi de 2 pontos (Flávio 45 x Lula 43, registro BR-08045/2026, campo de 6 a 10/Ago) para 5 pontos agora, e no 1º turno Lula cedeu 1 ponto no mesmo tracker. ⚠️ REGISTRADA NÃO É PUBLICADA, e aqui as duas divergem: o registro no TSE declara campo de 20 a 23/Ago e publicação prevista para 25/Ago, e o instituto divulgou em 26/Ago informando campo de 21 a 25/Ago. A tabela segue o que o instituto publicou, e a divergência fica declarada. 🔀 E ELA SAIU NO MESMO DIA DA INDEXA, EM DIREÇÃO OPOSTA: a Gerp dá Flávio ganhando o 2º turno por 5 e a Indexa dá Lula ganhando por 5, com janelas de campo que se sobrepõem. São 10 pontos de distância entre duas casas sobre a mesma disputa. 📌 O modo de coleta não aparece no trecho do registro que li, e o rótulo \"Misto\" vem do cadastro do instituto, não desta rodada.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47
+        }
+      ],
+      "source": "Gerp, divulgada em 26/Ago/2026 (campo de 21 a 25/Ago segundo o instituto, n=2.400, margem 2,0pp, registro TSE BR-03547/2026, custo R$ 20.000 com recursos próprios). Números conferidos em Poder360 e Gazeta do Povo, com o registro BR-03547/2026 confirmado nas duas, e cruzados com a tabela da Wikipédia de pesquisas presidenciais de 2026."
+    },
+    {
+      "institute": "Indexa/Broadcast",
+      "date": "2026-08-26",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-06366/2026",
+      "reliability": 3,
+      "method": "Telefone",
+      "fieldDates": "2026-08-20 a 2026-08-23",
+      "note": "Indexa/Broadcast nacional divulgada em 26/Ago, registro BR-06366/2026, com 2.000 entrevistas individuais por telefone e margem de 2,2pp a 95% de confiança, custo de R$ 164.000. Campo de 20 a 23/Ago, e aqui o registro no TSE e a divulgação BATEM. Conferida em Gazeta do Povo, Money Times e CartaCapital, com o registro batendo. 📊 COMPARAÇÃO COM A PRÓPRIA CASA: a rodada de julho dava Lula 41% e Flávio 31%, e agora dá 39% e 34%, ou seja o vão caiu de 10 para 5 pontos, com Lula cedendo 2 e Flávio ganhando 4. 📌 DOIS CENÁRIOS DE 1º TURNO, e a diferença é Pablo Marçal: sem ele, Lula 39% e Flávio 34%; com ele, Lula 39% e Flávio 33%, e Marçal aparece com 2%. Quatro cenários de 2º turno, todos com Lula à frente: 46 x 41 contra Flávio, 45 x 34 contra Zema, 44 x 38 contra Caiado e 46 x 34 contra Renan Santos. 🔀 SAIU NO MESMO DIA DA GERP, EM DIREÇÃO OPOSTA: a Indexa dá Lula ganhando o 2º turno por 5 e a Gerp dá Flávio ganhando por 5, com janelas de campo sobrepostas. 🆕 O instituto entra hoje no cadastro da tabela, com confiabilidade 3 atribuída por analogia com as casas de porte parecido, e essa nota é editorial e revisável.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Romeu Zema",
+          "percent2": 34
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 38
+        },
+        {
+          "matchup": "Lula vs Renan Santos",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Renan Santos",
+          "percent2": 34
+        }
+      ],
+      "source": "Indexa/Broadcast, divulgada em 26/Ago/2026 (campo de 20 a 23/Ago, n=2.000, telefone, margem 2,2pp, registro TSE BR-06366/2026, custo R$ 164.000). Números conferidos em Gazeta do Povo, Money Times e CartaCapital, com o registro BR-06366/2026 confirmado, e cruzados com a tabela da Wikipédia de pesquisas presidenciais de 2026."
+    },
     {
       "institute": "BTG/Nexus",
       "date": "2026-08-24",
@@ -1260,12 +1418,12 @@
     "lastUpdate": "24/08/2026, 18:25"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com o livro presidencial em USD 132,88M. Não houve pesquisa nacional nova nesta terça: a leva divulgada hoje pela Quaest é toda estadual, e este bloco só cruza escopo nacional. A distância entre os dois primeiros voltou a abrir, de 27,45pp para 27,85pp, e abriu porque o segundo cedeu 0,40pp, não porque o primeiro tenha ganhado. ⭐ O movimento do dia está no contrato de terceiro lugar do 1º turno: Renan Santos cedeu 2,50pp para 51,50% e Ronaldo Caiado subiu 3,00pp para 42,00%, levando o vão entre os dois de 15,00pp para 9,50pp, na direção da ordem que a urna já mostrava. ⚠️ E isso NÃO é piso da série: o mesmo livro esteve em 3,5pp em 22/Ago às 19h30, conferido no backup do banco contra a série que começa em 14/Abr. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. Em 25/Ago há leitura confirmada nova para todos os contratos acompanhados, às 15:22 BRT (18:22 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo e Correio Braziliense.",
+    "note": "Preços do Polymarket na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com o livro presidencial em USD 132,88M. Em 26/Ago saíram DUAS nacionais novas e elas se contradizem: a Gerp (BR-03547/2026, campo de 21 a 25/Ago, n=2.400) dá Flávio à frente no 1º turno com 38% contra 37%, e vencendo o 2º turno por 47% a 42%; a Indexa/Broadcast (BR-06366/2026, campo de 20 a 23/Ago, n=2.000) dá Lula à frente com 39% contra 34%, e vencendo o 2º turno por 46% a 41%. São dez pontos de distância entre duas casas sobre a mesma disputa, com janelas de campo que se sobrepõem, e o painel publica as duas sem fazer média. ⚖️ O lado PESQUISA deste bloco segue na BTG/Nexus de 24/Ago, que é a nacional de maior confiabilidade na régua da casa, e não em nenhuma das duas de hoje. A amplitude dos 30 dias foi recalculada com elas dentro, e três pisos cederam: Lula de 38% para 37%, Caiado de 3,1% para 3% e Zema de 1,3% para 1%. A distância entre os dois primeiros voltou a abrir, de 27,45pp para 27,85pp, e abriu porque o segundo cedeu 0,40pp, não porque o primeiro tenha ganhado. ⭐ O movimento de 25/Ago está no contrato de terceiro lugar do 1º turno: Renan Santos cedeu 2,50pp para 51,50% e Ronaldo Caiado subiu 3,00pp para 42,00%, levando o vão entre os dois de 15,00pp para 9,50pp, na direção da ordem que a urna já mostrava. ⚠️ E isso NÃO é piso da série: o mesmo livro esteve em 3,5pp em 22/Ago às 19h30, conferido no backup do banco contra a série que começa em 14/Abr. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. Em 25/Ago há leitura confirmada nova para todos os contratos acompanhados, às 15:22 BRT (18:22 UTC): presidencial, 2º lugar, 3º lugar, Senado e impeachment no STF. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo Correio Braziliense, Gazeta do Povo, Money Times e CartaCapital. As duas nacionais de 26/Ago foram conferidas em duas fontes cada, com o número de registro do TSE batendo, e cruzadas com a tabela da Wikipédia de pesquisas presidenciais de 2026.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-44,9%",
+        "pesquisaRange": "37-44,9%",
         "polymarket": "62,50%",
         "tendenciaPesquisa": "A BTG/Nexus de 24/Ago (n=2.006, campo 21 a 23/Ago, BR-09028/2026, confiabilidade 4) o dá em 41% no 1º turno e vencendo o 2º por 46% a 45%. É a primeira nacional nova desde 21/Ago. ⭐ Comparada com a rodada anterior da MESMA casa, de 17/Ago, a distância no 2º turno caiu de 3 pontos para 1, mas esse 1 ponto EMPATA com o que a casa já havia medido em 03/Ago, então é repetição de patamar e não mínimo da série. 🕐 O campo fechou em 23/Ago e o primeiro debate presidencial foi às 20h daquele dia, sem ele: a pesquisa não mede o debate.",
         "tendenciaPolymarket": "62,50% (vol USD 8,97M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), sem variação pelo segundo dia seguido. A maior leitura dele desde 14/Abr, quando a série começa, é 67,50%, de 16/Ago. No contrato de 2º lugar do 1º turno ele aparece com 8,05%, alta de 2,10pp.",
@@ -1298,7 +1456,7 @@
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "3,1-6%",
+        "pesquisaRange": "3-6%",
         "polymarket": "0,55%",
         "tendenciaPesquisa": "5% na BTG/Nexus de 24/Ago, mesmo valor da rodada anterior da casa, o que o mantém à frente de Renan Santos na urna. A mesma pesquisa testou o 2º turno contra Lula e mediu 46% a 42%, segundo Metrópoles. Ele participou do debate de 23/Ago.",
         "tendenciaPolymarket": "0,55% (vol USD 6,59M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,15pp que o devolve ao piso de 0,5% da dupla leitura. ⭐ No contrato de 3º lugar do 1º turno ele fez a maior alta do painel no dia, subindo 3,00pp para 42,00%, o que aproxima o preço da ordem que a urna já mostrava.",
@@ -1331,7 +1489,7 @@
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "1,3-4%",
+        "pesquisaRange": "1-4%",
         "polymarket": "0,25%",
         "tendenciaPesquisa": "3% na BTG/Nexus de 24/Ago, contra 4% na rodada da mesma casa em 17/Ago e 1,3% na Veritá de 21/Ago.",
         "tendenciaPolymarket": "0,25% (vol USD 5,98M) na leitura confirmada de 25/Ago, 15:22 BRT (18:22 UTC), com queda de 0,05pp, abaixo do piso de 0,5% da dupla leitura. ⭐ Ele teve 40 minutos de sabatina no Jornal Nacional em 25/Ago, segundo BBC e O Globo, e o contrato não registrou nada disso.",

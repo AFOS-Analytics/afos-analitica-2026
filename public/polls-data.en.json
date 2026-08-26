@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-25",
+  "lastUpdate": "2026-08-26",
   "institutes": [
     {
       "name": "Datafolha",
@@ -126,9 +126,167 @@
       "reliability": 3,
       "type": "Online",
       "note": "National debut on Aug 10, 2026, questionnaire over the internet. The institute itself declares an effect of the digital format on a candidate with an active online base."
+    },
+    {
+      "name": "Indexa/Broadcast",
+      "reliability": 3,
+      "type": "Telefone",
+      "note": "Instituto Indexa, distributed by Broadcast, of Grupo Estado. Entered the table on Aug 26, 2026."
     }
   ],
   "polls": [
+    {
+      "institute": "Gerp",
+      "date": "2026-08-26",
+      "scope": "national",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-03547/2026",
+      "reliability": 3,
+      "method": "Misto",
+      "fieldDates": "2026-08-21 a 2026-08-25",
+      "note": "Gerp national poll released on Aug 26, registration BR-03547/2026, with 2,400 interviews and a 2pp margin at 95% confidence, costing R$ 20,000 from the firm's own funds. Checked against Poder360 and Gazeta do Povo, with the registration matching in both. ⭐ IT IS THE FIRST IN OUR TABLE IN WHICH FLÁVIO COMES OUT AHEAD IN THE FIRST ROUND, at 38% against Lula's 37%, inside the margin. The only other one in which he was not behind is Gerp's own poll of Aug 11, which showed a 38 to 38 tie. 📊 THE COMPARISON WITH THE HOUSE ITSELF: in the runoff the distance went from 2 points (Flávio 45 x Lula 43, registration BR-08045/2026, fieldwork Aug 6 to 10) to 5 points now, and in the first round Lula gave up 1 point in the same tracker. ⚠️ FILED IS NOT PUBLISHED, and here the two diverge: the TSE filing declares fieldwork from Aug 20 to 23 and publication expected on Aug 25, and the institute released it on Aug 26 reporting fieldwork from Aug 21 to 25. The table follows what the institute published, and the divergence is declared. 🔀 AND IT CAME OUT ON THE SAME DAY AS INDEXA, POINTING THE OTHER WAY: Gerp has Flávio winning the runoff by 5 and Indexa has Lula winning it by 5, with overlapping fieldwork windows. That is ten points apart between two houses on the same contest. 📌 The collection mode does not appear in the part of the filing I read, and the \"Misto\" label comes from the institute's profile, not from this round.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47
+        }
+      ],
+      "source": "Gerp, released on Aug 26, 2026 (fieldwork Aug 21 to 25 per the institute, n=2,400, 2.0pp margin, TSE registration BR-03547/2026, cost R$ 20,000 from its own funds). Figures checked against Poder360 and Gazeta do Povo, with registration BR-03547/2026 confirmed in both, and cross-checked against the Wikipedia table of 2026 presidential polls."
+    },
+    {
+      "institute": "Indexa/Broadcast",
+      "date": "2026-08-26",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-06366/2026",
+      "reliability": 3,
+      "method": "Telefone",
+      "fieldDates": "2026-08-20 a 2026-08-23",
+      "note": "Indexa/Broadcast national poll released on Aug 26, registration BR-06366/2026, with 2,000 individual telephone interviews and a 2.2pp margin at 95% confidence, costing R$ 164,000. Fieldwork Aug 20 to 23, and here the TSE filing and the release DO match. Checked against Gazeta do Povo, Money Times and CartaCapital, with the registration matching. 📊 COMPARISON WITH THE HOUSE ITSELF: its July round had Lula at 41% and Flávio at 31%, and it now has 39% and 34%, so the gap narrowed from 10 points to 5, with Lula giving up 2 and Flávio gaining 4. 📌 TWO FIRST-ROUND SCENARIOS, and the difference is Pablo Marçal: without him, Lula 39% and Flávio 34%; with him, Lula 39% and Flávio 33%, and Marçal comes in at 2%. Four runoff scenarios, all with Lula ahead: 46 x 41 against Flávio, 45 x 34 against Zema, 44 x 38 against Caiado and 46 x 34 against Renan Santos. 🔀 IT CAME OUT ON THE SAME DAY AS GERP, POINTING THE OTHER WAY: Indexa has Lula winning the runoff by 5 and Gerp has Flávio winning it by 5, with overlapping fieldwork windows. 🆕 The institute enters the table's roster today, with a reliability of 3 assigned by analogy with houses of similar standing, and that rating is editorial and open to revision.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Romeu Zema",
+          "percent2": 34
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 38
+        },
+        {
+          "matchup": "Lula vs Renan Santos",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Renan Santos",
+          "percent2": 34
+        }
+      ],
+      "source": "Indexa/Broadcast, released on Aug 26, 2026 (fieldwork Aug 20 to 23, n=2,000, telephone, 2.2pp margin, TSE registration BR-06366/2026, cost R$ 164,000). Figures checked against Gazeta do Povo, Money Times and CartaCapital, with registration BR-06366/2026 confirmed, and cross-checked against the Wikipedia table of 2026 presidential polls."
+    },
     {
       "institute": "BTG/Nexus",
       "date": "2026-08-24",
@@ -1260,12 +1418,12 @@
     "lastUpdate": "24/08/2026, 18:25"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices from the confirmed reading of Aug 25, 3:22 PM BRT (6:22 PM UTC), with the presidential book at USD 132.88M. There was no new national poll this Tuesday: the batch Quaest released today is entirely state-level, and this block only cross-references national scope. The distance between the top two widened again, from 27.45pp to 27.85pp, and it widened because the runner-up gave back 0.40pp, not because the front-runner gained. ⭐ The day's movement is in the first-round third-place contract: Renan Santos gave back 2.50pp to 51.50% and Ronaldo Caiado rose 3.00pp to 42.00%, taking the gap between them from 15.00pp to 9.50pp, toward the order the polling already showed. ⚠️ And that is NOT a series floor: the same book was at 3.5pp on Aug 22 at 7:30 PM, checked in the database backup against the series that starts on Apr 14. Probability of winning and voting intention measure different things, and the panel does not subtract one from the other.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. On Aug 25 there is a new confirmed reading for every contract tracked, at 3:22 PM BRT (6:22 PM UTC): presidential, second place, third place, Senate and Supreme Court impeachment. Polls registered with the TSE and released by the pollsters, with reporting from G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo and Correio Braziliense.",
+    "note": "Polymarket prices from the confirmed reading of Aug 25, 3:22 PM BRT (6:22 PM UTC), with the presidential book at USD 132.88M. Two new national polls came out on Aug 26 and they contradict each other: Gerp (BR-03547/2026, fieldwork Aug 21 to 25, n=2,400) has Flávio ahead in the first round with 38% against 37%, and winning the runoff 47% to 42%; Indexa/Broadcast (BR-06366/2026, fieldwork Aug 20 to 23, n=2,000) has Lula ahead with 39% against 34%, and winning the runoff 46% to 41%. That is ten points apart between two houses on the same contest, with overlapping fieldwork windows, and the panel publishes both without averaging them. ⚖️ The POLLING side of this block stays on BTG/Nexus of Aug 24, which is the most reliable national poll on the house's own ruler, and not on either of today's two. The 30-day range was recalculated with them inside, and three floors gave way: Lula from 38% to 37%, Caiado from 3.1% to 3% and Zema from 1.3% to 1%. The distance between the top two opened again, from 27.45pp to 27.85pp, and it opened because the second gave up 0.40pp, not because the first gained. ⭐ The move of Aug 25 is in the third-place contract for the first round: Renan Santos gave up 2.50pp to 51.50% and Ronaldo Caiado rose 3.00pp to 42.00%, taking the gap between the two from 15.00pp to 9.50pp, in the direction the polling was already showing. ⚠️ And that is NOT a series low: the same book stood at 3.5pp on Aug 22 at 7:30 PM, checked in the database backup against the series that begins on Apr 14. Probability of winning and voting intention measure different things, and the panel does not subtract one from the other.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. On Aug 25 there is a fresh confirmed reading for every contract covered, at 3:22 PM BRT (6:22 PM UTC): presidential, second place, third place, Senate and impeachment at the STF. Polls filed with the TSE and released by the institutes, as reported by G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo, Correio Braziliense, Gazeta do Povo, Money Times and CartaCapital. The two national polls of Aug 26 were each checked against two sources, with the TSE registration number matching, and cross-checked against the Wikipedia table of 2026 presidential polls.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "38-44.9%",
+        "pesquisaRange": "37-44.9%",
         "polymarket": "62.50%",
         "tendenciaPesquisa": "BTG/Nexus on Aug 24 (n=2,006, fieldwork Aug 21 to 23, BR-09028/2026, reliability 4) gives him 41% in the first round and a runoff win by 46% to 45%. It is the first new national poll since Aug 21. ⭐ Compared with the SAME house's previous wave, from Aug 17, the runoff distance fell from 3 points to 1, but that 1 point TIES what the house had already measured on Aug 3, so it is a repeated level and not a series low. 🕐 Fieldwork closed on Aug 23 and the first presidential debate was at 8 PM that day, without him: the poll does not measure the debate.",
         "tendenciaPolymarket": "62.50% (vol USD 8.97M) on the confirmed reading of Aug 25, 3:22 PM BRT (6:22 PM UTC), unchanged for a second straight day. His highest reading since Apr 14, when the series starts, is 67.50%, from Aug 16. In the first-round second-place contract he shows 8.05%, up 2.10pp.",
@@ -1298,7 +1456,7 @@
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "3.1-6%",
+        "pesquisaRange": "3-6%",
         "polymarket": "0.55%",
         "tendenciaPesquisa": "5% in BTG/Nexus on Aug 24, the same value as the house's previous wave, which keeps him ahead of Renan Santos at the ballot box. The same poll tested the runoff against Lula and measured 46% to 42%, according to Metrópoles. He took part in the Aug 23 debate.",
         "tendenciaPolymarket": "0.55% (vol USD 6.59M) on the confirmed reading of Aug 25, 3:22 PM BRT (6:22 PM UTC), down 0.15pp, which returns him to the 0.5% floor of the double reading. ⭐ In the first-round third-place contract he posted the panel's largest gain of the day, rising 3.00pp to 42.00%, which brings the price closer to the order the polling already showed.",
@@ -1331,7 +1489,7 @@
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "1.3-4%",
+        "pesquisaRange": "1-4%",
         "polymarket": "0.25%",
         "tendenciaPesquisa": "3% in BTG/Nexus on Aug 24, against 4% in the same house's Aug 17 wave and 1.3% in Veritá on Aug 21.",
         "tendenciaPolymarket": "0.25% (vol USD 5.98M) on the confirmed reading of Aug 25, 3:22 PM BRT (6:22 PM UTC), down 0.05pp, below the 0.5% floor of the double reading. ⭐ He was questioned for 40 minutes on Jornal Nacional on Aug 25, according to BBC and O Globo, and the contract recorded none of it.",
