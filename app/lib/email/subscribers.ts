@@ -33,7 +33,7 @@ export async function createSubscriber(
   email: string,
   source: string = 'popup',
   meta?: { ip?: string; userAgent?: string; locale?: string; campaign?: string }
-): Promise<{ success: boolean; isNew: boolean; leadId?: string; unsubscribeToken?: string; error?: string }> {
+): Promise<{ success: boolean; isNew: boolean; reativado?: boolean; leadId?: string; unsubscribeToken?: string; error?: string }> {
   const normalized = email.toLowerCase().trim()
 
   if (!isValidEmail(normalized)) {
@@ -48,11 +48,30 @@ export async function createSubscriber(
   try {
     const newToken = randomBytes(24).toString('hex')
 
+    // 🔴 ESTADO ANTERIOR, lido ANTES do upsert. Sem isto não há como saber que
+    // houve REATIVAÇÃO, e o defeito era grave: o `update` só tocava
+    // `lastSeenAt`, então quem tinha se descadastrado e voltava a se cadastrar
+    // recebia SUCESSO na tela, continuava com `status: 'unsubscribed'` e nunca
+    // mais recebia nada. Falha silenciosa dos DOIS lados, medida em 27/Ago/2026
+    // com 11 dos 31 leads da base nesse estado.
+    // Corrida em duplo-clique é inofensiva aqui: reativar duas vezes é idempotente.
+    const anterior = await prisma.lead.findUnique({
+      where: { email: normalized },
+      select: { status: true },
+    })
+    const reativando = !!anterior && anterior.status !== 'active'
+
     // Upsert atômico (race-safe em double-submit). isNew via token comparison:
     // CREATE → token retornado é newToken; UPDATE → mantém token antigo.
     const lead = await prisma.lead.upsert({
       where: { email: normalized },
-      update: { lastSeenAt: new Date() },
+      update: {
+        lastSeenAt: new Date(),
+        // ⭐ Cadastrar-se de novo é um ato de CONSENTIMENTO, e ele tem que
+        // valer. Quem estava fora volta para dentro, e o contador de bounce
+        // zera para não marcar como quicado de novo pelo histórico velho.
+        ...(reativando ? { status: 'active', unsubscribedAt: null, softBounceCount: 0 } : {}),
+      },
       create: {
         email: normalized,
         captureSource: source,
@@ -81,8 +100,17 @@ export async function createSubscriber(
 
     const isNew = finalToken === newToken
 
-    if (isNew) {
-      audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
+    // ⭐ REATIVAÇÃO conta como consentimento novo. Quem voltou preencheu o
+    // formulário e marcou a caixa de novo, então: registra o consentimento
+    // (LGPD Art. 8, a base legal é do ATO, não do cadastro antigo) e manda o
+    // e-mail de boas-vindas. Antes, quem reativava não recebia nem uma coisa
+    // nem outra, porque `isNew` era false.
+    if (reativando) {
+      audit('lead_reactivated', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
+    }
+
+    if (isNew || reativando) {
+      if (isNew) audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
 
       // Consentimento LGPD Art. 8 (IP/UA hasheados em consent.ts)
       registerConsent({
@@ -112,6 +140,10 @@ export async function createSubscriber(
     return {
       success: true,
       isNew,
+      // 📌 O chamador precisa disto para mandar o e-mail de boas-vindas a quem
+      // VOLTOU. `isNew` sozinho e false na reativacao, e a pessoa ficava sem
+      // nenhuma confirmacao de que tinha voltado.
+      reativado: reativando,
       leadId: lead.id,
       unsubscribeToken: finalToken ?? undefined,
     }

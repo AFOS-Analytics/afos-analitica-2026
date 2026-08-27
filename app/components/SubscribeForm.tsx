@@ -94,6 +94,9 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
         const errorMap: Record<string, string> = {
           invalid_email: t(`${prefix}.errorInvalid`),
           rate_limited: t(`${prefix}.errorRateLimit`),
+          // O servidor passou a distinguir consentimento de e-mail invalido em
+          // 27/Ago/2026. Sem esta linha a distincao morreria no cliente.
+          consent_required: t(`${prefix}.errorConsent`),
           storage_unavailable: t('popup.errorUnavailable'),
         };
         setErrorMsg(errorMap[data.error] || t(`${prefix}.errorGeneric`));

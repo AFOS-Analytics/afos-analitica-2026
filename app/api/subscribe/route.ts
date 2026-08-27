@@ -20,6 +20,22 @@ import { locales } from '../../../lib/i18n/config'
 const VALID_LOCALES = locales as readonly string[]
 const SIGNUP_SESSION_TTL_SECONDS = 3600 // 1h — TTL for /welcome screen access
 
+/**
+ * Casa a etiqueta do navegador com um idioma da casa, por PREFIXO.
+ * 'en-US' e 'en-GB' viram 'en'; 'es-419' e 'es-ES' viram 'es'; 'pt-PT' e
+ * 'pt-BR' viram 'pt-BR'. Desconhecido cai no padrao da casa.
+ */
+function normalizaLocale(raw: string | undefined): string {
+  if (!raw) return 'pt-BR'
+  const l = raw.toLowerCase()
+  if (l.startsWith('pt')) return 'pt-BR'
+  if (l.startsWith('es')) return 'es'
+  if (l.startsWith('en')) return 'en'
+  // Mantem a comparacao exata como ultima chance, para nao perder um valor
+  // que ja venha exatamente no formato da casa.
+  return VALID_LOCALES.includes(raw) ? raw : 'pt-BR'
+}
+
 export async function POST(request: Request) {
   try {
     let body: unknown
@@ -32,8 +48,13 @@ export async function POST(request: Request) {
     // Zod validation
     const parsed = subscribeSchema.safeParse(body)
     if (!parsed.success) {
+      // 🔴 Colapsar TODA falha de schema em `invalid_email` fazia a tela mentir:
+      // quem enviasse sem consentimento via "Insira um email valido" com o
+      // e-mail perfeito. Os campos de analytics ja deixaram de bloquear; o que
+      // sobra e o consentimento, e ele merece a propria mensagem.
+      const erroConsent = parsed.error.issues.some((i) => i.path[0] === 'consent')
       return NextResponse.json(
-        { ok: false, error: 'invalid_email' },
+        { ok: false, error: erroConsent ? 'consent_required' : 'invalid_email' },
         { status: 400 }
       )
     }
@@ -63,8 +84,14 @@ export async function POST(request: Request) {
 
     // Criar lead no Neon (idempotente)
     const userAgent = request.headers.get('user-agent') || undefined
+    // 🔴 O NAVEGADOR NAO MANDA 'en'. Ele manda 'en-US', 'es-ES', 'pt-BR', e a
+    // comparacao exata contra ['pt-BR','en','es'] so acertava o portugues. Todo
+    // americano e todo hispanofono era gravado como pt-BR. PROVA medida em
+    // 27/Ago/2026: os 31 leads da base tinham locale='pt-BR', 31 de 31, e ainda
+    // assim DOIS deles escolheram ingles a mao no /welcome. O produto dos EUA
+    // tem origem em ingles e mandava portugues para todo mundo por causa disto.
     const rawLocale = request.headers.get('accept-language')?.split(',')[0]?.split(';')[0]?.trim()
-    const locale = rawLocale && VALID_LOCALES.includes(rawLocale) ? rawLocale : 'pt-BR'
+    const locale = normalizaLocale(rawLocale)
 
     // A origem vem do COOKIE que o middleware gravou, nunca do corpo do formulário:
     // o cliente não deve poder declarar de onde veio, senão a métrica é opinião dele.
@@ -83,10 +110,17 @@ export async function POST(request: Request) {
     }
 
     // Welcome email apenas para novos leads, com token de unsubscribe one-click
-    if (result.isNew) {
-      sendWelcomeEmail(email, result.unsubscribeToken).catch((err) => {
-        console.error('[subscribe] Welcome email falhou:', err)
-      })
+    if (result.isNew || result.reativado) {
+      sendWelcomeEmail(email, result.unsubscribeToken)
+        .then((ok) => {
+          // 🔴 `sendWelcomeEmail` DEVOLVE boolean, nao lanca. So o `.catch()`
+          // deixava a falha passar calada, o MESMO defeito do consentimento.
+          // Medido em 27/Ago/2026.
+          if (!ok) console.error('[subscribe] Welcome email NAO enviado (retorno false):', email.slice(0, 3) + '***')
+        })
+        .catch((err) => {
+          console.error('[subscribe] Welcome email falhou:', err)
+        })
     }
 
     // Vincular visitor_state ao lead (fire-and-forget)

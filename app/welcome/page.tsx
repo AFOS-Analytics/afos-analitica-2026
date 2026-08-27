@@ -13,6 +13,7 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import { defaultLocale } from '../../lib/i18n/config'
 import { Redis } from '@upstash/redis'
 import WelcomeClient from './WelcomeClient'
 
@@ -50,8 +51,11 @@ export default async function WelcomePage() {
   const session = await validateSignupSession(sessionId)
 
   if (!session) {
-    // No valid signup session → graceful redirect to default landing.
-    redirect('/en')
+    // 🔴 Caia no PADRAO DA CASA, nao no ingles cru. O cookie de sessao so e
+    // gravado quando o Redis responde, entao um soluco do Redis fazia um
+    // cadastro BEM-SUCEDIDO terminar numa landing em ingles, sem explicacao e
+    // sem a escolha de idioma. Medido em 27/Ago/2026, com a base 100% pt-BR.
+    redirect(`/${defaultLocale}`)
   }
 
   return <WelcomeClient email={session.email} />
