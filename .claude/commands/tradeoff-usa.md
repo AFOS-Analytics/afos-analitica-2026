@@ -172,6 +172,22 @@ for l in pt-BR en es; do curl -s -o /dev/null -w "$l %{http_code}\n" "https://ww
 - **Nunca subtrair o mercado da pesquisa.** É o argumento central da peça; fazer a conta em qualquer outra seção a contradiz.
 - **Distribuição só entra se as faixas somarem entre 95% e 105%.** O mercado de margem do voto popular está reprovado, é coletado todo dia para guardar série, e quando citado tem que vir com a soma real e a ressalva.
 - **Relatar o cruzamento, sem juízo de valor.** O AFOS não diz quem tem razão nem quem vai ganhar.
-- **Declarar o que enfraquece a leitura** na própria peça: série curta, troca de composição da amostra, mudança da base da média.
+- 🔴 **A ressalva se resolve no NÚMERO, nunca num aviso ao leitor.** Esta regra substitui, em 27/Ago/2026, a antiga "declarar o que enfraquece a leitura na própria peça", que produziu o terceiro incidente de relato de falha depois de 03/Ago e 18/Ago. A antiga estava certa na intenção e errada no destino: mandava para a PEÇA o que pertence à ESCOLHA DO NÚMERO.
+
+  **O teste, antes de escrever qualquer ressalva:** se o parágrafo descreve o que o **AFOS** fez, e não o que a **eleição** fez, ele não entra. Não importa quão honesto pareça.
+
+  | A ressalva é sobre | O que fazer |
+  |---|---|
+  | **o NÚMERO que se pode afirmar** (janela rolou, base trocou, série curta) | **remover ou trocar o número.** Delta movido por composição de janela não é variação semanal: não se explica, não se publica. No lugar entra procedência, como a data de campo |
+  | **o MÉTODO em geral** | descrever de forma **positiva**: janela móvel de 30 dias, média simples e não ponderada, hierarquia de recorte, portão de 95 a 105, dupla leitura com 8 min. Isso é diferencial da casa e CONSTRÓI confiança |
+  | **a MÁQUINA daquele dia** (a trava bloqueou, a base oscilou, o portão reprovou um contrato, o agregado tem ruído próprio) | **não entra, em nenhuma forma.** Nem no corpo, nem em cartão, nem em watchlist, nem em rodapé de metodologia |
+
+  ⛔ **Nunca escrever que um contrato SAIU do portão nesta captura.** O portão filtra em silêncio: contrato que reprovou hoje simplesmente não aparece, e o leitor não precisa saber o que foi excluído nem que o veredito mudou. "O comparecimento somava 98.90% de manhã e 92.30% à tarde" é a nossa máquina oscilando, e não entra.
+
+  ✅ **A exceção, e ela é de natureza oposta:** fato ESTRUTURAL e permanente sobre um mercado entra, porque descreve o mercado e não a nós. O `popularVoteMargin` soma acima de 150% desde sempre, por conter um balde de "qualquer outro desfecho", e dizer isso é obrigatório quando ele é citado (ver a regra da distribuição acima). Ele é o único mercado que mediria a MESMA grandeza da pesquisa, então explicar por que ele não serve sustenta o argumento central da peça. **A régua: fato permanente do mercado, sim; mudança de veredito nosso no dia, não.**
+
+  🧱 **E não deixar buraco.** Onde saiu a ressalva entra medição de mercado que já existe e não foi usada. Em 27/Ago o vazio da base do generic ballot foi preenchido com a faixa de 52 cadeiras cedendo 0.80pp para o empate em 50, que AMARRA com o achado da edição em vez de enfraquecê-lo.
+
+  Ver `feedback_a_falha_do_instrumento_nunca_e_a_manchete` e `feedback_descrever_o_metodo_sim_relatar_a_falha_nao` na memória.
 - **Volume USD acumulado** contextualiza e é bem-vindo. **Liquidez (profundidade do book) NÃO se cita no texto editorial**, decisão de 21/Mai/2026: liquidez baixa no Polymarket não significa preço errado, e expor o número gera leitura torta.
 - **Teto de 900 palavras não se aplica aqui**: aquele é do AFOS Daily. O Tradeoff é peça longa.
