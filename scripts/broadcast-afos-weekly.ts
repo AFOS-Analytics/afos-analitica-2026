@@ -7,6 +7,7 @@
  *
  *   npx tsx scripts/broadcast-afos-weekly.ts 2026-08-06 --pais=us --dry-run
  *   npx tsx scripts/broadcast-afos-weekly.ts 2026-08-06 --pais=us
+ *   npx tsx scripts/broadcast-afos-weekly.ts 2026-08-06 --pais=us --email=alguem@dominio.com
  *
  * 🔴 ESPELHA O TRADEOFF NA MECÂNICA E DIVERGE EM TRÊS PONTOS, todos já pagos
  * caro em outro lugar:
@@ -128,11 +129,30 @@ async function main() {
   const adapter = new PrismaNeon({ connectionString: url })
   const prisma = new PrismaClient({ adapter })
 
+  // 🔴 `--email=` ENVIA PARA UM SÓ, e existe desde 27/Ago/2026 para evitar um
+  // dano concreto: quando alguém se cadastra DEPOIS do disparo da semana, a
+  // única forma de alcançá-lo era rodar o script de novo, e ele não tem trava
+  // contra reenvio. Isso mandaria a MESMA edição uma segunda vez para toda a
+  // base que já tinha recebido. O caso que originou isto: um usuário travado
+  // pelo bug de cadastro de 27/Ago entrou depois do envio da №4.
+  // ⚠️ O alvo precisa estar ATIVO. Sem isso o script viraria caminho para
+  // mandar e-mail a quem se descadastrou.
+  const alvo = process.argv.find(a => a.startsWith('--email='))?.split('=')[1]?.trim().toLowerCase()
+
   const leads = await prisma.lead.findMany({
-    where: { status: 'active' },
+    where: alvo ? { status: 'active', email: alvo } : { status: 'active' },
     select: { id: true, email: true, preferredLocale: true, locale: true, unsubscribeToken: true },
   })
-  console.log(`📋 ${leads.length} assinantes ativos.\n`)
+
+  if (alvo) {
+    console.log(`🎯 ENVIO DIRIGIDO a um único destinatário: ${alvo}`)
+    if (leads.length === 0) {
+      console.error(`❌ ${alvo} não está na base como ATIVO. Nada enviado.`)
+      await prisma.$disconnect()
+      process.exit(1)
+    }
+  }
+  console.log(`📋 ${leads.length} assinante(s)${alvo ? ' (dirigido)' : ' ativos'}.\n`)
 
   if (leads.length === 0) {
     console.log('Nenhum assinante ativo. Encerrado.')
