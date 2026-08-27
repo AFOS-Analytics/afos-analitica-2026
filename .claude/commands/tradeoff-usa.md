@@ -184,7 +184,12 @@ for l in pt-BR en es; do curl -s -o /dev/null -w "$l %{http_code}\n" "https://ww
 
   ⛔ **Nunca escrever que um contrato SAIU do portão nesta captura.** O portão filtra em silêncio: contrato que reprovou hoje simplesmente não aparece, e o leitor não precisa saber o que foi excluído nem que o veredito mudou. "O comparecimento somava 98.90% de manhã e 92.30% à tarde" é a nossa máquina oscilando, e não entra.
 
-  ✅ **A exceção, e ela é de natureza oposta:** fato ESTRUTURAL e permanente sobre um mercado entra, porque descreve o mercado e não a nós. O `popularVoteMargin` soma acima de 150% desde sempre, por conter um balde de "qualquer outro desfecho", e dizer isso é obrigatório quando ele é citado (ver a regra da distribuição acima). Ele é o único mercado que mediria a MESMA grandeza da pesquisa, então explicar por que ele não serve sustenta o argumento central da peça. **A régua: fato permanente do mercado, sim; mudança de veredito nosso no dia, não.**
+  ✅ **Duas exceções, e as duas são de natureza oposta ao relato de falha:**
+
+  1. **Fato ESTRUTURAL e permanente sobre um mercado** entra, porque descreve o mercado e não a nós. O `popularVoteMargin` soma acima de 150% desde sempre, por conter um balde de "qualquer outro desfecho", e dizer isso é obrigatório quando ele é citado (ver a regra da distribuição acima). Ele é o único mercado que mediria a MESMA grandeza da pesquisa, então explicar por que ele não serve sustenta o argumento central da peça. **A régua: fato permanente do mercado, sim; mudança de veredito nosso no dia, não.**
+  2. 📌 **ERRATA de número que NÓS publicamos** entra, e é obrigatória. Corrigir na cara do leitor um número que saiu errado numa edição anterior é dívida com quem leu, não confissão de fragilidade. É o oposto de esconder.
+
+  🔑 **A diferença entre as duas exceções e o que se proíbe:** errata e fato de mercado falam de **algo que o leitor precisa para ler o número certo**. Relato de falha fala da **máquina reclamando**, e não muda nenhum número na tela.
 
   🧱 **E não deixar buraco.** Onde saiu a ressalva entra medição de mercado que já existe e não foi usada. Em 27/Ago o vazio da base do generic ballot foi preenchido com a faixa de 52 cadeiras cedendo 0.80pp para o empate em 50, que AMARRA com o achado da edição em vez de enfraquecê-lo.
 

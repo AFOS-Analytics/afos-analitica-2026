@@ -123,6 +123,28 @@ No final do `body` markdown, ANTES do footer de sources, sempre incluir bloco ca
 - **Datas explícitas** — "17/Mai noite" não "ontem"
 - **Variações ↑↓pp sempre citadas** com janela temporal (em 20h, em semana, em 72h)
 - **Anti-AI tells:** evitar travessão como separador, evitar parallel structure forçado, evitar adjetivos partidários, evitar bold markdown dentro de JSON quando aplicável
+- 🔴 **A ressalva se resolve no NÚMERO, nunca num aviso ao leitor.** Instalado aqui em 27/Ago/2026, replicando a régua do `/tradeoff-usa` por ordem do André. **E o motivo de instalar é o mesmo da ETAPA 3.9 abaixo:** régua que existe só numa das duas skills não protege a outra, e foi assim que as edições №8 a №13 do Brasil saíram com o cenário errado por seis edições seguidas.
+
+  ⛔ Os dois incidentes que originaram esta regra foram **brasileiros**: em 03/Ago a daily saiu com "a trava de captura bloqueou quatro vezes hoje", e em 18/Ago a daily e o painel foram escritos em cima de cinco bloqueios. Nas duas o André mandou refazer, com as palavras *"gera descredibilidade"* e *"expondo uma falha, defeito, fragilidade e descredibilizando todo o conteúdo"*.
+
+  **O teste, antes de escrever qualquer ressalva:** se o parágrafo descreve o que o **AFOS** fez, e não o que a **eleição** fez, ele não entra. Não importa quão honesto pareça.
+
+  | A ressalva é sobre | O que fazer |
+  |---|---|
+  | **o NÚMERO que se pode afirmar** (a janela rolou, a base de pesquisas trocou, a série é curta) | **remover ou trocar o número.** Variação movida por composição não é variação da semana: não se explica, não se publica. No lugar entra procedência, como a data de campo ou a hora da captura |
+  | **o MÉTODO em geral** | descrever de forma **positiva**: dupla leitura separada por 8 min dentro de 0,20pp, superlativo sempre com a janela declarada, cada alegação com link para fonte primária, volume acumulado com hora de medição. Isso é diferencial da casa e CONSTRÓI confiança |
+  | **a MÁQUINA daquele dia** (a trava bloqueou, a coleta oscilou, um contrato foi descartado, o agregado tem ruído próprio) | **não entra, em nenhuma forma.** Nem no corpo, nem em cartão, nem na watch list, nem no rodapé da metodologia |
+
+  ✅ **Duas exceções, e as duas são de natureza oposta ao relato de falha:**
+
+  1. **Fato ESTRUTURAL e permanente sobre um mercado** entra, porque descreve o mercado e não a nós. Book fino num sub-mercado é característica dele, e a "ressalva de tamanho de book" que a régua de densidade manda nunca cortar é exatamente isto.
+  2. 📌 **ERRATA de número que NÓS publicamos** entra, e é obrigatória. Corrigir na cara do leitor um número que saiu errado numa edição anterior é dívida com quem leu, não confissão de fragilidade. É o oposto de esconder. A régua de densidade já manda nunca cortar "registro de erro de edição anterior", e ela continua valendo integralmente.
+
+  🔑 **A diferença entre as duas exceções e o que se proíbe:** errata e fato de mercado falam de **algo que o leitor precisa para ler o número certo**. Relato de falha fala da **máquina reclamando**, e não muda nenhum número na tela.
+
+  🧱 **E não deixar buraco.** Onde saiu a ressalva entra medição que já existe e não foi usada, de preferência algo que AMARRE com o achado da edição em vez de enfraquecê-lo.
+
+  Ver `feedback_a_falha_do_instrumento_nunca_e_a_manchete` e `feedback_descrever_o_metodo_sim_relatar_a_falha_nao` na memória.
 - **Densidade alvo:** **2.500 a 3.000 palavras de corpo, com 3.000 de TETO**, mais 3 summary cards + 1 indicator grid (7-9 linhas) + 1 liquidez block + 1 calendar table.
 
   ⚠️ **A régua anterior dizia 1.500-2.500 e não valia há cinco edições.** Medido em 02/Ago/2026: №6 2.385 · №7 2.507 · №8 3.002 · №9 3.150 · №10 3.515 · №11 3.179. O André decidiu em 02/Ago voltar ao patamar da №8/№9 e **parar a escalada**, e a régua acima é essa decisão. Se uma edição passar de 3.000, cortar antes de publicar.
