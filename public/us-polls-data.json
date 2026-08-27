@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-08-26",
-  "fetchedAt": "2026-08-26T16:44:00.736Z",
+  "lastUpdate": "2026-08-27",
+  "fetchedAt": "2026-08-27T12:15:40.752Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,17 +26,16 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-07-27",
-    "nPesquisas": 19,
-    "nInstitutos": 15,
-    "dem": 47.05,
-    "rep": 40.89,
-    "vantagemDem": 6.16,
+    "desde": "2026-07-28",
+    "nPesquisas": 17,
+    "nInstitutos": 13,
+    "dem": 47,
+    "rep": 41,
+    "vantagemDem": 6,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
       "Big Data Poll (R)",
-      "CNN/SSRS",
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
@@ -45,7 +44,6 @@
       "Marquette University Law School",
       "Morning Consult",
       "Quantus Insights (R)",
-      "Quinnipiac University",
       "Reuters/Ipsos",
       "The Bullfinch Group",
       "The Economist/YouGov"
