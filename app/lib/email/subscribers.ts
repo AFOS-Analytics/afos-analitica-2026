@@ -5,7 +5,7 @@
  */
 
 import { randomBytes } from 'crypto'
-import { prisma } from '../../../lib/db'
+import { getPrisma } from '../../../lib/db'
 import { audit } from '../../../lib/audit'
 import { registerConsent } from '../../../lib/consent'
 
@@ -16,6 +16,7 @@ export function isValidEmail(email: string): boolean {
 }
 
 export async function subscriberExists(email: string): Promise<boolean> {
+  const prisma = getPrisma()
   if (!prisma) return false
   try {
     const lead = await prisma.lead.findUnique({
@@ -39,6 +40,7 @@ export async function createSubscriber(
     return { success: false, isNew: false, error: 'invalid_email' }
   }
 
+  const prisma = getPrisma()
   if (!prisma) {
     return { success: false, isNew: false, error: 'storage_unavailable' }
   }
@@ -110,6 +112,7 @@ export async function createSubscriber(
 }
 
 export async function unsubscribeByEmail(email: string): Promise<{ success: boolean; error?: string }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'storage_unavailable' }
 
   const normalized = email.toLowerCase().trim()
@@ -138,6 +141,7 @@ export async function unsubscribeByEmail(email: string): Promise<{ success: bool
 }
 
 export async function unsubscribeByToken(token: string): Promise<{ success: boolean; email?: string; error?: string }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'storage_unavailable' }
   if (!token || typeof token !== 'string' || token.length < 32) {
     return { success: false, error: 'invalid_token' }
@@ -168,6 +172,7 @@ export async function unsubscribeByToken(token: string): Promise<{ success: bool
 }
 
 export async function markBouncedByEmail(email: string, reason?: string): Promise<{ success: boolean }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false }
   const normalized = email.toLowerCase().trim()
   try {
@@ -194,6 +199,7 @@ export async function incrementSoftBounce(
   email: string,
   threshold: number,
 ): Promise<{ count: number; markedBounced: boolean }> {
+  const prisma = getPrisma()
   if (!prisma) return { count: 0, markedBounced: false }
   const normalized = email.toLowerCase().trim()
   try {
@@ -224,6 +230,7 @@ export async function incrementSoftBounce(
  * Idempotent — no-op if already 0.
  */
 export async function resetSoftBounce(email: string): Promise<{ success: boolean }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false }
   const normalized = email.toLowerCase().trim()
   try {
@@ -242,6 +249,7 @@ export async function resetSoftBounce(email: string): Promise<{ success: boolean
 }
 
 export async function countSubscribers(): Promise<number> {
+  const prisma = getPrisma()
   if (!prisma) return 0
   try {
     return await prisma.lead.count({ where: { status: 'active' } })
