@@ -22,10 +22,23 @@ export const subscribeSchema = z.object({
   // include `consent: true` in the request payload.
   consent: z.literal(true, { message: 'Consent must be explicitly granted (LGPD)' }),
   _hp: z.string().max(500).optional(),
-  visitorId: z.string().uuid().optional(),
+  // 🔴 `.catch(undefined)` DESDE 27/Ago/2026, e a razão é dura: estes dois
+  // campos são de ANALYTICS, e antes um valor ruim neles derrubava o parse
+  // INTEIRO. O usuário via "Insira um email válido" com o e-mail perfeito, e
+  // não havia saída: `getOrCreateVisitorId()` devolve o que estiver no cookie
+  // ou no localStorage, então um valor corrompido ou de formato antigo travava
+  // o cadastro PARA SEMPRE naquele aparelho, no desktop e no celular.
+  //
+  // ⭐ O princípio: campo opcional de medição NUNCA bloqueia a ação principal.
+  // Valor ruim vira `undefined`, perde-se a atribuição daquele cadastro, e a
+  // pessoa entra na base. Perder a origem é barato; perder o assinante não.
+  //
+  // ⛔ `email` e `consent` seguem ESTRITOS de propósito: um é a identidade e o
+  // outro é a base legal LGPD. Tolerar qualquer um dos dois seria outro defeito.
+  visitorId: z.string().uuid().optional().catch(undefined),
   // 'daily' e 'tradeoff' = bloco de inscrição no fim das edições publicadas.
   // Separar a origem permite medir se o conteúdo converte, sem tracking em e-mail.
-  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'weekly']).optional(),
+  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'weekly']).optional().catch(undefined),
 })
 
 // ── Visitor ───────────────────────────────────────────────
