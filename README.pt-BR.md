@@ -503,6 +503,25 @@ Cron 3x/dia (6h, 12h, 18h)
 | **governance** | audit_logs, deletion_requests | Auditoria, LGPD Art. 18 |
 | **ai** | llm_runs, model_outputs | Tracking IA, guardrails |
 
+### Backup e restauracao
+
+A serie de precos do Polymarket e a unica coisa que existia num lugar so: pontos de meia em meia hora desde 14/Abr/2026. Os JSON editoriais e as dailies vivem em tres lugares (repositorio, Vercel, Neon) e sobrevivem a perda de qualquer um. A serie nao sobrevivia, e ninguem pode pedir ao Polymarket o preco que o book mostrava as 14h37 de um dia de maio.
+
+O `backup/neon/` guarda CSV comprimido particionado por mes, commitado neste repositorio. Mes fechado nunca mais muda, entao o git guarda uma vez so. Estado atual: 38 arquivos, cerca de 6,3 MB comprimidos. E o mesmo arquivo que a conferencia de superlativo le (ver *Extremos de série e superlativos* acima).
+
+**Este repositorio e PUBLICO**, entao 12 tabelas com dado pessoal ficam de fora por nome, cada uma com o motivo registrado no `backup/neon/MANIFEST.json`. Tabela nova sem classificacao ABORTA o backup em vez de adivinhar: adivinhar ali ou vaza dado pessoal ou perde backup em silencio, e de repositorio publico nada se despublica.
+
+```bash
+npx tsx scripts/backup-neon.ts              # gera
+npx tsx scripts/backup-neon.ts --verificar  # checksum de cada arquivo
+npx tsx scripts/check-backup-sem-pii.ts     # trava de dado pessoal
+npx tsx scripts/check-backup-restauravel.ts # prova que RESTAURA
+```
+
+A ultima trava e a que importa, e ela nao compara bytes. Reconstroi a serie a partir dos CSV **sem tocar no banco** e verifica se ela responde a mesma pergunta que o banco responde. Medido em 27/Ago/2026: 49.893 linhas de preco, 133 dias com os dois nomes, pico de gap de **41,80pp em 01/Ago/2026**, identico dos dois lados. Backup que ninguem tentou restaurar nao e backup.
+
+O `.github/workflows/backup-neon.yml` roda todo dia as 15:00 UTC. Saida "0 alterados" e determinismo, nao tarefa parada: para distinguir backup em dia de backup congelado, comparar a contagem do banco com a soma de linhas do `MANIFEST.json`.
+
 ---
 
 ## Seguranca
@@ -516,6 +535,7 @@ Cron 3x/dia (6h, 12h, 18h)
 | **Visitor** | Backend source of truth, Redis SET NX dedup, 3s timeout |
 | **IA** | Prompt injection detection, output sanitization, risk scoring |
 | **LGPD** | Consent tracking, exclusao atomica, anonimizacao, audit trail |
+| **Dependencias** | Dependabot em **zero alertas abertos** (27/Ago/2026). Vulnerabilidade em dependencia transitiva nao se resolve subindo major de framework. As rotas, em ordem de custo: `npm update` dentro das faixas ja declaradas, depois patch da origem que **alarga** o pin, e `overrides` so como ultimo recurso. O VAO na faixa vulneravel do aviso aponta o patch que ja conserta. Concretamente, o `npm audit fix --force` propunha instalar o Next 16 **e REBAIXAR** o Prisma de 7.9.1 para 6.12.0; nenhum dos dois foi feito e todos os alertas fecharam assim mesmo |
 | **Dado pessoal nos datasets** | Politica de 04/Ago/2026: **CPF sai por minimizacao**, CNPJ fica porque o TSE publica de proposito, e revisao ja publicada e preservada inteira, erro se corrige por **errata**, nunca reescrevendo o historico. A regua e o **padrao de digito**, nao o rotulo do campo, porque CPF dentro de observacao em texto livre continua sendo CPF. Em 06/Ago/2026 uma auditoria achou o redator cobrindo **2 dos 3** arquivos do TSE, e a trava foi ampliada para os tres. Sendo preciso sobre o que isso era: o arquivo descoberto media **zero** CPF naquele dia, entao era falha estrutural e latente, nao vazamento vivo |
 
 ---

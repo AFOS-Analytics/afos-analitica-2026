@@ -502,6 +502,25 @@ Cron 3x/day (6am, 12pm, 6pm)
 | **governance** | audit_logs, deletion_requests | Audit, LGPD Art. 18 |
 | **ai** | llm_runs, model_outputs | AI tracking, guardrails |
 
+### Backup and restore
+
+The Polymarket price series is the only asset that ever existed in a single place: half-hourly points since 14/Apr/2026. The editorial JSONs and the dailies live in three places (repository, Vercel, Neon) and survive losing any one of them. The series did not, and nobody can ask Polymarket what the book showed at 14:37 on some day in May.
+
+`backup/neon/` holds gzipped CSV partitioned by month, committed to this repository. A closed month never changes again, so git stores it once. Current state: 38 files, ~6.3 MB compressed. This is the same file the superlative check reads (see *Series extremes and superlatives* above).
+
+**This repository is public**, so 12 tables carrying personal data are excluded by name, each with its reason recorded in `backup/neon/MANIFEST.json`. A new table with no classification aborts the backup instead of guessing: guessing there either leaks personal data or loses the backup silently, and nothing is ever unpublished from a public repository.
+
+```bash
+npx tsx scripts/backup-neon.ts              # generate
+npx tsx scripts/backup-neon.ts --verificar  # per-file checksum
+npx tsx scripts/check-backup-sem-pii.ts     # personal-data gate
+npx tsx scripts/check-backup-restauravel.ts # proves it RESTORES
+```
+
+The last gate is the one that matters, and it does not compare bytes. It rebuilds the series from the CSVs **without touching the database** and checks that it answers the same question the database answers. Measured on 27/Aug/2026: 49,893 price rows, 133 days carrying both names, peak gap **41.80pp on 01/Aug/2026**, identical from both sides. A backup nobody has tried to restore is not a backup.
+
+`.github/workflows/backup-neon.yml` runs daily at 15:00 UTC. An output of "0 changed" is determinism, not a stalled job: to tell a current backup from a frozen one, compare the row count in the database against the sum of rows in `MANIFEST.json`.
+
 ---
 
 ## Security
@@ -515,6 +534,7 @@ Cron 3x/day (6am, 12pm, 6pm)
 | **Visitor** | Backend source of truth, Redis SET NX dedup, 3s timeout |
 | **AI** | Prompt injection detection, output sanitization, risk scoring |
 | **LGPD** | Consent tracking, atomic deletion, anonymization, audit trail |
+| **Dependencies** | Dependabot at **zero open alerts** (27/Aug/2026). A vulnerability in a transitive dependency is not fixed by taking a framework major. The routes, in order of cost: `npm update` inside the ranges already declared, then an upstream patch that **widens** a pin, and `overrides` only as a last resort. The gap in an advisory's vulnerable range names the patch that already fixes it. Concretely, `npm audit fix --force` proposed installing Next 16 **and downgrading** Prisma from 7.9.1 to 6.12.0; neither was taken and every alert still closed |
 | **Personal data in datasets** | Policy of 04/Aug/2026: **CPF is redacted by data minimization**, CNPJ stays because the TSE publishes it deliberately, and revisions already published are preserved in full, errors are corrected by **erratum**, never by rewriting history. The rule is the **digit pattern**, not the field label, since a CPF in a free-text note is still a CPF. On 06/Aug/2026 an audit found the redactor covering **2 of the 3** TSE files, and the gate was widened to all three. To be precise about what that was: the uncovered file measured **zero** CPFs that day, so it was a structural and latent gap, not a live leak |
 
 ---
