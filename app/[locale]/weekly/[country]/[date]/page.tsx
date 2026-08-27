@@ -54,10 +54,14 @@ function getOgImageUrl(locale?: string, override?: string): string {
  * que não estiver `published` devolve 404. No preview da Vercel ela abre, que é
  * como a revisão humana acontece antes de qualquer coisa ir ao ar.
  *
- * ⚠️ `noindex` enquanto o produto está em piloto. Decisão do André em
- * 01/Ago/2026: sitemap e indexação só depois das duas primeiras edições. Não
- * basta o rascunho: uma edição publicada durante o piloto também não deve
- * entrar em buscador antes da decisão de seguir.
+ * ✅ INDEXÁVEL desde 27/Ago/2026, por ordem do André. O `noindex` existiu de
+ * 01/Ago a 27/Ago e a condição que ele mesmo pôs era "depois das duas primeiras
+ * edições": a Edição №4 saiu em 27/Ago, então a condição já estava cumprida.
+ *
+ * 🔒 O que NÃO mudou, e são as travas que seguem valendo: o portão de rascunho
+ * continua devolvendo 404 em produção, e as duas saídas de erro deste
+ * `generateMetadata` (idioma, país ou data inválidos, e edição inexistente)
+ * seguem `noindex`. Indexar página que não carregou seria pior que não indexar.
  */
 
 export const dynamic = 'force-dynamic'
@@ -80,8 +84,8 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   return {
     title: `${data.title} | AFOS Analytics`,
     description: descricao,
-    // Piloto: fora de buscador até a decisão de seguir, na edição No 2.
-    robots: { index: false, follow: false },
+    // ✅ Sem `robots` aqui: a edição publicada é indexável desde 27/Ago/2026.
+    // As duas saídas de erro acima seguem com noindex, de propósito.
     // ⚠️ CANÔNICO PRÓPRIO. Sem este bloco a página herdava o do layout raiz e
     // TODA edição do Weekly declarava a HOME como sua canônica. `noindex` não
     // resolve isso: quem recebe o link, e qualquer agregador que leia o head,

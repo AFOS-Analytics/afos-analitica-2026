@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { COUNTRIES_SEO } from '../lib/seo/countries'
 import { listPublishedDailies, dailyExists } from '../lib/afos-daily/loader'
 import { listPublishedTradeoffs, tradeoffExists } from '../lib/afos-tradeoff/loader'
+import { listPublishedWeeklies, weeklyExistsStrict } from '../lib/afos-weekly/loader'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.afos-analytics.com'
@@ -289,6 +290,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: 0.6,
         alternates: { languages: hreflangIf((l) => `/${l}/tradeoff/us/${date}`, (loc) => tradeoffExists(date, loc, 'us')) },
+      })
+    }
+  }
+
+  // AFOS Weekly — índice e permalinks por edição, EUA.
+  // Entrou no sitemap em 27/Ago/2026, junto com a saída do `noindex`: o piloto
+  // previa indexar depois das duas primeiras edições e a №4 já saiu.
+  // 🔴 hreflang por `weeklyExistsStrict`, NUNCA por `weeklyExists`: o segundo
+  // devolve `true` sempre, por causa da cascata para o inglês, e o sitemap
+  // declararia traduções que não existem em disco.
+  const weeklyDatesUs = listPublishedWeeklies('us')
+  for (const loc of locales) {
+    entries.push({
+      url: `${baseUrl}/${loc}/weekly/us`,
+      lastModified: weeklyDatesUs.length ? new Date(`${weeklyDatesUs[weeklyDatesUs.length - 1]}T00:00:00-03:00`) : dynamicLastMod,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+      alternates: { languages: hreflang((l) => `/${l}/weekly/us`) },
+    })
+  }
+  for (const date of weeklyDatesUs) {
+    for (const loc of locales) {
+      entries.push({
+        url: `${baseUrl}/${loc}/weekly/us/${date}`,
+        lastModified: new Date(`${date}T00:00:00-03:00`),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+        alternates: { languages: hreflangIf((l) => `/${l}/weekly/us/${date}`, (loc) => weeklyExistsStrict(date, loc, 'us')) },
       })
     }
   }

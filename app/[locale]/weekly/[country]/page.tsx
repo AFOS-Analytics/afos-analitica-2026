@@ -25,8 +25,8 @@ import {
  * e a casca visual é própria. Custa duplicação; evita que um produto em piloto
  * quebre dois que já estão no ar.
  *
- * 🔒 PILOTO: `noindex`, como a página da edição. A decisão de indexar é do
- * André e vem depois da Edição №2.
+ * ✅ INDEXÁVEL desde 27/Ago/2026, junto com a página da edição, por ordem do
+ * André. O `noindex` do piloto saiu depois da Edição №4.
  */
 
 export const dynamic = 'force-dynamic'
@@ -100,8 +100,7 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   return {
     title: t.metaTitle,
     description: t.metaDesc,
-    // Piloto: fora de buscador, igual à página da edição.
-    robots: { index: false, follow: false },
+    // ✅ Sem `robots` aqui: indexável desde 27/Ago/2026, igual à página da edição.
     // 🔴 Canonical PRÓPRIO. Sem esta linha a página herdava o canonical do
     // layout de idioma, que aponta para a HOME: o arquivo do Weekly declarava
     // ser a página inicial do site, nos três idiomas.
