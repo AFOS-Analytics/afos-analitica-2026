@@ -10,7 +10,7 @@
 
 import { NextResponse } from 'next/server'
 import { Redis } from '@upstash/redis'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { audit } from '../../../../lib/audit'
 import { locales } from '../../../../lib/i18n/config'
 
@@ -23,6 +23,7 @@ interface SignupSession {
 }
 
 export async function POST(request: Request) {
+  const prisma = getPrisma()
   if (!prisma) return NextResponse.json({ ok: false, error: 'storage_unavailable' }, { status: 503 })
 
   const sessionId = request.headers.get('cookie')?.match(/signup_session_id=([a-f0-9]+)/)?.[1]

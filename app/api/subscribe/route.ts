@@ -91,7 +91,10 @@ export async function POST(request: Request) {
 
     // Vincular visitor_state ao lead (fire-and-forget)
     if (visitorId && result.leadId) {
-      const { prisma: db } = await import('../../../lib/db')
+      // getPrisma(), nao a constante: import dinamico da constante herda o
+      // mesmo defeito, porque ela e a leitura do primeiro import do modulo.
+      const { getPrisma } = await import('../../../lib/db')
+      const db = getPrisma()
       if (db) {
         db.visitorState.upsert({
           where: { visitorId },

@@ -7,11 +7,12 @@
  */
 
 import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { visitorStateSchema } from '../../../../lib/validations'
 import { isRateLimited } from '../../../../lib/rate-limit'
 
 export async function POST(request: Request) {
+  const prisma = getPrisma()
   if (!prisma) return NextResponse.json({ ok: false }, { status: 503 })
 
   let body: unknown

@@ -1,5 +1,5 @@
 import { createHash } from 'crypto'
-import { prisma } from './db'
+import { getPrisma } from './db'
 
 /** SHA-256 truncado em 16 chars hex (LGPD Art. 8 sem PII em claro). */
 const hashShort = (s: string | undefined) =>
@@ -19,6 +19,7 @@ export async function registerConsent(input: {
   ip?: string
   userAgent?: string
 }): Promise<{ success: boolean }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false }
 
   try {

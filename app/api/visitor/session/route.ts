@@ -4,7 +4,7 @@
  */
 
 import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { visitorSessionSchema } from '../../../../lib/validations'
 import { computeEligible, shouldShowPopup, SESSION_MIN_DURATION_MS, SESSION_DEDUP_TTL } from '../../../../lib/visitor/constants'
 
@@ -31,6 +31,7 @@ async function tryClaimSession(visitorId: string): Promise<boolean> {
 }
 
 export async function POST(request: Request) {
+  const prisma = getPrisma()
   if (!prisma) return NextResponse.json({ ok: false, error: 'unavailable' }, { status: 503 })
 
   let body: unknown

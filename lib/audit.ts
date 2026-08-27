@@ -1,5 +1,5 @@
 import { createHash } from 'crypto'
-import { prisma } from './db'
+import { getPrisma } from './db'
 
 /**
  * Grava evento de auditoria em governance.audit_logs.
@@ -11,6 +11,7 @@ export function audit(
   entityId: string,
   detail?: { before?: unknown; after?: unknown; ip?: string; userAgent?: string; actorType?: string; actorId?: string }
 ) {
+  const prisma = getPrisma()
   if (!prisma) return
 
   // 🔴 `entityId` NUNCA guarda e-mail em claro.

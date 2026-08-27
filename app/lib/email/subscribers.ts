@@ -94,9 +94,19 @@ export async function createSubscriber(
         locale: meta?.locale,
         ip: meta?.ip,
         userAgent: meta?.userAgent,
-      }).catch((err) => {
-        console.error('[subscribers] consent failed:', normalized.slice(0, 3) + '***', err)
       })
+        .then((r) => {
+          // 🔴 `registerConsent` DEVOLVE `{ success: false }`, não lança. Só o
+          // `.catch()` deixava a falha de consentimento LGPD passar TOTALMENTE
+          // calada: lead criado, registro de consentimento ausente, e nada no
+          // log. Medido em 27/Ago/2026 ao auditar o cadastro.
+          if (!r?.success) {
+            console.error('[subscribers] consent NAO registrado (retorno):', normalized.slice(0, 3) + '***')
+          }
+        })
+        .catch((err) => {
+          console.error('[subscribers] consent failed:', normalized.slice(0, 3) + '***', err)
+        })
     }
 
     return {
