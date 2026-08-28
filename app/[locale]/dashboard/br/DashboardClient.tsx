@@ -212,7 +212,7 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
         <Footer />
       </div>
     </DashboardGate>
-    <EmailPopup />
+    <EmailPopup country="br" />
     </>
   );
 }

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useTranslation } from '../../../i18n/context';
 import { VisitorStateProvider } from '../../../hooks/useVisitorState';
+import { EmailPopup } from '../../../components/EmailPopup';
 import { Header } from '../../../components/Header';
 import { Footer } from '../../../components/Footer';
 import { ModalAbout } from '../../../components/ModalAbout';
@@ -270,6 +271,7 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
   }, [pollsData, marketData, locale]);
 
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* O horário da leitura do mercado vive no relógio da testeira, o mesmo do
           painel do Brasil, em vez de numa linha própria dentro da seção. O André
@@ -377,6 +379,14 @@ function UsDashboardContent({ pollsData, context, pressData }: { pollsData: UsPo
 
       <Footer />
     </div>
+    {/* Popup de captacao. O painel dos EUA ja montava o VisitorStateProvider
+        e o servidor ja calculava `showPopup` para cada visitante, mas NADA
+        consumia esse resultado: a maquina girava em falso. Montado em
+        28/Ago/2026 por ordem do Andre.
+        ⛔ Sem DashboardGate aqui, de proposito: bloquear acesso e decisao de
+        produto, e o painel dos EUA esta construindo publico. */}
+    <EmailPopup country="us" />
+    </>
   );
 }
 

@@ -63,7 +63,7 @@ export const subscribeSchema = z.object({
   // usam o MESMO template e mandavam o mesmo valor, entao nao dava para saber
   // qual dos dois converte. 'tradeoff' continua valido para nao invalidar
   // registro antigo. 'weekly' segue sem sufixo porque so existe para os EUA.
-  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'tradeoff-br', 'tradeoff-us', 'weekly']).optional().catch(undefined),
+  captureSource: z.enum(['popup', 'popup-br', 'popup-us', 'gate', 'landing', 'daily', 'tradeoff', 'tradeoff-br', 'tradeoff-us', 'weekly']).optional().catch(undefined),
 })
 
 // ── Visitor ───────────────────────────────────────────────

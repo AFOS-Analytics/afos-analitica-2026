@@ -13,7 +13,7 @@ import { trackEvent } from '../lib/analytics/events';
 
 interface SubscribeFormProps {
   visitorId?: string;
-  captureSource: 'popup' | 'gate' | 'landing' | 'daily' | 'tradeoff' | 'tradeoff-br' | 'tradeoff-us' | 'weekly';
+  captureSource: 'popup' | 'popup-br' | 'popup-us' | 'gate' | 'landing' | 'daily' | 'tradeoff' | 'tradeoff-br' | 'tradeoff-us' | 'weekly';
   onSuccess?: () => void;
   variant?: 'default' | 'gate';
   className?: string;
@@ -47,6 +47,8 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
     : captureSource.startsWith('tradeoff') ? 'tradeoff_subscribe'
     : captureSource === 'weekly' ? 'weekly_subscribe'
     : variant === 'gate' ? 'gate'
+    // ⚠️ Prefixo tambem aqui: 'popup-br' e 'popup-us' precisam cair no evento
+    // de POPUP, e nao virar um nome de evento novo por acidente.
     : 'popup';
   const submitEventName = `${eventBase}_submit` as const;
   const successEventName = `${eventBase}_success` as const;

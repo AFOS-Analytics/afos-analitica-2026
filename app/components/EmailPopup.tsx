@@ -20,7 +20,13 @@ import { trackEvent } from '../lib/analytics/events';
 
 import { POPUP_SHOW_DELAY_MS } from '../../lib/visitor/constants';
 
-export function EmailPopup() {
+/**
+ * `country` qualifica a origem registrada. Sem ele, o popup do painel do Brasil
+ * e o dos EUA gravariam o mesmo 'popup' e nao daria para saber qual converte,
+ * que e exatamente o defeito corrigido no Tradeoff em 28/Ago/2026.
+ * Sem `country`, grava 'popup' e nada muda para quem ja usava.
+ */
+export function EmailPopup({ country }: { country?: 'br' | 'us' } = {}) {
   const { t } = useTranslation();
   const { visitorId, state, loading, popupDismissedThisSession, dismissPopup, markSubscribed } = useVisitorState();
   const [visible, setVisible] = useState(false);
@@ -132,7 +138,7 @@ export function EmailPopup() {
 
           <SubscribeForm
             visitorId={visitorId}
-            captureSource="popup"
+            captureSource={country ? (`popup-${country}` as const) : 'popup'}
             variant="default"
             onSuccess={handleSuccess}
           />
