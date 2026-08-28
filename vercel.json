@@ -28,6 +28,10 @@
     {
       "path": "/api/cron/refresh-us-press",
       "schedule": "20 7,13,19 * * *"
+    },
+    {
+      "path": "/api/cron/lembrete-medicao-captacao",
+      "schedule": "0 12 1 9 *"
     }
   ]
 }
