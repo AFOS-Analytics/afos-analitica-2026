@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-28",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "PF concluiu a oitiva de Daniel Vorcaro",
+        "verificacao1_crossRef": "10 mencoes em dailies anteriores; a de 27/Ago registra que NAO aconteceu",
+        "classificacao": "continuidade com fato novo",
+        "verificacao2_fetch": { "fonte": "G1", "quando": "2026-08-28T17:27:25Z", "tipo": "evento", "trecho": "A Policia Federal concluiu nesta sexta-feira (28) o depoimento" },
+        "segundaFonte": "NAO VERIFICADO: seis fontes localizadas sao todas PRE-evento, incluindo uma com /2026/08/27/ na URL, que e o dia do adiamento",
+        "decisao": "incorporar ATRIBUIDO a G1, com horario, nunca como afirmacao seca"
+      },
+      {
+        "evento": "Justica dos EUA pede dados a One World Services sobre USD 531 milhoes do Master",
+        "verificacao2_fetch": { "fonte": "Estadao", "quando": "2026-08-28T16:08Z", "tipo": "evento" },
+        "segundaFonte": "nao verificado",
+        "decisao": "incorporar atribuido"
+      },
+      {
+        "evento": "Mendonca da 24h para o X explicar filtro ao TSE",
+        "verificacao2_fetch": { "fonte": "O Globo", "quando": "2026-08-28T15:17Z", "tipo": "evento" },
+        "segundaFonte": "Valor, mesmo grupo economico: NAO conta como independente",
+        "decisao": "incorporar atribuido"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "a conclusao da oitiva do Vorcaro, com uma unica fonte posterior ao ato; tratada com atribuicao explicita e declaracao de fonte unica no corpo",
+    "numericalErrors": "reconcile-claims acusou 77,00% e 47,05%; ambos sao sub-mercados ausentes dos JSONs do painel, vindos da captura certificada de 18:32:14Z, conferidos",
+    "fontesInventadas": "3 conferidos ao acaso, todos presentes no news-cache de 2026-08-28 com URL e horario",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "propaganda x preco e a unica candidata; a Secao 4 declara que o painel nao atribui causa e da dois motivos verificaveis",
+    "verbosCriticos": "concluiu com fonte e horario; intimou trocado por deu 24 horas com orgao e prazo; preso nao usado; nenhum verbo de carga editorial",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "palavrasPtBr": 1096,
+    "tetoPalavras": 1100,
+    "emojis": { "pt": 0, "en": 0, "es": 0 },
+    "gateNumerico": "multiconjunto identico nos 3, 64 tokens",
+    "cincoChecagens": "ancora, locale cruzado, cirilico, separador decimal e tldr: todas limpas",
+    "urls": "50, byte a byte identicas nas 3 versoes",
+    "fontes": { "ancora": 6, "secundarias": 9, "percentualSecundario": 60 },
+    "densidadeDeLinks": "50%, abaixo da regua de 80%, declarado",
+    "waybackPreCheck": "HTTP 429: nao rodado, e o passivo segue parado desde 19/Ago"
+  },
+  "correcoesDoAndre": [
+    "removida a redundancia do H1 e da linha de data no corpo, nas 3 versoes",
+    "sintese devolvida ao template de frase-tese em negrito",
+    "rotulo do 1o bullet do TL;DR de Mercado para Mercado de Previsao"
+  ]
+}
