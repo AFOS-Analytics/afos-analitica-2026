@@ -1,0 +1,91 @@
+{
+  "date": "2026-08-27",
+  "factCheckGate": {
+    "eventosCandidatos": 4,
+    "eventos": [
+      {
+        "evento": "Depoimento de Daniel Vorcaro à Polícia Federal",
+        "verificacao1_crossRef": "aparece em 2026-08-26 como 'vai depor', 9 menções nas últimas 7 dailies",
+        "classificacao": "continuidade",
+        "verificacao2_fetch": {
+          "url": "https://www.cnnbrasil.com.br/politica/pf-adia-depoimento-de-vorcaro-por-questao-tecnica/",
+          "data": "2026-08-27",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.gazetadopovo.com.br/republica/vorcaro-tem-depoimento-a-pf-adiado-pela-segunda-vez-por-problema-tecnico/",
+        "decisao": "incorporar como ADIAMENTO, nunca como ato praticado",
+        "achadoCritico": "As duas fontes matinais (Jornal de Brasília 07h15 e ND Mais 08h35) foram publicadas ANTES da audiência das 10h e estavam no futuro ou no presente. Elas haviam sido lidas como confirmação de ato praticado e o painel foi publicado, em três idiomas, dizendo que o depoimento aconteceu. FALSO. Corrigido em produção antes desta daily, no commit 1249217. A refutação estava no próprio news-cache do dia, em quatro manchetes de 12h56, 14h11, 15h57 e 18h36."
+      },
+      {
+        "evento": "Propaganda de Lula com áudio de Flávio Bolsonaro chamando Vorcaro de irmão",
+        "verificacao1_crossRef": "o áudio foi revelado em maio pelo Intercept Brasil",
+        "classificacao": "recobrança quanto ao áudio, novidade quanto ao uso eleitoral",
+        "verificacao2_fetch": {
+          "url": "https://www.terra.com.br/noticias/brasil/politica/propaganda-de-lula-tem-audio-de-flavio-chamando-vorcaro-de-irmao-ao-pedir-dinheiro-a-banqueiro,b2fc5f13d7d978ff1fea0e455209e0d7dhlxf0kf.html",
+          "data": "2026-08-27",
+          "tipo": "evento"
+        },
+        "segundaFonte": "Estadão, via news-cache 2026-08-27 22:03, mais Diário do Grande ABC, Jornal de Brasília e Tribuna de Petrópolis",
+        "decisao": "incorporar o uso eleitoral, declarando que o áudio é de maio. Horário eleitoral em TV começa em 28/Ago, não em 27/Ago."
+      },
+      {
+        "evento": "PoderData/Aya BR-04974/2026",
+        "verificacao1_crossRef": "casa recorrente, 6 menções nas últimas 7 dailies",
+        "classificacao": "rodada nova da mesma série",
+        "verificacao2_fetch": {
+          "url": "https://www.poder360.com.br/poderdata/poderdata-aya-lula-tem-38-contra-35-de-flavio-no-1o-turno/",
+          "data": "2026-08-27",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/poderdata-presidente-agosto-2026/",
+        "decisao": "incorporar. Escopo nacional confirmado na divulgação: 555 municípios nas 27 unidades federativas."
+      },
+      {
+        "evento": "Sabatina de Lula no Jornal Nacional",
+        "verificacao1_crossRef": "anunciada na daily de 26/Ago para 27/Ago",
+        "classificacao": "ato praticado",
+        "verificacao2_fetch": {
+          "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/08/27/lula-na-tv-globo-candidato-a-reeleicao-e-o-quarto-entrevistado-em-serie-de-sabatinas-com-presidenciaveis.ghtml",
+          "data": "2026-08-27",
+          "tipo": "evento"
+        },
+        "segundaFonte": "Estadão, via news-cache 2026-08-27",
+        "decisao": "incorporar"
+      }
+    ],
+    "selfCheck": {
+      "ancorasComVerificacao2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRodado": true
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims.ts rodado; 15 pares sinalizados, todos falsos positivos previstos pelo próprio script (deltas em pp, números de pesquisa que vivem em scenarios e não no quadroComparativo, e sub-mercados sem linha no quadro). Nenhum valor inventado.",
+    "fontesInventadas": "conferidos 3 ao acaso (Valor/Disney, O Globo/JN, G1/Dino); todos existem no news-cache do dia com URL própria",
+    "quotesLiterais": "nenhuma aspa literal na peça",
+    "causacaoEspuria": "nenhuma; a queda de 5,00pp e a PoderData são declaradas como coincidência de data, com a frase 'não atribui causa'",
+    "verbosCriticos": "'não aconteceu' e 'adiado' no lugar de 'depôs'; 'preso preventivamente desde março' para não ler como prisão nova; 'acionou o TSE' com data",
+    "decisao": "prosseguir para preview"
+  },
+  "captura": {
+    "carimbo": "27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)",
+    "travaDeCaptura": "APROVADA nos cinco livros: presidential, secondPlace, thirdPlace, stf, senate",
+    "observacao": "Duas rodadas anteriores da trava deram BLOQUEADO com listas de aprovados opostas, e o motivo, nomeado por candidato, era sempre o contrato de Augusto Cury, aberto no mesmo dia. Ele assentou na terceira rodada, em 4,05%.",
+    "rebaseline": "DISPAROU por três critérios: Flávio +1,00pp, Renan +0,70pp e o vão fechando 1,00pp. Os 5 arquivos foram reescritos e as traduções refeitas pelo mapa 27ago-b."
+  },
+  "metrica": {
+    "palavrasCorpo": 1100,
+    "tetoPalavras": 1100,
+    "emojis": 0,
+    "tldrBullets": 3,
+    "gateNumericoTresIdiomas": "72 valores com unidade, multiconjuntos idênticos",
+    "fontesSecundariasPercent": 55,
+    "avisoConhecido": "densidade de links em 38% contra a régua de 80%; subir exigiria mais links com a peça exatamente no teto de palavras"
+  },
+  "wayback": {
+    "preCheck": "302 com o fetch do Node, que é o cliente do script; o curl não vale para este pré-check",
+    "passivo": "2026-08-05 arquivado com 18 de 21 URLs"
+  }
+}
