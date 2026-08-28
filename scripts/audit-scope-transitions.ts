@@ -10,7 +10,8 @@ config({ path: '.env.local' })
 import { fetchTSEPolls, classifyScope } from '../lib/tse/ingest'
 
 async function main() {
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) throw new Error('prisma indisponível (DATABASE_URL?)')
 
   const polls = await fetchTSEPolls()

@@ -128,7 +128,8 @@ export async function persistAnalysisSnapshot(
   type: AnalysisType,
   data: Record<string, unknown>,
 ): Promise<void> {
-  const { prisma } = await import('../db')
+  const { getPrisma } = await import('../db')
+  const prisma = getPrisma()
   if (!prisma) throw new Error('prisma not initialized')
   await upsertAnalysisReport(prisma, type, data)
 }

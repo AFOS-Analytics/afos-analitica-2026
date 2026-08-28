@@ -31,9 +31,7 @@ function normalizaLocale(raw: string | undefined): string {
   if (l.startsWith('pt')) return 'pt-BR'
   if (l.startsWith('es')) return 'es'
   if (l.startsWith('en')) return 'en'
-  // Mantem a comparacao exata como ultima chance, para nao perder um valor
-  // que ja venha exatamente no formato da casa.
-  return VALID_LOCALES.includes(raw) ? raw : 'pt-BR'
+  return 'pt-BR'
 }
 
 export async function POST(request: Request) {
@@ -89,13 +87,12 @@ export async function POST(request: Request) {
       try {
         const redis = new Redis({ url: redisUrl, token: redisToken })
         const rateLimitKey = `afos:ratelimit:subscribe:${ip}`
+        // A segunda metade da condicao REPARA chave sem expiracao (TTL < 0), e
+        // o curto-circuito garante que ela so custa uma ida a mais quando a
+        // chave ja existia.
         const attempts = await redis.incr(rateLimitKey)
-        if (attempts === 1) {
+        if (attempts === 1 || (await redis.ttl(rateLimitKey)) < 0) {
           await redis.expire(rateLimitKey, 3600)
-        } else {
-          // Repara chave que ficou sem expiracao. TTL negativo = sem TTL.
-          const ttl = await redis.ttl(rateLimitKey)
-          if (ttl < 0) await redis.expire(rateLimitKey, 3600)
         }
         if (attempts > 5) {
           audit('rate_limited', 'api.subscribe', ip, { ip })

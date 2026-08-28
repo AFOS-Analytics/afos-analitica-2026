@@ -123,7 +123,8 @@ export async function loadUsPressData(): Promise<UsPressLeitura> {
   let falhou = false
 
   try {
-    const { prisma } = await import('../db')
+    const { getPrisma } = await import('../db')
+    const prisma = getPrisma()
     if (!prisma) {
       falhou = true
     } else {

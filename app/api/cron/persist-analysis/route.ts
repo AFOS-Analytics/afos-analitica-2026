@@ -4,7 +4,7 @@ import { join } from 'path'
 import { persistAnalysisSnapshot, type AnalysisType } from '../../../../lib/analysis/persist'
 import { buildNoCacheHeaders } from '../../../lib/cache/headers'
 import { sendSystemAlert } from '../../../lib/email/resend'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 
@@ -70,6 +70,7 @@ export async function GET(request: Request) {
   // Warm-up Neon WS antes dos upserts. Cold-start adapter Neon serverless
   // dispara [object ErrorEvent] na primeira query após idle. SELECT 1
   // exercita o canal sem alterar dados. Resolve falha recorrente analysis-cards.
+  const prisma = getPrisma()
   if (prisma) {
     try {
       await withRetry(() => prisma!.$queryRaw`SELECT 1`, 3)

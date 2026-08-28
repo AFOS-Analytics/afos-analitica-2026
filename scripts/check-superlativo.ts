@@ -100,7 +100,8 @@ async function main() {
     return Number.isNaN(d.getTime()) ? null : d
   })()
 
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) { console.error('SEM BANCO: DATABASE_URL ausente ou inválida'); process.exit(1) }
 
   const bordaDireita = ate ?? new Date()

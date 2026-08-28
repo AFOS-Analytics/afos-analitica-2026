@@ -30,7 +30,8 @@ const APPLY = process.argv.includes('--apply')
 const isMojibake = (s: string) => s.includes('�')
 
 async function main() {
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) throw new Error('prisma indisponível (DATABASE_URL?)')
 
   console.log('Rebuscando o CSV do TSE com encoding corrigido (latin-1)...')

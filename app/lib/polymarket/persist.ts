@@ -11,7 +11,7 @@
  */
 
 import { createHash } from 'crypto'
-import { prisma } from '../../../lib/db'
+import { getPrisma } from '../../../lib/db'
 import { Redis } from '@upstash/redis'
 import { ELECTION_REGISTRY } from './country-market-map'
 import type { CountryAggregation, MarketSummary, CandidateSummary } from './bootstrap'
@@ -114,6 +114,7 @@ function makeDedupHash(marketDbId: string, candidateName: string, snapshotAt: Da
 export async function persistMarketData(
   countries: CountryAggregation[]
 ): Promise<{ persisted: number; skipped: number; errors: number }> {
+  const prisma = getPrisma()
   if (!prisma) return { persisted: 0, skipped: 0, errors: 0 }
   // Referência não-nula fixada aqui: dentro dos closures do Promise.all abaixo o
   // TypeScript não consegue provar que a guarda acima já rodou.

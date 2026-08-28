@@ -14,7 +14,7 @@
  */
 
 import type { ToolSpec } from './openrouter'
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 import { COUNTRY_DIVERGENCE, getCountryDivergence } from '../country-data'
 import { getLatestDate, loadDaily } from '../afos-daily/loader'
 import { fetchEventsBySlugs } from '../../app/lib/polymarket/client'
@@ -254,6 +254,7 @@ async function execMarketOdds(args: { country?: string }): Promise<unknown> {
 }
 
 async function execBrazilPolls(args: { days?: number; institute?: string }): Promise<unknown> {
+  const prisma = getPrisma()
   if (!prisma) return { error: 'database_unavailable' }
   const daysRaw = Number(args.days)
   const days = Number.isFinite(daysRaw) && daysRaw > 0 ? Math.min(daysRaw, 365) : 30

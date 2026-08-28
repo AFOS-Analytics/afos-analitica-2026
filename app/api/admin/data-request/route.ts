@@ -9,7 +9,7 @@
 import { NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
 import { Redis } from '@upstash/redis'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { anonymizeUser, exportUserData, processDeletionRequest } from '../../../../lib/governance/data-lifecycle'
 import { audit } from '../../../../lib/audit'
 import { clientIp } from '../../../../lib/net/client-ip'
@@ -74,6 +74,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'email and type required' }, { status: 400 })
   }
 
+  const prisma = getPrisma()
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
   }

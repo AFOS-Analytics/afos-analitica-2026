@@ -8,7 +8,7 @@
 
 import { NextResponse } from 'next/server'
 import { timingSafeEqual } from 'crypto'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { audit } from '../../../../lib/audit'
 
 function safeCompare(a: string, b: string): boolean {
@@ -30,6 +30,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
   }
 
+  const prisma = getPrisma()
   if (!prisma) return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
 
   try {

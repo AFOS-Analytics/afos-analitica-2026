@@ -8,7 +8,7 @@
 
 import { createHash } from 'crypto'
 import { Prisma } from '@prisma/client'
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 import { audit } from '../audit'
 
 function anonEmail(email: string): string {
@@ -24,6 +24,7 @@ function maskEmail(email: string): string {
 // ─── Anonymize ─────────────────────────────────────────────────────
 
 export async function anonymizeUser(email: string): Promise<{ success: boolean; error?: string }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'database_unavailable' }
 
   const normalized = email.toLowerCase().trim()
@@ -99,6 +100,7 @@ export async function anonymizeUser(email: string): Promise<{ success: boolean; 
 // ─── Export ────────────────────────────────────────────────────────
 
 export async function exportUserData(email: string): Promise<{ success: boolean; data?: Record<string, unknown>; error?: string }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'database_unavailable' }
 
   const normalized = email.toLowerCase().trim()
@@ -148,6 +150,7 @@ export async function exportUserData(email: string): Promise<{ success: boolean;
 // ─── Process Deletion Request ──────────────────────────────────────
 
 export async function processDeletionRequest(requestId: string): Promise<{ success: boolean; error?: string }> {
+  const prisma = getPrisma()
   if (!prisma) return { success: false, error: 'database_unavailable' }
 
   try {

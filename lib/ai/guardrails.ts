@@ -8,7 +8,7 @@
  */
 
 import { createHash } from 'crypto'
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 
 // ─── Types ─────────────────────────────────────────────────────────
 
@@ -63,6 +63,7 @@ export function contentHash(text: string): string {
 // ─── Publication gate ──────────────────────────────────────────────
 
 export async function canPublish(outputId: string): Promise<boolean> {
+  const prisma = getPrisma()
   if (!prisma) return false
 
   const output = await prisma.modelOutput.findUnique({
@@ -82,6 +83,7 @@ export function recordModelOutput(
   content: string,
   classification: Classification = 'experimental'
 ) {
+  const prisma = getPrisma()
   if (!prisma || !content.trim()) return
 
   prisma.modelOutput

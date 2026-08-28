@@ -9,7 +9,7 @@
  * + filtro contra protocolos já existentes (1 query). Sem N+1.
  */
 
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 import type { TSEPoll, PollScope } from './ingest'
 import { normalizeInstitute, classifyScope } from './ingest'
 import { redigirCpf } from '../../scripts/lib/cpf.mjs'
@@ -49,6 +49,7 @@ function semCpf(texto: string | null | undefined): string {
 export type InsertedPoll = TSEPoll & { scope: PollScope }
 
 export async function persistPolls(polls: TSEPoll[], runType: string = 'tse_daily'): Promise<{ inserted: number; skipped: number; insertedPolls: InsertedPoll[] }> {
+  const prisma = getPrisma()
   if (!prisma || polls.length === 0) return { inserted: 0, skipped: 0, insertedPolls: [] }
 
   // Dedup intra-execução: TSE pode retornar mesma pesquisa 2x (correção)

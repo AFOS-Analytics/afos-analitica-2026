@@ -69,7 +69,8 @@ function ehCauda(nome: string) {
 
 async function main() {
   const args = process.argv.slice(2)
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) { console.error('SEM BANCO: DATABASE_URL ausente ou inválida'); process.exit(1) }
 
   if (args.includes('--lista') || args.length === 0) {

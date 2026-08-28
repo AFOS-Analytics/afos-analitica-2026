@@ -148,7 +148,8 @@ function gravar(caminhoRel: string, conteudo: string, manifesto: any[]): void {
 
 async function main() {
   const apenasVerificar = process.argv.includes('--verificar')
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) { console.error('❌ SEM BANCO: DATABASE_URL ausente ou inválida'); process.exit(1) }
 
   const modelos = Object.keys(prisma).filter(

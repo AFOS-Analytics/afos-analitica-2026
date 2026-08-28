@@ -8,7 +8,7 @@
 import { SYSTEM_PROMPT, uiTranslationPrompt, editorialTranslationPrompt, afosDailyTranslationPrompt } from './prompts'
 import { shieldLinks, unshieldLinks, stripNestedGlossaryLinks, anchorTranslationPrompt } from './link-shield'
 import { createHash } from 'crypto'
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 
 export interface TranslationRequest {
   sourceText: string
@@ -224,6 +224,7 @@ async function callProvider(
 import { assessRisk, recordModelOutput } from './guardrails'
 
 function trackLlmRun(provider: string, inputText: string, inputHash: string, outputText: string, outputHash: string) {
+  const prisma = getPrisma()
   if (!prisma) return
 
   const riskFlags = assessRisk(inputText, outputText)

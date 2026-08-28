@@ -43,7 +43,8 @@ function hojeUtc(): string {
 }
 
 async function main() {
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) { console.error('SEM BANCO: DATABASE_URL ausente ou inválida'); process.exit(1) }
 
   const rows = await prisma.analysisReport.findMany({

@@ -61,8 +61,8 @@ export async function createSubscriber(
     })
     const reativando = !!anterior && anterior.status !== 'active'
 
-    // Upsert atômico (race-safe em double-submit). isNew via token comparison:
-    // CREATE → token retornado é newToken; UPDATE → mantém token antigo.
+    // Upsert, que resolve duplo-clique no caminho comum. O caso raro em que
+    // ele não basta (dois CREATE simultâneos) é tratado no catch, por P2002.
     const lead = await prisma.lead.upsert({
       where: { email: normalized },
       update: {
@@ -98,19 +98,20 @@ export async function createSubscriber(
       finalToken = updated.unsubscribeToken
     }
 
-    const isNew = finalToken === newToken
+    // ⭐ SIMPLIFICADO: `isNew` era inferido comparando o token devolvido com o
+    // recém-gerado, um truque que obrigava a raciocinar sobre o backfill para
+    // saber se ainda valia. Agora a resposta vem do fato que já temos em mãos:
+    // não existia registro antes.
+    const isNew = !anterior
 
-    // ⭐ REATIVAÇÃO conta como consentimento novo. Quem voltou preencheu o
-    // formulário e marcou a caixa de novo, então: registra o consentimento
-    // (LGPD Art. 8, a base legal é do ATO, não do cadastro antigo) e manda o
-    // e-mail de boas-vindas. Antes, quem reativava não recebia nem uma coisa
-    // nem outra, porque `isNew` era false.
-    if (reativando) {
-      audit('lead_reactivated', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
-    }
+    // Criação e reativação são atos DIFERENTES e cada um tem sua linha de
+    // auditoria. Os dois disparam consentimento novo: quem voltou preencheu o
+    // formulário e marcou a caixa outra vez, e a base legal LGPD é do ATO, não
+    // do cadastro antigo.
+    if (isNew) audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
+    if (reativando) audit('lead_reactivated', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
 
     if (isNew || reativando) {
-      if (isNew) audit('lead_created', 'crm.leads', lead.id, { ip: meta?.ip, userAgent: meta?.userAgent })
 
       // Consentimento LGPD Art. 8 (IP/UA hasheados em consent.ts)
       registerConsent({

@@ -96,7 +96,8 @@ async function main() {
   console.log(`  PICO de gap            : ${doBackup.max.toFixed(2)}pp em ${doBackup.dia}`)
 
   // --- lado do BANCO ---
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) { console.error('\n⚠️  Sem banco: não dá para comparar. Rode com DATABASE_URL.'); process.exit(1) }
   const vivo = await prisma.marketPrice.findMany({
     where: { market: { slug: SLUG } },

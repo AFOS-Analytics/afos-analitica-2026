@@ -31,7 +31,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 // 🔑 A régua vem de UM lugar. Ver o cabeçalho de `lib/us-market/portao.ts`.
 import { fechaOPortao, type AmplitudeFaixas } from '../../../../lib/us-market/portao'
 
@@ -60,6 +60,7 @@ export async function GET(req: NextRequest) {
   if (!slugs.length) return vazio('sem-slugs')
   // Teto de sanidade: o consumidor pede cinco. Lista aberta viraria varredura.
   if (slugs.length > 25) return vazio('slugs-demais')
+  const prisma = getPrisma()
   if (!prisma) return vazio('sem-banco')
 
   try {

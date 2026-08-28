@@ -8,7 +8,7 @@
  */
 
 import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 
 /**
  * 🔴 LISTA BRANCA do `normalizedPayload`, instalada 22/Ago/2026.
@@ -49,6 +49,7 @@ function apenasPublicos(payload: unknown): Record<string, unknown> {
 }
 
 export async function GET(request: Request) {
+  const prisma = getPrisma()
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
   }

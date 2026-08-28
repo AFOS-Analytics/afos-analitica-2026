@@ -17,7 +17,8 @@ const APPLY = process.argv.includes('--apply')
 const norm = (s: string) => (s || '').toUpperCase().replace(/[^A-Z0-9]/g, '')
 
 async function main() {
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) throw new Error('prisma indisponível (DATABASE_URL?)')
   const reg = JSON.parse(readFileSync(join(process.cwd(), 'hf-assets', 'polls', 'tse-registry.json'), 'utf-8')).records as any[]
   const byP = new Map(reg.map((r) => [norm(r.register_tse), r]))

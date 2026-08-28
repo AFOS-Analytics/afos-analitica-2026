@@ -20,7 +20,8 @@ import { classifyScope } from '../lib/tse/ingest'
 const APPLY = process.argv.includes('--apply')
 
 async function main() {
-  const { prisma } = await import('../lib/db')
+  const { getPrisma } = await import('../lib/db')
+  const prisma = getPrisma()
   if (!prisma) throw new Error('prisma indisponível (DATABASE_URL?)')
 
   const findings = await prisma.researchFinding.findMany({

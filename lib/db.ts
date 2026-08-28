@@ -58,9 +58,10 @@ export function getPrismaInitError(): string | null {
  * ✅ `getPrisma()` REPETE a criação quando ela falhou antes, e guarda o
  * sucesso. Falha de inicialização passa a ser um evento, não uma sentença.
  *
- * ⚠️ O `export const prisma` abaixo continua, para não quebrar os pontos que
- * já o importam, mas ele carrega o defeito por natureza: é uma leitura só, do
- * momento do import. **Caminho novo usa `getPrisma()`.**
+ * ⭐ E ele é a ÚNICA porta. O antigo `export const prisma` foi REMOVIDO em
+ * 27/Ago/2026: manter os dois era manter o defeito vivo num deles e obrigar
+ * quem lê a saber qual usar. Apagar a constante fez o COMPILADOR provar que
+ * não sobrou nenhum ponto no caminho antigo, em vez de eu prometer que não.
  */
 export function getPrisma(): PrismaClient | null {
   if (globalForPrisma.prisma) return globalForPrisma.prisma
@@ -71,5 +72,3 @@ export function getPrisma(): PrismaClient | null {
   }
   return client
 }
-
-export const prisma: PrismaClient | null = getPrisma()

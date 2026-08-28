@@ -5,9 +5,10 @@
  *   npx tsx scripts/purge-chat-logs.ts          # purga real
  *   npx tsx scripts/purge-chat-logs.ts --dry    # só conta, não apaga
  */
-import { prisma } from '../lib/db'
+import { getPrisma } from '../lib/db'
 
 async function main() {
+  const prisma = getPrisma()
   if (!prisma) {
     console.error('[purge-chat-logs] DATABASE_URL indisponível.')
     process.exit(1)

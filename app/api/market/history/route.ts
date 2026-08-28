@@ -22,9 +22,10 @@
  */
 
 import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 
 export async function GET(request: Request) {
+  const prisma = getPrisma()
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
   }

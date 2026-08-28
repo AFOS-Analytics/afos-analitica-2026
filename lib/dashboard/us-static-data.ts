@@ -84,7 +84,8 @@ export interface UsPollsData {
 export async function loadUsPollsDataFresh(): Promise<UsPollsData | null> {
   const doArquivo = loadUsPollsData()
   try {
-    const { prisma } = await import('../db')
+    const { getPrisma } = await import('../db')
+    const prisma = getPrisma()
     if (!prisma) return doArquivo
     const reg = await prisma.analysisReport.findFirst({
       where: { slug: { startsWith: 'us-generic-ballot-' } },

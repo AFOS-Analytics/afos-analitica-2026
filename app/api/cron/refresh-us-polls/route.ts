@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { upsertAnalysisReport } from '../../../../lib/analysis/persist'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
@@ -55,6 +55,7 @@ export async function GET(request: Request) {
       )
     }
 
+    const prisma = getPrisma()
     if (!prisma) {
       return NextResponse.json(
         { ok: false, motivo: 'banco indisponível', ms: Date.now() - t0 },

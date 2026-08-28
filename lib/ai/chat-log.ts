@@ -11,7 +11,7 @@
  * a resposta do chat ao usuário.
  */
 
-import { prisma } from '../db'
+import { getPrisma } from '../db'
 
 interface LogTurnInput {
   sessionId: string
@@ -37,6 +37,7 @@ export function scrubPII(text: string): string {
 }
 
 export async function logChatTurn(input: LogTurnInput): Promise<void> {
+  const prisma = getPrisma()
   if (!prisma) return
   const sessionId = (input.sessionId || '').trim().slice(0, 64)
   if (!sessionId) return

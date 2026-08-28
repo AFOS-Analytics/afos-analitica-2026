@@ -9,7 +9,7 @@
  */
 
 import { NextResponse } from 'next/server'
-import { prisma } from '../../../../lib/db'
+import { getPrisma } from '../../../../lib/db'
 import { audit } from '../../../../lib/audit'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
@@ -22,6 +22,7 @@ export async function GET(request: Request) {
   const unauthorized = requireCronAuth(request)
   if (unauthorized) return unauthorized
 
+  const prisma = getPrisma()
   if (!prisma) {
     return NextResponse.json({ error: 'database_unavailable' }, { status: 503 })
   }
