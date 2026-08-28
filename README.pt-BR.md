@@ -249,6 +249,10 @@ Um portão de corte duro sobre grandeza ruidosa se lê pela **série**, não pel
 
 Média de janela móvel se move sem dado novo. A média da casa para o generic ballot é aritmética simples sobre 30 dias, e em 26/Ago/2026 ela foi de D+5,91 para D+6,16 com **zero pesquisa nova**: a janela rolou um dia, três rodadas saíram pela borda (duas delas mediam abaixo da média) e a base caiu de 22 para 19 pesquisas e de 16 para 15 institutos. Antes de escrever qualquer verbo de movimento, comparar `nPesquisas` e `nInstitutos` contra a leitura anterior: se caíram, a variação é de composição até prova em contrário, e escrever "a vantagem democrata cresceu" seria falso.
 
+**Índice atrasado e buraco dentro da janela são defeitos diferentes, e o medidor global só enxerga o primeiro (28/Ago/2026).** A fonte é uma única tabela da Wikipédia, alimentada por editores voluntários, e o `lib/us-polls/atraso.mjs` mede a distância entre a data de campo mais recente dela e hoje. Esse número fica verde assim que um lote entra, e um lote pode entrar pulando a rodada de uma casa: em 24/Ago um lote de 16 linhas deixou a tabela em dia, e a onda de 14 a 17/Ago da The Economist/YouGov nunca entrou, embora outras quatro casas com o *mesmo* dia de encerramento de campo tenham entrado. A rodada que falta encerra campo **dentro** da janela de 30 dias, então ela move a média sem mover a data mais recente, que é a única coisa que o medidor global relata.
+
+Quem pega isso compara cada casa **com ela mesma**: uma casa semanal calada há 18 dias é anomalia, uma casa mensal calada há 18 dias é rotina, e comparar casa com casa não diz nada, porque as cadências são diferentes por natureza. O `medirCadencia` exige ao menos 5 datas de campo distintas em 180 dias, usa a mediana dos intervalos e não a média, e acusa em 2 ciclos perdidos. Reexecutado sobre o mesmo arquivo com o relógio em 25/Ago, o atraso global marcava brandos 8 dias enquanto a YouGov já estava em 2,1 ciclos. Como o número do atraso, ele é impresso e enviado por email e **nunca gravado no JSON servido**: o `/us-polls-data.json` é público, e "esta casa está calada há 18 dias" é fato sobre a nossa coleta, não sobre a eleição. Ele avisa em vez de bloquear, porque casa calada não corrompe nada, e trava que para a rodada por algo que não se conserta do nosso lado é trava que alguém aprende a pular.
+
 ### Estrutura do Projeto
 
 ```
@@ -559,7 +563,7 @@ npx tsx scripts/check-backup-sem-pii.ts     # trava de dado pessoal
 npx tsx scripts/check-backup-restauravel.ts # prova que RESTAURA
 ```
 
-A ultima trava e a que importa, e ela nao compara bytes. Reconstroi a serie a partir dos CSV **sem tocar no banco** e verifica se ela responde a mesma pergunta que o banco responde. Medido em 27/Ago/2026: 49.893 linhas de preco, 133 dias com os dois nomes, pico de gap de **41,80pp em 01/Ago/2026**, identico dos dois lados. Backup que ninguem tentou restaurar nao e backup.
+A ultima trava e a que importa, e ela nao compara bytes. Reconstroi a serie a partir dos CSV **sem tocar no banco** e verifica se ela responde a mesma pergunta que o banco responde. Medido em 28/Ago/2026: 50.267 linhas de preco, 134 dias com os dois nomes, pico de gap de **41,80pp em 01/Ago/2026**, identico dos dois lados. Backup que ninguem tentou restaurar nao e backup.
 
 O `.github/workflows/backup-neon.yml` roda todo dia as 15:00 UTC. Saida "0 alterados" e determinismo, nao tarefa parada: para distinguir backup em dia de backup congelado, comparar a contagem do banco com a soma de linhas do `MANIFEST.json`.
 

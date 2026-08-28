@@ -248,6 +248,10 @@ A hard-cut gate on a noisy quantity is read as a **series**, not as an instant. 
 
 A rolling-window average moves with no new data. The house average for the generic ballot is a simple arithmetic mean over 30 days, and on 26/Aug/2026 it went from D+5.91 to D+6.16 with **zero new polls**: the window rolled one day, three rounds fell off the edge (two of them measuring below the average) and the base dropped from 22 to 19 polls and from 16 to 15 pollsters. Before writing any verb of movement, compare `nPesquisas` and `nInstitutos` against the previous reading: if they fell, the change is composition until proven otherwise, and writing "the Democratic lead grew" would be false.
 
+**A stale index and a hole inside the window are different defects, and the global lag measure only sees the first (28/Aug/2026).** The source is a single Wikipedia table fed by volunteer editors, and `lib/us-polls/atraso.mjs` measures how far its newest field date sits behind today. That number goes green as soon as a batch lands, and a batch can land while skipping one pollster's round: on 24/Aug a batch of 16 rows brought the table current, and The Economist/YouGov's 14-17/Aug wave never entered even though four other pollsters sharing the *same* field end date did. The missing round closes field **inside** the 30-day window, so it moves the average without moving the most recent date, which is the only thing the global measure reports.
+
+What catches it compares each pollster **against itself**: a weekly house silent for 18 days is an anomaly, a monthly house silent for 18 days is routine, and comparing pollsters against one another says nothing because their cadences differ by nature. `medirCadencia` requires at least 5 distinct field-end dates within 180 days, takes the median gap rather than the mean, and flags at 2 missed cycles. Replayed against the same file with the clock set to 25/Aug, the global lag read a mild 8 days while YouGov was already at 2.1 cycles. Like the lag figure it is printed and emailed and **never written into the served JSON**: `/us-polls-data.json` is public, and "this pollster has been silent for 18 days" is a fact about our collection, not about the election. It warns instead of blocking, because a silent pollster corrupts nothing, and a gate that stops the round over something we cannot fix from our side is a gate someone learns to skip.
+
 ### Project Structure
 
 ```
@@ -558,7 +562,7 @@ npx tsx scripts/check-backup-sem-pii.ts     # personal-data gate
 npx tsx scripts/check-backup-restauravel.ts # proves it RESTORES
 ```
 
-The last gate is the one that matters, and it does not compare bytes. It rebuilds the series from the CSVs **without touching the database** and checks that it answers the same question the database answers. Measured on 27/Aug/2026: 49,893 price rows, 133 days carrying both names, peak gap **41.80pp on 01/Aug/2026**, identical from both sides. A backup nobody has tried to restore is not a backup.
+The last gate is the one that matters, and it does not compare bytes. It rebuilds the series from the CSVs **without touching the database** and checks that it answers the same question the database answers. Measured on 28/Aug/2026: 50,267 price rows, 134 days carrying both names, peak gap **41.80pp on 01/Aug/2026**, identical from both sides. A backup nobody has tried to restore is not a backup.
 
 `.github/workflows/backup-neon.yml` runs daily at 15:00 UTC. An output of "0 changed" is determinism, not a stalled job: to tell a current backup from a frozen one, compare the row count in the database against the sum of rows in `MANIFEST.json`.
 
