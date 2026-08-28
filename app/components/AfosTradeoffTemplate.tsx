@@ -797,7 +797,7 @@ export function AfosTradeoffTemplate({ data, nav, md, country = 'br' }: Props) {
           </div>
         </div>
 
-        <InlineSubscribe locale={locale} isBlue={isBlue} product="tradeoff" />
+        <InlineSubscribe locale={locale} isBlue={isBlue} product="tradeoff" country={country} />
 
         {/* Edition navigation (archive link always present) */}
         <nav className="mt-8 flex flex-wrap items-center justify-between gap-3 text-sm">

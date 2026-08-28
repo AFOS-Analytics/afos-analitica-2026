@@ -50,11 +50,20 @@ interface InlineSubscribeProps {
   isBlue: boolean
   /** Define a cópia e a origem registrada do cadastro. */
   product: 'daily' | 'tradeoff' | 'weekly'
+  /** País da edição. Só o Tradeoff precisa: ele roda BR e US no mesmo template. */
+  country?: string
 }
 
-export function InlineSubscribe({ locale, isBlue, product }: InlineSubscribeProps) {
+export function InlineSubscribe({ locale, isBlue, product, country }: InlineSubscribeProps) {
   const loc: Loc = locale === 'en' || locale === 'es' ? locale : 'pt-BR'
   const t = T[loc]
+
+  // A cópia continua vindo do `product`; só a ORIGEM registrada é qualificada,
+  // e apenas para o Tradeoff, que é o único que roda dois países no mesmo
+  // template. Sem isto, não dá para medir qual dos dois converte.
+  const origem = product === 'tradeoff' && (country === 'br' || country === 'us')
+    ? (`tradeoff-${country}` as const)
+    : product
 
   const shell = isBlue
     ? 'bg-white/10 border-white/20'
@@ -78,7 +87,7 @@ export function InlineSubscribe({ locale, isBlue, product }: InlineSubscribeProp
       {/* Formulário centralizado; o rótulo de consentimento segue alinhado à
           esquerda dentro dele, que é o comportamento correto para caixa de marcar. */}
       <div className="max-w-md mx-auto text-left">
-        <SubscribeForm captureSource={product} />
+        <SubscribeForm captureSource={origem} />
       </div>
 
       <p className={`text-xs mt-3 ${noteColor}`}>{t.langNote}</p>

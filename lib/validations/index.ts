@@ -59,7 +59,11 @@ export const subscribeSchema = z.object({
   visitorId: z.string().uuid().optional().catch(undefined),
   // 'daily' e 'tradeoff' = bloco de inscrição no fim das edições publicadas.
   // Separar a origem permite medir se o conteúdo converte, sem tracking em e-mail.
-  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'weekly']).optional().catch(undefined),
+  // 🔴 'tradeoff' sozinho era CEGO AO PAIS: as edicoes do Brasil e dos EUA
+  // usam o MESMO template e mandavam o mesmo valor, entao nao dava para saber
+  // qual dos dois converte. 'tradeoff' continua valido para nao invalidar
+  // registro antigo. 'weekly' segue sem sufixo porque so existe para os EUA.
+  captureSource: z.enum(['popup', 'gate', 'landing', 'daily', 'tradeoff', 'tradeoff-br', 'tradeoff-us', 'weekly']).optional().catch(undefined),
 })
 
 // ── Visitor ───────────────────────────────────────────────

@@ -13,7 +13,7 @@ import { trackEvent } from '../lib/analytics/events';
 
 interface SubscribeFormProps {
   visitorId?: string;
-  captureSource: 'popup' | 'gate' | 'landing' | 'daily' | 'tradeoff' | 'weekly';
+  captureSource: 'popup' | 'gate' | 'landing' | 'daily' | 'tradeoff' | 'tradeoff-br' | 'tradeoff-us' | 'weekly';
   onSuccess?: () => void;
   variant?: 'default' | 'gate';
   className?: string;
@@ -41,7 +41,10 @@ export function SubscribeForm({ visitorId, captureSource, onSuccess, variant = '
   const eventBase =
     captureSource === 'landing' ? 'landing_subscribe'
     : captureSource === 'daily' ? 'daily_subscribe'
-    : captureSource === 'tradeoff' ? 'tradeoff_subscribe'
+    // ⚠️ `startsWith`, nao igualdade: a origem do Tradeoff passou a ser
+    // qualificada por pais ('tradeoff-br' e 'tradeoff-us') em 28/Ago/2026, e a
+    // comparacao exata deixaria os dois caindo no evento de POPUP em silencio.
+    : captureSource.startsWith('tradeoff') ? 'tradeoff_subscribe'
     : captureSource === 'weekly' ? 'weekly_subscribe'
     : variant === 'gate' ? 'gate'
     : 'popup';

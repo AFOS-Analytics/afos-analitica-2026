@@ -30,6 +30,38 @@ const DEFAULT_STATE: VisitorState = {
   qualifiedSessions: 0, popupDismissals: 0, subscribed: false, eligible: 'free', showPopup: false,
 };
 
+/**
+ * 🔴 O FUNIL NAO PODE FALHAR PARA DESLIGADO EM SILENCIO.
+ *
+ * Medido em 28/Ago/2026. O `DEFAULT_STATE` tem `showPopup: false`, e TRES
+ * caminhos do cliente caiam nele sem log e sem retentativa: `visitorId` vazio,
+ * resposta nao-ok (503 do banco, 400 de id invalido, 429 do limite de taxa) e
+ * erro de rede ou estouro do timeout de 3s.
+ *
+ * Em qualquer um deles o popup E o portao simplesmente nao existiam, numa
+ * pagina que parecia perfeitamente normal. E popup + portao produziram **62%
+ * de todos os leads da base** (18 de 29 medidos em 28/Ago), entao a falha
+ * silenciosa apagava a maior parte da captacao sem deixar rastro.
+ *
+ * ⭐ A REGRA: o popup e a OPORTUNIDADE de captura e deve falhar para LIGADO; o
+ * portao BLOQUEIA e deve falhar para ABERTO. Estado desconhecido nunca barra
+ * ninguem, e nunca some com a chance de captar.
+ */
+const CONTINGENCIA_LS_KEY = 'afos_popup_dismissals';
+const MAX_DISMISSALS_CONTINGENCIA = 3;
+
+function estadoDeContingencia(): VisitorState {
+  // Respeita o teto de descartes mesmo sem o servidor, lendo o espelho local.
+  let descartes = 0;
+  try { descartes = parseInt(localStorage.getItem(CONTINGENCIA_LS_KEY) || '0', 10) || 0; } catch {}
+  return {
+    ...DEFAULT_STATE,
+    popupDismissals: descartes,
+    showPopup: descartes < MAX_DISMISSALS_CONTINGENCIA,
+    eligible: 'free', // ⛔ NUNCA 'gate' sem estado confirmado: nao se bloqueia no escuro.
+  };
+}
+
 const VisitorStateContext = createContext<VisitorCtx | null>(null);
 
 export function useVisitorState(): VisitorCtx {
@@ -52,24 +84,52 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
   // Fetch state from backend (3s timeout, fallback to free on error)
   // Also sync old localStorage subscribers → backend (one-time migration)
   useEffect(() => {
-    if (!visitorId) { setLoading(false); return; }
+    if (!visitorId) {
+      // 🔴 Este caminho tambem apagava o funil em silencio. Sem id nao ha estado
+      // de servidor, mas isso NAO e motivo para deixar de oferecer o cadastro.
+      console.warn('[visitor] sem visitorId, seguindo em contingencia')
+      setState(estadoDeContingencia());
+      setLoading(false);
+      return;
+    }
 
     // Check if user was subscribed via the OLD popup system (pre-migration)
     let wasOldSubscriber = false;
     try { wasOldSubscriber = localStorage.getItem(SUBSCRIBED_LS_KEY) === 'true'; } catch {}
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 3000);
+    // Uma retentativa, com folga maior: banco frio mais lambda fria passam de
+    // 3s com facilidade, e perder o funil por lentidao e caro demais.
+    async function buscarEstado(): Promise<{ ok?: boolean; state?: VisitorState } | null> {
+      for (const ms of [3000, 5000]) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), ms);
+        try {
+          const r = await fetch('/api/visitor/state', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ visitorId }),
+            signal: controller.signal,
+          });
+          if (r.ok) return await r.json();
+        } catch {}
+        finally { clearTimeout(timeout); }
+      }
+      return null;
+    }
 
-    fetch('/api/visitor/state', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ visitorId }),
-      signal: controller.signal,
-    })
-      .then(r => r.ok ? r.json() : null)
+    buscarEstado()
       .then(data => {
-        if (!data?.ok) return;
+        if (!data?.ok || !data.state) {
+          // 🔴 Aqui morava o defeito: `return` seco deixava o estado no padrao,
+          // com showPopup false, e o funil sumia calado.
+          if (wasOldSubscriber) {
+            setState(prev => ({ ...prev, subscribed: true, eligible: 'subscribed', showPopup: false }));
+          } else {
+            console.warn('[visitor] estado indisponivel, seguindo em contingencia (popup ligado, portao aberto)');
+            setState(estadoDeContingencia());
+          }
+          return;
+        }
 
         // If old subscriber but backend doesn't know → migrate to new system
         if (wasOldSubscriber && !data.state.subscribed) {
@@ -87,12 +147,13 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
         setState(data.state);
       })
       .catch(() => {
-        // On error: if old subscriber, trust localStorage
         if (wasOldSubscriber) {
           setState(prev => ({ ...prev, subscribed: true, eligible: 'subscribed', showPopup: false }));
+        } else {
+          setState(estadoDeContingencia());
         }
       })
-      .finally(() => { clearTimeout(timeout); setLoading(false); });
+      .finally(() => { setLoading(false); });
   }, [visitorId]);
 
   // Track interaction (scroll or click — once)
@@ -137,6 +198,13 @@ export function VisitorStateProvider({ children }: { children: React.ReactNode }
   const dismissPopup = useCallback(() => {
     setPopupDismissedThisSession(true);
     try { sessionStorage.setItem('afos_popup_dismissed', '1'); } catch {}
+    // 📌 ESPELHO LOCAL do contador. Sem ele, a contingencia nao teria como
+    // respeitar o teto de 3 descartes e mostraria o popup de novo a quem ja
+    // disse nao tres vezes, justamente durante uma falha do servidor.
+    try {
+      const atual = parseInt(localStorage.getItem(CONTINGENCIA_LS_KEY) || '0', 10) || 0;
+      localStorage.setItem(CONTINGENCIA_LS_KEY, String(atual + 1));
+    } catch {}
     setState(prev => ({ ...prev, showPopup: false }));
 
     if (visitorId) {
