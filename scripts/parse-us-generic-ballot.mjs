@@ -14,7 +14,7 @@
 
 import { writeFileSync } from 'fs'
 import { coletarGenericBallot } from '../lib/us-polls/collect.mjs'
-import { medirAtraso } from '../lib/us-polls/atraso.mjs'
+import { medirAtraso, medirCadencia } from '../lib/us-polls/atraso.mjs'
 
 const arg = (n, padrao) => {
   const m = process.argv.find((a) => a.startsWith(`--${n}=`))
@@ -43,4 +43,25 @@ const at = medirAtraso(saida)
 if (at.atrasoDias !== null) {
   const sinal = at.atrasoDias >= 14 ? '🔴' : at.atrasoDias >= 7 ? '⚠️' : '·'
   console.log(`   ${sinal} atraso da fonte: ${at.atrasoDias} dia(s), campo mais recente ${at.campoMaisRecente}  [USO INTERNO, nao publicar]`)
+}
+
+// ⚠️ CADÊNCIA POR CASA: mesmo regime do atraso acima. Medida, impressa e NUNCA
+// gravada no arquivo, que é servido publicamente.
+//
+// Por que não basta o atraso global: ele mede a PONTA da base e fica verde
+// assim que um lote entra, mesmo que o lote tenha pulado a rodada de uma casa.
+// Em 24/Ago/2026 entraram 16 linhas de uma vez, o atraso caiu, e a onda de
+// 14 a 17/Ago da The Economist/YouGov nunca entrou. Buraco no MEIO da janela
+// não mexe na data mais recente, mas mexe na média.
+const cad = medirCadencia(saida)
+if (cad.atrasadas.length) {
+  console.log(`   🔴 ${cad.atrasadas.length} casa(s) fora da própria cadência  [USO INTERNO, nao publicar]`)
+  for (const c of cad.atrasadas) {
+    console.log(
+      `      ${c.instituto}: publica a cada ~${c.cadenciaDias}d, calada há ${c.silencioDias}d (${c.ciclosPerdidos} ciclos), último campo ${c.ultimoCampo}`,
+    )
+  }
+  console.log('      conferir no site do instituto se a rodada existe e ficou fora do índice')
+} else if (cad.avaliadas.length) {
+  console.log(`   · cadência: ${cad.avaliadas.length} casa(s) avaliada(s), nenhuma fora do próprio ritmo`)
 }

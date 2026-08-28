@@ -4,8 +4,8 @@ import { getPrisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
-import { medirAtraso, cruzouMarco } from '../../../../lib/us-polls/atraso.mjs'
-import { avisarAtrasoDaFonte } from '../../../../lib/cron/alerta'
+import { medirAtraso, cruzouMarco, medirCadencia, cadenciaCruzouMarco } from '../../../../lib/us-polls/atraso.mjs'
+import { avisarAtrasoDaFonte, avisarCasaCalada } from '../../../../lib/cron/alerta'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
 
@@ -93,6 +93,27 @@ export async function GET(request: Request) {
       if (cruzouMarco(atraso.atrasoDias)) {
         void avisarAtrasoDaFonte(atraso.atrasoDias, atraso.campoMaisRecente)
       }
+    }
+
+    // 🔴 E a CADÊNCIA POR CASA, que o atraso acima não enxerga. Ele mede a
+    // ponta da base e fica verde assim que um lote entra; um lote pode entrar
+    // pulando a rodada de uma casa, e aí falta pesquisa no MEIO da janela, que
+    // é onde a média é calculada. Medido em 28/Ago/2026: atraso global de 11
+    // dias, comum, e a The Economist/YouGov com duas ondas publicadas fora do
+    // índice, uma delas com campo de 17/Ago, dentro da janela.
+    //
+    // Mesmo regime do atraso: log e email, nunca no objeto gravado.
+    const cadencia = medirCadencia(dados)
+    if (cadencia.atrasadas.length) {
+      console.log(
+        `[cron/refresh-us-polls] fora da cadência: ${cadencia.atrasadas
+          .map((c) => `${c.instituto} (${c.ciclosPerdidos} ciclos, último campo ${c.ultimoCampo})`)
+          .join('; ')}`,
+      )
+      // Marco por CICLO da própria casa, não por dia: uma casa semanal alerta
+      // no máximo uma vez por semana enquanto seguir calada.
+      const alertar = cadencia.atrasadas.filter(cadenciaCruzouMarco)
+      if (alertar.length) void avisarCasaCalada(alertar)
     }
 
     return NextResponse.json(

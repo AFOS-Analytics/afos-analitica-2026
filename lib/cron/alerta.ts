@@ -92,3 +92,49 @@ export async function avisarAtrasoDaFonte(
     console.error('[cron/refresh-us-polls] o proprio alerta de atraso falhou:', e)
   }
 }
+
+/**
+ * Uma casa de pesquisa saiu da PRÓPRIA cadência.
+ *
+ * Diferente de `avisarAtrasoDaFonte`, que olha a ponta da base. Este olha
+ * buraco no MEIO: em 28/Ago/2026 a tabela estava com 11 dias de atraso global,
+ * o que é comum, e a The Economist/YouGov tinha DUAS ondas publicadas fora do
+ * índice, uma delas com campo dentro da janela que a média usa.
+ *
+ * ⛔ Este número não se publica. É diagnóstico da nossa coleta.
+ */
+export async function avisarCasaCalada(
+  casas: { instituto: string; cadenciaDias: number; silencioDias: number; ciclosPerdidos: number; ultimoCampo: string }[]
+): Promise<void> {
+  if (!casas.length) return
+  const destino = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
+  try {
+    await sendSystemAlert(destino, {
+      type: `casa-calada:us-generic-ballot (${casas.map((c) => c.instituto).join(', ')})`,
+      message: `${casas.length} casa(s) de pesquisa fora da propria cadencia no generic ballot dos EUA.`,
+      details: [
+        ...casas.map(
+          (c) =>
+            `${c.instituto}: publica a cada ~${c.cadenciaDias}d, calada ha ${c.silencioDias}d (${c.ciclosPerdidos} ciclos), ultimo campo ${c.ultimoCampo}`,
+        ),
+        '',
+        'O QUE ISSO E: cada casa e comparada com ELA MESMA. Uma casa semanal',
+        'calada ha 18 dias e anomalia; uma casa mensal calada ha 18 dias e',
+        'rotina. Por isso o corte e em ciclos dela, nao em dias.',
+        '',
+        'O QUE FAZER: abrir o site do INSTITUTO e ver se a rodada existe. Se',
+        'existir e nao estiver no indice, o buraco e da Wikipedia, e a rodada',
+        'entra quando os editores de la a acrescentarem.',
+        '',
+        'O QUE NAO FAZER: digitar a linha a mao. Numero posto a mao nao se',
+        'reproduz na leitura seguinte e some no proximo parse.',
+        '',
+        'NAO PUBLICAR este numero em peca nenhuma. A regra esta em',
+        'memory/feedback_descrever_o_metodo_sim_relatar_a_falha_nao.md',
+        `quando: ${new Date().toISOString()}`,
+      ].join('\n'),
+    })
+  } catch (e) {
+    console.error('[cron/refresh-us-polls] o proprio alerta de casa calada falhou:', e)
+  }
+}
