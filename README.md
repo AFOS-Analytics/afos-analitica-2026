@@ -136,6 +136,26 @@ and the block adapts to both page themes (light and Sapphire Blue).
 which makes it possible to measure whether recurring content converts, without any
 tracking pixel in email.
 
+**What the signup flow guarantees, and why (audited 27/Aug/2026).** A reader reported
+being unable to subscribe on desktop **and** phone. The audit found twelve defects, and
+most of them never appeared in a log or broke a test. The rules below are the answer, and
+each one is a class of failure that is now closed:
+
+| Rule | The failure it closes |
+|---|---|
+| **An optional analytics field never blocks the primary action** | A `visitorId` that was not a UUID, or an unknown `captureSource`, used to fail the whole request. Both now degrade to `undefined`: the attribution of that signup is lost, the subscriber is not. Losing the source is cheap; losing the person is not |
+| **Every stored value is checked, not just read** | The visitor id was read back from cookie or localStorage without validating its shape, so a corrupted value blocked that device **forever** and the value was re-read on every attempt |
+| **The email is sanitised before it is judged** | Validation ran before trimming, so a leading space or a zero-width character pasted from a web page produced "invalid email" on a visually perfect address, and the browser's `trim()` does not remove zero-width |
+| **A failed database client is retried, never cached as dead** | The client was built once per instance. One failed build served an error for the entire life of that instance, which is why the reader failed on two devices while direct calls succeeded |
+| **Rate limiting fails OPEN and repairs its own key** | `INCR` creates a key with no expiry and `EXPIRE` was a second round trip, so a process dying between them blocked that IP permanently. A Redis outage used to return 500 to a legitimate person; it is anti-abuse, not correctness |
+| **Signing up again is a fresh act of consent** | Re-subscribing after unsubscribing used to show success and change nothing: status stayed `unsubscribed`, no welcome email, and the person never heard from us again. It now reactivates, records consent again and welcomes them back |
+| **Browser language is matched by prefix** | Browsers send `en-US` and `es-ES`; exact comparison against `pt-BR/en/es` matched only Portuguese. Measured: 31 of 31 leads carried `pt-BR` while two had chosen English by hand |
+| **A failure that is returned is read** | `registerConsent` and `sendWelcomeEmail` **return** failure rather than throwing, so their `.catch()` never fired and both failed in complete silence. Any guard on a function whose return type carries `success` must check the return, not only catch |
+
+⛔ Two things deliberately did **not** get more permissive: `email` and `consent` remain
+strict. Sanitising input does not loosen a legal basis, and a missing or false consent
+still blocks the request, with its own error rather than a message about the email.
+
 ### Data Pipeline (Cron + Upstash Redis + Neon)
 
 ```

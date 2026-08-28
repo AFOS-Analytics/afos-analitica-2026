@@ -137,6 +137,26 @@ O `captureSource` separa `daily` e `tradeoff` de `popup`, `gate` e `landing`, o 
 permite medir se o conteudo recorrente converte, sem nenhum pixel de rastreamento em
 e-mail.
 
+**O que o fluxo de cadastro GARANTE, e por que (auditado em 27/Ago/2026).** Um leitor
+avisou que nao conseguia se cadastrar no desktop **e** no celular. A auditoria achou doze
+defeitos, e a maioria nunca apareceu em log nem quebrou teste nenhum. As regras abaixo sao
+a resposta, e cada uma fecha uma classe de falha:
+
+| Regra | A falha que ela fecha |
+|---|---|
+| **Campo opcional de medicao nunca bloqueia a acao principal** | Um `visitorId` fora do formato UUID, ou um `captureSource` desconhecido, derrubava o pedido inteiro. Os dois passam a virar `undefined`: perde-se a atribuicao daquele cadastro, nao o assinante. Perder a origem e barato; perder a pessoa nao |
+| **Todo valor guardado e CONFERIDO, nao so lido** | O id de visitante vinha do cookie ou do localStorage sem validacao de formato, entao um valor corrompido travava aquele aparelho **para sempre**, porque era relido a cada tentativa |
+| **O e-mail e higienizado ANTES de ser julgado** | A validacao rodava antes da limpeza, entao um espaco ou um caractere invisivel colado de uma pagina web produzia "e-mail invalido" num endereco visualmente perfeito, e o `trim()` do navegador nao remove zero-width |
+| **Cliente de banco que falha e RETENTADO, nunca guardado como morto** | O cliente era criado uma vez por instancia. Uma criacao falha servia erro pelo resto da vida daquela instancia, e e por isso que o leitor falhava em dois aparelhos enquanto chamadas diretas funcionavam |
+| **O limite de taxa falha ABERTO e repara a propria chave** | `INCR` cria a chave sem expiracao e o `EXPIRE` era uma segunda ida, entao um processo morrendo entre as duas bloqueava aquele IP permanentemente. E queda do Redis devolvia 500 a uma pessoa legitima, quando limite de taxa e anti-abuso, nao correcao |
+| **Cadastrar-se de novo e um ato de consentimento NOVO** | Reinscrever-se depois de sair mostrava sucesso e nao mudava nada: o status continuava `unsubscribed`, sem e-mail de boas-vindas, e a pessoa nunca mais tinha noticia. Agora reativa, registra consentimento outra vez e da as boas-vindas de volta |
+| **O idioma do navegador casa por PREFIXO** | O navegador manda `en-US` e `es-ES`; a comparacao exata contra `pt-BR/en/es` so acertava o portugues. Medido: 31 de 31 leads com `pt-BR`, e dois deles tinham escolhido ingles a mao |
+| **Falha que e RETORNADA precisa ser lida** | `registerConsent` e `sendWelcomeEmail` **devolvem** falha em vez de lancar, entao o `.catch()` dos dois nunca disparava e as duas falhavam em silencio completo. Guarda sobre funcao cujo retorno carrega `success` tem que conferir o RETORNO, nao so capturar excecao |
+
+⛔ Duas coisas NAO ficaram mais permissivas, de proposito: `email` e `consent` seguem
+estritos. Higienizar entrada nao afrouxa base legal, e consentimento ausente ou falso
+continua bloqueando, com erro proprio em vez de uma mensagem sobre o e-mail.
+
 ### Pipeline de Dados (Cron + Upstash Redis + Neon)
 
 ```
