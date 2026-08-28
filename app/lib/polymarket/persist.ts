@@ -63,27 +63,76 @@ function getRedis(): Redis | null {
   return new Redis({ url, token })
 }
 
+/**
+ * 🔴 POR QUE O MOVIMENTO É MEDIDO EM TODOS OS DESFECHOS, e não só no líder.
+ *
+ * Medido em 28/Ago/2026. Até esta data a decisão de gravar o mercado INTEIRO
+ * saía de `candidates[0].probability`, a probabilidade do líder. Com o líder
+ * parado, NADA era gravado, por mais que os outros tivessem andado. O efeito
+ * não é teórico e foi medido no backup:
+ *
+ *  - o painel publicou Flávio Bolsonaro em 36,85% em 27/Ago e esse valor não
+ *    existe em ponto nenhum da série: ZERO ocorrências de 36,85 em 352
+ *    capturas, porque o Lula não se moveu 0,5pp naquele instante;
+ *  - no mesmo dia, o lado republicano da Câmara dos EUA caiu 1,00pp e nada foi
+ *    gravado, porque o lado democrata ficou parado em 88,50%.
+ *
+ * ⚠️ A consequência é de MÉTODO, não de volume de linhas. A casa confere
+ * superlativo ("o mais alto desde X") contra esta série, e ela sub-registrava
+ * justamente os picos de quem não é líder.
+ *
+ * 📌 Desfecho NOVO força a gravação: contrato que abre, como o do Augusto Cury
+ * em 27/Ago, é informação por si só e não tem valor anterior com que comparar.
+ */
+
+type UltimaLeitura = { t: number; p: Record<string, number> }
+
+/** Aceita o formato novo e o antigo, para a virada não perder uma rodada. */
+function lerUltimaLeitura(bruto: string | null): UltimaLeitura | null {
+  if (!bruto) return null
+  try {
+    const j = JSON.parse(bruto)
+    if (j && typeof j.t === 'number' && j.p && typeof j.p === 'object') return j as UltimaLeitura
+  } catch {
+    // Formato `prob|timestamp`, gravado até 28/Ago/2026.
+    const [prob, ts] = bruto.split('|')
+    if (prob && ts && !Number.isNaN(Number(ts))) return { t: Number(ts), p: { __lider: Number(prob) } }
+  }
+  return null
+}
+
+/** Maior variação absoluta, em pp, entre a leitura de agora e a anterior. */
+function maiorMovimento(cands: CandidateSummary[], ultima: UltimaLeitura): number {
+  let maior = 0
+  for (const c of cands) {
+    const antes = ultima.p[c.name] ?? ultima.p.__lider
+    if (antes === undefined) return Infinity // desfecho novo
+    const d = Math.abs(c.probability - antes)
+    if (d > maior) maior = d
+  }
+  return maior
+}
+
 async function shouldPersist(
   redis: Redis | null,
   slug: string,
   tier: Tier,
-  leadProb: number
+  cands: CandidateSummary[]
 ): Promise<boolean> {
   if (tier === 'cold') return false
   if (!redis) return true
 
   const key = `afos:market:last-persist:${slug}`
   try {
-    const last = await redis.get<string>(key)
-    if (!last) return true
+    const ultima = lerUltimaLeitura(await redis.get<string>(key))
+    if (!ultima) return true
 
-    const [lastProb, lastTs] = last.split('|')
-    const elapsed = Date.now() - Number(lastTs)
+    const elapsed = Date.now() - ultima.t
     if (elapsed < TIER_INTERVALS[tier]) return false
     // Ponto diário garantido: mercado parado também é informação, e buraco de
     // série não se recupera. Ver MAX_STALENESS_MS.
     if (elapsed >= MAX_STALENESS_MS) return true
-    if (Math.abs(leadProb - Number(lastProb)) < 0.5) return false
+    if (maiorMovimento(cands, ultima) < 0.5) return false
 
     return true
   } catch {
@@ -91,10 +140,16 @@ async function shouldPersist(
   }
 }
 
-async function markPersisted(redis: Redis | null, slug: string, prob: number) {
+async function markPersisted(redis: Redis | null, slug: string, cands: CandidateSummary[]) {
   if (!redis) return
+  const p: Record<string, number> = {}
+  for (const c of cands) p[c.name] = c.probability
   try {
-    await redis.set(`afos:market:last-persist:${slug}`, `${prob}|${Date.now()}`, { ex: 86400 })
+    await redis.set(
+      `afos:market:last-persist:${slug}`,
+      JSON.stringify({ t: Date.now(), p }),
+      { ex: 86400 }
+    )
   } catch {}
 }
 
@@ -131,9 +186,13 @@ export async function persistMarketData(
       // Situação DO MERCADO, não do país: ver MarketSummary.status.
       const statusMkt = mkt.status ?? country.status
       const tier = classifyTier(mkt.slug, statusMkt)
-      const leadProb = mkt.candidates[0]?.probability ?? 0
+      // A MESMA fatia que será gravada é a que decide se grava. Assinar desfecho
+      // que não entra no banco faria a trava vigiar o que ela não registra.
+      const entradaReg = ELECTION_REGISTRY.find((e) => e.slug === mkt.slug)
+      const maxOutcomesMkt = entradaReg?.isDistribution ? MAX_OUTCOMES_DISTRIBUICAO : MAX_OUTCOMES_DEFAULT
+      const candsVigiados = mkt.candidates.slice(0, maxOutcomesMkt)
 
-      if (!(await shouldPersist(redis, mkt.slug, tier, leadProb))) {
+      if (!(await shouldPersist(redis, mkt.slug, tier, candsVigiados))) {
         skipped++
         continue
       }
@@ -168,9 +227,7 @@ export async function persistMarketData(
         // O teto vem do registro: mercado de FAIXAS precisa de todas elas, senão
         // a distribuição não fecha e a soma, que é o critério de maturidade,
         // fica impossível de calcular depois.
-        const entrada = ELECTION_REGISTRY.find((e) => e.slug === mkt.slug)
-        const maxOutcomes = entrada?.isDistribution ? MAX_OUTCOMES_DISTRIBUICAO : MAX_OUTCOMES_DEFAULT
-        const cands = mkt.candidates.slice(0, maxOutcomes)
+        const cands = candsVigiados
 
         // Os upserts de outcome são independentes entre si: em paralelo.
         // Em série, um mercado de 14 faixas custava 14 idas ao banco.
@@ -206,7 +263,7 @@ export async function persistMarketData(
           }
         }
 
-        await markPersisted(redis, mkt.slug, leadProb)
+        await markPersisted(redis, mkt.slug, cands)
         persisted++
       } catch (err) {
         errors++
