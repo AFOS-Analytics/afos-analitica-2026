@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-27",
+  "lastUpdate": "2026-08-28",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1426,110 +1426,110 @@
     "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), con el libro presidencial en USD 137,64M. ⭐ EL DÍA TIENE UNA ENCUESTA NUEVA Y UN NOMBRE NUEVO EN EL LIBRO. PoderData/Aya (BR-04974/2026, campo del 23 al 26/Ago, n=2.400) trae empate técnico en las DOS vueltas, 38% a 35% en la primera y 45% a 44% en la segunda, y la comparación con la propia casa muestra la primera vuelta estrechándose de 6pp a 3pp en dos semanas. En el precio, el líder cedió 5,00pp y bajó a 57,50%, su nivel más bajo desde el 01/Jul, y el segundo subió 1,30pp, hasta 36,85%, su nivel más alto desde el 13/May. La distancia entre ambos cayó de 26,95pp a 20,65pp y se estrechó por los dos lados. ⚠️ Eso NO es la distancia más estrecha de nada: en mayo el segundo estuvo por delante del primero. ⭐ Augusto Cury pasó a tener precio confirmado y cerró en 4,05%, el tercero mayor del libro, con 23,75% en el contrato de tercer lugar de la primera vuelta y 3,70% en el de segundo. Y Renan Santos tocó el piso de toda su serie, con 1,70% en el registro, y ya estaba de vuelta en 2,35% a las 22:49.",
+    "note": "Precios de Polymarket en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC), con el libro presidencial en USD 138,28M. EL DÍA NO TUVO ENCUESTA NACIONAL DIVULGADA: la más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con [empate técnico](/es/glossary#empate-tecnico) en las dos vueltas. El hecho del día es el estreno del espacio electoral gratuito en radio y televisión. En el precio, el líder se mantuvo QUIETO en 57,50% y el segundo cedió 1,20pp, hasta 35,65%, la mayor variación del panel: la distancia entre los dos pasó de 20,65pp a 21,85pp y se amplió enteramente por un solo lado. Es el inverso del diseño de la víspera, cuando la brecha se estrechó por la subida del segundo, también con el líder quieto. Los dos libros del segundo discreparon el mismo día: mientras el de ganador caía 1,20pp, el de 2.º lugar de la [primera vuelta](/es/glossary#primeiro-turno) subía 0,50pp, hasta 85,00%. Fuera de la cima, el movimiento es de Augusto Cury, que cedió 0,55pp en la victoria y subió 2,95pp en el contrato de 3.er lugar, ahora el más disputado del panel, con Renan Santos en 35,50%, Caiado en 34,50% y Cury en 26,70%.",
     "sources": "Precios de Polymarket vía el proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato. El 27/Ago los cinco libros acompañados confirmaron en la lectura de las 22:49, incluido el contrato de Augusto Cury, que abrió ese mismo día. Encuestas registradas en el TSE y divulgadas por los institutos, con reporte de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC y Jornal de Brasília. La PoderData/Aya del 27/Ago fue verificada en dos fuentes, con el número de registro del TSE coincidiendo y con el alcance nacional confirmado en la divulgación, que declara 555 municipios en las 27 unidades federativas. Superlativo de serie verificado en el respaldo de Neon, en backup/neon/marketPrice, que guarda el registro completo desde el 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "37-44,9%",
         "polymarket": "57,50%",
-        "tendenciaPesquisa": "ENCUESTA NUEVA HOY, Y TRAE EMPATE TÉCNICO EN LAS DOS VUELTAS. PoderData/Aya (BR-04974/2026, campo del 23 al 26/Ago, n=2.400) lo da en 38% en la primera vuelta frente a 35%, y en 45% frente a 44% en la segunda, ambos dentro del margen de 2pp. La comparación con la propia casa es lo que informa: eran 6pp en la primera vuelta el 13/Ago y son 3pp ahora. Sigue ganando los cuatro escenarios de segunda vuelta probados. BTG/Nexus del 24/Ago, la nacional de mayor confiabilidad de la ventana, lo mantiene en 41% y es la que alimenta el número de este bloque.",
-        "tendenciaPolymarket": "57,50% (vol USD 9,30M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), con caída de 5,00pp en el día, la mayor variación del panel en el contrato de ganador. La caída fue continua, en cinco lecturas sucesivas. ⚠️ Es el nivel más bajo desde el 01/Jul: la última lectura por debajo de eso fue el 30/Jun a las 16:30 UTC, con 55,50%, verificado en el respaldo contra la serie entera desde el 14/Abr. El techo de la serie sigue siendo 67,50%, del 16/Ago. Su distancia con el segundo cayó a 20,65pp.",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo da en 38% en la primera vuelta y ganando los cuatro escenarios de segunda vuelta probados. La serie ESTATAL de Quaest divulgada esta semana, que no entra en esta tabla por ser de alcance estatal, lo muestra en empate técnico en los tres mayores padrones electorales del país.",
+        "tendenciaPolymarket": "57,50% (vol USD 9,34M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). SIN VARIACIÓN en el día, después de ceder 5,00pp la víspera en cinco lecturas sucesivas. La distancia hacia el segundo SE AMPLIÓ, de 20,65pp a 21,85pp, y se amplió enteramente por el lado del adversario.",
         "odds": 57.5,
         "percentage": 41,
-        "lastUpdate": "27/08/2026, 22:49",
+        "lastUpdate": "28/08/2026, 15:31",
         "value": 57.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "36,85%",
-        "tendenciaPesquisa": "La PoderData/Aya de hoy lo da en 35% en la primera vuelta, a 3 puntos, y en 44% en la segunda, a 1 punto, ambos dentro del margen de 2pp. Su rechazo está en 49%, igualado con el del líder. Gerp del 26/Ago lo daba adelante en la primera vuelta con 38% e Indexa/Broadcast lo daba atrás con 34%, y las dos midieron en la misma semana.",
-        "tendenciaPolymarket": "36,85% (vol USD 9,11M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), con alza de 1,30pp, la mayor del día entre los contratos de ganador. ⭐ Es su nivel más alto desde el 13/May: el último punto por encima de eso fue el 13/May a las 02:00 UTC, con 42,80%, verificado en el respaldo. El techo de la serie sigue siendo 45,50%, del 06/May. En el contrato de segundo lugar de la primera vuelta cedió 3,00pp, hasta 84,50%.",
-        "odds": 36.85,
+        "polymarket": "35,65%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo da en 35% en la primera vuelta, a 3 puntos, y en 44% en la segunda, a 1 punto, ambos dentro del margen de 2pp.",
+        "tendenciaPolymarket": "35,65% (vol USD 9,13M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Caída de 1,20pp, la MAYOR variación del panel, y devuelve con holgura la subida de 1,30pp de la víspera: el saldo de dos días es de 0,10pp negativo. En el contrato de 2.º lugar de la primera vuelta SUBIÓ 0,50pp, hasta 85,00%, así que sus dos libros se movieron en direcciones opuestas.",
+        "odds": 35.65,
         "percentage": 37,
-        "lastUpdate": "27/08/2026, 22:49",
-        "value": 36.85
+        "lastUpdate": "28/08/2026, 15:31",
+        "value": 35.65
       },
       {
         "name": "Augusto Cury",
         "pesquisaRange": "1-4%",
-        "polymarket": "4,05%",
-        "tendenciaPesquisa": "⭐ EL 4% DE LA PoderData/Aya DE HOY ES SU MAYOR NÚMERO EN TODA LA TABLA DEL PANEL, que reúne las nacionales de los últimos 30 días y lo medía entre 1% y 3% hasta ahora. Queda igualado con Renan Santos y con Ronaldo Caiado en la primera vuelta. BTG/Nexus del 24/Ago, que alimenta el número de este bloque, lo medía en 2%.",
-        "tendenciaPolymarket": "4,05% (vol USD 2,12M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago). ⭐ EL CONTRATO ABRIÓ ESTE JUEVES, a las 00:30 UTC, y ya es el tercer precio más alto del libro presidencial, por delante de Renan Santos y de Ronaldo Caiado. También marca 23,75% en el contrato de tercer lugar de la primera vuelta y 3,70% en el de segundo. ⚠️ Su serie tiene cinco puntos, todos de hoy, entre 0,80% y 5,00%: en un contrato recién abierto una amplitud así no separa precio de ruido.",
-        "odds": 4.05,
+        "polymarket": "3,50%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo mide en 4% en la primera vuelta, empatado con Renan Santos y con Ronaldo Caiado.",
+        "tendenciaPolymarket": "3,50% (vol USD 2,36M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Caída de 0,55pp en el segundo día de vida del contrato. En el contrato de 3.er lugar SUBIÓ 2,95pp, hasta 26,70%.",
+        "odds": 3.5,
         "percentage": 2,
-        "lastUpdate": "27/08/2026, 22:49",
-        "value": 4.05
+        "lastUpdate": "28/08/2026, 15:31",
+        "value": 3.5
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2,35%",
-        "tendenciaPesquisa": "PoderData/Aya lo mide en 4% en la primera vuelta, igualado con Ronaldo Caiado y con Augusto Cury, y en 37% en la segunda contra el líder. Gerp del 26/Ago lo daba en 3% e Indexa en 4%. En la urna está donde estaba; en el precio, no.",
-        "tendenciaPolymarket": "2,35% (vol USD 11,65M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago). ⚠️ El contrato TOCÓ el piso de toda su serie este jueves: el registro marcó 1,70% en cuatro lecturas seguidas y ninguno de los 350 puntos desde el 14/Abr quedó por debajo de eso, verificado en el respaldo. Una hora después ya estaba de vuelta en 2,35%. El techo de la serie es 49,60%, del 28/Abr. En el contrato de tercer lugar de la primera vuelta cedió 9,50pp, hasta 36,00%, la mayor variación aislada del panel hoy, y sigue siendo el nombre más caro de ese contrato.",
-        "odds": 2.35,
+        "polymarket": "2,90%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo da en 4% en la primera vuelta y en 37% en la segunda contra el líder.",
+        "tendenciaPolymarket": "2,90% (vol USD 11,73M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Subida de 0,55pp, la segunda seguida después de que el contrato tocara el piso de toda su serie el 27/Ago. En el de 3.er lugar cedió 0,50pp, hasta 35,50%, donde sigue al frente.",
+        "odds": 2.9,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 22:49",
-        "value": 2.35
+        "lastUpdate": "28/08/2026, 15:31",
+        "value": 2.9
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0,15%",
-        "tendenciaPesquisa": "PoderData/Aya lo mide en 4% en la primera vuelta, igualado con Renan Santos y con Augusto Cury, y lo coloca en empate técnico con el líder en la segunda, por 43% a 44%. Indexa del 26/Ago lo daba en 5% y Gerp en 3%.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,80M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), con caída de 0,30pp, que lo coloca por debajo del piso de 0,5% de la doble lectura. En el contrato de tercer lugar de la primera vuelta cedió 5,50pp, hasta 33,50%, su nivel más bajo allí desde el 14/Ago.",
-        "odds": 0.15,
+        "polymarket": "0,25%",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo da en 4% en la primera vuelta y empatado técnicamente con el líder en la segunda, 43% a 44%.",
+        "tendenciaPolymarket": "0,25% (vol USD 6,88M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Subida de 0,10pp, todavía POR DEBAJO del piso de 0,5% de la doble lectura. En el contrato de 3.er lugar subió 1,00pp, hasta 34,50%.",
+        "odds": 0.25,
         "percentage": 5,
-        "lastUpdate": "27/08/2026, 22:49",
-        "value": 0.15
+        "lastUpdate": "28/08/2026, 15:31",
+        "value": 0.25
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5,2%",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "PoderData/Aya lo mide en 3% en la primera vuelta. Gerp del 26/Ago lo daba en 4% e Indexa en 2%, las dos midiendo en la misma semana, y sigue siendo el nombre con mayor divergencia relativa entre institutos en la ventana.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,03M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), sin variación, y por debajo del piso de 0,5% de la doble lectura.",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Lo mide en 3% en la primera vuelta.",
+        "tendenciaPolymarket": "0,15% (vol USD 3,04M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Sin variación, y por debajo del piso de 0,5% de la doble lectura.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "27/08/2026, 22:49",
+        "lastUpdate": "28/08/2026, 15:31",
         "value": 0.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "Ninguna nacional lo prueba para presidente, incluida la PoderData/Aya de hoy. Por eso aparece sin franja de encuesta en este bloque, y el panel no convierte ausencia de prueba en ausencia de intención.",
-        "tendenciaPolymarket": "0,05% (vol USD 14,06M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), sin variación. Es el mayor volumen acumulado del libro presidencial, y está por debajo del piso de vigilancia desde hace semanas: volumen alto con precio pegado al cero es posición antigua desarmada, no contrato activo.",
+        "tendenciaPesquisa": "No es probado como candidato presidencial en las nacionales de la ventana.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,06M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Sin variación. No es candidato a la Presidencia: disputa la reelección en São Paulo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 22:49",
+        "lastUpdate": "28/08/2026, 15:31",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
         "polymarket": "0,15%",
-        "tendenciaPesquisa": "PoderData/Aya lo mide en 2% en la primera vuelta y lo coloca en empate técnico con el líder en la segunda, por 43% a 44%. Gerp e Indexa del 26/Ago lo medían en 1% cada una, y BTG/Nexus del 24/Ago en 3%.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,21M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), sin variación en el día, y por debajo del piso de 0,5% de la doble lectura.",
+        "tendenciaPesquisa": "SIN ENCUESTA NACIONAL NUEVA este viernes. La más reciente sigue siendo la PoderData/Aya del 27/Ago (BR-04974/2026, campo del 23 al 26/Ago, n=2.400), con empate técnico en las dos vueltas. Aparece entre 1% y 4% en las nacionales de la ventana.",
+        "tendenciaPolymarket": "0,15% (vol USD 6,27M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Sin variación, y por debajo del piso de 0,5% de la doble lectura.",
         "odds": 0.15,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 22:49",
+        "lastUpdate": "28/08/2026, 15:31",
         "value": 0.15
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
-        "tendenciaPesquisa": "Ninguna nacional lo prueba para presidente. La encuesta de JOTA divulgada el 26/Ago declaró un escenario de segunda vuelta con él en el lugar del líder, pero los porcentajes de ese escenario no fueron divulgados en una fuente que el panel alcance, y por eso no entran aquí.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,30M) en la lectura confirmada del 27/Ago, 22:49 BRT (01:49 UTC del 28/Ago), sin variación.",
+        "tendenciaPesquisa": "No es probado como candidato presidencial en las nacionales de la ventana.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,30M) en la lectura confirmada del 28/Ago, 15:31 BRT (18:31 UTC). Sin variación. No es candidato a la Presidencia: disputa el gobierno de São Paulo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 22:49",
+        "lastUpdate": "28/08/2026, 15:31",
         "value": 0.05
       }
     ],
-    "updatedAt": "27/08/2026, 22:49",
-    "lastUpdate": "27/08/2026, 22:49"
+    "updatedAt": "28/08/2026, 15:31",
+    "lastUpdate": "28/08/2026, 15:31"
   }
 }

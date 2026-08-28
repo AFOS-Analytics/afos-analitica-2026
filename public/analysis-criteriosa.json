@@ -1,171 +1,170 @@
 {
-  "updatedAt": "27/08/2026, 22:49",
-  "subtitle": "Cruzamento de 27 de agosto de 2026: preço do Polymarket em leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), livro presidencial em USD 137,64M, contra a PoderData/Aya divulgada nesta quinta (BR-04974/2026, campo 23 a 26/Ago, n=2.400), que traz EMPATE TÉCNICO nos dois turnos, e contra a Gerp e a Indexa/Broadcast de 26/Ago, que se contradizem entre si. A BTG/Nexus de 24/Ago (BR-09028/2026, n=2.006) segue sendo a de maior confiabilidade da janela na régua da casa. Notícias apuradas em 1.152 itens coletados nesta quinta.",
+  "updatedAt": "28/08/2026, 15:31",
+  "subtitle": "Cruzamento de 28 de agosto de 2026: preço do Polymarket em leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), livro presidencial em USD 138,28M, contra a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400, telefone), que segue sendo a nacional mais recente. O dia NÃO teve pesquisa nacional divulgada. O fato de calendário é a estreia do horário eleitoral gratuito no rádio e na TV, e o de urna é a série estadual da Quaest, com empate técnico nos três maiores colégios eleitorais do país.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 57,50% (vol USD 9,30M acumulado), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Queda de 5,00pp no dia, a maior variação do painel no contrato de vencedor, e o menor patamar desde 01/Jul.",
+      "header": "PREÇO: 57,50% (vol USD 9,34M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). SEM VARIAÇÃO no dia, depois de ceder 5,00pp na véspera. PESQUISA: sem leitura nacional nova; a PoderData/Aya de 27/Ago o mantém em 38% no 1º turno e à frente nos quatro cenários de 2º turno testados.",
       "fortes": [
-        "A PoderData/Aya de hoje (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026) ainda o coloca À FRENTE no 1º turno, com 38% contra 35%, e vencendo os QUATRO cenários de 2º turno testados: 45% a 44% contra Flávio Bolsonaro, 44% a 43% contra Romeu Zema, 44% a 43% contra Ronaldo Caiado e 44% a 37% contra Renan Santos.",
-        "A BTG/Nexus de 24/Ago, que é a de maior confiabilidade da janela, o mantém em 41% no 1º turno e vencendo o 2º turno por 46% a 45%. As três nacionais da semana o dão à frente ou empatado, e nenhuma o dá atrás por mais de 1 ponto.",
-        "Mesmo depois da queda, o preço dele segue sendo o maior do livro por larga margem, e o segundo colocado está 20,65pp atrás.",
-        "Ele foi à sabatina do Jornal Nacional nesta quinta, chamou as acusações sobre o filho de ilações e disse que Lulinha provará inocência, negando blindagem, segundo O Globo. Aliados o prepararam para descolar do caso e mirar o adversário, segundo Estadão.",
-        "A propaganda eleitoral na TV estreia sem Lulinha e com o adversário citando o caso, segundo O Globo, o que move a disputa para um terreno em que o incumbente tem mais tempo de tela."
+        "O preço PAROU. A queda de 5,00pp da véspera veio em cinco leituras sucessivas, e nesta sexta o contrato não deu continuidade a ela: ficou imóvel em 57,50% (vol USD 9,34M acumulado). Queda que para de cair é informação tanto quanto queda que continua.",
+        "A distância para o segundo colocado VOLTOU A ALARGAR, de 20,65pp para 21,85pp, e alargou inteiramente pelo lado do adversário, que cedeu 1,20pp enquanto ele ficava parado.",
+        "Na série estadual da Quaest divulgada nesta semana, ele aparece em EMPATE TÉCNICO com o adversário nos três maiores colégios eleitorais do país, São Paulo, Minas Gerais e Rio de Janeiro, segundo G1. Lidera com folga na Bahia, por 50% a 17%, e em Sergipe, por 53% a 19%.",
+        "A PoderData/Aya de 27/Ago, última nacional divulgada, o mantém vencendo os QUATRO cenários de 2º turno testados, o mais apertado deles por 45% a 44%.",
+        "Abriu a propaganda eleitoral na ofensiva, associando o adversário a um esquema de rachadinha, ao ex-banqueiro do Master e a um grupo de matadores de aluguel, segundo Folha de S.Paulo."
       ],
       "fracos": [
-        "⚠️ A PoderData traz EMPATE TÉCNICO nos DOIS turnos pela primeira vez na série da própria casa. No 1º turno a distância dela caiu de 6pp em 13/Ago (41% x 35%) para 3pp agora (38% x 35%), e no 2º turno segue em 1pp (45% x 44%, contra 46% x 45%). Mesma casa, mesmo método e mesma amostra: o 1º turno estreitou pela metade em duas semanas.",
-        "O preço cedeu 5,00pp num dia só, de 62,50% para 57,50%, e a queda foi contínua, em cinco leituras sucessivas ao longo desta quinta.",
-        "⚠️ 57,50% é o menor patamar desde 01/Jul. A última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup do banco contra o registro completo desde 14/Abr.",
-        "Rejeição em 49%, empatada com a do segundo colocado, segundo Poder360. A aprovação do governo aparece em 42% contra 50% de desaprovação na mesma rodada, e a gestão é ruim ou péssima para 48% contra ótima ou boa para 33%, segundo CNN Brasil.",
-        "⚠️ O caso Lulinha ganhou três frentes novas nesta quinta: a PF apura o pedido de um lobista para que ele agisse em favor do Careca do INSS, segundo Folha de S.Paulo; o advogado do filho pediu apuração sobre vazamentos citando o adversário e seu coordenador de campanha, segundo O Globo; e o Ministério Público da Espanha analisa denúncia sobre uma empresa ligada ao caso, segundo Gazeta do Povo."
+        "A última nacional divulgada traz EMPATE TÉCNICO nos DOIS turnos, e é a primeira vez na série da própria PoderData. No 1º turno a distância dela caiu de 6pp em 13/Ago para 3pp em 27/Ago, com o mesmo método e a mesma amostra.",
+        "A avaliação de governo segue com saldo negativo nas QUATRO leituras da semana, e a mais recente é a de saldo mais largo: 42% de aprovação contra 50% de desaprovação na PoderData de 27/Ago.",
+        "O caso que envolve o filho põe a campanha sob pressão, segundo BBC, e nesta sexta ele pediu ao chefe da Polícia Federal que se apaziguasse com o relator no Supremo, segundo Estadão. O ato do dia é de gestão de crise, não de defesa de mérito.",
+        "A mesma série estadual da Quaest que o favorece no topo mostra um retrato das disputas ESTADUAIS mais favorável aos candidatos apoiados pelo campo adversário do que aos aliados da gestão dele, segundo VEJA.",
+        "Não há pesquisa nacional divulgada nesta sexta, então não existe leitura de urna para medir o primeiro dia de propaganda. Qualquer efeito dela só apareceria nas nacionais previstas a partir de 29/Ago."
       ],
-      "analise": "O dia inverte o desenho da véspera. Em 26/Ago o preço dele estava parado e quem se movia era o segundo colocado; nesta quinta quem se moveu foi ele, e para baixo: 5,00pp em cinco leituras sucessivas, de 62,50% para 57,50%, o menor patamar desde 01/Jul. No mesmo dia a PoderData/Aya publicou a primeira rodada da própria casa com empate técnico nos dois turnos, com o 1º turno estreitando de 6pp para 3pp em duas semanas e o 2º turno em 1pp. As duas coisas caíram na mesma data e o painel registra a coincidência sem atribuir causa, porque probabilidade de vencer e intenção de voto medem coisas diferentes, e a mesma rodada que estreita o 1º turno também o mantém à frente nos quatro cenários de 2º turno testados. O livro também mudou de composição nesta quinta, com um nome que até ontem não tinha preço e fechou em terceiro. Ainda assim o preço dele segue sendo o maior do livro por larga margem, e a distância para o segundo, agora em 20,65pp, continua sendo a maior entre dois nomes quaisquer da disputa. leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)."
+      "analise": "O dia dele é de imobilidade no preço e de ofensiva na campanha, e as duas coisas convivem sem se explicarem. Depois de cinco leituras sucessivas de queda, que somaram 5,00pp, o contrato de vencedor ficou exatamente onde estava, em 57,50% (vol USD 9,34M acumulado). O que mudou na distância para o segundo colocado veio do outro lado: o vão foi de 20,65pp para 21,85pp porque o adversário cedeu 1,20pp. É o inverso do desenho de 27/Ago, quando o vão estreitou pela alta do adversário, também com ele parado. Em dois dias seguidos, portanto, quem definiu a distância entre os dois foi sempre o segundo colocado. Na urna não há leitura nova, e a série estadual da Quaest oferece o retrato mais detalhado disponível: empate técnico nos três maiores colégios e vantagens largas no Nordeste. O painel registra que a propaganda dele estreou usando o áudio do adversário com o ex-banqueiro do Master, e registra que o preço do adversário caiu no mesmo dia, sem afirmar que uma coisa produziu a outra."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 36,85% (vol USD 9,11M acumulado), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Alta de 1,30pp, a maior do dia entre os contratos de vencedor, e o patamar mais alto dele desde 13/Mai.",
+      "header": "PREÇO: 35,65% (vol USD 9,13M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Queda de 1,20pp, a MAIOR variação do painel no contrato de vencedor. No contrato de 2º lugar do 1º turno ele SUBIU 0,50pp, para 85,00% (vol USD 0,40M). PESQUISA: sem leitura nacional nova; a PoderData/Aya de 27/Ago o dá em 35% no 1º turno e 44% no 2º.",
       "fortes": [
-        "⭐ 36,85% é o preço mais alto dele desde 13/Mai. O último ponto acima disso foi em 13/Mai às 02:00 UTC, com 42,80%, conferido no backup do banco contra o registro completo desde 14/Abr. O topo da série segue sendo 45,50%, de 06/Mai.",
-        "A PoderData/Aya de hoje o coloca a 3 pontos no 1º turno, 35% contra 38%, dentro da margem de 2pp, e a 1 ponto no 2º turno, 44% contra 45%. É empate técnico nos dois.",
-        "A distância de preço dele para o líder caiu de 26,95pp para 20,65pp em um único dia, e ela encurtou pelos dois lados: o líder cedeu 5,00pp e ele subiu 1,30pp.",
-        "Rejeição em 49%, o mesmo patamar do líder, segundo Poder360. Ele acionou o TSE nesta quinta para proibir o uso do Palácio da Alvorada em conteúdo eleitoral do adversário, segundo Folha de S.Paulo e G1.",
-        "A propaganda dele na TV vai destacar endividamento das famílias, o caso Lulinha e a crise da Casas Bahia, segundo Valor Econômico, e cita o pai, segurança pública e um aceno ao eleitorado feminino, segundo O Globo."
+        "O contrato de 2º LUGAR subiu 0,50pp, para 85,00%, no mesmo dia em que o de vencedor caiu 1,20pp. Os dois livros dele andaram em direções OPOSTAS, e o de 2º lugar é o que mede a chegada ao segundo turno.",
+        "A última nacional divulgada, a PoderData/Aya de 27/Ago, o coloca em empate técnico nos dois turnos, a 3 pontos no primeiro e a 1 ponto no segundo, os dois dentro da margem de 2pp.",
+        "Na série estadual da Quaest ele aparece em empate técnico com o líder em São Paulo, Minas Gerais e Rio de Janeiro, e lidera com folga em Roraima, por 52% a 17%, segundo G1 e UOL.",
+        "O retrato das disputas estaduais é mais favorável aos candidatos apoiados pelo campo dele do que aos aliados da gestão adversária, segundo VEJA, o que importa para palanque e para tempo de televisão.",
+        "Foi sabatinado no Jornal Nacional nesta sexta, um dia depois do líder, dentro da série de entrevistas que a emissora faz com os seis mais bem colocados entre 24 e 29/Ago."
       ],
       "fracos": [
-        "No contrato de 2º lugar do 1º turno ele cedeu 3,00pp, de 87,50% para 84,50%, no mesmo dia em que um nome novo passou a ser precificado naquele contrato, com 3,70%.",
-        "A alta dele no contrato de vencedor foi de 1,30pp e a queda do líder foi de 5,00pp: das 6,30pp que o vão encurtou, a maior parte veio do outro lado.",
-        "⚠️ O caso Dark Horse avançou contra ele em três frentes nesta quinta: a produtora pediu a André Mendonça que tire a investigação de São Paulo e leve o caso ao STF, segundo G1, Folha de S.Paulo e Valor Econômico; Flavio Dino ampliou o acesso da PF às provas, segundo G1; e ele terceirizou a prestação de contas, com o repasse de um fundo dos Estados Unidos ainda sem detalhamento, segundo Folha de S.Paulo.",
-        "A distribuidora decidiu lançar o filme depois da eleição, segundo O Globo, e petistas pediram investigação sobre a relação entre o escritório dele e um alvo da operação do INSS, também segundo O Globo."
+        "A queda de 1,20pp é a maior variação isolada do painel nesta sexta, e devolveu com folga a alta de 1,30pp que ele tinha feito na véspera. Em dois dias, o saldo dele no contrato de vencedor é de 0,10pp NEGATIVO.",
+        "A propaganda eleitoral do adversário estreou usando um áudio em que ele chama o ex-banqueiro do Master de irmão, segundo Revista Fórum e Folha de S.Paulo. É o episódio que a própria campanha dele temia ver repetido, segundo O Globo.",
+        "Em jantar com cerca de 20 banqueiros e empresários, a tentativa de convencer o mercado esbarrou na falta de propostas mais robustas e gerou desconfiança, segundo O Globo.",
+        "O eleitor indeciso continua cobrando explicação dele sobre o episódio do áudio, mesmo com o alívio que o caso do filho do presidente trouxe, segundo Folha de S.Paulo.",
+        "No contrato de 3º lugar ele está em 3,45%, praticamente onde estava, e aquele livro tem apenas USD 0,68M acumulados: o preço ali informa pouco."
       ],
-      "analise": "O preço dele fechou em 36,85%, o mais alto desde 13/Mai, e a distância para o líder é a menor do ciclo recente, 20,65pp. Desta vez ele participou do encurtamento: subiu 1,30pp, a maior alta do dia entre os contratos de vencedor, num dia em que o líder cedeu 5,00pp. Na urna, a PoderData/Aya o põe a 3 pontos no 1º turno e a 1 ponto no 2º, os dois dentro da margem de 2pp, e a rejeição dos dois está empatada em 49%. No contrato de 2º lugar do 1º turno, porém, ele cedeu 3,00pp, para 84,50%, no mesmo dia em que o contrato de Augusto Cury naquele livro passou a valer 3,70%. No noticiário, o caso Dark Horse avançou por decisão judicial e por pedido da produtora para levar a apuração ao STF, e a propaganda do adversário passou a circular com o áudio em que ele chama Daniel Vorcaro de irmão ao pedir dinheiro. O painel registra a alta de preço e o avanço do caso lado a lado, na mesma data, e não decide qual explica o quê. leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)."
+      "analise": "A leitura do dia dele depende de olhar os DOIS livros, e eles discordam. No contrato de vencedor caiu 1,20pp, para 35,65% (vol USD 9,13M acumulado), a maior variação do painel, e devolveu com folga a alta de 1,30pp da véspera: o saldo de dois dias é de 0,10pp negativo. No contrato de 2º lugar, que mede a chegada ao segundo turno, subiu 0,50pp e está em 85,00%. Ou seja, o mercado ficou um pouco menos convencido de que ele VENCE e um pouco mais convencido de que ele CHEGA. Essa é a distinção que o painel insiste em manter, porque os dois contratos respondem a perguntas diferentes e costumam ser lidos como se fossem um só. No dia em que a propaganda do adversário estreou com o áudio dele e o ex-banqueiro do Master, e no dia em que ele foi ao Jornal Nacional, o painel registra a coincidência de data e não atribui causa: um único dia não isola efeito de propaganda, e o livro que mediria mais diretamente o estrago, o de 2º lugar, subiu."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 2,35% (vol USD 11,65M acumulado), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). O contrato TOCOU o piso de toda a série nesta quinta, com 1,70% no registro e 1,65% na captura das 21:46, e já voltou a subir.",
+      "header": "PREÇO: 2,90% (vol USD 11,73M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Alta de 0,55pp no contrato de vencedor. No de 3º lugar do 1º turno cedeu 0,50pp, para 35,50%, onde segue na frente. PESQUISA: sem leitura nacional nova; a PoderData/Aya de 27/Ago o dá em 4% no 1º turno.",
       "fortes": [
-        "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Ronaldo Caiado e com Augusto Cury, e em 37% no 2º turno contra o líder. Na urna ele está onde estava nas rodadas anteriores.",
-        "Ele segue sendo o nome mais caro do contrato de 3º lugar do 1º turno, com 36,00% (vol USD 207 mil), à frente de Ronaldo Caiado e de Augusto Cury.",
-        "O volume acumulado no contrato de vencedor dele, USD 11,65M, é um dos maiores do livro presidencial, atrás apenas de nomes cujo preço está colado no zero.",
-        "Ele foi entrevistado no Jornal Nacional nesta quinta, na série de sabatinas da emissora com os presidenciáveis, segundo BBC."
+        "Subiu 0,55pp no contrato de vencedor, para 2,90%, e é a segunda alta seguida depois de ter TOCADO o piso de toda a série em 27/Ago, quando o registro marcou 1,70%.",
+        "Segue na frente no contrato de 3º lugar do 1º turno, com 35,50%, à frente de Caiado, com 34,50%, e de Cury, com 26,70%.",
+        "O livro dele acumula USD 11,73M, o MAIOR entre os candidatos do painel, acima do líder, com USD 9,34M, e do segundo colocado, com USD 9,13M. Volume não é probabilidade, mas mede quanto dinheiro passou pelo nome."
       ],
       "fracos": [
-        "⚠️ O contrato tocou o PISO de toda a série nesta quinta. O registro marcou 1,70% em quatro leituras seguidas, entre 19:00 e 00:00 UTC, e nenhum dos 350 pontos gravados desde 14/Abr ficou abaixo disso. O máximo da série é 49,60%, de 28/Abr.",
-        "⚠️ No contrato de 3º lugar do 1º turno ele cedeu 9,50pp, de 45,50% para 36,00%, a maior variação isolada do painel hoje. É o menor patamar dele naquele contrato desde 27/Mai.",
-        "No contrato de 2º lugar do 1º turno ele cedeu 0,45pp e ficou em 1,55%, atrás dos 3,70% do nome que passou a ser precificado nesta quinta.",
-        "Na entrevista ao Jornal Nacional ele disse que vai adotar regime de exceção em favelas e defendeu que o Brasil tenha bomba atômica, segundo Folha de S.Paulo. Uma análise da CartaCapital lhe deu nota 2,6, apontando postura fluida e propostas autoritárias."
+        "Os 2,90% seguem muito abaixo do patamar de abril, quando ele chegou a 49,60%. A recuperação de dois dias devolve pouco de uma queda longa.",
+        "No contrato de 3º lugar ele CEDEU 0,50pp e a vantagem sobre o segundo colocado ali caiu para 1,00pp, com os três nomes dentro de 8,80pp uns dos outros. É o livro mais disputado do painel.",
+        "Não aparece no noticiário desta sexta com fato próprio: o dia foi de estreia de propaganda e de sabatina dos dois primeiros colocados."
       ],
-      "analise": "O contrato de vencedor dele tocou nesta quinta o menor preço de toda a série, com 1,70% em quatro leituras seguidas do registro, e nenhum dos 350 pontos desde 14/Abr ficou abaixo disso. Uma hora depois da captura das 21:46 ele já estava de volta a 2,35%, o que é uma recuperação dentro do dia e não uma reversão de tendência: em 25/Ago ele valia 3,10%. No contrato de 3º lugar do 1º turno a perda foi maior, 9,50pp, de 45,50% para 36,00%, o menor patamar naquele contrato desde 27/Mai, e ele mesmo assim segue sendo o nome mais caro ali. Na urna a leitura é outra: a PoderData/Aya o mede em 4%, empatado com Caiado e com Cury, exatamente onde ele estava nas rodadas anteriores. A distância entre as duas medições é o que o painel existe para mostrar, e ela não se resolve por média. No mesmo dia ele foi ao Jornal Nacional e defendeu regime de exceção em favelas e armamento nuclear. leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)."
+      "analise": "Ele faz o movimento contrário ao do segundo colocado nesta sexta: sobe 0,55pp na vitória e cede 0,50pp no 3º lugar. É a segunda alta seguida no contrato de vencedor depois do piso absoluto de 27/Ago, e ainda assim o patamar de 2,90% está a mais de 46 pontos do que ele valia em abril. O dado mais informativo do bloco não é o preço, é o volume: USD 11,73M acumulados, o maior do painel entre candidatos, num contrato que hoje paga menos de 3%. Muito dinheiro passou por esse nome enquanto ele descia, e isso é fato sobre o livro, não sobre a candidatura."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Augusto Cury 4,05% (vol USD 2,12M acumulado), Ronaldo Caiado 0,15% (vol USD 6,80M acumulado) e Romeu Zema 0,15% (vol USD 6,21M acumulado), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). O primeiro passou a ter preço CONFIRMADO nesta quinta e já é o terceiro maior do livro.",
-      "subtitle": "Pelotão de trás na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), e ele mudou de tamanho nesta quinta. Augusto Cury entrou no livro e fechou em 4,05%, terceiro maior preço, enquanto Caiado e Zema seguem em 0,15%, abaixo do piso de 0,5% em que a dupla leitura distingue movimento de ruído.",
+      "header": "PREÇO: Augusto Cury 3,50% (vol USD 2,36M acumulado), Ronaldo Caiado 0,25% (vol USD 6,88M acumulado), Romeu Zema 0,15% (vol USD 6,27M acumulado) e Fernando Haddad 0,05% (vol USD 7,30M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Cury cede 0,55pp na vitória e SOBE 2,95pp no contrato de 3º lugar. Caiado sobe 0,10pp na vitória e 1,00pp no de 3º lugar. Zema e Haddad sem variação, os dois abaixo do piso de 0,5% da dupla leitura.",
+      "subtitle": "Pelotão de trás na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Augusto Cury entrou no livro em 27/Ago e nesta sexta faz o movimento mais claro do grupo: cede no contrato de vencedor e SOBE no de 3º lugar. Os três nomes do contrato de 3º lugar estão dentro de 8,80pp uns dos outros.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 0,15% (vol USD 6,80M acumulado, leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)), com queda de 0,30pp. No contrato de 3º lugar do 1º turno ele cedeu 5,50pp e tem 33,50% (vol USD 68 mil), o menor patamar dele ali desde 14/Ago.",
-        "fortes": "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Renan Santos e com Augusto Cury, e o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%, dentro da margem de 2pp. É o segundo cenário de returno mais apertado da rodada, atrás só do de Flávio Bolsonaro. Ele segue sendo o segundo nome mais caro do contrato de 3º lugar do 1º turno.",
-        "fracos": "Cedeu nos dois contratos em que é acompanhado: 0,30pp no de vencedor, o que o leva a 0,15% e o coloca abaixo do piso de vigilância, e 5,50pp no de 3º lugar do 1º turno. A Indexa de 26/Ago o media em 5% e a Gerp em 3%, e as três casas da semana discordam sobre o tamanho dele."
+        "label": "CAIADO (PSD), Poly presidencial 0,25% (vol USD 6,88M acumulado, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC)), com alta de 0,10pp, ainda ABAIXO do piso de 0,5% da dupla leitura. No contrato de 3º lugar do 1º turno subiu 1,00pp e tem 34,50%, a 1,00pp do primeiro colocado ali.",
+        "fortes": "Subiu 1,00pp no contrato de 3º lugar e encostou no primeiro colocado daquele livro, a 1,00pp de distância. A PoderData/Aya de 27/Ago o dá em 4% no 1º turno e em empate técnico com o líder no 2º turno, por 43% a 44%. E lidera a disputa presidencial em Goiás na série estadual da Quaest, com 32% contra 27% do segundo colocado e 20% do líder, segundo Diário da Manhã.",
+        "fracos": "No contrato de vencedor segue abaixo de 0,5%, faixa em que a dupla leitura não vigia e o livro oscila sozinho. E o primeiro programa dele no horário eleitoral só vai ao ar no sábado, um dia depois dos adversários, segundo VEJA."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado, leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)), sem variação.",
-        "fortes": "Segue sem ser testado no 1º turno por nenhuma nacional, o que o mantém fora do grafo de divergência, de propósito. A pesquisa do JOTA divulgada em 26/Ago (BR-07806/2026, 6.000 entrevistas pela internet, campo de 27/Jul a 24/Ago) declarou um cenário de 2º turno com ele no lugar do líder contra Flávio Bolsonaro.",
-        "fracos": "Os percentuais do cenário do JOTA não saíram em fonte que o painel alcance, e por isso nada dele foi para a tabela. O contrato de vencedor dele está em 0,05% há semanas, com USD 7,30M de volume acumulado: volume alto com preço colado no zero é posição antiga desmontada, não contrato ativo."
+        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC)), sem variação. Abaixo do piso de 0,5% da dupla leitura.",
+        "fortes": "Não é candidato à Presidência: disputa o governo de São Paulo, e na estreia do horário eleitoral trouxe o presidente para o programa dele e pediu voto sem preconceito, segundo O Globo. O preço presidencial dele é resíduo de livro, não medida de campanha.",
+        "fracos": "Os 0,05% ficam abaixo do piso de 0,5% da dupla leitura, faixa em que o AFOS não certifica movimento. O livro acumula USD 7,30M, quase todo negociado quando o nome ainda era testado como alternativa presidencial."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 6,21M acumulado, leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)), sem variação no dia.",
-        "fortes": "A PoderData/Aya o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%, o mesmo cenário de Ronaldo Caiado. Ele segue testado pelas nacionais, ao contrário de Tarcísio e Haddad, e a mesma rodada o mede em 2% no 1º turno.",
-        "fracos": "Segue em 0,15% no contrato de vencedor, abaixo do piso de vigilância. Na urna, a Gerp e a Indexa de 26/Ago o mediam em 1% cada uma e a BTG/Nexus de 24/Ago em 3%, então os 2% da PoderData de hoje ficam no meio dessa amplitude."
+        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 6,27M acumulado, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC)), sem variação no dia. Abaixo do piso de 0,5% da dupla leitura.",
+        "fortes": "Mantém 1,55% no contrato de 3º lugar do 1º turno, onde o livro é fino e qualquer movimento vale pouco. Não aparece no noticiário desta sexta com fato próprio.",
+        "fracos": "Sem variação e abaixo do piso de vigilância no contrato de vencedor. O nome não entrou no rateio de tempo do horário eleitoral, que ficou com quatro candidatos."
       },
-      "analise": "A novidade estrutural do dia está aqui, e nesta leitura ela se completou. Augusto Cury, que abriu contrato às 00:30 UTC e passou o dia sem preço que duas leituras confirmassem, fechou em 4,05% na leitura das 22:49, o terceiro maior do livro presidencial. O mercado também formou preço sobre onde ele chega: 23,75% para terminar em terceiro no 1º turno e 3,70% para terminar em segundo. Na urna ele não é nome novo: a PoderData/Aya o mede em 4% no 1º turno, empatado com os outros dois nomes da terceira via, e esses 4% são o maior número dele em toda a tabela do painel, que o media entre 1% e 3% até aqui. Caiado e Zema seguem no caminho oposto, em 0,15% cada um, e a PoderData coloca os dois empatados tecnicamente com o líder no 2º turno, 43% contra 44% cada. É a distância entre as duas medições que o painel existe para mostrar: na urna eles empatam no returno, e no preço de vencedor os dois somados não chegam a um terço de ponto. leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago).",
+      "analise": "O grupo tem um movimento e ele é de Cury. No segundo dia de vida dos contratos dele, o preço de VENCEDOR cedeu 0,55pp, para 3,50%, e o de 3º LUGAR subiu 2,95pp, para 26,70%. É o mesmo padrão que apareceu no segundo colocado, em escala menor: o mercado ajusta para baixo a chance de ganhar e para cima a de chegar bem colocado. No contrato de 3º lugar, que é o mais disputado do painel, os três nomes ficaram dentro de 8,80pp uns dos outros, com Renan Santos em 35,50%, Caiado em 34,50% e Cury em 26,70%. Nenhum dos três tem pesquisa nova para cruzar nesta sexta, e o livro inteiro de 3º lugar acumula apenas USD 0,68M, então cada movimento ali vale menos do que parece.",
       "fortes": [
-        "⭐ AUGUSTO CURY (Avante) PASSOU A TER PREÇO CONFIRMADO NESTA QUINTA. O contrato dele abriu às 00:30 UTC e fechou em 4,05% (vol USD 2,12M), o terceiro maior preço do livro presidencial, à frente de Renan Santos e de Ronaldo Caiado. No contrato de 3º lugar do 1º turno ele marca 23,75% (vol USD 33 mil) e no de 2º lugar, 3,70% (vol USD 57 mil).",
-        "Na urna, a PoderData/Aya de hoje mede Cury em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado. São os 4% mais altos dele em toda a tabela do painel, que reúne as nacionais dos últimos 30 dias e o media entre 1% e 3% até aqui.",
-        "Ele foi o presidenciável mais buscado no Google durante o debate e o de maior crescimento de seguidores e de buscas, segundo CNN Brasil e Pleno.News, e ganhou 2 milhões de seguidores, segundo SpaceMoney. É candidato do Avante, oficializado em convenção em 03/Ago, com Júlio Delgado como vice.",
-        "Ronaldo Caiado e Romeu Zema empatam tecnicamente com o líder no 2º turno da PoderData, por 43% a 44% cada, os dois dentro da margem de 2pp."
+        "AUGUSTO CURY (Avante) fez o movimento mais claro do grupo no segundo dia de vida dos contratos dele: SUBIU 2,95pp no contrato de 3º lugar do 1º turno, para 26,70%, enquanto cedia 0,55pp no de vencedor, para 3,50% (vol USD 2,36M acumulado).",
+        "O contrato de 3º lugar ficou o mais disputado do painel: Renan Santos em 35,50%, Caiado em 34,50% e Cury em 26,70%, os três dentro de 8,80pp uns dos outros.",
+        "CAIADO (PSD) subiu nos dois contratos em que aparece, 0,10pp na vitória e 1,00pp no de 3º lugar, e lidera a disputa presidencial em Goiás na série estadual da Quaest, com 32%, segundo Diário da Manhã.",
+        "Cury propôs nesta sexta uma comissão de juristas para analisar anistia e reforma do Supremo, segundo O Globo, e é o único do grupo com pauta própria no noticiário do dia."
       ],
       "fracos": [
-        "⚠️ A série de preço dele tem cinco pontos, todos desta quinta, entre 0,80% e 5,00%. Num contrato recém-aberto, amplitude assim não separa preço de ruído, e o painel não trata nenhum patamar dele como estabelecido.",
-        "Ronaldo Caiado cedeu 0,30pp no contrato de vencedor e ficou em 0,15%, abaixo do piso de 0,5% da dupla leitura, e cedeu 5,50pp no de 3º lugar do 1º turno.",
-        "Romeu Zema segue em 0,15% no contrato de vencedor, também abaixo do piso de vigilância.",
-        "Caiado e Zema somados valem 0,30% no contrato de vencedor, contra 94,35% dos dois primeiros colocados. A terceira via segue medida na urna e quase não precificada no mercado."
+        "A série de preço de Cury tem dois dias de vida. Num contrato recém-aberto, movimento de 2,95pp num livro de USD 0,68M não separa preço de ruído, e o painel trata o patamar como provisório.",
+        "Caiado, Zema e Haddad seguem abaixo do piso de 0,5% no contrato de vencedor, faixa em que a dupla leitura não certifica movimento.",
+        "O livro inteiro de 3º lugar acumula USD 0,68M, menos de 0,5% do livro presidencial. Toda a disputa entre os três nomes do bloco acontece no menor mercado do painel.",
+        "Nenhum dos quatro tem pesquisa nacional nova nesta sexta para cruzar com o preço: a última divulgada é a PoderData/Aya de 27/Ago."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "A PoderData/Aya de hoje o dá em 38% no 1º turno, à frente por 3 pontos, e vencendo os quatro cenários de 2º turno testados, o mais apertado deles por 45% a 44%. A Gerp de 26/Ago o dava em 37% e a Indexa em 39%. A BTG/Nexus de 24/Ago, que alimenta o número deste bloco, o mantém em 41%.",
-      "m": "57,50% (vol USD 9,30M), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Queda de 5,00pp, a maior variação do painel no contrato de vencedor, e o menor patamar desde 01/Jul.",
-      "t": "cede 5,00pp em cinco leituras sucessivas e volta ao patamar de 01/Jul",
-      "s": "Foi à sabatina do Jornal Nacional, chamou as acusações sobre o filho de ilações e negou blindagem. A PF apura pedido de lobista para que o filho agisse em favor do Careca do INSS.",
+      "p": "Sem pesquisa nacional nova nesta sexta. A PoderData/Aya de 27/Ago o dá em 38% no 1º turno, à frente por 3 pontos, e vencendo os quatro cenários de 2º turno testados. Na série ESTADUAL da Quaest divulgada nesta semana ele está em empate técnico com o adversário em São Paulo, Minas Gerais e Rio de Janeiro, e lidera na Bahia por 50% a 17%.",
+      "m": "57,50% (vol USD 9,34M), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). SEM VARIAÇÃO, depois de ceder 5,00pp na véspera em cinco leituras sucessivas.",
+      "t": "preço parado, e a distância alargou pelo lado do adversário",
+      "s": "Estreou a propaganda eleitoral associando o adversário a rachadinha, ao ex-banqueiro do Master e a um grupo de matadores de aluguel, segundo Folha de S.Paulo. Pediu ao chefe da PF que se apaziguasse com o relator no Supremo, segundo Estadão.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "A PoderData/Aya o dá em 35% no 1º turno, a 3 pontos, e em 44% no 2º turno, a 1 ponto. Os dois dentro da margem de 2pp. A Gerp de 26/Ago o dava à frente com 38% e a Indexa atrás com 34%.",
-      "m": "36,85% (vol USD 9,11M), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Alta de 1,30pp, a maior do dia, e o patamar mais alto dele desde 13/Mai. No contrato de 2º lugar cedeu 3,00pp, para 84,50%.",
-      "t": "a maior alta do dia, e o patamar mais alto desde 13/Mai",
-      "s": "Acionou o TSE para proibir uso do Palácio da Alvorada em conteúdo eleitoral do adversário. A produtora do Dark Horse pediu a Mendonça que leve o caso ao STF, e Dino ampliou o acesso da PF às provas.",
+      "p": "Sem pesquisa nacional nova. A PoderData/Aya de 27/Ago o dá em 35% no 1º turno, a 3 pontos, e em 44% no 2º turno, a 1 ponto, os dois dentro da margem de 2pp. Na série estadual da Quaest, empate técnico nos três maiores colégios e liderança em Roraima, por 52% a 17%.",
+      "m": "35,65% (vol USD 9,13M), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Queda de 1,20pp, a MAIOR variação do painel, e ela devolve com folga a alta de 1,30pp da véspera. No contrato de 2º lugar SUBIU 0,50pp, para 85,00%.",
+      "t": "a maior queda do dia na vitória, e alta no contrato de 2º lugar",
+      "s": "Foi sabatinado no Jornal Nacional nesta sexta. A propaganda do adversário estreou com o áudio dele e o ex-banqueiro do Master. Em jantar com 20 banqueiros, a falta de propostas robustas gerou desconfiança, segundo O Globo.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado, e é o maior número dele em toda a tabela do painel. Candidato do Avante, oficializado em convenção em 03/Ago.",
-      "m": "4,05% (vol USD 2,12M) no contrato de vencedor, leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), o terceiro maior preço do livro. Também 23,75% no de 3º lugar do 1º turno e 3,70% no de 2º. O contrato abriu nesta quinta, às 00:30 UTC.",
-      "t": "nome novo no livro, e já em terceiro no contrato de vencedor",
-      "s": "Foi o presidenciável mais buscado no Google durante o debate e o de maior crescimento de seguidores, segundo CNN Brasil e Pleno.News.",
+      "p": "Sem pesquisa nacional nova. A PoderData/Aya de 27/Ago o mede em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado. Candidato do Avante, oficializado em convenção em 03/Ago.",
+      "m": "3,50% (vol USD 2,36M) no contrato de vencedor, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Queda de 0,55pp no segundo dia de vida do contrato. No de 3º lugar SUBIU 2,95pp, para 26,70%, e no de 2º lugar tem 1,85%.",
+      "t": "cede na vitória e sobe 2,95pp no contrato de 3º lugar",
+      "s": "Propôs uma comissão de juristas para analisar anistia a Bolsonaro e reforma do Supremo, segundo O Globo.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "A PoderData/Aya o dá em 4% no 1º turno, empatado com Caiado e com Cury, e em 37% no 2º turno contra o líder. A Gerp de 26/Ago o dava em 3% e a Indexa em 4%.",
-      "m": "2,35% (vol USD 11,65M), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). O contrato TOCOU o piso de toda a série nesta quinta, com 1,70% no registro, e já voltou a subir. No de 3º lugar cedeu 9,50pp, para 36,00%, a maior variação isolada do painel hoje.",
-      "t": "tocou o piso da série e voltou",
-      "s": "Foi ao Jornal Nacional, disse que vai adotar regime de exceção em favelas e defendeu que o Brasil tenha bomba atômica.",
+      "p": "Sem pesquisa nacional nova. A PoderData/Aya de 27/Ago o dá em 4% no 1º turno, empatado com Caiado e com Cury, e em 37% no 2º turno contra o líder.",
+      "m": "2,90% (vol USD 11,73M), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Alta de 0,55pp, a segunda seguida depois do piso de toda a série em 27/Ago. No de 3º lugar cedeu 0,50pp, para 35,50%, onde segue na frente.",
+      "t": "segunda alta seguida depois do piso da série",
+      "s": "Não aparece no noticiário desta sexta com fato próprio.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A PoderData/Aya o dá em 4% no 1º turno, empatado com Renan Santos e com Cury, e empatado tecnicamente com o líder no 2º turno, por 43% a 44%.",
-      "m": "0,15% (vol USD 6,80M), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Queda de 0,30pp, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar cedeu 5,50pp, para 33,50%, o menor patamar dele ali desde 14/Ago.",
-      "t": "cede nos dois contratos e fica abaixo do piso de vigilância no de vencedor",
-      "s": "Defendeu na véspera a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos Master, INSS e Carbono Oculto.",
+      "p": "Sem pesquisa nacional nova. A PoderData/Aya de 27/Ago o dá em 4% no 1º turno e empatado tecnicamente com o líder no 2º turno, por 43% a 44%. Lidera em Goiás na série estadual da Quaest, com 32%.",
+      "m": "0,25% (vol USD 6,88M), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Alta de 0,10pp, ainda abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar subiu 1,00pp, para 34,50%.",
+      "t": "sobe nos dois contratos, e no de 3º lugar encosta no primeiro",
+      "s": "O primeiro programa dele no horário eleitoral vai ao ar no sábado, segundo VEJA.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "A PoderData/Aya o mede em 3% no 1º turno. A Gerp de 26/Ago o dava em 4% e a Indexa em 2%, e ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
-      "m": "0,15% (vol USD 3,03M), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
+      "p": "Sem pesquisa nacional nova. A PoderData/Aya de 27/Ago o mede em 3% no 1º turno. Ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
+      "m": "0,15% (vol USD 3,04M), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
       "t": "abaixo do piso de vigilância",
-      "s": "Não aparece no noticiário desta quinta entre os nomes com fato próprio.",
+      "s": "Não aparece no noticiário desta sexta entre os nomes com fato próprio.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,40% (vol USD 84 mil), leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). Sem variação no dia, e é o quarto dia seguido no mesmo patamar.",
-      "t": "parado pelo quarto dia",
-      "s": "A disputa entre André Mendonça e a direção da PF no inquérito sobre o filho do presidente é o fato do tribunal nesta quinta. A produtora do Dark Horse pediu que a apuração vá ao STF, e Dino ampliou o acesso da PF às provas.",
+      "m": "3,40% (vol USD 84 mil), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação. O contrato esteve em 3,40% em 13 dos últimos 14 dias, com uma única leitura de 3,50% em 26/Ago.",
+      "t": "parado, e é o menor livro do painel",
+      "s": "Mendonça intimou o X a explicar ao TSE, em 24 horas, o filtro que impede recomendação de perfis de candidatos, segundo O Globo. Dino disse que o ultraprotagonismo do Judiciário não é desejável, mas que o Supremo não pode se omitir, segundo Folha de S.Paulo.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "O 27 de agosto tem um fato de urna e três de mercado, e todos caíram na mesma data. Na urna, a PoderData/Aya (BR-04974/2026, campo 23 a 26/Ago, n=2.400, telefone) trouxe empate técnico nos DOIS turnos: 38% a 35% no primeiro e 45% a 44% no segundo, os dois dentro da margem de 2pp. A comparação que vale aqui é com a própria casa, porque método e amostra são os mesmos: em 13/Ago ela media 41% a 35% no primeiro turno, seis pontos, e agora mede três. O segundo turno estava em um ponto e continua em um. A mesma rodada dá empate técnico do líder também contra Romeu Zema e contra Ronaldo Caiado, por 44% a 43% em cada, e vantagem de sete pontos sobre Renan Santos. Rejeição empatada em 49% para os dois primeiros colocados, e aprovação do governo em 42% contra 50% de desaprovação. No preço, a leitura confirmada das 22:49 traz o líder em 57,50%, com queda de 5,00pp no dia, contínua ao longo de cinco leituras, e no menor patamar desde 01/Jul: a última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup do banco contra o registro completo desde 14/Abr. O segundo colocado subiu 1,30pp, para 36,85%, a maior alta do dia e o patamar mais alto dele desde 13/Mai. A distância entre os dois caiu de 26,95pp para 20,65pp, e desta vez ela encurtou pelos dois lados. ⚠️ O painel NÃO chama isso de vão mais estreito de nada, porque não é: em maio o segundo colocado esteve à frente do primeiro, com o vão chegando a menos 8,00pp em 06/Mai. O segundo fato de mercado é estrutural: Augusto Cury, que abriu contrato às 00:30 UTC e passou o dia sem preço que duas leituras confirmassem, fechou em 4,05% e é o terceiro maior preço do livro. O mercado também formou preço sobre onde ele chega, com 23,75% para terminar em terceiro no 1º turno e 3,70% para terminar em segundo. Na urna ele não é nome novo, porque a PoderData o mede em 4%, empatado com os outros dois da terceira via, e esses 4% são o maior número dele em toda a tabela do painel, que o media entre 1% e 3% até aqui. O terceiro fato é um piso tocado e desfeito no mesmo dia: Renan Santos marcou 1,70% no registro, o menor de toda a série de 350 pontos desde 14/Abr, e às 22:49 já estava em 2,35%. No contrato de 3º lugar ele cedeu 9,50pp, para 36,00%, a maior variação isolada do painel, e Ronaldo Caiado cedeu 5,50pp, para 33,50%. No noticiário, o depoimento de Daniel Vorcaro à Polícia Federal foi adiado pela segunda vez, agora por falha técnica na videoconferência, e remarcado para sexta; o caso Dark Horse teve pedido da produtora para ir ao STF e ampliação do acesso da PF às provas; e a propaganda do primeiro colocado passou a circular com o áudio em que o segundo chama Vorcaro de irmão ao pedir dinheiro, áudio revelado em maio pelo Intercept Brasil. Todos esses fatos são da mesma data, e o painel registra a coincidência sem atribuir causa. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra. leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago)."
+  "cruzamento": "O 28 de agosto não tem fato de urna e tem um fato de calendário que vale por vários: é o primeiro dia de horário eleitoral gratuito no rádio e na TV, com quatro candidatos dividindo o tempo. Nenhuma pesquisa nacional foi divulgada, então a última continua sendo a PoderData/Aya de 27/Ago, e qualquer efeito da propaganda só poderá ser medido nas nacionais previstas a partir de 29/Ago. O que existe de urna nesta semana é a série ESTADUAL da Quaest, com 23 estados e o Distrito Federal, e ela traz o dado mais forte do dia: empate técnico entre os dois primeiros colocados nos TRÊS MAIORES colégios eleitorais do país, São Paulo, Minas Gerais e Rio de Janeiro, segundo G1. Pela régua da casa, pesquisa estadual não entra na tabela do painel, que é só de escopo nacional, mas entra na leitura jornalística. No preço, o desenho do dia é o inverso exato do de 27/Ago. Ontem o líder cedeu 5,00pp e o vão estreitou; hoje o líder ficou PARADO em 57,50% e o vão ALARGOU, de 20,65pp para 21,85pp, porque o segundo colocado cedeu 1,20pp, a maior variação do painel. Em dois dias seguidos, portanto, quem definiu a distância entre os dois foi sempre o segundo colocado, e o líder só se moveu num deles. O cruzamento que o painel registra, e a ressalva que ele faz junto, é este: a propaganda do líder estreou usando um áudio do segundo colocado com o ex-banqueiro do Banco Master, e o preço do segundo colocado caiu no mesmo dia. As duas coisas aconteceram na mesma data. O painel NÃO afirma que uma produziu a outra, por dois motivos verificáveis: um único dia de propaganda não isola efeito de nada, e o contrato que mediria mais diretamente o estrago dele, o de chegar ao 2º turno, SUBIU 0,50pp no mesmo período, para 85,00%. Os dois livros do mesmo candidato andaram em direções opostas, e quem lê só o de vencedor conclui uma coisa que o outro contradiz. No pelotão de trás, o movimento é de Augusto Cury, no segundo dia de vida dos contratos dele: cedeu 0,55pp na vitória e subiu 2,95pp no de 3º lugar. Com isso o contrato de 3º lugar virou o mais disputado do painel, com Renan Santos em 35,50%, Caiado em 34,50% e Cury em 26,70%, os três dentro de 8,80pp. É também o menor livro do painel, com USD 0,68M acumulados, então movimento ali custa pouco para acontecer."
 }
