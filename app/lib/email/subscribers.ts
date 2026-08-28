@@ -148,6 +148,31 @@ export async function createSubscriber(
       unsubscribeToken: finalToken ?? undefined,
     }
   } catch (error) {
+    // 🔴 CORRIDA DE DUPLO-CLIQUE no PRIMEIRO cadastro. O `upsert` do Prisma não
+    // é atômico no banco: dois pedidos simultâneos para um e-mail que ainda não
+    // existe tomam os dois o ramo de CREATE, e o segundo viola a unicidade com
+    // P2002. O cadastro DEU CERTO, mas a pessoa via erro genérico na tela.
+    // Medido em 27/Ago/2026. A saída é reler: na segunda passada o registro já
+    // existe e o caminho vira UPDATE, que é idempotente.
+    const codigo = (error as { code?: string })?.code
+    if (codigo === 'P2002') {
+      try {
+        const existente = await prisma.lead.findUnique({
+          where: { email: normalized },
+          select: { id: true, unsubscribeToken: true },
+        })
+        if (existente) {
+          console.warn('[subscribers] P2002 em corrida, resolvido relendo:', normalized.slice(0, 3) + '***')
+          return {
+            success: true,
+            isNew: false,
+            reativado: false,
+            leadId: existente.id,
+            unsubscribeToken: existente.unsubscribeToken ?? undefined,
+          }
+        }
+      } catch {}
+    }
     console.error('[subscribers] Erro ao criar subscriber:', error)
     return { success: false, isNew: false, error: 'internal_error' }
   }

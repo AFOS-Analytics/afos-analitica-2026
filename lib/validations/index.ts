@@ -2,16 +2,37 @@ import { z } from 'zod'
 
 // ── Shared primitives ──────────────────────────────────────
 
-export const emailSchema = z
-  .string()
-  .min(5, 'Email muito curto')
-  .max(254, 'Email muito longo')
-  .email('Email inválido')
-  .refine(
-    (v) => v.indexOf('@') <= 64,
-    'Local part do email excede 64 caracteres (RFC 5321)'
-  )
-  .transform((v) => v.trim().toLowerCase())
+/**
+ * 🔴 LIMPEZA ANTES DE VALIDAR, e a ordem é o ponto. Antes o `.email()` rodava
+ * ANTES do `.transform()`, então espaço ou caractere invisível derrubava a
+ * validação e o `.trim()` só acontecia depois, quando já não adiantava.
+ *
+ * O caso que importa é o **zero-width** (U+200B a U+200D e U+FEFF): muita
+ * página web insere esses caracteres no texto, e ao copiar um e-mail de lá
+ * eles vêm junto, INVISÍVEIS. O `.trim()` do navegador não os remove, então a
+ * pessoa via "Insira um email válido" com um e-mail visualmente perfeito e não
+ * tinha como descobrir o motivo. Mesma forma do defeito do `visitorId`.
+ *
+ * Medido em 27/Ago/2026. Agora o valor é higienizado primeiro e a validação
+ * julga o que a pessoa quis dizer, não o que o clipboard trouxe junto.
+ */
+const higienizaEmail = (v: unknown): unknown =>
+  typeof v === 'string'
+    ? v.replace(/[\u200B-\u200D\uFEFF\u2060]/g, '').trim().toLowerCase()
+    : v
+
+export const emailSchema = z.preprocess(
+  higienizaEmail,
+  z
+    .string()
+    .min(5, 'Email muito curto')
+    .max(254, 'Email muito longo')
+    .email('Email inválido')
+    .refine(
+      (v) => v.indexOf('@') <= 64,
+      'Local part do email excede 64 caracteres (RFC 5321)'
+    )
+)
 
 // ── CRM ────────────────────────────────────────────────────
 

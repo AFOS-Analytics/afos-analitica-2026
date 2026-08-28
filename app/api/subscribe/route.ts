@@ -71,14 +71,38 @@ export async function POST(request: Request) {
     const redisUrl = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL
     const redisToken = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN
 
+    // 🔴 DUAS TRAVAS DE ROBUSTEZ AQUI, as duas medidas em 27/Ago/2026.
+    //
+    // 1. CHAVE ORFA, QUE BLOQUEAVA O IP PARA SEMPRE. `INCR` cria a chave SEM
+    //    TTL, e o `EXPIRE` era uma SEGUNDA ida ao Redis. Se o processo morresse
+    //    entre as duas, coisa banal em serverless, a chave ficava eterna. E o
+    //    `expire` so era tentado quando `attempts === 1`, condicao que nunca
+    //    mais se repete: o contador subia de 5 e o IP ficava barrado PARA
+    //    SEMPRE, no desktop e no celular, porque o limite e por IP e nao por
+    //    aparelho. Agora a ausencia de TTL e detectada e reparada.
+    //
+    // 2. FALHA DO REDIS NAO PODE BARRAR CADASTRO. Antes, um soluco do Redis
+    //    caia no catch geral da rota e devolvia 500 para uma pessoa legitima.
+    //    Limite de taxa e anti-abuso, nao correcao: falha ABERTO. Aceitar um
+    //    cadastro a mais e barato; recusar um assinante real nao e.
     if (redisUrl && redisToken) {
-      const redis = new Redis({ url: redisUrl, token: redisToken })
-      const rateLimitKey = `afos:ratelimit:subscribe:${ip}`
-      const attempts = await redis.incr(rateLimitKey)
-      if (attempts === 1) await redis.expire(rateLimitKey, 3600)
-      if (attempts > 5) {
-        audit('rate_limited', 'api.subscribe', ip, { ip })
-        return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+      try {
+        const redis = new Redis({ url: redisUrl, token: redisToken })
+        const rateLimitKey = `afos:ratelimit:subscribe:${ip}`
+        const attempts = await redis.incr(rateLimitKey)
+        if (attempts === 1) {
+          await redis.expire(rateLimitKey, 3600)
+        } else {
+          // Repara chave que ficou sem expiracao. TTL negativo = sem TTL.
+          const ttl = await redis.ttl(rateLimitKey)
+          if (ttl < 0) await redis.expire(rateLimitKey, 3600)
+        }
+        if (attempts > 5) {
+          audit('rate_limited', 'api.subscribe', ip, { ip })
+          return NextResponse.json({ ok: false, error: 'rate_limited' }, { status: 429 })
+        }
+      } catch (err) {
+        console.error('[subscribe] rate limit indisponivel, seguindo sem ele:', err)
       }
     }
 
