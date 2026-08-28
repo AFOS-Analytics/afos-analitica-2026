@@ -1423,54 +1423,65 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "27/08/2026, 21:46"
+    "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices from the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), with the presidential book at USD 137.47M. ⭐ THE DAY HAS ONE NEW POLL AND ONE NEW NAME IN THE BOOK. PoderData/Aya (BR-04974/2026, fieldwork Aug 23 to 26, n=2,400) brings a technical tie in BOTH rounds, 38% to 35% in the first and 45% to 44% in the second, and the comparison with the house itself shows the first round narrowing from 6pp to 3pp in two weeks. On price, the leader gave up 5.00pp and fell to 57.50%, his lowest level since Jul 1, with the decline coming across five successive readings through the day; the runner-up rose 0.30pp, to 35.85%, his highest since May 13. The distance between the two fell from 26.95pp to 21.65pp and narrowed from the top. ⚠️ That is NOT the narrowest gap of anything: 387 of the 691 points in the series sit below it, and in May the runner-up was ahead of the leader. ⭐ The largest move of the day is in the PLACEMENT contracts: Renan Santos gave up 9.00pp in the third-place contract for the first round, to 36.50%, and also marked the floor of his entire series in the outright-winner one, at 1.65%; Ronaldo Caiado gave up 5.50pp in that same contract, to 33.50%; and Flávio Bolsonaro gave up 3.00pp in the second-place one, to 84.50%. On the same day Polymarket opened contracts for Augusto Cury, who shows up at 23.50% in the third-place book and 4.00% in the second. Augusto Cury’s outright-winner contract opened on Thursday and this round does not publish a price for it. His second-place and third-place contracts do confirm, and those are the ones shown on the panel. That is why he does not yet have a line of his own in this block, which carries the outright-winner price.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. The confirmation is done contract by contract. On Aug 27 there is a fresh confirmed reading for the presidential book, for the second-place and third-place contracts of the first round, for the STF impeachment one and for the Senate one. Augusto Cury’s outright-winner contract opened on Thursday and this round does not publish a price for it. His second-place and third-place contracts do confirm, and those are the ones shown on the panel. Polls filed with the TSE and released by the institutes, as reported by Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. PoderData/Aya of Aug 27 was checked against two sources, with the TSE registration number matching and with the national scope confirmed in the release, which states 555 municipalities across the 27 federal units. Series superlatives checked in the Neon backup, in backup/neon/marketPrice, which holds the full record since Apr 14.",
+    "note": "Polymarket prices from the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), with the presidential book at USD 137.64M. ⭐ THE DAY HAS ONE NEW POLL AND ONE NEW NAME IN THE BOOK. PoderData/Aya (BR-04974/2026, fieldwork Aug 23 to 26, n=2,400) brings a technical tie in BOTH rounds, 38% to 35% in the first and 45% to 44% in the second, and the comparison with the house itself shows the first round narrowing from 6pp to 3pp in two weeks. On price, the leader gave up 5.00pp and fell to 57.50%, his lowest level since Jul 1, and the runner-up rose 1.30pp, to 36.85%, his highest since May 13. The distance between the two fell from 26.95pp to 20.65pp and narrowed from both sides. ⚠️ That is NOT the narrowest gap of anything: in May the runner-up was ahead of the leader. ⭐ Augusto Cury got a confirmed price and closed at 4.05%, the third largest in the book, with 23.75% in the third-place contract for the first round and 3.70% in the second-place one. And Renan Santos touched the floor of his entire series, at 1.70% in the record, and was already back at 2.35% by 10:49 PM.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. The confirmation is done contract by contract. On Aug 27 all five books tracked confirmed in the 10:49 PM reading, including Augusto Cury's contract, which opened that same day. Polls filed with the TSE and released by the institutes, as reported by Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. PoderData/Aya of Aug 27 was checked against two sources, with the TSE registration number matching and with the national scope confirmed in the release, which states 555 municipalities across the 27 federal units. Series superlatives checked in the Neon backup, in backup/neon/marketPrice, which holds the full record since Apr 14.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "37-44.9%",
         "polymarket": "57.50%",
         "tendenciaPesquisa": "A NEW POLL TODAY, AND IT BRINGS A TECHNICAL TIE IN BOTH ROUNDS. PoderData/Aya (BR-04974/2026, fieldwork Aug 23 to 26, n=2,400) has him at 38% in the first round against 35%, and at 45% against 44% in the second, both inside the 2pp margin. The comparison with the house itself is what informs: it was 6pp in the first round on Aug 13 and it is 3pp now. He still wins all four runoff scenarios tested. BTG/Nexus of Aug 24, the most reliable national poll in the window, keeps him at 41% and is the one that feeds the figure in this block.",
-        "tendenciaPolymarket": "57.50% (vol USD 9.27M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 5.00pp on the day, the largest move on the panel in the outright-winner contract. The fall was continuous, across five successive readings. ⚠️ It is the lowest level since Jul 1: the last reading below that was on Jun 30 at 4:30 PM UTC, at 55.50%, checked in the backup against the full series since Apr 14. The series top is still 67.50%, from Aug 16. His distance to the runner-up fell to 21.65pp, and it narrowed from the top.",
+        "tendenciaPolymarket": "57.50% (vol USD 9.30M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), down 5.00pp on the day, the largest move on the panel in the outright-winner contract. The fall was continuous, across five successive readings. ⚠️ It is the lowest level since Jul 1: the last reading below that was on Jun 30 at 4:30 PM UTC, at 55.50%, checked in the backup against the full series since Apr 14. The series top is still 67.50%, from Aug 16. His distance to the runner-up fell to 20.65pp.",
         "odds": 57.5,
         "percentage": 41,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 57.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28.7-40%",
-        "polymarket": "35.85%",
+        "polymarket": "36.85%",
         "tendenciaPesquisa": "Today’s PoderData/Aya has him at 35% in the first round, 3 points back, and at 44% in the second, 1 point back, both inside the 2pp margin. His rejection stands at 49%, level with the leader. Gerp of Aug 26 had him ahead in the first round with 38% and Indexa/Broadcast had him behind with 34%, and both measured in the same week.",
-        "tendenciaPolymarket": "35.85% (vol USD 9.10M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), up 0.30pp. ⭐ It is his highest level since May 13: before Thursday, the last point above that was on May 13 at 2:00 AM UTC, at 42.80%, checked in the backup. The series top is still 45.50%, from May 6. The gap to the leader closed by 5.30pp on the day, and 5.00pp of that came from the other side falling. In the second-place contract for the first round he gave up 3.00pp, to 84.50%.",
-        "odds": 35.85,
+        "tendenciaPolymarket": "36.85% (vol USD 9.11M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), up 1.30pp, the largest gain of the day among the outright-winner contracts. ⭐ It is his highest level since May 13: the last point above that was on May 13 at 2:00 AM UTC, at 42.80%, checked in the backup. The series top is still 45.50%, from May 6. In the second-place contract for the first round he gave up 3.00pp, to 84.50%.",
+        "odds": 36.85,
         "percentage": 37,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 35.85
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 36.85
+      },
+      {
+        "name": "Augusto Cury",
+        "pesquisaRange": "1-4%",
+        "polymarket": "4.05%",
+        "tendenciaPesquisa": "⭐ THE 4% FROM TODAY'S PoderData/Aya IS HIS HIGHEST FIGURE ANYWHERE IN THE PANEL'S TABLE, which gathers the national polls of the last 30 days and had measured him between 1% and 3% until now. He is level with Renan Santos and Ronaldo Caiado in the first round. BTG/Nexus of Aug 24, which feeds the figure in this block, measured him at 2%.",
+        "tendenciaPolymarket": "4.05% (vol USD 2.12M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28). ⭐ THE CONTRACT OPENED ON THURSDAY, at 12:30 AM UTC, and he is already the third largest price in the presidential book, ahead of Renan Santos and Ronaldo Caiado. He also marks 23.75% in the third-place contract for the first round and 3.70% in the second-place one. ⚠️ His series has five points, all from today, between 0.80% and 5.00%: in a newly opened contract a swing like that does not tell price from noise.",
+        "odds": 4.05,
+        "percentage": 2,
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 4.05
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "1.65%",
+        "polymarket": "2.35%",
         "tendenciaPesquisa": "PoderData/Aya measures him at 4% in the first round, level with Ronaldo Caiado and Augusto Cury, and at 37% in the runoff against the leader. Gerp of Aug 26 had him at 3% and Indexa at 4%. In the polling he is where he was; in the price, he is not.",
-        "tendenciaPolymarket": "1.65% (vol USD 11.63M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 1.10pp. ⚠️ It is the FLOOR of the entire series: none of the 350 points recorded since Apr 14 sits below that, checked in the backup. The descent is a straight line, from 3.10% on Aug 25 to 1.65% now, with no rebound. The series top is 49.60%, from Apr 28. In the third-place contract for the first round he gave up 9.00pp, to 36.50%, the largest single move on the panel today, and he is still the most expensive name in that contract.",
-        "odds": 1.65,
+        "tendenciaPolymarket": "2.35% (vol USD 11.65M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28). ⚠️ The contract TOUCHED the floor of its entire series on Thursday: the record marked 1.70% across four successive readings and none of the 350 points since Apr 14 sits below that, checked in the backup. An hour later he was already back at 2.35%. The series top is 49.60%, from Apr 28. In the third-place contract for the first round he gave up 9.50pp, to 36.00%, the largest single move on the panel today, and he is still the most expensive name in that contract.",
+        "odds": 2.35,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 1.65
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 2.35
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "PoderData/Aya measures him at 4% in the first round, level with Renan Santos and Augusto Cury, and puts him in a technical tie with the leader in the runoff, 43% to 44%. Indexa of Aug 26 had him at 5% and Gerp at 3%.",
-        "tendenciaPolymarket": "0.15% (vol USD 6.80M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 0.30pp, which puts him below the 0.5% floor of the double reading. In the third-place contract for the first round he gave up 5.50pp, to 33.50%, his lowest level there since Aug 14.",
+        "tendenciaPolymarket": "0.15% (vol USD 6.80M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), down 0.30pp, which puts him below the 0.5% floor of the double reading. In the third-place contract for the first round he gave up 5.50pp, to 33.50%, his lowest level there since Aug 14.",
         "odds": 0.15,
         "percentage": 5,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.15
       },
       {
@@ -1478,10 +1489,10 @@
         "pesquisaRange": "2-5.2%",
         "polymarket": "0.15%",
         "tendenciaPesquisa": "PoderData/Aya measures him at 3% in the first round. Gerp of Aug 26 had him at 4% and Indexa at 2%, both measuring in the same week, and he is still the name with the largest relative divergence between institutes in the window.",
-        "tendenciaPolymarket": "0.15% (vol USD 3.03M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged, and below the 0.5% floor of the double reading.",
+        "tendenciaPolymarket": "0.15% (vol USD 3.03M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), unchanged, and below the 0.5% floor of the double reading.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.15
       },
       {
@@ -1489,36 +1500,36 @@
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
         "tendenciaPesquisa": "No national poll tests him for president, including today’s PoderData/Aya. That is why he shows no polling range in this block, and the panel does not turn absence of testing into absence of intention.",
-        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged. It is the largest accumulated volume in the presidential book, and he has been below the watch floor for weeks: high volume with a price pinned to zero is an old position unwound, not an active contract.",
+        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), unchanged. It is the largest accumulated volume in the presidential book, and he has been below the watch floor for weeks: high volume with a price pinned to zero is an old position unwound, not an active contract.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0.05%",
+        "polymarket": "0.15%",
         "tendenciaPesquisa": "PoderData/Aya measures him at 2% in the first round and puts him in a technical tie with the leader in the runoff, 43% to 44%. Gerp and Indexa of Aug 26 measured him at 1% each, and BTG/Nexus of Aug 24 at 3%.",
-        "tendenciaPolymarket": "0.05% (vol USD 6.13M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 0.10pp, and below the 0.5% floor of the double reading.",
-        "odds": 0.05,
+        "tendenciaPolymarket": "0.15% (vol USD 6.21M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), unchanged on the day, and below the 0.5% floor of the double reading.",
+        "odds": 0.15,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 0.05
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 0.15
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
         "tendenciaPesquisa": "No national poll tests him for president. The JOTA poll released on Aug 26 declared a runoff scenario with him in the leader’s place, but the figures from that scenario were not released in a source the panel can reach, and so they do not enter here.",
-        "tendenciaPolymarket": "0.05% (vol USD 7.30M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged.",
+        "tendenciaPolymarket": "0.05% (vol USD 7.30M) in the confirmed reading of Aug 27, 10:49 PM BRT (1:49 AM UTC on Aug 28), unchanged.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.05
       }
     ],
-    "updatedAt": "27/08/2026, 21:46",
-    "lastUpdate": "27/08/2026, 21:46"
+    "updatedAt": "27/08/2026, 22:49",
+    "lastUpdate": "27/08/2026, 22:49"
   }
 }

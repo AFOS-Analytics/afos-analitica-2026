@@ -1423,54 +1423,65 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "27/08/2026, 21:46"
+    "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com o livro presidencial em USD 137,47M. ⭐ O DIA TEM UMA PESQUISA NOVA E UM NOME NOVO NO LIVRO. A PoderData/Aya (BR-04974/2026, campo 23 a 26/Ago, n=2.400) traz empate técnico nos DOIS turnos, 38% a 35% no primeiro e 45% a 44% no segundo, e a comparação com a própria casa mostra o 1º turno estreitando de 6pp para 3pp em duas semanas. No preço, o líder cedeu 5,00pp e foi a 57,50%, o menor patamar desde 01/Jul, com a queda vindo em cinco leituras sucessivas ao longo do dia; o segundo subiu 0,30pp, para 35,85%, o mais alto dele desde 13/Mai. A distância entre os dois caiu de 26,95pp para 21,65pp e encurtou pelo lado de cima. ⚠️ Isso NÃO é vão mais estreito de nada: 387 dos 691 pontos da série estão abaixo disso, e em maio o segundo esteve à frente do primeiro. ⭐ O maior movimento do dia está nos contratos de POSIÇÃO: Renan Santos cedeu 9,00pp no de 3º lugar do 1º turno, para 36,50%, e marcou também o piso de toda a série dele no de vencedor, com 1,65%; Ronaldo Caiado cedeu 5,50pp naquele mesmo contrato, para 33,50%; e Flávio Bolsonaro cedeu 3,00pp no de 2º lugar, para 84,50%. No mesmo dia o Polymarket abriu contratos para Augusto Cury, que aparece com 23,50% no de 3º lugar e 4,00% no de 2º. O contrato de vencedor de Augusto Cury abriu nesta quinta e esta rodada não publica preço para ele. Os contratos de 2º e de 3º lugar dele, sim, e são esses que aparecem no painel. Por isso ele ainda não tem linha própria neste bloco, que carrega o preço de vencedor.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 27/Ago há leitura confirmada nova para o livro presidencial, para os contratos de 2º e de 3º lugar do 1º turno, para o de impeachment no STF e para o do Senado. O contrato de vencedor de Augusto Cury abriu nesta quinta e esta rodada não publica preço para ele. Os contratos de 2º e de 3º lugar dele, sim, e são esses que aparecem no painel. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. A PoderData/Aya de 27/Ago foi conferida em duas fontes, com o número de registro do TSE batendo e com o escopo nacional confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
+    "note": "Preços do Polymarket na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), com o livro presidencial em USD 137,64M. ⭐ O DIA TEM UMA PESQUISA NOVA E UM NOME NOVO NO LIVRO. A PoderData/Aya (BR-04974/2026, campo 23 a 26/Ago, n=2.400) traz empate técnico nos DOIS turnos, 38% a 35% no primeiro e 45% a 44% no segundo, e a comparação com a própria casa mostra o 1º turno estreitando de 6pp para 3pp em duas semanas. No preço, o líder cedeu 5,00pp e foi a 57,50%, o menor patamar desde 01/Jul, e o segundo subiu 1,30pp, para 36,85%, o mais alto dele desde 13/Mai. A distância entre os dois caiu de 26,95pp para 20,65pp e encurtou pelos dois lados. ⚠️ Isso NÃO é vão mais estreito de nada: em maio o segundo esteve à frente do primeiro. ⭐ Augusto Cury passou a ter preço confirmado e fechou em 4,05%, terceiro maior do livro, com 23,75% no contrato de 3º lugar do 1º turno e 3,70% no de 2º. E Renan Santos tocou o piso de toda a série, com 1,70% no registro, e já estava de volta em 2,35% às 22:49.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 27/Ago os cinco livros acompanhados confirmaram na leitura das 22:49, inclusive o contrato de Augusto Cury, que abriu no mesmo dia. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. A PoderData/Aya de 27/Ago foi conferida em duas fontes, com o número de registro do TSE batendo e com o escopo nacional confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "37-44,9%",
         "polymarket": "57,50%",
         "tendenciaPesquisa": "PESQUISA NOVA HOJE, E ELA TRAZ EMPATE TÉCNICO NOS DOIS TURNOS. A PoderData/Aya (BR-04974/2026, campo 23 a 26/Ago, n=2.400) o dá em 38% no 1º turno contra 35%, e em 45% contra 44% no 2º, os dois dentro da margem de 2pp. A comparação com a própria casa é o que informa: eram 6pp no 1º turno em 13/Ago e são 3pp agora. Ele segue vencendo os quatro cenários de 2º turno testados. A BTG/Nexus de 24/Ago, que é a nacional de maior confiabilidade da janela, o mantém em 41% e é a que alimenta o número deste bloco.",
-        "tendenciaPolymarket": "57,50% (vol USD 9,27M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com queda de 5,00pp no dia, a maior variação do painel no contrato de vencedor. A queda foi contínua, em cinco leituras sucessivas. ⚠️ É o menor patamar desde 01/Jul: a última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup contra a série inteira desde 14/Abr. O máximo da série segue sendo 67,50%, de 16/Ago. A distância dele para o segundo caiu para 21,65pp, e ela encurtou pelo lado de cima.",
+        "tendenciaPolymarket": "57,50% (vol USD 9,30M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), com queda de 5,00pp no dia, a maior variação do painel no contrato de vencedor. A queda foi contínua, em cinco leituras sucessivas. ⚠️ É o menor patamar desde 01/Jul: a última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup contra a série inteira desde 14/Abr. O máximo da série segue sendo 67,50%, de 16/Ago. A distância dele para o segundo caiu para 20,65pp.",
         "odds": 57.5,
         "percentage": 41,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 57.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28,7-40%",
-        "polymarket": "35,85%",
+        "polymarket": "36,85%",
         "tendenciaPesquisa": "A PoderData/Aya de hoje o dá em 35% no 1º turno, a 3 pontos, e em 44% no 2º, a 1 ponto, os dois dentro da margem de 2pp. A rejeição dele está em 49%, empatada com a do líder. A Gerp de 26/Ago o dava à frente no 1º turno com 38% e a Indexa/Broadcast o dava atrás com 34%, e as duas mediram na mesma semana.",
-        "tendenciaPolymarket": "35,85% (vol USD 9,10M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com alta de 0,30pp. ⭐ É o patamar mais alto dele desde 13/Mai: antes desta quinta, o último ponto acima disso foi em 13/Mai às 02:00 UTC, com 42,80%, conferido no backup. O topo da série segue sendo 45,50%, de 06/Mai. O vão para o líder encurtou 5,30pp no dia, e 5,00pp disso vieram da queda do outro lado. No contrato de 2º lugar do 1º turno ele cedeu 3,00pp, para 84,50%.",
-        "odds": 35.85,
+        "tendenciaPolymarket": "36,85% (vol USD 9,11M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), com alta de 1,30pp, a maior do dia entre os contratos de vencedor. ⭐ É o patamar mais alto dele desde 13/Mai: o último ponto acima disso foi em 13/Mai às 02:00 UTC, com 42,80%, conferido no backup. O topo da série segue sendo 45,50%, de 06/Mai. No contrato de 2º lugar do 1º turno ele cedeu 3,00pp, para 84,50%.",
+        "odds": 36.85,
         "percentage": 37,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 35.85
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 36.85
+      },
+      {
+        "name": "Augusto Cury",
+        "pesquisaRange": "1-4%",
+        "polymarket": "4,05%",
+        "tendenciaPesquisa": "⭐ OS 4% DA PoderData/Aya DE HOJE SÃO O MAIOR NÚMERO DELE EM TODA A TABELA DO PAINEL, que reúne as nacionais dos últimos 30 dias e o media entre 1% e 3% até aqui. Ele fica empatado com Renan Santos e com Ronaldo Caiado no 1º turno. A BTG/Nexus de 24/Ago, que alimenta o número deste bloco, o media em 2%.",
+        "tendenciaPolymarket": "4,05% (vol USD 2,12M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). ⭐ O CONTRATO ABRIU NESTA QUINTA, às 00:30 UTC, e ele já é o terceiro maior preço do livro presidencial, à frente de Renan Santos e de Ronaldo Caiado. Também marca 23,75% no contrato de 3º lugar do 1º turno e 3,70% no de 2º. ⚠️ A série dele tem cinco pontos, todos de hoje, entre 0,80% e 5,00%: num contrato recém-aberto, amplitude assim não separa preço de ruído.",
+        "odds": 4.05,
+        "percentage": 2,
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 4.05
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "1,65%",
+        "polymarket": "2,35%",
         "tendenciaPesquisa": "A PoderData/Aya o mede em 4% no 1º turno, empatado com Ronaldo Caiado e com Augusto Cury, e em 37% no 2º turno contra o líder. A Gerp de 26/Ago o dava em 3% e a Indexa em 4%. Na urna ele está onde estava; no preço, não.",
-        "tendenciaPolymarket": "1,65% (vol USD 11,63M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com queda de 1,10pp. ⚠️ É o PISO de toda a série: nenhum dos 350 pontos gravados desde 14/Abr ficou abaixo disso, conferido no backup. A descida é em linha reta, de 3,10% em 25/Ago para 1,65% agora, sem repique. O máximo da série é 49,60%, de 28/Abr. No contrato de 3º lugar do 1º turno ele cedeu 9,00pp, para 36,50%, a maior variação isolada do painel hoje, e segue sendo o nome mais caro daquele contrato.",
-        "odds": 1.65,
+        "tendenciaPolymarket": "2,35% (vol USD 11,65M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago). ⚠️ O contrato TOCOU o piso de toda a série nesta quinta: o registro marcou 1,70% em quatro leituras seguidas e nenhum dos 350 pontos desde 14/Abr ficou abaixo disso, conferido no backup. Uma hora depois ele já estava de volta a 2,35%. O máximo da série é 49,60%, de 28/Abr. No contrato de 3º lugar do 1º turno ele cedeu 9,50pp, para 36,00%, a maior variação isolada do painel hoje, e segue sendo o nome mais caro daquele contrato.",
+        "odds": 2.35,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 1.65
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 2.35
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "A PoderData/Aya o mede em 4% no 1º turno, empatado com Renan Santos e com Augusto Cury, e o coloca empatado tecnicamente com o líder no 2º turno, por 43% a 44%. A Indexa de 26/Ago o dava em 5% e a Gerp em 3%.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,80M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com queda de 0,30pp, que o coloca abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar do 1º turno ele cedeu 5,50pp, para 33,50%, o menor patamar dele ali desde 14/Ago.",
+        "tendenciaPolymarket": "0,15% (vol USD 6,80M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), com queda de 0,30pp, que o coloca abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar do 1º turno ele cedeu 5,50pp, para 33,50%, o menor patamar dele ali desde 14/Ago.",
         "odds": 0.15,
         "percentage": 5,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.15
       },
       {
@@ -1478,10 +1489,10 @@
         "pesquisaRange": "2-5,2%",
         "polymarket": "0,15%",
         "tendenciaPesquisa": "A PoderData/Aya o mede em 3% no 1º turno. A Gerp de 26/Ago o dava em 4% e a Indexa em 2%, as duas na mesma semana, e ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,03M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), sem variação, e abaixo do piso de 0,5% da dupla leitura.",
+        "tendenciaPolymarket": "0,15% (vol USD 3,03M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), sem variação, e abaixo do piso de 0,5% da dupla leitura.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.15
       },
       {
@@ -1489,36 +1500,36 @@
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Nenhuma nacional o testa para presidente, inclusive a PoderData/Aya de hoje. Por isso ele aparece sem faixa de pesquisa neste bloco, e o painel não converte ausência de teste em ausência de intenção.",
-        "tendenciaPolymarket": "0,05% (vol USD 14,06M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), sem variação. É o maior volume acumulado do livro presidencial, e ele está abaixo do piso de vigilância há semanas: volume alto com preço colado no zero é posição antiga desmontada, não contrato ativo.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,06M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), sem variação. É o maior volume acumulado do livro presidencial, e ele está abaixo do piso de vigilância há semanas: volume alto com preço colado no zero é posição antiga desmontada, não contrato ativo.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0,05%",
+        "polymarket": "0,15%",
         "tendenciaPesquisa": "A PoderData/Aya o mede em 2% no 1º turno e o coloca empatado tecnicamente com o líder no 2º turno, por 43% a 44%. A Gerp e a Indexa de 26/Ago o mediam em 1% cada uma, e a BTG/Nexus de 24/Ago em 3%.",
-        "tendenciaPolymarket": "0,05% (vol USD 6,13M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), com queda de 0,10pp, e abaixo do piso de 0,5% da dupla leitura.",
-        "odds": 0.05,
+        "tendenciaPolymarket": "0,15% (vol USD 6,21M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), sem variação no dia, e abaixo do piso de 0,5% da dupla leitura.",
+        "odds": 0.15,
         "percentage": 3,
-        "lastUpdate": "27/08/2026, 21:46",
-        "value": 0.05
+        "lastUpdate": "27/08/2026, 22:49",
+        "value": 0.15
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "não testado",
         "polymarket": "0,05%",
         "tendenciaPesquisa": "Nenhuma nacional o testa para presidente. A pesquisa do JOTA divulgada em 26/Ago declarou um cenário com ele no lugar do líder no 2º turno, mas os percentuais desse cenário não foram divulgados em fonte que o painel alcance, e por isso não entram aqui.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,30M) na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), sem variação.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,30M) na leitura confirmada de 27/Ago, 22:49 BRT (01:49 UTC de 28/Ago), sem variação.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "27/08/2026, 21:46",
+        "lastUpdate": "27/08/2026, 22:49",
         "value": 0.05
       }
     ],
-    "updatedAt": "27/08/2026, 21:46",
-    "lastUpdate": "27/08/2026, 21:46"
+    "updatedAt": "27/08/2026, 22:49",
+    "lastUpdate": "27/08/2026, 22:49"
   }
 }
