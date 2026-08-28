@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-26",
+  "lastUpdate": "2026-08-27",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,84 @@
     }
   ],
   "polls": [
+    {
+      "institute": "PoderData/Aya",
+      "date": "2026-08-27",
+      "scope": "national",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-04974/2026",
+      "reliability": 3,
+      "method": "Telefônico (celular e fixo)",
+      "fieldDates": "2026-08-23 a 2026-08-26",
+      "note": "PoderData/Aya national poll released on Aug 27 (Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, Jornal de Brasília, Pleno.News). First round Lula 38% x Flávio 35%, a distance of 3pp, a technical tie by the 2pp margin; Renan Santos, Ronaldo Caiado and Augusto Cury at 4% each, Pablo Marçal at 3% and Romeu Zema at 2%. Runoff Lula 45% x Flávio 44%, also a technical tie. Fieldwork Aug 23 to 26, n=2,400, telephone across 555 municipalities in the 27 federal units, 2pp margin, 95% confidence, registration BR-04974/2026. ⭐ THE COMPARISON THAT COUNTS IS WITH THE HOUSE ITSELF, AND IT SHOWS THE FIRST ROUND NARROWING BY HALF: it was 6pp on Jul 16 (40% x 34%), 6pp on Jul 30 (41% x 35%), 6pp on Aug 13 (41% x 35%) and it is 3pp now (38% x 35%). The runoff stays at 1pp, as on Aug 13. Same house, same method and same sample, with the first round narrowing and the runoff flat, the reverse of what the house’s series had been showing. REJECTION level at 49% for each of them (Poder360). The same round gives the leader a technical tie against Romeu Zema (44% x 43%) and against Ronaldo Caiado (44% x 43%), and a 7-point lead over Renan Santos (44% x 37%). ⭐ And Augusto Cury’s 4% is his highest figure anywhere in the panel’s table, which gathers the national polls of the last 30 days and had measured him between 1% and 3% until now. APPROVAL of the government at 42% against 50% disapproval, and the administration is rated poor or terrible by 48% against great or good by 33% (CNN Brasil). NATIONAL SCOPE confirmed in the release, which states 555 municipalities across the 27 federal units.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Romeu Zema",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Renan Santos",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        }
+      ],
+      "source": "PoderData/Aya, released on Aug 27 by Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL Notícias, CartaCapital, Jornal de Brasília and Pleno.News. TSE registration BR-04974/2026."
+    },
     {
       "institute": "Gerp",
       "date": "2026-08-26",
@@ -1304,80 +1382,10 @@
         }
       ],
       "source": "AtlasIntel/Bloomberg via CNN Brasil, JOTA, Poder360, Metrópoles, Exame, Estadão, CartaCapital, VEJA and Brasil de Fato, Jul 29. TSE registration BR-08602/2026."
-    },
-    {
-      "institute": "BTG/Nexus",
-      "date": "2026-07-27",
-      "scope": "national",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-01489/2026",
-      "reliability": 4,
-      "method": "Telefônica (CATI), todas as regiões",
-      "fieldDates": "2026-07-24 a 2026-07-26",
-      "note": "National [BTG/Nexus](/en/glossary#nexus-btg) poll released on Jul 27 (institute site nexus.fsb.com.br, Folha de S.Paulo, CNN Brasil, JOTA, CartaCapital, Poder360, VEJA, Estado de Minas, Metrópoles, Money Times), the first national survey whose fieldwork sits entirely AFTER the [PL](/en/glossary#pl) convention that formalized Flávio on Jul 25. In the [first round](/en/glossary#primeiro-turno): Lula 42%, Flávio Bolsonaro 33%, Ronaldo Caiado 6%, Renan Santos 5%, Romeu Zema 3%. In the head-to-head [runoff](/en/glossary#segundo-turno), Lula 47% x Flávio 43%. The other scenarios: Lula 45% x Caiado 43%, Lula 46% x Zema 42% and Lula 47% x Renan Santos 39%. Rejection: Flávio 50%, Lula 48%. Government assessment: 36% excellent or good (15% excellent, 21% good), 20% fair and 43% poor or terrible (9% poor, 34% terrible). Lula's personal approval 47% x disapproval 49%, with 4% who did not answer, against 47% x 47% in the Jul 13 round. Decided vote rose to 73%, with 25% willing to change, reversing the fall from 74% to 70% recorded on Jul 13. Fieldwork Jul 24-26, n=2,004, telephone across all regions, 2pp margin, 95% confidence, [TSE](/en/glossary#tse) filing BR-01489/2026, commissioned by Banco BTG Pactual. READING: against the institute's own Jul 13 round, Lula rises from 40% to 42% and Flávio falls from 34% to 33%, meaning the first-round gap widens from 6pp to 9pp, with both moves inside the margin. In the runoff the difference goes from 3pp to 4pp, also inside the margin, which is a nominal widening and a [statistical tie](/en/glossary#empate-tecnico) at the same time. THE FINDING IS ELSEWHERE, and it is Caiado: he ties Lula statistically at 45% to 43%, the narrowest of the four runoff scenarios in this poll, and he gains against the previous round. That INVERTS the [Datafolha](/en/glossary#datafolha) poll of Jul 24, published three days earlier, in which Lula beat Caiado 47% to 40%, seven points, the most comfortable margin in the panel. Two top-tier institutes, with fieldwork two days apart, reach opposite conclusions about which challenger is the most competitive. AFOS records the divergence and does not arbitrate which one is right. On Renan Santos, the poll measures him at 5% in the first round, above Datafolha's 3% and below Real Time's 9% on Jul 21, keeping the dispersion between institutes open.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 42
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 33
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 6
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 5
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 3
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 47,
-          "candidate2": "Renan Santos",
-          "percent2": 39
-        }
-      ],
-      "source": "BTG/Nexus via the institute site (nexus.fsb.com.br), Folha de S.Paulo, CNN Brasil, JOTA, CartaCapital, Poder360, VEJA, Estado de Minas, Metrópoles and Money Times Jul 27. TSE filing BR-01489/2026."
     }
   ],
   "approvalData": {
-    "note": "🏷️ THE STRUCTURED FIGURES IN THIS BLOCK COME FROM GENIAL/QUAEST OF Aug 14, and they are: 46% approval against 48% disapproval, with 6% who do not know, and 36% excellent or good, 25% average and 37% poor or terrible. The panel keeps ONE house per block on purpose, so as not to add up rulers from different institutes. ⭐ TWO NEW NATIONAL POLLS ON Aug 26, declared here and NOT mixed into the figures above, and both measure the government in negative ground: Indexa/Broadcast has 46% approval against 50% disapproval, according to Estadão and CNN Brasil; Gerp has 43% against 51%, according to CNN Brasil and Diário de São Paulo. 📌 The previous reading, BTG/Nexus of Aug 24 (n=2,006, fieldwork Aug 21 to 23, BR-09028/2026), had 48% approval against 49% disapproval, and 35% excellent or good against 43% poor or terrible. ⚠️ THE THREE HOUSES AGREE ON THE SIGN AND DISAGREE ON THE SIZE: disapproval runs from 49% to 51% and approval from 43% to 48%, that is five points of spread between institutes on the same question in the same week. The panel does not average them.",
+    "note": "🏷️ THE STRUCTURED FIGURES IN THIS BLOCK ARE FROM GENIAL/QUAEST OF AUG 14, and they are: 46% approval against 48% disapproval, with 6% undecided, and 36% great or good, 25% fair and 37% poor or terrible. The panel keeps ONE house per block on purpose, so as not to add up rulers from different institutes. ⭐ NEW READING ON AUG 27, declared here and NOT mixed into the figures above: PoderData/Aya brings 42% approval against 50% disapproval, and the administration is rated poor or terrible by 48% against great or good by 33%, according to Poder360 and CNN Brasil. 📌 The week’s three earlier readings: Indexa/Broadcast of Aug 26 with 46% against 50%, according to Estadão and CNN Brasil; Gerp of Aug 26 with 43% against 51%, according to CNN Brasil and Diário de São Paulo; and BTG/Nexus of Aug 24 with 48% against 49%, and 35% great or good against 43% poor or terrible. ⚠️ ALL FOUR HOUSES AGREE ON THE SIGN AND DISAGREE ON THE SIZE: disapproval runs from 49% to 51% and approval from 42% to 48%, that is six points of spread between institutes on the same question in the same week. The panel does not average them.",
     "source": "Approval and disapproval: Genial/Quaest Aug 14, 2026 (fieldwork Aug 10 to Aug 13, n=2,004, in person across 120 municipalities, margin 2.0pp, TSE registration BR-06773/2026), released by G1, CNN Brasil, Estadão, Correio Braziliense and Poder360. Rejection: same round, via G1, Poder360, InfoMoney and O Globo. Government-performance breakdown (very good/good, average, bad/very bad): Genial/Quaest Aug 5, 2026, because the Aug 14 round did not carry that breakdown in the reports captured.",
     "date": "2026-08-11",
     "results": {
@@ -1415,102 +1423,102 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "24/08/2026, 18:25"
+    "lastUpdate": "27/08/2026, 21:46"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices from the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), with the presidential book at USD 133.35M. ⭐ THE DAY BROUGHT TWO NEW NATIONAL POLLS AND THEY CONTRADICT EACH OTHER: Gerp (BR-03547/2026, fieldwork Aug 21 to 25, n=2,400) has Flávio ahead in the first round with 38% against 37%, and winning the runoff 47% to 42%; Indexa/Broadcast (BR-06366/2026, fieldwork Aug 20 to 23, n=2,000) has Lula ahead with 39% against 34%, and winning the runoff 46% to 41%. That is ten points between two houses on the same contest, with overlapping fieldwork windows, and the panel publishes both without averaging them. ⚖️ The POLLING side of this block stays on BTG/Nexus of Aug 24, which is the most reliable national poll on the house ruler, and not on either of today's two. The 30-day range was recalculated with them inside, and three floors gave way: Lula from 38% to 37%, Caiado from 3.1% to 3% and Zema from 1.3% to 1%. 📉 ON PRICE, THE DISTANCE BETWEEN THE TOP TWO NARROWED FROM 27.85pp TO 26.95pp, and it is the tightest since Jun 21, checked in the database backup against the series that begins on Apr 14. It narrowed from one side only: the leader is flat at 62.50% for a third straight day and the runner-up rose 0.90pp, to 35.55%, his highest level since May 13. ⭐ AND THE LARGEST MOVE OF THE DAY IS NOT IN THE WINNER CONTRACT: in the third-place contract for the first round, Renan Santos gave up 6.00pp to 45.50% and Ronaldo Caiado gave up 3.00pp to 39.00%. Both fell, and even so the gap between them shortened from 9.50pp to 6.50pp. On Wednesday Lula filed with the TSE against both over attacks in the debate, asking for posts to be taken down. The panel records the coincidence of dates and does not assign a cause. Probability of winning and voting intention measure different things, and the panel does not subtract one from the other.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. On Aug 26 there is a fresh confirmed reading for every contract covered, at 3:19 PM BRT (6:19 PM UTC): presidential, second place, third place, Senate and impeachment at the STF. Polls filed with the TSE and released by the institutes, as reported by G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, Estadão, Poder360, VEJA, InfoMoney, UOL, O Globo, Correio Braziliense, Gazeta do Povo, Money Times and CartaCapital. The two national polls of Aug 26 were each checked against two sources, with the TSE registration number matching, and cross-checked against the Wikipedia table of 2026 presidential polls. Series superlatives checked in the Neon backup, under backup/neon/marketPrice, which holds the full record since Apr 14.",
+    "note": "Polymarket prices from the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), with the presidential book at USD 137.47M. ⭐ THE DAY HAS ONE NEW POLL AND ONE NEW NAME IN THE BOOK. PoderData/Aya (BR-04974/2026, fieldwork Aug 23 to 26, n=2,400) brings a technical tie in BOTH rounds, 38% to 35% in the first and 45% to 44% in the second, and the comparison with the house itself shows the first round narrowing from 6pp to 3pp in two weeks. On price, the leader gave up 5.00pp and fell to 57.50%, his lowest level since Jul 1, with the decline coming across five successive readings through the day; the runner-up rose 0.30pp, to 35.85%, his highest since May 13. The distance between the two fell from 26.95pp to 21.65pp and narrowed from the top. ⚠️ That is NOT the narrowest gap of anything: 387 of the 691 points in the series sit below it, and in May the runner-up was ahead of the leader. ⭐ The largest move of the day is in the PLACEMENT contracts: Renan Santos gave up 9.00pp in the third-place contract for the first round, to 36.50%, and also marked the floor of his entire series in the outright-winner one, at 1.65%; Ronaldo Caiado gave up 5.50pp in that same contract, to 33.50%; and Flávio Bolsonaro gave up 3.00pp in the second-place one, to 84.50%. On the same day Polymarket opened contracts for Augusto Cury, who shows up at 23.50% in the third-place book and 4.00% in the second. Augusto Cury’s outright-winner contract opened on Thursday and this round does not publish a price for it. His second-place and third-place contracts do confirm, and those are the ones shown on the panel. That is why he does not yet have a line of his own in this block, which carries the outright-winner price.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. The confirmation is done contract by contract. On Aug 27 there is a fresh confirmed reading for the presidential book, for the second-place and third-place contracts of the first round, for the STF impeachment one and for the Senate one. Augusto Cury’s outright-winner contract opened on Thursday and this round does not publish a price for it. His second-place and third-place contracts do confirm, and those are the ones shown on the panel. Polls filed with the TSE and released by the institutes, as reported by Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. PoderData/Aya of Aug 27 was checked against two sources, with the TSE registration number matching and with the national scope confirmed in the release, which states 555 municipalities across the 27 federal units. Series superlatives checked in the Neon backup, in backup/neon/marketPrice, which holds the full record since Apr 14.",
     "candidates": [
       {
         "name": "Lula",
         "pesquisaRange": "37-44.9%",
-        "polymarket": "62.50%",
-        "tendenciaPesquisa": "TWO NEW NATIONAL POLLS TODAY, AND THEY DISAGREE ABOUT HIM. Gerp (BR-03547/2026, fieldwork Aug 21 to 25, n=2,400) puts him at 37% in the first round, one point behind Flávio, and losing the runoff 42% to 47%. Indexa/Broadcast (BR-06366/2026, fieldwork Aug 20 to 23, n=2,000) puts him at 39%, ahead by 5, and winning the runoff 46% to 41%. Both come in below the 41% of BTG/Nexus of Aug 24, which remains the most reliable national poll in the window and is the one feeding the figure in this block.",
-        "tendenciaPolymarket": "62.50% (vol USD 9.03M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), unchanged for the THIRD straight day. The series high is 67.50%, of Aug 16, checked in the backup against the full record since Apr 14. ⭐ His distance to the runner-up fell to 26.95pp, and it is the tightest since Jun 21: no point in the series after that date came in below this. And it narrowed without him giving up anything, because the one who moved was the other side.",
-        "odds": 62.5,
+        "polymarket": "57.50%",
+        "tendenciaPesquisa": "A NEW POLL TODAY, AND IT BRINGS A TECHNICAL TIE IN BOTH ROUNDS. PoderData/Aya (BR-04974/2026, fieldwork Aug 23 to 26, n=2,400) has him at 38% in the first round against 35%, and at 45% against 44% in the second, both inside the 2pp margin. The comparison with the house itself is what informs: it was 6pp in the first round on Aug 13 and it is 3pp now. He still wins all four runoff scenarios tested. BTG/Nexus of Aug 24, the most reliable national poll in the window, keeps him at 41% and is the one that feeds the figure in this block.",
+        "tendenciaPolymarket": "57.50% (vol USD 9.27M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 5.00pp on the day, the largest move on the panel in the outright-winner contract. The fall was continuous, across five successive readings. ⚠️ It is the lowest level since Jul 1: the last reading below that was on Jun 30 at 4:30 PM UTC, at 55.50%, checked in the backup against the full series since Apr 14. The series top is still 67.50%, from Aug 16. His distance to the runner-up fell to 21.65pp, and it narrowed from the top.",
+        "odds": 57.5,
         "percentage": 41,
-        "lastUpdate": "26/08/2026, 15:19",
-        "value": 62.5
+        "lastUpdate": "27/08/2026, 21:46",
+        "value": 57.5
       },
       {
         "name": "Flávio Bolsonaro",
         "pesquisaRange": "28.7-40%",
-        "polymarket": "35.55%",
-        "tendenciaPesquisa": "Today's two national polls measure him in opposite places. Gerp puts him at 38% in the first round, AHEAD of Lula for the first time in the panel's table, and winning the runoff 47% to 42%. Indexa puts him at 34% in the scenario without Pablo Marçal and 33% in the one with him, and losing the runoff 41% to 46%. BTG/Nexus of Aug 24, which feeds the figure in this block, keeps him at 37%. 📌 The CEO of Indexa told Estadão that he has been winning voters back since the Master case, and the price moved the same way this Wednesday.",
-        "tendenciaPolymarket": "35.55% (vol USD 8.94M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), up 0.90pp, the largest move of the day among the winner contracts. ⭐ It is his highest level since May 13, checked in the backup: no point between that date and today came in above this, and the series high is 45.50%, of May 6. In the second-place contract for the first round he stayed flat at 87.50%.",
-        "odds": 35.55,
+        "polymarket": "35.85%",
+        "tendenciaPesquisa": "Today’s PoderData/Aya has him at 35% in the first round, 3 points back, and at 44% in the second, 1 point back, both inside the 2pp margin. His rejection stands at 49%, level with the leader. Gerp of Aug 26 had him ahead in the first round with 38% and Indexa/Broadcast had him behind with 34%, and both measured in the same week.",
+        "tendenciaPolymarket": "35.85% (vol USD 9.10M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), up 0.30pp. ⭐ It is his highest level since May 13: the last point above that was on May 13 at 2:00 AM UTC, at 42.80%, checked in the backup. The series top is still 45.50%, from May 6. The gap to the leader closed by 5.30pp on the day, and 5.00pp of that came from the other side falling. In the second-place contract for the first round he gave up 3.00pp, to 84.50%.",
+        "odds": 35.85,
         "percentage": 37,
-        "lastUpdate": "26/08/2026, 15:19",
-        "value": 35.55
+        "lastUpdate": "27/08/2026, 21:46",
+        "value": 35.85
       },
       {
         "name": "Renan Santos",
         "pesquisaRange": "3-10%",
-        "polymarket": "2.75%",
-        "tendenciaPesquisa": "Gerp puts him at 3% and Indexa at 4%, against the 3% of BTG/Nexus of Aug 24. All three readings place him in the same narrow band, and none of them on its own explains the 6.00pp fall in the third-place contract.",
-        "tendenciaPolymarket": "2.75% (vol USD 11.23M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), down 0.20pp. 🔴 In the third-place contract for the first round the loss is far larger: 6.00pp in one day, from 51.50% to 45.50%, the largest move on the panel this Wednesday. His gap to Caiado in that contract fell from 9.50pp to 6.50pp, and this time BOTH gave ground.",
-        "odds": 2.75,
+        "polymarket": "1.65%",
+        "tendenciaPesquisa": "PoderData/Aya measures him at 4% in the first round, level with Ronaldo Caiado and Augusto Cury, and at 37% in the runoff against the leader. Gerp of Aug 26 had him at 3% and Indexa at 4%. In the polling he is where he was; in the price, he is not.",
+        "tendenciaPolymarket": "1.65% (vol USD 11.63M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 1.10pp. ⚠️ It is the FLOOR of the entire series: none of the 346 points recorded since Apr 14 sits below that, checked in the backup. The descent is a straight line, from 3.10% on Aug 25 to 1.65% now, with no rebound. The series top is 49.60%, from Apr 28. In the third-place contract for the first round he gave up 9.00pp, to 36.50%, the largest single move on the panel today, and he is still the most expensive name in that contract.",
+        "odds": 1.65,
         "percentage": 3,
-        "lastUpdate": "26/08/2026, 15:19",
-        "value": 2.75
+        "lastUpdate": "27/08/2026, 21:46",
+        "value": 1.65
       },
       {
         "name": "Ronaldo Caiado",
         "pesquisaRange": "3-6%",
-        "polymarket": "0.45%",
-        "tendenciaPesquisa": "Indexa puts him at 5%, ahead of Renan Santos, and Gerp puts him at 3%, tied with him. BTG/Nexus of Aug 24 kept him at 5%. The two houses out today disagree on who is third in the polling, and that is the pair the third-place contract prices.",
-        "tendenciaPolymarket": "0.45% (vol USD 6.59M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), down 0.10pp, below the 0.5% floor the double reading watches. In the third-place contract he gave up 3.00pp, from 42.00% to 39.00%, and even so SHORTENED the distance to Renan Santos, because the other fell twice as much.",
-        "odds": 0.45,
+        "polymarket": "0.15%",
+        "tendenciaPesquisa": "PoderData/Aya measures him at 4% in the first round, level with Renan Santos and Augusto Cury, and puts him in a technical tie with the leader in the runoff, 43% to 44%. Indexa of Aug 26 had him at 5% and Gerp at 3%.",
+        "tendenciaPolymarket": "0.15% (vol USD 6.80M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 0.30pp, which puts him below the 0.5% floor of the double reading. In the third-place contract for the first round he gave up 5.50pp, to 33.50%, his lowest level there since Aug 14.",
+        "odds": 0.15,
         "percentage": 5,
-        "lastUpdate": "26/08/2026, 15:19",
-        "value": 0.45
+        "lastUpdate": "27/08/2026, 21:46",
+        "value": 0.15
       },
       {
         "name": "Pablo Marçal",
         "pesquisaRange": "2-5.2%",
         "polymarket": "0.15%",
-        "tendenciaPesquisa": "Gerp puts him at 4% and Indexa at 2%, and both measured in the same week. The disagreement about him remains the largest in relative terms in the window, and a price of 0.15% does not distinguish between 2% and 4% of declared intention.",
-        "tendenciaPolymarket": "0.15% (vol USD 2.77M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), unchanged. He sits below the 0.5% floor of the double reading, so the panel does not treat movement in that contract as a signal.",
+        "tendenciaPesquisa": "PoderData/Aya measures him at 3% in the first round. Gerp of Aug 26 had him at 4% and Indexa at 2%, both measuring in the same week, and he is still the name with the largest relative divergence between institutes in the window.",
+        "tendenciaPolymarket": "0.15% (vol USD 3.03M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged, and below the 0.5% floor of the double reading.",
         "odds": 0.15,
         "percentage": 4,
-        "lastUpdate": "26/08/2026, 15:19",
+        "lastUpdate": "27/08/2026, 21:46",
         "value": 0.15
       },
       {
         "name": "Tarcísio",
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
-        "tendenciaPesquisa": "No national poll tests him for president, including today's two. That is why he sits at 0% in this block and drops out of the graph, by design.",
-        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), unchanged. It is the largest accumulated volume in the presidential book and the lowest price among the names tracked, which describes a contract where many have already traded and the market now treats the hypothesis as closed.",
+        "tendenciaPesquisa": "No national poll tests him for president, including today’s PoderData/Aya. That is why he shows no polling range in this block, and the panel does not turn absence of testing into absence of intention.",
+        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged. It is the largest accumulated volume in the presidential book, and he has been below the watch floor for weeks: high volume with a price pinned to zero is an old position unwound, not an active contract.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "26/08/2026, 15:19",
+        "lastUpdate": "27/08/2026, 21:46",
         "value": 0.05
       },
       {
         "name": "Romeu Zema",
         "pesquisaRange": "1-4%",
-        "polymarket": "0.15%",
-        "tendenciaPesquisa": "Gerp and Indexa each measure him at 1%, and BTG/Nexus of Aug 24 had him at 3%. The floor of the 30-day range fell to 1% because of today's two.",
-        "tendenciaPolymarket": "0.15% (vol USD 5.99M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), down 0.10pp, within the noise of a contract below the watch floor.",
-        "odds": 0.15,
+        "polymarket": "0.05%",
+        "tendenciaPesquisa": "PoderData/Aya measures him at 2% in the first round and puts him in a technical tie with the leader in the runoff, 43% to 44%. Gerp and Indexa of Aug 26 measured him at 1% each, and BTG/Nexus of Aug 24 at 3%.",
+        "tendenciaPolymarket": "0.05% (vol USD 6.13M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), down 0.10pp, and below the 0.5% floor of the double reading.",
+        "odds": 0.05,
         "percentage": 3,
-        "lastUpdate": "26/08/2026, 15:19",
-        "value": 0.15
+        "lastUpdate": "27/08/2026, 21:46",
+        "value": 0.05
       },
       {
         "name": "Fernando Haddad",
         "pesquisaRange": "not tested",
         "polymarket": "0.05%",
-        "tendenciaPesquisa": "No national poll tests him for president. The JOTA poll released today tested a runoff scenario with him in Lula's place, but its figures did not come out in a form the panel could check, so it does not enter the table.",
-        "tendenciaPolymarket": "0.05% (vol USD 7.30M) in the confirmed reading of Aug 26, 3:19 PM BRT (6:19 PM UTC), unchanged.",
+        "tendenciaPesquisa": "No national poll tests him for president. The JOTA poll released on Aug 26 declared a runoff scenario with him in the leader’s place, but the figures from that scenario were not released in a source the panel can reach, and so they do not enter here.",
+        "tendenciaPolymarket": "0.05% (vol USD 7.30M) in the confirmed reading of Aug 27, 9:46 PM BRT (12:46 AM UTC on Aug 28), unchanged.",
         "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "26/08/2026, 15:19",
+        "lastUpdate": "27/08/2026, 21:46",
         "value": 0.05
       }
     ],
-    "updatedAt": "26/08/2026, 15:19",
-    "lastUpdate": "26/08/2026, 15:19"
+    "updatedAt": "27/08/2026, 21:46",
+    "lastUpdate": "27/08/2026, 21:46"
   }
 }

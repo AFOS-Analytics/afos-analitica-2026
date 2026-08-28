@@ -1,163 +1,171 @@
 {
-  "updatedAt": "26/08/2026, 15:19",
-  "subtitle": "Cruzamento de 26 de agosto de 2026: preço do Polymarket em leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC), livro presidencial em USD 133,35M, contra DUAS nacionais novas divulgadas hoje que se contradizem, a Gerp (BR-03547/2026, campo 21 a 25/Ago, n=2.400) e a Indexa/Broadcast (BR-06366/2026, campo 20 a 23/Ago, n=2.000), mais a BTG/Nexus de 24/Ago (BR-09028/2026, n=2.006), que segue sendo a de maior confiabilidade da janela na régua da casa. Notícias apuradas em 1.091 itens coletados nesta quarta.",
+  "updatedAt": "27/08/2026, 21:46",
+  "subtitle": "Cruzamento de 27 de agosto de 2026: preço do Polymarket em leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago), livro presidencial em USD 137,47M, contra a PoderData/Aya divulgada nesta quinta (BR-04974/2026, campo 23 a 26/Ago, n=2.400), que traz EMPATE TÉCNICO nos dois turnos, e contra a Gerp e a Indexa/Broadcast de 26/Ago, que se contradizem entre si. A BTG/Nexus de 24/Ago (BR-09028/2026, n=2.006) segue sendo a de maior confiabilidade da janela na régua da casa. Notícias apuradas em 1.152 itens coletados nesta quinta.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 62,50% (vol USD 9,03M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação no dia, TERCEIRO dia seguido parado. A distância dele para o segundo caiu para 26,95pp, a mais estreita desde 21/Jun.",
+      "header": "PREÇO: 57,50% (vol USD 9,27M acumulado), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Queda de 5,00pp no dia, a maior variação do painel no contrato de vencedor, e o menor patamar desde 01/Jul.",
       "fortes": [
-        "A Indexa/Broadcast de hoje (n=2.000, telefone, campo 20 a 23/Ago, BR-06366/2026) o coloca em 39% no 1º turno contra 34% do segundo, e o dá vencendo os QUATRO cenários de 2º turno testados: 46% a 41% contra Flávio, 45% a 34% contra Zema, 44% a 38% contra Caiado e 46% a 34% contra Renan Santos.",
-        "A BTG/Nexus de 24/Ago, que é a de maior confiabilidade da janela, o mantém em 41% no 1º turno sem Marçal e vencendo o 2º turno por 46% a 45%.",
-        "O preço segue em 62,50% pelo terceiro dia, e o mercado continua pagando quase dois para um a favor dele. O máximo da série é 67,50%, de 16/Ago, conferido no backup contra o registro completo desde 14/Abr.",
-        "Ele confirmou a sabatina do Jornal Nacional para 27/Ago, segundo Valor Econômico e Poder360, depois de ter faltado ao debate da Band em 23/Ago.",
-        "Nesta quarta ele acionou o TSE contra Renan Santos e Ronaldo Caiado por ataques no debate, pedindo a retirada de publicações nas redes, segundo Folha de S.Paulo. No mesmo dia os dois cederam no contrato de terceiro lugar, e o painel registra a coincidência de data sem atribuir causa."
+        "A PoderData/Aya de hoje (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026) ainda o coloca À FRENTE no 1º turno, com 38% contra 35%, e vencendo os QUATRO cenários de 2º turno testados: 45% a 44% contra Flávio Bolsonaro, 44% a 43% contra Romeu Zema, 44% a 43% contra Ronaldo Caiado e 44% a 37% contra Renan Santos.",
+        "A BTG/Nexus de 24/Ago, que é a de maior confiabilidade da janela, o mantém em 41% no 1º turno e vencendo o 2º turno por 46% a 45%. As três nacionais da semana o dão à frente ou empatado, e nenhuma o dá atrás por mais de 1 ponto.",
+        "Mesmo depois da queda, o preço dele segue sendo o maior do livro por larga margem, e o segundo colocado está 21,65pp atrás.",
+        "Ele foi à sabatina do Jornal Nacional nesta quinta, chamou as acusações sobre o filho de ilações e disse que Lulinha provará inocência, negando blindagem, segundo O Globo. Aliados o prepararam para descolar do caso e mirar o adversário, segundo Estadão.",
+        "A propaganda eleitoral na TV estreia sem Lulinha e com o adversário citando o caso, segundo O Globo, o que move a disputa para um terreno em que o incumbente tem mais tempo de tela."
       ],
       "fracos": [
-        "⚠️ A Gerp de hoje o coloca ATRÁS pela primeira vez na tabela do painel: 37% contra 38% no 1º turno, dentro da margem de 2pp, e perdendo o 2º turno por 42% a 47%. A única outra leitura em que ele não estava à frente é a própria Gerp de 11/Ago, que deu empate em 38 a 38.",
-        "As DUAS nacionais de hoje o põem abaixo dos 41% da BTG/Nexus: 37% na Gerp e 39% na Indexa. O piso da faixa de 30 dias dele caiu de 38% para 37% por causa disso.",
-        "Aprovação do governo em terreno negativo nas duas casas novas: 46% contra 50% na Indexa, segundo Estadão e CNN Brasil, e 43% contra 51% na Gerp, segundo CNN Brasil e Diário de São Paulo.",
-        "A distância dele para o segundo colocado no preço é a mais estreita desde 21/Jun, e ela estreitou sem que ele cedesse nada: quem se moveu foi o outro lado.",
-        "⚠️ O caso do INSS voltou ao noticiário pelo flanco familiar: a PF afirma que um lobista pediu ação de Lulinha para fechar negócios do Careca do INSS com o governo, e a investigação aponta três tentativas frustradas de contrato no Ministério da Saúde, segundo Folha de S.Paulo e O Globo. A Justiça negou o pedido de Lulinha para derrubar o vídeo em que Flávio trata das suspeitas."
+        "⚠️ A PoderData traz EMPATE TÉCNICO nos DOIS turnos pela primeira vez na série da própria casa. No 1º turno a distância dela caiu de 6pp em 13/Ago (41% x 35%) para 3pp agora (38% x 35%), e no 2º turno segue em 1pp (45% x 44%, contra 46% x 45%). Mesma casa, mesmo método e mesma amostra: o 1º turno estreitou pela metade em duas semanas.",
+        "O preço cedeu 5,00pp num dia só, de 62,50% para 57,50%, e a queda foi contínua, em cinco leituras sucessivas ao longo desta quinta.",
+        "⚠️ 57,50% é o menor patamar desde 01/Jul. A última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup do banco contra o registro completo desde 14/Abr.",
+        "Rejeição em 49%, empatada com a do segundo colocado, segundo Poder360. A aprovação do governo aparece em 42% contra 50% de desaprovação na mesma rodada, e a gestão é ruim ou péssima para 48% contra ótima ou boa para 33%, segundo CNN Brasil.",
+        "⚠️ O caso Lulinha ganhou três frentes novas nesta quinta: a PF apura o pedido de um lobista para que ele agisse em favor do Careca do INSS, segundo Folha de S.Paulo; o advogado do filho pediu apuração sobre vazamentos citando o adversário e seu coordenador de campanha, segundo O Globo; e o Ministério Público da Espanha analisa denúncia sobre uma empresa ligada ao caso, segundo Gazeta do Povo."
       ],
-      "analise": "O dia entrega o caso mais limpo do ano para a tese da casa, e ele não é entre mercado e urna: é entre duas urnas. A Gerp e a Indexa mediram a mesma disputa, na mesma semana, com janelas de campo que se sobrepõem, e chegaram a resultados opostos no 2º turno, uma dando o líder perdendo por 5 e a outra dando o líder ganhando por 5. São dez pontos de distância entre institutos, sem nenhum dia entre elas para explicar. O painel publica as duas e não faz média, porque média entre leituras que se invertem esconde exatamente o que há de informativo. No preço, o movimento foi de um lado só: ele está parado em 62,50% pelo terceiro dia e a distância para o segundo caiu para 26,95pp, a mais estreita desde 21/Jun. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra."
+      "analise": "O dia inverte o desenho da véspera. Em 26/Ago o preço dele estava parado e quem se movia era o segundo colocado; nesta quinta quem se moveu foi ele, e para baixo: 5,00pp em cinco leituras sucessivas, de 62,50% para 57,50%, o menor patamar desde 01/Jul. No mesmo dia a PoderData/Aya publicou a primeira rodada da própria casa com empate técnico nos dois turnos, com o 1º turno estreitando de 6pp para 3pp em duas semanas e o 2º turno em 1pp. As duas coisas caíram na mesma data e o painel registra a coincidência sem atribuir causa, porque probabilidade de vencer e intenção de voto medem coisas diferentes, e a mesma rodada que estreita o 1º turno também o mantém à frente nos quatro cenários de 2º turno testados. O livro também mudou de composição nesta quinta, com a abertura de contratos para um nome que até ontem não era precificado. Ainda assim o preço dele segue sendo o maior do livro por larga margem, e a distância para o segundo, agora em 21,65pp, continua sendo a maior entre dois nomes quaisquer da disputa. leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 35,55% (vol USD 8,94M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Alta de 0,90pp, a maior variação do dia entre os contratos de vencedor, e o patamar mais alto dele desde 13/Mai.",
+      "header": "PREÇO: 35,85% (vol USD 9,10M acumulado), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Alta de 0,30pp e o patamar mais alto dele desde 13/Mai.",
       "fortes": [
-        "⭐ A Gerp de hoje (n=2.400, campo 21 a 25/Ago, BR-03547/2026) o coloca À FRENTE no 1º turno pela primeira vez na tabela do painel, com 38% contra 37%, e vencendo o 2º turno por 47% a 42%.",
-        "O preço subiu 0,90pp e chegou a 35,55%, o mais alto desde 13/Mai. Conferido no backup do banco: nenhum ponto entre aquela data e hoje ficou acima disto. O topo da série é 45,50%, de 06/Mai.",
-        "No contrato de 2º lugar do 1º turno ele segue em 87,50%, sem variação. O mercado está seguro de que ele é o segundo colocado e discute só quanto isso vale contra o primeiro.",
-        "O CEO da Indexa disse ao Estadão que ele vem recuperando eleitores depois do caso Master, e é a própria casa que mede ligando o movimento da urna ao caso.",
-        "Na comparação da Gerp com ela mesma, a distância no 2º turno passou de 2 pontos (45% a 43% na rodada de 11/Ago, BR-08045/2026) para 5 pontos agora."
+        "⭐ 35,85% é o preço mais alto dele desde 13/Mai. O último ponto acima disso foi em 13/Mai às 02:00 UTC, com 42,80%, conferido no backup do banco contra o registro completo desde 14/Abr. O topo da série segue sendo 45,50%, de 06/Mai.",
+        "A PoderData/Aya de hoje o coloca a 3 pontos no 1º turno, 35% contra 38%, dentro da margem de 2pp, e a 1 ponto no 2º turno, 44% contra 45%. É empate técnico nos dois.",
+        "A distância de preço dele para o líder caiu de 26,95pp para 21,65pp em um único dia, e desta vez ela estreitou pelo lado de cima, com o líder cedendo.",
+        "Rejeição em 49%, o mesmo patamar do líder, segundo Poder360. Ele acionou o TSE nesta quinta para proibir o uso do Palácio da Alvorada em conteúdo eleitoral do adversário, segundo Folha de S.Paulo e G1.",
+        "A propaganda dele na TV vai destacar endividamento das famílias, o caso Lulinha e a crise da Casas Bahia, segundo Valor Econômico, e cita o pai, segurança pública e um aceno ao eleitorado feminino, segundo O Globo."
       ],
       "fracos": [
-        "⚠️ A Indexa de hoje o dá em 34% no cenário sem Pablo Marçal e 33% no cenário com ele, perdendo o 2º turno por 41% a 46%. As duas nacionais do dia discordam sobre quem vence, e a diferença entre elas é de dez pontos.",
-        "O caso Master voltou com força nesta quarta: Daniel Vorcaro vai depor à Polícia Federal no inquérito sobre fraudes, a PF fez busca e apreensão em instituto de previdência de Campo Grande por aportes no banco, e o caso Dark Horse no STF envolve suspeitas sobre gastos de Vorcaro e emendas, segundo O Globo.",
-        "Petistas passaram a replicar um jingle que junta Vorcaro, Estados Unidos e rachadinha para atacá-lo, segundo O Globo, o que indica que o tema entrou no repertório de campanha do outro lado.",
-        "A BTG/Nexus de 24/Ago, a de maior confiabilidade da janela, o mantém em 37% e o dá perdendo o 2º turno por 45% a 46%.",
-        "A faixa de 30 dias dele segue larga, de 28,7% a 40%, e essa amplitude entre institutos é maior do que a variação do preço no mesmo período."
+        "No contrato de 2º lugar do 1º turno ele cedeu 3,00pp, de 87,50% para 84,50%. É a segunda maior variação do painel hoje, e ela aconteceu no mesmo dia em que um nome novo passou a ser precificado naquele contrato.",
+        "A alta dele no contrato de vencedor foi de 0,30pp. O vão para o líder encurtou 5,30pp no dia, e 5,00pp disso vieram da queda do outro lado, não da subida dele.",
+        "⚠️ O caso Dark Horse avançou contra ele em três frentes nesta quinta: a produtora pediu a André Mendonça que tire a investigação de São Paulo e leve o caso ao STF, segundo G1, Folha de S.Paulo e Valor Econômico; Flavio Dino ampliou o acesso da PF às provas, segundo G1; e ele terceirizou a prestação de contas, com o repasse de um fundo dos Estados Unidos ainda sem detalhamento, segundo Folha de S.Paulo.",
+        "A distribuidora decidiu lançar o filme depois da eleição, segundo O Globo, e petistas pediram investigação sobre a relação entre o escritório dele e um alvo da operação do INSS, também segundo O Globo."
       ],
-      "analise": "Foi o nome que se moveu no dia, e nos dois instrumentos ao mesmo tempo. No preço, alta de 0,90pp para 35,55%, o patamar mais alto desde 13/Mai. Na urna, uma das duas nacionais novas o coloca à frente do líder pela primeira vez desde que o painel monta esta tabela. As duas coisas apontam na mesma direção, e é raro que apontem juntas. A ressalva que vai junto é do mesmo tamanho: a outra nacional do dia, com campo sobreposto, o dá perdendo por cinco no 2º turno, e o caso Master voltou ao noticiário na mesma quarta em que o preço subiu. O CEO da Indexa atribui a recuperação dele justamente ao caso ter saído do centro do noticiário, e o dia mostrou o contrário disso."
+      "analise": "O preço dele fechou em 35,85%, o mais alto desde 13/Mai, e a distância para o líder é a menor do ciclo recente, 21,65pp. A leitura precisa é que ele não fez esse encurtamento sozinho: subiu 0,30pp num dia em que o líder cedeu 5,00pp. Na urna, a PoderData/Aya o põe a 3 pontos no 1º turno e a 1 ponto no 2º, os dois dentro da margem de 2pp, e a rejeição dos dois está empatada em 49%. No contrato de 2º lugar do 1º turno, porém, ele cedeu 3,00pp, para 84,50%, e isso aconteceu no mesmo dia em que o contrato de Augusto Cury naquele livro passou a valer 4,00%: probabilidade que entra num nome novo sai de algum lugar, e saiu principalmente dele. No noticiário, o caso Dark Horse avançou por decisão judicial e por pedido da produtora para levar a apuração ao STF, e a prestação de contas segue sem detalhamento do repasse externo. O painel registra a alta no contrato de vencedor, a queda no de 2º lugar e o avanço do caso lado a lado, na mesma data, e não decide qual explica o quê. leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 2,75% (vol USD 11,23M acumulado), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,20pp no contrato de vencedor. 🔴 No contrato de 3º lugar do 1º turno a perda é de 6,00pp, a maior variação do painel nesta quarta.",
+      "header": "PREÇO: 1,65% (vol USD 11,63M acumulado), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Queda de 1,10pp e o PISO da série inteira: nenhum dos 346 pontos registrados desde 14/Abr ficou abaixo disto.",
       "fortes": [
-        "Segue à frente de Ronaldo Caiado no contrato de 3º lugar, com 45,50% contra 39,00%.",
-        "A Indexa o mede em 4% no 1º turno, o valor mais alto que ele recebe entre as três nacionais da janela.",
-        "O volume acumulado do contrato dele no livro presidencial é de USD 11,23M, o segundo maior entre os nomes acompanhados, o que descreve um mercado com bastante gente negociando a hipótese.",
-        "Ele quer explorar o caso Lulinha na sabatina do Jornal Nacional, segundo Folha de S.Paulo, e a pauta está viva no noticiário desta quarta."
+        "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Ronaldo Caiado e com Augusto Cury, e em 37% no 2º turno contra o líder. Na urna ele está onde estava nas rodadas anteriores.",
+        "Ele segue sendo o nome mais caro do contrato de 3º lugar do 1º turno, com 36,50%, à frente de Ronaldo Caiado e de Augusto Cury.",
+        "O volume acumulado no contrato de vencedor dele, USD 11,63M, é um dos maiores do livro presidencial, atrás apenas de nomes cujo preço está colado no zero.",
+        "Ele foi entrevistado no Jornal Nacional nesta quinta, na série de sabatinas da emissora com os presidenciáveis, segundo BBC."
       ],
       "fracos": [
-        "🔴 Cedeu 6,00pp no contrato de 3º lugar, de 51,50% para 45,50%, a maior variação do painel no dia. O vão dele para Caiado caiu de 9,50pp para 6,50pp, e desta vez os dois cederam, com ele caindo o dobro.",
-        "No contrato de vencedor cedeu 0,20pp e está em 2,75%.",
-        "A Gerp o mede em 3%, empatado com Caiado, e a BTG/Nexus de 24/Ago também o dava em 3%, atrás dos 5% de Caiado. As duas casas de hoje discordam sobre quem é o terceiro na urna.",
-        "Lula acionou o TSE contra ele e contra Caiado por ataques no debate, pedindo retirada de publicações, segundo Folha de S.Paulo."
+        "⚠️ 1,65% é o PISO ABSOLUTO da série dele. Nenhum dos 346 pontos gravados desde 14/Abr ficou abaixo disso, e a queda vem em linha reta: 3,10% em 25/Ago, 3,00% em 26/Ago, 2,70% na madrugada desta quinta e 1,65% agora. O máximo da série é 49,60%, de 28/Abr.",
+        "⚠️ No contrato de 3º lugar do 1º turno ele cedeu 9,00pp, de 45,50% para 36,50%, a maior variação isolada do painel hoje. É o menor patamar dele naquele contrato desde 27/Mai.",
+        "No contrato de 2º lugar do 1º turno ele cedeu 0,50pp e ficou em 1,50%, atrás dos 4,00% do nome que passou a ser precificado nesta quinta.",
+        "Na entrevista ao Jornal Nacional ele disse que vai adotar regime de exceção em favelas e defendeu que o Brasil tenha bomba atômica, segundo Folha de S.Paulo. Uma análise da CartaCapital lhe deu nota 2,6, apontando postura fluida e propostas autoritárias."
       ],
-      "analise": "O maior movimento do dia inteiro não está no contrato de vencedor, está no de terceiro lugar, e é dele. Uma queda de 6,00pp em um dia num contrato desse tamanho é grande, e ela veio acompanhada de uma queda menor do adversário direto, o que encurtou o vão entre os dois em vez de alargar. Na urna nada mudou de patamar: as três nacionais da janela o põem entre 3% e 4%. É o tipo de dia em que o preço se mexe mais do que a intenção declarada, e o painel registra os dois sem escolher qual está certo."
+      "analise": "O contrato de vencedor dele registrou hoje o menor preço de toda a série: 1,65%, com nenhum dos 346 pontos desde 14/Abr abaixo disso. A queda não é de um dia, é de uma sequência, e ela desceu de 3,10% em 25/Ago para 1,65% agora sem nenhum repique. No contrato de 3º lugar do 1º turno a perda foi maior ainda, 9,00pp, de 45,50% para 36,50%, o menor patamar naquele contrato desde 27/Mai, e ele mesmo assim segue sendo o nome mais caro ali. Na urna a leitura é outra: a PoderData/Aya o mede em 4%, empatado com Caiado e com Cury, exatamente onde ele estava nas rodadas anteriores. A distância entre as duas medições é o que o painel existe para mostrar, e ela não se resolve por média. No mesmo dia ele foi ao Jornal Nacional e defendeu regime de exceção em favelas e armamento nuclear. O painel registra as duas coisas na mesma data e não atribui causa. leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "Pelotão de trás na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Ronaldo Caiado cedeu 0,10pp e está em 0,45%, abaixo do piso de 0,5% que a dupla leitura vigia. Romeu Zema cedeu 0,10pp e está em 0,15%. Fernando Haddad segue em 0,05%.",
-      "subtitle": "Pelotão de trás na leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Os três estão abaixo do piso de 0,5% em que a dupla leitura distingue movimento de ruído, então nenhuma variação deles é tratada como sinal pelo painel.",
+      "header": "PREÇO: Ronaldo Caiado 0,15% (vol USD 6,80M acumulado), Romeu Zema 0,05% (vol USD 6,13M acumulado) e Fernando Haddad 0,05% (vol USD 7,30M acumulado) no contrato de vencedor, leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Os três abaixo do piso de 0,5% da dupla leitura.",
+      "subtitle": "Pelotão de trás na leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Os três estão abaixo do piso de 0,5% em que a dupla leitura distingue movimento de ruído, então nenhuma variação deles é tratada como sinal pelo painel. ⭐ E nesta quinta o pelotão ganhou um quarto nome: o Polymarket abriu contratos para Augusto Cury, que aparece com 23,50% no de 3º lugar do 1º turno e 4,00% no de 2º.",
       "caiado": {
-        "label": "CAIADO (PSD), Poly presidencial 0,45% (vol USD 6,59M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), com queda de 0,10pp. No contrato de 3º lugar do 1º turno ele cedeu 3,00pp e tem 39,00%, a 6,50pp de Renan Santos.",
-        "fortes": "A Indexa de hoje o mede em 5% no 1º turno, à frente de Renan Santos, e o dá perdendo o 2º turno para Lula por 38% a 44%, que é a menor distância entre os quatro cenários testados pela casa depois do de Flávio. Mesmo cedendo 3,00pp no contrato de terceiro lugar, ele ENCURTOU a distância para Renan Santos, porque o outro caiu o dobro. Nesta quarta ele defendeu a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos ligados ao Master, segundo O Globo, e deu sabatina ao O Globo, CBN e Valor.",
-        "fracos": "A Gerp o mede em 3%, empatado com Renan Santos, contra os 5% da Indexa e os 5% da BTG/Nexus. Cedeu 0,10pp no contrato de vencedor e está em 0,45%, abaixo do piso de vigilância. Lula acionou o TSE contra ele e contra Renan Santos por ataques no debate."
+        "label": "CAIADO (PSD), Poly presidencial 0,15% (vol USD 6,80M acumulado, leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)), com queda de 0,30pp. No contrato de 3º lugar do 1º turno ele cedeu 5,50pp e tem 33,50%, o menor patamar dele ali desde 14/Ago.",
+        "fortes": "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Renan Santos e com Augusto Cury, e o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%, dentro da margem de 2pp. É o segundo cenário de returno mais apertado da rodada, atrás só do de Flávio Bolsonaro. Ele segue sendo o segundo nome mais caro do contrato de 3º lugar do 1º turno.",
+        "fracos": "Cedeu nos dois contratos em que é acompanhado: 0,30pp no de vencedor, o que o leva a 0,15% e o coloca abaixo do piso de vigilância, e 5,50pp no de 3º lugar do 1º turno. A Indexa de 26/Ago o media em 5% e a Gerp em 3%, e as três casas da semana discordam sobre o tamanho dele."
       },
       "haddad": {
-        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), sem variação.",
-        "fortes": "A pesquisa do JOTA divulgada nesta quarta (BR-07806/2026, 6.000 entrevistas pela internet, campo de 27/Jul a 24/Ago) testou um cenário de 2º turno com ele no lugar de Lula contra Flávio Bolsonaro.",
-        "fracos": "Nenhuma nacional o testa no 1º turno para presidente, então ele não entra no grafo de divergência, de propósito. E os números do cenário do JOTA não saíram de forma que o painel pudesse conferir em fonte, então nada dele foi para a tabela."
+        "label": "HADDAD (PT), Poly presidencial 0,05% (vol USD 7,30M acumulado, leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)), sem variação.",
+        "fortes": "Segue sem ser testado no 1º turno por nenhuma nacional, o que o mantém fora do grafo de divergência, de propósito. A pesquisa do JOTA divulgada em 26/Ago (BR-07806/2026, 6.000 entrevistas pela internet, campo de 27/Jul a 24/Ago) declarou um cenário de 2º turno com ele no lugar do líder contra Flávio Bolsonaro.",
+        "fracos": "Os percentuais do cenário do JOTA não saíram em fonte que o painel alcance, e por isso nada dele foi para a tabela. O contrato de vencedor dele está em 0,05% há semanas, com USD 7,30M de volume acumulado: volume alto com preço colado no zero é posição antiga desmontada, não contrato ativo."
       },
       "zema": {
-        "label": "ZEMA (Novo), Poly presidencial 0,15% (vol USD 5,99M acumulado, leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC)), com queda de 0,10pp.",
-        "fortes": "Segue testado pelas nacionais, ao contrário de Tarcísio e Haddad. A Indexa o dá perdendo o 2º turno para Lula por 34% a 45%.",
-        "fracos": "As duas nacionais de hoje o medem em 1%, contra 3% na BTG/Nexus de 24/Ago, e o piso da faixa de 30 dias dele caiu de 1,3% para 1% por causa disso."
+        "label": "ZEMA (Novo), Poly presidencial 0,05% (vol USD 6,13M acumulado, leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)), com queda de 0,10pp.",
+        "fortes": "A PoderData/Aya o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%, o mesmo cenário de Ronaldo Caiado. Ele segue testado pelas nacionais, ao contrário de Tarcísio e Haddad, e a mesma rodada o mede em 2% no 1º turno.",
+        "fracos": "Cedeu 0,10pp no contrato de vencedor e está em 0,05%, colado no zero e abaixo do piso de vigilância. Na urna, a Gerp e a Indexa de 26/Ago o mediam em 1% cada uma e a BTG/Nexus de 24/Ago em 3%, então os 2% de hoje ficam no meio dessa amplitude."
       },
-      "analise": "Os três seguem abaixo do piso de 0,5% no contrato de vencedor, e o que se move neles hoje é o contrato de terceiro lugar, onde Caiado cedeu 3,00pp e mesmo assim se aproximou de Renan Santos. Na urna o quadro é outro: as duas nacionais de hoje discordam sobre quem é o terceiro colocado, com a Indexa dando Caiado à frente por 5% a 4% e a Gerp dando empate em 3%. É exatamente esse par que o contrato de terceiro lugar precifica, e ele se moveu no dia em que as duas casas discordaram sobre ele.",
+      "analise": "A novidade estrutural do dia está aqui. O Polymarket abriu contratos para Augusto Cury nesta quinta, às 00:30 UTC, e o mercado já formou preço sobre ONDE ele chega: 23,50% para terminar em terceiro no 1º turno, o que o coloca atrás apenas de Renan Santos e de Ronaldo Caiado, e 4,00% para terminar em segundo. O contrato de vencedor de Augusto Cury abriu nesta quinta e esta rodada não publica preço para ele. Os contratos de 2º e de 3º lugar dele, sim, e são esses que aparecem no painel. Na urna ele não é nome novo: a PoderData/Aya o mede em 4% no 1º turno, empatado com os outros dois nomes da terceira via, e esses 4% são o maior número dele em toda a tabela do painel, que o media entre 1% e 3% até aqui. Caiado e Zema seguem no caminho oposto, cedendo no contrato de vencedor, e Caiado cedeu 5,50pp também no de 3º lugar. A PoderData coloca os dois empatados tecnicamente com o líder no 2º turno, 43% contra 44% cada, e essa é a distância entre as duas medições que o painel existe para mostrar: na urna eles empatam no returno, e no preço de vencedor os dois somados não chegam a meio ponto. leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago).",
       "fortes": [
-        "⭐ Ronaldo Caiado fez a maior alta do dia em qualquer livro do painel: 3,00pp no contrato de terceiro lugar, chegando a 42,00%. No mesmo dia ele foi o sabatinado do Jornal Nacional.",
-        "Na urna ele segue à frente de Renan Santos, com 5% contra 3% na BTG/Nexus de 24/Ago, e o preço do contrato de terceiro lugar andou hoje na direção dessa ordem.",
-        "Romeu Zema abriu a série de sabatinas do Jornal Nacional em 24/Ago, com 40 minutos, e em 25/Ago foi sabatinado por CBN, O Globo e Valor.",
-        "A BTG/Nexus testou Caiado no 2º turno contra o primeiro colocado e mediu 46% a 42%, segundo Metrópoles."
+        "⭐ AUGUSTO CURY (Avante) PASSOU A SER PRECIFICADO NESTA QUINTA. Os contratos dele foram abertos no livro presidencial às 00:30 UTC, e ele já é o terceiro nome mais caro do contrato de 3º lugar do 1º turno, com 23,50%, atrás apenas de Renan Santos e de Ronaldo Caiado. No de 2º lugar ele marca 4,00%, à frente de Renan Santos.",
+        "Na urna, a PoderData/Aya de hoje mede Cury em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado. São os 4% mais altos dele em toda a tabela do painel, que reúne as nacionais dos últimos 30 dias e o media entre 1% e 3% até aqui.",
+        "Ele foi o presidenciável mais buscado no Google durante o debate e o de maior crescimento de seguidores e de buscas, segundo CNN Brasil e Pleno.News, e ganhou 2 milhões de seguidores, segundo SpaceMoney. É candidato do Avante, oficializado em convenção em 03/Ago, com Júlio Delgado como vice.",
+        "Ronaldo Caiado e Romeu Zema empatam tecnicamente com o líder no 2º turno da PoderData, por 43% a 44% cada, os dois dentro da margem de 2pp."
       ],
       "fracos": [
-        "No livro presidencial os três seguem abaixo ou colados no piso de 0,5%: Caiado 0,55% depois de ceder 0,15pp, Zema 0,25% e Haddad 0,05%.",
-        "A inversão entre os dois instrumentos no terceiro lugar continua: na urna Caiado está à frente, e no contrato o preço dele ainda é 9,50pp menor que o do adversário.",
-        "⚠️ O vão de 9,50pp não é piso de série: o livro já esteve em 3,5pp em 22/Ago.",
-        "Nenhum dos três teve pesquisa nacional nova nesta terça, porque não houve nenhuma."
+        "⚠️ O contrato de vencedor de Augusto Cury abriu nesta quinta e esta rodada não publica preço para ele. Os contratos de 2º e de 3º lugar dele, sim, e são esses que aparecem no painel.",
+        "Ronaldo Caiado cedeu 0,30pp no contrato de vencedor e ficou em 0,15%, abaixo do piso de 0,5% da dupla leitura, e cedeu 5,50pp no de 3º lugar do 1º turno.",
+        "Romeu Zema cedeu 0,10pp e ficou em 0,05% no contrato de vencedor, também abaixo do piso de vigilância.",
+        "A terceira via segue medida na urna e quase não precificada no contrato de vencedor: os nomes dela com preço confirmado somam menos de meio ponto, contra 93,35% dos dois primeiros colocados."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "DUAS NACIONAIS NOVAS E ELAS DISCORDAM. A Gerp (n=2.400, campo 21 a 25/Ago) o dá em 37% no 1º turno, ATRÁS por 1 ponto, e perdendo o 2º turno por 42% a 47%. A Indexa (n=2.000, campo 20 a 23/Ago) o dá em 39%, à frente por 5, e vencendo o 2º turno por 46% a 41%. A BTG/Nexus de 24/Ago, de maior confiabilidade, o mantém em 41%.",
-      "m": "62,50% (vol USD 9,03M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação, terceiro dia seguido parado. O máximo da série é 67,50%, de 16/Ago.",
-      "t": "parado pelo terceiro dia, e o vão para o segundo é o mais estreito desde 21/Jun",
-      "s": "Oitavo dia de campanha oficial, a 42 dias do 1º turno. Sabatina do Jornal Nacional marcada para 27/Ago. Nesta quarta ele acionou o TSE contra Renan Santos e Caiado por ataques no debate.",
+      "p": "A PoderData/Aya de hoje o dá em 38% no 1º turno, à frente por 3 pontos, e vencendo os quatro cenários de 2º turno testados, o mais apertado deles por 45% a 44%. A Gerp de 26/Ago o dava em 37% e a Indexa em 39%. A BTG/Nexus de 24/Ago, que alimenta o número deste bloco, o mantém em 41%.",
+      "m": "57,50% (vol USD 9,27M), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Queda de 5,00pp, a maior variação do painel no contrato de vencedor, e o menor patamar desde 01/Jul.",
+      "t": "cede 5,00pp em cinco leituras sucessivas e volta ao patamar de 01/Jul",
+      "s": "Foi à sabatina do Jornal Nacional, chamou as acusações sobre o filho de ilações e negou blindagem. A PF apura pedido de lobista para que o filho agisse em favor do Careca do INSS.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "A Gerp o dá em 38% no 1º turno, À FRENTE pela primeira vez na tabela do painel, e vencendo o 2º turno por 47% a 42%. A Indexa o dá em 34% sem Marçal e 33% com ele, perdendo o 2º turno por 41% a 46%. A BTG/Nexus de 24/Ago o mantém em 37%.",
-      "m": "35,55% (vol USD 8,94M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Alta de 0,90pp, a maior do dia entre os contratos de vencedor, e o patamar mais alto desde 13/Mai. No contrato de 2º lugar ficou parado em 87,50%.",
-      "t": "a maior alta do dia, e o preço mais alto dele desde 13/Mai",
-      "s": "Vorcaro vai depor à PF no inquérito sobre fraudes do Master, e o CEO da Indexa disse ao Estadão que ele vem recuperando eleitores depois do caso.",
+      "p": "A PoderData/Aya o dá em 35% no 1º turno, a 3 pontos, e em 44% no 2º turno, a 1 ponto. Os dois dentro da margem de 2pp. A Gerp de 26/Ago o dava à frente com 38% e a Indexa atrás com 34%.",
+      "m": "35,85% (vol USD 9,10M), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Alta de 0,30pp e o patamar mais alto dele desde 13/Mai. No contrato de 2º lugar cedeu 3,00pp, para 84,50%.",
+      "t": "o preço mais alto desde 13/Mai, e o vão para o líder encurtou pelo lado de cima",
+      "s": "Acionou o TSE para proibir uso do Palácio da Alvorada em conteúdo eleitoral do adversário. A produtora do Dark Horse pediu a Mendonça que leve o caso ao STF, e Dino ampliou o acesso da PF às provas.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
+      "n": "Augusto Cury (Avante)",
+      "p": "A PoderData/Aya de hoje o mede em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado, e é o maior número dele em toda a tabela do painel. Candidato do Avante, oficializado em convenção em 03/Ago.",
+      "m": "23,50% (vol USD 33 mil) no contrato de 3º lugar do 1º turno e 4,00% no de 2º lugar, leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Os contratos dele foram abertos nesta quinta, às 00:30 UTC. O de vencedor ainda não tem preço confirmado.",
+      "t": "nome novo no livro, e o mercado já formou preço sobre onde ele chega",
+      "s": "Foi o presidenciável mais buscado no Google durante o debate e o de maior crescimento de seguidores, segundo CNN Brasil e Pleno.News.",
+      "pc": "#0891B2",
+      "mc": ""
+    },
+    {
       "n": "Renan Santos (Missão)",
-      "p": "A Gerp o dá em 3% e a Indexa em 4%. A BTG/Nexus de 24/Ago o dava em 3%, atrás dos 5% de Caiado. As duas casas de hoje discordam sobre quem é o terceiro.",
-      "m": "2,75% (vol USD 11,23M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,20pp no contrato de vencedor e de 6,00pp no de 3º lugar, para 45,50%, a maior variação do painel no dia.",
-      "t": "a maior queda do dia, e ela está no contrato de terceiro lugar",
-      "s": "Lula acionou o TSE contra ele por ataques no debate. Ele quer explorar o caso Lulinha na sabatina do Jornal Nacional.",
+      "p": "A PoderData/Aya o dá em 4% no 1º turno, empatado com Caiado e com Cury, e em 37% no 2º turno contra o líder. A Gerp de 26/Ago o dava em 3% e a Indexa em 4%.",
+      "m": "1,65% (vol USD 11,63M), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Queda de 1,10pp e o PISO da série inteira: nenhum dos 346 pontos desde 14/Abr ficou abaixo disto. No contrato de 3º lugar cedeu 9,00pp, para 36,50%, a maior variação isolada do painel hoje.",
+      "t": "o piso de toda a série no contrato de vencedor",
+      "s": "Foi ao Jornal Nacional, disse que vai adotar regime de exceção em favelas e defendeu que o Brasil tenha bomba atômica.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A Indexa o dá em 5%, à frente de Renan Santos, e perdendo o 2º turno para Lula por 38% a 44%. A Gerp o dá em 3%, empatado com Renan.",
-      "m": "0,45% (vol USD 6,59M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Queda de 0,10pp, abaixo do piso de 0,5%. No contrato de 3º lugar cedeu 3,00pp para 39,00% e mesmo assim encurtou a distância para Renan Santos.",
-      "t": "cede nos dois contratos e ainda assim se aproxima do terceiro colocado",
-      "s": "Defendeu a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos ligados ao Master. Foi sabatinado por O Globo, CBN e Valor.",
+      "p": "A PoderData/Aya o dá em 4% no 1º turno, empatado com Renan Santos e com Cury, e empatado tecnicamente com o líder no 2º turno, por 43% a 44%.",
+      "m": "0,15% (vol USD 6,80M), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Queda de 0,30pp, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar cedeu 5,50pp, para 33,50%, o menor patamar dele ali desde 14/Ago.",
+      "t": "cede nos dois contratos e fica abaixo do piso de vigilância no de vencedor",
+      "s": "Defendeu na véspera a possibilidade de impeachment de ministros do STF e pediu quebra de sigilo dos casos Master, INSS e Carbono Oculto.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "A Gerp o mede em 4% e a Indexa em 2%, as duas na mesma semana. A BTG/Nexus de 24/Ago o media em 4%. Ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
-      "m": "0,15% (vol USD 2,77M), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
+      "p": "A PoderData/Aya o mede em 3% no 1º turno. A Gerp de 26/Ago o dava em 4% e a Indexa em 2%, e ele segue sendo o nome com maior divergência relativa entre institutos na janela.",
+      "m": "0,15% (vol USD 3,03M), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
       "t": "abaixo do piso de vigilância",
-      "s": "O cenário com ele derruba o segundo colocado em 1 ponto na Indexa e não mexe no primeiro.",
+      "s": "Não aparece no noticiário desta quinta entre os nomes com fato próprio.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,40% (vol USD 84 mil), leitura confirmada de 26/Ago, 15:19 BRT (18:19 UTC). Sem variação no dia.",
-      "t": "parado",
-      "s": "Caiado defendeu a possibilidade de impeachment de ministros e pediu quebra de sigilo dos casos ligados ao Master. Mendonça propôs ao TSE uma tese para definir o que é deepfake nas eleições, e vive uma crise com a PF.",
+      "m": "3,40% (vol USD 84 mil), leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago). Sem variação no dia, e é o quarto dia seguido no mesmo patamar.",
+      "t": "parado pelo quarto dia",
+      "s": "A disputa entre André Mendonça e a direção da PF no inquérito sobre o filho do presidente é o fato do tribunal nesta quinta. A produtora do Dark Horse pediu que a apuração vá ao STF, e Dino ampliou o acesso da PF às provas.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "O 26 de agosto entrega o caso mais limpo do ano para o que o AFOS mede, e ele não é entre mercado e urna: é entre duas urnas. A Gerp e a Indexa/Broadcast divulgaram nacionais no mesmo dia, com janelas de campo que se sobrepõem, e chegaram a resultados opostos. No 1º turno a Gerp dá 38% a 37% para Flávio Bolsonaro e a Indexa dá 39% a 34% para Lula. No 2º turno a Gerp dá Flávio ganhando por 47% a 42% e a Indexa dá Lula ganhando por 46% a 41%. São dez pontos de distância entre duas casas sobre a mesma disputa, sem nenhum dia entre elas para explicar a diferença. O painel publica as duas com a régua de confiabilidade declarada e não faz média, porque média entre leituras que se invertem apaga o que há de informativo no dia. A régua da casa dá 3 às duas, e a nacional de maior confiabilidade da janela segue sendo a BTG/Nexus de 24/Ago, que mantém Lula em 41% e é a que alimenta o lado pesquisa do grafo de divergência. No preço, a leitura confirmada de 26/Ago às 15:19 BRT traz o líder parado em 62,50% pelo terceiro dia seguido e o segundo colocado subindo 0,90pp para 35,55%, o patamar mais alto dele desde 13/Mai. A distância entre os dois caiu para 26,95pp, e ela é a mais estreita desde 21/Jun, conferida no backup do banco contra o registro completo desde 14/Abr. Ela estreitou por um lado só, e isso importa: quem se moveu foi o segundo. O maior movimento do dia, porém, não está no contrato de vencedor. Está no de terceiro lugar do 1º turno, onde Renan Santos cedeu 6,00pp para 45,50% e Ronaldo Caiado cedeu 3,00pp para 39,00%. Os dois caíram e o vão entre eles encurtou de 9,50pp para 6,50pp. Nesta mesma quarta Lula acionou o TSE contra os dois por ataques no debate, e as duas nacionais novas discordaram sobre qual dos dois é o terceiro colocado na urna, com a Indexa dando Caiado à frente por 5% a 4% e a Gerp dando empate em 3%. O painel registra a coincidência de data e não atribui causa. No pano de fundo, o caso Master voltou ao noticiário com o depoimento marcado de Daniel Vorcaro à Polícia Federal e uma operação sobre aportes de um instituto de previdência municipal, enquanto o caso do INSS avançou pelo flanco familiar do governo. Aprovação do governo em terreno negativo nas duas casas novas, 46% contra 50% na Indexa e 43% contra 51% na Gerp, com cinco pontos de amplitude entre institutos sobre a mesma pergunta na mesma semana. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra."
+  "cruzamento": "O 27 de agosto tem um fato de urna e três de mercado, e todos caíram na mesma data. Na urna, a PoderData/Aya (BR-04974/2026, campo 23 a 26/Ago, n=2.400, telefone) trouxe empate técnico nos DOIS turnos: 38% a 35% no primeiro e 45% a 44% no segundo, os dois dentro da margem de 2pp. A comparação que vale aqui é com a própria casa, porque método e amostra são os mesmos: em 13/Ago ela media 41% a 35% no primeiro turno, seis pontos, e agora mede três. O segundo turno estava em um ponto e continua em um. A mesma rodada dá empate técnico do líder também contra Romeu Zema e contra Ronaldo Caiado, por 44% a 43% em cada, e vantagem de sete pontos sobre Renan Santos. Rejeição empatada em 49% para os dois primeiros colocados, e aprovação do governo em 42% contra 50% de desaprovação. No preço, a leitura confirmada desta quinta traz o líder em 57,50%, com queda de 5,00pp no dia. A queda foi contínua, em cinco leituras sucessivas, e levou o contrato ao menor patamar desde 01/Jul: a última leitura abaixo disso foi em 30/Jun às 16:30 UTC, com 55,50%, conferido no backup do banco contra o registro completo desde 14/Abr. O segundo colocado subiu 0,30pp, para 35,85%, o mais alto dele desde 13/Mai. A distância entre os dois caiu de 26,95pp para 21,65pp, e ela encurtou pelo lado de cima: 5,00pp dos 5,30pp vieram da queda do primeiro. ⚠️ O painel NÃO chama isso de vão mais estreito de nada, porque não é: 387 dos 691 pontos da série estão abaixo de 21,65pp, e em maio o segundo colocado esteve à frente do primeiro, com o vão chegando a menos 8,00pp em 06/Mai. O segundo fato de mercado é estrutural: o Polymarket abriu contratos para Augusto Cury nesta quinta, às 00:30 UTC, e o mercado já formou preço sobre onde ele chega, com 23,50% para terminar em terceiro no 1º turno e 4,00% para terminar em segundo. O contrato de vencedor de Augusto Cury abriu nesta quinta e esta rodada não publica preço para ele. Os contratos de 2º e de 3º lugar dele, sim, e são esses que aparecem no painel. Na urna ele não é nome novo, porque a PoderData o mede em 4%, empatado com os outros dois da terceira via, e esses 4% são o maior número dele em toda a tabela do painel, que o media entre 1% e 3% até aqui. O terceiro fato é um piso, e ele veio acompanhado da maior variação do dia: Renan Santos fechou o contrato de vencedor a 1,65%, e nenhum dos 346 pontos da série dele desde 14/Abr ficou abaixo disso, enquanto no contrato de 3º lugar cedeu 9,00pp, para 36,50%. Ronaldo Caiado cedeu 5,50pp naquele mesmo contrato, para 33,50%, e Flávio Bolsonaro cedeu 3,00pp no de 2º lugar, para 84,50%. Os três perderam probabilidade nos contratos de posição no mesmo dia em que um quarto nome passou a ser precificado neles, e o painel registra a simultaneidade sem afirmar transferência. No noticiário, Daniel Vorcaro depôs à Polícia Federal nesta quinta por videoconferência, no inquérito sobre a atuação de ex-diretores do Banco Central em favor do Master; o caso Dark Horse teve pedido da produtora para ir ao STF e ampliação do acesso da PF às provas; e o caso Lulinha ganhou frentes na PF, no Congresso e no Ministério Público da Espanha. Todos esses fatos são da mesma data, e o painel registra a coincidência sem atribuir causa. Probabilidade de vencer e intenção de voto medem coisas diferentes, e o painel não subtrai uma da outra. leitura confirmada de 27/Ago, 21:46 BRT (00:46 UTC de 28/Ago)."
 }
