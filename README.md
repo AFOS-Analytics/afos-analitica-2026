@@ -106,6 +106,8 @@ Open source. **Code** is licensed under **Apache 2.0**; **data** (e.g. the publi
 Session 1-3: Free dashboard + soft popup (30s + scroll, max 3 dismissals)
 Session 4+:  Mandatory gate (blur + premium form)
 After signup: Unlimited access, no popup/gate
+
+Popup: Brazil AND US panels.   Gate: Brazil panel only, deliberately.
 ```
 
 | Component | Function |
@@ -119,8 +121,8 @@ After signup: Unlimited access, no popup/gate
 | `VisitorStateProvider` | React Context for dashboard |
 | `SubscribeForm` | Shared form (popup + gate + landing + inline) |
 | `InlineSubscribe` | End-of-edition block on AFOS Daily and Tradeoff |
-| `DashboardGate` | Blur overlay on 4th session |
-| `EmailPopup` | Soft popup on first 3 sessions |
+| `DashboardGate` | Blur overlay on 4th session. **Brazil panel only** |
+| `EmailPopup` | Soft popup on first 3 sessions. **Both panels**, since 28/Aug/2026 |
 
 **Security:** Backend is source of truth (not localStorage). 3s timeout with fallback. Atomic dedup via Redis SET NX. Honeypot anti-bot. Rate limiting.
 
@@ -132,9 +134,12 @@ correction and the redirect to `/welcome`, **where the subscriber picks the lang
 want to receive** (English, Portuguese or Spanish). Copy is written for all three locales
 and the block adapts to both page themes (light and Sapphire Blue).
 
-`captureSource` distinguishes `daily` and `tradeoff` from `popup`, `gate` and `landing`,
-which makes it possible to measure whether recurring content converts, without any
-tracking pixel in email.
+`captureSource` records which surface the person came from, and since 28/Aug/2026 it is
+**qualified by country** wherever the same component serves two: `popup-br`, `popup-us`,
+`gate`, `landing`, `daily`, `tradeoff-br`, `tradeoff-us` and `weekly`. That makes it
+possible to measure whether recurring content converts, without any tracking pixel in
+email. Rows written before that date carry the unqualified `popup` and `tradeoff`, so a
+query that compares countries has to exclude them rather than assume a side.
 
 **What the signup flow guarantees, and why (audited 27/Aug/2026).** A reader reported
 being unable to subscribe on desktop **and** phone. The audit found twelve defects, and
@@ -150,11 +155,23 @@ each one is a class of failure that is now closed:
 | **Rate limiting fails OPEN and repairs its own key** | `INCR` creates a key with no expiry and `EXPIRE` was a second round trip, so a process dying between them blocked that IP permanently. A Redis outage used to return 500 to a legitimate person; it is anti-abuse, not correctness |
 | **Signing up again is a fresh act of consent** | Re-subscribing after unsubscribing used to show success and change nothing: status stayed `unsubscribed`, no welcome email, and the person never heard from us again. It now reactivates, records consent again and welcomes them back |
 | **Browser language is matched by prefix** | Browsers send `en-US` and `es-ES`; exact comparison against `pt-BR/en/es` matched only Portuguese. Measured: 31 of 31 leads carried `pt-BR` while two had chosen English by hand |
+| **The offer fails ON, the barrier fails OPEN** | When the visitor state could not be read, `DEFAULT_STATE` carried `showPopup: false`, so the popup and the gate simply did not exist and nothing in any log said so. Three client paths reached it, and four distinct server responses landed in one of them. A popup is an opportunity, so it now shows; a gate blocks a person, so it stays open |
+| **A component replicated to a second surface records which one it is** | Both panels wrote `popup` and both Tradeoff editions wrote `tradeoff`, so no query could separate Brazil from the United States |
 | **A failure that is returned is read** | `registerConsent` and `sendWelcomeEmail` **return** failure rather than throwing, so their `.catch()` never fired and both failed in complete silence. Any guard on a function whose return type carries `success` must check the return, not only catch |
 
 ⛔ Two things deliberately did **not** get more permissive: `email` and `consent` remain
 strict. Sanitising input does not loosen a legal basis, and a missing or false consent
 still blocks the request, with its own error rather than a message about the email.
+
+The last two rules came from a second audit, run **per surface** on 28/Aug/2026, which
+found what the first could not: the first read the shared path (form, route, service),
+this one read each surface from the inside. Measured that day, the popup and the gate
+together accounted for 18 of 29 leads, **62% of the base**, and the page looked perfectly
+normal while most of the capture did not exist. The US panel had no capture at all, and
+that was not a product decision: `UsDashboardClient` already wrapped everything in
+`<VisitorStateProvider>` and the server already computed `showPopup`, but nothing
+consumed it. The gate staying on the Brazil panel only **is** a decision, because it
+blocks access rather than offering something.
 
 ### Data Pipeline (Cron + Upstash Redis + Neon)
 

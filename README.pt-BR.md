@@ -106,6 +106,8 @@ Open source. O **código** é licenciado sob **Apache 2.0**; os **dados** (ex.: 
 Sessao 1-3: Dashboard livre + popup suave (30s + scroll, max 3 dismissals)
 Sessao 4+:  Gate obrigatorio (blur + formulario premium)
 Apos cadastro: Acesso ilimitado, sem popup/gate
+
+Popup: paineis do Brasil E dos EUA.   Gate: so o painel do Brasil, de proposito.
 ```
 
 | Componente | Funcao |
@@ -119,8 +121,8 @@ Apos cadastro: Acesso ilimitado, sem popup/gate
 | `VisitorStateProvider` | Context React para dashboard |
 | `SubscribeForm` | Formulario compartilhado (popup + gate + landing + inline) |
 | `InlineSubscribe` | Bloco no fim das edicoes do AFOS Daily e do Tradeoff |
-| `DashboardGate` | Blur overlay na 4a sessao |
-| `EmailPopup` | Popup suave nas 3 sessoes livres |
+| `DashboardGate` | Blur overlay na 4a sessao. **So no painel do Brasil** |
+| `EmailPopup` | Popup suave nas 3 sessoes livres. **Nos dois paineis**, desde 28/Ago/2026 |
 
 **Seguranca:** Backend e fonte de verdade (nao localStorage). Timeout 3s com fallback. Dedup atomico via Redis SET NX. Honeypot anti-bot. Rate limiting.
 
@@ -133,9 +135,12 @@ explicito LGPD, correcao de erro de digitacao e o redirecionamento para `/welcom
 A copy existe nos tres idiomas e o bloco se adapta aos dois temas da pagina (claro e
 Sapphire Blue).
 
-O `captureSource` separa `daily` e `tradeoff` de `popup`, `gate` e `landing`, o que
-permite medir se o conteudo recorrente converte, sem nenhum pixel de rastreamento em
-e-mail.
+O `captureSource` registra de qual superficie a pessoa veio e, desde 28/Ago/2026, e
+**qualificado por pais** onde o mesmo componente serve dois: `popup-br`, `popup-us`,
+`gate`, `landing`, `daily`, `tradeoff-br`, `tradeoff-us` e `weekly`. Isso permite medir
+se o conteudo recorrente converte, sem nenhum pixel de rastreamento em e-mail. Os
+registros anteriores a essa data levam `popup` e `tradeoff` sem sufixo, entao consulta
+que compara paises tem que EXCLUI-LOS, nunca atribui-los a um lado.
 
 **O que o fluxo de cadastro GARANTE, e por que (auditado em 27/Ago/2026).** Um leitor
 avisou que nao conseguia se cadastrar no desktop **e** no celular. A auditoria achou doze
@@ -151,11 +156,23 @@ a resposta, e cada uma fecha uma classe de falha:
 | **O limite de taxa falha ABERTO e repara a propria chave** | `INCR` cria a chave sem expiracao e o `EXPIRE` era uma segunda ida, entao um processo morrendo entre as duas bloqueava aquele IP permanentemente. E queda do Redis devolvia 500 a uma pessoa legitima, quando limite de taxa e anti-abuso, nao correcao |
 | **Cadastrar-se de novo e um ato de consentimento NOVO** | Reinscrever-se depois de sair mostrava sucesso e nao mudava nada: o status continuava `unsubscribed`, sem e-mail de boas-vindas, e a pessoa nunca mais tinha noticia. Agora reativa, registra consentimento outra vez e da as boas-vindas de volta |
 | **O idioma do navegador casa por PREFIXO** | O navegador manda `en-US` e `es-ES`; a comparacao exata contra `pt-BR/en/es` so acertava o portugues. Medido: 31 de 31 leads com `pt-BR`, e dois deles tinham escolhido ingles a mao |
+| **A oferta falha LIGADA, a barreira falha ABERTA** | Quando o estado do visitante nao podia ser lido, o `DEFAULT_STATE` trazia `showPopup: false`, entao o popup e o portao simplesmente nao existiam e nenhum log dizia isso. Tres caminhos do cliente caiam ali, e quatro respostas distintas do servidor caiam num deles. Popup e oportunidade, entao passa a aparecer; portao bloqueia uma pessoa, entao fica aberto |
+| **Componente replicado para uma segunda superficie registra QUAL delas e** | Os dois paineis gravavam `popup` e as duas edicoes do Tradeoff gravavam `tradeoff`, entao nenhuma consulta separava o Brasil dos Estados Unidos |
 | **Falha que e RETORNADA precisa ser lida** | `registerConsent` e `sendWelcomeEmail` **devolvem** falha em vez de lancar, entao o `.catch()` dos dois nunca disparava e as duas falhavam em silencio completo. Guarda sobre funcao cujo retorno carrega `success` tem que conferir o RETORNO, nao so capturar excecao |
 
 ⛔ Duas coisas NAO ficaram mais permissivas, de proposito: `email` e `consent` seguem
 estritos. Higienizar entrada nao afrouxa base legal, e consentimento ausente ou falso
 continua bloqueando, com erro proprio em vez de uma mensagem sobre o e-mail.
+
+As duas ultimas regras vieram de uma segunda auditoria, feita **por superficie** em
+28/Ago/2026, que achou o que a primeira nao podia ver: a primeira leu o caminho
+compartilhado (formulario, rota, servico), e esta leu cada superficie por dentro. Medido
+naquele dia, o popup e o portao respondiam juntos por 18 dos 29 leads, **62% da base**, e
+a pagina ficava perfeitamente normal enquanto a maior parte da captacao nao existia. O
+painel dos EUA nao tinha captacao nenhuma, e isso NAO era decisao de produto: o
+`UsDashboardClient` ja embrulhava tudo em `<VisitorStateProvider>` e o servidor ja
+calculava `showPopup`, so que nada consumia. O portao seguir apenas no painel do Brasil
+**e** decisao, porque ele bloqueia acesso em vez de oferecer algo.
 
 ### Pipeline de Dados (Cron + Upstash Redis + Neon)
 
