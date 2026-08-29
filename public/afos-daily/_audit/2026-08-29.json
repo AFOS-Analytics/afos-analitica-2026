@@ -1,0 +1,91 @@
+{
+  "date": "2026-08-29",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Vox Brasil BR-05519/2026 divulgada",
+        "verificacao1_crossRef": "aparece em 26, 27 e 28/Ago, sempre como linha do CALENDARIO, registrada para 29/Ago",
+        "classificacao": "novidade: a divulgacao e o fato",
+        "verificacao2_fetch": {
+          "fonte": "Metropoles",
+          "url": "https://www.metropoles.com/brasil/vox-flavio-passa-lula-2o-turno",
+          "quando": "2026-08-29",
+          "tipo": "evento",
+          "trecho": "ouviu 2.100 pessoas entre os dias 25 e 27 de agosto. A margem de erro e de 2,15 pontos percentuais. Registrada no TSE sob o codigo BR-05519/2026"
+        },
+        "segundaFonte": "Alagoas 24 Horas (mesmo bloco tecnico, tres cenarios de 2o turno) e Blog do Didi Galvao (tabela completa do 1o turno, que fecha em 100,0)",
+        "decisao": "incorporar. Registro, campo, amostra e margem batem com o registro do TSE."
+      },
+      {
+        "evento": "Depoimento de Vorcaro a PF: negativa de corrupcao e aceno de delacao",
+        "verificacao1_crossRef": "15 mencoes em 7 dailies",
+        "classificacao": "continuidade, desdobramento",
+        "verificacao2_fetch": {
+          "fonte": "O Globo",
+          "url": "https://oglobo.globo.com/politica/noticia/2026/08/28/pf-finaliza-depoimento-de-vorcaro-feito-por-videoconferencia-da-papudinha.ghtml",
+          "quando": "2026-08-28",
+          "tipo": "desdobramento",
+          "trecho": "fetch bloqueado pelo dominio; a data foi lida no CAMINHO da URL, /2026/08/28/"
+        },
+        "segundaFonte": "Folha de S.Paulo, mercado/2026/08, e O Globo /2026/08/29/ para o desdobramento",
+        "decisao": "incorporar DATADO em 28/Ago, nunca como evento de 29/Ago. A peca escreve 'concluido em 28 de agosto e o conteudo veio a publico entre 28 e 29'."
+      },
+      {
+        "evento": "Fachin articula para conter a crise entre Mendonca e a cupula da PF",
+        "verificacao1_crossRef": "ZERO mencoes em 7 dailies",
+        "classificacao": "possivel novidade",
+        "verificacao2_fetch": {
+          "fonte": "O Globo",
+          "url": "https://oglobo.globo.com/politica/noticia/2026/08/28/em-meio-a-crise-com-mendonca-ala-do-stf-defende-ajuste-de-rota-na-atuacao-da-pf.ghtml",
+          "quando": "2026-08-28",
+          "tipo": "processo em curso",
+          "trecho": "fetch bloqueado pelo dominio; data lida no caminho da URL. A busca confirma a articulacao mas NAO fixa data de ato unica."
+        },
+        "segundaFonte": "SBT News, Brasil 247 e ICL Noticias",
+        "decisao": "incorporar SEM datar como ato de 29/Ago. A peca escreve 'o painel registra a articulacao sem data-la como ato de 29 de agosto, porque a cobertura a descreve como processo em curso'."
+      },
+      {
+        "evento": "Estreia do horario eleitoral no RADIO",
+        "verificacao1_crossRef": "a estreia em radio e TV foi em 28/Ago; o primeiro programa de RADIO e de 29/Ago",
+        "classificacao": "novidade",
+        "verificacao2_fetch": {
+          "fonte": "InfoMoney",
+          "quando": "2026-08-29",
+          "tipo": "evento",
+          "trecho": "Lula foca em educacao e Flavio em seguranca na estreia da propaganda de radio"
+        },
+        "segundaFonte": "Estadao, Gazeta do Povo, UOL e band.com.br",
+        "decisao": "incorporar"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. As duas ancoras do dia tem 3 e 2 fontes; a serie de preco e do banco proprio.",
+    "numericalErrors": "reconcile-claims devolveu [OK], todos os claims batem com o JSON em +-0,05pp. O 77,00% do Senado saiu da peca por nao estar nos JSONs do painel.",
+    "fontesInventadas": "6 de 6 conferidas contra o news-cache de 2026-08-29. Todas existem.",
+    "quotesLiterais": "nenhuma aspas literal na peca.",
+    "causacaoEspuria": "nenhuma. A peca declara que a ordem dos fatos nao prova antecipacao nem acerto.",
+    "verbosCriticos": "'acenar com delacao premiada' e nao 'fez delacao'; 'depoimento concluido em 28 de agosto' com data; 'articula' e nao 'mediou'.",
+    "decisao": "prosseguir"
+  },
+  "gates": {
+    "travaDeCaptura": "BLOQUEADO no conjunto, APROVADO por livro em presidential, stf e senate. Os 3 motivos sao do Cury e do Renan nos contratos de colocacao. Publicados apenas os livros aprovados; 2o e 3o lugar sem numero novo.",
+    "carimboPublicado": "29/Ago 14:51 BRT (17:51 UTC), leituras de 17:43:06Z e 17:51:07Z, mais terceira leitura de confirmacao com 0,00pp de divergencia",
+    "gateDeRebaseline": "DISPAROU: Lula -1,00pp e vao -1,40pp contra o JSON das 13:27. Rebaseline aplicado nos 5 arquivos antes de escrever a daily.",
+    "portaoDeFrescor": "verde",
+    "validatePollsData": "exit 0",
+    "validateAfosDaily": "exit 0, com 1 warning de densidade de links em 52%",
+    "reconcileClaims": "OK",
+    "palavras": 1094,
+    "tetoPalavras": 1100,
+    "emojis": 0,
+    "gateNumericoTraducao": "multiconjunto identico nos tres idiomas, 63 numeros com unidade em cada",
+    "cincoChecagens": "ancora morta 0, locale cruzado 0, cirilico 0, separador decimal correto por idioma, tldr com 3 bullets nos tres",
+    "wayback": "BLOQUEADO: pre-check em /save/ devolveu 429. Nao rodado e nao insistido, conforme a regra."
+  },
+  "correcoesDoAndre": [
+    "Remover o H1 'AFOS Daily · Sintese do Dia' e a linha solta '29 de agosto de 2026': redundancia, porque o template ja os renderiza a partir do frontmatter. O corpo canonico comeca em '## 1.'.",
+    "Em sintese: frase-tese em NEGRITO na abertura de cada item, com linha em branco entre eles, no formato do gabarito de 28/Ago.",
+    "Consequencia que eu estendi por conta: negrito nos numeros-chave das Secoes 1 e 2, que e a convencao do gabarito e faltava na primeira versao."
+  ]
+}

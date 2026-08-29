@@ -1387,41 +1387,41 @@
     "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC), with the presidential book at USD 138.92M. THE DAY DID BRING A NATIONAL POLL: Vox Brasil (BR-05519/2026, fieldwork Aug 25 to 27, n=2,100, margin of 2.15pp, in person), the first in two days. It brings the first round at 37.1% to 34.8%, a distance of 2.3 points, and the runoff at 45.1% to 44.5% for Flávio Bolsonaro. The 0.6 point sits inside the margin, so the reading is a [technical tie](/en/glossary#empate-tecnico) and not a lead. Across the two Vox readings the sign of the runoff changed sides: on Jul 31 the leader was 6.4 points ahead and now he is 0.6 point behind. That holds for the Vox series, not for the set of national polls. In the panel's 30-day window he had already appeared ahead in the runoff in three other national polls: Gerp of Aug 26, 47% to 42%, Veritá of Aug 21, 47.3% to 42%, and Gerp of Aug 11, 45% to 43%. The pollsters disagree with each other about the runoff, and the clearest case is Aug 26, when Gerp gave him 47% to 42% and Indexa/Broadcast gave the leader 46% to 41%, on the SAME day and with opposite signs. The comparison that carries the day is the pollster against itself: on Jul 31 Vox measured 40.5% to 31.2% in the first round and 47.5% to 41.1% in the runoff, with the same in-person method and the same sample of 2,100. In one month the first-round distance fell 7.0 points and the runoff changed sides. In the market, Flávio Bolsonaro's outright-winner contract rose 3.30pp, to 38.95%, the largest move on the panel, Lula's gave up 1.00pp, to 56.50%, and the distance between the two fell to 17.55pp, the lowest value in the 20-day window. AFOS does not say which of the two instruments is right: both are forecasts of the same event and can be wrong together, and only the count settles it. What the record allows us to state is the sequence, because Flávio Bolsonaro's price started rising on the night of Aug 28, before the poll was released on Aug 29. Away from the top, the third-place contract for the first round changed leaders: Ronaldo Caiado rose to 36.50% and Renan Santos fell to 32.50%, ending a lead that had lasted since Aug 9, and Vox points the same way by placing Caiado as the third name in the first round, at 5.0%. ⚠️ A poll percentage and a contract price are different quantities and do not subtract: one measures declared voting intention, the other measures the implied probability of winning.",
+    "note": "Polymarket prices in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC), with the presidential book at USD 139.02M. THE DAY DID BRING A NATIONAL POLL: Vox Brasil (BR-05519/2026, fieldwork Aug 25 to 27, n=2,100, margin of 2.15pp, in person), the first in two days. It brings the first round at 37.1% to 34.8%, a distance of 2.3 points, and the runoff at 45.1% to 44.5% for Flávio Bolsonaro. The 0.6 point sits inside the margin, so the reading is a technical tie and not a lead. Across the two Vox readings the sign of the runoff changed sides: on Jul 31 the leader was 6.4 points ahead and now he is 0.6 point behind. That holds for the Vox series, not for the set of national polls. In the 30-day window of the panel he had already appeared ahead in the runoff in three other national polls: Gerp of Aug 26, 47% to 42%, Veritá of Aug 21, 47.3% to 42%, and Gerp of Aug 11, 45% to 43%. The pollsters disagree with each other about the runoff, and the clearest case is Aug 26, when Gerp gave him 47% to 42% and Indexa/Broadcast gave the leader 46% to 41%, on the SAME day and with opposite signs. The comparison that carries the day is the pollster against itself: on Jul 31 Vox measured 40.5% to 31.2% in the first round and 47.5% to 41.1% in the runoff, with the same in-person method and the same sample of 2,100. In one month the first-round distance fell 7.0 points and the runoff changed sides. In the market, Flávio Bolsonaro outright-winner contract rose 3.70pp, to 39.35%, the largest move on the panel, Lula gave up 2.00pp, to 55.50%, and the distance between the two fell to 16.15pp, the lowest value in the 20-day window. AFOS does not say which of the two instruments is right: both are forecasts of the same event and can be wrong together, and only the count settles it. What the record allows us to state is the sequence, because Flávio Bolsonaro price started rising on the night of Aug 28, before the poll was released on Aug 29. Away from the top, this round publishes no new number for the second-place and third-place contracts of the first round. Vox places Ronaldo Caiado as the third name in the first round, at 5.0%. A poll percentage and a contract price are different quantities and do not subtract: one measures declared voting intention, the other measures the implied probability of winning.",
     "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. The confirmation is done contract by contract. On Aug 27 all five books tracked confirmed in the 10:49 PM reading, including Augusto Cury's contract, which opened that same day. Polls filed with the TSE and released by the institutes, as reported by Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. PoderData/Aya of Aug 27 was checked against two sources, with the TSE registration number matching and with the national scope confirmed in the release, which states 555 municipalities across the 27 federal units. Series superlatives checked in the Neon backup, in backup/neon/marketPrice, which holds the full record since Apr 14.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 37.1,
-        "odds": 56.5,
-        "value": 56.5,
-        "polymarket": "56.50%",
+        "odds": 55.5,
+        "value": 55.5,
+        "polymarket": "55.50%",
         "pesquisaRange": "37.1-38%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 (BR-05519/2026, fieldwork Aug 25 to 27, n=2,100) puts him at 37.1% in the first round, 2.3 points ahead, and at 44.5% in the runoff against 45.1%, behind by 0.6 point inside the 2.15pp margin. Against Vox's own Jul 31 reading he gives up 3.4pp in the first round and 3.0pp in the runoff.",
-        "tendenciaPolymarket": "56.50% (vol USD 9.42M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Down 1.00pp, and the distance to the runner-up fell to 17.55pp, the lowest value in the 20-day window, after twenty days of near-continuous narrowing since the 36.40pp of Aug 10."
+        "tendenciaPolymarket": "55.50% (vol USD 9.44M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Down 2.00pp, and the distance to the runner-up fell to 16.15pp, the lowest value in the 20-day window, after twenty days of near-continuous narrowing since the 36.40pp of Aug 10."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 34.8,
-        "odds": 38.95,
-        "value": 38.95,
-        "polymarket": "38.95%",
+        "odds": 39.35,
+        "value": 39.35,
+        "polymarket": "39.35%",
         "pesquisaRange": "34.8-35%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 puts him at 34.8% in the first round and at 45.1% in the runoff, ahead of the leader by 0.6 point and inside the 2.15pp margin, that is, a technical tie. Across the two Vox readings the sign of the runoff changed sides: on Jul 31 the leader was 6.4 points ahead and now he is 0.6 point behind. In the panel's 30-day window he had already appeared ahead in the runoff in three other national polls: Gerp of Aug 26, 47% to 42%, Veritá of Aug 21, 47.3% to 42%, and Gerp of Aug 11, 45% to 43%. The pollsters disagree with each other about the runoff, and the clearest case is Aug 26, when Gerp gave him 47% to 42% and Indexa/Broadcast gave the leader 46% to 41%, on the SAME day and with opposite signs. Against Vox's own Jul 31 reading he rises 3.6pp in the first round and 4.0pp in the runoff, with the same in-person method and the same sample.",
-        "tendenciaPolymarket": "38.95% (vol USD 9.21M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Up 3.30pp, the LARGEST move on the panel. In the second-place contract for the first round he rose 1.50pp, to 86.50%, and this time both books moved in the same direction."
+        "tendenciaPolymarket": "39.35% (vol USD 9.23M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Up 3.70pp, the LARGEST move on the panel. , and this time both books moved in the same direction. This round publishes no new number for the second-place and third-place contracts of the first round."
       },
       {
         "name": "Augusto Cury",
         "percentage": 2.6,
-        "odds": 3.15,
-        "value": 3.15,
-        "polymarket": "3.15%",
+        "odds": 3.25,
+        "value": 3.25,
+        "polymarket": "3.25%",
         "pesquisaRange": "2.6-4%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 measures him at 2.6% in the first round, the sixth name on the table, below the 4% PoderData/Aya gave him on Aug 27.",
-        "tendenciaPolymarket": "3.15% (vol USD 2.55M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Down 0.35pp. This round publishes no new number for him in the third-place contract, which stood at 26.70% on Aug 28."
+        "tendenciaPolymarket": "3.25% (vol USD 2.56M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Down 0.25pp. This round publishes no new number for the second-place and third-place contracts of the first round."
       },
       {
         "name": "Renan Santos",
@@ -1430,9 +1430,9 @@
         "value": 2.25,
         "polymarket": "2.25%",
         "pesquisaRange": "3.3-4%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 measures him at 3.3% in the first round, the fourth name on the table, ahead of Zema and Cury and behind Caiado.",
-        "tendenciaPolymarket": "2.25% (vol USD 11.81M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Down 0.65pp. In the third-place contract he gave up 3.00pp, to 32.50%, and LOST the lead he had held since Aug 9."
+        "tendenciaPolymarket": "2.25% (vol USD 11.82M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Down 0.65pp. This round publishes no new number for the second-place and third-place contracts of the first round."
       },
       {
         "name": "Ronaldo Caiado",
@@ -1441,9 +1441,9 @@
         "value": 0.25,
         "polymarket": "0.25%",
         "pesquisaRange": "4-5%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 puts him at 5.0% in the first round, the THIRD name on the table. In the runoff he loses to the leader 45.5% to 41.1%, a distance of 4.4 points.",
-        "tendenciaPolymarket": "0.25% (vol USD 6.89M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Unchanged, and below the 0.5% floor of the double reading. In the third-place contract he rose 2.00pp, to 36.50%, and TOOK the lead of that book."
+        "tendenciaPolymarket": "0.25% (vol USD 6.89M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Unchanged, and below the 0.5% floor of the double reading. This round publishes no new number for the second-place and third-place contracts of the first round."
       },
       {
         "name": "Pablo Marçal",
@@ -1452,9 +1452,9 @@
         "value": 0.15,
         "polymarket": "0.15%",
         "pesquisaRange": "2-5.2%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 does not carry him in the released first-round table. PoderData/Aya of Aug 27 measured him at 3% in the first round.",
-        "tendenciaPolymarket": "0.15% (vol USD 3.06M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Unchanged, and below the 0.5% floor of the double reading."
+        "tendenciaPolymarket": "0.15% (vol USD 3.06M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Unchanged, and below the 0.5% floor of the double reading."
       },
       {
         "name": "Romeu Zema",
@@ -1463,9 +1463,9 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1-2.8%",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "Vox Brasil of Aug 29 measures him at 2.8% in the first round and tests a runoff scenario in which he loses to the leader 45.5% to 39.3%.",
-        "tendenciaPolymarket": "0.05% (vol USD 6.32M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Down 0.10pp, and below the 0.5% floor of the double reading."
+        "tendenciaPolymarket": "0.05% (vol USD 6.32M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Down 0.10pp, and below the 0.5% floor of the double reading."
       },
       {
         "name": "Tarcísio",
@@ -1474,9 +1474,9 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "He is not tested as a presidential candidate in the national polls in the window.",
-        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Unchanged. He is not a presidential candidate: he is running for re-election in São Paulo."
+        "tendenciaPolymarket": "0.05% (vol USD 14.06M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Unchanged. He is not a presidential candidate: he is running for re-election in São Paulo."
       },
       {
         "name": "Fernando Haddad",
@@ -1485,12 +1485,12 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "29/08/2026, 13:27",
+        "lastUpdate": "29/08/2026, 14:51",
         "tendenciaPesquisa": "He is not tested as a presidential candidate in the national polls in the window.",
-        "tendenciaPolymarket": "0.05% (vol USD 7.41M) in the confirmed reading of Aug 29, 1:27 PM BRT (4:27 PM UTC). Unchanged. He is not a presidential candidate: he is running for governor of São Paulo."
+        "tendenciaPolymarket": "0.05% (vol USD 7.41M) in the confirmed reading of Aug 29, 2:51 PM BRT (5:51 PM UTC). Unchanged. He is not a presidential candidate: he is running for governor of São Paulo."
       }
     ],
-    "updatedAt": "29/08/2026, 13:27",
-    "lastUpdate": "29/08/2026, 13:27"
+    "updatedAt": "29/08/2026, 14:51",
+    "lastUpdate": "29/08/2026, 14:51"
   }
 }
