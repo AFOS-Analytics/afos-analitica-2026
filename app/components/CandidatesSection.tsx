@@ -15,30 +15,30 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "57,50%",
-    poll: "SEM PESQUISA NACIONAL NOVA nesta sexta; a mais recente segue sendo a PoderData/Aya de 27/Ago (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026). Ela lhe dá 38% no 1º turno contra 35%, e 45% no 2º turno contra 44%, os dois dentro da margem de 2pp. A série ESTADUAL da Quaest divulgada nesta semana, que não entra na tabela do painel por ser de escopo estadual, o mostra em EMPATE TÉCNICO com o adversário nos três maiores colégios eleitorais do país, e liderando na Bahia por 50% a 17%. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 57,50% (vol USD 9,34M acumulado), SEM VARIAÇÃO depois de ceder 5,00pp na véspera.",
+    polymarket: "56,50%",
+    poll: "PESQUISA NACIONAL NOVA nesta sexta: a Vox Brasil de 29/Ago (n=2.100, presencial, campo 25 a 27/Ago, BR-05519/2026). Ela lhe dá 37,1% no 1º turno contra 34,8%, uma distância de 2,3 pontos, e 44,5% no 2º turno contra 45,1%, atrás por 0,6 ponto dentro da margem de 2,15pp, ou seja, empate técnico. Contra a própria Vox de 31/Jul ele cede 3,4pp no 1º turno e 3,0pp no 2º. Rejeição de 52,7%, segundo CNN Brasil. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 56,50% (vol USD 9,42M acumulado), QUEDA de 1,00pp.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "O preço PAROU depois de cinco leituras sucessivas de queda, e ficou em 57,50% (vol USD 9,34M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). A distância para o segundo colocado ALARGOU, de 20,65pp para 21,85pp, e alargou inteiramente pelo lado do adversário, que cedeu 1,20pp. Na campanha, abriu o horário eleitoral associando o rival a rachadinha, ao ex-banqueiro do Banco Master e a um grupo de matadores de aluguel, segundo Folha de S.Paulo. E pediu ao chefe da Polícia Federal que se apaziguasse com o relator no Supremo, segundo Estadão."
+    risk: "QUEDA de 1,00pp, para 56,50% (vol USD 9,42M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). A distância para o segundo colocado caiu para 17,55pp, o menor valor da janela de 20 dias, e a série mostra esse estreitamento correndo desde 10/Ago, quando ela era de 36,40pp. Na campanha, estreou no horário eleitoral do rádio com foco em educação, segundo InfoMoney, chamou o adversário de pior dos Bolsonaros, segundo Estadão, e a campanha lançou um site que liga o rival a milícia e ao Banco Master, segundo Poder360. O caso que envolve o filho segue sob apuração da Polícia Federal."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "35,65%",
-    poll: "SEM PESQUISA NACIONAL NOVA nesta sexta; a mais recente segue sendo a PoderData/Aya de 27/Ago (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026). Ela o dá em 35% no 1º turno, a 3 pontos do líder, e em 44% no 2º turno, a 1 ponto, os dois dentro da margem de 2pp. Na série estadual da Quaest ele aparece em empate técnico nos três maiores colégios e lidera em Roraima, por 52% a 17%. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 35,65% (vol USD 9,13M acumulado), QUEDA de 1,20pp.",
+    polymarket: "38,95%",
+    poll: "PESQUISA NACIONAL NOVA nesta sexta: a Vox Brasil de 29/Ago (n=2.100, presencial, campo 25 a 27/Ago, BR-05519/2026). Ela o dá em 34,8% no 1º turno, a 2,3 pontos do líder, e em 45,1% no 2º turno, à frente por 0,6 ponto dentro da margem de 2,15pp, ou seja, empate técnico. Nas duas leituras da Vox o sinal do 2º turno mudou de lado: em 31/Jul ele estava 6,4 pontos atrás. Na janela de 30 dias do painel ele já aparecia à frente do returno na Gerp de 26/Ago, na Veritá de 21/Ago e na Gerp de 11/Ago. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 38,95% (vol USD 9,21M acumulado), ALTA de 3,30pp.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "QUEDA de 1,20pp, de 36,85% para 35,65% (vol USD 9,13M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). É a MAIOR variação do painel nesta sexta, e devolve com folga a alta de 1,30pp da véspera: em dois dias o saldo dele no contrato de vencedor é de 0,10pp NEGATIVO. Mas os DOIS livros dele discordaram no mesmo dia: o de 2º LUGAR do 1º turno SUBIU 0,50pp, para 85,00%. O mercado ficou menos convencido de que ele vence e mais convencido de que ele chega. No dia, foi sabatinado no Jornal Nacional e viu a propaganda do adversário estrear com o áudio dele e o ex-banqueiro do Master."
+    risk: "ALTA de 3,30pp, de 35,65% para 38,95% (vol USD 9,21M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). É a MAIOR variação do painel nesta sexta, e desta vez os DOIS livros dele andaram na mesma direção: o de 2º LUGAR do 1º turno subiu 1,50pp, para 86,50%. É o inverso da véspera, quando os dois discordaram. A ordem dos fatos merece registro: o preço dele começou a subir na NOITE de 28/Ago, antes de a pesquisa sair. Na entrevista à TV Globo tentou vincular o Banco Master ao adversário e prometeu respeitar o resultado, segundo O Globo, e negou-se a prestar contas sobre o caso Dark Horse, segundo Folha de S.Paulo."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "2,90%",
-    poll: "SEM PESQUISA NACIONAL NOVA nesta sexta; a mais recente segue sendo a PoderData/Aya de 27/Ago (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026). Ela o mede em 4% no 1º turno, EMPATADO com Ronaldo Caiado e com Augusto Cury, e em 37% no 2º turno contra o líder. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 2,90% (vol USD 11,73M acumulado), ALTA de 0,55pp.",
+    polymarket: "2,25%",
+    poll: "PESQUISA NACIONAL NOVA nesta sexta: a Vox Brasil de 29/Ago (n=2.100, presencial, campo 25 a 27/Ago, BR-05519/2026). Ela o mede em 3,3% no 1º turno, o quarto nome da tabela, à frente de Romeu Zema, com 2,8%, e de Augusto Cury, com 2,6%, e atrás de Ronaldo Caiado, com 5,0%. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 2,25% (vol USD 11,81M acumulado), QUEDA de 0,65pp.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "ALTA de 0,55pp, para 2,90% (vol USD 11,73M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). É a segunda alta seguida depois de o contrato ter TOCADO o piso de toda a série em 27/Ago, quando o registro marcou 1,70%. No contrato de 3º LUGAR ele cedeu 0,50pp e está em 35,50%, onde segue na frente, mas a vantagem ali caiu para 1,00pp: Caiado tem 34,50% e Cury 26,70%, os três dentro de 8,80pp. O livro dele acumula USD 11,73M, o maior entre os candidatos do painel, num contrato que hoje paga menos de 3%."
+    risk: "QUEDA de 0,65pp, para 2,25% (vol USD 11,81M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), devolvendo as duas altas seguidas que tinha feito depois do piso de 27/Ago. E PERDEU a liderança do contrato de 3º LUGAR do 1º turno, que ocupava desde 09/Ago: caiu 3,00pp, para 32,50%, enquanto Ronaldo Caiado subiu para 36,50%. O livro dele acumula USD 11,81M, o maior entre os candidatos do painel, num contrato que hoje paga menos de 3%."
   },
   {
     name: "Fernando Haddad",
@@ -46,9 +46,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0,05%",
-    poll: "Nenhuma nacional da janela o testa em cenário presidencial de 1º turno. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 0,05% (vol USD 7,30M acumulado), estável e abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
+    poll: "Nenhuma nacional da janela o testa em cenário presidencial de 1º turno, inclusive a Vox Brasil de 29/Ago. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 0,05% (vol USD 7,41M acumulado), estável e abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
-    risk: "Sem variação, em 0,05% (vol USD 7,30M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), abaixo do corte de 0,5% que o painel usa para separar preço de ruído. Não é candidato à Presidência: disputa o governo de São Paulo, e na estreia do horário eleitoral trouxe o presidente para o programa dele e pediu voto sem preconceito, segundo O Globo."
+    risk: "Sem variação, em 0,05% (vol USD 7,41M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), abaixo do corte de 0,5% que o painel usa para separar preço de ruído. Não é candidato à Presidência: disputa o governo de São Paulo. O preço presidencial dele é resíduo de livro, não medida de campanha."
   },
   {
     name: "Ronaldo Caiado",
@@ -56,19 +56,19 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "0,25%",
-    poll: "SEM PESQUISA NACIONAL NOVA nesta sexta; a mais recente segue sendo a PoderData/Aya de 27/Ago (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026). Ela o mede em 4% no 1º turno, EMPATADO com Renan Santos e com Augusto Cury, e o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%. Na série estadual da Quaest ele LIDERA a disputa presidencial em Goiás, com 32% contra 27% do segundo colocado e 20% do líder, segundo Diário da Manhã. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 0,25% (vol USD 6,88M acumulado), ALTA de 0,10pp.",
+    poll: "PESQUISA NACIONAL NOVA nesta sexta: a Vox Brasil de 29/Ago (n=2.100, presencial, campo 25 a 27/Ago, BR-05519/2026). Ela o coloca em 5,0% no 1º turno, o TERCEIRO nome da tabela, à frente de Renan Santos, de Romeu Zema e de Augusto Cury. No 2º turno perde para o líder por 45,5% a 41,1%, distância de 4,4 pontos. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 0,25% (vol USD 6,89M acumulado), sem variação e abaixo do corte de 0,5%.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "ALTA nos dois contratos: 0,10pp no de vencedor, para 0,25% (vol USD 6,88M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), ainda abaixo do corte de 0,5%; e 1,00pp no de 3º LUGAR, para 34,50%, onde encostou a 1,00pp do primeiro colocado. E A URNA SEGUE DIZENDO OUTRA COISA: a PoderData de 27/Ago o dá empatado tecnicamente com o líder no 2º turno, por 43% a 44%. É um caso em que o preço de vencedor e a intenção de voto no returno apontam para lados diferentes, e o painel publica os dois sem escolher. O primeiro programa dele no horário eleitoral vai ao ar no sábado, segundo VEJA."
+    risk: "ASSUMIU a liderança do contrato de 3º LUGAR do 1º turno, com 36,50%, alta de 2,00pp, encerrando uma ponta que pertencia a Renan Santos desde 09/Ago. No contrato de vencedor segue em 0,25% (vol USD 6,89M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), sem variação e abaixo do corte de 0,5%. E A DISTÂNCIA ENTRE OS DOIS INSTRUMENTOS É O DADO: a urna declarada lhe dá 5,0% no 1º turno e o preço de vencedor paga 0,25%. As duas grandezas não se subtraem, porque uma mede intenção de voto e a outra, chance de vencer."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "0,15%",
-    poll: "SEM PESQUISA NACIONAL NOVA nesta sexta; a mais recente segue sendo a PoderData/Aya de 27/Ago (n=2.400, telefone, campo 23 a 26/Ago, BR-04974/2026). Ela o mede em 2% no 1º turno e o coloca EMPATADO TECNICAMENTE com o líder no 2º turno, por 43% a 44%. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 0,15% (vol USD 6,27M acumulado), sem variação e abaixo do corte de 0,5%.",
+    polymarket: "0,05%",
+    poll: "PESQUISA NACIONAL NOVA nesta sexta: a Vox Brasil de 29/Ago (n=2.100, presencial, campo 25 a 27/Ago, BR-05519/2026). Ela o mede em 2,8% no 1º turno e testa um cenário de 2º turno em que ele perde para o líder por 45,5% a 39,3%, distância de 6,2 pontos. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 0,05% (vol USD 6,32M acumulado), queda de 0,10pp e abaixo do corte de 0,5%.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Sem variação, em 0,15% (vol USD 6,27M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), abaixo do corte de 0,5%. Mantém 1,55% no contrato de 3º lugar do 1º turno, livro fino em que qualquer movimento vale pouco. O nome não entrou no rateio de tempo do horário eleitoral, que ficou com quatro candidatos."
+    risk: "QUEDA de 0,10pp, para 0,05% (vol USD 6,32M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), abaixo do corte de 0,5%. A distância de 6,2 pontos no cenário de 2º turno da Vox é maior que a de Ronaldo Caiado, de 4,4 pontos, no mesmo levantamento. O nome não entrou no rateio de tempo do horário eleitoral, que ficou com quatro candidatos."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "Nenhuma nacional da janela o inclui em cenário presidencial. A ressalva do painel segue valendo como ato datado: ele abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. NO PREÇO, leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), em 0,05% (vol USD 14,06M acumulado), estável, abaixo do corte de 0,5% e sobre o MAIOR volume acumulado de todo o livro presidencial.",
+    poll: "Nenhuma nacional da janela o inclui em cenário presidencial, inclusive a Vox Brasil de 29/Ago. A ressalva do painel segue valendo como ato datado: ele abriu campanha ao GOVERNO DE SÃO PAULO em 16/Ago, segundo O Globo e o Times Brasil. NO PREÇO, leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), em 0,05% (vol USD 14,06M acumulado), estável, abaixo do corte de 0,5% e sobre o MAIOR volume acumulado de todo o livro presidencial.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Sem variação, em 0,05% (vol USD 14,06M acumulado), leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Não é candidato à Presidência. Na estreia do horário eleitoral em São Paulo ele ignorou o candidato presidencial do próprio campo e relembrou a ação após uma tragédia, segundo O Globo. É o MAIOR volume acumulado de todo o livro presidencial sustentando o menor preço, e isso é fato sobre o histórico do contrato, não sobre a candidatura de hoje."
+    risk: "Sem variação, em 0,05% (vol USD 14,06M acumulado), leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Não é candidato à Presidência: disputa a reeleição em São Paulo. É o MAIOR volume acumulado de todo o livro presidencial sustentando o menor preço, e isso é fato sobre o histórico do contrato, não sobre a candidatura de hoje."
   },
 ];
 

@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-28",
+  "lastUpdate": "2026-08-29",
   "institutes": [
     {
       "name": "Datafolha",
@@ -136,6 +136,73 @@
   ],
   "polls": [
     {
+      "institute": "Vox Brasil",
+      "date": "2026-08-29",
+      "scope": "national",
+      "sample": 2100,
+      "margin": 2.15,
+      "register": "BR-05519/2026",
+      "reliability": 3,
+      "method": "Presencial",
+      "fieldDates": "2026-08-25 a 2026-08-27",
+      "note": "Vox Brasil nacional publicada 29/Ago (Metrópoles, CNN Brasil, VEJA, Exame, JOTA, Alagoas 24 Horas). 1T Lula 37,1% x Flávio Bolsonaro 34,8%, distância de 2,3pp, empate técnico pela margem de 2,15pp; Ronaldo Caiado 5,0%, Renan Santos 3,3%, Romeu Zema 2,8%, Augusto Cury 2,6%, outros 4,1%, brancos e nulos 3,5% e não sabem 6,8%. A tabela fecha em 100,0. 2T Flávio 45,1% x Lula 44,5%, também empate técnico. Campo 25 a 27/Ago, n=2.100, presencial, margem 2,15pp, 95% de confiança, registro BR-05519/2026, financiada com recursos do próprio instituto. ⭐ A COMPARAÇÃO QUE VALE É COM A PRÓPRIA CASA, MESMO MÉTODO E MESMA AMOSTRA, E ELA MOSTRA O 2º TURNO INVERTENDO EM UM MÊS: em 31/Jul a Vox media 1T Lula 40,5% x Flávio 31,2%, distância de 9,3pp, e 2T Lula 47,5% x Flávio 41,1%, distância de 6,4pp fora da margem. Agora a distância do 1º turno é de 2,3pp e a do 2º mudou de lado, com 0,6pp para Flávio. São 7,0 pontos de estreitamento no 1º turno e 7,0 pontos de reversão no 2º, o que a Exame também apurou. ⚠️ ISSO VALE PARA A SÉRIE DA VOX, NÃO PARA O CONJUNTO DAS NACIONAIS. Nas duas leituras da Vox o sinal do 2º turno mudou de lado: em 31/Jul o líder estava 6,4 pontos à frente e agora está 0,6 ponto atrás. Na janela de 30 dias do painel ele já aparecia à frente do returno em outras três nacionais: Gerp de 26/Ago, por 47% a 42%, Veritá de 21/Ago, por 47,3% a 42%, e Gerp de 11/Ago, por 45% a 43%. As casas discordam entre si sobre o 2º turno, e o caso mais claro é 26/Ago, quando a Gerp deu 47% a 42% para ele e a Indexa/Broadcast deu 46% a 41% para o líder, no MESMO dia e com sinais opostos. REJEIÇÃO de 52,7% a Lula e 49,3% a Flávio (CNN Brasil). A Exame registra desaprovação de Lula em 53,3% na mesma rodada. ESCOPO NACIONAL confirmado na divulgação. ⚠️ O campo fechou em 27/Ago, ANTES da estreia do horário eleitoral em 28/Ago, então esta pesquisa não mede efeito de propaganda.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37.1
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34.8
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2.8
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2.6
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44.5,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45.1
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45.5,
+          "candidate2": "Romeu Zema",
+          "percent2": 39.3
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 45.5,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 41.1
+        }
+      ],
+      "source": "Vox Brasil divulgada em 29/Ago por Metrópoles, CNN Brasil, VEJA, Exame, JOTA e Alagoas 24 Horas. Registro TSE BR-05519/2026."
+    },
+    {
       "institute": "PoderData/Aya",
       "date": "2026-08-27",
       "scope": "national",
@@ -145,7 +212,7 @@
       "reliability": 3,
       "method": "Telefônico (celular e fixo)",
       "fieldDates": "2026-08-23 a 2026-08-26",
-      "note": "PoderData/Aya nacional publicada 27/Ago (Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, Jornal de Brasília, Pleno.News). 1T Lula 38% x Flávio 35%, distância de 3pp, empate técnico pela margem de 2pp; Renan Santos, Ronaldo Caiado e Augusto Cury com 4% cada, Pablo Marçal 3% e Romeu Zema 2%. 2T Lula 45% x Flávio 44%, também empate técnico. Campo 23 a 26/Ago, n=2.400, telefônico em 555 municípios das 27 unidades federativas, margem 2pp, 95% de confiança, registro BR-04974/2026. ⭐ A COMPARAÇÃO QUE VALE É COM A PRÓPRIA CASA, E ELA MOSTRA O 1º TURNO ESTREITANDO PELA METADE: eram 6pp em 16/Jul (40% x 34%), 6pp em 30/Jul (41% x 35%), 6pp em 13/Ago (41% x 35%) e são 3pp agora (38% x 35%). O 2º turno segue em 1pp, como em 13/Ago. Mesma casa, mesmo método e mesma amostra, com o 1º turno estreitando e o returno parado, o inverso do que a série da casa vinha mostrando. REJEIÇÃO empatada em 49% para cada um (Poder360). A mesma rodada dá empate técnico do líder contra Romeu Zema (44% x 43%) e contra Ronaldo Caiado (44% x 43%), e vantagem de 7 pontos sobre Renan Santos (44% x 37%). ⭐ E os 4% de Augusto Cury são o maior número dele em toda a tabela do painel, que reúne as nacionais dos últimos 30 dias e o media entre 1% e 3% até aqui. APROVAÇÃO do governo em 42% contra 50% de desaprovação, e a gestão é ruim ou péssima para 48% contra ótima ou boa para 33% (CNN Brasil). ESCOPO NACIONAL confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas.",
+      "note": "PoderData/Aya nacional publicada 27/Ago (Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, Jornal de Brasília, Pleno.News). 1T Lula 38% x Flávio 35%, distância de 3pp, empate técnico pela margem de 2pp; Renan Santos, Ronaldo Caiado e Augusto Cury com 4% cada, Pablo Marçal 3% e Romeu Zema 2%. 2T Lula 45% x Flávio 44%, também empate técnico. Campo 23 a 26/Ago, n=2.400, telefônico em 555 municípios das 27 unidades federativas, margem 2pp, 95% de confiança, registro BR-04974/2026. ⭐ A COMPARAÇÃO QUE VALE É COM A PRÓPRIA CASA, E ELA MOSTRA O 1º TURNO ESTREITANDO PELA METADE: eram 6pp em 16/Jul (40% x 34%), 6pp em 30/Jul (41% x 35%), 6pp em 13/Ago (41% x 35%) e são 3pp agora (38% x 35%). O 2º turno segue em 1pp, como em 13/Ago. Mesma casa, mesmo método e mesma amostra, com o 1º turno estreitando e o returno parado, o inverso do que a série da casa vinha mostrando. REJEIÇÃO empatada em 49% para cada um (Poder360). A mesma rodada dá empate técnico do líder contra Romeu Zema (44% x 43%) e contra Ronaldo Caiado (44% x 43%), e vantagem de 7 pontos sobre Renan Santos (44% x 37%). ⭐ E os 4% de Augusto Cury ficam no topo do intervalo em que as 11 leituras do painel o medem, de 1% a 4%. APROVAÇÃO do governo em 42% contra 50% de desaprovação, e a gestão é ruim ou péssima para 48% contra ótima ou boa para 33% (CNN Brasil). ESCOPO NACIONAL confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas.",
       "scenarios": [
         {
           "name": "Cenário Principal (1º turno, estimulado)",
@@ -1276,112 +1343,6 @@
         }
       ],
       "source": "PoderData/Aya via Poder360, CNN Brasil, Metrópoles, Gazeta do Povo 30/Jul"
-    },
-    {
-      "institute": "AtlasIntel",
-      "date": "2026-07-29",
-      "scope": "national",
-      "sample": 5021,
-      "margin": 1,
-      "register": "BR-08602/2026",
-      "reliability": 4,
-      "method": "Online, recrutamento digital aleatório (Atlas RDR)",
-      "fieldDates": "2026-07-22 a 2026-07-27",
-      "note": "AtlasIntel/Bloomberg nacional divulgada em 29/Jul (CNN Brasil, JOTA, Poder360, Metrópoles, Exame, Estadão, CartaCapital, VEJA, Brasil de Fato), a maior amostra do recorte com 5.021 entrevistas, à frente dos 5.000 da própria rodada do instituto em 01/Jul, e com a menor margem do recorte, 1pp, empatada com essa mesma rodada de 01/Jul. Ela tinha publicação declarada ao TSE para 28/Jul e saiu um dia depois, o que encerra a ausência que o painel registrou ontem. No 1º turno: Lula 44,9%, Flávio Bolsonaro 35,8%, Renan Santos 7,8%, Ronaldo Caiado 3,1%, Romeu Zema 2,8%, Samara Martins 2,1%, Augusto Cury 1,6%, Cabo Daciolo 0,1%, Hertz Dias 0,1%, com 0,6% de nulo ou branco e 1% que não sabe. Num cenário reduzido a cinco nomes, Lula vai a 47,4% e Flávio a 37,0% (CNN Brasil). No 2º turno, Lula vence os seis cenários em que aparece: 49,2% x 42,9% contra Flávio, 49,2% x 43,9% contra Jair, 48,8% x 42,5% contra Michelle, 48,6% x 39,6% contra Zema, 48,2% x 38,9% contra Caiado e 47,6% x 30,2% contra Renan Santos. Nos dois cenários sem ele, Haddad 44,3% x Flávio 43,7%, empate técnico, e Alckmin 45,8% x Flávio 42,7%. Rejeição: Flávio 52,9%, Lula 49,4% e Jair 42,6%. Aprovação do desempenho de Lula 47,6% contra 51,2% de desaprovação. Avaliação da gestão: 37,9% ótimo ou bom, 12,7% regular e 49,3% ruim ou péssimo. Campo 22 a 27/Jul, n=5.021, margem de 1pp, 95% de confiança, protocolo BR-08602/2026, custo de R$ 80 mil e financiamento próprio. LEITURA: contra a própria rodada de 01/Jul do instituto (campo 25-30/Jun), os DOIS primeiros colocados caem, Lula de 46,3% para 44,9% e Flávio de 36,6% para 35,8%, e o gap do 1º turno estreita de 9,7pp para 9,1pp. No returno direto, Lula vai de 48,8% para 49,2% e Flávio de 42,3% para 42,9%, com o gap saindo de 6,5pp para 6,3pp. Com margem de 1pp, todos esses movimentos individuais estão dentro do ruído, e a leitura honesta é estabilidade, não avanço nem recuo. O que se move fora da margem é a avaliação do governo: a aprovação sobe 1,7pp, de 45,9% para 47,6%, e a desaprovação cai 1,1pp, de 52,3% para 51,2%, mantendo a desaprovação à frente pelo mesmo método. TRÊS ACHADOS PARA O PAINEL: primeiro, Renan Santos em 7,8% é a segunda leitura nacional mais alta dele no recorte, abaixo dos 9% da Real Time de 21/Jul e acima dos 6% da PoderData/Aya de 16/Jul, dos 5% da BTG/Nexus de 27/Jul e dos 3% de Datafolha, Gerp e Indexa, ou seja, a dispersão entre institutos continua aberta e agora com a maior amostra do recorte no meio dela. Segundo, Caiado aparece em 3,1%, metade dos 6% que a BTG/Nexus mediu dois dias antes, e no returno perde por 48,2% a 38,9%, bem longe do empate técnico de 45% a 43% daquele levantamento: a divergência sobre Caiado que o painel registrou em 27/Jul entre Nexus e Datafolha ganha uma terceira medição, e ela fica do lado da Datafolha. Terceiro, Lula vence os seis returnos em que aparece e nenhuma dessas vantagens cabe dentro da margem de 1pp: a mais apertada é de 5,3pp contra JAIR Bolsonaro (49,2% a 43,9%), e não contra Flávio, que fica em 6,3pp (49,2% a 42,9%). Ou seja, pelo mesmo levantamento, o pai testa melhor que o filho no returno, ainda que a diferença entre os dois cenários, 1,0pp, esteja no limite da margem.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 44.9
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 35.8
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 7.8
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3.1
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2.8
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 2.1
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1.6
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 49.2,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42.9
-        },
-        {
-          "matchup": "Lula vs Jair",
-          "candidate1": "Lula",
-          "percent1": 49.2,
-          "candidate2": "Jair Bolsonaro",
-          "percent2": 43.9
-        },
-        {
-          "matchup": "Lula vs Michelle",
-          "candidate1": "Lula",
-          "percent1": 48.8,
-          "candidate2": "Michelle Bolsonaro",
-          "percent2": 42.5
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 48.6,
-          "candidate2": "Romeu Zema",
-          "percent2": 39.6
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 48.2,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 38.9
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 47.6,
-          "candidate2": "Renan Santos",
-          "percent2": 30.2
-        },
-        {
-          "matchup": "Haddad vs Flávio",
-          "candidate1": "Fernando Haddad",
-          "percent1": 44.3,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43.7
-        },
-        {
-          "matchup": "Alckmin vs Flávio",
-          "candidate1": "Geraldo Alckmin",
-          "percent1": 45.8,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42.7
-        }
-      ],
-      "source": "AtlasIntel/Bloomberg via CNN Brasil, JOTA, Poder360, Metrópoles, Exame, Estadão, CartaCapital, VEJA e Brasil de Fato 29/Jul. Registro TSE BR-08602/2026."
     }
   ],
   "approvalData": {
@@ -1426,110 +1387,110 @@
     "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC), com o livro presidencial em USD 138,28M. O DIA NÃO TEVE PESQUISA NACIONAL DIVULGADA: a mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. O fato do dia é a estreia do horário eleitoral gratuito no rádio e na TV. No preço, o líder ficou PARADO em 57,50% e o segundo colocado cedeu 1,20pp, para 35,65%, a maior variação do painel: a distância entre os dois foi de 20,65pp para 21,85pp e alargou inteiramente por um lado só. É o inverso do desenho da véspera, quando o vão estreitou pela alta do segundo colocado, também com o líder parado. Os dois livros do segundo colocado discordaram no mesmo dia: enquanto o de vencedor caía 1,20pp, o de 2º lugar do 1º turno subia 0,50pp, para 85,00%. Fora do topo, o movimento é de Augusto Cury, que cedeu 0,55pp na vitória e subiu 2,95pp no contrato de 3º lugar, agora o mais disputado do painel, com Renan Santos em 35,50%, Caiado em 34,50% e Cury em 26,70%.",
+    "note": "Preços do Polymarket na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC), com o livro presidencial em USD 138,92M. O DIA TEVE PESQUISA NACIONAL DIVULGADA: a Vox Brasil (BR-05519/2026, campo 25 a 27/Ago, n=2.100, margem de 2,15pp, presencial), a primeira em dois dias. Ela traz o 1º turno em 37,1% a 34,8%, distância de 2,3 pontos, e o 2º turno em 45,1% a 44,5% para Flávio Bolsonaro. Os 0,6 ponto ficam dentro da margem, então a leitura é de empate técnico e não de liderança. Nas duas leituras da Vox o sinal do 2º turno mudou de lado: em 31/Jul o líder estava 6,4 pontos à frente e agora está 0,6 ponto atrás. Isso vale para a série da Vox, não para o conjunto das nacionais. Na janela de 30 dias do painel ele já aparecia à frente do returno em outras três nacionais: Gerp de 26/Ago, por 47% a 42%, Veritá de 21/Ago, por 47,3% a 42%, e Gerp de 11/Ago, por 45% a 43%. As casas discordam entre si sobre o 2º turno, e o caso mais claro é 26/Ago, quando a Gerp deu 47% a 42% para ele e a Indexa/Broadcast deu 46% a 41% para o líder, no MESMO dia e com sinais opostos. A comparação que sustenta o dia é da casa com ela mesma: em 31/Jul a Vox media 40,5% a 31,2% no 1º turno e 47,5% a 41,1% no 2º, com o mesmo método presencial e a mesma amostra de 2.100. Em um mês a distância do 1º turno caiu 7,0 pontos e a do 2º turno mudou de lado. No mercado, o contrato de vencedor de Flávio Bolsonaro subiu 3,30pp, para 38,95%, a maior variação do painel, o de Lula cedeu 1,00pp, para 56,50%, e a distância entre os dois caiu para 17,55pp, o menor valor da janela de 20 dias. O AFOS não diz qual dos dois instrumentos está certo: os dois são previsões do mesmo evento e podem errar juntos, e só a apuração resolve. O que o registro permite afirmar é a sequência, porque o preço de Flávio Bolsonaro começou a subir na noite de 28/Ago, antes de a pesquisa ser divulgada em 29/Ago. Fora do topo, o contrato de 3º lugar do 1º turno trocou de líder: Ronaldo Caiado subiu para 36,50% e Renan Santos caiu para 32,50%, encerrando uma ponta que durava desde 09/Ago, e a Vox aponta na mesma direção ao colocar Caiado como terceiro nome do 1º turno, com 5,0%. ⚠️ Percentual de pesquisa e preço de contrato são grandezas diferentes e não se subtraem: um mede intenção de voto declarada, o outro mede probabilidade implícita de vencer.",
     "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 27/Ago os cinco livros acompanhados confirmaram na leitura das 22:49, inclusive o contrato de Augusto Cury, que abriu no mesmo dia. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. A PoderData/Aya de 27/Ago foi conferida em duas fontes, com o número de registro do TSE batendo e com o escopo nacional confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
-        "pesquisaRange": "37-44,9%",
-        "polymarket": "57,50%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o dá em 38% no 1º turno e vencendo os quatro cenários de 2º turno testados. A série ESTADUAL da Quaest divulgada nesta semana, que não entra nesta tabela por ser de escopo estadual, o mostra em empate técnico nos três maiores colégios eleitorais do país.",
-        "tendenciaPolymarket": "57,50% (vol USD 9,34M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). SEM VARIAÇÃO no dia, depois de ceder 5,00pp na véspera em cinco leituras sucessivas. A distância para o segundo colocado ALARGOU, de 20,65pp para 21,85pp, e alargou inteiramente pelo lado do adversário.",
-        "odds": 57.5,
-        "percentage": 41,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 57.5
+        "percentage": 37.1,
+        "odds": 56.5,
+        "value": 56.5,
+        "polymarket": "56,50%",
+        "pesquisaRange": "37,1-38%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago (BR-05519/2026, campo 25 a 27/Ago, n=2.100) o dá em 37,1% no 1º turno, 2,3 pontos à frente, e em 44,5% no 2º turno contra 45,1%, atrás por 0,6 ponto dentro da margem de 2,15pp. Contra a própria Vox de 31/Jul ele cede 3,4pp no 1º turno e 3,0pp no 2º.",
+        "tendenciaPolymarket": "56,50% (vol USD 9,42M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Queda de 1,00pp, e a distância para o segundo colocado caiu para 17,55pp, o menor valor da janela de 20 dias, depois de vinte dias de estreitamento quase contínuo desde os 36,40pp de 10/Ago."
       },
       {
         "name": "Flávio Bolsonaro",
-        "pesquisaRange": "28,7-40%",
-        "polymarket": "35,65%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o dá em 35% no 1º turno, a 3 pontos, e em 44% no 2º turno, a 1 ponto, os dois dentro da margem de 2pp.",
-        "tendenciaPolymarket": "35,65% (vol USD 9,13M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Queda de 1,20pp, a MAIOR variação do painel, e ela devolve com folga a alta de 1,30pp da véspera: o saldo de dois dias é de 0,10pp negativo. No contrato de 2º lugar do 1º turno ele SUBIU 0,50pp, para 85,00%, então os dois livros dele andaram em direções opostas.",
-        "odds": 35.65,
-        "percentage": 37,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 35.65
+        "percentage": 34.8,
+        "odds": 38.95,
+        "value": 38.95,
+        "polymarket": "38,95%",
+        "pesquisaRange": "34,8-35%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago o dá em 34,8% no 1º turno e em 45,1% no 2º, à frente do líder por 0,6 ponto e dentro da margem de 2,15pp, ou seja, empate técnico. Nas duas leituras da Vox o sinal do 2º turno mudou de lado: em 31/Jul o líder estava 6,4 pontos à frente e agora está 0,6 ponto atrás. Na janela de 30 dias do painel ele já aparecia à frente do returno em outras três nacionais: Gerp de 26/Ago, por 47% a 42%, Veritá de 21/Ago, por 47,3% a 42%, e Gerp de 11/Ago, por 45% a 43%. As casas discordam entre si sobre o 2º turno, e o caso mais claro é 26/Ago, quando a Gerp deu 47% a 42% para ele e a Indexa/Broadcast deu 46% a 41% para o líder, no MESMO dia e com sinais opostos. Contra a própria Vox de 31/Jul ele sobe 3,6pp no 1º turno e 4,0pp no 2º, com o mesmo método presencial e a mesma amostra.",
+        "tendenciaPolymarket": "38,95% (vol USD 9,21M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Alta de 3,30pp, a MAIOR variação do painel. No contrato de 2º lugar do 1º turno subiu 1,50pp, para 86,50%, e desta vez os dois livros dele andaram na mesma direção."
       },
       {
         "name": "Augusto Cury",
-        "pesquisaRange": "1-4%",
-        "polymarket": "3,50%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o mede em 4% no 1º turno, empatado com Renan Santos e com Ronaldo Caiado.",
-        "tendenciaPolymarket": "3,50% (vol USD 2,36M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Queda de 0,55pp no segundo dia de vida do contrato. No contrato de 3º lugar SUBIU 2,95pp, para 26,70%.",
-        "odds": 3.5,
-        "percentage": 2,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 3.5
+        "percentage": 2.6,
+        "odds": 3.15,
+        "value": 3.15,
+        "polymarket": "3,15%",
+        "pesquisaRange": "2,6-4%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago o mede em 2,6% no 1º turno, o sexto nome da tabela, abaixo dos 4% que a PoderData/Aya lhe deu em 27/Ago.",
+        "tendenciaPolymarket": "3,15% (vol USD 2,55M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Queda de 0,35pp. Esta rodada não publica número novo para ele no contrato de 3º lugar, que estava em 26,70% em 28/Ago."
       },
       {
         "name": "Renan Santos",
-        "pesquisaRange": "3-10%",
-        "polymarket": "2,90%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o dá em 4% no 1º turno e em 37% no 2º turno contra o líder.",
-        "tendenciaPolymarket": "2,90% (vol USD 11,73M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Alta de 0,55pp, a segunda seguida depois de o contrato ter tocado o piso de toda a série em 27/Ago. No de 3º lugar cedeu 0,50pp, para 35,50%, onde segue na frente.",
-        "odds": 2.9,
-        "percentage": 3,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 2.9
+        "percentage": 3.3,
+        "odds": 2.25,
+        "value": 2.25,
+        "polymarket": "2,25%",
+        "pesquisaRange": "3,3-4%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago o mede em 3,3% no 1º turno, o quarto nome da tabela, à frente de Zema e de Cury e atrás de Caiado.",
+        "tendenciaPolymarket": "2,25% (vol USD 11,81M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Queda de 0,65pp. No contrato de 3º lugar cedeu 3,00pp, para 32,50%, e PERDEU a liderança que ocupava desde 09/Ago."
       },
       {
         "name": "Ronaldo Caiado",
-        "pesquisaRange": "3-6%",
-        "polymarket": "0,25%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o dá em 4% no 1º turno e empatado tecnicamente com o líder no 2º turno, por 43% a 44%.",
-        "tendenciaPolymarket": "0,25% (vol USD 6,88M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Alta de 0,10pp, ainda ABAIXO do piso de 0,5% da dupla leitura. No contrato de 3º lugar subiu 1,00pp, para 34,50%.",
-        "odds": 0.25,
         "percentage": 5,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 0.25
+        "odds": 0.25,
+        "value": 0.25,
+        "polymarket": "0,25%",
+        "pesquisaRange": "4-5%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago o coloca em 5,0% no 1º turno, o TERCEIRO nome da tabela. No 2º turno perde para o líder por 45,5% a 41,1%, distância de 4,4 pontos.",
+        "tendenciaPolymarket": "0,25% (vol USD 6,89M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar subiu 2,00pp, para 36,50%, e ASSUMIU a liderança daquele livro."
       },
       {
         "name": "Pablo Marçal",
-        "pesquisaRange": "2-5,2%",
-        "polymarket": "0,15%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ela o mede em 3% no 1º turno.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,04M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
+        "percentage": 3,
         "odds": 0.15,
-        "percentage": 4,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 0.15
-      },
-      {
-        "name": "Tarcísio",
-        "pesquisaRange": "não testado",
-        "polymarket": "0,05%",
-        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
-        "tendenciaPolymarket": "0,05% (vol USD 14,06M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação. Não é candidato à Presidência: disputa a reeleição em São Paulo.",
-        "odds": 0.05,
-        "percentage": 0,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 0.05
+        "value": 0.15,
+        "polymarket": "0,15%",
+        "pesquisaRange": "2-5,2%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago não o traz na tabela divulgada do 1º turno. A PoderData/Aya de 27/Ago o media em 3% no 1º turno.",
+        "tendenciaPolymarket": "0,15% (vol USD 3,06M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura."
       },
       {
         "name": "Romeu Zema",
-        "pesquisaRange": "1-4%",
-        "polymarket": "0,15%",
-        "tendenciaPesquisa": "SEM PESQUISA NACIONAL NOVA nesta sexta. A mais recente segue sendo a PoderData/Aya de 27/Ago (BR-04974/2026, campo 23 a 26/Ago, n=2.400), com empate técnico nos dois turnos. Ele aparece entre 1% e 4% nas nacionais da janela.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,27M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação, e abaixo do piso de 0,5% da dupla leitura.",
-        "odds": 0.15,
-        "percentage": 3,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 0.15
+        "percentage": 2.8,
+        "odds": 0.05,
+        "value": 0.05,
+        "polymarket": "0,05%",
+        "pesquisaRange": "1-2,8%",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "A Vox Brasil de 29/Ago o mede em 2,8% no 1º turno e testa um cenário de 2º turno em que ele perde para o líder por 45,5% a 39,3%.",
+        "tendenciaPolymarket": "0,05% (vol USD 6,32M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Queda de 0,10pp, e abaixo do piso de 0,5% da dupla leitura."
+      },
+      {
+        "name": "Tarcísio",
+        "percentage": 0,
+        "odds": 0.05,
+        "value": 0.05,
+        "polymarket": "0,05%",
+        "pesquisaRange": "não testado",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
+        "tendenciaPolymarket": "0,05% (vol USD 14,06M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Sem variação. Não é candidato à Presidência: disputa a reeleição em São Paulo."
       },
       {
         "name": "Fernando Haddad",
-        "pesquisaRange": "não testado",
-        "polymarket": "0,05%",
-        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,30M) na leitura confirmada de 28/Ago, 15:31 BRT (18:31 UTC). Sem variação. Não é candidato à Presidência: disputa o governo de São Paulo.",
-        "odds": 0.05,
         "percentage": 0,
-        "lastUpdate": "28/08/2026, 15:31",
-        "value": 0.05
+        "odds": 0.05,
+        "value": 0.05,
+        "polymarket": "0,05%",
+        "pesquisaRange": "não testado",
+        "lastUpdate": "29/08/2026, 13:27",
+        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
+        "tendenciaPolymarket": "0,05% (vol USD 7,41M) na leitura confirmada de 29/Ago, 13:27 BRT (16:27 UTC). Sem variação. Não é candidato à Presidência: disputa o governo de São Paulo."
       }
     ],
-    "updatedAt": "28/08/2026, 15:31",
-    "lastUpdate": "28/08/2026, 15:31"
+    "updatedAt": "29/08/2026, 13:27",
+    "lastUpdate": "29/08/2026, 13:27"
   }
 }
