@@ -1,8 +1,8 @@
 /**
  * Polymarket → Neon Persistence
  *
- * Cron inteligente: hot (15min), warm (60min), cold (skip), com ponto diário
- * garantido por MAX_STALENESS_MS.
+ * Cron inteligente: hot (15min), warm (60min), cold (skip), com batimento de
+ * 4 em 4 horas garantido por MAX_STALENESS_MS.
  * Dedup 2 camadas: Redis timestamp + DB UNIQUE hash.
  *
  * ⚠️ NÃO é mais fire-and-forget. A rota do cron AGUARDA esta função desde
@@ -41,10 +41,22 @@ const MAX_OUTCOMES_DISTRIBUICAO = 20
  * POR QUE EXISTE: o filtro de movimento (|Δ| ≥ 0,5pp) transforma a coleta num
  * REGISTRO DE MUDANÇAS, não numa série temporal. Mercado parado o dia inteiro
  * não gerava nenhum ponto, e um buraco no histórico não se recupera depois.
- * Com 20h, cada mercado ao vivo tem pelo menos um ponto por dia, sem alterar a
- * cadência de quem se mexe. Só ACRESCENTA pontos, nunca remove.
+ * Só ACRESCENTA pontos, nunca remove.
+ *
+ * 📏 ERA 20h e passou a 4h em 29/Ago/2026, por decisão do André, junto com o
+ * conserto do `lerUltimaLeitura`. O argumento é de MÉTODO: com 20h, mercado
+ * parado rendia um ponto por dia, e a casa confere superlativo contra essa
+ * série. Um ponto por dia não distingue "ficou parado" de "não foi coletado",
+ * que é a leitura que a série precisa sustentar. Com 4h são 6 batimentos
+ * garantidos por dia, mais toda gravação por movimento real.
+ *
+ * ⛔ O caminho que NÃO foi escolhido era deixar como estava naquele dia, com o
+ * portão quebrado gravando em toda passada: 48 pontos por dia por mercado,
+ * quase todos repetindo o número anterior, a 51,7 MB por mês num banco de
+ * 0,5 GB. Densidade que não carrega informação nova custa espaço e ainda
+ * distorce contagem de ocorrência.
  */
-const MAX_STALENESS_MS = 20 * 60 * 60 * 1000
+const MAX_STALENESS_MS = 4 * 60 * 60 * 1000
 
 function classifyTier(slug: string, status: string): Tier {
   if (status === 'resolved' || status === 'no-data') return 'cold'
@@ -87,16 +99,55 @@ function getRedis(): Redis | null {
 
 type UltimaLeitura = { t: number; p: Record<string, number> }
 
-/** Aceita o formato novo e o antigo, para a virada não perder uma rodada. */
-function lerUltimaLeitura(bruto: string | null): UltimaLeitura | null {
-  if (!bruto) return null
+function ehLeitura(j: unknown): j is UltimaLeitura {
+  if (!j || typeof j !== 'object') return false
+  const o = j as UltimaLeitura
+  return typeof o.t === 'number' && !!o.p && typeof o.p === 'object'
+}
+
+function tentarJson(s: string): unknown {
   try {
-    const j = JSON.parse(bruto)
-    if (j && typeof j.t === 'number' && j.p && typeof j.p === 'object') return j as UltimaLeitura
+    return JSON.parse(s)
   } catch {
-    // Formato `prob|timestamp`, gravado até 28/Ago/2026.
+    return null
+  }
+}
+
+/**
+ * Aceita o formato novo e o antigo, para a virada não perder uma rodada.
+ *
+ * 🔴 O CLIENTE DO UPSTASH DEVOLVE JÁ DESSERIALIZADO, e é por isso que esta
+ * função aceita `unknown` e não `string`. `redis.get` tenta o `JSON.parse` por
+ * conta própria: o que foi gravado como JSON volta OBJETO, e só o que não é
+ * JSON volta string.
+ *
+ * ⚠️ Medido em 29/Ago/2026, com o portão de movimento MORTO havia 20 horas. A
+ * versão de 28/Ago só tratava string: `JSON.parse(objeto)` lançava, o `catch`
+ * tentava `.split` num objeto e lançava de novo, e essa segunda exceção subia
+ * até o `catch` do `shouldPersist`, que devolve `true` por segurança. Efeito:
+ * TODO mercado gravava em TODA passada do cron, e o corte de 0,5pp, os
+ * intervalos por tier e a trava de idade não rodavam para ninguém. A coleta
+ * saiu de 313 linhas por dia para 4.737, e nada acusou, porque fail-open não
+ * distingue "Redis fora do ar" de "meu código quebrou".
+ *
+ * 📌 O portão morria em cada mercado na PRIMEIRA vez que ele gravava depois do
+ * deploy, porque era a gravação que reescrevia a chave no formato novo. O
+ * Senado dos EUA ficou 20h com a chave antiga, gravando certinho pela trava de
+ * idade, e caiu junto assim que ela disparou.
+ */
+function lerUltimaLeitura(bruto: unknown): UltimaLeitura | null {
+  if (bruto === null || bruto === undefined) return null
+
+  const j = typeof bruto === 'string' ? tentarJson(bruto) : bruto
+  if (ehLeitura(j)) return j
+
+  // Formato `prob|timestamp`, gravado até 28/Ago/2026. Só existe como string,
+  // porque não é JSON e o cliente devolve cru.
+  if (typeof bruto === 'string') {
     const [prob, ts] = bruto.split('|')
-    if (prob && ts && !Number.isNaN(Number(ts))) return { t: Number(ts), p: { __lider: Number(prob) } }
+    if (prob && ts && !Number.isNaN(Number(ts)) && !Number.isNaN(Number(prob))) {
+      return { t: Number(ts), p: { __lider: Number(prob) } }
+    }
   }
   return null
 }
@@ -124,18 +175,27 @@ async function shouldPersist(
 
   const key = `afos:market:last-persist:${slug}`
   try {
-    const ultima = lerUltimaLeitura(await redis.get<string>(key))
+    const ultima = lerUltimaLeitura(await redis.get<unknown>(key))
     if (!ultima) return true
 
     const elapsed = Date.now() - ultima.t
     if (elapsed < TIER_INTERVALS[tier]) return false
-    // Ponto diário garantido: mercado parado também é informação, e buraco de
+    // Batimento garantido: mercado parado também é informação, e buraco de
     // série não se recupera. Ver MAX_STALENESS_MS.
     if (elapsed >= MAX_STALENESS_MS) return true
     if (maiorMovimento(cands, ultima) < 0.5) return false
 
     return true
-  } catch {
+  } catch (err) {
+    // ⚠️ Fail-open DE PROPÓSITO: Redis fora do ar não pode parar a coleta.
+    // Mas ele precisa GRITAR, senão defeito de código passa por indisponi-
+    // bilidade de infraestrutura. Foi exatamente assim que o portão ficou
+    // morto 20 horas em 28/Ago/2026, gravando 15 vezes mais linhas por dia
+    // sem uma única linha de log. Ver lerUltimaLeitura.
+    console.warn(
+      `[persist] portão de movimento indisponível para ${slug}, gravando por segurança:`,
+      err instanceof Error ? err.message : err,
+    )
     return true
   }
 }
