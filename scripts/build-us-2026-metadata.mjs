@@ -85,7 +85,16 @@ ${resumo.markets.map(linha).join('\n')}
 
 ## Collection process
 
-- **Market:** Polymarket, via the AFOS server-side proxy, snapshotted to Postgres every 30 minutes by cron and exported here from the versioned daily database backup. **Use the backup, not the public history API:** that API caps at 90 days, which silently hid six weeks of the Senate series.
+- **Market:** Polymarket, via the AFOS server-side proxy, polled every 30 minutes by cron and exported here from the versioned daily database backup. **Use the backup, not the public history API:** that API caps at 90 days, which silently hid six weeks of the Senate series.
+- ⚠️ **The market series is event-driven, not a uniform 30-minute sample, and the writing rule changed on three dated occasions.** The cron polls every 30 minutes, but a row is written only when an outcome moves by at least 0.5 percentage points, plus a guaranteed heartbeat for a contract that has stayed quiet. Anyone computing rates, frequencies or occurrence counts needs these dates:
+
+  | period | rule in force |
+  |---|---|
+  | until 2026-08-28 15:20 UTC | movement measured on the **leading outcome only**, so a move by any other outcome of the same contract could go unrecorded; heartbeat every 20 h |
+  | 2026-08-28 18:22 to 2026-08-29 14:38 UTC | a defect disabled the filter and **every poll was written**, about 15x the usual density |
+  | from 2026-08-29 14:38 UTC | movement measured on **all** outcomes; heartbeat every 4 h |
+
+  **Every row is a real reading and none is interpolated or synthesised.** But the number of rows per unit of time is not comparable across those boundaries, so a statistic of the form "how often X held" must be segmented by them, or read as a count of *recorded changes* rather than a rate.
 - **Polls:** the aggregating Wikipedia page is an **index**, never the source. Every row keeps the pollster's own \`source_url\` where it exists. A deterministic reader (\`lib/us-polls/collect.mjs\`) resolves \`rowspan\` by column index, after a 2026-08-01 defect in which a shifted column published a sample size as a vote intention.
 - **Press:** a fixed list of 23 outlets chosen on 2026-07-30, each with a declared role, at most two items per outlet per collection. The collector does not summarise, interpret or rank by relevance. ⛔ **No political-leaning label is attached to any outlet**, a field removed on 2026-08-01 because the rating was ours, unsourced, and disagreed with AllSides in 13 of 22 cases in both directions.
 
