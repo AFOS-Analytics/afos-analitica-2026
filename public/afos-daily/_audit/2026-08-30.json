@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-30",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Dias Toffoli retira de pauta o registro de candidatura de Renan Santos e do vice Aroldo Medina",
+        "verificacao1_crossRef": "check-recurrence: 'Toffoli' com ZERO mencoes em 7 dailies; 'registro de candidatura' com ZERO; 'Renan Santos' com 34 mencoes",
+        "classificacao": "o NOME e continuidade, o ATO e novidade",
+        "verificacao2_fetch": {
+          "fonte": "Poder360",
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/toffoli-adia-a-analise-de-candidatura-de-renan-santos/",
+          "quando": "2026-08-29",
+          "tipo": "evento",
+          "trecho": "despacho de sabado (29 de agosto). Retirou de pauta o processo de registro que seria julgado em plenario virtual na segunda-feira (31 de agosto). Renan Santos (Missao) e o vice Aroldo Medina apresentaram 18 perfis em redes sociais em 19 de agosto, doze dias apos protocolar o registro em 7 de agosto"
+        },
+        "segundaFonte": "busca independente devolveu Gazeta do Povo e Revista Oeste com a mesma data de despacho (sabado, 29 de agosto) e o mesmo fundamento",
+        "fetchsBloqueados": ["g1.globo.com", "www.estadao.com.br", "veja.abril.com.br", "www.cartacapital.com.br (403)"],
+        "decisao": "incorporar, com a data do ATO em 29/Ago e a data da COBERTURA em 30/Ago",
+        "consequencia": "🔴 O GATE CORRIGIU ERRO JA PUBLICADO. O /atualizar-brz da tarde tinha datado o ato como domingo, lendo o /2026/08/30/ da URL do G1 e do Globo como data do ato. Corrigido em 9 campos do painel e nos 4 arquivos traduzidos, deploy jql4vv1mu, commit bd7446d, ANTES desta daily"
+      },
+      {
+        "evento": "Campanha de Lula pede ao TSE inelegibilidade de Flavio Bolsonaro por ato em Barretos",
+        "verificacao1_crossRef": "tema de campanha ja recorrente; o pedido de inelegibilidade e novo",
+        "verificacao2_fetch": {
+          "fonte": "O Globo",
+          "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/08/29/campanha-de-lula-tse-discurso-flavio-barretos.ghtml",
+          "quando": "2026-08-29",
+          "tipo": "evento",
+          "observacao": "a URL do O Globo traz /2026/08/29/ no caminho, entao a ida ao TSE contra o discurso e de 29/Ago"
+        },
+        "segundaFonte": "Metropoles, 30/Ago, sobre o pedido de inelegibilidade por abuso economico",
+        "decisao": "incorporar SEM datar o pedido como ato exclusivo de domingo. O texto diz 'em ato de 29 de agosto' para o discurso"
+      },
+      {
+        "evento": "Flavio Bolsonaro se reune com o ministro da Justica de Nayib Bukele",
+        "verificacao1_crossRef": "'Bukele' com ZERO mencoes em 7 dailies",
+        "classificacao": "novidade",
+        "verificacao2_fetch": {
+          "fonte": "Folha de S.Paulo, Estadao, Poder360 e Veja, todos com carimbo de 30/Ago",
+          "tipo": "evento"
+        },
+        "segundaFonte": "quatro veiculos independentes com URL direta de feed proprio",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Banco Master / Daniel Vorcaro",
+        "verificacao1_crossRef": "17 mencoes em 7 dailies",
+        "classificacao": "continuidade",
+        "verificacao2_fetch": {
+          "observacao": "a consulta dedicada master-vorcaro do fetch-google-news devolveu ZERO itens em 30/Ago"
+        },
+        "decisao": "NAO incorporar como novidade. Declarado no corpo: 'No caso Banco Master nao houve fato novo em 30 de agosto'"
+      }
+    ],
+    "selfCheck": {
+      "ancoraNarrativaComVerificacao2": true,
+      "semCausacaoEspuria": true,
+      "verbosCriticosDesambiguados": true,
+      "reconcileClaimsRodado": true,
+      "reconcileObservacao": "apontou 77% do Senado e 5,49% da inflacao. Os dois vem da leitura ao vivo do Polymarket e nao existem nos JSONs do painel por desenho. Nao e erro"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "duas, ambas de contexto e nao de ancora: Gilmar Mendes e o sindicato de juizes (Estadao) e o aporte nos Correios (O Globo). As ancoras do dia tem 7 veiculos (Toffoli) e a serie do banco (mercado)",
+    "numericalErrors": "reconcile-claims OK, com os 2 falsos positivos explicados acima",
+    "fontesInventadas": "conferidas 3 ao acaso: Poder360 (corpo lido via WebFetch), Veja e Gazeta do Povo (URL direta do feed proprio). Todas reais",
+    "quotesLiterais": "nenhuma. 'poucos presos' e 'leviandade' entram como relato indireto, sem aspas",
+    "causacaoEspuria": "nenhuma. A terceira divergencia declara que nada isola a causa do movimento e o chama de saida de faixa",
+    "verbosCriticos": "'retirou de pauta' com a data do ato (29/Ago) e a da cobertura (30/Ago). 'fechou acordo com o Ministerio Publico' entra com o link do veiculo que assim reportou",
+    "decisao": "prosseguir para traducao e preview"
+  },
+  "gates": {
+    "palavras": 1098,
+    "tetoPalavras": 1100,
+    "emojiPtEnEs": [0, 0, 0],
+    "tldrBullets": [3, 3, 3],
+    "gateNumericoTraducao": "multiconjunto identico, 60 numeros em cada versao. O unico flag foi artefato do normalizador: 6 bilhoes = 6 billion = 6 mil millones, todos 6x10^9",
+    "cincoChecagens": "limpas nas 3 versoes: ancora de glossario viva, locale certo, sem homoglifo cirilico, separador decimal consistente inclusive na coluna de confianca da tabela",
+    "validateAfosDaily": "OK, com o warning recorrente de link-density (48% contra 52% de 29/Ago)",
+    "urlsDoCorpo": "as 30 URLs foram extraidas do pt-BR por programa e injetadas nas traducoes por placeholder. Nenhuma redigitada, nenhuma truncada",
+    "rebaselineGate": "NAO disparou. Re-fetch ao vivo as 17:14 BRT deu Flavio 41,20% contra 41,10% do JSON, 0,10pp, abaixo do corte de 0,50pp"
+  },
+  "wayback": {
+    "preCheck": 429,
+    "acao": "NAO rodado e NAO insistido, conforme a regra. Avisado ao Andre no comeco da sessao",
+    "passivo": "9 dias, de 22 a 29/Ago"
+  }
+}
