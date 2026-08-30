@@ -133,14 +133,27 @@ export async function GET(request: Request) {
         // mudado não podem mais tocar na gravação, porque não há gravação
         // pendente. E o marco por ciclo mantém isto raro: no máximo uma vez
         // por cadência, por casa.
+        // 🔴 QUEM DISPARA O EMAIL É `alertar`, QUEM É VERIFICADO É `atrasadas`,
+        // e a diferença entre os dois não é descuido.
+        //
+        // O marco por ciclo existe para o EMAIL não chegar todo dia. Verificar
+        // só quem cruzou o marco no dia é outra coisa: em 30/Ago/2026 o marco
+        // era da Morning Consult, cujo veredito saiu INDETERMINADO, enquanto a
+        // The Economist/YouGov, que tinha DUAS rodadas publicadas fora do
+        // índice, não estava no marco daquele dia. O email teria saído dizendo
+        // menos do que a casa já sabia.
+        //
+        // Verificar custa uma consulta por casa sinalizada, e o número de
+        // sinalizadas é pequeno por construção. Economizar aí compraria um
+        // alerta incompleto pelo preço de nada.
         let fora = null
         try {
-          fora = await verificarCasasAtrasadas(dados, { atrasadas: alertar }, { timeoutMs: 8000 })
+          fora = await verificarCasasAtrasadas(dados, cadencia, { timeoutMs: 8000 })
         } catch (e) {
           // Falha aqui NÃO silencia o alerta: o email sai como saía antes.
           console.log(`[cron/refresh-us-polls] verificacao fora-do-indice falhou: ${String(e)}`)
         }
-        const exposicao = medirExposicao(dados, { atrasadas: alertar })
+        const exposicao = medirExposicao(dados, cadencia)
         if (fora?.comRodadaFora?.length) {
           console.log(
             `[cron/refresh-us-polls] rodada FORA DO INDICE: ${fora.comRodadaFora
@@ -148,7 +161,15 @@ export async function GET(request: Request) {
               .join('; ')}`,
           )
         }
-        void avisarCasaCalada(alertar, fora?.resultados ?? null, exposicao)
+        // O email leva TODAS as sinalizadas, não só a que disparou. Quem
+        // decide se ele sai é `alertar`; o que ele mostra é o quadro inteiro,
+        // senão o corpo listaria duas casas e o assunto uma só.
+        void avisarCasaCalada(
+          cadencia.atrasadas,
+          fora?.resultados ?? null,
+          exposicao,
+          alertar.map((c: { instituto: string }) => c.instituto),
+        )
       }
     }
 

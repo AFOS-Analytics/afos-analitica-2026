@@ -129,6 +129,10 @@ export async function avisarCasaCalada(
   casas: { instituto: string; cadenciaDias: number; silencioDias: number; ciclosPerdidos: number; ultimoCampo: string }[],
   verificacao: VerificacaoFora[] | null = null,
   exposicao: Exposicao = null,
+  // Quem CRUZOU O MARCO hoje, isto e, quem fez o email sair. As `casas` sao
+  // todas as sinalizadas: sem essa separacao o assunto diria uma casa e o
+  // corpo listaria duas.
+  gatilho: string[] = [],
 ): Promise<void> {
   if (!casas.length) return
   const destino = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
@@ -194,9 +198,17 @@ export async function avisarCasaCalada(
             `${c.instituto}: publica a cada ~${c.cadenciaDias}d, calada ha ${c.silencioDias}d (${c.ciclosPerdidos} ciclos), ultimo campo ${c.ultimoCampo}`,
         ),
         '',
+        '',
         'O QUE ISSO E: cada casa e comparada com ELA MESMA. Uma casa semanal',
         'calada ha 18 dias e anomalia; uma casa mensal calada ha 18 dias e',
         'rotina. Por isso o corte e em ciclos dela, nao em dias.',
+        ...(gatilho.length
+          ? [
+              '',
+              `POR QUE HOJE: ${gatilho.join(', ')} fechou um ciclo. As outras acima seguem`,
+              'sinalizadas e entram no quadro, mas nao disparam email todo dia.',
+            ]
+          : []),
         ...blocoVerificacao,
         ...blocoExposicao,
         '',
