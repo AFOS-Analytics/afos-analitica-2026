@@ -97,13 +97,17 @@ Cada bloco passa por um `coerce*` que filtra por UM campo obrigatório. Se o nom
 | `summaryCards` | `label` **e** `headline` | |
 | `liquidity` | `total` **e** `rows[]` com `name` | |
 
-📌 **Conferir contando, não olhando.** Depois de escrever, rodar o loader e comparar a contagem de cada bloco com o que o arquivo tem:
+📌 **Conferir contando, não olhando.** Depois de escrever, rodar o portão:
 
 ```bash
-npx tsx -e "const {loadTradeoff}=require('./lib/afos-tradeoff/loader');const d=loadTradeoff('YYYY-MM-DD','pt-BR','us');console.log(Object.entries({summaryCards:d.summaryCards,scenarios:d.scenarios,indicatorGrid:d.indicatorGrid,watchList:d.watchList,calendar:d.calendar}).map(([k,v])=>k+'='+(v?.length??0)).join(' '))"
+npx tsx scripts/check-tradeoff-blocos.ts YYYY-MM-DD us
 ```
 
-Bloco com 0 é bloco que não vai aparecer. **Ver a página no preview não pega isso**, porque seção ausente é indistinguível de seção que não foi escrita.
+Ele confere os três idiomas de uma vez e cobre as **três** formas caladas de falha do `coerce*`: bloco descartado pelo `.filter()`, enum coagido para o padrão (`base|bear|tail`, `up|down|flat`) e **campo escalar de texto com o nome errado**.
+
+🔴 **A terceira foi descoberta em 30/Ago/2026 no Brasil, e a contagem de blocos era cega a ela:** `anomaly` no lugar de `anomalyText` fazia o callout inteiro sumir com **todos os contadores iguais**, porque contagem compara tamanho de ARRAY e nenhum array encolhe quando some um campo de texto.
+
+Bloco com 0 é bloco que não vai aparecer. **Ver a página no preview não pega nenhuma das três**, porque seção ausente é indistinguível de seção que não foi escrita.
 
 ## Numeração
 

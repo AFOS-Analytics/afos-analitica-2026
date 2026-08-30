@@ -174,21 +174,19 @@ No final do `body` markdown, ANTES do footer de sources, sempre incluir bloco ca
 - `scenarios[].type`: **`base` | `bear` | `tail`**. ⛔ **`contrarian` NÃO existe.** O rótulo em português continua sendo "Contrário ao pricing"; quem muda é só o `type`.
 - `deltaDirection`: `up` | `down` | `flat`.
 
-**Rodar antes do preview, e comparar com o que o arquivo tem:**
+🔴 **E em 30/Ago/2026 apareceu uma TERCEIRA forma, que a contagem de blocos NÃO pega:** campo **escalar** de texto com o nome errado. Na №15 o callout de liquidez foi escrito em `anomaly` e o loader lê `anomalyText`; o achado inteiro sumiria da página sem erro e sem log, com **todos os contadores iguais**, porque contagem compara tamanho de ARRAY e nenhum array encolhe quando um campo de texto some.
+
+**Rodar antes do preview:**
 
 ```bash
-cat > scripts/tmp-tr.ts <<'EOF'
-import { loadTradeoff } from '../lib/afos-tradeoff/loader'
-for (const loc of ['pt-BR', 'en', 'es']) {
-  const d: any = loadTradeoff('DATA', loc)
-  if (!d) { console.log(`  ${loc} LOADER DEVOLVEU NULL`); continue }
-  console.log(`  ${loc.padEnd(6)} cards=${d.summaryCards?.length} cenarios=${d.scenarios?.length} grade=${d.indicatorGrid?.length} watch=${d.watchList?.length} calendario=${d.calendar?.length} liquidez=${d.liquidity?.rows?.length} leituras=${d.additionalReading?.items?.length} tipos=${d.scenarios?.map((s: any) => s.type).join(',')}`)
-}
-EOF
-npx tsx scripts/tmp-tr.ts; rm -f scripts/tmp-tr.ts
+npx tsx scripts/check-tradeoff-blocos.ts DATA br
 ```
 
-**Bloco com 0 é bloco que não vai aparecer. `tipos` que não der `base,bear,tail` é enum coagido.**
+Ele cobre as **três** formas de uma vez, comparando o arquivo com o que o loader devolveu: contagem de bloco, valor de enum (`base|bear|tail` e `up|down|flat`) e **cada campo de texto, caminho a caminho**. Sem argumento, varre todas as edições publicadas dos dois países.
+
+⛔ **Não voltar a escrever isso como script temporário.** Foi assim que ele nasceu, e script apagado no fim da rodada não protege a rodada seguinte.
+
+📌 **Bloco com 0 é bloco que não vai aparecer, e `tipos` fora de `base,bear,tail` é enum coagido.** Olhar o preview não pega nenhuma das três: página com bloco sumido e página com bloco que nunca foi escrito são idênticas.
 
 📌 **E a régua vale para as edições JÁ PUBLICADAS**, não só para a nova: em 23/Ago a varredura pegou 18 arquivos, 6 edições vezes 3 idiomas.
 
