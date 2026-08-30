@@ -5,6 +5,8 @@ import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
 import { medirAtraso, cruzouMarco, medirCadencia, cadenciaCruzouMarco } from '../../../../lib/us-polls/atraso.mjs'
+import { verificarCasasAtrasadas } from '../../../../lib/us-polls/fora-do-indice.mjs'
+import { medirExposicao } from '../../../../lib/us-polls/exposicao.mjs'
 import { avisarAtrasoDaFonte, avisarCasaCalada } from '../../../../lib/cron/alerta'
 import { redigirSegredo } from '../../../../lib/cron/redigir'
 import { avisarFalhaDeCron } from '../../../../lib/cron/alerta'
@@ -113,7 +115,41 @@ export async function GET(request: Request) {
       // Marco por CICLO da própria casa, não por dia: uma casa semanal alerta
       // no máximo uma vez por semana enquanto seguir calada.
       const alertar = cadencia.atrasadas.filter(cadenciaCruzouMarco)
-      if (alertar.length) void avisarCasaCalada(alertar)
+      if (alertar.length) {
+        // 🔎 SEGUNDO LEITOR, e por que ele roda AQUI e não antes.
+        //
+        // O email de casa calada dizia, em texto, "abrir o site do INSTITUTO e
+        // ver se a rodada existe". Isso é uma instrução para uma pessoa, e
+        // conferir só as casas que alguém reparou troca uma amostra
+        // SISTEMÁTICA por uma DISCRICIONÁRIA. Quem decide a lista tem de ser o
+        // portão, e agora é.
+        // Ver memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md
+        //
+        // ⛔ Ele DETECTA, não ingere: nada daqui entra em `dados`, que já foi
+        // gravado acima.
+        //
+        // 🔑 A posição no arquivo é a garantia: o `upsertAnalysisReport` já
+        // terminou. Site de instituto fora do ar, 403 de borda ou formato
+        // mudado não podem mais tocar na gravação, porque não há gravação
+        // pendente. E o marco por ciclo mantém isto raro: no máximo uma vez
+        // por cadência, por casa.
+        let fora = null
+        try {
+          fora = await verificarCasasAtrasadas(dados, { atrasadas: alertar }, { timeoutMs: 8000 })
+        } catch (e) {
+          // Falha aqui NÃO silencia o alerta: o email sai como saía antes.
+          console.log(`[cron/refresh-us-polls] verificacao fora-do-indice falhou: ${String(e)}`)
+        }
+        const exposicao = medirExposicao(dados, { atrasadas: alertar })
+        if (fora?.comRodadaFora?.length) {
+          console.log(
+            `[cron/refresh-us-polls] rodada FORA DO INDICE: ${fora.comRodadaFora
+              .map((r: { instituto: string; ultimoNaListagem?: string }) => `${r.instituto} (ate ${r.ultimoNaListagem})`)
+              .join('; ')}`,
+          )
+        }
+        void avisarCasaCalada(alertar, fora?.resultados ?? null, exposicao)
+      }
     }
 
     return NextResponse.json(

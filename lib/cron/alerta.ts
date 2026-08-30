@@ -103,11 +103,87 @@ export async function avisarAtrasoDaFonte(
  *
  * ⛔ Este número não se publica. É diagnóstico da nossa coleta.
  */
+type VerificacaoFora = {
+  instituto: string
+  veredito: string
+  detalhe?: string
+  ultimoNaListagem?: string
+  url?: string | null
+  rodadasFora?: { iso: string; evidencia: string }[]
+}
+
+type Exposicao = {
+  rodadasFaltando: number
+  janelaDias: number
+  atual: { vantagemDem: number; nPesquisas: number }
+  central: { vantagemDem: number; nPesquisas: number }
+  faixa: { min: number; max: number }
+  deslocamentoCentralPp: number
+  porCasa: { instituto: string; efeitoDeCasaPp: number; datasEsperadasNaJanela: string[] }[]
+  semEfeitoMedivel: { instituto: string; motivo: string }[]
+} | null
+
+const sinalPp = (v: number) => (v >= 0 ? `D+${v.toFixed(2)}` : `R+${Math.abs(v).toFixed(2)}`)
+
 export async function avisarCasaCalada(
-  casas: { instituto: string; cadenciaDias: number; silencioDias: number; ciclosPerdidos: number; ultimoCampo: string }[]
+  casas: { instituto: string; cadenciaDias: number; silencioDias: number; ciclosPerdidos: number; ultimoCampo: string }[],
+  verificacao: VerificacaoFora[] | null = null,
+  exposicao: Exposicao = null,
 ): Promise<void> {
   if (!casas.length) return
   const destino = process.env.ALERT_EMAIL || 'alerts@afos-analytics.com'
+
+  // 🔎 O bloco do segundo leitor. Ele responde a pergunta que este email
+  // ANTES mandava uma pessoa responder na mao, e por isso a instrucao velha
+  // saiu: pedir conferencia manual so das casas que alguem reparou troca uma
+  // amostra sistematica por uma escolhida.
+  // Ver memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md
+  const blocoVerificacao: string[] = []
+  if (verificacao?.length) {
+    blocoVerificacao.push('', 'LISTAGEM PROPRIA DE CADA CASA (consultada pelo portao, nao a mao):')
+    for (const v of verificacao) {
+      blocoVerificacao.push(`  ${v.instituto}: ${v.veredito} - ${v.detalhe ?? ''}`)
+      for (const r of v.rodadasFora ?? []) blocoVerificacao.push(`    campo ${r.iso}  "${r.evidencia}"`)
+      if (v.url) blocoVerificacao.push(`    ${v.url}`)
+    }
+    const fora = verificacao.filter((v) => v.veredito === 'RODADA_FORA_DO_INDICE')
+    if (fora.length) {
+      blocoVerificacao.push(
+        '',
+        `ATRIBUICAO: ${fora.length} casa(s) PUBLICOU rodada que o indice nao recebeu.`,
+        'O buraco e do INDICE, nao das casas. Nao dizer que "a casa esta calada".',
+      )
+    }
+    // ⚠️ Veredito inconclusivo NAO e veredito de "nada novo". Ele aparece
+    // nomeado para nao virar um verde que ninguem mediu.
+    const incerto = verificacao.filter(
+      (v) => v.veredito === 'INDETERMINADO' || v.veredito === 'SEM_LISTAGEM_REGISTRADA',
+    )
+    if (incerto.length) {
+      blocoVerificacao.push('', `NAO CONCLUIDO em ${incerto.length} casa(s): ${incerto.map((v) => v.instituto).join(', ')}.`)
+      blocoVerificacao.push('Isto NAO quer dizer que nao ha rodada nova. Quer dizer que nao deu para olhar.')
+    }
+  } else {
+    blocoVerificacao.push('', 'LISTAGEM PROPRIA: nao consultada nesta passada (falha ou desligada).')
+  }
+
+  const blocoExposicao: string[] = []
+  if (exposicao && exposicao.rodadasFaltando > 0) {
+    blocoExposicao.push(
+      '',
+      `EXPOSICAO DA MEDIA: ${exposicao.rodadasFaltando} rodada(s) faltando na janela de ${exposicao.janelaDias}d.`,
+      ...exposicao.porCasa.map(
+        (c) =>
+          `  ${c.instituto}: efeito de casa ${c.efeitoDeCasaPp >= 0 ? '+' : ''}${c.efeitoDeCasaPp}pp, deve ${c.datasEsperadasNaJanela.join(', ')}`,
+      ),
+      `  servida ${sinalPp(exposicao.atual.vantagemDem)} (n=${exposicao.atual.nPesquisas}) -> com as que faltam ${sinalPp(exposicao.central.vantagemDem)} (n=${exposicao.central.nPesquisas})`,
+      `  faixa ${sinalPp(exposicao.faixa.min)} a ${sinalPp(exposicao.faixa.max)}, deslocamento ${exposicao.deslocamentoCentralPp >= 0 ? '+' : ''}${exposicao.deslocamentoCentralPp}pp`,
+      '  SUPOSICAO: cada rodada que falta entra como campo de hoje mais o efeito',
+      '  daquela casa. E o TAMANHO DO RISCO, nao uma previsao.',
+      ...exposicao.semEfeitoMedivel.map((s) => `  NAO CERCADA: ${s.instituto} (${s.motivo})`),
+    )
+  }
+
   try {
     await sendSystemAlert(destino, {
       type: `casa-calada:us-generic-ballot (${casas.map((c) => c.instituto).join(', ')})`,
@@ -121,13 +197,12 @@ export async function avisarCasaCalada(
         'O QUE ISSO E: cada casa e comparada com ELA MESMA. Uma casa semanal',
         'calada ha 18 dias e anomalia; uma casa mensal calada ha 18 dias e',
         'rotina. Por isso o corte e em ciclos dela, nao em dias.',
-        '',
-        'O QUE FAZER: abrir o site do INSTITUTO e ver se a rodada existe. Se',
-        'existir e nao estiver no indice, o buraco e da Wikipedia, e a rodada',
-        'entra quando os editores de la a acrescentarem.',
+        ...blocoVerificacao,
+        ...blocoExposicao,
         '',
         'O QUE NAO FAZER: digitar a linha a mao. Numero posto a mao nao se',
-        'reproduz na leitura seguinte e some no proximo parse.',
+        'reproduz na leitura seguinte e some no proximo parse, e escolher quais',
+        'linhas entram converte a amostra numa escolha.',
         '',
         'NAO PUBLICAR este numero em peca nenhuma. A regra esta em',
         'memory/feedback_descrever_o_metodo_sim_relatar_a_falha_nao.md',

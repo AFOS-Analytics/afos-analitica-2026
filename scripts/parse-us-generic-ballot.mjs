@@ -9,12 +9,17 @@
  * Este script continua existindo para a rodada manual e para versionar o
  * arquivo no repositório, que é o que o painel lê quando o Neon não responde.
  *
- * Uso:  node scripts/parse-us-generic-ballot.mjs [--dias=30] [--out=arquivo]
+ * Uso:  node scripts/parse-us-generic-ballot.mjs [--dias=30] [--out=arquivo] [--sem-rede]
+ *
+ * `--sem-rede` pula a consulta às listagens dos institutos. A coleta em si
+ * continua indo à rede: quem é pulado é só o segundo leitor.
  */
 
 import { writeFileSync } from 'fs'
 import { coletarGenericBallot } from '../lib/us-polls/collect.mjs'
 import { medirAtraso, medirCadencia } from '../lib/us-polls/atraso.mjs'
+import { verificarCasasAtrasadas, buracosNoRegistro } from '../lib/us-polls/fora-do-indice.mjs'
+import { medirExposicao } from '../lib/us-polls/exposicao.mjs'
 
 const arg = (n, padrao) => {
   const m = process.argv.find((a) => a.startsWith(`--${n}=`))
@@ -23,6 +28,7 @@ const arg = (n, padrao) => {
 
 const dias = Number(arg('dias', '30'))
 const saidaPath = arg('out', 'public/us-polls-data.json')
+const semRede = process.argv.includes('--sem-rede')
 
 const saida = await coletarGenericBallot({ dias })
 writeFileSync(saidaPath, JSON.stringify(saida, null, 2) + '\n', 'utf-8')
@@ -61,7 +67,71 @@ if (cad.atrasadas.length) {
       `      ${c.instituto}: publica a cada ~${c.cadenciaDias}d, calada há ${c.silencioDias}d (${c.ciclosPerdidos} ciclos), último campo ${c.ultimoCampo}`,
     )
   }
-  console.log('      conferir no site do instituto se a rodada existe e ficou fora do índice')
 } else if (cad.avaliadas.length) {
   console.log(`   · cadência: ${cad.avaliadas.length} casa(s) avaliada(s), nenhuma fora do próprio ritmo`)
+}
+
+// ─── SEGUNDO LEITOR: a rodada existe lá fora? ───────────────────────────────
+//
+// 🔑 A linha que este bloco substitui era "conferir no site do instituto se a
+// rodada existe e ficou fora do índice", isto é, uma instrução para uma pessoa.
+// Instrução para pessoa é o mesmo que dizer "confira as que você reparar", e
+// conferir só quem eu reparei troca uma amostra sistemática por uma escolhida.
+// Quem decide a lista agora é o PORTÃO.
+// Ver memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md
+//
+// ⛔ Ele DETECTA, não ingere. Nada daqui entra no arquivo servido.
+if (cad.atrasadas.length && !semRede) {
+  const ver = await verificarCasasAtrasadas(saida, cad)
+  console.log(`   🔎 listagem própria das ${cad.atrasadas.length} casa(s) sinalizada(s)  [USO INTERNO, nao publicar]`)
+  for (const r of ver.resultados) {
+    const marca = r.veredito === 'RODADA_FORA_DO_INDICE' ? '🔴' : r.veredito === 'SEM_RODADA_NOVA' ? '✅' : '⚠️'
+    console.log(`      ${marca} ${r.instituto}: ${r.veredito} — ${r.detalhe}`)
+    for (const f of r.rodadasFora ?? []) console.log(`           campo ${f.iso}  «${f.evidencia}»`)
+    if (r.url) console.log(`           ${r.url}`)
+  }
+  if (ver.comRodadaFora.length) {
+    console.log(`      📌 o buraco é do ÍNDICE, não das casas: ${ver.comRodadaFora.length} casa(s) publicou rodada que a Wikipédia não recebeu`)
+  }
+}
+
+// ─── EXPOSIÇÃO: o buraco muda a frase que a gente publica? ──────────────────
+//
+// Sem esta conta, "duas casas caladas" é um susto sem tamanho. Com ela, dá
+// para decidir se o buraco tira a manchete ou não.
+// Ver memory/feedback_o_atraso_global_e_cego_a_buraco_no_meio.md
+if (cad.atrasadas.length) {
+  const ex = medirExposicao(saida, cad)
+  if (ex && ex.rodadasFaltando) {
+    const sinal = (v) => (v >= 0 ? `D+${v.toFixed(2)}` : `R+${Math.abs(v).toFixed(2)}`)
+    console.log(`   📏 exposição da média: ${ex.rodadasFaltando} rodada(s) faltando dentro da janela de ${ex.janelaDias}d  [USO INTERNO, nao publicar]`)
+    for (const c of ex.porCasa) {
+      console.log(
+        `      ${c.instituto}: deve ${c.rodadasEsperadasNaJanela} rodada(s) (${c.datasEsperadasNaJanela.join(', ')}), efeito de casa ${c.efeitoDeCasaPp >= 0 ? '+' : ''}${c.efeitoDeCasaPp}pp em ${c.rodadasComEfeitoMedido} rodadas`,
+      )
+    }
+    for (const s of ex.semEfeitoMedivel) console.log(`      ⚠️ ${s.instituto}: ${s.motivo}, exposição NÃO cercada`)
+    console.log(
+      `      servida ${sinal(ex.atual.vantagemDem)} (n=${ex.atual.nPesquisas}) · com as que faltam ${sinal(ex.central.vantagemDem)} (n=${ex.central.nPesquisas}) · faixa ${sinal(ex.faixa.min)} a ${sinal(ex.faixa.max)}`,
+    )
+    console.log(`      deslocamento ${ex.deslocamentoCentralPp >= 0 ? '+' : ''}${ex.deslocamentoCentralPp}pp, amplitude ${ex.amplitudePp}pp`)
+    // A linha de base é recomputada agora. Se ela já difere da gravada, quem
+    // se moveu foi a JANELA, não a intenção de voto, e o número tem de sair
+    // separado para ninguém somar as duas causas.
+    if (ex.rolagemDaJanelaPp !== 0) {
+      console.log(`      ⚠️ o arquivo trazia ${sinal(ex.arquivo.vantagemDem)}: ${ex.rolagemDaJanelaPp >= 0 ? '+' : ''}${ex.rolagemDaJanelaPp}pp disso é ROLAGEM DA JANELA, não pesquisa nova`)
+    }
+  }
+}
+
+// ─── BURACO DO REGISTRO ─────────────────────────────────────────────────────
+//
+// Impresso mesmo quando ninguém está atrasado. Um registro incompleto só
+// aparece no dia em que a casa que falta é a que atrasa, e nesse dia já é
+// tarde: o verificador devolveria SEM_LISTAGEM_REGISTRADA e a suspeita ficaria
+// aberta sem ninguém ter escolhido isso.
+const buracos = buracosNoRegistro(cad)
+if (buracos.length) {
+  console.log(`   🗂️ ${buracos.length} de ${cad.avaliadas.length} casa(s) avaliada(s) sem listagem utilizável  [USO INTERNO, nao publicar]`)
+  for (const b of buracos) console.log(`      ${b.instituto}: ${b.nota}`)
 }
