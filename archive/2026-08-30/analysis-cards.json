@@ -1,0 +1,38 @@
+{
+  "updatedAt": "30/08/2026, 16:40",
+  "cards": {
+    "sentimento": {
+      "text1": "O livro presidencial acumula USD 139,76M e o preço desta página é da leitura confirmada de 30/Ago, 16:40 BRT (19:40 UTC). Este domingo NÃO teve pesquisa nacional divulgada: a mais recente segue sendo a Vox Brasil de 29/Ago (BR-05519/2026, campo 25 a 27/Ago, n=2.100).",
+      "text2": "No preço, o segundo colocado subiu 1,75pp, para 41,10%, a maior variação entre os nomes do painel nesta rodada, e o líder não se moveu, ficando em 55,50% pelo segundo dia. A distância entre os dois caiu para 14,40pp, a mais estreita desde 10/Jun, e o preço do segundo é o mais alto dele desde 13/Mai.",
+      "text3": "Os contratos de 2º e 3º lugar do 1º turno voltam a publicar número nesta rodada, depois de uma rodada sem leitura nova: o segundo colocado está em 85,50% para chegar ao returno, e Caiado lidera o contrato de 3º lugar com 43,50%, o mesmo nome que está em 0,15% no contrato de vencedor.",
+      "direita": "Flávio Bolsonaro em 41,10% (vol USD 9,31M) no presidencial, alta de 1,75pp, a maior variação entre os nomes do painel nesta rodada, e 85,50% no contrato de 2º lugar do 1º turno. Na Vox de 29/Ago ele tem 34,8% no 1º turno e 45,1% no 2º, à frente por 0,6 ponto dentro da margem.",
+      "esquerda": "Lula em 55,50% (vol USD 9,50M), sem variação pelo segundo dia. Na Vox de 29/Ago ele tem 37,1% no 1º turno, à frente por 2,3 pontos, e 44,5% no 2º turno, atrás por 0,6 ponto dentro da margem de 2,15pp.",
+      "terceiraVia": "Ronaldo Caiado é o terceiro nome do 1º turno na Vox de 29/Ago, com 5,0%, e no contrato de vencedor está em 0,15% (vol USD 6,97M), abaixo do piso de 0,5% da dupla leitura. No contrato de 3º lugar do 1º turno ele é o primeiro nome, com 43,50%. Augusto Cury cedeu 1,40pp no contrato de vencedor, para 1,85%, a maior queda entre os nomes do painel nesta rodada.",
+      "polymarket": "Preços da leitura confirmada de 30/Ago, 16:40 BRT (19:40 UTC). O AFOS só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20 ponto. O livro presidencial acumula USD 139,76M."
+    },
+    "inss": {
+      "text1": "O caso que envolve o filho do presidente seguiu no noticiário deste domingo por uma frente nova. Um amigo dele fechou acordo com o Ministério Público para não ser preso por corrupção, segundo Veja. Os inquéritos têm como principais elementos mensagens, viagens e proximidade com lobistas, segundo Folha de S.Paulo.",
+      "text2": "Os Correios, que estão no centro da apuração sobre a atuação da lobista, fecharam o segundo trimestre com prejuízo de R$ 2,4 bilhões e acumulam R$ 5,5 bilhões de perda no ano, segundo Valor Econômico. O governo vai incluir um aporte de R$ 6 bilhões na estatal no Orçamento de 2027 e diz que a medida traz mais estabilidade, segundo O Globo.",
+      "text3": "Do lado político, aliados do presidente tentaram conter a lobista depois de ele a chamar de pilantra, segundo Folha de S.Paulo, e a defesa dele evitou questionamentos sobre a atuação do filho durante a agenda de campanha.",
+      "text4": "O caso segue vivo e sem desfecho. A distinção que o painel mantém desde o início continua valendo: uma coisa é o efeito sobre a avaliação do governo, outra é o efeito sobre a intenção de voto, e as duas não se somam.",
+      "impactoLula": "Não isolável, e não há leitura nova para medir. Nenhuma pesquisa nacional foi divulgada neste domingo, e a Vox Brasil de 29/Ago tem campo de 25 a 27/Ago, anterior aos fatos deste fim de semana. As oito nacionais registradas para 31/Ago a 03/Set são as primeiras que podem alcançar o período.",
+      "impactoGestao": "Sem leitura nova neste domingo. A referência vigente segue sendo a Vox Brasil de 29/Ago, com rejeição de 52,7% ao presidente, segundo CNN Brasil, e desaprovação de 53,3%, o maior nível do ano, segundo Exame.",
+      "conclusao": "Em 30/Ago o caso avança pela via judicial, com o acordo do amigo do filho do presidente com o Ministério Público, e pela via fiscal, com o prejuízo dos Correios e o aporte anunciado. Nenhuma das duas tem leitura de urna que as alcance ainda, e o painel não atribui movimento de preço a elas."
+    },
+    "bancoMaster": {
+      "text1": "Este domingo não trouxe fato novo do caso. A coleta de notícias do dia devolveu zero itens na consulta dedicada ao tema, e o que existe é da véspera: o primeiro depoimento de Daniel Vorcaro no ano foi concluído em 28/Ago, com esclarecimentos amplos e busca por delação, segundo Folha de S.Paulo.",
+      "text2": "A reclamação do procurador-geral sobre as tentativas de delação dele é de 29/Ago, segundo Folha de S.Paulo, e as contradições do Dark Horse para justificar o dinheiro e a falta de prestação de contas também são da véspera.",
+      "text3": "O caso entrou na campanha na sexta pelos dois lados, e neste domingo não teve desdobramento próprio. O segundo colocado se esquivou do tema na entrevista à TV Globo, segundo Folha de S.Paulo.",
+      "conclusao": "ESTA RODADA NÃO TEM FATO NOVO DO CASO, E ISSO ESTÁ DECLARADO. O que o painel mostra é o quadro de 28 e 29/Ago, com a data de cada peça no texto. A disposição de negociar delação segue sendo o elemento que pode mudar o tipo de risco do caso, e ela não avançou publicamente neste domingo."
+    },
+    "stf": {
+      "toffoli": "⭐ O NOME DO DIA NO TRIBUNAL É ELE. Citou indícios de ilicitude no registro de candidatura de Renan Santos e adiou o julgamento da chapa, com sete veículos publicando entre 15h47 e 18h56 de Brasília, entre eles G1, O Globo, Estadão e Folha de S.Paulo.",
+      "moraes": "Sem ato individual novo capturado em 30/Ago.",
+      "gilmar": "Proibiu o sindicato de juízes de cobrar taxa às vésperas de assembleia sobre pauta ética no tribunal, segundo Estadão, e limitou a contribuição dos juízes que aderiram ao sindicato, segundo Poder360.",
+      "dino": "Sem ato individual novo capturado em 30/Ago.",
+      "mendonca": "Sem ato individual novo capturado em 30/Ago, depois de quatro dias seguidos como o nome mais citado do tribunal.",
+      "nexo": "O TRIBUNAL ENTRA NA ELEIÇÃO PELA PORTA DO REGISTRO. O TSE começa a julgar nesta segunda os registros de candidatura de Lula, Flávio Bolsonaro, Zema e Renan Santos, segundo Veja, e a análise do registro de Renan Santos já ficou travada neste domingo. No Congresso, as propostas para frear o Supremo se multiplicam e travam sob Alcolumbre, segundo Gazeta do Povo. Na pauta própria da semana, o tribunal pode julgar Funrural, justiça gratuita e ITBI, segundo Valor Econômico.",
+      "analise": "O contrato de saída de ministro do Supremo por impeachment antes de 2027 está em 3,60% (vol USD 84 mil), alta de 0,15pp na leitura confirmada de 30/Ago, 16:40 BRT (19:40 UTC). É o menor livro do painel, e o preço dele não acompanhou o volume de atos do tribunal neste domingo: o registro travado de um presidenciável, as duas decisões de Gilmar Mendes sobre o sindicato de juízes e o julgamento dos registros que começa nesta segunda não moveram o contrato além de 0,15 ponto."
+    }
+  }
+}
