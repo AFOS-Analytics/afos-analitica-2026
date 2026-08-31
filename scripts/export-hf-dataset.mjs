@@ -24,9 +24,28 @@ const ASSETS = join(ROOT, 'hf-assets')
 const readJSON = (p) => JSON.parse(readFileSync(p, 'utf-8'))
 const ensure = (d) => mkdirSync(d, { recursive: true })
 const writeJSON = (p, o) => writeFileSync(p, JSON.stringify(o, null, 2))
+/**
+ * Data de um artefato, tirada do PRÓPRIO objeto que ela vai nomear.
+ *
+ * 🔴 POR QUE ELA ACEITA DOIS FORMATOS, e por que isso importa (31/Ago/2026).
+ *
+ * Os três artefatos carimbam a data de jeitos diferentes: `analysis-criteriosa`
+ * e `analysis-data` usam `updatedAt` em DD/MM/AAAA, e `polls-data` usa
+ * `lastUpdate` em AAAA-MM-DD. Antes esta função lia só o primeiro, então o
+ * snapshot de pesquisas era nomeado pela data do arquivo EDITORIAL, e bastava
+ * publicar a rodada em dois commits para gravar o arquivo de uma data fechada
+ * com o conteúdo de outra. Aconteceu em 31/Ago: o push das pesquisas rodou a
+ * esteira 23 segundos depois, com o editorial ainda carimbado no dia anterior,
+ * e o `polls-data-2026-08-30.json` publicado passou a carregar o dado de 31/Ago.
+ *
+ * ⛔ NUNCA voltar a nomear um artefato pelo carimbo de um arquivo vizinho.
+ * Ver memory/feedback_o_snapshot_datado_do_hf_leva_a_data_de_outro_arquivo.md
+ */
 function deriveDate(obj) {
-  const m = String(obj?.updatedAt || '').match(/^(\d{2})\/(\d{2})\/(\d{4})/)
-  return m ? `${m[3]}-${m[2]}-${m[1]}` : null
+  const br = String(obj?.updatedAt || '').match(/^(\d{2})\/(\d{2})\/(\d{4})/)
+  if (br) return `${br[3]}-${br[2]}-${br[1]}`
+  const iso = String(obj?.lastUpdate || '').match(/^(\d{4}-\d{2}-\d{2})/)
+  return iso ? iso[1] : null
 }
 const csvEscape = (v) => { const s = String(v ?? ''); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s }
 const num = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); return Number.isFinite(n) ? n : null }
@@ -319,9 +338,22 @@ function copyDirInto(srcDir, destDir) {
 const crit = readJSON(join(ROOT, 'public', 'analysis-criteriosa.json'))
 const cards = readJSON(join(ROOT, 'public', 'analysis-data.json'))
 const polls = readJSON(join(ROOT, 'public', 'polls-data.json'))
-const date = deriveDate(crit) || deriveDate(cards)
-if (!date) { console.error('❌ não consegui derivar a data de updatedAt'); process.exit(1) }
-console.log(`📅 snapshot de hoje: ${date}`)
+// 🔑 UMA DATA POR ARTEFATO, cada uma tirada do arquivo que ela nomeia.
+// Elas coincidem quando a rodada é publicada num commit só, e é justamente
+// quando NÃO coincidem que a regra vale: cada arquivo vai para a sua data.
+const dateCrit = deriveDate(crit)
+const dateCards = deriveDate(cards)
+const datePolls = deriveDate(polls)
+if (!dateCrit) { console.error('❌ não consegui derivar a data de analysis-criteriosa.json'); process.exit(1) }
+if (!dateCards) { console.error('❌ não consegui derivar a data de analysis-data.json'); process.exit(1) }
+// ⛔ Falha FECHADA de propósito: sem data própria, o polls-data NÃO herda a do
+// vizinho. Publicar sob a data de outro arquivo é o defeito que esta função
+// existe para impedir, e um snapshot ausente é melhor que um mal rotulado.
+if (!datePolls) { console.error('❌ não consegui derivar a data de polls-data.json (lastUpdate)'); process.exit(1) }
+console.log(`📅 snapshot: criteriosa ${dateCrit} · cards ${dateCards} · polls ${datePolls}`)
+if (dateCrit !== datePolls) {
+  console.log(`⚠️  os arquivos estão em datas DIFERENTES, e cada um vai para a sua. Isso acontece quando a rodada é publicada em mais de um commit.`)
+}
 
 ensure(STAGING)
 const dCrit = join(STAGING, 'snapshots', 'analysis-criteriosa'); ensure(dCrit)
@@ -329,15 +361,15 @@ const dCards = join(STAGING, 'snapshots', 'analysis-cards'); ensure(dCards)
 ensure(join(STAGING, 'polls')); ensure(join(STAGING, 'news')); ensure(join(STAGING, 'data'))
 
 // snapshots de hoje (datados — append puro)
-writeJSON(join(dCrit, `${date}.json`), crit)
-writeJSON(join(dCards, `${date}.json`), cards)
-writeJSON(join(STAGING, 'polls', `polls-data-${date}.json`), polls)
-writeFileSync(join(STAGING, 'data', `divergence-${date}.csv`), divergenceCsv(polls, date))
+writeJSON(join(dCrit, `${dateCrit}.json`), crit)
+writeJSON(join(dCards, `${dateCards}.json`), cards)
+writeJSON(join(STAGING, 'polls', `polls-data-${datePolls}.json`), polls)
+writeFileSync(join(STAGING, 'data', `divergence-${datePolls}.csv`), divergenceCsv(polls, datePolls))
 
 // série de odds de mercado — começa com hoje, recebe o histórico no backfill abaixo
 const marketRows = [
-  ...marketRowsFromCrit(crit, date),
-  ...marketRowsFromComparison(polls, date),
+  ...marketRowsFromCrit(crit, dateCrit),
+  ...marketRowsFromComparison(polls, datePolls),
 ]
 
 // notícias: SOMENTE metadados públicos de link (sem corpo). `queries` é objeto → Object.values.
@@ -362,7 +394,7 @@ if (HISTORY_DIR && existsSync(join(HISTORY_DIR, 'archive'))) {
   const archRoot = join(HISTORY_DIR, 'archive')
   let n = 0
   for (const d of readdirSync(archRoot).filter((x) => /^\d{4}-\d{2}-\d{2}$/.test(x)).sort()) {
-    if (d === date) continue
+    if (d === dateCrit) continue
     const c = join(archRoot, d, 'analysis-criteriosa.json')
     const k = join(archRoot, d, 'analysis-cards.json')
     if (existsSync(c)) { copyFileSync(c, join(dCrit, `${d}.json`)); n++; try { marketRows.push(...marketRowsFromCrit(readJSON(c), d)) } catch {} }
