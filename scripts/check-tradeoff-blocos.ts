@@ -74,11 +74,31 @@ const contagem = (o: any) =>
   `watch=${o?.watchList?.length ?? 0} calendario=${o?.calendar?.length ?? 0} liquidez=${o?.liquidity?.rows?.length ?? 0} ` +
   `leituras=${o?.additionalReading?.items?.length ?? 0}`
 
+/** Quantos ARQUIVOS de idioma foram efetivamente lidos, somando todas as edições. */
+let arquivosLidos = 0
+
 function conferir(pais: string, data: string): string[] {
   const problemas: string[] = []
   for (const loc of LOCALES) {
     const arq = arquivoDe(pais, data, loc)
-    if (!existsSync(arq)) continue
+    /**
+     * 🔴 IDIOMA AUSENTE É PROBLEMA, NÃO É PULO. Medido em 31/Ago/2026.
+     *
+     * Aqui havia um `continue`, e com ele o portão dava VERDE com um idioma
+     * INTEIRO faltando: apagando o `.es.md` de uma edição, a saída continuava
+     * "1 edicao(oes) integras". É a mesma família de defeito que o próprio
+     * script existe para pegar, uma casa acima: seção ausente é
+     * indistinguível de seção não escrita, e idioma ausente era
+     * indistinguível de idioma presente.
+     *
+     * O produto publica nos três, então a falta de um é falha de publicação.
+     * Ver memory/feedback_o_conferidor_que_eu_escrevo_tambem_e_um_medidor.md
+     */
+    if (!existsSync(arq)) {
+      problemas.push(`${loc}: ARQUIVO DE IDIOMA AUSENTE (${arq})`)
+      continue
+    }
+    arquivosLidos++
     const cru: any = matter(readFileSync(arq, 'utf8')).data
     const carregado: any = loadTradeoff(data, loc, pais)
     if (!carregado) { problemas.push(`${loc}: loader devolveu null`); continue }
@@ -124,9 +144,12 @@ for (const pais of paises) {
   }
 }
 
+// ⚠️ O total de ARQUIVOS entra no resumo de proposito. "1 edicao integra" nao
+// diz em quantos idiomas ela foi lida, e era exatamente ai que um idioma
+// faltando passava despercebido.
 console.log(
   falhas
-    ? `\n❌ check-tradeoff-blocos: ${falhas} de ${conferidas} edicao(oes) com problema.`
-    : `\n✅ check-tradeoff-blocos: ${conferidas} edicao(oes) integras. Nenhum bloco descartado, nenhum enum coagido, nenhum campo de texto perdido.`,
+    ? `\n❌ check-tradeoff-blocos: ${falhas} de ${conferidas} edicao(oes) com problema. ${arquivosLidos} arquivo(s) de idioma lido(s).`
+    : `\n✅ check-tradeoff-blocos: ${conferidas} edicao(oes) integras em ${arquivosLidos} arquivo(s) de idioma (${LOCALES.join(', ')}). Nenhum bloco descartado, nenhum enum coagido, nenhum campo de texto perdido.`,
 )
 process.exit(falhas ? 1 : 0)
