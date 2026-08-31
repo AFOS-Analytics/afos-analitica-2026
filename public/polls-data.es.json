@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-30",
+  "lastUpdate": "2026-08-31",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,125 @@
     }
   ],
   "polls": [
+    {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-08-31",
+      "scope": "national",
+      "sample": 5014,
+      "margin": 1,
+      "register": "BR-07972/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "fieldDates": "2026-08-25 a 2026-08-30",
+      "note": "AtlasIntel en alianza con Bloomberg, divulgada el 31/Ago (UOL, Exame, Estadão, Poder360, Gazeta do Povo, VEJA, Brasil de Fato). [Primera vuelta](/es/glossary#primeiro-turno) Lula 43,4% x Flávio Bolsonaro 33,7%, distancia de 9,7pp, con Augusto Cury 7,8% y Renan Santos 7,6% prácticamente empatados en la tercera posición. [Segunda vuelta](/es/glossary#segundo-turno) Lula 47,1% x Flávio 42,6%, distancia de 4,5pp. En los demás escenarios de segunda vuelta, Lula 46,6% x Ronaldo Caiado 41,0%, Lula 47,0% x Romeu Zema 40,7% y Lula 47,5% x Renan Santos 26,0%. La casa también probó el escenario con Jair Bolsonaro, hoy inelegible, en el que Lula tiene 46,8% contra 44,1%. Campo del 25 al 30/Ago, n=5.014 consultados por formulario electrónico, margen de 1pp, 95% de confianza, registro BR-07972/2026. Es la mayor muestra nacional de la ventana de 30 días del panel. ⭐ SU CAMPO CERRÓ EL 30/Ago, DESPUÉS DEL ESTRENO DEL HORARIO ELECTORAL GRATUITO EL 28/Ago, a diferencia de la Vox del 29/Ago, cuyo campo cerró el 27/Ago. Las dos no son comparables en ese punto. ⚠️ DOS NACIONALES SALIERON EL MISMO DÍA Y DISCREPAN EN EL TAMAÑO DE LA DISTANCIA, no en el signo: esta da 9,7pp en la primera vuelta y 4,5pp en la segunda, y la BTG/Nexus de ese mismo 31/Ago da 6pp y 1pp. Sobre el tercer colocado la diferencia es de 3,2pp, con 7,8% aquí y 11% allá. Ninguna de las dos contradice a la otra sobre quién está adelante.",
+      "scenarios": [
+        {
+          "name": "Cenario Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 43.4
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33.7
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 7.8
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 7.6
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.1,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42.6
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.6,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Romeu Zema",
+          "percent2": 40.7
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 47.5,
+          "candidate2": "Renan Santos",
+          "percent2": 26
+        }
+      ],
+      "source": "AtlasIntel en alianza con Bloomberg, divulgada el 31/Ago/2026 (campo del 25 al 30/Ago, n=5.014, formulario electrónico, margen 1,0pp, registro [TSE](/es/glossary#tse) BR-07972/2026). Números verificados en Gazeta do Povo, UOL, Exame, Estadão y Poder360."
+    },
+    {
+      "institute": "BTG/Nexus",
+      "date": "2026-08-31",
+      "scope": "national",
+      "sample": 2005,
+      "margin": 2,
+      "register": "BR-08900/2026",
+      "reliability": 4,
+      "method": "Telefone",
+      "fieldDates": "2026-08-28 a 2026-08-30",
+      "note": "BTG/Nexus divulgada el 31/Ago (CNN Brasil, UOL, Poder360, Gazeta do Povo, VEJA, CartaCapital) y publicada también en el sitio del propio instituto. [Primera vuelta](/es/glossary#primeiro-turno) Lula 39% x Flávio Bolsonaro 33%, distancia de 6pp, con Augusto Cury 11%, Ronaldo Caiado 5%, Renan Santos 3% y Romeu Zema 1%. [Segunda vuelta](/es/glossary#segundo-turno) Lula 46% x Flávio 45%, dentro del margen de 2pp. Campo del 28 al 30/Ago, n=2.005 por teléfono, margen de 2pp, 95% de confianza, registro BR-08900/2026, contratada por BTG Pactual. ⭐ LA COMPARACIÓN QUE VALE ES CON LA PROPIA CASA, MISMO MÉTODO Y MISMA MUESTRA, Y MUESTRA AL TERCER COLOCADO MULTIPLICANDO POR CINCO EN UNA SEMANA: contra la Nexus del 24/Ago, Cury pasa de 2% a 11%, una ganancia de 9 puntos, el primer nombre fuera de los dos primeros en llegar a dos dígitos en esta serie, según CNN Brasil. En el mismo intervalo el segundo colocado cede 4 puntos, de 37% a 33%, y el líder cede 2, de 41% a 39%. ⚠️ Y LA SEGUNDA VUELTA NO SE MOVIÓ: era 46% a 45% el 24/Ago y sigue en 46% a 45%, es decir, el reacomodo de la primera vuelta no apareció en la segunda vuelta de la misma casa. 📌 Dos nacionales salieron este 31/Ago y discrepan en el tamaño de la distancia: esta da 6pp en la primera vuelta y 1pp en la segunda, y la AtlasIntel/Bloomberg del mismo día da 9,7pp y 4,5pp.",
+      "scenarios": [
+        {
+          "name": "Cenario Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 11
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45
+        }
+      ],
+      "source": "BTG/Nexus, divulgada el 31/Ago/2026 (campo del 28 al 30/Ago, n=2.005, teléfono, margen 2,0pp, registro [TSE](/es/glossary#tse) BR-08900/2026), contratada por BTG Pactual. Números verificados en el sitio del instituto, CNN Brasil, UOL y Poder360."
+    },
     {
       "institute": "Vox Brasil",
       "date": "2026-08-29",
@@ -1244,7 +1363,7 @@
     }
   ],
   "approvalData": {
-    "note": "🏷️ LOS NÚMEROS ESTRUCTURADOS DE ESTE BLOQUE SON DE GENIAL/QUAEST DEL 14/Ago, y son estos: 46% de aprobación frente a 48% de desaprobación, con 6% de no sabe, y 36% de bueno o muy bueno, 25% de regular y 37% de malo o pésimo. El panel mantiene UNA casa por bloque a propósito, para no sumar reglas de institutos distintos. ⭐ LECTURA NUEVA EL 27/Ago, declarada aquí y NO mezclada arriba: PoderData/Aya trae 42% de aprobación frente a 50% de desaprobación, y la gestión es mala o pésima para 48% frente a buena o muy buena para 33%, según Poder360 y CNN Brasil. 📌 Las tres lecturas anteriores de la semana: Indexa/Broadcast del 26/Ago con 46% frente a 50%, según Estadão y CNN Brasil; Gerp del 26/Ago con 43% frente a 51%, según CNN Brasil y Diário de São Paulo; y BTG/Nexus del 24/Ago con 48% frente a 49%, y 35% de bueno o muy bueno frente a 43% de malo o pésimo. ⚠️ LAS CUATRO CASAS COINCIDEN EN EL SIGNO Y DISCREPAN EN EL TAMAÑO: la desaprobación va de 49% a 51% y la aprobación de 42% a 48%, o sea seis puntos de amplitud entre institutos sobre la misma pregunta en la misma semana. El panel no promedia entre ellas.",
+    "note": "🏷️ LOS NÚMEROS ESTRUCTURADOS DE ESTE BLOQUE SON DE GENIAL/QUAEST DEL 14/Ago, y son estos: 46% de aprobación contra 48% de desaprobación, con 6% de no sabe, y 36% de excelente o bueno, 25% de regular y 37% de malo o pésimo. El panel mantiene UNA casa por bloque a propósito, para no sumar reglas de institutos diferentes. ⭐ DOS LECTURAS NUEVAS EL 31/Ago, declaradas aquí y NO mezcladas arriba, las dos con campo cerrado el 30/Ago, es decir, ya después del estreno del horario electoral gratuito el 28/Ago. La BTG/Nexus trae 46% de aprobación contra 51% de desaprobación (Poder360), y la propia casa registra que la distancia entre las dos es la mayor desde mayo (VEJA). La AtlasIntel/Bloomberg trae desaprobación de 52,9%, con el alza concentrada entre jóvenes y franjas de menor ingreso (InfoMoney). 📌 RECHAZO a los dos primeros colocados, también en las dos rondas del 31/Ago: la AtlasIntel da 52,7% para el segundo colocado y 52,0% para el líder (CNN Brasil, UOL), y la BTG/Nexus da 50% para el segundo y 49% para el líder (Metrópoles). En las dos casas el segundo colocado es el más rechazado, y en las dos la diferencia entre ellos cabe en el margen. 📌 Las lecturas anteriores de la semana siguen valiendo como serie: PoderData/Aya del 27/Ago con 42% contra 50%, Indexa/Broadcast del 26/Ago con 46% contra 50% y Gerp del 26/Ago con 43% contra 51%. ⚠️ Cada casa usa su propia regla de aprobación, así que la comparación que vale es la de cada instituto consigo mismo, nunca entre institutos.",
     "source": "Aprobación y desaprobación: Genial/Quaest 14 de ago de 2026 (campo del 10 al 13 de ago, n=2.004, presencial en 120 municipios, margen 2,0pp, registro TSE BR-06773/2026), divulgada por G1, CNN Brasil, Estadão, Correio Braziliense y Poder360. Rechazo: misma ronda, vía G1, Poder360, InfoMoney y O Globo. Evaluación de la gestión (óptimo/bueno, regular, malo/pésimo): Genial/Quaest 5 de ago de 2026, porque la ronda del 14 de ago no trajo esa apertura en las notas capturadas.",
     "date": "2026-08-11",
     "results": {
@@ -1285,52 +1404,52 @@
     "lastUpdate": "27/08/2026, 22:49"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC), con el libro presidencial en USD 139,76M. ESTE DOMINGO NO HUBO ENCUESTA NACIONAL DIVULGADA. La más reciente sigue siendo Vox Brasil del 29/Ago (BR-05519/2026, campo del 25 al 27/Ago, n=2.100), con margen de 2,15pp y campo presencial, con la [primera vuelta](/es/glossary#primeiro-turno) en 37,1% contra 34,8% y la [segunda vuelta](/es/glossary#segundo-turno) en 45,1% contra 44,5% para el segundo, dentro del margen. El precio sí se movió, y por un solo lado: el líder no sale de 55,50% desde la tarde del viernes, en nueve capturas seguidas, y el segundo subió 1,75pp, hasta 41,10%. La distancia cerró en 14,40pp, la más estrecha desde el 10/Jun, y el precio del segundo es el más alto suyo desde el 13/May, sin ser máximo de la serie, que sigue en 45,50% del 06/May. El registro del TSE trae ocho encuestas nacionales con divulgación prevista entre el 31/Ago y el 03/Sep, tres de ellas el lunes, entre ellas la primera Datafolha presidencial después de las entrevistas de los candidatos en TV Globo. Registro no es divulgación, y ningún número de esas ocho entra en el panel antes de salir.",
+    "note": "Precios de Polymarket en la lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC), con el libro presidencial en USD 140,52M. DOS ENCUESTAS NACIONALES FUERON DIVULGADAS ESTE LUNES, las primeras desde la Vox Brasil del 29/Ago. La AtlasIntel/Bloomberg (BR-07972/2026, campo del 25 al 30/Ago, n=5.014, formulario electrónico, margen de 1pp) trae la [primera vuelta](/es/glossary#primeiro-turno) en 43,4% a 33,7% y la [segunda](/es/glossary#segundo-turno) en 47,1% a 42,6%. La BTG/Nexus (BR-08900/2026, campo del 28 al 30/Ago, n=2.005, teléfono, margen de 2pp) trae 39% a 33% y 46% a 45%. Las dos coinciden sobre quién está adelante y discrepan sobre el tamaño: 9,7pp contra 6pp en la primera vuelta, y 4,5pp contra 1pp en la segunda. El campo de las dos cerró el 30/Ago, ya después del estreno del horario electoral gratuito el 28/Ago. En el precio, el líder no sale de 55,50% por tercer día seguido, y el segundo colocado cedió 2,05pp, de 41,10% a 39,05%, de modo que la distancia se abrió de 14,40pp a 16,45pp. ⭐ EL CRUCE DEL DÍA ESTÁ EN LA DIRECCIÓN: en la primera vuelta las dos mediciones apuntan hacia el mismo lado, con el segundo colocado cediendo en la urna declarada y en el precio. En la segunda vuelta apuntan hacia el mismo lado también, y es el lado del primer colocado: contra la Vox del 29/Ago, que daba al segundo 0,6pp adelante, la AtlasIntel devuelve 4,5pp de ventaja al líder y la Nexus devuelve 1pp, el mismo día en que el precio se abrió. ⚠️ Y la Nexus contra ella misma no se movió: eran los mismos 46% a 45% el 24/Ago. Esta ronda no publica número nuevo para Augusto Cury ni para los nombres del contrato de tercer lugar.",
     "sources": "Precios de Polymarket vía el proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato. El 27/Ago los cinco libros acompañados confirmaron en la lectura de las 22:49, incluido el contrato de Augusto Cury, que abrió ese mismo día. Encuestas registradas en el TSE y divulgadas por los institutos, con reporte de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC y Jornal de Brasília. La PoderData/Aya del 27/Ago fue verificada en dos fuentes, con el número de registro del TSE coincidiendo y con el alcance nacional confirmado en la divulgación, que declara 555 municipios en las 27 unidades federativas. Superlativo de serie verificado en el respaldo de Neon, en backup/neon/marketPrice, que guarda el registro completo desde el 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 37.1,
+        "percentage": 43.4,
         "odds": 55.5,
         "value": 55.5,
         "polymarket": "55,50%",
-        "pesquisaRange": "37,1-38%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago (BR-05519/2026, campo del 25 al 27/Ago, n=2.100) lo da en 37,1% en la primera vuelta, 2,3 puntos por delante, y en 44,5% en la segunda contra 45,1%, por detrás por 0,6 punto dentro del margen de 2,15pp. Frente a la propia Vox del 31/Jul cede 3,4pp en la primera vuelta y 3,0pp en la segunda.",
-        "tendenciaPolymarket": "55,50% (vol USD 9,50M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación por segundo día, y su precio no sale de 55,50% desde la tarde del 29/Ago, en nueve capturas seguidas de la serie. La distancia hacia el segundo bajó a 14,40pp, la más estrecha desde el 10/Jun."
+        "pesquisaRange": "39-43,4%",
+        "lastUpdate": "31/08/2026, 13:43",
+        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo da en 43,4% en la [primera vuelta](/es/glossary#primeiro-turno) y 47,1% en la [segunda](/es/glossary#segundo-turno) contra 42,6%, y la BTG/Nexus del mismo día lo da en 39% y 46% contra 45%. En la comparación de la Nexus consigo misma, contra el 24/Ago, cede 2 puntos en la primera vuelta y no se mueve en la segunda, que sigue en 46 a 45. Rechazo de 52,0% por la AtlasIntel y 49% por la Nexus.",
+        "tendenciaPolymarket": "55,50% (vol USD 9,53M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Sin variación en el día, y su precio no sale de 55,50% por tercer día seguido. La distancia hacia el segundo se abrió a 16,45pp, contra 14,40pp de ayer, y la apertura vino entera del otro lado."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 34.8,
-        "odds": 41.1,
-        "value": 41.1,
-        "polymarket": "41,10%",
-        "pesquisaRange": "34,8-35%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago lo da en 34,8% en la primera vuelta y en 45,1% en la segunda, por delante del líder por 0,6 punto y dentro del margen de 2,15pp, es decir, empate técnico. En las dos lecturas de Vox el signo de la segunda vuelta cambió de lado: el 31/Jul el líder estaba 6,4 puntos por delante y ahora está 0,6 punto por detrás. En la ventana de 30 días del panel él ya aparecía por delante en la segunda vuelta en otras tres encuestas nacionales: Gerp del 26/Ago, por 47% a 42%, Veritá del 21/Ago, por 47,3% a 42%, y Gerp del 11/Ago, por 45% a 43%. Las casas discrepan entre sí sobre la segunda vuelta, y el caso más claro es el 26/Ago, cuando Gerp le dio 47% a 42% y Indexa/Broadcast le dio 46% a 41% al líder, el MISMO día y con signos opuestos. Frente a la propia Vox del 31/Jul sube 3,6pp en la primera vuelta y 4,0pp en la segunda, con el mismo método presencial y la misma muestra.",
-        "tendenciaPolymarket": "41,10% (vol USD 9,31M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Alza de 1,75pp, la mayor variación entre los nombres del panel en esta ronda, y su precio más alto desde el 13/May. No es máximo de la serie: el techo sigue siendo 45,50%, del 06/May. En el contrato de 2º lugar de la primera vuelta está en 85,50%."
+        "percentage": 33.7,
+        "odds": 39.05,
+        "value": 39.05,
+        "polymarket": "39,05%",
+        "pesquisaRange": "33-33,7%",
+        "lastUpdate": "31/08/2026, 13:43",
+        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo da en 33,7% en la [primera vuelta](/es/glossary#primeiro-turno) y 42,6% en la [segunda](/es/glossary#segundo-turno), a 4,5 puntos del líder, y la BTG/Nexus del mismo día lo da en 33% y 45%, a 1 punto, dentro del margen de 2pp. En la comparación de la Nexus consigo misma, contra el 24/Ago, cede 4 puntos en la primera vuelta. Es el más rechazado en las dos casas, con 52,7% por la AtlasIntel y 50% por la Nexus.",
+        "tendenciaPolymarket": "39,05% (vol USD 9,37M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Caída de 2,05pp en el día, después de cuatro cierres seguidos al alza, de 35,50% el 27/Ago a 41,20% el 30/Ago. En el contrato de 2º lugar de la primera vuelta sigue en 85,50%, sin variación."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 2.6,
+        "percentage": 11,
         "odds": 1.85,
         "value": 1.85,
         "polymarket": "1,85%",
-        "pesquisaRange": "2,6-4%",
+        "pesquisaRange": "7,8-11%",
         "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago lo mide en 2,6% en la primera vuelta, el sexto nombre de la tabla, por debajo del 4% que PoderData/Aya le dio el 27/Ago.",
-        "tendenciaPolymarket": "1,85% (vol USD 2,89M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Caída de 1,40pp, la mayor caída entre los nombres del panel en esta ronda, en el cuarto día de vida de su serie. En el contrato de 3º lugar de la primera vuelta está en 25,45%."
+        "tendenciaPesquisa": "La BTG/Nexus del 31/Ago lo mide en 11% en la [primera vuelta](/es/glossary#primeiro-turno), contra 2% en su propia ronda del 24/Ago, una ganancia de 9 puntos en una semana, y es el primer nombre fuera de los dos primeros en llegar a dos dígitos en esa serie, según CNN Brasil. La AtlasIntel/Bloomberg del mismo día lo mide en 7,8%, prácticamente empatado con Renan Santos en la tercera posición. Las dos casas discrepan en 3,2 puntos sobre él.",
+        "tendenciaPolymarket": "Esta ronda no publica precio nuevo para él. El último precio publicado es el del 30/Ago, 16:40 BRT, en 1,85%. Su contrato se abrió el 27/Ago y la serie tiene 68 capturas, demasiado corta para un superlativo."
       },
       {
         "name": "Renan Santos",
-        "percentage": 3.3,
-        "odds": 2.25,
-        "value": 2.25,
-        "polymarket": "2,25%",
-        "pesquisaRange": "3,3-4%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago lo mide en 3,3% en la primera vuelta, el cuarto nombre de la tabla, por delante de Zema y de Cury y por detrás de Caiado.",
-        "tendenciaPolymarket": "2,25% (vol USD 11,88M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación, incluso en la captura posterior a la decisión del tribunal sobre su registro. En el contrato de 3º lugar de la primera vuelta está en 25,00%."
+        "percentage": 7.6,
+        "odds": 1.85,
+        "value": 1.85,
+        "polymarket": "1,85%",
+        "pesquisaRange": "3-7,6%",
+        "lastUpdate": "31/08/2026, 13:43",
+        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo mide en 7,6% en la [primera vuelta](/es/glossary#primeiro-turno), prácticamente empatado con Augusto Cury en la tercera posición, y en una [segunda vuelta](/es/glossary#segundo-turno) hipotética pierde por 47,5% a 26,0%. La BTG/Nexus del mismo día lo mide en 3%, sin variación contra el 24/Ago. Es la mayor distancia entre las dos casas sobre un mismo nombre en esta ronda, de 4,6 puntos.",
+        "tendenciaPolymarket": "1,85% (vol USD 11,95M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Caída de 0,40pp en el día. Su volumen acumulado es el mayor del libro presidencial entre los nombres por debajo de los dos primeros."
       },
       {
         "name": "Ronaldo Caiado",
@@ -1385,10 +1504,10 @@
         "pesquisaRange": "não testado",
         "lastUpdate": "30/08/2026, 16:40",
         "tendenciaPesquisa": "No se lo prueba como candidato presidencial en las nacionales de la ventana.",
-        "tendenciaPolymarket": "0,05% (vol USD 7,41M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación. No es candidato a la Presidencia: disputa la gobernación de São Paulo."
+        "tendenciaPolymarket": "0,05% (vol USD 7,41M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación. No es candidato a la Presidencia: disputa el gobierno de São Paulo."
       }
     ],
-    "updatedAt": "30/08/2026, 16:40",
-    "lastUpdate": "2026-08-30"
+    "updatedAt": "31/08/2026, 13:43",
+    "lastUpdate": "31/08/2026, 13:43"
   }
 }
