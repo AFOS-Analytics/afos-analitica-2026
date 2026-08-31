@@ -1,0 +1,97 @@
+{
+  "date": "2026-08-31",
+  "geradoEm": "2026-08-31T19:20:00.000Z",
+  "leituraDeMercado": {
+    "carimbo": "2026-08-31T16:43:00Z",
+    "carimboBRT": "31/08/2026, 13:43",
+    "livroPresidencial": "USD 140,52M"
+  },
+  "travaDeCaptura": {
+    "veredito": "BLOQUEADO",
+    "leituras": ["2026-08-31T18:48:36Z", "2026-08-31T18:56:37Z"],
+    "certificacaoPorLivro": {
+      "presidential": "BLOQUEADO",
+      "secondPlace": "APROVADO",
+      "thirdPlace": "BLOQUEADO",
+      "stf": "APROVADO",
+      "senate": "APROVADO"
+    },
+    "motivos": [
+      "thirdPlace:Flávio Bolsonaro discordou 0,55pp (0,80% -> 1,35%)",
+      "thirdPlace:Renan Santos discordou 0,50pp (15,00% -> 15,50%)",
+      "presidential:Renan Santos discordou 0,25pp (0,85% -> 1,10%)"
+    ]
+  },
+  "gateDeRebaseline": {
+    "disparou": true,
+    "gatilho": "Renan Santos moveu 1,00pp contra o JSON, de 1,85% para 0,85%",
+    "decisao": "NAO rebasear",
+    "razao": "O nome que disparou o gate e exatamente o que a trava nao certifica: Renan Santos aparece na lista de motivos do presidential. Preco em transito nao se publica. Lula e Flavio nao aparecem em nenhum motivo e o delta do Flavio e de 0,10pp, abaixo do limiar. A unica mudanca certificada era o 2o lugar do 1o turno, de 85,50% para 84,50%, e ela sozinha nao justifica recarimbar cinco arquivos para 15:48 com o livro presidencial bloqueado, o que criaria carimbo misto."
+  },
+  "factCheckGate": {
+    "eventosCandidatos": 2,
+    "eventos": [
+      {
+        "evento": "Toffoli suspende propaganda digital, repasse do fundo eleitoral e direito a debate da chapa de Renan Santos",
+        "verificacao1": "'Toffoli' aparece 3x nas ultimas dailies, todas em 2026-08-30 e todas sobre a RETIRADA DE PAUTA do registro. O ato de hoje e outro",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "url": "https://www.metropoles.com/colunas/andreza-matais/exclusivo-toffoli-nega-registro-de-candidatura-de-renan-santos",
+          "dataDoAto": "2026-08-30",
+          "dataPublica": "2026-08-31",
+          "tipo": "evento"
+        },
+        "segundaFonte": "https://www.cnnbrasil.com.br/politica/tse-suspende-campanha-de-renan-santos/",
+        "decisao": "incorporar",
+        "nota": "A URL do Metropoles diz 'nega registro' e o corpo diz que a CAMPANHA foi suspensa, nao o registro negado. As duas fontes confirmam campanha suspensa. Ir pela manchete teria publicado o oposto."
+      },
+      {
+        "evento": "TSE suspende peca da campanha de Lula com o 'curriculo' de Flavio Bolsonaro",
+        "verificacao1": "'propaganda' aparece 7x, todas em 2026-08-29 e sobre a ESTREIA do horario eleitoral em 28/Ago. Ato distinto",
+        "classificacao": "novidade",
+        "verificacao2": {
+          "url": "https://jornaldebrasilia.com.br/noticias/politica-e-poder/tse-suspende-propaganda-de-lula-que-lista-acusacoes-contra-flavio-bolsonaro/",
+          "ministra": "Estela Aranha",
+          "dataDoAto": "2026-08-30",
+          "dataPublica": "2026-08-31",
+          "tipo": "evento"
+        },
+        "segundaFonte": "convergencia em A Tarde, Diario de Goias, ICL e Revista Forum, independentes entre si e do Jornal de Brasilia",
+        "decisao": "incorporar"
+      }
+    ],
+    "naoIncorporado": [
+      {
+        "item": "numero de perfis de redes sociais informados fora do prazo",
+        "razao": "a daily de 30/Ago publicou 18 e as fontes de 31/Ago convergem em 16. Divergencia nao resolvida, numero fica fora da peca e foi levada ao Andre"
+      },
+      {
+        "item": "multa por descumprimento da decisao do Toffoli",
+        "razao": "parte da cobertura fala em R$ 50 mil por violacao e a CNN Brasil descreve a decisao como cautelar sem mencionar multa. Fontes divergem"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims acusou 2 linhas, MDB 14,30% e a faixa de inflacao. Conferido na serie do Neon: o Senado batia no carimbo de 13:43; a inflacao NAO batia, era 46,40% e estava escrito 46,35%, valor da leitura das 18:48. Corrigido",
+    "fontesInventadas": "nenhuma. As 12 URLs saem do news-cache por casamento de titulo, puxadas por script, e o portao de URL as validou por HEAD",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. A queda de 2,05pp sai como saida de faixa por momentum, e a coincidencia de direcao entre urna e preco esta escrita como coincidencia",
+    "verbosCriticos": "'suspendeu' aparece 3x e sai desambiguado como decisao MONOCRATICA e CAUTELAR nos dois casos. 'Nega o registro' foi trocado por 'nao nega o registro, suspende a campanha'",
+    "decisao": "prosseguir"
+  },
+  "travasFinais": {
+    "palavrasNoCorpo": 1100,
+    "tetoDePalavras": 1100,
+    "emojiPorIdioma": { "pt-BR": 0, "en": 0, "es": 0 },
+    "gateNumericoEntreIdiomas": "65 tokens identicos nos tres",
+    "separadorDecimal": "virgula em pt-BR e es, ponto em en, zero cruzados",
+    "tldrBullets": { "pt-BR": 3, "en": 3, "es": 3 },
+    "validator": "OK, 1 warning de densidade de links em 61%"
+  },
+  "wayback": {
+    "precheck": "HTTP 429",
+    "acao": "NAO executado. Pela regra da casa, bloqueio de host nao se resolve insistindo, e o Andre foi avisado no comeco da sessao",
+    "passivo": "segue parado"
+  }
+}
