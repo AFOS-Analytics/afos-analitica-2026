@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-31",
+  "lastUpdate": "2026-09-01",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,108 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-09-01",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-03490/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-08-27 a 2026-08-31",
+      "note": "Real Time Big Data, divulgada el 01/Set (Gazeta do Povo, CNN Brasil, Poder360, Money Times, R7, CartaCapital, VEJA, Brasil 247). ⚠️ LA CASA PUBLICÓ DOS ESCENARIOS DE PRIMERA VUELTA Y DAN NÚMEROS DISTINTOS PARA EL SEGUNDO Y EL TERCER COLOCADOS. Con Pablo Marçal en la lista, Lula 38%, Flávio Bolsonaro 29% y Augusto Cury 10%. Sin Marçal, Lula 38%, Flávio 30% y Cury 11%. Los titulares del día circularon el segundo escenario sin decir que era el escenario sin Marçal, y por eso el panel trae los dos rotulados. En la segunda vuelta, Lula 44% x Flávio 44%, empate. ⭐ EN EL ESCENARIO CONTRA RONALDO CAIADO, LULA PIERDE POR 45% A 43%. En las 41 simulaciones de segunda vuelta de la base del panel, Lula ya quedó detrás en cuatro, y las cuatro eran contra Flávio Bolsonaro. Es la primera vez en la base que un nombre fuera de él aparece adelante. En los demás, Lula 43% x Romeu Zema 40%, Lula 44% x Renan Santos 37% y Lula 44% x Pablo Marçal 40%. En el rechazo, Lula y Flávio empatan en 50%, Marçal tiene 48%, Renan 40%, Caiado 39%, Zema 36% y Augusto Cury 24%, el menor entre los siete nombres testeados en esta encuesta. Campo del 27 al 31/Ago, n=2.000, margen de 2pp, 95% de confianza, registro BR-03490/2026. ⭐ ES LA PRIMERA NACIONAL DEL PANEL CON CAMPO QUE ALCANZA EL 31/Ago, y por lo tanto la primera que cubre la semana entera después del inicio del espacio electoral el 28/Ago.",
+      "scenarios": [
+        {
+          "name": "Escenario estimulado con Pablo Marçal (primera vuelta)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 29
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 10
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            }
+          ]
+        },
+        {
+          "name": "Escenario estimulado sin Pablo Marçal (primera vuelta)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 11
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        },
+        {
+          "matchup": "Caiado vs Lula",
+          "candidate1": "Ronaldo Caiado",
+          "percent1": 45,
+          "candidate2": "Lula",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Romeu Zema",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        },
+        {
+          "matchup": "Lula vs Marçal",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Pablo Marçal",
+          "percent2": 40
+        }
+      ],
+      "source": "Real Time Big Data, divulgada el 01/Set/2026 (campo del 27 al 31/Ago, n=2.000, margen de 2pp, 95% de confianza, registro TSE BR-03490/2026). Tabla completa de los dos escenarios de primera vuelta, de los cinco escenarios de segunda vuelta y del rechazo verificada en Gazeta do Povo, con los números de la primera y de la segunda vuelta verificados también en CNN Brasil, Poder360, Money Times y R7."
+    },
     {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-08-31",
@@ -1401,66 +1503,66 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "27/08/2026, 22:49"
+    "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket en la lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC), con el libro presidencial en USD 140,52M. DOS ENCUESTAS NACIONALES FUERON DIVULGADAS ESTE LUNES, las primeras desde la Vox Brasil del 29/Ago. La AtlasIntel/Bloomberg (BR-07972/2026, campo del 25 al 30/Ago, n=5.014, formulario electrónico, margen de 1pp) trae la [primera vuelta](/es/glossary#primeiro-turno) en 43,4% a 33,7% y la [segunda](/es/glossary#segundo-turno) en 47,1% a 42,6%. La BTG/Nexus (BR-08900/2026, campo del 28 al 30/Ago, n=2.005, teléfono, margen de 2pp) trae 39% a 33% y 46% a 45%. Las dos coinciden sobre quién está adelante y discrepan sobre el tamaño: 9,7pp contra 6pp en la primera vuelta, y 4,5pp contra 1pp en la segunda. El campo de las dos cerró el 30/Ago, ya después del estreno del horario electoral gratuito el 28/Ago. En el precio, el líder no sale de 55,50% por tercer día seguido, y el segundo colocado cedió 2,05pp, de 41,10% a 39,05%, de modo que la distancia se abrió de 14,40pp a 16,45pp. ⭐ EL CRUCE DEL DÍA ESTÁ EN LA DIRECCIÓN: en la primera vuelta las dos mediciones apuntan hacia el mismo lado, con el segundo colocado cediendo en la urna declarada y en el precio. En la segunda vuelta apuntan hacia el mismo lado también, y es el lado del primer colocado: contra la Vox del 29/Ago, que daba al segundo 0,6pp adelante, la AtlasIntel devuelve 4,5pp de ventaja al líder y la Nexus devuelve 1pp, el mismo día en que el precio se abrió. ⚠️ Y la Nexus contra ella misma no se movió: eran los mismos 46% a 45% el 24/Ago. Esta ronda no publica número nuevo para Augusto Cury ni para los nombres del contrato de tercer lugar.",
+    "note": "Precios del Polymarket en la lectura confirmada del 01/Set, 20:34 BRT (23:34 UTC), con el libro presidencial en USD 141,39M. UNA ENCUESTA NACIONAL FUE DIVULGADA ESTE MARTES, la Real Time Big Data (BR-03490/2026, campo del 27 al 31/Ago, n=2.000, margen de 2pp), y es la primera del panel cuyo campo alcanza el 31/Ago, o sea, la primera que cubre la semana entera después del inicio del espacio electoral el 28/Ago. ⚠️ LA CASA PUBLICÓ DOS ESCENARIOS DE PRIMERA VUELTA: con Pablo Marçal en la lista, 38% a 29% con Augusto Cury en 10%; sin Marçal, 38% a 30% con Cury en 11%. Los titulares del día circularon el segundo sin decir cuál era. En la segunda vuelta, el líder y el segundo colocado volvieron al empate, en 44% a 44%. ⭐ Y EN EL ESCENARIO CONTRA RONALDO CAIADO EL LÍDER APARECE DETRÁS, POR 45% A 43%: en las 41 simulaciones de segunda vuelta de la base del panel ya quedó detrás en cuatro, y las cuatro eran contra el segundo colocado, así que es la primera vez que un nombre fuera de él aparece adelante. En el precio, el líder no sale de 55,50% por cuarto día seguido y el segundo cedió 0,10pp, a 38,95%, de modo que la distancia se abrió de 16,45pp a 16,55pp. Quienes se movieron fueron los nombres de abajo: Renan Santos subió 0,70pp, a 2,55%, y Augusto Cury subió 0,50pp, a 2,35%. Las dos magnitudes no se restan: la encuesta mide intención de voto declarada, incluso en escenarios hipotéticos, y el precio mide chance de victoria en la elección real.",
     "sources": "Precios de Polymarket vía el proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato. El 27/Ago los cinco libros acompañados confirmaron en la lectura de las 22:49, incluido el contrato de Augusto Cury, que abrió ese mismo día. Encuestas registradas en el TSE y divulgadas por los institutos, con reporte de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC y Jornal de Brasília. La PoderData/Aya del 27/Ago fue verificada en dos fuentes, con el número de registro del TSE coincidiendo y con el alcance nacional confirmado en la divulgación, que declara 555 municipios en las 27 unidades federativas. Superlativo de serie verificado en el respaldo de Neon, en backup/neon/marketPrice, que guarda el registro completo desde el 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 43.4,
+        "percentage": 38,
         "odds": 55.5,
         "value": 55.5,
         "polymarket": "55,50%",
-        "pesquisaRange": "39-43,4%",
-        "lastUpdate": "31/08/2026, 13:43",
-        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo da en 43,4% en la [primera vuelta](/es/glossary#primeiro-turno) y 47,1% en la [segunda](/es/glossary#segundo-turno) contra 42,6%, y la BTG/Nexus del mismo día lo da en 39% y 46% contra 45%. En la comparación de la Nexus consigo misma, contra el 24/Ago, cede 2 puntos en la primera vuelta y no se mueve en la segunda, que sigue en 46 a 45. Rechazo de 52,0% por la AtlasIntel y 49% por la Nexus.",
-        "tendenciaPolymarket": "55,50% (vol USD 9,53M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Sin variación en el día, y su precio no sale de 55,50% por tercer día seguido. La distancia hacia el segundo se abrió a 16,45pp, contra 14,40pp de ayer, y la apertura vino entera del otro lado."
+        "pesquisaRange": "38%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time Big Data del 01/Set (BR-03490/2026, campo del 27 al 31/Ago, n=2.000) lo da en 38% en los dos escenarios de primera vuelta. En la segunda vuelta empata con el segundo colocado en 44% a 44%, y pierde con Ronaldo Caiado por 45% a 43%. Contra Romeu Zema vence por 43% a 40%, contra Renan Santos por 44% a 37% y contra Pablo Marçal por 44% a 40%. Rechazo de 50%.",
+        "tendenciaPolymarket": "55,50% (vol USD 9,56M), lectura confirmada del 01/Set, 20:34 BRT (23:34 UTC). Sin variación en el día, y su precio no sale de 55,50% por cuarto día seguido. La distancia al segundo se abrió a 16,55pp."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 33.7,
-        "odds": 39.05,
-        "value": 39.05,
-        "polymarket": "39,05%",
-        "pesquisaRange": "33-33,7%",
-        "lastUpdate": "31/08/2026, 13:43",
-        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo da en 33,7% en la [primera vuelta](/es/glossary#primeiro-turno) y 42,6% en la [segunda](/es/glossary#segundo-turno), a 4,5 puntos del líder, y la BTG/Nexus del mismo día lo da en 33% y 45%, a 1 punto, dentro del margen de 2pp. En la comparación de la Nexus consigo misma, contra el 24/Ago, cede 4 puntos en la primera vuelta. Es el más rechazado en las dos casas, con 52,7% por la AtlasIntel y 50% por la Nexus.",
-        "tendenciaPolymarket": "39,05% (vol USD 9,37M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Caída de 2,05pp en el día, después de cuatro cierres seguidos al alza, de 35,50% el 27/Ago a 41,20% el 30/Ago. En el contrato de 2º lugar de la primera vuelta sigue en 85,50%, sin variación."
+        "percentage": 30,
+        "odds": 38.95,
+        "value": 38.95,
+        "polymarket": "38,95%",
+        "pesquisaRange": "29-30%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La misma Real Time lo da en 29% en el escenario con Pablo Marçal y en 30% en el escenario sin. En la segunda vuelta empata con el líder en 44% a 44%. Rechazo de 50%, empatado con el del líder.",
+        "tendenciaPolymarket": "38,95% (vol USD 9,43M), lectura confirmada del 01/Set, 20:34 BRT (23:34 UTC). Caída de 0,10pp en el día. En el contrato de segundo lugar de la primera vuelta subió 0,50pp, a 86,00%."
       },
       {
         "name": "Augusto Cury",
         "percentage": 11,
-        "odds": 1.85,
-        "value": 1.85,
-        "polymarket": "1,85%",
-        "pesquisaRange": "7,8-11%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La BTG/Nexus del 31/Ago lo mide en 11% en la [primera vuelta](/es/glossary#primeiro-turno), contra 2% en su propia ronda del 24/Ago, una ganancia de 9 puntos en una semana, y es el primer nombre fuera de los dos primeros en llegar a dos dígitos en esa serie, según CNN Brasil. La AtlasIntel/Bloomberg del mismo día lo mide en 7,8%, prácticamente empatado con Renan Santos en la tercera posición. Las dos casas discrepan en 3,2 puntos sobre él.",
-        "tendenciaPolymarket": "Esta ronda no publica precio nuevo para él. El último precio publicado es el del 30/Ago, 16:40 BRT, en 1,85%. Su contrato se abrió el 27/Ago y la serie tiene 68 capturas, demasiado corta para un superlativo."
+        "odds": 2.35,
+        "value": 2.35,
+        "polymarket": "2,35%",
+        "pesquisaRange": "10-11%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time lo mide en 10% en el escenario con Pablo Marçal y en 11% en el escenario sin. Es la segunda casa seguida que lo coloca en dos dígitos, después del 11% de la BTG/Nexus del 31/Ago. Rechazo de 24%, el menor entre los siete nombres testeados.",
+        "tendenciaPolymarket": "2,35% (vol USD 3,50M), lectura confirmada del 01/Set, 20:34 BRT (23:34 UTC). Alza de 0,50pp contra el último precio publicado, el del 30/Ago. Pasó a liderar el contrato de tercer lugar de la primera vuelta, con 46,65%."
       },
       {
         "name": "Renan Santos",
-        "percentage": 7.6,
-        "odds": 1.85,
-        "value": 1.85,
-        "polymarket": "1,85%",
-        "pesquisaRange": "3-7,6%",
-        "lastUpdate": "31/08/2026, 13:43",
-        "tendenciaPesquisa": "La AtlasIntel/Bloomberg del 31/Ago lo mide en 7,6% en la [primera vuelta](/es/glossary#primeiro-turno), prácticamente empatado con Augusto Cury en la tercera posición, y en una [segunda vuelta](/es/glossary#segundo-turno) hipotética pierde por 47,5% a 26,0%. La BTG/Nexus del mismo día lo mide en 3%, sin variación contra el 24/Ago. Es la mayor distancia entre las dos casas sobre un mismo nombre en esta ronda, de 4,6 puntos.",
-        "tendenciaPolymarket": "1,85% (vol USD 11,95M), lectura confirmada del 31/Ago, 13:43 BRT (16:43 UTC). Caída de 0,40pp en el día. Su volumen acumulado es el mayor del libro presidencial entre los nombres por debajo de los dos primeros."
+        "percentage": 6,
+        "odds": 2.55,
+        "value": 2.55,
+        "polymarket": "2,55%",
+        "pesquisaRange": "6%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time lo mide en 6% en el escenario con Pablo Marçal. En una segunda vuelta pierde con el líder por 44% a 37%. Rechazo de 40%.",
+        "tendenciaPolymarket": "2,55% (vol USD 12,30M), lectura confirmada del 01/Set, 20:34 BRT (23:34 UTC). Alza de 0,70pp, la mayor variación entre los nombres del presidencial en esta ronda, el día en que la decisión que trababa su campaña fue revisada. En el contrato de tercer lugar cayó a 30,00% y perdió el liderazgo."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 5,
-        "odds": 0.15,
-        "value": 0.15,
-        "polymarket": "0,15%",
-        "pesquisaRange": "4-5%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago lo coloca en 5,0% en la primera vuelta, el TERCER nombre de la tabla. En la segunda vuelta pierde ante el líder por 45,5% a 41,1%, distancia de 4,4 puntos.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,97M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Caída de 0,10pp, y por debajo del piso de 0,5% de la doble lectura. En el contrato de 3º lugar de la primera vuelta es el primer nombre, con 43,50%."
+        "percentage": 4,
+        "odds": 0.25,
+        "value": 0.25,
+        "polymarket": "0,25%",
+        "pesquisaRange": "4%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time Big Data del 01/Set lo coloca en 4% en la primera vuelta. En una segunda vuelta vence al líder, por 45% a 43%. En las 41 simulaciones de segunda vuelta de la base del panel el líder ya quedó detrás en cuatro, y las cuatro eran contra el segundo colocado, así que es la primera vez que un nombre fuera de él aparece adelante. Rechazo de 39%.",
+        "tendenciaPolymarket": "0,25% (vol USD 7,03M), por debajo del piso de 0,5% de la doble lectura. Esta ronda no publica precio nuevo para él. En el contrato de tercer lugar de la primera vuelta está en 13,00%."
       },
       {
         "name": "Pablo Marçal",
@@ -1468,21 +1570,21 @@
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
-        "pesquisaRange": "2-5,2%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago no lo trae en la tabla divulgada de la primera vuelta. PoderData/Aya del 27/Ago lo medía en 3% en la primera vuelta.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,07M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación, y por debajo del piso de 0,5% de la doble lectura."
+        "pesquisaRange": "3%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time lo trae en 3% en el escenario con él en la lista, y es su presencia la que separa los dos escenarios publicados por la casa. En una segunda vuelta pierde con el líder por 44% a 40%. Rechazo de 48%.",
+        "tendenciaPolymarket": "Por debajo de 0,20% (vol USD 3,07M), por debajo del piso de 0,5% de la doble lectura. Esta ronda no publica precio nuevo para él."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 2.8,
-        "odds": 0.05,
-        "value": 0.05,
-        "polymarket": "0,05%",
-        "pesquisaRange": "1-2,8%",
-        "lastUpdate": "30/08/2026, 16:40",
-        "tendenciaPesquisa": "La Vox Brasil del 29/Ago lo mide en 2,8% en la primera vuelta y prueba un escenario de segunda vuelta en que pierde ante el líder por 45,5% a 39,3%.",
-        "tendenciaPolymarket": "0,05% (vol USD 6,37M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación, y por debajo del piso de 0,5% de la doble lectura. En el contrato de 3º lugar de la primera vuelta está en 2,15%."
+        "percentage": 2,
+        "odds": 0.15,
+        "value": 0.15,
+        "polymarket": "0,15%",
+        "pesquisaRange": "2%",
+        "lastUpdate": "01/09/2026, 20:34",
+        "tendenciaPesquisa": "La Real Time lo mide en 2% en la primera vuelta. En una segunda vuelta pierde con el líder por 43% a 40%, la distancia más estrecha entre los escenarios en que el líder vence. Rechazo de 36%.",
+        "tendenciaPolymarket": "Por debajo de 0,20% (vol USD 6,37M), por debajo del piso de 0,5% de la doble lectura. Esta ronda no publica precio nuevo para él. En el contrato de tercer lugar de la primera vuelta está en 0,80%."
       },
       {
         "name": "Tarcísio",
@@ -1507,7 +1609,7 @@
         "tendenciaPolymarket": "0,05% (vol USD 7,41M) en la lectura confirmada del 30/Ago, 16:40 BRT (19:40 UTC). Sin variación. No es candidato a la Presidencia: disputa el gobierno de São Paulo."
       }
     ],
-    "updatedAt": "31/08/2026, 13:43",
-    "lastUpdate": "31/08/2026, 13:43"
+    "updatedAt": "01/09/2026, 20:34",
+    "lastUpdate": "01/09/2026, 20:34"
   }
 }

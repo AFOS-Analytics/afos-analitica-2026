@@ -1,171 +1,173 @@
 {
-  "updatedAt": "31/08/2026, 13:43",
-  "subtitle": "Cruzamento de 31 de agosto de 2026: preço do Polymarket em leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC), livro presidencial em USD 140,52M, contra as DUAS pesquisas nacionais divulgadas nesta segunda, a AtlasIntel/Bloomberg de 31/Ago (BR-07972/2026, campo 25 a 30/Ago, n=5.014) e a BTG/Nexus de 31/Ago (BR-08900/2026, campo 28 a 30/Ago, n=2.005). São as primeiras nacionais desde a Vox Brasil de 29/Ago, e o campo das duas fechou em 30/Ago, já depois da estreia do horário eleitoral em 28/Ago.",
+  "updatedAt": "01/09/2026, 20:34",
+  "subtitle": "Cruzamento de 1º de setembro de 2026: preço do Polymarket em leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC), livro presidencial em USD 141,39M, contra a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp), a única nacional divulgada nesta terça. Ela é a primeira do painel cujo campo alcança 31/Ago, e portanto a primeira que cobre a semana inteira depois da estreia do horário eleitoral em 28/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e eles dão números diferentes para o segundo e o terceiro colocados.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 55,50% (vol USD 9,53M acumulado), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Sem variação no dia, e o preço dele não sai de 55,50% pelo terceiro dia seguido. PESQUISA: a AtlasIntel o dá em 43,4% no 1º turno e 47,1% no 2º contra 42,6%, e a BTG/Nexus o dá em 39% e 46% contra 45%. As duas concordam que ele está à frente e discordam do tamanho: 9,7pp contra 6pp no 1º turno.",
+      "header": "PREÇO: 55,50% (vol USD 9,56M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Sem variação no dia, e o preço dele não sai de 55,50% pelo quarto dia seguido. PESQUISA: a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp) o dá em 38% nos dois cenários de 1º turno e em 44% num 2º turno contra o segundo colocado, que também tem 44%. Contra Ronaldo Caiado ele aparece atrás, por 45% a 43%.",
       "fortes": [
-        "As duas nacionais desta segunda o colocam à frente no 1º e no 2º turno, e é a primeira vez desde a Vox de 29/Ago que o 2º turno volta a ter sinal favorável a ele em pesquisa nacional divulgada.",
-        "A AtlasIntel é a maior amostra nacional da janela de 30 dias do painel, com n=5.014, e nela a vantagem no 1º turno é de 9,7 pontos.",
-        "Nos cenários alternativos da AtlasIntel ele vence todos os testados: 46,6% a 41,0% contra Ronaldo Caiado, 47,0% a 40,7% contra Romeu Zema e 47,5% a 26,0% contra Renan Santos.",
-        "É menos rejeitado que o segundo colocado nas duas casas, com 52,0% pela AtlasIntel e 49% pela BTG/Nexus.",
-        "No preço, a distância para o segundo colocado abriu para 16,45pp, contra 14,40pp na véspera, e a abertura veio inteira do lado do adversário."
+        "Segue à frente no 1º turno na única nacional da terça, com 38% nos dois cenários, e a distância para o segundo é de 9 pontos no cenário com Marçal e de 8 no cenário sem.",
+        "No preço, é o quarto dia seguido em 55,50%, e a distância para o segundo colocado abriu para 16,55pp sem que ele tivesse de se mover.",
+        "A decisão que suspendia a propaganda do adversário no caso do registro foi revista, mas a propaganda dele própria também foi alvo: o painel registra as duas, e nenhuma das duas mexeu no preço.",
+        "A rejeição dele é de 50%, empatada com a do segundo colocado, e não é a maior da tabela.",
+        "O contrato de 2º lugar do 1º turno o mantém em 9,20%, ou seja, o mercado segue tratando a chegada dele ao 2º turno como cenário dominante e não como disputa."
       ],
       "fracos": [
-        "A desaprovação do governo aparece acima da aprovação nas duas leituras novas: 52,9% de desaprovação pela AtlasIntel, segundo InfoMoney, e 46% de aprovação contra 51% de desaprovação pela BTG/Nexus, segundo VEJA.",
-        "A própria BTG/Nexus registra que a distância entre aprovação e desaprovação é a maior desde maio.",
-        "Na comparação da Nexus com ela mesma, contra a rodada de 24/Ago, ele cede 2 pontos no 1º turno, de 41% para 39%.",
-        "No 2º turno da mesma Nexus o quadro não se moveu: era 46% a 45% em 24/Ago e segue 46% a 45%, ou seja, o rearranjo do 1º turno não chegou ao returno.",
-        "O TSE suspendeu a peça de propaganda da campanha dele que listava um currículo do adversário citando o Banco Master e a rachadinha, segundo O Globo, Folha de S.Paulo, Terra e CBN, e a Justiça Eleitoral suspendeu também a que o chamava de funcionário fantasma, segundo G1."
+        "ELE APARECE ATRÁS NUM CENÁRIO DE 2º TURNO PELA PRIMEIRA VEZ CONTRA UM NOME QUE NÃO É O SEGUNDO COLOCADO: perde para Ronaldo Caiado por 45% a 43%. Nas 41 simulações de 2º turno da base do painel ele já ficou atrás em quatro, e as quatro eram contra o mesmo adversário.",
+        "O 2º turno contra o segundo colocado saiu do sinal favorável de 31/Ago e voltou ao empate, em 44% a 44%.",
+        "A propaganda dele que usava o Rap do Silva foi suspensa por não apresentar o vice, segundo Estadão, CartaCapital e Metrópoles.",
+        "Os 38% desta pesquisa ficam abaixo dos 43,4% da AtlasIntel e acima dos 39% da BTG/Nexus, as duas de 31/Ago, e a distância entre as casas sobre o mesmo nome segue larga.",
+        "A desaprovação do governo segue acima da aprovação nas duas leituras mais recentes, as duas de 31/Ago, e não houve leitura de aprovação nova nesta terça."
       ],
-      "analise": "A segunda-feira devolveu ao painel o que faltava desde 29/Ago: leitura de urna. Duas nacionais saíram no mesmo dia, com métodos diferentes e amostras diferentes, e as duas o colocam à frente nos dois turnos. Elas discordam do tamanho, 9,7pp contra 6pp no 1º turno e 4,5pp contra 1pp no 2º, e não discordam do sinal. No preço ele está em 55,50% (vol USD 9,53M) e não se moveu pelo terceiro dia, enquanto o adversário cedeu 2,05pp. É a primeira rodada da semana em que as duas medições andam na mesma direção no 1º turno, com o segundo colocado cedendo na urna declarada e no preço. O lado que não acompanha é o da avaliação do governo: as duas casas trazem desaprovação acima da aprovação, e a Nexus registra a maior distância entre as duas desde maio. Intenção de voto e avaliação de governo são réguas diferentes, e o painel não as soma."
+      "analise": "A terça trouxe uma nacional só, e ela é a primeira do painel que cobre a semana inteira depois da estreia do horário eleitoral. No 1º turno o quadro dele não muda: 38% nos dois cenários, à frente. O que muda é o 2º turno. Contra o segundo colocado ele voltou ao empate, em 44% a 44%, depois do sinal favorável de 31/Ago. E contra Ronaldo Caiado ele aparece atrás, por 45% a 43%, o que na base do painel só tinha acontecido contra um adversário até hoje. No preço nada disso apareceu: ele fica em 55,50% pelo quarto dia, e a distância para o segundo abriu 0,10pp por movimento do outro lado. É a diferença entre as duas grandezas ficando visível no mesmo dia, uma medindo intenção declarada num cenário hipotético e a outra medindo chance de vitória no cenário real."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 39,05% (vol USD 9,37M acumulado), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Queda de 2,05pp no dia, a maior variação entre os nomes do painel nesta rodada. PESQUISA: a AtlasIntel o dá em 33,7% no 1º turno e 42,6% no 2º, e a BTG/Nexus em 33% e 45%, a 1 ponto do líder e dentro da margem de 2pp.",
+      "header": "PREÇO: 38,95% (vol USD 9,43M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Queda de 0,10pp no dia. No contrato de 2º lugar do 1º turno subiu 0,50pp, para 86,00%. PESQUISA: a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp) o dá em 29% no cenário com Pablo Marçal e em 30% no cenário sem, e num 2º turno ele empata com o líder em 44% a 44%.",
       "fortes": [
-        "No 2º turno da BTG/Nexus ele está a 1 ponto do líder, 45% contra 46%, dentro da margem de 2pp, o que caracteriza empate técnico.",
-        "No contrato de 2º lugar do 1º turno ele segue em 85,50%, sem variação, e é o nome mais provável a chegar ao returno segundo o mercado.",
-        "O 2º turno da Nexus não se moveu contra a rodada da própria casa de 24/Ago, apesar de ele ter cedido 4 pontos no 1º turno no mesmo intervalo.",
-        "O volume acumulado do contrato dele, USD 9,37M, é o segundo maior do livro presidencial e está a menos de USD 0,2M do volume do líder.",
-        "A propaganda da campanha adversária que listava acusações contra ele foi suspensa pelo TSE e pela Justiça Eleitoral no mesmo dia, segundo O Globo, Folha de S.Paulo e G1."
+        "Empata com o líder no 2º turno, em 44% a 44%, depois de aparecer atrás por 1 ponto na BTG/Nexus e por 4,5 na AtlasIntel, as duas de 31/Ago.",
+        "O contrato de 2º lugar do 1º turno subiu para 86,00%, alta de 0,50pp, e é a posição mais consolidada do painel depois da liderança do 1º colocado.",
+        "A rejeição dele é de 50%, empatada com a do líder, e não é mais a maior isolada como nas duas leituras de 31/Ago.",
+        "A queda de preço do dia é de 0,10pp, ou seja, ele reteve quase toda a posição depois da correção de 2,05pp da véspera."
       ],
       "fracos": [
-        "Cedeu 2,05pp no preço, de 41,10% para 39,05%, depois de quatro fechamentos seguidos de alta que o tinham levado de 35,50% em 27/Ago a 41,20% em 30/Ago.",
-        "Na comparação da Nexus com ela mesma ele cede 4 pontos no 1º turno, de 37% para 33%, o dobro da perda do líder no mesmo intervalo.",
-        "É o mais rejeitado nas duas casas, com 52,7% pela AtlasIntel, segundo CNN Brasil, e 50% pela BTG/Nexus, segundo Metrópoles.",
-        "A distância para o líder abriu nas duas medições ao mesmo tempo: 16,45pp no preço, contra 14,40pp na véspera, e 9,7pp na AtlasIntel.",
-        "O ex-comandante da FAB negou fazer campanha para o líder e rebateu declaração dele, segundo O Tempo e G1."
+        "É o nome cujo número muda conforme o cenário: 29% com Marçal na lista e 30% sem. A diferença é pequena, mas é ele e o terceiro colocado que absorvem a saída do outro nome.",
+        "Os 29% ou 30% desta pesquisa ficam abaixo dos 33,7% da AtlasIntel e dos 33% da BTG/Nexus, as duas de 31/Ago, ou seja, a terceira leitura seguida o coloca em patamar mais baixo.",
+        "No preço, acumula queda desde o pico de 41,20% de 30/Ago, e está 2,25pp abaixo dele.",
+        "Um pedido para afastá-lo do mandato de senador foi levado ao Supremo, segundo Folha de S.Paulo.",
+        "A distância para o líder no preço abriu de novo, para 16,55pp, e a abertura veio do lado dele."
       ],
-      "analise": "Foi o nome que mais se moveu nesta rodada, e o movimento é de queda nas duas medições ao mesmo tempo. No preço ele cedeu 2,05pp e voltou para 39,05% (vol USD 9,37M), desfazendo boa parte da subida de quatro pregões que o tinha levado a 41,20% em 30/Ago. Na urna declarada, a comparação que vale é a da Nexus com ela mesma, mesmo método e mesma amostra: ele cede 4 pontos no 1º turno em uma semana, o dobro do que o líder cedeu. O contraponto está no returno: na mesma Nexus o 2º turno ficou parado em 45% contra 46%, dentro da margem, e ele segue em 85,50% no contrato de 2º lugar do 1º turno. Ou seja, o mercado continua tratando como quase certo que ele chega ao returno, e o que se moveu foi a expectativa sobre o que acontece lá. A rejeição é o dado mais estável do conjunto: ele é o mais rejeitado nas duas casas."
+      "analise": "A pesquisa da terça o traz em patamar mais baixo do que as duas de 31/Ago no 1º turno, entre 29% e 30% conforme o cenário, e ao mesmo tempo em posição melhor no 2º turno, onde empata em 44% a 44%. As duas coisas não se contradizem: uma mede o campo dividido entre sete nomes e a outra mede o campo dividido entre dois. No preço, ele quase não se moveu, com queda de 0,10pp, depois de ter cedido 2,05pp na véspera. E o contrato que mede a chegada dele ao 2º turno subiu para 86,00%, o que indica que o mercado tratou o dia como confirmação da posição dele, não como ameaça a ela. A cobrança pública que ele fez pela saída de um ministro do Supremo não aparece em nenhuma das duas medições."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 1,85% (vol USD 11,95M acumulado), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Queda de 0,40pp no dia. PESQUISA: a AtlasIntel o mede em 7,6% no 1º turno, praticamente empatado com Augusto Cury na terceira posição, e a BTG/Nexus o mede em 3%, sem variação contra 24/Ago.",
+      "header": "PREÇO: 2,55% (vol USD 12,30M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Alta de 0,70pp no dia, a maior variação percentual entre os nomes do presidencial nesta rodada. PESQUISA: a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp) o dá em 6% no cenário com Pablo Marçal, terceiro nome fora dos dois primeiros. Num 2º turno perde para o líder por 44% a 37%.",
       "fortes": [
-        "A AtlasIntel o coloca em 7,6% no 1º turno, praticamente empatado com Augusto Cury em 7,8%, e é a melhor marca dele numa nacional na janela de 30 dias do painel.",
-        "O volume acumulado do contrato dele, USD 11,95M, é o maior do livro presidencial entre todos os nomes abaixo dos dois primeiros.",
-        "Manteve os 3% da BTG/Nexus sem variação contra a rodada da própria casa de 24/Ago, num dia em que o líder e o segundo colocado cederam."
+        "A DECISÃO QUE TRAVAVA A CAMPANHA DELE FOI REVISTA. Dias Toffoli liberou a propaganda eleitoral da chapa nas redes, segundo Folha de S.Paulo, revertendo a suspensão da véspera que também atingia repasse de recursos e direito a debate.",
+        "O preço dele subiu 0,70pp no mesmo dia, de 1,85% para 2,55%, a maior variação entre os nomes do presidencial nesta rodada.",
+        "Os 6% da Real Time no cenário com Marçal ficam acima dos 3% que a BTG/Nexus lhe deu em 31/Ago e abaixo dos 7,6% da AtlasIntel do mesmo dia.",
+        "O volume acumulado dele segue sendo o maior do livro presidencial entre os nomes abaixo dos dois primeiros, com USD 12,30M.",
+        "A decisão anterior contra ele foi criticada dentro do próprio TSE, e ministros defenderam levar o tema ao plenário, segundo G1."
       ],
       "fracos": [
-        "Dias Toffoli suspendeu a propaganda eleitoral da chapa dele, o repasse de recursos e o direito de participar de debate, segundo G1, depois de citar indícios de ilicitude no registro e adiar o julgamento, segundo Folha de S.Paulo e O Globo.",
-        "A AtlasIntel dá a ele 67% de imagem negativa, a maior entre os presidenciáveis, segundo CartaCapital.",
-        "Num 2º turno hipotético contra o líder ele perde por 47,5% a 26,0% na AtlasIntel, a maior distância entre os cenários alternativos testados pela casa.",
-        "As duas casas discordam em 4,6 pontos sobre ele, 7,6% contra 3%, a maior distância entre elas sobre um mesmo nome nesta rodada."
+        "Perdeu a liderança do contrato de 3º lugar do 1º turno para Augusto Cury: está em 30,00% contra 46,65% do outro.",
+        "No 2º turno contra o líder ele perde por 44% a 37%, distância de 7 pontos, a segunda maior entre os cenários alternativos testados pela casa.",
+        "A rejeição dele é de 40% nesta pesquisa, acima da de Caiado, Zema e Cury.",
+        "A liberação da campanha é reversão de uma decisão, não decisão de mérito: o julgamento do registro da chapa segue sem desfecho.",
+        "Ele participou de protesto pedindo o impeachment de um ministro do Supremo no mesmo dia, segundo Folha de S.Paulo, o que mantém o nome dele ligado à disputa institucional e não à agenda de campanha."
       ],
-      "analise": "É o nome com o contraste mais forte da rodada: a melhor pesquisa dele até aqui e a pior decisão judicial até aqui, no mesmo dia. A AtlasIntel o coloca em 7,6%, empatado com Augusto Cury pela terceira posição, e a BTG/Nexus o mantém em 3%, o que abre uma distância de 4,6 pontos entre as duas casas sobre a mesma pessoa. No tribunal, Dias Toffoli suspendeu propaganda, repasse de recursos e direito a debate da chapa, o que é uma decisão de alcance prático maior que a retirada de pauta da véspera. No preço, ele cedeu 0,40pp, para 1,85% (vol USD 11,95M). O volume dele segue sendo o maior do livro entre os nomes fora dos dois primeiros, e isso é o que separa o caso dele do de Caiado ou Marçal: há dinheiro real posicionado, mesmo com preço baixo. O dado que amarra os dois lados é a imagem negativa de 67% da AtlasIntel, a maior da tabela."
+      "analise": "É o caso mais limpo de cruzamento da rodada. Na véspera ele tinha a melhor pesquisa e a pior decisão judicial no mesmo dia, e o preço caiu 0,40pp. Nesta terça a decisão foi revista, a campanha foi liberada, e o preço subiu 0,70pp, mais do que tinha caído. O movimento é do tamanho do que a decisão tinha tirado, e na direção oposta. Ao mesmo tempo, ele perdeu a liderança do contrato de 3º lugar para Augusto Cury, o que mostra que a recuperação foi da posição dele no contrato de vencedor e não da posição relativa dele na disputa pelo terceiro lugar. Na urna declarada ele fica em 6%, entre os 3% da BTG/Nexus e os 7,6% da AtlasIntel, as duas de 31/Ago."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Caiado 0,15% (vol USD 6,97M), Haddad 0,05% (vol USD 7,41M) e Zema 0,05% (vol USD 6,37M). Os três estão abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para nenhum deles: os últimos preços publicados são os de 30/Ago, 16:40 BRT. PESQUISA: a BTG/Nexus de 31/Ago coloca Caiado em 5% no 1º turno, o quarto nome da tabela dela, e Zema em 1%, o último.",
-      "subtitle": "Pelotão de trás na leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Ronaldo Caiado aparece em 5% no 1º turno da BTG/Nexus e Romeu Zema em 1%, e os dois seguem abaixo do piso de 0,5% no contrato de vencedor. Augusto Cury, que não está neste bloco, é quem se moveu na urna declarada.",
+      "header": "PREÇO: Caiado 0,25% (vol USD 7,03M), Haddad e Zema abaixo de 0,20%. Os três seguem abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para nenhum deles. PESQUISA: a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp) dá a Ronaldo Caiado 4% no 1º turno e Romeu Zema 2%. ⚠️ NO 2º TURNO, CAIADO APARECE À FRENTE DO LÍDER, POR 45% A 43%.",
+      "subtitle": "Pelotão de trás na leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC), e nesta rodada ele deixou de ser só pelotão de trás. Ronaldo Caiado tem 4% no 1º turno e mesmo assim aparece à frente do líder num cenário de 2º turno, por 45% a 43%. Nas 41 simulações de 2º turno da base do painel, o líder já ficou atrás em quatro, e as quatro eram contra o segundo colocado. É a primeira vez na base que um nome fora dele aparece à frente.",
       "caiado": {
-        "label": "CAIADO (PSD), presidencial Poly 0,15% (vol USD 6,97M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, em 0,15%. No contrato de 3º lugar do 1º turno ele deixou de ser o primeiro nome.",
-        "fortes": "A BTG/Nexus o mede em 5% no 1º turno, sem variação contra a rodada da própria casa de 24/Ago, e ele é o quarto nome da tabela dela, atrás de Augusto Cury. Num 2º turno da AtlasIntel ele perde para o líder por 46,6% a 41,0%, distância de 5,6 pontos, a mais estreita entre os cenários alternativos testados pela casa.",
-        "fracos": "Ele caiu para trás de Augusto Cury na BTG/Nexus, que na rodada de 24/Ago o tinha à frente. No contrato de vencedor segue em 0,15%, abaixo do piso de 0,5% em que a dupla leitura certifica movimento, e a distância entre os 5% que a urna declarada lhe dá e os 0,15% da probabilidade implícita é grande, sem que as duas grandezas se subtraiam: uma mede intenção de voto e a outra, chance de vitória."
+        "label": "CAIADO (PSD), presidencial Poly 0,25% (vol USD 7,03M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele. No contrato de 3º lugar do 1º turno ele está em 13,00%, terceiro nome. ⚠️ NA URNA DECLARADA ELE VENCE O LÍDER NUM 2º TURNO, POR 45% A 43%.",
+        "fortes": "É o único nome do painel que aparece à frente do líder num cenário de 2º turno nesta rodada, por 45% a 43%, e isso não tinha acontecido na base com nenhum nome fora do segundo colocado. A rejeição dele é de 39%, onze pontos abaixo da do líder e da do segundo. No contrato de 3º lugar do 1º turno ele mantém 13,00%.",
+        "fracos": "No 1º turno ele tem 4%, atrás de Augusto Cury e de Renan Santos, ou seja, o cenário em que vence não é o cenário em que ele chega. No contrato de vencedor segue em 0,25%, abaixo do piso de 0,5% em que a dupla leitura certifica movimento. A distância entre os 4% da urna declarada e os 0,25% da probabilidade implícita é grande, e as duas grandezas não se subtraem: uma mede intenção de voto no 1º turno e a outra mede chance de vitória na eleição."
       },
       "haddad": {
-        "label": "HADDAD (PT), presidencial Poly 0,05% (vol USD 7,41M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, em 0,05%. Não é candidato à Presidência.",
-        "fortes": "Não é candidato à Presidência: disputa o governo de São Paulo. O preço presidencial dele é resíduo de livro, não medida de campanha, e a Vox Brasil de 29/Ago não o testa no cenário presidencial.",
-        "fracos": "Os 0,05% ficam abaixo do piso de 0,5% da dupla leitura, faixa em que o AFOS não certifica movimento. O livro acumula USD 7,41M, quase todo negociado quando o nome ainda era testado como alternativa presidencial."
+        "label": "HADDAD (PT), presidencial Poly abaixo de 0,20% (vol USD 7,41M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele.",
+        "fortes": "Disse que não há amigos e inimigos no caso do banco e defendeu a apuração sobre o envolvimento do empresário com o Supremo, segundo Folha de S.Paulo, o que o mantém no noticiário do caso pela via institucional e não pela via de campanha.",
+        "fracos": "Não aparece nos cenários de 1º nem de 2º turno da pesquisa desta terça. No preço segue abaixo do piso de vigilância."
       },
       "zema": {
-        "label": "ZEMA (Novo), presidencial Poly 0,05% (vol USD 6,37M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, em 0,05%.",
-        "fortes": "A Vox Brasil de 29/Ago o mede em 2,8% no 1º turno, o quinto nome da tabela, e testa um cenário de 2º turno em que ele perde para o líder por 45,5% a 39,3%. É a primeira nacional da janela a lhe dar um cenário de returno próprio.",
-        "fracos": "A BTG/Nexus o mede em 1% no 1º turno, contra 3% na rodada da própria casa de 24/Ago, uma perda de 2 pontos que o coloca no último lugar da tabela dela. Num 2º turno da AtlasIntel ele perde para o líder por 47,0% a 40,7%, distância de 6,3 pontos, mais larga que a de Caiado."
+        "label": "ZEMA (Novo), presidencial Poly abaixo de 0,20% (vol USD 6,37M acumulado), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele. No contrato de 3º lugar do 1º turno está em 0,80%.",
+        "fortes": "Tem 2% no 1º turno e a menor rejeição da tabela depois de Augusto Cury, com 36%. Num 2º turno perde para o líder por 43% a 40%, distância de 3 pontos, a mais estreita entre os cenários em que o líder vence.",
+        "fracos": "Os 2% do 1º turno o deixam em quinto entre os nomes testados. Ele cobrou publicamente a saída de um ministro do Supremo, segundo Folha de S.Paulo, e aparece no noticiário por esse tema e não por agenda própria de campanha."
       },
-      "analise": "O pelotão de trás perdeu a referência que tinha. Até a rodada de 24/Ago da BTG/Nexus, Ronaldo Caiado era o terceiro nome da terceira via nas nacionais e o primeiro nome do contrato de 3º lugar do 1º turno. Nesta segunda ele manteve os 5% da mesma casa e foi ultrapassado por Augusto Cury, que chegou a 11%. Zema cedeu 2 pontos e ficou em 1%. No preço, os três seguem no piso: 0,15% em Caiado e 0,05% em Haddad e em Zema, todos abaixo do limiar de 0,5% em que a dupla leitura certifica movimento, e por isso esta rodada não publica preço novo para nenhum dos três. O que separa este bloco do caso de Renan Santos é o volume: os contratos deles acumulam entre USD 6,37M e USD 7,41M, dinheiro real posicionado num desfecho que o mercado precifica como muito improvável.",
+      "analise": "O pelotão de trás produziu o número mais forte da rodada, e ele é de pesquisa e não de preço. Ronaldo Caiado tem 4% no 1º turno e vence o líder num 2º turno simulado, por 45% a 43%. É a primeira vez na base do painel que alguém fora do segundo colocado aparece à frente num cenário desses, e a leitura correta não é que ele esteja competitivo: é que o eleitorado que rejeita o líder tem menos resistência a ele do que ao segundo colocado, cuja rejeição é de 50% contra 39% dele. O preço não reage a isso, e não deveria: o contrato mede chance de vencer a eleição, e para vencer é preciso primeiro chegar ao 2º turno, que é exatamente onde os 4% o deixam de fora. Os três seguem abaixo do piso de 0,5% da dupla leitura.",
       "fortes": [
-        "RONALDO CAIADO (PSD) está em 5% no 1º turno da BTG/Nexus, sem variação contra a rodada da própria casa de 24/Ago, num dia em que os dois primeiros colocados cederam.",
-        "No 2º turno testado pela AtlasIntel, Caiado é quem chega mais perto do líder entre os cenários alternativos, com 41,0% contra 46,6%.",
-        "Os contratos dos três acumulam volume relevante mesmo com preço no piso: USD 7,41M em Haddad, USD 6,97M em Caiado e USD 6,37M em Zema.",
-        "Nenhum dos três foi alvo de decisão judicial nesta segunda, ao contrário do quarto nome da tabela."
+        "Ronaldo Caiado aparece à frente do líder num cenário de 2º turno, por 45% a 43%, o que não tinha ocorrido na base do painel com nenhum nome fora do segundo colocado.",
+        "A rejeição dos três é menor que a dos dois primeiros colocados: Caiado 39%, Zema 36%, contra 50% do líder e 50% do segundo.",
+        "Zema perde o 2º turno por 3 pontos, a distância mais estreita entre os cenários em que o líder vence.",
+        "Os três seguem com volume acumulado relevante no livro presidencial, entre USD 6,37M e USD 7,41M."
       ],
       "fracos": [
-        "Os três seguem abaixo do piso de 0,5% no contrato de vencedor, faixa em que a dupla leitura do AFOS não certifica movimento.",
-        "Caiado perdeu a terceira posição na BTG/Nexus para Augusto Cury, que saltou de 2% para 11% na mesma casa.",
-        "Zema cedeu 2 pontos na BTG/Nexus, de 3% para 1%, e é o último nome da tabela dela.",
-        "Haddad não é candidato à Presidência: disputa o governo de São Paulo, e o contrato dele mede um desfecho que a campanha dele não persegue."
+        "Nenhum dos três passa de 4% no 1º turno, e o cenário em que Caiado vence é um cenário ao qual ele não chega pela própria tabela do 1º turno.",
+        "Os três seguem abaixo do piso de 0,5% no contrato de vencedor, e por isso esta rodada não publica preço novo para nenhum deles.",
+        "Haddad não é testado em nenhum cenário desta pesquisa.",
+        "Dois dos três aparecem no noticiário da terça por causa da crise no Supremo, não por agenda própria de campanha."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "A AtlasIntel/Bloomberg de 31/Ago (BR-07972/2026, campo 25 a 30/Ago, n=5.014) o dá em 43,4% no 1º turno e 47,1% no 2º contra 42,6%, e a BTG/Nexus de 31/Ago (BR-08900/2026, campo 28 a 30/Ago, n=2.005) o dá em 39% e 46% contra 45%. Na comparação da Nexus com ela mesma, contra 24/Ago, ele cede 2 pontos no 1º turno e não se move no 2º, que segue 46 a 45. Rejeição de 52,0% pela AtlasIntel e 49% pela Nexus.",
-      "m": "55,50% (vol USD 9,53M), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Sem variação no dia, e o preço dele não sai de 55,50% pelo terceiro dia seguido. A distância para o segundo abriu para 16,45pp, contra 14,40pp de ontem.",
-      "t": "parado no preço pelo terceiro dia, e a distância abre só pelo lado do adversário",
-      "s": "O TSE suspendeu a peça de propaganda da campanha dele que listava um currículo do adversário citando o Banco Master e a rachadinha, segundo O Globo, Folha de S.Paulo, Terra e CBN, e a Justiça Eleitoral suspendeu também a que o chamava de funcionário fantasma, segundo G1. Depois da derrota no Senado, ele disse que indicará Messias novamente ao Supremo, segundo Migalhas.",
+      "p": "A Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000, margem de 2pp) o dá em 38% nos dois cenários de 1º turno. No 2º turno empata com o segundo colocado em 44% a 44%, e perde para Ronaldo Caiado por 45% a 43%. Contra Romeu Zema vence por 43% a 40%, contra Renan Santos por 44% a 37% e contra Pablo Marçal por 44% a 40%. Rejeição de 50%, empatada com a do segundo colocado.",
+      "m": "55,50% (vol USD 9,56M), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Sem variação no dia, e o preço dele não sai de 55,50% pelo quarto dia seguido. A distância para o segundo abriu para 16,55pp, contra 16,45pp de ontem.",
+      "t": "parado no preço pelo quarto dia, e aparece atrás num 2º turno pela primeira vez contra um nome que não é o segundo colocado",
+      "s": "A propaganda dele que usava o Rap do Silva foi suspensa por não apresentar o vice, segundo Estadão, CartaCapital e Metrópoles. Ele buscará se afastar do ministro citado na apuração da Polícia Federal, enquanto outros presidenciáveis o criticam, segundo Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "A mesma AtlasIntel o dá em 33,7% no 1º turno e 42,6% no 2º, a 4,5 pontos do líder, e a Nexus o dá em 33% e 45%, a 1 ponto, dentro da margem de 2pp e portanto em empate técnico. Na comparação da Nexus com ela mesma ele cede 4 pontos no 1º turno, de 37% para 33%, o dobro da perda do líder. É o mais rejeitado nas duas casas, com 52,7% pela AtlasIntel e 50% pela Nexus.",
-      "m": "39,05% (vol USD 9,37M), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Queda de 2,05pp, a maior variação entre os nomes do painel nesta rodada, depois de quatro fechamentos seguidos de alta que o levaram de 35,50% em 27/Ago a 41,20% em 30/Ago. No contrato de 2º lugar do 1º turno segue em 85,50%.",
-      "t": "cede nas duas medições no mesmo dia, e desfaz boa parte da subida de quatro pregões",
-      "s": "Disse que indicará ao Supremo ministros contrários ao aborto, às drogas e às injustiças, segundo Gazeta do Povo. O ex-comandante da FAB negou fazer campanha para o líder e rebateu declaração dele, segundo O Tempo e G1.",
+      "p": "A mesma Real Time o dá em 29% no cenário com Pablo Marçal e em 30% no cenário sem. No 2º turno empata com o líder em 44% a 44%. Rejeição de 50%, empatada com a do líder. Os 29% ou 30% ficam abaixo dos 33,7% da AtlasIntel e dos 33% da BTG/Nexus, as duas de 31/Ago.",
+      "m": "38,95% (vol USD 9,43M), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Queda de 0,10pp, contra queda de 2,05pp na véspera. No contrato de 2º lugar do 1º turno subiu 0,50pp, para 86,00%.",
+      "t": "cede no 1º turno e empata no 2º, e o mercado reforça a posição dele no contrato de 2º lugar",
+      "s": "Cobrou a saída do ministro citado na apuração, segundo Folha de S.Paulo, e pediu o afastamento dele junto com a oposição, segundo Tribuna do Sertão. Um pedido para afastá-lo do mandato de senador foi levado ao Supremo, segundo Folha de S.Paulo.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "A BTG/Nexus de 31/Ago (BR-08900/2026, campo 28 a 30/Ago, n=2.005) o mede em 11% no 1º turno, contra 2% na rodada dela mesma de 24/Ago, um ganho de 9 pontos em uma semana, e é o primeiro nome fora dos dois primeiros a chegar a dois dígitos nessa série, segundo CNN Brasil. A AtlasIntel o mede em 7,8%, praticamente empatado com Renan Santos.",
-      "m": "1,85% (vol USD 2,89M) no contrato de vencedor. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, e a série dele tem 68 capturas, curta demais para superlativo.",
-      "t": "o nome que se moveu na urna declarada, sem leitura de preço nova nesta rodada",
-      "s": "As campanhas dos dois primeiros colocados reagiram à subida dele nas pesquisas, segundo UOL. A busca pelo nome dele no Google foi 900% maior na semana seguinte ao debate de 22/Ago, segundo CNN Brasil.",
+      "p": "A Real Time o mede em 10% no cenário com Pablo Marçal e em 11% no cenário sem. É o segundo instituto seguido a colocá-lo em dois dígitos, depois dos 11% da BTG/Nexus de 31/Ago. A rejeição dele é de 24%, a menor entre os sete nomes testados nesta pesquisa.",
+      "m": "2,35% (vol USD 3,50M) no contrato de vencedor, leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Alta de 0,50pp contra o último preço publicado, o de 30/Ago. E ele passou a liderar o contrato de 3º lugar do 1º turno, com 46,65% contra 30,00% de Renan Santos.",
+      "t": "dois dígitos pelo segundo instituto seguido, e assume a liderança do contrato de 3º lugar",
+      "s": "A cobertura do dia registra a alta dele como confirmada por uma segunda casa, segundo Poder360.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "A AtlasIntel o mede em 7,6% no 1º turno, praticamente empatado com Augusto Cury na terceira posição, e num 2º turno hipotético ele perde por 47,5% a 26,0%. A Nexus o mede em 3%, sem variação contra 24/Ago. É a maior distância entre as duas casas sobre um mesmo nome nesta rodada, de 4,6 pontos. A AtlasIntel dá a ele 67% de imagem negativa, a maior entre os presidenciáveis, segundo CartaCapital.",
-      "m": "1,85% (vol USD 11,95M), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Queda de 0,40pp no dia. O volume acumulado dele é o maior do livro presidencial entre os nomes abaixo dos dois primeiros.",
-      "t": "melhor pesquisa e pior decisão judicial no mesmo dia",
-      "s": "Dias Toffoli suspendeu a propaganda eleitoral da chapa dele, o repasse de recursos e o direito de participar de debate, segundo G1, depois de citar indícios de ilicitude no registro e adiar o julgamento da chapa, segundo Folha de S.Paulo e O Globo. Ele chamou o líder de amigo e o segundo colocado de aliado do crime organizado, segundo UOL.",
+      "p": "A Real Time o mede em 6% no cenário com Pablo Marçal, entre os 3% da BTG/Nexus e os 7,6% da AtlasIntel, as duas de 31/Ago. Num 2º turno perde para o líder por 44% a 37%. Rejeição de 40%.",
+      "m": "2,55% (vol USD 12,30M), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Alta de 0,70pp, a maior variação entre os nomes do presidencial nesta rodada, depois de queda de 0,40pp na véspera. No contrato de 3º lugar caiu para 30,00% e perdeu a liderança.",
+      "t": "a decisão que travava a campanha foi revista, e o preço devolveu mais do que tinha perdido",
+      "s": "Dias Toffoli liberou a campanha eleitoral da chapa nas redes, segundo Folha de S.Paulo, revertendo a suspensão da véspera. A decisão anterior foi criticada dentro do TSE, segundo G1. Ele participou de protesto pedindo o impeachment de um ministro, segundo Folha de S.Paulo.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A BTG/Nexus de 31/Ago (BR-08900/2026, campo 28 a 30/Ago, n=2.005) o coloca em 5% no 1º turno, sem variação contra a rodada da própria casa de 24/Ago, e ele é o quarto nome da tabela dela, atrás de Augusto Cury. Num 2º turno da AtlasIntel perde para o líder por 46,6% a 41,0%, distância de 5,6 pontos, a mais estreita entre os cenários alternativos.",
-      "m": "0,15% (vol USD 6,97M), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, em 0,15%.",
-      "t": "mantém os 5% da urna declarada e perde a terceira posição para outro nome",
-      "s": "Não aparece no noticiário desta segunda com fato próprio.",
+      "p": "A Real Time o coloca em 4% no 1º turno, atrás de Augusto Cury e de Renan Santos. ⚠️ NUM 2º TURNO ELE VENCE O LÍDER, POR 45% A 43%. Nas 41 simulações de 2º turno da base do painel o líder já ficou atrás em quatro, e as quatro eram contra o segundo colocado. Rejeição de 39%, onze pontos abaixo da dos dois primeiros.",
+      "m": "0,25% (vol USD 7,03M), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele. No contrato de 3º lugar do 1º turno está em 13,00%.",
+      "t": "vence o líder na urna declarada de um cenário ao qual os 4% do 1º turno não o levam",
+      "s": "Cobrou a saída do ministro citado na apuração da Polícia Federal, segundo Folha de S.Paulo.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "As duas nacionais desta segunda não o trazem na tabela divulgada do 1º turno. A PoderData/Aya de 27/Ago o media em 3% no 1º turno.",
-      "m": "0,15% (vol USD 3,07M), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele, e o último preço publicado é o de 30/Ago, 16:40 BRT, em 0,15%.",
-      "t": "abaixo do piso de vigilância",
-      "s": "Não aparece no noticiário desta segunda com fato próprio.",
+      "p": "A Real Time o traz em 3% no cenário com ele na lista, e é a presença dele que separa os dois cenários publicados pela casa. Num 2º turno perde para o líder por 44% a 40%. Rejeição de 48%, a terceira maior entre os sete nomes testados.",
+      "m": "Abaixo de 0,20% (vol USD 3,07M), abaixo do piso de 0,5% da dupla leitura. Esta rodada não publica preço novo para ele.",
+      "t": "entra na tabela e a presença dele muda o número do segundo e do terceiro colocados",
+      "s": "Não aparece no noticiário desta terça com fato próprio.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "3,60% (vol USD 84 mil), leitura confirmada de 31/Ago, 13:43 BRT (16:43 UTC). Sem variação, e segue o menor livro do painel.",
-      "t": "parado num dia de decisão do tribunal sobre uma chapa presidencial",
-      "s": "Dias Toffoli suspendeu a propaganda eleitoral, o repasse de recursos e o direito de participar de debate da chapa de Renan Santos, segundo G1, depois de citar indícios de ilicitude no registro dela, segundo Folha de S.Paulo e O Globo. Gilmar Mendes barrou a cobrança de um sindicato de juízes a magistrados não associados, segundo O Globo. Depois da derrota no Senado, o líder disse que indicará Messias novamente ao tribunal, segundo Migalhas, e o segundo colocado disse que indicará ministros contrários ao aborto, às drogas e às injustiças, segundo Gazeta do Povo.",
+      "m": "10,85% (vol USD 86 mil), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Alta de 7,25pp contra os 3,60% de 31/Ago, o maior movimento do painel nesta rodada. ⚠️ É O MENOR LIVRO DO PAINEL: o volume acumulado passou de USD 84 mil para USD 86 mil, ou seja, cerca de USD 2 mil de negócio novo acompanham a variação. Dentro do dia o preço passou por 3,50%, 13,80%, 10,70%, 19,10% e 14,30% antes de fechar a leitura em 10,85%.",
+      "t": "o maior movimento do painel, no menor livro do painel, no dia da apuração sobre as mensagens",
+      "s": "A Polícia Federal detalhou mensagens entre Daniel Vorcaro e o ministro Alexandre de Moraes, e o relatório indica que ele editou um contrato de R$ 131 milhões entre o escritório da esposa e o empresário, segundo Folha de S.Paulo. O procurador-geral pediu a anulação do relatório, segundo O Globo. André Mendonça pediu sessão do plenário para discutir as mensagens, segundo Folha de S.Paulo. Quatro presidenciáveis cobraram a saída do ministro. O presidente do Senado sinalizou que não pautará impeachment, segundo Folha de S.Paulo. A CPMI do INSS pediu investigação sobre o contrato, segundo Times Brasil.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "O 31 de agosto é a primeira rodada da semana em que as duas medições do painel andam na mesma direção, e é isso que a distingue das anteriores. Duas nacionais foram divulgadas no mesmo dia, a AtlasIntel/Bloomberg de 31/Ago (BR-07972/2026, campo 25 a 30/Ago, n=5.014) e a BTG/Nexus de 31/Ago (BR-08900/2026, campo 28 a 30/Ago, n=2.005), e as duas mostram o segundo colocado cedendo no 1º turno. No preço, ele cedeu 2,05pp, de 41,10% para 39,05%, enquanto o líder não saiu de 55,50% pelo terceiro dia seguido. A distância entre os dois abriu de 14,40pp para 16,45pp, e a abertura veio inteira de um lado só.\n\nAs duas casas concordam sobre quem está à frente e discordam sobre o tamanho: 9,7pp contra 6pp no 1º turno, e 4,5pp contra 1pp no 2º. Discordância de tamanho entre institutos com métodos diferentes, formulário eletrônico contra telefone, é comportamento normal de instrumento, e o painel publica as duas sem escolher entre elas.\n\nO movimento que as duas casas registram e o preço não registra é o de Augusto Cury. A Nexus o mede em 11% no 1º turno, contra 2% na rodada dela mesma de 24/Ago, e a AtlasIntel o mede em 7,8%. Esta rodada não publica preço novo para ele, e o último publicado é o de 30/Ago, 16:40 BRT, em 1,85%. A série do contrato dele tem 68 capturas, curta demais para sustentar superlativo.\n\nO que não acompanha o conjunto é a avaliação do governo. As duas casas trazem desaprovação acima da aprovação, com 52,9% pela AtlasIntel e 51% contra 46% pela Nexus, que registra a maior distância entre as duas desde maio. Intenção de voto e avaliação de governo são réguas diferentes, medidas com perguntas diferentes, e o painel não as soma nem deriva uma da outra."
+  "cruzamento": "O 1º de setembro é a rodada em que as duas medições do painel apontam para lugares diferentes, e é isso que a distingue da véspera. Na urna declarada, a Real Time Big Data de 01/Set (BR-03490/2026, campo 27 a 31/Ago, n=2.000) traz três coisas novas: o 2º turno entre os dois primeiros voltou ao empate, em 44% a 44%; Augusto Cury chegou a dois dígitos pelo segundo instituto seguido, com 10% no cenário com Pablo Marçal e 11% no cenário sem; e Ronaldo Caiado, com 4% no 1º turno, aparece à frente do líder num 2º turno simulado, por 45% a 43%. Esse último é inédito na base do painel para um nome que não seja o segundo colocado. No preço, quase nada disso apareceu. O líder ficou em 55,50% pelo quarto dia seguido e o segundo cedeu 0,10pp, para 38,95%. Quem se moveu foram os nomes de baixo: Renan Santos subiu 0,70pp, para 2,55%, no mesmo dia em que a decisão que travava a campanha dele foi revista, e Augusto Cury subiu 0,50pp, para 2,35%, além de assumir a liderança do contrato de 3º lugar com 46,65%. O maior movimento do painel, porém, não é de candidato: o contrato de saída de ministro do Supremo por impeachment antes de 2027 saiu de 3,60% para 10,85%, alta de 7,25pp, no dia em que a Polícia Federal detalhou mensagens entre um empresário preso e um ministro do tribunal. É preciso dizer o tamanho desse livro, porque ele muda a leitura: são USD 86 mil acumulados, o menor do painel, e cerca de USD 2 mil de negócio novo acompanham a variação. O painel não afirma que uma medição corrige a outra. Registra que a pesquisa mediu resistência do eleitorado a nomes alternativos num cenário hipotético, e que o preço mediu chance de vitória no cenário real, e que num dia de crise institucional as duas coisas se moveram em escalas muito diferentes."
 }

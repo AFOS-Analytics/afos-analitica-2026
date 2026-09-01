@@ -1,171 +1,173 @@
 {
-  "updatedAt": "31/08/2026, 13:43",
-  "subtitle": "Crossing of August 31, 2026: Polymarket price in the confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC), presidential book at USD 140.52M, against the TWO national polls released this Monday, AtlasIntel/Bloomberg of Aug 31 (BR-07972/2026, fieldwork Aug 25 to 30, n=5,014) and BTG/Nexus of Aug 31 (BR-08900/2026, fieldwork Aug 28 to 30, n=2,005). They are the first national polls since Vox Brasil of Aug 29, and fieldwork for both closed on Aug 30, already after the free electoral airtime debuted on Aug 28.",
+  "updatedAt": "01/09/2026, 20:34",
+  "subtitle": "Crossing of September 1, 2026: Polymarket price in the confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC), presidential book at USD 141.39M, against Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp), the only national poll released this Tuesday. It is the first in the panel whose field reaches Aug 31, and therefore the first to cover the full week after the campaign broadcast slot began on Aug 28. The pollster published TWO first-round scenarios, one with Pablo Marçal and one without, and they give different numbers for the second and third places.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 55.50% (vol USD 9.53M accumulated), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). No change on the day, and his price has not moved off 55.50% for the third day running. POLLING: AtlasIntel puts him at 43.4% in the [first round](/en/glossary#primeiro-turno) and 47.1% in the [runoff](/en/glossary#segundo-turno) against 42.6%, and BTG/Nexus puts him at 39% and 46% against 45%. The two agree that he is ahead and disagree on the size: 9.7pp against 6pp in the first round.",
+      "header": "PRICE: 55.50% (vol USD 9.56M accumulated), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Unchanged on the day, and his price has not left 55.50% for the fourth day running. POLL: Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp) gives him 38% in both first-round scenarios and 44% in a runoff against the runner-up, who also has 44%. Against Ronaldo Caiado he comes out behind, 45% to 43%.",
       "fortes": [
-        "Both national polls this Monday put him ahead in the first round and in the runoff, and it is the first time since Vox of Aug 29 that the runoff carries a favourable sign for him in a released national poll.",
-        "AtlasIntel is the largest national sample in the panel's 30-day window, at n=5,014, and in it his first-round lead is 9.7 points.",
-        "In AtlasIntel's alternative scenarios he wins every one tested: 46.6% to 41.0% against Ronaldo Caiado, 47.0% to 40.7% against Romeu Zema and 47.5% to 26.0% against Renan Santos.",
-        "He is less rejected than the runner-up in both houses, with 52.0% by AtlasIntel and 49% by BTG/Nexus.",
-        "In the price, the distance to the runner-up widened to 16.45pp, against 14.40pp the day before, and the whole widening came from his opponent's side."
+        "He remains in front in the first round in the only national poll of Tuesday, with 38% in both scenarios, and the distance to the runner-up is 9 points in the scenario with Marçal and 8 in the one without.",
+        "In the price, it is the fourth day running at 55.50%, and the distance to the runner-up widened to 16.55pp without him having to move.",
+        "The ruling that had suspended his opponent’s advertising in the registration case was reversed, but his own advertising was also targeted: the panel records both, and neither moved the price.",
+        "His rejection is 50%, tied with the runner-up’s, and it is not the highest in the table.",
+        "The first-round runner-up contract keeps him at 9.20%, that is, the market still treats his reaching the runoff as the dominant scenario and not as a contest."
       ],
       "fracos": [
-        "Government disapproval comes in above approval in both new readings: 52.9% disapproval by AtlasIntel, according to InfoMoney, and 46% approval against 51% disapproval by BTG/Nexus, according to VEJA.",
-        "BTG/Nexus itself records that the distance between approval and disapproval is the widest since May.",
-        "In the Nexus comparison against itself, against the Aug 24 round, he gives up 2 points in the first round, from 41% to 39%.",
-        "In the runoff of that same Nexus the picture did not move: it was 46% to 45% on Aug 24 and it is still 46% to 45%, meaning the first-round rearrangement did not reach the runoff.",
-        "The TSE suspended the advertising spot from his campaign that listed a résumé of his opponent citing Banco Master and the payroll kickback scheme, according to O Globo, Folha de S.Paulo, Terra and CBN, and the Electoral Court also suspended the one that called him a ghost employee, according to G1."
+        "HE COMES OUT BEHIND IN A RUNOFF SCENARIO FOR THE FIRST TIME AGAINST A NAME THAT IS NOT THE RUNNER-UP: he loses to Ronaldo Caiado, 45% to 43%. Across the 41 runoff simulations in the panel’s base he has trailed in four, and all four were against the same opponent.",
+        "The runoff against the runner-up left the favourable signal of Aug 31 and went back to a tie, at 44% to 44%.",
+        "His advertising that used the Rap do Silva was suspended for not presenting his running mate, according to Estadão, CartaCapital and Metrópoles.",
+        "The 38% of this poll sits below the 43.4% of AtlasIntel and above the 39% of BTG/Nexus, both from Aug 31, and the spread between pollsters on the same name remains wide.",
+        "Government disapproval remains above approval in the two most recent readings, both from Aug 31, and there was no new approval reading this Tuesday."
       ],
-      "analise": "Monday gave the panel back what had been missing since Aug 29: a reading from the ballot. Two national polls came out on the same day, with different methods and different samples, and both put him ahead in both rounds. They disagree on the size, 9.7pp against 6pp in the first round and 4.5pp against 1pp in the runoff, and they do not disagree on the sign. In the price he sits at 55.50% (vol USD 9.53M) and did not move for the third day, while his opponent gave up 2.05pp. It is the first round of the week in which the two measurements move in the same direction in the [first round](/en/glossary#primeiro-turno), with the runner-up giving ground in the declared ballot and in the price. The side that does not follow is the government's ratings: both houses bring disapproval above approval, and Nexus records the widest distance between the two since May. Voting intention and government ratings are different rulers, and the panel does not add them up."
+      "analise": "Tuesday brought a single national poll, and it is the first in the panel to cover the full week after the campaign broadcast slot began. In the first round his picture does not change: 38% in both scenarios, in front. What changes is the runoff. Against the runner-up he went back to a tie, at 44% to 44%, after the favourable signal of Aug 31. And against Ronaldo Caiado he comes out behind, 45% to 43%, which in the panel’s base had only happened against one opponent until today. None of that showed in the price: he holds at 55.50% for the fourth day, and the distance to the runner-up widened by 0.10pp through a move on the other side. It is the difference between the two quantities becoming visible on the same day, one measuring declared intention in a hypothetical scenario and the other measuring the chance of winning in the real one."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 39.05% (vol USD 9.37M accumulated), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). Down 2.05pp on the day, the largest move among the panel's names this round. POLLING: AtlasIntel puts him at 33.7% in the [first round](/en/glossary#primeiro-turno) and 42.6% in the [runoff](/en/glossary#segundo-turno), and BTG/Nexus at 33% and 45%, 1 point behind the leader and inside the 2pp margin.",
+      "header": "PRICE: 38.95% (vol USD 9.43M accumulated), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Down 0.10pp on the day. In the first-round runner-up contract he rose 0.50pp, to 86.00%. POLL: Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp) gives him 29% in the scenario with Pablo Marçal and 30% in the one without, and in a runoff he ties the leader at 44% to 44%.",
       "fortes": [
-        "In the BTG/Nexus runoff he is 1 point behind the leader, 45% against 46%, inside the 2pp margin, which makes it a [technical tie](/en/glossary#empate-tecnico).",
-        "In the first-round second-place contract he is still at 85.50%, unchanged, and he is the name the market considers most likely to reach the runoff.",
-        "The Nexus runoff did not move against the same house's round of Aug 24, even though he gave up 4 points in the first round over the same interval.",
-        "The accumulated volume of his contract, USD 9.37M, is the second largest in the presidential book and sits less than USD 0.2M below the leader's.",
-        "The opposing campaign's advertising that listed accusations against him was suspended by the TSE and by the Electoral Court on the same day, according to O Globo, Folha de S.Paulo and G1."
+        "He ties the leader in the runoff, at 44% to 44%, after coming out behind by 1 point at BTG/Nexus and by 4.5 at AtlasIntel, both on Aug 31.",
+        "The first-round runner-up contract rose to 86.00%, up 0.50pp, and it is the most consolidated position on the panel after the leader’s first place.",
+        "His rejection is 50%, tied with the leader’s, and it is no longer the single highest as in the two readings of Aug 31.",
+        "The day’s price drop is 0.10pp, that is, he held nearly all of the position after the 2.05pp correction of the previous day."
       ],
       "fracos": [
-        "He gave up 2.05pp in the price, from 41.10% to 39.05%, after four consecutive closes on the rise that had taken him from 35.50% on Aug 27 to 41.20% on Aug 30.",
-        "In the Nexus comparison against itself he gives up 4 points in the first round, from 37% to 33%, twice the leader's loss over the same interval.",
-        "He is the more rejected of the two in both houses, with 52.7% by AtlasIntel, according to CNN Brasil, and 50% by BTG/Nexus, according to Metrópoles.",
-        "The distance to the leader widened in both measurements at once: 16.45pp in the price, against 14.40pp the day before, and 9.7pp in AtlasIntel.",
-        "The former air force commander denied campaigning for the leader and pushed back on a statement of his, according to O Tempo and G1."
+        "He is the name whose number changes with the scenario: 29% with Marçal on the list and 30% without. The difference is small, but it is he and the third-placed name who absorb the other name’s exit.",
+        "The 29% or 30% of this poll sit below the 33.7% of AtlasIntel and the 33% of BTG/Nexus, both from Aug 31, that is, the third reading in a row puts him at a lower level.",
+        "In the price, he has been falling since the peak of 41.20% on Aug 30, and stands 2.25pp below it.",
+        "A request to remove him from his Senate seat was taken to the Supreme Court, according to Folha de S.Paulo.",
+        "The distance to the leader in the price widened again, to 16.55pp, and the widening came from his side."
       ],
-      "analise": "He was the name that moved most this round, and the move is downward in both measurements at once. In the price he gave up 2.05pp and went back to 39.05% (vol USD 9.37M), undoing much of the four-session rise that had taken him to 41.20% on Aug 30. In the declared ballot, the comparison that counts is Nexus against itself, same method and same sample: he gives up 4 points in the first round in one week, twice what the leader gave up. The counterpoint is in the runoff: in that same Nexus it stayed put at 45% against 46%, inside the margin, and he is still at 85.50% in the first-round second-place contract. That is, the market still treats his reaching the runoff as near certain, and what moved was the expectation about what happens there. Rejection is the steadiest figure in the set: he is the more rejected of the two in both houses."
+      "analise": "Tuesday’s poll puts him at a lower level than the two of Aug 31 in the first round, between 29% and 30% depending on the scenario, and at the same time in a better position in the runoff, where he ties at 44% to 44%. The two things do not contradict each other: one measures the field split among seven names and the other measures it split between two. In the price he barely moved, down 0.10pp, after giving up 2.05pp the day before. And the contract that measures his reaching the runoff rose to 86.00%, which indicates the market treated the day as confirmation of his position, not as a threat to it. The public demand he made for a Supreme Court justice to leave shows in neither of the two measurements."
     },
     {
       "rank": "3",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 1.85% (vol USD 11.95M accumulated), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). Down 0.40pp on the day. POLLING: AtlasIntel measures him at 7.6% in the [first round](/en/glossary#primeiro-turno), practically tied with Augusto Cury for third, and BTG/Nexus measures him at 3%, unchanged against Aug 24.",
+      "header": "PRICE: 2.55% (vol USD 12.30M accumulated), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Up 0.70pp on the day, the largest percentage move among the names in the presidential contract this round. POLL: Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp) gives him 6% in the scenario with Pablo Marçal, third name outside the top two. In a runoff he loses to the leader, 44% to 37%.",
       "fortes": [
-        "AtlasIntel puts him at 7.6% in the first round, practically tied with Augusto Cury at 7.8%, and it is his best mark in a national poll in the panel's 30-day window.",
-        "The accumulated volume of his contract, USD 11.95M, is the largest in the presidential book among all names below the top two.",
-        "He held the 3% from BTG/Nexus unchanged against the same house's round of Aug 24, on a day when the leader and the runner-up both gave ground."
+        "THE RULING THAT WAS BLOCKING HIS CAMPAIGN WAS REVERSED. Dias Toffoli released the ticket’s campaign advertising on social media, according to Folha de S.Paulo, reversing the previous day’s suspension that also hit funding transfers and the right to debate.",
+        "His price rose 0.70pp on the same day, from 1.85% to 2.55%, the largest move among the names in the presidential contract this round.",
+        "The 6% from Real Time in the scenario with Marçal sit above the 3% BTG/Nexus gave him on Aug 31 and below the 7.6% of AtlasIntel from the same day.",
+        "His accumulated volume remains the largest in the presidential book among the names below the top two, at USD 12.30M.",
+        "The earlier ruling against him drew criticism inside the electoral court itself, and justices argued for taking the matter to the full bench, according to G1."
       ],
       "fracos": [
-        "Dias Toffoli suspended the ticket's electoral advertising, its transfer of funds and its right to take part in debates, according to G1, after citing signs of illegality in the registration and postponing the ticket's ruling, according to Folha de S.Paulo and O Globo.",
-        "AtlasIntel gives him a 67% negative image, the highest among the presidential candidates, according to CartaCapital.",
-        "In a hypothetical runoff against the leader he loses 47.5% to 26.0% in AtlasIntel, the widest distance among the alternative scenarios the house tested.",
-        "The two houses disagree by 4.6 points about him, 7.6% against 3%, the widest distance between them on a single name this round."
+        "He lost the lead in the first-round third-place contract to Augusto Cury: he is at 30.00% against 46.65% for the other.",
+        "In the runoff against the leader he loses 44% to 37%, a distance of 7 points, the second widest among the alternative scenarios tested by the pollster.",
+        "His rejection is 40% in this poll, above that of Caiado, Zema and Cury.",
+        "Releasing the campaign is the reversal of a ruling, not a decision on the merits: the judgment on the ticket’s registration remains unresolved.",
+        "He took part in a protest calling for a Supreme Court justice’s impeachment on the same day, according to Folha de S.Paulo, which keeps his name tied to the institutional dispute rather than to the campaign agenda."
       ],
-      "analise": "He is the name with the sharpest contrast of the round: his best poll so far and his worst court ruling so far, on the same day. AtlasIntel puts him at 7.6%, tied with Augusto Cury for third place, and BTG/Nexus keeps him at 3%, which opens a 4.6-point gap between the two houses about the same person. At the court, Dias Toffoli suspended the ticket's advertising, its transfer of funds and its right to debate, which is a ruling of greater practical reach than the previous day's removal from the docket. In the price he gave up 0.40pp, to 1.85% (vol USD 11.95M). His volume is still the largest in the book among names outside the top two, and that is what separates his case from Caiado's or Marçal's: there is real money positioned, even at a low price. The figure that ties the two sides together is the 67% negative image from AtlasIntel, the highest on the table."
+      "analise": "It is the cleanest crossing of the round. The day before he had his best poll and his worst court ruling on the same day, and the price fell 0.40pp. This Tuesday the ruling was reversed, the campaign was released, and the price rose 0.70pp, more than it had fallen. The move is the size of what the ruling had taken away, and in the opposite direction. At the same time, he lost the lead in the third-place contract to Augusto Cury, which shows the recovery was in his position in the winner contract and not in his relative position in the race for third. In declared polling he stands at 6%, between the 3% of BTG/Nexus and the 7.6% of AtlasIntel, both from Aug 31."
     },
     {
       "rank": "4",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: Caiado 0.15% (vol USD 6.97M), Haddad 0.05% (vol USD 7.41M) and Zema 0.05% (vol USD 6.37M). All three are below the 0.5% floor at which the double reading certifies movement, and this round publishes no new price for any of them: the last prices published are the ones from Aug 30, 4:40 PM BRT. POLLING: BTG/Nexus of Aug 31 puts Caiado at 5% in the [first round](/en/glossary#primeiro-turno), the fourth name on its table, and Zema at 1%, the last.",
-      "subtitle": "Back of the field in the confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). Ronaldo Caiado comes in at 5% in the BTG/Nexus first round and Romeu Zema at 1%, and both remain below the 0.5% floor in the outright-winner contract. Augusto Cury, who is not in this block, is the one who moved in the declared ballot.",
+      "header": "PRICE: Caiado 0.25% (vol USD 7.03M), Haddad and Zema below 0.20%. All three remain below the 0.5% floor of the double reading, and this round publishes no new price for any of them. POLL: Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp) gives Ronaldo Caiado 4% in the first round and Romeu Zema 2%. ⚠️ IN THE RUNOFF, CAIADO COMES OUT AHEAD OF THE LEADER, 45% TO 43%.",
+      "subtitle": "Back of the pack in the confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC), and this round it stopped being only the back of the pack. Ronaldo Caiado has 4% in the first round and even so comes out ahead of the leader in a runoff scenario, 45% to 43%. Across the 41 runoff simulations in the panel’s base, the leader has trailed in four, and all four were against the runner-up. It is the first time in the base that a name other than him shows in front.",
       "caiado": {
-        "label": "CAIADO (PSD), presidential Poly 0.15% (vol USD 6.97M accumulated), below the 0.5% floor at which the double reading certifies movement. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, at 0.15%. In the first-round third-place contract he is no longer the leading name.",
-        "fortes": "BTG/Nexus measures him at 5% in the first round, unchanged against the same house's round of Aug 24, and he is the fourth name on its table, behind Augusto Cury. In an AtlasIntel runoff he loses to the leader 46.6% to 41.0%, a distance of 5.6 points, the narrowest among the alternative scenarios tested.",
-        "fracos": "He fell behind Augusto Cury in BTG/Nexus, which had him ahead in the Aug 24 round. In the outright-winner contract he is still at 0.15%, below the 0.5% floor at which the double reading certifies movement, and the distance between the 5% the declared ballot gives him and the 0.15% of the implied probability is large, without the two quantities subtracting: one measures voting intention and the other, the chance of winning."
+        "label": "CAIADO (PSD), presidential Poly 0.25% (vol USD 7.03M accumulated), below the 0.5% floor of the double reading. This round publishes no new price for him. In the first-round third-place contract he is at 13.00%, third name. ⚠️ IN DECLARED POLLING HE BEATS THE LEADER IN A RUNOFF, 45% TO 43%.",
+        "fortes": "He is the only name on the panel who comes out ahead of the leader in a runoff scenario this round, 45% to 43%, and that had not happened in the base with any name outside the runner-up. His rejection is 39%, eleven points below the leader’s and the runner-up’s. In the first-round third-place contract he holds 13.00%.",
+        "fracos": "In the first round he has 4%, behind Augusto Cury and Renan Santos, that is, the scenario in which he wins is not the scenario he reaches. In the winner contract he remains at 0.25%, below the 0.5% floor at which the double reading certifies a move. The distance between the 4% declared polling gives him and the 0.25% of implied probability is large, and the two quantities do not subtract: one measures first-round voting intention and the other measures the chance of winning the election."
       },
       "haddad": {
-        "label": "HADDAD (PT), presidential Poly 0.05% (vol USD 7.41M accumulated), below the 0.5% floor at which the double reading certifies movement. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, at 0.05%. He is not a presidential candidate.",
-        "fortes": "He is not a presidential candidate: he is running for governor of São Paulo. His presidential price is book residue, not a measure of campaign, and Vox Brasil of Aug 29 does not test him in the presidential scenario.",
-        "fracos": "The 0.05% sits below the 0.5% floor of the double reading, the range where AFOS does not certify movement. The book holds USD 7.41M, almost all of it traded when the name was still tested as a presidential alternative."
+        "label": "HADDAD (PT), presidential Poly below 0.20% (vol USD 7.41M accumulated), below the 0.5% floor of the double reading. This round publishes no new price for him.",
+        "fortes": "He said there are no friends and enemies in the bank case and defended the investigation into the businessman’s dealings with the Supreme Court, according to Folha de S.Paulo, which keeps him in the case’s coverage through the institutional route rather than the campaign one.",
+        "fracos": "He does not appear in the first-round or runoff scenarios of this Tuesday’s poll. In the price he remains below the watch floor."
       },
       "zema": {
-        "label": "ZEMA (Novo), presidential Poly 0.05% (vol USD 6.37M accumulated), below the 0.5% floor at which the double reading certifies movement. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, at 0.05%.",
-        "fortes": "Vox Brasil of Aug 29 measures him at 2.8% in the first round, the fifth name on the table, and tests a runoff scenario in which he loses to the leader 45.5% to 39.3%. It is the first national poll in the window to give him a runoff scenario of his own.",
-        "fracos": "BTG/Nexus measures him at 1% in the first round, against 3% in the same house's round of Aug 24, a loss of 2 points that puts him last on its table. In an AtlasIntel runoff he loses to the leader 47.0% to 40.7%, a distance of 6.3 points, wider than Caiado's."
+        "label": "ZEMA (Novo), presidential Poly below 0.20% (vol USD 6.37M accumulated), below the 0.5% floor of the double reading. This round publishes no new price for him. In the first-round third-place contract he is at 0.80%.",
+        "fortes": "He has 2% in the first round and the lowest rejection in the table after Augusto Cury, at 36%. In a runoff he loses to the leader 43% to 40%, a distance of 3 points, the narrowest among the scenarios in which the leader wins.",
+        "fracos": "The 2% of the first round leave him fifth among the names tested. He publicly demanded a Supreme Court justice’s departure, according to Folha de S.Paulo, and appears in the coverage for that subject and not for a campaign agenda of his own."
       },
-      "analise": "The back of the field lost the reference it had. Until the BTG/Nexus round of Aug 24, Ronaldo Caiado was the third name of the third way in the national polls and the leading name in the first-round third-place contract. This Monday he held the same house's 5% and was overtaken by Augusto Cury, who reached 11%. Zema gave up 2 points and landed at 1%. In the price, all three are still at the floor: 0.15% for Caiado and 0.05% for Haddad and Zema, all below the 0.5% threshold at which the double reading certifies movement, which is why this round publishes no new price for any of the three. What separates this block from Renan Santos's case is volume: their contracts hold between USD 6.37M and USD 7.41M, real money positioned on an outcome the market prices as very unlikely.",
+      "analise": "The back of the pack produced the strongest number of the round, and it is a poll number and not a price one. Ronaldo Caiado has 4% in the first round and beats the leader in a simulated runoff, 45% to 43%. It is the first time in the panel’s base that someone outside the runner-up shows in front in a scenario like that, and the correct reading is not that he is competitive: it is that the electorate that rejects the leader has less resistance to him than to the runner-up, whose rejection is 50% against his 39%. The price does not react to that, and it should not: the contract measures the chance of winning the election, and to win one must first reach the runoff, which is exactly where the 4% leave him out. All three remain below the 0.5% floor of the double reading.",
       "fortes": [
-        "RONALDO CAIADO (PSD) is at 5% in the BTG/Nexus first round, unchanged against the same house's round of Aug 24, on a day when the top two names both gave ground.",
-        "In the runoff tested by AtlasIntel, Caiado is the one who comes closest to the leader among the alternative scenarios, at 41.0% against 46.6%.",
-        "The three contracts hold meaningful volume even with the price at the floor: USD 7.41M in Haddad, USD 6.97M in Caiado and USD 6.37M in Zema.",
-        "None of the three was the target of a court ruling this Monday, unlike the fourth name on the table."
+        "Ronaldo Caiado comes out ahead of the leader in a runoff scenario, 45% to 43%, which had not occurred in the panel’s base with any name outside the runner-up.",
+        "The rejection of all three is lower than that of the top two: Caiado 39%, Zema 36%, against 50% for the leader and 50% for the runner-up.",
+        "Zema loses the runoff by 3 points, the narrowest distance among the scenarios in which the leader wins.",
+        "All three still carry meaningful accumulated volume in the presidential book, between USD 6.37M and USD 7.41M."
       ],
       "fracos": [
-        "All three are still below the 0.5% floor in the outright-winner contract, the band in which the AFOS double reading does not certify movement.",
-        "Caiado lost third place in BTG/Nexus to Augusto Cury, who jumped from 2% to 11% in the same house.",
-        "Zema gave up 2 points in BTG/Nexus, from 3% to 1%, and is the last name on its table.",
-        "Haddad is not a presidential candidate: he is running for governor of São Paulo, and his contract measures an outcome his campaign is not pursuing."
+        "None of the three passes 4% in the first round, and the scenario in which Caiado wins is one he does not reach by the first-round table itself.",
+        "All three remain below the 0.5% floor in the winner contract, and that is why this round publishes no new price for any of them.",
+        "Haddad is not tested in any scenario of this poll.",
+        "Two of the three appear in Tuesday’s coverage because of the Supreme Court crisis, not because of a campaign agenda of their own."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "AtlasIntel/Bloomberg of Aug 31 (BR-07972/2026, fieldwork Aug 25 to 30, n=5,014) puts him at 43.4% in the [first round](/en/glossary#primeiro-turno) and 47.1% in the [runoff](/en/glossary#segundo-turno) against 42.6%, and BTG/Nexus of Aug 31 (BR-08900/2026, fieldwork Aug 28 to 30, n=2,005) puts him at 39% and 46% against 45%. In the Nexus comparison against itself, against Aug 24, he gives up 2 points in the first round and does not move in the runoff, which is still 46 to 45. Rejection of 52.0% by AtlasIntel and 49% by Nexus.",
-      "m": "55.50% (vol USD 9.53M), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). No change on the day, and his price has not moved off 55.50% for the third day running. The distance to the runner-up widened to 16.45pp, against 14.40pp yesterday.",
-      "t": "still on price for the third day, and the distance widens only from his opponent's side",
-      "s": "The TSE suspended the advertising spot from his campaign that listed a résumé of his opponent citing Banco Master and the payroll kickback scheme, according to O Globo, Folha de S.Paulo, Terra and CBN, and the Electoral Court also suspended the one that called him a ghost employee, according to G1. After the defeat in the Senate, he said he will nominate Messias to the Supreme Court again, according to Migalhas.",
+      "p": "Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000, margin of 2pp) gives him 38% in both first-round scenarios. In the runoff he ties the runner-up at 44% to 44%, and loses to Ronaldo Caiado 45% to 43%. Against Romeu Zema he wins 43% to 40%, against Renan Santos 44% to 37% and against Pablo Marçal 44% to 40%. Rejection of 50%, tied with the runner-up’s.",
+      "m": "55.50% (vol USD 9.56M), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Unchanged on the day, and his price has not left 55.50% for the fourth day running. The distance to the runner-up widened to 16.55pp, against 16.45pp yesterday.",
+      "t": "flat in the price for the fourth day, and behind in a runoff for the first time against a name that is not the runner-up",
+      "s": "His advertising that used the Rap do Silva was suspended for not presenting his running mate, according to Estadão, CartaCapital and Metrópoles. He will seek to distance himself from the justice cited in the Federal Police investigation, while other presidential candidates criticise him, according to Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "The same AtlasIntel puts him at 33.7% in the first round and 42.6% in the runoff, 4.5 points behind the leader, and Nexus puts him at 33% and 45%, 1 point behind, inside the 2pp margin and therefore a [technical tie](/en/glossary#empate-tecnico). In the Nexus comparison against itself he gives up 4 points in the first round, from 37% to 33%, twice the leader's loss. He is the more rejected of the two in both houses, with 52.7% by AtlasIntel and 50% by Nexus.",
-      "m": "39.05% (vol USD 9.37M), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). Down 2.05pp, the largest move among the panel's names this round, after four consecutive closes on the rise that took him from 35.50% on Aug 27 to 41.20% on Aug 30. In the first-round second-place contract he is still at 85.50%.",
-      "t": "gives ground in both measurements on the same day, undoing much of the four-session rise",
-      "s": "He said he will nominate to the Supreme Court justices opposed to abortion, drugs and injustice, according to Gazeta do Povo. The former air force commander denied campaigning for the leader and pushed back on a statement of his, according to O Tempo and G1.",
+      "p": "The same Real Time gives him 29% in the scenario with Pablo Marçal and 30% in the one without. In the runoff he ties the leader at 44% to 44%. Rejection of 50%, tied with the leader’s. The 29% or 30% sit below the 33.7% of AtlasIntel and the 33% of BTG/Nexus, both from Aug 31.",
+      "m": "38.95% (vol USD 9.43M), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Down 0.10pp, against a 2.05pp drop the day before. In the first-round runner-up contract he rose 0.50pp, to 86.00%.",
+      "t": "gives ground in the first round and ties in the runoff, and the market reinforces his position in the runner-up contract",
+      "s": "He demanded the departure of the justice cited in the investigation, according to Folha de S.Paulo, and asked for his removal together with the opposition, according to Tribuna do Sertão. A request to remove him from his Senate seat was taken to the Supreme Court, according to Folha de S.Paulo.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "BTG/Nexus of Aug 31 (BR-08900/2026, fieldwork Aug 28 to 30, n=2,005) measures him at 11% in the [first round](/en/glossary#primeiro-turno), against 2% in its own round of Aug 24, a gain of 9 points in one week, and he is the first name outside the top two to reach double digits in that series, according to CNN Brasil. AtlasIntel measures him at 7.8%, practically tied with Renan Santos.",
-      "m": "1.85% (vol USD 2.89M) in the outright-winner contract. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, and his series has 68 captures, too short for a superlative.",
-      "t": "the name that moved in the declared ballot, with no new price reading this round",
-      "s": "The campaigns of the top two names reacted to his rise in the polls, according to UOL. Searches for his name on Google were 900% higher in the week after the Aug 22 debate, according to CNN Brasil.",
+      "p": "Real Time measures him at 10% in the scenario with Pablo Marçal and 11% in the one without. It is the second pollster in a row to put him in double digits, after the 11% of BTG/Nexus on Aug 31. His rejection is 24%, the lowest among the seven names tested in this poll.",
+      "m": "2.35% (vol USD 3.50M) in the winner contract, confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Up 0.50pp against the last published price, from Aug 30. And he has taken the lead in the first-round third-place contract, with 46.65% against 30.00% for Renan Santos.",
+      "t": "double digits from a second pollster in a row, and he takes the lead in the third-place contract",
+      "s": "The day’s coverage records his rise as confirmed by a second pollster, according to Poder360.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "AtlasIntel measures him at 7.6% in the first round, practically tied with Augusto Cury for third, and in a hypothetical runoff he loses 47.5% to 26.0%. Nexus measures him at 3%, unchanged against Aug 24. It is the widest distance between the two houses on a single name this round, at 4.6 points. AtlasIntel gives him a 67% negative image, the highest among the presidential candidates, according to CartaCapital.",
-      "m": "1.85% (vol USD 11.95M), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). Down 0.40pp on the day. His accumulated volume is the largest in the presidential book among the names below the top two.",
-      "t": "best poll and worst court ruling on the same day",
-      "s": "Dias Toffoli suspended the ticket's electoral advertising, its transfer of funds and its right to take part in debates, according to G1, after citing signs of illegality in the registration and postponing the ticket's ruling, according to Folha de S.Paulo and O Globo. He called the leader a friend and the runner-up an ally of organised crime, according to UOL.",
+      "p": "Real Time measures him at 6% in the scenario with Pablo Marçal, between the 3% of BTG/Nexus and the 7.6% of AtlasIntel, both from Aug 31. In a runoff he loses to the leader 44% to 37%. Rejection of 40%.",
+      "m": "2.55% (vol USD 12.30M), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Up 0.70pp, the largest move among the names in the presidential contract this round, after a 0.40pp drop the day before. In the third-place contract he fell to 30.00% and lost the lead.",
+      "t": "the ruling that was blocking the campaign was reversed, and the price gave back more than it had lost",
+      "s": "Dias Toffoli released the ticket’s campaign advertising on social media, according to Folha de S.Paulo, reversing the previous day’s suspension. The earlier ruling drew criticism inside the electoral court, according to G1. He took part in a protest calling for a justice’s impeachment, according to Folha de S.Paulo.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "BTG/Nexus of Aug 31 (BR-08900/2026, fieldwork Aug 28 to 30, n=2,005) puts him at 5% in the first round, unchanged against the same house's round of Aug 24, and he is the fourth name on its table, behind Augusto Cury. In an AtlasIntel runoff he loses to the leader 46.6% to 41.0%, a distance of 5.6 points, the narrowest among the alternative scenarios.",
-      "m": "0.15% (vol USD 6.97M), below the 0.5% floor at which the double reading certifies movement. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, at 0.15%.",
-      "t": "holds the 5% of the declared ballot and loses third place to another name",
-      "s": "He does not appear in this Monday's news cycle with a fact of his own.",
+      "p": "Real Time puts him at 4% in the first round, behind Augusto Cury and Renan Santos. ⚠️ IN A RUNOFF HE BEATS THE LEADER, 45% TO 43%. Across the 41 runoff simulations in the panel’s base the leader has trailed in four, and all four were against the runner-up. Rejection of 39%, eleven points below that of the top two.",
+      "m": "0.25% (vol USD 7.03M), below the 0.5% floor of the double reading. This round publishes no new price for him. In the first-round third-place contract he is at 13.00%.",
+      "t": "beats the leader in declared polling in a scenario that his 4% in the first round do not take him to",
+      "s": "He demanded the departure of the justice cited in the Federal Police investigation, according to Folha de S.Paulo.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "Neither national poll this Monday includes him in the released first-round table. PoderData/Aya of Aug 27 measured him at 3% in the first round.",
-      "m": "0.15% (vol USD 3.07M), below the 0.5% floor at which the double reading certifies movement. This round publishes no new price for him, and the last price published is the one from Aug 30, 4:40 PM BRT, at 0.15%.",
-      "t": "below the watch floor",
-      "s": "He does not appear in this Monday's news cycle with a fact of his own.",
+      "p": "Real Time brings him at 3% in the scenario with him on the list, and it is his presence that separates the two scenarios published by the pollster. In a runoff he loses to the leader 44% to 40%. Rejection of 48%, the third highest among the seven names tested.",
+      "m": "Below 0.20% (vol USD 3.07M), below the 0.5% floor of the double reading. This round publishes no new price for him.",
+      "t": "he enters the table and his presence changes the number of the second and third places",
+      "s": "He does not appear in Tuesday’s coverage with a story of his own.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
-      "p": "No polling. Market on the impeachment of a Supreme Court justice before 2027.",
-      "m": "3.60% (vol USD 84 thousand), confirmed reading of Aug 31, 1:43 PM BRT (4:43 PM UTC). No change, and it is still the smallest book on the panel.",
-      "t": "still on a day when the court ruled on a presidential ticket",
-      "s": "Dias Toffoli suspended the ticket's electoral advertising, its transfer of funds and its right to take part in debates, according to G1, after citing signs of illegality in the registration and postponing the ticket's ruling, according to Folha de S.Paulo and O Globo. Gilmar Mendes barred a judges' union from charging non-member magistrates, according to O Globo. After the defeat in the Senate, the leader said he will nominate Messias to the court again, according to Migalhas, and the runner-up said he will nominate justices opposed to abortion, drugs and injustice, according to Gazeta do Povo.",
+      "p": "No poll. Market on the impeachment of a Supreme Court justice before 2027.",
+      "m": "10.85% (vol USD 86 thousand), confirmed reading of Sep 1, 8:34 PM BRT (11:34 PM UTC). Up 7.25pp against the 3.60% of Aug 31, the panel’s largest move this round. ⚠️ IT IS THE SMALLEST BOOK ON THE PANEL: accumulated volume went from USD 84 thousand to USD 86 thousand, that is, some USD 2 thousand of new business accompanies the swing. Within the day the price passed through 3.50%, 13.80%, 10.70%, 19.10% and 14.30% before settling at 10.85% in the reading.",
+      "t": "the panel’s largest move, in the panel’s smallest book, on the day of the investigation into the messages",
+      "s": "The Federal Police detailed messages between Daniel Vorcaro and Justice Alexandre de Moraes, and the report indicates that he edited a contract worth BRL 131 million between his wife’s law firm and the businessman, according to Folha de S.Paulo. The prosecutor general asked for the report to be annulled, according to O Globo. André Mendonça asked for a full-bench session to discuss the messages, according to Folha de S.Paulo. Four presidential candidates demanded the justice’s departure. The Senate president signalled he will not schedule impeachment, according to Folha de S.Paulo. The joint committee on the pension agency requested an investigation into the contract, according to Times Brasil.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "August 31 is the first round of the week in which the panel's two measurements move in the same direction, and that is what sets it apart from the previous ones. Two national polls were released on the same day, AtlasIntel/Bloomberg of Aug 31 (BR-07972/2026, fieldwork Aug 25 to 30, n=5,014) and BTG/Nexus of Aug 31 (BR-08900/2026, fieldwork Aug 28 to 30, n=2,005), and both show the runner-up giving ground in the [first round](/en/glossary#primeiro-turno). In the price, he gave up 2.05pp, from 41.10% to 39.05%, while the leader did not move off 55.50% for the third day running. The distance between the two widened from 14.40pp to 16.45pp, and the widening came from one side only.\n\nThe two houses agree on who is ahead and disagree on the size: 9.7pp against 6pp in the first round, and 4.5pp against 1pp in the [runoff](/en/glossary#segundo-turno). Disagreement on size between pollsters with different methods, electronic form against phone, is normal instrument behaviour, and the panel publishes both without choosing between them.\n\nThe move both houses record and the price does not is Augusto Cury's. Nexus measures him at 11% in the first round, against 2% in its own round of Aug 24, and AtlasIntel measures him at 7.8%. This round publishes no new price for him, and the last one published is from Aug 30, 4:40 PM BRT, at 1.85%. His contract's series has 68 captures, too short to support a superlative.\n\nWhat does not follow the rest is the government's ratings. Both houses bring disapproval above approval, at 52.9% by AtlasIntel and 51% against 46% by Nexus, which records the widest distance between the two since May. Voting intention and government ratings are different rulers, measured with different questions, and the panel neither adds them up nor derives one from the other."
+  "cruzamento": "September 1 is the round in which the panel’s two measurements point to different places, and that is what sets it apart from the day before. In declared polling, Real Time Big Data of Sep 1 (BR-03490/2026, field Aug 27 to 31, n=2,000) brings three new things: the runoff between the top two went back to a tie, at 44% to 44%; Augusto Cury reached double digits from a second pollster in a row, with 10% in the scenario with Pablo Marçal and 11% in the one without; and Ronaldo Caiado, with 4% in the first round, comes out ahead of the leader in a simulated runoff, 45% to 43%. That last one is unprecedented in the panel’s base for a name other than the runner-up. In the price, almost none of that showed. The leader stayed at 55.50% for the fourth day running and the runner-up gave up 0.10pp, to 38.95%. What moved were the names below: Renan Santos rose 0.70pp, to 2.55%, on the same day the ruling that was blocking his campaign was reversed, and Augusto Cury rose 0.50pp, to 2.35%, besides taking the lead in the third-place contract with 46.65%. The panel’s largest move, however, is not a candidate’s: the contract on a Supreme Court justice leaving through impeachment before 2027 went from 3.60% to 10.85%, up 7.25pp, on the day the Federal Police detailed messages between an arrested businessman and a justice of the court. The size of that book has to be stated, because it changes the reading: it holds USD 86 thousand accumulated, the smallest on the panel, and some USD 2 thousand of new business accompanies the swing. The panel does not claim that one measurement corrects the other. It records that the poll measured the electorate’s resistance to alternative names in a hypothetical scenario, that the price measured the chance of winning in the real one, and that on a day of institutional crisis the two moved on very different scales."
 }
