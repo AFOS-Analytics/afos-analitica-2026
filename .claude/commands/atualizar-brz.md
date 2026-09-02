@@ -86,6 +86,82 @@ Output: 6 queries Google News executadas, 100-200 itens com URL primária, cache
 - `https://news.google.com/rss/search?q=Lula+aprovação+rejeição+governo+redes+sociais+when:1d&hl=pt-BR&gl=BR&ceid=BR:pt-419`
 - `https://news.google.com/rss/search?q=governador+senado+eleição+2026+when:1d&hl=pt-BR&gl=BR&ceid=BR:pt-419`
 
+## ETAPA 2.5: GATE DE FACT-CHECK (bloqueante, só para ATO de alto impacto)
+
+🔴 **Instalado em 01/Set/2026, na TERCEIRA vez que a mesma armadilha mordeu.** As duas anteriores foram 01/Mai (Vorcaro preso "hoje" quando estava preso desde 19/Mar) e 27/Ago (depoimento que "aconteceu" e tinha sido adiado). A ficha de 27/Ago já prescrevia este conserto e ele nunca foi escrito aqui, e é por isso que voltou.
+
+⚠️ **O problema estrutural, em uma frase: o comando que publica PRIMEIRO é o que não tinha o gate.** O `/afos-daily` tem o gate e roda horas depois; foi ele que pegou os três casos, sempre com o painel já no ar em três idiomas.
+
+### Quando este gate roda
+
+Só para **ATO de alto impacto** que vá entrar nos cards: prisão, morte, depoimento, decisão judicial, indicação, demissão, vazamento, queda de sigilo, delação. **Não roda** para preço, para pesquisa nem para declaração de campanha.
+
+Se não houver nenhum, escrever `Atos de alto impacto: nenhum` e seguir. Ausência declarada também é registro.
+
+### As quatro perguntas, e as três primeiras já falharam em produção
+
+**1. QUANDO o ato aconteceu? A data sai do CORPO, não do carimbo da matéria.**
+
+🔴 **Foi isto que falhou em 01/Set/2026.** O painel publicou *"a Polícia Federal detalhou mensagens"*, que se lê como ato do dia. A cronologia real, estabelecida por duas fontes: mensagens de **16/Nov/2025**, empresário preso desde **17/Nov/2025**, relatório entregue em **27/Ago/2026**, e o que era de 01/Set era **a queda do sigilo**. Dez meses comprimidos em "hoje".
+
+📌 A pergunta que resolve: **o que exatamente mudou HOJE?** Quase sempre a resposta é mais estreita do que a manchete sugere, e a resposta estreita é a verdadeira.
+
+**2. As duas fontes são POSTERIORES ao ato?**
+
+Matéria publicada antes da hora marcada sustenta "está marcado para", nunca "aconteceu". O teste é uma subtração entre o horário de publicação e o horário do ato. Foi o que falhou em 27/Ago, com duas fontes das 07h15 e 08h35 sobre uma audiência das 10h.
+
+**3. As duas fontes são de GRUPOS diferentes?**
+
+| grupo | veículos |
+|---|---|
+| Folha | Folha de S.Paulo, UOL, BOL |
+| Globo | O Globo, G1, Valor, GE, CBN |
+| independentes entre si | Estadão, Poder360, Metrópoles, CartaCapital, Gazeta do Povo, CNN Brasil, VEJA, R7 |
+
+Cinco manchetes do Google News sobre o mesmo evento continuam sendo **uma** fonte, porque o agregador replica.
+
+**4. O `news-cache` do próprio dia contradiz?**
+
+```bash
+node -e "const a=require('./public/news-cache/{DATA}.json');const t=[].concat(...Object.values(a.queries).map(q=>q.items||[]));const re=/{NOME}/i;const h=[...new Map(t.filter(x=>re.test(x.title)).map(x=>[x.title,x])).values()];console.log(h.length+' titulos');h.slice(0,20).forEach(x=>console.log(' ['+x.sourceName+']',x.title.slice(0,95)))"
+```
+
+Em 27/Ago a refutação estava neste arquivo, que eu mesmo tinha gerado, em quatro manchetes com "adiado". **Grepar o próprio cache é mais barato que qualquer busca externa, e é o passo que eu pulo.**
+
+### 🌐 Quem o WebFetch alcança, medido em 01/Set/2026
+
+| alcança | bloqueia |
+|---|---|
+| Poder360, Metrópoles, CartaCapital, Gazeta do Povo | G1, O Globo, Valor (Grupo Globo) |
+| | Estadão, VEJA |
+
+📌 **Consequência prática:** para a segunda fonte independente, mirar direto em Poder360, Metrópoles, CartaCapital ou Gazeta do Povo. Tentar Globo ou Estadão gasta chamada e volta bloqueado.
+
+### 🏷️ Verbos que exigem desambiguação
+
+Os mesmos do codebook do `/afos-daily`, e os três que mais mordem aqui:
+
+- **preso** → sempre com a data de início. *"preso desde 17 de novembro de 2025"*, nunca "preso".
+- **depôs / decidiu / indicou** → só com fonte posterior ao ato; na dúvida, escrever o agendamento.
+- **vazou / revelou** → distinguir quem revelou de quem tornou público. Em 01/Set o conteúdo saiu numa coluna em 31/Ago e virou documento público em 01/Set por ato de um ministro, e as duas coisas têm datas diferentes.
+
+### Saída obrigatória, no chat, antes da ETAPA 3
+
+```
+## Gate de fact-check do painel — [{YYYY-MM-DD}]
+Atos de alto impacto: [lista | nenhum]
+Para cada um:
+- Ato: [descrição] | O que mudou HOJE: [a resposta estreita]
+- Data do ato (do corpo): [YYYY-MM-DD] | Fonte 1: [url, grupo, publicada em]
+- Fonte 2 de grupo DIFERENTE: [url, grupo, publicada em]
+- news-cache contradiz? [não | SIM: ...]
+- Decisão: [incorporar | incorporar com data corrigida | NÃO incorporar]
+```
+
+⛔ **Se as duas fontes não fecharem, escrever o agendamento em vez do ato.** *"Estava marcado para"* é sempre verdadeiro e nunca precisa de errata.
+
+📌 **E o que nenhum outro portão pega:** `check-frescor`, `validate-polls-data`, o gate numérico da tradução e as quatro travas de pre-commit passaram nas três vezes. O texto estava internamente coerente, com carimbo certo, forma certa e número certo. **O que estava errado era o mundo.**
+
 ## ETAPA 3: Atualizar JSONs
 
 Com os dados coletados, atualize os 3 arquivos JSON:
