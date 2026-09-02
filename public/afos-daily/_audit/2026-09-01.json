@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-01",
+  "geradoEm": "2026-09-02T00:55:00.000Z",
+  "leituraDeMercado": {
+    "carimbo": "2026-09-01T23:34:00Z",
+    "carimboBRT": "01/09/2026, 20:34",
+    "livroPresidencial": "USD 141,39M"
+  },
+  "travaDeCaptura": {
+    "veredito": "APROVADO",
+    "leituras": ["2026-09-01T23:25:35Z", "2026-09-01T23:33:36Z"],
+    "observacao": "Alem da trava, tres leituras independentes as 23:21:51Z, 23:34:14Z e a propria janela da trava deram valores IDENTICOS em todos os precos vigiados.",
+    "exitCode": "a notificacao da tarefa de fundo voltou como failed com exit 1 e a trava tinha APROVADO. O desempate `true` devolveu 0, entao o ambiente estava sao. Vale a linha VEREDITO."
+  },
+  "gateDeRebaseline": {
+    "disparou": false,
+    "deltas": {
+      "Lula": "0,00pp",
+      "Flavio": "+0,20pp",
+      "Renan": "0,00pp",
+      "gap": "-0,20pp",
+      "volumeTotal": "identico, USD 141,39M"
+    },
+    "decisao": "manter a baseline do JSON, que e a leitura confirmada pela trava",
+    "razao": "nenhum valor atingiu 0,50pp, nenhum recorde foi rompido, o enquadramento nao mudou e o volume total nao divergiu"
+  },
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "relatorio da PF sobre Vorcaro e Moraes",
+      "reversao de Toffoli sobre a campanha de Renan Santos",
+      "suspensao da propaganda de Lula por Mendonca",
+      "divulgacao da Real Time Big Data"
+    ],
+    "eventoPrincipal": {
+      "descricao": "queda do sigilo do relatorio da Policia Federal sobre a relacao entre Daniel Vorcaro e Alexandre de Moraes",
+      "verificacao1": {
+        "Vorcaro": "17 mencoes em 7 dailies, depoimento concluido em 28/Ago -> CONTINUIDADE",
+        "Moraes": "ZERO mencoes em 7 dailies -> a entrada dele e NOVIDADE",
+        "Toffoli": "5 mencoes, a suspensao ja estava na daily de 31/Ago -> a REVERSAO e o novo",
+        "impeachment": "8 mencoes, o contrato e coberto todo dia -> o salto de 7,25pp e o novo",
+        "RealTime": "10 mencoes, todas como linha de CALENDARIO nas dailies de 30 e 31/Ago -> a divulgacao confirma a previsao"
+      },
+      "verificacao2": {
+        "url": "https://www.poder360.com.br/poder-justica/vorcaro-pediu-a-moraes-encontro-com-galipolo-para-resolver-tudo/",
+        "data": "2026-09-01",
+        "tipo": "evento"
+      },
+      "segundaFonte": {
+        "url": "https://www.metropoles.com/sao-paulo/moraes-x-vorcaro-caiado-pede-afastamento-de-ministro-do-stf-conivencia",
+        "data": "2026-09-01",
+        "grupoIndependente": true
+      },
+      "cronologiaEstabelecida": {
+        "2025-11-16": "Vorcaro envia as mensagens",
+        "2025-11-17": "Vorcaro e preso",
+        "2025-11-18": "liquidacao do Banco Master",
+        "2026-08-27": "PF entrega o relatorio",
+        "2026-08-31 noite": "primeira revelacao, coluna do Metropoles",
+        "2026-09-01": "Mendonca derruba o sigilo, e vem a reacao politica"
+      },
+      "decisao": "INCORPORAR com enquadramento corrigido: o fato de 01/Set e a QUEDA DO SIGILO, nao a apuracao"
+    },
+    "efeitoColateral": "O gate derrubou o enquadramento que o PAINEL tinha publicado horas antes. O painel foi corrigido nos 3 idiomas ANTES da daily ser escrita, commit 6885899. Causa conhecida e ja registrada na memoria: o /atualizar-brz publica FATO sem gate de fact-check, porque o gate so existe na daily."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "o contrato de R$ 50 milhoes aparece so no Poder360 dentro do que foi possivel buscar, e esta atribuido a ele no corpo. Nenhuma outra alegacao nao trivial com fonte unica.",
+    "numericalErrors": "reconcile-claims apontou 36,60% e 15,60pp fora do JSON. O primeiro e a faixa de inflacao da leitura ao vivo, o segundo e a amplitude calculada da serie (3,50% a 19,10%). Os dois sao medidos.",
+    "fontesInventadas": "conferidos tres ao acaso: Gazeta do Povo, Metropoles e Valor. Os tres com materia do dia correspondente.",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O unico par causal e o do Renan Santos, escrito como coincidencia de direcao com tamanho medido.",
+    "verbosCriticos": "preso desambiguado como 'preso desde 17 de novembro de 2025', tres vezes. suspendeu e liberou com autor, data e objeto. pediu a anulacao descrito como pedido, nao como decisao.",
+    "avisoAceito": "densidade de links em 59% contra a meta de 80%. Os paragrafos sem link sao os 3 blockquotes de divergencia e os 3 itens da sintese, leitura derivada de alegacoes ja linkadas no corpo.",
+    "decisao": "prosseguir"
+  },
+  "traducao": {
+    "metodo": "na sessao",
+    "gateNumerico": "60 valores identicos nas tres versoes",
+    "cincoChecagens": "limpas nos tres: sem cirilico, sem link para outro locale, separador decimal correto no corpo e na tabela, tldr com 3 bullets",
+    "emojis": 0,
+    "nenhumIdiomaCaiuParaPortugues": true
+  },
+  "densidade": {
+    "palavrasNoCorpo": 1100,
+    "teto": 1100
+  }
+}
