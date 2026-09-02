@@ -152,6 +152,27 @@ curl -s "https://www.afos-analytics.com/api/market/history?candidate=Fl%C3%A1vio
 ```
 Filtrar `slug === 'brazil-presidential-election'`, pegar o último ponto de cada dia, comparar contra **todo** o histórico disponível. Nome acentuado e URL-encoded (`memory/reference_market_history_api_prefix_accent.md`).
 
+🔴⭐⭐⭐ **O `country=` NÃO resolve isso, e usá-lo é PIOR do que não filtrar, porque parece que você filtrou.** O parâmetro casa por **PREFIXO**, e no Brasil os três slugs se ANINHAM:
+
+```
+brazil-presidential-election                        ← vencedor
+brazil-presidential-election-first-round-2nd-place  ← 2º lugar
+brazil-presidential-election-first-round-3rd-place  ← 3º lugar
+```
+
+Pedir `country=brazil-presidential-election` traz os **três**. Medido em 01/Set/2026 com o Augusto Cury: dos **312 pontos** devolvidos, só **77 eram o contrato de vencedor**. Os outros 235, ou **75% da série**, eram de 2º e 3º lugar. O máximo do vencedor é **5,00%**; quem lesse a série contaminada leria **60,20%**, que é o preço dele no contrato de 3º lugar.
+
+⚠️ **Nos EUA o mesmo parâmetro FUNCIONA**, porque `which-party-will-win-the-house` e `which-party-will-win-the-senate` são irmãos e nenhum é prefixo do outro. Por isso a régua dos EUA manda usar `country=` e a do Brasil manda ignorar. **É a mesma rota com comportamento oposto, e a diferença é o formato do slug, não o país.**
+
+📌 **A segunda trava é independente e PIOR, porque o filtro não a resolve:** o teto de 1.000 pontos **TRUNCA sem avisar**, e o corte tira o FIM da série, que é justamente onde mora o superlativo. Medido em 01/Set: o Renan Santos voltou com 1.000 pontos e janela terminando em **28/Ago**, faltando os quatro dias mais recentes. Filtrar por slug no cliente limpa a contaminação mas **não devolve os pontos que os outros contratos já gastaram da cota**.
+
+⛔ **Por isso a régua da casa não é "filtrar melhor", é NÃO USAR ESTA ROTA PARA SUPERLATIVO DO BRASIL.** Ela foi declarada inutilizável para a série presidencial em 23/Ago/2026, quando a contaminação medida foi de 84% e a resposta veio truncada em 17/Ago. → `memory/reference_market_history_api_prefix_accent.md`
+
+✅ **O que usar, em ordem:**
+1. **Superlativo se confere no `backup/neon/marketPrice/*.csv.gz`**, não na API. → `memory/feedback_superlativo_se_confere_no_backup_nao_na_api.md`
+2. Para comparação de véspera, basta a leitura ao vivo com carimbo contra a leitura confirmada da ficha do dia anterior, que é documentada.
+3. Se ainda assim for usar a rota para orientação, puxar **SEM** `country=`, filtrar por `p.slug === 'brazil-presidential-election'` com igualdade exata e nunca `startsWith`, juntar `days=90` com `days=15` por `date` num Map, conferir o campo `truncated`, e **imprimir quantos pontos sobraram e quantos foram descartados**. O descarte é o que denuncia a contaminação.
+
 **Se não der para verificar, não use superlativo.** "Alta no dia", "acima da semana passada" e "perto do topo recente" custam zero e não podem ser desmentidos.
 
 **Precisar a JANELA sempre.** "A mais larga da semana" é uma afirmação; "a mais larga" sem janela vira "do ciclo" na cabeça de quem lê.
