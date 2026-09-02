@@ -58,6 +58,12 @@ async function carregarPersist() {
   return (await import('../lib/tse/persist')).persistPolls
 }
 
+// Mesmo motivo do import dinâmico acima: `lib/db` resolve a DATABASE_URL na hora
+// em que é carregado, e no topo isso acontece antes do dotenv.
+async function carregarPrisma() {
+  return (await import('../lib/db')).getPrisma()
+}
+
 const ANO = 2026
 
 // ⚠️ `classifyScope` recebe TRÊS campos e devolve `{scope, source}`; `detectScope`
@@ -156,7 +162,7 @@ async function main() {
 
   console.log('\n💾 Gravando...')
   const persistPolls = await carregarPersist()
-  const { inserted, skipped } = await persistPolls(polls, 'tse_manual')
+  const { inserted, skipped, insertedPolls } = await persistPolls(polls, 'tse_manual')
   console.log(`✅ ${inserted} inserida(s), ${skipped} já existente(s).`)
 
   // 🔒 Conferir que o número bate com o que se esperava gravar.
@@ -164,6 +170,50 @@ async function main() {
     console.error('❌ Zero inseridas E zero puladas com arquivo não vazio: o persist não viu o banco. Tratar como FALHA.')
     process.exit(1)
   }
+
+  // 🗳️ QUAIS nacionais entraram, com o escopo que o próprio persist classificou.
+  // A linha final manda rodar /atualizar-brz "se algo nacional entrou", e até
+  // 02/Set/2026 responder isso dependia de eu conferir a olho a lista de cima
+  // contra a de baixo. Quem sabe a resposta é o persist, então quem responde é ele.
+  const nacionaisNovas = insertedPolls.filter(p => p.scope === 'national')
+  if (nacionaisNovas.length > 0) {
+    console.log(`\n🗳️  NACIONAIS que entraram nesta rodada: ${nacionaisNovas.length}`)
+    for (const p of nacionaisNovas) {
+      console.log(`   ${p.protocolo}  ${(p.institutoFantasia || p.instituto).slice(0, 34).padEnd(34)} campo ${p.campoInicio} a ${p.campoFim}  n=${p.amostra}  div ${p.divulgacao}`)
+    }
+  } else {
+    console.log('\n🗳️  Nenhuma NACIONAL entrou nesta rodada.')
+  }
+
+  // ➖ O REGISTRO DO TSE TAMBÉM PERDE LINHAS, e o banco nunca perde.
+  //
+  // 🔴 Medido em 02/Set/2026: o arquivo trazia 757 presidenciais contra 756 no dia
+  // anterior, e mesmo assim QUATRO protocolos eram novos para o banco. A conta só
+  // fecha se o TSE retira registros. Retira mesmo: 75 protocolos que já estiveram
+  // no arquivo saíram dele, e os 75 tinham divulgação AINDA FUTURA no dia em que
+  // foram ingeridos, contra 78,7% dos que ficaram. Nenhum registro já divulgado
+  // saiu. É a assinatura de pesquisa cancelada ou re-registrada antes de publicar.
+  //
+  // Consequência: a API pública serve como "divulgação prevista" compromissos que o
+  // TSE já não tem, e a conta de "registrada e não divulgada" conta cancelamento
+  // como sonegação. Isto AVISA, não conserta: apagar linha do banco é decisão do
+  // André, e a trilha de que a linha existiu tem valor próprio.
+  // Detalhe por protocolo: npx tsx scripts/diff-tse-arquivo-vs-banco.ts
+  const prisma = await carregarPrisma()
+  if (prisma) {
+    const noArquivo = new Set(polls.map(p => p.protocolo))
+    const linhas = await prisma.researchFinding.findMany({ select: { title: true } })
+    const noBanco = linhas.map(l => l.title).filter((t): t is string => !!t && /^[A-Z]{2}\d{9}$/.test(t))
+    // Sem linhas o banco não foi lido, e zero aqui seria o medidor mudo, não medição.
+    if (noBanco.length > 0) {
+      const fora = noBanco.filter(t => !noArquivo.has(t))
+      if (fora.length > 0) {
+        console.log(`\n➖ ${fora.length} protocolo(s) no banco já NÃO estão no registro do TSE, de ${noBanco.length}.`)
+        console.log('   Detalhe: npx tsx scripts/diff-tse-arquivo-vs-banco.ts')
+      }
+    }
+  }
+
   console.log('\n📋 Depois disto: rodar /atualizar-brz para o painel refletir, se algo nacional entrou.')
 }
 

@@ -73,6 +73,10 @@ const BOOKS_US = ['house', 'senate', 'asScheduled'] as const
 
 interface Leitura {
   precos: Map<string, number>
+  // 💾 Volume acumulado do MESMO instante do preço. Sem ele, o instantâneo
+  // certificado obriga a rodada a buscar volume numa segunda chamada, e aí o
+  // par preço/volume publicado lado a lado passa a ser de dois momentos.
+  volumes: Map<string, number>
   fetchedAt: string | null
   degraded: boolean
   failedCount: number
@@ -125,15 +129,20 @@ async function lerUmaVez(proxy: string, books: readonly string[]): Promise<Leitu
   const j = await res.json() as Record<string, any>
 
   const precos = new Map<string, number>()
+  const volumes = new Map<string, number>()
   for (const book of books) {
     for (const m of j?.[book]?.markets ?? []) {
       const p = Number(m?.outcomePrices?.[0])
       if (!Number.isFinite(p)) continue
-      precos.set(`${book}:${limpaNome(m.question)}`, Number((p * 100).toFixed(2)))
+      const chave = `${book}:${limpaNome(m.question)}`
+      precos.set(chave, Number((p * 100).toFixed(2)))
+      const v = Number(m?.volumeNum)
+      if (Number.isFinite(v)) volumes.set(chave, v)
     }
   }
   return {
     precos,
+    volumes,
     fetchedAt: j?.fetchedAt ?? null,
     degraded: !!j?.degraded,
     failedCount: Number(j?.failedCount ?? 0),
@@ -271,16 +280,53 @@ async function main() {
   const ok = motivos.length === 0
   const livrosOk = Object.entries(livros).filter(([, v]) => v.ok).map(([k]) => k)
 
+  const certificado = {
+    ok,
+    livros,
+    livrosOk,
+    motivos,
+    pais,
+    fetchedAt: b.fetchedAt,
+    fetchedAtPrimeira: a.fetchedAt,
+    intervaloMin: minutos,
+    toleranciaPp: TOLERANCIA_PP,
+    // A 2a leitura é a que vale: é a mais recente e sobreviveu à confirmação.
+    precos: Object.fromEntries(b.precos),
+    volumes: Object.fromEntries(b.volumes),
+  }
+
+  /**
+   * 💾 O INSTANTÂNEO CERTIFICADO FICA GRAVADO, instalado em 02/Set/2026.
+   *
+   * 🔴 O que faltava: a trava lia, confirmava, IMPRIMIA o veredito e descartava
+   * os preços. Quem roda sem `--json` fica com a certificação e sem os números,
+   * e aí só tem duas saídas, as duas ruins: rodar de novo, gastando mais oito
+   * minutos, ou publicar uma leitura NOVA que ninguém certificou. Medido hoje,
+   * na rodada em que o livro do STF bloqueou e os outros quatro passaram: para
+   * recuperar os quatro preços aprovados era preciso repetir a trava inteira.
+   *
+   * 🔑 Gravar não enfraquece nada. O arquivo é a MESMA 2a leitura que a trava
+   * acabou de aprovar, com o carimbo dela junto. Quem publicar a partir daqui
+   * publica o número certificado, e o carimbo diz de quando ele é.
+   *
+   * ⛔ A escrita NUNCA derruba a trava. Se o disco recusar, o veredito continua
+   * valendo e sai pelo stdout como sempre: portão que falha por causa de um
+   * efeito colateral é portão que alguém aprende a pular.
+   */
+  try {
+    const { mkdirSync, writeFileSync } = await import('fs')
+    const dir = '.cache/capture-guard'
+    mkdirSync(dir, { recursive: true })
+    const carimbo = (b.fetchedAt ?? new Date().toISOString()).replace(/[:.]/g, '-')
+    writeFileSync(`${dir}/${pais}-${carimbo}.json`, JSON.stringify(certificado, null, 2), 'utf8')
+    writeFileSync(`${dir}/ultima-${pais}.json`, JSON.stringify(certificado, null, 2), 'utf8')
+    log(`  💾 instantâneo certificado em ${dir}/ultima-${pais}.json`)
+  } catch (err) {
+    log(`  ⚠️ não deu para gravar o instantâneo (${err instanceof Error ? err.message : String(err)}). O veredito abaixo continua valendo.`)
+  }
+
   if (jsonOut) {
-    console.log(JSON.stringify({
-      ok,
-      livros,
-      livrosOk,
-      motivos,
-      fetchedAt: b.fetchedAt,
-      // A 2a leitura é a que vale: é a mais recente e sobreviveu à confirmação.
-      precos: Object.fromEntries(b.precos),
-    }, null, 2))
+    console.log(JSON.stringify(certificado, null, 2))
   } else {
     log('')
     if (ok) {

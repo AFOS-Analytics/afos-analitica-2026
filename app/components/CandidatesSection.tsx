@@ -16,29 +16,29 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "55,50%",
-    poll: "A ÚNICA NACIONAL DESTA TERÇA É A REAL TIME BIG DATA (n=2.000, campo 27 a 31/Ago, margem de 2pp, BR-03490/2026), a primeira do painel cujo campo alcança 31/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem. Ela lhe dá 38% nos dois cenários. No 2º turno empata com o segundo colocado em 44% a 44%, e PERDE PARA RONALDO CAIADO POR 45% A 43%. Contra Romeu Zema vence por 43% a 40%, contra Renan Santos por 44% a 37% e contra Pablo Marçal por 44% a 40%. Rejeição de 50%, empatada com a do segundo colocado. NO PREÇO, leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC), em 55,50% (vol USD 9,56M acumulado), SEM VARIAÇÃO.",
+    poll: "A ÚNICA NACIONAL DESTA QUARTA É A GENIAL/QUAEST (n=2.004, campo 30/Ago a 01/Set, margem de 2pp, BR-07065/2026). A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e um cenário espontâneo. Ela lhe dá 37% nos dois cenários estimulados, contra 38% na rodada da mesma casa de 14/Ago, e 28% no espontâneo. Vence os cinco cenários de 2º turno: 42% a 41% contra o segundo colocado, 42% a 37% contra Ronaldo Caiado, 44% a 33% contra Romeu Zema, 43% a 36% contra Renan Santos e 40% a 34% contra Augusto Cury. Rejeição de 53%. NO PREÇO, leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC), em 55,50% (vol USD 9,59M acumulado), SEM VARIAÇÃO.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "SEM VARIAÇÃO, em 55,50% (vol USD 9,56M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). O preço dele não sai de 55,50% pelo quarto dia seguido. A distância para o segundo colocado abriu para 16,55pp, contra 16,45pp na véspera, e a abertura veio do lado do adversário. NA URNA DECLARADA ELE APARECE ATRÁS NUM 2º TURNO PELA PRIMEIRA VEZ CONTRA UM NOME QUE NÃO É O SEGUNDO COLOCADO: perde para Ronaldo Caiado por 45% a 43%. Nas 41 simulações de 2º turno da base do painel ele já ficou atrás em quatro, e as quatro eram contra o mesmo adversário. A propaganda dele que usava o Rap do Silva foi suspensa por não apresentar o vice, segundo Estadão, CartaCapital e Metrópoles."
+    risk: "SEM VARIAÇÃO, em 55,50% (vol USD 9,59M acumulado), leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC). O preço dele não sai de 55,50% pelo quinto dia seguido. A distância para o segundo colocado CAIU para 14,85pp, contra 16,55pp na véspera, e a compressão veio inteira do lado do adversário. NA URNA DECLARADA, O 2º TURNO CONTRA RONALDO CAIADO INVERTE O DA VÉSPERA: aqui ele vence por 42% a 37%, enquanto a Real Time Big Data de 01/Set, com campo que se sobrepõe, o dava atrás por 45% a 43%. São 7pp de diferença na margem do mesmo par entre duas casas que mediram a mesma semana. Conversou com Fachin, Dino e Gilmar sobre a crise no Supremo e se distanciou de Moraes, segundo Folha de S.Paulo e O Globo."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "38,95%",
-    poll: "A ÚNICA NACIONAL DESTA TERÇA É A REAL TIME BIG DATA (n=2.000, campo 27 a 31/Ago, margem de 2pp, BR-03490/2026), a primeira do painel cujo campo alcança 31/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem. Ela o dá em 29% no cenário com Marçal e em 30% no cenário sem, abaixo dos 33,7% da AtlasIntel e dos 33% da BTG/Nexus, as duas de 31/Ago. No 2º turno ele empata com o líder em 44% a 44%, depois de aparecer atrás nas duas leituras da véspera. Rejeição de 50%, empatada com a do líder. NO PREÇO, leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC), em 38,95% (vol USD 9,43M acumulado), QUEDA de 0,10pp.",
+    polymarket: "40,65%",
+    poll: "A ÚNICA NACIONAL DESTA QUARTA É A GENIAL/QUAEST (n=2.004, campo 30/Ago a 01/Set, margem de 2pp, BR-07065/2026). A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e um cenário espontâneo. Ela o dá em 30% no cenário com Marçal e em 29% no cenário sem, contra 31% na rodada da mesma casa de 14/Ago, e 20% no espontâneo. No 2º turno ele fica a 1 ponto do líder, 41% contra 42%, e essa distância era de 5pp em 05/Ago e de 3pp em 14/Ago na mesma casa. Rejeição de 55%, a maior entre os treze nomes testados. NO PREÇO, leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC), em 40,65% (vol USD 9,48M acumulado), ALTA de 1,70pp.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "QUEDA de 0,10pp, para 38,95% (vol USD 9,43M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). Depois de ceder 2,05pp na véspera, ele reteve quase toda a posição nesta terça. No contrato de 2º lugar do 1º turno SUBIU 0,50pp, para 86,00%, ou seja, o mercado tratou o dia como confirmação da chegada dele ao returno. Cobrou a saída do ministro citado na apuração da Polícia Federal, segundo Folha de S.Paulo, e pediu o afastamento dele junto com a oposição, segundo Tribuna do Sertão. Um pedido para afastá-lo do mandato de senador foi levado ao Supremo, segundo Folha de S.Paulo."
+    risk: "ALTA de 1,70pp, para 40,65% (vol USD 9,48M acumulado), leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC). É o único movimento de alta entre os nomes do presidencial acima do piso, e como o líder ficou parado a distância entre os dois caiu para 14,85pp. AS DUAS MEDIÇÕES APONTAM PARA LADOS DIFERENTES NO MESMO DIA: no 1º turno ele cedeu dentro da própria casa, de 31% para 29% ou 30%, e no 2º turno encostou a 1 ponto, fechando três rodadas seguidas da Quaest em que essa distância só encolheu. O contrato pergunta quem vence a eleição, não quem lidera o 1º turno. Chamou o encontro de André Mendonça com Daniel Vorcaro de cortina de fumaça e defendeu o ministro, segundo Poder360 e O Globo."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "2,55%",
-    poll: "A ÚNICA NACIONAL DESTA TERÇA É A REAL TIME BIG DATA (n=2.000, campo 27 a 31/Ago, margem de 2pp, BR-03490/2026), a primeira do painel cujo campo alcança 31/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem. Ela o mede em 6% no cenário com Marçal, entre os 3% da BTG/Nexus e os 7,6% da AtlasIntel, as duas de 31/Ago. Num 2º turno perde para o líder por 44% a 37%. Rejeição de 40%. NO PREÇO, leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC), em 2,55% (vol USD 12,30M acumulado), ALTA de 0,70pp.",
+    polymarket: "2,20%",
+    poll: "A ÚNICA NACIONAL DESTA QUARTA É A GENIAL/QUAEST (n=2.004, campo 30/Ago a 01/Set, margem de 2pp, BR-07065/2026). A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e um cenário espontâneo. Ela o mede em 3% nos dois cenários estimulados, contra 4% na rodada da mesma casa de 14/Ago. Num 2º turno perde para o líder por 43% a 36%, margem de 7 pontos que é exatamente a mesma medida pela Real Time Big Data na véspera, e é o único par em que as duas casas da semana coincidem. Rejeição de 28%. NO PREÇO, leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC), em 2,20% (vol USD 12,36M acumulado), QUEDA de 0,35pp.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "ALTA de 0,70pp, para 2,55% (vol USD 12,30M acumulado), leitura confirmada de 01/Set, 20:34 BRT (23:34 UTC). É a maior variação entre os nomes do presidencial nesta rodada, e ela devolve mais do que a queda de 0,40pp da véspera. A DECISÃO QUE TRAVAVA A CAMPANHA DELE FOI REVISTA: Dias Toffoli liberou a propaganda eleitoral da chapa nas redes, segundo Folha de S.Paulo, revertendo a suspensão que também atingia repasse de recursos e direito a debate. A decisão anterior foi criticada dentro do TSE, segundo G1. Em contrapartida ele perdeu a liderança do contrato de 3º lugar do 1º turno para Augusto Cury, e está em 30,00% contra 46,65%."
+    risk: "QUEDA de 0,35pp, para 2,20% (vol USD 12,36M acumulado), leitura confirmada de 02/Set, 20:26 BRT (23:26 UTC). No contrato de 3º lugar do 1º turno caiu 2,00pp, para 28,00%, e a distância para Augusto Cury, que está em 52,40%, quase dobrou. AS REDES DELE VOLTARAM AO AR nesta quarta, depois de a decisão que travava a campanha digital ter sido revista em 01/Set, segundo G1. Protocolou pedido de impeachment contra Alexandre de Moraes e Dias Toffoli, segundo G1. Na urna declarada ele cedeu de 4% para 3% dentro da própria casa, no mesmo intervalo em que Augusto Cury saiu de 2% para 10%."
   },
   {
     name: "Fernando Haddad",
@@ -46,9 +46,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0,05%",
-    poll: "A única nacional desta terça não o testa em cenário presidencial de 1º turno. NO PREÇO, esta rodada não publica preço novo para ele: o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 7,41M acumulado), abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
+    poll: "A única nacional desta quarta não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% (vol USD 7,42M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5% que o painel usa para separar preço de ruído, e esta rodada não publica preço novo para ele.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
-    risk: "Esta rodada não publica preço novo para ele, e o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 7,41M acumulado), abaixo do corte de 0,5%. Não é candidato à Presidência: disputa o governo de São Paulo. Disse que não há amigos e inimigos no caso do banco e defendeu a apuração sobre o envolvimento do empresário com o Supremo, segundo Folha de S.Paulo. O preço presidencial dele é resíduo de livro, não medida de campanha."
+    risk: "Ele está em 0,05% (vol USD 7,42M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa o governo de São Paulo. O preço presidencial dele é resíduo de livro, não medida de campanha."
   },
   {
     name: "Ronaldo Caiado",
@@ -56,19 +56,19 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "0,25%",
-    poll: "A ÚNICA NACIONAL DESTA TERÇA É A REAL TIME BIG DATA (n=2.000, campo 27 a 31/Ago, margem de 2pp, BR-03490/2026), a primeira do painel cujo campo alcança 31/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem. Ela o coloca em 4% no 1º turno, atrás de Augusto Cury e de Renan Santos. NUM 2º TURNO ELE VENCE O LÍDER, POR 45% A 43%: nas 41 simulações de 2º turno da base do painel o líder já ficou atrás em quatro, e as quatro eram contra o segundo colocado, então é a primeira vez que um nome fora dele aparece à frente. Rejeição de 39%, onze pontos abaixo da dos dois primeiros. NO PREÇO, esta rodada não publica preço novo para ele: ele está em 0,25% (vol USD 7,03M acumulado), abaixo do corte de 0,5%.",
+    poll: "A ÚNICA NACIONAL DESTA QUARTA É A GENIAL/QUAEST (n=2.004, campo 30/Ago a 01/Set, margem de 2pp, BR-07065/2026). A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e um cenário espontâneo. Ela o coloca em 1% no 1º turno, contra 4% na rodada da mesma casa de 14/Ago. NUM 2º TURNO ELE PERDE PARA O LÍDER, POR 42% A 37%, e a Real Time Big Data de 01/Set, com campo que se sobrepõe, o dava à frente por 45% a 43%: são 7pp de diferença na margem do mesmo par entre duas casas que mediram a mesma semana. Rejeição de 40%. NO PREÇO, ele está em 0,25% (vol USD 7,05M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%, e esta rodada não publica preço novo para ele nesse contrato.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "Esta rodada não publica preço novo para ele, e ele segue abaixo do corte de 0,5%, em 0,25% (vol USD 7,03M acumulado). É O NOME QUE PRODUZIU O NÚMERO MAIS FORTE DA RODADA, e ele é de pesquisa e não de preço: com 4% no 1º turno, aparece à frente do líder num 2º turno simulado, por 45% a 43%. A leitura correta não é que ele esteja competitivo, é que o eleitorado que rejeita o líder tem menos resistência a ele do que ao segundo colocado, cuja rejeição é de 50% contra 39% dele. O preço não reage porque o contrato mede chance de vencer a eleição, e para vencer é preciso primeiro chegar ao 2º turno, que é onde os 4% o deixam de fora."
+    risk: "Ele está em 0,25% (vol USD 7,05M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele CAIU 4,50pp e está em 8,50% (vol USD 110 mil). O CENÁRIO QUE O COLOCAVA À FRENTE DO LÍDER NA VÉSPERA NÃO SE REPRODUZIU: a casa seguinte, com campo sobreposto, o coloca 5 pontos atrás. O painel registra as duas leituras e não escolhe entre elas. Reagiu ao 1% da pesquisa dizendo que o eleitor ainda está conhecendo os candidatos, segundo O Globo."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "0,05%",
-    poll: "A ÚNICA NACIONAL DESTA TERÇA É A REAL TIME BIG DATA (n=2.000, campo 27 a 31/Ago, margem de 2pp, BR-03490/2026), a primeira do painel cujo campo alcança 31/Ago. A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem. Ela o mede em 2% no 1º turno. Num 2º turno perde para o líder por 43% a 40%, distância de 3 pontos, a mais estreita entre os cenários em que o líder vence. Rejeição de 36%, a menor da tabela depois da de Augusto Cury. NO PREÇO, esta rodada não publica preço novo para ele: o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 6,37M acumulado).",
+    polymarket: "0,15%",
+    poll: "A ÚNICA NACIONAL DESTA QUARTA É A GENIAL/QUAEST (n=2.004, campo 30/Ago a 01/Set, margem de 2pp, BR-07065/2026). A casa publicou DOIS cenários de 1º turno, um com Pablo Marçal e outro sem, e um cenário espontâneo. Ela o mede em 1% no 1º turno, contra 2% na rodada da mesma casa de 14/Ago. Num 2º turno perde para o líder por 44% a 33%, margem de 11 pontos, e a Real Time Big Data de 01/Set mediu o mesmo par em 43% a 40%, margem de 3: são 8pp de diferença, a maior entre os pares que as duas casas testaram. Rejeição de 38%. NO PREÇO, ele está em 0,15% (vol USD 6,47M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Esta rodada não publica preço novo para ele, e o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 6,37M acumulado), abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno está em 0,80%. Cobrou publicamente a saída do ministro citado na apuração da Polícia Federal, segundo Folha de S.Paulo, e aparece no noticiário da terça por esse tema e não por agenda própria de campanha."
+    risk: "Ele está em 0,15% (vol USD 6,47M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, está em 0,80% (vol USD 49 mil). O par de 2º turno dele contra o líder é onde as duas casas desta semana mais discordam, com 8pp de diferença na margem."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "A única nacional desta terça não o testa em cenário presidencial de 1º turno. NO PREÇO, esta rodada não publica preço novo para ele: o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 14,06M acumulado), abaixo do corte de 0,5% que o painel usa para separar preço de ruído.",
+    poll: "A única nacional desta quarta não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% (vol USD 14,07M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5% que o painel usa para separar preço de ruído, e esta rodada não publica preço novo para ele.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Esta rodada não publica preço novo para ele, e o último publicado é o de 30/Ago, 16:40 BRT, em 0,05% (vol USD 14,06M acumulado), abaixo do corte de 0,5%. Não é candidato à Presidência: disputa a reeleição em São Paulo. O livro dele é o maior do painel em volume acumulado, USD 14,06M, num contrato que paga 0,05%, e essa combinação é a assinatura de um mercado que já resolveu a pergunta."
+    risk: "Ele está em 0,05% (vol USD 14,07M acumulado) no contrato de VENCEDOR, abaixo do corte de 0,5%, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa a reeleição em São Paulo. O livro dele é o maior do painel em volume acumulado num contrato que paga 0,05%, e essa combinação é a assinatura de um mercado que já resolveu a pergunta."
   },
 ];
 
