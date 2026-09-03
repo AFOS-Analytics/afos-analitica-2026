@@ -46,6 +46,28 @@
     },
     {
       "rank": "3",
+      "name": "Augusto Cury",
+      "party": "Avante",
+      "color": "#0891B2",
+      "header": "PRICE: 1.35% (vol USD 3.64M accumulated) in the WINNER contract, confirmed reading of 03/Sep, 15:22 BRT (18:22 UTC), down 0.25pp. In the [first round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he rose 3.45pp and stands at 55.85%, in a book of 108 thousand dollars accumulated. POLL: the PoderData poll of 03/Sep (BR-07561/2026, field 30/Aug to 02/Sep, n=3,000, margin of 2pp) measures him at 10% in the first round, against 4% in the same house's round of 27/Aug. It is the second house to measure the jump, after Genial/[Quaest](/en/glossary#quaest) of 02/Sep, which took him from 2% on 14/Aug to 10%.",
+      "fortes": [
+        "⭐ TWO INDEPENDENT HOUSES MEASURED THE SAME JUMP WITHIN THEIR OWN SERIES. At PoderData he went from 4% on 27/Aug to 10% now, and at Genial/Quaest from 1% on 05/Aug to 2% on 14/Aug and 10% on 02/Sep. One house alone would be an isolated reading; two, with field windows in different weeks, is the same direction measured by different instruments.",
+        "In the first-round third-place contract he leads with 55.85% and is rising for the second day running, up 3.45pp this round. He took that lead on 01/Sep and the gap to second has doubled since.",
+        "His rejection rate is 25% in the Genial/Quaest poll of 02/Sep, the lowest among the seven most prominent names tested, against 55% for the runner-up and 53% for the leader.",
+        "He is the only name outside the top two who rose at PoderData between 27/Aug and now: over the same interval Renan Santos went from 4% to 3%, Ronaldo Caiado from 4% to 2% and Romeu Zema from 2% to 1%.",
+        "The BBC published an analysis arguing that the Vorcaro and Moraes case could feed an anti-politics wave and favour him and Renan Santos."
+      ],
+      "fracos": [
+        "⚠️ THE TWO CONTRACTS POINT IN OPPOSITE DIRECTIONS, AND THAT IS THE HEART OF HIS CASE. In the winner contract he FELL 0.25pp and stands at 1.35%, and in the first-round third-place contract he ROSE 3.45pp. These are different questions: one is winning the election, the other is finishing third, and the market is buying the second while selling the first.",
+        "The 1.35% in the winner contract sits alongside 10% in declared voting intention. It is the widest gap between poll and price in the table, and it did not narrow with the jump: the price fell on the same day the second house confirmed the 10%.",
+        "The PoderData poll of 03/Sep did NOT test a [second round](/en/glossary#segundo-turno) with him, so the only second-round reading in the base is still the Genial/Quaest one of 02/Sep, in which he loses to the leader by 40% to 34%.",
+        "Accumulated volume in his winner contract is USD 3.64M, the smallest among the seven names in the table, meaning the price that moves there moves on very little money.",
+        "The campaigns of the other candidates outside the top two sharpened their tone against him after the jump, according to O Globo, and he became a declared target in a space that was not being contested before."
+      ],
+      "analise": "His case is the clearest on the panel for separating two questions that tend to be read as one. In declared voting intention the jump is confirmed by two independent houses, each within its own series, and the second confirmation arrived this Thursday. In the price, the two contracts he appears in moved in opposite directions on the same day: the winner contract gave up 0.25pp and the first-round third-place contract rose 3.45pp, a second straight day of gains. The reading the panel records is that the market priced the jump in where it fits, which is the contest for third place, and not where it does not fit, which is the contest for the election. Neither move says who is right: they only say that the question changes the answer. And the base still has a single second-round reading with him, the Genial/Quaest one of 02/Sep, which makes any claim about how he behaves in a runoff premature."
+    },
+    {
+      "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
@@ -65,7 +87,7 @@
       "analise": "His week carries two opposite signals and the contracts have to be kept apart. In declared voting intention he gave ground in the first round within the house, from 4% to 3%, over exactly the interval in which Augusto Cury went from 4% to 10% at the same institute. In the second round against the leader, though, he improved: the margin fell from 7 to 5 points within the house. In the price the reading is one of decline in both contracts, and the bigger loss is in the third-place contract, where he was overtaken on 01/Sep and the gap to the leader has doubled since. His winner contract holds the largest accumulated volume among the lower-polling names, at USD 12.48M, and even so the price does not go beyond 1.75%."
     },
     {
-      "rank": "4",
+      "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",

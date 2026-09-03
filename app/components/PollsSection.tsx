@@ -19,6 +19,18 @@ interface PollsSectionProps {
 // (objeto-onde-se-espera-array, incidentes 19-21/Mai). O validator (camada 2) pega na origem.
 const asArray = (x: unknown): any[] => (Array.isArray(x) ? x : []);
 
+// Numeração dos cards de candidato, derivada do `rank` do JSON.
+//
+// 🔴 POR QUE É UMA CONSTANTE SÓ (03/Set/2026): a lista de emojis vivia inline no
+// bloco dos candidatos individuais e ia só até 4️⃣, enquanto o card do pelotão de
+// trás trazia "4️⃣" escrito à mão. Ao entrar um quinto card, o inline devolvia
+// `undefined` e o cabeçalho perdia o número SEM QUEBRAR NADA, e o card do pelotão
+// passaria a repetir o 4️⃣ de outro candidato. Dois defeitos de etiqueta que
+// nenhum portão de valor pega, porque o número não é dado, é rótulo.
+// Sobra folga proposital: preencher até 8 não custa nada e evita a próxima
+// edição do componente quando o painel ganhar mais um nome.
+const RANK_EMOJI = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣'];
+
 const PL_L: Record<string, { polls: string; survey: string; trend: string; secondRound: string; sources: string; respondents: string; defaultSources: string; rel: [string, string, string, string, string]; natIntro: string; natState: string; natHist: string; natHistApi: string }> = {
   'pt-BR': { polls: 'Pesquisas', survey: 'Pesquisa', trend: 'Tendência', secondRound: '2º Turno', sources: 'Fontes', respondents: 'entrevistados', defaultSources: 'Polymarket (ao vivo) + pesquisas Abr-Mai/2026', rel: ['Referência nacional', 'Alta confiabilidade', 'Confiável', 'Usar com cautela', 'Baixa confiabilidade'], natIntro: 'Mostramos pesquisas nacionais (1º e 2º turnos) mais recentes. Estaduais e análise integrada no', natState: 'AFOS Daily', natHist: '. Histórico completo via', natHistApi: 'API' },
   en: { polls: 'Polls', survey: 'Poll', trend: 'Trend', secondRound: 'Runoff', sources: 'Sources', respondents: 'respondents', defaultSources: 'Polymarket (live) + polls Apr-May/2026', rel: ['National reference', 'High reliability', 'Reliable', 'Use with caution', 'Low reliability'], natIntro: 'We show the most recent national polls (1st and 2nd round). State-level polls and integrated analysis in the', natState: 'AFOS Daily', natHist: '. Full history via', natHistApi: 'API' },
@@ -233,10 +245,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
       </div>
       <p className="text-xs text-gray-500 mb-4"><GlossaryText>{crit.subtitle}</GlossaryText></p>
 
-      {/* CANDIDATOS 1-3 (dinâmico via JSON) */}
+      {/* CANDIDATOS INDIVIDUAIS (dinâmico via JSON) */}
       {crit.candidates.filter(c => !c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
-          <h3 className="font-bold text-lg text-dark mb-1">{['1️⃣','2️⃣','3️⃣','4️⃣'][Number(c.rank)-1]} <GlossaryText>{c.header}</GlossaryText></h3>
+          <h3 className="font-bold text-lg text-dark mb-1">{RANK_EMOJI[Number(c.rank) - 1]} <GlossaryText>{c.header}</GlossaryText></h3>
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div className="bg-green-50 rounded-lg p-4">
               <h4 className="font-bold text-green-700 text-sm mb-2">✅ {t('sections.strengths')}</h4>
@@ -257,10 +269,10 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         </Card>
       ))}
 
-      {/* CANDIDATO 4, CAIADO/HADDAD (formato especial) */}
+      {/* PELOTÃO DE TRÁS, CAIADO/HADDAD (formato especial) */}
       {crit.candidates.filter(c => c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
-          <h3 className="font-bold text-lg text-dark mb-1">4️⃣ <GlossaryText>{c.header}</GlossaryText></h3>
+          <h3 className="font-bold text-lg text-dark mb-1">{RANK_EMOJI[Number(c.rank) - 1]} <GlossaryText>{c.header}</GlossaryText></h3>
           {c.subtitle && <p className="text-xs text-gray-500 mb-3"><GlossaryText>{c.subtitle}</GlossaryText></p>}
           <div className="grid md:grid-cols-2 gap-4 mt-3">
             <div>

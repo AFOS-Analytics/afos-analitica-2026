@@ -46,6 +46,28 @@
     },
     {
       "rank": "3",
+      "name": "Augusto Cury",
+      "party": "Avante",
+      "color": "#0891B2",
+      "header": "PRECIO: 1,35% (vol USD 3,64M acumulado) en el contrato de GANADOR, lectura confirmada del 03/Set, 15:22 BRT (18:22 UTC), caída de 0,25pp. En el contrato de 3º LUGAR de la [primera vuelta](/es/glossary#primeiro-turno), que es otro mercado, subió 3,45pp y está en 55,85%, en un libro de 108 mil dólares acumulados. ENCUESTA: la PoderData del 03/Set (BR-07561/2026, campo del 30/Ago al 02/Set, n=3.000, margen de 2pp) lo mide en 10% en la primera vuelta, contra 4% en la ronda de la misma casa del 27/Ago. Es la segunda casa en medir el salto, después de la Genial/[Quaest](/es/glossary#quaest) del 02/Set, que lo llevó de 2% el 14/Ago a 10%.",
+      "fortes": [
+        "⭐ DOS CASAS INDEPENDIENTES MIDIERON EL MISMO SALTO DENTRO DE SUS PROPIAS SERIES. En la PoderData pasó de 4% el 27/Ago a 10% ahora, y en la Genial/Quaest de 1% el 05/Ago a 2% el 14/Ago y 10% el 02/Set. Una casa sola sería lectura aislada; dos, con campo en semanas distintas, es la misma dirección medida por instrumentos diferentes.",
+        "En el contrato de 3º lugar de la primera vuelta lidera con 55,85% y sube por segundo día seguido, con un alza de 3,45pp en esta ronda. Asumió ese liderazgo el 01/Set y la distancia hacia el segundo se duplicó desde entonces.",
+        "Su rechazo es de 25% en la Genial/Quaest del 02/Set, el menor entre los siete nombres de mayor proyección probados, contra 55% del segundo colocado y 53% del líder.",
+        "Es el único nombre fuera de los dos primeros que subió en la PoderData entre el 27/Ago y ahora: en el mismo intervalo Renan Santos salió de 4% a 3%, Ronaldo Caiado de 4% a 2% y Romeu Zema de 2% a 1%.",
+        "La BBC publicó un análisis según el cual el caso Vorcaro y Moraes puede alimentar una ola antipolítica y favorecerlo a él y a Renan Santos."
+      ],
+      "fracos": [
+        "⚠️ LOS DOS CONTRATOS APUNTAN A LADOS OPUESTOS, Y ESE ES EL CENTRO DE SU CASO. En el contrato de ganador CAYÓ 0,25pp y está en 1,35%, y en el de 3º lugar de la primera vuelta SUBIÓ 3,45pp. Son preguntas distintas: una es ganar la elección, la otra es terminar tercero, y el mercado está comprando la segunda mientras vende la primera.",
+        "El 1,35% del contrato de ganador convive con 10% en el voto declarado. Es la mayor distancia entre encuesta y precio de la tabla, y no se achicó con el salto: el precio cayó el mismo día en que la segunda casa confirmó el 10%.",
+        "La PoderData del 03/Set NO probó una [segunda vuelta](/es/glossary#segundo-turno) con él, así que la única lectura de segunda vuelta de la base sigue siendo la de la Genial/Quaest del 02/Set, en la que pierde con el líder por 40% a 34%.",
+        "El volumen acumulado de su contrato de ganador es de USD 3,64M, el menor entre los siete nombres del cuadro, es decir, el precio que se mueve allí se mueve con poco dinero.",
+        "Las campañas de los competidores de fuera del pelotón de arriba subieron el tono contra él después del salto, según O Globo, y pasó a ser blanco declarado en un espacio que antes no se disputaba."
+      ],
+      "analise": "Su caso es el más claro del panel para separar dos preguntas que suelen leerse como una. En el voto declarado el salto está confirmado por dos casas independientes, cada una dentro de su propia serie, y la segunda confirmación llegó este jueves. En el precio, los dos contratos en que aparece se movieron en direcciones opuestas el mismo día: el de ganador cedió 0,25pp y el de 3º lugar de la primera vuelta subió 3,45pp, por segundo día seguido de alza. La lectura que el panel registra es que el mercado incorporó el salto donde cabe, que es la disputa por el tercer lugar, y no donde no cabe, que es la disputa por la elección. Ninguno de los dos movimientos dice quién tiene razón: dicen apenas que la pregunta cambia la respuesta. Y la base todavía tiene una única lectura de segunda vuelta con él, la de la Genial/Quaest del 02/Set, lo que vuelve temprano cualquier afirmación sobre cómo se comporta en un balotaje."
+    },
+    {
+      "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
@@ -65,7 +87,7 @@
       "analise": "Su semana tiene dos señales opuestas y hay que separar los contratos. En el voto declarado cedió en la primera vuelta dentro de la propia casa, de 4% a 3%, exactamente en el intervalo en que Augusto Cury fue de 4% a 10% en el mismo instituto. En la segunda vuelta contra el líder, en cambio, mejoró: el margen cayó de 7 a 5 puntos dentro de la casa. En el precio la lectura es de caída en los dos contratos, y la pérdida mayor es la del contrato de 3º lugar, donde fue superado el 01/Set y la distancia hacia el primero duplicó desde entonces. Su contrato de ganador tiene el mayor volumen acumulado entre los nombres de abajo, con USD 12,48M, y aun así el precio no pasa de 1,75%."
     },
     {
-      "rank": "4",
+      "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
