@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-03",
-  "fetchedAt": "2026-09-03T02:28:43.615Z",
+  "lastUpdate": "2026-09-02",
+  "fetchedAt": "2026-09-02T19:20:13.560Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,63 +113,29 @@
     }
   ],
   "qualidade": {
-    "lidos": 124,
-    "naLista": 70,
-    "foraDaLista": 54,
+    "lidos": 145,
+    "naLista": 74,
+    "foraDaLista": 71,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 11,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 18,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
-    "consultasComFalha": [],
+    "consultasComFalha": [
+      "feed:The Washington Post: HTTP 404"
+    ],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 41,
-    "publicadosComLinkCanonico": 9,
-    "publicadosViaGoogleNews": 1,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "lidosEmFeedProprio": 36,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
     {
-      "titulo": "Trump says he’ll campaign for Republicans in 35 races ahead of the midterms",
-      "url": "https://www.nbcnews.com/politics/2026-election/trump-says-will-campaign-republicans-35-races-ahead-midterms-rcna595807",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-03T02:15:36.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "As Midterms Loom, Democrats Feud Over Defections",
-      "url": "https://www.nytimes.com/2026/09/02/us/politics/democrats-defections-internal-feud-midterms.html",
+      "titulo": "As Trump Throws a Midterm Party, Some Vulnerable Republicans Send Regrets",
+      "url": "https://www.nytimes.com/2026/09/02/us/politics/trump-midterm-convention-republicans.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-03T00:17:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "In the Midterms, Will the Nepo-Baby Attack Work?",
-      "url": "https://www.nytimes.com/2026/09/02/us/politics/midterms-nepo-baby-shaheen.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-02T22:55:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "With primary misses, what you should know about polls in Michigan's Senate race",
-      "url": "https://www.newsnationnow.com/politics/polls-michigan-senate-race/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-02T22:36:59.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump under pressure to contain Iran fighting as midterms near",
-      "url": "https://thehill.com/policy/defense/6067742-trump-iran-strikes-escalation-midterms/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-02T22:32:32.000Z",
+      "publicadoEm": "2026-09-02T19:02:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -178,43 +144,79 @@
       "titulo": "Opinion | Democrats’ path to a House majority is narrower than it looks",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNX05pSXZKUzltSlNrN1RLSEluYW4tUmU1NF9ZWlFXRC1RWWY4Y1ZHY2hjNXFMbFpHbUtBQzFFc19DTWdSSHVDNkI5LVpzWGdoZFNzQy14VTRlVW1obUhUa2VPaEpmTmxjNkhUSFFDNVZ1NXlfMURtQ2lRRE1CZXR5cXlaUUNYYkMwSkR6ejVuNGFramtGaEt3QnZobDkxTVRyS01YX1RGMXV3aF9HaDRLS2VVa1N2SDd3?oc=5",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-09-02T22:00:00.000Z",
+      "publicadoEm": "2026-09-02T18:32:33.000Z",
       "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Thune says he worries about losing Senate majority: 'I’m a realist'",
-      "url": "https://thehill.com/homenews/senate/6067615-thune-gop-senate-majority/",
+      "titulo": "Trump Administration Launches Blitz to Find Elusive Voter Fraud Ahead of Midterms",
+      "url": "https://www.nytimes.com/2026/09/02/us/politics/trump-election-voter-fraud.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-02T18:25:57.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "8 Democrats vote to denounce socialism amid midterm pressure",
+      "url": "https://www.newsnationnow.com/politics/democrats-denounce-dsa-socialism-midterms/",
+      "casa": "NewsNation",
+      "publicadoEm": "2026-09-02T18:08:45.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Perceptions of government corruption at record high: Gallup",
+      "url": "https://thehill.com/homenews/administration/6066835-us-government-corruption-record-high-survey/",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-02T21:47:40.000Z",
+      "publicadoEm": "2026-09-02T17:57:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Pro-Trump group releases first general election midterm ad",
+      "url": "https://thehill.com/homenews/campaign/6066844-pro-trump-group-releases-first-general-election-midterm-ad/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-02T17:34:36.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Dark money in Texas Senate race spurs Talarico complaint to FEC against Paxton",
-      "url": "https://www.cbsnews.com/news/texas-dark-money-talarico-complaint-paxton/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-02T21:23:00.000Z",
+      "titulo": "Platner's replacement faces new Senate campaign headache tied to his son's lobbying",
+      "url": "https://www.foxnews.com/politics/platners-replacement-faces-new-senate-campaign-headache-tied-his-sons-lobbying",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-02T17:16:40.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Progressive Senate candidates rack up primary wins even as they get outspent",
-      "url": "https://www.nbcnews.com/politics/politics-news/progressive-senate-candidates-rack-primary-wins-even-get-outspent-rcna595769",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-02T21:05:45.000Z",
+      "titulo": "Teamsters union leaders support Republicans despite members endorsing Democrats",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTmxieXV3NVhJR0ZWNmZqYkZDN2Jzck4zdUYyTFlVRlB1cXh6RW84N2RsSkttTEI4enUzQUVDemRGenBPZkExY0VXYXZ6NXZ2MGNmMmJvdG5aNmt1TFkwRkNhUnNMdDVKN3pOeDVINl95bzVha2d1eWx4MkI1bnpxM2loUW1OLXNaMlM0d1I0Yw?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-02T16:29:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump invites battleground Republicans to Rose Garden dinner",
+      "url": "https://www.politico.com/news/2026/09/02/trump-invites-battleground-republicans-to-rose-garden-dinner-01061406",
+      "casa": "Politico",
+      "publicadoEm": "2026-09-02T13:32:27.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Senate Majority Leader John Thune warns Republicans could lose the Senate",
-      "url": "https://www.washingtonpost.com/elections/2026/09/02/senate-majority-leader-john-thune-warns-republicans-could-lose-senate/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-02T18:30:00.000Z",
+      "titulo": "Jewish Democrats abandon El-Sayed for GOP rival in all-important battleground state",
+      "url": "https://www.foxnews.com/politics/dem-megadonor-among-400-jewish-michiganders-labeled-aipac-insiders-denouncing-el-sayeds-leftist-campaign",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-02T13:26:49.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
