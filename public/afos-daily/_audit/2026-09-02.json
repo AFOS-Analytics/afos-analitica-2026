@@ -1,0 +1,132 @@
+{
+  "date": "2026-09-02",
+  "geradoEm": "2026-09-03T00:55:00.000Z",
+  "leituraDeMercado": {
+    "carimbo": "2026-09-02T23:26:00.851Z",
+    "carimboBRT": "02/09/2026, 20:26",
+    "livroPresidencial": "USD 141,85M",
+    "volumesLidosEm": "2026-09-02T23:26:28.546Z",
+    "observacao": "Os volumes saiaram 28 segundos depois do preco certificado, e o script de escrita aborta se o preco tiver andado nesse intervalo. Nenhum andou."
+  },
+  "travaDeCaptura": {
+    "veredito": "BLOQUEADO no conjunto, com certificacao POR LIVRO",
+    "rodadas": [
+      {
+        "leituras": ["2026-09-02T23:09:00.915Z", "2026-09-02T23:17:01.900Z"],
+        "aprovados": ["presidential", "secondPlace", "thirdPlace", "senate"],
+        "bloqueados": ["stf"],
+        "motivo": "stf discordou em 1,00pp (7,35% -> 6,35%)"
+      },
+      {
+        "leituras": ["2026-09-02T23:17:59.861Z", "2026-09-02T23:26:00.851Z"],
+        "aprovados": ["presidential", "secondPlace", "thirdPlace", "stf"],
+        "bloqueados": ["senate"],
+        "motivo": "senate:MDB discordou em 0,45pp (5,70% -> 5,25%)"
+      }
+    ],
+    "publicado": "os valores da 2a rodada. O livro do Senado NAO teve preco novo publicado, e a peca diz isso sem dizer por que.",
+    "observacao": "O livro que bloqueia mudou entre as duas rodadas. A trava passou a gravar o instantaneo certificado em .cache/capture-guard/ nesta mesma sessao, porque ate hoje ela certificava e descartava os precos."
+  },
+  "gateDeRebaseline": {
+    "disparou": false,
+    "reFetchAoVivo": "2026-09-02T23:53:41.893Z",
+    "deltas": {
+      "Lula": "0,00pp",
+      "Flavio": "0,00pp",
+      "Renan": "+0,05pp",
+      "gap": "0,00pp",
+      "volumeTotal": "identico, USD 141,85M",
+      "stf": "-0,50pp"
+    },
+    "decisao": "manter a baseline certificada",
+    "razao": "Lula, Flavio, Renan e o gap nao se moveram, o volume e identico, nenhum recorde foi rompido e o enquadramento nao mudou. O unico movimento e do contrato do STF, que nao esta na lista do gate e e o livro de USD 87 mil que o painel ja declara como raso."
+  },
+  "factCheckGate": {
+    "eventosCandidatos": [
+      "confirmacao do encontro entre Mendonca e Vorcaro",
+      "depoimento de Vorcaro ao gabinete de Mendonca sem a PF",
+      "primeira sessao do STF depois do relatorio",
+      "declaracao de Fachin sobre limites dos ministros",
+      "TSE formou maioria para aprovar registros de candidatura"
+    ],
+    "verificacoes": [
+      {
+        "evento": "Mendonca confirmou encontro com Daniel Vorcaro",
+        "crossRef": "Mendonca tem 9 mencoes nas dailies, a ultima em 01/Set sobre a propaganda do Rap do Silva, assunto diferente",
+        "tipo": "novidade",
+        "dataDoAtoPeloCorpo": "2025-03-14, Instituto Iter, Sao Paulo",
+        "fonte1": "https://www.poder360.com.br/poder-justica/mendonca-diz-que-esteve-com-vorcaro-uma-vez-e-que-se-limitou-a-ouvi-lo/ (independente, 02/Set)",
+        "fonte2": "https://oglobo.globo.com/politica/noticia/2026/09/02/mendonca-admite-encontro-com-vorcaro-antes-de-se-tornar-relator-do-caso-master.ghtml (grupo Globo, 02/Set 11:58)",
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com data corrigida"
+      },
+      {
+        "evento": "Vorcaro deu depoimento ao gabinete de Mendonca sem a Policia Federal",
+        "crossRef": "Vorcaro tem 21 mencoes, continuidade do caso, mas este fato e novo",
+        "tipo": "evento",
+        "dataDoAtoPeloCorpo": "2026-08-27, manha de quinta",
+        "fonte1": "https://www.poder360.com.br/poder-justica/vorcaro-deu-depoimento-a-gabinete-de-mendonca-sem-presenca-da-pf/ (independente, 02/Set)",
+        "fonte2": "https://oglobo.globo.com/politica/noticia/2026/09/02/mendonca-diz-que-depoimento-de-vorcaro-em-seu-gabinete-foi-motivado-por-relato-de-graves-intimidacoes.ghtml (grupo Globo, 02/Set 15:14)",
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com a data do ato declarada"
+      },
+      {
+        "evento": "primeira sessao do STF depois do relatorio da PF",
+        "tipo": "evento",
+        "dataDoAto": "2026-09-02",
+        "fonte1": "Folha de S.Paulo 02/Set 15:34 (grupo Folha)",
+        "fonte2": "O Globo 02/Set 17:28 (grupo Globo)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Fachin disse que ministros devem ter limites e que anunciara medidas cabiveis",
+        "crossRef": "Fachin tem so 2 mencoes nas dailies, ambas de 29/Ago e sobre outro assunto",
+        "tipo": "novidade",
+        "dataDoAto": "2026-09-02",
+        "fonte1": "Folha de S.Paulo 02/Set (grupo Folha)",
+        "fonte2": "O Globo 02/Set (grupo Globo)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "TSE formou maioria para aprovar registros de candidatura",
+        "tipo": "evento",
+        "dataDoAto": "2026-09-02",
+        "fonte1": "G1 02/Set",
+        "fonte2": "Fonte 83 e Radio Itatiaia, 02/Set",
+        "verboAjustado": "as fontes dizem FORMOU MAIORIA PARA APROVAR, nao APROVOU. Julgamento em curso, e a peca escreve assim.",
+        "decisao": "incorporar com o verbo das fontes"
+      }
+    ],
+    "recobrancaBarrada": {
+      "item": "os 109 pedidos de impeachment citados por Alcolumbre",
+      "razao": "aparece no cache de 02/Set, mas o carimbo e 02/Set 00:25 UTC, ou seja 21:25 BRT de 01/Set, e a URL do G1 traz 2026/09/01 no caminho. Ato da vespera, ja coberto na daily de 01/Set.",
+      "decisao": "NAO incorporar"
+    },
+    "pesquisaNaoPassaPeloGate": "A Quaest e pesquisa, nao ato. Registro: ela aparece nas 3 dailies anteriores, mas so na tabela do calendario, como divulgacao prevista. Hoje e o resultado."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": [
+      "O pedido de impeachment protocolado por Renan Santos tem so o G1 (02/Set 18:48 BRT). A Gazeta do Povo traz o mesmo ator e os mesmos alvos, mas num ato diferente, um ato na Paulista. Mantido, declarado como fonte unica. O verbo nao esta no codebook de verbos criticos."
+    ],
+    "numericalErrors": "reconcile-claims acusou 1 divergencia, o 5,49% da faixa de inflacao. E rotulo de faixa do contrato e a inflacao nao esta nos JSONs do painel. Falso positivo conhecido.",
+    "fontesInventadas": "tres URLs conferidas no ar, O Globo, Poder360 e G1, todas HTTP 200",
+    "quotesLiterais": "nenhuma. Nao ha aspas de citacao direta na peca.",
+    "causacaoEspuria": "nenhuma. A alta de 1,70pp do segundo colocado nao e atribuida a evento, e o movimento duplo do Cury e descrito como dois contratos com perguntas diferentes.",
+    "verbosCriticos": "preso desde 17 de novembro de 2025 com data; prestou depoimento em 27 de agosto de 2026 com data; formou maioria para aprovar com a ressalva de julgamento em curso; confirmou com a data do ato confirmado.",
+    "decisao": "prosseguir"
+  },
+  "regua": {
+    "palavrasNoCorpo": 1099,
+    "teto": 1100,
+    "emojis": { "pt-BR": 0, "en": 0, "es": 0 },
+    "gateNumerico": "92 numeros, multiconjunto identico nos tres idiomas",
+    "cincoChecagens": "decimal, tldr com 3 bullets, homoglifo cirilico, link para outro locale e ancora de glossario: limpas nos tres",
+    "validator": "OK, com 1 aviso de densidade de link (67% contra alvo de 80%)",
+    "revisaoDoAndre": "A primeira versao da secao Em sintese saiu com 48 palavras, cortada para caber no teto, e o Andre reprovou por pobre. Reescrita para 135 palavras, pagando o custo em repeticao real: a reacao declaratoria do Flavio, a leitura duplicada nas Divergencias, os 31% para 29% que ja estavam na Secao 2, o par de volumes acumulados, o desdobramento das redes do Renan e o volume da faixa de inflacao. Nenhuma informacao verificada foi perdida."
+  },
+  "wayback": {
+    "preCheck": "429 no /save/",
+    "decisao": "NAO rodar e NAO insistir, nem para a daily nova nem para o passivo acumulado",
+    "regra": "memory/feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo.md"
+  }
+}
