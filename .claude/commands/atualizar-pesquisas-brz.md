@@ -52,15 +52,34 @@ O TSE aceita registro **antes** da pesquisa ir a campo, então o arquivo traz `d
 
 **Isso é registrada ≠ publicada, e é justamente o que o Passo 5 pede para reportar.** Não tratar como anomalia, não filtrar. E como não há percentual no arquivo, não existe risco de antecipar número.
 
-## Passo 4: conferir o que a API devolve
+## Passo 4 e 5, num comando só
 
 ```bash
-curl -s "https://www.afos-analytics.com/api/polls/tse?days=15" -o /tmp/tse15.json
+npx tsx scripts/relatorio-pesquisas-brz.ts            # janela de 15 dias
+npx tsx scripts/relatorio-pesquisas-brz.ts --dias=30
 ```
 
-**Escopo:** a API devolve `scope` e `scopeSource`. 🔴 **O `scope` é DERIVADO por nós**, lido do plano amostral ou da metodologia, não é campo do TSE. Sempre reportar junto de onde ele saiu. Em 01/Set: 123 vieram de `methodology`, 40 de `sampling_plan` e 5 ficaram em `none`. Uma Real Time do DF já virou "vão nacional" por 7 dias por causa disto. → `memory/feedback_escopo_nacional_derivado_do_plano_amostral.md`
+Ele faz o Passo 4 e o Passo 5 inteiros: lê a API de pesquisas, baixa o registro do TSE para separar os fantasmas, monta a tabela de escopo com a fonte, lista campo ATIVO e divulgação PREVISTA, roda o portão de CPF com o controle plantado e imprime o mercado do Brasil com as duas travas conferidas. **Ele não grava e não ingere.** Sai com código diferente de zero só quando um PORTÃO quebra, nunca porque o mundo é feio.
 
-**🆔 CPF:** a API devolve `statistician`, `methodology`, `samplingPlan` e `controlSystem`, que é texto livre onde o TSE põe CPF. A redação foi instalada na origem em 22/Ago. Conferir com o primitivo do projeto, **nunca com regex própria**:
+Escrito em 03/Set/2026 porque o relatório vinha sendo remontado à mão toda sessão, com script descartável, e três regras já medidas moravam só na memória. Regra que fica só na ficha reincide.
+
+O resto desta seção é o PORQUÊ de cada portão, e continua valendo para ler a saída. As chamadas soltas abaixo servem quando se quer conferir uma peça isolada.
+
+### 👻 O banco nunca apaga, e o registro do TSE RETIRA
+
+Medido em 02/Set/2026: **75 protocolos** estavam no Neon e já não estavam no arquivo oficial, **16 deles servidos pela API** na janela de 15 dias. Todos os 75 tinham divulgação FUTURA no dia da ingestão, contra 78,7% dos que ficaram, e nenhum já divulgado saiu. A leitura que sobra é cancelamento ou re-registro antes de publicar.
+
+📌 **Consequência:** publicar "divulgação prevista" sem tirar os retirados é anunciar compromisso que o TSE já não tem, e a conta de "registrada e não divulgada" passa a contar cancelamento como sonegação. O script marca os fantasmas com 👻 e imprime o calendário limpo ao lado do bruto. → `memory/feedback_o_registro_do_tse_perde_linhas_e_o_banco_nunca_perde.md`
+
+🔢 **A subtração que abre o caso cabe numa linha:** se o arquivo cresceu MENOS do que entrou na ingestão, houve retirada nova. O detalhe sai em `npx tsx scripts/diff-tse-arquivo-vs-banco.ts`.
+
+### 🔍 Escopo
+
+A API devolve `scope` e `scopeSource`. 🔴 **O `scope` é DERIVADO por nós**, lido do plano amostral ou da metodologia, não é campo do TSE. Sempre reportar junto de onde ele saiu. Em 01/Set: 123 vieram de `methodology`, 40 de `sampling_plan` e 5 ficaram em `none`. Uma Real Time do DF já virou "vão nacional" por 7 dias por causa disto. → `memory/feedback_escopo_nacional_derivado_do_plano_amostral.md`
+
+### 🆔 CPF
+
+A API devolve `statistician`, `methodology`, `samplingPlan` e `controlSystem`, que é texto livre onde o TSE põe CPF. A redação foi instalada na origem em 22/Ago. Conferir com o primitivo do projeto, **nunca com regex própria**:
 
 ```js
 import { acharCpf } from './scripts/lib/cpf.mjs'   // exporta acharCpf, cpfValido, redigirCpf
@@ -68,16 +87,16 @@ import { acharCpf } from './scripts/lib/cpf.mjs'   // exporta acharCpf, cpfValid
 
 ⚠️ **E plantar um CPF válido conhecido antes de confiar no zero.** `529.982.247-25` tem de ser encontrado. Sem esse controle, zero pode ser o detector mudo em vez de base limpa.
 
-## Passo 5: reportar
+### 📋 O que o relatório tem de conter
 
-- quantas foram inseridas e quantas já existiam
+- quantas foram inseridas e quantas já existiam, e a subtração contra o total do arquivo de ontem
 - os institutos com registro nacional recente
 - **campo ATIVO agora**, ou seja, `fieldStart <= hoje <= fieldEnd`
-- **divulgação PREVISTA**, ou seja, `publicationDate > hoje`, que é o calendário da semana
+- **divulgação PREVISTA**, ou seja, `publicationDate > hoje`, que é o calendário da semana, **já sem os fantasmas**
 - o preço do Polymarket do Brasil ao lado desse calendário
 - escopo, sempre com o `scopeSource`
 
-**O mercado, com as duas travas:**
+### 💹 O mercado, com as duas travas
 
 ```bash
 curl -s "https://www.afos-analytics.com/api/polymarket?country=br&fresh=1"
