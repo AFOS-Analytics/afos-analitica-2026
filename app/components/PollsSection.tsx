@@ -31,6 +31,23 @@ const asArray = (x: unknown): any[] => (Array.isArray(x) ? x : []);
 // edição do componente quando o painel ganhar mais um nome.
 const RANK_EMOJI = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣'];
 
+// Sub-blocos do card do pelotão de trás, um por nome.
+//
+// 🔴 POR QUE VIROU LISTA (03/Set/2026): o card se chama "Caiado / Haddad / Zema"
+// e o JSX só montava DOIS deles, escritos à mão. O bloco `zema` existia no JSON,
+// era reescrito pela rodada todo dia, era traduzido para os três idiomas e
+// NUNCA aparecia na tela. Nenhum portão pega isso: o valor estava certo, o
+// schema estava certo, e o defeito era de RENDER. Com a lista, acrescentar um
+// nome é acrescentar uma linha aqui, e esquecer de montar deixa de ser possível.
+//
+// O `filter` existe para o caso inverso: sub-bloco ausente no JSON não vira
+// coluna vazia, e a grade se ajusta sozinha.
+const SUB_PELOTAO: Array<{ chave: 'caiado' | 'haddad' | 'zema'; emoji: string; cor: string }> = [
+  { chave: 'caiado', emoji: '🔵', cor: '#6B7280' },
+  { chave: 'haddad', emoji: '🔴', cor: '#DC2626' },
+  { chave: 'zema', emoji: '🟠', cor: '#F59E0B' },
+];
+
 const PL_L: Record<string, { polls: string; survey: string; trend: string; secondRound: string; sources: string; respondents: string; defaultSources: string; rel: [string, string, string, string, string]; natIntro: string; natState: string; natHist: string; natHistApi: string }> = {
   'pt-BR': { polls: 'Pesquisas', survey: 'Pesquisa', trend: 'Tendência', secondRound: '2º Turno', sources: 'Fontes', respondents: 'entrevistados', defaultSources: 'Polymarket (ao vivo) + pesquisas Abr-Mai/2026', rel: ['Referência nacional', 'Alta confiabilidade', 'Confiável', 'Usar com cautela', 'Baixa confiabilidade'], natIntro: 'Mostramos pesquisas nacionais (1º e 2º turnos) mais recentes. Estaduais e análise integrada no', natState: 'AFOS Daily', natHist: '. Histórico completo via', natHistApi: 'API' },
   en: { polls: 'Polls', survey: 'Poll', trend: 'Trend', secondRound: 'Runoff', sources: 'Sources', respondents: 'respondents', defaultSources: 'Polymarket (live) + polls Apr-May/2026', rel: ['National reference', 'High reliability', 'Reliable', 'Use with caution', 'Low reliability'], natIntro: 'We show the most recent national polls (1st and 2nd round). State-level polls and integrated analysis in the', natState: 'AFOS Daily', natHist: '. Full history via', natHistApi: 'API' },
@@ -269,30 +286,23 @@ export function PollsSection({ polls, crit }: PollsSectionProps) {
         </Card>
       ))}
 
-      {/* PELOTÃO DE TRÁS, CAIADO/HADDAD (formato especial) */}
+      {/* PELOTÃO DE TRÁS (formato especial: um sub-bloco por nome) */}
       {crit.candidates.filter(c => c.caiado).map(c => (
         <Card key={c.rank} className="mb-4 border-l-4" style={{ borderLeftColor: c.color }}>
           <h3 className="font-bold text-lg text-dark mb-1">{RANK_EMOJI[Number(c.rank) - 1]} <GlossaryText>{c.header}</GlossaryText></h3>
           {c.subtitle && <p className="text-xs text-gray-500 mb-3"><GlossaryText>{c.subtitle}</GlossaryText></p>}
-          <div className="grid md:grid-cols-2 gap-4 mt-3">
-            <div>
-              <h4 className="font-bold text-sm text-[#6B7280] mb-2">🔵 <GlossaryText>{c.caiado?.label}</GlossaryText></h4>
-              <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> <GlossaryText>{c.caiado?.fortes}</GlossaryText></p>
+          <div className="grid gap-4 mt-3 sm:grid-cols-2 lg:grid-cols-3">
+            {SUB_PELOTAO.filter(s => c[s.chave]).map(s => (
+              <div key={s.chave}>
+                <h4 className="font-bold text-sm mb-2" style={{ color: s.cor }}>{s.emoji} <GlossaryText>{c[s.chave]?.label}</GlossaryText></h4>
+                <div className="bg-green-50 rounded-lg p-3 mb-2">
+                  <p className="text-xs text-gray-700"><strong className="text-green-700">{t('sections.strengths')}:</strong> <GlossaryText>{c[s.chave]?.fortes}</GlossaryText></p>
+                </div>
+                <div className="bg-red-50 rounded-lg p-3">
+                  <p className="text-xs text-gray-700"><strong className="text-red-700">{t('sections.weaknesses')}:</strong> <GlossaryText>{c[s.chave]?.fracos}</GlossaryText></p>
+                </div>
               </div>
-              <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> <GlossaryText>{c.caiado?.fracos}</GlossaryText></p>
-              </div>
-            </div>
-            <div>
-              <h4 className="font-bold text-sm text-danger mb-2">🔴 <GlossaryText>{c.haddad?.label}</GlossaryText></h4>
-              <div className="bg-green-50 rounded-lg p-3 mb-2">
-                <p className="text-xs text-gray-700"><strong>Fortes:</strong> <GlossaryText>{c.haddad?.fortes}</GlossaryText></p>
-              </div>
-              <div className="bg-red-50 rounded-lg p-3">
-                <p className="text-xs text-gray-700"><strong>Fracos:</strong> <GlossaryText>{c.haddad?.fracos}</GlossaryText></p>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="bg-gray-50 rounded-lg p-3 mt-3">
             <p className="text-xs text-gray-700"><strong>🎯 {t('sections.analysisLabel')} ({crit.updatedAt?.slice(0,10)}):</strong> <GlossaryText>{c.analise}</GlossaryText></p>

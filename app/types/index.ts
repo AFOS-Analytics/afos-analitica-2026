@@ -68,11 +68,23 @@ export interface GlobalElection {
 
 export interface GlobalData { elections: GlobalElection[]; updatedAt: string; }
 
+/**
+ * Sub-bloco do card do pelotão de trás: um nome, com rótulo e um parágrafo de
+ * cada lado. Diferente de `CritCandidate.fortes`/`.fracos`, que são arrays.
+ */
+export interface CritSubBloco { label: string; fortes: string; fracos: string }
+
 export interface CritCandidate {
   rank: string; name: string; party: string; color: string; header: string; subtitle?: string;
   fortes: string[]; fracos: string[]; analise: string;
-  caiado?: { label: string; fortes: string; fracos: string };
-  haddad?: { label: string; fortes: string; fracos: string };
+  // 🔴 `zema` faltava aqui até 03/Set/2026, e essa ausência era a RAIZ do defeito:
+  // sem a chave no tipo, `c.zema` no JSX é erro de compilação, então o componente
+  // montava só os dois declarados. O bloco existia no JSON, era reescrito pela
+  // rodada todo dia e traduzido para os três idiomas, e nunca chegava à tela.
+  // O card se chama "Caiado / Haddad / Zema": quem entra no nome entra no tipo.
+  caiado?: CritSubBloco;
+  haddad?: CritSubBloco;
+  zema?: CritSubBloco;
 }
 
 export interface QuadroRow { n: string; p: string; m: string; t: string; s: string; pc: string; mc: string; }

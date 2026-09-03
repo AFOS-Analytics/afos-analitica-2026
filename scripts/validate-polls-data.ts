@@ -227,8 +227,14 @@ if (!existsSync(critPath)) {
         if (!Array.isArray(c.fortes)) errors.push(`${cl}: fortes DEVE ser array (got ${typeof c.fortes})`)
         if (!Array.isArray(c.fracos)) errors.push(`${cl}: fracos DEVE ser array (got ${typeof c.fracos})`)
       } else {
-        // Candidato 4 (formato especial): caiado/haddad são objetos com label string
-        for (const sub of ['caiado', 'haddad']) {
+        // Card do pelotão de trás (formato especial): cada nome é um objeto com label string.
+        //
+        // 🔴 `zema` entrou nesta lista em 03/Set/2026. Até então o bloco existia no
+        // JSON, era reescrito pela rodada todo dia e traduzido para os três idiomas,
+        // e o JSX montava só caiado e haddad: conteúdo escrito, conferido e invisível.
+        // O render foi consertado, e o portão passa a exigir os três para que o
+        // defeito não volte pelo outro lado, com o bloco sumindo do JSON.
+        for (const sub of ['caiado', 'haddad', 'zema']) {
           if (typeof c[sub] !== 'object' || c[sub] === null) errors.push(`${cl}.${sub}: DEVE ser objeto`)
           else if (typeof c[sub].label !== 'string') errors.push(`${cl}.${sub}.label: deve ser string`)
         }
