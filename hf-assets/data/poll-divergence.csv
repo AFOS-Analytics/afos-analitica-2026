@@ -1,32 +1,64 @@
 poll_id,register_tse,institute,poll_date,field_midpoint,days_to_first_round,scenario,candidate,poll_pct,polymarket_pct,polymarket_date,naive_gap_pp,gap_type
-BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Lula,40,37.5,2026-05-03,-2.5,naive_winprob_minus_voteshare
-BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Flávio,34,43.95,2026-05-03,9.95,naive_winprob_minus_voteshare
-BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Caiado,5,1.35,2026-05-03,-3.65,naive_winprob_minus_voteshare
-BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Zema,4,3.75,2026-05-03,-0.25,naive_winprob_minus_voteshare
-BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Renan,3,5.65,2026-05-03,2.65,naive_winprob_minus_voteshare
-Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,148,Cenário SP (1º turno),Flávio,39.3,43.65,2026-05-09,4.35,naive_winprob_minus_voteshare
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Lula,39,63.5,20/08/2026,24.5,naive_winprob_minus_voteshare
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Flávio,32,32.85,20/08/2026,0.85,naive_winprob_minus_voteshare
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Zema,2,0.15,20/08/2026,-1.85,naive_winprob_minus_voteshare
+Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Renan,2,4.45,20/08/2026,2.45,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Lula,39,63.5,20/08/2026,24.5,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Flávio,34,32.85,20/08/2026,-1.15,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Zema,4,0.15,20/08/2026,-3.85,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Renan,3,4.45,20/08/2026,1.45,naive_winprob_minus_voteshare
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Lula,37,63.5,20/08/2026,26.5,naive_winprob_minus_voteshare
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Flávio,30,32.85,20/08/2026,2.85,naive_winprob_minus_voteshare
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Zema,3,0.15,20/08/2026,-2.85,naive_winprob_minus_voteshare
+Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Renan,1,4.45,20/08/2026,3.45,naive_winprob_minus_voteshare
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,198,Cenário Principal,Lula,45.9,63.5,20/08/2026,17.6,naive_winprob_minus_voteshare
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,198,Cenário Principal,Flávio,40.1,32.85,20/08/2026,-7.25,naive_winprob_minus_voteshare
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,198,Cenário Principal,Renan,4.4,4.45,20/08/2026,0.05,naive_winprob_minus_voteshare
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,198,Cenário Principal,Caiado,3.7,0.35,20/08/2026,-3.35,naive_winprob_minus_voteshare
+BR-04227/2026,BR042272026,AtlasIntel/Bloomberg,2026-03-25,2026-03-20,198,Cenário Principal,Zema,3.1,0.15,20/08/2026,-2.95,naive_winprob_minus_voteshare
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,194,Cenário com Ratinho e Zema,Lula,38,63.5,20/08/2026,25.5,naive_winprob_minus_voteshare
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,194,Cenário com Ratinho e Zema,Flávio,36,32.85,20/08/2026,-3.15,naive_winprob_minus_voteshare
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,194,Cenário com Ratinho e Zema,Zema,3,0.15,20/08/2026,-2.85,naive_winprob_minus_voteshare
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,194,Cenário com Ratinho e Zema,Caiado,3,0.35,20/08/2026,-2.65,naive_winprob_minus_voteshare
+AESP (Assoc. Emissoras SP),BR028462026,Gerp/AESP,2026-03-27,2026-03-24,194,Cenário com Ratinho e Zema,Renan,1,4.45,20/08/2026,3.45,naive_winprob_minus_voteshare
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,192,Cenário Único (com Caiado/PSD),Lula,41.3,63.5,20/08/2026,22.2,naive_winprob_minus_voteshare
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,192,Cenário Único (com Caiado/PSD),Flávio,37.8,32.85,20/08/2026,-4.95,naive_winprob_minus_voteshare
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,192,Cenário Único (com Caiado/PSD),Caiado,3.6,0.35,20/08/2026,-3.25,naive_winprob_minus_voteshare
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,192,Cenário Único (com Caiado/PSD),Zema,3,0.15,20/08/2026,-2.85,naive_winprob_minus_voteshare
+BR-00873/2026,BR008732026,Paraná Pesquisas,2026-03-30,2026-03-26,192,Cenário Único (com Caiado/PSD),Renan,1.2,4.45,20/08/2026,3.25,naive_winprob_minus_voteshare
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,190,Cenário 1 (com Caiado),Lula,41,63.5,20/08/2026,22.5,naive_winprob_minus_voteshare
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,190,Cenário 1 (com Caiado),Flávio,38,32.85,20/08/2026,-5.15,naive_winprob_minus_voteshare
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,190,Cenário 1 (com Caiado),Zema,4,0.15,20/08/2026,-3.85,naive_winprob_minus_voteshare
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,190,Cenário 1 (com Caiado),Caiado,4,0.35,20/08/2026,-3.65,naive_winprob_minus_voteshare
+BR-07875/2026,BR078752026,Nexus/BTG Pactual,2026-03-30,2026-03-28,190,Cenário 1 (com Caiado),Renan,2,4.45,20/08/2026,2.45,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Lula,40,41.5,2026-04-07,1.5,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Flávio,34,39.45,2026-04-07,5.45,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Caiado,5,2.55,2026-04-07,-2.45,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Zema,4,1.4,2026-04-07,-2.6,naive_winprob_minus_voteshare
+BR-03627/2026,BR036272026,Real Time Big Data,2026-05-05,2026-05-03,154,Cenário Principal (1º turno),Renan,3,5.5,2026-04-07,2.5,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,148,Cenário SP (1º turno),Flávio,39.3,43.85,2026-05-09,4.55,naive_winprob_minus_voteshare
 Paraná Pesquisas-2026-05-07,BR043152026,Paraná Pesquisas,2026-05-07,2026-05-09,148,Cenário SP (1º turno),Lula,36,37.5,2026-05-09,1.5,naive_winprob_minus_voteshare
-Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,148,Cenário MT (1º turno),Flávio,44.6,43.65,2026-05-09,-0.95,naive_winprob_minus_voteshare
+Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,148,Cenário MT (1º turno),Flávio,44.6,43.85,2026-05-09,-0.75,naive_winprob_minus_voteshare
 Paraná Pesquisas-2026-05-08,BR043152026,Paraná Pesquisas,2026-05-08,2026-05-09,148,Cenário MT (1º turno),Lula,29.8,37.5,2026-05-09,7.7,naive_winprob_minus_voteshare
 Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Lula,39,37.5,2026-05-09,-1.5,naive_winprob_minus_voteshare
-Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Flávio,33,43.65,2026-05-09,10.65,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Flávio,33,43.85,2026-05-09,10.85,naive_winprob_minus_voteshare
 Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Caiado,4,1.45,2026-05-09,-2.55,naive_winprob_minus_voteshare
-Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Zema,4,4.35,2026-05-09,0.35,naive_winprob_minus_voteshare
+Quaest/Genial-2026-05-13,BR035982026,Quaest/Genial,2026-05-13,2026-05-09,148,Cenário Principal (1º turno),Zema,4,4.25,2026-05-09,0.25,naive_winprob_minus_voteshare
 BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,144,Cenário Principal (1º turno),Lula,39,45.5,2026-05-13,6.5,naive_winprob_minus_voteshare
 BR-00290/2026,BR002902026,Datafolha,2026-05-15,2026-05-13,144,Cenário Principal (1º turno),Flávio,35,28.45,2026-05-13,-6.55,naive_winprob_minus_voteshare
-AtlasIntel-2026-05-19,BR069392026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Lula,47,42.5,2026-05-15,-4.5,naive_winprob_minus_voteshare
-AtlasIntel-2026-05-19,BR069392026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Flávio,34.3,33.35,2026-05-15,-0.95,naive_winprob_minus_voteshare
-Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Lula,46.8,44.5,2026-05-17,-2.3,naive_winprob_minus_voteshare
-Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Flávio,38.1,31.3,2026-05-17,-6.8,naive_winprob_minus_voteshare
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Lula,47,44.5,2026-05-15,-2.5,naive_winprob_minus_voteshare
+AtlasIntel-2026-05-19,BR032432026,AtlasIntel,2026-05-19,2026-05-15,142,Cenário Principal (1º turno),Flávio,34.3,28.85,2026-05-15,-5.45,naive_winprob_minus_voteshare
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Lula,46.8,44.5,2026-05-18,-2.3,naive_winprob_minus_voteshare
+Vox Brasil-2026-05-20,BR024162026,Vox Brasil,2026-05-20,2026-05-18,139,Cenário Principal (2º turno),Flávio,38.1,31.3,2026-05-18,-6.8,naive_winprob_minus_voteshare
 Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,136,Cenário Principal (1º turno),Lula,40,45.5,2026-05-21,5.5,naive_winprob_minus_voteshare
-Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,136,Cenário Principal (1º turno),Flávio,31,24.75,2026-05-21,-6.25,naive_winprob_minus_voteshare
+Datafolha-2026-05-22,BR074892026,Datafolha,2026-05-22,2026-05-21,136,Cenário Principal (1º turno),Flávio,31,24.65,2026-05-21,-6.35,naive_winprob_minus_voteshare
 Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,134,Cenário Principal (1º turno),Lula,39,45.5,2026-05-23,6.5,naive_winprob_minus_voteshare
 Indexa Pesquisas-2026-05-27,BR021542026,Indexa Pesquisas,2026-05-27,2026-05-23,134,Cenário Principal (1º turno),Flávio,30,27.75,2026-05-23,-2.25,naive_winprob_minus_voteshare
-BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Lula,38.5,39.5,2026-05-25,1,naive_winprob_minus_voteshare
-BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Flávio,31.5,27.65,2026-05-25,-3.85,naive_winprob_minus_voteshare
-BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Caiado,5.5,1.65,2026-05-25,-3.85,naive_winprob_minus_voteshare
-BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Zema,2.4,4.75,2026-05-25,2.35,naive_winprob_minus_voteshare
-BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Renan,2.1,13.05,2026-05-25,10.95,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Lula,38.5,45.5,2026-05-23,7,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Flávio,31.5,27.75,2026-05-23,-3.75,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Caiado,5.5,1.65,2026-05-23,-3.85,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Zema,2.4,4.65,2026-05-23,2.25,naive_winprob_minus_voteshare
+BR-02918/2026,BR029182026,Meio/Ideia,2026-05-28,2026-05-25,132,Cenário Principal (1º turno),Renan,2.1,11.95,2026-05-23,9.85,naive_winprob_minus_voteshare
 BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Lula,38,40.5,2026-05-29,2.5,naive_winprob_minus_voteshare
 BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Flávio,31,28.65,2026-05-29,-2.35,naive_winprob_minus_voteshare
 BR-05864/2026,BR058642026,Real Time Big Data,2026-06-01,2026-05-29,128,Cenário Principal (1º turno),Caiado,6,1.35,2026-05-29,-4.65,naive_winprob_minus_voteshare
@@ -69,3 +101,175 @@ BR-08521/2026,BR085212026,BTG/Nexus,2026-06-29,2026-06-27,99,Cenário Principal 
 BR-08521/2026,BR085212026,BTG/Nexus,2026-06-29,2026-06-27,99,Cenário Principal (1º turno),Caiado,5,1.3,2026-06-27,-3.7,naive_winprob_minus_voteshare
 BR-08521/2026,BR085212026,BTG/Nexus,2026-06-29,2026-06-27,99,Cenário Principal (1º turno),Renan,4,11.65,2026-06-27,7.65,naive_winprob_minus_voteshare
 BR-08521/2026,BR085212026,BTG/Nexus,2026-06-29,2026-06-27,99,Cenário Principal (1º turno),Zema,3,1.25,2026-06-27,-1.75,naive_winprob_minus_voteshare
+BR-04582/2026,BR045822026,AtlasIntel,2026-07-01,2026-06-27,99,Cenário Principal (1º turno),Lula,46.3,56.5,2026-06-27,10.2,naive_winprob_minus_voteshare
+BR-04582/2026,BR045822026,AtlasIntel,2026-07-01,2026-06-27,99,Cenário Principal (1º turno),Flávio,36.6,22.15,2026-06-27,-14.45,naive_winprob_minus_voteshare
+BR-05628/2026,BR056282026,Ideia/Canal Meio,2026-07-08,2026-07-04,92,Cenário Principal (1º turno),Lula,40.4,60.5,2026-07-03,20.1,naive_winprob_minus_voteshare
+BR-05628/2026,BR056282026,Ideia/Canal Meio,2026-07-08,2026-07-04,92,Cenário Principal (1º turno),Flávio,32,22.4,2026-07-03,-9.6,naive_winprob_minus_voteshare
+BR-05628/2026,BR056282026,Ideia/Canal Meio,2026-07-08,2026-07-04,92,Cenário Principal (1º turno),Caiado,4,1.05,2026-07-03,-2.95,naive_winprob_minus_voteshare
+BR-05628/2026,BR056282026,Ideia/Canal Meio,2026-07-08,2026-07-04,92,Cenário Principal (1º turno),Zema,2.5,1.05,2026-07-03,-1.45,naive_winprob_minus_voteshare
+BR-05628/2026,BR056282026,Ideia/Canal Meio,2026-07-08,2026-07-04,92,Cenário Principal (1º turno),Renan,2,9.95,2026-07-03,7.95,naive_winprob_minus_voteshare
+BR-03067/2026,BR030672026,Gerp,2026-07-08,2026-07-05,91,Cenário Principal (1º turno),Lula,36,60.5,2026-07-05,24.5,naive_winprob_minus_voteshare
+BR-03067/2026,BR030672026,Gerp,2026-07-08,2026-07-05,91,Cenário Principal (1º turno),Flávio,36,22.3,2026-07-05,-13.7,naive_winprob_minus_voteshare
+BR-03067/2026,BR030672026,Gerp,2026-07-08,2026-07-05,91,Cenário Principal (1º turno),Caiado,4,1.05,2026-07-05,-2.95,naive_winprob_minus_voteshare
+BR-03067/2026,BR030672026,Gerp,2026-07-08,2026-07-05,91,Cenário Principal (1º turno),Renan,2,9.85,2026-07-05,7.85,naive_winprob_minus_voteshare
+BR-03067/2026,BR030672026,Gerp,2026-07-08,2026-07-05,91,Cenário Principal (1º turno),Zema,2,1.05,2026-07-05,-0.95,naive_winprob_minus_voteshare
+BR-07981/2026,BR079812026,BTG/Nexus,2026-07-13,2026-07-11,85,Cenário Principal (1º turno),Lula,40,60.5,2026-07-11,20.5,naive_winprob_minus_voteshare
+BR-07981/2026,BR079812026,BTG/Nexus,2026-07-13,2026-07-11,85,Cenário Principal (1º turno),Flávio,34,23.15,2026-07-11,-10.85,naive_winprob_minus_voteshare
+BR-07981/2026,BR079812026,BTG/Nexus,2026-07-13,2026-07-11,85,Cenário Principal (1º turno),Caiado,5,1.65,2026-07-11,-3.35,naive_winprob_minus_voteshare
+BR-07981/2026,BR079812026,BTG/Nexus,2026-07-13,2026-07-11,85,Cenário Principal (1º turno),Renan,4,11.35,2026-07-11,7.35,naive_winprob_minus_voteshare
+BR-07981/2026,BR079812026,BTG/Nexus,2026-07-13,2026-07-11,85,Cenário Principal (1º turno),Zema,4,0.95,2026-07-11,-3.05,naive_winprob_minus_voteshare
+BR-07294/2026,BR072942026,Futura/Apex,2026-07-14,2026-07-09,87,"Cenário Principal (1º turno, estimulado)",Lula,40.1,61.5,2026-07-09,21.4,naive_winprob_minus_voteshare
+BR-07294/2026,BR072942026,Futura/Apex,2026-07-14,2026-07-09,87,"Cenário Principal (1º turno, estimulado)",Flávio,36.8,22.95,2026-07-09,-13.85,naive_winprob_minus_voteshare
+BR-07294/2026,BR072942026,Futura/Apex,2026-07-14,2026-07-09,87,"Cenário Principal (1º turno, estimulado)",Caiado,5,1.95,2026-07-09,-3.05,naive_winprob_minus_voteshare
+BR-07294/2026,BR072942026,Futura/Apex,2026-07-14,2026-07-09,87,"Cenário Principal (1º turno, estimulado)",Zema,3.7,0.9,2026-07-09,-2.8,naive_winprob_minus_voteshare
+BR-07294/2026,BR072942026,Futura/Apex,2026-07-14,2026-07-09,87,"Cenário Principal (1º turno, estimulado)",Renan,2.6,8.25,2026-07-09,5.65,naive_winprob_minus_voteshare
+BR-07181/2026,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Lula,40,60.5,2026-07-11,20.5,naive_winprob_minus_voteshare
+BR-07181/2026,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Flávio,28,23.15,2026-07-11,-4.85,naive_winprob_minus_voteshare
+BR-07181/2026,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.65,2026-07-11,-2.35,naive_winprob_minus_voteshare
+BR-07181/2026,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Renan,3,11.35,2026-07-11,8.35,naive_winprob_minus_voteshare
+BR-07181/2026,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Zema,2,0.95,2026-07-11,-1.05,naive_winprob_minus_voteshare
+Quaest/Genial-2026-07-15,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Lula,40,60.5,2026-07-11,20.5,naive_winprob_minus_voteshare
+Quaest/Genial-2026-07-15,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Flávio,28,23.15,2026-07-11,-4.85,naive_winprob_minus_voteshare
+Quaest/Genial-2026-07-15,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.65,2026-07-11,-2.35,naive_winprob_minus_voteshare
+Quaest/Genial-2026-07-15,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Renan,3,11.35,2026-07-11,8.35,naive_winprob_minus_voteshare
+Quaest/Genial-2026-07-15,BR071812026,Quaest/Genial,2026-07-15,2026-07-11,85,"Cenário Principal (1º turno, estimulado)",Zema,2,0.95,2026-07-11,-1.05,naive_winprob_minus_voteshare
+BR-00059/2026,BR000592026,PoderData/Aya,2026-07-16,2026-07-13,83,"Cenário Principal (1º turno, estimulado)",Lula,40,60.5,2026-07-13,20.5,naive_winprob_minus_voteshare
+BR-00059/2026,BR000592026,PoderData/Aya,2026-07-16,2026-07-13,83,"Cenário Principal (1º turno, estimulado)",Flávio,34,23.85,2026-07-13,-10.15,naive_winprob_minus_voteshare
+BR-00059/2026,BR000592026,PoderData/Aya,2026-07-16,2026-07-13,83,"Cenário Principal (1º turno, estimulado)",Renan,6,10.05,2026-07-13,4.05,naive_winprob_minus_voteshare
+BR-00059/2026,BR000592026,PoderData/Aya,2026-07-16,2026-07-13,83,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.45,2026-07-13,-2.55,naive_winprob_minus_voteshare
+BR-00059/2026,BR000592026,PoderData/Aya,2026-07-16,2026-07-13,83,"Cenário Principal (1º turno, estimulado)",Zema,4,0.85,2026-07-13,-3.15,naive_winprob_minus_voteshare
+BR-02904/2026,BR029042026,Indexa Pesquisas,2026-07-21,2026-07-17,79,Cenário Principal (1º turno),Lula,41,60.5,2026-07-17,19.5,naive_winprob_minus_voteshare
+BR-02904/2026,BR029042026,Indexa Pesquisas,2026-07-21,2026-07-17,79,Cenário Principal (1º turno),Flávio,30,27.05,2026-07-17,-2.95,naive_winprob_minus_voteshare
+BR-02904/2026,BR029042026,Indexa Pesquisas,2026-07-21,2026-07-17,79,Cenário Principal (1º turno),Caiado,6,1.25,2026-07-17,-4.75,naive_winprob_minus_voteshare
+BR-02904/2026,BR029042026,Indexa Pesquisas,2026-07-21,2026-07-17,79,Cenário Principal (1º turno),Zema,3,0.55,2026-07-17,-2.45,naive_winprob_minus_voteshare
+BR-02904/2026,BR029042026,Indexa Pesquisas,2026-07-21,2026-07-17,79,Cenário Principal (1º turno),Renan,3,7.85,2026-07-17,4.85,naive_winprob_minus_voteshare
+BR-09247/2026,BR092472026,Real Time Big Data,2026-07-21,2026-07-19,77,Cenário Principal (1º turno),Lula,40,60.5,2026-07-19,20.5,naive_winprob_minus_voteshare
+BR-09247/2026,BR092472026,Real Time Big Data,2026-07-21,2026-07-19,77,Cenário Principal (1º turno),Flávio,33,26.25,2026-07-19,-6.75,naive_winprob_minus_voteshare
+BR-09247/2026,BR092472026,Real Time Big Data,2026-07-21,2026-07-19,77,Cenário Principal (1º turno),Renan,9,8.65,2026-07-19,-0.35,naive_winprob_minus_voteshare
+BR-09247/2026,BR092472026,Real Time Big Data,2026-07-21,2026-07-19,77,Cenário Principal (1º turno),Caiado,7,1.35,2026-07-19,-5.65,naive_winprob_minus_voteshare
+BR-05026/2026,BR050262026,Gerp,2026-07-22,2026-07-17,79,"Cenário Principal (1º turno, estimulado)",Lula,38,60.5,2026-07-17,22.5,naive_winprob_minus_voteshare
+BR-05026/2026,BR050262026,Gerp,2026-07-22,2026-07-17,79,"Cenário Principal (1º turno, estimulado)",Flávio,38,27.05,2026-07-17,-10.95,naive_winprob_minus_voteshare
+BR-05026/2026,BR050262026,Gerp,2026-07-22,2026-07-17,79,"Cenário Principal (1º turno, estimulado)",Zema,3,0.55,2026-07-17,-2.45,naive_winprob_minus_voteshare
+BR-05026/2026,BR050262026,Gerp,2026-07-22,2026-07-17,79,"Cenário Principal (1º turno, estimulado)",Renan,3,7.85,2026-07-17,4.85,naive_winprob_minus_voteshare
+BR-05026/2026,BR050262026,Gerp,2026-07-22,2026-07-17,79,"Cenário Principal (1º turno, estimulado)",Caiado,3,1.25,2026-07-17,-1.75,naive_winprob_minus_voteshare
+BR-01166/2026,BR011662026,Datafolha,2026-07-24,2026-07-23,73,"Cenário Principal (1º turno, estimulado)",Lula,40,60.5,2026-07-23,20.5,naive_winprob_minus_voteshare
+BR-01166/2026,BR011662026,Datafolha,2026-07-24,2026-07-23,73,"Cenário Principal (1º turno, estimulado)",Flávio,32,22.85,2026-07-23,-9.15,naive_winprob_minus_voteshare
+BR-01166/2026,BR011662026,Datafolha,2026-07-24,2026-07-23,73,"Cenário Principal (1º turno, estimulado)",Caiado,4,2.05,2026-07-23,-1.95,naive_winprob_minus_voteshare
+BR-01166/2026,BR011662026,Datafolha,2026-07-24,2026-07-23,73,"Cenário Principal (1º turno, estimulado)",Zema,3,0.45,2026-07-23,-2.55,naive_winprob_minus_voteshare
+BR-01166/2026,BR011662026,Datafolha,2026-07-24,2026-07-23,73,"Cenário Principal (1º turno, estimulado)",Renan,3,11.85,2026-07-23,8.85,naive_winprob_minus_voteshare
+BR-01489/2026,BR014892026,BTG/Nexus,2026-07-27,2026-07-25,71,"Cenário Principal (1º turno, estimulado)",Lula,42,61.5,2026-07-24,19.5,naive_winprob_minus_voteshare
+BR-01489/2026,BR014892026,BTG/Nexus,2026-07-27,2026-07-25,71,"Cenário Principal (1º turno, estimulado)",Flávio,33,22.95,2026-07-24,-10.05,naive_winprob_minus_voteshare
+BR-01489/2026,BR014892026,BTG/Nexus,2026-07-27,2026-07-25,71,"Cenário Principal (1º turno, estimulado)",Caiado,6,1.75,2026-07-24,-4.25,naive_winprob_minus_voteshare
+BR-01489/2026,BR014892026,BTG/Nexus,2026-07-27,2026-07-25,71,"Cenário Principal (1º turno, estimulado)",Renan,5,11.75,2026-07-24,6.75,naive_winprob_minus_voteshare
+BR-01489/2026,BR014892026,BTG/Nexus,2026-07-27,2026-07-25,71,"Cenário Principal (1º turno, estimulado)",Zema,3,0.95,2026-07-24,-2.05,naive_winprob_minus_voteshare
+BR-08602/2026,BR086022026,AtlasIntel,2026-07-29,2026-07-24,72,"Cenário Principal (1º turno, estimulado)",Lula,44.9,61.5,2026-07-24,16.6,naive_winprob_minus_voteshare
+BR-08602/2026,BR086022026,AtlasIntel,2026-07-29,2026-07-24,72,"Cenário Principal (1º turno, estimulado)",Flávio,35.8,22.95,2026-07-24,-12.85,naive_winprob_minus_voteshare
+BR-08602/2026,BR086022026,AtlasIntel,2026-07-29,2026-07-24,72,"Cenário Principal (1º turno, estimulado)",Renan,7.8,11.75,2026-07-24,3.95,naive_winprob_minus_voteshare
+BR-08602/2026,BR086022026,AtlasIntel,2026-07-29,2026-07-24,72,"Cenário Principal (1º turno, estimulado)",Caiado,3.1,1.75,2026-07-24,-1.35,naive_winprob_minus_voteshare
+BR-08602/2026,BR086022026,AtlasIntel,2026-07-29,2026-07-24,72,"Cenário Principal (1º turno, estimulado)",Zema,2.8,0.95,2026-07-24,-1.85,naive_winprob_minus_voteshare
+BR-07845/2026,BR078452026,PoderData/Aya,2026-07-30,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Lula,41,62.5,2026-07-27,21.5,naive_winprob_minus_voteshare
+BR-07845/2026,BR078452026,PoderData/Aya,2026-07-30,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Flávio,35,23.85,2026-07-27,-11.15,naive_winprob_minus_voteshare
+BR-07845/2026,BR078452026,PoderData/Aya,2026-07-30,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Caiado,5,1.95,2026-07-27,-3.05,naive_winprob_minus_voteshare
+BR-07845/2026,BR078452026,PoderData/Aya,2026-07-30,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Renan,4,9.55,2026-07-27,5.55,naive_winprob_minus_voteshare
+BR-07845/2026,BR078452026,PoderData/Aya,2026-07-30,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Zema,3,0.55,2026-07-27,-2.45,naive_winprob_minus_voteshare
+BR-01084/2026,BR010842026,Vox Brasil,2026-07-31,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Lula,40.5,62.5,2026-07-27,22,naive_winprob_minus_voteshare
+BR-01084/2026,BR010842026,Vox Brasil,2026-07-31,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Flávio,31.2,23.85,2026-07-27,-7.35,naive_winprob_minus_voteshare
+BR-01084/2026,BR010842026,Vox Brasil,2026-07-31,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Caiado,5.5,1.95,2026-07-27,-3.55,naive_winprob_minus_voteshare
+BR-01084/2026,BR010842026,Vox Brasil,2026-07-31,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Zema,3.2,0.55,2026-07-27,-2.65,naive_winprob_minus_voteshare
+BR-01084/2026,BR010842026,Vox Brasil,2026-07-31,2026-07-27,69,"Cenário Principal (1º turno, estimulado)",Renan,3,9.55,2026-07-27,6.55,naive_winprob_minus_voteshare
+BR-02874/2026,BR028742026,BTG/Nexus,2026-08-03,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Lula,41,65.5,2026-07-31,24.5,naive_winprob_minus_voteshare
+BR-02874/2026,BR028742026,BTG/Nexus,2026-08-03,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Flávio,37,25.45,2026-07-31,-11.55,naive_winprob_minus_voteshare
+BR-02874/2026,BR028742026,BTG/Nexus,2026-08-03,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Caiado,5,1.15,2026-07-31,-3.85,naive_winprob_minus_voteshare
+BR-02874/2026,BR028742026,BTG/Nexus,2026-08-03,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Renan,4,7.45,2026-07-31,3.45,naive_winprob_minus_voteshare
+BR-02874/2026,BR028742026,BTG/Nexus,2026-08-03,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Zema,3,0.25,2026-07-31,-2.75,naive_winprob_minus_voteshare
+BR-06591/2026,BR065912026,Quaest/Genial,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Lula,39,65.5,2026-07-31,26.5,naive_winprob_minus_voteshare
+BR-06591/2026,BR065912026,Quaest/Genial,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Flávio,30,25.45,2026-07-31,-4.55,naive_winprob_minus_voteshare
+BR-06591/2026,BR065912026,Quaest/Genial,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.15,2026-07-31,-2.85,naive_winprob_minus_voteshare
+BR-06591/2026,BR065912026,Quaest/Genial,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Renan,4,7.45,2026-07-31,3.45,naive_winprob_minus_voteshare
+BR-06591/2026,BR065912026,Quaest/Genial,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Zema,2,0.25,2026-07-31,-1.75,naive_winprob_minus_voteshare
+BR-04579/2026,BR045792026,Ideia/Canal Meio,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Lula,43,65.5,2026-07-31,22.5,naive_winprob_minus_voteshare
+BR-04579/2026,BR045792026,Ideia/Canal Meio,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Flávio,35,25.45,2026-07-31,-9.55,naive_winprob_minus_voteshare
+BR-04579/2026,BR045792026,Ideia/Canal Meio,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Caiado,5.7,1.15,2026-07-31,-4.55,naive_winprob_minus_voteshare
+BR-04579/2026,BR045792026,Ideia/Canal Meio,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Renan,4.7,7.45,2026-07-31,2.75,naive_winprob_minus_voteshare
+BR-04579/2026,BR045792026,Ideia/Canal Meio,2026-08-05,2026-08-01,64,"Cenário Principal (1º turno, estimulado)",Zema,2.6,0.25,2026-07-31,-2.35,naive_winprob_minus_voteshare
+BR-06596/2026,BR065962026,Palver,2026-08-10,2026-08-06,59,"Cenário Principal (1º turno, estimulado)",Lula,44,64.5,2026-08-06,20.5,naive_winprob_minus_voteshare
+BR-06596/2026,BR065962026,Palver,2026-08-10,2026-08-06,59,"Cenário Principal (1º turno, estimulado)",Flávio,40,26.85,2026-08-06,-13.15,naive_winprob_minus_voteshare
+BR-06596/2026,BR065962026,Palver,2026-08-10,2026-08-06,59,"Cenário Principal (1º turno, estimulado)",Renan,10,6.9,2026-08-06,-3.1,naive_winprob_minus_voteshare
+BR-08428/2026,BR084282026,BTG/Nexus,2026-08-10,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Lula,40,64.5,2026-08-08,24.5,naive_winprob_minus_voteshare
+BR-08428/2026,BR084282026,BTG/Nexus,2026-08-10,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Flávio,35,26.95,2026-08-08,-8.05,naive_winprob_minus_voteshare
+BR-08428/2026,BR084282026,BTG/Nexus,2026-08-10,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Caiado,5,1.35,2026-08-08,-3.65,naive_winprob_minus_voteshare
+BR-08428/2026,BR084282026,BTG/Nexus,2026-08-10,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Renan,4,7.65,2026-08-08,3.65,naive_winprob_minus_voteshare
+BR-08428/2026,BR084282026,BTG/Nexus,2026-08-10,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Zema,3,0.55,2026-08-08,-2.45,naive_winprob_minus_voteshare
+BR-06935/2026,BR069352026,CNT/MDA,2026-08-11,2026-08-07,58,"Cenário Principal (1º turno, estimulado)",Lula,42.4,64.5,2026-08-07,22.1,naive_winprob_minus_voteshare
+BR-06935/2026,BR069352026,CNT/MDA,2026-08-11,2026-08-07,58,"Cenário Principal (1º turno, estimulado)",Flávio,28.7,26.95,2026-08-07,-1.75,naive_winprob_minus_voteshare
+BR-08045/2026,BR080452026,Gerp,2026-08-11,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Lula,38,64.5,2026-08-08,26.5,naive_winprob_minus_voteshare
+BR-08045/2026,BR080452026,Gerp,2026-08-11,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Flávio,38,26.95,2026-08-08,-11.05,naive_winprob_minus_voteshare
+BR-08045/2026,BR080452026,Gerp,2026-08-11,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Renan,5,7.65,2026-08-08,2.65,naive_winprob_minus_voteshare
+BR-08045/2026,BR080452026,Gerp,2026-08-11,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.35,2026-08-08,-2.65,naive_winprob_minus_voteshare
+BR-08045/2026,BR080452026,Gerp,2026-08-11,2026-08-08,57,"Cenário Principal (1º turno, estimulado)",Zema,2,0.55,2026-08-08,-1.45,naive_winprob_minus_voteshare
+BR-08109/2026,BR081092026,Futura Inteligência,2026-08-11,2026-08-04,61,"Cenário Principal (1º turno, estimulado)",Lula,38.8,65.5,2026-07-31,26.7,naive_winprob_minus_voteshare
+BR-08109/2026,BR081092026,Futura Inteligência,2026-08-11,2026-08-04,61,"Cenário Principal (1º turno, estimulado)",Flávio,34.1,25.45,2026-07-31,-8.65,naive_winprob_minus_voteshare
+BR-06868/2026,BR068682026,PoderData/Aya,2026-08-13,2026-08-10,55,"Cenário Principal (1º turno, estimulado)",Lula,41,63.5,2026-08-10,22.5,naive_winprob_minus_voteshare
+BR-06868/2026,BR068682026,PoderData/Aya,2026-08-13,2026-08-10,55,"Cenário Principal (1º turno, estimulado)",Flávio,35,27.25,2026-08-10,-7.75,naive_winprob_minus_voteshare
+BR-06773/2026,BR067732026,Quaest/Genial,2026-08-14,2026-08-11,54,"Cenário Principal (1º turno, estimulado)",Lula,38,63.5,2026-08-11,25.5,naive_winprob_minus_voteshare
+BR-06773/2026,BR067732026,Quaest/Genial,2026-08-14,2026-08-11,54,"Cenário Principal (1º turno, estimulado)",Flávio,31,27.25,2026-08-11,-3.75,naive_winprob_minus_voteshare
+BR-06773/2026,BR067732026,Quaest/Genial,2026-08-14,2026-08-11,54,"Cenário Principal (1º turno, estimulado)",Caiado,4,1.05,2026-08-11,-2.95,naive_winprob_minus_voteshare
+BR-06773/2026,BR067732026,Quaest/Genial,2026-08-14,2026-08-11,54,"Cenário Principal (1º turno, estimulado)",Renan,4,7.75,2026-08-11,3.75,naive_winprob_minus_voteshare
+BR-06773/2026,BR067732026,Quaest/Genial,2026-08-14,2026-08-11,54,"Cenário Principal (1º turno, estimulado)",Zema,2,0.35,2026-08-11,-1.65,naive_winprob_minus_voteshare
+BR-03317/2026,BR033172026,BTG/Nexus,2026-08-17,2026-08-15,50,"Cenário Principal (1º turno, estimulado)",Lula,41,64.5,2026-08-15,23.5,naive_winprob_minus_voteshare
+BR-03317/2026,BR033172026,BTG/Nexus,2026-08-17,2026-08-15,50,"Cenário Principal (1º turno, estimulado)",Flávio,36,28.15,2026-08-15,-7.85,naive_winprob_minus_voteshare
+BR-03317/2026,BR033172026,BTG/Nexus,2026-08-17,2026-08-15,50,"Cenário Principal (1º turno, estimulado)",Caiado,5,1.05,2026-08-15,-3.95,naive_winprob_minus_voteshare
+BR-03317/2026,BR033172026,BTG/Nexus,2026-08-17,2026-08-15,50,"Cenário Principal (1º turno, estimulado)",Renan,4,7.15,2026-08-15,3.15,naive_winprob_minus_voteshare
+BR-03317/2026,BR033172026,BTG/Nexus,2026-08-17,2026-08-15,50,"Cenário Principal (1º turno, estimulado)",Zema,4,0.35,2026-08-15,-3.65,naive_winprob_minus_voteshare
+BR-04496/2026,BR044962026,Datafolha,2026-08-21,2026-08-19,46,Cenário estimulado COM Pablo Marçal (1º turno),Lula,39,63.5,2026-08-19,24.5,naive_winprob_minus_voteshare
+BR-04496/2026,BR044962026,Datafolha,2026-08-21,2026-08-19,46,Cenário estimulado COM Pablo Marçal (1º turno),Flávio,32,32.55,2026-08-19,0.55,naive_winprob_minus_voteshare
+BR-04496/2026,BR044962026,Datafolha,2026-08-21,2026-08-19,46,Cenário estimulado COM Pablo Marçal (1º turno),Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-04496/2026,BR044962026,Datafolha,2026-08-21,2026-08-19,46,Cenário estimulado COM Pablo Marçal (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-04496/2026,BR044962026,Datafolha,2026-08-21,2026-08-19,46,Cenário estimulado COM Pablo Marçal (1º turno),Zema,3,0.15,2026-08-19,-2.85,naive_winprob_minus_voteshare
+BR-04006/2026,BR040062026,Veritá,2026-08-21,2026-08-18,47,"Cenário Principal (1º turno, estimulado)",Lula,39.3,63.5,2026-08-18,24.2,naive_winprob_minus_voteshare
+BR-04006/2026,BR040062026,Veritá,2026-08-21,2026-08-18,47,"Cenário Principal (1º turno, estimulado)",Flávio,39.1,32.05,2026-08-18,-7.05,naive_winprob_minus_voteshare
+BR-04006/2026,BR040062026,Veritá,2026-08-21,2026-08-18,47,"Cenário Principal (1º turno, estimulado)",Renan,3.8,4.4,2026-08-18,0.6,naive_winprob_minus_voteshare
+BR-04006/2026,BR040062026,Veritá,2026-08-21,2026-08-18,47,"Cenário Principal (1º turno, estimulado)",Caiado,3.3,0.8,2026-08-18,-2.5,naive_winprob_minus_voteshare
+BR-04006/2026,BR040062026,Veritá,2026-08-21,2026-08-18,47,"Cenário Principal (1º turno, estimulado)",Zema,1.3,0.15,2026-08-18,-1.15,naive_winprob_minus_voteshare
+BR-09028/2026,BR090282026,BTG/Nexus,2026-08-24,2026-08-22,43,Cenário estimulado SEM Pablo Marçal (1º turno),Lula,41,63.5,2026-08-19,22.5,naive_winprob_minus_voteshare
+BR-09028/2026,BR090282026,BTG/Nexus,2026-08-24,2026-08-22,43,Cenário estimulado SEM Pablo Marçal (1º turno),Flávio,37,32.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-09028/2026,BR090282026,BTG/Nexus,2026-08-24,2026-08-22,43,Cenário estimulado SEM Pablo Marçal (1º turno),Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-09028/2026,BR090282026,BTG/Nexus,2026-08-24,2026-08-22,43,Cenário estimulado SEM Pablo Marçal (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-09028/2026,BR090282026,BTG/Nexus,2026-08-24,2026-08-22,43,Cenário estimulado SEM Pablo Marçal (1º turno),Zema,3,0.15,2026-08-19,-2.85,naive_winprob_minus_voteshare
+BR-03547/2026,BR035472026,Gerp,2026-08-26,2026-08-21,44,Cenário estimulado (1º turno),Flávio,38,32.55,2026-08-19,-5.45,naive_winprob_minus_voteshare
+BR-03547/2026,BR035472026,Gerp,2026-08-26,2026-08-21,44,Cenário estimulado (1º turno),Lula,37,63.5,2026-08-19,26.5,naive_winprob_minus_voteshare
+BR-03547/2026,BR035472026,Gerp,2026-08-26,2026-08-21,44,Cenário estimulado (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-03547/2026,BR035472026,Gerp,2026-08-26,2026-08-21,44,Cenário estimulado (1º turno),Caiado,3,0.55,2026-08-19,-2.45,naive_winprob_minus_voteshare
+BR-06366/2026,BR063662026,Indexa/Broadcast,2026-08-26,2026-08-21,44,Cenário estimulado SEM Pablo Marçal (1º turno),Lula,39,63.5,2026-08-19,24.5,naive_winprob_minus_voteshare
+BR-06366/2026,BR063662026,Indexa/Broadcast,2026-08-26,2026-08-21,44,Cenário estimulado SEM Pablo Marçal (1º turno),Flávio,34,32.55,2026-08-19,-1.45,naive_winprob_minus_voteshare
+BR-06366/2026,BR063662026,Indexa/Broadcast,2026-08-26,2026-08-21,44,Cenário estimulado SEM Pablo Marçal (1º turno),Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-06366/2026,BR063662026,Indexa/Broadcast,2026-08-26,2026-08-21,44,Cenário estimulado SEM Pablo Marçal (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-06366/2026,BR063662026,Indexa/Broadcast,2026-08-26,2026-08-21,44,Cenário estimulado SEM Pablo Marçal (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-04974/2026,BR049742026,PoderData/Aya,2026-08-27,2026-08-24,41,"Cenário Principal (1º turno, estimulado)",Lula,38,63.5,2026-08-19,25.5,naive_winprob_minus_voteshare
+BR-04974/2026,BR049742026,PoderData/Aya,2026-08-27,2026-08-24,41,"Cenário Principal (1º turno, estimulado)",Flávio,35,32.55,2026-08-19,-2.45,naive_winprob_minus_voteshare
+BR-04974/2026,BR049742026,PoderData/Aya,2026-08-27,2026-08-24,41,"Cenário Principal (1º turno, estimulado)",Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-04974/2026,BR049742026,PoderData/Aya,2026-08-27,2026-08-24,41,"Cenário Principal (1º turno, estimulado)",Caiado,4,0.55,2026-08-19,-3.45,naive_winprob_minus_voteshare
+BR-04974/2026,BR049742026,PoderData/Aya,2026-08-27,2026-08-24,41,"Cenário Principal (1º turno, estimulado)",Zema,2,0.15,2026-08-19,-1.85,naive_winprob_minus_voteshare
+BR-05519/2026,BR055192026,Vox Brasil,2026-08-29,2026-08-26,39,"Cenário Principal (1º turno, estimulado)",Lula,37.1,63.5,2026-08-19,26.4,naive_winprob_minus_voteshare
+BR-05519/2026,BR055192026,Vox Brasil,2026-08-29,2026-08-26,39,"Cenário Principal (1º turno, estimulado)",Flávio,34.8,32.55,2026-08-19,-2.25,naive_winprob_minus_voteshare
+BR-05519/2026,BR055192026,Vox Brasil,2026-08-29,2026-08-26,39,"Cenário Principal (1º turno, estimulado)",Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-05519/2026,BR055192026,Vox Brasil,2026-08-29,2026-08-26,39,"Cenário Principal (1º turno, estimulado)",Renan,3.3,4.05,2026-08-19,0.75,naive_winprob_minus_voteshare
+BR-05519/2026,BR055192026,Vox Brasil,2026-08-29,2026-08-26,39,"Cenário Principal (1º turno, estimulado)",Zema,2.8,0.15,2026-08-19,-2.65,naive_winprob_minus_voteshare
+BR-07972/2026,BR079722026,AtlasIntel/Bloomberg,2026-08-31,2026-08-27,38,"Cenario Principal (1º turno, estimulado)",Lula,43.4,63.5,2026-08-19,20.1,naive_winprob_minus_voteshare
+BR-07972/2026,BR079722026,AtlasIntel/Bloomberg,2026-08-31,2026-08-27,38,"Cenario Principal (1º turno, estimulado)",Flávio,33.7,32.55,2026-08-19,-1.15,naive_winprob_minus_voteshare
+BR-07972/2026,BR079722026,AtlasIntel/Bloomberg,2026-08-31,2026-08-27,38,"Cenario Principal (1º turno, estimulado)",Renan,7.6,4.05,2026-08-19,-3.55,naive_winprob_minus_voteshare
+BR-08900/2026,BR089002026,BTG/Nexus,2026-08-31,2026-08-29,36,"Cenario Principal (1º turno, estimulado)",Lula,39,63.5,2026-08-19,24.5,naive_winprob_minus_voteshare
+BR-08900/2026,BR089002026,BTG/Nexus,2026-08-31,2026-08-29,36,"Cenario Principal (1º turno, estimulado)",Flávio,33,32.55,2026-08-19,-0.45,naive_winprob_minus_voteshare
+BR-08900/2026,BR089002026,BTG/Nexus,2026-08-31,2026-08-29,36,"Cenario Principal (1º turno, estimulado)",Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-08900/2026,BR089002026,BTG/Nexus,2026-08-31,2026-08-29,36,"Cenario Principal (1º turno, estimulado)",Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-08900/2026,BR089002026,BTG/Nexus,2026-08-31,2026-08-29,36,"Cenario Principal (1º turno, estimulado)",Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-03490/2026,BR034902026,Real Time Big Data,2026-09-01,2026-08-29,36,Cenário estimulado com Pablo Marçal (1º turno),Lula,38,63.5,2026-08-19,25.5,naive_winprob_minus_voteshare
+BR-03490/2026,BR034902026,Real Time Big Data,2026-09-01,2026-08-29,36,Cenário estimulado com Pablo Marçal (1º turno),Flávio,29,32.55,2026-08-19,3.55,naive_winprob_minus_voteshare
+BR-03490/2026,BR034902026,Real Time Big Data,2026-09-01,2026-08-29,36,Cenário estimulado com Pablo Marçal (1º turno),Renan,6,4.05,2026-08-19,-1.95,naive_winprob_minus_voteshare
+BR-03490/2026,BR034902026,Real Time Big Data,2026-09-01,2026-08-29,36,Cenário estimulado com Pablo Marçal (1º turno),Caiado,4,0.55,2026-08-19,-3.45,naive_winprob_minus_voteshare
+BR-03490/2026,BR034902026,Real Time Big Data,2026-09-01,2026-08-29,36,Cenário estimulado com Pablo Marçal (1º turno),Zema,2,0.15,2026-08-19,-1.85,naive_winprob_minus_voteshare
+BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Lula,37,63.5,2026-08-19,26.5,naive_winprob_minus_voteshare
+BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Flávio,30,32.55,2026-08-19,2.55,naive_winprob_minus_voteshare
+BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Caiado,1,0.55,2026-08-19,-0.45,naive_winprob_minus_voteshare
+BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
