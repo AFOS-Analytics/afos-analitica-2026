@@ -188,10 +188,28 @@ console.log('\n── quem gravou hoje ──')
   ok('e o registro vem nulo, sem herdar o de ontem', o.registro === null)
 }
 {
+  // AGUARDANDO: antes da hora do cron, ausencia de registro e esperada.
+  const s = montarSerie([reg('2026-09-02', '07:10:42')])
+  const antes = origemDaGravacao(s.registros, new Date('2026-09-03T02:17:00Z'))
+  ok('antes das 07:10Z o veredito e AGUARDANDO', antes.origem === ORIGENS.AGUARDANDO, antes.origem)
+  ok('e AGUARDANDO nao devolve registro do dia anterior', antes.registro === null)
+  const dentro = origemDaGravacao(s.registros, new Date('2026-09-03T06:41:00Z'))
+  ok('dentro da folga de 30min ja volta a ser AUSENTE', dentro.origem === ORIGENS.AUSENTE, dentro.origem)
+  const depois = origemDaGravacao(s.registros, new Date('2026-09-03T09:00:00Z'))
+  ok('depois da hora do cron e sem registro, AUSENTE', depois.origem === ORIGENS.AUSENTE, depois.origem)
+}
+{
   // A trava de vocabulario: nao pode EXISTIR um veredito que afirme que o cron
   // nao rodou, porque o dado disponivel nunca sustenta essa afirmacao.
+  //
+  // 📌 Passou de TRES para QUATRO em 02/Set/2026, com decisao registrada. O
+  // quarto e AGUARDANDO, para o intervalo entre a virada do dia UTC e a hora do
+  // cron, em que a ausencia de registro e ESPERADA. Antes disso o diagnostico
+  // devolvia AUSENTE por sete horas todo dia e mandava FORCAR, que e a acao que
+  // apagou o carimbo do cron em 01/Set. Este contador segue aqui de proposito:
+  // veredito novo exige decisao, nao acontece por descuido.
   const valores = Object.values(ORIGENS)
-  ok('o vocabulario tem exatamente tres vereditos', valores.length === 3, valores.join(','))
+  ok('o vocabulario tem exatamente quatro vereditos', valores.length === 4, valores.join(','))
   ok('e nenhum deles nega o cron', !valores.some((v) => /NAO_RODOU|FALHOU|SEM_CRON/.test(v)), valores.join(','))
 }
 {

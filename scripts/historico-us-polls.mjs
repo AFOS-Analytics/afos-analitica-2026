@@ -83,6 +83,9 @@ async function main() {
   if (d.hoje.origem === ORIGENS.AUSENTE) {
     console.log(`      🔴 o painel esta servindo o registro de outro dia. Ver o passo 3 do /atualizar-pesquisas-usa.`)
   }
+  if (d.hoje.origem === ORIGENS.AGUARDANDO) {
+    console.log(`      ✅ nada a fazer: forcar agora gravaria um registro que o cron sobrescreve as 07:10Z.`)
+  }
 
   if (d.indice) {
     console.log(
