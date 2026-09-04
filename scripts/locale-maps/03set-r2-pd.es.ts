@@ -1,0 +1,25 @@
+/** Mapa ES, 2a rodada de 03/Set/2026: polls-data. Vírgula decimal. */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+const S = 'lectura confirmada del 03/Set, 17:28 BRT (20:28 UTC)'
+const PD = 'la PoderData del 03/Set (BR-07561/2026, campo del 30/Ago al 02/Set, n=3.000, margen de 2pp)'
+const CUATRO =
+  'BTG/Nexus el 31/Ago con 11%, contra 2% en la ronda de la misma casa del 24/Ago; Real Time Big Data el 01/Set con 11%; Genial/Quaest el 02/Set con 10%, contra 2% el 14/Ago y 1% el 05/Ago; y PoderData el 03/Set con 10%, contra 4% el 27/Ago'
+
+construir('polls-data', 'es', {
+  'polymarketComparison.note': `Precios del ${G('Polymarket', 'polymarket')} en la ${S}, con el libro presidencial en USD 142,36M. Esta es la SEGUNDA lectura confirmada del día, y mide dos cosas. ⭐ LA PRIMERA ES EL PRECIO: un único contrato del libro presidencial se movió en las dos horas entre las lecturas, y anduvo 2,15pp. El segundo colocado salió de 40,35% a 42,50% y los otros dieciocho quedaron parados, el líder incluido, que sigue en 54,50%. La distancia entre los dos bajó a 12,00pp, contra 14,15pp a las 15:22, 14,85pp el 02/Set y 16,55pp el 01/Set. ⚠️ Y EL DINERO QUE ACOMPAÑA ES POCO: el contrato del segundo recibió cerca de USD 5,8 mil de negocio nuevo y el del líder recibió cerca de USD 7,0 mil sin moverse. Como el segundo subió y ningún otro cedió, la suma de las puntas SÍ pasó de 99,20% a 101,35%. 🔴 LA SEGUNDA ES UNA CORRECCIÓN NUESTRA: la lectura de las 15:22 decía que el salto de Augusto Cury a dos dígitos había sido medido por dos casas y que la Genial/${G('Quaest', 'quaest')} había sido la primera. Fueron CUATRO casas desde el 31/Ago, y la primera fue la BTG/${G('Nexus', 'nexus-btg')}: ${CUATRO}. Las cuatro lecturas ya estaban en esta base. ⏳ Ninguna encuesta nacional nueva desde la lectura de las 15:22, y la ${G('Datafolha', 'datafolha')} (BR-03669/2026, n=2.002, campo del 01 al 03/Set), con divulgación marcada para hoy en el registro del ${G('TSE', 'tse')}, seguía sin números al momento de esta lectura.`,
+
+  'polymarketComparison.candidates[0].tendenciaPolymarket': `54,50% (vol USD 9,63M), ${S}. Sin variación desde la lectura de las 15:22 de hoy, y el contrato recibió cerca de USD 7,0 mil de negocio nuevo en ese intervalo sin moverse. La distancia hacia el segundo bajó a 12,00pp, contra 14,15pp a las 15:22 y 14,85pp el 02/Set. En el contrato de 2º lugar de la ${G('primera vuelta', 'primeiro-turno')} cedió 0,05pp y está en 8,70%.`,
+
+  'polymarketComparison.candidates[1].polymarket': `42,50%`,
+  'polymarketComparison.candidates[1].tendenciaPolymarket': `42,50% (vol USD 9,59M), ${S}. Alza de 2,15pp sobre la lectura de las 15:22 de hoy, y es el único movimiento del libro presidencial entre las dos lecturas, con los otros dieciocho contratos parados. ⚠️ El contrato recibió cerca de USD 5,8 mil de negocio nuevo en ese intervalo, menos de lo que entró en el contrato del líder, que no se movió. En el contrato de 2º lugar de la primera vuelta sigue parado en 85,50%.`,
+
+  'polymarketComparison.candidates[2].tendenciaPesquisa': `🔴 CORRECCIÓN DE LA LECTURA DE LAS 15:22, que decía dos casas y señalaba a la Genial/Quaest como la primera. Su salto a dos dígitos fue medido por CUATRO casas desde el 31/Ago: ${CUATRO}. La AtlasIntel del 31/Ago lo medía en 7,8%. El mayor salto entre dos rondas consecutivas de la misma casa, en esta ventana, es el de la BTG/Nexus: de 2% el 24/Ago a 11% el 31/Ago, siete días entre las dos rondas. La PoderData no probó ${G('segunda vuelta', 'segundo-turno')} con él.`,
+  'polymarketComparison.candidates[2].tendenciaPolymarket': `1,35% (vol USD 3,64M), ${S}. Sin variación en el contrato de ganador desde la lectura de las 15:22 de hoy. En el contrato de 3º lugar de la primera vuelta subió 0,05pp y está en 55,90% (vol USD 108 mil), y en el contrato de 2º lugar subió 0,30pp y pasa a 2,45%.`,
+
+  'polymarketComparison.candidates[3].tendenciaPesquisa': `${PD} lo da en 3% en la primera vuelta, contra 4% en la ronda de la misma casa del 27/Ago. ⚠️ ES EL NOMBRE EN QUE LAS CASAS MÁS DISCREPAN EN ESTA VENTANA: 3% en la Genial/Quaest y en la PoderData, 6% en la Real Time Big Data del 01/Set y 7,6% en la AtlasIntel del 31/Ago. En una segunda vuelta pierde con el líder por 44% a 39%, y la misma casa medía 44% a 37% el 27/Ago.`,
+  'polymarketComparison.candidates[3].tendenciaPolymarket': `1,75% (vol USD 12,48M), ${S}. Sin variación en el contrato de ganador desde la lectura de las 15:22 de hoy. En el contrato de 3º lugar de la primera vuelta cedió 0,50pp y pasa a 26,50% en un contrato de USD 266 mil.`,
+
+  'polymarketComparison.candidates[4].tendenciaPolymarket': `0,25% (vol USD 7,11M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, cedió 0,50pp y está en 10,50% (vol USD 111 mil), ${S}, devolviendo parte del alza de 2,50pp de la lectura de las 15:22.`,
+})
