@@ -46,7 +46,33 @@ Oito chaves, e a natureza delas não é a mesma:
 | `turnout` | faixas de comparecimento | **distribuição** |
 | `popularVoteMargin` | faixas de margem do voto popular | **distribuição** |
 
-⚠️ **Os contratos `house` e `senate` trazem 9 mercados cada, mas só 2 têm preço.** Os outros sete são placeholders do Polymarket ("Party A" a "Party F" e "another party") e vêm com `outcomePrices` vazio. Isso é normal, não é degradação. Quem contar "9 mercados" e reportar isso como cobertura está contando fantasma.
+
+### 🔌 A FORMA dos campos, porque o silêncio aqui já custou uma leitura
+
+**`outcomes` e `outcomePrices` chegam como ARRAY JÁ DESSERIALIZADO, não como string JSON.** Medido nos dois países em 04/Set/2026:
+
+```
+outcomes      : object -> ["Yes","No"]
+outcomePrices : object -> ["0.895","0.105"]
+```
+
+⛔ **Não chamar `JSON.parse` neles.** O array vira a string `"0.895,0.105"` na coerção, o parse lança, e se a chamada estiver dentro de um `try/catch` que devolve valor neutro, o mercado é contado como **sem preço**. Foi o que aconteceu em 04/Set: a leitura imprimiu `house 9 mercados, 0 com preco` nos três binários, o que se lê como fonte degradada e era o leitor.
+
+✅ **Aceitar as DUAS formas**, porque o `gamma-api` direto, que é o fallback manual, entrega string:
+
+```js
+const arr = (v) => {
+  if (Array.isArray(v)) return v
+  if (typeof v === 'string' && v.trim()) { try { const p = JSON.parse(v); return Array.isArray(p) ? p : [] } catch { return [] } }
+  return []
+}
+```
+
+🔍 **Os dois sinais que denunciam esse defeito, e são baratos:** zero em **todos** os grupos ao mesmo tempo acusa o leitor, não o mundo, porque apagão total é mais provável do meu lado; e a própria resposta se contradiz, com `degraded: false` e `failedCount: 0` ao lado de "nenhum preço". → `memory/feedback_o_cliente_devolve_desserializado_e_o_failopen_engoliu.md`
+
+📌 **Esta seção existe porque a régua era SILENCIOSA quanto à forma**, não porque ela dizia o contrário. Silêncio sobre tipo é convite a supor, e a suposição custou uma rodada.
+
+⚠️ **Os contratos `house` e `senate` trazem 9 mercados cada, mas só 2 têm preço.** Os outros sete são placeholders do Polymarket ("Party A" a "Party F" e "another party") e vêm com `outcomePrices` como **array VAZIO** (`[]`), medido em 04/Set. Isso é normal, não é degradação. Quem contar "9 mercados" e reportar isso como cobertura está contando fantasma.
 
 ### O portão das distribuições: 95% a 105%
 Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%. **O `popularVoteMargin` está REPROVADO** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.

@@ -25,7 +25,7 @@ Mapa slug → chave (referência; o `gamma-api` direto só serve de fallback man
 
 **Para cada mercado, extrair duas métricas:**
 
-- **% (yes price)** — outcomePrices[0] convertido para %, métrica principal de probabilidade implícita.
+- **% (yes price)** — `outcomePrices[0]` convertido para %, métrica principal de probabilidade implícita. **O campo é ARRAY já desserializado, não string: não chamar `JSON.parse` nele.** Ver a seção de forma dos campos em `/atualizar-usa`, que vale igual aqui e foi medida nos dois países.
 - **`volumeNum` (volume acumulado USD)** — notional total negociado desde abertura do mercado. Reforça tese de "dinheiro real" e contextualiza distorções de baixa atividade. Forwardada pelo proxy AFOS.
 
 NOTA: o proxy também forwarda `liquidityNum` (profundidade do order book) desde 21/Mai/2026, **mas o uso editorial está suspenso** após pushback de consultor de mercado em 21/Mai noite. Razão: liquidez baixa em Polymarket NÃO significa preço errado — o mercado é arbitrado continuamente em minutos, e expor o número técnico para leitor leigo gera misread "AFOS mostra mercado quebrado" quando na verdade indica arbitragem ativa. Campo segue disponível na API para análise interna de anomalia, mas NUNCA citar inline na narrativa do dashboard ou daily.
