@@ -73,6 +73,21 @@ Medido em 02/Set/2026: **75 protocolos** estavam no Neon e já não estavam no a
 
 🔢 **A subtração que abre o caso cabe numa linha:** se o arquivo cresceu MENOS do que entrou na ingestão, houve retirada nova. O detalhe sai em `npx tsx scripts/diff-tse-arquivo-vs-banco.ts`.
 
+✅ **Desde 04/Set/2026 a subtração sai sozinha, e você não precisa lembrar o total de ontem.** O `--apply` anota cada rodada em `data/tse/historico-arquivo.jsonl` e imprime a comparação com a anterior. Ela roda **duas contas independentes**, e o que interessa é o desacordo entre elas:
+
+| conta | fórmula |
+|---|---|
+| subtração | `inseridas − (arquivo_hoje − arquivo_ontem)` |
+| fantasmas | `fantasmas_hoje − fantasmas_ontem` |
+
+Quando concordam, a retirada é real. Quando discordam, a diferença tem **nome** e ele é impresso: rodada de ingestão que não foi anotada, protocolo que **voltou** ao arquivo, ou linha apagada do banco, que quebra a invariante de que o banco nunca perde. 🔴 **A terceira sai em vermelho e pede o `diff` antes de publicar qualquer contagem.**
+
+🔴 **POR QUE ISTO EXISTE:** em 04/Set/2026 a regra acima não pôde ser aplicada, porque o total do arquivo de 03/Set nunca foi gravado em lugar nenhum. Ele morava só nas fichas de capstone, e a de 03/Set não o trazia. A conta teve de ser refeita à mão pela identidade `banco = comum + fantasmas`. **Regra que depende de um número que ninguém grava é regra que não roda.**
+
+⚠️ **O ensaio não anota.** Só o `--apply` escreve, e escreve sempre, então rodar `--apply` duas vezes no mesmo dia gera uma linha com `inseridas: 0`, que é verdade e não defeito.
+
+Teste do conferidor: `node scripts/testar-tse-historico.mjs`, 29 asserções em 9 casos plantados, incluindo os dois em que o resultado certo é **zero**.
+
 ### 🔍 Escopo
 
 A API devolve `scope` e `scopeSource`. 🔴 **O `scope` é DERIVADO por nós**, lido do plano amostral ou da metodologia, não é campo do TSE. Sempre reportar junto de onde ele saiu. Em 01/Set: 123 vieram de `methodology`, 40 de `sampling_plan` e 5 ficaram em `none`. Uma Real Time do DF já virou "vão nacional" por 7 dias por causa disto. → `memory/feedback_escopo_nacional_derivado_do_plano_amostral.md`

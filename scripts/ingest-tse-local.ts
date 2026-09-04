@@ -42,10 +42,18 @@ import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
 
-import { readFileSync, existsSync, statSync } from 'fs'
-import { basename } from 'path'
+import { readFileSync, existsSync, statSync, appendFileSync, mkdirSync } from 'fs'
+import { basename, dirname } from 'path'
 import { parseTSEZipBytes, fetchTSEPolls, filterRecentPolls, detectScope } from '../lib/tse/ingest'
 import type { TSEPoll } from '../lib/tse/ingest'
+import {
+  CAMINHO_HISTORICO,
+  lerHistorico,
+  ultimoRegistro,
+  compararRodadas,
+  formatarComparacao,
+  serializar,
+} from './lib/tse-historico.mjs'
 
 // 🔴 `lib/tse/persist` importa `lib/db`, que resolve a DATABASE_URL NO MOMENTO
 // EM QUE É CARREGADO. Importado no topo, ele carrega antes do dotenv rodar e o
@@ -211,6 +219,30 @@ async function main() {
         console.log(`\n➖ ${fora.length} protocolo(s) no banco já NÃO estão no registro do TSE, de ${noBanco.length}.`)
         console.log('   Detalhe: npx tsx scripts/diff-tse-arquivo-vs-banco.ts')
       }
+
+      // 🔢 A SUBTRAÇÃO CONTRA A RODADA ANTERIOR, que até 04/Set/2026 dependia de
+      // alguém lembrar o total do arquivo de ontem. Esse número só existia nas
+      // fichas de capstone, e na rodada de 03/Set ninguém o anotou: a conta teve
+      // de ser refeita à mão a partir de banco = comum + fantasmas. Agora ela sai
+      // sozinha, porque o histórico fica em disco.
+      // A trava é o desacordo entre as duas contas, não o valor de nenhuma delas.
+      const registro = {
+        quando: new Date().toISOString(),
+        arquivo: polls.length,
+        banco: noBanco.length,
+        fantasmas: fora.length,
+        inseridas: inserted,
+        jaExistiam: skipped,
+        modo: pelaRede ? 'rede' : 'arquivo',
+        fonte: 'medido',
+      }
+      const anterior = ultimoRegistro(lerHistorico(existsSync(CAMINHO_HISTORICO) ? readFileSync(CAMINHO_HISTORICO, 'utf8') : ''))
+      for (const linha of formatarComparacao(anterior, registro, compararRodadas(anterior, registro))) {
+        console.log(linha)
+      }
+      mkdirSync(dirname(CAMINHO_HISTORICO), { recursive: true })
+      appendFileSync(CAMINHO_HISTORICO, serializar(registro))
+      console.log(`   📓 rodada anotada em ${CAMINHO_HISTORICO}`)
     }
   }
 
