@@ -158,9 +158,13 @@ Quintas: **06/Ago** (№1, piloto) · **13/Ago** (№2, piloto, **decisão de se
 
 ⚠️ **Primárias estaduais não entram por estimativa:** têm calendário próprio por estado e não estão na nossa base.
 
-## 🚧 Estado do piloto
+## ✅ O piloto ACABOU em 27/Ago/2026
 
-⛔ **Enquanto o piloto durar, publicar NÃO põe a edição em busca.** Três travas em série, de propósito: o portão de rascunho devolve 404 em produção, a rota `latest` só conta rascunho fora de produção, e a página é **`noindex` mesmo depois de publicada**. O flip só tira o 404.
+⚠️ **Esta seção descrevia o piloto e ficou desatualizada por uma semana.** Medido em 04/Set sobre a №5 publicada: as três páginas respondem `index, follow`, estão no `sitemap.xml` e aparecem no `llms.txt`.
+
+**O que vale hoje:** o portão de rascunho continua devolvendo 404 em produção enquanto `status: draft`, e o flip do `publish-afos-weekly.ts` é o que tira o 404. A partir dele a edição **entra em busca**, e não há mais `noindex`.
+
+📌 **Descrição de ESTADO envelhece sem avisar, porque nada a testa.** Foi a segunda régua desatualizada achada em 04/Set, junto com a forma do `outcomePrices`. Quando esta seção mudar de novo, medir e reescrever, não presumir.
 
 **Não existe ainda:** arquivo de edições e RSS. Os dois foram aprovados no desenho e não construídos. Não prometer ao leitor o que não está no ar.
 
