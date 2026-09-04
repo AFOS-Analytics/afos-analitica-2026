@@ -1,102 +1,101 @@
 {
-  "updatedAt": "03/09/2026, 17:28",
-  "subtitle": "Cruzamento de 3 de setembro de 2026, segunda leitura do dia: preço do Polymarket em leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), livro presidencial em USD 142,36M, contra a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp), a única nacional com números publicados nesta quinta. ⭐ UM ÚNICO CONTRATO SE MOVEU DESDE A LEITURA DAS 15:22, e ele andou 2,15pp: o segundo colocado saiu de 40,35% para 42,50% e os outros dezoito ficaram parados, com a distância para o líder caindo para 12,00pp. 🔴 E ESTA RODADA CORRIGE A ANTERIOR sobre o salto de Augusto Cury: ele foi medido a dois dígitos por QUATRO casas desde 31/Ago, não por duas, e a primeira foi a BTG/Nexus e não a Genial/Quaest.",
+  "updatedAt": "03/09/2026, 23:45",
+  "subtitle": "Cruzamento de 3 de setembro de 2026, leitura de fechamento do dia: preço do Polymarket em leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), livro presidencial em USD 142,61M, contra a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp), a terceira nacional em 48 horas. ⭐ AS TRÊS DISCORDAM NO SINAL DO 2º TURNO entre os dois primeiros: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set deu o segundo à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%. ⭐ E A DATAFOLHA É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO DE AUGUSTO CURY E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS. No preço, o único nome do livro presidencial a se mover desde as 17:28 foi o segundo colocado.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 54,50% (vol USD 9,63M acumulado), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), sem variação desde a leitura das 15:22 de hoje. O contrato dele recebeu cerca de USD 7,0 mil de negócio novo nesse intervalo e não saiu do lugar. PESQUISA: a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 37% no 1º turno e em 44% num 2º turno em que o segundo colocado tem 45%. Vence os outros três pares testados pela casa: 44% a 42% contra Ronaldo Caiado, 44% a 42% contra Romeu Zema e 44% a 39% contra Renan Santos.",
+      "header": "PREÇO: 54,50% (vol USD 9,67M acumulado), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), sem variação desde a leitura das 15:22 de hoje, ou seja, o preço dele não se move há mais de oito horas. PESQUISA: a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 39% no cenário com Pablo Marçal e em 38% no cenário sem. No 2º turno vence o segundo colocado por 46% a 44%, Ronaldo Caiado por 46% a 41% e Romeu Zema por 48% a 39%.",
       "fortes": [
-        "Segue à frente no 1º turno, com 37% contra 34% do segundo, e a distância de 3 pontos é a mesma que a própria PoderData mediu em 27/Ago.",
-        "Vence três dos quatro pares de 2º turno testados pela casa, e em dois deles por 2 pontos e num por 5.",
-        "O preço dele não cedeu nas duas horas em que o do segundo colocado subiu 2,15pp.",
-        "Declarou zerada a fila do INSS em cerimônia no Planalto, e os pedidos com atraso acima de 45 dias caíram 86% desde janeiro, de 1,88 milhão para 261 mil em agosto, segundo Metrópoles e Poder360.",
-        "A Câmara aprovou nesta quinta medida provisória para acelerar a análise de benefícios do INSS, segundo Metrópoles."
+        "Vence os três pares de 2º turno com número publicado pela Datafolha, e a casa testou um quarto, contra Renan Santos, em que ele também vence.",
+        "No cenário de 1º turno com Marçal ele repete os 39% da rodada da própria casa de 21/Ago, sem ceder.",
+        "No contrato de 2º lugar do 1º turno subiu 1,80pp e está em 10,50% (vol USD 439 mil), a maior alta dele em qualquer contrato nesta leitura.",
+        "O preço dele não cedeu em nenhuma das duas leituras de hoje, mesmo com o adversário subindo nas duas.",
+        "Declarou zerada a fila do INSS em cerimônia no Planalto, e os pedidos com atraso acima de 45 dias caíram 86% desde janeiro, de 1,88 milhão para 261 mil em agosto, segundo Metrópoles e Poder360."
       ],
       "fracos": [
-        "⚠️ NO 2º TURNO DA PODERDATA ELE APARECE ATRÁS, 44% a 45%, pela primeira vez nas três rodadas desta casa desde 13/Ago.",
-        "A distância dele para o segundo colocado no preço caiu para 12,00pp, contra 16,55pp em 01/Set, e encolheu sem que ele tenha se movido nesta leitura.",
-        "No 1º turno ele cedeu dentro da própria casa pela segunda rodada seguida, de 41% em 13/Ago para 38% em 27/Ago e 37% agora.",
-        "⚠️ O ANÚNCIO DO INSS TEM UM CRITÉRIO DECLARADO QUE ESTREITA O QUE ELE SIGNIFICA: segundo o ministro da Previdência, a fila conta como zerada quando há menos gente esperando do que a quantidade que entrou no mês anterior, e restam 261 mil pedidos acima de 45 dias em agosto e 1,2 milhão de requerimentos em aberto.",
-        "No contrato de 2º lugar do 1º turno ele cedeu 0,05pp e está em 8,70%."
+        "⚠️ NA DATAFOLHA A DISTÂNCIA DO 2º TURNO CAIU PELA METADE DENTRO DA CASA: 46% a 44% agora, contra 47% a 43% em 21/Ago, ou seja, de 4 para 2 pontos, e passa a caber na margem declarada de 2pp.",
+        "No cenário sem Marçal ele cedeu de 39% para 38% dentro da própria Datafolha, enquanto o adversário ficou em 33%.",
+        "A desaprovação do governo na Datafolha é de 51%, contra 45% de aprovação, e a desaprovação é 3 pontos maior que a medida pela Genial/Quaest em 02/Set.",
+        "A distância dele para o segundo no preço caiu para 11,65pp, contra 16,55pp em 01/Set, e encolheu nas quatro leituras seguidas desde então.",
+        "A PoderData do mesmo dia o põe atrás no 2º turno, 44% a 45%, o que faz das três casas da janela duas a favor dele e uma contra, todas dentro da margem."
       ],
-      "analise": "Entre as duas leituras de hoje ele não se moveu, e mesmo assim perdeu distância. O contrato dele recebeu mais dinheiro novo que o do adversário, cerca de USD 7,0 mil contra cerca de USD 5,8 mil, e ficou parado em 54,50% enquanto o outro subiu 2,15pp. A distância entre os dois caiu para 12,00pp, o quarto carimbo seguido em que ela encolhe, contando 16,55pp em 01/Set, 14,85pp em 02/Set e 14,15pp às 15:22 de hoje. Na urna declarada o quadro não mudou desde a manhã, porque não houve pesquisa nacional nova. O que muda no lado dele é o INSS: a cerimônia aconteceu, e a definição que o governo usa para dizer que a fila está zerada é a do ministro, com 261 mil pedidos acima de 45 dias ainda em aberto em agosto."
+      "analise": "O dia dele termina com três medições e nenhuma delas o move no preço. A Datafolha confirma a liderança nos quatro pares de 2º turno que testou, mas encolhe a distância do par principal pela metade dentro da própria casa, de 4 para 2 pontos entre 21/Ago e agora. A PoderData do mesmo dia o coloca atrás nesse par, e a Genial/Quaest da véspera o colocava à frente por 1 ponto. São três casas, três resultados, e todos dentro da margem declarada, o que significa que nenhuma delas afirma vantagem. No preço ele é o oposto disso: 54,50% às 15:22, às 17:28 e agora, mais de oito horas sem se mover, enquanto a distância para o segundo encolhe por movimento do outro lado. O que muda no lado dele fora da urna é o INSS, com a cerimônia feita e o critério declarado pelo ministro."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 42,50% (vol USD 9,59M acumulado), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), alta de 2,15pp sobre a leitura das 15:22 de hoje, e é o ÚNICO movimento do livro presidencial nas duas horas entre as duas leituras. A distância para o líder caiu para 12,00pp. PESQUISA: a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 34% no 1º turno e em 45% num 2º turno contra o líder, que tem 44%.",
+      "header": "PREÇO: 42,85% (vol USD 9,64M acumulado), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), alta de 0,35pp sobre a leitura das 17:28, e foi o ÚNICO nome do livro presidencial a se mover no intervalo. A distância para o líder caiu para 11,65pp. PESQUISA: a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 32% no cenário com Marçal e em 33% no cenário sem, e em 44% num 2º turno em que o líder tem 46%.",
       "fortes": [
-        "⭐ FOI O ÚNICO NOME DO LIVRO PRESIDENCIAL A SE MOVER ENTRE AS DUAS LEITURAS DE HOJE, com alta de 2,15pp, enquanto os outros dezoito ficaram parados.",
-        "A distância para o líder caiu para 12,00pp, contra 14,15pp às 15:22 de hoje, 14,85pp em 02/Set e 16,55pp em 01/Set.",
-        "No 2º turno da PoderData ele aparece numericamente à frente, 45% a 44%, pela primeira vez nas três rodadas desta casa desde 13/Ago.",
-        "A Bolsa subiu 3,06% em 02/Set depois da divulgação da Genial/Quaest, segundo Metrópoles, e o painel registra a sequência sem lhe atribuir causa."
+        "⭐ FOI O ÚNICO NOME DOS DEZENOVE DO LIVRO PRESIDENCIAL A SE MOVER entre a leitura das 17:28 e a de fechamento, e o movimento foi de alta.",
+        "A distância para o líder caiu para 11,65pp e encolheu nas quatro leituras seguidas desde 01/Set, quando era 16,55pp.",
+        "Na Datafolha ele encosta a 2 pontos no 2º turno, 44% contra 46%, depois de 43% contra 47% na rodada da mesma casa de 21/Ago.",
+        "A PoderData do mesmo dia o põe numericamente à frente nesse par, 45% a 44%, pela primeira vez nas três rodadas daquela casa desde 13/Ago."
       ],
       "fracos": [
-        "⚠️ O DINHEIRO QUE ACOMPANHA A ALTA É PEQUENO: o contrato dele recebeu cerca de USD 5,8 mil de negócio novo entre as duas leituras de hoje, menos do que os cerca de USD 7,0 mil que entraram no contrato do líder, que não se moveu.",
-        "No 1º turno ele cedeu dentro da própria PoderData, de 35% em 13/Ago e 35% em 27/Ago para 34% agora.",
-        "A vantagem de 1 ponto no 2º turno está dentro da margem declarada de 2pp, e a casa da véspera mediu o mesmo par ao contrário, 41% a 42%.",
-        "No contrato de 2º lugar do 1º turno ele não se moveu e segue em 85,50%, ou seja, a alta ficou toda no contrato de vencedor."
+        "No 1º turno da Datafolha ele repete os mesmos 32% e 33% de 21/Ago, ou seja, não avançou dentro da casa em duas semanas.",
+        "⚠️ No contrato de 2º lugar do 1º turno ele cedeu 2,00pp e está em 83,50%, a maior queda dele em qualquer contrato nesta leitura.",
+        "A vantagem de 1 ponto que a PoderData lhe dá no 2º turno está dentro da margem declarada, e as outras duas casas da janela dão o par ao líder.",
+        "A rejeição dele segue sendo a maior entre os treze nomes testados pela Genial/Quaest em 02/Set, com 55%."
       ],
-      "analise": "A leitura das 17:28 é dele e de mais ninguém. Entre as duas capturas de hoje o livro presidencial teve um único contrato em movimento, e foi o dele, com 2,15pp de alta. O que qualifica esse movimento é o dinheiro: cerca de USD 5,8 mil de negócio novo, menos do que entrou no contrato do líder, que ficou parado. É a mesma ressalva que o painel aplica ao contrato do Supremo, e ela vale aqui porque a grandeza é a mesma. Na urna declarada nada mudou desde a manhã, e o que sustenta a leitura dele segue sendo a PoderData, que o põe numericamente à frente no 2º turno pela primeira vez nas três rodadas da casa. No 1º turno, ao mesmo tempo, ele cedeu 1 ponto dentro dessa mesma casa."
+      "analise": "Ele foi o único movimento do livro presidencial nas horas finais do dia, com alta de 0,35pp, e é o quarto fechamento seguido em que a distância para o líder encolhe. Na urna declarada o quadro é mais ambíguo do que o preço sugere: a Datafolha o mantém nos mesmos 32% e 33% de duas semanas atrás no 1º turno, e ao mesmo tempo reduz a distância do 2º turno de 4 para 2 pontos dentro da própria casa. A PoderData do mesmo dia o põe à frente nesse par e a Genial/Quaest da véspera o punha atrás. Três casas, três sinais, nenhum fora da margem. E no contrato de 2º lugar do 1º turno, onde ele domina há semanas, foi onde mais cedeu nesta leitura."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 1,35% (vol USD 3,64M acumulado) no contrato de VENCEDOR, leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), sem variação desde a leitura das 15:22 de hoje. No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 0,05pp e está em 55,90%, num livro de 108 mil dólares acumulados. PESQUISA: 🔴 ESTA RODADA CORRIGE A ANTERIOR. O salto dele a dois dígitos foi medido por QUATRO casas desde 31/Ago, não por duas: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago.",
+      "header": "PREÇO: 1,25% (vol USD 3,69M acumulado) no contrato de VENCEDOR, leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), queda de 0,10pp. No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 3,60pp e está em 59,50%, num livro de 114 mil dólares acumulados. PESQUISA: ⭐ a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS, com 7% no cenário com Marçal e 8% no cenário sem, contra 2% na rodada da própria casa de 21/Ago.",
       "fortes": [
-        "⭐ QUATRO CASAS O MEDIRAM EM DOIS DÍGITOS DESDE 31/Ago, e três delas têm série própria mostrando o salto: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago. A AtlasIntel de 31/Ago o media em 7,8%.",
-        "O maior salto entre duas rodadas consecutivas da mesma casa, nesta janela, é o da BTG/Nexus: de 2% em 24/Ago para 11% em 31/Ago, sete dias entre as duas rodadas.",
-        "No contrato de 3º lugar do 1º turno ele lidera com 55,90% e subiu 0,05pp nesta leitura, depois de 3,45pp na anterior.",
-        "A rejeição dele é de 25% na Genial/Quaest de 02/Set, a menor entre os sete nomes de maior projeção testados, contra 55% do segundo colocado e 53% do líder.",
-        "No contrato de 2º lugar do 1º turno ele subiu 0,30pp e está em 2,45% (vol USD 124 mil)."
+        "⭐ CINCO CASAS MEDIRAM O SALTO DESDE 31/Ago, e todas na mesma direção: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set, PoderData 10% em 03/Set e Datafolha 7% e 8% nos dois cenários do mesmo dia.",
+        "Dentro da própria Datafolha ele saiu de 2% em 21/Ago para 7% e 8% agora, o maior avanço de qualquer nome naquela casa entre as duas rodadas.",
+        "No contrato de 3º lugar do 1º turno ele subiu 3,60pp e está em 59,50%, pelo terceiro dia seguido de alta, e abriu 37,50pp sobre o segundo daquele mercado.",
+        "A rejeição dele é de 25% na Genial/Quaest de 02/Set, a menor entre os sete nomes de maior projeção testados."
       ],
       "fracos": [
-        "⚠️ OS DOIS CONTRATOS SEGUEM APONTANDO PARA LADOS OPOSTOS, e o de vencedor não reagiu ao salto: ele está em 1,35% e não se move desde a leitura das 15:22, enquanto a urna declarada o põe em 10% ou 11% em quatro casas.",
-        "O 1,35% do contrato de vencedor convive com dois dígitos na urna declarada. É a maior distância entre pesquisa e preço da tabela.",
-        "A PoderData de 03/Set NÃO testou um 2º turno com ele, então a única leitura de 2º turno da base segue sendo a da Genial/Quaest de 02/Set, em que perde para o líder por 40% a 34%.",
-        "O volume acumulado do contrato de vencedor dele é de USD 3,64M, o menor entre os sete nomes do quadro.",
-        "As campanhas dos concorrentes de fora do topo subiram o tom contra ele depois do salto, segundo O Globo."
+        "⚠️ O PATAMAR NÃO É O MESMO ENTRE AS CASAS, e a diferença é grande: quatro casas o põem em 10% ou 11% e a Datafolha o põe em 7% e 8%. Quem lê uma casa só sai com um retrato diferente de quem lê outra.",
+        "No contrato de vencedor ele cedeu 0,10pp e está em 1,25%, ou seja, o preço que pergunta quem ganha a eleição não acompanhou nada disso.",
+        "No contrato de 2º lugar do 1º turno ele cedeu 0,70pp e está em 1,75%.",
+        "A Datafolha não testou um 2º turno com ele, então a única leitura de 2º turno da base segue sendo a da Genial/Quaest de 02/Set, em que perde por 40% a 34%.",
+        "A própria Folha de S.Paulo tratou o dia dele sob o título de que a campanha zerou o efeito Dark Horse, o que é uma leitura de teto e não de avanço."
       ],
-      "analise": "O caso dele mudou de tamanho nesta rodada, e por erro nosso. A leitura das 15:22 dizia que o salto tinha sido medido por duas casas e que a Genial/Quaest de 02/Set fora a primeira. As duas afirmações estavam erradas, e as leituras que as desmentem já estavam no arquivo do painel: quatro casas o mediram em dois dígitos, e a primeira foi a BTG/Nexus em 31/Ago, quatro dias antes. Com a base corrigida, a leitura fica mais firme e não menos: três casas mostram o salto dentro da própria série, e o maior salto entre rodadas consecutivas nesta janela é o da BTG/Nexus, de 2% para 11% em sete dias. No preço, nada disso apareceu no contrato de vencedor, que segue em 1,35% e não se moveu nas duas horas entre as leituras de hoje. O mercado incorporou o salto no contrato de 3º lugar, onde ele lidera com 55,90%, e não no de vencedor. São perguntas diferentes, e a resposta muda com a pergunta."
+      "analise": "A Datafolha muda o retrato dele sem mudar a direção. Cinco casas mediram o salto desde 31/Ago e as cinco vão no mesmo sentido, mas quatro o põem em dois dígitos e esta o põe em 7% e 8%. Dentro da própria Datafolha o avanço é o maior de qualquer nome entre 21/Ago e agora, de 2% para 8%, então não há contradição de direção: há discordância de patamar, e ela é de três a quatro pontos. A comparação que vale segue sendo a de cada casa com ela mesma, porque somar réguas de institutos diferentes é o que produz falsa precisão. No preço, o contrato de vencedor cedeu 0,10pp e o de 3º lugar do 1º turno subiu 3,60pp pelo terceiro dia seguido. O mercado continua comprando o terceiro lugar e não a eleição."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 1,75% (vol USD 12,48M acumulado), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), sem variação desde a leitura das 15:22 de hoje. No contrato de 3º lugar do 1º turno cedeu 0,50pp e passa a 26,50% num contrato de USD 266 mil. PESQUISA: a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 3% no 1º turno, contra 4% na rodada da mesma casa de 27/Ago. Num 2º turno perde para o líder por 44% a 39%.",
+      "header": "PREÇO: 1,75% (vol USD 12,50M acumulado), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), sem variação no contrato de vencedor desde a leitura das 15:22. ⚠️ No contrato de 3º lugar do 1º turno cedeu 4,50pp e passa a 22,00% num contrato de USD 269 mil, a maior queda do painel nesta leitura. PESQUISA: a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 4% no cenário com Marçal e em 3% no cenário sem.",
       "fortes": [
-        "A margem contra ele no 2º turno encolheu dentro da própria casa, de 7 pontos em 27/Ago para 5 agora, com ele saindo de 37% para 39%.",
-        "O volume acumulado no contrato de vencedor segue sendo o maior entre os nomes de baixo, com USD 12,48M.",
-        "Disse que decisões de Alexandre de Moraes não devem ser reconhecidas, segundo Poder360, e segue dentro do assunto que domina o noticiário da semana.",
-        "A dispersão entre casas trabalha a favor dele em algumas leituras: a AtlasIntel de 31/Ago o media em 7,6% e a Real Time de 01/Set em 6%, contra 3% na Quaest e na PoderData."
+        "No cenário com Marçal da Datafolha ele repete os 4% da rodada da mesma casa de 21/Ago, sem ceder.",
+        "A casa testou um 2º turno contra ele em que o líder vence, e o painel registra a direção sem o número porque a tabela consultada trouxe rótulo conflitante nesse bloco.",
+        "O volume acumulado no contrato de vencedor segue sendo o maior entre os nomes de baixo, com USD 12,50M.",
+        "Disse que decisões de Alexandre de Moraes não devem ser reconhecidas, segundo Poder360, e segue dentro do assunto que domina o noticiário da semana."
       ],
       "fracos": [
-        "No contrato de 3º lugar do 1º turno ele cedeu 0,50pp e passa a 26,50%, contra 55,90% do primeiro, e a distância segue crescendo.",
-        "No 1º turno ele cedeu dentro da própria casa, de 4% em 27/Ago para 3%, no mesmo intervalo em que Augusto Cury saiu de 4% para 10%.",
-        "Tem o maior volume acumulado entre os nomes de baixo e mesmo assim o preço dele está em 1,75%, ou seja, dinheiro grande não sustentou preço.",
-        "⚠️ A DISPERSÃO ENTRE CASAS TAMBÉM É UM PROBLEMA DE LEITURA: os números dele na janela vão de 3% a 7,6%, e uma faixa dessa largura torna frágil qualquer afirmação sobre tendência a partir de uma casa só."
+        "⚠️ A MAIOR QUEDA DO PAINEL NESTA LEITURA É DELE: 4,50pp no contrato de 3º lugar do 1º turno, para 22,00%, e a distância para o primeiro daquele mercado passou de 29,40pp para 37,50pp.",
+        "No cenário sem Marçal da Datafolha ele cedeu de 4% para 3% dentro da própria casa.",
+        "A dispersão entre casas na janela vai de 3% a 7,6%, e uma faixa dessa largura torna frágil qualquer leitura a partir de uma casa só.",
+        "Tem o maior volume acumulado entre os nomes de baixo e mesmo assim o preço dele está em 1,75%."
       ],
-      "analise": "Ele é o nome em que as casas mais discordam nesta janela, e isso vale mais do que qualquer leitura isolada dele: na base do painel os números vão de 3% na Genial/Quaest e na PoderData a 6% na Real Time e 7,6% na AtlasIntel. Dentro da PoderData, que é a comparação válida, ele cedeu de 4% para 3% no mesmo intervalo em que Augusto Cury foi de 4% para 10%. No 2º turno contra o líder, porém, a margem contra ele encolheu de 7 para 5 pontos dentro da casa. No preço a leitura desta rodada é de imobilidade no contrato de vencedor e de queda de 0,50pp no de 3º lugar, onde ele foi ultrapassado em 01/Set e a distância para o primeiro segue crescendo."
+      "analise": "O dia fecha ruim para ele nos dois instrumentos. Na urna declarada a Datafolha o mantém em 4% no cenário com Marçal e o reduz a 3% no cenário sem, e na comparação com 21/Ago da mesma casa ele cede no segundo cenário. No preço, a queda de 4,50pp no contrato de 3º lugar é a maior do painel nesta leitura, e ela vem no mesmo dia em que Augusto Cury subiu 3,60pp no mesmo mercado: a distância entre os dois naquele contrato passou de 29,40pp para 37,50pp em poucas horas. O contrato de vencedor dele não se moveu e segue em 1,75%, com o maior volume acumulado entre os nomes de baixo, o que não sustentou preço."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Caiado em 0,25%, Zema em 0,15% e Haddad em 0,05% no contrato de VENCEDOR, os três abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para nenhum deles nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, Caiado cedeu 0,50pp e está em 10,50%, e Zema segue em 0,80%. PESQUISA: a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) dá 2% a Ronaldo Caiado e 1% a Romeu Zema no 1º turno. Num 2º turno o líder vence os dois, por 44% a 42% em cada.",
-      "subtitle": "Pelotão de trás na leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), e nesta segunda leitura do dia nenhum dos três se moveu no contrato de vencedor. O que muda é o contrato de 3º lugar, em que Ronaldo Caiado devolveu 0,50pp da alta de 2,50pp registrada às 15:22. O par de 2º turno contra ele segue com três resultados na mesma semana, todos com campo sobreposto: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set e 44% a 42% contra ele na PoderData de 03/Set.",
+      "header": "PREÇO: Caiado em 0,25%, Zema em 0,15% e Haddad em 0,05% no contrato de VENCEDOR, os três abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para nenhum deles nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, Caiado cedeu 0,50pp e está em 10,00%, e Zema segue em 0,80%. PESQUISA: a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) dá 4% a Ronaldo Caiado e 2% a Romeu Zema nos dois cenários de 1º turno.",
+      "subtitle": "Pelotão de trás na leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). ⚠️ O PAR DE 2º TURNO CONTRA RONALDO CAIADO JÁ TEM QUATRO LEITURAS NA MESMA SEMANA, todas com campo sobreposto: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia. As margens vão de 2 pontos à frente a 5 pontos atrás.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele cedeu 0,50pp e está em 10,50%, num livro de 111 mil dólares acumulados. NA URNA DECLARADA DESTA QUINTA ELE PERDE O 2º TURNO PARA O LÍDER POR 44% A 42%, a menor margem contra ele entre as três casas da semana.",
-        "fortes": "No 2º turno da PoderData ele fica a 2 pontos do líder, 44% a 42%, contra 3 pontos na rodada da mesma casa de 27/Ago. No contrato de 3º lugar do 1º turno ele segue acima dos 8,50% em que estava em 02/Set, mesmo depois de devolver 0,50pp nesta leitura. Defendeu o afastamento de Alexandre de Moraes e o impeachment no Senado, segundo Valor Econômico, e que o Supremo quebre o sigilo de todas as investigações sobre Banco Master, INSS e Dark Horse, segundo Estadão.",
-        "fracos": "No 1º turno ele caiu de 4% para 2% dentro da própria PoderData, entre 27/Ago e agora. No contrato de vencedor segue abaixo do piso de 0,5%. E no de 3º lugar ele devolveu 0,50pp da alta de 2,50pp que a leitura das 15:22 registrou, ou seja, o movimento da manhã não se sustentou inteiro nas duas horas seguintes."
+        "label": "CAIADO (PSD), 0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 0,50pp e está em 10,00%, num livro de 112 mil dólares acumulados. NA DATAFOLHA DESTA QUINTA ELE PERDE O 2º TURNO PARA O LÍDER POR 46% A 41%.",
+        "fortes": "Na Datafolha ele tem 4% nos dois cenários de 1º turno, o melhor número dele entre as quatro casas da semana, e é o terceiro colocado do cenário sem Marçal empatado com ninguém à frente exceto os dois primeiros e Augusto Cury. Defendeu o afastamento de Alexandre de Moraes e o impeachment no Senado, segundo Valor Econômico, e que o Supremo quebre o sigilo de todas as investigações sobre Banco Master, INSS e Dark Horse, segundo Estadão.",
+        "fracos": "Ele cedeu de 5% para 4% dentro da própria Datafolha entre 21/Ago e agora. No contrato de vencedor segue abaixo do piso de 0,5%, e no de 3º lugar cedeu 0,50pp nesta leitura, devolvendo o que tinha subido às 15:22. E o par de 2º turno em que ele aparece já foi medido de quatro formas em quatro dias, o que torna frágil qualquer leitura isolada."
       },
       "haddad": {
         "label": "HADDAD (PT), 0,05% (vol USD 7,43M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa o governo de São Paulo.",
@@ -104,66 +103,66 @@
         "fracos": "O contrato segue aberto no nome dele por herança do desenho do mercado, não por candidatura declarada, e o painel mantém a linha só para que o preço residual não seja lido como sinal."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,15% (vol USD 6,51M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele segue em 0,80%, num livro de 49 mil dólares acumulados.",
-        "fortes": "No 2º turno da PoderData ele fica a 2 pontos do líder, 44% a 42%, que é de longe o melhor resultado dele entre as três casas da semana e a menor margem contra ele em qualquer nacional da janela.",
-        "fracos": "Tem 1% no 1º turno, contra 2% na rodada da mesma casa de 27/Ago. E o 2º turno contra o líder é o cenário em que as três casas da semana mais discordam: a Genial/Quaest de 02/Set deu 44% a 33%, margem de 11 pontos, a Real Time Big Data de 01/Set deu 43% a 40%, margem de 3, e a PoderData agora dá 44% a 42%, margem de 2."
+        "label": "ZEMA (Novo), 0,15% (vol USD 6,51M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, segue em 0,80%, num livro de 49 mil dólares acumulados.",
+        "fortes": "Na PoderData de 03/Set ele fica a 2 pontos do líder no 2º turno, 44% a 42%, a menor margem contra ele em qualquer nacional da janela.",
+        "fracos": "Na Datafolha do mesmo dia ele perde por 48% a 39%, margem de 9 pontos, e tem 2% no 1º turno contra 3% na rodada da mesma casa de 21/Ago. ⚠️ O par de 2º turno contra ele é o de maior dispersão entre casas da janela: as quatro casas da semana mediram 3, 11, 2 e 9 pontos de margem, no intervalo de quatro dias."
       },
-      "analise": "O par de 2º turno contra Ronaldo Caiado segue sendo o retrato da semana: três casas, três resultados, todas com campo sobreposto, com margens que vão de 2 pontos atrás do líder a 5 pontos. O painel registra as três e não escolhe entre elas. Nesta segunda leitura do dia nenhum dos três se moveu no contrato de vencedor, onde os três seguem abaixo do piso de 0,5%. O único movimento é a devolução de 0,50pp de Caiado no contrato de 3º lugar, que às 15:22 tinha sido o maior movimento de alta do painel. No 1º turno, ao mesmo tempo, ele cedeu dentro da própria PoderData, de 4% em 27/Ago para 2%.",
-      "fortes": "Ronaldo Caiado fica a 2 pontos do líder no 2º turno da PoderData, a menor margem contra ele entre as três casas da semana, e segue no contrato de 3º lugar acima do patamar de 02/Set mesmo depois de devolver 0,50pp nesta leitura.",
-      "fracos": "Nenhum dos três chega a 3% no 1º turno da PoderData, os três seguem abaixo do piso de 0,5% no contrato de vencedor, e Caiado cedeu dentro da própria casa, de 4% em 27/Ago para 2% agora."
+      "analise": "O par de 2º turno contra Ronaldo Caiado ganhou a quarta leitura da semana e segue sem convergir: 2 pontos à frente do líder na Real Time Big Data de 01/Set, 5 atrás na Genial/Quaest de 02/Set, 2 atrás na PoderData de 03/Set e 5 atrás na Datafolha do mesmo dia. O painel registra as quatro e não escolhe. Com Romeu Zema a dispersão é ainda maior, com margens de 3, 11, 2 e 9 pontos nas mesmas quatro casas. No preço os três seguem abaixo do piso de 0,5% no contrato de vencedor, e o único movimento é a devolução de 0,50pp de Caiado no contrato de 3º lugar. Na Datafolha, Caiado é o único dos três que aparece com 4%, e mesmo assim cedeu 1 ponto dentro da casa desde 21/Ago.",
+      "fortes": "Ronaldo Caiado tem 4% nos dois cenários da Datafolha, o melhor número dele entre as quatro casas da semana, e Romeu Zema fica a 2 pontos do líder no 2º turno da PoderData, a menor margem contra ele em qualquer nacional da janela.",
+      "fracos": "Nenhum dos três passa de 4% no 1º turno da Datafolha, os três seguem abaixo do piso de 0,5% no contrato de vencedor, e tanto Caiado quanto Zema cederam 1 ponto dentro da própria Datafolha desde 21/Ago."
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 37% no 1º turno, contra 38% na rodada da mesma casa de 27/Ago e 41% na de 13/Ago. ⚠️ NUM 2º TURNO CONTRA O SEGUNDO COLOCADO ELE FICA ATRÁS PELA PRIMEIRA VEZ NAS TRÊS RODADAS DESTA CASA DESDE 13/Ago, 44% a 45%. Vence os outros três pares: 44% a 42% contra Ronaldo Caiado, 44% a 42% contra Romeu Zema e 44% a 39% contra Renan Santos.",
-      "m": "54,50% (vol USD 9,63M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação desde a leitura das 15:22 de hoje, e o contrato recebeu cerca de USD 7,0 mil de negócio novo nesse intervalo. A distância para o segundo caiu para 12,00pp, contra 14,15pp às 15:22 e 14,85pp em 02/Set. No contrato de 2º lugar do 1º turno cedeu 0,05pp e está em 8,70%.",
-      "t": "fica parado e perde distância mesmo assim, porque o movimento do dia é todo do outro lado",
-      "s": "Declarou zerada a fila do INSS em cerimônia no Planalto. Pela definição do ministro da Previdência, a fila conta como zerada quando há menos gente esperando do que a que entrou no mês anterior, e restam 261 mil pedidos acima de 45 dias em agosto, segundo Metrópoles e Poder360. A Câmara aprovou medida provisória para acelerar a análise de benefícios, segundo Metrópoles.",
+      "p": "a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 39% no cenário com Pablo Marçal e em 38% no cenário sem, contra 39% nos dois cenários da rodada da mesma casa de 21/Ago. ⚠️ NO 2º TURNO A DISTÂNCIA CAIU PELA METADE DENTRO DA CASA: 46% a 44%, contra 47% a 43% em 21/Ago. Vence também Ronaldo Caiado por 46% a 41% e Romeu Zema por 48% a 39%. Avaliação do governo: 45% aprovam e 51% desaprovam.",
+      "m": "54,50% (vol USD 9,67M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sem variação desde a leitura das 15:22 de hoje, mais de oito horas sem se mover. A distância para o segundo caiu para 11,65pp, contra 12,00pp às 17:28 e 16,55pp em 01/Set. No contrato de 2º lugar do 1º turno subiu 1,80pp e passa a 10,50%.",
+      "t": "parado no preço o dia inteiro, com a distância encolhendo por movimento do outro lado pela quarta leitura seguida",
+      "s": "Declarou zerada a fila do INSS em cerimônia no Planalto, com 261 mil pedidos acima de 45 dias ainda em aberto em agosto, segundo Metrópoles e Poder360. Defendeu a investigação do caso Master sem citar Moraes, segundo Poder360.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "A mesma PoderData o dá em 34% no 1º turno, contra 35% nas rodadas da casa de 13/Ago e 27/Ago. ⭐ NO 2º TURNO ELE APARECE NUMERICAMENTE À FRENTE PELA PRIMEIRA VEZ NAS TRÊS RODADAS DESTA CASA DESDE 13/Ago, 45% a 44%, e a distância de 1 ponto está dentro da margem declarada de 2pp. A Genial/Quaest da véspera mediu o mesmo par ao contrário, 41% a 42%.",
-      "m": "42,50% (vol USD 9,59M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Alta de 2,15pp sobre a leitura das 15:22 de hoje, e é o ÚNICO movimento do livro presidencial entre as duas leituras. ⚠️ O contrato recebeu cerca de USD 5,8 mil de negócio novo nesse intervalo, menos do que entrou no contrato do líder, que não se moveu. No contrato de 2º lugar do 1º turno segue parado em 85,50%.",
-      "t": "único nome do livro a se mover em duas horas, e o dinheiro que acompanha é menor que o do adversário parado",
-      "s": "Usou a crise no Supremo para tentar impulsionar o ato de 7 de Setembro, segundo Folha de S.Paulo. A Bolsa subiu 3,06% em 02/Set depois da divulgação da Genial/Quaest, segundo Metrópoles.",
+      "p": "A mesma Datafolha o dá em 32% no cenário com Marçal e em 33% no cenário sem, os mesmos números de 21/Ago. No 2º turno encosta a 2 pontos, 44% contra 46%. ⚠️ AS TRÊS NACIONAIS DA JANELA DISCORDAM NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set deu o segundo à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
+      "m": "42,85% (vol USD 9,64M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Alta de 0,35pp sobre a leitura das 17:28, e foi o ÚNICO dos dezenove nomes do livro presidencial a se mover no intervalo. No contrato de 2º lugar do 1º turno cedeu 2,00pp e está em 83,50%.",
+      "t": "único movimento do livro no fechamento, e ao mesmo tempo a maior cessão dele no contrato de 2º lugar",
+      "s": "Usou a crise no Supremo para tentar impulsionar o ato de 7 de Setembro, segundo Folha de S.Paulo, e falou em derrota de ministro, segundo a mesma Folha.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "🔴 CORREÇÃO DA LEITURA DAS 15:22: o salto dele a dois dígitos foi medido por QUATRO casas desde 31/Ago, não por duas, e a primeira foi a BTG/Nexus e não a Genial/Quaest. Na base do painel: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago. A AtlasIntel de 31/Ago o media em 7,8%. A PoderData não testou 2º turno com ele.",
-      "m": "1,35% (vol USD 3,64M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação no contrato de vencedor desde a leitura das 15:22 de hoje. No contrato de 3º lugar do 1º turno subiu 0,05pp e está em 55,90% (vol USD 108 mil), e no de 2º lugar subiu 0,30pp, para 2,45%.",
-      "t": "quatro casas o põem em dois dígitos e o contrato de vencedor não se move",
-      "s": "Sem fato próprio no noticiário desta quinta. A BBC publicou análise segundo a qual o caso Vorcaro e Moraes pode alimentar onda antipolítica e favorecer a ele e a Renan Santos.",
+      "p": "⭐ A DATAFOLHA É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS: 7% no cenário com Marçal e 8% no cenário sem, contra 2% em 21/Ago na mesma casa. As cinco leituras da janela: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set, PoderData 10% em 03/Set e Datafolha 7% e 8% nos dois cenários do mesmo dia.",
+      "m": "1,25% (vol USD 3,69M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Queda de 0,10pp no contrato de vencedor. No contrato de 3º lugar do 1º turno subiu 3,60pp e está em 59,50% (vol USD 114 mil), pelo terceiro dia seguido de alta, e no de 2º lugar cedeu 0,70pp.",
+      "t": "cinco casas concordam na direção do salto e discordam no patamar em três a quatro pontos",
+      "s": "A Folha de S.Paulo publicou análise sob o título de que a campanha zerou o efeito Dark Horse e de que ele fincou bandeira no eleitor de centro.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 3% no 1º turno, contra 4% na rodada da mesma casa de 27/Ago. ⚠️ ELE É O NOME EM QUE AS CASAS MAIS DISCORDAM NESTA JANELA: 3% na Genial/Quaest e na PoderData, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago. Num 2º turno perde para o líder por 44% a 39%, e a mesma casa media 44% a 37% em 27/Ago.",
-      "m": "1,75% (vol USD 12,48M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação no contrato de vencedor desde a leitura das 15:22 de hoje. No contrato de 3º lugar do 1º turno cedeu 0,50pp e passa a 26,50% num contrato de USD 266 mil.",
-      "t": "parado no contrato de vencedor, cedendo no de 3º lugar, e com a maior dispersão entre casas da tabela",
+      "p": "a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 4% no cenário com Marçal e em 3% no cenário sem, contra 4% nos dois cenários de 21/Ago. A dispersão entre casas na janela vai de 3% a 7,6%. A casa testou um 2º turno contra ele em que o líder vence, e o painel registra a direção sem o número.",
+      "m": "1,75% (vol USD 12,50M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sem variação no contrato de vencedor. ⚠️ No contrato de 3º lugar do 1º turno cedeu 4,50pp e passa a 22,00% num contrato de USD 269 mil, a maior queda do painel nesta leitura.",
+      "t": "a maior queda do painel nesta leitura, e ela é no mesmo mercado em que o terceiro colocado subiu",
       "s": "Disse que decisões de Alexandre de Moraes não devem ser reconhecidas, segundo Poder360.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "A PoderData o coloca em 2% no 1º turno, contra 4% na rodada da mesma casa de 27/Ago. ⚠️ O 2º TURNO CONTRA ELE JÁ TEM TRÊS RESULTADOS DIFERENTES NA MESMA SEMANA, todos com campo sobreposto: a PoderData dá o líder à frente por 44% a 42%, a Genial/Quaest de 02/Set deu 42% a 37% e a Real Time Big Data de 01/Set o dava à frente por 45% a 43%.",
-      "m": "0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele cedeu 0,50pp e está em 10,50% (vol USD 111 mil), devolvendo parte da alta de 2,50pp da leitura das 15:22.",
-      "t": "devolve parte da alta da manhã no contrato de 3º lugar, e o par de 2º turno contra ele segue com três leituras diferentes",
-      "s": "Defendeu o afastamento de Alexandre de Moraes e o impeachment no Senado, segundo Valor Econômico, e que o Supremo quebre o sigilo de todas as investigações sobre Banco Master, INSS e Dark Horse, segundo Estadão.",
+      "p": "A Datafolha o coloca em 4% nos dois cenários, contra 5% em 21/Ago na mesma casa. ⚠️ O PAR DE 2º TURNO CONTRA ELE JÁ TEM QUATRO LEITURAS NA MESMA SEMANA: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia.",
+      "m": "0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 0,50pp e está em 10,00% (vol USD 112 mil).",
+      "t": "quatro casas mediram o mesmo par de 2º turno em quatro dias e nenhuma concorda com a outra na margem",
+      "s": "Defendeu o afastamento de Alexandre de Moraes e o impeachment no Senado, segundo Valor Econômico.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "A PoderData o mede em 2% no 1º turno, contra 3% na rodada da mesma casa de 27/Ago. Ao contrário da Genial/Quaest da véspera, esta casa publicou um único cenário de 1º turno, com ele na lista, então esta rodada não mede o efeito da presença dele sobre o número do segundo colocado.",
+      "p": "A Datafolha o traz em 2% no cenário com ele na lista, o mesmo número de 21/Ago. A presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal o líder tem 38% e o segundo 33%, ou seja, a distância vai de 7 para 5 pontos.",
       "m": "0,15% (vol USD 3,34M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele.",
-      "t": "a casa de hoje não repete o par de cenários que media o efeito dele, então não há leitura nova sobre isso",
+      "t": "a presença dele encurta a distância entre os dois primeiros em 2 pontos dentro da mesma casa",
       "s": "Não aparece no noticiário desta quinta com fato próprio.",
       "pc": "#EA580C",
       "mc": ""
@@ -171,12 +170,12 @@
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do STF antes de 2027.",
-      "m": "7,40% (vol USD 87 mil), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação desde a leitura das 15:22 de hoje. ⚠️ É O MENOR LIVRO DO PAINEL e o volume acumulado segue em USD 87 mil. Em três dias o contrato foi a 10,85%, caiu para 6,35% e subiu para 7,40%.",
-      "t": "parado nesta leitura, depois de três direções em três dias com o volume acumulado praticamente imóvel",
-      "s": "Gilmar Mendes propôs a retirada de delegados da Polícia Federal dos gabinetes do tribunal, segundo Folha de S.Paulo e Poder360. Daniel Vorcaro disse em depoimento que sofreu pressão para não delatar um diretor da PF e membros do governo, segundo Gazeta do Povo, e a Procuradoria-Geral da República pediu em 02/Set o arquivamento dessa denúncia, segundo Folha de S.Paulo, O Globo e G1. A delação do fundador da Reag avançou no tribunal, segundo Metrópoles, e segue sem homologação. Cristiano Zanin foi eleito para um segundo mandato como ministro substituto do TSE, segundo CartaCapital.",
+      "m": "⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA ESTE CONTRATO. A última leitura confirmada é a de 03/Set às 17:28, com 7,40% (vol USD 87 mil), e é essa que a página mantém. É o menor livro do painel, e o volume acumulado nele não passa de USD 87 mil.",
+      "t": "sem leitura nova para publicar no fechamento do dia",
+      "s": "⭐ O ATO MAIS DURO DA SÉRIE: Alexandre de Moraes pediu a Edson Fachin para investigar André Mendonça no inquérito das fake news, com base em relatório que ele próprio encomendou à Polícia Federal sem aval da presidência do tribunal, segundo Gazeta do Povo e O Globo. O Estadão registra que o relatório é interno e sem valor probatório. Fachin deu 5 dias úteis para Moraes, Mendonça, o procurador-geral Paulo Gonet e o diretor-geral da PF se manifestarem, segundo G1, VEJA e Folha de S.Paulo, e adiou para a segunda quinzena de setembro a sessão do plenário sobre o caso, segundo Poder360. Marina Silva defendeu que Moraes se afaste, segundo Metrópoles.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "A segunda leitura do dia mede duas coisas, e a primeira é uma correção nossa. 🔴 O SALTO DE AUGUSTO CURY A DOIS DÍGITOS FOI MEDIDO POR QUATRO CASAS, NÃO POR DUAS, e começou em 31/Ago e não nesta quinta. Na base do painel: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago. A AtlasIntel de 31/Ago o media em 7,8%. A leitura das 15:22 desta página dizia duas casas e apontava a Genial/Quaest como a primeira, e as duas afirmações estavam erradas: as quatro leituras já estavam no nosso próprio arquivo, e a comparação dentro de cada casa mostra o salto em três delas, com a BTG/Nexus indo de 2% para 11% em sete dias. A segunda coisa é o preço. ⭐ UM ÚNICO CONTRATO DO LIVRO PRESIDENCIAL SE MOVEU EM DUAS HORAS. O segundo colocado subiu 2,15pp, de 40,35% para 42,50%, e os outros dezoito nomes ficaram parados, o líder incluído, que segue em 54,50%. A distância entre os dois caiu para 12,00pp, contra 14,15pp na leitura das 15:22 de hoje, 14,85pp em 02/Set e 16,55pp em 01/Set. ⚠️ E O DINHEIRO QUE ACOMPANHA É PEQUENO: entre as duas leituras de hoje o contrato do segundo recebeu cerca de USD 5,8 mil de negócio novo e o do líder recebeu cerca de USD 7,0 mil sem sair do lugar, num livro que acumula USD 142,36M. Como o segundo subiu e nenhum outro cedeu, a soma das pontas SIM dos 19 contratos passou de 99,20% para 101,35%. ⚠️ ISSO NÃO É ANOMALIA, E FOI CONFERIDO NO BACKUP DA SÉRIE: somando só os quatro nomes acima do piso de 0,5%, que é a grandeza que a série guarda, o total foi de 97,95% para 100,10%, e nas 20 capturas anteriores essa mesma soma andou entre 98,00% e 101,60%, com 13 delas acima de 100%. Acima de 100 é o comportamento ordinário deste livro. A régua que o painel já aplica ao contrato do Supremo vale igual aqui: preço que anda muito com dinheiro de pouco não descreve mudança de expectativa do mesmo tamanho. Nas pesquisas nada mudou desde as 15:22, e a Datafolha, que tinha divulgação marcada para hoje no registro do TSE, seguia sem números no momento desta leitura."
+  "cruzamento": "O fechamento de 3 de setembro junta três medições que não se conciliam, e é isso que a página registra. ⭐ A PRIMEIRA É O SINAL DO 2º TURNO. Três casas nacionais publicaram em 48 horas e discordam sobre quem ganha o par entre os dois primeiros: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set deu o segundo à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%. As três margens são de 1 ou 2 pontos e as três casas declaram margem de erro de 2pp, então nenhuma delas afirma vantagem fora da margem. O painel registra as três e não escolhe. ⭐ A SEGUNDA É O PATAMAR DE AUGUSTO CURY, e ela é nova. Cinco casas mediram o salto dele desde 31/Ago: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set, PoderData 10% em 03/Set e Datafolha 7% e 8% nos dois cenários do mesmo dia. Quatro o põem em dois dígitos e a Datafolha o põe em 7% e 8%. O salto aparece em todas, porque dentro da própria Datafolha ele saiu de 2% em 21/Ago; o que muda entre as casas é o tamanho do patamar, não a direção. ⚠️ E A LEITURA MAIS FIRME AQUI É A DE DENTRO DE CADA CASA, não a média entre elas, porque somar réguas de institutos diferentes é o que produz a falsa precisão. A TERCEIRA É O PREÇO, e ele quase não se moveu. Entre a leitura das 17:28 e a de fechamento, um único nome dos dezenove do livro presidencial andou: o segundo colocado, com alta de 0,35pp, para 42,85%. O líder segue em 54,50% e não se move há mais de oito horas. A distância entre os dois caiu para 11,65pp, contra 12,00pp às 17:28, 14,85pp em 02/Set e 16,55pp em 01/Set. Nos sub-mercados o movimento foi maior que no principal: no contrato de 2º lugar do 1º turno o segundo colocado cedeu 2,00pp, para 83,50%, e o líder subiu 1,80pp, para 10,50%; e no contrato de 3º lugar Augusto Cury subiu 3,60pp, para 59,50%, enquanto Renan Santos cedeu 4,50pp, para 22,00%, a maior queda do painel nesta leitura. ⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O CONTRATO DE IMPEACHMENT DE MINISTRO DO SUPREMO. A última leitura confirmada dele é a de 03/Set às 17:28, com 7,40%, e é essa que a página mantém. 📌 O contraste que fecha o dia: a crise no Supremo produziu nesta quinta o ato mais duro da série, com um ministro pedindo a investigação de outro, e o preço do contrato que mede saída de ministro é o único do painel sem leitura nova para publicar."
 }

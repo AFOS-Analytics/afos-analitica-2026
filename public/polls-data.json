@@ -136,6 +136,122 @@
   ],
   "polls": [
     {
+      "institute": "Datafolha",
+      "date": "2026-09-03",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-03669/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-09-01 a 2026-09-03",
+      "note": "Datafolha nacional divulgada em 03/Set por volta das 20h20 (Gazeta do Povo, G1, Folha de S.Paulo, Exame, InfoMoney, Valor Econômico). ⭐ É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO DE AUGUSTO CURY E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS: 7% no cenário com Pablo Marçal e 8% no cenário sem, contra 2% na rodada da própria casa de 21/Ago. As outras quatro casas da janela o puseram em 10% ou 11%: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set e PoderData 10% em 03/Set. A própria Folha de S.Paulo tratou o ponto em análise sob o título de que a campanha zerou o efeito Dark Horse e que ele fincou bandeira no eleitor de centro. ⭐ E O 2º TURNO ENCOLHEU PELA METADE DENTRO DA CASA: 46% a 44% agora, contra 47% a 43% em 21/Ago, ou seja, a distância caiu de 4 para 2 pontos e passa a caber na margem declarada de 2pp. COMPARAÇÃO DENTRO DA CASA, que é a única válida. No 1º turno com Marçal nada mudou desde 21/Ago, com Lula em 39% e Flávio em 32% nas duas rodadas. No cenário sem Marçal, Lula cedeu de 39% para 38% e Flávio ficou em 33%, então a distância entre os dois saiu de 6 para 5 pontos. No mesmo intervalo Ronaldo Caiado foi de 5% para 4%, Romeu Zema de 3% para 2% e Renan Santos de 4% para 4% no cenário com Marçal e de 4% para 3% no cenário sem. CENÁRIO COM MARÇAL, completo: Lula 39%, Flávio Bolsonaro 32%, Augusto Cury 7%, Renan Santos 4%, Ronaldo Caiado 4%, Romeu Zema 2%, Pablo Marçal 2%, Samara Martins 1%, e Rui Costa Pimenta, Wilson Grassi, Edmilson Costa, Clariana Barão e Hertz Dias com 0%. Branco, nulo ou nenhum 6%, indecisos 3%. CENÁRIO SEM MARÇAL: Lula 38%, Flávio 33%, Cury 8%, Caiado 4%, Renan 3%, Zema 2%, Samara Martins 1%, Edmilson Costa 1%, Rui Costa Pimenta 1%, e os demais em 0%. Branco, nulo ou nenhum 6%, indecisos 3%. 2º TURNO, três pares com número confirmado: Lula 46% x Flávio 44%, com 9% de branco ou nulo e 2% de não sabe; Lula 46% x Ronaldo Caiado 41%; e Lula 48% x Romeu Zema 39%. ℹ️ A casa testou um QUARTO par, contra Renan Santos, em que o líder também vence, e o painel registra a direção sem o número porque a tabela consultada trouxe rótulo conflitante nesse bloco. AVALIAÇÃO DO GOVERNO: 45% aprovam e 51% desaprovam, segundo G1, Terra, InfoMoney e CBN Recife. Campo 01 a 03/Set, n=2.002, margem de 2pp, 95% de confiança, registro TSE BR-03669/2026. 📅 A DIVULGAÇÃO DESTA QUINTA JÁ ESTAVA NO REGISTRO DO TSE ingerido pelo painel na manhã do mesmo dia, com a data prevista e o número de registro batendo com o publicado.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado com Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 32
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 7
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 2
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário estimulado sem Pablo Marçal (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 8
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 1
+            },
+            {
+              "candidate": "Edmilson Costa (PCB)",
+              "percent": 1
+            },
+            {
+              "candidate": "Rui Costa Pimenta (PCO)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Romeu Zema",
+          "percent2": 39
+        }
+      ],
+      "source": "Datafolha, divulgada em 03/Set/2026 (campo 01 a 03/Set, n=2.002, margem de 2pp, 95% de confiança, registro TSE BR-03669/2026). Tabela dos dois cenários de 1º turno e dos cenários de 2º turno conferida na Gazeta do Povo; avaliação do governo conferida em G1, Terra, InfoMoney e CBN Recife."
+    },
+    {
       "institute": "PoderData",
       "date": "2026-09-03",
       "scope": "national",
@@ -1632,7 +1748,7 @@
     }
   ],
   "approvalData": {
-    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DESTE BLOCO SÃO DA GENIAL/QUAEST DE 02/Set, e são eles: 45% de aprovação contra 48% de desaprovação, com 7% de não sabe, e 35% de ótimo ou bom, 25% de regular e 37% de ruim ou péssimo, com 3% sem resposta. ℹ️ A POWERDATA DE 03/Set NÃO PUBLICOU AVALIAÇÃO DE GOVERNO NEM REJEIÇÃO na tabela conferida, então este bloco não muda nesta rodada. O painel mantém UMA casa por bloco de propósito, para não somar réguas de institutos diferentes. ⭐ DENTRO DA PRÓPRIA QUAEST O QUADRO É DE IMOBILIDADE. Em 05/Ago eram 48% de aprovação contra 47% de desaprovação, em 14/Ago 46% contra 48% e em 02/Set 45% contra 48%. A desaprovação está no mesmo número pela terceira rodada seguida da casa, e a aprovação cedeu 1pp em cada uma das duas últimas. Na régua da gestão, o ótimo ou bom saiu de 36% em 14/Ago para 35%, com regular e ruim ou péssimo parados em 25% e 37%. 📌 REJEIÇÃO, também da rodada de 02/Set e da mesma casa: Flávio Bolsonaro 55% e Lula 53%, contra 54% e 52% na rodada de 14/Ago. Os dois subiram 1pp e a distância entre eles não mudou. Na mesma rodada, Pablo Marçal 44%, Ronaldo Caiado 40%, Romeu Zema 38%, Renan Santos 28% e Augusto Cury 25%.",
+    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DESTE BLOCO SEGUEM SENDO OS DA GENIAL/QUAEST DE 02/Set, e são eles: 45% de aprovação contra 48% de desaprovação, com 7% de não sabe, e 35% de ótimo ou bom, 25% de regular e 37% de ruim ou péssimo. O painel mantém UMA casa por bloco de propósito, e trocar a casa aqui quebraria a série interna que sustenta a comparação. ⭐ A DATAFOLHA DE 03/Set TRAZ LEITURA MAIS RECENTE E DE OUTRA CASA: 45% aprovam e 51% desaprovam, segundo G1, Terra, InfoMoney e CBN Recife. A aprovação coincide nas duas casas e a desaprovação difere em 3 pontos, e o painel registra as duas sem somá-las. ⭐ DENTRO DA PRÓPRIA QUAEST O QUADRO É DE IMOBILIDADE. Em 05/Ago eram 48% de aprovação contra 47% de desaprovação, em 14/Ago 46% contra 48% e em 02/Set 45% contra 48%. 📌 REJEIÇÃO, da rodada de 02/Set e da mesma casa: Flávio Bolsonaro 55% e Lula 53%, contra 54% e 52% em 14/Ago. Na mesma rodada, Pablo Marçal 44%, Ronaldo Caiado 40%, Romeu Zema 38%, Renan Santos 28% e Augusto Cury 25%.",
     "source": "Aprovação, desaprovação e avaliação da gestão: Genial/Quaest 02/Set/2026 (campo 30/Ago a 01/Set, n=2.004, presencial, margem 2,0pp, 95% de confiança, registro TSE BR-07065/2026), divulgada por Poder360, G1, O Globo, CartaCapital e Valor Econômico. Rejeição: mesma rodada, via Poder360 e Valor Econômico. Série da própria casa: rodadas de 05/Ago e 14/Ago, já registradas no painel.",
     "date": "2026-09-02",
     "results": {
@@ -1673,41 +1789,41 @@
     "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), com o livro presidencial em USD 142,36M. Esta é a SEGUNDA leitura confirmada do dia, e ela mede duas coisas. ⭐ A PRIMEIRA É O PREÇO: um único contrato do livro presidencial se moveu nas duas horas entre as leituras, e ele andou 2,15pp. O segundo colocado saiu de 40,35% para 42,50% e os outros dezoito ficaram parados, o líder incluído, que segue em 54,50%. A distância entre os dois caiu para 12,00pp, contra 14,15pp às 15:22, 14,85pp em 02/Set e 16,55pp em 01/Set. ⚠️ E O DINHEIRO QUE ACOMPANHA É PEQUENO: o contrato do segundo recebeu cerca de USD 5,8 mil de negócio novo e o do líder recebeu cerca de USD 7,0 mil sem se mover. Como o segundo subiu e nenhum outro cedeu, a soma das pontas SIM dos 19 contratos passou de 99,20% para 101,35%. ⚠️ ISSO NÃO É ANOMALIA, E FOI CONFERIDO NO BACKUP DA SÉRIE: somando só os quatro nomes acima do piso de 0,5%, que é a grandeza que a série guarda, o total foi de 97,95% para 100,10%, e nas 20 capturas anteriores essa mesma soma andou entre 98,00% e 101,60%, com 13 delas acima de 100%. Acima de 100 é o comportamento ordinário deste livro. 🔴 A SEGUNDA É UMA CORREÇÃO NOSSA: a leitura das 15:22 dizia que o salto de Augusto Cury a dois dígitos tinha sido medido por duas casas e que a Genial/Quaest fora a primeira. Foram QUATRO casas desde 31/Ago, e a primeira foi a BTG/Nexus: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago. As quatro leituras já estavam nesta base. ⏳ Nenhuma pesquisa nacional nova desde a leitura das 15:22, e a Datafolha (BR-03669/2026, n=2.002, campo 01 a 03/Set), com divulgação marcada para hoje no registro do TSE, seguia sem números no momento desta leitura.",
+    "note": "Preços do Polymarket na leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC), com o livro presidencial em USD 142,61M. ⭐ A DATAFOLHA SAIU POR VOLTA DAS 20H20 e é a terceira nacional em 48 horas. As três discordam no SINAL do 2º turno entre os dois primeiros: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set deu o segundo à frente por 45% a 44%, e a Datafolha dá o líder à frente por 46% a 44%. ⭐ E A DATAFOLHA É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO DE AUGUSTO CURY E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS, com 7% e 8% nos dois cenários, contra 10% ou 11% nas outras quatro. No preço, o único nome do livro presidencial a se mover desde a leitura das 17:28 foi o segundo colocado, com alta de 0,35pp, e a distância para o líder caiu para 11,65pp. O líder não se move há mais de oito horas. ⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O CONTRATO DE IMPEACHMENT DE MINISTRO DO SUPREMO: a última leitura confirmada dele é a de 03/Set às 17:28, com 7,40%. Nos sub-mercados, Augusto Cury subiu 3,60pp no contrato de 3º lugar do 1º turno e está em 59,50%, e Renan Santos cedeu 4,50pp no mesmo mercado, para 22,00%.",
     "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 27/Ago os cinco livros acompanhados confirmaram na leitura das 22:49, inclusive o contrato de Augusto Cury, que abriu no mesmo dia. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. A PoderData/Aya de 27/Ago foi conferida em duas fontes, com o número de registro do TSE batendo e com o escopo nacional confirmado na divulgação, que declara 555 municípios nas 27 unidades federativas. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 37,
+        "percentage": 38,
         "odds": 54.5,
         "value": 54.5,
         "polymarket": "54,50%",
-        "pesquisaRange": "37%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "A PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000) o dá em 37% no 1º turno, contra 38% na rodada da mesma casa de 27/Ago e 41% na de 13/Ago. ⚠️ NUM 2º TURNO CONTRA O SEGUNDO COLOCADO ELE FICA ATRÁS PELA PRIMEIRA VEZ NAS TRÊS RODADAS DESTA CASA DESDE 13/Ago, 44% a 45%, depois de 46% a 45% em 13/Ago e 45% a 44% em 27/Ago. A Genial/Quaest da véspera mediu o mesmo par ao contrário, 42% a 41% a favor dele. Vence os outros três pares testados pela PoderData: 44% a 42% contra Ronaldo Caiado, 44% a 42% contra Romeu Zema e 44% a 39% contra Renan Santos.",
-        "tendenciaPolymarket": "54,50% (vol USD 9,63M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação desde a leitura das 15:22 de hoje, e o contrato recebeu cerca de USD 7,0 mil de negócio novo nesse intervalo sem sair do lugar. A distância para o segundo caiu para 12,00pp, contra 14,15pp às 15:22 e 14,85pp em 02/Set. No contrato de 2º lugar do 1º turno cedeu 0,05pp e está em 8,70%."
+        "pesquisaRange": "38-39%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp) o dá em 39% no cenário com Pablo Marçal e em 38% no cenário sem, contra 39% nos dois cenários da rodada da mesma casa de 21/Ago. ⭐ NO 2º TURNO A DISTÂNCIA ENCOLHEU PELA METADE DENTRO DA CASA: 46% a 44% agora, contra 47% a 43% em 21/Ago, ou seja, de 4 para 2 pontos, e passa a caber na margem declarada. Vence também Ronaldo Caiado por 46% a 41% e Romeu Zema por 48% a 39%. Avaliação do governo: 45% aprovam e 51% desaprovam.",
+        "tendenciaPolymarket": "54,50% (vol USD 9,67M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sem variação desde a leitura das 15:22 de hoje, ou seja, o preço dele não se move há mais de oito horas. A distância para o segundo caiu para 11,65pp, contra 12,00pp às 17:28, 14,85pp em 02/Set e 16,55pp em 01/Set. No contrato de 2º lugar do 1º turno subiu 1,80pp e passa a 10,50%."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 34,
-        "odds": 42.5,
-        "value": 42.5,
-        "polymarket": "42,50%",
-        "pesquisaRange": "34%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "A PoderData o dá em 34% no 1º turno, contra 35% nas duas rodadas anteriores da mesma casa, de 13/Ago e 27/Ago. ⭐ NO 2º TURNO ELE APARECE NUMERICAMENTE À FRENTE PELA PRIMEIRA VEZ NAS TRÊS RODADAS DESTA CASA DESDE 13/Ago, 45% a 44%, e a distância dentro da casa foi de 1 ponto atrás em 13/Ago e 27/Ago para 1 ponto à frente agora. A margem declarada é de 2pp, então é empate técnico pela régua da própria casa. A Genial/Quaest da véspera mediu o mesmo par ao contrário, 41% a 42%.",
-        "tendenciaPolymarket": "42,50% (vol USD 9,59M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Alta de 2,15pp sobre a leitura das 15:22 de hoje, e é o único movimento do livro presidencial entre as duas leituras, com os outros dezoito contratos parados. ⚠️ O contrato recebeu cerca de USD 5,8 mil de negócio novo nesse intervalo, menos do que entrou no contrato do líder, que não se moveu. No contrato de 2º lugar do 1º turno segue parado em 85,50%."
+        "percentage": 33,
+        "odds": 42.85,
+        "value": 42.85,
+        "polymarket": "42,85%",
+        "pesquisaRange": "32-33%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "A mesma Datafolha o dá em 32% no cenário com Marçal e em 33% no cenário sem, os mesmos números da rodada da casa de 21/Ago. ⭐ NO 2º TURNO ELE ENCOSTA A 2 PONTOS, 44% contra 46%, depois de 43% contra 47% em 21/Ago. ⚠️ E AS TRÊS NACIONAIS DA JANELA DISCORDAM NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set o deu à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
+        "tendenciaPolymarket": "42,85% (vol USD 9,64M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Alta de 0,35pp sobre a leitura das 17:28 de hoje, e foi o único nome do livro presidencial a se mover no intervalo. No contrato de 2º lugar do 1º turno cedeu 2,00pp e está em 83,50% (vol USD 527 mil)."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 10,
-        "odds": 1.35,
-        "value": 1.35,
-        "polymarket": "1,35%",
-        "pesquisaRange": "10%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "🔴 CORREÇÃO DA LEITURA DAS 15:22, que dizia duas casas e apontava a Genial/Quaest como a primeira. O salto dele a dois dígitos foi medido por QUATRO casas desde 31/Ago: BTG/Nexus em 31/Ago com 11%, contra 2% na rodada da mesma casa de 24/Ago; Real Time Big Data em 01/Set com 11%; Genial/Quaest em 02/Set com 10%, contra 2% em 14/Ago e 1% em 05/Ago; e PoderData em 03/Set com 10%, contra 4% em 27/Ago. A AtlasIntel de 31/Ago o media em 7,8%. O maior salto entre duas rodadas consecutivas da mesma casa, nesta janela, é o da BTG/Nexus: de 2% em 24/Ago para 11% em 31/Ago, sete dias entre as duas rodadas. A PoderData não testou 2º turno com ele.",
-        "tendenciaPolymarket": "1,35% (vol USD 3,64M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação no contrato de vencedor desde a leitura das 15:22 de hoje. No contrato de 3º lugar do 1º turno subiu 0,05pp e está em 55,90% (vol USD 108 mil), e no contrato de 2º lugar subiu 0,30pp e passa a 2,45%."
+        "percentage": 8,
+        "odds": 1.25,
+        "value": 1.25,
+        "polymarket": "1,25%",
+        "pesquisaRange": "7-8%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "⭐ A DATAFOLHA É A QUARTA CASA DE PRIMEIRA LINHA A MEDIR O SALTO E A ÚNICA QUE O DEIXA ABAIXO DE DOIS DÍGITOS: 7% no cenário com Marçal e 8% no cenário sem, contra 2% na rodada da própria casa de 21/Ago. As outras quatro casas da janela o puseram em dois dígitos: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set e PoderData 10% em 03/Set. O salto é o mesmo em todas; o patamar é que não é.",
+        "tendenciaPolymarket": "1,25% (vol USD 3,69M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Queda de 0,10pp no contrato de vencedor. No contrato de 3º lugar do 1º turno subiu 3,60pp e passa a 59,50% (vol USD 114 mil), pelo terceiro dia seguido de alta, e no de 2º lugar cedeu 0,70pp, para 1,75%."
       },
       {
         "name": "Renan Santos",
@@ -1715,21 +1831,21 @@
         "odds": 1.75,
         "value": 1.75,
         "polymarket": "1,75%",
-        "pesquisaRange": "3%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "a PoderData de 03/Set (BR-07561/2026, campo 30/Ago a 02/Set, n=3.000, margem de 2pp) o dá em 3% no 1º turno, contra 4% na rodada da mesma casa de 27/Ago. ⚠️ ELE É O NOME EM QUE AS CASAS MAIS DISCORDAM NESTA JANELA: 3% na Genial/Quaest e na PoderData, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago. Num 2º turno perde para o líder por 44% a 39%, e a mesma casa media 44% a 37% em 27/Ago.",
-        "tendenciaPolymarket": "1,75% (vol USD 12,48M), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC). Sem variação no contrato de vencedor desde a leitura das 15:22 de hoje. No contrato de 3º lugar do 1º turno cedeu 0,50pp e passa a 26,50% num contrato de USD 266 mil."
+        "pesquisaRange": "3-4%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "A Datafolha o dá em 4% no cenário com Marçal e em 3% no cenário sem, contra 4% nos dois cenários da rodada da casa de 21/Ago. ⚠️ A DISPERSÃO ENTRE CASAS, NESTA JANELA, VAI DE 3% A 7,6%: 3% na Genial/Quaest e na PoderData, 3% a 4% na Datafolha, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago. A casa testou um 2º turno contra ele em que o líder vence, e o painel registra a direção sem o número.",
+        "tendenciaPolymarket": "1,75% (vol USD 12,50M), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sem variação no contrato de vencedor desde a leitura das 15:22 de hoje. ⚠️ No contrato de 3º lugar do 1º turno cedeu 4,50pp e passa a 22,00% num contrato de USD 269 mil, a maior queda do painel nesta leitura, e a distância para o primeiro daquele mercado passou de 29,40pp para 37,50pp."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 2,
+        "percentage": 4,
         "odds": 0.25,
         "value": 0.25,
         "polymarket": "0,25%",
-        "pesquisaRange": "2%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "A PoderData o coloca em 2% no 1º turno, contra 4% na rodada da mesma casa de 27/Ago. ⚠️ O 2º TURNO CONTRA ELE JÁ TEM TRÊS RESULTADOS DIFERENTES NA MESMA SEMANA: a PoderData dá o líder à frente por 44% a 42%, a Genial/Quaest de 02/Set deu 42% a 37% e a Real Time Big Data de 01/Set o dava à frente por 45% a 43%. As três casas tiveram campo sobreposto.",
-        "tendenciaPolymarket": "0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele cedeu 0,50pp e está em 10,50% (vol USD 111 mil), leitura confirmada de 03/Set, 17:28 BRT (20:28 UTC), devolvendo parte da alta de 2,50pp da leitura das 15:22."
+        "pesquisaRange": "4%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "A Datafolha o coloca em 4% nos dois cenários de 1º turno, contra 5% na rodada da mesma casa de 21/Ago. Num 2º turno perde para o líder por 46% a 41%, margem de 5 pontos. ⚠️ O PAR DE 2º TURNO CONTRA ELE JÁ TEM QUATRO LEITURAS NA MESMA SEMANA: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia.",
+        "tendenciaPolymarket": "0,25% (vol USD 7,11M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 0,50pp e está em 10,00% (vol USD 112 mil), leitura confirmada de 03/Set, 23:45 BRT (04/Set, 02:45 UTC)."
       },
       {
         "name": "Pablo Marçal",
@@ -1738,19 +1854,19 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "2%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "A PoderData o mede em 2% no 1º turno, contra 3% na rodada da mesma casa de 27/Ago. Ao contrário da Genial/Quaest da véspera, esta casa publicou um único cenário de 1º turno, com ele na lista, então não há aqui o par de cenários que mediria o efeito da presença dele.",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "A Datafolha o traz em 2% no cenário com ele na lista, o mesmo número da rodada da casa de 21/Ago. A presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal o líder tem 38% e o segundo 33%, ou seja, a distância entre os dois vai de 7 para 5 pontos.",
         "tendenciaPolymarket": "0,15% (vol USD 3,34M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 1,
+        "percentage": 2,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
-        "pesquisaRange": "1%",
-        "lastUpdate": "03/09/2026, 17:28",
-        "tendenciaPesquisa": "A PoderData o mede em 1% no 1º turno, contra 2% na rodada da mesma casa de 27/Ago. Num 2º turno perde para o líder por 44% a 42%, margem de 2 pontos. A Genial/Quaest de 02/Set mediu o mesmo par em 44% a 33%, margem de 11, e a Real Time Big Data de 01/Set em 43% a 40%, margem de 3. São três casas e três margens, de 2, 3 e 11 pontos, na mesma semana.",
+        "pesquisaRange": "2%",
+        "lastUpdate": "03/09/2026, 23:45",
+        "tendenciaPesquisa": "A Datafolha o mede em 2% nos dois cenários de 1º turno, contra 3% na rodada da mesma casa de 21/Ago. Num 2º turno perde para o líder por 48% a 39%, margem de 9 pontos. As quatro casas da semana mediram esse par em 3, 11, 2 e 9 pontos, e é o par com a maior dispersão entre casas da janela.",
         "tendenciaPolymarket": "0,15% no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele está em 0,80% (vol USD 49 mil), leitura confirmada de 03/Set, 15:22 BRT."
       },
       {
@@ -1776,7 +1892,7 @@
         "tendenciaPolymarket": "0,05% (vol USD 7,41M) na leitura confirmada de 30/Ago, 16:40 BRT (19:40 UTC). Sem variação. Não é candidato à Presidência: disputa o governo de São Paulo."
       }
     ],
-    "updatedAt": "03/09/2026, 17:28",
-    "lastUpdate": "03/09/2026, 17:28"
+    "updatedAt": "03/09/2026, 23:45",
+    "lastUpdate": "03/09/2026, 23:45"
   }
 }

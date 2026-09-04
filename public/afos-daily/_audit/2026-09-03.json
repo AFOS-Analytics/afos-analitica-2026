@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-03",
+  "geradoEm": "2026-09-04T03:50:00.000Z",
+  "captura": {
+    "fetchedAt": "2026-09-04T02:45:16.606Z",
+    "carimboBRT": "03/09/2026, 23:45",
+    "travaDeCaptura": {
+      "veredito": "BLOQUEADO no conjunto, certificado por livro",
+      "aprovados": ["presidential", "secondPlace", "thirdPlace", "senate"],
+      "bloqueados": ["stf"],
+      "motivo": "stf discordou 0,25pp entre as duas leituras (17,70% -> 17,95%)",
+      "consequencia": "o contrato do Supremo NAO recebeu preco novo nesta peca"
+    }
+  },
+  "factCheckGate": {
+    "atosAvaliados": 4,
+    "incorporados": [
+      {
+        "ato": "Moraes pediu a Fachin para investigar Mendonca no inquerito das fake news",
+        "data": "2026-09-03",
+        "fontes": ["Gazeta do Povo (independente)", "O Globo (Globo)", "Estadao (independente)"],
+        "ressalva": "o relatorio que sustenta o pedido e interno e sem valor probatorio, segundo o Estadao"
+      },
+      {
+        "ato": "Fachin deu 5 dias uteis a Moraes, Mendonca, Gonet e ao diretor-geral da PF",
+        "data": "2026-09-03",
+        "fontes": ["G1 (Globo)", "VEJA (independente)", "Folha de S.Paulo (Folha)"]
+      },
+      {
+        "ato": "Datafolha BR-03669/2026 divulgada as ~20h20",
+        "data": "2026-09-03",
+        "fontes": ["Gazeta do Povo", "CBN", "G1"],
+        "ressalva": "divergencia entre veiculos (Flavio 32 ou 33) resolvida antes de publicar: sao DOIS cenarios, com e sem Marcal"
+      }
+    ],
+    "rejeitados": [
+      {
+        "ato": "Flavio Bolsonaro draws even with Lula, Datafolha shows (Yahoo/AOL)",
+        "motivo": "a materia e de 7 de marco de 2026, e a busca a devolveu como se fosse de hoje",
+        "decisao": "NAO incorporar"
+      }
+    ]
+  },
+  "adversarialPass": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "reconcile-claims apontou 25 pares; conferidos um a um sao deltas, precos de sub-mercado e numeros de pesquisa presentes no polls-data. Um par sem lastro (MDB 10,95%) foi REMOVIDO da peca.",
+    "fontesInventadas": "tres conferidas ao acaso (Gazeta do Povo, VEJA, Estadao), todas com URL direta e materia do dia no cache",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. O contrato do Supremo ficou sem preco novo, entao nao ha preco para atribuir ao ato do dia",
+    "verbosCriticos": "pediu a investigacao (com data e documento), adiou (com prazo), declarou zerada (com criterio do ministro), fechou acordo de delacao (qualificado como NAO homologado)",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "validateAfosDaily": "sem violacoes",
+    "palavras": 1100,
+    "tetoPalavras": 1100,
+    "emojis": { "pt-BR": 0, "en": 0, "es": 0 },
+    "gateNumerico": "multiconjunto identico nos 3 idiomas, 73 valores cada",
+    "validatePollsData": "OK",
+    "checkFrescor": "verde"
+  }
+}
