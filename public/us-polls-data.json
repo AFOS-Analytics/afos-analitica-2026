@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-03",
-  "fetchedAt": "2026-09-03T02:15:33.691Z",
+  "lastUpdate": "2026-09-04",
+  "fetchedAt": "2026-09-04T04:17:26.904Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -26,11 +26,11 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-04",
-    "nPesquisas": 12,
-    "nInstitutos": 11,
-    "dem": 47,
-    "rep": 41,
+    "desde": "2026-08-05",
+    "nPesquisas": 11,
+    "nInstitutos": 10,
+    "dem": 46.82,
+    "rep": 40.82,
     "vantagemDem": 6,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
@@ -41,7 +41,6 @@
       "Focaldata/Financial Times",
       "John Zogby Strategies",
       "Morning Consult",
-      "Quantus Insights (R)",
       "Reuters/Ipsos",
       "The Bullfinch Group",
       "The Economist/YouGov"
