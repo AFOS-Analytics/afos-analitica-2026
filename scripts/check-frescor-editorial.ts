@@ -40,6 +40,7 @@
 
 import { readFileSync } from 'fs'
 import { join } from 'path'
+import { canonPorContrato, contratoNoPonto } from './lib/frescor-contratos.mjs'
 
 const RAIZ = join(process.cwd(), 'public')
 const ARQUIVOS = ['analysis-data.json', 'analysis-criteriosa.json'] as const
@@ -141,11 +142,26 @@ for (const arquivo of ARQUIVOS) {
     const partido = partes ? partes[2].trim() : null
     if (nome.length < 3) continue
 
+    // 🔑 A linha de base é POR CONTRATO, e não uma só por candidato. O mesmo
+    // nome aparece em até três livros com preços e volumes de ordens de
+    // grandeza diferentes: em 04/Set/2026, Ronaldo Caiado valia 0,15% com
+    // USD 7,15M no de vencedor e 9,50% com USD 114 mil no de 3º lugar.
+    // Antes disto o canônico era sempre o PRIMEIRO `USD X` do `m`, ou seja o
+    // de vencedor, e disso vinham dois estragos: o livro de 3º lugar acusava
+    // falso positivo toda rodada, e 🕳️ ele era comparado contra a base do
+    // contrato ERRADO, então um valor velho ali era reportado com o número de
+    // referência de outro mercado.
+    //
+    // ⚠️ O QUE ISTO NÃO CONSERTA, medido em 04/Set/2026 com defeito plantado:
+    // o dono do valor continua sendo achado pelo NOME no texto, e a janela do
+    // regex não cruza fim de frase. Numa frase que não repete o nome, como as
+    // segundas frases dos blocos `caiado`, `haddad` e `zema`, o valor não é
+    // conferido por ninguém. O dono ali é ESTRUTURAL, é a chave do JSON, e
+    // ler estrutura é outra régua. Fica registrado como ponto cego conhecido,
+    // não como coisa resolvida. → scripts/testar-frescor-contratos.mjs, caso 8
     const canon = String(linha.m ?? '')
-    const precoCanon = canon.match(/(\d+,\d+)%/)?.[1]
-    const volCanon = canon.match(/USD\s+([\d.,]+)\s*(M|mil)/i)
-    if (!volCanon) continue
-    const volChave = `${volCanon[1]}${volCanon[2].toLowerCase()}`
+    const porContrato = canonPorContrato(canon)
+    if (porContrato.size === 0) continue
 
     // Duas formas de achar o dono do valor, e a segunda existe por necessidade:
     //   1. o nome como está no quadro ("Romeu Zema")
@@ -166,23 +182,32 @@ for (const arquivo of ARQUIVOS) {
     for (const alvo of alvos) {
       // O dono, e o par "X,XX% ... USD Y" logo depois dele, sem cruzar fim de
       // frase: assim o valor não se solta do candidato a que pertence.
-      const re = new RegExp(`${alvo}[^.!?]{0,90}?(\\d+,\\d+)%[^.!?]{0,40}?USD\\s+([\\d.,]+)\\s*(M|mil)`, 'gi')
+      const re = new RegExp(`${alvo}[^.!?]{0,90}?(\\d+,\\d+)%[^.!?]{0,40}?USD\\s+([\\d.,]+)\\s*(mil|M)`, 'gi')
       for (const m of bruto.matchAll(re)) {
+        // De QUAL contrato é este par? A frase que contém o trecho decide.
+        // `null` quer dizer frase ambígua, que nomeia dois livros: não se julga.
+        const contrato = contratoNoPonto(bruto, m.index ?? 0, (m.index ?? 0) + m[0].length)
+        if (!contrato) continue
+        const base = porContrato.get(contrato)
+        // Contrato que o quadro não declara não tem linha de base, e comparar
+        // contra a de outro livro é o defeito que esta régua acabou de perder.
+        if (!base) continue
+
         const vol = `${m[2]}${m[3].toLowerCase()}`
-        if (vol === volChave) continue
-        const chave = `${m[1]}|${vol}`
+        if (vol === base.vol) continue
+        const chave = `${contrato}|${m[1]}|${vol}`
         if (vistos.has(chave)) continue
         vistos.add(chave)
         falhas.push({
           arquivo,
           regra: 'VOLUME',
-          detalhe: `${nome}: o texto cita USD ${vol} e o quadro de hoje diz USD ${volChave}. Volume acumulado só cresce, então valor menor é de rodada anterior.`,
+          detalhe: `${nome}, contrato ${contrato}: o texto cita USD ${vol} e o quadro de hoje diz USD ${base.vol}. Volume acumulado só cresce, então valor menor é de rodada anterior.`,
         })
-        if (precoCanon && m[1] !== precoCanon) {
+        if (base.preco && m[1] !== base.preco) {
           falhas.push({
             arquivo,
             regra: 'PRECO',
-            detalhe: `${nome}: no mesmo bloco de volume velho, o texto cita ${m[1]}% e o quadro de hoje diz ${precoCanon}%.`,
+            detalhe: `${nome}, contrato ${contrato}: no mesmo bloco de volume velho, o texto cita ${m[1]}% e o quadro de hoje diz ${base.preco}%.`,
           })
         }
       }

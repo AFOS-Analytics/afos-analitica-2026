@@ -1,101 +1,101 @@
 {
-  "updatedAt": "03/09/2026, 23:45",
-  "subtitle": "Cruce del 3 de septiembre de 2026, lectura de cierre del día: precio del [Polymarket](/es/glossary#polymarket) en lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC), libro presidencial en USD 142,61M, contra la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp), la tercera nacional en 48 horas. ⭐ LAS TRES DISCREPAN EN EL SIGNO DE LA [SEGUNDA VUELTA](/es/glossary#segundo-turno) entre los dos primeros: la Genial/Quaest del 02/Set dio al líder adelante por 42% a 41%, la PoderData del 03/Set dio al segundo adelante por 45% a 44%, y la Datafolha del 03/Set da al líder adelante por 46% a 44%. ⭐ Y LA DATAFOLHA ES LA CUARTA CASA DE PRIMERA LÍNEA EN MEDIR EL SALTO DE AUGUSTO CURY Y LA ÚNICA QUE LO DEJA POR DEBAJO DE DOS DÍGITOS. En el precio, el único nombre del libro presidencial en moverse desde las 17:28 fue el segundo colocado.",
+  "updatedAt": "04/09/2026, 19:07",
+  "subtitle": "Cruce del 4 de septiembre de 2026, lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), libro presidencial en USD 143,57M. ⭐ NINGUNA ENCUESTA NACIONAL NUEVA FUE DIVULGADA HOY, y el registro del [TSE](/es/glossary#tse) dice por qué: siete encuestas nacionales están EN CAMPO en este momento y la primera divulgación marcada es el 06/Sep. ⭐ Y FUE EN EL DÍA SIN ENCUESTA QUE EL PRECIO MÁS SE MOVIÓ: la distancia entre los dos primeros pasó de 11,65pp a 15,35pp, una apertura de 3,70pp, tras encogerse en cuatro lecturas seguidas. La referencia de encuesta sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp), y no cambió desde ayer.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 54,50% (vol USD 9,67M acumulado), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC), sin variación desde la lectura de las 15:22 de hoy, es decir, su precio no se mueve hace más de ocho horas. ENCUESTA: la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) lo da en 39% en el escenario con Pablo Marçal y en 38% en el escenario sin él. En la segunda vuelta gana al segundo colocado por 46% a 44%, a Ronaldo Caiado por 46% a 41% y a Romeu Zema por 48% a 39%.",
+      "header": "PRECIO: 55,50% (vol USD 9,72M acumulado), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), alza de 1,00pp sobre la lectura del 03/Sep, 23:45. ENCUESTA: sin lectura nueva. La más reciente sigue siendo la encuesta de Datafolha del 03/Sep, que lo da en 39% en el escenario con Pablo Marçal y 38% en el escenario sin él, y ganando los cuatro pares de [segunda vuelta](/es/glossary#segundo-turno) que probó.",
       "fortes": [
-        "Gana los tres pares de segunda vuelta con número publicado por la Datafolha, y la casa probó un cuarto, contra Renan Santos, en que también gana.",
-        "En el escenario de primera vuelta con Marçal repite el 39% de la ronda de la propia casa del 21/Ago, sin ceder.",
-        "En el contrato de 2º lugar de la primera vuelta subió 1,80pp y está en 10,50% (vol USD 439 mil), su mayor alza en cualquier contrato en esta lectura.",
-        "Su precio no cedió en ninguna de las dos lecturas de hoy, aun con el adversario subiendo en las dos.",
-        "Declaró en cero la fila del [INSS](/es/glossary#inss) en una ceremonia en el Planalto, y los pedidos con atraso superior a 45 días cayeron 86% desde enero, de 1,88 millones a 261 mil en agosto, según Metrópoles y Poder360."
+        "Subió 1,00pp y reabrió la distancia hacia el segundo, que pasa de 11,65pp a 15,35pp tras cuatro lecturas seguidas encogiéndose.",
+        "La apertura de 3,70pp ocurrió en un día sin ninguna encuesta nacional nueva, es decir, sin información de intención de voto entrando en el mercado.",
+        "Sigue ganando los cuatro pares de segunda vuelta probados por Datafolha del 03/Sep, incluido el de Ronaldo Caiado por 46% a 41% y el de Romeu Zema por 48% a 39%.",
+        "El volumen acumulado en su contrato llegó a USD 9,72M, y el libro presidencial entero pasó de USD 142,61M a USD 143,57M en un día.",
+        "Es el único de los cuatro nombres por encima de 1% cuyo contrato de ganador subió sin que otro contrato del mismo nombre subiera en su contra."
       ],
       "fracos": [
-        "⚠️ EN LA DATAFOLHA LA DISTANCIA DE LA SEGUNDA VUELTA CAYÓ A LA MITAD DENTRO DE LA CASA: 46% a 44% ahora, contra 47% a 43% el 21/Ago, es decir, de 4 a 2 puntos, y pasa a caber en el margen declarado de 2pp.",
-        "En el escenario sin Marçal cedió de 39% a 38% dentro de la propia Datafolha, mientras el adversario quedó en 33%.",
-        "La desaprobación del gobierno en la Datafolha es de 51%, contra 45% de aprobación, y la desaprobación es 3 puntos mayor que la medida por la Genial/[Quaest](/es/glossary#quaest) el 02/Set.",
-        "Su distancia hacia el segundo en el precio cayó a 11,65pp, contra 16,55pp el 01/Set, y se achicó en las cuatro lecturas seguidas desde entonces.",
-        "La PoderData del mismo día lo pone atrás en la segunda vuelta, 44% a 45%, lo que hace de las tres casas de la ventana dos a su favor y una en contra, todas dentro del margen."
+        "⚠️ EN EL CONTRATO DE 2º LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) CEDIÓ 4,70pp, de 10,50% a 5,80% (vol USD 467 mil), y esa es su mayor variación en cualquier contrato en esta lectura.",
+        "Datafolha del 03/Sep, que sigue siendo la encuesta más reciente, redujo a la mitad la distancia de la segunda vuelta dentro de la propia casa, de 4 a 2 puntos entre el 21/Ago y el 03/Sep.",
+        "La desaprobación del gobierno en Datafolha es de 51% contra 45% de aprobación, y ninguna encuesta nueva entró hoy para confirmar o desmentir ese cuadro.",
+        "PoderData del 03/Sep sigue siendo la única de las tres casas de la ventana que lo coloca detrás en la segunda vuelta, por 44% a 45%.",
+        "El precio subió sin que ninguna medición de intención de voto haya sido publicada hoy, así que no hay encuesta que sostenga el alza."
       ],
-      "analise": "Su día termina con tres mediciones y ninguna de ellas lo mueve en el precio. La Datafolha confirma el liderazgo en los cuatro pares de segunda vuelta que probó, pero achica a la mitad la distancia del par principal dentro de la propia casa, de 4 a 2 puntos entre el 21/Ago y ahora. La PoderData del mismo día lo coloca atrás en ese par, y la Genial/Quaest de la víspera lo colocaba adelante por 1 punto. Son tres casas, tres resultados, y todos dentro del margen declarado, lo que significa que ninguna de ellas afirma ventaja. En el precio él es lo opuesto de eso: 54,50% a las 15:22, a las 17:28 y ahora, más de ocho horas sin moverse, mientras la distancia hacia el segundo se achica por movimiento del otro lado. Lo que cambia de su lado fuera del voto es el [INSS](/es/glossary#inss), con la ceremonia hecha y el criterio declarado por el ministro."
+      "analise": "Su día es lo opuesto al de ayer. El 03/Sep el precio no se movió por más de ocho horas mientras tres encuestas nacionales eran publicadas en 48 horas. Hoy ninguna encuesta nacional fue divulgada y su precio subió 1,00pp, a 55,50% (vol USD 9,72M acumulado). La distancia hacia el segundo reabrió 3,70pp y volvió a 15,35pp, deshaciendo buena parte del estrechamiento acumulado desde el 01/Sep. 📌 El panel registra la coincidencia de fechas y no atribuye causa: no existe encuesta nueva para explicar el movimiento, y el único acto de alto impacto del día es del [Supremo](/es/glossary#stf), no de la campaña. ⚠️ Y hay un contraste dentro de su propia lectura: en el contrato de ganador subió, y en el de 2º lugar de la primera vuelta cedió 4,70pp, de 10,50% a 5,80%. Son dos mercados distintos sobre el mismo nombre, y en esta lectura discrepan."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 42,85% (vol USD 9,64M acumulado), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC), alza de 0,35pp sobre la lectura de las 17:28, y fue el ÚNICO nombre del libro presidencial en moverse en el intervalo. La distancia hacia el líder cayó a 11,65pp. ENCUESTA: la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) lo da en 32% en el escenario con Marçal y en 33% en el escenario sin él, y en 44% en una segunda vuelta en que el líder tiene 46%.",
+      "header": "PRECIO: 40,15% (vol USD 9,68M acumulado), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), caída de 2,70pp sobre la lectura del 03/Sep, 23:45, y la mayor variación de cualquier nombre en el contrato de ganador en esta lectura. ENCUESTA: sin lectura nueva. Datafolha del 03/Sep lo da en 32% en el escenario con Marçal y 33% en el escenario sin él, y a 2 puntos en la segunda vuelta, 44% a 46%.",
       "fortes": [
-        "⭐ FUE EL ÚNICO NOMBRE DE LOS DIECINUEVE DEL LIBRO PRESIDENCIAL EN MOVERSE entre la lectura de las 17:28 y la de cierre, y el movimiento fue de alza.",
-        "La distancia hacia el líder cayó a 11,65pp y se achicó en las cuatro lecturas seguidas desde el 01/Set, cuando era 16,55pp.",
-        "En la Datafolha se acerca a 2 puntos en la segunda vuelta, 44% contra 46%, después de 43% contra 47% en la ronda de la misma casa del 21/Ago.",
-        "La PoderData del mismo día lo pone numéricamente adelante en ese par, 45% a 44%, por primera vez en las tres rondas de aquella casa desde el 13/Ago."
+        "⭐ EN EL CONTRATO DE 2º LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno) SUBIÓ 4,00pp, de 83,50% a 87,50% (vol USD 586 mil).",
+        "Datafolha del 03/Sep, aún la encuesta más reciente, lo mantiene a 2 puntos en la segunda vuelta, 44% contra 46%, dentro del margen declarado de 2pp.",
+        "Las tres nacionales de la ventana siguen discrepando en el signo de ese par, y una de ellas, PoderData del 03/Sep, lo da adelante por 45% a 44%.",
+        "El volumen acumulado en su contrato subió a USD 9,68M, prácticamente empatado con el del líder, que está en USD 9,72M.",
+        "Dijo que la decisión de Edson Fachin en la crisis del Supremo es luz al final del túnel, según Valor Econômico, y que Alexandre de Moraes no está en condiciones de seguir en el tribunal, según Correio Braziliense."
       ],
       "fracos": [
-        "En la primera vuelta de la Datafolha repite los mismos 32% y 33% del 21/Ago, es decir, no avanzó dentro de la casa en dos semanas.",
-        "⚠️ En el contrato de 2º lugar de la primera vuelta cedió 2,00pp y está en 83,50%, su mayor caída en cualquier contrato en esta lectura.",
-        "La ventaja de 1 punto que la PoderData le da en la segunda vuelta está dentro del margen declarado, y las otras dos casas de la ventana dan el par al líder.",
-        "Su rechazo sigue siendo el mayor entre los trece nombres probados por la Genial/Quaest el 02/Set, con 55%."
+        "⚠️ CEDIÓ 2,70pp EN EL CONTRATO DE GANADOR, de 42,85% a 40,15%, y es la mayor caída de cualquier nombre del libro presidencial en esta lectura.",
+        "La distancia hacia el líder volvió a 15,35pp, deshaciendo el estrechamiento que venía acumulando desde el 01/Sep, cuando estaba en 16,55pp.",
+        "La caída vino en un día sin ninguna encuesta nacional nueva, así que no hay medición de intención de voto que la acompañe.",
+        "⚠️ SUS DOS CONTRATOS SE MOVIERON EN DIRECCIONES OPUESTAS EN LA MISMA LECTURA: menos 2,70pp en el de ganador y más 4,00pp en el de 2º lugar de la primera vuelta.",
+        "En el contrato de 3º lugar de la primera vuelta aparece con 1,55% (vol USD 68 mil), y ese mercado descuenta un escenario en el que no llega a los dos primeros."
       ],
-      "analise": "Fue el único movimiento del libro presidencial en las horas finales del día, con alza de 0,35pp, y es el cuarto cierre seguido en que la distancia hacia el líder se achica. En el voto declarado el cuadro es más ambiguo de lo que el precio sugiere: la Datafolha lo mantiene en los mismos 32% y 33% de hace dos semanas en la primera vuelta, y al mismo tiempo reduce la distancia de la segunda vuelta de 4 a 2 puntos dentro de la propia casa. La PoderData del mismo día lo pone adelante en ese par y la Genial/Quaest de la víspera lo ponía atrás. Tres casas, tres señales, ninguna fuera del margen. Y en el contrato de 2º lugar de la primera vuelta, donde domina hace semanas, fue donde más cedió en esta lectura."
+      "analise": "Su lectura es la más extraña del día, y vale describirla sin redondear. En el contrato de ganador cedió 2,70pp y está en 40,15% (vol USD 9,68M acumulado), la mayor caída de cualquier nombre del libro. En el contrato de 2º lugar de la primera vuelta, en el mismo intervalo, subió 4,00pp y está en 87,50% (vol USD 586 mil). ⭐ LOS DOS MERCADOS SON SOBRE EL MISMO NOMBRE Y SE MOVIERON EN SENTIDOS CONTRARIOS. Una lectura posible es que el mercado haya reducido la probabilidad de que gane y aumentado la de que termine la primera vuelta en segundo lugar, pero el panel no lo afirma: registra que los dos contratos discreparon y que ninguna encuesta nueva fue publicada hoy para arbitrar la discrepancia. 📌 La encuesta más reciente sigue siendo Datafolha del 03/Sep, que lo mantiene a 2 puntos en la segunda vuelta."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 1,25% (vol USD 3,69M acumulado) en el contrato de GANADOR, lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC), caída de 0,10pp. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, subió 3,60pp y está en 59,50%, en un libro de 114 mil dólares acumulados. ENCUESTA: ⭐ la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) ES LA CUARTA CASA DE PRIMERA LÍNEA EN MEDIR EL SALTO Y LA ÚNICA QUE LO DEJA POR DEBAJO DE DOS DÍGITOS, con 7% en el escenario con Marçal y 8% en el escenario sin él, contra 2% en la ronda de la propia casa del 21/Ago.",
+      "header": "PRECIO: 1,95% (vol USD 4,07M acumulado), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), alza de 0,70pp en el contrato de ganador. ⚠️ Y CAÍDA DE 4,85pp EN EL CONTRATO DE 3º LUGAR DE LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), de 59,50% a 54,65%. ENCUESTA: sin lectura nueva. Las cinco lecturas de la ventana van de 7% en Datafolha del 03/Sep a 11% en BTG/Nexus del 31/Ago.",
       "fortes": [
-        "⭐ CINCO CASAS MIDIERON EL SALTO DESDE EL 31/Ago, y todas en la misma dirección: BTG/Nexus 11% el 31/Ago, Real Time Big Data 11% el 01/Set, Genial/Quaest 10% el 02/Set, PoderData 10% el 03/Set y Datafolha 7% y 8% en los dos escenarios del mismo día.",
-        "Dentro de la propia Datafolha salió de 2% el 21/Ago a 7% y 8% ahora, el mayor avance de cualquier nombre en aquella casa entre las dos rondas.",
-        "En el contrato de 3º lugar de la primera vuelta subió 3,60pp y está en 59,50%, por tercer día seguido de alza, y abrió 37,50pp sobre el segundo de ese mercado.",
-        "Su rechazo es de 25% en la Genial/Quaest del 02/Set, el menor entre los siete nombres de mayor proyección probados."
+        "Subió 0,70pp en el contrato de ganador, de 1,25% a 1,95%.",
+        "El volumen acumulado en su contrato pasó de USD 3,69M a USD 4,07M en un día, cerca de USD 380 mil de dinero nuevo.",
+        "Sigue líder aislado del contrato de 3º lugar de la primera vuelta, con 54,65% contra 23,50% del segundo colocado de ese mercado.",
+        "Las cinco casas nacionales de la ventana coinciden en la dirección de su salto, y la discrepancia entre ellas es de nivel, no de signo."
       ],
       "fracos": [
-        "⚠️ EL NIVEL NO ES EL MISMO ENTRE LAS CASAS, y la diferencia es grande: cuatro casas lo ponen en 10% u 11% y la Datafolha lo pone en 7% y 8%. Quien lee una sola casa sale con un retrato distinto de quien lee otra.",
-        "En el contrato de ganador cedió 0,10pp y está en 1,25%, es decir, el precio que pregunta quién gana la elección no acompañó nada de eso.",
-        "En el contrato de 2º lugar de la primera vuelta cedió 0,70pp y está en 1,75%.",
-        "La Datafolha no probó una segunda vuelta con él, así que la única lectura de segunda vuelta de la base sigue siendo la de la Genial/Quaest del 02/Set, en la que pierde por 40% a 34%.",
-        "La propia Folha de S.Paulo trató su día bajo el título de que la campaña anuló el efecto Dark Horse, que es una lectura de techo y no de avance."
+        "⚠️ CEDIÓ 4,85pp EN EL CONTRATO DE 3º LUGAR, de 59,50% a 54,65% (vol USD 123 mil), tras tres días seguidos de alza en ese mercado.",
+        "En el contrato de 2º lugar de la primera vuelta cayó de 1,75% a 0,95% (vol USD 142 mil), y pasa a estar por debajo de 1% en ese mercado.",
+        "La dispersión entre casas sigue siendo grande, de 7% a 11%, y ninguna encuesta nueva entró hoy para reducirla.",
+        "En términos absolutos su contrato de ganador sigue por debajo de 2%, y el volumen de USD 4,07M convive con un precio que el mercado trata como remoto."
       ],
-      "analise": "La Datafolha cambia su retrato sin cambiar la dirección. Cinco casas midieron el salto desde el 31/Ago y las cinco van en el mismo sentido, pero cuatro lo ponen en dos dígitos y esta lo pone en 7% y 8%. Dentro de la propia Datafolha el avance es el mayor de cualquier nombre entre el 21/Ago y ahora, de 2% a 8%, así que no hay contradicción de dirección: hay discrepancia de nivel, y es de tres a cuatro puntos. La comparación que vale sigue siendo la de cada casa consigo misma, porque sumar reglas de institutos distintos es lo que produce falsa precisión. En el precio, el contrato de ganador cedió 0,10pp y el de 3º lugar de la primera vuelta subió 3,60pp por tercer día seguido. El mercado sigue comprando el tercer lugar y no la elección."
+      "analise": "Repite hoy el mismo patrón del segundo colocado, y en sentido invertido: subió 0,70pp en el contrato de ganador, a 1,95% (vol USD 4,07M acumulado), y cedió 4,85pp en el de 3º lugar de la primera vuelta, a 54,65% (vol USD 123 mil). 📌 Los dos contratos miden cosas distintas, y la caída en el de 3º lugar interrumpe tres días seguidos de alza allí. En el contrato de 2º lugar pasó de 1,75% a 0,95%, es decir, los tres mercados en los que aparece se movieron, y solo uno de ellos a favor. Del lado de la encuesta no hay nada nuevo: la última medición sigue siendo Datafolha del 03/Sep, con 7% y 8% en los dos escenarios, y sigue siendo la única de las cinco casas de la ventana que lo deja por debajo de dos dígitos."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 1,75% (vol USD 12,50M acumulado), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC), sin variación en el contrato de ganador desde la lectura de las 15:22. ⚠️ En el contrato de 3º lugar de la primera vuelta cedió 4,50pp y pasa a 22,00% en un contrato de USD 269 mil, la mayor caída del panel en esta lectura. ENCUESTA: la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) lo da en 4% en el escenario con Marçal y en 3% en el escenario sin él.",
+      "header": "PRECIO: 1,85% (vol USD 12,64M acumulado), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), alza de 0,10pp en el contrato de ganador. En el contrato de 3º lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 1,50pp y está en 23,50% (vol USD 277 mil). ENCUESTA: sin lectura nueva. Datafolha del 03/Sep lo da en 4% y 3% en los dos escenarios.",
       "fortes": [
-        "En el escenario con Marçal de la Datafolha repite el 4% de la ronda de la misma casa del 21/Ago, sin ceder.",
-        "La casa probó una segunda vuelta contra él en que el líder gana, y el panel registra la dirección sin el número porque la tabla consultada trajo rótulo conflictivo en ese bloque.",
-        "El volumen acumulado en el contrato de ganador sigue siendo el mayor entre los nombres de abajo, con USD 12,50M.",
-        "Dijo que las decisiones de Alexandre de Moraes no deben ser reconocidas, según Poder360, y sigue dentro del asunto que domina las noticias de la semana."
+        "Recuperó 1,50pp en el contrato de 3º lugar de la primera vuelta, de 22,00% a 23,50%, tras haber cedido 4,50pp en la lectura anterior.",
+        "Entre los cuatro nombres por encima de 1% en el contrato de ganador, es el de mayor volumen acumulado, con USD 12,64M, por delante del líder y del segundo colocado.",
+        "Subió 0,10pp en el contrato de ganador, en un día en que el segundo colocado del libro cedió 2,70pp."
       ],
       "fracos": [
-        "⚠️ LA MAYOR CAÍDA DEL PANEL EN ESTA LECTURA ES SUYA: 4,50pp en el contrato de 3º lugar de la primera vuelta, hasta 22,00%, y la distancia hacia el primero de ese mercado pasó de 29,40pp a 37,50pp.",
-        "En el escenario sin Marçal de la Datafolha cedió de 4% a 3% dentro de la propia casa.",
-        "La dispersión entre casas en la ventana va de 3% a 7,6%, y un rango de ese ancho vuelve frágil cualquier lectura a partir de una sola casa.",
-        "Tiene el mayor volumen acumulado entre los nombres de abajo y aun así su precio está en 1,75%."
+        "Su distancia hacia el primer colocado del contrato de 3º lugar sigue siendo amplia, 23,50% contra 54,65%, o 31,15pp.",
+        "En el contrato de ganador sigue por debajo de 2%, pese al mayor volumen acumulado del pelotón.",
+        "La dispersión entre casas en la ventana va de 3% a 7,6%, y ninguna encuesta nueva entró hoy para estrecharla.",
+        "En el contrato de 2º lugar de la primera vuelta está en 1,75% (vol USD 1,24M), detrás del líder y del segundo por amplio margen."
       ],
-      "analise": "El día cierra mal para él en los dos instrumentos. En el voto declarado la Datafolha lo mantiene en 4% en el escenario con Marçal y lo reduce a 3% en el escenario sin él, y en la comparación con el 21/Ago de la misma casa cede en el segundo escenario. En el precio, la caída de 4,50pp en el contrato de 3º lugar es la mayor del panel en esta lectura, y viene el mismo día en que Augusto Cury subió 3,60pp en el mismo mercado: la distancia entre los dos en ese contrato pasó de 29,40pp a 37,50pp en pocas horas. Su contrato de ganador no se movió y sigue en 1,75%, con el mayor volumen acumulado entre los nombres de abajo, lo que no sostuvo precio."
+      "analise": "Su lectura es de recomposición parcial. En el contrato de 3º lugar de la primera vuelta subió 1,50pp, a 23,50% (vol USD 277 mil), recuperando un tercio de los 4,50pp que había cedido en la lectura del 03/Sep. En el contrato de ganador subió 0,10pp, a 1,85% (vol USD 12,64M acumulado). 📌 Su volumen sigue siendo el dato más fuera de lugar del panel: entre los cuatro nombres por encima de 1% en el contrato de ganador, es el de mayor volumen acumulado, por delante del líder y del segundo colocado, en un contrato que el mercado descuenta por debajo de 2%. El panel registra el contraste y no lo interpreta. Del lado de la encuesta, Datafolha del 03/Sep sigue siendo la lectura más reciente y nada cambió hoy."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: Caiado en 0,25%, Zema en 0,15% y Haddad en 0,05% en el contrato de GANADOR, los tres debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para ninguno de ellos en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, Caiado cedió 0,50pp y está en 10,00%, y Zema sigue en 0,80%. ENCUESTA: la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) da 4% a Ronaldo Caiado y 2% a Romeu Zema en los dos escenarios de primera vuelta.",
-      "subtitle": "Pelotón de atrás en la lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC). ⚠️ EL PAR DE SEGUNDA VUELTA CONTRA RONALDO CAIADO YA TIENE CUATRO LECTURAS EN LA MISMA SEMANA, todas con campo superpuesto: 45% a 43% a su favor en la Real Time Big Data del 01/Set, 42% a 37% en su contra en la Genial/Quaest del 02/Set, 44% a 42% en su contra en la PoderData del 03/Set y 46% a 41% en su contra en la Datafolha del mismo día. Los márgenes van de 2 puntos adelante a 5 puntos atrás.",
+      "header": "PRECIO: Ronaldo Caiado en 0,15% en el contrato de GANADOR (vol USD 7,15M acumulado), por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la [primera vuelta](/es/glossary#primeiro-turno), que es otro mercado, está en 9,50% (vol USD 114 mil), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC), caída de 0,50pp. Fernando Haddad y Romeu Zema siguen por debajo del piso en el contrato de ganador. ENCUESTA: sin lectura nueva. Datafolha del 03/Sep coloca a Caiado en 4% en los dos escenarios y a Zema en 2%.",
+      "subtitle": "Pelotón de atrás en la lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC). ⚠️ EL PAR DE SEGUNDA VUELTA CONTRA RONALDO CAIADO YA TIENE CUATRO LECTURAS EN LA MISMA SEMANA, todas con campo superpuesto: 45% a 43% a favor de él en Real Time Big Data del 01/Sep, 42% a 37% en contra en Genial/Quaest del 02/Sep, 44% a 42% en contra en PoderData del 03/Sep y 46% a 41% en contra en Datafolha del mismo día. Ninguna encuesta nacional nueva entró el 04/Sep.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,25% (vol USD 7,11M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, cedió 0,50pp y está en 10,00%, en un libro de 112 mil dólares acumulados. EN LA DATAFOLHA DE ESTE JUEVES PIERDE LA SEGUNDA VUELTA CON EL LÍDER POR 46% A 41%.",
-        "fortes": "En la Datafolha tiene 4% en los dos escenarios de primera vuelta, su mejor número entre las cuatro casas de la semana, y es el tercer colocado del escenario sin Marçal sin nadie adelante salvo los dos primeros y Augusto Cury. Defendió el apartamiento de Alexandre de Moraes y el juicio político en el Senado, según Valor Econômico, y que el Supremo levante el secreto de todas las investigaciones sobre Banco Master, INSS y Dark Horse, según Estadão.",
-        "fracos": "Cedió de 5% a 4% dentro de la propia Datafolha entre el 21/Ago y ahora. En el contrato de ganador sigue debajo del piso de 0,5%, y en el de 3º lugar cedió 0,50pp en esta lectura, devolviendo lo que había subido a las 15:22. Y el par de segunda vuelta en que aparece ya fue medido de cuatro formas en cuatro días, lo que vuelve frágil cualquier lectura aislada."
+        "label": "CAIADO (PSD), 0,15% (vol USD 7,15M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, cedió 0,50pp y está en 9,50%, en un libro de USD 114 mil, lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC).",
+        "fortes": "En Datafolha del 03/Sep, que sigue siendo la encuesta más reciente, tiene 4% en los dos escenarios de primera vuelta, su mejor número entre las cuatro casas de la semana. Sigue tercero en el contrato de 3º lugar de la primera vuelta, detrás solo de Augusto Cury y Renan Santos. Llevó la crisis del Supremo a la propaganda de televisión, defendió una investigación sobre supuesta coima de Daniel Vorcaro y participó en una entrevista pública de Folha y UOL este viernes, según Folha de S.Paulo.",
+        "fracos": "Cedió de 5% a 4% dentro de la propia Datafolha entre el 21/Ago y el 03/Sep. En el contrato de ganador sigue por debajo del piso de 0,5%, y en el de 3º lugar cedió 0,50pp en esta lectura, de 10,00% a 9,50%. Y el par de segunda vuelta en que aparece ya fue medido por cuatro casas en la misma semana, con cuatro resultados distintos, y ninguna encuesta nueva entró hoy para desempatar."
       },
       "haddad": {
         "label": "HADDAD (PT), 0,05% (vol USD 7,43M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él. No es candidato a la Presidencia: disputa la gobernación de São Paulo.",
@@ -103,79 +103,88 @@
         "fracos": "El contrato sigue abierto con su nombre por herencia del diseño del mercado, no por candidatura declarada, y el panel mantiene la línea solo para que el precio residual no sea leído como señal."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,15% (vol USD 6,51M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, sigue en 0,80%, en un libro de 49 mil dólares acumulados.",
+        "label": "ZEMA (Novo), 0,15% (vol USD 6,55M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, está en 0,70%, en un libro de USD 49 mil, lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC).",
         "fortes": "En la PoderData del 03/Set queda a 2 puntos del líder en la segunda vuelta, 44% a 42%, el menor margen en su contra en cualquier nacional de la ventana.",
-        "fracos": "En la Datafolha del mismo día pierde por 48% a 39%, margen de 9 puntos, y tiene 2% en la primera vuelta contra 3% en la ronda de la misma casa del 21/Ago. ⚠️ El par de segunda vuelta contra él es el de mayor dispersión entre casas de la ventana: las cuatro casas de la semana midieron 3, 11, 2 y 9 puntos de margen, en el intervalo de cuatro días."
+        "fracos": "En Datafolha del 03/Sep pierde por 48% a 39%, margen de 9 puntos, y tiene 2% en la primera vuelta contra 3% en la ronda de la misma casa del 21/Ago. ⚠️ El par de segunda vuelta contra él es el de mayor dispersión entre casas de la ventana: las cuatro casas de la semana midieron 3, 11, 2 y 9 puntos, y ninguna encuesta nueva entró el 04/Sep."
       },
-      "analise": "El par de segunda vuelta contra Ronaldo Caiado ganó la cuarta lectura de la semana y sigue sin converger: 2 puntos adelante del líder en la Real Time Big Data del 01/Set, 5 atrás en la Genial/Quaest del 02/Set, 2 atrás en la PoderData del 03/Set y 5 atrás en la Datafolha del mismo día. El panel registra las cuatro y no elige. Con Romeu Zema la dispersión es aún mayor, con márgenes de 3, 11, 2 y 9 puntos en las mismas cuatro casas. En el precio los tres siguen debajo del piso de 0,5% en el contrato de ganador, y el único movimiento es la devolución de 0,50pp de Caiado en el contrato de 3º lugar. En la Datafolha, Caiado es el único de los tres que aparece con 4%, y aun así cedió 1 punto dentro de la casa desde el 21/Ago.",
-      "fortes": "Ronaldo Caiado tiene 4% en los dos escenarios de la Datafolha, su mejor número entre las cuatro casas de la semana, y Romeu Zema queda a 2 puntos del líder en la segunda vuelta de la PoderData, el menor margen en su contra en cualquier nacional de la ventana.",
-      "fracos": "Ninguno de los tres pasa de 4% en la primera vuelta de la Datafolha, los tres siguen debajo del piso de 0,5% en el contrato de ganador, y tanto Caiado como Zema cedieron 1 punto dentro de la propia Datafolha desde el 21/Ago."
+      "analise": "El bloque no tiene precio nuevo publicable en el contrato de ganador: Ronaldo Caiado, Romeu Zema y Fernando Haddad están todos por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica número nuevo para ellos en ese mercado. 📌 Lo que sí tiene lectura es el contrato de 3º lugar de la primera vuelta, que es otro mercado: Caiado cedió 0,50pp y está en 9,50% (vol USD 114 mil), y Zema está en 0,70% (vol USD 49 mil). Del lado de la encuesta nada cambió: Datafolha del 03/Sep sigue siendo la más reciente, con Caiado en 4% y Zema en 2%, y el par de segunda vuelta contra Caiado en 46% a 41%.",
+      "fortes": [
+        "Ronaldo Caiado sigue tercero en el contrato de 3º lugar de la primera vuelta, con 9,50% (vol USD 114 mil), detrás solo de Augusto Cury y Renan Santos.",
+        "Llevó la crisis del Supremo a la propaganda de televisión y defendió una investigación sobre supuesta coima de Daniel Vorcaro, según Folha de S.Paulo, y participó en una entrevista pública de Folha y UOL este viernes.",
+        "El par de segunda vuelta contra él en Datafolha del 03/Sep es de 5 puntos, 46% a 41%, más estrecho que el de Romeu Zema, que es de 9 puntos."
+      ],
+      "fracos": [
+        "En el contrato de ganador Caiado está en 0,15%, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él allí.",
+        "En el contrato de 3º lugar cedió 0,50pp, de 10,00% a 9,50%.",
+        "Romeu Zema está en 0,70% en el contrato de 3º lugar (vol USD 49 mil) y por debajo del piso en el de ganador.",
+        "Fernando Haddad no es candidato a la Presidencia y disputa el gobierno de São Paulo, y su contrato sigue en 0,05%."
+      ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) lo da en 39% en el escenario con Pablo Marçal y en 38% en el escenario sin él, contra 39% en los dos escenarios de la ronda de la misma casa del 21/Ago. ⚠️ EN LA SEGUNDA VUELTA LA DISTANCIA CAYÓ A LA MITAD DENTRO DE LA CASA: 46% a 44%, contra 47% a 43% el 21/Ago. Gana también a Ronaldo Caiado por 46% a 41% y a Romeu Zema por 48% a 39%. Evaluación del gobierno: 45% aprueban y 51% desaprueban.",
-      "m": "54,50% (vol USD 9,67M), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sin variación desde la lectura de las 15:22 de hoy, más de ocho horas sin moverse. La distancia hacia el segundo cayó a 11,65pp, contra 12,00pp a las 17:28 y 16,55pp el 01/Set. En el contrato de 2º lugar de la primera vuelta subió 1,80pp y pasa a 10,50%.",
-      "t": "parado en el precio todo el día, con la distancia achicándose por movimiento del otro lado por cuarta lectura seguida",
-      "s": "Declaró en cero la fila del INSS en una ceremonia en el Planalto, con 261 mil pedidos por encima de 45 días todavía abiertos en agosto, según Metrópoles y Poder360. Defendió la investigación del caso Master sin citar a Moraes, según Poder360.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo da en 39% en el escenario con Pablo Marçal y 38% en el escenario sin él, y ganando los cuatro pares de [segunda vuelta](/es/glossary#segundo-turno) que probó: 46% a 44% contra el segundo colocado, 46% a 41% contra Ronaldo Caiado y 48% a 39% contra Romeu Zema. Evaluación del gobierno: 45% aprueban y 51% desaprueban.",
+      "m": "55,50% (vol USD 9,72M), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC). Alza de 1,00pp sobre la lectura del 03/Sep, 23:45. La distancia hacia el segundo pasó de 11,65pp a 15,35pp, una apertura de 3,70pp tras cuatro lecturas seguidas encogiéndose. ⚠️ En el contrato de 2º lugar de la primera vuelta cedió 4,70pp y pasa a 5,80% (vol USD 467 mil).",
+      "t": "subió en el contrato de ganador y reabrió la distancia, y cedió en el de 2º lugar, en el mismo intervalo",
+      "s": "Afirmó haberle dicho a Donald Trump que Brasil no acepta injerencia en sus elecciones, según G1 y Gazeta do Povo. Dijo que todos deben ser investigados y le reclamó a la Fiscalía General y al Supremo una resolución del caso [Banco Master](/es/glossary#banco-master), según Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "La misma Datafolha lo da en 32% en el escenario con Marçal y en 33% en el escenario sin él, los mismos números del 21/Ago. En la segunda vuelta se acerca a 2 puntos, 44% contra 46%. ⚠️ LAS TRES NACIONALES DE LA VENTANA DISCREPAN EN EL SIGNO DE ESE PAR: la Genial/Quaest del 02/Set dio al líder adelante por 42% a 41%, la PoderData del 03/Set dio al segundo adelante por 45% a 44%, y la Datafolha del 03/Set da al líder adelante por 46% a 44%.",
-      "m": "42,85% (vol USD 9,64M), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Alza de 0,35pp sobre la lectura de las 17:28, y fue el ÚNICO de los diecinueve nombres del libro presidencial en moverse en el intervalo. En el contrato de 2º lugar de la primera vuelta cedió 2,00pp y está en 83,50%.",
-      "t": "único movimiento del libro en el cierre, y al mismo tiempo su mayor cesión en el contrato de 2º lugar",
-      "s": "Usó la crisis en el Supremo para intentar impulsar el acto del 7 de Septiembre, según Folha de S.Paulo, y habló de derrota de un ministro, según la misma Folha.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo da en 32% en el escenario con Marçal y 33% en el escenario sin él, y a 2 puntos en la segunda vuelta, 44% contra 46%. ⚠️ LAS TRES NACIONALES DE LA VENTANA SIGUEN DISCREPANDO EN EL SIGNO DE ESE PAR: Genial/[Quaest](/es/glossary#quaest) del 02/Sep dio al líder adelante por 42% a 41%, PoderData del 03/Sep dio al segundo adelante por 45% a 44%, y Datafolha del 03/Sep da al líder adelante por 46% a 44%.",
+      "m": "40,15% (vol USD 9,68M), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC). ⚠️ CAÍDA DE 2,70pp, la mayor variación de cualquier nombre del libro presidencial en esta lectura. ⭐ Y EN EL CONTRATO DE 2º LUGAR DE LA PRIMERA VUELTA SUBIÓ 4,00pp, a 87,50% (vol USD 586 mil). Los dos contratos se movieron en sentidos contrarios.",
+      "t": "los dos contratos sobre el mismo nombre discreparon en la misma lectura, menos 2,70pp en uno y más 4,00pp en el otro",
+      "s": "Dijo que la decisión de Edson Fachin en la crisis del Supremo es luz al final del túnel, según Valor Econômico, y que Alexandre de Moraes no está en condiciones de seguir en el tribunal, según Correio Braziliense.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "⭐ LA DATAFOLHA ES LA CUARTA CASA DE PRIMERA LÍNEA EN MEDIR EL SALTO Y LA ÚNICA QUE LO DEJA POR DEBAJO DE DOS DÍGITOS: 7% en el escenario con Marçal y 8% en el escenario sin él, contra 2% el 21/Ago en la misma casa. Las cinco lecturas de la ventana: BTG/Nexus 11% el 31/Ago, Real Time Big Data 11% el 01/Set, Genial/Quaest 10% el 02/Set, PoderData 10% el 03/Set y Datafolha 7% y 8% en los dos escenarios del mismo día.",
-      "m": "1,25% (vol USD 3,69M), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Caída de 0,10pp en el contrato de ganador. En el contrato de 3º lugar de la primera vuelta subió 3,60pp y está en 59,50% (vol USD 114 mil), por tercer día seguido de alza, y en el de 2º lugar cedió 0,70pp.",
-      "t": "cinco casas coinciden en la dirección del salto y discrepan en el nivel en tres a cuatro puntos",
-      "s": "La Folha de S.Paulo publicó un análisis bajo el título de que la campaña anuló el efecto Dark Horse y de que él fincó bandera en el electorado de centro.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo deja en 7% en el escenario con Marçal y 8% en el escenario sin él, y sigue siendo la única de las cinco casas de la ventana que lo coloca por debajo de dos dígitos. Las cinco lecturas: BTG/Nexus 11% el 31/Ago, Real Time Big Data 11% el 01/Sep, Genial/Quaest 10% el 02/Sep, PoderData 10% el 03/Sep y Datafolha 7% y 8% el mismo día.",
+      "m": "1,95% (vol USD 4,07M), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC). Alza de 0,70pp en el contrato de ganador, con cerca de USD 380 mil de volumen nuevo en un día. ⚠️ En el contrato de 3º lugar de la primera vuelta cedió 4,85pp y pasa a 54,65% (vol USD 123 mil), interrumpiendo tres días seguidos de alza, y en el de 2º lugar cayó de 1,75% a 0,95%.",
+      "t": "subió en el contrato de ganador y cedió en los otros dos en que aparece",
+      "s": "Datafolha publicó el desglose regional de su ronda del 03/Sep, según Folha de S.Paulo. No hay acto propio de él en las noticias de este viernes.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "la Datafolha del 03/Set (BR-03669/2026, campo del 01 al 03/Set, n=2.002, margen de 2pp) lo da en 4% en el escenario con Marçal y en 3% en el escenario sin él, contra 4% en los dos escenarios del 21/Ago. La dispersión entre casas en la ventana va de 3% a 7,6%. La casa probó una segunda vuelta contra él en que el líder gana, y el panel registra la dirección sin el número.",
-      "m": "1,75% (vol USD 12,50M), lectura confirmada del 03/Set, 23:45 BRT (04/Set, 02:45 UTC). Sin variación en el contrato de ganador. ⚠️ En el contrato de 3º lugar de la primera vuelta cedió 4,50pp y pasa a 22,00% en un contrato de USD 269 mil, la mayor caída del panel en esta lectura.",
-      "t": "la mayor caída del panel en esta lectura, y es en el mismo mercado en que el tercer colocado subió",
-      "s": "Dijo que las decisiones de Alexandre de Moraes no deben ser reconocidas, según Poder360.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo da en 4% en el escenario con Marçal y 3% en el escenario sin él. La dispersión entre casas en la ventana va de 3% a 7,6%, y ninguna encuesta nueva entró hoy para estrecharla.",
+      "m": "1,85% (vol USD 12,64M), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC). Alza de 0,10pp en el contrato de ganador. En el contrato de 3º lugar de la primera vuelta subió 1,50pp y pasa a 23,50% (vol USD 277 mil), recuperando parte de los 4,50pp que había cedido en la lectura anterior.",
+      "t": "recompuso parte de la caída del contrato de 3º lugar, y sigue con el mayor volumen acumulado del pelotón",
+      "s": "El pedido de juicio político que presentó contra Alexandre de Moraes y Dias Toffoli sigue en trámite, según Gazeta do Povo.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "La Datafolha lo coloca en 4% en los dos escenarios, contra 5% el 21/Ago en la misma casa. ⚠️ EL PAR DE SEGUNDA VUELTA CONTRA ÉL YA TIENE CUATRO LECTURAS EN LA MISMA SEMANA: 45% a 43% a su favor en la Real Time Big Data del 01/Set, 42% a 37% en su contra en la Genial/Quaest del 02/Set, 44% a 42% en su contra en la PoderData del 03/Set y 46% a 41% en su contra en la Datafolha del mismo día.",
-      "m": "0,25% (vol USD 7,11M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, cedió 0,50pp y está en 10,00% (vol USD 112 mil).",
-      "t": "cuatro casas midieron el mismo par de segunda vuelta en cuatro días y ninguna coincide con la otra en el margen",
-      "s": "Defendió el apartamiento de Alexandre de Moraes y el juicio político en el Senado, según Valor Econômico.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo coloca en 4% en los dos escenarios de primera vuelta y lo da perdiendo la segunda vuelta por 46% a 41%. ⚠️ EL PAR DE SEGUNDA VUELTA CONTRA ÉL TIENE CUATRO LECTURAS EN LA MISMA SEMANA Y NINGUNA COINCIDE CON LA OTRA EN EL MARGEN: 45% a 43% a favor de él en Real Time Big Data del 01/Sep, 42% a 37% en contra en Genial/Quaest del 02/Sep, 44% a 42% en contra en PoderData del 03/Sep y 46% a 41% en contra en Datafolha del mismo día.",
+      "m": "0,15% (vol USD 7,15M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta, que es otro mercado, cedió 0,50pp y está en 9,50% (vol USD 114 mil), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC).",
+      "t": "sin precio nuevo en el contrato de ganador, y caída de 0,50pp en el de 3º lugar",
+      "s": "Llevó la crisis del Supremo a la propaganda de televisión, defendió una investigación sobre supuesta coima de Daniel Vorcaro y participó en una entrevista pública de Folha y UOL este viernes, según Folha de S.Paulo.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "La Datafolha lo trae en 2% en el escenario con él en la lista, el mismo número del 21/Ago. Su presencia separa los dos escenarios de la casa: con Marçal el líder tiene 39% y el segundo 32%, y sin Marçal el líder tiene 38% y el segundo 33%, es decir, la distancia va de 7 a 5 puntos.",
-      "m": "0,15% (vol USD 3,34M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él.",
-      "t": "su presencia acorta la distancia entre los dos primeros en 2 puntos dentro de la misma casa",
-      "s": "No aparece en las noticias de este jueves con hecho propio.",
+      "p": "Sin encuesta nacional nueva hoy. La lectura más reciente sigue siendo la encuesta de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp). Lo trae en 2% en el escenario en que está en la lista. Su presencia separa los dos escenarios de la casa: con Marçal el líder tiene 39% y el segundo 32%, y sin Marçal el líder tiene 38% y el segundo 33%, es decir, la distancia va de 7 a 5 puntos.",
+      "m": "0,15% (vol USD 3,64M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato. En el contrato de 3º LUGAR de la primera vuelta está en 2,60% (vol USD 47 mil), lectura confirmada del 04/Sep, 19:07 BRT (22:07 UTC).",
+      "t": "sin precio nuevo en el contrato de ganador, y cuarto colocado en el de 3º lugar",
+      "s": "No aparece en las noticias de este viernes con un hecho propio.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
-      "p": "Sin encuesta. Mercado de destitución de ministro del STF antes de 2027.",
-      "m": "⚠️ ESTA RONDA NO PUBLICA PRECIO NUEVO PARA ESTE CONTRATO. La última lectura confirmada es la del 03/Set a las 17:28, con 7,40% (vol USD 87 mil), y es esa la que la página mantiene. Es el menor libro del panel, y el volumen acumulado en él no pasa de USD 87 mil.",
-      "t": "sin lectura nueva para publicar en el cierre del día",
-      "s": "⭐ EL ACTO MÁS DURO DE LA SERIE: Alexandre de Moraes pidió a Edson Fachin investigar a André Mendonça en la investigación de las fake news, con base en un informe que él mismo encargó a la Policía Federal sin aval de la presidencia del tribunal, según Gazeta do Povo y O Globo. El Estadão registra que el informe es interno y sin valor probatorio. Fachin dio 5 días hábiles a Moraes, Mendonça, al procurador general Paulo Gonet y al director general de la PF para manifestarse, según G1, VEJA y Folha de S.Paulo, y postergó a la segunda quincena de septiembre la sesión del pleno sobre el caso, según Poder360. Marina Silva defendió que Moraes se aparte, según Metrópoles.",
+      "p": "Sin encuesta. Mercado sobre la destitución de un ministro del Supremo antes de 2027.",
+      "m": "⚠️ ESTA RONDA NO PUBLICA PRECIO NUEVO PARA ESTE CONTRATO, por segundo día. La última lectura confirmada sigue siendo la del 03/Sep a las 17:28, con 7,40% (vol USD 87 mil), y es esa la que la página mantiene. AFOS solo publica precio que dos lecturas independientes confirmen, y este contrato no tuvo lectura confirmada el 04/Sep.",
+      "t": "sin lectura nueva para publicar, por segundo día seguido",
+      "s": "⭐ EL ACTO DEL DÍA: Edson Fachin RETIRÓ de la investigación de las fake news el pedido de Alexandre de Moraes para investigar a André Mendonça, y creó una petición propia bajo su propia relatoría, con 5 días hábiles para que la Fiscalía General se manifieste y otros 5 para Mendonça a continuación, según Folha de S.Paulo y Gazeta do Povo. 📌 El plazo de 5 días dado a Moraes, Mendonça, Paulo Gonet y Andrei Rodrigues es del 03/Sep y no de este viernes. Horas después, Fachin defendió el FIN de la investigación de las fake news, abierta hace siete años, pero no la cerró, según Estadão y Gazeta do Povo. El Consejo Superior del Ministerio Público Federal abrió un procedimiento sobre Gonet, según Folha de S.Paulo y Gazeta do Povo. Flávio Dino dijo que el Supremo es mayor que cualquiera que lo integra, según Folha de S.Paulo.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "El cierre del 3 de septiembre junta tres mediciones que no se concilian, y eso es lo que la página registra. ⭐ LA PRIMERA ES EL SIGNO DE LA SEGUNDA VUELTA. Tres casas nacionales publicaron en 48 horas y discrepan sobre quién gana el par entre los dos primeros: la Genial/Quaest del 02/Set dio al líder adelante por 42% a 41%, la PoderData del 03/Set dio al segundo adelante por 45% a 44%, y la Datafolha del 03/Set da al líder adelante por 46% a 44%. Los tres márgenes son de 1 o 2 puntos y las tres casas declaran margen de error de 2pp, así que ninguna de ellas afirma ventaja fuera del margen. El panel registra las tres y no elige. ⭐ LA SEGUNDA ES EL NIVEL DE AUGUSTO CURY, y es nueva. Cinco casas midieron su salto desde el 31/Ago: BTG/Nexus 11% el 31/Ago, Real Time Big Data 11% el 01/Set, Genial/Quaest 10% el 02/Set, PoderData 10% el 03/Set y Datafolha 7% y 8% en los dos escenarios del mismo día. Cuatro lo ponen en dos dígitos y la Datafolha lo pone en 7% y 8%. El salto aparece en todas, porque dentro de la propia Datafolha salió de 2% el 21/Ago; lo que cambia entre las casas es el tamaño del nivel, no la dirección. ⚠️ Y LA LECTURA MÁS FIRME AQUÍ ES LA DE DENTRO DE CADA CASA, no el promedio entre ellas, porque sumar reglas de institutos distintos es lo que produce la falsa precisión. LA TERCERA ES EL PRECIO, y casi no se movió. Entre la lectura de las 17:28 y la de cierre, un único nombre de los diecinueve del libro presidencial anduvo: el segundo colocado, con alza de 0,35pp, hasta 42,85%. El líder sigue en 54,50% y no se mueve hace más de ocho horas. La distancia entre los dos cayó a 11,65pp, contra 12,00pp a las 17:28, 14,85pp el 02/Set y 16,55pp el 01/Set. En los submercados el movimiento fue mayor que en el principal: en el contrato de 2º lugar de la [primera vuelta](/es/glossary#primeiro-turno) el segundo colocado cedió 2,00pp, hasta 83,50%, y el líder subió 1,80pp, hasta 10,50%; y en el contrato de 3º lugar Augusto Cury subió 3,60pp, hasta 59,50%, mientras Renan Santos cedió 4,50pp, hasta 22,00%, la mayor caída del panel en esta lectura. ⚠️ ESTA RONDA NO PUBLICA PRECIO NUEVO PARA EL CONTRATO DE JUICIO POLÍTICO DE MINISTRO DEL [SUPREMO](/es/glossary#stf). La última lectura confirmada de él es la del 03/Set a las 17:28, con 7,40%, y es esa la que la página mantiene. 📌 El contraste que cierra el día: la crisis en el Supremo produjo este jueves el acto más duro de la serie, con un ministro pidiendo la investigación de otro, y el precio del contrato que mide la salida de un ministro es el único del panel sin lectura nueva para publicar."
+  "cruzamento": "El 4 de septiembre es el inverso exacto del día anterior, y es eso lo que la página registra. ⭐ NO SALIÓ NINGUNA ENCUESTA NACIONAL NUEVA, y eso no es un vacío de recolección: el registro del [TSE](/es/glossary#tse) muestra siete encuestas nacionales EN CAMPO en este momento, y la primera divulgación marcada es el 06/Sep, de Veritá. Después vienen Quaest el 07/Sep, Gerp y Nexus el 08/Sep, e Ideia/Canal Meio, Real Time Big Data y PALVER el 09/Sep. PALVER es la mayor muestra del calendario, con 5.000 entrevistas. El 03/Sep fueron tres nacionales en 48 horas y el precio del líder quedó estancado por más de ocho horas. ⭐ HOY, SIN NINGUNA ENCUESTA, EL PRECIO SE MOVIÓ MÁS QUE AYER: la distancia entre los dos primeros pasó de 11,65pp a 15,35pp, una apertura de 3,70pp que deshizo cuatro lecturas seguidas de estrechamiento. El líder subió 1,00pp, a 55,50%, y el segundo cedió 2,70pp, a 40,15%, la mayor variación de cualquier nombre del libro. 📌 El panel registra la coincidencia y no afirma causa. No hay medición de intención de voto publicada hoy para sostener ni para desmentir el movimiento. ⚠️ LA SEGUNDA DIVERGENCIA ESTÁ DENTRO DEL PROPIO MERCADO, y aparece en dos nombres a la vez. El segundo colocado cedió 2,70pp en el contrato de ganador y subió 4,00pp en el de 2º lugar de la [primera vuelta](/es/glossary#primeiro-turno), a 87,50%. Augusto Cury hizo lo contrario: subió 0,70pp en el de ganador y cedió 4,85pp en el de 3º lugar, a 54,65%, interrumpiendo tres días seguidos de alza allí. Son mercados distintos sobre los mismos nombres, y en esta lectura no cuentan la misma historia. ⭐ LA TERCERA ES EL ACTO DEL DÍA, y es del Supremo. Edson Fachin retiró de la investigación de las fake news el pedido de Alexandre de Moraes para investigar a André Mendonça y lo transformó en una petición propia bajo su propia relatoría, con 5 días hábiles para la Fiscalía General, según Folha de S.Paulo y Gazeta do Povo. Horas después defendió el fin de la investigación, abierta hace siete años, sin cerrarla. 📌 El contrato que mide la salida de un ministro del Supremo por destitución es justamente el que no tiene lectura confirmada en esta ronda, por segundo día: la página mantiene el 7,40% de la lectura del 03/Sep a las 17:28, con su propio sello. AFOS solo publica precio que dos lecturas independientes confirmen. El panel no dice quién tiene razón entre el precio y la encuesta, y en esta ronda hay una razón más para no decirlo: de uno de los dos lados no vino nada."
 }
