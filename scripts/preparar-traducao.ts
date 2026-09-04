@@ -2,8 +2,20 @@
  * preparar-traducao.ts — arma o par da memória de tradução antes de traduzir.
  *
  * Uso:
- *   npx tsx scripts/preparar-traducao.ts          # confere e prepara
- *   npx tsx scripts/preparar-traducao.ts --check  # só confere, não escreve
+ *   npx tsx scripts/preparar-traducao.ts               # confere e prepara a partir do HEAD
+ *   npx tsx scripts/preparar-traducao.ts --check       # só confere, não escreve
+ *   npx tsx scripts/preparar-traducao.ts --ref=9b2f177 # a partir de OUTRA publicação
+ *
+ * 🔴 O `--ref` existe porque HEAD NEM SEMPRE É A PUBLICAÇÃO CERTA, e a primeira
+ * versão deste script errava o conselho por supor que era. Em 04/Set/2026 o pt-BR
+ * tinha avançado duas rodadas (a daily reescreveu os JSONs) enquanto os
+ * `.en/.es` no disco ainda eram de uma publicação anterior. O par não fechava, o
+ * script acusou certo e mandou "restaurar o .en.json do HEAD", o que não conserta
+ * nada: o .en.json do HEAD JÁ ERA aquele. O conserto certo é o inverso, apontar o
+ * `tmp-head` para o commit cujo pt-BR casa com as traduções que estão no disco.
+ *
+ * 🔑 A regra: `--ref` é o ÚLTIMO commit que tocou os arquivos `.en/.es`. Achar com
+ *   git log -1 --format=%h -- public/polls-data.en.json
  *
  * 🔴 POR QUE ISTO EXISTE. O `build-locale-json` monta a memória de tradução
  * casando, NO MESMO CAMINHO, o texto pt-BR de `scripts/tmp-head/<arq>.json` com
@@ -35,10 +47,20 @@ const DESTINO = 'scripts/tmp-head'
 const LOCALES = ['en', 'es'] as const
 
 const somenteConferir = process.argv.includes('--check')
+const REF = process.argv.find((a) => a.startsWith('--ref='))?.slice(6) ?? 'HEAD'
 let falhas = 0
 
-function doHead(caminho: string): string {
-  return execFileSync('git', ['show', `HEAD:${caminho}`], { encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024 })
+function doRef(caminho: string): string {
+  return execFileSync('git', ['show', `${REF}:${caminho}`], { encoding: 'utf-8', maxBuffer: 64 * 1024 * 1024 })
+}
+
+/** O último commit que tocou o arquivo. É ele o `--ref` certo quando o par não fecha. */
+function ultimoCommitDe(caminho: string): string {
+  try {
+    return execFileSync('git', ['log', '-1', '--format=%h %s', '--', caminho], { encoding: 'utf-8' }).trim().slice(0, 72)
+  } catch {
+    return '(desconhecido)'
+  }
 }
 
 /** Conta os caminhos de string, que é a unidade que a memória casa. */
@@ -50,10 +72,10 @@ function formaDe(o: unknown, p = '', saida: string[] = []): string[] {
 
 function main() {
   if (!existsSync(DESTINO)) mkdirSync(DESTINO, { recursive: true })
-  console.log(`\n🧷 Preparando o par da memória de tradução${somenteConferir ? ' (só conferindo)' : ''}.\n`)
+  console.log(`\n🧷 Preparando o par da memória de tradução a partir de ${REF}${somenteConferir ? ' (só conferindo)' : ''}.\n`)
 
   for (const arq of ARQUIVOS) {
-    const bruto = doHead(`public/${arq}.json`)
+    const bruto = doRef(`public/${arq}.json`)
     const head = JSON.parse(bruto)
     const atual = JSON.parse(readFileSync(`public/${arq}.json`, 'utf-8'))
 
@@ -62,11 +84,11 @@ function main() {
     const carimboHead = head.updatedAt ?? head.lastUpdate ?? '?'
     const carimboAtual = atual.updatedAt ?? atual.lastUpdate ?? '?'
     console.log(`📄 ${arq}`)
-    console.log(`   HEAD (a publicação fechada): ${carimboHead}`)
-    console.log(`   disco (a rodada em curso)  : ${carimboAtual}`)
+    console.log(`   ${REF} (a publicação de referência): ${carimboHead}`)
+    console.log(`   disco (a rodada em curso)          : ${carimboAtual}`)
 
-    // 🔑 A conferência que importa: a FORMA do HEAD tem de bater com a forma dos
-    // arquivos de idioma no disco. É esse par que a memória casa por caminho.
+    // 🔑 A conferência que importa: a FORMA da referência tem de bater com a forma
+    // dos arquivos de idioma no disco. É esse par que a memória casa por caminho.
     const formaHead = formaDe(head).sort().join('\n')
     for (const loc of LOCALES) {
       const p = `public/${arq}.${loc}.json`
@@ -77,17 +99,20 @@ function main() {
       const trad = JSON.parse(readFileSync(p, 'utf-8'))
       const formaTrad = formaDe(trad).sort().join('\n')
       if (formaHead === formaTrad) {
-        console.log(`   ✅ ${loc}: mesma forma do HEAD, o par fecha.`)
+        console.log(`   ✅ ${loc}: mesma forma de ${REF}, o par fecha.`)
       } else {
         const a = new Set(formaDe(head))
         const b = new Set(formaDe(trad))
         const soHead = [...a].filter((x) => !b.has(x))
         const soTrad = [...b].filter((x) => !a.has(x))
-        console.log(`   ❌ ${loc}: FORMA DIFERENTE do HEAD. A memória casaria caminho com caminho errado.`)
-        if (soHead.length) console.log(`        só no HEAD (${soHead.length}): ${soHead.slice(0, 5).join(', ')}`)
+        console.log(`   ❌ ${loc}: FORMA DIFERENTE de ${REF}. A memória casaria caminho com caminho errado.`)
+        if (soHead.length) console.log(`        só em ${REF} (${soHead.length}): ${soHead.slice(0, 5).join(', ')}`)
         if (soTrad.length) console.log(`        só no ${loc} (${soTrad.length}): ${soTrad.slice(0, 5).join(', ')}`)
-        console.log(`        conserto: restaurar ${p} da mesma publicação do HEAD, com`)
-        console.log(`        git checkout HEAD -- ${p}`)
+        // ⚠️ O conserto quase nunca é mexer no arquivo de idioma. Se o pt-BR avançou
+        // uma rodada e as traduções não, a referência é que está errada: ela tem de
+        // ser o commit em que aquelas traduções foram escritas.
+        console.log(`        o ${loc} no disco foi escrito em: ${ultimoCommitDe(p)}`)
+        console.log(`        conserto provável: repetir com --ref=<esse commit>, e NÃO restaurar o ${loc}.`)
         falhas++
       }
     }
