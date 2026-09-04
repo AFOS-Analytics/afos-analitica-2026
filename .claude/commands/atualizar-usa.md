@@ -75,7 +75,11 @@ const arr = (v) => {
 ⚠️ **Os contratos `house` e `senate` trazem 9 mercados cada, mas só 2 têm preço.** Os outros sete são placeholders do Polymarket ("Party A" a "Party F" e "another party") e vêm com `outcomePrices` como **array VAZIO** (`[]`), medido em 04/Set. Isso é normal, não é degradação. Quem contar "9 mercados" e reportar isso como cobertura está contando fantasma.
 
 ### O portão das distribuições: 95% a 105%
-Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%. **O `popularVoteMargin` está REPROVADO** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.
+Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%.
+
+⚠️ **E não é só um que reprova, medido em 04/Set sobre 37 dias de série:** `governors` e `turnout` passam **27 de 37 dias cada**, ou seja reprovam cerca de um dia em quatro, e ambos já ficaram a menos de 1pp da borda em 4 e 5 dias. Reprovação intermitente é o estado NORMAL desses dois, não notícia. Quem decide é a série das últimas 24h, não o instante. → `memory/reference_portao_de_corte_duro_em_grandeza_ruidosa.md`
+
+**O `popularVoteMargin` é outro caso: está REPROVADO SEMPRE** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.
 
 ## ETAPA 1.7: TRAVA DE CAPTURA (bloqueante)
 
@@ -153,9 +157,9 @@ Além de `publicados` e `veiculosRepresentados`, olhar os campos de **procedênc
 |---|---|
 | `publicadosComLinkCanonico` | vieram do RSS do próprio veículo, com a URL da matéria |
 | `publicadosViaGoogleNews` | vieram do agregador, com link de redirecionamento opaco |
-| `lidosEmFeedProprio` | quantos os 15 feeds próprios entregaram antes do filtro |
+| `lidosEmFeedProprio` | quantos os **16** feeds próprios entregaram antes do filtro (a lista fixa tem **23 veículos**; nem todo veículo tem RSS próprio) |
 
-📌 **`publicadosComLinkCanonico` em ZERO é alarme, não resultado.** Significa que os 15 feeds próprios não entregaram nada e tudo veio do Google, e a causa costuma ser feed que mudou de endereço, não semana sem notícia. Medido em 03/Ago em produção: **6 canônicos de 10**.
+📌 **`publicadosComLinkCanonico` em ZERO é alarme, não resultado.** Significa que os 16 feeds próprios não entregaram nada e tudo veio do Google, e a causa costuma ser feed que mudou de endereço, não semana sem notícia. Medido em 03/Ago em produção: **6 canônicos de 10**.
 
 **Regras da seção, que não se negociam por rodada:** lista fixa de veículos, escolhida em 30/Jul, com o **papel** de cada um declarado; no máximo 2 matérias por veículo; e o coletor **não resume, não interpreta e não escolhe manchete por relevância**. Escolher veículo já é juízo editorial, e uma lista torta faria o painel ter opinião sem declarar que tem.
 
@@ -182,7 +186,7 @@ Medido em 01/Ago: sem filtro, 67 pontos, sendo 62 do Senado e 5 da Câmara.
 
 ⚠️ **`scripts/check-superlativo.ts` NÃO serve aqui**: ele tem o mercado presidencial do Brasil fixo no código. A checagem dos EUA é manual, pelas consultas acima.
 
-📏 **A série da Câmara começa em 28/Jul/2026**, quando a coleta foi ligada. Superlativo sobre ela é "o maior **desde 28/Jul**", nunca "do ciclo": a série não prova o ciclo, e o `days` da rota trava em 90 de qualquer forma. Escrever sempre "da série", com a data de início.
+📏 **O PRIMEIRO PONTO GRAVADO da série da Câmara é de 29/Jul/2026.** A coleta foi ligada em 28/Jul, e a distinção importa: superlativo se apoia no primeiro ponto que EXISTE, não no dia em que alguém apertou o botão. Escrever "o maior **desde 29/Jul**", nunca "do ciclo": a série não prova o ciclo, e o `days` da rota trava em 90 de qualquer forma. Escrever sempre "da série", com a data de início.
 
 ## ETAPA 5: Conferir a tela
 

@@ -43,7 +43,7 @@ Faltando qualquer um, PARAR e pedir o `/atualizar-usa` primeiro.
   ```bash
   curl -s "https://www.afos-analytics.com/api/market/history?candidate=Democratas&country=which-party-will-win-the-house&days=90"
   ```
-  📏 A série da Câmara começa em **28/Jul/2026**. Superlativo é "desde 28/Jul", nunca "do ciclo".
+  📏 O primeiro ponto gravado da série da Câmara é de **29/Jul/2026** (a coleta foi ligada em 28/Jul, mas o dia que conta é o do primeiro ponto). A do Senado começa em **14/Abr/2026**. Superlativo é "desde" essas datas, nunca "do ciclo".
 - **Pesquisas:** `public/us-polls-data.json`, e o que importa é a **dispersão entre institutos**, não a média.
 - **Imprensa:** `public/us-press-archive/{data}.json`.
 
@@ -67,7 +67,7 @@ Decisão do André em 03/Ago/2026, e ela derrubou o desenho anterior.
 
 `coverage.narrative` é **obrigatório**: 3 a 4 parágrafos sobre o que a imprensa cobriu na janela, **atribuído por veículo, com data explícita**, no modelo da Seção 3 do AFOS Daily. `coverage.claims` é opcional e só entra quando há **afirmação conferível** divergindo, sempre com a nossa medição ao lado.
 
-⛔ **O campo `noDivergence` NÃO EXISTE MAIS.** Ele era um interruptor: quando ligado, o template trocava a seção inteira por "não houve divergência conferível nesta janela". **Com 22 veículos monitorados e matéria coletada, isso é entregar uma desculpa.** Se a seção sair vazia de novo, o defeito é meu, não da semana.
+⛔ **O campo `noDivergence` NÃO EXISTE MAIS.** Ele era um interruptor: quando ligado, o template trocava a seção inteira por "não houve divergência conferível nesta janela". **Com 23 veículos monitorados e matéria coletada, isso é entregar uma desculpa.** Se a seção sair vazia de novo, o defeito é meu, não da semana.
 
 ⛔ **Sem rótulo de inclinação política.** O AFOS não classifica veículo. Compara **afirmações conferíveis**, com o número medido ao lado.
 
@@ -85,13 +85,15 @@ URL **visível e clicável** como no Tradeoff, com uma exceção: os itens de im
 
 📏 **Teto: 1.100 palavras no corpo.** Decisão do André em 13/Ago/2026, permanente, e ela vale **só para o Weekly**.
 
-⛔ **NÃO propagar este número para a AFOS Daily.** A Daily segue em **900**, e isso foi decidido contra uma proposta minha de subir justamente para 1.100 (ver `memory/feedback_o_ponto_onde_parei_de_cortar_nao_e_o_limite.md`). Mesmo número, dois produtos, decisões opostas: confundir os dois desfaz uma escolha que já foi feita.
+⚠️ **CORRIGIDO em 04/Set/2026: esta linha proibia algo que já tinha sido decidido ao contrário.** Ela dizia "a Daily segue em 900" e mandava não propagar o 1.100. **A Daily subiu para 1.100 em 24/Ago/2026**, por ordem do André, e a própria `/afos-daily` registra isso. Os dois produtos hoje têm o **mesmo teto de 1.100**.
+
+📌 **O que sobrevive da regra original, e continua valendo:** os dois tetos foram decididos SEPARADAMENTE, em datas diferentes e por razões diferentes. Se um mudar, o outro não muda junto. ⛔ **E subir teto se faz DEVOLVENDO conteúdo verificado que foi cortado, nunca escrevendo prosa nova para encher.** Ver `memory/feedback_o_ponto_onde_parei_de_cortar_nao_e_o_limite.md`.
 
 O corpo é título, TL;DR, `moneyIntro`, os `desc` dos cards, `moneyFootnote`, `pollsIntro`, a nota de dispersão, a narrativa, as alegações, a medição, os cruzamentos e o `howToRead`. **`methodology` e `sources` ficam fora da conta**, por serem rodapé de procedência e não leitura corrida. Medir, não estimar: o ponto onde se para de cortar não é o limite.
 
 **Específicas dos EUA:**
 - 🔴 **NUNCA subtrair mercado de pesquisa.** O mercado dá probabilidade de controlar a casa; a pesquisa dá vantagem em pontos de voto. A subtração produz número sem unidade. Em 2012 os democratas tiveram mais votos e menos cadeiras: a distância pode ser inteiramente geografia.
-- **Distribuição só entra se as faixas somarem 95% a 105%.** O `popularVoteMargin` está reprovado em ~145% e é coletado todo dia mesmo assim.
+- **Distribuição só entra se as faixas somarem 95% a 105%.** O `popularVoteMargin` está reprovado e é coletado todo dia mesmo assim. **Medido em 04/Set sobre os 37 dias da série: mediana 151.90%, faixa de 144.80% a 154.60%.** O "~145%" que esta linha trazia era o MÍNIMO da série, não o valor típico.
 - **Medir, nunca julgar** veículo.
 - 🏷️ **Todo número diz DE QUE ele é.** "85,50%" não basta: é a probabilidade de os **democratas** controlarem a **Câmara**.
 
