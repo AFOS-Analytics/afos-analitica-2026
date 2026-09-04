@@ -1,0 +1,22 @@
+/** Mapa ES: analysis-data, republicação de 04/Set/2026 com carimbo 19:53 e o STF no ar. */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/es/glossary#${id})`
+const S = 'lectura confirmada del 04/Sep, 19:53 BRT (22:53 UTC)'
+const SU = 'lectura del 04/Sep, 19:53 BRT (22:53 UTC)'
+const FAIXA =
+  `⚠️ ESTE ES EL ÚNICO CONTRATO DEL PANEL QUE SALE SIN LA DOBLE LECTURA que AFOS aplica a los demás, ` +
+  `y la razón está en la propia serie grabada: el 04/Sep recorrió de 10,60% a 19,30%, amplitud de 8,70pp, ` +
+  `con USD 28 de dinero nuevo en todo el día. 📌 La cifra de arriba es UNA lectura dentro de esa franja, no su centro. ` +
+  `En los cuatro días anteriores la amplitud diaria fue de 0,10pp, 15,60pp, 4,10pp y 6,30pp, con USD 0, USD 1.852, ` +
+  `USD 69 y USD 157 de dinero nuevo. Es el libro más pequeño del panel y el más sensible a una orden pequeña.`
+
+construir('analysis-data', 'es', {
+  'cards.sentimento.text1': `El libro presidencial acumula USD 143,62M y el precio de esta página es de la ${S}. ⭐ NINGUNA ENCUESTA NACIONAL FUE DIVULGADA HOY, y el registro del ${G('TSE', 'tse')} muestra por qué: siete encuestas nacionales están en campo en este momento, y la primera divulgación marcada es el 06/Sep. La lectura de encuesta más reciente sigue siendo la de Datafolha del 03/Sep (BR-03669/2026, campo del 01 al 03/Sep, n=2.002, margen de 2pp).`,
+  'cards.sentimento.text3': `⚠️ Y HAY UNA DIVERGENCIA DENTRO DEL PROPIO MERCADO, en dos nombres a la vez. El segundo colocado cedió 2,70pp en el contrato de ganador y subió 4,00pp en el de 2º lugar de la ${G('primera vuelta', 'primeiro-turno')}. Augusto Cury hizo lo inverso: subió 0,70pp en el de ganador y cedió 5,95pp en el de 3º lugar. Son mercados distintos sobre los mismos nombres, y en esta lectura no cuentan la misma historia.`,
+  'cards.sentimento.direita': `Flávio Bolsonaro en 40,15% (vol USD 9,68M acumulado), ${S}, caída de 2,70pp y la mayor variación de cualquier nombre del libro presidencial en esta lectura. ⭐ En el contrato de 2º lugar de la ${G('primera vuelta', 'primeiro-turno')} subió 4,00pp y está en 87,50% (vol USD 586 mil). Datafolha del 03/Sep, aún la encuesta más reciente, lo mantiene a 2 puntos en la ${G('segunda vuelta', 'segundo-turno')}, 44% contra 46%.`,
+  'cards.sentimento.esquerda': `Lula en 55,50% (vol USD 9,72M acumulado), ${S}, alza de 1,00pp. La distancia hacia el segundo reabrió a 15,35pp. ⚠️ En el contrato de 2º lugar de la ${G('primera vuelta', 'primeiro-turno')} cedió 2,90pp y está en 7,60% (vol USD 469 mil), su mayor variación en cualquier contrato en esta lectura. Datafolha del 03/Sep lo da en 39% y 38% en los dos escenarios y ganando los cuatro pares de segunda vuelta que probó.`,
+  'cards.sentimento.terceiraVia': `Augusto Cury en 1,95% (vol USD 4,07M acumulado), ${S}, alza de 0,70pp en el contrato de ganador, con cerca de USD 380 mil de volumen nuevo en un día. ⚠️ En el contrato de 3º lugar de la ${G('primera vuelta', 'primeiro-turno')} cedió 5,95pp y está en 53,55% (vol USD 123 mil), interrumpiendo tres días seguidos de alza. Renan Santos en 1,85% (vol USD 12,64M acumulado), alza de 0,10pp, y en el contrato de 3º lugar subió 1,50pp a 23,50% (vol USD 277 mil). Ronaldo Caiado en 0,15% (vol USD 7,15M acumulado) en el contrato de ganador, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese contrato.`,
+  'cards.sentimento.polymarket': `Precios de la ${S}. AFOS solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20 punto. ⚠️ UNA EXCEPCIÓN EN ESTA RONDA, Y VIENE DECLARADA: el contrato de destitución en el ${G('Supremo', 'stf')} sale con lectura ÚNICA, acompañado de la franja que recorrió en el día, porque atravesó 8,70pp el 04/Sep con USD 28 de dinero nuevo. ⚠️ Y esta ronda no publica precio nuevo para los nombres por debajo de 0,5%, que son Ronaldo Caiado, Romeu Zema, Pablo Marçal, Jair Bolsonaro, Michelle Bolsonaro, Tarcisio de Freitas y Fernando Haddad en el contrato de ganador.`,
+  'cards.stf.analise': `15,85% (vol USD 87 mil) en el contrato de salida de ministro del Supremo por destitución antes de 2027, ${SU}. ${FAIXA} 📌 El contraste es el registro del día: el tribunal produjo la decisión más concreta de la crisis hasta aquí, y el contrato que mide la salida de un ministro respondió recorriendo casi nueve puntos sin que entrara dinero nuevo.`,
+})

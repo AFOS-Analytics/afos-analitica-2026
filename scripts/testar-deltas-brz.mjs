@@ -77,13 +77,30 @@ console.log('\n5. 🔴 Volume acumulado que ENCOLHE é defeito, não notícia')
 
 console.log('\n6. Livro diferente com o MESMO candidato não se mistura na chave')
 {
-  // Flávio existe no book de vencedor E no de 2º lugar, com preços muito distintos.
-  const antes = [L('presidential', 'Flávio vence?', 42.85), L('secondPlace', 'Flávio em 2º?', 83.5)]
-  const agora = [L('presidential', 'Flávio vence?', 40.15), L('secondPlace', 'Flávio em 2º?', 87.5)]
+  // 🔴 FIXTURE REAL: o book manda o NOME do candidato, IGUAL nos três livros.
+  // A primeira versão deste caso usava "Flávio vence?" e "Flávio em 2º?", textos
+  // diferentes por livro, e por isso não pegou a colisão de chave que apareceu
+  // na primeira vez que o script rodou contra duas leituras de verdade.
+  const antes = [
+    L('presidential', 'Flávio Bolsonaro', 42.85),
+    L('secondPlace', 'Flávio Bolsonaro', 83.5),
+    L('thirdPlace', 'Augusto Cury', 59.5),
+    L('presidential', 'Augusto Cury', 1.25),
+  ]
+  const agora = [
+    L('presidential', 'Flávio Bolsonaro', 40.15),
+    L('secondPlace', 'Flávio Bolsonaro', 87.5),
+    L('thirdPlace', 'Augusto Cury', 54.65),
+    L('presidential', 'Augusto Cury', 1.95),
+  ]
   const r = comparar(antes, agora)
-  conferir('o de vencedor CAI', acha(r.movidos, 'Flávio vence?').delta === -2.7)
-  conferir('o de 2º lugar SOBE', acha(r.movidos, 'Flávio em 2º?').delta === 4)
-  conferir('e os dois convivem, sem colisão de chave', r.movidos.length === 2)
+  const porLivro = (livro, nome) => r.movidos.find((x) => x.livro === livro && x.pergunta === nome)
+  conferir('Flávio no vencedor CAI 2,70', porLivro('presidential', 'Flávio Bolsonaro').delta === -2.7)
+  conferir('Flávio no 2º lugar SOBE 4,00', porLivro('secondPlace', 'Flávio Bolsonaro').delta === 4)
+  conferir('Cury no 3º lugar CAI 4,85', porLivro('thirdPlace', 'Augusto Cury').delta === -4.85, String(porLivro('thirdPlace', 'Augusto Cury').delta))
+  conferir('Cury no vencedor SOBE 0,70', porLivro('presidential', 'Augusto Cury').delta === 0.7)
+  conferir('🔴 nenhum delta absurdo de cruzamento de livro', r.movidos.every((x) => Math.abs(x.delta) < 10), JSON.stringify(r.movidos.map((x) => [x.livro, x.delta])))
+  conferir('nada entrou como novo nem sumiu', r.entrantes.length === 0 && r.sumidos.length === 0)
 }
 
 console.log('\n7. Nada se moveu: zero é resultado, e não pode virar tabela vazia sem dizer')

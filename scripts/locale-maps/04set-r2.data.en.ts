@@ -1,0 +1,22 @@
+/** Mapa EN: analysis-data, republicação de 04/Set/2026 com carimbo 19:53 e o STF no ar. */
+import { construir } from '../build-locale-json'
+
+const G = (t: string, id: string) => `[${t}](/en/glossary#${id})`
+const S = 'confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC)'
+const SU = 'reading of 04/Sep, 19:53 BRT (22:53 UTC)'
+const FAIXA =
+  `⚠️ THIS IS THE ONLY CONTRACT ON THE PANEL GOING OUT WITHOUT THE DOUBLE READING that AFOS applies to the others, ` +
+  `and the reason is in the recorded series itself: on 04/Sep it travelled from 10.60% to 19.30%, an amplitude of 8.70pp, ` +
+  `with USD 28 of new money over the whole day. 📌 The figure above is ONE reading inside that range, not its centre. ` +
+  `Over the four previous days the daily amplitude was 0.10pp, 15.60pp, 4.10pp and 6.30pp, with USD 0, USD 1,852, ` +
+  `USD 69 and USD 157 of new money. It is the panel's smallest book and the one most sensitive to a small order.`
+
+construir('analysis-data', 'en', {
+  'cards.sentimento.text1': `The presidential book has accumulated USD 143.62M and this page's price is from the ${S}. ⭐ NO NATIONAL POLL WAS RELEASED TODAY, and the ${G('TSE', 'tse')} register shows why: seven national polls are in the field right now, and the first scheduled release is 06/Sep. The most recent polling reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp).`,
+  'cards.sentimento.text3': `⚠️ AND THERE IS A DIVERGENCE INSIDE THE MARKET ITSELF, in two names at once. The runner-up gave up 2.70pp in the winner contract and rose 4.00pp in the ${G('first-round', 'primeiro-turno')} runner-up contract. Augusto Cury did the reverse: up 0.70pp in the winner contract and down 5.95pp in the third-place one. They are different markets on the same names, and in this reading they do not tell the same story.`,
+  'cards.sentimento.direita': `Flávio Bolsonaro at 40.15% (vol USD 9.68M accumulated), ${S}, down 2.70pp and the largest move of any name in the presidential book in this reading. ⭐ In the ${G('first-round', 'primeiro-turno')} runner-up contract he rose 4.00pp and stands at 87.50% (vol USD 586 thousand). Datafolha of 03/Sep, still the most recent poll, keeps him 2 points away in the ${G('second round', 'segundo-turno')}, 44% against 46%.`,
+  'cards.sentimento.esquerda': `Lula at 55.50% (vol USD 9.72M accumulated), ${S}, up 1.00pp. The gap to the runner-up reopened to 15.35pp. ⚠️ In the ${G('first-round', 'primeiro-turno')} runner-up contract he gave up 2.90pp and stands at 7.60% (vol USD 469 thousand), his largest move in any contract in this reading. Datafolha of 03/Sep gives him 39% and 38% across the two scenarios and has him winning all four second-round pairings it tested.`,
+  'cards.sentimento.terceiraVia': `Augusto Cury at 1.95% (vol USD 4.07M accumulated), ${S}, up 0.70pp in the winner contract, with around USD 380 thousand of new volume in one day. ⚠️ In the ${G('first-round', 'primeiro-turno')} third-place contract he gave up 5.95pp and stands at 53.55% (vol USD 123 thousand), breaking three straight days of gains. Renan Santos at 1.85% (vol USD 12.64M accumulated), up 0.10pp, and in the third-place contract he rose 1.50pp to 23.50% (vol USD 277 thousand). Ronaldo Caiado at 0.15% (vol USD 7.15M accumulated) in the winner contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract.`,
+  'cards.sentimento.polymarket': `Prices from the ${S}. AFOS only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20 of a point. ⚠️ ONE EXCEPTION IN THIS ROUND, AND IT COMES DECLARED: the ${G('Supreme Court', 'stf')} impeachment contract goes out on a SINGLE reading, alongside the range it travelled during the day, because it crossed 8.70pp on 04/Sep with USD 28 of new money. ⚠️ And this round publishes no new price for the names below 0.5%, which are Ronaldo Caiado, Romeu Zema, Pablo Marçal, Jair Bolsonaro, Michelle Bolsonaro, Tarcisio de Freitas and Fernando Haddad in the winner contract.`,
+  'cards.stf.analise': `15.85% (vol USD 87 thousand) on the contract for a Supreme Court justice leaving by impeachment before 2027, ${SU}. ${FAIXA} 📌 The contrast is the day's record: the court produced the most concrete decision of the crisis so far, and the contract that measures a justice leaving answered by travelling almost nine points without new money coming in.`,
+})

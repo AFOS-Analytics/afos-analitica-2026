@@ -57,9 +57,26 @@ export function achatar(leitura) {
  * sumidos, todos explícitos: contrato que SAIU do book é informação, e some da
  * tabela se a comparação for só um `for` sobre o lado de hoje.
  */
+/**
+ * A chave e LIVRO + PERGUNTA, e nao a pergunta sozinha.
+ *
+ * 🔴 DEFEITO REAL, achado em 04/Set/2026 usando o script pela primeira vez
+ * contra duas leituras de verdade. O `pergunta` do book NAO e a pergunta
+ * inteira, e o NOME do candidato, e o mesmo nome existe nos tres livros:
+ * "Augusto Cury" vale 1,95% no de vencedor e 54,65% no de 3o lugar. Com a
+ * chave so no nome, o comparador casou o 3o lugar de um lado com o vencedor do
+ * outro e imprimiu -52,70pp.
+ *
+ * 🕳️ E o meu proprio teste passou por sorte: o caso 6 usava "Flavio vence?" e
+ * "Flavio em 2o?", textos DIFERENTES por livro, que nao e o que o book manda.
+ * Fixture irreal da confianca falsa.
+ * → memory/feedback_o_conferidor_que_eu_escrevo_tambem_e_um_medidor.md
+ */
+const chaveDe = (l) => JSON.stringify([l.livro, l.pergunta])
+
 export function comparar(antes, agora, piso = 0.5) {
-  const mapaAntes = new Map(antes.map((l) => [l.pergunta, l]))
-  const mapaAgora = new Map(agora.map((l) => [l.pergunta, l]))
+  const mapaAntes = new Map(antes.map((l) => [chaveDe(l), l]))
+  const mapaAgora = new Map(agora.map((l) => [chaveDe(l), l]))
 
   const movidos = []
   const parados = []
@@ -67,7 +84,7 @@ export function comparar(antes, agora, piso = 0.5) {
   const sumidos = []
 
   for (const a of agora) {
-    const b = mapaAntes.get(a.pergunta)
+    const b = mapaAntes.get(chaveDe(a))
     if (!b) {
       entrantes.push(a)
       continue
@@ -77,7 +94,7 @@ export function comparar(antes, agora, piso = 0.5) {
     if (delta === 0) parados.push(linha)
     else movidos.push(linha)
   }
-  for (const b of antes) if (!mapaAgora.has(b.pergunta)) sumidos.push(b)
+  for (const b of antes) if (!mapaAgora.has(chaveDe(b))) sumidos.push(b)
 
   movidos.sort((x, y) => Math.abs(y.delta) - Math.abs(x.delta))
 
