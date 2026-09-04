@@ -69,6 +69,13 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
           .map((c, i) => {
           const idx = mapData.indexOf(c);
           const isExpanded = expandedElection === idx;
+          // 🏷️ O RÓTULO TEM DE CONTAR O QUE A LISTA MOSTRA, não o que o dado tem.
+          // Antes os dois rótulos usavam `c.candidates.length` e a lista expandida
+          // não tinha teto, então os números batiam por acidente. Com o teto de 8
+          // e o presidencial do Brasil devolvendo 19 nomes, o rótulo prometeria
+          // 19 e a lista entregaria 8. Defeito de etiqueta não é pego por nenhum
+          // portão de valor: o número está certo, é a FRASE que fica errada.
+          const visiveis = Math.min(c.candidates.length, 8);
           const vol = c.volumeUsd || 0;
           const volStr = fmtVolumeUsd(vol, locale);
           const colors = ['#0F52BA','#1a6dd4','#3b82f6','#60a5fa','#93c5fd'];
@@ -92,7 +99,14 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
               </div>
 
               <div className="space-y-1.5">
-                {c.candidates.slice(0, isExpanded ? undefined : 3).map((cand, j) => {
+                {/* 🔴 Expandido tinha teto `undefined`, ou seja, mostrava TUDO. Isso
+                    era inofensivo enquanto nenhum mercado de distribuição era
+                    primário. Com o `isDistribution` do presidencial do Brasil,
+                    ligado em 03/Set/2026, a agregação passa a devolver 19 nomes,
+                    quinze deles entre 0,05% e 0,25%. Expandir é pedir MAIS, não é
+                    pedir a cauda de ruído inteira. O 8 é o mesmo teto que os
+                    outros três consumidores de `candidates` já usam. */}
+                {c.candidates.slice(0, isExpanded ? visiveis : 3).map((cand, j) => {
                   // DUAS variaveis de proposito: a barra de CSS precisa do
                   // numero cru, e `parseFloat("42,3")` devolveria 42.
                   const pctNum = cand.probability;
@@ -111,11 +125,11 @@ export function GlobalContent({ mapData, expandedElection, setExpandedElection, 
                 })}
               </div>
 
-              {!isExpanded && c.candidates.length > 3 && (
-                <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {c.candidates.length} {t('modal.candidates')} ▼</div>
+              {!isExpanded && visiveis > 3 && (
+                <div className="text-[10px] text-primary text-center mt-2 font-medium">{t('modal.clickToSee')} {visiveis} {t('modal.candidates')} ▼</div>
               )}
               {isExpanded && (
-                <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {c.candidates.length} {t('modal.candidates')} ▲</div>
+                <div className="text-[10px] text-gray-400 text-center mt-2">{t('modal.totalVol')}: {volStr} | {visiveis} {t('modal.candidates')} ▲</div>
               )}
               {slugFor(c.iso3) && (
                 <a href={`/${locale}/country/${slugFor(c.iso3)}`} onClick={(e) => e.stopPropagation()} className="mt-2 block text-center text-[11px] font-semibold text-primary hover:underline">{viewLabel}</a>

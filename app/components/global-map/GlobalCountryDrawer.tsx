@@ -88,7 +88,15 @@ export function GlobalCountryDrawer({ country, onClose }: Props) {
               <h3 className="text-xs font-semibold uppercase tracking-wider" style={{ color: MAP_TOKENS.textMuted }}>
                 {L.candidates}
               </h3>
-              {c.candidates.map((cd, i) => (
+              {/* 🔴 O `.slice` entrou em 03/Set/2026, junto com o `isDistribution`
+                  do presidencial do Brasil. Antes disso nenhum mercado de
+                  distribuição era PRIMÁRIO, então a lista aqui nunca passava de
+                  meia dúzia de nomes e a falta de corte não aparecia. Com o flag
+                  ligado a agregação passa a devolver os 19 contratos, quinze
+                  deles entre 0,05% e 0,25%, e o drawer viraria uma lista de
+                  ruído. O corte em 8 é o mesmo que CountryPageContent e
+                  ElectionPageContent já usavam: aqui é que estava fora do padrão. */}
+              {c.candidates.slice(0, 8).map((cd, i) => (
                 <div key={cd.name}>
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-2">

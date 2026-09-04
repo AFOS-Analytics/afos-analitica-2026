@@ -17,8 +17,9 @@ export interface ElectionRegistryEntry {
   isPrimary: boolean;
   enabled: boolean;
   /**
-   * Mercado de FAIXAS, não de candidatos: o resultado é uma DISTRIBUIÇÃO
-   * (margem do voto popular, número de cadeiras, comparecimento).
+   * O resultado é uma DISTRIBUIÇÃO: contratos mutuamente exclusivos cuja soma
+   * fecha perto de 100%. Nasceu para mercado de FAIXAS (margem do voto popular,
+   * número de cadeiras, comparecimento).
    *
    * Muda dois comportamentos, e os dois importam:
    *  1. O teto de outcomes gravados sobe de 10 para 20, porque cortar faixa
@@ -26,6 +27,21 @@ export interface ElectionRegistryEntry {
    *  2. O piso de ruído cai de 0,5% para 0,05%, porque numa distribuição a
    *     cauda fina É parte do dado. Descartá-la faz a soma mentir para baixo,
    *     e a soma é justamente o critério de maturidade do mercado de margem.
+   *
+   * ⭐ NÃO É SÓ PARA FAIXAS, e isso ficou claro em 03/Set/2026. Mercado de
+   * CANDIDATO também é distribuição quando os contratos são mutuamente
+   * exclusivos, e aí vale a mesma regra. O presidencial do Brasil ficou sem o
+   * flag e a consequência apareceu quando fui conferir a soma no backup: a
+   * série guardava 4 dos 19 contratos, porque 15 estavam abaixo de 0,5%, e a
+   * soma do que estava gravado NUNCA poderia fechar. Os 15 cortados somavam
+   * 1,25pp, exatamente a diferença entre os 100,10% guardados e os 101,35% reais.
+   *
+   * 🔑 O critério para ligar o flag não é "tem faixas", é: OS CONTRATOS SÃO
+   * MUTUAMENTE EXCLUSIVOS E A SOMA DELES É UMA MEDIDA QUE A CASA USA?
+   *
+   * ⚠️ Ligar o flag num mercado PRIMÁRIO alarga a lista que a agregação devolve,
+   * e quem desenha lista de candidato tem de cortar. Ver o `.slice` no
+   * GlobalCountryDrawer, que só passou a existir por causa desta mudança.
    */
   isDistribution?: boolean;
 }
@@ -47,7 +63,10 @@ export function getFlagPath(iso3: string): string {
 
 export const ELECTION_REGISTRY: ElectionRegistryEntry[] = [
   // ── Brazil (6 markets) ────────────────
-  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: true },
+  // isDistribution desde 03/Set/2026: 19 contratos mutuamente exclusivos que
+  // somam ~100%, e a soma é grandeza que a casa publica. Sem o flag a série
+  // guardava só os 4 acima de 0,5%.
+  { slug: 'brazil-presidential-election', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential', isPrimary: true, enabled: true, isDistribution: true },
   { slug: 'brazil-presidential-election-first-round-2nd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 2nd Place', isPrimary: false, enabled: true },
   { slug: 'brazil-presidential-election-first-round-3rd-place', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2026-10-04', electionType: 'Presidential 1T — 3rd Place', isPrimary: false, enabled: true },
   { slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', iso3: 'BRA', countryName: 'Brazil', flag: 'br', electionDate: '2027-01-01', electionType: 'STF Impeachment', isPrimary: false, enabled: true },
