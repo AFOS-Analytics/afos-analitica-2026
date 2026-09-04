@@ -55,6 +55,48 @@ Padrão: 2 leituras com 8 minutos de intervalo, tolerância de 0,20pp, ignorando
 
 Para uso dentro de pipeline, `--json` devolve `{ ok, motivos, fetchedAt, precos }`. O `--intervalo=N` ajusta os minutos, mas **reduzir o intervalo enfraquece a trava**: com 1 minuto, um book em trânsito pode não ter se resolvido ainda e a concordância vira falso OK.
 
+## ETAPA 1.8: LIVRO BLOQUEADO, e a régua de quando ele vai ao ar assim mesmo
+
+**Instalada em 04/Set/2026, por decisão do André.** O contrato de impeachment no Supremo estava servindo 7,40% de 03/Set enquanto o livro andava perto de 16%, porque a trava o bloqueava havia duas rodadas. Manter o preço velho por tempo indeterminado é uma decisão editorial que ninguém tomou de propósito, e ela estava sendo tomada por omissão.
+
+🔑 **A pergunta certa não é "publicar ou não", é "este bloqueio se resolve esperando?"** E ela é MENSURÁVEL:
+
+```bash
+node scripts/amplitude-do-dia.mjs --slug=<slug do livro> --dias=6
+```
+
+Ele lê a série **gravada no backup**, não a API, e devolve por dia: quantos pontos, a faixa, a amplitude e o dinheiro novo. E um veredito:
+
+| veredito | quando | o que fazer |
+|---|---|---|
+| **PASSAGEIRO** | amplitude do dia abaixo de 10x a tolerância da trava, ou seja abaixo de 2,00pp | recapturar, que é a régua de sempre |
+| **ESTRUTURAL** | amplitude igual ou acima de 2,00pp | publicar COM A FAIXA, declarando a exceção |
+| **INDETERMINADO** | menos de 6 pontos gravados no dia | não decide nada. Amplitude sobre amostra curta é a distância entre dois pontos |
+
+⭐ **A distinção separou os dois casos reais do dia em que a régua nasceu.** O Supremo percorreu **8,70pp com USD 28 de dinheiro novo**: duas leituras a oito minutos nunca vão concordar dentro de 0,20pp num livro assim, e de fato ele bloqueou três vezes seguidas. O Senado, bloqueado por 0,70pp na mesma rodada, tinha amplitude de dia pequena e **passou na rodada seguinte**.
+
+⛔ **O fator 10 não é enfeite.** Com fator 1, todo bloqueio viraria estrutural e a exceção viraria a norma.
+
+### O que OBRIGATORIAMENTE acompanha um preço publicado assim
+
+1. **A faixa do dia e o dinheiro novo**, ao lado do número, no mesmo campo.
+2. **A declaração da exceção**, com estas palavras ou equivalentes: *"este é o único contrato do painel que vai ao ar sem a dupla leitura que o AFOS aplica aos demais"*.
+3. 🔴 **O conserto da promessa que a página faz sobre si mesma.** `cards.sentimento.polymarket` e `polymarketComparison.sources` afirmam que o painel só publica preço confirmado por duas leituras. Publicar uma exceção sem emendar essas duas frases as torna **falsas em silêncio**, e isso é pior que o preço velho.
+4. **O carimbo sem a palavra "confirmada"**: escrever `leitura de DD/Mmm, HH:MM`, não `leitura confirmada de`. O portão de frescor casa a segunda forma, e usar a palavra errada ali é afirmar certificação que não houve.
+
+### ⚠️ A faixa é um PISO, e o texto tem de dizer isso
+
+O backup é gerado **1x por dia** e a série viva cresce de 30 em 30 minutos, então entre o último ponto gravado e a captura de agora há **até 24h sem medição**. Consequências, as duas obrigatórias:
+
+- **A leitura de agora entra na faixa.** Sem isso o painel mostra um número FORA da própria faixa que publica. O script já dobra a leitura certificada para dentro e AVISA quando ela estica a faixa.
+- ⛔ **Escrever "nas leituras gravadas do dia variou de X a Y", nunca "percorreu de X a Y".** A segunda forma afirma extremos que ninguém mediu, e é a mesma armadilha de `memory/feedback_o_backup_tem_uma_cauda_cega_de_ate_um_dia.md`.
+
+### 📌 O que isto NÃO autoriza
+
+Isto **não** é permissão para publicar preço bloqueado em geral. Livro com veredito PASSAGEIRO continua sem preço novo, e a frase de sempre vale: *"esta rodada não publica preço novo para ele"*. E continua valendo a régua de nunca relatar a falha do instrumento: a faixa é propriedade do BOOK, medida na série, e não relato das nossas tentativas de captura. → `memory/feedback_descrever_o_metodo_sim_relatar_a_falha_nao.md`
+
+Teste da régua: `node scripts/testar-amplitude-livro.mjs`, 22 asserções, com os dois casos reais de 04/Set plantados e um caso que cobra que o fator 1 seria errado.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).
