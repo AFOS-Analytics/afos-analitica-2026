@@ -81,6 +81,15 @@ Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%.
 
 **O `popularVoteMargin` é outro caso: está REPROVADO SEMPRE** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.
 
+🔬 **Quando uma distribuição reprovar e for preciso saber POR QUÊ**, não olhar as faixas a olho:
+
+```bash
+npx tsx scripts/check-distribuicao.ts --lista        # os slugs disponíveis
+npx tsx scripts/check-distribuicao.ts senate-seats
+```
+
+Ele separa as três causas, que pedem ações opostas: **faixa duplicada ou buraco na partição** é defeito de coleta e se conserta no coletor; **excesso uniforme** é viés de book e a FORMA ainda serve; **excesso na cauda** é favorite-longshot, o centro serve e a cauda não. A distinção sai do teste do excesso uniforme, em `memory/reference_teste_do_excesso_uniforme.md`.
+
 ## ETAPA 1.7: TRAVA DE CAPTURA (bloqueante)
 
 ```bash
@@ -167,9 +176,34 @@ Além de `publicados` e `veiculosRepresentados`, olhar os campos de **procedênc
 
 ⛔ **Não forjar user-agent de navegador** para passar pelos veículos que devolvem 403 (Washington Examiner, Cook Political Report, Sabato's). É bloqueio deliberado deles, e eles seguem entrando pelo Google News, que é acesso que autorizaram ao agregador.
 
-## ETAPA 4: Superlativo, com a armadilha da série
+## ETAPA 4: Superlativo, e ele se confere no BACKUP
 
-⚠️ A regra do Brasil vale igual: **nenhum superlativo entra sem checagem contra a série completa**. Vale para "recorde", "o mais alto", "a maior queda", "primeira vez", "do ciclo".
+```bash
+node scripts/serie-do-contrato.mjs --pais=us
+```
+
+Um comando, e ele responde a pergunta inteira: por contrato binário, quantos pontos a série tem, desde quando, qual a faixa, e se o preço de agora é `RECORDE`, `PISO` ou `DENTRO`. Fecha a cauda cega do backup com a leitura certificada da ETAPA 1.7, e **se recusa a chamar de "agora" um carimbo com mais de 2h**. Serve o Brasil também, com `--pais=br`.
+
+🔴 **NÃO usar a rota `/api/market/history` para isto, e o motivo foi medido em 04/Set/2026.** O filtro de slug funciona nos EUA, mas a JANELA não:
+
+| série | API com `days=90` | backup |
+|---|---|---|
+| Câmara | começa 29/Jul | 29/Jul |
+| **Senado** | começa **08/Jun** | **14/Abr** |
+
+O `days` trava em 90 e a resposta devolve **`truncated: false`**, porque esse campo fala do teto de 1.000 pontos e não da janela. Ou seja, ela diz "não truncado" escondendo 55 dias e 94 pontos. E é na parte escondida que moram os extremos: o topo democrata do Senado é **57,50% em 16/Abr**; dentro da janela ele aparece como 52,50%. Escrever "perto do topo" com o valor de hoje erraria a distância por 5pp, com a frase soando plausível. **Superlativo falso não dá erro.**
+
+🔴 **E o backup tem 3 instantes CONTAMINADOS, que o script põe em quarentena e declara.** Em 28/Abr/2026, entre 11h45 e 12h50 UTC, o coletor gravou valores perto de 50% para livros sem relação nenhuma no mesmo segundo, inclusive **os dois lados do Senado americano ao mesmo tempo**. Isso é valor de recuo de quem não leu o preço. Medido sobre os 971 instantes com 20 pontos ou mais: a fração de pontos entre 49% e 51% tem **mediana 0,0% e p99 8,7%**, e nesses três instantes ela é **28,1%, 91,8% e 100%**.
+
+Sem a quarentena, o contrato do STF do Brasil aparece com topo de série 50,00 quando a faixa real é 2,10 a 19,30. ⛔ O script **não reescreve o backup**: é filtro de leitura, só do conferidor de extremo, e o que fazer com o histórico contaminado é decisão do André.
+
+### A régua de escrita, que continua valendo
+
+⚠️ **Nenhum superlativo entra sem checagem contra a série completa.** Vale para "recorde", "o mais alto", "a maior queda", "primeira vez", "do ciclo".
+
+📏 **Escrever sempre "da série", com a data de início, nunca "do ciclo".** O primeiro ponto gravado da Câmara é de 29/Jul/2026 e o do Senado é de 14/Abr/2026; superlativo se apoia no primeiro ponto que EXISTE, não no dia em que alguém ligou a coleta.
+
+### Se ainda assim for consultar a API, a armadilha do nome
 
 🔴 **A armadilha específica dos EUA:** os contratos da Câmara e do Senado guardam os desfechos com o **mesmo nome**, `Democratas` e `Republicanos`. Consultar sem filtrar o mercado **cola as duas séries numa só** e o resultado parece legítimo:
 
@@ -184,9 +218,7 @@ curl -s "https://www.afos-analytics.com/api/market/history?candidate=Republicano
 
 Medido em 01/Ago: sem filtro, 67 pontos, sendo 62 do Senado e 5 da Câmara.
 
-⚠️ **`scripts/check-superlativo.ts` NÃO serve aqui**: ele tem o mercado presidencial do Brasil fixo no código. A checagem dos EUA é manual, pelas consultas acima.
-
-📏 **O PRIMEIRO PONTO GRAVADO da série da Câmara é de 29/Jul/2026.** A coleta foi ligada em 28/Jul, e a distinção importa: superlativo se apoia no primeiro ponto que EXISTE, não no dia em que alguém apertou o botão. Escrever "o maior **desde 29/Jul**", nunca "do ciclo": a série não prova o ciclo, e o `days` da rota trava em 90 de qualquer forma. Escrever sempre "da série", com a data de início.
+⚠️ **`scripts/check-superlativo.ts` NÃO serve aqui**: ele tem o mercado presidencial do Brasil fixo no código. Quem serve é o `serie-do-contrato.mjs` do começo desta etapa, e a rota fica para orientação rápida, nunca para afirmar extremo.
 
 ## ETAPA 5: Conferir a tela
 
