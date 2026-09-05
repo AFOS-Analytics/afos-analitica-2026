@@ -3,10 +3,10 @@ Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Flávio,32,32.85,20/08/2026,0.85,naive_winprob_minus_voteshare
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Zema,2,0.15,20/08/2026,-1.85,naive_winprob_minus_voteshare
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,217,Cenário com Ratinho Jr,Renan,2,4.45,20/08/2026,2.45,naive_winprob_minus_voteshare
-Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Lula,39,63.5,20/08/2026,24.5,naive_winprob_minus_voteshare
-Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Flávio,34,32.85,20/08/2026,-1.15,naive_winprob_minus_voteshare
-Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Zema,4,0.15,20/08/2026,-3.85,naive_winprob_minus_voteshare
-Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Renan,3,4.45,20/08/2026,1.45,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Lula,39,63.5,20/08/2026,24.5,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Flávio,34,32.85,20/08/2026,-1.15,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Zema,4,0.15,20/08/2026,-3.85,naive_winprob_minus_voteshare
+Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,214,Cenário com Eduardo Leite,Renan,3,4.45,20/08/2026,1.45,naive_winprob_minus_voteshare
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Lula,37,63.5,20/08/2026,26.5,naive_winprob_minus_voteshare
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Flávio,30,32.85,20/08/2026,2.85,naive_winprob_minus_voteshare
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,210,Cenário com Ratinho e Zema,Zema,3,0.15,20/08/2026,-2.85,naive_winprob_minus_voteshare
@@ -273,3 +273,13 @@ BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimu
 BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
 BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Caiado,1,0.55,2026-08-19,-0.45,naive_winprob_minus_voteshare
 BR-07065/2026,BR070652026,Quaest/Genial,2026-09-02,2026-08-31,34,Cenário estimulado com Pablo Marçal (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,32,Cenário estimulado com Pablo Marçal (1º turno),Lula,39,63.5,2026-08-19,24.5,naive_winprob_minus_voteshare
+BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,32,Cenário estimulado com Pablo Marçal (1º turno),Flávio,32,32.55,2026-08-19,0.55,naive_winprob_minus_voteshare
+BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,32,Cenário estimulado com Pablo Marçal (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,32,Cenário estimulado com Pablo Marçal (1º turno),Caiado,4,0.55,2026-08-19,-3.45,naive_winprob_minus_voteshare
+BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,32,Cenário estimulado com Pablo Marçal (1º turno),Zema,2,0.15,2026-08-19,-1.85,naive_winprob_minus_voteshare
+BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Lula,37,63.5,2026-08-19,26.5,naive_winprob_minus_voteshare
+BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Flávio,34,32.55,2026-08-19,-1.45,naive_winprob_minus_voteshare
+BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Caiado,2,0.55,2026-08-19,-1.45,naive_winprob_minus_voteshare
+BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
