@@ -1,5 +1,5 @@
 /**
- * testar-wayback-prioridade.mjs — casos plantados para a ordenação do passivo
+ * testar-wayback-prioridade.mjs · casos plantados para a ordenação do passivo
  * do Wayback. Sem rede.
  *
  * 🔑 O caso 3 é o que importa, e ele trava a INVERSÃO de 04/Set/2026. A primeira

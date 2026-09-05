@@ -1,5 +1,5 @@
 /**
- * serie-contrato.mjs — as contas puras da checagem de superlativo, feitas sobre
+ * serie-contrato.mjs · as contas puras da checagem de superlativo, feitas sobre
  * a série GRAVADA e não sobre a API.
  *
  * 🔴 POR QUE ISTO EXISTE, medido em 04/Set/2026 na rodada do `/atualizar-usa`.

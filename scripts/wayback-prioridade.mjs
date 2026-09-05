@@ -1,5 +1,5 @@
 /**
- * wayback-prioridade.mjs — ordena o passivo do Wayback.
+ * wayback-prioridade.mjs · ordena o passivo do Wayback.
  *
  * 🔄 REESCRITO em 04/Set/2026, no mesmo dia em que nasceu, porque a premissa
  * dele caiu no mesmo dia.

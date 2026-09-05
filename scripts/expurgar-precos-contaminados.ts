@@ -1,5 +1,5 @@
 /**
- * expurgar-precos-contaminados.ts — remove do Neon um DIA inteiro da série de
+ * expurgar-precos-contaminados.ts · remove do Neon um DIA inteiro da série de
  * preços, depois de gravar a trilha de auditoria do que sai.
  *
  * 🔴 POR QUE EXISTE, e o único caso até hoje: 28/Abr/2026.

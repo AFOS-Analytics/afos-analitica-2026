@@ -1,5 +1,5 @@
 /**
- * testar-serie-contrato.mjs — casos plantados para `lib/serie-contrato.mjs`,
+ * testar-serie-contrato.mjs · casos plantados para `lib/serie-contrato.mjs`,
  * a regra que decide se um superlativo pode ser escrito. Sem rede.
  *
  * 🔑 Os dois casos que mais importam são o 3 e o 4, e os dois nasceram de

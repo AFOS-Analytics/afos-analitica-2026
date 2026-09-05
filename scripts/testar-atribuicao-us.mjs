@@ -1,5 +1,5 @@
 /**
- * testar-atribuicao-us.mjs — casos plantados para `lib/us-polls/atribuicao.mjs`,
+ * testar-atribuicao-us.mjs · casos plantados para `lib/us-polls/atribuicao.mjs`,
  * a regra que separa COMPOSIÇÃO de movimento na média do generic ballot.
  * Sem rede, sem tocar em arquivo do projeto.
  *

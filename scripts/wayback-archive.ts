@@ -13,6 +13,7 @@ import { appendFileSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 import { pathToFileURL } from 'url'
 import { isValidDate, readDailyMarkdown, extractExternalUrls } from './lib/daily-files'
+import { separarAlvos } from './lib/wayback-alvos.mjs'
 
 const WAYBACK_BASE = 'https://web.archive.org/save/'
 const THROTTLE_MS = 3000
@@ -175,8 +176,28 @@ async function main() {
     process.exit(1)
   }
 
-  const urls = extractExternalUrls(markdown)
-  console.log(`Wayback archive — AFOS Daily ${date}: ${urls.length} URLs externas`)
+  const todas = extractExternalUrls(markdown)
+
+  /**
+   * 🔴 A INFRAESTRUTURA SAI DA FILA, medido em 05/Set/2026 ao investigar as 17
+   * falhas da rodada de 04/Set.
+   *
+   * Das 23 URLs daquela daily, 6 eram infraestrutura: 5 do Polymarket e 1 do
+   * TSE. Nenhuma das duas arquiva, e as do Polymarket são as CINCO PRIMEIRAS da
+   * fila, sistematicamente, porque o bloco de fontes técnicas vem antes das
+   * matérias. O disjuntor aborta com 5 falhas de host seguidas.
+   *
+   * Ou seja: toda rodada começava gastando 26% da cota em URL que não arquiva,
+   * e o gasto disparava o próprio disjuntor. A rodada de 29/Jul registrou
+   * exatamente isso: 3 arquivadas, 5 falhas, abortada.
+   */
+  const { arquivar: urls, pular } = separarAlvos(todas)
+  console.log(`Wayback archive · AFOS Daily ${date}: ${todas.length} URLs externas`)
+  if (pular.length) {
+    console.log(`  ${pular.length} fora da fila por serem infraestrutura, e não matéria:`)
+    for (const p of pular) console.log(`    ${new URL(p.url).hostname}  ${p.motivo}`)
+    console.log(`  restam ${urls.length} para submeter.`)
+  }
 
   if (urls.length === 0) process.exit(0)
 
@@ -184,6 +205,19 @@ async function main() {
   let fail = 0
 
   let resolvidas = 0
+
+  /**
+   * 📓 O resultado POR URL, e não só a contagem.
+   *
+   * 🔴 Instalado em 05/Set/2026 porque a pergunta "por que as 17 falharam?" não
+   * teve resposta: o ledger guardava `fail: 17` e mais nada. Sobrou atribuir 6
+   * delas à infraestrutura pela composição da daily, e as outras 11 ficaram sem
+   * explicação possível, porque ninguém gravou o erro de cada uma.
+   *
+   * É a mesma família do ledger em si, uma camada abaixo: contagem sem detalhe
+   * responde "quanto" e nunca "por quê".
+   */
+  const resultados: Array<{ url: string; ok: boolean; erro?: string; resolvidaDe?: string; tentativas: number }> = []
 
   /**
    * DISJUNTOR, instalado 31/Jul/2026.
@@ -212,6 +246,13 @@ async function main() {
     const short = url.length > 70 ? url.slice(0, 67) + '...' : url
     process.stdout.write(`  [${i + 1}/${urls.length}] ${short}${url !== citada ? ' (resolvida)' : ''} `)
     const result = await archiveUrl(url)
+    resultados.push({
+      url,
+      ok: result.ok,
+      ...(result.ok ? {} : { erro: String(result.error ?? 'sem mensagem') }),
+      ...(url !== citada ? { resolvidaDe: citada } : {}),
+      tentativas: result.attempts,
+    })
     if (result.ok) {
       console.log(result.attempts > 1 ? `OK (retry ${result.attempts})` : 'OK')
       ok++
@@ -278,11 +319,17 @@ async function main() {
       JSON.stringify({
         quando: new Date().toISOString(),
         daily: date,
+        urlsNaDaily: todas.length,
+        puladas: pular.length,
         urls: urls.length,
         ok,
         fail,
         abortou,
         resolvidas,
+        // 🔑 O detalhe é o que responde "por quê". Sem ele o ledger diz quanto
+        // falhou e nunca de que, que foi o vão de 04/Set.
+        resultados,
+        motivosPulados: pular.map((p) => ({ url: p.url, motivo: p.motivo })),
       }) + '\n'
     )
     console.log(`📓 rodada anotada em ${ledger}`)

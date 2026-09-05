@@ -1,5 +1,5 @@
 /**
- * serie-do-contrato.mjs — a ETAPA 4 do `/atualizar-usa` e o guardrail de
+ * serie-do-contrato.mjs · a ETAPA 4 do `/atualizar-usa` e o guardrail de
  * superlativo do `/atualizar-brz`, feitos por medição em vez de à mão.
  *
  * Lê a série GRAVADA em `backup/neon/marketPrice`, fecha a cauda cega com a
