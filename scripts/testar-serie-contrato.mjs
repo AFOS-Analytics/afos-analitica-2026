@@ -17,6 +17,7 @@
 import {
   agruparPorLivro,
   casarCaptura,
+  estaEncerrada,
   extremos,
   idadeEmHoras,
   instantesSuspeitos,
@@ -81,6 +82,69 @@ console.log('\n2. Extremos e veredito')
     vereditoSuperlativo(52.5, e).motivo
   )
   conferir('sem série, o veredito é SEM_SERIE e não DENTRO', vereditoSuperlativo(50, null).veredito === 'SEM_SERIE')
+}
+
+console.log('\n2b. 🔴 A SÉRIE QUE ACABOU, achada conferindo a própria ferramenta')
+{
+  // Caso real: o PODEMOS no Senado brasileiro, último ponto em 23/Jun. A
+  // ferramenta imprimia "DENTRO: 0.70 está a 29.70pp do topo", como se 0,70
+  // fosse o preço de agora. Livro sem ponto novo não tem preço de agora.
+  const morta = [ponto('2026-05-11T00:00:00Z', 30.4), ponto('2026-06-12T00:00:00Z', 0.5), ponto('2026-06-23T21:00:00Z', 0.7)]
+  const viva = [ponto('2026-08-30T00:00:00Z', 30.4), ponto('2026-09-04T16:30:00Z', 0.7)]
+
+  conferir('série parada há 2 meses é ENCERRADA', estaEncerrada(extremos(morta), { agora: HOJE }))
+  conferir('⭐ série com ponto de ontem NÃO é encerrada', estaEncerrada(extremos(viva), { agora: HOJE }) === false)
+  conferir(
+    'o corte é de 7 dias, e 6 dias ainda é viva',
+    estaEncerrada(extremos([ponto('2026-08-30T02:00:00Z', 5)]), { agora: HOJE }) === false
+  )
+  conferir(
+    'e 8 dias já é encerrada',
+    estaEncerrada(extremos([ponto('2026-08-27T00:00:00Z', 5)]), { agora: HOJE }) === true
+  )
+  conferir('sem série, não é encerrada nem por acidente', estaEncerrada(null) === false)
+
+  const v = vereditoSuperlativo(0.7, extremos(morta), { encerrada: true })
+  conferir('⏹ o veredito vira SERIE_ENCERRADA', v.veredito === 'SERIE_ENCERRADA')
+  conferir('e ele diz a DATA do último ponto e nega ser preço de agora', v.motivo.includes('2026-06-23') && v.motivo.includes('NÃO é preço de agora'))
+  conferir(
+    '⛔ sem a marca, o mesmo valor sairia como DENTRO a 29.70pp do topo',
+    vereditoSuperlativo(0.7, extremos(morta)).veredito === 'DENTRO' &&
+      vereditoSuperlativo(0.7, extremos(morta)).motivo.includes('29.70pp do topo')
+  )
+}
+
+console.log('\n2c. 🔴 O portão que NÃO PODIA disparar: comparar contra a série SEM o ponto julgado')
+{
+  // Achado em 04/Set conferindo a ferramenta depois de subi-la. O CLI montava a
+  // série COM o valor de agora dentro e comparava o valor contra ela. Aí
+  // `agora > max` é impossível por construção, e RECORDE nunca saía. Os testes
+  // do bloco 2 passavam porque usam um valor que NÃO está no fixture.
+  const gravados = [ponto('2026-08-01T00:00:00Z', 45), ponto('2026-08-15T00:00:00Z', 52.5)]
+  const agora = 56.0 // preço novo, acima de tudo que foi gravado
+
+  const comAgora = [...gravados, ponto('2026-09-05T02:00:00Z', agora)]
+  conferir(
+    '⛔ comparando contra a série COM o ponto dentro, o recorde some',
+    vereditoSuperlativo(agora, extremos(comAgora)).veredito === 'DENTRO',
+    vereditoSuperlativo(agora, extremos(comAgora)).veredito
+  )
+  conferir(
+    '✅ comparando contra os pontos ANTERIORES, ele aparece',
+    vereditoSuperlativo(agora, extremos(gravados)).veredito === 'RECORDE',
+    vereditoSuperlativo(agora, extremos(gravados)).veredito
+  )
+  conferir(
+    'e o mesmo vale para o piso',
+    vereditoSuperlativo(40, extremos(gravados)).veredito === 'PISO' &&
+      vereditoSuperlativo(40, extremos([...gravados, ponto('2026-09-05T02:00:00Z', 40)])).veredito === 'DENTRO'
+  )
+  // ⭐ Controle: sem leitura viva, o valor julgado é o ÚLTIMO GRAVADO, e ele
+  // também precisa sair da série antes da comparação.
+  conferir(
+    '⭐ sem leitura viva, o último gravado se compara contra os anteriores a ele',
+    vereditoSuperlativo(52.5, extremos(gravados.slice(0, -1))).veredito === 'RECORDE'
+  )
 }
 
 console.log('\n3. 🔴 O que a janela de 90 dias da API ESCONDE (caso medido em 04/Set)')

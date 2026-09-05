@@ -236,12 +236,47 @@ export function janela(pontos, dias, agora = new Date()) {
  * 🔑 O veredito de superlativo. Ele responde UMA pergunta: o valor de hoje é
  * extremo da série, e a série é longa o bastante para a frase se sustentar?
  *
- * `RECORDE` / `PISO` só saem quando o valor bate o extremo da série INTEIRA,
- * a do backup mais o ponto de agora. `DENTRO` é o caso normal e não autoriza
- * superlativo nenhum.
+ * `RECORDE` / `PISO` só saem quando o valor bate o extremo da série. `DENTRO` é
+ * o caso normal e não autoriza superlativo nenhum.
+ *
+ * 🔴 CONTRATO DE CHAMADA, e ele já foi violado uma vez: `ext` tem de ser a série
+ * SEM o ponto que está sendo julgado. Se o valor de hoje estiver dentro dela,
+ * `valorHoje > ext.max` é impossível por construção e RECORDE nunca sai.
+ *
+ * Achado em 04/Set/2026 conferindo o próprio script, horas depois de subi-lo: o
+ * CLI montava a série COM o ponto de agora dentro e comparava contra ela, então
+ * o portão não podia disparar. Os testes passavam porque usavam um valor que não
+ * estava no fixture. **Portão que não pode disparar é indistinguível de portão
+ * quebrado, e o silêncio dele não prova nada.**
  */
-export function vereditoSuperlativo(valorHoje, ext, { tolerancia = 0.001 } = {}) {
+/**
+ * 🔴 A SÉRIE QUE ACABOU, achada em 04/Set/2026 ao conferir a própria ferramenta
+ * logo depois de subi-la.
+ *
+ * Sete livros do Senado brasileiro, PODEMOS, PP, PSB, PSDB, PT, PDT e
+ * REPUBLICANOS, têm o último ponto entre 23/Jun e 28/Ago: são desfechos que
+ * saíram do book do Polymarket. A ferramenta imprimia, para o PODEMOS,
+ * "DENTRO: 0.70 está a 29.70pp do topo", como se 0,70 fosse o preço de agora.
+ * A data aparecia na linha de cima, mas veredito não se lê com ressalva.
+ *
+ * 📌 Livro sem ponto novo não tem "preço de agora", e o certo é dizer isso.
+ */
+export function estaEncerrada(ext, { dias = 7, agora = new Date() } = {}) {
+  if (!ext) return false
+  const idade = (agora.getTime() - Date.parse(ext.fim)) / 86400000
+  return Number.isFinite(idade) && idade > dias
+}
+
+export function vereditoSuperlativo(valorHoje, ext, { tolerancia = 0.001, encerrada = false } = {}) {
   if (ext == null || valorHoje == null) return { veredito: 'SEM_SERIE', motivo: 'sem série gravada para comparar' }
+  if (encerrada) {
+    return {
+      veredito: 'SERIE_ENCERRADA',
+      motivo:
+        `sem ponto novo desde ${ext.fim.slice(0, 10)}: o livro saiu do book. ` +
+        `O último valor gravado foi ${ext.ultimo.toFixed(2)}, numa faixa de ${ext.min.toFixed(2)} a ${ext.max.toFixed(2)}. Isso NÃO é preço de agora.`,
+    }
+  }
   if (valorHoje > ext.max + tolerancia) {
     return {
       veredito: 'RECORDE',

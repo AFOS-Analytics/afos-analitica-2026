@@ -27,6 +27,7 @@ import { pathToFileURL } from 'url'
 import {
   agruparPorLivro,
   casarCaptura,
+  estaEncerrada,
   extremos,
   idadeEmHoras,
   instantesSuspeitos,
@@ -167,7 +168,19 @@ function principal() {
     const hoje = agora.get(chave) ?? null
     const comAgora = hoje == null ? pontos : [...pontos, { t: carimbo ?? new Date().toISOString(), v: hoje, slug, outcome }]
     const extTudo = extremos(comAgora)
-    const v = vereditoSuperlativo(hoje ?? ext.ultimo, extTudo)
+
+    // 🔴 O veredito compara contra a série SEM o ponto que está sendo julgado.
+    // Achado em 04/Set/2026 conferindo a ferramenta: eu comparava contra a série
+    // COM o valor de agora dentro, e aí `agora > max` é impossível por
+    // construção. RECORDE e PISO nunca disparavam, e um portão que não pode
+    // disparar é indistinguível de um portão quebrado. O `extTudo` continua
+    // servindo para IMPRIMIR a faixa, que aí sim inclui hoje.
+    const anteriores = hoje == null ? pontos.slice(0, -1) : pontos
+    const extAnterior = extremos(anteriores)
+    // Livro sem leitura viva e sem ponto novo há mais de uma semana saiu do
+    // book: não existe "preço de agora" para julgar.
+    const encerrada = hoje == null && estaEncerrada(ext)
+    const v = vereditoSuperlativo(hoje ?? ext.ultimo, extAnterior, { encerrada })
 
     console.log(`   ${outcome} · ${slug}`)
     console.log(
@@ -175,7 +188,9 @@ function principal() {
         (hoje == null ? `  (último gravado ${ext.ultimo.toFixed(2)})` : `  + agora ${hoje.toFixed(2)}`)
     )
     console.log(`      faixa da série  ${extTudo.min.toFixed(2)} a ${extTudo.max.toFixed(2)}   amplitude ${(extTudo.max - extTudo.min).toFixed(2)}pp`)
-    console.log(`      ${v.veredito === 'DENTRO' ? '·' : '⭐'} ${v.veredito}: ${v.motivo}`)
+    const marca = v.veredito === 'DENTRO' ? '·' : v.veredito === 'SERIE_ENCERRADA' ? '⏹' : '⭐'
+    const ressalva = velha && !encerrada ? ` (leitura de ${idade.toFixed(1)}h atrás, NÃO é o preço de agora)` : ''
+    console.log(`      ${marca} ${v.veredito}${ressalva}: ${v.motivo}`)
 
     const escondido = oQueAJanelaEsconde(comAgora, diasApi)
     if (escondido) {
