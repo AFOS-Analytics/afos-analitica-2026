@@ -44,7 +44,6 @@
     "gray-matter": "^4.0.3",
     "jszip": "^3.10.1",
     "next": "^15.5.23",
-    "prisma": "^7.9.1",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^10.1.0",
@@ -65,6 +64,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "15.5.20",
     "postcss": "^8.5.15",
+    "prisma": "^7.9.1",
     "tailwindcss": "^3.4.19",
     "tsx": "4.23.12",
     "typescript": "^5.9.3"
