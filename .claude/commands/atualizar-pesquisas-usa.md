@@ -117,6 +117,14 @@ Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever q
 
 ⚠️ **A dispersão importa mais que a média.** Em 31/Jul a Quinnipiac mediu D+7 e a Reuters/Ipsos D+2 com campo praticamente na mesma janela: cinco pontos entre duas casas de primeira linha. Reportar só a média esconde exatamente isso.
 
+🎚️ **E parte da dispersão é ESCOLHA NOSSA, não medição das casas.** Quando o mesmo instituto publica LV, RV e A da mesma rodada, entra um só, pela hierarquia `LV > RV > A` do `collect.mjs`. A régua é certa e não se discute na rodada, mas ela TEM preço, e o preço se mede:
+
+```bash
+node scripts/efeito-do-recorte-us.mjs
+```
+
+Ele importa a hierarquia do coletor em vez de redigitá-la, e lê `mediaAfos.incluidas` em vez de reimplementar a janela. Sai o piso empírico do arquivo inteiro e, para a média servida, quanto UMA troca de recorte a moveria. 📌 Medido em 05/Set/2026: em 265 rodadas, 95 têm mais de um recorte, o |delta| mediano é 1,00pp, e a escolha **trocou o SINAL uma única vez**, na Harvard/Harris de 30/Ago, LV em R+2 contra RV em D+2 na mesma onda. Essa rodada sozinha levou a média de D+5.69 para D+5.14 e a amplitude de 4,00pp para 10,00pp. ⚠️ Saída de USO INTERNO: descreve a sensibilidade do MÉTODO, não é manchete nem ressalva plantada.
+
 ## Regras que valem aqui
 
 - **Wikipédia é ÍNDICE, o instituto é FONTE.** A página agrega e dá o caminho; o número citado é o do instituto, com link para a fonte primária. Pesquisa sem fonte primária entra na contagem de qualidade e é declarada, não some.

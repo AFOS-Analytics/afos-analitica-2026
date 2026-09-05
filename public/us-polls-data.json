@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-05",
-  "fetchedAt": "2026-09-05T01:43:43.545Z",
+  "fetchedAt": "2026-09-05T14:32:50.834Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -35,7 +35,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-06",
-    "nPesquisas": 13,
+    "nPesquisas": 14,
     "incluidas": [
       {
         "instituto": "The Economist/YouGov",
@@ -43,6 +43,13 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 40
+      },
+      {
+        "instituto": "Harvard/Harris Poll/HarrisX",
+        "campoFim": "2026-08-30",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 51
       },
       {
         "instituto": "The Economist/YouGov",
@@ -129,10 +136,10 @@
         "rep": 42
       }
     ],
-    "nInstitutos": 9,
-    "dem": 46.31,
-    "rep": 40.62,
-    "vantagemDem": 5.69,
+    "nInstitutos": 10,
+    "dem": 46.5,
+    "rep": 41.36,
+    "vantagemDem": 5.14,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -140,6 +147,7 @@
       "Echelon Insights",
       "Emerson College",
       "Focaldata/Financial Times",
+      "Harvard/Harris Poll/HarrisX",
       "Morning Consult",
       "Reuters/Ipsos",
       "The Bullfinch Group",
@@ -147,14 +155,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 379,
-    "publicadas": 385,
+    "linhasLidas": 381,
+    "publicadas": 387,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 379,
+    "doIndice": 381,
     "curadas": 6,
     "curadasDescartadasPorDuplicidade": 0
   },
@@ -196,6 +204,34 @@
         "naoVotara": 23
       },
       "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Harvard/Harris Poll/HarrisX",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-30",
+      "amostra": 2100,
+      "amostraTipo": "RV",
+      "margemErro": 2.1,
+      "dem": 51,
+      "rep": 49,
+      "outros": null,
+      "vantagemDem": 2,
+      "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Harvard/Harris Poll/HarrisX",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-30",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 49,
+      "rep": 51,
+      "outros": null,
+      "vantagemDem": -2,
+      "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "The Economist/YouGov",
