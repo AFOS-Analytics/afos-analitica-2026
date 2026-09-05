@@ -132,9 +132,17 @@ export function buildBreadcrumbSchema(date: string, locale: string, pais: string
   }
 }
 
-export function getOgImageUrl(locale?: string): string {
-  // Reuses the generic /api/og endpoint — Daily uses the same. Per-edition
-  // OG image is a post-launch backlog item (project_post_launch_visualizations.md).
+/**
+ * Imagem OG da edição.
+ *
+ * 🔴 O `override` existe porque o cartão genérico por idioma é o MESMO arquivo
+ * que o painel serve: a prévia de um post sobre uma edição saía sem número
+ * nenhum, e duas peças divulgadas no mesmo dia apareciam idênticas no feed.
+ * Edição com achado próprio declara `ogImage` no frontmatter. Mesma solução
+ * que o Weekly adotou em 22/Ago/2026, ligada aqui em 05/Set a pedido do André.
+ */
+export function getOgImageUrl(locale?: string, override?: string): string {
+  if (override) return `${SITE}${override}`
   const safe = (locale === 'en' || locale === 'es') ? locale : 'pt-BR'
   // 🔴 Arquivo ESTÁTICO, não `/api/og`. O robots.ts bloqueia `/api/` para todo
   // agente, então o LinkedInBot e o facebookexternalhit recusavam buscar a

@@ -161,6 +161,13 @@ export interface AfosTradeoffData {
   title: string         // "AFOS Tradeoff — Edição №N · semana de DD-DD MMM YYYY"
   locale: string        // "pt-BR" | "en" | "es"
   status: string        // "published" | "draft"
+  /**
+   * Cartão social PRÓPRIO desta edição, caminho a partir da raiz do site.
+   * Sem ele a edição cai no cartão genérico por idioma, que é o MESMO que o
+   * painel serve, e a prévia do link sai sem número nenhum. Espelha o campo
+   * de mesmo nome no loader do Weekly, que resolveu isto em 22/Ago/2026.
+   */
+  ogImage?: string
   sinalDaSemana: string // Tradeoff equivalent of Daily's lede (1-2 paragraphs)
   /**
    * Título de seção sobrescrito pela edição, por número (ex.: { 2: '...' }).
@@ -492,6 +499,7 @@ export function loadTradeoff(date: string, locale?: string, country: string = PA
     title: str(fm.title, `AFOS Tradeoff — Edição №${num(fm.issueNumber, 1)}`),
     locale: str(fm.locale, 'pt-BR'),
     status: str(fm.status, 'draft'),
+    ogImage: str(fm.ogImage) || undefined,
     sinalDaSemana,
     summaryCards: coerceSummaryCards(fm.summaryCards),
     execSummaryIntro: str(fm.execSummaryIntro) || undefined,

@@ -56,7 +56,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const sinalPlain = data.sinalDaSemana.replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').slice(0, 240)
   const url = `https://www.afos-analytics.com/${params.locale}/tradeoff/${pais}/${params.date}`
-  const ogImage = getOgImageUrl(params.locale)
+  const ogImage = getOgImageUrl(params.locale, data.ogImage)
   const publishedTime = `${data.date}T00:00:00-03:00`
   const modifiedTime = parseUpdatedAt(data.updatedAt, data.date)
 
