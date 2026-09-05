@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-04",
-  "fetchedAt": "2026-09-04T04:31:10.584Z",
+  "lastUpdate": "2026-09-05",
+  "fetchedAt": "2026-09-05T01:43:43.545Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -34,12 +34,105 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-05",
-    "nPesquisas": 14,
-    "nInstitutos": 10,
-    "dem": 46.64,
-    "rep": 40.57,
-    "vantagemDem": 6.07,
+    "desde": "2026-08-06",
+    "nPesquisas": 13,
+    "incluidas": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-08-31",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 40
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-08-24",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 40
+      },
+      {
+        "instituto": "Echelon Insights",
+        "campoFim": "2026-08-17",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 45
+      },
+      {
+        "instituto": "Emerson College",
+        "campoFim": "2026-08-17",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 43
+      },
+      {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-08-17",
+        "amostraTipo": "RV",
+        "dem": 41,
+        "rep": 36
+      },
+      {
+        "instituto": "The Bullfinch Group",
+        "campoFim": "2026-08-17",
+        "amostraTipo": "RV",
+        "dem": 42,
+        "rep": 37
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-08-17",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 39
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-08-16",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 42
+      },
+      {
+        "instituto": "Focaldata/Financial Times",
+        "campoFim": "2026-08-11",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 45
+      },
+      {
+        "instituto": "AlphaROC",
+        "campoFim": "2026-08-10",
+        "amostraTipo": "A",
+        "dem": 41,
+        "rep": 37
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-08-10",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 40
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-08-09",
+        "amostraTipo": "RV",
+        "dem": 47,
+        "rep": 42
+      },
+      {
+        "instituto": "Cygnal (R)",
+        "campoFim": "2026-08-07",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 42
+      }
+    ],
+    "nInstitutos": 9,
+    "dem": 46.31,
+    "rep": 40.62,
+    "vantagemDem": 5.69,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
@@ -47,7 +140,6 @@
       "Echelon Insights",
       "Emerson College",
       "Focaldata/Financial Times",
-      "John Zogby Strategies",
       "Morning Consult",
       "Reuters/Ipsos",
       "The Bullfinch Group",

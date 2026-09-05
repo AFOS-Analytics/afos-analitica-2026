@@ -37,6 +37,22 @@ A rota do cron se recusa a gravar leitura vazia por cima de uma boa: Wikipédia 
 ⚠️ **São DOIS defeitos possíveis, e só um deles encolhe o arquivo.** Em 01/Ago/2026 a coleta CRESCEU de 278 para 282 linhas e mesmo assim publicou lixo. Conferir só o tamanho não basta.
 
 ```bash
+node scripts/conferir-us-polls.mjs
+```
+
+🔴 **Rodar ISTO, e não o `node -e` de cabeça.** O script existe desde 04/Ago/2026 e não estava citado em comando nenhum, então na prática eu redigitava a conferência toda sessão, e conferidor que se redigita é chance nova de errar. Medido em 04/Set/2026: por não estar aqui, ele não foi rodado, e a atribuição da variação daquele dia foi feita à mão.
+
+Ele varre **todas** as linhas, compara contra a versão do `git HEAD`, aplica as duas réguas abaixo e termina em `VEREDITO: APROVADO` ou `REPROVADO`. Aceita `--base=<ref-git>`, `--arquivo=` e `--base-arquivo=`.
+
+🧭 **Ele também responde a pergunta do Passo 4**, que é a única que a régua faz antes de qualquer verbo de movimento: **o que mudou foi a intenção de voto ou foi o conjunto?** Sai como `COMPOSICAO`, `PESQUISA_NOVA`, `CORRECAO`, `PARADO` ou `INCONSISTENTE`, nomeando rodada a rodada quem entrou e quem saiu, e confere que a subtração fecha.
+
+🔑 **Isso só funciona porque o arquivo passou a gravar QUAIS pesquisas entraram na média, em `mediaAfos.incluidas`, e não só quantas.** Antes de 04/Set/2026 a comparação era por NOME de casa, e nome de casa não é rodada: uma onda nova de uma casa que já estava na lista passava invisível. Caso medido sobre o arquivo real daquele dia: uma onda da YouGov com campo 28/Ago levaria a média de D+5.69 a D+5.93, e a régua antiga imprimiria *"ZERO informação nova, escrever verbo de movimento aqui é falso"*. Falso negativo que produz frase falsa. A regra vive em `lib/us-polls/atribuicao.mjs`, com casos plantados em `scripts/testar-atribuicao-us.mjs`.
+
+⚠️ **Comparando contra uma base anterior a 04/Set/2026 ele avisa `atribuição DEGRADADA`** e manda não usar aquela linha para afirmar "zero informação nova". Isso acontece uma única vez.
+
+Para conferir uma peça isolada à mão, ou se o script cair:
+
+```bash
 git diff --stat public/us-polls-data.json
 node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const somas=a.polls.map(p=>p.dem+p.rep+(p.outros||0));const fora=somas.filter(s=>s<97||s>102);console.log('soma D+R+outros FORA da faixa 97-102:',fora.length,'de',somas.length,fora.length?'-> valores '+[...new Set(fora)].slice(0,10).join(' '):'');console.log('semFontePrimaria (contador do ARQUIVO):',a.qualidade.semFontePrimaria)"
 ```
@@ -90,6 +106,8 @@ Reportar sempre, com os números do arquivo e não de memória:
 - média da casa (`vantagemDem`), no formato **D+X,XX** ou **R+X,XX**, e a variação contra a leitura anterior em pp
 
 ⚠️ **Dizer SEMPRE de onde veio a variação, porque a janela de 30 dias rola sozinha.** A média muda sem nenhuma pesquisa nova: basta uma antiga sair pela borda. Em 04/Ago/2026 a média foi de D+5,69 para D+5,75 com **zero pesquisa nova**, só porque `nPesquisas` caiu de 26 para 24. Reportar "a média subiu" ali seria falso: quem mudou foi o conjunto, não a intenção de voto.
+
+✅ **Não fazer essa atribuição de cabeça: ela sai do `conferir-us-polls.mjs` do Passo 2**, no bloco `composição`, que nomeia a rodada que entrou e a que saiu e fecha a subtração. Em 04/Set/2026 a média foi de D+6.07 para D+5.69 com zero pesquisa nova, porque a John Zogby Strategies, campo 04-05/Ago e D+11.00, saiu pela borda quando o dia UTC virou: `(6.07 × 14 − 11.00) / 13 = 5.69`, exato.
 
 Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever qualquer verbo de movimento. Se caíram, a variação é de **composição** até prova em contrário. E citar a **data de campo mais recente da base**: se ela tem vários dias, a régua está parada e a média mexer é alerta, não sinal.
 - quantas pesquisas e quantos institutos entraram na janela, e qual é a janela em dias

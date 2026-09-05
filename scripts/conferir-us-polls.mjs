@@ -41,6 +41,7 @@
 
 import { readFileSync } from 'fs'
 import { execFileSync } from 'child_process'
+import { comparar, conferirSubtracao, mediaDe, veredito } from '../lib/us-polls/atribuicao.mjs'
 
 const arg = (n, padrao) =>
   process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? padrao
@@ -181,25 +182,74 @@ const campoAgora = campoMaisRecente(atual)
 const campoBase = campoMaisRecente(base)
 
 console.log(`\n   📊 composição`)
+let passaAtribuicao = true
 if (m && mb) {
-  const d = (m.vantagemDem - mb.vantagemDem).toFixed(2)
-  const antes = new Set(mb.institutos ?? [])
-  const agora = new Set(m.institutos ?? [])
-  const sairam = [...antes].filter((x) => !agora.has(x))
-  const entraram = [...agora].filter((x) => !antes.has(x))
+  const d = Number((m.vantagemDem - mb.vantagemDem).toFixed(2))
   const reguaParada = campoAgora === campoBase
-  const semNovidade = entraram.length === 0 && reguaParada
-
-  console.log(`        vantagem  ${mb.vantagemDem} → ${m.vantagemDem}  (${d >= 0 ? '+' : ''}${d}pp)`)
+  console.log(`        vantagem  ${mb.vantagemDem} → ${m.vantagemDem}  (${d >= 0 ? '+' : ''}${d.toFixed(2)}pp)`)
   console.log(`        n         ${mb.nPesquisas} → ${m.nPesquisas} pesquisas · ${mb.nInstitutos} → ${m.nInstitutos} institutos`)
   console.log(`        janela    desde ${mb.desde} → ${m.desde}`)
-  console.log(`        saíram    ${sairam.join(', ') || '(ninguém)'}`)
-  console.log(`        entraram  ${entraram.join(', ') || '(ninguém)'}`)
   console.log(`        campo mais recente da base: ${campoBase} → ${campoAgora}${reguaParada ? '  (PARADO)' : ''}`)
-  if (semNovidade) {
+
+  // 🔑 A média declarada tem de sair das linhas que ela mesma declara. Arquivo
+  // incoerente consigo próprio não se commita.
+  if (m.incluidas) {
+    const r = mediaDe(m.incluidas)
+    const bate = r.n === m.nPesquisas && r.dem === m.dem && r.rep === m.rep && r.vantagemDem === m.vantagemDem
+    const inst = new Set(m.incluidas.map((x) => x.instituto)).size
+    if (!bate || inst !== m.nInstitutos) {
+      passaAtribuicao = false
+      console.log(
+        `        ${cor.mau}❌${cor.fim}  a média NÃO reproduz a partir das linhas declaradas:\n` +
+          `           declarada D${m.dem}/${m.rep} n=${m.nPesquisas} inst=${m.nInstitutos}` +
+          ` · reproduzida D${r.dem}/${r.rep} n=${r.n} inst=${inst}`
+      )
+    } else {
+      console.log(`        ${cor.ok}✓${cor.fim} a média reproduz a partir das ${r.n} rodadas declaradas`)
+    }
+  }
+
+  if (m.incluidas && mb.incluidas) {
+    // ✅ Caminho bom: comparar RODADA a rodada.
+    const dif = comparar(mb.incluidas, m.incluidas)
+    const rot = (x) => `${x.campoFim} ${x.instituto} (D+${(x.dem - x.rep).toFixed(2)})`
+    console.log(`        saíram    ${dif.sairam.map(rot).join(' · ') || '(ninguém)'}`)
+    console.log(`        entraram  ${dif.entraram.map(rot).join(' · ') || '(ninguém)'}`)
+    if (dif.mudaram.length) {
+      console.log(
+        `        corrigidas na origem: ${dif.mudaram.map((x) => rot(x.antes) + ' → ' + rot(x.depois)).join(' · ')}`
+      )
+    }
+    for (const pb of conferirSubtracao(mb.incluidas, m.incluidas, dif)) {
+      passaAtribuicao = false
+      console.log(`        ${cor.mau}❌${cor.fim}  a conta de ${pb.campo} não fecha: prevista ${pb.previsto}, real ${pb.real}`)
+    }
+    const v = veredito(dif, d)
+    console.log(`        🧭 VEREDITO DA VARIAÇÃO: ${v.join(' + ')}`)
+    if (v.includes('COMPOSICAO')) {
+      console.log(
+        `        ${cor.aviso}⚠️${cor.fim}  ZERO informação nova: ninguém entrou e nada foi corrigido.\n` +
+          `           A variação é de COMPOSIÇÃO, e escrever verbo de movimento aqui é falso.`
+      )
+    }
+    if (v.includes('INCONSISTENTE')) {
+      passaAtribuicao = false
+      console.log(`        ${cor.mau}❌${cor.fim}  conjunto idêntico e a média mexeu ${d.toFixed(2)}pp. Defeito do coletor.`)
+    }
+  } else {
+    // ⚠️ Caminho DEGRADADO, só para leitura anterior a 04/Set/2026, que não grava
+    // `incluidas`. Ele compara NOMES de casa, e nome de casa não é rodada: onda
+    // nova de uma casa que JÁ está na lista passa invisível por aqui. Medido em
+    // 04/Set sobre o arquivo real: uma onda da YouGov com campo 28/Ago levaria a
+    // média de D+5.69 a D+5.93 e este caminho diria "ninguém entrou".
+    const antes = new Set(mb.institutos ?? [])
+    const agora = new Set(m.institutos ?? [])
+    console.log(`        saíram    ${[...antes].filter((x) => !agora.has(x)).join(', ') || '(ninguém)'}`)
+    console.log(`        entraram  ${[...agora].filter((x) => !antes.has(x)).join(', ') || '(ninguém)'}`)
     console.log(
-      `        ${cor.aviso}⚠️${cor.fim}  ZERO informação nova: ninguém entrou e a régua não andou.\n` +
-        `           Toda variação acima é de COMPOSIÇÃO, e escrever verbo de movimento aqui é falso.`
+      `        ${cor.aviso}⚠️${cor.fim}  atribuição DEGRADADA: falta mediaAfos.incluidas ${!m.incluidas ? 'na leitura nova' : 'na base do git'}.\n` +
+        `           Aqui a comparação é por NOME de casa, e onda nova de casa que já está na lista passa invisível.\n` +
+        `           NÃO usar esta linha para afirmar "zero informação nova".`
     )
   }
 } else {
@@ -208,7 +258,7 @@ if (m && mb) {
 
 // ── Veredito ──────────────────────────────────────────────────────────────
 
-const ok = passaColapso && passaContaminacao
+const ok = passaColapso && passaContaminacao && passaAtribuicao
 console.log(
   `\n${ok ? cor.ok : cor.mau}VEREDITO: ${ok ? 'APROVADO' : 'REPROVADO'}${cor.fim}` +
     (passaColapso ? '' : '  — COLAPSO') +

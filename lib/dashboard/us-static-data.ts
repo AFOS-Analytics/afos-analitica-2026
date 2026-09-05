@@ -37,6 +37,20 @@ export interface UsMediaAfos {
   vantagemDem: number
   metodo: string
   institutos: string[]
+  /**
+   * Quais rodadas entraram na média, uma entrada por pesquisa usada.
+   *
+   * ⚠️ OPCIONAL de propósito: chegou em 04/Set/2026 e o Neon guarda leituras
+   * gravadas antes disso. Marcar como obrigatório quebraria a leitura do
+   * histórico, que é o mesmo motivo dos opcionais de `qualidade` logo abaixo.
+   */
+  incluidas?: {
+    instituto: string
+    campoFim: string
+    amostraTipo: string | null
+    dem: number
+    rep: number
+  }[]
 }
 
 export interface UsPollsData {

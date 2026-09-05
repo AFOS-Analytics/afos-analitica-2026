@@ -162,6 +162,50 @@ const CASOS = [
     aprova: false,
     exige: 'CRESCEU',
   },
+  {
+    // 🔴 Portão instalado em 04/Set/2026 junto com `mediaAfos.incluidas`: a média
+    // DECLARADA tem de sair das linhas que o próprio arquivo declara. Aqui elas
+    // dão D+6.00 e o arquivo afirma D+9.00. Arquivo incoerente consigo mesmo
+    // passava por todas as outras réguas, porque nenhuma delas olhava para
+    // dentro da média.
+    nome: '🔴 a média DECLARADA não sai das linhas declaradas',
+    base: BASE_LIMPA,
+    atual: arquivo([linha(), linha({ campoFim: '2026-08-13' }), RECORTE_LEGITIMO], {
+      mediaAfos: {
+        dem: 50,
+        rep: 41,
+        vantagemDem: 9,
+        nPesquisas: 2,
+        nInstitutos: 1,
+        incluidas: [
+          { instituto: 'Instituto X', campoFim: '2026-08-20', amostraTipo: 'RV', dem: 47, rep: 41 },
+          { instituto: 'Instituto X', campoFim: '2026-08-13', amostraTipo: 'RV', dem: 47, rep: 41 },
+        ],
+      },
+    }),
+    aprova: false,
+    exige: 'NÃO reproduz',
+  },
+  {
+    // ✅ Controle NEGATIVO do portão acima: com `incluidas` COERENTE ele não pode
+    // reprovar, senão o portão novo estaria só dizendo não para tudo.
+    nome: '⭐ `incluidas` coerente com a média declarada tem de APROVAR',
+    base: BASE_LIMPA,
+    atual: arquivo([linha(), linha({ campoFim: '2026-08-13' }), RECORTE_LEGITIMO], {
+      mediaAfos: {
+        dem: 47,
+        rep: 41,
+        vantagemDem: 6,
+        nPesquisas: 2,
+        nInstitutos: 1,
+        incluidas: [
+          { instituto: 'Instituto X', campoFim: '2026-08-20', amostraTipo: 'RV', dem: 47, rep: 41 },
+          { instituto: 'Instituto X', campoFim: '2026-08-13', amostraTipo: 'RV', dem: 47, rep: 41 },
+        ],
+      },
+    }),
+    aprova: true,
+  },
 ]
 
 let falhas = 0
