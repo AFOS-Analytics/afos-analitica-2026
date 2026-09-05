@@ -52,12 +52,23 @@ Gerar síntese jornalística-didática do dia cruzando Polymarket + Pesquisas + 
 O arquivamento das dailies anteriores vem **antes** de escrever a do dia, não depois. A ETAPA 6 continua tendo o Wayback da daily nova; isto aqui é o **passivo acumulado**, que é outra coisa.
 
 ```bash
-# 1. pré-check: bate no /save/, NUNCA na raiz. A raiz responde 200 com o save bloqueado.
+# 1. QUAL daily rodar, e quanto ela custa. Não toca no archive.org.
+node scripts/wayback-prioridade.mjs --top=10
+
+# 2. pré-check: bate no /save/, NUNCA na raiz. A raiz responde 200 com o save bloqueado.
 curl -s -o /dev/null -w "%{http_code}\n" -m 45 "https://web.archive.org/save/https://example.com"
 
-# 2. se deu 200, rodar a fila do mais antigo para o mais novo
-npx tsx scripts/wayback-archive.ts 2026-07-29   # e assim por diante
+# 3. se deu 200, rodar a daily que o passo 1 apontou
+npx tsx scripts/wayback-archive.ts 2026-07-29
 ```
+
+📉 **A ordem é por EXPOSIÇÃO, e ela foi INVERTIDA em 04/Set/2026.** A versão anterior ordenava pela quantidade de URL arquivável e descontava os invólucros do Google News, porque o diagnóstico era que eles não resolviam. O diagnóstico caiu no mesmo dia: o invólucro resolve pelo `batchexecute`, e a medição por idade mostra **12 de 12 resolvidos, em dailies de 3 a 38 dias, sem decaimento**. O que estava quebrado era o método, não o link.
+
+Com **100% do passivo arquivável**, ordenar por quantidade vira ordenar por tamanho da daily, e isso não maximiza nada: cada chamada ao archive.org preserva uma matéria, venha de onde vier. O que diferencia passa a ser o risco, e o único eixo de risco mensurável aqui é há quanto tempo aquelas URLs estão sem cópia.
+
+⚠️ **"Rodou" não é "pronto", e o ledger mostra o resto.** A rodada de 04/Set gravou 6 de 23; a de 29/Jul abortou com 3 de 38. A daily volta para a fila com o que falta, em vez de sair dela por ter tido uma rodada.
+
+🕳️ **O que NÃO dá para medir, e por isso não entra na ordem:** se a URL de destino ainda está viva. Veículo que devolve 403 a robô é indistinguível de página morta, e são justamente Estadão e Grupo Globo que dominam o passivo. Podridão medida com instrumento cego não é medição.
 
 ⛔ **Se o pré-check der 000 ou 429, NÃO rodar e NÃO insistir.** Avisar o André **no começo da sessão**, não no fim. Rodar bloqueado não arquiva nada e aprofunda o bloqueio.
 

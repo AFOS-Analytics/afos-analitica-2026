@@ -1,30 +1,37 @@
 /**
- * wayback-prioridade.mjs — ordena o passivo do Wayback pelo que de fato se
- * PRESERVA em cada daily, e não pela data.
+ * wayback-prioridade.mjs — ordena o passivo do Wayback.
  *
- * 🔴 POR QUE ISTO EXISTE, medido em 04/Set/2026. O André pediu para priorizar
- * "as dailies com matéria de mais risco". A intuição diz veículo pequeno e
- * daily antiga. A medição diz outra coisa, e ela inverte a ordem:
+ * 🔄 REESCRITO em 04/Set/2026, no mesmo dia em que nasceu, porque a premissa
+ * dele caiu no mesmo dia.
  *
- *   518 URLs externas no passivo, e 265 delas, 51%, são INVÓLUCRO do Google News.
+ * A primeira versão ordenava pelo que se PRESERVA e descontava os invólucros do
+ * Google News, sob o diagnóstico de que eles não resolviam: o `news.google.com`
+ * responde 200 e faz o salto em JavaScript, então o `fetch` nunca sai do
+ * domínio. Isso empurrava para o fim da fila justamente as dailies com mais
+ * invólucro, 51% do passivo.
  *
- * ⚠️ E o invólucro não se resolve mais. O `news.google.com/rss/articles/...`
- * responde 200 e faz o salto em JAVASCRIPT, então o `fetch` do resolvedor nunca
- * sai do domínio. Medido em cinco dailies de 29/Jul a 03/Set: NENHUM invólucro
- * resolveu, inclusive os da véspera, ou seja não é decaimento por idade, é o
- * mecanismo que mudou. O payload novo é opaco, do tipo `AU_yqL...`, e não traz
- * a URL em texto, então também não dá para decodificar sem rede.
+ * ✅ O DIAGNÓSTICO ESTAVA ERRADO, e o conserto veio horas depois: o invólucro
+ * resolve pelo endpoint `batchexecute`, com os atributos `data-n-a-sg`,
+ * `data-n-a-ts` e `data-n-a-id` da própria página. Medido em 04/Set sobre 12
+ * invólucros de 6 dailies, de 3 a 38 dias de idade: **12 de 12 resolveram**.
  *
- * 🕳️ CONSEQUÊNCIA: arquivar uma dessas URLs preserva a casca de JavaScript do
- * Google, não a matéria. É o que a ficha de 12/Jul já dizia com outras palavras,
- * "preservar o carimbo do correio em vez da carta", e o conserto daquela vez
- * cobriu a Folha, que se resolve OFFLINE pelo `*` na URL, e apostou em seguir
- * redirect para o Google News. Essa aposta venceu.
- * → memory/feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo.md
+ * 🔑 E a medição por IDADE é o que derruba a ordenação antiga: não há
+ * decaimento. O invólucro de 38 dias resolve igual ao de 3. **O que estava
+ * quebrado era o método, não o link.**
  *
- * ✅ ENTÃO A PRIORIDADE É POR URL ARQUIVÁVEL, não por data: gastar a cota do
- * archive.org, que é escassa e nos bloqueia por volume, nas dailies onde cada
- * requisição preserva uma matéria de verdade.
+ * ⚠️ CONSEQUÊNCIA: com 100% do passivo arquivável, ordenar por "quantidade de
+ * URL arquivável" vira ordenar por tamanho da daily, e isso não maximiza nada.
+ * Cada chamada ao archive.org preserva uma matéria, seja ela de que daily for.
+ * O que diferencia uma daily da outra passa a ser o RISCO, e o único eixo de
+ * risco que dá para medir com honestidade aqui é a EXPOSIÇÃO: há quanto tempo
+ * aquelas URLs estão sem cópia.
+ *
+ * 🕳️ O QUE EU NÃO CONSEGUI MEDIR, e por isso não entra na ordem: se a URL de
+ * destino ainda está viva. Testar com HEAD produziria sinal falso, porque
+ * veículo que devolve 403 a robô é indistinguível de página morta, e são
+ * justamente Estadão e Grupo Globo que dominam o passivo. Podridão medida com
+ * instrumento cego não é medição.
+ * → memory/reference_bloqueio_de_borda_como_diagnosticar.md
  *
  * ⛔ Isto NÃO arquiva nada e não toca no archive.org. Só lê os .md e ordena.
  *
@@ -43,21 +50,30 @@ const LEDGER = 'data/wayback/rodadas.jsonl'
 const NAO_E_MATERIA = /polymarket\.com|divulgacandcontas\.tse\.jus\.br|afos-analytics\./
 
 /**
- * O invólucro se resolve SEM REDE?
+ * Como a URL chega até a matéria, e quanto custa.
  *
- * A Folha embute a URL final depois de um `*`, então sim. O Google News, não:
- * o salto é em JavaScript e o payload é opaco. Qualquer outro domínio é URL
- * direta e já aponta para a matéria.
+ * - `direta`          1 chamada ao archive.org
+ * - `resolve-offline` 1 chamada. A Folha embute a URL final depois de um `*`.
+ * - `resolve-por-rede` 2 chamadas ao Google mais 1 ao archive.org.
+ *
+ * 📌 As três são arquiváveis. A diferença é de CUSTO, não de possibilidade, e
+ * foi confundir as duas coisas que produziu a ordenação errada da primeira
+ * versão.
  */
 export function classificar(url) {
   if (/redir\.folha\.com\.br\/.*\*https?:\/\//.test(url)) return 'resolve-offline'
-  if (url.includes('news.google.com/rss/articles/')) return 'involucro-opaco'
+  if (url.includes('news.google.com/rss/articles/')) return 'resolve-por-rede'
   return 'direta'
 }
 
-/** Só conta o que, arquivado, guarda a matéria. */
-export function ehArquivavel(url) {
-  return classificar(url) !== 'involucro-opaco'
+/** Chamadas ao archive.org, que é o recurso escasso e o que nos bloqueia. */
+export function custoArchive(urls) {
+  return urls.length
+}
+
+/** Chamadas ao Google News, que é throughput e não cota do archive.org. */
+export function custoGoogle(urls) {
+  return urls.filter((u) => classificar(u) === 'resolve-por-rede').length * 2
 }
 
 export function urlsDaDaily(markdown) {
@@ -65,64 +81,105 @@ export function urlsDaDaily(markdown) {
   return [...new Set(brutas)].filter((u) => !NAO_E_MATERIA.test(u))
 }
 
-export function ranquear(dailies) {
+/**
+ * Quantas URLs de cada daily já foram arquivadas, somando as rodadas do ledger.
+ *
+ * ⚠️ "Rodou" não é "pronto". A rodada de 04/Set gravou 6 de 23 e as 17 falhas
+ * seguem sem explicação; a de 29/Jul abortou no disjuntor com 3 de 38. Marcar a
+ * daily como feita porque houve rodada esconderia exatamente esse resto.
+ */
+export function lerLedger(texto) {
+  const porDaily = new Map()
+  for (const l of (texto ?? '').split('\n').filter(Boolean)) {
+    try {
+      const r = JSON.parse(l)
+      if (!r.daily) continue
+      const a = porDaily.get(r.daily) ?? { ok: 0, rodadas: 0, abortou: false }
+      a.ok += Number(r.ok) || 0
+      a.rodadas++
+      a.abortou = a.abortou || Boolean(r.abortou)
+      porDaily.set(r.daily, a)
+    } catch {
+      /* linha quebrada não invalida o resto da ordenação */
+    }
+  }
+  return porDaily
+}
+
+/**
+ * 🔑 A ordem é por EXPOSIÇÃO: a daily mais antiga que ainda tem URL sem cópia
+ * vem primeiro. Empate se desfaz pela que tem mais URLs faltando.
+ *
+ * Dailies sem nada faltando saem da fila e são contadas à parte.
+ */
+export function ranquear(dailies, ledger = new Map()) {
   return dailies
     .map((d) => {
-      const cont = { direta: 0, 'resolve-offline': 0, 'involucro-opaco': 0 }
+      const cont = { direta: 0, 'resolve-offline': 0, 'resolve-por-rede': 0 }
       for (const u of d.urls) cont[classificar(u)]++
+      const feito = ledger.get(d.data)?.ok ?? 0
       return {
         data: d.data,
         total: d.urls.length,
-        arquivavel: cont.direta + cont['resolve-offline'],
-        involucro: cont['involucro-opaco'],
         direta: cont.direta,
         folha: cont['resolve-offline'],
+        involucro: cont['resolve-por-rede'],
+        arquivado: Math.min(feito, d.urls.length),
+        falta: Math.max(0, d.urls.length - feito),
+        custoGoogle: custoGoogle(d.urls),
+        rodadas: ledger.get(d.data)?.rodadas ?? 0,
+        abortou: ledger.get(d.data)?.abortou ?? false,
       }
     })
-    // 🔑 Ordena pelo que se PRESERVA, e desempata pela data mais antiga, que é
-    // a que está exposta há mais tempo.
-    .sort((a, b) => b.arquivavel - a.arquivavel || a.data.localeCompare(b.data))
+    .sort((a, b) => a.data.localeCompare(b.data) || b.falta - a.falta)
 }
 
 function principal() {
   const desde = process.argv.find((a) => a.startsWith('--desde='))?.slice(8) ?? '2026-07-29'
   const top = Number(process.argv.find((a) => a.startsWith('--top='))?.slice(6) ?? 0)
 
-  const jaRodou = new Set()
-  if (existsSync(LEDGER)) {
-    for (const l of readFileSync(LEDGER, 'utf8').split('\n').filter(Boolean)) {
-      try {
-        const r = JSON.parse(l)
-        if (!r.abortou && r.ok > 0) jaRodou.add(r.daily)
-      } catch {
-        /* linha quebrada não invalida o resto da ordenação */
-      }
-    }
-  }
+  const ledger = existsSync(LEDGER) ? lerLedger(readFileSync(LEDGER, 'utf8')) : new Map()
 
   const dailies = readdirSync(DIR)
     .filter((f) => /^\d{4}-\d\d-\d\d\.md$/.test(f) && f.slice(0, 10) >= desde)
     .sort()
     .map((f) => ({ data: f.slice(0, 10), urls: urlsDaDaily(readFileSync(`${DIR}/${f}`, 'utf8')) }))
 
-  const r = ranquear(dailies)
+  const r = ranquear(dailies, ledger)
   const T = r.reduce((s, x) => s + x.total, 0)
-  const A = r.reduce((s, x) => s + x.arquivavel, 0)
   const I = r.reduce((s, x) => s + x.involucro, 0)
+  const F = r.reduce((s, x) => s + x.falta, 0)
+  const A = r.reduce((s, x) => s + x.arquivado, 0)
+  const G = r.reduce((s, x) => s + x.custoGoogle, 0)
+  const hoje = new Date()
 
-  console.log(`\n📉 PASSIVO DO WAYBACK, ordenado pelo que se PRESERVA · desde ${desde}\n`)
-  console.log(`   ${r.length} dailies · ${T} URLs externas`)
-  console.log(`   ${A} arquiváveis (${Math.round((A / T) * 100)}%) · ${I} invólucro opaco do Google News (${Math.round((I / T) * 100)}%)`)
-  console.log(`\n   ⚠️ O invólucro do Google News NÃO resolve: o salto é em JavaScript e o payload é opaco.`)
-  console.log(`      Arquivá-lo preserva a casca, não a matéria. Por isso ele não conta na coluna arquivável.\n`)
-  console.log('   data         arquiv.  invól.  direta  folha  total  ledger')
-  const lista = top > 0 ? r.slice(0, top) : r
+  console.log(`\n📉 PASSIVO DO WAYBACK · ordenado por EXPOSIÇÃO, não por contagem\n`)
+  console.log(`   ${r.length} dailies · ${T} URLs externas · ${A} já com cópia · ${F} faltando`)
+  console.log(`   TODAS as ${T} são arquiváveis. Dessas, ${I} (${Math.round((I / T) * 100)}%) passam pelo invólucro do Google News.`)
+  console.log(`\n   ✅ O invólucro RESOLVE. Medido em 04/Set/2026: 12 de 12, em dailies de 3 a 38 dias.`)
+  console.log(`      Sem decaimento por idade. O que estava quebrado era o MÉTODO, não o link.`)
+  console.log(`\n   💰 Custo do passivo inteiro: ${F} chamadas ao archive.org, mais ${G} ao Google News.`)
+  console.log(`      A cota escassa é a do archive.org, que é quem nos bloqueia por volume.`)
+  console.log(`\n   🕳️ NÃO foi possível medir se a URL de destino ainda está viva: veículo que devolve`)
+  console.log(`      403 a robô é indistinguível de página morta, e são Estadão e Globo que dominam`)
+  console.log(`      o passivo. Por isso a ordem é por exposição, e não por podridão estimada.\n`)
+
+  console.log('   data        idade  URLs  invól.  direta  folha   feito  falta  Google  ledger')
+  const fila = r.filter((x) => x.falta > 0)
+  const lista = top > 0 ? fila.slice(0, top) : fila
   for (const x of lista) {
+    const idade = Math.round((hoje - Date.parse(`${x.data}T12:00:00Z`)) / 86400000)
+    const marca = x.rodadas === 0 ? '' : x.abortou ? `${x.rodadas}x, abortou` : `${x.rodadas}x`
     console.log(
-      `   ${x.data}  ${String(x.arquivavel).padStart(7)}${String(x.involucro).padStart(8)}${String(x.direta).padStart(8)}${String(x.folha).padStart(7)}${String(x.total).padStart(7)}  ${jaRodou.has(x.data) ? 'rodou' : ''}`
+      `   ${x.data}  ${String(idade).padStart(4)}d  ${String(x.total).padStart(4)}  ${String(x.involucro).padStart(6)}  ${String(x.direta).padStart(6)}  ${String(x.folha).padStart(5)}  ${String(x.arquivado).padStart(6)}  ${String(x.falta).padStart(5)}  ${String(x.custoGoogle).padStart(6)}  ${marca}`
     )
   }
-  console.log(`\n   "ledger" marca a daily que já teve rodada com sucesso e sem abortar, lida de ${LEDGER}.\n`)
+
+  const prontas = r.filter((x) => x.falta === 0)
+  if (prontas.length) console.log(`\n   ${prontas.length} daily(s) sem nada faltando: ${prontas.map((x) => x.data).join(', ')}`)
+
+  console.log(`\n   ▶ próxima: ${fila[0]?.data ?? '(fila vazia)'}, exposta há ${fila[0] ? Math.round((hoje - Date.parse(`${fila[0].data}T12:00:00Z`)) / 86400000) : '-'} dias, ${fila[0]?.falta ?? 0} URLs faltando.`)
+  console.log(`   ⛔ Só depois da pausa de 3 a 4 dias SEM sondar. O host está bloqueando.\n`)
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) principal()
