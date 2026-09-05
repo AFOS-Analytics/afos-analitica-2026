@@ -11,6 +11,7 @@
  */
 import { appendFileSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
+import { pathToFileURL } from 'url'
 import { isValidDate, readDailyMarkdown, extractExternalUrls } from './lib/daily-files'
 
 const WAYBACK_BASE = 'https://web.archive.org/save/'
@@ -37,21 +38,94 @@ async function resolveRedirect(url: string): Promise<string> {
   const folha = url.match(/^https?:\/\/redir\.folha\.com\.br\/.*?\*(https?:\/\/.+)$/)
   if (folha) return folha[1]
 
-  // Google News: seguir o redirect até a matéria do veículo.
+  // Google News: resolver pelo endpoint interno, porque SEGUIR REDIRECT PAROU
+  // DE FUNCIONAR.
+  //
+  // 🔴 Medido em 04/Set/2026. O `news.google.com/rss/articles/...` responde 200
+  // e faz o salto em JAVASCRIPT, então `redirect: 'follow'` nunca sai do
+  // domínio: em cinco dailies de 29/Jul a 03/Set, NENHUM invólucro resolveu,
+  // inclusive os da véspera. Não é decaimento por idade, é o mecanismo que
+  // mudou. E o payload novo é opaco, do tipo `AU_yqL...`, sem a URL em texto,
+  // então também não dá para decodificar sem rede.
+  //
+  // 🕳️ O estrago era silencioso: o arquivador dizia OK e preservava a CASCA de
+  // JavaScript do Google, não a matéria. Na rodada de 04/Set, das 23 URLs só 3
+  // foram resolvidas, todas da Folha. E 265 das 518 URLs do passivo, 51%, são
+  // invólucro, ou seja metade da cota do archive.org, que é escassa, ia para
+  // casca. É a mesma armadilha da ficha de 12/Jul: preservar o carimbo do
+  // correio em vez da carta.
+  //
+  // ✅ O caminho que funciona: a página do invólucro carrega os atributos
+  // `data-n-a-sg`, `data-n-a-ts` e `data-n-a-id`, e com eles o endpoint
+  // `batchexecute` devolve a URL do veículo. Medido: 4 de 4.
+  //
+  // ⚠️ É endpoint INTERNO do Google, então pode mudar sem aviso. Por isso a
+  // falha aqui NÃO derruba nada: cai para a URL original, que é o que o
+  // arquivador já fazia. O que não pode voltar a acontecer é a falha passar
+  // como sucesso.
   if (url.includes('news.google.com/rss/articles/')) {
-    try {
-      const res = await fetch(url, {
-        redirect: 'follow',
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36' },
-        signal: AbortSignal.timeout(20000),
-      })
-      const final = res.url
-      if (final && !final.includes('news.google.com')) return final
-    } catch {
-      // rede falhou: cair para a URL original (melhor tentar que pular)
-    }
+    const resolvida = await resolverGoogleNews(url)
+    if (resolvida) return resolvida
   }
   return url
+}
+
+const UA_NAVEGADOR =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36'
+
+/** Os três atributos que o endpoint exige. Sem os três, não há o que pedir. */
+export function extrairAtributos(html: string): { sg: string; ts: string; id: string } | null {
+  const sg = html.match(/data-n-a-sg="([^"]+)"/)?.[1]
+  const ts = html.match(/data-n-a-ts="([^"]+)"/)?.[1]
+  const id = html.match(/data-n-a-id="([^"]+)"/)?.[1]
+  return sg && ts && id ? { sg, ts, id } : null
+}
+
+/**
+ * A URL do VEÍCULO dentro da resposta do batchexecute.
+ * ⚠️ Descarta os domínios do próprio Google, senão o primeiro casamento é um
+ * `gstatic` e o arquivador volta a preservar coisa que não é a matéria.
+ */
+export function extrairUrlDoVeiculo(texto: string): string | null {
+  // ⚠️ Aceita a URL CRUA e a ESCAPADA. Medido em 04/Set/2026 o endpoint devolveu
+  // barra normal, mas a resposta do batchexecute é JSON dentro de JSON e a mesma
+  // URL pode vir com as barras escapadas. A primeira versão deste extrator
+  // parava no primeiro contrabarra e capturava só o HOST, jogando o caminho
+  // fora, o que faria o arquivador preservar a HOME do veículo em vez da
+  // matéria: exatamente o defeito que ele existe para consertar, de novo.
+  for (const m of texto.matchAll(/https?:(?:\\?\/){2}[^"\s]+/g)) {
+    const u = m[0].replace(/\\\//g, '/').replace(/[\\"',)\]}]+$/, '')
+    if (!/news\.google|www\.google|gstatic|googleapis|schema\.org|policies\.google|support\.google/.test(u)) return u
+  }
+  return null
+}
+
+export function montarPayload(a: { sg: string; ts: string; id: string }): string {
+  const inner = JSON.stringify([
+    'garturlreq',
+    [['X', 'X', ['X', 'X'], null, null, 1, 1, 'US:en', null, 1, null, null, null, null, null, 0, 1], 'X', 'X', 1, [1, 1, 1], 1, 1, null, 0, 0, null, 0],
+    a.id,
+    Number(a.ts),
+    a.sg,
+  ])
+  return JSON.stringify([[['Fbv4je', inner, null, 'generic']]])
+}
+
+async function resolverGoogleNews(url: string): Promise<string | null> {
+  try {
+    const pagina = await fetch(url, { headers: { 'User-Agent': UA_NAVEGADOR }, signal: AbortSignal.timeout(25000) })
+    const attrs = extrairAtributos(await pagina.text())
+    if (!attrs) return null
+    const res = await fetch('https://news.google.com/_/DotsSplashUi/data/batchexecute', {
+      method: 'POST',
+      headers: { 'User-Agent': UA_NAVEGADOR, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+      body: 'f.req=' + encodeURIComponent(montarPayload(attrs)),
+      signal: AbortSignal.timeout(25000),
+    })
+    return extrairUrlDoVeiculo(await res.text())
+  } catch {
+    return null
+  }
 }
 
 async function archiveOnce(url: string): Promise<{ ok: boolean; error?: string }> {
@@ -221,4 +295,8 @@ async function main() {
   process.exit(fail > 0 ? 1 : 0)
 }
 
-main()
+// ⚠️ `main()` solto rodava no IMPORT, entao o arquivo de teste disparava uma
+// rodada inteira em vez de exercitar as funcoes puras. Guard de entrada com
+// `pathToFileURL`, que e o que casa no Windows: `import.meta.url` traz tres
+// barras e comparacao montada a mao falha em silencio.
+if (import.meta.url === pathToFileURL(process.argv[1]).href) main()
