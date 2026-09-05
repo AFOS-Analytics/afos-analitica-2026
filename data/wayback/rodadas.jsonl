@@ -1,0 +1,2 @@
+{"quando": "2026-09-04T23:35:00.000Z", "daily": "2026-09-04", "urls": 23, "ok": 6, "fail": 17, "abortou": false, "resolvidas": 9, "fonte": "semeado a mao a partir da saida da rodada: o ledger entrou no script DEPOIS desta rodada comecar"}
+{"quando": "2026-09-05T00:55:00.000Z", "daily": "2026-07-29", "urls": 38, "ok": 3, "fail": 5, "abortou": true, "resolvidas": 0, "fonte": "semeado a mao. Abortada pelo disjuntor com a SONDA tambem falhando, ou seja bloqueio de host real"}

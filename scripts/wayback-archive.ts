@@ -9,6 +9,8 @@
  * Throttle: 3s entre requests para nao sobrecarregar archive.org.
  * Custo: zero (Wayback Machine e' gratuito).
  */
+import { appendFileSync, mkdirSync } from 'fs'
+import { dirname } from 'path'
 import { isValidDate, readDailyMarkdown, extractExternalUrls } from './lib/daily-files'
 
 const WAYBACK_BASE = 'https://web.archive.org/save/'
@@ -183,6 +185,39 @@ async function main() {
 
   console.log(`\nResumo: ${ok}/${urls.length} arquivados${fail > 0 ? `, ${fail} falharam` : ''}${abortou ? ' (rodada ABORTADA pelo disjuntor)' : ''}.`)
   if (resolvidas > 0) console.log(`${resolvidas} URL(s) de redirect resolvidas para a matéria antes de arquivar.`)
+
+  // 📓 LEDGER, instalado 04/Set/2026.
+  //
+  // 🔴 Até aqui o script NÃO REGISTRAVA NADA, e por isso a pergunta "o que
+  // falta arquivar?" só tinha resposta de memória. A ficha dizia "faltam 5 dias
+  // de agosto"; a medição pela API de disponibilidade, feita hoje, achou 27 de
+  // 38 dailies sem snapshot nas URLs amostradas. A lembrança estava errada por
+  // uma ordem de grandeza, e ninguém tinha como saber.
+  //
+  // Regra que depende de um número que ninguém grava não roda.
+  // → memory/feedback_regra_que_depende_de_numero_que_ninguem_grava.md
+  try {
+    const ledger = 'data/wayback/rodadas.jsonl'
+    mkdirSync(dirname(ledger), { recursive: true })
+    appendFileSync(
+      ledger,
+      JSON.stringify({
+        quando: new Date().toISOString(),
+        daily: date,
+        urls: urls.length,
+        ok,
+        fail,
+        abortou,
+        resolvidas,
+      }) + '\n'
+    )
+    console.log(`📓 rodada anotada em ${ledger}`)
+  } catch (e) {
+    // ⚠️ Falha ao anotar NÃO derruba a rodada: o arquivamento já aconteceu e
+    // perder o registro é menos grave que perder o trabalho. Mas AVISA, porque
+    // silêncio aqui recria exatamente o vão que este ledger fecha.
+    console.error(`⚠️ não consegui anotar a rodada no ledger: ${(e as Error).message}`)
+  }
   process.exit(fail > 0 ? 1 : 0)
 }
 
