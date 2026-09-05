@@ -27,13 +27,19 @@ config({ path: '.env' })
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'fs'
 import { join } from 'path'
+import { pathToFileURL } from 'url'
 
 const APLICAR = process.argv.includes('--apply')
 const DIR_ARQUIVO = join(process.cwd(), 'public', 'us-press-archive')
 const PISO = join(process.cwd(), 'public', 'us-press-data.json')
 
 /** `us-press-02-08-2026` → `2026-08-02`, para o arquivo ordenar sozinho. */
-function isoDoSlug(slug: string): string | null {
+/**
+ * `us-press-04-09-2026` -> `2026-09-04`. O slug do Neon é DD-MM-AAAA e o
+ * arquivo é ISO; a conversão vive AQUI e é exportada, para quem precisar dela
+ * não redigitar a regra. Quem lê o arquivo e compara com o banco usa esta.
+ */
+export function isoDoSlug(slug: string): string | null {
   const m = slug.match(/^us-press-(\d{2})-(\d{2})-(\d{4})$/)
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null
 }
@@ -113,4 +119,12 @@ async function main() {
   await prisma.$disconnect()
 }
 
-main().catch(e => { console.error('ERRO:', (e as Error).message.slice(0, 400)); process.exit(1) })
+/**
+ * 🔴 GUARDA DE IMPORT. Sem esta linha, `main()` roda no simples `import` deste
+ * arquivo, e com `--apply` na linha de comando de quem importou ele ESCREVE.
+ * É o defeito de 02/Ago/2026, quando um ensaio gravou no banco por importar um
+ * módulo que executa no carregamento. Só roda quando é o arquivo chamado.
+ */
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(e => { console.error('ERRO:', (e as Error).message.slice(0, 400)); process.exit(1) })
+}

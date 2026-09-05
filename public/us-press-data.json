@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-05",
-  "fetchedAt": "2026-09-05T02:05:14.799Z",
+  "fetchedAt": "2026-09-05T15:28:44.321Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,108 +113,108 @@
     }
   ],
   "qualidade": {
-    "lidos": 178,
-    "naLista": 48,
-    "foraDaLista": 130,
+    "lidos": 186,
+    "naLista": 88,
+    "foraDaLista": 98,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 4,
-    "veiculosRepresentados": 8,
+    "descartadosPorAcompanhamento": 25,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 35,
-    "publicadosComLinkCanonico": 10,
-    "publicadosViaGoogleNews": 0,
+    "lidosEmFeedProprio": 39,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Fake Republican Midterm Convention Website Redirects Visitors to Epstein Files",
-      "url": "https://www.nytimes.com/2026/09/04/us/politics/republican-midterm-convention-epstein-files.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-04T23:02:10.000Z",
+      "titulo": "\"We're stuck:\" GOP accepts Trump's all-about-me midterms",
+      "url": "https://www.axios.com/2026/09/05/republicans-stuck-trump-midterms",
+      "casa": "Axios",
+      "publicadoEm": "2026-09-05T13:19:36.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "WATCH: Illegal alien busted in battleground state after allegedly committing voter fraud",
-      "url": "https://www.foxnews.com/politics/watch-illegal-alien-busted-battleground-state-allegedly-committing-voter-fraud",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-04T22:56:03.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Judge extends block on Trump executive order seeking to limit mail voting in midterms",
-      "url": "https://abcnews.com/Politics/wireStory/federal-judge-extends-block-trump-executive-order-seeking-136214751",
-      "casa": "ABC News",
-      "publicadoEm": "2026-09-04T22:34:26.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump administration rolls out 5 voter fraud prosecutions ahead of midterms",
-      "url": "https://www.nbcnews.com/politics/justice-department/trump-administration-rolls-5-voter-fraud-prosecutions-ahead-midterms-rcna596089",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-04T21:37:54.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "What to know about latest Missouri redistricting ruling",
-      "url": "https://thehill.com/homenews/state-watch/6072305-missouri-redistricting-latest-news/",
+      "titulo": "Live updates: Hegseth eyes Driscoll replacement, Missouri asks to restore GOP-friendly congressional map",
+      "url": "https://thehill.com/homenews/administration/6072768-live-updates-hegseth-eyes-driscoll-replacement-missouri-asks-to-restore-gop-friendly-congressional-map/",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-04T20:50:01.000Z",
+      "publicadoEm": "2026-09-05T13:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "El-Sayed divided Michigan Democrats. Whether they unify could decide Senate control",
-      "url": "https://www.npr.org/2026/09/04/nx-s1-5946840/el-sayed-divided-michigan-democrats-whether-they-unify-could-decide-senate-control",
+      "titulo": "Missouri asks Supreme Court to restore GOP-friendly congressional map",
+      "url": "https://thehill.com/regulation/court-battles/6072940-missouri-redistricting-gop-map-supreme-court/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-05T11:45:47.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Week in Politics: Trump's face on the coin; reshaping the capital; the midterms",
+      "url": "https://www.npr.org/2026/09/05/nx-s1-5957499/week-in-politics-trumps-face-on-the-coin-reshaping-the-capital-the-midterms",
       "casa": "NPR",
-      "publicadoEm": "2026-09-04T20:41:06.000Z",
+      "publicadoEm": "2026-09-05T11:43:22.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump says he will spend some, not all, super PAC money on midterms",
-      "url": "https://www.washingtonpost.com/politics/2026/09/04/trump-says-he-will-spend-some-political-war-chest-midterms/",
+      "titulo": "Musk has started spending money to help Ken Paxton. Will it help change the course of the Texas Senate race?",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9yaHZuX3J5LXpiV1BpTTZQX2Z5RXNWT0d0Q1FBWVFiSFZhV3J2ZHJBU2N2TnAtN0NEUlJOc0dNSmpHN1c0c1hVb0FTRWhHd1FiSWpzMG5FVFROcVE5dW90OE1Vc1pMN0tjZHlyTWx2aTZFM0VTQmtYVw?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-05T10:30:30.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The mystery behind an audio clip that helped upend a Senate race",
+      "url": "https://www.washingtonpost.com/politics/2026/09/05/mystery-behind-an-audio-clip-that-helped-upend-senate-race/",
       "casa": "The Washington Post",
-      "publicadoEm": "2026-09-04T20:30:00.000Z",
+      "publicadoEm": "2026-09-05T10:00:01.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Melania Trump will not attend the Republican midterm convention",
-      "url": "https://www.washingtonpost.com/politics/2026/09/04/first-lady-melania-trump-will-not-attend-republican-midterm-convention/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-04T19:30:00.000Z",
+      "titulo": "Missouri AG files petition asking Supreme Court to revive Trump-backed redistricting map",
+      "url": "https://www.foxnews.com/politics/missouri-ag-files-petition-asking-supreme-court-revive-trump-backed-redistricting-map",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-05T09:17:17.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Pappas keeps focus on November amid signs of tightening Senate primary",
-      "url": "https://rollcall.com/2026/09/04/pappas-keeps-focus-on-november-amid-signs-of-tightening-senate-primary/",
-      "casa": "Roll Call",
-      "publicadoEm": "2026-09-04T19:07:16.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Can a ‘Prairie Populist’ Democrat Win a Senate Seat in Trump’s Iowa?",
-      "url": "https://www.nytimes.com/2026/09/04/us/politics/josh-turek-iowa-senate-race.html",
+      "titulo": "Gallup Polls Show Democrats Outnumber Republicans Ahead of 2026 Midterm Elections",
+      "url": "https://www.nytimes.com/2026/09/05/us/politics/democrats-republicans-voters-gallup-midterms.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-04T16:42:17.000Z",
+      "publicadoEm": "2026-09-05T09:03:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "More Americans Are Identifying as Democrats Ahead of Midterms",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNdjdmRWh1QXE4cjhXWk9jZWk2bng1SjZpRVgxcnFQQTRGMS1WUXZKUzJLZnlfNFVpNmE3V28xbkc0Sk1feVFvYTV3ZkRKWkw5T1dNVFIxYURFckN1cFkzalRPNHRBaUNTQlE3MVVZM3NSSC13Mlp2WFdQRTJlS1c1bGJQSTVtdEJNV244ZnRfbk1mRTJKVS0wZ1BEMlQ?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-05T09:03:09.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican House candidates tone down Trump on their campaign websites",
+      "url": "https://www.washingtonpost.com/elections/2026/09/05/republican-house-candidates-tone-down-trump-their-campaign-websites/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-05T09:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
