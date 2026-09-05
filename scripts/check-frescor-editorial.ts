@@ -88,10 +88,32 @@ for (const arquivo of ARQUIVOS) {
   }
 
   // ── Régua 1: todo "leitura confirmada de" é do carimbo do PRÓPRIO arquivo.
+  //
+  // ⚠️ EXCEÇÃO DECLARADA, instalada em 05/Set/2026, e ela existe porque a régua
+  // acusava um caso LEGÍTIMO. Quando a trava de captura não confirma um livro,
+  // a régua da casa manda manter o preço da última leitura confirmada e DIZER
+  // isso ao leitor. Esse preço carrega, com razão, o carimbo do dia anterior, e
+  // procedência é o que não se apaga.
+  //
+  // 🔑 O que separa o caso legítimo do bloco esquecido é a DECLARAÇÃO ao lado:
+  // carimbo velho MAIS "não publica preço novo" é a régua sendo cumprida;
+  // carimbo velho sozinho é bloco que sobreviveu à regeração. Sem a distinção, a
+  // rodada honesta ficava sem saída: ou reprovava no portão, ou apagava a
+  // procedência do preço, que é pior.
+  const JANELA_DECLARACAO = 400
+  const declaraSemPrecoNovo = (texto: string, pos: number) =>
+    /não publica (?:preço|valor) novo/i.test(texto.slice(Math.max(0, pos - JANELA_DECLARACAO), pos + JANELA_DECLARACAO))
   const carimbos = new Map<string, number>()
+  const carimbosDeclarados = new Map<string, number>()
   for (const m of bruto.matchAll(/leitura confirmada de (\d{1,2}\/\w{3})[, ]+(\d{2}:\d{2})/gi)) {
     const chave = `${normalizaData(m[1])} ${m[2]}`
-    carimbos.set(chave, (carimbos.get(chave) ?? 0) + 1)
+    const destino = declaraSemPrecoNovo(bruto, m.index ?? 0) ? carimbosDeclarados : carimbos
+    destino.set(chave, (destino.get(chave) ?? 0) + 1)
+  }
+  for (const [chave, n] of carimbosDeclarados) {
+    if (chave !== esperado) {
+      console.log(`   [carimbo declarado] ${arquivo}: ${n}x leitura de ${chave} com "não publica preço novo" ao lado. Livro sem confirmação nesta rodada, procedência mantida.`)
+    }
   }
   for (const [chave, n] of carimbos) {
     if (chave !== esperado) {

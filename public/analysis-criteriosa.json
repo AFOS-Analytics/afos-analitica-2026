@@ -1,13 +1,13 @@
 {
-  "updatedAt": "04/09/2026, 19:53",
-  "subtitle": "Cruzamento de 4 de setembro de 2026, leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), livro presidencial em USD 143,62M. ⭐ NENHUMA PESQUISA NACIONAL NOVA FOI DIVULGADA HOJE, e o registro do TSE diz por quê: sete pesquisas nacionais estão EM CAMPO neste momento e nenhuma delas tem divulgação marcada antes de 06/Set. ⭐ E FOI NO DIA SEM PESQUISA QUE O PREÇO MAIS ANDOU: a distância entre os dois primeiros passou de 11,65pp para 15,35pp, uma abertura de 3,70pp, depois de encolher em quatro leituras seguidas. A referência de pesquisa continua sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp), e ela não mudou desde ontem.",
+  "updatedAt": "05/09/2026, 13:29",
+  "subtitle": "Cruzamento de 5 de setembro de 2026, leitura confirmada de 05/Set, 13:29 BRT (16:29 UTC) nos livros de 2º lugar, de 3º lugar e de impeachment no Supremo, livro presidencial em USD 143,79M. ⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O LIVRO DE VENCEDOR, cujos valores seguem sendo os da leitura confirmada de 04/Set, 19:53 BRT. ⭐ E PELO SEGUNDO DIA SEGUIDO NENHUMA PESQUISA NACIONAL FOI DIVULGADA: o registro do TSE mostra oito nacionais em campo agora, com divulgação marcada de 06 a 10/Set.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 55,50% (vol USD 9,72M acumulado), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), alta de 1,00pp sobre a leitura de 03/Set, 23:45. PESQUISA: sem leitura nova. A mais recente segue sendo a Datafolha de 03/Set, que o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou.",
+      "header": "PREÇO: 55,50% (vol USD 9,76M acumulado) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 2º lugar do 1º turno cedeu 2,25pp e está em 5,35% (vol USD 470 mil), leitura confirmada de 05/Set, 13:29 BRT. PESQUISA: sem leitura nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp), que o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou.",
       "fortes": [
         "Subiu 1,00pp e reabriu a distância para o segundo, que passa de 11,65pp para 15,35pp depois de quatro leituras seguidas encolhendo.",
         "A abertura de 3,70pp aconteceu num dia sem nenhuma pesquisa nacional nova, ou seja, sem informação de intenção de voto entrando no mercado.",
@@ -22,14 +22,14 @@
         "A PoderData de 03/Set continua sendo a única das três casas da janela a colocá-lo atrás no 2º turno, por 44% a 45%.",
         "O preço subiu sem que nenhuma medição de intenção de voto tenha sido publicada hoje, então não há pesquisa que sustente a alta."
       ],
-      "analise": "O dia dele é o oposto do de ontem. Em 03/Set o preço não se moveu por mais de oito horas enquanto três pesquisas nacionais eram publicadas em 48 horas. Hoje nenhuma pesquisa nacional foi divulgada e o preço dele subiu 1,00pp, para 55,50% (vol USD 9,72M acumulado). A distância para o segundo reabriu 3,70pp e voltou a 15,35pp, desfazendo boa parte do estreitamento acumulado desde 01/Set. 📌 O painel registra a coincidência de datas e não atribui causa: não existe pesquisa nova para explicar o movimento, e o único ato de alto impacto do dia é do Supremo, não da campanha. ⚠️ E há um contraste dentro da própria leitura dele: no contrato de vencedor ele subiu, e no de 2º lugar do 1º turno cedeu 2,90pp, de 10,50% para 7,60%. São dois mercados diferentes sobre o mesmo nome, e nesta leitura eles discordam."
+      "analise": "O que se mede sobre ele nesta sexta é uma ausência dupla, e ela tem explicação registrada. Não houve pesquisa nacional nova pelo segundo dia seguido, e o registro do TSE mostra oito nacionais em campo neste momento, com divulgações marcadas de 06 a 10/Set. E o contrato de vencedor não recebeu preço novo, porque as duas leituras desta rodada não confirmaram dentro da tolerância da casa nesse livro. O que se moveu foi o contrato de 2º lugar do 1º turno, em que ele cedeu 2,25pp e está em 5,35% (vol USD 470 mil). É a segunda queda seguida dele nesse mercado, que mede uma coisa diferente do de vencedor: a probabilidade de terminar o 1º turno em segundo lugar."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 40,15% (vol USD 9,68M acumulado), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), queda de 2,70pp sobre a leitura de 03/Set, 23:45, e a maior variação de qualquer nome no contrato de vencedor nesta leitura. PESQUISA: sem leitura nova. A Datafolha de 03/Set o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% a 46%.",
+      "header": "PREÇO: 40,15% (vol USD 9,69M acumulado) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 2º lugar do 1º turno subiu 2,00pp e está em 89,50% (vol USD 597 mil), leitura confirmada de 05/Set, 13:29 BRT. PESQUISA: sem leitura nova. A Datafolha de 03/Set o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%.",
       "fortes": [
         "⭐ NO CONTRATO DE 2º LUGAR DO 1º TURNO ELE SUBIU 4,00pp, de 83,50% para 87,50% (vol USD 586 mil).",
         "A Datafolha de 03/Set, ainda a pesquisa mais recente, o mantém a 2 pontos no 2º turno, 44% contra 46%, dentro da margem declarada de 2pp.",
@@ -44,14 +44,14 @@
         "⚠️ OS DOIS CONTRATOS DELE ANDARAM EM DIREÇÕES OPOSTAS NA MESMA LEITURA: menos 2,70pp no de vencedor e mais 4,00pp no de 2º lugar do 1º turno.",
         "No contrato de 3º lugar do 1º turno ele aparece com 1,55% (vol USD 68 mil), e esse mercado precifica um cenário em que ele não chega aos dois primeiros."
       ],
-      "analise": "A leitura dele é a mais estranha do dia, e vale descrevê-la sem arredondar. No contrato de vencedor ele cedeu 2,70pp e está em 40,15% (vol USD 9,68M acumulado), a maior queda de qualquer nome do livro. No contrato de 2º lugar do 1º turno, no mesmo intervalo, ele subiu 4,00pp e está em 87,50% (vol USD 586 mil). ⭐ OS DOIS MERCADOS SÃO SOBRE O MESMO NOME E ANDARAM EM SENTIDOS CONTRÁRIOS. Uma leitura possível é que o mercado tenha reduzido a chance de ele vencer e aumentado a de ele terminar o 1º turno em segundo, mas o painel não afirma isso: registra que os dois contratos discordaram e que nenhuma pesquisa nova foi publicada hoje para arbitrar a discordância. 📌 A pesquisa mais recente continua sendo a Datafolha de 03/Set, que o mantém a 2 pontos no 2º turno."
+      "analise": "O movimento dele nesta sexta está inteiro num mercado só. No contrato de 2º lugar do 1º turno subiu 2,00pp e chegou a 89,50% (vol USD 597 mil), e só um ponto de toda a série já ficou acima disso, os 90,50% de 21/Ago. No contrato de vencedor não há preço novo nesta rodada. ⚠️ A distinção entre os dois contratos importa e o painel não a fecha: um mede quem vence a eleição e o outro mede quem termina o 1º turno em segundo, e um nome pode subir num e ficar parado no outro sem contradição. As três nacionais da janela seguem discordando no sinal do par de 2º turno contra o líder."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 1,95% (vol USD 4,07M acumulado), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), alta de 0,70pp no contrato de vencedor. ⚠️ E QUEDA DE 5,95pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, de 59,50% para 53,55%. PESQUISA: sem leitura nova. As cinco leituras da janela vão de 7% na Datafolha de 03/Set a 11% na BTG/Nexus de 31/Ago.",
+      "header": "PREÇO: 1,95% (vol USD 4,08M acumulado) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 3º lugar do 1º turno cedeu 1,60pp e está em 51,95% (vol USD 124 mil), leitura confirmada de 05/Set, 13:29 BRT. PESQUISA: sem leitura nova. A Datafolha de 03/Set o deixa em 7% e 8%, e é a única das cinco casas da janela a colocá-lo abaixo de dois dígitos.",
       "fortes": [
         "Subiu 0,70pp no contrato de vencedor, de 1,25% para 1,95%.",
         "O volume acumulado no contrato dele passou de USD 3,69M para USD 4,07M em um dia, cerca de USD 380 mil de dinheiro novo.",
@@ -64,14 +64,14 @@
         "A dispersão entre casas continua grande, de 7% a 11%, e nenhuma pesquisa nova entrou hoje para reduzi-la.",
         "Em termos absolutos o contrato de vencedor dele segue abaixo de 2%, e o volume de USD 4,07M convive com um preço que o mercado trata como remoto."
       ],
-      "analise": "Ele repete hoje o mesmo padrão do segundo colocado, e em sentido invertido: subiu 0,70pp no contrato de vencedor, para 1,95% (vol USD 4,07M acumulado), e cedeu 5,95pp no de 3º lugar do 1º turno, para 53,55% (vol USD 123 mil). 📌 Os dois contratos medem coisas diferentes, e a queda no de 3º lugar interrompe três dias seguidos de alta ali. No contrato de 2º lugar ele passou de 1,75% para 0,95%, ou seja, os três mercados em que ele aparece se moveram, e apenas um deles a favor. Do lado da pesquisa não há nada novo: a última medição segue sendo a Datafolha de 03/Set, com 7% e 8% nos dois cenários, e ela continua sendo a única das cinco casas da janela a deixá-lo abaixo de dois dígitos."
+      "analise": "Segunda queda seguida dele no contrato de 3º lugar do 1º turno, que cedeu 1,60pp e está em 51,95% (vol USD 124 mil). Somadas as duas leituras, são 7,55pp desde 03/Set nesse mercado, e ele segue à frente de Renan Santos, que está em 24,50%. No contrato de vencedor não há preço novo nesta rodada. A dispersão entre casas sobre ele continua sendo o dado mais duro da janela: a Datafolha de 03/Set o mede abaixo de dois dígitos e as outras quatro casas da janela o medem em dois dígitos."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 1,85% (vol USD 12,64M acumulado), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), alta de 0,10pp no contrato de vencedor. No contrato de 3º lugar do 1º turno subiu 1,50pp e está em 23,50% (vol USD 277 mil). PESQUISA: sem leitura nova. A Datafolha de 03/Set o dá em 4% e 3% nos dois cenários.",
+      "header": "PREÇO: 1,85% (vol USD 12,68M acumulado) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 3º lugar do 1º turno subiu 1,00pp e está em 24,50% (vol USD 278 mil), leitura confirmada de 05/Set, 13:29 BRT. PESQUISA: sem leitura nova. A Datafolha de 03/Set o dá em 4% e 3% nos dois cenários.",
       "fortes": [
         "Recuperou 1,50pp no contrato de 3º lugar do 1º turno, de 22,00% para 23,50%, depois de ter cedido 4,50pp na leitura anterior.",
         "É o contrato de maior volume acumulado entre os quatro nomes acima de 1%, com USD 12,64M, à frente do líder e do segundo colocado.",
@@ -83,14 +83,14 @@
         "A dispersão entre casas na janela vai de 3% a 7,6%, e nenhuma pesquisa nova entrou hoje para estreitá-la.",
         "No contrato de 2º lugar do 1º turno ele está em 1,75% (vol USD 1,24M), atrás do líder e do segundo por larga margem."
       ],
-      "analise": "A leitura dele é de recomposição parcial. No contrato de 3º lugar do 1º turno ele subiu 1,50pp, para 23,50% (vol USD 277 mil), recuperando um terço dos 4,50pp que tinha cedido na leitura de 03/Set. No contrato de vencedor subiu 0,10pp, para 1,85% (vol USD 12,64M acumulado). 📌 O volume dele continua sendo o dado mais fora de lugar do painel: entre os quatro nomes acima de 1% no contrato de vencedor, é o de maior volume acumulado, acima do líder e do segundo colocado, num contrato que o mercado precifica abaixo de 2%. O painel registra o contraste e não o interpreta. Do lado da pesquisa, a Datafolha de 03/Set segue sendo a leitura mais recente e nada mudou hoje."
+      "analise": "Ele recupera terreno no contrato de 3º lugar do 1º turno pela segunda leitura seguida, subindo 1,00pp para 24,50% (vol USD 278 mil), enquanto o primeiro colocado desse mercado cede. No contrato de vencedor não há preço novo nesta rodada. 📌 Entre os quatro nomes acima de 1% no contrato de vencedor, ele segue sendo o de maior volume acumulado, USD 12,68M, acima do líder e do segundo colocado, num contrato precificado abaixo de 2%. A dispersão entre casas sobre ele nesta janela vai de 3% a 7,6%."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Ronaldo Caiado em 0,15% no contrato de VENCEDOR (vol USD 7,15M acumulado), abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele está em 9,00% (vol USD 114 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), queda de 1,00pp. Fernando Haddad e Romeu Zema seguem abaixo do piso no contrato de vencedor. PESQUISA: sem leitura nova. A Datafolha de 03/Set coloca Caiado em 4% nos dois cenários e Zema em 2%.",
+      "header": "PREÇO: os três seguem abaixo de 0,5% no contrato de vencedor, que é o piso da dupla leitura, e esta rodada não publica preço novo para eles nesse livro. No contrato de 3º lugar do 1º turno, Ronaldo Caiado subiu 0,50pp e está em 9,50% (vol USD 114 mil) e Romeu Zema está em 0,70%, leitura confirmada de 05/Set, 13:29 BRT. PESQUISA: sem leitura nova. A Datafolha de 03/Set põe Caiado em 4% e Zema em 2% nos dois cenários.",
       "subtitle": "Pelotão de trás na leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). ⚠️ O PAR DE 2º TURNO CONTRA RONALDO CAIADO JÁ TEM QUATRO LEITURAS NA MESMA SEMANA, todas com campo sobreposto: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia. Nenhuma pesquisa nacional nova entrou em 04/Set.",
       "caiado": {
         "label": "CAIADO (PSD), 0,15% (vol USD 7,15M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 1,00pp e está em 9,00%, num livro de USD 114 mil, leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC).",
@@ -107,7 +107,7 @@
         "fortes": "Na PoderData de 03/Set ele fica a 2 pontos do líder no 2º turno, 44% a 42%, a menor margem contra ele em qualquer nacional da janela.",
         "fracos": "Na Datafolha de 03/Set ele perde por 48% a 39%, margem de 9 pontos, e tem 2% no 1º turno contra 3% na rodada da mesma casa de 21/Ago. ⚠️ O par de 2º turno contra ele é o de maior dispersão entre casas da janela: as quatro casas da semana mediram 3, 11, 2 e 9 pontos, e nenhuma pesquisa nova entrou em 04/Set."
       },
-      "analise": "O bloco não tem preço novo publicável no contrato de vencedor: Ronaldo Caiado, Romeu Zema e Fernando Haddad estão todos abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica número novo para eles nesse mercado. 📌 O que tem leitura é o contrato de 3º lugar do 1º turno, que é outro mercado: Caiado cedeu 1,00pp e está em 9,00% (vol USD 114 mil), e Zema está em 0,70% (vol USD 49 mil). Do lado da pesquisa nada mudou: a Datafolha de 03/Set segue sendo a mais recente, com Caiado em 4% e Zema em 2%, e o par de 2º turno contra Caiado em 46% a 41%.",
+      "analise": "O único dos três que se moveu nesta sexta foi Ronaldo Caiado, e num mercado que não é o de vencedor: subiu 0,50pp no contrato de 3º lugar do 1º turno e está em 9,50% (vol USD 114 mil). Fernando Haddad não é candidato à Presidência e disputa o governo de São Paulo, e o painel o mantém na tabela por causa do contrato que ainda existe com o nome dele. ⚠️ O par de 2º turno contra Caiado segue com quatro leituras na mesma semana e nenhuma concordando com a outra na margem.",
       "fortes": [
         "Ronaldo Caiado segue em terceiro no contrato de 3º lugar do 1º turno, com 9,00% (vol USD 114 mil), atrás apenas de Augusto Cury e Renan Santos.",
         "Levou a crise do Supremo à propaganda de TV e defendeu investigação sobre suposta propina de Daniel Vorcaro, segundo Folha de S.Paulo, e participou de sabatina da Folha e do UOL nesta sexta.",
@@ -124,67 +124,67 @@
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou: 46% a 44% contra o segundo colocado, 46% a 41% contra Ronaldo Caiado e 48% a 39% contra Romeu Zema. Avaliação do governo: 45% aprovam e 51% desaprovam.",
-      "m": "55,50% (vol USD 9,72M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 1,00pp sobre a leitura de 03/Set, 23:45. A distância para o segundo passou de 11,65pp para 15,35pp, uma abertura de 3,70pp depois de quatro leituras seguidas encolhendo. ⚠️ No contrato de 2º lugar do 1º turno cedeu 2,90pp e passa a 7,60% (vol USD 469 mil).",
-      "t": "subiu no contrato de vencedor e reabriu a distância, e cedeu no de 2º lugar, no mesmo intervalo",
-      "s": "Afirmou ter dito a Donald Trump que o Brasil não aceita ingerência nas eleições, segundo G1 e Gazeta do Povo. Disse que todos devem ser investigados e cobrou a PGR e o Supremo por uma resolução do caso Master, segundo Folha de S.Paulo.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou: 46% a 44% contra o segundo colocado, 46% a 41% contra Ronaldo Caiado e 48% a 39% contra Romeu Zema. Avaliação do governo: 45% aprovam e 51% desaprovam.",
+      "m": "55,50% (vol USD 9,76M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 2º lugar do 1º turno cedeu 2,25pp e está em 5,35% (vol USD 470 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "sem preço novo no contrato de vencedor nesta rodada, e segunda queda seguida no de 2º lugar",
+      "s": "Reuniu-se com o presidente do Supremo antes de evento no Planalto, e os dois trataram da crise no tribunal, segundo Valor Econômico e Folha de S.Paulo. Restringiu o núcleo da campanha e planeja reforço, segundo Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%. ⚠️ AS TRÊS NACIONAIS DA JANELA SEGUEM DISCORDANDO NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set deu o segundo à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
-      "m": "40,15% (vol USD 9,68M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). ⚠️ QUEDA DE 2,70pp, a maior variação de qualquer nome do livro presidencial nesta leitura. ⭐ E NO CONTRATO DE 2º LUGAR DO 1º TURNO ELE SUBIU 4,00pp, para 87,50% (vol USD 586 mil). Os dois contratos andaram em sentidos contrários.",
-      "t": "os dois contratos sobre o mesmo nome discordaram na mesma leitura, menos 2,70pp num e mais 4,00pp no outro",
-      "s": "Disse que a decisão de Edson Fachin na crise do Supremo é luz no fim do túnel, segundo Valor Econômico, e que Alexandre de Moraes não tem condição de seguir no tribunal, segundo Correio Braziliense.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%. As três nacionais da janela seguem discordando no sinal desse par.",
+      "m": "40,15% (vol USD 9,69M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. ⭐ No contrato de 2º lugar do 1º turno subiu 2,00pp e está em 89,50% (vol USD 597 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "subiu 2,00pp no contrato de 2º lugar e ficou sem preço novo no de vencedor",
+      "s": "Disse que o presidente do Senado e Alexandre de Moraes buscam autoproteção, segundo Folha de S.Paulo, e que Moraes não tem condição de seguir no Supremo, segundo Correio Braziliense. Chamou a decisão do presidente do tribunal de luz no fim do túnel, segundo Valor Econômico.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o deixa em 7% no cenário com Marçal e 8% no cenário sem, e segue sendo a única das cinco casas da janela a colocá-lo abaixo de dois dígitos. As cinco leituras: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set, PoderData 10% em 03/Set e Datafolha 7% e 8% no mesmo dia.",
-      "m": "1,95% (vol USD 4,07M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 0,70pp no contrato de vencedor, com cerca de USD 380 mil de volume novo em um dia. ⚠️ No contrato de 3º lugar do 1º turno cedeu 5,95pp e passa a 53,55% (vol USD 123 mil), interrompendo três dias seguidos de alta, e no de 2º lugar caiu de 1,75% para 0,95%.",
-      "t": "subiu no contrato de vencedor e cedeu nos outros dois em que aparece",
-      "s": "A Datafolha publicou o recorte regional da rodada de 03/Set, segundo Folha de S.Paulo. Não há ato próprio dele no noticiário desta sexta.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o deixa em 7% no cenário com Marçal e 8% no cenário sem, e é a única das cinco casas da janela a colocá-lo abaixo de dois dígitos.",
+      "m": "1,95% (vol USD 4,08M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. ⚠️ No contrato de 3º lugar do 1º turno cedeu 1,60pp e está em 51,95% (vol USD 124 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "segunda queda seguida no contrato de 3º lugar, somando 7,55pp desde 03/Set",
+      "s": "Sem ato individual novo em 05/Set. Ele é testado no cenário de 2º turno da pesquisa que a Nexus anunciou para 08/Set.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 4% no cenário com Marçal e 3% no cenário sem. A dispersão entre casas na janela vai de 3% a 7,6%, e nenhuma pesquisa nova entrou hoje para estreitá-la.",
-      "m": "1,85% (vol USD 12,64M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 0,10pp no contrato de vencedor. No contrato de 3º lugar do 1º turno subiu 1,50pp e passa a 23,50% (vol USD 277 mil), recuperando parte dos 4,50pp que tinha cedido na leitura anterior.",
-      "t": "recompôs parte da queda do contrato de 3º lugar, e segue com o maior volume acumulado do pelotão",
-      "s": "O pedido de impeachment que ele protocolou contra Alexandre de Moraes e Dias Toffoli segue em tramitação, segundo Gazeta do Povo.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 4% no cenário com Marçal e 3% no cenário sem. A dispersão entre casas na janela vai de 3% a 7,6%.",
+      "m": "1,85% (vol USD 12,68M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para esse livro. No contrato de 3º lugar do 1º turno subiu 1,00pp e está em 24,50% (vol USD 278 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "segunda alta seguida no contrato de 3º lugar, enquanto o primeiro daquele mercado cede",
+      "s": "Segue como autor do pedido de impeachment contra dois ministros do Supremo. Sem ato individual novo em 05/Set.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o coloca em 4% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 46% a 41%. ⚠️ O PAR DE 2º TURNO CONTRA ELE TEM QUATRO LEITURAS NA MESMA SEMANA E NENHUMA CONCORDA COM A OUTRA NA MARGEM: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia.",
-      "m": "0,15% (vol USD 7,15M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 1,00pp e está em 9,00% (vol USD 114 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC).",
-      "t": "sem preço novo no contrato de vencedor, e queda de 1,00pp no de 3º lugar",
-      "s": "Levou a crise do Supremo à propaganda de TV, defendeu investigação sobre suposta propina de Daniel Vorcaro e participou de sabatina da Folha e do UOL nesta sexta, segundo Folha de S.Paulo.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o põe em 4% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 46% a 41%.",
+      "m": "Abaixo de 0,5% no contrato de vencedor, que é o piso da dupla leitura, e esta rodada não publica preço novo para ele nesse livro. No contrato de 3º lugar do 1º turno subiu 0,50pp e está em 9,50% (vol USD 114 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "subiu 0,50pp no contrato de 3º lugar do 1º turno",
+      "s": "Defendeu reforma no Supremo em agenda de campanha, segundo apuração do Seu Dinheiro. Sem outro ato individual em 05/Set.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o traz em 2% no cenário com ele na lista. A presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal o líder tem 38% e o segundo 33%, ou seja, a distância vai de 7 para 5 pontos.",
-      "m": "0,15% (vol USD 3,69M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno ele está em 2,70% (vol USD 47 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC).",
-      "t": "sem preço novo no contrato de vencedor, e quarto colocado no de 3º lugar",
-      "s": "Não aparece no noticiário desta sexta com fato próprio.",
+      "p": "Sem pesquisa nacional nova pelo segundo dia. A mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o traz em 2% no cenário em que ele aparece, e a presença dele separa os dois cenários da casa.",
+      "m": "Abaixo de 0,5% no contrato de vencedor, que é o piso da dupla leitura, e esta rodada não publica preço novo para ele nesse livro. No contrato de 3º lugar do 1º turno cedeu 0,50pp e está em 2,20% (vol USD 47 mil), leitura confirmada de 05/Set, 13:29 BRT.",
+      "t": "cedeu 0,50pp no contrato de 3º lugar do 1º turno",
+      "s": "Sem ato individual novo em 05/Set.",
       "pc": "#EA580C",
       "mc": ""
     },
     {
       "n": "STF impeachment",
       "p": "Sem pesquisa. Mercado de impeachment de ministro do Supremo antes de 2027.",
-      "m": "15,85% (vol USD 87 mil), leitura de 04/Set, 19:53 BRT (22:53 UTC). ⚠️ ESTE É O ÚNICO CONTRATO DO PAINEL QUE VAI AO AR SEM A DUPLA LEITURA que o AFOS aplica aos demais, e a razão está na própria série gravada: em 04/Set, nas leituras gravadas do dia, ele variou de 10,60% a 19,30%, amplitude de 8,70pp, com USD 28 de dinheiro novo no dia inteiro. 📌 O número acima é UMA leitura dentro dessa faixa, não o centro dela. Nos quatro dias anteriores a amplitude diária foi de 0,10pp, 15,60pp, 4,10pp e 6,30pp, com USD 0, USD 1.852, USD 69 e USD 157 de dinheiro novo. É o menor livro do painel e o mais sensível a ordem pequena.",
-      "t": "percorreu 8,70pp dentro do dia com USD 28 de dinheiro novo, e vai ao ar com a faixa ao lado",
-      "s": "⭐ O ATO DO DIA: Edson Fachin RETIROU do inquérito das fake news o pedido de Alexandre de Moraes para investigar André Mendonça, e criou uma petição própria sob a relatoria dele, com 5 dias úteis para a Procuradoria-Geral da República se manifestar e outros 5 para Mendonça em seguida, segundo Folha de S.Paulo e Gazeta do Povo. 📌 O prazo de 5 dias dado a Moraes, Mendonça, Paulo Gonet e Andrei Rodrigues é de 03/Set e não desta sexta. Horas depois, Fachin defendeu o FIM do inquérito das fake news, aberto há sete anos, mas não o encerrou, segundo Estadão e Gazeta do Povo. O Conselho Superior do Ministério Público Federal abriu procedimento sobre Gonet, segundo Folha de S.Paulo e Gazeta do Povo. Flávio Dino disse que o Supremo é maior que qualquer um que o integra, segundo Folha de S.Paulo.",
+      "m": "8,65% (vol USD 88 mil), leitura confirmada de 05/Set, 13:29 BRT (16:29 UTC). ⭐ ESTE CONTRATO VOLTOU À DUPLA LEITURA nesta rodada, depois de ir ao ar em 04/Set com leitura única e a faixa do dia declarada ao lado. Contra os 15,85% publicados na véspera são 7,20pp de queda.",
+      "t": "caiu 7,20pp e voltou a ser publicado com dupla leitura, a 10,60pp do topo da série",
+      "s": "⭐ O ATO DO DIA É DA PROCURADORIA: ela determinou apurar se houve interferência na produção do relatório da Polícia Federal sobre as mensagens, e pediu ao presidente do Supremo aval para investigar André Mendonça, segundo Estadão, Folha de S.Paulo e Gazeta do Povo. O Conselho do Ministério Público abriu procedimento sobre a conduta do procurador-geral, segundo Estadão e Valor Econômico.",
       "pc": "#6B7280",
       "mc": ""
     }
   ],
-  "cruzamento": "O 4 de setembro é o inverso exato do dia anterior, e é isso que a página registra. ⭐ NÃO SAIU NENHUMA PESQUISA NACIONAL NOVA, e isso não é lacuna de coleta: o registro do TSE mostra sete pesquisas nacionais EM CAMPO neste momento, e a primeira divulgação marcada é 06/Set, da Veritá. Depois vêm Quaest em 07/Set, Gerp e Nexus em 08/Set, e Ideia/Canal Meio, Real Time Big Data e PALVER em 09/Set. A PALVER é a maior amostra do calendário, com 5.000 entrevistas. Em 03/Set foram três nacionais em 48 horas e o preço do líder ficou parado por mais de oito horas. ⭐ HOJE, SEM NENHUMA PESQUISA, O PREÇO ANDOU MAIS DO QUE ONTEM: a distância entre os dois primeiros passou de 11,65pp para 15,35pp, uma abertura de 3,70pp que desfez quatro leituras seguidas de estreitamento. O líder subiu 1,00pp, para 55,50%, e o segundo cedeu 2,70pp, para 40,15%, a maior variação de qualquer nome do livro. 📌 O painel registra a coincidência e não afirma causa. Não há medição de intenção de voto publicada hoje para sustentar nem para desmentir o movimento. ⚠️ A SEGUNDA DIVERGÊNCIA ESTÁ DENTRO DO PRÓPRIO MERCADO, e aparece em dois nomes ao mesmo tempo. O segundo colocado cedeu 2,70pp no contrato de vencedor e subiu 4,00pp no de 2º lugar do 1º turno, para 87,50%. Augusto Cury fez o contrário: subiu 0,70pp no de vencedor e cedeu 5,95pp no de 3º lugar, para 53,55%, interrompendo três dias seguidos de alta ali. São mercados distintos sobre os mesmos nomes, e nesta leitura eles não contam a mesma história. ⭐ A TERCEIRA É O ATO DO DIA, e ele é do Supremo. Edson Fachin retirou do inquérito das fake news o pedido de Alexandre de Moraes para investigar André Mendonça e o transformou numa petição própria sob a relatoria dele, com 5 dias úteis para a Procuradoria-Geral da República, segundo Folha de S.Paulo e Gazeta do Povo. Horas depois defendeu o fim do inquérito, aberto há sete anos, sem encerrá-lo. 📌 E o contrato que mede saída de ministro do Supremo por impeachment está em 15,85%, contra 7,40% na leitura de 03/Set às 17:28. ⚠️ ELE É A ÚNICA EXCEÇÃO DO PAINEL À DUPLA LEITURA, e vai ao ar declarado assim porque, nas leituras gravadas de 04/Set, variou de 10,60% a 19,30%, amplitude de 8,70pp, com USD 28 de dinheiro novo no dia. O número é uma leitura dentro dessa faixa, e a faixa é publicada junto. O painel não diz quem tem razão entre o preço e a pesquisa, e nesta rodada há uma razão a mais para não dizer: de um dos dois lados não veio nada."
+  "cruzamento": "O 5 de setembro é um dia de calendário, e é isso que a página registra. ⭐ PELO SEGUNDO DIA SEGUIDO NENHUMA PESQUISA NACIONAL FOI DIVULGADA, e o registro do TSE mostra por quê: oito pesquisas nacionais estão em campo neste momento, e as divulgações marcadas vão de 06 a 10/Set. Veritá em 06/Set, Quaest em 07/Set, Gerp e Nexus em 08/Set, Ideia/Canal Meio, Real Time Big Data e PALVER em 09/Set, e 100 Cidades, PoderData e AtlasIntel em 10/Set. Duas delas têm amostra de 5.000, a PALVER e a AtlasIntel, e são as maiores do calendário. 📌 Três dessas nacionais entraram no registro nesta sexta, todas com divulgação marcada para 10/Set. Faltam 29 dias para o 1º turno.\n\n⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O LIVRO DE VENCEDOR, porque as duas leituras independentes que o AFOS toma com oito minutos de intervalo não confirmaram dentro de 0,20 ponto nesse contrato. Os valores dele nesta página seguem sendo os da leitura confirmada de 04/Set, 19:53 BRT, e estão marcados assim linha a linha. Os outros quatro livros confirmaram e trazem preço de 05/Set, 13:29 BRT.\n\n⭐ O QUE ANDOU HOJE FORAM OS MERCADOS DE POSIÇÃO E O DE IMPEACHMENT. No contrato de 2º lugar do 1º turno o segundo colocado subiu 2,00pp e chegou a 89,50%, e só um ponto de toda a série já ficou acima disso, os 90,50% de 21/Ago, enquanto o líder cedeu 2,25pp e está em 5,35%. No de 3º lugar, Augusto Cury cedeu 1,60pp para 51,95% e Renan Santos subiu 1,00pp para 24,50%. No de maioria no Senado, o MDB cedeu 1,50pp e está em 10,75%, com o PL em 82,00%. São contratos diferentes sobre a mesma eleição, e o painel não os soma nem os subtrai.\n\n🔑 E O CONTRATO DE IMPEACHMENT NO SUPREMO É O CASO DE MÉTODO DO DIA. Em 04/Set ele foi ao ar com leitura única, acompanhado da faixa que percorreu, porque duas leituras a oito minutos não conseguiam concordar num livro que se movia demais. Nesta sexta ele confirmou nas duas leituras e voltou à régua normal, em 8,65% (vol USD 88 mil), contra os 15,85% publicados na véspera. Na série gravada desde 14/Abr o topo é 19,30%, marcado em 04/Set, e o piso é 2,10%, de 08/Jun: o preço de agora está 10,60pp abaixo de um topo de anteontem, num livro que acumula USD 88 mil. O painel registra o movimento e não lhe atribui causa."
 }

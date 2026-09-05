@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-04",
+  "lastUpdate": "2026-09-05",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1581,170 +1581,6 @@
         }
       ],
       "source": "BTG/Nexus divulgada em 10/Ago por Folha de S.Paulo, Estadão, Poder360, CNN Brasil, UOL, JOTA, CartaCapital, VEJA, Metrópoles, GZH, Money Times e Revista Fórum. Registro TSE BR-08428/2026."
-    },
-    {
-      "institute": "Quaest/Genial",
-      "date": "2026-08-05",
-      "scope": "national",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-06591/2026",
-      "reliability": 5,
-      "method": "Presencial, 120 municípios",
-      "fieldDates": "2026-07-31 a 2026-08-03",
-      "note": "Genial/Quaest nacional publicada 05/Ago (G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, VEJA, JOTA, Money Times, Poder360, Brasil de Fato). 1T Lula 39% x Flávio 30% (gap +9pp), com Caiado 4%, Renan Santos 4%, Zema 2%, Augusto Cury 1%, Cabo Daciolo 1%, Samara Martins 1%, brancos e nulos 8%, indecisos 10%. 2T Lula 44% x Flávio 39% (gap +5pp, brancos e nulos 13%, indecisos 4%); Lula 46% x Zema 34%; Lula 45% x Caiado 37%; Lula 45% x Renan Santos 35%. Lula vence os quatro cenários de returno. REJEIÇÃO: 54% não votariam em Flávio e 41% votariam; 52% não votariam em Lula e 45% votariam. COMPARAÇÃO DENTRO DA CASA, que é a única válida: na rodada de 15/Jul eram 40% x 28%, gap de +12pp, e no returno 45% x 37%, gap de +8pp. Ou seja, o gap do 1º turno caiu 3pp e o do returno caiu 3pp, e o movimento é do adversário, que sobe 2pp no 1º turno e 2pp no returno enquanto Lula cede 1pp em cada. APROVAÇÃO DO GOVERNO: 48% aprovam e 47% desaprovam, com 5% sem resposta, números IDÊNTICOS aos da própria rodada de 15/Jul. A avaliação da gestão também repete exatamente: 36% positiva, 26% regular, 36% negativa, 2% sem resposta. Duas rodadas da mesma casa com o mesmo número nos dois indicadores descrevem imobilidade, não tendência. Campo 31/Jul a 03/Ago, n=2.004, presencial, margem 2pp, 95% de confiança, contratante Banco Genial, registro TSE BR-06591/2026.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 30
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1
-            },
-            {
-              "candidate": "Cabo Daciolo (Mobiliza)",
-              "percent": 1
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 34
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Renan Santos",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Renan Santos",
-          "percent2": 35
-        }
-      ],
-      "source": "Genial/Quaest via G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, JOTA, Money Times 05/Ago"
-    },
-    {
-      "institute": "Ideia/Canal Meio",
-      "date": "2026-08-05",
-      "scope": "national",
-      "sample": 1500,
-      "margin": 2.5,
-      "register": "BR-04579/2026",
-      "reliability": 3,
-      "method": "Telefônica",
-      "fieldDates": "2026-07-31 a 2026-08-03",
-      "note": "Meio/Ideia (Instituto Ideia com o Canal Meio) nacional publicada 05/Ago (Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo, CartaCapital, Congresso em Foco). 1T Lula 43% x Flávio 35% (gap +8pp), com Caiado 5,7%, Renan Santos 4,7%, Zema 2,6%, Augusto Cury 1,7%, Cabo Daciolo 0,6%, Samara Martins 0,3%, Edmilson Costa 0,2%, Hertz Dias e Rui Costa Pimenta 0,1% cada, brancos e nulos 2%, não sabem 4%. VOTO ESPONTÂNEO, que é pergunta diferente e não se mistura com o estimulado: Lula 34,4%, Flávio 23%, indecisos 27,7%. 2T Lula 48,5% x Flávio 43% (gap +5,5pp); Lula 48,5% x Zema 37%; Lula 48,5% x Caiado 40%; Lula 48% x Renan Santos 34,7%. Lula vence os quatro. COMPARAÇÃO DENTRO DA CASA: na rodada de 08/Jul eram 40,4% x 32%, gap de +8,4pp, e no returno 45% x 40%, gap de +5pp. O gap do 1º turno praticamente não se moveu, de +8,4pp para +8pp, e o do returno também não, de +5pp para +5,5pp. O que subiu foram os DOIS: Lula de 40,4% para 43% e Flávio de 32% para 35%, o que descreve concentração de voto nos dois primeiros e não vantagem de um sobre o outro. Campo 31/Jul a 03/Ago, n=1.500, telefônica, margem 2,5pp, 95% de confiança, registro TSE BR-04579/2026.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 43
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 35
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5.7
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4.7
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2.6
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1.7
-            },
-            {
-              "candidate": "Cabo Daciolo (Mobiliza)",
-              "percent": 0.6
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 0.3
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Romeu Zema",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 40
-        },
-        {
-          "matchup": "Lula vs Renan Santos",
-          "candidate1": "Lula",
-          "percent1": 48,
-          "candidate2": "Renan Santos",
-          "percent2": 34.7
-        }
-      ],
-      "source": "Meio/Ideia via Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo 05/Ago"
     }
   ],
   "approvalData": {
@@ -1789,8 +1625,8 @@
     "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC), com o livro presidencial em USD 143,62M. ⭐ NENHUMA PESQUISA NACIONAL FOI DIVULGADA EM 04/Set, e o registro do TSE diz por quê: sete pesquisas nacionais estão em campo neste momento e a primeira divulgação marcada é 06/Set, da Veritá, seguida por Quaest em 07/Set, Gerp e Nexus em 08/Set, e Ideia/Canal Meio, Real Time Big Data e PALVER em 09/Set, esta última com 5.000 entrevistas. ⭐ E FOI NO DIA SEM PESQUISA QUE O PREÇO MAIS ANDOU: a distância entre os dois primeiros passou de 11,65pp para 15,35pp, uma abertura de 3,70pp que desfez quatro leituras seguidas de estreitamento. O painel registra a coincidência de datas e não atribui causa. ⚠️ O contrato de impeachment de ministro do Supremo está em 15,85% e é a única exceção do painel à dupla leitura: nas leituras gravadas de 04/Set ele variou de 10,60% a 19,30%, amplitude de 8,70pp, com USD 28 de dinheiro novo, e vai ao ar declarado como leitura única, com a faixa ao lado.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 04/Set os livros de vencedor, de 2º lugar, de 3º lugar do 1º turno e de maioria no Senado confirmaram na leitura das 19:53. ⚠️ O contrato de impeachment de ministro do Supremo é a única exceção e vai ao ar com leitura ÚNICA, declarada como tal e acompanhada da faixa que ele percorreu no dia, medida na série gravada em backup/neon/marketPrice. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. O calendário de pesquisas em campo e de divulgação prevista sai do registro oficial do TSE. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
+    "note": "Preços do Polymarket com o livro presidencial em USD 143,79M. ⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O CONTRATO DE VENCEDOR: as duas leituras independentes que o AFOS toma com oito minutos de intervalo não confirmaram dentro de 0,20 ponto nesse livro, e os valores dele seguem sendo os da leitura confirmada de 04/Set, 19:53 BRT. Os contratos de 2º lugar, de 3º lugar do 1º turno, de impeachment no Supremo e de maioria no Senado confirmaram e trazem preço de 05/Set, 13:29 BRT (16:29 UTC). ⭐ PELO SEGUNDO DIA SEGUIDO NENHUMA PESQUISA NACIONAL FOI DIVULGADA, e o registro do TSE diz por quê: oito nacionais estão em campo neste momento e as divulgações marcadas vão de 06 a 10/Set, com Veritá em 06/Set, Quaest em 07/Set, Gerp e Nexus em 08/Set, Ideia/Canal Meio, Real Time Big Data e PALVER em 09/Set, e 100 Cidades, PoderData e AtlasIntel em 10/Set. Duas delas têm amostra de 5.000. 📌 O que se moveu nesta leitura foram os mercados de posição: o segundo colocado subiu 2,00pp no contrato de 2º lugar e está em 89,50%, Augusto Cury cedeu 1,60pp no de 3º lugar e está em 51,95%, e o contrato de impeachment no Supremo voltou à dupla leitura em 8,65%, contra 15,85% na véspera.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 05/Set os livros de 2º lugar, de 3º lugar do 1º turno, de impeachment no Supremo e de maioria no Senado confirmaram na leitura das 13:29 BRT, e o de vencedor não confirmou, então ele mantém os valores da leitura confirmada de 04/Set. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. O calendário de pesquisas em campo e de divulgação prevista sai do registro oficial do TSE. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
@@ -1800,8 +1636,8 @@
         "polymarket": "55,50%",
         "pesquisaRange": "38-39%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp), que o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou: 46% a 44% contra o segundo colocado, 46% a 41% contra Ronaldo Caiado e 48% a 39% contra Romeu Zema. Avaliação do governo: 45% aprovam e 51% desaprovam.",
-        "tendenciaPolymarket": "55,50% (vol USD 9,72M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 1,00pp sobre a leitura de 03/Set, 23:45. ⭐ A DISTÂNCIA PARA O SEGUNDO REABRIU 3,70pp, de 11,65pp para 15,35pp, depois de encolher em quatro leituras seguidas, e isso aconteceu num dia sem nenhuma pesquisa nacional nova. ⚠️ No contrato de 2º lugar do 1º turno cedeu 2,90pp e passa a 7,60% (vol USD 469 mil)."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou: 46% a 44% contra o segundo colocado, 46% a 41% contra Ronaldo Caiado e 48% a 39% contra Romeu Zema. Avaliação do governo: 45% aprovam e 51% desaprovam.",
+        "tendenciaPolymarket": "55,50% (vol USD 9,76M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⚠️ No contrato de 2º lugar do 1º turno cedeu 2,25pp e está em 5,35% (vol USD 470 mil), leitura confirmada de 05/Set, 13:29 BRT, segunda queda seguida dele nesse mercado."
       },
       {
         "name": "Flávio Bolsonaro",
@@ -1811,8 +1647,8 @@
         "polymarket": "40,15%",
         "pesquisaRange": "32-33%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%. ⚠️ AS TRÊS NACIONAIS DA JANELA SEGUEM DISCORDANDO NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set o deu à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
-        "tendenciaPolymarket": "40,15% (vol USD 9,68M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). ⚠️ QUEDA DE 2,70pp, a maior variação de qualquer nome do livro presidencial nesta leitura. ⭐ E OS DOIS CONTRATOS DELE ANDARAM EM SENTIDOS CONTRÁRIOS: no de 2º lugar do 1º turno subiu 4,00pp e passa a 87,50% (vol USD 586 mil). No de 3º lugar ele aparece com 1,55% (vol USD 68 mil)."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%. ⚠️ AS TRÊS NACIONAIS DA JANELA SEGUEM DISCORDANDO NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set o deu à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
+        "tendenciaPolymarket": "40,15% (vol USD 9,69M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⭐ No contrato de 2º lugar do 1º turno subiu 2,00pp e está em 89,50% (vol USD 597 mil), leitura confirmada de 05/Set, 13:29 BRT, e só um ponto de toda a série já ficou acima disso, os 90,50% de 21/Ago."
       },
       {
         "name": "Augusto Cury",
@@ -1822,8 +1658,8 @@
         "polymarket": "1,95%",
         "pesquisaRange": "7-8%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o deixa em 7% no cenário com Marçal e 8% no cenário sem, e segue sendo a única das cinco casas da janela a colocá-lo abaixo de dois dígitos. As outras quatro: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set e PoderData 10% em 03/Set.",
-        "tendenciaPolymarket": "1,95% (vol USD 4,07M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 0,70pp no contrato de vencedor, com cerca de USD 380 mil de volume novo em um dia. ⚠️ No contrato de 3º lugar do 1º turno cedeu 5,95pp e passa a 53,55% (vol USD 123 mil), interrompendo três dias seguidos de alta. E no contrato de 2º lugar do 1º turno, que é um terceiro mercado, ele recuou 0,80pp, de 1,75% para 0,95% naquele livro, que acumula USD 142 mil."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o deixa em 7% no cenário com Marçal e 8% no cenário sem, e segue sendo a única das cinco casas da janela a colocá-lo abaixo de dois dígitos. As outras quatro: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set e PoderData 10% em 03/Set.",
+        "tendenciaPolymarket": "1,95% (vol USD 4,08M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⚠️ No contrato de 3º lugar do 1º turno cedeu 1,60pp e está em 51,95% (vol USD 124 mil), leitura confirmada de 05/Set, 13:29 BRT. Somadas as duas leituras seguidas de queda, são 7,55pp desde 03/Set nesse mercado."
       },
       {
         "name": "Renan Santos",
@@ -1833,8 +1669,8 @@
         "polymarket": "1,85%",
         "pesquisaRange": "3-4%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o dá em 4% no cenário com Marçal e 3% no cenário sem. ⚠️ A DISPERSÃO ENTRE CASAS NESTA JANELA VAI DE 3% A 7,6%: 3% na Genial/Quaest e na PoderData, 3% a 4% na Datafolha, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago.",
-        "tendenciaPolymarket": "1,85% (vol USD 12,64M), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC). Alta de 0,10pp no contrato de vencedor. No contrato de 3º lugar do 1º turno subiu 1,50pp e passa a 23,50% (vol USD 277 mil), recuperando parte dos 4,50pp que tinha cedido na leitura anterior. 📌 Entre os quatro nomes acima de 1% no contrato de vencedor, é o de maior volume acumulado, acima do líder e do segundo colocado, num contrato precificado abaixo de 2%."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 4% no cenário com Marçal e 3% no cenário sem. ⚠️ A DISPERSÃO ENTRE CASAS NESTA JANELA VAI DE 3% A 7,6%: 3% na Genial/Quaest e na PoderData, 3% a 4% na Datafolha, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago.",
+        "tendenciaPolymarket": "1,85% (vol USD 12,68M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. No contrato de 3º lugar do 1º turno subiu 1,00pp e está em 24,50% (vol USD 278 mil), leitura confirmada de 05/Set, 13:29 BRT, segunda alta seguida. 📌 Entre os quatro nomes acima de 1% no contrato de vencedor, é o de maior volume acumulado, acima do líder e do segundo colocado, num contrato precificado abaixo de 2%."
       },
       {
         "name": "Ronaldo Caiado",
@@ -1844,8 +1680,8 @@
         "polymarket": "0,15%",
         "pesquisaRange": "4%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o coloca em 4% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 46% a 41%. ⚠️ O PAR DE 2º TURNO CONTRA ELE TEM QUATRO LEITURAS NA MESMA SEMANA E NENHUMA CONCORDA COM A OUTRA NA MARGEM: 45% a 43% a favor dele na Real Time Big Data de 01/Set, 42% a 37% contra ele na Genial/Quaest de 02/Set, 44% a 42% contra ele na PoderData de 03/Set e 46% a 41% contra ele na Datafolha do mesmo dia.",
-        "tendenciaPolymarket": "0,15% (vol USD 7,15M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, cedeu 1,00pp e está em 9,00% (vol USD 114 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o coloca em 4% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 46% a 41%. ⚠️ O PAR DE 2º TURNO CONTRA ELE TEM QUATRO LEITURAS NA MESMA SEMANA E NENHUMA CONCORDA COM A OUTRA NA MARGEM.",
+        "tendenciaPolymarket": "0,15% (vol USD 7,16M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 0,50pp e está em 9,50% (vol USD 114 mil), leitura confirmada de 05/Set, 13:29 BRT."
       },
       {
         "name": "Pablo Marçal",
@@ -1855,8 +1691,8 @@
         "polymarket": "0,15%",
         "pesquisaRange": "2%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o traz em 2% no cenário com ele na lista. A presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal o líder tem 38% e o segundo 33%, ou seja, a distância vai de 7 para 5 pontos.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,69M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno ele está em 2,70% (vol USD 47 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o traz em 2% no cenário com ele na lista, e a presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal 38% e 33%.",
+        "tendenciaPolymarket": "0,15% (vol USD 3,73M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno cedeu 0,50pp e está em 2,20% (vol USD 47 mil), leitura confirmada de 05/Set, 13:29 BRT."
       },
       {
         "name": "Romeu Zema",
@@ -1866,8 +1702,8 @@
         "polymarket": "0,15%",
         "pesquisaRange": "2%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova hoje. A Datafolha de 03/Set o mede em 2% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 48% a 39%, margem de 9 pontos. As quatro casas da semana mediram esse par em 3, 11, 2 e 9 pontos, e é o par com a maior dispersão entre casas da janela.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,55M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, ele está em 0,70% (vol USD 49 mil), leitura confirmada de 04/Set, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o mede em 2% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 48% a 39%, margem de 9 pontos, o par com a maior dispersão entre casas da janela.",
+        "tendenciaPolymarket": "0,15% (vol USD 6,56M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno está em 0,70% (vol USD 49 mil), leitura confirmada de 05/Set, 13:29 BRT."
       },
       {
         "name": "Tarcísio",
@@ -1892,7 +1728,7 @@
         "tendenciaPolymarket": "0,05% (vol USD 7,43M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa o governo de São Paulo."
       }
     ],
-    "updatedAt": "04/09/2026, 19:53",
+    "updatedAt": "05/09/2026, 13:29",
     "lastUpdate": "04/09/2026, 19:53"
   }
 }

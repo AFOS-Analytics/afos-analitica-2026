@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-04",
+  "lastUpdate": "2026-09-05",
   "institutes": [
     {
       "name": "Datafolha",
@@ -1581,170 +1581,6 @@
         }
       ],
       "source": "BTG/Nexus released on Aug 10 by Folha de S.Paulo, Estadão, Poder360, CNN Brasil, UOL, JOTA, CartaCapital, VEJA, Metrópoles, GZH, Money Times and Revista Fórum. TSE register BR-08428/2026."
-    },
-    {
-      "institute": "Quaest/Genial",
-      "date": "2026-08-05",
-      "scope": "national",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-06591/2026",
-      "reliability": 5,
-      "method": "Presencial, 120 municípios",
-      "fieldDates": "2026-07-31 a 2026-08-03",
-      "note": "[Genial/Quaest](/en/glossary#quaest) national poll published Aug 5 (G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, VEJA, JOTA, Money Times, Poder360, Brasil de Fato). [First round](/en/glossary#primeiro-turno) Lula 39% x Flávio 30% (gap +9pp), with Caiado 4%, Renan Santos 4%, Zema 2%, Augusto Cury 1%, Cabo Daciolo 1%, Samara Martins 1%, blank and void 8%, undecided 10%. [Runoff](/en/glossary#segundo-turno) Lula 44% x Flávio 39% (gap +5pp, blank and void 13%, undecided 4%); Lula 46% x Zema 34%; Lula 45% x Caiado 37%; Lula 45% x Renan Santos 35%. Lula wins all four runoff scenarios. REJECTION: 54% would not vote for Flávio and 41% would; 52% would not vote for Lula and 45% would. WITHIN-HOUSE COMPARISON, which is the only valid one: in the Jul 15 round it was 40% x 28%, a +12pp gap, and in the runoff 45% x 37%, a +8pp gap. So the first-round gap fell 3pp and the runoff gap fell 3pp, and the movement belongs to the challenger, who gains 2pp in the first round and 2pp in the runoff while Lula gives up 1pp in each. GOVERNMENT APPROVAL: 48% approve and 47% disapprove, with 5% no answer, numbers IDENTICAL to its own Jul 15 round. Administration ratings also repeat exactly: 36% positive, 26% average, 36% negative, 2% no answer. Two rounds by the same house with the same number on both indicators describe immobility, not a trend. Fieldwork Jul 31 to Aug 3, n=2,004, in person, 2pp margin, 95% confidence, commissioned by Banco Genial, [TSE](/en/glossary#tse) registration BR-06591/2026.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 30
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1
-            },
-            {
-              "candidate": "Cabo Daciolo (Mobiliza)",
-              "percent": 1
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 34
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Renan Santos",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Renan Santos",
-          "percent2": 35
-        }
-      ],
-      "source": "Genial/Quaest via G1, CNN Brasil, Folha de S.Paulo, Valor Econômico, O Globo, Estadão, JOTA, Money Times Aug 5"
-    },
-    {
-      "institute": "Ideia/Canal Meio",
-      "date": "2026-08-05",
-      "scope": "national",
-      "sample": 1500,
-      "margin": 2.5,
-      "register": "BR-04579/2026",
-      "reliability": 3,
-      "method": "Telefônica",
-      "fieldDates": "2026-07-31 a 2026-08-03",
-      "note": "Meio/Ideia (Instituto Ideia with Canal Meio) national poll published Aug 5 (Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo, CartaCapital, Congresso em Foco). [First round](/en/glossary#primeiro-turno) Lula 43% x Flávio 35% (gap +8pp), with Caiado 5.7%, Renan Santos 4.7%, Zema 2.6%, Augusto Cury 1.7%, Cabo Daciolo 0.6%, Samara Martins 0.3%, Edmilson Costa 0.2%, Hertz Dias and Rui Costa Pimenta 0.1% each, blank and void 2%, don't know 4%. UNPROMPTED VOTE, which is a different question and does not mix with the prompted one: Lula 34.4%, Flávio 23%, undecided 27.7%. [Runoff](/en/glossary#segundo-turno) Lula 48.5% x Flávio 43% (gap +5.5pp); Lula 48.5% x Zema 37%; Lula 48.5% x Caiado 40%; Lula 48% x Renan Santos 34.7%. Lula wins all four. WITHIN-HOUSE COMPARISON: in the Jul 8 round it was 40.4% x 32%, a +8.4pp gap, and in the runoff 45% x 40%, a +5pp gap. The first-round gap barely moved, from +8.4pp to +8pp, and neither did the runoff, from +5pp to +5.5pp. What rose were BOTH: Lula from 40.4% to 43% and Flávio from 32% to 35%, which describes vote concentrating on the top two rather than an advantage for either. Fieldwork Jul 31 to Aug 3, n=1,500, telephone, 2.5pp margin, 95% confidence, [TSE](/en/glossary#tse) registration BR-04579/2026.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 43
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 35
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5.7
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4.7
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 2.6
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1.7
-            },
-            {
-              "candidate": "Cabo Daciolo (Mobiliza)",
-              "percent": 0.6
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 0.3
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 43
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Romeu Zema",
-          "percent2": 37
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 48.5,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 40
-        },
-        {
-          "matchup": "Lula vs Renan Santos",
-          "candidate1": "Lula",
-          "percent1": 48,
-          "candidate2": "Renan Santos",
-          "percent2": 34.7
-        }
-      ],
-      "source": "Meio/Ideia via Exame, Gazeta do Povo, JOTA, Estadão, Valor Econômico, Folha de S.Paulo Aug 5"
     }
   ],
   "approvalData": {
@@ -1789,8 +1625,8 @@
     "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "[Polymarket](/en/glossary#polymarket) prices at the confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC), with the presidential book at USD 143.62M. ⭐ NO NATIONAL POLL WAS RELEASED ON 04/Sep, and the [TSE](/en/glossary#tse) register says why: seven national polls are in the field right now and the first scheduled release is 06/Sep, from Veritá, followed by Quaest on 07/Sep, Gerp and Nexus on 08/Sep, and Ideia/Canal Meio, Real Time Big Data and PALVER on 09/Sep, the last of these with 5,000 interviews. ⭐ AND IT WAS ON THE DAY WITHOUT A POLL THAT THE PRICE MOVED MOST: the gap between the top two went from 11.65pp to 15.35pp, an opening of 3.70pp that undid four consecutive readings of narrowing. The panel records the coincidence of dates and assigns no cause. ⚠️ The [Supreme Court](/en/glossary#stf) justice impeachment contract stands at 15.85% and is the panel's only exception to the double reading: across the recorded readings of 04/Sep it ranged from 10.60% to 19.30%, an amplitude of 8.70pp, with USD 28 of new money, and it goes out declared as a single reading, with the range alongside.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract. On 04/Sep the winner, first-round runner-up, first-round third-place and Senate majority books confirmed at the 19:53 reading. ⚠️ The Supreme Court justice impeachment contract is the only exception and goes out on a SINGLE reading, declared as such and accompanied by the range it travelled during the day, measured on the series recorded in backup/neon/marketPrice. Polls registered with the TSE and released by the polling houses, with reporting from Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. The calendar of polls in the field and of scheduled releases comes from the official TSE register. Series superlatives checked against the Neon backup, in backup/neon/marketPrice, which holds the complete record since 14/Apr.",
+    "note": "Polymarket prices with the presidential book at USD 143.79M. ⚠️ THIS ROUND PUBLISHES NO NEW PRICE FOR THE WINNER CONTRACT: the two independent readings AFOS takes eight minutes apart did not confirm within 0.20 of a point in that book, and its values are still those of the confirmed reading of 04/Sep, 19:53 BRT. The [first-round](/en/glossary#primeiro-turno) runner-up, first-round third-place, [Supreme Court](/en/glossary#stf) impeachment and Senate majority contracts did confirm and carry prices from 05/Sep, 13:29 BRT (16:29 UTC). ⭐ AND FOR THE SECOND DAY RUNNING NO NATIONAL POLL WAS RELEASED, and the [TSE](/en/glossary#tse) register says why: eight national polls are in the field right now and the scheduled releases run from 06 to 10/Sep, with Veritá on 06/Sep, Quaest on 07/Sep, Gerp and Nexus on 08/Sep, Ideia/Canal Meio, Real Time Big Data and PALVER on 09/Sep, and 100 Cidades, PoderData and AtlasIntel on 10/Sep. Two of them have a sample of 5,000. 📌 What moved in this reading were the position markets: the runner-up rose 2.00pp in the runner-up contract to 89.50%, Augusto Cury gave up 1.60pp in the third-place contract to 51.95%, and the Supreme Court impeachment contract returned to the double reading at 8.65%, against 15.85% the day before.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract. On 05/Sep the [first-round](/en/glossary#primeiro-turno) runner-up, first-round third-place, [Supreme Court](/en/glossary#stf) impeachment and Senate majority books confirmed on the 13:29 BRT reading, and the winner book did not, so it keeps the values of the confirmed reading of 04/Sep. Polls registered with the [TSE](/en/glossary#tse) and released by the institutes, with reporting from Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC and Jornal de Brasília. The calendar of polls in the field and of scheduled releases comes from the official TSE register. Series superlatives checked against the Neon backup, in backup/neon/marketPrice, which holds the complete record since 14/Apr.",
     "candidates": [
       {
         "name": "Lula",
@@ -1800,8 +1636,8 @@
         "polymarket": "55.50%",
         "pesquisaRange": "38-39%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp), which gives him 39% in the scenario with Pablo Marçal and 38% in the one without, and winning all four [second-round](/en/glossary#segundo-turno) pairings it tested: 46% to 44% against the runner-up, 46% to 41% against Ronaldo Caiado and 48% to 39% against Romeu Zema. Government assessment: 45% approve and 51% disapprove.",
-        "tendenciaPolymarket": "55.50% (vol USD 9.72M), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC). Up 1.00pp on the reading of 03/Sep, 23:45. ⭐ THE GAP TO THE RUNNER-UP REOPENED BY 3.70pp, from 11.65pp to 15.35pp, after narrowing across four consecutive readings, and it happened on a day with no new national poll. ⚠️ In the [first-round](/en/glossary#primeiro-turno) runner-up contract he gave up 2.90pp and now stands at 7.60% (vol USD 469 thousand)."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It gives him 39% in the scenario with Pablo Marçal and 38% without, and has him winning all four [second-round](/en/glossary#segundo-turno) pairings it tested: 46% to 44% against the runner-up, 46% to 41% against Ronaldo Caiado and 48% to 39% against Romeu Zema. Government approval: 45% approve and 51% disapprove.",
+        "tendenciaPolymarket": "55.50% (vol USD 9.76M) in the winner contract, confirmed reading of 04/Sep, 19:53 BRT, and this round publishes no new price for the winner contract, whose two readings did not confirm within 0.20 of a point. ⚠️ In the [first-round](/en/glossary#primeiro-turno) runner-up contract he gave up 2.25pp and stands at 5.35% (vol USD 470 thousand), confirmed reading of 05/Sep, 13:29 BRT, his second straight fall in that market."
       },
       {
         "name": "Flávio Bolsonaro",
@@ -1811,8 +1647,8 @@
         "polymarket": "40.15%",
         "pesquisaRange": "32-33%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep gives him 32% in the scenario with Marçal and 33% in the one without, and 2 points away in the second round, 44% against 46%. ⚠️ THE WINDOW'S THREE NATIONAL POLLS STILL DISAGREE ON THE SIGN OF THAT PAIRING: Genial/[Quaest](/en/glossary#quaest) of 02/Sep put the leader ahead by 42% to 41%, PoderData of 03/Sep put him ahead by 45% to 44%, and Datafolha of 03/Sep puts the leader ahead by 46% to 44%.",
-        "tendenciaPolymarket": "40.15% (vol USD 9.68M), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC). ⚠️ DOWN 2.70pp, the largest move of any name in the presidential book in this reading. ⭐ AND HIS TWO CONTRACTS MOVED IN OPPOSITE DIRECTIONS: in the [first-round](/en/glossary#primeiro-turno) runner-up contract he rose 4.00pp and now stands at 87.50% (vol USD 586 thousand). In the third-place contract he appears at 1.55% (vol USD 68 thousand)."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It gives him 32% in the scenario with Marçal and 33% without, and 2 points away in the [second round](/en/glossary#segundo-turno), 44% against 46%. ⚠️ THE THREE NATIONAL POLLS IN THE WINDOW STILL DISAGREE ON THE SIGN OF THAT PAIRING: Genial/Quaest of 02/Sep had the leader ahead 42% to 41%, PoderData of 03/Sep had him ahead 45% to 44%, and Datafolha of 03/Sep has the leader ahead 46% to 44%.",
+        "tendenciaPolymarket": "40.15% (vol USD 9.69M) in the winner contract, confirmed reading of 04/Sep, 19:53 BRT, and this round publishes no new price for the winner contract, whose two readings did not confirm within 0.20 of a point. ⭐ In the [first-round](/en/glossary#primeiro-turno) runner-up contract he rose 2.00pp and stands at 89.50% (vol USD 597 thousand), confirmed reading of 05/Sep, 13:29 BRT, and only one point in the whole series has ever been above it, the 90.50% of 21/Aug."
       },
       {
         "name": "Augusto Cury",
@@ -1822,8 +1658,8 @@
         "polymarket": "1.95%",
         "pesquisaRange": "7-8%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep leaves him at 7% in the scenario with Marçal and 8% in the one without, and it is still the only one of the window's five houses to put him below double digits. The other four: BTG/Nexus 11% on 31/Aug, Real Time Big Data 11% on 01/Sep, Genial/Quaest 10% on 02/Sep and PoderData 10% on 03/Sep.",
-        "tendenciaPolymarket": "1.95% (vol USD 4.07M), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC). Up 0.70pp in the winner contract, with around USD 380 thousand of new volume in one day. ⚠️ In the [first-round](/en/glossary#primeiro-turno) third-place contract he gave up 5.95pp and now stands at 53.55% (vol USD 123 thousand), breaking three straight days of gains. And in the first-round runner-up contract, which is a third market, he slipped 0.80pp, from 1.75% to 0.95% in that book, which has accumulated USD 142 thousand."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It leaves him at 7% in the scenario with Marçal and 8% without, and it is still the only one of the five houses in the window to put him below double digits. The other four: BTG/Nexus 11% on 31/Aug, Real Time Big Data 11% on 01/Sep, Genial/Quaest 10% on 02/Sep and PoderData 10% on 03/Sep.",
+        "tendenciaPolymarket": "1.95% (vol USD 4.08M) in the winner contract, confirmed reading of 04/Sep, 19:53 BRT, and this round publishes no new price for the winner contract, whose two readings did not confirm within 0.20 of a point. ⚠️ In the [first-round](/en/glossary#primeiro-turno) third-place contract he gave up 1.60pp and stands at 51.95% (vol USD 124 thousand), confirmed reading of 05/Sep, 13:29 BRT. Adding the two straight falls, that is 7.55pp since 03/Sep in that market."
       },
       {
         "name": "Renan Santos",
@@ -1833,8 +1669,8 @@
         "polymarket": "1.85%",
         "pesquisaRange": "3-4%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep gives him 4% in the scenario with Marçal and 3% in the one without. ⚠️ DISPERSION ACROSS HOUSES IN THIS WINDOW RUNS FROM 3% TO 7.6%: 3% at Genial/Quaest and PoderData, 3% to 4% at Datafolha, 6% at Real Time Big Data on 01/Sep and 7.6% at AtlasIntel on 31/Aug.",
-        "tendenciaPolymarket": "1.85% (vol USD 12.64M), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC). Up 0.10pp in the winner contract. In the [first-round](/en/glossary#primeiro-turno) third-place contract he rose 1.50pp and now stands at 23.50% (vol USD 277 thousand), recovering part of the 4.50pp he had given up in the previous reading. 📌 Among the four names above 1% in the winner contract, his is the largest accumulated volume, ahead of the leader and the runner-up, in a contract priced below 2%."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It gives him 4% in the scenario with Marçal and 3% without. ⚠️ THE SPREAD BETWEEN HOUSES IN THIS WINDOW RUNS FROM 3% TO 7.6%: 3% at Genial/Quaest and PoderData, 3% to 4% at Datafolha, 6% at Real Time Big Data on 01/Sep and 7.6% at AtlasIntel on 31/Aug.",
+        "tendenciaPolymarket": "1.85% (vol USD 12.68M) in the winner contract, confirmed reading of 04/Sep, 19:53 BRT, and this round publishes no new price for the winner contract, whose two readings did not confirm within 0.20 of a point. In the [first-round](/en/glossary#primeiro-turno) third-place contract he rose 1.00pp and stands at 24.50% (vol USD 278 thousand), confirmed reading of 05/Sep, 13:29 BRT, a second straight gain. 📌 Among the four names above 1% in the winner contract, he is the one with the largest accumulated volume, above the leader and the runner-up, in a contract priced below 2%."
       },
       {
         "name": "Ronaldo Caiado",
@@ -1844,8 +1680,8 @@
         "polymarket": "0.15%",
         "pesquisaRange": "4%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep puts him at 4% in both first-round scenarios and has him losing the second round by 46% to 41%. ⚠️ THE SECOND-ROUND PAIRING AGAINST HIM HAS FOUR READINGS IN THE SAME WEEK AND NO TWO AGREE ON THE MARGIN: 45% to 43% in his favour at Real Time Big Data on 01/Sep, 42% to 37% against him at Genial/Quaest on 02/Sep, 44% to 42% against him at PoderData on 03/Sep and 46% to 41% against him at Datafolha the same day.",
-        "tendenciaPolymarket": "0.15% (vol USD 7.15M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he gave up 1.00pp and stands at 9.00% (vol USD 114 thousand), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It puts him at 4% in both first-round scenarios and has him losing the [second round](/en/glossary#segundo-turno) 46% to 41%. ⚠️ THE SECOND-ROUND PAIRING AGAINST HIM HAS FOUR READINGS IN THE SAME WEEK AND NO TWO AGREE ON THE MARGIN.",
+        "tendenciaPolymarket": "0.15% (vol USD 7.16M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he rose 0.50pp and stands at 9.50% (vol USD 114 thousand), confirmed reading of 05/Sep, 13:29 BRT."
       },
       {
         "name": "Pablo Marçal",
@@ -1855,8 +1691,8 @@
         "polymarket": "0.15%",
         "pesquisaRange": "2%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep has him at 2% in the scenario in which he is on the list. His presence separates the house's two scenarios: with Marçal the leader has 39% and the runner-up 32%, and without Marçal the leader has 38% and the runner-up 33%, so the gap goes from 7 to 5 points.",
-        "tendenciaPolymarket": "0.15% (vol USD 3.69M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract he stands at 2.70% (vol USD 47 thousand), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It brings him at 2% in the scenario where he is on the list, and his presence separates the house's two scenarios: with Marçal the leader has 39% and the runner-up 32%, and without Marçal 38% and 33%.",
+        "tendenciaPolymarket": "0.15% (vol USD 3.73M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract he gave up 0.50pp and stands at 2.20% (vol USD 47 thousand), confirmed reading of 05/Sep, 13:29 BRT."
       },
       {
         "name": "Romeu Zema",
@@ -1866,8 +1702,8 @@
         "polymarket": "0.15%",
         "pesquisaRange": "2%",
         "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "No new national poll today. Datafolha of 03/Sep measures him at 2% in both first-round scenarios and has him losing the second round by 48% to 39%, a margin of 9 points. The week's four houses measured that pairing at 3, 11, 2 and 9 points, and it is the pairing with the widest dispersion across houses in the window.",
-        "tendenciaPolymarket": "0.15% (vol USD 6.55M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he stands at 0.70% (vol USD 49 thousand), confirmed reading of 04/Sep, 19:53 BRT (22:53 UTC)."
+        "tendenciaPesquisa": "No new national poll for the second day running. The most recent reading is still the Datafolha poll of 03/Sep (BR-03669/2026, field 01 to 03/Sep, n=2,002, margin of 2pp). It measures him at 2% in both first-round scenarios and has him losing the [second round](/en/glossary#segundo-turno) 48% to 39%, a margin of 9 points, the pairing with the widest spread between houses in the window.",
+        "tendenciaPolymarket": "0.15% (vol USD 6.56M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract he stands at 0.70% (vol USD 49 thousand), confirmed reading of 05/Sep, 13:29 BRT."
       },
       {
         "name": "Tarcísio",
@@ -1892,7 +1728,7 @@
         "tendenciaPolymarket": "0.05% (vol USD 7.43M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him. He is not a presidential candidate: he is running for governor of São Paulo."
       }
     ],
-    "updatedAt": "04/09/2026, 19:53",
+    "updatedAt": "05/09/2026, 13:29",
     "lastUpdate": "04/09/2026, 19:53"
   }
 }
