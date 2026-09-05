@@ -1,0 +1,8 @@
+{
+  "motivo": "expurgo do dia 2026-04-28 da serie de precos, 980 pontos em 18 contratos, por decisao do Andre em 04/Set/2026",
+  "trilha": "data/erratas/precos-2026-04-28.json",
+  "explicacao": "So o texas-senate-primary encolhe porque a primaria terminou em 27/Mai e nao recebe ponto novo. Os demais contratos tambem perderam pontos de 28/Abr, mas ganharam pontos novos desde a ultima subida, e o saldo ficou positivo. O numero abaixo e a contagem exata de linhas daquele contrato no dia expurgado, conferida contra a trilha.",
+  "arquivos": {
+    "data/texas-senate-primary.csv": -24
+  }
+}
