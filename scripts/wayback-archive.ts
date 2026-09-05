@@ -145,15 +145,37 @@ async function main() {
       fail++
       seguidasDeHost = ehFalhaDeHost(result.error) ? seguidasDeHost + 1 : 0
       if (seguidasDeHost >= LIMITE_FALHA_HOST) {
-        abortou = true
-        console.error(
-          `\n🛑 DISJUNTOR: ${LIMITE_FALHA_HOST} falhas de HOST seguidas. O archive.org está nos bloqueando.\n` +
-          `   Abortando com ${urls.length - i - 1} URL(s) ainda não tentadas, para não aprofundar o bloqueio.\n` +
-          `   Conferir antes de tentar de novo:\n` +
-          `     curl -s -o /dev/null -w "%{http_code}" https://web.archive.org\n` +
-          `   200 = liberado. 000 ou 429 = ainda bloqueado, ESPERAR.`
-        )
-        break
+        // 🔴 O DISJUNTOR PASSOU A PROVAR ANTES DE AFIRMAR, em 04/Set/2026.
+        //
+        // Ele dizia "o archive.org está nos bloqueando" só por contar 5 falhas
+        // seguidas, e `ehFalhaDeHost` conta o `fetch failed` genérico do Node,
+        // que é o invólucro de QUALQUER erro de transporte, inclusive de um
+        // problema da ORIGEM da URL. Medido hoje: as 5 falhas eram de URLs do
+        // Polymarket, e a mesma URL respondia 520 no curl, que é erro de
+        // Cloudflare na origem, enquanto o `/save/` do archive.org respondia
+        // 302 com snapshot novo e a MESMA URL passava no segundo Node fetch.
+        //
+        // 🕳️ O estrago não foi a rodada perdida, foi a CONCLUSÃO: a mensagem
+        // virou diagnóstico, o diagnóstico virou ficha de memória, e o passivo
+        // ficou parado dias esperando um bloqueio que não existia.
+        const sonda = await archiveUrl('https://example.com')
+        if (sonda.ok) {
+          console.log(
+            `\n   ⚠️ ${LIMITE_FALHA_HOST} falhas seguidas, mas a SONDA do archive.org passou.\n` +
+            `      Não é bloqueio de host: são falhas da origem das URLs. Seguindo.\n`
+          )
+          seguidasDeHost = 0
+        } else {
+          abortou = true
+          console.error(
+            `\n🛑 DISJUNTOR: ${LIMITE_FALHA_HOST} falhas seguidas E a sonda do archive.org também falhou (${sonda.error}).\n` +
+            `   Agora sim é bloqueio de host. Abortando com ${urls.length - i - 1} URL(s) não tentadas.\n` +
+            `   Conferir antes de tentar de novo, com a conversão de caminho DESLIGADA:\n` +
+            `     MSYS_NO_PATHCONV=1 curl -s -o /dev/null -w "%{http_code}" "https://web.archive.org/save/https://example.com"\n` +
+            `   302 ou 200 = liberado. 429 = bloqueado, ESPERAR.`
+          )
+          break
+        }
       }
     }
     if (i < urls.length - 1) await sleep(THROTTLE_MS)

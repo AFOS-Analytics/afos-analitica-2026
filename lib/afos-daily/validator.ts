@@ -68,9 +68,39 @@ function countParagraphsAndLinks(body: string): { substantialParagraphs: number;
   return { substantialParagraphs: substantial, paragraphsWithLink: withLink }
 }
 
-export function validateBody(body: string): Violation[] {
+export function validateBody(body: string, locale?: string): Violation[] {
   const violations: Violation[] = []
   const allLinks = extractAllLinks(body)
+
+  // E0. SEPARADOR DECIMAL coerente com o idioma.
+  //
+  // 🔴 A ficha de memória do travessão já avisava que a coluna "Conf." do
+  // calendário "já escapou uma vez". Ela escapou DE NOVO em 04/Set/2026: o
+  // pt-BR saiu com `| 0.7 |` onde a véspera usava `| 0,7 |`, e a minha
+  // varredura à mão não pegou porque só olhava decimal de DUAS casas, e a
+  // confiança tem UMA. Checagem ad hoc herda o vão de quem a escreveu.
+  //
+  // ⚠️ Só roda no CORPO, fora do bloco de fontes: título de matéria em
+  // português dentro de um arquivo em inglês daria falso positivo em toda daily.
+  // E ignora o que estiver colado em mais dígitos, para não pegar milhar.
+  if (locale) {
+    const corpo = body.split(/^## Fontes consultadas/m)[0]
+    const errado =
+      locale === 'en'
+        ? corpo.match(/(?<![\d,])\d+,\d{1,2}(?![\d])/g) // vírgula decimal no inglês
+        : corpo.match(/(?<![\d.])\d+\.\d{1,2}(?![\d])/g) // ponto decimal no pt-BR e no es
+    if (errado && errado.length > 0) {
+      const esperado = locale === 'en' ? 'ponto' : 'vírgula'
+      violations.push({
+        severity: 'error',
+        rule: 'decimal-separator-mismatch',
+        detail:
+          `${errado.length} número(s) com separador decimal errado para o locale ${locale}, que usa ${esperado}: ` +
+          `${Array.from(new Set(errado)).slice(0, 6).join(', ')}. ` +
+          `Conferir inclusive a coluna "Conf." do calendário, que é onde isto escapa.`,
+      })
+    }
+  }
 
   // ====== ERRORS (bloqueiam Write) ======
 
@@ -108,6 +138,36 @@ export function validateBody(body: string): Violation[] {
       severity: 'error',
       rule: 'unfilled-template-placeholder',
       detail: `${placeholderMatches.length} placeholder(s) {{var}} não preenchido(s): ${unique.join(', ')}. Substituir por URL real ou remover o link/bullet inteiro.`,
+    })
+  }
+
+  // E3.5. TRAVESSÃO ZERO na peça, ordem do André em 04/Set/2026: "todos os
+  // textos sem travessões anti-ia".
+  //
+  // 🔴 POR QUE ISTO É PORTÃO E NÃO LEMBRETE. A régua já existia desde 21/Jun e
+  // a ficha de memória já nomeava os TRÊS pontos em que o template reintroduz o
+  // travessão: o `title` do frontmatter, a coluna "Conf." do calendário e os
+  // rótulos `[Veículo — Título]` do rodapé. A prescrição era "rodar um strip
+  // antes de publicar", ou seja, um passo manual lembrado. Ele reincidiu em
+  // 04/Set com 20 travessões na peça, e NENHUM era prosa: os 20 vinham do
+  // template. Prescrição que depende de lembrar não roda.
+  //
+  // ⚠️ Confere o arquivo INTEIRO, frontmatter incluído, porque o `title` é
+  // justamente uma das três posições e ele vive no frontmatter.
+  const travessoes = body.match(/[—–]/g)
+  if (travessoes) {
+    const linhas = body
+      .split('\n')
+      .map((l, i) => [i + 1, l] as const)
+      .filter(([, l]) => /[—–]/.test(l))
+      .slice(0, 5)
+      .map(([n, l]) => `linha ${n}: ${l.trim().slice(0, 70)}`)
+    violations.push({
+      severity: 'error',
+      rule: 'em-dash-forbidden',
+      detail:
+        `${travessoes.length} travessão(ões) na peça. Ordem do André: nenhum texto do produto leva travessão. ` +
+        `Usar o ponto do meio (·) como separador, ou vírgula. Primeiras ocorrências: ${linhas.join(' | ')}`,
     })
   }
 

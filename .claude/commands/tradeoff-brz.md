@@ -32,7 +32,7 @@ issueNumber: N                      # 1, 2, 3... (autoincrement)
 weekStart: YYYY-MM-DD               # Segunda da semana coberta
 weekEnd: YYYY-MM-DD                 # Sexta da semana coberta
 updatedAt: "DD/MM/YYYY, HH:MM"
-title: "AFOS Tradeoff — Edição №N · Semana de DD-DD MMM YYYY"
+title: "AFOS Tradeoff · Edição №N · Semana de DD-DD MMM YYYY"
 locale: pt-BR
 status: draft                       # OBRIGATORIAMENTE draft inicial. Flip published só via scripts/publish-afos-tradeoff.ts {date} APÓS revisão humana.
 sinalDaSemana: "[1-2 parágrafos sintetizando o sinal mais relevante da semana — equivalente do lede do Daily mas focado em pricing/mercado/divergência. Cita números-chave em negrito (Lula 45.50%, gap +17.75pp, STF impeach 6.65%). Linka mercados Polymarket relevantes. 250-450 palavras.]"

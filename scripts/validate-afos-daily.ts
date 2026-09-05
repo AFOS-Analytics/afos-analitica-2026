@@ -35,7 +35,7 @@ function main() {
   }
 
   const content = readFileSync(path, 'utf-8')
-  const violations = validateBody(content)
+  const violations = validateBody(content, locale)
 
   console.log(`Validating ${filename}:`)
   console.log(formatViolations(violations))

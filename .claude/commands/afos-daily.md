@@ -1,5 +1,29 @@
 # AFOS Daily — Síntese Narrativa Diária
 
+## ⛔ TRAVESSÃO ZERO NA PEÇA, decisão do André em 04/Set/2026
+
+Ordem literal: **"todos os textos sem travessões anti-ia"**. A régua geral da casa já proibia travessão em prosa; o que 04/Set acrescenta é que ela vale também nas posições **ESTRUTURAIS** do template.
+
+⚠️ **A armadilha é a mesma do emoji: o travessão vinha DAQUI, não da peça.** Em 04/Set a daily saiu com 20 travessões e **nenhum era prosa minha**: eram o `title`, o cabeçalho do calendário, o parênteses do bloco de secundárias e os 17 bullets `[Veículo — Título]`. Todos prescritos por este arquivo. As 13 prescrições foram trocadas.
+
+✅ **O separador da casa é o ponto do meio (`·`)**, que o eyebrow já usava, ou vírgula quando a frase pede pausa:
+
+| onde | era | virou |
+|---|---|---|
+| `title` do frontmatter | `AFOS Daily — DD de MÊS` | `AFOS Daily · DD de MÊS` |
+| cabeçalho do calendário | `Calendário de pesquisas — próximos 7 dias` | `Calendário de pesquisas, próximos 7 dias` |
+| bullets do rodapé | `- [Veículo — Título](URL)` | `- [Veículo · Título](URL)` |
+
+🔑 **Nada no loader parseia pelo travessão**, então a troca é segura. O `HR_PATTERN` do `lib/afos-daily/loader.ts` apenas ACEITA `—` como linha horizontal alternativa, além de `---`, e o `title` do frontmatter só cai no fallback quando não existe.
+
+✅ **Conferir antes de publicar, nos TRÊS idiomas.** A coluna tem que dar **0**:
+
+```bash
+node -e "const s=require('fs').readFileSync('public/afos-daily/DATA.md','utf8');console.log('travessao:',(s.match(/[—–]/g)||[]).length)"
+```
+
+📌 **NÃO retroage sem ordem.** As dailies já publicadas têm 17 travessões cada, todos estruturais. Reescrever histórico é decisão do André, não efeito colateral desta régua.
+
 ## 🚫 EMOJI ZERO NO TEXTO DA PEÇA, decisão do André em 17/Ago/2026
 
 Ordem literal: *"excluir os emojis do texto"*, e em 18/Ago ele confirmou: **"decisão serve para sempre"**.
@@ -157,7 +181,7 @@ Criar arquivo em `public/afos-daily/{YYYY-MM-DD}.md` com a estrutura EXATA do te
 ---
 date: YYYY-MM-DD
 updatedAt: "DD/MM/YYYY, HH:MM"
-title: AFOS Daily — DD de MÊS de YYYY
+title: AFOS Daily · DD de MÊS de YYYY
 locale: pt-BR
 status: draft  # OBRIGATORIAMENTE draft. Vira published só via scripts/publish-afos-daily.ts {date} APÓS revisão humana e aprovação explícita.
 lede: "[lede de 2-3 linhas capturando 3 movimentos-chave do dia]"
@@ -225,7 +249,7 @@ Seguido de 6 seções obrigatórias:
 1. **Título + eyebrow** — "AFOS Daily · Síntese do Dia" + data por extenso
 2. **Lede — SOMENTE no YAML frontmatter** (campo `lede`) — o `AfosDailyTemplate.tsx` já renderiza automaticamente como bloco prominent. NÃO repetir como blockquote `>` no body (duplica em 2 blocos visuais: azul do YAML + amarelo do body — regra firmada 25/Mai/2026, `feedback_daily_no_body_blockquote_duplicating_lede.md`). Blockquote `>` é usado APENAS na Seção 4 (Divergências).
 3. **1. Mercado de previsão** — 4-5 parágrafos cobrindo: presidencial (Flávio × Lula + gap), 3ª via (Zema + Renan), 2º lugar, STF impeach, Senado, inflação
-4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver. **No FIM da seção, sub-bloco obrigatório "Calendário de pesquisas — próximos 7 dias"** (ver ETAPA 2.5 abaixo).
+4. **2. O que os institutos registraram** — 2-3 parágrafos: TSE agregado, pesquisas do dia, próximas publicações, estaduais novos se houver. **No FIM da seção, sub-bloco obrigatório "Calendário de pesquisas, próximos 7 dias"** (ver ETAPA 2.5 abaixo).
 5. **3. O que a imprensa cobriu** — 3-4 parágrafos: dinâmica governo, dinâmica oposição, pauta institucional, observações
 6. **4. Divergências do dia** — box amarelo com 2-3 observações de onde mercado ≠ pesquisa ≠ notícia. **REGRA (a partir de 29/Abr/2026):** usar **blockquote markdown** (`>`) em cada parágrafo da seção, NÃO `<div class="box-divergencia">`. O template renderiza `react-markdown` sem `rehype-raw`, então HTML inline é ignorado — apenas blockquote captura o estilo amber/yellow definido em `AfosDailyTemplate.tsx` (linha 192). Exemplo correto: `> **Mercado × pesquisa:** ...` (separar parágrafos com `>` em linha vazia entre eles). Dailies anteriores (22-28/Abr) ficam como histórico, não retroagir.
 7. **Em síntese** — 3 bullets numerados com observações-chave
@@ -242,12 +266,12 @@ Regra completa em `feedback_afos_daily_fontes_consultadas_template.md`. O fim do
 
 **matérias com link direto para a notícia (veículos âncora):**
 
-- [Veículo — Título da matéria](URL primária)
+- [Veículo · Título da matéria](URL primária)
 - ...
 
-**matérias secundárias (URL Google News redirect — clique resolve à matéria):**
+**matérias secundárias (URL Google News redirect, clique resolve à matéria):**
 
-- [Veículo — Título da matéria](URL Google News redirect completa do news-cache)
+- [Veículo · Título da matéria](URL Google News redirect completa do news-cache)
 - ...
 
 **Fontes técnicas:** [Polymarket](https://polymarket.com/event/brazil-presidential-election) (cotações ao vivo via proxy AFOS, fetched DD/MMM HH:MM BRT), [registro TSE](https://divulgacandcontas.tse.jus.br/divulga/) (pesquisas eleitorais oficiais).
@@ -263,13 +287,13 @@ Regra completa em `feedback_afos_daily_fontes_consultadas_template.md`. O fim do
 
 Regras inflexíveis do rodapé:
 - Seção `## Fontes consultadas` é OBRIGATÓRIA no body, antes do separador final. NUNCA omitir.
-- Os 2 sub-blocos (âncora + secundárias) sempre presentes; cada bullet no formato `- [Veículo — Título](URL)`.
+- Os 2 sub-blocos (âncora + secundárias) sempre presentes; cada bullet no formato `- [Veículo · Título](URL)`.
 - Bloco `**Fontes técnicas:**` sempre presente após os 2 sub-blocos (Polymarket + TSE linkados).
 - Linha plain `**Fontes citadas:**` mantida APÓS o separador final, SEM markdown links (URL gate bloqueia) — extraída pelo loader pro footer.
 - Linhas `**Método:**` e `**Histórico:**` sempre presentes após "Fontes citadas:".
 - NÃO modificar `AfosDailyTemplate.tsx` pra renderizar markdown no footer — template é fixo.
 
-## ETAPA 2.5: Sub-bloco "Calendário de pesquisas — próximos 7 dias" (no fim da Seção 2)
+## ETAPA 2.5: Sub-bloco "Calendário de pesquisas, próximos 7 dias" (no fim da Seção 2)
 
 **Implantado em 16/Mai/2026 D+2 launch.** Bloco aditivo obrigatório no fim da Seção 2, sem modificar o template visual (markdown nativo puro, renderizado via prose-slate do `AfosDailyTemplate.tsx`).
 
@@ -298,7 +322,7 @@ Regras inflexíveis do rodapé:
 ### Template markdown obrigatório
 
 ```markdown
-### Calendário de pesquisas — próximos 7 dias
+### Calendário de pesquisas, próximos 7 dias
 
 Pesquisas registradas no TSE com publicação prevista entre [DD/Mai] e [DD/Mai]. Inclusão na tabela não significa publicação confirmada, porque institutos podem atrasar ou cancelar divulgação. Filtros aplicados: escopo nacional e amostra ≥ 1.000. Cada protocolo linkado à [consulta pública TSE](https://divulgacandcontas.tse.jus.br/divulga/).
 
@@ -314,8 +338,8 @@ Fonte: registro público [TSE](https://divulgacandcontas.tse.jus.br/divulga/) vi
 
 ### Tradução EN/ES
 
-- **EN:** Heading "📅 Polling calendar — next 7 days". Frase: "Polls registered with TSE scheduled for publication between [DD/May] and [DD/May]…"
-- **ES:** Heading "📅 Calendario de encuestas — próximos 7 días". Frase: "Encuestas registradas en el TSE con publicación prevista entre [DD/May] y [DD/May]…"
+- **EN:** Heading "Polling calendar, next 7 days". Frase: "Polls registered with TSE scheduled for publication between [DD/May] and [DD/May]…"
+- **ES:** Heading "Calendario de encuestas, próximos 7 días". Frase: "Encuestas registradas en el TSE con publicación prevista entre [DD/May] y [DD/May]…"
 
 ### Quando NÃO incluir o bloco
 
@@ -385,7 +409,7 @@ Implementadas em 07/Mai/2026 após incidente daily 06/Mai (homepages em vez de U
 - Mirar 50–70% secundário (acesso aberto) + 30–50% prestígio âncora ao construir parágrafos da síntese
 - **Seção "Fontes consultadas" SEPARADA em 2 blocos:**
   - "Matérias com link direto para a notícia" — primárias âncora
-  - "Matérias secundárias (URL Google News redirect — clique resolve à matéria)" — secundárias
+  - "Matérias secundárias (URL Google News redirect, clique resolve à matéria)" — secundárias
 
 **Aplicar em PT-BR, EN e ES uniformemente** (as traduções da ETAPA 3.7 mantêm as URLs originais — a proporção é definida na geração PT e replicada nas traduções).
 

@@ -211,7 +211,7 @@ export function loadDaily(date: string, locale?: string): AfosDailyData | null {
   return {
     date: dateStr,
     updatedAt: str(fm.updatedAt),
-    title: str(fm.title, `AFOS Daily — ${dateStr}`),
+    title: str(fm.title, `AFOS Daily · ${dateStr}`),
     locale: str(fm.locale, 'pt-BR'),
     status: str(fm.status, 'draft'), // Fail-safe: missing field => draft (hidden from prod)
     lede,

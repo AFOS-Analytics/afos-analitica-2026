@@ -1,0 +1,53 @@
+{
+  "data": "2026-09-04",
+  "gate_factcheck": {
+    "eventos_avaliados": 3,
+    "incorporados": [
+      "Fachin desmembrou o pedido de Moraes contra Mendonca (Folha + Gazeta do Povo + Poder360)",
+      "CNMP abriu procedimento sobre Gonet (Folha + O Globo)"
+    ],
+    "recusados": [
+      {
+        "evento": "Fachin encerrou o inquerito",
+        "motivo": "defendeu e prometeu, nao encerrou"
+      },
+      {
+        "evento": "Marinho procura Gilmar",
+        "motivo": "O Globo, G1 e Valor sao o MESMO grupo: 3 manchetes, 1 fonte"
+      },
+      {
+        "evento": "INSS mudou criterio",
+        "motivo": "materia de 03/Set as 17:09, nao de hoje"
+      }
+    ],
+    "cross_ref": {
+      "Fachin": 13,
+      "Mendonca": 29,
+      "Gonet": 2
+    }
+  },
+  "adversarial": {
+    "single_source": "nenhuma",
+    "numerical": "1 marcado (MDB 12,25%), valor da captura certificada, sem campo estruturado no JSON",
+    "fontes_inventadas": "3 conferidas ao acaso, todas no news-cache",
+    "quotes": "2, ambas com fonte direta",
+    "causacao_espuria": "nenhuma, a peca registra coincidencia sem atribuir causa",
+    "verbos_criticos": "retirou com data; defendeu encerrar e nao encerrou; prazo de 5 dias atribuido a 03/Set"
+  },
+  "reguas": {
+    "palavras": 1090,
+    "teto": 1100,
+    "travessao": 0,
+    "emoji": 0,
+    "crlf": 0,
+    "tldr_bullets": 3,
+    "validator": "OK",
+    "densidade_link": "82%"
+  },
+  "mercado": {
+    "carimbo": "04/09/2026, 19:53",
+    "gate_rebaseline": "nao disparou",
+    "refetch_ao_vivo": "04/09 20:20 BRT, 0,00pp nas quatro variaveis do gate"
+  },
+  "decisao": "prosseguir para preview"
+}
