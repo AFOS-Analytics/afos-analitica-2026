@@ -7,6 +7,10 @@
  * agora é RECORDE, PISO ou está DENTRO da faixa. Também mede quanto a janela
  * de 90 dias da API esconderia, que foi o defeito achado em 04/Set/2026.
  *
+ * ⚠️ O bloco `QUARENTENA` hoje NÃO aparece, porque o único dia contaminado
+ * conhecido, 28/Abr/2026, foi expurgado. Se ele voltar a aparecer, é
+ * contaminação NOVA e o lugar de olhar é a coleta, não este script.
+ *
  * ⛔ Não coleta, não escreve nada e não toca na rede.
  *
  * Uso:

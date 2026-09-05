@@ -115,6 +115,14 @@ export function idadeEmHoras(carimbo, agora = new Date()) {
 /**
  * 🔴 O INSTANTE CONTAMINADO, achado em 04/Set/2026 ao rodar isto no Brasil.
  *
+ * ✅ ESTADO ATUAL: o dado de 28/Abr foi EXPURGADO do Neon no mesmo dia, por
+ * decisão do André, e o backup foi regerado. Esta função continua aqui como
+ * DETECTOR, e hoje ela reporta zero. Se voltar a acusar, é contaminação NOVA.
+ * O expurgo é `scripts/expurgar-precos-contaminados.ts` e a trilha das 980
+ * linhas removidas está em `data/erratas/precos-2026-04-28.json`.
+ *
+ * O que ela achou, e que fica registrado porque é a calibração dela:
+ *
  * A ferramenta anunciou que o topo da série do contrato do STF era 50,00, de
  * 28/Abr, contra uma faixa real de 2,10 a 19,30. E que o Aldo Rebelo, hoje em
  * 0,10%, já valera 50,00. Nenhum dos dois é preço.
@@ -140,12 +148,13 @@ export function idadeEmHoras(carimbo, agora = new Date()) {
  * vezes no backup, quase toda em valores baixos, porque azarão se aglomera em
  * 1%. O que separa o joio é a concentração perto de 50, não a coincidência.
  *
- * ⛔ Isto NÃO reescreve o backup e não retroage nada. É filtro de LEITURA, e só
- * do conferidor de superlativo, que é o único consumidor que olha extremo. O que
- * fazer com o histórico contaminado é decisão do André.
- *
  * 📌 O corte em 20% fica entre a maior legítima observada, 12,5%, e a menor
  * contaminada, 28,1%, e é 2,3 vezes o p99.
+ *
+ * ⛔ Isto continua sendo filtro de LEITURA, e só do conferidor de superlativo.
+ * Ele não apaga nada: quem apaga é o script de expurgo, com ensaio, trilha
+ * obrigatória em disco antes do DELETE e proteção de 30 dias contra a série
+ * viva. Detector e expurgo são coisas separadas de propósito.
  */
 export function instantesSuspeitos(precos, { limiar = 0.2, minPontos = 20, faixa = [49, 51] } = {}) {
   const porInstante = new Map()

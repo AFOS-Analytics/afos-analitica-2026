@@ -193,9 +193,11 @@ Um comando, e ele responde a pergunta inteira: por contrato binário, quantos po
 
 O `days` trava em 90 e a resposta devolve **`truncated: false`**, porque esse campo fala do teto de 1.000 pontos e não da janela. Ou seja, ela diz "não truncado" escondendo 55 dias e 94 pontos. E é na parte escondida que moram os extremos: o topo democrata do Senado é **57,50% em 16/Abr**; dentro da janela ele aparece como 52,50%. Escrever "perto do topo" com o valor de hoje erraria a distância por 5pp, com a frase soando plausível. **Superlativo falso não dá erro.**
 
-🔴 **E o backup tem 3 instantes CONTAMINADOS, que o script põe em quarentena e declara.** Em 28/Abr/2026, entre 11h45 e 12h50 UTC, o coletor gravou valores perto de 50% para livros sem relação nenhuma no mesmo segundo, inclusive **os dois lados do Senado americano ao mesmo tempo**. Isso é valor de recuo de quem não leu o preço. Medido sobre os 971 instantes com 20 pontos ou mais: a fração de pontos entre 49% e 51% tem **mediana 0,0% e p99 8,7%**, e nesses três instantes ela é **28,1%, 91,8% e 100%**.
+✅ **O dia 28/Abr/2026 foi EXPURGADO da série em 04/Set, por decisão do André.** Naquele dia, a partir das 11h45 UTC, o coletor gravou valores perto de 50% para livros sem relação nenhuma no mesmo segundo, inclusive **os dois lados do Senado americano ao mesmo tempo**, e depois eles decaíam de volta ao longo de até 8 horas. Sem isso, o contrato do STF do Brasil aparecia com topo de série 50,00 numa faixa real de 2,10 a 19,30.
 
-Sem a quarentena, o contrato do STF do Brasil aparece com topo de série 50,00 quando a faixa real é 2,10 a 19,30. ⛔ O script **não reescreve o backup**: é filtro de leitura, só do conferidor de extremo, e o que fazer com o histórico contaminado é decisão do André.
+980 pontos saíram do Neon, o backup foi regerado e a trilha das linhas removidas está em `data/erratas/precos-2026-04-28.json`. O expurgo é `scripts/expurgar-precos-contaminados.ts`, que exige `--dia=`, faz ensaio por padrão, grava a trilha ANTES do DELETE e se recusa a tocar em dia com menos de 30 dias.
+
+⚠️ **O detector continua ligado e hoje reporta zero.** Se o `serie-do-contrato.mjs` voltar a imprimir um bloco `QUARENTENA`, é contaminação NOVA e o lugar de olhar é a coleta. A calibração dele: sobre os 971 instantes com 20 pontos ou mais, a fração de pontos entre 49% e 51% tinha **mediana 0,0% e p99 8,7%**; nos instantes de 28/Abr ela chegava a **91,8% e 100%**.
 
 ### A régua de escrita, que continua valendo
 
