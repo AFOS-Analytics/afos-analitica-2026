@@ -1,0 +1,69 @@
+{
+  "data": "2026-09-05",
+  "gate_factcheck": {
+    "eventos_avaliados": 4,
+    "incorporados": [
+      "PGR mandou investigar interferencia no relatorio da PF e pediu aval para investigar Mendonca (Gazeta do Povo + Estadao), ATO DE 04/Set",
+      "Conselho do MPF abriu processo sobre Gonet (Estadao + Valor), ATO DE 04/Set",
+      "Fachin sinalizou intencao de levar os dois casos ao plenario (G1 + Folha), sinalizacao e nao decisao"
+    ],
+    "recusados": [
+      {
+        "evento": "Atos do STF/PGR atribuidos a 05/Set",
+        "motivo": "05/Set/2026 e SABADO. O corpo da Gazeta do Povo diz \"nesta sexta-feira (4)\", publicada 04/09 21:44, e a cronologia do Poder360 de 04/09 18:39 nao registra nada em 05/Set. 18 ocorrencias de dia da semana corrigidas nos 3 idiomas antes de escrever"
+      },
+      {
+        "evento": "Pesquisa nacional nova em 04 ou 05/Set",
+        "motivo": "conferido na fonte primaria: Nexus lista 31/Ago como a mais recente, AtlasIntel 31/Ago, Meio/Ideia 05/Ago. Manchete de \"nova pesquisa BTG/Nexus\" e divulgacao PREVISTA para 08 a 10/Set no registro do TSE"
+      }
+    ],
+    "cross_ref": {
+      "Fachin": 14,
+      "Mendonca": 30,
+      "Gonet": 3
+    }
+  },
+  "adversarial": {
+    "single_source": "nenhuma. As duas fontes de cada ato sao de grupos diferentes",
+    "numerical": "todos os precos vieram da segunda leitura certificada de 05/09 13:29 BRT; o livro de vencedor mantem os valores de 04/09 19:53 e isso esta declarado",
+    "superlativo": "1 REPROVADO e corrigido: \"89,50%, o valor mais alto que a pagina ja registrou\" era falso, o topo da serie e 90,50% de 21/Ago. Estava em 6 arquivos (3 fontes pt + 4 mapas de locale) e foi trocado por \"so um ponto da serie esteve acima\"",
+    "fontes_inventadas": "3 conferidas ao acaso, todas no news-cache de 05/Set",
+    "quotes": "nenhuma citacao direta na peca",
+    "causacao_espuria": "nenhuma. A queda de 7,20pp do contrato de impeachment e registrada sem causa atribuida, e a peca declara que nao houve ato novo em 05/Set",
+    "verbos_criticos": "sinalizou (nao decidiu); mandou investigar com data de 04/Set; prazos de cinco dias atribuidos a 03/Set; registrada nao e publicada, no calendario"
+  },
+  "reguas": {
+    "palavras": {
+      "pt-BR": 1100,
+      "en": 1092,
+      "es": 1155
+    },
+    "teto": 1100,
+    "nota_teto": "o teto vale para a fonte pt-BR. O ES roda 1145 a 1177 nas ultimas cinco dailies por expansao do idioma",
+    "travessao": {
+      "pt-BR": 0,
+      "en": 0,
+      "es": 0
+    },
+    "emoji": {
+      "pt-BR": 0,
+      "en": 0,
+      "es": 0
+    },
+    "tldr_bullets": 3,
+    "validator": "OK nos 3 idiomas",
+    "densidade_link": "sem violacao do validador, limiar 80%",
+    "gate_numerico": "59 decimais em cada idioma, multiconjunto IDENTICO ao pt-BR"
+  },
+  "mercado": {
+    "carimbo": "05/09/2026, 13:29",
+    "trava_captura": "livro de VENCEDOR nao confirmou, 0,30pp num dos nomes. Publica sem preco novo, com os valores de 04/09 19:53 declarados",
+    "livro_bloqueado": "contrato do STF VOLTOU a dupla leitura nesta rodada, depois de sair em 04/Set com leitura unica e a faixa do dia declarada. A excecao da ETAPA 1.8 nao foi necessaria hoje",
+    "gate_rebaseline": "disparou na rodada do /atualizar-brz e os 5 arquivos foram reescritos antes da daily"
+  },
+  "sintese": {
+    "revisao_do_andre": "2 correcoes. A primeira, negrito na primeira linha de CADA paragrafo e nao so do primeiro. A segunda, a sintese estava pobre e foi reescrita com substancia propria, cabendo no teto por corte de repeticao em 12 paragrafos",
+    "erro_corrigido_no_mesmo_passe": "eu havia escrito PALVER entre os protocolos NOVOS de 05/Set, e ela entrou em 04/Set"
+  },
+  "decisao": "aprovado pelo Andre em 05/Set, publicar"
+}
