@@ -65,7 +65,12 @@ summaryCards:          # 3 cartões: Câmara, Senado, generic ballot
   - label: ""; headline: ""; unit: ""; delta: ""; deltaDirection: up|down|flat; desc: ""
 execSummaryIntro: "..."
 antiAvgIntro: "..."
-antiAvg: { title, leftLabel, leftValue, leftUnit, leftDetails[], rightLabel, rightValue, rightUnit, rightDetails[] }
+antiAvg: { title, leftLabel, leftValue, leftUnit, leftDetails[], rightLabel, rightValue, rightDetails[], footer }
+#   🔴 NAO existe `rightUnit`: o loader tem `leftUnit` e NAO o par dele. Escrever
+#   `rightUnit` faz o texto sumir da tela sem erro. As edicoes de 31/Jul a 17/Ago
+#   carregam esse campo, e a `2026-08-17.en.md` tem "% and D+6.20" ali, no ar e
+#   invisivel desde entao. Quem fecha o bloco e `footer`, que a No6 usa e o
+#   loader LE. O portao de blocos pega, mas so DEPOIS de escrito.
 antiAvgClosing: "..."
 scenariosIntro: "..."
 scenarios:             # 🔴 type: base | bear | tail  (NÃO existe 'contrarian')
