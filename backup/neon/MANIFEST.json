@@ -1,5 +1,5 @@
 {
-  "geradoEm": "2026-09-05T17:00:37.057Z",
+  "geradoEm": "2026-09-06T17:19:21.326Z",
   "observacao": "geradoEm usa o registro mais recente do banco, nao o relogio da maquina, para o backup ser reproduzivel e o diff ficar vazio quando nada mudou",
   "repositorioPublico": true,
   "tabelasExcluidasPorConterDadoPessoal": {
@@ -16,8 +16,8 @@
     "llmRun": "pode conter prompt com dado de usuário",
     "modelOutput": "pode conter resposta sobre dado de usuário"
   },
-  "totalLinhas": 65920,
-  "totalBytesComprimidos": 7569302,
+  "totalLinhas": 67254,
+  "totalBytesComprimidos": 7698242,
   "arquivos": [
     {
       "arquivo": "marketPrice/2026-04.csv.gz",
@@ -51,51 +51,51 @@
     },
     {
       "arquivo": "marketPrice/2026-09.csv.gz",
-      "linhas": 6008,
-      "sha256": "1c00018902df9b22",
-      "bytesGz": 329586
+      "linhas": 7311,
+      "sha256": "f2b2c075c9fe9016",
+      "bytesGz": 401779
     },
     {
       "arquivo": "marketOutcome/2026-04.csv.gz",
       "linhas": 171,
-      "sha256": "06735a767713abc4",
-      "bytesGz": 8530
+      "sha256": "f49f8e078a38d568",
+      "bytesGz": 8532
     },
     {
       "arquivo": "marketOutcome/2026-05.csv.gz",
       "linhas": 5,
-      "sha256": "debafadeb75aa350",
-      "bytesGz": 472
+      "sha256": "1cd130031c440afa",
+      "bytesGz": 473
     },
     {
       "arquivo": "marketOutcome/2026-06.csv.gz",
       "linhas": 8,
-      "sha256": "11178e1e7a28879c",
-      "bytesGz": 789
+      "sha256": "0b32d65f7345bf5b",
+      "bytesGz": 788
     },
     {
       "arquivo": "marketOutcome/2026-07.csv.gz",
       "linhas": 60,
-      "sha256": "4422beeb3916c4d0",
-      "bytesGz": 2562
+      "sha256": "6d91e2b4bf89177e",
+      "bytesGz": 2547
     },
     {
       "arquivo": "marketOutcome/2026-08.csv.gz",
       "linhas": 9,
-      "sha256": "da634c31e371d0b8",
-      "bytesGz": 704
+      "sha256": "b3b790757a364d38",
+      "bytesGz": 708
     },
     {
       "arquivo": "marketOutcome/2026-09.csv.gz",
       "linhas": 2,
-      "sha256": "13d18f4a1f0a52de",
-      "bytesGz": 239
+      "sha256": "66751c4fee0edc08",
+      "bytesGz": 238
     },
     {
       "arquivo": "market/2026-04.csv.gz",
       "linhas": 18,
-      "sha256": "a5ee51c9e03129db",
-      "bytesGz": 1791
+      "sha256": "0b960cc11cbefa6f",
+      "bytesGz": 1795
     },
     {
       "arquivo": "market/2026-06.csv.gz",
@@ -106,14 +106,14 @@
     {
       "arquivo": "market/2026-07.csv.gz",
       "linhas": 7,
-      "sha256": "f9581e819d5db765",
-      "bytesGz": 888
+      "sha256": "8d6c1ae73eb1c6d3",
+      "bytesGz": 881
     },
     {
       "arquivo": "marketEvent/2026-04.csv.gz",
       "linhas": 8,
-      "sha256": "0ca0c88709473bb0",
-      "bytesGz": 688
+      "sha256": "f4756e1df2c6c396",
+      "bytesGz": 695
     },
     {
       "arquivo": "marketEvent/2026-06.csv.gz",
@@ -124,8 +124,8 @@
     {
       "arquivo": "marketEvent/2026-07.csv.gz",
       "linhas": 15,
-      "sha256": "a7cc2a7123c52add",
-      "bytesGz": 1142
+      "sha256": "9caf489856ab4a08",
+      "bytesGz": 1148
     },
     {
       "arquivo": "source/2026-04.csv.gz",
@@ -189,9 +189,9 @@
     },
     {
       "arquivo": "researchRun/2026-09.csv.gz",
-      "linhas": 5,
-      "sha256": "e2be5be4a5e6799b",
-      "bytesGz": 459
+      "linhas": 6,
+      "sha256": "b66de4d34e7025b9",
+      "bytesGz": 516
     },
     {
       "arquivo": "researchFinding/2026-04.csv.gz",
@@ -225,9 +225,9 @@
     },
     {
       "arquivo": "researchFinding/2026-09.csv.gz",
-      "linhas": 61,
-      "sha256": "d83bcf79ae6daf07",
-      "bytesGz": 64288
+      "linhas": 86,
+      "sha256": "19997fcecd6f8618",
+      "bytesGz": 87283
     },
     {
       "arquivo": "analysisReport/2026-04.csv.gz",
@@ -261,9 +261,9 @@
     },
     {
       "arquivo": "analysisReport/2026-09.csv.gz",
-      "linhas": 24,
-      "sha256": "431e93da8416dc0c",
-      "bytesGz": 162078
+      "linhas": 29,
+      "sha256": "bd05723a9f9dfd02",
+      "bytesGz": 195773
     },
     {
       "arquivo": "crossSignalLink.csv.gz",
