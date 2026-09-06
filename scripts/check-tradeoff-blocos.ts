@@ -30,7 +30,10 @@
  * de TEXTO caminho a caminho.
  *
  * 📌 O corte de 40 caracteres separa texto editorial de rótulo curto, cor e
- * enum, que têm regra própria e já são cobertos pelo teste de enum.
+ * enum, que têm regra própria e já são cobertos pelo teste de enum. ⚠️ Mas
+ * string CURTA COM DÍGITO entra do mesmo jeito, porque rótulo curto que carrega
+ * número é valor. Ver o comentário de MINIMO_TEXTO: foi assim que um campo de
+ * 10 caracteres ficou três semanas fora da tela sem o portão notar.
  *
  * Uso:
  *   npx tsx scripts/check-tradeoff-blocos.ts                 # todas as edições, br e us
@@ -69,6 +72,25 @@ const DIRECOES_VALIDAS = ['up', 'down', 'flat']
 /** Texto curto é rótulo, cor ou enum, e tem régua própria. */
 const MINIMO_TEXTO = 40
 
+/**
+ * 🔴 O CORTE DE 40 TEM UM BURACO, e ele custou 3 semanas de tela errada.
+ *
+ * Medido em 06/Set/2026: `antiAvg.rightUnit` nao existe no loader, e a edicao
+ * de 17/Ago escreveu `rightUnit: "% e D+6.20"` ali, com 10 caracteres. Passou
+ * por BAIXO do corte, o portao nao disse nada, e a tela mostrou um `52.50` de
+ * 28px sem o % e sem o D+6.20, em 3 idiomas, de 17/Ago a 06/Set.
+ *
+ * 🔑 Curto nao quer dizer descartavel. Rotulo curto que carrega NUMERO e valor,
+ * e a regua da casa e que todo numero diz DE QUE ele e. Por isso a string curta
+ * tambem entra quando tem DIGITO. Sem digito continua fora, que e o que mantem
+ * `up`, `flat` e cor longe do relatorio.
+ *
+ * ⚠️ O caso que provou o buraco tem 10 caracteres. Subir o corte para 9 nao
+ * resolveria: o proximo pode ter 4. Quem separa aqui e a NATUREZA do campo,
+ * nao o tamanho dele.
+ */
+const temNumero = (s: string) => /\d/.test(s)
+
 const pastaDoPais = (pais: string) => (pais === 'br' ? RAIZ : join(RAIZ, pais))
 const arquivoDe = (pais: string, data: string, loc: string) =>
   join(pastaDoPais(pais), loc === 'pt-BR' ? `${data}.md` : `${data}.${loc}.md`)
@@ -78,7 +100,7 @@ function caminhosDeTexto(o: unknown, pre = '', acc: string[] = []): string[] {
   if (o == null || typeof o !== 'object') return acc
   for (const [k, v] of Object.entries(o as Record<string, unknown>)) {
     const p = pre ? `${pre}.${k}` : k
-    if (typeof v === 'string') { if (v.length > MINIMO_TEXTO) acc.push(p) }
+    if (typeof v === 'string') { if (v.length > MINIMO_TEXTO || temNumero(v)) acc.push(p) }
     else if (Array.isArray(v)) v.forEach((x, i) => caminhosDeTexto(x, `${p}.${i}`, acc))
     else if (v && typeof v === 'object') caminhosDeTexto(v, p, acc)
   }
