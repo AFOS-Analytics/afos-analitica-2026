@@ -92,6 +92,22 @@ Teste do conferidor: `node scripts/testar-tse-historico.mjs`, 29 asserções em 
 
 A API devolve `scope` e `scopeSource`. 🔴 **O `scope` é DERIVADO por nós**, lido do plano amostral ou da metodologia, não é campo do TSE. Sempre reportar junto de onde ele saiu. Em 01/Set: 123 vieram de `methodology`, 40 de `sampling_plan` e 5 ficaram em `none`. Uma Real Time do DF já virou "vão nacional" por 7 dias por causa disto. → `memory/feedback_escopo_nacional_derivado_do_plano_amostral.md`
 
+✅ **Desde 06/Set/2026 a lista de "conferir na divulgação" deixou de ser plana**, porque os sinalizados não são iguais:
+
+```bash
+node scripts/conferir-escopo-derivado.mjs --dias=30
+```
+
+Ele pergunta, **por casa**, se o plano amostral separa escopo, e responde por dois sinais. **CONTRADIÇÃO**, que basta sozinha: o plano chamou de nacional uma pesquisa que a metodologia já disse ser estadual. **VARIAÇÃO**, quando não há contradição: se o plano já disse "estadual" alguma vez naquela casa, ele está sendo preenchido por pesquisa; se diz nacional em todos, é texto padrão e não informa nada.
+
+🔴 **Medido em 06/Set, e é por isso que ele existe:** o plano amostral da Real Time Big Data diz "eleitorado brasileiro" em **23 de 23 pesquisas ESTADUAIS** dela. Três registros da casa estavam servidos como NACIONAIS apoiados exatamente nesse campo, com a metodologia calada, e um deles no calendário publicado. Eles são indistinguíveis das 23 estaduais em toda medida do registro: mesmo n (1.600 e 2.000), mesmo custo por entrevista (R$ 15,00) e uma metodologia que diz "eleitores do universo a ser explorado", que não nomeia universo nenhum.
+
+⭐ **E ele libera quem se sustenta**, que é o que o separa de um portão histérico: o plano da Veritá diz "estadual" em 41 dos 43 registros dela, então o "nacional" do registro de n=40.500 é escolha e passa.
+
+⛔ **Ele não diz que o registro é estadual.** Diz que a evidência para chamá-lo de nacional não sustenta o rótulo. Sai 1 só quando um GRAVE está no calendário vivo; rótulo frágil já vencido é dívida de dataset e sai 0.
+
+Teste do conferidor: `node scripts/testar-escopo-derivado.mjs`, 12 casos plantados. **Dois deles nasceram de mutação**, não de imaginação: os 10 primeiros não pegavam nem a base aceitando nacionais de fonte forte, nem a troca de "mentiu ao menos uma vez" por "mentiu em todas".
+
 ### 🆔 CPF
 
 A API devolve `statistician`, `methodology`, `samplingPlan` e `controlSystem`, que é texto livre onde o TSE põe CPF. A redação foi instalada na origem em 22/Ago. Conferir com o primitivo do projeto, **nunca com regex própria**:

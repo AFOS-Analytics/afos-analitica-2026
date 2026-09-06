@@ -1,3 +1,4 @@
 {"quando":"2026-09-02","arquivo":757,"banco":832,"fantasmas":75,"inseridas":4,"jaExistiam":753,"modo":"rede","fonte":"ficha","nota":"semeado em 04/Set a partir de memory/feedback_o_registro_do_tse_perde_linhas_e_o_banco_nunca_perde.md, que registrou a medicao do dia. Nao e leitura direta do script."}
 {"quando":"2026-09-04T21:47:00.000Z","arquivo":784,"banco":860,"fantasmas":76,"inseridas":16,"jaExistiam":768,"modo":"rede","fonte":"medido","nota":"primeira rodada do historico. A subtracao contra 02/Set nao fecha porque a rodada de 03/Set aconteceu e nao esta anotada: 12 linhas entraram sem registro. A retirada real do periodo e 1, pelos fantasmas."}
 {"quando":"2026-09-05T16:15:04.652Z","arquivo":805,"banco":883,"fantasmas":78,"inseridas":23,"jaExistiam":782,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-06T16:27:08.233Z","arquivo":830,"banco":908,"fantasmas":78,"inseridas":25,"jaExistiam":805,"modo":"rede","fonte":"medido"}
