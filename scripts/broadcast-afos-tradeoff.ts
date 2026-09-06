@@ -80,6 +80,18 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run')
   if (dryRun) console.log('🔵 DRY-RUN mode — no emails will be sent.\n')
 
+  /**
+   * 🔴 RETOMADA DE FALHA PARCIAL. Instalado em 06/Set/2026, no disparo da №7
+   * dos EUA: um erro de rede derrubou o SEGUNDO lote e 10 dos 20 ficaram sem
+   * receber. Reexecutar o script inteiro reenviaria para os 10 que JÁ tinham
+   * recebido, porque ele nunca consultou a trilha antes de montar a fila.
+   *
+   * ⛔ E-mail não se desenvia, então a retomada não pode ser no olho. Com esta
+   * flag a fila é a lista de ativos MENOS quem já tem `broadcast_tradeoff_sent`
+   * desta MESMA edição e país. Sem ela o comportamento é o de sempre.
+   */
+  const pularJaEnviados = process.argv.includes('--pular-ja-enviados')
+
   const pais = process.argv.find(a => a.startsWith('--pais='))?.split('=')[1] ?? PAIS_PADRAO
   const dir = dirDoPais(pais)
   if (!existsSync(dir)) {
@@ -113,11 +125,37 @@ async function main() {
   const adapter = new PrismaNeon({ connectionString: url })
   const prisma = new PrismaClient({ adapter })
 
-  const leads = await prisma.lead.findMany({
+  let leads = await prisma.lead.findMany({
     where: { status: 'active' },
     select: { id: true, email: true, preferredLocale: true, locale: true, unsubscribeToken: true },
   })
-  console.log(`📋 ${leads.length} active leads found.\n`)
+  console.log(`📋 ${leads.length} active leads found.`)
+
+  if (pularJaEnviados) {
+    const eventos = await prisma.contactEvent.findMany({
+      where: { eventType: 'broadcast_tradeoff_sent' },
+      select: { leadId: true, eventPayload: true },
+    })
+    const jaRecebeu = new Set(
+      eventos
+        .filter((e) => {
+          const p = (e.eventPayload || {}) as { edicao?: string; pais?: string }
+          return p.edicao === date && p.pais === pais
+        })
+        .map((e) => e.leadId),
+    )
+    const antes = leads.length
+    leads = leads.filter((l) => !jaRecebeu.has(l.id))
+    console.log(
+      `⏭️  --pular-ja-enviados: ${jaRecebeu.size} já constam como enviados nesta edição (${date}, ${pais}). ` +
+        `Removidos da fila: ${antes - leads.length}. Restam ${leads.length}.`,
+    )
+    if (jaRecebeu.size === 0) {
+      console.log('   ⚠️ ZERO na trilha. Ou o disparo ainda não aconteceu, ou a trilha não gravou.')
+      console.log('      Conferir com: npx tsx scripts/check-broadcast-audit.ts ' + date)
+    }
+  }
+  console.log()
 
   if (leads.length === 0) {
     console.log('No active leads to email. Done.')
