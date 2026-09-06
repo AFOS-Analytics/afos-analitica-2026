@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-05",
+  "lastUpdate": "2026-09-06",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,71 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Veritá",
+      "date": "2026-09-06",
+      "scope": "national",
+      "sample": 3804,
+      "margin": 2,
+      "register": "BR-09426/2026",
+      "reliability": 2,
+      "method": "Telefônica (URA)",
+      "fieldDates": "2026-09-01 a 2026-09-04",
+      "note": "Veritá nacional divulgada em 06/Set, campo de 01 a 04/Set, registro BR-09426/2026 no TSE, com 3.804 entrevistas, margem de 2pp a 95% de confiança e custeio por recursos próprios do instituto. ⭐ FLÁVIO BOLSONARO APARECE NUMERICAMENTE À FRENTE NO 1º TURNO, 38,9% contra 38,4% de Lula. ⚠️ A distância de 0,5 ponto cabe inteira dentro da margem de 2 pontos, então o que a pesquisa mede é EMPATE TÉCNICO e não liderança. É a segunda nacional da janela a trazer essa ordem, depois da Gerp de 26/Ago, que deu 38% a 37%. ⭐ E AUGUSTO CURY VAI DE 2,2% PARA 12,2% ENTRE AS DUAS RODADAS DA CASA QUE O PAINEL GUARDA, a de 21/Ago e esta, uma variação de 10 pontos, com Pablo Marçal fazendo o caminho inverso, de 5,2% para 1,4%. ⚠️ ESTE LEVANTAMENTO NÃO TRAZ CENÁRIO DE 2º TURNO, e a leitura mais recente desse par segue sendo a Datafolha de 03/Set. 🏷️ A soma das linhas do 1º turno fecha em 100,0% com brancos, nulos e indecisos, o que é coerente. ⚠️ A imprensa publica a amostra como 3.804 e o registro no TSE traz 3.840, e o painel usa o número publicado com o registrado declarado ao lado. ⚠️ A Veritá tem confiabilidade 2 na régua da casa, a mais baixa entre os institutos da janela, e não é dado que se leia sozinho: as demais nacionais da janela seguem dando Lula à frente por margens de 3 a 9,7 pontos. 📌 O método declarado ao TSE é entrevista por unidade automatizada de resposta audível em telefones celulares, com transcrição por inteligência artificial, e não entrevista presencial.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 38.9
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 12.2
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3.7
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 1.9
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 1.4
+            },
+            {
+              "candidate": "Hertz Dias (PSTU)",
+              "percent": 0.4
+            },
+            {
+              "candidate": "Edmilson Costa (PCB)",
+              "percent": 0.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 0.3
+            },
+            {
+              "candidate": "Clariana Barão (DC)",
+              "percent": 0.3
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 0.2
+            }
+          ]
+        }
+      ],
+      "secondRound": [],
+      "source": "Veritá, registro BR-09426/2026 no TSE, noticiada por CNN Brasil e Terra Brasil Notícias em 06/Set e agregada na tabela da Wikipédia, que registra o mesmo campo e os mesmos percentuais. O site do instituto não havia publicado a rodada no momento da conferência."
+    },
     {
       "institute": "Datafolha",
       "date": "2026-09-03",
@@ -1625,85 +1690,85 @@
     "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket com o livro presidencial em USD 143,79M. ⚠️ ESTA RODADA NÃO PUBLICA PREÇO NOVO PARA O CONTRATO DE VENCEDOR: as duas leituras independentes que o AFOS toma com oito minutos de intervalo não confirmaram dentro de 0,20 ponto nesse livro, e os valores dele seguem sendo os da leitura confirmada de 04/Set, 19:53 BRT. Os contratos de 2º lugar, de 3º lugar do 1º turno, de impeachment no Supremo e de maioria no Senado confirmaram e trazem preço de 05/Set, 13:29 BRT (16:29 UTC). ⭐ PELO SEGUNDO DIA SEGUIDO NENHUMA PESQUISA NACIONAL FOI DIVULGADA, e o registro do TSE diz por quê: oito nacionais estão em campo neste momento e as divulgações marcadas vão de 06 a 10/Set, com Veritá em 06/Set, Quaest em 07/Set, Gerp e Nexus em 08/Set, Ideia/Canal Meio, Real Time Big Data e PALVER em 09/Set, e 100 Cidades, PoderData e AtlasIntel em 10/Set. Duas delas têm amostra de 5.000. 📌 O que se moveu nesta leitura foram os mercados de posição: o segundo colocado subiu 2,00pp no contrato de 2º lugar e está em 89,50%, Augusto Cury cedeu 1,60pp no de 3º lugar e está em 51,95%, e o contrato de impeachment no Supremo voltou à dupla leitura em 8,65%, contra 15,85% na véspera.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato. Em 05/Set os livros de 2º lugar, de 3º lugar do 1º turno, de impeachment no Supremo e de maioria no Senado confirmaram na leitura das 13:29 BRT, e o de vencedor não confirmou, então ele mantém os valores da leitura confirmada de 04/Set. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. O calendário de pesquisas em campo e de divulgação prevista sai do registro oficial do TSE. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
+    "note": "Preços do Polymarket com o livro presidencial em USD 144,11M, leitura confirmada de 06/Set, 13:53 BRT (16:53 UTC). ⭐ NESTA RODADA OS CINCO LIVROS CONFIRMARAM nas duas leituras independentes, e o de vencedor volta a receber preço novo. ⭐ E A PESQUISA E O PREÇO SE MOVERAM EM DIREÇÕES OPOSTAS: a Veritá de 06/Set põe Flávio Bolsonaro em 38,9% contra 38,4% de Lula no 1º turno, distância dentro da margem de 2 pontos, enquanto o contrato de vencedor abriu o vão de 15,35pp para 16,80pp. São grandezas diferentes, intenção de voto declarada e probabilidade de vencer, e não se subtraem. 📌 Seguem sem preço novo os nomes abaixo de 0,5% no contrato de vencedor, que é o piso da dupla leitura: Ronaldo Caiado, Romeu Zema, Pablo Marçal, Jair Bolsonaro, Michelle Bolsonaro, Tarcisio de Freitas e Fernando Haddad.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e em 06/Set os cinco livros confirmaram na leitura das 13:53 BRT. Pesquisas registradas no TSE e divulgadas pelos institutos, com apuração de CNN Brasil, Terra Brasil Notícias, Poder360, Gazeta do Povo, Exame, UOL, CartaCapital, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, VEJA, BBC e Jornal de Brasília. O calendário de pesquisas em campo e de divulgação prevista sai do registro oficial do TSE. Superlativo de série conferido no backup do Neon, em backup/neon/marketPrice, que guarda o registro completo desde 14/Abr.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 38,
-        "odds": 55.5,
-        "value": 55.5,
-        "polymarket": "55,50%",
-        "pesquisaRange": "38-39%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 39% no cenário com Pablo Marçal e 38% no cenário sem, e vencendo os quatro pares de 2º turno que testou: 46% a 44% contra o segundo colocado, 46% a 41% contra Ronaldo Caiado e 48% a 39% contra Romeu Zema. Avaliação do governo: 45% aprovam e 51% desaprovam.",
-        "tendenciaPolymarket": "55,50% (vol USD 9,76M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⚠️ No contrato de 2º lugar do 1º turno cedeu 2,25pp e está em 5,35% (vol USD 470 mil), leitura confirmada de 05/Set, 13:29 BRT, segunda queda seguida dele nesse mercado."
+        "odds": 56.5,
+        "value": 56.5,
+        "polymarket": "56,50%",
+        "pesquisaRange": "38,4%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "A Veritá de 06/Set (BR-09426/2026, campo 01 a 04/Set, n=3.804, margem de 2pp) o mede em 38,4% no 1º turno, atrás de Flávio Bolsonaro por 0,5 ponto. ⚠️ A DISTÂNCIA CABE DENTRO DA MARGEM, então a pesquisa mede empate técnico. Em 21/Ago a mesma casa dava 39,3% a ele contra 39,1%. O levantamento não traz cenário de 2º turno, e a leitura mais recente desse par segue sendo a Datafolha de 03/Set, que o dá vencendo os quatro pares testados.",
+        "tendenciaPolymarket": "56,50% (vol USD 9,83M) no contrato de vencedor, leitura confirmada de 06/Set, 13:53 BRT, uma alta de 1,00pp contra a leitura confirmada de 04/Set. ⭐ O VÃO PARA O SEGUNDO ABRIU DE 15,35pp PARA 16,80pp NO MESMO DIA EM QUE A PESQUISA O FECHOU. No contrato de 2º lugar do 1º turno subiu 2,55pp e está em 7,90% (vol USD 474 mil). Na série gravada desde 14/Abr o contrato dele vai de 34,50% a 67,50%, e os 56,50% de hoje estão dentro dessa faixa."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 33,
-        "odds": 40.15,
-        "value": 40.15,
-        "polymarket": "40,15%",
-        "pesquisaRange": "32-33%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 32% no cenário com Marçal e 33% no cenário sem, e a 2 pontos no 2º turno, 44% contra 46%. ⚠️ AS TRÊS NACIONAIS DA JANELA SEGUEM DISCORDANDO NO SINAL DESSE PAR: a Genial/Quaest de 02/Set deu o líder à frente por 42% a 41%, a PoderData de 03/Set o deu à frente por 45% a 44%, e a Datafolha de 03/Set dá o líder à frente por 46% a 44%.",
-        "tendenciaPolymarket": "40,15% (vol USD 9,69M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⭐ No contrato de 2º lugar do 1º turno subiu 2,00pp e está em 89,50% (vol USD 597 mil), leitura confirmada de 05/Set, 13:29 BRT, e só um ponto de toda a série já ficou acima disso, os 90,50% de 21/Ago."
+        "percentage": 39,
+        "odds": 39.7,
+        "value": 39.7,
+        "polymarket": "39,70%",
+        "pesquisaRange": "38,9%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "⭐ A VERITÁ DE 06/Set O PÕE NUMERICAMENTE À FRENTE NO 1º TURNO, 38,9% contra 38,4%, e é a segunda nacional da janela a fazê-lo, depois da Gerp de 26/Ago (38% a 37%). ⚠️ Os 0,5 ponto estão dentro da margem de 2 pontos, então é empate técnico. Dentro da própria Veritá o sinal virou desde 21/Ago, quando a casa dava 39,3% a Lula contra 39,1% dele. A Veritá tem confiabilidade 2 na régua da casa.",
+        "tendenciaPolymarket": "39,70% (vol USD 9,74M) no contrato de vencedor, leitura confirmada de 06/Set, 13:53 BRT, uma queda de 0,45pp contra a leitura confirmada de 04/Set. ⚠️ O PREÇO ANDOU CONTRA A PESQUISA no mesmo dia. No contrato de 2º lugar do 1º turno segue em 89,50% (vol USD 612 mil), sem variação, e só um ponto de toda a série já ficou acima disso, os 90,50% de 21/Ago."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 8,
-        "odds": 1.95,
-        "value": 1.95,
-        "polymarket": "1,95%",
-        "pesquisaRange": "7-8%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o deixa em 7% no cenário com Marçal e 8% no cenário sem, e segue sendo a única das cinco casas da janela a colocá-lo abaixo de dois dígitos. As outras quatro: BTG/Nexus 11% em 31/Ago, Real Time Big Data 11% em 01/Set, Genial/Quaest 10% em 02/Set e PoderData 10% em 03/Set.",
-        "tendenciaPolymarket": "1,95% (vol USD 4,08M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. ⚠️ No contrato de 3º lugar do 1º turno cedeu 1,60pp e está em 51,95% (vol USD 124 mil), leitura confirmada de 05/Set, 13:29 BRT. Somadas as duas leituras seguidas de queda, são 7,55pp desde 03/Set nesse mercado."
+        "percentage": 12,
+        "odds": 1.15,
+        "value": 1.15,
+        "polymarket": "1,15%",
+        "pesquisaRange": "12,2%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "⭐ A VERITÁ DE 06/Set O MEDE EM 12,2% NO 1º TURNO, contra 2,2% na rodada da própria casa em 21/Ago. É o terceiro colocado do levantamento, com folga sobre o quarto, que tem 3,7%. A dispersão entre casas da janela segue larga: a Datafolha de 03/Set o deixava em 7% e 8%.",
+        "tendenciaPolymarket": "1,15% (vol USD 4,16M) no contrato de VENCEDOR, leitura confirmada de 06/Set, 13:53 BRT, uma queda de 0,80pp. ⭐ No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 4,25pp e está em 56,20% (vol USD 126 mil), revertendo duas quedas seguidas. 📌 Os dois contratos dele andaram em direções opostas: o mercado o consolida como terceiro colocado do 1º turno e não como candidato a vencer a eleição."
       },
       {
         "name": "Renan Santos",
-        "percentage": 3,
-        "odds": 1.85,
-        "value": 1.85,
-        "polymarket": "1,85%",
-        "pesquisaRange": "3-4%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o dá em 4% no cenário com Marçal e 3% no cenário sem. ⚠️ A DISPERSÃO ENTRE CASAS NESTA JANELA VAI DE 3% A 7,6%: 3% na Genial/Quaest e na PoderData, 3% a 4% na Datafolha, 6% na Real Time Big Data de 01/Set e 7,6% na AtlasIntel de 31/Ago.",
-        "tendenciaPolymarket": "1,85% (vol USD 12,68M) no contrato de vencedor, leitura confirmada de 04/Set, 19:53 BRT, e esta rodada não publica preço novo para o contrato de vencedor, cujas duas leituras não confirmaram dentro de 0,20 ponto. No contrato de 3º lugar do 1º turno subiu 1,00pp e está em 24,50% (vol USD 278 mil), leitura confirmada de 05/Set, 13:29 BRT, segunda alta seguida. 📌 Entre os quatro nomes acima de 1% no contrato de vencedor, é o de maior volume acumulado, acima do líder e do segundo colocado, num contrato precificado abaixo de 2%."
+        "percentage": 4,
+        "odds": 1.6,
+        "value": 1.6,
+        "polymarket": "1,60%",
+        "pesquisaRange": "3,7%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "A Veritá de 06/Set o mede em 3,7% no 1º turno, à frente de Ronaldo Caiado (1,9%) e de Pablo Marçal (1,4%). ⚠️ A DISPERSÃO ENTRE CASAS NESTA JANELA VAI DE 3% A 7,6%, e os 3,7% ficam na parte de baixo dela.",
+        "tendenciaPolymarket": "1,60% (vol USD 12,70M) no contrato de vencedor, leitura confirmada de 06/Set, 13:53 BRT, uma queda de 0,25pp. No contrato de 3º lugar do 1º turno subiu 1,50pp e está em 26,00% (vol USD 279 mil), terceira alta seguida. 📌 Entre os quatro nomes acima de 1% no contrato de vencedor, é o de maior volume acumulado, acima do líder e do segundo colocado, num contrato precificado abaixo de 2%."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 4,
+        "percentage": 2,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
-        "pesquisaRange": "4%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o coloca em 4% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 46% a 41%. ⚠️ O PAR DE 2º TURNO CONTRA ELE TEM QUATRO LEITURAS NA MESMA SEMANA E NENHUMA CONCORDA COM A OUTRA NA MARGEM.",
-        "tendenciaPolymarket": "0,15% (vol USD 7,16M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 0,50pp e está em 9,50% (vol USD 114 mil), leitura confirmada de 05/Set, 13:29 BRT."
+        "pesquisaRange": "1,9%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "A Veritá de 06/Set o põe em 1,9% no 1º turno, abaixo dos 4% que a Datafolha de 03/Set media. O levantamento não traz cenário de 2º turno, então a leitura mais recente do par contra ele segue sendo a Datafolha, de 46% a 41%.",
+        "tendenciaPolymarket": "0,15% (vol USD 7,16M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno, que é outro mercado, subiu 0,50pp e está em 10,00% (vol USD 114 mil), leitura confirmada de 06/Set, 13:53 BRT."
       },
       {
         "name": "Pablo Marçal",
-        "percentage": 2,
+        "percentage": 1,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
-        "pesquisaRange": "2%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o traz em 2% no cenário com ele na lista, e a presença dele separa os dois cenários da casa: com Marçal o líder tem 39% e o segundo 32%, e sem Marçal 38% e 33%.",
-        "tendenciaPolymarket": "0,15% (vol USD 3,73M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno cedeu 0,50pp e está em 2,20% (vol USD 47 mil), leitura confirmada de 05/Set, 13:29 BRT."
+        "pesquisaRange": "1,4%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "A Veritá de 06/Set o mede em 1,4% no 1º turno. ⚠️ DENTRO DA PRÓPRIA CASA ELE CAIU DE 5,2% PARA 1,4% DESDE 21/Ago, e a Datafolha de 03/Set o media em 2%.",
+        "tendenciaPolymarket": "0,15% (vol USD 3,73M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno está em 2,25% (vol USD 47 mil), leitura confirmada de 06/Set, 13:53 BRT."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 2,
+        "percentage": 0,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
-        "pesquisaRange": "2%",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Sem pesquisa nacional nova pelo segundo dia seguido. A leitura mais recente segue sendo a Datafolha de 03/Set (BR-03669/2026, campo 01 a 03/Set, n=2.002, margem de 2pp). Ela o mede em 2% nos dois cenários de 1º turno e o dá perdendo o 2º turno por 48% a 39%, margem de 9 pontos, o par com a maior dispersão entre casas da janela.",
-        "tendenciaPolymarket": "0,15% (vol USD 6,56M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno está em 0,70% (vol USD 49 mil), leitura confirmada de 05/Set, 13:29 BRT."
+        "pesquisaRange": "0,3%",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "A Veritá de 06/Set o mede em 0,3% no 1º turno, abaixo dos 2% que a Datafolha de 03/Set media. O levantamento não traz cenário de 2º turno, então a leitura mais recente do par contra ele segue sendo a Datafolha, de 48% a 39%.",
+        "tendenciaPolymarket": "0,15% (vol USD 6,56M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele nesse contrato. No contrato de 3º LUGAR do 1º turno subiu 0,15pp e está em 0,85% (vol USD 49 mil), leitura confirmada de 06/Set, 13:53 BRT."
       },
       {
         "name": "Tarcísio",
@@ -1712,8 +1777,8 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela, e a Veritá de 06/Set também não o testa.",
         "tendenciaPolymarket": "0,05% (vol USD 14,07M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa a reeleição em São Paulo."
       },
       {
@@ -1723,12 +1788,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "04/09/2026, 19:53",
-        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela.",
+        "lastUpdate": "06/09/2026, 13:53",
+        "tendenciaPesquisa": "Não é testado como candidato presidencial nas nacionais da janela, e a Veritá de 06/Set também não o testa.",
         "tendenciaPolymarket": "0,05% (vol USD 7,43M) no contrato de VENCEDOR, abaixo do piso de 0,5% da dupla leitura, e esta rodada não publica preço novo para ele. Não é candidato à Presidência: disputa o governo de São Paulo."
       }
     ],
-    "updatedAt": "05/09/2026, 13:29",
-    "lastUpdate": "04/09/2026, 19:53"
+    "updatedAt": "06/09/2026, 13:53",
+    "lastUpdate": "2026-09-06"
   }
 }
