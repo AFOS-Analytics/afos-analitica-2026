@@ -111,6 +111,20 @@ Reportar sempre, com os números do arquivo e não de memória:
 
 Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever qualquer verbo de movimento. Se caíram, a variação é de **composição** até prova em contrário. E citar a **data de campo mais recente da base**: se ela tem vários dias, a régua está parada e a média mexer é alerta, não sinal.
 - quantas pesquisas e quantos institutos entraram na janela, e qual é a janela em dias
+
+🔴 **E TRÊS MEDIDORES QUE JÁ EXISTEM E NÃO ESTAVAM CITADOS AQUI, que é o mesmo defeito do `conferir-us-polls` antes de 05/Set:** script não citado vira conta refeita à mão toda rodada. Medido em 06/Set/2026: refiz a projeção da janela de cabeça e **errei a borda em um dia**, porque a janela é INCLUSIVA (`campoFim >= corte`) e eu usei `campoFim + 30` em vez de `+ 31`. O `projetar-janela-us.mjs` já acertava isso desde sempre.
+
+```bash
+node scripts/projetar-janela-us.mjs      # o FUTURO da janela, se nada entrar
+node scripts/historico-us-polls.mjs      # a SÉRIE no Neon, e se o registro de hoje é do cron
+node scripts/check-us-polls-defasagem.mjs # o instituto publicou algo que o índice não tem?
+```
+
+📅 **O `projetar-janela-us.mjs` responde a pergunta que o Passo 4 faz e não tinha ferramenta**, que é de onde vem a variação, só que ANTES de ela acontecer. Ele reusa a `media()` de produção em vez de recopiá-la, conta por RODADA e não por linha, e nomeia quem sai em cada dia. ⭐ **O achado dele costuma ser o DEGRAU:** em 06/Set havia cinco rodadas com o mesmo fim de campo, 17/Ago, e todas saem no MESMO dia, 17/Set, levando o `n` de 8 para 3 e a média de D+5.00 para D+3.33. Queda de 1,67pp com zero informação nova, conhecida onze dias antes.
+
+⛔ **Saída de USO INTERNO, como o efeito do recorte.** Ela descreve o que a NOSSA regra produz sobre a base que já está no arquivo, não o eleitorado. Publicar isso como leitura de intenção de voto seria atribuir ao mundo o que é da nossa coleta.
+
+🔬 **O `historico-us-polls.mjs` também diz se o registro de hoje no Neon é do CRON ou de um forçamento**, e reaplica a regra de hoje aos dias já gravados como controle. Se ele disser que o cron gravou dentro da janela das 07:10Z e os números baterem com o arquivo, **o Passo 3 não é necessário**: forçar ali só troca o registro do cron por outro igual, com o risco já fichado de apagar o carimbo dele.
 - quantas linhas foram lidas e quantas foram descartadas por forma, com o motivo
 - quantas ficaram **sem fonte primária**
 - os institutos com campo mais recente, e a **dispersão entre eles**, que costuma ser o achado real
