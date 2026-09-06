@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-06",
+  "adversarialReview": {
+    "singleSourceClaims": [
+      "Detalhe do ofício ao TRE-PR e da ordem para Dallagnol se manifestar: corpo da Gazeta do Povo sozinha. Folha, O Globo, Estadão e Valor confirmam o evento, não o detalhe do órgão. Atribuído nominalmente no texto.",
+      "Primeira crítica pública de Caiado a Cury: apenas Valor Econômico, 06/Set. Atribuído nominalmente."
+    ],
+    "numericalErrors": "reconcile-claims rodado. Os 23 apontamentos são deltas calculados, valores de pesquisa que vivem no polls-data.json e faixas de série, falsos positivos que o próprio script declara. Conferência manual dos 21 valores publicados: 20 batem nos JSONs do painel e o 82,50% do PL vem da leitura certificada em .cache/capture-guard/ultima-br.json, que é a procedência dele.",
+    "fontesInventadas": "Conferidos 3 ao acaso (Gazeta do Povo, Valor Econômico, Opera Mundi), todos com matéria correspondente em public/news-cache/2026-09-06.json.",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma. A peça registra o contrário: dois atos institucionais em 05/Set e o contrato de impeachment parado em 8,60%.",
+    "verbosCriticos": "protocolou (05/Set, corpo da Gazeta do Povo: 'protocolou neste sábado (5)'); pediu responsabilização (05/Set, corpo: 'O caso veio a público neste sábado (5)'); sinalizou levar ao plenário (com a ressalva de decisão ainda não tomada); condenado pela trama golpista (estado, não ato do dia).",
+    "decisao": "prosseguir"
+  },
+  "correcoesDoDia": [
+    "O painel havia publicado que Zanin acionou 'STF, TSE e TJ-PR', apoiado em manchete e em slug de URL. O corpo fixa o ofício ao TRE-PR. Corrigido nos 3 idiomas do painel antes de escrever a peça.",
+    "O vão anterior saiu escrito como 15,80pp e é 15,35pp (55,50 menos 40,15). Corrigido em 3 lugares antes de qualquer portão.",
+    "O arquivo nasceu com 107 CRLF enquanto todas as outras dailies são LF puro, o que quebrava o \n---\n usado pelo contador oficial para descontar o frontmatter. Normalizado.",
+    "A seção Em síntese saiu com 3 tocos de uma linha e foi reprovada pelo André. Reescrita em 175 palavras com negrito na 1ª linha de cada parágrafo, pagando o espaço com repetição do corpo."
+  ],
+  "gates": {
+    "capturaBR": "APROVADO nos 5 livros, leitura certificada 2026-09-06T16:53:59.248Z",
+    "factCheck": "2 atos, ambos de 05/Set, 2 grupos independentes cada, incorporados com data corrigida",
+    "palavrasCorpoPtBr": 1093,
+    "palavrasEmSintese": 175,
+    "tetoPalavras": 1100,
+    "validateAfosDaily": "limpo nos 3 idiomas",
+    "gateNumerico": "multiconjunto identico nos 3 idiomas, 73 valores",
+    "travessao": 0,
+    "emoji": 0,
+    "fontesSecundarias": "7 de 13, 54%",
+    "wayback": "NAO RODOU: pre-check do /save/ devolveu 429, segundo dia seguido. Regra manda nao rodar e nao insistir."
+  }
+}
