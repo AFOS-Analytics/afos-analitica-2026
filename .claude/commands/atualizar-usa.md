@@ -230,6 +230,18 @@ O painel serve das três, então conferir as três:
 for l in pt-BR en es; do curl -s -o /dev/null -w "$l %{http_code}\n" "https://www.afos-analytics.com/$l/dashboard/us"; done
 ```
 
+🔴 **Mas o `curl` só responde o código HTTP, e neste painel isso NÃO é conferir a tela.** O painel dos EUA serve cache e busca o preço no CLIENTE: o número não está no HTML entregue. Grep ali devolve ausência com a tela correta, e o pior é o erro simétrico, porque ele encontraria a cópia dentro do dicionário de tradução mesmo com o componente NÃO montado. Entrega visual se confere com navegador.
+
+```bash
+node scripts/conferir-tela-us.mjs --esperado=87.50,12.50,51.50,49.50,97.15,5.14
+```
+
+Ele abre as três telas, espera o fetch do cliente pousar e procura cada valor no TEXTO RENDERIZADO. ⚠️ **Passar os valores na convenção do INGLÊS**, com ponto decimal: ele converte sozinho para vírgula no pt-BR e no ES.
+
+⭐ **Ele nasceu em 06/Set/2026 com dois defeitos que ele mesmo denunciou na estreia**, e os dois estão plantados em `scripts/testar-conferir-tela-us.mjs`, 20 casos: comparar `87.50` contra tela que escreve `87,50` reprovou DUAS telas corretas, e `includes('51.50')` deu verdadeiro numa tela que nem usa ponto decimal, porque o pedaço estava dentro de outro número. **Falso positivo que manda consertar o que está bom gasta o crédito do portão**, e acerto por acaso é indistinguível de acerto de verdade no relatório.
+
+🏷️ **Ele confere NÚMERO, não etiqueta.** Valor certo com rótulo errado passa por aqui, e essa é a classe de defeito que segue sem portão.
+
 Sete seções, nesta ordem, aprovada pelo André em 28/Jul: cartão de apresentação, mercado de previsão, pesquisas para a Câmara, grafo do cruzamento, contexto estrutural, imprensa, limitações declaradas.
 
 ⚠️ **A aresta mercado × pesquisa do grafo é MUDA, de propósito.** O mercado dá a probabilidade de controlar a casa; a pesquisa dá a vantagem em pontos de voto. **Não se exibe Δpp entre elas**, e a aresta diz "sem Δ: grandezas diferentes". Em 2012 os democratas tiveram mais votos e menos cadeiras: a diferença pode ser inteiramente geografia. Se alguma rodada produzir um número que subtrai uma da outra, o número está errado por construção.
