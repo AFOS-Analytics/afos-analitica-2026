@@ -30,13 +30,27 @@
  * Uso:
  *   node scripts/divergencia-senado-us.mjs              # lê ao vivo pelo proxy
  *   node scripts/divergencia-senado-us.mjs arquivo.json # lê um payload salvo
+ *   node scripts/divergencia-senado-us.mjs --data=2026-09-04  # fechamento no BACKUP
+ *
+ * 🔑 O --data= existe porque a peça SEMANAL fecha na sexta e a leitura ao vivo
+ * é de domingo. Medir hoje e rotular o número como achado da semana seria data
+ * errada numa afirmação de série. Ele lê o ÚLTIMO ponto do dia pedido.
  */
-import { readFileSync } from 'fs'
+import { readFileSync, readdirSync } from 'fs'
+import { gunzipSync } from 'zlib'
+import { join } from 'path'
+import { instantesSuspeitos } from './lib/serie-contrato.mjs'
 
 const PROXY = 'https://www.afos-analytics.com/api/polymarket?country=us&fresh=1'
 
 /**
  * A série publicada, para dar contexto e para o teste de sanidade.
+ *
+ * 🔴 ELA É DE LEITURAS AO VIVO, em horas avulsas, e NÃO é comparável com o que
+ * o --data= devolve, que é FECHAMENTO de dia. Misturar as duas produz uma série
+ * que muda de método no meio, e superlativo sobre ela seria falso sem dar erro.
+ * Medido em 06/Set/2026: ao vivo às 21:57Z deu 6,15pp e o fechamento do mesmo
+ * dia deu 4,83pp. Para comparar semana com semana, usar --data= nas DUAS pontas.
  * Cada valor é uma medição da distância normalizada, em pontos percentuais.
  * ⚠️ O 2,77 de 24/Ago segue DECLARADO como não reproduzível no backup.
  */
@@ -69,27 +83,138 @@ function medir({ dMaj, empate, rMaj, binarioR }) {
   }
 }
 
-/** Separa as faixas em D com maioria própria, empate e R com maioria própria. */
-function separarFaixas(mercados) {
-  let dMaj = 0
-  let empate = 0
-  let rMaj = 0
+/**
+ * A REGRA CONSTITUCIONAL, e ela mora AQUI e em nenhum outro lugar: o empate
+ * em 50 a 50 e dos republicanos, porque o vice-presidente desempata o Senado.
+ * Os DOIS adaptadores abaixo, o da API e o do backup, chamam esta funcao.
+ * Duas copias desta linha seria o defeito de 29/Jul: convivem sem incidente
+ * ate o dia em que uma e corrigida e a outra nao.
+ */
+function classificar(n) {
+  if (n <= 49) return 'dMaj'
+  if (n === 50) return 'empate'
+  return 'rMaj'
+}
+
+/**
+ * O numero de cadeiras de um rotulo, nos DOIS formatos que existem de verdade:
+ *   API    : "hold 47 or fewer Senate seats", "hold exactly 50 Senate seats"
+ *   backup : "<= 47 cad.", "50 cad.", ">= 57 cad."
+ *
+ * WARN O backup NAO guarda a pergunta em ingles: ele guarda UM mercado com 11
+ * OUTCOMES ja rotulados em portugues. Supor a forma da API aqui devolveria
+ * ZERO faixa reconhecida, que este script ja trata como "a origem mudou de
+ * formato" e por isso para em vez de medir errado.
+ */
+function numeroDaFaixa(rotulo) {
+  const t = String(rotulo ?? '')
+  const api = t.match(/(\d+)\s+(?:or fewer|or more|Senate seats)/i)
+  if (api) return Number(api[1])
+  const bkp = t.match(/(\d+)\s*cad\./i)
+  if (bkp) return Number(bkp[1])
+  return null
+}
+
+/** Soma por balde. `itens` = [{ rotulo, preco }], com preco em 0 a 100. */
+function separarFaixasRotuladas(itens) {
+  const acc = { dMaj: 0, empate: 0, rMaj: 0 }
   const semNumero = []
-  for (const m of mercados) {
-    const p = Number(m?.outcomePrices?.[0]) * 100
-    if (!Number.isFinite(p)) continue
-    // "hold 47 or fewer Senate seats", "hold exactly 50 Senate seats", "hold 57 or more"
-    const achado = String(m.question).match(/(\d+)\s+(?:or fewer|or more|Senate seats)/i)
-    if (!achado) {
-      semNumero.push(m.question)
+  for (const { rotulo, preco } of itens) {
+    if (!Number.isFinite(preco)) continue
+    const n = numeroDaFaixa(rotulo)
+    if (n === null) {
+      semNumero.push(rotulo)
       continue
     }
-    const n = Number(achado[1])
-    if (n <= 49) dMaj += p
-    else if (n === 50) empate += p
-    else rMaj += p
+    acc[classificar(n)] += preco
   }
-  return { dMaj: +dMaj.toFixed(2), empate: +empate.toFixed(2), rMaj: +rMaj.toFixed(2), semNumero }
+  return { dMaj: +acc.dMaj.toFixed(2), empate: +acc.empate.toFixed(2), rMaj: +acc.rMaj.toFixed(2), semNumero }
+}
+
+/** Adaptador da API: cada faixa e um MERCADO, com a pergunta em `question`. */
+function separarFaixas(mercados) {
+  return separarFaixasRotuladas(
+    mercados.map((m) => ({ rotulo: m.question, preco: Number(m?.outcomePrices?.[0]) * 100 })),
+  )
+}
+
+// ---- O adaptador do BACKUP -------------------------------------------------
+const RAIZ_BACKUP = 'backup/neon'
+const SLUG_FAIXAS = 'republican-senate-seats-after-the-2026-midterm-elections-927'
+const SLUG_BINARIO = 'which-party-will-win-the-senate-in-2026'
+
+function lerCsvGz(dir) {
+  const caminho = join(RAIZ_BACKUP, dir)
+  const linhas = []
+  for (const f of readdirSync(caminho).filter((x) => x.endsWith('.csv.gz'))) {
+    const txt = gunzipSync(readFileSync(join(caminho, f))).toString('utf8')
+    const [cab, ...resto] = txt.split(/\r?\n/).filter(Boolean)
+    const cols = cab.split(',')
+    for (const l of resto) {
+      const v = l.split(',')
+      const o = {}
+      cols.forEach((c, i) => (o[c] = v[i]))
+      linhas.push(o)
+    }
+  }
+  return linhas
+}
+
+/**
+ * Devolve um payload com a MESMA FORMA que o proxy entrega, medido no
+ * FECHAMENTO de `data`, ou seja no ULTIMO ponto daquele dia de cada faixa.
+ *
+ * WARN Dia sem ponto NAO herda do anterior aqui, de proposito: a pergunta que
+ * este script responde e "quanto os dois livros discordavam NAQUELE dia", e
+ * herdar responderia outra pergunta sem avisar.
+ *
+ * WARN E o backup tem CAUDA CEGA de ate 24h, entao pedir o dia de HOJE devolve
+ * foto incompleta. Para hoje, usar a leitura ao vivo, que e o padrao.
+ */
+function payloadDoBackup(data) {
+  const mercados = lerCsvGz('market')
+  const saidas = lerCsvGz('marketOutcome')
+  const precos = lerCsvGz('marketPrice')
+
+  const suspeitos = instantesSuspeitos(precos)
+  const limpos =
+    suspeitos.size === 0 ? precos : precos.filter((p) => !suspeitos.has(String(p.snapshotAt).slice(0, 19)))
+
+  const idDe = (slug) => mercados.find((m) => m.slug === slug)?.id
+  const montar = (slug) => {
+    const mid = idDe(slug)
+    if (!mid) throw new Error('slug ausente no backup: ' + slug)
+    const outs = saidas.filter((o) => o.marketId === mid)
+    const porSaida = new Map(outs.map((o) => [o.id, o]))
+    const ultimo = new Map()
+    for (const p of limpos) {
+      if (!porSaida.has(p.outcomeId)) continue
+      if (String(p.snapshotAt).slice(0, 10) !== data) continue
+      const atual = ultimo.get(p.outcomeId)
+      if (!atual || p.snapshotAt > atual.snapshotAt) ultimo.set(p.outcomeId, p)
+    }
+    const markets = []
+    for (const [oid, p] of ultimo) {
+      markets.push({
+        question: porSaida.get(oid).outcomeName,
+        outcomePrices: [String(Number(p.price) / 100)],
+        carimbo: p.snapshotAt,
+      })
+    }
+    return markets
+  }
+
+  const faixas = montar(SLUG_FAIXAS)
+  const binarios = montar(SLUG_BINARIO)
+  if (!faixas.length || !binarios.length) {
+    throw new Error('o backup nao tem ponto do Senado em ' + data + '. Dia sem coleta nao vira zero.')
+  }
+  const carimbos = [...faixas, ...binarios].map((m) => m.carimbo).sort()
+  return {
+    fetchedAt: carimbos[carimbos.length - 1] + '  (FECHAMENTO de ' + data + ', lido no backup)',
+    senateSeats: { markets: faixas },
+    senate: { markets: binarios },
+  }
 }
 
 const br = (n, c = 2) => n.toFixed(c).replace('.', ',')
@@ -113,9 +238,13 @@ async function main() {
   console.log('   ✅ reproduz. A conta esta certa, entao a medicao do dia vale.\n')
 
   // ── A leitura do dia ────────────────────────────────────────────────────────
+  const dataArg = process.argv.find((a) => a.startsWith('--data='))?.slice(7)
   const caminho = process.argv.slice(2).find((a) => !a.startsWith('--'))
   let payload
-  if (caminho) {
+  if (dataArg) {
+    payload = payloadDoBackup(dataArg)
+    console.log('BACKUP: medido no FECHAMENTO de ' + dataArg + ', nao na API')
+  } else if (caminho) {
     payload = JSON.parse(readFileSync(caminho, 'utf-8'))
     console.log(`📄 payload lido de ${caminho}`)
   } else {
@@ -142,7 +271,8 @@ async function main() {
   }
 
   const bR = binarios.find((m) => /Republican/i.test(m.question))
-  const bD = binarios.find((m) => /Democratic/i.test(m.question))
+  // WARN a API diz "Democratic Party" e o BACKUP diz "Democratas": os dois entram.
+  const bD = binarios.find((m) => /Democratic|Democratas/i.test(m.question))
   const binarioR = Number(bR?.outcomePrices?.[0]) * 100
   const binarioD = Number(bD?.outcomePrices?.[0]) * 100
   if (!Number.isFinite(binarioR)) {
