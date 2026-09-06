@@ -45,7 +45,25 @@ import matter from 'gray-matter'
 import { loadTradeoff } from '../lib/afos-tradeoff/loader'
 
 const RAIZ = join(process.cwd(), 'public', 'afos-tradeoff')
-const LOCALES = ['pt-BR', 'en', 'es']
+/**
+ * ⚠️ Os TRÊS idiomas são o padrão, e é assim que a edição publicada tem de estar.
+ *
+ * 🔴 Mas a ETAPA 3.9 do comando manda rodar este portão ANTES do preview, e
+ * nesse momento o `.en` e o `.es` ainda NÃO EXISTEM: eles são escritos na ETAPA
+ * 6, depois da aprovação. Sem o seletor abaixo, o portão reprovava toda edição
+ * NOVA exatamente no instante em que a régua mandava rodá-lo, por ausência de
+ * arquivos que ainda não deviam existir. Portão que não roda na hora marcada é
+ * portão que alguém aprende a rodar depois, ou a não rodar.
+ *
+ * Medido em 06/Set/2026, ao montar a №16.
+ *
+ *   --locales=pt-BR   antes do preview, quando só o pt-BR existe
+ *   (sem a flag)      depois de publicar, que é a conferência completa
+ */
+const LOCALES = (process.argv.find((a) => a.startsWith('--locales='))?.slice(10) ?? 'pt-BR,en,es')
+  .split(',')
+  .map((x) => x.trim())
+  .filter(Boolean)
 const TIPOS_VALIDOS = ['base', 'bear', 'tail']
 const DIRECOES_VALIDAS = ['up', 'down', 'flat']
 /** Texto curto é rótulo, cor ou enum, e tem régua própria. */
@@ -125,7 +143,8 @@ function conferir(pais: string, data: string): string[] {
   return problemas
 }
 
-const [dataArg, paisArg] = process.argv.slice(2)
+const posicionais = process.argv.slice(2).filter((a) => !a.startsWith('--'))
+const [dataArg, paisArg] = posicionais
 const paises = paisArg ? [paisArg] : ['br', 'us']
 let falhas = 0
 let conferidas = 0
