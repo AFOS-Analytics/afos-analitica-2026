@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-06",
-  "fetchedAt": "2026-09-06T18:48:37.943Z",
+  "lastUpdate": "2026-09-07",
+  "fetchedAt": "2026-09-07T14:52:12.471Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -34,8 +34,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-07",
-    "nPesquisas": 14,
+    "desde": "2026-08-08",
+    "nPesquisas": 13,
     "incluidas": [
       {
         "instituto": "The Economist/YouGov",
@@ -127,23 +127,15 @@
         "amostraTipo": "RV",
         "dem": 47,
         "rep": 42
-      },
-      {
-        "instituto": "Cygnal (R)",
-        "campoFim": "2026-08-07",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 42
       }
     ],
-    "nInstitutos": 10,
-    "dem": 46.5,
-    "rep": 41.36,
-    "vantagemDem": 5.14,
+    "nInstitutos": 9,
+    "dem": 46.31,
+    "rep": 41.31,
+    "vantagemDem": 5,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "AlphaROC",
-      "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
       "Focaldata/Financial Times",
