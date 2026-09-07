@@ -45,13 +45,38 @@ function parseArgs(argv: string[]): { keywords: string[]; window: number } {
   return { keywords, window }
 }
 
+/**
+ * 🔴 SEM ACENTO O PORTÃO MENTIA NA DIREÇÃO DE "NOVIDADE", medido em 07/Set/2026.
+ *
+ * `check-recurrence "Verita"` devolvia **nenhuma menção em 7 dailies**, e a mesma
+ * busca com `"Veritá"` devolvia **15**. O arquivo de 06/Set cita o instituto onze
+ * vezes. O comparador era `new RegExp(keyword, 'i')`, e o `i` do JavaScript
+ * ignora CAIXA e não ignora ACENTO.
+ *
+ * ⛔ E o erro é assimétrico, que é o que o torna grave. Este é o portão da
+ * Verificação 1, cuja função é dizer "isto é CONTINUIDADE, não novidade". Falhar
+ * aqui não produz ruído: produz a conclusão OPOSTA, e a conclusão oposta é a que
+ * autoriza escrever divisor de águas sobre assunto que já saiu ontem.
+ *
+ * 📌 E a exposição é grande, não é caso de borda: os nomes desta cobertura são
+ * cheios de acento, entre eles Veritá, Tarcísio, Flávio, Marçal e Genial/Quaest.
+ *
+ * ✅ A correção normaliza os DOIS lados por NFD, tirando as marcas combinantes,
+ * então "Verita", "Veritá" e "VERITÁ" encontram a mesma coisa. A posição da
+ * linha não muda, porque a normalização não altera o número de caracteres base
+ * das letras acentuadas do português.
+ */
+function semAcento(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '')
+}
+
 function findMentions(filePath: string, keyword: string): Array<{ line: number; context: string }> {
   const content = readFileSync(filePath, 'utf-8')
-  const re = new RegExp(escapeRegex(keyword), 'i')
+  const re = new RegExp(escapeRegex(semAcento(keyword)), 'i')
   const lines = content.split(/\r?\n/)
   const out: Array<{ line: number; context: string }> = []
   for (let i = 0; i < lines.length; i++) {
-    if (re.test(lines[i])) {
+    if (re.test(semAcento(lines[i]))) {
       const ctx = lines[i].trim().slice(0, 140) + (lines[i].length > 140 ? '…' : '')
       out.push({ line: i + 1, context: ctx })
     }
