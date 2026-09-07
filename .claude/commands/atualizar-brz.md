@@ -374,7 +374,8 @@ Execute em sequência:
 5. `git push origin main`
 6. **Persistir snapshots no Neon** (após deploy concluir):
    - `npx tsx scripts/persist-analysis.ts` (local) OU
-   - `curl -X GET "https://www.afos-analytics.com/api/cron/persist-analysis" -H "Authorization: Bearer $CRON_SECRET"` (via rota cron)
+   - `curl -X GET "https://www.afos-analytics.com/api/cron/persist-analysis" -H "Authorization: Bearer $S"` (via rota cron), com `S=$(grep '^CRON_SECRET=' .env.local | head -1 | cut -d= -f2- | tr -d '"'"'"'\r')`
+   - ⚠️ **`$CRON_SECRET` cru devolve 401**: ele vive no `.env.local` e não é carregado no shell. O `tr -d '\r'` também não é enfeite, porque `.env` gravado no Windows leva CR para dentro do cabeçalho e derruba a autenticação do mesmo jeito.
    - Cron Vercel também roda automaticamente às 14:00 UTC diariamente (11:00 BRT)
 
 ## REGRAS

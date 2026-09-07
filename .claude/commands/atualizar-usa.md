@@ -20,11 +20,23 @@ Ou seja: **na maioria dos dias não há nada a publicar, e isso é sucesso, não
 
 ## ETAPA 1: Ler o mercado ao vivo
 
-**OBRIGATÓRIO usar o proxy AFOS com o parâmetro de país E com `fresh=1`.** São duas travas diferentes e as duas já falharam.
+🔴 **O LEITOR É ESTE, e não um `curl` lido à mão:**
+
+```bash
+node scripts/ler-mercado.mjs            # EUA; --pais=br para o Brasil; --json para encadear
+```
+
+⚠️ **Corrigido em 07/Set/2026: o script existia desde 04/Set e não era citado em comando NENHUM.** Ele nasceu porque a leitura vinha sendo redigitada a cada rodada a partir da régua abaixo, e redigitar é uma chance nova de supor errado. **Medido na própria rodada de 07/Set:** segui o `curl` desta etapa, escrevi o leitor à mão e ele quebrou na primeira execução, porque supus que `d.house` era array quando a resposta traz `{title, slug, markets: [...]}`. Script não citado é script que não roda.
+
+📌 Ele já aplica as duas travas da rota, aceita as duas formas de `outcomePrices`, separa placeholder de mercado com preço, soma cada distribuição contra o portão de 95 a 105, e **se recusa a devolver silêncio**: zero preço em todos os grupos sai como defeito de leitura, com código 1.
+
+A chamada que ele faz por baixo, para quando for preciso olhar o cru:
 
 ```bash
 curl -s "https://www.afos-analytics.com/api/polymarket?country=us&fresh=1"
 ```
+
+**OBRIGATÓRIO o parâmetro de país E o `fresh=1`.** São duas travas diferentes e as duas já falharam.
 
 - Sem `?country=us` a rota devolve o **Brasil**, byte por byte, e a leitura passa despercebida porque vem bem-formada.
 - 🔴 **Sem `&fresh=1` a rota devolve o CACHE**, com carimbo de tempo antigo, e a captura é de minutos atrás sem avisar.
@@ -150,10 +162,17 @@ node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.
 
 A coleta vive na rota do cron:
 
+🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente, e chamar com a variável crua devolve **`{"error":"Unauthorized"}` com HTTP 401**, fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:
+
 ```bash
+S=$(grep '^CRON_SECRET=' .env.local | head -1 | cut -d= -f2- | tr -d '"'"'"'\r')
 curl -s https://www.afos-analytics.com/api/cron/refresh-us-press \
-  -H "Authorization: Bearer $CRON_SECRET" | jq .
+  -H "Authorization: Bearer $S" | jq .
 ```
+
+O `tr -d '\r'` não é enfeite: arquivo `.env` gravado no Windows carrega CR no fim da linha, o CR entra no cabeçalho e derruba a autenticação com o mesmo 401. Medido em 04/Ago/2026.
+
+⚠️ **401 e 502 querem coisas opostas.** O 401 é só o segredo não ter chegado: corrigir a chamada e repetir é o certo. O 502 com `motivo` é o portão funcionando, e ali repetir não resolve, é a origem que precisa ser olhada.
 
 Grava no Neon sob a chave `us-press`. Resposta boa tem `ok: true`, `lastUpdate` e o bloco `qualidade`. Resposta com `motivo: "nenhum item na lista; nada foi gravado"` **é o portão funcionando**: nada foi apagado.
 
@@ -195,6 +214,16 @@ node scripts/serie-do-contrato.mjs --pais=us
 ```
 
 Um comando, e ele responde a pergunta inteira: por contrato binário, quantos pontos a série tem, desde quando, qual a faixa, e se o preço de agora é `RECORDE`, `PISO` ou `DENTRO`. Fecha a cauda cega do backup com a leitura certificada da ETAPA 1.7, e **se recusa a chamar de "agora" um carimbo com mais de 2h**. Serve o Brasil também, com `--pais=br`.
+
+### ⚖️ E desde 07/Set/2026 ele fecha o PAR BINÁRIO, cru e normalizado
+
+⚠️ **A régua é de 18/Ago e o painel já publicava os dois lado a lado, mas nenhuma ferramenta de linha calculava isso: a conta era refeita à mão toda passada, e é a conta do NÚMERO DA MANCHETE.** Regra decidida que ninguém mede é regra que não roda.
+
+📐 **A soma do par se move sem o meio se mover.** Medido em 07/Set na Câmara: o preço democrata ficou **parado em 87,50%** e o republicano subiu **+1,00pp**, levando a soma do par de 100,00% para 101,00%. Normalizado, o lado democrata **cedeu 0,87pp** sem o preço dele ter mexido um tique. Escrever "os democratas não se moveram" seria descrever o livro e não a disputa.
+
+🏷️ **Δ que sobrevive à normalização é informação; Δ que some é spread.** O bloco marca com `DISCORDAM` exatamente os livros em que as duas leituras divergem, que são os únicos em que a distinção muda a frase.
+
+⛔ **Dois desfechos não são um par só por serem dois.** Ele exige soma perto de 100, porque o que faz um par ser par é a EXCLUSIVIDADE e não a contagem. Sem isso, dois partidos menores de um livro brasileiro somando 1,20% virariam 50/50, número redondo e inventado. Quando recusa, ele **diz que recusou e por quê**, em vez de sumir com a linha.
 
 🔴 **NÃO usar a rota `/api/market/history` para isto, e o motivo foi medido em 04/Set/2026.** O filtro de slug funciona nos EUA, mas a JANELA não:
 
@@ -277,6 +306,8 @@ Se nada mudou, **não commitar por commitar** e dizer isso no relatório.
 ## Relatório final
 
 Tabela curta com: os dois contratos de controle e a variação em pp desde a leitura anterior; a média do generic ballot no formato D+X,XX ou R+X,XX e a variação dela; quantas pesquisas e institutos entraram; a soma das faixas de cada distribuição, dizendo quais passaram no portão; quantas matérias de imprensa e de quantos veículos; e se houve deploy.
+
+⚖️ **E a SOMA DO PAR de cada contrato binário, com o Δ normalizado ao lado do cru.** A régua é de 18/Ago/2026 e faltava neste relatório até 07/Set: sem ela, um dia de spread vira manchete de movimento, e um lado com preço congelado passa por "não se moveu" quando a probabilidade implícita dele andou. Sai pronto do `serie-do-contrato.mjs` da ETAPA 4.
 
 ## ESTILO
 

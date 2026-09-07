@@ -23,6 +23,7 @@ import {
   instantesSuspeitos,
   janela,
   oQueAJanelaEsconde,
+  parBinario,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -275,6 +276,80 @@ console.log('\n5. 🔴 A QUARENTENA do instante contaminado (28/Abr/2026)')
   conferir(
     '⛔ com o ponto de recuo, o topo do STF seria 50.00; sem ele, é 19.30',
     extremos(stf).max === 50 && extremos(stf.filter((p) => !p.t.startsWith('2026-04-28T11:45:34'))).max === 19.3
+  )
+}
+
+console.log('\n6. ⚖️ O PAR BINÁRIO, cru contra normalizado')
+/**
+ * O defeito que estes casos existem para pegar é o Δ que descreve o LIVRO e é
+ * lido como se descrevesse a disputa. E metade deles é de RECUSA, porque
+ * devolver número onde não dá para normalizar é o pior desfecho de todos.
+ */
+{
+  // Medido em 18/Ago/2026 no Senado: os DOIS lados subiram 1,00pp.
+  const senado = parBinario([
+    { outcome: 'Democratas', antes: 50.5, agora: 51.5 },
+    { outcome: 'Republicanos', antes: 48.5, agora: 49.5 },
+  ])
+  conferir('18/Ago: a soma do par foi de 99,00 para 101,00', senado.somaAntes === 99 && senado.somaAgora === 101)
+  conferir(
+    '⭐ o cru diz +1,00pp e o normalizado diz -0,02pp, trocando de sinal',
+    Math.abs(senado.lados[0].deltaCru - 1) < 1e-9 && Math.abs(senado.lados[0].deltaNorm + 0.0198) < 0.002
+  )
+  conferir('e por isso as duas leituras DISCORDAM', senado.discordam === true)
+
+  // Medido em 07/Set/2026 na Câmara: um lado PARADO no cru.
+  const camara = parBinario([
+    { outcome: 'Democratas', antes: 87.5, agora: 87.5 },
+    { outcome: 'Republicanos', antes: 12.5, agora: 13.5 },
+  ])
+  conferir(
+    '07/Set: preço cru parado em 87,50 e normalizado cedendo 0,87pp',
+    camara.lados[0].deltaCru === 0 && Math.abs(camara.lados[0].deltaNorm + 0.8663) < 0.002
+  )
+  conferir('cru parado com normalizado andando também DISCORDA', camara.discordam === true)
+  conferir(
+    'os dois deltas normalizados se cancelam, porque o par é uma partição',
+    Math.abs(camara.lados[0].deltaNorm + camara.lados[1].deltaNorm) < 1e-9
+  )
+  conferir(
+    'par que soma 100 nos dois dias NÃO discorda, e não vira alarme diário',
+    parBinario([{ outcome: 'A', antes: 60, agora: 62 }, { outcome: 'B', antes: 40, agora: 38 }]).discordam === false
+  )
+  conferir(
+    '⛔ sem leitura de agora de um dos lados, devolve null',
+    parBinario([{ outcome: 'A', antes: 60, agora: null }, { outcome: 'B', antes: 40, agora: 38 }]) === null
+  )
+  /**
+   * 🔴 O defeito latente achado ao rodar contra o BRASIL: dois desfechos não são
+   * um par só por serem dois. Dois partidos menores de um livro multipartidário
+   * somam 1,20% e virariam 50/50, número redondo e inventado.
+   */
+  {
+    const naoEhPar = parBinario([
+      { outcome: 'PT', antes: 0.6, agora: 0.6 },
+      { outcome: 'REPUBLICANOS', antes: 0.6, agora: 0.6 },
+    ])
+    conferir('⛔ dois nomes menores de livro multipartidário NÃO viram par', naoEhPar.ehPar === false)
+    conferir('e ele NÃO devolve os lados normalizados a 50/50', naoEhPar.lados === null)
+    conferir('mas devolve a soma medida, para a recusa ser explicável', Math.abs(naoEhPar.somaAgora - 1.2) < 1e-9)
+  }
+  conferir('⭐ par legítimo com spread de 99 continua sendo par', parBinario([
+    { outcome: 'A', antes: 50.5, agora: 50.5 }, { outcome: 'B', antes: 48.5, agora: 48.5 },
+  ]).ehPar === true)
+  conferir('⛔ com um lado só, devolve null em vez de inventar par', parBinario([{ outcome: 'A', antes: 60, agora: 62 }]) === null)
+  conferir(
+    '⛔ soma de agora zerada devolve null, não divisão por zero',
+    parBinario([{ outcome: 'A', antes: 60, agora: 0 }, { outcome: 'B', antes: 40, agora: 0 }]) === null
+  )
+  const semAntes = parBinario([
+    { outcome: 'A', antes: null, agora: 62 },
+    { outcome: 'B', antes: null, agora: 39 },
+  ])
+  conferir('sem o dia anterior, ainda calcula o normalizado de HOJE', !!semAntes && Math.abs(semAntes.lados[0].normAgora - 61.386) < 0.01)
+  conferir(
+    '⚠️ e os deltas saem NULOS, não zero, que se leria como "não mudou"',
+    semAntes.lados[0].deltaCru === null && semAntes.lados[0].deltaNorm === null
   )
 }
 

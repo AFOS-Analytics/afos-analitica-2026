@@ -1,6 +1,12 @@
 /**
- * amplitude-do-dia.mjs — lê a série GRAVADA no backup do Neon e diz, por livro
- * do painel do Brasil, quanto ele percorreu no dia e com quanto dinheiro novo.
+ * amplitude-do-dia.mjs — lê a série GRAVADA no backup do Neon e diz, por livro,
+ * quanto ele percorreu no dia e com quanto dinheiro novo.
+ *
+ * 🌎 ELE NÃO É SÓ DO BRASIL, e o cabeçalho dizia que era até 07/Set/2026. Ele
+ * varre os slugs que existem no backup, e os dos EUA estão lá: conferido naquele
+ * dia com `--slug=which-party-will-win-the-house-in-2026`, que devolveu os 4
+ * pontos de 06/Set e o dinheiro novo de cada lado. Ferramenta que se declara de
+ * um país só é ferramenta que a passada do outro país nunca alcança.
  *
  * É a ferramenta da régua do `/atualizar-brz` sobre livro bloqueado: sem ela, a
  * decisão de publicar ou não com a faixa ao lado vira palpite, e regra que

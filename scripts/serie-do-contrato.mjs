@@ -32,6 +32,7 @@ import {
   idadeEmHoras,
   instantesSuspeitos,
   oQueAJanelaEsconde,
+  parBinario,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -158,6 +159,8 @@ function principal() {
   }
 
   let alertas = 0
+  // Os dois lados de cada livro binário, juntados para o bloco do par lá embaixo.
+  const paresPorSlug = new Map()
   for (const chave of [...livros.keys()].sort()) {
     const [slug, outcome] = chave.split('␟')
     const pontos = livros.get(chave)
@@ -181,6 +184,12 @@ function principal() {
     // book: não existe "preço de agora" para julgar.
     const encerrada = hoje == null && estaEncerrada(ext)
     const v = vereditoSuperlativo(hoje ?? ext.ultimo, extAnterior, { encerrada })
+
+    // O "antes" do par é o último ponto GRAVADO no backup, e o "agora" é a
+    // leitura certificada. São duas grandezas de tempo diferentes e o bloco
+    // abaixo diz qual é qual, porque entre elas há a cauda cega de até 24h.
+    if (!paresPorSlug.has(slug)) paresPorSlug.set(slug, [])
+    paresPorSlug.get(slug).push({ outcome, antes: ext.ultimo, agora: hoje, fimGravado: ext.fim })
 
     console.log(`   ${outcome} · ${slug}`)
     console.log(
@@ -211,6 +220,56 @@ function principal() {
         )
     }
     console.log()
+  }
+
+  /**
+   * ⚖️ O PAR BINÁRIO, instalado em 07/Set/2026.
+   *
+   * A régua é de 18/Ago e o painel já publica cru e normalizado lado a lado
+   * desde então, mas NENHUMA ferramenta de linha de comando calculava isso: a
+   * conta era refeita à mão a cada passada, e é a conta do número da manchete.
+   * Regra decidida que ninguém mede é regra que não roda.
+   */
+  const pares = [...paresPorSlug.entries()].filter(([, l]) => l.length === 2)
+  if (pares.length) {
+    console.log(`   ⚖️ PAR BINÁRIO · cru e normalizado, sempre os dois`)
+    console.log(`      A soma do par se move sem o meio se mover. Δ que sobrevive à normalização é informação;`)
+    console.log(`      Δ que some é spread do livro. Sobrepreço não é defeito de coleta e não bloqueia captura.`)
+    console.log()
+    for (const [slug, lados] of pares) {
+      const p = parBinario(lados)
+      console.log(`      ${slug}`)
+      if (!p) {
+        console.log(`        (sem leitura certificada dos dois lados: o par não se calcula, e supor seria inventar)\n`)
+        continue
+      }
+      if (!p.ehPar) {
+        // ⛔ Declarar em voz alta, nunca sumir com a linha: sumir se lê como
+        // "não há nada a dizer sobre este livro", e há.
+        console.log(
+          `        ⛔ os dois lados somam ${p.somaAgora.toFixed(2)}%, longe de 100: isto NÃO é par binário.` +
+            ` São dois desfechos de um livro com mais de dois, e normalizar aqui inventaria 50/50.\n`
+        )
+        continue
+      }
+      const gravadoEm = (lados[0].fimGravado ?? '').slice(0, 16).replace('T', ' ')
+      const sinal = (x) => (x == null ? '   n/d' : `${x >= 0 ? '+' : ''}${x.toFixed(2)}pp`)
+      console.log(
+        `        soma do par   ${p.somaAntes == null ? 'n/d' : p.somaAntes.toFixed(2) + '%'}` +
+          ` (último gravado, ${gravadoEm} UTC)  ->  ${p.somaAgora.toFixed(2)}% (certificada)   ${sinal(p.deltaSoma)}`
+      )
+      for (const l of p.lados) {
+        console.log(
+          `        ${l.outcome.padEnd(14)} cru ${l.antes == null ? '  n/d' : l.antes.toFixed(2)} -> ${l.agora.toFixed(2)}  ${sinal(l.deltaCru)}` +
+            `   |   normalizado ${l.normAntes == null ? '  n/d' : l.normAntes.toFixed(2)} -> ${l.normAgora.toFixed(2)}  ${sinal(l.deltaNorm)}`
+        )
+      }
+      if (p.discordam) {
+        console.log(`        ⚠️ as duas leituras DISCORDAM neste livro: um lado parado no cru andou no normalizado,`)
+        console.log(`           ou os sinais se opõem. Escrever o Δ cru sozinho aqui descreve o LIVRO, não a disputa.`)
+      }
+      console.log()
+    }
   }
 
   if (alertas) {

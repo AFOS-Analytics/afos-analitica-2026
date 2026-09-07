@@ -319,3 +319,101 @@ export function oQueAJanelaEsconde(pontos, dias, agora = new Date()) {
     escondeMin: tudo.min < dentro.min ? { real: tudo.min, em: tudo.minEm, aparente: dentro.min } : null,
   }
 }
+
+/**
+ * ⚖️ O PAR BINÁRIO: cru e normalizado, sempre os dois.
+ *
+ * 🔴 POR QUE ISTO EXISTE. Em 18/Ago/2026 os DOIS lados do Senado subiram 1,00pp
+ * e a soma do par foi de 99,00% para 101,00%. O cru dizia +1,00pp e o
+ * normalizado dizia -0,02pp: o preço subiu um ponto e a probabilidade implícita
+ * não subiu nada, subiu menos que zero. Quem sobe dos dois lados não muda quem
+ * ganha, muda o quanto o livro cobra para operar.
+ *
+ * 🔑 Um par de dois desfechos exclusivos que cobrem todos os casos É uma
+ * partição, e a regra de normalizar partição existe desde 06/Ago. Ela nasceu
+ * para DISTRIBUIÇÃO, com dez ou onze faixas, e o número de faixas nunca foi o
+ * critério. O par binário é o número da MANCHETE e ficava entre os dois portões:
+ * a trava de captura vigia preço, o portão de 95-105 vigia distribuição, e
+ * nenhum dos dois olha para a soma do par.
+ *
+ * ⛔ Sobrepreço NÃO é defeito de coleta. 101% é margem de quem opera e 99% é o
+ * livro pagando mais que 100 aos dois lados somados. Nenhum dos dois bloqueia
+ * captura, e nenhum dos dois se conserta calado: normalizar em silêncio é pior
+ * que publicar cru.
+ *
+ * Devolve `null` quando não dá para normalizar, em vez de devolver número.
+ */
+/**
+ * A soma que testemunha que os dois desfechos cobrem o espaço inteiro. Larga de
+ * propósito: spread de livro binário já apareceu em 99 e em 101.
+ */
+export const PAR_MIN = 80
+export const PAR_MAX = 120
+
+const temAntesBruto = (a, b) => a.antes != null && b.antes != null
+
+export function parBinario(lados) {
+  if (!Array.isArray(lados) || lados.length !== 2) return null
+  const num = (x) => (typeof x === 'number' && Number.isFinite(x) ? x : null)
+  const a = { ...lados[0], antes: num(lados[0].antes), agora: num(lados[0].agora) }
+  const b = { ...lados[1], antes: num(lados[1].antes), agora: num(lados[1].agora) }
+  if (a.agora == null || b.agora == null) return null
+
+  const somaAgora = a.agora + b.agora
+  if (somaAgora <= 0) return null
+
+  /**
+   * 🔴 DOIS DESFECHOS NÃO SÃO UM PAR SÓ POR SEREM DOIS, e este era o defeito
+   * latente da primeira versão, achado em 07/Set/2026 ao rodar o script contra o
+   * BRASIL logo depois de escrevê-lo para os EUA.
+   *
+   * Lá os livros são multipartidários. Se num deles só dois desfechos tivessem
+   * série gravada, digamos PT em 0,60% e Republicanos em 0,60%, a versão antiga
+   * os trataria como par e devolveria 50,00% para cada um. Número redondo,
+   * plausível na tela, e completamente inventado: os dois somam 1,20% de um
+   * livro onde o resto da massa está em outros nomes.
+   *
+   * 🔑 O que faz um par ser par não é a CONTAGEM, é a EXCLUSIVIDADE: os dois
+   * desfechos precisam cobrir o espaço inteiro, e é isso que a soma perto de 100
+   * testemunha. A faixa é larga de propósito, porque spread de livro binário já
+   * apareceu em 99 e em 101 e nenhum dos dois é defeito.
+   */
+  if (somaAgora < PAR_MIN || somaAgora > PAR_MAX) {
+    return { ehPar: false, somaAgora, somaAntes: temAntesBruto(a, b) ? a.antes + b.antes : null, lados: null }
+  }
+  const temAntes = a.antes != null && b.antes != null
+  const somaAntes = temAntes ? a.antes + b.antes : null
+  // Soma anterior zerada não normaliza, e fingir que normaliza seria inventar.
+  const antesServe = temAntes && somaAntes > 0
+
+  const lado = (x) => {
+    const normAgora = (x.agora / somaAgora) * 100
+    const normAntes = antesServe ? (x.antes / somaAntes) * 100 : null
+    return {
+      outcome: x.outcome,
+      antes: x.antes,
+      agora: x.agora,
+      deltaCru: antesServe ? x.agora - x.antes : null,
+      normAntes,
+      normAgora,
+      deltaNorm: normAntes == null ? null : normAgora - normAntes,
+    }
+  }
+
+  const saida = { ehPar: true, somaAntes, somaAgora, deltaSoma: antesServe ? somaAgora - somaAntes : null, lados: [lado(a), lado(b)] }
+
+  /**
+   * ⭐ O caso que a régua manda gritar: o preço CRU de um lado não se moveu e o
+   * normalizado dele se moveu, ou os dois discordam no SINAL. Nos dois casos o Δ
+   * publicado descreve o livro, não a disputa.
+   */
+  saida.discordam = saida.lados.some((l) => {
+    if (l.deltaCru == null || l.deltaNorm == null) return false
+    const cruParado = Math.abs(l.deltaCru) < 0.005
+    const normAndou = Math.abs(l.deltaNorm) >= 0.005
+    const sinalOposto = l.deltaCru * l.deltaNorm < 0
+    return (cruParado && normAndou) || sinalOposto
+  })
+
+  return saida
+}
