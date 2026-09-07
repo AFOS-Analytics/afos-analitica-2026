@@ -40,6 +40,7 @@
  */
 import { chromium } from 'playwright'
 import { writeFileSync } from 'fs'
+import { pathToFileURL } from 'url'
 
 const W = 1200
 const H = 627
@@ -60,7 +61,7 @@ function estrela(cx, cy, r) {
  * em 9 fileiras alternando 6 e 5. Desenhada e não baixada porque cartão OG não
  * pode depender de imagem externa: o LinkedInBot busca só o arquivo declarado.
  */
-function bandeira(w) {
+export function bandeira(w) {
   const h = w / 1.9
   const faixa = h / 13
   const uh = faixa * 7
@@ -177,17 +178,24 @@ const cartaoB = frame(`
   </div>
   <div class="meta">Seat market, bands sum to 100.85% &middot; reading of August 23, 2026, 03:07 UTC</div>`, 'tight')
 
-const browser = await chromium.launch()
-const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
-const page = await ctx.newPage()
-const DEST = process.argv[2] || 'public/brand'
-for (const [nome, html] of [
-  ['og-us-weekly-wisconsin-1200x627.png', cartaoA],
-  ['og-us-senate-panel-1200x627.png', cartaoB],
-]) {
-  await page.setContent(html, { waitUntil: 'load' })
-  const buf = await page.locator('.og').screenshot({ type: 'png' })
-  writeFileSync(`${DEST}/${nome}`, buf)
-  console.log(`  ${DEST}/${nome}  ${(buf.length / 1024).toFixed(0)} KB`)
+/**
+ * 🔒 SÓ GERA QUANDO CHAMADO DIRETO. Sem esta trava, `import { bandeira }`
+ * feito por outro gerador REGERARIA estes dois cartões como efeito colateral,
+ * sobrescrevendo arte já publicada. Mesmo padrão de `conferir-tela-us.mjs`.
+ */
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  const browser = await chromium.launch()
+  const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: 1 })
+  const page = await ctx.newPage()
+  const DEST = process.argv[2] || 'public/brand'
+  for (const [nome, html] of [
+    ['og-us-weekly-wisconsin-1200x627.png', cartaoA],
+    ['og-us-senate-panel-1200x627.png', cartaoB],
+  ]) {
+    await page.setContent(html, { waitUntil: 'load' })
+    const buf = await page.locator('.og').screenshot({ type: 'png' })
+    writeFileSync(`${DEST}/${nome}`, buf)
+    console.log(`  ${DEST}/${nome}  ${(buf.length / 1024).toFixed(0)} KB`)
+  }
+  await browser.close()
 }
-await browser.close()
