@@ -124,8 +124,20 @@ node scripts/parse-us-generic-ballot.mjs
 
 ⚠️ **Só um dos dois encolhe o arquivo.** Em 01/Ago/2026 a coleta CRESCEU de 278 para 282 linhas e publicou lixo mesmo assim: uma linha saiu como **"Big Data Poll · D 914 x R 3,2"**, com o 914 sendo a amostra e o 3,2 a margem de erro. Conferir só o tamanho não pega isso.
 
+🔴 **O PORTÃO É ESTE, e ele é bloqueante:**
+
 ```bash
-node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('fora da regua entre as PUBLICADAS:',mau.length);console.log('soma D+R+outros das 5 primeiras (~100):',a.polls.slice(0,5).map(p=>p.dem+p.rep+(p.outros||0)).join(' '))"
+node scripts/conferir-us-polls.mjs
+```
+
+⚠️ **Corrigido em 07/Set/2026: esta etapa carregava uma cópia ENFRAQUECIDA da régua do `/atualizar-pesquisas-usa`.** O `conferir-us-polls.mjs` existe desde 04/Ago e não era citado aqui, e a conferência à mão que ficava no lugar dele olhava a **soma das 5 primeiras linhas**. As 5 primeiras são sempre as mais recentes e as mais bem formatadas: coluna deslizada aparece onde a origem mudou de formato, e isso costuma ser no meio ou no fim da tabela. Em 04/Ago varrer as 351 achou 2 fora da faixa que a amostra de 5 nunca mostraria.
+
+📌 O script varre **todas** as linhas, compara contra o `git HEAD`, e ainda responde de onde veio a variação: `COMPOSICAO`, `PESQUISA_NOVA`, `CORRECAO`, `PARADO` ou `INCONSISTENTE`. Termina em `VEREDITO: APROVADO` ou `REPROVADO`. **A régua completa, com os medidores de janela, defasagem e recorte, está no `/atualizar-pesquisas-usa`.**
+
+Se o script cair, o mínimo à mão:
+
+```bash
+node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'= indice',q.doIndice??q.linhasLidas,'+ curadas',q.curadas||0,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('fora da regua entre as PUBLICADAS:',mau.length);const somas=a.polls.map(p=>p.dem+p.rep+(p.outros||0));const fora=somas.filter(s=>s<97||s>102);console.log('soma D+R+outros FORA da faixa 97-102:',fora.length,'de',somas.length,'(TODAS as linhas, nunca uma amostra)')"
 ```
 
 **Não commitar** se: `publicadas` foi a zero ou caiu pela metade; `mediaAfos` veio nulo; sobrou linha fora da régua entre as publicadas; ou a soma Dem+Rep+outros não fecha perto de 100. **Soma que não fecha é a assinatura de coluna deslizada na origem.**

@@ -34,7 +34,22 @@ const saida = await coletarGenericBallot({ dias })
 writeFileSync(saidaPath, JSON.stringify(saida, null, 2) + '\n', 'utf-8')
 
 console.log(`✅ ${saidaPath}`)
-console.log(`   ${saida.qualidade.publicadas} publicadas de ${saida.qualidade.linhasLidas} lidas · ${saida.qualidade.descartadasPorForma} descartada(s) por forma`)
+/**
+ * 🏷️ A LINHA DIZ DE ONDE VEM CADA PARCELA, e não "X de Y".
+ *
+ * Até 07/Set/2026 ela saía como "387 publicadas de 381 lidas", uma fração
+ * impossível: o numerador maior que o denominador. Nenhum dos dois números
+ * estava errado. O que faltava era o meio, porque desde 04/Set as rodadas
+ * CURADAS entram por fora do índice, e publicadas = índice + curadas.
+ *
+ * Fração impossível não é defeito de valor, é defeito de etiqueta, e portão de
+ * valor nenhum pega isso. Quem lê rápido conclui que a leitura está quebrada.
+ */
+{
+  const q = saida.qualidade
+  const parcelas = q.curadas ? `${q.doIndice ?? q.linhasLidas} do indice + ${q.curadas} curada(s)` : `${q.linhasLidas} lidas`
+  console.log(`   ${q.publicadas} publicadas (${parcelas}) · ${q.descartadasPorForma} descartada(s) por forma`)
+}
 if (saida.mediaAfos) {
   console.log(`   média: Dem ${saida.mediaAfos.dem}% x Rep ${saida.mediaAfos.rep}% (D+${saida.mediaAfos.vantagemDem}) sobre ${saida.mediaAfos.nPesquisas} pesquisas de ${saida.mediaAfos.nInstitutos} institutos`)
 }

@@ -54,7 +54,7 @@ Para conferir uma peça isolada à mão, ou se o script cair:
 
 ```bash
 git diff --stat public/us-polls-data.json
-node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'de',q.linhasLidas,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const somas=a.polls.map(p=>p.dem+p.rep+(p.outros||0));const fora=somas.filter(s=>s<97||s>102);console.log('soma D+R+outros FORA da faixa 97-102:',fora.length,'de',somas.length,fora.length?'-> valores '+[...new Set(fora)].slice(0,10).join(' '):'');console.log('semFontePrimaria (contador do ARQUIVO):',a.qualidade.semFontePrimaria)"
+node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.mediaAfos;console.log('publicadas',q.publicadas,'= indice',q.doIndice??q.linhasLidas,'+ curadas',q.curadas||0,'| descartadas',q.descartadas,'(forma',q.descartadasPorForma+', valor',q.descartadasPorValor+')','| media',m&&m.vantagemDem,'| institutos',m&&m.nInstitutos);const mau=a.polls.filter(p=>!(p.dem>=15&&p.dem<=70&&p.rep>=15&&p.rep<=70&&p.dem+p.rep<=100));console.log('linhas fora da regua entre as PUBLICADAS:',mau.length);const somas=a.polls.map(p=>p.dem+p.rep+(p.outros||0));const fora=somas.filter(s=>s<97||s>102);console.log('soma D+R+outros FORA da faixa 97-102:',fora.length,'de',somas.length,fora.length?'-> valores '+[...new Set(fora)].slice(0,10).join(' '):'');console.log('semFontePrimaria (contador do ARQUIVO):',a.qualidade.semFontePrimaria)"
 ```
 
 **Regra de colapso:** se `publicadas` foi a 0, ou caiu para menos da metade, ou `mediaAfos` veio nulo, não commitar.
@@ -123,6 +123,26 @@ node scripts/check-us-polls-defasagem.mjs # o instituto publicou algo que o índ
 📅 **O `projetar-janela-us.mjs` responde a pergunta que o Passo 4 faz e não tinha ferramenta**, que é de onde vem a variação, só que ANTES de ela acontecer. Ele reusa a `media()` de produção em vez de recopiá-la, conta por RODADA e não por linha, e nomeia quem sai em cada dia. ⭐ **O achado dele costuma ser o DEGRAU:** em 06/Set havia cinco rodadas com o mesmo fim de campo, 17/Ago, e todas saem no MESMO dia, 17/Set, levando o `n` de 8 para 3 e a média de D+5.00 para D+3.33. Queda de 1,67pp com zero informação nova, conhecida onze dias antes.
 
 ⛔ **Saída de USO INTERNO, como o efeito do recorte.** Ela descreve o que a NOSSA regra produz sobre a base que já está no arquivo, não o eleitorado. Publicar isso como leitura de intenção de voto seria atribuir ao mundo o que é da nossa coleta.
+
+🧭 **O `check-us-polls-defasagem.mjs` tem CINCO vereditos, e o mais novo é o que evita alarme eterno:**
+
+| veredicto | o que quer dizer |
+|---|---|
+| `POSSIVEL NOVIDADE` | o **item** mais novo da página fala do tema e é mais novo que a nossa base. Conferir o trecho impresso logo abaixo dele |
+| `TEMA LONGE DA DATA` | há post mais novo que a nossa base, o tema aparece na página, mas a mais de 200 caracteres de qualquer data nova. Não é alarme nem "em dia": é o conferidor declarando que não amarra os dois |
+| `INCONCLUSIVO` | menos de 3 datas lidas, ou o controle positivo não passou. **Não é "nada novo"**, é "não enxerguei a página" |
+| `SEM ITEM DO TEMA` | a página foi lida e não fala de generic ballot |
+| `EM DIA` | leu, fala do tema, e o item do tema não é mais novo que a nossa base |
+
+⭐ **Ele imprime o TRECHO do item mais novo** nos dois primeiros casos, desde 07/Set/2026. Antes o veredicto mandava "abrir a página à mão", e naquele dia abrir custou quatro requisições para descobrir que o item mais recente da Big Data Poll era uma pesquisa local sobre TPS em Springfield, Ohio, e que o "Generic Ballot" era link permanente do catálogo de projetos dela. Com o trecho, a mesma decisão sai em cinco segundos.
+
+🧪 **A regra do veredicto mora em `lib/us-polls/defasagem.mjs` e tem caso plantado:**
+
+```bash
+node scripts/testar-defasagem-us.mjs
+```
+
+Rodar depois de mexer no marcador do tema, na janela de proximidade ou na tolerância de dias. Metade dos 23 casos é de anti-silêncio: um conferidor que se aperta para calar falso positivo é a maneira mais fácil de transformar alarme barulhento em alarme mudo, e alarme mudo é indistinguível de alarme quebrado.
 
 🔬 **O `historico-us-polls.mjs` também diz se o registro de hoje no Neon é do CRON ou de um forçamento**, e reaplica a regra de hoje aos dias já gravados como controle. Se ele disser que o cron gravou dentro da janela das 07:10Z e os números baterem com o arquivo, **o Passo 3 não é necessário**: forçar ali só troca o registro do cron por outro igual, com o risco já fichado de apagar o carimbo dele.
 - quantas linhas foram lidas e quantas foram descartadas por forma, com o motivo

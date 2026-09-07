@@ -27,6 +27,15 @@
  * Uso:  node scripts/check-us-polls-defasagem.mjs
  */
 import { readFileSync } from 'fs'
+import {
+  MARCADOR,
+  datasDe,
+  datasDoTemaEmHtml,
+  trechoDaData,
+  veredito,
+  VEREDITOS,
+  ORDEM,
+} from '../lib/us-polls/defasagem.mjs'
 
 const UA = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
 const HOJE = new Date().toISOString().slice(0, 10)
@@ -55,29 +64,15 @@ const CASAS = [
   { nome: 'McLaughlin & Associates (R)', url: 'https://mclaughlinonline.com/category/polls/' },
 ]
 
-/** Marcadores de que a página fala do voto para o Congresso, e não de outra pesquisa. */
-const MARCADOR = /generic (?:congressional )?ballot|congressional ballot|congressional vote|house of representatives|midterm (?:election|vote|ballot)|control of congress/i
-
-const MESES = {
-  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7,
-  august: 8, september: 9, october: 10, november: 11, december: 12,
-  jan: 1, feb: 2, mar: 3, apr: 4, jun: 6, jul: 7, aug: 8, sep: 9, sept: 9, oct: 10, nov: 11, dec: 12,
-}
-
-/** Datas em qualquer das formas que estes sites usam. Devolve YYYY-MM-DD. */
-function datasDe(txt) {
-  const out = new Set()
-  for (const m of txt.matchAll(/\b([A-Z][a-z]{2,8})\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(20\d{2})/g)) {
-    const mes = MESES[m[1].toLowerCase()]
-    if (mes) out.add(`${m[3]}-${String(mes).padStart(2, '0')}-${String(+m[2]).padStart(2, '0')}`)
-  }
-  for (const m of txt.matchAll(/\b(20\d{2})-(\d{2})-(\d{2})\b/g)) out.add(`${m[1]}-${m[2]}-${m[3]}`)
-  for (const m of txt.matchAll(/\b(\d{1,2})\/(\d{1,2})\/(20\d{2})\b/g)) {
-    out.add(`${m[3]}-${String(+m[1]).padStart(2, '0')}-${String(+m[2]).padStart(2, '0')}`)
-  }
-  // Data futura é lixo de template ou de calendário eleitoral: não serve de sinal.
-  return [...out].filter((d) => d <= HOJE).sort()
-}
+/**
+ * 📌 O marcador do tema, a leitura de datas e a regra do veredicto moram em
+ * `lib/us-polls/defasagem.mjs` desde 07/Set/2026, e não aqui.
+ *
+ * O motivo é de teste, não de arrumação: este arquivo tem `await` no topo, então
+ * importá-lo é executá-lo, e executá-lo é ir à rede. Enquanto a regra vivia aqui,
+ * ela era a única desta casa sem caso plantado, e foi ela que errou em 07/Set.
+ * A prova está em `scripts/testar-defasagem-us.mjs`.
+ */
 
 async function baixar(url, cru = false) {
   const ctrl = new AbortController()
@@ -120,6 +115,8 @@ for (const casa of CASAS) {
 
   // RSS primeiro: `pubDate` é data declarada, não data raspada de texto.
   let datas = [], datasDoTema = [], falaDoTema = false, via = 'html', r
+  // No RSS a data e o assunto vêm do MESMO item; no HTML a amarração é inferida.
+  let granularidade = 'item', textoDaPagina = null
   if (casa.rss) {
     r = await baixar(casa.rss, true)
     if (!r.erro) {
@@ -160,65 +157,41 @@ for (const casa of CASAS) {
       linhas.push({ casa: casa.nome, veredicto: 'INACESSIVEL', detalhe: r.erro, conhecido })
       continue
     }
-    datas = datasDe(r.texto)
+    datas = datasDe(r.texto, HOJE)
     falaDoTema = MARCADOR.test(r.texto)
-    // Em HTML não dá para amarrar data ao item com segurança, então a data do
-    // tema é a do conjunto e o veredicto fica declaradamente mais frouxo.
-    datasDoTema = falaDoTema ? datas : []
+    /**
+     * 🔴 AQUI MORAVA O DEFEITO DE 07/Set/2026, e ele era uma linha.
+     *
+     * A versão antiga era `datasDoTema = falaDoTema ? datas : []`, ou seja: se o
+     * tema aparecia em QUALQUER lugar da página, TODA data da página virava data
+     * do tema. O comentário de então dizia que em HTML não dava para amarrar data
+     * a item, e isso é falso: dá por PROXIMIDADE.
+     *
+     * O caso que derrubou a linha foi a Big Data Poll. A data mais nova, 27/Ago,
+     * é de um post sobre TPS de haitianos em Springfield, Ohio, e o "Generic
+     * Ballot" é um link permanente do catálogo de projetos. POSSIVEL NOVIDADE
+     * todo dia, para sempre, sem uma pesquisa nova existir.
+     */
+    datasDoTema = datasDoTemaEmHtml(r.texto, HOJE)
+    textoDaPagina = r.texto
+    granularidade = 'proximidade'
   }
 
   /**
-   * CONTROLE POSITIVO, versão 2. A primeira versão só exigia que existisse
-   * ALGUMA data igual ou posterior à que temos, e isso passava por acidente.
-   *
-   * 🔴 Medido em 19/Ago no índice de política do YouGov: 566 KB de HTML, 167 KB
-   * de texto visível e DUAS ocorrências da MESMA data. O controle deu "passou" e
-   * o veredicto saiu POSSIVEL NOVIDADE, quando o fato é que aquela página não
-   * renderiza sem JavaScript e o conferidor não estava lendo nada.
-   *
-   * 🔑 Página de listagem que rendeu MENOS DE 3 datas não foi lida. Uma listagem
-   * de verdade tem uma data por item. O piso não é rigor estatístico, é o mínimo
-   * que distingue "li a lista" de "peguei um carimbo solto no rodapé".
+   * O CONTROLE POSITIVO e a TOLERÂNCIA moram em `lib/us-polls/defasagem.mjs`,
+   * com o porquê de cada número. Em resumo: página com menos de 3 datas não foi
+   * lida, e 7 dias absorvem a diferença entre fim de campo e data de publicação.
    */
-  const DATAS_MIN = 3
-  const leuAPagina = datas.length >= DATAS_MIN
-  const passouControle = leuAPagina && !!conhecido && datas.some((d) => d >= conhecido)
-  const maisRecente = datas.length ? datas[datas.length - 1] : null
-  // A data que decide é a do item que fala do tema, não a do feed inteiro.
-  const maisRecenteTema = datasDoTema.length ? datasDoTema[datasDoTema.length - 1] : null
-
-  /**
-   * 🔴 GRANDEZAS DIFERENTES DOS DOIS LADOS, e ignorar isso faz o alarme tocar
-   * todo dia. A nossa base guarda FIM DE CAMPO; o feed do instituto dá DATA DE
-   * PUBLICAÇÃO, que vem sempre depois. Comparar as duas cruas transforma a MESMA
-   * pesquisa em "novidade".
-   *
-   * Medido em 19/Ago sobre quatro casos que eu confirmei à mão: Emerson 3 dias,
-   * Big Data Poll 1, Quantus 1, YouGov 1. A maior defasagem foi de 3 dias, então
-   * 7 é folgado e ainda deixa passar atraso de indexação de verdade, que é o que
-   * este script existe para achar.
-   *
-   * ⚠️ A tolerância NÃO conserta a diferença de grandeza, só a torna inofensiva
-   * no uso. Se algum dia se quiser comparar direito, o caminho é extrair o campo
-   * do texto do item, não afrouxar mais o limiar.
-   */
-  const TOLERANCIA_DIAS = 7
-  const diasDepois = (a, b) => Math.round((new Date(b) - new Date(a)) / 86400000)
-
-  let veredicto
-  if (!conhecido) veredicto = 'SEM BASE'
-  else if (!passouControle) veredicto = 'INCONCLUSIVO'
-  else if (maisRecenteTema && diasDepois(conhecido, maisRecenteTema) > TOLERANCIA_DIAS) veredicto = 'POSSIVEL NOVIDADE'
-  else if (!falaDoTema) veredicto = 'SEM ITEM DO TEMA'
-  else veredicto = 'EM DIA'
+  const res = veredito({ conhecido, datas, datasDoTema, temaNaPagina: falaDoTema, granularidade })
 
   linhas.push({
-    casa: casa.nome, veredicto, conhecido, maisRecente,
-    tema: falaDoTema, temaAte: maisRecenteTema, datas: datas.length, bytes: r.bytes, via,
+    casa: casa.nome, veredicto: res.veredicto, conhecido, maisRecente: res.maisRecente,
+    tema: falaDoTema, temaAte: res.maisRecenteTema, datas: datas.length, bytes: r.bytes, via,
+    // O trecho em volta da data mais nova, para o humano decidir sem abrir o navegador.
+    trecho: textoDaPagina && res.maisRecente ? trechoDaData(textoDaPagina, res.maisRecente, HOJE) : null,
   })
 }
 
-const ORDEM = { 'POSSIVEL NOVIDADE': 0, INCONCLUSIVO: 1, INACESSIVEL: 2, 'SEM ITEM DO TEMA': 3, 'SEM BASE': 4, 'EM DIA': 5 }
 linhas.sort((a, b) => (ORDEM[a.veredicto] ?? 9) - (ORDEM[b.veredicto] ?? 9))
 
 for (const l of linhas) {
@@ -226,19 +199,36 @@ for (const l of linhas) {
   if (l.veredicto === 'INACESSIVEL') { console.log(cab + `${l.detalhe}`); continue }
   console.log(cab +
     `temos ${l.conhecido || '-'} | tema ate ${l.temaAte || '-'} | fonte ate ${l.maisRecente || '-'} | ${l.datas} datas | via ${l.via}`)
+  /**
+   * ⭐ O TRECHO É O ATALHO. Sem ele o veredicto mandava "abrir a pagina a mao", e
+   * em 07/Set abrir custou quatro requisicoes para descobrir que o item mais novo
+   * da Big Data Poll era uma pesquisa local de Ohio. A linha do item resolve isso
+   * em cinco segundos, e so aparece onde ha decisao humana a tomar.
+   */
+  if (l.trecho && (l.veredicto === VEREDITOS.POSSIVEL_NOVIDADE || l.veredicto === VEREDITOS.TEMA_LONGE)) {
+    console.log(`${' '.repeat(23)}item de ${l.maisRecente}: ...${l.trecho.slice(-170)}`)
+  }
 }
 
-const novidades = linhas.filter((l) => l.veredicto === 'POSSIVEL NOVIDADE')
+const novidades = linhas.filter((l) => l.veredicto === VEREDITOS.POSSIVEL_NOVIDADE)
+const temaLonge = linhas.filter((l) => l.veredicto === VEREDITOS.TEMA_LONGE)
 const inconclusivos = linhas.filter((l) => l.veredicto === 'INCONCLUSIVO' || l.veredicto === 'INACESSIVEL')
+const emDia = linhas.length - novidades.length - temaLonge.length - inconclusivos.length
 
 console.log('')
-console.log(`resumo: ${novidades.length} possivel(is) novidade(s), ${inconclusivos.length} sem veredicto, ${linhas.length - novidades.length - inconclusivos.length} em dia`)
+console.log(`resumo: ${novidades.length} possivel(is) novidade(s), ${temaLonge.length} com tema longe da data, ${inconclusivos.length} sem veredicto, ${emDia} em dia`)
 console.log('')
 if (novidades.length) {
-  console.log('POSSIVEL NOVIDADE quer dizer: a pagina tem data mais nova que a nossa base E fala do tema.')
-  console.log('NAO e pesquisa confirmada. Abrir a pagina a mao antes de qualquer coisa.')
+  console.log('POSSIVEL NOVIDADE quer dizer: o ITEM mais novo da pagina fala do tema E e mais novo que a nossa base.')
+  console.log('NAO e pesquisa confirmada. Conferir o trecho impresso acima antes de qualquer coisa.')
 } else {
-  console.log('Nenhuma casa acessivel mostrou data mais nova que a nossa base.')
+  console.log('Nenhuma casa acessivel mostrou item do tema mais novo que a nossa base.')
+}
+if (temaLonge.length) {
+  console.log('')
+  console.log('TEMA LONGE DA DATA: a pagina tem post mais novo que a nossa base, e o tema aparece nela,')
+  console.log('mas a mais de 200 caracteres de qualquer data nova. Tipicamente e link de catalogo ou de menu.')
+  console.log('NAO e "em dia" nem alarme: e o conferidor dizendo que nao amarra os dois. O trecho acima decide.')
 }
 if (inconclusivos.length) {
   console.log('')
