@@ -1,0 +1,80 @@
+{
+  "date": "2026-09-07",
+  "factCheckGate": {
+    "eventosCandidatos": 2,
+    "incorporados": 0,
+    "itens": [
+      {
+        "evento": "Censura de Nunes Marques à pesquisa da AtlasIntel, registro BR-06939/2026",
+        "verificacao1_crossRef": "\"Nunes Marques\" aparece em 2026-09-05 nas últimas 7 dailies, então continuidade e não novidade",
+        "verificacao2_fetch": {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/nunes-marques-suspende-pesquisa-que-associou-flavio-bolsonaro-a-vorcaro/",
+          "dataDoAtoNoCorpo": "2026-06-08",
+          "publicadaEm": "2026-06-08 13:29",
+          "tipo": "evento"
+        },
+        "segundaFonte": {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/tse-adia-decisao-sobre-pesquisa-que-ligou-flavio-a-vorcaro/",
+          "dataDoAtoNoCorpo": "2026-06-09",
+          "publicadaEm": "2026-06-09 20:59",
+          "detalhe": "adiamento do referendo da liminar por pedido de vista da ministra Estela Aranha"
+        },
+        "newsCacheContradiz": "SIM, e ao contrário do usual: o pubDate dos três itens no cache de 07/Set marca 06 e 07/Set, e o CORPO das matérias diz junho. O carimbo do agregador contradiz o corpo",
+        "decisao": "NÃO incorporar. Ato de três meses atrás lido como do dia"
+      },
+      {
+        "evento": "Augusto Cury omitiu empresas nos Estados Unidos e no Brasil em declaração ao TSE",
+        "verificacao1_crossRef": "\"Cury\" com 47 menções em 7 dailies, continuidade de cobertura",
+        "verificacao2_fetch": {
+          "url": "Estadão, item do news-cache de 2026-09-07",
+          "dataDoItem": "2026-09-06",
+          "tipo": "não verificado, WebFetch bloqueado no domínio"
+        },
+        "segundaFonte": "não verificado, nenhuma outra ocorrência no cache do dia",
+        "newsCacheContradiz": "não",
+        "decisao": "NÃO incorporar. Fonte única e de grupo único"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. Cada bloco tem ao menos duas fontes ou é número certificado do próprio mercado",
+    "2_numericalErrors": "20 de 22 números conferidos batem exatamente com os três JSONs publicados. Os 2 restantes, 89,50% e 82,50%, são dos livros sem preço novo e o texto declara que são da rodada anterior",
+    "3_fontesInventadas": "3 conferidas ao acaso, todas com matéria correspondente no news-cache de 2026-09-07 e URL resolvível",
+    "4_quotesLiterais": "uma, \"não é e não será colônia de ninguém\", com link para a matéria que a traz",
+    "5_causacaoEspuria": "nenhuma. O movimento de preço é descrito como direção oposta à da pesquisa, nunca como reação a ela",
+    "6_verbosCriticos": "nenhum verbo de privação de liberdade, morte ou decisão judicial na peça. O caso judicial existente era de junho e foi rejeitado no gate",
+    "decisao": "prosseguir"
+  },
+  "mercado": {
+    "leituraCertificada": "2026-09-07T16:02:31Z",
+    "livrosAprovados": ["presidential", "thirdPlace"],
+    "livrosSemPrecoNovo": ["secondPlace", "stf", "senate"],
+    "reFetchAoVivo": {
+      "em": "2026-09-07T16:35:50Z",
+      "achado": "Flávio Bolsonaro em 40,95%, contra 39,45% certificado, ou seja +1,50pp em 33 minutos. Portão de rebaseline DISPAROU",
+      "segundaCertificacao": "2026-09-07T16:44:17Z, presidencial BLOQUEADO porque as duas leituras deram 40,95% e 40,50%, 0,45pp de distância",
+      "decisao": "NÃO rebasear. Sem leitura confirmada não existe preço novo publicável, e a peça usa o conjunto certificado das 13:02 BRT, o mesmo que o painel publicou"
+    }
+  },
+  "medicoes": {
+    "palavrasPtBr": 1098,
+    "tetoPalavras": 1100,
+    "palavrasSintese": 261,
+    "referenciaSinteseNaFicha": 175,
+    "travessoes": 0,
+    "emojis": 0,
+    "gateNumericoPtEn": "identico, 52 numeros com unidade",
+    "gateNumericoPtEs": "identico, 52 numeros com unidade",
+    "validator": "limpo nos tres idiomas"
+  },
+  "revisaoDoAndre": {
+    "cobranca": "sintese escassa e pobre",
+    "conserto": "a sintese passou de 3 bullets de uma linha e 55 palavras para 3 paragrafos com negrito na primeira linha e 261 palavras, cada um com numero e consequencia. Para caber no teto, 214 palavras foram cortadas do CORPO na ordem que a ficha prescreve, e a sintese so foi apertada em redacao",
+    "fichaAplicada": "feedback_afos_daily_teto_900_palavras.md"
+  },
+  "wayback": {
+    "status": "NAO RODADO",
+    "motivo": "pre-check em https://web.archive.org/save/ devolveu HTTP 429. A regra manda nao rodar e nao insistir",
+    "passivo": "31 URLs na daily de 2026-07-29, exposta ha 40 dias, com 28 faltando"
+  }
+}
