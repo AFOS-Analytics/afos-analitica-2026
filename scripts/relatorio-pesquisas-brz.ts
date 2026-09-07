@@ -31,6 +31,7 @@
  * mundo é feio: fantasma no calendário é aviso, detector mudo é falha.
  */
 
+import { readFileSync } from 'fs'
 import { config } from 'dotenv'
 config({ path: '.env.local' })
 config({ path: '.env' })
@@ -89,7 +90,39 @@ async function main() {
   console.log(`\n📡 API: ${polls.length} linha(s), total declarado ${api.total}`)
   console.log(`   ingestão mais recente na resposta: ${ingestaoMaisNova}`)
   if (ingestaoMaisNova.slice(0, 10) < HOJE) {
-    console.log(`   ⚠️  nada de hoje na resposta. Ou não entrou nada, ou a rota está servindo cache.`)
+    /**
+     * 🔑 A AMBIGUIDADE ERA RESOLVÍVEL AQUI DENTRO, e ficava aberta por falta de
+     * uma leitura. "Ou não entrou nada, ou a rota está servindo cache" são duas
+     * conclusões opostas: uma é o mundo em repouso e a outra é defeito de
+     * serviço. Deixar as duas na tela transfere ao leitor uma pergunta que o
+     * script tem como responder.
+     *
+     * A resposta está em `data/tse/historico-arquivo.jsonl`, que o `--apply`
+     * anota a cada rodada desde 04/Set/2026. Se a rodada de hoje inseriu ZERO,
+     * "nada entrou" é fato e não hipótese. Se ela inseriu e a API não mostra,
+     * aí sim o alarme é de serviço, e ele passa a ser afirmação em vez de
+     * possibilidade.
+     *
+     * ⛔ Sem rodada anotada hoje, ele NÃO escolhe: diz que não sabe, porque
+     * chutar aqui é trocar uma dúvida honesta por uma certeza inventada.
+     */
+    let veredito = `Ou não entrou nada, ou a rota está servindo cache.`
+    try {
+      const linhas = readFileSync('data/tse/historico-arquivo.jsonl', 'utf8')
+        .split('\n').filter(Boolean).map((l) => JSON.parse(l) as { quando?: string; inseridas?: number })
+      const deHoje = linhas.filter((l) => String(l.quando ?? '').slice(0, 10) === HOJE)
+      if (deHoje.length) {
+        const inseridas = deHoje.reduce((s, l) => s + (l.inseridas ?? 0), 0)
+        veredito = inseridas === 0
+          ? `a ingestão de hoje inseriu ZERO, então NÃO ENTROU NADA. Não é cache.`
+          : `🔴 a ingestão de hoje inseriu ${inseridas} e a API não as mostra: isto é CACHE ou falha de serviço, não repouso.`
+      } else {
+        veredito = `nenhuma rodada de ingestão anotada hoje, então não dá para separar "nada entrou" de cache. Rodar o --apply antes de concluir.`
+      }
+    } catch {
+      veredito = `sem data/tse/historico-arquivo.jsonl para desempatar entre "nada entrou" e cache.`
+    }
+    console.log(`   ⚠️  nada de hoje na resposta: ${veredito}`)
   }
 
   // ── Passo 4b: o registro do TSE, para saber quem já SAIU ─────────────────────

@@ -242,6 +242,20 @@ Com os dados coletados, atualize os 3 arquivos JSON:
 
 **Guardrail #0 (escopo NACIONAL — firmado 12/Mai/2026, `memory/project_dashboard_polls_scope.md`):** o dashboard mostra APENAS pesquisas de escopo **nacional** (1º e 2º turnos). Pesquisas estaduais NUNCA entram em `polls-data.json` — vão exclusivamente pro `analysis-criteriosa.json` (cobertura jornalística) e Seção 2 do AFOS Daily. Existe runtime filter `isStatePoll` em `PollsSection.tsx` como belt-and-suspenders, mas a regra de origem é: só nacional no JSON.
 
+🔴 **Guardrail #0.1 (BLOQUEANTE, instalado 07/Set/2026): o rótulo "nacional" é DERIVADO por nós, e o portão que mede se ele se sustenta não era chamado aqui.**
+
+```bash
+node scripts/conferir-escopo-derivado.mjs --dias=30
+```
+
+⚠️ **Este é o defeito que o portão acima tinha:** o Guardrail #0 admite só pesquisa nacional, o `scope` é inferido do plano amostral ou da metodologia e **não é campo do TSE**, e o conferidor que pergunta se aquele campo vale alguma coisa **naquela casa** só era citado no `/atualizar-pesquisas-brz`. Ou seja, ele rodava no dia da ingestão e ficava calado no dia da publicação, que é quando o rótulo vai ao ar. Portão que não é chamado pelo comando que publica não protege a publicação.
+
+📌 **Ele sai 1 apenas quando um rótulo frágil está no CALENDÁRIO VIVO.** Rótulo já vencido é dívida de dataset e sai 0, então ele não bloqueia por passado.
+
+⛔ **Se reprovar, não publicar aquele registro como nacional.** Ele não afirma que a pesquisa é estadual: afirma que a evidência não sustenta chamá-la de nacional. O desfecho é conferir na divulgação, que é a data em que o número aparece com o universo declarado.
+
+🔴 **Caso vivo em 07/Set/2026:** `BR079322026`, Real Time Big Data, n=1.600, divulgação **09/Set**, servido como nacional apoiado num plano amostral que diz "eleitorado brasileiro" em **23 de 23 pesquisas ESTADUAIS da mesma casa**. Achado em 06/Set e ainda aberto. → `memory/feedback_o_campo_que_decide_o_rotulo_pode_ser_texto_padrao.md`
+
 **Guardrail #1 (frescor — descoberto 04/Mai/2026, pesquisas Mar ficaram 2 meses no dashboard):**
 
 - Verificar `lastUpdate` no topo do arquivo. Se >7 dias atrás de hoje, atualizar.
