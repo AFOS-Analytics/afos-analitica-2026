@@ -13,15 +13,13 @@
  *
  *   1200x627  `og`      prévia de link. É a proporção que o LinkedIn e o
  *                       Bluesky leem da tag `og:image`.
- *   1200x1200 `li`      ANEXO no feed do LinkedIn. 🔴 ATENÇÃO: este formato
- *                       NÃO resolveu a borda preta. Postado em 06/Set/2026, ele
- *                       saiu com tarja nas LATERAIS, ou seja a borda mudou de
- *                       lugar em vez de sumir. A frase que estava aqui, de que
- *                       "quadrado preenche a coluna inteira, sem faixa", era
- *                       INFERÊNCIA minha escrita como medição, e está errada.
- *                       Hipótese de pé: post de VÁRIAS imagens força um quadro
- *                       comum e coloca tarja em quem não bate. Teste que decide:
- *                       publicar como imagem ÚNICA.
+ *   1200x1200 `li`      ANEXO no LinkedIn. ✅ CONFERIDO NO FEED em 06/Set/2026:
+ *                       sai de BORDA A BORDA, sem tarja.
+ *                       🔴 E fica o aviso que custou três rodadas: a tela de
+ *                       ANÁLISE DO AUTOR, a do contador de impressões, mostra o
+ *                       MESMO arquivo com tarja lateral. Não é defeito da arte,
+ *                       é daquela tela. ⛔ Não trocar formato por causa dela:
+ *                       conferir sempre no FEED, que é onde o leitor está.
  *                       → memory/feedback_o_quadrado_nao_tirou_a_borda_preta_do_linkedin.md
  *   1600x900  `x`       ANEXO no X e no Bluesky. 16:9 é a proporção que as
  *                       duas linhas do tempo mostram inteira. Registrado em
