@@ -1,101 +1,89 @@
 {
-  "updatedAt": "06/09/2026, 13:53",
-  "subtitle": "Cruce del 6 de septiembre de 2026, lectura confirmada del 06/Sep, 13:53 BRT (16:53 UTC) en los cinco libros, con el presidencial en USD 144,11M. Encuesta nacional más reciente: Veritá del 06/Sep, registro BR-09426/2026 en el TSE, campo del 01 al 04/Sep. En esta ronda los cinco libros confirmaron en las dos lecturas.",
+  "updatedAt": "07/09/2026, 13:02",
+  "subtitle": "Cruce del 7 de septiembre de 2026, lectura confirmada del 07/Sep, 13:02 BRT (16:02 UTC), con el presidencial en USD 144,60M. En esta ronda dos de los cinco libros recibieron precio nuevo: el de ganador y el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno). Encuesta nacional más reciente: Veritá del 06/Sep, registro BR-09426/2026 en el [TSE](/es/glossary#tse), cuyo escenario de [segunda vuelta](/es/glossary#segundo-turno) salió después de la ronda de ayer e invierte el par.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 56,50% (vol USD 9,83M acumulado) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una subida de 1,00pp frente a la lectura confirmada del 04/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 2,55pp hasta 7,90% (vol USD 474 mil). ENCUESTA: la Veritá del 06/Sep (BR-09426/2026, campo del 01 al 04/Sep, n=3.804, margen de 2pp) lo mide en 38,4% en la primera vuelta, detrás de Flávio Bolsonaro por 0,5 punto. El levantamiento no trae escenario de [segunda vuelta](/es/glossary#segundo-turno).",
+      "header": "PRECIO: 57,50% (vol USD 9,92M acumulado) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, un alza de 1,00pp frente a la lectura confirmada del 06/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) no hay lectura nueva el 07/Sep. ENCUESTA: 38,4% en la primera vuelta de Veritá del 06/Sep, detrás por 0,5 punto dentro del margen, y 43,1% frente a 48,5% en la [segunda vuelta](/es/glossary#segundo-turno) de la misma ronda.",
       "fortes": [
-        "Subió 1,00pp en el contrato de ganador y abrió la distancia hacia el segundo, que pasa de 15,35pp a 16,80pp desde la lectura confirmada del 04/Sep.",
-        "⭐ EL PRECIO ABRIÓ LA BRECHA EL MISMO DÍA EN QUE LA ENCUESTA LA CERRÓ, y las dos mediciones ordenan la disputa de formas opuestas.",
-        "En la serie registrada desde el 14/Abr su contrato va de 34,50% a 67,50%, y el 56,50% de hoy está dentro de ese rango, a 12,00pp del techo del 16/Ago.",
-        "La lectura de segunda vuelta más reciente sigue siendo la Datafolha del 03/Sep, que lo da ganando los cuatro pares que probó, y la Veritá de hoy no probó ninguno.",
-        "El volumen acumulado en su contrato llegó a USD 9,83M, y el libro presidencial entero está en USD 144,11M."
+        "Subió 1,00pp en el contrato de ganador y abrió la distancia sobre el segundo, que pasa de 16,80pp a 18,05pp desde la lectura confirmada del 06/Sep. Es la segunda rueda seguida de apertura.",
+        "Su contrato subió en los dos días en que la encuesta de Veritá fue contra él, primero empatando la primera vuelta y ahora entregando la segunda vuelta a su adversario.",
+        "En las otras dos encuestas nacionales de la ventana que prueban la segunda vuelta contra Flávio Bolsonaro sigue por delante: Datafolha del 03/Sep, 46% a 44%, y Quaest del 02/Sep, 42% a 41%."
       ],
       "fracos": [
-        "⚠️ LA VERITÁ DEL 06/Sep LO PONE DETRÁS POR PRIMERA VEZ EN UNA RONDA DE ESA CASA: el 21/Ago la misma Veritá le daba 39,3% contra 39,1%, y ahora son 38,4% contra 38,9%.",
-        "Es la segunda nacional de la ventana que coloca a Flávio Bolsonaro numéricamente delante en la primera vuelta, después de la Gerp del 26/Ago, que dio 38% a 37%.",
-        "La distancia de 0,5 punto está dentro del margen de 2 puntos declarado por Veritá, así que la encuesta mide empate técnico y no una ventaja del adversario.",
-        "Veritá tiene confiabilidad 2 en la regla de la casa, la más baja entre los institutos de la ventana, y no es dato que se lea solo.",
-        "La desaprobación del gobierno en la Datafolha del 03/Sep es de 51% contra 45% de aprobación, y la Veritá de hoy no divulgó evaluación de gobierno."
+        "Veritá del 06/Sep es la primera encuesta nacional de la ventana que le da derrota en la segunda vuelta, por 48,5% a 43,1%, una distancia de 5,4 puntos que no cabe en el margen de 2 puntos de la propia encuesta.",
+        "El rechazo medido en la misma ronda es de 35% para él frente a 25,8% para su adversario.",
+        "En la primera vuelta de la misma encuesta aparece detrás por 0,5 punto, lo que es empate técnico, pero dentro de la propia Veritá el signo cambió desde el 21/Ago, cuando la casa le daba 39,3% frente a 39,1%."
       ],
-      "analise": "El 6 de septiembre es el día en que las dos mediciones de esta página apuntan hacia lados opuestos, y eso es lo que ella registra. El contrato de ganador subió 1,00pp hasta 56,50% (vol USD 9,83M) y abrió la distancia hacia el segundo de 15,35pp a 16,80pp. El mismo día, Veritá divulgó la primera nacional tras dos días sin ninguna y midió 38,4% para él contra 38,9% del adversario, distancia de 0,5 punto dentro de un margen de 2 puntos. 📌 Son magnitudes distintas: la encuesta mide intención de voto declarada en la [primera vuelta](/es/glossary#primeiro-turno) y el contrato mide probabilidad de ganar la elección, y no se restan. El AFOS no arbitra cuál está en lo cierto, registra que hoy discrepan en el orden y que el precio se movió sin que la encuesta lo acompañara."
+      "analise": "El 7 de septiembre repite la divergencia del día anterior y la profundiza. El contrato de ganador subió 1,00pp hasta 57,50% (vol USD 9,92M) y la distancia sobre el segundo se abrió de 16,80pp a 18,05pp, segunda rueda seguida de apertura. En el mismo tramo, el escenario de [segunda vuelta](/es/glossary#segundo-turno) de Veritá, que solo salió después de la ronda de ayer, lo coloca detrás por 48,5% a 43,1%. Las dos magnitudes no se restan, porque una es intención de voto declarada en un par y la otra es probabilidad implícita de ganar la elección, pero ordenan la disputa al revés y eso es lo que la página registra. Vale la salvedad de que Veritá tiene confiabilidad 2 en la regla de la casa, la más baja de la ventana, y que las otras dos encuestas nacionales que prueban el par van en sentido opuesto."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 39,70% (vol USD 9,74M acumulado) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,45pp frente a la lectura confirmada del 04/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) sigue en 89,50% (vol USD 612 mil), sin variación. ENCUESTA: la Veritá del 06/Sep (BR-09426/2026, campo del 01 al 04/Sep, n=3.804, margen de 2pp) lo pone en 38,9% en la primera vuelta, delante de Lula por 0,5 punto y dentro del margen.",
+      "header": "PRECIO: 39,45% (vol USD 9,80M acumulado) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, una caída de 0,25pp frente a la lectura confirmada del 06/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) no hay lectura nueva el 07/Sep. ENCUESTA: 38,9% en la primera vuelta de Veritá del 06/Sep y 48,5% frente a 43,1% en la [segunda vuelta](/es/glossary#segundo-turno) de la misma ronda.",
       "fortes": [
-        "⭐ LA VERITÁ DEL 06/Sep LO PONE NUMÉRICAMENTE DELANTE EN LA PRIMERA VUELTA, 38,9% contra 38,4%, y es la segunda nacional de la ventana en hacerlo, después de la Gerp del 26/Ago.",
-        "Dentro de la propia Veritá el signo se invirtió: el 21/Ago la casa daba 39,3% a Lula contra 39,1% de él, y ahora el orden está invertido.",
-        "Sigue en 89,50% en el contrato de segundo lugar de la primera vuelta (vol USD 612 mil), y solo un punto de toda la serie estuvo alguna vez por encima de eso, el 90,50% del 21/Ago.",
-        "El volumen acumulado en su contrato de ganador está en USD 9,74M, prácticamente empatado con el del líder, que está en USD 9,83M.",
-        "El 05/Sep visitó en Paraná a un condenado por la trama golpista y volvió a exigir el apartamiento de Alexandre de Moraes, según O Globo y Folha de S.Paulo."
+        "Veritá del 06/Sep es la primera encuesta nacional de la ventana que le entrega la segunda vuelta, por 48,5% a 43,1%, una distancia de 5,4 puntos que no cabe en el margen de 2 puntos.",
+        "La misma ronda lo pone numéricamente por delante en la primera vuelta, 38,9% frente a 38,4%, y mide rechazo de 25,8% frente a 35% de su adversario.",
+        "Dentro de la propia Veritá el signo cambió desde el 21/Ago, cuando la casa daba 39,3% a Lula frente a 39,1% de él."
       ],
       "fracos": [
-        "⚠️ EL PRECIO SE MOVIÓ CONTRA LA ENCUESTA: cedió 0,45pp en el contrato de ganador el mismo día en que la Veritá lo puso delante en la primera vuelta.",
-        "La distancia hacia el líder en el contrato de ganador se abrió de 15,35pp a 16,80pp desde la lectura confirmada del 04/Sep.",
-        "La ventaja de 0,5 punto en la Veritá está dentro del margen de 2 puntos, así que lo que la encuesta mide es empate técnico y no una ventaja.",
-        "Veritá tiene confiabilidad 2 en la regla de la casa, y las demás nacionales de la ventana siguen dando al líder delante por márgenes de 3 a 9,7 puntos.",
-        "La Veritá de hoy no probó ningún escenario de segunda vuelta, así que la lectura más reciente de ese par sigue siendo la Datafolha del 03/Sep, que lo da a 2 puntos, 44% contra 46%."
+        "El precio fue contra la encuesta por segundo día seguido: cedió 0,25pp en el contrato de ganador el día en que la encuesta le entregó la segunda vuelta.",
+        "Las otras dos encuestas nacionales de la ventana que prueban el par van en sentido opuesto: Datafolha del 03/Sep, 46% a 44% para Lula, y Quaest del 02/Sep, 42% a 41%, también para Lula.",
+        "Veritá tiene confiabilidad 2 en la regla de la casa, la más baja entre los institutos de la ventana."
       ],
-      "analise": "Su día tiene un número fuerte y un precio que no lo acompañó. La Veritá del 06/Sep, con campo del 01 al 04/Sep y 3.804 entrevistas, lo mide en 38,9% contra 38,4% del líder, y es la segunda nacional de la ventana en colocarlo numéricamente delante en la [primera vuelta](/es/glossary#primeiro-turno). ⚠️ La distancia de 0,5 punto cabe entera dentro del margen de 2 puntos declarado, así que la lectura correcta es empate técnico. En el mercado el movimiento fue el opuesto: el contrato de ganador cedió 0,45pp hasta 39,70% (vol USD 9,74M), con la distancia hacia el líder abriéndose de 15,35pp a 16,80pp. 📌 En el contrato de segundo lugar de la primera vuelta sigue en 89,50%, sin variación en esta lectura, y es ahí donde el mercado concentra su convicción sobre él."
+      "analise": "La ronda del 7 de septiembre le entrega el mejor resultado de encuesta de la ventana y el peor movimiento de precio del mismo tramo. El escenario de [segunda vuelta](/es/glossary#segundo-turno) de Veritá, publicado después de la ronda de ayer, lo da ganando por 48,5% a 43,1%, y es la primera vez en toda la ventana que una encuesta nacional lo hace. En el contrato de ganador cedió 0,25pp y está en 39,45% (vol USD 9,80M), con la distancia sobre el líder abriéndose por segunda rueda. Es el segundo día seguido en que las dos mediciones se mueven en direcciones opuestas para él, y el registro es ese, sin arbitrar cuál de las dos tiene razón."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 1,15% (vol USD 4,16M acumulado) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,80pp frente a la lectura confirmada del 04/Sep. ⭐ En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 4,25pp hasta 56,20% (vol USD 126 mil). ENCUESTA: la Veritá del 06/Sep lo mide en 12,2% en la primera vuelta, frente a 2,2% en la ronda de la propia casa del 21/Ago.",
+      "header": "PRECIO: 1,15% (vol USD 4,19M acumulado) en el contrato de GANADOR, lectura confirmada del 07/Sep, 13:02 BRT, sin variación. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) subió 2,35pp y está en 58,55% (vol USD 126 mil). ENCUESTA: 12,2% en la primera vuelta de Veritá del 06/Sep.",
       "fortes": [
-        "⭐ ES EL ÚNICO NOMBRE QUE SUBE EN LAS DOS MEDICIONES DE ESTA RONDA: más 4,25pp en el contrato de tercer lugar de la primera vuelta, y 12,2% en la Veritá frente a 2,2% en la ronda de la misma casa del 21/Ago. En la encuesta, todos los demás nombres cedieron entre las dos rondas de la casa.",
-        "El 56,20% en el contrato de tercer lugar revierte dos caídas seguidas y lo devuelve por encima del nivel del 03/Sep.",
-        "Sigue como líder aislado de ese mercado, con 56,20% contra 26,00% del segundo colocado, una distancia de 30,20pp.",
-        "La Veritá lo coloca tercero en la primera vuelta con holgura sobre el cuarto, que es Renan Santos con 3,7%."
+        "Segunda alza seguida en el contrato de tercer lugar de la primera vuelta, que pasa de 56,20% a 58,55%, el mismo día en que Renan Santos cede 1,50pp en ese mismo libro.",
+        "Veritá del 06/Sep lo mide en 12,2% en la primera vuelta, frente a 2,2% en la ronda de la propia casa el 21/Ago.",
+        "Es el tercer colocado del levantamiento con holgura sobre el cuarto, que tiene 3,7%."
       ],
       "fracos": [
-        "⚠️ EN EL CONTRATO DE GANADOR CEDIÓ 0,80pp Y ESTÁ EN 1,15%, el valor más bajo entre los cuatro nombres por encima de 1% del libro.",
-        "Sus dos contratos se movieron en direcciones opuestas en esta lectura: más 4,25pp en el de tercer lugar y menos 0,80pp en el de ganador.",
-        "El mercado lo trata como candidato al pelotón de cabeza de la primera vuelta y no como candidato a ganar la elección, y el volumen de USD 4,16M convive con un precio por debajo de 1,5%.",
-        "En el contrato de segundo lugar de la primera vuelta está en 0,95% (vol USD 143 mil), por debajo de 1%."
+        "En el contrato de ganar la elección no se movió y sigue en 1,15%, es decir, el mercado lo consolida como tercer colocado de la primera vuelta y no como candidato a ganar.",
+        "La dispersión entre casas sigue amplia: Datafolha del 03/Sep lo dejaba en 7% y 8%, frente al 12,2% de Veritá.",
+        "El volumen del contrato de tercer lugar es de USD 126 mil, muy por debajo del libro de ganador, y el movimiento en un libro fino pide una lectura más cautelosa."
       ],
-      "analise": "Es el único nombre del panel que sube en las dos mediciones a la vez, y la distancia entre ellas es lo que interesa. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 4,25pp hasta 56,20% (vol USD 126 mil), revirtiendo dos caídas seguidas. En la Veritá del 06/Sep aparece con 12,2% en la primera vuelta, frente a 2,2% en la ronda de la propia casa del 21/Ago. ⚠️ Y en el contrato de ganador el movimiento es contrario: cedió 0,80pp hasta 1,15% (vol USD 4,16M). 📌 Las tres lecturas son coherentes entre sí si se leen por lo que cada una mide: el mercado lo ve consolidado como tercer colocado de la primera vuelta y no lo ve como candidato a ganar la elección, y la encuesta mide exactamente la primera de esas dos cosas."
+      "analise": "Sus dos contratos siguen contando historias distintas, y la distancia entre ellas aumentó. En el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 2,35pp y llegó a 58,55%, segunda alza seguida, mientras en el libro de ganador no se movió y permanece en 1,15%. La encuesta acompaña el primer movimiento y no el segundo: Veritá lo mide en 12,2%, seis veces lo que la misma casa medía el 21/Ago. En esta ronda es el nombre que más subió entre los que recibieron precio nuevo."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 1,60% (vol USD 12,70M acumulado) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,25pp frente a la lectura confirmada del 04/Sep. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 1,50pp hasta 26,00% (vol USD 279 mil). ENCUESTA: la Veritá del 06/Sep lo mide en 3,7% en la primera vuelta.",
+      "header": "PRECIO: 1,55% (vol USD 12,76M acumulado) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, una caída de 0,05pp. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno) cedió 1,50pp y está en 24,50% (vol USD 279 mil). ENCUESTA: 3,7% en la primera vuelta de Veritá del 06/Sep.",
       "fortes": [
-        "Subió 1,50pp en el contrato de tercer lugar de la primera vuelta y está en 26,00%, tercera subida seguida en ese mercado.",
-        "Es el contrato de mayor volumen acumulado entre los cuatro nombres por encima de 1% del libro presidencial, con USD 12,70M, por encima del líder y del segundo colocado.",
-        "La Veritá del 06/Sep lo mide en 3,7%, delante de Ronaldo Caiado, que está en 1,9%, y de Pablo Marçal, que está en 1,4%."
+        "Entre los cuatro nombres por encima de 1% en el contrato de ganador, es el de mayor volumen acumulado, USD 12,76M, por encima del líder y del segundo colocado.",
+        "Sigue como autor del pedido de destitución contra dos ministros del Supremo, tema que lo mantiene en el noticiero."
       ],
       "fracos": [
-        "Cedió 0,25pp en el contrato de ganador y está en 1,60%, por debajo de 2% por tercer día.",
-        "Su distancia hacia el primer colocado del contrato de tercer lugar sigue amplia, 26,00% contra 56,20%, o 30,20pp.",
-        "En la serie registrada desde el 14/Abr su contrato de ganador ya llegó a 17,90%, el 09/Jun, y el 1,60% de hoy está a 15,90pp de ese techo.",
-        "El 3,7% de la Veritá está en la parte baja de la dispersión de la ventana, que va de 3% a 7,6% entre las casas."
+        "Cedió 1,50pp en el contrato de tercer lugar de la primera vuelta e interrumpió tres alzas seguidas, el mismo día en que Augusto Cury subió 2,35pp en ese mismo libro.",
+        "Veritá del 06/Sep lo mide en 3,7% en la primera vuelta, en la parte baja de una dispersión entre casas que va de 3% a 7,6%.",
+        "El contrato de ganador sigue con precio por debajo de 2% pese a que su volumen acumulado es el mayor entre los cuatro nombres por encima de 1%."
       ],
-      "analise": "Su patrón se mantiene y quedó más nítido. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 1,50pp hasta 26,00% (vol USD 279 mil), tercera subida seguida, mientras en el de ganador cedió 0,25pp hasta 1,60% (vol USD 12,70M). 📌 Su contrato sigue siendo el de mayor volumen acumulado entre los cuatro nombres por encima de 1%, por encima del líder y del segundo colocado, con un precio por debajo de 2%. Volumen acumulado es dinero que ya pasó por el contrato desde su apertura y no dice hacia qué lado fue. La Veritá del 06/Sep lo mide en 3,7% en la primera vuelta, dentro de la franja de 3% a 7,6% en que las casas de la ventana lo colocan."
+      "analise": "La ronda invierte el movimiento de las tres anteriores en el libro de tercer lugar: cede 1,50pp hasta 24,50%, mientras Augusto Cury sube 2,35pp hasta 58,55%. Los dos se mueven en el mismo libro y en direcciones opuestas, lo que es coherente con una partición en la que la masa se desplaza entre nombres. En el contrato de ganador la variación es de 0,05pp, dentro del ruido del propio libro. Su volumen acumulado sigue siendo el mayor entre los cuatro nombres por encima de 1%, en un contrato con precio por debajo de 2%."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: los tres siguen por debajo de 0,5% en el contrato de ganador, que es el piso de la doble lectura, y esta ronda no publica precio nuevo para ellos en ese libro. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), Ronaldo Caiado subió 0,50pp hasta 10,00% (vol USD 114 mil) y Romeu Zema subió 0,15pp hasta 0,85% (vol USD 49 mil), lectura confirmada del 06/Sep, 13:53 BRT. ENCUESTA: la Veritá del 06/Sep pone a Caiado en 1,9% y a Zema en 0,3% en la primera vuelta.",
-      "subtitle": "Pelotón de cola en la lectura confirmada del 06/Sep, 13:53 BRT (16:53 UTC). ⚠️ LA VERITÁ DEL 06/Sep MIDE A LOS DOS POR DEBAJO DE LO QUE LAS OTRAS CASAS DE LA VENTANA VENÍAN MIDIENDO, con Ronaldo Caiado en 1,9% y Romeu Zema en 0,3% en la primera vuelta, frente a 4% y 2% en la Datafolha del 03/Sep. Y no probó ningún escenario de [segunda vuelta](/es/glossary#segundo-turno). El par contra Ronaldo Caiado sigue con cuatro lecturas distintas en la misma semana, todas con campo superpuesto: 45% a 43% a su favor en la Real Time Big Data del 01/Sep, 42% a 37% en su contra en la Genial/Quaest del 02/Sep, 44% a 42% en su contra en la PoderData del 03/Sep y 46% a 41% en su contra en la Datafolha del mismo día.",
+      "header": "PRECIO: los tres siguen por debajo del piso de 0,5% en el contrato de GANADOR, y esta ronda no publica precio nuevo para ellos en ese libro. En el de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno), lectura confirmada del 07/Sep, 13:02 BRT: Ronaldo Caiado cedió 0,50pp y está en 9,50% (vol USD 115 mil) y Romeu Zema sigue en 0,85% (vol USD 51 mil). ENCUESTA: Caiado 1,9% y Zema 0,3% en la primera vuelta de Veritá del 06/Sep.",
+      "subtitle": "Pelotón de atrás en la lectura confirmada del 07/Sep, 13:02 BRT (16:02 UTC). ⚠️ VERITÁ DEL 06/Sep MIDE A CAIADO EN 1,9% Y A ZEMA EN 0,3% EN LA [PRIMERA VUELTA](/es/glossary#primeiro-turno), los dos por debajo de lo que Datafolha medía el 03/Sep, 4% y 2%. En el libro de tercer lugar de la primera vuelta, que recibió precio nuevo en esta ronda, los dos se movieron en direcciones distintas: Caiado cedió 0,50pp y Zema quedó parado.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,15% (vol USD 7,16M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de TERCER LUGAR de la primera vuelta, que es otro mercado, subió 0,50pp y volvió a 10,00%, en un libro de USD 114 mil, lectura confirmada del 06/Sep, 13:53 BRT (16:53 UTC).",
-        "fortes": "Subió 0,50pp en el contrato de tercer lugar de la primera vuelta y volvió a 10,00%, tercer colocado de ese mercado, detrás solo de Augusto Cury y Renan Santos. El par de segunda vuelta contra él en la Datafolha del 03/Sep es de 5 puntos, 46% a 41%, más estrecho que el de Romeu Zema, que es de 9 puntos. Llevó la crisis del Supremo y el caso Master al espacio electoral gratuito, según Valor Econômico.",
-        "fracos": "⚠️ LA VERITÁ DEL 06/Sep LO MIDE EN 1,9% EN LA PRIMERA VUELTA, por debajo del 4% de la Datafolha del 03/Sep y del 3,3% que la propia Veritá medía el 21/Ago. En el contrato de ganador sigue por debajo del piso de 0,5% de la doble lectura. Y el par de segunda vuelta en que él aparece ya fue medido por cuatro casas en la misma semana, con cuatro resultados distintos, y la Veritá no lo probó."
+        "label": "CAIADO (PSD), 0,15% (vol USD 7,23M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno), que es otro mercado, cedió 0,50pp y está en 9,50%, en un libro de USD 115 mil, lectura confirmada del 07/Sep, 13:02 BRT.",
+        "fortes": "Sigue como cuarto nombre del contrato de tercer lugar de la primera vuelta, detrás de Augusto Cury, Renan Santos y del propio Flávio Bolsonaro en ese libro. El par de segunda vuelta contra él en la Datafolha del 03/Sep es de 5 puntos, 46% a 41%, más estrecho que el de Romeu Zema, que es de 9 puntos.",
+        "fracos": "⚠️ CEDE EN LOS DOS UNIVERSOS EN ESTA RONDA: 0,50pp en el contrato de tercer lugar de la primera vuelta y de 4% a 1,9% entre la Datafolha del 03/Sep y la Veritá del 06/Sep. En el contrato de ganador sigue por debajo del piso de 0,5%."
       },
       "haddad": {
         "label": "HADDAD (PT), 0,05% (vol USD 7,43M) en el contrato de GANADOR, debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él. No es candidato a la Presidencia: disputa la gobernación de São Paulo.",
@@ -103,79 +91,77 @@
         "fracos": "El contrato sigue abierto con su nombre por herencia del diseño del mercado, no por candidatura declarada, y el panel mantiene la línea solo para que el precio residual no sea leído como señal."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,15% (vol USD 6,56M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de TERCER LUGAR de la primera vuelta, que es otro mercado, subió 0,15pp hasta 0,85%, en un libro de USD 49 mil, lectura confirmada del 06/Sep, 13:53 BRT (16:53 UTC).",
-        "fortes": "Subió 0,15pp en el contrato de tercer lugar de la primera vuelta y está en 0,85%. En la PoderData del 03/Sep queda a 2 puntos del líder en la segunda vuelta, 44% a 42%, el margen más estrecho contra él en cualquier nacional de la ventana.",
-        "fracos": "⚠️ LA VERITÁ DEL 06/Sep LO MIDE EN 0,3% EN LA PRIMERA VUELTA, por debajo del 2% de la Datafolha del 03/Sep y del 1,3% que la propia Veritá medía el 21/Ago. El par de segunda vuelta contra él es el de mayor dispersión entre casas de la ventana, con las cuatro casas de la semana midiendo 3, 11, 2 y 9 puntos, y la Veritá no lo probó."
+        "label": "ZEMA (Novo), 0,15% (vol USD 6,56M) en el contrato de GANADOR, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de TERCER LUGAR de la [primera vuelta](/es/glossary#primeiro-turno), que es otro mercado, sigue en 0,85% sin variación, en un libro de USD 51 mil, lectura confirmada del 07/Sep, 13:02 BRT.",
+        "fortes": "Tuvo el acto de mayor visibilidad entre los tres este lunes, en la avenida Paulista, con un panel contra un ministro del Supremo y defensa de una reforma judicial, según Gazeta do Povo, O Globo y Valor Econômico. En la PoderData del 03/Sep queda a 2 puntos del líder en la segunda vuelta, 44% a 42%, el margen más estrecho contra él en cualquier encuesta nacional de la ventana.",
+        "fracos": "⚠️ VERITÁ DEL 06/Sep LO MIDE EN 0,3% EN LA PRIMERA VUELTA, por debajo del 2% de la Datafolha del 03/Sep. Y el acto del 07/Sep no produjo movimiento en el libro donde tiene precio: en el contrato de tercer lugar de la primera vuelta quedó parado en 0,85%."
       },
-      "analise": "Los dos que se movieron el 06/Sep se movieron en el mercado de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), que no es el de ganador. Ronaldo Caiado subió 0,50pp y volvió a 10,00% (vol USD 114 mil) y Romeu Zema subió 0,15pp hasta 0,85% (vol USD 49 mil). ⚠️ En la Veritá del 06/Sep los dos aparecen por debajo de lo que las otras casas de la ventana venían midiendo, con 1,9% y 0,3% frente a 4% y 2% en la Datafolha del 03/Sep, y la comparación entre casas distintas carga método distinto. Fernando Haddad no es candidato a la Presidencia y disputa el gobierno de São Paulo. En el contrato de ganador los tres siguen por debajo del piso de 0,5% de la doble lectura.",
+      "analise": "Ninguno de los tres recibe precio nuevo en el contrato de ganador, porque los tres están por debajo del piso de 0,5% de la doble lectura. En el libro de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), que sí recibió precio nuevo en esta ronda, Caiado cedió 0,50pp hasta 9,50% y Zema quedó parado en 0,85%. La encuesta de Veritá va en la misma dirección para Caiado, que cae de 4% en la Datafolha del 03/Sep a 1,9%. El 7 de septiembre le dio a Zema el acto de mayor visibilidad de los tres, en la Paulista, sin que eso produjera movimiento de precio en el libro donde tiene cotización.",
       "fortes": [
-        "Ronaldo Caiado subió 0,50pp en el contrato de tercer lugar de la primera vuelta y volvió a 10,00% (vol USD 114 mil), tercer colocado de ese mercado.",
-        "Romeu Zema subió 0,15pp en el contrato de tercer lugar y está en 0,85% (vol USD 49 mil).",
-        "La lectura de segunda vuelta más reciente contra Caiado sigue siendo la Datafolha del 03/Sep, de 5 puntos, 46% a 41%, más estrecha que la de Zema, que es de 9 puntos."
+        "Ronaldo Caiado sigue como cuarto nombre del libro de tercer lugar de la primera vuelta, por delante de Pablo Marçal y de Romeu Zema.",
+        "Romeu Zema tuvo acto propio el 07/Sep en la avenida Paulista, con crítica al Supremo y defensa de una reforma judicial, según Valor Econômico, O Globo y Gazeta do Povo."
       ],
       "fracos": [
-        "⚠️ LA VERITÁ DEL 06/Sep DA 1,9% A CAIADO Y 0,3% A ZEMA, y los dos quedan por debajo de lo que las otras casas de la ventana venían midiendo, que era 4% y 2% en la Datafolha del 03/Sep.",
-        "En el contrato de ganador Caiado está en 0,15% y Zema en 0,15%, por debajo del piso de 0,5% de la doble lectura, y esta ronda no publica precio nuevo para ellos ahí.",
-        "Fernando Haddad no es candidato a la Presidencia y disputa el gobierno de São Paulo, y su contrato sigue en 0,05%.",
-        "La Veritá no probó ningún escenario de segunda vuelta, así que no hay lectura nueva de los pares contra ellos."
+        "Caiado cedió 0,50pp en el libro de tercer lugar y Veritá del 06/Sep lo mide en 1,9%, por debajo del 4% de la Datafolha del 03/Sep.",
+        "Zema no se movió en el libro de tercer lugar y Veritá lo mide en 0,3%, por debajo del 2% de la Datafolha.",
+        "Fernando Haddad no es candidato a la Presidencia: disputa el gobierno de São Paulo, y su contrato presidencial está en 0,05%."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "La Veritá del 06/Sep (BR-09426/2026, campo del 01 al 04/Sep, n=3.804, margen de 2pp) lo mide en 38,4% en la primera vuelta, detrás de Flávio Bolsonaro por 0,5 punto, dentro del margen. El 21/Ago la misma casa le daba 39,3% contra 39,1%. El levantamiento no trae escenario de segunda vuelta, y la lectura más reciente de ese par sigue siendo la Datafolha del 03/Sep, que lo da ganando los cuatro pares probados.",
-      "m": "56,50% (vol USD 9,83M) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una subida de 1,00pp frente a la lectura confirmada del 04/Sep. En el contrato de segundo lugar de la primera vuelta subió 2,55pp hasta 7,90% (vol USD 474 mil).",
-      "t": "subió en el contrato de ganador y abrió la brecha hasta 16,80pp, el mismo día en que la encuesta la cerró",
-      "s": "El 05/Sep hizo un acto de campaña en el interior de São Paulo, pidió voto para Fernando Haddad y no trató la crisis del Supremo, según O Globo y CartaCapital.",
+      "p": "Veritá del 06/Sep (BR-09426/2026, campo del 01 al 04/Sep, n=3.804, margen de 2pp) lo mide en 38,4% en la [primera vuelta](/es/glossary#primeiro-turno), detrás por 0,5 punto y dentro del margen. El escenario de [segunda vuelta](/es/glossary#segundo-turno) de la misma ronda, que salió después, lo pone detrás por 48,5% a 43,1%. Datafolha del 03/Sep y Quaest del 02/Sep siguen dándole el par a él.",
+      "m": "57,50% (vol USD 9,92M) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, un alza de 1,00pp frente a la lectura confirmada del 06/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) no hay lectura nueva el 07/Sep.",
+      "t": "subió por segunda rueda seguida y abrió la brecha hasta 18,05pp, en el mismo tramo en que la encuesta le dio derrota en la segunda vuelta",
+      "s": "Participó del desfile del 7 de Septiembre en Brasilia junto a Edson Fachin, Davi Alcolumbre y Hugo Motta, e hizo un pronunciamiento en cadena sobre soberanía, según Poder360, Valor Econômico y Estadão.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "⭐ La Veritá del 06/Sep lo pone en 38,9% en la primera vuelta, numéricamente delante de Lula por 0,5 punto, dentro del margen de 2 puntos. Es la segunda nacional de la ventana en colocarlo delante, después de la Gerp del 26/Ago, que dio 38% a 37%. Veritá tiene confiabilidad 2 en la regla de la casa.",
-      "m": "39,70% (vol USD 9,74M) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,45pp frente a la lectura confirmada del 04/Sep. En el contrato de segundo lugar de la primera vuelta sigue en 89,50% (vol USD 612 mil), sin variación.",
-      "t": "delante en la encuesta y en caída en el precio, el mismo día",
-      "s": "Interrumpió la campaña el 05/Sep para visitar en Paraná a un condenado por la trama golpista y volvió a exigir el apartamiento de Alexandre de Moraes, según O Globo y Folha de S.Paulo.",
+      "p": "⭐ Veritá del 06/Sep lo pone por delante en los dos escenarios: 38,9% frente a 38,4% en la [primera vuelta](/es/glossary#primeiro-turno), dentro del margen, y 48,5% frente a 43,1% en la [segunda vuelta](/es/glossary#segundo-turno). Es la primera encuesta nacional de la ventana que le entrega la segunda vuelta.",
+      "m": "39,45% (vol USD 9,80M) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, una caída de 0,25pp frente a la lectura confirmada del 06/Sep. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) no hay lectura nueva el 07/Sep.",
+      "t": "por delante en los dos escenarios de la encuesta y en caída en el precio, por segundo día seguido",
+      "s": "Faltó al desfile del 7 de Septiembre y fue a un culto junto a Tarcísio de Freitas, según Poder360 y O Globo. Michelle Bolsonaro no participó de su acto, según VEJA.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "⭐ La Veritá del 06/Sep lo mide en 12,2% en la primera vuelta, frente a 2,2% en la ronda de la propia casa del 21/Ago. Es el tercer colocado del levantamiento, con holgura sobre el cuarto, que tiene 3,7%.",
-      "m": "1,15% (vol USD 4,16M) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,80pp. ⭐ En el contrato de tercer lugar de la primera vuelta subió 4,25pp hasta 56,20% (vol USD 126 mil), revirtiendo dos caídas seguidas.",
-      "t": "sube en los dos universos como tercer colocado y cede en el contrato de ganar la elección",
-      "s": "Sin acto individual nuevo el 06/Sep. Es probado en la segunda vuelta de las encuestas que Nexus y AtlasIntel marcaron para el 08 y el 10/Sep.",
+      "p": "Veritá del 06/Sep lo mide en 12,2% en la primera vuelta, frente a 2,2% en la ronda de la propia casa el 21/Ago. La Datafolha del 03/Sep lo dejaba en 7% y 8%.",
+      "m": "1,15% (vol USD 4,19M) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, sin variación. ⭐ En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) subió 2,35pp y está en 58,55% (vol USD 126 mil), segunda alza seguida.",
+      "t": "sube por segunda vez seguida en el libro de tercer lugar y no se mueve en el de ganador",
+      "s": "Hizo un acto en Copacabana el 07/Sep, con un guiño al ministro André Mendonça, según O Globo. Criticó la polarización entre los dos primeros colocados, según Banda B.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "La Veritá del 06/Sep lo mide en 3,7% en la primera vuelta, delante de Ronaldo Caiado (1,9%) y de Pablo Marçal (1,4%). La dispersión entre casas de la ventana sigue amplia, de 3% a 7,6%.",
-      "m": "1,60% (vol USD 12,70M) en el contrato de ganador, lectura confirmada del 06/Sep, 13:53 BRT, una caída de 0,25pp. En el contrato de tercer lugar de la primera vuelta subió 1,50pp hasta 26,00% (vol USD 279 mil), tercera subida seguida.",
-      "t": "tercera subida seguida en el contrato de tercer lugar, con el de ganador cediendo",
-      "s": "Sigue como autor del pedido de destitución contra dos ministros del Supremo. Sin acto individual nuevo el 06/Sep.",
+      "p": "Veritá del 06/Sep lo mide en 3,7% en la primera vuelta, por delante de Ronaldo Caiado (1,9%) y de Pablo Marçal (1,4%). La dispersión entre casas de la ventana va de 3% a 7,6%.",
+      "m": "1,55% (vol USD 12,76M) en el contrato de ganador, lectura confirmada del 07/Sep, 13:02 BRT, una caída de 0,05pp. ⚠️ En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) cedió 1,50pp y está en 24,50% (vol USD 279 mil).",
+      "t": "interrumpió tres alzas seguidas en el libro de tercer lugar, el mismo día en que Cury subió en él",
+      "s": "Sigue como autor del pedido de destitución contra dos ministros del Supremo. Sin acto individual nuevo el 07/Sep.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "La Veritá del 06/Sep lo pone en 1,9% en la primera vuelta, por debajo del 4% que la Datafolha medía el 03/Sep. El levantamiento no trae escenario de segunda vuelta.",
-      "m": "Por debajo de 0,5% en el contrato de ganador, que es el piso de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de tercer lugar de la primera vuelta subió 0,50pp hasta 10,00% (vol USD 114 mil), lectura confirmada del 06/Sep, 13:53 BRT.",
-      "t": "subió 0,50pp en el contrato de tercer lugar y cayó en la encuesta",
-      "s": "Llevó la crisis del Supremo y el caso Master al espacio electoral gratuito, según Valor Econômico. Sin otro acto individual el 06/Sep.",
+      "p": "Veritá del 06/Sep lo pone en 1,9% en la primera vuelta, por debajo del 4% que la Datafolha del 03/Sep medía.",
+      "m": "Por debajo de 0,5% en el contrato de ganador, que es el piso de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) cedió 0,50pp y está en 9,50% (vol USD 115 mil), lectura confirmada del 07/Sep, 13:02 BRT.",
+      "t": "cede en los dos universos, en la encuesta y en el libro de tercer lugar",
+      "s": "Sin acto individual nuevo el 07/Sep en el noticiero recogido.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
       "p": "La Veritá del 06/Sep lo mide en 1,4% en la primera vuelta, por debajo del 5,2% que la misma casa medía el 21/Ago y del 2% de la Datafolha del 03/Sep.",
-      "m": "Por debajo de 0,5% en el contrato de ganador, que es el piso de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de tercer lugar de la primera vuelta está en 2,25% (vol USD 47 mil), lectura confirmada del 06/Sep, 13:53 BRT.",
-      "t": "cede en la encuesta dentro de la propia casa, de 5,2% a 1,4% desde el 21/Ago",
-      "s": "Sin acto individual nuevo el 06/Sep.",
+      "m": "Por debajo de 0,5% en el contrato de ganador, que es el piso de la doble lectura, y esta ronda no publica precio nuevo para él en ese libro. En el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) cedió 0,40pp y está en 1,85% (vol USD 48 mil), lectura confirmada del 07/Sep, 13:02 BRT.",
+      "t": "cede en el libro de tercer lugar y sigue cayendo dentro de la propia casa que lo mide",
+      "s": "Sin acto individual nuevo el 07/Sep en el noticiero recogido.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "El 6 de septiembre es el día en que las dos mediciones de esta página apuntan hacia lados opuestos, y registrarlo es su función. ⭐ LA SEQUÍA DE ENCUESTAS NACIONALES TERMINÓ AL TERCER DÍA: Veritá divulgó una nacional con campo del 01 al 04/Sep, registro BR-09426/2026 en el [TSE](/es/glossary#tse), 3.804 entrevistas y margen de 2 puntos, y pone a Flávio Bolsonaro en 38,9% contra 38,4% de Lula en la [primera vuelta](/es/glossary#primeiro-turno). ⚠️ La distancia de 0,5 punto cabe entera dentro del margen declarado, así que lo que la encuesta mide es empate técnico, no una ventaja. Es la segunda nacional de la ventana que trae al segundo colocado numéricamente delante, después de la Gerp del 26/Ago, que dio 38% a 37%, y Veritá tiene confiabilidad 2 en la regla de la casa. ⭐ EL MISMO DÍA EL MERCADO SE MOVIÓ HACIA EL OTRO LADO: con los cinco libros confirmados en las dos lecturas, el contrato de ganador dio 56,50% a Lula y 39,70% a Flávio Bolsonaro, y la brecha pasó de 15,35pp en la lectura confirmada del 04/Sep a 16,80pp. 📌 Las dos magnitudes no se restan. La encuesta mide intención de voto declarada en la primera vuelta y el contrato mide probabilidad de ganar la elección, y un candidato puede liderar la primera y no la segunda. El AFOS no dice cuál de las dos está en lo cierto. ⭐ EL NOMBRE QUE SUBE EN LOS DOS UNIVERSOS ES AUGUSTO CURY: la Veritá lo mide en 12,2%, frente a 2,2% en la ronda de la misma casa del 21/Ago, y el contrato de tercer lugar de la primera vuelta subió 4,25pp hasta 56,20%. En el contrato de ganador, en cambio, cedió 0,80pp hasta 1,15%, lo que es coherente: el mercado lo consolida como tercer colocado de la primera vuelta y no como candidato a ganar la elección. 📌 En el Supremo el registro es de desacople. El 05/Sep el caso produjo dos actos institucionales nuevos, una propuesta de enmienda al reglamento interno presentada por Gilmar Mendes y un pedido de responsabilización hecho por Cristiano Zanin por quiebra de secreto fiscal, y el contrato de destitución antes de 2027 siguió prácticamente quieto, en 8,60% frente a 8,65% de la víspera. El 06/Sep, domingo, no hay acto institucional nuevo. El calendario del TSE trae otras diez nacionales con divulgación prevista entre el 07 y el 11/Sep, entre ellas Quaest, Nexus, AtlasIntel y Datafolha, y faltan 28 días para la primera vuelta."
+  "cruzamento": "El 7 de septiembre es el segundo día seguido en que las dos mediciones de esta página apuntan hacia lados opuestos, y esta vez la distancia entre ellas es mayor. ⭐ EL ESCENARIO DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) DE VERITÁ SALIÓ DESPUÉS DE LA RONDA DE AYER E INVIERTE EL PAR: Flávio Bolsonaro 48,5% frente a 43,1% de Lula, con 4,9% de blancos y nulos y 3,6% de indecisos, en la misma ronda de campo del 01 al 04/Sep con 3.804 entrevistas y margen de 2 puntos. Es la primera encuesta nacional de la ventana que le entrega la segunda vuelta, frente a la Datafolha del 03/Sep (46% a 44%) y la Quaest del 02/Sep (42% a 41%), las dos en sentido opuesto. ⚠️ Y EL PRECIO FUE HACIA EL OTRO LADO: el contrato de ganador subió 1,00pp para Lula y abrió la brecha de 16,80pp a 18,05pp, segunda rueda seguida de apertura. 📌 Las dos magnitudes no se restan, porque la encuesta mide intención de voto declarada en un par de segunda vuelta y el contrato mide probabilidad implícita de ganar la elección. La página registra que hoy ordenan la disputa al revés, sin arbitrar entre ellas, y anota que Veritá tiene confiabilidad 2 en la regla de la casa, la más baja de la ventana. ⚠️ EN ESTA RONDA DOS DE LOS CINCO LIBROS RECIBIERON PRECIO NUEVO, el de ganador y el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno). Para los otros tres no hay lectura nueva el 07/Sep. ⭐ Y EL LIBRO DE TERCER LUGAR CAMBIÓ DE PROTAGONISTA: Augusto Cury subió 2,35pp hasta 58,55% y Renan Santos cedió 1,50pp hasta 24,50%, los dos en el mismo mercado y en direcciones opuestas. 🗳️ Una encuesta nacional nueva estaba prevista para hoy, la Quaest de registro BR-01720/2026 y campo del 03 al 06/Sep, y hasta la captura de esta ronda no había sido divulgada con números. Los porcentajes de Quaest que circulan hoy en la prensa son los de la ronda anterior de la casa, registro BR-07065/2026, campo del 30/Ago al 01/Sep, divulgada el 02/Sep."
 }
