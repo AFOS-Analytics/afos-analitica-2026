@@ -1,5 +1,5 @@
 /**
- * Controle plantado do conferidor de tela dos EUA (`conferir-tela-us.mjs`).
+ * Controle plantado do conferidor de tela dos EUA (`conferir-tela.mjs`).
  *
  * 🔑 Os DOIS primeiros casos são os defeitos que o próprio conferidor teve na
  * estreia, em 06/Set/2026, e que só apareceram porque ele foi rodado contra a
@@ -18,9 +18,9 @@
  * número que aparece dentro de outro. Sem ele, um portão que diz "sim" para
  * tudo passa em todos os outros casos.
  *
- * Uso:  node scripts/testar-conferir-tela-us.mjs
+ * Uso:  node scripts/testar-conferir-tela.mjs
  */
-import { achou, naConvencao } from './conferir-tela-us.mjs'
+import { achou, naConvencao } from './conferir-tela.mjs'
 
 const CASOS = [
   // ── 1. o defeito do separador decimal, nos dois sentidos

@@ -181,7 +181,7 @@ const cartaoB = frame(`
 /**
  * 🔒 SÓ GERA QUANDO CHAMADO DIRETO. Sem esta trava, `import { bandeira }`
  * feito por outro gerador REGERARIA estes dois cartões como efeito colateral,
- * sobrescrevendo arte já publicada. Mesmo padrão de `conferir-tela-us.mjs`.
+ * sobrescrevendo arte já publicada. Mesmo padrão de `conferir-tela.mjs`.
  */
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
   const browser = await chromium.launch()

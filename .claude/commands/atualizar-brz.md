@@ -386,6 +386,16 @@ Execute em sequência:
 3. `git add app/components/CandidatesSection.tsx public/analysis-data.json public/analysis-criteriosa.json public/polls-data.json` e, se a ETAPA 3.5 gerou algum, `git add public/*.en.json public/*.es.json`
 4. `git commit -m "Atualização AFOS [DATA] — [RESUMO PRINCIPAL]"` com Co-Authored-By
 5. `git push origin main`
+5.1. 🖥️ **CONFERIR A TELA COM NAVEGADOR, nos três idiomas** (instalado 07/Set/2026):
+
+```bash
+node scripts/conferir-tela.mjs --pais=br --esperado=57.50,39.45,58.55,24.50
+```
+
+⚠️ **O conferidor existia desde 06/Set e só servia os EUA, com a rota fixa em `/dashboard/us`.** O buraco era o pior possível: a passada do BRASIL é a que publica prosa editorial em três idiomas, e era justamente ela que não tinha conferidor de entrega visual. Ganhou `--pais=`, e o padrão continua `us`.
+
+📌 **Passar os valores na convenção do INGLÊS**, com ponto decimal: ele converte sozinho para vírgula no pt-BR e no ES, e exige fronteira de dígito dos dois lados para não acertar por acaso dentro de outro número.
+
 6. **Persistir snapshots no Neon** (após deploy concluir):
    - `npx tsx scripts/persist-analysis.ts` (local) OU
    - `curl -X GET "https://www.afos-analytics.com/api/cron/persist-analysis" -H "Authorization: Bearer $S"` (via rota cron), com `S=$(grep '^CRON_SECRET=' .env.local | head -1 | cut -d= -f2- | tr -d '"'"'"'\r')`

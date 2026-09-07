@@ -1,5 +1,5 @@
 /**
- * CONFERIDOR DA TELA DOS EUA: os números chegam ao leitor, nos três idiomas?
+ * CONFERIDOR DA TELA DO PAINEL ${PAIS.toUpperCase()}: os números chegam ao leitor, nos três idiomas?
  *
  * 🔴 POR QUE `curl | grep` NÃO SERVE AQUI, e esta é a razão inteira do script.
  * O painel dos EUA serve CACHE e busca o preço no CLIENTE. O número não está no
@@ -28,14 +28,29 @@
  * → memory/feedback_rotulo_diz_do_que_o_numero_e.md
  *
  * Uso:
- *   node scripts/conferir-tela-us.mjs --esperado=87.50,12.50,51.50,49.50,97.15
- *   node scripts/conferir-tela-us.mjs --esperado=... --base=http://localhost:3000
- *   node scripts/conferir-tela-us.mjs --esperado=... --locales=en
+ *   node scripts/conferir-tela.mjs --esperado=87.50,12.50,51.50,49.50,97.15
+ *   node scripts/conferir-tela.mjs --esperado=... --base=http://localhost:3000
+ *   node scripts/conferir-tela.mjs --esperado=... --locales=en
  *
  * Sai 1 quando algum idioma não traz algum dos valores esperados.
  */
 import { chromium } from 'playwright'
 import { pathToFileURL } from 'url'
+
+/**
+ * 🌎 O PAÍS É PARÂMETRO desde 07/Set/2026, e antes disso a rota era fixa em
+ * .
+ *
+ * ⚠️ O buraco que isso deixava era o pior possível: a passada do BRASIL é a que
+ * publica PROSA EDITORIAL em três idiomas, e era justamente ela que não tinha
+ * conferidor de entrega visual. A dos EUA, que não escreve prosa por rodada,
+ * tinha. Ferramenta que se declara de um país só é ferramenta que a passada do
+ * outro país nunca alcança, e foi a terceira vez que esse padrão apareceu no
+ * mesmo dia.
+ *
+ * O padrão continua , para não mudar o comportamento de quem já chamava.
+ */
+const PAIS = process.argv.find((a) => a.startsWith('--pais='))?.slice(7) ?? 'us'
 
 const arg = (nome, padrao) => {
   const achado = process.argv.find((a) => a.startsWith(`--${nome}=`))
@@ -93,7 +108,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
     process.exit(1)
   }
 
-  console.log(`\n🖥️  TELA DOS EUA · ${LOCALES.length} idioma(s) · ${ESPERADO.length} valor(es) esperado(s)`)
+  console.log(`\n🖥️  TELA DO PAINEL ${PAIS.toUpperCase()} · ${LOCALES.length} idioma(s) · ${ESPERADO.length} valor(es) esperado(s)`)
   console.log(`   base ${BASE}`)
   console.log(`   esperado: ${ESPERADO.join(' · ')}\n`)
 
@@ -102,7 +117,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
 
   for (const locale of LOCALES) {
     const pag = await navegador.newPage()
-    const url = `${BASE}/${locale}/dashboard/us`
+    const url = `${BASE}/${locale}/dashboard/${PAIS}`
     let status = 0
     let texto = ''
     try {
