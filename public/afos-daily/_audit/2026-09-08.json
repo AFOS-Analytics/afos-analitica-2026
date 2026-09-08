@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-08",
+  "geradoEm": "2026-09-08T16:45:00.000Z",
+  "carimboDaPeca": "08/09/2026, 12:00 BRT (15:00 UTC)",
+  "factCheckGate": {
+    "atosDeAltoImpacto": 3,
+    "itens": [
+      {
+        "ato": "Andre Mendonca determinou o afastamento preventivo por 90 dias de Andrei Rodrigues, diretor-geral da Policia Federal, e de Leandro Almada da Costa, diretor de Inteligencia, e mandou apurar a producao de relatorios de inteligencia sobre magistrados",
+        "dataDoAto": "2026-09-08",
+        "verificacao1": "check-recurrence 'diretor-geral da PF' = 0 mencoes em 7 dailies; 'Andrei' = 3 mencoes, todas de 03 e 04/Set sobre pedidos de esclarecimento de Fachin",
+        "leitura": "novidade dentro de crise em curso",
+        "fonte1": "metropoles.com/colunas/manoela-alcantara (grupo Metropoles), 08/Set",
+        "fonte2": "gazetadopovo.com.br/republica/mendonca-afasta-andrei-rodrigues-do-cargo/ (grupo diferente), 08/Set, corroborada por Migalhas e ND Mais",
+        "decisao": "incorporar",
+        "ressalva": "os 30 dias de monitoramento sao alegacao do ministro, nao fato estabelecido, e a peca escreve assim"
+      },
+      {
+        "ato": "sessao virtual da 2a Turma formou maioria seguindo o relator e Gilmar Mendes pediu vista",
+        "dataDoAto": "2026-09-08",
+        "detalhe": "sessao aberta as 10h, vista cinco minutos depois, voto de Dias Toffoli pendente",
+        "decisao": "incorporar com ressalva de suspensao",
+        "verboDesambiguado": "escrito 'formaram maioria' e 'julgamento suspenso'. PROIBIDO escrever 'o Supremo manteve', porque o pedido de vista suspendeu o julgamento e o que segue em vigor e a decisao individual do relator"
+      },
+      {
+        "ato": "treze ministros aposentados do Supremo pediram a Fachin apuracao imediata e rigorosa",
+        "dataDoAto": "2026-09-08",
+        "verificacao1": "check-recurrence 'aposentados' = 0 mencoes em 7 dailies",
+        "fontes": "Folha (Grupo Folha), G1 e VEJA (grupos diferentes)",
+        "decisao": "incorporar"
+      }
+    ],
+    "rejeitados": [
+      {
+        "item": "STF decide que INSS pode definir teto de juros do consignado, publicado em 08/Set por Folha e Valor",
+        "motivo": "o julgamento foi concluido em 28/Ago no plenario virtual, com relatoria de Nunes Marques. As materias de hoje sao explainer e repercussao, nao ato do dia",
+        "decisao": "NAO incorporar como ato de hoje; registrado no painel com a data de origem"
+      },
+      {
+        "item": "BTG/Nexus de 31/Ago (BR-08900/2026), 2o turno Lula 46% x Flavio 45%",
+        "motivo": "onda ANTERIOR. A de hoje e BR-06790/2026 e da Flavio 46% x Lula 45%: mesmos dois numeros, lados trocados",
+        "decisao": "descartada; a peca usa apenas a onda de 08/Set"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "uma. Os 'quase R$ 50 milhoes' de despesa de campanha saem so do Estadao. E dado de prestacao de contas ao TSE, nao ato de alto impacto, e fica atribuido ao veiculo no texto",
+    "numericalErrors": "reconcile-claims.ts 2026-09-08 = OK, todos os claims batem com o JSON, tolerancia 0,05pp",
+    "fontesInventadas": "nenhuma. As citacoes saem do news-cache/2026-09-08.json com URL",
+    "quotesLiterais": "'mais aguda crise' e 'intromissao' vem de manchete das proprias materias linkadas. Nenhuma aspa nao confirmada",
+    "causacaoEspuria": "nenhuma. A peca declara que dois gatilhos caem na mesma janela, a pesquisa da manha e a decisao sobre a PF, e diz explicitamente que nao escolhe entre eles",
+    "verbosCriticos": "afastou (ato do relator, com data); formaram maioria, nunca 'o Supremo manteve'; julgamento declarado suspenso; nenhum uso de 'preso' sem data",
+    "decisao": "prosseguir"
+  },
+  "rebaseline": {
+    "gateDisparou": true,
+    "motivo": "Lula e Flavio moveram 1,00pp cada entre a leitura de 12:00 e a de 13:03 BRT",
+    "travaRodada": "capture-guard 16:04 e 16:12 UTC",
+    "certificacaoPorLivro": {
+      "aprovados": ["presidential", "secondPlace", "senate"],
+      "bloqueados": ["thirdPlace", "stf"]
+    },
+    "decisao": "NAO rebasear",
+    "porque": "o vao e identico nos dois conjuntos, 10,65pp, porque os dois nomes andaram para o mesmo lado, entao o enquadramento nao se inverte. E o conjunto das 12:00 tem os CINCO livros certificados, contra tres no de 13:12: rebasear jogaria o 3o lugar e o STF para 'rodada anterior' e entregaria uma pagina pior. A peca sai com o conjunto das 12:00, o mesmo que o painel publicou"
+  },
+  "medicoes": {
+    "palavrasPtBr": 1099,
+    "palavrasEn": 1137,
+    "palavrasEs": 1165,
+    "teto": 1100,
+    "travessao": 0,
+    "emoji": 0,
+    "gateNumerico": "multiconjunto identico nos tres, 88 numeros com unidade",
+    "tldrBullets": 3,
+    "validator": "OK nos tres, com 1 warning de densidade de link (57% contra regua de 80%)"
+  },
+  "cortes": {
+    "de": 1505,
+    "para": 1099,
+    "custaramInformacaoVerificada": [
+      "aprovacao do governo comprimida para uma frase, mantendo os quatro numeros",
+      "fala de Nikolas Ferreira sobre a decisao de Mendonca",
+      "critica de Caiado a declaracao de Lula sobre soberania",
+      "analise da BBC News Brasil sobre a legitimidade da corte"
+    ]
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "pre-check em /save/ devolveu 429 e o wayback-prioridade.mjs manda pausar 3 a 4 dias sem sondar",
+    "passivo": "41 dias na daily de 2026-07-29, com 28 URLs faltando"
+  }
+}
