@@ -283,3 +283,33 @@ BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Caiado,2,0.55,2026-08-19,-1.45,naive_winprob_minus_voteshare
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,34,Cenário estimulado (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,32,"Cenário Principal (1º turno, estimulado)",Flávio,38.9,32.55,2026-08-19,-6.35,naive_winprob_minus_voteshare
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,32,"Cenário Principal (1º turno, estimulado)",Lula,38.4,63.5,2026-08-19,25.1,naive_winprob_minus_voteshare
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,32,"Cenário Principal (1º turno, estimulado)",Renan,3.7,4.05,2026-08-19,0.35,naive_winprob_minus_voteshare
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,32,"Cenário Principal (1º turno, estimulado)",Caiado,1.9,0.55,2026-08-19,-1.35,naive_winprob_minus_voteshare
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,32,"Cenário Principal (1º turno, estimulado)",Zema,0.3,0.15,2026-08-19,-0.15,naive_winprob_minus_voteshare
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,30,Cenário estimulado com Pablo Marçal (1º turno),Lula,36,63.5,2026-08-19,27.5,naive_winprob_minus_voteshare
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,30,Cenário estimulado com Pablo Marçal (1º turno),Flávio,29,32.55,2026-08-19,3.55,naive_winprob_minus_voteshare
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,30,Cenário estimulado com Pablo Marçal (1º turno),Caiado,3,0.55,2026-08-19,-2.45,naive_winprob_minus_voteshare
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,30,Cenário estimulado com Pablo Marçal (1º turno),Renan,3,4.05,2026-08-19,1.05,naive_winprob_minus_voteshare
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,30,Cenário estimulado com Pablo Marçal (1º turno),Zema,2,0.15,2026-08-19,-1.85,naive_winprob_minus_voteshare
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,29,Cenário estimulado sem Pablo Marçal (1º turno),Lula,39,63.5,2026-08-19,24.5,naive_winprob_minus_voteshare
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,29,Cenário estimulado sem Pablo Marçal (1º turno),Flávio,35,32.55,2026-08-19,-2.45,naive_winprob_minus_voteshare
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,29,Cenário estimulado sem Pablo Marçal (1º turno),Caiado,4,0.55,2026-08-19,-3.45,naive_winprob_minus_voteshare
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,29,Cenário estimulado sem Pablo Marçal (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,29,Cenário estimulado sem Pablo Marçal (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Lula,38.4,63.5,2026-08-19,25.1,naive_winprob_minus_voteshare
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Flávio,37.3,32.55,2026-08-19,-4.75,naive_winprob_minus_voteshare
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Caiado,4,0.55,2026-08-19,-3.45,naive_winprob_minus_voteshare
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Zema,1.5,0.15,2026-08-19,-1.35,naive_winprob_minus_voteshare
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Flávio,37,32.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Lula,34,63.5,2026-08-19,29.5,naive_winprob_minus_voteshare
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Caiado,5,0.55,2026-08-19,-4.45,naive_winprob_minus_voteshare
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Renan,4,4.05,2026-08-19,0.05,naive_winprob_minus_voteshare
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,29,Cenário estimulado (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,28,Cenário estimulado com Pablo Marçal (1º turno),Lula,40,63.5,2026-08-19,23.5,naive_winprob_minus_voteshare
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,28,Cenário estimulado com Pablo Marçal (1º turno),Flávio,40,32.55,2026-08-19,-7.45,naive_winprob_minus_voteshare
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,28,Cenário estimulado com Pablo Marçal (1º turno),Renan,11,4.05,2026-08-19,-6.95,naive_winprob_minus_voteshare
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,28,Cenário estimulado com Pablo Marçal (1º turno),Caiado,1,0.55,2026-08-19,-0.45,naive_winprob_minus_voteshare
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,28,Cenário estimulado com Pablo Marçal (1º turno),Zema,1,0.15,2026-08-19,-0.85,naive_winprob_minus_voteshare

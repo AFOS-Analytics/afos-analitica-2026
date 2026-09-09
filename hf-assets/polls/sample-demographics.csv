@@ -355,3 +355,30 @@ BR-03669/2026,BR036692026,Datafolha,2026-09-03,2026-09-02,region,"(declared, no 
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,sex,male,47.2,full_percentages
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,sex,female,52.8,full_percentages
 BR-07561/2026,BR075612026,PoderData,2026-09-03,2026-08-31,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-09426/2026,BR094262026,Veritá,2026-09-06,2026-09-02,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01720/2026,BR017202026,Quaest/Genial,2026-09-07,2026-09-04,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-06790/2026,BR067902026,BTG/Nexus,2026-09-08,2026-09-05,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,sex,male,47,full_percentages
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,sex,female,53,full_percentages
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,education,Fundamental,38,full_percentages
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,education,Médio,40,full_percentages
+BR-07935/2026,BR079352026,Ideia/Canal Meio,2026-09-09,2026-09-05,income,Economicamente Ativo,62,full_percentages
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-00251/2026,BR002512026,Gerp,2026-09-09,2026-09-05,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,income,"(declared, no % in registry)",,mentioned_no_pct
