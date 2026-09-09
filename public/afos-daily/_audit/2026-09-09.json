@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-09",
+  "geradoEm": "2026-09-09T20:51:00Z",
+  "refetchPolymarket": {
+    "fetchedAtBRT": "09/Set 17:32",
+    "baseline": "leitura CERTIFICADA de 09/Set 16:51 BRT (19:51:24Z), dupla leitura aprovada em presidential, secondPlace e stf",
+    "deltas": {
+      "Lula": "52,50% -> 52,50% (0,00pp)",
+      "Flávio": "46,25% -> 46,55% (+0,30pp)",
+      "gap": "6,25pp -> 5,95pp (-0,30pp)",
+      "Renan": "1,85% -> 1,65% (-0,20pp)",
+      "volumeTotal": "USD 145,98M -> 146,12M"
+    },
+    "gateRebaseline": "NAO disparou",
+    "motivo": "nenhum dos vigiados atingiu 0,50pp, nenhum recorde rompido, enquadramento inalterado, volume estavel",
+    "notaDeTransparencia": "no livro de 2o lugar o preco do Flavio andou exatamente 0,50pp (78,50% -> 79,00%). Esse livro nao esta na lista do gate, e o movimento nao altera numero publicado nem enquadramento: a queda do dia contra 08/Set e de 10,00pp."
+  },
+  "factCheckGate": {
+    "eventosCandidatos": [
+      {
+        "evento": "Dino reintegrou Andrei Passos Rodrigues e Leandro Almada ao comando da PF, revertendo decisao monocratica de Mendonca",
+        "verificacao1": "\"Andrei Rodrigues\" aparece 4x em 2026-09-08, sempre sobre o AFASTAMENTO: continuidade da historia, ato NOVO",
+        "verificacao2": {
+          "url": "https://www.gazetadopovo.com.br/republica/dino-reintegra-diretor-geral-pf-afastado-mendonca/",
+          "data": "2026-09-09",
+          "tipo": "evento",
+          "grupo": "Gazeta do Povo (independente)"
+        },
+        "segundaFonte": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/09/dino-reintegra-andrei-rodrigues-no-comando-da-pf.shtml",
+          "grupo": "Folha"
+        },
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Mendonca homologou a delacao premiada do operador dos repasses ao fundo do filme Dark Horse",
+        "verificacao1": "\"Dark Horse\" aparece em 2026-09-03, e uma das linhas e O Globo com \"PGR fecha delacao com empresario\": o ACORDO e de 03/Set, o que muda hoje e a HOMOLOGACAO",
+        "verificacao2": {
+          "url": "https://www.poder360.com.br/poder-justica/dark-horse-mendonca-homologa-delacao-sobre-repasses-de-vorcaro/",
+          "data": "2026-09-09",
+          "tipo": "evento",
+          "grupo": "Poder360 (independente)"
+        },
+        "segundaFonte": "O Globo, G1 e Estadao no cache do dia (grupos diferentes)",
+        "decisao": "incorporar como HOMOLOGACAO, nunca como delacao fechada hoje"
+      },
+      {
+        "evento": "Fachin cancelou sessao do STF apos a reintegracao",
+        "verificacao1": "sem historico",
+        "verificacao2": {
+          "url": "apenas Folha de S.Paulo no cache, 09/Set 11:1x",
+          "data": "2026-09-09",
+          "tipo": "evento"
+        },
+        "segundaFonte": "nao verificado",
+        "decisao": "NAO incorporar"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. Cada pesquisa tem a pagina do instituto mais um segundo veiculo; a reintegracao tem Gazeta do Povo, Folha e G1, de tres grupos; a homologacao tem Poder360, O Globo, G1 e Estadao",
+    "numericalErrors": "reconcile-claims apontou 14 pares e 3 divergencias, todos conferidos um a um: forma de nome (Flavio x Flavio Bolsonaro), numeros que vivem em polls-data.json e nao nos dois arquivos varridos, e um limite de faixa de inflacao. Nenhuma porcentagem inventada",
+    "fontesInventadas": "conferi 3 ao acaso: G1 \"Impasse no STF\", Gazeta do Povo \"virou varzea\" e UOL \"Palver: Flavio tem 46%\" existem no cache do dia com data de 09/Set, e as 3 URLs diretas respondem HTTP 200",
+    "quotesLiterais": "uma, \"o Brasil esta sem presidente, virou varzea\", que e o proprio titulo da materia da Gazeta do Povo e vai linkada",
+    "causacaoEspuria": "nenhuma. O texto diz que preco e pesquisa andaram na mesma direcao e declara que as duas grandezas nao se subtraem",
+    "verbosCriticos": "homologou sai com a data do acordo separada da data da homologacao; reverteu e reintegrou saem com as duas datas; afastados monocraticamente traz a data e a forma da decisao",
+    "decisao": "prosseguir para preview"
+  },
+  "metricas": {
+    "palavrasCorpo": { "pt-BR": 1054, "en": 1089, "es": 1104 },
+    "palavrasSintese": { "pt-BR": 187, "en": 198, "es": 193 },
+    "tetoCorpo": 1100,
+    "reguaSintese": "160 a 175",
+    "travessao": 0,
+    "emoji": 0,
+    "gateNumerico": "multiconjunto identico nos 3 idiomas, 76 numeros com unidade",
+    "densidadeDeLink": "56%, contra regua de 80%. Aviso deixado de pe em vez de inflar o texto, mesma decisao de 08/Set"
+  },
+  "waybackDaily": {
+    "rodou": false,
+    "motivo": "pre-check em https://web.archive.org/save/ devolveu HTTP 429 no comeco da sessao. A regua manda NAO rodar e NAO insistir. A daily de 09/Set entra na fila do passivo."
+  }
+}

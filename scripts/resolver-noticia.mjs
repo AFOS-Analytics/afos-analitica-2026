@@ -37,7 +37,19 @@ const max = Number(valor('max') ?? 6)
 const linkDireto = valor('link')
 const padrao = argv.find((a) => !a.startsWith('--'))
 
+/**
+ * 🔑 Link que NÃO é do Google News já é a URL do veículo e não tem o que
+ * resolver. Os feeds âncora (`prestige-*`) do cache guardam a primária direto,
+ * e a primeira versão deste script tratava isso como "❌ não resolveu", que se
+ * lê como link sem caminho e é o oposto do que acontece. Medido em 09/Set/2026
+ * com Folha, Gazeta do Povo e Poder360, os três já primários.
+ */
+function jaEhPrimaria(url) {
+  return !/^https?:\/\/(news\.)?google\.com\//i.test(url)
+}
+
 async function resolver(url) {
+  if (jaEhPrimaria(url)) return url
   const pagina = await fetch(url, { headers: { 'User-Agent': UA_NAVEGADOR }, signal: AbortSignal.timeout(25000) })
   const attrs = extrairAtributos(await pagina.text())
   if (!attrs) return null
