@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-08",
-  "fetchedAt": "2026-09-08T17:45:52.756Z",
+  "lastUpdate": "2026-09-09",
+  "fetchedAt": "2026-09-09T14:30:50.482Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -34,8 +34,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-09",
-    "nPesquisas": 13,
+    "desde": "2026-08-10",
+    "nPesquisas": 12,
     "incluidas": [
       {
         "instituto": "The Economist/YouGov",
@@ -120,18 +120,11 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 40
-      },
-      {
-        "instituto": "Morning Consult",
-        "campoFim": "2026-08-09",
-        "amostraTipo": "RV",
-        "dem": 47,
-        "rep": 42
       }
     ],
     "nInstitutos": 9,
-    "dem": 46.31,
-    "rep": 41.31,
+    "dem": 46.25,
+    "rep": 41.25,
     "vantagemDem": 5,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
