@@ -36,6 +36,17 @@ import { readFileSync, existsSync } from 'node:fs'
 const argv = process.argv.slice(2)
 const semTrava = argv.includes('--sem-trava')
 
+/**
+ * O Node 25 recusa spawnar `.cmd` sem shell, e com `shell: true` ele avisa que
+ * os argumentos são concatenados e não escapados. A saída é não passar por `npx`:
+ * um `.ts` roda pelo cli do tsx que já está em node_modules, e um `.mjs` roda
+ * direto. Nos dois casos o executável é o próprio node, sem shell nenhum.
+ */
+function argumentosDeNode(script, args) {
+  const TSX = 'node_modules/tsx/dist/cli.mjs'
+  return script.endsWith('.ts') ? [TSX, script, ...args] : [script, ...args]
+}
+
 const regua = '─'.repeat(72)
 const resultados = []
 
@@ -57,8 +68,8 @@ if (semTrava) {
   const r = rodar(
     'trava',
     '2/3 · TRAVA DE CAPTURA — BLOQUEANTE, duas leituras a 8 minutos',
-    'npx',
-    ['tsx', 'scripts/capture-guard.ts', '--pais=us'],
+    'scripts/capture-guard.ts',
+    ['--pais=us'],
     true
   )
   if (r !== 0) {
@@ -92,11 +103,7 @@ function rodar(id, titulo, comando, args, bloqueante = false) {
   console.log(regua)
   console.log(`▶️  ${titulo}`)
   console.log(regua)
-  const ehNode = comando.endsWith('.mjs')
-  const r = spawnSync(ehNode ? process.execPath : comando, ehNode ? [comando, ...args] : args, {
-    stdio: 'inherit',
-    shell: !ehNode,
-  })
+  const r = spawnSync(process.execPath, argumentosDeNode(comando, args), { stdio: 'inherit' })
   if (r.error) {
     console.log(`\n❌ ${id}: não foi possível executar (${r.error.message})`)
     resultados.push({ id, codigo: null, estado: 'NAO EXECUTOU' })

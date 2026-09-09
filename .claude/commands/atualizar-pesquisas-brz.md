@@ -19,6 +19,19 @@ Chamar a rota mesmo assim não é erro grave, ela **falha fechada** e nada é gr
 
 ⛔ **Não forjar user-agent** para escapar do 403, e **não insistir**. Se um dia o modo `--rede` também apanhar, a resposta é o modo ARQUIVO, nunca a insistência. → `memory/reference_tse_bloqueio_antirrobo_2026.md`
 
+## 🚀 O atalho, criado em 09/Set/2026
+
+```bash
+npm run pesquisas:brz                             # ENSAIO, não grava nada
+node scripts/rodada-tse-brz.mjs --apply           # grava, relata e confere o RÓTULO
+```
+
+Ele encadeia ingestão, relatório e conferidor de escopo, e preserva o ensaio: **sem `--apply` ele para depois de listar o que entraria**, sem rodar os passos 2 e 3. O motivo não é cerimônia: o relatório lê a API e o Neon, então rodá-lo sobre um ensaio mostraria o banco **sem** as linhas recém-listadas, um retrato que não é o de antes nem o de depois.
+
+🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, quer dizer GRAVE no calendário vivo, e não desfaz a ingestão: o número está certo e quem não se sustenta é o rótulo de nacional.
+
+⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
+
 ## Passo 1: ingerir daqui, com ENSAIO antes
 
 ```bash
