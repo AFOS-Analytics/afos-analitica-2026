@@ -90,8 +90,14 @@ console.log(`   arquivo ${ARQUIVO} · base ${BASE_ARQUIVO ?? `git ${BASE_REF}`}\
 
 if (!base) {
   console.log(
-    `   ${cor.aviso}⚠️${cor.fim}  SEM LINHA DE BASE: não achei a versão anterior. ` +
-      `Colapso e contaminação ainda são conferidos, mas CRESCIMENTO não.\n`
+    `   ${cor.aviso}⚠️${cor.fim}  SEM LINHA DE BASE: não achei a versão anterior.\n` +
+      `      Valem só as regras ABSOLUTAS: publicadas = 0 e mediaAfos nula.\n` +
+      `      Ficam INERTES, e não é possível reprovar por elas:\n` +
+      `        · colapso "caiu para menos da METADE"\n` +
+      `        · contaminação "cresceu fora da faixa"\n` +
+      `        · a atribuição da variação\n` +
+      `      Medido em 09/Set/2026: sem base, um arquivo que foi de 387 para 3 linhas\n` +
+      `      passava com VEREDITO: APROVADO e um ✅ verde no colapso.\n`
   )
 }
 
@@ -104,7 +110,15 @@ const colapsoMetade = pubBase !== null && publicadas < pubBase / 2
 const colapsoMedia = !m
 const passaColapso = !colapsoZero && !colapsoMetade && !colapsoMedia
 
-console.log(`   ${marca(passaColapso)} colapso`)
+// Sem base, "caiu para menos da METADE" não pode disparar. Passar aqui não é
+// a mesma coisa que passar com base, e o ✅ verde escondia exatamente isso.
+const colapsoDegradado = pubBase === null
+const marcaColapso =
+  passaColapso && colapsoDegradado ? `${cor.aviso}⚠️${cor.fim}` : marca(passaColapso)
+console.log(
+  `   ${marcaColapso} colapso` +
+    (passaColapso && colapsoDegradado ? '  DEGRADADO: só "zero" e "média nula" foram testados' : '')
+)
 console.log(
   `        publicadas ${num(pubBase)} → ${publicadas}` +
     (colapsoZero ? '  ← ZERO' : colapsoMetade ? '  ← caiu para menos da METADE' : '') +
@@ -259,12 +273,21 @@ if (m && mb) {
 // ── Veredito ──────────────────────────────────────────────────────────────
 
 const ok = passaColapso && passaContaminacao && passaAtribuicao
+const degradado = !base
 console.log(
-  `\n${ok ? cor.ok : cor.mau}VEREDITO: ${ok ? 'APROVADO' : 'REPROVADO'}${cor.fim}` +
+  `\n${ok ? cor.ok : cor.mau}VEREDITO: ${ok ? 'APROVADO' : 'REPROVADO'}` +
+    (ok && degradado ? ' (DEGRADADO)' : '') +
+    `${cor.fim}` +
     (passaColapso ? '' : '  — COLAPSO') +
     (passaContaminacao ? '' : '  — CONTAMINAÇÃO') +
     '\n'
 )
+if (ok && degradado) {
+  console.log(
+    `   ${cor.aviso}⚠️${cor.fim}  APROVADO aqui NÃO é o mesmo APROVADO de uma passada com base.\n` +
+      `      Metade das regras não pôde ser aplicada. Não usar este veredito para publicar.\n`
+  )
+}
 if (!ok) {
   console.log(`   Desfazer e investigar a ORIGEM, nunca repetir a coleta por cima:`)
   console.log(`     git checkout -- ${ARQUIVO}\n`)

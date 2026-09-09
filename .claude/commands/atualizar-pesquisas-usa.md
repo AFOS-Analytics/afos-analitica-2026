@@ -20,6 +20,22 @@ Em ambiente serverless não há repositório para gravar, então o cron **não e
 
 A lógica de leitura é **uma só**, em `lib/us-polls/collect.mjs`, usada pelos dois. Duas cópias da mesma regra foi o defeito que custou os rótulos de faixa do mercado em 29/Jul: convivem sem incidente até o dia em que uma é corrigida e a outra não.
 
+## 🚀 O atalho, criado em 09/Set/2026
+
+Os passos 1 a 4 são sempre a mesma sequência de seis comandos, na mesma ordem, e redigitá-los é a chance nova de esquecer um. Um comando roda a passada inteira:
+
+```bash
+npm run polls:usa                                   # a passada completa
+node scripts/rodada-us-polls.mjs --sem-rede         # sem a defasagem, que sai à internet
+node scripts/rodada-us-polls.mjs --sem-coleta       # só confere e mede o arquivo que já está no disco
+```
+
+Ele **PARA no portão do Passo 2** se o veredito for REPROVADO, porque os medidores dos passos seguintes leem o arquivo que a coleta acabou de escrever, e rodá-los sobre arquivo reprovado produz número que não se pode usar. Não desfaz o arquivo sozinho: desfazer apaga a prova de que a origem mudou.
+
+⛔ **Ele não commita, não publica e não força o cron.** Orquestração apenas, sem regra própria: toda medição segue nos scripts chamados, e é assim que fica, para não nascer a segunda cópia de uma regra que já existe.
+
+Os passos abaixo continuam valendo como a descrição do que cada peça faz e de como ler a saída.
+
 ## Passo 1: gerar o arquivo
 
 ```bash
@@ -49,6 +65,8 @@ Ele varre **todas** as linhas, compara contra a versão do `git HEAD`, aplica as
 🔑 **Isso só funciona porque o arquivo passou a gravar QUAIS pesquisas entraram na média, em `mediaAfos.incluidas`, e não só quantas.** Antes de 04/Set/2026 a comparação era por NOME de casa, e nome de casa não é rodada: uma onda nova de uma casa que já estava na lista passava invisível. Caso medido sobre o arquivo real daquele dia: uma onda da YouGov com campo 28/Ago levaria a média de D+5.69 a D+5.93, e a régua antiga imprimiria *"ZERO informação nova, escrever verbo de movimento aqui é falso"*. Falso negativo que produz frase falsa. A regra vive em `lib/us-polls/atribuicao.mjs`, com casos plantados em `scripts/testar-atribuicao-us.mjs`.
 
 ⚠️ **Comparando contra uma base anterior a 04/Set/2026 ele avisa `atribuição DEGRADADA`** e manda não usar aquela linha para afirmar "zero informação nova". Isso acontece uma única vez.
+
+🔴 **E quando NÃO existe linha de base, o veredito sai como `APROVADO (DEGRADADO)`, régua de 09/Set/2026.** Sem base, metade das regras não pode disparar: "caiu para menos da METADE", "cresceu fora da faixa" e a atribuição inteira comparam contra a versão anterior, e sem ela ficam inertes. Sobram só as absolutas, `publicadas = 0` e `mediaAfos` nula. **Medido no dia: um arquivo que foi de 387 para 3 linhas passava com `VEREDITO: APROVADO` e um ✅ verde no colapso.** Acontece com `--arquivo=` apontado para caminho que não está no git, ou com `--base=` num ref onde o arquivo não existia. O veredito degradado não serve para publicar.
 
 Para conferir uma peça isolada à mão, ou se o script cair:
 
