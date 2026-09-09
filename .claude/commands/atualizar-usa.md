@@ -18,6 +18,19 @@ Ou seja: **na maioria dos dias não há nada a publicar, e isso é sucesso, não
 
 ⛔ **NÃO existe etapa de tradução aqui.** Os JSONs do Brasil têm pipeline de tradução porque carregam prosa; o arquivo dos EUA é dado medido e não tem variante por idioma, de propósito. Não procurar por `.en.json`/`.es.json` deste lado, não criar.
 
+## 🚀 O atalho das etapas de MERCADO, criado em 09/Set/2026
+
+```bash
+npm run rodada:usa                          # etapas 1, 1.7 e 4, na ordem certa
+node scripts/rodada-us.mjs --sem-trava      # pula os 8 minutos, e a série sai DEGRADADA
+```
+
+🔑 **A ordem é o ponto, e ela não é óbvia: a ETAPA 4 depende da 1.7, não o contrário.** A trava é quem **certifica** a leitura, e a série lê a certificada. **Medido em 09/Set:** rodei a série antes de a trava terminar e ela respondeu com a certificada da **véspera, 21,1h de idade**, avisando em toda linha que aquilo não era o preço de agora e imprimindo **+0,00pp em todo o par binário**. Veredito tecnicamente correto e inútil, do tipo que se lê como "nada se moveu" e vira frase falsa no relatório.
+
+⛔ **Ele não roda a ETAPA 3 nem a 6**: não chama o cron da imprensa, que escreve em produção, não commita e não publica.
+
+🖥️ **E ele NÃO roda o conferidor de tela: imprime o comando pronto**, com os 5 preços e a média já extraídos e formatados. O motivo é que a tela serve **cache** e a leitura sai com `fresh=1`, então as duas podem discordar por minutos sem nada estar errado. Rodar o portão automaticamente ali produziria reprovação de coisa certa, e isso gasta o crédito do portão.
+
 ## ETAPA 1: Ler o mercado ao vivo
 
 🔴 **O LEITOR É ESTE, e não um `curl` lido à mão:**
