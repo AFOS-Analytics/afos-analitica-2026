@@ -272,6 +272,64 @@ function principal() {
     }
   }
 
+  /**
+   * 📅 O CAMINHO DIÁRIO, criado em 10/Set/2026 a pedido do /weekly-usa.
+   *
+   * A edição semanal não pergunta a FAIXA da série, pergunta o que aconteceu
+   * NESTA semana e EM QUE DIA. Isso vinha sendo montado à mão toda quinta, e a
+   * saída natural era a rota `/api/market/history`, que é justamente a que trava
+   * em 90 dias e COLA as séries de Câmara e Senado, porque os dois livros guardam
+   * o desfecho com o mesmo nome. O backup já está lido aqui, então o caminho sai
+   * sem uma requisição a mais e sem a armadilha do nome.
+   *
+   * 📌 O ponto do dia é o ÚLTIMO gravado naquele dia, e o de hoje é a leitura
+   * CERTIFICADA quando ela existe. Misturar fechamento com meio de dia faria o
+   * último degrau parecer movimento, e o fechamento do dia já esconde topo e piso
+   * por conta própria: quem quiser extremo olha a faixa, não este caminho.
+   */
+  const desde = arg('desde')
+  if (desde) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(desde)) {
+      console.log(`   ⚠️ --desde precisa ser uma data YYYY-MM-DD, veio "${desde}": caminho não impresso.\n`)
+    } else {
+      console.log(`   📅 CAMINHO DIÁRIO desde ${desde} · fechamento de cada dia, e hoje a certificada`)
+      console.log(`      ⛔ para superlativo vale a FAIXA da série acima, não este recorte.`)
+      console.log()
+      for (const chave of [...livros.keys()].sort()) {
+        const [slug, outcome] = chave.split('\u241f')
+        const pontos = livros.get(chave).filter((p) => String(p.t).slice(0, 10) >= desde)
+        const fechamento = new Map()
+        for (const p of pontos.sort((a, b) => String(a.t).localeCompare(String(b.t)))) {
+          fechamento.set(String(p.t).slice(0, 10), p.v)
+        }
+        const hojeCert = agora.get(chave)
+        const diaDeHoje = (carimbo ?? new Date().toISOString()).slice(0, 10)
+        if (hojeCert != null) fechamento.set(diaDeHoje, hojeCert)
+        const dias = [...fechamento.keys()].sort()
+        if (dias.length < 2) {
+          console.log(`      ${slug} · ${outcome}`)
+          console.log(`        (menos de dois dias no recorte: não há caminho a descrever)\n`)
+          continue
+        }
+        console.log(`      ${slug} · ${outcome}`)
+        let anterior = null
+        for (const d of dias) {
+          const v = fechamento.get(d)
+          const delta = anterior == null ? null : v - anterior
+          const marca = d === diaDeHoje && hojeCert != null ? '  (certificada)' : ''
+          const mexeu = delta != null && Math.abs(delta) >= 0.005 ? ' ←' : ''
+          console.log(
+            `        ${d}   ${v.toFixed(2).padStart(6)}` +
+              `   ${delta == null ? '     ' : (delta >= 0 ? '+' : '') + delta.toFixed(2) + 'pp'}${mexeu}${marca}`
+          )
+          anterior = v
+        }
+        const total = fechamento.get(dias[dias.length - 1]) - fechamento.get(dias[0])
+        console.log(`        Δ no período: ${total >= 0 ? '+' : ''}${total.toFixed(2)}pp em ${dias.length} dia(s) com ponto\n`)
+      }
+    }
+  }
+
   if (alertas) {
     console.log(`   ⛔ ${alertas} série(s) em que consultar a API produziria superlativo FALSO sem dar erro.\n`)
   } else {

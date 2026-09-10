@@ -89,7 +89,9 @@ function main() {
   console.log(`   1. git add public/afos-weekly/${pais}/${data}*.md`)
   console.log('   2. git commit e push')
   console.log('   3. npx vercel --yes --prod')
-  console.log('   ⚠️  Durante o piloto a página segue noindex e fora do sitemap.\n')
+  console.log('   📌 A edição publicada ENTRA EM BUSCA: index, follow, no sitemap e no llms.txt.')
+  console.log('      O piloto acabou em 27/Ago/2026, e esta mensagem dizia o contrario ate 10/Set.')
+  console.log()
 
   if (problemas) process.exit(1)
 }
