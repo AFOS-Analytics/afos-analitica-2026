@@ -84,6 +84,28 @@ const PERMITIDOS = [
   /^[0-9a-f]{24}_[\w.-]+$/i,
 ]
 
+/**
+ * ⚠️ EXCEÇÃO POR CONTEXTO, e não por forma. Medida em 10/Set/2026.
+ *
+ * A trava reprovou o backup inteiro por causa de
+ * `https://drive.google.com/file/d/<id>/view`, que é a `fontePrimaria` de uma
+ * pesquisa curada: o relatório técnico que o próprio instituto publicou e que
+ * o dataset precisa citar. O id de arquivo do Drive é alto em entropia por
+ * construção, então ele cai exatamente no padrão de "possível token".
+ *
+ * 🔑 E a exceção NÃO pode ser pela FORMA do id, porque a forma dele é
+ * indistinguível da de um token de verdade: permitir `[A-Za-z0-9_-]{25,44}`
+ * abriria um ralo do tamanho da própria trava. Ela é pelo que vem ANTES, o
+ * segmento de path de um arquivo público do Drive. Um token que vazasse no meio
+ * de um JSON, sem essa vizinhança, continua sendo pego.
+ */
+const PERMITIDOS_POR_CONTEXTO: { antes: RegExp; porque: string }[] = [
+  {
+    antes: /drive\.google\.com\/file\/d\/$/,
+    porque: 'id de arquivo público do Google Drive, dentro da URL da fonte primária de uma pesquisa',
+  },
+]
+
 function listar(dir: string, out: string[] = []): string[] {
   if (!existsSync(dir)) return out
   for (const nome of readdirSync(dir)) {
@@ -113,6 +135,13 @@ for (const arq of arquivos) {
   for (const { nome, re, nota, filtro } of PADROES) {
     re.lastIndex = 0
     const hits = [...texto.matchAll(re)]
+      // A vizinhança ANTES do achado, que é o que separa id de documento público
+      // de token vazado. Ver PERMITIDOS_POR_CONTEXTO.
+      .filter((m) => {
+        const i = m.index ?? 0
+        const antes = texto.slice(Math.max(0, i - 60), i)
+        return !PERMITIDOS_POR_CONTEXTO.some((p) => p.antes.test(antes))
+      })
       .map((m) => m[0])
       .filter((h) => !PERMITIDOS.some((p) => p.test(h)))
       .filter((h) => (filtro ? filtro(h) : true))
