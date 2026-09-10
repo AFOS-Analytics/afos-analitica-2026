@@ -3,11 +3,11 @@ Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,sex,female,52.8,full_percentages
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,age,16 anos,0.15,full_percentages
 Encomendada pela Record,BR093532026,Real Time Big Data/Record,2026-03-03,2026-03-01,education,Analfabeto,3.6,full_percentages
-Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,sex,"(declared, no % in registry)",,mentioned_no_pct
-Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,age,"(declared, no % in registry)",,mentioned_no_pct
-Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,education,"(declared, no % in registry)",,mentioned_no_pct
-Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,income,"(declared, no % in registry)",,mentioned_no_pct
-Folha de S.Paulo,BR067982026,Datafolha,2026-03-07,2026-03-04,region,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,sex,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,age,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,education,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,income,"(declared, no % in registry)",,mentioned_no_pct
+Folha de S.Paulo,BR037152026,Datafolha,2026-03-07,2026-03-04,region,"(declared, no % in registry)",,mentioned_no_pct
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,sex,"(declared, no % in registry)",,mentioned_no_pct
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,age,"(declared, no % in registry)",,mentioned_no_pct
 Genial Investimentos,BR029442026,Quaest/Genial Investimentos,2026-03-11,2026-03-08,education,"(declared, no % in registry)",,mentioned_no_pct
@@ -382,3 +382,6 @@ BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,sex,"(declared, no % in r
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,age,"(declared, no % in registry)",,mentioned_no_pct
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,education,"(declared, no % in registry)",,mentioned_no_pct
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,male,47.2,full_percentages
+BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,female,52.8,full_percentages
+BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,income,Sem rendimentos até 2 SM,45.8,full_percentages

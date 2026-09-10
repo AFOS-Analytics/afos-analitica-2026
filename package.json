@@ -34,7 +34,8 @@
     "rodada:usa": "node scripts/rodada-us.mjs",
     "imprensa:usa": "node scripts/rodada-us-imprensa.mjs",
     "janelas:usa": "node scripts/projetar-janela-us.mjs --comparar=30,45,60,90",
-    "pesquisas:brz": "node scripts/rodada-tse-brz.mjs"
+    "pesquisas:brz": "node scripts/rodada-tse-brz.mjs",
+    "espelho:brz": "node scripts/espelho-brz.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

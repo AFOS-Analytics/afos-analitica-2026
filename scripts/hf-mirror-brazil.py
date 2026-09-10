@@ -28,10 +28,12 @@ Uso:
 import hashlib
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
 from huggingface_hub import HfApi, snapshot_download
+from huggingface_hub.utils import close_session
 
 REPO = "AFOS-Analytics1/brazil-2026-electoral-divergence"
 STAGING = Path(".cache/hf-dataset")
@@ -81,6 +83,20 @@ def subir():
     api = HfApi(token=token())
     if not STAGING.is_dir():
         sys.exit("staging ausente: rode a sequencia de build antes")
+    # PORTAO FAIL-CLOSED de CPF, instalado em 10/Set/2026. A redacao ja existia
+    # em scripts/redigir-cpf-tse-registry.mjs e nada obrigava a rodar: dos 5
+    # ultimos espelhos do Brasil ela rodou em 2 e foi esquecida em 3, e o
+    # resultado eram 8 CPFs VALIDOS de 3 pessoas publicados no dataset aberto.
+    # A regra nao e reescrita aqui: o conferidor usa o primitivo unico em
+    # scripts/lib/cpf.mjs, e ele planta um CPF de controle antes de confiar no
+    # proprio zero. Reprovou, nao sobe.
+    portao = subprocess.run(
+        ["node", "scripts/check-staging-sem-cpf.mjs", str(STAGING)],
+        shell=False,
+    )
+    if portao.returncode != 0:
+        sys.exit("BLOQUEADO: o staging carrega CPF de pessoa fisica. Nada foi enviado.")
+
     n = sum(1 for p in STAGING.rglob("*") if p.is_file())
     print(f"subindo {n} arquivos de {STAGING} (cumulativo, sem delete)")
     api.upload_folder(
@@ -163,6 +179,14 @@ def checksums():
         repo_id=REPO, repo_type="dataset", local_dir=str(destino), token=token()
     )
     raiz = Path(caminho)
+
+    # O download longo deixa o cliente httpx COMPARTILHADO com conexao velha no
+    # pool, e o preupload seguinte volta ConnectError. Ai mora um defeito da
+    # biblioteca: em ConnectError ela fecha o cliente global e REPETE a chamada
+    # com a referencia ja fechada, e o erro que chega aqui e um RuntimeError de
+    # "client has been closed", que nao se parece nada com rede. Medido em
+    # 10/Set/2026, duas execucoes seguidas. Abrir cliente novo antes de subir.
+    close_session()
 
     # O consolidado diario roda AQUI e nao no export, pelo mesmo motivo do
     # manifesto: o staging tem so a fatia do dia, e a serie inteira so existe na
