@@ -19,6 +19,7 @@
  */
 
 import {
+  MARCADOR,
   datasDe,
   datasDoTemaEmHtml,
   trechoDaData,
@@ -152,6 +153,57 @@ ok('o rebaixamento é exclusivo do HTML', veredito({
   conhecido: '2026-07-23', datas: ['2026-07-23', '2026-08-06', '2026-08-13'],
   datasDoTema: ['2026-07-23'], temaNaPagina: true, granularidade: 'item',
 }).veredicto !== VEREDITOS.TEMA_LONGE)
+
+console.log('\n🔇 O ALARME MUDO DE 10/Set: o item novo do tema não dizia "ballot"\n')
+
+/**
+ * Texto REAL dos itens do feed da Quantus Insights, lido em 10/Set/2026.
+ *
+ * O de 28/Ago é a rodada nacional de 1.200 likely voters, generic ballot em
+ * D 49,7 x R 42,8, que o índice não tinha: a base parava no campo de 04/Ago.
+ * Os outros dois são da mesma casa e da mesma semana e NÃO são generic ballot
+ * nacional. Eles estão aqui pelo motivo oposto: o marcador novo não pode passar
+ * a acusar a casa toda vez que ela publica uma estadual.
+ */
+const ITEM_NACIONAL =
+  '<item><title>New Survey: Democrats Hold the Midterm Advantage</title>' +
+  '<description>A D+6.9 congressional environment reflects deep dissatisfaction with Republicans, ' +
+  'while voters remain far more selective about what they want from Democrats.</description>' +
+  '<pubDate>Fri, 28 Aug 2026 22:00:27 GMT</pubDate></item>'
+
+const ITEM_ESTADUAL =
+  '<item><title>Arizona 2026: Hobbs Holds the Edge</title>' +
+  '<description>Our latest Quantus Insights survey finds Katie Hobbs leading Andy Biggs by six points, ' +
+  'but with few voters left to persuade and deep divisions by age, geography and the national political ' +
+  'environment.</description><pubDate>Fri, 21 Aug 2026 22:05:44 GMT</pubDate></item>'
+
+const ITEM_DISTRITAL =
+  '<item><title>New Quantus Insights Survey: Ohio\u2019s 1st District Is Up for Grabs</title>' +
+  '<description>Landsman leads narrowly, but the Senate ballot, suburban vote and economic concerns ' +
+  'point to a district that remains highly competitive</description>' +
+  '<pubDate>Wed, 26 Aug 2026 18:33:12 GMT</pubDate></item>'
+
+ok('o item que diz "congressional environment" conta como tema', MARCADOR.test(ITEM_NACIONAL))
+ok('a estadual do Arizona segue FORA do tema', !MARCADOR.test(ITEM_ESTADUAL))
+ok('a distrital de Ohio segue FORA do tema, mesmo dizendo "Senate ballot"', !MARCADOR.test(ITEM_DISTRITAL))
+
+/** As datas do feed real, e as do tema com o marcador de hoje. */
+const DATAS_QUANTUS = ['2026-07-08', '2026-08-05', '2026-08-11', '2026-08-21', '2026-08-26', '2026-08-28']
+
+eq('o feed da Quantus acusa POSSIVEL NOVIDADE', veredito({
+  conhecido: '2026-08-04', datas: DATAS_QUANTUS,
+  datasDoTema: ['2026-07-08', '2026-08-28'], temaNaPagina: true, granularidade: 'item',
+}).veredicto, VEREDITOS.POSSIVEL_NOVIDADE)
+
+/**
+ * 🔴 E o defeito, congelado: com o marcador antigo o item novo ficava fora do
+ * tema, sobravam as datas de tema velhas, e o veredicto saía EM DIA. Este caso
+ * existe para que apertar o marcador de novo custe uma falha vermelha.
+ */
+eq('sem o termo novo, o MESMO feed dava EM DIA', veredito({
+  conhecido: '2026-08-04', datas: DATAS_QUANTUS,
+  datasDoTema: ['2026-07-08'], temaNaPagina: true, granularidade: 'item',
+}).veredicto, VEREDITOS.EM_DIA)
 
 console.log('\n⭐ O TRECHO, que é o atalho para o humano\n')
 

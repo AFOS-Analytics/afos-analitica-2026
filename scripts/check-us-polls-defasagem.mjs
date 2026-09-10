@@ -59,7 +59,12 @@ const CASAS = [
   { nome: 'Emerson College', rss: 'https://emersoncollegepolling.com/feed/', url: 'https://emersoncollegepolling.com/category/national/' },
   { nome: 'Big Data Poll (R)', url: 'https://www.bigdatapoll.com' },
   { nome: 'Focaldata/Financial Times', url: 'https://www.focaldata.com', alias: ['Focaldata'] },
-  { nome: 'Quantus Insights (R)', url: 'https://quantusinsights.org/polling' },
+  // 📡 O feed foi achado em 10/Set/2026 declarado no <link rel="alternate"> da
+  // própria página que o script já raspava. Ela é do construtor da GoDaddy e o
+  // corpo só existe depois do JavaScript, então a leitura por HTML devolvia ZERO
+  // data e a casa saía INCONCLUSIVO em toda rodada, que não é "nada novo": é
+  // "não enxerguei a página". Com o feed ela passa a ter veredicto de verdade.
+  { nome: 'Quantus Insights (R)', rss: 'https://quantusinsights.org/polling/f.rss', url: 'https://quantusinsights.org/polling' },
   { nome: 'Quinnipiac University', url: 'https://poll.qu.edu/poll-release' },
   { nome: 'McLaughlin & Associates (R)', url: 'https://mclaughlinonline.com/category/polls/' },
 ]
@@ -116,7 +121,7 @@ for (const casa of CASAS) {
   // RSS primeiro: `pubDate` é data declarada, não data raspada de texto.
   let datas = [], datasDoTema = [], falaDoTema = false, via = 'html', r
   // No RSS a data e o assunto vêm do MESMO item; no HTML a amarração é inferida.
-  let granularidade = 'item', textoDaPagina = null
+  let granularidade = 'item', textoDaPagina = null, trechoRss = null, trechoRssData = null
   if (casa.rss) {
     r = await baixar(casa.rss, true)
     if (!r.erro) {
@@ -147,6 +152,42 @@ for (const casa of CASAS) {
         const comTema = comData.filter((x) => MARCADOR.test(x.texto))
         falaDoTema = comTema.length > 0
         datasDoTema = [...new Set(comTema.map((x) => x.iso))].sort()
+        /**
+         * ⭐ O TRECHO TAMBÉM VALE AQUI, e faltava. Medido em 10/Set/2026: a
+         * Quantus Insights acusou POSSIVEL NOVIDADE e a linha não dizia de QUE
+         * item, então decidir custou abrir o feed à mão, que é exatamente o custo
+         * que o trecho existe para eliminar no caminho de HTML desde 07/Set.
+         *
+         * 🏷️ E a data impressa é a do item do TEMA, não a mais nova do feed. Hoje
+         * as duas coincidem e amanhã podem não coincidir: casa que publica uma
+         * estadual depois do generic ballot faria a linha dizer "item de <data da
+         * estadual>" com o texto do generic ballot ao lado.
+         */
+        /**
+         * 🔴 E o item do tema mais novo NÃO é o último do array: o feed vem do
+         * mais recente para o mais antigo, e `comTema[comTema.length - 1]` pôs a
+         * linha de 24/Abr ao lado do veredicto de 28/Ago na primeira execução.
+         * Ordem de feed é convenção da casa que publica, não garantia; a data é.
+         */
+        /**
+         * 🔴 E o item do tema mais novo NÃO é o último do array: o feed vem do
+         * mais recente para o mais antigo, e `comTema[comTema.length - 1]` pôs a
+         * linha de 24/Abr ao lado do veredicto de 28/Ago na primeira execução.
+         * Ordem de feed é convenção da casa que publica, não garantia; a data é.
+         */
+        const doTemaMaisNovo = comTema.reduce((a, b) => (a && a.iso >= b.iso ? a : b), null)
+        if (doTemaMaisNovo) {
+          trechoRssData = doTemaMaisNovo.iso
+          const semCData = (v) => (v || '').replace(/^<!\[CDATA\[/, '').replace(/\]\]>$/, '')
+          const titulo = semCData((doTemaMaisNovo.texto.match(/<title>([^]*?)<\/title>/i) || [])[1])
+          const resumo = semCData((doTemaMaisNovo.texto.match(/<description>([^]*?)<\/description>/i) || [])[1])
+          trechoRss = `${titulo} — ${resumo}`
+            .replace(/<[^>]+>/g, ' ')
+            .replace(/&amp;/g, '&')
+            .replace(/&#8217;|&rsquo;/g, "'")
+            .replace(/[ \t\r\n]+/g, ' ')
+            .trim()
+        }
       }
     }
   }
@@ -188,7 +229,10 @@ for (const casa of CASAS) {
     casa: casa.nome, veredicto: res.veredicto, conhecido, maisRecente: res.maisRecente,
     tema: falaDoTema, temaAte: res.maisRecenteTema, datas: datas.length, bytes: r.bytes, via,
     // O trecho em volta da data mais nova, para o humano decidir sem abrir o navegador.
-    trecho: textoDaPagina && res.maisRecente ? trechoDaData(textoDaPagina, res.maisRecente, HOJE) : null,
+    trecho: textoDaPagina && res.maisRecente ? trechoDaData(textoDaPagina, res.maisRecente, HOJE) : trechoRss,
+    // De QUE item o trecho veio: no HTML é a data mais nova, no RSS é a do tema.
+    trechoData: textoDaPagina && res.maisRecente ? res.maisRecente : trechoRssData,
+    trechoDoInicio: !textoDaPagina,
   })
 }
 
@@ -206,7 +250,10 @@ for (const l of linhas) {
    * em cinco segundos, e so aparece onde ha decisao humana a tomar.
    */
   if (l.trecho && (l.veredicto === VEREDITOS.POSSIVEL_NOVIDADE || l.veredicto === VEREDITOS.TEMA_LONGE)) {
-    console.log(`${' '.repeat(23)}item de ${l.maisRecente}: ...${l.trecho.slice(-170)}`)
+    // No HTML o trecho termina na data, então o que interessa é o FIM dele. No
+    // RSS ele começa no título do item, e o que interessa é o COMEÇO.
+    const corpo = l.trechoDoInicio ? `${l.trecho.slice(0, 170)}...` : `...${l.trecho.slice(-170)}`
+    console.log(`${' '.repeat(23)}item de ${l.trechoData}: ${corpo}`)
   }
 }
 

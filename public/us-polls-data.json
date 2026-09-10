@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-09",
-  "fetchedAt": "2026-09-09T14:30:50.482Z",
+  "lastUpdate": "2026-09-10",
+  "fetchedAt": "2026-09-10T15:19:35.025Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,12 +19,16 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 6,
+      "quantas": 7,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
+        "Quantus Insights (R)",
         "The Economist/YouGov"
       ],
-      "decididoEm": "2026-09-04"
+      "decididoEm": {
+        "The Economist/YouGov": "2026-09-04",
+        "Quantus Insights (R)": "2026-09-10"
+      }
     }
   },
   "ressalvas": [
@@ -34,8 +38,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-10",
-    "nPesquisas": 12,
+    "desde": "2026-08-11",
+    "nPesquisas": 11,
     "incluidas": [
       {
         "instituto": "The Economist/YouGov",
@@ -50,6 +54,13 @@
         "amostraTipo": "LV",
         "dem": 49,
         "rep": 51
+      },
+      {
+        "instituto": "Quantus Insights (R)",
+        "campoFim": "2026-08-28",
+        "amostraTipo": "LV",
+        "dem": 49.7,
+        "rep": 42.8
       },
       {
         "instituto": "The Economist/YouGov",
@@ -106,34 +117,20 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 45
-      },
-      {
-        "instituto": "AlphaROC",
-        "campoFim": "2026-08-10",
-        "amostraTipo": "A",
-        "dem": 41,
-        "rep": 37
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-08-10",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 40
       }
     ],
     "nInstitutos": 9,
-    "dem": 46.25,
-    "rep": 41.25,
-    "vantagemDem": 5,
+    "dem": 47.06,
+    "rep": 41.89,
+    "vantagemDem": 5.17,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
-      "AlphaROC",
       "Echelon Insights",
       "Emerson College",
       "Focaldata/Financial Times",
       "Harvard/Harris Poll/HarrisX",
       "Morning Consult",
+      "Quantus Insights (R)",
       "Reuters/Ipsos",
       "The Bullfinch Group",
       "The Economist/YouGov"
@@ -141,14 +138,14 @@
   },
   "qualidade": {
     "linhasLidas": 381,
-    "publicadas": 387,
+    "publicadas": 388,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 381,
-    "curadas": 6,
+    "curadas": 7,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -217,6 +214,23 @@
       "vantagemDem": -2,
       "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
       "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Quantus Insights (R)",
+      "campoInicio": "2026-08-26",
+      "campoFim": "2026-08-28",
+      "amostra": 1200,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 49.7,
+      "rep": 42.8,
+      "outros": 7.5,
+      "vantagemDem": 6.9,
+      "fontePrimaria": "https://drive.google.com/file/d/14qaFHR-Fd-3Ik_5Ayz5yqeN6UutHANb0/view",
+      "opcoes": {
+        "naoSabe": 7.5
+      },
+      "origem": "listagem-do-instituto"
     },
     {
       "instituto": "The Economist/YouGov",

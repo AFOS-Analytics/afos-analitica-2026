@@ -102,3 +102,58 @@ if (p.amplitudePp === null) {
   )
   console.log(`   Isso e o piso de ruido da propria janela movel, nao movimento de intencao de voto.\n`)
 }
+
+/**
+ * ⚖️ COMPARADOR DE LARGURAS DA JANELA, criado em 10/Set/2026.
+ *
+ * 🔴 POR QUE EXISTE. Em 08/Set a janela de 30 dias apareceu com data de morte,
+ * 01/Out, e a pergunta "e se ela fosse de 45, 60 ou 90 dias?" foi respondida
+ * rodando este script quatro vezes e anotando os números à mão. Conta refeita à
+ * mão toda rodada é a mesma falha que o `conferir-us-polls` tinha antes de 05/Set
+ * e que o `projetar-janela` tinha antes de 06/Set, quando eu errei a borda em um
+ * dia. A pergunta vai voltar todo dia até a régua ser decidida.
+ *
+ * 🔑 Ele NÃO tem regra nova: chama a mesma `projetarJanela`, que chama a `media()`
+ * de produção, uma vez por largura. Nenhuma conta nasce aqui.
+ *
+ * ⛔ E ele NÃO decide nada. A largura da janela é régua da casa, decisão do André,
+ * e trocá-la no meio da série quebra a comparabilidade de tudo que já foi
+ * publicado. Alargar também trata SINTOMA: a doença é o índice parar de receber
+ * rodadas, e uma janela mais larga só adia a data em que isso aparece na tela.
+ *
+ * Uso:  node scripts/projetar-janela-us.mjs --comparar=30,45,60,90
+ */
+const COMPARAR = opt('comparar', null)
+if (COMPARAR) {
+  const larguras = COMPARAR.split(',')
+    .map((s) => Number(s.trim()))
+    .filter((n) => Number.isFinite(n) && n > 0)
+
+  if (!larguras.length) {
+    console.log('   ⚠️ --comparar veio sem nenhuma largura válida, nada a comparar\n')
+  } else {
+    console.log(`⚖️ LARGURAS DE JANELA, LADO A LADO  [USO INTERNO, nao publicar]`)
+    console.log(`   a mesma base de ${p.base.nLinhas} linhas, a mesma media() de producao, so a largura muda`)
+    console.log('')
+    console.log(`   dias | n  | inst | hoje     | esvazia em | faltam | passeio ate o horizonte | ampl.`)
+    for (const d of larguras) {
+      const c = projetarJanela(dados, { agora, horizonte: HORIZONTE, dias: d })
+      const m = c.base.mediaHoje
+      const faltam = c.esvaziaEm
+        ? Math.round((Date.parse(c.esvaziaEm + 'T12:00:00Z') - Date.parse(c.de + 'T12:00:00Z')) / 86400000)
+        : null
+      const passeio = c.vantagemMin === null ? '-' : `${fmt(c.vantagemMin)} a ${fmt(c.vantagemMax)}`
+      console.log(
+        `   ${String(d).padStart(4)} | ${String(m ? m.nPesquisas : 0).padStart(2)} | ${String(m ? m.nInstitutos : 0).padStart(4)} | ` +
+          `${(m ? fmt(m.vantagemDem) : 'SEM MEDIA').padStart(8)} | ${(c.esvaziaEm || '-').padStart(10)} | ` +
+          `${String(faltam === null ? '-' : faltam + 'd').padStart(6)} | ${passeio.padEnd(23)} | ${c.amplitudePp === null ? '-' : c.amplitudePp + 'pp'}`
+      )
+    }
+    console.log('')
+    console.log('   ⚠️ "esvazia em" fora do horizonte da projecao aparece como a data, sem passeio medido:')
+    console.log('      a amplitude so vale ate onde a projecao foi calculada.')
+    console.log('   ⛔ A largura e REGUA DA CASA e nao se troca no meio da serie sem decisao do Andre:')
+    console.log('      alargar trata sintoma, porque a doenca e o indice parar de receber rodadas.')
+    console.log('')
+  }
+}

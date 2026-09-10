@@ -45,9 +45,9 @@ const doIndice = (o = {}) => ({
 
 // ── 1. Os dados escritos à mão obedecem às regras da própria casa ─────────
 
-console.log('\n📋 as 6 linhas escritas à mão\n')
+console.log('\n📋 as 7 linhas escritas à mão\n')
 
-checar('são 6 linhas, 3 ondas em 2 recortes', RODADAS_CURADAS.length === 6, `são ${RODADAS_CURADAS.length}`)
+checar('são 7 linhas: 3 ondas da YouGov em 2 recortes e 1 rodada da Quantus', RODADAS_CURADAS.length === 7, `são ${RODADAS_CURADAS.length}`)
 
 for (const p of RODADAS_CURADAS) {
   const id = `${p.campoFim} ${p.amostraTipo}`
@@ -60,11 +60,28 @@ for (const p of RODADAS_CURADAS) {
   checar(`${id}: soma D+R+outros = ${soma}, dentro de ${SOMA_MIN}-${SOMA_MAX}`, soma >= SOMA_MIN && soma <= SOMA_MAX)
   // Conferência de TRANSCRIÇÃO: `outros` tem de ser a soma das opções lidas na
   // crosstab. É o que pega um dígito trocado ao copiar do PDF.
-  const somaOpcoes = p.opcoes.other + p.opcoes.naoSabe + p.opcoes.naoVotara
-  checar(`${id}: outros (${p.outros}) = other+naoSabe+naoVotara (${somaOpcoes})`, p.outros === somaOpcoes)
-  checar(`${id}: vantagemDem (${p.vantagemDem}) = dem - rep`, p.vantagemDem === p.dem - p.rep)
+  //
+  // 🏷️ A soma é sobre as opções QUE EXISTEM, e não sobre três nomes fixos. A Q1
+  // da Quantus, entrada em 10/Set/2026, só oferece indeciso: não tem terceira via
+  // nem "não vou votar". Somar `other + naoSabe + naoVotara` ali dava NaN, e a
+  // saída errada seria escrever zeros para opções que a crosstab não tem.
+  const somaOpcoes = Object.values(p.opcoes).reduce((a, b) => a + b, 0)
+  checar(`${id}: outros (${p.outros}) = soma das opções (${somaOpcoes.toFixed(2)})`, Math.abs(p.outros - somaOpcoes) < 1e-9)
+  // ⚠️ TOLERÂNCIA, e ela nasceu de um caso real: `49.7 - 42.8` dá
+  // 6.900000000000006 em ponto flutuante, então igualdade exata reprovaria a
+  // linha CERTA e empurraria para arredondar o número que a casa publicou. A
+  // conferência é de transcrição, e um bilionésimo continua pegando dígito
+  // trocado.
+  checar(`${id}: vantagemDem (${p.vantagemDem}) = dem - rep`, Math.abs(p.vantagemDem - (p.dem - p.rep)) < 1e-9)
   checar(`${id}: campoInicio antes de campoFim`, p.campoInicio < p.campoFim)
-  checar(`${id}: tem link da fonte primária`, /^https:\/\/.+\.pdf$/.test(p.fontePrimaria ?? ''))
+  // 🔗 O link tem de ser o do DOCUMENTO, não o do post. A Quantus publica o
+  // relatório técnico como arquivo no Drive, sem extensão na URL, e exigir
+  // `.pdf` obrigaria a citar o post no lugar da crosstab, que é a fonte mais
+  // fraca das duas.
+  const ehDocumento =
+    /^https:\/\/.+\.pdf$/.test(p.fontePrimaria ?? '') ||
+    /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(p.fontePrimaria ?? '')
+  checar(`${id}: tem link do documento da fonte primária`, ehDocumento, String(p.fontePrimaria))
 }
 
 // ── 2. A deduplicação ─────────────────────────────────────────────────────
@@ -73,7 +90,7 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
 
 {
   const r = mesclarCuradas([])
-  checar('índice vazio: as 6 entram', r.aceitas.length === 6 && r.duplicadas.length === 0)
+  checar('índice vazio: as 7 entram', r.aceitas.length === 7 && r.duplicadas.length === 0)
   checar('toda linha aceita vem etiquetada', r.aceitas.every((p) => p.origem === ORIGEM_CURADA))
 }
 
@@ -81,8 +98,8 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
   const indice = [doIndice({ instituto: 'The Economist/YouGov', campoInicio: '2026-08-14', campoFim: '2026-08-17', amostraTipo: 'RV' })]
   const r = mesclarCuradas(indice)
   checar(
-    'índice já tem UMA onda no mesmo recorte: aquela é descartada, as outras 5 entram',
-    r.duplicadas.length === 1 && r.aceitas.length === 5,
+    'índice já tem UMA onda no mesmo recorte: aquela é descartada, as outras 6 entram',
+    r.duplicadas.length === 1 && r.aceitas.length === 6,
     `dup=${r.duplicadas.length} aceitas=${r.aceitas.length}`
   )
   checar('a linha do índice é preservada e etiquetada', r.pesquisas.some((p) => p.origem === ORIGEM_INDICE))
@@ -106,10 +123,10 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
   const r = mesclarCuradas(indice)
   checar(
     '⭐ índice alcançou TODAS: nenhuma curada entra, a curadoria se aposenta sozinha',
-    r.aceitas.length === 0 && r.duplicadas.length === 6,
+    r.aceitas.length === 0 && r.duplicadas.length === 7,
     `aceitas=${r.aceitas.length} dup=${r.duplicadas.length}`
   )
-  checar('e o total servido não infla', r.pesquisas.length === 6)
+  checar('e o total servido não infla', r.pesquisas.length === 7)
 }
 
 {
