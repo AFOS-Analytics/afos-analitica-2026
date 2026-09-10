@@ -45,6 +45,29 @@ async function api(caminho, opcoes = {}) {
   return { ok: r.ok, status: r.status, json: j, texto: t.slice(0, 400) }
 }
 
+/**
+ * ⏳ ESPERA A TRAVA DE INGESTÃO ZERAR, antes de CADA envio.
+ *
+ * 🔴 Medido em 25/Ago/2026 no depósito dos midterms: 6 de 26 arquivos falharam
+ * com HTTP 400 "Failed to add file to dataset", INTERCALADOS com sucessos. Não
+ * era arquivo ruim: o Dataverse TRANCA o dataset enquanto converte o tabular
+ * anterior, e quem chega durante a trava leva 400.
+ *
+ * 📌 A assinatura que identifica é a falha ALTERNADA com sucesso. Falha em
+ * BLOCO seria credencial ou permissão, e esperar não resolveria.
+ */
+async function esperarDestravar(tentativas = 40, intervaloMs = 3000) {
+  for (let i = 1; i <= tentativas; i++) {
+    const r = await api(`/api/datasets/:persistentId/locks?persistentId=${PID}`)
+    const travas = Array.isArray(r.json?.data) ? r.json.data : []
+    if (!travas.length) return true
+    if (i === 1) console.log(`   ⏳ travado (${travas.map((t) => t.lockType).join(', ')}), esperando…`)
+    await new Promise((r2) => setTimeout(r2, intervaloMs))
+  }
+  console.error('   ❌ a trava não zerou; abortando antes de enviar')
+  return false
+}
+
 /** Troca os travessões (U+2014) por traço comum, preservando o resto do texto. */
 function semTravessao(s) {
   return s.replace(/\s*—\s*/g, ' - ')
@@ -94,6 +117,7 @@ async function main() {
   }
 
   for (const { rel, id } of plano) {
+    if (!(await esperarDestravar())) process.exit(1)
     const saida = execFileSync('curl.exe', [
       '-s', '-X', 'POST', `${BASE}/api/files/${id}/replace`,
       '-H', `X-Dataverse-key: ${TOKEN}`,
@@ -121,6 +145,7 @@ async function main() {
     if (!r.ok) { console.error('abortando antes de publicar'); process.exit(1) }
   }
 
+  if (!(await esperarDestravar())) process.exit(1)
   const pub = await api(`/api/datasets/:persistentId/actions/:publish?persistentId=${PID}&type=major`, { method: 'POST' })
   console.log(`\n${pub.ok ? 'OK  ' : 'ERRO'} publicação: ${pub.status}${pub.ok ? '' : ' · ' + pub.texto}`)
   if (!pub.ok) process.exit(1)
