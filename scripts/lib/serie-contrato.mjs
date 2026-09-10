@@ -49,11 +49,17 @@
  * desfecho. Nos EUA nada casava, e como o código caía para o último ponto
  * GRAVADO, a saída ficava plausível: ela dizia 88,50 quando o preço de agora era
  * 87,50, e não dava erro nenhum. Isso é a cauda cega de 24h passando por
- * conferida. No Brasil o mesmo código funciona por acidente, porque lá a chave é
- * o nome do candidato nos dois lados.
+ * conferida.
  *
- * ✅ Por isso o mapa é DECLARADO, e chave de captura que não acha casa é
- * reportada em voz alta em vez de sumir.
+ * 🔴 E o comentário que ficou aqui em 04/Set dizia que "no Brasil o mesmo código
+ * funciona por acidente, porque lá a chave é o nome do candidato nos dois
+ * lados". Era falso, e ninguém testou a frase: as chaves brasileiras também têm
+ * o grupo na frente, então lá NADA casava e o caminho do Brasil nem registrava
+ * órfã. Medido em 10/Set/2026, seis dias depois, no dia de um recorde. Descrição
+ * de estado envelhece sem avisar quando nada a testa.
+ *
+ * ✅ Por isso o mapa é DECLARADO nos dois países, e chave de captura que não
+ * acha casa é reportada em voz alta em vez de sumir.
  */
 export const MAPA_CAPTURA = {
   us: [
@@ -63,34 +69,106 @@ export const MAPA_CAPTURA = {
     { grupo: 'senate', re: /Republican/i, slug: 'which-party-will-win-the-senate-in-2026', outcome: 'Republicanos' },
     { grupo: 'asScheduled', re: /./, slug: 'will-the-2026-midterm-elections-happen-as-scheduled', outcome: 'Acontece no prazo' },
   ],
-  // No Brasil a chave da captura já é o nome do desfecho, então não há mapa: a
-  // junção é pelo próprio nome e o `slug` vem do grupo do livro.
-  br: null,
+  /**
+   * 🔴 O Brasil TINHA `null` aqui, com o comentário dizendo que a junção era
+   * pelo próprio nome. Ela não era: as chaves da captura são `grupo:nome` e as
+   * da série são `slug␟desfecho`, então NENHUMA casava, e o caminho do `null`
+   * dava `continue` antes de registrar órfã. O script prometia juntar e falhava
+   * em silêncio.
+   *
+   * ⚠️ Medido em 10/Set/2026, no dia em que isso mais custaria: o presidencial
+   * certificou **52,85%** para um livro cuja série tem topo de 45,80%, e o
+   * veredito impresso foi `DENTRO`, calculado sobre o último ponto GRAVADO, de
+   * ontem. Recorde lido como dentro da faixa, sem erro em lugar nenhum.
+   *
+   * 📌 `outcome` fixo só onde o livro tem um desfecho só. Nos demais o nome vem
+   * da captura e passa por `variantesDoNome`, porque a origem escreve o mesmo
+   * desfecho de dois jeitos: "Luiz Inácio Lula da Silva" na captura e "Lula" no
+   * backup, "Partido Liberal (PL)" contra "PL".
+   */
+  br: [
+    { grupo: 'presidential', re: /./, slug: 'brazil-presidential-election' },
+    { grupo: 'stf', re: /./, slug: 'any-brazil-stf-justice-removed-by-impeachment-before-2027', outcome: 'Yes (Impeachment)' },
+    { grupo: 'senate', re: /./, slug: 'next-brazil-senate-election-most-seats-won' },
+  ],
+}
+
+/**
+ * Apelidos declarados, um por linha e com o porquê ao lado. Lista curta de
+ * propósito: cada entrada é um lugar onde a origem escreve o mesmo desfecho de
+ * dois jeitos, e uma lista longa aqui esconderia um defeito de coleta.
+ */
+const APELIDOS = {
+  'Luiz Inácio Lula da Silva': ['Lula'], // a captura traz o nome completo, o backup a alcunha
+  'Carlos Roberto Massa Júnior': ['Ratinho Jr.'], // mesma coisa, e foi a órfã que sobrou em 10/Set
+}
+
+/**
+ * 🏷️ Grupos que a trava vigia e a SÉRIE não guarda, DECLARADOS um a um.
+ *
+ * ⛔ Não é o complemento do mapa, e a diferença tem caso plantado: um grupo NOVO
+ * do Polymarket, que ninguém previu, também está fora do mapa, e ele precisa
+ * gritar como órfã em vez de ser contado como esperado. Exceção declarada, igual
+ * à lista de permitidos da varredura de segredo; complemento de conjunto é ralo.
+ */
+const GRUPOS_SEM_SERIE = {
+  br: ['secondPlace', 'thirdPlace'], // vigiados pela trava, fora de PAISES.br
+  us: [],
+}
+
+/** As grafias possíveis do mesmo desfecho, da mais literal para a mais frouxa. */
+export function variantesDoNome(nome) {
+  const out = [nome, ...(APELIDOS[nome] ?? [])]
+  const sigla = nome.match(/\(([^)]+)\)\s*$/)
+  if (sigla) out.push(sigla[1]) // "Partido Liberal (PL)" -> "PL"
+  const semSigla = nome.replace(/\s*\([^)]*\)\s*$/, '').trim()
+  if (semSigla && semSigla !== nome) out.push(semSigla)
+  return [...new Set(out)]
 }
 
 /**
  * Traduz as chaves da trava de captura para `slug␟outcome`, que é a chave da
- * série. Devolve também as chaves que NÃO acharam casa, que é o que precisa
- * aparecer na tela.
+ * série, e junta a leitura certificada com o backup.
+ *
+ * `chavesDaSerie`, quando dado, é o conjunto de `slug␟desfecho` que existe no
+ * backup. Com ele a junção ESCOLHE a grafia que existe, em vez de apostar numa;
+ * sem ele, fica com a primeira variante, que é a literal.
+ *
+ * ⛔ Toda chave que não casa entra em `orfas`, inclusive no Brasil. Órfã calada
+ * é cauda cega de até 24h passando por leitura de agora.
  */
-export function casarCaptura(precosDaCaptura, pais) {
+export function casarCaptura(precosDaCaptura, pais, chavesDaSerie = null) {
   const casadas = new Map()
   const orfas = []
+  /**
+   * 🏷️ Grupo que a captura vigia e a SÉRIE não guarda, como o 2º e o 3º lugar
+   * do Brasil. Não é defeito e não abre cauda cega, porque não há veredito de
+   * superlativo para eles. Fica separado das órfãs de verdade porque 37 linhas
+   * esperadas escondem a única que importa: em 10/Set as órfãs eram 38, e a que
+   * pedia conserto era UMA, o Ratinho Jr. com o nome de registro na captura.
+   */
+  const foraDeEscopo = []
   const mapa = MAPA_CAPTURA[pais]
   for (const [chave, valor] of Object.entries(precosDaCaptura ?? {})) {
     const i = chave.indexOf(':')
     const grupo = i >= 0 ? chave.slice(0, i) : ''
     const resto = i >= 0 ? chave.slice(i + 1) : chave
-    if (!mapa) {
-      // Brasil: a junção é pelo nome do desfecho, sem tradução.
-      casadas.set(resto, valor)
+    const r = mapa?.find((x) => x.grupo === grupo && x.re.test(resto))
+    if (!r) {
+      if ((GRUPOS_SEM_SERIE[pais] ?? []).includes(grupo)) foraDeEscopo.push(chave)
+      else orfas.push(chave)
       continue
     }
-    const r = mapa.find((x) => x.grupo === grupo && x.re.test(resto))
-    if (r) casadas.set(`${r.slug}␟${r.outcome}`, valor)
-    else orfas.push(chave)
+    if (r.outcome) {
+      casadas.set(`${r.slug}␟${r.outcome}`, valor)
+      continue
+    }
+    const candidatas = variantesDoNome(resto).map((n) => `${r.slug}␟${n}`)
+    const achada = chavesDaSerie ? candidatas.find((k) => chavesDaSerie.has(k)) : candidatas[0]
+    if (achada) casadas.set(achada, valor)
+    else orfas.push(`${chave} (nenhuma grafia casou: ${variantesDoNome(resto).join(', ')})`)
   }
-  return { casadas, orfas }
+  return { casadas, orfas, foraDeEscopo }
 }
 
 /**

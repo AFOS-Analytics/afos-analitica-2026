@@ -55,6 +55,10 @@ export function StfSection({ stf, updatedAt, polyStf }: Props) {
             { name: 'Gilmar Mendes', desc: stf?.gilmar || '' },
             { name: 'Flávio Dino', desc: stf?.dino || '' },
             ...(stf?.mendonca ? [{ name: 'André Mendonça', desc: stf.mendonca }] : []),
+            // 🏷️ Presidente da Corte, opcional como o campo acima: em 10/Set/2026 ele
+            // passou a ter ato próprio na crise, e campo de JSON sem linha aqui não
+            // aparece na tela. O texto continua vindo do JSON, isto é layout.
+            ...(stf?.fachin ? [{ name: 'Edson Fachin', desc: stf.fachin }] : []),
           ].map(m => (
             <div key={m.name} className="bg-red-50 rounded-lg p-3">
               <div className="font-semibold text-sm text-dark">{m.name}</div>

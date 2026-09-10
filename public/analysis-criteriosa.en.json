@@ -1,169 +1,164 @@
 {
-  "updatedAt": "08/09/2026, 12:00",
-  "subtitle": "Cross-reading of 8 September 2026, confirmed reading of 08/Sep, 12:00 BRT (15:00 UTC), with the presidential book at USD 145.26M. In this round ALL FIVE books received a new price, which had not happened since 06/Sep. Two national polls entered the base: Quaest of 07/Sep, registration BR-01720/2026, and BTG/Nexus of 08/Sep, registration BR-06790/2026.",
+  "updatedAt": "10/09/2026, 14:20",
+  "subtitle": "Cross-reference of 10 September 2026, confirmed reading of 10/Sep, 2:20 PM BRT (17:20 UTC), with the presidential book at USD 147.09M. New prices were received by the winner contract, the second-place contract for the first round, the third-place contract and the Supreme Court impeachment contract. The national poll of the day is the PoderData/Aya, with 3,000 interviews and fieldwork from 06 to 09/Sep.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 54.50% (vol USD 10.13M accumulated) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 3.00pp against the confirmed reading of 07/Sep. In the [first-round](/en/glossary#primeiro-turno) runner-up contract he stands at 9.70% (vol USD 480 thousand). POLL: 39% in the first round of BTG/Nexus of 08/Sep and 45% against 46% in the [runoff](/en/glossary#segundo-turno) of the same round; 36% in the first round of Quaest of 07/Sep and a tie at 41% to 41% in the runoff.",
+      "header": "PRICE: 43.50% (vol USD 10.46M accumulated) in the winner contract, confirmed reading of 10/Sep, 2:20 PM BRT, down 9.00pp against the price confirmed on 09/Sep, and the loss of the lead. In the second-place contract for the first round he ROSE 4.90pp and stands at 24.50% (vol USD 578 thousand). POLL: 38% in the first round and 45% in the runoff in the PoderData/Aya of 10/Sep, fieldwork from 06 to 09/Sep, 3,000 interviews and a margin of 1.8pp.",
       "fortes": [
-        "He is still ahead in the [first round](/en/glossary#primeiro-turno) in both national polls that entered: 39% against 35% at BTG/Nexus of 08/Sep, in the scenario without Pablo Marçal, and 36% against 29% at Quaest of 07/Sep.",
-        "BTG/Nexus has him winning three of the five [runoff](/en/glossary#segundo-turno) pairings it tested: 46% to 43% against Ronaldo Caiado, 47% to 40% against Romeu Zema and 47% to 39% against Renan Santos.",
-        "Both houses measure his rejection below that of the runner-up: 53% against 55% at Quaest and 49% against 50% at BTG/Nexus."
+        "He is still ahead in the first round of the national poll that came in today, 38% to 36%, and the PoderData/Aya has the narrowest margin of the window, 1.8 points.",
+        "In the second-place contract for the first round his price rose 4.90pp in 24 hours, to 24.50%, which describes a market that went back to seriously considering the possibility that he moves to the second stage.",
+        "Today's fall leaves him 9.00pp above the floor of his own series, 34.50% on 25/Apr, meaning the book has already priced him considerably lower in this cycle."
       ],
       "fracos": [
-        "He gave up 3.00pp in the winner contract and the gap over the runner-up fell from 18.05pp to 10.65pp, after two consecutive sessions of widening.",
-        "BTG/Nexus of 08/Sep places him behind in the [runoff](/en/glossary#segundo-turno) by 46% to 45%, and Quaest of 07/Sep records a tie at 41% to 41%. Added to Veritá of 06/Sep, that is three national polls in a row without handing him the pairing.",
-        "Government approval fell inside Quaest itself, from 45% against 48% on 02/Sep to 43% against 50% now, and BTG/Nexus measures 45% against 50% in the same week. The two houses arrive at exactly the same disapproval figure."
+        "He lost the lead in the winner contract for the first time in this window, and the 9.00pp fall in a single day is his largest daily move in the series.",
+        "It is the seventh consecutive national result since 06/Sep in which he does not lead the runoff pairing.",
+        "The PoderData/Aya brings a new pairing in which Augusto Cury comes out ahead of him by 44% to 43%, the first runoff scenario in this series in which a third name leads."
       ],
-      "analise": "8 September is the first day of this window in which the poll and the price move the same way, and the movement is large in both. The winner contract gave up 3.00pp to 54.50% (vol USD 10.13M), with the gap over the runner-up falling from 18.05pp to 10.65pp. Over the same stretch two national polls entered and both shorten the race: BTG/Nexus places him behind by 46% to 45% in the [runoff](/en/glossary#segundo-turno) and Quaest records a tie at 41% to 41%. ⚠️ The [first round](/en/glossary#primeiro-turno) of those same two houses tells another story, because there he is still ahead by 4 and by 7 points. What the page records is that the two measurements agreed on direction and did not agree on size, and that the disagreement between the houses about the first round is wider than the margin of error they declare."
+      "analise": "The 10th of September inverts the picture this page had been describing since the start of the cycle. The winner contract gave up 9.00pp and stands at 43.50% (vol USD 10.46M), while his opponent rose 6.60pp, and it is the first time in this window that the lead of the book changes hands. On the polling side the movement exists and is far smaller: the PoderData/Aya measures 38% to 36% in the first round, two points that fit inside two margins of 1.8, and 45% to 47% in the runoff. Both measurements point the same way today, and the difference in intensity is what deserves recording: the market moved 15.60pp in the gap within 24 hours and the poll measures a statistical tie. The context of the day is at the Supreme Court, with the Federal Police operation on the financing of the film Dark Horse and the second consecutive cancellation of a plenary session, and the page does not claim a link between those facts and the price."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 43.85% (vol USD 9.91M accumulated) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a rise of 4.40pp against the confirmed reading of 07/Sep. In the [first-round](/en/glossary#primeiro-turno) runner-up contract he gave up 1.00pp to 88.50% (vol USD 644 thousand). POLL: 35% in the first round of BTG/Nexus of 08/Sep in the scenario without Pablo Marçal and 46% against 45% in the [runoff](/en/glossary#segundo-turno); 29% in the first round of Quaest of 07/Sep and a tie at 41% to 41% in the runoff.",
+      "header": "PRICE: 52.85% (vol USD 10.17M accumulated) in the winner contract, confirmed reading of 10/Sep, 2:20 PM BRT, up 6.60pp against the price confirmed on 09/Sep, and the lead of the book. It is the highest point in his series, which opens on 14/Apr/2026 and holds 506 recorded readings. In the second-place contract for the first round he FELL 7.00pp and stands at 71.50% (vol USD 718 thousand). POLL: 36% in the first round and 47% in the runoff in the PoderData/Aya of 10/Sep.",
       "fortes": [
-        "He rose 4.40pp in the winner contract, the largest movement of the round, and closed the gap to the leader from 18.05pp to 10.65pp.",
-        "BTG/Nexus of 08/Sep puts him ahead in the [runoff](/en/glossary#segundo-turno) by 46% to 45%. It is the third national poll in a row not to hand the pairing to the leader, after Quaest of yesterday, which gave a tie, and Veritá of 06/Sep.",
-        "At Quaest he did not move in the [first round](/en/glossary#primeiro-turno), holding 29% across two consecutive rounds of the house, while the leader gave up 1 point, from 37% to 36%."
+        "He took the lead of the winner contract for the first time in this window, and the 52.85% surpasses his previous series top of 45.80%, recorded yesterday.",
+        "He comes out ahead in the runoff pairing for the seventh consecutive national reading since 06/Sep, even though today's gap, 47% to 45%, fits inside two margins of 1.8.",
+        "The 7.00pp fall in the second-place contract for the first round is consistent with the rise in the winner contract: the market now sees a greater chance that he finishes the first round in first."
       ],
       "fracos": [
-        "He gave up 1.00pp in the [first-round](/en/glossary#primeiro-turno) runner-up contract and stands at 88.50% (vol USD 644 thousand), with USD 32 thousand of fresh money in that book.",
-        "In the first round he is still behind in both national polls that entered: 35% against 39% at BTG/Nexus, scenario without Pablo Marçal, and 29% against 36% at Quaest.",
-        "Both houses measure his rejection above the leader's: 55% against 53% at Quaest and 50% against 49% at BTG/Nexus."
+        "In the first round of today's poll he is still behind, 36% to 38%, and that is the measure of declared voting intention.",
+        "The Federal Police operation on the financing of the film Dark Horse, authorised by Flávio Dino on 10/Sep, reaches the surroundings of his campaign, and he publicly described it as an attempt at political interference.",
+        "The price rose 6.60pp in one day, and a move of that size in a contract holding USD 10.17M is the part of the series most likely to correct in the following days."
       ],
-      "analise": "The round of 8 September hands him the largest price movement of the day and the most favourable poll result of the window, and this time the two point the same way. The winner contract rose 4.40pp to 43.85% (vol USD 9.91M) and the gap to the leader fell from 18.05pp to 10.65pp. BTG/Nexus of today puts him ahead in the [runoff](/en/glossary#segundo-turno) by 46% to 45%, a distance that fits inside the margin of 2 points and is therefore a [statistical tie](/en/glossary#empate-tecnico), and Quaest of yesterday records a numerical tie at 41% to 41%. ⚠️ The [first round](/en/glossary#primeiro-turno) of those same two houses leaves him 4 and 7 points behind, and that is the distance the page records without trying to close it. In the series recorded since 14/Apr his winner contract runs from 22.00% to 45.50%, and today's reading sits inside that band."
+      "analise": "His contract made the largest daily move of the series today and reached the highest point AFOS has recorded, 52.85%, across 506 readings since 14/Apr. The second-place price fell 7.00pp on the same day, and the two things describe the same movement from two angles: whoever rises in the winner contract tends to fall in the second-place one. Today's poll runs the same way with far less intensity, with 36% in the first round, two points behind, and 47% in the runoff, two points ahead, both inside the margin of 1.8. The day was one of institutional crisis at the Supreme Court, with the operation on the financing of the film Dark Horse and the second consecutive cancellation of a plenary session, and the page records both facts without claiming that one explains the other."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRICE: 0.85% (vol USD 4.34M accumulated) in the WINNER contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 0.30pp. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract he gave up 6.55pp to 52.00% (vol USD 129 thousand). POLL: 9% in the first round of BTG/Nexus of 08/Sep and 8% in that of Quaest of 07/Sep.",
+      "header": "PRICE: 0.35% in the winner contract, reading of 10/Sep, 2:20 PM BRT, below the 0.5% floor of the double reading, and 49.25% (vol USD 150 thousand) in the third-place contract for the first round, confirmed reading, where he is the favourite. POLL: 10% in the first round in the PoderData/Aya of 10/Sep, his highest figure in the national polls of this window.",
       "fortes": [
-        "⭐ BTG/Nexus of 08/Sep tests him in a [runoff](/en/glossary#segundo-turno) against the leader and puts him numerically ahead, by 45% to 43%, inside the margin of 2 points. Quaest of 07/Sep tests the same pairing and puts the leader ahead by 39% to 35%.",
-        "He is still the third-placed name in both national polls that entered, with 9% at BTG/Nexus and 8% at Quaest, ahead of the fourth-placed name in both.",
-        "The [first-round](/en/glossary#primeiro-turno) third-place contract is still his, with 52.00% against 29.50% for the second name in that book."
+        "The 10% in the PoderData/Aya is his highest figure in the national polls of this window, against 6.6% in the Ideia/Canal Meio of 09/Sep.",
+        "The same round places him ahead of Lula in a runoff pairing, by 44% to 43%, the first runoff scenario in this series in which a third name comes out in front.",
+        "He is the favourite of the third-place contract for the first round, at 49.25%."
       ],
       "fracos": [
-        "He gave up 6.55pp in the [first-round](/en/glossary#primeiro-turno) third-place contract, handing back with room to spare the 2.35pp rise of the previous round.",
-        "Both houses measure him falling inside their own series: Quaest takes him from 10% on 02/Sep to 8%, and BTG/Nexus from 11% on 31/Aug to 9%.",
-        "In the contract on winning the election he gave up 0.30pp to 0.85%, 0.05pp above the floor of his series, which begins on 27/Aug and runs from 0.80% to 5.00%."
+        "In the winner contract he is still at 0.35%, below the 0.5% floor of the double reading, meaning the money does not treat the candidacy as competitive for winning the election.",
+        "The one-point gap in the pairing against Lula sits inside the margin of 1.8, so it is a statistical tie rather than a lead.",
+        "The volume of the third-place contract is USD 150 thousand, which makes its price more sensitive to isolated orders than the main book."
       ],
-      "analise": "The three gauges that touch him all point down in this round. In the [first-round](/en/glossary#primeiro-turno) third-place contract he gave up 6.55pp to 52.00% (vol USD 129 thousand); Quaest takes him from 10% to 8% and BTG/Nexus from 11% to 9%, each inside its own series; and in the contract on winning the election he gave up 0.30pp to 0.85%, 0.05pp above the floor of his series. ⭐ And one figure runs the other way, in a [runoff](/en/glossary#segundo-turno) pairing: BTG/Nexus puts him ahead of the leader by 45% to 43%, while Quaest, in the same week and in the same pairing, puts the leader ahead by 39% to 35%. That is 6 points of difference between two houses on the same question, and the panel records both without choosing."
+      "analise": "The PoderData/Aya of 10/Sep is his best reading in this window: 10% in the first round and a runoff pairing in which he comes out ahead of Lula by 44% to 43%. The one-point gap fits inside the margin of 1.8, so what the pollster measures is a tie. In the market the reading is another: 0.35% in the winner contract and 49.25% in the third-place contract for the first round, which describes a candidate the money sees as a third force rather than a contender for the office. The two things coexist without contradiction, because they measure different questions."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 1.30% (vol USD 12.83M accumulated) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 0.25pp. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract he rose 5.00pp to 29.50% (vol USD 282 thousand). POLL: 4% in the first round of BTG/Nexus of 08/Sep and 3% in that of Quaest of 07/Sep.",
+      "header": "PRICE: 2.15% (vol USD 13.15M accumulated) in the winner contract, the largest individual volume in the presidential book, and 42.50% in the third-place contract for the first round, confirmed reading of 10/Sep, 2:20 PM BRT. POLL: 3% in the first round in the PoderData/Aya of 10/Sep.",
       "fortes": [
-        "He rose 5.00pp in the [first-round](/en/glossary#primeiro-turno) third-place contract and undid the 1.50pp fall of the previous round, in the same book where Augusto Cury gave up 6.55pp.",
-        "BTG/Nexus of 08/Sep measures him at 4% in the first round, against 3% the same house measured on 31/Aug.",
-        "He still carries the largest accumulated volume among the names above the 0.5% floor in the winner contract, USD 12.83M, above the leader's and the runner-up's."
+        "His contract holds USD 13.15M accumulated, the largest individual volume in the presidential book, above the top two candidates.",
+        "He stands at 42.50% in the third-place contract for the first round, behind only Augusto Cury."
       ],
       "fracos": [
-        "He gave up 0.25pp in the winner contract to 1.30%, 0.10pp above the floor of his series, which runs from 1.20% to 17.90% since 14/Apr.",
-        "Quaest of 07/Sep keeps him at 3% in the [first round](/en/glossary#primeiro-turno), the same as the house's round on 02/Sep.",
-        "In the [runoff](/en/glossary#segundo-turno) pairings both houses have him losing comfortably: 47% to 39% at BTG/Nexus and 42% to 37% at Quaest."
+        "3% in the first round of today's PoderData/Aya, against 11% measured by Palver on 09/Sep, and that eight-point distance between pollsters is the largest single dispersion of the window.",
+        "2.15% in the winner contract, meaning the price does not follow the volume traded."
       ],
-      "analise": "The [first-round](/en/glossary#primeiro-turno) third-place book undid in one day the movement of the previous round. He rose 5.00pp to 29.50% (vol USD 282 thousand), while Augusto Cury gave up 6.55pp, exactly the reverse of what the two did on 07/Sep. ⚠️ The book is thin, with USD 282 thousand and USD 129 thousand accumulated on those two names, against USD 145.26M in the presidential one, and a large movement in a thin book calls for a more cautious reading. In the contract on winning the election he gave up 0.25pp to 1.30%, 0.10pp above the floor of the series, in a contract whose accumulated volume is the largest among the names above the publication floor."
+      "analise": "His case remains the one with the widest distance between volume and price: USD 13.15M accumulated, the largest in the book, with the price at 2.15%. In the polls the dispersion between houses stays wide, with 3% in today's PoderData/Aya against 11% in the Palver of 09/Sep, eight points apart in rounds with overlapping fieldwork. In the third-place contract for the first round he stands at 42.50%, behind Augusto Cury."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: all three remain below the 0.5% floor in the WINNER contract, and this round publishes no new price for them in that book. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE one, confirmed reading of 08/Sep, 12:00 BRT: Ronaldo Caiado rose 0.50pp to 10.00% (vol USD 115 thousand) and Romeu Zema is unchanged at 0.85% (vol USD 51 thousand). POLL: Caiado 4% and Zema 1% in the first round of BTG/Nexus of 08/Sep, scenario without Pablo Marçal, and Caiado 3% and Zema 2% in that of Quaest of 07/Sep.",
-      "subtitle": "The trailing pack in the confirmed reading of 08/Sep, 12:00 BRT (15:00 UTC). ⚠️ THE TWO NATIONAL POLLS THAT ENTERED MEASURE CAIADO AT 4% AND 3% AND ZEMA AT 1% AND 2% IN THE [FIRST ROUND](/en/glossary#primeiro-turno), differences that fit inside each house's margin of 2 points. In the first-round third-place book, which received a new price in this round, the two moved in different directions: Caiado rose 0.50pp and Zema stayed put.",
+      "header": "PRICE: Ronaldo Caiado at 0.25% (vol USD 7.37M) in the winner contract and 5.00% in the third-place contract for the first round, reading of 10/Sep, 2:20 PM BRT. POLL: Caiado with 2% in the first round in the PoderData/Aya of 10/Sep. Fernando Haddad and Romeu Zema do not appear in this round's prompted scenario.",
+      "subtitle": "Back of the field in the reading of 10/Sep, 2:20 PM BRT (17:20 UTC). ⚠️ THE PODERDATA/AYA OF 10/Sep MEASURES CAIADO AT 2% AND TESTS NEITHER ZEMA NOR HADDAD in the prompted scenario. All three remain below the 0.5% floor of the double reading in the winner contract, so the prices in this band enter as a simple reading.",
       "caiado": {
-        "label": "CAIADO (PSD), 0.15% (vol USD 7.25M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he rose 0.50pp to 10.00%, in a book of USD 115 thousand, confirmed reading of 08/Sep, 12:00 BRT (15:00 UTC).",
+        "label": "CAIADO (PSD), 0.25% (vol USD 7.37M) in the WINNER contract, reading of 10/Sep, 2:20 PM BRT, and below the 0.5% floor of the double reading. In the THIRD-PLACE contract for the first round he stands at 5.00%, on a USD 120 thousand book. In the PoderData/Aya of 10/Sep he has 2% in the first round.",
         "fortes": "⭐ IN BOTH HOUSES OF THE WEEK HE HAS THE TIGHTEST [RUNOFF](/en/glossary#segundo-turno) PAIRING AFTER THE ONE INVOLVING THE RUNNER-UP: 46% to 43% at BTG/Nexus of 08/Sep, the smallest margin among the three pairings in which that house hands the leader the win, and 41% to 38% at Quaest of 07/Sep. And he rose 0.50pp in the first-round third-place contract, back to 10.00%.",
         "fracos": "⚠️ In the WINNER contract he remains below the 0.5% floor, and it is the only one of the three universes in which he does not move. In the [first round](/en/glossary#primeiro-turno) the two houses measure him at 4% and 3%, with no meaningful change against their previous rounds."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0.05% (vol USD 7.43M) in the WINNER contract, below the 0.5% floor of the double reading, and this round does not publish a new price for him. He is not a presidential candidate: he is running for governor of São Paulo.",
+        "label": "HADDAD (PT), 0.05% (vol USD 7.43M) in the WINNER contract, reading of 10/Sep, 2:20 PM BRT, and at the floor of the book. He is not a presidential candidate: he is running for governor of São Paulo, and the PoderData/Aya of 10/Sep does not test him in a presidential scenario.",
         "fortes": "He is not tested as a presidential candidate in the national polls of the window, and neither BTG/Nexus of 08/Sep nor Quaest of 07/Sep tests him, so there is no ballot-box reading to cross against the price.",
         "fracos": "The contract remains open under his name by inheritance of the market's design, not by a declared candidacy, and the panel keeps the line only so the residual price is not read as a signal."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0.15% (vol USD 6.65M) in the WINNER contract, below the 0.5% floor of the double reading, and this round publishes no new price for him in that contract. In the [first-round](/en/glossary#primeiro-turno) THIRD-PLACE contract, which is a different market, he is unchanged at 0.85%, in a book of USD 51 thousand, confirmed reading of 08/Sep, 12:00 BRT (15:00 UTC).",
+        "label": "ZEMA (Novo), 0.15% (vol USD 6.85M) in the WINNER contract, reading of 10/Sep, 2:20 PM BRT, below the 0.5% floor of the double reading. In the THIRD-PLACE contract for the first round he stands at 0.75%, on a USD 50 thousand book. The PoderData/Aya of 10/Sep does not test him in the prompted scenario.",
         "fortes": "BTG/Nexus of 08/Sep measures him at 2% in the [first-round](/en/glossary#primeiro-turno) scenario that includes Pablo Marçal, against 1% in the scenario without him, and Quaest of 07/Sep measures him at 2%. The three readings fit inside each house's margin of 2 points.",
         "fracos": "⚠️ IN THE [RUNOFF](/en/glossary#segundo-turno) PAIRINGS HE IS THE MOST COMFORTABLE FOR THE LEADER IN BOTH HOUSES: 47% to 40% at BTG/Nexus and 44% to 33% at Quaest, that is 7 and 11 points of distance. And he stayed put at 0.85% in the first-round third-place contract, behind Pablo Marçal, who stands at 1.75%."
       },
-      "analise": "In the [first-round](/en/glossary#primeiro-turno) third-place book, the only one in which two of them carry a price, Ronaldo Caiado rose 0.50pp to 10.00% and Romeu Zema stayed put at 0.85%. The two national polls that entered measure Caiado at 4% and 3% in the first round and Zema at 1% and 2%, differences that fit inside each house's margin of 2 points. ⭐ The Caiado figure that says most is the [runoff](/en/glossary#segundo-turno) one: 46% to 43% at BTG/Nexus and 41% to 38% at Quaest, and in both houses he is the tightest pairing after the one involving the runner-up. In the contract on winning the election all three remain below the floor, and the page publishes no new price for them in that book.",
+      "analise": "Today's round brings little movement in this band. Caiado has 2% in the first round of the PoderData/Aya and 0.25% in the winner contract, with 5.00% in the third-place one. Haddad and Zema do not appear in this pollster's prompted scenario, and the panel keeps their previous figure rather than estimating.",
       "fortes": [
-        "Ronaldo Caiado rose 0.50pp in the [first-round](/en/glossary#primeiro-turno) third-place book and is back at 10.00%, the third name in that book.",
-        "BTG/Nexus of 08/Sep has him losing the [runoff](/en/glossary#segundo-turno) to the leader by 46% to 43%, the smallest margin among the three pairings in which that house hands the leader the win.",
-        "At Quaest of 07/Sep the [runoff](/en/glossary#segundo-turno) pairing against him is the tightest after the one involving the runner-up: 41% to 38%."
+        "Caiado keeps a presence in the prompted scenarios of the national polls, with 2% in today's PoderData/Aya and 4% in the Ideia/Canal Meio of 09/Sep."
       ],
       "fracos": [
-        "None of the three receives a new price in the winner contract, because all three remain below the 0.5% floor of the double reading.",
-        "Romeu Zema did not move in the [first-round](/en/glossary#primeiro-turno) third-place book and is unchanged at 0.85%, behind Pablo Marçal, who stands at 1.75%.",
-        "Fernando Haddad is not a presidential candidate: he is running for the government of São Paulo, and his presidential contract stands at 0.05%."
+        "All three remain below 1% in the winner contract, and today's PoderData/Aya brings no scenario with Haddad or with Zema.",
+        "The third-place contract for the first round gives 5.00% to Caiado, behind Augusto Cury and Renan Santos."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "BTG/Nexus of 08/Sep (BR-06790/2026, fieldwork 04 to 07/Sep, n=2,002, margin of 2pp) measures him at 39% in the [first round](/en/glossary#primeiro-turno), in the scenario without Pablo Marçal, and places him behind by 46% to 45% in the [runoff](/en/glossary#segundo-turno). Quaest of 07/Sep (BR-01720/2026, fieldwork 03 to 06/Sep, n=2,004, margin of 2pp) gives 36% in the first round and a tie at 41% to 41% in the runoff.",
-      "m": "54.50% (vol USD 10.13M) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 3.00pp against the confirmed reading of 07/Sep. In the [first-round](/en/glossary#primeiro-turno) runner-up contract he stands at 9.70% (vol USD 480 thousand).",
-      "t": "gave up 3.00pp and the gap over the runner-up fell from 18.05pp to 10.65pp, on the same day two national polls shortened the race",
+      "p": "38% in the first round and 45% in the runoff in the PoderData/Aya of 10/Sep, fieldwork from 06 to 09/Sep, 3,000 interviews and a margin of 1.8pp. It is the seventh consecutive national result since 06/Sep in which he does not lead the runoff pairing, and the same round brings Augusto Cury ahead of him by 44% to 43%.",
+      "m": "43.50% (vol USD 10.46M) in the winner contract, confirmed reading of 10/Sep, 2:20 PM BRT, down 9.00pp against the price confirmed on 09/Sep. In the second-place contract for the first round he ROSE 4.90pp and stands at 24.50% (vol USD 578 thousand).",
+      "t": "gave up 9.00pp in the winner contract and lost the lead of the book, with the gap moving from 6.25pp in his favour to 9.35pp against",
       "s": "He gathered aides to discuss the response to André Mendonça's decision removing the director general of the Federal Police, and the institutional relations minister called the removal an intrusion, according to O Globo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "BTG/Nexus of 08/Sep puts him ahead in the [runoff](/en/glossary#segundo-turno) by 46% to 45%, inside the margin of 2 points, and measures him at 35% in the [first round](/en/glossary#primeiro-turno) in the scenario without Pablo Marçal and at 34% in the scenario with him. Quaest of 07/Sep gives 29% in the first round and a tie at 41% to 41% in the runoff.",
-      "m": "43.85% (vol USD 9.91M) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a rise of 4.40pp against the confirmed reading of 07/Sep. In the [first-round](/en/glossary#primeiro-turno) runner-up contract he gave up 1.00pp to 88.50% (vol USD 644 thousand).",
-      "t": "rose 4.40pp, the largest movement of the round, and this is the third national poll in a row not to hand the runoff to the leader",
+      "p": "36% in the first round and 47% in the runoff in the PoderData/Aya of 10/Sep. The two-point gap in both scenarios fits inside two margins of 1.8, so the pollster measures a statistical tie.",
+      "m": "52.85% (vol USD 10.17M) in the winner contract, confirmed reading of 10/Sep, 2:20 PM BRT, up 6.60pp against the price confirmed on 09/Sep, and the highest point in his series, which opens on 14/Apr/2026. In the second-place contract for the first round he FELL 7.00pp and stands at 71.50%.",
+      "t": "rose 6.60pp, took the lead of the winner contract and reached the top of his own series",
       "s": "At the Avenida Paulista rally on 07/Sep he tied the leader to Alexandre de Moraes and said he would appoint five justices to the Supreme Court, according to JOTA, O Globo and Folha de S.Paulo.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "BTG/Nexus of 08/Sep measures him at 9% in the [first round](/en/glossary#primeiro-turno), against 11% in the same house's round on 31/Aug, and puts him numerically ahead of the leader in a [runoff](/en/glossary#segundo-turno), by 45% to 43%. Quaest of 07/Sep measures him at 8%, against 10% on 02/Sep, and in the same pairing puts the leader ahead by 39% to 35%.",
-      "m": "0.85% (vol USD 4.34M) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 0.30pp. In the [first-round](/en/glossary#primeiro-turno) third-place contract he gave up 6.55pp to 52.00% (vol USD 129 thousand).",
-      "t": "gives ground in both contracts and in both houses, and the only figure in his favour is a runoff pairing that the other house contradicts by 6 points",
+      "p": "10% in the first round in the PoderData/Aya of 10/Sep, his highest figure in the national polls of the window, and 44% against 43% for Lula in a runoff pairing.",
+      "m": "0.35% in the winner contract, reading of 10/Sep, 2:20 PM BRT, below the 0.5% floor of the double reading, and 49.25% (vol USD 150 thousand) in the third-place contract for the first round, confirmed reading, where he is the favourite.",
+      "t": "best polling reading of the window, with the winner contract price parked below 1%",
       "s": "He held a rally in Rio on 07/Sep, nodding to André Mendonça and calling for an investigation into the Supreme Court, according to Folha de S.Paulo.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "BTG/Nexus of 08/Sep measures him at 4% in the [first round](/en/glossary#primeiro-turno), against 3% on 31/Aug, and has him losing the [runoff](/en/glossary#segundo-turno) by 47% to 39%. Quaest of 07/Sep keeps him at 3% and gives 42% to 37%.",
-      "m": "1.30% (vol USD 12.83M) in the winner contract, confirmed reading of 08/Sep, 12:00 BRT, a fall of 0.25pp. In the [first-round](/en/glossary#primeiro-turno) third-place contract he rose 5.00pp to 29.50% (vol USD 282 thousand).",
-      "t": "rose 5.00pp in the third-place book and undid the previous day's fall, in the same movement in which Augusto Cury gave up 6.55pp",
+      "p": "3% in the first round in the PoderData/Aya of 10/Sep, against 11% in the Palver of 09/Sep, eight points apart between pollsters with overlapping fieldwork.",
+      "m": "2.15% (vol USD 13.15M) in the winner contract, the largest individual volume in the presidential book, and 42.50% in the third-place contract for the first round, confirmed reading of 10/Sep, 2:20 PM BRT.",
+      "t": "largest individual volume in the book with the price at 2.15%, and the widest dispersion between pollsters in the window",
       "s": "He launched a manifesto at a rally in Ibirapuera on 07/Sep and called for the arrest of Alexandre de Moraes and Dias Toffoli, according to Folha de S.Paulo.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "BTG/Nexus of 08/Sep measures him at 4% in the [first round](/en/glossary#primeiro-turno) and has him losing the [runoff](/en/glossary#segundo-turno) by 46% to 43%, the smallest margin among the three pairings in which that house hands the leader the win. Quaest of 07/Sep measures him at 3% and gives 41% to 38%.",
-      "m": "Below 0.5% in the winner contract, which is the floor of the double reading, and this round publishes no new price for him in that book. In the [first-round](/en/glossary#primeiro-turno) third-place contract he rose 0.50pp to 10.00% (vol USD 115 thousand), confirmed reading of 08/Sep, 12:00 BRT.",
-      "t": "rises in the third-place book and has, in both houses, the tightest runoff pairing after the one involving the runner-up",
+      "p": "2% in the first round in the PoderData/Aya of 10/Sep.",
+      "m": "0.25% in the winner contract and 5.00% in the third-place contract for the first round, reading of 10/Sep, 2:20 PM BRT.",
+      "t": "steady in both measurements",
       "s": "No new individual act on 08/Sep in the news collected.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Pablo Marçal (PRTB)",
-      "p": "BTG/Nexus of 08/Sep measures him at 3% in the [first-round](/en/glossary#primeiro-turno) scenario that includes him and Quaest of 07/Sep at 1%. He is barred from running, and the Superior Electoral Court has until 14/Sep to rule on the presidential candidacies.",
-      "m": "Below 0.5% in the winner contract, which is the floor of the double reading, and this round publishes no new price for him in that book. In the [first-round](/en/glossary#primeiro-turno) third-place contract he gave up 0.10pp to 1.75% (vol USD 48 thousand), confirmed reading of 08/Sep, 12:00 BRT.",
-      "t": "shows up at 3% and at 1% in the scenarios that include him, and only at BTG/Nexus does his inclusion move the runner-up, from 35% to 34%",
+      "p": "2% in the first round in the PoderData/Aya of 10/Sep.",
+      "m": "below 1% in the winner contract, confirmed reading of 10/Sep, 2:20 PM BRT.",
+      "t": "steady in both measurements",
       "s": "No new individual act on 08/Sep in the news collected.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "After two days pointing in opposite directions, the two measurements on this page moved the same way, and the movement is large on both sides. ⭐ THE WINNER CONTRACT CLOSED THE GAP FROM 18.05pp TO 10.65pp: Lula gave up 3.00pp to 54.50% (vol USD 10.13M) and Flávio Bolsonaro rose 4.40pp to 43.85% (vol USD 9.91M), with USD 660 thousand of fresh money in the presidential book since the confirmed reading of 07/Sep. ⭐ AND THE THREE MOST RECENT NATIONAL POLLS ALL POINT THE SAME WAY IN THE [RUNOFF](/en/glossary#segundo-turno): BTG/Nexus of 08/Sep puts Flávio Bolsonaro ahead by 46% to 45%, Quaest of 07/Sep records a tie at 41% to 41%, and Veritá of 06/Sep gave 48.5% to 43.1%. The two before them went the other way, with Datafolha of 03/Sep at 46% to 44% and Quaest of 02/Sep at 42% to 41%, both in Lula's favour. ⚠️ AND THE [FIRST ROUND](/en/glossary#primeiro-turno) DOES NOT FOLLOW THE RUNOFF. With fieldwork that all but overlaps, the three houses disagree on the size of the leader's advantage: 7 points at Quaest, 4 points at BTG/Nexus in the scenario without Pablo Marçal, and Veritá put the runner-up 0.5 point ahead. That is 7.5 points of spread between houses on the same question, and it is wider than any of their three margins of error, which are 2 points each. 📌 The two quantities do not subtract from one another, because the poll measures declared voting intention and the contract measures the implied probability of winning the election. Today they rank the race the same way, and the page records that without arbitrating. 🏛️ Two institutional acts entered the window: André Mendonça removed the director general of the Federal Police and the intelligence director for 90 days, and the Second Panel formed a majority behind the rapporteur before Gilmar Mendes asked for more time to review, which SUSPENDED the judgment. ⚠️ Over the same stretch the contract on a [Supreme Court](/en/glossary#stf) justice leaving by impeachment gave up 1.15pp to 7.45%."
+  "cruzamento": "⭐ THE LEAD IN THE WINNER CONTRACT CHANGED HANDS, AND IT IS THE FIRST TIME IN THIS WINDOW: Flávio Bolsonaro is at 52.85% (vol USD 10.17M) and Lula at 43.50% (vol USD 10.46M), against 46.25% and 52.50% in yesterday's confirmed reading. That is 6.60pp up for one and 9.00pp down for the other, and the 6.25pp gap that favoured Lula yesterday became 9.35pp the other way. 📈 The 52.85% is the highest point in Flávio Bolsonaro's series, which opens on 14/Apr/2026 and holds 506 recorded readings, above yesterday's 45.80%. 📊 THE SECOND-PLACE CONTRACT CONFIRMS THE SAME PICTURE FROM THE OPPOSITE SIDE: Flávio fell 7.00pp to 71.50% and Lula rose 4.90pp to 24.50%, meaning the money now sees it as more likely that Lula finishes the first round in second. 🗳️ TODAY'S POLL RUNS THE SAME WAY WITH FAR LESS INTENSITY: the PoderData/Aya measures 38% to 36% in the first round and 45% to 47% in the runoff, and a two-point gap fits inside two margins of 1.8, which makes it a statistical tie in both scenarios. It is the seventh consecutive national result since 06/Sep in which Lula does not lead the runoff pairing. ⚠️ THE TWO QUANTITIES DO NOT SUBTRACT: the price is the probability of winning the election, the poll is declared voting intention, and what can be said is that today they point the same way. 📌 The distance between them, however, is the finding: the market moved 15.60pp in the gap within 24 hours and the poll measures two points inside the margin."
 }

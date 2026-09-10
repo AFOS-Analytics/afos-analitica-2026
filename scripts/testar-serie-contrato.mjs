@@ -209,9 +209,59 @@ console.log('\n4. 🔴 A junção da captura certificada, e a leitura VELHA que 
       return r.orfas.length === 1 && r.orfas[0].startsWith('governors:')
     })()
   )
+  /**
+   * 🔴 Este caso AFIRMAVA o defeito até 10/Set/2026. Ele dizia "no Brasil não há
+   * mapa: a chave já é o nome do desfecho" e cobrava `casadas.get('Luiz Inácio
+   * Lula da Silva')`, uma chave sem slug que nenhuma série tem. Ou seja, o teste
+   * verde provava que a junção brasileira NÃO acontecia.
+   */
   conferir(
-    'no Brasil não há mapa: a chave já é o nome do desfecho',
-    casarCaptura({ 'presidential:Luiz Inácio Lula da Silva': 60.5 }, 'br').casadas.get('Luiz Inácio Lula da Silva') === 60.5
+    '🇧🇷 a chave do Brasil vira slug␟desfecho, como a dos EUA',
+    casarCaptura({ 'presidential:Flávio Bolsonaro': 52.85 }, 'br').casadas.get('brazil-presidential-election␟Flávio Bolsonaro') === 52.85
+  )
+  conferir(
+    '🇧🇷 e o APELIDO resolve o nome que a captura escreve diferente do backup',
+    (() => {
+      const serie = new Set(['brazil-presidential-election␟Lula', 'brazil-presidential-election␟Ratinho Jr.'])
+      const r = casarCaptura(
+        { 'presidential:Luiz Inácio Lula da Silva': 60.5, 'presidential:Carlos Roberto Massa Júnior': 1.2 },
+        'br',
+        serie
+      )
+      return r.casadas.get('brazil-presidential-election␟Lula') === 60.5 &&
+        r.casadas.get('brazil-presidential-election␟Ratinho Jr.') === 1.2 &&
+        r.orfas.length === 0
+    })()
+  )
+  conferir(
+    '🇧🇷 sigla entre parênteses casa com a sigla do backup, sem apelido escrito',
+    (() => {
+      const serie = new Set(['next-brazil-senate-election-most-seats-won␟PL'])
+      const r = casarCaptura({ 'senate:Partido Liberal (PL)': 83.5 }, 'br', serie)
+      return r.casadas.get('next-brazil-senate-election-most-seats-won␟PL') === 83.5
+    })()
+  )
+  conferir(
+    '🏷️ 2º lugar é FORA DE ESCOPO declarado, não órfã: a série não guarda esse livro',
+    (() => {
+      const r = casarCaptura({ 'secondPlace:Flávio Bolsonaro': 71.5 }, 'br')
+      return r.orfas.length === 0 && r.foraDeEscopo.length === 1
+    })()
+  )
+  conferir(
+    '⛔ mas grupo DESCONHECIDO no Brasil continua sendo órfã, não fora de escopo',
+    (() => {
+      const r = casarCaptura({ 'governadores:algo novo do Polymarket': 12 }, 'br')
+      return r.orfas.length === 1 && r.foraDeEscopo.length === 0
+    })()
+  )
+  conferir(
+    '🕳️ grafia que não existe na série vira ÓRFÃ e diz quais tentou',
+    (() => {
+      const serie = new Set(['brazil-presidential-election␟Lula'])
+      const r = casarCaptura({ 'presidential:Nome Que Nao Existe': 3 }, 'br', serie)
+      return r.orfas.length === 1 && /nenhuma grafia casou/.test(r.orfas[0])
+    })()
   )
 
   // 🕳️ A idade. Uma leitura que casa e está velha passa por atual.

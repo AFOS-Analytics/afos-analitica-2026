@@ -72,15 +72,15 @@ function lerCsvGz(dir) {
 }
 
 /** A leitura certificada de agora, que fecha a cauda cega do backup. */
-function lerCaptura(pais) {
+function lerCaptura(pais, chavesDaSerie) {
   const caminho = CAPTURA[pais]
   if (!caminho || !existsSync(caminho)) return { precos: new Map(), orfas: [], carimbo: null }
   try {
     const s = JSON.parse(readFileSync(caminho, 'utf8'))
-    const { casadas, orfas } = casarCaptura(s.precos, pais)
-    return { precos: casadas, orfas, carimbo: s.fetchedAt ?? null }
+    const { casadas, orfas, foraDeEscopo } = casarCaptura(s.precos, pais, chavesDaSerie)
+    return { precos: casadas, orfas, foraDeEscopo, carimbo: s.fetchedAt ?? null }
   } catch {
-    return { precos: new Map(), orfas: [], carimbo: null }
+    return { precos: new Map(), orfas: [], foraDeEscopo: [], carimbo: null }
   }
 }
 
@@ -120,7 +120,9 @@ function principal() {
     return
   }
 
-  const { precos: agora, orfas, carimbo } = lerCaptura(pais)
+  // As chaves da SÉRIE entram na junção para ela escolher a grafia que existe,
+  // em vez de apostar numa. Ver casarCaptura.
+  const { precos: agora, orfas, foraDeEscopo, carimbo } = lerCaptura(pais, new Set(livros.keys()))
 
   console.log(`\n📈 SÉRIE DOS CONTRATOS · lida em ${RAIZ}/marketPrice, não na API`)
   console.log(`   ⚠️ superlativo se confere AQUI. A rota /api/market/history trava em 90 dias`)
@@ -156,6 +158,20 @@ function principal() {
     for (const o of orfas) console.log(`      ${o}`)
     console.log(`      Sem casar, o veredito abaixo usa o ÚLTIMO PONTO GRAVADO e a cauda cega de até 24h fica aberta.
 `)
+  }
+
+  /**
+   * 🏷️ Livro vigiado pela trava e SEM série guardada, como o 2º e o 3º lugar do
+   * Brasil. Sai contado e não listado: são dezenas de linhas esperadas, e listar
+   * todas afogaria a órfã de verdade, que é uma. Em 10/Set eram 37 destas para 1
+   * daquelas.
+   */
+  if (foraDeEscopo.length) {
+    const grupos = [...new Set(foraDeEscopo.map((c) => c.split(':')[0]))].join(', ')
+    console.log(
+      `   📌 ${foraDeEscopo.length} chave(s) da captura são de livro SEM série vigiada (${grupos}): ` +
+        `não há superlativo a conferir para elas, e isso não abre cauda cega.\n`
+    )
   }
 
   let alertas = 0
