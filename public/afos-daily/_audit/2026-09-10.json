@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-10",
+  "factCheckGate": {
+    "eventosAltoImpacto": [
+      {
+        "evento": "Operação da Polícia Federal no caso do financiamento do filme Dark Horse",
+        "oQueMudouHoje": "cumprimento de 49 mandados de busca e apreensão em SP, RJ, CE e DF, com Mario Frias apontado como agente central, e cautelares de Dino, entre elas a proibição de deixar o país",
+        "crossReference": "\"Dark Horse\" aparece em 2026-09-03 (acordo de delação) e 2026-09-09 (homologação) → continuidade com ato novo. \"Mario Frias\" tem zero menções em 7 dailies → novidade",
+        "dataDoAto": "2026-09-10",
+        "fonte1": { "url": "https://www.poder360.com.br/poder-justica/dark-horse-pf-ve-frias-como-agente-central-em-esquema/", "grupo": "independente", "tipo": "evento", "verificado": "fetch confirmou 49 mandados, autorização de Dino e a citação sobre organização criminosa" },
+        "fonte2": { "veiculos": ["Gazeta do Povo", "Folha de S.Paulo", "Valor Econômico", "CartaCapital"], "grupos": ["independente", "Folha", "Globo", "independente"] },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Fachin cancela a sessão do plenário do STF pelo segundo dia seguido",
+        "oQueMudouHoje": "segundo cancelamento consecutivo, com a sessão extraordinária de 15/Set mantida para o relatório da PF sobre Moraes e Vorcaro",
+        "crossReference": "\"Fachin\" tem 27 menções em 7 dailies, incluindo 2026-09-08 → continuidade com ato novo",
+        "dataDoAto": "2026-09-10",
+        "fonte1": { "url": "https://www.gazetadopovo.com.br/republica/fachin-cancela-sessao-do-stf-pela-2a-vez-antes-de-analise-do-caso-moraes-vorcaro/", "grupo": "independente", "tipo": "evento", "verificado": "fetch confirmou segundo cancelamento da semana e a sessão de 15/Set" },
+        "fonte2": { "veiculos": ["Folha de S.Paulo", "O Globo", "Estadão", "Valor Econômico"], "grupos": ["Folha", "Globo", "independente", "Globo"] },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com a data do primeiro cancelamento separada"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "duas, ambas atribuídas nominalmente e não afirmadas como fato próprio: a leitura do centrão (SpaceMoney) e a reunião de emergência do PT (Folha). Nenhuma sustenta afirmação factual da peça",
+    "numericalErrors": "reconcile-claims OK, todos os claims batem com o JSON dentro de 0,05pp",
+    "fontesInventadas": "três conferidos ao acaso (Poder360/Frias, Gazeta/Fachin, Valor/emendas), todos presentes no news-cache de 2026-09-10 com URL completa",
+    "quotesLiterais": "nenhuma aspas de fala na peça",
+    "causacaoEspuria": "a única coincidência de data registrada vem com a frase explícita de que o vínculo não está medido",
+    "verbosCriticos": "\"cumpriu mandados\" e não \"prendeu\"; \"proibiu de deixar o país\" declarado como cautelar com fonte; \"cancelou\" com as duas datas separadas",
+    "decisao": "prosseguir"
+  },
+  "rebaselineGate": {
+    "disparou": true,
+    "motivo": "às 15:02 BRT o presidencial marcava Flávio em 53,80%, +0,95pp contra a certificação das 14:20",
+    "acao": "trava de captura rodada de novo e BLOQUEOU presidencial, secondPlace e thirdPlace por book em trânsito. Sem certificação nova, a peça mantém a leitura confirmada de 14:20 BRT, igual à que o painel serve",
+    "enquadramentoMudou": false
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "pré-check no /save/ devolveu 429; o priorizador manda pausar de 3 a 4 dias sem sondar",
+    "passivo": "6 dailies, a mais antiga (2026-07-29) exposta há 43 dias com 28 URLs faltando"
+  },
+  "travas": {
+    "corpoPtBr": 1100,
+    "tetoPalavras": 1100,
+    "travessoes": 0,
+    "emojis": 0,
+    "gateNumerico": "59 números, multiconjunto idêntico nos 3 idiomas",
+    "validador": "nenhuma violação",
+    "fontes": { "ancora": 7, "secundaria": 9, "percentualSecundaria": 56 }
+  },
+  "correcoesDoAndre": [
+    "seção Em síntese refeita em 3 parágrafos com frase-tese em negrito, nos 3 idiomas; o espaço foi pago cortando do corpo os 4 trechos que a síntese passou a carregar"
+  ]
+}
