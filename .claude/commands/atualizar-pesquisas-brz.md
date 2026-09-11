@@ -36,7 +36,7 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 
 🔴 **Por que ela existe:** em 10/Set a mesma URL do TSE devolveu **851 e 863 alternando**. Uma retirada foi publicada como fato, depois desafirmada, e as duas vezes com **UMA leitura**. A dupla contagem resolveu o caso, mas ela só fala **depois** de gravar.
 
-⭐ **O que tornou a repetição barata**, medido em 11/Set daqui, mesma URL e mesmo cliente:
+⭐ **O que tornou a repetição barata**, reconferido em 11/Set daqui, mesma URL e mesmo cliente:
 
 | método | resposta |
 |---|---|
@@ -44,7 +44,7 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 | `GET` | 200, ZIP inteiro, 3,8 MB |
 | `GET` com `Range: bytes=0-0` | **206**, com `content-range` e `etag` |
 
-Ou seja, **o corte da borda é também por MÉTODO**, não só por origem de rede. E o `Range` custa **um byte** e devolve o par que identifica o retrato, porque o ETag do Apache codifica tamanho e mtime.
+📌 **Este quadro não é achado de 11/Set: ele está medido desde 23/Ago** em `reference_tse_bloqueio_antirrobo_2026`, que já registra o eixo do MÉTODO e o `Range` com 1024 bytes. O que 11/Set acrescenta é **o uso dele como instrumento**: `bytes=0-0` custa **um byte** e o par `content-range` + `etag` identifica o retrato, porque o ETag do Apache codifica tamanho e mtime. A régua velha ali é *"ao testar o bloqueio, usar sempre `GET`"*; a nova é *"para repetir a leitura, usar `GET` com `Range`"*.
 
 ```bash
 npm run sonda:brz                                  # 5 leituras de 1 byte

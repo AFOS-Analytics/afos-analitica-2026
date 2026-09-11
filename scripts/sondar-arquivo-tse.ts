@@ -14,8 +14,8 @@
  * trânsito. Aqui: leituras que concordam são UM arquivo, leituras que discordam
  * são o CDN servindo dois retratos, e nesse caso não se conclui, se espera.
  *
- * ⭐ O QUE TORNA A REPETIÇÃO BARATA, medido em 11/Set/2026 daqui, mesmo IP e
- * mesmo cliente, na mesma URL:
+ * ⭐ O QUE TORNA A REPETIÇÃO BARATA, reconferido em 11/Set/2026 daqui, mesmo IP
+ * e mesmo cliente, na mesma URL:
  *
  *   | método                    | resposta |
  *   |---------------------------|----------|
@@ -23,10 +23,16 @@
  *   | GET                       | 200, ZIP inteiro (3,8 MB) |
  *   | GET com Range: bytes=0-0  | 206, com `content-range` e `etag` |
  *
- * Ou seja, o corte da borda é também por MÉTODO, não só por origem de rede: o
- * HEAD apanha de onde o GET passa. E o Range custa UM BYTE e devolve os dois
- * campos que identificam o retrato, porque o ETag do Apache codifica tamanho e
- * mtime. Foi isso que transformou "ler 11 vezes" de exagero em rotina.
+ * 📌 ESTE QUADRO NÃO É ACHADO DESTE ARQUIVO. Ele está medido desde 23/Ago/2026
+ * em memory/reference_tse_bloqueio_antirrobo_2026.md, que já registra o eixo do
+ * MÉTODO (o HEAD apanha de onde o GET passa) e o Range com 1024 bytes. Eu o
+ * remedi aqui sem ter lido a ficha, e por um momento o chamei de novo.
+ *
+ * 🔑 O que 11/Set acrescenta é o USO: `bytes=0-0` custa UM BYTE, e o par
+ * `content-range` + `etag` identifica o retrato porque o ETag do Apache
+ * codifica tamanho e mtime. A régua velha é "ao testar o bloqueio, usar sempre
+ * GET"; a nova é "para repetir a leitura, usar GET com Range". Foi isso que
+ * transformou "ler 11 vezes" de exagero em rotina.
  *
  * ⛔ NÃO É CONTORNO DE BLOQUEIO. Mesma URL, mesmo cliente do cron, sem forjar
  * user-agent, sem trocar rota e sem insistir depois de um 403. Se a borda
