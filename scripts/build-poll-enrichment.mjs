@@ -129,8 +129,21 @@ const CANON = [
   ['caiado', 'Caiado'], ['zema', 'Zema'], ['renan', 'Renan'], ['haddad', 'Haddad'],
   ['tarcísio', 'Tarcísio'], ['tarcisio', 'Tarcísio'], ['camilo', 'Camilo Santana'],
   ['ratinho', 'Ratinho Jr'], ['eduardo leite', 'Eduardo Leite'], ['ciro', 'Ciro Gomes'], ['simone', 'Simone Tebet'],
+  // 11/Set/2026: ele tinha 15 linhas de PREÇO na série e ZERO no arquivo de
+  // divergência, porque não estava aqui. O descarte só é correto para quem NÃO
+  // tem contrato, e ele tem: 0,45% no livro de vencedor e 52,90% no de 3º lugar.
+  ['cury', 'Augusto Cury'],
 ]
 const canon = (raw) => { const s = String(raw || '').toLowerCase(); for (const [k, v] of CANON) if (s.includes(k)) return v; return null }
+
+/** Uma data em AAAA-MM-DD, ou null. Nunca devolve a string crua. */
+const paraISO = (v) => {
+  const t = String(v ?? '').trim()
+  const br = t.match(/^(\d{2})\/(\d{2})\/(\d{4})/)
+  if (br) return `${br[3]}-${br[2]}-${br[1]}`
+  const iso = t.match(/^(\d{4}-\d{2}-\d{2})/)
+  return iso ? iso[1] : null
+}
 
 function loadMarketIndex(csvPath) {
   if (!existsSync(csvPath)) { console.log('⚠️  MARKET_CSV ausente — pulando 🥇2 (poll-divergence):', csvPath); return null }
@@ -139,7 +152,16 @@ function loadMarketIndex(csvPath) {
   for (let i = 1; i < lines.length; i++) {
     // date,candidate,party,polymarket_pct,volume_usd_m
     const c = lines[i].split(',')
-    const date = c[0], cand = canon(c[1]), pct = numPct(c[3])
+    // 🔴 A data entra NORMALIZADA, e data que não normaliza é DESCARTADA, nunca
+    //    usada crua. Medido em 11/Set/2026: a coluna `date` do CSV publicado
+    //    misturava 663 linhas em AAAA-MM-DD com 156 em DD/MM/AAAA, e a busca
+    //    abaixo compara data como TEXTO. Como texto, `01/09/2026` vem ANTES de
+    //    `2026-08-19`, então toda linha em DD/MM ordenava no começo e vencia a
+    //    busca do 'preço vigente na ou antes'. Saíam 36 de 289 cruzamentos com
+    //    preço POSTERIOR à pesquisa, um ligando pesquisa de 03/Mar a preço de
+    //    20/Ago. A origem foi consertada no export, e isto é a defesa do leitor:
+    //    um CSV antigo ou de outra mão não volta a envenenar o cruzamento.
+    const date = paraISO(c[0]), cand = canon(c[1]), pct = numPct(c[3])
     if (!date || !cand || pct == null) continue
     ;(idx[cand] ||= []).push({ date, pct })
   }

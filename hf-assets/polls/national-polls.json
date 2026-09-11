@@ -1,7 +1,7 @@
 {
   "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number. — Each poll is enriched with its full public TSE registration (methodology, sampling/weighting design, responsible statistician, CONRE, CNPJ, internal control system) via field `tse_registration`, matched by TSE protocol or institute+date.",
   "generated_from": "public/polls-data.json git history",
-  "count": 79,
+  "count": 80,
   "polls": [
     {
       "institute": "Real Time Big Data/Record",
@@ -8526,6 +8526,190 @@
       "field_window": {
         "start": "2026-09-04",
         "end": "2026-09-08"
+      },
+      "field_midpoint": "2026-09-06",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 28,
+      "days_to_runoff": 49
+    },
+    {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-09-10",
+      "scope": "national",
+      "sample": 5000,
+      "margin": 1,
+      "register": "BR-01452/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "fieldDates": "2026-09-04 a 2026-09-09",
+      "note": "AtlasIntel em parceria com a Bloomberg, nacional divulgada em 10/Set, campo de 04 a 09/Set, registro BR-01452/2026 no TSE, 5.000 eleitores por formulário eletrônico, margem de 1,0pp e 95% de confiança, autofinanciada ao custo declarado de R$ 75.000 (Gazeta do Povo e Poder360). ⭐ O VALOR DESTA RODADA É QUE ELA É DA MESMA CASA DA DE 31/Ago, com o mesmo método e a mesma margem, então a comparação não mistura institutos. No 1º turno a vantagem de Lula caiu de 9,7 pontos para 5,6: ele saiu de 43,4% para 43,0% e Flávio Bolsonaro subiu de 33,7% para 37,4%, uma alta de 3,7 pontos em onze dias. 🔁 E OS QUATRO PARES DE 2º TURNO SE MOVERAM NA MESMA DIREÇÃO, dois deles invertendo o sinal: contra Flávio, Lula ia de 47,1% a 42,6% e agora está atrás por 46,4% a 46,2%; contra Romeu Zema, ia de 47,0% a 40,7% e agora está atrás por 46,2% a 46,0%; contra Ronaldo Caiado, ia de 46,6% a 41,0% e agora empata em 45,7%; contra Renan Santos, ia de 47,5% a 26,0% e agora lidera por 46,0% a 33,8%. ⚠️ NOS TRÊS PRIMEIROS PARES A DIFERENÇA CABE DENTRO DE DUAS MARGENS DE 1,0 PONTO, então o que a casa mede ali é empate técnico, e não liderança: dois décimos contra Flávio, dois décimos contra Zema e empate exato contra Caiado. Os dois pares que ficam fora da margem são o de Augusto Cury, por 2,7 pontos, e o de Renan Santos, por 12,2. 📊 No 1º turno completo: Lula 43,0%, Flávio Bolsonaro 37,4%, Augusto Cury 6,6%, Renan Santos 6,5%, Romeu Zema 2,1%, Ronaldo Caiado 1,1%, Samara 1,0%, Pablo Marçal 1,0%, Clariana Barão 0,3%, com 0,6% de branco ou nulo e 0,4% sem resposta. 📌 Com ela, são OITO resultados nacionais seguidos desde 06/Set em que Lula não aparece à frente no par contra Flávio Bolsonaro: Veritá de 06/Set, Quaest de 07/Set, BTG/Nexus de 08/Set, Ideia/Canal Meio, Palver e Gerp de 09/Set, PoderData/Aya de 10/Set e esta. A leitura nacional anterior à sequência é a Datafolha de 03/Set, que dava 46% a 44% para Lula.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 43
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37.4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6.6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6.5
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2.1
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 1.1
+            },
+            {
+              "candidate": "Samara (UP)",
+              "percent": 1
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 46.4,
+          "candidate2": "Lula",
+          "percent2": 46.2
+        },
+        {
+          "matchup": "Zema vs Lula",
+          "candidate1": "Romeu Zema",
+          "percent1": 46.2,
+          "candidate2": "Lula",
+          "percent2": 46
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 45.7,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 45.7
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 43.8,
+          "candidate2": "Augusto Cury",
+          "percent2": 41.1
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Renan Santos",
+          "percent2": 33.8
+        }
+      ],
+      "source": "AtlasIntel em parceria com a Bloomberg, divulgada em 10/Set/2026 (campo 04 a 09/Set, n=5.000, formulário eletrônico, margem 1,0pp, registro TSE BR-01452/2026). Números conferidos em Gazeta do Povo e Poder360, veículos independentes entre si, que coincidem em todos os percentuais citados.",
+      "tse_registration": {
+        "register_tse": "BR014522026",
+        "cnpj": "19259002000128",
+        "institute_full": "ATLASINTEL TECNOLOGIA DE DADOS LTDA",
+        "statistician": "ANDREI CAMILO DOS SANTOS",
+        "conre": "11220",
+        "cost_brl": 75000,
+        "own_poll": true,
+        "methodology": "Pesquisa quantitativa com coleta aleatória via questionário estruturado web e pós-estratificação da amostra de acordo com as características do eleitorado de Brasil.",
+        "sampling_plan": "Amostra aleatória pós-estratificada via algoritmo iterativo com quotas proporcionais, representando características do eleitorado de Brasil: SEXO: Masculino: 47.2%; Feminino: 52.8%. FAIXA ETÁRIA: Entre 16 a 24 anos: 12.1%; Entre 25 a 34 anos: 19.0%; Entre 35 a 44 anos: 19.7%; Entre 45 a 59 anos: 25.6%; 60 ou mais: 23.6%. ESCOLARIDADE: Ensino Fundamental completo ou incompleto e eleitores sem educação formal: 32.1%; Ensino Médio completo ou incompleto: 40.6%; Ensino Superior completo ou incompleto: 27.3%. NÍVEL ECONÔMICO: Renda familiar mensal até R$2000: 18.7%; Mais de R$2.000 a R$3.000: 11.5%; Mais de R$3.000 a R$5.000: 26.4%; Mais de R$5.000 a R$10.000: 26.2%; Mais de R$10.000: 17.1%. OBS.: devido ao arredondamento, a soma dos percentuais pode variar de 99% a 101%. Na agregação final, para cada variável de ponderação, serão admissíveis desvios de até 1.0 pontos percentuais em relação às quotas estipuladas. Confiança estimada: 95%, margem de erro: +/- 1.0 pontos percentuais. FONTE DOS DADOS: PNADc 2025/2026 para nível econômico e escolaridade | TSE 2026 para sexo e faixa etária.",
+        "control_system": "Coleta feita com a utilização de questionário eletrônico com procedimentos específicos para o armazenamento seguro dos dados. São checados manualmente no mínimo 15% dos questionários para detectar possíveis anomalias. Pesquisadores especializados realizam internamente uma verificação exaustiva da consistência dos dados antes da divulgação dos resultados finais.",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "full_percentages",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": false
+          },
+          "sex_quota": {
+            "male_pct": 47.2,
+            "female_pct": 52.8
+          },
+          "age_quota": [
+            {
+              "label": "Entre 16 a 24 anos",
+              "pct": 12.1
+            },
+            {
+              "label": "Entre 25 a 34 anos",
+              "pct": 19
+            },
+            {
+              "label": "Entre 35 a 44 anos",
+              "pct": 19.7
+            },
+            {
+              "label": "Entre 45 a 59 anos",
+              "pct": 25.6
+            },
+            {
+              "label": "60 ou mais",
+              "pct": 23.6
+            }
+          ],
+          "education_quota": [
+            {
+              "label": "Ensino Fundamental completo ou incompleto e eleitores sem educação formal",
+              "pct": 32.1
+            },
+            {
+              "label": "Ensino Médio completo ou incompleto",
+              "pct": 40.6
+            },
+            {
+              "label": "Ensino Superior completo ou incompleto",
+              "pct": 27.3
+            }
+          ],
+          "income_quota": [
+            {
+              "label": "Renda familiar mensal até R$2000",
+              "pct": 18.7
+            },
+            {
+              "label": "Mais de R$2.000 a R$3.000",
+              "pct": 11.5
+            },
+            {
+              "label": "Mais de R$3.000 a R$5.000",
+              "pct": 26.4
+            },
+            {
+              "label": "Mais de R$5.000 a R$10.000",
+              "pct": 26.2
+            },
+            {
+              "label": "Mais de R$10.000",
+              "pct": 17.1
+            }
+          ]
+        }
+      },
+      "field_window": {
+        "start": "2026-09-04",
+        "end": "2026-09-09"
       },
       "field_midpoint": "2026-09-06",
       "dating_source": "field_midpoint",

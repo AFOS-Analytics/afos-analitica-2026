@@ -47,6 +47,32 @@ function deriveDate(obj) {
   const iso = String(obj?.lastUpdate || '').match(/^(\d{4}-\d{2}-\d{2})/)
   return iso ? iso[1] : null
 }
+
+/**
+ * UMA data qualquer, em AAAA-MM-DD. Aceita as duas convenções que a casa usa e
+ * devolve `null` para o que não reconhece, nunca a string crua.
+ *
+ * 🔴 POR QUE ISTO EXISTE, medido em 11/Set/2026. A coluna `date` do
+ * `market-odds-timeseries.csv` publicado tinha DOIS formatos misturados: 663
+ * linhas em AAAA-MM-DD e 156 em DD/MM/AAAA. A origem era uma linha que fazia
+ * `String(c.lastUpdate).slice(0, 10)` sobre "11/09/2026, 13:41", enquanto o
+ * `deriveDate` logo acima já sabia converter e não era chamado ali.
+ *
+ * 🔑 O ESTRAGO NÃO É COSMÉTICO, porque a série é consultada por COMPARAÇÃO DE
+ * TEXTO para achar "o preço vigente na ou antes da pesquisa". Como texto,
+ * `01/09/2026` vem ANTES de `2026-08-19`, então toda linha em DD/MM ordenava no
+ * começo e vencia a busca. Resultado no `poll-divergence.csv`: 36 de 289 cruzamentos
+ * casavam a pesquisa com um preço POSTERIOR a ela, um deles ligando uma pesquisa
+ * de 03/Mar a um preço de 20/Ago. O arquivo declara "sem fabricar
+ * contemporaneidade" e fabricava.
+ */
+const paraISO = (v) => {
+  const s = String(v ?? '').trim()
+  const br = s.match(/^(\d{2})\/(\d{2})\/(\d{4})/)
+  if (br) return `${br[3]}-${br[2]}-${br[1]}`
+  const iso = s.match(/^(\d{4}-\d{2}-\d{2})/)
+  return iso ? iso[1] : null
+}
 const csvEscape = (v) => { const s = String(v ?? ''); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s }
 const num = (v) => { const n = parseFloat(String(v ?? '').replace(',', '.')); return Number.isFinite(n) ? n : null }
 
@@ -186,7 +212,9 @@ function marketRowsFromComparison(pollsJson, fallbackDate) {
   if (!Array.isArray(cs)) return []
   return cs.map((c) => {
     // cada candidato declara a data da PRÓPRIA medição; o topo do arquivo é o fallback
-    const date = String(c.lastUpdate || pollsJson.lastUpdate || fallbackDate || '').slice(0, 10)
+    // ⛔ `slice(0, 10)` aqui produzia "11/09/2026" a partir de "11/09/2026, 13:41"
+    //    e misturava dois formatos na MESMA coluna. Ver `paraISO`.
+    const date = paraISO(c.lastUpdate) || paraISO(pollsJson.lastUpdate) || paraISO(fallbackDate)
     const pct = c.odds ?? c.value ?? num((String(c.polymarket ?? '').match(/(\d+(?:[.,]\d+)?)\s*%/) || [])[1])
     // o volume só existe na PROSA do campo de tendência; ausente vira null, nunca zero
     const vol = volumeEmMilhoes(c.tendenciaPolymarket)
@@ -289,6 +317,11 @@ const CANON = [
   // 17/Ago/2026: entrou no livro presidencial (0,90%, USD 1,21M) e a Datafolha de
   // 21/Ago é a primeira a medi-lo. Sem esta linha, o cruzamento dele nasceria vazio.
   ['marçal', 'Pablo Marçal'], ['marcal', 'Pablo Marçal'],
+  // 11/Set/2026: ele tinha 15 linhas de PREÇO na série e ZERO no arquivo de
+  // divergência, porque não estava aqui, e o descarte só é correto para quem
+  // NÃO tem contrato. Ele tem: 0,45% no livro de vencedor e 52,90% no de 3º
+  // lugar, onde é o favorito. Eram 47 linhas descartadas por rodada.
+  ['cury', 'Augusto Cury'],
 ]
 // Nome que não casa com CANON é DESCARTADO da série, e por muito tempo isso
 // acontecia calado. Instrumentado em 16/Ago/2026: o descarte continua igual, mas
@@ -483,6 +516,24 @@ if (preenchidos) console.log(`🏷️  partido preenchido em ${preenchidos} linh
     console.log(`     ${String(e.n).padStart(4)}x  ${nome.padEnd(22)} ${e.primeira} → ${e.ultima}  [${[...e.fontes].join('+')}]${encerrado}`)
   }
 }
+
+// ---- artefatos de DADOS vindos do enriquecimento ----
+//
+// 🔴 POR QUE ISTO EXISTE, medido em 11/Set/2026. O `subir` envia o STAGING, e
+// este export copiava `polls/` para lá mas nunca `data/`. Na esteira do GitHub
+// isso não aparece, porque lá o enriquecimento roda com
+// `OUT_DIR=.cache/hf-dataset/polls` e `DATA_DIR=.cache/hf-dataset/data`, ou
+// seja, escreve direto no staging. Rodando à mão pelo `npm run espelho:brz`
+// não há essas variáveis, o enriquecimento escreve em `hf-assets/data/` e o
+// `data/poll-divergence.csv` do staging fica sendo o RESÍDUO da rodada
+// anterior. Medido hoje: 305 linhas no `hf-assets` contra 289 no staging.
+//
+// 🔑 O mesmo pipeline tinha duas configurações e só uma delas era exercitada.
+// A cópia vem ANTES das escritas abaixo de propósito: o que este export gera
+// (`market-odds-timeseries`, `divergence-timeseries`) tem de vencer a cópia.
+// → memory/feedback_dois_scripts_escrevem_o_mesmo_artefato_e_o_nome_engana.md
+const nData = copyDirInto(join(ASSETS, 'data'), join(STAGING, 'data'))
+if (nData) console.log(`📦 data/ do enriquecimento copiado para o staging: ${nData} arquivo(s)`)
 
 writeFileSync(join(STAGING, 'data', 'market-odds-timeseries.csv'), marketTimeseriesCsv(marketRowsFinal))
 console.log(`📈 market-odds-timeseries: ${marketRowsFinal.length} linhas, ${new Set(marketRowsFinal.map((r) => r.date)).size} datas`)

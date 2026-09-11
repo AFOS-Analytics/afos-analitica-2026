@@ -382,6 +382,21 @@ BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,sex,"(declared, no % in r
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,age,"(declared, no % in registry)",,mentioned_no_pct
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,education,"(declared, no % in registry)",,mentioned_no_pct
 BR-05420/2026,BR054202026,Palver,2026-09-09,2026-09-06,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,sex,male,47.2,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,sex,female,52.8,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,age,Entre 16 a 24 anos,12.1,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,age,Entre 25 a 34 anos,19,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,age,Entre 35 a 44 anos,19.7,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,age,Entre 45 a 59 anos,25.6,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,age,60 ou mais,23.6,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,education,Ensino Fundamental completo ou incompleto e eleitores sem educação formal,32.1,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,education,Ensino Médio completo ou incompleto,40.6,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,education,Ensino Superior completo ou incompleto,27.3,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Renda familiar mensal até R$2000,18.7,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Mais de R$2.000 a R$3.000,11.5,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Mais de R$3.000 a R$5.000,26.4,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Mais de R$5.000 a R$10.000,26.2,full_percentages
+BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Mais de R$10.000,17.1,full_percentages
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,male,47.2,full_percentages
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,female,52.8,full_percentages
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,income,Sem rendimentos até 2 SM,45.8,full_percentages
