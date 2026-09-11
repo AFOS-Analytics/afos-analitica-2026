@@ -38,7 +38,8 @@
     "sonda:brz": "tsx scripts/sondar-arquivo-tse.ts",
     "fantasmas:brz": "tsx scripts/diff-tse-arquivo-vs-banco.ts",
     "espelho:brz": "node scripts/espelho-brz.mjs",
-    "paridade:readme": "node scripts/conferir-paridade-readme.mjs"
+    "paridade:readme": "node scripts/conferir-paridade-readme.mjs",
+    "calendario:brz": "node scripts/calendario-pesquisas-brz.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",

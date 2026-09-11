@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-11",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtCertificado": "2026-09-11T16:41:31.214Z",
+      "reFetchAoVivo": "2026-09-11T18:37:26.244Z",
+      "gateRebaseline": "DISPAROU",
+      "motivo": "Flavio 53.95 -> 51.95 (-2.00pp) e vao 11.45pp -> 9.45pp entre a certificacao e o re-fetch",
+      "travaRodadaDeNovo": "BLOQUEADO no presidencial: Lula 42.50 -> 43.50 (1.00pp) entre duas leituras a 8 minutos",
+      "livrosAprovados": ["secondPlace", "thirdPlace", "stf", "senate"],
+      "desfecho": "peca publicada com a leitura CONFIRMADA de 13:41, que e a que o painel serve. O gate de rebaseline manda MEDIR de novo, e a medicao disse nao."
+    },
+    "factCheck": {
+      "atosAltoImpacto": ["queda do sigilo de 14 procedimentos do caso Master, e a revelacao de que Flavio Bolsonaro e investigado desde julho de 2026"],
+      "crossReference": "check-recurrence: 'Dark Horse' com 10 mencoes nas ultimas 7 dailies, 'sigilo' com 7. Veredito: CONTINUIDADE do caso, nao evento novo.",
+      "oQueMudouHoje": "a publicidade do fato, nao o fato. O sigilo caiu as 23h44 de 10/Set e a condicao de investigado veio a publico em 11/Set.",
+      "dataDoAtoPeloCorpo": "2026-07 (abertura da investigacao, autorizada por Mendonca)",
+      "fonte1": "Gazeta do Povo, grupo independente, corpo lido por WebFetch, publicada 2026-09-11T12:38Z",
+      "fonte2": "Poder360, grupo independente",
+      "fonte3": "CartaCapital, grupo independente",
+      "newsCacheContradiz": "nao",
+      "decisao": "incorporar COM a data corrigida. Proibido escrever 'passou a ser investigado'."
+    },
+    "escopoDerivado": "APROVADO, 1 grave, 0 no calendario vivo",
+    "travessao": 0,
+    "emoji": 0,
+    "tempoRelativoR8": 0,
+    "palavrasCorpo": 1099,
+    "gateNumerico": "69 numeros, multiconjunto identico nos 3 idiomas",
+    "reconcileClaims": "OK, todos os claims batem com o JSON dentro de 0.05pp",
+    "validator": "OK, 1 warning de densidade de link (70% contra a regua de 80%)"
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. O ato central tem 3 fontes independentes entre si.",
+    "2_numericalErrors": "reconcile-claims OK. Calendario gerado da API, nao digitado.",
+    "3_fontesInventadas": "conferidas 3 ao acaso contra o news-cache do dia: O Globo, Gazeta do Povo e Metropoles, todas com materia correspondente.",
+    "4_quotesLiterais": "nenhuma aspa literal na peca.",
+    "5_causacaoEspuria": "nenhuma. A Secao 4 declara explicitamente a ordem dos fatos e nega vinculo: 'os dois fatos estao medidos, o vinculo entre eles nao'.",
+    "6_verbosCriticos": "'investigado' desambiguado com a data de inicio (desde julho de 2026). 'levantou o sigilo' com data e hora (23h44 de 10/Set).",
+    "7_referenciaAmbigua": "🔴 SETE achados, 5 deles causados pelo corte para caber no teto de 1.100 palavras. O André pegou o primeiro: 'Augusto Cury indicou que pode apoia-lo' tinha Lula como antecedente mais proximo, quando o fato e Flavio, e a peca se contradizia com o titulo da propria fonte no rodape. Os outros 6: dois 'hoje' e um 'today' contra a regua R8; 'foi ela que tornou publico' sem antecedente feminino; 'entre os dois' ambiguo; numeros de pp sem dizer de quem eram; 'a frente' sem dizer de quem; e 'o segundo subiu, nao o primeiro caiu' funcionando so por coincidencia de ordem. Todos corrigidos nos 3 idiomas.",
+    "decisao": "prosseguir, apos as 7 correcoes"
+  },
+  "naoRodou": {
+    "wayback": "PAUSA. O priorizador manda nao sondar: o host esta bloqueando e a regua e de 3 a 4 dias sem sondar. Passivo mais antigo: 2026-07-29, exposto ha 44 dias, 28 URLs faltando."
+  }
+}
