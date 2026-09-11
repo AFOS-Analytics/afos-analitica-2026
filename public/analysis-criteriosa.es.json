@@ -1,83 +1,87 @@
 {
-  "updatedAt": "10/09/2026, 14:20",
-  "subtitle": "Cruce del 10 de septiembre de 2026, lectura confirmada del 10/Sep, 14:20 BRT (17:20 UTC), con el presidencial en USD 147,09M. Recibieron precio nuevo el contrato de ganador, el de segundo lugar de la primera vuelta, el de tercer lugar y el de destitución en el Supremo. La encuesta nacional del día es la PoderData/Aya, con 3.000 entrevistas y campo del 06 al 09/Sep.",
+  "updatedAt": "11/09/2026, 13:41",
+  "subtitle": "Cruce del 11 de septiembre de 2026, lectura confirmada del 11/Sep, 13:41 BRT (16:41 UTC), con el presidencial en USD 148,03M. Recibieron precio nuevo los cinco contratos vigilados: ganador, segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno), tercer lugar, destitución en el Supremo y mayoría en el Senado. La encuesta nacional que entra es AtlasIntel junto con Bloomberg, campo del 04 al 09/Sep, 5.000 entrevistas y margen de 1,0pp, registro BR-01452/2026 en el TSE. El registro oficial del TSE fue ingerido hoy con 879 encuestas presidenciales, y el calendario apunta seis nacionales con divulgación prevista entre el 14 y el 16/Sep.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 43,50% (vol USD 10,46M acumulado) en el contrato de ganador, lectura confirmada del 10/Sep, 14:20 BRT, una caída de 9,00pp contra el precio confirmado el 09/Sep, y la pérdida del liderazgo del libro. En el contrato de segundo lugar de la primera vuelta SUBIÓ 4,90pp y está en 24,50% (vol USD 578 mil). ENCUESTA: 38% en la primera vuelta y 45% en la segunda en la PoderData/Aya del 10/Sep, campo del 06 al 09/Sep, 3.000 entrevistas y margen de 1,8pp.",
+      "header": "PRECIO: 42,50% (vol USD 10,69M acumulado) en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, una caída de 1,00pp contra el precio confirmado el 10/Sep, en el segundo día seguido de retroceso. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) CAYÓ 1,60pp y está en 22,90% (vol USD 601 mil). ENCUESTA: 43,0% en la primera vuelta y 46,2% en la [segunda vuelta](/es/glossary#segundo-turno) contra Flávio Bolsonaro en la AtlasIntel/Bloomberg del 10/Sep, campo del 04 al 09/Sep, 5.000 entrevistas y margen de 1,0pp. Es la octava nacional seguida desde el 06/Sep en que no aparece adelante en el par, y la diferencia de dos décimas cabe en dos márgenes, es decir, la casa mide empate técnico.",
       "fortes": [
-        "Sigue por delante en la primera vuelta en la nacional que entró hoy, 38% contra 36%, y la PoderData/Aya es la casa con el menor margen de la ventana, 1,8 puntos.",
-        "En el contrato de segundo lugar de la primera vuelta su precio subió 4,90pp en 24 horas, hasta 24,50%, lo que describe un mercado que volvió a considerar seriamente la hipótesis de que pase a la segunda etapa.",
-        "La caída de hoy lo deja 9,00pp por encima del suelo de su propia serie, de 34,50% el 25/Abr, es decir el libro ya lo valoró bastante más bajo en este ciclo."
+        "Sigue adelante en la primera vuelta en la nacional que entra hoy, 43,0% contra 37,4%, y AtlasIntel es la casa con la mayor muestra y el menor margen de la ventana, 5.000 entrevistas y 1,0 punto.",
+        "En los cinco pares de segunda vuelta de la ronda no pierde ninguno fuera del margen: pierde por dos décimas de Flávio Bolsonaro, por dos décimas de Romeu Zema, empata con Ronaldo Caiado y gana los dos únicos pares que quedan fuera del margen, contra Augusto Cury y contra Renan Santos.",
+        "El contrato de ganador cedió 1,00pp, una décima parte de la caída de 9,00pp de la víspera, es decir, el movimiento del libro se desaceleró mucho contra ayer."
       ],
       "fracos": [
-        "Perdió el liderazgo del contrato de ganador por primera vez en esta ventana, y la caída de 9,00pp en un día es su mayor movimiento diario en la serie.",
-        "Es el séptimo resultado nacional seguido desde el 06/Sep en que no aparece por delante en el par de segunda vuelta.",
-        "La PoderData/Aya trae un par nuevo en que Augusto Cury aparece por delante de él por 44% a 43%, la primera segunda vuelta de esta serie en que un tercer nombre lidera."
+        "Octava nacional seguida desde el 06/Sep en que no aparece adelante en el par contra Flávio Bolsonaro.",
+        "El contrato de ganador cae por segundo día y la distancia hacia el primero pasó de 9,35pp a 11,45pp.",
+        "Está 25,00pp por debajo de su propio techo en el contrato de ganador, de 67,50% el 16/Ago.",
+        "En el contrato de segundo lugar de la primera vuelta devolvió 1,60pp de los 4,90pp que había ganado ayer."
       ],
-      "analise": "El 10 de septiembre invierte el cuadro que la página venía describiendo desde el comienzo del ciclo. El contrato de ganador cedió 9,00pp y está en 43,50% (vol USD 10,46M), mientras el adversario subió 6,60pp, y es la primera vez en esta ventana que el liderazgo del libro cambia de manos. Del lado de la encuesta el movimiento existe y es mucho menor: la PoderData/Aya mide 38% a 36% en la primera vuelta, dos puntos que caben en dos márgenes de 1,8, y 45% a 47% en la segunda. Las dos mediciones apuntan en la misma dirección hoy, y la diferencia de intensidad es lo que merece registro: el mercado movió 15,60pp en la brecha en 24 horas y la encuesta mide empate técnico. El contexto del día está en el Supremo, con la operación de la Policía Federal sobre el financiamiento de la película Dark Horse y la segunda cancelación seguida de sesión del pleno, y la página no afirma vínculo entre esos hechos y el precio."
+      "analise": "El 11 de septiembre repite la dirección del día anterior con una décima parte de la intensidad. El contrato de ganador cedió 1,00pp y está en 42,50% (vol USD 10,69M), contra una caída de 9,00pp en la víspera, y la distancia hacia el primero pasó de 9,35pp a 11,45pp. Del lado de la encuesta, la ronda que entra es la AtlasIntel/Bloomberg del 10/Sep, y lo que ella permite es la comparación más limpia de la semana, porque la casa midió el mismo electorado el 31/Ago con el mismo método y el mismo margen. En esa comparación pasa de 43,4% a 43,0% en la primera vuelta, prácticamente quieto, mientras el rival sube 3,7 puntos. La ventaja que era de 9,7 puntos se volvió 5,6. En los cinco pares de segunda vuelta el cuadro es de empate: pierde por dos décimas de Flávio Bolsonaro, pierde por dos décimas de Romeu Zema, empata en 45,7% con Ronaldo Caiado y gana los dos pares que quedan fuera del margen. Lo que queda es que el mercado y la encuesta describen la misma dirección y divergen en el tamaño: el libro ya marca 11,45pp de distancia, mientras la casa con el menor margen de la ventana mide empate técnico en el par directo."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 52,85% (vol USD 10,17M acumulado) en el contrato de ganador, lectura confirmada del 10/Sep, 14:20 BRT, un alza de 6,60pp contra el precio confirmado el 09/Sep, y el liderazgo del libro. Es el punto más alto de su serie, que empieza el 14/Abr/2026 y tiene 506 lecturas registradas. En el contrato de segundo lugar de la primera vuelta CAYÓ 7,00pp y está en 71,50% (vol USD 718 mil). ENCUESTA: 36% en la primera vuelta y 47% en la segunda en la PoderData/Aya del 10/Sep.",
+      "header": "PRECIO: 53,95% (vol USD 10,36M acumulado) en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, un alza de 1,10pp contra el precio confirmado el 10/Sep, y nuevo punto más alto de su serie, que comienza el 14/Abr/2026. En el contrato de segundo lugar de la [primera vuelta](/es/glossary#primeiro-turno) SUBIÓ 3,00pp y está en 74,50% (vol USD 725 mil). ENCUESTA: 37,4% en la primera vuelta y 46,4% en la [segunda vuelta](/es/glossary#segundo-turno) en la AtlasIntel/Bloomberg del 10/Sep. En la misma casa, el 31/Ago, tenía 33,7% y perdía el par por 42,6% a 47,1%, así que en once días subió 3,7 puntos en la primera vuelta y el par recorrió 4,7 puntos.",
       "fortes": [
-        "Asumió el liderazgo del contrato de ganador por primera vez en esta ventana, y los 52,85% superan el techo anterior de su serie, de 45,80% registrado ayer.",
-        "Aparece por delante en el par de segunda vuelta por séptima lectura nacional seguida desde el 06/Sep, aunque la distancia de hoy, 47% a 45%, cabe en dos márgenes de 1,8.",
-        "La caída de 7,00pp en el contrato de segundo lugar de la primera vuelta es coherente con el alza en el de ganador: el mercado pasó a verlo con más posibilidades de terminar la primera vuelta en primer lugar."
+        "Nuevo punto más alto de su serie en el contrato de ganador, 53,95%, superando el 52,85% de ayer, que ya era el techo.",
+        "En el contrato de segundo lugar de la primera vuelta subió 3,00pp y está en 74,50%, deshaciendo el movimiento contrario de la víspera, cuando ese contrato se había movido a favor del rival.",
+        "En la AtlasIntel, que es la misma casa del 31/Ago, subió 3,7 puntos en la primera vuelta y el par de segunda vuelta recorrió 4,7 puntos a su favor en once días, sin cambio de método ni de margen."
       ],
       "fracos": [
-        "En la primera vuelta de la encuesta del día sigue detrás, 36% contra 38%, y esa es la medida de intención de voto declarada.",
-        "La operación de la Policía Federal sobre el financiamiento de la película Dark Horse, autorizada por Flávio Dino el 10/Sep, alcanza el entorno de su campaña, y él la calificó públicamente como intento de interferencia política.",
-        "El precio subió 6,60pp en un día, y un movimiento de esa magnitud en un contrato de USD 10,17M es la parte de la serie con mayor posibilidad de corrección en los días siguientes."
+        "Su ventaja en el par de segunda vuelta de la AtlasIntel es de dos décimas y cabe dentro de dos márgenes de 1,0, así que es empate técnico y no liderazgo.",
+        "En la primera vuelta sigue detrás por 5,6 puntos, una distancia que queda fuera del margen.",
+        "La dispersión entre casas en la primera vuelta es la mayor del panel, de 29% en Quaest a 40% en Palver en la ventana desde el 06/Sep, once puntos.",
+        "La lectura de precio de esta ronda es POSTERIOR a la divulgación, en la mañana de hoy, de que es investigado desde julio en el caso Dark Horse por lavado de dinero, evasión de divisas y corrupción."
       ],
-      "analise": "Su contrato hizo hoy el mayor movimiento diario de la serie y llegó al punto más alto que AFOS tiene registrado, 52,85%, sobre 506 lecturas desde el 14/Abr. El precio del segundo lugar cayó 7,00pp el mismo día, y las dos cosas describen el mismo movimiento por dos ángulos: quien sube en el contrato de ganador tiende a caer en el de segundo. La encuesta del día va en la misma dirección con mucha menos intensidad, con 36% en la primera vuelta, dos puntos detrás, y 47% en la segunda, dos puntos por delante, los dos dentro del margen de 1,8. El día fue de crisis institucional en el Supremo, con la operación sobre el financiamiento de la película Dark Horse y la segunda cancelación seguida de sesión del pleno, y la página registra los dos hechos sin afirmar que uno explique el otro."
+      "analise": "Segundo día seguido de alza en el contrato de ganador, ahora de 1,10pp, y el 53,95% es el nuevo punto más alto de su serie, que comienza el 14/Abr/2026. El volumen acumulado en su contrato es de USD 10,36M. En el contrato de segundo lugar de la primera vuelta el movimiento es el inverso al de ayer: subió 3,00pp, hasta 74,50%, después de haber caído 7,00pp en la víspera. Los dos contratos juntos describen un mercado que volvió a considerar más probable que termine la primera vuelta en segundo lugar y aun así gane la elección. En la encuesta, la AtlasIntel repite la dirección: 33,7% a 37,4% en la primera vuelta y un par de segunda vuelta que recorrió 4,7 puntos en once días, pasando de derrota por 42,6% a 47,1% a una ventaja de dos décimas. ⚠️ Dos décimas caben en el margen, así que lo que la casa mide es empate, no liderazgo. 📌 Y la procedencia de la lectura importa hoy: los precios de esta página son de las 13:41 BRT, por lo tanto POSTERIORES a la divulgación, en la mañana del 11/Sep, de que es investigado desde julio en la pesquisa sobre el financiamiento de la película Dark Horse. AFOS registra el orden de los hechos y no atribuye causa al precio."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 0,35% en el contrato de ganador, lectura del 10/Sep, 14:20 BRT, por debajo del piso de 0,5% de la doble lectura, y 49,25% (vol USD 150 mil) en el contrato de tercer lugar de la primera vuelta, lectura confirmada, donde es el favorito. ENCUESTA: 10% en la primera vuelta en la PoderData/Aya del 10/Sep, su mayor valor en las nacionales de esta ventana.",
+      "header": "PRECIO: 0,45% en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, y 52,90% en el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) (vol USD 160 mil), donde es el favorito, con un alza de 3,65pp. ENCUESTA: 6,6% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, contra 7,8% en la misma casa el 31/Ago, y 41,1% contra 43,8% de Lula en un par de [segunda vuelta](/es/glossary#segundo-turno), uno de los dos pares de la ronda que quedan fuera del margen.",
       "fortes": [
-        "Los 10% de la PoderData/Aya son su mayor valor en las nacionales de esta ventana, contra 6,6% en la Ideia/Canal Meio del 09/Sep.",
-        "La misma ronda lo coloca por delante de Lula en un par de segunda vuelta, por 44% a 43%, la primera segunda vuelta de esta serie en que un tercer nombre aparece adelante.",
-        "Es el favorito del contrato de tercer lugar de la primera vuelta, con 49,25%."
+        "En el contrato de tercer lugar de la primera vuelta subió 3,65pp y llegó a 52,90%, y la distancia hacia el segundo allí más que se duplicó, de 6,75pp a 14,40pp.",
+        "Es uno de los dos nombres cuyo par de segunda vuelta contra Lula queda FUERA del margen en esta ronda, lo que vuelve su lectura menos ambigua que la de los empates técnicos.",
+        "En la ventana desde el 06/Sep llega a 12,2% en Veritá, el mayor valor de cualquier tercer nombre en el período."
       ],
       "fracos": [
-        "En el contrato de ganador sigue en 0,35%, por debajo del piso de 0,5% de la doble lectura, es decir el dinero no trata la candidatura como competitiva para ganar la elección.",
-        "La distancia de un punto en el par contra Lula está dentro del margen de 1,8, así que es empate técnico y no ventaja.",
-        "El volumen del contrato de tercer lugar es de USD 150 mil, lo que vuelve su precio más sensible a órdenes aisladas que el del libro principal."
+        "En el contrato de ganador sigue en 0,45%, por debajo de medio punto.",
+        "Cayó de 7,8% a 6,6% en la primera vuelta dentro de la misma casa, en once días.",
+        "Su rango en la ventana va de 4% a 12,2%, ocho puntos de dispersión entre casas sobre el mismo período."
       ],
-      "analise": "La PoderData/Aya del 10/Sep es su mejor lectura en esta ventana: 10% en la primera vuelta y un par de segunda vuelta en que aparece por delante de Lula por 44% a 43%. La distancia de un punto cabe en el margen de 1,8, así que lo que la casa mide es empate. En el mercado la lectura es otra: 0,35% en el contrato de ganador y 49,25% en el de tercer lugar de la primera vuelta, lo que describe un candidato que el dinero ve como tercera fuerza y no como competidor por el cargo. Las dos cosas conviven sin contradicción, porque miden preguntas distintas."
+      "analise": "Su movimiento está en el contrato de tercer lugar de la primera vuelta, donde subió 3,65pp y llegó a 52,90% (vol USD 160 mil), mientras el segundo colocado allí cayó 4,00pp. El vano entre ambos más que se duplicó en 24 horas, de 6,75pp a 14,40pp. En el contrato de ganador sigue en 0,45%, y esa distancia entre los dos contratos es la propia descripción de lo que dice el mercado: es el favorito a terminar tercero y casi no es considerado para ganar. En la encuesta, la AtlasIntel lo mide en 6,6%, contra 7,8% en la misma casa once días antes, y en un par de segunda vuelta contra Lula queda detrás por 43,8% a 41,1%, una de las dos distancias de la ronda que quedan fuera del margen."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 2,15% (vol USD 13,15M acumulado) en el contrato de ganador, el mayor volumen individual del libro presidencial, y 42,50% en el contrato de tercer lugar de la primera vuelta, lectura confirmada del 10/Sep, 14:20 BRT. ENCUESTA: 3% en la primera vuelta en la PoderData/Aya del 10/Sep.",
+      "header": "PRECIO: 1,95% (vol USD 13,26M acumulado) en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, una caída de 0,20pp, y 38,50% en el contrato de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno) (vol USD 297 mil), una caída de 4,00pp, la mayor de cualquier contrato del panel en esta ronda. ENCUESTA: 6,5% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, contra 7,6% en la misma casa el 31/Ago, y 33,8% contra 46,0% de Lula en el par de [segunda vuelta](/es/glossary#segundo-turno), una distancia de 12,2 puntos que se acortó 9,3 puntos en once días.",
       "fortes": [
-        "Su contrato acumula USD 13,15M, el mayor volumen individual del libro presidencial, por encima de los dos primeros colocados.",
-        "Está en 42,50% en el contrato de tercer lugar de la primera vuelta, solo detrás de Augusto Cury."
+        "Su contrato sigue con USD 13,26M acumulados, el segundo mayor volumen individual del libro presidencial.",
+        "En el par de segunda vuelta contra Lula acortó 9,3 puntos en once días dentro de la MISMA casa, de 47,5% a 26,0% hacia 46,0% a 33,8%.",
+        "La Palver del 09/Sep todavía lo mide en 11% en la primera vuelta, el techo de su rango en la ventana."
       ],
       "fracos": [
-        "3% en la primera vuelta de la PoderData/Aya de hoy, contra 11% que la Palver midió el 09/Sep, y esa distancia de ocho puntos entre casas es la mayor dispersión individual de la ventana.",
-        "2,15% en el contrato de ganador, es decir el precio no acompaña el volumen negociado."
+        "La mayor caída de cualquier contrato del panel en esta ronda, 4,00pp en el contrato de tercer lugar de la primera vuelta.",
+        "Cayó de 7,6% a 6,5% en la primera vuelta dentro de la misma casa, en once días.",
+        "El par de segunda vuelta contra Lula sigue con 12,2 puntos de distancia, el más amplio de los cinco probados."
       ],
-      "analise": "Su caso sigue siendo el de mayor distancia entre volumen y precio: USD 13,15M acumulados, el mayor del libro, con el precio en 2,15%. En las encuestas la dispersión entre casas continúa ancha, con 3% en la PoderData/Aya de hoy contra 11% en la Palver del 09/Sep, ocho puntos de diferencia en rondas con campo superpuesto. En el contrato de tercer lugar de la primera vuelta está en 42,50%, detrás de Augusto Cury."
+      "analise": "La mayor caída de cualquier contrato del panel en esta ronda es suya: 4,00pp en el contrato de tercer lugar de la primera vuelta, de 42,50% a 38,50%. En el contrato de ganador cayó 0,20pp y está en 1,95%, con USD 13,26M acumulados, el segundo mayor volumen individual del libro. En la encuesta la señal es más favorable que la del precio. Dentro de la misma casa, en once días, el par de segunda vuelta contra Lula se acortó 9,3 puntos, de 47,5% a 26,0% hacia 46,0% a 33,8%. En la primera vuelta cedió de 7,6% a 6,5%. La dispersión entre casas sigue siendo su rasgo: la Palver del 09/Sep lo mide en 11% y la PoderData del 10/Sep en 3%, ocho puntos de diferencia sobre campos que se superponen."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: Ronaldo Caiado en 0,25% (vol USD 7,37M) en el contrato de ganador y 5,00% en el de tercer lugar de la primera vuelta, lectura del 10/Sep, 14:20 BRT. ENCUESTA: Caiado con 2% en la primera vuelta en la PoderData/Aya del 10/Sep. Fernando Haddad y Romeu Zema no aparecen en el escenario estimulado de esta ronda.",
+      "header": "PRECIO: Ronaldo Caiado en 0,30% en el contrato de ganador y 5,00% en el de tercer lugar de la [primera vuelta](/es/glossary#primeiro-turno), el único contrato vigilado que no se mueve en esta ronda; Romeu Zema en 0,15% (vol USD 6,92M) y Fernando Haddad en 0,05% (vol USD 7,53M), ambos en el piso del libro, lectura confirmada del 11/Sep, 13:41 BRT. ENCUESTA: en la AtlasIntel/Bloomberg del 10/Sep, Caiado tiene 1,1% y Zema 2,1% en la primera vuelta. En los pares de [segunda vuelta](/es/glossary#segundo-turno) contra Lula, Caiado EMPATA EXACTAMENTE en 45,7% y Zema aparece adelante por 46,2% a 46,0%, ambos dentro del margen.",
       "subtitle": "Pelotón de atrás en la lectura del 10/Sep, 14:20 BRT (17:20 UTC). ⚠️ LA PODERDATA/AYA DEL 10/Sep MIDE A CAIADO EN 2% Y NO PRUEBA NI A ZEMA NI A HADDAD en el escenario estimulado. Los tres siguen por debajo del piso de 0,5% de la doble lectura en el contrato de ganador, así que los precios de esta franja entran como lectura simple.",
       "caiado": {
         "label": "CAIADO (PSD), 0,25% (vol USD 7,37M) en el contrato de GANADOR, lectura del 10/Sep, 14:20 BRT, y por debajo del piso de 0,5% de la doble lectura. En el contrato de TERCER LUGAR de la primera vuelta está en 5,00%, en un libro de USD 120 mil. En la PoderData/Aya del 10/Sep tiene 2% en la primera vuelta.",
@@ -94,71 +98,74 @@
         "fortes": "La BTG/Nexus del 08/Sep lo mide en 2% en el escenario de [primera vuelta](/es/glossary#primeiro-turno) que incluye a Pablo Marçal, contra 1% en el escenario sin él, y la Quaest del 07/Sep lo mide en 2%. Las tres lecturas caben dentro del margen de 2 puntos de cada casa.",
         "fracos": "⚠️ EN LOS PARES DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) ES EL MÁS HOLGADO DE LAS DOS CASAS: 47% a 40% en la BTG/Nexus y 44% a 33% en la Quaest, es decir 7 y 11 puntos de distancia. Y se quedó estancado en 0,85% en el contrato de tercer lugar de la primera vuelta, por detrás de Pablo Marçal, que está en 1,75%."
       },
-      "analise": "La ronda de hoy trae poco movimiento en esta franja. Caiado tiene 2% en la primera vuelta de la PoderData/Aya y 0,25% en el contrato de ganador, con 5,00% en el de tercer lugar. Haddad y Zema no aparecen en el escenario estimulado de esta casa, y el panel mantiene su dato anterior en vez de estimar.",
+      "analise": "El bloque de los nombres de precio bajo trae el hallazgo menos intuitivo de la ronda de encuestas. En la AtlasIntel, Ronaldo Caiado EMPATA EXACTAMENTE con Lula en 45,7% en un par de segunda vuelta, y Romeu Zema aparece adelante por 46,2% a 46,0%, ambos dentro del margen. El 31/Ago la misma casa ponía a Caiado detrás por 41,0% a 46,6% y a Zema detrás por 40,7% a 47,0%. En la primera vuelta, sin embargo, Caiado tiene 1,1% y Zema 2,1%, y en los contratos de ganador están en 0,30% y 0,15%. 📌 El contraste es la medición, no la interpretación: los mismos nombres que la casa mide empatados en un par directo de segunda etapa casi no son considerados por el mercado para llegar allí. Fernando Haddad, en 0,05% y con USD 7,53M acumulados, no es probado en escenario presidencial por la casa.",
       "fortes": [
-        "Caiado mantiene presencia en los escenarios estimulados de las nacionales, con 2% en la PoderData/Aya de hoy y 4% en la Ideia/Canal Meio del 09/Sep."
+        "Ronaldo Caiado EMPATA EXACTAMENTE con Lula en 45,7% en un par de segunda vuelta de la AtlasIntel, y el 31/Ago la misma casa lo ponía detrás por 41,0% a 46,6%.",
+        "Romeu Zema aparece ADELANTE de Lula por 46,2% a 46,0% en el par de segunda vuelta, y registra 2,1% en la primera vuelta, su mayor valor en la ventana.",
+        "El contrato de tercer lugar de la primera vuelta de Caiado, en 5,00%, es el único contrato vigilado que no se mueve en esta ronda."
       ],
       "fracos": [
-        "Los tres siguen por debajo de 1% en el contrato de ganador, y la PoderData/Aya de hoy no trae escenario con Haddad ni con Zema.",
-        "El contrato de tercer lugar de la primera vuelta da 5,00% a Caiado, detrás de Augusto Cury y de Renan Santos."
+        "Ninguno de los tres pasa de 2,1% en la primera vuelta de la AtlasIntel, y los empates técnicos de segunda vuelta conviven con valores de primera vuelta de uno a dos puntos.",
+        "En los contratos de ganador, Caiado está en 0,30%, Zema en 0,15% y Haddad en 0,05%.",
+        "Fernando Haddad no es probado en escenario presidencial por la casa."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "38% en la primera vuelta y 45% en la segunda en la PoderData/Aya del 10/Sep, campo del 06 al 09/Sep, 3.000 entrevistas y margen de 1,8pp. Es el séptimo resultado nacional seguido desde el 06/Sep en que no aparece por delante en el par de segunda vuelta, y la misma ronda trae a Augusto Cury por delante de él por 44% a 43%.",
-      "m": "43,50% (vol USD 10,46M) en el contrato de ganador, lectura confirmada del 10/Sep, 14:20 BRT, una caída de 9,00pp contra el precio confirmado el 09/Sep. En el contrato de segundo lugar de la primera vuelta SUBIÓ 4,90pp y está en 24,50% (vol USD 578 mil).",
-      "t": "cedió 9,00pp en el contrato de ganador y perdió el liderazgo del libro, con la brecha pasando de 6,25pp a su favor a 9,35pp en contra",
-      "s": "Reunió a colaboradores para discutir la reacción a la decisión de André Mendonça que apartó al director general de la Policía Federal, y el ministro de Relaciones Institucionales llamó al apartamiento una intromisión, según O Globo.",
+      "p": "43,0% en la primera vuelta y 46,2% en la segunda contra Flávio Bolsonaro en la AtlasIntel/Bloomberg del 10/Sep, campo del 04 al 09/Sep, 5.000 entrevistas y margen de 1,0pp. Es la octava nacional seguida desde el 06/Sep en que no aparece adelante en el par, y la diferencia de dos décimas cabe en dos márgenes.",
+      "m": "42,50% (vol USD 10,69M) en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, una caída de 1,00pp contra el precio confirmado el 10/Sep. En el contrato de segundo lugar de la primera vuelta CAYÓ 1,60pp y está en 22,90% (vol USD 601 mil).",
+      "t": "cede 1,00pp en el segundo día seguido de caída, con la distancia hacia el primero pasando de 9,35pp a 11,45pp",
+      "s": "Elogió a Fachin por poner orden en la casa y defendió la investigación de ministros del Supremo, según Valor Econômico y Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "36% en la primera vuelta y 47% en la segunda en la PoderData/Aya del 10/Sep. La distancia de dos puntos en los dos escenarios cabe en dos márgenes de 1,8, así que la casa mide empate técnico.",
-      "m": "52,85% (vol USD 10,17M) en el contrato de ganador, lectura confirmada del 10/Sep, 14:20 BRT, un alza de 6,60pp contra el precio confirmado el 09/Sep, y el punto más alto de su serie, que empieza el 14/Abr/2026. En el contrato de segundo lugar de la primera vuelta CAYÓ 7,00pp y está en 71,50%.",
-      "t": "subió 6,60pp, asumió el liderazgo del contrato de ganador y llegó al techo de su propia serie",
-      "s": "En el acto de la avenida Paulista del 07/Sep vinculó al líder con Alexandre de Moraes y dijo que nombraría cinco ministros al Supremo, según JOTA, O Globo y Folha de S.Paulo.",
+      "p": "37,4% en la primera vuelta y 46,4% en la segunda en la AtlasIntel/Bloomberg del 10/Sep. En la misma casa, el 31/Ago, tenía 33,7% y perdía el par por 42,6% a 47,1%. La ventaja de dos décimas cabe en el margen, así que la casa mide empate técnico.",
+      "m": "53,95% (vol USD 10,36M) en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, un alza de 1,10pp, y el nuevo punto más alto de su serie, que comienza el 14/Abr/2026. En el contrato de segundo lugar de la primera vuelta SUBIÓ 3,00pp y está en 74,50%.",
+      "t": "sube 1,10pp en el segundo día seguido de alza y renueva el techo de su propia serie",
+      "s": "Se reveló que es investigado por la Policía Federal desde julio, con autorización de André Mendonça, en la pesquisa sobre el financiamiento de la película Dark Horse, por lavado de dinero, evasión de divisas y corrupción. La revelación vino de la caída del secreto decidida a las 23:44 del 10/Sep, según Gazeta do Povo, Poder360 y CartaCapital.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "10% en la primera vuelta en la PoderData/Aya del 10/Sep, su mayor valor en las nacionales de la ventana, y 44% contra 43% de Lula en un par de segunda vuelta.",
-      "m": "0,35% en el contrato de ganador, lectura del 10/Sep, 14:20 BRT, por debajo del piso de 0,5% de la doble lectura, y 49,25% (vol USD 150 mil) en el contrato de tercer lugar de la primera vuelta, lectura confirmada, donde es el favorito.",
-      "t": "mejor lectura de encuesta de la ventana, con el precio del contrato de ganador quieto por debajo de 1%",
-      "s": "Hizo un acto en Río el 07/Sep, con un guiño a André Mendonça y un reclamo de investigación sobre el Supremo, según Folha de S.Paulo.",
+      "p": "6,6% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, contra 7,8% en la misma casa el 31/Ago, y 41,1% contra 43,8% de Lula en un par de segunda vuelta, una de las dos distancias de la ronda que quedan fuera del margen.",
+      "m": "0,45% en el contrato de ganador, lectura confirmada del 11/Sep, 13:41 BRT, y 52,90% en el contrato de tercer lugar de la primera vuelta (vol USD 160 mil), un alza de 3,65pp, donde es el favorito.",
+      "t": "sube 3,65pp en el contrato de tercer lugar y su vano hacia el segundo allí más que se duplica, de 6,75pp a 14,40pp",
+      "s": "Indicó que puede apoyar a Flávio Bolsonaro en una segunda vuelta, según CartaCapital.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "3% en la primera vuelta en la PoderData/Aya del 10/Sep, contra 11% en la Palver del 09/Sep, ocho puntos de distancia entre casas con campo superpuesto.",
-      "m": "2,15% (vol USD 13,15M) en el contrato de ganador, el mayor volumen individual del libro presidencial, y 42,50% en el contrato de tercer lugar de la primera vuelta, lectura confirmada del 10/Sep, 14:20 BRT.",
-      "t": "mayor volumen individual del libro con el precio en 2,15%, y la mayor dispersión entre casas de la ventana",
-      "s": "Lanzó un manifiesto en un acto en Ibirapuera el 07/Sep y pidió la prisión de Alexandre de Moraes y Dias Toffoli, según Folha de S.Paulo.",
+      "p": "6,5% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, contra 7,6% en la misma casa el 31/Ago, y 33,8% contra 46,0% de Lula en el par de segunda vuelta, que se acortó 9,3 puntos en once días.",
+      "m": "1,95% (vol USD 13,26M) en el contrato de ganador, el segundo mayor volumen individual del libro presidencial, y 38,50% en el contrato de tercer lugar de la primera vuelta, lectura confirmada del 11/Sep, 13:41 BRT.",
+      "t": "cae 4,00pp en el contrato de tercer lugar, la mayor caída de cualquier contrato del panel en esta ronda",
+      "s": "Atribuyó la crisis del Supremo al centrão, según Valor Econômico.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "2% en la primera vuelta en la PoderData/Aya del 10/Sep.",
-      "m": "0,25% en el contrato de ganador y 5,00% en el contrato de tercer lugar de la primera vuelta, lectura del 10/Sep, 14:20 BRT.",
-      "t": "estable en las dos mediciones",
-      "s": "Sin acto individual nuevo el 08/Sep en las noticias recogidas.",
+      "p": "1,1% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, y EMPATE EXACTO con Lula en 45,7% en un par de segunda vuelta. El 31/Ago la misma casa lo ponía detrás por 41,0% a 46,6%.",
+      "m": "0,30% en el contrato de ganador y 5,00% en el contrato de tercer lugar de la primera vuelta, lectura confirmada del 11/Sep, 13:41 BRT.",
+      "t": "sube 0,05pp en el contrato de ganador y queda quieto en el de tercer lugar, el único contrato vigilado que no se mueve en esta ronda",
+      "s": "Sin acto individual nuevo el 11/Sep en la cobertura recogida.",
       "pc": "#059669",
       "mc": ""
     },
     {
-      "n": "Pablo Marçal (PRTB)",
-      "p": "2% en la primera vuelta en la PoderData/Aya del 10/Sep.",
-      "m": "por debajo de 1% en el contrato de ganador, lectura confirmada del 10/Sep, 14:20 BRT.",
-      "t": "estable en las dos mediciones",
-      "s": "Sin acto individual nuevo el 08/Sep en las noticias recogidas.",
+      "n": "Romeu Zema (Novo)",
+      "p": "2,1% en la primera vuelta en la AtlasIntel/Bloomberg del 10/Sep, su mayor valor en la ventana, y ADELANTE de Lula por 46,2% a 46,0% en un par de segunda vuelta, dentro del margen.",
+      "m": "0,15% en el contrato de ganador (vol USD 6,92M) y 0,80% en el contrato de tercer lugar de la primera vuelta, lectura confirmada del 11/Sep, 13:41 BRT.",
+      "t": "estable en el contrato de ganador, con el par de segunda vuelta recorriendo 6,5 puntos en once días dentro de la misma casa",
+      "s": "Sin acto individual nuevo el 11/Sep en la cobertura recogida.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "⭐ EL LIDERAZGO DEL CONTRATO DE GANADOR CAMBIÓ DE LADO, Y ES LA PRIMERA VEZ EN ESTA VENTANA: Flávio Bolsonaro está en 52,85% (vol USD 10,17M) y Lula en 43,50% (vol USD 10,46M), contra 46,25% y 52,50% en la lectura confirmada de ayer. Son 6,60pp de alza para uno y 9,00pp de caída para el otro, y la brecha de 6,25pp que ayer favorecía a Lula pasó a 9,35pp en la dirección opuesta. 📈 Los 52,85% son el punto más alto de la serie de Flávio Bolsonaro, que empieza el 14/Abr/2026 y tiene 506 lecturas registradas, por encima de los 45,80% de ayer. 📊 EL CONTRATO DE SEGUNDO LUGAR CONFIRMA EL MISMO CUADRO POR EL LADO CONTRARIO: Flávio cayó 7,00pp, hasta 71,50%, y Lula subió 4,90pp, hasta 24,50%, es decir el dinero pasó a ver como más probable que Lula termine la primera vuelta en segundo lugar. 🗳️ LA ENCUESTA DEL DÍA VA EN LA MISMA DIRECCIÓN, CON MUCHA MENOS INTENSIDAD: la PoderData/Aya mide 38% a 36% en la primera vuelta y 45% a 47% en la segunda, y la distancia de dos puntos cabe en dos márgenes de 1,8, lo que la convierte en empate técnico en los dos escenarios. Es el séptimo resultado nacional seguido desde el 06/Sep en que Lula no aparece por delante en el par de segunda vuelta. ⚠️ LAS DOS MAGNITUDES NO SE RESTAN: el precio es probabilidad de ganar la elección, la encuesta es intención de voto declarada, y lo que se puede decir es que hoy apuntan hacia el mismo lado. 📌 La distancia entre las dos, sin embargo, es el hallazgo: el mercado movió 15,60pp en la brecha en 24 horas y la encuesta mide dos puntos dentro del margen."
+  "cruzamento": "📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ POR SEGUNDO DÍA: Flávio Bolsonaro está en 53,95% (vol USD 10,36M) y Lula en 42,50% (vol USD 10,69M), contra 52,85% y 43,50% en la lectura confirmada del 10/Sep. Son 1,10pp de alza para uno y 1,00pp de caída para el otro, y la distancia pasó de 9,35pp a 11,45pp. ⚠️ EL TAMAÑO DEL MOVIMIENTO ES UNA DÉCIMA PARTE DEL DE AYER, cuando el libro recorrió 6,60pp y 9,00pp y cambió de liderazgo. Hoy sigue en la misma dirección, despacio. ⭐ LA ENCUESTA QUE ENTRA HOY PERMITE LA COMPARACIÓN MÁS LIMPIA DE LA SEMANA, porque es de la MISMA CASA que midió once días antes, con el mismo método y el mismo margen. En la AtlasIntel/Bloomberg, la ventaja de Lula en la [primera vuelta](/es/glossary#primeiro-turno) cayó de 9,7 puntos a 5,6: pasó de 43,4% a 43,0% y Flávio Bolsonaro pasó de 33,7% a 37,4%. 🔁 Y LOS CINCO PARES DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) SE MOVIERON TODOS EN LA MISMA DIRECCIÓN, dos de ellos invirtiendo el signo: contra Flávio, de 47,1% a 42,6% hacia 46,4% a 46,2%; contra Romeu Zema, de 47,0% a 40,7% hacia 46,2% a 46,0%; contra Ronaldo Caiado, de 46,6% a 41,0% hacia un empate exacto en 45,7%; contra Renan Santos, de 47,5% a 26,0% hacia 46,0% a 33,8%. Los tres primeros caben dentro de dos márgenes de 1,0, así que son empates técnicos. 📌 DONDE LOS DOS INSTRUMENTOS DIVERGEN ES EN EL TAMAÑO, NO EN LA DIRECCIÓN. El libro marca 11,45pp de distancia entre los dos primeros, mientras la casa con el menor margen de la ventana mide dos décimas en el par directo. 🥉 EN EL CONTRATO DE TERCER LUGAR la distancia más que se duplicó: Augusto Cury subió 3,65pp, hasta 52,90%, y Renan Santos cayó 4,00pp, hasta 38,50%, con el vano pasando de 6,75pp a 14,40pp. 🏛️ EL CONTRATO DE SALIDA DE UN MINISTRO DEL SUPREMO POR DESTITUCIÓN ANTES DE 2027 CASI SE DUPLICÓ, de 4,35% a 8,30% (vol USD 90 mil), un alza de 3,95pp, al día siguiente de la caída del secreto del caso Master. Sigue 11,00pp por debajo del techo de la serie, de 19,30% el 04/Sep, y el volumen de USD 90 mil es lo bastante pequeño como para que órdenes aisladas muevan el precio. 🗳️ El contrato de mayoría en el Senado recibe precio nuevo, con Partido Liberal en 83,00% (vol USD 261 mil). ⏳ El calendario del TSE, ingerido hoy con 879 encuestas presidenciales en el archivo, apunta seis nacionales con divulgación prevista entre el 14 y el 16/Sep: Quaest y Nexus el 14/Sep, MDA e Indexa el 15/Sep, Datatrends y American Analytics el 16/Sep. Datafolha y Veritá cerraron campo hoy."
 }
