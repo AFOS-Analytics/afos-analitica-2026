@@ -363,6 +363,21 @@ As quatro réguas:
 
 **Método que funcionou em 25/Jul e evita o maior risco:** não redigitar o arquivo inteiro. Fornecer só o mapa `caminho -> tradução` e deixar o código copiar byte a byte tudo que não se traduz, abortando se algum caminho do mapa não existir na origem. Redigitar 52 KB de dado numérico para traduzir 86 campos cria risco sem necessidade.
 
+### 🚀 O ATALHO, criado em 11/Set/2026
+
+```bash
+npx tsx scripts/traduzir-dashboard-brz.ts --pendentes          # só lista o que falta
+npx tsx scripts/traduzir-dashboard-brz.ts --mapa=mapa.json     # herda, confere e escreve
+```
+
+Ele **herda a tradução de tudo que não mudou desde o `HEAD`** e **cobra pelo nome** só o que mudou. Medido na estreia: dos 117 textos da `analysis-criteriosa`, 70 tinham mudado e 47 eram idênticos aos de ontem. Ao todo herdou **177 campos por idioma** e cobrou 115.
+
+⛔ **Ele NÃO traduz.** Herda, cobra, confere e escreve. A tradução continua sendo feita **na sessão**, que é como a tradução do AFOS sempre foi feita. O mapa é `{ arquivo: { caminho: { en, es } } }`.
+
+🔴 **A HERANÇA É POR TEXTO, NUNCA POR CAMINHO, e a primeira versão errou isso.** Ela casava `polls[8].note` com `polls[8].note` de `HEAD`, e a rodada de estreia tinha removido 3 pesquisas vencidas e inserido 1 no topo: `polls[8]` passou a ser OUTRA pesquisa. Deu **358 pendências onde havia 115 mudanças reais**, e o modo perigoso do mesmo defeito seria herdar a tradução da pesquisa errada. **Índice de array não é identidade.** → `memory/feedback_fallback_por_indice_desfaz_a_protecao_da_chave_natural.md`
+
+🔢 **O gate numérico é o `compararNumeros` do projeto**, não uma segunda cópia da regra. Idioma que diverge num número **não é escrito**, e o `readLocalized` serve o pt-BR. Descarte sai com **código 0**, porque o fallback é decisão de projeto; **pendência sai com 1**, porque é trabalho a fazer.
+
 ⛔ **NÃO usar `scripts/translate-dashboard-json.ts`.** Ele chama uma conta de API avulsa, que **nunca** foi o caminho da tradução do AFOS. Se ele for executado e falhar com `SEM CRÉDITO`, isso **não é um bloqueio nem uma pendência do André**: é a ferramenta errada. Traduzir na sessão e seguir. ⛔ **NÃO sugerir recarregar crédito, NÃO citar saldo, NÃO listar isso como pendência e NÃO reabrir o assunto**, que o André encerrou em 25/Jul e reafirmou em 26/Jul. Regra completa em `memory/feedback_openrouter_key_e_do_chatbot_nao_da_traducao.md`.
 
 **Gate numérico, não negociável:** a tradução nunca pode alterar um número. O script compara o multiconjunto de valores com unidade (%, pp, USD) de cada string. Divergiu, o arquivo daquele idioma **não é escrito** e o `readLocalized` (`lib/dashboard/static-data.ts`) devolve o pt-BR. Melhor servir português do que publicar número traduzido errado: tradução é hoje a maior fonte de defeito do pipeline (37 defeitos na daily de 24/Jul, incluindo vírgula decimal escapando no TL;DR do inglês).
