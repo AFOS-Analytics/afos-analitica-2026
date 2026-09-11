@@ -35,6 +35,8 @@
     "imprensa:usa": "node scripts/rodada-us-imprensa.mjs",
     "janelas:usa": "node scripts/projetar-janela-us.mjs --comparar=30,45,60,90",
     "pesquisas:brz": "node scripts/rodada-tse-brz.mjs",
+    "sonda:brz": "tsx scripts/sondar-arquivo-tse.ts",
+    "fantasmas:brz": "tsx scripts/diff-tse-arquivo-vs-banco.ts",
     "espelho:brz": "node scripts/espelho-brz.mjs"
   },
   "dependencies": {

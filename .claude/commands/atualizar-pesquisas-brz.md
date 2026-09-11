@@ -26,11 +26,44 @@ npm run pesquisas:brz                             # ENSAIO, não grava nada
 node scripts/rodada-tse-brz.mjs --apply           # grava, relata e confere o RÓTULO
 ```
 
-Ele encadeia ingestão, relatório e conferidor de escopo, e preserva o ensaio: **sem `--apply` ele para depois de listar o que entraria**, sem rodar os passos 2 e 3. O motivo não é cerimônia: o relatório lê a API e o Neon, então rodá-lo sobre um ensaio mostraria o banco **sem** as linhas recém-listadas, um retrato que não é o de antes nem o de depois.
+Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fechamento, e preserva o ensaio: **sem `--apply` ele para depois de listar o que entraria**, sem rodar os passos 2, 3 e 4. O motivo não é cerimônia: o relatório lê a API e o Neon, então rodá-lo sobre um ensaio mostraria o banco **sem** as linhas recém-listadas, um retrato que não é o de antes nem o de depois.
 
 🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, quer dizer GRAVE no calendário vivo, e não desfaz a ingestão: o número está certo e quem não se sustenta é o rótulo de nacional.
 
 ⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
+
+## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
+
+🔴 **Por que ela existe:** em 10/Set a mesma URL do TSE devolveu **851 e 863 alternando**. Uma retirada foi publicada como fato, depois desafirmada, e as duas vezes com **UMA leitura**. A dupla contagem resolveu o caso, mas ela só fala **depois** de gravar.
+
+⭐ **O que tornou a repetição barata**, medido em 11/Set daqui, mesma URL e mesmo cliente:
+
+| método | resposta |
+|---|---|
+| `HEAD` | **403** |
+| `GET` | 200, ZIP inteiro, 3,8 MB |
+| `GET` com `Range: bytes=0-0` | **206**, com `content-range` e `etag` |
+
+Ou seja, **o corte da borda é também por MÉTODO**, não só por origem de rede. E o `Range` custa **um byte** e devolve o par que identifica o retrato, porque o ETag do Apache codifica tamanho e mtime.
+
+```bash
+npm run sonda:brz                                  # 5 leituras de 1 byte
+npm run sonda:brz -- --leituras=11 --baixar        # + ZIP inteiro, sha256 e contagem
+node scripts/rodada-tse-brz.mjs --apply --leituras=11
+node scripts/rodada-tse-brz.mjs --apply --sem-sonda    # ⛔ só com motivo
+```
+
+🔑 **Os dois passos medem coisas diferentes.** O **0** pergunta se a fonte serve dois retratos AGORA e **PARA o `--apply`**, porque o total que a rodada grava vira o "ontem" contra o qual tudo se mede amanhã. O **4** pergunta se ela trocou **durante** a rodada, que é a janela em que o download aconteceu, e só AVISA, porque ali já está gravado e a ingestão é aditiva.
+
+⚠️ **Saída 2 é a fonte em trânsito, manda ESPERAR. Saída 1 é a borda recusando, manda ir ao modo ARQUIVO.** Não são a mesma coisa e pedem ações opostas.
+
+⚠️ **E concordância não é prova:** leituras seguidas podem cair no mesmo nó. Ela vale por ser n leituras em vez de uma, e `--baixar` é o único passo que fala dos **bytes** que entram, em vez de um cabeçalho.
+
+## 👻 O CONJUNTO de fantasmas, criado em 11/Set/2026
+
+O `historico-arquivo.jsonl` guarda **quantos** fantasmas existem e nunca **quais**. Em 11/Set as duas contas concordaram em 1 retirada nova e o protocolo dela teve de ser **deduzido**. Agora o `--apply` também anota o conjunto em `data/tse/fantasmas.jsonl`, e a retirada sai **por nome**.
+
+⭐ **E o conjunto responde o que a contagem não responde:** 80 para 81 também é compatível com **duas saírem e uma voltar**. A subtração dá 1 nos dois casos, e só o conjunto separa. Teste: `node scripts/testar-tse-fantasmas.mjs`, 21 asserções.
 
 ## Passo 1: ingerir daqui, com ENSAIO antes
 

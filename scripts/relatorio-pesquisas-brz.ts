@@ -205,8 +205,14 @@ async function main() {
   const vencidaFant = vencidaNac.filter(ehFantasma)
   console.log(`\n⏳ NACIONAIS com divulgação já vencida na janela: ${vencidaNac.length}`)
   console.log(`   destas, fora do registro do TSE: ${vencidaFant.length}`)
+  // 🕳️ Quando NENHUMA saiu do registro, o texto "X, não X" saía com o mesmo
+  // número dos dois lados e lia como defeito de conta, justamente na linha que
+  // existe para a conta ser confiável. Zero fantasma é resultado, e o relato
+  // dele é outro. Achado lendo a saída em 11/Set/2026.
   console.log(
-    `   🔑 conta honesta de "registrada e não divulgada": ${vencidaNac.length - vencidaFant.length}, não ${vencidaNac.length}. Cancelamento não é sonegação.`,
+    vencidaFant.length === 0
+      ? `   🔑 conta honesta de "registrada e não divulgada": ${vencidaNac.length}, e nenhuma delas foi cancelada. Cancelamento não é sonegação.`
+      : `   🔑 conta honesta de "registrada e não divulgada": ${vencidaNac.length - vencidaFant.length}, não ${vencidaNac.length}. Cancelamento não é sonegação.`,
   )
 
   const institutos: Record<string, number> = {}

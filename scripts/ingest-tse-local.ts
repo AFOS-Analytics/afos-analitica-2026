@@ -54,6 +54,14 @@ import {
   formatarComparacao,
   serializar,
 } from './lib/tse-historico.mjs'
+import {
+  CAMINHO_FANTASMAS,
+  lerFantasmas,
+  ultimoFantasmas,
+  compararFantasmas,
+  formatarFantasmas,
+  serializarFantasmas,
+} from './lib/tse-fantasmas.mjs'
 
 // 🔴 `lib/tse/persist` importa `lib/db`, que resolve a DATABASE_URL NO MOMENTO
 // EM QUE É CARREGADO. Importado no topo, ele carrega antes do dotenv rodar e o
@@ -243,6 +251,29 @@ async function main() {
       mkdirSync(dirname(CAMINHO_HISTORICO), { recursive: true })
       appendFileSync(CAMINHO_HISTORICO, serializar(registro))
       console.log(`   📓 rodada anotada em ${CAMINHO_HISTORICO}`)
+
+      // 👻 E o CONJUNTO, não só a contagem.
+      //
+      // 🔴 Em 11/Set/2026 as duas contas concordaram em 1 retirada nova e o
+      // PROTOCOLO dela teve de ser deduzido, porque a lista de ontem não
+      // existia em disco. A dedução estava certa e continua sendo dedução, na
+      // hora exata de publicar um nome próprio. Aqui o nome sai medido.
+      //
+      // ⭐ E o conjunto responde o que a contagem não responde: 80 → 81 também
+      // é compatível com duas saírem e uma voltar. Só o conjunto separa.
+      // Este é o ÚNICO escritor de fantasmas.jsonl, de propósito.
+      // → memory/feedback_dois_scripts_escrevem_o_mesmo_artefato_e_o_nome_engana.md
+      const registroFantasmas = { quando: registro.quando, total: fora.length, protocolos: [...fora].sort() }
+      const anteriorFantasmas = ultimoFantasmas(
+        lerFantasmas(existsSync(CAMINHO_FANTASMAS) ? readFileSync(CAMINHO_FANTASMAS, 'utf8') : ''),
+      )
+      const comparacaoFantasmas = compararFantasmas(anteriorFantasmas, registroFantasmas.protocolos)
+      for (const linha of formatarFantasmas(anteriorFantasmas, comparacaoFantasmas)) {
+        console.log(linha)
+      }
+      mkdirSync(dirname(CAMINHO_FANTASMAS), { recursive: true })
+      appendFileSync(CAMINHO_FANTASMAS, serializarFantasmas(registroFantasmas))
+      console.log(`   📓 conjunto anotado em ${CAMINHO_FANTASMAS}`)
     }
   }
 

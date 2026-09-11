@@ -11,6 +11,15 @@ import JSZip from 'jszip'
 const TSE_CDN = 'https://cdn.tse.jus.br/estatistica/sead/odsele/pesquisa_eleitoral'
 const CURRENT_YEAR = 2026
 
+/**
+ * A URL do ZIP do ano, exportada desde 11/Set/2026 para que a SONDA meça
+ * exatamente o endereço que a ingestão baixa. Uma segunda cópia da URL num
+ * script de conferência daria uma sonda que verifica outro arquivo sem ninguém
+ * perceber. → memory/feedback_duas_copias_da_mesma_regra.md
+ */
+export const urlZipTSE = (year: number = CURRENT_YEAR) =>
+  `${TSE_CDN}/pesquisa_eleitoral_${year}.zip`
+
 export interface TSEPoll {
   protocolo: string
   registroDate: string
@@ -70,7 +79,7 @@ export async function parseTSEZipBytes(
 }
 
 export async function fetchTSEPolls(year: number = CURRENT_YEAR): Promise<TSEPoll[]> {
-  const url = `${TSE_CDN}/pesquisa_eleitoral_${year}.zip`
+  const url = urlZipTSE(year)
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
