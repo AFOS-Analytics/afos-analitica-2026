@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-12",
-  "fetchedAt": "2026-09-12T00:34:07.172Z",
+  "fetchedAt": "2026-09-12T19:20:13.457Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,108 +113,108 @@
     }
   ],
   "qualidade": {
-    "lidos": 218,
-    "naLista": 96,
-    "foraDaLista": 122,
+    "lidos": 185,
+    "naLista": 101,
+    "foraDaLista": 84,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 18,
-    "veiculosRepresentados": 9,
+    "descartadosPorAcompanhamento": 21,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 52,
-    "publicadosComLinkCanonico": 5,
-    "publicadosViaGoogleNews": 5,
+    "lidosEmFeedProprio": 48,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Will Stark Warnings About AI Shape the Midterm Elections?",
-      "url": "https://www.nytimes.com/2026/09/11/us/politics/midterm-elections-trump-ai.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-11T22:21:17.000Z",
+      "titulo": "Trump political adviser is 'cautiously optimistic' about GOP in upcoming midterms",
+      "url": "https://thehill.com/homenews/administration/6086235-trump-adviser-gop-midterm-optimism/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-12T18:15:48.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Tracking Competitive Races in the House and Senate",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-11T22:18:18.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Convicted sex offender offered opening prayer at rally for GOP Senate nominee in North Carolina",
-      "url": "https://abcnews.com/Politics/wireStory/convicted-sex-offender-offered-opening-prayer-rally-gop-136378663",
-      "casa": "ABC News",
-      "publicadoEm": "2026-09-11T22:00:54.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Massachusetts Primary Results 2026: Senate, House and Governor",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE41RnMzSVhLcFlsQjVHNUEyNHVaV3ExUjR3ZXkxMDhkX1Y0NHZTNXdpTDFEdVRuTWFsNzZRMExTYVpCRTkxaUpjZWljbjJQLW9sTUNUb056QWFUeW1rRngtVHpybm05Z1JKVGNkeHQ4SmlMNFZOdlpwbkFtMmdLdw?oc=5",
-      "casa": "AP News",
-      "publicadoEm": "2026-09-11T21:12:34.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Republicans just opened the floodgates on spending for Ken Paxton",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQcGt1SnA2UGtiZ2trVDlBMkJHSnJYZXdJYzB5QVRKWl8tTGg0MG9RN2dTRmdELTQ1RS1QWHVNcjZVVGo1emR5dF9DT05pVU4wYzJKTmlieEZtV2tVRk9yNElIUDZNOHcwM0ZtNy1sZm51bUh6OUlHZzBicmQzcU0zN3NIZHU?oc=5",
+      "titulo": "GOP anxiety grows over North Carolina Senate race",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOeHlFeGF2R3hfeUF4VF9ycHU4eWFUYTRxTGlyQmMya0NKWGM4eUh4MFdTQ3FZcXpRM2pkT2xVTnQ0R1BzcnJiNnoyU29qV3d2SjB5VWktTktlX1lydk9rWjN1dWdJSFJjZGRMcTJtRVRYSUR2ZmdWNUNsazRmaThJNXZhNldsaWdLV2lLQTVMQ3ZLOTNZUDFmQXJR?oc=5",
       "casa": "Politico",
-      "publicadoEm": "2026-09-11T19:38:00.000Z",
+      "publicadoEm": "2026-09-12T18:00:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Ohio Senate campaign staffer used Nazi soldiers as profile photo",
-      "url": "https://www.washingtonpost.com/politics/2026/09/11/ohio-senate-campaign-staffer-used-nazi-soldiers-profile-photo/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-11T19:21:08.000Z",
+      "titulo": "Opinion | The Cult of Trump Is Waning",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNei1RbXpObzVpM0ZEcWt6TW5YN0hWZWdvdDBhLU11ejIxdklkN081NFl1MDM4a29sZkItbE0wVTl1SlVOZU5qWGczWW16cnUwVWhhemlsaDd3OV81eHZvX0FpQ1REM2lXNnpSd01sM2tXTGx5Q1ZXd3Faa29OTWtRbkwxbUFVMUtCNGNaMA?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-12T15:15:13.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Taxes wouldn’t fund $5,000 Trump ‘dividend’ if Republicans win midterms, says commerce secretary",
+      "url": "https://www.theguardian.com/us-news/2026/sep/12/trump-midterm-dividend-funding",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-12T14:38:25.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Ken Paxton dodges confrontation while slamming James Talarico as weak",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQOWtNWTc5bTJBNjNRMWhtUnhFVkNod1o5eWllemNOTXpMQWdFMWJGaGo2dkd0X1FhMUZEZnJjTkhCR0c3WkpDMjF4eUpXUEx5OG1OTXd1QUxGeWcxUlMtQTFRMWU2Vmg4YVBaOHBobVBnSFpfUUtyRk1oazNxYjZpQktnN1hGWng2c1NCNm9VS2RnVHQyQjBrRVR0S1QyYTdwMy1McFZjcUR0R21NVlBLRU9PNzFLa0pmcFE?oc=5",
+      "titulo": "Top Trump political adviser James Blair says he’s ‘cautiously optimistic’ about midterms",
+      "url": "https://www.nbcnews.com/politics/2026-election/trump-james-blair-cautiously-optimistic-midterms-scoop-podcast-rcna596830",
       "casa": "NBC News",
-      "publicadoEm": "2026-09-11T17:24:55.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Reporter's Notebook: Countdown is on as Senate races to pass crypto, college sports bills",
-      "url": "https://www.foxnews.com/politics/reporters-notebook-countdown-senate-races-pass-crypto-college-sports-bills",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-11T17:11:43.000Z",
+      "publicadoEm": "2026-09-12T13:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump floats $5,000 checks 'if the Republicans win'. Is that a bribe?",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOWjRGUXhoSk1nSXZOVEhMUU5pSk53NU1ULURWcUotOXhmMDJwR2hkV2R2MXNoSXg2a0c5QVQ2V01yYnJjUU9HcjcwZlFrSkltS1RVV3VnZjN3NWp1YUZ6cDhNVTlFUV9jbnAyVGRCTG5kdGh4dTFHT3R2eGJ1ZVpjcUZBVjNESGxoX1ZhcUttcmJzNC1sN3ltcXpYakZjcWZKWEM0?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-09-11T15:17:00.000Z",
+      "titulo": "As MAGA Inc. begins to spend on Senate races, super PAC chief says he’s ‘cautiously optimistic’ about midterms",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSFRiUkRsd0Z6TWQwWDdsZW95RHFRNmVzYnFPUkU4c2ZyUGVvM1doSFR2SU5rSFh4RmNvdnJOWk1kX1VJLU93LVRFVkVSYVlhUDVPbDVBVWJYb05ZVnpMTTZ2WVBPdzIxdDFTeWYyclNZUlR4bXV6aUl0aVdPMzNMMlVGWFZONlJ5dmdaa0s0dEYxbGJSMUUxLU5xalRQeGhZVTJ1Q2d4a2ZJaVMxa2k0eFYxNkVNRTVYYVRGOQ?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-12T13:00:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Week in politics: Trump attends Republican midterm convention and Pentagon's 9/11 memorial service",
+      "url": "https://www.npr.org/2026/09/12/nx-s1-5965782/week-in-politics-trump-attends-republican-midterm-convention-and-pentagons-9-11-memorial-service",
+      "casa": "NPR",
+      "publicadoEm": "2026-09-12T12:04:21.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats are within striking distance in the Senate, but shouldn't celebrate yet",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOQ1lqcmNvbnJ1VEtQZThwS1pVYlJIWkh5QWpqckV3aExuc2lwTVRRZjNNUHRIMTdqYzkzZ20yVGR6Uk16SU1iQlluSlFmN0Z1WTZjYngzZzl1SU1BbTEtdWNMQl9NbGRlODJGeFEtZWFadk5RalotYkEtSkw0Z2FsZDhhSUZteUpueVdEQlNJYkhZaE9hbFFrS2ZIbEfSAaIBQVVfeXFMT3cyTXhsbXd1ajFpdS05dGpIUnp0RzlxaDU4cXhGSS1XT3NUOUNDclN3OGZFY1hRc3JEY3hVaGFoN1E2TnlsSEVLejdJZ0hrRkNzQTUzd004SXpyVmgtemVSa25ObzhsU1FLSjl3TU1ka0hZVmlJTHVhaENodmpTZjRTQ3JvNGRaVW5jcUhTeTRDQnJlZlpidi1LMThZT2hfa0tR?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-12T12:00:59.000Z",
       "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Remembering 9/11. And, Vance, Trump urge voters to back Republicans in the midterms",
-      "url": "https://www.npr.org/2026/09/11/g-s1-142846/up-first-newsletter-september-11-remembrance-republican-midterm-convention-scotus-missouri-redistricting",
-      "casa": "NPR",
-      "publicadoEm": "2026-09-11T11:55:49.000Z",
+      "titulo": "White House unloads on violent ‘criminal alien’ nabbed after investigators uncover election offense",
+      "url": "https://www.foxnews.com/politics/white-house-rips-violent-criminal-alien-nabbed-after-investigators-uncover-election-offense",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-12T12:00:13.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Inflation Complicates Trump’s Midterms Pitch to Voters",
+      "url": "https://www.nytimes.com/2026/09/12/us/politics/trump-inflation-midterms.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-12T09:04:04.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
