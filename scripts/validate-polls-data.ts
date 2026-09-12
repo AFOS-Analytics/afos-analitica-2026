@@ -132,42 +132,29 @@ if (data.polymarketComparison !== undefined) {
 // Isto é um WARNING, não um erro: superlativo pode ser legítimo, mas tem que ser CONFERIDO
 // contra a série completa (/api/market/history) antes de publicar. Ver
 // memory/project_bug_dashboard_widest_of_cycle_20jul.md
-const SUPERLATIVOS = /\b(a mais larga|o mais largo|a mais estreita|a maior|o maior|a menor|o menor|recorde|in[ée]dit[oa]|pela primeira vez|nunca ante[sr]|teto|piso hist[óo]rico)\b/gi
-
-// ⚠️ ESCOPO TEMPORAL é o PERIGOSO, e o contra-intuitivo desta regra.
-// A frase que causou o incidente ("a mais larga DO CICLO") DECLARAVA janela. Declarar
-// escopo não torna a afirmação verdadeira, só a torna checável. Escopo temporal exige
-// varrer a SÉRIE INTEIRA (/api/market/history em 2 janelas, o cap de 1000 pontos trunca
-// days=90) ou o histórico de pesquisas no Neon, que NÃO está no polls-data.json: o arquivo
-// só guarda 30 dias. Por isso "do ciclo" sempre alerta.
-const ESCOPO_TEMPORAL = /\b(do ciclo|do ano|da s[ée]rie|hist[óo]ric[oa]|de todos os tempos|at[ée] aqui|em qualquer)\b/i
-// Escopo interno ao documento se confere na própria frase (ex.: "a maior do páreo" dentro
-// de uma pesquisa, "a maior variação do painel" dentro do mesmo pregão). Risco menor.
-// ⚠️ 23/Ago/2026: esta regex reprovou QUATRO frases que DECLARAVAM escopo, e todas as quatro
-// falharam na PREPOSICAO: o texto dizia "NO recorte de 30 dias", "NO painel", "NA janela", e a
-// lista so aceitava "DO recorte", "DO painel". Portao que acusa frase correta ensina alguem a
-// ignorar o portao. Agora a preposicao e livre (d[eoa]|n[oa]) e entram as formas de escopo que
-// a casa de fato escreve. O que NAO entra continua nao entrando: superlativo solto reprova.
-const ESCOPO_LOCAL = new RegExp(
-  '\\b[dn][oa]s? (p[áa]reo|painel|book|rodada|recorte|janela|semana|dia|m[êe]s|levantamento|livro|quadro|calend[áa]rio)\\b'
-  + '|\\b(desta|nesta|nessa|dessa) (pesquisa|leitura|rodada|janela|edi[çc][ãa]o|tabela)\\b'
-  + '|\\bentre (as|os|essas|esses|estas|estes)\\b'
-  + '|\\bdesde \\d'
-  + '|\\bnas [úu]ltimas\\b'
-  + '|\\bem \\d+ dias\\b'
-  + '|\\bem (janeiro|fevereiro|mar[çc]o|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro)\\b'
-  , 'i')
+// 🔴 12/Set/2026: A RÉGUA SAIU DAQUI e virou `lib/superlativo`.
+//
+// Ela vivia inteira neste script e varria SÓ o painel. A AFOS Daily, que vai a
+// três idiomas e ao broadcast, não tinha varredura nenhuma, e em 11/Set foi ao
+// ar afirmando "o ponto mais alto da série" com o topo real 1,15pp acima. Duas
+// cópias da mesma regra convivem até o dia em que alguém mede, então aqui não
+// ficou uma segunda cópia: ficou uma importação.
+//
+// ⚠️ E o VOCABULÁRIO cresceu na mudança, de propósito. A lista antiga conhecia
+// "a maior" e "o maior" e NÃO conhecia "mais alto", então a frase de 11/Set
+// produzia ZERO alerta: o escopo temporal casava e o superlativo não. Este
+// script passa a acusar MAIS do que acusava, e isso é o conserto, não regressão.
+//
+// O import fica aqui, colado na regra que ele serve, em vez de no topo, porque
+// é aqui que o leitor procura quando o alerta dispara.
+import { acharSuperlativos } from '../lib/superlativo'
 
 function checarSuperlativos(texto: unknown, label: string) {
-  if (typeof texto !== 'string') return
-  for (const frase of texto.split(/(?<=[.!?;])\s+/)) {
-    const achados = frase.match(SUPERLATIVOS)
-    if (!achados) continue
-    const trecho = frase.trim().slice(0, 110)
-    if (ESCOPO_TEMPORAL.test(frase)) {
-      warnings.push(`🔴 ${label}: superlativo "${achados[0]}" com ESCOPO TEMPORAL. Exige varrer a série COMPLETA (não a janela recente, não os 30 dias deste arquivo). Frase: "${trecho}"`)
-    } else if (!ESCOPO_LOCAL.test(frase)) {
-      warnings.push(`${label}: superlativo "${achados[0]}" sem escopo declarado. Declare a janela ou confira. Frase: "${trecho}"`)
+  for (const a of acharSuperlativos(texto)) {
+    if (a.escopo === 'temporal') {
+      warnings.push(`🔴 ${label}: superlativo "${a.termo}" com ESCOPO TEMPORAL. Exige varrer a série COMPLETA (não a janela recente, não os 30 dias deste arquivo). Frase: "${a.frase}"`)
+    } else {
+      warnings.push(`${label}: superlativo "${a.termo}" sem escopo declarado. Declare a janela ou confira. Frase: "${a.frase}"`)
     }
   }
 }

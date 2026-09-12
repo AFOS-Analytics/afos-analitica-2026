@@ -6,6 +6,8 @@
  *  - warning: relata mas não bloqueia
  */
 
+import { acharSuperlativos, LINHA_DE_METADADO } from '../superlativo'
+
 export type ViolationSeverity = 'error' | 'warning'
 
 export interface Violation {
@@ -300,6 +302,59 @@ export function validateBody(body: string, locale?: string): Violation[] {
       severity: 'warning',
       rule: 'lede-volume-total-missing',
       detail: 'O Lede não cita o volume TOTAL acumulado do mercado presidencial (~USD XXM). Regra 14/Jun: incluir o total agregado no Lede como assinatura de "dinheiro real" (apenas o total, não volumes por candidato).',
+    })
+  }
+
+  // W10. SUPERLATIVO que exige conferência. A régua mora em lib/superlativo.
+  //
+  // 🔴 A daily era a ÚNICA superfície editorial sem esta varredura. O painel
+  // tem a dele desde 20/Jul, em scripts/validate-polls-data.ts, e a daily, que
+  // vai a três idiomas e ao broadcast, não tinha nenhuma. A ficha de 05/Set já
+  // dizia por escrito que nenhum gate da casa reprova afirmação de superlativo,
+  // e em 11/Set foi ao ar "os 53,95% são o ponto mais alto da série" com o topo
+  // real em 55,10% de 10/Set. Passou por todos os portões porque o número
+  // estava internamente coerente: o defeito era a AFIRMAÇÃO, não a forma.
+  //
+  // ⚖️ POR QUE WARNING E NÃO ERROR, e quem decide é o número, não o gosto.
+  // Medido em 12/Set nas 143 dailies pt-BR publicadas: 48,3% contêm superlativo
+  // com escopo temporal e 76,9% contêm superlativo sem escopo. Um error
+  // bloquearia metade das peças, e portão que morde metade dos dias é portão
+  // que se aprende a pular. Este aviso NOMEIA a frase e o comando que a
+  // confere; o portão que morde é a conferência contra a série, que precisa de
+  // banco e por isso não cabe num validador textual.
+  //
+  // ⚠️ Linhas de METADADO do frontmatter ficam fora, mas lede e tldr NÃO: eles
+  // são prosa publicada, e em 11/Set a frase falsa estava justamente no tldr.
+  const textoAfirmativo = body
+    .split('\n')
+    .filter((l) => !LINHA_DE_METADADO.test(l))
+    .join('\n')
+  const achadosSuperlativo = acharSuperlativos(textoAfirmativo)
+  const temporais = achadosSuperlativo.filter((s) => s.escopo === 'temporal')
+  const semEscopo = achadosSuperlativo.filter((s) => s.escopo === 'ausente')
+  const amostra = (lista: typeof achadosSuperlativo) =>
+    lista.slice(0, 3).map((s) => `[${s.termo}] "${s.frase}"`).join(' | ')
+
+  if (temporais.length > 0) {
+    violations.push({
+      severity: 'warning',
+      rule: 'superlativo-escopo-temporal',
+      detail:
+        `${temporais.length} afirmação(ões) de extremo com ESCOPO TEMPORAL. Conferir na SÉRIE INTEIRA antes de publicar: ` +
+        `npx tsx scripts/check-superlativo.ts "{candidato}". ` +
+        `⚠️ Conferir por FECHAMENTO de dia não vale, porque o fechamento esconde topo e piso: o extremo dura horas. ` +
+        amostra(temporais),
+    })
+  }
+
+  if (semEscopo.length > 0) {
+    violations.push({
+      severity: 'warning',
+      rule: 'superlativo-sem-escopo',
+      detail:
+        `${semEscopo.length} superlativo(s) sem janela declarada. "A maior" sem janela vira "do ciclo" na cabeça de quem lê. ` +
+        `Declarar a janela, ou trocar por formulação que não possa ser desmentida ("alta no dia", "acima da semana passada"). ` +
+        amostra(semEscopo),
     })
   }
 
