@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-11",
+  "lastUpdate": "2026-09-12",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,87 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Datafolha",
+      "date": "2026-09-11",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-01833/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-09-08 a 2026-09-10",
+      "note": "Datafolha nacional divulgada el 11/Sep, campo del 08 al 10/Sep, registro BR-01833/2026 en el TSE, 2.002 entrevistas presenciales, margen de 2,0pp y 95% de confianza, contratada por Folha de S.Paulo y Globo (Folha de S.Paulo, G1, O Globo, Valor Econômico, Estadão, CNN Brasil, Poder360, Metrópoles, Gazeta do Povo y Brasil de Fato). ⭐ ROMPE UNA SERIE DE OCHO: en el par de segunda vuelta Lula aparece adelante por 46% a 44%, y eran ocho nacionales seguidas desde el 06/Sep en que no aparecía adelante contra Flávio Bolsonaro. ⚠️ La diferencia de 2 puntos cabe en un margen de 2,0, así que lo que la casa mide es EMPATE TÉCNICO y no liderazgo, y los 4 puntos de la primera vuelta caben en dos márgenes. 🔁 DENTRO DE LA PROPIA CASA EL PAR ESTÁ QUIETO: 47% a 43% el 21/Ago, 46% a 44% el 03/Sep y 46% a 44% en esta ronda, tres lecturas en que el par recorrió 1 punto de cada lado. 🗳️ En los otros cuatro pares probados Lula gana todos, y en tres de ellos la distancia queda fuera del margen: 45% a 43% contra Augusto Cury, que es otro empate técnico, 46% a 41% contra Ronaldo Caiado, 48% a 39% contra Romeu Zema y 48% a 37% contra Renan Santos. 📊 En votos válidos en la primera vuelta la casa registra 43% contra 38%. 📌 La ronda también mide 46% de rechazo para Lula y 46% para Flávio Bolsonaro, y 75% de electores que se dicen decididos contra 25% que aún pueden cambiar.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 35
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Augusto Cury",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 41
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Romeu Zema",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 48,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        }
+      ],
+      "source": "Folha de S.Paulo, G1, O Globo, Valor Econômico, Estadão, CNN Brasil, Poder360, Metrópoles, Gazeta do Povo y Brasil de Fato (11/Sep/2026)"
+    },
     {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-09-10",
@@ -2108,85 +2189,85 @@
     "lastUpdate": "01/09/2026, 20:34"
   },
   "polymarketComparison": {
-    "note": "Precios del Polymarket con el libro presidencial en USD 148,03M, lectura confirmada del 11/Sep, 13:41 BRT (16:41 UTC). 📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ POR SEGUNDO DÍA: Flávio Bolsonaro está en 53,95% (vol USD 10,36M) y Lula en 42,50% (vol USD 10,69M), contra 52,85% y 43,50% en la lectura confirmada del 10/Sep. Son 1,10pp de alza para el primero y 1,00pp de caída para el segundo, y la distancia entre ambos pasó de 9,35pp a 11,45pp. ⭐ Y EL 53,95% QUEDA 1,15pp POR DEBAJO DEL TECHO DE SU SERIE, de 55,10% el 10/Sep, aunque por encima del 52,85% de la lectura confirmada de ayer. Lula, en 42,50%, está 25,00pp por debajo de su propio techo, de 67,50% el 16/Ago. 📊 EN EL CONTRATO DE SEGUNDO LUGAR DE LA PRIMERA VUELTA el movimiento es el inverso al de ayer: Flávio subió 3,00pp, hasta 74,50% (vol USD 725 mil), y Lula cayó 1,60pp, hasta 22,90% (vol USD 601 mil). Ayer este contrato se había movido a favor de Lula. 🥉 EN EL CONTRATO DE TERCER LUGAR la distancia más que se duplicó: Augusto Cury subió 3,65pp, hasta 52,90% (vol USD 160 mil), y Renan Santos cayó 4,00pp, hasta 38,50% (vol USD 297 mil), con el vano pasando de 6,75pp a 14,40pp. 🏛️ EL CONTRATO DE SALIDA DE UN MINISTRO DEL SUPREMO POR DESTITUCIÓN ANTES DE 2027 CASI SE DUPLICÓ, de 4,35% a 8,30% (vol USD 90 mil), un alza de 3,95pp. Sigue 17,80pp por debajo del techo de la serie, de 26,10% registrado el propio 11/Sep a las 05:00 BRT. 🗳️ El contrato de mayoría en el Senado recibe precio nuevo en esta ronda, con Partido Liberal en 83,00% (vol USD 261 mil) y el MDB en 9,05%. ⚠️ Los precios de esta página son de la lectura de las 13:41 BRT, que es POSTERIOR a la divulgación, en la mañana del 11/Sep, de que el senador Flávio Bolsonaro es investigado desde julio en el caso Dark Horse. AFOS registra el orden de los hechos y no atribuye causa al precio.",
-    "sources": "Precios del Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato por contrato, y el 11/Sep se confirmaron los cinco contratos vigilados: ganador, segundo lugar de la primera vuelta, tercer lugar de la primera vuelta, destitución en el Supremo y mayoría en el Senado. Encuestas registradas en el TSE y divulgadas por los institutos, con reportería de Poder360, Gazeta do Povo, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, CNN Brasil, Metrópoles, JOTA, VEJA, CartaCapital, Exame, UOL, Jovem Pan, Brasil de Fato y Congresso em Foco. El calendario de encuestas en campo y de divulgación prevista sale del registro oficial del TSE, ingerido el 11/Sep con 879 encuestas presidenciales en el archivo. El superlativo de serie se verifica contra la serie guardada en el respaldo, nunca contra la API.",
+    "note": "Precios del Polymarket con el libro presidencial en USD 148,77M, lectura confirmada del 12/Sep, 13:10 BRT (16:10 UTC). 📉 EL VANO DEL CONTRATO DE GANADOR SE CERRÓ 10,00pp EN UN DÍA: Flávio Bolsonaro está en 49,95% (vol USD 10,47M) y Lula en 48,50% (vol USD 10,81M), contra 53,95% y 42,50% en la lectura confirmada del 11/Sep. Son 4,00pp de caída para el primero y 6,00pp de alza para el segundo, y la distancia entre ambos pasó de 11,45pp a 1,45pp. ⚠️ Ninguno de los dos precios es extremo de la serie: el 49,95% queda 5,15pp por debajo del techo de Flávio, de 55,10% el 10/Sep, y el 48,50% queda 19,00pp por debajo del techo de Lula, de 67,50% el 16/Ago. 🥉 EN EL CONTRATO DE TERCER LUGAR Augusto Cury subió 2,90pp, hasta 55,80% (vol USD 173 mil), Renan Santos cayó 1,50pp, hasta 37,00% (vol USD 299 mil), y Ronaldo Caiado subió 3,00pp, hasta 8,00%. 🏛️ EL CONTRATO DE SALIDA DE UN MINISTRO DEL SUPREMO POR DESTITUCIÓN ANTES DE 2027 CEDIÓ 1,60pp, de 8,30% a 6,70% (vol USD 90 mil). Sigue 19,40pp por debajo del techo de la serie, de 26,10% registrado el 11/Sep a las 05:00 BRT. 🗳️ En el contrato de mayoría en el Senado el Partido Liberal subió 1,00pp, hasta 84,00% (vol USD 261 mil), con el MDB en 9,40%. 📌 El contrato de segundo lugar de la primera vuelta no publica precio nuevo en esta ronda. ⚠️ Los precios de esta página son de la lectura de las 13:10 BRT del 12/Sep, día en que Edson Fachin negó el pedido de Alexandre de Moraes de juicio conjunto con André Mendonça y marcó sesiones separadas para el 15 y el 23/Sep. AFOS registra el orden de los hechos y no atribuye causa al precio.",
+    "sources": "Precios del Polymarket vía el proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato a contrato, y el 12/Sep confirmaron cuatro de los cinco contratos vigilados: ganador, tercer lugar de la primera vuelta, destitución en el Supremo y mayoría en el Senado. El contrato de segundo lugar de la primera vuelta no publica precio nuevo en esta ronda. Encuestas registradas en el TSE y divulgadas por los institutos, con reportaje de Poder360, Gazeta do Povo, G1, Folha de S.Paulo, O Globo, Estadão, Valor Econômico, CNN Brasil, Metrópoles, JOTA, VEJA, CartaCapital, Exame, UOL, Jovem Pan, Brasil de Fato y Congresso em Foco. El calendario de encuestas en campo y de divulgación prevista sale del registro oficial del TSE, leído el 12/Sep con 879 encuestas presidenciales en el archivo. El superlativo de serie se verifica contra la serie grabada en el backup, nunca contra la API.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 43,
-        "odds": 42.5,
-        "value": 42.5,
-        "polymarket": "42,50%",
+        "percentage": 39,
+        "odds": 48.5,
+        "value": 48.5,
+        "polymarket": "48,50%",
         "pesquisaRange": "34% a 43%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "LA REFERENCIA DE ESTE CAMPO PASA A SER LA ATLASINTEL/BLOOMBERG del 10/Sep, campo del 04 al 09/Sep, 5.000 entrevistas y margen de 1,0pp, que es la mayor muestra y el menor margen de la ventana. Ayer el campo traía el 38% de la PoderData/Aya, así que la diferencia entre 38% y 43% es cambio de casa, no movimiento de opinión. Lo que la MISMA casa mide en once días es lo siguiente: pasó de 43,4% a 43,0% en la primera vuelta, y su ventaja sobre el segundo cayó de 9,7 puntos a 5,6. En la segunda vuelta contra Flávio Bolsonaro iba 47,1% a 42,6% el 31/Ago y ahora aparece detrás por 46,4% a 46,2%, una diferencia que cabe dentro de dos márgenes de 1,0 y por lo tanto es empate técnico. En la ventana entera desde el 06/Sep va de 34% en Gerp a 43% en esta AtlasIntel, nueve puntos de dispersión entre ocho casas. Y son OCHO encuestas nacionales seguidas en las que no aparece adelante en el par contra Flávio Bolsonaro.",
-        "tendenciaPolymarket": "CAE 1,00pp contra la lectura confirmada del 10/Sep, de 43,50% a 42,50%, en el segundo día seguido de caída. La distancia hacia el primero pasó de 9,35pp a 11,45pp. Está 25,00pp por debajo de su propio techo, de 67,50% el 16/Ago, con USD 10,69M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta CAYÓ 1,60pp y está en 22,90%."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep, campo del 08 al 10/Sep y margen de 2,0pp, tiene 39% en la primera vuelta y 46% en el par de segunda vuelta contra Flávio Bolsonaro. Es la primera nacional desde el 06/Sep en que vuelve a aparecer adelante en ese par, tras ocho seguidas en que no aparecía. ⚠️ La diferencia de 2 puntos cabe en un margen, así que la casa mide empate técnico. Dentro de la propia Datafolha el par está quieto: 47% a 43% el 21/Ago, 46% a 44% el 03/Sep y 46% a 44% ahora.",
+        "tendenciaPolymarket": "SUBE 6,00pp contra la lectura confirmada del 11/Sep, de 42,50% a 48,50%, el mayor alza de cualquier contrato del panel en esta ronda, y queda 19,00pp por debajo del techo de su serie, de 67,50% el 16/Ago. USD 10,81M acumulados en su contrato. El contrato de segundo lugar de la primera vuelta no publica precio nuevo hoy."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 37.4,
-        "odds": 53.95,
-        "value": 53.95,
-        "polymarket": "53,95%",
+        "percentage": 35,
+        "odds": 49.95,
+        "value": 49.95,
+        "polymarket": "49,95%",
         "pesquisaRange": "29% a 40%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "EN LA ATLASINTEL/BLOOMBERG del 10/Sep, que es la referencia de este campo, está en 37,4% en la primera vuelta, contra 33,7% en la ronda de la misma casa el 31/Ago, un alza de 3,7 puntos en once días. En la segunda vuelta aparece adelante por 46,4% a 46,2%, y el 31/Ago estaba detrás por 42,6% a 47,1%. ⚠️ La diferencia de hoy es de dos décimas y cabe dentro de dos márgenes de 1,0, así que lo que la casa mide es EMPATE TÉCNICO, no liderazgo. En la ventana desde el 06/Sep va de 29% en Quaest a 40% en Palver, once puntos de dispersión entre ocho casas, el mayor rango de cualquier nombre del panel.",
-        "tendenciaPolymarket": "SUBE 1,10pp contra la lectura confirmada del 10/Sep, de 52,85% a 53,95%, y el 53,95% queda 1,15pp por debajo del techo de su serie, de 55,10% el 10/Sep. USD 10,36M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta SUBIÓ 3,00pp y está en 74,50%, deshaciendo el movimiento contrario de ayer."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep tiene 35% en la primera vuelta y 44% en el par de segunda vuelta contra Lula. En la misma casa tenía 44% en el par el 03/Sep y 43% el 21/Ago, así que en tres rondas de la misma casa el par recorrió 1 punto de cada lado. ⚠️ La diferencia de 2 puntos cabe en el margen de 2,0, y los 4 puntos de la primera vuelta caben en dos, así que los dos escenarios son empate técnico.",
+        "tendenciaPolymarket": "CEDE 4,00pp contra la lectura confirmada del 11/Sep, de 53,95% a 49,95%, deshaciendo el alza de los dos días anteriores, y queda 5,15pp por debajo del techo de su serie, de 55,10% el 10/Sep. USD 10,47M acumulados en su contrato. El contrato de segundo lugar de la primera vuelta no publica precio nuevo hoy."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 6.6,
+        "percentage": 6,
         "odds": 0.45,
         "value": 0.45,
         "polymarket": "0,45%",
         "pesquisaRange": "4% a 12,2%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "LA ATLASINTEL del 10/Sep lo mide en 6,6% en la primera vuelta, contra 7,8% en la misma casa el 31/Ago. En un par de segunda vuelta contra Lula aparece detrás por 43,8% a 41,1%. La casa probó CINCO pares con Lula en esta ronda, y en tres de ellos la diferencia cabe dentro de dos márgenes de 1,0 y por lo tanto es empate técnico; el suyo y el de Renan Santos son los dos que quedan fuera del margen. En la ventana desde el 06/Sep va de 4% en Palver a 12,2% en Veritá.",
-        "tendenciaPolymarket": "SUBE 0,10pp en el contrato de ganador, hasta 0,45%, y en el contrato de tercer lugar de la primera vuelta, donde es el favorito, sube 3,65pp y cierra en 52,90%, con USD 160 mil acumulados en ese contrato. Su vano hacia el segundo allí más que se duplicó, de 6,75pp a 14,40pp."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep tiene 6% en la primera vuelta y pierde el par de segunda vuelta ante Lula por 45% a 43%. ⚠️ La diferencia de 2 puntos cabe en un margen de 2,0, así que la casa mide empate técnico también en ese par.",
+        "tendenciaPolymarket": "ESTABLE en 0,45% en el contrato de ganador, y en el contrato de tercer lugar de la primera vuelta, donde es el favorito, sube 2,90pp y cierra en 55,80%, con USD 173 mil acumulados en ese contrato. Su vano hacia el segundo colocado allí pasa de 14,40pp a 18,80pp."
       },
       {
         "name": "Renan Santos",
-        "percentage": 6.5,
-        "odds": 1.95,
-        "value": 1.95,
-        "polymarket": "1,95%",
+        "percentage": 3,
+        "odds": 1.65,
+        "value": 1.65,
+        "polymarket": "1,65%",
         "pesquisaRange": "3% a 11%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "LA ATLASINTEL del 10/Sep lo mide en 6,5% en la primera vuelta, contra 7,6% en la misma casa el 31/Ago. En el par de segunda vuelta contra Lula está detrás por 46,0% a 33,8%, una distancia de 12,2 puntos, y es uno de los dos pares de la ronda que quedan fuera del margen, junto con el de Augusto Cury. Aun así acortó 9,3 puntos contra la ronda anterior de la misma casa, cuando perdía por 47,5% a 26,0%. En la ventana desde el 06/Sep va de 3% a 11%, con Palver aislada en el techo.",
-        "tendenciaPolymarket": "CAE 0,20pp en el contrato de ganador, hasta 1,95%, con USD 13,26M acumulados, el segundo mayor volumen individual del libro presidencial. En el contrato de tercer lugar de la primera vuelta CAE 4,00pp, hasta 38,50%, la mayor caída de cualquier contrato del panel en esta ronda."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep tiene 3% en la primera vuelta y pierde el par de segunda vuelta ante Lula por 48% a 37%, la distancia más amplia de los cinco pares probados por la casa y la única por encima de diez puntos.",
+        "tendenciaPolymarket": "CEDE 0,30pp en el contrato de ganador, hasta 1,65%, con USD 13,32M acumulados, el segundo mayor volumen individual del libro presidencial, detrás solo del de Tarcísio de Freitas, con USD 14,07M. En el contrato de tercer lugar de la primera vuelta CAE 1,50pp, hasta 37,00%, con USD 299 mil acumulados en ese contrato."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1.1,
-        "odds": 0.3,
-        "value": 0.3,
-        "polymarket": "0,30%",
+        "percentage": 4,
+        "odds": 0.15,
+        "value": 0.15,
+        "polymarket": "0,15%",
         "pesquisaRange": "1% a 5%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "LA ATLASINTEL del 10/Sep lo mide en 1,1% en la primera vuelta, y en un par de segunda vuelta contra Lula la casa registra EMPATE EXACTO en 45,7%. El 31/Ago la misma casa lo ponía detrás por 41,0% a 46,6%. En la ventana desde el 06/Sep va de 1% a 5%.",
-        "tendenciaPolymarket": "SUBE 0,05pp en el contrato de ganador, hasta 0,30%, y queda estable en 5,00% en el contrato de tercer lugar de la primera vuelta, el único contrato vigilado que no se mueve en esta ronda."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep tiene 4% en la primera vuelta y pierde el par de segunda vuelta ante Lula por 46% a 41%, una distancia de 5 puntos que queda fuera del margen de 2,0.",
+        "tendenciaPolymarket": "CEDE 0,15pp en el contrato de ganador, hasta 0,15%, y en el contrato de tercer lugar de la primera vuelta SUBE 3,00pp, hasta 8,00%, con USD 119 mil acumulados en ese contrato, el segundo mayor avance de cualquier contrato del panel en esta ronda."
       },
       {
         "name": "Pablo Marçal",
         "percentage": 1,
-        "odds": 0.15,
-        "value": 0.15,
-        "polymarket": "0,15%",
+        "odds": 0.05,
+        "value": 0.05,
+        "polymarket": "0,05%",
         "pesquisaRange": "1% a 3%",
-        "lastUpdate": "11/09/2026, 13:41",
+        "lastUpdate": "12/09/2026, 13:10",
         "tendenciaPesquisa": "La AtlasIntel del 10/Sep lo mide en 1,0% en la primera vuelta. Sigue inelegible, y el Tribunal Superior Electoral tiene hasta el 14/Sep para juzgar los registros.",
-        "tendenciaPolymarket": "0,15% en el contrato de ganador, con USD 3,97M acumulados, y 0,95% en el contrato de tercer lugar de la primera vuelta."
+        "tendenciaPolymarket": "CEDE 0,10pp en el contrato de ganador, de 0,15% a 0,05%, con USD 3,97M acumulados."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 2.1,
+        "percentage": 2,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "0,3% a 2,1%",
-        "lastUpdate": "11/09/2026, 13:41",
-        "tendenciaPesquisa": "LA ATLASINTEL del 10/Sep lo mide en 2,1% en la primera vuelta, su mayor valor en la ventana, y en un par de segunda vuelta contra Lula aparece ADELANTE por 46,2% a 46,0%. El 31/Ago la misma casa lo ponía detrás por 40,7% a 47,0%, es decir, el par recorrió 6,5 puntos en once días. ⚠️ La diferencia de dos décimas cabe en el margen, así que es empate técnico.",
-        "tendenciaPolymarket": "0,15% en el contrato de ganador, con USD 6,92M acumulados, y 0,80% en el contrato de tercer lugar de la primera vuelta."
+        "lastUpdate": "12/09/2026, 13:10",
+        "tendenciaPesquisa": "EN LA DATAFOLHA DEL 11/Sep tiene 2% en la primera vuelta y pierde el par de segunda vuelta ante Lula por 48% a 39%, una distancia de 9 puntos que queda fuera del margen de 2,0.",
+        "tendenciaPolymarket": "Estable en 0,15% en el contrato de ganador, con USD 7,25M acumulados, y en 0,70% en el contrato de tercer lugar de la primera vuelta (vol USD 53 mil)."
       },
       {
         "name": "Tarcísio",
@@ -2195,7 +2276,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "11/09/2026, 13:41",
+        "lastUpdate": "12/09/2026, 13:10",
         "tendenciaPesquisa": "La AtlasIntel del 10/Sep no lo prueba en escenario presidencial.",
         "tendenciaPolymarket": "0,05% en el contrato de ganador, el suelo del libro, y aun así su contrato tiene USD 14,07M acumulados, el mayor volumen del panel presidencial."
       },
@@ -2206,12 +2287,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "11/09/2026, 13:41",
+        "lastUpdate": "12/09/2026, 13:10",
         "tendenciaPesquisa": "La AtlasIntel del 10/Sep no lo prueba en escenario presidencial.",
         "tendenciaPolymarket": "0,05% en el contrato de ganador, el piso del libro, con USD 7,53M acumulados."
       }
     ],
-    "updatedAt": "11/09/2026, 13:41",
+    "updatedAt": "12/09/2026, 13:10",
     "lastUpdate": "10/09/2026, 14:20"
   }
 }

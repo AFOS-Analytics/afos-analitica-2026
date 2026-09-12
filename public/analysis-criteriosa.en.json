@@ -1,15 +1,15 @@
 {
-  "updatedAt": "11/09/2026, 13:41",
-  "subtitle": "Cross-reading of 11 September 2026, confirmed reading of 11/Sep, 1:41 PM BRT (4:41 PM UTC), with the presidential book at USD 148.03M. All five watched contracts received a new price: winner, second place in the [first round](/en/glossary#primeiro-turno), third place, impeachment at the Supreme Court and Senate majority. The national poll entering today is AtlasIntel together with Bloomberg, fieldwork from 04 to 09/Sep, 5,000 interviews and a 1.0pp margin, TSE registration BR-01452/2026. The official TSE registry was ingested today with 879 presidential polls, and the calendar points to six national polls scheduled for release between 14 and 16/Sep.",
+  "updatedAt": "12/09/2026, 13:10",
+  "subtitle": "Cross-reading of 12 September 2026, confirmed reading of 12/Sep, 1:10 PM BRT (4:10 PM UTC), with the presidential book at USD 148.77M. Four of the five watched contracts received a new price: winner, third place in the first round, Supreme Court impeachment and Senate majority. The second-place contract for the first round publishes no new price in this round. The national poll that enters is the Datafolha of 11/Sep, fieldwork from 08 to 10/Sep, 2,002 interviews and a margin of 2.0pp, TSE registration BR-01833/2026. The official TSE registry was read today and still holds 879 presidential polls, with no new entry, and the calendar points to six national polls with releases scheduled between 14 and 16/Sep.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 42.50% (vol USD 10.69M accumulated) in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, down 1.00pp against the price confirmed on 10/Sep, in a second straight day of decline. In the second-place contract for the [first round](/en/glossary#primeiro-turno) he FELL 1.60pp and stands at 22.90% (vol USD 601 thousand). POLL: 43.0% in the first round and 46.2% in the [runoff](/en/glossary#segundo-turno) against Flávio Bolsonaro in the AtlasIntel/Bloomberg of 10/Sep, fieldwork from 04 to 09/Sep, 5,000 interviews and a 1.0pp margin. It is the eighth consecutive national poll since 06/Sep in which he does not come out ahead in the pairing, and the two tenths of difference fit inside two margins, meaning the house measures a statistical tie.",
+      "header": "PRICE: 48.50% (vol USD 10.81M accumulated) in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, a rise of 6.00pp against the price confirmed on 11/Sep, the largest of any contract on the panel in this round, and 19.00pp below his series peak, of 67.50% on 16/Aug. The second-place contract for the first round publishes no new price today. POLL: 39% in the first round and 46% in the runoff pairing against Flávio Bolsonaro in the Datafolha of 11/Sep, fieldwork from 08 to 10/Sep, 2,002 interviews and a margin of 2.0pp. It is the first national poll since 06/Sep in which he comes out ahead in the pairing again, after eight straight, and the 2-point difference fits inside the margin, so the house measures a technical tie.",
       "fortes": [
-        "He remains ahead in the first round in the national poll entering today, 43.0% against 37.4%, and AtlasIntel is the house with the largest sample and the smallest margin in the window, 5,000 interviews and 1.0 point.",
+        "A rise of 6.00pp in the winner contract, the largest of any contract on the panel in this round, with the gap to the leader closing from 11.45pp to 1.45pp.",
         "Across the five runoff pairings in the round he loses none outside the margin: he trails Flávio Bolsonaro by two tenths, trails Romeu Zema by two tenths, ties Ronaldo Caiado, and wins the only two pairings that fall outside the margin, against Augusto Cury and against Renan Santos.",
         "The winner contract gave back 1.00pp, one tenth of yesterday's 9.00pp fall, meaning the book's move slowed sharply against yesterday."
       ],
@@ -26,9 +26,9 @@
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 53.95% (vol USD 10.36M accumulated) in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, up 1.10pp against the price confirmed on 10/Sep, and 1.15pp below the peak of his series, of 55.10% on 10/Sep. In the second-place contract for the [first round](/en/glossary#primeiro-turno) he ROSE 3.00pp and stands at 74.50% (vol USD 725 thousand). POLL: 37.4% in the first round and 46.4% in the [runoff](/en/glossary#segundo-turno) in the AtlasIntel/Bloomberg of 10/Sep. At the same house, on 31/Aug, he had 33.7% and lost the pairing by 42.6% to 47.1%, so in eleven days he rose 3.7 points in the first round and the pairing travelled 4.7 points.",
+      "header": "PRICE: 49.95% (vol USD 10.47M accumulated) in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, a fall of 4.00pp against the price confirmed on 11/Sep, and 5.15pp below his series peak, of 55.10% on 10/Sep. The second-place contract for the first round publishes no new price today. POLL: 35% in the first round and 44% in the runoff pairing in the Datafolha of 11/Sep. At the same house he had 44% in the pairing on 03/Sep and 43% on 21/Aug, so across three rounds the pairing travelled 1 point on each side.",
       "fortes": [
-        "A second straight day of gains in the winner contract, 53.95%, above yesterday's 52.85%, and 1.15pp below the peak of the series, of 55.10% on 10/Sep.",
+        "In the Datafolha of 11/Sep the runoff pairing stands at 44% against 46%, a 2-point difference that fits inside the margin of 2.0, and the house repeats the same pairing it measured on 03/Sep.",
         "In the second-place contract for the first round he rose 3.00pp and stands at 74.50%, undoing the opposite move of the previous day, when that contract had moved in his rival's favour.",
         "In the AtlasIntel, which is the same house as on 31/Aug, he rose 3.7 points in the first round and the runoff pairing travelled 4.7 points in his favour over eleven days, with no change of method and no change of margin."
       ],
@@ -45,9 +45,9 @@
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRICE: 0.45% in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, and 52.90% in the third-place contract for the [first round](/en/glossary#primeiro-turno) (vol USD 160 thousand), where he is the favourite, up 3.65pp. POLL: 6.6% in the first round in the AtlasIntel/Bloomberg of 10/Sep, against 7.8% at the same house on 31/Aug, and 41.1% against Lula's 43.8% in a [runoff](/en/glossary#segundo-turno) pairing, one of the two pairings in the round that fall outside the margin.",
+      "header": "PRICE: 0.45% in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, and 55.80% in the third-place contract for the first round (vol USD 173 thousand), where he is the favourite, up 2.90pp. POLL: 6% in the first round in the Datafolha of 11/Sep, and 43% against Lula's 45% in the runoff pairing, a 2-point difference that fits inside the margin.",
       "fortes": [
-        "In the third-place contract for the first round he rose 3.65pp and reached 52.90%, and the distance to the runner-up there more than doubled, from 6.75pp to 14.40pp.",
+        "In the third-place contract for the first round he rose 2.90pp and reached 55.80%, with the distance to the runner-up there going from 14.40pp to 18.80pp.",
         "He is one of the two names whose runoff pairing against Lula falls OUTSIDE the margin in this round, which makes his reading less ambiguous than that of the statistical ties.",
         "In the window since 06/Sep he reaches 12.2% at Veritá, the highest value of any third name in the period."
       ],
@@ -63,7 +63,7 @@
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 1.95% (vol USD 13.26M accumulated) in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, down 0.20pp, and 38.50% in the third-place contract for the [first round](/en/glossary#primeiro-turno) (vol USD 297 thousand), down 4.00pp, the largest of any contract on the panel this round. POLL: 6.5% in the first round in the AtlasIntel/Bloomberg of 10/Sep, against 7.6% at the same house on 31/Aug, and 33.8% against Lula's 46.0% in the [runoff](/en/glossary#segundo-turno) pairing, a distance of 12.2 points that narrowed by 9.3 points in eleven days.",
+      "header": "PRICE: 1.65% (vol USD 13.32M accumulated) in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, down 0.30pp, and 37.00% in the third-place contract for the first round (vol USD 299 thousand), down 1.50pp. POLL: 3% in the first round in the Datafolha of 11/Sep, and 37% against Lula's 48% in the runoff pairing, the widest of the five pairings tested by the house.",
       "fortes": [
         "His contract still holds USD 13.26M accumulated, the second largest individual volume in the presidential book.",
         "In the runoff pairing against Lula he narrowed the gap by 9.3 points in eleven days within the SAME house, from 47.5% to 26.0% into 46.0% to 33.8%.",
@@ -81,7 +81,7 @@
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: Ronaldo Caiado at 0.30% in the winner contract and 5.00% in the third-place contract for the [first round](/en/glossary#primeiro-turno), the only watched contract that does not move in this round; Romeu Zema at 0.15% (vol USD 6.92M) and Fernando Haddad at 0.05% (vol USD 7.53M), both at the floor of the book, confirmed reading of 11/Sep, 1:41 PM BRT. POLL: in the AtlasIntel/Bloomberg of 10/Sep, Caiado has 1.1% and Zema 2.1% in the first round. In the [runoff](/en/glossary#segundo-turno) pairings against Lula, Caiado TIES EXACTLY at 45.7% and Zema comes out ahead by 46.2% to 46.0%, both inside the margin.",
+      "header": "PRICE: Ronaldo Caiado at 0.15% in the winner contract, down 0.15pp, and 8.00% in the third-place contract for the first round, up 3.00pp there (vol USD 119 thousand); Romeu Zema at 0.15% (vol USD 7.25M) and Fernando Haddad at 0.05% (vol USD 7.53M), both at the floor of the book, confirmed reading of 12/Sep, 1:10 PM BRT. POLL: in the Datafolha of 11/Sep, Caiado has 4% and Zema 2% in the first round. In the runoff pairings against Lula, Caiado loses by 46% to 41% and Zema by 48% to 39%, both outside the margin.",
       "subtitle": "Back of the field in the reading of 10/Sep, 2:20 PM BRT (17:20 UTC). ⚠️ THE PODERDATA/AYA OF 10/Sep MEASURES CAIADO AT 2% AND TESTS NEITHER ZEMA NOR HADDAD in the prompted scenario. All three remain below the 0.5% floor of the double reading in the winner contract, so the prices in this band enter as a simple reading.",
       "caiado": {
         "label": "CAIADO (PSD), 0.25% (vol USD 7.37M) in the WINNER contract, reading of 10/Sep, 2:20 PM BRT, and below the 0.5% floor of the double reading. In the THIRD-PLACE contract for the first round he stands at 5.00%, on a USD 120 thousand book. In the PoderData/Aya of 10/Sep he has 2% in the first round.",
@@ -102,7 +102,7 @@
       "fortes": [
         "Ronaldo Caiado TIES EXACTLY with Lula at 45.7% in a runoff pairing of the AtlasIntel, and on 31/Aug the same house had him behind by 41.0% to 46.6%.",
         "Romeu Zema comes out AHEAD of Lula by 46.2% to 46.0% in the runoff pairing, and records 2.1% in the first round, his highest value in the window.",
-        "Caiado's third-place contract for the first round, at 5.00%, is the only watched contract that does not move in this round."
+        "In the third-place contract for the first round Caiado rose 3.00pp and reached 8.00% (vol USD 119 thousand), the second largest advance of any contract on the panel in this round."
       ],
       "fracos": [
         "None of the three exceeds 2.1% in the first round of the AtlasIntel, and the runoff statistical ties sit alongside first-round values of one to two points.",
@@ -115,8 +115,8 @@
     {
       "n": "Lula (PT)",
       "p": "43.0% in the first round and 46.2% in the runoff against Flávio Bolsonaro in the AtlasIntel/Bloomberg of 10/Sep, fieldwork from 04 to 09/Sep, 5,000 interviews and a 1.0pp margin. It is the eighth consecutive national poll since 06/Sep in which he does not come out ahead in the pairing, and the two tenths of difference fit inside two margins.",
-      "m": "42.50% (vol USD 10.69M) in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, down 1.00pp against the price confirmed on 10/Sep. In the second-place contract for the first round he FELL 1.60pp and stands at 22.90% (vol USD 601 thousand).",
-      "t": "gives back 1.00pp on a second straight day of decline, with the distance to the leader going from 9.35pp to 11.45pp",
+      "m": "48.50% (vol USD 10.81M) in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, a rise of 6.00pp against the price confirmed on 11/Sep, the largest of any contract on the panel in this round. The second-place contract for the first round publishes no new price today.",
+      "t": "rises 6.00pp and the gap to the leader closes from 11.45pp to 1.45pp",
       "s": "Praised Fachin for bringing some order to the house and defended investigating Supreme Court justices, according to Valor Econômico and Folha de S.Paulo.",
       "pc": "#DC2626",
       "mc": ""
@@ -124,8 +124,8 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "37.4% in the first round and 46.4% in the runoff in the AtlasIntel/Bloomberg of 10/Sep. At the same house, on 31/Aug, he had 33.7% and lost the pairing by 42.6% to 47.1%. The two tenths of advantage fit inside the margin, so the house measures a statistical tie.",
-      "m": "53.95% (vol USD 10.36M) in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, up 1.10pp, and 1.15pp below the peak of his series, of 55.10% on 10/Sep. In the second-place contract for the first round he ROSE 3.00pp and stands at 74.50%.",
-      "t": "rises 1.10pp on a second straight day of gains, 1.15pp below the peak of his own series",
+      "m": "49.95% (vol USD 10.47M) in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, a fall of 4.00pp, and 5.15pp below his series peak, of 55.10% on 10/Sep. The second-place contract for the first round publishes no new price today.",
+      "t": "gives back 4.00pp and undoes the rise of the two previous days, 5.15pp below the peak of his own series",
       "s": "It was revealed that he has been under Federal Police investigation since July, authorised by André Mendonça, in the inquiry into the financing of the film Dark Horse, for money laundering, currency evasion and corruption. The revelation came from the lifting of secrecy decided at 11:44 PM on 10/Sep, according to Gazeta do Povo, Poder360 and CartaCapital.",
       "pc": "#2563EB",
       "mc": ""
@@ -133,8 +133,8 @@
     {
       "n": "Augusto Cury (Avante)",
       "p": "6.6% in the first round in the AtlasIntel/Bloomberg of 10/Sep, against 7.8% at the same house on 31/Aug, and 41.1% against Lula's 43.8% in a runoff pairing, one of the two distances in the round that fall outside the margin.",
-      "m": "0.45% in the winner contract, confirmed reading of 11/Sep, 1:41 PM BRT, and 52.90% in the third-place contract for the first round (vol USD 160 thousand), up 3.65pp, where he is the favourite.",
-      "t": "rises 3.65pp in the third-place contract and his gap to the runner-up there more than doubles, from 6.75pp to 14.40pp",
+      "m": "0.45% in the winner contract, confirmed reading of 12/Sep, 1:10 PM BRT, and 55.80% in the third-place contract for the first round (vol USD 173 thousand), up 2.90pp, where he is the favourite.",
+      "t": "rises 2.90pp in the third-place contract and his gap to the runner-up there goes from 14.40pp to 18.80pp",
       "s": "Signalled that he may support Flávio Bolsonaro in a runoff, according to CartaCapital.",
       "pc": "#0891B2",
       "mc": ""
@@ -142,8 +142,8 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "6.5% in the first round in the AtlasIntel/Bloomberg of 10/Sep, against 7.6% at the same house on 31/Aug, and 33.8% against Lula's 46.0% in the runoff pairing, which narrowed by 9.3 points in eleven days.",
-      "m": "1.95% (vol USD 13.26M) in the winner contract, the second largest individual volume in the presidential book, and 38.50% in the third-place contract for the first round, confirmed reading of 11/Sep, 1:41 PM BRT.",
-      "t": "falls 4.00pp in the third-place contract, the largest fall of any contract on the panel this round",
+      "m": "1.65% (vol USD 13.32M) in the winner contract, the second largest individual volume in the presidential book, and 37.00% in the third-place contract for the first round, confirmed reading of 12/Sep, 1:10 PM BRT.",
+      "t": "falls 1.50pp in the third-place contract and 0.30pp in the winner contract",
       "s": "Attributed the Supreme Court crisis to the centrão, according to Valor Econômico.",
       "pc": "#7C3AED",
       "mc": ""
@@ -151,8 +151,8 @@
     {
       "n": "Caiado (PSD)",
       "p": "1.1% in the first round in the AtlasIntel/Bloomberg of 10/Sep, and an EXACT TIE with Lula at 45.7% in a runoff pairing. On 31/Aug the same house had him behind by 41.0% to 46.6%.",
-      "m": "0.30% in the winner contract and 5.00% in the third-place contract for the first round, confirmed reading of 11/Sep, 1:41 PM BRT.",
-      "t": "rises 0.05pp in the winner contract and stays flat in the third-place one, the only watched contract that does not move in this round",
+      "m": "0.15% in the winner contract, down 0.15pp, and 8.00% in the third-place contract for the first round, up 3.00pp there (vol USD 119 thousand), confirmed reading of 12/Sep, 1:10 PM BRT.",
+      "t": "rises 3.00pp in the third-place contract, the second largest advance on the panel in this round",
       "s": "No new individual event on 11/Sep in the collected news coverage.",
       "pc": "#059669",
       "mc": ""
@@ -160,12 +160,12 @@
     {
       "n": "Romeu Zema (Novo)",
       "p": "2.1% in the first round in the AtlasIntel/Bloomberg of 10/Sep, his highest value in the window, and AHEAD of Lula by 46.2% to 46.0% in a runoff pairing, inside the margin.",
-      "m": "0.15% in the winner contract (vol USD 6.92M) and 0.80% in the third-place contract for the first round, confirmed reading of 11/Sep, 1:41 PM BRT.",
-      "t": "flat in the winner contract, with the runoff pairing travelling 6.5 points in eleven days within the same house",
+      "m": "0.15% in the winner contract (vol USD 7.25M) and 0.70% in the third-place contract for the first round, confirmed reading of 12/Sep, 1:10 PM BRT.",
+      "t": "stable in the winner contract, and loses the Datafolha runoff pairing by 48% to 39%, outside the margin",
       "s": "No new individual event on 11/Sep in the collected news coverage.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "📈 THE GAP IN THE WINNER CONTRACT WIDENED FOR THE SECOND DAY: Flávio Bolsonaro stands at 53.95% (vol USD 10.36M) and Lula at 42.50% (vol USD 10.69M), against 52.85% and 43.50% in the confirmed reading of 10/Sep. That is 1.10pp up for one and 1.00pp down for the other, and the distance went from 9.35pp to 11.45pp. ⚠️ THE SIZE OF THE MOVE IS ONE TENTH OF YESTERDAY'S, when the book travelled 6.60pp and 9.00pp and changed hands at the top. Today it keeps the same direction, slowly. ⭐ THE POLL ENTERING TODAY ALLOWS THE CLEANEST COMPARISON OF THE WEEK, because it comes from the SAME HOUSE that measured eleven days earlier, with the same method and the same margin. In the AtlasIntel/Bloomberg, Lula's lead in the [first round](/en/glossary#primeiro-turno) fell from 9.7 points to 5.6: he went from 43.4% to 43.0% and Flávio Bolsonaro went from 33.7% to 37.4%. 🔁 AND ALL FIVE [RUNOFF](/en/glossary#segundo-turno) PAIRINGS MOVED IN THE SAME DIRECTION, two of them flipping sign: against Flávio, from 47.1% to 42.6% into 46.4% to 46.2%; against Romeu Zema, from 47.0% to 40.7% into 46.2% to 46.0%; against Ronaldo Caiado, from 46.6% to 41.0% into an exact tie at 45.7%; against Renan Santos, from 47.5% to 26.0% into 46.0% to 33.8%. The first three fit inside two margins of 1.0, so they are statistical ties. 📌 WHERE THE TWO INSTRUMENTS DIVERGE IS IN SIZE, NOT DIRECTION. The book marks 11.45pp of distance between the top two, while the house with the smallest margin in the window measures two tenths in the head-to-head pairing. 🥉 IN THE THIRD-PLACE CONTRACT the distance more than doubled: Augusto Cury rose 3.65pp, to 52.90%, and Renan Santos fell 4.00pp, to 38.50%, with the gap going from 6.75pp to 14.40pp. 🏛️ THE CONTRACT ON A SUPREME COURT JUSTICE LEAVING BY IMPEACHMENT BEFORE 2027 ALMOST DOUBLED, from 4.35% to 8.30% (vol USD 90 thousand), up 3.95pp, the day after secrecy was lifted in the Master case. It remains 17.80pp below the peak of the series, of 26.10% recorded on 11/Sep itself at 5:00 AM BRT, and the volume of USD 90 thousand is small enough that isolated orders can move the price. 🗳️ The Senate majority contract gets a new price, with Partido Liberal at 83.00% (vol USD 261 thousand). ⏳ The TSE calendar, ingested today with 879 presidential polls in the file, points to six national polls scheduled for release between 14 and 16/Sep: Quaest and Nexus on 14/Sep, MDA and Indexa on 15/Sep, Datatrends and American Analytics on 16/Sep. Datafolha and Veritá closed fieldwork today."
+  "cruzamento": "📉 THE GAP IN THE WINNER CONTRACT CLOSED 10.00pp IN ONE DAY: Flávio Bolsonaro stands at 49.95% (vol USD 10.47M) and Lula at 48.50% (vol USD 10.81M), against 53.95% and 42.50% in the confirmed reading of 11/Sep. That is 4.00pp down for one and 6.00pp up for the other, and the distance went from 11.45pp to 1.45pp. ⚠️ THE MOVE CANCELS AND REVERSES THAT OF THE TWO PREVIOUS DAYS, when the gap had widened from 6.25pp to 9.35pp and then to 11.45pp. 📌 AND NEITHER PRICE IS AN EXTREME OF THE SERIES: the 49.95% sits 5.15pp below Flávio's peak, of 55.10% on 10/Sep, and the 48.50% sits 19.00pp below Lula's peak, of 67.50% on 16/Aug. The gap itself has already reached 41.80pp in Lula's favour on 01/Aug and 14.30pp in Flávio's favour on 11/Sep, over 566 points since 14/Apr. ⭐ THE POLL THAT ENTERS BREAKS A RUN OF EIGHT. In the Datafolha of 11/Sep, fieldwork from 08 to 10/Sep and a margin of 2.0pp, Lula has 39% in the first round against 35% for Flávio Bolsonaro, and in the runoff pairing he comes out ahead by 46% to 44%. There had been eight straight national polls since 06/Sep in which he did not come out ahead in that pairing. ⚠️ The 2 points fit inside one margin, so the house measures a TECHNICAL TIE, and the 4 points of the first round fit inside two. 🔁 INSIDE THE HOUSE ITSELF THE PAIRING IS STILL: 47% to 43% on 21/Aug, 46% to 44% on 03/Sep and 46% to 44% on 11/Sep. 🗳️ In the other four pairings Lula wins them all, and three of them outside the margin: 45% to 43% against Cury, which is another technical tie, 46% to 41% against Caiado, 48% to 39% against Zema and 48% to 37% against Renan Santos. 📌 WHERE THE TWO INSTRUMENTS CONVERGE TODAY IS ON SIZE: the book marks a distance of 1.45pp and the house measures 2 points in the direct pairing, and both fit inside the poll's margin. It is the first round of the window in which price and ballot say the same thing about the distance. 🥉 IN THE THIRD-PLACE CONTRACT the favourite widened his lead: Augusto Cury rose 2.90pp, to 55.80%, and Renan Santos fell 1.50pp, to 37.00%, with the gap going from 14.40pp to 18.80pp, and Ronaldo Caiado rose 3.00pp, to 8.00%. 🏛️ THE CONTRACT ON A SUPREME COURT JUSTICE LEAVING BY IMPEACHMENT BEFORE 2027 GAVE BACK 1.60pp and stands at 6.70% (vol USD 90 thousand), giving back part of the previous day's jump, on the day Fachin denied the joint trial of Moraes and Mendonça and scheduled separate sessions for 15 and 23/Sep. 🗳️ In the Senate, Partido Liberal rose 1.00pp, to 84.00% (vol USD 261 thousand). ⏳ The TSE registry was read today and still holds 879 presidential polls, with no new entry, and points to six national polls with releases scheduled between 14 and 16/Sep: Quaest and Nexus on 14/Sep, MDA and Indexa on 15/Sep, Datatrends and American Analytics on 16/Sep."
 }
