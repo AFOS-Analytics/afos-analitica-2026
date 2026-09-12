@@ -33,6 +33,7 @@ import {
   instantesSuspeitos,
   oQueAJanelaEsconde,
   parBinario,
+  precosCertificados,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -71,16 +72,36 @@ function lerCsvGz(dir) {
   return linhas
 }
 
-/** A leitura certificada de agora, que fecha a cauda cega do backup. */
+/**
+ * A leitura certificada de agora, que fecha a cauda cega do backup.
+ *
+ * 🔒 Só entram os livros que a trava CERTIFICOU. Até 12/Set/2026 esta função
+ * lia `s.precos` inteiro e nunca o veredito, então preço de livro reprovado
+ * entrava como "agora". Ver `precosCertificados`.
+ *
+ * ⚠️ Os dois retornos de saída rápida devolvem a MESMA forma do caminho feliz.
+ * Antes o de arquivo ausente não trazia `foraDeEscopo`, e quem lê `.length` mais
+ * abaixo quebraria com o cache vazio, que é justamente o estado de máquina nova.
+ */
 function lerCaptura(pais, chavesDaSerie) {
+  const vazio = {
+    precos: new Map(),
+    orfas: [],
+    foraDeEscopo: [],
+    bloqueadas: [],
+    livrosBloqueados: [],
+    vereditoAusente: false,
+    carimbo: null,
+  }
   const caminho = CAPTURA[pais]
-  if (!caminho || !existsSync(caminho)) return { precos: new Map(), orfas: [], carimbo: null }
+  if (!caminho || !existsSync(caminho)) return vazio
   try {
     const s = JSON.parse(readFileSync(caminho, 'utf8'))
-    const { casadas, orfas, foraDeEscopo } = casarCaptura(s.precos, pais, chavesDaSerie)
-    return { precos: casadas, orfas, foraDeEscopo, carimbo: s.fetchedAt ?? null }
+    const { precos, bloqueadas, livrosBloqueados, vereditoAusente } = precosCertificados(s)
+    const { casadas, orfas, foraDeEscopo } = casarCaptura(precos, pais, chavesDaSerie)
+    return { precos: casadas, orfas, foraDeEscopo, bloqueadas, livrosBloqueados, vereditoAusente, carimbo: s.fetchedAt ?? null }
   } catch {
-    return { precos: new Map(), orfas: [], foraDeEscopo: [], carimbo: null }
+    return vazio
   }
 }
 
@@ -122,7 +143,10 @@ function principal() {
 
   // As chaves da SÉRIE entram na junção para ela escolher a grafia que existe,
   // em vez de apostar numa. Ver casarCaptura.
-  const { precos: agora, orfas, foraDeEscopo, carimbo } = lerCaptura(pais, new Set(livros.keys()))
+  const { precos: agora, orfas, foraDeEscopo, bloqueadas, livrosBloqueados, vereditoAusente, carimbo } = lerCaptura(
+    pais,
+    new Set(livros.keys())
+  )
 
   console.log(`\n📈 SÉRIE DOS CONTRATOS · lida em ${RAIZ}/marketPrice, não na API`)
   console.log(`   ⚠️ superlativo se confere AQUI. A rota /api/market/history trava em 90 dias`)
@@ -172,6 +196,31 @@ function principal() {
       `   📌 ${foraDeEscopo.length} chave(s) da captura são de livro SEM série vigiada (${grupos}): ` +
         `não há superlativo a conferir para elas, e isso não abre cauda cega.\n`
     )
+  }
+
+  /**
+   * 🔒 Livro que a trava REPROVOU. Sai em voz alta e os preços dele NÃO entram
+   * como "agora": sem certificação não há preço de agora, e a série cai para o
+   * último ponto gravado, com a cauda cega declarada ao lado.
+   *
+   * ⚠️ Isto é uma terceira categoria, e não uma órfã nem um fora de escopo. A
+   * órfã é defeito de JUNÇÃO, o fora de escopo é livro sem série, e este é livro
+   * com série e com preço cujo CARIMBO não vale. Misturar os três esconderia o
+   * único que muda o veredito de superlativo.
+   */
+  if (vereditoAusente) {
+    console.log(
+      `   ⚠️ a captura não gravou 'livrosOk': não há veredito da trava neste arquivo, ` +
+        `e os preços entraram SEM conferir certificação.\n`
+    )
+  } else if (livrosBloqueados.length) {
+    console.log(
+      `   🔒 ${livrosBloqueados.length} livro(s) BLOQUEADO(s) pela trava: ${bloqueadas.length} preço(s) ficaram de fora e NÃO são "agora".`
+    )
+    for (const l of livrosBloqueados) {
+      console.log(`      ${l.grupo}${l.motivos.length ? `: ${l.motivos[0]}` : ''}`)
+    }
+    console.log(`      Estes livros caem para o ÚLTIMO PONTO GRAVADO, e a cauda cega de até 24h fica aberta neles.\n`)
   }
 
   let alertas = 0

@@ -172,6 +172,53 @@ export function casarCaptura(precosDaCaptura, pais, chavesDaSerie = null) {
 }
 
 /**
+ * 🔒 Os preços da captura que a trava REALMENTE certificou, livro a livro.
+ *
+ * 🔴 POR QUE ISTO EXISTE, medido em 12/Set/2026. O `lerCaptura` do CLI lia
+ * `s.precos` e `s.fetchedAt` e nunca olhava o VEREDITO. Ele conferia a IDADE da
+ * leitura e não se ela valia: a captura de 11/Set 18:45Z tem `ok: false`, com o
+ * presidencial BLOQUEADO porque Lula discordou 1,00pp entre duas leituras a 8
+ * minutos, e mesmo assim os 51,95 de Flávio e os 43,50 de Lula entravam na série
+ * como "leitura certificada de agora". Portão de valor cego a defeito de
+ * etiqueta: o número estava bem formado, e o que não valia era o carimbo.
+ * → memory/feedback_defeito_de_etiqueta_passa_por_todo_portao_de_valor.md
+ *
+ * ⚠️ O filtro é por `livrosOk` e NUNCA pelo `ok` do topo, porque a trava
+ * certifica CONTRATO A CONTRATO: na mesma rodada de 11/Set ela reprovou o
+ * presidencial e aprovou `secondPlace`, `thirdPlace`, `stf` e `senate`. Jogar a
+ * captura inteira fora por causa de um livro perderia quatro leituras boas.
+ * → memory/feedback_a_trava_certifica_por_contrato_nao_por_veredito.md
+ *
+ * ⛔ Captura SEM o campo `livrosOk` não é aprovada nem reprovada: é captura sem
+ * veredito gravado, e isso sai em `vereditoAusente` para o chamador gritar, em
+ * vez de virar silêncio nos dois sentidos. Ausência de dado e falha de leitura
+ * não podem dar a mesma tela. Por isso o teste é `Array.isArray` e não
+ * veracidade: `livrosOk: []` é veredito de verdade, e quer dizer tudo bloqueado.
+ */
+export function precosCertificados(captura) {
+  const precos = captura?.precos ?? {}
+  if (!Array.isArray(captura?.livrosOk)) {
+    return { precos, bloqueadas: [], livrosBloqueados: [], vereditoAusente: true }
+  }
+  const grupoDe = (chave) => {
+    const i = chave.indexOf(':')
+    return i >= 0 ? chave.slice(0, i) : ''
+  }
+  const aprovados = new Set(captura.livrosOk)
+  const limpos = {}
+  const bloqueadas = []
+  for (const [chave, valor] of Object.entries(precos)) {
+    if (aprovados.has(grupoDe(chave))) limpos[chave] = valor
+    else bloqueadas.push(chave)
+  }
+  const livrosBloqueados = [...new Set(bloqueadas.map(grupoDe))].map((grupo) => ({
+    grupo,
+    motivos: captura?.livros?.[grupo]?.motivos ?? [],
+  }))
+  return { precos: limpos, bloqueadas, livrosBloqueados, vereditoAusente: false }
+}
+
+/**
  * 🕳️ A IDADE da leitura certificada, porque "agora" com 21 horas não é agora.
  *
  * Medido em 04/Set/2026, minutos depois de consertar a junção acima: com o mapa

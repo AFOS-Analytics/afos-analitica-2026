@@ -24,6 +24,7 @@ import {
   janela,
   oQueAJanelaEsconde,
   parBinario,
+  precosCertificados,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -401,6 +402,89 @@ console.log('\n6. ⚖️ O PAR BINÁRIO, cru contra normalizado')
     '⚠️ e os deltas saem NULOS, não zero, que se leria como "não mudou"',
     semAntes.lados[0].deltaCru === null && semAntes.lados[0].deltaNorm === null
   )
+}
+
+console.log('\n7. 🔒 O VEREDITO da trava, que o CLI nunca lia (medido em 12/Set/2026)')
+/**
+ * O defeito: `lerCaptura` conferia a IDADE da captura e nunca se ela VALIA.
+ * Preço de livro que a trava reprovou entrava na série como "leitura certificada
+ * de agora", e o veredito de superlativo saía calculado sobre ele.
+ */
+{
+  // A captura REAL de 11/Set/2026 18:45Z, reduzida: ok=false, presidencial
+  // BLOQUEADO porque Lula discordou 1,00pp entre duas leituras a 8 minutos, e
+  // outros quatro livros aprovados na MESMA rodada.
+  const captura = {
+    ok: false,
+    livros: {
+      presidential: {
+        ok: false,
+        motivos: ['presidential:Luiz Inácio Lula da Silva: as leituras discordam em 1.00pp (42.50% -> 43.50%).'],
+      },
+      secondPlace: { ok: true, motivos: [] },
+      stf: { ok: true, motivos: [] },
+    },
+    livrosOk: ['secondPlace', 'thirdPlace', 'stf', 'senate'],
+    precos: {
+      'presidential:Flávio Bolsonaro': 51.95,
+      'presidential:Luiz Inácio Lula da Silva': 43.5,
+      'secondPlace:Flávio Bolsonaro': 75,
+      'stf:Any Brazil STF Justice removed by impeachment before 2027': 8.3,
+    },
+  }
+  const r = precosCertificados(captura)
+  conferir('🔴 preço de livro BLOQUEADO não entra como leitura de agora', r.precos['presidential:Flávio Bolsonaro'] === undefined)
+  conferir('e as duas chaves do presidencial saem NOMEADAS, não caladas', r.bloqueadas.length === 2, JSON.stringify(r.bloqueadas))
+  conferir(
+    '⭐ mas os livros APROVADOS na mesma rodada continuam entrando',
+    r.precos['secondPlace:Flávio Bolsonaro'] === 75 &&
+      r.precos['stf:Any Brazil STF Justice removed by impeachment before 2027'] === 8.3
+  )
+  conferir(
+    '⛔ o filtro é por livrosOk e NUNCA pelo ok do topo: ok=false com 4 livros bons não zera a captura',
+    Object.keys(r.precos).length === 2,
+    JSON.stringify(Object.keys(r.precos))
+  )
+  conferir(
+    'o MOTIVO da trava viaja junto, senão a saída diz que bloqueou e não diz por quê',
+    r.livrosBloqueados.length === 1 &&
+      r.livrosBloqueados[0].grupo === 'presidential' &&
+      r.livrosBloqueados[0].motivos[0].includes('1.00pp')
+  )
+
+  /**
+   * ⭐ Controle NEGATIVO, e ele é o que separa régua boa de régua histérica:
+   * régua nova precisa rodar contra o dia em que NÃO houve defeito também.
+   * Fixture real do `ultima-us.json` de 12/Set, com ok=true nos três livros.
+   */
+  const boa = {
+    ok: true,
+    livros: { house: { ok: true, motivos: [] }, senate: { ok: true, motivos: [] } },
+    livrosOk: ['house', 'senate', 'asScheduled'],
+    precos: {
+      'house:the Democratic Party control the House after the 2026 Midterm elections': 87.5,
+      'senate:the Democratic Party control the Senate after the 2026 Midterm elections': 51.5,
+    },
+  }
+  const rb = precosCertificados(boa)
+  conferir('⭐ captura inteiramente aprovada não perde preço nenhum', Object.keys(rb.precos).length === 2 && rb.bloqueadas.length === 0)
+  conferir('e ela não reporta veredito ausente', rb.vereditoAusente === false)
+
+  // ⛔ Sem veredito gravado não é aprovação nem reprovação, e as duas leituras
+  // erradas são opostas: engolir tudo ou descartar tudo em silêncio.
+  const rs = precosCertificados({ precos: { 'house:algo': 10 } })
+  conferir(
+    '⛔ captura SEM livrosOk grita vereditoAusente em vez de decidir sozinha',
+    rs.vereditoAusente === true && Object.keys(rs.precos).length === 1
+  )
+  conferir(
+    '🔑 e livrosOk VAZIO é veredito de verdade, não ausência: tudo bloqueado',
+    (() => {
+      const r0 = precosCertificados({ livrosOk: [], precos: { 'house:algo': 10 } })
+      return r0.vereditoAusente === false && Object.keys(r0.precos).length === 0
+    })()
+  )
+  conferir('captura nula não explode e não inventa preço', precosCertificados(null).vereditoAusente === true)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
