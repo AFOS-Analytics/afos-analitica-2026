@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-12",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtCertificado": "2026-09-12T16:10:07.499Z",
+      "reFetchAoVivo": "2026-09-12T17:38:36.028Z",
+      "gateRebaseline": "DISPAROU, e NAO foi rebaseado",
+      "motivo": "o unico movimento em 88 minutos foi Renan Santos no livro de 3o lugar, 37.00 -> 36.50 (-0.50pp). As grandezas que o gate NOMEIA (Lula, Flavio, o vao e Renan no vencedor) andaram 0.00pp, e o volume total foi de 148.77M para 148.79M",
+      "livrosAprovados": ["presidential", "thirdPlace", "stf", "senate"],
+      "livroBloqueado": "secondPlace, as duas leituras da trava discordaram 0.75pp em Lula (19.60 -> 18.85)",
+      "desfecho": "rebasear os 5 arquivos sobre uma leitura SOLTA com fresh=1 trocaria preco CERTIFICADO por NAO certificado, contra a trava de captura. A peca publica a leitura confirmada de 12/Set 13:10 BRT, que e a que o painel serve. Decisao declarada ao Andre antes do preview."
+    },
+    "factCheck": {
+      "atosAltoImpacto": [
+        "Fachin nega o julgamento unificado de Moraes e Mendonca, mantem a sessao de 15/Set e marca outra para 23/Set",
+        "Gilmar Mendes reforca o pedido de Zanin por acesso ao conteudo do celular de Daniel Vorcaro",
+        "Lindbergh Farias pede investigacao de Flavio por vinculo com operador do INSS"
+      ],
+      "crossReference": "check-recurrence nas ultimas 7 dailies: 'julgamento conjunto' 0 mencoes, '23 de setembro' 0, 'Lindbergh' 0, todos NOVIDADE. 'Fachin' 22 e 'Gilmar' 5, recorrencia do ATOR e nao do ATO.",
+      "ato1_fonte1": "CartaCapital, grupo independente, URL direta, 12/Set",
+      "ato1_fonte2": "Gazeta do Povo, grupo independente, URL direta, 12/Set. Corroboram Folha e G1.",
+      "ato1_decisao": "incorporar. As duas fontes divergem sobre o OBJETO da sessao de 23, entao a peca registra a marcacao da DATA e nao o objeto.",
+      "ato2_fonte1": "O Globo, URL datada 2026/09/12",
+      "ato2_fonte2": "Estadao, grupo independente. Corrobora G1, mesmo grupo do O Globo.",
+      "ato2_decisao": "incorporar",
+      "ato3_fonte1": "Poder360, item UNICO no news-cache do dia",
+      "ato3_fonte2": "NAO encontrada",
+      "ato3_decisao": "NAO incorporar. Fonte unica nao sustenta ato de alto impacto. RETIRADO da peca.",
+      "newsCacheContradiz": "nao"
+    },
+    "superlativo": {
+      "manchetePlanejadaEDescartada": "eu ia enquadrar 'o vao fechou 10,00pp em um dia' como excepcional. A medicao no BACKUP desmentiu: sobre 146 pares de dias consecutivos desde 14/Abr, o vao variou 10pp ou mais em TRES, e a de hoje seria a QUARTA. As maiores sao 09->10/Set com +17.50pp, 12->13/Mai com -15.90pp e 07->08/Set com +11.20pp.",
+      "oQueFoiPublicadoNoLugar": "que a sacudida NAO e rara neste mes, com dois dos tres casos em setembro. Medicao, nao impressao.",
+      "extremosConferidosNoBackup": {
+        "Flavio 49.95": "DENTRO, 5.15pp abaixo do topo de 55.10 de 10/Set",
+        "Lula 48.50": "DENTRO, 19.00pp abaixo do topo de 67.50 de 16/Ago",
+        "STF 6.70": "DENTRO, 19.40pp abaixo do topo de 26.10 de 11/Set",
+        "Caiado 0.15 no vencedor": "PISO, abaixo do piso da serie de 0.20 de 04/Set. Unico extremo verdadeiro do dia.",
+        "Cury 55.80 no 3o lugar": "DENTRO, 4.50pp abaixo do topo de 60.30 de 04/Set"
+      },
+      "defeitoDoProprioMedidor": "o script que eu escrevi para isso imprimiu RECORDE para Cury, Renan e Caiado no livro de 2o lugar, porque eu passei os precos do 3o contra a serie do 2o. Mesmo nome vivendo em livros diferentes. As quatro linhas foram DESCARTADAS e nada sobre o 2o lugar entrou na peca.",
+      "lacunaDoGuardrail": "o serie-do-contrato --pais=br cobre apenas 3 livros (vencedor, STF, Senado) e NAO cobre o de 2o nem o de 3o lugar, embora os dois estejam no backup/neon/market com 6.528 e 8.829 precos gravados. A cegueira e de FILTRO, nao de dado."
+    },
+    "escopoCalendario": "6 nacionais com n>=1000 na janela de 13 a 19/Set, 39 registros fora por escopo ou amostra. Todos com scopeSource=methodology.",
+    "travessao": 0,
+    "emoji": 0,
+    "palavrasCorpo": 1096,
+    "tetoPalavras": 1100,
+    "cortesFeitos": "de 1332 para 1096 em duas passadas. Saiu o ranking da serie do corpo por REPETIR o terceiro blockquote de Divergencias, e a comparacao interna da Datafolha por repetir o fechamento. Custo declarado ao Andre: saiu a faixa historica do vao, os votos validos 43x38 e o detalhamento dos quatro pares.",
+    "gateNumerico": "80 numeros com unidade, multiconjunto IDENTICO nos 3 idiomas",
+    "separadorDecimal": "conferido por idioma inclusive na coluna de confianca da tabela do calendario",
+    "cincoChecagens": "0 ancora de glossario, 0 link apontando para outro locale, 0 homoglifo cirilico ou grego, separador decimal coerente, tldr com 3 bullets nos 3 idiomas",
+    "proporcaoFontes": "6 ancora e 7 secundarias, 53.8% secundarias, dentro do alvo de 50 a 70%",
+    "urlsGoogleNews": "11, nenhuma truncada",
+    "reconcileClaims": "OK, todos os claims batem com os JSONs dentro de 0.05pp",
+    "validator": "OK, 2 warnings: densidade de link 79% contra a regua de 80%, e 5 superlativos de escopo temporal, todos conferidos no backup nesta sessao"
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. O unico item de fonte unica do dia, o requerimento do Lindbergh, foi RETIRADO da peca por isso.",
+    "2_numericalErrors": "reconcile-claims OK. Os 3 pares sinalizados sao artefatos de contexto: o 37% e do par contra Renan, o 46% e a rejeicao e o 44% esta dentro do titulo de uma materia.",
+    "3_fontesInventadas": "conferidos 3 ao acaso (CartaCapital, O Globo e o G1 dos decididos). Os tres saem do news-cache de 2026-09-12 com URL completa.",
+    "4_quotesLiterais": "nenhuma. A peca nao usa aspas de fala.",
+    "5_causacaoEspuria": "nenhuma. O trecho que aproxima o contrato do Supremo da decisao de Fachin termina com 'a ordem dos fatos esta medida, o vinculo entre eles nao'.",
+    "6_verbosCriticos": "negou, marcou, reforcou e pediu, todos com data e fonte. Nenhum verbo de privacao de liberdade, morte ou vazamento.",
+    "decisao": "prosseguir para traducao e preview"
+  },
+  "naoRodou": {
+    "wayback": "NAO RODOU, e por cumprimento da regra. O pre-check em https://web.archive.org/save/ devolveu 429. A regua manda nao rodar e NAO insistir, e a fila diz 'so depois da pausa de 3 a 4 dias sem sondar'. Sondar de novo hoje violaria a regra que mandou parar.",
+    "waybackPassivo": "45 dailies, 616 URLs externas, 607 sem copia. A mais antiga exposta ha 45 dias, de 2026-07-29.",
+    "waybackDailyDeHoje": "as URLs de 2026-09-12 entram no passivo e serao arquivadas quando o host liberar."
+  }
+}
