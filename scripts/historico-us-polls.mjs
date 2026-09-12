@@ -113,16 +113,48 @@ async function main() {
     console.log(`\n   ⚠️ nao deu para abrir ${ARQUIVO} (${e.message}): o controle da projecao NAO foi feito.`)
     return
   }
+  // 🔴 A COMPARABILIDADE OLHA `publicadas`, NAO SO `linhasLidas`, e a diferenca
+  //    entre as duas nao e cosmetica.
+  //
+  //    `linhasLidas` conta o que veio do INDICE da Wikipedia. Rodada CURADA, que
+  //    entra pela listagem do proprio instituto, nao passa por ali: ela soma em
+  //    `publicadas` e deixa `linhasLidas` parada. Entao uma curadoria muda a BASE
+  //    sem mexer no criterio que decidia se os dias eram comparaveis.
+  //
+  //    Medido em 12/Set/2026: a Quantus foi curada em 10/Set e `linhasLidas`
+  //    ficou em 381 nos sete registros seguidos, enquanto `publicadas` foi de
+  //    387 para 388. O controle reaplicou a base de HOJE, que ja tem a Quantus,
+  //    aos dias 05 a 09/Set, que nao a tinham, e acusou 5 divergencias de +1
+  //    rodada e +1 instituto. Elas nao eram defeito de REGRA, eram a base tendo
+  //    mudado, e mesmo assim o script concluia "a projecao NAO esta validada,
+  //    nao usar o numero dela" e saia 1.
+  //
+  // 🔑 Alarme que nao distingue "a regra mudou" de "a base mudou" desabilita uma
+  //    ferramenta boa por um motivo falso. → memory/feedback_o_conferidor_que_eu_escrevo_tambem_e_um_medidor.md
   const legiveis = d.registros.filter((r) => !r.ilegivel && r.linhasLidas != null)
   const baseDeHoje = legiveis[0]?.linhasLidas
+  const pubDeHoje = legiveis[0]?.publicadas
   const comparaveis = []
+  let pararamPorBase = null
   for (const r of legiveis) {
     if (r.linhasLidas !== baseDeHoje) break
+    if (r.publicadas !== pubDeHoje) {
+      pararamPorBase = { dia: r.lastUpdate, pub: r.publicadas }
+      break
+    }
     comparaveis.push(r)
   }
 
   console.log(`\n   🔬 CONTROLE: a regra de hoje reaplicada aos dias ja gravados`)
-  console.log(`      comparavel so enquanto linhasLidas = ${baseDeHoje}, o que da ${comparaveis.length} dia(s)`)
+  console.log(`      comparavel so enquanto linhasLidas = ${baseDeHoje} E publicadas = ${pubDeHoje}, o que da ${comparaveis.length} dia(s)`)
+  if (pararamPorBase) {
+    console.log(
+      `      📌 a serie para em ${pararamPorBase.dia}, que tinha publicadas=${pararamPorBase.pub}: dali para tras a BASE e outra.`
+    )
+    console.log(
+      `         Curadoria nao mexe em linhasLidas, so em publicadas, entao comparar por linhasLidas acusaria defeito de regra onde houve mudanca de base.`
+    )
+  }
   let divergencias = 0
   for (const r of comparaveis) {
     const m = mediaEm(dados.polls ?? [], r.lastUpdate, dados?.mediaAfos?.janelaDias ?? 30)

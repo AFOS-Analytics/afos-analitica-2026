@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-10",
-  "fetchedAt": "2026-09-10T15:19:35.025Z",
+  "lastUpdate": "2026-09-12",
+  "fetchedAt": "2026-09-12T00:18:55.428Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -38,8 +38,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-11",
-    "nPesquisas": 11,
+    "desde": "2026-08-13",
+    "nPesquisas": 10,
     "incluidas": [
       {
         "instituto": "The Economist/YouGov",
@@ -110,24 +110,16 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 42
-      },
-      {
-        "instituto": "Focaldata/Financial Times",
-        "campoFim": "2026-08-11",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 45
       }
     ],
-    "nInstitutos": 9,
-    "dem": 47.06,
-    "rep": 41.89,
-    "vantagemDem": 5.17,
+    "nInstitutos": 8,
+    "dem": 46.67,
+    "rep": 41.58,
+    "vantagemDem": 5.09,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Echelon Insights",
       "Emerson College",
-      "Focaldata/Financial Times",
       "Harvard/Harris Poll/HarrisX",
       "Morning Consult",
       "Quantus Insights (R)",
