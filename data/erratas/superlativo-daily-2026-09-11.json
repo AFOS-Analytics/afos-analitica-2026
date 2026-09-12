@@ -1,0 +1,13 @@
+{
+  "motivo": "superlativo falso publicado na AFOS Daily de 2026-09-11, nos 3 idiomas: '53,95% e o ponto mais alto da serie' contra um topo medido de 55,10 em 2026-09-10",
+  "achadoEm": "2026-09-12",
+  "trilha": "public/afos-daily/_audit/2026-09-11.json, bloco 'errata', id ERR-DAILY-2026-09-11-01",
+  "explicacao": "A serie gravada em backup/neon/marketPrice guarda o topo de Flavio Bolsonaro no livro brazil-presidential-election em 55,10 de 2026-09-10, sobre 548 pontos abertos em 14/Abr. A peca publicada afirma que 53,95 e o ponto mais alto, comparando contra 53,20. Medido por duas ferramentas independentes da casa, que concordam: serie-do-contrato.mjs imprime topo 55,10 em 2026-09-10, e amplitude-do-dia.mjs imprime a faixa gravada de 10/Set como 46,40 a 55,10 com 20 pontos e USD 166.769 de dinheiro novo. Em 11/Set a faixa gravada do proprio dia foi 51,50 a 54,80, entao o valor publicado nao era o topo nem dentro do dia da peca. A causa e conferir superlativo contra leitura certificada, que e fechamento, em vez da serie gravada.",
+  "decisao": "NAO corrigido no lugar, por decisao do Andre em 12/Set/2026. Mesmo modelo do hf-assets/ERRATA.md: o artefato permanece como foi distribuido e o defeito continua descobrivel.",
+  "arquivos": {
+    "public/afos-daily/2026-09-11.md": 0,
+    "public/afos-daily/2026-09-11.en.md": 0,
+    "public/afos-daily/2026-09-11.es.md": 0
+  },
+  "notaSobreOsZeros": "zero linha alterada em cada arquivo e o resultado ESPERADO, nao falha de aplicacao: a decisao foi nao reescrever o publicado."
+}

@@ -40,6 +40,23 @@
     "7_referenciaAmbigua": "🔴 SETE achados, 5 deles causados pelo corte para caber no teto de 1.100 palavras. O André pegou o primeiro: 'Augusto Cury indicou que pode apoia-lo' tinha Lula como antecedente mais proximo, quando o fato e Flavio, e a peca se contradizia com o titulo da propria fonte no rodape. Os outros 6: dois 'hoje' e um 'today' contra a regua R8; 'foi ela que tornou publico' sem antecedente feminino; 'entre os dois' ambiguo; numeros de pp sem dizer de quem eram; 'a frente' sem dizer de quem; e 'o segundo subiu, nao o primeiro caiu' funcionando so por coincidencia de ordem. Todos corrigidos nos 3 idiomas.",
     "decisao": "prosseguir, apos as 7 correcoes"
   },
+  "errata": {
+    "id": "ERR-DAILY-2026-09-11-01",
+    "achadoEm": "2026-09-12",
+    "achadoPor": "rodada do /atualizar-pesquisas-brz de 12/Set, conferindo a serie antes de descrever o movimento do dia",
+    "superficie": "texto publicado da daily de 2026-09-11, nos 3 idiomas",
+    "afirmacaoPublicada": "os 53,95% de Flavio sao o ponto mais alto da serie, aberta em 14 de abril, acima dos 53,20% anteriores",
+    "ondeAparece": "4 posicoes por idioma: lede, tldr, secao 1 e Em sintese",
+    "medido": "a serie gravada em backup/neon/marketPrice tem o topo de Flavio em 55,10 de 2026-09-10, sobre 548 pontos de 14/Abr a 11/Set. E em 11/Set a propria faixa gravada do dia foi 51,50 a 54,80, entao 53,95 nao e o topo nem dentro do dia da peca",
+    "magnitude": "1,15pp abaixo do topo real da serie",
+    "naoEhTiqueSolitario": "10/Set tem 20 pontos gravados na faixa 46,40 a 55,10, com USD 166.769 de dinheiro novo e veredito ESTRUTURAL, entre um 09/Set que parou em 47,00 e um 11/Set que chegou a 54,80. Maximo e a estatistica que um ponto errado define sozinho, entao os vizinhos foram conferidos",
+    "oPontoEstavaVisivel": "o backup foi gerado em 2026-09-11T18:00:35.878Z e commitado em 10b8b6e as 18:05:06Z; a daily foi commitada em 21fdf1e as 22:36:21Z, 4h31 depois. NAO foi a cauda cega do backup",
+    "causa": "o superlativo foi conferido contra leituras CERTIFICADAS, que sao fechamentos, e nao contra a serie gravada. O fechamento do dia esconde topo e piso",
+    "decisao": "NAO corrigido no lugar, por decisao do Andre em 12/Set/2026. O artefato fica exatamente como foi distribuido e a correcao vive aqui, no mesmo modelo do hf-assets/ERRATA.md",
+    "prevencao": "rodar node scripts/serie-do-contrato.mjs --pais=br antes de escrever superlativo. A ferramenta ja existia em 11/Set e teria impresso o topo 55,10 de 10/Set. ATENCAO: isto ainda NAO e portao, e regra de procedimento, e instala-la como portao no comando da daily e decisao pendente do Andre",
+    "oQueNaoResolve": "o conserto do precosCertificados, feito em 12/Set, e de OUTRO defeito, o de usar preco de livro bloqueado pela trava como leitura de agora. Ele NAO pega este erro",
+    "limite": "nao existe hoje superficie PUBLICA de errata para a daily, ao contrario do dataset no Hugging Face. Este registro e interno"
+  },
   "naoRodou": {
     "wayback": "PAUSA. O priorizador manda nao sondar: o host esta bloqueando e a regua e de 3 a 4 dias sem sondar. Passivo mais antigo: 2026-07-29, exposto ha 44 dias, 28 URLs faltando."
   }
