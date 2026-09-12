@@ -55,7 +55,24 @@
     "decisao": "NAO corrigido no lugar, por decisao do Andre em 12/Set/2026. O artefato fica exatamente como foi distribuido e a correcao vive aqui, no mesmo modelo do hf-assets/ERRATA.md",
     "prevencao": "rodar node scripts/serie-do-contrato.mjs --pais=br antes de escrever superlativo. A ferramenta ja existia em 11/Set e teria impresso o topo 55,10 de 10/Set. ATENCAO: isto ainda NAO e portao, e regra de procedimento, e instala-la como portao no comando da daily e decisao pendente do Andre",
     "oQueNaoResolve": "o conserto do precosCertificados, feito em 12/Set, e de OUTRO defeito, o de usar preco de livro bloqueado pela trava como leitura de agora. Ele NAO pega este erro",
-    "limite": "nao existe hoje superficie PUBLICA de errata para a daily, ao contrario do dataset no Hugging Face. Este registro e interno"
+    "limite": "nao existe hoje superficie PUBLICA de errata para a daily, ao contrario do dataset no Hugging Face. Este registro e interno",
+    "alcanceMedidoEm12Set": {
+      "regra": "REGISTRO DATADO nao se reescreve e vive de errata; ESTADO CORRENTE se corrige. A daily e o backup sao registro; os JSONs do painel sao estado corrente",
+      "dailyPublicada": "3 idiomas, 4 posicoes cada. NAO reescrita, por decisao do Andre",
+      "painelEmProducao": "9 arquivos (polls-data, analysis-data e analysis-criteriosa, nos 3 idiomas) estavam SERVINDO as frases falsas, conferido um a um com status 200. CORRIGIDOS em 12/Set: 39 trocas, 30 da familia A e 9 da familia B",
+      "backupNeon": "analysisReport/2026-09.csv.gz tem 6 ocorrencias ligadas a 53,95, mais 8 de outros dias que sao legitimas. NAO se reescreve: e registro datado do que foi publicado, e o repositorio e publico",
+      "datasetHuggingFace": "LIMPO, zero ocorrencia. A afirmacao nao vazou para a superficie aberta de dados"
+    },
+    "familiaB_segundaAfirmacaoFalsa": {
+      "achadaEm": "2026-09-12, pelo portao novo de superlativo rodando sobre o painel",
+      "publicado": "o contrato do STF segue 11,00pp abaixo do topo da serie, de 19,30% em 04/Set",
+      "medido": "o topo real e 26,10%, registrado no PROPRIO 11/Set as 05:00 BRT (08:00Z). A distancia certa e 17,80pp",
+      "naoEhTique": "vizinho de 22,60% uma hora antes, descida em patamar de 10 a 12%, e 35 de 98 pontos do mes acima de 10%. Cheguei a suspeitar de tique por causa do volume de USD 2.011 e a vizinhanca desmentiu a suspeita",
+      "oQueEstavaCERTO": "o piso citado, 2,10% em 08/Jun, confere com a serie e nao foi tocado",
+      "presenteNaDaily": "sim, secao 1 dos 3 idiomas. Fica como registro, sem reescrita, igual a familia A"
+    },
+    "porQueOPortaoNaoPegouNaEpoca": "o detector de superlativo existia desde 20/Jul mas varria SO os JSONs do painel, e a daily nao tinha varredura nenhuma. E o vocabulario nao conhecia 'mais alto': com a lista antiga, a daily de 11/Set produzia ZERO alerta, medido nas 143 dailies publicadas. Consertado em 12/Set no commit fbcca32",
+    "commits": "fbcca32 instala o portao e amplia o vocabulario; a cirurgia do painel vem em commit proprio, local e nao empurrado"
   },
   "naoRodou": {
     "wayback": "PAUSA. O priorizador manda nao sondar: o host esta bloqueando e a regua e de 3 a 4 dias sem sondar. Passivo mais antigo: 2026-07-29, exposto ha 44 dias, 28 URLs faltando."

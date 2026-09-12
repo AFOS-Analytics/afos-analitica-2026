@@ -9,5 +9,30 @@
     "public/afos-daily/2026-09-11.en.md": 0,
     "public/afos-daily/2026-09-11.es.md": 0
   },
-  "notaSobreOsZeros": "zero linha alterada em cada arquivo e o resultado ESPERADO, nao falha de aplicacao: a decisao foi nao reescrever o publicado."
+  "notaSobreOsZeros": "zero linha alterada em cada arquivo e o resultado ESPERADO, nao falha de aplicacao: a decisao foi nao reescrever o publicado.",
+  "alcanceEstendidoEm12Set": {
+    "regra": "REGISTRO DATADO nao se reescreve e vive de errata; ESTADO CORRENTE se corrige.",
+    "registroDatado_naoReescrito": {
+      "daily_2026-09-11": "3 idiomas, 4 posicoes cada",
+      "backup/neon/analysisReport/2026-09.csv.gz": "6 ocorrencias ligadas a 53,95, mais 8 de outros dias que sao legitimas"
+    },
+    "estadoCorrente_corrigido": {
+      "quando": "2026-09-12",
+      "arquivos": 9,
+      "trocas": 39,
+      "familiaA_53,95": 30,
+      "familiaB_STF": 9,
+      "camposLegitimosPreservados": 10,
+      "metodo": "corretor com tabela por CAMINHO de campo, cada troca casando exatamente 1 vez, ensaio antes de gravar e falha-fechada. Zero substituicao global por regex: tres filtros automaticos erraram, por ancora numerica (falso negativo) e por regex largo (falso positivo)",
+      "portoes": "npm run check:content exit 0, gate numerico 31/31 e 6/6 sem divergencia, locale 5/5 nos 6 traduzidos, diff de 36 linhas sem reformatacao"
+    },
+    "datasetHuggingFace": "LIMPO, zero ocorrencia"
+  },
+  "segundaAfirmacaoFalsa_STF": {
+    "publicado": "o contrato do STF segue 11,00pp abaixo do topo da serie, de 19,30% em 04/Set",
+    "medido": "topo real 26,10% no PROPRIO 11/Set as 05:00 BRT. Distancia certa: 17,80pp",
+    "naoEhTique": "vizinho de 22,60% uma hora antes e 35 de 98 pontos do mes acima de 10%",
+    "oQueEstavaCerto": "o piso, 2,10% em 08/Jun, confere e nao foi tocado"
+  },
+  "prevencaoInstalada": "lib/superlativo, com a varredura chegando a daily pela primeira vez e o vocabulario passando a conhecer 'mais alto', que era o buraco por onde a frase escapou. Commit fbcca32. ATENCAO: e WARNING, nao portao que morde, porque 48,3% das 143 dailies publicadas contem superlativo de escopo temporal e um error bloquearia metade das pecas. O portao que MORDE seria comparar o numero com a serie, e continua nao existindo."
 }
