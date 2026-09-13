@@ -1,0 +1,39 @@
+{
+  "motivo": "o painel do Brasil de 2026-09-13 foi ao ar as 13:17 BRT afirmando que Edson Fachin 'determinou que Andre Mendonca lhe remeta os processos do Banco Master e das fraudes do INSS'. A frase e verdadeira e INCOMPLETA de um jeito que engana: omite que Mendonca SEGUE relator e que a decisao foi de comum acordo entre os dois ministros.",
+  "achadoEm": "2026-09-13, pelo gate de fact-check da AFOS Daily, que roda horas depois do painel e so existe la",
+  "trilha": "public/afos-daily/_audit/2026-09-13.json, bloco gates.factCheck, campos achadoDoGate e erratoDoPainel",
+  "explicacao": "As MANCHETES de Folha de S.Paulo, CartaCapital e Metropoles dizem que Fachin AFASTOU Mendonca da relatoria, ou que TIROU a relatoria dele. Dois CORPOS lidos, de grupos independentes entre si, dizem o contrario. O Poder360 escreve, literal: 'sem retirar a relatoria do ministro Andre Mendonca', e 'A decisao foi em comum acordo. Os 2 ministros conversaram e concordaram com essas medidas antes de o presidente do STF baixar a decisao', e ainda 'Fachin tambem determinou que os inqueritos relacionados as fraudes do Banco Master e dos descontos do INSS fiquem suspensos na Presidencia'. A Gazeta do Povo confirma a determinacao de remessa e registra que 'nao esta claro se ele quer apenas se inteirar sobre o andamento dos casos ou se estuda retira-los de Mendonca', ou seja deixa em aberto o que o Poder360 resolve. O ato e de 2026-09-12 as 20h40. O fato correto: os inqueritos do Master e do INSS ficaram SUSPENSOS na Presidencia da Corte, o relator deles NAO mudou, e a decisao foi acertada entre os dois ministros antes de ser assinada.",
+  "decisao": "ESTADO CORRENTE corrigido, REGISTRO DATADO preservado, que e a regua firmada em 12/Set/2026. Os 9 JSONs publicos do painel foram corrigidos e estao no ar (commit 620cc905). O snapshot do Neon NAO foi reescrito.",
+  "estadoCorrente": {
+    "arquivos": [
+      "public/analysis-data.json",
+      "public/analysis-data.en.json",
+      "public/analysis-data.es.json",
+      "public/analysis-criteriosa.json",
+      "public/analysis-criteriosa.en.json",
+      "public/analysis-criteriosa.es.json",
+      "public/polls-data.json",
+      "public/polls-data.en.json",
+      "public/polls-data.es.json"
+    ],
+    "ocorrenciasCorrigidas": 52,
+    "commit": "620cc905",
+    "conferidoNoAr": "sim, com cache furado por query unica: zero ocorrencia de 'lhe remeta', 'PUXOU OS PROCESSOS', 'afastou Mendonca' e equivalentes em EN e ES nas 9 superficies",
+    "tambemCorrigido": "as duas chamadas que afirmavam mudanca de COMPETENCIA, que nao houve, e a ressalva que a propria pagina tinha escrito dizendo que ele 'PUXOU OS PROCESSOS PARA SI', que tambem exagerava"
+  },
+  "registroDatadoPreservado": {
+    "onde": "Neon, tabela analysisReport",
+    "slugs": ["analysis-cards-13-09-2026", "analysis-criteriosa-13-09-2026"],
+    "carimbo": "2026-09-13T16:44:50.733Z",
+    "oQueEleContem": "a formulacao ANTERIOR, com 'lhe remeta' nos dois e 'PUXOU OS PROCESSOS' no analysis-cards",
+    "porQueNaoFoiReescrito": "o snapshot e um registro datado do que o painel publicava naquele instante, e naquele instante ele publicava aquilo. Reescreve-lo apagaria a prova de que o defeito existiu. Mesmo modelo do hf-assets/ERRATA.md e da errata de superlativo de 11/Set: o artefato permanece como foi distribuido e o defeito continua descobrivel.",
+    "comoLerOSnapshot": "qualquer leitura do analysisReport de 2026-09-13 deve ser feita junto com esta errata. O texto no ar e o corrigido; o snapshot e a fotografia de 16:44Z."
+  },
+  "familiaDoDefeito": {
+    "qual": "o /atualizar-brz publica FATO sem o gate de fact-check, que so existe na daily",
+    "ocorrencia": "TERCEIRA vez",
+    "ficha": "memory/feedback_o_atualizar_publica_fato_sem_o_gate_de_factcheck.md",
+    "acrescimoDesteCaso": "as duas anteriores eram sobre a DATA do ato. Esta e sobre o VERBO, e o agravante e que TRES veiculos publicaram a mesma manchete que o corpo deles proprio nao sustenta. Conferir manchete contra manchete teria dado concordancia de tres fontes e a afirmacao errada."
+  },
+  "prevencaoPossivel": "nenhuma instalada nesta data. O conserto estrutural seria levar o gate de fact-check para dentro do /atualizar-brz, que e onde o fato vai ao ar primeiro, e isso e decisao do Andre, nao efeito colateral desta errata."
+}
