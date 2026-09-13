@@ -57,6 +57,22 @@ jobs:
       - name: Run TSE scope classifier tests
         run: npx --no-install tsx scripts/test-tse-scope.mjs
 
+      # O conjunto de fantasmas responde QUAIS protocolos sairam do registro do
+      # TSE, e desde 13/Set tambem se a retirada era NACIONAL com divulgacao a
+      # frente, que e a unica pergunta que muda o que se publica. O teste cobre o
+      # portao que NAO pode disparar (nacional ja vencida, estadual a frente) e o
+      # medidor mudo (sem identidade, ele cala em vez de dizer "nenhuma").
+      - name: Conjunto de fantasmas do TSE
+        run: node scripts/testar-tse-fantasmas.mjs
+
+      # A regua por contrato do check:frescor, que em 13/Set ganhou o DONO
+      # ESTRUTURAL: o preco citado dentro do cartao do candidato, onde o nome
+      # nao se repete. O teste cobre os dois lados, o defeito real de 12/Set que
+      # passou verde e os casos que NAO podem disparar (numero de urna, valor
+      # historico, frase que nomeia dois livros).
+      - name: Regua por contrato do frescor
+        run: node scripts/testar-frescor-contratos.mjs
+
       # Os portoes de CONTEUDO viviam so em .git/hooks/pre-commit, que NAO e
       # versionado: clone novo, maquina nova ou commit com --no-verify passavam
       # sem nenhum deles, e o CI nao repetia um so. Aqui rodam sem a condicao de

@@ -40,7 +40,7 @@
 
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { canonPorContrato, contratoNoPonto } from './lib/frescor-contratos.mjs'
+import { canonPorContrato, contratoNoPonto, precosAfirmados } from './lib/frescor-contratos.mjs'
 
 const RAIZ = join(process.cwd(), 'public')
 const ARQUIVOS = ['analysis-data.json', 'analysis-criteriosa.json'] as const
@@ -459,8 +459,87 @@ try {
   }
 }
 
+// ── Régua 6: DONO ESTRUTURAL. O preço dentro do cartão do candidato.
+//
+// 🔴 POR QUE ISTO EXISTE, medido em 13/Set/2026. Este portão passou VERDE sobre
+// cinco campos `analise` que traziam os preços de 11/Set sob carimbo de 12/Set,
+// com Lula em 48,50% no `header` e 42,50% na `analise`, mesmo candidato e mesmo
+// contrato. Duas cegueiras somadas produziam o verde:
+//
+//   1. a régua de PREÇO lia só o `quadroComparativo`, nunca `analise`, `header`,
+//      `fortes` nem `fracos`, que são os campos mais longos e os que mais
+//      sobrevivem a uma regeração, porque são os mais caros de reescrever;
+//   2. a régua de VOLUME acha o dono pelo NOME no texto, e a `analise` não
+//      repete o nome, porque o dono ali é ESTRUTURAL: é a chave do JSON.
+//
+// 📌 O comentário de 04/Set já registrava o ponto 2 com estas palavras, "o dono
+// ali é ESTRUTURAL, é a chave do JSON, e ler estrutura é outra régua". Esta é a
+// régua. Identificar um defeito e removê-lo são atos diferentes, e nove dias
+// separaram um do outro.
+//
+// ⛔ CARTÃO DE MAIS DE UMA PESSOA NÃO SE JULGA POR PADRÃO. O bloco
+// "Caiado / Haddad / Zema" tem três donos e uma chave só, então um valor sem
+// dono explícito ali seria comparado contra a base do primeiro nome. É a mesma
+// regra que já governa esta casa: valor solto do dono não se julga.
+{
+  try {
+    const crit = JSON.parse(readFileSync(join(RAIZ, 'analysis-criteriosa.json'), 'utf-8')) as {
+      quadroComparativo?: { n?: string; m?: string }[]
+      candidates?: { name?: string; header?: string; analise?: string; fortes?: string[]; fracos?: string[] }[]
+    }
+    const chaveDe = (nome: string): string =>
+      nome.replace(/\s*\(.+\)\s*$/, '').trim().split(/\s+/)[0].toLowerCase()
+
+    const canon = new Map<string, ReturnType<typeof canonPorContrato>>()
+    for (const linha of crit.quadroComparativo ?? []) {
+      const dono = chaveDe(String(linha.n ?? ''))
+      if (dono.length < 3) continue
+      canon.set(dono, canonPorContrato(String(linha.m ?? '')))
+    }
+
+    const vistos = new Set<string>()
+    for (const c of crit.candidates ?? []) {
+      const nome = String(c.name ?? '')
+      // ⛔ cartão coletivo: sem dono único, nada a comparar por padrão
+      if (nome.includes('/')) continue
+      const base = canon.get(chaveDe(nome))
+      if (!base || base.size === 0) continue
+
+      const campos: Array<[string, string]> = [
+        ['header', String(c.header ?? '')],
+        ['analise', String(c.analise ?? '')],
+      ]
+      ;(c.fortes ?? []).forEach((t, i) => campos.push([`fortes[${i}]`, String(t ?? '')]))
+      ;(c.fracos ?? []).forEach((t, i) => campos.push([`fracos[${i}]`, String(t ?? '')]))
+
+      for (const [campo, texto] of campos) {
+        if (!texto) continue
+        for (const p of precosAfirmados(texto)) {
+          const b = base.get(p.contrato)
+          // Contrato que o quadro não declara não tem linha de base, e comparar
+          // contra a de outro livro é pior que não comparar.
+          if (!b) continue
+          if (b.preco === p.preco) continue
+          const id = `${nome}|${campo}|${p.contrato}|${p.preco}`
+          if (vistos.has(id)) continue
+          vistos.add(id)
+          falhas.push({
+            arquivo: 'analysis-criteriosa.json',
+            regra: 'CONTRADICAO',
+            detalhe: `${nome}, contrato ${p.contrato}: o campo "${campo}" do cartão dele afirma ${p.preco}% e o quadro de hoje diz ${b.preco}%. Mesmo candidato, mesmo contrato, dois preços.`,
+          })
+        }
+      }
+    }
+  } catch (e) {
+    falhas.push({ arquivo: 'analysis-criteriosa.json', regra: 'LEITURA', detalhe: (e as Error).message })
+  }
+}
+
 if (falhas.length === 0) {
-  console.log('✅ frescor: carimbo único por arquivo, série com uma data de início, preço e volume coerentes com o quadro, e nenhum candidato se contradizendo entre os próprios campos.')
+  console.log('✅ frescor: carimbo único por arquivo, série com uma data de início, e preço e volume coerentes com o quadro.')
+  console.log('   Escopo conferido: quadroComparativo (m, p, t, s) e, por dono ESTRUTURAL, os campos header, analise, fortes e fracos de cada cartão de candidato.')
+  console.log('   ⛔ Fora do escopo, de propósito: cartão de mais de uma pessoa, onde valor sem dono explícito não se julga.')
   process.exit(0)
 }
 

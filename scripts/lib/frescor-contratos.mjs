@@ -114,3 +114,57 @@ export function contratoNoPonto(bruto, ini, fim, padrao = 'vencedor') {
   const janela = bruto.slice(corte < 0 ? 0 : corte, fim)
   return contratoDaFrase(janela, padrao)
 }
+
+/**
+ * Valor citado como HISTORICO nao e contradicao, e narrativa de delta.
+ * "subiu de 41,00% para 39,00%" tem duas verdades e so a segunda e de hoje.
+ *
+ * Espelha a regra que ja vivia dentro do check-frescor-editorial, trazida para
+ * ca porque agora DOIS chamadores precisam dela e regra em dois lugares
+ * diverge. Exportada para o teste poder plantar caso nela.
+ */
+export const HISTORICO =
+  /\b(era|vinha de|ontem|na leitura de|no fechamento de|confirmada de|confirmado em|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|topo de|piso de|m[áa]xim|m[íi]nim|recorde|desde|contra)\b/i
+
+export function ehHistoricoEm(texto, pos) {
+  const antes = texto.slice(Math.max(0, pos - 45), pos)
+  if (HISTORICO.test(antes)) return true
+  // Valor seguido de DATA e referencia a outro dia: "17,90%, de 09/Jun".
+  const depois = texto.slice(pos).replace(/^\d+,\d+/, '')
+  if (/^%?[,;]?\s*(?:de|em)\s+\d{1,2}\/\w{3}/.test(depois)) return true
+  // "de X% para Y%": o X e o valor velho.
+  return /\bde\s*$/.test(antes) && /^\s*\d+,\d+%\s+para\s+\d/.test(texto.slice(pos))
+}
+
+/**
+ * PRECOS AFIRMADOS COMO DE HOJE num texto, por contrato.
+ *
+ * 🔴 POR QUE ISTO EXISTE, medido em 13/Set/2026. O `check:frescor` passou VERDE
+ * sobre cinco campos `analise` que traziam precos de 11/Set sob carimbo de
+ * 12/Set, com Lula em 48,50% no `header` e 42,50% na `analise`. A regua de
+ * preco lia SO o `quadroComparativo`, e a de volume achava o dono pelo NOME no
+ * texto, que a `analise` nao repete porque o dono ali e ESTRUTURAL: e a chave
+ * do JSON. O comentario de 04/Set ja registrava esse ponto cego com estas
+ * palavras, "ler estrutura e outra regua", e esta e a regua.
+ *
+ * O dono NAO entra aqui: quem sabe de quem e o cartao e o chamador. Esta
+ * funcao so responde "que precos este texto afirma como de hoje, e de qual
+ * contrato cada um e".
+ *
+ * ⛔ Preco nesta casa tem SEMPRE duas casas decimais ("55,60%"). Numero de urna
+ * vem com uma ("5,2%") ou nenhuma ("39%"). Exigir as duas separa preco de
+ * pesquisa sem precisar entender a frase.
+ */
+export function precosAfirmados(texto, padrao = 'vencedor') {
+  const saida = []
+  for (const frase of frasesDe(String(texto ?? ''))) {
+    const contrato = contratoDaFrase(frase, padrao)
+    if (!contrato) continue // frase ambigua nomeia dois livros: nao se julga
+    for (const m of frase.matchAll(/(\d+,\d{2})\s*%/g)) {
+      const pos = m.index ?? 0
+      if (ehHistoricoEm(frase, pos)) continue
+      saida.push({ contrato, preco: m[1], frase })
+    }
+  }
+  return saida
+}

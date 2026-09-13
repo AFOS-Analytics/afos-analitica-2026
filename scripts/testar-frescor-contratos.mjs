@@ -9,7 +9,7 @@
  * Uso: node scripts/testar-frescor-contratos.mjs
  */
 
-import { frasesDe, contratoDaFrase, canonPorContrato, contratoNoPonto } from './lib/frescor-contratos.mjs'
+import { frasesDe, contratoDaFrase, canonPorContrato, contratoNoPonto, precosAfirmados, ehHistoricoEm } from './lib/frescor-contratos.mjs'
 
 let falhas = 0
 let passes = 0
@@ -118,6 +118,72 @@ console.log('\n8. PONTO CEGO CONHECIDO: frase que não repete o nome do dono')
     'e o nome do dono NÃO está nela, que é exatamente o ponto cego',
     !bloco.slice(bloco.indexOf('No contrato de 3º')).includes('CAIADO')
   )
+}
+
+console.log('\n9. precosAfirmados: o preço que o texto afirma como de HOJE')
+{
+  // O defeito REAL de 12/Set/2026, palavra por palavra do arquivo que foi ao ar.
+  const analise =
+    'O 11 de setembro repete a direção do dia anterior com um décimo da intensidade. ' +
+    'O contrato de vencedor cedeu 1,00pp e está em 42,50% (vol USD 10,69M), contra uma queda de 9,00pp na véspera.'
+  const r = precosAfirmados(analise)
+  const venc = r.filter((x) => x.contrato === 'vencedor').map((x) => x.preco)
+  conferir('🔴 pega o preço afirmado dentro da analise', venc.includes('42,50'), JSON.stringify(r))
+  conferir('e NÃO devolve o 9,00 do delta, que não é preço de contrato', !venc.includes('9,00'), JSON.stringify(venc))
+}
+
+console.log('\n10. O que NÃO pode disparar')
+{
+  conferir(
+    'valor marcado como histórico por "contra ... confirmada de" é ignorado',
+    precosAfirmados('Está em 4,60%, contra 6,70% na leitura confirmada de 12/Set.')
+      .map((x) => x.preco)
+      .join(',') === '4,60'
+  )
+  conferir(
+    '"de X% para Y%" devolve só o Y, porque o X é o valor velho',
+    precosAfirmados('O contrato foi de 48,50% para 47,50% hoje.')
+      .map((x) => x.preco)
+      .join(',') === '47,50'
+  )
+  conferir(
+    'valor seguido de DATA é referência a outro dia',
+    precosAfirmados('Fica abaixo do pico dele, 55,10% em 10/Set.').length === 0
+  )
+  conferir(
+    '"topo da série" antes do valor é histórico',
+    precosAfirmados('Segue 20,00pp abaixo do topo da série dele, de 67,50%.').length === 0
+  )
+  conferir(
+    '🔑 número de URNA com UMA casa não é preço',
+    precosAfirmados('Na Datafolha ele tem 5,2% no 1º turno.').length === 0
+  )
+  conferir(
+    '🔑 número de urna SEM casa decimal não é preço',
+    precosAfirmados('Na Datafolha ele tem 39% no 1º turno e 46% no 2º.').length === 0
+  )
+  conferir(
+    'frase AMBÍGUA, que nomeia dois livros, não devolve nada',
+    precosAfirmados('No contrato de vencedor está em 0,15% e no de 3º lugar em 9,50%.').length === 0
+  )
+}
+
+console.log('\n11. Contrato por frase, dentro do cartão')
+{
+  const r = precosAfirmados('No contrato de 3º lugar do 1º turno ele cedeu 0,20pp e está em 55,60%.')
+  conferir('classifica como terceiro', r.length === 1 && r[0].contrato === 'terceiro', JSON.stringify(r))
+  conferir('e devolve o preço certo', r[0]?.preco === '55,60')
+  const d = precosAfirmados('Ele está em 47,50% depois de ceder 1,00pp.')
+  conferir('sem marcador cai no padrão vencedor', d.some((x) => x.contrato === 'vencedor' && x.preco === '47,50'))
+  const t = precosAfirmados('Ele está em 8,50% ali.', 'terceiro')
+  conferir('e o padrão é configurável', t.length === 1 && t[0].contrato === 'terceiro')
+}
+
+console.log('\n12. ehHistoricoEm isolado')
+{
+  const f = 'Está em 4,60%, contra 6,70% na leitura confirmada de 12/Set.'
+  conferir('o valor de hoje NÃO é histórico', !ehHistoricoEm(f, f.indexOf('4,60')))
+  conferir('o valor da véspera É histórico', ehHistoricoEm(f, f.indexOf('6,70')))
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
