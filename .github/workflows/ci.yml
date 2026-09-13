@@ -84,6 +84,7 @@ jobs:
           node scripts/testar-atribuicao-us.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
+          python3 scripts/testar-hf-upload-us2026.py
 
       # Os portoes de CONTEUDO viviam so em .git/hooks/pre-commit, que NAO e
       # versionado: clone novo, maquina nova ou commit com --no-verify passavam

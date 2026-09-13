@@ -29,6 +29,10 @@ Uso:
     python scripts/hf-upload-us2026.py conferir
     python scripts/hf-upload-us2026.py conferir --declarado=data/erratas/encolhimento-2026-09-05.json
     python scripts/hf-upload-us2026.py subir "mensagem" --declarado=...
+    python scripts/hf-upload-us2026.py conferir --exato    (DEPOIS de subir: publicado = staging)
+
+Ou tudo em ordem, com o build antes: `npm run hf:usa` (ver scripts/rodada-us-hf.mjs).
+Casos plantados: `python scripts/testar-hf-upload-us2026.py`.
 """
 import os
 import re
@@ -55,15 +59,60 @@ def token() -> str:
     return m.group(1).strip().strip('"').strip("'")
 
 
-def linhas_publicadas(rel: str) -> int:
-    """Conta as linhas do arquivo COMO ESTA no HF. 307 exige seguir redirecionamento."""
+NAO_PUBLICADO = -1
+NAO_LIDO = None
+
+
+def linhas_publicadas(rel: str):
+    """Conta as linhas do arquivo COMO ESTA no HF. 307 exige seguir redirecionamento.
+
+    🔴 SO O 404 QUER DIZER "ARQUIVO NOVO". Ate 13/Set/2026 qualquer excecao
+    devolvia -1, e o portao lia -1 como NOVO e seguia sem comparar. Certificado
+    recusado, rede caida ou 5xx do HF viravam "todos os arquivos sao novos", o
+    VEREDITO saia APROVADO e o `subir` subia sem ter conferido encolhimento
+    nenhum. O portao de encolhimento nao podia disparar justamente quando nao
+    enxergava o que estava publicado.
+    """
+    import urllib.error
     import urllib.request
     req = urllib.request.Request("%s/%s" % (BASE, rel), headers={"User-Agent": "afos-upload"})
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
             return r.read().decode("utf-8", "ignore").count("\n")
+    except urllib.error.HTTPError as e:
+        return NAO_PUBLICADO if e.code == 404 else NAO_LIDO
     except Exception:
-        return -1  # arquivo novo, ainda nao publicado
+        return NAO_LIDO
+
+
+def confiar_no_sistema() -> None:
+    """No Windows, entrega ao cliente do HF as raizes que o SISTEMA ja confia.
+
+    Medido em 12/Set/2026: o `conferir` alcancava o HF e o `subir` morria com
+    CERTIFICATE_VERIFY_FAILED, no mesmo script. O `urllib` carrega a loja do
+    Windows, que tem a raiz local que intercepta TLS; o `httpx`, que o
+    `huggingface_hub` usa, vem com o `certifi` e nao a conhece. O conserto foi
+    feito a mao naquele dia e nao ficou em lugar nenhum.
+
+    ⛔ Desligar a verificacao trocaria configuracao por buraco de seguranca. Aqui
+    o conjunto e `certifi` MAIS as raizes do sistema, e mais nada. Fora do
+    Windows, ou com SSL_CERT_FILE ja definido, nao faz nada.
+    """
+    if sys.platform != "win32" or os.environ.get("SSL_CERT_FILE"):
+        return
+    import ssl
+    import certifi
+    pems = []
+    for loja in ("ROOT", "CA"):
+        for der, codificacao, _uso in ssl.enum_certificates(loja):
+            if codificacao == "x509_asn":
+                pems.append(ssl.DER_cert_to_PEM_cert(der))
+    destino = RAIZ / ".cache" / "ca-certifi-mais-sistema.pem"
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    destino.write_text(Path(certifi.where()).read_text(encoding="ascii") + "\n" + "".join(pems), encoding="ascii")
+    os.environ["SSL_CERT_FILE"] = str(destino)
+    os.environ["REQUESTS_CA_BUNDLE"] = str(destino)
+    print("  TLS: certifi + %d raizes do sistema em %s" % (len(pems), destino))
 
 
 def ler_declarados(caminho):
@@ -75,8 +124,14 @@ def ler_declarados(caminho):
     return {k: int(v) for k, v in d.get("arquivos", {}).items()}, d.get("motivo")
 
 
-def conferir(declarados=None, motivo=None) -> bool:
-    """Nenhum arquivo pode encolher, exceto o que foi DECLARADO com o numero exato."""
+def conferir(declarados=None, motivo=None, exato=False) -> bool:
+    """Nenhum arquivo pode encolher, exceto o que foi DECLARADO com o numero exato.
+
+    `exato=True` e a conferencia DEPOIS de subir: todo arquivo do staging tem de
+    estar publicado com o mesmo numero de linhas. Delta diferente de zero ali
+    quer dizer que a subida nao chegou. ⚠️ Linha nao e conteudo: rotacao do
+    mesmo tamanho sai como +0, entao isto prova que chegou, nao que e identico.
+    """
     declarados = declarados or {}
     alvos = sorted(
         p for p in STAGING.rglob("*.csv")
@@ -90,11 +145,22 @@ def conferir(declarados=None, motivo=None) -> bool:
         rel = p.relative_to(STAGING).as_posix()
         s = p.read_text(encoding="utf-8", errors="ignore").count("\n")
         h = linhas_publicadas(rel)
-        if h < 0:
-            print("  %-44s %8s %8d %8s  NOVO" % (rel, "-", s, "-"))
+        if h is NAO_LIDO:
+            print("  %-44s %8s %8d %8s  <<< NAO LIDO no HF, nao da para conferir" % (rel, "?", s, "?"))
+            ok = False
+            continue
+        if h == NAO_PUBLICADO:
+            if exato:
+                print("  %-44s %8s %8d %8s  <<< NAO CHEGOU ao HF" % (rel, "-", s, "-"))
+                ok = False
+            else:
+                print("  %-44s %8s %8d %8s  NOVO" % (rel, "-", s, "-"))
             continue
         d = s - h
-        if d >= 0:
+        if exato:
+            marca = "ok" if d == 0 else "<<< publicado DIFERE do staging"
+            ok = ok and d == 0
+        elif d >= 0:
             marca = "ok"
         elif rel in declarados and declarados[rel] == d:
             marca = "encolheu, DECLARADO e batendo exato"
@@ -113,16 +179,20 @@ def conferir(declarados=None, motivo=None) -> bool:
         print("  %-44s %8s %8s %8s  <<< DECLARADO %+d e NAO ENCOLHEU" % (rel, "-", "-", "-", declarados[rel]))
         ok = False
     print()
+    if exato:
+        print("  VEREDITO: %s" % ("PUBLICADO CONFERE" if ok else "PUBLICADO NAO CONFERE com o staging"))
+        return ok
     if declarados and ok:
         print("  encolhimento aceito por declaracao: %s" % (motivo or "sem motivo declarado"))
-    print("  VEREDITO: %s" % ("APROVADO" if ok else "BLOQUEADO, arquivo encolheu"))
+    print("  VEREDITO: %s" % ("APROVADO" if ok else "BLOQUEADO, arquivo encolheu ou nao foi lido"))
     return ok
 
 
 def subir(mensagem: str, declarados=None, motivo=None) -> None:
-    from huggingface_hub import HfApi
     if not conferir(declarados, motivo):
         sys.exit("nao subiu: o portao reprovou")
+    confiar_no_sistema()
+    from huggingface_hub import HfApi
     api = HfApi(token=token())
     api.upload_folder(
         folder_path=str(STAGING),
@@ -140,7 +210,7 @@ if __name__ == "__main__":
     declarados, motivo = ler_declarados(decl_arg)
     modo = args[0] if args else "conferir"
     if modo == "conferir":
-        sys.exit(0 if conferir(declarados, motivo) else 1)
+        sys.exit(0 if conferir(declarados, motivo, exato="--exato" in sys.argv[1:]) else 1)
     elif modo == "subir":
         msg = args[1] if len(args) > 1 else "Atualiza serie de mercado, imprensa e metadados"
         subir(msg, declarados, motivo)

@@ -173,6 +173,18 @@ node -e "const a=require('./public/us-polls-data.json');const q=a.qualidade,m=a.
 
 ## ETAPA 3: Imprensa
 
+🚀 **O atalho é este, e ele faz a ETAPA 3 inteira, coleta e 3.1:**
+
+```bash
+npm run imprensa:usa                               # chama o cron em PRODUÇÃO e arquiva
+node scripts/rodada-us-imprensa.mjs --ensaio       # coleta e mostra o que arquivaria
+node scripts/rodada-us-imprensa.mjs --sem-cron     # não chama produção, só arquiva
+```
+
+⚠️ **Corrigido em 13/Set/2026: o atalho existia desde 10/Set e não era citado aqui**, o mesmo defeito que deixou o `conferir-us-polls` um mês sem rodar. Ele lê o segredo do `.env.local` sem o CR do Windows, separa 401 de 502, avisa canônico em ZERO e roda o snapshot. As seções abaixo seguem valendo como descrição do que cada peça faz.
+
+📌 **"DIFERE do banco, preservado" em data encerrada é o estado normal, não defeito:** o arquivo guarda a coleta do momento em que foi arquivado, e o cron do dia seguiu gravando depois. Data encerrada nunca é reescrita.
+
 A coleta vive na rota do cron:
 
 🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente, e chamar com a variável crua devolve **`{"error":"Unauthorized"}` com HTTP 401**, fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:
@@ -313,6 +325,23 @@ Se `public/us-polls-data.json` **ou** os arquivos de imprensa da ETAPA 3.1 mudar
 5. `git push origin main`
 
 Se nada mudou, **não commitar por commitar** e dizer isso no relatório.
+
+### 6.1 Dataset aberto no Hugging Face, `usa-2026-midterms-divergence`
+
+O dataset lê o **backup diário do Neon** e o arquivo da imprensa, então ele muda todo dia mesmo sem pesquisa nova. 🚀 **Um comando, criado em 13/Set/2026:**
+
+```bash
+npm run hf:usa -- --ensaio                          # monta e confere, NÃO sobe
+npm run hf:usa -- "mensagem do commit no HF"        # monta, confere, sobe e reconfere
+```
+
+Ele roda `build-us-2026-dataset.mjs`, `build-us-2026-metadata.mjs`, o portão de encolhimento, a subida e a conferência **depois**, com `conferir --exato`: todo arquivo do staging publicado com as mesmas linhas. **É o passo 5 que responde se publicou**, não a barra do envio, que mostra 0 bytes para arquivo já conhecido.
+
+🔴 **Dois defeitos do `hf-upload-us2026.py` consertados no mesmo dia, com 19 casos em `scripts/testar-hf-upload-us2026.py`:**
+- **O portão aprovava sem enxergar.** Qualquer exceção na leitura do HF virava "arquivo NOVO": certificado recusado ou rede caída davam `VEREDITO: APROVADO` e o `subir` seguia sem comparar nada. Agora só o 404 é novo; o resto é `NAO LIDO` e bloqueia.
+- **O certificado de 12/Set foi resolvido à mão e não ficou em lugar nenhum.** O `httpx` do `huggingface_hub` usa o `certifi` e não conhece a raiz local que intercepta TLS no Windows. O script agora monta `certifi` mais as raízes do sistema e aponta `SSL_CERT_FILE`, só no Windows e só se ele não estiver definido. ⛔ Nunca desligar a verificação.
+
+⚠️ **Linha não é conteúdo:** rotação da imprensa com o mesmo tamanho sai como +0. O +0 prova que chegou, não que é idêntico.
 
 ⚠️ **Uma árvore só, dois terminais.** O `vercel --prod` publica o **estado inteiro do diretório**, inclusive alteração de outro terminal. Rodar `git status` antes e commitar por NOME de arquivo, nunca `git add -A`.
 
