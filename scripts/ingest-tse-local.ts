@@ -268,7 +268,38 @@ async function main() {
         lerFantasmas(existsSync(CAMINHO_FANTASMAS) ? readFileSync(CAMINHO_FANTASMAS, 'utf8') : ''),
       )
       const comparacaoFantasmas = compararFantasmas(anteriorFantasmas, registroFantasmas.protocolos)
-      for (const linha of formatarFantasmas(anteriorFantasmas, comparacaoFantasmas)) {
+
+      // IDENTIDADE das que se MEXERAM, e so delas.
+      //
+      // Em 13/Set/2026 duas sairam do registro, o conjunto entregou os dois
+      // protocolos como prometido em 11/Set, e mesmo assim foi preciso rodar um
+      // SEGUNDO script para responder a unica pergunta que muda o que se faz
+      // hoje: era NACIONAL com divulgacao a frente, ou estadual ja vencida?
+      // Protocolo e chave, nao identidade.
+      //
+      // A consulta e dirigida aos que se mexeram, que sao poucos, em vez de
+      // trazer o rawPayload dos ~1000 do banco para descrever 2.
+      let identidades:
+        | Record<string, { nacional: boolean; divulgacao?: string; instituto?: string }>
+        | undefined
+      const seMexeram = [...(comparacaoFantasmas.sairam ?? []), ...(comparacaoFantasmas.voltaram ?? [])]
+      if (seMexeram.length > 0) {
+        const fichas = await prisma.researchFinding.findMany({
+          where: { title: { in: seMexeram } },
+          select: { title: true, rawPayload: true },
+        })
+        identidades = {}
+        for (const f of fichas) {
+          const r = (f.rawPayload || {}) as Record<string, string>
+          identidades[f.title as string] = {
+            nacional: detectScope(r.metodologia, r.planoAmostral, r.dadoMunicipio) === 'national',
+            divulgacao: r.divulgacao,
+            instituto: r.institutoFantasia || r.instituto,
+          }
+        }
+      }
+
+      for (const linha of formatarFantasmas(anteriorFantasmas, comparacaoFantasmas, identidades)) {
         console.log(linha)
       }
       mkdirSync(dirname(CAMINHO_FANTASMAS), { recursive: true })

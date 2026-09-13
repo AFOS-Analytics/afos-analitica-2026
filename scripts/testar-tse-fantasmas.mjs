@@ -13,6 +13,7 @@ import {
   lerFantasmas,
   ultimoFantasmas,
   serializarFantasmas,
+  vereditoEditorial,
 } from './lib/tse-fantasmas.mjs'
 
 let passou = 0
@@ -112,6 +113,53 @@ console.log('\n🧪 CONJUNTO DE FANTASMAS DO TSE\n')
   )
   ok('ultimoFantasmas ordena por `quando`, não pela ordem do arquivo', ultimoFantasmas(h).protocolos.join(',') === 'BR002')
   ok('ultimoFantasmas devolve null em histórico vazio', ultimoFantasmas([]) === null)
+}
+
+// 10. IDENTIDADE: o protocolo sozinho e chave, nao resposta. Acrescentado em
+// 13/Set/2026, quando 2 sairam e foi preciso um SEGUNDO script para saber se
+// alguma importava.
+{
+  const r = compararFantasmas(reg('t1', ['BR001']), ['BR001', 'BR002'])
+  const ident = { BR002: { nacional: false, divulgacao: '2026-09-15', instituto: 'APURA PARANA' } }
+  const semId = formatarFantasmas(reg('t1', ['BR001']), r).join('|')
+  const comId = formatarFantasmas(reg('t1', ['BR001']), r, ident).join('|')
+  ok('sem identidade o formato antigo e preservado', semId.includes('      BR002'))
+  ok('com identidade sai a casa', comId.includes('APURA PARANA'))
+  ok('com identidade sai o escopo', comId.includes('estadual'))
+  ok('com identidade sai a divulgacao', comId.includes('div 2026-09-15'))
+}
+
+// 11. O PORTAO QUE NAO PODE DISPARAR, e o que TEM de disparar. O discriminador
+// e 'NACIONAL' em caixa alta, que so existe no ramo que dispara.
+{
+  const r = compararFantasmas(reg('t1', []), ['BR100'])
+  const HOJE = '2026-09-13'
+  const D = (l) => l.join('|').includes('NACIONAL com')
+  const viva = { BR100: { nacional: true, divulgacao: '2026-09-20', instituto: 'CASA X' } }
+  const vencida = { BR100: { nacional: true, divulgacao: '2026-09-01', instituto: 'CASA X' } }
+  const estadual = { BR100: { nacional: false, divulgacao: '2026-09-20', instituto: 'CASA X' } }
+  ok('nacional com divulgacao A FRENTE dispara', D(vereditoEditorial(r, viva, HOJE)))
+  ok('nacional ja VENCIDA nao dispara', !D(vereditoEditorial(r, vencida, HOJE)))
+  ok('estadual a frente nao dispara', !D(vereditoEditorial(r, estadual, HOJE)))
+  ok('divulgacao IGUAL a hoje ainda e viva', D(vereditoEditorial(r, { BR100: { nacional: true, divulgacao: HOJE } }, HOJE)))
+  ok('quando nao dispara, ele AFIRMA que esta limpo', vereditoEditorial(r, estadual, HOJE).join('|').includes('nada a corrigir'))
+}
+
+// 12. O MEDIDOR MUDO: sem identidade a resposta NAO pode ser 'nenhuma nacional'.
+{
+  const r = compararFantasmas(reg('t1', []), ['BR100'])
+  const semNada = vereditoEditorial(r, undefined, '2026-09-13').join('|')
+  ok('sem identidade ele AVISA', semNada.includes('Sem identidade dos protocolos'))
+  ok('sem identidade ele NAO afirma que esta limpo', !semNada.includes('nada a corrigir'))
+  const parcial = vereditoEditorial(r, { BR999: { nacional: true, divulgacao: '2026-09-20' } }, '2026-09-13').join('|')
+  ok('protocolo sem ficha e declarado, nao some', parcial.includes('BR100') && parcial.includes('sem ficha'))
+}
+
+// 13. Sem retirada, o veredito e silencio, nao 'esta tudo bem'.
+{
+  const semSaida = compararFantasmas(reg('t1', ['BR001']), ['BR001'])
+  ok('sem retirada o veredito e vazio', vereditoEditorial(semSaida, {}, '2026-09-13').length === 0)
+  ok('primeira rodada nao emite veredito', vereditoEditorial(compararFantasmas(null, ['BR001']), {}, '2026-09-13').length === 0)
 }
 
 console.log(`\n   ${passou} asserção(ões) passaram, ${falhou} falharam\n`)

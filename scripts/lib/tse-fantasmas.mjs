@@ -74,8 +74,34 @@ export function compararFantasmas(anterior, atual) {
   }
 }
 
+/**
+ * Um protocolo é uma CHAVE, não uma identidade.
+ *
+ * 🔴 Medido em 13/Set/2026, na rodada em que 2 protocolos saíram do registro.
+ * O conjunto entregou `BR043752026` e `BR065952026`, que é exatamente o que ele
+ * foi construído para entregar em 11/Set, e mesmo assim a pergunta que decide
+ * publicação ficou sem resposta: uma retirada NACIONAL com divulgação ainda à
+ * frente é compromisso que a casa pode ter publicado, e uma estadual já vencida
+ * não é nada. Para saber qual das duas era, foi preciso rodar um SEGUNDO script
+ * e grepar a saída dele.
+ *
+ * 🔑 A régua: o conjunto acabou com a dedução do PROTOCOLO e deixou de pé a
+ * dedução do QUE ELE É. Nome próprio sem escopo e sem data não responde se a
+ * retirada importa.
+ *
+ * ⚠️ `identidades` é opcional de propósito: sem ele o formato é o de antes, byte
+ * a byte, para o teste de conjuntos seguir exercitando a conta pura sem banco.
+ */
+function descrever(p, identidades) {
+  const id = identidades?.[p]
+  if (!id) return `      ${p}`
+  const escopo = id.nacional ? 'NACIONAL' : 'estadual'
+  const casa = (id.instituto || '?').slice(0, 34)
+  return `      ${p}  ${escopo.padEnd(8)}  div ${id.divulgacao ?? '?'}  ${casa}`
+}
+
 /** Linhas prontas para a tela. Separada da conta de propósito. */
-export function formatarFantasmas(anterior, r) {
+export function formatarFantasmas(anterior, r, identidades) {
   const L = []
   if (r.primeira) {
     L.push(`\n👻 Conjunto de fantasmas iniciado em ${CAMINHO_FANTASMAS}, com ${r.atuais.length}.`)
@@ -90,15 +116,48 @@ export function formatarFantasmas(anterior, r) {
   }
   if (r.sairam.length) {
     L.push(`   ➖ ${r.sairam.length} SAIU(RAM) do registro do TSE desde então:`)
-    for (const p of r.sairam) L.push(`      ${p}`)
+    for (const p of r.sairam) L.push(descrever(p, identidades))
   }
   if (r.voltaram.length) {
     L.push(`   🔁 ${r.voltaram.length} VOLTOU(RAM) ao registro do TSE:`)
-    for (const p of r.voltaram) L.push(`      ${p}`)
+    for (const p of r.voltaram) L.push(descrever(p, identidades))
   }
   if (r.sairam.length && r.voltaram.length) {
     L.push('   ⚠️ Houve saída E volta na mesma janela: a CONTAGEM de fantasmas esconde')
     L.push('      os dois movimentos, porque eles se cancelam. Só o conjunto os separa.')
+  }
+  L.push(...vereditoEditorial(r, identidades))
+  return L
+}
+
+/**
+ * A única pergunta da retirada que muda o que a casa faz hoje: alguma delas era
+ * NACIONAL com divulgação ainda à frente?
+ *
+ * ⛔ Fica CALADO quando não há identidade, em vez de dizer "nenhuma nacional".
+ * Zero calculado sobre base ausente é o medidor mudo, e aqui ele mandaria
+ * publicar sossegado justamente no caso em que ninguém olhou.
+ */
+export function vereditoEditorial(r, identidades, hoje = new Date().toISOString().slice(0, 10)) {
+  if (!r || r.primeira || !r.sairam?.length) return []
+  if (!identidades) {
+    return ['   ⚠️ Sem identidade dos protocolos: não dá para dizer se a retirada era nacional.']
+  }
+  const semFicha = r.sairam.filter((p) => !identidades[p])
+  const vivas = r.sairam.filter((p) => {
+    const id = identidades[p]
+    return id && id.nacional && id.divulgacao && id.divulgacao >= hoje
+  })
+  const L = []
+  if (vivas.length) {
+    L.push(`   🔴 ${vivas.length} das retiradas era(m) NACIONAL com divulgação à frente de ${hoje}:`)
+    for (const p of vivas) L.push(`      ${p}  div ${identidades[p].divulgacao}  ${identidades[p].instituto ?? '?'}`)
+    L.push('      Compromisso que a casa pode ter publicado. Conferir o calendário no ar ANTES de somar.')
+  } else {
+    L.push('   ✅ nenhuma retirada era nacional com divulgação à frente: nada a corrigir no calendário.')
+  }
+  if (semFicha.length) {
+    L.push(`   ⚠️ ${semFicha.length} protocolo(s) sem ficha no banco, fora deste veredito: ${semFicha.join(', ')}`)
   }
   return L
 }

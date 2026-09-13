@@ -63,7 +63,20 @@ node scripts/rodada-tse-brz.mjs --apply --sem-sonda    # ⛔ só com motivo
 
 O `historico-arquivo.jsonl` guarda **quantos** fantasmas existem e nunca **quais**. Em 11/Set as duas contas concordaram em 1 retirada nova e o protocolo dela teve de ser **deduzido**. Agora o `--apply` também anota o conjunto em `data/tse/fantasmas.jsonl`, e a retirada sai **por nome**.
 
-⭐ **E o conjunto responde o que a contagem não responde:** 80 para 81 também é compatível com **duas saírem e uma voltar**. A subtração dá 1 nos dois casos, e só o conjunto separa. Teste: `node scripts/testar-tse-fantasmas.mjs`, 21 asserções.
+⭐ **E o conjunto responde o que a contagem não responde:** 80 para 81 também é compatível com **duas saírem e uma voltar**. A subtração dá 1 nos dois casos, e só o conjunto separa. ⚭ **E desde 13/Set/2026 a retirada sai com IDENTIDADE, não só com o protocolo.** Naquele dia duas saíram, o conjunto entregou `BR043752026` e `BR065952026` como prometido, e mesmo assim foi preciso rodar um SEGUNDO script e grepar a saída para responder a única pergunta que muda o que se faz hoje: **era NACIONAL com divulgação à frente, ou estadual já vencida?** Protocolo é chave, não identidade.
+
+Agora a linha sai com escopo, data de divulgação e casa, e o bloco fecha com um veredito:
+
+```
+   ➖ 2 SAIU(RAM) do registro do TSE desde então:
+      BR043752026  estadual  div 2026-09-15  APURA PARANA
+      BR065952026  estadual  div 2026-09-15  MT DADOS PESQUISAS
+   ✅ nenhuma retirada era nacional com divulgação à frente: nada a corrigir no calendário.
+```
+
+⛔ **Sem identidade ele fica CALADO em vez de dizer "nenhuma nacional".** Zero calculado sobre base ausente mandaria publicar sossegado justamente no caso em que ninguém olhou.
+
+Teste: `node scripts/testar-tse-fantasmas.mjs`, **35 asserções**, incluindo o portão que NÃO pode disparar (nacional já vencida, estadual à frente) e o medidor mudo.
 
 ## Passo 1: ingerir daqui, com ENSAIO antes
 
