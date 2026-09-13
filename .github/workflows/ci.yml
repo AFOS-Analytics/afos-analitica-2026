@@ -73,6 +73,18 @@ jobs:
       - name: Regua por contrato do frescor
         run: node scripts/testar-frescor-contratos.mjs
 
+      # Os medidores do generic ballot dos EUA. Ate 13/Set nenhum teste dos EUA
+      # rodava aqui, embora os cinco sejam puros: sem rede, sem banco e sem
+      # relogio. O de agregadores entrou no mesmo dia, e cobre o medidor que NAO
+      # pode dizer "em compasso" sem ter enxergado a tabela.
+      - name: Medidores do generic ballot (EUA)
+        run: |
+          node scripts/testar-agregadores-us.mjs
+          node scripts/testar-defasagem-us.mjs
+          node scripts/testar-atribuicao-us.mjs
+          node scripts/testar-historico-us-polls.mjs
+          node scripts/testar-rodadas-curadas.mjs
+
       # Os portoes de CONTEUDO viviam so em .git/hooks/pre-commit, que NAO e
       # versionado: clone novo, maquina nova ou commit com --no-verify passavam
       # sem nenhum deles, e o CI nao repetia um so. Aqui rodam sem a condicao de

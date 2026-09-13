@@ -22,11 +22,11 @@ A lógica de leitura é **uma só**, em `lib/us-polls/collect.mjs`, usada pelos 
 
 ## 🚀 O atalho, criado em 09/Set/2026
 
-Os passos 1 a 4 são sempre a mesma sequência de seis comandos, na mesma ordem, e redigitá-los é a chance nova de esquecer um. Um comando roda a passada inteira:
+Os passos 1 a 4 são sempre a mesma sequência de sete comandos, na mesma ordem, e redigitá-los é a chance nova de esquecer um. Um comando roda a passada inteira:
 
 ```bash
 npm run polls:usa                                   # a passada completa
-node scripts/rodada-us-polls.mjs --sem-rede         # sem a defasagem, que sai à internet
+node scripts/rodada-us-polls.mjs --sem-rede         # sem defasagem e índice x mundo, que saem à internet
 node scripts/rodada-us-polls.mjs --sem-coleta       # só confere e mede o arquivo que já está no disco
 ```
 
@@ -136,7 +136,25 @@ Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever q
 node scripts/projetar-janela-us.mjs      # o FUTURO da janela, se nada entrar
 node scripts/historico-us-polls.mjs      # a SÉRIE no Neon, e se o registro de hoje é do cron
 node scripts/check-us-polls-defasagem.mjs # o instituto publicou algo que o índice não tem?
+node scripts/agregadores-us-polls.mjs    # o ÍNDICE parou, ou o MUNDO parou?
 ```
+
+🌍 **O `agregadores-us-polls.mjs` responde a pergunta que vem ANTES de todas as outras, criado em 13/Set/2026.** O coletor imprime "atraso da fonte: N dias" e não sabe dizer de quem é o atraso: ou ninguém mediu nada, e a base está completa, ou mediram e o índice não recebeu, e a base está incompleta. A defasagem responde casa por casa, deixa casas sem veredicto e não cobre quem não está no registro.
+
+A resposta está no mesmo host que já lemos: a seção `GenericBallotAgg` do artigo da Câmara na Wikipédia, onde cada agregador declara o intervalo de campo da média dele. ⭐ **Medido no dia: seis de seis declaravam campo até 11/Set e a nossa base parava em 31/Ago, 11 dias.** Isso tinha sido lido UMA vez à mão, em 24/Ago, e nunca virou medidor.
+
+| veredicto | o que quer dizer |
+|---|---|
+| `INDICE ATRASADO` | pelo menos 2 agregadores declaram campo mais de 3 dias depois da nossa base. Existem pesquisas que o índice não tem |
+| `EM COMPASSO` | diferença de até 3 dias, com a tabela de agregadores atualizada há no máximo 7 |
+| `BASE A FRENTE` | a nossa base tem campo mais novo que o dos agregadores, tabela viva |
+| `INCONCLUSIVO` | seção sumida, rede caída, menos de 2 agregadores legíveis, ou tabela parada. **Não é "em compasso"** |
+
+🔑 **A referência é a SEGUNDA maior data, não a maior**, para um erro de digitação isolado não fabricar atraso. E **tabela parada ainda prova atraso, mas não prova compasso**: data que já existiu não deixa de existir, mas dois parados concordarem entre si não diz nada.
+
+⛔ **Três coisas que ele NÃO faz:** não lê percentual de agregador (média de agregador não entra), não se publica (é fato da nossa coleta, não da eleição) e **não abre a ingestão**. Saber que o índice está atrasado não autoriza ler rodada no instituto: isso muda a procedência da média e segue decisão do André, por casa. Ver `memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md`.
+
+🧪 `node scripts/testar-agregadores-us.mjs`, 51 casos e no CI. Conferido replantando 3 defeitos (referência pela maior data, sem checar tabela velha, sem tirar a `<ref>` da célula) e o teste reprovou os três.
 
 📅 **O `projetar-janela-us.mjs` responde a pergunta que o Passo 4 faz e não tinha ferramenta**, que é de onde vem a variação, só que ANTES de ela acontecer. Ele reusa a `media()` de produção em vez de recopiá-la, conta por RODADA e não por linha, e nomeia quem sai em cada dia. ⭐ **O achado dele costuma ser o DEGRAU:** em 06/Set havia cinco rodadas com o mesmo fim de campo, 17/Ago, e todas saem no MESMO dia, 17/Set, levando o `n` de 8 para 3 e a média de D+5.00 para D+3.33. Queda de 1,67pp com zero informação nova, conhecida onze dias antes.
 

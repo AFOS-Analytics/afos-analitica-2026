@@ -14,9 +14,10 @@
  *   3. projetar         o futuro da janela, se nada entrar
  *   4. histórico        a série no Neon, e se o registro de hoje é do cron
  *   5. defasagem        o instituto publicou algo que o índice não tem?
- *   6. efeito do recorte  quanto a hierarquia LV > RV > A move o número
+ *   6. índice x mundo   os agregadores declaram campo depois da nossa base?
+ *   7. efeito do recorte  quanto a hierarquia LV > RV > A move o número
  *
- * O passo 2 aborta a passada de propósito: os passos 3 e 6 LEEM o arquivo que
+ * O passo 2 aborta a passada de propósito: os passos 3, 6 e 7 LEEM o arquivo que
  * o passo 1 acabou de escrever, então rodá-los sobre arquivo reprovado produz
  * número que não se pode usar para nada. Reprovou, para tudo.
  *
@@ -25,7 +26,7 @@
  * Uso:
  *   node scripts/rodada-us-polls.mjs
  *   node scripts/rodada-us-polls.mjs --sem-coleta   (não recoleta, só confere e mede)
- *   node scripts/rodada-us-polls.mjs --sem-rede     (pula a defasagem, que sai à internet)
+ *   node scripts/rodada-us-polls.mjs --sem-rede     (pula defasagem e índice x mundo, que saem à internet)
  *   node scripts/rodada-us-polls.mjs --dias=30      (repassa a janela ao coletor)
  *   node scripts/rodada-us-polls.mjs --arquivo=X --base=Y
  *        confere um arquivo isolado contra outra base git. Implica --sem-coleta,
@@ -61,7 +62,7 @@ const soPortao = Boolean(arquivoAlvo)
 const passos = [
   {
     id: 'coletar',
-    titulo: `1/6 · COLETA — escreve ${ARQUIVO}`,
+    titulo: `1/7 · COLETA — escreve ${ARQUIVO}`,
     script: 'scripts/parse-us-generic-ballot.mjs',
     args: dias ? [`--dias=${dias}`] : [],
     pular: semColeta,
@@ -69,14 +70,14 @@ const passos = [
   },
   {
     id: 'conferir',
-    titulo: '2/6 · PORTÃO — colapso, contaminação e atribuição da variação',
+    titulo: '2/7 · PORTÃO — colapso, contaminação e atribuição da variação',
     script: 'scripts/conferir-us-polls.mjs',
     args: argsPortao,
     bloqueante: true,
   },
   {
     id: 'projetar',
-    titulo: '3/6 · PROJEÇÃO — o futuro da janela, se nada entrar  [USO INTERNO]',
+    titulo: '3/7 · PROJEÇÃO — o futuro da janela, se nada entrar  [USO INTERNO]',
     script: 'scripts/projetar-janela-us.mjs',
     args: [],
     pular: soPortao,
@@ -84,7 +85,7 @@ const passos = [
   },
   {
     id: 'historico',
-    titulo: '4/6 · SÉRIE NO NEON — e se o registro de hoje é do cron',
+    titulo: '4/7 · SÉRIE NO NEON — e se o registro de hoje é do cron',
     script: 'scripts/historico-us-polls.mjs',
     args: [],
     pular: soPortao,
@@ -92,15 +93,23 @@ const passos = [
   },
   {
     id: 'defasagem',
-    titulo: '5/6 · DEFASAGEM — o instituto publicou algo que o índice não tem?',
+    titulo: '5/7 · DEFASAGEM — o instituto publicou algo que o índice não tem?',
     script: 'scripts/check-us-polls-defasagem.mjs',
     args: [],
     pular: semRede || soPortao,
     motivoPulo: soPortao ? '--arquivo (alvo isolado)' : '--sem-rede',
   },
   {
+    id: 'mundo',
+    titulo: '6/7 · ÍNDICE x MUNDO — os agregadores declaram campo depois da nossa base?  [USO INTERNO]',
+    script: 'scripts/agregadores-us-polls.mjs',
+    args: [],
+    pular: semRede || soPortao,
+    motivoPulo: soPortao ? '--arquivo (alvo isolado)' : '--sem-rede',
+  },
+  {
     id: 'recorte',
-    titulo: '6/6 · EFEITO DO RECORTE — o preço da hierarquia LV > RV > A  [USO INTERNO]',
+    titulo: '7/7 · EFEITO DO RECORTE — o preço da hierarquia LV > RV > A  [USO INTERNO]',
     script: 'scripts/efeito-do-recorte-us.mjs',
     args: [],
     pular: soPortao,
