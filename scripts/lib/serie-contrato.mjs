@@ -315,7 +315,11 @@ export function serieDe(precos, outcomeDe, mercadoDe, { slug, outcome } = {}) {
     if (outcome && o.outcomeName !== outcome) continue
     const v = Number(p.price)
     if (!Number.isFinite(v)) continue
-    pontos.push({ t: String(p.snapshotAt), v, slug: m.slug, outcome: o.outcomeName })
+    // `vol` é o volume ACUMULADO do desfecho naquele ponto, em USD. Dinheiro novo
+    // num intervalo é a diferença entre dois `vol`, e é o `semana-do-contrato`
+    // que o usa. Ausente vira null, nunca zero: zero seria "ninguém negociou".
+    const vol = p.volume === '' || p.volume == null ? null : Number(p.volume)
+    pontos.push({ t: String(p.snapshotAt), v, vol: Number.isFinite(vol) ? vol : null, slug: m.slug, outcome: o.outcomeName })
   }
   return pontos.sort((a, b) => a.t.localeCompare(b.t))
 }

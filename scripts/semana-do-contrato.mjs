@@ -32,11 +32,18 @@
  *   node scripts/semana-do-contrato.mjs --pais=br --de=2026-08-31 --ate=2026-09-04
  *   node scripts/semana-do-contrato.mjs --slug=brazil-presidential-election --de=... --ate=...
  *   node scripts/semana-do-contrato.mjs --pais=br --de=... --ate=... --nomes=Lula,Flávio Bolsonaro
+ *   node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
+ *        acrescenta as distribuições de cadeiras, faixa a faixa, com a soma do livro
+ *
+ * Desde 13/Set/2026 cada desfecho sai também com LEITURAS e AMPLITUDE da semana e
+ * DINHEIRO NOVO, e cada livro com o PAR BINÁRIO ou a SOMA das faixas nas bordas.
+ * A Tradeoff EUA №7 fez essas contas à mão; a calibração da extensão foi exigir
+ * que a semana de 31/Ago a 04/Set reproduzisse os números publicados nela.
  */
 import { readFileSync, readdirSync, existsSync } from 'fs'
 import { gunzipSync } from 'zlib'
 import { join } from 'path'
-import { agruparPorLivro, instantesSuspeitos, serieDe } from './lib/serie-contrato.mjs'
+import { agruparPorLivro, instantesSuspeitos, parBinario, PAR_MAX, PAR_MIN, serieDe } from './lib/serie-contrato.mjs'
 
 const RAIZ = 'backup/neon'
 
@@ -71,6 +78,24 @@ const soSlug = arg('slug')
 const de = arg('de')
 const ate = arg('ate')
 const filtroNomes = (arg('nomes') ?? '').split(',').map((s) => s.trim()).filter(Boolean)
+const comDistribuicoes = process.argv.includes('--distribuicoes')
+
+/**
+ * A SEGUNDA borda. Sem `--desde`, é a véspera de `de`. Com `--desde=AAAA-MM-DD`,
+ * é o fechamento daquele dia, e o uso é a CONTINUIDADE entre edições: medir a
+ * partir do último fechamento que a edição anterior publicou, para que o que se
+ * negociou no fim de semana e na própria segunda não caia entre duas edições.
+ */
+const BORDA2 = arg('desde') ?? somarDias(de, -1)
+const ROTULO2 = arg('desde') ? `de ${BORDA2}` : 'da véspera'
+
+/**
+ * As distribuições que o Tradeoff lê faixa a faixa. Ficam fora do padrão de
+ * propósito: são 21 faixas, e quem pede só o Δ dos binários não precisa delas.
+ */
+const DISTRIBUICOES = {
+  us: [/^republican-senate-seats-after-the-2026-midterm-elections-927$/, /^republican-house-seats-after-the-2026-midterm-elections$/],
+}
 
 if (!de || !ate) {
   console.error('❌ faltam as bordas. Use --de=AAAA-MM-DD --ate=AAAA-MM-DD')
@@ -91,7 +116,7 @@ const suspeitos = instantesSuspeitos(precos)
 const limpos = suspeitos.size === 0 ? precos : precos.filter((p) => !suspeitos.has(String(p.snapshotAt).slice(0, 19)))
 
 const todos = serieDe(limpos, outcomeDe, mercadoDe, soSlug ? { slug: soSlug } : {})
-const padroes = PAISES[pais] ?? []
+const padroes = [...(PAISES[pais] ?? []), ...(comDistribuicoes ? DISTRIBUICOES[pais] ?? [] : [])]
 const livros = agruparPorLivro(soSlug ? todos : todos.filter((p) => padroes.some((re) => re.test(p.slug))))
 
 /** Último ponto de CADA dia. Fechamento é o último, não a média nem o primeiro. */
@@ -121,6 +146,9 @@ console.log(`\n📆 SEMANA DO CONTRATO · ${de} a ${ate} · pais=${pais}${soSlug
 console.log(`   fechamento = ÚLTIMO ponto do dia · lido no backup, não na API`)
 console.log(`   ⚠️  as três bordas abaixo dão números DIFERENTES: escolher uma e declarar qual\n`)
 
+/** Por livro, o que cada desfecho fez, para somar o par e a distribuição no fim. */
+const porSlug = new Map()
+
 for (const [chave, pontos] of [...livros.entries()].sort()) {
   // a chave de agruparPorLivro e `slug␟outcome`
   const [slug, nome] = String(chave).split('␟')
@@ -129,7 +157,7 @@ for (const [chave, pontos] of [...livros.entries()].sort()) {
   if (!porDia.size) continue
 
   const abreNoDia = vigenteEm(porDia, de)
-  const abreNaVespera = vigenteEm(porDia, somarDias(de, -1))
+  const abreNaVespera = vigenteEm(porDia, BORDA2)
   const fecha = vigenteEm(porDia, ate)
   if (!abreNoDia || !fecha) continue
 
@@ -137,14 +165,88 @@ for (const [chave, pontos] of [...livros.entries()].sort()) {
   console.log(`   ${nome}  ·  ${slug}`)
   console.log(`      fecha em ${fecha.dia}: ${Number(fecha.valor).toFixed(2)}${fecha.herdado ? ' (herdado)' : ''}${fecha.dia === HOJE ? '  ⚠️ dia de hoje, cauda cega' : ''}`)
   console.log(`      Δ desde o fechamento de ${de} .............. ${fmt(d(abreNoDia.valor, fecha.valor))}   (abre ${Number(abreNoDia.valor).toFixed(2)})`)
-  console.log(`      Δ desde o fechamento da véspera, ${abreNaVespera?.dia ?? 'n/d'} ... ${fmt(d(abreNaVespera?.valor ?? null, fecha.valor))}   (abre ${abreNaVespera ? Number(abreNaVespera.valor).toFixed(2) : 'n/d'})`)
+  console.log(`      Δ desde o fechamento ${ROTULO2}, ${abreNaVespera?.dia ?? 'n/d'} ... ${fmt(d(abreNaVespera?.valor ?? null, fecha.valor))}   (abre ${abreNaVespera ? Number(abreNaVespera.valor).toFixed(2) : 'n/d'})`)
 
   const caminho = []
   for (let x = de; x <= ate; x = somarDias(x, 1)) {
     const v = porDia.get(x)
     caminho.push(`${x.slice(5)} ${v ? Number(v.valor).toFixed(2) : '  ·  '}`)
   }
-  console.log(`      caminho: ${caminho.join(' | ')}\n`)
+  console.log(`      caminho: ${caminho.join(' | ')}`)
+
+  /**
+   * 🔑 LEITURAS, AMPLITUDE E DINHEIRO NOVO, que a Tradeoff EUA №7 calculou à mão.
+   *
+   * Amplitude é sobre TODAS as leituras gravadas na semana, não sobre os
+   * fechamentos: um contrato que foi a 14.50 às 15h e voltou a 13.50 às 18h tem
+   * fechamentos idênticos e amplitude de 1.00pp. E o número de leituras vai
+   * junto, porque "0.00pp em 30 leituras" e "0.00pp em 3" são frases diferentes.
+   *
+   * ⚠️ A série grava por MOVIMENTO e não por relógio, então "leituras" é pontos
+   * GRAVADOS, não capturas feitas. → memory/feedback_a_serie_so_gravava_quando_o_lider_se_movia.md
+   *
+   * Dinheiro novo é o volume acumulado no fechamento de `ate` menos o do
+   * FECHAMENTO DE `de`, a mesma borda do Δ de preço. ✅ Calibrado: é a borda que
+   * reproduz EXATO os três valores da №7 (USD 39.642, 23.812 e 96.064). A borda
+   * da véspera, que inclui o que se negociou no primeiro dia, dá 40.805, 24.099
+   * e 99.683, e sai impressa ao lado para a escolha ficar explícita.
+   */
+  const daSemana = pontos.filter((p) => { const dia = p.t.slice(0, 10); return dia >= de && dia <= ate })
+  const ultimoAte = (dia) => [...pontos].reverse().find((p) => p.t.slice(0, 10) <= dia) ?? null
+  const volFim = ultimoAte(ate)?.vol ?? null
+  const volIni = ultimoAte(de)?.vol ?? null
+  const volVespera = ultimoAte(BORDA2)?.vol ?? null
+  const novo = volFim != null && volIni != null ? volFim - volIni : null
+  const novoVespera = volFim != null && volVespera != null ? volFim - volVespera : null
+  if (daSemana.length) {
+    const vs = daSemana.map((p) => p.v)
+    const min = Math.min(...vs)
+    const max = Math.max(...vs)
+    // Um preço pode aparecer várias vezes na semana: a data impressa é a da 1ª vez.
+    const quando = (alvo) => daSemana.find((p) => p.v === alvo).t.slice(5, 16).replace('T', ' ')
+    console.log(`      leituras na semana: ${daSemana.length} · piso ${min.toFixed(2)} (1ª em ${quando(min)}) · topo ${max.toFixed(2)} (1ª em ${quando(max)}) · amplitude ${(max - min).toFixed(2)}pp`)
+  } else {
+    console.log(`      leituras na semana: 0 · o fechamento é HERDADO de antes da semana`)
+  }
+  const usd = (x) => (x == null ? 'n/d' : 'USD ' + Math.round(x).toLocaleString('pt-BR'))
+  console.log(`      dinheiro novo desde o fechamento de ${de}: ${usd(novo)}   (desde o fechamento ${ROTULO2}: ${usd(novoVespera)}) · acumulado: ${usd(volFim)}\n`)
+
+  if (!porSlug.has(slug)) porSlug.set(slug, [])
+  porSlug.get(slug).push({ nome, abreNoDia: abreNoDia.valor, abreNaVespera: abreNaVespera?.valor ?? null, fecha: fecha.valor, novo, novoVespera, volFim })
+}
+
+/**
+ * ⚖️ O PAR BINÁRIO e a SOMA DA DISTRIBUIÇÃO, nas duas bordas.
+ *
+ * A conta do par é a `parBinario` da lib, a mesma do `serie-do-contrato`, e não
+ * uma cópia. Livro de dois desfechos que não somam perto de 100 é recusado por
+ * ela, e a recusa é impressa em vez de sumir.
+ */
+for (const [slug, lados] of [...porSlug.entries()].sort()) {
+  const r2 = (x) => (x == null ? 'n/d' : x.toFixed(2))
+  if (lados.length === 2) {
+    console.log(`   ⚖️ PAR · ${slug}`)
+    for (const [rotulo, campo] of [[`fechamento de ${de}`, 'abreNoDia'], [`fechamento ${ROTULO2}`, 'abreNaVespera']]) {
+      const par = parBinario(lados.map((l) => ({ outcome: l.nome, antes: l[campo], agora: l.fecha })))
+      if (!par) { console.log(`      desde ${rotulo}: sem par`); continue }
+      if (!par.ehPar) { console.log(`      desde ${rotulo}: RECUSADO, soma ${r2(par.somaAgora)} fora de ${PAR_MIN}-${PAR_MAX}`); continue }
+      const txt = par.lados.map((l) => `${l.outcome} cru ${fmt(l.deltaCru)} norm ${r2(l.normAntes)}→${r2(l.normAgora)} ${fmt(l.deltaNorm)}`).join(' | ')
+      console.log(`      desde ${rotulo}: soma ${r2(par.somaAntes)}→${r2(par.somaAgora)} · ${txt}`)
+    }
+    console.log(`      dinheiro novo no livro: desde o fechamento de ${de} ${usdLivro(lados, 'novo')} · desde o fechamento ${ROTULO2} ${usdLivro(lados, 'novoVespera')}\n`)
+  } else if (lados.length > 2) {
+    const soma = (campo) => lados.every((l) => l[campo] != null) ? lados.reduce((s, l) => s + l[campo], 0) : null
+    const acum = lados.every((l) => l.volFim != null) ? lados.reduce((s, l) => s + l.volFim, 0) : null
+    console.log(`   📊 DISTRIBUIÇÃO · ${slug} · ${lados.length} faixas`)
+    console.log(`      soma das faixas: fechamento ${ROTULO2} ${r2(soma('abreNaVespera'))} · fechamento de ${de} ${r2(soma('abreNoDia'))} · fechamento de ${ate} ${r2(soma('fecha'))}   (portão 95-105)`)
+    console.log(`      dinheiro novo no livro: desde o fechamento de ${de} ${usdLivro(lados, 'novo')} · desde o fechamento ${ROTULO2} ${usdLivro(lados, 'novoVespera')} · acumulado ${acum == null ? 'n/d' : 'USD ' + Math.round(acum).toLocaleString('pt-BR')}\n`)
+  }
+}
+
+/** Soma um campo de dinheiro no livro inteiro. Faixa sem o dado deixa n/d, nunca uma soma menor. */
+function usdLivro(lados, campo) {
+  if (!lados.every((l) => l[campo] != null)) return 'n/d'
+  return 'USD ' + Math.round(lados.reduce((s, l) => s + l[campo], 0)).toLocaleString('pt-BR')
 }
 
 function fmt(v) {
