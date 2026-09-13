@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-13",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtCertificado": "2026-09-13T16:17:53.939Z",
+      "reFetchAoVivo": "2026-09-13T16:59:08.238Z",
+      "gateRebaseline": "NAO DISPAROU",
+      "motivo": "em 41 minutos o maior movimento foi 0,10pp, no Cury do contrato de 3o lugar. Flavio 49.65 -> 49.60, Lula 47.50 -> 47.50, vao 2.15 -> 2.10pp, Renan 1.85 -> 1.85, STF 4.60 -> 4.60. Volume total do presidencial de 149.256.417 para 149.256.729, mais USD 312.",
+      "livrosAprovados": ["presidential", "secondPlace", "thirdPlace", "stf"],
+      "livroBloqueado": "senate, as duas leituras da trava discordaram 0.50pp no PL (84.00% -> 83.50%)",
+      "vereditoDoBloqueio": "PASSAGEIRO. A amplitude do PL nos dias gravados e de 0,50pp, muito abaixo dos 2,00pp que classificariam como ESTRUTURAL, entao a regra e recapturar e NAO publicar preco novo. Nenhuma excecao de faixa foi acionada.",
+      "desfecho": "manteve a baseline certificada de 13/Set 13:17 BRT, que e a que o painel serve. A peca nao cita valor do Senado."
+    },
+    "factCheck": {
+      "atosAltoImpacto": [
+        "Fachin assume a relatoria da investigacao Moraes-Vorcaro e suspende na Presidencia os inqueritos do Master e do INSS, em 12/Set as 20h40",
+        "PF responde ao prazo de 24h sobre o celular de Vorcaro, em 13/Set"
+      ],
+      "crossReference": "check-recurrence nas ultimas 7 dailies: 'relatoria' 0 mencoes, 'TV Justica' 0, 'Banco Master' 0, todos NOVIDADE. 'Fachin' 29 e 'Andrei' 10, recorrencia do ATOR e nao do ATO.",
+      "ato1_fonte1": "Poder360, poder360.com.br/poder-justica/fachin-assume-relatoria-dos-casos-master-e-inss/, CORPO LIDO, decisao de 12/Set as 20h40",
+      "ato1_fonte2": "Gazeta do Povo, grupo independente, CORPO LIDO, 13/Set 01:45. Corroboram O Globo, G1, Valor e Estadao.",
+      "ato1_decisao": "incorporar com o MECANISMO CORRIGIDO",
+      "ato2_fonte1": "Poder360, 13/Set 15:36, CORPO LIDO",
+      "ato2_fonte2": "Gazeta do Povo, 13/Set 15:07. Corrobora CartaCapital.",
+      "ato2_decisao": "incorporar",
+      "newsCacheContradiz": "nao contradiz os corpos. CONTRADIZ as MANCHETES de Folha, CartaCapital e Metropoles, que dizem que Fachin AFASTOU Mendonca ou TIROU a relatoria dele.",
+      "achadoDoGate": "O corpo do Poder360 diz, literal, 'sem retirar a relatoria do ministro Andre Mendonca' e 'A decisao foi em comum acordo. Os 2 ministros conversaram e concordaram com essas medidas antes de o presidente do STF baixar a decisao'. Diz tambem que os inqueritos ficam 'suspensos na Presidencia'. A Gazeta do Povo confirma a determinacao de remessa e registra que 'nao esta claro se ele quer apenas se inteirar sobre o andamento dos casos ou se estuda retira-los de Mendonca'. O Poder360 resolve o que a Gazeta deixou em aberto.",
+      "erratoDoPainel": "O painel de 13/Set foi ao ar as 13:17 dizendo que Fachin 'determinou que Andre Mendonca lhe remeta os processos'. Verdadeiro e incompleto de um jeito que engana. Corrigido em 52 ocorrencias nas 9 superficies, commit 620cc905, antes desta peca. TERCEIRA vez que a daily pega o que o painel publicou horas antes, porque o gate de fact-check so existe aqui.",
+      "alcanceWebFetch": "CartaCapital devolveu 403, e a tabela de alcance de 01/Set a lista como alcancavel: a tabela envelheceu. O Globo confirmou bloqueado. Poder360 e Gazeta do Povo alcancaveis."
+    },
+    "superlativo": {
+      "afirmacao": "o contrato do STF segue 21,50pp abaixo do topo da serie e e o 177o menor de 504 pontos",
+      "conferidoOnde": "backup/neon/marketPrice, serie completa do slug any-brazil-stf-justice-removed-by-impeachment-before-2027, 504 pontos de 14/Abr a 12/Set",
+      "resultado": "topo 26,10 em 11/Set 08:00Z, piso 2,10 em 08/Jun. O 4,60 de hoje e o 177o menor, ou seja NAO e extremo.",
+      "mancheteDescartada": "eu ia enquadrar o contrato como QUEDA LIVRE, com 8,30 em 11/Set, 6,70 em 12/Set e 4,60 hoje. O backup desmentiu o enquadramento: nos fechamentos gravados ele fechou 10/Set em 4,60%, entao hoje ele VOLTOU ao ponto de onde saiu. Devolucao de excursao, nao queda livre."
+    },
+    "numerosSemLastro": {
+      "achados": 2,
+      "1": "84,00% do PL no Senado. Verdadeiro e verificado na serie gravada de 12/Set (faixa 83,50 a 84,00), mas o painel NAO publica valor daquele livro hoje, e citar na peca numero que a pagina nao mostra cria divergencia entre superficies. REMOVIDO.",
+      "2": "USD 7,00M do livro de 2o lugar. Conferido na captura certificada de 16:17:53.939Z, soma 6.997.722. MANTIDO."
+    },
+    "wayback": "NAO RODOU, e por cumprimento da regra. O historico dos auditorios mostra 429 em 05 e 06/Set, pausa respeitada em 11/Set, e sondagem em 12/Set que voltou 429. O relogio da pausa de 3 a 4 dias reiniciou em 12/Set, entao 13/Set e o dia 1. Sondar hoje violaria a regra que mandou parar. Avisado ao Andre no COMECO da sessao, como manda a ficha.",
+    "waybackPadraoObservado": "a pausa nunca completa porque o procedimento da daily sonda no comeco de toda sessao. E a mesma familia do achado de que a propria fila fabricava o gatilho.",
+    "travessao": 0,
+    "emoji": 0,
+    "palavrasCorpo": 1100,
+    "tetoPalavras": 1100,
+    "sintese": "REFEITA por ordem do Andre, que leu a versao em lista e cobrou pela QUINTA vez: 'primeira linha dos 3 paragrafos em negrito, paragrafos mais ricos, estao muito escassos'. Eu tinha entregue exatamente a lista de uma frase por item que a ficha proibe desde 22/Ago, com a receita do formato certo escrita la com exemplo ao lado. De 55 palavras em 3 itens para 198 em 3 paragrafos com frase-tese em negrito. O espaco foi pago CORTANDO DO CORPO o que a sintese passou a carregar melhor, que e a ordem escrita na ficha, e nenhum numero saiu da sintese.",
+    "proporcaoFontes": "5 ancora e 8 secundarias, 62% secundarias, dentro da faixa de 50 a 70%",
+    "linksConferidos": "22 de 24 links externos saem do news-cache do dia. Os 2 restantes sao a mesma URL do Poder360, achada por busca e com o CORPO LIDO, que e prova mais forte que o cache.",
+    "traducao": "gate numerico com 73 numeros em cada idioma e multiconjuntos IDENTICOS nos tres. Cirilico 0, separador decimal consistente, nenhuma ancora de glossario, nenhum link de outro locale, tldr com 3 bullets nos tres."
+  },
+  "adversarialReview": {
+    "1_singleSourceClaims": "nenhuma. Os dois atos de alto impacto tem dois corpos lidos, de grupos independentes entre si.",
+    "2_numericalErrors": "reconcile-claims acusou 10 pares, todos atribuicao por proximidade ou titulo de materia no rodape, que e o falso positivo que o proprio script descreve. A conferencia propria contra os 3 JSONs achou 2 numeros sem lastro e os dois foram resolvidos, ver numerosSemLastro.",
+    "3_fontesInventadas": "22 de 24 links no news-cache do dia; os 2 restantes com corpo lido via WebFetch.",
+    "4_quotesLiterais": "nenhuma. A peca nao usa aspas de fala.",
+    "5_causacaoEspuria": "nenhuma. O trecho do Supremo e a primeira divergencia dizem que a ordem dos fatos esta medida e o vinculo entre eles nao.",
+    "6_verbosCriticos": "assumiu a relatoria, suspendeu e determinou, todos com data e fonte. Nenhum verbo de privacao de liberdade ou morte. O verbo AFASTOU foi ativamente REJEITADO no texto, com a razao declarada no corpo da peca.",
+    "decisao": "prosseguir para traducao e preview"
+  }
+}
