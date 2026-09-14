@@ -400,3 +400,18 @@ BR-01452/2026,BR014522026,AtlasIntel/Bloomberg,2026-09-10,2026-09-06,income,Mais
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,male,47.2,full_percentages
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,sex,female,52.8,full_percentages
 BR-04914/2026,BR049142026,PoderData/Aya,2026-09-10,2026-09-07,income,Sem rendimentos até 2 SM,45.8,full_percentages
+BR-01833/2026,BR018332026,Datafolha,2026-09-11,2026-09-09,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-01833/2026,BR018332026,Datafolha,2026-09-11,2026-09-09,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-01833/2026,BR018332026,Datafolha,2026-09-11,2026-09-09,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-01833/2026,BR018332026,Datafolha,2026-09-11,2026-09-09,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-01833/2026,BR018332026,Datafolha,2026-09-11,2026-09-09,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-03607/2026,BR036072026,Quaest/Genial,2026-09-14,2026-09-11,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-03607/2026,BR036072026,Quaest/Genial,2026-09-14,2026-09-11,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-03607/2026,BR036072026,Quaest/Genial,2026-09-14,2026-09-11,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-03607/2026,BR036072026,Quaest/Genial,2026-09-14,2026-09-11,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-03607/2026,BR036072026,Quaest/Genial,2026-09-14,2026-09-11,region,"(declared, no % in registry)",,mentioned_no_pct
+BR-04076/2026,BR040762026,BTG/Nexus,2026-09-14,2026-09-12,sex,"(declared, no % in registry)",,mentioned_no_pct
+BR-04076/2026,BR040762026,BTG/Nexus,2026-09-14,2026-09-12,age,"(declared, no % in registry)",,mentioned_no_pct
+BR-04076/2026,BR040762026,BTG/Nexus,2026-09-14,2026-09-12,education,"(declared, no % in registry)",,mentioned_no_pct
+BR-04076/2026,BR040762026,BTG/Nexus,2026-09-14,2026-09-12,income,"(declared, no % in registry)",,mentioned_no_pct
+BR-04076/2026,BR040762026,BTG/Nexus,2026-09-14,2026-09-12,region,"(declared, no % in registry)",,mentioned_no_pct
