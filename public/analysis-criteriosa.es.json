@@ -1,171 +1,171 @@
 {
-  "updatedAt": "13/09/2026, 13:17",
-  "subtitle": "Cruce del 13 de septiembre de 2026, lectura confirmada del 13/Sep, 13:17 BRT (16:17 UTC), con el presidencial en USD 149,26M. Recibieron precio nuevo cuatro de los cinco contratos vigilados: ganador, segundo lugar de la primera vuelta, tercer lugar de la primera vuelta e impeachment en el Supremo. El contrato de mayoría en el Senado no publica precio nuevo en esta ronda. Del lado de la encuesta no hubo divulgación nacional el 13/Sep, y la lectura nacional más reciente sigue siendo la Datafolha del 11/Sep; lo que salió en la noche del 12/Sep fueron cinco levantamientos estatales de la misma casa.",
+  "updatedAt": "14/09/2026, 13:02",
+  "subtitle": "Cruce del 14 de septiembre de 2026, lectura confirmada del 14/Sep, 13:02 BRT (16:02 UTC), con el libro presidencial en USD 149,68M. Los cinco contratos vigilados recibieron precio nuevo en esta ronda: ganador, segundo lugar de la primera vuelta, tercer lugar de la primera vuelta, impeachment en el Supremo y mayoría en el Senado. Del lado de la encuesta entran DOS nacionales divulgadas el mismo 14/Sep: la BTG/Nexus, con campo del 11 al 13/Sep, y la Genial/Quaest, con campo del 10 al 13/Sep.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRECIO: 47,50% (vol USD 10,92M acumulado) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, una caída de 1,00pp frente al precio confirmado el 12/Sep, y 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago. En el contrato de segundo lugar de la primera vuelta, que vuelve a publicar precio, está en 22,00%. ENCUESTA: 39% en la primera vuelta y 46% en el par de segunda vuelta contra Flávio Bolsonaro en la Datafolha del 11/Sep, la nacional más reciente, con 2 puntos de diferencia que caben en el margen de 2,0.",
+      "header": "PRECIO: 47,50% (vol USD 11,00M acumulado) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, sin cambio frente al precio confirmado el 13/Sep, y 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago. En el contrato de segundo lugar de la primera vuelta está en 19,50%, con caída de 2,50pp. ENCUESTA: 42% en la primera vuelta y 47% a 46% en el par de segunda vuelta contra Flávio Bolsonaro en la BTG/Nexus del 14/Sep, y 36% en la primera vuelta y 40% a 42% en el mismo par en la Genial/Quaest del 14/Sep. Las dos diferencias de segunda vuelta caben en el margen de 2,0.",
       "fortes": [
-        "En la encuesta Datafolha del 11/Sep vuelve a aparecer adelante en el par de segunda vuelta contra Flávio Bolsonaro, por 46% a 44%, interrumpiendo una secuencia de ocho nacionales desde el 6/Sep en la que eso no ocurría.",
-        "Gana los cinco pares de segunda vuelta probados por la Datafolha del 11/Sep, y en tres de ellos la distancia queda fuera del margen: 48% a 37% contra Renan Santos, 48% a 39% contra Romeu Zema y 46% a 41% contra Ronaldo Caiado.",
-        "En la primera vuelta de la misma casa tiene 39% contra 35%, la mayor distancia entre los dos en las tres nacionales de campo superpuesto de la semana."
+        "En las dos nacionales del 14/Sep lidera la primera vuelta por 5 puntos, una distancia que no cabe en dos márgenes de 2,0: 42% a 37% en la BTG/Nexus y 36% a 31% en la Genial/Quaest.",
+        "En la BTG/Nexus vuelve a aparecer adelante en el par de segunda vuelta contra Flávio Bolsonaro, por 47% a 46%, después de 45% a 46% en la ronda del 08/Sep de la casa, y gana los otros cuatro pares que ella probó, tres fuera del margen: 47% a 41% contra Ronaldo Caiado, 49% a 38% contra Romeu Zema y 48% a 37% contra Renan Santos.",
+        "La BTG/Nexus del 14/Sep mide la aprobación del gobierno en 47% frente a 49% de desaprobación, contra 45% y 50% en la ronda del 08/Sep de la misma casa."
       ],
       "fracos": [
-        "El contrato de ganador cede 1,00pp y devuelve un sexto de la subida de 6,00pp de la víspera, con el vano hacia el primer colocado abriéndose de 1,45pp a 2,15pp.",
-        "El 47,50% queda 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago, y el contrato no vuelve al nivel de agosto desde entonces.",
-        "En los estatales que Datafolha publicó el 12/Sep está detrás en tres de las cinco unidades, en São Paulo, Río de Janeiro y el Distrito Federal.",
-        "La aprobación del gobierno medida por Genial/Quaest el 7/Sep es de 43% contra 50% de desaprobación, y las tres casas más recientes convergen exactamente en 50% de desaprobación."
+        "En la Genial/Quaest del 14/Sep aparece detrás en el par de segunda vuelta contra Flávio Bolsonaro, 40% a 42%, dentro del margen, y dentro de la propia casa el par salió 42% a 41% para él el 02/Sep, empató en 41% el 07/Sep y ahora sale para el adversario.",
+        "En el contrato de ganador queda estancado en 47,50% mientras el adversario sube 1,10pp, y el vano hacia el primero se abre de 2,15pp a 3,25pp.",
+        "En el contrato de segundo lugar de la primera vuelta cae 2,50pp, a 19,50%, con Flávio Bolsonaro en 78,00% allí.",
+        "La Genial/Quaest del 14/Sep mide la aprobación del gobierno en 43% frente a 50% de desaprobación, los mismos números de la ronda del 07/Sep de la casa."
       ],
-      "analise": "El 13 de septiembre invierte el signo del día anterior y lo invierte poco. El contrato de ganador cedió 1,00pp y está en 47,50% (vol USD 10,92M), frente a una subida de 6,00pp en la víspera, y la distancia hacia el primer colocado pasó de 1,45pp a 2,15pp. La proporción es lo que da el tamaño del movimiento: ayer ese vano cerró 10,00pp en un solo día, y hoy devuelve 0,70pp. Los dos lados cedieron, así que quien abrió el vano fue él al retroceder más, y no su rival al avanzar. Del lado de la encuesta no entra nada el 13/Sep, y la lectura nacional más reciente sigue siendo la Datafolha del 11/Sep, que lo pone adelante en el par por 46% a 44%, dentro del margen, e interrumpe la secuencia de ocho nacionales sin eso. Lo que salió en la noche del 12/Sep fueron cinco estatales de la misma casa, y allí el cuadro es mixto: lidera en Minas Gerais por 37% a 35% y en Pernambuco por 55% a 24%, y está detrás en São Paulo, Río de Janeiro y el Distrito Federal. La semana que comienza concentra doce nacionales entre el 14 y el 18/Sep, cinco de ellas el mismo 17/Sep."
+      "analise": "El 14 de septiembre trae las dos mediciones en sentidos que no se suman. En el contrato de ganador quedó estancado en 47,50% (vol USD 11,00M), lectura confirmada del 14/Sep, 13:02 BRT, y el vano hacia el primero se abrió de 2,15pp a 3,25pp porque el adversario subió 1,10pp, y no porque él retrocediera. Del lado de la encuesta entraron dos nacionales divulgadas el mismo día, y CONCUERDAN en la primera vuelta y DISCREPAN en el signo de la segunda: la BTG/Nexus, con campo del 11 al 13/Sep, le da 42% a 37% en la primera vuelta y 47% a 46% en el par, y la Genial/Quaest, con campo del 10 al 13/Sep, da 36% a 31% en la primera vuelta y 40% a 42% en el par. Las dos diferencias de segunda vuelta caben en el margen de 2,0 de cada casa, así que lo que ambas miden en el par es empate técnico con signos opuestos, y el panel registra las dos sin elegir. Dentro de cada casa el par también se movió en direcciones opuestas: en la BTG/Nexus pasó de 45% a 46% el 08/Sep a 47% a 46% ahora, y en la Genial/Quaest de 41% a 41% el 07/Sep a 40% a 42%. La semana sigue con diez nacionales con divulgación marcada entre el 15 y el 18/Sep, cinco de ellas el mismo 17/Sep."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRECIO: 49,65% (vol USD 10,54M acumulado) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, una caída de 0,30pp frente al precio confirmado el 12/Sep, y 5,45pp por debajo del techo de su serie, de 55,10% el 10/Sep. En el contrato de segundo lugar de la primera vuelta, que vuelve a publicar precio, está en 77,00%. ENCUESTA: 35% en la primera vuelta y 44% en el par de segunda vuelta contra Lula en la Datafolha del 11/Sep, con 2 puntos de diferencia que caben en el margen de 2,0.",
+      "header": "PRECIO: 50,75% (vol USD 10,64M acumulado) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, una subida de 1,10pp frente al precio confirmado el 13/Sep, y 4,35pp por debajo del techo de su serie, de 55,10% el 10/Sep. En el contrato de segundo lugar de la primera vuelta está en 78,00%, con subida de 1,00pp. ENCUESTA: 37% en la primera vuelta y 46% a 47% en el par de segunda vuelta contra Lula en la BTG/Nexus del 14/Sep, y 31% en la primera vuelta y 42% a 40% en el mismo par en la Genial/Quaest del 14/Sep.",
       "fortes": [
-        "Sigue adelante en el contrato de ganador, y el vano hacia el segundo colocado SE ABRIÓ de 1,45pp a 2,15pp, primera apertura desde el 11/Sep.",
-        "En el contrato de segundo lugar de la primera vuelta, que vuelve a publicar precio en esta ronda, está en 77,00% contra 22,00%.",
-        "En los estatales de Datafolha del 12/Sep lidera la primera vuelta en São Paulo (35% a 33%), Río de Janeiro (39% a 35%) y el Distrito Federal (40% a 32%), y gana los pares de segunda vuelta en SP por 47% a 42% y en RJ por 49% a 41%."
+        "En el contrato de ganador sube 1,10pp, a 50,75%, y el vano hacia el segundo se abre de 2,15pp a 3,25pp.",
+        "En la Genial/Quaest del 14/Sep aparece adelante en el par de segunda vuelta contra Lula, por 42% a 40%, dentro del margen, y dentro de la casa el par pasó de 41% a 41% el 07/Sep a 42% a 40%.",
+        "En la primera vuelta las dos nacionales del día lo miden por encima de la ronda anterior de cada casa: de 35% a 37% en la BTG/Nexus y de 29% a 31% en la Genial/Quaest.",
+        "En el contrato de segundo lugar de la primera vuelta sube 1,00pp, a 78,00%."
       ],
       "fracos": [
-        "El contrato de ganador cede por segundo día, ahora 0,30pp, después de haber cedido 4,00pp el 12/Sep.",
-        "En la Datafolha del 11/Sep pierde el par de segunda vuelta por 44% a 46%, y dentro de la propia casa el par está estancado: 43% a 47% el 21/Ago, 44% a 46% el 3/Sep y 44% a 46% ahora.",
-        "En la primera vuelta de la misma casa está detrás por 35% a 39%, una distancia que queda fuera de un margen de 2,0.",
-        "Sigue investigado por la Policía Federal desde julio de 2026 en la indagación sobre el financiamiento de la película Dark Horse, y el 12/Sep las indagatorias del caso Master pasaron a quedar suspendidas en la Presidencia de la Corte, con André Mendonça siguiendo como relator."
+        "En las dos nacionales del día queda 5 puntos detrás en la primera vuelta, distancia que no cabe en dos márgenes de 2,0: 37% a 42% en la BTG/Nexus y 31% a 36% en la Genial/Quaest.",
+        "En la BTG/Nexus del 14/Sep pierde el par de segunda vuelta por 46% a 47%, después de haber aparecido adelante por 46% a 45% en la ronda del 08/Sep de la misma casa.",
+        "Los 50,75% quedan 4,35pp por debajo del techo de su serie, de 55,10% el 10/Sep."
       ],
-      "analise": "El 13 de septiembre es el segundo día seguido de caída en el contrato de ganador, ahora de 0,30pp, y el 49,65% queda 5,45pp por debajo del techo de su serie, de 55,10% el 10/Sep. El volumen acumulado en su contrato es de USD 10,54M. El contrato de segundo lugar de la primera vuelta vuelve a publicar precio después de no publicar el 12/Sep, y lo pone en 77,00%: el valor cae dentro del rango de 75,50% a 80,00% que el propio libro registró el 12/Sep, y ese libro varió entre 4,00pp y 9,00pp por día en las lecturas registradas de los últimos cuatro días, que es la escala con que debe leerse. Del lado del noticiario, el acto de la noche del 12/Sep alcanza el caso en que él es investigado: Edson Fachin asumió la relatoría de la investigación sobre Alexandre de Moraes y Daniel Vorcaro y determinó que las indagatorias del Banco Master y de los fraudes del INSS queden SUSPENDIDAS en la Presidencia de la Corte, y lo hizo SIN retirar la relatoría de ellas a André Mendonça, en una decisión que los dos ministros acordaron entre sí antes de que fuera firmada. El orden de los hechos está medido y el vínculo con el precio no, porque el libro se arbitra continuamente y ninguna lectura aislada separa un motivo de otro."
+      "analise": "El 14 de septiembre interrumpe dos días seguidos de caída en el contrato de ganador. Subió 1,10pp y está en 50,75% (vol USD 10,64M), lectura confirmada del 14/Sep, 13:02 BRT, 4,35pp por debajo del techo de su serie, de 55,10% el 10/Sep, y el vano hacia el segundo se abrió de 2,15pp a 3,25pp con el adversario estancado. En el contrato de segundo lugar de la primera vuelta subió 1,00pp y está en 78,00%. Del lado de la encuesta, las dos nacionales del día lo miden 2 puntos por encima de la ronda anterior de cada casa en la primera vuelta y todavía 5 puntos detrás, y discrepan en el par de segunda vuelta: la Genial/Quaest lo pone adelante por 42% a 40% y la BTG/Nexus detrás por 46% a 47%, las dos dentro del margen. El orden de los hechos está medido y el vínculo con el precio no, porque el libro se arbitra continuamente y ninguna lectura aislada separa un motivo de otro."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRECIO: 0,45% en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, estable por segundo día, y 55,60% en el contrato de tercer lugar de la primera vuelta (vol USD 173 mil), donde es el favorito, con caída de 0,20pp. ENCUESTA: 6% en la primera vuelta en la Datafolha del 11/Sep, y pierde el par de segunda vuelta ante Lula por 43% a 45%, dentro del margen de 2,0.",
+      "header": "PRECIO: 0,50% en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, subida de 0,05pp, y 47,05% en el contrato de tercer lugar de la primera vuelta (vol USD 193 mil), donde sigue siendo el favorito, con caída de 8,55pp, la mayor variación de cualquier contrato del panel en esta ronda. ENCUESTA: 6% en la primera vuelta en la BTG/Nexus del 14/Sep y 7% en la Genial/Quaest del 14/Sep, y pierde el par de segunda vuelta ante Lula en las dos, por 42% a 45% y por 36% a 38%, las dos dentro de dos márgenes de 2,0.",
       "fortes": [
-        "Sigue favorito en el contrato de tercer lugar de la primera vuelta con 55,60%, y su vano hacia el segundo colocado allí SE ABRIÓ de 18,80pp a 21,10pp, porque el otro lado cayó más que él.",
-        "En el par de segunda vuelta de la Datafolha del 11/Sep queda a 2 puntos de Lula, 43% a 45%, una de las distancias que caben dentro del margen.",
-        "En los estatales de Datafolha del 12/Sep aparece en 7% en São Paulo, su mayor valor entre las cinco unidades."
+        "Sigue como favorito en el contrato de tercer lugar de la primera vuelta, con 47,05%, delante de Renan Santos, con 37,50%.",
+        "En los dos pares de segunda vuelta del día contra Lula queda dentro de dos márgenes de 2,0: 42% a 45% en la BTG/Nexus y 36% a 38% en la Genial/Quaest.",
+        "En la Genial/Quaest el par se movió a su favor frente a la ronda del 07/Sep de la casa, de 35% a 39% a 36% a 38%."
       ],
       "fracos": [
-        "En el contrato de ganador sigue en 0,45%, por debajo de medio punto, por segundo día.",
-        "En el contrato de tercer lugar de la primera vuelta CEDE 0,20pp en esta ronda, después de haber subido 2,90pp el 12/Sep.",
-        "En la primera vuelta de la Datafolha del 11/Sep tiene 6%, frente a 6,6% en la AtlasIntel del 10/Sep, casas diferentes y por lo tanto sin serie entre ellas."
+        "Mayor variación de cualquier contrato del panel en esta ronda, y es de caída: 8,55pp en el contrato de tercer lugar de la primera vuelta, de 55,60% a 47,05%, y el vano hacia el segundo allí se cierra de 21,10pp a 9,55pp.",
+        "En la primera vuelta las dos casas lo miden por debajo de la ronda anterior de cada una: de 9% a 6% en la BTG/Nexus y de 8% a 7% en la Genial/Quaest.",
+        "En la BTG/Nexus el par de segunda vuelta contra Lula se invirtió frente a la ronda del 08/Sep de la casa: pasó de 45% a 43% a su favor a 45% a 42% a favor de Lula."
       ],
-      "analise": "Su movimiento en esta ronda es pequeño y el del vecino es el grande. En el contrato de tercer lugar de la primera vuelta cedió 0,20pp y está en 55,60% (vol USD 173 mil), mientras el segundo colocado allí cayó 2,50pp, y por eso el vano entre los dos se abrió de 18,80pp a 21,10pp sin que él haya avanzado. En el contrato de ganador sigue en 0,45%. Del lado de la encuesta, la lectura nacional más reciente es la Datafolha del 11/Sep, que lo mide en 6% en la primera vuelta y lo pone a 2 puntos de Lula en el par de segunda vuelta, 43% a 45%, dentro del margen de 2,0. El contraste entre los dos instrumentos sigue siendo el dato más difícil de leer en este nombre: la urna lo coloca en 6% y el precio del contrato de ganador paga 0,45% en él, y el panel registra la distancia sin arbitrar cuál de los dos está en lo cierto."
+      "analise": "Su movimiento en esta ronda es el mayor del panel. En el contrato de tercer lugar de la primera vuelta cayó 8,55pp y está en 47,05% (vol USD 193 mil), lectura confirmada del 14/Sep, 13:02 BRT, y el vano hacia Renan Santos allí se cerró de 21,10pp a 9,55pp, porque en el mismo contrato Renan subió 3,00pp y Ronaldo Caiado 7,50pp. No es un extremo: en las lecturas registradas del 10/Sep el mismo contrato varió entre 45,40% y 49,60%, y el precio de hoy cae dentro de ese rango. En el contrato de ganador está en 0,50%. Del lado de la encuesta, las dos nacionales del día lo miden por debajo de la ronda anterior de cada casa en la primera vuelta, 6% en la BTG/Nexus y 7% en la Genial/Quaest, y en las dos pierde el par de segunda vuelta ante Lula dentro de dos márgenes. El orden de los hechos está medido, el vínculo entre ellos no."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRECIO: 1,85% (vol USD 13,36M acumulado) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, alza de 0,20pp, y 34,50% en el contrato de tercer lugar de la primera vuelta (vol USD 300 mil), caída de 2,50pp, la mayor variación de cualquier contrato del panel en esta ronda. ENCUESTA: 3% en la primera vuelta en la Datafolha del 11/Sep, y pierde el par de segunda vuelta ante Lula por 37% a 48%.",
+      "header": "PRECIO: 1,70% (vol USD 13,43M acumulado) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, caída de 0,15pp, y 37,50% en el contrato de tercer lugar de la primera vuelta (vol USD 307 mil), subida de 3,00pp. ENCUESTA: 2% en la primera vuelta en la BTG/Nexus del 14/Sep y 4% en la Genial/Quaest del 14/Sep, y pierde el par de segunda vuelta ante Lula en las dos, por 37% a 48% y por 38% a 41%.",
       "fortes": [
-        "Su contrato sigue con USD 13,36M acumulados, el segundo mayor volumen individual del libro presidencial, detrás solo del de Tarcísio de Freitas, con USD 14,07M.",
-        "En el contrato de ganador SUBE 0,20pp en esta ronda, uno de los dos únicos contratos del panel que subieron.",
-        "Es el único nombre fuera de los dos primeros colocados que aparece en los cinco estatales de Datafolha del 12/Sep, con 6% en São Paulo y 4% en Río de Janeiro."
+        "En el contrato de tercer lugar de la primera vuelta sube 3,00pp, a 37,50%, después de dos días seguidos de caída allí, y el vano hacia el favorito de ese contrato se cierra de 21,10pp a 9,55pp.",
+        "Su contrato de ganador sigue con USD 13,43M acumulados, el segundo mayor volumen individual del libro presidencial, detrás solo del de Tarcísio de Freitas, con USD 14,07M.",
+        "En la Genial/Quaest del 14/Sep sube de 3% a 4% en la primera vuelta, y el par contra Lula queda en 38% a 41%, dentro de dos márgenes de 2,0."
       ],
       "fracos": [
-        "Mayor variación de cualquier contrato del panel en esta ronda, y es de caída: 2,50pp en el contrato de tercer lugar de la primera vuelta, de 37,00% a 34,50%.",
-        "Es el segundo día seguido de caída en ese contrato, después de 1,50pp el 12/Sep, sumando 4,00pp en dos días.",
-        "En el par de segunda vuelta de la Datafolha del 11/Sep pierde por 37% a 48%, la distancia más amplia de los cinco pares probados por la casa y la única por encima de diez puntos."
+        "En la BTG/Nexus del 14/Sep pierde el par de segunda vuelta ante Lula por 37% a 48%, la distancia más amplia de los cinco pares probados por la casa, empatada con la de Romeu Zema, 38% a 49%.",
+        "En la primera vuelta de la BTG/Nexus cae de 4% a 2% frente a la ronda del 08/Sep de la casa.",
+        "En el contrato de ganador cede 0,15pp y queda 0,50pp por encima del piso de su serie, de 1,20% el 31/Ago."
       ],
-      "analise": "La mayor variación de cualquier contrato del panel en esta ronda es la suya, y es de caída: 2,50pp en el contrato de tercer lugar de la primera vuelta, de 37,00% a 34,50%, en un libro de USD 300 mil. Es el segundo día seguido de caída allí, sumando 4,00pp en dos días, y el efecto es abrir el vano hacia el favorito de ese contrato sin que el favorito haya avanzado. En el contrato de ganador el movimiento es el opuesto y es pequeño: subió 0,20pp y está en 1,85%, con USD 13,36M acumulados, el segundo mayor volumen individual del libro presidencial. Del lado de la encuesta, la Datafolha del 11/Sep lo mide en 3% en la primera vuelta y lo pone once puntos detrás en el par de segunda vuelta, 37% a 48%, la distancia más amplia de los cinco pares que la casa probó."
+      "analise": "En esta ronda se mueve en direcciones opuestas en los dos contratos. En el de tercer lugar de la primera vuelta subió 3,00pp y está en 37,50% (vol USD 307 mil), lectura confirmada del 14/Sep, 13:02 BRT, después de dos días seguidos de caída allí, y el vano hacia el favorito de ese contrato se cerró de 21,10pp a 9,55pp porque el favorito cayó 8,55pp. En el contrato de ganador cedió 0,15pp y está en 1,70%, con USD 13,43M acumulados, el segundo mayor volumen individual del libro presidencial. Del lado de la encuesta, las dos casas del día lo miden en direcciones diferentes: la BTG/Nexus en 2% en la primera vuelta, dos puntos por debajo de su ronda anterior, y la Genial/Quaest en 4%, uno por encima de la suya, y las dos lo ponen detrás de Lula en el par de segunda vuelta."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRECIO: Ronaldo Caiado en 0,15% en el contrato de ganador, estable, y 8,50% en el de tercer lugar de la primera vuelta, alza de 0,50pp allí (vol USD 119 mil); Romeu Zema en 0,15% (vol USD 7,26M) y Fernando Haddad en 0,05% (vol USD 7,53M), los dos estables. Lectura confirmada del 13/Sep, 13:17 BRT. ENCUESTA: en la Datafolha del 11/Sep, Caiado tiene 4% y Zema 2% en la primera vuelta, y los dos pierden el par de segunda vuelta ante Lula fuera del margen.",
-      "subtitle": "Pelotón de atrás en la lectura del 10/Sep, 14:20 BRT (17:20 UTC). ⚠️ LA PODERDATA/AYA DEL 10/Sep MIDE A CAIADO EN 2% Y NO PRUEBA NI A ZEMA NI A HADDAD en el escenario estimulado. Los tres siguen por debajo del piso de 0,5% de la doble lectura en el contrato de ganador, así que los precios de esta franja entran como lectura simple.",
+      "header": "PRECIO: Ronaldo Caiado en 0,15% en el contrato de ganador, estable, y 16,00% en el de tercer lugar de la primera vuelta, subida de 7,50pp allí (vol USD 127 mil); Romeu Zema en 0,15% (vol USD 7,30M) y Fernando Haddad en 0,05% (vol USD 7,53M), los dos estables. Lectura confirmada del 14/Sep, 13:02 BRT. ENCUESTA: Caiado tiene 5% en la primera vuelta de la BTG/Nexus del 14/Sep y 4% en la de la Genial/Quaest del mismo día, y Zema tiene 1% en las dos. Caiado pierde el par de segunda vuelta ante Lula fuera del margen en la BTG/Nexus y dentro de él en la Genial/Quaest, y Zema pierde fuera del margen en las dos.",
+      "subtitle": "Pelotón de atrás en la lectura del 14/Sep, 13:02 BRT (16:02 UTC). Los tres siguen por debajo del piso de 0,5% de la doble lectura en el contrato de ganador, así que los precios de esta franja en ese contrato entran como lectura simple. Fernando Haddad no es probado en escenario presidencial por las dos nacionales del día.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,25% (vol USD 7,37M) en el contrato de GANADOR, lectura del 10/Sep, 14:20 BRT, y por debajo del piso de 0,5% de la doble lectura. En el contrato de TERCER LUGAR de la primera vuelta está en 5,00%, en un libro de USD 120 mil. En la PoderData/Aya del 10/Sep tiene 2% en la primera vuelta.",
-        "fortes": "⭐ EN LAS DOS CASAS DE LA SEMANA TIENE EL PAR DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) MÁS AJUSTADO DESPUÉS DEL QUE INVOLUCRA AL SEGUNDO: 46% a 43% en la BTG/Nexus del 08/Sep, el menor margen entre los tres pares en que esa casa da la victoria al líder, y 41% a 38% en la Quaest del 07/Sep. Y subió 0,50pp en el contrato de tercer lugar de la primera vuelta, volviendo a 10,00%.",
-        "fracos": "⚠️ En el contrato de GANADOR sigue por debajo del piso de 0,5%, y es el único de los tres universos en que no se mueve. En la [primera vuelta](/es/glossary#primeiro-turno) las dos casas lo miden en 4% y 3%, sin variación relevante frente a sus rondas anteriores."
+        "label": "CAIADO (PSD), 0,15% (vol USD 7,54M) en el contrato de GANADOR, lectura del 14/Sep, 13:02 BRT, por debajo del piso de 0,5% de la doble lectura. En el contrato de TERCER LUGAR de la primera vuelta está en 16,00%, en un libro de USD 127 mil. Tiene 5% en la primera vuelta de la BTG/Nexus del 14/Sep y 4% en la de la Genial/Quaest del mismo día.",
+        "fortes": "⭐ SUBE 7,50pp EN EL CONTRATO DE TERCER LUGAR DE LA PRIMERA VUELTA, de 8,50% a 16,00%, y en la Genial/Quaest del 14/Sep pierde el par de segunda vuelta ante Lula por solo 39% a 41%, dentro del margen. En la primera vuelta de la BTG/Nexus sube de 4% a 5% frente a la ronda del 08/Sep de la casa.",
+        "fracos": "⚠️ Los 16,00% no son un extremo de ese contrato: en las lecturas registradas del 30 y 31/Ago llegó a 45,50% y 45,00% allí. En la BTG/Nexus pierde el par de segunda vuelta ante Lula por 41% a 47%, fuera del margen, y en el contrato de GANADOR sigue por debajo del piso de 0,5%."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% (vol USD 7,43M) en el contrato de GANADOR, lectura del 10/Sep, 14:20 BRT, y en el suelo del libro. No es candidato a la Presidencia: disputa el gobierno de São Paulo, y la PoderData/Aya del 10/Sep no lo prueba en escenario presidencial.",
-        "fortes": "No es probado como candidato presidencial en las encuestas nacionales de la ventana, y ni la BTG/Nexus del 08/Sep ni la Quaest del 07/Sep lo prueban, así que no hay lectura de urna para cruzar con el precio.",
+        "label": "HADDAD (PT), 0,05% (vol USD 7,53M) en el contrato de GANADOR, lectura del 14/Sep, 13:02 BRT, en el piso del libro. No es candidato a la Presidencia: disputa la gobernación de São Paulo, y las dos nacionales del 14/Sep no lo prueban en escenario presidencial.",
+        "fortes": "No es probado como candidato presidencial en las nacionales de la ventana, y ni la BTG/Nexus ni la Genial/Quaest del 14/Sep lo prueban, así que no hay lectura de encuesta para cruzar con el precio.",
         "fracos": "El contrato sigue abierto con su nombre por herencia del diseño del mercado, no por candidatura declarada, y el panel mantiene la línea solo para que el precio residual no sea leído como señal."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,15% (vol USD 6,85M) en el contrato de GANADOR, lectura del 10/Sep, 14:20 BRT, por debajo del piso de 0,5% de la doble lectura. En el contrato de TERCER LUGAR de la primera vuelta está en 0,75%, en un libro de USD 50 mil. La PoderData/Aya del 10/Sep no lo prueba en el escenario estimulado.",
-        "fortes": "La BTG/Nexus del 08/Sep lo mide en 2% en el escenario de [primera vuelta](/es/glossary#primeiro-turno) que incluye a Pablo Marçal, contra 1% en el escenario sin él, y la Quaest del 07/Sep lo mide en 2%. Las tres lecturas caben dentro del margen de 2 puntos de cada casa.",
-        "fracos": "⚠️ EN LOS PARES DE [SEGUNDA VUELTA](/es/glossary#segundo-turno) ES EL MÁS HOLGADO DE LAS DOS CASAS: 47% a 40% en la BTG/Nexus y 44% a 33% en la Quaest, es decir 7 y 11 puntos de distancia. Y se quedó estancado en 0,85% en el contrato de tercer lugar de la primera vuelta, por detrás de Pablo Marçal, que está en 1,75%."
+        "label": "ZEMA (Novo), 0,15% (vol USD 7,30M) en el contrato de GANADOR, lectura del 14/Sep, 13:02 BRT, por debajo del piso de 0,5% de la doble lectura. En el contrato de TERCER LUGAR de la primera vuelta está en 0,95%, en un libro de USD 54 mil. Tiene 1% en la primera vuelta en las dos nacionales del 14/Sep.",
+        "fortes": "Sube 0,25pp en el contrato de TERCER LUGAR de la primera vuelta, de 0,70% a 0,95%, su único movimiento en esta ronda.",
+        "fracos": "⚠️ EN LOS PARES DE SEGUNDA VUELTA ES EL MÁS HOLGADO DE LAS DOS CASAS DEL DÍA: 38% a 49% en la BTG/Nexus, empatado con el de Renan Santos, y 33% a 45% en la Genial/Quaest, o sea 11 y 12 puntos de distancia. En la primera vuelta las dos lo miden en 1%, por debajo del 2% que la Genial/Quaest registraba el 07/Sep."
       },
-      "analise": "El bloque de los nombres de precio bajo tiene un único movimiento en esta ronda, y es en el contrato de tercer lugar de la primera vuelta: Ronaldo Caiado sube 0,50pp y llega a 8,50% (vol USD 119 mil), por segundo día seguido de alza. En los contratos de ganador los tres están parados, Caiado y Zema en 0,15% y Haddad en 0,05%, este último con USD 7,53M acumulados, lo que muestra que volumen grande y precio en el piso conviven sin contradicción. Del lado de la encuesta, la Datafolha del 11/Sep es más dura con ellos de lo que había sido la AtlasIntel del 10/Sep: allí Caiado llegó a EMPATAR con Lula en 45,7% en un par de segunda vuelta y Zema aparecía adelante por dos décimos, y en Datafolha los dos pierden fuera del margen, por 41% a 46% y por 39% a 48%. Son casas diferentes midiendo la misma pregunta con cuatro días de intervalo, y la divergencia entre ellas es mayor que el margen que cada una declara.",
+      "analise": "El bloque de los nombres de precio bajo tiene el segundo mayor movimiento de la ronda, y está en el contrato de tercer lugar de la primera vuelta: Ronaldo Caiado sube 7,50pp y llega a 16,00% (vol USD 127 mil), tercer día seguido de subida allí. No es un extremo de ese contrato, que en las lecturas registradas del 30 y 31/Ago llegó a 45,50% y 45,00% para él. En los contratos de ganador los tres están estancados, Caiado y Zema en 0,15% y Haddad en 0,05%, este último con USD 7,53M acumulados, lo que muestra que volumen grande y precio en el piso conviven sin contradicción. Del lado de la encuesta, las dos nacionales del día divergen sobre Caiado en el par de segunda vuelta: la Genial/Quaest lo pone a 2 puntos de Lula, 39% a 41%, dentro del margen, y la BTG/Nexus a 6, 41% a 47%, fuera de él. Sobre Zema las dos concuerdan en 1% en la primera vuelta y en una distancia de dos dígitos en el par.",
       "fortes": [
-        "Ronaldo Caiado SUBE 0,50pp en el contrato de tercer lugar de la primera vuelta, a 8,50%, por segundo día seguido de alza allí.",
-        "En los estatales de Datafolha del 12/Sep, Caiado aparece en 8% en el Distrito Federal, el mayor valor de cualquier nombre fuera de los dos primeros colocados entre las cinco unidades.",
-        "Romeu Zema aparece en 5% en Minas Gerais en el levantamiento estatal de la misma casa, el estado que gobierna."
+        "Ronaldo Caiado SUBE 7,50pp en el contrato de tercer lugar de la primera vuelta, a 16,00%, el segundo mayor movimiento del panel en esta ronda.",
+        "En la Genial/Quaest del 14/Sep, Caiado pierde el par de segunda vuelta ante Lula por solo 39% a 41%, dentro del margen, y sube de 3% a 4% en la primera vuelta frente a la ronda del 07/Sep de la casa.",
+        "Romeu Zema sube 0,25pp en el contrato de tercer lugar de la primera vuelta, a 0,95%."
       ],
       "fracos": [
-        "Ninguno de los tres pasa de 4% en la primera vuelta nacional de la Datafolha del 11/Sep, y los dos probados en segunda vuelta pierden fuera del margen, Caiado por 41% a 46% y Zema por 39% a 48%.",
+        "Ninguno de los tres pasa de 5% en la primera vuelta de las dos nacionales del día, y Zema pierde el par de segunda vuelta ante Lula por 11 y 12 puntos.",
         "En los contratos de ganador los tres siguen por debajo de dos décimos: Caiado en 0,15%, Zema en 0,15% y Haddad en 0,05%.",
-        "Fernando Haddad no es probado en escenario presidencial por las nacionales recientes, y su contrato paga el piso del libro incluso con USD 7,53M acumulados."
+        "Fernando Haddad no es probado en escenario presidencial por las dos nacionales del 14/Sep, y su contrato paga el piso del libro incluso con USD 7,53M acumulados."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "39% en la primera vuelta y 46% en la segunda contra Flávio Bolsonaro en la Datafolha del 11/Sep, campo del 8 al 10/Sep, 2.002 entrevistas y margen de 2,0pp. La casa lo devuelve adelante en el par después de ocho nacionales seguidas desde el 6/Sep en las que eso no ocurría, y la diferencia de 2 puntos cabe en el margen.",
-      "m": "47,50% (vol USD 10,92M) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, una caída de 1,00pp frente al precio confirmado el 12/Sep, y 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago. En el contrato de segundo lugar de la primera vuelta, que vuelve a publicar precio, está en 22,00%.",
-      "t": "cede 1,00pp y el vano hacia el primero se abre de 1,45pp a 2,15pp",
-      "s": "En los cinco estatales de Datafolha del 12/Sep lidera en Minas Gerais y en Pernambuco y está detrás en São Paulo, Río de Janeiro y el Distrito Federal.",
+      "p": "En la BTG/Nexus del 14/Sep (campo del 11 al 13/Sep, 2.003 entrevistas por teléfono, margen de 2,0pp) tiene 42% en la primera vuelta y 47% en la segunda contra Flávio Bolsonaro, y en la Genial/Quaest del 14/Sep (campo del 10 al 13/Sep, 2.004 entrevistas presenciales, margen de 2,0pp) tiene 36% en la primera vuelta y 40% en el mismo par. Las dos casas concuerdan en 5 puntos de ventaja suya en la primera vuelta y discrepan en el signo de la segunda, con las dos diferencias dentro del margen.",
+      "m": "47,50% (vol USD 11,00M) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, sin cambio frente al precio confirmado el 13/Sep, y 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago. En el contrato de segundo lugar de la primera vuelta está en 19,50%, con caída de 2,50pp.",
+      "t": "estancado, y el vano hacia el primero se abre de 2,15pp a 3,25pp porque el adversario sube",
+      "s": "La Genial/Quaest del 14/Sep mide la aprobación del gobierno en 43% frente a 50% de desaprobación, igual a la ronda del 07/Sep de la casa, y la BTG/Nexus en 47% frente a 49%.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "35% en la primera vuelta y 44% en la segunda en la Datafolha del 11/Sep. Dentro de la propia casa el par está estancado: 43% a 47% el 21/Ago, 44% a 46% el 3/Sep y 44% a 46% ahora. Los 2 puntos caben en el margen de 2,0, así que la casa mide empate técnico en el par y ventaja fuera del margen para su rival en la primera vuelta.",
-      "m": "49,65% (vol USD 10,54M) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, una caída de 0,30pp frente al precio confirmado el 12/Sep, y 5,45pp por debajo del techo de su serie, de 55,10% el 10/Sep. En el contrato de segundo lugar de la primera vuelta, que vuelve a publicar precio, está en 77,00%.",
-      "t": "cede 0,30pp por segundo día, y el vano hacia el segundo se abre por primera vez desde el 11/Sep",
-      "s": "En la noche del 12/Sep, Edson Fachin asumió la relatoría de la investigación sobre Moraes y Vorcaro y determinó que las indagatorias del Banco Master y de los fraudes del INSS queden SUSPENDIDAS en la Presidencia de la Corte, y lo hizo SIN retirar la relatoría de ellas a André Mendonça, en una decisión que los dos ministros acordaron entre sí antes de que fuera firmada, conjunto en el que él está investigado desde julio. Mendonça sigue relator y la decisión fue en común acuerdo.",
+      "p": "37% en la primera vuelta y 46% en la segunda en la BTG/Nexus del 14/Sep, y 31% en la primera vuelta y 42% en la segunda en la Genial/Quaest del 14/Sep. En las dos casas sube 2 puntos en la primera vuelta frente a la ronda anterior de cada una y sigue 5 puntos detrás. En el par, la Genial/Quaest lo pone adelante por 42% a 40% y la BTG/Nexus detrás por 46% a 47%, las dos dentro del margen.",
+      "m": "50,75% (vol USD 10,64M) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, una subida de 1,10pp frente al precio confirmado el 13/Sep, y 4,35pp por debajo del techo de su serie, de 55,10% el 10/Sep. En el contrato de segundo lugar de la primera vuelta está en 78,00%, con subida de 1,00pp.",
+      "t": "sube 1,10pp e interrumpe dos días seguidos de caída, con el vano hacia el segundo abriéndose de 2,15pp a 3,25pp",
+      "s": "En la BTG/Nexus la ronda del 08/Sep lo ponía adelante en el par por 46% a 45%, y la del 14/Sep lo pone detrás por 46% a 47%.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "6% en la primera vuelta en la Datafolha del 11/Sep, y 43% contra 45% de Lula en el par de segunda vuelta, una diferencia de 2 puntos que cabe en el margen de 2,0.",
-      "m": "0,45% en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, estable por segundo día, y 55,60% en el contrato de tercer lugar de la primera vuelta (vol USD 173 mil), donde es el favorito, con caída de 0,20pp.",
-      "t": "cede 0,20pp en el contrato de tercer lugar, y aun así su vano hacia el segundo allí se abre de 18,80pp a 21,10pp",
-      "s": "Aparece en 7% en el estatal de São Paulo de la Datafolha del 12/Sep, su mayor valor entre las cinco unidades.",
+      "p": "6% en la primera vuelta en la BTG/Nexus del 14/Sep y 7% en la Genial/Quaest del 14/Sep, y pierde el par de segunda vuelta ante Lula en las dos, por 42% a 45% y por 36% a 38%, las dos dentro de dos márgenes de 2,0.",
+      "m": "0,50% en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, subida de 0,05pp, y 47,05% en el contrato de tercer lugar de la primera vuelta (vol USD 193 mil), donde sigue siendo el favorito, con caída de 8,55pp.",
+      "t": "cae 8,55pp en el contrato de tercer lugar, la mayor variación del panel en esta ronda, y su vano hacia el segundo allí se cierra de 21,10pp a 9,55pp",
+      "s": "En la primera vuelta las dos casas lo miden por debajo de la ronda anterior de cada una: de 9% a 6% en la BTG/Nexus y de 8% a 7% en la Genial/Quaest.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "3% en la primera vuelta en la Datafolha del 11/Sep, y 37% contra 48% de Lula en el par de segunda vuelta, la distancia más amplia de los cinco pares probados por la casa y la única por encima de diez puntos.",
-      "m": "1,85% (vol USD 13,36M) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, alza de 0,20pp, y 34,50% en el contrato de tercer lugar de la primera vuelta (vol USD 300 mil), caída de 2,50pp.",
-      "t": "cae 2,50pp en el contrato de tercer lugar, la mayor variación del panel en esta ronda, y sube 0,20pp en el de ganador",
-      "s": "Segundo día seguido de caída en el contrato de tercer lugar, sumando 4,00pp en dos días.",
+      "p": "2% en la primera vuelta en la BTG/Nexus del 14/Sep y 4% en la Genial/Quaest del 14/Sep, y pierde el par de segunda vuelta ante Lula por 37% a 48% y por 38% a 41%.",
+      "m": "1,70% (vol USD 13,43M) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, caída de 0,15pp, y 37,50% en el contrato de tercer lugar de la primera vuelta (vol USD 307 mil), subida de 3,00pp.",
+      "t": "sube 3,00pp en el contrato de tercer lugar después de dos días de caída, y cede 0,15pp en el de ganador",
+      "s": "En la BTG/Nexus el par contra Lula es la distancia más amplia de los cinco probados por la casa, empatada con la de Romeu Zema.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "4% en la primera vuelta en la Datafolha del 11/Sep, y pierde el par de segunda vuelta ante Lula por 41% a 46%, una distancia de 5 puntos que queda fuera del margen de 2,0.",
-      "m": "0,15% en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, estable, y 8,50% en el contrato de tercer lugar de la primera vuelta (vol USD 119 mil), alza de 0,50pp.",
-      "t": "sube 0,50pp en el contrato de tercer lugar, por segundo día seguido de alza",
-      "s": "Aparece en 8% en el estatal del Distrito Federal de la Datafolha del 12/Sep.",
+      "p": "5% en la primera vuelta en la BTG/Nexus del 14/Sep y 4% en la Genial/Quaest del 14/Sep. En el par de segunda vuelta pierde ante Lula por 41% a 47% en la BTG/Nexus, fuera del margen, y por 39% a 41% en la Genial/Quaest, dentro de él.",
+      "m": "0,15% en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, estable, y 16,00% en el contrato de tercer lugar de la primera vuelta (vol USD 127 mil), subida de 7,50pp.",
+      "t": "sube 7,50pp en el contrato de tercer lugar, tercer día seguido de subida allí",
+      "s": "En las lecturas registradas del 30 y 31/Ago el mismo contrato llegó a 45,50% y 45,00% para él, así que los 16,00% de hoy no son un extremo.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "2% en la primera vuelta en la Datafolha del 11/Sep, y pierde el par de segunda vuelta ante Lula por 39% a 48%, una distancia de 9 puntos que queda fuera del margen de 2,0.",
-      "m": "0,15% (vol USD 7,26M) en el contrato de ganador, lectura confirmada del 13/Sep, 13:17 BRT, estable, y 0,70% en el contrato de tercer lugar de la primera vuelta (vol USD 53 mil).",
-      "t": "estable en el contrato de ganador y en el de tercer lugar",
-      "s": "Aparece en 5% en el estatal de Minas Gerais de la Datafolha del 12/Sep, el estado que gobierna.",
+      "p": "1% en la primera vuelta en las dos nacionales del 14/Sep, y pierde el par de segunda vuelta ante Lula por 38% a 49% en la BTG/Nexus y por 33% a 45% en la Genial/Quaest, las dos fuera del margen.",
+      "m": "0,15% (vol USD 7,30M) en el contrato de ganador, lectura confirmada del 14/Sep, 13:02 BRT, estable, y 0,95% en el contrato de tercer lugar de la primera vuelta (vol USD 54 mil), subida de 0,25pp.",
+      "t": "estable en el contrato de ganador y sube 0,25pp en el de tercer lugar",
+      "s": "En la Genial/Quaest su primera vuelta cae de 2% a 1% frente a la ronda del 07/Sep de la casa.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ POR PRIMERA VEZ DESDE EL 11/Sep: Flávio Bolsonaro está en 49,65% (vol USD 10,54M) y Lula en 47,50% (vol USD 10,92M), frente a 49,95% y 48,50% en la lectura confirmada del 12/Sep. Los dos cedieron, 0,30pp el primero y 1,00pp el segundo, y la distancia pasó de 1,45pp a 2,15pp. ⚖️ LA PROPORCIÓN ES LO QUE DA EL TAMAÑO DEL MOVIMIENTO: ayer ese mismo vano CERRÓ 10,00pp en un solo día, y hoy devuelve 0,70pp, cerca del siete por ciento de lo que se movió en la víspera. Y como los dos lados cedieron, quien abrió el vano fue el segundo colocado al retroceder, no el primero al avanzar. ⭐ LA MAYOR VARIACIÓN DE LA RONDA NO ESTÁ EN EL CONTRATO DE GANADOR: es la caída de 2,50pp de Renan Santos en el contrato de tercer lugar de la primera vuelta, de 37,00% a 34,50%, segundo día seguido de caída allí y 4,00pp en dos días. El efecto es abrir el vano del favorito de ese contrato, Augusto Cury, de 18,80pp a 21,10pp, incluso con Cury CEDIENDO 0,20pp. 🔁 EL CONTRATO DE SEGUNDO LUGAR VUELVE A PUBLICAR PRECIO después de no publicar el 12/Sep, con Flávio Bolsonaro en 77,00% y Lula en 22,00%. Los dos caen dentro del rango que el propio libro registró el 12/Sep, y en las lecturas registradas de los últimos cuatro días ese libro varió entre 4,00pp y 9,00pp por día. 🏛️ Y EL CONTRATO DE IMPEACHMENT EN EL SUPREMO DEVOLVIÓ LA EXCURSIÓN ENTERA: 4,60% (vol USD 90 mil) frente a 6,70% el 12/Sep. En los cierres registrados en el backup cerró el 10/Sep en 4,60%, subió a 7,30% el 11/Sep y 6,70% el 12/Sep, y hoy devuelve exactamente el 4,60% del 10/Sep. No es extremo: sigue 21,50pp por debajo del techo de la serie, de 26,10% el 11/Sep, y 2,50pp por encima del piso, de 2,10% el 8/Jun. El volumen de USD 90 mil es pequeño lo bastante para que órdenes aisladas muevan el precio, y la salvedad vale en las dos direcciones. 🗳️ DEL LADO DE LA ENCUESTA NO HUBO DIVULGACIÓN NACIONAL EL 13/Sep, y eso es calendario. El registro del Tribunal Superior Electoral trae DOCE nacionales con divulgación marcada entre el 14 y el 18/Sep, con CINCO de ellas el mismo 17/Sep y la Veritá de 40.500 entrevistas el 18/Sep. El 21/Ago dos nacionales del mismo día llegaron a invertir la segunda vuelta entre sí, así que cinco el mismo día es la prueba más dura que esta ventana ha producido. 📊 LO QUE SALIÓ EN LA NOCHE DEL 12/Sep FUE ESTATAL y no entra en el cuadro nacional: cinco levantamientos de Datafolha, con el primer colocado adelante en São Paulo, Río de Janeiro y el Distrito Federal, y el segundo adelante en Minas Gerais y Pernambuco. 📌 Y EL RITO DEL SUPREMO AVANZÓ DOS VECES: en la noche del 12/Sep Edson Fachin asumió la relatoría de la investigación sobre Alexandre de Moraes y Daniel Vorcaro y determinó que las indagatorias del Banco Master y de los fraudes del INSS queden SUSPENDIDAS en la Presidencia de la Corte, y lo hizo SIN retirar la relatoría de ellas a André Mendonça, en una decisión que los dos ministros acordaron entre sí antes de que fuera firmada, y el 13/Sep la Policía Federal respondió al plazo de 24 horas sobre el celular de Vorcaro. La sesión sigue marcada para el 15/Sep y será transmitida en vivo. El orden de los hechos está medido, el vínculo entre ellos no."
+  "cruzamento": "📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ 1,10pp, Y SOLO SE MOVIÓ UN LADO: Flávio Bolsonaro subió de 49,65% a 50,75% (vol USD 10,64M) y Lula quedó estancado en 47,50% (vol USD 11,00M), lectura confirmada del 14/Sep, 13:02 BRT, frente a la lectura confirmada del 13/Sep. La distancia pasó de 2,15pp a 3,25pp. Ninguno de los dos precios es un extremo: los 50,75% quedan 4,35pp por debajo del techo de Flávio, de 55,10% el 10/Sep, y los 47,50% quedan 20,00pp por debajo del techo de Lula, de 67,50% el 16/Ago. 🗳️ DOS NACIONALES SALIERON EL MISMO 14/Sep, Y CONCUERDAN EN LA PRIMERA VUELTA Y DISCREPAN EN EL SIGNO DE LA SEGUNDA. La BTG/Nexus, con campo del 11 al 13/Sep, da a Lula 42% a 37% en la primera vuelta y 47% a 46% en el par; la Genial/Quaest, con campo del 10 al 13/Sep, da a Lula 36% a 31% en la primera vuelta y a Flávio Bolsonaro 42% a 40% en el par. Los 5 puntos de la primera vuelta se repiten en las dos casas, y las dos diferencias de segunda vuelta caben en el margen de 2,0 de cada una, así que en el par lo que ambas miden es empate técnico con signos opuestos. 🔁 DENTRO DE CADA CASA EL PAR SE MOVIÓ EN DIRECCIONES OPUESTAS: en la BTG/Nexus pasó de 46% a 45% para Flávio el 08/Sep a 47% a 46% para Lula, y en la Genial/Quaest de 41% a 41% el 07/Sep a 42% a 40% para Flávio. Y las dos concuerdan en otra cosa: en las dos el segundo colocado sube 2 puntos en la primera vuelta frente a la ronda anterior de la casa. ⭐ LA MAYOR VARIACIÓN DE LA RONDA ESTÁ EN EL CONTRATO DE TERCER LUGAR DE LA PRIMERA VUELTA: Augusto Cury cayó 8,55pp, de 55,60% a 47,05%, Ronaldo Caiado subió 7,50pp, de 8,50% a 16,00%, y Renan Santos subió 3,00pp, a 37,50%, y el vano del favorito de ese contrato se cerró de 21,10pp a 9,55pp. Ninguno de los tres precios es un extremo: en las lecturas registradas del 10/Sep el contrato de Cury varió entre 45,40% y 49,60%, y el de Caiado llegó a 45,50% el 30/Ago. 🏛️ EL CONTRATO DE IMPEACHMENT EN EL SUPREMO CEDIÓ 0,60pp y está en 4,00% (vol USD 91 mil), 22,10pp por debajo del techo de la serie, de 26,10% el 11/Sep, y 1,90pp por encima del piso, de 2,10% el 08/Jun. 📌 EN LAS NOTICIAS, el rito del Supremo avanzó en la víspera de la sesión del 15/Sep: el 14/Sep la Policía Federal entregó a los despachos de Cristiano Zanin y Gilmar Mendes la íntegra de los datos extraídos del celular de Daniel Vorcaro, que los dos habían pedido directamente a la corporación, y Edson Fachin pidió a André Mendonça, relator, que retire el secreto de datos sobre la red de pagos del Banco Master, después de un pedido de Alexandre de Moraes y de una manifestación favorable de la Procuraduría General de la República. El mismo día la Policía Federal realizó la Operación Transparência 3, autorizada por Flávio Dino, sobre sospecha de tráfico de influencias ante tribunales superiores, con el diputado Cezinha de Madureira como principal blanco y sin detención. El orden de los hechos está medido, el vínculo entre ellos no."
 }
