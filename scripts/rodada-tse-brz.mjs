@@ -137,7 +137,19 @@ const escopo = rodar(
   [`--dias=${dias}`]
 )
 
-if (escopo !== 0) {
+// 🔴 Saída 3, desde 14/Set/2026: APROVOU, mas sobre base cortada pelo teto de
+//    200 linhas da rota. Não é o 1 e não pode ler como ele: não há grave vivo
+//    achado, há uma base que não permite dizer que não há.
+if (escopo === 3) {
+  resultados.at(-1).estado = 'BASE CORTADA pelo teto da rota'
+  console.log('')
+  console.log(regua)
+  console.log('🔴 O conferidor de ESCOPO aprovou sobre BASE CORTADA pela rota /api/polls/tse.')
+  console.log('')
+  console.log('   A rota para em 200 linhas e diz "total" igual ao que serviu. O poder de')
+  console.log('   cada casa foi medido sem as divulgações mais antigas da janela, então o')
+  console.log('   APROVADO vale como piso. Não é grave vivo: é base que não o descarta.')
+} else if (escopo !== 0) {
   console.log('')
   console.log(regua)
   console.log('🏷️  ATENÇÃO: o conferidor de ESCOPO reprovou com GRAVE no calendário vivo.')
@@ -207,15 +219,16 @@ function imprimirResumo() {
     console.log(`   ${marca} ${r.id.padEnd(10)} saída ${cod}   ${r.estado}`)
   }
   console.log('')
-  console.log('   ⚠️ Saída != 0 no escopo é SINAL, não queda: quer dizer GRAVE no')
-  console.log('      calendário vivo. O relatório sai != 0 só quando um PORTÃO quebra,')
-  console.log('      nunca porque o mundo é feio.')
+  console.log('   ⚠️ Saída != 0 no escopo é SINAL, não queda: 1 quer dizer GRAVE no')
+  console.log('      calendário vivo, e 3 quer dizer aprovado sobre base CORTADA pela rota.')
+  console.log('      O relatório sai != 0 só quando um PORTÃO quebra, nunca porque o mundo é feio.')
   console.log('')
   console.log('   🔍 Na sonda, 2 é a fonte servindo dois retratos e 1 é a borda recusando:')
   console.log('      um manda ESPERAR, o outro manda ir ao modo ARQUIVO. No passo 0 ela')
   console.log('      PARA a gravação; no passo 4 ela só avisa, porque ali já está gravado.')
   console.log('')
-  console.log('   ⛔ Nada foi publicado nem commitado. Se algo NACIONAL entrou e já foi')
-  console.log('      DIVULGADO, o próximo passo é o /atualizar-brz, à mão.')
+  console.log('   ⛔ Nada foi publicado nem commitado. O gatilho do /atualizar-brz é nacional')
+  console.log('      com DIVULGAÇÃO hoje (bloco 📣 do relatório), não nacional INSERIDA nesta')
+  console.log('      rodada: a de 14/Set inseriu zero e duas nacionais divulgavam naquele dia.')
   console.log('')
 }

@@ -65,6 +65,14 @@ jobs:
       - name: Conjunto de fantasmas do TSE
         run: node scripts/testar-tse-fantasmas.mjs
 
+      # A rota /api/polls/tse para em 200 linhas e declara total igual ao que
+      # serviu (14/Set: 351 na janela de 30d, 200 servidas), e o dia de HOJE nao
+      # tinha bloco no relatorio. O teste cobre a borda do corte, o gatilho que
+      # NAO pode disparar (estadual hoje, nacional amanha, fantasma) e o zero
+      # sobre base cortada, que tem de sair INDETERMINADO.
+      - name: Teto da API e gatilho do dia
+        run: node scripts/testar-tse-api-polls.mjs
+
       # A regua por contrato do check:frescor, que em 13/Set ganhou o DONO
       # ESTRUTURAL: o preco citado dentro do cartao do candidato, onde o nome
       # nao se repete. O teste cobre os dois lados, o defeito real de 12/Set que

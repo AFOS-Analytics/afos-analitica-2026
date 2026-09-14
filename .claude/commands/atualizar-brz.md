@@ -252,6 +252,8 @@ node scripts/conferir-escopo-derivado.mjs --dias=30
 
 📌 **Ele sai 1 apenas quando um rótulo frágil está no CALENDÁRIO VIVO.** Rótulo já vencido é dívida de dataset e sai 0, então ele não bloqueia por passado.
 
+🔴 **E sai 3, desde 14/Set/2026, quando APROVA sobre base cortada:** a rota `/api/polls/tse` para em 200 linhas e declara `total` igual ao que serviu, e a janela de 30d tinha 351 naquele dia. O poder de cada casa é medido sobre todas as linhas, então o APROVADO vale como piso. **3 não é 1:** não bloqueia a publicação sozinho, mas quer dizer que o zero no calendário vivo não foi medido sobre a base inteira. → `.claude/commands/atualizar-pesquisas-brz.md`, seção 📣
+
 ⛔ **Se reprovar, não publicar aquele registro como nacional.** Ele não afirma que a pesquisa é estadual: afirma que a evidência não sustenta chamá-la de nacional. O desfecho é conferir na divulgação, que é a data em que o número aparece com o universo declarado.
 
 🔴 **Caso vivo em 07/Set/2026:** `BR079322026`, Real Time Big Data, n=1.600, divulgação **09/Set**, servido como nacional apoiado num plano amostral que diz "eleitorado brasileiro" em **23 de 23 pesquisas ESTADUAIS da mesma casa**. Achado em 06/Set e ainda aberto. → `memory/feedback_o_campo_que_decide_o_rotulo_pode_ser_texto_padrao.md`

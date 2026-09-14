@@ -28,6 +28,8 @@
  *   npm run calendario:brz -- --hoje=2026-09-11 --dias=7
  */
 
+import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
+
 const MESES_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 const MESES_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const MESES_ES = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
@@ -133,6 +135,16 @@ if (!res.ok) {
   process.exit(1)
 }
 const { polls = [] } = await res.json()
+
+// 🔴 A rota para em 200 linhas por divulgação decrescente e diz "total" igual ao
+// que serviu (medido em 14/Set/2026: 351 na janela de 30d, 200 servidas). O corte
+// come as datas MAIS ANTIGAS primeiro, e esta tabela só olha para depois de hoje,
+// então ela só quebra quando a borda do corte passa de hoje.
+const borda = bordaDoCorte(polls)
+if (borda !== null && borda > hoje) {
+  console.error(`❌ a API parou no teto de ${TETO_API_POLLS} linhas e o corte alcança ${borda}, dentro da janela. Tabela NÃO gerada.`)
+  process.exit(1)
+}
 
 const naJanela = polls.filter((r) => {
   const p = String(r.publicationDate || '').slice(0, 10)

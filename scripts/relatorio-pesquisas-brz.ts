@@ -38,6 +38,7 @@ config({ path: '.env' })
 
 import { fetchTSEPolls } from '../lib/tse/ingest'
 import { acharCpf } from './lib/cpf.mjs'
+import { TETO_API_POLLS, bordaDoCorte, divulgamHoje } from './lib/tse-api-polls.mjs'
 
 const BASE = 'https://www.afos-analytics.com'
 const HOJE = new Date().toISOString().slice(0, 10)
@@ -125,6 +126,21 @@ async function main() {
     console.log(`   ⚠️  nada de hoje na resposta: ${veredito}`)
   }
 
+  /**
+   * 🔴 O TETO DA ROTA. Ela faz `take: 200` por `eventDate desc` e devolve
+   * `total: findings.length`, então o "total declarado" acima NUNCA diverge das
+   * linhas e não acusa corte. Medido no Neon em 14/Set/2026: a janela de 30d
+   * tinha 351 linhas e a API serviu 200, cortando as divulgações mais antigas.
+   * O corte tem borda, e é ela que diz qual bloco abaixo continua inteiro.
+   */
+  const borda = bordaDoCorte(polls)
+  if (borda === null) {
+    console.log(`   ✅ abaixo do teto de ${TETO_API_POLLS} linhas da rota: a janela veio inteira`)
+  } else {
+    console.log(`   🔴 NO TETO de ${TETO_API_POLLS} linhas: a rota corta calada, e o "total" é só o tamanho do que veio.`)
+    console.log(`      Divulgações até ${borda}, inclusive, podem estar INCOMPLETAS.`)
+  }
+
   // ── Passo 4b: o registro do TSE, para saber quem já SAIU ─────────────────────
   let fantasmas = new Set<string>()
   if (semTse) {
@@ -180,7 +196,29 @@ async function main() {
     console.log(`   ${linha(p)}`)
   }
 
-  // ── Passo 5b: divulgação PREVISTA, o calendário da semana ───────────────────
+  // ── Passo 5b: quem DIVULGA HOJE, que é o gatilho do /atualizar-brz ──────────
+  //
+  // 🔴 Até 14/Set/2026 o dia de hoje não tinha bloco: "prevista" era `> HOJE` e
+  // "vencida" era `<= HOJE`, então quem divulgava hoje virava um número dentro
+  // de uma contagem. Naquele dia NEXUS e Quaest divulgavam, a ingestão inseriu
+  // zero, e o fecho mandava rodar o /atualizar-brz "se algo nacional entrou".
+  // O painel reflete DIVULGAÇÃO, e as duas tinham entrado em 09/Set.
+  const doDia = divulgamHoje(polls, HOJE, { ehFantasma, borda })
+  console.log(`\n📣 DIVULGAM HOJE, ${HOJE}: ${doDia.vivas.length} nacional(is)`)
+  for (const p of doDia.vivas) {
+    console.log(`   ${linha(p)}`)
+  }
+  if (doDia.fantasmas.length > 0) {
+    console.log(`   👻 ${doDia.fantasmas.length} nacional(is) de hoje JÁ SAÍRAM do registro do TSE: não esperar número delas.`)
+  }
+  if (doDia.gatilho === 'INDETERMINADO') {
+    falhar(`a resposta está cortada até ${borda} e hoje cai dentro do corte: "ninguém divulga hoje" não pode ser afirmado.`)
+  }
+
+  // ── Passo 5c: divulgação PREVISTA, o calendário da semana ───────────────────
+  if (borda !== null && borda > HOJE) {
+    falhar(`o corte da rota alcança o calendário FUTURO (borda ${borda}): a lista de previstas está incompleta.`)
+  }
   const prevista = polls.filter((p) => p.publicationDate && String(p.publicationDate) > HOJE)
   const prevNac = prevista.filter((p) => p.scope === 'national')
   const prevFant = prevista.filter(ehFantasma)
@@ -200,10 +238,14 @@ async function main() {
     )
   }
 
-  // ── Passo 5c: registrada ≠ publicada, com a conta honesta ───────────────────
+  // ── Passo 5d: registrada ≠ publicada, com a conta honesta ───────────────────
   const vencidaNac = nacionais.filter((p) => p.publicationDate && String(p.publicationDate) <= HOJE)
   const vencidaFant = vencidaNac.filter(ehFantasma)
-  console.log(`\n⏳ NACIONAIS com divulgação já vencida na janela: ${vencidaNac.length}`)
+  console.log(`\n⏳ NACIONAIS com divulgação já vencida na janela, hoje incluso: ${vencidaNac.length}`)
+  if (borda !== null) {
+    // As vencidas são exatamente as que o corte come primeiro. A conta vira PISO.
+    console.log(`   🔴 base cortada até ${borda}: as contas desta seção são PISO, não total.`)
+  }
   console.log(`   destas, fora do registro do TSE: ${vencidaFant.length}`)
   // 🕳️ Quando NENHUMA saiu do registro, o texto "X, não X" saía com o mesmo
   // número dos dois lados e lia como defeito de conta, justamente na linha que
@@ -280,8 +322,13 @@ async function main() {
     process.exit(1)
   }
   console.log(`\n✅ Portões verdes: CPF com controle vivo, mercado do Brasil fresco, calendário filtrado por fantasma.`)
-  if (prevNac.length > 0) {
-    console.log(`📌 Se algo nacional entrou nesta rodada, rodar /atualizar-brz para o painel refletir.`)
+  // O gatilho é a DIVULGAÇÃO de hoje, não a inserção desta rodada, e não as previstas.
+  if (doDia.gatilho === 'DISPARA') {
+    console.log(
+      `📣 ${doDia.vivas.length} nacional(is) divulgam HOJE: o /atualizar-brz entra quando os números estiverem publicados pelo instituto. O registro não traz número.`,
+    )
+  } else {
+    console.log(`📌 Nenhuma nacional com divulgação marcada para hoje no calendário limpo: esta rodada não dispara o /atualizar-brz.`)
   }
 }
 

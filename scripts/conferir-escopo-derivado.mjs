@@ -20,10 +20,19 @@
  * Sai 1 quando um rótulo GRAVE está no calendário vivo. Rótulo frágil já
  * vencido sai 0 e aparece como aviso: é dívida de dataset, não publicação de
  * hoje.
+ *
+ * Sai 3 quando APROVA sobre base CORTADA pelo teto da rota. 🔴 Medido em
+ * 14/Set/2026: a janela de 30d tinha 351 linhas e a API serviu 200, e sobre a
+ * base inteira a Real Time contradiz em 38 de 38 (não 25 de 25) e os graves
+ * são 3 (não 1). O veredito vivo não mudou naquele dia, mas o poder de cada
+ * casa é medido sobre TODAS as linhas, então o corte pode esconder os dois
+ * sentidos. O 3 não é o 1: não há grave vivo achado, há base que não permite
+ * dizer que não há.
  */
 
 import { readFileSync } from 'fs'
 import { chaveDaCasa, conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
+import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 
 const BASE = 'https://www.afos-analytics.com'
 
@@ -46,6 +55,8 @@ function linhasDe(json) {
 }
 
 let registros
+// Só a leitura da ROTA tem teto. Um --arquivo é o que alguém montou, inteiro ou não.
+let borda = null
 if (arquivo) {
   registros = linhasDe(JSON.parse(readFileSync(arquivo, 'utf8')))
   console.log(`\n🗂️  ESCOPO DERIVADO · ${registros.length} registro(s) de ${arquivo}, hoje ${hoje}`)
@@ -58,6 +69,11 @@ if (arquivo) {
   }
   registros = linhasDe(await r.json())
   console.log(`\n🗂️  ESCOPO DERIVADO · ${registros.length} registro(s), janela de ${dias}d, hoje ${hoje}`)
+  borda = bordaDoCorte(registros)
+  if (borda !== null) {
+    console.log(`   🔴 BASE CORTADA: a rota para em ${TETO_API_POLLS} linhas e a janela tem mais.`)
+    console.log(`      Faltam divulgações até ${borda}, inclusive, e o poder de cada casa abaixo é medido sem elas.`)
+  }
 }
 
 const { ok, poder, achados, graves, vivos } = conferirEscopoDerivado(registros, { hoje })
@@ -111,6 +127,11 @@ if (!ok) {
     '   O rótulo não se confirma dentro do registro. Conferir na divulgação antes de publicar como nacional.',
   )
 }
+if (ok && borda !== null) {
+  console.log(
+    `   ⚠️ APROVADO sobre base CORTADA em ${borda}: vale como piso. Saída 3, que não é grave vivo, é base que não permite descartá-lo.`,
+  )
+}
 console.log()
 
-process.exit(ok ? 0 : 1)
+process.exit(!ok ? 1 : borda !== null ? 3 : 0)

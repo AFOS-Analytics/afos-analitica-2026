@@ -308,7 +308,10 @@ async function main() {
     }
   }
 
-  console.log('\n📋 Depois disto: rodar /atualizar-brz para o painel refletir, se algo nacional entrou.')
+  // 🔴 Até 14/Set/2026 esta linha dizia "se algo nacional entrou", e o gatilho do
+  // painel não é a inserção: é a divulgação. Naquele dia a ingestão inseriu zero
+  // e duas nacionais inseridas em 09/Set divulgavam. Quem lista as de hoje é o relatório.
+  console.log('\n📋 Inserir nacional não dispara o /atualizar-brz: o gatilho é a DIVULGAÇÃO, e quem lista as de hoje é o relatorio-pesquisas-brz.ts.')
 }
 
 main().catch(err => {

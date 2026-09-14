@@ -28,7 +28,7 @@ node scripts/rodada-tse-brz.mjs --apply           # grava, relata e confere o R�
 
 Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fechamento, e preserva o ensaio: **sem `--apply` ele para depois de listar o que entraria**, sem rodar os passos 2, 3 e 4. O motivo não é cerimônia: o relatório lê a API e o Neon, então rodá-lo sobre um ensaio mostraria o banco **sem** as linhas recém-listadas, um retrato que não é o de antes nem o de depois.
 
-🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, quer dizer GRAVE no calendário vivo, e não desfaz a ingestão: o número está certo e quem não se sustenta é o rótulo de nacional.
+🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, e não desfaz a ingestão: **1** quer dizer GRAVE no calendário vivo, o número está certo e quem não se sustenta é o rótulo de nacional; **3**, desde 14/Set/2026, quer dizer aprovado sobre base CORTADA pelo teto de 200 linhas da rota, que vale como piso.
 
 ⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
 
@@ -111,6 +111,32 @@ O TSE aceita registro **antes** da pesquisa ir a campo, então o arquivo traz `d
 
 **Isso é registrada ≠ publicada, e é justamente o que o Passo 5 pede para reportar.** Não tratar como anomalia, não filtrar. E como não há percentual no arquivo, não existe risco de antecipar número.
 
+## 📣 O GATILHO DO PAINEL é a DIVULGAÇÃO, e a rota CORTA calada, criado em 14/Set/2026
+
+🔴 **O defeito, na rodada de 14/Set:** o arquivo do TSE era o mesmo retrato de 13/Set, a ingestão inseriu zero e a rodada fechava com *"Nenhuma NACIONAL entrou"* e *"rodar /atualizar-brz se algo nacional entrou"*. **Naquele dia NEXUS e Quaest divulgavam**, as duas inseridas em 09/Set. O relatório tinha `prevista` com `> hoje` e `vencida` com `<= hoje`, então **o dia de hoje virava um número dentro de uma contagem, sem nome**, e a dica do fecho só aparecia quando havia nacionais FUTURAS, que nunca disparam o painel.
+
+✅ **Agora o relatório tem o bloco `📣 DIVULGAM HOJE`**, com protocolo, casa e fantasma separado, e o fecho decide pelo dia: `DISPARA`, `NAO_DISPARA` ou `INDETERMINADO`. ⛔ Divulgação marcada **não é número publicado**: o `/atualizar-brz` entra quando o instituto tiver publicado, e a data do registro é compromisso, não fato.
+
+🔴 **O segundo achado, do mesmo dia e mais fundo: `/api/polls/tse` para em 200 linhas e diz `total` igual ao que serviu.** O `take: 200` é ordenado por divulgação decrescente e o `total` é `findings.length`, então **o "total declarado" nunca diverge das linhas e não acusa corte nenhum.** Medido no Neon:
+
+| janela | no banco | servidas | cortadas | nacionais cortadas |
+|---|---|---|---|---|
+| 15d | 197 | 197 | 0 | 0 |
+| 20d | 257 | 200 | 57 | 8 |
+| **30d** | **351** | **200** | **151** | **16** |
+
+O conferidor de escopo roda em 30d. Sobre a base inteira, reproduzida do Neon com o mapeamento da rota (e a versão cortada reproduzindo a saída do dia **exata**, que é o controle), a Real Time contradiz em **38 de 38** e não 25 de 25, e os graves são **3** e não 1: `BR034902026` (div 01/Set) e `BR037332026` (div 31/Ago), os dois da Real Time e já vencidos. O veredito vivo **não** mudou naquele dia.
+
+⭐ **O corte tem BORDA**, porque come as divulgações mais antigas primeiro: toda data depois da menor data servida está inteira, e cada leitor diz qual pedaço dele vale.
+
+| leitor | o que o corte faz |
+|---|---|
+| `relatorio-pesquisas-brz.ts` | vencidas viram PISO; portão quebra se a borda alcança HOJE ou o futuro |
+| `conferir-escopo-derivado.mjs` | **saída 3**: aprovado sobre base cortada, vale como piso. Não é o 1 |
+| `calendario-pesquisas-brz.mjs` | só quebra se a borda passa de hoje, porque a tabela olha para a frente |
+
+Teste: `node scripts/testar-tse-api-polls.mjs`, **24 asserções**, com o gatilho que NÃO pode disparar (estadual hoje, nacional amanhã, nacional de hoje que virou fantasma), o zero sobre base cortada, que tem de sair `INDETERMINADO`, e 6 mutações conferidas como aplicadas e pegas. ⏳ **O conserto de verdade é na ROTA** (contagem real e limite maior), e mexer nela é deploy de API pública, então a decisão é do André.
+
 ## Passo 4 e 5, num comando só
 
 ```bash
@@ -182,6 +208,8 @@ import { acharCpf } from './scripts/lib/cpf.mjs'   // exporta acharCpf, cpfValid
 - quantas foram inseridas e quantas já existiam, e a subtração contra o total do arquivo de ontem
 - os institutos com registro nacional recente
 - **campo ATIVO agora**, ou seja, `fieldStart <= hoje <= fieldEnd`
+- **DIVULGAM HOJE**, ou seja, `publicationDate == hoje`, nacionais e sem fantasma, que é o gatilho do `/atualizar-brz`
+- **a borda do corte da rota**, quando a resposta bate nas 200 linhas
 - **divulgação PREVISTA**, ou seja, `publicationDate > hoje`, que é o calendário da semana, **já sem os fantasmas**
 - o preço do Polymarket do Brasil ao lado desse calendário
 - escopo, sempre com o `scopeSource`
@@ -199,4 +227,4 @@ curl -s "https://www.afos-analytics.com/api/polymarket?country=br&fresh=1"
 - **Sem travessão.** Vírgula, ponto ou parênteses.
 - **Nunca antecipar número de pesquisa que ainda não foi divulgada.** Registro em campo é calendário, não resultado.
 - Relatar o cruzamento **sem juízo de valor**: o AFOS não diz quem tem razão entre o preço e a pesquisa.
-- Se algo nacional entrou, rodar `/atualizar-brz` para o painel refletir.
+- Se uma nacional **DIVULGA hoje** (bloco `📣` do relatório) e o número já saiu pelo instituto, rodar `/atualizar-brz` para o painel refletir. Nacional **inserida** com divulgação futura não dispara nada.
