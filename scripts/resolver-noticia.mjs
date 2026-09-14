@@ -16,9 +16,13 @@
  *    outros não têm.
  *
  * Uso:
- *   node scripts/resolver-noticia.mjs "Meio/Ideia|Gerp"        # casa no título do cache de hoje
- *   node scripts/resolver-noticia.mjs "Palver" --data=2026-09-09 --max=3
- *   node scripts/resolver-noticia.mjs --link=https://news.google.com/rss/articles/...
+ *   npx tsx scripts/resolver-noticia.mjs "Meio/Ideia|Gerp"        # casa no título do cache de hoje
+ *   npx tsx scripts/resolver-noticia.mjs "Palver" --data=2026-09-09 --max=3
+ *   npx tsx scripts/resolver-noticia.mjs --link=https://news.google.com/rss/articles/...
+ *
+ * ⚠️ Com `tsx`, não com `node`: ele importa de `wayback-archive.ts`, que importa
+ * `./lib/daily-files` sem extensão, e o `node` puro morre com ERR_MODULE_NOT_FOUND.
+ * Medido em 14/Set/2026, na primeira chamada do gate de fact-check do dia.
  */
 
 import { readFileSync } from 'node:fs'

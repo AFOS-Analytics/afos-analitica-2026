@@ -71,7 +71,61 @@ function normalizaData(d: string): string {
   return `${Number(dia)}/${mes}`
 }
 
+/**
+ * Todo carimbo de leitura com hora, confirmada ou simples, e se ele tem a
+ * declaração "não publica preço novo" ao lado. Devolve [chave, contagem, declarado].
+ */
+const JANELA_DECLARACAO = 400
+function carimbosDoTexto(texto: string): Array<[string, number, boolean]> {
+  const declaraSemPrecoNovo = (pos: number) =>
+    /não publica (?:preço|valor) novo/i.test(texto.slice(Math.max(0, pos - JANELA_DECLARACAO), pos + JANELA_DECLARACAO))
+  const saida: Array<[string, number, boolean]> = []
+  for (const m of texto.matchAll(/leitura (?:confirmada )?de (\d{1,2}\/\w{3})[, ]+(\d{2}:\d{2})/gi)) {
+    saida.push([`${normalizaData(m[1])} ${m[2]}`, 1, declaraSemPrecoNovo(m.index ?? 0)])
+  }
+  return saida
+}
+
 const falhas: Falha[] = []
+
+// ── Régua 0: o componente de perfis carrega carimbo da rodada do PAINEL.
+//
+// 🔴 Instalada em 14/Set/2026. O `CandidatesSection.tsx` é o legado congelado
+// com prosa dentro do código, e o /atualizar-brz reescreve `polymarket`, `poll`
+// e `risk` dele a cada rodada. As rodadas de 12 e 13/Set pularam o arquivo, e a
+// seção de perfis ficou no ar com "leitura confirmada de 11/Set, 13:41" e Flávio
+// em 53,95% "renovando o topo da série", três dias depois, enquanto o resto do
+// painel dizia 49,65%. Nenhum portão lia o arquivo, porque ele não é JSON.
+{
+  const componente = join(process.cwd(), 'app', 'components', 'CandidatesSection.tsx')
+  const dados = JSON.parse(readFileSync(join(RAIZ, 'analysis-data.json'), 'utf-8')) as { updatedAt?: string }
+  const esperadoPainel = carimboEsperado(dados.updatedAt ?? '')
+  let fonte = ''
+  try {
+    fonte = readFileSync(componente, 'utf-8')
+  } catch {
+    falhas.push({ arquivo: 'CandidatesSection.tsx', regra: 'CARIMBO', detalhe: 'arquivo não encontrado: sem ele não há como conferir, e silêncio aqui seria aprovação sem leitura.' })
+  }
+  if (fonte && esperadoPainel) {
+    const velhos = new Map<string, number>()
+    let lidos = 0
+    for (const [chave, n, declarado] of carimbosDoTexto(fonte)) {
+      lidos += n
+      if (!declarado && chave !== esperadoPainel) velhos.set(chave, (velhos.get(chave) ?? 0) + n)
+    }
+    // Zero carimbo num arquivo que sempre os teve é o medidor mudo, não arquivo limpo.
+    if (lidos === 0) {
+      falhas.push({ arquivo: 'CandidatesSection.tsx', regra: 'CARIMBO', detalhe: 'nenhum carimbo de leitura encontrado no componente: ou o formato mudou, ou a régua ficou cega.' })
+    }
+    for (const [chave, n] of velhos) {
+      falhas.push({
+        arquivo: 'CandidatesSection.tsx',
+        regra: 'CARIMBO',
+        detalhe: `${n}x "leitura de ${chave}" no componente de perfis, e o painel está carimbado ${esperadoPainel}. A rodada não reescreveu polymarket, poll e risk.`,
+      })
+    }
+  }
+}
 
 for (const arquivo of ARQUIVOS) {
   const bruto = readFileSync(join(RAIZ, arquivo), 'utf-8')
@@ -99,16 +153,21 @@ for (const arquivo of ARQUIVOS) {
   // carimbo velho MAIS "não publica preço novo" é a régua sendo cumprida;
   // carimbo velho sozinho é bloco que sobreviveu à regeração. Sem a distinção, a
   // rodada honesta ficava sem saída: ou reprovava no portão, ou apagava a
-  // procedência do preço, que é pior.
-  const JANELA_DECLARACAO = 400
-  const declaraSemPrecoNovo = (texto: string, pos: number) =>
-    /não publica (?:preço|valor) novo/i.test(texto.slice(Math.max(0, pos - JANELA_DECLARACAO), pos + JANELA_DECLARACAO))
+  // procedência do preço, que é pior. A janela e o teste da declaração moram em
+  // `carimbosDoTexto`, que também serve à Régua 0.
+  //
+  // 🔴 E A FORMA SEM "confirmada" TAMBÉM, desde 14/Set/2026. A régua casava só
+  // "leitura confirmada de DD/Mmm, HH:MM", e o pelotão de trás da criteriosa
+  // (subtitle e os rótulos de Caiado, Haddad e Zema) escreve "leitura de
+  // DD/Mmm, HH:MM", porque os três ficam abaixo do piso da dupla leitura. Essa
+  // forma nunca era conferida, e os rótulos carregaram "leitura de 10/Set,
+  // 14:20" por QUATRO rodadas no ar, com Caiado em 5,00% no 3º lugar enquanto o
+  // quadro do mesmo arquivo dizia 8,50%. A exceção declarada vale igual.
   const carimbos = new Map<string, number>()
   const carimbosDeclarados = new Map<string, number>()
-  for (const m of bruto.matchAll(/leitura confirmada de (\d{1,2}\/\w{3})[, ]+(\d{2}:\d{2})/gi)) {
-    const chave = `${normalizaData(m[1])} ${m[2]}`
-    const destino = declaraSemPrecoNovo(bruto, m.index ?? 0) ? carimbosDeclarados : carimbos
-    destino.set(chave, (destino.get(chave) ?? 0) + 1)
+  for (const [chave, n, declarado] of carimbosDoTexto(bruto)) {
+    const destino = declarado ? carimbosDeclarados : carimbos
+    destino.set(chave, (destino.get(chave) ?? 0) + n)
   }
   for (const [chave, n] of carimbosDeclarados) {
     if (chave !== esperado) {
@@ -120,7 +179,7 @@ for (const arquivo of ARQUIVOS) {
       falhas.push({
         arquivo,
         regra: 'CARIMBO',
-        detalhe: `${n}x "leitura confirmada de ${chave}" num arquivo carimbado ${esperado}. Bloco de rodada anterior sobreviveu.`,
+        detalhe: `${n}x "leitura de ${chave}" num arquivo carimbado ${esperado}. Bloco de rodada anterior sobreviveu.`,
       })
     }
   }
@@ -539,6 +598,7 @@ try {
 if (falhas.length === 0) {
   console.log('✅ frescor: carimbo único por arquivo, série com uma data de início, e preço e volume coerentes com o quadro.')
   console.log('   Escopo conferido: quadroComparativo (m, p, t, s) e, por dono ESTRUTURAL, os campos header, analise, fortes e fracos de cada cartão de candidato.')
+  console.log('   Carimbo com hora, "leitura de" e "leitura confirmada de", nos dois JSONs e no componente de perfis (CandidatesSection.tsx).')
   console.log('   ⛔ Fora do escopo, de propósito: cartão de mais de uma pessoa, onde valor sem dono explícito não se julga.')
   process.exit(0)
 }

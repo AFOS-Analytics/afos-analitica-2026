@@ -357,6 +357,17 @@ As quatro réguas:
 
 📌 **Fica aqui e não no CI, de propósito:** é portão da RODADA, não do código. No CI ele ficaria vermelho em todo push que não mexe em conteúdo, e trava que acusa sem motivo é trava que alguém aprende a pular.
 
+🔴 **Estendido em 14/Set/2026, e os dois buracos estavam NO AR.** A régua CARIMBO casava só `leitura confirmada de DD/Mmm, HH:MM` e só lia os JSONs. Por isso:
+
+| onde | o que ficou velho | quanto tempo |
+|---|---|---|
+| `analysis-criteriosa.json`, `candidates[4]` (subtitle e rótulos de Caiado, Haddad e Zema) | `leitura de 10/Set, 14:20`, com Caiado em 5,00% no 3º lugar e o quadro dizendo 8,50% | 4 rodadas |
+| `app/components/CandidatesSection.tsx` | `leitura confirmada de 11/Set, 13:41`, com Flávio em 53,95% "renovando o topo" | 3 rodadas |
+
+Agora ela casa **as duas formas com hora** (`leitura de` e `leitura confirmada de`) e confere também o **componente de perfis** contra o carimbo do `analysis-data.json`, com a mesma exceção declarada de "não publica preço novo". Provada dos dois lados: passa no painel de 14/Set e **reprova os dois commits publicados de 13/Set com exatamente esses dois defeitos**, e acusa o medidor mudo quando o componente não traz carimbo nenhum.
+
+⚠️ **O que continua sendo passo da rodada, e não do portão:** reescrever `polymarket`, `poll` e `risk` do `CandidatesSection.tsx` a cada `/atualizar-brz`. O portão agora AVISA quando a rodada esqueceu, mas quem escreve é a rodada.
+
 ## ETAPA 3.5: Traduzir os JSONs para EN e ES (obrigatório, antes do build)
 
 **Instalado 24/Jul/2026.** Até essa data os 3 JSONs eram únicos e servidos aos três idiomas: o `/en/dashboard` e o `/es/dashboard` renderizavam a moldura traduzida e a análise inteira em português.

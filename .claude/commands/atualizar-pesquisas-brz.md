@@ -137,6 +137,16 @@ O conferidor de escopo roda em 30d. Sobre a base inteira, reproduzida do Neon co
 
 Teste: `node scripts/testar-tse-api-polls.mjs`, **24 asserções**, com o gatilho que NÃO pode disparar (estadual hoje, nacional amanhã, nacional de hoje que virou fantasma), o zero sobre base cortada, que tem de sair `INDETERMINADO`, e 6 mutações conferidas como aplicadas e pegas. ⏳ **O conserto de verdade é na ROTA** (contagem real e limite maior), e mexer nela é deploy de API pública, então a decisão é do André.
 
+🔍 **Para saber se a pesquisa do dia JÁ SAIU, a fonte é o `news-cache`, não a busca na web.** Medido em 14/Set/2026: a busca das 12h50 BRT trouxe só ondas anteriores e concluiu "Quaest ainda não", e a Quaest tinha saído às **10h16**, com dezenas de matérias no cache gerado pelo `fetch-google-news.mjs`. A ferramenta de busca é de índice americano e atrasa; o cache lê o RSS do dia. O caminho que funcionou:
+
+```bash
+node scripts/fetch-google-news.mjs
+node -e "const a=require('./public/news-cache/'+new Date().toISOString().slice(0,10)+'.json');const t=[].concat(...Object.values(a.queries).map(q=>q.items||[]));[...new Map(t.filter(x=>/quaest/i.test(x.title)).map(x=>[x.title,x])).values()].forEach(x=>console.log(x.pubDate,'|',x.sourceName,'|',x.title))"
+npx tsx scripts/resolver-noticia.mjs "Quaest"      # URL do veículo, para ler o CORPO
+```
+
+⛔ E a confirmação é pelo **corpo com o protocolo ou o período de campo da onda**, nunca pela manchete: as primeiras matérias achadas naquele dia eram da onda de 07/Set.
+
 ## Passo 4 e 5, num comando só
 
 ```bash
