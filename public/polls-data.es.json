@@ -2296,41 +2296,41 @@
     "lastUpdate": "13/09/2026, 13:17"
   },
   "polymarketComparison": {
-    "note": "Precios de Polymarket con el libro presidencial en USD 149,68M, lectura confirmada del 14/Sep, 13:02 BRT (16:02 UTC). 📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ POR SEGUNDO DÍA, y con un solo lado: Flávio Bolsonaro subió de 49,65% a 50,75% (vol USD 10,64M) y Lula quedó estancado en 47,50% (vol USD 11,00M), frente a la lectura confirmada del 13/Sep. La distancia pasó de 2,15pp a 3,25pp. ⚠️ Ninguno de los dos precios es un extremo: los 50,75% quedan 4,35pp por debajo del techo de Flávio, de 55,10% el 10/Sep, y los 47,50% quedan 20,00pp por debajo del techo de Lula, de 67,50% el 16/Ago, y 13,00pp por encima de su piso, de 34,50% el 25/Abr. ⭐ LA MAYOR VARIACIÓN DE ESTA RONDA ESTÁ EN EL CONTRATO DE TERCER LUGAR DE LA PRIMERA VUELTA: Augusto Cury cayó 8,55pp, a 47,05% (vol USD 193 mil), Ronaldo Caiado subió 7,50pp, a 16,00% (vol USD 127 mil), y Renan Santos subió 3,00pp, a 37,50% (vol USD 307 mil). El vano del favorito allí se cerró de 21,10pp a 9,55pp. En las lecturas registradas del 10/Sep el contrato de Cury varió entre 45,40% y 49,60%, y el de Caiado llegó a 45,50% el 30/Ago, así que ninguno de los dos es un extremo. 🔁 EN EL CONTRATO DE SEGUNDO LUGAR, Flávio Bolsonaro sube 1,00pp, a 78,00%, y Lula cae 2,50pp, a 19,50%. 🏛️ EL CONTRATO DE IMPEACHMENT EN EL SUPREMO CEDIÓ 0,60pp y está en 4,00% (vol USD 91 mil), 22,10pp por debajo del techo de la serie, de 26,10% el 11/Sep, y 1,90pp por encima del piso, de 2,10% el 08/Jun. El volumen acumulado es lo bastante pequeño para que órdenes aisladas muevan el precio, y la salvedad vale en las dos direcciones. 🗳️ DEL LADO DE LA ENCUESTA, dos nacionales salieron el mismo 14/Sep y discrepan en el signo de la segunda vuelta, las dos dentro del margen: la BTG/Nexus da 47% a 46% para Lula y la Genial/Quaest 42% a 40% para Flávio Bolsonaro, y en la primera vuelta las dos miden los mismos 5 puntos de ventaja para Lula. 📌 La sesión del Supremo que analiza el pedido de investigación contra Alexandre de Moraes sigue marcada para el 15/Sep. El orden de los hechos está medido, el vínculo entre ellos no.",
+    "note": "Precios de Polymarket con el libro presidencial en USD 149,82M, lectura confirmada del 14/Sep, 19:44 BRT (22:44 UTC), que sustituye la de las 13:02 BRT del mismo día. 📈 EL VANO DEL CONTRATO DE GANADOR SE ABRIÓ POR SEGUNDO DÍA, y con los dos lados moviéndose: Flávio Bolsonaro subió de 49,65% a 51,95% (vol USD 10,68M) y Lula cayó de 47,50% a 45,50% (vol USD 11,01M), frente a la lectura confirmada del 13/Sep. La distancia pasó de 2,15pp a 6,45pp, y en la lectura de las 13:02 estaba en 3,25pp. ⚠️ Ninguno de los dos precios es un extremo: los 51,95% quedan 3,15pp por debajo del techo de Flávio, de 55,10% el 10/Sep, y los 45,50% quedan 22,00pp por debajo del techo de Lula, de 67,50% el 16/Ago, y 11,00pp por encima de su piso, de 34,50% el 25/Abr. ⭐ LA MAYOR VARIACIÓN DE ESTA RONDA ESTÁ EN EL CONTRATO DE TERCER LUGAR DE LA PRIMERA VUELTA: Augusto Cury cayó 10,20pp, a 45,40% (vol USD 196 mil), Ronaldo Caiado subió 7,00pp, a 15,50% (vol USD 129 mil), y Renan Santos subió 3,00pp, a 37,50% (vol USD 307 mil). El vano del favorito allí se cerró de 21,10pp a 7,90pp. En las lecturas registradas del 09/Sep el contrato de Cury llegó a 43,90%, y el de Caiado llegó a 45,50% el 30/Ago, así que ninguno de los dos es un extremo. 🔁 EN EL CONTRATO DE SEGUNDO LUGAR, Flávio Bolsonaro cae 1,50pp, a 75,50%, y Lula sube 1,75pp, a 23,75%, en la misma dirección del contrato de ganador. 🏛️ EL CONTRATO DE IMPEACHMENT EN EL SUPREMO SUBIÓ 0,65pp y está en 5,25% (vol USD 91 mil), 20,85pp por debajo del techo de la serie, de 26,10% el 11/Sep, y 3,15pp por encima del piso, de 2,10% el 08/Jun. El volumen acumulado es lo bastante pequeño para que órdenes aisladas muevan el precio, y la salvedad vale en las dos direcciones. 🗳️ DEL LADO DE LA ENCUESTA, dos nacionales salieron el mismo 14/Sep y discrepan en el signo de la segunda vuelta, las dos dentro del margen: la BTG/Nexus da 47% a 46% para Lula y la Genial/Quaest 42% a 40% para Flávio Bolsonaro, y en la primera vuelta las dos miden los mismos 5 puntos de ventaja para Lula. 📌 La sesión del Supremo que analiza el pedido de investigación contra Alexandre de Moraes sigue marcada para el 15/Sep. El orden de los hechos está medido, el vínculo entre ellos no.",
     "sources": "Precios de Polymarket vía proxy AFOS, y el panel solo publica precio que dos lecturas independientes, tomadas con ocho minutos de intervalo, confirmen dentro de 0,20pp. La confirmación se hace contrato a contrato, y el 14/Sep confirmaron los CINCO contratos vigilados: ganador, segundo lugar de la primera vuelta, tercer lugar de la primera vuelta, impeachment en el Supremo y mayoría en el Senado. Las series de referencia se miden en el respaldo diario de la base, y no en la API, que limita la ventana a 90 días y escondería el comienzo de las series.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 36,
-        "odds": 47.5,
-        "value": 47.5,
-        "polymarket": "47,50%",
+        "odds": 45.5,
+        "value": 45.5,
+        "polymarket": "45,50%",
         "pesquisaRange": "34% a 43,4%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LAS DOS NACIONALES DEL 14/Sep lidera la primera vuelta por 5 puntos, 36% a 31% en la Genial/Quaest (campo del 10 al 13/Sep) y 42% a 37% en la BTG/Nexus (campo del 11 al 13/Sep), y las dos discrepan en el par de segunda vuelta contra Flávio Bolsonaro: 40% a 42% en la Genial/Quaest y 47% a 46% en la BTG/Nexus. ⚠️ Las dos diferencias caben en el margen de 2,0 de cada casa, así que en las dos el par es empate técnico. Dentro de la Genial/Quaest el par salió 42% a 41% para él el 02/Sep, 41% a 41% el 07/Sep y 40% a 42% ahora.",
-        "tendenciaPolymarket": "ESTANCADO en 47,50% frente a la lectura confirmada del 13/Sep, mientras el adversario sube 1,10pp. Queda 20,00pp por debajo del techo de su serie, de 67,50% el 16/Ago, y 13,00pp por encima del piso, de 34,50% el 25/Abr. USD 11,00M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta cae 2,50pp, a 19,50%."
+        "tendenciaPolymarket": "CAE 2,00pp frente a la lectura confirmada del 13/Sep, de 47,50% a 45,50%, segundo día seguido de caída, mientras el adversario sube 2,30pp. Queda 22,00pp por debajo del techo de su serie, de 67,50% el 16/Ago, y 11,00pp por encima del piso, de 34,50% el 25/Abr. USD 11,01M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta sube 1,75pp, a 23,75%."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 31,
-        "odds": 50.75,
-        "value": 50.75,
-        "polymarket": "50,75%",
+        "odds": 51.95,
+        "value": 51.95,
+        "polymarket": "51,95%",
         "pesquisaRange": "29% a 40%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LAS DOS NACIONALES DEL 14/Sep sube 2 puntos en la primera vuelta frente a la ronda anterior de cada casa, a 31% en la Genial/Quaest y 37% en la BTG/Nexus, y sigue 5 puntos detrás en las dos. En el par de segunda vuelta la Genial/Quaest lo pone adelante por 42% a 40% y la BTG/Nexus detrás por 46% a 47%. ⚠️ Las dos diferencias caben en el margen de 2,0, y en la BTG/Nexus el par había salido 46% a 45% para él el 08/Sep.",
-        "tendenciaPolymarket": "SUBE 1,10pp frente a la lectura confirmada del 13/Sep, de 49,65% a 50,75%, e interrumpe dos días seguidos de caída. Queda 4,35pp por debajo del techo de su serie, de 55,10% el 10/Sep. USD 10,64M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta sube 1,00pp, a 78,00%."
+        "tendenciaPolymarket": "SUBE 2,30pp frente a la lectura confirmada del 13/Sep, de 49,65% a 51,95%, e interrumpe dos días seguidos de caída. Queda 3,15pp por debajo del techo de su serie, de 55,10% el 10/Sep. USD 10,68M acumulados en su contrato. En el contrato de segundo lugar de la primera vuelta cae 1,50pp, a 75,50%."
       },
       {
         "name": "Augusto Cury",
         "percentage": 7,
-        "odds": 0.5,
-        "value": 0.5,
-        "polymarket": "0,50%",
+        "odds": 0.35,
+        "value": 0.35,
+        "polymarket": "0,35%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LA GENIAL/QUAEST DEL 14/Sep tiene 7% en la primera vuelta, frente a 8% el 07/Sep, y pierde el par de segunda vuelta ante Lula por 38% a 36%. En la BTG/Nexus del mismo día tiene 6%, frente a 9% el 08/Sep, y el par contra Lula se invirtió dentro de la casa, de 45% a 43% a su favor el 08/Sep a 45% a 42% a favor de Lula. ⚠️ Los dos pares quedan dentro de dos márgenes de 2,0.",
-        "tendenciaPolymarket": "SUBE 0,05pp en el contrato de ganador, a 0,50%, y en el contrato de tercer lugar de la primera vuelta, donde sigue como favorito, CAE 8,55pp, a 47,05%, la mayor variación del panel en esta ronda, con USD 193 mil acumulados en ese contrato. Su vano hacia el segundo allí se cerró de 21,10pp a 9,55pp."
+        "tendenciaPolymarket": "CEDE 0,10pp en el contrato de ganador, a 0,35%, y en el contrato de tercer lugar de la primera vuelta, donde sigue como favorito, CAE 10,20pp, a 45,40%, la mayor variación del panel en esta ronda, con USD 196 mil acumulados en ese contrato. Su vano hacia el segundo allí se cerró de 21,10pp a 7,90pp."
       },
       {
         "name": "Renan Santos",
@@ -2339,9 +2339,9 @@
         "value": 1.7,
         "polymarket": "1,70%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LA GENIAL/QUAEST DEL 14/Sep tiene 4% en la primera vuelta, frente a 3% el 07/Sep, y pierde el par de segunda vuelta ante Lula por 41% a 38%. En la BTG/Nexus del mismo día tiene 2%, frente a 4% el 08/Sep, y pierde el par por 48% a 37%, fuera del margen.",
-        "tendenciaPolymarket": "CEDE 0,15pp en el contrato de ganador, a 1,70%, 0,50pp por encima del piso de su serie, de 1,20% el 31/Ago, con USD 13,43M acumulados. En el contrato de tercer lugar de la primera vuelta SUBE 3,00pp, a 37,50%, con USD 307 mil acumulados en ese contrato, después de dos días seguidos de caída allí."
+        "tendenciaPolymarket": "CEDE 0,15pp en el contrato de ganador, a 1,70%, 0,50pp por encima del piso de su serie, de 1,20% el 31/Ago, con USD 13,47M acumulados. En el contrato de tercer lugar de la primera vuelta SUBE 3,00pp, a 37,50%, con USD 307 mil acumulados en ese contrato, después de dos días seguidos de caída allí."
       },
       {
         "name": "Ronaldo Caiado",
@@ -2350,9 +2350,9 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "1% a 5%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LA GENIAL/QUAEST DEL 14/Sep tiene 4% en la primera vuelta y pierde el par de segunda vuelta ante Lula por 41% a 39%, dentro del margen. En la BTG/Nexus del mismo día tiene 5% y pierde el par por 47% a 41%, una distancia de 6 puntos que queda fuera del margen de 2,0.",
-        "tendenciaPolymarket": "ESTABLE en 0,15% en el contrato de ganador, y en el contrato de tercer lugar de la primera vuelta SUBE 7,50pp, a 16,00%, con USD 127 mil acumulados en ese contrato, por tercer día seguido de subida. En las lecturas registradas del 30/Ago el mismo contrato llegó a 45,50% para él."
+        "tendenciaPolymarket": "ESTABLE en 0,15% en el contrato de ganador, y en el contrato de tercer lugar de la primera vuelta SUBE 7,00pp, a 15,50%, con USD 129 mil acumulados en ese contrato, por tercer día seguido de subida. En las lecturas registradas del 30/Ago el mismo contrato llegó a 45,50% para él."
       },
       {
         "name": "Pablo Marçal",
@@ -2361,7 +2361,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,2%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "La Genial/Quaest del 14/Sep no lo incluye en el escenario estimulado. La BTG/Nexus del mismo día lo mide en 2% en el escenario de primera vuelta que lo incluye, frente a 3% el 08/Sep.",
         "tendenciaPolymarket": "ESTABLE en 0,05% en el contrato de ganador, el piso del libro, con USD 3,97M acumulados."
       },
@@ -2372,9 +2372,9 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "0,3% a 4%",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "EN LA GENIAL/QUAEST DEL 14/Sep tiene 1% en la primera vuelta, frente a 2% el 07/Sep, y pierde el par de segunda vuelta ante Lula por 45% a 33%. En la BTG/Nexus del mismo día tiene 1% y pierde por 49% a 38%. Las dos distancias quedan fuera del margen.",
-        "tendenciaPolymarket": "ESTABLE en 0,15% en el contrato de ganador, con USD 7,30M acumulados, y SUBE 0,25pp en el contrato de tercer lugar de la primera vuelta, a 0,95%, con USD 54 mil acumulados en ese contrato."
+        "tendenciaPolymarket": "ESTABLE en 0,15% en el contrato de ganador, con USD 7,30M acumulados, y SUBE 0,05pp en el contrato de tercer lugar de la primera vuelta, a 0,75%, con USD 54 mil acumulados en ese contrato."
       },
       {
         "name": "Tarcísio",
@@ -2383,7 +2383,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "Las dos nacionales del 14/Sep no lo prueban en escenario presidencial.",
         "tendenciaPolymarket": "0,05% en el contrato de ganador, el suelo del libro, y aun así su contrato tiene USD 14,07M acumulados, el mayor volumen del panel presidencial."
       },
@@ -2394,12 +2394,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "no medido",
-        "lastUpdate": "14/09/2026, 13:02",
+        "lastUpdate": "14/09/2026, 19:44",
         "tendenciaPesquisa": "Las dos nacionales del 14/Sep no lo prueban en escenario presidencial.",
-        "tendenciaPolymarket": "0,05% en el contrato de ganador, el piso del libro, con USD 7,53M acumulados."
+        "tendenciaPolymarket": "0,05% en el contrato de ganador, el piso del libro, con USD 7,54M acumulados."
       }
     ],
-    "updatedAt": "14/09/2026, 13:02",
-    "lastUpdate": "14/09/2026, 13:02"
+    "updatedAt": "14/09/2026, 19:44",
+    "lastUpdate": "14/09/2026, 19:44"
   }
 }
