@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-09-14",
+  "fetchedAt": "2026-09-14T19:20:13.430Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 147,
+    "naLista": 80,
+    "foraDaLista": 67,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 26,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 26,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
+  },
+  "itens": [
+    {
+      "titulo": "Latino leaders press Beshear to expand DGA’s midterm map",
+      "url": "https://www.politico.com/news/2026/09/14/beshear-texas-governor-hinojosa-01074891",
+      "casa": "Politico",
+      "publicadoEm": "2026-09-14T18:55:08.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Sydney Sweeney criticized by women athletes for nude sports prediction market ad",
+      "url": "https://thehill.com/homenews/media/6088590-sydney-sweeney-ad-backlash/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-14T18:51:08.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Joe Manchin says he supports Republican candidates in battleground Senate races in Maine and Michigan",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNYnVFazhpOVhsUk5faDZHaXhzRjJlSG8wYm1ZcFpnUHQ4Um9iODhtczBhRmhtRk9qWjQ4QUtET1ZLWkNERlNXOFlRazAxMC1KbFF1SnQwYWJzbWFHb2xZampTcWUtd1J1cjcxMXVJQVpoOGlpU1lUdU1PZ3lyUGk2Z1NKcTJoR3FOOThsaXJ6dmRPUlBLV19J?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-14T18:23:16.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Manchin endorses Collins in Maine Senate race",
+      "url": "https://thehill.com/homenews/senate/6088483-manchin-susan-collins-senate/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-14T17:17:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Inside House Republicans' plan to end run Dem opposition and pass Trump-backed voter ID",
+      "url": "https://www.foxnews.com/politics/inside-house-republicans-plan-end-run-dem-opposition-pass-trump-backed-voter-id",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-14T16:41:57.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats find plenty of campaign ammo from the GOP’s midterm convention",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeUlTSWF2Y1JvQjJpRW1EeXU3WVFPLUdxbzE5RmlJdk5rWnc2OEJucVo3S29YVENqQWpHWFNZeUlwSmV4QzZkN042UEs5TFQ3aUhjYmQxRzUtejFDZURpTXdFdHp5R093V2pFRWwtMDBFeVA5S18wS1pYN0Jyay1BS1p6bGR0cjZBYXE2RnN5T2trYU5QUHVlVFZWV0kwYVR2SjNpaUhmVDBjdmpfY2EwWjlRalZJRHc5R1QxQVo5Mmc2ZHRVckdTNg?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-09-14T16:29:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "As Midterms Rage, Gillibrand Wants Congress to Talk Menopause",
+      "url": "https://www.nytimes.com/2026/09/14/us/politics/democrat-senate-menopause-gillibrand.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-14T15:13:49.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Rhode Island Primary Results 2026: Senate, House and Governor",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBRQTBLT0ZmMDNqQXRaa3ZsT3B2V3BpTk1iZHhTQnc0LXBUZmFxS1VhQno4a0RoanFWUzFfLXhnN1hldG1KcUJGWWtwamxTbmlOX3VvZGl4RTZNQWNlSHdHRVhUdVI3ZUxxR1ZrOUJ4NmJxT1MtVWFSVzE1ZGs?oc=5",
+      "casa": "AP News",
+      "publicadoEm": "2026-09-14T14:51:27.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Senate returns today for final legislative sprint ahead of midterms",
+      "url": "https://www.cbsnews.com/news/senate-returns-washington-midterm-elections-cryptocurrency-college-sports-ai/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-14T12:36:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Opinion | Who Will Win the Midterms? Nate Silver and Our Experts Are More Confident About a Blue Wave.",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQQkplbDEzTWRhOWUwS3BFU1pILVNFM1ZNWXJQOTRra2ZqY0E4Sm5fSzFDYjNKOXF5VGQwSnpuVS10U1hjV2FVNW1EV0RWeGplMkU1TUJUMjdYd09WaTlfWk5sN1ZtWS1qaENDRUotTVNmSUdyUjZYNUkycjNhX3JLSk1ydS1kZVdWQVJZZlV1TWtRanRYeld2amszaHE?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-14T11:03:01.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}

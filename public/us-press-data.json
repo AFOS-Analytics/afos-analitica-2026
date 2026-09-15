@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-13",
-  "fetchedAt": "2026-09-13T20:06:20.663Z",
+  "lastUpdate": "2026-09-15",
+  "fetchedAt": "2026-09-15T01:10:38.020Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,111 +113,111 @@
     }
   ],
   "qualidade": {
-    "lidos": 131,
-    "naLista": 77,
-    "foraDaLista": 54,
+    "lidos": 139,
+    "naLista": 69,
+    "foraDaLista": 70,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 31,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 22,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
     "lidosEmFeedProprio": 23,
-    "publicadosComLinkCanonico": 10,
-    "publicadosViaGoogleNews": 0,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
     {
-      "titulo": "Jeffries does not rule out pursuing Trump impeachment if Democrats win House",
-      "url": "https://thehill.com/homenews/house/6086866-jeffries-trump-impeachment-possibility/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-13T18:10:57.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Transcript: Michigan Senate candidate Abdul El-Sayed on \"Face the Nation with Margaret Brennan,\" Sept. 13, 2026",
-      "url": "https://www.cbsnews.com/news/abdul-el-sayed-michigan-democrat-senate-face-the-nation-transcript-09-13-2026/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-13T16:58:39.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "‘It’s just straight bigotry’: wave of Islamophobic rhetoric looms over US midterm elections",
-      "url": "https://www.theguardian.com/us-news/2026/sep/13/republicans-islamophobic-rhetoric-democrats",
+      "titulo": "Supreme court rejects Trump’s mail ballot restrictions for midterm elections",
+      "url": "https://www.theguardian.com/us-news/2026/sep/14/supreme-court-rejects-mail-ballot-restrictions",
       "casa": "The Guardian",
-      "publicadoEm": "2026-09-13T15:30:48.000Z",
+      "publicadoEm": "2026-09-15T00:57:38.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Angie Nixon, Candidate for Senate, Takes Florida by Storm",
-      "url": "https://www.nytimes.com/2026/09/13/us/politics/angie-nixon-florida-senate.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-13T15:27:53.000Z",
+      "titulo": "US supreme court blocks Trump administration from changing mail ballot rules for midterm elections – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/sep/14/donald-trump-mail-in-voting-supreme-court-blocked-ukraine-oil-diplomat-latest-news-updates",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-15T00:56:50.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "How Candidates Have Addressed Affordability in the Midterm Campaigns",
-      "url": "https://www.nytimes.com/2026/09/13/us/politics/political-candidates-affordability-midterms.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-13T14:49:29.000Z",
+      "titulo": "Supreme Court blocks sweeping mail ballot restrictions for midterm elections",
+      "url": "https://www.washingtonpost.com/politics/2026/09/14/supreme-court-blocks-sweeping-mail-ballot-restrictions-midterm-elections/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-14T23:57:53.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "2026 midterm election races to watch",
-      "url": "https://www.cbsnews.com/news/2026-midterm-election-races/",
+      "titulo": "Supreme Court rejects Trump bid to revive strict mail-ballot rules before midterms",
+      "url": "https://www.foxnews.com/politics/supreme-court-rejects-trump-bid-revive-strict-mail-ballot-rules-before-midterms",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-14T23:48:45.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Supreme Court won’t restore Trump’s mail-in voting plan for midterms",
+      "url": "https://thehill.com/regulation/court-battles/6089348-supreme-court-rejects-trump-mail-ballots/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-14T23:46:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The Supreme Court rejects Trump's mail voting restrictions for this year's midterms",
+      "url": "https://www.npr.org/2026/09/14/nx-s1-5962190/supreme-court-mail-in-voting-trump",
+      "casa": "NPR",
+      "publicadoEm": "2026-09-14T23:38:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Senate returns for final legislative sprint ahead of midterms",
+      "url": "https://www.cbsnews.com/news/senate-returns-washington-midterm-elections-cryptocurrency-college-sports-ai/",
       "casa": "CBS News",
-      "publicadoEm": "2026-09-13T13:18:53.000Z",
+      "publicadoEm": "2026-09-14T22:57:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Vulnerable House Republicans embrace Trump as GOP bets on defying midterm history",
-      "url": "https://www.foxnews.com/politics/vulnerable-house-republicans-embrace-trump-gop-bets-defying-midterm-history",
+      "titulo": "Trump sees approval rating reprieve after weeks of record lows",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNVVZTlRHNFI5NktmbnFvZlhidnNpOEYxd2piV0x1NnEwS1lZdVVqdlBUQWZ4MlBSTjV3b0RfTXFnMXIyTlNCT3JrTWdSVHZVb0hhMjZSSjBuWFpfOE9oZ25mOHVQYnNTc1dDeW5HVldLbnV0cWNEeFlfVzlYRnhNZVd1amN6MzBmT1VtNzhVYWg3Mjc2TkZLc19wRk1kemdRX21yRV9Sc1NIb2FzaTdvaEYyLXM5RDZTRnBCblZCZUsyTlk?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-14T22:54:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Michigan Senate candidate Abdul El-Sayed says leaders must address ‘unpaid debts’ to Black communities",
+      "url": "https://www.foxnews.com/politics/michigan-senate-candidate-abdul-el-sayed-says-leaders-must-address-unpaid-debts-black-communities",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-13T10:00:45.000Z",
+      "publicadoEm": "2026-09-14T22:43:31.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Wisconsin GOP governor candidate swims from sinking plane after emergency lake landing",
-      "url": "https://www.foxnews.com/politics/tom-tiffany-wisconsin-plane-crash-emergency-landing",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-13T07:37:17.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump pledges $5K checks if Republicans do well in the midterms. Can he legally do that?",
-      "url": "https://www.newsnationnow.com/politics/trump-pledges-5k-checks-republicans-do-midterms/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-12T21:44:41.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump political adviser is 'cautionally optimistic' about GOP in upcoming midterms",
-      "url": "https://www.newsnationnow.com/politics/trump-political-adviser-cautionally-optimistic-gop-midterms/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-12T20:29:36.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
+      "titulo": "Trump approval up from record low, but outlook sours for Republicans, Reuters/Ipsos poll finds",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQem1BUzZ1QjJZU2VaUGtzRjFKNmhNZkpxVUx0aGxER1dqOF9vZGlRamJZVHdXM3BPVHUtTGNQWU9SYTlDTm5nV1lpSUVoMGFxUVNrY0F0S29hUjNHd25KeDlFM2dUaTN1eDhrZjgtOVdsMjhCRThsRkxtVzF0Z0Y2aHZiTEhxMjVJcHpwQWhOa3F5bDlwWWtOZktZQlo2ZG50d2V3TExnZzhybmpWQjZXd2M1eWpGSEFCSGYtZFZCck8?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-09-14T20:41:16.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "metodo"
     }
   ]
 }
