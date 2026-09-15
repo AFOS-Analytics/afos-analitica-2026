@@ -154,8 +154,15 @@ export async function avisarCasaCalada(
     if (fora.length) {
       blocoVerificacao.push(
         '',
-        `ATRIBUICAO: ${fora.length} casa(s) PUBLICOU rodada que o indice nao recebeu.`,
-        'O buraco e do INDICE, nao das casas. Nao dizer que "a casa esta calada".',
+        `ATRIBUICAO: ${fora.length} casa(s) PUBLICOU rodada com campo mais novo do que o indice tem.`,
+        'Nao dizer que "a casa esta calada": ela publicou.',
+        // 🔴 A linha que saiu daqui dizia "O buraco e do INDICE, nao das
+        // casas". E uma atribuicao de culpa tirada de uma comparacao que so
+        // olha DATA. Em 15/Set/2026 as duas rodadas da The Economist/YouGov
+        // fora do indice eram cedula NOMINAL, e nao generic ballot: o indice
+        // podia estar excluindo com razao. Ver lib/us-polls/instrumento.mjs
+        'E NAO dizer de quem e o buraco: a casa pode ter trocado a PERGUNTA.',
+        'Quem decide isso e o conferidor de instrumento, que roda a mao (precisa de pdftotext).',
       )
     }
     // ⚠️ Veredito inconclusivo NAO e veredito de "nada novo". Ele aparece
@@ -184,6 +191,12 @@ export async function avisarCasaCalada(
       `  faixa ${sinalPp(exposicao.faixa.min)} a ${sinalPp(exposicao.faixa.max)}, deslocamento ${exposicao.deslocamentoCentralPp >= 0 ? '+' : ''}${exposicao.deslocamentoCentralPp}pp`,
       '  SUPOSICAO: cada rodada que falta entra como campo de hoje mais o efeito',
       '  daquela casa. E o TAMANHO DO RISCO, nao uma previsao.',
+      // 🔑 A segunda suposicao, que ficava calada. "Deve N rodadas" sai da
+      // CADENCIA, e cadencia nao sabe o que a casa perguntou. Em 15/Set/2026
+      // esta conta cobrava da The Economist/YouGov duas rodadas que existiam e
+      // eram cedula NOMINAL, nao generic ballot.
+      '  SUPOSICAO 2: a rodada que falta mediria a MESMA pergunta. Casa que',
+      '  trocou o instrumento nao deve rodada a esta media.',
       ...exposicao.semEfeitoMedivel.map((s) => `  NAO CERCADA: ${s.instituto} (${s.motivo})`),
     )
   }

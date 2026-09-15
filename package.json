@@ -35,6 +35,7 @@
     "imprensa:usa": "node scripts/rodada-us-imprensa.mjs",
     "hf:usa": "node scripts/rodada-us-hf.mjs",
     "janelas:usa": "node scripts/projetar-janela-us.mjs --comparar=30,45,60,90",
+    "instrumento:usa": "node scripts/conferir-instrumento-us.mjs",
     "pesquisas:brz": "node scripts/rodada-tse-brz.mjs",
     "sonda:brz": "tsx scripts/sondar-arquivo-tse.ts",
     "fantasmas:brz": "tsx scripts/diff-tse-arquivo-vs-banco.ts",

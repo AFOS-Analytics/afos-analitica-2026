@@ -139,7 +139,30 @@ node scripts/projetar-janela-us.mjs      # o FUTURO da janela, se nada entrar
 node scripts/historico-us-polls.mjs      # a SÉRIE no Neon, e se o registro de hoje é do cron
 node scripts/check-us-polls-defasagem.mjs # o instituto publicou algo que o índice não tem?
 node scripts/agregadores-us-polls.mjs    # o ÍNDICE parou, ou o MUNDO parou?
+npm run instrumento:usa                  # a rodada fora do índice mede a MESMA pergunta?
 ```
+
+🔬 **O `conferir-instrumento-us.mjs` responde a pergunta que vinha DEPOIS de todas e era respondida por suposição, criado em 15/Set/2026.** Quando o passo 1 acusa `RODADA_FORA_DO_INDICE`, ele imprimia *"o buraco é do ÍNDICE, não das casas"*. Essa frase afirmava mais do que a medição sustenta: aquele bloco compara **data e mais nada**.
+
+🔴 **Medido em 15/Set/2026, e ela estava errada.** As duas rodadas da The Economist/YouGov fora do índice (campo 4-8/Set e 11-14/Set) **trocaram de instrumento**: a pergunta passou a trazer a nota *"Asked using the names of candidates running in the respondent's district of residence"*. Cédula **nominal** não é generic ballot, e o índice pode estar excluindo as duas com razão. A evidência circunstancial fecha: o índice recebeu a CBS News/YouGov de campo **8-11/Set**, mais nova que a Economist de 4-8/Set, então quem edita estava ativo.
+
+⛔ **E o custo não era só de frase.** O `exposicao.mjs` projeta as rodadas devidas pela CADÊNCIA da casa, então cobrava da YouGov 07/Set e 14/Set e somava as duas na linha *"servida D+5.36 · com as que faltam D+4.66"*. Rodada de outro instrumento não é devida a esta média.
+
+| veredito | o que quer dizer |
+|---|---|
+| `GENERICO` | a pergunta está lá e sem ressalva colada. É a mesma medição da nossa média |
+| `NOMINAL` | o eleitor viu os NOMES dos candidatos do distrito dele. **Outro instrumento** |
+| `COM_RESSALVA` | a pergunta está lá com outra ressalva de quem foi perguntado. Precisa de olho humano |
+| `AUSENTE` | documento legível, e a pergunta não está nele |
+| `INDETERMINADO` | não deu para olhar. **Não é "nada novo"** |
+
+🎯 **A lista de documentos vem da LISTAGEM da própria casa**, a mesma que o portão já consulta, e nunca de URL colada à mão. Ele marca cada documento com `JA NA BASE` ou `fora da base` casando a data de campo, então a saída diz de uma vez quais rodadas realmente faltam.
+
+⚠️ **Depende do `pdftotext`**, que existe nesta máquina (MiKTeX) e **não existe no CI nem na Vercel**. Por isso ele é conferidor de rodada e nunca passo de cron. Sem o binário ele sai `INDETERMINADO` e código 1.
+
+⛔ **Ele NÃO ingere e NÃO decide composição de média.** Ingerir muda a procedência e segue decisão do André.
+
+🧪 `node scripts/testar-instrumento-us.mjs`, 75 casos e no CI, com 11 de 11 mutações reprovadas. Metade dos casos é anti-silêncio (documento ilegível não pode sair `AUSENTE`) e anti-alarme (a ressalva da pergunta SEGUINTE não pode virar ressalva desta).
 
 🌍 **O `agregadores-us-polls.mjs` responde a pergunta que vem ANTES de todas as outras, criado em 13/Set/2026.** O coletor imprime "atraso da fonte: N dias" e não sabe dizer de quem é o atraso: ou ninguém mediu nada, e a base está completa, ou mediram e o índice não recebeu, e a base está incompleta. A defasagem responde casa por casa, deixa casas sem veredicto e não cobre quem não está no registro.
 

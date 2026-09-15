@@ -93,6 +93,7 @@ jobs:
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs
+          node scripts/testar-instrumento-us.mjs
           python3 scripts/testar-hf-upload-us2026.py
 
       # A regra que decide se um superlativo pode ser escrito, e o par binario

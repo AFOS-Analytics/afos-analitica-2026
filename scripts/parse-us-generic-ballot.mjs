@@ -106,7 +106,18 @@ if (cad.atrasadas.length && !semRede) {
     if (r.url) console.log(`           ${r.url}`)
   }
   if (ver.comRodadaFora.length) {
-    console.log(`      📌 o buraco é do ÍNDICE, não das casas: ${ver.comRodadaFora.length} casa(s) publicou rodada que a Wikipédia não recebeu`)
+    // 🔴 A frase que estava aqui era "o buraco é do ÍNDICE, não das casas", e
+    // ela afirmava mais do que a medição sustenta. Este bloco compara DATA e
+    // mais nada: ele prova que existe rodada mais nova, não que ela pertence a
+    // esta média. Medido em 15/Set/2026: as duas rodadas da The
+    // Economist/YouGov fora do índice trocaram de instrumento, viraram cédula
+    // NOMINAL, e o índice pode estar excluindo as duas com razão.
+    // Ver lib/us-polls/instrumento.mjs
+    console.log(
+      `      📌 ${ver.comRodadaFora.length} casa(s) publicou rodada com campo mais novo do que a Wikipédia tem  [comparação de DATA, só]`,
+    )
+    console.log('         Isto NÃO decide de quem é o buraco: a casa pode ter trocado a PERGUNTA.')
+    console.log('         Quem responde: node scripts/conferir-instrumento-us.mjs')
   }
 }
 
@@ -130,6 +141,15 @@ if (cad.atrasadas.length) {
       `      servida ${sinal(ex.atual.vantagemDem)} (n=${ex.atual.nPesquisas}) · com as que faltam ${sinal(ex.central.vantagemDem)} (n=${ex.central.nPesquisas}) · faixa ${sinal(ex.faixa.min)} a ${sinal(ex.faixa.max)}`,
     )
     console.log(`      deslocamento ${ex.deslocamentoCentralPp >= 0 ? '+' : ''}${ex.deslocamentoCentralPp}pp, amplitude ${ex.amplitudePp}pp`)
+    // 🔑 A suposição que faltava ser dita, e ela custou número em 15/Set/2026.
+    //
+    // "Deve N rodadas" sai da CADÊNCIA da casa, e cadência não sabe o que a
+    // casa perguntou. Naquele dia esta conta cobrava da The Economist/YouGov
+    // as rodadas de 07/Set e 14/Set, e as duas existiam mas eram cédula
+    // NOMINAL: não são devidas a uma média de generic ballot. Sem esta linha,
+    // "com as que faltam D+4.66" passava por medição fechada.
+    console.log('      ⚠️ SUPOSIÇÃO: a rodada que falta mediria a MESMA pergunta. Cadência não vê instrumento.')
+    console.log('         Casa que trocou a pergunta não deve rodada a esta média: npm run instrumento:usa')
     // A linha de base é recomputada agora. Se ela já difere da gravada, quem
     // se moveu foi a JANELA, não a intenção de voto, e o número tem de sair
     // separado para ninguém somar as duas causas.
