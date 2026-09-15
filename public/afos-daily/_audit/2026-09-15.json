@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-15",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtBaselinePainel": "2026-09-15T17:44:00.000Z",
+      "reFetchAoVivo": "2026-09-15T19:29:30.861Z",
+      "gateRebaseline": "DISPAROU",
+      "motivo": "ENQUADRAMENTO: o contrato de impeachment no Supremo havia sido publicado em 8,05% na leitura certificada de 14:44 BRT, com alta de 2,80pp sobre a vespera, e na releitura ao vivo estava em 4,95%, ou seja 0,30pp ABAIXO dos 5,25% de 14/Set. A alta publicada no painel ja era falsa.",
+      "travaDeCaptura": "BLOQUEADA no conjunto, APROVADA por livro em presidential, secondPlace, stf e senate; BLOQUEADO em thirdPlace (Renan 38,00 -> 39,50, Cury 46,15 -> 45,40). Leituras 19:29:30.861Z e 19:37:31.735Z, tolerancia 0,20pp. Publicado pela certificacao POR LIVRO.",
+      "rebaseline": "painel reescrito para a leitura certificada de 15/Set 16:37 BRT (19:37 UTC) em analysis-criteriosa, analysis-data, polls-data (3 idiomas) e CandidatesSection.tsx. 46 campos retraduzidos em EN e ES com gate numerico zerado e zero descarte. O contrato de 3o lugar do 1o turno nao recebeu preco novo e mantem os valores de 14/Set, declarado nos cartoes onde ele aparece.",
+      "livroSemPrecoNovo": "thirdPlace. Nao foi aplicada a regra da ETAPA 1.8 (faixa do livro bloqueado) porque o bloqueio nao foi medido como ESTRUTURAL: a rodada seguinte nao foi tentada e a amplitude do dia nao foi levantada. Segue a regra de sempre, 'esta rodada nao publica preco novo para ele'."
+    },
+    "defeitosAchadosNoPainel": {
+      "duasMargensInvertida": "polls-data.polls[0].note e criteriosa.candidates[0].fortes[0] declaravam os 4 pontos do 1o turno da Indexa (38% a 34%) FORA de duas margens de 2,2. 4 e menor que 4,40. Corrigido nos tres idiomas.",
+      "precoIntradiarioSobrevivente": "criteriosa.candidates[0].fracos[0] citava Flavio em 51,65%, leitura das 14:44, com o resto do arquivo em 51,95% das 16:37. O portao de frescor julga o valor do DONO do cartao e por isso ficou verde. Achado por leitura do cartao inteiro.",
+      "dataDoPisoEmUTC": "polymarketComparison.candidates[1] publicava o piso de Flavio em 03/Jul, que e a data UTC do ponto. O check-superlativo devolve 22,00% em 02/Jul 22:00 BRT. Corrigido para 02/Jul nos tres idiomas.",
+      "linksDeGlossarioApagados": "reescrever a nota da Indexa por inteiro em ES apagou 3 links de glossario, 58 -> 55 no arquivo. Eles moram DENTRO do texto de cada locale e nenhum script os injeta. Reconstruido do HEAD com uma troca de frase, conferindo a contagem. O EN nao foi afetado porque o gate numerico o havia descartado por outro motivo.",
+      "doisPrecosNoMesmoCartao": "o percurso intradiario (51,95% agora, depois de 51,65% as 14:44) foi RETIRADO dos cartoes do painel, porque dois precos do mesmo candidato no mesmo contrato e exatamente a forma que bloco de rodada anterior tem quando sobrevive. O percurso vive na daily, com os dois carimbos."
+    },
+    "factCheck": {
+      "atosDeAltoImpacto": "um: a abertura, pelo plenario do Supremo, da sessao sobre o pedido de investigacao contra Alexandre de Moraes.",
+      "oQueMudouHoje": "a sessao foi aberta e NAO chegou ao merito. Fachin leu o relatorio, Kassio Nunes Marques e Dias Toffoli se declararam fora da votacao, e o dia foi gasto numa questao preliminar (adiar o caso e junta-lo ao de Mendonca). Fachin votou contra o adiamento, Dino e Zanin a favor, e Gilmar propos julgar em 23/Set.",
+      "verificacao1": "check-recurrence.ts 'Moraes' devolveu 29 mencoes nas ultimas 7 dailies, com a sessao de 15/Set anunciada em 13 e 14/Set. Continuidade de pauta; a novidade e o que aconteceu DENTRO da sessao.",
+      "fonte1": "Gazeta do Povo, grupo independente, publicada 15/Set 15:33 e atualizada 16:50, posterior ao ato. Corpo lido: placar da preliminar, apensamento pedido por Gilmar para 23, Kassio fora por presidir o TSE e Toffoli por foro intimo.",
+      "fonte2": "Poder360, grupo diferente, publicada 15/Set 15h53, tambem posterior. Corpo lido: os ministros analisavam 'se a PF podera ou nao prosseguir com as apuracoes', ou seja merito NAO concluido.",
+      "newsCacheContradiz": "nao. Cache regerado as 16:47 com 296 titulos sobre o Supremo; o mais recente, de 16:34, e cobertura ao vivo da mesma preliminar.",
+      "decisao": "incorporar com o recorte estreito, sem publicar placar, porque as duas fontes dao contagens diferentes em minutos diferentes de uma sessao ainda em curso."
+    },
+    "superlativos": "conferidos na SERIE INTEIRA do backup via check-superlativo.ts, nao por fechamento de dia: Flavio topo 55,10% em 10/Set (cobertura 152 dias, 601 pontos), Lula topo 67,50% em 16/Ago e piso 34,50% em 25/Abr, Renan piso 1,20% em 31/Ago. O piso de Flavio, 22,00%, saiu em 02/Jul as 22:00 BRT e corrigiu o painel.",
+    "volumeCruzouMarca": "o livro presidencial passou dos USD 150M: 149,82M na leitura confirmada de 14/Set e 150,22M na de 15/Set, ou seja USD 400 mil de dinheiro novo em 24h. Volume e acumulado desde a abertura do livro, entao o cruzamento e fato da serie e nao leitura de um instante.",
+    "reconcileClaims": "2 divergencias, as duas explicadas: MDB 13,15% vem da captura certificada e nao e publicado no painel; Marcal 1,8% esta em polls-data.scenarios e o reconciliador varre outro subconjunto. Nenhuma porcentagem inventada. Ambos os valores sairam do corpo da daily no corte de palavras.",
+    "gateDeTraducao": "multiconjunto numerico identico nos tres idiomas em 55 valores com unidade, no corpo e fora do bloco de fontes. Cinco checagens limpas: zero ancora de glossario inexistente, zero link para outro locale, zero homoglifo cirilico, separador decimal e de milhar coerentes por idioma (tabela do calendario incluida) e tldr com exatamente 3 bullets nos tres.",
+    "tetoDePalavras": "1.093 no pt-BR, dentro do teto de 1.100, com 1.107 no EN e 1.187 no ES, a mesma proporcao da serie. A secao 'Em sintese' entrou DEVOLVENDO corte: percurso intradiario repetido saiu da secao 1, as tres divergencias encolheram e os candidatos menores das duas pesquisas sairam do corpo, que e o formato da daily de 14/Set.",
+    "emojiETravessao": "zero nos tres idiomas, conferido por varredura.",
+    "wayback": {
+      "dailyDeHoje": "NAO arquivada. Decisao do Andre na sessao, opcao 1: publicar sem o arquivamento proprio e registrar como pendente.",
+      "passivo": "10 dailies, a mais antiga exposta ha 48 dias. Host medido bloqueando em 15/Set com MSYS_NO_PATHCONV=1 devolvendo 429; registrado em data/wayback/rodadas.jsonl sem chave 'daily', para o veredito de amanha nascer certo. A pausa de 4 dias corre a partir dai."
+    }
+  },
+  "adversarialReview": {
+    "singleSource": "nenhuma ancora narrativa com fonte unica. A sessao do Supremo tem Gazeta do Povo e Poder360, de grupos diferentes e as duas posteriores ao ato, com corpo lido. As duas pesquisas tem Gazeta do Povo e Exame (Indexa) e Gazeta do Povo e CNN Brasil (CNT/MDA), e o registro do TSE confere amostra, campo, metodo e custo das duas.",
+    "numericalErrors": "reconcile-claims com 2 divergencias, as duas explicadas e nenhuma inventada. Todo preco vem do instantaneo certificado em .cache/capture-guard/ultima-br.json, das 19:37:31.735Z. Todo superlativo vem do backup, nunca da API.",
+    "fontesInventadas": "nenhuma. Links canonicos de feed proprio (Poder360, Metropoles, CartaCapital, Gazeta do Povo, Valor, Estadao) e os demais resolvidos do involucro do Google News com resolver-noticia.mjs, que devolve a URL do veiculo.",
+    "quotesLiterais": "duas, as duas curtas e atribuidas: 'boneco eleitoral' (Gilmar sobre Mendonca, Poder360) e 'se o rito seguir como esta, sera uma crise por semana' (Dino, Metropoles). A resposta de Mendonca e relatada como 'respondeu que e mentira', nao como aspa.",
+    "causacaoEspuria": "nenhuma. O contrato do Supremo subiu 2,80pp e devolveu 3,10pp no mesmo dia da sessao, e a daily diz explicitamente que ida e volta no mesmo dia e o tamanho do livro (USD 91 mil) e nao leitura sobre o julgamento. Mercado x pesquisa declara que as duas medicoes sao do mesmo dia e que a ordem entre elas nao esta medida.",
+    "verbosCriticos": "'abriu a sessao' e 'nao chegou ao merito', nunca 'decidiu' nem 'julgou'. 'se declararam fora da votacao' com o motivo de cada um. 'gastou o dia numa questao preliminar' em vez de 'adiou', porque a preliminar nao estava concluida na hora da escrita. Nenhum placar publicado, porque as duas fontes davam contagens diferentes em minutos diferentes.",
+    "superlativoRetirado": "eu havia escrito que o 1,90pp do Lula no contrato de 2o lugar era 'o maior movimento individual do dia'. Nao resiste ao paragrafo seguinte, que narra o Supremo andando 2,80pp e 3,10pp dentro do mesmo dia. Fechamento a fechamento o 1,90pp e o maior, mas dito sem o recorte e falso, e o recorte custava 7 palavras que eu nao tinha. Retirado.",
+    "decisao": "prosseguir"
+  }
+}
