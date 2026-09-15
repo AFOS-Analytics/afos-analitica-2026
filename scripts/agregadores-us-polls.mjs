@@ -80,6 +80,10 @@ if (r.veredito === VEREDITOS.ATRASADO) {
   console.log('      ⛔ Não autoriza ingerir: ler rodada no instituto muda a procedência')
   console.log('         da média e é decisão do André, por casa.')
   console.log('      ⛔ E não se publica: é fato sobre a nossa coleta, não sobre a eleição.')
+} else if (r.veredito === VEREDITOS.COMPASSO || r.veredito === VEREDITOS.A_FRENTE) {
+  console.log('   📌 O alcance é a PONTA, não a CONTAGEM: compara só a data de campo mais recente.')
+  console.log('      Rodada do MEIO da janela que o índice não recebeu não aparece aqui.')
+  console.log('      Quem responde isso é o passo 1 do polls:usa: listagens das casas e exposição da média.')
 } else if (r.veredito === VEREDITOS.INCONCLUSIVO) {
   console.log('   INCONCLUSIVO não é "em compasso": é o medidor dizendo que não enxergou.')
 }

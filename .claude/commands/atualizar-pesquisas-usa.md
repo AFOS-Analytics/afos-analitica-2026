@@ -62,6 +62,8 @@ Ele varre **todas** as linhas, compara contra a versão do `git HEAD`, aplica as
 
 🧭 **Ele também responde a pergunta do Passo 4**, que é a única que a régua faz antes de qualquer verbo de movimento: **o que mudou foi a intenção de voto ou foi o conjunto?** Sai como `COMPOSICAO`, `PESQUISA_NOVA`, `CORRECAO`, `PARADO` ou `INCONSISTENTE`, nomeando rodada a rodada quem entrou e quem saiu, e confere que a subtração fecha.
 
+🚀 **E, para cada rodada que ENTRA, imprime a FICHA dela**, desde 15/Set/2026: campo, amostra, recorte, margem, D/R/outros com a soma, origem e **o link da fonte primária**. É o ponto de partida da conferência na fonte, não a conferência. Medido no dia: a CBS News/YouGov entrou pelo índice com D 54 x R 46, 1.750 LV e ±2,9. No topline, D e R e o N ponderado de 1.750 bateram; **a margem de 2,9 não constava**, porque o instituto só declara ±2,3 para os 2.460 adultos. Rodada nova se confere no topline do instituto antes de ir ao relato.
+
 🔑 **Isso só funciona porque o arquivo passou a gravar QUAIS pesquisas entraram na média, em `mediaAfos.incluidas`, e não só quantas.** Antes de 04/Set/2026 a comparação era por NOME de casa, e nome de casa não é rodada: uma onda nova de uma casa que já estava na lista passava invisível. Caso medido sobre o arquivo real daquele dia: uma onda da YouGov com campo 28/Ago levaria a média de D+5.69 a D+5.93, e a régua antiga imprimiria *"ZERO informação nova, escrever verbo de movimento aqui é falso"*. Falso negativo que produz frase falsa. A regra vive em `lib/us-polls/atribuicao.mjs`, com casos plantados em `scripts/testar-atribuicao-us.mjs`.
 
 ⚠️ **Comparando contra uma base anterior a 04/Set/2026 ele avisa `atribuição DEGRADADA`** e manda não usar aquela linha para afirmar "zero informação nova". Isso acontece uma única vez.
@@ -152,6 +154,8 @@ A resposta está no mesmo host que já lemos: a seção `GenericBallotAgg` do ar
 
 🔑 **A referência é a SEGUNDA maior data, não a maior**, para um erro de digitação isolado não fabricar atraso. E **tabela parada ainda prova atraso, mas não prova compasso**: data que já existiu não deixa de existir, mas dois parados concordarem entre si não diz nada.
 
+📌 **O alcance dele é a PONTA, nunca a CONTAGEM.** Ele compara uma data só, a do campo mais recente, e todo veredito com referência sai com `alcance: 'PONTA'` e "NA PONTA" no motivo. Medido em 15/Set/2026: a CBS com campo até 11/Set igualou a data dos seis agregadores e o veredito saiu `EM COMPASSO`, enquanto o passo 1 contava 8 rodadas faltando dentro da janela e a listagem da Economist/YouGov declarava uma rodada de 4 a 8/Set fora do índice. **`EM COMPASSO` não quer dizer base completa**: quem responde pela contagem é o passo 1, nas listagens das casas e na exposição.
+
 ⛔ **Três coisas que ele NÃO faz:** não lê percentual de agregador (média de agregador não entra), não se publica (é fato da nossa coleta, não da eleição) e **não abre a ingestão**. Saber que o índice está atrasado não autoriza ler rodada no instituto: isso muda a procedência da média e segue decisão do André, por casa. Ver `memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md`.
 
 🧪 `node scripts/testar-agregadores-us.mjs`, 51 casos e no CI. Conferido replantando 3 defeitos (referência pela maior data, sem checar tabela velha, sem tirar a `<ref>` da célula) e o teste reprovou os três.
@@ -181,6 +185,8 @@ node scripts/testar-defasagem-us.mjs
 Rodar depois de mexer no marcador do tema, na janela de proximidade ou na tolerância de dias. Metade dos 23 casos é de anti-silêncio: um conferidor que se aperta para calar falso positivo é a maneira mais fácil de transformar alarme barulhento em alarme mudo, e alarme mudo é indistinguível de alarme quebrado.
 
 🔬 **O `historico-us-polls.mjs` também diz se o registro de hoje no Neon é do CRON ou de um forçamento**, e reaplica a regra de hoje aos dias já gravados como controle. Se ele disser que o cron gravou dentro da janela das 07:10Z e os números baterem com o arquivo, **o Passo 3 não é necessário**: forçar ali só troca o registro do cron por outro igual, com o risco já fichado de apagar o carimbo dele.
+
+🔴 **E a base do controle é a do ARQUIVO, não a do registro mais recente**, desde 15/Set/2026. Naquele dia o índice recebeu a CBS antes do cron das 07:10Z: o arquivo em disco tinha 382/389 e o Neon 381/388. O controle ancorava no registro, recomputava 5 dias sobre o arquivo que já tinha a CBS e acusava 5 divergências e "projeção NÃO validada", com saída 1. Agora a regra mora em `diasComparaveis` (`lib/us-polls/historico.mjs`): arquivo **à frente** do Neon não tem dia comparável e o controle roda sobre o `git HEAD`, se ele tiver a base dos registros. No dia, as mesmas 5 datas reproduziram **5 de 5**. Mesma família do falso alarme de 12/Set, por outra porta: lá o critério olhava o campo errado, aqui o objeto errado.
 - quantas linhas foram lidas e quantas foram descartadas por forma, com o motivo
 - quantas ficaram **sem fonte primária**
 - os institutos com campo mais recente, e a **dispersão entre eles**, que costuma ser o achado real

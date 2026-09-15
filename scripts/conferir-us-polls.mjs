@@ -229,6 +229,30 @@ if (m && mb) {
     const rot = (x) => `${x.campoFim} ${x.instituto} (D+${(x.dem - x.rep).toFixed(2)})`
     console.log(`        saíram    ${dif.sairam.map(rot).join(' · ') || '(ninguém)'}`)
     console.log(`        entraram  ${dif.entraram.map(rot).join(' · ') || '(ninguém)'}`)
+    // 🚀 A FICHA de quem entrou, para a conferência na FONTE começar daqui.
+    //    Medido em 15/Set/2026: a CBS News/YouGov entrou e a conferência exigiu
+    //    garimpar o JSON atrás do link, da amostra e do recorte antes de abrir o
+    //    topline. Lá, D 54 x R 46 e o N ponderado de 1.750 LV bateram, e a margem
+    //    de 2,9 do índice NÃO constava (o instituto declara ±2,3 só para os 2.460
+    //    adultos). Wikipédia é ÍNDICE, o instituto é FONTE: a ficha diz o que
+    //    conferir, não certifica nada.
+    for (const x of dif.entraram) {
+      const p = (atual.polls ?? []).find(
+        (q) => q.instituto === x.instituto && q.campoFim === x.campoFim && q.dem === x.dem && q.rep === x.rep &&
+          (!x.amostraTipo || q.amostraTipo === x.amostraTipo)
+      )
+      if (!p) {
+        console.log(`          ↳ ${cor.aviso}⚠️${cor.fim}  ${x.instituto} ${x.campoFim}: rodada incluída na média sem linha correspondente em polls`)
+        continue
+      }
+      const soma = (p.dem ?? 0) + (p.rep ?? 0) + (p.outros ?? 0)
+      console.log(
+        `          ↳ ficha ${p.instituto}: campo ${p.campoInicio}→${p.campoFim} · n=${p.amostra ?? '?'} ${p.amostraTipo ?? '?'} · ±${p.margemErro ?? '?'} · ` +
+          `D ${p.dem} R ${p.rep} outros ${p.outros ?? '?'} (soma ${soma}) · origem ${p.origem ?? '?'}`
+      )
+      console.log(`            fonte ${p.fontePrimaria || `${cor.mau}SEM FONTE PRIMÁRIA${cor.fim}`}`)
+      console.log(`            conferir NA FONTE: D e R, recorte (LV/RV/A), amostra e margem. O índice não é a fonte.`)
+    }
     if (dif.mudaram.length) {
       console.log(
         `        corrigidas na origem: ${dif.mudaram.map((x) => rot(x.antes) + ' → ' + rot(x.depois)).join(' · ')}`

@@ -28,9 +28,10 @@ import { config } from 'dotenv'
 config({ path: '.env.local' })
 
 import { readFileSync } from 'fs'
+import { execFileSync } from 'child_process'
 import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
-import { diagnosticarSerie, ORIGENS } from '../lib/us-polls/historico.mjs'
+import { diagnosticarSerie, diasComparaveis, baseDoArquivo, PARADAS_CONTROLE, ORIGENS } from '../lib/us-polls/historico.mjs'
 import { mediaEm } from '../lib/us-polls/projecao.mjs'
 
 const args = process.argv.slice(2)
@@ -131,29 +132,54 @@ async function main() {
   //
   // 🔑 Alarme que nao distingue "a regra mudou" de "a base mudou" desabilita uma
   //    ferramenta boa por um motivo falso. → memory/feedback_o_conferidor_que_eu_escrevo_tambem_e_um_medidor.md
-  const legiveis = d.registros.filter((r) => !r.ilegivel && r.linhasLidas != null)
-  const baseDeHoje = legiveis[0]?.linhasLidas
-  const pubDeHoje = legiveis[0]?.publicadas
-  const comparaveis = []
-  let pararamPorBase = null
-  for (const r of legiveis) {
-    if (r.linhasLidas !== baseDeHoje) break
-    if (r.publicadas !== pubDeHoje) {
-      pararamPorBase = { dia: r.lastUpdate, pub: r.publicadas }
-      break
+  //
+  // 🔴 E A BASE DE REFERENCIA E A DO ARQUIVO, NAO A DO REGISTRO MAIS RECENTE.
+  //    Medido em 15/Set/2026: o arquivo em disco ja tinha a CBS (382/389) e o
+  //    Neon ainda nao (381/388). Ancorar no registro recomputava 5 dias sobre a
+  //    base errada. A regra mora em `diasComparaveis`, com casos plantados.
+  let fonteControle = ARQUIVO
+  let res = diasComparaveis(d.registros, baseDoArquivo(dados))
+  if (res.parada.motivo === PARADAS_CONTROLE.ARQUIVO_A_FRENTE) {
+    // O arquivo andou antes do cron. A regra ainda pode ser conferida sobre a
+    // versao COMMITADA, se ela tiver exatamente a base dos registros gravados.
+    let head = null
+    try {
+      head = JSON.parse(execFileSync('git', ['show', `HEAD:${ARQUIVO}`], { encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }))
+    } catch {
+      head = null
     }
-    comparaveis.push(r)
-  }
-
-  console.log(`\n   🔬 CONTROLE: a regra de hoje reaplicada aos dias ja gravados`)
-  console.log(`      comparavel so enquanto linhasLidas = ${baseDeHoje} E publicadas = ${pubDeHoje}, o que da ${comparaveis.length} dia(s)`)
-  if (pararamPorBase) {
+    const resHead = head ? diasComparaveis(d.registros, baseDoArquivo(head)) : null
     console.log(
-      `      📌 a serie para em ${pararamPorBase.dia}, que tinha publicadas=${pararamPorBase.pub}: dali para tras a BASE e outra.`
+      `\n   📌 o arquivo em disco esta A FRENTE do Neon: ${ARQUIVO} tem ${baseDoArquivo(dados).linhasLidas}/${baseDoArquivo(dados).publicadas} e o registro de ${res.parada.dia} tem ${res.parada.linhasLidas}/${res.parada.publicadas}.`
+    )
+    console.log(`      Linha nova que o cron ainda nao gravou. Nao e divergencia de regra.`)
+    if (resHead && resHead.comparaveis.length) {
+      dados = head
+      res = resHead
+      fonteControle = `git HEAD:${ARQUIVO}`
+      console.log(`      ↪ o controle roda sobre ${fonteControle}, que tem a mesma base dos registros gravados.`)
+    }
+  }
+  const { comparaveis, parada } = res
+  const base = baseDoArquivo(dados)
+
+  console.log(`\n   🔬 CONTROLE: a regra de hoje reaplicada aos dias ja gravados  (sobre ${fonteControle})`)
+  console.log(
+    `      comparavel so enquanto linhasLidas = ${base?.linhasLidas ?? '?'} E publicadas = ${base?.publicadas ?? '?'}, o que da ${comparaveis.length} dia(s)`
+  )
+  if (parada.motivo === PARADAS_CONTROLE.BASE_TROCOU) {
+    console.log(
+      `      📌 a serie para em ${parada.dia}, que tinha ${parada.linhasLidas}/${parada.publicadas}: dali para tras a BASE e outra.`
     )
     console.log(
       `         Curadoria nao mexe em linhasLidas, so em publicadas, entao comparar por linhasLidas acusaria defeito de regra onde houve mudanca de base.`
     )
+  } else if (parada.motivo === PARADAS_CONTROLE.ARQUIVO_ATRAS) {
+    console.log(
+      `      ⚠️ o arquivo esta ATRAS do registro de ${parada.dia} (${parada.linhasLidas}/${parada.publicadas}): e um arquivo velho, rodar a coleta antes.`
+    )
+  } else if (parada.motivo === PARADAS_CONTROLE.SEM_BASE_NO_ARQUIVO) {
+    console.log(`      ⚠️ o arquivo nao declara qualidade.linhasLidas e publicadas: sem base, nada e comparavel.`)
   }
   let divergencias = 0
   for (const r of comparaveis) {

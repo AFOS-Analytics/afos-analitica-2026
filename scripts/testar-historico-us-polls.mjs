@@ -28,6 +28,9 @@ import {
   lacunasDeDia,
   origemDaGravacao,
   diagnosticarSerie,
+  diasComparaveis,
+  baseDoArquivo,
+  PARADAS_CONTROLE,
   ORIGENS,
   HORA_CRON_UTC,
   TOLERANCIA_CRON_MIN,
@@ -249,6 +252,53 @@ console.log('\n── diagnostico inteiro ──')
   ok('serie vazia nao explode', d.total === 0)
   ok('serie vazia nao inventa congelamento', d.indice === null)
   ok('serie vazia diz que hoje esta AUSENTE', d.hoje.origem === ORIGENS.AUSENTE)
+}
+
+// ── controle da projecao: QUAIS dias sao comparaveis com o arquivo ──
+// 🔴 O caso central e o de 15/Set/2026: o arquivo andou (382/389) antes do cron,
+//    e o registro mais recente ainda e 381/388. Ancorar no registro dava 5 dias
+//    "comparaveis" e 5 divergencias falsas.
+console.log('\n── controle: dias comparaveis ──')
+{
+  const g = (dia, lidas, pub, extra = {}) => ({ lastUpdate: dia, linhasLidas: lidas, publicadas: pub, ilegivel: false, ...extra })
+  const serie = [
+    g('2026-09-14', 381, 388),
+    g('2026-09-13', 381, 388),
+    g('2026-09-12', 381, 388),
+    g('2026-09-11', 381, 388),
+    g('2026-09-10', 381, 388),
+    g('2026-09-09', 381, 387),
+    g('2026-09-04', 379, 385),
+  ]
+
+  const frente = diasComparaveis(serie, { linhasLidas: 382, publicadas: 389 })
+  ok('arquivo A FRENTE do Neon nao tem dia comparavel', frente.comparaveis.length === 0, JSON.stringify(frente))
+  ok('e diz que o arquivo esta a frente, nao que a base trocou', frente.parada.motivo === PARADAS_CONTROLE.ARQUIVO_A_FRENTE)
+  ok('e nomeia o registro contra o qual parou', frente.parada.dia === '2026-09-14' && frente.parada.linhasLidas === 381)
+
+  const curado = diasComparaveis(serie, { linhasLidas: 381, publicadas: 389 })
+  ok('rodada CURADA a frente (so publicadas andou) tambem e A FRENTE', curado.parada.motivo === PARADAS_CONTROLE.ARQUIVO_A_FRENTE && curado.comparaveis.length === 0)
+
+  const igual = diasComparaveis(serie, { linhasLidas: 381, publicadas: 388 })
+  ok('arquivo com a base do Neon compara os 5 dias da mesma base', igual.comparaveis.length === 5, String(igual.comparaveis.length))
+  ok('e para na curadoria de 09/Set, por BASE_TROCOU', igual.parada.motivo === PARADAS_CONTROLE.BASE_TROCOU && igual.parada.dia === '2026-09-09')
+
+  const velho = diasComparaveis(serie, { linhasLidas: 379, publicadas: 385 })
+  ok('arquivo VELHO nao compara o bloco antigo que por acaso tem a mesma base', velho.comparaveis.length === 0)
+  ok('e diz que o arquivo esta ATRAS', velho.parada.motivo === PARADAS_CONTROLE.ARQUIVO_ATRAS)
+
+  const semBase = diasComparaveis(serie, null)
+  ok('arquivo sem qualidade nao compara nada', semBase.comparaveis.length === 0 && semBase.parada.motivo === PARADAS_CONTROLE.SEM_BASE_NO_ARQUIVO)
+
+  const comIlegivel = diasComparaveis([{ ilegivel: true, slug: 'podre' }, ...serie.slice(0, 2)], { linhasLidas: 381, publicadas: 388 })
+  ok('registro ilegivel no topo nao interrompe nem vira comparavel', comIlegivel.comparaveis.length === 2 && comIlegivel.parada.motivo === PARADAS_CONTROLE.FIM_DA_SERIE)
+
+  ok('serie vazia termina por FIM_DA_SERIE, sem inventar dia', diasComparaveis([], { linhasLidas: 1, publicadas: 1 }).parada.motivo === PARADAS_CONTROLE.FIM_DA_SERIE)
+}
+{
+  ok('baseDoArquivo le qualidade.linhasLidas e publicadas', JSON.stringify(baseDoArquivo({ qualidade: { linhasLidas: 382, publicadas: 389 } })) === '{"linhasLidas":382,"publicadas":389}')
+  ok('baseDoArquivo devolve null quando falta um dos dois', baseDoArquivo({ qualidade: { linhasLidas: 382 } }) === null)
+  ok('baseDoArquivo nao aceita numero como texto', baseDoArquivo({ qualidade: { linhasLidas: '382', publicadas: 389 } }) === null)
 }
 
 console.log(`\n${falhas ? '❌ REPROVADO' : '✅ APROVADO'}: ${passes} passaram, ${falhas} falharam\n`)

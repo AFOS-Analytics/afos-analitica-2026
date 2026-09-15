@@ -133,6 +133,13 @@ console.log('\n⚖️ a borda da tolerância')
 eq(`${TOLERANCIA_DIAS} dias é compasso`, compararComBase(lida, '2026-09-08', HOJE).veredito, VEREDITOS.COMPASSO)
 eq(`${TOLERANCIA_DIAS + 1} dias é atraso`, compararComBase(lida, '2026-09-07', HOJE).veredito, VEREDITOS.ATRASADO)
 eq('mesma data é compasso', compararComBase(lida, '2026-09-11', HOJE).veredito, VEREDITOS.COMPASSO)
+
+console.log('\n📌 o alcance é a PONTA (15/Set: CBS na ponta, Economist/YouGov de 4-8/Set fora do índice)')
+const ponta = compararComBase(lida, '2026-09-11', HOJE)
+eq('compasso declara alcance PONTA', ponta.alcance, 'PONTA')
+ok('e o motivo diz que é na ponta', /NA PONTA/.test(ponta.motivo))
+eq('atraso também é medido na ponta', compararComBase(lida, '2026-08-31', HOJE).alcance, 'PONTA')
+eq('inconclusivo não declara alcance nenhum', compararComBase(lerAgregadores('==x=='), '2026-08-31', HOJE).alcance, undefined)
 eq('base 5 dias à frente, tabela viva', compararComBase(lida, '2026-09-16', '2026-09-16').veredito, VEREDITOS.A_FRENTE)
 
 console.log('\n🛡️ o que NÃO pode fabricar atraso')
