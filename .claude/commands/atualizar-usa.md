@@ -106,6 +106,30 @@ Uma distribuição só sobe à tela se as faixas somarem entre 95% e 105%.
 
 **O `popularVoteMargin` é outro caso: está REPROVADO SEMPRE** e é coletado todo dia mesmo assim, para guardar série. Ele é o mercado que um dia permitiria o cruzamento limpo, porque mede a mesma grandeza da pesquisa. Reportar a soma dele quando perguntarem, e **nunca publicá-lo como se valesse**.
 
+🚦 **E desde 15/Set/2026 a pergunta "isto merece nota?" tem medidor, para as cinco de uma vez:**
+
+```bash
+npm run portoes:usa                                          # entra na rodada:usa como passo 4/4
+npx tsx scripts/estado-dos-portoes.ts --soma=governors:94.20  # conferir uma soma específica
+```
+
+⚠️ **Corrigido em 15/Set/2026: a régua acima estava escrita e nada na rodada a media.** O passo 1 imprime `❌` e `✅` e para aí, e a decisão saía de cabeça ou de rodar o `check-distribuicao.ts` uma vez por mercado. Medido no dia, custou quatro comandos à mão: `governors` e `houseSeats` saíram os dois com `❌` na mesma leitura e são **coisas opostas**, porque `governors` fecha em **80,78%** das capturas e `houseSeats` fecha em **36,17%**.
+
+| leitura | o que quer dizer |
+|---|---|
+| `ESTADO NORMAL` | hoje o book fez o que ele faz na maioria das capturas. Não é notícia |
+| `EVENTO` | hoje ele fez o CONTRÁRIO do que faz sempre, e está confirmado. Merece nota |
+| `TRAVESSIA NAO CONFIRMADA` | a leitura ao vivo está do outro lado do corte e **nenhuma** captura gravada da janela concorda. **RELER** |
+| `OSCILANDO` | o portão virou 2x ou mais em 24h: o corte está dentro do ruído do livro |
+| `NA BORDA` | a menos de 1pp do corte, com a série parada: a próxima leitura pode virar por sobrepreço |
+| `INDETERMINADO` | menos de 4 capturas na janela, ou série com menos de 20. **Não é "em ordem"** |
+
+🔑 **`TRAVESSIA NAO CONFIRMADA` é a régua da trava de captura aplicada às faixas, e ela nasceu de um caso real no mesmo dia.** Às 16:11Z o `governors` leu **94,20%** e reprovou, com as 14 capturas gravadas da janela **todas acima** do corte; meia hora depois a leitura ao vivo deu **95,50%** e passou. A travessia existiu num instante que a grade de 30 minutos nunca gravou. **Uma leitura não é um preço, e também não é um estado de portão.**
+
+📐 **E a deriva vence a borda:** valor perto do corte com a série parada é `NA BORDA`, mas se o livro andou mais do que o dobro da faixa de borda em 24h, a travessia é movimento e não sobrepreço. O `governors` veio de 101,30% e caiu 7pp numa direção só. ⚠️ A distância do corte **não some** nesse caso: ela vira ressalva na frase, porque uma travessia que parou a 0,80pp do corte pode voltar amanhã.
+
+🧪 `npx tsx scripts/testar-estado-do-portao.ts`, 65 casos e no CI, com 12 de 12 mutações reprovadas. A regra mora em `lib/us-market/estado-do-portao.ts` e importa 95 e 105 do `portao.ts`, que é o dono da régua desde 10/Ago.
+
 🔬 **Quando uma distribuição reprovar e for preciso saber POR QUÊ**, não olhar as faixas a olho:
 
 ```bash

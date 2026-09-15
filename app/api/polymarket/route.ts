@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+import { KEYS_US, SLUGS_US } from '@/lib/us-market/mercados';
+
 // Sem `export const revalidate`: com ele a rota virava ISR e o Cache-Control
 // montado no fim desta função NUNCA chegava ao cliente (produção servia
 // `public, max-age=0` e o mesmo fetchedAt por até 2h). Efeito colateral grave:
@@ -31,21 +33,18 @@ const keys = ['presidential', 'secondPlace', 'thirdPlace', 'stf', 'senate', 'inf
 //
 // Os slugs são os mesmos do `ELECTION_REGISTRY`, que é quem manda na coleta.
 // Aqui é só a leitura para a tela.
-const slugsUs = [
-  'which-party-will-win-the-house-in-2026',
-  'which-party-will-win-the-senate-in-2026',
-  'republican-house-seats-after-the-2026-midterm-elections',
-  'republican-senate-seats-after-the-2026-midterm-elections-927',
-  'how-many-republican-governors-after-the-2026-midterm-elections',
-  '2026-midterms-house-turnout',
-  '2026-midterms-house-popular-vote-margin-of-victory-224',
-  'will-the-2026-midterm-elections-happen-as-scheduled',
-];
-
-const keysUs = [
-  'house', 'senate', 'houseSeats', 'senateSeats',
-  'governors', 'turnout', 'popularVoteMargin', 'asScheduled',
-] as const;
+// 🔑 A lista saiu daqui em 15/Set/2026 e virou UM registro em
+// `lib/us-market/mercados.ts`, com a chave e o slug no mesmo objeto.
+//
+// 🔴 Antes eram dois arrays casados POR POSIÇÃO. Inserir um slug no meio de um e
+// esquecer o outro deslocaria todas as chaves seguintes, e o painel serviria o
+// preço do Senado com a etiqueta da Câmara: valor certo, etiqueta errada, que é
+// a classe que nenhum validador de JSON pega. Objeto único mata a classe.
+//
+// A ORDEM segue sendo contrato, porque o consumo abaixo é por posição, e
+// `scripts/testar-mercados-us.ts` trava a lista literal.
+const slugsUs = SLUGS_US;
+const keysUs = KEYS_US;
 
 function isValidSlug(slug: string): boolean {
   return /^[a-z0-9-]+$/.test(slug);

@@ -6,9 +6,10 @@
  *    certa, o que já existe e já é testado.
  *
  * A ORDEM é o ponto, e ela não é óbvia:
- *   1. ler-mercado        a leitura ao vivo, com fresh=1 e país
- *   2. capture-guard      BLOQUEANTE, 8 minutos, e é ele que CERTIFICA a leitura
- *   3. serie-do-contrato  superlativo e par binário, sobre a leitura CERTIFICADA
+ *   1. ler-mercado         a leitura ao vivo, com fresh=1 e país
+ *   2. capture-guard       BLOQUEANTE, 8 minutos, e é ele que CERTIFICA a leitura
+ *   3. serie-do-contrato   superlativo e par binário, sobre a leitura CERTIFICADA
+ *   4. estado-dos-portoes  a reprovação de hoje é evento ou é o de sempre
  *
  * 🔑 O passo 3 depende do passo 2 e não o contrário. Medido em 09/Set/2026: rodei
  *    a série antes de a trava terminar e ela respondeu com a certificada da
@@ -54,12 +55,12 @@ console.log('')
 console.log(`🇺🇸 PASSADA DO PAINEL US · ${new Date().toISOString()}`)
 console.log('   orquestração apenas: nenhuma conta é feita aqui')
 
-rodar('ler-mercado', '1/3 · LEITURA AO VIVO — fresh=1 e país', 'scripts/ler-mercado.mjs', [])
+rodar('ler-mercado', '1/4 · LEITURA AO VIVO — fresh=1 e país', 'scripts/ler-mercado.mjs', [])
 
 if (semTrava) {
   console.log('')
   console.log(regua)
-  console.log('⏭️  2/3 · TRAVA DE CAPTURA')
+  console.log('⏭️  2/4 · TRAVA DE CAPTURA')
   console.log('   PULADO por --sem-trava')
   console.log('   ⚠️ Sem certificar, a série do passo 3 usa a certificada ANTERIOR.')
   console.log('      Se ela tiver mais de 2h, o veredito NÃO descreve o preço de agora.')
@@ -67,7 +68,7 @@ if (semTrava) {
 } else {
   const r = rodar(
     'trava',
-    '2/3 · TRAVA DE CAPTURA — BLOQUEANTE, duas leituras a 8 minutos',
+    '2/4 · TRAVA DE CAPTURA — BLOQUEANTE, duas leituras a 8 minutos',
     'scripts/capture-guard.ts',
     ['--pais=us'],
     true
@@ -90,9 +91,31 @@ if (semTrava) {
 
 rodar(
   'serie',
-  '3/3 · SÉRIE E PAR BINÁRIO — sobre a leitura CERTIFICADA',
+  '3/4 · SÉRIE E PAR BINÁRIO — sobre a leitura CERTIFICADA',
   'scripts/serie-do-contrato.mjs',
   ['--pais=us']
+)
+
+// ─── PASSO 4, acrescentado em 15/Set/2026 ───────────────────────────────────
+//
+// 🔑 O passo 1 imprime ❌ e ✅ para cada distribuição e para aí. A régua do
+// comando manda decidir pela SÉRIE das últimas 24h, e ninguém media isso na
+// rodada: a decisão saía de cabeça, ou de rodar o `check-distribuicao.ts` uma
+// vez por mercado.
+//
+// 🔴 Medido no dia em que este passo entrou: `governors` e `houseSeats` saíram os
+// dois com ❌ na mesma leitura e são coisas opostas. `governors` fecha em 80,78%
+// das capturas; `houseSeats` fecha em 36,17%. E o `governors` daquele instante
+// nem era travessia: meia hora depois a leitura ao vivo voltou a fechar, e as 14
+// capturas gravadas da janela estavam todas do outro lado.
+//
+// ⚠️ Ele sai != 0 quando falta material ou quando existe travessia a reler. É
+// SINAL, e a régua do resumo abaixo já diz para ler a seção, não o número.
+rodar(
+  'portoes',
+  '4/4 · ESTADO DOS PORTÕES — a reprovação de hoje merece nota?',
+  'scripts/estado-dos-portoes.ts',
+  []
 )
 
 imprimirEsperado()
