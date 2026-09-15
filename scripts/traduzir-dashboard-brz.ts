@@ -173,8 +173,18 @@ for (const base of ARQUIVOS) {
     if (pendentes.length) {
       pendentesTotal += pendentes.length
       console.log(`   ${idioma}: ⏳ ${pendentes.length} PENDENTE(S), ${herdados} herdado(s), ${novos} do mapa. Arquivo NÃO escrito.`)
-      for (const p of pendentes.slice(0, 60)) console.log(`      ${p}  [${tAtual[p].length}c]`)
-      if (pendentes.length > 60) console.log(`      … e mais ${pendentes.length - 60}`)
+      // 🔴 A LISTA NÃO SE TRUNCA MAIS, e o motivo é de uso, não de estética.
+      //
+      // Ela travava em 60 e imprimia "… e mais N". Medido em 15/Set/2026: a
+      // `analysis-criteriosa` tinha 78 pendências, e quem lê esta saída para
+      // montar o mapa recebia 60 e ia embora com a lista incompleta. O aviso
+      // existia, então não era silêncio, mas ficava numa linha que o leitor
+      // programático descarta, e a consequência prática é a mesma: montar o
+      // mapa sobre lista truncada, ver "PENDENTE" de novo e não saber por quê.
+      //
+      // ⚠️ A lista é a ENTRADA de trabalho deste script, não um resumo. Resumo
+      // se corta; entrada de trabalho, não.
+      for (const p of pendentes) console.log(`      ${p}  [${tAtual[p].length}c]`)
       continue
     }
 

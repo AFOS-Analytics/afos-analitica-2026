@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-14",
+  "lastUpdate": "2026-09-15",
   "institutes": [
     {
       "name": "Datafolha",
@@ -135,6 +135,170 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Indexa/Broadcast",
+      "date": "2026-09-15",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-03482/2026",
+      "reliability": 4,
+      "method": "Telefone",
+      "fieldDates": "2026-09-10 a 2026-09-13",
+      "note": "Indexa/Broadcast nacional divulgada em 15/Set, campo de 10 a 13/Set, registro BR-03482/2026 no TSE, 2.000 entrevistas individuais por telefone, margem de 2,2pp com 95% de confiança, custo declarado de R$ 164.000,00 (Gazeta do Povo e JOTA, e o registro do TSE confere amostra, campo, método e custo). ⭐ O PAR DE 2º TURNO CONTRA FLÁVIO BOLSONARO SAIU 43% A 42% PARA LULA, uma diferença de 1 ponto que cabe dentro de uma margem, então a casa mede empate técnico. Na onda anterior da própria casa, divulgada em 26/Ago com campo de 20 a 23/Ago, o par tinha saído 46% a 41%: nas duas leituras que o painel registra desta casa a distância caiu de 5 pontos para 1. ⭐ NO 1º TURNO LULA TEM 38% E FLÁVIO BOLSONARO 34%, quatro pontos que não cabem em duas margens de 2,2. Contra a onda de 26/Ago, Lula cede 1 ponto e Flávio fica parado. Augusto Cury tem 6%, Ronaldo Caiado 4%, Renan Santos 3% e Romeu Zema 1%. A casa não inclui Pablo Marçal no cenário desta onda. ⚖️ A CNT/MDA, DIVULGADA NO MESMO DIA com campo de 9 a 13/Set e a mesma margem de 2,2, dá o 1º turno a Lula por 40,5% a 30,4% e o 2º turno por 47,3% a 40%: as duas casas concordam no sinal, com Lula à frente nos dois turnos, e discordam na magnitude, porque a distância do 2º turno é de 1 ponto aqui e de 7,3 pontos lá. O painel registra as duas sem escolher. Nos outros pares de 2º turno Lula vence os quatro: 45% a 35% contra Renan Santos e 45% a 34% contra Romeu Zema, as duas fora de duas margens, 43% a 39% contra Ronaldo Caiado e 41% a 39% contra Augusto Cury, as duas dentro de duas margens. 📅 A divulgação de hoje já estava no calendário publicado pelo painel. 🏷️ Rejeição e aprovação não entram nesta ficha porque o painel não as confirmou em duas fontes independentes.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Augusto Cury",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Renan Santos",
+          "percent2": 35
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Romeu Zema",
+          "percent2": 34
+        }
+      ]
+    },
+    {
+      "institute": "CNT/MDA",
+      "date": "2026-09-15",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2.2,
+      "register": "BR-06902/2026",
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "2026-09-09 a 2026-09-13",
+      "note": "CNT/MDA nacional divulgada em 15/Set, campo de 9 a 13/Set, registro BR-06902/2026 no TSE, 2.002 entrevistas presenciais face a face em domicílios e em pontos de fluxo com eleitores de 16 anos ou mais, margem de 2,2pp com 95% de confiança, custo declarado de R$ 222.453,00 e contratação da Confederação Nacional do Transporte (Gazeta do Povo, Exame e CNN Brasil, e o registro do TSE confere amostra, campo, método e custo). ⭐ LULA LIDERA OS DOIS TURNOS, com 40,5% a 30,4% no 1º e 47,3% a 40% no 2º contra Flávio Bolsonaro, e as duas distâncias, de 10,1 e de 7,3 pontos, ficam fora de duas margens de 2,2. ⚖️ A INDEXA/BROADCAST, DIVULGADA NO MESMO DIA com campo de 10 a 13/Set e a mesma margem, mede o 1º turno em 38% a 34% e o 2º turno em 43% a 42%. As duas casas concordam no sinal e divergem na magnitude: o vão do 2º turno é de 7,3 pontos aqui e de 1 ponto lá, uma diferença de 6,3 pontos entre casas que mediram praticamente os mesmos dias com a mesma margem declarada. O painel registra as duas sem escolher qual descreve melhor o eleitorado. No 1º turno Augusto Cury tem 6%, Ronaldo Caiado 3%, Renan Santos 2,7%, Pablo Marçal 1,8% e Romeu Zema 1%, com 1,1% em outros, 6% de branco ou nulo e 7,5% de indecisos. Esta é a única das duas nacionais do dia que inclui Pablo Marçal no cenário. Nos outros pares de 2º turno Lula vence os quatro fora de duas margens: 47,7% a 34,5% contra Romeu Zema, 47,3% a 33,9% contra Renan Santos, 46,4% a 37,3% contra Ronaldo Caiado e 45,3% a 38,4% contra Augusto Cury. 📅 A divulgação de hoje já estava no calendário publicado pelo painel. 🏷️ A casa publica com uma casa decimal e o painel guarda como ela publicou.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40.5
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 30.4
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 3
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.7
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 1.8
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.3,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 40
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 47.7,
+          "candidate2": "Romeu Zema",
+          "percent2": 34.5
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 47.3,
+          "candidate2": "Renan Santos",
+          "percent2": 33.9
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.4,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 37.3
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 45.3,
+          "candidate2": "Augusto Cury",
+          "percent2": 38.4
+        }
+      ]
+    },
     {
       "institute": "Quaest/Genial",
       "date": "2026-09-14",
@@ -2296,52 +2460,52 @@
     "lastUpdate": "13/09/2026, 13:17"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket com o livro presidencial em USD 149,82M, leitura confirmada de 14/Set, 19:44 BRT (22:44 UTC), que substitui a das 13:02 BRT do mesmo dia. 📈 O VÃO DO CONTRATO DE VENCEDOR ABRIU PELO SEGUNDO DIA, e com os dois lados andando: Flávio Bolsonaro subiu de 49,65% para 51,95% (vol USD 10,68M) e Lula caiu de 47,50% para 45,50% (vol USD 11,01M), contra a leitura confirmada de 13/Set. A distância foi de 2,15pp para 6,45pp, e na leitura das 13:02 ela estava em 3,25pp. ⚠️ Nenhum dos dois preços é extremo: os 51,95% ficam 3,15pp abaixo do topo de Flávio, de 55,10% em 10/Set, e os 45,50% ficam 22,00pp abaixo do topo de Lula, de 67,50% em 16/Ago, e 11,00pp acima do piso dele, de 34,50% em 25/Abr. ⭐ A MAIOR VARIAÇÃO DESTA RODADA ESTÁ NO CONTRATO DE 3º LUGAR DO 1º TURNO: Augusto Cury caiu 10,20pp, para 45,40% (vol USD 196 mil), Ronaldo Caiado subiu 7,00pp, para 15,50% (vol USD 129 mil), e Renan Santos subiu 3,00pp, para 37,50% (vol USD 307 mil). O vão do favorito ali fechou de 21,10pp para 7,90pp. Nas leituras gravadas de 09/Set o contrato de Cury chegou a 43,90%, e o de Caiado chegou a 45,50% em 30/Ago, então nenhum dos dois é extremo. 🔁 NO CONTRATO DE 2º LUGAR, Flávio Bolsonaro cai 1,50pp, para 75,50%, e Lula sobe 1,75pp, para 23,75%, na mesma direção do contrato de vencedor. 🏛️ O CONTRATO DE IMPEACHMENT NO SUPREMO SUBIU 0,65pp e está em 5,25% (vol USD 91 mil), 20,85pp abaixo do topo da série, de 26,10% em 11/Set, e 3,15pp acima do piso, de 2,10% em 08/Jun. O volume acumulado é pequeno o bastante para que ordens isoladas movam o preço, e a ressalva vale nas duas direções. 🗳️ DO LADO DA PESQUISA, duas nacionais saíram no mesmo 14/Set e discordam no sinal do 2º turno, as duas dentro da margem: a BTG/Nexus dá 47% a 46% para Lula e a Genial/Quaest 42% a 40% para Flávio Bolsonaro, e no 1º turno as duas medem os mesmos 5 pontos de vantagem para Lula. 📌 A sessão do Supremo que analisa o pedido de investigação contra Alexandre de Moraes segue marcada para 15/Set. A ordem dos fatos está medida, o vínculo entre eles não.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e em 14/Set confirmaram os CINCO contratos vigiados: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno, impeachment no Supremo e maioria no Senado. As séries de referência são medidas no backup diário do banco, e não na API, que trava a janela em 90 dias e esconderia o começo das séries.",
+    "note": "Preços do Polymarket com o livro presidencial em USD 149,89M, leitura de 15/Set, 14:44 BRT (17:44 UTC), confirmada por duas leituras independentes. 📉 O VÃO DO CONTRATO DE VENCEDOR FECHOU 1,30pp, de 6,45pp para 5,15pp, depois de abrir por dois dias, e fechou com os dois lados andando: Lula subiu de 45,50% para 46,50% (vol USD 11,11M) e Flávio Bolsonaro cedeu de 51,95% para 51,65% (vol USD 10,71M). ⚠️ Nenhum dos dois preços é extremo: os 51,65% ficam 3,45pp abaixo do topo de Flávio, de 55,10% em 10/Set, e os 46,50% ficam 21,00pp abaixo do topo de Lula, de 67,50% em 16/Ago, e 12,00pp acima do piso dele, de 34,50% em 25/Abr. 🏛️ O CONTRATO DE SAÍDA DE MINISTRO DO SUPREMO POR IMPEACHMENT ANTES DE 2027 SUBIU 2,80pp E ESTÁ EM 8,05% (vol USD 91 mil), no dia em que o plenário do Supremo começou a julgar se Alexandre de Moraes será investigado. Ele segue 18,05pp abaixo do topo da série, de 26,10% em 11/Set, e 5,95pp acima do piso, de 2,10% em 08/Jun. 🔁 NO CONTRATO DE 2º LUGAR DO 1º TURNO, Flávio Bolsonaro fica parado em 75,50% e Lula cai 1,90pp, para 21,85%, ou seja o preço de um não se moveu e a participação dele no livro subiu, porque o outro lado cedeu. 🔒 O CONTRATO DE 3º LUGAR DO 1º TURNO NÃO RECEBE PREÇO NOVO NESTA RODADA, porque não há leitura nova dele em 15/Set: os valores exibidos ali seguem sendo os de 14/Set, com Augusto Cury em 45,40%, Renan Santos em 37,50% e Ronaldo Caiado em 15,50%. 🗳️ DUAS NACIONAIS FORAM DIVULGADAS EM 15/Set E CONCORDAM NO SINAL, com Lula à frente nos dois turnos, e divergem na magnitude: o vão do 2º turno é de 1 ponto na Indexa/Broadcast e de 7,3 pontos na CNT/MDA, uma diferença de 6,3 pontos entre casas que mediram praticamente os mesmos dias com a mesma margem declarada de 2,2. O lado pesquisa do cruzamento usa a Indexa/Broadcast, que é a mais recente das duas por hora de divulgação, e por isso Pablo Marçal sai do grafo: aquela casa não o inclui no cenário desta onda.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e em 15/Set confirmaram QUATRO dos cinco contratos vigiados: vencedor, 2º lugar do 1º turno, impeachment no Supremo e maioria no Senado. O contrato de 3º lugar do 1º turno não teve leitura nova em 15/Set, então os valores exibidos ali seguem sendo os de 14/Set, e a página diz isso onde eles aparecem. As séries de referência são medidas no backup diário do banco, e não na API, que trava a janela em 90 dias e esconderia o começo das séries.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 36,
-        "odds": 45.5,
-        "value": 45.5,
-        "polymarket": "45,50%",
+        "percentage": 38,
+        "odds": 46.5,
+        "value": 46.5,
+        "polymarket": "46,50%",
         "pesquisaRange": "34% a 43,4%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 14/Set ele lidera o 1º turno por 5 pontos, 36% a 31% na Genial/Quaest (campo de 10 a 13/Set) e 42% a 37% na BTG/Nexus (campo de 11 a 13/Set), e as duas discordam no par de 2º turno contra Flávio Bolsonaro: 40% a 42% na Genial/Quaest e 47% a 46% na BTG/Nexus. ⚠️ As duas diferenças cabem na margem de 2,0 de cada casa, então nas duas o par é empate técnico. Dentro da Genial/Quaest o par saiu 42% a 41% para ele em 02/Set, 41% a 41% em 07/Set e 40% a 42% agora.",
-        "tendenciaPolymarket": "CAI 2,00pp contra a leitura confirmada de 13/Set, de 47,50% para 45,50%, segundo dia seguido de queda, enquanto o adversário sobe 2,30pp. Fica 22,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, e 11,00pp acima do piso, de 34,50% em 25/Abr. USD 11,01M acumulados no contrato dele. No contrato de 2º lugar do 1º turno sobe 1,75pp, para 23,75%."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele lidera os dois turnos, e as duas discordam na MAGNITUDE. Na Indexa/Broadcast (campo de 10 a 13/Set, telefone) tem 38% no 1º turno e 43% no 2º contra Flávio Bolsonaro; na CNT/MDA (campo de 9 a 13/Set, presencial) tem 40,5% no 1º turno e 47,3% no 2º. ⚠️ O vão do 2º turno é de 1 ponto numa casa e de 7,3 pontos na outra, com a mesma margem declarada de 2,2: na Indexa o par é empate técnico e na CNT/MDA não. Na onda anterior da Indexa, de 26/Ago, o par dela saiu 46% a 41% para ele.",
+        "tendenciaPolymarket": "SOBE 1,00pp contra a leitura confirmada de 14/Set, de 45,50% para 46,50%, e interrompe dois dias seguidos de queda. Fica 21,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, e 12,00pp acima do piso, de 34,50% em 25/Abr. USD 11,11M acumulados no contrato dele. No contrato de 2º lugar do 1º turno cai 1,90pp, para 21,85%."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 31,
-        "odds": 51.95,
-        "value": 51.95,
-        "polymarket": "51,95%",
+        "percentage": 34,
+        "odds": 51.65,
+        "value": 51.65,
+        "polymarket": "51,65%",
         "pesquisaRange": "29% a 40%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 14/Set ele sobe 2 pontos no 1º turno contra a rodada anterior de cada casa, para 31% na Genial/Quaest e 37% na BTG/Nexus, e segue 5 pontos atrás nas duas. No par de 2º turno a Genial/Quaest o põe à frente por 42% a 40% e a BTG/Nexus atrás por 46% a 47%. ⚠️ As duas diferenças cabem na margem de 2,0, e na BTG/Nexus o par tinha saído 46% a 45% para ele em 08/Set.",
-        "tendenciaPolymarket": "SOBE 2,30pp contra a leitura confirmada de 13/Set, de 49,65% para 51,95%, e interrompe dois dias seguidos de queda. Fica 3,15pp abaixo do topo da série dele, de 55,10% em 10/Set. USD 10,68M acumulados no contrato dele. No contrato de 2º lugar do 1º turno cai 1,50pp, para 75,50%."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele fica atrás nos dois turnos. Na Indexa/Broadcast tem 34% no 1º turno, o mesmo valor da onda de 26/Ago da casa, e 42% no 2º turno contra 43% de Lula, uma diferença de 1 ponto que cabe na margem. Na CNT/MDA tem 30,4% no 1º turno e 40% no 2º, 7,3 pontos atrás, fora de duas margens. ⚠️ As duas casas concordam em pô-lo atrás e divergem em quanto: 1 ponto numa, 7,3 na outra.",
+        "tendenciaPolymarket": "CEDE 0,30pp contra a leitura confirmada de 14/Set, de 51,95% para 51,65%. Fica 3,45pp abaixo do topo da série dele, de 55,10% em 10/Set, e 29,65pp acima do piso, de 22,00% em 03/Jul. USD 10,71M acumulados no contrato dele. No contrato de 2º lugar do 1º turno o preço dele NÃO se moveu, e ficou em 75,50%, mas a participação dele naquele livro subiu, porque o lado de Lula cedeu 1,90pp."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 7,
-        "odds": 0.35,
-        "value": 0.35,
-        "polymarket": "0,35%",
+        "percentage": 6,
+        "odds": 0.45,
+        "value": 0.45,
+        "polymarket": "0,45%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NA GENIAL/QUAEST DE 14/Set ele tem 7% no 1º turno, contra 8% em 07/Set, e perde o par de 2º turno para Lula por 38% a 36%. Na BTG/Nexus do mesmo dia tem 6%, contra 9% em 08/Set, e o par contra Lula inverteu dentro da casa, de 45% a 43% a favor dele em 08/Set para 45% a 42% a favor de Lula. ⚠️ Os dois pares ficam dentro de duas margens de 2,0.",
-        "tendenciaPolymarket": "CEDE 0,10pp no contrato de vencedor, para 0,35%, e no contrato de 3º lugar do 1º turno, onde segue favorito, CAI 10,20pp, para 45,40%, a maior variação do painel nesta rodada, com USD 196 mil acumulados naquele contrato. O vão dele para o segundo colocado ali fechou de 21,10pp para 7,90pp."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele tem 6% no 1º turno, o mesmo valor nas duas casas. Na Indexa/Broadcast perde o par de 2º turno para Lula por 39% a 41%, dentro de duas margens de 2,2, e na CNT/MDA perde por 38,4% a 45,3%, fora delas. Na Indexa de 26/Ago ele tinha 1% no 1º turno.",
+        "tendenciaPolymarket": "SOBE 0,10pp no contrato de vencedor, para 0,45%, 4,55pp abaixo do topo da série dele, de 5,00% em 27/Ago. 🔒 No contrato de 3º lugar do 1º turno esta rodada não publica preço novo, porque não há leitura nova dele em 15/Set: o valor exibido segue sendo os 45,40% de 14/Set, com USD 197 mil acumulados naquele contrato."
       },
       {
         "name": "Renan Santos",
-        "percentage": 4,
-        "odds": 1.7,
-        "value": 1.7,
-        "polymarket": "1,70%",
+        "percentage": 3,
+        "odds": 1.6,
+        "value": 1.6,
+        "polymarket": "1,60%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NA GENIAL/QUAEST DE 14/Set ele tem 4% no 1º turno, contra 3% em 07/Set, e perde o par de 2º turno para Lula por 41% a 38%. Na BTG/Nexus do mesmo dia tem 2%, contra 4% em 08/Set, e perde o par por 48% a 37%, fora da margem.",
-        "tendenciaPolymarket": "CEDE 0,15pp no contrato de vencedor, para 1,70%, 0,50pp acima do piso da série dele, de 1,20% em 31/Ago, com USD 13,47M acumulados. No contrato de 3º lugar do 1º turno SOBE 3,00pp, para 37,50%, com USD 307 mil acumulados naquele contrato, depois de dois dias seguidos de queda ali."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele tem 3% no 1º turno na Indexa/Broadcast e 2,7% na CNT/MDA. Perde o par de 2º turno para Lula nas duas e fora de duas margens: 35% a 45% na Indexa e 33,9% a 47,3% na CNT/MDA. Na Indexa de 26/Ago ele tinha 4% no 1º turno e perdia o par por 34% a 46%.",
+        "tendenciaPolymarket": "CEDE 0,10pp no contrato de vencedor, para 1,60%, 0,40pp acima do piso da série dele, de 1,20% em 31/Ago, com USD 13,49M acumulados. 🔒 No contrato de 3º lugar do 1º turno esta rodada não publica preço novo: o valor exibido segue sendo os 37,50% de 14/Set, com USD 310 mil acumulados naquele contrato."
       },
       {
         "name": "Ronaldo Caiado",
@@ -2350,9 +2514,9 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "1% a 5%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NA GENIAL/QUAEST DE 14/Set ele tem 4% no 1º turno e perde o par de 2º turno para Lula por 41% a 39%, dentro da margem. Na BTG/Nexus do mesmo dia tem 5% e perde o par por 47% a 41%, uma distância de 6 pontos que fica fora da margem de 2,0.",
-        "tendenciaPolymarket": "ESTÁVEL em 0,15% no contrato de vencedor, e no contrato de 3º lugar do 1º turno SOBE 7,00pp, para 15,50%, com USD 129 mil acumulados naquele contrato, pelo terceiro dia seguido de alta. Nas leituras gravadas de 30/Ago o mesmo contrato chegou a 45,50% para ele."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele tem 4% no 1º turno na Indexa/Broadcast e 3% na CNT/MDA. Perde o par de 2º turno para Lula por 39% a 43% na Indexa, dentro de duas margens, e por 37,3% a 46,4% na CNT/MDA, fora delas. Na Indexa de 26/Ago ele tinha 5% no 1º turno.",
+        "tendenciaPolymarket": "ESTÁVEL em 0,15% no contrato de vencedor. 🔒 No contrato de 3º lugar do 1º turno esta rodada não publica preço novo: o valor exibido segue sendo os 15,50% de 14/Set, com USD 130 mil acumulados naquele contrato."
       },
       {
         "name": "Pablo Marçal",
@@ -2361,8 +2525,8 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,2%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "A Genial/Quaest de 14/Set não o inclui no cenário estimulado. A BTG/Nexus do mesmo dia o mede em 2% no cenário de 1º turno que o inclui, contra 3% em 08/Set.",
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "A Indexa/Broadcast de 15/Set não o inclui no cenário estimulado desta onda, e por isso ele sai do grafo de divergência. A CNT/MDA do mesmo dia o mede em 1,8% no 1º turno, e é a única das duas nacionais do dia que o testa.",
         "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, o piso do livro, com USD 3,97M acumulados."
       },
       {
@@ -2372,9 +2536,9 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "0,3% a 4%",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "NA GENIAL/QUAEST DE 14/Set ele tem 1% no 1º turno, contra 2% em 07/Set, e perde o par de 2º turno para Lula por 45% a 33%. Na BTG/Nexus do mesmo dia tem 1% e perde por 49% a 38%. As duas distâncias ficam fora da margem.",
-        "tendenciaPolymarket": "ESTÁVEL em 0,15% no contrato de vencedor, com USD 7,30M acumulados, e SOBE 0,05pp no contrato de 3º lugar do 1º turno, para 0,75%, com USD 54 mil acumulados naquele contrato."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 15/Set ele tem 1% no 1º turno, o mesmo valor nas duas casas. Perde o par de 2º turno para Lula por 34% a 45% na Indexa/Broadcast e por 34,5% a 47,7% na CNT/MDA, as duas fora de duas margens.",
+        "tendenciaPolymarket": "ESTÁVEL em 0,15% no contrato de vencedor, com o topo da série dele em 12,00%, de 13/Mai."
       },
       {
         "name": "Tarcísio",
@@ -2383,9 +2547,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "As duas nacionais de 14/Set não o testam em cenário presidencial.",
-        "tendenciaPolymarket": "0,05% no contrato de vencedor, o piso do livro, e ainda assim o contrato dele tem USD 14,07M acumulados, o maior volume do painel presidencial."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "Nenhuma das duas nacionais de 15/Set o inclui no cenário estimulado, e ele segue sem intenção de voto medida no recorte que o painel usa.",
+        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, o piso do livro."
       },
       {
         "name": "Fernando Haddad",
@@ -2394,12 +2558,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "14/09/2026, 19:44",
-        "tendenciaPesquisa": "As duas nacionais de 14/Set não o testam em cenário presidencial.",
-        "tendenciaPolymarket": "0,05% no contrato de vencedor, o piso do livro, com USD 7,54M acumulados."
+        "lastUpdate": "15/09/2026, 14:44",
+        "tendenciaPesquisa": "Nenhuma das duas nacionais de 15/Set o inclui no cenário estimulado de 1º turno, e ele aparece nas pesquisas apenas em pares de 2º turno de outras rodadas.",
+        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, com o topo da série dele em 7,60%, de 26/Mai."
       }
     ],
-    "updatedAt": "14/09/2026, 19:44",
+    "updatedAt": "15/09/2026, 14:44",
     "lastUpdate": "14/09/2026, 19:44"
   }
 }
