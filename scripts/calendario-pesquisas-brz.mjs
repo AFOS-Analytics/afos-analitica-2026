@@ -29,6 +29,7 @@
  */
 
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const MESES_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 const MESES_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -38,7 +39,10 @@ const TSE = 'https://divulgacandcontas.tse.jus.br/divulga/'
 const arg = (n, p) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? p
 const locale = arg('locale', 'pt-BR')
 const dias = Number(arg('dias', 7))
-const hoje = arg('hoje', new Date().toISOString().slice(0, 10))
+// 🔴 Data civil do BRASIL, não UTC, desde 15/Set/2026. A tabela olha para a
+// FRENTE a partir de hoje, então um "hoje" adiantado um dia esconderia as
+// divulgações de hoje e anteciparia as de amanhã. Ver scripts/lib/data-civil-brz.mjs
+const hoje = arg('hoje', dataCivilBrasil())
 
 const fim = new Date(hoje + 'T00:00:00Z')
 fim.setUTCDate(fim.getUTCDate() + dias)

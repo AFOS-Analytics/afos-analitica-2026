@@ -39,9 +39,18 @@ config({ path: '.env' })
 import { fetchTSEPolls } from '../lib/tse/ingest'
 import { acharCpf } from './lib/cpf.mjs'
 import { TETO_API_POLLS, bordaDoCorte, divulgamHoje } from './lib/tse-api-polls.mjs'
+import { datasDeHoje } from './lib/data-civil-brz.mjs'
 
 const BASE = 'https://www.afos-analytics.com'
-const HOJE = new Date().toISOString().slice(0, 10)
+
+// 🔴 "Hoje" aqui é a data civil do BRASIL, não a data UTC, desde 15/Set/2026.
+// O campo com que ela é comparada é a `divulgacao` do registro do TSE, que é
+// data civil brasileira, e das 21h BRT em diante as duas divergem. O bloco
+// `📣 DIVULGAM HOJE` é o gatilho do /atualizar-brz, então o erro andava nas duas
+// direções: nacional já publicada saindo do bloco, e nacional de amanhã
+// entrando nele. Ver scripts/lib/data-civil-brz.mjs
+const DATAS_DE_HOJE = datasDeHoje()
+const HOJE = DATAS_DE_HOJE.br
 
 // 🔒 CPF de teste público, dígitos verificadores válidos, não pertence a ninguém.
 // Existe para provar que o detector está VIVO antes de o zero valer alguma coisa.
@@ -79,6 +88,14 @@ async function main() {
   const semTse = process.argv.includes('--sem-tse')
 
   console.log(`\n🗳️  RELATÓRIO DE PESQUISAS, BRASIL — hoje ${HOJE}, janela de ${dias} dias`)
+  // 🔑 A troca de fuso NÃO pode ser silenciosa: se ela muda o dia, quem lê o
+  // relatório tem de ver, ou o conserto de hoje vira a confusão de amanhã.
+  if (DATAS_DE_HOJE.diverge) {
+    console.log(
+      `   ⚠️ a data UTC já virou para ${DATAS_DE_HOJE.utc}, e "hoje" aqui é a data civil do BRASIL (${DATAS_DE_HOJE.br}),`,
+    )
+    console.log('      porque a `divulgacao` do registro do TSE é data brasileira. Ver scripts/lib/data-civil-brz.mjs')
+  }
 
   // ── Passo 4a: a API de pesquisas ────────────────────────────────────────────
   const api = await json(`${BASE}/api/polls/tse?days=${dias}`)

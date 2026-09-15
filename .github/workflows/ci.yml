@@ -71,7 +71,9 @@ jobs:
       # NAO pode disparar (estadual hoje, nacional amanha, fantasma) e o zero
       # sobre base cortada, que tem de sair INDETERMINADO.
       - name: Teto da API e gatilho do dia
-        run: node scripts/testar-tse-api-polls.mjs
+        run: |
+          node scripts/testar-tse-api-polls.mjs
+          node scripts/testar-data-civil-brz.mjs
 
       # A regua por contrato do check:frescor, que em 13/Set ganhou o DONO
       # ESTRUTURAL: o preco citado dentro do cartao do candidato, onde o nome

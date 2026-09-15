@@ -117,6 +117,21 @@ O TSE aceita registro **antes** da pesquisa ir a campo, então o arquivo traz `d
 
 ✅ **Agora o relatório tem o bloco `📣 DIVULGAM HOJE`**, com protocolo, casa e fantasma separado, e o fecho decide pelo dia: `DISPARA`, `NAO_DISPARA` ou `INDETERMINADO`. ⛔ Divulgação marcada **não é número publicado**: o `/atualizar-brz` entra quando o instituto tiver publicado, e a data do registro é compromisso, não fato.
 
+## 🕐 E "HOJE" é a data civil do BRASIL, não a UTC, corrigido em 15/Set/2026
+
+🔴 **A pendência ficou aberta em 14/Set e o erro andava nas DUAS direções.** Os três leitores calculavam `hoje` como `new Date().toISOString().slice(0, 10)`, que é a data **UTC**, e o campo com que ela é comparada é a `divulgacao` do registro do TSE, que é data civil brasileira. Das **21h BRT** em diante as duas divergem, e o bloco `📣` é o gatilho do painel:
+
+- as nacionais que divulgaram HOJE saem do bloco e caem em "vencidas", então o painel não reflete pesquisa **que já está publicada**;
+- e as de AMANHÃ entram como "divulgam hoje", então o gatilho dispara para pesquisa **que ainda não saiu**.
+
+Nenhuma das duas dá erro. Medido no dia: `2026-09-16T02:30:00Z` é **15/Set no Brasil** e 16/Set em UTC, e a passada dos EUA daquela manhã foi certificada às 01:07Z, ou seja 22:07 BRT do dia anterior, então a rodada roda nessa faixa de verdade.
+
+✅ A regra mora em `scripts/lib/data-civil-brz.mjs` e os três leitores a usam: `relatorio-pesquisas-brz.ts`, `conferir-escopo-derivado.mjs` e `calendario-pesquisas-brz.mjs`. 🔑 **A conta é pelo fuso NOMEADO (`America/Sao_Paulo`), não por menos três horas.** O Brasil aboliu o horário de verão em 2019, então hoje dá o mesmo, mas se ele voltar o `-3` passa a errar um dia por verão em silêncio, e é a data de publicação que está em jogo.
+
+⚠️ **E a troca não é silenciosa:** quando as duas datas divergem, o relatório imprime as duas e diz qual está usando.
+
+🧪 `node scripts/testar-data-civil-brz.mjs`, 56 casos no CI, 8 de 8 mutações reprovadas. O caso que mais importa é a borda das **03:00Z**, que é a meia-noite de Brasília. 🕳️ E o anti-silêncio é de tipo, não de valor: `new Date(null)` e `new Date(true)` devolvem a **época de 1970**, que é data VÁLIDA, então sem guarda de tipo um `null` viraria "1970-01-01" sem reclamar.
+
 🔴 **O segundo achado, do mesmo dia e mais fundo: `/api/polls/tse` para em 200 linhas e diz `total` igual ao que serviu.** O `take: 200` é ordenado por divulgação decrescente e o `total` é `findings.length`, então **o "total declarado" nunca diverge das linhas e não acusa corte nenhum.** Medido no Neon:
 
 | janela | no banco | servidas | cortadas | nacionais cortadas |

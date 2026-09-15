@@ -33,6 +33,7 @@
 import { readFileSync } from 'fs'
 import { chaveDaCasa, conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const BASE = 'https://www.afos-analytics.com'
 
@@ -43,7 +44,12 @@ const arg = (nome, padrao) => {
 
 const dias = arg('dias', '30')
 const arquivo = arg('arquivo', null)
-const hoje = arg('hoje', new Date().toISOString().slice(0, 10))
+// 🔴 Data civil do BRASIL, não UTC, desde 15/Set/2026: este conferidor compara
+// com a `divulgacao` do registro do TSE, que é data brasileira, e decide se um
+// rótulo frágil está no CALENDÁRIO VIVO ou já vencido. Das 21h BRT em diante o
+// UTC já virou, e "já vencido" viraria "vivo" e vice-versa.
+// Ver scripts/lib/data-civil-brz.mjs
+const hoje = arg('hoje', dataCivilBrasil())
 
 function linhasDe(json) {
   const arr = json.data ?? json.polls ?? json.items ?? (Array.isArray(json) ? json : [])
