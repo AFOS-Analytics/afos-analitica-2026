@@ -88,6 +88,65 @@ export function urlsDaDaily(markdown) {
  * seguem sem explicação; a de 29/Jul abortou no disjuntor com 3 de 38. Marcar a
  * daily como feita porque houve rodada esconderia exatamente esse resto.
  */
+/** A pausa que se cumpre depois de um bloqueio de host medido, em dias. */
+export const PAUSA_DIAS = 4
+
+/**
+ * 🔴 A PAUSA SE MEDE CONTRA O LEDGER, E ANTES DISTO ELA ERA UMA FRASE FIXA.
+ *
+ * A linha final deste script dizia, em toda execução e sem condição nenhuma:
+ *
+ *     "⛔ Só depois da pausa de 3 a 4 dias SEM sondar. O host está bloqueando."
+ *
+ * Medido em 15/Set/2026: o último bloqueio registrado no ledger é de 05/Set
+ * 00:55Z, DEZ dias antes, e a linha seguia afirmando no presente que o host
+ * bloqueia. Ela é uma instrução datada que se lê como veredito vivo, e a
+ * consequência prática não é cosmética: ela manda NÃO SONDAR, então o passivo
+ * fica congelado enquanto ninguém questiona a frase.
+ *
+ * 🔑 E essa é exatamente a família de defeito que a ficha deste assunto
+ * registra: o diagnóstico de bloqueio já errou três vezes, e a resposta é
+ * MEDIR em vez de herdar. Uma frase fixa é herança.
+ * Ver memory/feedback_wayback_bloqueio_de_host_nao_se_resolve_insistindo.md
+ *
+ * @param agora epoch em ms
+ * @param texto conteúdo do ledger, injetável para o teste
+ */
+export function vereditoDaPausa(agora, texto = existsSync(LEDGER) ? readFileSync(LEDGER, 'utf8') : '') {
+  const abortos = texto
+    .split('\n')
+    .map((l) => l.trim())
+    .filter(Boolean)
+    .map((l) => {
+      try {
+        return JSON.parse(l)
+      } catch {
+        return null
+      }
+    })
+    .filter((r) => r && r.abortou && r.quando)
+    .map((r) => Date.parse(r.quando))
+    .filter((t) => Number.isFinite(t))
+
+  if (!abortos.length) {
+    return '✅ Nenhum bloqueio de host registrado no ledger: seguir para o pré-check.'
+  }
+
+  const ultimo = Math.max(...abortos)
+  const dias = Math.floor((agora - ultimo) / 86400000)
+  const quando = new Date(ultimo).toISOString().slice(0, 16).replace('T', ' ')
+
+  if (dias < PAUSA_DIAS) {
+    const faltam = PAUSA_DIAS - dias
+    return `⛔ Bloqueio de host medido em ${quando}Z, há ${dias} dia(s). Faltam ${faltam} dia(s) de pausa SEM sondar.`
+  }
+  return (
+    `✅ Pausa CUMPRIDA: o último bloqueio medido é de ${quando}Z, há ${dias} dia(s), acima dos ${PAUSA_DIAS} de pausa.\n` +
+    `      Próximo passo é o pré-check, e ele precisa do MSYS_NO_PATHCONV=1 no Git Bash,\n` +
+    `      senão o /save/ vira caminho de arquivo e o 404 é lido como bloqueio.`
+  )
+}
+
 export function lerLedger(texto) {
   const porDaily = new Map()
   for (const l of (texto ?? '').split('\n').filter(Boolean)) {
@@ -179,7 +238,7 @@ function principal() {
   if (prontas.length) console.log(`\n   ${prontas.length} daily(s) sem nada faltando: ${prontas.map((x) => x.data).join(', ')}`)
 
   console.log(`\n   ▶ próxima: ${fila[0]?.data ?? '(fila vazia)'}, exposta há ${fila[0] ? Math.round((hoje - Date.parse(`${fila[0].data}T12:00:00Z`)) / 86400000) : '-'} dias, ${fila[0]?.falta ?? 0} URLs faltando.`)
-  console.log(`   ⛔ Só depois da pausa de 3 a 4 dias SEM sondar. O host está bloqueando.\n`)
+  console.log(`   ${vereditoDaPausa(hoje)}\n`)
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) principal()

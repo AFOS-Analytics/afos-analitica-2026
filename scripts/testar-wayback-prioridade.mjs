@@ -12,7 +12,16 @@
  * Uso: node scripts/testar-wayback-prioridade.mjs
  */
 
-import { classificar, custoArchive, custoGoogle, lerLedger, ranquear, urlsDaDaily } from './wayback-prioridade.mjs'
+import {
+  classificar,
+  custoArchive,
+  custoGoogle,
+  lerLedger,
+  PAUSA_DIAS,
+  ranquear,
+  urlsDaDaily,
+  vereditoDaPausa,
+} from './wayback-prioridade.mjs'
 
 let falhas = 0
 let passes = 0
@@ -105,6 +114,56 @@ console.log('\n5. A extração de URL da daily')
   conferir('deduplica a mesma URL citada duas vezes', u.length === 2, JSON.stringify(u))
   conferir('⛔ Polymarket e o próprio site não são matéria a preservar', !u.some((x) => /polymarket|afos-analytics/.test(x)))
   conferir('markdown sem link nenhum devolve lista vazia', urlsDaDaily('só texto').length === 0)
+}
+
+console.log('\n6. O veredito da PAUSA, que antes era frase fixa')
+{
+  // 🔴 A linha final do script dizia "O host está bloqueando" em TODA execução,
+  //    sem condição. Medido em 15/Set/2026: o bloqueio era de 05/Set, dez dias
+  //    antes, e a frase mandava não sondar. Instrução datada lida como veredito
+  //    vivo congela o passivo, e quem a lê não tem como saber que ela é velha.
+  const AGORA = Date.parse('2026-09-15T18:00:00Z')
+  const abortoEm = (iso) => `{"quando":"${iso}","daily":"2026-07-29","urls":38,"ok":3,"fail":5,"abortou":true}`
+  const okEm = (iso) => `{"quando":"${iso}","daily":"2026-09-04","urls":23,"ok":6,"fail":17,"abortou":false}`
+
+  conferir(
+    'ledger vazio NÃO afirma bloqueio',
+    /Nenhum bloqueio/.test(vereditoDaPausa(AGORA, '')),
+    vereditoDaPausa(AGORA, '')
+  )
+  conferir(
+    'rodada que NÃO abortou não conta como bloqueio',
+    /Nenhum bloqueio/.test(vereditoDaPausa(AGORA, okEm('2026-09-14T23:00:00Z'))),
+    vereditoDaPausa(AGORA, okEm('2026-09-14T23:00:00Z'))
+  )
+  conferir(
+    'bloqueio de 10 dias atrás devolve pausa CUMPRIDA',
+    /Pausa CUMPRIDA/.test(vereditoDaPausa(AGORA, abortoEm('2026-09-05T00:55:00Z')))
+  )
+  conferir(
+    'bloqueio de HOJE manda esperar',
+    /Faltam \d+ dia\(s\) de pausa/.test(vereditoDaPausa(AGORA, abortoEm('2026-09-15T02:00:00Z')))
+  )
+  conferir(
+    `bloqueio de ${PAUSA_DIAS - 1} dias ainda NÃO cumpriu a pausa`,
+    /Faltam/.test(vereditoDaPausa(AGORA, abortoEm('2026-09-12T18:00:00Z')))
+  )
+  conferir(
+    `bloqueio de exatamente ${PAUSA_DIAS} dias JÁ cumpriu`,
+    /Pausa CUMPRIDA/.test(vereditoDaPausa(AGORA, abortoEm('2026-09-11T18:00:00Z')))
+  )
+  conferir(
+    'com dois abortos, vale o MAIS RECENTE',
+    /Faltam/.test(vereditoDaPausa(AGORA, `${abortoEm('2026-08-01T00:00:00Z')}\n${abortoEm('2026-09-14T00:00:00Z')}`))
+  )
+  conferir(
+    'linha corrompida no ledger não derruba o veredito',
+    /Pausa CUMPRIDA/.test(vereditoDaPausa(AGORA, `nao e json\n${abortoEm('2026-09-05T00:55:00Z')}`))
+  )
+  conferir(
+    'a pausa cumprida LEMBRA do MSYS_NO_PATHCONV, que já custou dois falsos bloqueios',
+    /MSYS_NO_PATHCONV/.test(vereditoDaPausa(AGORA, abortoEm('2026-09-05T00:55:00Z')))
+  )
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
