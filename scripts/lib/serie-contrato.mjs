@@ -546,3 +546,38 @@ export function parBinario(lados) {
 
   return saida
 }
+
+/**
+ * ⚖️ A CERTIFICADA ANTERIOR, que é o "antes" certo para o relatório da passada.
+ *
+ * 🔴 POR QUE EXISTE, medido em 13 e em 15/Set/2026. O bloco do par compara a
+ * certificada de agora com o ÚLTIMO PONTO GRAVADO no backup, e isso responde
+ * "o que andou na cauda cega". A pergunta do relatório é outra: o que andou
+ * desde a certificada da PASSADA ANTERIOR, que é o número que foi publicado.
+ * Em 13/Set o bloco imprimiu +0,00pp em tudo e a conta contra a certificada da
+ * véspera, −2,00pp no Senado R, "foi feita à mão". Em 15/Set a mão de novo:
+ * os dois lados do Senado subiram +1,00pp no cru, a soma foi de 99% para 101%,
+ * e normalizado nada andou (−0,06/+0,06). O bloco dizia +0,00pp.
+ *
+ * 🔑 Escolhe a certificada MAIS RECENTE com pelo menos `minMinutos` antes da
+ * atual. O intervalo mínimo existe porque a trava refeita minutos depois de um
+ * bloqueio grava outra certificada, e comparar contra ela mediria quase nada
+ * enquanto se lê como "desde a última passada". O carimbo vem de dentro do
+ * arquivo (`fetchedAt`), nunca do nome: nome é convenção, conteúdo é medida.
+ */
+export function escolherCapturaAnterior(capturas, carimboAtual, { minMinutos = 60 } = {}) {
+  const t0 = Date.parse(carimboAtual ?? '')
+  if (!Number.isFinite(t0)) return null
+  let melhor = null
+  let tMelhor = -Infinity
+  for (const c of capturas ?? []) {
+    const t = Date.parse(c?.fetchedAt ?? '')
+    if (!Number.isFinite(t)) continue
+    if (t0 - t < minMinutos * 60_000) continue
+    if (t > tMelhor) {
+      melhor = c
+      tMelhor = t
+    }
+  }
+  return melhor
+}

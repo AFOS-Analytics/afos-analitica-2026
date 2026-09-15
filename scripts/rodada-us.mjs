@@ -137,10 +137,13 @@ function imprimirEsperado() {
   }
 
   let media = null
+  let lastUpdateArquivo = null
   const arq = 'public/us-polls-data.json'
   if (existsSync(arq)) {
     try {
-      media = Number(JSON.parse(readFileSync(arq, 'utf8')).mediaAfos?.vantagemDem).toFixed(2)
+      const d = JSON.parse(readFileSync(arq, 'utf8'))
+      media = Number(d.mediaAfos?.vantagemDem).toFixed(2)
+      lastUpdateArquivo = d.lastUpdate ?? null
     } catch {}
   }
 
@@ -152,6 +155,17 @@ function imprimirEsperado() {
     console.log('      vírgula no pt-BR e no ES.')
     console.log('   ⚠️ A tela serve CACHE e estes vieram com fresh=1. Reprovar aqui pode ser')
     console.log('      só defasagem de cache: reler o mercado e comparar antes de acusar.')
+    if (media && media !== 'NaN') {
+      // 🔴 Medido em 15/Set/2026: o 6º valor sai do ARQUIVO LOCAL e a tela escolhe
+      //    entre o arquivo PUBLICADO e o registro do Neon (lib/dashboard/us-static-data.ts:
+      //    o arquivo vence só se o lastUpdate dele for MAIS NOVO). Com a CBS no disco
+      //    e ainda sem deploy, a tela servia D+5.09 do Neon e este comando pedia
+      //    D+5.36: reprovaria uma tela certa. Depois do deploy, o arquivo novo vence.
+      console.log(`   ⚠️ A média (${media}) é a do arquivo LOCAL, lastUpdate ${lastUpdateArquivo ?? '?'}. A tela usa o arquivo`)
+      console.log('      PUBLICADO só se ele for mais novo que o registro do Neon. Antes do deploy e antes')
+      console.log('      do cron das 07:10Z, ela pode servir a média do registro anterior: reprovar SÓ no')
+      console.log('      último valor, nesse intervalo, é essa escolha e não defeito da tela.')
+    }
   }
 }
 

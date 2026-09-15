@@ -17,9 +17,14 @@
  * mais de uma vez. **Data encerrada nunca é reescrita.** Erro em data passada se
  * corrige por errata, não por reescrita, senão a série deixa de ser auditável.
  *
+ * ⏳ E A DATA CORRENTE SÓ NASCE DEPOIS DO ÚLTIMO CRON DO DIA, desde 15/Set/2026.
+ * Criada antes, ela congela a coleta parcial quando o dia UTC vira. A regra, e
+ * por que ela lê a agenda do vercel.json, está em lib/us-press/data-corrente.mjs.
+ *
  * Uso:
- *   npx tsx scripts/snapshot-us-press.ts            # ensaio, não escreve
+ *   npx tsx scripts/snapshot-us-press.ts                  # ensaio, não escreve
  *   npx tsx scripts/snapshot-us-press.ts --apply
+ *   npx tsx scripts/snapshot-us-press.ts --apply --dia-corrente   # cria a data de hoje mesmo cedo
  */
 import { config } from 'dotenv'
 config({ path: '.env.local' })
@@ -28,8 +33,10 @@ config({ path: '.env' })
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'fs'
 import { join } from 'path'
 import { pathToFileURL } from 'url'
+import { agendaDaRota, decidirDataCorrente, ultimoCronDoDia, ACOES } from '../lib/us-press/data-corrente.mjs'
 
 const APLICAR = process.argv.includes('--apply')
+const FORCAR_DIA_CORRENTE = process.argv.includes('--dia-corrente')
 const DIR_ARQUIVO = join(process.cwd(), 'public', 'us-press-archive')
 const PISO = join(process.cwd(), 'public', 'us-press-data.json')
 
@@ -65,7 +72,13 @@ async function main() {
   if (APLICAR && !existsSync(DIR_ARQUIVO)) mkdirSync(DIR_ARQUIVO, { recursive: true })
 
   const hoje = hojeUtc()
-  let novos = 0, regerados = 0, preservados = 0, invalidos = 0
+  let ultimoCron: { hora: number; minuto: number } | null = null
+  try {
+    ultimoCron = ultimoCronDoDia(agendaDaRota(JSON.parse(readFileSync('vercel.json', 'utf-8')), '/api/cron/refresh-us-press'))
+  } catch {
+    ultimoCron = null
+  }
+  let novos = 0, regerados = 0, preservados = 0, invalidos = 0, adiados = 0
   let maisRecente: { iso: string; payload: unknown } | null = null
 
   for (const r of rows) {
@@ -97,6 +110,15 @@ async function main() {
       continue
     }
 
+    if (iso === hoje) {
+      const d = decidirDataCorrente({ jaExiste, agora: new Date(), ultimoCron, forcar: FORCAR_DIA_CORRENTE })
+      if (d.acao === ACOES.ADIAR) {
+        console.log(`  ⏳ ${iso}  ${String(itens).padStart(3)} itens  data corrente ADIADA: ${d.motivo}`)
+        adiados++
+        continue
+      }
+    }
+
     const acao = jaExiste ? 'regerado (data corrente)' : 'NOVO'
     console.log(`  ${jaExiste ? '♻️ ' : '✅'} ${iso}  ${String(itens).padStart(3)} itens · ${veics} veículos  ${acao}`)
     if (APLICAR) writeFileSync(destino, JSON.stringify(payload, null, 2) + '\n', 'utf-8')
@@ -108,7 +130,10 @@ async function main() {
     if (APLICAR) writeFileSync(PISO, JSON.stringify(maisRecente.payload, null, 2) + '\n', 'utf-8')
   }
 
-  console.log(`\n${novos} novos · ${regerados} regerados · ${preservados} preservados · ${invalidos} inválidos`)
+  console.log(`\n${novos} novos · ${regerados} regerados · ${preservados} preservados · ${adiados} adiados · ${invalidos} inválidos`)
+  if (adiados) {
+    console.log('⏳ a data adiada nasce completa na próxima passada depois do último cron, a partir do registro do Neon. Nada se perde.')
+  }
   if (APLICAR) {
     const total = readdirSync(DIR_ARQUIVO).filter(f => f.endsWith('.json')).length
     console.log(`arquivo em disco: ${total} coletas`)

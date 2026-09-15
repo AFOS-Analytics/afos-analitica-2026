@@ -34,6 +34,7 @@ import {
   oQueAJanelaEsconde,
   parBinario,
   precosCertificados,
+  escolherCapturaAnterior,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -103,6 +104,30 @@ function lerCaptura(pais, chavesDaSerie) {
   } catch {
     return vazio
   }
+}
+
+/**
+ * A certificada da PASSADA ANTERIOR, lida entre as cópias com carimbo que a
+ * trava grava em .cache/capture-guard/{pais}-*.json. Ver escolherCapturaAnterior.
+ */
+function lerCapturaAnterior(pais, carimboAtual, chavesDaSerie) {
+  const dir = '.cache/capture-guard'
+  if (!carimboAtual || !existsSync(dir)) return null
+  const candidatas = []
+  for (const f of readdirSync(dir)) {
+    if (!f.startsWith(`${pais}-`) || !f.endsWith('.json')) continue
+    try {
+      const s = JSON.parse(readFileSync(join(dir, f), 'utf8'))
+      if (s?.fetchedAt) candidatas.push({ arquivo: f, fetchedAt: s.fetchedAt, conteudo: s })
+    } catch {
+      // arquivo ilegível não vira "antes": sem carimbo não há comparação
+    }
+  }
+  const escolhida = escolherCapturaAnterior(candidatas, carimboAtual)
+  if (!escolhida) return null
+  const { precos, livrosBloqueados } = precosCertificados(escolhida.conteudo)
+  const { casadas } = casarCaptura(precos, pais, chavesDaSerie)
+  return { arquivo: escolhida.arquivo, carimbo: escolhida.fetchedAt, precos: casadas, livrosBloqueados }
 }
 
 function principal() {
@@ -334,6 +359,50 @@ function principal() {
         console.log(`           ou os sinais se opõem. Escrever o Δ cru sozinho aqui descreve o LIVRO, não a disputa.`)
       }
       console.log()
+    }
+
+    /**
+     * ⚖️ E O MESMO PAR CONTRA A CERTIFICADA ANTERIOR, criado em 15/Set/2026.
+     * O bloco acima mede a cauda cega (último gravado -> agora). Este mede o
+     * que andou desde a PASSADA ANTERIOR, que é o Δ do relatório.
+     */
+    const anterior = lerCapturaAnterior(pais, velha ? null : carimbo, new Set(livros.keys()))
+    if (!anterior) {
+      console.log(`   ⚖️ PAR BINÁRIO contra a certificada ANTERIOR: sem certificada com 1h ou mais antes desta (ou a de agora está velha)
+`)
+    } else {
+      const horas = idadeEmHoras(anterior.carimbo) - (idade ?? 0)
+      console.log(`   ⚖️ PAR BINÁRIO contra a certificada ANTERIOR · ${anterior.carimbo} (${horas.toFixed(1)}h antes desta) · ${anterior.arquivo}`)
+      if (anterior.livrosBloqueados.length) {
+        console.log(`      🔒 livro(s) bloqueado(s) naquela certificada, sem "antes" para eles: ${anterior.livrosBloqueados.map((l) => l.grupo).join(', ')}`)
+      }
+      console.log()
+      for (const [slug, lados] of pares) {
+        const comAnterior = lados.map((l) => ({ ...l, antes: anterior.precos.get(`${slug}␟${l.outcome}`) ?? null }))
+        const p = parBinario(comAnterior)
+        console.log(`      ${slug}`)
+        if (!p || !p.ehPar || p.somaAntes == null) {
+          console.log(`        (sem os dois lados nas duas certificadas, ou não é par: não se calcula)
+`)
+          continue
+        }
+        const sinal = (x) => (x == null ? '   n/d' : `${x >= 0 ? '+' : ''}${x.toFixed(2)}pp`)
+        console.log(`        soma do par   ${p.somaAntes.toFixed(2)}% (certificada anterior)  ->  ${p.somaAgora.toFixed(2)}% (certificada)   ${sinal(p.deltaSoma)}`)
+        for (const l of p.lados) {
+          console.log(
+            `        ${l.outcome.padEnd(14)} cru ${l.antes.toFixed(2)} -> ${l.agora.toFixed(2)}  ${sinal(l.deltaCru)}` +
+              `   |   normalizado ${l.normAntes.toFixed(2)} -> ${l.normAgora.toFixed(2)}  ${sinal(l.deltaNorm)}`
+          )
+        }
+        const cruGrande = p.lados.some((l) => Math.abs(l.deltaCru) >= 0.5)
+        const normPequeno = p.lados.every((l) => Math.abs(l.deltaNorm) < 0.25)
+        if (p.discordam) {
+          console.log(`        ⚠️ DISCORDAM: um lado parado no cru andou no normalizado, ou os sinais se opõem.`)
+        } else if (cruGrande && normPequeno) {
+          console.log(`        ⚠️ o cru andou e o normalizado quase não: é a SOMA do par que se moveu. Isso é spread do livro, não a disputa.`)
+        }
+        console.log()
+      }
     }
   }
 

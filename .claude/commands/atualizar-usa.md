@@ -185,6 +185,10 @@ node scripts/rodada-us-imprensa.mjs --sem-cron     # não chama produção, só 
 
 📌 **"DIFERE do banco, preservado" em data encerrada é o estado normal, não defeito:** o arquivo guarda a coleta do momento em que foi arquivado, e o cron do dia seguiu gravando depois. Data encerrada nunca é reescrita.
 
+⏳ **E a DATA CORRENTE só nasce depois do último cron do dia**, desde 15/Set/2026. Antes disso o arquivador a ADIA e imprime `⏳ data corrente ADIADA`. Motivo medido: arquivo criado cedo vira data encerrada com a coleta parcial quando o dia UTC vira (em 05/Set, tirado às 02:28Z bateu 0 de 10 com o banco). Nada se perde: o Neon guarda o registro do dia e a próxima passada o arquiva completo. O horário sai do `vercel.json`, não de constante. Data corrente que JÁ tem arquivo continua sendo regerada. Forçar a criação cedo: `--dia-corrente`. Regra em `lib/us-press/data-corrente.mjs`, 20 casos no CI.
+
+⚠️ **O `--ensaio` do `imprensa:usa` CHAMA o cron de produção** (a coleta), só não arquiva. Rodar duas vezes é gravar duas vezes o registro do dia no Neon. Para só olhar o arquivo, `npx tsx scripts/snapshot-us-press.ts` sem `--apply`.
+
 A coleta vive na rota do cron:
 
 🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente, e chamar com a variável crua devolve **`{"error":"Unauthorized"}` com HTTP 401**, fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:
@@ -248,6 +252,8 @@ Um comando, e ele responde a pergunta inteira: por contrato binário, quantos po
 
 🏷️ **Δ que sobrevive à normalização é informação; Δ que some é spread.** O bloco marca com `DISCORDAM` exatamente os livros em que as duas leituras divergem, que são os únicos em que a distinção muda a frase.
 
+🚀 **E desde 15/Set/2026 ele faz o mesmo par contra a CERTIFICADA ANTERIOR**, que é o Δ do relatório. O bloco de cima compara com o último ponto GRAVADO (a cauda cega) e em 13 e 15/Set imprimiu +0,00pp em tudo enquanto a conta contra a passada anterior era outra, feita à mão. A escolha da certificada anterior (a mais recente com 1h ou mais antes, pelo `fetchedAt` de dentro do arquivo) mora em `escolherCapturaAnterior`, com casos no CI. Medido no dia: Senado D e R **+1,00pp cru**, soma 99% → 101%, normalizado **−0,06/+0,06**, marcado DISCORDAM. É spread do livro, não a disputa.
+
 ⛔ **Dois desfechos não são um par só por serem dois.** Ele exige soma perto de 100, porque o que faz um par ser par é a EXCLUSIVIDADE e não a contagem. Sem isso, dois partidos menores de um livro brasileiro somando 1,20% virariam 50/50, número redondo e inventado. Quando recusa, ele **diz que recusou e por quê**, em vez de sumir com a linha.
 
 🔴 **NÃO usar a rota `/api/market/history` para isto, e o motivo foi medido em 04/Set/2026.** O filtro de slug funciona nos EUA, mas a JANELA não:
@@ -307,6 +313,8 @@ Ele abre as três telas, espera o fetch do cliente pousar e procura cada valor n
 ⭐ **Ele nasceu em 06/Set/2026 com dois defeitos que ele mesmo denunciou na estreia**, e os dois estão plantados em `scripts/testar-conferir-tela.mjs`, 20 casos: comparar `87.50` contra tela que escreve `87,50` reprovou DUAS telas corretas, e `includes('51.50')` deu verdadeiro numa tela que nem usa ponto decimal, porque o pedaço estava dentro de outro número. **Falso positivo que manda consertar o que está bom gasta o crédito do portão**, e acerto por acaso é indistinguível de acerto de verdade no relatório.
 
 🏷️ **Ele confere NÚMERO, não etiqueta.** Valor certo com rótulo errado passa por aqui, e essa é a classe de defeito que segue sem portão.
+
+🔴 **O 6º valor, a média do generic ballot, depende do DEPLOY.** O comando pronto tira a média do arquivo LOCAL; a tela escolhe entre o arquivo PUBLICADO e o registro do Neon, e o arquivo só vence se o `lastUpdate` dele for mais novo (`lib/dashboard/us-static-data.ts`). Medido em 15/Set/2026: com a CBS no disco e sem deploy, a tela servia D+5,09 do Neon e o comando pedia D+5,36. Conferir antes do deploy com o valor do Neon; depois do deploy, com o do arquivo.
 
 Sete seções, nesta ordem, aprovada pelo André em 28/Jul: cartão de apresentação, mercado de previsão, pesquisas para a Câmara, grafo do cruzamento, contexto estrutural, imprensa, limitações declaradas.
 

@@ -25,6 +25,7 @@ import {
   oQueAJanelaEsconde,
   parBinario,
   precosCertificados,
+  escolherCapturaAnterior,
   serieDe,
   vereditoSuperlativo,
 } from './lib/serie-contrato.mjs'
@@ -485,6 +486,38 @@ console.log('\n7. 🔒 O VEREDITO da trava, que o CLI nunca lia (medido em 12/Se
     })()
   )
   conferir('captura nula não explode e não inventa preço', precosCertificados(null).vereditoAusente === true)
+}
+
+console.log('\n8. ⚖️ a certificada ANTERIOR, o "antes" do relatório (15/Set/2026)')
+{
+  const agora = '2026-09-15T01:07:11.104Z'
+  const lista = [
+    { arquivo: 'us-2026-09-13T18-08-44-617Z.json', fetchedAt: '2026-09-13T18:08:44.617Z' },
+    { arquivo: 'us-2026-09-13T20-13-46-445Z.json', fetchedAt: '2026-09-13T20:13:46.445Z' },
+    { arquivo: 'us-2026-09-15T01-07-11-104Z.json', fetchedAt: agora },
+    { arquivo: 'us-2026-09-15T00-50-00-000Z.json', fetchedAt: '2026-09-15T00:50:00.000Z' },
+    { arquivo: 'podre.json' },
+    { arquivo: 'us-2026-09-16T00-00-00-000Z.json', fetchedAt: '2026-09-16T00:00:00.000Z' },
+  ]
+  const e = escolherCapturaAnterior(lista, agora)
+  conferir('escolhe a mais recente com 1h ou mais antes: a de 13/Set 20:13Z', e?.arquivo === 'us-2026-09-13T20-13-46-445Z.json', JSON.stringify(e))
+  conferir('🔑 nunca a PRÓPRIA certificada de agora', escolherCapturaAnterior([lista[2]], agora) === null)
+  conferir('🔑 nem a trava refeita 17 minutos antes', escolherCapturaAnterior([lista[3]], agora) === null)
+  conferir('nem uma do FUTURO', escolherCapturaAnterior([lista[5]], agora) === null)
+  conferir('arquivo sem fetchedAt não vira "antes"', escolherCapturaAnterior([lista[4]], agora) === null)
+  conferir('carimbo atual ilegível não escolhe nada', escolherCapturaAnterior(lista, 'ontem') === null)
+  conferir('o intervalo mínimo é configurável', escolherCapturaAnterior(lista, agora, { minMinutos: 10 })?.arquivo === 'us-2026-09-15T00-50-00-000Z.json')
+  conferir('lista nula não explode', escolherCapturaAnterior(null, agora) === null)
+}
+{
+  // O caso real do Senado em 15/Set: cru +1,00 nos dois lados, normalizado quase parado.
+  const p = parBinario([
+    { outcome: 'Democratas', antes: 52.5, agora: 53.5 },
+    { outcome: 'Republicanos', antes: 46.5, agora: 47.5 },
+  ])
+  conferir('Senado 15/Set: soma 99 -> 101', Math.abs(p.somaAntes - 99) < 1e-9 && Math.abs(p.somaAgora - 101) < 1e-9)
+  conferir('Senado 15/Set: D normalizado cai 0,06 com o cru subindo 1,00', Math.abs(p.lados[0].deltaNorm + 0.06) < 0.005 && p.lados[0].deltaCru === 1)
+  conferir('e isso é DISCORDAM, por sinal oposto', p.discordam === true)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)

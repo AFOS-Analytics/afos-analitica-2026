@@ -92,7 +92,14 @@ jobs:
           node scripts/testar-atribuicao-us.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
+          node scripts/testar-data-corrente-imprensa.mjs
           python3 scripts/testar-hf-upload-us2026.py
+
+      # A regra que decide se um superlativo pode ser escrito, e o par binario
+      # cru e normalizado, nos dois paises. Puro, sem rede nem backup. Ficou
+      # fora do CI ate 15/Set, quando ganhou a escolha da certificada ANTERIOR.
+      - name: Serie dos contratos e par binario
+        run: node scripts/testar-serie-contrato.mjs
 
       # Os portoes de CONTEUDO viviam so em .git/hooks/pre-commit, que NAO e
       # versionado: clone novo, maquina nova ou commit com --no-verify passavam

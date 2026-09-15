@@ -134,7 +134,7 @@ console.log(regua)
  * a saída do snapshot inteira sumida. Os argumentos são fixos e escritos nesta
  * linha, então não há entrada de fora a escapar.
  */
-const cmd = 'npx tsx scripts/snapshot-us-press.ts' + (ensaio ? '' : ' --apply')
+const cmd = 'npx tsx scripts/snapshot-us-press.ts' + (ensaio ? '' : ' --apply') + (argv.includes('--dia-corrente') ? ' --dia-corrente' : '')
 const r = spawnSync(cmd, { stdio: 'inherit', shell: true })
 if (r.error) console.log('❌ o arquivamento nem chegou a rodar: ' + r.error.message)
 
