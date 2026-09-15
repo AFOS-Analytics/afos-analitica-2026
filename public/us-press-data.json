@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-15",
-  "fetchedAt": "2026-09-15T01:10:38.020Z",
+  "fetchedAt": "2026-09-15T16:11:37.950Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,111 +113,111 @@
     }
   ],
   "qualidade": {
-    "lidos": 139,
-    "naLista": 69,
-    "foraDaLista": 70,
+    "lidos": 145,
+    "naLista": 56,
+    "foraDaLista": 89,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 22,
-    "veiculosRepresentados": 8,
+    "descartadosPorAcompanhamento": 16,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 23,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
-    "publicadosPorDisputa": 9,
-    "publicadosPorMetodo": 1
+    "lidosEmFeedProprio": 22,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Supreme court rejects Trump’s mail ballot restrictions for midterm elections",
-      "url": "https://www.theguardian.com/us-news/2026/sep/14/supreme-court-rejects-mail-ballot-restrictions",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-15T00:57:38.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "US supreme court blocks Trump administration from changing mail ballot rules for midterm elections – live",
-      "url": "https://www.theguardian.com/us-news/live/2026/sep/14/donald-trump-mail-in-voting-supreme-court-blocked-ukraine-oil-diplomat-latest-news-updates",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-15T00:56:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Supreme Court blocks sweeping mail ballot restrictions for midterm elections",
-      "url": "https://www.washingtonpost.com/politics/2026/09/14/supreme-court-blocks-sweeping-mail-ballot-restrictions-midterm-elections/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-14T23:57:53.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Supreme Court rejects Trump bid to revive strict mail-ballot rules before midterms",
-      "url": "https://www.foxnews.com/politics/supreme-court-rejects-trump-bid-revive-strict-mail-ballot-rules-before-midterms",
+      "titulo": "‘Still waiting on the DOGE check’: Battleground state voters cast doubt on Trump’s new $5K promise",
+      "url": "https://www.foxnews.com/politics/still-waiting-doge-check-battleground-state-voters-cast-doubt-trumps-new-5k-promise",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-14T23:48:45.000Z",
+      "publicadoEm": "2026-09-15T15:46:02.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Supreme Court won’t restore Trump’s mail-in voting plan for midterms",
-      "url": "https://thehill.com/regulation/court-battles/6089348-supreme-court-rejects-trump-mail-ballots/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-14T23:46:42.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Democrats have advantage over GOP, new poll indicates ahead of midterms",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPLW5HUno0TmVzc3gzTjVqZklIVDV1OUIxel83QlZKeWNOVGZmU08tRGt3QTJkOTQyaFVSOUoteWRZMHExWlNFS252T2JCaHhFaDRic1A2RTNFSUdNbThkS3o2NjVJWmFKUFBkSlRJV1ViTlpwZ3ZQWEhDRlRmbUxreDRDdWFoYXUzMFFEdTdtaEhQa1hHanRPQWlVWnNNTW5KSmpsRXM0Q29jUG1VRW1qZlQzOWJQS05yZ3Nlb01fbHBjRnpDY3NxR1VFLU8zdw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-15T14:57:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "The Supreme Court rejects Trump's mail voting restrictions for this year's midterms",
-      "url": "https://www.npr.org/2026/09/14/nx-s1-5962190/supreme-court-mail-in-voting-trump",
-      "casa": "NPR",
-      "publicadoEm": "2026-09-14T23:38:40.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Senate returns for final legislative sprint ahead of midterms",
-      "url": "https://www.cbsnews.com/news/senate-returns-washington-midterm-elections-cryptocurrency-college-sports-ai/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-14T22:57:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "A ‘Blue Wave’ May Be Building, but How High?",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9DdXJuMkN2NzIxTElPTXV1bzNyOU4zeUpFeU42aldMZmpHNElNR09Obm9Cbnh3TFY5RGJ2RU1DelljbXFxbHVsU1hLTTQ1b2Y1S2lwNXc4dDZ0NDU5M3N2UDJGQnNSOVVWYTRkMklJWW5sTXRBTXNUOEY5ZEs?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-15T13:09:19.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
       "titulo": "Trump sees approval rating reprieve after weeks of record lows",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNVVZTlRHNFI5NktmbnFvZlhidnNpOEYxd2piV0x1NnEwS1lZdVVqdlBUQWZ4MlBSTjV3b0RfTXFnMXIyTlNCT3JrTWdSVHZVb0hhMjZSSjBuWFpfOE9oZ25mOHVQYnNTc1dDeW5HVldLbnV0cWNEeFlfVzlYRnhNZVd1amN6MzBmT1VtNzhVYWg3Mjc2TkZLc19wRk1kemdRX21yRV9Sc1NIb2FzaTdvaEYyLXM5RDZTRnBCblZCZUsyTlk?oc=5",
       "casa": "USA Today",
-      "publicadoEm": "2026-09-14T22:54:00.000Z",
+      "publicadoEm": "2026-09-15T11:56:00.000Z",
       "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Michigan Senate candidate Abdul El-Sayed says leaders must address ‘unpaid debts’ to Black communities",
-      "url": "https://www.foxnews.com/politics/michigan-senate-candidate-abdul-el-sayed-says-leaders-must-address-unpaid-debts-black-communities",
+      "titulo": "'MAGA Act' could rip House seats from Dem states ahead of next presidential race",
+      "url": "https://www.foxnews.com/politics/maga-act-proposal-could-rip-house-seats-from-dem-states-ahead-next-presidential-race",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-14T22:43:31.000Z",
+      "publicadoEm": "2026-09-15T11:00:13.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump approval up from record low, but outlook sours for Republicans, Reuters/Ipsos poll finds",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQem1BUzZ1QjJZU2VaUGtzRjFKNmhNZkpxVUx0aGxER1dqOF9vZGlRamJZVHdXM3BPVHUtTGNQWU9SYTlDTm5nV1lpSUVoMGFxUVNrY0F0S29hUjNHd25KeDlFM2dUaTN1eDhrZjgtOVdsMjhCRThsRkxtVzF0Z0Y2aHZiTEhxMjVJcHpwQWhOa3F5bDlwWWtOZktZQlo2ZG50d2V3TExnZzhybmpWQjZXd2M1eWpGSEFCSGYtZFZCck8?oc=5",
-      "casa": "Reuters",
-      "publicadoEm": "2026-09-14T20:41:16.000Z",
-      "consulta": "generic-ballot",
+      "titulo": "Will there be more midterm conventions?",
+      "url": "https://rollcall.com/2026/09/15/will-there-be-more-midterm-conventions/",
+      "casa": "Roll Call",
+      "publicadoEm": "2026-09-15T10:58:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Delaware holds U.S. Senate primary and more races to watch today",
+      "url": "https://www.cbsnews.com/news/delaware-primaries-2026-midterm-elections/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-15T10:18:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Delaware Sen. Chris Coons faces primary challenger named \"E. No-Trump Hansen\" and more races to watch today",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYWWFlY0dCR1dOZUZYV3FMcDZhYnhjdFoxLVJxSEEteG5TYzZqbGd0bEhKbFdPNVgxTGlIb2IzNUdSS3JwVTZ2YUNkMFNUZ08xdW5zT0FmOW1tVERSaENPMWpucmE2b2ZpX3JPQmN2WlVJZWhJR19JUU02aw?oc=5",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-15T10:00:00.000Z",
+      "consulta": "midterms",
       "origem": "google",
-      "trilho": "metodo"
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The midterms are all about control",
+      "url": "https://www.washingtonpost.com/politics/2026/09/15/midterms-are-all-about-control/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-15T09:35:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats Gain Midterms Edge as Trump Drags Down Republicans, Per Times/Siena Poll",
+      "url": "https://www.nytimes.com/2026/09/15/us/politics/trump-midterm-election-poll.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-15T09:02:56.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
     }
   ]
 }
