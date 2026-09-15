@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-12",
-  "fetchedAt": "2026-09-12T00:18:55.428Z",
+  "lastUpdate": "2026-09-15",
+  "fetchedAt": "2026-09-15T00:45:24.964Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -38,9 +38,16 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-13",
-    "nPesquisas": 10,
+    "desde": "2026-08-16",
+    "nPesquisas": 11,
     "incluidas": [
+      {
+        "instituto": "CBS News/YouGov",
+        "campoFim": "2026-09-11",
+        "amostraTipo": "LV",
+        "dem": 54,
+        "rep": 46
+      },
       {
         "instituto": "The Economist/YouGov",
         "campoFim": "2026-08-31",
@@ -112,12 +119,13 @@
         "rep": 42
       }
     ],
-    "nInstitutos": 8,
-    "dem": 46.67,
-    "rep": 41.58,
-    "vantagemDem": 5.09,
+    "nInstitutos": 9,
+    "dem": 47.34,
+    "rep": 41.98,
+    "vantagemDem": 5.36,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
+      "CBS News/YouGov",
       "Echelon Insights",
       "Emerson College",
       "Harvard/Harris Poll/HarrisX",
@@ -129,18 +137,32 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 381,
-    "publicadas": 388,
+    "linhasLidas": 382,
+    "publicadas": 389,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 381,
+    "doIndice": 382,
     "curadas": 7,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
+    {
+      "instituto": "CBS News/YouGov",
+      "campoInicio": "2026-09-08",
+      "campoFim": "2026-09-11",
+      "amostra": 1750,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 54,
+      "rep": 46,
+      "outros": 0,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.cbsnews.com/news/poll-trump-battleground-tracker-house-control-2026-midterm-elections/",
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-08-28",
