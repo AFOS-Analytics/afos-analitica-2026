@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-14",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtBaselinePainel": "2026-09-14T16:02:35.486Z",
+      "reFetchAoVivo": "2026-09-14T22:36:03.623Z",
+      "gateRebaseline": "DISPAROU",
+      "motivo": "Lula 47.50 -> 45.50 (-2.00pp), Flavio 50.75 -> 51.95 (+1.20pp), vao 3.25 -> 6.45pp, acima do limite de 0,50pp.",
+      "travaDeCaptura": "APROVADA com os 5 livros (presidential, secondPlace, thirdPlace, stf, senate), leituras 22:36:30.711Z e 22:44:31.827Z, tolerancia 0.20pp",
+      "rebaseline": "painel reescrito para a leitura certificada de 14/Set 19:44 BRT (22:44 UTC) em analysis-criteriosa, analysis-data, polls-data (3 idiomas) e CandidatesSection.tsx, comparando contra a leitura confirmada de 13/Set e declarando que substitui a de 13:02. Conferido: validate-polls-data exit 0, check-frescor verde, check:content 6/6, traduzir-dashboard-brz com gate numerico zerado e 0 descarte.",
+      "superlativo": "serie-do-contrato e amplitude-do-dia no backup: Flavio 51.95 a 3.15pp do topo 55.10 (10/Set), Lula 45.50 a 11.00pp do piso 34.50 (25/Abr), STF 5.25 dentro de 2.10-26.10, Cury 3o lugar 45.40 acima de 43.90 (09/Set), Caiado 15.50 abaixo de 45.50 (30/Ago), vao a favor de Flavio ja foi 14.30pp (11/Set). Nenhum extremo.",
+      "volumeTotal": "USD 149.822.184 na certificada; re-auditado a pedido do Andre as 23:49Z em USD 149.828.316, ainda abaixo de USD 150M (faltam 171.684)."
+    },
+    "correcaoDePainel": "O cartao do Banco Master e 8 campos associados diziam que Fachin so PEDIU a retirada do sigilo e que 'os textos lidos nao sustentam' a derrubada. Gazeta do Povo (14/09 13:05) e Poder360 (14/09 19:24) confirmam que Mendonca liberou o acesso a Pet 15.645 na manha de 14/Set. Corrigido em 9 campos nos 3 idiomas.",
+    "factCheck": {
+      "atosAltoImpacto": [
+        "Mendonca libera o acesso a Pet 15.645, relatorio sobre a rede de pagamentos de Vorcaro, a pedido de Fachin, na manha de 14/Set",
+        "Vice-PGR Hindenburgo Chateaubriand pede ao gabinete de Mendonca esclarecimento sobre providencias no inquerito",
+        "PF entrega a Zanin e Gilmar copia dos dados do celular de Vorcaro",
+        "STF define rito da sessao de 15/Set e barra jornalistas no plenario, Dino se opoe"
+      ],
+      "crossReference": "check-recurrence nas ultimas 7 dailies: '15.645', 'jornalistas', 'Transparencia 3' e 'Hindenburgo' com 0 mencoes, todos NOVIDADE.",
+      "corposLidos": [
+        "Gazeta do Povo, mendonca-derruba-sigilo-de-processo-sobre-pagamentos-de-vorcaro, 14/09 13:05, atualizada 14:04",
+        "Poder360, pgr-pede-esclarecimentos-sobre-sigilo-dos-pagamentos-de-vorcaro, 14/09 19:24",
+        "CNN Brasil, pf-libera-dados-de-celular-de-vorcaro-para-ministros-do-stf, 14/09 11:21, atualizada 15:10",
+        "Metropoles, celular-de-vorcaro-vira-disputa-no-stf-as-vesperas-de-sessao-sobre-moraes, 14/09 04:00",
+        "Gazeta do Povo, stf-define-regras-para-sessao-que-decidira-sobre-investigacao-contra-moraes, 14/09 17:22",
+        "Metropoles, stf-proibe-jornalistas-de-entrarem-em-julgamento-de-moraes-dino-se-opoe, 14/09 19:00"
+      ],
+      "bloqueados": "g1.globo.com (WebFetch recusado), cartacapital.com.br (403)",
+      "naoIncorporado": [
+        "Moraes como destinatario da copia do celular: so o corpo da CNN Brasil sustenta; G1, Folha e CartaCapital so em manchete. UNVERIFIED.",
+        "Parte dos documentos da Pet 15.645 seguiria em sigilo: avaliacao de bastidor numa fonte so (Gazeta do Povo)."
+      ]
+    },
+    "wayback": "NAO RODOU, por regra: sondagem de 12/Set voltou 429 e 14/Set e o 2o dia da pausa de 3 a 4 dias sem sondagem.",
+    "traducao": "gate numerico com 81 numeros e multiconjuntos identicos nos 3 idiomas; tldr 3/3/3; travessao 0, emoji 0, cirilico 0; nenhum link de outro locale; separador decimal coerente. Palavras: pt 1.100, en 1.080, es 1.176.",
+    "validador": "validate-afos-daily OK nos 3 idiomas; aviso de densidade de link em 50% deixado de pe (TL;DR, divergencias e sintese nao levam link)."
+  },
+  "adversarialReview": {
+    "singleSource": "pedido de esclarecimento da PGR atribuido explicitamente ao Poder360; rito com corpo da Gazeta do Povo e manchete convergente da Folha. Moraes removido por fonte unica.",
+    "numericalErrors": "reconcile-claims: todos os claims numericos batem com o JSON; 13 pares NAMED-CHECK conferidos um a um, todos atribuicao por proximidade. USD 7,12M, USD 1,15M e 14,30pp vem da captura certificada e do check-superlativo.",
+    "fontesInventadas": "Gazeta sigilo, Metropoles jornalistas e CNN celular com corpo lido na sessao.",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma: o movimento de 4,30pp e descrito por horario, com 'a ordem dos fatos esta medida, o vinculo entre eles nao'.",
+    "verbosCriticos": "'liberou o acesso' em vez de 'derrubou o sigilo'; 'barrou jornalistas' com a justificativa oficial; 'sem prisao' explicito.",
+    "decisao": "prosseguir"
+  }
+}
