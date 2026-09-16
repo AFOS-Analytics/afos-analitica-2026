@@ -97,6 +97,22 @@ Isto **não** é permissão para publicar preço bloqueado em geral. Livro com v
 
 Teste da régua: `node scripts/testar-amplitude-livro.mjs`, 22 asserções, com os dois casos reais de 04/Set plantados e um caso que cobra que o fator 1 seria errado.
 
+## ETAPA 1.9: A VARIAÇÃO É CALCULADA, e a base é a certificada anterior LIVRO A LIVRO (obrigatória, instalada 16/Set/2026)
+
+```bash
+node scripts/deltas-brz.mjs --certificado --registrar
+```
+
+Roda **depois** da trava aprovar e **antes** de escrever qualquer "sobe", "cai" ou "o vão abre". A prosa é escrita a partir da tabela impressa, nunca de subtração de cabeça.
+
+🔴 **Por que é etapa e não sugestão:** o script existia desde 04/Set e **este comando nunca o citava**. Ninguém passou o `--registrar` de 05 a 15/Set, e em 16/Set a tabela comparou contra **04/Set** sem aviso nenhum: o vão sairia +13,60pp para Flávio quando o movimento contra o publicado na véspera era de 1,80pp. Régua que o comando não chama é régua que alguém pula.
+
+🧭 **A base agora sai das certificadas que a trava grava em `.cache/capture-guard/br-*.json`**, escolhida por livro: a mais recente em que AQUELE livro foi aprovado. É a única regra que reproduz o que foi ao ar quando um livro bloqueia (em 15/Set o 3º lugar bloqueou nas duas passadas e o painel manteve 14/Set, 19:44). A idade de cada base sai impressa, em vermelho acima de 36h. ⚠️ Certificada não é publicada: se alguma rodada foi abortada depois da trava, conferir a base contra o painel da véspera.
+
+🏆 **E o bloco "MAIOR VOLUME ACUMULADO, por livro" é o medidor de toda frase de ranking de volume.** Em 15/Set o painel publicou, nos três idiomas, que o contrato de Renan Santos era "o de maior volume acumulado do livro presidencial", e o maior era o de Tarcísio de Freitas, parado no piso de preço e por isso fora de vista. O guardrail de superlativo mede séries de PREÇO; ranking de volume não tinha medidor. No 2º lugar do 1º turno o maior volume também não é de quem lidera o preço.
+
+Teste: `node scripts/testar-deltas-brz.mjs`, 42 asserções, no CI.
+
 ## ETAPA 2: Coleta de notícias (Google News RSS)
 
 **OBRIGATÓRIO — usar `scripts/fetch-google-news.mjs`** (não usar WebFetch direto). Implementado em 07/Mai/2026 após incidente daily 06/Mai. Razão: WebFetch processa o RSS retornando texto resumido, descartando o campo `<link>` que contém URL primária. O script usa `curl`-equivalente nativo Node, parseia XML completo, e salva cache `public/news-cache/{YYYY-MM-DD}.json` com URLs primárias preservadas (Google News redirect → matéria do veículo, funciona até para veículos com anti-bot).

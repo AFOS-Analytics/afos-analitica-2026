@@ -198,6 +198,23 @@ export function escolherBasePorLivro(certificados, carimboAtual, { minMinutos = 
   return { linhas, origem }
 }
 
+/**
+ * Os `n` contratos de maior volume acumulado de um livro, do maior para o menor.
+ *
+ * 🔴 POR QUE ISTO EXISTE. Em 15/Set/2026 o painel publicou, nos três idiomas,
+ * que o contrato de Renan Santos era "o de maior volume acumulado do livro
+ * presidencial", com USD 13,49M. O maior era o de Tarcísio de Freitas, USD
+ * 14,07M, parado no piso de preço e por isso fora de vista, e já era o maior em
+ * 04/Set. O guardrail de superlativo mede séries de PREÇO; ranking de volume
+ * não tinha medidor, e a frase saiu de suposição.
+ */
+export function rankingDeVolume(linhas, livro, n = 3) {
+  return linhas
+    .filter((l) => l.livro === livro && Number.isFinite(l.volume))
+    .sort((a, b) => b.volume - a.volume)
+    .slice(0, n)
+}
+
 /** Horas entre dois carimbos, com uma casa. */
 export const horasEntre = (antes, depois) => Math.round((Date.parse(depois) - Date.parse(antes)) / 360_000) / 10
 
@@ -293,6 +310,15 @@ async function principal() {
       console.log('      Volume acumulado só cresce. Isso é defeito de pareamento, não movimento de mercado.')
       for (const l of r.volumeEncolheu.slice(0, 6)) console.log(`      ${l.deltaVolume.toLocaleString('pt-BR').padStart(12)}  [${l.livro}] ${l.pergunta.slice(0, 58)}`)
     }
+  }
+
+  // 🏆 Quem lidera em VOLUME, por livro. Superlativo de volume também é superlativo.
+  const livrosComVolume = [...new Set(agora.map((l) => l.livro))]
+  console.log('\n🏆 MAIOR VOLUME ACUMULADO, por livro (para qualquer frase de "o maior volume"):')
+  for (const livro of livrosComVolume) {
+    const top = rankingDeVolume(agora, livro, 3)
+    if (!top.length) continue
+    console.log(`   ${livro.padEnd(13)} ${top.map((l) => `${l.pergunta.slice(0, 26)} USD ${(l.volume / 1e6).toFixed(2).replace('.', ',')}M`).join(' · ')}`)
   }
 
   if (REGISTRAR) {

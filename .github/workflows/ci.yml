@@ -65,6 +65,13 @@ jobs:
       - name: Conjunto de fantasmas do TSE
         run: node scripts/testar-tse-fantasmas.mjs
 
+      # A tabela de variacao do Brasil. Em 16/Set ela comparou contra 04/Set sem
+      # aviso, porque a base era a ultima linha anotada; agora a base e a
+      # certificada anterior livro a livro, e o ranking de volume por livro mede
+      # a frase "o maior volume", que foi ao ar errada em 15/Set.
+      - name: Tabela de variacao e ranking de volume (BR)
+        run: node scripts/testar-deltas-brz.mjs
+
       # A rota /api/polls/tse para em 200 linhas e declara total igual ao que
       # serviu (14/Set: 351 na janela de 30d, 200 servidas), e o dia de HOJE nao
       # tinha bloco no relatorio. O teste cobre a borda do corte, o gatilho que

@@ -8,7 +8,7 @@
  * Uso: node scripts/testar-deltas-brz.mjs
  */
 
-import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre } from './deltas-brz.mjs'
+import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre, rankingDeVolume } from './deltas-brz.mjs'
 
 let falhas = 0
 let passes = 0
@@ -165,6 +165,20 @@ console.log('\n9. 🔴 BASE POR LIVRO, o caso de 16/Set/2026: 3º lugar bloquead
   }
   conferir('sem carimbo atual lança, nunca devolve base vazia', lancou)
   conferir('horasEntre mede a idade da base', horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z') === 280.8, String(horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z')))
+}
+
+console.log('\n10. 🏆 RANKING DE VOLUME, o caso de 15/Set/2026: o maior estava no piso de preço')
+{
+  const linhas = [
+    L('presidential', 'Renan Santos', 1.65, 13_490_000),
+    L('presidential', 'Tarcisio de Freitas', 0.05, 14_070_000),
+    L('presidential', 'Lula', 46.5, 11_110_000),
+    L('thirdPlace', 'Renan Santos', 37.5, 20_000_000),
+  ]
+  const r = rankingDeVolume(linhas, 'presidential', 2)
+  conferir('o maior volume é o do contrato no piso de preço', r[0]?.pergunta === 'Tarcisio de Freitas', JSON.stringify(r))
+  conferir('ordem decrescente e corte em n', r.length === 2 && r[1].pergunta === 'Renan Santos')
+  conferir('outro livro não entra no ranking', !rankingDeVolume(linhas, 'presidential', 9).some((l) => l.livro !== 'presidential'))
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
