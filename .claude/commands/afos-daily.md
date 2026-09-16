@@ -567,6 +567,12 @@ Razão: permalinks são lidos meses/anos depois. "Ontem" sem data é contexto pe
 
 ### Gate obrigatório antes de seguir
 
+```bash
+npx tsx scripts/gate-traducao-daily.ts AAAA-MM-DD
+```
+
+🚀 **Um comando só, instalado em 16/Set/2026.** Até ali a única implementação era `scripts/locale-maps/daily-02ago-gate.ts`, com a data de 02/Ago fixa no código, sem a checagem de âncora de glossário que esta etapa lista, e tratando "USD 91 mil" e "USD 91 thousand" como unidades diferentes. O novo confere gate numérico, link cruzado de locale, âncora de glossário inexistente, cirílico, separador da coluna de confiança, `tldr` 3/3/3, travessão, emoji, `locale` do frontmatter e o teto de 1.100 palavras no pt-BR. Ele reproduz as medições registradas de 14 e 15/Set (81 e 66 números, 1.080/1.176 e 1.093/1.107/1.187 palavras) e reprovou 4 de 4 mutações plantadas. As regras abaixo continuam sendo o porquê de cada checagem.
+
 - **Gate numérico:** extrair todo número seguido de unidade (`%`, `pp`, `M`, `mil`/`thousand`) do corpo das três versões, normalizar pela convenção de cada idioma, e comparar. **Tem que dar multiconjunto idêntico.** Divergiu, corrigir antes de publicar.
 - **As 5 checagens:** nenhuma âncora de glossário inexistente; nenhum link apontando para outro locale; nenhum homóglifo cirílico; separador decimal consistente com o idioma (inclusive em colunas de tabela como a de confiança do calendário, que já escapou uma vez); e `tldr` com exatamente 3 bullets nas três versões.
 - Varrer sobre o corpo, **fora do bloco de fontes**, senão título de matéria em português dá falso positivo.
