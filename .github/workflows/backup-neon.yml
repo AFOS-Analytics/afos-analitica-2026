@@ -67,4 +67,15 @@ jobs:
           LINHAS=$(jq -r '.totalLinhas' backup/neon/MANIFEST.json)
           git commit -m "Backup Neon: ${LINHAS} linhas" \
                      -m "Gerado por .github/workflows/backup-neon.yml. Travas de dado pessoal e de restauracao passaram."
-          git push
+          # 16/Set/2026: a execucao agendada, atrasada para 18:35Z, gerou o backup
+          # e teve o push REJEITADO porque um commit humano chegou ao main nos
+          # 40s do job. O backup do dia se perdia inteiro por uma corrida. O
+          # commit so toca backup/neon, entao integrar o remoto antes do push e
+          # seguro; conflito ali quer dizer outro backup e deve falhar mesmo.
+          for tentativa in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            echo "push recusado (tentativa $tentativa), integrando o remoto de novo"
+            sleep $((tentativa * 10))
+          done
+          echo "::error::push do backup falhou em 3 tentativas"
+          exit 1
