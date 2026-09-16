@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-16",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtBaselinePainel": "2026-09-16T15:41:36.757Z",
+      "reFetchAoVivo": "2026-09-16T17:06:32.144Z",
+      "gateRebaseline": "NAO DISPAROU",
+      "motivo": "vencedor e vao parados entre a certificada das 12:41 BRT e a releitura das 14:06 BRT: Flavio 53,75, Lula 44,50, vao 9,25pp, Renan 1,35. Volume total 150,50M certificado contra 150,51M ao vivo. Os livros de 2o e 3o lugar andaram numa leitura unica (Renan 3o lugar 36,50 -> 38,00; Flavio 2o lugar 75,50 -> 76,50), nao certificada, e nao entram na peca.",
+      "travaDeCaptura": "APROVADA nos 5 livros (presidential, secondPlace, thirdPlace, stf, senate), leituras 15:33:35.752Z e 15:41:36.757Z, tolerancia 0,20pp.",
+      "baseDaVariacao": "certificada anterior LIVRO A LIVRO: 15/Set 19:37:31Z para vencedor, 2o lugar, STF e Senado; 14/Set 22:44:31Z para o 3o lugar, bloqueado nas duas passadas de 15/Set. Reproduz exatamente o que foi publicado."
+    },
+    "defeitosAchadosNaRodada": [
+      "deltas-brz --certificado comparava contra 04/Set sem aviso, porque o /atualizar-brz nunca chamava o script e ninguem passou --registrar de 05 a 15/Set. Base passou a ser a certificada anterior por livro, com idade impressa; virou ETAPA 1.9 do comando.",
+      "deltas-brz ao vivo nunca casava com a certificada: chave com a pergunta inteira contra o nome. Dava '0 se moveram, 79 novos, 69 sumiram'. Chave normalizada com a regra da trava (limparPergunta).",
+      "O painel e a daily de 15/Set publicaram que o contrato de Renan Santos era o de maior volume acumulado do livro presidencial. O maior e o de Tarcisio de Freitas, USD 14,07M, ja em 04/Set. Corrigido no painel de 16/Set e declarado na secao 1 desta daily; o texto de 15/Set nao foi alterado (decisao pendente do Andre).",
+      "O gate de traducao da daily tinha a data de 02/Ago fixa, nao conferia ancora de glossario e tratava 'mil' e 'thousand' como unidades diferentes. Nasceu scripts/gate-traducao-daily.ts, reproduzindo as medicoes registradas de 14 e 15/Set, 4/4 mutacoes reprovadas."
+    ],
+    "factCheck": {
+      "vistaStf": "Gazeta do Povo (16/Set 03:11) + Poder360 (16/Set 12:27) + CartaCapital (11:49). Sessao de 15/Set, pedido de vista de Dino, ate 90 dias, sem decisao sobre abrir investigacao. Placar de 4 a 3 (CartaCapital) NAO incorporado: a Gazeta diz que nao houve votacao.",
+      "dinoPedidoMendonca": "Gazeta do Povo (00:44) + CartaCapital: peticao a Fachin antes da sessao de 15/Set.",
+      "marcalAvalanche": "Gazeta do Povo (16/Set 09:03) + NSC Total (15/Set 21:25): TSE indeferiu Marcal em 11/Set; PRTB anunciou Avalanche em 15/Set; substituicao pendente de julgamento. Vice fora por grafia divergente.",
+      "americanAnalytics": "arquivo publico do TSE, sonda 11/11 no mesmo ETag, conjunto de fantasmas: BR-01431/2026 saiu com divulgacao marcada para 16/Set; BR-02587/2026 da mesma casa para 21/Set. Assinatura igual nao afirmada como re-registro.",
+      "dataTrends": "Correio Braziliense (11:46) + Revista Oeste + Blog do Edmar Lyra, protocolo BR-08691/2026 conferido. Par contra Renan e aprovacao 44/50 so numa fonte, fora.",
+      "declaracoes": "Lula (podcast Desce a Letra): CartaCapital + Poder360 + Correio. Flavio no Ceara: TMC + Revista Oeste (cidades divergem, escrito 'em agenda no Ceara'). Fora por fonte unica: 'R$ 130 milhoes' de Vorcaro (so Correio) e recorte de honestidade da Quaest (so Metropoles legivel; o registro mostra que e a onda BR-03607/2026 de 14/Set, nao pesquisa nova)."
+    },
+    "superlativos": "nenhum superlativo afirmado. Topo de Flavio 55,10% em 10/Set e piso de Lula 34,50% em 25/Abr conferidos no backup (serie-do-contrato). Vao de 9,25pp nao e extremo: minimo intradiario da janela -14,30pp em 11/Set. Ranking de volume conferido no bloco novo do deltas-brz.",
+    "reconcileClaims": "2 divergencias, as duas variacoes calculadas (-2,00pp de Lula e -1,00pp de Renan no 3o lugar).",
+    "gateDeTraducao": "scripts/gate-traducao-daily.ts limpo: 82 numeros com unidade identicos nos 3 idiomas, 0 ancora de glossario, 0 link cruzado, 0 cirilico, tldr 3/3/3.",
+    "tetoDePalavras": "pt-BR 1.097 (depois de cortar 31: a frase do anuncio do Correio as 00h01 e a recapitulacao de 15/Set na sintese), en 1.073, es 1.174.",
+    "emojiETravessao": "0 e 0 nos tres idiomas.",
+    "wayback": "NAO RODOU: pausa de 4 dias decidida pelo Andre em 15/Set (host devolvendo 429), vigente ate 19/Set. Passivo segue na fila."
+  },
+  "adversarialReview": {
+    "singleSource": "nenhuma ancora narrativa com fonte unica. Pares da DataTrends com Correio e Edmar Lyra; retirada do registro com fonte primaria (arquivo do TSE); precos da certificada.",
+    "numericalErrors": "reconcile-claims com 2 divergencias explicadas (variacoes). Todo preco vem de .cache/capture-guard/br-2026-09-16T15-41-36-757Z.json.",
+    "fontesInventadas": "nenhuma. Corpos lidos: Gazeta (vista), Poder360 (Lula), Revista Oeste (Flavio), Correio (DataTrends e Lula), CartaCapital, NSC Total, TMC, Edmar Lyra.",
+    "quotesLiterais": "nenhuma aspa literal; falas em discurso indireto.",
+    "causacaoEspuria": "nenhuma. Divergencias declaram que a ordem entre a divulgacao da DataTrends e o preco nao esta medida, e que o recuo do contrato do STF sem volume e leitura sobre o livro, nao sobre o julgamento.",
+    "verbosCriticos": "'indeferiu' com data (11/Set); 'pediu vista' com 'sem decisao'; 'preso' e 'decidiu' nao aparecem.",
+    "decisao": "prosseguir; aprovado pelo Andre apos preview afos-analitica-2026-kwk4d3w5t."
+  }
+}
