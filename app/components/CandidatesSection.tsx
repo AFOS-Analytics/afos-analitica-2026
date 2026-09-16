@@ -15,30 +15,30 @@ const candidates: CandidateProfile[] = [
     party: "PT",
     age: 80,
     role: "Presidente da República",
-    polymarket: "46,50%",
-    poll: "DUAS NACIONAIS SAÍRAM EM 15/Set: a Indexa/Broadcast (n=2.000, campo 10 a 13/Set, telefone, margem de 2,2pp, BR-03482/2026) e a CNT/MDA (n=2.002, campo 9 a 13/Set, presencial, margem de 2,2pp, BR-06902/2026). No 1º turno ele tem 38% na Indexa e 40,5% na CNT/MDA, à frente nas duas. No 2º turno contra Flávio Bolsonaro tem 43% a 42% na Indexa, uma vantagem de 1 ponto que cabe na margem, e 47,3% a 40% na CNT/MDA, 7,3 pontos que ficam fora dela. As duas casas concordam no sinal e discordam na magnitude, com 6,3 pontos de diferença entre elas no par de 2º turno.",
+    polymarket: "44,50%",
+    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 39%, à frente de Flávio Bolsonaro, com 35%. No 2º turno contra Flávio Bolsonaro tem 44% a 45%, 1 ponto atrás, dentro da margem. A Indexa/Broadcast de 15/Set, também por telefone, o punha 1 ponto à frente no mesmo par, e a CNT/MDA de 15/Set, presencial, 7,3 pontos à frente.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "O PREÇO SUBIU E O VÃO FECHOU. O contrato de vencedor está em 46,50% (vol USD 11,11M acumulado), leitura confirmada de 15/Set, 16:37 BRT, alta de 1,00pp contra a leitura confirmada de 14/Set, e a distância para Flávio Bolsonaro fechou de 6,45pp para 5,45pp depois de dois dias de abertura. Os 46,50% ficam 21,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno ele cai 1,90pp, para 21,85%."
+    risk: "O PREÇO CAIU E O VÃO ABRIU. O contrato de vencedor está em 44,50% (vol USD 11,16M acumulado), leitura confirmada de 16/Set, 12:41 BRT, queda de 2,00pp contra a leitura confirmada de 15/Set, e a distância para Flávio Bolsonaro abriu de 5,45pp para 9,25pp. Os 44,50% ficam 23,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno ele sobe 2,00pp, para 23,85%."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "51,95%",
-    poll: "DUAS NACIONAIS SAÍRAM EM 15/Set: a Indexa/Broadcast (n=2.000, campo 10 a 13/Set, telefone, margem de 2,2pp, BR-03482/2026) e a CNT/MDA (n=2.002, campo 9 a 13/Set, presencial, margem de 2,2pp, BR-06902/2026). No 1º turno ele tem 34% na Indexa, o mesmo valor da onda de 26/Ago daquela casa, e 30,4% na CNT/MDA. No 2º turno contra Lula fica em 42% a 43% na Indexa, dentro da margem, e em 40% a 47,3% na CNT/MDA, fora dela. Fica atrás nos dois turnos nas duas casas.",
+    polymarket: "53,75%",
+    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 35%, atrás de Lula, com 39%. No 2º turno contra Lula tem 45% a 44%, 1 ponto à frente, dentro da margem. No mesmo par, a Indexa/Broadcast de 15/Set o punha 1 ponto atrás e a CNT/MDA de 15/Set 7,3 pontos atrás.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "TERMINA NO PREÇO DA VÉSPERA E SEGUE FAVORITO. Os 51,95% (vol USD 10,73M acumulado), leitura confirmada de 15/Set, 16:37 BRT, ficam 3,15pp abaixo do topo da série dele, de 55,10% em 10/Set, e o vão para o segundo colocado fechou 1,00pp porque o outro lado subiu. Dentro do dia ele cedeu no meio da tarde e recuperou 0,30pp até o fechamento da leitura. No contrato de 2º lugar do 1º turno ele sobe 1,00pp, para 76,50%, enquanto o lado de Lula cede 1,90pp."
+    risk: "SOBE E SEGUE FAVORITO. Os 53,75% (vol USD 10,82M acumulado), leitura confirmada de 16/Set, 12:41 BRT, são uma alta de 1,80pp contra a leitura confirmada de 15/Set e ficam 1,35pp abaixo do topo da série dele, de 55,10% em 10/Set. O vão para o segundo colocado abriu de 5,45pp para 9,25pp. No contrato de 2º lugar do 1º turno ele cede 1,00pp, para 75,50%."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "1,65%",
-    poll: "DUAS NACIONAIS SAÍRAM EM 15/Set: a Indexa/Broadcast (n=2.000, campo 10 a 13/Set, telefone, margem de 2,2pp, BR-03482/2026) e a CNT/MDA (n=2.002, campo 9 a 13/Set, presencial, margem de 2,2pp, BR-06902/2026). No 1º turno ele tem 3% na Indexa e 2,7% na CNT/MDA. Perde os dois pares de 2º turno para Lula fora de duas margens, por 35% a 45% e por 33,9% a 47,3%.",
+    polymarket: "1,35%",
+    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 4%, à frente de Ronaldo Caiado e de Romeu Zema. Nas duas nacionais de 15/Set tinha 3% e 2,7%.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "CEDE 0,05pp NO CONTRATO DE VENCEDOR, para 1,65% (vol USD 13,49M acumulado), leitura confirmada de 15/Set, 16:37 BRT, e fica a 0,45pp do piso da série dele, de 1,20% em 31/Ago. O contrato dele é o de maior volume acumulado do livro presidencial e paga 1,65%: volume mede interesse acumulado desde a abertura, não probabilidade de agora. No contrato de 3º lugar do 1º turno esta rodada não publica preço novo, porque não houve leitura nova dele em 15/Set, e o valor exibido segue sendo os 37,50% de 14/Set."
+    risk: "CEDE 0,30pp NO CONTRATO DE VENCEDOR, para 1,35% (vol USD 13,54M acumulado), leitura confirmada de 16/Set, 12:41 BRT, e fica a 0,15pp do piso da série dele, de 1,20% em 31/Ago. O contrato dele é o segundo maior em volume acumulado do livro presidencial, atrás só do de Tarcísio de Freitas, e paga 1,35%: volume mede interesse acumulado desde a abertura, não probabilidade de agora. No contrato de 3º lugar do 1º turno cai 1,00pp contra o valor publicado de 14/Set, para 36,50%."
   },
   {
     name: "Fernando Haddad",
@@ -46,9 +46,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0,05%",
-    poll: "As duas nacionais de 15/Set, Indexa/Broadcast e CNT/MDA, não o testam em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
+    poll: "A DataTrends de 16/Set não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
-    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 15/Set, 16:37 BRT. Não é candidato à Presidência: disputa o governo de São Paulo, e por isso não aparece nos cenários presidenciais de 1º turno das duas casas do dia. O topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai."
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 16/Set, 12:41 BRT. Não é candidato à Presidência: disputa o governo de São Paulo, e por isso não aparece nos cenários presidenciais de 1º turno. O topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai."
   },
   {
     name: "Ronaldo Caiado",
@@ -56,9 +56,9 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "0,15%",
-    poll: "DUAS NACIONAIS SAÍRAM EM 15/Set: a Indexa/Broadcast (n=2.000, campo 10 a 13/Set, telefone, margem de 2,2pp, BR-03482/2026) e a CNT/MDA (n=2.002, campo 9 a 13/Set, presencial, margem de 2,2pp, BR-06902/2026). No 1º turno ele tem 4% na Indexa e 3% na CNT/MDA. No par de 2º turno perde para Lula por 39% a 43% na Indexa, dentro de duas margens, e por 37,3% a 46,4% na CNT/MDA, fora delas.",
+    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 3%. No par de 2º turno perde para Lula por 41% a 44%, uma distância de 3 pontos que cabe dentro de duas margens.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 15/Set, 16:37 BRT, abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno, onde ele tinha o movimento mais forte do painel em 14/Set, esta rodada não publica preço novo, porque não houve leitura nova dele em 15/Set: o valor exibido segue sendo os 15,50% de 14/Set."
+    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno fica em 15,50%, o mesmo valor publicado em 14/Set, com USD 130 mil acumulados."
   },
   {
     name: "Romeu Zema",
@@ -66,9 +66,9 @@ const candidates: CandidateProfile[] = [
     age: 56,
     role: "Ex-Gov. Minas Gerais",
     polymarket: "0,15%",
-    poll: "DUAS NACIONAIS SAÍRAM EM 15/Set: a Indexa/Broadcast (n=2.000, campo 10 a 13/Set, telefone, margem de 2,2pp, BR-03482/2026) e a CNT/MDA (n=2.002, campo 9 a 13/Set, presencial, margem de 2,2pp, BR-06902/2026). No 1º turno ele tem 1% nas duas casas. Perde os dois pares de 2º turno para Lula fora de duas margens, por 34% a 45% na Indexa e por 34,5% a 47,7% na CNT/MDA.",
+    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 1%. Perde o par de 2º turno para Lula por 39% a 46%, 7 pontos que ficam fora de duas margens.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 15/Set, 16:37 BRT, abaixo do corte de 0,5%. Nos pares de 2º turno das duas casas do dia ele fica 11 e 13,2 pontos atrás de Lula, as duas distâncias fora de duas margens. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
+    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, abaixo do corte de 0,5%. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "As duas nacionais de 15/Set não o testam em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5%.",
+    poll: "A DataTrends de 16/Set não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5%.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 15/Set, 16:37 BRT, e ainda assim o contrato dele é um dos de maior volume acumulado do painel presidencial. Preço no piso com volume alto mede interesse passado, não probabilidade de agora."
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 16/Set, 12:41 BRT, e ainda assim o contrato dele é o de maior volume acumulado do livro presidencial, USD 14,07M. Preço no piso com volume alto mede interesse passado, não probabilidade de agora."
   },
 ];
 
