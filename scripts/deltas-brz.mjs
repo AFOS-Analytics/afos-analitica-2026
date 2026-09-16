@@ -42,11 +42,30 @@ const CERTIFICADO = process.argv.includes('--certificado')
 const PISO = Number(process.argv.find((a) => a.startsWith('--piso='))?.slice(6) ?? 0.5)
 
 /** Achata os grupos numa lista de linhas com chave estável. */
+/**
+ * A chave do contrato na forma que a TRAVA grava: só o nome.
+ *
+ * 🔴 Medido em 16/Set/2026: o modo ao vivo guardava a pergunta inteira ("Will
+ * Luiz Inácio Lula da Silva win the..."), e a certificada guarda "Luiz Inácio
+ * Lula da Silva". Comparar as duas dava "0 se moveram, 79 novos, 69 sumiram",
+ * ou seja nenhuma comparação, justamente no modo que a ETAPA 1.1 do
+ * /afos-daily usa para decidir rebaseline. Espelha `limpaNome` de
+ * scripts/capture-guard.ts; o teste trava as formas reais dos três livros.
+ */
+export function limparPergunta(q) {
+  return String(q ?? '')
+    .replace(/^Will\s+/i, '')
+    .replace(/\s+win the.*$/i, '')
+    .replace(/\s+finish in .*$/i, '')
+    .replace(/\?$/, '')
+    .trim()
+}
+
 export function achatar(leitura) {
   const linhas = []
   for (const [livro, g] of Object.entries(leitura.grupos)) {
     for (const l of g.linhas) {
-      linhas.push({ livro, pergunta: l.pergunta, preco: l.preco, volume: l.volume })
+      linhas.push({ livro, pergunta: limparPergunta(l.pergunta), preco: l.preco, volume: l.volume })
     }
   }
   return linhas

@@ -8,7 +8,7 @@
  * Uso: node scripts/testar-deltas-brz.mjs
  */
 
-import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre, rankingDeVolume } from './deltas-brz.mjs'
+import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre, rankingDeVolume, limparPergunta } from './deltas-brz.mjs'
 
 let falhas = 0
 let passes = 0
@@ -179,6 +179,17 @@ console.log('\n10. 🏆 RANKING DE VOLUME, o caso de 15/Set/2026: o maior estava
   conferir('o maior volume é o do contrato no piso de preço', r[0]?.pergunta === 'Tarcisio de Freitas', JSON.stringify(r))
   conferir('ordem decrescente e corte em n', r.length === 2 && r[1].pergunta === 'Renan Santos')
   conferir('outro livro não entra no ranking', !rankingDeVolume(linhas, 'presidential', 9).some((l) => l.livro !== 'presidential'))
+}
+
+console.log('\n11. 🔴 A CHAVE DO AO VIVO casa com a da certificada (16/Set/2026)')
+{
+  conferir('vencedor', limparPergunta('Will Luiz Inácio Lula da Silva win the 2026 Brazilian presidential election?') === 'Luiz Inácio Lula da Silva')
+  conferir('2º lugar', limparPergunta('Will Renan Santos finish in 2nd place in the first round?') === 'Renan Santos')
+  conferir('Senado', limparPergunta('Will Partido Liberal (PL) win the most seats in the next Brazilian Senate election?') === 'Partido Liberal (PL)')
+  conferir('pergunta sem prefixo fica intacta', limparPergunta('Any Brazil STF Justice removed by impeachment before 2027?') === 'Any Brazil STF Justice removed by impeachment before 2027')
+  const leitura = { grupos: { presidential: { linhas: [{ pergunta: 'Will Flávio Bolsonaro win the 2026 Brazilian presidential election?', preco: 53.75, volume: 1 }] } } }
+  const r = comparar([L('presidential', 'Flávio Bolsonaro', 51.95, 1)], achatar(leitura))
+  conferir('ao vivo x certificada COMPARA em vez de dar novo+sumido', r.movidos.length === 1 && r.entrantes.length === 0 && r.sumidos.length === 0, JSON.stringify(r))
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
