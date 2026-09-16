@@ -30,7 +30,7 @@
  *   node scripts/deltas-brz.mjs --piso=0.5    # piso de ruído (padrão 0,5%)
  */
 
-import { existsSync, readFileSync, appendFileSync, mkdirSync } from 'fs'
+import { existsSync, readFileSync, readdirSync, appendFileSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 import { pathToFileURL } from 'url'
 import { lerResposta } from './ler-mercado.mjs'
@@ -154,6 +154,53 @@ export function doCertificado(snap) {
   return { fetchedAt: snap.fetchedAt, linhas, livrosOk: [...ok], livrosBloqueados: Object.keys(snap.livros ?? {}).filter((l) => !ok.has(l)) }
 }
 
+export const DIR_CERTIFICADOS = '.cache/capture-guard'
+
+/**
+ * A BASE da variação, LIVRO A LIVRO: para cada livro, a certificada mais recente
+ * ANTERIOR à atual em que AQUELE livro foi aprovado.
+ *
+ * 🔴 POR QUE ISTO EXISTE, medido em 16/Set/2026. A tabela dizia "contra a
+ * leitura confirmada de 2026-09-04T22:53", ONZE dias antes, porque a base era a
+ * última linha do `leituras-confirmadas.jsonl`, e as rodadas de 05 a 15/Set não
+ * passaram o `--registrar`. O vão do contrato de vencedor sairia +13,60pp para
+ * Flávio quando o movimento contra o publicado na véspera era de menos de 2pp.
+ * Nenhum aviso: a linha de cabeçalho trazia a data, e a data era a única pista.
+ *
+ * 🔑 A trava já grava TODA certificada em `.cache/capture-guard/br-*.json`, com
+ * `livrosOk`. É o registro que existe mesmo quando ninguém lembra de registrar.
+ *
+ * ⭐ E a escolha é por LIVRO porque a publicação é por livro. Em 15/Set o 3º
+ * lugar bloqueou nas duas passadas, e o painel manteve os valores de 14/Set,
+ * 19:44. A certificada mais recente inteira daria ao 3º lugar uma base que
+ * nunca foi publicada; a regra por livro reproduz o que foi ao ar.
+ *
+ * `minMinutos` evita que a trava refeita minutos depois de um bloqueio vire base
+ * de si mesma (mesma régua do `escolherCapturaAnterior` dos EUA).
+ */
+export function escolherBasePorLivro(certificados, carimboAtual, { minMinutos = 60 } = {}) {
+  const t0 = Date.parse(carimboAtual ?? '')
+  if (!Number.isFinite(t0)) throw new Error('escolherBasePorLivro exige o carimbo da leitura atual')
+  const ordenados = (certificados ?? [])
+    .filter((c) => {
+      const t = Date.parse(c?.fetchedAt ?? '')
+      return Number.isFinite(t) && t0 - t >= minMinutos * 60_000
+    })
+    .sort((a, b) => Date.parse(b.fetchedAt) - Date.parse(a.fetchedAt))
+  const livros = new Set(ordenados.flatMap((c) => c.livrosOk ?? []))
+  const linhas = []
+  const origem = {}
+  for (const livro of livros) {
+    const c = ordenados.find((x) => (x.livrosOk ?? []).includes(livro))
+    origem[livro] = c.fetchedAt
+    linhas.push(...doCertificado(c).linhas.filter((l) => l.livro === livro))
+  }
+  return { linhas, origem }
+}
+
+/** Horas entre dois carimbos, com uma casa. */
+export const horasEntre = (antes, depois) => Math.round((Date.parse(depois) - Date.parse(antes)) / 360_000) / 10
+
 async function principal() {
   let leitura
   let agora
@@ -191,14 +238,38 @@ async function principal() {
   if (leitura) console.log(`   degraded ${leitura.degraded} · falhas ${leitura.failedCount}`)
   console.log(`   ${agora.length} contratos com preço em ${new Set(agora.map((l) => l.livro)).size} livro(s)`)
 
-  const anterior = ultimaLeitura(lerLinhas(existsSync(CAMINHO_LEITURAS) ? readFileSync(CAMINHO_LEITURAS, 'utf8') : ''))
+  let anterior = ultimaLeitura(lerLinhas(existsSync(CAMINHO_LEITURAS) ? readFileSync(CAMINHO_LEITURAS, 'utf8') : ''))
+
+  // Com --certificado, a base sai das certificadas gravadas pela trava, livro a
+  // livro. O jsonl só vale como último recurso, e com a idade impressa.
+  if (CERTIFICADO && existsSync(DIR_CERTIFICADOS)) {
+    const certificados = readdirSync(DIR_CERTIFICADOS)
+      .filter((f) => /^br-.*\.json$/.test(f))
+      .map((f) => JSON.parse(readFileSync(`${DIR_CERTIFICADOS}/${f}`, 'utf8')))
+    const base = escolherBasePorLivro(certificados, carimbo)
+    if (base.linhas.length) {
+      anterior = { fetchedAt: 'por livro', linhas: base.linhas }
+      console.log('\n🧭 BASE POR LIVRO, a certificada anterior em que cada livro foi aprovado:')
+      for (const [livro, quando] of Object.entries(base.origem)) {
+        const h = horasEntre(quando, carimbo)
+        console.log(`   ${h > 36 ? '🔴' : '  '} ${livro.padEnd(13)} ${quando}  (${String(h).replace('.', ',')}h antes)`)
+      }
+      const semBase = [...new Set(agora.map((l) => l.livro))].filter((l) => !base.origem[l])
+      if (semBase.length) console.log(`   ⚠️ sem certificada anterior, fora da comparação: ${semBase.join(', ')}`)
+      console.log('   ⚠️ certificada não é publicada: conferir contra o painel da véspera se alguma rodada foi abortada.')
+    }
+  } else if (anterior && carimbo && horasEntre(anterior.fetchedAt, carimbo) > 36) {
+    console.log(`\n🔴 A BASE TEM ${horasEntre(anterior.fetchedAt, carimbo)}h: a variação abaixo NÃO é a do dia.`)
+  }
 
   if (!anterior) {
     console.log(`\n📓 Sem leitura anterior em ${CAMINHO_LEITURAS}.`)
     console.log('   Esta rodada só REGISTRA. A tabela de variação sai a partir da próxima.')
   } else {
     const r = comparar(anterior.linhas, agora, PISO)
-    console.log(`\n📊 VARIAÇÃO contra a leitura confirmada de ${anterior.fetchedAt}`)
+    console.log(
+      `\n📊 VARIAÇÃO contra ${anterior.fetchedAt === 'por livro' ? 'a base por livro acima' : `a leitura confirmada de ${anterior.fetchedAt}`}`,
+    )
     console.log(`   ${r.movidos.length} se moveram, ${r.parados.length} pararam, piso de ruído ${PISO}%\n`)
     console.log('   livro         antes    agora    Δpp     contrato')
     for (const l of r.relevantes) {

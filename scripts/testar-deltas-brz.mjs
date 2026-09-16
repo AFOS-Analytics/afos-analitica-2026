@@ -8,7 +8,7 @@
  * Uso: node scripts/testar-deltas-brz.mjs
  */
 
-import { comparar, achatar, lerLinhas, ultimaLeitura } from './deltas-brz.mjs'
+import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre } from './deltas-brz.mjs'
 
 let falhas = 0
 let passes = 0
@@ -140,6 +140,31 @@ console.log('\n9. Leitura do JSONL e escolha da última por carimbo, não por or
     lancou = e.message.includes('linha 2')
   }
   conferir('linha quebrada aborta apontando a linha', lancou)
+}
+
+console.log('\n9. 🔴 BASE POR LIVRO, o caso de 16/Set/2026: 3º lugar bloqueado nas duas passadas da véspera')
+{
+  const cert = (fetchedAt, livrosOk, precos) => ({ fetchedAt, livrosOk, livros: { presidential: {}, thirdPlace: {} }, precos, volumes: {} })
+  const c14 = cert('2026-09-14T22:44:31Z', ['presidential', 'thirdPlace'], { 'presidential:Flávio': 51.95, 'thirdPlace:Cury': 45.4 })
+  const c15a = cert('2026-09-15T17:44:56Z', ['presidential'], { 'presidential:Flávio': 52.5, 'thirdPlace:Cury': 46.15 })
+  const c15b = cert('2026-09-15T19:37:31Z', ['presidential'], { 'presidential:Flávio': 51.95, 'thirdPlace:Cury': 45.4 })
+  const c16 = cert('2026-09-16T15:41:36Z', ['presidential', 'thirdPlace'], { 'presidential:Flávio': 53.75, 'thirdPlace:Cury': 45.5 })
+  const refeita = cert('2026-09-16T15:20:00Z', ['presidential', 'thirdPlace'], { 'presidential:Flávio': 53.7, 'thirdPlace:Cury': 45.5 })
+  const b = escolherBasePorLivro([c16, c14, c15b, refeita, c15a], c16.fetchedAt)
+  conferir('vencedor vem da última certificada da véspera', b.origem.presidential === c15b.fetchedAt, JSON.stringify(b.origem))
+  conferir('3º lugar vem da última em que ELE foi aprovado', b.origem.thirdPlace === c14.fetchedAt, JSON.stringify(b.origem))
+  conferir('a própria leitura atual não vira base', !Object.values(b.origem).includes(c16.fetchedAt))
+  conferir('trava refeita há menos de 60 min não vira base', !Object.values(b.origem).includes(refeita.fetchedAt))
+  conferir('livro bloqueado não empresta preço à base', acha(b.linhas, 'Cury').preco === 45.4, JSON.stringify(b.linhas))
+  conferir('uma linha por contrato, sem duplicar livro', b.linhas.length === 2)
+  let lancou = false
+  try {
+    escolherBasePorLivro([c14], undefined)
+  } catch {
+    lancou = true
+  }
+  conferir('sem carimbo atual lança, nunca devolve base vazia', lancou)
+  conferir('horasEntre mede a idade da base', horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z') === 280.8, String(horasEntre('2026-09-04T22:53:59Z', '2026-09-16T15:41:36Z')))
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
