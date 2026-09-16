@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-15",
-  "fetchedAt": "2026-09-15T16:11:37.950Z",
+  "lastUpdate": "2026-09-16",
+  "fetchedAt": "2026-09-16T13:20:13.595Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,108 +113,108 @@
     }
   ],
   "qualidade": {
-    "lidos": 145,
-    "naLista": 56,
-    "foraDaLista": 89,
+    "lidos": 146,
+    "naLista": 68,
+    "foraDaLista": 78,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 16,
-    "veiculosRepresentados": 6,
+    "descartadosPorAcompanhamento": 14,
+    "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 22,
-    "publicadosComLinkCanonico": 6,
-    "publicadosViaGoogleNews": 4,
+    "lidosEmFeedProprio": 29,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "‘Still waiting on the DOGE check’: Battleground state voters cast doubt on Trump’s new $5K promise",
-      "url": "https://www.foxnews.com/politics/still-waiting-doge-check-battleground-state-voters-cast-doubt-trumps-new-5k-promise",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-15T15:46:02.000Z",
+      "titulo": "Spanberger is bullish about Virginia House races even without a favorable map",
+      "url": "https://www.washingtonpost.com/dc-md-va/2026/09/16/virginia-democrats-band-together-flip-house-seats/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-16T12:45:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Democrats have advantage over GOP, new poll indicates ahead of midterms",
-      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPLW5HUno0TmVzc3gzTjVqZklIVDV1OUIxel83QlZKeWNOVGZmU08tRGt3QTJkOTQyaFVSOUoteWRZMHExWlNFS252T2JCaHhFaDRic1A2RTNFSUdNbThkS3o2NjVJWmFKUFBkSlRJV1ViTlpwZ3ZQWEhDRlRmbUxreDRDdWFoYXUzMFFEdTdtaEhQa1hHanRPQWlVWnNNTW5KSmpsRXM0Q29jUG1VRW1qZlQzOWJQS05yZ3Nlb01fbHBjRnpDY3NxR1VFLU8zdw?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-09-15T14:57:00.000Z",
-      "consulta": "generic-ballot",
+      "titulo": "Abortion rights group expands midterm battleground efforts",
+      "url": "https://thehill.com/homenews/campaign/6092193-reproductive-freedom-for-all-midterm-investment-arizona-michigan-nevada/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-16T11:01:06.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "GOP candidates are largely ignoring Trump’s midterm advice, Post analysis shows",
+      "url": "https://www.washingtonpost.com/politics/2026/09/16/trump-told-republicans-talk-about-him-tout-5000-payouts-they-arent/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-16T10:00:01.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "NEWT GINGRICH: Republicans can win the 2026 midterms — if they follow the plan",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPalVYWkZyS3dQZGtJTjgtcl9jUUhrQ2FQNmNlQ0tBZGNVYW56dGwtSC00Y0JsNTRSV2Zpem5Wb2Z0c0JtUjhDN1dXdHNMX2djWWZuek9fZWY4YUZ2NXFkcDdXczhaVzJwU09LUGJNVy1zb2ZZamJUZkVNQWg1OEtkWUlibmFDb1lLNUVtMmswejXSAZYBQVVfeXFMUG9RRHRJNjdmd3F6Qm1iLVMzUTNLVXBfUXFvOHhKWnJYX0lWTTBfUjhkaElpa3JOTUQ5UnlEdG5UQXFRalZXQVpsMUotaDhBVV9hWEZLSy1CLVNvY1J3MFlQcVZSbzYwbzdjREpSajJxZFdBZ2t5bURLdXdXQ25OcjJhSU5ZaER2a2ZjRFNvamhZR2ZsX3Bn?oc=5",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-16T09:00:33.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "A ‘Blue Wave’ May Be Building, but How High?",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9DdXJuMkN2NzIxTElPTXV1bzNyOU4zeUpFeU42aldMZmpHNElNR09Obm9Cbnh3TFY5RGJ2RU1DelljbXFxbHVsU1hLTTQ1b2Y1S2lwNXc4dDZ0NDU5M3N2UDJGQnNSOVVWYTRkMklJWW5sTXRBTXNUOEY5ZEs?oc=5",
+      "titulo": "Trump to campaign in North Carolina rally with his handpicked Senate nominee Michael Whatley",
+      "url": "https://abcnews.com/Politics/wireStory/trump-campaign-north-carolina-rally-handpicked-senate-nominee-136483581",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-16T07:06:33.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Tracking Competitive Races in the House and Senate",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-15T13:09:19.000Z",
-      "consulta": "generic-ballot",
+      "publicadoEm": "2026-09-16T05:52:13.000Z",
+      "consulta": "midterms",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump sees approval rating reprieve after weeks of record lows",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNVVZTlRHNFI5NktmbnFvZlhidnNpOEYxd2piV0x1NnEwS1lZdVVqdlBUQWZ4MlBSTjV3b0RfTXFnMXIyTlNCT3JrTWdSVHZVb0hhMjZSSjBuWFpfOE9oZ25mOHVQYnNTc1dDeW5HVldLbnV0cWNEeFlfVzlYRnhNZVd1amN6MzBmT1VtNzhVYWg3Mjc2TkZLc19wRk1kemdRX21yRV9Sc1NIb2FzaTdvaEYyLXM5RDZTRnBCblZCZUsyTlk?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-09-15T11:56:00.000Z",
-      "consulta": "generic-ballot",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "'MAGA Act' could rip House seats from Dem states ahead of next presidential race",
-      "url": "https://www.foxnews.com/politics/maga-act-proposal-could-rip-house-seats-from-dem-states-ahead-next-presidential-race",
+      "titulo": "Texas Senate candidate Talarico said US was 'backsliding' on democracy in resurfaced clip",
+      "url": "https://www.foxnews.com/politics/texas-senate-candidate-talarico-said-us-backsliding-democracy-resurfaced-clip",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-15T11:00:13.000Z",
+      "publicadoEm": "2026-09-16T04:49:06.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Will there be more midterm conventions?",
-      "url": "https://rollcall.com/2026/09/15/will-there-be-more-midterm-conventions/",
-      "casa": "Roll Call",
-      "publicadoEm": "2026-09-15T10:58:43.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "Election results: Delaware primary",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE43c3dRRVJ2YmMwejhRXzltbjlCOWNiMGFSTGN5eU5uOHZTRXR0QlBOOWpJSHl2SFdGRUxxVC1HM2dCQU5xOUdCeVRfMVdvXzJMVzhheGY0LWxxX1p0OHJHZEVn?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-16T03:43:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
       "titulo": "Delaware holds U.S. Senate primary and more races to watch today",
       "url": "https://www.cbsnews.com/news/delaware-primaries-2026-midterm-elections/",
       "casa": "CBS News",
-      "publicadoEm": "2026-09-15T10:18:00.000Z",
+      "publicadoEm": "2026-09-16T01:01:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Delaware Sen. Chris Coons faces primary challenger named \"E. No-Trump Hansen\" and more races to watch today",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYWWFlY0dCR1dOZUZYV3FMcDZhYnhjdFoxLVJxSEEteG5TYzZqbGd0bEhKbFdPNVgxTGlIb2IzNUdSS3JwVTZ2YUNkMFNUZ08xdW5zT0FmOW1tVERSaENPMWpucmE2b2ZpX3JPQmN2WlVJZWhJR19JUU02aw?oc=5",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-15T10:00:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The midterms are all about control",
-      "url": "https://www.washingtonpost.com/politics/2026/09/15/midterms-are-all-about-control/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-15T09:35:12.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Democrats Gain Midterms Edge as Trump Drags Down Republicans, Per Times/Siena Poll",
-      "url": "https://www.nytimes.com/2026/09/15/us/politics/trump-midterm-election-poll.html",
+      "titulo": "Trump Plans Blitz of $138 Million and Counting to Save Midterm Republicans",
+      "url": "https://www.nytimes.com/2026/09/15/us/politics/trump-maga-inc-midterm-spending.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-15T09:02:56.000Z",
+      "publicadoEm": "2026-09-16T00:10:53.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
