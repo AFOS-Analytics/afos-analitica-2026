@@ -46,5 +46,18 @@
     "verbosCriticos": "'abriu a sessao' e 'nao chegou ao merito', nunca 'decidiu' nem 'julgou'. 'se declararam fora da votacao' com o motivo de cada um. 'gastou o dia numa questao preliminar' em vez de 'adiou', porque a preliminar nao estava concluida na hora da escrita. Nenhum placar publicado, porque as duas fontes davam contagens diferentes em minutos diferentes.",
     "superlativoRetirado": "eu havia escrito que o 1,90pp do Lula no contrato de 2o lugar era 'o maior movimento individual do dia'. Nao resiste ao paragrafo seguinte, que narra o Supremo andando 2,80pp e 3,10pp dentro do mesmo dia. Fechamento a fechamento o 1,90pp e o maior, mas dito sem o recorte e falso, e o recorte custava 7 palavras que eu nao tinha. Retirado.",
     "decisao": "prosseguir"
+  },
+  "errata": {
+    "id": "ERR-DAILY-2026-09-15-01",
+    "achadoEm": "2026-09-16",
+    "achadoPor": "rodada do /atualizar-brz de 16/Set, ao ler os volumes da certificada para o painel",
+    "superficie": "texto publicado da daily de 2026-09-15, nos 3 idiomas",
+    "afirmacaoPublicada": "o contrato de maior volume do livro e o de Renan Santos, USD 13,49M, e paga 1,65%",
+    "ondeAparece": "1 posicao por idioma: segundo paragrafo de Em sintese",
+    "medido": "na certificada publicada (br-2026-09-15T19-37-31-735Z) os maiores volumes do livro presidencial sao Tarcisio de Freitas USD 14,07M, Renan Santos USD 13,49M e Lula USD 11,11M; Tarcisio ja era o maior em 04/Set e 10/Set",
+    "magnitude": "Renan e o SEGUNDO maior, USD 0,58M abaixo do primeiro; o valor de Renan e o preco citados estao certos",
+    "causa": "ranking de volume afirmado por suposicao. O guardrail de superlativo mede series de PRECO, e o maior volume estava num contrato parado no piso de preco, fora de toda tabela de movimento",
+    "decisao": "NAO corrigido no lugar e SEM reenvio de email, por decisao do Andre em 16/Set/2026. A correcao vive aqui e em data/erratas/volume-daily-2026-09-15.json",
+    "prevencao": "bloco MAIOR VOLUME ACUMULADO, por livro, no deltas-brz (commit fdcc040f), ETAPA 1.9 do /atualizar-brz"
   }
 }

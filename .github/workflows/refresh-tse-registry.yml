@@ -9,10 +9,24 @@ name: Refresh TSE poll registry
 # (a) build-hf-tse-registry.mjs consulta SOMENTE researchFinding (metadado público de
 # pesquisa, sem PII/Lead) e (b) ele NÃO faz upload externo — só gera CSV/JSON e commita.
 # O mirror público segue DB-free. Registro muda devagar → cadência semanal.
+# ⛔ AGENDAMENTO DESLIGADO em 16/Set/2026, por decisão do André. NÃO religar.
+#
+# Este job roda build-hf-tse-registry.mjs, que lê o NOSSO banco: gera o registro
+# com 14 colunas e inclui as pesquisas que o TSE já RETIROU do arquivo oficial
+# (84 em 16/Set). O registro publicado em hf-assets/polls/tse-registry.* vem, desde
+# 10/Set, de build-tse-registry-full.mjs, que lê o arquivo PÚBLICO do TSE, com 22
+# colunas, via `npm run espelho:brz` rodado de rede residencial.
+#
+# 🔴 Ele falhou nas 4 segundas de 24/Ago a 14/Set (WebSocket do Neon no Node 20),
+# e foi SÓ essa falha que manteve o registro publicado íntegro: consertar a conexão
+# faria o arquivo regredir na execução seguinte. E o produtor certo não pode rodar
+# aqui, porque o TSE devolve 403 à rede do GitHub.
+# → memory/project_state_16set_usa.md · memory/project_state_10set_brz_hf.md
+#
+# O workflow_dispatch fica apenas para inspeção manual consciente, e o workflow
+# também foi desabilitado no GitHub (gh workflow disable).
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 13 * * 1' # toda segunda 13:00 UTC (antes do archive 14:00 / mirror 14:10)
 
 concurrency:
   group: refresh-tse-registry

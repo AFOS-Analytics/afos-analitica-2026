@@ -1,0 +1,26 @@
+{
+  "motivo": "ranking de volume falso publicado na AFOS Daily de 2026-09-15, nos 3 idiomas: 'o contrato de maior volume do livro e o de Renan Santos, USD 13,49M' contra o maior medido, Tarcisio de Freitas, USD 14,07M",
+  "achadoEm": "2026-09-16",
+  "achadoPor": "rodada do /atualizar-brz de 16/Set, ao ler os volumes da certificada para o painel",
+  "trilha": "public/afos-daily/_audit/2026-09-15.json, bloco 'errata', id ERR-DAILY-2026-09-15-01",
+  "explicacao": "Na leitura certificada que a peca publicou, .cache/capture-guard/br-2026-09-15T19-37-31-735Z.json, os tres maiores volumes acumulados do livro brazil-presidential-election sao Tarcisio de Freitas USD 14,07M, Renan Santos USD 13,49M e Lula USD 11,11M. Tarcisio ja era o maior nas certificadas de 04/Set (14,07 contra 12,64) e de 10/Set (14,07 contra 13,15). O contrato dele esta parado em 0,05%, o piso do livro, e por isso fica fora de toda tabela de movimento, que foi o que deixou a frase sair de suposicao. O resto da frase segue certo: Renan tem USD 13,49M e paga 1,65%, e o contraste entre volume e preco continua valendo com ele como SEGUNDO maior.",
+  "decisao": "NAO corrigido no lugar, por decisao do Andre em 16/Set/2026: 'errata sem reenvio, so arquivo interno'. O artefato fica exatamente como foi distribuido, sem reenvio de email, no mesmo modelo de superlativo-daily-2026-09-11.json e do hf-assets/ERRATA.md.",
+  "arquivos": {
+    "public/afos-daily/2026-09-15.md": 0,
+    "public/afos-daily/2026-09-15.en.md": 0,
+    "public/afos-daily/2026-09-15.es.md": 0
+  },
+  "notaSobreOsZeros": "zero linha alterada em cada arquivo e o resultado ESPERADO: a decisao foi nao reescrever o publicado.",
+  "alcance": {
+    "regra": "REGISTRO DATADO nao se reescreve e vive de errata; ESTADO CORRENTE se corrige.",
+    "registroDatado_naoReescrito": {
+      "daily_2026-09-15": "3 idiomas, 1 posicao cada, no segundo paragrafo de 'Em sintese'",
+      "neon_analysis-criteriosa-15-09-2026": "snapshot datado do painel de 15/Set, com a mesma afirmacao em fortes, analise e quadroComparativo do cartao de Renan Santos"
+    },
+    "estadoCorrente_corrigido": {
+      "painel": "analysis-criteriosa (3 idiomas) e CandidatesSection.tsx corrigidos em 16/Set no commit bd983f30, com Renan como segundo maior e Tarcisio como maior",
+      "daily_2026-09-16": "declara a correcao na secao 1, nos 3 idiomas, commit 9e9c27a7"
+    }
+  },
+  "prevencaoInstalada": "scripts/deltas-brz.mjs imprime, a cada rodada, o bloco 'MAIOR VOLUME ACUMULADO, por livro' com os tres maiores volumes de cada livro (rankingDeVolume, commit fdcc040f, teste no CI). Registrado como ETAPA 1.9 obrigatoria do /atualizar-brz. ATENCAO: e medidor impresso, nao portao que morde frase escrita."
+}
