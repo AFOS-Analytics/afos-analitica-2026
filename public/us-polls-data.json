@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-15",
-  "fetchedAt": "2026-09-15T00:45:24.964Z",
+  "lastUpdate": "2026-09-16",
+  "fetchedAt": "2026-09-16T18:06:52.809Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -38,8 +38,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-16",
-    "nPesquisas": 11,
+    "desde": "2026-08-17",
+    "nPesquisas": 10,
     "incluidas": [
       {
         "instituto": "CBS News/YouGov",
@@ -110,26 +110,18 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 39
-      },
-      {
-        "instituto": "Morning Consult",
-        "campoFim": "2026-08-16",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 42
       }
     ],
-    "nInstitutos": 9,
-    "dem": 47.34,
+    "nInstitutos": 8,
+    "dem": 47.47,
     "rep": 41.98,
-    "vantagemDem": 5.36,
+    "vantagemDem": 5.49,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "CBS News/YouGov",
       "Echelon Insights",
       "Emerson College",
       "Harvard/Harris Poll/HarrisX",
-      "Morning Consult",
       "Quantus Insights (R)",
       "Reuters/Ipsos",
       "The Bullfinch Group",
