@@ -1,0 +1,166 @@
+{
+  "updatedAt": "16/09/2026, 12:41",
+  "subtitle": "Cruzamento de 16 de setembro de 2026, leitura de 16/Set, 12:41 BRT (15:41 UTC), com o livro presidencial em USD 150,50M. Os cinco contratos vigiados receberam preço novo nesta rodada: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno, impeachment no Supremo e Senado. Do lado das pesquisas, uma nacional foi divulgada hoje: DataTrends, campo de 12 a 14/Set, 2.000 entrevistas por telefone automatizado, margem de 2,19pp, registro BR-08691/2026 no Tribunal Superior Eleitoral. Ela dá o 1º turno a Lula e o 2º turno a Flávio Bolsonaro por 1 ponto, dentro da margem.",
+  "candidates": [
+    {
+      "rank": "1",
+      "name": "Lula",
+      "party": "PT",
+      "color": "#DC2626",
+      "header": "PREÇO: 44,50% (vol USD 11,16M acumulado) no contrato de vencedor, leitura de 16/Set, 12:41 BRT, uma queda de 2,00pp contra o preço confirmado em 15/Set. PESQUISAS: 39% no 1º turno e 44% no 2º turno contra Flávio Bolsonaro na DataTrends de 16/Set.",
+      "fortes": [
+        "Lidera o 1º turno da DataTrends de 16/Set por 39% a 35%, quatro pontos que cabem dentro de duas margens de 2,19.",
+        "Vence os três outros pares de 2º turno que as fontes da DataTrends confirmam: 46% a 39% contra Romeu Zema e 42% a 37% contra Augusto Cury, fora de duas margens, e 44% a 41% contra Ronaldo Caiado.",
+        "No contrato de 2º lugar do 1º turno sobe 2,00pp, para 23,85%."
+      ],
+      "fracos": [
+        "Cai 2,00pp no contrato de vencedor, para 44,50%, e o vão para Flávio Bolsonaro abre de 5,45pp para 9,25pp.",
+        "Na DataTrends de 16/Set perde o par de 2º turno para Flávio Bolsonaro por 44% a 45%, uma diferença de 1 ponto que cabe na margem, ou seja empate técnico naquela casa.",
+        "O preço dele está 23,00pp abaixo do topo da série, de 67,50% em 16/Ago."
+      ],
+      "analise": "A rodada é de queda no mercado e de empate técnico na pesquisa do dia. No contrato de vencedor ele cai 2,00pp, para 44,50% (vol USD 11,16M acumulado), e o vão para Flávio Bolsonaro abre de 5,45pp para 9,25pp, com os dois lados andando. Na DataTrends de 16/Set ele lidera o 1º turno por 4 pontos e fica 1 ponto atrás no 2º turno, dentro da margem. As três nacionais divulgadas em 15 e 16/Set concordam em pô-lo à frente no 1º turno e não concordam no 2º: a Indexa/Broadcast e a DataTrends, as duas por telefone, dão 1 ponto de distância com sinais trocados, e a CNT/MDA, presencial, dá 7,3 pontos a favor dele. No contrato de 2º lugar do 1º turno ele sobe 2,00pp, para 23,85%. O painel não afirma que o mercado reagiu à pesquisa: a ordem entre as duas medições não está medida."
+    },
+    {
+      "rank": "2",
+      "name": "Flávio Bolsonaro",
+      "party": "PL",
+      "color": "#0F52BA",
+      "header": "PREÇO: 53,75% (vol USD 10,82M acumulado) no contrato de vencedor, leitura de 16/Set, 12:41 BRT, uma alta de 1,80pp contra o preço confirmado em 15/Set. PESQUISAS: 35% no 1º turno e 45% no 2º turno contra Lula na DataTrends de 16/Set.",
+      "fortes": [
+        "Sobe 1,80pp no contrato de vencedor, para 53,75%, e o vão para Lula abre de 5,45pp para 9,25pp.",
+        "Na DataTrends de 16/Set vence o par de 2º turno contra Lula por 45% a 44%, uma diferença de 1 ponto que cabe na margem de 2,19, então aquela casa mede empate técnico.",
+        "O preço dele fica 1,35pp abaixo do topo da série, de 55,10% em 10/Set."
+      ],
+      "fracos": [
+        "Fica atrás no 1º turno da DataTrends, com 35% contra 39% de Lula, uma distância que cabe dentro de duas margens.",
+        "No contrato de 2º lugar do 1º turno ele cede 1,00pp, para 75,50%, enquanto o lado de Lula sobe 2,00pp.",
+        "Na CNT/MDA de 15/Set, presencial, ele segue 7,3 pontos atrás de Lula no 2º turno, fora de duas margens, e a DataTrends não desfaz essa leitura, apenas mede outra."
+      ],
+      "analise": "A rodada é de alta no mercado e de vantagem numérica mínima na pesquisa do dia. No contrato de vencedor ele sobe 1,80pp, para 53,75% (vol USD 10,82M acumulado), e o vão para Lula abre 3,80pp, com o adversário caindo 2,00pp na mesma leitura. Os 53,75% ficam 1,35pp abaixo do topo da série dele, de 55,10% em 10/Set. Na DataTrends de 16/Set ele vence o 2º turno por 1 ponto e perde o 1º turno por 4, as duas distâncias dentro das margens. A leitura das pesquisas depende da casa: a Indexa/Broadcast o põe 1 ponto atrás no 2º turno, a DataTrends 1 ponto à frente e a CNT/MDA 7,3 pontos atrás, e o painel registra as três sem escolher. No contrato de 2º lugar do 1º turno ele cede 1,00pp, para 75,50%."
+    },
+    {
+      "rank": "3",
+      "name": "Augusto Cury",
+      "party": "Avante",
+      "color": "#0891B2",
+      "header": "PREÇO: 0,25% no contrato de vencedor, leitura de 16/Set, 12:41 BRT, queda de 0,20pp. No contrato de 3º lugar do 1º turno sobe 0,10pp contra o valor publicado de 14/Set, para 45,50% (vol USD 198 mil acumulado), onde é o favorito. PESQUISAS: 6% no 1º turno na DataTrends de 16/Set.",
+      "fortes": [
+        "É o terceiro colocado no 1º turno da DataTrends de 16/Set, com 6%, o mesmo valor que tinha nas duas nacionais de 15/Set.",
+        "No contrato de 3º lugar do 1º turno segue favorito, com 45,50%, alta de 0,10pp contra o valor publicado de 14/Set, e a distância para Renan Santos abre de 7,90pp para 9,00pp."
+      ],
+      "fracos": [
+        "Cede 0,20pp no contrato de vencedor, para 0,25%, abaixo do menor valor das leituras gravadas da série dele, de 0,30% em 10/Set.",
+        "Perde o par de 2º turno para Lula na DataTrends por 37% a 42%, uma distância de 5 pontos que fica fora de duas margens de 2,19."
+      ],
+      "analise": "A rodada mede estabilidade nas pesquisas e dois movimentos pequenos no mercado, em direções opostas. Na DataTrends de 16/Set ele tem 6% no 1º turno, o mesmo valor das duas nacionais de 15/Set, e perde o par de 2º turno para Lula por 5 pontos, fora de duas margens. No contrato de vencedor cede 0,20pp, para 0,25%, abaixo do menor valor das leituras gravadas da série dele. No contrato de 3º lugar do 1º turno, que é onde ele tem preço relevante e que volta a receber preço novo nesta rodada, sobe 0,10pp, para 45,50% (vol USD 198 mil acumulado), e segue favorito."
+    },
+    {
+      "rank": "4",
+      "name": "Renan Santos",
+      "party": "Missão",
+      "color": "#8B5CF6",
+      "header": "PREÇO: 1,35% (vol USD 13,54M acumulado) no contrato de vencedor, leitura de 16/Set, 12:41 BRT, queda de 0,30pp. No contrato de 3º lugar do 1º turno cai 1,00pp contra o valor publicado de 14/Set, para 36,50% (vol USD 311 mil acumulado). PESQUISAS: 4% no 1º turno na DataTrends de 16/Set.",
+      "fortes": [
+        "O contrato dele é o segundo maior em volume acumulado do livro presidencial, com USD 13,54M, atrás só do de Tarcísio de Freitas, e acima dos contratos de Lula e de Flávio Bolsonaro.",
+        "Tem 4% no 1º turno da DataTrends de 16/Set, à frente de Ronaldo Caiado e de Romeu Zema.",
+        "No contrato de 3º lugar do 1º turno segue como o segundo colocado, com 36,50%."
+      ],
+      "fracos": [
+        "Cede 0,30pp no contrato de vencedor, para 1,35%, e fica 0,15pp acima do piso da série dele, de 1,20% em 31/Ago.",
+        "No contrato de 3º lugar do 1º turno cai 1,00pp, para 36,50%, e a distância para Augusto Cury abre para 9,00pp."
+      ],
+      "analise": "A rodada mede queda nos dois contratos em que ele tem preço. No de vencedor ele cede 0,30pp, para 1,35% (vol USD 13,54M acumulado), e fica 0,15pp acima do piso da série, de 1,20% em 31/Ago. No de 3º lugar do 1º turno cai 1,00pp contra o valor publicado de 14/Set, para 36,50%, e segue atrás de Augusto Cury. Na DataTrends de 16/Set tem 4% no 1º turno. O contraste que o painel registra é entre volume e preço: o contrato dele é o segundo maior do livro presidencial em volume acumulado e paga 1,35%. Volume alto mede interesse acumulado desde a abertura do livro, não probabilidade de agora."
+    },
+    {
+      "rank": "5",
+      "name": "Caiado / Haddad / Zema",
+      "party": "PSD/PT/Novo",
+      "color": "#6B7280",
+      "header": "PREÇO: Ronaldo Caiado em 0,15% no contrato de vencedor, estável, leitura de 16/Set, 12:41 BRT; Romeu Zema em 0,15%, estável; Fernando Haddad em 0,05%, estável. No contrato de 3º lugar do 1º turno Ronaldo Caiado fica nos mesmos 15,50% do valor publicado de 14/Set (vol USD 130 mil acumulado). PESQUISAS: Ronaldo Caiado com 3% e Romeu Zema com 1% na DataTrends de 16/Set.",
+      "subtitle": "Os três nomes fora do pelotão de frente, com preço da leitura de 16/Set, 12:41 BRT e pesquisa da DataTrends de 16/Set.",
+      "caiado": {
+        "label": "CAIADO (PSD), 0,15% no contrato de VENCEDOR, leitura confirmada de 16/Set, 12:41 BRT, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno fica em 15,50%, o mesmo valor publicado em 14/Set, num livro de USD 130 mil. Tem 3% no 1º turno da DataTrends de 16/Set.",
+        "fortes": "No par de 2º turno contra Lula na DataTrends de 16/Set perde por 41% a 44%, uma distância de 3 pontos que cabe dentro de duas margens de 2,19.",
+        "fracos": "Tem 3% no 1º turno da DataTrends, atrás de Augusto Cury e de Renan Santos. No contrato de vencedor segue em 0,15%, sem movimento."
+      },
+      "haddad": {
+        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 16/Set, 12:41 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e a DataTrends de 16/Set não o testa em cenário presidencial de 1º turno.",
+        "fortes": "O contrato dele não se moveu na leitura de hoje, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai.",
+        "fracos": "Não é medido no 1º turno pela nacional de 16/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada."
+      },
+      "zema": {
+        "label": "ZEMA (Novo), 0,15% no contrato de VENCEDOR, leitura confirmada de 16/Set, 12:41 BRT, abaixo do piso de 0,5% da dupla leitura. Tem 1% no 1º turno da DataTrends de 16/Set.",
+        "fortes": "Mantém 1% no 1º turno, o mesmo valor das duas nacionais de 15/Set.",
+        "fracos": "Perde o par de 2º turno para Lula na DataTrends por 39% a 46%, 7 pontos que ficam fora de duas margens. No contrato de vencedor segue em 0,15%, e o topo da série dele é de 12,00%, em 13/Mai."
+      },
+      "analise": "A rodada não move os três no contrato de vencedor: Ronaldo Caiado e Romeu Zema seguem em 0,15% e Fernando Haddad em 0,05%, os mesmos valores da leitura confirmada de 15/Set. No contrato de 3º lugar do 1º turno, que volta a receber preço novo nesta rodada, Ronaldo Caiado fica nos mesmos 15,50% publicados em 14/Set. Na DataTrends de 16/Set, Caiado tem 3% e Zema 1% no 1º turno, e os pares de 2º turno contra Lula ficam a 3 pontos para Caiado, dentro de duas margens, e a 7 pontos para Zema, fora delas.",
+      "fortes": [
+        "Ronaldo Caiado perde o par de 2º turno contra Lula na DataTrends de 16/Set por 3 pontos, dentro de duas margens.",
+        "Romeu Zema mantém 1% no 1º turno, o mesmo valor das duas nacionais de 15/Set.",
+        "Os três preços de vencedor ficaram estáveis na leitura de hoje, sem movimento a explicar."
+      ],
+      "fracos": [
+        "Os três somam 0,35% no contrato de vencedor, e nenhum deles passa de 0,15% individualmente.",
+        "Romeu Zema perde o par de 2º turno para Lula na DataTrends por 7 pontos, fora de duas margens.",
+        "Fernando Haddad não é medido no 1º turno pela nacional de 16/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada."
+      ]
+    }
+  ],
+  "quadroComparativo": [
+    {
+      "n": "Lula (PT)",
+      "p": "Na DataTrends de 16/Set (campo de 12 a 14/Set, 2.000 entrevistas por telefone automatizado, margem de 2,19pp) tem 39% no 1º turno, à frente, e 44% no 2º turno contra 45% de Flávio Bolsonaro, dentro da margem. Na Indexa/Broadcast de 15/Set tinha 43% a 42% no mesmo par, e na CNT/MDA de 15/Set 47,3% a 40%.",
+      "m": "44,50% (vol USD 11,16M) no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, uma queda de 2,00pp contra o preço confirmado em 15/Set, e 23,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno sobe 2,00pp, para 23,85%.",
+      "t": "cai 2,00pp, e o vão para o primeiro abre de 5,45pp para 9,25pp",
+      "s": "A leitura estruturada de aprovação do governo segue sendo a da Genial/Quaest de 14/Set, com 43% contra 50%, porque as nacionais de 15 e 16/Set não a trazem em duas fontes independentes.",
+      "pc": "#DC2626",
+      "mc": ""
+    },
+    {
+      "n": "Flávio Bolsonaro (PL)",
+      "p": "35% no 1º turno e 45% no 2º turno contra 44% de Lula na DataTrends de 16/Set, uma vantagem de 1 ponto que cabe na margem de 2,19 e é empate técnico. No 1º turno fica 4 pontos atrás, dentro de duas margens.",
+      "m": "53,75% (vol USD 10,82M) no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, uma alta de 1,80pp contra o preço confirmado em 15/Set, e 1,35pp abaixo do topo da série dele, de 55,10% em 10/Set. No contrato de 2º lugar do 1º turno cede 1,00pp, para 75,50%.",
+      "t": "sobe 1,80pp e segue favorito, com o vão para o segundo abrindo de 5,45pp para 9,25pp",
+      "s": "No par de 2º turno contra Lula, as duas nacionais por telefone de 15 e 16/Set dão 1 ponto de distância com sinais trocados, e a CNT/MDA, presencial, 7,3 pontos a favor de Lula.",
+      "pc": "#2563EB",
+      "mc": ""
+    },
+    {
+      "n": "Augusto Cury (Avante)",
+      "p": "6% no 1º turno na DataTrends de 16/Set, o mesmo valor das duas nacionais de 15/Set. Perde o par de 2º turno para Lula por 37% a 42%, fora de duas margens.",
+      "m": "0,25% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, queda de 0,20pp. No contrato de 3º lugar do 1º turno sobe 0,10pp contra o valor publicado de 14/Set, para 45,50% (vol USD 198 mil), onde ele é o favorito.",
+      "t": "cede 0,20pp no contrato de vencedor e sobe 0,10pp no de 3º lugar",
+      "s": "No contrato de vencedor os 0,25% ficam abaixo do menor valor das leituras gravadas da série dele, de 0,30% em 10/Set.",
+      "pc": "#0891B2",
+      "mc": ""
+    },
+    {
+      "n": "Renan Santos (Missão)",
+      "p": "4% no 1º turno na DataTrends de 16/Set, à frente de Ronaldo Caiado e de Romeu Zema.",
+      "m": "1,35% (vol USD 13,54M) no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, queda de 0,30pp, a 0,15pp do piso da série dele, de 1,20% em 31/Ago. No contrato de 3º lugar do 1º turno cai 1,00pp contra o valor publicado de 14/Set, para 36,50% (vol USD 311 mil).",
+      "t": "cede nos dois contratos em que tem preço, 0,30pp no de vencedor e 1,00pp no de 3º lugar",
+      "s": "O contrato dele é o segundo maior em volume acumulado do livro presidencial, USD 13,54M, atrás só do de Tarcísio de Freitas, e paga 1,35%: volume mede interesse acumulado desde a abertura, não probabilidade de agora.",
+      "pc": "#7C3AED",
+      "mc": ""
+    },
+    {
+      "n": "Caiado (PSD)",
+      "p": "3% no 1º turno na DataTrends de 16/Set. No par de 2º turno perde para Lula por 41% a 44%, dentro de duas margens.",
+      "m": "0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, estável. No contrato de 3º lugar do 1º turno fica em 15,50% (vol USD 130 mil), o mesmo valor publicado em 14/Set.",
+      "t": "estável no contrato de vencedor e no de 3º lugar",
+      "s": "No 1º turno da DataTrends ele tem 3%, atrás de Augusto Cury e de Renan Santos, e o par de 2º turno contra Lula cabe dentro de duas margens.",
+      "pc": "#059669",
+      "mc": ""
+    },
+    {
+      "n": "Romeu Zema (Novo)",
+      "p": "1% no 1º turno na DataTrends de 16/Set, e perde o par de 2º turno para Lula por 39% a 46%, fora de duas margens.",
+      "m": "0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, estável, com o topo da série dele em 12,00%, de 13/Mai. No contrato de 3º lugar do 1º turno está em 0,75%.",
+      "t": "estável no contrato de vencedor",
+      "s": "Tem 1% no 1º turno, o mesmo valor das duas nacionais de 15/Set, e perde o par de 2º turno para Lula fora de duas margens.",
+      "pc": "#EA580C",
+      "mc": ""
+    }
+  ],
+  "cruzamento": "📈 O VÃO DO CONTRATO DE VENCEDOR VOLTOU A ABRIR, E OS DOIS LADOS ANDARAM: Flávio Bolsonaro subiu de 51,95% para 53,75% (vol USD 10,82M) e Lula caiu de 46,50% para 44,50% (vol USD 11,16M), leitura de 16/Set, 12:41 BRT, contra o preço confirmado em 15/Set. A distância foi de 5,45pp para 9,25pp. Nenhum dos dois preços é extremo. 🗳️ DO LADO DAS PESQUISAS, A DATATRENDS DE 16/Set FECHA UM TRIO DE NACIONAIS EM DOIS DIAS, E O ACHADO É O INSTRUMENTO. As duas casas que entrevistaram por telefone, a Indexa/Broadcast em 15/Set e a DataTrends hoje, medem o par de 2º turno com 1 ponto de distância e o sinal trocado: 43% a 42% para Lula numa e 45% a 44% para Flávio Bolsonaro na outra, as duas dentro de uma margem. A CNT/MDA, a única presencial das três, mede 7,3 pontos para Lula. O painel registra as três sem escolher e não afirma que o mercado reagiu a nenhuma delas. 🏛️ NO SUPREMO, A ANÁLISE SOBRE INVESTIGAR ALEXANDRE DE MORAES FOI SUSPENSA EM 15/Set, SEM DECISÃO, por um pedido de vista de Flávio Dino, que tem até 90 dias para devolver o processo. O contrato que paga pela saída de um ministro do Supremo por impeachment antes de 2027 está em 4,85%, 0,10pp abaixo da véspera e sem dinheiro novo no livro. 🗂️ E UMA TROCA NA LISTA DE CANDIDATOS: o Tribunal Superior Eleitoral indeferiu em 11/Set o registro de Pablo Marçal, e em 15/Set o PRTB anunciou Leonardo Avalanche como candidato no lugar dele, uma substituição que ainda passa pela análise do Tribunal. O livro presidencial não tem contrato com o nome de Avalanche, e o de Marçal segue no piso, em 0,05%."
+}
