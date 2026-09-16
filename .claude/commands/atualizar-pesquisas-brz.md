@@ -76,7 +76,20 @@ Agora a linha sai com escopo, data de divulgação e casa, e o bloco fecha com u
 
 ⛔ **Sem identidade ele fica CALADO em vez de dizer "nenhuma nacional".** Zero calculado sobre base ausente mandaria publicar sossegado justamente no caso em que ninguém olhou.
 
-Teste: `node scripts/testar-tse-fantasmas.mjs`, **35 asserções**, incluindo o portão que NÃO pode disparar (nacional já vencida, estadual à frente) e o medidor mudo.
+↳ **E desde 16/Set/2026 a retirada nacional viva sai com o que a MESMA casa ainda tem à frente no arquivo.** Naquele dia saiu a `BR-01431/2026`, American Analytics, com divulgação marcada para o PRÓPRIO dia e impressa no calendário de cinco dailies, e a pergunta "a casa sumiu ou tem outra data?" foi respondida à mão:
+
+```
+      BR014312026  div 2026-09-16  AMERICAN ANALYTICS
+         ↳ a casa tem 1 nacional(is) com divulgação à frente no registro atual:
+            BR025872026  reg 2026-09-15  campo 2026-09-15 a 2026-09-20  div 2026-09-21  mesma assinatura (n, custo, metodologia)
+         ⚠️ assinatura igual NÃO prova re-registro: ela aparece em 2 de 4 registro(s) desta casa no arquivo, e o registro não diz o motivo da retirada.
+```
+
+⛔ **Ele não diz "re-registro", de propósito.** Das 577 assinaturas do arquivo, 138 se repetem, e Nexus e AtlasIntel têm 9 cada: casa de onda regular repete n, custo e metodologia toda semana. A própria `BR-02587` tem a assinatura idêntica à `BR-09521` de JUNHO. Por isso a contagem da casa sai ao lado, e o motivo da retirada fica sem nome.
+
+🕐 **E o veredito passou a usar a data civil do BRASIL.** O conserto de 15/Set chegou aos três leitores e não chegou a `vereditoEditorial`, que ainda usava UTC: das 21h BRT em diante, justamente a retirada daquele dia (nacional, divulgação HOJE) sairia como "nada a corrigir no calendário".
+
+Teste: `node scripts/testar-tse-fantasmas.mjs`, **51 asserções**, incluindo o portão que NÃO pode disparar (nacional já vencida, estadual à frente), o medidor mudo, o CNPJ ausente que não pode virar "a casa não tem nada" e o relógio falso às 22h30 BRT. **9 de 9 mutações reprovadas.**
 
 ## Passo 1: ingerir daqui, com ENSAIO antes
 
@@ -141,6 +154,8 @@ Nenhuma das duas dá erro. Medido no dia: `2026-09-16T02:30:00Z` é **15/Set no 
 | **30d** | **351** | **200** | **151** | **16** |
 
 O conferidor de escopo roda em 30d. Sobre a base inteira, reproduzida do Neon com o mapeamento da rota (e a versão cortada reproduzindo a saída do dia **exata**, que é o controle), a Real Time contradiz em **38 de 38** e não 25 de 25, e os graves são **3** e não 1: `BR034902026` (div 01/Set) e `BR037332026` (div 31/Ago), os dois da Real Time e já vencidos. O veredito vivo **não** mudou naquele dia.
+
+📈 **Em 16/Set/2026 o corte chegou à janela PADRÃO de 15 dias** (209 linhas no banco, borda em 08/Set), que em 14/Set ainda cabia inteira com 197. 🔑 A janela da rota é por **data de INGESTÃO** (`createdAt`), não por divulgação, e o corte ordena por divulgação decrescente. Então o gatilho `📣` só quebra quando as linhas com divulgação **de hoje em diante** passarem de 200. Medido no dia: **88** (17 de hoje, 71 futuras). O painel público só LINKA a rota (`PollsSection`, `?days=30`), não desenha com ela. Remedir a cada rodada até o 1º turno, porque o estoque de divulgações futuras cresce perto da eleição.
 
 ⭐ **O corte tem BORDA**, porque come as divulgações mais antigas primeiro: toda data depois da menor data servida está inteira, e cada leitor diz qual pedaço dele vale.
 

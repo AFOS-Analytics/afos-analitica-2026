@@ -38,7 +38,7 @@ config({ path: '.env' })
 
 import { fetchTSEPolls } from '../lib/tse/ingest'
 import { acharCpf } from './lib/cpf.mjs'
-import { TETO_API_POLLS, bordaDoCorte, divulgamHoje } from './lib/tse-api-polls.mjs'
+import { TETO_API_POLLS, bordaDoCorte, divulgamHoje, folgaDoGatilho } from './lib/tse-api-polls.mjs'
 import { datasDeHoje } from './lib/data-civil-brz.mjs'
 
 const BASE = 'https://www.afos-analytics.com'
@@ -156,6 +156,16 @@ async function main() {
   } else {
     console.log(`   🔴 NO TETO de ${TETO_API_POLLS} linhas: a rota corta calada, e o "total" é só o tamanho do que veio.`)
     console.log(`      Divulgações até ${borda}, inclusive, podem estar INCOMPLETAS.`)
+  }
+  // 📈 Desde 16/Set/2026, quando o corte chegou à janela padrão: quanto falta
+  // para ele alcançar HOJE, que é quando o gatilho 📣 deixa de ser confiável.
+  if (polls.length > 0) {
+    const f = folgaDoGatilho(polls, HOJE)
+    const alerta = f.aFrente >= f.teto * 0.75 ? '🔴' : '📏'
+    console.log(
+      `   ${alerta} folga do gatilho: ${f.aFrente}${f.exata ? '' : ' (PISO)'} linha(s) com divulgação de ${HOJE} em diante, de ${f.teto}.` +
+        (f.exata ? ` Faltam ${f.folga} para o corte alcançar hoje.` : ' O corte JÁ alcança hoje.'),
+    )
   }
 
   // ── Passo 4b: o registro do TSE, para saber quem já SAIU ─────────────────────

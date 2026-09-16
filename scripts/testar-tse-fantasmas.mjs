@@ -14,6 +14,8 @@ import {
   ultimoFantasmas,
   serializarFantasmas,
   vereditoEditorial,
+  aFrenteDaCasa,
+  mesmaAssinatura,
 } from './lib/tse-fantasmas.mjs'
 
 let passou = 0
@@ -160,6 +162,71 @@ console.log('\n🧪 CONJUNTO DE FANTASMAS DO TSE\n')
   const semSaida = compararFantasmas(reg('t1', ['BR001']), ['BR001'])
   ok('sem retirada o veredito e vazio', vereditoEditorial(semSaida, {}, '2026-09-13').length === 0)
   ok('primeira rodada nao emite veredito', vereditoEditorial(compararFantasmas(null, ['BR001']), {}, '2026-09-13').length === 0)
+}
+
+// 14. O QUE A CASA TEM À FRENTE, reproduzindo a rodada de 16/Set/2026: saiu a
+// BR-01431 (American Analytics, nacional, div no proprio dia) e a casa tinha a
+// BR-02587 para 21/Set com a mesma assinatura. A BR-09521 de JUNHO tem a mesma
+// assinatura e ja venceu: e ela que prova que assinatura nao e re-registro.
+{
+  const HOJE = '2026-09-16'
+  const MET = 'Pesquisa quantitativa, com realização de entrevistas pessoais.'
+  const retirada = { nacional: true, divulgacao: HOJE, instituto: 'AMERICAN ANALYTICS', cnpj: 'C1', amostra: 2000, valorPesquisa: 50000, metodologia: MET }
+  const arq = [
+    { protocolo: 'BR025872026', cnpj: 'C1', nacional: true, registroDate: '2026-09-15', campoInicio: '2026-09-15', campoFim: '2026-09-20', divulgacao: '2026-09-21', amostra: 2000, valorPesquisa: 50000, metodologia: 'PESQUISA quantitativa,  com realizacao de entrevistas pessoais.' },
+    { protocolo: 'BR095212026', cnpj: 'C1', nacional: true, registroDate: '2026-06-10', divulgacao: '2026-06-16', amostra: 2000, valorPesquisa: 50000, metodologia: MET },
+    { protocolo: 'BR000012026', cnpj: 'C1', nacional: false, divulgacao: '2026-09-25', amostra: 800, valorPesquisa: 9000, metodologia: 'estadual' },
+    { protocolo: 'BR000022026', cnpj: 'OUTRA', nacional: true, divulgacao: '2026-09-18', amostra: 2000, valorPesquisa: 50000, metodologia: MET },
+  ]
+  const af = aFrenteDaCasa(retirada, arq, HOJE)
+  ok('a frente: so a nacional FUTURA da mesma casa', af.aFrente.map((p) => p.protocolo).join() === 'BR025872026', JSON.stringify(af.aFrente.map((p) => p.protocolo)))
+  ok('a frente: assinatura igual apesar de caixa, acento e espaco', af.aFrente[0]?.assinaturaIgual === true)
+  ok('a frente: a assinatura conta a de JUNHO tambem (taxa-base)', af.comAssinatura === 2, String(af.comAssinatura))
+  ok('a frente: registros da casa contam a estadual', af.registrosDaCasa === 3, String(af.registrosDaCasa))
+  ok('a frente: divulgacao IGUAL a hoje entra', aFrenteDaCasa(retirada, [{ ...arq[0], divulgacao: HOJE }], HOJE).aFrente.length === 1)
+  ok('a frente: n diferente nao e mesma assinatura', !mesmaAssinatura(retirada, { ...arq[0], amostra: 2001 }))
+  ok('a frente: custo diferente nao e mesma assinatura', !mesmaAssinatura(retirada, { ...arq[0], valorPesquisa: 50001 }))
+  ok('a frente: sem CNPJ devolve null, nunca lista vazia', aFrenteDaCasa({ ...retirada, cnpj: '' }, arq, HOJE) === null)
+
+  const r = compararFantasmas(reg('t1', []), ['BR014312026'])
+  const ident = { BR014312026: retirada }
+  const txt = vereditoEditorial(r, ident, HOJE, arq).join('|')
+  ok('veredito com arquivo lista a data nova', txt.includes('BR025872026') && txt.includes('div 2026-09-21'))
+  ok('veredito com arquivo NAO afirma re-registro', txt.includes('NÃO prova re-registro') && txt.includes('2 de 3'))
+  ok('veredito sem arquivo fica no formato antigo, byte a byte',
+    vereditoEditorial(r, ident, HOJE).join('|') === vereditoEditorial(r, ident, HOJE, undefined).join('|') && !vereditoEditorial(r, ident, HOJE).join('|').includes('↳') && !vereditoEditorial(r, ident, HOJE).join('|').includes('sem CNPJ'))
+  const nada = vereditoEditorial(r, ident, HOJE, [arq[1], arq[3]]).join('|')
+  ok('casa sem nada a frente AFIRMA isso', nada.includes('NÃO tem outra nacional'))
+  const semCnpj = vereditoEditorial(r, { BR014312026: { ...retirada, cnpj: undefined } }, HOJE, arq).join('|')
+  ok('sem CNPJ ele AVISA e nao diz que a casa nao tem nada', semCnpj.includes('sem CNPJ') && !semCnpj.includes('NÃO tem outra'))
+  ok('assinatura diferente nao imprime a ressalva', !vereditoEditorial(r, ident, HOJE, [{ ...arq[0], amostra: 1 }]).join('|').includes('NÃO prova'))
+}
+
+// 15. O "HOJE" PADRAO e a data civil do BRASIL. Relogio falso em 17/Set 01:30Z,
+// que e 16/Set 22:30 em Brasilia: a retirada nacional com divulgacao em 16/Set
+// TEM de disparar. Com o padrao UTC de antes de 16/Set/2026 ela saia "nada a
+// corrigir no calendario". O relogio falso e o unico jeito de este caso reprovar
+// a mutacao, porque fora da faixa das 21h as duas datas coincidem.
+{
+  const DataReal = globalThis.Date
+  const FIXO = DataReal.parse('2026-09-17T01:30:00Z')
+  globalThis.Date = class extends DataReal {
+    constructor(...a) {
+      super(...(a.length ? a : [FIXO]))
+    }
+    static now() {
+      return FIXO
+    }
+  }
+  try {
+    const r = compararFantasmas(reg('t1', []), ['BR100'])
+    const ident = { BR100: { nacional: true, divulgacao: '2026-09-16', instituto: 'CASA X' } }
+    const D = (l) => l.join('|').includes('NACIONAL com')
+    ok('22h30 BRT: veredito padrao usa a data do Brasil', D(vereditoEditorial(r, ident)))
+    ok('22h30 BRT: formatarFantasmas sem hoje usa a data do Brasil', D(formatarFantasmas(reg('t1', []), r, ident)))
+  } finally {
+    globalThis.Date = DataReal
+  }
 }
 
 console.log(`\n   ${passou} asserção(ões) passaram, ${falhou} falharam\n`)

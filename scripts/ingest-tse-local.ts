@@ -62,6 +62,8 @@ import {
   formatarFantasmas,
   serializarFantasmas,
 } from './lib/tse-fantasmas.mjs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
+import { redigirCpf } from './lib/cpf.mjs'
 
 // 🔴 `lib/tse/persist` importa `lib/db`, que resolve a DATABASE_URL NO MOMENTO
 // EM QUE É CARREGADO. Importado no topo, ele carrega antes do dotenv rodar e o
@@ -280,7 +282,18 @@ async function main() {
       // A consulta e dirigida aos que se mexeram, que sao poucos, em vez de
       // trazer o rawPayload dos ~1000 do banco para descrever 2.
       let identidades:
-        | Record<string, { nacional: boolean; divulgacao?: string; instituto?: string }>
+        | Record<
+            string,
+            {
+              nacional: boolean
+              divulgacao?: string
+              instituto?: string
+              cnpj?: string
+              amostra?: number
+              valorPesquisa?: number
+              metodologia?: string
+            }
+          >
         | undefined
       const seMexeram = [...(comparacaoFantasmas.sairam ?? []), ...(comparacaoFantasmas.voltaram ?? [])]
       if (seMexeram.length > 0) {
@@ -295,11 +308,35 @@ async function main() {
             nacional: detectScope(r.metodologia, r.planoAmostral, r.dadoMunicipio) === 'national',
             divulgacao: r.divulgacao,
             instituto: r.institutoFantasia || r.instituto,
+            cnpj: r.cnpj,
+            amostra: Number(r.amostra),
+            valorPesquisa: Number(r.valorPesquisa),
+            metodologia: r.metodologia,
           }
         }
       }
 
-      for (const linha of formatarFantasmas(anteriorFantasmas, comparacaoFantasmas, identidades)) {
+      // O que a MESMA casa ainda tem à frente no arquivo de agora. Em 16/Set/2026
+      // a retirada era nacional com divulgação no próprio dia, e a pergunta "ela
+      // tem outra data?" foi respondida à mão. A metodologia do banco está sem
+      // CPF, então a do arquivo passa pelo mesmo primitivo antes de comparar.
+      const arquivoParaCasa = polls.map((p) => ({
+        protocolo: p.protocolo,
+        cnpj: p.cnpj,
+        nacional: detectScope(p.metodologia, p.planoAmostral, p.dadoMunicipio) === 'national',
+        registroDate: p.registroDate,
+        campoInicio: p.campoInicio,
+        campoFim: p.campoFim,
+        divulgacao: p.divulgacao,
+        amostra: p.amostra,
+        valorPesquisa: p.valorPesquisa,
+        metodologia: redigirCpf(p.metodologia).saida,
+      }))
+
+      for (const linha of formatarFantasmas(anteriorFantasmas, comparacaoFantasmas, identidades, {
+        hoje: dataCivilBrasil(),
+        arquivo: arquivoParaCasa,
+      })) {
         console.log(linha)
       }
       mkdirSync(dirname(CAMINHO_FANTASMAS), { recursive: true })

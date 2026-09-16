@@ -85,3 +85,30 @@ export function divulgamHoje(linhas, hoje, { ehFantasma = () => false, borda = n
   const gatilho = vivas.length > 0 ? 'DISPARA' : diaInteiro(hoje, borda) ? 'NAO_DISPARA' : 'INDETERMINADO'
   return { vivas, fantasmas, gatilho }
 }
+
+/**
+ * Quanto falta para o teto começar a cortar o dia de HOJE.
+ *
+ * 📈 Medido em 16/Set/2026: o corte chegou à janela padrão de 15 dias (borda em
+ * 08/Set), que em 14/Set ainda vinha inteira. O gatilho `📣` só depende das
+ * linhas com divulgação de hoje em diante, e a rota corta das mais antigas
+ * primeiro, então ele quebra quando ESSAS linhas passam do teto. Naquele dia
+ * eram 88 de 200. A régua escrita em prosa ("remedir a cada rodada") é régua que
+ * alguém pula; a conta sai aqui.
+ *
+ * 🔑 Enquanto a borda fica ANTES de hoje, nenhuma linha de hoje em diante foi
+ * cortada e a contagem é exata. Com a borda em hoje ou depois, ela é PISO, e
+ * quem imprime tem de dizer isso.
+ *
+ * @returns {{aFrente: number, teto: number, folga: number, exata: boolean}}
+ */
+export function folgaDoGatilho(linhas, hoje, teto = TETO_API_POLLS) {
+  if (!ISO_DIA.test(String(hoje))) throw new Error(`folgaDoGatilho exige hoje em AAAA-MM-DD, veio ${hoje}`)
+  if (!Array.isArray(linhas) || linhas.length === 0) throw new Error('folgaDoGatilho sem linhas: zero aqui seria o medidor mudo')
+  const aFrente = linhas.filter((l) => {
+    const d = dataDeDivulgacao(l)
+    return d && d >= hoje
+  }).length
+  const borda = bordaDoCorte(linhas, teto)
+  return { aFrente, teto, folga: teto - aFrente, exata: borda === null || borda < hoje }
+}

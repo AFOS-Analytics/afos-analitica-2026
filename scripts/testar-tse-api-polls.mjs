@@ -15,6 +15,7 @@ import {
   dataDeDivulgacao,
   diaInteiro,
   divulgamHoje,
+  folgaDoGatilho,
 } from './lib/tse-api-polls.mjs'
 
 let passou = 0
@@ -124,6 +125,23 @@ ok('DD/MM não é data', dataDeDivulgacao({ publicationDate: '14/09/2026' }) ===
 ok('base vazia lança', lanca(() => divulgamHoje([], HOJE)))
 ok('hoje malformado lança', lanca(() => divulgamHoje([reg('N', HOJE)], '14/09/2026')))
 ok('diaInteiro com dia malformado lança', lanca(() => diaInteiro('ontem', null)))
+
+// 13. FOLGA DO GATILHO, acrescentado em 16/Set/2026, quando o corte chegou à
+// janela padrão de 15 dias. Hoje INCLUSO, ontem fora, e a contagem só é exata
+// enquanto a borda fica antes de hoje.
+{
+  const base = [...muitas(150, '2026-09-01'), ...muitas(30, HOJE), ...muitas(20, '2026-09-20')]
+  const f = folgaDoGatilho(base, HOJE)
+  ok('folga: conta hoje e o futuro', f.aFrente === 50, String(f.aFrente))
+  ok('folga: teto menos os de hoje em diante', f.folga === 150 && f.teto === 200)
+  ok('folga: borda antes de hoje é EXATA', f.exata === true)
+  ok('folga: ontem NÃO entra', folgaDoGatilho([reg('A', '2026-09-13'), reg('B', HOJE)], HOJE).aFrente === 1)
+  ok('folga: abaixo do teto é exata', folgaDoGatilho([reg('A', HOJE)], HOJE).exata === true)
+  const c = folgaDoGatilho(muitas(200, HOJE), HOJE)
+  ok('folga: borda EM hoje vira PISO', c.exata === false && c.folga === 0)
+  ok('folga: sem linhas lança', lanca(() => folgaDoGatilho([], HOJE)))
+  ok('folga: hoje malformado lança', lanca(() => folgaDoGatilho(base, '16/09')))
+}
 
 console.log(`\n${falhou === 0 ? '✅' : '❌'} ${passou} passaram, ${falhou} falharam\n`)
 process.exit(falhou === 0 ? 0 : 1)
