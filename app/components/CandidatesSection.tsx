@@ -16,29 +16,29 @@ const candidates: CandidateProfile[] = [
     age: 80,
     role: "Presidente da República",
     polymarket: "44,50%",
-    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 39%, à frente de Flávio Bolsonaro, com 35%. No 2º turno contra Flávio Bolsonaro tem 44% a 45%, 1 ponto atrás, dentro da margem. A Indexa/Broadcast de 15/Set, também por telefone, o punha 1 ponto à frente no mesmo par, e a CNT/MDA de 15/Set, presencial, 7,3 pontos à frente.",
+    poll: "TRÊS NACIONAIS SAÍRAM EM 17/Set: AtlasIntel (n=5.018, internet, margem de 1,0pp, BR-06221/2026), PoderData (n=3.000, telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (n=2.400, telefone, margem de 2pp, BR-00535/2026). No 1º turno ele tem 44,1% na AtlasIntel, à frente de Flávio Bolsonaro, 37% na PoderData, à frente, e 37% na Gerp, atrás. No 2º turno contra Flávio Bolsonaro fica atrás nas três: 46,8% a 47,2%, 44% a 46% e 43% a 50%, e cada casa repete a distância da própria rodada anterior.",
     position: "Centro-esquerda. Programas sociais, intervencionismo estatal. 3º mandato presidencial.",
-    risk: "O PREÇO CAIU E O VÃO ABRIU. O contrato de vencedor está em 44,50% (vol USD 11,16M acumulado), leitura confirmada de 16/Set, 12:41 BRT, queda de 2,00pp contra a leitura confirmada de 15/Set, e a distância para Flávio Bolsonaro abriu de 5,45pp para 9,25pp. Os 44,50% ficam 23,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno ele sobe 2,00pp, para 23,85%."
+    risk: "O PREÇO PAROU E O VÃO ABRIU PELO OUTRO LADO. O contrato de vencedor está em 44,50% (vol USD 11,19M acumulado), leitura confirmada de 17/Set, 13:21 BRT, sem movimento contra o preço confirmado em 16/Set, e a distância para Flávio Bolsonaro abriu de 9,25pp para 10,20pp. Os 44,50% ficam 23,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno ele cede 1,20pp, para 22,65%."
   },
   {
     name: "Flávio Bolsonaro",
     party: "PL",
     age: 45,
     role: "Senador (RJ)",
-    polymarket: "53,75%",
-    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 35%, atrás de Lula, com 39%. No 2º turno contra Lula tem 45% a 44%, 1 ponto à frente, dentro da margem. No mesmo par, a Indexa/Broadcast de 15/Set o punha 1 ponto atrás e a CNT/MDA de 15/Set 7,3 pontos atrás.",
+    polymarket: "54,70%",
+    poll: "TRÊS NACIONAIS SAÍRAM EM 17/Set: AtlasIntel (n=5.018, internet, margem de 1,0pp, BR-06221/2026), PoderData (n=3.000, telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (n=2.400, telefone, margem de 2pp, BR-00535/2026). No 1º turno ele tem 41,7% na AtlasIntel, contra 37,4% em 10/Set, 36% na PoderData e 40% na Gerp, à frente de Lula só nesta. No 2º turno contra Lula fica à frente nas três: 47,2% a 46,8% e 46% a 44%, dentro das margens, e 50% a 43% na Gerp, fora delas.",
     position: "Direita conservadora. Herdeiro político de Jair Bolsonaro. Apoia desregulamentação, redução do Estado.",
-    risk: "SOBE E SEGUE FAVORITO. Os 53,75% (vol USD 10,82M acumulado), leitura confirmada de 16/Set, 12:41 BRT, são uma alta de 1,80pp contra a leitura confirmada de 15/Set e ficam 1,35pp abaixo do topo da série dele, de 55,10% em 10/Set. O vão para o segundo colocado abriu de 5,45pp para 9,25pp. No contrato de 2º lugar do 1º turno ele cede 1,00pp, para 75,50%."
+    risk: "SOBE E SEGUE FAVORITO. Os 54,70% (vol USD 10,88M acumulado), leitura confirmada de 17/Set, 13:21 BRT, são uma alta de 0,95pp contra o preço confirmado em 16/Set e ficam 0,40pp abaixo do topo da série dele, de 55,10% em 10/Set. O vão para o segundo colocado abriu de 9,25pp para 10,20pp. No contrato de 2º lugar do 1º turno ele sobe 1,00pp, para 76,50%."
   },
   {
     name: "Renan Santos",
     party: "Missão",
     age: 35,
     role: "Fundador do MBL",
-    polymarket: "1,35%",
-    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 4%, à frente de Ronaldo Caiado e de Romeu Zema. Nas duas nacionais de 15/Set tinha 3% e 2,7%.",
+    polymarket: "1,15%",
+    poll: "TRÊS NACIONAIS SAÍRAM EM 17/Set: AtlasIntel (n=5.018, internet, margem de 1,0pp, BR-06221/2026), PoderData (n=3.000, telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (n=2.400, telefone, margem de 2pp, BR-00535/2026). No 1º turno ele tem 5,1% na AtlasIntel, à frente de Augusto Cury, e 3% na PoderData e 2% na Gerp, atrás de Cury nas duas.",
     position: "Direita liberal. Anti-establishment. Foco em jovens e redes sociais.",
-    risk: "CEDE 0,30pp NO CONTRATO DE VENCEDOR, para 1,35% (vol USD 13,54M acumulado), leitura confirmada de 16/Set, 12:41 BRT, e fica a 0,15pp do piso da série dele, de 1,20% em 31/Ago. O contrato dele é o segundo maior em volume acumulado do livro presidencial, atrás só do de Tarcísio de Freitas, e paga 1,35%: volume mede interesse acumulado desde a abertura, não probabilidade de agora. No contrato de 3º lugar do 1º turno cai 1,00pp contra o valor publicado de 14/Set, para 36,50%."
+    risk: "CEDE 0,20pp NO CONTRATO DE VENCEDOR, para 1,15% (vol USD 13,60M acumulado), leitura confirmada de 17/Set, 13:21 BRT, abaixo do menor valor das leituras gravadas da série dele, de 1,20% em 31/Ago. O contrato dele é o segundo maior em volume acumulado do livro presidencial, atrás só do de Tarcísio de Freitas: volume mede interesse acumulado desde a abertura, não probabilidade de agora. No contrato de 3º lugar do 1º turno sobe 7,50pp, para 44,00%, e passa à frente de Augusto Cury."
   },
   {
     name: "Fernando Haddad",
@@ -46,9 +46,9 @@ const candidates: CandidateProfile[] = [
     age: 63,
     role: "Pré-candidato Gov. SP",
     polymarket: "0,05%",
-    poll: "A DataTrends de 16/Set não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
+    poll: "As nacionais de 17/Set não o testam em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
     position: "Centro-esquerda. Ministro da Fazenda até a desincompatibilização. Foco no maior colégio eleitoral do país.",
-    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 16/Set, 12:41 BRT. Não é candidato à Presidência: disputa o governo de São Paulo, e por isso não aparece nos cenários presidenciais de 1º turno. O topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai."
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 17/Set, 13:21 BRT. Não é candidato à Presidência: disputa o governo de São Paulo, e por isso não aparece nos cenários presidenciais de 1º turno. O topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai."
   },
   {
     name: "Ronaldo Caiado",
@@ -56,19 +56,19 @@ const candidates: CandidateProfile[] = [
     age: 76,
     role: "Ex-Gov. Goiás",
     polymarket: "0,15%",
-    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 3%. No par de 2º turno perde para Lula por 41% a 44%, uma distância de 3 pontos que cabe dentro de duas margens.",
+    poll: "TRÊS NACIONAIS SAÍRAM EM 17/Set: AtlasIntel (n=5.018, internet, margem de 1,0pp, BR-06221/2026), PoderData (n=3.000, telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (n=2.400, telefone, margem de 2pp, BR-00535/2026). No 1º turno ele tem 1,7% na AtlasIntel e 3% na PoderData e na Gerp. Na AtlasIntel perde o par de 2º turno para Lula por 41,7% a 46,0%, fora de duas margens, depois do empate em 45,7% de 10/Set.",
     position: "Centro-direita. Agronegócio, gestão fiscal. Candidato oficializado pelo PSD.",
-    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno fica em 15,50%, o mesmo valor publicado em 14/Set, com USD 130 mil acumulados."
+    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, abaixo do corte de 0,5%. No contrato de 3º lugar do 1º turno cai 3,00pp, para 12,50%, com USD 133 mil acumulados."
   },
   {
     name: "Romeu Zema",
     party: "Novo",
     age: 56,
     role: "Ex-Gov. Minas Gerais",
-    polymarket: "0,15%",
-    poll: "A DATATRENDS SAIU EM 16/Set (n=2.000, campo 12 a 14/Set, telefone automatizado, margem de 2,19pp, BR-08691/2026). No 1º turno ele tem 1%. Perde o par de 2º turno para Lula por 39% a 46%, 7 pontos que ficam fora de duas margens.",
+    polymarket: "0,05%",
+    poll: "TRÊS NACIONAIS SAÍRAM EM 17/Set: AtlasIntel (n=5.018, internet, margem de 1,0pp, BR-06221/2026), PoderData (n=3.000, telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (n=2.400, telefone, margem de 2pp, BR-00535/2026). No 1º turno ele tem 1,1% na AtlasIntel e 1% na PoderData. Na AtlasIntel perde o par de 2º turno para Lula por 43,7% a 46,3%, fora de duas margens, depois de aparecer 0,2 ponto à frente em 10/Set.",
     position: "Direita liberal. Privatizações, estado mínimo. Gestão fiscal rigorosa em MG.",
-    risk: "Parado em 0,15% no contrato de vencedor, leitura confirmada de 16/Set, 12:41 BRT, abaixo do corte de 0,5%. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
+    risk: "Cede 0,10pp, para 0,05% no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, o piso do livro. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
   },
   {
     name: "Tarcísio de Freitas",
@@ -76,9 +76,9 @@ const candidates: CandidateProfile[] = [
     age: 51,
     role: "Governador de São Paulo",
     polymarket: "0,05%",
-    poll: "A DataTrends de 16/Set não o testa em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5%.",
+    poll: "As nacionais de 17/Set não o testam em cenário presidencial de 1º turno. NO PREÇO, ele está em 0,05% no contrato de VENCEDOR, no piso do livro e abaixo do corte de 0,5%.",
     position: "Centro-direita. Infraestrutura, gestão. Ex-ministro de Bolsonaro.",
-    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 16/Set, 12:41 BRT, e ainda assim o contrato dele é o de maior volume acumulado do livro presidencial, USD 14,07M. Preço no piso com volume alto mede interesse passado, não probabilidade de agora."
+    risk: "Parado no piso do livro, 0,05%, leitura confirmada de 17/Set, 13:21 BRT, e ainda assim o contrato dele é o de maior volume acumulado do livro presidencial, USD 14,08M. Preço no piso com volume alto mede interesse passado, não probabilidade de agora."
   },
 ];
 

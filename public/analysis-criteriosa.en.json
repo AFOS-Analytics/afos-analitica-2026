@@ -1,166 +1,165 @@
 {
-  "updatedAt": "16/09/2026, 12:41",
-  "subtitle": "Cross-check of September 16, 2026, reading of Sep 16, 12:41 BRT (15:41 UTC), with the presidential book at USD 150.50M. All five tracked contracts received a new price in this round: winner, first-round runner-up, first-round third place, Supreme Court impeachment and Senate. On the polling side, one national poll was released today: DataTrends, fieldwork from Sep 12 to 14, 2,000 interviews by automated telephone, margin of 2.19pp, register BR-08691/2026 at the Superior Electoral Court. It gives the first round to Lula and the runoff to Flávio Bolsonaro by 1 point, inside the margin.",
+  "updatedAt": "17/09/2026, 13:21",
+  "subtitle": "Cross-analysis of September 17, 2026, reading of Sep 17, 13:21 BRT (16:21 UTC), with the presidential book at USD 150.87M. The five tracked contracts received a new price in this round: winner, first-round runner-up, first-round third place, Supreme Court impeachment and Senate. On the polling side, three national polls were released today: AtlasIntel (fieldwork from Sep 11 to 16, 5,018 online interviews, margin of 1.0pp, BR-06221/2026), PoderData (fieldwork from Sep 13 to 16, 3,000 automated telephone interviews, margin of 1.8pp, BR-00360/2026) and Gerp (fieldwork from Sep 14 to 16, 2,400 telephone interviews, margin of 2pp, BR-00535/2026).",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 44.50% (vol USD 11.16M accumulated) in the winner contract, reading of Sep 16, 12:41 BRT, down 2.00pp against the price confirmed on Sep 15. POLLS: 39% in the first round and 44% in the runoff against Flávio Bolsonaro in the Sep 16 DataTrends poll.",
+      "header": "PRICE: 44.50% (vol USD 11.19M accumulated) in the winner contract, reading of Sep 17, 13:21 BRT, with no movement against the price confirmed on Sep 16. POLLS: in the first round 44.1% in AtlasIntel, 37% in PoderData and 37% in Gerp; in the runoff against Flávio Bolsonaro 46.8%, 44% and 43%.",
       "fortes": [
-        "Leads the first round of the Sep 16 DataTrends poll by 39% to 35%, four points that fit inside two margins of 2.19.",
-        "Wins the three other runoff pairs that the DataTrends sources confirm: 46% to 39% against Romeu Zema and 42% to 37% against Augusto Cury, outside two margins, and 44% to 41% against Ronaldo Caiado.",
-        "In the first-round runner-up contract he rises 2.00pp, to 23.85%."
+        "Leads the first round in the AtlasIntel poll of Sep 17, 44.1% to 41.7%, a 2.4-point distance that falls outside two margins of 1.0, and in PoderData, 37% to 36%.",
+        "Wins the four other AtlasIntel runoff pairs, all outside two margins: 46.3% to 43.7% against Romeu Zema, 46.0% to 41.7% against Ronaldo Caiado, 45.6% to 37.8% against Augusto Cury and 46.1% to 29.7% against Renan Santos.",
+        "In AtlasIntel and PoderData the runoff pair against Flávio Bolsonaro fits inside the margins, which is a statistical tie in both houses."
       ],
       "fracos": [
-        "Falls 2.00pp in the winner contract, to 44.50%, and the gap to Flávio Bolsonaro widens from 5.45pp to 9.25pp.",
-        "In the Sep 16 DataTrends poll he loses the runoff pair to Flávio Bolsonaro by 44% to 45%, a 1-point difference that fits inside the margin, that is, a statistical tie in that house.",
-        "His price is 23.00pp below the series high, of 67.50% on Aug 16."
+        "Stays flat at 44.50% in the winner contract while Flávio Bolsonaro rises, and the gap widens from 9.25pp to 10.20pp.",
+        "Appears numerically behind Flávio Bolsonaro in the runoff in all three national polls of Sep 17, and in Gerp the 7-point distance falls outside two margins.",
+        "In AtlasIntel his first-round lead narrowed from 5.6 to 2.4 points against the Sep 10 round. In the first-round runner-up contract he gives up 1.20pp, to 22.65%."
       ],
-      "analise": "The round is one of a fall in the market and a statistical tie in the day's poll. In the winner contract he falls 2.00pp, to 44.50% (vol USD 11.16M accumulated), and the gap to Flávio Bolsonaro widens from 5.45pp to 9.25pp, with both sides moving. In the Sep 16 DataTrends poll he leads the first round by 4 points and trails the runoff by 1 point, inside the margin. The three national polls released on Sep 15 and 16 agree in putting him ahead in the first round and do not agree on the runoff: Indexa/Broadcast and DataTrends, both by telephone, give a 1-point distance with opposite signs, and CNT/MDA, in person, gives 7.3 points in his favor. In the first-round runner-up contract he rises 2.00pp, to 23.85%. The panel does not claim the market reacted to the poll: the order between the two measurements is not measured."
+      "analise": "The round is one of a flat price and three polls that each repeat their own previous runoff reading. In the winner contract he stays at 44.50% (vol USD 11.19M accumulated), and the gap to Flávio Bolsonaro widens from 9.25pp to 10.20pp only through the opponent's move. In the runoff against Flávio Bolsonaro PoderData keeps the 2-point distance, Gerp the 7-point one and AtlasIntel goes from 0.2 to 0.4 point: the houses disagree more with one another than each one moves. In the first round he leads in AtlasIntel and PoderData and trails in Gerp, and it is in AtlasIntel that his lead narrows, from 5.6 to 2.4 points. AtlasIntel also measures 45.4% government approval against 53.6% disapproval. In the first-round runner-up contract he gives up 1.20pp, to 22.65%."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 53.75% (vol USD 10.82M accumulated) in the winner contract, reading of Sep 16, 12:41 BRT, up 1.80pp against the price confirmed on Sep 15. POLLS: 35% in the first round and 45% in the runoff against Lula in the Sep 16 DataTrends poll.",
+      "header": "PRICE: 54.70% (vol USD 10.88M accumulated) in the winner contract, reading of Sep 17, 13:21 BRT, up 0.95pp against the price confirmed on Sep 16. POLLS: in the first round 41.7% in AtlasIntel, 36% in PoderData and 40% in Gerp; in the runoff against Lula 47.2%, 46% and 50%.",
       "fortes": [
-        "Rises 1.80pp in the winner contract, to 53.75%, and the gap to Lula widens from 5.45pp to 9.25pp.",
-        "In the Sep 16 DataTrends poll he wins the runoff pair against Lula by 45% to 44%, a 1-point difference that fits inside the margin of 2.19, so that house measures a statistical tie.",
-        "His price stands 1.35pp below the series high, of 55.10% on Sep 10."
+        "Rises 0.95pp in the winner contract, to 54.70%, 0.40pp below his series high, of 55.10% on Sep 10, and the gap to Lula widens from 9.25pp to 10.20pp.",
+        "Appears ahead of Lula in the runoff in all three national polls of Sep 17, and in Gerp the 7 points, 50% to 43%, fall outside two margins.",
+        "In AtlasIntel he rises from 37.4% to 41.7% in the first round against the Sep 10 round, and in Gerp he leads the first round 40% to 37%."
       ],
       "fracos": [
-        "Trails in the first round of DataTrends, with 35% against 39% for Lula, a distance that fits inside two margins.",
-        "In the first-round runner-up contract he gives up 1.00pp, to 75.50%, while Lula's side rises 2.00pp.",
-        "In the Sep 15 CNT/MDA poll, in person, he remains 7.3 points behind Lula in the runoff, outside two margins, and DataTrends does not undo that reading, it only measures another one."
+        "In AtlasIntel and PoderData his runoff lead, of 0.4 and 2 points, fits inside the margins, so those two houses measure a statistical tie.",
+        "Still trails Lula in the first round in AtlasIntel, by 2.4 points, outside two margins, and in PoderData, by 1 point."
       ],
-      "analise": "The round is one of a rise in the market and a minimal numerical lead in the day's poll. In the winner contract he rises 1.80pp, to 53.75% (vol USD 10.82M accumulated), and the gap to Lula widens 3.80pp, with the opponent falling 2.00pp in the same reading. The 53.75% sits 1.35pp below his series high, of 55.10% on Sep 10. In the Sep 16 DataTrends poll he wins the runoff by 1 point and loses the first round by 4, both distances inside the margins. The polling reading depends on the house: Indexa/Broadcast puts him 1 point behind in the runoff, DataTrends 1 point ahead and CNT/MDA 7.3 points behind, and the panel records all three without choosing. In the first-round runner-up contract he gives up 1.00pp, to 75.50%."
+      "analise": "The round is one of a market rise and of stability within each house in the runoff. In the winner contract he rises 0.95pp, to 54.70% (vol USD 10.88M accumulated), with Lula flat, and sits 0.40pp below the series high, of 55.10% on Sep 10. The three national polls of Sep 17 put him ahead in the runoff, and each repeats the distance of its own previous round: 0.4 point in AtlasIntel, 2 in PoderData and 7 in Gerp. The movement that exists is in the AtlasIntel first round, where he rises from 37.4% to 41.7%. The panel does not claim the price reacted to any of the three: the order between the measurements is not measured. In the first-round runner-up contract he rises 1.00pp, to 76.50%."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRICE: 0.25% in the winner contract, reading of Sep 16, 12:41 BRT, down 0.20pp. In the first-round third-place contract he rises 0.10pp against the value published on Sep 14, to 45.50% (vol USD 198 thousand accumulated), where he is the favorite. POLLS: 6% in the first round in the Sep 16 DataTrends poll.",
+      "header": "PRICE: 0.15% in the winner contract, reading of Sep 17, 13:21 BRT, down 0.10pp. In the first-round third-place contract he falls 2.60pp against the price confirmed on Sep 16, to 42.90% (vol USD 215 thousand accumulated), and is no longer the favorite. POLLS: in the first round 3.5% in AtlasIntel, 8% in PoderData and 7% in Gerp.",
       "fortes": [
-        "He is third in the first round of the Sep 16 DataTrends poll, with 6%, the same value he had in the two national polls of Sep 15.",
-        "In the first-round third-place contract he remains the favorite, at 45.50%, up 0.10pp against the value published on Sep 14, and the distance to Renan Santos widens from 7.90pp to 9.00pp."
+        "He is third in the first round in PoderData, with 8%, and in Gerp, with 7%, ahead of Renan Santos in both.",
+        "In PoderData he beats Lula in the runoff 45% to 42%, a distance that fits inside two margins of 1.8."
       ],
       "fracos": [
-        "Gives up 0.20pp in the winner contract, to 0.25%, below the lowest value among the recorded readings of his series, of 0.30% on Sep 10.",
-        "Loses the runoff pair to Lula in DataTrends by 37% to 42%, a 5-point distance that falls outside two margins of 2.19."
+        "In the first-round third-place contract he falls 2.60pp, to 42.90%, and sits 1.10pp behind Renan Santos, who was 9.00pp lower the day before.",
+        "In AtlasIntel he falls from 6.6% to 3.5% in the first round against the Sep 10 round, and loses the runoff to Lula 37.8% to 45.6%. In the winner contract the 0.15% sits below the lowest value of the recorded readings in his series, of 0.30% on Sep 10."
       ],
-      "analise": "The round measures stability in the polls and two small market moves, in opposite directions. In the Sep 16 DataTrends poll he has 6% in the first round, the same value as in the two national polls of Sep 15, and loses the runoff pair to Lula by 5 points, outside two margins. In the winner contract he gives up 0.20pp, to 0.25%, below the lowest value among the recorded readings of his series. In the first-round third-place contract, which is where he has a relevant price and which gets a new price again in this round, he rises 0.10pp, to 45.50% (vol USD 198 thousand accumulated), and remains the favorite."
+      "analise": "The round changes the favorite of the contract in which he has a relevant price. In first-round third place he falls 2.60pp, to 42.90% (vol USD 215 thousand accumulated), and Renan Santos moves ahead. Today's polls do not agree on that swap: in PoderData he has 8% and in Gerp 7%, both ahead of Renan Santos, and in AtlasIntel he falls from 6.6% to 3.5%, behind him. In the runoff against Lula PoderData puts him 3 points ahead, inside two margins, and AtlasIntel 7.8 points behind, outside them. In the winner contract he gives up 0.10pp, to 0.15%."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 1.35% (vol USD 13.54M accumulated) in the winner contract, reading of Sep 16, 12:41 BRT, down 0.30pp. In the first-round third-place contract he falls 1.00pp against the value published on Sep 14, to 36.50% (vol USD 311 thousand accumulated). POLLS: 4% in the first round in the Sep 16 DataTrends poll.",
+      "header": "PRICE: 1.15% (vol USD 13.60M accumulated) in the winner contract, reading of Sep 17, 13:21 BRT, down 0.20pp. In the first-round third-place contract he rises 7.50pp against the price confirmed on Sep 16, to 44.00% (vol USD 324 thousand accumulated), and becomes the favorite. POLLS: in the first round 5.1% in AtlasIntel, 3% in PoderData and 2% in Gerp.",
       "fortes": [
-        "His contract has the second-largest accumulated volume in the presidential book, at USD 13.54M, behind only Tarcísio de Freitas's, and above the contracts of Lula and Flávio Bolsonaro.",
-        "Has 4% in the first round of the Sep 16 DataTrends poll, ahead of Ronaldo Caiado and Romeu Zema.",
-        "In the first-round third-place contract he remains second, at 36.50%."
+        "In the first-round third-place contract he rises 7.50pp, to 44.00%, and moves ahead of Augusto Cury, now 1.10pp behind him. It is also the contract with the largest accumulated volume in that book, USD 324 thousand.",
+        "In the AtlasIntel poll of Sep 17 he is third in the first round, with 5.1%, ahead of Augusto Cury, with 3.5%.",
+        "His winner contract is the second largest by accumulated volume in the presidential book, USD 13.60M, behind only Tarcísio de Freitas's."
       ],
       "fracos": [
-        "Gives up 0.30pp in the winner contract, to 1.35%, and sits 0.15pp above his series floor, of 1.20% on Aug 31.",
-        "In the first-round third-place contract he falls 1.00pp, to 36.50%, and the distance to Augusto Cury widens to 9.00pp."
+        "In the winner contract he gives up 0.20pp, to 1.15%, below the lowest value of the recorded readings in his series, of 1.20% on Aug 31.",
+        "In PoderData and Gerp he trails Augusto Cury in the first round, with 3% and 2%, and in AtlasIntel he falls from 6.5% to 5.1% against the Sep 10 round. He loses the runoff to Lula in AtlasIntel 29.7% to 46.1%."
       ],
-      "analise": "The round measures a fall in both contracts where he has a price. In the winner contract he gives up 0.30pp, to 1.35% (vol USD 13.54M accumulated), and sits 0.15pp above the series floor, of 1.20% on Aug 31. In the first-round third-place contract he falls 1.00pp against the value published on Sep 14, to 36.50%, and remains behind Augusto Cury. In the Sep 16 DataTrends poll he has 4% in the first round. The contrast the panel records is between volume and price: his contract is the second-largest in the presidential book by accumulated volume and pays 1.35%. High volume measures interest accumulated since the book opened, not probability now."
+      "analise": "The round moves his two contracts in opposite directions. In first-round third place he rises 7.50pp, to 44.00% (vol USD 324 thousand accumulated), and moves ahead of Augusto Cury. In the winner contract he gives up 0.20pp, to 1.15% (vol USD 13.60M accumulated), below the lowest value of the recorded readings in the series. Of today's three national polls, only AtlasIntel puts him ahead of Cury in the first round, 5.1% to 3.5%, and even there he falls 1.4 points against the Sep 10 round; PoderData and Gerp put Cury 5 points ahead. The panel does not claim the third-place book reacted to AtlasIntel. High volume in the winner contract measures interest accumulated since opening, not probability now."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: Ronaldo Caiado at 0.15% in the winner contract, stable, reading of Sep 16, 12:41 BRT; Romeu Zema at 0.15%, stable; Fernando Haddad at 0.05%, stable. In the first-round third-place contract Ronaldo Caiado stays at the same 15.50% as the value published on Sep 14 (vol USD 130 thousand accumulated). POLLS: Ronaldo Caiado with 3% and Romeu Zema with 1% in the Sep 16 DataTrends poll.",
-      "subtitle": "The three names outside the front group, with prices from the reading of Sep 16, 12:41 BRT and polling from the Sep 16 DataTrends poll.",
+      "header": "PRICE: Ronaldo Caiado at 0.15% in the winner contract, stable, reading of Sep 17, 13:21 BRT; Romeu Zema at 0.05%, down 0.10pp; Fernando Haddad at 0.05%, stable. In the first-round third-place contract Ronaldo Caiado falls 3.00pp against the price confirmed on Sep 16, to 12.50% (vol USD 133 thousand accumulated). POLLS: Ronaldo Caiado with 1.7% in AtlasIntel and 3% in PoderData and Gerp; Romeu Zema with 1.1% in AtlasIntel and 1% in PoderData.",
+      "subtitle": "The three names outside the leading pack, with prices from the reading of Sep 17, 13:21 BRT and polls from AtlasIntel, PoderData and Gerp of Sep 17.",
       "caiado": {
-        "label": "CAIADO (PSD), 0.15% in the WINNER contract, confirmed reading of Sep 16, 12:41 BRT, below the 0.5% floor of the double reading. In the first-round THIRD-PLACE contract he stays at 15.50%, the same value published on Sep 14, in a book of USD 130 thousand. Has 3% in the first round of the Sep 16 DataTrends poll.",
-        "fortes": "In the runoff pair against Lula in the Sep 16 DataTrends poll he loses by 41% to 44%, a 3-point distance that fits inside two margins of 2.19.",
-        "fracos": "Has 3% in the first round of DataTrends, behind Augusto Cury and Renan Santos. In the winner contract he remains at 0.15%, with no movement."
+        "label": "CAIADO (PSD), 0.15% in the WINNER contract, confirmed reading of Sep 17, 13:21 BRT, below the 0.5% floor of the double reading. In the first-round THIRD-PLACE contract he falls 3.00pp, to 12.50%, in a book of USD 133 thousand. He has 1.7% in the AtlasIntel first round and 3% in PoderData and Gerp.",
+        "fortes": "He has 3% in the PoderData first round, tied with Renan Santos, and 3% in Gerp, ahead of him.",
+        "fracos": "Loses the runoff pair to Lula in AtlasIntel by 4.3 points, outside two margins, and falls 3.00pp in the first-round third-place contract. In the winner contract he stays at 0.15%."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0.05% in the WINNER contract, confirmed reading of Sep 16, 12:41 BRT, at the book floor. He is not a presidential candidate: he is running for governor of São Paulo, and the Sep 16 DataTrends poll does not test him in a first-round presidential scenario.",
+        "label": "HADDAD (PT), 0.05% in the WINNER contract, confirmed reading of Sep 17, 13:21 BRT, at the book's floor. He is not a presidential candidate: he is running for governor of São Paulo, and the national polls of Sep 17 do not test him in a first-round presidential scenario.",
         "fortes": "His contract did not move in today's reading, so there is no movement to explain, and his series high in the winner contract is 7.60%, on May 26.",
-        "fracos": "He is not measured in the first round by the Sep 16 national poll, so the comparison between price and poll does not exist for him in this round."
+        "fracos": "He is not measured in the first round by the national polls of Sep 17, so the comparison between price and poll does not exist for him in this round."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0.15% in the WINNER contract, confirmed reading of Sep 16, 12:41 BRT, below the 0.5% floor of the double reading. Has 1% in the first round of the Sep 16 DataTrends poll.",
-        "fortes": "Keeps 1% in the first round, the same value as in the two national polls of Sep 15.",
-        "fracos": "Loses the runoff pair to Lula in DataTrends by 39% to 46%, 7 points that fall outside two margins. In the winner contract he remains at 0.15%, and his series high is 12.00%, on May 13."
+        "label": "ZEMA (Novo), 0.05% in the WINNER contract, confirmed reading of Sep 17, 13:21 BRT, down 0.10pp, at the book's floor. He has 1.1% in the AtlasIntel first round and 1% in PoderData.",
+        "fortes": "He is Lula's closest opponent in the runoff pairs of the AtlasIntel poll of Sep 17, with 43.7% against 46.3%.",
+        "fracos": "In the Sep 10 AtlasIntel round he appeared 0.2 point ahead of Lula in the runoff, and today he sits 2.6 points behind, outside two margins. In the winner contract he falls to 0.05%, and his series high is 12.00%, on May 13."
       },
-      "analise": "The round does not move the three in the winner contract: Ronaldo Caiado and Romeu Zema remain at 0.15% and Fernando Haddad at 0.05%, the same values as the confirmed reading of Sep 15. In the first-round third-place contract, which gets a new price again in this round, Ronaldo Caiado stays at the same 15.50% published on Sep 14. In the Sep 16 DataTrends poll, Caiado has 3% and Zema 1% in the first round, and the runoff pairs against Lula sit 3 points away for Caiado, inside two margins, and 7 points away for Zema, outside them.",
+      "analise": "The round moves the three little in the winner contract: Ronaldo Caiado stays at 0.15%, Romeu Zema falls from 0.15% to 0.05% and Fernando Haddad stays at 0.05%. The largest move is Caiado's in the first-round third-place contract, where he falls 3.00pp, to 12.50%. In the polls, the AtlasIntel poll of Sep 17 measures both candidates in runoff pairs against Lula and both lose outside two margins: Zema by 2.6 points, after appearing 0.2 point ahead on Sep 10, and Caiado by 4.3 points, after tying at 45.7% on Sep 10.",
       "fortes": [
-        "Ronaldo Caiado loses the runoff pair against Lula in the Sep 16 DataTrends poll by 3 points, inside two margins.",
-        "Romeu Zema keeps 1% in the first round, the same value as in the two national polls of Sep 15.",
-        "The three winner prices were stable in today's reading, with no movement to explain."
+        "Romeu Zema is Lula's closest opponent in the runoff pairs of the AtlasIntel poll of Sep 17, 2.6 points behind.",
+        "Ronaldo Caiado has 3% in the PoderData and Gerp first round.",
+        "Fernando Haddad and Ronaldo Caiado were stable in the winner contract in today's reading."
       ],
       "fracos": [
-        "The three of them add up to 0.35% in the winner contract, and none of them goes above 0.15% individually.",
-        "Romeu Zema loses the runoff pair to Lula in DataTrends by 7 points, outside two margins.",
-        "Fernando Haddad is not measured in the first round by the Sep 16 national poll, so the comparison between price and poll does not exist for him in this round."
+        "The three add up to 0.25% in the winner contract, and none of them exceeds 0.15% individually.",
+        "In AtlasIntel the pairs of Zema and Caiado against Lula worsen against the Sep 10 round and fall outside two margins.",
+        "Fernando Haddad is not measured in the first round by the national polls of Sep 17, so the comparison between price and poll does not exist for him in this round."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "In the Sep 16 DataTrends poll (fieldwork from Sep 12 to 14, 2,000 interviews by automated telephone, margin of 2.19pp) he has 39% in the first round, ahead, and 44% in the runoff against 45% for Flávio Bolsonaro, inside the margin. In the Sep 15 Indexa/Broadcast poll he had 43% to 42% in the same pair, and in the Sep 15 CNT/MDA poll 47.3% to 40%.",
-      "m": "44.50% (vol USD 11.16M) in the winner contract, confirmed reading of Sep 16, 12:41 BRT, down 2.00pp against the price confirmed on Sep 15, and 23.00pp below his series high, of 67.50% on Aug 16. In the first-round runner-up contract he rises 2.00pp, to 23.85%.",
-      "t": "falls 2.00pp, and the gap to the front-runner widens from 5.45pp to 9.25pp",
-      "s": "The structured reading of government approval remains the Genial/Quaest poll of Sep 14, with 43% against 50%, because the national polls of Sep 15 and 16 do not bring it in two independent sources.",
+      "p": "In the AtlasIntel poll of Sep 17 (fieldwork from Sep 11 to 16, 5,018 online interviews, margin of 1.0pp) he has 44.1% in the first round, ahead, and 46.8% in the runoff against Flávio Bolsonaro's 47.2%, inside the margin. In the PoderData poll of Sep 17 he has 37% in the first round and 44% to 46% in the runoff, and in the Gerp poll of Sep 17 37% and 43% to 50%.",
+      "m": "44.50% (vol USD 11.19M) in the winner contract, confirmed reading of Sep 17, 13:21 BRT, with no movement against the price confirmed on Sep 16, and 23.00pp below his series high, of 67.50% on Aug 16. In the first-round runner-up contract he gives up 1.20pp, to 22.65%.",
+      "t": "flat, and the gap to the leader widens from 9.25pp to 10.20pp through the opponent's move",
+      "s": "The AtlasIntel poll of Sep 17 measures 45.4% government approval against 53.6% disapproval, and the Genial/Quaest poll of Sep 14 measured 43% against 50%. They are different houses and methods, and the panel does not read them as a series.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "35% in the first round and 45% in the runoff against 44% for Lula in the Sep 16 DataTrends poll, a 1-point lead that fits inside the margin of 2.19 and is a statistical tie. In the first round he is 4 points behind, inside two margins.",
-      "m": "53.75% (vol USD 10.82M) in the winner contract, confirmed reading of Sep 16, 12:41 BRT, up 1.80pp against the price confirmed on Sep 15, and 1.35pp below his series high, of 55.10% on Sep 10. In the first-round runner-up contract he gives up 1.00pp, to 75.50%.",
-      "t": "rises 1.80pp and remains the favorite, with the gap to the runner-up widening from 5.45pp to 9.25pp",
-      "s": "In the runoff pair against Lula, the two telephone national polls of Sep 15 and 16 give a 1-point distance with opposite signs, and CNT/MDA, in person, 7.3 points in Lula's favor.",
+      "p": "41.7% in the first round and 47.2% in the runoff against Lula's 46.8% in the AtlasIntel poll of Sep 17, inside the margin. In PoderData he has 36% and 46% to 44%, inside two margins, and in Gerp 40% and 50% to 43%, outside them.",
+      "m": "54.70% (vol USD 10.88M) in the winner contract, confirmed reading of Sep 17, 13:21 BRT, up 0.95pp against the price confirmed on Sep 16, and 0.40pp below his series high, of 55.10% on Sep 10. In the first-round runner-up contract he rises 1.00pp, to 76.50%.",
+      "t": "rises 0.95pp and remains the favorite, with the gap to second place widening from 9.25pp to 10.20pp",
+      "s": "In the runoff against Lula each of the three houses repeats the distance of its own previous round, 0.4 point in AtlasIntel, 2 in PoderData and 7 in Gerp, and the difference between them is larger than the movement of any one.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "6% in the first round in the Sep 16 DataTrends poll, the same value as in the two national polls of Sep 15. Loses the runoff pair to Lula by 37% to 42%, outside two margins.",
-      "m": "0.25% in the winner contract, confirmed reading of Sep 16, 12:41 BRT, down 0.20pp. In the first-round third-place contract he rises 0.10pp against the value published on Sep 14, to 45.50% (vol USD 198 thousand), where he is the favorite.",
-      "t": "gives up 0.20pp in the winner contract and rises 0.10pp in the third-place one",
-      "s": "In the winner contract the 0.25% sits below the lowest value among the recorded readings of his series, of 0.30% on Sep 10.",
+      "p": "3.5% in the first round in the AtlasIntel poll of Sep 17, against 6.6% on Sep 10, and 8% in PoderData and 7% in Gerp. In PoderData he beats Lula in the runoff 45% to 42%, inside two margins, and in AtlasIntel he loses 37.8% to 45.6%.",
+      "m": "0.15% in the winner contract, confirmed reading of Sep 17, 13:21 BRT, down 0.10pp. In the first-round third-place contract he falls 2.60pp against the price confirmed on Sep 16, to 42.90% (vol USD 215 thousand), and sits 1.10pp behind Renan Santos.",
+      "t": "falls in both contracts and loses the favorite spot in third place",
+      "s": "In the winner contract the 0.15% sits below the lowest value of the recorded readings in his series, of 0.30% on Sep 10.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "4% in the first round in the Sep 16 DataTrends poll, ahead of Ronaldo Caiado and Romeu Zema.",
-      "m": "1.35% (vol USD 13.54M) in the winner contract, confirmed reading of Sep 16, 12:41 BRT, down 0.30pp, 0.15pp from his series floor, of 1.20% on Aug 31. In the first-round third-place contract he falls 1.00pp against the value published on Sep 14, to 36.50% (vol USD 311 thousand).",
-      "t": "gives up in both contracts where he has a price, 0.30pp in the winner one and 1.00pp in the third-place one",
-      "s": "His contract has the second-largest accumulated volume in the presidential book, USD 13.54M, behind only Tarcísio de Freitas's, and pays 1.35%: volume measures interest accumulated since the opening, not probability now.",
+      "p": "5.1% in the first round in the AtlasIntel poll of Sep 17, ahead of Augusto Cury, and 3% in PoderData and 2% in Gerp, behind him in both.",
+      "m": "1.15% (vol USD 13.60M) in the winner contract, confirmed reading of Sep 17, 13:21 BRT, down 0.20pp, below the lowest value of the recorded readings in his series, of 1.20% on Aug 31. In the first-round third-place contract he rises 7.50pp against the price confirmed on Sep 16, to 44.00% (vol USD 324 thousand), and becomes the favorite.",
+      "t": "rises 7.50pp and takes third place, and gives up 0.20pp in the winner contract",
+      "s": "His winner contract is the second largest by accumulated volume in the presidential book, USD 13.60M, behind only Tarcísio de Freitas's, and pays 1.15%: volume measures interest accumulated since opening, not probability now.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "3% in the first round in the Sep 16 DataTrends poll. In the runoff pair he loses to Lula by 41% to 44%, inside two margins.",
-      "m": "0.15% in the winner contract, confirmed reading of Sep 16, 12:41 BRT, stable. In the first-round third-place contract he stays at 15.50% (vol USD 130 thousand), the same value published on Sep 14.",
-      "t": "stable in the winner contract and in the third-place one",
-      "s": "In the first round of DataTrends he has 3%, behind Augusto Cury and Renan Santos, and the runoff pair against Lula fits inside two margins.",
+      "p": "1.7% in the first round in the AtlasIntel poll of Sep 17 and 3% in PoderData and Gerp. In AtlasIntel he loses the runoff pair to Lula 41.7% to 46.0%, outside two margins.",
+      "m": "0.15% in the winner contract, confirmed reading of Sep 17, 13:21 BRT, stable. In the first-round third-place contract he falls 3.00pp against the price confirmed on Sep 16, to 12.50% (vol USD 133 thousand).",
+      "t": "stable in the winner contract and falling in the third-place one",
+      "s": "In the AtlasIntel poll of Sep 10 the runoff pair against Lula was tied at 45.7%, and on Sep 17 he sits 4.3 points behind.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "1% in the first round in the Sep 16 DataTrends poll, and he loses the runoff pair to Lula by 39% to 46%, outside two margins.",
-      "m": "0.15% in the winner contract, confirmed reading of Sep 16, 12:41 BRT, stable, with his series high at 12.00%, from May 13. In the first-round third-place contract he stands at 0.75%.",
-      "t": "stable in the winner contract",
-      "s": "Has 1% in the first round, the same value as in the two national polls of Sep 15, and loses the runoff pair to Lula outside two margins.",
+      "p": "1.1% in the first round in the AtlasIntel poll of Sep 17 and 1% in PoderData. In AtlasIntel he loses the runoff pair to Lula 43.7% to 46.3%, outside two margins.",
+      "m": "0.05% in the winner contract, confirmed reading of Sep 17, 13:21 BRT, down 0.10pp, at the book's floor, with his series high at 12.00%, from May 13. In the first-round third-place contract he stands at 0.85%.",
+      "t": "falls 0.10pp and reaches the book's floor",
+      "s": "In the AtlasIntel poll of Sep 10 he appeared 0.2 point ahead of Lula in the runoff, and on Sep 17 he sits 2.6 points behind.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "📈 THE GAP IN THE WINNER CONTRACT WIDENED AGAIN, AND BOTH SIDES MOVED: Flávio Bolsonaro rose from 51.95% to 53.75% (vol USD 10.82M) and Lula fell from 46.50% to 44.50% (vol USD 11.16M), reading of Sep 16, 12:41 BRT, against the price confirmed on Sep 15. The distance went from 5.45pp to 9.25pp. Neither price is an extreme. 🗳️ ON THE POLLING SIDE, THE Sep 16 DATATRENDS POLL COMPLETES A TRIO OF NATIONAL POLLS IN TWO DAYS, AND THE FINDING IS THE INSTRUMENT. The two houses that interviewed by telephone, Indexa/Broadcast on Sep 15 and DataTrends today, measure the runoff pair with a 1-point distance and the opposite sign: 43% to 42% for Lula in one and 45% to 44% for Flávio Bolsonaro in the other, both inside one margin. CNT/MDA, the only in-person poll of the three, measures 7.3 points for Lula. The panel records all three without choosing and does not claim the market reacted to any of them. 🏛️ AT THE SUPREME COURT, THE REVIEW OF WHETHER TO INVESTIGATE ALEXANDRE DE MORAES WAS SUSPENDED ON Sep 15, WITH NO DECISION, by Flávio Dino's request for more time to review the case, and he has up to 90 days to return it. The contract that pays out if a Supreme Court justice leaves by impeachment before 2027 stands at 4.85%, 0.10pp below the previous day and with no new money in the book. 🗂️ AND A CHANGE IN THE LIST OF CANDIDATES: the Superior Electoral Court rejected Pablo Marçal's registration on Sep 11, and on Sep 15 the PRTB announced Leonardo Avalanche as its candidate in his place, a substitution still under review by the Court. The presidential book has no contract with Avalanche's name, and Marçal's remains at the floor, at 0.05%."
+  "cruzamento": "📈 THE GAP IN THE WINNER CONTRACT WIDENED FROM 9.25pp TO 10.20pp WITH ONLY ONE SIDE MOVING: Flávio Bolsonaro rose from 53.75% to 54.70% (vol USD 10.88M), 0.40pp below his series high, and Lula stayed at 44.50% (vol USD 11.19M), reading of Sep 17, 13:21 BRT, against the price confirmed on Sep 16. 🗳️ THREE NATIONAL POLLS WERE RELEASED ON Sep 17, AtlasIntel, PoderData and Gerp, and in the runoff between Flávio Bolsonaro and Lula each house repeats the distance of its own previous round: 2 points in PoderData, 46% to 44%, as on Sep 10; 7 points in Gerp, 50% to 43%, as on Sep 9; and 0.4 point in AtlasIntel, 47.2% to 46.8%, against 0.2 on Sep 10. All three put Flávio Bolsonaro numerically ahead. ⚠️ The difference BETWEEN the houses, from 0.4 to 7 points, is larger than the movement of any of them against itself: in PoderData and AtlasIntel the pair fits inside the margins and is a statistical tie, and in Gerp it falls outside two margins. In the first round the one that moves is AtlasIntel, where Lula's lead over Flávio Bolsonaro narrowed from 5.6 to 2.4 points. 🥉 IN THE FIRST-ROUND THIRD-PLACE CONTRACT RENAN SANTOS PASSED AUGUSTO CURY, 44.00% to 42.90%, after rising 7.50pp, and today's polls do not agree on that order: AtlasIntel puts Renan Santos ahead and PoderData and Gerp put Cury ahead. 🏛️ IN THE SUPREME COURT, EDSON FACHIN REMOVED ON Sep 17 FROM THE Sep 23 AGENDA THE JUDGMENT OF THE REQUEST TO INVESTIGATE ANDRÉ MENDONÇA, with no new date, and the analysis on Alexandre de Moraes remains on Flávio Dino's review request. The contract on a Supreme Court justice leaving by impeachment before 2027 stands at 5.05%, 0.20pp above the previous day, with almost no new money in the book. The panel does not claim the market reacted to any poll or to the procedure."
 }
