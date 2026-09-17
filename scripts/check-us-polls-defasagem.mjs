@@ -36,6 +36,7 @@ import {
   VEREDITOS,
   ORDEM,
 } from '../lib/us-polls/defasagem.mjs'
+import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 
 const UA = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
 const HOJE = new Date().toISOString().slice(0, 10)
@@ -57,8 +58,8 @@ const CASAS = [
   { nome: 'The Economist/YouGov', rss: 'https://today.yougov.com/rss', url: 'https://today.yougov.com/topics/politics' },
   { nome: 'Reuters/Ipsos', rss: 'https://www.ipsos.com/en-us/rss.xml', url: 'https://www.ipsos.com/en-us' },
   { nome: 'Emerson College', rss: 'https://emersoncollegepolling.com/feed/', url: 'https://emersoncollegepolling.com/category/national/' },
-  { nome: 'Big Data Poll (R)', url: 'https://www.bigdatapoll.com' },
-  { nome: 'Focaldata/Financial Times', url: 'https://www.focaldata.com', alias: ['Focaldata'] },
+  { nome: 'Big Data Poll', url: 'https://www.bigdatapoll.com' },
+  { nome: 'Focaldata/Financial Times', url: 'https://www.focaldata.com' },
   // 📡 O feed foi achado em 10/Set/2026 declarado no <link rel="alternate"> da
   // própria página que o script já raspava. Ela é do construtor da GoDaddy e o
   // corpo só existe depois do JavaScript, então a leitura por HTML devolvia ZERO
@@ -104,7 +105,9 @@ async function baixar(url, cru = false) {
 const base = JSON.parse(readFileSync('public/us-polls-data.json', 'utf8'))
 const nossoMaisRecente = {}
 for (const p of base.polls) {
-  const k = p.instituto
+  // A SÉRIE, não o nome cru. Em 17/Set/2026 o nome novo da Big Data Poll fazia
+  // este conferidor dizer "temos 2026-07-29" com a rodada de 15/Set no arquivo.
+  const k = serieDaCasa(p.instituto)
   if (!nossoMaisRecente[k] || p.campoFim > nossoMaisRecente[k]) nossoMaisRecente[k] = p.campoFim
 }
 const baseMaisRecente = base.polls.map((p) => p.campoFim).sort().pop()
@@ -115,8 +118,7 @@ console.log('')
 
 const linhas = []
 for (const casa of CASAS) {
-  const conhecido = nossoMaisRecente[casa.nome] ||
-    (casa.alias || []).map((a) => nossoMaisRecente[a]).find(Boolean)
+  const conhecido = nossoMaisRecente[casa.nome]
 
   // RSS primeiro: `pubDate` é data declarada, não data raspada de texto.
   let datas = [], datasDoTema = [], falaDoTema = false, via = 'html', r

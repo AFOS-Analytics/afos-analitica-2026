@@ -51,6 +51,7 @@ import { join } from 'node:path'
 
 import { medirCadencia } from '../lib/us-polls/atraso.mjs'
 import { LISTAGENS_POR_CASA, verificarCasasAtrasadas } from '../lib/us-polls/fora-do-indice.mjs'
+import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 import { classificarLote, VEREDITOS_INSTRUMENTO as V } from '../lib/us-polls/instrumento.mjs'
 
 const UA = 'AFOS-Analytics/1.0 (https://www.afos-analytics.com; pesquisa academica aberta)'
@@ -159,7 +160,7 @@ function camposQueJaTemos(instituto) {
   try {
     const dados = JSON.parse(readFileSync(ARQUIVO_PADRAO, 'utf8'))
     return new Set(
-      (dados.polls ?? []).filter((p) => p.instituto === instituto).map((p) => `${p.campoInicio}→${p.campoFim}`),
+      (dados.polls ?? []).filter((p) => serieDaCasa(p.instituto) === instituto).map((p) => `${p.campoInicio}→${p.campoFim}`),
     )
   } catch {
     return new Set()

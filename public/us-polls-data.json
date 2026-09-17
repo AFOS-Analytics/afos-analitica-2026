@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-16",
-  "fetchedAt": "2026-09-16T18:06:52.809Z",
+  "lastUpdate": "2026-09-17",
+  "fetchedAt": "2026-09-17T17:05:35.838Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -38,9 +38,16 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-17",
-    "nPesquisas": 10,
+    "desde": "2026-08-18",
+    "nPesquisas": 6,
     "incluidas": [
+      {
+        "instituto": "Big Data Poll/Public Polling Project",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "LV",
+        "dem": 48,
+        "rep": 37
+      },
       {
         "instituto": "CBS News/YouGov",
         "campoFim": "2026-09-11",
@@ -75,72 +82,62 @@
         "amostraTipo": "RV",
         "dem": 46,
         "rep": 40
-      },
-      {
-        "instituto": "Echelon Insights",
-        "campoFim": "2026-08-17",
-        "amostraTipo": "LV",
-        "dem": 50,
-        "rep": 45
-      },
-      {
-        "instituto": "Emerson College",
-        "campoFim": "2026-08-17",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 43
-      },
-      {
-        "instituto": "Reuters/Ipsos",
-        "campoFim": "2026-08-17",
-        "amostraTipo": "RV",
-        "dem": 41,
-        "rep": 36
-      },
-      {
-        "instituto": "The Bullfinch Group",
-        "campoFim": "2026-08-17",
-        "amostraTipo": "RV",
-        "dem": 42,
-        "rep": 37
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-08-17",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 39
       }
     ],
-    "nInstitutos": 8,
-    "dem": 47.47,
-    "rep": 41.98,
-    "vantagemDem": 5.49,
+    "nInstitutos": 5,
+    "dem": 48.78,
+    "rep": 42.8,
+    "vantagemDem": 5.98,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
+      "Big Data Poll/Public Polling Project",
       "CBS News/YouGov",
-      "Echelon Insights",
-      "Emerson College",
       "Harvard/Harris Poll/HarrisX",
       "Quantus Insights (R)",
-      "Reuters/Ipsos",
-      "The Bullfinch Group",
       "The Economist/YouGov"
     ]
   },
   "qualidade": {
-    "linhasLidas": 382,
-    "publicadas": 389,
+    "linhasLidas": 384,
+    "publicadas": 391,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 382,
+    "doIndice": 384,
     "curadas": 7,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
+    {
+      "instituto": "Big Data Poll/Public Polling Project",
+      "campoInicio": "2026-09-13",
+      "campoFim": "2026-09-15",
+      "amostra": 2947,
+      "amostraTipo": "RV",
+      "margemErro": 1.8,
+      "dem": 45,
+      "rep": 36,
+      "outros": 19,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Big Data Poll/Public Polling Project",
+      "campoInicio": "2026-09-13",
+      "campoFim": "2026-09-15",
+      "amostra": 2633,
+      "amostraTipo": "LV",
+      "margemErro": 1.7,
+      "dem": 48,
+      "rep": 37,
+      "outros": 15,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "CBS News/YouGov",
       "campoInicio": "2026-09-08",
@@ -150,7 +147,7 @@
       "margemErro": 2.9,
       "dem": 54,
       "rep": 46,
-      "outros": 0,
+      "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.cbsnews.com/news/poll-trump-battleground-tracker-house-control-2026-midterm-elections/",
       "origem": "indice-wikipedia"
