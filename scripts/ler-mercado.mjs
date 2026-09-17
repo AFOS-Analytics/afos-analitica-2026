@@ -30,6 +30,7 @@
  */
 
 import { pathToFileURL } from 'url'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const PAIS = process.argv.find((a) => a.startsWith('--pais='))?.slice(7) ?? 'us'
 const SO_JSON = process.argv.includes('--json')
@@ -118,7 +119,7 @@ export function lerResposta(dados, pais = 'us') {
 async function principal() {
   // 🔴 As duas travas da rota: sem `country` ela devolve o OUTRO país, e sem
   // `fresh=1` devolve o CACHE com carimbo antigo.
-  const url = `https://www.afos-analytics.com/api/polymarket?country=${PAIS}&fresh=1`
+  const url = `${baseDeLeitura()}/api/polymarket?country=${PAIS}&fresh=1`
   const res = await fetch(url, { signal: AbortSignal.timeout(30_000) })
   if (!res.ok) {
     console.error(`proxy devolveu HTTP ${res.status}`)

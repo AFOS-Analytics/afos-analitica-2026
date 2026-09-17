@@ -8,6 +8,7 @@
  * Roda contra as perguntas VIVAS do proxy, não contra exemplo inventado.
  */
 import { extractCandidateName } from '../app/lib/utils'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 // Réplica exata da cópia que vivia em `app/lib/utils.ts` até 30/Jul.
 function telaAntiga(question: string): string {
@@ -46,7 +47,7 @@ async function main() {
   let conferidos = 0
 
   for (const slug of SLUGS_BR) {
-    const r = await fetch('https://www.afos-analytics.com/api/polymarket/lookup?slug=' + encodeURIComponent(slug))
+    const r = await fetch(`${baseDeLeitura()}/api/polymarket/lookup?slug=` + encodeURIComponent(slug))
     const ev: any = (await r.json())?.event
     if (!ev) { console.log(`### ${slug}: SEM RESPOSTA`); continue }
     console.log(`\n### ${ev.title}`)

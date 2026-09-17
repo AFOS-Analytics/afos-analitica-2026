@@ -1,5 +1,14 @@
 # AFOS Tradeoff — US Midterms Weekly
 
+## 🌐 Rede externa: rodar ANTES, se não estiver na rede de casa (17/Set/2026)
+
+```bash
+npm run rede:afos        # 0 LIMPA · 2 DOMINIO_INTERCEPTADO (imprime o export) · 1 SEM_ACESSO
+export AFOS_BASE=https://afos-analitica-2026.vercel.app   # só se o veredito for 2
+```
+
+🔴 Numa rede com inspeção de TLS (FortiGate), **só `www.afos-analytics.com` chega reassinado**: todo leitor local cai com `UNABLE_TO_VERIFY_LEAF_SIGNATURE` enquanto Vercel, GitHub, HF, Neon, Resend, TSE e Polymarket passam. O `AFOS_BASE` troca o **host de leitura** para o alias de produção (mesmo `dpl_`, conferido por `vercel inspect`), e os 13 leitores locais leem dele via `scripts/lib/base-afos.mjs`. ⛔ **Nunca desligar verificação de certificado.** ⛔ Links públicos (email, feed, sitemap, `llms.txt`) continuam no domínio canônico. Chamadas `curl` deste comando: trocar `https://www.afos-analytics.com` por `${AFOS_BASE:-https://www.afos-analytics.com}`. → `memory/reference_rede_com_inspecao_tls_fortigate.md`
+
 Gerar a edição semanal técnica do AFOS Tradeoff dos **Estados Unidos**, midterms de 03/Nov/2026. Audiência: leitor profissional de mercado (research, buy-side, tesouraria, mesa institucional).
 
 O template nasceu do Brasil e **quatro seções mudaram** para os EUA, com aprovação do André em 01/Ago/2026. Elas estão na seção "As 4 trocas" abaixo, e não são preferência de redação: manter o template do Brasil produziria contradição dentro da própria peça.

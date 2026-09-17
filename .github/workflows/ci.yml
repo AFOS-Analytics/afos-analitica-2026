@@ -72,6 +72,12 @@ jobs:
       - name: Escopo derivado (rotulo nacional)
         run: node scripts/testar-escopo-derivado.mjs
 
+      # A base de leitura dos scripts locais (AFOS_BASE). Lista fechada de hosts:
+      # preview nunca passa por producao, e host estranho LANCA em vez de cair
+      # calado no canonico. Sem rede.
+      - name: Base de leitura e veredito de rede
+        run: node scripts/testar-base-afos.mjs
+
       # A tabela de variacao do Brasil. Em 16/Set ela comparou contra 04/Set sem
       # aviso, porque a base era a ultima linha anotada; agora a base e a
       # certificada anterior livro a livro, e o ranking de volume por livro mede

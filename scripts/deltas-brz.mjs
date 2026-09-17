@@ -34,6 +34,7 @@ import { existsSync, readFileSync, readdirSync, appendFileSync, mkdirSync } from
 import { dirname } from 'path'
 import { pathToFileURL } from 'url'
 import { lerResposta } from './ler-mercado.mjs'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 export const CAMINHO_LEITURAS = 'data/brz/leituras-confirmadas.jsonl'
 
@@ -256,7 +257,7 @@ async function principal() {
     console.log(`   livros aprovados: ${c.livrosOk.join(', ') || 'nenhum'}`)
     if (bloqueados.length) console.log(`   livros BLOQUEADOS, fora desta tabela e sem preço novo: ${bloqueados.join(', ')}`)
   } else {
-    const url = 'https://www.afos-analytics.com/api/polymarket?country=br&fresh=1'
+    const url = `${baseDeLeitura()}/api/polymarket?country=br&fresh=1`
     const res = await fetch(url, { signal: AbortSignal.timeout(30_000) })
     if (!res.ok) {
       console.error(`proxy devolveu HTTP ${res.status}`)

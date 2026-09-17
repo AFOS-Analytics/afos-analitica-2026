@@ -30,6 +30,7 @@
 
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const MESES_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 const MESES_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -131,7 +132,7 @@ const T = {
 
 const t = T[locale] || T['pt-BR']
 
-const res = await fetch(`https://www.afos-analytics.com/api/polls/tse?days=${Math.max(10, dias + 3)}`, {
+const res = await fetch(`${baseDeLeitura()}/api/polls/tse?days=${Math.max(10, dias + 3)}`, {
   signal: AbortSignal.timeout(30000),
 })
 if (!res.ok) {

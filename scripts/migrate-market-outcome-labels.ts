@@ -30,6 +30,7 @@ import { PrismaClient } from '@prisma/client'
 import { PrismaNeon } from '@prisma/adapter-neon'
 import { createHash } from 'crypto'
 import { extractCandidateName } from '../app/lib/polymarket/bootstrap'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: (process.env.DATABASE_URL || '').trim() }) })
 const APLICAR = process.argv.includes('--aplicar')
@@ -89,7 +90,7 @@ async function main() {
   const acoes: { titulo: string; linha: string }[] = []
 
   for (const slug of SLUGS) {
-    const r = await fetch('https://www.afos-analytics.com/api/polymarket/lookup?slug=' + encodeURIComponent(slug))
+    const r = await fetch(`${baseDeLeitura()}/api/polymarket/lookup?slug=` + encodeURIComponent(slug))
     const ev: any = (await r.json())?.event
     const m = await prisma.market.findFirst({ where: { slug }, select: { id: true, title: true } })
     if (!ev || !m) { console.log(`\n### ${slug}: SEM DADO`); continue }

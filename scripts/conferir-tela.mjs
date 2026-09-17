@@ -36,6 +36,7 @@
  */
 import { chromium } from 'playwright'
 import { pathToFileURL } from 'url'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 /**
  * 🌎 O PAÍS É PARÂMETRO desde 07/Set/2026, e antes disso a rota era fixa em
@@ -97,7 +98,7 @@ export function achou(texto, valor, locale) {
 // 🔑 O runner fica GUARDADO para o teste poder importar as funções puras sem
 // abrir navegador. Sem isto, `import` deste arquivo dispararia a conferência.
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
-  const BASE = arg('base', 'https://www.afos-analytics.com')
+  const BASE = arg('base', baseDeLeitura())
   const LOCALES = arg('locales', 'pt-BR,en,es').split(',').filter(Boolean)
   const ESPERADO = arg('esperado', '').split(',').map((s) => s.trim()).filter(Boolean)
   const FOLGA_MS = Number(arg('folga', '4000'))

@@ -4,6 +4,7 @@
  * dos mercados de EUA e Brasil, e reprova se sobrar nome de emergência.
  */
 import { extractCandidateName } from '../app/lib/polymarket/bootstrap'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 // Réplica exata da função ANTES da correção de 29/Jul, para comparar.
 function antigo(question: string): string {
@@ -70,7 +71,7 @@ const SLUGS = [
   'brazil-annual-inflation-2026',
 ]
 
-const BASE = 'https://www.afos-analytics.com/api/polymarket/lookup?slug='
+const BASE = `${baseDeLeitura()}/api/polymarket/lookup?slug=`
 
 async function main() {
   let mudou = 0

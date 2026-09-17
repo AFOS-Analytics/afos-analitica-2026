@@ -41,6 +41,7 @@ import { readFileSync } from 'fs'
 import { chaveDaCasa, conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 export const SAIDA_NAO_LEU = 4
 
@@ -54,7 +55,7 @@ process.on('uncaughtException', (e) => naoLeu(`${e?.message ?? e}${e?.cause?.cod
 process.on('unhandledRejection', (e) => naoLeu(`${e?.message ?? e}${e?.cause?.code ? ` (${e.cause.code})` : ''}`))
 
 // --base ou AFOS_BASE trocam o HOST, nunca a verificação de certificado (ver o relatorio-pesquisas-brz.ts).
-const BASE = process.argv.find((a) => a.startsWith('--base='))?.slice(7) ?? process.env.AFOS_BASE ?? 'https://www.afos-analytics.com'
+const BASE = process.argv.find((a) => a.startsWith('--base='))?.slice(7) ?? baseDeLeitura()
 
 const arg = (nome, padrao) => {
   const achado = process.argv.find((a) => a.startsWith(`--${nome}=`))

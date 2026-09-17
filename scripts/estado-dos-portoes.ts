@@ -33,6 +33,7 @@ config({ path: '.env' })
 
 import { DISTRIBUICOES_US } from '../lib/us-market/mercados'
 import { classificarPortao, type CapturaDaSoma, type EstadoDoPortao } from '../lib/us-market/estado-do-portao'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const argv = process.argv.slice(2)
 const temFlag = (f: string) => argv.includes(f)
@@ -51,7 +52,7 @@ const MARCA: Record<string, string> = {
 
 /** As somas de AGORA, lidas da mesma rota que o passo 1 usa. */
 async function somasAoVivo(): Promise<Record<string, number>> {
-  const url = 'https://www.afos-analytics.com/api/polymarket?country=us&fresh=1'
+  const url = `${baseDeLeitura()}/api/polymarket?country=us&fresh=1`
   const r = await fetch(url, { headers: { 'user-agent': 'AFOS-Analytics/1.0 (rodada interna)' } })
   if (!r.ok) throw new Error(`HTTP ${r.status} na leitura ao vivo`)
   const j: any = await r.json()

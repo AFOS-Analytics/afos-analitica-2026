@@ -40,8 +40,9 @@ import { readFileSync, readdirSync } from 'fs'
 import { gunzipSync } from 'zlib'
 import { join } from 'path'
 import { instantesSuspeitos } from './lib/serie-contrato.mjs'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
-const PROXY = 'https://www.afos-analytics.com/api/polymarket?country=us&fresh=1'
+const PROXY = `${baseDeLeitura()}/api/polymarket?country=us&fresh=1`
 
 /**
  * A série publicada, para dar contexto e para o teste de sanidade.

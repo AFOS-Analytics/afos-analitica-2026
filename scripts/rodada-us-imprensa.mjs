@@ -29,6 +29,7 @@
 
 import { readFileSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const argv = process.argv.slice(2)
 const ensaio = argv.includes('--ensaio')
@@ -69,7 +70,7 @@ if (semCron) {
     process.exit(1)
   }
 
-  const res = await fetch('https://www.afos-analytics.com/api/cron/refresh-us-press', {
+  const res = await fetch(`${baseDeLeitura()}/api/cron/refresh-us-press`, {
     headers: { Authorization: `Bearer ${s}` },
   })
   const texto = await res.text()

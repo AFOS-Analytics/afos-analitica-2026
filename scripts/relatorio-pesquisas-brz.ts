@@ -40,11 +40,12 @@ import { fetchTSEPolls } from '../lib/tse/ingest'
 import { acharCpf } from './lib/cpf.mjs'
 import { TETO_API_POLLS, bordaDoCorte, divulgamHoje, folgaDoGatilho } from './lib/tse-api-polls.mjs'
 import { datasDeHoje } from './lib/data-civil-brz.mjs'
+import { baseDeLeitura } from './lib/base-afos.mjs'
 
 // AFOS_BASE troca o HOST, nunca a verificação de certificado. 17/Set/2026: uma rede
 // com inspeção de TLS (FortiGate) reassinava só www.afos-analytics.com, e o
 // afos-analitica-2026.vercel.app serve a mesma produção com cadeia válida.
-const BASE = process.env.AFOS_BASE ?? 'https://www.afos-analytics.com'
+const BASE = baseDeLeitura()
 
 // 🔴 "Hoje" aqui é a data civil do BRASIL, não a data UTC, desde 15/Set/2026.
 // O campo com que ela é comparada é a `divulgacao` do registro do TSE, que é

@@ -1,5 +1,14 @@
 # AFOS Tradeoff — Brazil Political Risk Weekly
 
+## 🌐 Rede externa: rodar ANTES, se não estiver na rede de casa (17/Set/2026)
+
+```bash
+npm run rede:afos        # 0 LIMPA · 2 DOMINIO_INTERCEPTADO (imprime o export) · 1 SEM_ACESSO
+export AFOS_BASE=https://afos-analitica-2026.vercel.app   # só se o veredito for 2
+```
+
+🔴 Numa rede com inspeção de TLS (FortiGate), **só `www.afos-analytics.com` chega reassinado**: todo leitor local cai com `UNABLE_TO_VERIFY_LEAF_SIGNATURE` enquanto Vercel, GitHub, HF, Neon, Resend, TSE e Polymarket passam. O `AFOS_BASE` troca o **host de leitura** para o alias de produção (mesmo `dpl_`, conferido por `vercel inspect`), e os 13 leitores locais leem dele via `scripts/lib/base-afos.mjs`. ⛔ **Nunca desligar verificação de certificado.** ⛔ Links públicos (email, feed, sitemap, `llms.txt`) continuam no domínio canônico. Chamadas `curl` deste comando: trocar `https://www.afos-analytics.com` por `${AFOS_BASE:-https://www.afos-analytics.com}`. → `memory/reference_rede_com_inspecao_tls_fortigate.md`
+
 Gerar edição semanal técnica do AFOS Tradeoff seguindo o template HTML preview firmado em 23/Mai/2026 (validação por Custódio + Cunha prevista pós-Edição №1 silent launch). Audiência: leitor profissional de mercado (research, buy-side, treasury, mesa institucional).
 
 ## Pré-requisitos obrigatórios

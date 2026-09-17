@@ -48,7 +48,8 @@
  * e o que manda é a linha `VEREDITO:`.
  */
 
-const PROXY_BASE = 'https://www.afos-analytics.com/api/polymarket?fresh=1'
+import { baseDeLeitura } from './lib/base-afos.mjs'
+const PROXY_BASE = `${baseDeLeitura()}/api/polymarket?fresh=1`
 
 /** Divergência tolerada entre as duas leituras, em pontos percentuais. */
 const TOLERANCIA_PP = 0.20
