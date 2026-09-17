@@ -174,12 +174,6 @@ const CASOS = [
     ],
   },
   {
-    nome: '10· FALHA FECHADA: base vazia não é aprovação',
-    aprova: false,
-    exige: 'nada a conferir não é aprovação',
-    base: [],
-  },
-  {
     // 🔴 Este caso nasceu de uma MUTAÇÃO que os 10 primeiros não pegaram: fazer a
     // base aceitar também os NACIONAIS de fonte forte. Em toda casa plantada até
     // aqui, ou havia estaduais, ou havia um registro só, e nos dois a mutação dava
@@ -241,7 +235,10 @@ for (const caso of CASOS) {
   }
 
   const aprovou = codigo === 0 && saida.includes('VEREDITO: APROVADO')
-  let ok = aprovou === caso.aprova
+  // 17/Set/2026: "não aprovou" aceitava QUALQUER saída diferente de zero,
+  // inclusive o script travado. Reprovar exige o código do GRAVE e o veredito.
+  const reprovou = codigo === 1 && saida.includes('VEREDITO: REPROVADO')
+  let ok = caso.aprova ? aprovou : reprovou
   let motivo = ok ? '' : `esperava ${caso.aprova ? 'APROVADO' : 'REPROVADO'}, saiu com código ${codigo}`
   if (ok && caso.exige && !saida.includes(caso.exige)) {
     ok = false
@@ -252,9 +249,34 @@ for (const caso of CASOS) {
   if (!ok) falhas++
 }
 
+// NÃO LEU sai 4 e nunca veste o veredito de rótulo. 🔴 Medido em 17/Set/2026:
+// numa rede com inspeção de TLS o fetch lançou, o processo saiu com 1 e a rodada
+// anunciou "GRAVE no calendário vivo" sobre uma medição que não aconteceu.
+const vazio = join(dir, 'vazio.json')
+writeFileSync(vazio, '[]')
+const LEITURAS = [
+  { nome: 'arquivo inexistente sai NAO LEU (4), não GRAVE', args: [`--arquivo=${join(dir, 'nao-existe.json')}`] },
+  { nome: '10· FALHA FECHADA, base sem linhas sai NAO LEU (4): não é aprovação nem GRAVE', args: [`--arquivo=${vazio}`] },
+  { nome: 'rede recusada sai NAO LEU (4), não GRAVE', args: ['--base=http://127.0.0.1:9'] },
+]
+for (const caso of LEITURAS) {
+  let saida = ''
+  let codigo = 0
+  try {
+    saida = execFileSync('node', [PORTAO, ...caso.args, `--hoje=${HOJE}`], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] })
+  } catch (e) {
+    saida = `${e.stdout ?? ''}${e.stderr ?? ''}`
+    codigo = e.status ?? -1
+  }
+  const ok = codigo === 4 && saida.includes('NÃO LEU') && !saida.includes('VEREDITO')
+  console.log(`${ok ? '✅' : '❌'} ${caso.nome}${ok ? '' : `  → código ${codigo}`}`)
+  if (!ok) falhas++
+}
+const TOTAL = CASOS.length + LEITURAS.length
+
 rmSync(dir, { recursive: true, force: true })
 
 console.log(
-  `\n${falhas === 0 ? '✅' : '❌'} VEREDITO DO TESTE: ${CASOS.length - falhas}/${CASOS.length} casos corretos\n`,
+  `\n${falhas === 0 ? '✅' : '❌'} VEREDITO DO TESTE: ${TOTAL - falhas}/${TOTAL} casos corretos\n`,
 )
 process.exit(falhas === 0 ? 0 : 1)

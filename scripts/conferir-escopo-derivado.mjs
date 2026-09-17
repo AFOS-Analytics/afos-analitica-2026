@@ -28,6 +28,13 @@
  * casa é medido sobre TODAS as linhas, então o corte pode esconder os dois
  * sentidos. O 3 não é o 1: não há grave vivo achado, há base que não permite
  * dizer que não há.
+ *
+ * Sai 4 quando NÃO LEU: rede caída, TLS recusado, HTTP de erro, resposta sem
+ * linhas ou arquivo ilegível. 🔴 Medido em 17/Set/2026: numa rede com inspeção
+ * de TLS (FortiGate) o fetch lançou e o processo morreu com código 1, que é o
+ * código do GRAVE, e a rodada imprimiu "reprovou com GRAVE no calendário vivo"
+ * sobre um conferidor que não mediu nada. Falhar fechado continua certo; o que
+ * não pode é a falha de leitura vestir o veredito de rótulo.
  */
 
 import { readFileSync } from 'fs'
@@ -35,7 +42,19 @@ import { chaveDaCasa, conferirEscopoDerivado } from '../lib/tse/poder-discrimina
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
-const BASE = 'https://www.afos-analytics.com'
+export const SAIDA_NAO_LEU = 4
+
+function naoLeu(motivo) {
+  console.error(`\n❌ NÃO LEU: ${motivo}`)
+  console.error('   Portão FALHA FECHADA, e isto NÃO é veredito de rótulo: nenhum registro foi medido.')
+  process.exit(SAIDA_NAO_LEU)
+}
+// Qualquer exceção que escape daqui é falha de leitura ou de ambiente, nunca GRAVE.
+process.on('uncaughtException', (e) => naoLeu(`${e?.message ?? e}${e?.cause?.code ? ` (${e.cause.code})` : ''}`))
+process.on('unhandledRejection', (e) => naoLeu(`${e?.message ?? e}${e?.cause?.code ? ` (${e.cause.code})` : ''}`))
+
+// --base ou AFOS_BASE trocam o HOST, nunca a verificação de certificado (ver o relatorio-pesquisas-brz.ts).
+const BASE = process.argv.find((a) => a.startsWith('--base='))?.slice(7) ?? process.env.AFOS_BASE ?? 'https://www.afos-analytics.com'
 
 const arg = (nome, padrao) => {
   const achado = process.argv.find((a) => a.startsWith(`--${nome}=`))
@@ -54,8 +73,7 @@ const hoje = arg('hoje', dataCivilBrasil())
 function linhasDe(json) {
   const arr = json.data ?? json.polls ?? json.items ?? (Array.isArray(json) ? json : [])
   if (!Array.isArray(arr) || arr.length === 0) {
-    console.error('❌ resposta sem linhas. Portão FALHA FECHADA: nada a conferir não é aprovação.')
-    process.exit(1)
+    naoLeu('resposta sem linhas: nada a conferir não é aprovação')
   }
   return arr
 }
@@ -70,8 +88,7 @@ if (arquivo) {
   const url = `${BASE}/api/polls/tse?days=${dias}`
   const r = await fetch(url)
   if (!r.ok) {
-    console.error(`❌ ${url} devolveu HTTP ${r.status}. Portão FALHA FECHADA.`)
-    process.exit(1)
+    naoLeu(`${url} devolveu HTTP ${r.status}`)
   }
   registros = linhasDe(await r.json())
   console.log(`\n🗂️  ESCOPO DERIVADO · ${registros.length} registro(s), janela de ${dias}d, hoje ${hoje}`)

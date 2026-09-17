@@ -65,6 +65,13 @@ jobs:
       - name: Conjunto de fantasmas do TSE
         run: node scripts/testar-tse-fantasmas.mjs
 
+      # O portao de ROTULO nacional. Em 17/Set/2026 uma falha de leitura saiu com
+      # o codigo do GRAVE e a rodada anunciou rotulo grave sem medir nada; agora
+      # NAO LEU sai 4, e REPROVADO exige codigo 1 E a linha do veredito. Os casos
+      # de leitura usam arquivo local e 127.0.0.1, sem rede de fora.
+      - name: Escopo derivado (rotulo nacional)
+        run: node scripts/testar-escopo-derivado.mjs
+
       # A tabela de variacao do Brasil. Em 16/Set ela comparou contra 04/Set sem
       # aviso, porque a base era a ultima linha anotada; agora a base e a
       # certificada anterior livro a livro, e o ranking de volume por livro mede

@@ -128,7 +128,15 @@ if (!aplicar) {
   process.exit(0)
 }
 
-rodar('relatorio', '2/4 · RELATÓRIO, calendário e mercado do Brasil', 'scripts/relatorio-pesquisas-brz.ts', [])
+const relatorio = rodar('relatorio', '2/4 · RELATÓRIO, calendário e mercado do Brasil', 'scripts/relatorio-pesquisas-brz.ts', [])
+// 17/Set/2026: o relatório caiu no fetch e o resumo só dizia "saiu != 0". Quem
+// lê o resumo sem rolar a tela conclui que não há nacional divulgando hoje.
+if (relatorio !== 0) {
+  resultados.at(-1).estado = 'PORTAO OU LEITURA: gatilho 📣 NAO avaliado'
+  console.log('')
+  console.log('⚠️  O RELATÓRIO não terminou: o bloco 📣 DIVULGAM HOJE não foi avaliado.')
+  console.log('   Ausência dele aqui NÃO quer dizer que ninguém divulga hoje. O motivo está acima.')
+}
 
 const escopo = rodar(
   'escopo',
@@ -140,7 +148,19 @@ const escopo = rodar(
 // 🔴 Saída 3, desde 14/Set/2026: APROVOU, mas sobre base cortada pelo teto de
 //    200 linhas da rota. Não é o 1 e não pode ler como ele: não há grave vivo
 //    achado, há uma base que não permite dizer que não há.
-if (escopo === 3) {
+// 🔴 Saída 4, desde 17/Set/2026: NÃO LEU. Numa rede com inspeção de TLS o
+//    conferidor morreu no fetch com código 1, e este bloco imprimiu "reprovou
+//    com GRAVE no calendário vivo" sobre uma medição que não aconteceu.
+if (escopo === 4) {
+  resultados.at(-1).estado = 'NAO LEU, sem veredito'
+  console.log('')
+  console.log(regua)
+  console.log('⚠️  O conferidor de ESCOPO NÃO LEU a base e não deu veredito.')
+  console.log('')
+  console.log('   Não é GRAVE e não é APROVADO: nenhum registro foi medido. O motivo está')
+  console.log('   impresso acima. Rodar de novo quando a leitura voltar, antes de publicar')
+  console.log('   qualquer registro como NACIONAL.')
+} else if (escopo === 3) {
   resultados.at(-1).estado = 'BASE CORTADA pelo teto da rota'
   console.log('')
   console.log(regua)
