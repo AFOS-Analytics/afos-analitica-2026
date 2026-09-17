@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-17",
-  "fetchedAt": "2026-09-17T17:20:58.028Z",
+  "lastUpdate": "2026-09-16",
+  "fetchedAt": "2026-09-16T19:20:13.605Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,16 +113,16 @@
     }
   ],
   "qualidade": {
-    "lidos": 186,
-    "naLista": 81,
-    "foraDaLista": 105,
+    "lidos": 152,
+    "naLista": 65,
+    "foraDaLista": 87,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 17,
+    "descartadosPorAcompanhamento": 13,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 39,
+    "lidosEmFeedProprio": 33,
     "publicadosComLinkCanonico": 9,
     "publicadosViaGoogleNews": 1,
     "publicadosPorDisputa": 10,
@@ -130,37 +130,19 @@
   },
   "itens": [
     {
-      "titulo": "Appeals court weighs Missouri congressional map despite Supreme Court block",
-      "url": "https://abcnews.com/Politics/wireStory/appeals-court-weighs-trump-backed-missouri-congressional-map-136534521",
-      "casa": "ABC News",
-      "publicadoEm": "2026-09-17T17:16:51.000Z",
+      "titulo": "Senate Democrats meet with El-Sayed, rallying around Michigan nominee",
+      "url": "https://www.cbsnews.com/news/abdul-el-sayed-senate-democrats-meeting/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-16T19:14:40.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Democratic candidates hold narrow leads in Texas and Michigan US Senate races, new poll shows – live",
-      "url": "https://www.theguardian.com/us-news/live/2026/sep/17/donald-trump-democrats-republicans-russia-sanctions-us-politics-latest-news",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-17T17:09:07.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "House Republican releases campaign ad critical of Trump’s immigration policies",
-      "url": "https://www.theguardian.com/us-news/2026/sep/17/republican-maria-elvira-salazar-campaign-ad-trump-immigration",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-17T15:37:53.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Political insider turns anti-incumbent table on 8-year Dem in key Senate race: 'Hasn't delivered'",
-      "url": "https://www.foxnews.com/politics/political-insider-turns-anti-incumbent-table-8-year-dem-key-senate-race-hasnt-delivered",
+      "titulo": "Reporter's Notebook: House control could hinge on whether the old political rules still apply",
+      "url": "https://www.foxnews.com/politics/reporters-notebook-house-control-hinge-whether-old-political-rules-still-apply",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-17T14:42:25.000Z",
+      "publicadoEm": "2026-09-16T19:09:14.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
@@ -169,54 +151,72 @@
       "titulo": "House cutting week short before adjourning until after midterms",
       "url": "https://www.cbsnews.com/news/house-cancels-votes-adjourning-midterms/",
       "casa": "CBS News",
-      "publicadoEm": "2026-09-17T13:37:00.000Z",
+      "publicadoEm": "2026-09-16T18:54:45.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Who Will Win the Midterms? Republicans Are Reeling.",
-      "url": "https://www.nytimes.com/2026/09/17/us/politics/midterms-map-republicans-democrats.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-17T12:23:24.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Harris joins forces with radical Senate nominee in key swing state as 2028 whispers swirl",
-      "url": "https://www.foxnews.com/politics/harris-joins-forces-with-radical-senate-nominee-key-swing-state-2028-whispers-swirl",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-17T10:30:33.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "El-Sayed narrowly leads Rogers in Michigan Senate race: Poll",
-      "url": "https://www.newsnationnow.com/politics/abdul-el-sayed-mike-rogers-michigan-senate-poll/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-17T10:13:35.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Talarico neck and neck with Paxton in new Texas Senate poll",
-      "url": "https://www.newsnationnow.com/politics/james-talarico-ken-paxton-emerson-poll-senate-election/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-17T10:09:13.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "GOP reshapes North Carolina’s voting rules ahead of key Senate race",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVU9SSnBDb0JVZjRpQ3RWR21qY1A0R0E2LVh5UXU5aFViSE1DZms4Mm5FMV9NQm9iNVdKZE1Tem84VDRfOG8tN1o2akFqdnVmYXRyOTBVUFFjazFqbkpyaEFlNk9qZ2x3TExuUC1xUE5jbG1FRmVSSDN1bkM3LWtzemJYWWZoclJ4ckFCaUhJbmRaS0JlYi1MT1ZKZW5zMDczNEJGUQ?oc=5",
-      "casa": "CNN",
-      "publicadoEm": "2026-09-17T10:00:29.000Z",
+      "titulo": "Opinion | Independence-minded South Carolina has an alternative to Darline Graham",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb0swWGs4UmlHZ0Y1VDJjOW42VTlsZTk0bUU1ZFFOQVVxUk9laE9qSmFud3dEVEV5a3FwdmdSZjBpV05MUmJSZTVyQ1NCbV9NZDFXbkZMcTBPTGpfZ0VHeHNDNTVaN08yZlVRN3FudElNdTR6Q0FfNGJOREhiUGdrXzFqU2gxR3BPNDFMbFFmTWdVdkZZT0pGdWdjSHhKN3JqVUJhWFMwUjlxc01ELWZkWWpRZFlnX01GOVE?oc=5",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-16T18:00:00.000Z",
       "consulta": "senate-races",
       "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The House is heading home ahead of the midterms even earlier than planned",
+      "url": "https://www.washingtonpost.com/politics/2026/09/16/house-is-heading-home-ahead-midterms-even-earlier-than-planned/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-16T17:34:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "‘An antidote to Trumpism’: Our politics team answered your questions on Democrats’ midterms hopes",
+      "url": "https://www.theguardian.com/community/live/2026/sep/15/reader-qa-how-united-are-the-democrats-ahead-of-the-midterms-post-your-questions-now",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-16T17:25:09.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "More Republicans are turning on Iran war as midterms come into view",
+      "url": "https://www.theguardian.com/us-news/2026/sep/16/republicans-iran-war-midterm-elections",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-16T17:18:14.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "A tumultuous congressional primary season closes with record departures and defeats",
+      "url": "https://www.npr.org/2026/09/16/nx-s1-5971264/congress-retirement-2026-house-senate-primary-defeat",
+      "casa": "NPR",
+      "publicadoEm": "2026-09-16T17:05:41.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iowa Republicans in battleground House races vote to halt the Iran war",
+      "url": "https://abcnews.com/Politics/wireStory/iowa-republicans-battleground-house-races-vote-halt-iran-136494575",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-16T16:52:52.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Supreme Court breaks with Trump in rulings ahead of midterm elections",
+      "url": "https://www.nbcnews.com/now/video/supreme-court-breaks-with-trump-in-rulings-ahead-of-midterm-elections-269971013710",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-16T14:29:40.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     }
   ]
