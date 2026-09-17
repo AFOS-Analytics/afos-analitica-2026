@@ -340,3 +340,20 @@ BR-08691/2026,BR086912026,DataTrends,2026-09-16,2026-09-13,21,Cenário estimulad
 BR-08691/2026,BR086912026,DataTrends,2026-09-16,2026-09-13,21,Cenário estimulado (1º turno),Renan,4,1.85,2026-09-13,-2.15,naive_winprob_minus_voteshare
 BR-08691/2026,BR086912026,DataTrends,2026-09-16,2026-09-13,21,Cenário estimulado (1º turno),Caiado,3,0.15,2026-09-13,-2.85,naive_winprob_minus_voteshare
 BR-08691/2026,BR086912026,DataTrends,2026-09-16,2026-09-13,21,Cenário estimulado (1º turno),Zema,1,0.15,2026-09-13,-0.85,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Lula,44.1,47.5,2026-09-13,3.4,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Flávio,41.7,49.65,2026-09-13,7.95,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Renan,5.1,1.85,2026-09-13,-3.25,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Augusto Cury,3.5,0.45,2026-09-13,-3.05,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Caiado,1.7,0.15,2026-09-13,-1.55,naive_winprob_minus_voteshare
+BR-06221/2026,BR062212026,AtlasIntel/Bloomberg,2026-09-17,2026-09-13,21,"Cenário Principal (1º turno, estimulado)",Zema,1.1,0.15,2026-09-13,-0.95,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Lula,37,45.5,2026-09-14,8.5,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Flávio,36,51.95,2026-09-14,15.95,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Augusto Cury,8,0.35,2026-09-14,-7.65,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Renan,3,1.7,2026-09-14,-1.3,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Caiado,3,0.15,2026-09-14,-2.85,naive_winprob_minus_voteshare
+BR-00360/2026,BR003602026,PoderData/Aya,2026-09-17,2026-09-14,20,Cenário estimulado (1º turno),Zema,1,0.15,2026-09-14,-0.85,naive_winprob_minus_voteshare
+BR-00535/2026,BR005352026,Gerp,2026-09-17,2026-09-15,19,Cenário estimulado (1º turno),Flávio,40,51.95,2026-09-15,11.95,naive_winprob_minus_voteshare
+BR-00535/2026,BR005352026,Gerp,2026-09-17,2026-09-15,19,Cenário estimulado (1º turno),Lula,37,46.5,2026-09-15,9.5,naive_winprob_minus_voteshare
+BR-00535/2026,BR005352026,Gerp,2026-09-17,2026-09-15,19,Cenário estimulado (1º turno),Augusto Cury,7,0.45,2026-09-15,-6.55,naive_winprob_minus_voteshare
+BR-00535/2026,BR005352026,Gerp,2026-09-17,2026-09-15,19,Cenário estimulado (1º turno),Caiado,3,0.15,2026-09-15,-2.85,naive_winprob_minus_voteshare
+BR-00535/2026,BR005352026,Gerp,2026-09-17,2026-09-15,19,Cenário estimulado (1º turno),Renan,2,1.65,2026-09-15,-0.35,naive_winprob_minus_voteshare
