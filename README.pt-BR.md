@@ -434,6 +434,10 @@ Saber que o buraco existe ainda não diz se ele importa, e o `lib/us-polls/expos
 
 **Duas fontes independentes podem discordar sobre o método de uma pesquisa, e o registro oficial pode não resolver (17/Set/2026).** Três veículos publicaram a mesma pesquisa com números idênticos; dois descreveram entrevistas por telefone e um descreveu entrevistas presenciais. O registro do tribunal descreve cotas e margem, mas não o modo de coleta. O painel registrou o método das duas fontes concordantes, e o número de cada candidato, que as três confirmam, não depende dessa escolha.
 
+**Regra sem ferramenta que a meça é regra que ninguém está cumprindo, e descobrir isso custa um script (17/Set/2026).** A carta semanal tem teto duro de mil e cem palavras no corpo, decidido em agosto, e a instrução de contar os blocos pelo leitor da página antes de publicar. Nenhuma das duas tinha ferramenta: o bloco era contado por um script descartável colado em cada sessão, e o tamanho era estimado a olho. A primeira medição de verdade, escrita nesta semana, achou as duas edições publicadas mais recentes acima do teto no idioma de origem, por 33 e 41 palavras. Nada tinha falhado, porque nada estava conferindo. O mesmo script normaliza o separador de milhar antes de comparar os números entre os três idiomas, porque esse separador muda por idioma enquanto o ponto decimal não muda, e sem esse passo uma tradução correta seria reprovada.
+
+**O maior movimento da semana pode estar na medida que não tem par, e a resposta honesta é dizer isso (17/Set/2026).** O mercado de controle da câmara alta andou sete pontos em uma semana, o maior movimento da edição. Não existe pesquisa nacional para pôr ao lado: a pergunta nacional das pesquisas é sobre o distrito de quem responde, o que fala da câmara baixa, enquanto a câmara alta é decidida em um terço dos estados por vez. A tentação é comparar com a média de pesquisas que está à mão, o que subtrairia uma probabilidade de uma margem de voto e produziria um número sem unidade. A edição declara a ausência em vez de preenchê-la, e o leitor fica sabendo por que o segundo número não está lá.
+
 ### Estrutura do Projeto
 
 ```
