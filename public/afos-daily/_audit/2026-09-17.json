@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-17",
+  "gates": {
+    "reFetchPolymarket": {
+      "fetchedAtBaselinePainel": "2026-09-17T16:21:32.116Z",
+      "reFetchAoVivo": "2026-09-17T16:42:15.172Z",
+      "gateRebaseline": "NAO DISPAROU",
+      "motivo": "Flavio 54,70 -> 54,60 (-0,10), Lula 44,50 parado, vao 10,20 -> 10,10, Renan 1,15 parado, total USD 150,87M igual. Cury 3o lugar 42,90 -> 42,85 em leitura unica, nao entra.",
+      "travaDeCaptura": "APROVADA nos 5 livros, leituras 16:13:31.388Z e 16:21:32.116Z, tolerancia 0,20pp, via AFOS_BASE (rede externa com FortiGate).",
+      "baseDaVariacao": "certificada anterior livro a livro: 16/Set 15:41:36.757Z nos 5 livros, idade 24,7h."
+    },
+    "factCheck": {
+      "fachinRetiraMendonca": "Poder360 (17/Set 15:25Z) + Gazeta do Povo (17/Set 12:23 BRT), posteriores ao ato. Verbo: retirou da pauta de 23/Set, sem nova data. Cancelamento da sessao da tarde de 17/Set NAO incorporado (1 corpo so).",
+      "gilmarMendonca": "Poder360 + Correio Braziliense (17/Set 10:27), declaracao no X e nota de resposta. Desdobramento, nao divisor de aguas.",
+      "atlasIntel": "Brasil de Fato + GPS Brasilia + CartaCapital + Gazeta do Povo. n=5.018, pares e aprovacao em 2+ corpos.",
+      "poderData": "CNN Brasil + CartaCapital + Gazeta do Povo; margem 1,8 (Gazeta dizia 2, minoria).",
+      "gerp": "CNN Brasil + Exame + Gazeta do Povo; metodo telefone (CNN+Exame) contra presencial (Gazeta), registro do TSE nao informa. Nomes abaixo de 2% em fonte unica, fora."
+    },
+    "adversarial": {
+      "singleSource": "nota de resposta de Mendonca em 17/Set citada so pelo Correio Braziliense.",
+      "numericos": "reconcile acusou 46,4 e 46,2 = rodada AtlasIntel de 10/Set, legitimo. Gate de traducao 81/81/81.",
+      "fontesInventadas": "Exame, Correio, Brasil de Fato: corpos lidos na sessao.",
+      "quotes": "boneco de campanha e pixuleco eleitoral: Poder360 e Correio.",
+      "causacao": "nenhuma; 3o lugar e STF com ordem nao medida.",
+      "verbos": "retirou da pauta; sem preso sem data.",
+      "decisao": "prosseguir"
+    },
+    "wayback": "NAO RODOU: /save/ 429, pausa de host medida em 15/Set 19:07Z ainda vigente (1 sonda indevida feita antes de ler a regra).",
+    "palavras": {
+      "pt": 978,
+      "en": 969,
+      "es": 1041
+    },
+    "aprovacao": "Andre aprovou em 17/Set."
+  }
+}
