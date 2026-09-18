@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-18",
+  "gates": {
+    "waybackAtrasado": {
+      "rodou": false,
+      "motivo": "Pausa de host vigente. wayback-prioridade.mjs mediu bloqueio em 2026-09-15 19:07Z e declarou 'faltam 1 dia(s) de pausa SEM sondar'. O /save/ NAO foi sondado, seguindo a regra de ler a prioridade ANTES do pre-check.",
+      "passivo": "51 dailies, 707 URLs externas, 698 faltando. Proxima da fila: 2026-07-29, exposta ha 51 dias, 28 URLs.",
+      "avisado": "no comeco da sessao, nao no fim"
+    },
+    "reFetchPolymarket": {
+      "fetchedAtBaselinePainel": "2026-09-18T21:59:29.274Z",
+      "reFetchAoVivo": "2026-09-18T22:35:09.434Z",
+      "gateRebaseline": "NAO DISPAROU",
+      "motivo": "Flavio 56,50 -> 56,55 (+0,05), Lula 42,50 parado, vao 14,00 -> 14,05 (+0,05), Renan 0,95 parado, total USD 151,46M igual. Nenhum movimento >= 0,50pp, nenhum recorde rompido ou desfeito, enquadramento igual.",
+      "travaDeCaptura": "1a passada BLOQUEOU o presidencial (Flavio 56,30 -> 56,55, 0,25pp). amplitude-do-dia deu PASSAGEIRO (1,95pp contra limiar de 2,00pp), entao a regua mandou RECAPTURAR. 2a passada APROVOU os 5 livros, leituras 21:51:28.536Z e 21:59:29.274Z, tolerancia 0,20pp.",
+      "baseDaVariacao": "certificada anterior livro a livro: 17/Set 16:21:32.116Z nos 5 livros, idade 29,6h.",
+      "superlativosConferidos": "no backup/neon/marketPrice, nao na API. Flavio 56,50 supera o topo gravado (56,40 de 18/Set, serie desde 14/Abr, 625 pontos). Lula DENTRO (topo 67,50 de 16/Ago, piso 34,50 de 25/Abr). Renan 0,95, Cury 0,15 e Caiado 0,05 abaixo dos pisos gravados."
+    },
+    "factCheck": {
+      "crossReference": "check-recurrence.ts em 5 chaves. 'Bolsa Familia' e 'Futura' com ZERO mencoes em 7 dailies, novidade real. 'Mendonca' 47, 'Vorcaro' 30, 'Datafolha' 24, continuidade. A daily de 17/Set declarou nao ter os numeros de Datafolha e 100 Cidades, e esta fecha esse laco.",
+      "aguPedeConstitucionalidade": "Ato de 18/Set. G1 (Globo, 20:06Z) + CartaCapital (independente, 18:22Z) + Gazeta do Povo (21:20Z) + Metropoles (20:58Z). Quatro grupos. Tipo=evento. INCORPORADO.",
+      "mendoncaRejeitaPorIlegitimidade": "Ato de 17/Set 18h49 BRT. Corpo lido no G1 (Globo) + Folha (22:13Z, grupo diferente) + Gazeta do Povo (22:27Z). A decisao diz textualmente que nao se pronuncia sobre a legalidade nem sobre o art. 73 par.10 da Lei 9.504/1997. INCORPORADO COM A RESSALVA.",
+      "renanEntraNoTse": "Ato de 17/Set a noite BRT. G1 (Globo) + Folha (18/Set 09:37 BRT) + Estadao (17:23Z). O autor novo e candidato a Presidencia, mesma circunscricao, o que remove o defeito que derrubou a primeira acao. INCORPORADO.",
+      "defesaVorcaroPedeRevogacao": "Ato de 18/Set. O Globo + Gazeta do Povo + Folha. Verbo desambiguado: preso desde 17 de novembro de 2025. INCORPORADO.",
+      "foraPorPrecisao": "O reajuste em si e ato de 17/Set pela manha (R$ 600 -> R$ 691, pago a partir de 19/Out, custo de R$ 5,8 bi em 2026). Nao entra como ato do dia."
+    },
+    "adversarialReview": {
+      "singleSourceClaims": "nenhuma. Todas as alegacoes de ato tem 2 ou mais grupos independentes.",
+      "numericalErrors": "reconcile-claims apontou -2,00pp e 49,7%. Os dois sao falsos positivos que o proprio script declara: um delta calculado e um numero de pesquisa que nao vive no analysis-data.json.",
+      "fontesInventadas": "conferidos 3 ao acaso (Exame, Metropoles, Gazeta do Povo). Os tres com materia do dia e URL direta testada por HTTP pelo portao.",
+      "quotesLiterais": "nenhuma aspas na peca.",
+      "causacaoEspuria": "nenhuma. A secao de divergencias declara que a ordem entre as decisoes judiciais e o preco nao esta medida.",
+      "verbosCriticos": "preso -> 'preso desde 17 de novembro de 2025'. rejeitou -> sai com o fundamento (falta de legitimidade) e com a ressalva de que o merito nao foi julgado. pediu e admitiu -> atos declarados, com data.",
+      "decisao": "prosseguir"
+    },
+    "estilo": {
+      "tetoPalavras": "1098 de 1100, medido no corpo sem tabela e sem URL",
+      "travessao": "0 nos tres idiomas",
+      "emoji": "0 nos tres idiomas",
+      "densidadeDeLink": "48% na primeira versao, acima da regua de 80% depois do conserto",
+      "tldr": "3 bullets nos tres idiomas"
+    },
+    "traducao": {
+      "gateNumerico": "99 numeros com unidade identicos nos tres idiomas",
+      "ancoraDeGlossario": "0 mortas",
+      "defeitoPegoEConsertado1": "O portao de URL bloqueou a escrita com HTTP 400 numa URL do Google News montada a partir de dump truncado: 460 caracteres contra os 750 reais. Nasceu scripts/montar-traducao-daily.mjs, que copia as URLs do pt-BR na ordem e aborta se a contagem nao bater. As 58 URLs de cada traducao vieram por ele, nenhuma digitada.",
+      "defeitoPegoEConsertado2": "O gate reprovou o ES com 100 numeros contra 99: 'R$ 145 mil millones', que e a forma correta de bilhoes em espanhol, colide com o 'mil' que o gate conta como unidade. Trocado por 'R$ 145.000 millones', igualmente correto e sem colisao."
+    }
+  }
+}
