@@ -144,6 +144,7 @@ jobs:
           node scripts/testar-data-corrente-imprensa.mjs
           node scripts/testar-instrumento-us.mjs
           node scripts/testar-casas-us.mjs
+          node scripts/testar-leaner-us.mjs
           npx --no-install tsx scripts/testar-estado-do-portao.ts
           npx --no-install tsx scripts/testar-mercados-us.ts
           python3 scripts/testar-hf-upload-us2026.py

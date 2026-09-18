@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-17",
-  "fetchedAt": "2026-09-17T17:05:35.838Z",
+  "lastUpdate": "2026-09-18",
+  "fetchedAt": "2026-09-18T23:23:39.401Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -38,9 +38,16 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-18",
-    "nPesquisas": 6,
+    "desde": "2026-08-19",
+    "nPesquisas": 10,
     "incluidas": [
+      {
+        "instituto": "John Zogby Strategies",
+        "campoFim": "2026-09-17",
+        "amostraTipo": "LV",
+        "dem": 46,
+        "rep": 40
+      },
       {
         "instituto": "Big Data Poll/Public Polling Project",
         "campoFim": "2026-09-15",
@@ -49,11 +56,32 @@
         "rep": 37
       },
       {
+        "instituto": "Napolitan News/RMG Research",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "RV",
+        "dem": 51,
+        "rep": 43
+      },
+      {
+        "instituto": "The Rainey Center",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "RV",
+        "dem": 48,
+        "rep": 42
+      },
+      {
         "instituto": "CBS News/YouGov",
         "campoFim": "2026-09-11",
         "amostraTipo": "LV",
         "dem": 54,
         "rep": 46
+      },
+      {
+        "instituto": "Catawba College/YouGov",
+        "campoFim": "2026-09-09",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 38
       },
       {
         "instituto": "The Economist/YouGov",
@@ -84,44 +112,64 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 5,
-    "dem": 48.78,
-    "rep": 42.8,
-    "vantagemDem": 5.98,
+    "nInstitutos": 9,
+    "dem": 48.67,
+    "rep": 41.98,
+    "vantagemDem": 6.69,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll/Public Polling Project",
       "CBS News/YouGov",
+      "Catawba College/YouGov",
       "Harvard/Harris Poll/HarrisX",
+      "John Zogby Strategies",
+      "Napolitan News/RMG Research",
       "Quantus Insights (R)",
-      "The Economist/YouGov"
+      "The Economist/YouGov",
+      "The Rainey Center"
     ]
   },
   "qualidade": {
-    "linhasLidas": 384,
-    "publicadas": 391,
+    "linhasLidas": 390,
+    "publicadas": 397,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 384,
+    "doIndice": 390,
     "curadas": 7,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
     {
-      "instituto": "Big Data Poll/Public Polling Project",
-      "campoInicio": "2026-09-13",
-      "campoFim": "2026-09-15",
-      "amostra": 2947,
-      "amostraTipo": "RV",
-      "margemErro": 1.8,
-      "dem": 45,
-      "rep": 36,
-      "outros": 19,
-      "vantagemDem": 9,
-      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "instituto": "John Zogby Strategies",
+      "campoInicio": "2026-09-15",
+      "campoFim": "2026-09-17",
+      "amostra": 1007,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 46,
+      "rep": 40,
+      "outros": 14,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://johnzogbystrategies.com/democratic-party-leads-republican-party-48-to-42-in-congressional-generic-ballot-as-race-heats-up/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "John Zogby Strategies",
+      "campoInicio": "2026-09-15",
+      "campoFim": "2026-09-17",
+      "amostra": 1007,
+      "amostraTipo": "LV",
+      "margemErro": 3.2,
+      "dem": 48,
+      "rep": 42,
+      "outros": 10,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://johnzogbystrategies.com/democratic-party-leads-republican-party-48-to-42-in-congressional-generic-ballot-as-race-heats-up/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -136,6 +184,52 @@
       "outros": 15,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Big Data Poll/Public Polling Project",
+      "campoInicio": "2026-09-13",
+      "campoFim": "2026-09-15",
+      "amostra": 2947,
+      "amostraTipo": "RV",
+      "margemErro": 1.8,
+      "dem": 45,
+      "rep": 36,
+      "outros": 19,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Napolitan News/RMG Research",
+      "campoInicio": "2026-09-08",
+      "campoFim": "2026-09-15",
+      "amostra": 2000,
+      "amostraTipo": "RV",
+      "margemErro": 2.2,
+      "dem": 51,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-first-likely-voter-numbers-have-dems-ahead-6",
+      "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Rainey Center",
+      "campoInicio": "2026-09-10",
+      "campoFim": "2026-09-14",
+      "amostra": 1004,
+      "amostraTipo": "RV",
+      "margemErro": 4.9,
+      "dem": 48,
+      "rep": 42,
+      "outros": 10,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.raineycenter.org/polling/september-policy-survey-summary-of-findings",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -150,6 +244,37 @@
       "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.cbsnews.com/news/poll-trump-battleground-tracker-house-control-2026-midterm-elections/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Catawba College/YouGov",
+      "campoInicio": "2026-09-04",
+      "campoFim": "2026-09-09",
+      "amostra": 779,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 49,
+      "rep": 38,
+      "outros": 12,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://www.catawba.edu/news/all-news/2026/yougov-36/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Catawba College/YouGov",
+      "campoInicio": "2026-09-04",
+      "campoFim": "2026-09-09",
+      "amostra": 1201,
+      "amostraTipo": "A",
+      "margemErro": 3.6,
+      "dem": 38,
+      "rep": 28,
+      "outros": 34,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.catawba.edu/news/all-news/2026/yougov-36/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -202,6 +327,7 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -216,6 +342,7 @@
       "outros": null,
       "vantagemDem": -2,
       "fontePrimaria": "https://www.harrisx.com/content/harvard-caps-harrisx-august",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -285,6 +412,7 @@
       "outros": 6,
       "vantagemDem": 8,
       "fontePrimaria": "https://emersoncollegepolling.com/august-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -299,6 +427,7 @@
       "outros": 23,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20Full.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -313,6 +442,7 @@
       "outros": 35,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20Full.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -327,6 +457,7 @@
       "outros": 21,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.thebullfinchgroup.com/post/public-release-of-bullfinch-q3-nationwide-survey-4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -341,6 +472,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.thebullfinchgroup.com/post/public-release-of-bullfinch-q3-nationwide-survey-4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -355,6 +487,7 @@
       "outros": 5,
       "vantagemDem": 5,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/August%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -407,6 +540,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -421,6 +555,7 @@
       "outros": 4,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-maintain-lead-three-months-out-from-midterms",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -435,6 +570,7 @@
       "outros": 8,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-maintain-lead-three-months-out-from-midterms",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -449,6 +585,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-maintain-lead-three-months-out-from-midterms",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -463,6 +600,7 @@
       "outros": 22,
       "vantagemDem": 4,
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a7ce90c97b2cebe0ce66e10_ICV_Wave3_Toplines.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -477,6 +615,7 @@
       "outros": 14,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_pKJG0WT.pdf#page=40",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -491,6 +630,7 @@
       "outros": 28,
       "vantagemDem": 8,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_pKJG0WT.pdf#page=40",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -505,6 +645,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -519,6 +660,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/08/24265-Cygnal-National-Aug26-NVT-Deck-Public.pdf#page=42",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -533,6 +675,7 @@
       "outros": 9,
       "vantagemDem": 11,
       "fontePrimaria": "https://johnzogbystrategies.com/lowest-trump-approval-ratings-maga-numbers-spell-major-trouble-for-midterm-prospects/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -547,6 +690,7 @@
       "outros": 8,
       "vantagemDem": 6,
       "fontePrimaria": "https://quantusinsights.org/polling/f/latest-survey-democrats-hold-the-midterm-edge",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -561,6 +705,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_2NFOXQ5.pdf#page=28",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -575,6 +720,7 @@
       "outros": 26,
       "vantagemDem": 8,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_2NFOXQ5.pdf#page=28",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -589,6 +735,7 @@
       "outros": 21,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Large%20Sample%20Topline%208.4.26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -603,6 +750,7 @@
       "outros": 34,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Large%20Sample%20Topline%208.4.26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -617,6 +765,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -631,6 +780,7 @@
       "outros": 10,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trumps-approval-hits-new-low-amid-iran-war-restart-higher-gas-prices/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -645,6 +795,7 @@
       "outros": 15,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trumps-approval-hits-new-low-amid-iran-war-restart-higher-gas-prices/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -659,6 +810,7 @@
       "outros": 13,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trumps-approval-hits-new-low-amid-iran-war-restart-higher-gas-prices/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -673,6 +825,7 @@
       "outros": 19,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trumps-approval-hits-new-low-amid-iran-war-restart-higher-gas-prices/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -687,6 +840,7 @@
       "outros": 4,
       "vantagemDem": 6,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -701,6 +855,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -715,6 +870,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/08/05/detailed-results-of-the-marquette-law-school-supreme-court-poll-july-22-29-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -729,6 +885,7 @@
       "outros": 14,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.cnn.com/2026/07/30/politics/cnn-poll-midterm-generic-ballot-democrats-republicans-change",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -743,6 +900,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3964",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -757,6 +915,7 @@
       "outros": 22,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Reuters%20Ipsos%20July%20Core%20Political%20Topline%207.27.26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -771,6 +930,7 @@
       "outros": 32,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Reuters%20Ipsos%20July%20Core%20Political%20Topline%207.27.26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -785,6 +945,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -799,6 +960,7 @@
       "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.theargumentmag.com/p/americans-know-who-the-real-elite",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -813,6 +975,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.theargumentmag.com/p/americans-know-who-the-real-elite",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -827,6 +990,7 @@
       "outros": 13,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.cbsnews.com/news/cbs-poll-analysis-cost-of-living-democrats-republicans/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -841,6 +1005,7 @@
       "outros": 6,
       "vantagemDem": 10,
       "fontePrimaria": "https://go.claritycampaigns.com/hubfs/Omnibus%20Surveys/Clarity%20Omnibus%20Overview%20-%20July%202026%20-%20PUBLIC.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -855,6 +1020,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/07/National-July-Presentation-RELEASE-7-22-26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -869,6 +1035,7 @@
       "outros": 5,
       "vantagemDem": 11,
       "fontePrimaria": "https://emersoncollegepolling.com/july-2026-national-poll-democrats-with-11-point-generic-ballot-advantage/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -883,6 +1050,7 @@
       "outros": 1,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-voters-want-major-change-amid-economic-political-discontent",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -897,6 +1065,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ESdiNMa.pdf#page=9",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -911,6 +1080,7 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ESdiNMa.pdf#page=9",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -925,6 +1095,7 @@
       "outros": 20,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.focaldata.com/blog/focaldata---coinbase---clarity-act-and-crypto-attitudes-poll---july-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -939,6 +1110,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -953,6 +1125,7 @@
       "outros": 7,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-07-21-july-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -967,6 +1140,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-07-21-july-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -981,6 +1155,7 @@
       "outros": 21,
       "vantagemDem": 5,
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a57c2c3ad28dd5ee3466d0b_ICV_Toplines_July2026.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -995,6 +1170,7 @@
       "outros": 8,
       "vantagemDem": 2,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-47-percent-gop-45-dems-still-have-healthy-enthusiasm-edge",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1009,6 +1185,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1023,6 +1200,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ie0SzVb.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1037,6 +1215,7 @@
       "outros": 24,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ie0SzVb.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1051,6 +1230,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/July%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1065,6 +1245,7 @@
       "outros": 2,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.washingtonpost.com/politics/2026/07/18/democrats-have-slim-lead-race-house-washington-post-ipsos-poll-finds/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1079,6 +1260,7 @@
       "outros": 7,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.washingtonpost.com/politics/2026/07/18/democrats-have-slim-lead-race-house-washington-post-ipsos-poll-finds/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1093,6 +1275,7 @@
       "outros": null,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/07/HHP_Jul2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1107,6 +1290,7 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/07/HHP_Jul2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1121,6 +1305,7 @@
       "outros": 6,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.cnbc.com/2026/07/17/economic-outlook-is-worsening-and-trump-is-getting-blamed-cnbc-survey-finds.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1135,6 +1320,7 @@
       "outros": 20,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.pewresearch.org/politics/2026/07/23/midterm-voting-preferences-by-race-and-ethnicity-age-and-other-demographics/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1149,6 +1335,7 @@
       "outros": 9,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.youtube.com/watch?v=Qe1LGjG3s5A",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1163,6 +1350,7 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.youtube.com/watch?v=Qe1LGjG3s5A",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1177,6 +1365,7 @@
       "outros": 15,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.youtube.com/watch?v=Qe1LGjG3s5A",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1191,6 +1380,7 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.youtube.com/watch?v=Qe1LGjG3s5A",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1205,6 +1395,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://quantusinsights.org/polling/f/trump-approval-and-wrong-track-majority-gives-democrats-2026-edge",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1219,6 +1410,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://manhattan.institute/article/american-attitudes-on-welfare-waste-crime-and-the-political-environment",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1233,6 +1425,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1247,6 +1440,7 @@
       "outros": 22,
       "vantagemDem": 6,
       "fontePrimaria": "https://zogbyanalytics.com/images/ZA070626/Crosstabs%20Zogby%20Likely%20Voters%20070626.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1261,6 +1455,7 @@
       "outros": 13,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.scrippsnews.com/politics/scripps-news-poll-americans-excited-to-celebrate-july-4-but-divided-on-trumps-role",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1275,6 +1470,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/07/24136-Cygnal-National-Jul-26-NVT-Deck-Public-1.pdf#page=22",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1289,6 +1485,7 @@
       "outros": 5,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/ossoffism-and-the-gops-elite-problem",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1303,6 +1500,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/ossoffism-and-the-gops-elite-problem",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1317,6 +1515,7 @@
       "outros": 14,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.focaldata.com/blog/ossoffism-and-the-gops-elite-problem",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1331,6 +1530,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_1tbbxVr.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1345,6 +1545,7 @@
       "outros": 27,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_1tbbxVr.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1359,6 +1560,7 @@
       "outros": 20,
       "vantagemDem": 6,
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a45343447bbe264a1f2fbcd_NIAP-30June2026-Toplines-updated2.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1373,6 +1575,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1387,6 +1590,7 @@
       "outros": 9,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -1401,6 +1605,7 @@
       "outros": 13,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1415,6 +1620,7 @@
       "outros": 14,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -1429,6 +1635,7 @@
       "outros": 18,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-bump-voters-overwhelmingly-support-iran-peace-deal/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1443,6 +1650,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1457,6 +1665,7 @@
       "outros": null,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.activote.net/democrats-with-solid-lead-in-generic-congressional-ballot/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1471,6 +1680,7 @@
       "outros": 16,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.cato.org/sites/cato.org/files/2026-07/Cato%20Fourth%20of%20July%202026%20Survey%20Toplines.pdf#page=28",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1485,6 +1695,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/06/National-June-Presentation-RELEASE-June-2026.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1499,6 +1710,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1513,6 +1725,7 @@
       "outros": 12,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_v8p0Pe8.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1527,6 +1740,7 @@
       "outros": 27,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_v8p0Pe8.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1541,6 +1755,7 @@
       "outros": 23,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-06/Reuters%20Ipsos%20June%20Core%20Political%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1555,6 +1770,7 @@
       "outros": 34,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-06/Reuters%20Ipsos%20June%20Core%20Political%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1569,6 +1785,7 @@
       "outros": 3,
       "vantagemDem": 6,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/Echelon%20Insights%20America%20250%20Survey%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1583,6 +1800,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3961",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1597,6 +1815,7 @@
       "outros": 7,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-06-24-june-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1611,6 +1830,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-06-24-june-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1625,6 +1845,7 @@
       "outros": 5,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.dataforprogress.org/blog/2026/7/9/midterms-swing-voter-report-1",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1639,6 +1860,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://quantusinsights.org/f/new-survey-trump-approval-lags-as-voters-weigh-2026-midterms",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1653,6 +1875,7 @@
       "outros": 20,
       "vantagemDem": 8,
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a3583631f77734f69af70c8_2026%20IC%20Nationwide%20News%20Survey%20Toplines%20(1).pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1667,6 +1890,7 @@
       "outros": 23,
       "vantagemDem": 9,
       "fontePrimaria": "https://cdn.prod.website-files.com/68f64c3625044325e169d107/6a3583631f77734f69af70c8_2026%20IC%20Nationwide%20News%20Survey%20Toplines%20(1).pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1681,6 +1905,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_GpnDRNm.pdf#page=74",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1695,6 +1920,7 @@
       "outros": 25,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_GpnDRNm.pdf#page=74",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1709,6 +1935,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/June%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1723,6 +1950,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1737,6 +1965,7 @@
       "outros": 10,
       "vantagemDem": 10,
       "fontePrimaria": "https://emersoncollegepolling.com/june-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1751,6 +1980,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_cEhef2o.pdf#page=31",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1765,6 +1995,7 @@
       "outros": 30,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_cEhef2o.pdf#page=31",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1779,6 +2010,7 @@
       "outros": 22,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-06/Reuters%20Ipsos%20Large%20Issue%20Topline%20June%202026%206.8%20release.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1793,6 +2025,7 @@
       "outros": 34,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-06/Reuters%20Ipsos%20Large%20Issue%20Topline%20June%202026%206.8%20release.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1807,6 +2040,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1821,6 +2055,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.nbcnews.com/politics/2026-election/poll-democrats-maintain-edge-fight-congress-trump-gets-poor-marks-rcna348913",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1835,6 +2070,7 @@
       "outros": 9,
       "vantagemDem": 1,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-june-2026#06-07-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1849,6 +2085,7 @@
       "outros": 13,
       "vantagemDem": 1,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-june-2026#06-07-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1863,6 +2100,7 @@
       "outros": 15,
       "vantagemDem": 1,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-june-2026#06-07-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1877,6 +2115,7 @@
       "outros": 29,
       "vantagemDem": 5,
       "fontePrimaria": "https://researchco.ca/wp-content/uploads/2026/06/Tables_Politics_USA_15Jun2026.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1891,6 +2130,7 @@
       "outros": 7,
       "vantagemDem": 3,
       "fontePrimaria": "https://go.claritycampaigns.com/hubfs/Clarity%20Omnibus%20Overview%20-%20May%202026.pdf#page=21",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1905,6 +2145,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.thecentersquare.com/national/article_068f34af-cac1-4328-b582-915d04044322.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1919,6 +2160,7 @@
       "outros": 6,
       "vantagemDem": 4,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-49-percent-gop-45-dems-more-enthusiastic",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1933,6 +2175,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.cygn.al/news/poll-independents-arent-who-you-think-they-are-the-left-americas-250-and-who-trump-has-lost-since-the-inauguration/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1947,6 +2190,7 @@
       "outros": null,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.theargumentmag.com/p/the-biggest-issue-in-american-politics",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -1961,6 +2205,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://quantusinsights.org/f/quantus-insights-trump-underwater-democrats-hold-edge",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1975,6 +2220,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.winningtheissues.org/wp-content/uploads/2026/06/May-2026-Winning-the-Issues-Survey.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -1989,6 +2235,7 @@
       "outros": 22,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.thebullfinchgroup.com/post/public-release-of-bullfinch-q2-nationwide-survey-4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2003,6 +2250,7 @@
       "outros": 25,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.thebullfinchgroup.com/post/public-release-of-bullfinch-q2-nationwide-survey-4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2017,6 +2265,7 @@
       "outros": 5,
       "vantagemDem": 5,
       "fontePrimaria": "http://focaldata.com/blog/trump-inflation-approval-crashes-to-record-low",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2031,6 +2280,7 @@
       "outros": 9,
       "vantagemDem": 5,
       "fontePrimaria": "http://focaldata.com/blog/trump-inflation-approval-crashes-to-record-low",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2045,6 +2295,7 @@
       "outros": 12,
       "vantagemDem": 3,
       "fontePrimaria": "http://focaldata.com/blog/trump-inflation-approval-crashes-to-record-low",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2059,6 +2310,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AvLU7vY.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2073,6 +2325,7 @@
       "outros": 24,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_AvLU7vY.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2087,6 +2340,7 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/06/HHP_May2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2101,6 +2355,7 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/06/HHP_May2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2115,6 +2370,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2129,6 +2385,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://issuesinsights.com/2026/06/15/does-either-party-have-an-edge-in-2026-midterms-and-2028-presidential-election-ii-tipp-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2143,6 +2400,7 @@
       "outros": 10,
       "vantagemDem": 13,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-lead-in-may-as-voters-sour-further-on-the-iran-war/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -2157,6 +2415,7 @@
       "outros": 16,
       "vantagemDem": 13,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-lead-in-may-as-voters-sour-further-on-the-iran-war/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2171,6 +2430,7 @@
       "outros": 13,
       "vantagemDem": 13,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-lead-in-may-as-voters-sour-further-on-the-iran-war/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -2185,6 +2445,7 @@
       "outros": 19,
       "vantagemDem": 13,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-lead-in-may-as-voters-sour-further-on-the-iran-war/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2199,6 +2460,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_aWdgoE7.pdf#page=51",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2213,6 +2475,7 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_aWdgoE7.pdf#page=51",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2227,6 +2490,7 @@
       "outros": 3,
       "vantagemDem": 1,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/06/03/detailed-results-of-the-marquette-law-school-supreme-court-poll-may-20-26-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2241,6 +2505,7 @@
       "outros": 9,
       "vantagemDem": 1,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/06/03/detailed-results-of-the-marquette-law-school-supreme-court-poll-may-20-26-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2255,6 +2520,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/06/03/detailed-results-of-the-marquette-law-school-supreme-court-poll-may-20-26-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2269,6 +2535,7 @@
       "outros": 22,
       "vantagemDem": 4,
       "fontePrimaria": "https://democracy.psu.edu/poll-report-archive/fewer-than-four-in-ten-americans-think-president-trump-is-doing-a-good-job/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2283,6 +2550,7 @@
       "outros": 9,
       "vantagemDem": 9,
       "fontePrimaria": "https://emersoncollegepolling.com/may-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2297,6 +2565,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://johnzogbystrategies.com/the-latest-zogby-political-poll-trump-economic-concerns-war-trends-05-22-26/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2311,6 +2580,7 @@
       "outros": 7,
       "vantagemDem": 11,
       "fontePrimaria": "https://morrispredictive.com/assets/surveys/tyg730HYHsJ/topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2325,6 +2595,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.rasmussenreports.com/public_content/archive/mood_of_america_archive/generic_congressional_ballot/democrats_expand_lead_to_6_points_in_midterm_forecast",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2339,6 +2610,7 @@
       "outros": 6,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-05-26-may-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2353,6 +2625,7 @@
       "outros": 8,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-05-26-may-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2367,6 +2640,7 @@
       "outros": 12,
       "vantagemDem": 2,
       "fontePrimaria": "https://cdn.prod.website-files.com/663a60b91deeae06e8ae1d1c/6a317d6b6a131bd58ddfc7b9_Rainey_Center_May_Omnibus_Toplines.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2381,6 +2655,7 @@
       "outros": 6,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.dataforprogress.org/blog/2026/5/21/democrats-lead-the-generic-ballot-by-8-points-as-midterms-approach",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2395,6 +2670,7 @@
       "outros": 23,
       "vantagemDem": 1,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-05/Reuters%20Ipsos%20Core%20Political%20May%20Topline_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2409,6 +2685,7 @@
       "outros": 34,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-05/Reuters%20Ipsos%20Core%20Political%20May%20Topline_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2423,6 +2700,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_YTE4G2g.pdf#page=49",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2437,6 +2715,7 @@
       "outros": 25,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_YTE4G2g.pdf#page=49",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2451,6 +2730,7 @@
       "outros": 6,
       "vantagemDem": 8,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/May%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2465,6 +2745,7 @@
       "outros": 11,
       "vantagemDem": 11,
       "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3959",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2479,6 +2760,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/05/National-May-Presentation-RELEASE-05-19-26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2493,6 +2775,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.wsj.com/politics/policy/trump-republican-congress-control-98a13bd9",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2507,6 +2790,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2521,6 +2805,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2535,6 +2820,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.cbsnews.com/news/redistricting-elections-opinion-poll-19-may-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2549,6 +2835,7 @@
       "outros": 11,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.nytimes.com/interactive/2026/05/18/polls/times-siena-national-poll-toplines.html",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -2563,6 +2850,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ONiR6Nb.pdf#page=60",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2577,6 +2865,7 @@
       "outros": 29,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ONiR6Nb.pdf#page=60",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2591,6 +2880,7 @@
       "outros": 24,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-05/Reuters%20Ipsos%20May%20Political%20Update%20Poll%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2605,6 +2895,7 @@
       "outros": 33,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-05/Reuters%20Ipsos%20May%20Political%20Update%20Poll%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2619,6 +2910,7 @@
       "outros": 5,
       "vantagemDem": 15,
       "fontePrimaria": "https://cdn.atlasintel.org/3d4a7014-1638-4546-858f-26eedeccc803.pdf#page=51",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2633,6 +2925,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://data.ddhq.io/polls/2026/05/27/Cygnal/Conservative-Energy-Network-National-2026-05-04-2026-05-07#page=9",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2647,6 +2940,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/05/23838-Cygnal-National-May26-NVT-Deck-Public.pdf#page=42",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2661,6 +2955,7 @@
       "outros": 9,
       "vantagemDem": 9,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-50-percent-gop-41-dems-also-more-enthusiastic",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2675,6 +2970,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-may-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2689,6 +2985,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-may-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2703,6 +3000,7 @@
       "outros": 14,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.harrisx.com/content/forbes-harrisx-american-confidence-tracker-may-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2717,6 +3015,7 @@
       "outros": 4,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-economy-focaldata-financial-times-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2731,6 +3030,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-economy-focaldata-financial-times-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2745,6 +3045,7 @@
       "outros": 15,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-lead-economy-focaldata-financial-times-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2759,6 +3060,7 @@
       "outros": 15,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_i4K4elJ.pdf#page=31",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2773,6 +3075,7 @@
       "outros": 28,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_i4K4elJ.pdf#page=31",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2787,6 +3090,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.documentcloud.org/documents/28114951-cnn-poll-conducted-by-ssrs-affordability/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2801,6 +3105,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2815,6 +3120,7 @@
       "outros": 6,
       "vantagemDem": 10,
       "fontePrimaria": "https://maristpoll.marist.edu/polls/president-trump-while-at-war-may-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2829,6 +3135,7 @@
       "outros": 10,
       "vantagemDem": 11,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/national-mood-worsens-for-republicans-in-april-2026-national-poll/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -2843,6 +3150,7 @@
       "outros": 16,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/national-mood-worsens-for-republicans-in-april-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2857,6 +3165,7 @@
       "outros": 13,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/national-mood-worsens-for-republicans-in-april-2026-national-poll/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -2871,6 +3180,7 @@
       "outros": 20,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/national-mood-worsens-for-republicans-in-april-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2885,6 +3195,7 @@
       "outros": 6,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.washingtonpost.com/documents/f7336b89-3d59-4df1-a322-60abcf0b2477.pdf?itid=lk_inline_manual_5",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2899,6 +3210,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_Ty7ikPd.pdf#page=52",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2913,6 +3225,7 @@
       "outros": 27,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_Ty7ikPd.pdf#page=52",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2927,6 +3240,7 @@
       "outros": 22,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Core%20Political%20April%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2941,6 +3255,7 @@
       "outros": 33,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Core%20Political%20April%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2955,6 +3270,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2969,6 +3285,7 @@
       "outros": 15,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.coindesk.com/policy/2026/05/03/crypto-is-at-the-bottom-of-u-s-voters-priorities-heading-into-the-midterm-coindesk-survey-shows",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2983,6 +3300,7 @@
       "outros": 10,
       "vantagemDem": 10,
       "fontePrimaria": "https://emersoncollegepolling.com/april-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -2997,6 +3315,7 @@
       "outros": null,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/04/HHP_Apr2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3011,6 +3330,7 @@
       "outros": null,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/04/HHP_Apr2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3025,6 +3345,7 @@
       "outros": 5,
       "vantagemDem": 5,
       "fontePrimaria": "https://clarity-public-web.s3.us-east-1.amazonaws.com/Clarity+Omnibus+Overview+-+April+2026.pdf#page=22",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3039,6 +3360,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://quantusinsights.org/f/quantus-survey-a-divided-electorate-a-narrow-democratic-edge",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3053,6 +3375,7 @@
       "outros": null,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.theargumentmag.com/p/why-democrats-cant-win-more-trump",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -3067,6 +3390,7 @@
       "outros": 13,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.theargumentmag.com/p/why-democrats-cant-win-more-trump",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3081,6 +3405,7 @@
       "outros": 1,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-economic-gloom-trump-ratings-signal-tough-gop-midterm-path",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3095,6 +3420,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/April%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3109,6 +3435,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_I24AWdp.pdf#page=65",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3123,6 +3450,7 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_I24AWdp.pdf#page=65",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3137,6 +3465,7 @@
       "outros": 21,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Large%20Issue%20April%202026%20Topline%204.21%20Release_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3151,6 +3480,7 @@
       "outros": 34,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-04/Reuters%20Ipsos%20Large%20Issue%20April%202026%20Topline%204.21%20Release_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3165,6 +3495,7 @@
       "outros": 23,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.kff.org/public-opinion/kff-health-tracking-poll-health-care-costs-and-the-midterms/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3179,6 +3510,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3193,6 +3525,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": null,
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3207,6 +3540,7 @@
       "outros": 4,
       "vantagemDem": 10,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/04/22/detailed-results-of-the-marquette-law-school-supreme-court-poll-april-8-16-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3221,6 +3555,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/04/22/detailed-results-of-the-marquette-law-school-supreme-court-poll-april-8-16-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3235,6 +3570,7 @@
       "outros": 15,
       "vantagemDem": 3,
       "fontePrimaria": "https://law.marquette.edu/poll/2026/04/22/detailed-results-of-the-marquette-law-school-supreme-court-poll-april-8-16-2026-national-issues/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3249,6 +3585,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.thirdway.org/memo/the-cost-of-misplaced-priorities-trumps-coalition-frays",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3263,6 +3600,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/04/National-April-Release-Presentation-4-16-26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3277,6 +3615,7 @@
       "outros": 7,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-04-21-april-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3291,6 +3630,7 @@
       "outros": 10,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-04-21-april-strength-in-numbers-verasight-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3305,6 +3645,7 @@
       "outros": 16,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.survey160.com/methodological-research-blog/survey-160-tracking-poll-april-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3319,6 +3660,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3333,6 +3675,7 @@
       "outros": 13,
       "vantagemDem": 1,
       "fontePrimaria": "https://www.tavernresearch.com/research-and-writings/cutting-room-floor-april-10-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3347,6 +3690,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3361,6 +3705,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-45-percent-gop-42-dems-also-more-enthusiastic",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -3375,6 +3720,7 @@
       "outros": 7,
       "vantagemDem": 3,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-45-percent-gop-42-dems-also-more-enthusiastic",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3389,6 +3735,7 @@
       "outros": 5,
       "vantagemDem": 5,
       "fontePrimaria": "https://netchoice.org/wp-content/uploads/2026/04/NetChoice-Apr-2026-National-Antitrust-Survey-Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3403,6 +3750,7 @@
       "outros": 14,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SVRZJH8.pdf#page=30",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3417,6 +3765,7 @@
       "outros": 26,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SVRZJH8.pdf#page=30",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3431,6 +3780,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3445,6 +3795,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3459,6 +3810,7 @@
       "outros": 8,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/04/23738-Cygnal-National-Apr26-NVT-Deck-Public.pdf#page=23",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3473,6 +3825,7 @@
       "outros": 27,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.uml.edu/docs/2026-Nat-Pol-March-Topline_tcm18-417813.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3487,6 +3840,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://embed.documentcloud.org/documents/28014525-cnn-poll-conducted-by-ssrs-2026-midterms-parties/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3501,6 +3855,7 @@
       "outros": null,
       "vantagemDem": 2,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/03/HHP_Mar2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3515,6 +3870,7 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/03/HHP_Mar2026_KeyResults.pdf#page=20",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3529,6 +3885,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://quantusinsights.org/f/new-quantus-survey-a-sour-national-mood-and-a-midterm-warning",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3543,6 +3900,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-disapproval-rating-hits-new-high-in-march-amid-unpopular-war/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -3557,6 +3915,7 @@
       "outros": 18,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/trump-disapproval-rating-hits-new-high-in-march-amid-unpopular-war/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3571,6 +3930,7 @@
       "outros": 12,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_o84FoNw.pdf#page=59",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3585,6 +3945,7 @@
       "outros": 25,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_o84FoNw.pdf#page=59",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3599,6 +3960,7 @@
       "outros": 9,
       "vantagemDem": 11,
       "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3953",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3613,6 +3975,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_march26",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3627,6 +3990,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://youthpoll.yale.edu/spring-2026-results",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3641,6 +4005,7 @@
       "outros": 22,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20March%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3655,6 +4020,7 @@
       "outros": 34,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20March%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3669,6 +4035,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.gamblingisnotinvesting.com/morning-consult-poll-reveals-americans-concerns-with-prediction-markets/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3683,6 +4050,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3697,6 +4065,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.thirdway.org/memo/president-trumps-immigration-problem",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3711,6 +4080,7 @@
       "outros": 23,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Iran%20Poll%20March%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3725,6 +4095,7 @@
       "outros": 33,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Iran%20Poll%20March%202026%20Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3739,6 +4110,7 @@
       "outros": 8,
       "vantagemDem": 0,
       "fontePrimaria": null,
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3753,6 +4125,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://quantusinsights.org/f/national-survey-a-divided-country-and-a-motivated-electorate#ddfaccf9-bede-412a-8ce9-6f9ddda07554",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3767,6 +4140,7 @@
       "outros": 8,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-03-24-march-sin-verasight-poll-main-release",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3781,6 +4155,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.gelliottmorris.com/p/2026-03-24-march-sin-verasight-poll-main-release",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3795,6 +4170,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://emersoncollegepolling.com/march-2026-national-poll-47-oppose-us-military-action-in-iran-40-support/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3809,6 +4185,7 @@
       "outros": 11,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.winningtheissues.org/wp-content/uploads/2026/04/March-2026-Winning-the-Issues-Survey.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3823,6 +4200,7 @@
       "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.theargumentmag.com/p/americans-would-trade-jobs-for-cheaper",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -3837,6 +4215,7 @@
       "outros": 14,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.theargumentmag.com/p/americans-would-trade-jobs-for-cheaper",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3851,6 +4230,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3865,6 +4245,7 @@
       "outros": 16,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_CwWXhS2.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3879,6 +4260,7 @@
       "outros": 26,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_CwWXhS2.pdf#page=58",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3893,6 +4275,7 @@
       "outros": 16,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.scribd.com/document/1014471987/Yahoo-YouGov-Politics-Poll-March-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3907,6 +4290,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://echelonin.wpenginepowered.com/wp-content/uploads/March-2026-Omnibus-Topline-External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3921,6 +4305,7 @@
       "outros": 14,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.survey160.com/methodological-research-blog/survey-160-tracking-poll-march-2026",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3935,6 +4320,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3949,6 +4335,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-increase-lead-and-rubio-stock-surges-amid-iran-war",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3963,6 +4350,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-increase-lead-and-rubio-stock-surges-amid-iran-war",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3977,6 +4365,7 @@
       "outros": 16,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.focaldata.com/blog/democrats-increase-lead-and-rubio-stock-surges-amid-iran-war",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -3991,6 +4380,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_EcCnfRV.pdf#page=50",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4005,6 +4395,7 @@
       "outros": 24,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_EcCnfRV.pdf#page=50",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4019,6 +4410,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/03/National-March-Presentation-RELEASE-03-10-26.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4033,6 +4425,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4047,6 +4440,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://clarity-public-web.s3.us-east-1.amazonaws.com/Clarity+Omnibus+Overview+-+March+2026.pdf#page=26",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4061,6 +4455,7 @@
       "outros": 8,
       "vantagemDem": 0,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-44-percent-gop-43-dems-also-more-enthusiastic",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4075,6 +4470,7 @@
       "outros": 13,
       "vantagemDem": 1,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-dem-44-percent-gop-43-dems-also-more-enthusiastic",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4089,6 +4485,7 @@
       "outros": 6,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/03/23673-Cygnal-National-Mar26-NVT-Deck-Public.pdf#page=24",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4103,6 +4500,7 @@
       "outros": 3,
       "vantagemDem": 9,
       "fontePrimaria": "https://maristpoll.marist.edu/polls/election-security-march-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4117,6 +4515,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://quantusinsights.org/f/latest-survey-the-hardening-of-american-opinion",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4131,6 +4530,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://quantusinsights.org/f/latest-survey-the-hardening-of-american-opinion",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4145,6 +4545,7 @@
       "outros": 6,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.nbcnews.com/politics/2026-election/poll-trump-struggles-immigration-prices-iran-democrats-midterm-edge-rcna261861",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4159,6 +4560,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ubu5DXD.pdf#page=62",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4173,6 +4575,7 @@
       "outros": 27,
       "vantagemDem": 7,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ubu5DXD.pdf#page=62",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4187,6 +4590,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4201,6 +4605,7 @@
       "outros": 7,
       "vantagemDem": 9,
       "fontePrimaria": "https://tpsiofficial.substack.com/p/what-america-is-actually-thinking",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4215,6 +4620,7 @@
       "outros": 26,
       "vantagemDem": 8,
       "fontePrimaria": "https://tpsiofficial.substack.com/p/what-america-is-actually-thinking",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4229,6 +4635,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://assets1.cbsnewsstatic.com/hub/cms/prod_cms_alt/file/2026/03/02/19e472d6-ce4d-4193-b4cc-0e5086fb97f7/cbsnews_20260301_parties-tues.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4243,6 +4650,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://tippinsights.com/americas-stalemate/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4257,6 +4665,7 @@
       "outros": null,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/03/HHP_Feb2026_KeyResults_Mon.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4271,6 +4680,7 @@
       "outros": null,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/03/HHP_Feb2026_KeyResults_Mon.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4285,6 +4695,7 @@
       "outros": 7,
       "vantagemDem": 3,
       "fontePrimaria": "https://act.americanprinciplesproject.org/p/protect-kids-online/results?access=press",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4299,6 +4710,7 @@
       "outros": 17,
       "vantagemDem": 3,
       "fontePrimaria": "https://cdn.prod.website-files.com/5d02aaade6188137a65c8441/69a9b8dd9009aa1372749a66_Iran%20and%20Affordability%20Deck_0305.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4313,6 +4725,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://yougov.com/en-us/articles/54156-two-thirds-independents-disapprove-donald-trump-job-performance-february-20-23-2026-economist-yougov-poll",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4327,6 +4740,7 @@
       "outros": 4,
       "vantagemDem": 4,
       "fontePrimaria": "https://echelonin.wpenginepowered.com/wp-content/uploads/February-2026-Voter-Omnibus-Topline-Updated-External.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4341,6 +4755,7 @@
       "outros": 21,
       "vantagemDem": 5,
       "fontePrimaria": "https://democracy.psu.edu/poll-report-archive/democrats-have-edge-in-congressional-generic-ballot/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4355,6 +4770,7 @@
       "outros": 22,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Large%20Issue%20Topline%20Feb%202026.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4369,6 +4785,7 @@
       "outros": 34,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Reuters%20Ipsos%20Large%20Issue%20Topline%20Feb%202026.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4383,6 +4800,7 @@
       "outros": 8,
       "vantagemDem": 8,
       "fontePrimaria": "https://emersoncollegepolling.com/february-2026-national-poll-trump-approval-steady-as-disapproval-rises-vance-leads-gop-field-while-democrats-hold-midterm-edge/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4397,6 +4815,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4411,6 +4830,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://cdn.sanity.io/files/ifn0l6bs/production/20f8baa5c94f1c43cfef74a1573ab942b9024b12.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4425,6 +4845,7 @@
       "outros": 6,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.gelliottmorris.com/p/ahead-of-state-of-the-union-address",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4439,6 +4860,7 @@
       "outros": 10,
       "vantagemDem": 10,
       "fontePrimaria": "https://www.gelliottmorris.com/p/ahead-of-state-of-the-union-address",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4453,6 +4875,7 @@
       "outros": 22,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.scrippsnews.com/politics/scripps-news-talker-research-poll-high-interest-in-state-of-the-union-amid-economic-worries",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4467,6 +4890,7 @@
       "outros": 12,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-generic-ballot-lead-in-february/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4481,6 +4905,7 @@
       "outros": 18,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-generic-ballot-lead-in-february/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4495,6 +4920,7 @@
       "outros": 9,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-generic-ballot-lead-in-february/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4509,6 +4935,7 @@
       "outros": 13,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-expand-generic-ballot-lead-in-february/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4523,6 +4950,7 @@
       "outros": 10,
       "vantagemDem": 8,
       "fontePrimaria": "https://scholarworks.bgsu.edu/cgi/viewcontent.cgi?article=1017&context=depo",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4537,6 +4965,7 @@
       "outros": 8,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.washingtonpost.com/documents/d1fa84e0-1aef-4fb2-b140-c872ca010279.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4551,6 +4980,7 @@
       "outros": 18,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.washingtonpost.com/documents/d1fa84e0-1aef-4fb2-b140-c872ca010279.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4565,6 +4995,7 @@
       "outros": 13,
       "vantagemDem": 7,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_usZL1Jt.pdf#page=17",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4579,6 +5010,7 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_usZL1Jt.pdf#page=17",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4593,6 +5025,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-02/Reuters%20Ipsos%20Core%20Political%20Topline%20February%202026_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4607,6 +5040,7 @@
       "outros": 32,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-02/Reuters%20Ipsos%20Core%20Political%20Topline%20February%202026_1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4621,6 +5055,7 @@
       "outros": 12,
       "vantagemDem": 2,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4635,6 +5070,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://quantusinsights.org/f/quantus-insights-national-survey-2026-midterms-break-democrat",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4649,6 +5085,7 @@
       "outros": 20,
       "vantagemDem": 2,
       "fontePrimaria": "https://quantusinsights.org/f/quantus-insights-national-survey-2026-midterms-break-democrat",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4663,6 +5100,7 @@
       "outros": 8,
       "vantagemDem": -2,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-gop-44-percent-dem-41-but-dems-more-enthusiastic",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4677,6 +5115,7 @@
       "outros": 15,
       "vantagemDem": -3,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-gop-44-percent-dem-41-but-dems-more-enthusiastic",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4691,6 +5130,7 @@
       "outros": 15,
       "vantagemDem": 3,
       "fontePrimaria": "https://data.ddhq.io/polls/2026/02/19/YouGov/Yahoo-News-National-2026-02-09-2026-02-12#page=2",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4705,6 +5145,7 @@
       "outros": 5,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.focaldata.com/blog/cost-of-living-fuelling-democrat-strength-in-new-midterms-polling",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4719,6 +5160,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.focaldata.com/blog/cost-of-living-fuelling-democrat-strength-in-new-midterms-polling",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4733,6 +5175,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.focaldata.com/blog/cost-of-living-fuelling-democrat-strength-in-new-midterms-polling",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4747,6 +5190,7 @@
       "outros": 20,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.focaldata.com/blog/cost-of-living-fuelling-democrat-strength-in-new-midterms-polling",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4761,6 +5205,7 @@
       "outros": null,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.theargumentmag.com/p/the-trans-rights-backlash-is-real",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4775,6 +5220,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.theargumentmag.com/p/the-trans-rights-backlash-is-real",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4789,6 +5235,7 @@
       "outros": 14,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4803,6 +5250,7 @@
       "outros": 18,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_vNnwPx2.pdf#page=95",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4817,6 +5265,7 @@
       "outros": 30,
       "vantagemDem": 8,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_vNnwPx2.pdf#page=95",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4831,6 +5280,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4845,6 +5295,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://johnzogbystrategies.com/democrats-lead-republicans-47-42-in-congressional-generic-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4859,6 +5310,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/02/23572-Cygnal-National-NVT-Feb26-Deck-Public.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4873,6 +5325,7 @@
       "outros": 16,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_DDIQ8jz.pdf#page=91",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4887,6 +5340,7 @@
       "outros": 30,
       "vantagemDem": 2,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_DDIQ8jz.pdf#page=91",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4901,6 +5355,7 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4915,6 +5370,7 @@
       "outros": 11,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.publicpolicypolling.com/polls/independents-moving-strongly-against-trump-gop/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4929,6 +5385,7 @@
       "outros": null,
       "vantagemDem": 8,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/02/HHP_Jan2026_KeyResults.pdf#page=18",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4943,6 +5400,7 @@
       "outros": 18,
       "vantagemDem": 0,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/02/HHP_Jan2026_KeyResults.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4957,6 +5415,7 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/02/HHP_Jan2026_KeyResults.pdf#page=18",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -4971,6 +5430,7 @@
       "outros": 9,
       "vantagemDem": 3,
       "fontePrimaria": "https://harvardharrispoll.com/wp-content/uploads/2026/02/HHP_Jan2026_KeyResults.pdf#page=18",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4985,6 +5445,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://issuesinsights.com/2026/02/16/who-leads-in-2028-presidential-race-and-in-2026-midterm-elections-ii-tipp-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -4999,6 +5460,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/02/Cygnal-Deportation-Poll-Data.pdf#page=3",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5013,6 +5475,7 @@
       "outros": 3,
       "vantagemDem": 7,
       "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC30/MLSPSC30Toplines_NationalIssues.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5027,6 +5490,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC30/MLSPSC30Toplines_NationalIssues.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5041,6 +5505,7 @@
       "outros": 16,
       "vantagemDem": 6,
       "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC30/MLSPSC30Toplines_NationalIssues.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5055,6 +5520,7 @@
       "outros": null,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.theargumentmag.com/p/immigration-is-turning-into-a-disaster",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -5069,6 +5535,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.theargumentmag.com/p/immigration-is-turning-into-a-disaster",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5083,6 +5550,7 @@
       "outros": 10,
       "vantagemDem": 2,
       "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/02/National-January-2026-Presentation-RELEASE-1-1.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5097,6 +5565,7 @@
       "outros": 2,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-early-look-2026-midterms",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5111,6 +5580,7 @@
       "outros": 19,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_8FWGyNz.pdf#page=83",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5125,6 +5595,7 @@
       "outros": 27,
       "vantagemDem": 3,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_8FWGyNz.pdf#page=83",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5139,6 +5610,7 @@
       "outros": 7,
       "vantagemDem": 5,
       "fontePrimaria": "https://echelonin.wpenginepowered.com/wp-content/uploads/January-2026-Voter-Omnibus-Topline.pdf#page=4",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5153,6 +5625,7 @@
       "outros": 22,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.reuters.com/data/which-party-do-americans-want-run-congress-2025-11-05/#12-08-2025",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5167,6 +5640,7 @@
       "outros": 12,
       "vantagemDem": 2,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5181,6 +5655,7 @@
       "outros": 8,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-solidify-lead-over-republicans-on-first-2026-generic-ballot/",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -5195,6 +5670,7 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-solidify-lead-over-republicans-on-first-2026-generic-ballot/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5209,6 +5685,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://quantusinsights.org/f/trump-at-one-year-job-approval-and-key-issues",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5223,6 +5700,7 @@
       "outros": 7,
       "vantagemDem": 9,
       "fontePrimaria": "https://clarity-public-web.s3.us-east-1.amazonaws.com/Clarity+Omnibus+Overview+-+January+2026+%5BPUBLIC%5D.pdf#page=23",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5237,6 +5715,7 @@
       "outros": 6,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.gelliottmorris.com/p/new-poll-trump-slips-on-immigration",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5251,6 +5730,7 @@
       "outros": 8,
       "vantagemDem": 8,
       "fontePrimaria": "https://www.gelliottmorris.com/p/new-poll-trump-slips-on-immigration",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5265,6 +5745,7 @@
       "outros": 9,
       "vantagemDem": 7,
       "fontePrimaria": "https://www.kff.org/public-opinion/kff-health-tracking-poll-health-care-costs-expiring-aca-tax-credits-and-the-2026-midterms/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5279,6 +5760,7 @@
       "outros": 10,
       "vantagemDem": 6,
       "fontePrimaria": "https://emersoncollegepolling.com/january-2026-national-poll/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5293,6 +5775,7 @@
       "outros": 18,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_WCk0aqK.pdf#page=96",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5307,6 +5790,7 @@
       "outros": 27,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_WCk0aqK.pdf#page=96",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5321,6 +5805,7 @@
       "outros": 14,
       "vantagemDem": 2,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5335,6 +5820,7 @@
       "outros": 9,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.nytimes.com/2026/01/22/us/politics/trump-poll-second-term.html",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5349,6 +5835,7 @@
       "outros": 8,
       "vantagemDem": 8,
       "fontePrimaria": "https://progressactionfund.com/new-poll-independent-voters-would-rather-shut-down-the-government-than-fund-ice-by-16-points/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5363,6 +5850,7 @@
       "outros": 12,
       "vantagemDem": 6,
       "fontePrimaria": "https://www.rasmussenreports.com/public_content/politics/mood_of_america/generic_congressional_ballot_jan19",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5377,6 +5865,7 @@
       "outros": 22,
       "vantagemDem": 2,
       "fontePrimaria": "https://www.reuters.com/data/which-party-do-americans-want-run-congress-2025-11-05/#12-08-2025",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5391,6 +5880,7 @@
       "outros": 10,
       "vantagemDem": 4,
       "fontePrimaria": "https://www.wsj.com/politics/elections/trump-approval-rating-economy-poll-b3a62e57",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5405,6 +5895,7 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.cnn.com/2026/01/18/politics/cnn-poll-democrats-are-deeply-motivated-for-the-midterms-despite-having-dismal-views-of-party-leaders",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5419,6 +5910,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5433,6 +5925,7 @@
       "outros": 16,
       "vantagemDem": 4,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_qsNv5iE.pdf#page=82",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5447,6 +5940,7 @@
       "outros": 28,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_qsNv5iE.pdf#page=82",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5461,6 +5955,7 @@
       "outros": 15,
       "vantagemDem": 5,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/combined_yahoo_jan2026.pdf#page=3",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5475,6 +5970,7 @@
       "outros": 11,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.winningtheissues.org/wp-content/uploads/2026/01/January-2026-WTI-Survey.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5489,6 +5985,7 @@
       "outros": 7,
       "vantagemDem": 3,
       "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/01/23520-Cygnal-National-Jan26-NVT-Deck-Public.pdf#page=17",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5503,6 +6000,7 @@
       "outros": 13,
       "vantagemDem": 1,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-gop-43-percent-dem-44",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5517,6 +6015,7 @@
       "outros": 7,
       "vantagemDem": 1,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-gop-43-percent-dem-44",
+      "comLeaners": true,
       "origem": "indice-wikipedia"
     },
     {
@@ -5531,6 +6030,7 @@
       "outros": 16,
       "vantagemDem": 6,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_aY8mpiN.pdf#page=59",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5545,6 +6045,7 @@
       "outros": 29,
       "vantagemDem": 7,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_aY8mpiN.pdf#page=59",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5559,6 +6060,7 @@
       "outros": 13,
       "vantagemDem": 3,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5573,6 +6075,7 @@
       "outros": 14,
       "vantagemDem": 2,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5587,6 +6090,7 @@
       "outros": 23,
       "vantagemDem": 11,
       "fontePrimaria": "https://cdn.prod.website-files.com/68d1c32ec01e1d1f6a86e801/6957e70d6a2531a1b867adaa_ICV%202026%20Nationwide%20250th%20Study%20Toplines%20-%20FINAL.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5601,6 +6105,7 @@
       "outros": 30,
       "vantagemDem": 10,
       "fontePrimaria": "https://cdn.prod.website-files.com/68d1c32ec01e1d1f6a86e801/6957e70d6a2531a1b867adaa_ICV%202026%20Nationwide%20250th%20Study%20Toplines%20-%20FINAL.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -5615,6 +6120,7 @@
       "outros": 6,
       "vantagemDem": 4,
       "fontePrimaria": "https://fm.cnbc.com/applications/cnbc.com/resources/editorialfiles/2026/04/23/Toplines_260142_CNBC_AAES_Q1_2026_Topline.pdf",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     }
   ]
