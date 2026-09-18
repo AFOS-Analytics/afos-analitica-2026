@@ -26,12 +26,7 @@
  */
 
 import { readFileSync } from 'node:fs'
-import {
-  UA_NAVEGADOR,
-  extrairAtributos,
-  extrairUrlDoVeiculo,
-  montarPayload,
-} from './wayback-archive.ts'
+import { resolverGoogleNews } from './lib/resolver-gnews.mjs'
 
 const argv = process.argv.slice(2)
 const valor = (n) => argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? null
@@ -41,30 +36,9 @@ const max = Number(valor('max') ?? 6)
 const linkDireto = valor('link')
 const padrao = argv.find((a) => !a.startsWith('--'))
 
-/**
- * 🔑 Link que NÃO é do Google News já é a URL do veículo e não tem o que
- * resolver. Os feeds âncora (`prestige-*`) do cache guardam a primária direto,
- * e a primeira versão deste script tratava isso como "❌ não resolveu", que se
- * lê como link sem caminho e é o oposto do que acontece. Medido em 09/Set/2026
- * com Folha, Gazeta do Povo e Poder360, os três já primários.
- */
-function jaEhPrimaria(url) {
-  return !/^https?:\/\/(news\.)?google\.com\//i.test(url)
-}
-
-async function resolver(url) {
-  if (jaEhPrimaria(url)) return url
-  const pagina = await fetch(url, { headers: { 'User-Agent': UA_NAVEGADOR }, signal: AbortSignal.timeout(25000) })
-  const attrs = extrairAtributos(await pagina.text())
-  if (!attrs) return null
-  const res = await fetch('https://news.google.com/_/DotsSplashUi/data/batchexecute', {
-    method: 'POST',
-    headers: { 'User-Agent': UA_NAVEGADOR, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-    body: 'f.req=' + encodeURIComponent(montarPayload(attrs)),
-    signal: AbortSignal.timeout(25000),
-  })
-  return extrairUrlDoVeiculo(await res.text())
-}
+// 🔑 A resolução mora em `lib/resolver-gnews.mjs` desde 18/Set/2026, para o
+// `ler-materia.mjs` usar o MESMO caminho em vez de uma segunda cópia dele.
+const resolver = resolverGoogleNews
 
 const alvos = []
 if (linkDireto) {

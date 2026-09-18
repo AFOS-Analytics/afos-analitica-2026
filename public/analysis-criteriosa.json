@@ -1,165 +1,167 @@
 {
-  "updatedAt": "17/09/2026, 13:21",
-  "subtitle": "Cruzamento de 17 de setembro de 2026, leitura de 17/Set, 13:21 BRT (16:21 UTC), com o livro presidencial em USD 150,87M. Os cinco contratos vigiados receberam preço novo nesta rodada: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno, impeachment no Supremo e Senado. Do lado das pesquisas, três nacionais foram divulgadas hoje: AtlasIntel (campo de 11 a 16/Set, 5.018 entrevistas pela internet, margem de 1,0pp, BR-06221/2026), PoderData (campo de 13 a 16/Set, 3.000 entrevistas por telefone automatizado, margem de 1,8pp, BR-00360/2026) e Gerp (campo de 14 a 16/Set, 2.400 entrevistas por telefone, margem de 2pp, BR-00535/2026).",
+  "updatedAt": "18/09/2026, 18:59",
+  "subtitle": "Cruzamento de 18 de setembro de 2026, leitura confirmada de 18/Set, 18:59 BRT (21:59 UTC), com o livro presidencial em USD 151,46M. Os cinco contratos vigiados receberam preço novo nesta rodada: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno, impeachment no Supremo e Senado. Do lado das pesquisas, as duas nacionais que entram são a Datafolha e a Futura/100% Cidades, as duas divulgadas em 17/Set depois da captura daquele dia, e elas discordam no sinal do 2º turno.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 44,50% (vol USD 11,19M acumulado) no contrato de vencedor, leitura de 17/Set, 13:21 BRT, sem movimento contra o preço confirmado em 16/Set. PESQUISAS: no 1º turno 44,1% na AtlasIntel, 37% na PoderData e 37% na Gerp; no 2º turno contra Flávio Bolsonaro 46,8%, 44% e 43%.",
+      "header": "PREÇO: 42,50% (vol USD 11,36M acumulado) no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, queda de 2,00pp contra o preço confirmado em 17/Set. PESQUISAS: no 1º turno 39% na Datafolha e 38,3% na Futura; no 2º turno contra Flávio Bolsonaro 46% na Datafolha e 43,7% na Futura.",
       "fortes": [
-        "Lidera o 1º turno na AtlasIntel de 17/Set, 44,1% a 41,7%, uma distância de 2,4 pontos que fica fora de duas margens de 1,0, e na PoderData, 37% a 36%.",
-        "Vence os quatro outros pares de 2º turno da AtlasIntel, todos fora de duas margens: 46,3% a 43,7% contra Romeu Zema, 46,0% a 41,7% contra Ronaldo Caiado, 45,6% a 37,8% contra Augusto Cury e 46,1% a 29,7% contra Renan Santos.",
-        "Na AtlasIntel e na PoderData o par de 2º turno contra Flávio Bolsonaro cabe nas margens, o que é empate técnico nas duas casas."
+        "Lidera o 1º turno nas duas nacionais de 17/Set, 39% a 36% na Datafolha e 38,3% a 37,7% na Futura/100% Cidades, e nas duas a distância cabe em duas margens.",
+        "Na Datafolha vence o 2º turno por 46% a 44%, e é a terceira rodada seguida da casa com exatamente esses números, ou seja o par não se move dentro dela desde 11/Set.",
+        "No contrato de 2º lugar do 1º turno sobe 6,70pp, para 29,35%, o maior movimento dele em qualquer livro nesta rodada."
       ],
       "fracos": [
-        "Fica parado em 44,50% no contrato de vencedor enquanto Flávio Bolsonaro sobe, e o vão abre de 9,25pp para 10,20pp.",
-        "Aparece numericamente atrás de Flávio Bolsonaro no 2º turno nas três nacionais de 17/Set, e na Gerp a distância de 7 pontos fica fora de duas margens.",
-        "Na AtlasIntel a vantagem dele no 1º turno encurtou de 5,6 para 2,4 pontos contra a rodada de 10/Set. No contrato de 2º lugar do 1º turno cede 1,20pp, para 22,65%."
+        "Cai 2,00pp no contrato de vencedor, para 42,50%, e o vão para Flávio Bolsonaro abre de 10,20pp para 14,00pp com os dois lados andando.",
+        "Fica 25,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, numa série que começa em 14/Abr.",
+        "Na Futura/100% Cidades perde o 2º turno por 48,1% a 43,7%, uma distância de 4,4 pontos que fica fora de duas margens de 2,2."
       ],
-      "analise": "A rodada é de preço parado e de três pesquisas que repetem, cada uma, a própria leitura anterior no 2º turno. No contrato de vencedor ele fica em 44,50% (vol USD 11,19M acumulado), e o vão para Flávio Bolsonaro abre de 9,25pp para 10,20pp só pelo movimento do adversário. No 2º turno contra Flávio Bolsonaro a PoderData mantém a distância de 2 pontos, a Gerp a de 7 e a AtlasIntel vai de 0,2 para 0,4 ponto: as casas discordam mais entre si do que cada uma se move. No 1º turno ele lidera na AtlasIntel e na PoderData e fica atrás na Gerp, e é na AtlasIntel que a vantagem dele encurta, de 5,6 para 2,4 pontos. A AtlasIntel também mede 45,4% de aprovação do governo contra 53,6% de desaprovação. No contrato de 2º lugar do 1º turno ele cede 1,20pp, para 22,65%."
+      "analise": "A rodada é de queda no preço e de duas pesquisas que discordam no sinal do 2º turno. No contrato de vencedor ele cai 2,00pp, para 42,50% (vol USD 11,36M acumulado), e o vão para Flávio Bolsonaro abre de 10,20pp para 14,00pp, agora com os dois lados se movendo, e não só o adversário. No contrato de 2º lugar do 1º turno o movimento é o inverso e é maior: sobe 6,70pp, para 29,35%, porque quem fica menos provável de vencer fica mais provável de chegar em segundo. As duas nacionais divulgadas em 17/Set depois da captura daquele dia o põem à frente no 1º turno e discordam no 2º: a Datafolha, presencial, dá 46% a 44% para ele, dentro das margens; a Futura/100% Cidades, por telefone, dá 43,7% a 48,1% contra ele, fora de duas margens. São 6,4 pontos de diferença entre as casas no mesmo par. Na avaliação do governo as duas também se afastam, 48% de aprovação na Datafolha contra 44,1% na Futura."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 54,70% (vol USD 10,88M acumulado) no contrato de vencedor, leitura de 17/Set, 13:21 BRT, uma alta de 0,95pp contra o preço confirmado em 16/Set. PESQUISAS: no 1º turno 41,7% na AtlasIntel, 36% na PoderData e 40% na Gerp; no 2º turno contra Lula 47,2%, 46% e 50%.",
+      "header": "PREÇO: 56,50% (vol USD 11,02M acumulado) no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, alta de 1,80pp contra o preço confirmado em 17/Set. PESQUISAS: no 1º turno 36% na Datafolha e 37,7% na Futura; no 2º turno contra Lula 44% na Datafolha e 48,1% na Futura.",
       "fortes": [
-        "Sobe 0,95pp no contrato de vencedor, para 54,70%, 0,40pp abaixo do topo da série dele, de 55,10% em 10/Set, e o vão para Lula abre de 9,25pp para 10,20pp.",
-        "Aparece à frente de Lula no 2º turno nas três nacionais de 17/Set, e na Gerp os 7 pontos, 50% a 43%, ficam fora de duas margens.",
-        "Na AtlasIntel sobe de 37,4% para 41,7% no 1º turno contra a rodada de 10/Set, e na Gerp lidera o 1º turno por 40% a 37%."
+        "Chega a 56,50% no contrato de vencedor e fica 0,10pp acima do maior valor de toda a série gravada dele, que até hoje nunca tinha passado desse patamar numa série que começa em 14/Abr.",
+        "Na Futura/100% Cidades vence o 2º turno por 48,1% a 43,7%, fora de duas margens de 2,2, e no 1º turno encosta em Lula por 37,7% a 38,3%.",
+        "Na Datafolha sobe de 35% para 36% no 1º turno e passa a estar a 3 pontos de Lula, distância que cabe em duas margens de 2,0."
       ],
       "fracos": [
-        "Na AtlasIntel e na PoderData a vantagem dele no 2º turno, de 0,4 e 2 pontos, cabe nas margens, então essas duas casas medem empate técnico.",
-        "Segue atrás de Lula no 1º turno na AtlasIntel, a 2,4 pontos, fora de duas margens, e na PoderData, a 1 ponto."
+        "No contrato de 2º lugar do 1º turno cai 7,00pp, para 69,50%, a maior variação de qualquer contrato nesta rodada.",
+        "Na Datafolha perde o 2º turno por 44% a 46% e a rejeição dele sobe de 46% para 47%, empatada com a de Lula.",
+        "Na Futura/100% Cidades a rejeição dele é de 45,3%, o segundo maior índice da pesquisa, atrás só do de Lula."
       ],
-      "analise": "A rodada é de alta no mercado e de estabilidade dentro de cada casa no 2º turno. No contrato de vencedor ele sobe 0,95pp, para 54,70% (vol USD 10,88M acumulado), com Lula parado, e fica 0,40pp abaixo do topo da série, de 55,10% em 10/Set. As três nacionais de 17/Set o põem à frente no 2º turno, e cada uma repete a distância da própria rodada anterior: 0,4 ponto na AtlasIntel, 2 na PoderData e 7 na Gerp. O movimento que existe está no 1º turno da AtlasIntel, onde ele sobe de 37,4% para 41,7%. O painel não afirma que o preço reagiu a nenhuma das três: a ordem entre as medições não está medida. No contrato de 2º lugar do 1º turno ele sobe 1,00pp, para 76,50%."
+      "analise": "A rodada põe o preço dele acima do maior valor já gravado na série e, ao mesmo tempo, mostra as pesquisas discordando sobre ele. No contrato de vencedor sobe 1,80pp, para 56,50% (vol USD 11,02M acumulado), e o vão para Lula abre de 10,20pp para 14,00pp. No contrato de 2º lugar do 1º turno cai 7,00pp, para 69,50%, e as duas coisas são o mesmo fato visto de dois ângulos: o livro passou a tratá-lo menos como provável segundo colocado e mais como provável vencedor. Nas pesquisas o quadro não é único. A Futura/100% Cidades, por telefone e com campo de 11 a 15/Set, o dá vencendo o 2º turno por 48,1% a 43,7%, fora de duas margens. A Datafolha, presencial e com campo de 15 a 16/Set, o dá perdendo por 44% a 46%, dentro das margens e pela terceira rodada seguida com o mesmo par. O painel mostra a distância entre as duas e não escolhe uma delas."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 0,15% no contrato de vencedor, leitura de 17/Set, 13:21 BRT, queda de 0,10pp. No contrato de 3º lugar do 1º turno cai 2,60pp contra o preço confirmado em 16/Set, para 42,90% (vol USD 215 mil acumulado), e deixa de ser o favorito. PESQUISAS: no 1º turno 3,5% na AtlasIntel, 8% na PoderData e 7% na Gerp.",
+      "header": "PREÇO: 0,15% no contrato de vencedor e 41,00% (vol USD 226 mil acumulado) no de 3º lugar do 1º turno, leitura confirmada de 18/Set, 18:59 BRT. PESQUISAS: 6% no 1º turno na Datafolha e 6,5% na Futura.",
       "fortes": [
-        "É o terceiro colocado no 1º turno da PoderData, com 8%, e da Gerp, com 7%, à frente de Renan Santos nas duas.",
-        "Na PoderData vence Lula no 2º turno por 45% a 42%, uma distância que cabe dentro de duas margens de 1,8."
+        "É o terceiro colocado nas duas nacionais de 17/Set, 6% na Datafolha e 6,5% na Futura/100% Cidades, à frente de Renan Santos nas duas.",
+        "Na Datafolha a rejeição dele é de 9%, a menor entre os seis nomes com 2% ou mais de intenção de voto."
       ],
       "fracos": [
-        "No contrato de 3º lugar do 1º turno cai 2,60pp, para 42,90%, e fica 1,10pp atrás de Renan Santos, que era 9,00pp menor na véspera.",
-        "Na AtlasIntel cai de 6,6% para 3,5% no 1º turno contra a rodada de 10/Set, e perde o 2º turno para Lula por 37,8% a 45,6%. No contrato de vencedor os 0,15% ficam abaixo do menor valor das leituras gravadas da série dele, de 0,30% em 10/Set."
+        "Cai 1,90pp no contrato de 3º lugar do 1º turno, para 41,00%, e fica 8,00pp atrás de Renan Santos, que ontem estava 1,10pp à frente dele.",
+        "No contrato de vencedor está em 0,15%, abaixo do menor valor das leituras gravadas da série dele, de 0,20% em 17/Set.",
+        "As pesquisas e o livro discordam na ordem da terceira via: as duas casas o põem à frente de Renan Santos, e o contrato de 3º lugar paga mais em Renan."
       ],
-      "analise": "A rodada troca o favorito do contrato em que ele tem preço relevante. No 3º lugar do 1º turno ele cai 2,60pp, para 42,90% (vol USD 215 mil acumulado), e Renan Santos passa à frente. As pesquisas de hoje não concordam nessa troca: na PoderData ele tem 8% e na Gerp 7%, os dois à frente de Renan Santos, e na AtlasIntel cai de 6,6% para 3,5%, atrás dele. No 2º turno contra Lula a PoderData o põe 3 pontos à frente, dentro de duas margens, e a AtlasIntel 7,8 pontos atrás, fora delas. No contrato de vencedor cede 0,10pp, para 0,15%."
+      "analise": "O caso dele é o cruzamento mais direto desta rodada, e ele não se concilia. Nas duas pesquisas nacionais de 17/Set ele é o terceiro mais votado, com 6% na Datafolha e 6,5% na Futura/100% Cidades, à frente de Renan Santos nas duas. No contrato de 3º lugar do 1º turno acontece o contrário: ele cai 1,90pp, para 41,00%, e passa a ficar 8,00pp atrás de Renan Santos, quando em 17/Set estava 1,10pp à frente dele. No contrato de vencedor ele está em 0,15%, abaixo do menor valor já gravado na série dele. O painel registra que os dois instrumentos discordam na ordem, sem afirmar qual deles vai se provar certo."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 1,15% (vol USD 13,60M acumulado) no contrato de vencedor, leitura de 17/Set, 13:21 BRT, queda de 0,20pp. No contrato de 3º lugar do 1º turno sobe 7,50pp contra o preço confirmado em 16/Set, para 44,00% (vol USD 324 mil acumulado), e passa a ser o favorito. PESQUISAS: no 1º turno 5,1% na AtlasIntel, 3% na PoderData e 2% na Gerp.",
+      "header": "PREÇO: 0,95% (vol USD 13,69M acumulado) no contrato de vencedor e 49,00% (vol USD 347 mil acumulado) no de 3º lugar do 1º turno, leitura confirmada de 18/Set, 18:59 BRT. PESQUISAS: 3% no 1º turno na Datafolha e 3,4% na Futura.",
       "fortes": [
-        "No contrato de 3º lugar do 1º turno sobe 7,50pp, para 44,00%, e passa à frente de Augusto Cury, agora 1,10pp atrás dele. É também o contrato de maior volume acumulado daquele livro, USD 324 mil.",
-        "Na AtlasIntel de 17/Set é o terceiro colocado do 1º turno, com 5,1%, à frente de Augusto Cury, com 3,5%.",
-        "O contrato dele de vencedor é o segundo maior em volume acumulado do livro presidencial, USD 13,60M, atrás só do de Tarcísio de Freitas."
+        "Sobe 5,00pp no contrato de 3º lugar do 1º turno, para 49,00%, e abre 8,00pp sobre Augusto Cury, que ontem estava a 1,10pp.",
+        "É o contrato com maior volume acumulado nos livros de 2º e de 3º lugar do 1º turno, USD 1,33M e USD 347 mil.",
+        "Entrou com representação no Tribunal Superior Eleitoral contra o reajuste do Bolsa Família em 17/Set, e o relator sorteado foi André Mendonça."
       ],
       "fracos": [
-        "No contrato de vencedor cede 0,20pp, para 1,15%, abaixo do menor valor das leituras gravadas da série dele, de 1,20% em 31/Ago.",
-        "Na PoderData e na Gerp fica atrás de Augusto Cury no 1º turno, com 3% e 2%, e na AtlasIntel cai de 6,5% para 5,1% contra a rodada de 10/Set. Perde o 2º turno para Lula na AtlasIntel por 29,7% a 46,1%."
+        "No contrato de vencedor cai 0,20pp, para 0,95%, e fica 0,05pp abaixo do menor valor de toda a série gravada dele, que até hoje nunca tinha descido desse patamar.",
+        "Nas duas nacionais de 17/Set fica atrás de Augusto Cury, 3% a 6% na Datafolha e 3,4% a 6,5% na Futura/100% Cidades.",
+        "Na Datafolha a rejeição dele é de 15%, a terceira maior da pesquisa, atrás só das de Lula e Flávio Bolsonaro."
       ],
-      "analise": "A rodada move os dois contratos dele em direções opostas. No de 3º lugar do 1º turno ele sobe 7,50pp, para 44,00% (vol USD 324 mil acumulado), e passa à frente de Augusto Cury. No de vencedor cede 0,20pp, para 1,15% (vol USD 13,60M acumulado), abaixo do menor valor das leituras gravadas da série. Das três nacionais de hoje, só a AtlasIntel o põe à frente de Cury no 1º turno, 5,1% a 3,5%, e mesmo ali ele cai 1,4 ponto contra a rodada de 10/Set; a PoderData e a Gerp põem Cury 5 pontos à frente. O painel não afirma que o livro de 3º lugar reagiu à AtlasIntel. Volume alto no contrato de vencedor mede interesse acumulado desde a abertura, não probabilidade de agora."
+      "analise": "Os dois contratos dele andaram em sentidos opostos na mesma leitura, e isso não é contradição: um mede chegar em terceiro no 1º turno e o outro mede ganhar a eleição. No de 3º lugar ele sobe 5,00pp, para 49,00%, assume a frente com folga sobre Augusto Cury e passa a ter o maior volume acumulado daquele livro. No de vencedor cai 0,20pp, para 0,95%, abaixo do menor valor já gravado na série dele. As pesquisas não acompanham a subida no 3º lugar: a Datafolha o dá com 3% e a Futura/100% Cidades com 3,4%, atrás de Cury nas duas. Fora da urna, em 17/Set ele entrou com representação no Tribunal Superior Eleitoral contra o reajuste do Bolsa Família, depois de uma primeira ação, de outro autor, ter sido rejeitada por falta de legitimidade."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Ronaldo Caiado em 0,15% no contrato de vencedor, estável, leitura de 17/Set, 13:21 BRT; Romeu Zema em 0,05%, queda de 0,10pp; Fernando Haddad em 0,05%, estável. No contrato de 3º lugar do 1º turno Ronaldo Caiado cai 3,00pp contra o preço confirmado em 16/Set, para 12,50% (vol USD 133 mil acumulado). PESQUISAS: Ronaldo Caiado com 1,7% na AtlasIntel e 3% na PoderData e na Gerp; Romeu Zema com 1,1% na AtlasIntel e 1% na PoderData.",
-      "subtitle": "Os três nomes fora do pelotão de frente, com preço da leitura de 17/Set, 13:21 BRT e pesquisas da AtlasIntel, da PoderData e da Gerp de 17/Set.",
+      "header": "PREÇO: Ronaldo Caiado 0,05% e 10,50% no contrato de 3º lugar, Romeu Zema 0,15% e Fernando Haddad 0,05%, leitura confirmada de 18/Set, 18:59 BRT. PESQUISAS: Caiado 4% na Datafolha e 4,5% na Futura; Zema 2% e 1,0%.",
+      "subtitle": "Os três nomes fora do pelotão de frente, com preço da leitura confirmada de 18/Set, 18:59 BRT e pesquisas da Datafolha e da Futura/100% Cidades de 17/Set.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,15% no contrato de VENCEDOR, leitura confirmada de 17/Set, 13:21 BRT, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno cai 3,00pp, para 12,50%, num livro de USD 133 mil. Tem 1,7% no 1º turno da AtlasIntel e 3% na PoderData e na Gerp.",
-        "fortes": "Tem 3% no 1º turno da PoderData, empatado com Renan Santos, e 3% na Gerp, à frente dele.",
-        "fracos": "Perde o par de 2º turno para Lula na AtlasIntel por 4,3 pontos, fora de duas margens, e cai 3,00pp no contrato de 3º lugar do 1º turno. No contrato de vencedor segue em 0,15%."
+        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 18/Set, 18:59 BRT, abaixo do piso de 0,5% da dupla leitura e abaixo do menor valor das leituras gravadas da série dele, de 0,10% em 17/Set. No contrato de 3º LUGAR do 1º turno cai 2,00pp, para 10,50%, num livro de USD 137 mil. Tem 4% no 1º turno da Datafolha e 4,5% na Futura/100% Cidades.",
+        "fortes": "É o quarto colocado nas duas nacionais de 17/Set, com 4% na Datafolha e 4,5% na Futura/100% Cidades, e mantém a terceira posição do livro de 3º lugar do 1º turno.",
+        "fracos": "Cai 2,00pp no contrato de 3º lugar do 1º turno e, no de vencedor, fica abaixo do menor valor já gravado na série dele. Nenhuma das duas casas o testa em par de 2º turno nesta rodada."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 17/Set, 13:21 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e as nacionais de 17/Set não o testam em cenário presidencial de 1º turno.",
-        "fortes": "O contrato dele não se moveu na leitura de hoje, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai.",
-        "fracos": "Não é medido no 1º turno pelas nacionais de 17/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada."
+        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 18/Set, 18:59 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e as duas nacionais de 17/Set não o testam em cenário presidencial de 1º turno.",
+        "fortes": "O contrato dele não se moveu nesta leitura, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai, medido no backup do banco.",
+        "fracos": "Não é medido no 1º turno pelas duas nacionais de 17/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,05% no contrato de VENCEDOR, leitura confirmada de 17/Set, 13:21 BRT, queda de 0,10pp, no piso do livro. Tem 1,1% no 1º turno da AtlasIntel e 1% na PoderData.",
-        "fortes": "É o adversário mais próximo de Lula nos pares de 2º turno da AtlasIntel de 17/Set, com 43,7% contra 46,3%.",
-        "fracos": "Na rodada de 10/Set da AtlasIntel aparecia 0,2 ponto à frente de Lula no 2º turno, e hoje fica 2,6 pontos atrás, fora de duas margens. No contrato de vencedor cai para 0,05%, e o topo da série dele é de 12,00%, em 13/Mai."
+        "label": "ZEMA (Novo), 0,15% no contrato de VENCEDOR, leitura confirmada de 18/Set, 18:59 BRT, ainda abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno cai 0,50pp, para 0,35%. Tem 2% no 1º turno da Datafolha e 1,0% na Futura/100% Cidades.",
+        "fortes": "Sai do piso da série dele no contrato de vencedor, de 0,10% em 17/Set, ainda que o valor siga abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
+        "fracos": "Cai 0,50pp no contrato de 3º lugar do 1º turno e nenhuma das duas nacionais de 17/Set o testa em par de 2º turno. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
       },
-      "analise": "A rodada mexe pouco nos três no contrato de vencedor: Ronaldo Caiado segue em 0,15%, Romeu Zema cai de 0,15% para 0,05% e Fernando Haddad fica em 0,05%. O movimento maior é de Caiado no contrato de 3º lugar do 1º turno, onde cai 3,00pp, para 12,50%. Nas pesquisas, a AtlasIntel de 17/Set mede os dois candidatos em pares de 2º turno contra Lula e os dois perdem fora de duas margens: Zema por 2,6 pontos, depois de aparecer 0,2 ponto à frente em 10/Set, e Caiado por 4,3 pontos, depois de empatar em 45,7% em 10/Set.",
+      "analise": "Os três seguem no piso do contrato de vencedor e é no de 3º lugar do 1º turno que existe preço com movimento. Ronaldo Caiado cai 2,00pp ali, para 10,50%, e mantém a terceira posição daquele livro, atrás de Renan Santos e Augusto Cury. Romeu Zema cai 0,50pp, para 0,35%. Nas duas nacionais de 17/Set, Caiado tem 4% e 4,5% e Zema tem 2% e 1,0%, e nenhum dos dois é testado em par de 2º turno pelas duas casas. Fernando Haddad não aparece em nenhum cenário estimulado de 1º turno e segue em 0,05% no contrato de vencedor, com o topo da série dele em 7,60%, de 26/Mai.",
       "fortes": [
-        "Romeu Zema é o adversário mais próximo de Lula nos pares de 2º turno da AtlasIntel de 17/Set, a 2,6 pontos.",
-        "Ronaldo Caiado tem 3% no 1º turno da PoderData e da Gerp.",
-        "Fernando Haddad e Ronaldo Caiado ficaram estáveis no contrato de vencedor na leitura de hoje."
+        "Ronaldo Caiado mantém o terceiro lugar no contrato de 3º lugar do 1º turno, com 10,50% e USD 137 mil acumulados.",
+        "Na Datafolha, Ronaldo Caiado tem 4% no 1º turno e rejeição de 13%, abaixo da de Renan Santos e da de Romeu Zema."
       ],
       "fracos": [
-        "Os três somam 0,25% no contrato de vencedor, e nenhum deles passa de 0,15% individualmente.",
-        "Na AtlasIntel os pares de Zema e de Caiado contra Lula pioram contra a rodada de 10/Set e ficam fora de duas margens.",
-        "Fernando Haddad não é medido no 1º turno pelas nacionais de 17/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada."
+        "Ronaldo Caiado cai 2,00pp no contrato de 3º lugar, para 10,50%, e no de vencedor está em 0,05%, abaixo do menor valor das leituras gravadas da série dele, de 0,10% em 17/Set.",
+        "Romeu Zema cai 0,50pp no contrato de 3º lugar, para 0,35%, e tem 2% na Datafolha e 1,0% na Futura/100% Cidades.",
+        "Fernando Haddad segue em 0,05% no contrato de vencedor e não é testado no 1º turno por nenhuma das duas nacionais de 17/Set."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Na AtlasIntel de 17/Set (campo de 11 a 16/Set, 5.018 entrevistas pela internet, margem de 1,0pp) tem 44,1% no 1º turno, à frente, e 46,8% no 2º turno contra 47,2% de Flávio Bolsonaro, dentro da margem. Na PoderData de 17/Set tem 37% no 1º turno e 44% a 46% no 2º turno, e na Gerp de 17/Set 37% e 43% a 50%.",
-      "m": "44,50% (vol USD 11,19M) no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, sem movimento contra o preço confirmado em 16/Set, e 23,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno cede 1,20pp, para 22,65%.",
-      "t": "parado, e o vão para o primeiro abre de 9,25pp para 10,20pp pelo movimento do adversário",
-      "s": "A AtlasIntel de 17/Set mede 45,4% de aprovação do governo contra 53,6% de desaprovação, e a Genial/Quaest de 14/Set media 43% contra 50%. São casas e métodos diferentes, e o painel não as lê como série.",
+      "p": "Na Datafolha de 17/Set (campo de 15 a 16/Set, presencial, 2.002 entrevistas, margem de 2,0pp) tem 39% no 1º turno, à frente, e vence o 2º turno por 46% a 44%. Na Futura/100% Cidades do mesmo dia (campo de 11 a 15/Set, telefone, 2.000 entrevistas, margem de 2,2pp) tem 38,3% no 1º turno e perde o 2º turno por 43,7% a 48,1%.",
+      "m": "42,50% (vol USD 11,36M) no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, queda de 2,00pp contra o preço confirmado em 17/Set, e 25,00pp abaixo do topo da série dele, de 67,50% em 16/Ago. No contrato de 2º lugar do 1º turno sobe 6,70pp, para 29,35%.",
+      "t": "cai 2,00pp e o vão para o primeiro abre de 10,20pp para 14,00pp, agora com os dois lados andando",
+      "s": "A Datafolha de 17/Set mede 48% de aprovação do governo contra 50% de desaprovação, e a Futura/100% Cidades do mesmo dia mede 44,1% contra 53,1%. São 3,9 pontos de diferença na aprovação entre duas casas que publicaram no mesmo dia, e o painel não as lê como série.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "41,7% no 1º turno e 47,2% no 2º turno contra 46,8% de Lula na AtlasIntel de 17/Set, dentro da margem. Na PoderData tem 36% e 46% a 44%, dentro de duas margens, e na Gerp 40% e 50% a 43%, fora delas.",
-      "m": "54,70% (vol USD 10,88M) no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, uma alta de 0,95pp contra o preço confirmado em 16/Set, e 0,40pp abaixo do topo da série dele, de 55,10% em 10/Set. No contrato de 2º lugar do 1º turno sobe 1,00pp, para 76,50%.",
-      "t": "sobe 0,95pp e segue favorito, com o vão para o segundo abrindo de 9,25pp para 10,20pp",
-      "s": "No 2º turno contra Lula cada uma das três casas repete a distância da própria rodada anterior, 0,4 ponto na AtlasIntel, 2 na PoderData e 7 na Gerp, e a diferença entre elas é maior que o movimento de qualquer uma.",
+      "p": "36% no 1º turno e 44% no 2º turno contra 46% de Lula na Datafolha de 17/Set, dentro de duas margens. Na Futura/100% Cidades do mesmo dia tem 37,7% no 1º turno e vence o 2º turno por 48,1% a 43,7%, fora de duas margens.",
+      "m": "56,50% (vol USD 11,02M) no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, uma alta de 1,80pp contra o preço confirmado em 17/Set, acima do maior valor das leituras gravadas da série dele, de 56,40% hoje mesmo. No contrato de 2º lugar do 1º turno cai 7,00pp, para 69,50%.",
+      "t": "sobe 1,80pp, passa do maior valor gravado da série dele e o vão para o segundo vai a 14,00pp",
+      "s": "As duas nacionais de 17/Set discordam no SINAL do 2º turno contra Lula, e não só na magnitude: a Datafolha o dá 2 pontos atrás e a Futura 4,4 pontos à frente. Os métodos são diferentes, presencial e telefone, e as janelas de campo também.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "3,5% no 1º turno na AtlasIntel de 17/Set, contra 6,6% em 10/Set, e 8% na PoderData e 7% na Gerp. Na PoderData vence Lula no 2º turno por 45% a 42%, dentro de duas margens, e na AtlasIntel perde por 37,8% a 45,6%.",
-      "m": "0,15% no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, queda de 0,10pp. No contrato de 3º lugar do 1º turno cai 2,60pp contra o preço confirmado em 16/Set, para 42,90% (vol USD 215 mil), e fica 1,10pp atrás de Renan Santos.",
-      "t": "cai nos dois contratos e perde o favoritismo no de 3º lugar",
-      "s": "No contrato de vencedor os 0,15% ficam abaixo do menor valor das leituras gravadas da série dele, de 0,30% em 10/Set.",
+      "p": "6% no 1º turno na Datafolha de 17/Set e 6,5% na Futura/100% Cidades, terceiro colocado nas duas e à frente de Renan Santos.",
+      "m": "0,15% no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, abaixo do menor valor das leituras gravadas da série dele. No contrato de 3º lugar do 1º turno cai 1,90pp contra o preço confirmado em 17/Set, para 41,00% (vol USD 226 mil), e fica 8,00pp atrás de Renan Santos.",
+      "t": "cai nos dois contratos e a distância para Renan Santos no de 3º lugar vai de 1,10pp a favor dele para 8,00pp contra",
+      "s": "É o cruzamento mais direto da rodada: as duas pesquisas o põem à frente de Renan Santos na terceira via e o contrato de 3º lugar paga mais em Renan, com a distância crescendo.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "5,1% no 1º turno na AtlasIntel de 17/Set, à frente de Augusto Cury, e 3% na PoderData e 2% na Gerp, atrás dele nas duas.",
-      "m": "1,15% (vol USD 13,60M) no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, queda de 0,20pp, abaixo do menor valor das leituras gravadas da série dele, de 1,20% em 31/Ago. No contrato de 3º lugar do 1º turno sobe 7,50pp contra o preço confirmado em 16/Set, para 44,00% (vol USD 324 mil), e passa a ser o favorito.",
-      "t": "sobe 7,50pp e assume o 3º lugar, e cede 0,20pp no de vencedor",
-      "s": "O contrato dele de vencedor é o segundo maior em volume acumulado do livro presidencial, USD 13,60M, atrás só do de Tarcísio de Freitas, e paga 1,15%: volume mede interesse acumulado desde a abertura, não probabilidade de agora.",
+      "p": "3% no 1º turno na Datafolha de 17/Set e 3,4% na Futura/100% Cidades, atrás de Augusto Cury nas duas.",
+      "m": "0,95% (vol USD 13,69M) no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, queda de 0,20pp, abaixo do menor valor das leituras gravadas da série dele, de 1,00% hoje mesmo. No contrato de 3º lugar do 1º turno sobe 5,00pp contra o preço confirmado em 17/Set, para 49,00% (vol USD 347 mil).",
+      "t": "sobe 5,00pp no de 3º lugar e abre 8,00pp sobre Cury, e cede 0,20pp no de vencedor",
+      "s": "O contrato dele de vencedor é o segundo maior em volume acumulado do livro presidencial, USD 13,69M, atrás só do de Tarcísio de Freitas, e paga 0,95%: volume mede interesse acumulado desde a abertura, não probabilidade de agora.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "1,7% no 1º turno na AtlasIntel de 17/Set e 3% na PoderData e na Gerp. Na AtlasIntel perde o par de 2º turno para Lula por 41,7% a 46,0%, fora de duas margens.",
-      "m": "0,15% no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, estável. No contrato de 3º lugar do 1º turno cai 3,00pp contra o preço confirmado em 16/Set, para 12,50% (vol USD 133 mil).",
-      "t": "estável no contrato de vencedor e em queda no de 3º lugar",
-      "s": "Na AtlasIntel de 10/Set o par de 2º turno contra Lula estava empatado em 45,7%, e em 17/Set ele fica 4,3 pontos atrás.",
+      "p": "4% no 1º turno na Datafolha de 17/Set e 4,5% na Futura/100% Cidades, quarto colocado nas duas.",
+      "m": "0,05% no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, abaixo do menor valor das leituras gravadas da série dele, de 0,10% em 17/Set. No contrato de 3º lugar do 1º turno cai 2,00pp contra o preço confirmado em 17/Set, para 10,50% (vol USD 137 mil).",
+      "t": "cai nos dois contratos e mantém a terceira posição do livro de 3º lugar",
+      "s": "Na Datafolha a rejeição dele é de 13%, menor que a de Renan Santos, de 15%, e que a de Romeu Zema, de 14%, e ainda assim ele fica atrás dos dois em algum dos instrumentos.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "1,1% no 1º turno na AtlasIntel de 17/Set e 1% na PoderData. Na AtlasIntel perde o par de 2º turno para Lula por 43,7% a 46,3%, fora de duas margens.",
-      "m": "0,05% no contrato de vencedor, leitura confirmada de 17/Set, 13:21 BRT, queda de 0,10pp, no piso do livro, com o topo da série dele em 12,00%, de 13/Mai. No contrato de 3º lugar do 1º turno está em 0,85%.",
-      "t": "cai 0,10pp e chega ao piso do livro",
-      "s": "Na AtlasIntel de 10/Set aparecia 0,2 ponto à frente de Lula no 2º turno, e em 17/Set fica 2,6 pontos atrás.",
+      "p": "2% no 1º turno na Datafolha de 17/Set e 1,0% na Futura/100% Cidades.",
+      "m": "0,15% no contrato de vencedor, leitura confirmada de 18/Set, 18:59 BRT, com o topo da série dele em 12,00%, de 13/Mai. No contrato de 3º lugar do 1º turno cai 0,50pp contra o preço confirmado em 17/Set, para 0,35%.",
+      "t": "cai 0,50pp no contrato de 3º lugar e está em 0,15% no de vencedor",
+      "s": "Nenhuma das duas nacionais de 17/Set o testa em par de 2º turno, então nesta rodada ele só tem o número do 1º turno.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "📈 O VÃO DO CONTRATO DE VENCEDOR ABRIU DE 9,25pp PARA 10,20pp COM UM LADO SÓ: Flávio Bolsonaro subiu de 53,75% para 54,70% (vol USD 10,88M), 0,40pp abaixo do topo da série dele, e Lula ficou em 44,50% (vol USD 11,19M), leitura de 17/Set, 13:21 BRT, contra o preço confirmado em 16/Set. 🗳️ TRÊS NACIONAIS FORAM DIVULGADAS EM 17/Set, AtlasIntel, PoderData e Gerp, e no 2º turno entre Flávio Bolsonaro e Lula cada casa repete a distância da própria rodada anterior: 2 pontos na PoderData, 46% a 44%, como em 10/Set; 7 pontos na Gerp, 50% a 43%, como em 09/Set; e 0,4 ponto na AtlasIntel, 47,2% a 46,8%, contra 0,2 em 10/Set. As três põem Flávio Bolsonaro numericamente à frente. ⚠️ A diferença ENTRE as casas, de 0,4 a 7 pontos, é maior que o movimento de qualquer uma delas contra si mesma: na PoderData e na AtlasIntel o par cabe nas margens e é empate técnico, e na Gerp fica fora de duas margens. No 1º turno quem se move é a AtlasIntel, onde a distância de Lula para Flávio Bolsonaro encurtou de 5,6 para 2,4 pontos. 🥉 NO CONTRATO DE 3º LUGAR DO 1º TURNO RENAN SANTOS PASSOU AUGUSTO CURY, 44,00% a 42,90%, depois de subir 7,50pp, e as pesquisas de hoje não concordam nessa ordem: a AtlasIntel põe Renan Santos à frente e a PoderData e a Gerp põem Cury. 🏛️ NO SUPREMO, EDSON FACHIN RETIROU EM 17/Set DA PAUTA DE 23/Set O JULGAMENTO DO PEDIDO DE INVESTIGAÇÃO SOBRE ANDRÉ MENDONÇA, sem nova data, e a análise sobre Alexandre de Moraes segue no pedido de vista de Flávio Dino. O contrato que paga pela saída de um ministro do Supremo por impeachment antes de 2027 está em 5,05%, 0,20pp acima da véspera, quase sem dinheiro novo no livro. O painel não afirma que o mercado reagiu a nenhuma pesquisa nem ao rito."
+  "cruzamento": "📈 O VÃO DO CONTRATO DE VENCEDOR ABRIU DE 10,20pp PARA 14,00pp COM OS DOIS LADOS ANDANDO: Flávio Bolsonaro subiu de 54,70% para 56,50% (vol USD 11,02M), acima do maior valor das leituras gravadas da série dele, e Lula caiu de 44,50% para 42,50% (vol USD 11,36M), leitura confirmada de 18/Set, 18:59 BRT, contra o preço confirmado em 17/Set. ⚖️ O MESMO MOVIMENTO APARECE MAIOR E INVERTIDO NO CONTRATO DE 2º LUGAR DO 1º TURNO, onde Flávio Bolsonaro cai 7,00pp, para 69,50%, e Lula sobe 6,70pp, para 29,35%: os dois livros medem a mesma coisa por lados opostos, e o de 2º lugar se moveu quase quatro vezes mais. 🔴 AS DUAS NACIONAIS DE 17/Set QUE ENTRAM NESTA RODADA DISCORDAM NO SINAL DO 2º TURNO. A Datafolha, presencial, campo de 15 a 16/Set, margem de 2,0pp, dá Lula 46% a 44% e repete o par pela terceira rodada seguida. A Futura/100% Cidades, por telefone, campo de 11 a 15/Set, margem de 2,2pp, dá Flávio Bolsonaro 48,1% a 43,7%. São 6,4 pontos de distância no mesmo par, com o sinal trocado, e as duas saíram no mesmo dia. No 1º turno elas concordam: Lula à frente por 3 pontos e por 0,6 ponto, as duas distâncias dentro de duas margens. 🥉 NA TERCEIRA VIA O LIVRO E A URNA SE INVERTEM: no contrato de 3º lugar do 1º turno Renan Santos sobe 5,00pp, para 49,00%, e Augusto Cury cai 1,90pp, para 41,00%, enquanto as duas pesquisas põem Cury à frente de Renan, 6% a 3% e 6,5% a 3,4%. 🏛️ O contrato de saída de ministro do Supremo por impeachment antes de 2027 cai 0,45pp, para 4,60%, num dia em que o Supremo não decidiu nada sobre os dois pedidos de investigação e em que a defesa de Daniel Vorcaro pediu a revogação da prisão preventiva dele. O painel mede os dois universos e não diz qual deles vai se provar certo."
 }

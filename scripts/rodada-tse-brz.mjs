@@ -68,9 +68,9 @@ const resultados = []
 console.log('')
 console.log(`🇧🇷 RODADA DE PESQUISAS DO TSE · ${new Date().toISOString()}`)
 console.log('   orquestração apenas: nenhuma conta é feita aqui')
-if (!aplicar) console.log('   🔵 ENSAIO: nada será gravado, e os passos 2 e 3 não rodam')
+if (!aplicar) console.log('   🔵 ENSAIO: nada será gravado, e os passos 2 a 5 não rodam')
 
-// 0/4 · A SONDA, e ela é PORTÃO no --apply, não aviso.
+// 0/5 · A SONDA, e ela é PORTÃO no --apply, não aviso.
 //
 // ⛔ Discordância aqui NÃO é "a rede está ruim", é a fonte servindo dois
 //    arquivos na mesma URL. Gravar em cima disso produz uma linha no
@@ -80,7 +80,7 @@ if (!aplicar) console.log('   🔵 ENSAIO: nada será gravado, e os passos 2 e 3
 if (!semSonda) {
   const sonda = rodar(
     'sonda',
-    `0/4 · SONDA do arquivo do TSE — ${leituras} leituras antes de baixar`,
+    `0/5 · SONDA do arquivo do TSE — ${leituras} leituras antes de baixar`,
     'scripts/sondar-arquivo-tse.ts',
     [`--leituras=${leituras}`]
   )
@@ -107,7 +107,7 @@ if (!semSonda) {
 
 rodar(
   'ingestao',
-  `1/4 · INGESTÃO do registro do TSE${aplicar ? ' (GRAVA no Neon)' : ' (ensaio)'}`,
+  `1/5 · INGESTÃO do registro do TSE${aplicar ? ' (GRAVA no Neon)' : ' (ensaio)'}`,
   'scripts/ingest-tse-local.ts',
   ['--rede', ...(aplicar ? ['--apply'] : [])]
 )
@@ -115,7 +115,7 @@ rodar(
 if (!aplicar) {
   console.log('')
   console.log(regua)
-  console.log('⏭️  2/4, 3/4 e 4/4 · RELATÓRIO, CONFERIDOR DE ESCOPO e SONDA DE FECHAMENTO')
+  console.log('⏭️  2/5 a 5/5 · RELATÓRIO, ESCOPO, COBERTURA DE IMPRENSA e SONDA DE FECHAMENTO')
   console.log('   NÃO RODAM no ensaio, de propósito.')
   console.log('')
   console.log('   O relatório lê a API e o Neon. Rodá-lo agora mostraria o banco SEM')
@@ -123,12 +123,13 @@ if (!aplicar) {
   console.log('   é o de antes nem o de depois. Ler a lista acima e repetir com --apply.')
   resultados.push({ id: 'relatorio', codigo: null, estado: 'PULADO (ensaio)' })
   resultados.push({ id: 'escopo', codigo: null, estado: 'PULADO (ensaio)' })
+  resultados.push({ id: 'cobertura', codigo: null, estado: 'PULADO (ensaio)' })
   resultados.push({ id: 'fechamento', codigo: null, estado: 'PULADO (ensaio)' })
   imprimirResumo()
   process.exit(0)
 }
 
-const relatorio = rodar('relatorio', '2/4 · RELATÓRIO, calendário e mercado do Brasil', 'scripts/relatorio-pesquisas-brz.ts', [])
+const relatorio = rodar('relatorio', '2/5 · RELATÓRIO, calendário e mercado do Brasil', 'scripts/relatorio-pesquisas-brz.ts', [])
 // 17/Set/2026: o relatório caiu no fetch e o resumo só dizia "saiu != 0". Quem
 // lê o resumo sem rolar a tela conclui que não há nacional divulgando hoje.
 if (relatorio !== 0) {
@@ -140,7 +141,7 @@ if (relatorio !== 0) {
 
 const escopo = rodar(
   'escopo',
-  '3/4 · CONFERIDOR DE ESCOPO — o portão de RÓTULO',
+  '3/5 · CONFERIDOR DE ESCOPO — o portão de RÓTULO',
   'scripts/conferir-escopo-derivado.mjs',
   [`--dias=${dias}`]
 )
@@ -182,7 +183,52 @@ if (escopo === 4) {
   console.log('   o escopo na divulgação. Rótulo frágil já vencido é dívida de dataset.')
 }
 
-// 4/4 · A SONDA DE FECHAMENTO, e ela AVISA, não desfaz.
+// 4/5 · A COBERTURA DE IMPRENSA, criada em 18/Set/2026.
+//
+// 🔑 POR QUE ELA RODA AQUI, e não é zelo: os passos 2 e 3 dizem QUEM divulga
+//    hoje e se o RÓTULO se sustenta. Nenhum dos dois responde a pergunta que
+//    vem logo depois, que é "e essa pesquisa saiu?". Quem responde isso é o
+//    `news-cache`, e naquele dia o cache tinha ZERO item sobre a Veritá, que
+//    era a única nacional divulgando. Não porque a casa estivesse calada: a
+//    consulta `pesquisas` do coletor fazia AND de três nomes e nenhuma das 23
+//    consultas alcançava a casa. "Não achei matéria" saía igual a "não saiu".
+//
+// ⛔ Ela NÃO diz que a pesquisa saiu nem que deixou de sair. Diz se a nossa
+//    resposta a essa pergunta vale alguma coisa para cada casa.
+const cobertura = rodar(
+  'cobertura',
+  '4/5 · COBERTURA DE IMPRENSA — a nossa coleta enxerga as casas do índice?',
+  'scripts/conferir-cobertura-imprensa-brz.mjs',
+  [`--dias=${dias}`]
+)
+
+if (cobertura === 4) {
+  resultados.at(-1).estado = 'NAO LEU, sem veredito'
+  console.log('')
+  console.log(regua)
+  console.log('⚠️  A COBERTURA não foi medida (rede, base ou cache ausente).')
+  console.log('   Não é aprovação: ninguém conferiu se as casas do índice aparecem na coleta.')
+} else if (cobertura === 2) {
+  resultados.at(-1).estado = 'CASA NACIONAL fora da tabela'
+  console.log('')
+  console.log(regua)
+  console.log('🔴 Há casa NACIONAL no índice que a tabela de cobertura não conhece.')
+  console.log('')
+  console.log('   Enquanto ela não entrar em scripts/lib/cobertura-imprensa-brz.mjs, ninguém')
+  console.log('   está medindo se a imprensa dela chega até nós, e "não achei matéria dessa')
+  console.log('   casa" não é resposta que se possa usar.')
+} else if (cobertura !== 0) {
+  resultados.at(-1).estado = 'BURACO de cobertura'
+  console.log('')
+  console.log(regua)
+  console.log('🔴 BURACO DE COBERTURA: casa com divulgações vencidas e ZERO item em todo o cache.')
+  console.log('')
+  console.log('   Isto não desfaz nada e não é defeito de valor. O que ele proíbe é uma frase:')
+  console.log('   sobre essas casas, "não saiu pesquisa" não se pode dizer, porque o silêncio')
+  console.log('   é do nosso instrumento e não da casa.')
+}
+
+// 5/5 · A SONDA DE FECHAMENTO, e ela AVISA, não desfaz.
 //
 // 🔑 Ela responde a pergunta que o passo 0 não pode responder: a fonte trocou
 //    de retrato DEPOIS que eu sondei e enquanto a ingestão baixava? Se trocou,
@@ -194,7 +240,7 @@ let fechamento = 0
 if (!semSonda) {
   fechamento = rodar(
     'fechamento',
-    '4/4 · SONDA DE FECHAMENTO — a fonte trocou durante a rodada?',
+    '5/5 · SONDA DE FECHAMENTO — a fonte trocou durante a rodada?',
     'scripts/sondar-arquivo-tse.ts',
     ['--leituras=3', '--intervalo=800', '--comparar-com-ultima']
   )

@@ -66,7 +66,17 @@ const NAO_TRADUZ = [
   /(^|\.)fieldDates$/,
   /(^|\.)register$/,
   /(^|\.)institute$/,
-  /(^|\.)name$/,
+  // 🔴 `name` NÃO SE EXCLUI EM BLOCO, corrigido em 18/Set/2026. A regra antiga
+  //    era `/(^|\.)name$/` e existia para proteger NOME PRÓPRIO: instituto e
+  //    candidato não se traduzem. Só que `polls[].scenarios[].name` também
+  //    termina em `name` e NÃO é nome próprio, é rótulo descritivo: "Cenário
+  //    Principal (1º turno, estimulado)". Resultado medido naquele dia: os 7
+  //    rótulos de cenário estavam em PORTUGUÊS no `.en.json` publicado, em 30
+  //    de 30 pesquisas, e nada os acusava, porque campo excluído nunca vira
+  //    pendência. Uma regra escrita para um caso e aplicada pelo SUFIXO pega
+  //    todos os outros calada.
+  /(^|\.)institutes\[\d+\]\.name$/,
+  /(^|\.)candidates\[\d+\]\.name$/,
   /(^|\.)party$/,
   /(^|\.)color$/,
   /(^|\.)pc$/,
@@ -159,12 +169,25 @@ for (const base of ARQUIVOS) {
       const herdada = ambiguos.has(texto) ? undefined : porTexto.get(texto)
       const doMapa = mapa[base]?.[caminho]?.[idioma]
 
-      if (herdada !== undefined) {
-        porCaminho(saida, caminho, herdada)
-        herdados++
-      } else if (doMapa !== undefined) {
+      // 🔴 O MAPA VENCE A HERANÇA, invertido em 18/Set/2026, e a ordem antiga
+      //    tinha um efeito que ninguém tinha medido: **tradução errada, uma vez
+      //    publicada, era herdada para sempre e o mapa não conseguia
+      //    corrigi-la**. A herança casa por TEXTO, então um campo que não muda
+      //    de um dia para o outro, como o nome de um cenário, era copiado
+      //    intacto em toda rodada. Medido naquele dia: os 7 nomes de cenário do
+      //    `polls-data.en.json` estavam em PORTUGUÊS ("Cenário Principal (1º
+      //    turno, estimulado)") desde sempre, em 30 de 30 pesquisas, e o
+      //    `--mapa` não tinha como alcançá-los.
+      //
+      // 🔑 A herança existe para poupar trabalho, não para congelar erro. Uma
+      //    entrada de mapa é uma afirmação deliberada de quem está na sessão;
+      //    a herança é uma cópia. Quando as duas existem, a afirmação ganha.
+      if (doMapa !== undefined) {
         porCaminho(saida, caminho, doMapa)
         novos++
+      } else if (herdada !== undefined) {
+        porCaminho(saida, caminho, herdada)
+        herdados++
       } else {
         pendentes.push(caminho)
       }

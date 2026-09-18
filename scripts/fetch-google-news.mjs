@@ -20,12 +20,21 @@
 
 import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'fs'
 import { join } from 'path'
+import { consultasDeCasas } from './lib/cobertura-imprensa-brz.mjs'
 
 const QUERIES = [
   { id: 'eleicoes-2026', q: 'eleições 2026 presidente Brasil when:1d' },
   { id: 'flavio-lula', q: 'Flávio Bolsonaro Lula 2026 when:1d' },
   { id: 'master-vorcaro', q: 'Banco Master Vorcaro STF INSS CPI when:1d' },
-  { id: 'pesquisas', q: 'pesquisa eleitoral Datafolha AtlasIntel Quaest 2026 when:2d' },
+  // 🔴 CONSERTADA em 18/Set/2026. Era `pesquisa eleitoral Datafolha AtlasIntel
+  // Quaest 2026 when:2d`, e o Google News faz AND de todos os termos: ela pedia
+  // as TRÊS casas na mesma matéria. Devolveu 12 itens no dia em que as demais
+  // devolveram 100, e a Veritá, que tinha divulgação nacional marcada para
+  // aquele dia, não aparecia em NENHUMA das 23 consultas do cache.
+  // É o mesmo defeito que a `aprovacao` teve e que foi consertado em 12/Jul,
+  // três linhas abaixo. Ele sobreviveu aqui porque a consulta devolvia ALGUMA
+  // coisa, e consulta que devolve pouco não parece quebrada.
+  { id: 'pesquisas', q: 'pesquisa eleitoral (Datafolha OR AtlasIntel OR Quaest) 2026 when:2d' },
   // A query antiga ('Lula aprovação rejeição governo redes sociais when:1d') devolvia
   // ZERO itens: o Google News faz AND de todos os termos, e exigir "redes sociais"
   // junto de aprovação E rejeição, numa janela de 1 dia, nao casava com nada.
@@ -33,6 +42,11 @@ const QUERIES = [
   // porque pauta de aprovação é esparsa e não sai todo dia): 51 itens.
   { id: 'aprovacao', q: 'Lula (aprovação OR rejeição) governo when:2d' },
   { id: 'estaduais', q: 'governador senado eleição 2026 when:1d' },
+  // ⭐ As casas do ÍNDICE, derivadas da tabela que o conferidor de cobertura usa.
+  // Acrescentar casa ao índice passa a acrescentar casa à coleta sozinho, que é
+  // o oposto de coletar só quem alguém lembrou de escrever aqui.
+  // → scripts/conferir-cobertura-imprensa-brz.mjs
+  ...consultasDeCasas(),
 ]
 
 // Feeds RSS dos veículos de prestígio brasileiros (Folha, O Globo, Estadão, G1, Valor).

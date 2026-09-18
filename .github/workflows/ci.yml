@@ -95,6 +95,33 @@ jobs:
           node scripts/testar-tse-api-polls.mjs
           node scripts/testar-data-civil-brz.mjs
 
+      # 18/Set/2026: a Veritá era a UNICA nacional divulgando no dia e o
+      # news-cache tinha ZERO item sobre ela, em 12.680 titulos. Duas causas
+      # empilhadas: a consulta `pesquisas` do coletor fazia AND de tres nomes
+      # (12 itens contra 100 das outras), e o `\b` do JS nao ve fronteira
+      # depois de "a" acentuado, entao /\bverit[aa]\b/ dava false em "Verita:".
+      # O teste cobre o acento, o nome de registro que nao e o nome da imprensa
+      # (TSE diz "100 Cidades", a imprensa diz "Futura/100% Cidades"), a sigla
+      # curta e o portao que NAO pode disparar: divulgacao de hoje calada.
+      # O de resolucao do Google News entra junto porque era orfao: nada no
+      # repositorio o chamava, e o cabecalho dele mandava rodar com `node`,
+      # que falha.
+      - name: Cobertura de imprensa x indice nacional
+        run: |
+          node scripts/testar-cobertura-imprensa-brz.mjs
+          npx --no-install tsx scripts/testar-resolver-google-news.mjs
+
+      # 18/Set/2026: as duas regras que decidem se um campo e traduzido tinham
+      # o mesmo efeito escondido, que e nunca virar PENDENCIA. A heranca vencia
+      # o mapa, entao traducao errada uma vez publicada era herdada para sempre
+      # e o --mapa nao a alcancava. E `name` era excluido por SUFIXO, regra
+      # escrita para nome proprio de instituto, que pegava junto o rotulo
+      # descritivo `scenarios[].name`: os 7 rotulos de cenario estavam em
+      # PORTUGUES no polls-data.en.json publicado, em 30 de 30 pesquisas.
+      # O teste trava as duas, e a mutacao que devolve a ordem antiga reprova 3.
+      - name: Regras de traducao do painel BR
+        run: node scripts/testar-traduzir-dashboard-brz.mjs
+
       # A regua por contrato do check:frescor, que em 13/Set ganhou o DONO
       # ESTRUTURAL: o preco citado dentro do cartao do candidato, onde o nome
       # nao se repete. O teste cobre os dois lados, o defeito real de 12/Set que

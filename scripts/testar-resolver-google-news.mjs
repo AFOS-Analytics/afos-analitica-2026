@@ -7,7 +7,13 @@
  * que o arquivador passou meses preservando casca em vez de matéria, só que
  * pelo caminho antigo. O extrator tem que DESCARTAR o Google.
  *
- * Uso: node scripts/testar-resolver-google-news.mjs
+ * Uso: npx tsx scripts/testar-resolver-google-news.mjs
+ *
+ * ⚠️ Com `tsx`, NÃO com `node`. Este cabeçalho dizia `node` e o comando falhava
+ * com `ERR_MODULE_NOT_FOUND` em `./lib/daily-files`, porque o import vem de
+ * `wayback-archive.ts`. Medido em 18/Set/2026, junto com o achado de que nada
+ * no repositório chamava este teste: nem o `package.json`, nem o CI, nem
+ * comando nenhum. Teste órfão com instrução quebrada é teste que não existe.
  */
 
 import { extrairAtributos, extrairUrlDoVeiculo, montarPayload } from './wayback-archive.ts'

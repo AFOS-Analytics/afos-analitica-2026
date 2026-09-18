@@ -43,7 +43,10 @@
     "espelho:brz": "node scripts/espelho-brz.mjs",
     "paridade:readme": "node scripts/conferir-paridade-readme.mjs",
     "calendario:brz": "node scripts/calendario-pesquisas-brz.mjs",
-    "rede:afos": "node scripts/rede-afos.mjs"
+    "rede:afos": "node scripts/rede-afos.mjs",
+    "cobertura:brz": "node scripts/conferir-cobertura-imprensa-brz.mjs",
+    "materia": "tsx scripts/ler-materia.mjs",
+    "check:traducao-brz": "node scripts/conferir-traducao-brz.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
