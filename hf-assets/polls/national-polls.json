@@ -1,7 +1,7 @@
 {
   "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number. — Each poll is enriched with its full public TSE registration (methodology, sampling/weighting design, responsible statistician, CONRE, CNPJ, internal control system) via field `tse_registration`, matched by TSE protocol or institute+date.",
   "generated_from": "public/polls-data.json git history",
-  "count": 89,
+  "count": 91,
   "polls": [
     {
       "institute": "Real Time Big Data/Record",
@@ -303,15 +303,15 @@
         }
       ],
       "tse_registration": {
-        "register_tse": "BR037152026",
+        "register_tse": "BR067982026",
         "cnpj": "07630546000175",
         "institute_full": "DATAFOLHA INSTITUTO DE PESQUISAS LTDA.",
         "statistician": "Renata Nunes Cesar",
         "conre": "7249",
-        "cost_brl": 307641.6,
+        "cost_brl": 185706.64,
         "own_poll": false,
-        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O conjunto da população brasileira, com 16 anos ou mais, foi tomado como universo da pesquisa.",
-        "sampling_plan": "Universo: População brasileira, com 16 anos ou mais Tamanho da amostra: A amostra prevista é de 2004 entrevistas. Técnica de amostragem: A amostra é estratificada por região geográfica (Sudeste, Sul, Nordeste, Norte e Centro-oeste) e natureza dos municípios (capital, região metropolitana ou interior). Em cada estrato, num primeiro estágio, são sorteados com probabilidade proporcional ao tamanho (PPT) os municípios que farão parte do levantamento. Num segundo estágio, são sorteados os bairros e pontos de abordagem onde serão aplicadas as entrevistas. Por fim, os entrevistados são selecionados aleatoriamente para responder ao questionário, de acordo com cotas de gênero e faixa etária. Os dados utilizados para definição e seleção da amostra são baseados nos dados fornecidos pelo IBGE (Censo 2022, PNADC 2024 e Estimativa populacional 2025), além de dados primários de outros levantamentos do instituto. Os dados relativos a gênero e faixa etária são: Homens: 48%, mulheres: 52%, 16 a 24 anos: 17%, 25 a 34 anos: 19%, 35 a 44 anos: 20%, 45 a 59 anos: 24% e 60 anos ou mais: 20%. Para a variável grau de instrução os dados utilizados como referência são: até nível médio completo ou incompleto (inclui os sem escolaridade e analfabetos) =76% e nível superior (inclui superior incompleto) = 24%. Ponderação dos resultados: Está prevista ponderação considerando os estratos (região geográfica, natureza do município), gênero e faixa etária. A variável escolaridade poderá ser ajustada de acordo com os percentuais detalhados anteriormente caso a diferença entre os valores descritos e observados seja maior que a margem de erro definida. Para o nível econômico do entrevistado (renda familiar mensal declarada pelo respondente), a distribuição utilizada como referência foi: Até 2 S.M. (salários mínimos)=48%, mais de 2 S.M.=48%, não souberam ou recusaram a resposta=4%. O fator previsto para ponderação é 1 (resultados obtidos em campo). Margem de Erro: A margem de erro máxima prevista é de 2 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95% e baseada em uma amostra aleatória simples (AAS). Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%.",
+        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. A população do estado de São Paulo, com 16 anos ou mais, foi tomada como universo da pesquisa.",
+        "sampling_plan": "Universo: População com 16 anos ou mais, do estado de São Paulo Tamanho da amostra: A amostra prevista é de 1608 entrevistas. Técnica de amostragem: A amostra é estratificada por natureza dos municípios (capital, região metropolitana ou interior), os municípios com população acima de 500 mil habitantes constituem estratos. Em cada estrato, num primeiro estágio, são sorteados com probabilidade proporcional ao tamanho (PPT) os municípios que farão parte do levantamento. Num segundo estágio, são sorteados os bairros e pontos de abordagem onde serão aplicadas as entrevistas. Por fim, os entrevistados são selecionados aleatoriamente para responder ao questionário, de acordo com cotas de gênero e faixa etária. Os dados utilizados para definição e seleção da amostra são baseados nos dados fornecidos pelo IBGE (Censo 2022, PNADC 2024 e Estimativa populacional 2025), além de dados primários de outros levantamentos do instituto. Os dados relativos a gênero e faixa etária são: Homens: 48%, mulheres: 52%, 16 a 24 anos: 14%, 25 a 34 anos: 19%, 35 a 44 anos: 20%, 45 a 59 anos: 25% e 60 anos ou mais: 22%. Para a variável grau de instrução os dados utilizados como referência são: até nível médio completo ou incompleto (inclui os sem escolaridade e analfabetos) =70% e nível superior (inclui superior incompleto) = 30%. Ponderação dos resultados: Está prevista ponderação considerando as variáveis natureza do município, gênero e faixa etária. A variável escolaridade poderá ser ajustada de acordo com os percentuais detalhados anteriormente caso a diferença entre os valores descritos e observados seja maior que a margem de erro definida. Para o nível econômico do entrevistado (renda familiar mensal declarada pelo respondente), a distribuição utilizada como referência foi: Até 2 S.M. (salários mínimos)=38%, mais de 2 S.M.=58%, não souberam ou recusaram a resposta=4%. O fator previsto para ponderação é 1 (resultados obtidos em campo). Margem de Erro: A margem de erro máxima prevista é de 2 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95% e baseada em uma amostra aleatória simples (AAS). Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%.",
         "control_system": "Os entrevistadores envolvidos na realização desta pesquisa são treinados pelo Instituto e recebem instruções específicas para cada projeto realizado. A coleta será feita com a utilização de tablet e questionário eletrônico. São checados, no mínimo, 20% dos questionários de cada pesquisador, seja in loco por supervisores de campo ou, posteriormente, por telefone. Internamente, todo o material é verificado e codificado. Antes do processamento final e emissão dos resultados, realiza-se processo de consistência dos dados. Os dados coletados e tratados nesta pesquisa atendem às exigências da LGPD, Lei Geral de Proteção de Dados, garantindo ao respondente o sigilo de sua identidade e o correto tratamento de suas respostas.",
         "matched_by": "institute+date(±2d)",
         "sample_design": {
@@ -9936,6 +9936,195 @@
       "dating_source": "field_midpoint",
       "days_to_first_round": 19,
       "days_to_runoff": 40
+    },
+    {
+      "institute": "Datafolha",
+      "date": "2026-09-17",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-04029/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-09-15 a 2026-09-16",
+      "note": "Datafolha nacional divulgada em 17/Set às 19h04 de Brasília, campo de 15 a 16/Set declarado pela casa, registro BR-04029/2026 no TSE, 2.002 pessoas de 16 anos ou mais, margem de 2,0pp e 95% de confiança (G1, Folha de S.Paulo, Valor Econômico e Brasil de Fato). ⭐ NO 1º TURNO A CASA REPETE LULA EM 39% E FLÁVIO BOLSONARO SOBE DE 35% PARA 36%, uma distância de 3 pontos que cabe em duas margens de 2,0 e por isso é empate técnico. Augusto Cury tem 6%, Ronaldo Caiado 4%, Renan Santos 3%, Romeu Zema 2%, Samara Martins 1% e Rui Costa Pimenta 1%, com 6% de brancos, nulos e nenhum e 3% de indecisos. Nos votos válidos Lula tem 43% e Flávio Bolsonaro 39%. ⚖️ NO 2º TURNO LULA TEM 46% E FLÁVIO BOLSONARO 44%, os mesmos números das duas rodadas anteriores da casa, ou seja três medições seguidas sem movimento nesse par. 🚫 NA REJEIÇÃO OS DOIS EMPATAM EM 47%, contra 46% cada em 11/Set; Renan Santos tem 15%, Romeu Zema 14%, Ronaldo Caiado 13% e Augusto Cury 9%. 🏛️ A avaliação do governo é de 48% de aprovação contra 50% de desaprovação. 📌 NA ESPONTÂNEA, em que a casa não mostra os nomes, Lula tem 35% e Flávio Bolsonaro 26%, e os indecisos caem de 23% para 21%.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 39
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 36
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 2
+            },
+            {
+              "candidate": "Samara (UP)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 44
+        }
+      ],
+      "tse_registration": {
+        "register_tse": "BR040292026",
+        "cnpj": "07630546000175",
+        "institute_full": "DATAFOLHA INSTITUTO DE PESQUISAS LTDA.",
+        "statistician": "Renata Nunes Cesar",
+        "conre": "7249A",
+        "cost_brl": 307641.6,
+        "own_poll": false,
+        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O conjunto do eleitorado brasileiro foi tomado como universo da pesquisa.",
+        "sampling_plan": "Universo: Eleitorado brasileiro Tamanho da amostra: A amostra prevista é de 2002 entrevistas. Técnica de amostragem: A amostra é estratificada por região geográfica (Sudeste, Sul, Nordeste, Norte e Centro-oeste) e natureza dos municípios (capital, região metropolitana ou interior). Em cada estrato, num primeiro estágio, são sorteados com probabilidade proporcional ao tamanho (PPT) os municípios que farão parte do levantamento. Num segundo estágio, são sorteados os bairros e pontos de abordagem onde serão aplicadas as entrevistas. Por fim, os entrevistados são selecionados aleatoriamente para responder ao questionário, de acordo com cotas de gênero e faixa etária. Os dados utilizados para definição e seleção da amostra são baseados nos dados fornecidos pelo TSE, IBGE (Censo 2022, PNADC-A 2024 e Estimativa populacional 2025), além de dados primários de outros levantamentos do instituto. Os dados relativos a gênero e faixa etária são: Homens: 47%, mulheres: 53%, 16 a 24 anos: 12%, 25 a 34 anos: 19%, 35 a 44 anos: 20%, 45 a 59 anos: 25% e 60 anos ou mais: 24%. Para a variável grau de instrução os dados utilizados como referência são: até nível médio completo ou incompleto (inclui os sem escolaridade e analfabetos) =76% e nível superior (inclui superior incompleto) = 24%. Ponderação dos resultados: Está prevista ponderação considerando os estratos (região geográfica, natureza do município), gênero e faixa etária. A variável escolaridade poderá ser ajustada de acordo com os percentuais detalhados anteriormente caso a diferença entre os valores descritos e observados seja maior que a margem de erro definida. Para o nível econômico do entrevistado (renda familiar mensal declarada pelo respondente), a distribuição utilizada como referência foi: Até 2 S.M. (salários mínimos)=49%, mais de 2 S.M.=47%, não souberam ou recusaram a resposta=4%. O fator previsto para ponderação é 1 (resultados obtidos em campo). Margem de Erro: A margem de erro máxima prevista é de 2 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95% e baseada em uma amostra aleatória simples (AAS). Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%.",
+        "control_system": "Os entrevistadores envolvidos na realização desta pesquisa são treinados pelo Instituto e recebem instruções específicas para cada projeto realizado. A coleta será feita com a utilização de equipamento e questionário eletrônico. São checados, no mínimo, 20% dos questionários de cada pesquisador, seja in loco por supervisores de campo ou, posteriormente, por telefone. Internamente, todo o material é verificado e codificado. Antes do processamento final e emissão dos resultados, realiza-se processo de consistência dos dados. Os dados coletados e tratados nesta pesquisa atendem às exigências da LGPD, Lei Geral de Proteção de Dados, garantindo ao respondente o sigilo de sua identidade e o correto tratamento de suas respostas.",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "mentioned_no_pct",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": true
+          },
+          "sex_quota": null,
+          "age_quota": null,
+          "education_quota": null,
+          "income_quota": null
+        }
+      },
+      "field_window": {
+        "start": "2026-09-15",
+        "end": "2026-09-17"
+      },
+      "field_midpoint": "2026-09-16",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 18,
+      "days_to_runoff": 39
+    },
+    {
+      "institute": "Futura/100% Cidades",
+      "date": "2026-09-17",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-00749/2026",
+      "reliability": 3,
+      "method": "Telefone (CATI)",
+      "fieldDates": "2026-09-11 a 2026-09-15",
+      "note": "Futura Inteligência contratada por 100% Cidades, nacional divulgada em 17/Set, campo de 11 a 15/Set declarado pela casa, registro BR-00749/2026 no TSE, 2.000 eleitores por entrevista telefônica assistida por computador, margem de 2,2pp e 95% de confiança (Exame, CNN Brasil, UOL e Itatiaia). 🏷️ O TSE REGISTRA ESTA CASA COMO \"100 CIDADES\" E A IMPRENSA A CHAMA DE \"FUTURA\" OU \"FUTURA/100% CIDADES\", e a ficha guarda os dois nomes de propósito, porque o nome do registro sozinho não encontra a divulgação. ⭐ NO 1º TURNO LULA TEM 38,3% E FLÁVIO BOLSONARO 37,7%, uma distância de 0,6 ponto dentro de uma margem de 2,2. Augusto Cury tem 6,5%, Ronaldo Caiado 4,5%, Renan Santos 3,4%, Pablo Marçal 1,9% e Romeu Zema 1,0%, com 2,7% de brancos e nulos e 3,4% de indecisos. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 48,1% E LULA 43,7%, uma distância de 4,4 pontos que fica fora de duas margens. 🔴 ESTA É A LEITURA QUE INVERTE A DATAFOLHA DO MESMO DIA, que dá Lula 46% a 44%. 🚫 NA REJEIÇÃO LULA TEM 49,7% E FLÁVIO BOLSONARO 45,3%, com Pablo Marçal em 16,9%, Renan Santos em 16,6% e Romeu Zema em 15,9%. 🏛️ A avaliação do governo é de 44,1% de aprovação contra 53,1% de desaprovação, e na régua da gestão 36,5% de ótimo ou bom, 15,8% de regular e 47,2% de ruim ou péssimo.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.3
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37.7
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6.5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4.5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3.4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 1.9
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 48.1,
+          "candidate2": "Lula",
+          "percent2": 43.7
+        }
+      ],
+      "tse_registration": {
+        "register_tse": "BR007492026",
+        "cnpj": "52908063000144",
+        "institute_full": "100% CIDADES PARTICIPACOES LTDA",
+        "statistician": "FABIOLA MIRANDA VON RONDOW",
+        "conre": "8140",
+        "cost_brl": 160000,
+        "own_poll": false,
+        "methodology": "Pesquisa do tipo quantitativa, por amostragem, com aplicação de questionário estruturado realizado por meio telefônico. O universo da pesquisa é o eleitorado brasileiro com 16 anos ou mais. Dentro das localidades indicadas, os respondentes são selecionados aleatoriamente, considerando todo o território e a totalidade dos respectivos bairros dos Municípios abrangidos pela pesquisa, pelo sistema de cotas amostrais em função de variáveis significativas.",
+        "sampling_plan": "Representativo do eleitorado da área em estudo. A amostra é estratificada por região geográfica e unidade da federação, com base na estimativa de eleitores, em quaisquer dos bairros ou áreas dos Municípios abrangidos pela pesquisa. (Fonte dos Dados: TSE-agosto/2026 - https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitor-eleitorado-mensal/cruzamento-eleitorado-mensal?p24_metricas=E&p24_back=1&clear=24&session=9025754493017 - cruzamento 1: UF). Dentro da área de abrangência da pesquisa, os respondentes são selecionados aleatoriamente com o auxílio de computador, considerando todo o território dos municípios abrangidos pela pesquisa, pelo sistema de cotas amostrais em função de variáveis significativas, a saber: Gênero: masculino 47,2%; feminino 52,8% (Fonte dos Dados: TSE- agosto/2026 - https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitor-eleitorado-mensal/cruzamento-eleitorado-mensal?p24_metricas=E&p24_back=1&clear=24&session=9025754493017- cruzamento 1: Gênero); Faixa etária: 16 a 24 anos, 12,1%; 25 a 34 anos, 19,0%; 35 a 44 anos, 19,7%; 45 a 59 anos, 25,6%; 60 anos ou mais, 23,6% (Fonte dos Dados: TSE- agosto/2026 - https://sig.tse.jus.br/ords/dwapr/r/seai/sig-eleitor-eleitorado-mensal/cruzamento-eleitorado-mensal?p24_metricas=E&p24_back=1&clear=24&session=9025754493017- cruzamento 1: Faixa etária); Para a variável grau de instrução, os dados são: Até Ensino Fundamental Completo, 33,4%; Ensino Médio incompleto ou completo, 41,5%; Ensino superior incompleto ou mais, 25,1% (Fonte dos dados: PNAD continua 2º trimestre de 2026); Para a variável nível econômico, a renda familiar: Sem rendimento/até 1 salário-mínimo 22,6%; acima de 1 a 2 salários-mínimos 23,2%; acima de 2 a 5 salários-mínimos 32,9%; acima de 5 a 10 salários-mínimos 13,6%; acima de 10 salários-mínimos 7,7% (Fonte dos dados: Censo IBGE/2010 - https://cidades.ibge.gov.br/brasil/pesquisa/23/24304). Observação: De acordo com informações do Instituto Brasileiro de Geografia e Estatística (IBGE), não há previsão de data para a divulgação do perfil econômico da população brasileira do CENSO 2022. Portanto, considerando que os dados sobre o nível econômico obtidos no Censo 2022 ainda não foram publicados, adotou-se para essa variável os dados disponíveis do Censo IBGE/2010. Está prevista eventual ponderação para correção das variáveis gênero, idade e grau de instrução com base nos percentuais anteriormente mencionados, caso ocorram diferenças superiores a 3 pontos percentuais entre o previsto na amostra e a coleta de dados realizada. Para a variável nível econômico do entrevistado, o fator previsto para ponderação é 1 (resultados obtidos em campo). O tamanho da amostra previsto é de 2000 entrevistas. O nível de confiança estimado é de 95% e a margem de erro máxima estimada considerando um modelo de amostragem aleatório simples, é de 2,2 pontos percentuais para mais ou para menos sobre os resultados encontrados no total da amostra. Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%. FONTE DOS DADOS: Censo (2010) | TSE (eleitorado de agosto / 2026) | PNAD continua 2º trimestre de 2026.",
+        "control_system": "As entrevistas serão realizadas por uma equipe de entrevistadores qualificados, que receberão treinamento e orientações especificas sobre o questionário e os objetivos da pesquisa, antes de iniciarem a coleta. Durante todo o período de aplicação das entrevistas, os entrevistadores serão monitorados recebendo apoio ou orientações de uma equipe de supervisores, com experiência e treinamento em pesquisas de opinião pública. Serão checados no mínimo 20% (vinte por cento) dos questionários aplicados por cada entrevistador, para a verificação das respostas e adequação dos entrevistados aos parâmetros amostrais. Os dados coletados e tratados nesta pesquisa atendem às exigências da Lei nº 13.709, de 14 de agosto de 2018, a Lei Geral de Proteção de Dados ¿ LGPD, garantindo ao respondente o sigilo de sua identidade e de seus dados pessoais, bem como o correto tratamento de suas respostas.",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "full_percentages",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": true
+          },
+          "sex_quota": {
+            "male_pct": 47.2,
+            "female_pct": 52.8
+          },
+          "age_quota": null,
+          "education_quota": null,
+          "income_quota": null
+        }
+      },
+      "field_window": {
+        "start": "2026-09-11",
+        "end": "2026-09-17"
+      },
+      "field_midpoint": "2026-09-14",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 20,
+      "days_to_runoff": 41
     }
   ],
   "enriched_at_note": "tse_registration sourced from TSE Open Data (Lei 9.504/97 art. 33). Null where no confident registry match. For institute+date matches the methodology/design is the institute standard (stable across waves), not a claim of identical protocol.",
