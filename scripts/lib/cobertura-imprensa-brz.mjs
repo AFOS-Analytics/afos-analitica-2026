@@ -90,6 +90,34 @@ export const CASAS_BRZ = [
     busca: '"100% Cidades" OR "pesquisa Futura"',
     alvos: [/100\s*%?\s*cidades/iu, /(?<!\p{L})futura\s*[/:]/iu, palavra('pesquisa futura'), palavra('instituto futura')],
   },
+  // 🔴⭐ ENTRADA DE 19/Set/2026, e ela chegou aqui pelo DETECTOR, não por eu ter
+  // notado a casa. O conferidor saiu `CASA_FORA_DA_TABELA` na rodada do dia: a
+  // ALFA tinha registro NACIONAL no índice (BR025122026, n=2.700, div 24/Set) e
+  // ninguém media a cobertura dela. É a primeira vez que o buraco de cobertura
+  // é achado por medição em vez de por acaso, que era o ponto de existir.
+  //
+  // O registro do TSE diz "ALFA INTELIGENCIA E SERVICOS DE SOFTWARE", sem acento.
+  // A imprensa escreve "Alfa Inteligência", COM acento, e em metade dos títulos
+  // escreve o parceiro de mídia junto: "Alfa/TMC", "TMC/Alfa", "Instituto Alfa".
+  // Mesma forma do caso Futura acima, e a casa publica PRESIDENCIAL nacional.
+  //
+  // ⚠️ `alfa` NU está fora de propósito, e isto foi medido antes de escrever a
+  // linha: 14 dias de cache trazem 7 títulos com "alfa" e NENHUM é da casa. São
+  // alfaiataria, analfabeto, analfabetismo, alface e o domínio `jornalfatos`.
+  // A fronteira de `palavra()` derruba os 7, mas "Alfa Romeo" e "Banco Alfa"
+  // passariam por ela, então a forma nua só entra colada a "pesquisa".
+  {
+    registro: /alfa intelig/i,
+    nome: 'Alfa Inteligência (TMC)',
+    busca: '"Alfa Inteligência" OR "Alfa/TMC"',
+    alvos: [
+      palavra('alfa intelig[êe]ncia'),
+      palavra('instituto alfa'),
+      palavra('pesquisa alfa'),
+      /(?<!\p{L})alfa\s*\/\s*tmc(?!\p{L})/iu,
+      /(?<!\p{L})tmc\s*\/\s*alfa(?!\p{L})/iu,
+    ],
+  },
   { registro: /paran[áa] pesquisas/i, nome: 'Paraná Pesquisas', busca: '"Paraná Pesquisas"', alvos: [palavra('paran[áa] pesquisas')] },
   // ⚠️ Sigla de 3 letras, e a ÚNICA entrada sensível a caixa (`'u'`, sem `i`).
   // A fronteira é o que separa o instituto do "MDA" de qualquer outra coisa, e

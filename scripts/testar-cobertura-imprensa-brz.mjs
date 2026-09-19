@@ -155,6 +155,41 @@ console.log('\n10. 🔴 O nome do REGISTRO não é o nome da IMPRENSA (caso 100 
   for (const t of ruido) conferir(`ruído fica de fora: "${t.slice(0, 32)}..."`, !c.alvos.some((a) => a.test(t)))
 }
 
+console.log('\n10b. 🔴 A casa que o DETECTOR trouxe: Alfa Inteligência (19/Set/2026)')
+{
+  const c = casaDoRegistro('ALFA INTELIGENCIA E SERVICOS DE SOFTWARE')
+  conferir('o registro SEM acento cai na entrada', c?.nome === 'Alfa Inteligência (TMC)', c?.nome)
+
+  // ⚠️ O ACENTUADO PRIMEIRO, que é a lição da Veritá: o caso plantado daquela
+  // vez usou a forma sem acento, justamente a que já funcionava, e o teste
+  // passou verde por cima do defeito que existia para pegar.
+  const titulos = [
+    'Alfa Inteligência: veja a pesquisa para governador do Paraná',
+    'Pesquisa Alfa/TMC: Lula tem 43% e Flávio Bolsonaro, 29%, no 1º turno',
+    'Pesquisa TMC/Alfa mostra Lula 14 pontos à frente de Flávio Bolsonaro',
+    'TMC e Instituto Alfa selam parceria para pesquisas próprias nas Eleições 2026',
+    'Pesquisa Alfa aponta empate técnico no segundo turno',
+  ]
+  for (const t of titulos) conferir(`casa: "${t.slice(0, 38)}..."`, c.alvos.some((a) => a.test(t)))
+
+  // ⛔ Os 5 que NÃO podem casar são reais: saíram do news-cache de 14 dias, onde
+  // "alfa" aparece 7 vezes e nenhuma é da casa.
+  const ruido = [
+    'Mendonça apresenta notas fiscais de R$ 26,4 mil em alfaiataria para rebater áudio',
+    'Augusto Cury é analfabeto político, e Flávio errou ao insistir com Vorcaro',
+    'Pessoas com deficiência têm analfabetismo maior, diz IBGE',
+    'Alface lidera em São Paulo, e mandioca, no Rio; veja produção agrícola',
+    'Cinco pesquisas sobre Governo do Paraná poderão ser divulgadas - jornalfatos.com.br',
+  ]
+  for (const t of ruido) conferir(`ruído do cache fica de fora: "${t.slice(0, 34)}..."`, !c.alvos.some((a) => a.test(t)))
+
+  // ⛔ E o ruído que a fronteira de palavra NÃO resolve sozinha, que é a razão
+  // de "alfa" nu estar fora da tabela: aqui "Alfa" é palavra inteira e mesmo
+  // assim não é a casa.
+  const marcas = ['Alfa Romeo lança novo modelo no Brasil', 'Banco Alfa anuncia resultado do trimestre']
+  for (const t of marcas) conferir(`marca homônima fica de fora: "${t.slice(0, 30)}..."`, !c.alvos.some((a) => a.test(t)))
+}
+
 console.log('\n11. Entrada inválida não vira casa fantasma')
 {
   conferir('null', casaDoRegistro(null) === null)
