@@ -209,6 +209,42 @@ async function main() {
 
   const b = await ler(proxy, books, '2a leitura', log)
   log(`  2a leitura: ${b.precos.size} mercados, fetchedAt=${b.fetchedAt}`)
+
+  // 🔴 O INTERVALO REAL, medido nos dois carimbos, e não o pretendido.
+  //
+  // Medido em 18/Set/2026, no painel dos EUA: a 1a tentativa da 2a leitura
+  // falhou no transporte, a retentativa veio depois, e as duas leituras
+  // ficaram a **3h15** uma da outra. O cabeçalho continuou anunciando "2
+  // leituras com 8 min de intervalo" e o instantâneo gravou `intervaloMin: 8`,
+  // que é o que se PEDIU e não o que houve.
+  //
+  // ⚠️ Concordar dentro de 0,20pp ao longo de 3h15 é evidência MAIS forte de
+  //    preço estável, não mais fraca, então o veredito segue valendo. O que
+  //    quebra é outra coisa: os passos seguintes da rodada leem a certificada,
+  //    e o passo 1 imprimiu a leitura ao vivo do INÍCIO. Naquele dia o
+  //    `governors` foi de 90,70% para 96,40% entre os dois momentos, ou seja
+  //    atravessou o portão no meio, e relatar as duas somas como se fossem da
+  //    mesma leitura seria juntar instantes diferentes num retrato só.
+  // ⛔ `fetchedAt` é `string | null` de propósito: o proxy pode não devolvê-lo.
+  //    Sem a guarda, `new Date(null)` vira a ÉPOCA de 1970 e o intervalo sairia
+  //    em dezenas de milhões de minutos, que é número e não erro. Mesma família
+  //    da guarda de tipo do `dataCivilBrasil`.
+  const decorridoMin =
+    a.fetchedAt && b.fetchedAt
+      ? (new Date(b.fetchedAt).getTime() - new Date(a.fetchedAt).getTime()) / 60_000
+      : Number.NaN
+  const decorridoOk = Number.isFinite(decorridoMin) && decorridoMin > 0
+  if (decorridoOk) {
+    const fmt = decorridoMin >= 90 ? `${(decorridoMin / 60).toFixed(1)}h` : `${decorridoMin.toFixed(1)} min`
+    log(`  intervalo REAL entre os dois carimbos: ${fmt} (pedido: ${minutos} min)`)
+    // O dobro do pedido é folga generosa para retentativa normal; acima disso a
+    // diferença já é grande o bastante para mudar o que os outros passos leem.
+    if (decorridoMin > minutos * 2) {
+      log(`  ⚠️ A 2a leitura veio MUITO depois do pedido, provavelmente por retentativa de transporte.`)
+      log(`     O veredito vale (as duas concordam), mas a leitura ao vivo do passo 1 e esta são de`)
+      log(`     momentos diferentes: reler o mercado antes de relatar soma de distribuição.`)
+    }
+  }
   if (b.degraded) motivos.push(`2a leitura veio degradada (failedCount=${b.failedCount}). Não publicar.`)
 
   // Se o proxy devolveu o MESMO carimbo nas duas, não houve leitura independente:
@@ -289,7 +325,11 @@ async function main() {
     pais,
     fetchedAt: b.fetchedAt,
     fetchedAtPrimeira: a.fetchedAt,
+    // 🔑 Os DOIS: o que se pediu e o que houve. Gravar só o pedido faz o
+    //    instantâneo afirmar um intervalo que pode não ter existido, e quem
+    //    lê o arquivo depois não tem como saber.
     intervaloMin: minutos,
+    intervaloRealMin: decorridoOk ? Number(decorridoMin.toFixed(2)) : null,
     toleranciaPp: TOLERANCIA_PP,
     // A 2a leitura é a que vale: é a mais recente e sobreviveu à confirmação.
     precos: Object.fromEntries(b.precos),
