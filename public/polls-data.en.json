@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-18",
+  "lastUpdate": "2026-09-19",
   "institutes": [
     {
       "name": "Datafolha",
@@ -2810,30 +2810,30 @@
     "lastUpdate": "13/09/2026, 13:17"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices with the presidential book at USD 151.46M, confirmed reading of Sep 18, 18:59 BRT (21:59 UTC), confirmed by two independent readings. 📈 THE GAP IN THE WINNER CONTRACT WIDENED FROM 10.20pp TO 14.00pp, with both sides moving: Flávio Bolsonaro rose from 54.70% to 56.50% (vol USD 11.02M) and Lula fell from 44.50% to 42.50% (vol USD 11.36M), against the price confirmed on Sep 17. ⭐ Flávio Bolsonaro's 56.50% stands above the highest value in the recorded readings of his series, 56.40% earlier today, in a series that begins on Apr 14. Lula's 42.50% stands 25.00pp below the top of his series, 67.50% on Aug 16, and 8.00pp above the floor, 34.50% on Apr 25. ⚖️ IN THE RUNNER-UP CONTRACT FOR THE FIRST ROUND THE MOVE IS LARGER AND INVERTED: Flávio Bolsonaro falls 7.00pp, to 69.50%, and Lula rises 6.70pp, to 29.35%, because whoever becomes more likely to win becomes less likely to finish second. 🥉 In the third-place contract for the first round Renan Santos rises 5.00pp, to 49.00%, Augusto Cury falls 1.90pp, to 41.00%, and Ronaldo Caiado falls 2.00pp, to 10.50%. 🔴 THE COMPARISON WITH THE BALLOT CHANGES SIGN DEPENDING ON THE FIRM: Datafolha of Sep 17 gives the runoff to Lula 46% to 44% and Futura/100% Cidades of the same day gives it to Flávio Bolsonaro 48.1% to 43.7%. The graph uses AtlasIntel of Sep 17, which is the firm the internal series had been using, and the panel does not choose among the three.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and on Sep 17 all FIVE tracked contracts were confirmed: winner, first-round runner-up, first-round third place, Supreme Court impeachment and Senate majority. The reference series are measured in the database's daily backup, not in the API, which caps the window at 90 days and would hide the start of the series.",
+    "note": "Polymarket prices with the presidential book at USD 151.75M, reading confirmed on 19/Sep, 19:20 BRT (22:20 UTC), confirmed by two independent readings. 📈 THE WINNER CONTRACT GAP WIDENED FROM 14.00pp TO 16.25pp, and this time what opened it was Lula's fall: he went from 42.50% to 40.50% (vol USD 11.41M) while Flávio Bolsonaro went from 56.50% to only 56.75% (vol USD 11.03M), against the price confirmed on 18/Sep. ⭐ Those 16.25pp are Flávio Bolsonaro's largest lead over Lula since 14/Apr, the start of the series recorded in the database backup, with 633 readings across 156 days, and the opposite extreme of that same series is 41.80pp in Lula's favour, on 01/Aug. ⚠️ Those 56.75% are NOT the top of Flávio Bolsonaro's series: he sits 0.05pp below the highest value ever recorded. ⚖️ THE DAY'S MOVE IS IN THE SECONDARY BOOKS: in the [first round](/en/glossary#primeiro-turno) second-place contract Flávio Bolsonaro rises 5.00pp, to 74.50%, and Lula falls 4.70pp, to 24.65%. 🥉 In the first-round third-place contract Renan Santos rises 2.00pp, to 51.00%, Augusto Cury falls 4.65pp, to 36.35%, and Ronaldo Caiado rises 1.00pp, to 11.50%, so the gap between the top two goes from 8.00pp to 14.65pp. 🔴 NO NATIONAL POLL WAS PUBLISHED ON 18 OR 19/Sep, so the price moved on two consecutive days with no new information from the ballot, and the comparison is still with the two firms of 17/Sep, which disagree on the sign of the [runoff](/en/glossary#segundo-turno): Datafolha gives it to Lula 46% to 44% and Futura/100% Cidades gives it to Flávio Bolsonaro 48.1% to 43.7%. The graph uses AtlasIntel of 17/Sep, which is the firm the internal series had been using, and the panel does not choose among the three.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and on 19/Sep FOUR of the five watched contracts were confirmed: winner, second place in the [first round](/en/glossary#primeiro-turno), third place in the first round and impeachment at the Supreme Court. The Senate majority contract received no new price in this round, which is why the panel publishes no new number for it. The reference series are measured in the daily database backup, not in the API, which caps the window at 90 days and would hide the start of the series.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 44.1,
-        "odds": 42.5,
-        "value": 42.5,
-        "polymarket": "42.50%",
+        "odds": 40.5,
+        "value": 40.5,
+        "polymarket": "40.50%",
         "pesquisaRange": "28% to 44.1%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "IN THE TWO NATIONAL POLLS OF Sep 17 he leads the first round: 39% to 36% at Datafolha, in person with field Sep 15 to 16, and 38.3% to 37.7% at Futura/100% Cidades, by phone with field Sep 11 to 15. Both distances fit inside two margins. 🔴 IN THE RUNOFF THE TWO INVERT: Datafolha has him winning 46% to 44%, for the third straight wave with the same pair, and Futura has him losing 43.7% to 48.1%, outside two margins. That is 6.4 points of difference between firms that published on the same day.",
-        "tendenciaPolymarket": "FALLS 2.00pp in the winner contract, to 42.50%, against the price confirmed on Sep 17. It stands 25.00pp below the top of his series, 67.50% on Aug 16, and 8.00pp above the floor, 34.50% on Apr 25. In the runner-up contract for the first round he rises 6.70pp, to 29.35%, which is his largest move in any book this round."
+        "tendenciaPolymarket": "FALLS 2.00pp in the winner contract, to 40.50%, against the price confirmed on 18/Sep, and on his own opens the gap, because Flávio Bolsonaro rose 0.25pp in the same book. He sits 27.00pp below the top of his series, 67.50% on 16/Aug, and 6.00pp above the floor, 34.50% on 25/Apr. In the [first round](/en/glossary#primeiro-turno) second-place contract he falls 4.70pp, to 24.65%, leaving the top of his series in that book, recorded on 18/Sep."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 41.7,
-        "odds": 56.5,
-        "value": 56.5,
-        "polymarket": "56.50%",
+        "odds": 56.75,
+        "value": 56.75,
+        "polymarket": "56.75%",
         "pesquisaRange": "20% to 41.7%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "AT DATAFOLHA OF Sep 17 he rises from 35% to 36% in the first round and loses the runoff 44% to 46%, inside two margins. AT FUTURA/100% CIDADES of the same day he has 37.7% in the first round, 0.6 point from Lula, and wins the runoff 48.1% to 43.7%, outside two margins. His rejection is 47% at Datafolha, tied with Lula's, and 45.3% at Futura, below Lula's.",
-        "tendenciaPolymarket": "RISES 1.80pp in the winner contract, to 56.50%, against the price confirmed on Sep 17, above the highest value in the recorded readings of his series, 56.40% earlier today. In the runner-up contract for the first round he falls 7.00pp, to 69.50%, which is the other side of the same move and the largest change of any contract in this round."
+        "tendenciaPolymarket": "RISES 0.25pp in the winner contract, to 56.75%, against the price confirmed on 18/Sep, and sits 0.05pp below the highest value ever recorded in the readings of his series. His lead over Lula reaches 16.25pp, his largest since 14/Apr across 633 recorded readings. In the [first round](/en/glossary#primeiro-turno) second-place contract he rises 5.00pp, to 74.50%, twenty times his move in the winner book and the largest change of any contract in this round."
       },
       {
         "name": "Augusto Cury",
@@ -2842,20 +2842,20 @@
         "value": 0.15,
         "polymarket": "0.15%",
         "pesquisaRange": "1% to 12.2%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "HE IS THIRD IN BOTH NATIONAL POLLS OF Sep 17, with 6% at Datafolha and 6.5% at Futura/100% Cidades, ahead of Renan Santos in both. At Datafolha his rejection is 9%, the lowest among the names with 2% or more of voting intention.",
-        "tendenciaPolymarket": "STANDS AT 0.15% in the winner contract, below the lowest value in the recorded readings of his series, 0.20% on Sep 17. In the third-place contract for the first round he falls 1.90pp, to 41.00%, with USD 226 thousand accumulated, and comes to stand 8.00pp behind Renan Santos, who on Sep 17 was 1.10pp behind him."
+        "tendenciaPolymarket": "STANDS AT 0.15% in the winner contract, and the lowest value in the recorded readings of his series is 0.10%. In the [first round](/en/glossary#primeiro-turno) third-place contract he falls 4.65pp, to 36.35%, with USD 230 thousand accumulated, the largest fall of any contract in this round, and moves to 14.65pp behind Renan Santos, against 8.00pp on 18/Sep."
       },
       {
         "name": "Renan Santos",
         "percentage": 5.1,
-        "odds": 0.95,
-        "value": 0.95,
-        "polymarket": "0.95%",
+        "odds": 0.85,
+        "value": 0.85,
+        "polymarket": "0.85%",
         "pesquisaRange": "2% to 11%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "IN THE TWO NATIONAL POLLS OF Sep 17 he stands behind Augusto Cury: 3% to 6% at Datafolha and 3.4% to 6.5% at Futura/100% Cidades. At Datafolha his rejection is 15%, the third highest in the poll. On Sep 17 he filed a petition at the Superior Electoral Court against the Bolsa Família increase, and the rapporteur drawn was André Mendonça.",
-        "tendenciaPolymarket": "FALLS 0.20pp in the winner contract, to 0.95%, below the lowest value in the recorded readings of his series, 1.00% earlier today. In the third-place contract for the first round he rises 5.00pp, to 49.00%, takes the lead by 8.00pp over Augusto Cury and holds the largest accumulated volume in the third-place book for the first round, USD 347 thousand against USD 226 thousand for Augusto Cury."
+        "tendenciaPolymarket": "FALLS 0.10pp in the winner contract, to 0.85%, within 0.05pp of the lowest value in the recorded readings of his series. In the [first round](/en/glossary#primeiro-turno) third-place contract he rises 2.00pp, to 51.00%, opens 14.65pp over Augusto Cury and holds the largest accumulated volume in the first-round third-place book, USD 349 thousand against USD 230 thousand for Augusto Cury, measured across the 19 contracts in that book."
       },
       {
         "name": "Ronaldo Caiado",
@@ -2864,9 +2864,9 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1% to 5%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "IN THE TWO NATIONAL POLLS OF Sep 17 he is fourth, with 4% at Datafolha and 4.5% at Futura/100% Cidades. At Datafolha his rejection is 13%, lower than Renan Santos's and Romeu Zema's.",
-        "tendenciaPolymarket": "STANDS AT 0.05% in the winner contract, below the lowest value in the recorded readings of his series, 0.10% on Sep 17. In the third-place contract for the first round he falls 2.00pp, to 10.50%, with USD 137 thousand accumulated, and keeps third position in that book."
+        "tendenciaPolymarket": "STANDS AT 0.05% in the winner contract, below the lowest value in the recorded readings of his series, 0.10% on 17/Sep. In the [first round](/en/glossary#primeiro-turno) third-place contract he rises 1.00pp, to 11.50%, with USD 138 thousand accumulated, and holds third position in that book."
       },
       {
         "name": "Pablo Marçal",
@@ -2875,7 +2875,7 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1% to 5.2%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "The Superior Electoral Court denied his candidacy registration on Sep 11, and the PRTB announced Leonardo Avalanche in his place, a substitution still under the Court's review. Datafolha of Sep 17 does not include him in the prompted scenario. Futura/100% Cidades of the same day still keeps him, at 1.9%, and measures 16.9% rejection to him.",
         "tendenciaPolymarket": "STANDS AT 0.05% in the winner contract, the floor of the book, with USD 3.97M accumulated. The presidential book has no contract under the name Leonardo Avalanche."
       },
@@ -2886,9 +2886,9 @@
         "value": 0.15,
         "polymarket": "0.15%",
         "pesquisaRange": "0.3% to 3%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "IN THE TWO NATIONAL POLLS OF Sep 17 he has 2% at Datafolha and 1.0% at Futura/100% Cidades, and neither tests him in a runoff pair. At Datafolha his rejection is 14% and at Futura, 15.9%.",
-        "tendenciaPolymarket": "STANDS AT 0.15% in the winner contract, with the top of his series at 12.00%, on May 13, and the floor at 0.10%, on Sep 17. In the third-place contract for the first round he falls 0.50pp, to 0.35%."
+        "tendenciaPolymarket": "STANDS AT 0.15% in the winner contract, with the top of his series at 12.00%, on 13/May, and the floor at 0.10%, on 17/Sep. In the [first round](/en/glossary#primeiro-turno) third-place contract he is unchanged at 0.35%, and he did not move in any contract in this round."
       },
       {
         "name": "Tarcísio",
@@ -2897,9 +2897,9 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "The national polls of Sep 17 do not include him in the prompted scenario, and he remains without measured voting intention in the cut the panel uses.",
-        "tendenciaPolymarket": "STABLE at 0.05% in the winner contract, the book's floor, and still with the largest accumulated volume in the presidential book, USD 14.08M. Volume measures interest accumulated since opening, not probability now."
+        "tendenciaPolymarket": "STABLE at 0.05% in the winner contract, the floor of the book, and even so it carries the largest accumulated volume in the presidential book, USD 14.08M, ahead of Renan Santos' USD 13.78M. Volume measures interest accumulated since opening, not probability now."
       },
       {
         "name": "Fernando Haddad",
@@ -2908,12 +2908,12 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "The national polls of Sep 17 do not include him in the prompted [first-round](/en/glossary#primeiro-turno) scenario, and he appears in polls only in [runoff](/en/glossary#segundo-turno) pairs from other rounds.",
-        "tendenciaPolymarket": "STABLE at 0.05% in the winner contract, with the top of his series at 7.60%, on May 26, measured in the database backup and not in the route's 90-day window."
+        "tendenciaPolymarket": "STABLE at 0.05% in the winner contract, with the top of his series at 7.60%, measured in the database backup and not in the route's 90-day window."
       }
     ],
-    "updatedAt": "18/09/2026, 18:59",
-    "lastUpdate": "18/09/2026, 18:59"
+    "updatedAt": "19/09/2026, 19:20",
+    "lastUpdate": "19/09/2026, 19:20"
   }
 }

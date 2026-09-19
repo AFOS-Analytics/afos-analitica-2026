@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-18",
+  "lastUpdate": "2026-09-19",
   "institutes": [
     {
       "name": "Datafolha",
@@ -2810,30 +2810,30 @@
     "lastUpdate": "13/09/2026, 13:17"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket com o livro presidencial em USD 151,46M, leitura confirmada de 18/Set, 18:59 BRT (21:59 UTC), confirmada por duas leituras independentes. 📈 O VÃO DO CONTRATO DE VENCEDOR ABRIU DE 10,20pp PARA 14,00pp, com os dois lados andando: Flávio Bolsonaro subiu de 54,70% para 56,50% (vol USD 11,02M) e Lula caiu de 44,50% para 42,50% (vol USD 11,36M), contra o preço confirmado em 17/Set. ⭐ Os 56,50% de Flávio Bolsonaro ficam acima do maior valor das leituras gravadas da série dele, de 56,40% hoje mesmo, numa série que começa em 14/Abr. Os 42,50% de Lula ficam 25,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, e 8,00pp acima do piso, de 34,50% em 25/Abr. ⚖️ NO CONTRATO DE 2º LUGAR DO 1º TURNO O MOVIMENTO É MAIOR E INVERTIDO: Flávio Bolsonaro cai 7,00pp, para 69,50%, e Lula sobe 6,70pp, para 29,35%, porque quem fica mais provável de vencer fica menos provável de chegar em segundo. 🥉 No contrato de 3º lugar do 1º turno Renan Santos sobe 5,00pp, para 49,00%, Augusto Cury cai 1,90pp, para 41,00%, e Ronaldo Caiado cai 2,00pp, para 10,50%. 🔴 A COMPARAÇÃO COM A URNA MUDA DE SINAL CONFORME A CASA: a Datafolha de 17/Set dá o 2º turno a Lula por 46% a 44% e a Futura/100% Cidades do mesmo dia dá a Flávio Bolsonaro por 48,1% a 43,7%. O grafo usa a AtlasIntel de 17/Set, que é a casa que a série interna vinha usando, e o painel não escolhe entre as três.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e em 17/Set confirmaram os CINCO contratos vigiados: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno, impeachment no Supremo e maioria no Senado. As séries de referência são medidas no backup diário do banco, e não na API, que trava a janela em 90 dias e esconderia o começo das séries.",
+    "note": "Preços do Polymarket com o livro presidencial em USD 151,75M, leitura confirmada de 19/Set, 19:20 BRT (22:20 UTC), confirmada por duas leituras independentes. 📈 O VÃO DO CONTRATO DE VENCEDOR ABRIU DE 14,00pp PARA 16,25pp, e desta vez quem o abriu foi a queda de Lula: ele caiu de 42,50% para 40,50% (vol USD 11,41M) enquanto Flávio Bolsonaro subiu de 56,50% para apenas 56,75% (vol USD 11,03M), contra o preço confirmado em 18/Set. ⭐ Esses 16,25pp são a maior vantagem de Flávio Bolsonaro sobre Lula desde 14/Abr, começo da série gravada no backup do banco, com 633 leituras em 156 dias, e o extremo oposto da mesma série é de 41,80pp a favor de Lula, em 01/Ago. ⚠️ Os 56,75% NÃO são o topo da série de Flávio Bolsonaro: ele fica 0,05pp abaixo do maior valor já gravado. ⚖️ O MOVIMENTO DO DIA ESTÁ NOS LIVROS SECUNDÁRIOS: no contrato de 2º lugar do 1º turno Flávio Bolsonaro sobe 5,00pp, para 74,50%, e Lula cai 4,70pp, para 24,65%. 🥉 No contrato de 3º lugar do 1º turno Renan Santos sobe 2,00pp, para 51,00%, Augusto Cury cai 4,65pp, para 36,35%, e Ronaldo Caiado sobe 1,00pp, para 11,50%, de modo que a distância entre os dois primeiros passa de 8,00pp para 14,65pp. 🔴 NENHUMA PESQUISA NACIONAL FOI DIVULGADA EM 18 OU 19/Set, então o preço se moveu dois dias seguidos sem informação nova de urna, e a comparação segue sendo com as duas casas de 17/Set, que discordam no sinal do 2º turno: a Datafolha dá a Lula por 46% a 44% e a Futura/100% Cidades dá a Flávio Bolsonaro por 48,1% a 43,7%. O grafo usa a AtlasIntel de 17/Set, que é a casa que a série interna vinha usando, e o painel não escolhe entre as três.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e em 19/Set confirmaram QUATRO dos cinco contratos vigiados: vencedor, 2º lugar do 1º turno, 3º lugar do 1º turno e impeachment no Supremo. O de maioria no Senado não recebeu preço novo nesta rodada, e por isso o painel não publica número novo para ele. As séries de referência são medidas no backup diário do banco, e não na API, que trava a janela em 90 dias e esconderia o começo das séries.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 44.1,
-        "odds": 42.5,
-        "value": 42.5,
-        "polymarket": "42,50%",
+        "odds": 40.5,
+        "value": 40.5,
+        "polymarket": "40,50%",
         "pesquisaRange": "28% a 44,1%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 17/Set ele lidera o 1º turno: 39% a 36% na Datafolha, presencial com campo de 15 a 16/Set, e 38,3% a 37,7% na Futura/100% Cidades, por telefone com campo de 11 a 15/Set. As duas distâncias cabem em duas margens. 🔴 NO 2º TURNO AS DUAS SE INVERTEM: a Datafolha o dá vencendo por 46% a 44%, pela terceira rodada seguida com o mesmo par, e a Futura o dá perdendo por 43,7% a 48,1%, fora de duas margens. São 6,4 pontos de diferença entre casas que publicaram no mesmo dia.",
-        "tendenciaPolymarket": "CAI 2,00pp no contrato de vencedor, para 42,50%, contra o preço confirmado em 17/Set. Fica 25,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, e 8,00pp acima do piso, de 34,50% em 25/Abr. No contrato de 2º lugar do 1º turno sobe 6,70pp, para 29,35%, que é o maior movimento dele em qualquer livro nesta rodada."
+        "tendenciaPolymarket": "CAI 2,00pp no contrato de vencedor, para 40,50%, contra o preço confirmado em 18/Set, e sozinho abre o vão, porque Flávio Bolsonaro subiu 0,25pp no mesmo livro. Fica 27,00pp abaixo do topo da série dele, de 67,50% em 16/Ago, e 6,00pp acima do piso, de 34,50% em 25/Abr. No contrato de 2º lugar do 1º turno cai 4,70pp, para 24,65%, saindo do topo da série dele naquele livro, gravado em 18/Set."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 41.7,
-        "odds": 56.5,
-        "value": 56.5,
-        "polymarket": "56,50%",
+        "odds": 56.75,
+        "value": 56.75,
+        "polymarket": "56,75%",
         "pesquisaRange": "20% a 41,7%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "NA DATAFOLHA DE 17/Set ele sobe de 35% para 36% no 1º turno e perde o 2º turno por 44% a 46%, dentro de duas margens. NA FUTURA/100% CIDADES do mesmo dia tem 37,7% no 1º turno, a 0,6 ponto de Lula, e vence o 2º turno por 48,1% a 43,7%, fora de duas margens. A rejeição dele é de 47% na Datafolha, empatada com a de Lula, e de 45,3% na Futura, abaixo da de Lula.",
-        "tendenciaPolymarket": "SOBE 1,80pp no contrato de vencedor, para 56,50%, contra o preço confirmado em 17/Set, acima do maior valor das leituras gravadas da série dele, de 56,40% hoje mesmo. No contrato de 2º lugar do 1º turno cai 7,00pp, para 69,50%, que é o outro lado do mesmo movimento e a maior variação de qualquer contrato nesta rodada."
+        "tendenciaPolymarket": "SOBE 0,25pp no contrato de vencedor, para 56,75%, contra o preço confirmado em 18/Set, e fica 0,05pp abaixo do maior valor já gravado nas leituras da série dele. O vão sobre Lula chega a 16,25pp, a maior vantagem dele desde 14/Abr em 633 leituras gravadas. No contrato de 2º lugar do 1º turno sobe 5,00pp, para 74,50%, vinte vezes o movimento dele no livro de vencedor e a maior variação de qualquer contrato nesta rodada."
       },
       {
         "name": "Augusto Cury",
@@ -2842,20 +2842,20 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "É O TERCEIRO COLOCADO NAS DUAS NACIONAIS DE 17/Set, com 6% na Datafolha e 6,5% na Futura/100% Cidades, à frente de Renan Santos nas duas. Na Datafolha a rejeição dele é de 9%, a menor entre os nomes com 2% ou mais de intenção de voto.",
-        "tendenciaPolymarket": "ESTÁ EM 0,15% no contrato de vencedor, abaixo do menor valor das leituras gravadas da série dele, de 0,20% em 17/Set. No contrato de 3º lugar do 1º turno cai 1,90pp, para 41,00%, com USD 226 mil acumulados, e passa a ficar 8,00pp atrás de Renan Santos, que em 17/Set estava 1,10pp atrás dele."
+        "tendenciaPolymarket": "ESTÁ EM 0,15% no contrato de vencedor, e o menor valor das leituras gravadas da série dele é 0,10%. No contrato de 3º lugar do 1º turno cai 4,65pp, para 36,35%, com USD 230 mil acumulados, a maior queda de qualquer contrato nesta rodada, e passa a ficar 14,65pp atrás de Renan Santos, contra 8,00pp em 18/Set."
       },
       {
         "name": "Renan Santos",
         "percentage": 5.1,
-        "odds": 0.95,
-        "value": 0.95,
-        "polymarket": "0,95%",
+        "odds": 0.85,
+        "value": 0.85,
+        "polymarket": "0,85%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 17/Set fica atrás de Augusto Cury: 3% a 6% na Datafolha e 3,4% a 6,5% na Futura/100% Cidades. Na Datafolha a rejeição dele é de 15%, a terceira maior da pesquisa. Em 17/Set ele entrou com representação no Tribunal Superior Eleitoral contra o reajuste do Bolsa Família, e o relator sorteado foi André Mendonça.",
-        "tendenciaPolymarket": "CAI 0,20pp no contrato de vencedor, para 0,95%, abaixo do menor valor das leituras gravadas da série dele, de 1,00% hoje mesmo. No contrato de 3º lugar do 1º turno sobe 5,00pp, para 49,00%, assume a frente com 8,00pp sobre Augusto Cury e tem o maior volume acumulado do livro de 3º lugar do 1º turno, USD 347 mil contra USD 226 mil de Augusto Cury."
+        "tendenciaPolymarket": "CAI 0,10pp no contrato de vencedor, para 0,85%, a 0,05pp do menor valor das leituras gravadas da série dele. No contrato de 3º lugar do 1º turno sobe 2,00pp, para 51,00%, abre 14,65pp sobre Augusto Cury e tem o maior volume acumulado do livro de 3º lugar do 1º turno, USD 349 mil contra USD 230 mil de Augusto Cury, medido nos 19 contratos daquele livro."
       },
       {
         "name": "Ronaldo Caiado",
@@ -2864,9 +2864,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 17/Set é o quarto colocado, com 4% na Datafolha e 4,5% na Futura/100% Cidades. Na Datafolha a rejeição dele é de 13%, menor que a de Renan Santos e a de Romeu Zema.",
-        "tendenciaPolymarket": "ESTÁ EM 0,05% no contrato de vencedor, abaixo do menor valor das leituras gravadas da série dele, de 0,10% em 17/Set. No contrato de 3º lugar do 1º turno cai 2,00pp, para 10,50%, com USD 137 mil acumulados, e mantém a terceira posição daquele livro."
+        "tendenciaPolymarket": "ESTÁ EM 0,05% no contrato de vencedor, abaixo do menor valor das leituras gravadas da série dele, de 0,10% em 17/Set. No contrato de 3º lugar do 1º turno sobe 1,00pp, para 11,50%, com USD 138 mil acumulados, e mantém a terceira posição daquele livro."
       },
       {
         "name": "Pablo Marçal",
@@ -2875,7 +2875,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,2%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "O Tribunal Superior Eleitoral indeferiu em 11/Set o registro de candidatura dele, e o PRTB anunciou Leonardo Avalanche no lugar dele, uma substituição que ainda passa pela análise do Tribunal. A Datafolha de 17/Set não o inclui no cenário estimulado. A Futura/100% Cidades do mesmo dia ainda o mantém, com 1,9%, e mede rejeição de 16,9% a ele.",
         "tendenciaPolymarket": "ESTÁ EM 0,05% no contrato de vencedor, o piso do livro, com USD 3,97M acumulados. O livro presidencial não tem contrato com o nome de Leonardo Avalanche."
       },
@@ -2886,9 +2886,9 @@
         "value": 0.15,
         "polymarket": "0,15%",
         "pesquisaRange": "0,3% a 3%",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "NAS DUAS NACIONAIS DE 17/Set tem 2% na Datafolha e 1,0% na Futura/100% Cidades, e nenhuma das duas o testa em par de 2º turno. Na Datafolha a rejeição dele é de 14% e na Futura, de 15,9%.",
-        "tendenciaPolymarket": "ESTÁ EM 0,15% no contrato de vencedor, com o topo da série dele em 12,00%, de 13/Mai, e o piso em 0,10%, de 17/Set. No contrato de 3º lugar do 1º turno cai 0,50pp, para 0,35%."
+        "tendenciaPolymarket": "ESTÁ EM 0,15% no contrato de vencedor, com o topo da série dele em 12,00%, de 13/Mai, e o piso em 0,10%, de 17/Set. No contrato de 3º lugar do 1º turno fica parado em 0,35%, e ele não se moveu em contrato nenhum nesta rodada."
       },
       {
         "name": "Tarcísio",
@@ -2897,9 +2897,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "As nacionais de 17/Set não o incluem no cenário estimulado, e ele segue sem intenção de voto medida no recorte que o painel usa.",
-        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, o piso do livro, e ainda assim com o maior volume acumulado do livro presidencial, USD 14,08M. Volume mede interesse acumulado desde a abertura, não probabilidade de agora."
+        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, o piso do livro, e ainda assim com o maior volume acumulado do livro presidencial, USD 14,08M, à frente dos USD 13,78M de Renan Santos. Volume mede interesse acumulado desde a abertura, não probabilidade de agora."
       },
       {
         "name": "Fernando Haddad",
@@ -2908,12 +2908,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "18/09/2026, 18:59",
+        "lastUpdate": "19/09/2026, 19:20",
         "tendenciaPesquisa": "As nacionais de 17/Set não o incluem no cenário estimulado de 1º turno, e ele aparece nas pesquisas apenas em pares de 2º turno de outras rodadas.",
-        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, com o topo da série dele em 7,60%, de 26/Mai, medido no backup do banco e não na janela de 90 dias da rota."
+        "tendenciaPolymarket": "ESTÁVEL em 0,05% no contrato de vencedor, com o topo da série dele em 7,60%, medido no backup do banco e não na janela de 90 dias da rota."
       }
     ],
-    "updatedAt": "18/09/2026, 18:59",
-    "lastUpdate": "18/09/2026, 18:59"
+    "updatedAt": "19/09/2026, 19:20",
+    "lastUpdate": "19/09/2026, 19:20"
   }
 }
