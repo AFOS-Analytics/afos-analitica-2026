@@ -1,0 +1,101 @@
+{
+  "data": "2026-09-19",
+  "carimboDaLeitura": "2026-09-19T22:20:25.363Z",
+  "carimboBRT": "19/09/2026, 19:20",
+  "refetchAoVivo": {
+    "quando": "2026-09-19T23:02:51.330Z",
+    "gateDeRebaseline": "NAO DISPAROU",
+    "deltas": {
+      "lula": 0,
+      "flavio": 0,
+      "vao": 0,
+      "renan": -0.05,
+      "volumeTotalM": 0.01
+    },
+    "ressalva": "Ronaldo Caiado andou +0,50pp no livro de 3o lugar em 42 minutos. Nao esta na lista que dispara o gate (Lula, Flavio, Renan, vao), e a peca cita os valores CERTIFICADOS de 19:20 BRT, com a procedencia declarada."
+  },
+  "factCheckGate": {
+    "eventos": [
+      {
+        "evento": "STF mantem condenacao de Eduardo Bolsonaro",
+        "crossRef": "zero mencoes em 7 dailies, novidade para a peca",
+        "dataDoAto": "2026-09-18",
+        "oQueMudouHoje": "nada: o ato e de 18/Set, e a condenacao e de junho. Mudou a rejeicao do recurso da DPU",
+        "fonte1": "https://www.gazetadopovo.com.br/republica/primeira-turma-do-stf-rejeita-recurso-e-mantem-condenacao-de-eduardo-bolsonaro/",
+        "grupo1": "independente",
+        "fonte2": "https://g1.globo.com/politica/noticia/2026/09/18/stf-forma-maioria-para-rejeitar-recurso-contra-condenacao-de-eduardo-bolsonaro-por-coacao-em-processo-sobre-trama-golpista.ghtml",
+        "grupo2": "Globo",
+        "tipo": "evento",
+        "decisao": "incorporar com data corrigida",
+        "ressalva": "O Globo escreve 'por unanimidade' e o Valor 'tem maioria'. O placar NAO foi publicado."
+      },
+      {
+        "evento": "Verita barrada por decisao judicial em dois estados",
+        "crossRef": "9 mencoes em 7 dailies, TODAS na tabela do calendario como pesquisa registrada. A restricao judicial nunca apareceu",
+        "dataDoAto": "2026-09-18",
+        "casos": [
+          {
+            "uf": "AM",
+            "protocolo": "AM-08447/2026",
+            "motivo": "plano amostral declarou TODOS OS BAIRROS para 39 municipios sem detalhar distribuicao territorial",
+            "fonte": "https://www.cm7brasil.com/noticias/politica/justica-eleitoral-barra-pesquisa-do-instituto-verita-e-aplica-multa-de-r-53-mil-no-amazonas/"
+          },
+          {
+            "uf": "RO",
+            "multa": "R$ 53.205",
+            "amostra": 1220,
+            "custoDeclarado": "R$ 93.940",
+            "motivo": "retirada definitiva de circulacao; o instituto APRESENTOU declaracao tecnica detalhada por municipio e perdeu assim mesmo",
+            "fonte": "https://www.rondoniagora.com/eleicoes/tre-de-rondonia-manda-retirar-pesquisa-verita-de-circulacao-e-condena-instituto-a-pagar-r-53-mil"
+          }
+        ],
+        "newsCacheContradiz": "SIM. A mesma cifra 'R$ 53 mil' aparece nas manchetes dos DOIS estados. So o corpo separou: sao duas decisoes distintas, e o valor exato de RO e R$ 53.205",
+        "decisao": "NAO incorporar como fato sobre a nossa base. As duas decisoes sao de pesquisas ESTADUAIS; as Verita do polls-data sao nacionais. Entrou so como contexto de instrumento",
+        "naoPublicado": "um portal afirma 'barradas em pelo menos 15 estados'. Fonte unica e pequena, e a ficha registrava 7. Contagem NAO publicada"
+      },
+      {
+        "evento": "Comicios simultaneos de Lula e Flavio em Santa Catarina",
+        "crossRef": "zero mencoes em 7 dailies, novidade",
+        "dataDoAto": "2026-09-19",
+        "fonte1": "G1, grupo Globo",
+        "fonte2": "Estadao, independente",
+        "fonte3": "Folha, grupo Folha",
+        "tipo": "evento",
+        "decisao": "incorporar, sem atribuir movimento de preco"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "uma classe: as duas decisoes contra a Verita tem UMA fonte cada, porque sao casos distintos e usar uma para confirmar a outra seria falso. O texto nao afirma nada sobre a nossa base a partir delas",
+    "numericalErrors": "reconcile-claims OK, todos os claims batem com o JSON dentro de 0,05pp",
+    "fontesInventadas": "3 conferidos ao acaso no news-cache: G1 comicios SC, Poder360 Flavio, Rondoniagora Verita. Os tres existem com a data",
+    "quotesLiterais": "nenhuma. Todas as falas em discurso indireto",
+    "causacaoEspuria": "nenhuma. O texto diz que o preco andou dois dias sem pesquisa nova e chama isso de momentum de livro",
+    "verbosCriticos": "preso desde 17 de novembro de 2025; condenacao de junho separada da negativa do recurso; barrou e retirou de circulacao com data e protocolo; placar do STF NAO escrito",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "validateAfosDaily": "OK, 0 erros",
+    "reconcileClaims": "OK",
+    "gateTraducaoDaily": "LIMPO nas 3 versoes, 63 numeros com unidade em cada",
+    "palavras": { "ptBR": 1098, "en": 1074, "es": 1171, "teto": 1100 },
+    "travessao": 0,
+    "emoji": 0,
+    "tldrBullets": 3,
+    "linkDensity": "74% (17/23 paragrafos substantivos)"
+  },
+  "corteDeTexto": {
+    "de": 1315,
+    "para": 1098,
+    "cortadas": 217,
+    "oQueSaiu": "frases de metodo que repetiam ressalva ja dita na Secao 1, e duas repeticoes entre o corpo e as Divergencias",
+    "oQueNaoSaiu": "nenhum numero, nenhuma data, nenhuma fonte"
+  },
+  "wayback": {
+    "rodou": false,
+    "preCheck": "HTTP 429",
+    "motivo": "429 e um dos dois codigos que a regua nomeia para NAO rodar e NAO insistir. Aviso dado no comeco da sessao",
+    "filaNaCabeca": "2026-07-29, exposta ha 52 dias, 28 URLs faltando"
+  },
+  "achadoDoDia": "A pesquisa BR-00548/2026, da Real Time Big Data, que a daily de 18/Set listou na tabela do calendario com ressalva de escopo, SAIU do registro do TSE em 19/Set. Era nacional, com divulgacao marcada para 23/Set e portanto ainda nao vencida. O calendario de hoje sai sem ela."
+}
