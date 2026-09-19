@@ -71,6 +71,53 @@ const arquivo = arg('arquivo', null)
 // Ver scripts/lib/data-civil-brz.mjs
 const hoje = arg('hoje', dataCivilBrasil())
 
+/**
+ * 👻 O conjunto de fantasmas, ligado em 19/Set/2026.
+ *
+ * 🔴 POR QUE: até aqui "calendário vivo" era só comparação de DATA, e a data sai
+ *    do nosso banco, que nunca apaga. O TSE retira. Naquele dia a `BR005482026`
+ *    saiu do registro na mesma rodada em que este portão a imprimiu como
+ *    `NO CALENDÁRIO VIVO`, e o veredito fechou "2 no calendário vivo" com 1.
+ *
+ * ⚠️ SÓ VALE O CONJUNTO DE HOJE. Fantasma é reversível: a ficha do protocolo
+ *    registra que um protocolo pode VOLTAR ao arquivo. Conjunto de ontem
+ *    chamaria de retirado um registro que voltou, e aí o portão CALARIA sobre
+ *    um rótulo vivo, que é o único sentido de erro que não se aceita aqui.
+ *    Sem conjunto de hoje, a conta volta a ser de data e isso sai impresso.
+ */
+function lerFantasmas() {
+  if (process.argv.includes('--sem-fantasmas')) {
+    return { conjunto: null, nota: 'pulado por --sem-fantasmas: "vivo" é só data, e pode inflar' }
+  }
+  // Caminho injetável para o teste, que roda o SCRIPT e não a função pura.
+  const caminho = arg('fantasmas', 'data/tse/fantasmas.jsonl')
+  let linhas
+  try {
+    linhas = readFileSync(caminho, 'utf8').trim().split('\n').filter(Boolean)
+  } catch {
+    return { conjunto: null, nota: `${caminho} não existe: "vivo" é só data, e pode inflar` }
+  }
+  if (linhas.length === 0) return { conjunto: null, nota: 'arquivo de fantasmas vazio: "vivo" é só data' }
+
+  let ultima
+  try {
+    ultima = JSON.parse(linhas[linhas.length - 1])
+  } catch {
+    return { conjunto: null, nota: 'última linha de fantasmas ilegível: "vivo" é só data' }
+  }
+  const quandoBr = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo' }).format(new Date(ultima.quando))
+  if (quandoBr !== hoje) {
+    return {
+      conjunto: null,
+      nota: `o conjunto mais novo é de ${quandoBr} e hoje é ${hoje}: NÃO usado, porque fantasma VOLTA e conjunto velho faria o portão calar. Rodar a ingestão com --apply`,
+    }
+  }
+  return {
+    conjunto: new Set(ultima.protocolos ?? []),
+    nota: `${(ultima.protocolos ?? []).length} protocolo(s) fora do registro do TSE, medidos hoje às ${new Date(ultima.quando).toISOString().slice(11, 16)}Z`,
+  }
+}
+
 function linhasDe(json) {
   const arr = json.data ?? json.polls ?? json.items ?? (Array.isArray(json) ? json : [])
   if (!Array.isArray(arr) || arr.length === 0) {
@@ -100,7 +147,13 @@ if (arquivo) {
   }
 }
 
-const { ok, poder, achados, graves, vivos } = conferirEscopoDerivado(registros, { hoje })
+const fantasmas = lerFantasmas()
+console.log(`   ${fantasmas.conjunto ? '👻' : '⚠️ '} fantasmas: ${fantasmas.nota}`)
+
+const { ok, poder, achados, graves, vivos } = conferirEscopoDerivado(registros, {
+  hoje,
+  fantasmas: fantasmas.conjunto,
+})
 
 // A tabela mostra toda casa que tem rótulo nacional derivado do plano, INCLUSIVE
 // a que passou: ver quem o portão liberou é o que mostra que ele não reprova tudo.
@@ -133,7 +186,8 @@ if (achados.length === 0) {
   console.log(`\n⚠️  ${achados.length} rótulo(s) NACIONAL derivado(s) do plano amostral, sem sustentação na casa:`)
   for (const a of achados) {
     const icone = a.gravidade === 'GRAVE' ? '🔴' : '🟡'
-    const onde = a.vivo ? 'NO CALENDÁRIO VIVO' : 'já vencido'
+    // Três estados, não dois: retirado pelo TSE não é o mesmo que vencido.
+    const onde = a.vivo ? 'NO CALENDÁRIO VIVO' : a.retirado ? '👻 já RETIRADO do registro' : 'já vencido'
     console.log(
       `   ${icone} ${a.protocolo}  ${String(a.casa).slice(0, 30).padEnd(30)} n=${String(a.amostra).padStart(6)}  div ${a.divulgacao}  ${onde}`,
     )

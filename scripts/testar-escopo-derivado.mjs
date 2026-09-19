@@ -20,6 +20,10 @@ import { mkdtempSync, writeFileSync, rmSync } from 'fs'
 import { execFileSync } from 'child_process'
 import { tmpdir } from 'os'
 import { join } from 'path'
+// A função pura, só para o anti-silêncio de TIPO do conjunto de fantasmas.
+// O resto do arquivo roda o SCRIPT de propósito, porque o defeito de 04/Set foi
+// no chamador e não na regra.
+import { conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
 
 const PORTAO = join(import.meta.dirname, 'conferir-escopo-derivado.mjs')
 const HOJE = '2026-09-06'
@@ -213,6 +217,63 @@ const CASOS = [
       nacionalPorPlano(CASA_CEGA),
     ],
   },
+  // 👻 OS QUATRO CASOS DO FANTASMA, de 19/Set/2026.
+  //
+  // 🔴 O defeito que eles pegam: "calendário vivo" era só comparação de DATA, e
+  // a data vem do nosso banco, que nunca apaga. O TSE RETIRA. No dia, a
+  // BR005482026 da Real Time saiu do registro na MESMA rodada em que este portão
+  // a imprimiu como NO CALENDÁRIO VIVO, e o veredito fechou "2 no calendário
+  // vivo" quando o vivo era 1. O código de saída estava certo por acaso, porque
+  // o OUTRO grave era real; a FRASE é que era falsa.
+  {
+    nome: '13· GRAVE com divulgação à frente, mas RETIRADO do TSE: não é calendário vivo',
+    aprova: true,
+    exige: 'já RETIRADO do registro',
+    fantasmas: ['BR099999001'],
+    base: [
+      ...estaduais(23, CASA_CEGA, T.planoNacional),
+      nacionalPorPlano(CASA_CEGA, { protocolo: 'BR099999001', publicationDate: '2026-09-20' }),
+    ],
+  },
+  {
+    // O contraste que prova que quem muda o veredito é o CONJUNTO, e não a data.
+    // Base idêntica à do 13, sem o conjunto: volta a reprovar, como antes.
+    nome: '14· a MESMA base sem o conjunto de fantasmas volta a reprovar',
+    aprova: false,
+    exige: 'NO CALENDÁRIO VIVO',
+    semFantasmas: true,
+    base: [
+      ...estaduais(23, CASA_CEGA, T.planoNacional),
+      nacionalPorPlano(CASA_CEGA, { protocolo: 'BR099999001', publicationDate: '2026-09-20' }),
+    ],
+  },
+  {
+    // ⚠️ O portão que NÃO PODE CALAR. Fantasma é reversível: protocolo volta ao
+    // arquivo. Conjunto de ONTEM chamaria de retirado um registro que voltou, e
+    // aí o rótulo vivo passaria em silêncio. Conjunto velho é DESCARTADO.
+    nome: '15· conjunto de fantasmas de OUTRO dia é descartado, e o portão volta a alarmar',
+    aprova: false,
+    exige: 'NÃO usado',
+    fantasmas: ['BR099999001'],
+    fantasmasQuando: '2026-09-05T12:00:00.000Z',
+    base: [
+      ...estaduais(23, CASA_CEGA, T.planoNacional),
+      nacionalPorPlano(CASA_CEGA, { protocolo: 'BR099999001', publicationDate: '2026-09-20' }),
+    ],
+  },
+  {
+    // O caso real de 19/Set/2026, com os dois graves da Real Time: um retirado
+    // naquele dia e um ainda no registro. Reprova, e a CONTA sai 1, não 2.
+    nome: '16· dois graves, um retirado e um vivo: reprova e conta 1 vivo, não 2',
+    aprova: false,
+    exige: '1 no calendário vivo',
+    fantasmas: ['BR099999001'],
+    base: [
+      ...estaduais(23, CASA_CEGA, T.planoNacional),
+      nacionalPorPlano(CASA_CEGA, { protocolo: 'BR099999001', publicationDate: '2026-09-20' }),
+      nacionalPorPlano(CASA_CEGA, { protocolo: 'BR099999002', publicationDate: '2026-09-21' }),
+    ],
+  },
 ]
 
 const dir = mkdtempSync(join(tmpdir(), 'afos-escopo-'))
@@ -222,10 +283,32 @@ for (const caso of CASOS) {
   const alvo = join(dir, 'base.json')
   writeFileSync(alvo, JSON.stringify({ data: caso.base }), 'utf8')
 
+  // O conjunto de fantasmas entra por arquivo, porque o teste roda o SCRIPT.
+  // Sem `fantasmas` nem `semFantasmas`, o caso não passa a bandeira e o script
+  // lê o arquivo do projeto, que num caso plantado não tem nenhum destes
+  // protocolos: é o mesmo efeito de conjunto vazio, e os 12 casos antigos
+  // seguem medindo o que sempre mediram.
+  const extras = []
+  if (caso.semFantasmas) {
+    extras.push('--sem-fantasmas')
+  } else if (caso.fantasmas) {
+    const ghosts = join(dir, 'fantasmas.jsonl')
+    writeFileSync(
+      ghosts,
+      JSON.stringify({
+        quando: caso.fantasmasQuando ?? `${HOJE}T12:00:00.000Z`,
+        total: caso.fantasmas.length,
+        protocolos: caso.fantasmas,
+      }) + '\n',
+      'utf8',
+    )
+    extras.push(`--fantasmas=${ghosts}`)
+  }
+
   let saida = ''
   let codigo = 0
   try {
-    saida = execFileSync('node', [PORTAO, `--arquivo=${alvo}`, `--hoje=${HOJE}`], {
+    saida = execFileSync('node', [PORTAO, `--arquivo=${alvo}`, `--hoje=${HOJE}`, ...extras], {
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'pipe'],
     })
@@ -272,7 +355,42 @@ for (const caso of LEITURAS) {
   console.log(`${ok ? '✅' : '❌'} ${caso.nome}${ok ? '' : `  → código ${codigo}`}`)
   if (!ok) falhas++
 }
-const TOTAL = CASOS.length + LEITURAS.length
+// 🕳️ ANTI-SILÊNCIO DE TIPO, na função pura. Um Array de protocolos passado no
+// lugar do Set não explodiria: `instanceof Set` daria falso e o conjunto sumiria
+// CALADO, devolvendo exatamente o comportamento antigo com a aparência do novo.
+// É o defeito voltando pela porta dos fundos, e ele tem de gritar.
+const TIPOS = [
+  { nome: 'Array de protocolos no lugar de Set EXPLODE, não some calado', valor: ['BR099999001'] },
+  { nome: 'objeto qualquer no lugar de Set EXPLODE', valor: { has: () => true } },
+  { nome: 'string no lugar de Set EXPLODE', valor: 'BR099999001' },
+]
+for (const t of TIPOS) {
+  let lancou = false
+  try {
+    conferirEscopoDerivado([], { hoje: HOJE, fantasmas: t.valor })
+  } catch {
+    lancou = true
+  }
+  console.log(`${lancou ? '✅' : '❌'} ${t.nome}`)
+  if (!lancou) falhas++
+}
+// E os dois valores que querem dizer DESCONHECIDO seguem aceitos, senão o
+// anti-silêncio viraria um portão que não deixa ninguém passar.
+for (const [nome, valor] of [
+  ['null é DESCONHECIDO e passa', null],
+  ['ausente é DESCONHECIDO e passa', undefined],
+]) {
+  let ok = true
+  try {
+    conferirEscopoDerivado([], { hoje: HOJE, fantasmas: valor })
+  } catch {
+    ok = false
+  }
+  console.log(`${ok ? '✅' : '❌'} ${nome}`)
+  if (!ok) falhas++
+}
+
+const TOTAL = CASOS.length + LEITURAS.length + TIPOS.length + 2
 
 rmSync(dir, { recursive: true, force: true })
 
