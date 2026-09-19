@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-18",
-  "fetchedAt": "2026-09-18T23:32:09.173Z",
+  "lastUpdate": "2026-09-17",
+  "fetchedAt": "2026-09-17T19:20:13.497Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -114,107 +114,107 @@
   ],
   "qualidade": {
     "lidos": 195,
-    "naLista": 79,
-    "foraDaLista": 116,
+    "naLista": 90,
+    "foraDaLista": 105,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 32,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 23,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 28,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 39,
+    "publicadosComLinkCanonico": 9,
+    "publicadosViaGoogleNews": 1,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Unsealed FBI interviews reveal Obama, Emanuel's discussions about Blagojevich Senate seat deal",
-      "url": "https://www.foxnews.com/politics/unsealed-fbi-interviews-reveal-obama-emanuel-discussions-about-blagojevich-senate-seat-deal",
+      "titulo": "Democratic candidates hold narrow leads in Texas and Michigan US Senate races, new poll shows – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/sep/17/donald-trump-democrats-republicans-russia-sanctions-us-politics-latest-news",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-17T19:09:25.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "America’s hunters get an exclusive seat at Trump’s White House table as he takes aim at Biden-era rules",
+      "url": "https://www.foxnews.com/politics/americas-hunters-get-exclusive-seat-trumps-white-house-table-he-takes-aim-biden-era-rules",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-18T22:07:39.000Z",
+      "publicadoEm": "2026-09-17T18:58:16.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Black congressional leaders endorse James Talarico in Texas Senate race",
-      "url": "https://www.washingtonpost.com/politics/2026/09/18/black-congressional-leaders-endorse-james-talarico-texas-senate-race/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-18T21:30:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "USPS made mail slower to cut costs. Midterm ballots will test the system.",
-      "url": "https://www.axios.com/2026/09/18/usps-slow-mail-cost-cuts-performance",
-      "casa": "Axios",
-      "publicadoEm": "2026-09-18T21:18:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Kansas Democratic Senate candidate: VP Vance attacks on faith are a sign of ‘desperation’",
-      "url": "https://www.nbcnews.com/meet-the-press/video/kansas-democratic-senate-candidate-vp-vance-attacks-on-faith-are-a-sign-of-desperation-270129733624",
+      "titulo": "White House withdraws Trump’s nominee to lead ICE",
+      "url": "https://www.nbcnews.com/politics/immigration/white-house-withdraws-trumps-nominee-lead-ice-rcna598386",
       "casa": "NBC News",
-      "publicadoEm": "2026-09-18T20:55:42.000Z",
+      "publicadoEm": "2026-09-17T18:29:19.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Tracking Competitive Races in the House and Senate",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQZ0ZhWGZlU2pYdmYwbk9SNk9JMWd6aTN1SjNudktsVkFoWEt3T3FJR1RjTC1ZU3Q3YU9ReTV0WUJJQkdDOWpzTWJ1X0liWk91MlpFdmxvX2F2THY3VnBVRDlRQlZFY19fYjRrZDQ1UlN6TGRueERkdmNIQkVveEZHMjd3eFVlM0VFWVN6WDEzcFBDSzdt?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-18T19:56:46.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "These midterm polls caught our attention this week. They’re good for Democrats.",
-      "url": "https://www.washingtonpost.com/politics/2026/09/18/these-midterm-polls-caught-our-attention-this-week-theyre-good-democrats/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-18T18:20:00.000Z",
+      "titulo": "White House pulls ICE nominee who drew MAGA pushback",
+      "url": "https://www.axios.com/2026/09/17/white-house-pulls-lance-schroyer-ice-nominee",
+      "casa": "Axios",
+      "publicadoEm": "2026-09-17T17:59:54.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Who will control the Senate? New polls show tight races",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNV2FZOHpQTGp6VjZvc05kblNNb2VoYjhlaUlSSTdZZlZOYS1VNUhsQm5Sd0pWemVHbTRkWDZRVkVHTWYyOWxhN3lsOVZ4QnlxaEpHcmwzZXFFOHM4bko3QUN4djlOMkNwaS1pT0JvWEktTjJDdTNOVXJCQ0liUzBwcTllZzBOaVoxT2s2YlNtMUpuTUQ0bk85SzFiVGJtemxWa3hDZ1BpcnlpU1gxZ0g5WGVmcy1XMXdh?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-09-18T17:29:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "James Talarico, Seeking Black Votes in Texas Senate Rate, Wins Crucial Endorsement",
-      "url": "https://www.nytimes.com/2026/09/18/us/politics/james-talarico-texas-senate-congressional-black-caucus.html",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-18T17:18:59.000Z",
+      "titulo": "White House withdraws ICE director nominee Richard Schroyer",
+      "url": "https://www.cbsnews.com/news/richard-schroyer-ice-nominee-white-house-withdraws-nomination/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-17T17:29:59.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "‘COVID 2.0’: Lawmakers push back on sweeping health 'police power' in key battleground state",
-      "url": "https://www.foxnews.com/politics/covid-2-0-lawmakers-push-back-sweeping-health-police-power-key-battleground-state",
+      "titulo": "Appeals court weighs Missouri congressional map despite Supreme Court block",
+      "url": "https://abcnews.com/Politics/wireStory/appeals-court-weighs-trump-backed-missouri-congressional-map-136534521",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-17T17:16:51.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Political insider turns anti-incumbent table on 8-year Dem in key Senate race: 'Hasn't delivered'",
+      "url": "https://www.foxnews.com/politics/political-insider-turns-anti-incumbent-table-8-year-dem-key-senate-race-hasnt-delivered",
       "casa": "Fox News",
-      "publicadoEm": "2026-09-18T16:45:12.000Z",
+      "publicadoEm": "2026-09-17T14:42:25.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "GOP faces reality check as they try to hold on to House majority",
-      "url": "https://www.newsnationnow.com/politics/gop-faces-reality-check-as-they-try-to-hold-onto-house-majority/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-18T12:17:52.000Z",
+      "titulo": "Trump approval rating slides to new second-term low in latest poll",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRlg1NmU0Y181a1V5V00zYU8wLVVKTE4tWHBuMXhubTRKSkJpRXZ3dnYxOF85eVdKTWJLY3JvV1BfXzRiSlNXcDE0MmVnbFpMVEFvN3RoakhkQk9JQVdhcU52TFc3UjJIcDRGTnV6RXdJa09DZ3RTM0hTcmJmSkptcTlLWEkyc2I3QTFpN0oxeFFIa09aMVNMN0JWd2RoRDJMd3BWWHFxRDhQOTQ1NFpVRzhOc2xKMXNNYWlWMXVmaFJFa0RDSU1IQ2Rn?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-17T14:05:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House cutting week short before adjourning until after midterms",
+      "url": "https://www.cbsnews.com/news/house-cancels-votes-adjourning-midterms/",
+      "casa": "CBS News",
+      "publicadoEm": "2026-09-17T13:37:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Who Will Win the Midterms? Republicans Are Reeling.",
+      "url": "https://www.nytimes.com/2026/09/17/us/politics/midterms-map-republicans-democrats.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-17T12:23:24.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
