@@ -31,6 +31,7 @@
  *   node scripts/agregador-na-fonte-us.mjs --dias=30
  */
 import { readFileSync } from 'fs'
+import { pathToFileURL } from 'url'
 
 export const CHAVE_GENERIC_BALLOT = '79287655-1e6e-4a3a-9ca3-13883c9a7496'
 export const BASE_LIVE = 'https://live-data.jifo.co/'
@@ -67,8 +68,18 @@ export function lerRotulo(txt) {
   // fica só para exibição.
   const casa = resto.split(/\s*\(|,/)[0].trim()
   const casaCompleta = resto.split(',')[0].trim()
-  const amostra = (resto.match(/([\d,]{3,7})\s*(LV|RV|A)\b/i) || [])[1]?.replace(/,/g, '') ?? null
-  const recorte = (resto.match(/\b(LV|RV|A)\b/i) || [])[1]?.toUpperCase() ?? null
+  // 🔴 O recorte sai do MESMO casamento que a amostra, e isso não é elegância:
+  //    o rótulo traz a NOTA da casa entre parênteses, e "(A+)" casa com `\bA\b`
+  //    porque "(" e "+" não são caractere de palavra. Medido em 19/Set/2026: a
+  //    NYT/Siena, que é "1503 LV", saía como recorte **A**, e a Quinnipiac, que
+  //    é "970 RV", também. Nota A+ ou A- em qualquer casa produzia o mesmo erro.
+  //    Ele não muda o CASAMENTO, que é por casa e data, então passa calado no
+  //    veredito e só aparece na linha que alguém vai transcrever à mão.
+  const comAmostra = resto.match(/([\d,]{3,7})\s*(LV|RV|A)\b/i)
+  const amostra = comAmostra?.[1]?.replace(/,/g, '') ?? null
+  // Sem amostra no rótulo não há âncora, e aí a varredura solta é o que sobra:
+  // ela vale menos, e por isso só roda nesse caso.
+  const recorte = (comAmostra?.[2] ?? (resto.match(/\b(LV|RV|A)\b/i) || [])[1])?.toUpperCase() ?? null
   return {
     campoFim: `2026-${String(mesFim).padStart(2, '0')}-${String(diaFim).padStart(2, '0')}`,
     casa,
@@ -187,7 +198,15 @@ async function main() {
 
 }
 
-main().catch((e) => {
-  console.error(`❌ NAO MEDIU: ${e?.message ?? e}`)
-  process.exit(1)
-})
+// ⚠️ Só roda quando CHAMADO, nunca quando importado: o teste importa `lerRotulo`
+//    daqui, e sem esta guarda importar o módulo dispararia a leitura na rede e a
+//    impressão do relatório inteiro no meio da saída do teste. Foi o que
+//    aconteceu em 19/Set/2026, e um teste que sai à internet para rodar não
+//    serve para CI.
+const chamadoDireto = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href
+if (chamadoDireto) {
+  main().catch((e) => {
+    console.error(`❌ NAO MEDIU: ${e?.message ?? e}`)
+    process.exit(1)
+  })
+}
