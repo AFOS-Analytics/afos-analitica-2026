@@ -82,5 +82,27 @@ eq(CHAVE_GENERIC_BALLOT, '79287655-1e6e-4a3a-9ca3-13883c9a7496', 'chave do grafi
 eq(BASE_LIVE, 'https://live-data.jifo.co/', 'base do live-data')
 eq(Array.isArray(APELIDOS), true, 'APELIDOS e tabela explicita')
 
+// ── APELIDOS: apelido que falta vira buraco que NAO existe ───────────────────
+// 🔴 Em 20/Set/2026 o conferidor imprimiu Focaldata, UMass Amherst e McLaughlin
+//    como faltando LOGO DEPOIS de eu as ingerir, porque o rotulo delas nao
+//    estava na tabela, e ainda dizia "a casa NAO tem UMA linha no arquivo".
+//    Falso buraco manda cacar de novo o que acabou de ser escrito.
+const apelidar = (casa) => (APELIDOS.find(([re]) => re.test(casa)) || [null, casa])[1]
+
+eq(apelidar('Focaldata (B-)'), 'Focaldata/Financial Times', 'Focaldata casa com o nome do indice')
+eq(apelidar('McLaughlin (D)'), 'McLaughlin & Associates (R)', 'McLaughlin: a letra do agregador nao decide o nome')
+eq(apelidar('Yougov (Amherst) (B+)'), 'UMass Amherst/YouGov', 'YouGov Amherst')
+eq(apelidar('YouGov (BGSU) (B+)'), 'BGSU/YouGov', 'YouGov BGSU')
+
+// ⛔ E as YouGov de universidade NAO podem colidir entre si nem com as de
+//    midia: fundir series de instituicoes distintas e pior que nao casar
+//    nenhuma. Amherst e Lowell sao a mesma UNIVERSIDADE ESTADUAL e campi
+//    diferentes, com pesquisas diferentes, e e o par mais facil de fundir.
+const distintos = ['Yougov (Amherst) (B+)', 'YouGov (BGSU) (B+)', 'UMass Lowell', 'YouGov (CBS)', 'YouGov (Economist)'].map(
+  apelidar
+)
+eq(new Set(distintos).size, 5, 'as 5 YouGov de instituicoes diferentes continuam 5 nomes diferentes')
+eq(apelidar('UMass Lowell'), 'UMass Lowell/YouGov', 'Lowell NAO vira Amherst')
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)

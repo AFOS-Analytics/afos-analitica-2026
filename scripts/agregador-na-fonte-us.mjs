@@ -90,8 +90,32 @@ export function lerRotulo(txt) {
   }
 }
 
-/** Nome do agregador → nome no nosso índice. Tabela EXPLÍCITA, nunca por semelhança. */
+/**
+ * Nome do agregador → nome no nosso índice. Tabela EXPLÍCITA, nunca por semelhança.
+ *
+ * 🔴 APELIDO QUE FALTA VIRA BURACO QUE NÃO EXISTE, medido em 20/Set/2026: logo
+ *    depois de ingerir Focaldata, UMass Amherst e McLaughlin, o conferidor ainda
+ *    imprimia as três como faltando e ainda por cima com "🔴 a casa NAO tem UMA
+ *    linha no arquivo", porque o rótulo delas não estava aqui. Era mandar
+ *    caçar de novo rodada que eu acabara de escrever.
+ *
+ * ⚠️ E as duas YouGov de universidade são casas DIFERENTES entre si: UMass
+ *    Amherst e UMass Lowell não se fundem, e BGSU é uma terceira. Um apelido
+ *    frouxo aqui juntaria séries de instituições distintas.
+ *
+ * 📌 A ordem importa, porque a busca é `find`: o primeiro padrão que casar
+ *    vence. Os qualificadores de universidade vêm ANTES das regras genéricas
+ *    da YouGov por isso.
+ */
 export const APELIDOS = [
+  [/amherst/i, 'UMass Amherst/YouGov'],
+  [/lowell/i, 'UMass Lowell/YouGov'],
+  [/bgsu|bowling green/i, 'BGSU/YouGov'],
+  [/focaldata/i, 'Focaldata/Financial Times'],
+  // ⚠️ O agregador rotula esta casa como "McLaughlin (D)". O nosso índice a
+  //    grava como "(R)" nas 6 linhas que já tem, e McLaughlin & Associates é
+  //    casa republicana. A letra do agregador não é autoridade sobre isso.
+  [/mclaughlin/i, 'McLaughlin & Associates (R)'],
   [/zogby/i, 'John Zogby Strategies'],
   [/rmg research|napolitan/i, 'Napolitan News/RMG Research'],
   [/rainey/i, 'The Rainey Center'],
