@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T02:54:00.103Z",
+  "fetchedAt": "2026-09-20T03:05:55.183Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,15 +19,19 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 17,
+      "quantas": 27,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
         "Cygnal (R)",
+        "Focaldata/Financial Times",
         "Fox News",
         "Marquette Law School",
+        "McLaughlin & Associates (R)",
         "Quantus Insights (R)",
         "Reuters/Ipsos",
-        "The Economist/YouGov"
+        "The Economist/YouGov",
+        "The Honest Poll",
+        "UMass Amherst/YouGov"
       ],
       "decididoEm": {
         "The Economist/YouGov": "2026-09-04",
@@ -43,7 +47,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-21",
-    "nPesquisas": 16,
+    "nPesquisas": 21,
     "incluidas": [
       {
         "instituto": "John Zogby Strategies",
@@ -88,6 +92,13 @@
         "rep": 42
       },
       {
+        "instituto": "The Honest Poll",
+        "campoFim": "2026-09-13",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 42
+      },
+      {
         "instituto": "CBS News/YouGov",
         "campoFim": "2026-09-11",
         "amostraTipo": "LV",
@@ -114,6 +125,20 @@
         "amostraTipo": "LV",
         "dem": 51,
         "rep": 42
+      },
+      {
+        "instituto": "Focaldata/Financial Times",
+        "campoFim": "2026-09-02",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 45
+      },
+      {
+        "instituto": "The Honest Poll",
+        "campoFim": "2026-09-01",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 41
       },
       {
         "instituto": "Reuters/Ipsos",
@@ -144,6 +169,20 @@
         "rep": 42.8
       },
       {
+        "instituto": "UMass Amherst/YouGov",
+        "campoFim": "2026-08-26",
+        "amostraTipo": "A",
+        "dem": 40,
+        "rep": 33
+      },
+      {
+        "instituto": "McLaughlin & Associates (R)",
+        "campoFim": "2026-08-24",
+        "amostraTipo": "LV",
+        "dem": 48,
+        "rep": 43
+      },
+      {
         "instituto": "Reuters/Ipsos",
         "campoFim": "2026-08-24",
         "amostraTipo": "RV",
@@ -158,37 +197,41 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 13,
-    "dem": 48.17,
-    "rep": 41.05,
-    "vantagemDem": 7.12,
+    "nInstitutos": 17,
+    "dem": 48.27,
+    "rep": 40.99,
+    "vantagemDem": 7.28,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll/Public Polling Project",
       "CBS News/YouGov",
       "Catawba College/YouGov",
       "Cygnal (R)",
+      "Focaldata/Financial Times",
       "Fox News",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
       "Marquette Law School",
+      "McLaughlin & Associates (R)",
       "Napolitan News/RMG Research",
       "Quantus Insights (R)",
       "Reuters/Ipsos",
       "The Economist/YouGov",
-      "The Rainey Center"
+      "The Honest Poll",
+      "The Rainey Center",
+      "UMass Amherst/YouGov"
     ]
   },
   "qualidade": {
     "linhasLidas": 390,
-    "publicadas": 407,
+    "publicadas": 417,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 390,
-    "curadas": 17,
+    "curadas": 27,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -342,6 +385,44 @@
       "origem": "listagem-do-instituto"
     },
     {
+      "instituto": "The Honest Poll",
+      "campoInicio": "2026-09-07",
+      "campoFim": "2026-09-13",
+      "amostra": 1392,
+      "amostraTipo": "LV",
+      "margemErro": 2.8,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://cdn.prod.website-files.com/69dee02bd9a8213e6f823267/6aaac14674387a521054c14e_Veteran%20Action%20September%202026%20TCAVA%20Full%20Toplines.pdf",
+      "opcoes": {
+        "outroCandidato": 3,
+        "naoSabe": 4
+      },
+      "notas": "Q8 de pesquisa patrocinada sobre veteranos. n ponderado 1429.",
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "The Honest Poll",
+      "campoInicio": "2026-09-07",
+      "campoFim": "2026-09-13",
+      "amostra": 1633,
+      "amostraTipo": "RV",
+      "margemErro": 2.6,
+      "dem": 50,
+      "rep": 40,
+      "outros": 10,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://cdn.prod.website-files.com/69dee02bd9a8213e6f823267/6aaac14674387a521054c14e_Veteran%20Action%20September%202026%20TCAVA%20Full%20Toplines.pdf",
+      "opcoes": {
+        "outroCandidato": 3,
+        "naoSabe": 7
+      },
+      "notas": "Q8 de pesquisa patrocinada sobre veteranos.",
+      "origem": "listagem-do-instituto"
+    },
+    {
       "instituto": "CBS News/YouGov",
       "campoInicio": "2026-09-08",
       "campoFim": "2026-09-11",
@@ -435,6 +516,123 @@
       "opcoes": {
         "complementoNaoLido": 7
       },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-09-02",
+      "amostra": 1837,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 45,
+      "outros": 3,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
+      "opcoes": {
+        "outro": 3,
+        "naoVotara": 0
+      },
+      "notas": "Pos-squeeze, cru D 51,98 x R 44,92 x outro 3,10.",
+      "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-09-02",
+      "amostra": 1914,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 49,
+      "rep": 42,
+      "outros": 9,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
+      "opcoes": {
+        "outro": 4,
+        "naoVotara": 5
+      },
+      "notas": "Pos-squeeze, cru D 48,72 x R 42,26.",
+      "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-09-02",
+      "amostra": 2180,
+      "amostraTipo": "A",
+      "margemErro": null,
+      "dem": 46,
+      "rep": 41,
+      "outros": 13,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
+      "opcoes": {
+        "outro": 4,
+        "naoVotara": 9
+      },
+      "notas": "Pos-squeeze, cru D 46,33 x R 40,55. A aba Info declara 2178 adultos.",
+      "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "The Honest Poll",
+      "campoInicio": "2026-08-29",
+      "campoFim": "2026-09-01",
+      "amostra": 783,
+      "amostraTipo": "LV",
+      "margemErro": 3.8,
+      "dem": 52,
+      "rep": 41,
+      "outros": 7,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://cdn.prod.website-files.com/69dee02bd9a8213e6f823267/6a9b4ff8d7e29e1d65b43064_September%20Tracking%202026%20Toplines.pdf",
+      "opcoes": {
+        "outroCandidato": 2,
+        "naoSabe": 5
+      },
+      "notas": "Q4 Leaned GCB: D 53 x R 43, outro 2, nao sabe 2. n ponderado 812.",
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "The Honest Poll",
+      "campoInicio": "2026-08-29",
+      "campoFim": "2026-09-01",
+      "amostra": 951,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 50,
+      "rep": 40,
+      "outros": 10,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://cdn.prod.website-files.com/69dee02bd9a8213e6f823267/6a9b4ff8d7e29e1d65b43064_September%20Tracking%202026%20Toplines.pdf",
+      "opcoes": {
+        "outroCandidato": 3,
+        "naoSabe": 7
+      },
+      "notas": "Q4 Leaned GCB: D 51 x R 41, outro 3, nao sabe 4.",
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "The Honest Poll",
+      "campoInicio": "2026-08-29",
+      "campoFim": "2026-09-01",
+      "amostra": 1106,
+      "amostraTipo": "A",
+      "margemErro": 3.2,
+      "dem": 47,
+      "rep": 38,
+      "outros": 15,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://cdn.prod.website-files.com/69dee02bd9a8213e6f823267/6a9b4ff8d7e29e1d65b43064_September%20Tracking%202026%20Toplines.pdf",
+      "opcoes": {
+        "outroCandidato": 5,
+        "naoSabe": 10
+      },
+      "notas": "Q4 Leaned GCB: D 48 x R 40, outro 5, nao sabe 8.",
       "origem": "listagem-do-instituto"
     },
     {
@@ -563,6 +761,25 @@
       "origem": "listagem-do-instituto"
     },
     {
+      "instituto": "UMass Amherst/YouGov",
+      "campoInicio": "2026-08-21",
+      "campoFim": "2026-08-26",
+      "amostra": 1000,
+      "amostraTipo": "A",
+      "margemErro": 3.5,
+      "dem": 40,
+      "rep": 33,
+      "outros": 28,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.umass.edu/poll/sites/default/files/2026-09/August2026NationalPollMidtermCongressToplines.pdf",
+      "opcoes": {
+        "independente": 9,
+        "naoSabe": 19
+      },
+      "notas": "Coluna With Leaners: D 42 x R 34, independente 10, nao sabe 14.",
+      "origem": "listagem-do-instituto"
+    },
+    {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-08-21",
       "campoFim": "2026-08-24",
@@ -638,6 +855,25 @@
         "naoVotara": 16,
         "pulou": 1
       },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "McLaughlin & Associates (R)",
+      "campoInicio": "2026-08-18",
+      "campoFim": "2026-08-24",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 48,
+      "rep": 43,
+      "outros": 9,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/08/National-August-Presentation-RELEASE.pdf",
+      "opcoes": {
+        "indeciso": 9
+      },
+      "notas": "DEM 48 = 32 definitely + 8 probably + 7 lean; GOP 43 = 30 + 9 + 5.",
+      "comLeaners": true,
       "origem": "listagem-do-instituto"
     },
     {

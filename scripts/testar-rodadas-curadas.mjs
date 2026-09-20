@@ -43,11 +43,43 @@ const doIndice = (o = {}) => ({
   ...o,
 })
 
+/**
+ * 🔴 ESTE NÚMERO APODRECEU, e é por isso que ele mudou de forma em 20/Set/2026.
+ *
+ * A asserção era `RODADAS_CURADAS.length === 7` com a frase "3 ondas da YouGov
+ * em 2 recortes e 1 rodada da Quantus" colada nela. Toda entrada nova a deixa
+ * vermelha, e ela ficou vermelha por TRÊS commits meus seguidos, enquanto o
+ * resto do teste passava e o portão de publicação aprovava. Contador escrito
+ * como literal dentro da mensagem é contador que ninguém atualiza: a mensagem
+ * descrevia um conjunto que já não existia.
+ *
+ * ✅ O que se guarda aqui é o que o contador REALMENTE servia para pegar, que é
+ * linha sumindo sem querer. Então ele vira um piso declarado e uma trava de
+ * duplicata, e a frase descreve a REGRA e não o inventário do dia.
+ *
+ * ⚠️ O piso é PISO: ele pega remoção acidental e não estorva adição. Quem
+ * remover uma linha de propósito baixa este número no mesmo commit.
+ */
+const PISO_DE_LINHAS = 27
+
 // ── 1. Os dados escritos à mão obedecem às regras da própria casa ─────────
 
-console.log('\n📋 as 7 linhas escritas à mão\n')
+console.log(`\n📋 as ${RODADAS_CURADAS.length} linhas escritas à mão\n`)
 
-checar('são 7 linhas: 3 ondas da YouGov em 2 recortes e 1 rodada da Quantus', RODADAS_CURADAS.length === 7, `são ${RODADAS_CURADAS.length}`)
+checar(
+  `são pelo menos ${PISO_DE_LINHAS} linhas: o piso pega remoção acidental`,
+  RODADAS_CURADAS.length >= PISO_DE_LINHAS,
+  `são ${RODADAS_CURADAS.length}, e o piso é ${PISO_DE_LINHAS}`
+)
+
+// 🔴 A trava que o contador nunca foi: DUAS linhas curadas com a mesma chave são
+// a duplicação que este arquivo inteiro existe para evitar, e a deduplicação
+// contra o índice não a pega, porque ela só compara curada CONTRA índice.
+{
+  const chaves = RODADAS_CURADAS.map((p) => `${p.instituto}|${p.campoFim}|${p.amostraTipo}`)
+  const repetidas = chaves.filter((c, i) => chaves.indexOf(c) !== i)
+  checar('nenhuma curada repete instituto+campoFim+recorte', repetidas.length === 0, repetidas.join(' · '))
+}
 
 for (const p of RODADAS_CURADAS) {
   const id = `${p.campoFim} ${p.amostraTipo}`
@@ -65,6 +97,19 @@ for (const p of RODADAS_CURADAS) {
   // da Quantus, entrada em 10/Set/2026, só oferece indeciso: não tem terceira via
   // nem "não vou votar". Somar `other + naoSabe + naoVotara` ali dava NaN, e a
   // saída errada seria escrever zeros para opções que a crosstab não tem.
+  // 🔴 E ANTES DE SOMAR, conferir que dá para somar. Em 20/Set/2026 eu escrevi
+  // prosa dentro de `opcoes` (o valor com leaners, o n ponderado, o contexto da
+  // pergunta), e a soma virou concatenação de string: a conferência de
+  // transcrição parou de conferir nada e o teste morreu com stack trace, que
+  // pelo menos é barulhento. Se um dia ela concatenar em silêncio, esta linha é
+  // que segura. `opcoes` guarda SÓ a decomposição numérica de `outros`; o resto
+  // mora em `notas`.
+  const naoNumericas = Object.entries(p.opcoes).filter(([, v]) => typeof v !== 'number' || !Number.isFinite(v))
+  checar(
+    `${id}: opcoes só tem número, porque ela é a decomposição de outros`,
+    naoNumericas.length === 0,
+    naoNumericas.map(([k, v]) => `${k}=${JSON.stringify(v)}`).join(' · ')
+  )
   const somaOpcoes = Object.values(p.opcoes).reduce((a, b) => a + b, 0)
   checar(`${id}: outros (${p.outros}) = soma das opções (${somaOpcoes.toFixed(2)})`, Math.abs(p.outros - somaOpcoes) < 1e-9)
   // ⚠️ TOLERÂNCIA, e ela nasceu de um caso real: `49.7 - 42.8` dá
@@ -78,8 +123,11 @@ for (const p of RODADAS_CURADAS) {
   // relatório técnico como arquivo no Drive, sem extensão na URL, e exigir
   // `.pdf` obrigaria a citar o post no lugar da crosstab, que é a fonte mais
   // fraca das duas.
+  // ⚠️ E a Focaldata publica as tabelas como XLSX, sem PDF nenhum. Exigir `.pdf`
+  // ali obrigaria a citar o POST no lugar da tabela, que é a fonte mais fraca
+  // das duas. A regra é "aponta para o DOCUMENTO", nunca "aponta para um PDF".
   const ehDocumento =
-    /^https:\/\/.+\.pdf$/.test(p.fontePrimaria ?? '') ||
+    /^https:\/\/.+\.(pdf|xlsx?|csv)$/.test(p.fontePrimaria ?? '') ||
     /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(p.fontePrimaria ?? '')
   checar(`${id}: tem link do documento da fonte primária`, ehDocumento, String(p.fontePrimaria))
 }
@@ -90,7 +138,15 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
 
 {
   const r = mesclarCuradas([])
-  checar('índice vazio: as 7 entram', r.aceitas.length === 7 && r.duplicadas.length === 0)
+  // 📌 Contra `RODADAS_CURADAS.length`, e não contra um literal: o que se testa
+  // aqui é a PROPRIEDADE (índice vazio não descarta ninguém), e amarrá-la ao
+  // tamanho do dia deixa o teste vermelho a cada entrada nova, que foi
+  // exatamente o que aconteceu.
+  checar(
+    'índice vazio: TODAS entram',
+    r.aceitas.length === RODADAS_CURADAS.length && r.duplicadas.length === 0,
+    `aceitas=${r.aceitas.length} de ${RODADAS_CURADAS.length}, dup=${r.duplicadas.length}`
+  )
   checar('toda linha aceita vem etiquetada', r.aceitas.every((p) => p.origem === ORIGEM_CURADA))
 }
 
@@ -98,8 +154,8 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
   const indice = [doIndice({ instituto: 'The Economist/YouGov', campoInicio: '2026-08-14', campoFim: '2026-08-17', amostraTipo: 'RV' })]
   const r = mesclarCuradas(indice)
   checar(
-    'índice já tem UMA onda no mesmo recorte: aquela é descartada, as outras 6 entram',
-    r.duplicadas.length === 1 && r.aceitas.length === 6,
+    'índice já tem UMA onda no mesmo recorte: aquela é descartada, as outras entram',
+    r.duplicadas.length === 1 && r.aceitas.length === RODADAS_CURADAS.length - 1,
     `dup=${r.duplicadas.length} aceitas=${r.aceitas.length}`
   )
   checar('a linha do índice é preservada e etiquetada', r.pesquisas.some((p) => p.origem === ORIGEM_INDICE))
@@ -123,10 +179,14 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
   const r = mesclarCuradas(indice)
   checar(
     '⭐ índice alcançou TODAS: nenhuma curada entra, a curadoria se aposenta sozinha',
-    r.aceitas.length === 0 && r.duplicadas.length === 7,
-    `aceitas=${r.aceitas.length} dup=${r.duplicadas.length}`
+    r.aceitas.length === 0 && r.duplicadas.length === RODADAS_CURADAS.length,
+    `aceitas=${r.aceitas.length} dup=${r.duplicadas.length} de ${RODADAS_CURADAS.length}`
   )
-  checar('e o total servido não infla', r.pesquisas.length === 7)
+  checar(
+    'e o total servido não infla',
+    r.pesquisas.length === RODADAS_CURADAS.length,
+    `servidas=${r.pesquisas.length} de ${RODADAS_CURADAS.length}`
+  )
 }
 
 {
