@@ -62,7 +62,7 @@ const soPortao = Boolean(arquivoAlvo)
 const passos = [
   {
     id: 'coletar',
-    titulo: `1/8 · COLETA — escreve ${ARQUIVO}`,
+    titulo: `1/9 · COLETA — escreve ${ARQUIVO}`,
     script: 'scripts/parse-us-generic-ballot.mjs',
     args: dias ? [`--dias=${dias}`] : [],
     pular: semColeta,
@@ -70,14 +70,14 @@ const passos = [
   },
   {
     id: 'conferir',
-    titulo: '2/8 · PORTÃO — colapso, contaminação e atribuição da variação',
+    titulo: '2/9 · PORTÃO — colapso, contaminação e atribuição da variação',
     script: 'scripts/conferir-us-polls.mjs',
     args: argsPortao,
     bloqueante: true,
   },
   {
     id: 'projetar',
-    titulo: '3/8 · PROJEÇÃO — o futuro da janela, se nada entrar  [USO INTERNO]',
+    titulo: '3/9 · PROJEÇÃO — o futuro da janela, se nada entrar  [USO INTERNO]',
     script: 'scripts/projetar-janela-us.mjs',
     args: [],
     pular: soPortao,
@@ -85,15 +85,23 @@ const passos = [
   },
   {
     id: 'historico',
-    titulo: '4/8 · SÉRIE NO NEON — e se o registro de hoje é do cron',
+    titulo: '4/9 · SÉRIE NO NEON — e se o registro de hoje é do cron',
     script: 'scripts/historico-us-polls.mjs',
     args: [],
     pular: soPortao,
     motivoPulo: '--arquivo (alvo isolado)',
   },
   {
+    id: 'congelamento',
+    titulo: '5/9 · CONGELAMENTO DO CAMPO — o travamento de hoje é longo?  [USO INTERNO]',
+    script: 'scripts/congelamento-do-campo-us.mjs',
+    args: [],
+    pular: soPortao,
+    motivoPulo: '--arquivo (alvo isolado)',
+  },
+  {
     id: 'defasagem',
-    titulo: '5/8 · DEFASAGEM — o instituto publicou algo que o índice não tem?',
+    titulo: '6/9 · DEFASAGEM — o instituto publicou algo que o índice não tem?',
     script: 'scripts/check-us-polls-defasagem.mjs',
     args: [],
     pular: semRede || soPortao,
@@ -101,7 +109,7 @@ const passos = [
   },
   {
     id: 'mundo',
-    titulo: '6/8 · ÍNDICE x MUNDO — os agregadores declaram campo depois da nossa base?  [USO INTERNO]',
+    titulo: '7/9 · ÍNDICE x MUNDO — os agregadores declaram campo depois da nossa base?  [USO INTERNO]',
     script: 'scripts/agregadores-us-polls.mjs',
     args: [],
     pular: semRede || soPortao,
@@ -109,7 +117,7 @@ const passos = [
   },
   {
     id: 'ruido',
-    titulo: '7/8 · RUÍDO DA JANELA — a mecânica alcança o movimento observado?  [USO INTERNO]',
+    titulo: '8/9 · RUÍDO DA JANELA — a mecânica alcança o movimento observado?  [USO INTERNO]',
     script: 'scripts/ruido-da-janela-us.mjs',
     args: [],
     pular: soPortao,
@@ -117,7 +125,7 @@ const passos = [
   },
   {
     id: 'recorte',
-    titulo: '8/8 · EFEITO DO RECORTE — o preço da hierarquia LV > RV > A  [USO INTERNO]',
+    titulo: '9/9 · EFEITO DO RECORTE — o preço da hierarquia LV > RV > A  [USO INTERNO]',
     script: 'scripts/efeito-do-recorte-us.mjs',
     args: [],
     pular: soPortao,

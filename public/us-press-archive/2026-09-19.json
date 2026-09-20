@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T01:44:24.031Z",
+  "lastUpdate": "2026-09-19",
+  "fetchedAt": "2026-09-19T19:20:13.379Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,47 +113,29 @@
     }
   ],
   "qualidade": {
-    "lidos": 187,
-    "naLista": 77,
-    "foraDaLista": 110,
+    "lidos": 183,
+    "naLista": 39,
+    "foraDaLista": 144,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 27,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 0,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 27,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 25,
+    "publicadosComLinkCanonico": 9,
+    "publicadosViaGoogleNews": 1,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "Trump's MAGA Inc. funnels another $5 million into Texas Senate race",
-      "url": "https://thehill.com/homenews/campaign/6100079-trumps-maga-inc-funnels-another-5-million-into-texas-senate-race/",
+      "titulo": "Ohio governor, Senate races nearly tied: Poll",
+      "url": "https://thehill.com/homenews/campaign/6099939-ohio-polls-democrats-lead/",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-19T23:53:16.000Z",
+      "publicadoEm": "2026-09-19T18:57:39.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Sunday Shows Preview: Trump bans 3 media outlets from White House; Parties make final cases as midterms approach",
-      "url": "https://thehill.com/homenews/sunday-talk-shows/6100005-sunday-shows-trump-press-ban/",
-      "casa": "The Hill",
-      "publicadoEm": "2026-09-19T21:20:13.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "New poll signals movement in Talarico vs Paxton Texas Senate race",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbWJqR3dlVS11QlZPb29Vb29HVmlGdjFXal9DbUUyXzhDUnVNZEVNejktUUlvdmZsRGVmMlo5VzVhdXBfQms2dDJValllUHFDOW1sYlFvdWxRUHNYaVltUkVxVG9OeDZrVmRBWTBqTkpTQzB0VDB3OFcyV0ZXUk1PbnMxNENmOXAtTEM4dlJBa2VDMl9IZ3NSRXZTYmRKU1NBOGg0VDBWdlFjUXlmbHJz?oc=5",
-      "casa": "USA Today",
-      "publicadoEm": "2026-09-19T13:51:00.000Z",
-      "consulta": "senate-races",
-      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -217,6 +199,24 @@
       "publicadoEm": "2026-09-19T00:22:56.000Z",
       "consulta": "midterms",
       "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Vance calls midterms a referendum on ‘common sense versus pure unadulterated crazy'",
+      "url": "https://www.foxnews.com/politics/vance-calls-midterms-referendum-common-sense-versus-pure-unadulterated-crazy",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-18T23:26:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "USPS made mail slower to cut costs. Midterm ballots will test the system.",
+      "url": "https://www.axios.com/2026/09/18/usps-slow-mail-cost-cuts-performance",
+      "casa": "Axios",
+      "publicadoEm": "2026-09-18T21:18:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
       "trilho": "disputa"
     }
   ]
