@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T02:38:53.696Z",
+  "fetchedAt": "2026-09-20T02:45:23.297Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,9 +19,11 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 9,
+      "quantas": 11,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
+        "Cygnal (R)",
+        "Fox News",
         "Marquette Law School",
         "Quantus Insights (R)",
         "The Economist/YouGov"
@@ -40,7 +42,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-21",
-    "nPesquisas": 11,
+    "nPesquisas": 13,
     "incluidas": [
       {
         "instituto": "John Zogby Strategies",
@@ -62,6 +64,13 @@
         "amostraTipo": "RV",
         "dem": 51,
         "rep": 43
+      },
+      {
+        "instituto": "Fox News",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "RV",
+        "dem": 51,
+        "rep": 44
       },
       {
         "instituto": "The Rainey Center",
@@ -92,6 +101,13 @@
         "rep": 41
       },
       {
+        "instituto": "Cygnal (R)",
+        "campoFim": "2026-09-02",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 42
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoFim": "2026-08-31",
         "amostraTipo": "RV",
@@ -120,15 +136,17 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 10,
-    "dem": 49.15,
-    "rep": 41.89,
-    "vantagemDem": 7.26,
+    "nInstitutos": 12,
+    "dem": 49.44,
+    "rep": 42.06,
+    "vantagemDem": 7.38,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll/Public Polling Project",
       "CBS News/YouGov",
       "Catawba College/YouGov",
+      "Cygnal (R)",
+      "Fox News",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
       "Marquette Law School",
@@ -140,14 +158,14 @@
   },
   "qualidade": {
     "linhasLidas": 390,
-    "publicadas": 399,
+    "publicadas": 401,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 390,
-    "curadas": 9,
+    "curadas": 11,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -242,6 +260,25 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Fox News",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1211,
+      "amostraTipo": "RV",
+      "margemErro": 3,
+      "dem": 51,
+      "rep": 44,
+      "outros": 4,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://static.foxnews.com/foxnews.com/content/uploads/2026/09/fox_september-11-14-2026_national_topline_september-16-release-1.pdf",
+      "opcoes": {
+        "other": 0,
+        "naoSabe": 4
+      },
+      "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
       "instituto": "CBS News/YouGov",
       "campoInicio": "2026-09-08",
       "campoFim": "2026-09-11",
@@ -317,6 +354,23 @@
       "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC35/MLSPSC35PressRelease_NationalTopics.pdf",
       "opcoes": {
         "neither": 7
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Cygnal (R)",
+      "campoInicio": "2026-09-01",
+      "campoFim": "2026-09-02",
+      "amostra": 1500,
+      "amostraTipo": "LV",
+      "margemErro": 2.53,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/09/24524-Cygnal-National-Sept26-NVT-Deck-Public-1.pdf",
+      "opcoes": {
+        "complementoNaoLido": 7
       },
       "origem": "listagem-do-instituto"
     },
