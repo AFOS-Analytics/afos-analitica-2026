@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T01:37:27.434Z",
+  "fetchedAt": "2026-09-20T02:38:53.696Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,9 +19,10 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 7,
+      "quantas": 9,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
+        "Marquette Law School",
         "Quantus Insights (R)",
         "The Economist/YouGov"
       ],
@@ -39,7 +40,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-21",
-    "nPesquisas": 10,
+    "nPesquisas": 11,
     "incluidas": [
       {
         "instituto": "John Zogby Strategies",
@@ -84,6 +85,13 @@
         "rep": 38
       },
       {
+        "instituto": "Marquette Law School",
+        "campoFim": "2026-09-09",
+        "amostraTipo": "LV",
+        "dem": 54,
+        "rep": 41
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoFim": "2026-08-31",
         "amostraTipo": "RV",
@@ -112,10 +120,10 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 9,
-    "dem": 48.67,
-    "rep": 41.98,
-    "vantagemDem": 6.69,
+    "nInstitutos": 10,
+    "dem": 49.15,
+    "rep": 41.89,
+    "vantagemDem": 7.26,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll/Public Polling Project",
@@ -123,6 +131,7 @@
       "Catawba College/YouGov",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
+      "Marquette Law School",
       "Napolitan News/RMG Research",
       "Quantus Insights (R)",
       "The Economist/YouGov",
@@ -131,14 +140,14 @@
   },
   "qualidade": {
     "linhasLidas": 390,
-    "publicadas": 397,
+    "publicadas": 399,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 390,
-    "curadas": 7,
+    "curadas": 9,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -276,6 +285,40 @@
       "fontePrimaria": "https://www.catawba.edu/news/all-news/2026/yougov-36/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Marquette Law School",
+      "campoInicio": "2026-09-02",
+      "campoFim": "2026-09-09",
+      "amostra": 581,
+      "amostraTipo": "LV",
+      "margemErro": 4.3,
+      "dem": 54,
+      "rep": 41,
+      "outros": 4,
+      "vantagemDem": 13,
+      "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC35/MLSPSC35PressRelease_NationalTopics.pdf",
+      "opcoes": {
+        "neither": 4
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Marquette Law School",
+      "campoInicio": "2026-09-02",
+      "campoFim": "2026-09-09",
+      "amostra": 864,
+      "amostraTipo": "RV",
+      "margemErro": 3.6,
+      "dem": 50,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC35/MLSPSC35PressRelease_NationalTopics.pdf",
+      "opcoes": {
+        "neither": 7
+      },
+      "origem": "listagem-do-instituto"
     },
     {
       "instituto": "The Economist/YouGov",
