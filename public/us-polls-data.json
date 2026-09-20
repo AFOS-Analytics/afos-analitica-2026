@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T03:05:55.183Z",
+  "fetchedAt": "2026-09-20T03:14:15.435Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,9 +19,10 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 27,
+      "quantas": 29,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
+        "Activote",
         "Cygnal (R)",
         "Focaldata/Financial Times",
         "Fox News",
@@ -47,7 +48,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-21",
-    "nPesquisas": 21,
+    "nPesquisas": 23,
     "incluidas": [
       {
         "instituto": "John Zogby Strategies",
@@ -104,6 +105,13 @@
         "amostraTipo": "LV",
         "dem": 54,
         "rep": 46
+      },
+      {
+        "instituto": "Activote",
+        "campoFim": "2026-09-10",
+        "amostraTipo": "LV",
+        "dem": 52.3,
+        "rep": 47.7
       },
       {
         "instituto": "Catawba College/YouGov",
@@ -176,6 +184,13 @@
         "rep": 33
       },
       {
+        "instituto": "Activote",
+        "campoFim": "2026-08-24",
+        "amostraTipo": "LV",
+        "dem": 51.7,
+        "rep": 48.3
+      },
+      {
         "instituto": "McLaughlin & Associates (R)",
         "campoFim": "2026-08-24",
         "amostraTipo": "LV",
@@ -197,12 +212,13 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 17,
-    "dem": 48.27,
-    "rep": 40.99,
-    "vantagemDem": 7.28,
+    "nInstitutos": 18,
+    "dem": 48.6,
+    "rep": 41.6,
+    "vantagemDem": 7,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
+      "Activote",
       "Big Data Poll/Public Polling Project",
       "CBS News/YouGov",
       "Catawba College/YouGov",
@@ -224,14 +240,14 @@
   },
   "qualidade": {
     "linhasLidas": 390,
-    "publicadas": 417,
+    "publicadas": 419,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 390,
-    "curadas": 27,
+    "curadas": 29,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -436,6 +452,22 @@
       "fontePrimaria": "https://www.cbsnews.com/news/poll-trump-battleground-tracker-house-control-2026-midterm-elections/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Activote",
+      "campoInicio": "2026-08-31",
+      "campoFim": "2026-09-10",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 52.3,
+      "rep": 47.7,
+      "outros": 0,
+      "vantagemDem": 4.6,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-09-11",
+      "opcoes": {},
+      "notas": "Duas vias NORMALIZADA em 100%, sem indeciso: a decomposicao nao existe, nao e zero. Data mediana de campo 05/Set.",
+      "origem": "listagem-do-instituto"
     },
     {
       "instituto": "Catawba College/YouGov",
@@ -874,6 +906,22 @@
       },
       "notas": "DEM 48 = 32 definitely + 8 probably + 7 lean; GOP 43 = 30 + 9 + 5.",
       "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Activote",
+      "campoInicio": "2026-08-10",
+      "campoFim": "2026-08-24",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 51.7,
+      "rep": 48.3,
+      "outros": 0,
+      "vantagemDem": 3.4,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-08-24",
+      "opcoes": {},
+      "notas": "Duas vias NORMALIZADA em 100%, sem indeciso: a decomposicao nao existe, nao e zero. A prosa da pagina diz 3,5 e a subtracao da 3,4.",
       "origem": "listagem-do-instituto"
     },
     {

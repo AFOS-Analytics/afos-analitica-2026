@@ -60,7 +60,7 @@ const doIndice = (o = {}) => ({
  * ⚠️ O piso é PISO: ele pega remoção acidental e não estorva adição. Quem
  * remover uma linha de propósito baixa este número no mesmo commit.
  */
-const PISO_DE_LINHAS = 27
+const PISO_DE_LINHAS = 29
 
 // ── 1. Os dados escritos à mão obedecem às regras da própria casa ─────────
 
@@ -126,9 +126,17 @@ for (const p of RODADAS_CURADAS) {
   // ⚠️ E a Focaldata publica as tabelas como XLSX, sem PDF nenhum. Exigir `.pdf`
   // ali obrigaria a citar o POST no lugar da tabela, que é a fonte mais fraca
   // das duas. A regra é "aponta para o DOCUMENTO", nunca "aponta para um PDF".
+  // ⚠️ E a ActiVote não publica arquivo NENHUM: a crosstab é uma tabela HTML
+  // dentro da própria página do release, então ali a página É o documento.
+  // ⛔ A saída NÃO é aceitar qualquer https, que mataria a trava e deixaria
+  // passar a home do instituto. A exceção é NOMEADA, e o padrão casa a forma da
+  // URL que de fato contém a tabela (a página de uma leitura datada), nunca só
+  // o domínio: `activote.net` puro continua reprovando.
+  const CROSSTAB_EM_HTML = [/^https:\/\/www\.activote\.net\/polls\/generic-ballot\/\d{4}-\d{2}-\d{2}$/]
   const ehDocumento =
     /^https:\/\/.+\.(pdf|xlsx?|csv)$/.test(p.fontePrimaria ?? '') ||
-    /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(p.fontePrimaria ?? '')
+    /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(p.fontePrimaria ?? '') ||
+    CROSSTAB_EM_HTML.some((re) => re.test(p.fontePrimaria ?? ''))
   checar(`${id}: tem link do documento da fonte primária`, ehDocumento, String(p.fontePrimaria))
 }
 
