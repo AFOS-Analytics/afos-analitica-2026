@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T02:45:23.297Z",
+  "fetchedAt": "2026-09-20T02:54:00.103Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,13 +19,14 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 11,
+      "quantas": 17,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
         "Cygnal (R)",
         "Fox News",
         "Marquette Law School",
         "Quantus Insights (R)",
+        "Reuters/Ipsos",
         "The Economist/YouGov"
       ],
       "decididoEm": {
@@ -42,7 +43,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-21",
-    "nPesquisas": 13,
+    "nPesquisas": 16,
     "incluidas": [
       {
         "instituto": "John Zogby Strategies",
@@ -71,6 +72,13 @@
         "amostraTipo": "RV",
         "dem": 51,
         "rep": 44
+      },
+      {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "RV",
+        "dem": 44,
+        "rep": 37
       },
       {
         "instituto": "The Rainey Center",
@@ -108,6 +116,13 @@
         "rep": 42
       },
       {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-08-31",
+        "amostraTipo": "RV",
+        "dem": 43,
+        "rep": 38
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoFim": "2026-08-31",
         "amostraTipo": "RV",
@@ -129,6 +144,13 @@
         "rep": 42.8
       },
       {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-08-24",
+        "amostraTipo": "RV",
+        "dem": 41,
+        "rep": 35
+      },
+      {
         "instituto": "The Economist/YouGov",
         "campoFim": "2026-08-24",
         "amostraTipo": "RV",
@@ -136,10 +158,10 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 12,
-    "dem": 49.44,
-    "rep": 42.06,
-    "vantagemDem": 7.38,
+    "nInstitutos": 13,
+    "dem": 48.17,
+    "rep": 41.05,
+    "vantagemDem": 7.12,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "Big Data Poll/Public Polling Project",
@@ -152,20 +174,21 @@
       "Marquette Law School",
       "Napolitan News/RMG Research",
       "Quantus Insights (R)",
+      "Reuters/Ipsos",
       "The Economist/YouGov",
       "The Rainey Center"
     ]
   },
   "qualidade": {
     "linhasLidas": 390,
-    "publicadas": 401,
+    "publicadas": 407,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 390,
-    "curadas": 11,
+    "curadas": 17,
     "curadasDescartadasPorDuplicidade": 0
   },
   "polls": [
@@ -276,6 +299,46 @@
         "naoSabe": 4
       },
       "comLeaners": true,
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 896,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 44,
+      "rep": 37,
+      "outros": 18,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
+      "opcoes": {
+        "outroPartido": 2,
+        "naoSabe": 12,
+        "naoVotara": 4,
+        "pulou": 0
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1143,
+      "amostraTipo": "A",
+      "margemErro": 3,
+      "dem": 39,
+      "rep": 31,
+      "outros": 29,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
+      "opcoes": {
+        "outroPartido": 2,
+        "naoSabe": 13,
+        "naoVotara": 13,
+        "pulou": 1
+      },
       "origem": "listagem-do-instituto"
     },
     {
@@ -413,6 +476,46 @@
       "origem": "listagem-do-instituto"
     },
     {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-31",
+      "amostra": 924,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 43,
+      "rep": 38,
+      "outros": 19,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
+      "opcoes": {
+        "outroPartido": 2,
+        "naoSabe": 14,
+        "naoVotara": 3,
+        "pulou": 0
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-31",
+      "amostra": 1167,
+      "amostraTipo": "A",
+      "margemErro": 2.9,
+      "dem": 38,
+      "rep": 31,
+      "outros": 30,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
+      "opcoes": {
+        "outroPartido": 3,
+        "naoSabe": 14,
+        "naoVotara": 13,
+        "pulou": 0
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
       "instituto": "Harvard/Harris Poll/HarrisX",
       "campoInicio": "2026-08-28",
       "campoFim": "2026-08-30",
@@ -494,6 +597,46 @@
         "other": 1,
         "naoSabe": 9,
         "naoVotara": 22
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-21",
+      "campoFim": "2026-08-24",
+      "amostra": 951,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 41,
+      "rep": 35,
+      "outros": 24,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Core%20Political%20Topline.pdf",
+      "opcoes": {
+        "outroPartido": 4,
+        "naoSabe": 14,
+        "naoVotara": 5,
+        "pulou": 1
+      },
+      "origem": "listagem-do-instituto"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-21",
+      "campoFim": "2026-08-24",
+      "amostra": 1215,
+      "amostraTipo": "A",
+      "margemErro": 2.9,
+      "dem": 35,
+      "rep": 29,
+      "outros": 37,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-08/Reuters%20Ipsos%20August%20Core%20Political%20Topline.pdf",
+      "opcoes": {
+        "outroPartido": 4,
+        "naoSabe": 16,
+        "naoVotara": 16,
+        "pulou": 1
       },
       "origem": "listagem-do-instituto"
     },
