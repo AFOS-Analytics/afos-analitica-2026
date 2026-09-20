@@ -139,6 +139,7 @@ jobs:
           node scripts/testar-agregadores-us.mjs
           node scripts/testar-defasagem-us.mjs
           node scripts/testar-atribuicao-us.mjs
+          node scripts/testar-ruido-da-janela-us.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs
