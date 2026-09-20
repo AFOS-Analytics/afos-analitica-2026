@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-20",
-  "fetchedAt": "2026-09-20T01:44:24.031Z",
+  "fetchedAt": "2026-09-20T03:17:15.977Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,9 +113,9 @@
     }
   ],
   "qualidade": {
-    "lidos": 187,
-    "naLista": 77,
-    "foraDaLista": 110,
+    "lidos": 192,
+    "naLista": 81,
+    "foraDaLista": 111,
     "publicados": 10,
     "descartadosPorAcompanhamento": 27,
     "veiculosRepresentados": 7,
@@ -148,7 +148,7 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "New poll signals movement in Talarico vs Paxton Texas Senate race",
+      "titulo": "New Texas Pulse poll shakes up Paxton vs. Talarico Senate race",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbWJqR3dlVS11QlZPb29Vb29HVmlGdjFXal9DbUUyXzhDUnVNZEVNejktUUlvdmZsRGVmMlo5VzVhdXBfQms2dDJValllUHFDOW1sYlFvdWxRUHNYaVltUkVxVG9OeDZrVmRBWTBqTkpTQzB0VDB3OFcyV0ZXUk1PbnMxNENmOXAtTEM4dlJBa2VDMl9IZ3NSRXZTYmRKU1NBOGg0VDBWdlFjUXlmbHJz?oc=5",
       "casa": "USA Today",
       "publicadoEm": "2026-09-19T13:51:00.000Z",
@@ -163,6 +163,15 @@
       "publicadoEm": "2026-09-19T12:26:44.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Revenge of the labor movement: Democrats with union backgrounds aim to retake Congress",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQMVhYVlctbjg5N3BEQUg5Mi15VkZwSWdqR2NVbGFOcW5kTGRtdkJaREJCQUZxRUlVSDFBa2VRYlpjRUQ1QUloY0lobUVvc0NTX2J0OGdPa1pDVW1YSzhLOEVMUVU0SmI2aW9sLVUydF9wRUtHc2hMN3ZpMTExNGdMMmJzUUNLTU5FalZlZVJnMzBIbVF1VEJ4aEUzb1RDZ3MzVUxieTM5Qk1SUTBTaVJNV05fVGpKZnRPUDQ2Y1dDVQ?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-19T12:01:00.000Z",
+      "consulta": "midterms",
+      "origem": "google",
       "trilho": "disputa"
     },
     {
@@ -208,15 +217,6 @@
       "publicadoEm": "2026-09-19T09:00:00.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "10 races that could determine which party controls the House",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOTU5BZThXVnJlV3lUend5MzdRNEM5ZlphZDhJUzYyS1F5aTZibDlBY25Fa2NMVHJkWmZVcl9wOEd6a0JDWFhLbGZsbzU3elk0S0FkdUpTTTRHOHM0VEJxdHMxWVNRMjdwMy12dnN3WVBxZmh4anhaTl94aGpKdmgtWGs5cHdwanhJZG4wamNwUEZDSEhEemdvYjRxZ3diZVpZczlF0gGoAUFVX3lxTFBqeG45bHM4WnVHSXBDd0ttVFNObGswbUh2aE5yakczd3JhMElYQUV4bzhmeHI3Z2RiSFVRTWtLUXllcGIybTdENm1EUGVVN0tzcW1UUVhjWjlCUGcxNlBsUmlvR0lXbmtzUnBXYklVZ2tIaXRwcGR6bmlWNi1lV0V5TjVrTVBPTGN0SWZUTm1DZ3BydVhCQkZlSmcxTWdwYUFELV9NajV1UQ?oc=5",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-19T00:22:56.000Z",
-      "consulta": "midterms",
-      "origem": "google",
       "trilho": "disputa"
     }
   ]
