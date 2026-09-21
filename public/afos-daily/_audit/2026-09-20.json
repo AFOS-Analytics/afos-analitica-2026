@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-20",
+  "reFetchPolymarket": {
+    "fetchedAt": "2026-09-21T01:19:00Z",
+    "fetchedAtBRT": "20/09/2026 22:19",
+    "baselineCertificada": "2026-09-21T00:47:07.741Z",
+    "deltas": {
+      "lula": "41,50% -> 41,50% (0,00pp)",
+      "flavio": "58,65% -> 58,70% (+0,05pp)",
+      "vao": "17,15pp -> 17,20pp (+0,05pp)",
+      "renanVencedor": "0,85% -> 0,80% (-0,05pp)",
+      "volumeTotalPresidencial": "USD 152,02M -> USD 152,04M"
+    },
+    "gateDeRebaseline": "NAO DISPAROU. Maior movimento 0,05pp contra o corte de 0,50pp; nenhum recorde rompido ou desfeito; enquadramento igual. Mantem a baseline do JSON.",
+    "observacao": "O livro de 2o lugar andou 1,50pp (Flavio) e 1,65pp (Lula) em 30 min, o que e consistente com a faixa publicada para ele."
+  },
+  "factCheckGate": {
+    "eventosAltoImpacto": 1,
+    "eventos": [
+      {
+        "evento": "Video mostra Alexandre de Moraes e a esposa, Viviane Barci, desembarcando de jato de empresa que tinha Daniel Vorcaro como socio.",
+        "verificacao1CrossRef": "jatinho = ZERO mencoes em 7 dailies (novidade). Moraes = 45 mencoes e Vorcaro = 32 (tema e continuidade; o VIDEO e o novo).",
+        "verificacao2Fetch": {
+          "url": "https://g1.globo.com/politica/noticia/2026/09/20/video-mostra-moraes-e-esposa-saindo-de-jatinho-de-empresa-de-vorcaro-em-2025.ghtml",
+          "publicadaEm": "2026-09-20T14:05-03:00",
+          "tipo": "evento",
+          "dataDoAtoNoCorpo": "2025-08-22 (o voo)",
+          "oQueMudouHoje": "a publicacao do video pela coluna de Lauro Jardim, em O Globo, e a nota do escritorio Barci de Moraes"
+        },
+        "fonte2GrupoDiferente": "Estadao (independente), 2026-09-20 14:38 e 21:08",
+        "fonte3": "Folha de S.Paulo (grupo Folha), 2026-09-20 13:22",
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com data corrigida"
+      }
+    ]
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. Video com Folha, O Globo e Estadao; as duas acoes no TSE com Folha e CNN Brasil; mercado e leitura propria certificada.",
+    "numericalErrors": "reconcile-claims extraiu 44 alegacoes e apontou 6 pares sem casamento exato. Conferidos um a um: 58,65% e o negrito do TL;DR; 0,05% do Tarcisio e a faixa 69,00 a 73,50 existem nos JSONs fora do quadroComparativo; 45,73/41,56 estao em TITULO DE FONTE no rodape, nao no corpo. Nenhum erro real.",
+    "fontesInventadas": "conferidas 3 ao acaso, todas no news-cache de 2026-09-20 com URL: Folha (video), O Globo (uso politico), Exame (analise).",
+    "quotesLiterais": "nenhuma. As 5 aspas do arquivo estao no YAML, nao em prosa.",
+    "causacaoEspuria": "nenhuma. O texto diz explicitamente que o painel NAO atribui o movimento do contrato do Supremo ao noticiario.",
+    "verbosCriticos": "preso aparece em 'quer vencer a eleicao para MANTER Jair Bolsonaro preso', atribuido a Lula e com o verbo em manter, que nao pode ser lido como prisao nova. Chamada consciente.",
+    "decisao": "prosseguir"
+  },
+  "portoes": {
+    "palavrasPtBr": 1088,
+    "tetoPalavras": 1100,
+    "validateAfosDaily": "nenhuma violacao",
+    "gateTraducaoDaily": "limpo nas 3 versoes, 54 numeros com unidade em cada",
+    "travessao": 0,
+    "emoji": 0,
+    "tldrBullets": 3,
+    "fontes": "6 ancora, 4 secundarias"
+  },
+  "achadosDaRodada": [
+    {
+      "titulo": "O gerador do calendario nao filtrava FANTASMA, e o defeito ia para a peca publicada",
+      "detalhe": "A tabela anunciava a BR-00548/2026 como divulgacao nacional prevista para 23/Set, e o TSE ja tinha retirado esse registro. O relatorio-pesquisas-brz dizia 'calendario limpo: 10 nacionais' e a tabela da daily dizia 11. Consertado antes de publicar.",
+      "segundoTempo": "A primeira versao do filtro normalizava o protocolo com \\D, que apaga o 'BR', entao casou ZERO e ficou MUDA. Acrescentada guarda anti-mudo: conjunto cheio com zero casamento agora avisa."
+    },
+    {
+      "titulo": "Wayback do passivo NAO rodou",
+      "detalhe": "O endpoint /save/ respondeu 500 em duas tentativas, com a URL confirmada correta via url_effective e MSYS_NO_PATHCONV=1. Nao e 000 nem 429. Passivo segue com 2026-07-29 na frente, exposta ha 54 dias, 28 URLs faltando."
+    }
+  ]
+}

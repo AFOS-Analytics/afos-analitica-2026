@@ -28,6 +28,7 @@
  *   npm run calendario:brz -- --hoje=2026-09-11 --dias=7
  */
 
+import { readFileSync, existsSync } from 'node:fs'
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
@@ -106,7 +107,7 @@ const T = {
     escopo: 'nacional',
     vazio: 'Sem pesquisas de escopo nacional com amostra maior ou igual a 1.000 registradas no TSE para os próximos 7 dias.',
     rodape: (n, fora) =>
-      `Fonte: registro público [TSE](${TSE}) via API AFOS. Amostras maiores ou iguais a 3.000 em negrito. A tabela lista as ${n} NACIONAIS da janela; ${fora} registros do mesmo período ficaram de fora por escopo ou por amostra. O status é registrada e não publicada.`,
+      `Fonte: registro público [TSE](${TSE}) via API AFOS. Amostras maiores ou iguais a 3.000 em negrito. A tabela lista as ${n} NACIONAIS e VIVAS da janela; ${fora} registros do mesmo período ficaram de fora por escopo ou por amostra${nacionaisFantasma ? `, e ${nacionaisFantasma} nacional(is) saiu(ram) do registro do TSE depois de registrada(s) e por isso não são compromisso` : ``}. O status é registrada e não publicada.`,
   },
   en: {
     head: '### Polling calendar, next 7 days',
@@ -156,13 +157,60 @@ const naJanela = polls.filter((r) => {
   return p > hoje && p <= FIM
 })
 
-// 🔴 O corte de escopo é o PRIMEIRO, e `unknown` NÃO entra: quando o registro
+// 👻 O CORTE DE FANTASMA, instalado em 20/Set/2026, e ele vem ANTES do escopo.
+//
+// 🔴 O defeito, medido no dia: esta tabela anunciava a `BR-00548/2026` como
+//    divulgação nacional prevista para 23/Set, e aquele protocolo JÁ TINHA SIDO
+//    RETIRADO do registro do TSE. O `relatorio-pesquisas-brz.ts` filtrava e
+//    imprimia "calendário limpo: 10 nacionais"; esta tabela, que é a que VAI
+//    PARA A PEÇA PUBLICADA, imprimia 11. Duas ferramentas sobre a mesma janela
+//    discordando, e a que publica era a errada.
+//
+// 🔑 Publicar "divulgação prevista" sem tirar os retirados é anunciar
+//    compromisso que o TSE já não tem.
+//    → memory/feedback_o_registro_do_tse_perde_linhas_e_o_banco_nunca_perde.md
+//
+// ⛔ E ausência do arquivo de fantasmas NÃO vira "nenhum fantasma": sem ele o
+//    script para, porque zero calculado sobre base ausente publica sossegado
+//    justamente no caso em que ninguém olhou.
+const FANTASMAS = (() => {
+  const f = 'data/tse/fantasmas.jsonl'
+  if (!existsSync(f)) {
+    console.error(`❌ ${f} não existe. Sem o conjunto de fantasmas a tabela anunciaria compromisso retirado. Rodar o /atualizar-pesquisas-brz com --apply.`)
+    process.exit(1)
+  }
+  const linhas = readFileSync(f, 'utf8').trim().split('\n').filter(Boolean)
+  const ultima = JSON.parse(linhas[linhas.length - 1])
+  return new Set(ultima.protocolos ?? ultima.conjunto ?? [])
+})()
+// ⚠️ NÃO usar `\D` aqui: ele apaga o "BR" do protocolo, e o conjunto de
+//    fantasmas guarda "BR005482026". A primeira versão desta linha casou ZERO e
+//    ficou MUDA: a tabela seguiu publicando o retirado e o rodapé seguiu
+//    dizendo que estava limpa. Chave normalizada de formas diferentes dos dois
+//    lados é o defeito que mais produz zero plausível neste repositório.
+const semProtocolo = (p) => String(p || '').toUpperCase().replace(/[^A-Z0-9]/g, '')
+const ehFantasma = (r) => FANTASMAS.has(semProtocolo(r.protocolo))
+
+const vivas = naJanela.filter((r) => !ehFantasma(r))
+
+// 🕳️ ANTI-MUDO: conjunto cheio e ZERO casamento na janela é o sinal clássico de
+//    chave normalizada de formas diferentes. Não é prova de erro, porque pode
+//    não haver fantasma nesta janela, então avisa e não bloqueia.
+if (FANTASMAS.size > 0 && naJanela.length === vivas.length) {
+  console.error(
+    `   ⚠️ ${FANTASMAS.size} fantasma(s) no conjunto e NENHUM casou nesta janela. Conferir o formato do protocolo dos dois lados antes de confiar no zero.`
+  )
+}
+const fantasmasNaJanela = naJanela.length - vivas.length
+
+// 🔴 O corte de escopo é o SEGUNDO, e `unknown` NÃO entra: quando o registro
 // do TSE não permite inferir, o painel registra a ausência em vez de chutar.
-const entram = naJanela
+const entram = vivas
   .filter((r) => r.scope === 'national' && (r.sampleSize || 0) >= 1000)
   .sort((a, b) => String(a.publicationDate).localeCompare(String(b.publicationDate)) || b.sampleSize - a.sampleSize)
 
-const fora = naJanela.length - entram.length
+const fora = vivas.length - entram.length
+const nacionaisFantasma = naJanela.filter((r) => ehFantasma(r) && r.scope === 'national' && (r.sampleSize || 0) >= 1000).length
 
 // 🔒 Portão de colapso: janela inteira vazia é outra coisa que "nenhuma
 // nacional", e as duas não podem imprimir a mesma tabela.
