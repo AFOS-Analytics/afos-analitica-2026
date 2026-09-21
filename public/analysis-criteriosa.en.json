@@ -1,49 +1,49 @@
 {
-  "updatedAt": "19/09/2026, 19:20",
-  "subtitle": "Cross-reading of 19 September 2026, reading confirmed on 19/Sep, 19:20 BRT (22:20 UTC), with the presidential book at USD 151.75M. Four of the five watched contracts received a new price in this round: winner, second place in the [first round](/en/glossary#primeiro-turno), third place in the first round and impeachment at the Supreme Court. The Senate majority contract did not, and this round publishes no new number for it. On the polling side, no national poll was released on 19/Sep, and the two that still stand are Datafolha and Futura/100% Cidades, both from 17/Sep.",
+  "updatedAt": "20/09/2026, 21:47",
+  "subtitle": "Cross-reading of September 20, 2026, reading confirmed on Sep 20, 9:47 PM BRT (00:47 UTC on Sep 21), with the presidential book at USD 152.02M. AFOS certification is done contract by contract, and in this round THREE of the five watched contracts received a new price: outright winner, third place in the [first round](/en/glossary#primeiro-turno) and impeachment at the Supreme Court. The contracts for second place in the first round and for a Senate majority did not receive a new price, and they go live with the range of the recorded readings, which is a property of the book and is explained in the field itself. Polls: Datafolha and Futura/100% Cidades of Sep 17, the two most recent national polls with numbers in a primary source.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PRICE: 40.50% (vol USD 11.41M accumulated) in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, down 2.00pp against the price confirmed on 18/Sep. POLLS: in the [first round](/en/glossary#primeiro-turno) 39% at Datafolha and 38.3% at Futura; in the runoff against Flávio Bolsonaro 46% at Datafolha and 43.7% at Futura, both from 17/Sep and with no new national poll since.",
+      "header": "PRICE: 41.50% (vol USD 11.45M accumulated) in the outright winner contract, reading confirmed on Sep 20, 9:47 PM BRT, up 1.00pp against the 40.50% confirmed on Sep 19. POLL: 39% in the [first round](/en/glossary#primeiro-turno) in the Datafolha poll of Sep 17 and 38.3% in Futura/100% Cidades. The price rises and he keeps losing ground to Flávio, because Flávio rose almost twice as much.",
       "fortes": [
         "Leads the first round in both national polls of Sep 17, 39% to 36% at Datafolha and 38.3% to 37.7% at Futura/100% Cidades, and in both the distance fits inside two margins.",
-        "At Datafolha he wins the runoff 46% to 44%, and it is the firm's third straight wave with exactly these numbers, meaning the pair has not moved inside it since Sep 11.",
-        "His winner contract holds USD 11.41M accumulated, a larger volume than Flávio Bolsonaro's contract at USD 11.03M, even with the price 16.25pp behind."
+        "He also leads Datafolha's simulated [runoff](/en/glossary#segundo-turno) of Sep 17, 46% to 44%, within the margin.",
+        "The volume of his contract in the winner book is USD 11.45M accumulated, the larger of the two names contesting the price, reading confirmed on Sep 20, 9:47 PM BRT."
       ],
       "fracos": [
-        "Falls 2.00pp in the winner contract, to 40.50%, and on his own accounts for the widening gap, because Flávio Bolsonaro rose only 0.25pp in the same book.",
-        "The 16.25pp gap is Flávio Bolsonaro's largest lead over him since 14/Apr, the start of the recorded series, which holds 633 readings across 156 days.",
-        "In the [first round](/en/glossary#primeiro-turno) second-place contract he falls 4.70pp, to 24.65%, down from 29.40%, which was the top of his series in that book and was recorded on 18/Sep."
+        "In the outright winner contract he stands at 41.50% against 58.65% for Flávio, a gap of 17.15pp, reading confirmed on Sep 20, 9:47 PM BRT.",
+        "That gap is the widest of the 155 days in which the recorded series has both sides, since April 14, 2026, measured at daily closes. The previous high was 16.30pp, at the close of Sep 19.",
+        "The climb is recent and continuous: the gap was 2.10pp at the close of Sep 12 and passed through 6.40pp on Sep 14, 9.80pp on Sep 16 and 14.00pp on Sep 18."
       ],
-      "analise": "The round is one of falling in two books at once, with no new poll to set against it. In the winner contract he falls 2.00pp, to 40.50% (vol USD 11.41M accumulated), and the gap to Flávio Bolsonaro widens from 14.00pp to 16.25pp. ⭐ The widening is entirely his: Flávio Bolsonaro rose 0.25pp over the same period, so what moved the gap was the fall, not the opponent's rise. Those 16.25pp are the largest lead ever recorded for Flávio Bolsonaro over him since 14/Apr, and the opposite extreme of that same series is 41.80pp in Lula's favour, on 01/Aug. In the [first round](/en/glossary#primeiro-turno) second-place contract he falls 4.70pp, to 24.65%, after recording on 18/Sep the top of his series in that book, 29.40%. The two national polls that still stand are those of 17/Sep and they disagree on the [runoff](/en/glossary#segundo-turno): Datafolha, face to face, gives him 46% to 44%, inside the margins; Futura/100% Cidades, by telephone, gives 43.7% to 48.1% against him, outside two margins. No national poll was released on 18 or 19/Sep, so the price moved on two consecutive days with no new information from the ballot."
+      "analise": "In the outright winner contract Lula rose 1.00pp, from 40.50% to 41.50% (vol USD 11.45M accumulated), reading confirmed on Sep 20, 9:47 PM BRT. His price rose and even so the gap against Flávio widened, because Flávio rose 1.90pp over the same interval. In the polls the picture is the opposite of the price: he leads the [first round](/en/glossary#primeiro-turno) in the two national polls of Sep 17 and leads Datafolha's simulated [runoff](/en/glossary#segundo-turno), always within margin. AFOS does not say which of the two universes is right. It says they have been pointing in different directions for a week, and that the distance between them grew every day since Sep 12."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PRICE: 56.75% (vol USD 11.03M accumulated) in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, up 0.25pp against the price confirmed on 18/Sep. POLLS: in the [first round](/en/glossary#primeiro-turno) 36% at Datafolha and 37.7% at Futura; in the runoff against Lula 44% at Datafolha and 48.1% at Futura, both from 17/Sep.",
+      "header": "PRICE: 58.65% (vol USD 11.15M accumulated) in the outright winner contract, reading confirmed on Sep 20, 9:47 PM BRT, up 1.90pp against the 56.75% confirmed on Sep 19. POLL: 36% in the [first round](/en/glossary#primeiro-turno) in the Datafolha poll of Sep 17 and 37.7% in Futura/100% Cidades, behind Lula in both and within two margins.",
       "fortes": [
-        "His gap over Lula in the winner contract reaches 16.25pp, the largest lead recorded since 14/Apr across a series of 633 readings.",
-        "In the [first round](/en/glossary#primeiro-turno) second-place contract he rises 5.00pp, to 74.50%, the largest move of any contract on the panel in this round.",
-        "At Futura/100% Cidades he wins the runoff 48.1% to 43.7%, outside two margins of 2.2, and in the first round he closes on Lula 37.7% to 38.3%."
+        "58.65% in the outright winner contract (vol USD 11.15M accumulated), up 1.90pp in 24 hours, reading confirmed on Sep 20, 9:47 PM BRT.",
+        "The 17.15pp gap in his favour is the widest of the 155 days in which the recorded series has both sides, since April 14, 2026, measured at daily closes.",
+        "In the second place contract of the [first round](/en/glossary#primeiro-turno) he stands at 72.00%, and across the readings recorded on Sep 19 that contract ranged from 69.00% to 73.50%."
       ],
       "fracos": [
-        "His rise in the winner contract is only 0.25pp, and the 56.75% sits 0.05pp BELOW the highest value ever recorded in the readings of his series.",
-        "At Datafolha he loses the [runoff](/en/glossary#segundo-turno) 44% to 46% and his rejection is 47%, tied with Lula's.",
-        "At Futura/100% Cidades his rejection is 45.3%, the second highest figure in the poll, behind only Lula's."
+        "He loses the [first round](/en/glossary#primeiro-turno) in the two national polls of Sep 17, 36% to 39% in Datafolha and 37.7% to 38.3% in Futura/100% Cidades.",
+        "He loses Datafolha's simulated [runoff](/en/glossary#segundo-turno) of Sep 17, 44% to 46%, within the margin.",
+        "The volume of his contract in the winner book, USD 11.15M accumulated, is smaller than Lula’s, USD 11.45M, and smaller than Renan Santos’s, USD 13.89M, and than Tarcísio de Freitas’s, USD 14.08M, which is the largest in the book. High volume measures accumulated interest, not probability now."
       ],
-      "analise": "His price barely moved and the gap widened anyway, because the side that moved was the other one. In the winner contract he rises 0.25pp, to 56.75% (vol USD 11.03M accumulated), while Lula falls 2.00pp, and the gap goes from 14.00pp to 16.25pp, the largest lead recorded since 14/Apr. ⚠️ Those 56.75% are not the top of his series: he sits 0.05pp below the highest value ever recorded in the readings of the series. Where he did move was the [first round](/en/glossary#primeiro-turno) second-place contract, which rises 5.00pp, to 74.50%, twenty times his move in the winner book. The two prices do not contradict each other, because one pays for winning the election and the other for finishing the first round in second place, and the book can grow more confident about both at once. In the polls the picture is still that of 17/Sep and it is not single: Futura/100% Cidades has him winning the [runoff](/en/glossary#segundo-turno) 48.1% to 43.7%, outside two margins, and Datafolha has him losing 44% to 46%, inside the margins and for the third consecutive round with the same pair. On 19/Sep he and Lula held rallies on the same day in Santa Catarina."
+      "analise": "Flávio Bolsonaro rose 1.90pp in the outright winner contract, from 56.75% to 58.65% (vol USD 11.15M accumulated), reading confirmed on Sep 20, 9:47 PM BRT. It was the largest single day rise among the watched contracts in this round, and it is what widens the gap, not a fall by Lula, who in fact rose 1.00pp. In the two national polls of Sep 17 he appears behind in the [first round](/en/glossary#primeiro-turno) and behind in the simulated [runoff](/en/glossary#segundo-turno), both times within margin. The contrast between price and poll is the fact of the panel today, and it is larger than on any day in the recorded series."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PRICE: 0.15% in the winner contract and 36.35% (vol USD 230 thousand accumulated) in the [first round](/en/glossary#primeiro-turno) third-place contract, reading confirmed on 19/Sep, 19:20 BRT, down 4.65pp in that second one. POLLS: 6% in the first round at Datafolha and 6.5% at Futura, both from 17/Sep.",
+      "header": "PRICE: 0.05% in the outright winner contract and 32.55% (vol USD 237 thousand accumulated) in the third place contract of the [first round](/en/glossary#primeiro-turno), reading confirmed on Sep 20, 9:47 PM BRT, down 3.80pp in the third place contract against the 36.35% of Sep 19. POLL: 6% in the first round in the Datafolha poll of Sep 17 and 6.5% in Futura/100% Cidades, third in both.",
       "fortes": [
         "He is third in both national polls of Sep 17, 6% at Datafolha and 6.5% at Futura/100% Cidades, ahead of Renan Santos in both.",
         "At Datafolha his rejection is 9%, the lowest among the six names with 2% or more of voting intention."
@@ -53,14 +53,14 @@
         "In the winner contract he stands at 0.15%, and the lowest value in the recorded readings of his series is 0.10%.",
         "The polls and the book disagree on the order of the third way, and the distance between them doubled: both firms put him ahead of Renan Santos, and the third-place contract pays 14.65pp more on Renan."
       ],
-      "analise": "It is the day's largest fall among the third-way contracts, and it widens the inversion between the book and the ballot. In the [first round](/en/glossary#primeiro-turno) third-place contract he falls 4.65pp, to 36.35% (vol USD 230 thousand), while Renan Santos rises 2.00pp in the same book, so the distance between the two goes from 8.00pp to 14.65pp in one day. In the winner contract he remains at 0.15%. ⚠️ The two polls of 17/Sep do the opposite: they put Cury ahead of Renan Santos, 6% to 3% at Datafolha and 6.5% to 3.4% at Futura. The 36.35% sits 22.90pp below the highest value in the recorded readings of his series in that book, 60.30% on 04/Sep. The panel records that the money and the declared intention point in opposite directions on the third way, and does not say which of the two will prove right."
+      "analise": "Augusto Cury fell 3.80pp in the third place contract of the [first round](/en/glossary#primeiro-turno), from 36.35% to 32.55% (vol USD 237 thousand accumulated), reading confirmed on Sep 20, 9:47 PM BRT. It was the largest fall among the contracts that received a new price in this round. In the polls he remains third in the two national polls of Sep 17, with 6% in Datafolha and 6.5% in Futura/100% Cidades, ahead of Renan Santos in both. The price moved against him and the poll did not move, because there is no new national poll since Sep 17."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PRICE: 0.85% (vol USD 13.78M accumulated) in the winner contract and 51.00% (vol USD 349 thousand accumulated) in the [first round](/en/glossary#primeiro-turno) third-place contract, reading confirmed on 19/Sep, 19:20 BRT. POLLS: 3% in the first round at Datafolha and 3.4% at Futura, both from 17/Sep.",
+      "header": "PRICE: 0.85% (vol USD 13.89M accumulated) in the outright winner contract and 52.50% (vol USD 355 thousand accumulated) in the third place contract, reading confirmed on Sep 20, 9:47 PM BRT, up 1.50pp in the third place one. POLL: 3% in the [first round](/en/glossary#primeiro-turno) in the Datafolha poll of Sep 17 and 3.4% in Futura/100% Cidades, behind Augusto Cury in both. The third place price says the opposite of the poll, and it is the cleanest divergence on the panel today.",
       "fortes": [
         "Rises 2.00pp in the [first round](/en/glossary#primeiro-turno) third-place contract, to 51.00%, and opens 14.65pp over Augusto Cury, against 8.00pp on 18/Sep.",
         "His is the contract with the largest accumulated volume in the second and third-place books of the [first round](/en/glossary#primeiro-turno), USD 1.34M and USD 349 thousand.",
@@ -71,31 +71,31 @@
         "In the two national polls of Sep 17 he stands behind Augusto Cury, 3% to 6% at Datafolha and 3.4% to 6.5% at Futura/100% Cidades.",
         "At Datafolha his rejection is 15%, the third highest in the poll, behind only Lula's and Flávio Bolsonaro's."
       ],
-      "analise": "His two contracts move in opposite directions for the second day running. In the [first round](/en/glossary#primeiro-turno) third-place contract he rises 2.00pp, to 51.00% (vol USD 349 thousand), and opens 14.65pp over Augusto Cury, against 8.00pp on 18/Sep. In the winner contract he falls 0.10pp, to 0.85%, and sits within 0.05pp of the lowest value in the recorded readings of his series, recorded on 19/Sep. The two prices do not contradict each other: one measures finishing third, the other measures winning. ⚠️ His winner contract is the second largest by accumulated volume in the whole presidential book, USD 13.78M, behind only Tarcísio de Freitas', and both trade today close to the floor. Accumulated volume measures what has already passed through the contract, not conviction now. In the polls of 17/Sep he appears behind Cury in both, 3% to 6% and 3.4% to 6.5%."
+      "analise": "Renan Santos rose 1.50pp in the third place contract, from 51.00% to 52.50% (vol USD 355 thousand accumulated), reading confirmed on Sep 20, 9:47 PM BRT, and it is the largest volume in that book. In the outright winner contract he stands at 0.85%, with USD 13.89M accumulated, the second largest volume in the whole presidential book. In the two national polls of Sep 17 he appears behind Augusto Cury, 3% to 6% in Datafolha and 3.4% to 6.5% in Futura. The market puts him first in the third place contract and the poll puts him fourth. It is the cleanest divergence on the panel, because it does not depend on margin: they are different positions, not close numbers."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PRICE: Ronaldo Caiado 0.05% in the winner contract and 11.50% in the third-place one, Romeu Zema 0.15% and Fernando Haddad 0.05%, reading confirmed on 19/Sep, 19:20 BRT. POLLS: Caiado 4% at Datafolha and 4.5% at Futura; Zema 2% and 1.0%.",
-      "subtitle": "The three names outside the front-runner group, with prices from the reading confirmed on 19/Sep, 19:20 BRT and polls from Datafolha and Futura/100% Cidades of 17/Sep, which are still the most recent.",
+      "header": "PRICE: Ronaldo Caiado 0.05% in the outright winner contract and 11.50% in the third place one, Romeu Zema 0.15% and 1.25% in the third place one, up 0.90pp, and Fernando Haddad 0.05%, reading confirmed on Sep 20, 9:47 PM BRT. POLL: Caiado 4% and Zema 2% in the [first round](/en/glossary#primeiro-turno) in the Datafolha poll of Sep 17.",
+      "subtitle": "The three names outside the leading pack, with prices from the reading confirmed on Sep 20, 9:47 PM BRT and polls from Datafolha and Futura/100% Cidades of Sep 17, which remain the most recent.",
       "caiado": {
-        "label": "CAIADO (PSD), 0.05% in the WINNER contract, reading confirmed on 19/Sep, 19:20 BRT, below the 0.5% floor of the double reading and below the lowest value in the recorded readings of his series, 0.10% on 17/Sep. In the [FIRST ROUND](/en/glossary#primeiro-turno) THIRD-PLACE contract he rises 1.00pp, to 11.50%, in a book of USD 138 thousand. He has 4% in the first round at Datafolha and 4.5% at Futura/100% Cidades.",
+        "label": "CAIADO (PSD), 0.05% in the WINNER contract, reading confirmed on Sep 20, 9:47 PM BRT, below the 0.5% floor of the double reading. In the THIRD PLACE contract of the [first round](/en/glossary#primeiro-turno) he is parked at 11.50%, in a book of USD 138 thousand. He has 4% in the first round in Datafolha and 4.5% in Futura/100% Cidades, both from Sep 17.",
         "fortes": "Rises 1.00pp in the [first round](/en/glossary#primeiro-turno) third-place contract, to 11.50%, and is the only one of the three to gain price in this round. He is fourth in both national polls of 17/Sep, with 4% at Datafolha and 4.5% at Futura/100% Cidades, and holds third position in the third-place book.",
         "fracos": "In the winner contract he remains at 0.05%, below the lowest value ever recorded in his series, 0.10% on 17/Sep. Neither firm tests him in a runoff pair, and no new national poll has come out since 17/Sep."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0.05% in the WINNER contract, reading confirmed on 19/Sep, 19:20 BRT, at the floor of the book. He is not a presidential candidate: he is running for the governorship of São Paulo, and the two national polls of 17/Sep do not test him in a presidential [first round](/en/glossary#primeiro-turno) scenario.",
+        "label": "HADDAD (PT), 0.05% in the WINNER contract, reading confirmed on Sep 20, 9:47 PM BRT, at the floor of the book. He is not a presidential candidate: he is running for governor of São Paulo, and the two national polls of Sep 17 do not test him in a [first round](/en/glossary#primeiro-turno) presidential scenario.",
         "fortes": "His contract did not move in this reading, so there is no movement to explain, and the top of his series in the winner contract is 7.60%, on May 26, measured in the database backup.",
         "fracos": "He is not measured in the [first round](/en/glossary#primeiro-turno) by the two national polls of 17/Sep, so the comparison between price and poll does not exist for him in this round. His winner contract holds USD 7.54M, a larger volume than Augusto Cury's, who is measured in the polls and holds USD 4.98M."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0.15% in the WINNER contract, reading confirmed on 19/Sep, 19:20 BRT, still below the 0.5% floor of the double reading. In the [FIRST ROUND](/en/glossary#primeiro-turno) THIRD-PLACE contract he is unchanged at 0.35%. He has 2% in the first round at Datafolha and 1.0% at Futura/100% Cidades.",
+        "label": "ZEMA (Novo), 0.15% in the WINNER contract, reading confirmed on Sep 20, 9:47 PM BRT, still below the 0.5% floor of the double reading. In the THIRD PLACE contract of the [first round](/en/glossary#primeiro-turno) he rises 0.90pp, to 1.25%, which is his only move in this round. He has 2% in the first round in Datafolha and 1.0% in Futura/100% Cidades.",
         "fortes": "He remains at 0.15% in the winner contract, above the floor of his series, 0.10% on 17/Sep, even though the value stays below the 0.5% cut the panel uses to treat a thin price as noise.",
         "fracos": "He did not move in either contract in this round and neither national poll of 17/Sep tests him in a [runoff](/en/glossary#segundo-turno) pair. The top of his series in the winner contract is 12.00%, on 13/May."
       },
-      "analise": "Of the three, only one had a new price, and the round separates movement from stillness cleanly. Ronaldo Caiado rises 1.00pp in the [first round](/en/glossary#primeiro-turno) third-place contract, to 11.50% (vol USD 138 thousand), and holds third position in that book, behind Renan Santos and Augusto Cury, but in the winner contract he remains at 0.05%, below the lowest value ever recorded in his series. Romeu Zema did not move in either, 0.15% in the winner contract and 0.35% in the third-place one. Fernando Haddad does not appear in any prompted first-round scenario and remains at 0.05%, with the top of his series at 7.60%. ⚠️ Haddad's winner contract holds USD 7.54M and Augusto Cury's, whom the two polls measure at 6% and 6.5%, holds USD 4.98M: accumulated volume measures what has already passed through the contract, not conviction now. In the two national polls of 17/Sep, Caiado has 4% and 4.5% and Zema has 2% and 1.0%, and neither is tested in a runoff pair.",
+      "analise": "Ronaldo Caiado stands at 0.05% in the outright winner contract and 11.50% in the third place one, and Romeu Zema at 0.15% and 1.25% in the third place one, up 0.90pp, reading confirmed on Sep 20, 9:47 PM BRT. In the polls of Sep 17, Caiado has 4% in Datafolha and 4.5% in Futura, and Zema has 2% and 1.0%. Fernando Haddad remains at 0.05% in the outright winner contract and is not tested in the two national polls.",
       "fortes": [
         "Ronaldo Caiado rises 1.00pp in the [first round](/en/glossary#primeiro-turno) third-place contract, to 11.50%, with USD 138 thousand accumulated, and holds third position in that book.",
         "At Datafolha, Ronaldo Caiado has 4% in the first round and a rejection of 13%, below Renan Santos's and Romeu Zema's."
@@ -111,7 +111,7 @@
     {
       "n": "Lula (PT)",
       "p": "At Datafolha of Sep 17 (field Sep 15 to 16, in person, 2,002 interviews, margin of 2.0pp) he has 39% in the first round, ahead, and wins the runoff 46% to 44%. At Futura/100% Cidades of the same day (field Sep 11 to 15, phone, 2,000 interviews, margin of 2.2pp) he has 38.3% in the first round and loses the runoff 43.7% to 48.1%.",
-      "m": "40.50% (vol USD 11.41M) in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, down 2.00pp against the price confirmed on 18/Sep, and 27.00pp below the top of his series, 67.50% on 16/Aug. In the [first round](/en/glossary#primeiro-turno) second-place contract he falls 4.70pp, to 24.65%.",
+      "m": "41.50% (vol USD 11.45M accumulated) in the outright winner contract, reading confirmed on Sep 20, 9:47 PM BRT, up 1.00pp",
       "t": "falls 2.00pp and opens the gap on his own, from 14.00pp to 16.25pp, because the opponent rose only 0.25pp",
       "s": "Datafolha of Sep 17 measures 48% government approval against 50% disapproval, and Futura/100% Cidades of the same day measures 44.1% against 53.1%. That is 3.9 points of difference on approval between two firms that published on the same day, and the panel does not read them as a series.",
       "pc": "#DC2626",
@@ -120,7 +120,7 @@
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "36% in the first round and 44% in the runoff against Lula's 46% at Datafolha of Sep 17, inside two margins. At Futura/100% Cidades of the same day he has 37.7% in the first round and wins the runoff 48.1% to 43.7%, outside two margins.",
-      "m": "56.75% (vol USD 11.03M) in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, up 0.25pp against the price confirmed on 18/Sep, and 0.05pp below the highest value in the recorded readings of his series, 56.80%. In the [first round](/en/glossary#primeiro-turno) second-place contract he rises 5.00pp, to 74.50%.",
+      "m": "58.65% (vol USD 11.15M accumulated) in the outright winner contract, reading confirmed on Sep 20, 9:47 PM BRT, up 1.90pp",
       "t": "rises 0.25pp in the winner book and 5.00pp in the second-place one, and the gap reaches 16.25pp, the largest since 14/Apr",
       "s": "The two national polls of Sep 17 disagree on the SIGN of the runoff against Lula, not only on the magnitude: Datafolha has him 2 points behind and Futura 4.4 points ahead. The methods differ, in person and phone, and so do the field windows.",
       "pc": "#2563EB",
@@ -129,7 +129,7 @@
     {
       "n": "Augusto Cury (Avante)",
       "p": "6% in the first round at Datafolha of Sep 17 and 6.5% at Futura/100% Cidades, third in both and ahead of Renan Santos.",
-      "m": "0.15% in the winner contract, reading confirmed on 19/Sep, 19:20 BRT. In the [first round](/en/glossary#primeiro-turno) third-place contract he falls 4.65pp against the price confirmed on 18/Sep, to 36.35% (vol USD 230 thousand), and sits 14.65pp behind Renan Santos.",
+      "m": "0.05% in the outright winner contract and 32.55% (vol USD 237 thousand accumulated) in the third place one, reading confirmed on Sep 20, 9:47 PM BRT, down 3.80pp",
       "t": "largest fall of the day in the third way and the distance to Renan Santos almost doubles, from 8.00pp to 14.65pp",
       "s": "It is the most direct cross of the round: the two polls put him ahead of Renan Santos in the third way and the third-place contract pays more on Renan, with the distance growing.",
       "pc": "#0891B2",
@@ -138,7 +138,7 @@
     {
       "n": "Renan Santos (Missão)",
       "p": "3% in the first round at Datafolha of Sep 17 and 3.4% at Futura/100% Cidades, behind Augusto Cury in both.",
-      "m": "0.85% (vol USD 13.78M) in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, down 0.10pp, within 0.05pp of the lowest value in the recorded readings of his series, 0.80% on 19/Sep. In the [first round](/en/glossary#primeiro-turno) third-place contract he rises 2.00pp against the price confirmed on 18/Sep, to 51.00% (vol USD 349 thousand).",
+      "m": "0.85% (vol USD 13.89M accumulated) in the outright winner contract and 52.50% (vol USD 355 thousand accumulated) in the third place one, reading confirmed on Sep 20, 9:47 PM BRT, up 1.50pp",
       "t": "rises 2.00pp in the third-place book and opens 14.65pp over Cury, and gives up 0.10pp in the winner one, close to the floor",
       "s": "His winner contract is the second largest by accumulated volume in the presidential book, USD 13.78M, behind only Tarcísio de Freitas', and it pays 0.85%: volume measures interest accumulated since opening, not probability now.",
       "pc": "#7C3AED",
@@ -147,7 +147,7 @@
     {
       "n": "Caiado (PSD)",
       "p": "4% in the first round at Datafolha of Sep 17 and 4.5% at Futura/100% Cidades, fourth in both.",
-      "m": "0.05% in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, below the lowest value in the recorded readings of his series, 0.10% on 17/Sep. In the [first round](/en/glossary#primeiro-turno) third-place contract he rises 1.00pp against the price confirmed on 18/Sep, to 11.50% (vol USD 138 thousand).",
+      "m": "0.05% in the outright winner contract and 11.50% in the third place one, reading confirmed on Sep 20, 9:47 PM BRT",
       "t": "rises 1.00pp in the third-place book and sits below the recorded floor in the winner one",
       "s": "At Datafolha his rejection is 13%, lower than Renan Santos's, at 15%, and Romeu Zema's, at 14%, and even so he stands behind both in one of the instruments.",
       "pc": "#059669",
@@ -156,12 +156,12 @@
     {
       "n": "Romeu Zema (Novo)",
       "p": "2% in the first round at Datafolha of Sep 17 and 1.0% at Futura/100% Cidades.",
-      "m": "0.15% in the winner contract, reading confirmed on 19/Sep, 19:20 BRT, with the top of his series at 12.00%, on 13/May. In the [first round](/en/glossary#primeiro-turno) third-place contract he is unchanged at 0.35%.",
+      "m": "0.15% in the outright winner contract and 1.25% in the third place one, reading confirmed on Sep 20, 9:47 PM BRT, up 0.90pp",
       "t": "unchanged in both contracts, at 0.15% in the winner one and 0.35% in the third-place one",
       "s": "Neither of the two national polls of Sep 17 tests him in a runoff pair, so in this round he only has the first-round number.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "📈 THE WINNER CONTRACT GAP WIDENED FROM 14.00pp TO 16.25pp, AND THIS TIME WHAT OPENED IT WAS LULA'S FALL: he went from 42.50% to 40.50% (vol USD 11.41M) while Flávio Bolsonaro went from 56.50% to only 56.75% (vol USD 11.03M), reading confirmed on 19/Sep, 19:20 BRT, against the price confirmed on 18/Sep. ⭐ Those 16.25pp are Flávio Bolsonaro's largest lead over Lula since 14/Apr, the start of the series recorded in the database, with 633 readings across 156 days, and the opposite extreme of the same series is 41.80pp in Lula's favour, on 01/Aug. ⚠️ Those 56.75% are NOT the top of Flávio Bolsonaro's series: the highest recorded value is 56.80%, and he sits 0.05pp below it. ⚖️ THE DAY'S MOVE IS IN THE SECONDARY BOOKS, NOT IN THE HEADLINE ONE. In the [first round](/en/glossary#primeiro-turno) second-place contract Flávio Bolsonaro rises 5.00pp, to 74.50%, and Lula falls 4.70pp, to 24.65%, leaving the top of his series in that book, which was recorded on 18/Sep. That is twenty times what Flávio Bolsonaro moved in the winner book. 🔴 NO NATIONAL POLL WAS RELEASED ON 19/Sep, so the price moved on two consecutive days with no new information from the ballot. The two that still stand are those of 17/Sep and they disagree on the sign of the [runoff](/en/glossary#segundo-turno): Datafolha, face to face, fieldwork from 15 to 16/Sep, a 2.0pp margin, gives Lula 46% to 44%; Futura/100% Cidades, by telephone, fieldwork from 11 to 15/Sep, a 2.2pp margin, gives Flávio Bolsonaro 48.1% to 43.7%. That is 6.4 points on the same pair, with the sign reversed. 🥉 ON THE THIRD WAY THE INVERSION BETWEEN BOOK AND BALLOT DOUBLED: in the first-round third-place contract Renan Santos rises 2.00pp, to 51.00%, and Augusto Cury falls 4.65pp, to 36.35%, so the distance between the two goes from 8.00pp to 14.65pp, while both polls put Cury ahead of Renan, 6% to 3% and 6.5% to 3.4%. 🏛️ The contract on a Supreme Court justice leaving by impeachment before 2027 falls 0.05pp, to 4.55%, the panel's smallest move, on a day when the Court did not rule on the request to revoke Daniel Vorcaro's detention, filed on 18/Sep. 📅 The electoral registry marks twelve national polls for the coming days, six of them on 24/Sep, and first-round voting is on 04/Oct. The panel measures both universes and does not say which of them will prove right."
+  "cruzamento": "THE OUTRIGHT WINNER GAP WIDENED FROM 16.25pp TO 17.15pp, AND THIS TIME BOTH ROSE: Flávio Bolsonaro went from 56.75% to 58.65% (vol USD 11.15M accumulated) and Lula went from 40.50% to 41.50% (vol USD 11.45M accumulated), reading confirmed on Sep 20, 9:47 PM BRT, against the price confirmed on Sep 19, 7:20 PM BRT. What widened the gap was Flávio's rise, almost twice Lula's, and not a fall. That 17.15pp gap is the widest of the 155 days in which the recorded series has both sides, since April 14, 2026, measured at daily closes. The previous high was 16.30pp, at the close of Sep 19. The climb spans eight days: 2.10pp on Sep 12, 6.40pp on Sep 14, 9.80pp on Sep 16, 14.00pp on Sep 18 and 16.30pp on Sep 19. On the other side, the two national polls of Sep 17 put Lula ahead in the [first round](/en/glossary#primeiro-turno) and ahead in Datafolha's simulated [runoff](/en/glossary#segundo-turno), always within margin, and there is no new national poll with numbers in a primary source since then. So what grew was not the divergence between two new numbers: it was the price moving while the poll stood still. In third place in the first round the market again inverted the order of the poll, with Renan Santos at 52.50% and Augusto Cury at 32.55%, when the poll puts Cury third and Renan fourth. The impeachment contract at the Supreme Court stands at 4.40% (vol USD 92 thousand accumulated) and gave back 0.15pp, on a day when the subject dominated the press: a video published on Sep 20 shows Justice Alexandre de Moraes and his wife landing from a jet belonging to a company that had Daniel Vorcaro as a partner, and the flight is from August 22, 2025. The price did not react."
 }
