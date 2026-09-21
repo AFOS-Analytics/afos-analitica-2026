@@ -22,3 +22,7 @@
 {"quando":"2026-09-18T21:35:31.554Z","arquivo":968,"banco":1052,"fantasmas":84,"inseridas":0,"jaExistiam":968,"modo":"rede","fonte":"medido"}
 {"quando":"2026-09-19T21:43:51.987Z","arquivo":997,"banco":1083,"fantasmas":86,"inseridas":31,"jaExistiam":966,"modo":"rede","fonte":"medido"}
 {"quando":"2026-09-21T00:12:45.677Z","arquivo":1038,"banco":1124,"fantasmas":86,"inseridas":41,"jaExistiam":997,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-21T19:04:23.373Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":24,"jaExistiam":1034,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-21T19:05:14.570Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-21T19:06:17.131Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-21T19:06:53.157Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}

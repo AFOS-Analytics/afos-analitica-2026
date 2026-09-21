@@ -426,6 +426,27 @@ Ele **herda a tradução de tudo que não mudou desde o `HEAD`** e **cobra pelo 
 
 **Glossário:** termo brasileiro SEM tradução fica em português com link na própria expressão (`centrão`, `pauta-bomba`, `pau-mandado`, `penduricalhos`). Termo COM tradução é traduzido e leva o link mesmo assim (`1º turno` vira `first round` / `primera vuelta`). Linkar só a PRIMEIRA ocorrência de cada termo por campo: em cartão pequeno, repetir o mesmo link três vezes enterra os números.
 
+### 🧷 E o link SOME sozinho a cada rodada, porque ele mora só no locale
+
+```bash
+npm run glossario:brz -- --conferir      # só mede contra o HEAD
+npm run glossario:brz                    # repõe nos campos que ESTA rodada reescreveu
+```
+
+🔴 **Instalado em 21/Set/2026, e a régua acima já existia: o que faltava era quem a executasse.** O link de glossário não vem do pt-BR, que tem **zero** deles. Ele nasce na tradução. Então todo campo reescrito produz tradução nova **sem link**, e a perda é silenciosa. Medido naquele dia, numa passada normal:
+
+| arquivo | HEAD | depois da rodada |
+|---|---|---|
+| `analysis-criteriosa.en.json` | 27 | **0** |
+| `analysis-data.en.json` | 14 | 8 |
+| `polls-data.en.json` | 75 | 64 |
+
+⛔ **E o `check-locale-json.ts` deu VERDE nos seis arquivos**, porque ele confere a FORMA do link que existe e nunca a PRESENÇA do que sumiu. Portão que só olha o que está lá não vê o que foi embora. → `memory/feedback_reescrever_o_campo_inteiro_apaga_o_link_de_glossario.md`
+
+⚠️ **Ele só toca campo que DIFERE do `HEAD`**, comparado por TEXTO e não por caminho. A primeira versão varria tudo e levou o `polls-data.en` de 64 para **208**, religando 96 campos de pesquisas antigas que a rodada não escreveu. Repor o que a rodada apagou é conserto; religar o arquivo inteiro é reescrever publicação alheia.
+
+📌 **A lista de termos sai do `HEAD`, e por isso ela envelhece.** No mesmo dia a tradução nova usou `1ª vuelta` onde o `HEAD` só tinha `primera vuelta`, e o ES saiu com 7 links em vez de 53 até a forma abreviada entrar na lista. Lista feita de um corpus só cobre aquele corpus: quando o contador do ES ficar muito abaixo do EN, o lugar de olhar é a lista, não o texto.
+
 **Antes de dar por pronto, rodar as 5 checagens** que pegaram defeito real em 25/Jul: gate numérico zerado; nenhum id de glossário inexistente (âncora morta); nenhum link apontando para outro locale; nenhum homóglifo cirílico; separador decimal 100% consistente com o idioma. Varrer sobre os VALORES traduzidos, não sobre o texto cru do arquivo: no cru, nome de chave e nome próprio de instituto dão falso positivo.
 
 ⚠️ **Traduzir PARCIALMENTE o inglês não é opção.** Campo deixado em português carrega vírgula decimal, que lida em convenção inglesa vira outro número (`45,9%` vira 459) e reprova o arquivo inteiro no gate. O EN é tudo ou nada. O ES tolera parcial, porque compartilha a convenção decimal do português.
