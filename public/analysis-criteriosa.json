@@ -1,168 +1,169 @@
 {
-  "updatedAt": "21/09/2026, 16:21",
-  "subtitle": "Cruzamento de 21/Set/2026: Polymarket na leitura confirmada de 16:21 BRT, com o contrato de vencedor mantido na leitura confirmada de 00:06 BRT do mesmo dia, mais as duas nacionais divulgadas no dia, BTG/Nexus (registro BR-00485/2026, campo de 18 a 20/Set) e Palver (registro BR-00860/2026, campo de 15 a 18/Set), e o fluxo de imprensa de 21/Set.",
+  "updatedAt": "21/09/2026, 17:01",
+  "subtitle": "Cruzamento de 21/Set/2026: Polymarket na leitura confirmada de 21/Set, 17:01 BRT, mais as duas nacionais divulgadas no dia, BTG/Nexus (campo de 18 a 20/Set) e Palver (campo de 15 a 20/Set), que fecharam campo no MESMO dia e medem sinais opostos, e o fluxo de imprensa de 21/Set.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 41,50% (vol USD 11,47M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT. Esta rodada não publica preço novo para esse contrato. No de 2º lugar do 1º turno cai 0,30pp, para 29,25% (vol USD 0,88M), na leitura confirmada de 21/Set, 16:21 BRT. PESQUISA: 40% no 1º turno e 46% no 2º na BTG/Nexus de 21/Set, à frente nos dois; 41% e 43% na Palver do mesmo dia, atrás nos dois.",
+      "header": "PREÇO: 38,50% (vol USD 11,66M acumulado) no contrato de vencedor, queda de 3,00pp na leitura confirmada de 21/Set, 17:01 BRT, contra a de 00:06 BRT do mesmo dia. No de 2º lugar do 1º turno cai 0,15pp, para 29,40% (vol USD 0,88M). PESQUISA: 40% no 1º turno e 46% no 2º na BTG/Nexus de 21/Set, à frente nos dois; 41% e 43% na Palver do mesmo dia, atrás nos dois.",
       "fortes": [
         "Lidera os dois turnos na BTG/Nexus divulgada em 21/Set, registro BR-00485/2026, 2.006 eleitores por telefone entre 18 e 20/Set e margem de 2,0pp: 40% a 37% no 1º turno e 46% a 45% no 2º, as duas distâncias dentro de duas margens.",
-        "É o campo mais recente das duas nacionais do dia: a BTG/Nexus fechou em 20/Set e a Palver em 18/Set, e nos três dias de diferença está a única coisa que separa as janelas das duas casas.",
-        "O contrato dele no livro de vencedor tem USD 11,47M acumulados, o maior entre os dois nomes que disputam o preço, na leitura confirmada de 21/Set às 00:06 BRT."
+        "As duas nacionais do dia fecharam campo no MESMO 20/Set, então a diferença entre elas não está na janela: a BTG/Nexus é por telefone com amostra probabilística de 2.006 e a Palver é online por anúncios em redes sociais, com amostra não probabilística de 5.000 ajustada por cotas e pesos.",
+        "O contrato dele no livro de vencedor tem USD 11,66M acumulados, o maior entre os dois nomes que disputam o preço, na leitura confirmada de 21/Set, 17:01 BRT."
       ],
       "fracos": [
-        "Perde os dois turnos na Palver divulgada no mesmo 21/Set, registro BR-00860/2026, 5.000 eleitores pela internet entre 15 e 18/Set e margem de 2,8pp: 41% a 42% no 1º turno e 43% a 47% no 2º. A casa declara empate técnico nos dois.",
-        "No contrato de vencedor ele está em 41,50% contra 59,05% de Flávio Bolsonaro, um vão de 17,55pp, na leitura confirmada de 21/Set às 00:06 BRT.",
-        "No contrato de 2º lugar do 1º turno ele cede 0,30pp, para 29,25%, contra 68,50% de Flávio Bolsonaro no mesmo livro."
+        "Perde os dois turnos na Palver (registro BR-00860/2026, 5.000 eleitores pela internet entre 15 e 20/Set, margem de 2,8pp), divulgada no mesmo 21/Set: 41% a 42% no 1º turno e 43% a 47% no 2º. A casa declara empate técnico nos dois.",
+        "No contrato de vencedor ele está em 38,50% contra 60,90% de Flávio Bolsonaro, um vão de 22,40pp, na leitura confirmada de 21/Set, 17:01 BRT. Nas leituras gravadas de hoje esse vão chegou a 23,80pp às 15:00 BRT, o maior dos 158 dias em que a série tem os dois lados.",
+        "No contrato de 2º lugar do 1º turno ele cede 0,15pp, para 29,40%, contra 68,50% de Flávio Bolsonaro no mesmo livro.",
+        "Na Palver ele marca 43% nos CINCO pares de 2º turno testados, contra Flávio Bolsonaro, Romeu Zema, Ronaldo Caiado, Augusto Cury e Renan Santos, e perde três deles. O número dele não se move conforme o adversário: toda a variação está do outro lado."
       ],
-      "analise": "O contrato de vencedor não recebe preço novo nesta rodada: Lula segue nos 41,50% (vol USD 11,47M acumulado) da leitura confirmada de 21/Set às 00:06 BRT, com o vão de 17,55pp para Flávio Bolsonaro. No de 2º lugar do 1º turno ele cede 0,30pp, para 29,25% (vol USD 0,88M), na leitura confirmada de 21/Set, 16:21 BRT. Nas pesquisas o dia é de discordância entre duas casas que mediram quase os mesmos dias: a BTG/Nexus o põe à frente nos dois turnos e a Palver o põe atrás nos dois, e as duas declaram empate técnico. O AFOS não diz qual das duas descreve melhor o eleitorado. Diz que elas divergem no sinal, não só na magnitude, e que as duas foram divulgadas no mesmo 21/Set."
+      "analise": "Lula caiu 3,00pp no contrato de vencedor, de 41,50% para 38,50% (vol USD 11,66M acumulado), na leitura confirmada de 21/Set, 17:01 BRT, contra a leitura confirmada de 21/Set às 00:06 BRT. ⚠️ Não é o piso da série dele, que é 34,50%, de 25 de abril. No de 2º lugar do 1º turno ele cede 0,15pp, para 29,40% (vol USD 0,88M). Nas pesquisas o dia é de discordância entre duas casas que fecharam campo no MESMO 20/Set: a BTG/Nexus o põe à frente nos dois turnos e ele vence ou empata os cinco pares que ela testou, e a Palver o põe atrás no par principal e o deixa em 43% nos cinco pares dela, perdendo três. O AFOS não diz qual das duas descreve melhor o eleitorado. Diz que elas divergem no sinal, não só na magnitude, e que o que as separa é o método, não a janela de campo."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 59,05% (vol USD 11,18M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT. Esta rodada não publica preço novo para esse contrato. No de 2º lugar do 1º turno cai 2,00pp, para 68,50% (vol USD 1,05M), na leitura confirmada de 21/Set, 16:21 BRT. PESQUISA: 42% no 1º turno e 47% no 2º na Palver de 21/Set, à frente nos dois; 37% e 45% na BTG/Nexus do mesmo dia, atrás nos dois.",
+      "header": "PREÇO: 60,90% (vol USD 11,37M acumulado) no contrato de vencedor, alta de 1,85pp na leitura confirmada de 21/Set, 17:01 BRT, contra a de 00:06 BRT do mesmo dia. No de 2º lugar do 1º turno cai 2,00pp, para 68,50% (vol USD 1,05M). PESQUISA: 42% no 1º turno e 47% no 2º na Palver de 21/Set, à frente nos dois; 37% e 45% na BTG/Nexus do mesmo dia, atrás nos dois.",
       "fortes": [
-        "59,05% no contrato de vencedor, com USD 11,18M acumulados, na leitura confirmada de 21/Set às 00:06 BRT, contra 41,50% de Lula no mesmo livro.",
-        "Lidera os dois turnos na Palver divulgada em 21/Set, registro BR-00860/2026, 5.000 eleitores pela internet entre 15 e 18/Set e margem de 2,8pp: 42% a 41% no 1º turno e 47% a 43% no 2º.",
-        "É o nome que o mercado paga em primeiro no livro de vencedor e no de 2º lugar do 1º turno ao mesmo tempo, com 68,50% neste último."
+        "60,90% no contrato de vencedor, com USD 11,37M acumulados, na leitura confirmada de 21/Set, 17:01 BRT, contra 38,50% de Lula no mesmo livro, um vão de 22,40pp.",
+        "Lidera os dois turnos na Palver (registro BR-00860/2026, 5.000 eleitores pela internet entre 15 e 20/Set, margem de 2,8pp): 42% a 41% no 1º turno e 47% a 43% no 2º, e é o único dos cinco adversários testados que abre quatro pontos sobre Lula naquela casa.",
+        "Nas leituras gravadas de hoje o vão dele sobre Lula chegou a 23,80pp às 15:00 BRT, o maior dos 158 dias da série aberta em 14 de abril de 2026. A leitura certificada de 17:01 BRT traz o vão em 22,40pp."
       ],
       "fracos": [
-        "Perde os dois turnos na BTG/Nexus divulgada no mesmo 21/Set, registro BR-00485/2026, 2.006 eleitores por telefone entre 18 e 20/Set e margem de 2,0pp: 37% a 40% no 1º turno e 45% a 46% no 2º.",
-        "No contrato de 2º lugar do 1º turno ele cai 2,00pp, para 68,50%, contra a leitura confirmada de 21/Set às 00:06 BRT, e foi a maior queda do dia fora do livro de 3º lugar.",
-        "O volume do contrato dele no livro de vencedor, USD 11,18M acumulados, é menor que o de Lula, de USD 11,47M, que o de Renan Santos, de USD 13,89M, e que o de Tarcísio de Freitas, de USD 14,08M, que é o maior do livro. Volume alto mede interesse acumulado desde a abertura, não probabilidade de agora."
+        "Perde os dois turnos na BTG/Nexus (registro BR-00485/2026, 2.006 eleitores por telefone entre 18 e 20/Set, margem de 2,0pp): 37% a 40% no 1º turno e 45% a 46% no 2º. Naquela casa ele tem o par mais apertado dos cinco testados contra Lula.",
+        "No contrato de 2º lugar do 1º turno ele cai 2,00pp, para 68,50%, contra a leitura confirmada de 21/Set às 00:06 BRT, e foi o único dos dois livros presidenciais em que ele cedeu no dia.",
+        "O volume do contrato dele no livro de vencedor, USD 11,37M acumulados, é menor que o de Lula, de USD 11,66M, que o de Renan Santos, de USD 13,99M, e que o de Tarcísio de Freitas, de USD 14,08M, que é o maior do livro. Volume alto mede interesse acumulado desde a abertura, não probabilidade de agora."
       ],
-      "analise": "O contrato de vencedor não recebe preço novo nesta rodada: Flávio Bolsonaro segue nos 59,05% (vol USD 11,18M acumulado) da leitura confirmada de 21/Set às 00:06 BRT. No de 2º lugar do 1º turno ele cede 2,00pp, para 68,50% (vol USD 1,05M), na leitura confirmada de 21/Set, 16:21 BRT. Nas duas nacionais do dia ele aparece à frente na Palver nos dois turnos e atrás na BTG/Nexus nos dois, sempre dentro das margens declaradas, e as duas casas registram empate técnico. Em 21/Set o Ministério da Justiça oficializou a demissão de Eduardo Bolsonaro do cargo de escrivão da Polícia Federal por abandono de cargo. O procedimento não é do dia: a própria PF concluiu a apuração e recomendou o desligamento em julho, e o que mudou em 21/Set foi a formalização pelo ministro. O painel não afirma que o ato moveu preço."
+      "analise": "Flávio Bolsonaro subiu 1,85pp no contrato de vencedor, de 59,05% para 60,90% (vol USD 11,37M acumulado), na leitura confirmada de 21/Set, 17:01 BRT. Nas leituras gravadas do dia o vão dele sobre Lula chegou a 23,80pp às 15:00 BRT, o maior dos 158 dias da série aberta em 14 de abril de 2026, e a leitura certificada traz esse vão em 22,40pp. No de 2º lugar do 1º turno ele cede 2,00pp, para 68,50% (vol USD 1,05M). Nas duas nacionais do dia ele aparece à frente na Palver nos dois turnos e atrás na BTG/Nexus nos dois, sempre dentro das margens declaradas. Em 21/Set saiu no Diário Oficial da União a demissão de Eduardo Bolsonaro do cargo de escrivão da Polícia Federal por abandono de cargo. O procedimento não é do dia: a PF concluiu o processo administrativo em julho e o ministro assinou a portaria em 18/Set. O painel não afirma que o ato moveu preço."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 0,05% no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 40,25% (vol USD 0,25M acumulado) no de 3º lugar do 1º turno, alta de 7,70pp na leitura confirmada de 21/Set, 16:21 BRT. PESQUISA: 6% no 1º turno na BTG/Nexus de 21/Set, terceiro colocado.",
+      "header": "PREÇO: 0,05% no contrato de vencedor e 40,25% (vol USD 0,25M acumulado) no de 3º lugar do 1º turno, alta de 7,70pp na leitura confirmada de 21/Set, 17:01 BRT. PESQUISA: 6% no 1º turno na BTG/Nexus de 21/Set, terceiro colocado, e 2% na Palver do mesmo dia, quarto.",
       "fortes": [
         "Sobe 7,70pp no contrato de 3º lugar do 1º turno, para 40,25% (vol USD 0,25M acumulado), a maior alta de qualquer contrato do painel nesta rodada, contra a leitura confirmada de 21/Set às 00:06 BRT.",
         "A distância para Renan Santos naquele livro encolheu de 19,95pp para 5,25pp em pouco mais de dezesseis horas, e o preço passou a andar na direção do que as pesquisas vêm medindo.",
-        "É o terceiro colocado no 1º turno da BTG/Nexus de 21/Set, com 6%, à frente de Ronaldo Caiado e de Renan Santos na mesma rodada."
+        "É o terceiro colocado no 1º turno da BTG/Nexus de 21/Set, com 6%, e naquela casa o par de 2º turno dele contra Lula é o segundo mais apertado, 43% a 44%."
       ],
       "fracos": [
-        "No contrato de vencedor segue em 0,05%, na leitura confirmada de 21/Set às 00:06 BRT, com USD 4,98M acumulados.",
-        "Segue em segundo no contrato de 3º lugar do 1º turno, atrás de Renan Santos, ao contrário do que as pesquisas medem na terceira via.",
+        "No contrato de vencedor segue em 0,05%, na leitura confirmada de 21/Set, 17:01 BRT, com USD 5,00M acumulados.",
+        "Na Palver do mesmo dia ele aparece em QUARTO, com 2%, atrás de Renan Santos, que tem 11%, e perde o 2º turno para Lula por 35% a 43%. As duas nacionais do dia discordam sobre a ordem da terceira via tanto quanto sobre o topo.",
         "O movimento de hoje não é extremo de série: no backup ele já esteve em 60,30% neste mesmo contrato, em 04/Set. O que a rodada mede é o tamanho do deslocamento, não um recorde de nível."
       ],
-      "analise": "Augusto Cury subiu 7,70pp no contrato de 3º lugar do 1º turno, de 32,55% para 40,25% (vol USD 0,25M acumulado), na leitura confirmada de 21/Set, 16:21 BRT, contra a leitura confirmada de 21/Set às 00:06 BRT. Foi a maior alta entre os contratos que receberam preço novo nesta rodada. Do outro lado do mesmo livro, Renan Santos caiu 7,00pp, e a distância entre os dois encolheu de 19,95pp para 5,25pp. A direção do movimento é a das pesquisas: a BTG/Nexus do dia o põe em terceiro no 1º turno, com 6%, e a ordem da terceira via medida pelas casas deixou de estar tão longe da ordem que o livro paga. O painel registra a aproximação e não afirma causa."
+      "analise": "Augusto Cury subiu 7,70pp no contrato de 3º lugar do 1º turno, de 32,55% para 40,25% (vol USD 0,25M acumulado), na leitura confirmada de 21/Set, 17:01 BRT, contra a leitura confirmada de 21/Set às 00:06 BRT. Foi a maior alta entre os contratos que receberam preço novo nesta rodada, e do outro lado do mesmo livro Renan Santos caiu 7,00pp, com a distância entre os dois encolhendo de 19,95pp para 5,25pp. As duas nacionais do dia não concordam sobre qual dos dois lidera a terceira via: a BTG/Nexus o põe em terceiro com 6% contra 3% de Renan Santos, e a Palver põe Renan Santos em terceiro com 11% contra 2% dele. O painel registra o movimento do livro e a discordância entre as casas, sem afirmar que uma coisa explica a outra."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 0,75% (vol USD 13,89M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 45,50% (vol USD 0,36M acumulado) no de 3º lugar, queda de 7,00pp na leitura confirmada de 21/Set, 16:21 BRT. PESQUISA: não aparece entre os nomes divulgados no 1º turno da BTG/Nexus de 21/Set.",
+      "header": "PREÇO: 0,95% (vol USD 13,99M acumulado) no contrato de vencedor, alta de 0,20pp, e 45,50% (vol USD 0,36M acumulado) no de 3º lugar, queda de 7,00pp, leitura confirmada de 21/Set, 17:01 BRT. PESQUISA: 11% no 1º turno na Palver de 21/Set, terceiro colocado, e 3% na BTG/Nexus do mesmo dia, quinto.",
       "fortes": [
         "Segue à frente no contrato de 3º lugar do 1º turno, com 45,50%, e é o contrato de maior volume acumulado daquele livro, USD 0,36M.",
-        "No livro de vencedor o contrato dele tem USD 13,89M acumulados, o segundo maior do livro presidencial inteiro, atrás só do de Tarcísio de Freitas, na leitura confirmada de 21/Set às 00:06 BRT.",
-        "Entrou com representação no Tribunal Superior Eleitoral contra o reajuste do Bolsa Família em 17/Set, e o relator sorteado foi André Mendonça."
+        "No livro de vencedor o contrato dele tem USD 13,99M acumulados, o segundo maior do livro presidencial inteiro, atrás só do de Tarcísio de Freitas, na leitura confirmada de 21/Set, 17:01 BRT.",
+        "É o terceiro colocado no 1º turno da Palver de 21/Set, com 11%, à frente de Augusto Cury, que tem 2%, na casa com a maior amostra das duas, de 5.000 entrevistas."
       ],
       "fracos": [
-        "Cai 7,00pp no contrato de 3º lugar do 1º turno, de 52,50% para 45,50%, a maior queda de qualquer contrato do painel nesta rodada, contra a leitura confirmada de 21/Set às 00:06 BRT.",
+        "Cai 7,00pp no contrato de 3º lugar do 1º turno, de 52,50% para 45,50%, a maior queda de qualquer contrato do painel nesta rodada, na leitura confirmada de 21/Set, 17:01 BRT.",
         "A dianteira dele sobre Augusto Cury naquele livro encolheu de 19,95pp para 5,25pp em pouco mais de dezesseis horas.",
-        "No contrato de vencedor está em 0,75%, na leitura confirmada de 21/Set às 00:06 BRT, com USD 13,89M acumulados: volume alto e preço no piso do livro."
+        "No contrato de vencedor está em 0,95%, com USD 13,99M acumulados: volume alto e preço perto do piso do livro."
       ],
-      "analise": "Renan Santos caiu 7,00pp no contrato de 3º lugar do 1º turno, de 52,50% para 45,50% (vol USD 0,36M acumulado), na leitura confirmada de 21/Set, 16:21 BRT, e segue à frente, com a dianteira sobre Augusto Cury encolhendo de 19,95pp para 5,25pp na mesma janela. No contrato de vencedor ele está em 0,75%, com USD 13,89M acumulados, o segundo maior volume do livro presidencial, o que mede interesse acumulado desde a abertura e não probabilidade de agora. A divergência entre o livro e as pesquisas na ordem da terceira via segue existindo, e hoje ela diminuiu: o mercado ainda o põe em primeiro naquele contrato, e a BTG/Nexus do dia divulga Augusto Cury em 6% no 1º turno sem trazê-lo entre os nomes publicados."
+      "analise": "Renan Santos caiu 7,00pp no contrato de 3º lugar do 1º turno, de 52,50% para 45,50% (vol USD 0,36M acumulado), na leitura confirmada de 21/Set, 17:01 BRT, e segue à frente, com a dianteira sobre Augusto Cury encolhendo de 19,95pp para 5,25pp na mesma janela. No contrato de vencedor ele está em 0,95%, com USD 13,99M acumulados, o segundo maior volume do livro presidencial, o que mede interesse acumulado desde a abertura e não probabilidade de agora. Nas pesquisas do dia ele é o caso de maior divergência entre as duas casas: 11% e terceiro lugar na Palver, 3% e quinto lugar na BTG/Nexus, com as duas tendo fechado campo no mesmo 20/Set."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Ronaldo Caiado 0,05% no contrato de vencedor e 15,50% no de 3º lugar, alta de 4,00pp; Romeu Zema 0,15% e 0,50% no de 3º lugar, queda de 0,55pp; Fernando Haddad 0,05%. Os contratos de vencedor são da leitura confirmada de 21/Set às 00:06 BRT e os de 3º lugar da leitura confirmada de 21/Set, 16:21 BRT. PESQUISA: nenhum dos três aparece entre os nomes divulgados no 1º turno da BTG/Nexus de 21/Set.",
-      "subtitle": "Os três nomes fora do pelotão de frente. O contrato de vencedor é da leitura confirmada de 21/Set às 00:06 BRT e não recebe preço novo nesta rodada; o de 3º lugar do 1º turno é da leitura confirmada de 21/Set, 16:21 BRT. As pesquisas são as duas nacionais divulgadas em 21/Set, que não publicam o número deles no 1º turno.",
+      "header": "PREÇO: Ronaldo Caiado 0,05% no contrato de vencedor e 15,50% no de 3º lugar, alta de 4,00pp; Romeu Zema 0,15% e 0,50% no de 3º lugar, queda de 0,55pp; Fernando Haddad 0,05%. Todos na leitura confirmada de 21/Set, 17:01 BRT. PESQUISA: Ronaldo Caiado tem 5% no 1º turno da BTG/Nexus e 1% na Palver, e Romeu Zema tem 1% nas duas.",
+      "subtitle": "Os três nomes fora do pelotão de frente, na leitura confirmada de 21/Set, 17:01 BRT. As duas nacionais de 21/Set testam Ronaldo Caiado e Romeu Zema em par de 2º turno contra Lula, e as duas discordam no sinal dos dois pares.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 21/Set às 00:06 BRT, sem preço novo nesta rodada e abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno sobe 4,00pp, para 15,50%, num livro de USD 0,14M acumulados, na leitura confirmada de 21/Set, 16:21 BRT.",
+        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 21/Set, 17:01 BRT, abaixo do piso de 0,5% da dupla leitura, com USD 7,65M acumulados. No contrato de 3º LUGAR do 1º turno sobe 4,00pp, para 15,50%, num livro de USD 0,14M. Tem 5% no 1º turno da BTG/Nexus e 1% na Palver.",
         "fortes": "Sobe 4,00pp no contrato de 3º lugar do 1º turno, para 15,50%, a terceira maior alta da rodada, e mantém a terceira posição daquele livro. É o único dos três nomes deste bloco a ganhar preço nesta rodada.",
-        "fracos": "No contrato de vencedor segue em 0,05%, sem preço novo nesta rodada, com USD 7,64M acumulados. Nem a BTG/Nexus nem a Palver de 21/Set publicam o número dele no 1º turno, e nenhuma das duas o testa em par de 2º turno."
+        "fracos": "No contrato de vencedor segue em 0,05%, com USD 7,65M acumulados. Nas pesquisas do dia as duas casas discordam sobre ele: 5% e quarto lugar na BTG/Nexus, 1% e quinto na Palver. No 2º turno contra Lula a BTG/Nexus mede empate em 45% a 45% e a Palver o dá à frente por 44% a 43%, as duas dentro da margem."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 21/Set às 00:06 BRT, sem preço novo nesta rodada, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e as duas nacionais de 21/Set não o testam em cenário presidencial de 1º turno.",
-        "fortes": "O contrato dele não recebe preço novo nesta rodada, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai, medido no backup do banco.",
-        "fracos": "Não é medido no 1º turno pelas duas nacionais de 21/Set, então a comparação entre preço e pesquisa não existe para ele nesta rodada. O contrato de vencedor dele acumula USD 7,54M, volume maior que o de Augusto Cury, que é testado nas pesquisas e tem USD 4,98M."
+        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 21/Set, 17:01 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e as duas nacionais de 21/Set não o testam em cenário presidencial.",
+        "fortes": "O contrato dele não se moveu nesta leitura, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai, medido no backup do banco.",
+        "fracos": "Não é medido no 1º turno pelas duas nacionais de 21/Set nem testado em par de 2º turno, então a comparação entre preço e pesquisa não existe para ele nesta rodada. O contrato de vencedor dele acumula USD 7,54M, volume maior que o de Augusto Cury, que é testado nas duas casas e tem USD 4,98M."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,15% no contrato de VENCEDOR, leitura confirmada de 21/Set às 00:06 BRT, sem preço novo nesta rodada e ainda abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno cai 0,55pp, para 0,50%, na leitura confirmada de 21/Set, 16:21 BRT.",
+        "label": "ZEMA (Novo), 0,15% no contrato de VENCEDOR, leitura confirmada de 21/Set, 17:01 BRT, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno cai 0,55pp, para 0,50%. Tem 1% no 1º turno nas duas nacionais de 21/Set.",
         "fortes": "Segue em 0,15% no contrato de vencedor, acima do piso da série dele, de 0,10% em 17/Set, ainda que o valor fique abaixo do corte de 0,5% que o painel usa para tratar preço fino como ruído.",
-        "fracos": "Cai 0,55pp no contrato de 3º lugar do 1º turno, para 0,50%, e nenhuma das duas nacionais de 21/Set publica o número dele no 1º turno nem o testa em par de 2º turno. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
+        "fracos": "Cai 0,55pp no contrato de 3º lugar do 1º turno, para 0,50%, e tem 1% no 1º turno nas duas nacionais do dia. No 2º turno contra Lula as duas casas trocam o sinal: a BTG/Nexus dá Lula por 47% a 41%, fora de duas margens, e a Palver o dá à frente por 44% a 43%, dentro da margem. O topo da série dele no contrato de vencedor é de 12,00%, em 13/Mai."
       },
-      "analise": "No livro de 3º lugar do 1º turno, que é o único que se moveu nesta rodada, Ronaldo Caiado sobe 4,00pp, para 15,50% (vol USD 0,14M acumulado), e Romeu Zema cai 0,55pp, para 0,50%, na leitura confirmada de 21/Set, 16:21 BRT. Nos contratos de vencedor os três seguem nos valores da leitura confirmada de 21/Set às 00:06 BRT, que esta rodada não atualiza: Ronaldo Caiado em 0,05%, Romeu Zema em 0,15% e Fernando Haddad em 0,05%. Nenhum dos três aparece entre os nomes que a BTG/Nexus divulgou no 1º turno de 21/Set, então nesta rodada eles têm preço e não têm número novo de pesquisa.",
+      "analise": "No livro de 3º lugar do 1º turno Ronaldo Caiado sobe 4,00pp, para 15,50% (vol USD 0,14M acumulado), e Romeu Zema cai 0,55pp, para 0,50%, na leitura confirmada de 21/Set, 17:01 BRT. Nos contratos de vencedor os três seguem parados: Ronaldo Caiado em 0,05%, Romeu Zema em 0,15% e Fernando Haddad em 0,05%. As duas nacionais do dia testam Ronaldo Caiado e Romeu Zema contra Lula no 2º turno e trocam o sinal nos dois pares: a BTG/Nexus dá empate com Caiado e vantagem de Lula sobre Zema, e a Palver dá os dois à frente de Lula por um ponto. Fernando Haddad não é testado por nenhuma das duas.",
       "fortes": [
-        "Ronaldo Caiado sobe 4,00pp no contrato de 3º lugar do 1º turno, para 15,50% (vol USD 0,14M acumulado), a terceira maior alta da rodada, e mantém a terceira posição daquele livro, na leitura confirmada de 21/Set, 16:21 BRT.",
+        "Ronaldo Caiado sobe 4,00pp no contrato de 3º lugar do 1º turno, para 15,50% (vol USD 0,14M acumulado), a terceira maior alta da rodada, e mantém a terceira posição daquele livro, na leitura confirmada de 21/Set, 17:01 BRT.",
         "O movimento dele acompanha o do livro inteiro de 3º lugar, que foi o único a se mover nesta rodada, com os três primeiros nomes andando ao mesmo tempo."
       ],
       "fracos": [
-        "Ronaldo Caiado segue em 0,05% no contrato de vencedor, na leitura confirmada de 21/Set às 00:06 BRT, com USD 7,64M acumulados.",
-        "Romeu Zema cai 0,55pp no contrato de 3º lugar, para 0,50%, e segue em 0,15% no de vencedor, sem preço novo nesta rodada.",
-        "Fernando Haddad segue em 0,05% no contrato de vencedor, sem preço novo nesta rodada, e não é testado no 1º turno pela BTG/Nexus nem pela Palver de 21/Set."
+        "Ronaldo Caiado segue em 0,05% no contrato de vencedor, na leitura confirmada de 21/Set, 17:01 BRT, com USD 7,65M acumulados.",
+        "Romeu Zema cai 0,55pp no contrato de 3º lugar, para 0,50%, e segue em 0,15% no de vencedor.",
+        "Fernando Haddad segue em 0,05% no contrato de vencedor e é o único dos três que as duas nacionais de 21/Set não testam, nem no 1º turno nem em par de 2º."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Na BTG/Nexus de 21/Set (campo de 18 a 20/Set, telefone, 2.006 entrevistas, margem de 2,0pp) tem 40% no 1º turno, à frente, e vence o 2º turno por 46% a 45%. Na Palver do mesmo dia (campo de 15 a 18/Set, internet, 5.000 entrevistas, margem de 2,8pp) tem 41% no 1º turno e perde o 2º por 43% a 47%.",
-      "m": "41,50% (vol USD 11,47M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, sem preço novo nesta rodada",
-      "t": "cede 0,30pp no contrato de 2º lugar do 1º turno, para 29,25%, na leitura confirmada de 21/Set, 16:21 BRT",
-      "s": "As duas nacionais do dia discordam no SINAL dos dois turnos, não só na magnitude, e as duas declaram empate técnico. Os métodos são diferentes, telefone e internet, e as janelas de campo também: uma fechou em 20/Set e a outra em 18/Set.",
+      "p": "Na BTG/Nexus de 21/Set (campo de 18 a 20/Set, telefone, 2.006 entrevistas, margem de 2,0pp) tem 40% no 1º turno, à frente, e vence ou empata os cinco pares de 2º turno testados, com 46% a 45% contra Flávio Bolsonaro. Na Palver do mesmo dia (campo de 15 a 20/Set, internet, 5.000 entrevistas, margem de 2,8pp) tem 41% no 1º turno e marca 43% nos cinco pares dela, perdendo três.",
+      "m": "38,50% (vol USD 11,66M acumulado) no contrato de vencedor, leitura confirmada de 21/Set, 17:01 BRT, queda de 3,00pp",
+      "t": "cede 3,00pp no de vencedor e 0,15pp no de 2º lugar do 1º turno, para 29,40%, e o vão contra Flávio abre para 22,40pp",
+      "s": "As duas nacionais do dia fecharam campo no MESMO 20/Set e discordam no sinal dos dois turnos, não só na magnitude. O que as separa não é a janela: é o método, telefone com amostra probabilística contra online não probabilístico por anúncios em redes sociais.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
       "p": "Na Palver de 21/Set tem 42% no 1º turno, à frente, e vence o 2º por 47% a 43%. Na BTG/Nexus do mesmo dia tem 37% no 1º turno e perde o 2º por 45% a 46%.",
-      "m": "59,05% (vol USD 11,18M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, sem preço novo nesta rodada",
-      "t": "cai 2,00pp no contrato de 2º lugar do 1º turno, para 68,50%, na leitura confirmada de 21/Set, 16:21 BRT",
-      "s": "O vão no contrato de vencedor é de 17,55pp a favor dele, na leitura de 00:06, e as duas pesquisas do dia medem empate técnico nos dois turnos. Os dois instrumentos apontam para distâncias de tamanhos muito diferentes.",
+      "m": "60,90% (vol USD 11,37M acumulado) no contrato de vencedor, leitura confirmada de 21/Set, 17:01 BRT, alta de 1,85pp",
+      "t": "sobe 1,85pp no de vencedor e cai 2,00pp no de 2º lugar, e nas leituras do dia chegou a 61,70%, topo da série",
+      "s": "O vão no contrato de vencedor é de 22,40pp a favor dele e chegou a 23,80pp nas leituras gravadas do dia, o maior dos 158 dias da série. As duas pesquisas do dia medem empate técnico nos dois turnos. Os dois instrumentos apontam para distâncias de tamanhos muito diferentes.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "6% no 1º turno na BTG/Nexus de 21/Set, terceiro colocado. A Palver do mesmo dia divulgou só os dois primeiros nomes.",
-      "m": "0,05% no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 40,25% (vol USD 0,25M acumulado) no de 3º lugar, alta de 7,70pp na leitura confirmada de 21/Set, 16:21 BRT",
+      "p": "6% no 1º turno na BTG/Nexus de 21/Set, terceiro colocado, e 2% na Palver do mesmo dia, quarto, atrás de Renan Santos. No 2º turno contra Lula a BTG/Nexus mede 43% a 44% e a Palver 35% a 43%.",
+      "m": "0,05% no contrato de vencedor e 40,25% (vol USD 0,25M acumulado) no de 3º lugar, alta de 7,70pp, leitura confirmada de 21/Set, 17:01 BRT",
       "t": "maior alta da rodada, e a distância para Renan Santos encolhe de 19,95pp para 5,25pp",
-      "s": "É o cruzamento que mais andou na rodada: as pesquisas vêm pondo Augusto Cury à frente na terceira via, o livro paga mais em Renan Santos, e hoje a distância entre as duas leituras diminuiu quase quatro vezes.",
+      "s": "As duas nacionais do dia discordam sobre a ordem da terceira via tanto quanto sobre o topo: a BTG/Nexus o põe à frente de Renan Santos por 6% a 3%, e a Palver põe Renan Santos à frente dele por 11% a 2%.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "Não aparece entre os nomes divulgados no 1º turno da BTG/Nexus de 21/Set. Na Datafolha de 17/Set tinha 3% e na Futura/100% Cidades do mesmo dia 3,4%, atrás de Augusto Cury nas duas.",
-      "m": "0,75% (vol USD 13,89M acumulado) no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 45,50% (vol USD 0,36M acumulado) no de 3º lugar, queda de 7,00pp na leitura confirmada de 21/Set, 16:21 BRT",
+      "p": "11% no 1º turno na Palver de 21/Set, terceiro colocado, e 3% na BTG/Nexus do mesmo dia, quinto. No 2º turno contra Lula a Palver mede 34% a 43% e a BTG/Nexus 39% a 47%.",
+      "m": "0,95% (vol USD 13,99M acumulado) no contrato de vencedor e 45,50% (vol USD 0,36M acumulado) no de 3º lugar, queda de 7,00pp, leitura confirmada de 21/Set, 17:01 BRT",
       "t": "maior queda da rodada, e segue à frente no livro de 3º lugar por 5,25pp",
-      "s": "O contrato dele de vencedor é o segundo maior em volume acumulado do livro presidencial, USD 13,89M, atrás só do de Tarcísio de Freitas, e paga 0,75%: volume mede interesse acumulado desde a abertura, não probabilidade de agora.",
+      "s": "É o nome com a maior divergência entre as duas nacionais do dia, 8 pontos no 1º turno, e as duas fecharam campo no mesmo 20/Set. O contrato dele de vencedor é o segundo maior em volume acumulado do livro presidencial, USD 13,99M, e paga 0,95%.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "Não aparece entre os nomes divulgados no 1º turno da BTG/Nexus de 21/Set. Na Datafolha de 17/Set tinha 4% e na Futura/100% Cidades 4,5%, quarto colocado nas duas.",
-      "m": "0,05% no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 15,50% (vol USD 0,14M acumulado) no de 3º lugar, alta de 4,00pp na leitura confirmada de 21/Set, 16:21 BRT",
+      "p": "5% no 1º turno na BTG/Nexus de 21/Set, quarto colocado, e 1% na Palver do mesmo dia. No 2º turno contra Lula a BTG/Nexus mede empate em 45% a 45% e a Palver o dá à frente por 44% a 43%.",
+      "m": "0,05% no contrato de vencedor e 15,50% (vol USD 0,14M acumulado) no de 3º lugar, alta de 4,00pp, leitura confirmada de 21/Set, 17:01 BRT",
       "t": "sobe 4,00pp no de 3º lugar e mantém a terceira posição daquele livro",
-      "s": "O livro de 3º lugar do 1º turno foi o único que se moveu nesta rodada, e os três primeiros nomes dele andaram ao mesmo tempo, dois para cima e um para baixo.",
+      "s": "É o único nome fora do pelotão de frente que empata ou vence Lula nas duas casas do dia, sempre dentro da margem, e ainda assim paga 0,05% no contrato de vencedor.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "Não aparece entre os nomes divulgados no 1º turno da BTG/Nexus de 21/Set. Na Datafolha de 17/Set tinha 2% e na Futura/100% Cidades 1,0%.",
-      "m": "0,15% no contrato de vencedor, leitura confirmada de 21/Set às 00:06 BRT, e 0,50% no de 3º lugar, queda de 0,55pp na leitura confirmada de 21/Set, 16:21 BRT",
+      "p": "1% no 1º turno nas duas nacionais de 21/Set. No 2º turno contra Lula a BTG/Nexus dá Lula por 47% a 41%, fora de duas margens, e a Palver o dá à frente por 44% a 43%, dentro da margem.",
+      "m": "0,15% no contrato de vencedor e 0,50% no de 3º lugar, queda de 0,55pp, leitura confirmada de 21/Set, 17:01 BRT",
       "t": "cede 0,55pp no de 3º lugar e segue sem preço novo no de vencedor",
-      "s": "Nenhuma das duas nacionais de 21/Set o testa em par de 2º turno nem publica o número dele no 1º, então nesta rodada ele só tem preço de mercado.",
+      "s": "As duas nacionais do dia trocam o sinal do par de 2º turno dele contra Lula, e a distância entre as duas leituras é de 7 pontos no lado dele.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "O dado da rodada não está no contrato de vencedor, que não recebe preço novo, está no de 3º lugar do 1º turno. Augusto Cury sobe 7,70pp e Renan Santos cai 7,00pp em pouco mais de dezesseis horas, e a distância entre os dois encolhe de 19,95pp para 5,25pp. As pesquisas vinham dizendo outra coisa desse pelotão: na Datafolha de 17/Set e na Futura/100% Cidades do mesmo dia, Cury aparece em terceiro no 1º turno, à frente de Renan Santos, e a BTG/Nexus de 21/Set repete o quadro com Cury em 6%. O contrato caminhou na direção do que as urnas declaradas vinham medindo, sem alcançá-la. ⚠️ Nenhum desses preços é extremo: no backup, Cury já esteve em 60,30% neste mesmo contrato em 04/Set. O que se mede aqui é a velocidade do repreçamento, não um recorde. E nas duas nacionais do dia o topo da disputa segue sem consenso: a BTG/Nexus dá Lula à frente nos dois turnos e a Palver dá Flávio Bolsonaro à frente nos dois, com as duas casas declarando empate técnico e com campo quase sobreposto."
+  "cruzamento": "O dia teve dois movimentos e eles vão em direções diferentes. No contrato de vencedor o vão abriu de 17,55pp para 22,40pp entre a leitura de 00:06 e a de 17:01, com Flávio Bolsonaro subindo 1,85pp e Lula cedendo 3,00pp. Nas leituras gravadas do dia o vão chegou a 23,80pp às 15:00 BRT e o preço de Flávio a 61,70% às 14:30, os dois maiores dos 158 dias da série aberta em 14 de abril de 2026; a leitura certificada está abaixo dos dois, e Lula, em 38,50%, não está no piso dele, que é 34,50% e é de 25 de abril. No livro de 3º lugar do 1º turno Augusto Cury subiu 7,70pp e Renan Santos caiu 7,00pp, e a distância entre eles encolheu de 19,95pp para 5,25pp. ⚠️ Ali nenhum preço é extremo: no backup, Cury já esteve em 60,30% neste mesmo contrato em 04/Set. E as duas nacionais divulgadas no dia não resolvem nenhuma das duas leituras, porque discordam entre si: a BTG/Nexus dá Lula à frente nos dois turnos e põe Augusto Cury em terceiro com 6% contra 3% de Renan Santos; a Palver dá Flávio Bolsonaro à frente nos dois e põe Renan Santos em terceiro com 11% contra 2% de Cury. As duas declaram empate técnico no par principal e as duas fecharam campo no MESMO 20/Set, então o que as separa não é a janela, é o método: telefone com amostra probabilística de 2.006 contra online não probabilístico por anúncios em redes sociais, com 5.000 e ajuste por cotas e pesos. 📌 E há uma assinatura que só aparece olhando os cinco pares de 2º turno de cada casa: na Palver, Lula marca 43% contra TODOS os cinco adversários, e toda a variação fica do outro lado; na BTG/Nexus ele varia de 44% a 47% conforme quem enfrenta."
 }
