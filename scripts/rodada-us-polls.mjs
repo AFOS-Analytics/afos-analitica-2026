@@ -116,6 +116,30 @@ const passos = [
     motivoPulo: soPortao ? '--arquivo (alvo isolado)' : '--sem-rede',
   },
   {
+    // 🔴 POR QUE ELE ENTRA AQUI, e logo DEPOIS do passo 7: os dois falam do
+    //    mesmo agregador e respondem perguntas DIFERENTES, e a diferença já
+    //    produziu conclusão errada. O passo 7 compara a PONTA, a data de campo
+    //    mais recente, e todo veredito dele sai com `alcance: 'PONTA'`. Em
+    //    19/Set/2026 ele imprimiu `EM COMPASSO, 0 dias`, estava certo, e o
+    //    agregador tinha SEIS casas com rodada dentro da nossa janela de 30
+    //    dias que a nossa base não tinha. Ponta igual com o meio vazio.
+    //
+    // ⚠️ E o conferidor que enxerga o MEIO existia desde 19/Set e NÃO estava
+    //    encadeado aqui. É o mesmo defeito que deixou o `conferir-us-polls`
+    //    um mês sem rodar e o `conferir-escopo-derivado` fora de quem publica:
+    //    régua citada em prosa é régua que alguém pula.
+    //
+    // ⛔ Ele NÃO ingere. Saber que falta rodada não autoriza ler no instituto:
+    //    isso muda a procedência da média e segue decisão do André, casa por
+    //    casa. → memory/feedback_ingerir_so_quem_eu_notei_troca_amostra_por_escolha.md
+    id: 'cobertura',
+    titulo: '7.5/9 · AGREGADOR NA FONTE — o MEIO da janela, não a ponta  [USO INTERNO]',
+    script: 'scripts/agregador-na-fonte-us.mjs',
+    args: [],
+    pular: semRede || soPortao,
+    motivoPulo: soPortao ? '--arquivo (alvo isolado)' : '--sem-rede',
+  },
+  {
     id: 'ruido',
     titulo: '8/9 · RUÍDO DA JANELA — a mecânica alcança o movimento observado?  [USO INTERNO]',
     script: 'scripts/ruido-da-janela-us.mjs',
