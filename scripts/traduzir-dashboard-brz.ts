@@ -77,6 +77,11 @@ const NAO_TRADUZ = [
   //    todos os outros calada.
   /(^|\.)institutes\[\d+\]\.name$/,
   /(^|\.)candidates\[\d+\]\.name$/,
+  // 🏷️ `pollSource` guarda a PROCEDÊNCIA do `percentage` do grafo: nome do
+  //    instituto e data. Nome próprio não se traduz, e a regra vai pelo CAMINHO
+  //    inteiro, não pelo sufixo `pollster`, que é a lição da linha acima: uma
+  //    exclusão escrita para um caso e aplicada por sufixo pega os outros calada.
+  /(^|\.)pollSource\.pollster$/,
   /(^|\.)party$/,
   /(^|\.)color$/,
   /(^|\.)pc$/,

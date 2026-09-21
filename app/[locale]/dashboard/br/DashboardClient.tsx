@@ -67,16 +67,22 @@ function DashboardContent({ initialPolls, initialAc, initialCrit, brazilContext 
   // pesquisa (>0). Sem nó de resultado (ativa) e rótulos no presente. Memoizado p/ não resetar
   // o grafo a cada render (poly/news carregam async).
   const brazilDivergence = useMemo<CountryDivergence>(() => {
-    const pmc = (polls as unknown as { polymarketComparison?: { candidates?: Array<{ name: string; odds: number; percentage: number }> }; polls?: unknown[] });
+    const pmc = (polls as unknown as { polymarketComparison?: { candidates?: Array<{ name: string; odds: number; percentage: number }>; pollSource?: { pollster?: string; date?: string } }; polls?: unknown[] });
     const brRows = (pmc?.polymarketComparison?.candidates ?? [])
       .filter((c) => typeof c.percentage === 'number' && c.percentage > 0 && typeof c.odds === 'number')
       .map((c) => ({ candidate: c.name, poll_pct: c.percentage, market_pct: c.odds, divergence_pp: Math.round((c.odds - c.percentage) * 10) / 10 }));
+    // 🔴 `latest_poll` ia com duas strings VAZIAS e a tela renderiza esses dois
+    //    campos em `ds.source(...)`. O número da pesquisa aparecia sem dizer de
+    //    QUAL pesquisa saiu, e foi assim que ele envelheceu 4 dias sem ninguém
+    //    ver. A procedência vem do `pollSource`, que o
+    //    `scripts/percentage-do-grafo-brz.mjs` grava junto com o `percentage`.
+    const fonte = pmc?.polymarketComparison?.pollSource;
     return {
       iso3: 'BRA', hf: '',
       election: { first_round: '2026-10-04', runoff: '2026-10-25', matchup: 'Presidencial', status: 'active' },
       polls_count: pmc?.polls?.length ?? 0,
       market_candidates: brRows.length,
-      latest_poll: { pollster: '', date: '' },
+      latest_poll: { pollster: fonte?.pollster ?? '', date: fonte?.date ?? '' },
       headline: {},
       rows: brRows,
       context: brazilContext,

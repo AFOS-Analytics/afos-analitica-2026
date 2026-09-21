@@ -2832,7 +2832,7 @@
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 44.1,
+        "percentage": 41,
         "odds": 38.5,
         "value": 38.5,
         "polymarket": "38,50%",
@@ -2843,7 +2843,7 @@
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 41.7,
+        "percentage": 42,
         "odds": 60.9,
         "value": 60.9,
         "polymarket": "60,90%",
@@ -2854,7 +2854,7 @@
       },
       {
         "name": "Augusto Cury",
-        "percentage": 3.5,
+        "percentage": 2,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
@@ -2865,7 +2865,7 @@
       },
       {
         "name": "Renan Santos",
-        "percentage": 5.1,
+        "percentage": 11,
         "odds": 0.95,
         "value": 0.95,
         "polymarket": "0,95%",
@@ -2876,7 +2876,7 @@
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1.7,
+        "percentage": 1,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
@@ -2898,7 +2898,7 @@
       },
       {
         "name": "Romeu Zema",
-        "percentage": 1.1,
+        "percentage": 1,
         "odds": 0.15,
         "value": 0.15,
         "polymarket": "0,15%",
@@ -2931,6 +2931,13 @@
       }
     ],
     "updatedAt": "21/09/2026, 17:01",
-    "lastUpdate": "21/09/2026, 16:21"
+    "lastUpdate": "21/09/2026, 16:21",
+    "pollSource": {
+      "pollster": "Palver",
+      "date": "2026-09-21",
+      "sample": 5000,
+      "register": "BR-00860/2026",
+      "scenario": "Cenário Principal (1º turno, estimulado)"
+    }
   }
 }
