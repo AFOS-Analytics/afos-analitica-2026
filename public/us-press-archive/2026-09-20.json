@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-21",
-  "fetchedAt": "2026-09-21T02:16:09.383Z",
+  "lastUpdate": "2026-09-20",
+  "fetchedAt": "2026-09-20T19:20:13.336Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,40 +113,22 @@
     }
   ],
   "qualidade": {
-    "lidos": 142,
-    "naLista": 42,
-    "foraDaLista": 100,
+    "lidos": 153,
+    "naLista": 73,
+    "foraDaLista": 80,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 4,
+    "descartadosPorAcompanhamento": 35,
     "veiculosRepresentados": 7,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
     "lidosEmFeedProprio": 19,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
-    {
-      "titulo": "Trump faces pressure as midterms inch closer",
-      "url": "https://www.cbsnews.com/video/trump-faces-pressure-midterms-inch-closer/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-20T23:42:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Ohio governor, Senate races nearly tied: Poll",
-      "url": "https://www.newsnationnow.com/us-news/midwest/ohio-governor-senate-races-nearly-tied-poll/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-20T19:43:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
     {
       "titulo": "Troy Jackson, a Progressive Brawler, Tries to Flip a Senate Seat in Maine",
       "url": "https://www.nytimes.com/2026/09/20/us/politics/troy-jackson-susan-collins-maine-senate.html",
@@ -184,24 +166,6 @@
       "trilho": "disputa"
     },
     {
-      "titulo": "Leftists make waves and Trump flexes muscles: US primary season takeaways",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOc3BUaFZhbDBZVDRGVWpDWmw1TG9Ha3ZFc0FkTmk1OTFHcEVQbFpPdHVVM2YzeHBCdjZ4cHpoRkZ6V1BjWm50bDdOUXdkUWhVOWpkcmZPWDBMVFE5VkdwWTlkaHZCSnBtTEZxNkNwODhWYjBjOThXZktGMzBzbHBtSg?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-20T13:45:00.000Z",
-      "consulta": "midterms",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "What Exactly Is a Wave Election? And Should Republicans Be on High Alert?",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVNPRDBxSDlnLUdkMHU4c29xQWxBWm9kSFBDYjF6SVVhaXRaSURyaFhlV3VRd0dCcDk0V25mbWxOZkppVDdKM2NDb09aY2FEZnhqY2lUZnR4SmdkQWNKREN3YUtTQkdRUlEzbExzbUVCc3VDZ2ZSMnBXRlRpQkY1R1R1bnhqQXZIRUE?oc=5",
-      "casa": "The New York Times",
-      "publicadoEm": "2026-09-20T13:40:55.000Z",
-      "consulta": "generic-ballot",
-      "origem": "google",
-      "trilho": "disputa"
-    },
-    {
       "titulo": "Poll: Most voters say Trump has hurt the economy as competitive midterm election looms",
       "url": "https://www.nbcnews.com/politics/2026-election/poll-voters-say-trump-hurt-economy-competitive-midterm-election-looms-rcna597868",
       "casa": "NBC News",
@@ -217,6 +181,42 @@
       "publicadoEm": "2026-09-20T12:34:20.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Dem House candidate settles yearslong $55K debt fight with former mother-in-law weeks before election",
+      "url": "https://www.foxnews.com/politics/dem-house-candidate-settles-years-long-55k-debt-fight-former-mother-in-law-weeks-before-election",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-20T10:00:31.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "What Exactly Is a Wave Election? And Should Republicans Be on High Alert?",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVNPRDBxSDlnLUdkMHU4c29xQWxBWm9kSFBDYjF6SVVhaXRaSURyaFhlV3VRd0dCcDk0V25mbWxOZkppVDdKM2NDb09aY2FEZnhqY2lUZnR4SmdkQWNKREN3YUtTQkdRUlEzbExzbUVCc3VDZ2ZSMnBXRlRpQkY1R1R1bnhqQXZIRUE?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-20T09:03:15.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Ohio governor, Senate races nearly tied: Poll",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1SQnpZRmtXNkJZYVFzUldoVVZEaTRSYjdTUnR5VUpwWmY0SERJdWUxeFVUR3JCWE43dWtFdFBMcjNXN2RkMzRVeWQ2OTZFSkszalVsdkYyVWVVVDRRLXhfQXZGUGZPd3gydFJZOTVzRmdXVkJ2eTdCTERSZzXSAYIBQVVfeXFMTU1TZW5KSWpCRzZtdHR3VzJkbmpHV0VzX2oyNW1xTVJWdFkxekNxYU9jbUtrZzBOOEJ6WEpYYjlqNjFkckpVOExWQTgyTmJvX29Tdk8yREdRWmtycmNMU0dkbnZaLW5fYWpBRXlBeWU4ZU9FdHA2aVdYRV9xNUg2WVBvQQ?oc=5",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-19T18:57:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New poll signals movement in Talarico vs Paxton Texas Senate race",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPbWJqR3dlVS11QlZPb29Vb29HVmlGdjFXal9DbUUyXzhDUnVNZEVNejktUUlvdmZsRGVmMlo5VzVhdXBfQms2dDJValllUHFDOW1sYlFvdWxRUHNYaVltUkVxVG9OeDZrVmRBWTBqTkpTQzB0VDB3OFcyV0ZXUk1PbnMxNENmOXAtTEM4dlJBa2VDMl9IZ3NSRXZTYmRKU1NBOGg0VDBWdlFjUXlmbHJz?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-19T13:51:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

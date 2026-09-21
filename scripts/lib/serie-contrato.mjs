@@ -396,8 +396,53 @@ export function estaEncerrada(ext, { dias = 7, agora = new Date() } = {}) {
   return Number.isFinite(idade) && idade > dias
 }
 
-export function vereditoSuperlativo(valorHoje, ext, { tolerancia = 0.001, encerrada = false } = {}) {
+/**
+ * Cauda cega tolerada entre o último ponto GRAVADO no backup e a leitura de
+ * agora. O backup roda 1x por dia, às 15:00 UTC, então até 24h é o normal; as
+ * 2h a mais são a folga do próprio job.
+ */
+export const CAUDA_CEGA_ESPERADA_H = 26
+
+/** Horas entre o fim da série gravada e o carimbo da leitura certificada. */
+export function caudaCegaEmHoras(ext, carimbo) {
+  if (!ext?.fim || !carimbo) return null
+  const h = (Date.parse(carimbo) - Date.parse(ext.fim)) / 3600000
+  return Number.isFinite(h) ? h : null
+}
+
+/**
+ * ⚠️ O veredito, e a ASSIMETRIA que decide qual deles degrada quando o backup
+ *    está atrasado. Régua de 20/Set/2026, medida no dia.
+ *
+ * 🔴 O CASO: o workflow do backup falhou em 20/Set e a série parou em 19/Set
+ *    17:00 UTC. Com ela, a rodada de 21/Set dizia que a Câmara D em 92,50 era
+ *    RECORDE, que a Câmara R em 7,50 era PISO e que o Senado R em 38,50 era
+ *    PISO. Regerado o backup, os TRÊS viraram DENTRO: o topo da Câmara D é
+ *    93,50 de 20/Set e o preço de agora está 1,00pp ABAIXO dele. O backup
+ *    atrasado não deixou o superlativo em dúvida, ele o INVERTEU.
+ *
+ * 🔑 E a inversão só anda para um lado, porque backup atrasado ENCURTA a série,
+ *    e os extremos de um conjunto menor só podem ser menos extremos:
+ *      · `DENTRO` SOBREVIVE. Acrescentar pontos só alarga a faixa, e quem já
+ *        estava dentro continua dentro. A conclusão fica de pé.
+ *      · `RECORDE` e `PISO` NÃO sobrevivem: o ponto que falta pode ser
+ *        justamente o extremo. São os únicos que podem VIRAR, e por isso os
+ *        únicos que degradam.
+ *
+ * ⛔ Degradar os três faria o medidor ressalvar todo dia, e medidor que
+ *    ressalva todo dia é medidor que alguém aprende a pular.
+ */
+export function vereditoSuperlativo(
+  valorHoje,
+  ext,
+  { tolerancia = 0.001, encerrada = false, caudaCegaH = null } = {}
+) {
   if (ext == null || valorHoje == null) return { veredito: 'SEM_SERIE', motivo: 'sem série gravada para comparar' }
+  const serieCurta = Number.isFinite(caudaCegaH) && caudaCegaH > CAUDA_CEGA_ESPERADA_H
+  const ressalva = serieCurta
+    ? `. ⚠️ MAS a cauda cega do backup é de ${caudaCegaH.toFixed(1)}h, acima das ${CAUDA_CEGA_ESPERADA_H}h de um backup diário:` +
+      ` série encurtada só pode FABRICAR superlativo, nunca escondê-lo. Regerar o backup antes de escrever isto`
+    : ''
   if (encerrada) {
     return {
       veredito: 'SERIE_ENCERRADA',
@@ -408,21 +453,26 @@ export function vereditoSuperlativo(valorHoje, ext, { tolerancia = 0.001, encerr
   }
   if (valorHoje > ext.max + tolerancia) {
     return {
-      veredito: 'RECORDE',
-      motivo: `${valorHoje.toFixed(2)} supera o topo da série, ${ext.max.toFixed(2)} de ${ext.maxEm.slice(0, 10)}`,
+      veredito: serieCurta ? 'RECORDE_SOBRE_SERIE_CURTA' : 'RECORDE',
+      motivo: `${valorHoje.toFixed(2)} supera o topo da série, ${ext.max.toFixed(2)} de ${ext.maxEm.slice(0, 10)}${ressalva}`,
+      serieCurta,
     }
   }
   if (valorHoje < ext.min - tolerancia) {
     return {
-      veredito: 'PISO',
-      motivo: `${valorHoje.toFixed(2)} fica abaixo do piso da série, ${ext.min.toFixed(2)} de ${ext.minEm.slice(0, 10)}`,
+      veredito: serieCurta ? 'PISO_SOBRE_SERIE_CURTA' : 'PISO',
+      motivo: `${valorHoje.toFixed(2)} fica abaixo do piso da série, ${ext.min.toFixed(2)} de ${ext.minEm.slice(0, 10)}${ressalva}`,
+      serieCurta,
     }
   }
+  // ⭐ DENTRO não ganha ressalva de propósito: ele SOBREVIVE ao backup atrasado,
+  //    porque acrescentar pontos só alarga a faixa e quem estava dentro fica.
   return {
     veredito: 'DENTRO',
     motivo:
       `${valorHoje.toFixed(2)} está a ${(ext.max - valorHoje).toFixed(2)}pp do topo (${ext.max.toFixed(2)}, ${ext.maxEm.slice(0, 10)})` +
       ` e a ${(valorHoje - ext.min).toFixed(2)}pp do piso (${ext.min.toFixed(2)}, ${ext.minEm.slice(0, 10)})`,
+    serieCurta,
   }
 }
 

@@ -28,6 +28,8 @@ import {
   escolherCapturaAnterior,
   serieDe,
   vereditoSuperlativo,
+  caudaCegaEmHoras,
+  CAUDA_CEGA_ESPERADA_H,
 } from './lib/serie-contrato.mjs'
 
 let falhas = 0
@@ -518,6 +520,59 @@ console.log('\n8. ⚖️ a certificada ANTERIOR, o "antes" do relatório (15/Set
   conferir('Senado 15/Set: soma 99 -> 101', Math.abs(p.somaAntes - 99) < 1e-9 && Math.abs(p.somaAgora - 101) < 1e-9)
   conferir('Senado 15/Set: D normalizado cai 0,06 com o cru subindo 1,00', Math.abs(p.lados[0].deltaNorm + 0.06) < 0.005 && p.lados[0].deltaCru === 1)
   conferir('e isso é DISCORDAM, por sinal oposto', p.discordam === true)
+}
+
+
+console.log('\n⚠️  CAUDA CEGA DO BACKUP: só degrada o superlativo, que é o único que vira')
+{
+  // 🔴 O CASO REAL de 20/Set/2026. O workflow do backup falhou por causa de uma
+  //    trava de segredo que leu nome de arquivo como token, e a série parou em
+  //    19/Set 17:00 UTC. Com ela, a rodada seguinte chamava 92,50 de RECORDE.
+  const curta = { n: 231, inicio: '2026-07-29T00:00:00Z', fim: '2026-09-19T17:00:00Z', ultimo: 90.5, min: 85.5, max: 90.5, minEm: '2026-07-29T00:00:00Z', maxEm: '2026-09-19T17:00:00Z' }
+  const carimbo = '2026-09-21T02:17:16.140Z'
+  const horas = caudaCegaEmHoras(curta, carimbo)
+  conferir(`cauda cega medida em ${horas?.toFixed(1)}h`, Math.round(horas) === 33, horas)
+  conferir('e ela passa das ' + CAUDA_CEGA_ESPERADA_H + 'h esperadas de um backup diário', horas > CAUDA_CEGA_ESPERADA_H)
+
+  const v = vereditoSuperlativo(92.5, curta, { caudaCegaH: horas })
+  conferir('o RECORDE não sai inteiro', v.veredito === 'RECORDE_SOBRE_SERIE_CURTA', v.veredito)
+  conferir('o motivo diz as horas da cauda', v.motivo.includes(horas.toFixed(1)))
+  conferir('e diz que série encurtada FABRICA superlativo', /FABRICAR superlativo/.test(v.motivo), v.motivo)
+  conferir('a saída marca serieCurta', v.serieCurta === true)
+
+  // ⭐ E o backup regerado mostra que o veredito estava mesmo errado: o topo de
+  //    verdade é 93,50 de 20/Set, e 92,50 está 1,00pp ABAIXO dele.
+  const inteira = { ...curta, n: 241, fim: '2026-09-20T23:30:00Z', max: 93.5, maxEm: '2026-09-20T12:00:00Z', ultimo: 92.5 }
+  const w = vereditoSuperlativo(92.5, inteira, { caudaCegaH: caudaCegaEmHoras(inteira, carimbo) })
+  conferir('com a série inteira o veredito VIRA para DENTRO', w.veredito === 'DENTRO', w.veredito)
+  conferir('e a cauda cega volta ao normal', caudaCegaEmHoras(inteira, carimbo) < CAUDA_CEGA_ESPERADA_H)
+}
+
+console.log('\n📐 A ASSIMETRIA: DENTRO sobrevive à série encurtada, RECORDE e PISO não')
+{
+  // Acrescentar pontos só alarga a faixa, então quem estava DENTRO fica DENTRO.
+  // É o que autoriza degradar dois vereditos e não os três.
+  const e = { n: 50, inicio: '2026-08-01T00:00:00Z', fim: '2026-09-19T17:00:00Z', ultimo: 48, min: 45, max: 52, minEm: '2026-08-02T00:00:00Z', maxEm: '2026-09-10T00:00:00Z' }
+  const dentro = vereditoSuperlativo(48, e, { caudaCegaH: 99 })
+  conferir('DENTRO segue DENTRO mesmo com 99h de cauda', dentro.veredito === 'DENTRO', dentro.veredito)
+  conferir('e o motivo dele NÃO ganha a ressalva', !/FABRICAR/.test(dentro.motivo), dentro.motivo)
+  conferir('PISO com cauda longa degrada', vereditoSuperlativo(44, e, { caudaCegaH: 99 }).veredito === 'PISO_SOBRE_SERIE_CURTA')
+  conferir('RECORDE com cauda longa degrada', vereditoSuperlativo(53, e, { caudaCegaH: 99 }).veredito === 'RECORDE_SOBRE_SERIE_CURTA')
+}
+
+console.log('\n🕳️ ANTI-ALARME da cauda cega: o padrão é o veredito FORTE')
+{
+  const e = { n: 50, inicio: '2026-08-01T00:00:00Z', fim: '2026-09-20T23:30:00Z', ultimo: 48, min: 45, max: 52, minEm: '2026-08-02T00:00:00Z', maxEm: '2026-09-10T00:00:00Z' }
+  conferir('sem caudaCegaH o RECORDE sai inteiro', vereditoSuperlativo(53, e).veredito === 'RECORDE')
+  conferir('cauda DENTRO do esperado não degrada', vereditoSuperlativo(53, e, { caudaCegaH: 20 }).veredito === 'RECORDE')
+  conferir('exatamente no limite não degrada', vereditoSuperlativo(53, e, { caudaCegaH: CAUDA_CEGA_ESPERADA_H }).veredito === 'RECORDE')
+  conferir('um décimo acima já degrada', vereditoSuperlativo(53, e, { caudaCegaH: CAUDA_CEGA_ESPERADA_H + 0.1 }).veredito === 'RECORDE_SOBRE_SERIE_CURTA')
+  for (const mau of [null, undefined, NaN, 'muito', Infinity]) {
+    conferir(`caudaCegaH=${String(mau)} NÃO degrada`, vereditoSuperlativo(53, e, { caudaCegaH: mau }).veredito === 'RECORDE')
+  }
+  conferir('sem carimbo a cauda é null, não zero', caudaCegaEmHoras(e, null) === null)
+  conferir('sem série a cauda é null', caudaCegaEmHoras(null, '2026-09-21T02:00:00Z') === null)
+  conferir('carimbo ilegível vira null e não NaN silencioso', caudaCegaEmHoras(e, 'ontem') === null)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)

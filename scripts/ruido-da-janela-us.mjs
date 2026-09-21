@@ -12,7 +12,7 @@
  *
  * Uso:
  *   node scripts/ruido-da-janela-us.mjs
- *   node scripts/ruido-da-janela-us.mjs --n=90          # mais registros do Neon
+ *   node scripts/ruido-da-janela-us.mjs --n=90          # ENCURTA a serie de proposito, para exercitar o piso
  *   node scripts/ruido-da-janela-us.mjs --arquivo=x.json
  */
 import { readFileSync } from 'fs'
@@ -30,7 +30,14 @@ const opt = (nome, padrao) => {
   const a = process.argv.find((x) => x.startsWith(`--${nome}=`))
   return a ? a.slice(nome.length + 3) : padrao
 }
-const N = Number(opt('n', '45'))
+// 🔴 O teto NAO e o tamanho da serie de hoje, e essa foi a licao de 20/Set/2026.
+// Ele nascia em 45 porque 45 era o que a consulta devolvia em 19/Set, e a serie
+// ja tinha 52: o corte comeu 30/Jul, que era o MAXIMO, e a amplitude publicada
+// saiu 1,69pp quando a verdadeira era 1,82pp. Teto calibrado no comprimento de
+// hoje ja nasce cortando amanha, porque a serie cresce 1 linha por dia.
+// 400 e folga deliberada, mais de um ano de gravacao diaria, e quem o alcancar
+// vai ser avisado: o veredito degrada em vez de sair inteiro sobre base cortada.
+const N = Number(opt('n', '400'))
 const ARQUIVO = opt('arquivo', 'public/us-polls-data.json')
 
 const fmt = (v) => (typeof v !== 'number' ? 'n/d' : v >= 0 ? `D+${v.toFixed(2)}` : `R+${Math.abs(v).toFixed(2)}`)
@@ -63,7 +70,10 @@ async function main() {
 
   const d = diagnosticarSerie(rows, new Date())
   const obs = amplitudeObservada(d.registros)
-  const cmp = compararRuido(proj, obs)
+  // A consulta pede os N mais recentes: devolver exatamente N quer dizer que
+  // pode haver mais passado atras do teto, e a amplitude observada e um PISO.
+  const truncada = d.total === N
+  const cmp = compararRuido(proj, obs, { truncada })
 
   console.log(`\n🎚️ RUIDO DA JANELA x MOVIMENTO OBSERVADO  [USO INTERNO, nao publicar]`)
   console.log(`   arquivo ${ARQUIVO} · janela de ${proj.janelaDias} dias · ${N} registro(s) pedidos ao Neon`)
@@ -79,11 +89,18 @@ async function main() {
     console.log(`      de ${fmt(obs.min)} em ${obs.emMin} a ${fmt(obs.max)} em ${obs.emMax}`)
     console.log(`      amplitude: ${obs.amplitudePp.toFixed(2)}pp`)
   }
-  if (d.total === N) {
+  if (truncada) {
     console.log(`      ⚠️ a consulta ENCOSTOU no teto de ${N}: a serie real pode ser mais longa, e a amplitude observada e PISO`)
+    console.log(`         refazer com --n=${N * 4} antes de usar qualquer frase daqui`)
   }
 
-  const icone = cmp.veredito === VEREDITOS.MECANISMO_ALCANCA ? '🔴' : cmp.veredito === VEREDITOS.OBSERVADO_MAIOR ? '✅' : '⚠️ '
+  const ICONES = {
+    [VEREDITOS.MECANISMO_ALCANCA]: '🔴',
+    [VEREDITOS.MECANISMO_ALCANCA_SOBRE_PISO]: '⚠️ ',
+    [VEREDITOS.OBSERVADO_MAIOR]: '✅',
+    [VEREDITOS.INDETERMINADO]: '⚠️ ',
+  }
+  const icone = ICONES[cmp.veredito] ?? '⚠️ '
   console.log(`\n${icone} VEREDITO: ${cmp.veredito}`)
   console.log(`   ${cmp.motivo}`)
   if (cmp.razao !== null) console.log(`   o mecanismo alcanca ${cmp.razao}x a amplitude observada`)

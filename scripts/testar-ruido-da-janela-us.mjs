@@ -74,6 +74,9 @@ console.log('\n4· amplitudeObservada recusa entrada que não é array')
 }
 
 console.log('\n5· O CASO REAL de 19/Set/2026: mecanismo alcança o observado')
+// 📏 ERRATA de 20/Set/2026: estes 1.69pp vieram de uma consulta TRUNCADA, e a
+//    amplitude verdadeira daquele dia era 1,82pp, com razão 1,28x. A aritmética
+//    abaixo segue certa e fica como está; o caso truncado está no bloco 13.
 {
   const c = compararRuido({ amplitudePp: 2.33 }, { n: 45, amplitudePp: 1.69 })
   conferir('veredito é MECANISMO ALCANCA', c.veredito === VEREDITOS.MECANISMO_ALCANCA, c.veredito)
@@ -141,6 +144,64 @@ console.log('\n12· 🔢 razão arredonda a duas casas, e não acumula ponto flu
 {
   const c = compararRuido({ amplitudePp: 1 }, { n: 45, amplitudePp: 3 })
   conferir('1/3 sai 0.33 e não 0.3333333', c.razao === 0.33, c.razao)
+}
+
+
+console.log('\n13· 🔴 TRUNCAMENTO: só degrada o veredito que pode VIRAR')
+{
+  // 20/Set/2026: o `take` do script nascia em 45 e a série já tinha 52 linhas.
+  // O corte comeu 30/Jul, D+6,82, que era o MÁXIMO da série. O extremo mora na
+  // parte escondida, aqui como mora na janela de 90 dias da rota de histórico.
+  const piso = compararRuido({ amplitudePp: 2.33 }, { n: 45, amplitudePp: 1.69 }, { truncada: true })
+  conferir('sobre série truncada o veredito NÃO sai inteiro', piso.veredito === VEREDITOS.MECANISMO_ALCANCA_SOBRE_PISO, piso.veredito)
+  conferir('o motivo diz que o observado é PISO', /PISO/.test(piso.motivo), piso.motivo)
+  conferir('e diz em que número o veredito VIRA', piso.motivo.includes('2.33'))
+  conferir('a razão continua sendo calculada', piso.razao === 1.38, piso.razao)
+  conferir('e a saída carrega o campo truncada', piso.truncada === true)
+
+  // ⭐ A ASSIMETRIA, que é a razão de degradar UM só: destruncar acrescenta
+  //    registros, e acrescentar só pode baixar o mínimo ou subir o máximo.
+  //    O lado que já venceu PELO observado não tem como perder.
+  const forte = compararRuido({ amplitudePp: 1.0 }, { n: 45, amplitudePp: 4.0 }, { truncada: true })
+  conferir('observado acima do mecanismo SOBREVIVE ao truncamento', forte.veredito === VEREDITOS.OBSERVADO_MAIOR, forte.veredito)
+  conferir('e o motivo diz que o truncamento REFORÇA', /REFOR[ÇC]A/i.test(forte.motivo), forte.motivo)
+
+  const inteira = compararRuido({ amplitudePp: 2.4 }, { n: 53, amplitudePp: 2.0 }, { truncada: false })
+  conferir('sem truncamento o veredito sai INTEIRO', inteira.veredito === VEREDITOS.MECANISMO_ALCANCA, inteira.veredito)
+  conferir('e truncada sai false, não undefined', inteira.truncada === false, inteira.truncada)
+}
+
+console.log('\n14· 🕳️ ANTI-ALARME: o padrão do truncamento é o veredito FORTE')
+{
+  // Quem trunca é quem sabe que truncou, e tem de dizer com `true` literal.
+  // Valor ambíguo degradando por acidente faria o medidor reclamar sem
+  // ninguém ter medido nada, e medidor que reclama todo dia é medidor pulado.
+  for (const mau of [undefined, null, 'true', 1, {}, 'false']) {
+    const c = compararRuido({ amplitudePp: 2.33 }, { n: 45, amplitudePp: 1.69 }, { truncada: mau })
+    conferir(`truncada=${JSON.stringify(mau)} NÃO degrada`, c.veredito === VEREDITOS.MECANISMO_ALCANCA, c.veredito)
+  }
+  const semTerceiro = compararRuido({ amplitudePp: 2.33 }, { n: 45, amplitudePp: 1.69 })
+  conferir('chamada sem o 3º argumento segue funcionando', semTerceiro.veredito === VEREDITOS.MECANISMO_ALCANCA, semTerceiro.veredito)
+  const ind = compararRuido({ amplitudePp: null }, { n: 5, amplitudePp: null }, { truncada: true })
+  conferir('INDETERMINADO também carrega o campo truncada', ind.truncada === true, ind.truncada)
+  const curta = compararRuido({ amplitudePp: 2.33 }, { n: MIN_REGISTROS - 1, amplitudePp: 0.1 }, { truncada: true })
+  conferir('série curta segue INDETERMINADO, truncada não a promove', curta.veredito === VEREDITOS.INDETERMINADO, curta.veredito)
+}
+
+console.log('\n15· 📐 MONOTONIA: a amplitude de um superconjunto NUNCA encolhe')
+{
+  // É esta propriedade que autoriza a assimetria do bloco 13. Se ela cair,
+  // degradar só um dos dois vereditos passa a ser errado.
+  const base = [reg(5.0, '2026-09-09'), reg(7.0, '2026-09-20'), reg(6.0, '2026-09-15')]
+  const a = amplitudeObservada(base)
+  for (const extra of [-3, 0, 5, 6, 6.82, 7, 12]) {
+    const b = amplitudeObservada([...base, reg(extra, '2026-07-30')])
+    conferir(`acrescentar ${extra} não encolhe a amplitude`, b.amplitudePp >= a.amplitudePp, [a.amplitudePp, b.amplitudePp])
+  }
+  const c = amplitudeObservada([...base, reg(6.82, '2026-07-30')])
+  conferir('o caso real: 30/Jul com D+6,82 não mexe num máximo de 7,00', c.amplitudePp === a.amplitudePp, c.amplitudePp)
+  const d = amplitudeObservada([reg(5.0, '2026-09-09'), reg(6.69, '2026-09-19'), reg(6.82, '2026-07-30')])
+  conferir('mas em 19/Set, com máximo 6,69, ele ALARGA de 1,69 para 1,82', d.amplitudePp === 1.82, d.amplitudePp)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.\n`)

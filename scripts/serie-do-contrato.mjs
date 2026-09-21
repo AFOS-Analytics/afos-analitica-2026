@@ -30,6 +30,8 @@ import {
   estaEncerrada,
   extremos,
   idadeEmHoras,
+  caudaCegaEmHoras,
+  CAUDA_CEGA_ESPERADA_H,
   instantesSuspeitos,
   oQueAJanelaEsconde,
   parBinario,
@@ -251,6 +253,8 @@ function principal() {
   let alertas = 0
   // Os dois lados de cada livro binário, juntados para o bloco do par lá embaixo.
   const paresPorSlug = new Map()
+  // Livros cujo superlativo saiu sobre serie ENCURTADA por backup atrasado.
+  const caudasLongas = []
   for (const chave of [...livros.keys()].sort()) {
     const [slug, outcome] = chave.split('␟')
     const pontos = livros.get(chave)
@@ -273,7 +277,12 @@ function principal() {
     // Livro sem leitura viva e sem ponto novo há mais de uma semana saiu do
     // book: não existe "preço de agora" para julgar.
     const encerrada = hoje == null && estaEncerrada(ext)
-    const v = vereditoSuperlativo(hoje ?? ext.ultimo, extAnterior, { encerrada })
+    // A cauda cega e a distancia entre o ultimo ponto GRAVADO e a leitura de
+    // agora. Ela entra no veredito porque backup atrasado so FABRICA
+    // superlativo: em 20/Set tres deles viraram DENTRO quando o backup voltou.
+    const caudaCegaH = caudaCegaEmHoras(extAnterior, carimbo)
+    const v = vereditoSuperlativo(hoje ?? ext.ultimo, extAnterior, { encerrada, caudaCegaH })
+    if (v.serieCurta) caudasLongas.push({ slug, outcome, horas: caudaCegaH })
 
     // O "antes" do par é o último ponto GRAVADO no backup, e o "agora" é a
     // leitura certificada. São duas grandezas de tempo diferentes e o bloco
@@ -287,7 +296,7 @@ function principal() {
         (hoje == null ? `  (último gravado ${ext.ultimo.toFixed(2)})` : `  + agora ${hoje.toFixed(2)}`)
     )
     console.log(`      faixa da série  ${extTudo.min.toFixed(2)} a ${extTudo.max.toFixed(2)}   amplitude ${(extTudo.max - extTudo.min).toFixed(2)}pp`)
-    const marca = v.veredito === 'DENTRO' ? '·' : v.veredito === 'SERIE_ENCERRADA' ? '⏹' : '⭐'
+    const marca = v.veredito === 'DENTRO' ? '·' : v.veredito === 'SERIE_ENCERRADA' ? '⏹' : v.serieCurta ? '⚠️ ' : '⭐'
     const ressalva = velha && !encerrada ? ` (leitura de ${idade.toFixed(1)}h atrás, NÃO é o preço de agora)` : ''
     console.log(`      ${marca} ${v.veredito}${ressalva}: ${v.motivo}`)
 
@@ -468,6 +477,16 @@ function principal() {
     console.log(`   ⛔ ${alertas} série(s) em que consultar a API produziria superlativo FALSO sem dar erro.\n`)
   } else {
     console.log(`   ✅ nenhuma série ultrapassa a janela de ${diasApi}d: aqui a API serviria.\n`)
+  }
+
+  if (caudasLongas.length) {
+    const pior = Math.max(...caudasLongas.map((c) => c.horas))
+    console.log(`   ⚠️ ${caudasLongas.length} superlativo(s) saíram sobre SÉRIE ENCURTADA, cauda cega de até ${pior.toFixed(1)}h`)
+    console.log(`      (o esperado de um backup diário é até ${CAUDA_CEGA_ESPERADA_H}h):`)
+    for (const c of caudasLongas) console.log(`      ${c.outcome} · ${c.slug}  (${c.horas.toFixed(1)}h)`)
+    console.log(`      🔑 Série encurtada só FABRICA superlativo, nunca o esconde: DENTRO sobrevive, RECORDE e PISO não.`)
+    console.log(`      Regerar antes de escrever:  npx tsx scripts/backup-neon.ts`)
+    console.log('')
   }
 }
 

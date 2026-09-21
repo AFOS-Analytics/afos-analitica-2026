@@ -16,6 +16,12 @@ import { join } from 'path'
 // Não colocar diretiva de supressão de tipo aqui: o TypeScript resolve o .mjs
 // sozinho, e supressão sem erro para suprimir REPROVA o build.
 import { cpfValido } from './lib/cpf.mjs'
+// A heuristica que separa segredo de nome publico. Mora em .mjs pelo mesmo
+// motivo do cpf: ela decide se o backup do dia vai ao ar, e regra que decide
+// isso precisa de casos plantados rodando no CI. Ate 20/Set/2026 ela vivia
+// inline aqui, sem um unico teste, e o unico sinal de que errava era o backup
+// falhar. Ver scripts/testar-parece-segredo.mjs.
+import { pareceSegredo } from './lib/parece-segredo.mjs'
 
 const RAIZ = 'backup/neon'
 
@@ -43,26 +49,6 @@ const PADROES: Array<{ nome: string; re: RegExp; nota?: string; filtro?: (s: str
   { nome: 'segredo de alta entropia', re: /\b[A-Za-z0-9_-]{32,}\b/g, nota: 'possível token ou chave', filtro: pareceSegredo },
   { nome: 'chave de API', re: /\b(sk-[A-Za-z0-9-]{20,}|re_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,})\b/g },
 ]
-
-/**
- * Separa SEGREDO de SLUG. A primeira versão desta checagem usava só
- * "40 caracteres ou mais" e acusou `brazil-presidential-election-first-round-2nd-place`
- * e nomes de arquivo do IBGE. Guard que acusa slug legítimo é ruído, e ruído
- * ensina a ignorar o alerta, que é justamente o que não pode acontecer aqui.
- *
- * Um segredo real (hex, base64, uuid sem hífen) mistura caixa e dígito e não
- * tem estrutura de palavras. Um slug é uma sequência de palavras minúsculas
- * separadas por hífen ou sublinhado.
- */
-function pareceSegredo(s: string): boolean {
-  const partes = s.split(/[-_]/)
-  const palavras = partes.filter((p) => /^[a-zà-ÿ]{2,}$/i.test(p))
-  if (palavras.length >= 3) return false          // slug: três ou mais palavras
-  if (!/\d/.test(s)) return false                 // segredo sem dígito é improvável
-  const temMaiuscula = /[A-Z]/.test(s)
-  const temMinuscula = /[a-z]/.test(s)
-  return temMaiuscula && temMinuscula             // mistura de caixa
-}
 
 /**
  * O que aparece legitimamente e NÃO é dado de assinante nem segredo. Mantido

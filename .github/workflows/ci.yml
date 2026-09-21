@@ -153,6 +153,14 @@ jobs:
           npx --no-install tsx scripts/testar-mercados-us.ts
           python3 scripts/testar-hf-upload-us2026.py
 
+      # A trava que decide se o backup vai a um repositorio PUBLICO. Ate
+      # 20/Set/2026 ela vivia inline no check-backup-sem-pii.ts, sem um unico
+      # caso, e o unico sinal de que tinha errado era o workflow do backup
+      # falhar no dia seguinte. Foi assim que se descobriu que ela lia NOME DE
+      # ARQUIVO de documento publico como token, e um dia de backup se perdeu.
+      - name: Segredo x nome publico (trava do backup)
+        run: node scripts/testar-parece-segredo.mjs
+
       # A regra que decide se um superlativo pode ser escrito, e o par binario
       # cru e normalizado, nos dois paises. Puro, sem rede nem backup. Ficou
       # fora do CI ate 15/Set, quando ganhou a escolha da certificada ANTERIOR.
