@@ -21,6 +21,7 @@
 import { writeFileSync, mkdirSync, readdirSync, statSync, unlinkSync } from 'fs'
 import { join } from 'path'
 import { consultasDeCasas } from './lib/cobertura-imprensa-brz.mjs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const QUERIES = [
   { id: 'eleicoes-2026', q: 'eleições 2026 presidente Brasil when:1d' },
@@ -311,8 +312,13 @@ async function main() {
   // que lê o cache pela data do dia, não encontrava nada. Bug silencioso: só aparecia em
   // execução noturna. Pego em 13/Jul/2026, quando o /atualizar das 21:35 gerou
   // news-cache/2026-07-14.json.
-  const hojeBRT = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' }) // YYYY-MM-DD
-  const date = argDate || hojeBRT
+  // ⭐ Desde 20/Set/2026 a regra vem de `lib/data-civil-brz.mjs` em vez de ser
+  //    reescrita aqui. Ela estava CERTA nas duas cópias, e o problema de ter
+  //    duas é o de sempre: convivem sem incidente até o dia em que uma é
+  //    corrigida e a outra não. Este arquivo é quem ESCREVE o nome do cache, e
+  //    os leitores dele importam a regra, então ele tem de importar também ou o
+  //    escritor e os leitores podem divergir sem nada acusar.
+  const date = argDate || dataCivilBrasil()
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     console.error(`Invalid date: ${date}. Use YYYY-MM-DD.`)
     process.exit(1)

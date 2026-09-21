@@ -97,6 +97,7 @@ if (!semSonda) {
     resultados.push({ id: 'ingestao', codigo: null, estado: 'NAO RODOU (sonda)' })
     resultados.push({ id: 'relatorio', codigo: null, estado: 'NAO RODOU (sonda)' })
     resultados.push({ id: 'escopo', codigo: null, estado: 'NAO RODOU (sonda)' })
+    resultados.push({ id: 'saiu', codigo: null, estado: 'NAO RODOU (sonda)' })
     imprimirResumo()
     process.exit(2)
   }
@@ -124,6 +125,7 @@ if (!aplicar) {
   resultados.push({ id: 'relatorio', codigo: null, estado: 'PULADO (ensaio)' })
   resultados.push({ id: 'escopo', codigo: null, estado: 'PULADO (ensaio)' })
   resultados.push({ id: 'cobertura', codigo: null, estado: 'PULADO (ensaio)' })
+  resultados.push({ id: 'saiu', codigo: null, estado: 'PULADO (ensaio)' })
   resultados.push({ id: 'fechamento', codigo: null, estado: 'PULADO (ensaio)' })
   imprimirResumo()
   process.exit(0)
@@ -226,6 +228,46 @@ if (cobertura === 4) {
   console.log('   Isto não desfaz nada e não é defeito de valor. O que ele proíbe é uma frase:')
   console.log('   sobre essas casas, "não saiu pesquisa" não se pode dizer, porque o silêncio')
   console.log('   é do nosso instrumento e não da casa.')
+}
+
+// 4.5/5 · PROMESSA x MUNDO, criado em 20/Set/2026.
+//
+// 🔑 POR QUE ELE RODA AQUI. O passo 4 responde "a nossa coleta ENXERGA esta
+//    casa?", que é sobre o instrumento. Ele não responde "que número nacional
+//    existe HOJE?", que é sobre o mundo e é o que decide se o painel está
+//    velho. O bloco `📣 DIVULGAM HOJE` do passo 2 também não responde: ele lê
+//    a `divulgacao` do REGISTRO, que é PROMESSA.
+//
+// 🔴 E promessa e mundo divergiram nas DUAS direções no dia em que isto nasceu:
+//    as duas nacionais da Palver prometeram para o dia e às 21h só havia o
+//    anúncio das 00:01, com o verbo no futuro; e a Veritá, 40.500 entrevistas,
+//    tinha divulgação registrada para 18/Set e os números saíram no dia 20, a
+//    partir das 18:12. O gatilho do painel não viu nenhuma das duas.
+//
+// ⛔ Ele NÃO diz "publicado". O veredito mais forte é COM_NUMERO, que manda ir
+//    ao CORPO conferir pelo protocolo ou pelo período de campo.
+const saiu = rodar('saiu', '4.5/5 · PROMESSA x MUNDO — que nacional tem NÚMERO hoje?', 'scripts/pesquisa-saiu-hoje-brz.mjs', [
+  `--dias=${dias}`,
+])
+
+if (saiu === 4) {
+  resultados.at(-1).estado = 'NAO MEDIU, sem veredito'
+  console.log('')
+  console.log(regua)
+  console.log('⚠️  PROMESSA x MUNDO não foi medido (cache do dia ausente, rede ou rota).')
+  console.log('   Não é "nada saiu": rodar `node scripts/fetch-google-news.mjs` e repetir.')
+} else if (saiu !== 0) {
+  resultados.at(-1).estado = 'DIVERGEM, há o que conferir'
+  console.log('')
+  console.log(regua)
+  console.log('🔎 PROMESSA e MUNDO divergem. Isto não desfaz nada e não é defeito.')
+  console.log('')
+  console.log('   O que ele proíbe é decidir a rodada só pelo bloco 📣: casa que prometeu')
+  console.log('   para hoje pode não ter saído, e casa que saiu hoje pode ter prometido')
+  console.log('   para outro dia. As duas coisas aconteceram no dia em que ele nasceu.')
+  console.log('')
+  console.log('   Antes de rodar /atualizar-brz, confirmar NO CORPO:')
+  console.log('     npx tsx scripts/ler-materia.mjs "<padrão do título>"')
 }
 
 // 5/5 · A SONDA DE FECHAMENTO, e ela AVISA, não desfaz.

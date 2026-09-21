@@ -94,6 +94,7 @@ jobs:
         run: |
           node scripts/testar-tse-api-polls.mjs
           node scripts/testar-data-civil-brz.mjs
+          node scripts/testar-saiu-hoje-brz.mjs
 
       # 18/Set/2026: a Veritá era a UNICA nacional divulgando no dia e o
       # news-cache tinha ZERO item sobre ela, em 12.680 titulos. Duas causas

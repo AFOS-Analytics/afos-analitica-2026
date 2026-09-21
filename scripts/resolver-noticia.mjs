@@ -27,11 +27,23 @@
 
 import { readFileSync } from 'node:fs'
 import { resolverGoogleNews } from './lib/resolver-gnews.mjs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const argv = process.argv.slice(2)
 const valor = (n) => argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? null
-const hoje = new Date().toISOString().slice(0, 10)
-const data = valor('data') ?? hoje
+// 🔴 A DATA É A CIVIL DO BRASIL, e isto aqui era `toISOString().slice(0, 10)`,
+//    que é UTC. Medido em 20/Set/2026 às 21:13 BRT: o `fetch-google-news.mjs`
+//    grava o cache em data BRT e escreveu `2026-09-20.json`, e este script foi
+//    procurar `2026-09-21.json` e caiu com ENOENT no meio da rodada.
+//
+// ⭐ O conserto de 15/Set alcançou TRÊS leitores e este era um QUARTO que
+//    ninguém tinha listado. `ler-materia.mjs` e `conferir-cobertura-imprensa-brz.mjs`
+//    já importavam a regra; só este não.
+//
+// ⚠️ E a janela em que ele quebra é exatamente a janela em que a rodada roda:
+//    das 21h BRT em diante. Falha barulhenta, o que é bom, mas ela bloqueia o
+//    gate de fact-check justamente na hora de decidir se uma pesquisa saiu.
+const data = valor('data') ?? dataCivilBrasil()
 const max = Number(valor('max') ?? 6)
 const linkDireto = valor('link')
 const padrao = argv.find((a) => !a.startsWith('--'))
