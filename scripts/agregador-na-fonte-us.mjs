@@ -214,6 +214,43 @@ async function main() {
     console.log(`\n   ⏭️  ${excluidas.length} fora por DESENHO (tracker pago): ${excluidas.map((x) => x.casaNorm).join(', ')}`)
   }
 
+  // ── A PONTA VIVA, e por que ela precisa sair daqui ────────────────────────
+  //
+  // 🔴 Medido em 21/Set/2026. O `agregadores-us-polls.mjs` leu a tabela de
+  //    agregadores da Wikipédia, onde quatro deles declaravam campo até
+  //    2026-09-17, igual à nossa base, e deu `EM COMPASSO` com "diferença de 0
+  //    dia(s) NA PONTA". No MESMO instante este conferidor, que lê o dado vivo
+  //    do agregador, trazia Reuters/Ipsos com campo até 2026-09-20 e Quantus
+  //    até 2026-09-18.
+  //
+  // 🔑 As duas leituras não se contradizem por defeito de nenhuma das duas: a
+  //    tabela da Wikipédia é uma CÓPIA e envelhece. O ponto é que um veredito
+  //    de "0 dias na ponta" contra uma cópia velha se lê como base em dia, e
+  //    aqui a ponta do mundo estava três dias à frente.
+  //
+  // ⛔ Por isso este bloco NÃO julga a nossa base: ele publica a ponta que ELE
+  //    viu, para que o veredito do outro medidor possa ser confrontado em vez
+  //    de aceito. Dois medidores da mesma pergunta que nunca se comparam é
+  //    como o vão nasce.
+  const pontaDeles = deles.length ? deles.map((x) => x.campoFim).sort().at(-1) : null
+  const pontaNossa = nossas.length ? nossas.map((p) => p.campoFim).filter(Boolean).sort().at(-1) : null
+  console.log(`\n   📍 PONTA, pelo dado VIVO do agregador`)
+  console.log(`      agregador: ${pontaDeles ?? '(sem rodada na janela)'}   ·   nossa base: ${pontaNossa ?? '(sem campo legivel)'}`)
+  if (pontaDeles && pontaNossa) {
+    const dias = Math.round((Date.parse(pontaDeles) - Date.parse(pontaNossa)) / 86400000)
+    if (dias > 0) {
+      console.log(`      🔴 o agregador esta ${dias} dia(s) A FRENTE da nossa base NA PONTA.`)
+      console.log(`         ⚠️ Se o agregadores-us-polls disser EM COMPASSO nesta mesma rodada, ele`)
+      console.log(`            mediu contra a tabela da Wikipedia, que e COPIA e envelhece. Vale esta.`)
+    } else if (dias < 0) {
+      console.log(`      ✅ a nossa base esta ${-dias} dia(s) a frente do agregador na ponta.`)
+    } else {
+      console.log(`      ✅ mesma data na ponta.`)
+    }
+  } else {
+    console.log(`      ⚠️ INDETERMINADO: falta uma das duas pontas. Nao e "em compasso".`)
+  }
+
   console.log(`\n   ⛔ NADA foi ingerido. Saber que falta rodada nao autoriza ler no instituto:`)
   console.log(`      isso muda a PROCEDENCIA da media e segue decisao do Andre, casa por casa.`)
   console.log(`   📌 E o "EM COMPASSO" do agregadores-us-polls compara a PONTA, nao a contagem:`)
