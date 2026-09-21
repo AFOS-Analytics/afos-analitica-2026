@@ -228,7 +228,16 @@ node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
 
 ⚠️ **Ele lê o BACKUP, não a API**, que é a régua de superlativo da casa, e por isso o backup do dia precisa estar verde antes. Backup atrasado ENCURTA a série e série encurtada só FABRICA extremo. → `memory/feedback_o_backup_atrasado_nao_deixa_o_superlativo_em_duvida_ele_o_inverte.md`
 
-🔑 **A convenção que as edições usam, e que o script reproduz:** o valor publicado é o **fechamento de sexta**, o caminho são os **cinco fechamentos diários** e o Δ é **sexta menos segunda**. Conferido em 21/Set contra a №17, que bate no fechamento, no Δ, no caminho e nos três volumes.
+🔑 **A CONVENÇÃO DOS EUA NÃO É A DO BRASIL, e errar isso troca o sinal do Δ.**
+
+| | âncora do Δ | como pedir ao script |
+|---|---|---|
+| **EUA** | fechamento da **SEXTA ANTERIOR** | `--de=<sexta anterior> --ate=<sexta da semana>` |
+| Brasil | fechamento da **SEGUNDA** da própria semana | `--de=<segunda> --ate=<sexta>` |
+
+⚠️ **Medido em 21/Set/2026, e o erro era meu:** ao citar este atalho aqui pela primeira vez eu copiei a convenção do Brasil. A №18 dos EUA cobre 07 a 11/Set e mede *"desde o fechamento de 4/Set"*, que é a sexta anterior. Pela convenção do Brasil a Câmara democrata daria **+1.00pp**; pela convenção dos EUA ela dá **-1.00pp**. **Mesmo livro, mesma semana, sinal oposto.**
+
+✅ **Conferência obrigatória antes de escrever o Δ:** rodar o script com a âncora escolhida e exigir que ele **reproduza a edição anterior**. Para a №18, `--de=2026-09-04 --ate=2026-09-11` devolve os -1.00pp publicados. Citar a ferramenta sem fixar a convenção só troca uma conta não conferida por outra. → `memory/feedback_ferramenta_pronta_e_nenhum_comando_a_chama.md`
 
 ⛔ **E fechamento diário ESCONDE topo e piso.** Na №17 o piso de Lula saiu como 43.50%, que é o fechamento de quinta, e o piso intradiário da semana era **40.50%** na manhã de sexta. Quando a frase for de extremo, usar o piso e o topo que o script imprime, não o fechamento. → `memory/feedback_fechamento_do_dia_esconde_topo_e_piso.md`
 
