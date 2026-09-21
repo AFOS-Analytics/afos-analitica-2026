@@ -1,0 +1,44 @@
+{
+  "data": "2026-09-21",
+  "gateFactCheck": {
+    "atosAltoImpacto": ["publicação no DOU da demissão de Eduardo Bolsonaro da Polícia Federal"],
+    "evento": {
+      "oQueMudouHoje": "apenas a PUBLICAÇÃO no Diário Oficial da União",
+      "dataDoAto": "2026-09-18 (assinatura da Portaria de Pessoal nº 135)",
+      "apuracao": "2026-07 (PAD concluído pela Polícia Federal)",
+      "verificacao1CrossRef": "4 menções nas últimas 7 dailies, todas sobre a condenação do STF de 18/Set, evento DISTINTO → novidade",
+      "fonte1": { "url": "https://www.gazetadopovo.com.br/republica/governo-lula-demite-eduardo-bolsonaro-abandono-cargo-pf/", "grupo": "Gazeta do Povo", "tipo": "evento" },
+      "fonte2GrupoDiferente": { "veiculos": ["Poder360", "CartaCapital", "Metrópoles", "CNN Brasil"], "via": "WebSearch com allowed_domains" },
+      "newsCacheContradiz": false,
+      "decisao": "incorporar COM data corrigida"
+    }
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma",
+    "numericalErrors": "nenhum; preços e volumes do instantâneo certificado de 2026-09-21T20:01:51Z, extremos do backup via check-superlativo",
+    "fontesInventadas": "3 conferidas ao acaso no news-cache, todas existem",
+    "quotesLiterais": "nenhuma",
+    "causacaoEspuria": "nenhuma; a demissão aparece sem ligação a preço",
+    "verbosCriticos": "demitido desambiguado com 3 datas (julho, 18/Set, 21/Set); prisão de Vorcaro com a data do pedido",
+    "decisao": "prosseguir"
+  },
+  "superlativos": {
+    "ferramenta": "scripts/check-superlativo.ts sobre o backup, série 2026-04-14 a 2026-09-21",
+    "vaoMaximo": { "valor": "23,80pp", "quando": "2026-09-21 15:00 BRT", "cobertura": "158 dias, 651 pontos" },
+    "flavioTopo": { "valor": "61,70%", "quando": "2026-09-21 14:30 BRT" },
+    "lulaNaoEhPiso": { "pisoReal": "34,50%", "quando": "2026-04-25 09:10 BRT" }
+  },
+  "ressalvasPublicadas": {
+    "densidadeDeLink": "44%, abaixo da régua de 80%: a cobertura da demissão está em veículos que o WebFetch não alcança e forçar URL ruim é pior que não linkar",
+    "realTimeBigData": "linha do calendário marcada como escopo NÃO SUSTENTADO por decisão editorial, a partir do veredito REPROVADO do conferir-escopo-derivado (CEGO em 13 de 13)",
+    "waybackNaoRodou": "pré-check do /save/ devolveu 429; passivo de 54 dailies e 736 URLs não andou hoje"
+  },
+  "portoes": {
+    "gateTraducaoDaily": "limpo nas 3 versões, 96 números com unidade idênticos",
+    "validateAfosDaily": "OK",
+    "travessoes": 0,
+    "emojis": 0,
+    "palavras": { "ptBR": 1093, "en": 1094, "es": 1157, "teto": 1100 },
+    "sintese": { "formato": "3 parágrafos com frase-tese em negrito", "palavras": 191, "reguaDaFicha": "160-175" }
+  }
+}
