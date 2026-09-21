@@ -214,3 +214,21 @@ for l in pt-BR en es; do curl -s -o /dev/null -w "$l %{http_code}\n" "https://ww
   Ver `feedback_a_falha_do_instrumento_nunca_e_a_manchete` e `feedback_descrever_o_metodo_sim_relatar_a_falha_nao` na memória.
 - **Volume USD acumulado** contextualiza e é bem-vindo. **Liquidez (profundidade do book) NÃO se cita no texto editorial**, decisão de 21/Mai/2026: liquidez baixa no Polymarket não significa preço errado, e expor o número gera leitura torta.
 - **Teto de 900 palavras não se aplica aqui**: aquele é do AFOS Daily. O Tradeoff é peça longa.
+
+## 🚀 O Δ DA SEMANA SAI DE UM COMANDO, e ele já existia
+
+```bash
+node scripts/semana-do-contrato.mjs --pais=us --de=2026-09-14 --ate=2026-09-18
+node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
+```
+
+🔴 **Corrigido em 21/Set/2026: o script existe desde 13/Set, é calibrado, e NÃO era citado em NENHUMA das duas skills de Tradeoff.** Ele nasceu para a Tradeoff EUA №7 e a calibração dele foi exigir que reproduzisse os números publicados naquela edição. Depois disso, tanto o Brasil quanto os EUA seguiram refazendo a conta à mão toda semana. É o mesmo defeito que deixou o `conferir-us-polls` um mês sem rodar: **script não citado é script que não roda**, e aqui ele vale a manchete, porque o Δ da semana É a manchete.
+
+📌 **O que ele devolve, por desfecho:** o fechamento de cada um dos cinco pregões, o Δ contra as **três bordas possíveis** de semana (ele imprime as três e obriga a escolher, em vez de embutir uma), as leituras da semana com piso, topo e amplitude **intradiários**, o dinheiro novo no período e o acumulado, mais o **par binário** cru e normalizado e a soma das faixas nas bordas.
+
+⚠️ **Ele lê o BACKUP, não a API**, que é a régua de superlativo da casa, e por isso o backup do dia precisa estar verde antes. Backup atrasado ENCURTA a série e série encurtada só FABRICA extremo. → `memory/feedback_o_backup_atrasado_nao_deixa_o_superlativo_em_duvida_ele_o_inverte.md`
+
+🔑 **A convenção que as edições usam, e que o script reproduz:** o valor publicado é o **fechamento de sexta**, o caminho são os **cinco fechamentos diários** e o Δ é **sexta menos segunda**. Conferido em 21/Set contra a №17, que bate no fechamento, no Δ, no caminho e nos três volumes.
+
+⛔ **E fechamento diário ESCONDE topo e piso.** Na №17 o piso de Lula saiu como 43.50%, que é o fechamento de quinta, e o piso intradiário da semana era **40.50%** na manhã de sexta. Quando a frase for de extremo, usar o piso e o topo que o script imprime, não o fechamento. → `memory/feedback_fechamento_do_dia_esconde_topo_e_piso.md`
+
