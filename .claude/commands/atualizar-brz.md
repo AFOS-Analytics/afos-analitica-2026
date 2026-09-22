@@ -327,8 +327,19 @@ Pedir `country=brazil-presidential-election` traz os **três**. Medido em 01/Set
 
 ⛔ **Por isso a régua da casa não é "filtrar melhor", é NÃO USAR ESTA ROTA PARA SUPERLATIVO DO BRASIL.** Ela foi declarada inutilizável para a série presidencial em 23/Ago/2026, quando a contaminação medida foi de 84% e a resposta veio truncada em 17/Ago. → `memory/reference_market_history_api_prefix_accent.md`
 
+🔴 **E O SCRIPT QUE FAZ ISSO JÁ EXISTE E ESTA RÉGUA NÃO O CITAVA, corrigido em 22/Set/2026:**
+
+```bash
+node scripts/serie-do-contrato.mjs --pais=br        # topo, piso e o que a API de 90d esconderia
+node scripts/semana-do-contrato.mjs --slug=brazil-presidential-election --de=... --ate=... --nomes="Lula,Flávio Bolsonaro"
+```
+
+⚠️ **A régua dos EUA cita o `serie-do-contrato.mjs` na ETAPA 4 desde 04/Set. A do Brasil gastava trinta linhas explicando por que a rota é inutilizável aqui e não nomeava quem faz certo**, então a conferência saía à mão toda rodada. É o mesmo defeito do `conferir-us-polls` e do `deltas-brz`. Ele já dobra a leitura certificada da trava para dentro da série, fechando a cauda cega do backup, e imprime quantos dias e pontos a janela de 90d esconderia: em 22/Set foram **24 séries em que consultar a API produziria superlativo falso sem dar erro**.
+
+📌 **Ele só vigia `brazil-presidential-election` e o contrato do Supremo.** Para 2º e 3º lugar ele avisa que não há série vigiada, e aí quem responde é o `semana-do-contrato.mjs`, que dá o fechamento dia a dia por nome.
+
 ✅ **O que usar, em ordem:**
-1. **Superlativo se confere no `backup/neon/marketPrice/*.csv.gz`**, não na API. → `memory/feedback_superlativo_se_confere_no_backup_nao_na_api.md`
+1. **Superlativo se confere no `backup/neon/marketPrice/*.csv.gz`**, não na API, e quem lê esse backup é o `serie-do-contrato.mjs` acima. → `memory/feedback_superlativo_se_confere_no_backup_nao_na_api.md`
 2. Para comparação de véspera, basta a leitura ao vivo com carimbo contra a leitura confirmada da ficha do dia anterior, que é documentada.
 3. Se ainda assim for usar a rota para orientação, puxar **SEM** `country=`, filtrar por `p.slug === 'brazil-presidential-election'` com igualdade exata e nunca `startsWith`, juntar `days=90` com `days=15` por `date` num Map, conferir o campo `truncated`, e **imprimir quantos pontos sobraram e quantos foram descartados**. O descarte é o que denuncia a contaminação.
 
