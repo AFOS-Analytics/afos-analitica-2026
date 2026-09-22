@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-21",
-  "fetchedAt": "2026-09-21T02:16:09.383Z",
+  "lastUpdate": "2026-09-22",
+  "fetchedAt": "2026-09-22T00:01:00.636Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 142,
-    "naLista": 42,
-    "foraDaLista": 100,
+    "lidos": 151,
+    "naLista": 61,
+    "foraDaLista": 90,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 4,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 10,
+    "veiculosRepresentados": 6,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 19,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
-    "publicadosPorDisputa": 10,
-    "publicadosPorMetodo": 0
+    "lidosEmFeedProprio": 28,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
   },
   "itens": [
     {
-      "titulo": "Trump faces pressure as midterms inch closer",
-      "url": "https://www.cbsnews.com/video/trump-faces-pressure-midterms-inch-closer/",
-      "casa": "CBS News",
-      "publicadoEm": "2026-09-20T23:42:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Ohio governor, Senate races nearly tied: Poll",
-      "url": "https://www.newsnationnow.com/us-news/midwest/ohio-governor-senate-races-nearly-tied-poll/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-20T19:43:50.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Troy Jackson, a Progressive Brawler, Tries to Flip a Senate Seat in Maine",
-      "url": "https://www.nytimes.com/2026/09/20/us/politics/troy-jackson-susan-collins-maine-senate.html",
+      "titulo": "Bush and Cornyn Leave Out Paxton as They Raise Cash for Senate Candidates",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQeWJLYXBLdzkxcFplaTJqc1duczhxdXFJZjFqNXh3VmpQR2xVczVYMzFhZW1sQ2owTmx3S2NENDFlMUtXUFJoeHRCa3pHcC16S1FzRS1aY18tUW5mc3lpMGY2RGtzcEZKZ2FFRllPMlZyLXM5OVFkS3B1RDhhSmhqMmNURl8wTkJyX0R5T1VMdm5jMHc?oc=5",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-20T18:52:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump to meet with Mamdani in New York amid high-stakes midterm push",
-      "url": "https://www.foxnews.com/politics/trump-meet-mamdani-new-york-amid-high-stakes-midterm-push",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-20T18:45:41.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Trump's MAGA Inc. funnels another $5 million into Texas Senate race",
-      "url": "https://www.newsnationnow.com/politics/trumps-maga-5-million-texas-senate-race/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-20T17:50:19.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Post Game: Are investigations on the horizon if Democrats take control of Congress?",
-      "url": "https://www.nbcnews.com/meet-the-press/video/post-game-are-investigations-on-the-horizon-if-democrats-take-control-of-congress-270179909785",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-20T14:42:43.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Leftists make waves and Trump flexes muscles: US primary season takeaways",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOc3BUaFZhbDBZVDRGVWpDWmw1TG9Ha3ZFc0FkTmk1OTFHcEVQbFpPdHVVM2YzeHBCdjZ4cHpoRkZ6V1BjWm50bDdOUXdkUWhVOWpkcmZPWDBMVFE5VkdwWTlkaHZCSnBtTEZxNkNwODhWYjBjOThXZktGMzBzbHBtSg?oc=5",
-      "casa": "The Guardian",
-      "publicadoEm": "2026-09-20T13:45:00.000Z",
-      "consulta": "midterms",
+      "publicadoEm": "2026-09-21T23:06:50.000Z",
+      "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "What Exactly Is a Wave Election? And Should Republicans Be on High Alert?",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPWVNPRDBxSDlnLUdkMHU4c29xQWxBWm9kSFBDYjF6SVVhaXRaSURyaFhlV3VRd0dCcDk0V25mbWxOZkppVDdKM2NDb09aY2FEZnhqY2lUZnR4SmdkQWNKREN3YUtTQkdRUlEzbExzbUVCc3VDZ2ZSMnBXRlRpQkY1R1R1bnhqQXZIRUE?oc=5",
+      "titulo": "Appeals court rules in favor of Trump-backed Missouri congressional maps",
+      "url": "https://www.theguardian.com/us-news/2026/sep/21/missouri-congressional-map-trump-appeals-court",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-21T22:44:42.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Appeals court seeks to revive GOP congressional map in Missouri",
+      "url": "https://www.nbcnews.com/politics/2026-election/appeals-court-seeks-revive-gop-congressional-map-missouri-rcna599108",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-21T22:41:00.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "The State of the Economy Before the Midterms: Rising Inflation and A.I. Unease",
+      "url": "https://www.nytimes.com/2026/09/21/us/politics/midterm-elections-economy.html",
       "casa": "The New York Times",
-      "publicadoEm": "2026-09-20T13:40:55.000Z",
+      "publicadoEm": "2026-09-21T22:28:35.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Appeals court reinstates GOP House map in Missouri for November election",
+      "url": "https://thehill.com/regulation/court-battles/6102804-mo-court-reinstates-gop-house-map/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-21T22:05:39.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iowa GOP Senate candidate Ashley Hinson calls for Iran war to end despite voting to let Trump continue it",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPYU44M0Y4eTJLQzU5clNNc3JtUS0wX2ZZRVlXZVRMY0ViUVRtZlV3aURPZHZOaENIcEEtRVpEaWQxblFCTjZ0eHFJYXNmX19tQ1F0WmdlNGtFM05aa1dIRjRBb1I1WEpLV1ZzeDlGUlFiWlFYelphYTZ6eDJPU01YY2R5MVN0cEZDNkdidmxwZ2JBZF94NUY1M0dQRmdpYzBCOTVrY3BEOFlGQnFLejkyQ1g3aUFMaEE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-21T20:56:21.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump approval falls to all-time low in Reuters/Ipsos poll ⁠",
+      "url": "https://thehill.com/homenews/administration/6102632-trump-approval-rating-historic-low/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-21T20:49:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Record share of voters motivated to oppose Trump in midterms, poll finds",
+      "url": "https://www.washingtonpost.com/politics/2026/09/21/record-share-voters-motivated-oppose-trump-midterms-poll-finds/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-21T19:38:07.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump's approval rating hits lowest level of his career, poll finds",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYWdyTjV0NG9Jd0ZfWFBqMDhMWlZaZWhqVXpNejkzVnpKNVhxSG1rUGduNlVpbzZ0RTZlUkNwNXVwY1N6RmZiMHlwNlhRZjRMcVZMbEEwSHlEYXVpNDN2ZDVmT1g2elFTa2dnbjVvLUJRaGs2aWx3TmRhWWN5TlZqZ0dxM0xhUld1LXJ6N3lWTVJRWnp3cVFGdkZGeGNFVW9Q?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-21T19:23:00.000Z",
       "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Poll: Most voters say Trump has hurt the economy as competitive midterm election looms",
-      "url": "https://www.nbcnews.com/politics/2026-election/poll-voters-say-trump-hurt-economy-competitive-midterm-election-looms-rcna597868",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-20T13:00:42.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Republican Mike Rogers courts Michigan Democrats and Trump voters as GOP hopes to hold the Senate",
-      "url": "https://abcnews.com/Politics/wireStory/republican-mike-rogers-courts-michigan-democrats-trump-voters-136597414",
-      "casa": "ABC News",
-      "publicadoEm": "2026-09-20T12:34:20.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
+      "titulo": "‘People are pissed off’: anger at the elite and the establishment is fueling this year’s midterms",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOTTN6Y2ZHcmhqOVNpZllBakZldTdBNjYwUzV3MFJTYk9rVTdzdnlTMFA1MjR5S1NCU3I1YXBUYTdYQ2xXemF1Ump1UHExeEZQYm1WLTMwdlFvZjZkOVpnOTlEWGVGUzFMS1dRVWpDUzYzZkVaUEwwM3haQTA0cnotSkF2cE15WHRzSGwxR3FwNA?oc=5",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-21T19:16:00.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

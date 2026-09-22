@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-09-21",
+  "fetchedAt": "2026-09-21T19:20:13.393Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 131,
+    "naLista": 53,
+    "foraDaLista": 78,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 11,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 24,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Democrat Jared Golden endorses Republican Mike Lawler in competitive House race",
+      "url": "https://www.washingtonpost.com/politics/2026/09/21/democrat-jared-golden-endorses-republican-mike-lawler-competitive-house-race/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-21T18:32:53.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "House Democrat Crosses Party Lines to Endorse Rep. Mike Lawler in Midterms Race",
+      "url": "https://www.nytimes.com/2026/09/21/nyregion/lawler-endorsement-golden-democrat.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-21T18:24:15.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iowa GOP Senate candidate calls for Iran war to end despite voting to let Trump continue it",
+      "url": "https://www.nbcnews.com/politics/2026-election/iowa-gop-senate-candidate-ashley-hinson-calls-iran-war-end-rcna599041",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-21T18:14:08.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Iowa GOP Senate candidate Ashley Hinson calls for Iran war to end despite voting to let Trump continue it",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPYU44M0Y4eTJLQzU5clNNc3JtUS0wX2ZZRVlXZVRMY0ViUVRtZlV3aURPZHZOaENIcEEtRVpEaWQxblFCTjZ0eHFJYXNmX19tQ1F0WmdlNGtFM05aa1dIRjRBb1I1WEpLV1ZzeDlGUlFiWlFYelphYTZ6eDJPU01YY2R5MVN0cEZDNkdidmxwZ2JBZF94NUY1M0dQRmdpYzBCOTVrY3BEOFlGQnFLejkyQ1g3aUFMaEE?oc=5",
+      "casa": "NBC News",
+      "publicadoEm": "2026-09-21T18:14:08.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "GOP Senate nominee Hinson: Iowans 'shouldn’t have to foot the bill' for Iran war",
+      "url": "https://thehill.com/homenews/campaign/6102165-hinson-links-iran-war-prices/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-21T17:36:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans Enter Final Midterm Stretch With a Significant Financial Edge",
+      "url": "https://www.nytimes.com/2026/09/21/us/politics/republicans-midterm-fundraising-maga-inc-trump.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-21T16:29:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "MN Dem Senate candidate's viral hijab video takes new turn as woman beside her faces major state investigation",
+      "url": "https://www.foxnews.com/politics/mn-dem-senate-candidate-viral-hijab-video-takes-new-turn-woman-beside-her-faces-major-state-investigation",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-21T16:00:38.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Kamala Harris launches into the 2026 midterms as her 2028 decision looms",
+      "url": "https://abcnews.com/Politics/wireStory/kamala-harris-launches-2026-midterms-2028-decision-looms-136616871",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-21T13:52:30.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump, Republicans launch ad blitz for midterms as races favor Democrats",
+      "url": "https://www.washingtonpost.com/politics/2026/09/21/maga-inc-other-trump-linked-groups-plan-ad-blitz-boost-republicans-midterm/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-21T13:27:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Democrats privately sounding alarm on GOP spending ahead of midterms",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5HSGpCbWFMVE9yVXRzaXJpNUZIek16bE5CTGhta2hRQVI4ajM0TUp0WTNqQ2x5ZjA1RGdXOGV5Qlp2RmFlMjdnNlhOeVRwWWhiZW01RmI5cnhPWE9fMmVMb19SY3kxUm1paHdIUl9iTkRQeEZidVM1YkxTNFc?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-21T09:00:29.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}
