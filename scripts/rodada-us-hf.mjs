@@ -28,6 +28,8 @@
  *   node scripts/rodada-us-hf.mjs "msg" --declarado=data/erratas/encolhimento-AAAA-MM-DD.json
  */
 
+import { existsSync, readFileSync } from 'node:fs'
+import { gunzipSync } from 'node:zlib'
 import { spawnSync } from 'node:child_process'
 
 const argv = process.argv.slice(2)
@@ -49,6 +51,59 @@ const passos = [
 const resultados = []
 console.log('')
 console.log(`🤗 SUBIDA DO DATASET US 2026 · ${new Date().toISOString()}${ensaio ? '  [ENSAIO: não sobe]' : ''}`)
+
+// ── IDADE DO BACKUP, antes de qualquer passo ────────────────────────────────
+//
+// 🔴 POR QUE, medido em 22/Set/2026. O `build-us-2026-dataset.mjs` lê
+//    `backup/neon/`, e quem escreve ali é o workflow `backup-neon.yml`. Ele é
+//    AGENDADO para 15:00 UTC e na prática cai entre 17:40 e 19:50, porque o
+//    cron do GitHub atrasa. Uma passada rodada às 16:00Z publica um dataset
+//    cuja série de mercado termina NO DIA ANTERIOR.
+//
+// ⛔ E nada dizia isso. O portão de encolhimento compara CONTAGEM DE LINHA, e
+//    um dataset sem o dia de hoje não encolhe: ele simplesmente não cresce, o
+//    que é indistinguível de um dia sem movimento. O `+0` prova que chegou,
+//    nunca que está completo.
+//
+// 📌 Isto NÃO bloqueia. O dataset é cumulativo e a próxima passada recolhe o
+//    dia. O que ele não pode é subir calado, porque quem lê a mensagem do
+//    commit no HF assume que ela descreve o dia dela.
+function idadeDoBackup() {
+  try {
+    const mes = new Date().toISOString().slice(0, 7)
+    const arq = `backup/neon/marketPrice/${mes}.csv.gz`
+    if (!existsSync(arq)) return { erro: `sem ${arq}` }
+    const txt = gunzipSync(readFileSync(arq)).toString('utf8')
+    const linhas = txt.split('\n').map((l) => l.replace(/\r$/, '')).filter(Boolean)
+    const col = linhas[0].split(',').indexOf('snapshotAt')
+    if (col < 0) return { erro: 'coluna snapshotAt ausente no backup' }
+    let ultimo = ''
+    for (const l of linhas.slice(1)) {
+      const v = l.split(',')[col]
+      if (v && v > ultimo) ultimo = v
+    }
+    if (!ultimo) return { erro: 'backup sem nenhum snapshotAt legivel' }
+    const hoje = new Date().toISOString().slice(0, 10)
+    return { ultimo, temHoje: ultimo.startsWith(hoje), horas: (Date.now() - Date.parse(ultimo)) / 3_600_000 }
+  } catch (e) {
+    return { erro: String(e?.message ?? e) }
+  }
+}
+
+const bk = idadeDoBackup()
+console.log('')
+if (bk.erro) {
+  console.log(`   ⚠️ IDADE DO BACKUP: INDETERMINADA (${bk.erro}). Não é "está em dia".`)
+} else if (bk.temHoje) {
+  console.log(`   ✅ backup com o dia de hoje, último ponto ${bk.ultimo} (${bk.horas.toFixed(1)}h)`)
+} else {
+  console.log(`   🔴 BACKUP SEM O DIA DE HOJE: último ponto ${bk.ultimo} (${bk.horas.toFixed(1)}h atrás)`)
+  console.log(`      O backup-neon.yml é agendado para 15:00Z e costuma cair entre 17:40 e 19:50Z.`)
+  console.log(`      A série de mercado deste dataset termina no dia ANTERIOR, e o portão de`)
+  console.log(`      encolhimento NÃO pega isso, porque ele compara contagem de linha.`)
+  console.log(`      📌 Não bloqueia: o dataset é cumulativo. Mas a mensagem do commit não pode`)
+  console.log(`         prometer o dia de hoje.`)
+}
 
 for (const p of passos) {
   console.log('')
