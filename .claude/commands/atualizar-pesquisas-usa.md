@@ -157,6 +157,21 @@ npm run instrumento:usa                  # a rodada fora do índice mede a MESMA
 
 ⛔ **E o custo não era só de frase.** O `exposicao.mjs` projeta as rodadas devidas pela CADÊNCIA da casa, então cobrava da YouGov 07/Set e 14/Set e somava as duas na linha *"servida D+5.36 · com as que faltam D+4.66"*. Rodada de outro instrumento não é devida a esta média.
 
+✅ **CONSERTADO em 22/Set/2026, e o atraso é o próprio caso.** A linha acima foi escrita em 15/Set como diagnóstico e ficou **sete dias** sem chegar ao código: em 22/Set a YouGov estava com **três** ondas seguidas medidas como NOMINAIS (campo 4-8, 11-14 e 18-21/Set) e a exposição ainda cobrava as três.
+
+O registro é `lib/us-polls/instrumento-medido.mjs`, e ele é **dado declarado com prova e data**, nunca heurística: cada entrada guarda a onda, a ressalva literal, o PDF e a data da medição, para poder ser conferida e **desfeita**.
+
+| régua | por quê |
+|---|---|
+| o corte é por **ONDA**, não por casa | a casa segue devendo o que é anterior à troca. Excluir a casa inteira apagaria buraco real do passado |
+| `desde` é o **INÍCIO** do campo, não o fim | a cadência projeta SLOTS, e um slot cai DENTRO da onda que o preenche. Datando pelo fim (08/Set), o slot de 07/Set continuava cobrado, e quem o preenche é a onda 4-8/Set, que é nominal |
+| a casa excluída **não some** do relatório | sai num bloco `🔬 rodada(s) NÃO cobrada(s)` com o motivo. Sumir com a linha esconde a decisão |
+| não é permanente | casa que volta ao generic ballot volta a dever, e a entrada sai do registro. **Instrumento é propriedade da ONDA** |
+
+📊 Medido no dia: exposição de **8 para 5 rodadas**, deslocamento de **−0,44pp para −0,34pp** e amplitude de **0,95pp para 0,59pp**.
+
+🧪 `node scripts/testar-instrumento-medido.mjs`, **22 casos e no CI**, com 4 de 4 mutações reprovadas. Metade é anti-excesso, porque o erro simétrico deste conserto é calar buraco real.
+
 | veredito | o que quer dizer |
 |---|---|
 | `GENERICO` | a pergunta está lá e sem ressalva colada. É a mesma medição da nossa média |

@@ -147,6 +147,7 @@ jobs:
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs
           node scripts/testar-instrumento-us.mjs
+          node scripts/testar-instrumento-medido.mjs
           node scripts/testar-casas-us.mjs
           node scripts/testar-leaner-us.mjs
           npx --no-install tsx scripts/testar-estado-do-portao.ts

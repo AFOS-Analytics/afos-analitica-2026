@@ -128,6 +128,25 @@ if (cad.atrasadas.length && !semRede) {
 // Ver memory/feedback_o_atraso_global_e_cego_a_buraco_no_meio.md
 if (cad.atrasadas.length) {
   const ex = medirExposicao(saida, cad)
+  // 🔬 As rodadas que a cadência projetava e a casa NÃO deve, por instrumento
+  //    medido como outro. Sai ANTES do bloco de exposição e FORA do `if`, porque
+  //    uma casa pode não dever NENHUMA e então `rodadasFaltando` zera: a decisão
+  //    de não cobrar precisa aparecer mesmo quando ela zera a lista.
+  if (ex?.naoDevidasPorInstrumento?.length) {
+    const porCasa = new Map()
+    for (const r of ex.naoDevidasPorInstrumento) {
+      const e = porCasa.get(r.instituto) ?? { datas: [], motivo: r.motivo }
+      e.datas.push(r.campoFim)
+      porCasa.set(r.instituto, e)
+    }
+    console.log(`   🔬 ${ex.naoDevidasPorInstrumento.length} rodada(s) NÃO cobrada(s): instrumento medido como outro  [USO INTERNO, nao publicar]`)
+    for (const [casa, e] of porCasa) {
+      console.log(`      ${casa}: ${e.datas.length} rodada(s) (${e.datas.join(', ')})`)
+      console.log(`         ${e.motivo}`)
+    }
+    console.log('      ⛔ Rodada de outro instrumento não é devida a esta média, então somá-la')
+    console.log('         à exposição deslocaria um número interno por construção.')
+  }
   if (ex && ex.rodadasFaltando) {
     const sinal = (v) => (v >= 0 ? `D+${v.toFixed(2)}` : `R+${Math.abs(v).toFixed(2)}`)
     console.log(`   📏 exposição da média: ${ex.rodadasFaltando} rodada(s) faltando dentro da janela de ${ex.janelaDias}d  [USO INTERNO, nao publicar]`)
