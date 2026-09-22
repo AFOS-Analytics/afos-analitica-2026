@@ -44,10 +44,13 @@
  */
 
 import { spawnSync } from 'node:child_process'
+import { existsSync } from 'node:fs'
+import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const argv = process.argv.slice(2)
 const aplicar = argv.includes('--apply')
 const semSonda = argv.includes('--sem-sonda')
+const semNoticias = argv.includes('--sem-noticias')
 const dias = (argv.find((a) => a.startsWith('--dias=')) ?? '--dias=30').slice(7)
 const leituras = (argv.find((a) => a.startsWith('--leituras=')) ?? '--leituras=5').slice(11)
 
@@ -139,6 +142,23 @@ if (relatorio !== 0) {
   console.log('')
   console.log('⚠️  O RELATÓRIO não terminou: o bloco 📣 DIVULGAM HOJE não foi avaliado.')
   console.log('   Ausência dele aqui NÃO quer dizer que ninguém divulga hoje. O motivo está acima.')
+}
+
+// 2.5/5 · A FOLGA DO GATILHO, encadeada em 22/Set/2026.
+//
+// 🔴 A régua manda *"remedir a cada rodada até o 1º turno"*, e o relatório
+//    acima mede e IMPRIME. Nada gravava. A comparação de 22/Set com 16/Set só
+//    existiu porque o 88 daquele dia estava escrito numa ficha de memória, à
+//    mão: régua que depende de número que ninguém grava é régua que não roda.
+//
+// 📌 Ele grava a série e projeta a data em que o corte alcança HOJE, que é
+//    quando o bloco 📣 deixa de ser confiável. Saída 1 ali é ALCANÇADO, e não
+//    desfaz nada: o que ela proíbe é confiar no gatilho.
+const folga = rodar('folga', '2.5/5 · FOLGA DO GATILHO — quando o corte da rota alcança HOJE', 'scripts/folga-do-gatilho-brz.mjs', [])
+if (folga === 1) {
+  resultados.at(-1).estado = 'ALCANÇADO: o bloco 📣 deixou de ser confiável'
+} else if (folga === 4) {
+  resultados.at(-1).estado = 'NAO MEDIU, sem veredito'
 }
 
 const escopo = rodar(
@@ -246,6 +266,45 @@ if (cobertura === 4) {
 //
 // ⛔ Ele NÃO diz "publicado". O veredito mais forte é COM_NUMERO, que manda ir
 //    ao CORPO conferir pelo protocolo ou pelo período de campo.
+// 🔴 E O CACHE DO DIA É INSUMO DELE, medido em 22/Set/2026. Naquela rodada o
+//    passo saiu 4, imprimiu "rodar antes: node scripts/fetch-google-news.mjs"
+//    e PAROU. Quem chamou a ferramenta fui eu, à mão, depois de ler o aviso.
+//
+// ⛔ E a rodada teria fechado dizendo "não dispara o /atualizar-brz" com uma
+//    nacional CIRCULANDO: a Quaest, n=2.004, campo de 17 a 20/Set, saiu na
+//    noite de 21/Set e tinha 36 itens com número no cache de 22/Set. O bloco
+//    📣 não a via, porque a promessa dela era do dia anterior, e o passo que a
+//    veria não mediu por falta de um arquivo que um comando nomeado ali do
+//    lado gera em dois minutos.
+//
+// 🔑 Por que a pergunta é feita AQUI e não pelo código de saída: o 4 do filho
+//    cobre duas causas opostas, cache ausente e rota ilegível, e coletar
+//    notícia não conserta rota. O orquestrador faz a MESMA pergunta que ele
+//    faz, com a MESMA régua de data civil do Brasil.
+//
+// 📌 Ele não coleta quando o cache já existe, e falha do coletor não vira
+//    silêncio: o passo roda mesmo assim e declara NAO MEDIU. `--sem-noticias`
+//    pula a coleta de propósito.
+const cacheDeHoje = `public/news-cache/${dataCivilBrasil()}.json`
+if (!existsSync(cacheDeHoje) && !semNoticias) {
+  console.log('')
+  console.log(regua)
+  console.log(`▶️  4.4/5 · CACHE DE NOTÍCIAS do dia, que é insumo do próximo passo`)
+  console.log(regua)
+  console.log(`   ${cacheDeHoje} não existe, e sem ele o passo 4.5 não mede.`)
+  console.log(`   Coletando. Para pular de propósito: --sem-noticias.`)
+  const c = spawnSync(process.execPath, argumentosDeNode('scripts/fetch-google-news.mjs', []), { stdio: 'inherit' })
+  const okCache = !c.error && c.status === 0 && existsSync(cacheDeHoje)
+  resultados.push({ id: 'noticias', codigo: c.error ? null : c.status, estado: okCache ? 'coletado agora' : 'NAO COLETOU' })
+  if (!okCache) {
+    console.log('')
+    console.log(`   ⚠️ a coleta não entregou o cache. O passo abaixo vai declarar NAO MEDIU,`)
+    console.log(`      e isso NÃO é "nenhuma pesquisa saiu".`)
+  }
+} else if (!existsSync(cacheDeHoje)) {
+  resultados.push({ id: 'noticias', codigo: null, estado: 'PULADO (--sem-noticias), e o cache NÃO existe' })
+}
+
 const saiu = rodar('saiu', '4.5/5 · PROMESSA x MUNDO — que nacional tem NÚMERO hoje?', 'scripts/pesquisa-saiu-hoje-brz.mjs', [
   `--dias=${dias}`,
 ])
@@ -254,8 +313,14 @@ if (saiu === 4) {
   resultados.at(-1).estado = 'NAO MEDIU, sem veredito'
   console.log('')
   console.log(regua)
-  console.log('⚠️  PROMESSA x MUNDO não foi medido (cache do dia ausente, rede ou rota).')
-  console.log('   Não é "nada saiu": rodar `node scripts/fetch-google-news.mjs` e repetir.')
+  console.log('⚠️  PROMESSA x MUNDO não foi medido. Não é "nada saiu".')
+  if (existsSync(cacheDeHoje)) {
+    console.log(`   O cache de hoje EXISTE (${cacheDeHoje}), então a causa é a outra:`)
+    console.log('   a rota de pesquisas não respondeu. Coletar notícia não conserta rota.')
+  } else {
+    console.log(`   O cache ${cacheDeHoje} não está no disco${semNoticias ? ' e a coleta foi pulada por --sem-noticias' : ' e a coleta acima não o entregou'}.`)
+    console.log('   Rodar `node scripts/fetch-google-news.mjs` e repetir.')
+  }
 } else if (saiu !== 0) {
   resultados.at(-1).estado = 'DIVERGEM, há o que conferir'
   console.log('')

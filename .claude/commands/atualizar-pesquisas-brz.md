@@ -37,6 +37,12 @@ node scripts/rodada-tse-brz.mjs --apply           # grava, relata e confere o R�
 
 Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fechamento, e preserva o ensaio: **sem `--apply` ele para depois de listar o que entraria**, sem rodar os passos 2, 3 e 4. O motivo não é cerimônia: o relatório lê a API e o Neon, então rodá-lo sobre um ensaio mostraria o banco **sem** as linhas recém-listadas, um retrato que não é o de antes nem o de depois.
 
+📰 **E desde 22/Set/2026 ele COLETA o cache de notícias do dia quando ele falta**, porque esse cache é insumo do passo 4.5 e sem ele o passo não mede.
+
+🔴 **O que aconteceu na rodada em que isso foi consertado:** o 4.5 saiu **4**, imprimiu *"rodar antes: node scripts/fetch-google-news.mjs"* e **parou**. Quem chamou a ferramenta foi uma pessoa, à mão, depois de ler o aviso. ⛔ **E a rodada teria fechado com "não dispara o /atualizar-brz" enquanto uma nacional circulava**: a Quaest, n=2.004, campo de 17 a 20/Set, saiu na noite de 21/Set e tinha **36 itens com número** no cache de 22/Set. O bloco `📣` não a via, porque a promessa dela era da véspera.
+
+🔑 **A pergunta é feita pelo ORQUESTRADOR e não pelo código de saída**, porque o `4` do filho cobre duas causas opostas, cache ausente e rota ilegível, e **coletar notícia não conserta rota**. A régua de data é a civil do Brasil, importada do `data-civil-brz.mjs`, nunca uma segunda cópia. Ele não coleta se o cache já existe, e falha do coletor **não vira silêncio**: o passo roda mesmo assim e declara NAO MEDIU. Para pular de propósito, `--sem-noticias`.
+
 🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, e não desfaz a ingestão: **1** quer dizer GRAVE no calendário vivo, o número está certo e quem não se sustenta é o rótulo de nacional; **3**, desde 14/Set/2026, quer dizer aprovado sobre base CORTADA pelo teto de 200 linhas da rota, que vale como piso.
 
 ⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
@@ -164,7 +170,20 @@ Nenhuma das duas dá erro. Medido no dia: `2026-09-16T02:30:00Z` é **15/Set no 
 
 O conferidor de escopo roda em 30d. Sobre a base inteira, reproduzida do Neon com o mapeamento da rota (e a versão cortada reproduzindo a saída do dia **exata**, que é o controle), a Real Time contradiz em **38 de 38** e não 25 de 25, e os graves são **3** e não 1: `BR034902026` (div 01/Set) e `BR037332026` (div 31/Ago), os dois da Real Time e já vencidos. O veredito vivo **não** mudou naquele dia.
 
-📈 **Em 16/Set/2026 o corte chegou à janela PADRÃO de 15 dias** (209 linhas no banco, borda em 08/Set), que em 14/Set ainda cabia inteira com 197. 🔑 A janela da rota é por **data de INGESTÃO** (`createdAt`), não por divulgação, e o corte ordena por divulgação decrescente. Então o gatilho `📣` só quebra quando as linhas com divulgação **de hoje em diante** passarem de 200. Medido no dia: **88** (17 de hoje, 71 futuras). O painel público só LINKA a rota (`PollsSection`, `?days=30`), não desenha com ela. Remedir a cada rodada até o 1º turno, porque o estoque de divulgações futuras cresce perto da eleição.
+📈 **Em 16/Set/2026 o corte chegou à janela PADRÃO de 15 dias** (209 linhas no banco, borda em 08/Set), que em 14/Set ainda cabia inteira com 197. 🔑 A janela da rota é por **data de INGESTÃO** (`createdAt`), não por divulgação, e o corte ordena por divulgação decrescente. Então o gatilho `📣` só quebra quando as linhas com divulgação **de hoje em diante** passarem de 200. Medido no dia: **88** (17 de hoje, 71 futuras). O painel público só LINKA a rota (`PollsSection`, `?days=30`), não desenha com ela.
+
+📏 **E desde 22/Set/2026 o "remedir a cada rodada" tem SÉRIE, porque medir e não gravar é o mesmo defeito de sempre:**
+
+```bash
+npm run folga:brz                                  # entra na rodada como passo 2.5/5
+node scripts/folga-do-gatilho-brz.mjs --sem-registro    # mede e não grava
+```
+
+🔴 **O relatório já media e IMPRIMIA, e nada gravava.** Em 22/Set a comparação com 16/Set só existiu porque o **88** daquele dia estava escrito nesta régua, à mão. **Régua que depende de número que ninguém grava é régua que não roda**, o mesmo caso do total do arquivo do TSE em 04/Set.
+
+📓 O `data/tse/folga-gatilho.jsonl` guarda uma linha por medição, e a taxa é calculada sobre o **último registro de cada DIA distinto**, porque duas medições da mesma tarde não são dois dias de estoque. ⛔ **Um ponto não projeta nada**, e a saída nesse caso é `INDETERMINADO`, que não é "está folgado". Cada linha grava a `dias` com que foi medida, e a projeção nunca mistura janelas.
+
+📊 **Medido em 22/Set: 136 linhas com divulgação de hoje em diante, folga de 64, contra 88 em 16/Set.** São **8,0 por dia**, e no ritmo medido o corte alcança HOJE por volta de **30/Set/2026**, antes do 1º turno. ⛔ Projeção supõe ritmo constante e o estoque acelera perto da eleição: ela serve para decidir QUANDO mexer na rota, não para prometer o dia.
 
 ⭐ **O corte tem BORDA**, porque come as divulgações mais antigas primeiro: toda data depois da menor data servida está inteira, e cada leitor diz qual pedaço dele vale.
 

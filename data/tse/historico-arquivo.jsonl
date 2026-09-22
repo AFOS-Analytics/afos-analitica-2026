@@ -26,3 +26,6 @@
 {"quando":"2026-09-21T19:05:14.570Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}
 {"quando":"2026-09-21T19:06:17.131Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}
 {"quando":"2026-09-21T19:06:53.157Z","arquivo":1058,"banco":1148,"fantasmas":90,"inseridas":0,"jaExistiam":1058,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-22T17:16:32.644Z","arquivo":1075,"banco":1167,"fantasmas":92,"inseridas":19,"jaExistiam":1056,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-22T17:21:47.322Z","arquivo":1075,"banco":1167,"fantasmas":92,"inseridas":0,"jaExistiam":1075,"modo":"rede","fonte":"medido"}
+{"quando":"2026-09-22T17:25:33.246Z","arquivo":1075,"banco":1167,"fantasmas":92,"inseridas":0,"jaExistiam":1075,"modo":"rede","fonte":"medido"}

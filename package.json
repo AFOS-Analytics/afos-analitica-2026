@@ -49,7 +49,8 @@
     "cobertura:brz": "node scripts/conferir-cobertura-imprensa-brz.mjs",
     "materia": "tsx scripts/ler-materia.mjs",
     "check:traducao-brz": "node scripts/conferir-traducao-brz.mjs",
-    "leaner:usa": "node scripts/efeito-do-leaner-us.mjs"
+    "leaner:usa": "node scripts/efeito-do-leaner-us.mjs",
+    "folga:brz": "node scripts/folga-do-gatilho-brz.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
