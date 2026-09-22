@@ -1,7 +1,7 @@
 {
   "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number. — Each poll is enriched with its full public TSE registration (methodology, sampling/weighting design, responsible statistician, CONRE, CNPJ, internal control system) via field `tse_registration`, matched by TSE protocol or institute+date.",
   "generated_from": "public/polls-data.json git history",
-  "count": 93,
+  "count": 94,
   "polls": [
     {
       "institute": "Real Time Big Data/Record",
@@ -303,15 +303,15 @@
         }
       ],
       "tse_registration": {
-        "register_tse": "BR067982026",
+        "register_tse": "BR037152026",
         "cnpj": "07630546000175",
         "institute_full": "DATAFOLHA INSTITUTO DE PESQUISAS LTDA.",
         "statistician": "Renata Nunes Cesar",
         "conre": "7249",
-        "cost_brl": 185706.64,
+        "cost_brl": 307641.6,
         "own_poll": false,
-        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. A população do estado de São Paulo, com 16 anos ou mais, foi tomada como universo da pesquisa.",
-        "sampling_plan": "Universo: População com 16 anos ou mais, do estado de São Paulo Tamanho da amostra: A amostra prevista é de 1608 entrevistas. Técnica de amostragem: A amostra é estratificada por natureza dos municípios (capital, região metropolitana ou interior), os municípios com população acima de 500 mil habitantes constituem estratos. Em cada estrato, num primeiro estágio, são sorteados com probabilidade proporcional ao tamanho (PPT) os municípios que farão parte do levantamento. Num segundo estágio, são sorteados os bairros e pontos de abordagem onde serão aplicadas as entrevistas. Por fim, os entrevistados são selecionados aleatoriamente para responder ao questionário, de acordo com cotas de gênero e faixa etária. Os dados utilizados para definição e seleção da amostra são baseados nos dados fornecidos pelo IBGE (Censo 2022, PNADC 2024 e Estimativa populacional 2025), além de dados primários de outros levantamentos do instituto. Os dados relativos a gênero e faixa etária são: Homens: 48%, mulheres: 52%, 16 a 24 anos: 14%, 25 a 34 anos: 19%, 35 a 44 anos: 20%, 45 a 59 anos: 25% e 60 anos ou mais: 22%. Para a variável grau de instrução os dados utilizados como referência são: até nível médio completo ou incompleto (inclui os sem escolaridade e analfabetos) =70% e nível superior (inclui superior incompleto) = 30%. Ponderação dos resultados: Está prevista ponderação considerando as variáveis natureza do município, gênero e faixa etária. A variável escolaridade poderá ser ajustada de acordo com os percentuais detalhados anteriormente caso a diferença entre os valores descritos e observados seja maior que a margem de erro definida. Para o nível econômico do entrevistado (renda familiar mensal declarada pelo respondente), a distribuição utilizada como referência foi: Até 2 S.M. (salários mínimos)=38%, mais de 2 S.M.=58%, não souberam ou recusaram a resposta=4%. O fator previsto para ponderação é 1 (resultados obtidos em campo). Margem de Erro: A margem de erro máxima prevista é de 2 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95% e baseada em uma amostra aleatória simples (AAS). Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%.",
+        "methodology": "Pesquisa do tipo quantitativo, por amostragem, com aplicação de questionário estruturado e abordagem pessoal em pontos de fluxo populacional. O conjunto da população brasileira, com 16 anos ou mais, foi tomado como universo da pesquisa.",
+        "sampling_plan": "Universo: População brasileira, com 16 anos ou mais Tamanho da amostra: A amostra prevista é de 2004 entrevistas. Técnica de amostragem: A amostra é estratificada por região geográfica (Sudeste, Sul, Nordeste, Norte e Centro-oeste) e natureza dos municípios (capital, região metropolitana ou interior). Em cada estrato, num primeiro estágio, são sorteados com probabilidade proporcional ao tamanho (PPT) os municípios que farão parte do levantamento. Num segundo estágio, são sorteados os bairros e pontos de abordagem onde serão aplicadas as entrevistas. Por fim, os entrevistados são selecionados aleatoriamente para responder ao questionário, de acordo com cotas de gênero e faixa etária. Os dados utilizados para definição e seleção da amostra são baseados nos dados fornecidos pelo IBGE (Censo 2022, PNADC 2024 e Estimativa populacional 2025), além de dados primários de outros levantamentos do instituto. Os dados relativos a gênero e faixa etária são: Homens: 48%, mulheres: 52%, 16 a 24 anos: 17%, 25 a 34 anos: 19%, 35 a 44 anos: 20%, 45 a 59 anos: 24% e 60 anos ou mais: 20%. Para a variável grau de instrução os dados utilizados como referência são: até nível médio completo ou incompleto (inclui os sem escolaridade e analfabetos) =76% e nível superior (inclui superior incompleto) = 24%. Ponderação dos resultados: Está prevista ponderação considerando os estratos (região geográfica, natureza do município), gênero e faixa etária. A variável escolaridade poderá ser ajustada de acordo com os percentuais detalhados anteriormente caso a diferença entre os valores descritos e observados seja maior que a margem de erro definida. Para o nível econômico do entrevistado (renda familiar mensal declarada pelo respondente), a distribuição utilizada como referência foi: Até 2 S.M. (salários mínimos)=48%, mais de 2 S.M.=48%, não souberam ou recusaram a resposta=4%. O fator previsto para ponderação é 1 (resultados obtidos em campo). Margem de Erro: A margem de erro máxima prevista é de 2 pontos percentuais para mais ou para menos, considerando um nível de confiança de 95% e baseada em uma amostra aleatória simples (AAS). Os intervalos de confiança serão calculados considerando os resultados obtidos para um nível de confiança de 95%.",
         "control_system": "Os entrevistadores envolvidos na realização desta pesquisa são treinados pelo Instituto e recebem instruções específicas para cada projeto realizado. A coleta será feita com a utilização de tablet e questionário eletrônico. São checados, no mínimo, 20% dos questionários de cada pesquisador, seja in loco por supervisores de campo ou, posteriormente, por telefone. Internamente, todo o material é verificado e codificado. Antes do processamento final e emissão dos resultados, realiza-se processo de consistência dos dados. Os dados coletados e tratados nesta pesquisa atendem às exigências da LGPD, Lei Geral de Proteção de Dados, garantindo ao respondente o sigilo de sua identidade e o correto tratamento de suas respostas.",
         "matched_by": "institute+date(±2d)",
         "sample_design": {
@@ -1839,15 +1839,15 @@
       ],
       "source": "Atlas/Bloomberg via BBC, Estadão, Folha, CNN Brasil, Poder360, JOTA, Valor 19/Mai",
       "tse_registration": {
-        "register_tse": "BR032432026",
+        "register_tse": "BR069392026",
         "cnpj": "19259002000128",
         "institute_full": "ATLASINTEL TECNOLOGIA DE DADOS LTDA",
         "statistician": "ANDREI CAMILO DOS SANTOS",
         "conre": "11220",
         "cost_brl": 75000,
         "own_poll": true,
-        "methodology": "Pesquisa quantitativa com coleta aleatória via questionário estruturado web e pós-estratificação da amostra de acordo com as características do eleitorado de Piauí.",
-        "sampling_plan": "Amostra aleatória pós-estratificada via algoritmo iterativo com quotas proporcionais, representando características do eleitorado de Piauí: SEXO: Masculino: 48.2%; Feminino: 51.8%. FAIXA ETÁRIA: Entre 16 a 24 anos: 14.4%; Entre 25 a 34 anos: 19.4%; Entre 35 a 44 anos: 20.2%; Entre 45 a 59 anos: 24.3%; 60 ou mais: 21.7%. ESCOLARIDADE: Ensino Fundamental completo ou incompleto e eleitores sem educação formal: 43.8%; Ensino Médio completo ou incompleto: 36.5%; Ensino Superior completo ou incompleto: 19.8%. NÍVEL ECONÔMICO: Renda familiar mensal até R$2000: 31.8%; Mais de R$2.000 a R$3.000: 22.3%; Mais de R$3.000 a R$5.000: 21.7%; Mais de R$5.000 a R$10.000: 16.7%; Mais de R$10.000: 7.6%. OBS.: devido ao arredondamento, a soma dos percentuais pode variar de 99% a 101%. Na agregação final, para cada variável de ponderação, serão admissíveis desvios de até 3.0 pontos percentuais em relação às quotas estipuladas. Confiança estimada: 95%, margem de erro: +/- 3.0 pontos percentuais. FONTE DOS DADOS: PNADC 2024 para escolaridade e nível econômico | TSE 2026 para sexo e faixa etária.",
+        "methodology": "Pesquisa quantitativa com coleta aleatória via questionário estruturado web e pós-estratificação da amostra de acordo com as características do eleitorado de Brasil.",
+        "sampling_plan": "Amostra aleatória pós-estratificada via algoritmo iterativo com quotas proporcionais, representando características do eleitorado de Brasil: SEXO: Masculino: 47.2%; Feminino: 52.8%. FAIXA ETÁRIA: Entre 16 a 24 anos: 12.3%; Entre 25 a 34 anos: 19.1%; Entre 35 a 44 anos: 19.9%; Entre 45 a 59 anos: 25.5%; 60 ou mais: 23.3%. ESCOLARIDADE: Ensino Fundamental completo ou incompleto e eleitores sem educação formal: 33.8%; Ensino Médio completo ou incompleto: 40.7%; Ensino Superior completo ou incompleto: 25.5%. NÍVEL ECONÔMICO: Renda familiar mensal até R$2000: 22.4%; Mais de R$2.000 a R$3.000: 17.1%; Mais de R$3.000 a R$5.000: 23.1%; Mais de R$5.000 a R$10.000: 23.9%; Mais de R$10.000: 13.5%. OBS.: devido ao arredondamento, a soma dos percentuais pode variar de 99% a 101%. Na agregação final, para cada variável de ponderação, serão admissíveis desvios de até 1.0 pontos percentuais em relação às quotas estipuladas. Confiança estimada: 95%, margem de erro: +/- 1.0 pontos percentuais. FONTE DOS DADOS: PNADC 2024 para escolaridade e nível econômico | TSE 2026 para sexo e faixa etária.",
         "control_system": "Coleta feita com a utilização de questionário eletrônico com procedimentos específicos para o armazenamento seguro dos dados. São checados manualmente no mínimo 15% dos questionários para detectar possíveis anomalias. Pesquisadores especializados realizam internamente uma verificação exaustiva da consistência dos dados antes da divulgação dos resultados finais.",
         "matched_by": "institute+date(±0d)",
         "sample_design": {
@@ -1862,65 +1862,65 @@
             "region": false
           },
           "sex_quota": {
-            "male_pct": 48.2,
-            "female_pct": 51.8
+            "male_pct": 47.2,
+            "female_pct": 52.8
           },
           "age_quota": [
             {
               "label": "Entre 16 a 24 anos",
-              "pct": 14.4
+              "pct": 12.3
             },
             {
               "label": "Entre 25 a 34 anos",
-              "pct": 19.4
+              "pct": 19.1
             },
             {
               "label": "Entre 35 a 44 anos",
-              "pct": 20.2
+              "pct": 19.9
             },
             {
               "label": "Entre 45 a 59 anos",
-              "pct": 24.3
+              "pct": 25.5
             },
             {
               "label": "60 ou mais",
-              "pct": 21.7
+              "pct": 23.3
             }
           ],
           "education_quota": [
             {
               "label": "Ensino Fundamental completo ou incompleto e eleitores sem educação formal",
-              "pct": 43.8
+              "pct": 33.8
             },
             {
               "label": "Ensino Médio completo ou incompleto",
-              "pct": 36.5
+              "pct": 40.7
             },
             {
               "label": "Ensino Superior completo ou incompleto",
-              "pct": 19.8
+              "pct": 25.5
             }
           ],
           "income_quota": [
             {
               "label": "Renda familiar mensal até R$2000",
-              "pct": 31.8
+              "pct": 22.4
             },
             {
               "label": "Mais de R$2.000 a R$3.000",
-              "pct": 22.3
+              "pct": 17.1
             },
             {
               "label": "Mais de R$3.000 a R$5.000",
-              "pct": 21.7
+              "pct": 23.1
             },
             {
               "label": "Mais de R$5.000 a R$10.000",
-              "pct": 16.7
+              "pct": 23.9
             },
             {
               "label": "Mais de R$10.000",
-              "pct": 7.6
+              "pct": 13.5
             }
           ]
         }
@@ -10125,6 +10125,123 @@
       "dating_source": "field_midpoint",
       "days_to_first_round": 20,
       "days_to_runoff": 41
+    },
+    {
+      "institute": "Quaest/Globo",
+      "date": "2026-09-21",
+      "scope": "national",
+      "sample": 2004,
+      "margin": 2,
+      "register": "BR-06004/2026",
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "2026-09-17 a 2026-09-20",
+      "note": "Quaest nacional divulgada em 21/Set as 18h06 BRT, registro BR-06004/2026 no TSE, 2.004 eleitores de 16 anos ou mais entrevistados presencialmente entre 17 e 20/Set, margem de 2,0pp com 95% de confianca, contratada pelo Grupo Globo (CNN Brasil, CartaCapital, Poder360, CBN e Folha de S.Paulo). ⭐ NO 1º TURNO LULA TEM 37% E FLAVIO BOLSONARO 33%, com Augusto Cury em 6%, Ronaldo Caiado em 4%, Renan Santos em 3%, Romeu Zema em 1% e Samara Martins em 1%, mais 7% de branco, nulo ou nao vai votar e 8% de indecisos. Contra a rodada anterior da casa, Flavio Bolsonaro oscila 2 pontos para cima e Lula 1, os dois dentro da margem. ⭐ A CASA TESTOU CINCO PARES DE 2º TURNO: Flavio Bolsonaro tem 42% contra 41% de Lula, e Lula vence os outros quatro, 41% a 39% contra Ronaldo Caiado, 41% a 38% contra Renan Santos, 39% a 35% contra Augusto Cury e 46% a 32% contra Romeu Zema. ⚖️ E A TERCEIRA NACIONAL COM CAMPO FECHANDO NO MESMO 20/Set, junto de BTG/Nexus e Palver, e as tres usam metodos diferentes: presencial, telefone e online. No 1º turno a distancia entre Lula e Flavio Bolsonaro sai de 4 pontos aqui, 3 pontos na BTG/Nexus e 1 ponto a favor de Flavio Bolsonaro na Palver. 📌 A casa tambem mediu aprovacao do governo, 44% contra 50% de desaprovacao, e avaliacao, 33% positiva, 23% regular e 42% negativa. 🏷️ O painel nomeia esta rodada pelo contratante declarado na divulgacao, o Grupo Globo; as rodadas anteriores da mesma casa estao no painel como Quaest/Genial, e a comparacao com a rodada anterior e a que a propria casa publicou.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Renan Santos",
+          "percent2": 38
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 39,
+          "candidate2": "Augusto Cury",
+          "percent2": 35
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Romeu Zema",
+          "percent2": 32
+        }
+      ],
+      "tse_registration": {
+        "register_tse": "BR060042026",
+        "cnpj": "22445600000104",
+        "institute_full": "QUAEST PESQUISAS, CONSULTORIA E PROJETOS LTDA.",
+        "statistician": "Margarida Maria de Mendonca",
+        "conre": "6731",
+        "cost_brl": 314628,
+        "own_poll": false,
+        "methodology": "Pesquisa quantitativa, de survey, que consiste na realização de entrevistas pessoais, domiciliares e presenciais, conduzidas por profissionais treinados, com a aplicação de questionários estruturados a uma amostra representativa da população votante de 16 anos ou mais residente no Brasil. O desenho amostral aplicado combina sorteio probabilístico de municípios e de setores censitários fornecidos pelo IBGE (unidades territoriais homogêneas, de tamanho similar a quadras ou blocos), dentro dos quais serão selecionadas pessoas respondentes por meio de cotas amostrais.",
+        "sampling_plan": "O público pesquisado é composto por eleitores de 16 anos ou mais residentes na área de abrangência da pesquisa. Para produzir uma amostra representativa desse público-alvo, utilizamos um desenho amostral por conglomerados que prevê três estágios. No primeiro estágio, é feito um sorteio probabilístico de municípios para comporem a amostra por meio do método PPT (Probabilidade Proporcional ao Tamanho) a partir de suas populações votantes acima de 16 anos. Dentro da lista de municípios sorteados, no segundo estágio, é realizado um sorteio probabilístico por meio do método PPT (Probabilidade Proporcional ao Tamanho) de setores censitários a serem visitados pelos entrevistadores, sorteio que tem como base o total de habitantes residentes nos setores de acordo com dados do Censo de 2022, o que garante a dispersão aleatória e estatística da amostra dentro dos territórios municipais, independentemente de divisões administrativas. Finalmente, dentro da lista de setores censitários sorteados, no último estágio são selecionados domicílios e pessoas a serem entrevistadas utilizando-se cotas amostrais para as seguintes variáveis: sexo, idade, renda familiar e escolaridade. O perfil da amostra, definido pelas cotas previstas, é o seguinte: Sexo: Masculino (47%); Feminino (53%). Faixa etária: 16-34 anos (31%); 35-59 anos (45%); 60 ou mais (24%). Renda domiciliar total, incluindo pensões, benefícios e rendimentos de trabalhos informais: Até 2 salários-mínimos (31%); Mais de 2 a 5 salários-mínimos (42%); Mais de 5 salários-mínimos (27%). Nível de instrução: Até Fundamental completo ou médio incompleto (42%); Médio completo ou superior incompleto (39%); Superior completo ou mais (19%). Fonte dos dados: para a distribuição de sexo e idade, TSE-Tribunal Superior Eleitoral - julho/2026; para a malha de setores censitários, Censo 2022 (IBGE); para a distribuição de renda domiciliar, PNADc Anual 2025, 1a visita (IBGE); e, para a distribuição de escolaridade/instrução, PNADc trimestral 2-2026 (IBGE). A PNADc é utilizada por ser a fonte oficial mais atualizada de rendimentos do país, incluindo rendimentos informais, pensões, entre outros, e corrigindo as defasagens temporais do Censo 2022, além de ser a fonte mais atualizada de nível de instrução da população com 16 anos ou mais dada ausência de atualização obrigatória da escolaridade no registro de eleitores do TSE. Está prevista eventual pós-estratificação da amostra, por meio de algoritmos de calibração (rake) e modelos (MrP), para correção (1) de estimativas e (2) das distribuições de variáveis que medem o perfil da população. Dentro do público-alvo anteriormente descrito, serão realizadas 2.004 entrevistas. O nível de confiança das estimativas é de 95% e a margem de erro máxima prevista, atendendo às diretivas do TSE e usando o cálculo para amostra aleatória simples (AAS) como aproximação, é de cerca de 2 pontos percentuais para mais ou para menos em relação aos totais da amostra.",
+        "control_system": "As entrevistas serão realizadas por uma equipe de entrevistadores devidamente qualificada, com experiência e treinamento em pesquisa de opinião pública. Todo trabalho é feito em tablets ou outros dispositivos eletrônicos. Após a realização da coleta de dados, as entrevistas junto aos respondentes são checadas por meio de procedimentos de consistência e de georreferenciamento dos locais de aplicação em tempo real. Adicionalmente, ao longo e após os trabalhos de campo, é realizada uma fiscalização que consiste na checagem de áudio de uma amostra de 30% dos questionários aplicados para verificação das respostas e da adequação dos entrevistados aos parâmetros amostrais.",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "mentioned_no_pct",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": true
+          },
+          "sex_quota": null,
+          "age_quota": null,
+          "education_quota": null,
+          "income_quota": null
+        }
+      },
+      "field_window": {
+        "start": "2026-09-17",
+        "end": "2026-09-20"
+      },
+      "field_midpoint": "2026-09-18",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 16,
+      "days_to_runoff": 37
     },
     {
       "institute": "Palver",
