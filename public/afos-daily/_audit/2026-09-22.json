@@ -1,0 +1,136 @@
+{
+  "data": "2026-09-22",
+  "gateFactCheck": {
+    "atosAltoImpacto": [
+      "Quaest divulga a nacional BR-06004/2026",
+      "Mendonça pede arquivamento sumário e investigação de Moraes",
+      "Fux sorteado relator do mandado de segurança sobre registros do Senado",
+      "TSE aceita a ação da campanha de Lula sobre impulsionamento"
+    ],
+    "eventos": [
+      {
+        "evento": "Quaest divulga a nacional BR-06004/2026",
+        "oQueMudouHoje": "o número existe; as dailies anteriores só traziam o REGISTRO, na linha do calendário",
+        "dataDoAto": "2026-09-21, divulgada às 18h06 BRT",
+        "verificacao1CrossRef": "5 menções nas últimas 7 dailies, TODAS como linha do calendário de pesquisas registradas, nunca como resultado, então é promessa cumprida e não continuidade de número",
+        "fonte1": {
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOT1hvbVlrY0xkdVdNRzFVaUFhQTVuaUYtclRneXczeWk0ZTRYVGdQMkthUUVwRWl6eHoyYXdjYThUNzl4NUkxcTJPNm82Mi02ZzVDaVpJU2hyb2QwRl95OHlCZEpxcUp5bmY2TjJDd05fcmhXbjFSUUlIUWFSZkx5dHdIQzJ2dw?oc=5",
+          "veiculo": "CNN Brasil",
+          "publicadaEm": "2026-09-21T18:06-03:00",
+          "tipo": "evento",
+          "corpoLido": true
+        },
+        "fonte2GrupoDiferente": {
+          "veiculo": "CartaCapital",
+          "url": "https://www.cartacapital.com.br/politica/quaest-50-desaprovam-governo-lula-44-aprovam/",
+          "publicadaEm": "2026-09-21T19:06-03:00",
+          "corpoLido": true,
+          "traz": "registro BR-06004/2026, n=2.004, presencial, campo 17 a 20/Set, margem 2,0pp, contratante Grupo Globo, aprovação 44 contra 50 e avaliação 33/23/42"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Mendonça pede a Fachin arquivamento sumário e investigação de Moraes por abuso de autoridade e denunciação caluniosa",
+        "oQueMudouHoje": "apenas a PUBLICAÇÃO do conteúdo da manifestação",
+        "dataDoAto": "2026-09-21, protocolo de 76 páginas no último dia do prazo dado por Fachin",
+        "verificacao1CrossRef": "23 menções nas últimas 7 dailies, continuidade da crise, com ato novo dentro dela",
+        "fonte1": {
+          "url": "https://www.gazetadopovo.com.br/republica/mendonca-pede-investigacao-de-moraes-por-abuso-de-autoridade-e-denunciacao-caluniosa/",
+          "veiculo": "Gazeta do Povo",
+          "publicadaEm": "2026-09-22T09:33-03:00, atualizada 10:32",
+          "tipo": "evento",
+          "corpoLido": true
+        },
+        "fonte2GrupoDiferente": {
+          "veiculos": ["Estadão", "Folha de S.Paulo", "Grupo Globo"],
+          "via": "news-cache do dia, três grupos distintos"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com data corrigida, ato de 21/Set publicado em 22/Set"
+      },
+      {
+        "evento": "Fux sorteado relator do mandado de segurança que pede ao Senado registros de entrada e saída",
+        "oQueMudouHoje": "a redistribuição, depois de Moraes se declarar impedido por envolver a própria esposa",
+        "dataDoAto": "2026-09-22",
+        "verificacao1CrossRef": "zero menções nas últimas 7 dailies, novidade",
+        "fonte1": {
+          "url": "https://www.metropoles.com/colunas/manoela-alcantara/fux-e-sorteado-relator-de-acao-em-caso-que-envolve-mulher-de-moraes",
+          "veiculo": "Metrópoles",
+          "publicadaEm": "2026-09-22T14:11-03:00, atualizada 14:18",
+          "tipo": "evento",
+          "corpoLido": true
+        },
+        "fonte2GrupoDiferente": {
+          "veiculos": ["G1", "O Globo"],
+          "url": "https://oglobo.globo.com/politica/noticia/2026/09/22/fux-e-sorteado-relator-de-acao-que-pede-registros-de-visitas-de-mulher-de-moraes-e-vorcaro-ao-senado.ghtml"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "TSE aceita a ação da campanha de Lula sobre rede de perfis no Instagram",
+        "oQueMudouHoje": "o ministro relator aceitou a ação e determinou o andamento, SEM concluir irregularidade",
+        "dataDoAto": "2026-09-22",
+        "verificacao1CrossRef": "zero menções nas últimas 7 dailies, novidade",
+        "fonte1": {
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNa1FIU0tpLUk1VDF0YXBreHlxU1R1d3MzZldHT3ljTTdTVDNqQ21FdzZPWThnVXp0Vm9Rc0FNdERGdllCb2wtR3N4SDhUVnAxWF9ZNGFmVWloaDIxWkRBeFZWdnl0OUpnUjFmNlcwRkR0MzEyOVQzaGFyVUpURFh4WHpvdDN5eW5XcGxxUm5fZFhFclRXNmVPemVKYU1GOE5mZy1HdjhteVNRbDdnQWN2bjFUbw?oc=5",
+          "veiculo": "CartaCapital",
+          "publicadaEm": "2026-09-22T12:55-03:00",
+          "tipo": "evento",
+          "corpoLido": true
+        },
+        "fonte2GrupoDiferente": {
+          "veiculos": ["Poder360", "O Globo"]
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar"
+      }
+    ],
+    "naoIncorporados": [
+      {
+        "evento": "TCU manda o INSS reforçar segurança após vazamento de dados",
+        "motivo": "fonte única, Folha de S.Paulo, e o corpo não é alcançável deste ambiente. Uma fonte não fecha a régua de dois grupos",
+        "decisao": "NÃO incorporar"
+      }
+    ]
+  },
+  "reFetchPolymarket": {
+    "carimboAoVivo": "2026-09-22T18:08:03.723Z",
+    "carimboCertificado": "2026-09-22T17:40:49.051Z",
+    "deltas": {
+      "lula": "40,50% no JSON e 40,50% ao vivo, 0,00pp",
+      "flavio": "59,55% no JSON e 59,15% ao vivo, -0,40pp",
+      "vao": "19,05pp no JSON e 18,65pp ao vivo, -0,40pp",
+      "renanVencedor": "0,75% no JSON e 0,65% ao vivo, -0,10pp",
+      "renanTerceiroLugar": "42,50% no JSON e 44,50% ao vivo, +2,00pp",
+      "volumeTotalPresidencial": "USD 153,62M no JSON e USD 153,67M ao vivo"
+    },
+    "gateDisparou": true,
+    "motivoDoDisparo": "o contrato de 3º lugar de Renan Santos moveu 2,00pp entre a certificação e o re-fetch",
+    "decisao": "NÃO rebasear, e manter a baseline CERTIFICADA das 14:40 BRT",
+    "porQue": "o gate de rebaseline é de 03/Jul/2026, a trava de captura é de 24/Jul e a certificação POR LIVRO é de 16/Set. Rebasear para uma leitura ÚNICA publicaria preço que nenhuma segunda leitura confirmou, contradizendo a promessa que a própria página faz. O livro de 3º lugar tem USD 1,40M acumulados, onde 2pp em 28 minutos é a oscilação normal dele."
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma. Os quatro atos incorporados têm duas fontes de grupos distintos; o do TCU ficou de fora por ter uma só",
+    "numericalErrors": "reconcile-claims OK, todos os claims batem com o JSON dentro de mais ou menos 0,05pp",
+    "fontesInventadas": "conferidos três ao acaso, CNN Brasil, Metrópoles e Gazeta do Povo, com corpo lido nesta sessão e data no cabeçalho",
+    "quotesLiterais": "nenhuma aspas na peça",
+    "causacaoEspuria": "nenhuma. O movimento de preço e a divulgação da Quaest aparecem com carimbos de hora lado a lado, sem porque",
+    "verbosCriticos": "protocolou datado em 21/Set, sorteado em 22/Set, aceitou a ação com a ressalva de que o relator não concluiu irregularidade, e sem decisão onde não houve",
+    "decisao": "prosseguir"
+  },
+  "medicoes": {
+    "palavras": { "ptBR": 1086, "en": 1120, "es": 1168 },
+    "numerosComUnidade": { "ptBR": 69, "en": 69, "es": 69 },
+    "travessoes": 0,
+    "emojis": 0,
+    "gateTraducao": "limpo nas três versões",
+    "validateAfosDaily": "OK, com warning de densidade de link em 52% e dois superlativos de escopo temporal, os dois conferidos hoje no backup pelo serie-do-contrato"
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "bloqueio de host do archive.org medido em 2026-09-21T21:06Z, com pausa de 4 dias em vigor e a régua proibindo sondar durante ela",
+    "pendencia": "arquivar a daily de 22/Set junto com o passivo quando a pausa vencer, a partir de 26/Set"
+  }
+}
