@@ -1,7 +1,7 @@
 {
   "description": "National electoral polls (Brazil 2026) with published results, reconstructed from the AFOS dashboard history. Each poll carries its TSE registration number. — Each poll is enriched with its full public TSE registration (methodology, sampling/weighting design, responsible statistician, CONRE, CNPJ, internal control system) via field `tse_registration`, matched by TSE protocol or institute+date.",
   "generated_from": "public/polls-data.json git history",
-  "count": 94,
+  "count": 95,
   "polls": [
     {
       "institute": "Real Time Big Data/Record",
@@ -10471,6 +10471,181 @@
       "field_window": {
         "start": "2026-09-18",
         "end": "2026-09-20"
+      },
+      "field_midpoint": "2026-09-19",
+      "dating_source": "field_midpoint",
+      "days_to_first_round": 15,
+      "days_to_runoff": 36
+    },
+    {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-09-23",
+      "scope": "national",
+      "sample": 5015,
+      "margin": 1,
+      "register": "BR-04739/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "fieldDates": "2026-09-17 a 2026-09-22",
+      "note": "AtlasIntel em parceria com a Bloomberg, nacional divulgada em 23/Set, campo de 17 a 22/Set, registro BR-04739/2026 no TSE, 5.015 participantes por questionario na internet, margem de 1,0pp e 95% de confianca (CartaCapital, CNN Brasil, JOTA, Estadao e Brasil de Fato). ⭐ NO 1º TURNO LULA TEM 45,8% E FLAVIO BOLSONARO 43,4%, e a distancia entre os dois NAO se moveu: os dois subiram 1,7pp contra a rodada anterior da casa, de 17/Set, quando marcavam 44,1% e 41,7%. Quem cedeu foi a terceira via inteira, Renan Santos de 5,1% para 4,5%, Augusto Cury de 3,5% para 2,1%, Ronaldo Caiado de 1,7% para 1,3% e Romeu Zema de 1,1% para 0,9%, mais o branco e nulo de 1,6% para 0,7%. ⭐ A CASA TESTOU CINCO PARES DE 2º TURNO E LULA VENCE OU EMPATA OS CINCO: 47,7% a 47,4% contra Flavio Bolsonaro, 47,6% a 42,2% contra Romeu Zema, 46,6% a 44,0% contra Ronaldo Caiado, 46,2% a 39,4% contra Augusto Cury e 46,5% a 31,2% contra Renan Santos. 🔑 NO PAR PRINCIPAL O SINAL SE INVERTEU dentro da propria serie da casa: em 17/Set Flavio Bolsonaro tinha 47,2% contra 46,8%, e agora Lula aparece numericamente a frente por 0,3pp, bem abaixo da margem de 1,0pp. E a terceira semana seguida de empate tecnico nesse par. Em votos validos o par sai 50,2% a 49,8%. 🏷️ O registro no TSE declara 5.000 entrevistas e a casa publicou 5.015; o painel guarda o numero realizado.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 45.8
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 43.4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.5
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2.1
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 1.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 0.9
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.7,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47.4
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 47.6,
+          "candidate2": "Romeu Zema",
+          "percent2": 42.2
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.6,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46.2,
+          "candidate2": "Augusto Cury",
+          "percent2": 39.4
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 46.5,
+          "candidate2": "Renan Santos",
+          "percent2": 31.2
+        }
+      ],
+      "tse_registration": {
+        "register_tse": "BR047392026",
+        "cnpj": "19259002000128",
+        "institute_full": "ATLASINTEL TECNOLOGIA DE DADOS LTDA",
+        "statistician": "ANDREI CAMILO DOS SANTOS",
+        "conre": "11220",
+        "cost_brl": 75000,
+        "own_poll": true,
+        "methodology": "Pesquisa quantitativa com coleta aleatória via questionário estruturado web e pós-estratificação da amostra de acordo com as características do eleitorado de Brasil.",
+        "sampling_plan": "Amostra aleatória pós-estratificada via algoritmo iterativo com quotas proporcionais, representando as características do eleitorado de Brasil: SEXO: Masculino: 47.2%; Feminino: 52.8%. FAIXA ETÁRIA: Entre 16 a 24 anos: 12.1%; Entre 25 a 34 anos: 19.0%; Entre 35 a 44 anos: 19.7%; Entre 45 a 59 anos: 25.6%; 60 ou mais: 23.6%. ESCOLARIDADE: Ensino Fundamental completo ou incompleto: 32.1%; Ensino Médio completo ou incompleto: 40.6%; Ensino Superior completo ou incompleto: 27.3%. NÍVEL ECONÔMICO: Renda familiar mensal até R$ 2.000: 18.7%; de R$ 2.000 a R$ 3.000: 11.5%; de R$ 3.000 a R$ 5.000: 26.4%; de R$ 5.000 a R$ 10.000: 26.2%; mais de R$ 10.000: 17.1%. OBS.: devido ao arredondamento, a soma dos percentuais pode variar de 99% a 101%. Na agregação final, para cada variável de ponderação, serão admissíveis desvios de até 1 pontos percentuais em relação às quotas estipuladas. Confiança estimada: 95%, margem de erro: +/- 1.0 pontos percentuais. FONTE DOS DADOS: PNADC 2026 para escolaridade | PNADC 2025 para renda | TSE 2026 para sexo e faixa etária.",
+        "control_system": "Coleta feita com a utilização de questionário eletrônico com procedimentos específicos para o armazenamento seguro dos dados. São checados manualmente no mínimo 15% dos questionários para detectar possíveis anomalias. Pesquisadores especializados realizam internamente uma verificação exaustiva da consistência dos dados antes da divulgação dos resultados finais.",
+        "matched_by": "protocol",
+        "sample_design": {
+          "layer": "A_sample_design",
+          "note": "Sample composition/weighting (quota frame) declared in the TSE registration. This is SAMPLE DESIGN, NOT vote-by-demographic crosstabs (layer B), which are not in TSE open data. Best-effort parse of free text; null where the institute did not declare structured percentages.",
+          "quota_detail_level": "full_percentages",
+          "control_variables": {
+            "sex": true,
+            "age": true,
+            "education": true,
+            "income": true,
+            "region": false
+          },
+          "sex_quota": {
+            "male_pct": 47.2,
+            "female_pct": 52.8
+          },
+          "age_quota": [
+            {
+              "label": "Entre 16 a 24 anos",
+              "pct": 12.1
+            },
+            {
+              "label": "Entre 25 a 34 anos",
+              "pct": 19
+            },
+            {
+              "label": "Entre 35 a 44 anos",
+              "pct": 19.7
+            },
+            {
+              "label": "Entre 45 a 59 anos",
+              "pct": 25.6
+            },
+            {
+              "label": "60 ou mais",
+              "pct": 23.6
+            }
+          ],
+          "education_quota": [
+            {
+              "label": "Ensino Fundamental completo ou incompleto",
+              "pct": 32.1
+            },
+            {
+              "label": "Ensino Médio completo ou incompleto",
+              "pct": 40.6
+            },
+            {
+              "label": "Ensino Superior completo ou incompleto",
+              "pct": 27.3
+            }
+          ],
+          "income_quota": [
+            {
+              "label": "Renda familiar mensal até R$ 2.000",
+              "pct": 18.7
+            },
+            {
+              "label": "de R$ 2.000 a R$ 3.000",
+              "pct": 11.5
+            },
+            {
+              "label": "de R$ 3.000 a R$ 5.000",
+              "pct": 26.4
+            },
+            {
+              "label": "de R$ 5.000 a R$ 10.000",
+              "pct": 26.2
+            },
+            {
+              "label": "mais de R$ 10.000",
+              "pct": 17.1
+            }
+          ]
+        }
+      },
+      "field_window": {
+        "start": "2026-09-17",
+        "end": "2026-09-22"
       },
       "field_midpoint": "2026-09-19",
       "dating_source": "field_midpoint",

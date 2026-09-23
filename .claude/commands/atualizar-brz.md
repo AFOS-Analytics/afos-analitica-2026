@@ -195,14 +195,19 @@ node -e "const a=require('./public/news-cache/{DATA}.json');const t=[].concat(..
 
 Em 27/Ago a refutação estava neste arquivo, que eu mesmo tinha gerado, em quatro manchetes com "adiado". **Grepar o próprio cache é mais barato que qualquer busca externa, e é o passo que eu pulo.**
 
-### 🌐 Quem o WebFetch alcança, medido em 01/Set/2026
+### 🌐 Quem o WebFetch alcança, remedido em 23/Set/2026
 
 | alcança | bloqueia |
 |---|---|
-| Poder360, Metrópoles, CartaCapital, Gazeta do Povo | G1, O Globo, Valor (Grupo Globo) |
+| CartaCapital, Gazeta do Povo, Metrópoles | G1, O Globo, Valor (Grupo Globo) |
 | | Estadão, VEJA |
+| | 🔴 **Poder360, que alcançava em 01/Set e devolve 403 desde 23/Set** |
 
-📌 **Consequência prática:** para a segunda fonte independente, mirar direto em Poder360, Metrópoles, CartaCapital ou Gazeta do Povo. Tentar Globo ou Estadão gasta chamada e volta bloqueado.
+📌 **Consequência prática:** para a segunda fonte independente, mirar direto em CartaCapital, Gazeta do Povo ou Metrópoles.
+
+🔴 **Esta tabela é uma RÉGUA QUE ENVELHECE, e ela envelheceu em 22 dias.** Em 23/Set o Poder360 caiu, e a lista de alcançáveis passou de quatro veículos para três **sem que nada avisasse**: o 403 só aparece quando a chamada é feita, e por isso o custo dele é sempre uma âncora narrativa que fica sem corpo lido. Naquele dia a decisão do TSE sobre o vídeo de Lula teve só Globo e Estadão cobrindo, os dois bloqueados, e o ato entrou na peça **sem a data de assinatura**, apenas com a de publicação.
+
+⛔ **Quando nenhum corpo abre, a saída é ESTREITAR a afirmação, nunca abandoná-la nem forjar cabeçalho.** *"Ato publicado em DD/Mmm"* é sustentado por duas manchetes de grupos distintos e não precisa de errata; *"o tribunal decidiu em DD/Mmm"* precisaria do corpo. → `memory/feedback_a_regua_envelhece_e_nada_a_testa.md`
 
 ### 🏷️ Verbos que exigem desambiguação
 
