@@ -1,0 +1,99 @@
+{
+  "data": "2026-09-23",
+  "gateFactCheck": {
+    "atosAltoImpacto": [
+      "Zanin nega a liminar que obrigaria o Senado a instalar a CPI do Banco Master",
+      "TSE manda tirar do ar vídeo de Lula gravado no Alvorada, a pedido de Flávio Bolsonaro"
+    ],
+    "eventos": [
+      {
+        "evento": "Zanin nega a liminar que obrigaria Alcolumbre a dar andamento à CPI do Banco Master",
+        "oQueMudouHoje": "a PUBLICAÇÃO da decisão. O ato é de 22/Set",
+        "dataDoAto": "2026-09-22, em mandado de segurança do senador Alessandro Vieira contra o presidente do Senado",
+        "verificacao1CrossRef": "zero menções a Zanin e zero a CPI do Master nas últimas 7 dailies, novidade",
+        "fonte1": {
+          "url": "https://www.cartacapital.com.br/politica/zanin-nega-pedido-para-obrigar-senado-a-instalar-cpi-do-banco-master/",
+          "veiculo": "CartaCapital",
+          "grupo": "independente",
+          "tipo": "evento",
+          "corpoLido": true,
+          "traz": "\"A decisão foi tomada nesta terça-feira 22, em mandado de segurança apresentado contra o presidente do Senado, Davi Alcolumbre\""
+        },
+        "fonte2GrupoDiferente": {
+          "url": "https://www.gazetadopovo.com.br/republica/zanin-lega-liminar-para-obrigar-alcolumbre-a-pautar-cpi-sobre-moraes-toffoli-e-vorcaro/",
+          "veiculo": "Gazeta do Povo",
+          "grupo": "independente",
+          "publicadaEm": "2026-09-23T07:44-03:00",
+          "corpoLido": true,
+          "traz": "\"A decisão é desta terça-feira (22)\", requerimento protocolado em 9 de março de 2026 com 41 assinaturas, leitura em plenário não feita em quase seis meses"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar com a data do CORPO, ato de 22/Set publicado em 23/Set"
+      },
+      {
+        "evento": "TSE manda tirar do ar vídeo em que Lula trata o caso do Banco Master, gravado no Palácio da Alvorada, a pedido da campanha de Flávio Bolsonaro",
+        "oQueMudouHoje": "a PUBLICAÇÃO da decisão em 23/Set. A data da assinatura NÃO foi confirmada em corpo lido",
+        "dataDoAto": "não determinada nesta sessão. A peça afirma apenas a publicação em 2026-09-23",
+        "verificacao1CrossRef": "zero menções a Nunes Marques nas últimas 7 dailies, novidade",
+        "fonte1": {
+          "veiculo": "Estadão",
+          "grupo": "Estadão",
+          "publicadaEm": "2026-09-23T13:03-00:00",
+          "corpoLido": false,
+          "motivo": "WebFetch bloqueado pelo veículo"
+        },
+        "fonte2GrupoDiferente": {
+          "veiculos": ["G1", "O Globo", "Valor"],
+          "grupo": "Globo",
+          "publicadaEm": "2026-09-23T11:45-00:00",
+          "corpoLido": false,
+          "motivo": "WebFetch bloqueado pelo grupo"
+        },
+        "corposAlcancaveis": "nenhum. Poder360, que a régua lista como alcançável desde 01/Set, passou a devolver 403 nesta sessão. Metrópoles, CartaCapital e Gazeta do Povo não cobriram o ato",
+        "newsCacheContradiz": false,
+        "decisao": "incorporar SEM datar a assinatura da decisão. Duas manchetes de grupos independentes entre si sustentam o ato e a data de publicação; nenhum corpo lido sustenta a data de assinatura, então a peça escreve \"ato eleitoral publicado em 23 de setembro\""
+      }
+    ]
+  },
+  "reFetchPolymarket": {
+    "carimboAoVivo": "2026-09-23T15:14:27.222Z",
+    "carimboCertificado": "2026-09-23T14:54:00.000Z",
+    "deltas": {
+      "lula": "40,50% no JSON e 40,50% ao vivo, 0,00pp",
+      "flavio": "58,85% no JSON e 58,85% ao vivo, 0,00pp",
+      "vao": "18,35pp no JSON e 18,35pp ao vivo, 0,00pp",
+      "renanVencedor": "0,75% no JSON e 0,75% ao vivo, 0,00pp",
+      "lulaSegundoLugar": "25,85% no JSON e 27,75% ao vivo, +1,90pp",
+      "volumeTotalPresidencial": "USD 154,05M no JSON e USD 154,06M ao vivo"
+    },
+    "gateDisparou": false,
+    "observacao": "o livro de VENCEDOR está idêntico à certificação, contrato a contrato. O único movimento é no sub-livro de 2º lugar do 1º turno, cujo par voltou a inchar de 97,35 para 99,25",
+    "decisao": "manter a baseline CERTIFICADA das 11:54 BRT",
+    "porQue": "nenhuma das grandezas que o gate nomeia se moveu, e o sub-livro que respirou tem USD 0,90M acumulados no lado de Lula, onde 1,90pp em 20 minutos é a oscilação normal dele. Rebasear para leitura única publicaria preço sem a dupla leitura que a página promete sobre si mesma"
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "nenhuma incorporada como âncora datada. O ato do TSE entra com a data de PUBLICAÇÃO, não de assinatura, porque nenhum dos dois corpos abriu",
+    "numericalErrors": "reconcile-claims OK, todos os claims batem com o JSON dentro de mais ou menos 0,05pp",
+    "superlativoCorrigido": "escrevi \"maior alta da rodada\" para o +1,50pp de Renan Santos no livro de 3º lugar, e o maior movimento da MESMA leitura certificada foi o +2,00pp de Flávio Bolsonaro no livro de 2º lugar. Corrigido para \"maior alta daquele livro\" na peça e nos SEIS arquivos do painel que já estavam no ar, analysis-data e analysis-criteriosa nos três idiomas",
+    "ressalvaRestaurada": "o rótulo de nacional da Real Time para 24/Set, que a daily de 22/Set trazia sob a tabela, tinha sumido na reescrita de hoje enquanto a pesquisa continuava na tabela. Devolvido nos três idiomas, com corte equivalente em palavras",
+    "fontesInventadas": "conferidos três com corpo lido nesta sessão, CartaCapital duas vezes e Gazeta do Povo, com a data no corpo",
+    "quotesLiterais": "nenhuma aspas na peça publicada",
+    "causacaoEspuria": "nenhuma. O ato de 22/Set e o preço de 23/Set aparecem com os carimbos de cada um, sem porque",
+    "verbosCriticos": "negou datado em 22/Set, publicada em 23/Set, protocolado em 9/Mar, e mandou tirar do ar com a data de publicação e não de assinatura",
+    "decisao": "prosseguir"
+  },
+  "medicoes": {
+    "palavras": { "ptBR": 1099, "en": 1105, "es": 1160 },
+    "numerosComUnidade": { "ptBR": 79, "en": 79, "es": 79 },
+    "travessoes": 0,
+    "emojis": 0,
+    "gateTraducao": "limpo nas três versões",
+    "validateAfosDaily": "OK, com warning de densidade de link em 48%, porque os parágrafos de mercado têm por fonte o Polymarket já linkado no primeiro",
+    "checkFrescorEditorial": "verde"
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "bloqueio de host do archive.org medido em 2026-09-21T21:06Z, com 3 dias de pausa ainda em vigor e a régua proibindo sondar durante ela",
+    "pendencia": "arquivar as dailies de 22 e 23/Set junto com o passivo quando a pausa vencer, a partir de 26/Set, começando pelo atraso de 29/Jul"
+  }
+}
