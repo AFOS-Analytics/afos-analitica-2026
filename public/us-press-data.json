@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-22",
-  "fetchedAt": "2026-09-22T15:59:51.367Z",
+  "lastUpdate": "2026-09-23",
+  "fetchedAt": "2026-09-23T16:19:41.175Z",
   "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
   "veiculos": [
     {
@@ -113,110 +113,110 @@
     }
   ],
   "qualidade": {
-    "lidos": 177,
-    "naLista": 63,
-    "foraDaLista": 114,
+    "lidos": 205,
+    "naLista": 58,
+    "foraDaLista": 147,
     "publicados": 10,
-    "descartadosPorAcompanhamento": 18,
-    "veiculosRepresentados": 7,
+    "descartadosPorAcompanhamento": 3,
+    "veiculosRepresentados": 8,
     "tetoPorVeiculo": 2,
     "consultasComFalha": [],
     "feedsProprios": 16,
-    "lidosEmFeedProprio": 27,
-    "publicadosComLinkCanonico": 8,
-    "publicadosViaGoogleNews": 2,
+    "lidosEmFeedProprio": 34,
+    "publicadosComLinkCanonico": 7,
+    "publicadosViaGoogleNews": 3,
     "publicadosPorDisputa": 10,
     "publicadosPorMetodo": 0
   },
   "itens": [
     {
-      "titulo": "El-Sayed holds 7-point lead in Michigan Senate race survey",
-      "url": "https://thehill.com/homenews/campaign/6104183-el-sayed-polls-ahead-rogers/",
+      "titulo": "GOP hold on South Carolina’s Senate seat is slipping",
+      "url": "https://www.washingtonpost.com/politics/2026/09/23/gop-hold-south-carolinas-senate-seat-is-slipping/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-23T16:00:37.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump’s One Big Beautiful Bill Is Starting to Bite Before the Midterm Elections",
+      "url": "https://www.nytimes.com/2026/09/23/us/politics/one-big-beautiful-bill-midterms-affordability.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-23T15:45:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Missouri congressional map fight returns to Supreme Court for third time",
+      "url": "https://www.washingtonpost.com/politics/2026/09/23/missouri-congressional-map-fight-returns-supreme-court-third-time/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-23T15:36:12.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Cook Political Report shifts Kansas, South Carolina Senate races toward Democrats",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOLThLZnBkdENPem80Vkx0cXB5Qk5wVy1KbGVtaEwyT0czbXUzLWRqSFFJMUF3bVFqRHpJZHE2Skh4LXFXNHBkUWh2THdPNGlZbGR5cGVZUFlEc0ZIVDFwbnVpSzFQOUVkczUzbGFzQ1lVSzBzODFaYXZ3Y2p6Y0Zsa0twcmlJZ2lDTjRGSFZ1MUZPOWF3VjZEN1Fva0dILTVGVF9rY1ZHVy02b3p3Q2trd19kaGRnVjlaMHfSAb8BQVVfeXFMUGNSVHVZcHVhZ285YUxyQk53YlgyZlVTVUdsUnNOUjlhMGtVV1hyVEJRamsyalg1YWFhWHJWMXBTM0EtNGdXUGVHX3BKalE2V3F5MC1SNGFQMllmVTJKS3JFdy0wZk5MQWNGLWRHb2NIWlA2LVdqMEJtWW93bFdMZzhEQ2RlaC1nQU1HazY3Y05fcHUyaDl4cDlqMXJZX1NVZ3daTDhRenRidkFUV1c1OXRHQmhsMDI3ZVdxT0FBdTg?oc=5",
       "casa": "The Hill",
-      "publicadoEm": "2026-09-22T15:55:32.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Jeffries lashes out after House Dem bolsters Republican candidate on leader's home turf",
-      "url": "https://www.foxnews.com/politics/jeffries-lashes-out-after-house-democrat-bolsters-republican-candidate-leaders-home-turf",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-22T15:23:22.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "AOC says she'll decide on 2028 plans after midterm elections",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQQmZ0Q0c1Yk5ib0NFM2FpUjR4Sl9lZmIxTUhZa2ZuQU11bHBhU1pkNDkzUWgwSnpjMlVLdzhaeWVicUFMQ0J5eGVrNDg5Zksxa1VPZDBSZWs4X0J5NThzbFVwNk1rd0x4R2VPNTlhRWJiXzhTckJla1ZzWXhkbFBWZHVWYVFuZ3pxWi1oTWx1TnVaaUdYdVJiZTlYREdKcVZ2WVI4TXJyZlJXN25yVGJz?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-09-22T15:06:00.000Z",
-      "consulta": "midterms",
+      "publicadoEm": "2026-09-23T13:30:00.000Z",
+      "consulta": "senate-races",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "House conservatives unleash multimillion-dollar midterm blitz against Dem 'socialist' insurgency",
-      "url": "https://www.foxnews.com/politics/house-conservatives-unleash-multimillion-dollar-midterm-blitz-against-dem-socialist-insurgency",
-      "casa": "Fox News",
-      "publicadoEm": "2026-09-22T14:56:51.000Z",
+      "titulo": "Dispute Over Missouri’s Congressional Map Again Returns to Supreme Court",
+      "url": "https://www.nytimes.com/2026/09/22/us/politics/supreme-court-missouri-congressional-map.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-23T13:16:14.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Meet the megadonors pouring more than $1.7 billion into the 2026 elections",
-      "url": "https://www.washingtonpost.com/elections/interactive/2026/06/25/these-are-biggest-individual-donors-2026-election-cycle/",
-      "casa": "The Washington Post",
-      "publicadoEm": "2026-09-22T12:56:14.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "Kamala Harris seeks to boost progressive Abdul El-Sayed in key Michigan Senate race",
-      "url": "https://abcnews.com/Politics/wireStory/kamala-harris-seeks-boost-progressive-abdul-el-sayed-136644040",
+      "titulo": "Talarico works to reach Black voters in his bid to win a US Senate seat as a Democrat in Texas",
+      "url": "https://abcnews.com/Politics/wireStory/talarico-works-reach-black-voters-bid-win-us-136679328",
       "casa": "ABC News",
-      "publicadoEm": "2026-09-22T11:26:26.000Z",
+      "publicadoEm": "2026-09-23T12:34:34.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
       "trilho": "disputa"
     },
     {
-      "titulo": "Exclusive: El-Sayed talks bringing Kamala Harris into his Senate campaign",
-      "url": "https://www.newsnationnow.com/politics/el-sayed-harris-voters-senate-campaign/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-22T11:07:23.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "The current odds in every battleground Senate race",
-      "url": "https://www.newsnationnow.com/politics/odds-battleground-senate-race/",
-      "casa": "NewsNation",
-      "publicadoEm": "2026-09-22T10:00:00.000Z",
-      "consulta": "feed-proprio",
-      "origem": "feed",
-      "trilho": "disputa"
-    },
-    {
-      "titulo": "What will the electorate look like in 2026?",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVkJIMlZVeWpKVjczUXllMC1kYlRxcUlIRzR4M1JITjNIWG9wcFVFN1BSVlh3UWx3Uk9uckZmMHByNWctUWV1cTRhUGhLa2FaRGdtNFlsRmZVSmJsNkxIWG50ZGE0UEU1Ym1Wb1dwXzd4bVl4NDAxYUdOZUFFNUNuMXVPb0dMRFBQRV9aNlg2ekZ4VkFKdUFTc3NySkJ6TEdpWU1EaUJxNENNR1RiLWJv?oc=5",
-      "casa": "Washington Examiner",
-      "publicadoEm": "2026-09-22T10:00:00.000Z",
+      "titulo": "Trump approval rating sinks as Dems lead by double digits",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRmZQb2VhZkYwNUFuR0JlUTd2aWJ3bWdBdWFjN0ZYNkt0WkE5LXRYX3NCR1FLQjhKb21LNEpMTHNZckVOc0tMb0RwbmV2WUdVOS15QVFmTDdxbXN4Sy14WXhmMWtYZnRxSUpGMy1OSUIwY3REbnhJLVAwZVhmYjFqWUUxdWFsVlVrV1B3XzVxdVdDWEJUcTFMWS0zS296Yk5hWlFjYVc1T08tSkc4eFpoSGVGakV6Zw?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-23T12:15:00.000Z",
       "consulta": "generic-ballot",
       "origem": "google",
       "trilho": "disputa"
     },
     {
-      "titulo": "Trump tells U.N. he could ‘annihilate’ Iran but expects a deal after the midterm elections",
-      "url": "https://www.nbcnews.com/politics/trump-administration/trump-address-united-nations-general-assembly-iran-war-rcna599085",
-      "casa": "NBC News",
-      "publicadoEm": "2026-09-22T09:00:41.000Z",
+      "titulo": "Trump anti-fraud division's future rests with Senate Dems after bipartisan House win",
+      "url": "https://www.foxnews.com/politics/trump-anti-fraud-divisions-future-rests-senate-dems-after-bipartisan-house-win",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-23T11:30:06.000Z",
       "consulta": "feed-proprio",
       "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Stung by Trump, machinists union campaigns for affordability in midterms",
+      "url": "https://www.theguardian.com/us-news/2026/sep/23/machinists-union-midterms-workers-billionaires",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-23T11:00:47.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican former state lawmaker vows he’ll ‘never’ support Paxton in new ad as Texas Senate race heats up",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPUWNNVGV1My1sOGVWanFuVVMyZWotT1RwdlRxb2RQV202T25PVjdacHJWR2haMFNOQlh4Y3BEX2I5ZFI5eWp3RXhrMG5SeTFBVXN6N2g0TDZ2dlZnZ1Z4UTR0cEFKbUltZGx5TmtfQnVNSU95eV8zc0xQQ2pJUjdHd25mT3R3c0pycm1XNVlJcTUyT1lQekJaSDlLbkpqQVRX?oc=5",
+      "casa": "CNN",
+      "publicadoEm": "2026-09-23T10:01:29.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
       "trilho": "disputa"
     }
   ]

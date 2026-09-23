@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-09-22",
+  "fetchedAt": "2026-09-22T19:20:13.524Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 187,
+    "naLista": 84,
+    "foraDaLista": 103,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 26,
+    "veiculosRepresentados": 7,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 33,
+    "publicadosComLinkCanonico": 8,
+    "publicadosViaGoogleNews": 2,
+    "publicadosPorDisputa": 10,
+    "publicadosPorMetodo": 0
+  },
+  "itens": [
+    {
+      "titulo": "Hispanic Voters, Abandoning Trump, Are Transforming the Midterm Map",
+      "url": "https://www.nytimes.com/2026/09/22/upshot/hispanic-voters-midterm-elections.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-22T19:18:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Reporter's Notebook: Congress struggles to find a message that resonates with voters ahead of midterms",
+      "url": "https://www.foxnews.com/politics/reporters-notebook-congress-struggles-find-message-resonates-voters-ahead-midterms",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-22T18:44:21.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Another Florida Republican distances himself from Donald Trump before midterms",
+      "url": "https://www.theguardian.com/us-news/2026/sep/22/florida-republican-byron-donalds-donald-trump",
+      "casa": "The Guardian",
+      "publicadoEm": "2026-09-22T18:33:22.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "What’s on the ballot in these midterm elections",
+      "url": "https://www.washingtonpost.com/politics/2026/09/22/whats-ballot-these-midterm-elections/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-22T18:30:43.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republicans in Tight Senate Races Call for End to Iran War",
+      "url": "https://www.nytimes.com/2026/09/22/us/politics/republican-candidates-senate-iran-war.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-22T18:16:02.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Christie mulls 2028 White House run amid bleak midterm outlook",
+      "url": "https://thehill.com/homenews/campaign/6104354-chris-christie-2028-white-house-run/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-22T18:01:17.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Republican candidates are breaking with Trump on Iran as midterms loom",
+      "url": "https://www.washingtonpost.com/politics/2026/09/22/republican-candidates-are-breaking-with-trump-iran-midterms-loom/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-22T17:26:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump-backed Senate candidate says 'Groceries cost too much,' calls for Iran war to 'end quickly'",
+      "url": "https://www.foxnews.com/politics/trump-backed-senate-candidate-groceries-cost-too-much-calls-iran-war-end-quickly",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-22T16:31:50.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Trump's approval rating hits lowest level of his career, poll finds",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYWdyTjV0NG9Jd0ZfWFBqMDhMWlZaZWhqVXpNejkzVnpKNVhxSG1rUGduNlVpbzZ0RTZlUkNwNXVwY1N6RmZiMHlwNlhRZjRMcVZMbEEwSHlEYXVpNDN2ZDVmT1g2elFTa2dnbjVvLUJRaGs2aWx3TmRhWWN5TlZqZ0dxM0xhUld1LXJ6N3lWTVJRWnp3cVFGdkZGeGNFVW9Q?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-22T16:18:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Polls show Republicans are staring down a midterm election reckoning",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNVmtvN2loNEREa0RqMzdwUTZobFN0NjAzUVl2Q1NCeEZac3NVZThFSDNOUmVvSEtmbGtpQnNQekllcWtGOEdwblpCSkpDWDVIUl9GazNtcEl2WnVTd1BDVFJDLXg1WkNrb2hOZWpVdVVQczRPZUtnUTFaV0UxSE5EVkx3OEhQZjJqeXY1SWl4QmlQSUR0Z0VHb291ME51U29TeXUtY1NUMA?oc=5",
+      "casa": "Washington Examiner",
+      "publicadoEm": "2026-09-22T15:11:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    }
+  ]
+}
