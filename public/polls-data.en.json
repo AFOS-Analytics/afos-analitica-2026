@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-22",
+  "lastUpdate": "2026-09-23",
   "institutes": [
     {
       "name": "Datafolha",
@@ -147,6 +147,86 @@
     }
   ],
   "polls": [
+    {
+      "institute": "AtlasIntel/Bloomberg",
+      "date": "2026-09-23",
+      "scope": "national",
+      "sample": 5015,
+      "margin": 1,
+      "register": "BR-04739/2026",
+      "reliability": 4,
+      "method": "Online/Big Data",
+      "fieldDates": "2026-09-17 a 2026-09-22",
+      "note": "AtlasIntel in partnership with Bloomberg, national poll released on 23/Sep, fieldwork from 17 to 22/Sep, [TSE](/en/glossary#tse) registration BR-04739/2026, 5,015 participants by online questionnaire, margin of 1.0pp with 95% confidence (CartaCapital, CNN Brasil, JOTA, Estadão and Brasil de Fato). ⭐ IN THE [FIRST ROUND](/en/glossary#primeiro-turno) LULA HAS 45.8% AND FLÁVIO BOLSONARO 43.4%, and the distance between them did NOT move: both rose 1.7pp against the house's previous round, of 17/Sep, when they stood at 44.1% and 41.7%. What gave ground was the whole third way, Renan Santos from 5.1% to 4.5%, Augusto Cury from 3.5% to 2.1%, Ronaldo Caiado from 1.7% to 1.3% and Romeu Zema from 1.1% to 0.9%, plus blank and null from 1.6% to 0.7%. ⭐ THE HOUSE TESTED FIVE [RUNOFF](/en/glossary#segundo-turno) PAIRINGS AND LULA WINS OR TIES ALL FIVE: 47.7% to 47.4% against Flávio Bolsonaro, 47.6% to 42.2% against Romeu Zema, 46.6% to 44.0% against Ronaldo Caiado, 46.2% to 39.4% against Augusto Cury and 46.5% to 31.2% against Renan Santos. 🔑 IN THE MAIN PAIRING THE SIGN FLIPPED inside the house's own series: on 17/Sep Flávio Bolsonaro had 47.2% against 46.8%, and now Lula comes out numerically ahead by 0.3pp, well below the 1.0pp margin. It is the third week running of a [statistical tie](/en/glossary#empate-tecnico) in that pairing. In valid votes the pairing comes out 50.2% to 49.8%. 🏷️ The TSE registration declares 5,000 interviews and the house published 5,015; the panel keeps the realized number.",
+      "scenarios": [
+        {
+          "name": "Main scenario (first round, prompted)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 45.8
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 43.4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4.5
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2.1
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 1.3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 0.9
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47.7,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 47.4
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 47.6,
+          "candidate2": "Romeu Zema",
+          "percent2": 42.2
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46.6,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46.2,
+          "candidate2": "Augusto Cury",
+          "percent2": 39.4
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 46.5,
+          "candidate2": "Renan Santos",
+          "percent2": 31.2
+        }
+      ]
+    },
     {
       "institute": "[Quaest](/en/glossary#quaest)/Globo",
       "date": "2026-09-21",
@@ -2866,7 +2946,7 @@
     }
   ],
   "approvalData": {
-    "note": "🏷️ THE STRUCTURED APPROVAL NUMBERS IN THIS BLOCK ARE [QUAEST](/en/glossary#quaest)'S OF 21/Sep, registration BR-06004/2026: 44% approval against 50% disapproval, with 6% no answer. The panel keeps ONE house per block on purpose, so the internal series does not mix methods. ⚠️ WITHIN QUAEST ITSELF THE FALL STOPPED AND GAVE BACK A POINT: it was 48% against 47% on 05/Aug, 46% against 48% on 14/Aug, 45% against 48% on 02/Sep, 43% against 50% on 07/Sep, 43% against 50% on 14/Sep and now 44% against 50%. The one-point rise is inside the 2.0pp margin and disapproval did not move. ⭐ AND THE RATING RULER MOVED THE OPPOSITE WAY IN THE SAME ROUND: negative rose from 38% to 42%, positive from 32% to 33% and fair fell from 27% to 23%. The two questions measure different things and do not add up: approving the president's work is not the same as rating the administration as positive. 🔴 FOUR HOUSES MEASURED APPROVAL BETWEEN 14 AND 21/Sep AND THE SPREAD BETWEEN THEM REMAINS LARGER THAN THE MOVE OF ANY ONE: Datafolha of 17/Sep at 48% against 50%, AtlasIntel of 17/Sep at 45.4% against 53.6%, Futura/100% Cidades of 17/Sep at 44.1% against 53.1% and Quaest of 21/Sep at 44% against 50%. That is 4 points of distance on approval, and three of the four readings came out on the SAME 17/Sep. Futura's performance ruler shows 36.5% great or good, 15.8% fair and 47.2% bad or terrible.",
+    "note": "🏷️ THE STRUCTURED APPROVAL NUMBERS IN THIS BLOCK ARE [QUAEST](/en/glossary#quaest)'S OF 21/Sep, registration BR-06004/2026: 44% approval against 50% disapproval, with 6% no answer. The panel keeps ONE house per block on purpose, so the internal series does not mix methods. ⚠️ WITHIN QUAEST ITSELF THE FALL STOPPED AND GAVE BACK A POINT: it was 48% against 47% on 05/Aug, 46% against 48% on 14/Aug, 45% against 48% on 02/Sep, 43% against 50% on 07/Sep, 43% against 50% on 14/Sep and now 44% against 50%. The one-point rise is inside the 2.0pp margin and disapproval did not move. ⭐ AND THE RATING RULER MOVED THE OPPOSITE WAY IN THE SAME ROUND: negative rose from 38% to 42%, positive from 32% to 33% and fair fell from 27% to 23%. The two questions measure different things and do not add up: approving the president's work is not the same as rating the administration as positive. 🔴 FOUR HOUSES MEASURED APPROVAL BETWEEN 17 AND 23/Sep AND THE SPREAD BETWEEN THEM REMAINS LARGER THAN THE MOVE OF ANY ONE: Datafolha of 17/Sep at 48% against 50%, Futura/100% Cidades of 17/Sep at 44.1% against 53.1%, Quaest of 21/Sep at 44% against 50% and AtlasIntel of 23/Sep at 45.4% against 53%. That is 4 points of distance on approval. ⭐ And within AtlasIntel approval did NOT move against the house's 17/Sep round, which also measured 45.4%, with disapproval going from 53.6% to 53%. Futura's performance ruler shows 36.5% great or good, 15.8% fair and 47.2% bad or terrible.",
     "source": "Approval, disapproval and administration rating: [Quaest](/en/glossary#quaest) of 21/Sep/2026 (fieldwork from 17 to 20/Sep, n=2,004 voters aged 16 or over, face to face, 2.0pp margin, 95% confidence, [TSE](/en/glossary#tse) registration BR-06004/2026, commissioned by Grupo Globo), released by CNN Brasil, CartaCapital, Poder360 and CBN. This block's administration rating, 33% positive, 23% fair and 42% negative, is from the same round, and the whole block has a single date. The house's own series: rounds of 05/Aug, 14/Aug, 02/Sep, 07/Sep and 14/Sep, already recorded on the panel.",
     "date": "2026-09-21",
     "results": {
@@ -2907,63 +2987,63 @@
     "lastUpdate": "22/09/2026, 14:45"
   },
   "polymarketComparison": {
-    "note": "Polymarket prices in the reading confirmed on 22/Sep, 14:40 BRT, with the presidential book adding up to USD 153.62M cumulative across 19 contracts. IN THE WINNER CONTRACT THE GAP CLOSED FROM 22.40pp TO 19.05pp since the reading confirmed on 21/Sep at 17:01 BRT: Lula rises 2.00pp, to 40.50%, and Flávio Bolsonaro gives up 1.35pp, to 59.55%. ⚖️ The two moves are not the same size because the sum of the pair went from 99.40 to 100.05: normalized, each side moved 1.75pp and the gap closed 3.49pp. Yesterday certified 22.40pp, and the readings recorded that day reached 23.80pp, the widest gap of the 158 days in which the series has both sides. 🥉 In the [first-round](/en/glossary#primeiro-turno) third-place book Renan Santos gives up 3.00pp, to 42.50%, Augusto Cury gives up 0.80pp, to 39.45%, and the distance between them went from 19.95pp to 5.25pp and now to 3.05pp across three certified readings.",
-    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and every price on this page comes from the reading confirmed on 22/Sep, 14:40 BRT. Alongside the raw move goes the one normalized by the sum of the binary pair. Polls registered with the [TSE](/en/glossary#tse), with registration number, house, fieldwork, sample and method declared in each entry.",
+    "note": "Polymarket prices in the reading confirmed on 23/Sep, 11:54 BRT, with the presidential book adding up to USD 154.05M cumulative across 19 contracts. IN THE WINNER CONTRACT THE GAP NARROWED FROM 19.05pp TO 18.35pp since the reading confirmed on 22/Sep at 14:40 BRT, the second day running. ⚖️ And Lula's price did NOT move: he is at 40.50% in both readings, and the one who gave ground was Flávio Bolsonaro, 0.70pp, to 58.85%. Normalized by the sum of the pair, which deflated from 100.05 to 99.35, Lula GAINS 0.29pp of implied probability with a flat price. 🥉 In the [first-round](/en/glossary#primeiro-turno) third-place book the convergence stopped and went backwards: Renan Santos rises 1.50pp, to 44.00%, Augusto Cury rises 0.40pp, to 39.85%, and the distance between them widens from 3.05pp to 4.15pp.",
+    "sources": "Polymarket prices via the AFOS proxy, and the panel only publishes a price that two independent readings, taken eight minutes apart, confirm within 0.20pp. Confirmation is done contract by contract, and every price on this page comes from the reading confirmed on 23/Sep, 11:54 BRT. Alongside the raw move goes the one normalized by the sum of the binary pair. Polls registered with the [TSE](/en/glossary#tse), with registration number, house, fieldwork, sample and method declared in each entry.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 41,
+        "percentage": 45.8,
         "odds": 40.5,
         "value": 40.5,
         "polymarket": "40.50%",
         "pesquisaRange": "28% to 44.1%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "IN THE THREE NATIONAL SURVEYS WITH FIELDWORK CLOSING ON THE SAME 20/Sep he leads two: 37% to 33% at [Quaest](/en/glossary#quaest) of 21/Sep, face to face, and 40% to 37% at BTG/Nexus, by telephone, and he is 1 point behind at Palver, online, by 41% to 42%. 📌 In the [runoff](/en/glossary#segundo-turno) pairing against Flávio Bolsonaro he is behind in two of the three: 41% to 42% at Quaest and 43% to 47% at Palver, against 46% to 45% at BTG/Nexus.",
-        "tendenciaPolymarket": "RISES 2.00pp IN THE WINNER CONTRACT, to 40.50%, against the reading confirmed on 21/Sep at 17:01 BRT, and the gap against Flávio Bolsonaro closes from 22.40pp to 19.05pp. ⚖️ Normalized by the sum of the pair, which went from 99.40 to 100.05, the rise is 1.75pp. ⚠️ It is not an extreme: his price stands 27.00pp below the series high, 67.50% on 16/Aug, and 6.00pp above the low, 34.50% on 25/Apr. In the [first-round](/en/glossary#primeiro-turno) second-place contract he rises 0.40pp, to 29.80%."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "HE LEADS THE [FIRST ROUND](/en/glossary#primeiro-turno) AT ATLASINTEL OF 23/Sep, fieldwork from 17 to 22/Sep and a 1.0pp margin, with 45.8% against 43.4%. Both rose 1.7pp against the house's 17/Sep round and the distance between them did not move, still 2.4 points. 🔑 In the main [runoff](/en/glossary#segundo-turno) pairing the sign flipped inside the house itself: he has 47.7% against 47.4%, after 46.8% to 47.2% on 17/Sep, and he wins or ties the five pairings tested.",
+        "tendenciaPolymarket": "NO NEW PRICE IN THE WINNER CONTRACT, at 40.50%, against the reading confirmed on 22/Sep at 14:40 BRT. ⚖️ And even so he GAINS 0.29pp of implied probability, because the sum of the pair deflated from 100.05 to 99.35: the gap against Flávio Bolsonaro narrows from 19.05pp to 18.35pp. ⚠️ It is not an extreme: his price stands 27.00pp below the series high, 67.50% on 16/Aug, and 6.00pp above the low, 34.50% on 25/Apr. 🔴 In the [first-round](/en/glossary#primeiro-turno) second-place contract he falls 3.95pp raw and 3.46pp normalized, to 25.85%, the largest fall of the round."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 42,
-        "odds": 59.55,
-        "value": 59.55,
-        "polymarket": "59.55%",
+        "percentage": 43.4,
+        "odds": 58.85,
+        "value": 58.85,
+        "polymarket": "58.85%",
         "pesquisaRange": "20% to 41.7%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "HE LEADS ONE OF THE THREE NATIONAL SURVEYS WITH FIELDWORK CLOSING ON 20/Sep, Palver, by 42% to 41%, and is behind in the other two, 33% to 37% at [Quaest](/en/glossary#quaest) and 37% to 40% at BTG/Nexus. In the [runoff](/en/glossary#segundo-turno) he wins at Palver by 47% to 43% and at Quaest by 42% to 41%, both declared statistical ties by the houses, and loses at BTG/Nexus by 45% to 46%.",
-        "tendenciaPolymarket": "GIVES UP 1.35pp IN THE WINNER CONTRACT, to 59.55%, and 1.75pp normalized by the sum of the pair. The gap over Lula closes from 22.40pp to 19.05pp, and the readings recorded that day reached 23.80pp, the widest gap of the series opened on 14 April 2026. His price stands 2.15pp below the high, 61.70% recorded on 21/Sep. ⚠️ In the [first-round](/en/glossary#primeiro-turno) second-place contract he went the other way and RISES 1.00pp, to 69.50%."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "HE IS BEHIND IN THE [FIRST ROUND](/en/glossary#primeiro-turno) AT ATLASINTEL OF 23/Sep by 43.4% to 45.8%, after rising 1.7pp against the house's 17/Sep round, the same size as Lula's rise. 🔑 In the main [runoff](/en/glossary#segundo-turno) pairing he LOSES the numerical lead he had in that house: it was 47.2% to 46.8% on 17/Sep and now it is 47.4% against 47.7%. The house declares a [statistical tie](/en/glossary#empate-tecnico) for the third week running.",
+        "tendenciaPolymarket": "GIVES UP 0.70pp IN THE WINNER CONTRACT, to 58.85%, and 0.29pp normalized by the sum of the pair. The gap over Lula narrows for the second day running, from 22.40pp on 21/Sep to 19.05pp on 22/Sep and 18.35pp now. His price stands 2.85pp below the high, 61.70% on 21/Sep. ⭐ In the [first-round](/en/glossary#primeiro-turno) second-place contract he went the other way and RISES 2.00pp raw and 3.46pp normalized, to 71.50%, because that pair deflated from 99.30 to 97.35."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 2,
+        "percentage": 2.1,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1% to 12.2%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "TWO OF THE THREE NATIONAL SURVEYS WITH FIELDWORK CLOSING ON 20/Sep put him at 6% and in third place, [Quaest](/en/glossary#quaest) and BTG/Nexus, and Palver puts him at 2% and in fourth, behind Renan Santos. In the [runoff](/en/glossary#segundo-turno) against Lula, BTG/Nexus measures 43% to 44%, Quaest 35% to 39% and Palver 35% to 43%.",
-        "tendenciaPolymarket": "GIVES UP 0.80pp IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, to 39.45%, after rising 7.70pp the previous day, and remains 3.05pp behind Renan Santos. In the winner contract he sits at the book's floor, 0.05%. ⚠️ It is not an extreme: he has already been at 60.30% in that same contract on 04/Sep."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "HE GIVES UP 1.4 POINT IN THE [FIRST ROUND](/en/glossary#primeiro-turno) AT ATLASINTEL OF 23/Sep, from 3.5% to 2.1%, the largest fall of the third way in that house. In the [runoff](/en/glossary#segundo-turno) pairing against Lula, however, he RISES 1.6pp in the same comparison, from 37.8% to 39.4%.",
+        "tendenciaPolymarket": "RISES 0.40pp IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, to 39.85%, and even so the distance to Renan Santos WIDENS from 3.05pp to 4.15pp, because the other one rose more. In the winner contract he sits at the book's floor, 0.05%. ⚠️ It is not an extreme: he has already been at 60.30% in that same contract on 04/Sep."
       },
       {
         "name": "Renan Santos",
-        "percentage": 11,
+        "percentage": 4.5,
         "odds": 0.75,
         "value": 0.75,
         "polymarket": "0.75%",
         "pesquisaRange": "2% to 11%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "HE IS THE NAME OF WIDEST DISAGREEMENT AMONG THE THREE NATIONAL SURVEYS WITH FIELDWORK CLOSING ON 20/Sep: 11% and third place at Palver, against 3% at [Quaest](/en/glossary#quaest) and 3% at BTG/Nexus, eight points apart. ⚠️ It is that 11% that feeds the poll side of this chart, because the rule picks the most recent national survey and breaks ties by the largest sample.",
-        "tendenciaPolymarket": "FALLS 3.00pp IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, to 42.50%, the largest fall of the round, and his lead over Augusto Cury shrinks from 5.25pp to 3.05pp. In the winner contract he gives up 0.20pp, to 0.75%, 0.05pp above the series low, 0.70% on 21/Sep. His contract has USD 14.07M cumulative, 0.02M short of the largest in the book, Tarcísio de Freitas's."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "HE IS THE MOST VOTED OF THE THIRD WAY AT ATLASINTEL OF 23/Sep, with 4.5% in the [first round](/en/glossary#primeiro-turno), against 5.1% in the house's 17/Sep round. ⚠️ He remains the name of widest disagreement between houses: in the three national surveys with fieldwork closing on 20/Sep he ranged from 11% at Palver to 3% at [Quaest](/en/glossary#quaest) and BTG/Nexus.",
+        "tendenciaPolymarket": "LARGEST RISE OF THE ROUND IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, 1.50pp, to 44.00%, and his lead over Augusto Cury widens again, from 3.05pp to 4.15pp. 🏆 And his contract in the winner book became the one with the LARGEST cumulative volume in the presidential book, USD 14.17M against USD 14.09M for Tarcísio de Freitas's. He pays 0.75%, 0.05pp above the series low, 0.70% on 21/Sep."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1,
+        "percentage": 1.3,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1% to 5%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "4% at [Quaest](/en/glossary#quaest) of 21/Sep and 5% at BTG/Nexus, against 1% at Palver. In the [runoff](/en/glossary#segundo-turno) against Lula, BTG/Nexus measures a TIE at 45% to 45%, Palver puts him ahead by 44% to 43% and Quaest puts him behind by 39% to 41%.",
-        "tendenciaPolymarket": "NO NEW PRICE IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, at 15.50%, where he keeps third place. In the winner contract he remains at 0.05%."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "⭐ HE IS LULA'S CLOSEST OPPONENT AFTER FLÁVIO BOLSONARO in AtlasIntel's [runoff](/en/glossary#segundo-turno) pairing of 23/Sep, 44.0% to 46.6%, and ROSE 2.3pp there against the house's previous round. In the [first round](/en/glossary#primeiro-turno), however, he falls from 1.7% to 1.3%.",
+        "tendenciaPolymarket": "GIVES UP 1.00pp IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, to 14.50%, and keeps third place in that book. In the winner contract he remains at 0.05%."
       },
       {
         "name": "Pablo Marçal",
@@ -2972,20 +3052,20 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "1% to 5.2%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "Outside the prompted [first-round](/en/glossary#primeiro-turno) scenario of the three national surveys with fieldwork closing on 20/Sep, after his candidacy registration was rejected on 11/Sep.",
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "Outside the prompted scenario of AtlasIntel of 23/Sep, after his candidacy registration was rejected on 11/Sep.",
         "tendenciaPolymarket": "He stays at 0.05% in the winner contract. His candidacy registration was denied by the Superior Electoral Court on 11/Sep."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 1,
+        "percentage": 0.9,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "0.3% to 3%",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "1% in the [first round](/en/glossary#primeiro-turno) across the THREE national surveys with fieldwork closing on 20/Sep. In the [runoff](/en/glossary#segundo-turno) against Lula, [Quaest](/en/glossary#quaest) is the harshest, 32% to 46%, BTG/Nexus measures 41% to 47% and Palver puts him ahead by 44% to 43%.",
-        "tendenciaPolymarket": "FALLS 0.15pp IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, to 0.35%, at that book's floor. In the winner contract he is at 0.05%."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "HE IS THE NAME WITH THE LEAST DISPUTED POLL READING OF THE WEEK: 1% in the [first round](/en/glossary#primeiro-turno) across the three national surveys with fieldwork closing on 20/Sep and 0.9% at AtlasIntel of 23/Sep. In the [runoff](/en/glossary#segundo-turno) pairing against Lula he gives up 1.5pp against the house's previous round, from 43.7% to 42.2%.",
+        "tendenciaPolymarket": "NO NEW PRICE IN THE [FIRST-ROUND](/en/glossary#primeiro-turno) THIRD-PLACE CONTRACT, at 0.30%, at that book's floor. In the winner contract he stands at 0.05%."
       },
       {
         "name": "Tarcísio",
@@ -2994,9 +3074,9 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "The three national surveys with fieldwork closing on 20/Sep do not include him in the prompted [first-round](/en/glossary#primeiro-turno) scenario or in any [runoff](/en/glossary#segundo-turno) pairing.",
-        "tendenciaPolymarket": "He remains at 0.05% in the winner contract, and his contract is the one with the largest cumulative volume in the presidential book, USD 14.09M, with Renan Santos's 0.02M behind it."
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "AtlasIntel of 23/Sep does not include him in the prompted [first-round](/en/glossary#primeiro-turno) scenario or in any [runoff](/en/glossary#segundo-turno) pairing.",
+        "tendenciaPolymarket": "He remains at 0.05% in the winner contract, and his contract STOPPED being the one with the largest cumulative volume in the presidential book: it is USD 14.09M against USD 14.17M for Renan Santos's."
       },
       {
         "name": "Fernando Haddad",
@@ -3005,18 +3085,18 @@
         "value": 0.05,
         "polymarket": "0.05%",
         "pesquisaRange": "not tested",
-        "lastUpdate": "22/09/2026, 14:40",
-        "tendenciaPesquisa": "The three national surveys with fieldwork closing on 20/Sep do not include him in the prompted [first-round](/en/glossary#primeiro-turno) scenario or in any [runoff](/en/glossary#segundo-turno) pairing.",
+        "lastUpdate": "23/09/2026, 11:54",
+        "tendenciaPesquisa": "AtlasIntel of 23/Sep does not include him in the prompted [first-round](/en/glossary#primeiro-turno) scenario or in any [runoff](/en/glossary#segundo-turno) pairing.",
         "tendenciaPolymarket": "He remains at 0.05% in the winner contract, with USD 7.55M cumulative."
       }
     ],
-    "updatedAt": "22/09/2026, 14:40",
+    "updatedAt": "23/09/2026, 11:54",
     "lastUpdate": "21/09/2026, 16:21",
     "pollSource": {
-      "pollster": "Palver",
-      "date": "2026-09-21",
-      "sample": 5000,
-      "register": "BR-00860/2026",
+      "pollster": "AtlasIntel/Bloomberg",
+      "date": "2026-09-23",
+      "sample": 5015,
+      "register": "BR-04739/2026",
       "scenario": "Main scenario (first round, prompted)"
     }
   }

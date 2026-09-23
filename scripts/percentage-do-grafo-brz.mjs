@@ -139,7 +139,10 @@ writeFileSync(P, JSON.stringify(dados, null, 2) + '\n', 'utf8')
 console.log(`   ✅ ${mudam} campo(s) escritos, e a procedência foi gravada em`)
 console.log(`      polymarketComparison.pollSource (${escolhida.institute}, ${escolhida.date}).`)
 console.log('')
-console.log('   📌 Falta o CONSUMIDOR: o DashboardClient do Brasil ainda passa')
-console.log('      latest_poll vazio para o grafo. Ligar pollSource lá é o que faz')
-console.log('      a tela dizer de qual pesquisa o número saiu.')
+// ⚠️ Esta linha dizia "falta o CONSUMIDOR" até 23/Set/2026, e o consumidor
+//    tinha sido ligado em 21/Set, no mesmo dia em que este script nasceu.
+//    Aviso que manda fazer o que já foi feito treina quem lê a ignorar o aviso.
+console.log('   📌 O consumidor está ligado desde 21/Set: o DashboardClient do Brasil lê')
+console.log('      `polymarketComparison.pollSource` e passa pollster e date para o grafo,')
+console.log('      então a tela diz de qual pesquisa o número saiu.')
 console.log('')

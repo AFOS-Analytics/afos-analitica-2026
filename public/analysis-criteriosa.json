@@ -1,173 +1,170 @@
 {
-  "updatedAt": "22/09/2026, 14:40",
-  "subtitle": "Cruzamento de 22/Set/2026: Polymarket na leitura confirmada de 22/Set, 14:40 BRT, mais a Quaest divulgada na noite de 21/Set, registro BR-06004/2026, que é a TERCEIRA nacional com campo fechando no MESMO 20/Set, e o fluxo de imprensa de 22/Set.",
+  "updatedAt": "23/09/2026, 11:54",
+  "subtitle": "Cruzamento de 23/Set/2026: Polymarket na leitura confirmada de 23/Set, 11:54 BRT, mais a AtlasIntel em parceria com a Bloomberg divulgada no dia, registro BR-04739/2026, com campo de 17 a 22/Set, e o fluxo de imprensa de 23/Set.",
   "candidates": [
     {
       "rank": "1",
       "name": "Lula",
       "party": "PT",
       "color": "#DC2626",
-      "header": "PREÇO: 40,50% (vol USD 11,87M acumulado) no contrato de vencedor, alta de 2,00pp na leitura confirmada de 22/Set, 14:40 BRT, contra a de 21/Set às 17:01 BRT. No de 2º lugar do 1º turno sobe 0,40pp, para 29,80% (vol USD 0,89M). PESQUISA: lidera duas das três nacionais com campo fechado em 20/Set, 37% na Quaest e 40% na BTG/Nexus, contra 41% e segundo lugar na Palver.",
+      "header": "PREÇO: 40,50% (vol USD 11,96M acumulado) no contrato de vencedor, SEM preço novo na leitura confirmada de 23/Set, 11:54 BRT, e alta de 0,29pp no normalizado. No de 2º lugar do 1º turno cai 3,95pp, para 25,85% (vol USD 0,90M). PESQUISA: 45,8% no 1º turno da AtlasIntel de 23/Set, à frente por 2,4 pontos, e 47,7% a 47,4% no par principal de 2º turno.",
       "fortes": [
-        "Lidera o 1º turno em duas das TRÊS nacionais que fecharam campo no mesmo 20/Set: 37% a 33% na Quaest de 21/Set, registro BR-06004/2026, 2.004 eleitores entrevistados presencialmente entre 17 e 20/Set com margem de 2,0pp, e 40% a 37% na BTG/Nexus, 2.006 eleitores por telefone entre 18 e 20/Set.",
-        "No contrato de vencedor ele sobe 2,00pp no cru e 1,75pp no normalizado, e o vão contra Flávio Bolsonaro fecha de 22,40pp para 19,05pp contra a leitura confirmada da véspera. O movimento sobrevive à normalização do par, então ele não é efeito de spread.",
-        "Na régua de aprovação da Quaest a queda parou e devolveu um ponto: 44% aprovam contra 50% que desaprovam, ante 43% a 50% na rodada anterior da mesma casa, com o ponto dentro da margem de 2,0pp.",
-        "O contrato dele no livro de vencedor tem USD 11,87M acumulados, o maior entre os dois nomes que disputam o preço, na leitura confirmada de 22/Set, 14:40 BRT."
+        "Lidera o 1º turno na AtlasIntel em parceria com a Bloomberg divulgada em 23/Set, registro BR-04739/2026, 5.015 participantes pela internet entre 17 e 22/Set com margem de 1,0pp: 45,8% contra 43,4%.",
+        "⚖️ No contrato de vencedor o preço dele não se moveu e a probabilidade implícita SUBIU 0,29pp, porque a soma do par desinchou de 100,05 para 99,35. O vão contra Flávio Bolsonaro fecha pelo segundo dia seguido, de 19,05pp para 18,35pp.",
+        "No par principal de 2º turno da AtlasIntel ele aparece numericamente à frente por 47,7% a 47,4%, invertendo o sinal da própria casa, que em 17/Set media 47,2% a 46,8% para Flávio Bolsonaro. Em votos válidos o par sai 50,2% a 49,8%.",
+        "Vence ou empata os CINCO pares de 2º turno que a AtlasIntel testou, com 47,6% contra Romeu Zema, 46,6% contra Ronaldo Caiado, 46,2% contra Augusto Cury e 46,5% contra Renan Santos."
       ],
       "fracos": [
-        "Segue atrás no contrato de vencedor por 19,05pp, com 40,50% contra 59,55% de Flávio Bolsonaro.",
-        "Na série gravada desde 14 de abril o valor de hoje fica a 27,00pp do topo da série, 67,50%, de 16/Ago, e a 6,00pp do piso da série, 34,50%, de 25/Abr: a alta do dia não muda a posição dele dentro da própria série.",
-        "Perde o 1º turno na Palver, registro BR-00860/2026, 5.000 eleitores pela internet entre 15 e 20/Set e margem de 2,8pp, por 41% a 42%, e perde o par de 2º turno dela por 43% a 47%.",
-        "No par de 2º turno contra Flávio Bolsonaro ele fica atrás em duas das três casas do mesmo campo: 41% a 42% na Quaest e 43% a 47% na Palver, contra 46% a 45% na BTG/Nexus.",
-        "A avaliação da gestão andou na direção oposta da aprovação na MESMA rodada da Quaest: a negativa subiu de 38% para 42% e a regular caiu de 27% para 23%. São duas perguntas diferentes e elas não se somam."
+        "Segue atrás no contrato de vencedor por 18,35pp, com 40,50% contra 58,85% de Flávio Bolsonaro.",
+        "Na série gravada desde 14 de abril o valor de hoje fica a 27,00pp do topo da série, 67,50%, de 16/Ago, e a 6,00pp do piso da série, 34,50%, de 25/Abr.",
+        "🔴 No contrato de 2º lugar do 1º turno ele tem a maior queda da rodada, 3,95pp no cru e 3,46pp no normalizado, para 25,85%. A soma daquele par desinchou de 99,30 para 97,35, então o cru exagera a perda dele e subestima o ganho do adversário.",
+        "A margem da AtlasIntel é de 1,0pp e a dianteira dele no par principal de 2º turno é de 0,3pp, ou seja, menos de um terço da margem. A própria casa declara empate técnico pela terceira semana seguida."
       ],
-      "analise": "Lula subiu 2,00pp no contrato de vencedor, de 38,50% para 40,50% (vol USD 11,87M acumulado), na leitura confirmada de 22/Set, 14:40 BRT, contra a leitura confirmada de 21/Set às 17:01 BRT. ⚖️ O número cru e o normalizado discordam de propósito: a soma do par foi de 99,40 para 100,05, então no normalizado ele sobe 1,75pp e Flávio Bolsonaro cede os mesmos 1,75pp. O vão fecha 3,35pp no cru e 3,49pp no normalizado, ou seja o movimento sobrevive à normalização. Nas pesquisas entrou a terceira nacional com campo fechando no mesmo 20/Set, a Quaest, que o põe à frente por 37% a 33% no 1º turno e atrás por 41% a 42% no 2º. Com três casas e três métodos sobre o mesmo fechamento de campo, duas o dão à frente no 1º turno e uma o dá atrás, e a distância medida varia de 4 pontos a favor dele a 1 ponto contra. ⛔ O painel não atribui o movimento do preço à pesquisa: registra que a Quaest saiu às 18h06 BRT de 21/Set, depois da leitura certificada das 17:01, e que o preço se moveu no intervalo entre as duas certificações."
+      "analise": "Lula ficou SEM preço novo no contrato de vencedor, em 40,50% (vol USD 11,96M acumulado), na leitura confirmada de 23/Set, 11:54 BRT. ⚖️ E esse é o caso mais limpo do par binário que este painel já registrou: o preço não se moveu e a probabilidade implícita dele SUBIU 0,29pp, porque a soma dos dois lados desinchou de 100,05 para 99,35. Quem lê só o cru escreve que ele não se moveu, e a frase descreve o livro, não a disputa. O vão contra Flávio Bolsonaro fecha de 19,05pp para 18,35pp no cru e 0,57pp no normalizado, segundo dia seguido de fechamento. Nas pesquisas, a AtlasIntel de 23/Set o põe à frente por 45,8% a 43,4% no 1º turno, com os dois subindo 1,7pp contra a rodada da casa de 17/Set e a distância entre eles parada em 2,4 pontos: quem cedeu foi a terceira via inteira. No par principal de 2º turno o sinal se inverteu dentro da própria casa, e ele aparece com 47,7% contra 47,4%. ⛔ A casa declara empate técnico, e a dianteira de 0,3pp é menor que um terço da margem de 1,0pp."
     },
     {
       "rank": "2",
       "name": "Flávio Bolsonaro",
       "party": "PL",
       "color": "#0F52BA",
-      "header": "PREÇO: 59,55% (vol USD 11,50M acumulado) no contrato de vencedor, queda de 1,35pp na leitura confirmada de 22/Set, 14:40 BRT. No de 2º lugar do 1º turno sobe 1,00pp, para 69,50% (vol USD 1,06M). PESQUISA: lidera uma das três nacionais de campo fechado em 20/Set, a Palver, por 42% a 41%, e fica atrás nas outras duas.",
+      "header": "PREÇO: 58,85% (vol USD 11,58M acumulado) no contrato de vencedor, queda de 0,70pp no cru e 0,29pp no normalizado na leitura confirmada de 23/Set, 11:54 BRT. No de 2º lugar do 1º turno sobe 2,00pp, para 71,50% (vol USD 1,08M). PESQUISA: 43,4% no 1º turno da AtlasIntel de 23/Set, atrás por 2,4 pontos, e 47,4% a 47,7% no par principal de 2º turno.",
       "fortes": [
-        "Segue à frente no contrato de vencedor por 19,05pp, com 59,55% contra 40,50%, na leitura confirmada de 22/Set, 14:40 BRT, e o preço dele está a 2,15pp do topo da série, 61,70% gravado em 21/Set.",
-        "No contrato de 2º lugar do 1º turno ele sobe 1,00pp, para 69,50%, na direção oposta à do livro de vencedor no mesmo dia.",
-        "Vence o par de 2º turno em duas das três nacionais do mesmo fechamento de campo: 47% a 43% na Palver e 42% a 41% na Quaest, as duas declaradas como empate técnico pelas próprias casas."
+        "Segue à frente no contrato de vencedor por 18,35pp, com 58,85% contra 40,50%, na leitura confirmada de 23/Set, 11:54 BRT, e o preço dele está a 2,85pp do topo da série, 61,70% gravado em 21/Set.",
+        "⭐ No contrato de 2º lugar do 1º turno ele sobe 2,00pp no cru e 3,46pp no normalizado, para 71,50%, e ali o cru SUBESTIMA o movimento dele, porque a soma daquele par desinchou de 99,30 para 97,35.",
+        "Sobe 1,7pp no 1º turno da AtlasIntel contra a rodada da casa de 17/Set, de 41,7% para 43,4%, o mesmo tamanho da alta de Lula."
       ],
       "fracos": [
-        "Cede 1,35pp no cru e 1,75pp no normalizado no contrato de vencedor, e o vão certificado na véspera, 22,40pp, fecha para 19,05pp, e as leituras gravadas daquele dia tinham chegado a 23,80pp, o maior da série.",
-        "Fica atrás no 1º turno em duas das três nacionais de campo fechado em 20/Set: 33% a 37% na Quaest e 37% a 40% na BTG/Nexus.",
-        "Perde o par de 2º turno na BTG/Nexus por 45% a 46%, e na Quaest a distância a favor dele é de 1 ponto, metade da margem declarada.",
-        "⚖️ O TSE aceitou em 22/Set a ação da campanha de Lula que aponta rede de perfis no Instagram impulsionando conteúdo sobre ele, com prazo de cinco dias para defesa. O ministro relator determinou apenas o andamento e não concluiu que houve irregularidade."
+        "Cede 0,70pp no cru e 0,29pp no normalizado no contrato de vencedor, e o vão sobre Lula fecha pelo segundo dia seguido, de 22,40pp em 21/Set para 19,05pp em 22/Set e 18,35pp agora.",
+        "🔑 No par principal de 2º turno da AtlasIntel ele PERDE a dianteira numérica que tinha na rodada anterior da mesma casa: era 47,2% a 46,8% em 17/Set e agora é 47,4% contra 47,7%.",
+        "Fica atrás no 1º turno da AtlasIntel por 43,4% a 45,8%, e a distância de 2,4 pontos é a mesma da rodada anterior da casa.",
+        "⚖️ O Tribunal Superior Eleitoral determinou em 22/Set, a pedido dele, que Lula retire um vídeo das redes em 24 horas, e no mesmo despacho deu cinco dias para a Presidência, a Secom e o Gabinete de Segurança Institucional prestarem informações. A decisão é do presidente do tribunal, Kassio Nunes Marques."
       ],
-      "analise": "Flávio Bolsonaro cedeu 1,35pp no contrato de vencedor, de 60,90% para 59,55% (vol USD 11,50M acumulado), na leitura confirmada de 22/Set, 14:40 BRT. No normalizado a perda é de 1,75pp, porque a soma do par foi de 99,40 para 100,05, e é o normalizado que descreve a probabilidade implícita. O vão sobre Lula fecha de 22,40pp para 19,05pp, e naquele dia as leituras gravadas chegaram a 23,80pp, o maior vão dos 158 dias em que a série tem os dois lados. ⚠️ Os dois livros do painel andaram em direções opostas no mesmo dia: no de 2º lugar do 1º turno ele SOBE 1,00pp, para 69,50%. Nas pesquisas, a terceira nacional com campo fechando em 20/Set, a Quaest, o põe atrás por 33% a 37% no 1º turno e à frente por 42% a 41% no 2º, com a própria casa declarando empate. Nas três casas do mesmo campo a distância dele para Lula no 1º turno vai de 1 ponto a favor a 4 pontos contra."
+      "analise": "Flávio Bolsonaro cedeu 0,70pp no contrato de vencedor, para 58,85% (vol USD 11,58M acumulado), na leitura confirmada de 23/Set, 11:54 BRT, e 0,29pp no normalizado. O vão sobre Lula fecha pelo segundo dia seguido e está em 18,35pp, contra os 22,40pp de 21/Set. ⚠️ E os dois livros do painel voltaram a andar em direções opostas no mesmo dia: no de 2º lugar do 1º turno ele SOBE 2,00pp no cru, para 71,50%, e 3,46pp no normalizado, porque a soma daquele par desinchou de 99,30 para 97,35. Nas pesquisas, a AtlasIntel de 23/Set o põe atrás por 43,4% a 45,8% no 1º turno, com alta de 1,7pp contra a rodada da casa de 17/Set, a mesma alta de Lula. No par principal de 2º turno ele perde a dianteira numérica que tinha naquela casa e fica em 47,4% contra 47,7%, com a própria casa declarando empate técnico pela terceira semana seguida."
     },
     {
       "rank": "3",
       "name": "Augusto Cury",
       "party": "Avante",
       "color": "#0891B2",
-      "header": "PREÇO: 0,05% no contrato de vencedor e 39,45% (vol USD 0,27M acumulado) no de 3º lugar do 1º turno, queda de 0,80pp na leitura confirmada de 22/Set, 14:40 BRT. PESQUISA: 6% e terceiro lugar na Quaest de 21/Set e 6% e terceiro na BTG/Nexus, contra 2% e quarto na Palver.",
+      "header": "PREÇO: 0,05% no contrato de vencedor e 39,85% (vol USD 0,27M acumulado) no de 3º lugar do 1º turno, alta de 0,40pp na leitura confirmada de 23/Set, 11:54 BRT. PESQUISA: 2,1% no 1º turno da AtlasIntel de 23/Set, contra 3,5% na rodada da casa de 17/Set.",
       "fortes": [
-        "Duas das TRÊS nacionais com campo fechando em 20/Set o colocam em 6% e em terceiro lugar no 1º turno, a Quaest de 21/Set e a BTG/Nexus. A casa que o coloca em 2% e em quarto é a mesma que discorda das outras duas no topo.",
-        "No livro de 3º lugar ele segue a 3,05pp de Renan Santos, contra 19,95pp na leitura confirmada de 21/Set às 00:06 BRT e 5,25pp na de 17:01 BRT do mesmo dia.",
-        "No par de 2º turno contra Lula a BTG/Nexus mede 43% a 44%, dentro de duas margens."
+        "Sobe 0,40pp no livro de 3º lugar do 1º turno, para 39,85%, e é o segundo colocado daquele livro.",
+        "No par de 2º turno da AtlasIntel contra Lula ele SOBE 1,6pp contra a rodada anterior da mesma casa, de 37,8% para 39,4%, mesmo tendo cedido no 1º turno."
       ],
       "fracos": [
-        "Cede 0,80pp no livro de 3º lugar, para 39,45%, e segue atrás de Renan Santos.",
-        "No contrato de vencedor ele está no piso do livro, 0,05%, com USD 5,00M acumulados.",
-        "Os pares de 2º turno contra Lula da Quaest e da Palver são os mais duros com ele entre os nomes de terceira via: 35% a 39% e 35% a 43%."
+        "⚠️ A convergência das duas rodadas anteriores parou e andou para trás: a distância para Renan Santos no livro de 3º lugar ALARGOU de 3,05pp para 4,15pp.",
+        "Cede 1,4 ponto no 1º turno da AtlasIntel, de 3,5% para 2,1%, a maior queda da terceira via naquela casa.",
+        "No contrato de vencedor ele está no piso do livro, 0,05%, com USD 5,01M acumulados."
       ],
-      "analise": "Augusto Cury cedeu 0,80pp no livro de 3º lugar do 1º turno, para 39,45% (vol USD 0,27M acumulado), na leitura confirmada de 22/Set, 14:40 BRT, depois de subir 7,70pp na véspera. A distância dele para Renan Santos encolheu pela segunda rodada seguida, de 19,95pp para 5,25pp e agora para 3,05pp. ⚠️ Nenhum dos dois preços é extremo da série: no backup ele já esteve em 60,30% neste mesmo contrato, em 04/Set. Nas pesquisas, duas das três nacionais que fecharam campo em 20/Set o dão em 6% e em terceiro lugar, e a Palver o dá em 2% e em quarto, atrás de Renan Santos. É a mesma divisão que aparece no topo: duas casas de um lado, uma do outro."
+      "analise": "Augusto Cury subiu 0,40pp no livro de 3º lugar do 1º turno, para 39,85% (vol USD 0,27M acumulado), na leitura confirmada de 23/Set, 11:54 BRT, e ainda assim a distância para Renan Santos ALARGOU, de 3,05pp para 4,15pp, porque o outro subiu mais. ⚠️ A convergência das duas rodadas anteriores, que tinha ido de 19,95pp para 5,25pp e depois para 3,05pp, parou e andou para trás. Nas pesquisas o dia foi de queda: a AtlasIntel de 23/Set o mede em 2,1% no 1º turno contra 3,5% na rodada da casa de 17/Set, a maior queda da terceira via ali. No par de 2º turno contra Lula, porém, ele subiu 1,6pp na mesma comparação, de 37,8% para 39,4%."
     },
     {
       "rank": "4",
       "name": "Renan Santos",
       "party": "Missão",
       "color": "#8B5CF6",
-      "header": "PREÇO: 0,75% (vol USD 14,07M acumulado) no contrato de vencedor, queda de 0,20pp, e 42,50% (vol USD 0,39M acumulado) no de 3º lugar do 1º turno, queda de 3,00pp na leitura confirmada de 22/Set, 14:40 BRT. PESQUISA: 11% e terceiro lugar na Palver de 21/Set, contra 3% na Quaest e 3% na BTG/Nexus.",
+      "header": "PREÇO: 0,75% (vol USD 14,17M acumulado) no contrato de vencedor e 44,00% (vol USD 0,40M acumulado) no de 3º lugar do 1º turno, alta de 1,50pp na leitura confirmada de 23/Set, 11:54 BRT. PESQUISA: 4,5% no 1º turno da AtlasIntel de 23/Set, o mais votado da terceira via naquela casa.",
       "fortes": [
-        "Segue à frente no livro de 3º lugar do 1º turno, com 42,50% contra 39,45% de Augusto Cury.",
-        "O contrato dele no livro de vencedor tem USD 14,07M acumulados, a 0,02M do maior do livro, que é o de Tarcísio de Freitas, com USD 14,09M. Ele paga 0,75%.",
-        "Na Palver de 21/Set ele tem 11% no 1º turno e é o terceiro colocado, oito pontos acima do que as outras duas casas do mesmo fechamento de campo mediram."
+        "Maior alta da rodada no livro de 3º lugar do 1º turno, 1,50pp, para 44,00%, e a dianteira dele sobre Augusto Cury volta a abrir, de 3,05pp para 4,15pp.",
+        "🏆 O contrato dele no livro de vencedor passou a ser o de MAIOR volume acumulado do presidencial, USD 14,17M contra USD 14,09M do de Tarcísio de Freitas, que liderava até ontem.",
+        "É o mais votado da terceira via na AtlasIntel de 23/Set, com 4,5% no 1º turno."
       ],
       "fracos": [
-        "Maior queda da rodada: cede 3,00pp no livro de 3º lugar, para 42,50%, e a dianteira dele sobre Augusto Cury encolhe de 5,25pp para 3,05pp.",
-        "🔴 É o nome de maior divergência entre as três nacionais com campo fechando no mesmo 20/Set: 11% na Palver contra 3% na Quaest e 3% na BTG/Nexus. Duas casas de três o colocam em 3%.",
-        "No contrato de vencedor ele cede 0,20pp, para 0,75%, a 0,05pp do piso da série, 0,70% de 21/Set, e a 17,15pp do topo, 17,90%, de 09/Jun.",
-        "Nos pares de 2º turno contra Lula ele perde nas três casas: 34% a 43% na Palver, 38% a 41% na Quaest e 39% a 47% na BTG/Nexus."
+        "Cede 0,6 ponto no 1º turno da AtlasIntel contra a rodada da casa de 17/Set, de 5,1% para 4,5%.",
+        "No contrato de vencedor ele paga 0,75%, a 0,05pp do piso da série, 0,70% de 21/Set, e a 17,15pp do topo, 17,90%, de 09/Jun.",
+        "No par de 2º turno contra Lula a AtlasIntel mede 31,2% a 46,5%, a maior distância dos cinco pares que a casa testou."
       ],
-      "analise": "Renan Santos teve a maior queda da rodada, 3,00pp no livro de 3º lugar do 1º turno, para 42,50% (vol USD 0,39M acumulado), na leitura confirmada de 22/Set, 14:40 BRT. A dianteira dele sobre Augusto Cury encolheu pela segunda rodada seguida: 19,95pp, depois 5,25pp, agora 3,05pp. 🔴 Nas pesquisas ele é o nome em que as três nacionais de campo fechado em 20/Set mais discordam: a Palver o mede em 11% e em terceiro lugar, e a Quaest e a BTG/Nexus o medem em 3%, oito pontos abaixo. ⚠️ E é justamente o 11% que alimenta o lado pesquisa do grafo de divergência do painel, porque a régua escolhe a nacional mais recente e desempata pela maior amostra, e a Palver tem 5.000 entrevistas contra 2.004 e 2.006 das outras duas. O painel declara a régua em vez de escondê-la."
+      "analise": "Renan Santos teve a maior alta da rodada, 1,50pp no livro de 3º lugar do 1º turno, para 44,00% (vol USD 0,40M acumulado), na leitura confirmada de 23/Set, 11:54 BRT, e a dianteira dele sobre Augusto Cury voltou a abrir, de 3,05pp para 4,15pp. 🏆 E o contrato dele no livro de vencedor passou a ser o de maior volume acumulado do presidencial, USD 14,17M, ultrapassando o de Tarcísio de Freitas, que estava em USD 14,09M: o preço dele ali é 0,75%, a 0,05pp do piso da série. Nas pesquisas ele é o mais votado da terceira via na AtlasIntel de 23/Set, com 4,5%, depois de 5,1% na rodada da casa de 17/Set. ⚠️ E ele segue sendo o nome de maior divergência entre casas: nas três nacionais de campo fechado em 20/Set ele ia de 11% na Palver a 3% na Quaest e na BTG/Nexus."
     },
     {
       "rank": "5",
       "name": "Caiado / Haddad / Zema",
       "party": "PSD/PT/Novo",
       "color": "#6B7280",
-      "header": "PREÇO: Ronaldo Caiado em 15,50% (vol USD 0,16M acumulado) no livro de 3º lugar do 1º turno, sem preço novo, e Romeu Zema em 0,35%, queda de 0,15pp, na leitura confirmada de 22/Set, 14:40 BRT. Fernando Haddad segue no piso do livro de vencedor, 0,05%. PESQUISA: Caiado tem 4% na Quaest de 21/Set e 5% na BTG/Nexus, e Zema tem 1% nas três nacionais do mesmo campo.",
-      "subtitle": "Os três nomes fora do pelotão de frente, na leitura confirmada de 22/Set, 14:40 BRT. As TRÊS nacionais com campo fechando no mesmo 20/Set testam Ronaldo Caiado e Romeu Zema em par de 2º turno contra Lula, e a entrada da Quaest desfaz o empate que havia entre as duas primeiras.",
+      "header": "PREÇO: Ronaldo Caiado em 14,50% (vol USD 0,16M acumulado) no livro de 3º lugar do 1º turno, queda de 1,00pp, e Romeu Zema em 0,30%, sem preço novo, na leitura confirmada de 23/Set, 11:54 BRT. Fernando Haddad segue no piso do livro de vencedor, 0,05%. PESQUISA: Caiado tem 1,3% e Zema 0,9% no 1º turno da AtlasIntel de 23/Set.",
+      "subtitle": "Os três nomes fora do pelotão de frente, na leitura confirmada de 23/Set, 11:54 BRT. A AtlasIntel de 23/Set testa Ronaldo Caiado e Romeu Zema em par de 2º turno contra Lula, e o preço e a pesquisa deles andaram em direções opostas no mesmo dia.",
       "caiado": {
-        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 22/Set, 14:40 BRT, abaixo do piso de 0,5% da dupla leitura, com USD 7,66M acumulados. No contrato de 3º LUGAR do 1º turno fica SEM PREÇO NOVO, em 15,50%, num livro de USD 0,16M. Tem 4% no 1º turno da Quaest, 5% na BTG/Nexus e 1% na Palver.",
-        "fortes": "Mantém a terceira posição no livro de 3º lugar do 1º turno, em 15,50%, depois de subir 4,00pp na véspera. É o nome deste bloco com maior preço naquele livro, e empata ou vence Lula em dois dos três pares de 2º turno testados pelas casas de campo fechado em 20/Set.",
-        "fracos": "No contrato de vencedor segue em 0,05%, com USD 7,66M acumulados. A Quaest, terceira casa do mesmo fechamento de campo, é a primeira a colocá-lo ATRÁS de Lula no par de 2º turno, por 39% a 41%, enquanto a BTG/Nexus mede empate em 45% a 45% e a Palver o dá à frente por 44% a 43%. No 1º turno ele tem 4%, 5% e 1% nas três."
+        "label": "CAIADO (PSD), 0,05% no contrato de VENCEDOR, leitura confirmada de 23/Set, 11:54 BRT, abaixo do piso de 0,5% da dupla leitura, com USD 7,66M acumulados. No contrato de 3º LUGAR do 1º turno cede 1,00pp, para 14,50%, num livro de USD 0,16M. Tem 1,3% no 1º turno da AtlasIntel de hoje.",
+        "fortes": "⭐ É o adversário mais próximo de Lula depois de Flávio Bolsonaro no par de 2º turno da AtlasIntel de 23/Set, 44,0% a 46,6%, e subiu 2,3pp ali contra a rodada anterior da mesma casa, de 41,7% para 44,0%. Mantém a terceira posição no livro de 3º lugar.",
+        "fracos": "Cede 1,00pp no livro de 3º lugar do 1º turno, para 14,50%, e no 1º turno da AtlasIntel cai de 1,7% para 1,3%. No contrato de vencedor segue em 0,05%. O preço e a pesquisa dele andaram em direções opostas no mesmo dia, e o painel registra os dois lados sem escolher entre eles."
       },
       "haddad": {
-        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 22/Set, 14:40 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e as três nacionais de campo fechado em 20/Set não o testam em cenário presidencial.",
+        "label": "HADDAD (PT), 0,05% no contrato de VENCEDOR, leitura confirmada de 23/Set, 11:54 BRT, no piso do livro. Não é candidato à Presidência: disputa o governo de São Paulo, e a AtlasIntel de 23/Set não o testa em cenário presidencial.",
         "fortes": "O contrato dele não se moveu nesta leitura, então não há movimento a explicar, e o topo da série dele no contrato de vencedor é de 7,60%, em 26/Mai, medido no backup do banco.",
-        "fracos": "Não é medido no 1º turno pelas três nacionais de campo fechado em 20/Set nem testado em par de 2º turno, então a comparação entre preço e pesquisa não existe para ele nesta rodada. O contrato de vencedor dele acumula USD 7,55M, volume maior que o de Augusto Cury, que é testado nas três casas e tem USD 5,00M."
+        "fracos": "Não é medido no 1º turno pela AtlasIntel nem testado em par de 2º turno, então a comparação entre preço e pesquisa não existe para ele nesta rodada. O contrato de vencedor dele acumula USD 7,55M, volume maior que o de Augusto Cury, que é testado na casa e tem USD 5,01M."
       },
       "zema": {
-        "label": "ZEMA (Novo), 0,05% no contrato de VENCEDOR, leitura confirmada de 22/Set, 14:40 BRT, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno cai 0,15pp, para 0,35%. Tem 1% no 1º turno nas TRÊS nacionais de campo fechado em 20/Set.",
-        "fortes": "É o único nome do painel que as três nacionais do mesmo fechamento de campo medem no MESMO valor de 1º turno, 1%, o que torna a leitura de pesquisa sobre ele a menos disputada da rodada.",
-        "fracos": "Cai 0,15pp no contrato de 3º lugar do 1º turno, para 0,35%, no piso daquele livro, e no de vencedor está em 0,05%. Nos pares de 2º turno contra Lula as três casas discordam em tamanho e em sinal: a Quaest mede 32% a 46%, 14 pontos de distância, a BTG/Nexus mede 41% a 47% e a Palver o dá à frente por 44% a 43%."
+        "label": "ZEMA (Novo), 0,05% no contrato de VENCEDOR, leitura confirmada de 23/Set, 11:54 BRT, abaixo do piso de 0,5% da dupla leitura. No contrato de 3º LUGAR do 1º turno fica SEM preço novo, em 0,30%. Tem 0,9% no 1º turno da AtlasIntel de hoje.",
+        "fortes": "É o nome com a leitura de pesquisa menos disputada da semana: 1% no 1º turno nas três nacionais de campo fechado em 20/Set e 0,9% na AtlasIntel de 23/Set, campo de 17 a 22/Set.",
+        "fracos": "Cede 0,2 ponto no 1º turno da AtlasIntel, de 1,1% para 0,9%, e no par de 2º turno contra Lula cede 1,5pp, de 43,7% para 42,2%. No livro de 3º lugar ele está em 0,30%, no piso daquele livro."
       },
-      "analise": "Ronaldo Caiado ficou sem preço novo no livro de 3º lugar do 1º turno, em 15,50% (vol USD 0,16M acumulado), na leitura confirmada de 22/Set, 14:40 BRT, e mantém a terceira posição daquele livro. Romeu Zema cedeu 0,15pp, para 0,35%. Nas pesquisas, a entrada da Quaest muda o retrato dos dois: ela mede Caiado em 4% e o põe atrás de Lula por 39% a 41% no par de 2º turno, enquanto a BTG/Nexus mede empate em 45% a 45% e a Palver o põe à frente por 44% a 43%. Para Zema a Quaest é a mais dura das três, com 14 pontos de distância no par contra Lula. Fernando Haddad segue fora dos cenários das três casas e no piso do livro de vencedor.",
+      "analise": "Ronaldo Caiado cedeu 1,00pp no livro de 3º lugar do 1º turno, para 14,50% (vol USD 0,16M acumulado), na leitura confirmada de 23/Set, 11:54 BRT, e mantém a terceira posição daquele livro. Romeu Zema ficou sem preço novo, em 0,30%. ⭐ E o dia dos dois no preço e na pesquisa andou em direções opostas: na AtlasIntel de 23/Set, Caiado é o adversário mais próximo de Lula depois de Flávio Bolsonaro no par de 2º turno, com 44,0% a 46,6%, e subiu 2,3pp ali contra a rodada anterior da casa, enquanto cedia no livro de 3º lugar. No 1º turno ele tem 1,3% e Zema 0,9%, os dois abaixo do que a casa media em 17/Set. Fernando Haddad segue fora dos cenários presidenciais e no piso do livro de vencedor.",
       "fortes": [
-        "Ronaldo Caiado empata ou vence Lula no par de 2º turno em duas das três nacionais de campo fechado em 20/Set: empate em 45% a 45% na BTG/Nexus e 44% a 43% na Palver, as duas dentro da margem.",
-        "Caiado mantém a terceira posição no livro de 3º lugar, com 15,50%, sem preço novo nesta rodada."
+        "⭐ Na AtlasIntel de 23/Set, Ronaldo Caiado é o adversário mais próximo de Lula depois de Flávio Bolsonaro no 2º turno, 44,0% a 46,6%, e SUBIU 2,3pp ali contra a rodada anterior da mesma casa, no mesmo dia em que cedeu no livro de 3º lugar.",
+        "Romeu Zema é o nome com a leitura de pesquisa menos disputada da semana: 1% no 1º turno nas três nacionais de campo fechado em 20/Set e 0,9% na AtlasIntel de hoje."
       ],
       "fracos": [
-        "Na Quaest de 21/Set, a terceira casa do mesmo fechamento de campo, Ronaldo Caiado perde o par de 2º turno para Lula por 39% a 41% e marca 4% no 1º turno.",
-        "Romeu Zema cede 0,15pp no livro de 3º lugar, para 0,35%, e a Quaest é a mais dura com ele no par de 2º turno: 32% a 46%, 14 pontos de distância.",
-        "Fernando Haddad não é testado no 1º turno nem em par de 2º turno por nenhuma das três casas, e segue no piso do livro de vencedor, 0,05%, com USD 7,55M acumulados."
+        "Ronaldo Caiado cede 1,00pp no livro de 3º lugar do 1º turno, para 14,50%, e no 1º turno da AtlasIntel cai de 1,7% para 1,3%.",
+        "Romeu Zema cede 0,2 ponto no 1º turno da AtlasIntel, de 1,1% para 0,9%, e no par de 2º turno contra Lula cede 1,5pp, de 43,7% para 42,2%.",
+        "Fernando Haddad não é testado pela AtlasIntel em cenário presidencial e segue no piso do livro de vencedor, 0,05%, com USD 7,55M acumulados."
       ]
     }
   ],
   "quadroComparativo": [
     {
       "n": "Lula (PT)",
-      "p": "Nas TRÊS nacionais com campo fechando no mesmo 20/Set ele lidera duas: 37% a 33% na Quaest de 21/Set (presencial, 2.004 entrevistas, margem de 2,0pp) e 40% a 37% na BTG/Nexus (telefone, 2.006, 2,0pp), e fica 1 ponto atrás na Palver (online, 5.000, 2,8pp), 41% a 42%. No 2º turno contra Flávio Bolsonaro a Quaest mede 41% a 42%, a BTG/Nexus 46% a 45% e a Palver 43% a 47%.",
-      "m": "40,50% (vol USD 11,87M acumulado) no contrato de vencedor, leitura confirmada de 22/Set, 14:40 BRT, alta de 2,00pp",
-      "t": "sobe 2,00pp no cru e 1,75pp no normalizado, e o vão contra Flávio Bolsonaro fecha de 22,40pp para 19,05pp",
-      "s": "⚖️ O par binário explica por que os dois números não batem: a soma dos dois lados foi de 99,40 para 100,05, então o cru dá a ele 2,00pp e a Flávio Bolsonaro 1,35pp, enquanto o normalizado dá 1,75pp para cada lado. O vão sobrevive à normalização, 3,35pp no cru e 3,49pp no normalizado, e movimento que sobrevive é informação, não spread.",
+      "p": "Lidera o 1º turno na AtlasIntel/Bloomberg de 23/Set, campo de 17 a 22/Set, 5.015 entrevistas pela internet e margem de 1,0pp: 45,8% contra 43,4%. Os dois subiram 1,7pp contra a rodada da casa de 17/Set e a distância ficou em 2,4pp. No par de 2º turno ele aparece à frente por 47,7% a 47,4%, invertendo o sinal da própria casa, e vence ou empata os cinco pares testados.",
+      "m": "40,50% (vol USD 11,96M acumulado) no contrato de vencedor, leitura confirmada de 23/Set, 11:54 BRT, sem preço novo",
+      "t": "fica PARADO no cru e ganha 0,29pp no normalizado, e o vão contra Flávio Bolsonaro fecha de 19,05pp para 18,35pp",
+      "s": "⚖️ É o caso mais limpo do par binário até aqui neste painel: o preço dele não se moveu e a probabilidade implícita dele SUBIU, porque a soma dos dois lados desinchou de 100,05 para 99,35. Quem lê só o cru escreve que ele não se moveu, e isso descreve o livro, não a disputa.",
       "pc": "#DC2626",
       "mc": ""
     },
     {
       "n": "Flávio Bolsonaro (PL)",
-      "p": "Lidera uma das três nacionais de campo fechado em 20/Set, a Palver, por 42% a 41%, e fica atrás nas outras duas, 33% a 37% na Quaest e 37% a 40% na BTG/Nexus. No 2º turno ele vence na Palver por 47% a 43% e na Quaest por 42% a 41%, e perde na BTG/Nexus por 45% a 46%.",
-      "m": "59,55% (vol USD 11,50M acumulado) no contrato de vencedor, leitura confirmada de 22/Set, 14:40 BRT, queda de 1,35pp",
-      "t": "cede 1,35pp no cru e 1,75pp no normalizado, e devolve parte do topo de 61,70% gravado em 21/Set",
-      "s": "O vão sobre Lula fecha para 19,05pp, contra os 22,40pp da leitura confirmada da véspera, dia em que as leituras gravadas chegaram a 23,80pp, o maior da série. No contrato de 2º lugar do 1º turno ele sobe 1,00pp, para 69,50%, ou seja os dois livros andaram em direções opostas no mesmo dia.",
+      "p": "Fica atrás no 1º turno da AtlasIntel/Bloomberg de 23/Set por 43,4% a 45,8%, depois de subir 1,7pp contra a rodada da casa de 17/Set. No par de 2º turno ele cede a dianteira numérica que tinha em 17/Set e fica em 47,4% contra 47,7%, dentro da margem de 1,0pp. Nas três nacionais de campo fechado em 20/Set ele lidera uma, a Palver.",
+      "m": "58,85% (vol USD 11,58M acumulado) no contrato de vencedor, leitura confirmada de 23/Set, 11:54 BRT, queda de 0,70pp",
+      "t": "cede 0,70pp no cru e 0,29pp no normalizado, e o vão sobre Lula fecha pelo segundo dia seguido",
+      "s": "Os dois livros do painel voltaram a andar em direções opostas: no de 2º lugar do 1º turno ele SOBE 2,00pp no cru e 3,46pp no normalizado, para 71,50%. O preço dele no de vencedor está a 2,85pp do topo da série, 61,70% gravado em 21/Set.",
       "pc": "#2563EB",
       "mc": ""
     },
     {
       "n": "Augusto Cury (Avante)",
-      "p": "6% no 1º turno na Quaest de 21/Set e 6% na BTG/Nexus, terceiro colocado nas duas, contra 2% e quarto lugar na Palver. No 2º turno contra Lula a Quaest mede 35% a 39%, a BTG/Nexus 43% a 44% e a Palver 35% a 43%.",
-      "m": "0,05% no contrato de vencedor e 39,45% (vol USD 0,27M acumulado) no de 3º lugar, queda de 0,80pp, leitura confirmada de 22/Set, 14:40 BRT",
-      "t": "cede 0,80pp no livro de 3º lugar e segue a 3,05pp de Renan Santos",
-      "s": "⭐ Duas das três nacionais do mesmo campo o colocam em 6% e em terceiro, e a terceira o coloca em 2% e em quarto. A casa que discorda é a mesma que discorda no topo.",
+      "p": "2,1% no 1º turno da AtlasIntel/Bloomberg de 23/Set, contra 3,5% na rodada da casa de 17/Set, a maior queda da terceira via naquela série. Nas nacionais de campo fechado em 20/Set ele tinha 6% na Quaest e na BTG/Nexus e 2% na Palver. No par de 2º turno contra Lula a Atlas mede 39,4% a 46,2%.",
+      "m": "0,05% no contrato de vencedor e 39,85% (vol USD 0,27M acumulado) no de 3º lugar, alta de 0,40pp, leitura confirmada de 23/Set, 11:54 BRT",
+      "t": "sobe 0,40pp no livro de 3º lugar, e a distância para Renan Santos ALARGA de 3,05pp para 4,15pp",
+      "s": "⚠️ A convergência das duas rodadas anteriores parou e andou para trás. Na AtlasIntel de hoje ele cedeu 1,4 ponto no 1º turno, de 3,5% para 2,1%, a maior queda da terceira via naquela casa.",
       "pc": "#0891B2",
       "mc": ""
     },
     {
       "n": "Renan Santos (Missão)",
-      "p": "11% no 1º turno na Palver de 21/Set, terceiro colocado, contra 3% na Quaest e 3% na BTG/Nexus, as duas do mesmo fechamento de campo. No 2º turno contra Lula a Palver mede 34% a 43%, a Quaest 38% a 41% e a BTG/Nexus 39% a 47%.",
-      "m": "0,75% (vol USD 14,07M acumulado) no contrato de vencedor e 42,50% (vol USD 0,39M acumulado) no de 3º lugar, queda de 3,00pp, leitura confirmada de 22/Set, 14:40 BRT",
-      "t": "maior queda da rodada, e a dianteira dele no livro de 3º lugar encolhe de 5,25pp para 3,05pp",
-      "s": "🔴 É o nome de maior divergência entre as três nacionais de campo fechado em 20/Set: 11% numa casa e 3% nas outras duas, oito pontos de distância. ⚠️ E é o número de 11% que alimenta o lado pesquisa do grafo de divergência, porque a régua desempata pela maior amostra.",
+      "p": "4,5% no 1º turno da AtlasIntel/Bloomberg de 23/Set, contra 5,1% em 17/Set, e é o mais votado da terceira via nessa casa. Nas nacionais de campo fechado em 20/Set ele ia de 11% na Palver a 3% na Quaest e na BTG/Nexus. No par de 2º turno contra Lula a Atlas mede 31,2% a 46,5%, a maior distância dos cinco pares.",
+      "m": "0,75% (vol USD 14,17M acumulado) no contrato de vencedor e 44,00% (vol USD 0,40M acumulado) no de 3º lugar, alta de 1,50pp, leitura confirmada de 23/Set, 11:54 BRT",
+      "t": "maior alta da rodada no livro de 3º lugar, e a dianteira dele sobre Augusto Cury volta a abrir, de 3,05pp para 4,15pp",
+      "s": "🏆 O contrato dele no livro de vencedor passou a ser o de MAIOR volume acumulado do presidencial, USD 14,17M contra USD 14,09M do de Tarcísio de Freitas, que liderava. E ele paga 0,75%, a 0,05pp do piso da série, 0,70% de 21/Set.",
       "pc": "#7C3AED",
       "mc": ""
     },
     {
       "n": "Caiado (PSD)",
-      "p": "4% no 1º turno na Quaest de 21/Set e 5% na BTG/Nexus, contra 1% na Palver. No 2º turno contra Lula a Quaest mede 39% a 41%, a BTG/Nexus empate em 45% a 45% e a Palver o dá à frente por 44% a 43%.",
-      "m": "0,05% no contrato de vencedor e 15,50% (vol USD 0,16M acumulado) no de 3º lugar, sem preço novo, leitura confirmada de 22/Set, 14:40 BRT",
-      "t": "parado em 15,50% no livro de 3º lugar, onde mantém a terceira posição",
-      "s": "Das três nacionais do mesmo campo, ele empata ou vence Lula em duas e perde por 2 pontos na terceira, sempre dentro da margem, e ainda assim paga 0,05% no contrato de vencedor.",
+      "p": "1,3% no 1º turno da AtlasIntel/Bloomberg de 23/Set, contra 1,7% em 17/Set. No par de 2º turno contra Lula ele é o adversário mais próximo depois de Flávio Bolsonaro, 44,0% a 46,6%, e subiu 2,3pp ali contra a rodada anterior da casa. Nas nacionais de campo fechado em 20/Set ele ia de 5% a 1%.",
+      "m": "0,05% no contrato de vencedor e 14,50% (vol USD 0,16M acumulado) no de 3º lugar, queda de 1,00pp, leitura confirmada de 23/Set, 11:54 BRT",
+      "t": "cede 1,00pp no livro de 3º lugar e mantém a terceira posição dele",
+      "s": "⭐ Na AtlasIntel de hoje ele é o adversário mais próximo de Lula depois de Flávio Bolsonaro no 2º turno, 44,0% a 46,6%, e subiu 2,3pp ali contra a rodada anterior da mesma casa, no mesmo dia em que cedeu no livro de 3º lugar.",
       "pc": "#059669",
       "mc": ""
     },
     {
       "n": "Romeu Zema (Novo)",
-      "p": "1% no 1º turno nas três nacionais de campo fechado em 20/Set. No 2º turno contra Lula a Quaest mede 32% a 46%, a BTG/Nexus 41% a 47% e a Palver o dá à frente por 44% a 43%.",
-      "m": "0,05% no contrato de vencedor e 0,35% (vol USD 0,08M acumulado) no de 3º lugar, queda de 0,15pp, leitura confirmada de 22/Set, 14:40 BRT",
-      "t": "cede 0,15pp no livro de 3º lugar, no piso do livro",
-      "s": "A Quaest é a mais dura com ele entre as três, 14 pontos de distância para Lula no par de 2º turno, e a Palver é a única das três que o põe à frente.",
+      "p": "0,9% no 1º turno da AtlasIntel/Bloomberg de 23/Set, contra 1,1% em 17/Set, e 1% nas três nacionais de campo fechado em 20/Set. No par de 2º turno contra Lula a Atlas mede 42,2% a 47,6%, e ele cedeu 1,5pp ali contra a rodada anterior da casa.",
+      "m": "0,05% no contrato de vencedor e 0,30% (vol USD 0,08M acumulado) no de 3º lugar, leitura confirmada de 23/Set, 11:54 BRT, sem preço novo",
+      "t": "sem movimento acima do piso de ruído em nenhum dos dois livros",
+      "s": "É o nome com a leitura de pesquisa menos disputada da semana: 1% no 1º turno nas três nacionais de campo fechado em 20/Set e 0,9% na AtlasIntel de hoje.",
       "pc": "#EA580C",
       "mc": ""
     }
   ],
-  "cruzamento": "O dia tem um movimento de preço e um fato de pesquisa, e a ordem entre eles importa. No contrato de vencedor o vão fechou de 22,40pp para 19,05pp entre a leitura confirmada de 21/Set às 17:01 BRT e a de 22/Set às 14:40 BRT, com Lula subindo 2,00pp e Flávio Bolsonaro cedendo 1,35pp. ⚖️ Os dois números não batem porque a soma do par foi de 99,40 para 100,05: no normalizado cada lado andou 1,75pp, e o vão fechou 3,49pp em vez de 3,35pp. O movimento sobrevive à normalização, então ele descreve a disputa e não o spread do livro. A véspera certificou 22,40pp, e as leituras gravadas daquele dia chegaram a 23,80pp, o maior dos 158 dias em que a série tem os dois lados. ⭐ Nas pesquisas o fato é a TERCEIRA nacional com campo fechando no mesmo 20/Set: a Quaest, registro BR-06004/2026, 2.004 eleitores entrevistados presencialmente entre 17 e 20/Set, divulgada às 18h06 BRT de 21/Set, ou seja depois da leitura certificada daquele dia. Com três casas e três métodos sobre o mesmo fechamento de campo, o 1º turno sai Lula 37% a 33% na Quaest (presencial), Lula 40% a 37% na BTG/Nexus (telefone) e Flávio Bolsonaro 42% a 41% na Palver (online). A distância medida vai de 4 pontos a favor de Lula a 1 ponto contra, cinco pontos de amplitude entre casas que ouviram gente até o mesmo dia. 🔴 E a divergência é maior na terceira via do que no topo: Renan Santos tem 11% na Palver e 3% nas outras duas, e Augusto Cury tem 6% nas duas e 2% na Palver. ⚠️ O lado pesquisa do grafo de divergência deste painel usa a Palver, porque a régua escolhe a nacional mais recente e desempata pela maior amostra, e agora são três nacionais do mesmo dia disputando esse lugar. A régua fica declarada aqui em vez de ficar implícita no número. No livro de 3º lugar do 1º turno a convergência continuou: Renan Santos cedeu 3,00pp e Augusto Cury 0,80pp, e a distância entre eles foi de 19,95pp para 5,25pp e agora para 3,05pp em três leituras certificadas. ⛔ O painel não atribui o movimento do preço à pesquisa: ele registra que a Quaest saiu no intervalo entre as duas certificações e mostra os dois lados com os carimbos de hora."
+  "cruzamento": "O dia tem duas medições que se completam, e as duas vieram por dentro do método. No contrato de vencedor o vão fechou de 19,05pp para 18,35pp entre a leitura confirmada de 22/Set às 14:40 BRT e a de 23/Set às 11:54 BRT, e é o segundo dia seguido de fechamento, contra os 22,40pp de 21/Set. ⚖️ Só que o preço de Lula NÃO se moveu: ele está em 40,50% nas duas leituras, e quem cedeu foi Flávio Bolsonaro, 0,70pp, para 58,85%. Normalizado pela soma do par, que desinchou de 100,05 para 99,35, a leitura vira outra: Lula GANHA 0,29pp de probabilidade implícita com o preço parado, e Flávio Bolsonaro cede os mesmos 0,29pp. É o caso mais limpo do par binário que este painel já registrou, porque um dos lados ficou exatamente igual. ⭐ No contrato de 2º lugar do 1º turno o mesmo instrumento aponta para o outro lado e com força: Flávio Bolsonaro sobe 2,00pp no cru e 3,46pp no normalizado, para 71,50%, e Lula cai 3,95pp no cru e 3,46pp no normalizado, para 25,85%, porque aquele par desinchou de 99,30 para 97,35. Os dois livros do painel andaram em direções opostas no mesmo dia pelo segundo dia seguido. 🗳️ Nas pesquisas entrou a AtlasIntel em parceria com a Bloomberg, registro BR-04739/2026, 5.015 participantes pela internet entre 17 e 22/Set com margem de 1,0pp. No 1º turno Lula tem 45,8% e Flávio Bolsonaro 43,4%, e a distância entre os dois NÃO se moveu contra a rodada da casa de 17/Set: os dois subiram 1,7pp e quem cedeu foi a terceira via inteira, com Augusto Cury caindo 1,4 ponto, Renan Santos 0,6 e o branco e nulo indo de 1,6% para 0,7%. 🔑 No par principal de 2º turno o sinal se inverteu dentro da própria casa, com Lula em 47,7% contra 47,4%, depois de 46,8% a 47,2% em 17/Set, e a casa declara empate técnico pela terceira semana seguida. 🥉 No livro de 3º lugar do 1º turno a convergência das duas rodadas anteriores parou e andou para trás: Renan Santos sobe 1,50pp, para 44,00%, Augusto Cury sobe 0,40pp, para 39,85%, e a distância entre eles ALARGA de 3,05pp para 4,15pp. 🏆 E o contrato de Renan Santos no livro de vencedor passou a ser o de maior volume acumulado do presidencial, USD 14,17M contra USD 14,09M do de Tarcísio de Freitas. ⛔ O painel não atribui movimento de preço a pesquisa nem a ato: ele mede os dois lados com os carimbos de hora de cada um."
 }
