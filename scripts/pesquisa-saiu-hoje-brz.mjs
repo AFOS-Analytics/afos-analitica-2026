@@ -29,7 +29,7 @@ import { readFileSync, existsSync } from 'node:fs'
 import { CASAS_BRZ, casaDoRegistro } from './lib/cobertura-imprensa-brz.mjs'
 import { dataCivilBrasil, datasDeHoje } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
-import { medirSaida } from '../lib/tse/saiu-hoje-brz.mjs'
+import { medirSaida, separarFantasmas, normalizarProtocolo as normProto } from '../lib/tse/saiu-hoje-brz.mjs'
 
 const argv = process.argv.slice(2)
 const valor = (n) => argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? null
@@ -55,7 +55,50 @@ try {
   process.exit(4)
 }
 
-const nacionais = servidas.filter((p) => (p.scope ?? p.escopo) === 'national')
+const nacionaisBrutas = servidas.filter((p) => (p.scope ?? p.escopo) === 'national')
+
+// ── 1.5 O BANCO NUNCA ESQUECE, E O TSE RETIRA ────────────────────────────────
+//
+// 🔴 Medido em 23/Set/2026. Este passo lia a rota, que serve o BANCO, e o banco
+//    guarda para sempre o registro que o TSE já tirou do arquivo dele. Naquele
+//    dia a Real Time apareceu como `PROMETEU_E_NAO_SAIU` com "prometeu HOJE",
+//    e a promessa não existia mais: a `BR-00548/2026` tinha sido RETIRADA, e o
+//    relatório do passo 2, que baixa o arquivo do TSE, já a marcava com 👻 na
+//    mesma rodada.
+//
+// ⛔ O custo tem duas direções. Ficar esperando número de quem cancelou é o
+//    lado barato; o caro é escrever "registrada e não divulgada" sobre um
+//    cancelamento, que é a conta que a régua do fantasma existe para impedir.
+//
+// 🔑 A fonte é o `data/tse/fantasmas.jsonl`, que o `--apply` escreve na MESMA
+//    rodada, minutos antes deste passo. Ele é ledger, não medição ao vivo, e
+//    por isso a IDADE dele sai declarada: filtro velho não é filtro.
+function fantasmasDoLedger() {
+  const f = 'data/tse/fantasmas.jsonl'
+  if (!existsSync(f)) return { erro: `sem ${f}` }
+  const linhas = readFileSync(f, 'utf8').trim().split('\n').filter(Boolean)
+  if (!linhas.length) return { erro: 'ledger vazio' }
+  let o
+  try {
+    o = JSON.parse(linhas[linhas.length - 1])
+  } catch {
+    return { erro: 'ultima linha ilegivel' }
+  }
+  const lista = o.protocolos ?? o.fantasmas ?? null
+  if (!Array.isArray(lista)) return { erro: 'ultima linha sem lista de protocolos' }
+  const quando = Date.parse(o.quando ?? '')
+  return {
+    set: new Set(lista.map(normProto)),
+    quando: o.quando,
+    horas: Number.isFinite(quando) ? (Date.now() - quando) / 3_600_000 : null,
+  }
+}
+
+const fan = fantasmasDoLedger()
+const corte = separarFantasmas(nacionaisBrutas, fan.set ? [...fan.set] : null)
+const retiradas = corte.retiradas
+const nacionais = corte.vivas
+
 const porCasa = new Map()
 for (const p of nacionais) {
   const casa = casaDoRegistro(p.institute ?? p.instituto ?? '')
@@ -103,6 +146,28 @@ const semData = itens.filter((x) => diaDe(x) === null)
 const titulos = doDia.map((x) => x.title)
 
 console.log(`   ${nacionais.length} registro(s) nacional(is) na janela · ${itens.length} titulo(s) unico(s) no cache`)
+// 👻 O filtro de fantasma se DECLARA, nos dois estados. Sumir com a linha
+//    esconderia a decisão, e filtro velho lido como filtro novo é pior que
+//    filtro nenhum, porque ninguém vai conferir.
+if (fan.erro) {
+  console.log(`   🔴 FILTRO DE FANTASMA AUSENTE (${fan.erro}): a rota serve o BANCO, e o banco guarda`)
+  console.log(`      registro que o TSE já RETIROU. "Prometeu hoje" aqui pode ser promessa CANCELADA.`)
+} else {
+  const idade = fan.horas == null ? 'idade desconhecida' : `${fan.horas.toFixed(1)}h`
+  const velho = fan.horas != null && fan.horas > 36
+  console.log(`   👻 ${retiradas.length} retirada(s) do TSE fora desta conta, por ledger de ${fan.quando} (${idade})${velho ? ' 🔴 VELHO' : ''}`)
+  for (const p of retiradas) {
+    const div = (p.publicationDate ?? p.divulgacao ?? '').slice(0, 10)
+    console.log(`      ${normProto(p.protocol ?? p.protocolo)}  ${String(p.institute ?? p.instituto ?? '').slice(0, 34).padEnd(34)} div ${div}${div === HOJE ? '  ← prometia HOJE e NAO e promessa' : ''}`)
+  }
+  if (velho) {
+    console.log(`      🔴 ledger com mais de 36h: rodar a ingestao com --apply antes de confiar neste corte.`)
+  }
+  if (corte.suspeito) {
+    console.log(`      🔴 o ledger tem ${fan.set.size} fantasma(s) e NENHUM casou com as ${nacionaisBrutas.length} servidas.`)
+    console.log(`         Isso quase nunca e arquivo limpo: e formato de protocolo que mudou. NAO tratar como corte feito.`)
+  }
+}
 console.log(`   📅 do dia ${HOJE}: ${titulos.length}. O cache tem janela de 30h e trouxe ${itens.length - titulos.length} de outros dias.`)
 if (semData.length) {
   // ⛔ Item sem data legível não entra e não some: ele é CONTADO, porque

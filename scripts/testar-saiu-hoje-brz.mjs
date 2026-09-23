@@ -6,7 +6,7 @@
  * a Palver prometeu e não saiu, a Veritá saiu dois dias depois do prometido.
  * Se um dia a régua deixar de separar os dois, isto fica vermelho.
  */
-import { classificarTitulo, medirSaida, ehNacional } from '../lib/tse/saiu-hoje-brz.mjs'
+import { classificarTitulo, medirSaida, ehNacional, separarFantasmas, normalizarProtocolo } from '../lib/tse/saiu-hoje-brz.mjs'
 
 let ok = 0
 let falhas = 0
@@ -195,6 +195,58 @@ for (const ruim of [null, 'x', 42]) {
   }
   eq(lancou, true, `casas=${JSON.stringify(ruim)} tem de LANCAR`)
 }
+
+
+// ── 👻 SEPARAR FANTASMA, medido em 23/Set/2026 ────────────────────────────────
+//
+// A rota serve o BANCO e o banco nunca esquece. Naquele dia a Real Time saiu
+// como PROMETEU_E_NAO_SAIU "prometeu HOJE" e a promessa estava RETIRADA: a
+// BR-00548/2026 já não estava no arquivo do TSE, e o relatório do passo 2 a
+// marcava com 👻 na mesma rodada.
+console.log('\n🧪 separarFantasmas — o banco nunca esquece, e o TSE retira\n')
+
+const reais = [
+  { protocol: 'BR047392026', institute: 'AtlasIntel', publicationDate: '2026-09-23' },
+  { protocol: 'BR005482026', institute: 'Real Time Big Data', publicationDate: '2026-09-23' },
+  { protocol: 'BR042022026', institute: 'Real Time Big Data', publicationDate: '2026-09-24' },
+]
+
+const caso = separarFantasmas(reais, ['BR005482026'])
+eq(caso.vivas.length, 2, 'o caso real de 23/Set deixa 2 vivas')
+eq(caso.retiradas.length, 1, 'e separa 1 retirada')
+eq(caso.retiradas[0].protocol, 'BR005482026', 'a retirada é a BR-00548/2026')
+eq(caso.vivas.some((r) => r.protocol === 'BR042022026'), true, 'a OUTRA da mesma casa continua viva')
+eq(caso.suspeito, false, 'com casamento, nada de suspeito')
+
+// 🔑 o ledger grava sem pontuação e a rota pode devolver com: o casamento é
+//    por protocolo NORMALIZADO, senão o filtro vira um no-op silencioso
+eq(normalizarProtocolo('BR-00548/2026'), 'BR005482026', 'normaliza pontuação')
+eq(normalizarProtocolo('br005482026'), 'BR005482026', 'normaliza caixa')
+eq(normalizarProtocolo(null), '', 'nulo vira string vazia, nunca casa')
+eq(
+  separarFantasmas([{ protocol: 'BR-00548/2026' }], ['BR005482026']).retiradas.length,
+  1,
+  'rota com pontuação casa com ledger sem pontuação'
+)
+
+// ── ANTI-EXCESSO: sem ledger NÃO se filtra, e isso se declara ────────────────
+const semLedger = separarFantasmas(reais, null)
+eq(semLedger.vivas.length, 3, 'sem ledger nenhuma linha é cortada')
+eq(semLedger.semLedger, true, 'e o estado sai declarado')
+eq(semLedger.retiradas.length, 0, 'sem ledger não se inventa retirada')
+
+// ── ANTI-SILÊNCIO: ledger com nomes e ZERO casamento é formato que mudou ─────
+const nenhumCasou = separarFantasmas(reais, ['XX999999999'])
+eq(nenhumCasou.suspeito, true, 'ledger com fantasma e zero casamento sai SUSPEITO')
+eq(nenhumCasou.vivas.length, 3, 'e não corta nada, porque cortar seria pior')
+
+// ledger vazio não é suspeito: é arquivo sem retirada, que acontece
+eq(separarFantasmas(reais, []).suspeito, false, 'ledger vazio não é suspeito')
+// lista de servidas vazia também não acusa formato
+eq(separarFantasmas([], ['BR005482026']).suspeito, false, 'sem servidas não há o que casar')
+
+// ⛔ registro sem protocolo nunca é cortado por engano
+eq(separarFantasmas([{ institute: 'X' }], ['BR005482026']).vivas.length, 1, 'registro sem protocolo fica VIVO')
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)

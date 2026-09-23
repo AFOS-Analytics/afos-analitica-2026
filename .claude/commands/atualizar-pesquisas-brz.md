@@ -43,6 +43,12 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 
 🔑 **A pergunta é feita pelo ORQUESTRADOR e não pelo código de saída**, porque o `4` do filho cobre duas causas opostas, cache ausente e rota ilegível, e **coletar notícia não conserta rota**. A régua de data é a civil do Brasil, importada do `data-civil-brz.mjs`, nunca uma segunda cópia. Ele não coleta se o cache já existe, e falha do coletor **não vira silêncio**: o passo roda mesmo assim e declara NAO MEDIU. Para pular de propósito, `--sem-noticias`.
 
+👻 **E desde 23/Set/2026 o passo 4.5 TIRA da conta o que o TSE já retirou.** Ele lê a rota, que serve o BANCO, e o banco nunca esquece. Naquele dia a **Real Time saiu como `PROMETEU_E_NAO_SAIU` com "prometeu HOJE"**, e a promessa não existia: a `BR-00548/2026` estava RETIRADA, e o relatório do passo 2, que baixa o arquivo do TSE, **já a marcava com 👻 na MESMA rodada**. Um leitor filtrava e o irmão não, que é o caso de 20/Set outra vez.
+
+⛔ **O custo caro não é esperar número de quem cancelou**, é escrever "registrada e não divulgada" sobre um cancelamento, que é a conta que a régua do fantasma existe para impedir.
+
+📌 A fonte é o `data/tse/fantasmas.jsonl`, que o `--apply` escreve minutos antes, e por isso a **IDADE dele sai declarada**: acima de 36h ele avisa que o corte não vale. A regra mora em `separarFantasmas()`, no `lib/tse/saiu-hoje-brz.mjs`, com **14 casos plantados** e 3 de 3 mutações reprovadas. 🕳️ E ela tem anti-silêncio próprio: **ledger com fantasmas e ZERO casamento sai `suspeito`**, porque isso quase nunca é arquivo limpo e quase sempre é formato de protocolo que mudou.
+
 🏷️ **O terceiro passo é o `conferir-escopo-derivado`, e ele está encadeado por um motivo medido:** em 07/Set/2026 esse conferidor estava escrito, testado com casos plantados, e **nunca era chamado por quem publica**. Régua citada em prosa é régua que alguém pula. Saída diferente de zero ali é SINAL, e não desfaz a ingestão: **1** quer dizer GRAVE no calendário vivo, o número está certo e quem não se sustenta é o rótulo de nacional; **3**, desde 14/Set/2026, quer dizer aprovado sobre base CORTADA pelo teto de 200 linhas da rota, que vale como piso.
 
 ⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
