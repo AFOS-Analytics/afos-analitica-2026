@@ -101,6 +101,24 @@ Mas o teste mais forte não é a régua, é a **soma com os outros**: numa linha
 
 📌 **Soma fora da faixa NÃO é automaticamente defeito.** As 2 de 04/Ago eram RMG Research somando 94 e Reuters/Ipsos somando 92, as duas com o indeciso fora de "outros". Antes de desfazer, abrir a linha: se `dem` e `rep` são plausíveis e `amostra` e `margemErro` estão nos campos deles, é recorte do instituto, não coluna deslizada. **Coluna deslizada tem assinatura própria: a amostra ou a margem aparecem COMO intenção de voto.**
 
+### 📒 E a conferência dessa linha se GRAVA, régua de 23/Set/2026
+
+🔴 **O portão reprovava por CONTAGEM BRUTA, e ele já sabia a resposta.** Ele imprime "recorte do instituto" linha a linha, distinguindo do deslize, e depois **ignora a própria classificação** para decidir pelo `somaFora.length > somaForaBase`. Efeito: linha legítima já aberta na fonte reprova a passada **todo dia** enquanto estiver na janela de 30 dias, e trava que bloqueia todo dia é trava que alguém aprende a pular.
+
+✅ **O registro é `lib/us-polls/soma-conferida.mjs`**, no mesmo padrão do `instrumento-medido.mjs`: dado declarado com **URL, data da conferência e a decomposição do topline**, para poder ser reconferido e desfeito. O contador passa a ser das linhas que **ninguém abriu ainda**.
+
+| trava anti-silêncio | por quê |
+|---|---|
+| casa pelos **VALORES** (`dem`, `rep`, `outros`), não só por casa e campo | índice reescreveu o número? a conferência **CADUCA sozinha** e a linha volta a contar |
+| `ERRO_DO_INDICE` sai do contador e **nunca da saída** | é dívida aberta contra a origem, impressa em toda passada com a decomposição |
+| entrada sem `url` ou sem `conferidoEm` **reprova a carga** | conferência sem prova é opinião, e opinião não desarma portão |
+
+⛔ **Ele não corrige valor nenhum.** A Wikipédia é o ÍNDICE, e mexer no número à mão muda a procedência.
+
+🔴 **O caso que o criou, 23/Set/2026.** A Marquette de 2-9/Set foi ao ar com `outros = 8`, e o topline de **likely voters** do instituto diz D 315 (54%), R 242 (41%), **Neither 25 (4%)**. O 8 é o "Neither" do recorte de **ADULTOS**. E a própria Wikipédia se contradiz: a célula traz `8%` e anexa a nota chamada **`Neither4`**, cujo texto é *"Neither" with 4%*. **D e R estão corretos, então a média não é afetada**, e é por isso que o defeito sobrevive: ele mora no único campo que não entra em conta nenhuma, que é justamente o que faz o teste da soma funcionar.
+
+🧪 `node scripts/testar-soma-conferida.mjs`, **32 asserções e no CI**, com **7 de 7 mutações reprovadas**. Metade é anti-silêncio, porque o erro simétrico deste conserto é um portão que nunca mais reprova.
+
 🏷️ **O campo da fonte chama `fontePrimaria`, não `fonte`.** Contar com o nome errado devolve "351 de 351 sem fonte primária", que parece achado gravíssimo e é laço vazio. **Usar o contador que o próprio arquivo declara, `qualidade.semFontePrimaria`**, em vez de recalcular por conta própria. Campos reais de uma linha: `instituto`, `campoInicio`, `campoFim`, `amostra`, `amostraTipo`, `margemErro`, `dem`, `rep`, `outros`, `vantagemDem`, `fontePrimaria`.
 
 ### 🔴 O defeito de 01/Ago, para reconhecer se voltar

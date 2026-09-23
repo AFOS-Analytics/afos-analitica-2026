@@ -42,6 +42,7 @@
 import { readFileSync } from 'fs'
 import { execFileSync } from 'child_process'
 import { comparar, conferirSubtracao, mediaDe, veredito } from '../lib/us-polls/atribuicao.mjs'
+import { separarPorConferencia, validarRegistro } from '../lib/us-polls/soma-conferida.mjs'
 
 const arg = (n, padrao) =>
   process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? padrao
@@ -156,12 +157,21 @@ const somaFora = linhas.map((p) => ({ p, s: soma(p) })).filter((x) => x.s < SOMA
 const deslizadas = somaFora.filter((x) => assinaturaDeDeslize(x.p))
 const recortes = somaFora.filter((x) => !assinaturaDeDeslize(x.p))
 
-const somaForaBase = base
-  ? (base.polls ?? []).map(soma).filter((s) => s < SOMA_MIN || s > SOMA_MAX).length
+const somaForaBaseLinhas = base
+  ? (base.polls ?? []).map((p) => ({ p, s: soma(p) })).filter((x) => x.s < SOMA_MIN || x.s > SOMA_MAX)
   : null
-const cresceuForaDaFaixa = somaForaBase !== null && somaFora.length > somaForaBase
+const somaForaBase = somaForaBaseLinhas ? somaForaBaseLinhas.length : null
 
-const passaContaminacao = foraDaRegua.length === 0 && deslizadas.length === 0 && !cresceuForaDaFaixa
+// 🔑 O "CRESCEU" conta o que NINGUÉM ABRIU AINDA, não a contagem bruta: linha já
+// conferida no topline do instituto não é assinatura de formato novo, e mantê-la
+// no contador reprovaria a passada todo dia. → lib/us-polls/soma-conferida.mjs
+const problemasDoRegistro = validarRegistro()
+const aqui = separarPorConferencia(somaFora)
+const naBase = somaForaBaseLinhas ? separarPorConferencia(somaForaBaseLinhas) : null
+const cresceuForaDaFaixa = naBase !== null && aqui.naoConferidas.length > naBase.naoConferidas.length
+
+const passaContaminacao =
+  foraDaRegua.length === 0 && deslizadas.length === 0 && !cresceuForaDaFaixa && problemasDoRegistro.length === 0
 
 console.log(`   ${marca(passaContaminacao)} contaminação  (varrendo TODAS as ${linhas.length} linhas)`)
 console.log(`        fora da régua ${MIN_PCT}-${MAX_PCT}%: ${foraDaRegua.length}`)
@@ -171,17 +181,35 @@ for (const p of foraDaRegua.slice(0, 8)) {
 console.log(
   `        soma D+R+outros fora de ${SOMA_MIN}-${SOMA_MAX}: ${somaFora.length}` +
     (somaForaBase === null ? '' : ` (base tinha ${somaForaBase})`) +
+    `, das quais ${aqui.naoConferidas.length} NÃO abertas na fonte` +
+    (naBase === null ? '' : ` (base tinha ${naBase.naoConferidas.length})`) +
     (cresceuForaDaFaixa ? `  ${cor.mau}← CRESCEU: a origem pode ter mudado de formato${cor.fim}` : '')
 )
 for (const x of deslizadas) {
   console.log(`          ${cor.mau}DESLIZE${cor.fim} ${x.p.instituto} ${x.p.campoFim} · soma ${x.s} · ${assinaturaDeDeslize(x.p)}`)
 }
-for (const x of recortes) {
+for (const x of aqui.naoConferidas) {
   console.log(
-    `          recorte do instituto: ${x.p.instituto} ${x.p.campoInicio}→${x.p.campoFim} · ` +
-      `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s} · amostra ${x.p.amostra} ${x.p.amostraTipo ?? ''} · margem ${x.p.margemErro}`
+    `          ${cor.mau}NÃO ABERTA${cor.fim} ${x.p.instituto} ${x.p.campoInicio}→${x.p.campoFim} · ` +
+      `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s} · amostra ${x.p.amostra} ${x.p.amostraTipo ?? ''} · margem ${x.p.margemErro}` +
+      `\n            abrir o topline do instituto e registrar em lib/us-polls/soma-conferida.mjs`
   )
 }
+for (const x of aqui.recorteConferido) {
+  console.log(
+    `          recorte do instituto, CONFERIDO em ${x.entrada.conferidoEm}: ${x.p.instituto} ${x.p.campoInicio}→${x.p.campoFim} · ` +
+      `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s}`
+  )
+}
+// Dívida aberta contra a origem: sai do contador porque já foi investigada, e
+// aparece em TODA passada porque continua errada lá fora.
+for (const x of aqui.erroDoIndice) {
+  console.log(
+    `          ${cor.mau}ERRO DO ÍNDICE${cor.fim}, conferido em ${x.entrada.conferidoEm}: ${x.p.instituto} ${x.p.campoInicio}→${x.p.campoFim} · ` +
+      `D ${x.p.dem} R ${x.p.rep} outros ${x.p.outros} = ${x.s}\n            ${x.entrada.decomposicao}`
+  )
+}
+for (const p of problemasDoRegistro) console.log(`          ${cor.mau}REGISTRO INVÁLIDO${cor.fim}: ${p}`)
 console.log(
   `        descartadas por valor ${num(qb?.descartadasPorValor)} → ${num(q.descartadasPorValor)}` +
     (qb && q.descartadasPorValor > qb.descartadasPorValor ? `  ${cor.mau}← subiu: olhar o parseTabela${cor.fim}` : '')
@@ -254,9 +282,39 @@ if (m && mb) {
       console.log(`            conferir NA FONTE: D e R, recorte (LV/RV/A), amostra e margem. O índice não é a fonte.`)
     }
     if (dif.mudaram.length) {
-      console.log(
-        `        corrigidas na origem: ${dif.mudaram.map((x) => rot(x.antes) + ' → ' + rot(x.depois)).join(' · ')}`
-      )
+      // 🔑 "Corrigida na origem" afirma que a Wikipédia mudou o número, e isso
+      // nem sempre é o que houve: quando a curada se aposenta porque o índice
+      // finalmente indexou a onda, a linha TROCA DE PROCEDÊNCIA e os valores
+      // podem mudar sem ninguém ter corrigido nada. Medido em 23/Set/2026: a
+      // UMass de 21-26/Ago foi de D+7.00 para D+8.00 porque a curada lia o
+      // tópico SEM leaners (D 40 x R 33) e o índice publica COM (D 42 x R 34).
+      // Chamar isso de correção esconde uma troca de instrumento de leitura.
+      // A chave de `comparar` é instituto|campoFim, e `incluidas` nem sempre
+      // carrega campoInicio: casar só pelo que existe nos dois lados.
+      const ondeEsta = (arq, x) =>
+        (arq?.polls ?? []).find(
+          (p) =>
+            p.instituto === x.instituto &&
+            p.campoFim === x.campoFim &&
+            (x.amostraTipo == null || p.amostraTipo === x.amostraTipo) &&
+            (x.dem == null || Number(p.dem) === Number(x.dem))
+        )?.origem ?? null
+      const trocouProcedencia = []
+      const corrigidas = []
+      for (const x of dif.mudaram) {
+        const de = ondeEsta(base, x.antes)
+        const para = ondeEsta(atual, x.depois)
+        ;(de && para && de !== para ? trocouProcedencia : corrigidas).push({ ...x, de, para })
+      }
+      if (corrigidas.length) {
+        console.log(`        corrigidas na origem: ${corrigidas.map((x) => rot(x.antes) + ' → ' + rot(x.depois)).join(' · ')}`)
+      }
+      for (const x of trocouProcedencia) {
+        console.log(
+          `        ${cor.aviso ?? ''}trocou de PROCEDÊNCIA${cor.fim}, não foi correção: ${rot(x.antes)} → ${rot(x.depois)}` +
+            `\n            ${x.de} → ${x.para}. A curada se aposentou porque o índice indexou a onda, e os dois leem a mesma rodada de jeitos diferentes.`
+        )
+      }
     }
     for (const pb of conferirSubtracao(mb.incluidas, m.incluidas, dif)) {
       passaAtribuicao = false

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-22",
-  "fetchedAt": "2026-09-22T15:44:05.540Z",
+  "lastUpdate": "2026-09-23",
+  "fetchedAt": "2026-09-23T16:02:24.496Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -19,20 +19,16 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 29,
+      "quantas": 19,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
         "Activote",
-        "Cygnal (R)",
-        "Focaldata/Financial Times",
         "Fox News",
         "Marquette Law School",
-        "McLaughlin & Associates (R)",
         "Quantus Insights (R)",
         "Reuters/Ipsos",
         "The Economist/YouGov",
-        "The Honest Poll",
-        "UMass Amherst/YouGov"
+        "The Honest Poll"
       ],
       "decididoEm": {
         "The Economist/YouGov": "2026-09-04",
@@ -47,9 +43,44 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-23",
-    "nPesquisas": 23,
+    "desde": "2026-08-24",
+    "nPesquisas": 39,
     "incluidas": [
+      {
+        "instituto": "ActiVote",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 47
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 38
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-09-20",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 43
+      },
+      {
+        "instituto": "Reuters/Ipsos",
+        "campoFim": "2026-09-20",
+        "amostraTipo": "RV",
+        "dem": 43,
+        "rep": 35
+      },
+      {
+        "instituto": "Quantus Insights (R)",
+        "campoFim": "2026-09-18",
+        "amostraTipo": "LV",
+        "dem": 50,
+        "rep": 42
+      },
       {
         "instituto": "John Zogby Strategies",
         "campoFim": "2026-09-17",
@@ -58,18 +89,32 @@
         "rep": 40
       },
       {
-        "instituto": "Big Data Poll/Public Polling Project",
+        "instituto": "Big Data Poll (R)",
         "campoFim": "2026-09-15",
         "amostraTipo": "LV",
         "dem": 48,
         "rep": 37
       },
       {
-        "instituto": "Napolitan News/RMG Research",
+        "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "RV",
+        "dem": 50,
+        "rep": 45
+      },
+      {
+        "instituto": "RMG Research",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
         "dem": 51,
         "rep": 43
+      },
+      {
+        "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "RV",
+        "dem": 51,
+        "rep": 44
       },
       {
         "instituto": "Fox News",
@@ -86,11 +131,32 @@
         "rep": 37
       },
       {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 39
+      },
+      {
         "instituto": "The Rainey Center",
         "campoFim": "2026-09-14",
         "amostraTipo": "RV",
         "dem": 48,
         "rep": 42
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-09-13",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 43
+      },
+      {
+        "instituto": "New York Times/Siena College",
+        "campoFim": "2026-09-13",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 43
       },
       {
         "instituto": "The Honest Poll",
@@ -114,6 +180,13 @@
         "rep": 47.7
       },
       {
+        "instituto": "ActiVote",
+        "campoFim": "2026-09-10",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 48
+      },
+      {
         "instituto": "Catawba College/YouGov",
         "campoFim": "2026-09-09",
         "amostraTipo": "LV",
@@ -126,6 +199,34 @@
         "amostraTipo": "LV",
         "dem": 54,
         "rep": 41
+      },
+      {
+        "instituto": "Marquette University Law School",
+        "campoFim": "2026-09-09",
+        "amostraTipo": "LV",
+        "dem": 54,
+        "rep": 41
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoFim": "2026-09-08",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 38
+      },
+      {
+        "instituto": "Morning Consult",
+        "campoFim": "2026-09-06",
+        "amostraTipo": "RV",
+        "dem": 46,
+        "rep": 42
+      },
+      {
+        "instituto": "Quinnipiac University",
+        "campoFim": "2026-09-06",
+        "amostraTipo": "RV",
+        "dem": 49,
+        "rep": 38
       },
       {
         "instituto": "Cygnal (R)",
@@ -180,8 +281,8 @@
         "instituto": "UMass Amherst/YouGov",
         "campoFim": "2026-08-26",
         "amostraTipo": "A",
-        "dem": 40,
-        "rep": 33
+        "dem": 42,
+        "rep": 34
       },
       {
         "instituto": "Activote",
@@ -189,6 +290,13 @@
         "amostraTipo": "LV",
         "dem": 51.7,
         "rep": 48.3
+      },
+      {
+        "instituto": "ActiVote",
+        "campoFim": "2026-08-24",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 48
       },
       {
         "instituto": "McLaughlin & Associates (R)",
@@ -212,25 +320,32 @@
         "rep": 40
       }
     ],
-    "nInstitutos": 18,
-    "dem": 48.6,
-    "rep": 41.6,
-    "vantagemDem": 7,
+    "nInstitutos": 25,
+    "dem": 49.27,
+    "rep": 41.84,
+    "vantagemDem": 7.43,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
+      "ActiVote",
       "Activote",
-      "Big Data Poll/Public Polling Project",
+      "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "Big Data Poll (R)",
       "CBS News/YouGov",
       "Catawba College/YouGov",
       "Cygnal (R)",
       "Focaldata/Financial Times",
       "Fox News",
+      "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
       "Marquette Law School",
+      "Marquette University Law School",
       "McLaughlin & Associates (R)",
-      "Napolitan News/RMG Research",
+      "Morning Consult",
+      "New York Times/Siena College",
       "Quantus Insights (R)",
+      "Quinnipiac University",
+      "RMG Research",
       "Reuters/Ipsos",
       "The Economist/YouGov",
       "The Honest Poll",
@@ -239,18 +354,123 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 390,
-    "publicadas": 419,
+    "linhasLidas": 424,
+    "publicadas": 443,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 390,
-    "curadas": 29,
-    "curadasDescartadasPorDuplicidade": 0
+    "doIndice": 424,
+    "curadas": 19,
+    "curadasDescartadasPorDuplicidade": 10
   },
   "polls": [
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-18",
+      "campoFim": "2026-09-21",
+      "amostra": 975,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 38,
+      "outros": 10,
+      "vantagemDem": 14,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_5WiMaRX.pdf#page=43",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-18",
+      "campoFim": "2026-09-21",
+      "amostra": 1394,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 45,
+      "rep": 36,
+      "outros": 18,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_5WiMaRX.pdf#page=43",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-21",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 53,
+      "rep": 47,
+      "outros": null,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-09-22/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-18",
+      "campoFim": "2026-09-20",
+      "amostra": 18336,
+      "amostraTipo": "LV",
+      "margemErro": 0.9,
+      "dem": 50,
+      "rep": 43,
+      "outros": 7,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-17",
+      "campoFim": "2026-09-20",
+      "amostra": 979,
+      "amostraTipo": "RV",
+      "margemErro": 3.2,
+      "dem": 43,
+      "rep": 35,
+      "outros": 9,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/en-us/republicans-rating-trump-cost-living-declines",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-17",
+      "campoFim": "2026-09-20",
+      "amostra": 1277,
+      "amostraTipo": "A",
+      "margemErro": 2.8,
+      "dem": 37,
+      "rep": 29,
+      "outros": 19,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/en-us/republicans-rating-trump-cost-living-declines",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Quantus Insights (R)",
+      "campoInicio": "2026-09-15",
+      "campoFim": "2026-09-18",
+      "amostra": 1389,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 50,
+      "rep": 42,
+      "outros": 8,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://quantusinsights.org/f/quantus-survey-democrats-hold-big-midterm-lead-over-republicans",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "John Zogby Strategies",
       "campoInicio": "2026-09-15",
@@ -282,7 +502,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Big Data Poll/Public Polling Project",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-09-13",
       "campoFim": "2026-09-15",
       "amostra": 2633,
@@ -297,7 +517,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Big Data Poll/Public Polling Project",
+      "instituto": "Big Data Poll (R)",
       "campoInicio": "2026-09-13",
       "campoFim": "2026-09-15",
       "amostra": 2947,
@@ -312,7 +532,22 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Napolitan News/RMG Research",
+      "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-15",
+      "amostra": 1000,
+      "amostraTipo": "RV",
+      "margemErro": 3.1,
+      "dem": 50,
+      "rep": 45,
+      "outros": 5,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.nbcnews.com/politics/2026-election/poll-voters-say-trump-hurt-economy-competitive-midterm-election-looms-rcna597868",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "RMG Research",
       "campoInicio": "2026-09-08",
       "campoFim": "2026-09-15",
       "amostra": 2000,
@@ -324,6 +559,81 @@
       "vantagemDem": 8,
       "fontePrimaria": "https://napolitannews.org/posts/generic-ballot-first-likely-voter-numbers-have-dems-ahead-6",
       "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 896,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 44,
+      "rep": 37,
+      "outros": 19,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1143,
+      "amostraTipo": "A",
+      "margemErro": 3,
+      "dem": 39,
+      "rep": 31,
+      "outros": 30,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1211,
+      "amostraTipo": "RV",
+      "margemErro": 3,
+      "dem": 51,
+      "rep": 44,
+      "outros": 5,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.foxnews.com/politics/fox-news-poll-squeezed-costs-frustrated-voters-turn-democrats",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1051,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 51,
+      "rep": 39,
+      "outros": 10,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ZmVljW6.pdf#page=92",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-11",
+      "campoFim": "2026-09-14",
+      "amostra": 1455,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 44,
+      "rep": 39,
+      "outros": 17,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_ZmVljW6.pdf#page=92",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -361,44 +671,34 @@
       "origem": "listagem-do-instituto"
     },
     {
-      "instituto": "Reuters/Ipsos",
-      "campoInicio": "2026-09-11",
-      "campoFim": "2026-09-14",
-      "amostra": 896,
-      "amostraTipo": "RV",
-      "margemErro": 3.4,
-      "dem": 44,
-      "rep": 37,
-      "outros": 18,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
-      "opcoes": {
-        "outroPartido": 2,
-        "naoSabe": 12,
-        "naoVotara": 4,
-        "pulou": 0
-      },
-      "origem": "listagem-do-instituto"
+      "instituto": "New York Times/Siena College",
+      "campoInicio": "2026-09-08",
+      "campoFim": "2026-09-13",
+      "amostra": 1503,
+      "amostraTipo": "LV",
+      "margemErro": 2.9,
+      "dem": 51,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.nytimes.com/2026/09/15/us/politics/trump-midterm-election-poll.html",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Reuters/Ipsos",
-      "campoInicio": "2026-09-11",
-      "campoFim": "2026-09-14",
-      "amostra": 1143,
-      "amostraTipo": "A",
-      "margemErro": 3,
-      "dem": 39,
-      "rep": 31,
-      "outros": 29,
-      "vantagemDem": 8,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20Survey%20September%202026%20FULL.pdf",
-      "opcoes": {
-        "outroPartido": 2,
-        "naoSabe": 13,
-        "naoVotara": 13,
-        "pulou": 1
-      },
-      "origem": "listagem-do-instituto"
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-07",
+      "campoFim": "2026-09-13",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 49,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 6,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "The Honest Poll",
@@ -454,6 +754,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-08-31",
+      "campoFim": "2026-09-10",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 52,
+      "rep": 48,
+      "outros": null,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-09-11/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Activote",
       "campoInicio": "2026-08-31",
       "campoFim": "2026-09-10",
@@ -500,6 +815,51 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-09-02",
+      "campoFim": "2026-09-09",
+      "amostra": 581,
+      "amostraTipo": "LV",
+      "margemErro": 4.3,
+      "dem": 54,
+      "rep": 41,
+      "outros": 8,
+      "vantagemDem": 13,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/09/16/detailed-results-of-the-marquette-law-school-supreme-court-poll-september-2-9-2026/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-09-02",
+      "campoFim": "2026-09-09",
+      "amostra": 864,
+      "amostraTipo": "RV",
+      "margemErro": 3.6,
+      "dem": 50,
+      "rep": 42,
+      "outros": 8,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/09/16/detailed-results-of-the-marquette-law-school-supreme-court-poll-september-2-9-2026/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Marquette University Law School",
+      "campoInicio": "2026-09-02",
+      "campoFim": "2026-09-09",
+      "amostra": 1023,
+      "amostraTipo": "A",
+      "margemErro": 3.3,
+      "dem": 48,
+      "rep": 39,
+      "outros": 13,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://law.marquette.edu/poll/2026/09/16/detailed-results-of-the-marquette-law-school-supreme-court-poll-september-2-9-2026/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Marquette Law School",
       "campoInicio": "2026-09-02",
       "campoFim": "2026-09-09",
@@ -534,21 +894,64 @@
       "origem": "listagem-do-instituto"
     },
     {
-      "instituto": "Cygnal (R)",
-      "campoInicio": "2026-09-01",
-      "campoFim": "2026-09-02",
-      "amostra": 1500,
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-04",
+      "campoFim": "2026-09-08",
+      "amostra": 1015,
       "amostraTipo": "LV",
-      "margemErro": 2.53,
-      "dem": 51,
+      "margemErro": null,
+      "dem": 49,
+      "rep": 38,
+      "outros": 13,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SlcWdVd.pdf#page=32",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-09-04",
+      "campoFim": "2026-09-08",
+      "amostra": 1464,
+      "amostraTipo": "RV",
+      "margemErro": 3.4,
+      "dem": 42,
+      "rep": 35,
+      "outros": 23,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_SlcWdVd.pdf#page=32",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Morning Consult",
+      "campoInicio": "2026-09-04",
+      "campoFim": "2026-09-06",
+      "amostra": 2203,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 46,
       "rep": 42,
-      "outros": 7,
-      "vantagemDem": 9,
-      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/09/24524-Cygnal-National-Sept26-NVT-Deck-Public-1.pdf",
-      "opcoes": {
-        "complementoNaoLido": 7
-      },
-      "origem": "listagem-do-instituto"
+      "outros": 12,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Quinnipiac University",
+      "campoInicio": "2026-09-03",
+      "campoFim": "2026-09-06",
+      "amostra": 970,
+      "amostraTipo": "RV",
+      "margemErro": 3.9,
+      "dem": 49,
+      "rep": 38,
+      "outros": 13,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://poll.qu.edu/poll-release?releaseid=3965",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "Focaldata/Financial Times",
@@ -561,14 +964,24 @@
       "rep": 45,
       "outros": 3,
       "vantagemDem": 7,
-      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
-      "opcoes": {
-        "outro": 3,
-        "naoVotara": 0
-      },
-      "notas": "Pos-squeeze, cru D 51,98 x R 44,92 x outro 3,10.",
-      "comLeaners": true,
-      "origem": "listagem-do-instituto"
+      "fontePrimaria": "https://www.focaldata.com/blog/trump-approval-hits-record-low-as-democrats-extend-house-lead",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Focaldata/Financial Times",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-09-02",
+      "amostra": 1837,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 51,
+      "rep": 44,
+      "outros": 5,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.focaldata.com/blog/trump-approval-hits-record-low-as-democrats-extend-house-lead",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "Focaldata/Financial Times",
@@ -581,34 +994,39 @@
       "rep": 42,
       "outros": 9,
       "vantagemDem": 7,
-      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
-      "opcoes": {
-        "outro": 4,
-        "naoVotara": 5
-      },
-      "notas": "Pos-squeeze, cru D 48,72 x R 42,26.",
-      "comLeaners": true,
-      "origem": "listagem-do-instituto"
+      "fontePrimaria": "https://www.focaldata.com/blog/trump-approval-hits-record-low-as-democrats-extend-house-lead",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "Focaldata/Financial Times",
       "campoInicio": "2026-08-28",
       "campoFim": "2026-09-02",
-      "amostra": 2180,
+      "amostra": 2178,
       "amostraTipo": "A",
       "margemErro": null,
       "dem": 46,
       "rep": 41,
       "outros": 13,
       "vantagemDem": 5,
-      "fontePrimaria": "https://landing.focaldata.com/hubfs/Marketing%20content/Focaldata_US_Midterms_Poll_Sep2026_formatted.xlsx",
-      "opcoes": {
-        "outro": 4,
-        "naoVotara": 9
-      },
-      "notas": "Pos-squeeze, cru D 46,33 x R 40,55. A aba Info declara 2178 adultos.",
-      "comLeaners": true,
-      "origem": "listagem-do-instituto"
+      "fontePrimaria": "https://www.focaldata.com/blog/trump-approval-hits-record-low-as-democrats-extend-house-lead",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Cygnal (R)",
+      "campoInicio": "2026-09-01",
+      "campoFim": "2026-09-02",
+      "amostra": 1500,
+      "amostraTipo": "LV",
+      "margemErro": 2.5,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/09/24524-Cygnal-National-Sept26-NVT-Deck-Public-1.pdf#page=27",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "The Honest Poll",
@@ -668,6 +1086,36 @@
       "origem": "listagem-do-instituto"
     },
     {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-31",
+      "amostra": 924,
+      "amostraTipo": "RV",
+      "margemErro": 3.3,
+      "dem": 43,
+      "rep": 38,
+      "outros": 19,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Reuters/Ipsos",
+      "campoInicio": "2026-08-28",
+      "campoFim": "2026-08-31",
+      "amostra": 1167,
+      "amostraTipo": "A",
+      "margemErro": 2.9,
+      "dem": 38,
+      "rep": 31,
+      "outros": 31,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-08-28",
       "campoFim": "2026-08-31",
@@ -702,46 +1150,6 @@
         "other": 1,
         "naoSabe": 8,
         "naoVotara": 23
-      },
-      "origem": "listagem-do-instituto"
-    },
-    {
-      "instituto": "Reuters/Ipsos",
-      "campoInicio": "2026-08-28",
-      "campoFim": "2026-08-31",
-      "amostra": 924,
-      "amostraTipo": "RV",
-      "margemErro": 3.3,
-      "dem": 43,
-      "rep": 38,
-      "outros": 19,
-      "vantagemDem": 5,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
-      "opcoes": {
-        "outroPartido": 2,
-        "naoSabe": 14,
-        "naoVotara": 3,
-        "pulou": 0
-      },
-      "origem": "listagem-do-instituto"
-    },
-    {
-      "instituto": "Reuters/Ipsos",
-      "campoInicio": "2026-08-28",
-      "campoFim": "2026-08-31",
-      "amostra": 1167,
-      "amostraTipo": "A",
-      "margemErro": 2.9,
-      "dem": 38,
-      "rep": 31,
-      "outros": 30,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-09/Reuters%20Ipsos%20August%202026%20Poll%20Topline%20FULL%208.31.pdf",
-      "opcoes": {
-        "outroPartido": 3,
-        "naoSabe": 14,
-        "naoVotara": 13,
-        "pulou": 0
       },
       "origem": "listagem-do-instituto"
     },
@@ -798,18 +1206,44 @@
       "campoFim": "2026-08-26",
       "amostra": 1000,
       "amostraTipo": "A",
-      "margemErro": 3.5,
-      "dem": 40,
-      "rep": 33,
-      "outros": 28,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://www.umass.edu/poll/sites/default/files/2026-09/August2026NationalPollMidtermCongressToplines.pdf",
-      "opcoes": {
-        "independente": 9,
-        "naoSabe": 19
-      },
-      "notas": "Coluna With Leaners: D 42 x R 34, independente 10, nao sabe 14.",
-      "origem": "listagem-do-instituto"
+      "margemErro": 4.1,
+      "dem": 42,
+      "rep": 34,
+      "outros": 14,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.umass.edu/poll/about/reports/2026-09-national-public-opinion-poll-0",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "McLaughlin & Associates (R)",
+      "campoInicio": "2026-08-14",
+      "campoFim": "2026-08-24",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 48,
+      "rep": 43,
+      "outros": 9,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/08/National-August-Presentation-RELEASE.pdf",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-08-10",
+      "campoFim": "2026-08-24",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 52,
+      "rep": 48,
+      "outros": null,
+      "vantagemDem": 4,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-08-24/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "The Economist/YouGov",
@@ -887,25 +1321,6 @@
         "naoVotara": 16,
         "pulou": 1
       },
-      "origem": "listagem-do-instituto"
-    },
-    {
-      "instituto": "McLaughlin & Associates (R)",
-      "campoInicio": "2026-08-18",
-      "campoFim": "2026-08-24",
-      "amostra": 1000,
-      "amostraTipo": "LV",
-      "margemErro": null,
-      "dem": 48,
-      "rep": 43,
-      "outros": 9,
-      "vantagemDem": 5,
-      "fontePrimaria": "https://mclaughlinonline.com/pols/wp-content/uploads/2026/08/National-August-Presentation-RELEASE.pdf",
-      "opcoes": {
-        "indeciso": 9
-      },
-      "notas": "DEM 48 = 32 definitely + 8 probably + 7 lean; GOP 43 = 30 + 9 + 5.",
-      "comLeaners": true,
       "origem": "listagem-do-instituto"
     },
     {
@@ -1064,6 +1479,21 @@
       "outros": 12,
       "vantagemDem": 4,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Angus Reid Global",
+      "campoInicio": "2026-08-08",
+      "campoFim": "2026-08-11",
+      "amostra": 1525,
+      "amostraTipo": "A",
+      "margemErro": 2,
+      "dem": 45,
+      "rep": 36,
+      "outros": 19,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://angusreid.us/congressional-generic-ballot-democrats-lead-53-43/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
