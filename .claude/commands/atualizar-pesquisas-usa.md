@@ -45,6 +45,30 @@ Ele **PARA no portão do Passo 2** se o veredito for REPROVADO, porque os medido
 
 Os passos abaixo continuam valendo como a descrição do que cada peça faz e de como ler a saída.
 
+## 🗺️ A TABELA MUDOU DE LUGAR, e ela pode mudar de novo (25/Set/2026)
+
+🔴 **A Wikipédia tirou a tabela do generic ballot do corpo do artigo.** A seção `==Polling==` do `2026 United States elections` ficou com duas linhas:
+
+```
+==Polling==
+{{2026 United States elections/polling}}
+```
+
+A tabela foi para `Template:2026 United States elections/polling`, e **`?action=raw` devolve wikitext NÃO EXPANDIDO**: a tabela simplesmente não vem mais. O artigo ficou com **zero wikitable**, a leitura caiu de **424 linhas para 0** e o portão do Passo 2 reprovou a passada.
+
+✅ **O coletor agora MEDE onde a tabela mora**, em `localizarFonteDaTabela()`: tabela inline na seção vence sempre, e na falta dela ele segue a transclusão. O caminho usado sai declarado em `procedencia.fonteDaTabela`, com a página de onde a tabela veio e a data em que a mudança foi notada. **Conferir esse campo quando a contagem der salto estranho.**
+
+| régua | por quê |
+|---|---|
+| a seção termina no **próximo cabeçalho de nível 2** | delimitar pelo primeiro `|}` é circular: a tabela é justamente o que pode faltar, e a tabela da seção SEGUINTE faria esta parecer inline |
+| moldura e nota de rodapé **não são a fonte** | `{{Main}}`, `{{See also}}`, `{{sticky header}}` e afins estão numa lista de exclusão. Pegar o primeiro `{{...}}` escolheria o hatnote |
+| sem tabela **e** sem transclusão, **LANÇA** | zero pesquisa é saída plausível num dia sem divulgação, e é por isso que aqui não se devolve vazio |
+| a subpágina tem **DUAS** tabelas | `===2025–2026===` e `===2024–2025===`. Só a primeira está em cena, e é a que reproduz o escopo de sempre: 432 linhas contra as 424 da véspera |
+
+🕳️ **E havia um defeito NOSSO no mesmo par de âncoras.** O início (`==Polling==`) era conferido e lançava; o **fim** (`\n|}`) não era. `slice(ini, -1)` é fatia **válida** em JS, então com `indexOf` devolvendo -1 o parser seguia lendo até o fim do artigo como se aquilo fosse a tabela. Naquele dia não produziu linha contaminada só porque o pedaço restante não tinha nenhum `|-`. **Assimetria de guarda entre duas âncoras do mesmo par é defeito silencioso, não estilo.**
+
+🧪 `node scripts/testar-fonte-da-tabela-us.mjs`, **19 asserções e no CI**, com 6 de 6 mutações reprovadas. Metade é anti-silêncio e metade é anti-excesso.
+
 ## Passo 1: gerar o arquivo
 
 ```bash
@@ -55,9 +79,15 @@ Opções: `--dias=30` (janela da média, padrão 30) e `--out=caminho` (padrão 
 
 ## Passo 2 (BLOQUEANTE): conferir que a leitura não colapsou NEM se contaminou
 
-🔴 **O script NÃO tem portão de segurança, e o cron TEM.** Esta assimetria é real e é a razão deste passo existir.
+🔴 **O script NÃO tem portão de segurança, e o cron tem um portão que já mediu a coisa ERRADA.** A assimetria continua sendo a razão deste passo existir, e a frase antiga, que dizia só "o cron TEM", foi corrigida em 25/Set/2026 depois de a rota gravar leitura de índice vazio com `ok: true`.
 
-A rota do cron se recusa a gravar leitura vazia por cima de uma boa: Wikipédia fora do ar, mudança de estrutura da página ou parse quebrado chegam como zero pesquisas, e ela devolve 502 sem gravar. **O script escreve o arquivo de qualquer jeito.**
+A rota se recusa a gravar leitura vazia por cima de uma boa: Wikipédia fora do ar, mudança de estrutura da página ou parse quebrado chegam como zero pesquisas, e ela devolve 502 sem gravar. **O script escreve o arquivo de qualquer jeito.**
+
+⚠️ **Mas o portão da rota media a SAÍDA, e o que colapsa é a ENTRADA.** O teste era `!polls.length || !mediaAfos`, e as rodadas **CURADAS** entram depois dos dois portões de linha: são lista declarada em `lib/us-polls/rodadas-curadas.mjs` e existem esteja a Wikipédia de pé ou não. Em 25/Set eram **29**, e 29 é mais que zero, então o portão que existe para recusar leitura vazia deixou passar leitura **nenhuma**: gravou `lidas 0 · pub 29 · n 12 · D+7.70 · campo mais recente 14/Set` por cima de `lidas 430 · pub 449 · n 38 · D+7.98 · campo 21/Set`, com **HTTP 200**.
+
+✅ A regra saiu da rota e virou `lib/us-polls/portao-gravacao.mjs`, com `linhasLidas === 0` recusando a gravação, guarda de **tipo** e não de valor (`Number(true)` é 1 e `Number(null)` é 0, os dois finitos) e a curada declarada na resposta. 🧪 `node scripts/testar-portao-gravacao-us.mjs`, **25 asserções e no CI**, com **7 de 7 mutações reprovadas**, incluindo o conserto TENTADOR que estaria errado (recusar só quando não houver curada) e a anti-excesso que proíbe transformar isso em "recusa leitura pequena".
+
+⛔ **A regra é ZERO, nunca "pouco".** Uma linha lida é leitura, por magra que seja, e quem julga queda parcial é o `conferir-us-polls.mjs`, que compara contra a base do git. Duas regras para a mesma pergunta é o defeito que este comando passa a vida evitando.
 
 ⚠️ **São DOIS defeitos possíveis, e só um deles encolhe o arquivo.** Em 01/Ago/2026 a coleta CRESCEU de 278 para 282 linhas e mesmo assim publicou lixo. Conferir só o tamanho não basta.
 
@@ -145,6 +175,10 @@ Resposta boa traz `ok: true`, `lastUpdate`, `lidas`, `publicadas`, `descartadasP
 **Resposta 502 com `motivo: "leitura vazia ou sem média; nada foi gravado"` não é falha do comando: é o portão funcionando.** Nada foi sobrescrito. Investigar a origem, não repetir a chamada.
 
 ⚠️ **401 e 502 querem coisas opostas.** O 502 manda investigar a origem e NÃO repetir. O 401 é só o segredo não ter chegado: corrigir a chamada e repetir é o certo. Confundir os dois faz perder uma rodada.
+
+🔴 **E `ok: true` NÃO é prova de leitura boa. Ler o campo `lidas` da resposta, sempre.** Em 25/Set/2026 esta chamada devolveu `{"ok":true,...,"lidas":0,"publicadas":29,...}` com HTTP 200 e **gravou**, porque as curadas seguravam o portão satisfeito. Depois do conserto a mesma situação sai com `motivo: "o ÍNDICE devolveu zero linha; as curadas não substituem o índice e nada foi gravado"`.
+
+⛔ **E esta chamada roda CÓDIGO PUBLICADO, não o local.** Consertar o coletor no repositório não conserta a fonte viva: enquanto não houver `vercel --prod`, o cron das 07:10Z segue lendo com o código antigo. Isto inverte a regra do fim deste arquivo, que diz que o Neon não precisa de deploy: ela vale quando o conserto é do ARQUIVO, e não quando é da LÓGICA DE LEITURA, que os dois compartilham.
 
 ## Passo 4: relatar
 

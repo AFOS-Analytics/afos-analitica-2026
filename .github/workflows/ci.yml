@@ -143,6 +143,8 @@ jobs:
           node scripts/testar-ruido-da-janela-us.mjs
           node scripts/testar-congelamento-do-campo-us.mjs
           node scripts/testar-agregador-na-fonte-us.mjs
+          node scripts/testar-fonte-da-tabela-us.mjs
+          node scripts/testar-portao-gravacao-us.mjs
           node scripts/testar-historico-us-polls.mjs
           node scripts/testar-rodadas-curadas.mjs
           node scripts/testar-data-corrente-imprensa.mjs

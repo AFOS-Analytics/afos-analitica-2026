@@ -62,24 +62,56 @@ export function lerRotulo(txt) {
   const diaFim = Number(m[4] ?? m[2])
   if (!mesFim || !Number.isFinite(diaFim)) return null
   const resto = m[5]
+  // 🔴 A NOTA DO AGREGADOR NÃO É PARTE DO NOME, e ela entrava na CHAVE DE
+  //    CASAMENTO. Régua de 25/Set/2026.
+  //
+  // O `normalizar()` passa OS DOIS LADOS pela tabela de apelidos. Casa que tem
+  // apelido converge; casa que NÃO tem passa intacta nos dois lados, e aí o lado
+  // do agregador carrega a nota e o nosso não: `"Emerson College (A+)"` nunca é
+  // igual a `"Emerson College"`. Efeito medido no dia: o conferidor imprimiu
+  // 9 rodadas faltando e, para 6 delas, "🔴 a casa NAO tem UMA linha no
+  // arquivo", com as 6 no arquivo e com a data de campo exata.
+  //
+  // ⚠️ É o MESMO defeito de 20/Set, e o conserto de então foi o sintoma:
+  //    adicionaram-se três apelidos. Apelido conserta uma casa; a nota volta a
+  //    abrir o buraco em TODA casa nova que o índice receber, o que faz deste um
+  //    falso alarme que se renova sozinho. E falso buraco alto é caro: ele manda
+  //    caçar no instituto rodada que já está escrita, e ingerir o que não falta
+  //    troca amostra por escolha.
+  //
+  // 📐 A regra é `[A-F]` com sinal opcional, e ela é EXATA na origem, medida em
+  //    125 rótulos: as notas são A+ A A- B+ B B- C+ C- D, e todo parêntese
+  //    informativo tem 3 letras ou mais (Economist, CBS, BGSU, Amherst,
+  //    Verasight, Harvard, Dem, GOP). Por isso o qualificador sobrevive e só a
+  //    nota sai.
+  //
+  // 🔑 O `(D)` era o único ambíguo, e a origem o resolve: em
+  //    `"McLaughlin (D), 1000 LV (GOP)"` o mesmo rótulo traz o `(D)` na posição
+  //    da nota E o `(GOP)` como filiação. O `(D)` é a nota D que o agregador dá
+  //    à casa, não uma alegação de partido.
+  const semNota = resto.replace(/\s*\((?:[A-F][+-]?)\)/g, '')
   // ⚠️ O nome CURTO perde o qualificador entre parênteses: "YouGov (CBS)" vira
   // "YouGov" e deixa de casar com a CBS News/YouGov que JÁ temos, inflando o
   // buraco. A tabela de apelidos tem de ver o rótulo INTEIRO, e o nome curto
   // fica só para exibição.
-  const casa = resto.split(/\s*\(|,/)[0].trim()
-  const casaCompleta = resto.split(',')[0].trim()
+  const casa = semNota.split(/\s*\(|,/)[0].trim()
+  const casaCompleta = semNota.split(',')[0].trim()
   // 🔴 O recorte sai do MESMO casamento que a amostra, e isso não é elegância:
   //    o rótulo traz a NOTA da casa entre parênteses, e "(A+)" casa com `\bA\b`
   //    porque "(" e "+" não são caractere de palavra. Medido em 19/Set/2026: a
   //    NYT/Siena, que é "1503 LV", saía como recorte **A**, e a Quinnipiac, que
   //    é "970 RV", também. Nota A+ ou A- em qualquer casa produzia o mesmo erro.
-  //    Ele não muda o CASAMENTO, que é por casa e data, então passa calado no
-  //    veredito e só aparece na linha que alguém vai transcrever à mão.
-  const comAmostra = resto.match(/([\d,]{3,7})\s*(LV|RV|A)\b/i)
+  //
+  // ✅ Com a nota removida do rótulo, o LIMITE que ficou declarado em 19/Set
+  //    FECHOU: "Casa (A+), sem numero" não tem mais nenhum `A` para a varredura
+  //    solta achar, e o recorte sai NULO em vez de sair "A" inventado. O caso
+  //    real era a Strength In #s, que o agregador publica sem amostra e que saía
+  //    como recorte A enquanto o índice a traz como LV.
+  const comAmostra = semNota.match(/([\d,]{3,7})\s*(LV|RV|A)\b/i)
   const amostra = comAmostra?.[1]?.replace(/,/g, '') ?? null
   // Sem amostra no rótulo não há âncora, e aí a varredura solta é o que sobra:
   // ela vale menos, e por isso só roda nesse caso.
-  const recorte = (comAmostra?.[2] ?? (resto.match(/\b(LV|RV|A)\b/i) || [])[1])?.toUpperCase() ?? null
+  const recorte = (comAmostra?.[2] ?? (semNota.match(/\b(LV|RV|A)\b/i) || [])[1])?.toUpperCase() ?? null
   return {
     campoFim: `2026-${String(mesFim).padStart(2, '0')}-${String(diaFim).padStart(2, '0')}`,
     casa,
@@ -112,9 +144,12 @@ export const APELIDOS = [
   [/lowell/i, 'UMass Lowell/YouGov'],
   [/bgsu|bowling green/i, 'BGSU/YouGov'],
   [/focaldata/i, 'Focaldata/Financial Times'],
-  // ⚠️ O agregador rotula esta casa como "McLaughlin (D)". O nosso índice a
-  //    grava como "(R)" nas 6 linhas que já tem, e McLaughlin & Associates é
-  //    casa republicana. A letra do agregador não é autoridade sobre isso.
+  // 🔑 O "(D)" que o agregador cola nesta casa é a NOTA D dele, não um rótulo de
+  //    partido: em 25/Set/2026 o rótulo dela saía como "McLaughlin (D), 1000 LV
+  //    (GOP)", com a filiação num parêntese SEPARADO e no fim. A versão anterior
+  //    deste comentário lia o "(D)" como alegação de partido e a refutava, e era
+  //    defesa contra uma afirmação que a origem nunca fez. O nosso índice grava
+  //    "(R)", McLaughlin & Associates é casa republicana, e os dois concordam.
   [/mclaughlin/i, 'McLaughlin & Associates (R)'],
   [/zogby/i, 'John Zogby Strategies'],
   [/rmg research|napolitan/i, 'Napolitan News/RMG Research'],
@@ -128,6 +163,17 @@ export const APELIDOS = [
   [/siena|nyt/i, 'NYT/Siena'],
   [/fox news|beacon/i, 'Fox News/Beacon'],
   [/marquette/i, 'Marquette'],
+  // 🔴 As três de 25/Set/2026. Elas entraram no índice na mesma semana e o
+  //    conferidor as imprimia como buraco porque o NOME difere entre os dois
+  //    lados, não porque a rodada falte. Remover a nota resolveu Emerson,
+  //    Echelon e CNN/SSRS, que passaram a casar sozinhas; estas três precisam de
+  //    apelido de verdade.
+  [/marist/i, 'Marist'],
+  [/hart research|hart\/pos|public opinion strategies/i, 'Hart/POS'],
+  // ⛔ O apelido é por "strength in", NUNCA por "verasight": o agregador também
+  //    publica "Wave Polling (Verasight)", que é casa DIFERENTE, e um apelido por
+  //    verasight fundiria as duas séries.
+  [/strength in/i, 'Strength In Numbers/Verasight'],
   [/quinnipiac/i, 'Quinnipiac'],
   [/ipsos/i, 'Reuters/Ipsos'],
   [/cygnal/i, 'Cygnal'],

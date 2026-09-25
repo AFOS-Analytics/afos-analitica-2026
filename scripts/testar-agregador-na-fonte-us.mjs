@@ -36,7 +36,7 @@ const siena = lerRotulo('Sep 8 - 13: NYT/Siena (A+), 1503 LV')
 eq(siena?.recorte, 'LV', 'NYT/Siena (A+): a nota A+ NAO pode virar recorte A')
 eq(siena?.amostra, 1503, 'NYT/Siena: amostra')
 eq(siena?.campoFim, '2026-09-13', 'NYT/Siena: fim de campo')
-eq(siena?.casaCompleta, 'NYT/Siena (A+)', 'NYT/Siena: nome inteiro preserva o qualificador')
+eq(siena?.casaCompleta, 'NYT/Siena', 'NYT/Siena: a NOTA sai da chave de casamento')
 
 const quinn = lerRotulo('Sep 3 - 6: Quinnipiac (A-), 970 RV')
 eq(quinn?.recorte, 'RV', 'Quinnipiac (A-): a nota A- NAO pode virar recorte A')
@@ -54,7 +54,10 @@ eq(acti?.campoFim, '2026-09-10', 'Activote: cruza o mes, fim em setembro e nao e
 // ── a nota do outro lado, e a casa com DOIS parenteses ───────────────────────
 const bgsu = lerRotulo('Aug 25 - Sep 1: YouGov (BGSU) (B+), 566 LV')
 eq(bgsu?.recorte, 'LV', 'YouGov (BGSU) (B+): dois parenteses, recorte intacto')
-eq(bgsu?.casaCompleta, 'YouGov (BGSU) (B+)', 'YouGov (BGSU): nome inteiro')
+// ⭐ O caso que separa as duas coisas: a NOTA sai e o QUALIFICADOR fica. Se a
+//    limpeza fosse por "qualquer parêntese", esta casa viraria "YouGov" e
+//    passaria a casar com a CBS News/YouGov, que é outra instituição.
+eq(bgsu?.casaCompleta, 'YouGov (BGSU)', 'YouGov (BGSU): a nota sai, o qualificador FICA')
 eq(bgsu?.casa, 'YouGov', 'YouGov (BGSU): nome curto e so para exibicao')
 
 // ── ANTI-SILENCIO: sem amostra, a varredura solta e o que sobra, e ela vale ──
@@ -63,12 +66,16 @@ const semN = lerRotulo('Sep 1 - 3: Casa Qualquer, LV')
 eq(semN?.recorte, 'LV', 'sem amostra: o recorte ainda e lido pela varredura solta')
 eq(semN?.amostra, null, 'sem amostra: amostra e NULA, nunca inventada')
 
-// ⚠️ E o caso que mostra o limite declarado da varredura solta: sem amostra,
-//    uma casa com nota A+ volta a poder confundir. Isto esta AQUI de proposito,
-//    escrito como o comportamento conhecido, para que mudar isso quebre o teste
-//    em vez de passar despercebido.
+// ✅ O LIMITE DECLARADO EM 19/SET FECHOU em 25/Set, e este caso mudou de lado.
+//    Ele estava escrito de proposito para quebrar se alguem mexesse, e quebrou:
+//    com a nota removida antes de qualquer leitura, "Casa (A+), sem numero" nao
+//    tem mais nenhum A para a varredura solta achar. O recorte sai NULO, que e a
+//    resposta honesta, em vez de sair "A" inventado.
+//    Caso real: a Strength In #s, que o agregador publica sem amostra, saia como
+//    recorte A enquanto o indice a traz como LV.
 const semNcomNota = lerRotulo('Sep 1 - 3: Casa (A+), sem numero')
-eq(semNcomNota?.recorte, 'A', 'LIMITE DECLARADO: sem amostra, a nota A+ ainda contamina')
+eq(semNcomNota?.recorte, null, 'sem amostra E sem nota sobrando: recorte NULO, nao inventado')
+eq(semNcomNota?.casaCompleta, 'Casa', 'sem amostra: a casa sai sem a nota')
 
 // ── forma: o que nao e rotulo tem de sair NULO, nunca meio-lido ──────────────
 eq(lerRotulo(''), null, 'string vazia')
@@ -103,6 +110,76 @@ const distintos = ['Yougov (Amherst) (B+)', 'YouGov (BGSU) (B+)', 'UMass Lowell'
 )
 eq(new Set(distintos).size, 5, 'as 5 YouGov de instituicoes diferentes continuam 5 nomes diferentes')
 eq(apelidar('UMass Lowell'), 'UMass Lowell/YouGov', 'Lowell NAO vira Amherst')
+
+// ── A NOTA NA CHAVE DE CASAMENTO, os casos reais de 25/Set/2026 ──────────────
+// 🔴 O conferidor imprimiu 9 rodadas faltando e, para 6 delas, "a casa NAO tem
+//    UMA linha no arquivo". As 6 estavam no arquivo, com a data de campo exata.
+//    A causa era a nota entrar na chave: "Emerson College (A+)" nunca e igual a
+//    "Emerson College". Estes casos sao os rotulos reais daquele dia.
+console.log('\n🧪 a NOTA do agregador fora da chave de casamento\n')
+
+for (const [rotulo, esperado] of [
+  ['Sep 21 - 22: Emerson College (A+), 1000 LV', 'Emerson College'],
+  ['Sep 17 - 21: Echelon Insights (A), 1002 LV', 'Echelon Insights'],
+  ['Sep 16 - 17: CNN/SSRS (B), 867 RV', 'CNN/SSRS'],
+  ['Sep 14 - 15: Marist College (A), 1280 RV', 'Marist College'],
+  ['Sep 11 - 15: Hart/POS (A), 1000 RV', 'Hart/POS'],
+  ['Sep 16 - 21: Strength In #s (A-)', 'Strength In #s'],
+  ['Sep 16 - 22: McLaughlin (D), 1000 LV', 'McLaughlin'],
+  ['Jul 1 - 2: Public Sentiment Inst. (D), 979 LV', 'Public Sentiment Inst.'],
+]) {
+  eq(lerRotulo(rotulo)?.casaCompleta, esperado, `nota fora da chave: ${esperado}`)
+}
+
+// ⛔ ANTI-EXCESSO: parentese INFORMATIVO tem de sobreviver. Limpar "qualquer
+//    parentese" fundiria instituicoes distintas, que e defeito pior que o buraco
+//    falso. Sao 3 letras ou mais, e nenhum deles e uma nota.
+for (const [rotulo, esperado] of [
+  ['Sep 18 - 21: YouGov (Economist) (B+), 975 LV', 'YouGov (Economist)'],
+  ['Sep 8 - 11: YouGov (CBS) (B+), 1750 LV', 'YouGov (CBS)'],
+  ['Aug 21 - 26: Yougov (Amherst) (B+), 1000 A', 'Yougov (Amherst)'],
+  ['Jun 8 - 11: GSG (Dem) (B-), 1000 LV', 'GSG (Dem)'],
+  ['Aug 7 - 11: Wave Polling (Verasight) (A-), 1591 RV', 'Wave Polling (Verasight)'],
+  ['Jul 11 - 12: HarrisX (Harvard) (B-)', 'HarrisX (Harvard)'],
+]) {
+  eq(lerRotulo(rotulo)?.casaCompleta, esperado, `qualificador preservado: ${esperado}`)
+}
+
+// 🔑 O (D) e a NOTA, e a filiacao vem num parentese SEPARADO e no fim. Este e o
+//    rotulo real que resolveu a ambiguidade do (D).
+const mcl = lerRotulo('Jul 15 - 21: McLaughlin (D), 1000 LV (GOP)')
+eq(mcl?.casaCompleta, 'McLaughlin', 'McLaughlin: a nota D sai da chave')
+eq(mcl?.recorte, 'LV', 'McLaughlin: recorte intacto com nota E filiacao no rotulo')
+eq(mcl?.amostra, 1000, 'McLaughlin: amostra intacta')
+
+// ⛔ E a filiacao NAO pode ser confundida com nota: "(GOP)" e "(Dem)" tem 3+
+//    letras e nao casam com [A-F] com sinal.
+eq(lerRotulo('Aug 28 - 30: HarrisX (B-) (GOP)')?.casaCompleta, 'HarrisX (GOP)', 'HarrisX: a nota sai e a filiacao FICA')
+
+// ── APELIDOS novos de 25/Set: os tres que a remocao da nota NAO resolve ──────
+// Nome que difere de verdade entre os dois lados precisa de apelido, e e o unico
+// caso em que apelido e a resposta certa.
+eq(apelidar('Marist College'), apelidar('Marist University'), 'Marist: College e University sao a MESMA casa')
+eq(
+  apelidar('Hart/POS'),
+  apelidar('Hart Research Associates (D)/ Public Opinion Strategies (R)'),
+  'Hart/POS casa com o nome inteiro do indice'
+)
+eq(
+  apelidar('Strength In #s'),
+  apelidar('Strength In Numbers/Verasight'),
+  'Strength In #s casa com Strength In Numbers/Verasight'
+)
+
+// ⛔ ANTI-EXCESSO do apelido novo: "Wave Polling (Verasight)" e casa DIFERENTE.
+//    Apelidar por "verasight" fundiria duas series, e por isso o apelido e por
+//    "strength in".
+eq(
+  apelidar('Wave Polling (Verasight)') === apelidar('Strength In Numbers/Verasight'),
+  false,
+  'Wave Polling NAO se funde com Strength In Numbers'
+)
+eq(apelidar('Wave Polling (Verasight)'), 'Wave Polling (Verasight)', 'Wave Polling passa intacta, sem apelido')
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${ok} asserção(ões) passaram, ${falhas} falharam\n`)
 process.exit(falhas === 0 ? 0 : 1)

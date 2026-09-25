@@ -4,6 +4,7 @@ import { getPrisma } from '../../../../lib/db'
 import { requireCronAuth } from '../../../../lib/cron/auth'
 // Módulo JS puro, compartilhado com o script manual.
 import { coletarGenericBallot } from '../../../../lib/us-polls/collect.mjs'
+import { avaliarGravacao } from '../../../../lib/us-polls/portao-gravacao.mjs'
 import { medirAtraso, cruzouMarco, medirCadencia, cadenciaCruzouMarco } from '../../../../lib/us-polls/atraso.mjs'
 import { verificarCasasAtrasadas } from '../../../../lib/us-polls/fora-do-indice.mjs'
 import { medirExposicao } from '../../../../lib/us-polls/exposicao.mjs'
@@ -41,21 +42,34 @@ export async function GET(request: Request) {
   try {
     const dados = await coletarGenericBallot({ dias: 30 })
 
-    // ⛔ Portão: não grava leitura vazia por cima de uma boa. Wikipédia fora do
-    // ar, mudança de estrutura da página ou parse quebrado chegam aqui como
-    // zero pesquisas, e sobrescrever com zero apagaria o painel em silêncio.
-    if (!dados?.polls?.length || !dados.mediaAfos) {
+    // ⛔ Portão de gravação. A regra mora em lib/us-polls/portao-gravacao.mjs,
+    // com casos plantados e mutações, porque enquanto ela era um `if` aqui
+    // dentro ninguém a testava, e ela passou meses medindo a SAÍDA quando o
+    // defeito estava na ENTRADA: em 25/Set/2026 esta rota gravou
+    // `lidas 0 · pub 29 · n 12 · D+7.70` com `ok: true` e HTTP 200, porque as
+    // 29 rodadas CURADAS seguravam `polls.length` acima de zero enquanto o
+    // índice não trazia uma única linha. Curada é exceção declarada, nunca
+    // substituta do índice.
+    const portao = avaliarGravacao(dados)
+    if (!portao.gravar) {
       return NextResponse.json(
         {
           ok: false,
-          motivo: 'leitura vazia ou sem média; nada foi gravado',
-          lidas: dados?.qualidade?.linhasLidas ?? 0,
-          publicadas: dados?.polls?.length ?? 0,
+          motivo: portao.motivo,
+          lidas: portao.lidas,
+          publicadas: portao.publicadas,
+          curadas: portao.curadas,
           ms: Date.now() - t0,
         },
-        { status: 502, headers: { 'Cache-Control': 'no-store' } },
+        { status: portao.http, headers: { 'Cache-Control': 'no-store' } },
       )
     }
+
+    // O portão acima já garante média presente. Isto NÃO é uma segunda cópia
+    // da regra, que é o defeito clássico de tirar um `if` para uma lib: é a
+    // invariante escrita para o compilador. Se ela disparar, o portão está
+    // quebrado, e é exatamente aí que se quer uma exceção e não um `?.`.
+    if (!dados.mediaAfos) throw new Error('portão aprovou coleta sem mediaAfos')
 
     const prisma = getPrisma()
     if (!prisma) {

@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-23",
-  "fetchedAt": "2026-09-23T16:02:24.496Z",
+  "lastUpdate": "2026-09-25",
+  "fetchedAt": "2026-09-25T04:23:08.716Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -8,6 +8,12 @@
   },
   "procedencia": {
     "indice": "https://en.wikipedia.org/wiki/2026_United_States_elections",
+    "fonteDaTabela": {
+      "modo": "transclusao",
+      "pagina": "https://en.wikipedia.org/wiki/Template:2026_United_States_elections/polling",
+      "transcluidaEm": "https://en.wikipedia.org/wiki/2026_United_States_elections",
+      "notadoEm": "2026-09-25"
+    },
     "licencaIndice": "CC BY-SA 4.0 (Wikipédia)",
     "regra": "A Wikipédia é usada como ÍNDICE de quais pesquisas existem e quem publicou. Os números são atribuídos ao instituto e cada linha traz o link da fonte primária. O AFOS não redistribui tabela de terceiro.",
     "agregadoresIgnorados": [
@@ -43,15 +49,36 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-24",
+    "desde": "2026-08-26",
     "nPesquisas": 39,
     "incluidas": [
+      {
+        "instituto": "Emerson College",
+        "campoFim": "2026-09-22",
+        "amostraTipo": "LV",
+        "dem": 53,
+        "rep": 42
+      },
       {
         "instituto": "ActiVote",
         "campoFim": "2026-09-21",
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 47
+      },
+      {
+        "instituto": "Echelon Insights",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 43
+      },
+      {
+        "instituto": "Strength In Numbers/Verasight",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 42
       },
       {
         "instituto": "The Economist/YouGov",
@@ -82,6 +109,13 @@
         "rep": 42
       },
       {
+        "instituto": "CNN/SSRS",
+        "campoFim": "2026-09-17",
+        "amostraTipo": "RV",
+        "dem": 49,
+        "rep": 41
+      },
+      {
         "instituto": "John Zogby Strategies",
         "campoFim": "2026-09-17",
         "amostraTipo": "LV",
@@ -101,6 +135,13 @@
         "amostraTipo": "RV",
         "dem": 50,
         "rep": 45
+      },
+      {
+        "instituto": "Marist University",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "RV",
+        "dem": 53,
+        "rep": 41
       },
       {
         "instituto": "RMG Research",
@@ -283,47 +324,12 @@
         "amostraTipo": "A",
         "dem": 42,
         "rep": 34
-      },
-      {
-        "instituto": "Activote",
-        "campoFim": "2026-08-24",
-        "amostraTipo": "LV",
-        "dem": 51.7,
-        "rep": 48.3
-      },
-      {
-        "instituto": "ActiVote",
-        "campoFim": "2026-08-24",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 48
-      },
-      {
-        "instituto": "McLaughlin & Associates (R)",
-        "campoFim": "2026-08-24",
-        "amostraTipo": "LV",
-        "dem": 48,
-        "rep": 43
-      },
-      {
-        "instituto": "Reuters/Ipsos",
-        "campoFim": "2026-08-24",
-        "amostraTipo": "RV",
-        "dem": 41,
-        "rep": 35
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-08-24",
-        "amostraTipo": "RV",
-        "dem": 46,
-        "rep": 40
       }
     ],
-    "nInstitutos": 25,
-    "dem": 49.27,
-    "rep": 41.84,
-    "vantagemDem": 7.43,
+    "nInstitutos": 29,
+    "dem": 49.77,
+    "rep": 41.71,
+    "vantagemDem": 8.06,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "ActiVote",
@@ -331,22 +337,26 @@
       "Beacon Research (D)/ Shaw & Co. Research (R)",
       "Big Data Poll (R)",
       "CBS News/YouGov",
+      "CNN/SSRS",
       "Catawba College/YouGov",
       "Cygnal (R)",
+      "Echelon Insights",
+      "Emerson College",
       "Focaldata/Financial Times",
       "Fox News",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
+      "Marist University",
       "Marquette Law School",
       "Marquette University Law School",
-      "McLaughlin & Associates (R)",
       "Morning Consult",
       "New York Times/Siena College",
       "Quantus Insights (R)",
       "Quinnipiac University",
       "RMG Research",
       "Reuters/Ipsos",
+      "Strength In Numbers/Verasight",
       "The Economist/YouGov",
       "The Honest Poll",
       "The Rainey Center",
@@ -354,18 +364,33 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 424,
-    "publicadas": 443,
+    "linhasLidas": 431,
+    "publicadas": 450,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 424,
+    "doIndice": 431,
     "curadas": 19,
     "curadasDescartadasPorDuplicidade": 10
   },
   "polls": [
+    {
+      "instituto": "Emerson College",
+      "campoInicio": "2026-09-21",
+      "campoFim": "2026-09-22",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3,
+      "dem": 53,
+      "rep": 42,
+      "outros": 5,
+      "vantagemDem": 11,
+      "fontePrimaria": "https://emersoncollegepolling.com/september-2026-national-poll-democrats/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
     {
       "instituto": "The Economist/YouGov",
       "campoInicio": "2026-09-18",
@@ -393,6 +418,66 @@
       "outros": 18,
       "vantagemDem": 9,
       "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_5WiMaRX.pdf#page=43",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Echelon Insights",
+      "campoInicio": "2026-09-17",
+      "campoFim": "2026-09-21",
+      "amostra": 1002,
+      "amostraTipo": "LV",
+      "margemErro": 3.6,
+      "dem": 51,
+      "rep": 43,
+      "outros": 6,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://echeloninsights.com/hubfs/_Media%20for%20Insights%20Blog/September%202026%20Voter%20Omnibus%20Topline%20-%20External.pdf#page=4",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Strength In Numbers/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-21",
+      "amostra": null,
+      "amostraTipo": "LV",
+      "margemErro": null,
+      "dem": 52,
+      "rep": 42,
+      "outros": 6,
+      "vantagemDem": 10,
+      "fontePrimaria": "https://www.gelliottmorris.com/p/2026-09-23-september-strength-in-numbers-verasight-poll-release",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Strength In Numbers/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-21",
+      "amostra": 1374,
+      "amostraTipo": "RV",
+      "margemErro": null,
+      "dem": 50,
+      "rep": 42,
+      "outros": 8,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.gelliottmorris.com/p/2026-09-23-september-strength-in-numbers-verasight-poll-release",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Strength In Numbers/Verasight",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-21",
+      "amostra": 1528,
+      "amostraTipo": "A",
+      "margemErro": 2.6,
+      "dem": 49,
+      "rep": 41,
+      "outros": 10,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.gelliottmorris.com/p/2026-09-23-september-strength-in-numbers-verasight-poll-release",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -472,6 +557,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "CNN/SSRS",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-17",
+      "amostra": 867,
+      "amostraTipo": "RV",
+      "margemErro": 4.1,
+      "dem": 49,
+      "rep": 41,
+      "outros": 10,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.cnn.com/2026/09/23/politics/cnn-poll-donald-trump-economy-midterms-vis",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "John Zogby Strategies",
       "campoInicio": "2026-09-15",
       "campoFim": "2026-09-17",
@@ -499,6 +599,21 @@
       "vantagemDem": 6,
       "fontePrimaria": "https://johnzogbystrategies.com/democratic-party-leads-republican-party-48-to-42-in-congressional-generic-ballot-as-race-heats-up/",
       "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Marist University",
+      "campoInicio": "2026-09-14",
+      "campoFim": "2026-09-15",
+      "amostra": 1280,
+      "amostraTipo": "RV",
+      "margemErro": 3.8,
+      "dem": 53,
+      "rep": 41,
+      "outros": 6,
+      "vantagemDem": 12,
+      "fontePrimaria": "https://maristpoll.marist.edu/polls/2026-midterm-elections-september-2026/",
+      "comLeaners": false,
       "origem": "indice-wikipedia"
     },
     {
@@ -954,6 +1069,21 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "Cygnal (R)",
+      "campoInicio": "2026-09-01",
+      "campoFim": "2026-09-02",
+      "amostra": 1500,
+      "amostraTipo": "LV",
+      "margemErro": 2.5,
+      "dem": 51,
+      "rep": 42,
+      "outros": 7,
+      "vantagemDem": 9,
+      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/09/24524-Cygnal-National-Sept26-NVT-Deck-Public-1.pdf#page=27",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Focaldata/Financial Times",
       "campoInicio": "2026-08-28",
       "campoFim": "2026-09-02",
@@ -1010,21 +1140,6 @@
       "outros": 13,
       "vantagemDem": 5,
       "fontePrimaria": "https://www.focaldata.com/blog/trump-approval-hits-record-low-as-democrats-extend-house-lead",
-      "comLeaners": false,
-      "origem": "indice-wikipedia"
-    },
-    {
-      "instituto": "Cygnal (R)",
-      "campoInicio": "2026-09-01",
-      "campoFim": "2026-09-02",
-      "amostra": 1500,
-      "amostraTipo": "LV",
-      "margemErro": 2.5,
-      "dem": 51,
-      "rep": 42,
-      "outros": 7,
-      "vantagemDem": 9,
-      "fontePrimaria": "https://www.cygn.al/wp-content/uploads/2026/09/24524-Cygnal-National-Sept26-NVT-Deck-Public-1.pdf#page=27",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
