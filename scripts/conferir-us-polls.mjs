@@ -43,6 +43,7 @@ import { readFileSync } from 'fs'
 import { execFileSync } from 'child_process'
 import { comparar, conferirSubtracao, mediaDe, veredito } from '../lib/us-polls/atribuicao.mjs'
 import { separarPorConferencia, validarRegistro } from '../lib/us-polls/soma-conferida.mjs'
+import { dividasAbertas, fonteDa, conferirCarga as conferirFontes } from '../lib/us-polls/fonte-conferida.mjs'
 
 const arg = (n, padrao) =>
   process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? padrao
@@ -297,7 +298,14 @@ if (m && mb) {
           `D ${p.dem} R ${p.rep} outros ${p.outros ?? '?'} (soma ${soma}) · origem ${p.origem ?? '?'}`
       )
       console.log(`            fonte ${p.fontePrimaria || `${cor.mau}SEM FONTE PRIMÁRIA${cor.fim}`}`)
-      console.log(`            conferir NA FONTE: D e R, recorte (LV/RV/A), amostra e margem. O índice não é a fonte.`)
+      const jaAberta = fonteDa(p)
+      if (jaAberta) {
+        console.log(`            🔗 fonte JÁ aberta em ${jaAberta.conferidoEm}: ${jaAberta.resultado}`)
+        console.log(`               ${jaAberta.url}`)
+      } else {
+        console.log(`            conferir NA FONTE: D e R, recorte (LV/RV/A), amostra e margem. O índice não é a fonte,`)
+        console.log(`            e registrar o que ela sustentou em lib/us-polls/fonte-conferida.mjs`)
+      }
     }
     if (dif.mudaram.length) {
       // 🔑 "Corrigida na origem" afirma que a Wikipédia mudou o número, e isso
@@ -368,6 +376,38 @@ if (m && mb) {
   }
 } else {
   console.log(`        sem base comparável`)
+}
+
+// ── 🔗 FONTE ABERTA: dívida contra a origem, impressa em TODA passada ─────
+//
+// 🔴 O arquivo conta `semFontePrimaria`, que é AUSÊNCIA de link. O caso oposto,
+// link PRESENTE que não sustenta a linha, não tem contador nenhum: para todo
+// portão da casa aquela linha tem fonte, porque o campo está preenchido.
+//
+// ⛔ Este bloco não é portão e não muda veredito. Ele existe para a conferência
+// não ser refeita toda rodada, que é o defeito que a casa mais repete.
+{
+  const errosFonte = conferirFontes()
+  if (errosFonte.length) {
+    console.log(`
+   ${cor.mau}❌${cor.fim} registro de FONTE CONFERIDA inválido:`)
+    errosFonte.forEach((e) => console.log(`        ${e}`))
+  }
+  const naJanela = (atual.polls ?? []).filter((p) => m?.desde && p.campoFim >= m.desde)
+  const abertas = dividasAbertas(naJanela)
+  console.log(`
+   🔗 fonte aberta e conferida`)
+  if (!abertas.length) {
+    console.log(`        nenhuma dívida aberta entre as rodadas da janela`)
+  }
+  for (const { poll, entrada } of abertas) {
+    console.log(
+      `        ${cor.aviso}${entrada.resultado}${cor.fim} ${poll.instituto} ${poll.campoInicio}→${poll.campoFim} · D ${poll.dem} R ${poll.rep} · conferido em ${entrada.conferidoEm}`
+    )
+    if (entrada.confirmado.length) console.log(`          sustenta: ${entrada.confirmado.join(' · ')}`)
+    console.log(`          NÃO sustenta: ${entrada.naoConfirmado.join(' · ')}`)
+    console.log(`          ${entrada.url}`)
+  }
 }
 
 // ── Veredito ──────────────────────────────────────────────────────────────

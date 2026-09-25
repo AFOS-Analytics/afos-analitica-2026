@@ -364,3 +364,27 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 | 🔴 `DUPLICOU` | o INVERSO, que não se cala por simetria: a casa passou a ser contada duas vezes |
 
 🧪 `testar-casas-us.mjs` **81 asserções, 11 de 11 mutações** · `testar-atribuicao-us.mjs` **42, 7 de 7**. Os dois no CI.
+
+## 🔗 A FONTE foi aberta, e o que ela sustenta: `lib/us-polls/fonte-conferida.mjs` (25/Set/2026)
+
+🔴 **O buraco:** o arquivo declara `qualidade.semFontePrimaria`, que conta **AUSÊNCIA** de link. O caso oposto e mais comum não tem contador nenhum: **link PRESENTE que não sustenta a linha**. Para todo portão da casa aquela linha tem fonte, porque o campo está preenchido.
+
+⛔ **E o custo não é de forma, é a conferência REFEITA toda rodada.** Sem registro, a próxima passada busca o mesmo documento, tropeça no mesmo 451 e chega à mesma conclusão gastando o mesmo tempo.
+
+| resultado | o que quer dizer |
+|---|---|
+| `CONFIRMA` | o documento do instituto sustenta a linha inteira |
+| `CONFIRMA_PARCIAL` | sustenta parte, e exige as **DUAS** listas: `confirmado` e `naoConfirmado` |
+| `NAO_CONTEM_A_PERGUNTA` | o documento existe, foi lido, e não traz a pergunta |
+| `NAO_ENCONTRADO` | nada do executor nem do patrocinador foi achado |
+
+🔑 **Casa por casa (pela SÉRIE), campo e VALORES.** Se o índice reescrever D ou R, a conferência **CADUCA** e a linha volta a contar como não conferida. ⛔ Não é portão e não muda veredito: é ledger de dívida, impresso em toda passada pelo `conferir-us-polls`, e a ficha de quem ENTRA já diz se a fonte daquela rodada foi aberta antes.
+
+### As duas primeiras entradas, de 25/Set/2026
+
+- **CNN/SSRS, 16-17/Set, `CONFIRMA_PARCIAL`.** A **SSRS é quem vai a campo** e publica no próprio site, alcançável: ela declara campo, amostra total de 1.206, margem de ±3,5 no total e a **vantagem de 8 pontos**, que é o que entra na média. A decomposição 49 x 41 x 10 e o subgrupo de 867 RV com ±4,1 seguem valendo pelo índice, porque a CNN devolve **451** para leitor automatizado. 🔑 **A régua que sai daí: para pesquisa de veículo, procurar o site de quem EXECUTA antes do site de quem publica.**
+- **Emerson College/RealClear, 12-15/Set, `NAO_CONTEM_A_PERGUNTA`.** O link do índice é matéria sobre **primárias**, sem generic ballot. A Emerson publica a onda de 21-22/Set (53 x 42, 1.000 LV) e **nenhuma** de 12-15/Set; nada achado na RealClear. A metodologia declarada bate, mas metodologia não é topline.
+
+📌 **As duas valem 0,00pp na média de hoje**, porque as duas estão praticamente na média. Isso é propriedade do dia e não motivo para parar de cobrar.
+
+🧪 `node scripts/testar-fonte-conferida.mjs`, **29 asserções e no CI**, com **9 de 9 mutações reprovadas**. A mais importante é a que cala o ledger: `dividasAbertas` devolvendo vazio tem de reprovar.
