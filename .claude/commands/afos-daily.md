@@ -477,6 +477,25 @@ const url = article.link  // Google News redirect
 
 **Resultado do fluxo híbrido:** matérias-âncora com URL bonita (estadao.com.br/...), matérias secundárias com Google News redirect funcional (anti-bot bypass automático). **Zero veículos sem link.**
 
+### 🚀 O ATALHO DOS LINKS, criado em 25/Set/2026
+
+```bash
+node scripts/daily-links-brz.mjs rascunho.md public/afos-daily/AAAA-MM-DD.md --data=AAAA-MM-DD
+```
+
+O rascunho leva **marcadores no lugar da URL**, e o script os troca pelo link COMPLETO do cache do dia e monta o `{{FONTES}}` com o que o texto realmente cita:
+
+| marcador | vira |
+|---|---|
+| `{{GN:regex do título}}` | link secundário (Google News redirect) |
+| `{{AN:regex do título}}` | link âncora (`prestige-*`), com o redirecionador da Folha removido |
+| `{{URL:https://...\|Veículo\|Título}}` | âncora com URL já conhecida, de corpo lido |
+| `{{FONTES}}` | os dois sub-blocos de "Fontes consultadas" |
+
+🔴 **Por que existe:** em 25/Set a listagem de links do cache passou por `cut -c1-260`, e a URL do Google News tem ~400 caracteres. Copiar dali produz a URL truncada que o gate bloqueia, ou uma de 260 que passa no tamanho e não resolve. E o rodapé era montado à mão, sem nada garantindo que listasse o que o corpo cita. ⛔ Ele **falha alto** com marcador sem casamento, casamento de dois veículos diferentes ou Google News abaixo de 150 caracteres, e aí não escreve nada. Ele imprime a proporção de secundários contra o piso de 50%.
+
+⚠️ **O título no rodapé é o do CACHE**, e o cache pode guardar a manchete de antes de uma atualização. Em 25/Set o O Globo dizia "3 a 3" no cache e "4 a 3" na matéria lida às 17h22: conferir o título das âncoras de fato em andamento contra o corpo lido.
+
 ### URLs PREFERIDAS (hierarquia de fallback)
 
 Para CADA matéria/alegação citada, escolher URL na seguinte ordem:

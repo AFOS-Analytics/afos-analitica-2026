@@ -1,0 +1,63 @@
+{
+  "data": "2026-09-25",
+  "gateFactCheck": {
+    "atosAltoImpacto": [
+      "Conselho Superior do MPF forma maioria contra afastar Paulo Gonet dos processos do caso Master e vota a abertura de apuração interna da conduta dele",
+      "Edson Fachin dá cinco dias à PGR para se manifestar sobre os pedidos pendentes nas investigações do Master e do INSS",
+      "Anúncio de medida provisória para proibir as bets, previsto para a tarde de 25/Set"
+    ],
+    "eventos": [
+      {
+        "evento": "Conselho Superior do MPF e Paulo Gonet",
+        "oQueMudouHoje": "maioria contra o afastamento; a apuração interna seguia em votação",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "Gonet aparece nas dailies desde 21/Set: continuidade, com ato novo no dia",
+        "fonte1": "https://www.gazetadopovo.com.br/republica/conselho-do-mpf-forma-maioria-contra-afastar-gonet-no-caso-master/ (Gazeta do Povo, 25/Set 16:10 BRT, corpo lido: 6 votos contra afastar, 3 a 3 sobre a apuração)",
+        "fonte2": "https://oglobo.globo.com/politica/noticia/2026/09/25/gonet-conselho-mpf.ghtml (O Globo, atualizado 25/Set 17:22 BRT, corpo lido: 7 a 0 contra afastar, 4 a 3 pela abertura da apuração com dois votos por proferir)",
+        "decisao": "incorporar com o placar das 17h22 e a apuração sem resultado",
+        "nota": "o placar mudou entre as duas fontes; o painel e a daily foram corrigidos para a atualização mais recente lida, e o título do rodapé foi trocado para o atual do O Globo"
+      },
+      {
+        "evento": "Fachin pede parecer da PGR em cinco dias",
+        "oQueMudouHoje": "abertura de prazo; nenhum pedido decidido",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "PGR sem menção nas 7 dailies anteriores",
+        "fonte1": "https://www.gazetadopovo.com.br/republica/fachin-manda-pgr-analisar-pedidos-pendentes-mendonca-master-inss/ (Gazeta do Povo, 25/Set 16:05 BRT, corpo lido)",
+        "fonte2": "https://g1.globo.com/politica/noticia/2026/09/25/fachin-manda-pgr-analisar-pedidos-pendentes-em-investigacoes-sobre-master-e-inss.ghtml (G1, 25/Set 14:35 BRT, corpo lido)",
+        "decisao": "incorporar; o afastamento do diretor da PF não foi atribuído a 25/Set porque o corpo do Metrópoles não traz a data"
+      },
+      {
+        "evento": "Medida provisória contra as bets",
+        "oQueMudouHoje": "anúncio marcado para a tarde; os corpos lidos são anteriores ao anúncio",
+        "dataDoAto": "2026-09-25 (agenda)",
+        "fonte1": "Poder360, 25/Set 05:00, corpo lido",
+        "fonte2": "Santa Portal, 25/Set 14:30, corpo lido: anúncio previsto para a tarde",
+        "decisao": "incorporar como agenda, nunca como MP editada"
+      }
+    ]
+  },
+  "reFetchPolymarket": {
+    "fetchedAt": "2026-09-25T20:24:55.488Z",
+    "baseline": "leitura certificada de 2026-09-25T20:08:41.955Z (17:08 BRT)",
+    "deltas": "Lula 43,50 = 43,50; Flávio 55,55 = 55,55; vão 12,05 = 12,05; Renan 0,70 = 0,70; volume total USD 155,09M = 155,09M; único movimento Cury 3º lugar 41,05 para 40,90",
+    "gateRebaseline": "não disparou"
+  },
+  "adversarialReview": {
+    "singleSource": "fala de Flávio sobre os 4 dias (Estadão, atribuída); Cury no Recife (G1, com link); boato de Aparecida (Folha) e negativa (Gazeta do Povo)",
+    "numerical": "reconcile-claims: 7 fora dos JSONs, todos explicados (Senado não publicado no painel, números de pesquisa, e 'Lula = 55,55%' é leitura errada do script na frase 'Flávio Bolsonaro e Lula saíram com os mesmos 55,55% e 43,50%')",
+    "fontesInventadas": "conferidas 3: Poder360 hipócrita e eleitoreira, O Globo pai do Tigrinho, G1 Cury, todas do cache do dia",
+    "quotesLiterais": "nenhuma",
+    "causacao": "nenhuma",
+    "verbos": "Vorcaro preso desde 17/Nov/2025; MPF com votação em curso; decisão de Fachin não resolve nenhum pedido; bets como anúncio previsto",
+    "decisao": "prosseguir"
+  },
+  "medicoes": {
+    "palavras": { "pt": 1089, "en": 1132, "es": 1178 },
+    "sinteseTopicosEmNegrito": 3,
+    "palavrasSintese": 216,
+    "numerosComUnidade": 71,
+    "gateTraducao": "limpo nas três versões",
+    "links": "18 distintos, 7 âncora e 11 secundários (61%), resolvidos pelo cache via scripts/daily-links-brz.mjs"
+  },
+  "wayback": "não rodou: pausa de host do archive.org até 26/Set; a daily de 25/Set entra no passivo"
+}
