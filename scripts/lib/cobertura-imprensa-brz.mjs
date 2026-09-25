@@ -118,6 +118,68 @@ export const CASAS_BRZ = [
       /(?<!\p{L})tmc\s*\/\s*alfa(?!\p{L})/iu,
     ],
   },
+  // 🔴⭐ ENTRADA DE 24/Set/2026, e o detector a trouxe do mesmo jeito que trouxe
+  // a ALFA: o conferidor saiu `CASA_FORA_DA_TABELA` na rodada do dia, com a casa
+  // já dentro do índice nacional (BR008952026, n=2.100, campo 26 a 28/Set,
+  // div 29/Set). Ninguém media a cobertura dela.
+  //
+  // O registro do TSE diz "INSTITUTO VOX BRASIL OPINIAO E PESQUISAS". A imprensa
+  // escreve "Vox Brasil", e às vezes só "Vox" ("diz Vox", "Vox: Flávio cresce").
+  //
+  // ⚠️ MEDIDO em 30 dias de cache, 25.225 títulos únicos, antes de escrever a
+  // linha: `vox` com fronteira de palavra aparece 18 vezes e as 18 são desta
+  // casa, da onda nacional de 29/Ago à estadual de Senado/SP de 01/Set. Por
+  // isso a forma NUA entra aqui, ao contrário de "alfa" acima, que tinha 7
+  // ocorrências e nenhuma da casa.
+  //
+  // ⛔ "Vox Populi" é OUTRA casa, existe de verdade e aparece ZERO vez nesses 30
+  // dias. Ela sai por exclusão escrita, não por sorte de não ter aparecido: o
+  // dia em que aparecer não pode contar como cobertura desta.
+  // ⚠️ Riscos conhecidos e não medidos, porque não apareceram: o partido VOX da
+  // Espanha e a Vox Media. Se entrarem no cache, estreitar para "vox brasil".
+  {
+    registro: /vox brasil|instituto vox/i,
+    nome: 'Vox Brasil',
+    busca: '"Vox Brasil"',
+    alvos: [palavra('vox brasil'), /(?<!\p{L})vox(?!\p{L})(?!\s+populi)/iu],
+  },
+  // 🔴⭐⭐ ENTRADA DE 24/Set/2026, e é a mais delicada da tabela, porque a casa
+  // do registro é um VEÍCULO: a BR058692026 (n=6.000, campo 03 a 28/Set, div
+  // 29/Set) está no nome de "JOTA JORNALISMO S/A", que publica jornalismo
+  // próprio todo dia. E o Google News cola o nome da FONTE no fim do título,
+  // então "- JOTA Info" entra em todo título que vem do veículo.
+  //
+  // ⚠️ MEDIDO nos mesmos 30 dias: `jota` com fronteira de palavra dá 89 itens, e
+  // 85 deles são SÓ esse rodapé. Dos 4 que sobram, um é a newsletter ("JOTA
+  // Principal"), um é o agregador do próprio veículo, um é o candidato "Jota
+  // Rodrigues 29 (PCO)" e um é o jogador "Diogo Jota". Nenhum dos 89 é pesquisa
+  // desta casa.
+  //
+  // 🔴 A linha ingênua, com `jota` nu, marcaria a casa COBERTA com 89 itens sem
+  // que exista um único item dela. **Cobertura fingida é pior que buraco
+  // declarado**, porque o buraco ainda avisa e ela cala: é o mesmo perigo que a
+  // linha do MDA declara, aqui com 89 de ruído em vez de alguns. Por isso os
+  // alvos exigem CONTEXTO de pesquisa, e a casa fica em INDETERMINADO até a
+  // divulgação de 29/Set, que é o estado honesto hoje.
+  //
+  // 🔑 SEGUNDA CAMADA, e ela não tem conserto dentro desta tabela: pela régua de
+  // que o registro sai no nome de quem CONTRATA, o executor pode ser outra casa,
+  // e a imprensa costuma escrever o executor. A forma de parceria que ela usa
+  // está no mesmo cache ("Globo/Quaest", "BTG/Nexus", "Indexa/Broadcast"), então
+  // as duas ordens da barra entram. Se em 29/Set sair número e esta casa seguir
+  // em zero, a pergunta não é "a casa está calada", é QUEM executou.
+  {
+    registro: /jota jornalismo/i,
+    nome: 'JOTA Jornalismo',
+    busca: '"pesquisa JOTA" OR "Agregador do JOTA"',
+    alvos: [
+      /(?<!\p{L})pesquisa\s+(do\s+)?jota(?!\p{L})/iu,
+      /(?<!\p{L})levantamento\s+(do\s+)?jota(?!\p{L})/iu,
+      /(?<!\p{L})jota\s*\/\s*\p{L}/iu,
+      /\p{L}\s*\/\s*jota(?!\p{L})/iu,
+      /(?<!\p{L})jota\s+(divulga|aponta|mostra|contratou|encomendou)(?!\p{L})/iu,
+    ],
+  },
   { registro: /paran[áa] pesquisas/i, nome: 'Paraná Pesquisas', busca: '"Paraná Pesquisas"', alvos: [palavra('paran[áa] pesquisas')] },
   // ⚠️ Sigla de 3 letras, e a ÚNICA entrada sensível a caixa (`'u'`, sem `i`).
   // A fronteira é o que separa o instituto do "MDA" de qualquer outra coisa, e

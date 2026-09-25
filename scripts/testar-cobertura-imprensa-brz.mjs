@@ -190,6 +190,73 @@ console.log('\n10b. 🔴 A casa que o DETECTOR trouxe: Alfa Inteligência (19/Se
   for (const t of marcas) conferir(`marca homônima fica de fora: "${t.slice(0, 30)}..."`, !c.alvos.some((a) => a.test(t)))
 }
 
+console.log('\n10c. A segunda casa que o DETECTOR trouxe: Vox Brasil (24/Set/2026)')
+{
+  const c = casaDoRegistro('INSTITUTO VOX BRASIL OPINIAO E PESQUISAS')
+  conferir('o registro longo cai na entrada', c?.nome === 'Vox Brasil', c?.nome)
+
+  // Os 4 primeiros são REAIS, do news-cache de 30 dias. O 2º é a razão de a
+  // forma nua entrar: a Metrópoles e o Poder360 escrevem só "Vox".
+  const titulos = [
+    'Pesquisa Vox Brasil: Lula tem 37,1% no 1º turno e Flávio Bolsonaro, 34,8% - JOTA Info',
+    'Vox: Flávio cresce, vai a 45,1%, e passa Lula, que tem 44,5%, no 2º turno - Metrópoles',
+    'VOX BRASIL: Flávio ultrapassa Lula e lidera numericamente o 2º turno com 45,1% contra 44,5%',
+    'Marina, André e Tebet empatam na disputa ao Senado em SP, diz Vox - Poder360',
+  ]
+  for (const t of titulos) conferir(`casa: "${t.slice(0, 38)}..."`, c.alvos.some((a) => a.test(t)))
+
+  // ⛔ O caso que separa esta casa da homônima: "Vox Populi" é outro instituto e
+  // não pode contar como cobertura desta. Ele aparece ZERO vez nos 30 dias
+  // medidos, então sem esta asserção a exclusão passaria verde por ausência.
+  const outra = [
+    'Pesquisa Vox Populi: Lula tem 40% e Flávio, 35% no 1º turno',
+    'Vox Populi divulga levantamento sobre aprovação do governo',
+  ]
+  for (const t of outra) conferir(`a casa homônima fica de fora: "${t.slice(0, 30)}..."`, !c.alvos.some((a) => a.test(t)))
+}
+
+console.log('\n10d. 🔴 A casa que é VEÍCULO: JOTA, e o rodapé do Google News (24/Set/2026)')
+{
+  const c = casaDoRegistro('JOTA JORNALISMO S/A')
+  conferir('o registro cai na entrada', c?.nome === 'JOTA Jornalismo', c?.nome)
+
+  // 🔴⭐ O CASO QUE DERRUBA A LINHA INGÊNUA, e os 5 são REAIS, copiados do cache
+  // de 30 dias. Com `palavra('jota')` os cinco casariam e a casa sairia COBERTA
+  // com 89 itens sem um único item de pesquisa dela. Nenhum pode casar:
+  //   · os 3 primeiros são o nome da FONTE que o Google News cola no fim;
+  //   · o 4º é um candidato a vice cujo nome é Jota;
+  //   · o 5º é o jogador Diogo Jota, em matéria de futebol saudita.
+  const rodape = [
+    'Quem são os candidatos à Presidência da República nas eleições 2026 - JOTA Info',
+    'Indexa/Broadcast: Lula marca 46% contra 41% de Flávio Bolsonaro no 2º turno - JOTA Info',
+    'AtlasIntel: Flávio avança no Centro-Oeste, e Lula, no Rio de Janeiro - JOTA Jornalismo',
+    'Jota Rodrigues 29 (PCO): candidato a Vice-Governador por RR - Gazeta do Povo',
+    'Futebol saudita vai punir torcedores por cantos ofensivos sobre Diogo Jota',
+  ]
+  for (const t of rodape) conferir(`rodapé e homônimo ficam de fora: "${t.slice(0, 40)}..."`, !c.alvos.some((a) => a.test(t)))
+
+  // ⚠️ E o par que prova que a entrada não é um "nunca casa": pesquisa desta casa
+  // tem de ser vista. As duas ordens da barra entram porque é a forma que a
+  // imprensa usa para parceria, medida no mesmo cache em "Globo/Quaest".
+  const dela = [
+    'Pesquisa JOTA: Lula tem 41% e Flávio Bolsonaro, 38%, no 1º turno',
+    'JOTA/Quaest: eleitor indeciso cai a 9% na reta final',
+    'Nexus/JOTA mostra disputa embolada no Senado por São Paulo',
+    'Levantamento do JOTA aponta empate técnico no 2º turno',
+    'JOTA divulga pesquisa nacional com 6.000 entrevistas',
+  ]
+  for (const t of dela) conferir(`pesquisa da casa casa: "${t.slice(0, 34)}..."`, c.alvos.some((a) => a.test(t)))
+
+  // 🔑 E o estado de hoje é INDETERMINADO, não buraco: a divulgação é 29/Set e o
+  // cache nunca viu a casa. Disparar aqui treinaria a pular o aviso.
+  const r = medirCobertura([reg('JOTA JORNALISMO S/A', '2026-09-29', 'BR058692026')], [cache('2026-09-24', 'Datafolha divulga nova pesquisa - JOTA Info')], '2026-09-24')
+  const j = r.casas.find((x) => x.nome === 'JOTA Jornalismo')
+  conferir('a casa entrou na tabela e não é mais desconhecida', r.desconhecidas.length === 0, JSON.stringify(r.desconhecidas))
+  conferir('o rodapé do veículo não conta como item', j?.itens === 0, JSON.stringify(j))
+  conferir('divulgação futura é INDETERMINADO', j?.estado === 'INDETERMINADO', j?.estado)
+  conferir('e o veredito não reprova', r.veredito === 'COBERTURA_OK', r.veredito)
+}
+
 console.log('\n11. Entrada inválida não vira casa fantasma')
 {
   conferir('null', casaDoRegistro(null) === null)

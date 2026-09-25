@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-23",
+  "lastUpdate": "2026-09-24",
   "institutes": [
     {
       "name": "Datafolha",
@@ -116,10 +116,10 @@
       "note": "Menos histórico disponível."
     },
     {
-      "name": "Alfa Inteligência",
+      "name": "Alfa Inteligência/TMC",
       "reliability": 2,
-      "type": "Misto",
-      "note": "Instituto mais recente."
+      "type": "Presencial",
+      "note": "Instituto recente, em parceria com a TMC. Primeira rodada nacional no painel em 24/Set/2026, sem retrospecto de eleição fechada."
     },
     {
       "name": "Colectta",
@@ -147,6 +147,419 @@
     }
   ],
   "polls": [
+    {
+      "institute": "Palver",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 5000,
+      "margin": 2.5,
+      "register": "BR-09587/2026",
+      "reliability": 3,
+      "method": "Online",
+      "fieldDates": "2026-09-20 a 2026-09-23",
+      "note": "Palver nacional divulgada em 24/Set, registro BR-09587/2026 no TSE, 5.000 eleitores por questionário online entre 20 e 23/Set, levantamento com recursos do próprio instituto, 95% de confiança (CNN Brasil, UOL, Gazeta do Povo, CartaCapital e JOTA). ⭐ NO 1º TURNO ESTIMULADO OS DOIS EMPATAM EM 43%, e é a própria casa mudando de sinal: em 21/Set ela media Flávio Bolsonaro 42% e Lula 41%. Lula sobe 2 pontos, Flávio Bolsonaro 1, e quem cede é Renan Santos, de 11% para 8%, a maior queda de qualquer nome nesta rodada. Augusto Cury fica em 2%, Ronaldo Caiado e Romeu Zema em 1% cada. 🗣️ E o CENÁRIO ESPONTÂNEO da mesma rodada dá outro resultado: Lula 41% contra 39%, ou seja, a dianteira aparece quando o entrevistado diz o nome sem lista na frente e desaparece quando a lista é lida. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 48% E LULA 45%, com o vão fechando de 4 para 3 pontos contra a rodada da casa de 21/Set, dentro da margem. Lula vence os outros quatro pares: 45% a 43% contra Romeu Zema, 44% a 42% contra Ronaldo Caiado, 44% a 36% contra Augusto Cury e 44% a 34% contra Renan Santos. 🏷️ A MARGEM DIVERGE ENTRE OS VEÍCULOS: o UOL declara 2,5pp e a CNN Brasil 3,0pp para a mesma rodada. O painel guarda 2,5pp, que é o da matéria que reproduz a ficha técnica inteira, e registra a divergência em vez de escolher em silêncio. Aprovação do governo na mesma rodada: 44% aprovam contra 55% que desaprovam, e a rejeição de voto é de 53% para Lula, 48% para Flávio Bolsonaro e 34% para Renan Santos e Romeu Zema.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 43
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 43
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 8
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 2
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 1
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        },
+        {
+          "name": "Cenário espontâneo (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 8
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 48,
+          "candidate2": "Lula",
+          "percent2": 45
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Romeu Zema",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Augusto Cury",
+          "percent2": 36
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Renan Santos",
+          "percent2": 34
+        }
+      ]
+    },
+    {
+      "institute": "PoderData/Aya",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 3000,
+      "margin": 1.8,
+      "register": "BR-01739/2026",
+      "reliability": 3,
+      "method": "Telefônica",
+      "fieldDates": "2026-09-20 a 2026-09-23",
+      "note": "PoderData em parceria com a Aya, nacional divulgada em 24/Set, registro BR-01739/2026 no TSE, 3.000 eleitores por telefone entre 20 e 23/Set, margem de 1,8pp com 95% de confiança, levantamento com recursos do próprio instituto (CNN Brasil, Poder360, SBT News, Jovem Pan, ND Mais e Revista Oeste). ⭐ NO 1º TURNO LULA TEM 41% E FLÁVIO BOLSONARO 39%, e os dois subiram contra a rodada da casa de 17/Set, que media 37% e 36%: são 4 pontos para Lula e 3 para Flávio Bolsonaro, então a distância ABRIU de 1 para 2 pontos. Augusto Cury cede de 8% para 6%, Renan Santos fica em 3%, Ronaldo Caiado cai de 3% para 2% e Romeu Zema fica em 1%. Branco e nulo somam 4% e os indecisos 2%. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 46% E LULA 45%, e o vão fechou de 2 para 1 ponto contra 17/Set porque Lula subiu 1 ponto e o adversário ficou parado. 🔑 E A CASA TESTA UM PAR QUE QUASE NENHUMA OUTRA TESTA, com resultado que contraria a ordem do 1º turno: Augusto Cury vence Lula por 45% a 42%, o mesmo placar de 17/Set, e Flávio Bolsonaro vence Augusto Cury por 41% a 39%. Rejeição de voto na mesma rodada: 49% para Lula e 47% para Flávio Bolsonaro.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 39
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 46,
+          "candidate2": "Lula",
+          "percent2": 45
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Augusto Cury",
+          "percent1": 45,
+          "candidate2": "Lula",
+          "percent2": 42
+        },
+        {
+          "matchup": "Flávio vs Cury",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 41,
+          "candidate2": "Augusto Cury",
+          "percent2": 39
+        }
+      ]
+    },
+    {
+      "institute": "Alfa Inteligência/TMC",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 2700,
+      "margin": 1.8,
+      "register": "BR-02512/2026",
+      "reliability": 2,
+      "method": "Presencial",
+      "fieldDates": "2026-09-18 a 2026-09-23",
+      "note": "Alfa Inteligência em parceria com a TMC, nacional divulgada em 24/Set, registro BR-02512/2026 no TSE, 2.700 eleitores em entrevistas pessoais entre 18 e 23/Set, margem de 1,8pp com 95% de confiança, contratada pela própria Alfa Inteligência (Exame, Gazeta do Povo, CartaCapital, Revista Oeste, GP1 e TMC). 🆕 É A PRIMEIRA RODADA DESTA CASA NO PAINEL, e a confiabilidade dela aqui é 2, a menor da tabela, porque é instituto recente e sem retrospecto de eleição fechada. ⭐ NO 1º TURNO LULA TEM 40% E FLÁVIO BOLSONARO 33%, ou seja 7 pontos de distância, contra 4 na Datafolha, 4 na Real Time, 2 na PoderData, zero na Palver e 2 no sentido oposto na Futura, nas seis nacionais divulgadas neste 24/Set. E ainda assim é queda para Lula dentro da série da própria casa: a Exame registra que a dianteira dele caiu de 14 para 7 pontos contra a rodada anterior da Alfa, que não está neste painel. Augusto Cury tem 6%, Ronaldo Caiado 5%, Renan Santos 3% e Romeu Zema 1%, com 6% de branco e nulo e 5% de indecisos. ⚖️ NO 2º TURNO O PAR PRINCIPAL EMPATA EM 43% A 43%, e Lula vence os outros quatro: 46% a 39% contra Romeu Zema, 43% a 42% contra Ronaldo Caiado, 43% a 37% contra Renan Santos e 42% a 39% contra Augusto Cury. 🗺️ A casa publica recorte regional: Lula tem 56% a 24% no Nordeste e 45% a 27% entre quem recebe até dois salários mínimos, e Flávio Bolsonaro tem 37% a 34% entre evangélicos, 42% a 35% no Sul e 36% a 33% no Sudeste. Gestão: 46% aprovam e 50% desaprovam, 55% dizem que Lula não merece ser reeleito contra 43% que apoiam novo mandato, e 45% veem o país no caminho errado contra 37% que veem o certo.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 43
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Romeu Zema",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Renan Santos",
+          "percent2": 37
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 42,
+          "candidate2": "Augusto Cury",
+          "percent2": 39
+        }
+      ]
+    },
+    {
+      "institute": "Datafolha",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 2002,
+      "margin": 2,
+      "register": "BR-00304/2026",
+      "reliability": 5,
+      "method": "Presencial",
+      "fieldDates": "2026-09-22 a 2026-09-23",
+      "note": "Datafolha nacional divulgada em 24/Set às 18h41 BRT, registro BR-00304/2026 no TSE, 2.002 pessoas de 16 anos ou mais entrevistadas presencialmente entre 22 e 23/Set, margem de 2,0pp com 95% de confiança (G1, Folha de S.Paulo, Estadão, Valor Econômico, CartaCapital, NSC Total e VEJA). ⭐ NO 1º TURNO LULA TEM 40% E FLÁVIO BOLSONARO 36%, e a distância ABRIU de 3 para 4 pontos contra a rodada da casa de 17/Set: Lula subiu 1 ponto e o adversário ficou nos mesmos 36%. Augusto Cury cede de 6% para 5%, Ronaldo Caiado fica em 4%, Renan Santos em 3% e Romeu Zema cai de 2% para 1%. ⚖️ NO 2º TURNO LULA TEM 47% E FLÁVIO BOLSONARO 45%, os dois um ponto acima de 17/Set, e é a ÚNICA das seis nacionais de 24/Set que põe Lula à frente naquele par. A distância de 4 pontos no 1º turno fica no limite da margem de 2,0pp para mais ou para menos, e a casa declara empate técnico nos dois turnos. 🔒 A DECISÃO DO VOTO ESTÁ TRAVADA: 80% dizem estar totalmente decididos e 20% podem mudar, com 87% de decisão entre os eleitores de Lula e 85% entre os de Flávio Bolsonaro, a dez dias do 1º turno. A rejeição dos dois empata em 45% cada. 🏷️ O registro no TSE declara campo de 22 a 24/Set e a casa publicou campo de 22 a 23/Set; o painel guarda o campo da divulgação e registra os dois.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 40
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 36
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 5
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 47,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 45
+        }
+      ]
+    },
+    {
+      "institute": "Real Time Big Data",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2,
+      "register": "BR-04202/2026",
+      "reliability": 3,
+      "method": "Telefônica + recrutamento digital",
+      "fieldDates": "2026-09-19 a 2026-09-23",
+      "note": "Real Time Big Data nacional divulgada em 24/Set, registro BR-04202/2026 no TSE, 2.000 eleitores por telefone e recrutamento digital entre 19 e 23/Set, margem de 2,0pp com 95% de confiança (CNN Brasil, Exame, Gazeta do Povo, UOL, VEJA, CartaCapital, Sul 21 e Brasil de Fato). ⭐ NO 1º TURNO LULA TEM 41% E FLÁVIO BOLSONARO 37%, e a leitura dentro da própria casa é de ENCOLHIMENTO: na rodada dela de 01/Set, a última no painel, o cenário sem Pablo Marçal media Lula 38% e Flávio Bolsonaro 30%, então a dianteira caiu de 8 para 4 pontos e o adversário subiu 7. Augusto Cury e Renan Santos empatam em 6%, Ronaldo Caiado tem 2% e Romeu Zema 1%, com 3% de branco e nulo e 3% de indecisos. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 45% E LULA 44%, dentro da margem, depois de empate em 44% a 44% em 01/Set. 🏷️ O RÓTULO DE NACIONAL DESTE REGISTRO SE CONFIRMOU NA DIVULGAÇÃO, e isso importa porque ele vinha apoiado apenas no plano amostral: a casa escreve \"eleitorado brasileiro\" em 16 de 16 pesquisas estaduais em que a metodologia resolve o escopo, o que torna esse campo incapaz de distinguir. Dois veículos independentes entre si, Gazeta do Povo e Exame, publicaram o mesmo protocolo, os mesmos 2.000 entrevistados, o mesmo campo de 19 a 23/Set e a corrida presidencial sem nenhum corte estadual. Rejeição de voto na mesma rodada: 50% para Lula e 49% para Flávio Bolsonaro, e 55% dizem estar desanimados com a eleição presidencial.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 41
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 45,
+          "candidate2": "Lula",
+          "percent2": 44
+        }
+      ]
+    },
+    {
+      "institute": "Futura/100% Cidades",
+      "date": "2026-09-24",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-05268/2026",
+      "reliability": 3,
+      "method": "Telefone (CATI)",
+      "fieldDates": "2026-09-19 a 2026-09-23",
+      "note": "Futura Inteligência contratada pela 100% Cidades, nacional divulgada em 24/Set, registro BR-05268/2026 no TSE, 2.000 eleitores por entrevista telefônica entre 19 e 23/Set, margem de 2,2pp com 95% de confiança, levantamento com recursos do próprio instituto (CNN Brasil, Exame, Portal VV8, Band FM e Diário 360). ⭐ É A ÚNICA DAS SEIS NACIONAIS DE 24/Set QUE PÕE FLÁVIO BOLSONARO À FRENTE NO 1º TURNO, com 40,4% contra 38,4%, e a virada acontece dentro da própria casa: em 17/Set ela media Lula 38,3% e Flávio Bolsonaro 37,7%. Lula ficou praticamente parado, 0,1 ponto acima, e o adversário subiu 2,7. Ronaldo Caiado sobe de 4,5% para 5,7% e passa Augusto Cury, que cai de 6,5% para 5,6%; Renan Santos cede de 3,4% para 2,4% e Romeu Zema fica em 0,9%. Indecisos são 3,2% e branco e nulo 2,1%. ⚖️ NO 2º TURNO FLÁVIO BOLSONARO TEM 49,4% E LULA 43,7%, e os 5,7 pontos de distância ficam FORA da margem de 2,2pp, o que a casa descreve como vantagem estatística. O vão dela abriu de 4,4 para 5,7 pontos contra 17/Set, com Lula exatamente nos mesmos 43,7%. 📌 VANTAGEM FORA DA MARGEM NAQUELE PAR NÃO É NOVIDADE NESTA BASE: das 34 leituras de 2º turno entre os dois já registradas no painel, 11 ficaram fora da margem da própria pesquisa e 8 delas favoreciam Flávio Bolsonaro, incluindo Gerp em 09 e 17/Set, Veritá em 06/Set e esta mesma casa em 17/Set. A casa também mede outros dois pares em que Lula não vence: Ronaldo Caiado 46,5% a 42,4% e Romeu Zema 43,8% a 43,3%. Aprovação do governo na mesma rodada: 44,2% aprovam contra 53,3% que desaprovam.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 40.4
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5.7
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 5.6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 2.4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 0.9
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 49.4,
+          "candidate2": "Lula",
+          "percent2": 43.7
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Ronaldo Caiado",
+          "percent1": 46.5,
+          "candidate2": "Lula",
+          "percent2": 42.4
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Romeu Zema",
+          "percent1": 43.8,
+          "candidate2": "Lula",
+          "percent2": 43.3
+        }
+      ]
+    },
     {
       "institute": "AtlasIntel/Bloomberg",
       "date": "2026-09-23",
@@ -224,86 +637,6 @@
           "percent1": 46.5,
           "candidate2": "Renan Santos",
           "percent2": 31.2
-        }
-      ]
-    },
-    {
-      "institute": "Quaest/Globo",
-      "date": "2026-09-21",
-      "scope": "national",
-      "sample": 2004,
-      "margin": 2,
-      "register": "BR-06004/2026",
-      "reliability": 4,
-      "method": "Presencial",
-      "fieldDates": "2026-09-17 a 2026-09-20",
-      "note": "Quaest nacional divulgada em 21/Set as 18h06 BRT, registro BR-06004/2026 no TSE, 2.004 eleitores de 16 anos ou mais entrevistados presencialmente entre 17 e 20/Set, margem de 2,0pp com 95% de confianca, contratada pelo Grupo Globo (CNN Brasil, CartaCapital, Poder360, CBN e Folha de S.Paulo). ⭐ NO 1º TURNO LULA TEM 37% E FLAVIO BOLSONARO 33%, com Augusto Cury em 6%, Ronaldo Caiado em 4%, Renan Santos em 3%, Romeu Zema em 1% e Samara Martins em 1%, mais 7% de branco, nulo ou nao vai votar e 8% de indecisos. Contra a rodada anterior da casa, Flavio Bolsonaro oscila 2 pontos para cima e Lula 1, os dois dentro da margem. ⭐ A CASA TESTOU CINCO PARES DE 2º TURNO: Flavio Bolsonaro tem 42% contra 41% de Lula, e Lula vence os outros quatro, 41% a 39% contra Ronaldo Caiado, 41% a 38% contra Renan Santos, 39% a 35% contra Augusto Cury e 46% a 32% contra Romeu Zema. ⚖️ E A TERCEIRA NACIONAL COM CAMPO FECHANDO NO MESMO 20/Set, junto de BTG/Nexus e Palver, e as tres usam metodos diferentes: presencial, telefone e online. No 1º turno a distancia entre Lula e Flavio Bolsonaro sai de 4 pontos aqui, 3 pontos na BTG/Nexus e 1 ponto a favor de Flavio Bolsonaro na Palver. 📌 A casa tambem mediu aprovacao do governo, 44% contra 50% de desaprovacao, e avaliacao, 33% positiva, 23% regular e 42% negativa. 🏷️ O painel nomeia esta rodada pelo contratante declarado na divulgacao, o Grupo Globo; as rodadas anteriores da mesma casa estao no painel como Quaest/Genial, e a comparacao com a rodada anterior e a que a propria casa publicou.",
-      "scenarios": [
-        {
-          "name": "Cenário Principal (1º turno, estimulado)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 37
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 33
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Renan Santos",
-          "percent2": 38
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 39,
-          "candidate2": "Augusto Cury",
-          "percent2": 35
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 32
         }
       ]
     },
@@ -464,6 +797,86 @@
           "percent1": 47,
           "candidate2": "Renan Santos",
           "percent2": 39
+        }
+      ]
+    },
+    {
+      "institute": "Quaest/Globo",
+      "date": "2026-09-21",
+      "scope": "national",
+      "sample": 2004,
+      "margin": 2,
+      "register": "BR-06004/2026",
+      "reliability": 4,
+      "method": "Presencial",
+      "fieldDates": "2026-09-17 a 2026-09-20",
+      "note": "Quaest nacional divulgada em 21/Set as 18h06 BRT, registro BR-06004/2026 no TSE, 2.004 eleitores de 16 anos ou mais entrevistados presencialmente entre 17 e 20/Set, margem de 2,0pp com 95% de confianca, contratada pelo Grupo Globo (CNN Brasil, CartaCapital, Poder360, CBN e Folha de S.Paulo). ⭐ NO 1º TURNO LULA TEM 37% E FLAVIO BOLSONARO 33%, com Augusto Cury em 6%, Ronaldo Caiado em 4%, Renan Santos em 3%, Romeu Zema em 1% e Samara Martins em 1%, mais 7% de branco, nulo ou nao vai votar e 8% de indecisos. Contra a rodada anterior da casa, Flavio Bolsonaro oscila 2 pontos para cima e Lula 1, os dois dentro da margem. ⭐ A CASA TESTOU CINCO PARES DE 2º TURNO: Flavio Bolsonaro tem 42% contra 41% de Lula, e Lula vence os outros quatro, 41% a 39% contra Ronaldo Caiado, 41% a 38% contra Renan Santos, 39% a 35% contra Augusto Cury e 46% a 32% contra Romeu Zema. ⚖️ E A TERCEIRA NACIONAL COM CAMPO FECHANDO NO MESMO 20/Set, junto de BTG/Nexus e Palver, e as tres usam metodos diferentes: presencial, telefone e online. No 1º turno a distancia entre Lula e Flavio Bolsonaro sai de 4 pontos aqui, 3 pontos na BTG/Nexus e 1 ponto a favor de Flavio Bolsonaro na Palver. 📌 A casa tambem mediu aprovacao do governo, 44% contra 50% de desaprovacao, e avaliacao, 33% positiva, 23% regular e 42% negativa. 🏷️ O painel nomeia esta rodada pelo contratante declarado na divulgacao, o Grupo Globo; as rodadas anteriores da mesma casa estao no painel como Quaest/Genial, e a comparacao com a rodada anterior e a que a propria casa publicou.",
+      "scenarios": [
+        {
+          "name": "Cenário Principal (1º turno, estimulado)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 33
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Renan Santos",
+          "percent2": 38
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 39,
+          "candidate2": "Augusto Cury",
+          "percent2": 35
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Romeu Zema",
+          "percent2": 32
         }
       ]
     },
@@ -855,86 +1268,6 @@
       ]
     },
     {
-      "institute": "Indexa/Broadcast",
-      "date": "2026-09-15",
-      "scope": "national",
-      "sample": 2000,
-      "margin": 2.2,
-      "register": "BR-03482/2026",
-      "reliability": 4,
-      "method": "Telefone",
-      "fieldDates": "2026-09-10 a 2026-09-13",
-      "note": "Indexa/Broadcast nacional divulgada em 15/Set, campo de 10 a 13/Set, registro BR-03482/2026 no TSE, 2.000 entrevistas individuais por telefone, margem de 2,2pp com 95% de confiança, custo declarado de R$ 164.000,00 (Gazeta do Povo e JOTA, e o registro do TSE confere amostra, campo, método e custo). ⭐ O PAR DE 2º TURNO CONTRA FLÁVIO BOLSONARO SAIU 43% A 42% PARA LULA, uma diferença de 1 ponto que cabe dentro de uma margem, então a casa mede empate técnico. Na onda anterior da própria casa, divulgada em 26/Ago com campo de 20 a 23/Ago, o par tinha saído 46% a 41%: nas duas leituras que o painel registra desta casa a distância caiu de 5 pontos para 1. ⭐ NO 1º TURNO LULA TEM 38% E FLÁVIO BOLSONARO 34%, quatro pontos que cabem dentro de duas margens de 2,2, então nesta casa nem o 1º turno nem o 2º separam os dois com folga. Contra a onda de 26/Ago, Lula cede 1 ponto e Flávio fica parado. Augusto Cury tem 6%, Ronaldo Caiado 4%, Renan Santos 3% e Romeu Zema 1%. A casa não inclui Pablo Marçal no cenário desta onda. ⚖️ A CNT/MDA, DIVULGADA NO MESMO DIA com campo de 9 a 13/Set e a mesma margem de 2,2, dá o 1º turno a Lula por 40,5% a 30,4% e o 2º turno por 47,3% a 40%: as duas casas concordam no sinal, com Lula à frente nos dois turnos, e discordam na magnitude, porque a distância do 2º turno é de 1 ponto aqui e de 7,3 pontos lá. O painel registra as duas sem escolher. Nos outros pares de 2º turno Lula vence os quatro: 45% a 35% contra Renan Santos e 45% a 34% contra Romeu Zema, as duas fora de duas margens, 43% a 39% contra Ronaldo Caiado e 41% a 39% contra Augusto Cury, as duas dentro de duas margens. 📅 A divulgação de hoje já estava no calendário publicado pelo painel. 🏷️ Rejeição e aprovação não entram nesta ficha porque o painel não as confirmou em duas fontes independentes.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 43,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 41,
-          "candidate2": "Augusto Cury",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 43,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 39
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Renan Santos",
-          "percent2": 35
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Romeu Zema",
-          "percent2": 34
-        }
-      ]
-    },
-    {
       "institute": "CNT/MDA",
       "date": "2026-09-15",
       "scope": "national",
@@ -1015,6 +1348,86 @@
           "percent1": 45.3,
           "candidate2": "Augusto Cury",
           "percent2": 38.4
+        }
+      ]
+    },
+    {
+      "institute": "Indexa/Broadcast",
+      "date": "2026-09-15",
+      "scope": "national",
+      "sample": 2000,
+      "margin": 2.2,
+      "register": "BR-03482/2026",
+      "reliability": 4,
+      "method": "Telefone",
+      "fieldDates": "2026-09-10 a 2026-09-13",
+      "note": "Indexa/Broadcast nacional divulgada em 15/Set, campo de 10 a 13/Set, registro BR-03482/2026 no TSE, 2.000 entrevistas individuais por telefone, margem de 2,2pp com 95% de confiança, custo declarado de R$ 164.000,00 (Gazeta do Povo e JOTA, e o registro do TSE confere amostra, campo, método e custo). ⭐ O PAR DE 2º TURNO CONTRA FLÁVIO BOLSONARO SAIU 43% A 42% PARA LULA, uma diferença de 1 ponto que cabe dentro de uma margem, então a casa mede empate técnico. Na onda anterior da própria casa, divulgada em 26/Ago com campo de 20 a 23/Ago, o par tinha saído 46% a 41%: nas duas leituras que o painel registra desta casa a distância caiu de 5 pontos para 1. ⭐ NO 1º TURNO LULA TEM 38% E FLÁVIO BOLSONARO 34%, quatro pontos que cabem dentro de duas margens de 2,2, então nesta casa nem o 1º turno nem o 2º separam os dois com folga. Contra a onda de 26/Ago, Lula cede 1 ponto e Flávio fica parado. Augusto Cury tem 6%, Ronaldo Caiado 4%, Renan Santos 3% e Romeu Zema 1%. A casa não inclui Pablo Marçal no cenário desta onda. ⚖️ A CNT/MDA, DIVULGADA NO MESMO DIA com campo de 9 a 13/Set e a mesma margem de 2,2, dá o 1º turno a Lula por 40,5% a 30,4% e o 2º turno por 47,3% a 40%: as duas casas concordam no sinal, com Lula à frente nos dois turnos, e discordam na magnitude, porque a distância do 2º turno é de 1 ponto aqui e de 7,3 pontos lá. O painel registra as duas sem escolher. Nos outros pares de 2º turno Lula vence os quatro: 45% a 35% contra Renan Santos e 45% a 34% contra Romeu Zema, as duas fora de duas margens, 43% a 39% contra Ronaldo Caiado e 41% a 39% contra Augusto Cury, as duas dentro de duas margens. 📅 A divulgação de hoje já estava no calendário publicado pelo painel. 🏷️ Rejeição e aprovação não entram nesta ficha porque o painel não as confirmou em duas fontes independentes.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 41,
+          "candidate2": "Augusto Cury",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 43,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 39
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Renan Santos",
+          "percent2": 35
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 45,
+          "candidate2": "Romeu Zema",
+          "percent2": 34
         }
       ]
     },
@@ -1446,148 +1859,6 @@
       "source": "Poder360, CNN Brasil, Jovem Pan e Money Times (10/Set/2026)"
     },
     {
-      "institute": "Ideia/Canal Meio",
-      "date": "2026-09-09",
-      "scope": "national",
-      "sample": 1500,
-      "margin": 2.5,
-      "register": "BR-07935/2026",
-      "reliability": 3,
-      "method": "Ideia para o Canal Meio",
-      "fieldDates": "2026-09-04 a 2026-09-07",
-      "note": "Ideia/Canal Meio nacional divulgada em 09/Set, campo de 04 a 07/Set, registro BR-07935/2026 no TSE, 1.500 entrevistas, margem de 2,5pp e 95% de confiança (Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA e Congresso em Foco). ⭐ TRÊS NACIONAIS SAÍRAM NO MESMO DIA E ELAS DISCORDAM NO SINAL DO 1º TURNO: esta dá Lula à frente por 1,1 ponto (38,4% a 37,3%), a Palver dá empate exato em 40% e a Gerp inverte, com 37% para Flávio Bolsonaro contra 34%. São 4,1 pontos entre as duas pontas, com margens de 2,0 a 3,0 pontos, e os campos se sobrepõem quase inteiramente, de 03 a 08/Set. ⚠️ A distância de 1,1 ponto desta casa cabe inteira na margem de 2,5, então o que ela mede é EMPATE TÉCNICO e não liderança. NO 2º TURNO a casa dá 46% a 46%, e este é o SEXTO resultado nacional seguido desde 06/Set em que Lula não aparece à frente no par: Veritá de 06/Set (48,5% a 43,1% para Flávio), Quaest de 07/Set (41% a 41%), BTG/Nexus de 08/Set (46% a 45% para Flávio) e as três de hoje. A leitura nacional anterior a essa sequência é a Datafolha de 03/Set, que dava 46% a 44% para Lula. OS OUTROS PARES DE 2º TURNO desta casa, todos com Lula à frente: 46% a 42% contra Ronaldo Caiado, 46% a 40,9% contra Augusto Cury, 46% a 40,3% contra Renan Santos e 46% a 38% contra Romeu Zema. ESPONTÂNEA: Lula 30,7%, Flávio 28%, Cury 3,2%, Renan 3%, Caiado 2%, Zema 0,8%, Marçal 0,5% e Samara 0,4%. REJEIÇÃO: Lula 46,6% e Flávio 45,7%, 0,9 ponto de distância, contra 49% e 40% que a Gerp mediu no mesmo dia, ou seja as duas casas concordam na ordem e diferem em 8,1 pontos na distância entre os dois nomes.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 38.4
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37.3
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6.6
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1.5
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 1.5
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 46
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Cury",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Augusto Cury",
-          "percent2": 40.9
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Renan Santos",
-          "percent2": 40.3
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Romeu Zema",
-          "percent2": 38
-        }
-      ],
-      "source": "Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA e Congresso em Foco (09/Set/2026)"
-    },
-    {
-      "institute": "Gerp",
-      "date": "2026-09-09",
-      "scope": "national",
-      "sample": 2400,
-      "margin": 2,
-      "register": "BR-00251/2026",
-      "reliability": 3,
-      "method": "Custeada pelo próprio instituto",
-      "fieldDates": "2026-09-03 a 2026-09-08",
-      "note": "Gerp nacional divulgada em 09/Set, campo de 03 a 08/Set, registro BR-00251/2026 no TSE, 2.400 entrevistas, margem de 2pp e 95,55% de confiança, custeada pelo próprio instituto (Gazeta do Povo, Exame, CNN Brasil e Jovem Pan). ⭐ É A ÚNICA DAS TRÊS NACIONAIS DE HOJE QUE INVERTE O 1º TURNO: 37% para Flávio Bolsonaro contra 34% de Lula. Os 3 pontos superam a margem de 2, então dentro desta casa não é empate técnico, e a Ideia/Canal Meio do mesmo dia mede o sinal oposto por 1,1 ponto. ⚠️ COMPARAÇÃO DENTRO DA CASA, que é a única válida: na rodada de 26/Ago a mesma Gerp dava o 2º turno por 47% a 42%, e agora dá 47% a 40%, com Flávio parado em 47% e Lula cedendo 2 pontos. ⭐ OS 7 PONTOS DE DISTÂNCIA NO 2º TURNO SÃO A MAIOR ENTRE AS TRÊS LEITURAS DE HOJE: a Palver dá 2 pontos e a Ideia/Canal Meio dá empate em 46% a 46%, ou seja as três casas cobrem de 0 a 7 pontos no mesmo par, com campo sobreposto. ESPONTÂNEA: Flávio 33%, Lula 30%, Cury 4%, Renan 3%, Caiado 2%, e 27% não sabem. REJEIÇÃO: Lula 49% e Flávio 40%, 9 pontos de distância, contra 0,9 ponto que a Ideia/Canal Meio mediu no mesmo dia. NO 2º TURNO a casa registra ainda 11% que não escolhem nenhum dos dois e 3% sem resposta.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado (1º turno)",
-          "results": [
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37
-            },
-            {
-              "candidate": "Lula (PT)",
-              "percent": 34
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 6
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 47,
-          "candidate2": "Lula",
-          "percent2": 40
-        }
-      ],
-      "source": "Gazeta do Povo, Exame, CNN Brasil e Jovem Pan (09/Set/2026)"
-    },
-    {
       "institute": "Palver",
       "date": "2026-09-09",
       "scope": "national",
@@ -1672,6 +1943,148 @@
         }
       ],
       "source": "CNN Brasil, UOL, CartaCapital e JOTA (09/Set/2026)"
+    },
+    {
+      "institute": "Gerp",
+      "date": "2026-09-09",
+      "scope": "national",
+      "sample": 2400,
+      "margin": 2,
+      "register": "BR-00251/2026",
+      "reliability": 3,
+      "method": "Custeada pelo próprio instituto",
+      "fieldDates": "2026-09-03 a 2026-09-08",
+      "note": "Gerp nacional divulgada em 09/Set, campo de 03 a 08/Set, registro BR-00251/2026 no TSE, 2.400 entrevistas, margem de 2pp e 95,55% de confiança, custeada pelo próprio instituto (Gazeta do Povo, Exame, CNN Brasil e Jovem Pan). ⭐ É A ÚNICA DAS TRÊS NACIONAIS DE HOJE QUE INVERTE O 1º TURNO: 37% para Flávio Bolsonaro contra 34% de Lula. Os 3 pontos superam a margem de 2, então dentro desta casa não é empate técnico, e a Ideia/Canal Meio do mesmo dia mede o sinal oposto por 1,1 ponto. ⚠️ COMPARAÇÃO DENTRO DA CASA, que é a única válida: na rodada de 26/Ago a mesma Gerp dava o 2º turno por 47% a 42%, e agora dá 47% a 40%, com Flávio parado em 47% e Lula cedendo 2 pontos. ⭐ OS 7 PONTOS DE DISTÂNCIA NO 2º TURNO SÃO A MAIOR ENTRE AS TRÊS LEITURAS DE HOJE: a Palver dá 2 pontos e a Ideia/Canal Meio dá empate em 46% a 46%, ou seja as três casas cobrem de 0 a 7 pontos no mesmo par, com campo sobreposto. ESPONTÂNEA: Flávio 33%, Lula 30%, Cury 4%, Renan 3%, Caiado 2%, e 27% não sabem. REJEIÇÃO: Lula 49% e Flávio 40%, 9 pontos de distância, contra 0,9 ponto que a Ideia/Canal Meio mediu no mesmo dia. NO 2º TURNO a casa registra ainda 11% que não escolhem nenhum dos dois e 3% sem resposta.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37
+            },
+            {
+              "candidate": "Lula (PT)",
+              "percent": 34
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 5
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 47,
+          "candidate2": "Lula",
+          "percent2": 40
+        }
+      ],
+      "source": "Gazeta do Povo, Exame, CNN Brasil e Jovem Pan (09/Set/2026)"
+    },
+    {
+      "institute": "Ideia/Canal Meio",
+      "date": "2026-09-09",
+      "scope": "national",
+      "sample": 1500,
+      "margin": 2.5,
+      "register": "BR-07935/2026",
+      "reliability": 3,
+      "method": "Ideia para o Canal Meio",
+      "fieldDates": "2026-09-04 a 2026-09-07",
+      "note": "Ideia/Canal Meio nacional divulgada em 09/Set, campo de 04 a 07/Set, registro BR-07935/2026 no TSE, 1.500 entrevistas, margem de 2,5pp e 95% de confiança (Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA e Congresso em Foco). ⭐ TRÊS NACIONAIS SAÍRAM NO MESMO DIA E ELAS DISCORDAM NO SINAL DO 1º TURNO: esta dá Lula à frente por 1,1 ponto (38,4% a 37,3%), a Palver dá empate exato em 40% e a Gerp inverte, com 37% para Flávio Bolsonaro contra 34%. São 4,1 pontos entre as duas pontas, com margens de 2,0 a 3,0 pontos, e os campos se sobrepõem quase inteiramente, de 03 a 08/Set. ⚠️ A distância de 1,1 ponto desta casa cabe inteira na margem de 2,5, então o que ela mede é EMPATE TÉCNICO e não liderança. NO 2º TURNO a casa dá 46% a 46%, e este é o SEXTO resultado nacional seguido desde 06/Set em que Lula não aparece à frente no par: Veritá de 06/Set (48,5% a 43,1% para Flávio), Quaest de 07/Set (41% a 41%), BTG/Nexus de 08/Set (46% a 45% para Flávio) e as três de hoje. A leitura nacional anterior a essa sequência é a Datafolha de 03/Set, que dava 46% a 44% para Lula. OS OUTROS PARES DE 2º TURNO desta casa, todos com Lula à frente: 46% a 42% contra Ronaldo Caiado, 46% a 40,9% contra Augusto Cury, 46% a 40,3% contra Renan Santos e 46% a 38% contra Romeu Zema. ESPONTÂNEA: Lula 30,7%, Flávio 28%, Cury 3,2%, Renan 3%, Caiado 2%, Zema 0,8%, Marçal 0,5% e Samara 0,4%. REJEIÇÃO: Lula 46,6% e Flávio 45,7%, 0,9 ponto de distância, contra 49% e 40% que a Gerp mediu no mesmo dia, ou seja as duas casas concordam na ordem e diferem em 8,1 pontos na distância entre os dois nomes.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 38.4
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 37.3
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 6.6
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 4
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 4
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1.5
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 1.5
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Lula vs Flávio",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Flávio Bolsonaro",
+          "percent2": 46
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Cury",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Augusto Cury",
+          "percent2": 40.9
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Renan Santos",
+          "percent2": 40.3
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 46,
+          "candidate2": "Romeu Zema",
+          "percent2": 38
+        }
+      ],
+      "source": "Gazeta do Povo, Poder360, Folha de S.Paulo, Valor Econômico, UOL, CartaCapital, VEJA, Exame, JOTA e Congresso em Foco (09/Set/2026)"
     },
     {
       "institute": "BTG/Nexus",
@@ -1993,6 +2406,108 @@
       "source": "Veritá, registro BR-09426/2026 no TSE, noticiada por CNN Brasil e Terra Brasil Notícias em 06/Set e agregada na tabela da Wikipédia, que registra o mesmo campo e os mesmos percentuais. O site do instituto não havia publicado a rodada no momento da conferência."
     },
     {
+      "institute": "PoderData",
+      "date": "2026-09-03",
+      "scope": "national",
+      "sample": 3000,
+      "margin": 2,
+      "register": "BR-07561/2026",
+      "reliability": 3,
+      "method": "Telefônica/Online",
+      "fieldDates": "2026-08-30 a 2026-09-02",
+      "note": "PoderData nacional divulgada em 03/Set (Gazeta do Povo). ⭐ ELA INVERTE O 2º TURNO DENTRO DA PRÓPRIA CASA. Flávio Bolsonaro tem 45% contra 44% de Lula, com 8% de branco ou nulo e 3% de não sabe. Nas duas rodadas anteriores do mesmo instituto era Lula à frente, por 46% a 45% em 13/Ago e por 45% a 44% em 27/Ago, e esta é a primeira da série da casa em que o segundo colocado aparece numericamente na frente nesse par. A distância é de 1 ponto e a margem declarada é de 2pp, ou seja, empate técnico pela régua da própria casa. ⚠️ E A CASA DA VÉSPERA MEDIU O CONTRÁRIO NO MESMO PAR: a Genial/Quaest de 02/Set, com campo de 30/Ago a 01/Set que se sobrepõe quase inteiro a este, deu Lula à frente por 42% a 41%. As duas margens são de 1 ponto e apontam para lados opostos. COMPARAÇÃO DENTRO DA CASA, que é a única válida. No 1º turno Lula saiu de 41% em 13/Ago para 38% em 27/Ago e 37% agora, e Flávio de 35% para 35% e 34%, ou seja, a distância entre os dois foi de 6pp para 3pp e ficou em 3pp. ⭐ AUGUSTO CURY SALTA DE 4% PARA 10% DENTRO DA POWERDATA entre 27/Ago e agora, o mesmo salto que a Genial/Quaest mediu na véspera indo de 2% para 10%. No mesmo intervalo Renan Santos saiu de 4% para 3%, Ronaldo Caiado de 4% para 2% e Romeu Zema de 2% para 1%. Nos outros três pares de 2º turno testados Lula vence: 44% a 42% contra Caiado, 44% a 42% contra Zema e 44% a 39% contra Renan Santos. Contra Caiado a casa mediu 44% a 43% em 27/Ago, e a Real Time Big Data de 01/Set dava Caiado à frente por 45% a 43%, ou seja, três casas e três resultados diferentes no mesmo par na mesma semana. O cenário de 1º turno fecha em 100 exatos com 5% de branco ou nulo e 2% de indecisos. Campo 30/Ago a 02/Set, n=3.000, margem de 2pp, 95% de confiança, contratante o próprio instituto, registro TSE BR-07561/2026. 📅 A DIVULGAÇÃO DESTA QUINTA JÁ ESTAVA NO REGISTRO DO TSE ingerido pelo painel na manhã do mesmo dia, com a data prevista e o número de registro batendo com o publicado. ℹ️ A casa não publicou avaliação de governo nem rejeição na tabela conferida.",
+      "scenarios": [
+        {
+          "name": "Cenário estimulado (1º turno)",
+          "results": [
+            {
+              "candidate": "Lula (PT)",
+              "percent": 37
+            },
+            {
+              "candidate": "Flávio Bolsonaro (PL)",
+              "percent": 34
+            },
+            {
+              "candidate": "Augusto Cury (Avante)",
+              "percent": 10
+            },
+            {
+              "candidate": "Renan Santos (Missão)",
+              "percent": 3
+            },
+            {
+              "candidate": "Ronaldo Caiado (PSD)",
+              "percent": 2
+            },
+            {
+              "candidate": "Pablo Marçal (PRTB)",
+              "percent": 2
+            },
+            {
+              "candidate": "Hertz Dias (PSTU)",
+              "percent": 2
+            },
+            {
+              "candidate": "Romeu Zema (Novo)",
+              "percent": 1
+            },
+            {
+              "candidate": "Edmilson Costa (PCB)",
+              "percent": 1
+            },
+            {
+              "candidate": "Samara Martins (UP)",
+              "percent": 1
+            },
+            {
+              "candidate": "Clariana Barão (DC)",
+              "percent": 1
+            },
+            {
+              "candidate": "Rui Costa Pimenta (PCO)",
+              "percent": 1
+            },
+            {
+              "candidate": "Wilson Grassi (Democrata)",
+              "percent": 0
+            }
+          ]
+        }
+      ],
+      "secondRound": [
+        {
+          "matchup": "Flávio vs Lula",
+          "candidate1": "Flávio Bolsonaro",
+          "percent1": 45,
+          "candidate2": "Lula",
+          "percent2": 44
+        },
+        {
+          "matchup": "Lula vs Caiado",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Ronaldo Caiado",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Zema",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Romeu Zema",
+          "percent2": 42
+        },
+        {
+          "matchup": "Lula vs Renan",
+          "candidate1": "Lula",
+          "percent1": 44,
+          "candidate2": "Renan Santos",
+          "percent2": 39
+        }
+      ],
+      "source": "PoderData, divulgada em 03/Set/2026 (campo 30/Ago a 02/Set, n=3.000, margem de 2pp, 95% de confiança, contratante o próprio instituto, registro TSE BR-07561/2026). Tabela completa do 1º turno e dos quatro cenários de 2º turno conferida na Gazeta do Povo."
+    },
+    {
       "institute": "Datafolha",
       "date": "2026-09-03",
       "scope": "national",
@@ -2107,108 +2622,6 @@
         }
       ],
       "source": "Datafolha, divulgada em 03/Set/2026 (campo 01 a 03/Set, n=2.002, margem de 2pp, 95% de confiança, registro TSE BR-03669/2026). Tabela dos dois cenários de 1º turno e dos cenários de 2º turno conferida na Gazeta do Povo; avaliação do governo conferida em G1, Terra, InfoMoney e CBN Recife."
-    },
-    {
-      "institute": "PoderData",
-      "date": "2026-09-03",
-      "scope": "national",
-      "sample": 3000,
-      "margin": 2,
-      "register": "BR-07561/2026",
-      "reliability": 3,
-      "method": "Telefônica/Online",
-      "fieldDates": "2026-08-30 a 2026-09-02",
-      "note": "PoderData nacional divulgada em 03/Set (Gazeta do Povo). ⭐ ELA INVERTE O 2º TURNO DENTRO DA PRÓPRIA CASA. Flávio Bolsonaro tem 45% contra 44% de Lula, com 8% de branco ou nulo e 3% de não sabe. Nas duas rodadas anteriores do mesmo instituto era Lula à frente, por 46% a 45% em 13/Ago e por 45% a 44% em 27/Ago, e esta é a primeira da série da casa em que o segundo colocado aparece numericamente na frente nesse par. A distância é de 1 ponto e a margem declarada é de 2pp, ou seja, empate técnico pela régua da própria casa. ⚠️ E A CASA DA VÉSPERA MEDIU O CONTRÁRIO NO MESMO PAR: a Genial/Quaest de 02/Set, com campo de 30/Ago a 01/Set que se sobrepõe quase inteiro a este, deu Lula à frente por 42% a 41%. As duas margens são de 1 ponto e apontam para lados opostos. COMPARAÇÃO DENTRO DA CASA, que é a única válida. No 1º turno Lula saiu de 41% em 13/Ago para 38% em 27/Ago e 37% agora, e Flávio de 35% para 35% e 34%, ou seja, a distância entre os dois foi de 6pp para 3pp e ficou em 3pp. ⭐ AUGUSTO CURY SALTA DE 4% PARA 10% DENTRO DA POWERDATA entre 27/Ago e agora, o mesmo salto que a Genial/Quaest mediu na véspera indo de 2% para 10%. No mesmo intervalo Renan Santos saiu de 4% para 3%, Ronaldo Caiado de 4% para 2% e Romeu Zema de 2% para 1%. Nos outros três pares de 2º turno testados Lula vence: 44% a 42% contra Caiado, 44% a 42% contra Zema e 44% a 39% contra Renan Santos. Contra Caiado a casa mediu 44% a 43% em 27/Ago, e a Real Time Big Data de 01/Set dava Caiado à frente por 45% a 43%, ou seja, três casas e três resultados diferentes no mesmo par na mesma semana. O cenário de 1º turno fecha em 100 exatos com 5% de branco ou nulo e 2% de indecisos. Campo 30/Ago a 02/Set, n=3.000, margem de 2pp, 95% de confiança, contratante o próprio instituto, registro TSE BR-07561/2026. 📅 A DIVULGAÇÃO DESTA QUINTA JÁ ESTAVA NO REGISTRO DO TSE ingerido pelo painel na manhã do mesmo dia, com a data prevista e o número de registro batendo com o publicado. ℹ️ A casa não publicou avaliação de governo nem rejeição na tabela conferida.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 37
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 10
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 2
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Hertz Dias (PSTU)",
-              "percent": 2
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            },
-            {
-              "candidate": "Edmilson Costa (PCB)",
-              "percent": 1
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            },
-            {
-              "candidate": "Clariana Barão (DC)",
-              "percent": 1
-            },
-            {
-              "candidate": "Rui Costa Pimenta (PCO)",
-              "percent": 1
-            },
-            {
-              "candidate": "Wilson Grassi (Democrata)",
-              "percent": 0
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Flávio vs Lula",
-          "candidate1": "Flávio Bolsonaro",
-          "percent1": 45,
-          "candidate2": "Lula",
-          "percent2": 44
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Romeu Zema",
-          "percent2": 42
-        },
-        {
-          "matchup": "Lula vs Renan",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Renan Santos",
-          "percent2": 39
-        }
-      ],
-      "source": "PoderData, divulgada em 03/Set/2026 (campo 30/Ago a 02/Set, n=3.000, margem de 2pp, 95% de confiança, contratante o próprio instituto, registro TSE BR-07561/2026). Tabela completa do 1º turno e dos quatro cenários de 2º turno conferida na Gazeta do Povo."
     },
     {
       "institute": "Quaest/Genial",
@@ -2862,91 +3275,10 @@
         }
       ],
       "source": "Indexa/Broadcast, divulgada em 26/Ago/2026 (campo de 20 a 23/Ago, n=2.000, telefone, margem 2,2pp, registro TSE BR-06366/2026, custo R$ 164.000). Números conferidos em Gazeta do Povo, Money Times e CartaCapital, com o registro BR-06366/2026 confirmado, e cruzados com a tabela da Wikipédia de pesquisas presidenciais de 2026."
-    },
-    {
-      "institute": "BTG/Nexus",
-      "date": "2026-08-24",
-      "scope": "national",
-      "sample": 2006,
-      "margin": 2,
-      "register": "BR-09028/2026",
-      "reliability": 4,
-      "method": "Telefone",
-      "fieldDates": "2026-08-21 a 2026-08-23",
-      "note": "BTG/Nexus nacional divulgada em 24/Ago às 6h36, campo de 21 a 23/Ago, registro BR-09028/2026, com 2.006 entrevistas por telefone e margem de 2pp a 95% de confiança. Contratante: BTG Pactual. Conferida em Poder360, CNN Brasil, Metrópoles, Folha de S.Paulo, CartaCapital e Gazeta do Povo, com o registro batendo em todas. ⭐ A COMPARAÇÃO COM A PRÓPRIA CASA É O DADO, E ELA NÃO É DE MÍNIMO NOVO: no 1º turno a distância caiu de 5 para 4 pontos e no 2º turno de 3 para 1, mas os dois valores EMPATAM com a rodada de 03/Ago, que já havia medido 41 a 37 e 46 a 45. A série do tracker no 2º turno é 4 pontos em 27/Jul, 1 em 03/Ago, 3 em 10/Ago, 3 em 17/Ago e 1 agora, ou seja o 1 ponto de hoje repete um patamar que a casa já tinha registrado, e não é o mais estreito da série. 🕐 A PESQUISA NÃO MEDE O DEBATE: o campo fechou em 23/Ago e o primeiro debate presidencial foi às 20h daquele mesmo dia, na Band, sem Lula e sem Flávio Bolsonaro. Título que ligar um ao outro está fora da janela. 📌 Dois cenários de 1º turno, e a diferença entre eles é Pablo Marçal: sem ele, Lula 41% e Flávio 37%; com ele, Lula 40% e Flávio 34%, e Marçal aparece com 4%. 2º turno: Lula 46% x Flávio 45%, e Lula 46% x Ronaldo Caiado 42%, este último segundo Metrópoles. Rejeição, segundo Poder360: Lula 49% e Flávio 48%. Avaliação do governo na mesma rodada: 35% ótimo ou bom e 43% ruim ou péssimo, com 48% de aprovação contra 49% de desaprovação.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 41
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 37
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 3
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 2
-            },
-            {
-              "candidate": "Samara Martins (UP)",
-              "percent": 1
-            }
-          ]
-        },
-        {
-          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 40
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 4
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 45
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 42
-        }
-      ],
-      "source": "BTG/Nexus, divulgada em 24/Ago/2026 às 6h36 (campo 21 a 23/Ago, n=2.006, telefone, margem 2,0pp, registro TSE BR-09028/2026), contratada pelo BTG Pactual. Números conferidos em Poder360, CNN Brasil e Metrópoles, com o registro BR-09028/2026 confirmado em cada uma."
     }
   ],
   "approvalData": {
-    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DE APROVAÇÃO DESTE BLOCO SÃO OS DA QUAEST DE 21/Set, registro BR-06004/2026: 44% de aprovação contra 50% de desaprovação, com 6% sem resposta. O painel mantém UMA casa por bloco de propósito, para a série interna não misturar metodologias. ⚠️ DENTRO DA PRÓPRIA QUAEST A QUEDA PAROU E DEVOLVEU UM PONTO: eram 48% contra 47% em 05/Ago, 46% contra 48% em 14/Ago, 45% contra 48% em 02/Set, 43% contra 50% em 07/Set, 43% contra 50% em 14/Set e agora 44% contra 50%. O ponto de alta está dentro da margem de 2,0pp e a desaprovação não se moveu. ⭐ E A RÉGUA DA AVALIAÇÃO ANDOU NA DIREÇÃO OPOSTA NA MESMA RODADA: a negativa subiu de 38% para 42%, a positiva de 32% para 33% e a regular caiu de 27% para 23%. As duas perguntas medem coisas diferentes e não se somam: aprovar o trabalho do presidente não é o mesmo que avaliar a gestão como positiva. 🔴 QUATRO CASAS MEDIRAM APROVAÇÃO ENTRE 17 E 23/Set E A DISPERSÃO ENTRE ELAS SEGUE MAIOR QUE O MOVIMENTO DE QUALQUER UMA: Datafolha de 17/Set com 48% contra 50%, Futura/100% Cidades de 17/Set com 44,1% contra 53,1%, Quaest de 21/Set com 44% contra 50% e AtlasIntel de 23/Set com 45,4% contra 53%. São 4 pontos de distância na aprovação. ⭐ E dentro da AtlasIntel a aprovação NÃO se moveu contra a rodada da casa de 17/Set, que também media 45,4%, com a desaprovação indo de 53,6% para 53%. A régua da gestão da Futura traz 36,5% de ótimo ou bom, 15,8% de regular e 47,2% de ruim ou péssimo.",
+    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DE APROVAÇÃO DESTE BLOCO SÃO OS DA QUAEST DE 21/Set, registro BR-06004/2026: 44% de aprovação contra 50% de desaprovação, com 6% sem resposta. O painel mantém UMA casa por bloco de propósito, para a série interna não misturar metodologias, e em 24/Set não houve rodada nova da Quaest. ⚠️ DENTRO DA PRÓPRIA QUAEST A QUEDA PAROU E DEVOLVEU UM PONTO: eram 48% contra 47% em 05/Ago, 46% contra 48% em 14/Ago, 45% contra 48% em 02/Set, 43% contra 50% em 07/Set, 43% contra 50% em 14/Set e agora 44% contra 50%. O ponto de alta está dentro da margem de 2,0pp e a desaprovação não se moveu. ⭐ E A RÉGUA DA AVALIAÇÃO ANDOU NA DIREÇÃO OPOSTA NA MESMA RODADA: a negativa subiu de 38% para 42%, a positiva de 32% para 33% e a regular caiu de 27% para 23%. As duas perguntas medem coisas diferentes e não se somam: aprovar o trabalho do presidente não é o mesmo que avaliar a gestão como positiva. 🔴 TRÊS DAS SEIS NACIONAIS DE 24/Set TAMBÉM MEDIRAM APROVAÇÃO, E A DISPERSÃO DA DESAPROVAÇÃO É MAIOR QUE A DA APROVAÇÃO: Alfa/TMC com 46% contra 50%, Futura/100% Cidades com 44,2% contra 53,3% e Palver com 44% contra 55%. São 2 pontos de distância na aprovação e 5 na desaprovação, entre casas que ouviram o mesmo eleitorado na mesma semana. Somando as leituras anteriores da janela, Datafolha de 17/Set com 48% contra 50%, Quaest de 21/Set com 44% contra 50% e AtlasIntel de 23/Set com 45,4% contra 53%, a aprovação medida por seis casas em oito dias vai de 44% a 48%. 📌 A Alfa também pergunta se Lula merece ser reeleito, e ali 55% dizem que não contra 43% que apoiam novo mandato, que é outra pergunta e não entra nesta série.",
     "source": "Aprovação, desaprovação e avaliação da gestão: Quaest de 21/Set/2026 (campo de 17 a 20/Set, n=2.004 eleitores de 16 anos ou mais, presencial, margem de 2,0pp, 95% de confiança, registro TSE BR-06004/2026, contratada pelo Grupo Globo), divulgada por CNN Brasil, CartaCapital, Poder360 e CBN. A avaliação da gestão deste bloco, 33% positiva, 23% regular e 42% negativa, é da mesma rodada, e o bloco inteiro tem uma data só. Série da própria casa: rodadas de 05/Ago, 14/Ago, 02/Set, 07/Set e 14/Set, já registradas no painel.",
     "date": "2026-09-21",
     "results": {
@@ -2984,66 +3316,66 @@
         "disapproval6m": 50
       }
     ],
-    "lastUpdate": "22/09/2026, 14:45"
+    "lastUpdate": "24/09/2026, 22:45"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 23/Set, 11:54 BRT, com o livro presidencial somando USD 154,05M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO FECHOU DE 19,05pp PARA 18,35pp desde a leitura confirmada de 22/Set às 14:40 BRT, e é o segundo dia seguido de fechamento. ⚖️ E o preço de Lula NÃO se moveu: ele está em 40,50% nas duas leituras, e quem cedeu foi Flávio Bolsonaro, 0,70pp, para 58,85%. Normalizado pela soma do par, que desinchou de 100,05 para 99,35, Lula GANHA 0,29pp de probabilidade implícita com o preço parado. 🥉 No livro de 3º lugar do 1º turno a convergência parou e andou para trás: Renan Santos sobe 1,50pp, para 44,00%, Augusto Cury sobe 0,40pp, para 39,85%, e a distância entre eles alarga de 3,05pp para 4,15pp.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 23/Set, 11:54 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada.",
+    "note": "Preços do Polymarket na leitura confirmada de 24/Set, 22:45 BRT, com o livro presidencial somando USD 154,90M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO FECHOU DE 18,35pp PARA 12,05pp desde a leitura confirmada de 23/Set às 11:54 BRT, e é o terceiro dia seguido de fechamento, depois de 22,40pp em 21/Set e 19,05pp em 22/Set. ⭐ SÃO 6,30pp NUMA SÓ PASSAGEM, e desde 04/Set, quando este registro começou, é o maior fechamento entre duas leituras certificadas consecutivas, e quase o dobro do segundo maior, 3,35pp de 21 para 22/Set. Lula sobe 3,00pp no cru e 3,15pp no normalizado, para 43,50%, e Flávio Bolsonaro cede 3,30pp no cru e 3,15pp no normalizado, para 55,55%, com a soma do par praticamente parada, de 99,35 para 99,05. 🗳️ E ISSO ACONTECEU NO DIA EM QUE SEIS PESQUISAS NACIONAIS FORAM DIVULGADAS E ELAS NÃO APONTAM A MESMA DIREÇÃO: medindo cada casa contra a rodada anterior dela mesma, três andaram para Lula (Datafolha, Palver e PoderData) e três para Flávio Bolsonaro (Real Time, Futura e Alfa). O painel mede os dois instrumentos e não atribui o movimento de um ao outro. 🥉 No livro de 3º lugar do 1º turno quase nada se moveu: Renan Santos fica nos mesmos 44,00%, Augusto Cury sobe 0,10pp, para 39,95%, e a distância entre eles fecha de 4,15pp para 4,05pp.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 24/Set, 22:45 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. 🗳️ Seis nacionais foram divulgadas em 24/Set e o lado PESQUISA do grafo de divergência usa UMA delas, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que nesta rodada dá a Palver, n=5.000. A escolha vai declarada no grafo, com casa e data, e a alternativa mais próxima era a PoderData, n=3.000.",
     "candidates": [
       {
         "name": "Lula",
-        "percentage": 45.8,
-        "odds": 40.5,
-        "value": 40.5,
-        "polymarket": "40,50%",
-        "pesquisaRange": "28% a 44,1%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "LIDERA O 1º TURNO NA ATLASINTEL DE 23/Set, campo de 17 a 22/Set e margem de 1,0pp, com 45,8% contra 43,4%. Os dois subiram 1,7pp contra a rodada da casa de 17/Set e a distância entre eles não se moveu, segue em 2,4 pontos. 🔑 No par principal de 2º turno o sinal se inverteu dentro da própria casa: ele tem 47,7% contra 47,4%, depois de 46,8% a 47,2% em 17/Set, e vence ou empata os cinco pares testados.",
-        "tendenciaPolymarket": "SEM PREÇO NOVO NO CONTRATO DE VENCEDOR, em 40,50%, contra a leitura confirmada de 22/Set às 14:40 BRT. ⚖️ E ainda assim ele GANHA 0,29pp de probabilidade implícita, porque a soma do par desinchou de 100,05 para 99,35: o vão contra Flávio Bolsonaro fecha de 19,05pp para 18,35pp. ⚠️ Não é extremo: o preço dele está a 27,00pp do topo da série, 67,50% de 16/Ago, e a 6,00pp do piso, 34,50% de 25/Abr. 🔴 No contrato de 2º lugar do 1º turno ele cai 3,95pp no cru e 3,46pp no normalizado, para 25,85%, a maior queda da rodada."
+        "percentage": 43,
+        "odds": 43.5,
+        "value": 43.5,
+        "polymarket": "43,50%",
+        "pesquisaRange": "34% a 45,8%",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "EMPATA EM 43% COM FLÁVIO BOLSONARO NO 1º TURNO DA PALVER DE 24/Set, campo de 20 a 23/Set e n=5.000, que é a fonte do lado pesquisa deste grafo. ⭐ E AS SEIS NACIONAIS DO DIA NÃO CONCORDAM SOBRE ELE: no 1º turno ele vai de 7 pontos à frente na Alfa/TMC a 2 pontos atrás na Futura, passando por 4 na Datafolha e na Real Time e 2 na PoderData. No 2º turno contra Flávio Bolsonaro ele vai de 47% a 45% na Datafolha, a única que o põe à frente, a 43,7% contra 49,4% na Futura, onde a desvantagem fica fora da margem. 🔑 Medindo cada casa contra a rodada anterior dela mesma, ele ganhou terreno em três (Datafolha, Palver e PoderData) e perdeu em três (Real Time, Futura e Alfa).",
+        "tendenciaPolymarket": "SOBE 3,00pp NO CONTRATO DE VENCEDOR, para 43,50% (vol USD 12,18M acumulado), e 3,15pp no normalizado pela soma do par, que ficou praticamente parada, de 99,35 para 99,05. ⭐ O vão contra Flávio Bolsonaro fecha de 18,35pp para 12,05pp, terceiro dia seguido de fechamento, e os 6,30pp desta passagem são o maior fechamento entre duas leituras certificadas consecutivas desde 04/Set, quando este registro começou. ⚠️ Não é extremo: na série gravada desde 14 de abril o preço dele está a 24,00pp do topo, 67,50% de 16/Ago, e a 9,00pp do piso, 34,50% de 25/Abr. 🔴 No contrato de 2º lugar do 1º turno ele foi na direção oposta e cede 1,35pp no cru e 2,05pp no normalizado, para 24,50%, porque aquele par inchou de 97,35 para 100,00."
       },
       {
         "name": "Flávio Bolsonaro",
-        "percentage": 43.4,
-        "odds": 58.85,
-        "value": 58.85,
-        "polymarket": "58,85%",
-        "pesquisaRange": "20% a 41,7%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "FICA ATRÁS NO 1º TURNO DA ATLASINTEL DE 23/Set por 43,4% a 45,8%, depois de subir 1,7pp contra a rodada da casa de 17/Set, o mesmo tamanho da alta de Lula. 🔑 No par principal de 2º turno ele PERDE a dianteira numérica que tinha naquela casa: era 47,2% a 46,8% em 17/Set e agora é 47,4% contra 47,7%. A casa declara empate técnico pela terceira semana seguida.",
-        "tendenciaPolymarket": "CEDE 0,70pp NO CONTRATO DE VENCEDOR, para 58,85%, e 0,29pp no normalizado pela soma do par. O vão sobre Lula fecha pelo segundo dia seguido, de 22,40pp em 21/Set para 19,05pp em 22/Set e 18,35pp agora. O preço dele está a 2,85pp do topo, 61,70% de 21/Set. ⭐ No contrato de 2º lugar do 1º turno ele foi na direção oposta e SOBE 2,00pp no cru e 3,46pp no normalizado, para 71,50%, porque aquele par desinchou de 99,30 para 97,35."
+        "percentage": 43,
+        "odds": 55.55,
+        "value": 55.55,
+        "polymarket": "55,55%",
+        "pesquisaRange": "29% a 43,4%",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "EMPATA EM 43% COM LULA NO 1º TURNO DA PALVER DE 24/Set, campo de 20 a 23/Set e n=5.000, fonte do lado pesquisa deste grafo, depois de liderar por 42% a 41% na rodada da casa de 21/Set. ⭐ NAS SEIS NACIONAIS DO DIA ELE LIDERA O 1º TURNO EM UMA, a Futura, por 40,4% a 38,4%, e no 2º turno lidera em quatro das seis: 49,4% a 43,7% na Futura, 48% a 45% na Palver, 46% a 45% na PoderData e 45% a 44% na Real Time, com empate em 43% na Alfa e derrota por 45% a 47% na Datafolha. 📌 A vantagem da Futura, de 5,7 pontos, é a única das seis que fica fora da margem daquela pesquisa, e não é a primeira vez na base: das 34 leituras de 2º turno entre os dois já registradas, 11 ficaram fora da margem e 8 delas favoreciam ele.",
+        "tendenciaPolymarket": "CEDE 3,30pp NO CONTRATO DE VENCEDOR, para 55,55% (vol USD 11,79M acumulado), e 3,15pp no normalizado pela soma do par. O vão sobre Lula fecha pelo terceiro dia seguido, de 22,40pp em 21/Set para 19,05pp, 18,35pp e agora 12,05pp. Na série gravada desde 14 de abril o preço dele está a 6,15pp do topo, 61,70% de 21/Set, e a 33,55pp do piso, 22,00% de 03/Jul. ⭐ No contrato de 2º lugar do 1º turno ele foi na direção oposta e SOBE 4,00pp no cru, para 75,50%, num contrato que acumula USD 1,14M, mas ali o cru EXAGERA o movimento dele: a soma daquele par inchou de 97,35 para 100,00, e no normalizado a alta é de 2,05pp."
       },
       {
         "name": "Augusto Cury",
-        "percentage": 2.1,
+        "percentage": 2,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "CEDE 1,4 PONTO NO 1º TURNO DA ATLASINTEL DE 23/Set, de 3,5% para 2,1%, a maior queda da terceira via naquela casa. No par de 2º turno contra Lula, porém, ele SOBE 1,6pp na mesma comparação, de 37,8% para 39,4%.",
-        "tendenciaPolymarket": "SOBE 0,40pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 39,85%, e ainda assim a distância para Renan Santos ALARGA de 3,05pp para 4,15pp, porque o outro subiu mais. No contrato de vencedor está no piso do livro, 0,05%. ⚠️ Não é extremo: ele já esteve em 60,30% nesse mesmo contrato em 04/Set."
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "TEM 2% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e as seis nacionais do dia o medem de 2% a 6%: 6% na Alfa, na PoderData e na Real Time, 5,6% na Futura, 5% na Datafolha e 2% na Palver. 🔑 E A PODERDATA O TESTA NUM PAR QUE CONTRARIA A ORDEM DO 1º TURNO: ele vence Lula por 45% a 42%, o mesmo placar da rodada da casa de 17/Set.",
+        "tendenciaPolymarket": "SOBE 0,10pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 39,95%, num contrato que acumula USD 0,27M, e a distância para Renan Santos fecha de 4,15pp para 4,05pp, porque o outro ficou parado. No contrato de vencedor segue no piso do livro, 0,05%."
       },
       {
         "name": "Renan Santos",
-        "percentage": 4.5,
-        "odds": 0.75,
-        "value": 0.75,
-        "polymarket": "0,75%",
+        "percentage": 8,
+        "odds": 0.55,
+        "value": 0.55,
+        "polymarket": "0,55%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "É O MAIS VOTADO DA TERCEIRA VIA NA ATLASINTEL DE 23/Set, com 4,5% no 1º turno, contra 5,1% na rodada da casa de 17/Set. ⚠️ Segue sendo o nome de maior divergência entre casas: nas três nacionais de campo fechado em 20/Set ele ia de 11% na Palver a 3% na Quaest e na BTG/Nexus.",
-        "tendenciaPolymarket": "MAIOR ALTA DA RODADA NO CONTRATO DE 3º LUGAR DO 1º TURNO, 1,50pp, para 44,00%, e a dianteira dele sobre Augusto Cury volta a abrir, de 3,05pp para 4,15pp. 🏆 E o contrato dele no livro de vencedor passou a ser o de MAIOR volume acumulado do presidencial, USD 14,17M contra USD 14,09M do de Tarcísio de Freitas. Ele paga 0,75%, a 0,05pp do piso da série, 0,70% de 21/Set."
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "TEM 8% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e cede 3 pontos contra a rodada da casa de 21/Set, que media 11%. ⚠️ AS SEIS NACIONAIS DO MESMO DIA 24/Set O MEDEM DE 8% NA PALVER A 2,4% NA FUTURA, com 6% na Real Time e 3% na Datafolha e na PoderData: os 8% da Palver são mais de três vezes os 2,4% da Futura, e como as seis saíram no mesmo dia essa distância não pode ser atribuída a calendário.",
+        "tendenciaPolymarket": "FICA NOS MESMOS 44,00% NO CONTRATO DE 3º LUGAR DO 1º TURNO (vol USD 0,41M acumulado) e cede 0,20pp no de vencedor, para 0,55%. 🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial e abriu distância, USD 14,39M contra USD 14,10M do de Tarcísio de Freitas. E no livro de 2º lugar acontece o mesmo: o contrato dele tem USD 1,36M acumulados, acima dos USD 1,14M do de Flávio Bolsonaro, que paga 75,50% ali."
       },
       {
         "name": "Ronaldo Caiado",
-        "percentage": 1.3,
+        "percentage": 1,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "1% a 5%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "⭐ É O ADVERSÁRIO MAIS PRÓXIMO DE LULA DEPOIS DE FLÁVIO BOLSONARO no par de 2º turno da AtlasIntel de 23/Set, 44,0% a 46,6%, e SUBIU 2,3pp ali contra a rodada anterior da casa. No 1º turno, porém, ele cede de 1,7% para 1,3%.",
-        "tendenciaPolymarket": "CEDE 1,00pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 14,50%, e mantém a terceira posição daquele livro. No contrato de vencedor segue em 0,05%."
+        "pesquisaRange": "1% a 5,7%",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "TEM 1% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e nas seis nacionais do dia ele vai de 1% a 5,7%. ⭐ NA FUTURA ELE SUBIU DE 4,5% PARA 5,7% E PASSOU AUGUSTO CURY, e nos pares de 2º turno daquela casa ele vence Lula por 46,5% a 42,4%. Na Alfa e na Palver ele fica a 1 e 2 pontos de Lula no par direto.",
+        "tendenciaPolymarket": "CEDE 0,50pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 14,00%, num contrato que acumula USD 0,17M, e mantém a terceira posição daquele livro. No contrato de vencedor segue em 0,05%."
       },
       {
         "name": "Pablo Marçal",
@@ -3051,21 +3383,21 @@
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "1% a 5,2%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "Fora do cenário estimulado da AtlasIntel de 23/Set, depois do indeferimento do registro em 11/Set.",
+        "pesquisaRange": "1% a 4%",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "Fora dos cenários estimulados das seis nacionais de 24/Set, depois do indeferimento do registro de candidatura em 11/Set.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor. O registro de candidatura dele foi indeferido pelo Tribunal Superior Eleitoral em 11/Set."
       },
       {
         "name": "Romeu Zema",
-        "percentage": 0.9,
+        "percentage": 1,
         "odds": 0.05,
         "value": 0.05,
         "polymarket": "0,05%",
-        "pesquisaRange": "0,3% a 3%",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "É O NOME COM A LEITURA DE PESQUISA MENOS DISPUTADA DA SEMANA: 1% no 1º turno nas três nacionais de campo fechado em 20/Set e 0,9% na AtlasIntel de 23/Set. No par de 2º turno contra Lula ele cede 1,5pp contra a rodada anterior da casa, de 43,7% para 42,2%.",
-        "tendenciaPolymarket": "SEM PREÇO NOVO NO CONTRATO DE 3º LUGAR DO 1º TURNO, em 0,30%, no piso daquele livro. No de vencedor está em 0,05%."
+        "pesquisaRange": "0,3% a 2,8%",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "TEM 1% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e nas seis nacionais do dia ele vai de 0,9% a 1%. ⭐ E O PAR DE 2º TURNO DELE FICOU APERTADO EM DUAS CASAS: a Futura o põe à frente de Lula por 43,8% a 43,3% e a Palver o põe atrás por 43% a 45%, as duas dentro da margem.",
+        "tendenciaPolymarket": "SOBE 0,05pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 0,35%, num contrato que acumula USD 0,08M, movimento abaixo do limite de ruído de 0,5% que o painel usa para book fino. No de vencedor está em 0,05%."
       },
       {
         "name": "Tarcísio",
@@ -3074,9 +3406,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "A AtlasIntel de 23/Set não o inclui no cenário estimulado de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, e o contrato dele DEIXOU de ser o de maior volume acumulado do livro presidencial: são USD 14,09M contra USD 14,17M do de Renan Santos."
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "As seis nacionais divulgadas em 24/Set não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
+        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,10M acumulados, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 14,39M."
       },
       {
         "name": "Fernando Haddad",
@@ -3085,18 +3417,18 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "23/09/2026, 11:54",
-        "tendenciaPesquisa": "A AtlasIntel de 23/Set não o inclui no cenário estimulado de 1º turno nem em par de 2º turno.",
+        "lastUpdate": "24/09/2026, 22:45",
+        "tendenciaPesquisa": "As seis nacionais divulgadas em 24/Set não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 7,55M acumulados."
       }
     ],
-    "updatedAt": "23/09/2026, 11:54",
-    "lastUpdate": "21/09/2026, 16:21",
+    "updatedAt": "24/09/2026, 22:45",
+    "lastUpdate": "24/09/2026, 22:45",
     "pollSource": {
-      "pollster": "AtlasIntel/Bloomberg",
-      "date": "2026-09-23",
-      "sample": 5015,
-      "register": "BR-04739/2026",
+      "pollster": "Palver",
+      "date": "2026-09-24",
+      "sample": 5000,
+      "register": "BR-09587/2026",
       "scenario": "Cenário Principal (1º turno, estimulado)"
     }
   }
