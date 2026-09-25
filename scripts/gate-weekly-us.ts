@@ -28,6 +28,7 @@
  *
  * Uso: npx tsx scripts/gate-weekly-us.ts 2026-09-17
  */
+import { existsSync } from 'fs'
 import { loadWeekly } from '../lib/afos-weekly/loader'
 
 const DATA = process.argv[2] ?? '2026-09-17'
@@ -104,4 +105,21 @@ for (const loc of locs.slice(1)) {
   }
 }
 console.log(falhou ? '\n❌ GATE NUMÉRICO REPROVADO' : '\n✅ gate numérico: multiconjunto idêntico nos três idiomas')
-process.exit(falhou || falhouTeto ? 1 : 0)
+// 🖼️ ogImage DECLARADA tem de EXISTIR no disco. Régua de 25/Set/2026, e ela
+// nasceu de um 404 em produção: a edição nº 7 foi ao ar apontando para
+// /brand/og-us-weekly-7-1200x627.png, que nunca foi gerado, porque o script da
+// arte era fixo na nº 6. Arquivo declarado e ausente renderiza cartão QUEBRADO,
+// que é pior que não declarar imagem nenhuma, e nenhum portão via isso: o
+// frontmatter estava bem formado e a página respondia 200.
+let semArte = false
+for (const loc of locs) {
+  const img = (loadWeekly(DATA, loc, 'us') as any)?.ogImage
+  if (!img) continue
+  const caminho = `public${String(img).split('?')[0]}`
+  if (existsSync(caminho)) continue
+  semArte = true
+  console.log(`❌ ${loc}: ogImage declara ${img} e o arquivo NÃO existe em ${caminho}`)
+}
+if (!semArte) console.log('✅ ogImage: toda imagem declarada existe no disco')
+
+process.exit(falhou || falhouTeto || semArte ? 1 : 0)

@@ -1,5 +1,5 @@
 /**
- * Cartões sociais do AFOS Weekly dos ESTADOS UNIDOS, edição nº 6, em TRÊS formatos.
+ * Cartões sociais do AFOS Weekly dos ESTADOS UNIDOS, por EDIÇÃO, em TRÊS formatos.
  *
  * 🔴 POR QUE ESTE ARQUIVO EXISTE: medido em 10/Set/2026 nos `<meta>`, e não na
  * tela. A edição do Weekly e a AFOS Daily do MESMO dia serviam as duas o
@@ -37,17 +37,66 @@
  * 🔴 Os arquivos são ESTÁTICOS em /brand/ de propósito: o robots.ts bloqueia
  * `/api/` para todo agente, e o LinkedInBot recusa buscar imagem servida de lá.
  *
- * Uso: node scripts/build-og-card-us-weekly.mjs [destino]
+ * 🔢 PARAMETRIZADO POR EDIÇÃO em 25/Set/2026, e o motivo é medido: este arquivo
+ * nasceu fixo na nº 6, então a nº 7 foi ao ar com `ogImage` apontando para
+ * `og-us-weekly-7-1200x627.png`, que NUNCA existiu e devolvia 404 em produção.
+ * Arquivo declarado e ausente renderiza cartão quebrado, que é pior que não
+ * declarar imagem nenhuma, e é o que quatro das sete edições faziam.
+ *
+ * ⛔ A saída NÃO foi copiar o script por edição: duas cópias da mesma arte
+ * divergem no dia em que uma é corrigida e a outra não, que é o que o comentário
+ * da bandeira acima já dizia. Edição nova é uma entrada em `EDICOES`.
+ *
+ * 🔒 A entrada da nº 6 está preservada palavra por palavra, para os três arquivos
+ * dela seguirem reproduzíveis por este script.
+ *
+ * Uso: node scripts/build-og-card-us-weekly.mjs --edicao=8 [destino]
  */
 import { chromium } from 'playwright'
 import { writeFileSync } from 'fs'
 import { bandeira } from './build-og-cards-us.mjs'
 
+/**
+ * 🧩 UMA ENTRADA POR EDIÇÃO, e todo número aqui sai da edição PUBLICADA.
+ *
+ * ⛔ Só o livro de CONTROLE DA CÂMARA, os dois lados. Senado e média das
+ * pesquisas ficam FORA: são outro livro e outro instrumento.
+ */
+export const EDICOES = {
+  6: {
+    semana: 'week of September 3 to September 10, 2026',
+    big: '14.50%',
+    bigSub: (q) => `the highest reading the Republican${q ? ' ' : '<br>'}House series holds, above the${q ? ' ' : '<br>'}13.50% of July 29`,
+    cardN: '86.50%',
+    cardL: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}down 3.00pp on the week`,
+    cardS: '1.00pp above the series floor of 85.50%',
+    tese: (q) => `The clearest news ran the other way, on the Missouri map.${q ? ' ' : '<br>'}Both facts are measured. The link between them is not.`,
+  },
+  7: {
+    semana: 'week of September 10 to September 17, 2026',
+    big: '89.50%',
+    bigSub: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}matching the top its House series${q ? ' ' : '<br>'}had held since August 30`,
+    cardN: '11.50%',
+    cardL: (q) => `where the Republican side closed,${q ? ' ' : '<br>'}down 2.00pp on the week`,
+    cardS: '1.00pp above the series floor of 10.50%, from August 30',
+    tese: (q) => `The House crossed between the same two values five times in six days,${q ? ' ' : '<br>'}then broke out. The price is measured. What moved it is not.`,
+  },
+  8: {
+    semana: 'week of September 17 to September 24, 2026',
+    big: '92.50%',
+    bigSub: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}1.00pp under the 93.50% it${q ? ' ' : '<br>'}touched on September 20`,
+    cardN: '7.50%',
+    cardL: (q) => `where the Republican side closed,${q ? ' ' : '<br>'}down 3.00pp on the week`,
+    cardS: '1.00pp above the series floor of 6.50%, from September 20',
+    tese: (q) => `The House set the top of its series on September 20, then closed${q ? ' ' : '<br>'}five days at 92.50%. The net is 3.00pp. The path was larger.`,
+  },
+}
+
 /** Os três formatos. `quadrado` liga o refluxo vertical. */
-const FORMATOS = [
-  { nome: 'og-us-weekly-6-1200x627.png', W: 1200, H: 627, s: 1.0, quadrado: false },
-  { nome: 'og-us-weekly-6-1200x1200.png', W: 1200, H: 1200, s: 1.18, quadrado: true },
-  { nome: 'og-us-weekly-6-1600x900.png', W: 1600, H: 900, s: 1.34, quadrado: false },
+const formatos = (n) => [
+  { nome: `og-us-weekly-${n}-1200x627.png`, W: 1200, H: 627, s: 1.0, quadrado: false },
+  { nome: `og-us-weekly-${n}-1200x1200.png`, W: 1200, H: 1200, s: 1.18, quadrado: true },
+  { nome: `og-us-weekly-${n}-1600x900.png`, W: 1600, H: 900, s: 1.34, quadrado: false },
 ]
 
 const px = (n, s) => `${(n * s).toFixed(1)}px`
@@ -97,39 +146,58 @@ body { width: ${W}px; height: ${H}px; }
 `
 }
 
-/** 🔑 No quadrado o texto respira, então as quebras manuais mudam. */
-const corpo = (quadrado) => `
-  <div class="pill">AFOS WEEKLY &middot; US &middot; ISSUE No. 6</div>
+/**
+ * 🔑 No quadrado o texto respira, então as quebras manuais mudam.
+ *
+ * 🔴 E a TESE ficou de fora dessa regra até 25/Set/2026, medido OLHANDO o PNG e
+ * não o CSS. No quadrado a linha é mais larga, a primeira oração já quebra
+ * sozinha, e aí a `<br>` manual força uma SEGUNDA quebra e deixa uma palavra
+ * órfã numa linha inteira. O cartão quadrado da nº 6 está no ar assim desde
+ * 10/Set, com "map." sozinho. Os três campos de texto longo agora seguem a
+ * mesma regra: `bigSub`, `cardL` e `tese`.
+ */
+const corpo = (quadrado, n, e) => `
+  <div class="pill">AFOS WEEKLY &middot; US &middot; ISSUE No. ${n}</div>
   <div class="split">
     <div class="left">
-      <div class="big">14.50%</div>
-      <div class="sub">the highest reading the Republican${quadrado ? ' ' : '<br>'}House series holds, above the${quadrado ? ' ' : '<br>'}13.50% of July 29</div>
+      <div class="big">${e.big}</div>
+      <div class="sub">${e.bigSub(quadrado)}</div>
     </div>
     <div class="card">
-      <div class="n">86.50%</div>
-      <div class="l">where the Democratic side closed,${quadrado ? ' ' : '<br>'}down 3.00pp on the week</div>
-      <div class="s">1.00pp above the series floor of 85.50%</div>
+      <div class="n">${e.cardN}</div>
+      <div class="l">${e.cardL(quadrado)}</div>
+      <div class="s">${e.cardS}</div>
     </div>
   </div>
-  <div class="thesis">The clearest news ran the other way, on the Missouri map.<br>Both facts are measured. The link between them is not.</div>
-  <div class="meta">US House control contract &middot; week of September 3 to September 10, 2026</div>`
+  <div class="thesis">${e.tese(quadrado)}</div>
+  <div class="meta">US House control contract &middot; ${e.semana}</div>`
 
-const html = (f) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
+const html = (f, n, e) => `<!DOCTYPE html><html><head><meta charset="utf-8"><style>${css(f)}</style></head>
 <body><div class="og">
   <div class="head">
     <div class="mark">AFOS ANALYTICS</div>
     <div class="pais">${bandeira(62 * f.s)}<div class="prod">US 2026 MIDTERMS</div></div>
   </div>
-  <div class="body">${corpo(f.quadrado)}</div>
+  <div class="body">${corpo(f.quadrado, n, e)}</div>
   <div class="foot"><div class="url">afos-analytics.com</div><div class="trio">Prediction markets &middot; Polls &middot; Press</div></div>
 </div></body></html>`
 
+// Sem edicao o script PARA. Nao existe padrao aqui de proposito: gerar a arte da
+// edicao errada com o nome da certa e defeito que nenhum portao ve.
+const N = process.argv.find((a) => a.startsWith('--edicao='))?.split('=')[1]
+if (!N || !EDICOES[N]) {
+  console.error(`Falta --edicao=N com N em {${Object.keys(EDICOES).join(', ')}}.`)
+  console.error('   Uso: node scripts/build-og-card-us-weekly.mjs --edicao=8 [destino]')
+  process.exit(1)
+}
+const E = EDICOES[N]
 const browser = await chromium.launch()
-const DEST = process.argv[2] || 'public/brand'
-for (const f of FORMATOS) {
+const DEST = process.argv.slice(2).find((a) => !a.startsWith('--')) || 'public/brand'
+console.log(`AFOS Weekly US, edicao no ${N} - ${E.semana}`)
+for (const f of formatos(N)) {
   const ctx = await browser.newContext({ viewport: { width: f.W, height: f.H }, deviceScaleFactor: 1 })
   const page = await ctx.newPage()
-  await page.setContent(html(f), { waitUntil: 'load' })
+  await page.setContent(html(f, N, E), { waitUntil: 'load' })
   const buf = await page.locator('.og').screenshot({ type: 'png' })
   writeFileSync(`${DEST}/${f.nome}`, buf)
   console.log(`  ${DEST}/${f.nome}  ${f.W}x${f.H}  ${(buf.length / 1024).toFixed(0)} KB`)
