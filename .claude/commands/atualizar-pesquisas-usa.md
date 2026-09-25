@@ -158,6 +158,30 @@ A coleta publicou **"Big Data Poll · D 914 x R 3,2"**. O 914 era o TAMANHO DA A
 
 O leitor passou a resolver `rowspan` **por índice de coluna**, o que consertou a raiz: os descartes por valor caíram de 35 para 0 e a leitura subiu para 304 de 307. **Se `descartadasPorValor` voltar a subir, a origem mudou de formato de novo** e o lugar de olhar é o `parseTabela`.
 
+### 🧬 E a média pode contar a MESMA casa DUAS vezes, porque a chave é o NOME (25/Set/2026)
+
+🔴 **A regra é uma rodada por instituto por onda, e ela agrupa pelo campo `instituto`, que é o nome que o ÍNDICE escreveu.** O índice não garante nome estável, e naquele dia **três casas estavam na média duas vezes**:
+
+| rodada | os dois nomes | valores |
+|---|---|---|
+| 11-14/Set, 1.211 RV | `Beacon Research (D)/ Shaw & Co. Research (R)` e `Fox News` | os dois D+7.00 |
+| 02-09/Set, 581 LV | `Marquette University Law School` e `Marquette Law School` | os dois D+13.00 |
+| 31/Ago-10/Set, 1.000 LV | `ActiVote` e `Activote` | D+4.00 e D+4.60 |
+
+As duas primeiras são a MESMA rodada sob o nome de quem **executa** e o de quem **encomenda**. **Preço medido: D+7.98 com as duplicatas e D+7.89 sem as idênticas**, com os institutos caindo de 31 para 29.
+
+⚠️ **E há um quarto caso, dormente:** a McLaughlin entrou em 25/Set como `McLaughlin & Associates` enquanto as 7 linhas anteriores são `McLaughlin & Associates (R)`. Hoje só uma cai na janela, então não duplica; no dia em que duas caírem, duplica.
+
+```bash
+node scripts/rodada-duplicada-us.mjs     # entra na rodada como passo 2.5/9
+```
+
+📐 A assinatura é **campo + amostra + recorte**, e nunca o nome, que é a coisa sob suspeita. `IDENTICA` é mesma rodada com D e R iguais; `DIVERGE` é mesma onda com valores diferentes e pede olho humano, porque pode ser segunda via declarada.
+
+⛔ **Ele NÃO remove linha e NÃO muda a média.** Decidir qual nome fica é mudar a PROCEDÊNCIA, e segue decisão do André, par a par. O par decidido entra em `lib/us-polls/duplicata-de-rodada.mjs`, com data, motivo e **os valores**, para a conferência CADUCAR se o índice reescrever o número.
+
+🧪 `node scripts/testar-duplicata-us.mjs`, **24 asserções e no CI**, com **7 de 7 mutações reprovadas**. Metade é anti-excesso: sem amostra declarada, duas casas diferentes na mesma janela colidiriam sozinhas, então ali o par só conta se o nome normalizado bater.
+
 ## Passo 3: forçar o Neon, se não puder esperar as 07:10 UTC
 
 🔑 **O `$CRON_SECRET` NÃO existe no shell.** Ele vive no `.env.local`, que não é carregado no ambiente. Chamar com `$CRON_SECRET` cru devolve **`{"error":"Unauthorized"}` com HTTP 401**, e o 401 é fácil de confundir com segredo errado ou rota quebrada. Ler do arquivo:
@@ -196,6 +220,7 @@ Comparar `nPesquisas` e `nInstitutos` com a leitura anterior antes de escrever q
 🔴 **E TRÊS MEDIDORES QUE JÁ EXISTEM E NÃO ESTAVAM CITADOS AQUI, que é o mesmo defeito do `conferir-us-polls` antes de 05/Set:** script não citado vira conta refeita à mão toda rodada. Medido em 06/Set/2026: refiz a projeção da janela de cabeça e **errei a borda em um dia**, porque a janela é INCLUSIVA (`campoFim >= corte`) e eu usei `campoFim + 30` em vez de `+ 31`. O `projetar-janela-us.mjs` já acertava isso desde sempre.
 
 ```bash
+node scripts/rodada-duplicada-us.mjs     # a mesma RODADA sob dois nomes de casa
 node scripts/projetar-janela-us.mjs      # o FUTURO da janela, se nada entrar
 node scripts/historico-us-polls.mjs      # a SÉRIE no Neon, e se o registro de hoje é do cron
 node scripts/check-us-polls-defasagem.mjs # o instituto publicou algo que o índice não tem?

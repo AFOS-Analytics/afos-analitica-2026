@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-25",
-  "fetchedAt": "2026-09-25T05:14:18.590Z",
+  "fetchedAt": "2026-09-25T18:27:53.253Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -50,7 +50,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-26",
-    "nPesquisas": 40,
+    "nPesquisas": 41,
     "incluidas": [
       {
         "instituto": "Emerson College",
@@ -58,6 +58,13 @@
         "amostraTipo": "LV",
         "dem": 53,
         "rep": 42
+      },
+      {
+        "instituto": "McLaughlin & Associates",
+        "campoFim": "2026-09-22",
+        "amostraTipo": "LV",
+        "dem": 48,
+        "rep": 43
       },
       {
         "instituto": "ActiVote",
@@ -333,10 +340,10 @@
         "rep": 34
       }
     ],
-    "nInstitutos": 30,
-    "dem": 49.45,
-    "rep": 41.39,
-    "vantagemDem": 8.06,
+    "nInstitutos": 31,
+    "dem": 49.41,
+    "rep": 41.43,
+    "vantagemDem": 7.98,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
       "ActiVote",
@@ -358,6 +365,7 @@
       "Marist University",
       "Marquette Law School",
       "Marquette University Law School",
+      "McLaughlin & Associates",
       "Morning Consult",
       "New York Times/Siena College",
       "Quantus Insights (R)",
@@ -372,14 +380,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 432,
-    "publicadas": 451,
+    "linhasLidas": 433,
+    "publicadas": 452,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 432,
+    "doIndice": 433,
     "curadas": 19,
     "curadasDescartadasPorDuplicidade": 10
   },
@@ -396,6 +404,21 @@
       "outros": 5,
       "vantagemDem": 11,
       "fontePrimaria": "https://emersoncollegepolling.com/september-2026-national-poll-democrats/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "McLaughlin & Associates",
+      "campoInicio": "2026-09-16",
+      "campoFim": "2026-09-22",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3,
+      "dem": 48,
+      "rep": 43,
+      "outros": 9,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://mclaughlinonline.com/2026/09/24/national-monthly-september-2026/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },

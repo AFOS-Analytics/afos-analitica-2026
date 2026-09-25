@@ -76,6 +76,16 @@ const passos = [
     bloqueante: true,
   },
   {
+    // 🧬 Logo DEPOIS do portão e ANTES de qualquer medida da média, porque ele
+    // diz se o número que os passos seguintes vão ler conta alguma casa duas
+    // vezes. Não é bloqueante: ele mede e declara, e decidir qual nome fica é
+    // mudar a PROCEDÊNCIA, o que segue decisão do André.
+    id: 'duplicata',
+    titulo: '2.5/9 · MESMA RODADA SOB DOIS NOMES — a casa entra 2x na média?  [USO INTERNO]',
+    script: 'scripts/rodada-duplicada-us.mjs',
+    args: [],
+  },
+  {
     id: 'projetar',
     titulo: '3/9 · PROJEÇÃO — o futuro da janela, se nada entrar  [USO INTERNO]',
     script: 'scripts/projetar-janela-us.mjs',
