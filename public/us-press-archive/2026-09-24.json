@@ -1,0 +1,223 @@
+{
+  "lastUpdate": "2026-09-24",
+  "fetchedAt": "2026-09-24T19:20:13.362Z",
+  "regra": "Entram apenas matérias de veículos da lista fixa do AFOS, com link para a matéria. O AFOS não resume nem interpreta: a leitura é do veículo.",
+  "veiculos": [
+    {
+      "casa": "Reuters",
+      "tipo": "agência"
+    },
+    {
+      "casa": "Associated Press",
+      "tipo": "agência"
+    },
+    {
+      "casa": "AP News",
+      "tipo": "agência"
+    },
+    {
+      "casa": "The New York Times",
+      "tipo": "jornal",
+      "feed": "https://rss.nytimes.com/services/xml/rss/nyt/Politics.xml"
+    },
+    {
+      "casa": "The Washington Post",
+      "tipo": "jornal",
+      "feed": "https://feeds.washingtonpost.com/rss/politics"
+    },
+    {
+      "casa": "The Wall Street Journal",
+      "tipo": "jornal",
+      "feed": "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+    },
+    {
+      "casa": "USA TODAY",
+      "tipo": "jornal"
+    },
+    {
+      "casa": "Politico",
+      "tipo": "especializada",
+      "feed": "https://rss.politico.com/politics-news.xml"
+    },
+    {
+      "casa": "The Hill",
+      "tipo": "especializada",
+      "feed": "https://thehill.com/homenews/feed/"
+    },
+    {
+      "casa": "Roll Call",
+      "tipo": "especializada",
+      "feed": "https://rollcall.com/feed/"
+    },
+    {
+      "casa": "Axios",
+      "tipo": "especializada",
+      "feed": "https://api.axios.com/feed/"
+    },
+    {
+      "casa": "NPR",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.npr.org/1014/rss.xml"
+    },
+    {
+      "casa": "ABC News",
+      "tipo": "tv/rádio",
+      "feed": "https://abcnews.go.com/abcnews/politicsheadlines"
+    },
+    {
+      "casa": "CBS News",
+      "tipo": "tv/rádio",
+      "feed": "https://www.cbsnews.com/latest/rss/politics"
+    },
+    {
+      "casa": "NBC News",
+      "tipo": "tv/rádio",
+      "feed": "https://feeds.nbcnews.com/nbcnews/public/politics"
+    },
+    {
+      "casa": "CNN",
+      "tipo": "tv/rádio",
+      "feed": "http://rss.cnn.com/rss/cnn_allpolitics.rss"
+    },
+    {
+      "casa": "Fox News",
+      "tipo": "tv/rádio",
+      "feed": "https://moxie.foxnews.com/google-publisher/politics.xml"
+    },
+    {
+      "casa": "NewsNation",
+      "tipo": "tv/rádio",
+      "feed": "https://www.newsnationnow.com/politics/feed/"
+    },
+    {
+      "casa": "Washington Examiner",
+      "tipo": "opinião"
+    },
+    {
+      "casa": "National Review",
+      "tipo": "opinião",
+      "feed": "https://www.nationalreview.com/feed/"
+    },
+    {
+      "casa": "The Guardian",
+      "tipo": "opinião",
+      "feed": "https://www.theguardian.com/us-news/us-politics/rss"
+    },
+    {
+      "casa": "The Cook Political Report",
+      "tipo": "análise"
+    },
+    {
+      "casa": "Sabato’s Crystal Ball",
+      "tipo": "análise"
+    }
+  ],
+  "qualidade": {
+    "lidos": 212,
+    "naLista": 78,
+    "foraDaLista": 134,
+    "publicados": 10,
+    "descartadosPorAcompanhamento": 2,
+    "veiculosRepresentados": 8,
+    "tetoPorVeiculo": 2,
+    "consultasComFalha": [],
+    "feedsProprios": 16,
+    "lidosEmFeedProprio": 41,
+    "publicadosComLinkCanonico": 6,
+    "publicadosViaGoogleNews": 4,
+    "publicadosPorDisputa": 9,
+    "publicadosPorMetodo": 1
+  },
+  "itens": [
+    {
+      "titulo": "Most in DC area say they've been hurt by federal job cuts, furloughs: Gallup",
+      "url": "https://thehill.com/homenews/state-watch/6109855-dc-residents-impacted-federal-cuts/",
+      "casa": "The Hill",
+      "publicadoEm": "2026-09-24T19:06:06.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "metodo"
+    },
+    {
+      "titulo": "Missouri's redistricting mess created an election problem Supreme Court has days to untangle",
+      "url": "https://www.foxnews.com/politics/missouris-redistricting-mess-created-election-problem-supreme-court-has-days-untangle",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-24T17:02:20.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US Democrats tee up pre-election war powers vote as some Republicans break with Trump on Iran",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMU45a3FvODBzSXpndWg1QUVuQzlqUmVJWjZEWUFXNWltVUx0Sm4zbDE1X3lFSnFYd2hQeGotT1YtejB1NU9lZDJKcnJjeEZqNkJtZkQ0anhFUG92V3pWLXlyQzhIalFwTzRuVnVvd3BGQ2tfYTJ3RUxMRlhlWTdTUFE3MnAzMUxmallxcE9SZU5ldmxJeE1fYnhyT0c5eG9lVXVydVg2TFhnbnFJYUFsOE56U194eTltTnc2bGFR?oc=5",
+      "casa": "Reuters",
+      "publicadoEm": "2026-09-24T16:53:04.000Z",
+      "consulta": "midterms",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Young men are swinging away hard from Republicans, pessimistic about economy, new poll finds",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQnAzVUVfSzM5M1FZTkFDVFBCejFWNW82aDNYSDBZVDM4cFdDeTVnV0oybUNrZGNZN2M5bEg3ZHBrYUw2YXJ0aVV3endUZ3U0c25tUXVnTHZxV2s4enduUldJVDBvTHF3UFluMDNtS0d4QWdTUnZJU0VkakNKbmd2dlZrV0dZUDQ?oc=5",
+      "casa": "Politico",
+      "publicadoEm": "2026-09-24T16:52:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New poll shows Democrats with big lead over GOP on generic ballot",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQUC0xeE5QRXo0dC0yLU91ak5xWkk1WFBaSzd5ZEowOUdhR1p3WEc5Z28yNUZQRlRLbnFxb18yeVYta0t4YlpTZm5uTjU0dDI2cGs1TEpReklBM1BRQmd5NjdQa0h4OTBlYmQ4azk3WW1RVXVKOXpST2V5S1FiUDlzSGIyMlZDZi04OHBpeVBGUGtza3JocmFmSThBbkt3VU1ienVZSnVqeU1TVDdwWFJGR1daX0F4c3FEU1Z0QWc3NTQ?oc=5",
+      "casa": "USA Today",
+      "publicadoEm": "2026-09-24T16:18:00.000Z",
+      "consulta": "generic-ballot",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "New Hampshire Senate Race: 5 Takeaways From a New Poll",
+      "url": "https://www.nytimes.com/2026/09/24/us/politics/new-hampshire-senate-poll-pappas-sununu.html",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-24T16:10:06.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "5 Takeaways From a New Poll on the New Hampshire Senate Race",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRVVZZW1HLUp2ZEw4X3FvSGZxZ2ZQc2EzdkR6MV9KSlBtb1RkajNYVWpxMkNmcGF6Vi13MEcxZS1nU2FLRWM2dVF5alpxZjM4S2FPSzdBTXl2SEFMZ004UFVMS1RreWxPWXRKZFRudmxUSzAzNTZFa1VBaXdMQkI1cUY5TmJvalFYclBSbjRzLTVyV1E4YXc?oc=5",
+      "casa": "The New York Times",
+      "publicadoEm": "2026-09-24T16:10:06.000Z",
+      "consulta": "senate-races",
+      "origem": "google",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "US government foots bill for television advertisement featuring Trump's midterm messaging",
+      "url": "https://abcnews.com/Politics/wireStory/us-government-foots-bill-television-advertisement-featuring-trumps-136722482",
+      "casa": "ABC News",
+      "publicadoEm": "2026-09-24T16:07:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Dem Senate hopeful rocked by explosive ex-aide claims as campaign cites ‘hardest period of her life’",
+      "url": "https://www.foxnews.com/politics/dem-senate-hopeful-rocked-explosive-ex-aide-claims-campaign-cites-hardest-period-her-life",
+      "casa": "Fox News",
+      "publicadoEm": "2026-09-24T16:00:46.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    },
+    {
+      "titulo": "Texas voter-registration backlog could affect midterms",
+      "url": "https://www.washingtonpost.com/politics/2026/09/24/texas-voter-registration-backlog-could-affect-midterms/",
+      "casa": "The Washington Post",
+      "publicadoEm": "2026-09-24T15:01:58.000Z",
+      "consulta": "feed-proprio",
+      "origem": "feed",
+      "trilho": "disputa"
+    }
+  ]
+}
