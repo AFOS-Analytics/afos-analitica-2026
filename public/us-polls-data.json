@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-25",
-  "fetchedAt": "2026-09-25T04:23:08.716Z",
+  "fetchedAt": "2026-09-25T05:01:13.842Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -50,7 +50,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-26",
-    "nPesquisas": 39,
+    "nPesquisas": 40,
     "incluidas": [
       {
         "instituto": "Emerson College",
@@ -128,6 +128,13 @@
         "amostraTipo": "LV",
         "dem": 48,
         "rep": 37
+      },
+      {
+        "instituto": "Emerson College/RealClear Opinion Research",
+        "campoFim": "2026-09-15",
+        "amostraTipo": "RV",
+        "dem": 37,
+        "rep": 29
       },
       {
         "instituto": "Hart Research Associates (D)/ Public Opinion Strategies (R)",
@@ -326,9 +333,9 @@
         "rep": 34
       }
     ],
-    "nInstitutos": 29,
-    "dem": 49.77,
-    "rep": 41.71,
+    "nInstitutos": 30,
+    "dem": 49.45,
+    "rep": 41.39,
     "vantagemDem": 8.06,
     "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
     "institutos": [
@@ -342,6 +349,7 @@
       "Cygnal (R)",
       "Echelon Insights",
       "Emerson College",
+      "Emerson College/RealClear Opinion Research",
       "Focaldata/Financial Times",
       "Fox News",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
@@ -364,14 +372,14 @@
     ]
   },
   "qualidade": {
-    "linhasLidas": 431,
-    "publicadas": 450,
+    "linhasLidas": 432,
+    "publicadas": 451,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 431,
+    "doIndice": 432,
     "curadas": 19,
     "curadasDescartadasPorDuplicidade": 10
   },
@@ -643,6 +651,21 @@
       "outros": 19,
       "vantagemDem": 9,
       "fontePrimaria": "https://www.bigdatapoll.com/blog/democrats-maintain-significant-midterm-advantage-in-post-labor-day-poll/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Emerson College/RealClear Opinion Research",
+      "campoInicio": "2026-09-12",
+      "campoFim": "2026-09-15",
+      "amostra": 1500,
+      "amostraTipo": "RV",
+      "margemErro": 2.4,
+      "dem": 37,
+      "rep": 29,
+      "outros": 35,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://www.uniteamerica.org/articles/new-poll-voters-say-primaries-reward-partisan-bases-sideline-ordinary-voters",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
