@@ -333,3 +333,34 @@ Ele importa a hierarquia do coletor em vez de redigitá-la, e lê `mediaAfos.inc
 - Se commitar o arquivo, **`/dashboard/us` precisa de deploy** para o piso novo valer. O Neon não precisa.
 
 Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do painel.
+
+## 🧬 O NOME DA CASA entra na média, e a tabela é `lib/us-polls/casas.mjs` (25/Set/2026)
+
+🔴 **O defeito:** a média é uma rodada por instituto por onda, e agrupava pelo **nome que o índice escreveu**. Em 25/Set três casas estavam na média **duas vezes**: 41 rodadas onde a regra dá 38, e 31 institutos onde ela dá 28.
+
+🔑 **E a origem não era o índice, era a nossa CURADORIA.** A curada é escrita à mão do documento do **instituto**, onde a casa se nomeia (Fox News, Marquette Law School, ActiVote); o índice a nomeia pelo **executor** ou com outra grafia (Beacon/Shaw, Marquette University Law School, ActiVote). A regra "o índice SEMPRE vence" aposenta a curada pela CHAVE, e a chave era o nome: rótulos diferentes, nenhuma aposentadoria. Eram **cinco** curadas nesse estado, três na janela.
+
+⚖️ **Decisão do André:** "fica o nome de quem EXECUTA nos três pares".
+
+| peça | o que faz |
+|---|---|
+| `lib/us-polls/casas.mjs` | a tabela ÚNICA. Existia desde 17/Set para os medidores por casa, e passou a valer na média, no desempate e na aposentadoria da curada |
+| `media()` | chaveia por `serieDaCasa`, e grava `institutoNoIndice` ao lado quando houve colapso |
+| `rodadas-curadas.mjs` | `chave()` e `suspeitas` pela série: uma letra não derrota mais o "índice vence" |
+| passo **2.5/9** | `rodada-duplicada-us.mjs`, que sai RESOLVIDA para par já declarado |
+
+⛔ `polls[]` não muda: é a transcrição do índice. ⛔ Casamento por string **EXATA**: grafia não declarada passa inteira e volta a ser cobrada.
+
+⚠️ **Preço declarado:** ao se aposentar, a curada da ActiVote leva o **decimal** com ela (52,3 x 47,7 volta ao 52 x 48 do índice).
+
+### 🧭 E o VEREDITO DA VARIAÇÃO ganhou três classes, porque ele mentiu
+
+🔴 Na primeira passada com a tabela ligada, o portão leu 4 saídas e 1 entrada e devolveu **`PESQUISA_NOVA + borda-rolou`**. Nada entrou e nada rolou pela borda. A régua manda escrever a atribuição a partir desse bloco, então veredito falso vira **frase falsa**.
+
+| classe | quando |
+|---|---|
+| `RENOMEACAO` | mesma casa, mesma onda, rótulo diferente. Par 1 para 1 |
+| `DEDUPLICACAO` | saiu e a casa **continua** na média naquela onda |
+| 🔴 `DUPLICOU` | o INVERSO, que não se cala por simetria: a casa passou a ser contada duas vezes |
+
+🧪 `testar-casas-us.mjs` **81 asserções, 11 de 11 mutações** · `testar-atribuicao-us.mjs` **42, 7 de 7**. Os dois no CI.

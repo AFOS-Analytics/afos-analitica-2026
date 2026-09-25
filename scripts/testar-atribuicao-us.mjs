@@ -175,5 +175,44 @@ console.log('\n5. 🔴 O PONTO CEGO da regra antiga, que comparava NOMES de casa
   )
 }
 
+
+console.log('\n8. RENOMEACAO, DEDUPLICACAO e DUPLICOU (25/Set/2026)')
+{
+  const EXEC = 'Beacon Research (D)/ Shaw & Co. Research (R)'
+  const base = [...HOJE, p('Fox News', '2026-09-14', 51, 44)]
+  const exec = [...HOJE, p(EXEC, '2026-09-14', 51, 44)]
+
+  // 1) RENOMEACAO: saiu sob um rotulo, entrou sob o outro, mesma casa e onda.
+  const ren = comparar(base, exec)
+  conferir('renomeacao: 1 par, e nenhuma entrada nem saida', ren.renomeadas.length === 1 && ren.entraram.length === 0 && ren.sairam.length === 0)
+  conferir('renomeacao: o veredito NAO diz PESQUISA_NOVA', !veredito(ren, 0).includes('PESQUISA_NOVA'), veredito(ren, 0).join('+'))
+  conferir('renomeacao: o veredito NAO diz COMPOSICAO', !veredito(ren, 0).includes('COMPOSICAO'))
+  conferir('renomeacao: o veredito diz RENOMEACAO', veredito(ren, 0).includes('RENOMEACAO'))
+  conferir('renomeacao: a subtracao fecha', conferirSubtracao(base, exec, ren).length === 0)
+
+  // 2) DEDUPLICACAO: a casa estava DUAS vezes e passou a estar uma.
+  const duplo = [...HOJE, p(EXEC, '2026-09-14', 51, 44), p('Fox News', '2026-09-14', 51, 44)]
+  const dedup = comparar(duplo, exec)
+  conferir('deduplicacao: 1 deduplicada e ZERO saidas', dedup.deduplicadas.length === 1 && dedup.sairam.length === 0)
+  conferir('deduplicacao: o veredito NAO diz COMPOSICAO', !veredito(dedup, -0.01).includes('COMPOSICAO'), veredito(dedup, -0.01).join('+'))
+  conferir('deduplicacao: o veredito diz DEDUPLICACAO', veredito(dedup, -0.01).includes('DEDUPLICACAO'))
+  conferir('deduplicacao: a subtracao fecha', conferirSubtracao(duplo, exec, dedup).length === 0)
+
+  // 3) 🔴 DUPLICOU: o sentido inverso, que NAO pode se calar.
+  const dup = comparar(exec, duplo)
+  conferir('duplicou: 1 duplicada e ZERO entradas', dup.duplicaram.length === 1 && dup.entraram.length === 0)
+  conferir('duplicou: o veredito GRITA DUPLICOU', veredito(dup, 0.01)[0] === 'DUPLICOU', veredito(dup, 0.01).join('+'))
+  conferir('duplicou: e NAO se disfarca de PESQUISA_NOVA', !veredito(dup, 0.01).includes('PESQUISA_NOVA'))
+  conferir('duplicou: a subtracao fecha', conferirSubtracao(exec, duplo, dup).length === 0)
+
+  // ⛔ ANTI-EXCESSO: o que NAO pode ser confundido com renomeacao nem duplicata.
+  const casaNova = comparar(HOJE, [p('Quinnipiac', '2026-09-14', 49, 42), ...HOJE])
+  conferir('casa DIFERENTE entrando segue PESQUISA_NOVA', veredito(casaNova, 0.2).includes('PESQUISA_NOVA') && casaNova.duplicaram.length === 0)
+  const outraOnda = comparar(exec, [p(EXEC, '2026-09-21', 52, 43), ...exec])
+  conferir('a MESMA casa em outra ONDA segue PESQUISA_NOVA', veredito(outraOnda, 0.2).includes('PESQUISA_NOVA') && outraOnda.duplicaram.length === 0)
+  const semTabela = comparar([...HOJE, p('Casa Sem Tabela', '2026-09-14', 51, 44)], [...HOJE, p('Outra Casa Qualquer', '2026-09-14', 51, 44)])
+  conferir('nomes NAO declarados nao viram renomeacao', semTabela.renomeadas.length === 0 && semTabela.entraram.length === 1 && semTabela.sairam.length === 1)
+}
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
 process.exit(falhas === 0 ? 0 : 1)

@@ -1,6 +1,6 @@
 {
   "lastUpdate": "2026-09-25",
-  "fetchedAt": "2026-09-25T18:27:53.253Z",
+  "fetchedAt": "2026-09-25T19:14:47.496Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -25,12 +25,9 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 19,
+      "quantas": 14,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
-        "Activote",
-        "Fox News",
-        "Marquette Law School",
         "Quantus Insights (R)",
         "Reuters/Ipsos",
         "The Economist/YouGov",
@@ -50,7 +47,7 @@
   "mediaAfos": {
     "janelaDias": 30,
     "desde": "2026-08-26",
-    "nPesquisas": 41,
+    "nPesquisas": 38,
     "incluidas": [
       {
         "instituto": "Emerson College",
@@ -130,7 +127,8 @@
         "rep": 40
       },
       {
-        "instituto": "Big Data Poll (R)",
+        "instituto": "Big Data Poll",
+        "institutoNoIndice": "Big Data Poll (R)",
         "campoFim": "2026-09-15",
         "amostraTipo": "LV",
         "dem": 48,
@@ -166,13 +164,6 @@
       },
       {
         "instituto": "Beacon Research (D)/ Shaw & Co. Research (R)",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "RV",
-        "dem": 51,
-        "rep": 44
-      },
-      {
-        "instituto": "Fox News",
         "campoFim": "2026-09-14",
         "amostraTipo": "RV",
         "dem": 51,
@@ -228,13 +219,6 @@
         "rep": 46
       },
       {
-        "instituto": "Activote",
-        "campoFim": "2026-09-10",
-        "amostraTipo": "LV",
-        "dem": 52.3,
-        "rep": 47.7
-      },
-      {
         "instituto": "ActiVote",
         "campoFim": "2026-09-10",
         "amostraTipo": "LV",
@@ -247,13 +231,6 @@
         "amostraTipo": "LV",
         "dem": 49,
         "rep": 38
-      },
-      {
-        "instituto": "Marquette Law School",
-        "campoFim": "2026-09-09",
-        "amostraTipo": "LV",
-        "dem": 54,
-        "rep": 41
       },
       {
         "instituto": "Marquette University Law School",
@@ -340,16 +317,15 @@
         "rep": 34
       }
     ],
-    "nInstitutos": 31,
-    "dem": 49.41,
-    "rep": 41.43,
-    "vantagemDem": 7.98,
-    "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos.",
+    "nInstitutos": 28,
+    "dem": 49.18,
+    "rep": 41.21,
+    "vantagemDem": 7.97,
+    "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa.",
     "institutos": [
       "ActiVote",
-      "Activote",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
-      "Big Data Poll (R)",
+      "Big Data Poll",
       "CBS News/YouGov",
       "CNN/SSRS",
       "Catawba College/YouGov",
@@ -358,12 +334,10 @@
       "Emerson College",
       "Emerson College/RealClear Opinion Research",
       "Focaldata/Financial Times",
-      "Fox News",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
       "Marist University",
-      "Marquette Law School",
       "Marquette University Law School",
       "McLaughlin & Associates",
       "Morning Consult",
@@ -381,15 +355,15 @@
   },
   "qualidade": {
     "linhasLidas": 433,
-    "publicadas": 452,
+    "publicadas": 447,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
     "doIndice": 433,
-    "curadas": 19,
-    "curadasDescartadasPorDuplicidade": 10
+    "curadas": 14,
+    "curadasDescartadasPorDuplicidade": 15
   },
   "polls": [
     {
@@ -813,25 +787,6 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Fox News",
-      "campoInicio": "2026-09-11",
-      "campoFim": "2026-09-14",
-      "amostra": 1211,
-      "amostraTipo": "RV",
-      "margemErro": 3,
-      "dem": 51,
-      "rep": 44,
-      "outros": 4,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://static.foxnews.com/foxnews.com/content/uploads/2026/09/fox_september-11-14-2026_national_topline_september-16-release-1.pdf",
-      "opcoes": {
-        "other": 0,
-        "naoSabe": 4
-      },
-      "comLeaners": true,
-      "origem": "listagem-do-instituto"
-    },
-    {
       "instituto": "New York Times/Siena College",
       "campoInicio": "2026-09-08",
       "campoFim": "2026-09-13",
@@ -930,22 +885,6 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Activote",
-      "campoInicio": "2026-08-31",
-      "campoFim": "2026-09-10",
-      "amostra": 1000,
-      "amostraTipo": "LV",
-      "margemErro": 3.1,
-      "dem": 52.3,
-      "rep": 47.7,
-      "outros": 0,
-      "vantagemDem": 4.6,
-      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-09-11",
-      "opcoes": {},
-      "notas": "Duas vias NORMALIZADA em 100%, sem indeciso: a decomposicao nao existe, nao e zero. Data mediana de campo 05/Set.",
-      "origem": "listagem-do-instituto"
-    },
-    {
       "instituto": "Catawba College/YouGov",
       "campoInicio": "2026-09-04",
       "campoFim": "2026-09-09",
@@ -1019,40 +958,6 @@
       "fontePrimaria": "https://law.marquette.edu/poll/2026/09/16/detailed-results-of-the-marquette-law-school-supreme-court-poll-september-2-9-2026/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
-    },
-    {
-      "instituto": "Marquette Law School",
-      "campoInicio": "2026-09-02",
-      "campoFim": "2026-09-09",
-      "amostra": 581,
-      "amostraTipo": "LV",
-      "margemErro": 4.3,
-      "dem": 54,
-      "rep": 41,
-      "outros": 4,
-      "vantagemDem": 13,
-      "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC35/MLSPSC35PressRelease_NationalTopics.pdf",
-      "opcoes": {
-        "neither": 4
-      },
-      "origem": "listagem-do-instituto"
-    },
-    {
-      "instituto": "Marquette Law School",
-      "campoInicio": "2026-09-02",
-      "campoFim": "2026-09-09",
-      "amostra": 864,
-      "amostraTipo": "RV",
-      "margemErro": 3.6,
-      "dem": 50,
-      "rep": 42,
-      "outros": 7,
-      "vantagemDem": 8,
-      "fontePrimaria": "https://law.marquette.edu/assets/community/poll/MLSPSC35/MLSPSC35PressRelease_NationalTopics.pdf",
-      "opcoes": {
-        "neither": 7
-      },
-      "origem": "listagem-do-instituto"
     },
     {
       "instituto": "The Economist/YouGov",
@@ -1482,22 +1387,6 @@
         "naoVotara": 16,
         "pulou": 1
       },
-      "origem": "listagem-do-instituto"
-    },
-    {
-      "instituto": "Activote",
-      "campoInicio": "2026-08-10",
-      "campoFim": "2026-08-24",
-      "amostra": 1000,
-      "amostraTipo": "LV",
-      "margemErro": 3.1,
-      "dem": 51.7,
-      "rep": 48.3,
-      "outros": 0,
-      "vantagemDem": 3.4,
-      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-08-24",
-      "opcoes": {},
-      "notas": "Duas vias NORMALIZADA em 100%, sem indeciso: a decomposicao nao existe, nao e zero. A prosa da pagina diz 3,5 e a subtracao da 3,4.",
       "origem": "listagem-do-instituto"
     },
     {

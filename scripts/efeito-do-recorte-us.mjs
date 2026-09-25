@@ -30,6 +30,7 @@
  */
 import { readFileSync } from 'fs'
 import { ORDEM_RECORTE } from '../lib/us-polls/collect.mjs'
+import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 
 const arg = (n) => process.argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3)
 const ARQUIVO = arg('arquivo') || 'public/us-polls-data.json'
@@ -93,7 +94,9 @@ if (!media?.incluidas?.length) {
 }
 
 const dentro = media.incluidas.map((i) => {
-  const grupo = polls.filter((p) => p.instituto === i.instituto && p.campoFim === i.campoFim)
+  // 🧬 O grupo é da SÉRIE e não de um rótulo: quando o índice escreve a mesma
+  // onda sob dois nomes, os recortes do nome gêmeo também são alternativas dela.
+  const grupo = polls.filter((p) => serieDaCasa(p.instituto) === serieDaCasa(i.instituto) && p.campoFim === i.campoFim)
   const escolhido = grupo.find((p) => p.amostraTipo === i.amostraTipo && p.dem === i.dem && p.rep === i.rep) || grupo[0]
   const alternativas = grupo.filter((p) => p !== escolhido)
   return { i, escolhido, alternativas }

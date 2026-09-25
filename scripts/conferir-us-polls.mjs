@@ -257,6 +257,21 @@ if (m && mb) {
     const rot = (x) => `${x.campoFim} ${x.instituto} (D+${(x.dem - x.rep).toFixed(2)})`
     console.log(`        saíram    ${dif.sairam.map(rot).join(' · ') || '(ninguém)'}`)
     console.log(`        entraram  ${dif.entraram.map(rot).join(' · ') || '(ninguém)'}`)
+    // 🧬 As três listas de NOME, instaladas em 25/Set/2026. Sem imprimi-las, a
+    // rodada renomeada ou deduplicada sairia das duas linhas de cima e NADA a
+    // explicaria: o conserto do veredito falso teria criado um silêncio no lugar.
+    for (const r of dif.renomeadas ?? []) {
+      console.log(`        ${cor.aviso}RENOMEADA${cor.fim} ${r.antes.campoFim}: "${r.antes.instituto}" → "${r.depois.instituto}"`)
+      console.log(`            mesma casa e mesma onda. Não é rodada nova nem correção da origem.`)
+    }
+    for (const x of dif.deduplicadas ?? []) {
+      console.log(`        ${cor.aviso}DEDUPLICADA${cor.fim} ${rot(x)}: a casa continua na média nesta onda, sob outro rótulo`)
+      console.log(`            ela não saiu da janela: parou de ser contada duas vezes`)
+    }
+    for (const x of dif.duplicaram ?? []) {
+      console.log(`        ${cor.mau}DUPLICOU${cor.fim} ${rot(x)}: a casa JÁ tinha rodada nesta onda e passou a ter duas`)
+      console.log(`            olhar lib/us-polls/casas.mjs: é o defeito de 25/Set/2026 nascendo de novo`)
+    }
     // 🚀 A FICHA de quem entrou, para a conferência na FONTE começar daqui.
     //    Medido em 15/Set/2026: a CBS News/YouGov entrou e a conferência exigiu
     //    garimpar o JSON atrás do link, da amostra e do recorte antes de abrir o
@@ -266,7 +281,10 @@ if (m && mb) {
     //    conferir, não certifica nada.
     for (const x of dif.entraram) {
       const p = (atual.polls ?? []).find(
-        (q) => q.instituto === x.instituto && q.campoFim === x.campoFim && q.dem === x.dem && q.rep === x.rep &&
+        // 🧬 `incluidas` traz o nome da SÉRIE e `polls[]` o do índice: casar pelo
+        // rótulo do índice quando houve colapso, senão a ficha da rodada nova sai
+        // como "incluída na média sem linha correspondente em polls".
+        (q) => q.instituto === (x.institutoNoIndice ?? x.instituto) && q.campoFim === x.campoFim && q.dem === x.dem && q.rep === x.rep &&
           (!x.amostraTipo || q.amostraTipo === x.amostraTipo)
       )
       if (!p) {
@@ -294,7 +312,7 @@ if (m && mb) {
       const ondeEsta = (arq, x) =>
         (arq?.polls ?? []).find(
           (p) =>
-            p.instituto === x.instituto &&
+            p.instituto === (x.institutoNoIndice ?? x.instituto) &&
             p.campoFim === x.campoFim &&
             (x.amostraTipo == null || p.amostraTipo === x.amostraTipo) &&
             (x.dem == null || Number(p.dem) === Number(x.dem))

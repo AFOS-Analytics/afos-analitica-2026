@@ -19,6 +19,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync, copyFi
 import { join } from 'path'
 import { gunzipSync } from 'zlib'
 import { createHash } from 'crypto'
+import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 
 const ROOT = process.cwd()
 const OUT = process.env.US2026_OUT || join(ROOT, '.cache', 'us2026-dataset')
@@ -187,7 +188,9 @@ const resumo = {
   official_result_available: false,
   polls: {
     rows: polls.length,
-    pollsters: new Set(polls.map((p) => p.instituto)).size,
+    // 🧬 Pela SÉRIE: contar grafias infla o número de institutos declarado no
+    // dataset. Em 25/Set/2026 eram 3 grafias a mais no arquivo inteiro.
+    pollsters: new Set(polls.map((p) => serieDaCasa(p.instituto))).size,
     fieldwork_from: datasEleitorais[0],
     fieldwork_to: datasEleitorais[datasEleitorais.length - 1],
     with_primary_source: polls.filter((p) => p.fontePrimaria).length,
