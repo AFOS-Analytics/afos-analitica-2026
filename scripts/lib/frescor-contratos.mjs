@@ -117,6 +117,8 @@ export function contratoNoPonto(bruto, ini, fim, padrao = 'vencedor') {
 
 /**
  * Valor citado como HISTORICO nao e contradicao, e narrativa de delta.
+ * E FAIXA gravada tambem e: "variou de 54,30% a 56,30%" (25/Set/2026) e a
+ * forma que a ETAPA 1.8 do /atualizar-brz manda escrever, e o portao a acusava.
  * "subiu de 41,00% para 39,00%" tem duas verdades e so a segunda e de hoje.
  *
  * Espelha a regra que ja vivia dentro do check-frescor-editorial, trazida para
@@ -124,7 +126,7 @@ export function contratoNoPonto(bruto, ini, fim, padrao = 'vencedor') {
  * diverge. Exportada para o teste poder plantar caso nela.
  */
 export const HISTORICO =
-  /\b(era|vinha de|ontem|na leitura de|no fechamento de|confirmada de|confirmado em|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|topo de|piso de|m[áa]xim|m[íi]nim|recorde|desde|contra)\b/i
+  /\b(era|vinha de|ontem|na leitura de|no fechamento de|confirmada de|confirmado em|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|topo de|piso de|m[áa]xim|m[íi]nim|recorde|desde|contra|vari(?:ou|a) de|faixa (?:do dia|gravada))\b/i
 
 export function ehHistoricoEm(texto, pos) {
   const antes = texto.slice(Math.max(0, pos - 45), pos)

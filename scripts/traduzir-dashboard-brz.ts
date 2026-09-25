@@ -41,6 +41,8 @@
  * Uso:
  *   npx tsx scripts/traduzir-dashboard-brz.ts --mapa=arquivo.json
  *   npx tsx scripts/traduzir-dashboard-brz.ts --pendentes    # só lista o que falta
+ *   npx tsx scripts/traduzir-dashboard-brz.ts --insumo=i.json  # grava os pendentes com pt e referência
+ *   npx tsx scripts/traduzir-dashboard-brz.ts --mapa=en.json --mapa=es.json   # um mapa por idioma
  *
  * Formato do mapa:
  *   { "analysis-data": { "cards.sentimento.text1": { "en": "...", "es": "..." } } }
@@ -124,9 +126,28 @@ function porCaminho(o: any, caminho: string, valor: string): boolean {
 
 const argv = process.argv.slice(2)
 const soPendentes = argv.includes('--pendentes')
-const caminhoMapa = argv.find((a) => a.startsWith('--mapa='))?.slice(7)
-const mapa: Record<string, Record<string, Partial<Record<Idioma, string>>>> =
-  caminhoMapa && existsSync(caminhoMapa) ? JSON.parse(readFileSync(caminhoMapa, 'utf8')) : {}
+// 🚀 `--insumo=arquivo.json`, criado em 25/Set/2026: grava os pendentes com o
+//    pt-BR do dia e, SÓ COMO REFERÊNCIA DE ESTILO, a tradução de HEAD no mesmo
+//    caminho. Antes o insumo era montado lendo a listagem de texto com regex,
+//    que é o jeito de uma mudança de formato da listagem virar insumo vazio.
+//    Implica `--pendentes`: nada é escrito em `public/`.
+const caminhoInsumo = argv.find((a) => a.startsWith('--insumo='))?.slice(9)
+const insumo: Record<string, Record<string, { pt: string } & Partial<Record<`ref_${Idioma}`, string>>>> = {}
+// 🔑 `--mapa=` pode vir mais de uma vez, um arquivo por idioma, e as entradas se
+//    juntam por arquivo e caminho. Um idioma nunca apaga o outro.
+type Mapa = Record<string, Record<string, Partial<Record<Idioma, string>>>>
+const mapa: Mapa = {}
+for (const a of argv.filter((x) => x.startsWith('--mapa='))) {
+  const arq = a.slice(7)
+  if (!existsSync(arq)) throw new Error(`mapa não encontrado: ${arq}`)
+  const parte = JSON.parse(readFileSync(arq, 'utf8')) as Mapa
+  for (const [base, caminhos] of Object.entries(parte)) {
+    for (const [caminho, trad] of Object.entries(caminhos)) {
+      mapa[base] ??= {}
+      mapa[base][caminho] = { ...(mapa[base][caminho] ?? {}), ...trad }
+    }
+  }
+}
 
 let pendentesTotal = 0
 let escritos = 0
@@ -213,10 +234,18 @@ for (const base of ARQUIVOS) {
       // ⚠️ A lista é a ENTRADA de trabalho deste script, não um resumo. Resumo
       // se corta; entrada de trabalho, não.
       for (const p of pendentes) console.log(`      ${p}  [${tAtual[p].length}c]`)
+      if (caminhoInsumo) {
+        insumo[base] ??= {}
+        for (const p of pendentes) {
+          insumo[base][p] ??= { pt: tAtual[p] }
+          const ref = tTradHead[p]
+          if (ref !== undefined) insumo[base][p][`ref_${idioma}`] = ref
+        }
+      }
       continue
     }
 
-    if (soPendentes) {
+    if (soPendentes || caminhoInsumo) {
       console.log(`   ${idioma}: ✅ nada pendente (${herdados} herdado, ${novos} do mapa). Nada escrito, é só a listagem.`)
       continue
     }
@@ -238,6 +267,15 @@ for (const base of ARQUIVOS) {
     escritos++
     console.log(`   ${idioma}: ✅ escrito. ${herdados} herdado(s), ${novos} traduzido(s) nesta rodada, gate numérico zerado.`)
   }
+}
+
+if (caminhoInsumo) {
+  writeFileSync(caminhoInsumo, JSON.stringify(insumo, null, 2) + '\n')
+  const n = Object.values(insumo).reduce((a, c) => a + Object.keys(c).length, 0)
+  console.log('')
+  console.log(`📝 insumo gravado em ${caminhoInsumo}: ${n} caminho(s) com pt-BR e a tradução de HEAD como referência.`)
+  console.log('   ⛔ A referência é de ESTILO: o texto mudou, e copiá-la seria publicar a frase de ontem.')
+  console.log('   Os mapas de volta vêm no formato { arquivo: { caminho: { en } } }, um por idioma, e se juntam com --mapa= repetido.')
 }
 
 console.log('')

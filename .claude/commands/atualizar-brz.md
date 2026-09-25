@@ -407,6 +407,8 @@ As quatro réguas:
 
 Agora ela casa **as duas formas com hora** (`leitura de` e `leitura confirmada de`) e confere também o **componente de perfis** contra o carimbo do `analysis-data.json`, com a mesma exceção declarada de "não publica preço novo". Provada dos dois lados: passa no painel de 14/Set e **reprova os dois commits publicados de 13/Set com exatamente esses dois defeitos**, e acusa o medidor mudo quando o componente não traz carimbo nenhum.
 
+📏 **E desde 25/Set/2026 a FAIXA gravada conta como histórico.** O portão acusou *"nos pontos gravados o preço dele variou de 54,30% a 56,30%"* como dois preços de Flávio contra os 55,55% do quadro, e essa é a redação que a ETAPA 1.8 **manda** escrever para livro bloqueado. `variou de` e `faixa do dia`/`faixa gravada` entraram nas duas cópias da regra (`scripts/lib/frescor-contratos.mjs` e `check-frescor-editorial.ts`), com caso plantado de que "faixa" solta e "variou 0,50pp" NÃO viram passe livre. ⚠️ As duas cópias já divergiam antes disso, e unificar é conserto à parte.
+
 ⚠️ **O que continua sendo passo da rodada, e não do portão:** reescrever `polymarket`, `poll` e `risk` do `CandidatesSection.tsx` a cada `/atualizar-brz`. O portão agora AVISA quando a rodada esqueceu, mas quem escreve é a rodada.
 
 ## ETAPA 3.5: Traduzir os JSONs para EN e ES (obrigatório, antes do build)
@@ -421,8 +423,11 @@ Agora ela casa **as duas formas com hora** (`leitura de` e `leitura confirmada d
 
 ```bash
 npx tsx scripts/traduzir-dashboard-brz.ts --pendentes          # só lista o que falta
-npx tsx scripts/traduzir-dashboard-brz.ts --mapa=mapa.json     # herda, confere e escreve
+npx tsx scripts/traduzir-dashboard-brz.ts --insumo=insumo.json # grava pendentes com pt e a tradução de HEAD como referência
+npx tsx scripts/traduzir-dashboard-brz.ts --mapa=en.json --mapa=es.json   # um mapa por idioma, herda, confere e escreve
 ```
+
+📝 **Desde 25/Set/2026 o insumo sai do próprio script** (`--insumo=`), e não mais de regex sobre a listagem de texto. Ele traz o pt-BR do dia e a tradução de HEAD **no mesmo caminho, só como referência de estilo**: o texto mudou, e copiar a referência publica a frase de ontem. Os mapas voltam no formato de sempre, um arquivo por idioma, e `--mapa=` repetido os junta sem um apagar o outro.
 
 Ele **herda a tradução de tudo que não mudou desde o `HEAD`** e **cobra pelo nome** só o que mudou. Medido na estreia: dos 117 textos da `analysis-criteriosa`, 70 tinham mudado e 47 eram idênticos aos de ontem. Ao todo herdou **177 campos por idioma** e cobrou 115.
 

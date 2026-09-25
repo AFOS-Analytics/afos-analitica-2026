@@ -186,5 +186,26 @@ console.log('\n12. ehHistoricoEm isolado')
   conferir('o valor da véspera É histórico', ehHistoricoEm(f, f.indexOf('6,70')))
 }
 
+console.log('\n13. FAIXA gravada entre leituras, a forma que a régua do livro bloqueado PRESCREVE')
+{
+  // 🔴 Medido em 25/Set/2026: "o preço dele variou de 54,30% a 56,30%" acusou
+  //    CONTRADICAO com o preço de hoje, 55,55%. A ETAPA 1.8 do /atualizar-brz
+  //    manda escrever justamente "nas leituras gravadas do dia variou de X a Y",
+  //    então o portão reprovava a redação que a régua exige.
+  const f = 'Está em 55,55%, e nos pontos gravados o preço dele variou de 54,30% a 56,30%.'
+  conferir('o preço de hoje segue sendo afirmação de hoje', !ehHistoricoEm(f, f.indexOf('55,55')))
+  conferir('o piso da faixa é histórico', ehHistoricoEm(f, f.indexOf('54,30')))
+  conferir('o topo da faixa é histórico', ehHistoricoEm(f, f.indexOf('56,30')))
+  const g = 'Na faixa do dia, de 3,10% a 11,80%, o contrato fechou em 7,40%.'
+  conferir('"faixa do dia" também marca histórico', ehHistoricoEm(g, g.indexOf('3,10')) && ehHistoricoEm(g, g.indexOf('11,80')))
+  // ⛔ E "variou" SEM faixa não pode virar passe livre: "variou 0,50pp, para 41,00%" é de hoje.
+  const h = 'O preço variou 0,50pp no dia e está em 41,00%.'
+  conferir('"variou" sem "de X a Y" NÃO é histórico', !ehHistoricoEm(h, h.indexOf('41,00')))
+  const k = 'Ficou fora da faixa, e está em 41,00% no contrato.'
+  conferir('"faixa" solta NÃO é passe livre para o preço de hoje', !ehHistoricoEm(k, k.indexOf('41,00')))
+  const p = precosAfirmados(f, 'vencedor').map((x) => x.preco)
+  conferir('precosAfirmados só devolve o de hoje', p.length === 1 && p[0] === '55,55', JSON.stringify(p))
+}
+
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
 process.exit(falhas === 0 ? 0 : 1)

@@ -393,7 +393,7 @@ try {
 
   // ⛔ Valor citado como HISTÓRICO não é contradição, é narrativa de delta.
   // "subiu de 41,00% para 39,00%" tem duas verdades, e só a segunda é de hoje.
-  const HISTORICO = /\b(era|vinha de|ontem|na leitura de|no fechamento de|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|m[áa]xim|m[íi]nim|recorde|desde)\b/i
+  const HISTORICO = /\b(era|vinha de|ontem|na leitura de|no fechamento de|em \d{1,2}\/\w{3}|topo da s[ée]rie|piso da s[ée]rie|m[áa]xim|m[íi]nim|recorde|desde|vari(?:ou|a) de|faixa (?:do dia|gravada))\b/i
   const ehHistorico = (texto: string, pos: number): boolean => {
     const antes = texto.slice(Math.max(0, pos - 45), pos)
     if (HISTORICO.test(antes)) return true
