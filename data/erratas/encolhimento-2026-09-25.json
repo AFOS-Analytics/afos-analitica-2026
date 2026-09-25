@@ -1,0 +1,8 @@
+{
+  "motivo": "cinco rodadas CURADAS se aposentaram porque o indice ja tinha a mesma rodada, e a aposentadoria passou a ser pela SERIE da casa e nao pelo nome escrito (decisao do Andre em 25/Set/2026: fica o nome de quem EXECUTA)",
+  "trilha": "lib/us-polls/casas.mjs",
+  "explicacao": "A curada e escrita a mao do documento do INSTITUTO, onde a casa se nomeia (Fox News, Marquette Law School, ActiVote), e o indice a nomeia pelo EXECUTOR ou com outra grafia (Beacon/Shaw, Marquette University Law School, ActiVote). A regra 'o indice SEMPRE vence' aposenta a curada pela chave instituto|campoFim|amostraTipo, e a chave era o nome: rotulos diferentes, nenhuma aposentadoria, casa contada duas vezes na media. Eram CINCO curadas nesse estado: Marquette Law School 02-09/Set nos recortes LV e RV, Fox News 11-14/Set RV, e Activote em 10-24/Ago e 31/Ago-10/Set. O delta liquido e -4 e nao -5 porque a subida anterior ao HF foi com 451 linhas, antes de a rodada da McLaughlin & Associates (campo 16-22/Set, 1.000 LV, D 47 x R 42) entrar pelo indice: 451 - 5 + 1 = 447. A media publicada foi de 41 rodadas de 31 institutos para 38 de 28, com a vantagem indo de D+7.98 para D+7.97.",
+  "arquivos": {
+    "polls/us-generic-ballot.csv": -4
+  }
+}
