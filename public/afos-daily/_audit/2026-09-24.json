@@ -1,0 +1,147 @@
+{
+  "data": "2026-09-24",
+  "gateFactCheck": {
+    "atosAltoImpacto": [
+      "Estadão divulga mensagens extraídas do celular de Daniel Vorcaro, e o material alcança as duas campanhas",
+      "Gabriel Galípolo confirma intimação da Polícia Federal e depoimento no início de outubro",
+      "Gilmar Mendes leva ao plenário do Supremo a disputa de precatórios de usinas, R$ 103 bilhões",
+      "Polícia Federal adia o depoimento de Daniel Vorcaro que estava marcado para 24/Set"
+    ],
+    "eventos": [
+      {
+        "evento": "Mensagens extraídas do celular de Daniel Vorcaro, divulgadas pelo Estadão, mostram quatro tentativas de contato de Flávio Bolsonaro com o banqueiro entre 13 e 16 de novembro de 2025",
+        "oQueMudouHoje": "a DIVULGAÇÃO do material extraído. As mensagens são de novembro de 2025 e a prisão de Vorcaro é de 17 de novembro de 2025",
+        "dataDoAto": "2026-09-24, data em que o material se tornou público",
+        "verificacao1CrossRef": "20 menções a Vorcaro nas últimas 7 dailies, CONTINUIDADE, não divisor de águas. O que é novo é a publicação do material",
+        "fonte1": {
+          "url": "https://www.gazetadopovo.com.br/republica/flavio-bolsonaro-tentou-ligar-vorcaro-4-dias-antes-prisao-banqueiro/",
+          "veiculo": "Gazeta do Povo",
+          "grupo": "independente",
+          "tipo": "evento",
+          "corpoLido": true,
+          "traz": "contatos diários entre 13 e 16 de novembro, chamadas não atendidas, prisão no dia 17 em Guarulhos quando tentava deixar o país, contato iniciado em dezembro de 2024 com mensagens antigas apagadas e apenas os três meses finais recuperados pela PF, parte das conversas sobre o financiamento do filme Dark Horse. A Gazeta declara ter confirmado a veracidade dos diálogos com fontes a par da investigação"
+        },
+        "fonte2GrupoDiferente": {
+          "url": "https://oglobo.globo.com/politica/noticia/2026/09/24/flavio-bolsonaro-tentou-falar-com-vorcaro-na-vespera-da-prisao-do-banqueiro-mostram-mensagens.ghtml",
+          "veiculo": "O Globo",
+          "grupo": "Globo",
+          "corpoLido": false,
+          "traz": "sustenta o mesmo material, com manchete independente da Gazeta"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar, com a prisão datada em 17 de novembro de 2025 e o material datado pela PUBLICAÇÃO, não pela escrita"
+      },
+      {
+        "evento": "Gabriel Galípolo confirma ter recebido intimação da Polícia Federal e diz que deve depor no início de outubro sobre a fiscalização do Banco Master",
+        "oQueMudouHoje": "a CONFIRMAÇÃO da intimação pelo próprio presidente do Banco Central. O depoimento é futuro",
+        "dataDoAto": "2026-09-24, em entrevista sobre o Relatório de Política Monetária do terceiro trimestre",
+        "verificacao1CrossRef": "ZERO menções a Galípolo nas últimas 7 dailies, novidade",
+        "fonte1": {
+          "url": "https://www.estadao.com.br/economia/galipolo-intimacao-pf-depor-outubro-master/",
+          "veiculo": "Estadão",
+          "grupo": "independente",
+          "tipo": "evento",
+          "corpoLido": true,
+          "traz": "\"não se recordar da data exata do depoimento, mas que ele deve ocorrer no início de outubro\". A PF intimou também Roberto Campos Neto e André Esteves, e pediu novo depoimento de Ailton de Aquino, todos na condição de testemunhas"
+        },
+        "fonte2GrupoDiferente": {
+          "url": "https://oglobo.globo.com/economia/noticia/2026/09/24/galipolo-confirma-que-recebeu-intimacao-da-pf-e-deve-dar-depoimento-em-outubro-sobre-caso-master.ghtml",
+          "veiculo": "O Globo",
+          "grupo": "Globo",
+          "corpoLido": false,
+          "traz": "mesma confirmação, mesmo prazo de outubro"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar como AGENDAMENTO, porque o depoimento é futuro. A peça escreve \"deve depor no início de outubro\", nunca \"depôs\""
+      },
+      {
+        "evento": "Gilmar Mendes leva ao plenário do Supremo a disputa de precatórios de usinas, impacto estimado em R$ 103 bilhões",
+        "oQueMudouHoje": "o ENVIO ao plenário. Em 22/Set ele havia apenas PROPOSTO o envio",
+        "dataDoAto": "2026-09-24",
+        "verificacao1CrossRef": "5 menções a Gilmar nas últimas 7 dailies, CONTINUIDADE de uma série aberta em 18/Set",
+        "fonte1": {
+          "url": "https://www.gazetadopovo.com.br/economia/gilmar-envia-ao-plenario-do-stf-disputa-bilionaria-ligada-ao-caso-master-e-turma-do-kn/",
+          "veiculo": "Gazeta do Povo",
+          "grupo": "independente",
+          "tipo": "evento",
+          "corpoLido": false
+        },
+        "fonte2GrupoDiferente": {
+          "url": "https://oglobo.globo.com/politica/noticia/2026/09/24/gilmar-leva-ao-plenario-do-stf-caso-de-usinas-com-impacto-estimado-em-r-103-bilhoes.ghtml",
+          "veiculo": "O Globo e G1",
+          "grupo": "Globo",
+          "corpoLido": false,
+          "traz": "mesmo valor estimado e a ligação com mensagens do material de Vorcaro que mostram interesse no voto de um ministro"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar, com o verbo LEVOU contra o PROPÔS de 22/Set"
+      },
+      {
+        "evento": "A Polícia Federal adia o depoimento de Daniel Vorcaro que estava marcado para 24/Set, a pedido da defesa",
+        "oQueMudouHoje": "o ADIAMENTO. A função deste item na peça é impedir que o verbo \"depôs\" apareça, que é o caso inverso do incidente de 27/Ago",
+        "dataDoAto": "2026-09-24",
+        "verificacao1CrossRef": "dentro da série Vorcaro, CONTINUIDADE",
+        "fonte1": {
+          "url": "https://www.gazetadopovo.com.br/republica/pf-adia-novamente-depoimento-vorcaro-marcado-para-esta-quinta/",
+          "veiculo": "Gazeta do Povo",
+          "grupo": "independente",
+          "tipo": "evento",
+          "corpoLido": true,
+          "traz": "pedido da defesa por acesso integral às provas, prazo de dez dias úteis pedido com base na Súmula Vinculante 14, segunda oitiva prevista para 30/Set também com adiamento pedido, e o registro de que Vorcaro já depôs em 28/Ago por videoconferência"
+        },
+        "fonte2GrupoDiferente": {
+          "veiculo": null,
+          "grupo": null,
+          "corpoLido": false,
+          "traz": "NÃO VERIFICADO em segundo grupo"
+        },
+        "newsCacheContradiz": false,
+        "decisao": "incorporar COM ATRIBUIÇÃO A UMA FONTE, declarada no próprio texto da peça como \"única fonte do ponto\""
+      }
+    ]
+  },
+  "reFetchPolymarket": {
+    "carimboAoVivo": "2026-09-25T02:53:00.394Z",
+    "carimboCertificado": "2026-09-25T01:45:41.524Z",
+    "deltas": {
+      "lula": "43,50% no JSON e 43,50% ao vivo, 0,00pp",
+      "flavio": "55,55% no JSON e 54,85% ao vivo, -0,70pp",
+      "vao": "12,05pp no JSON e 11,35pp ao vivo, -0,70pp",
+      "renanVencedor": "0,55% no JSON e 0,55% ao vivo, 0,00pp",
+      "flavioSegundoLugar": "75,50% no JSON e 74,50% ao vivo, -1,00pp",
+      "curyTerceiroLugar": "39,95% no JSON e 40,35% ao vivo, +0,40pp",
+      "volumeTotalPresidencial": "USD 154,90M no JSON e USD 154,91M ao vivo"
+    },
+    "gateDisparou": true,
+    "rebaseou": false,
+    "motivoDeNaoRebasear": "certificar custa 8 minutos e a segunda leitura cairia depois da meia-noite, ou seja em 25/Set na data civil do Brasil, e preço carimbado 25/Set numa edição de 24/Set é defeito pior que a deriva. O enquadramento não muda: 54,85% fecha mais o vão no mesmo sentido, e nenhum recorde foi rompido nem desfeito. A peça carimba todo preço como leitura confirmada de 24/Set, 22:45 BRT, que é procedência, e não cita o número não certificado",
+    "observacao": "a sessão atravessou a meia-noite durante a redação, o que reforça a decisão: qualquer certificação nova pertence à edição de 25/Set"
+  },
+  "adversarialReview": {
+    "singleSourceClaims": "duas, as duas DECLARADAS no próprio texto. O adiamento do depoimento de Vorcaro sai com \"única fonte do ponto\", e o pedido de Flávio ao Supremo sai linkado à Folha de S.Paulo, grupo único, e é um pedido, não um ato consumado",
+    "numericalErrors": "reconcile-claims OK, todos os claims batem com o JSON dentro de mais ou menos 0,05pp. gate-traducao-daily fecha em 84 números com unidade idênticos nas três versões",
+    "fontesInventadas": "nenhuma. As 23 URLs saíram do news-cache de 24/Set, e três corpos foram lidos por inteiro: Gazeta do Povo nas mensagens, Estadão no Galípolo e CNN na Futura",
+    "quotesLiterais": "nenhuma. A fala de Lula entra como paráfrase indireta, sem aspas",
+    "causacaoEspuria": "nenhuma. A peça declara duas vezes que não atribui o movimento de um instrumento ao outro, e o movimento intradiário não é ligado a evento nenhum",
+    "verbosCriticos": "preso desde 17 de novembro de 2025 com data, deve depor no início de outubro no futuro, não aconteceu com adiamento atribuído, levou ao plenário contra o propôs de 22/Set, confirmou ter recebido intimação em vez de foi intimado hoje",
+    "superlativosConferidos": "o maior fechamento entre duas leituras certificadas consecutivas foi medido no data/brz/leituras-confirmadas.jsonl, 11 pontos do par presidencial desde 04/Set, com a janela declarada na própria frase. E a vantagem fora da margem da Futura foi conferida contra as 34 leituras do par já registradas no polls-data, das quais 11 ficaram fora da margem e 8 favoreciam Flávio Bolsonaro",
+    "defeitosCorrigidosNaRevisao": "1) um passe de corte apagou do pt a frase com Roberto Campos Neto e André Esteves e eu havia relatado que ela ficara, restaurada nas três versões. 2) o EN e o ES ficaram com essa frase enquanto o pt não a tinha, divergência de CONTEÚDO entre idiomas que o gate de tradução não pega, porque compara número com unidade e a frase não tem número. 3) a síntese nasceu como lista numerada de uma linha com 64 palavras, contra a régua de três parágrafos com frase-tese em negrito, e foi refeita em 282 palavras com o espaço pago no corpo"
+  },
+  "medicoes": {
+    "palavras": { "ptBR": 1099, "en": 1144, "es": 1153 },
+    "sintese": { "ptBR": 282, "en": 285, "es": 289, "pisoDeSubstancia": 175 },
+    "numerosComUnidade": { "ptBR": 84, "en": 84, "es": 84 },
+    "travessoes": 0,
+    "emojis": 0,
+    "frasesTeseEmNegritoNaSintese": { "ptBR": 3, "en": 3, "es": 3 },
+    "ancorasDeGlossario": { "ptBR": 0, "en": 2, "es": 2 },
+    "gateTraducao": "limpo nas três versões",
+    "validateAfosDaily": "OK, com warning de densidade de link em 55%, porque os parágrafos de mercado têm por fonte o Polymarket, já linkado contrato a contrato",
+    "rodapeObrigatorio": "os quatro blocos presentes nas três versões, ao contrário da daily de 23/Set, que foi publicada sem nenhum deles"
+  },
+  "wayback": {
+    "rodou": false,
+    "motivo": "pré-check no /save/ devolveu HTTP 500 em 2026-09-25T02:52Z, e a pausa de host do archive.org medida em 21/Set corre até 26/Set. A régua proíbe insistir",
+    "pendencia": "arquivar 22, 23 e 24/Set junto com o passivo quando a pausa vencer, a partir de 26/Set, começando pelo atraso de 29/Jul"
+  }
+}
