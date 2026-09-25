@@ -48,7 +48,22 @@ Faltando qualquer um, PARAR e pedir o `/atualizar-usa` primeiro.
 ## ETAPA 1: Coletar
 
 - **Mercado:** `curl -s "https://www.afos-analytics.com/api/polymarket?country=us&fresh=1"` (⚠️ **sem `?country=us` a rota devolve o BRASIL**, bem-formado, e passa despercebido. 🔴 **Sem `&fresh=1` ela devolve o CACHE**, com carimbo antigo: medido em 10/Ago/2026, 19 minutos de atraso e o republicano da Câmara errado em 2.00pp. Conferir o `fetchedAt`, não o valor).
-- **Série, para variação:** 🔴 **filtrar o slug**. Câmara e Senado usam o MESMO nome de desfecho, e sem filtro as duas séries colam:
+- **Série, para variação:** 🚀 **O MEDIDOR É ESTE, e ele existia desde 13/Set/2026 sem ser citado aqui:**
+
+  ```bash
+  node scripts/semana-do-contrato.mjs --pais=us --de=2026-09-17 --ate=2026-09-24
+  node scripts/semana-do-contrato.mjs --pais=us --de=... --ate=... --distribuicoes
+  ```
+
+  Ele dá o **fechamento diário**, o **Δ da semana nas três bordas possíveis**, o caminho dia a dia, leituras e amplitude da semana, **dinheiro novo** por desfecho e por livro, e o **par binário cru e normalizado** nas duas bordas. Lê o BACKUP e não reimplementa nada: a carga, o casamento de desfecho e a quarentena vêm da mesma `scripts/lib/serie-contrato.mjs` que o `serie-do-contrato.mjs` usa.
+
+  🔴 **Corrigido em 25/Set/2026: esta régua mandava usar a rota de histórico, que a régua IRMÃ do `/atualizar-usa` PROÍBE**, porque ela trava a janela em 90 dias e devolve `truncated:false` escondendo o começo da série do Senado. O `semana-do-contrato` é citado pelo `/atualizar-brz`, pelos dois Tradeoff e pelos dois READMEs, e não era citado no único produto cuja manchete É o Δ da semana. Régua que manda na ferramenta errada é pior que régua calada.
+
+  ✅ **Calibração de 25/Set:** rodado na janela de 17 a 24/Set, ele reproduziu EXATOS os volumes publicados na edição nº 7, Senado D em USD 2.76M e Senado R em USD 1.83M no fechamento de 17/Set.
+
+  ⚠️ **As três bordas dão números DIFERENTES, e a escolha se declara na peça.** Fechamento a fechamento é a que a nº 8 usou, e ela difere da certificada: em 17/Set o republicano na Câmara fechou 10.50% e a certificada das 17:37Z que a nº 7 publicou era 11.50%.
+
+  📌 Se ainda assim for consultar a rota, a armadilha do nome: Câmara e Senado usam o MESMO nome de desfecho, e sem filtro as duas séries colam:
   ```bash
   curl -s "https://www.afos-analytics.com/api/market/history?candidate=Democratas&country=which-party-will-win-the-house&days=90"
   ```
@@ -83,6 +98,10 @@ Decisão do André em 03/Ago/2026, e ela derrubou o desenho anterior.
 ### Seção 7: fontes, e a exceção da imprensa
 
 URL **visível e clicável** como no Tradeoff, com uma exceção: os itens de imprensa levam `hideUrl: true`, e aí **a manchete vira o link e endereço nenhum é impresso**.
+
+🔴 **`hideUrl` quer dizer TER o link e não IMPRIMIR o endereço. Item sem `link` o loader DESCARTA, calado.** A guarda é `.filter(it => typeof it.link === 'string' && it.link)` em `lib/afos-weekly/loader.ts`, e o tipo declara `link` como obrigatório. Medido em 25/Set/2026 nas oito edições: a nº 5 e a nº 6 perdiam 1 item cada, a **nº 7 já publicada perdia 6 de 22** e o rascunho da nº 8 perdia 8 de 24. A seção se chama "veículos citados nas seções 4 e 5" e seis dos citados não apareciam nela. Os 24 itens foram retroagidos em 9 arquivos, e hoje são 0 perdidos nas 8 edições e nos 3 idiomas.
+
+📌 **A regra de escrita, então:** item de feed próprio leva `link` canônico e NENHUM `hideUrl`; item que só existe pelo agregador leva `link` com a URL do Google News **e** `hideUrl: true`. Nunca um item sem `link`.
 
 **Por quê:** a coleta guarda o link do Google News para os veículos sem RSS próprio. Aquele endereço tem 300 caracteres ilegíveis, e escrever "cnn.com" no lugar seria anunciar um destino e mandar o leitor para outro. Não dizer endereço nenhum é a única saída que não mente.
 
@@ -120,13 +139,24 @@ import { loadWeekly } from '../lib/afos-weekly/loader'
 for (const loc of ['en', 'pt-BR', 'es']) {
   const d: any = loadWeekly('DATA', loc, 'us')   // ordem: (data, IDIOMA, pais)
   if (!d) { console.log(`  ${loc} LOADER DEVOLVEU NULL`); continue }
-  console.log(`  ${loc.padEnd(6)} tldr=${d.tldr?.length} cards=${d.cards?.length} cruzamentos=${d.crossings?.length} fontes=${d.sources?.length} narrativa=${d.coverage?.narrative ? 'sim' : 'NAO'}`)
+  const itens = (d.sources ?? []).reduce((a, g) => a + (g.items?.length ?? 0), 0)
+  console.log(`  ${loc.padEnd(6)} tldr=${d.tldr?.length} cards=${d.cards?.length} cruzamentos=${d.crossings?.length} fontes=${d.sources?.length} grupos / ${itens} ITENS narrativa=${d.coverage?.narrative ? 'sim' : 'NAO'}`)
 }
 EOF
 npx tsx scripts/tmp-wk.ts; rm -f scripts/tmp-wk.ts
 ```
 
 **Bloco com 0, ou `narrativa=NAO`, é bloco que não vai aparecer.** Ver [[feedback_loader_descarta_bloco_com_campo_errado_em_silencio]].
+
+🕳️ **E o contador de fontes tem de ser o de ITENS, não o de GRUPOS. Corrigido em 25/Set/2026.** A versão anterior desta linha imprimia `d.sources.length`, que são os grupos, e esse número ficou em **3 em todas as oito edições** enquanto 8 itens desapareciam dentro deles. O portão existia e era cego a esse defeito **por construção**: contava a coisa que não pode mudar quando o defeito acontece. Comparar o total de itens do loader com o do YAML é o que pega.
+
+🚀 **E o portão INTEIRO já existe num script, desde 17/Set/2026, e esta régua não o citava:**
+
+```bash
+npx tsx scripts/gate-weekly-us.ts 2026-09-24
+```
+
+Ele conta os blocos pelo loader, mede o corpo contra o teto de 1.100 **no inglês, que é a origem**, e roda o gate numérico dos três idiomas normalizando o separador de MILHAR antes de comparar, porque ele muda por idioma enquanto o decimal é ponto nos três. ⚠️ **Medido em 25/Set: a minha contagem de palavras improvisada dizia 1.092 e a dele dizia 1.109.** A ferramenta é a autoridade, e teto conferido por contador caseiro é teto estimado.
 
 ## ETAPA 4: Preview, SEM prod
 
