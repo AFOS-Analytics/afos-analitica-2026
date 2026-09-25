@@ -70,7 +70,10 @@ export const EDICOES = {
     cardN: '86.50%',
     cardL: (q) => `where the Democratic side closed,${q ? ' ' : '<br>'}down 3.00pp on the week`,
     cardS: '1.00pp above the series floor of 85.50%',
-    tese: (q) => `The clearest news ran the other way, on the Missouri map.${q ? ' ' : '<br>'}Both facts are measured. The link between them is not.`,
+    tese: (q) =>
+      q
+        ? 'The clearest news ran the other way, on the Missouri map. Both facts are measured.<br>The link between them is not.'
+        : 'The clearest news ran the other way, on the Missouri map.<br>Both facts are measured. The link between them is not.',
   },
   7: {
     semana: 'week of September 10 to September 17, 2026',
@@ -152,9 +155,15 @@ body { width: ${W}px; height: ${H}px; }
  * 🔴 E a TESE ficou de fora dessa regra até 25/Set/2026, medido OLHANDO o PNG e
  * não o CSS. No quadrado a linha é mais larga, a primeira oração já quebra
  * sozinha, e aí a `<br>` manual força uma SEGUNDA quebra e deixa uma palavra
- * órfã numa linha inteira. O cartão quadrado da nº 6 está no ar assim desde
- * 10/Set, com "map." sozinho. Os três campos de texto longo agora seguem a
- * mesma regra: `bigSub`, `cardL` e `tese`.
+ * órfã numa linha inteira. O cartão quadrado da nº 6 esteve no ar assim de
+ * 10 a 25/Set, com "map." sozinho.
+ *
+ * ⚠️ E o conserto de primeira mão foi GROSSO DEMAIS: tirar a quebra do quadrado
+ * só MOVEU a órfã, e a nº 6 passou a terminar com "not." sozinho. A regra certa
+ * é a que este comentário já dizia, e eu a li errado: no quadrado as quebras
+ * MUDAM DE LUGAR, não somem. A nº 6 quebra depois de "measured." no quadrado e
+ * depois de "map." no largo; a nº 7 e a nº 8 fluem sem quebra no quadrado, e
+ * isso foi conferido olhando os seis PNGs, um a um.
  */
 const corpo = (quadrado, n, e) => `
   <div class="pill">AFOS WEEKLY &middot; US &middot; ISSUE No. ${n}</div>
