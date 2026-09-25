@@ -41,6 +41,7 @@ import { acharCpf } from './lib/cpf.mjs'
 import { TETO_API_POLLS, bordaDoCorte, divulgamHoje, folgaDoGatilho } from './lib/tse-api-polls.mjs'
 import { datasDeHoje } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
+import { divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
 
 // AFOS_BASE troca o HOST, nunca a verificação de certificado. 17/Set/2026: uma rede
 // com inspeção de TLS (FortiGate) reassinava só www.afos-analytics.com, e o
@@ -214,9 +215,16 @@ async function main() {
     )
   }
 
+  // 📅 Divulgação antes do fim do campo não é compromisso legível (Gerp, 25/Set/2026):
+  //    a linha fica, porque a data é o que o TSE publica, e sai MARCADA.
+  const marcaCampo = (p: Poll) => {
+    const m = divulgacaoAntesDoCampo(p)
+    return m === 'ANTES_DO_INICIO' ? '  📅 div ANTES do campo COMEÇAR' : m === 'ANTES_DO_FIM' ? '  📅 div antes do fim do campo' : ''
+  }
+
   // ── Passo 5a: campo ATIVO agora ─────────────────────────────────────────────
   const linha = (p: Poll) =>
-    `${ehFantasma(p) ? '👻' : '  '} ${p.protocolo}  ${String(p.institute).slice(0, 32).padEnd(32)} n=${String(p.sampleSize).padStart(5)}  campo ${p.fieldStart} a ${p.fieldEnd}  div ${p.publicationDate}  [${p.scopeSource}]`
+    `${ehFantasma(p) ? '👻' : '  '} ${p.protocolo}  ${String(p.institute).slice(0, 32).padEnd(32)} n=${String(p.sampleSize).padStart(5)}  campo ${p.fieldStart} a ${p.fieldEnd}  div ${p.publicationDate}  [${p.scopeSource}]${marcaCampo(p)}`
 
   const ativo = polls.filter(
     (p) => p.fieldStart && p.fieldEnd && String(p.fieldStart) <= HOJE && HOJE <= String(p.fieldEnd),

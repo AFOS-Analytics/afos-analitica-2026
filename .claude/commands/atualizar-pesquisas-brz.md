@@ -53,6 +53,22 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 
 ⛔ **Ele não roda o `/atualizar-brz`, não publica e não commita.**
 
+## 🗺️ Dois furos do passo 4.5, fechados em 25/Set/2026
+
+🔴 **Sigla de UF depois de "no/na/da" passava como NACIONAL.** O guarda estadual do `ehNacional()` só aceitava "em/de/do" antes da sigla, e a manchete *"Lula tem 44% e Flávio, 42% no 1º turno no AM, diz PoderData"*, que é pesquisa do Amazonas, saiu como **PoderData nacional COM NÚMERO**. No cache de setembro eram **80 manchetes** assim ("Quaest no RJ", "Datafolha no DF", "... na BA"). 🕳️ E o teste chamado "sigla de UF" passava pelo motivo errado: o título dele não tinha Lula nem Flávio. ⚠️ A exceção é "**nos 26 estados e no DF**", a forma da imprensa dizer NACIONAL (Veritá, 40,5 mil).
+
+📅 **Divulgação registrada ANTES do fim do campo não é promessa.** Medido no arquivo do TSE: **32 de 1.138** registros, e **3 antes de o campo COMEÇAR**, dois deles as nacionais vivas da Gerp (`BR-00509` e `BR-08168`, div 29/Set, campo até 02 e 03/Out). A regra mora em `divulgacaoAntesDoCampo()`, no `lib/tse/saiu-hoje-brz.mjs`, e os três leitores a importam:
+
+| leitor | o que faz com ela |
+|---|---|
+| `pesquisa-saiu-hoje-brz.mjs` | não gera `PROMETEU_E_NAO_SAIU`; sai o aviso `DIVULGACAO_ANTES_DO_CAMPO` |
+| `relatorio-pesquisas-brz.ts` | a linha fica e sai marcada com 📅 |
+| `calendario-pesquisas-brz.mjs` | a tabela publicada NÃO muda; o aviso vai ao stderr |
+
+⛔ **Na peça, não escrever "prometeu e não saiu" sobre esses registros.** A data fica porque é o que o TSE publica. Teste: `testar-saiu-hoje-brz.mjs`, **102 asserções**, com 5 de 5 mutações do guarda de UF reprovadas.
+
+🔁 **E o `SAIU_DEPOIS_DO_PROMETIDO` do dia seguinte a uma divulgação grande costuma ser REPERCUSSÃO.** Em 25/Set o Datafolha saiu assim com 17 itens, e todos traziam os números da onda de 24/Set (40 a 36, 47 a 45). A conferência é comparar os números com os da véspera antes de ler como onda nova.
+
 ## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
 
 🔴 **Por que ela existe:** em 10/Set a mesma URL do TSE devolveu **851 e 863 alternando**. Uma retirada foi publicada como fato, depois desafirmada, e as duas vezes com **UMA leitura**. A dupla contagem resolveu o caso, mas ela só fala **depois** de gravar.

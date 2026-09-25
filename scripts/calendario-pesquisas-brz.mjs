@@ -32,6 +32,7 @@ import { readFileSync, existsSync } from 'node:fs'
 import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
+import { divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
 
 const MESES_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
 const MESES_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -250,3 +251,16 @@ console.log('')
 console.log(t.rodape(entram.length, fora))
 console.log('')
 console.error(`✅ ${entram.length} nacional(is) na janela ${hoje} a ${FIM}, ${fora} fora por escopo ou amostra. Confiança lida do campo \`confidence\` da API.`)
+
+// 📅 A tabela publica a data do REGISTRO, e ela fica. Mas quem escreve a peça tem
+//    de saber quando essa data é impossível pelo próprio registro: em 25/Set/2026
+//    as duas nacionais da Gerp marcavam divulgação em 29/Set com campo de 30/Set
+//    a 02/Out e de 01 a 03/Out. O aviso vai para o stderr, fora da tabela.
+const impossiveis = entram.filter((r) => divulgacaoAntesDoCampo(r))
+if (impossiveis.length) {
+  console.error(`📅 ${impossiveis.length} linha(s) com divulgação ANTES do fim do campo, no próprio registro:`)
+  for (const r of impossiveis) {
+    console.error(`   ${protocoloBonito(r.protocolo)}  ${nomeCasa(r.institute)}  campo ${r.fieldStart} a ${r.fieldEnd}  div ${String(r.publicationDate).slice(0, 10)}  ${divulgacaoAntesDoCampo(r)}`)
+  }
+  console.error(`   ⛔ Na peça, não escrever "prometeu para o dia X" nem "prometeu e não saiu" sobre elas.`)
+}

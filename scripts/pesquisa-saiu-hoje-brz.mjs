@@ -29,7 +29,7 @@ import { readFileSync, existsSync } from 'node:fs'
 import { CASAS_BRZ, casaDoRegistro } from './lib/cobertura-imprensa-brz.mjs'
 import { dataCivilBrasil, datasDeHoje } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
-import { medirSaida, separarFantasmas, normalizarProtocolo as normProto } from '../lib/tse/saiu-hoje-brz.mjs'
+import { medirSaida, separarFantasmas, divulgacaoAntesDoCampo, normalizarProtocolo as normProto } from '../lib/tse/saiu-hoje-brz.mjs'
 
 const argv = process.argv.slice(2)
 const valor = (n) => argv.find((a) => a.startsWith(`--${n}=`))?.slice(n.length + 3) ?? null
@@ -103,8 +103,10 @@ const porCasa = new Map()
 for (const p of nacionais) {
   const casa = casaDoRegistro(p.institute ?? p.instituto ?? '')
   if (!casa) continue
-  if (!porCasa.has(casa.nome)) porCasa.set(casa.nome, { ...casa, divulgacoes: [] })
-  porCasa.get(casa.nome).divulgacoes.push((p.publicationDate ?? p.divulgacao ?? '').slice(0, 10))
+  if (!porCasa.has(casa.nome)) porCasa.set(casa.nome, { ...casa, divulgacoes: [], divulgacoesIncoerentes: [] })
+  // 📅 Divulgação antes do fim do campo não é promessa legível (Gerp, 25/Set/2026).
+  const lista = divulgacaoAntesDoCampo(p) ? 'divulgacoesIncoerentes' : 'divulgacoes'
+  porCasa.get(casa.nome)[lista].push((p.publicationDate ?? p.divulgacao ?? '').slice(0, 10))
 }
 // 🏷️ Casa nacional que NAO esta na tabela nao pode sair calada: ela seria
 //    medida como "sem item" e isso se leria como silencio da casa.
@@ -190,6 +192,12 @@ for (const l of r.linhas) {
   const prom = l.prometeuHoje ? 'prometeu HOJE' : l.divulgacoes.length ? `div ${[...new Set(l.divulgacoes)].sort().join(' ')}` : 'sem div'
   console.log(`   ${l.divergencia ? '🔴' : '  '} ${l.nome.padEnd(22)} ${ROTULO[l.estado].padEnd(14)} ${String(l.itens).padStart(3)} item(ns)  ${prom}`)
   if (l.divergencia) console.log(`         ↳ ${l.divergencia}`)
+  if (l.aviso) {
+    console.log(`         📅 ${l.aviso}: o registro marca divulgação HOJE com o campo ainda aberto ou por começar.`)
+    console.log(`            ⛔ Não é promessa legível: não escrever "prometeu e não saiu" sobre ela.`)
+  }
+  const incoerentes = [...new Set(l.divulgacoesIncoerentes ?? [])].filter((d) => d !== HOJE)
+  if (incoerentes.length) console.log(`         📅 div antes do campo, fora da conta: ${incoerentes.sort().join(' ')}`)
   for (const t of l.exemplos.slice(0, l.divergencia ? 3 : 0)) console.log(`            «${t.slice(0, 84)}»`)
 }
 

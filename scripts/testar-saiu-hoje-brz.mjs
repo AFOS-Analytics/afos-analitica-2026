@@ -6,7 +6,7 @@
  * a Palver prometeu e não saiu, a Veritá saiu dois dias depois do prometido.
  * Se um dia a régua deixar de separar os dois, isto fica vermelho.
  */
-import { classificarTitulo, medirSaida, ehNacional, separarFantasmas, normalizarProtocolo } from '../lib/tse/saiu-hoje-brz.mjs'
+import { classificarTitulo, medirSaida, ehNacional, separarFantasmas, normalizarProtocolo, divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
 
 let ok = 0
 let falhas = 0
@@ -98,6 +98,24 @@ eq(ehNacional('Pesquisa no Maranhão mostra Lula e Flávio'), false, 'Maranhão'
 eq(ehNacional('DataTrends: Raquel tem 46% e João Campos, 38% na disputa pelo Governo de Pernambuco'), false, 'governo de')
 eq(ehNacional('Manuela lidera disputa ao Senado no RS'), false, 'Senado')
 eq(ehNacional('Zucco e Juliana Brizola empatam em 1º turno no RS'), false, 'sigla de UF')
+// 🔴 O caso acima passava pelo motivo ERRADO: sem Lula nem Flávio no título ele
+//    sai estadual por falta de marca presidencial, e a sigla nunca era testada.
+//    Medido em 25/Set/2026: a regra só aceitava "em/de/do" antes da sigla, e a
+//    manchete real do Poder360 abaixo, pesquisa do AMAZONAS, saiu como PoderData
+//    nacional COM NUMERO. Os pares de teste agora têm Lula E Flávio, para que só
+//    a sigla possa decidir.
+eq(ehNacional('Lula tem 44% e Flávio, 42% no 1º turno no AM, diz PoderData - Poder360'), false, '🔴 "no AM", manchete real de 25/Set')
+eq(ehNacional('Flávio lidera sobre Lula na BA, aponta pesquisa'), false, '"na" antes da sigla')
+eq(ehNacional('Lula e Flávio empatam no eleitorado da PB'), false, '"da" antes da sigla')
+eq(ehNacional('Lula tem 40% e Flávio, 36% em SP'), false, '"em" continua valendo')
+eq(ehNacional('Lula e Flávio Bolsonaro no STF: o que dizem os ministros'), true, '"no STF" NAO é UF: a sigla tem de terminar')
+eq(ehNacional('Lula e Flávio em PAUTA no Congresso'), true, '"em PAUTA" NAO é a UF PA: palavra em caixa alta não é sigla')
+eq(ehNacional('Quaest no RJ: Flávio, 35%; Lula, 33%; Cury, 5% - g1.globo.com'), false, 'recorte estadual real, "no RJ"')
+eq(
+  ehNacional('PESQUISA VERITÁ/VOTOS VÁLIDOS: Flávio lidera no 1º turno com 45,53%, seguido por Lula com 41,76%, em levantamento com 40,5 mil entrevistados nos 26 estados e no DF - Blog do BG'),
+  true,
+  '⚠️ "nos 26 estados e no DF" é NACIONAL: o DF ali não é recorte'
+)
 eq(
   ehNacional('Pesquisa Real Time Big Data testa disputa Lula x Flávio no terceiro maior colégio eleitoral'),
   false,
@@ -155,6 +173,39 @@ eq(de('DataTrends').itensEstaduais, 2, 'DataTrends: os dois estaduais ficam CONT
 eq(de('DataTrends').divergencia, null, 'DataTrends: numero estadual NAO inventa divergencia nacional')
 
 eq(r.veredito, 'DIVERGEM', 'veredito do dia')
+
+console.log('\n🧪 divulgacaoAntesDoCampo — a promessa que o próprio registro torna impossível\n')
+
+// Os três registros reais de 25/Set/2026, com as datas copiadas do arquivo do TSE.
+eq(divulgacaoAntesDoCampo({ fieldStart: '2026-09-30', fieldEnd: '2026-10-02', publicationDate: '2026-09-29' }), 'ANTES_DO_INICIO', '🔴 Gerp BR005092026: div antes do campo começar')
+eq(divulgacaoAntesDoCampo({ campoInicio: '2026-10-01', campoFim: '2026-10-03', divulgacao: '2026-09-29' }), 'ANTES_DO_INICIO', 'Gerp BR081682026, nomes de campo do ZIP')
+eq(divulgacaoAntesDoCampo({ fieldStart: '2026-03-24', fieldEnd: '2026-03-30', publicationDate: '2026-03-29' }), 'ANTES_DO_FIM', 'Veritá de março: um dia antes do fim')
+// ⛔ Os que NÃO podem disparar.
+eq(divulgacaoAntesDoCampo({ fieldStart: '2026-09-23', fieldEnd: '2026-09-26', publicationDate: '2026-09-27' }), null, 'Gerp BR039292026: div depois do campo, coerente')
+eq(divulgacaoAntesDoCampo({ fieldStart: '2026-09-24', fieldEnd: '2026-09-27', publicationDate: '2026-09-27' }), null, 'div NO último dia de campo é coerente (sai à noite)')
+eq(divulgacaoAntesDoCampo({ fieldStart: '2026-09-24', fieldEnd: '2026-09-27', publicationDate: '2026-09-28T00:00:00.000Z' }), null, 'data ISO completa da API')
+eq(divulgacaoAntesDoCampo({ fieldEnd: '2026-09-27', publicationDate: null }), null, 'sem divulgação: não inventa')
+eq(divulgacaoAntesDoCampo({ fieldStart: null, fieldEnd: '2026-10-02', publicationDate: '2026-09-29' }), 'ANTES_DO_FIM', 'sem início ainda mede contra o fim')
+eq(divulgacaoAntesDoCampo(null), null, 'null não quebra')
+
+// A casa com as duas promessas impossíveis de 29/Set, e ZERO número no dia.
+const r29 = medirSaida(
+  [{ nome: 'Gerp', alvos: [palavra('gerp')], divulgacoes: ['2026-09-27'], divulgacoesIncoerentes: ['2026-09-29', '2026-09-29'] }],
+  ['Gerp registra nova pesquisa presidencial'],
+  '2026-09-29'
+)
+eq(r29.linhas[0].prometeuHoje, false, 'Gerp 29/Set: promessa impossível NÃO conta como prometeu hoje')
+eq(r29.linhas[0].divergencia, null, '🔴 Gerp 29/Set: NÃO pode sair PROMETEU_E_NAO_SAIU')
+eq(r29.linhas[0].aviso, 'DIVULGACAO_ANTES_DO_CAMPO', 'Gerp 29/Set: mas também não some, sai com aviso nomeado')
+eq(r29.veredito, 'PROMESSA_E_MUNDO_BATEM', 'aviso não é divergência')
+// E a mesma casa com promessa COERENTE no dia continua cobrada.
+const r27 = medirSaida(
+  [{ nome: 'Gerp', alvos: [palavra('gerp')], divulgacoes: ['2026-09-27'], divulgacoesIncoerentes: ['2026-09-29'] }],
+  [],
+  '2026-09-27'
+)
+eq(r27.linhas[0].divergencia, 'PROMETEU_E_NAO_SAIU', 'Gerp 27/Set, promessa coerente: continua cobrada')
+eq(r27.linhas[0].aviso, null, 'e sem aviso')
 eq(r.alerta.length, 2, 'duas divergencias, e sao as duas opostas')
 
 // ── o caso em que tudo bate: prometeu hoje e saiu com numero ─────────────────
