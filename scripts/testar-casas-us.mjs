@@ -27,7 +27,13 @@ import {
   conferirCarga,
 } from '../lib/us-polls/casas.mjs'
 import { medirCadencia } from '../lib/us-polls/atraso.mjs'
-import { verificarCasasAtrasadas, buracosNoRegistro, LISTAGENS_POR_CASA } from '../lib/us-polls/fora-do-indice.mjs'
+import {
+  verificarCasasAtrasadas,
+  verificarCasa,
+  buracosNoRegistro,
+  extrairSlugsDeRelease,
+  LISTAGENS_POR_CASA,
+} from '../lib/us-polls/fora-do-indice.mjs'
 import { media } from '../lib/us-polls/collect.mjs'
 import { comparar, veredito, conferirSubtracao } from '../lib/us-polls/atribuicao.mjs'
 
@@ -447,6 +453,75 @@ console.log('\n11. INSTRUMENTO: a media mede o que ela diz medir (26/Set/2026)')
   caso('e a subtracao fecha', conferirSubtracao(semRegra.incluidas, antesInc.incluidas, dif).length === 0)
   caso('sem excluidas, a saida volta a ser saida', comparar(semRegra.incluidas, antesInc.incluidas, []).sairam.length === 1)
   void depoisInc
+}
+
+
+
+console.log('\n12. LISTAGEM por SLUG de release: a ActiVote (26/Set/2026)')
+{
+  const REG = LISTAGENS_POR_CASA['ActiVote']
+  caso('a ActiVote esta registrada', Boolean(REG?.url))
+  caso('e o formato dela e slug', REG?.formato === 'slug')
+  caso('o padrao acha a data na URL da nossa fonte', extrairSlugsDeRelease('https://www.activote.net/polls/generic-ballot/2026-09-22/', REG.slug).join() === '2026-09-22')
+  caso('ele deduplica e ordena do mais novo para o mais velho', extrairSlugsDeRelease('a/generic-ballot/2026-08-09 b/generic-ballot/2026-09-22 c/generic-ballot/2026-08-09', REG.slug).join() === '2026-09-22,2026-08-09')
+  caso('texto sem slug devolve vazio', extrairSlugsDeRelease('nada aqui', REG.slug).length === 0)
+  caso('padrao ausente devolve vazio', extrairSlugsDeRelease('/generic-ballot/2026-09-22', undefined).length === 0)
+
+  const pagina = (isos) => isos.map((i) => `<a href="/polls/generic-ballot/${i}/">leitura</a>`).join(' ')
+  const ler = (isosNaPagina, conhecidos, agora = new Date('2026-09-26T12:00:00Z')) =>
+    verificarCasa('ActiVote', '2026-09-21', {
+      agora,
+      slugsConhecidos: conhecidos,
+      fetchImpl: async () => ({ ok: true, status: 200, text: async () => pagina(isosNaPagina) }),
+    })
+
+  // 📌 A data tem de ser mais nova que a nossa e NAO futura: a primeira versao
+  //    deste caso usou 06/Out, que e futuro em 26/Set, e o proprio filtro de futuro
+  //    a removeu. O fixture estava errado, e o guarda funcionando.
+  const novo = await ler(['2026-09-25', '2026-09-22'], ['2026-09-22'])
+  caso('release mais novo que o nosso vira RODADA_FORA_DO_INDICE', novo.veredito === 'RODADA_FORA_DO_INDICE', novo.veredito)
+  caso('e ele nomeia QUAL release falta', novo.rodadasFora?.[0]?.iso === '2026-09-25')
+  caso('sem citar os que ja temos', novo.rodadasFora?.length === 1)
+
+  const igual = await ler(['2026-09-22', '2026-09-11'], ['2026-09-22', '2026-09-11'])
+  caso('release mais novo ja citado vira SEM_RODADA_NOVA', igual.veredito === 'SEM_RODADA_NOVA', igual.veredito)
+
+  // ⛔ ANTI-EXCESSO, e este e o caso REAL: a pagina lista o release de 29/Jun,
+  //    que a nossa base TEM sob uma URL de outra forma, de antes de a casa adotar
+  //    o padrao datado. Diferenca de conjuntos inventaria buraco a cada passada.
+  const antigo = await ler(['2026-09-22', '2026-06-29'], ['2026-09-22'])
+  caso('release ANTIGO que nao citamos NAO e buraco', antigo.veredito === 'SEM_RODADA_NOVA', antigo.veredito)
+
+  // ⛔ Sem release conhecido nao e "nada novo": e INDETERMINADO.
+  const cego = await ler(['2026-09-22'], [])
+  caso('base sem release conhecido sai INDETERMINADO', cego.veredito === 'INDETERMINADO', cego.veredito)
+  caso('e NAO sai como sem rodada nova', cego.veredito !== 'SEM_RODADA_NOVA')
+
+  // ⛔ Pagina que respondeu e nao tem slug: formato mudou, nao e "em dia".
+  const semSlug = await verificarCasa('ActiVote', '2026-09-21', {
+    agora: new Date('2026-09-26T12:00:00Z'),
+    slugsConhecidos: ['2026-09-22'],
+    fetchImpl: async () => ({ ok: true, status: 200, text: async () => '<p>sem link nenhum</p>' }),
+  })
+  caso('pagina sem slug sai INDETERMINADO', semSlug.veredito === 'INDETERMINADO', semSlug.veredito)
+
+  // ⛔ Release com data FUTURA na pagina nao conta.
+  const futuro = await ler(['2026-12-01', '2026-09-22'], ['2026-09-22'])
+  caso('release com data no FUTURO e ignorado', futuro.veredito === 'SEM_RODADA_NOVA', futuro.veredito)
+
+  // 🔗 E o chamador monta os slugs a partir da fontePrimaria, sem quem chama saber.
+  const cadFalsa = { atrasadas: [{ instituto: 'ActiVote' }] }
+  const dados = {
+    polls: [
+      { instituto: 'ActiVote', campoInicio: '2026-09-11', campoFim: '2026-09-21', dem: 53, rep: 47, amostraTipo: 'LV', amostra: 1000, fontePrimaria: 'https://www.activote.net/polls/generic-ballot/2026-09-22/' },
+    ],
+  }
+  const viaChamador = await verificarCasasAtrasadas(dados, cadFalsa, {
+    agora: new Date('2026-09-26T12:00:00Z'),
+    fetchImpl: async () => ({ ok: true, status: 200, text: async () => pagina(['2026-09-22']) }),
+  })
+  caso('verificarCasasAtrasadas extrai o slug da fontePrimaria', viaChamador.resultados[0]?.veredito === 'SEM_RODADA_NOVA', viaChamador.resultados[0]?.detalhe)
+  caso('e a ActiVote sai do buraco do REGISTRO', !buracosNoRegistro(cadFalsa).some((b) => b.instituto === 'ActiVote'))
 }
 
 

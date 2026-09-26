@@ -446,3 +446,27 @@ O André decidiu juntar: `Emerson College/RealClear Opinion Research` e a grafia
 🕳️ **E o teste achou coisa maior que a exibição.** A asserção *"nenhum dia perde n sem nomear quem saiu"* reprovou: o `n` da projeção vinha da `media()` com o registro **padrão** e a coluna de saída usava o registro que o chamador passou. **Duas colunas da mesma tabela falando de médias diferentes.** Em produção os dois são o mesmo objeto, então o defeito era **invisível ali**. Os registros passaram a atravessar o `mediaEm()`.
 
 📌 **A régua que fica:** quando uma função de leitura ganha um registro como parâmetro, todo caminho que recomputa a mesma conta tem de receber o mesmo registro, ou a segunda cópia nasce sem ninguém escrever uma linha de regra nova.
+
+## 📡 A ActiVote saiu do ponto cego, e o formato novo é SLUG DE RELEASE (26/Set/2026)
+
+⚖️ **Decisão do André.** A casa entrou na cadência quando as curadas dela se aposentaram, e saía como *"nao esta no registro"* em toda passada: **5 de 13 casas sem listagem utilizável**. Agora são **4 de 13**.
+
+🔴 **E o caminho óbvio não servia.** A raiz `activote.net/polls/generic-ballot/` responde, mas a frase do campo (*"in the field between ..."*) é **quebrada por tags**, então nenhum intervalo contíguo é legível pelo `formato: 'intervalo'`. E registrar como `'meta'` só devolveria `INDETERMINADO` para sempre, porque `dateModified` é quando a página mexeu e não quando o campo encerrou: isso **renomeia** o ponto cego em vez de fechá-lo.
+
+✅ **O que a página tem de forte é o SLUG:** cada release vive numa URL datada (`/polls/generic-ballot/2026-09-22/`), e **a nossa própria base cita essa URL em `fontePrimaria`**. Então a comparação é release contra release, sem converter nada.
+
+| régua | por quê |
+|---|---|
+| compara pelo **MÁXIMO**, nunca por diferença de conjuntos | a página lista o release de 29/Jun, que a nossa base TEM, citado por uma URL de outra forma, de antes de a casa adotar o padrão datado. Diferença de conjuntos inventaria um buraco de junho **a cada passada** |
+| base sem release conhecido sai **`INDETERMINADO`** | zero comparação não é "nada novo" |
+| release com data no **futuro** é ignorado | página pode anunciar o próximo |
+| página sem slug sai `INDETERMINADO` | formato mudou, e isso não é "em dia" |
+| o padrão usa **classe de caractere**, nunca barra invertida | ele vive numa **string**, e barra invertida em string dentro de heredoc é a armadilha que já morde esta casa duas vezes hoje |
+
+🔗 **O chamador monta o outro lado sozinho**, lendo os slugs da `fontePrimaria` de cada linha da casa: quem chama não precisa saber que existe slug.
+
+📌 **Conferido contra a página VIVA:** `SEM_RODADA_NOVA`, release mais novo 2026-09-22, que é o que a nossa base já cita, e **nenhum buraco falso em junho**.
+
+⛔ **NÃO registrei a ActiVote na lista do `check-us-polls-defasagem.mjs`.** Seriam dois leitores diferentes na mesma página, e o segundo só produziria `INCONCLUSIVO`. Quem cobre a casa agora é o `fora-do-indice`.
+
+🧪 Casos plantados em `scripts/testar-casas-us.mjs`, com **6 de 6 mutações reprovadas**, e metade é anti-excesso. 📌 **E o fixture do caso positivo estava errado primeiro:** usei 06/Out como "mais novo" e o próprio filtro de futuro o removeu. O guarda funcionando foi o que apontou o erro do teste.
