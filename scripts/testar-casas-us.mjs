@@ -193,9 +193,14 @@ caso(
     'Marquette University Law School',
     'ActiVote',
     'McLaughlin & Associates (R)',
-    'Emerson College/RealClear Opinion Research',
+    'Emerson College',
   ].every((serie) => CASAS_DECLARADAS.some((e) => e.serie === serie))
 )
+// ⚖️ Decisão do André em 26/Set: os dois rótulos da Emerson colapsam no executor.
+caso('os dois rotulos da Emerson/RealClear caem em Emerson College', serieDaCasa('Emerson College/RealClear Opinion Research') === 'Emerson College')
+caso('inclusive o rotulo com o ESPACO depois da barra', serieDaCasa('Emerson College/ RealClear Opinion Research') === 'Emerson College')
+// ⛔ ANTI-EXCESSO: a advertencia do arquivo continua valendo para quem NAO foi declarado.
+caso('Morning Consult/Cato NAO colapsa em Morning Consult', serieDaCasa('Morning Consult/Cato Institute') === 'Morning Consult/Cato Institute')
 // Dois papéis, porque "entre ondas" deixou de ser papel e virou `mesmaOnda`.
 caso('os 2 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,veiculo')
 {

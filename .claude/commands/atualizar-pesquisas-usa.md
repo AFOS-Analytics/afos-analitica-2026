@@ -424,3 +424,15 @@ Sem declaração, as duas saem como rodada que **saiu** e rodada que **entrou**,
 `Emerson College/RealClear Opinion Research` **não** foi juntado com `Emerson College` puro, que tem 9 rodadas próprias. Sob "fica quem executa" as duas colapsariam, porque a Emerson vai a campo nas duas, mas vale a advertência da tabela: "Morning Consult" e "Morning Consult/Cato Institute" são produtos diferentes. Juntar é outra pergunta de procedência.
 
 🧪 `node scripts/testar-casas-us.mjs`, **103 asserções e no CI**, com **8 de 8 mutações reprovadas** só na parte do instrumento. Metade dos casos é anti-excesso: onda anterior à troca continua, campo que **começa** antes continua, casa fora do registro não é tocada.
+
+### ⚖️ E a junção da Emerson foi DECIDIDA em 26/Set/2026
+
+O André decidiu juntar: `Emerson College/RealClear Opinion Research` e a grafia com o espaço colapsam em **`Emerson College`**, porque quem vai a campo nas duas é a Emerson.
+
+📊 **Medido antes de aplicar:** nenhum `campoFim` se repete entre os rótulos, então **nenhuma rodada colide**. A junção custa **um instituto** (27 para 26) e **zero rodada**, e a média fica em D+7,59.
+
+⚠️ **E tem uma consequência que não é de contagem:** a **cadência** da casa passa a incluir a onda de 12-15/Set, então a Emerson deixa de parecer mensal em setembro. Isso é o que de fato aconteceu, e a cadência medindo isso é correto.
+
+📌 **A prova da variante `veiculo` sustenta a AUTORIA, não o número:** a matéria estabelece instituto, n, recorte, margem e datas, e **não traz a pergunta**. O topline daquela rodada segue como dívida aberta em `fonte-conferida.mjs`.
+
+⛔ **A advertência do arquivo segue valendo para quem não foi declarado:** `Morning Consult/Cato Institute` **não** colapsa em `Morning Consult`, e há asserção cobrando isso.
