@@ -64,8 +64,8 @@ O arquivamento das dailies anteriores vem **antes** de escrever a do dia, não d
 # 1. QUAL daily rodar, e quanto ela custa. Não toca no archive.org.
 node scripts/wayback-prioridade.mjs --top=10
 
-# 2. pré-check: bate no /save/, NUNCA na raiz. A raiz responde 200 com o save bloqueado.
-curl -s -o /dev/null -w "%{http_code}\n" -m 45 "https://web.archive.org/save/https://example.com"
+# 2. pré-check: sonda o /save/ UMA vez com o pedido do arquivador e GRAVA o bloqueio no ledger
+npm run wayback:precheck     # 0 pode rodar · 2 bloqueado e gravado · 3 pausa em curso, NÃO sondou
 
 # 3. se deu 200, rodar a daily que o passo 1 apontou
 npx tsx scripts/wayback-archive.ts 2026-07-29
@@ -493,6 +493,10 @@ O rascunho leva **marcadores no lugar da URL**, e o script os troca pelo link CO
 | `{{FONTES}}` | os dois sub-blocos de "Fontes consultadas" |
 
 🔴 **Por que existe:** em 25/Set a listagem de links do cache passou por `cut -c1-260`, e a URL do Google News tem ~400 caracteres. Copiar dali produz a URL truncada que o gate bloqueia, ou uma de 260 que passa no tamanho e não resolve. E o rodapé era montado à mão, sem nada garantindo que listasse o que o corpo cita. ⛔ Ele **falha alto** com marcador sem casamento, casamento de dois veículos diferentes ou Google News abaixo de 150 caracteres, e aí não escreve nada. Ele imprime a proporção de secundários contra o piso de 50%.
+
+🔴 **Desde 26/Set/2026 o `{{FONTES}}` também escreve o título `## Fontes consultadas`** quando ele não vem logo antes do marcador. Naquele dia o rascunho não o trazia, o `validate-afos-daily` não acusou a falta, e a contagem de palavras mediu o rodapé como corpo: 1.605 palavras onde o corpo tinha 1.191.
+
+⚠️ **Os `{{GN:}}` só casam fora das `prestige-*`.** Manchete que só existe numa `prestige-*` é âncora e vai em `{{AN:}}`; para manter o piso de 50% de secundários, procurar a versão do mesmo fato numa query do Google News.
 
 ⚠️ **O título no rodapé é o do CACHE**, e o cache pode guardar a manchete de antes de uma atualização. Em 25/Set o O Globo dizia "3 a 3" no cache e "4 a 3" na matéria lida às 17h22: conferir o título das âncoras de fato em andamento contra o corpo lido.
 

@@ -84,7 +84,16 @@ const bloco = [
   '**matérias com link direto para a notícia (veículos âncora):**', '', ...an, '',
   '**matérias secundárias (URL Google News redirect, clique resolve à matéria):**', '', ...sec,
 ].join('\n')
-if (texto.includes('{{FONTES}}')) texto = texto.replace('{{FONTES}}', bloco)
+// 🔴 26/Set/2026: o marcador gerava só os DOIS sub-blocos, e o título
+//    "## Fontes consultadas", obrigatório no template, dependia de quem escrevia
+//    o rascunho. Naquele dia ele faltou, o validate-afos-daily não acusou, e a
+//    contagem de palavras passou a medir o rodapé como corpo (1.605). Agora o
+//    título entra junto quando não está logo antes do marcador.
+if (texto.includes('{{FONTES}}')) {
+  const antes = texto.slice(0, texto.indexOf('{{FONTES}}')).trimEnd()
+  const titulo = antes.endsWith('## Fontes consultadas') ? '' : '## Fontes consultadas\n\n'
+  texto = texto.replace('{{FONTES}}', titulo + bloco)
+}
 
 fs.writeFileSync(saida, texto)
 const pct = usados.size ? Math.round((100 * sec.length) / usados.size) : 0

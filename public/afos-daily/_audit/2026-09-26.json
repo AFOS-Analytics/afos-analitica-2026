@@ -1,0 +1,95 @@
+{
+  "data": "2026-09-26",
+  "gateFactCheck": {
+    "atosAltoImpacto": [
+      "Conselho Superior do MPF mantém Paulo Gonet no caso Master por 9 a 0 e arquiva por 5 a 4 o pedido de apuração da conduta dele",
+      "STF condena Eduardo Bolsonaro por 7 a 3 por difamação contra Tabata Amaral",
+      "André Mendonça manda derrubar mais de mil publicações com notícia falsa sobre Flávio Bolsonaro e Nossa Senhora Aparecida",
+      "Governo publica a medida provisória que proíbe as bets",
+      "Ministério da Fazenda publica portaria que mantém o subsídio de R$ 2,12 por litro do diesel",
+      "Vorcaro em almoço em homenagem a Gonet (fato de 31/Jan/2024, publicação nova)"
+    ],
+    "eventos": [
+      {
+        "evento": "Conselho Superior do MPF e Paulo Gonet",
+        "oQueMudouHoje": "resultado final: 9 a 0 contra afastar e 5 a 4 pelo arquivamento da apuração, que na daily de 25/Set estava em 4 a 3 com dois votos por proferir",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "Gonet com 8 menções nas 7 dailies anteriores: continuidade, com desfecho novo",
+        "fonte1": "https://g1.globo.com/politica/noticia/2026/09/25/conselho-do-mpf-julga-atuacao-de-paulo-gonet-no-caso-banco-master.ghtml (G1, corpo lido: 9 a 0, 5 a 4, último voto de Nicolao Dino seguindo o relator)",
+        "fonte2": "https://www.gazetadopovo.com.br/republica/conselho-do-mpf-forma-maioria-contra-afastar-gonet-no-caso-master/ (Gazeta do Povo, 25/Set 23:36Z, corpo lido: unanimidade contra afastar, 5 a 4 contra a apuração)",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Condenação de Eduardo Bolsonaro no STF",
+        "oQueMudouHoje": "julgamento virtual concluído na noite de 25/Set",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "Tabata sem menção nas 7 dailies anteriores: novidade",
+        "fonte1": "Gazeta do Povo, 'STF condena Eduardo Bolsonaro por difamar Tabata Amaral. Veja como votaram os ministros', corpo lido: 7 a 3, um ano de detenção em regime inicial aberto, relator Moraes, vencidos Mendonça, Fux e Nunes Marques",
+        "fonte2": "Folha de S.Paulo, G1 e O Globo pela manchete",
+        "decisao": "incorporar SEM o valor da multa, que diverge entre fontes (R$ 126.438 na Gazeta do Povo, R$ 80 mil no O Globo)"
+      },
+      {
+        "evento": "Mendonça e as publicações sobre Nossa Senhora Aparecida",
+        "oQueMudouHoje": "ordem de remoção de mais de mil publicações",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "Aparecida com 3 menções: continuidade, com ato novo",
+        "fonte1": "https://www.gazetadopovo.com.br/eleicoes/2026/mendonca-manda-tirar-posts-sobre-flavio-retirar-nossa-senhora-aparecida-como-padroeira/ (corpo lido)",
+        "fonte2": "Folha de S.Paulo e CartaCapital pela manchete",
+        "decisao": "incorporar sem nomear o tribunal, porque as fontes divergem entre STF e TSE"
+      },
+      {
+        "evento": "MP que proíbe as bets",
+        "oQueMudouHoje": "publicação da MP, que na daily de 25/Set estava como anúncio previsto para a tarde",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "bets com 6 menções: continuidade",
+        "fonte1": "O Globo, 'Apostas: governo publica MP que proíbe as bets no Brasil', 25/Set 20:57 BRT",
+        "fonte2": "Estadão, 'Governo começa a notificar apostadores sobre MP do fim das bets', 25/Set 21:42 BRT",
+        "decisao": "incorporar"
+      },
+      {
+        "evento": "Portaria do diesel",
+        "oQueMudouHoje": "nada em 26/Set: a portaria é de 25/Set à noite e mantém o valor",
+        "dataDoAto": "2026-09-25",
+        "verificacao1CrossRef": "diesel sem menção: novidade",
+        "fonte1": "https://www1.folha.uol.com.br/mercado/2026/09/fazenda-edita-portaria-para-manter-valor-do-subsidio-ao-diesel-em-outubro.shtml (corpo lido: portaria publicada na sexta-feira 25)",
+        "fonte2": "https://oglobo.globo.com/economia/noticia/2026/09/26/as-vesperas-das-eleicoes-fazenda-prorroga-por-30-dias-subsidio-de-r-212-por-litro-do-diesel.ghtml (corpo lido: publicada no fim da noite de sexta-feira; não aumenta o subsídio)",
+        "decisao": "incorporar com data corrigida",
+        "nota": "o painel publicado às 12:00 dizia 'em 26/Set prorrogou', datado pelo carimbo de G1, CartaCapital e Poder360; corrigido nos 6 arquivos e republicado (dpl_9RWTXu7aXrX17TV5JPF76mC5fhSK, commit 056c9643)"
+      },
+      {
+        "evento": "Vorcaro no almoço em homenagem a Gonet",
+        "oQueMudouHoje": "publicação de foto e mensagem; o fato é de 31/Jan/2024",
+        "dataDoAto": "2024-01-31",
+        "verificacao1CrossRef": "Vorcaro com 29 menções: recobrança",
+        "fonte1": "https://www.estadao.com.br/politica/vorcaro-foi-a-almoco-em-homenagem-a-gonet-em-janeiro-de-2024/ (corpo lido)",
+        "fonte2": "https://veja.abril.com.br/politica/vorcaro-vou-estar-no-almoco-com-gonet-gilmar-deve-estar/ (corpo lido)",
+        "decisao": "incorporar com a data do fato e a negativa de Gonet"
+      }
+    ],
+    "foraDaPeca": "pedido de Lindbergh de busca em jatinhos (uma fonte, pedido), pedido de afastamento de Nunes Marques e Mendonça do TSE (pedido), 'sócia de Gilmar' (um grupo)"
+  },
+  "reFetchPolymarket": {
+    "fetchedAt": "2026-09-26T15:23:21.487Z",
+    "baseline": "leitura certificada de 2026-09-26T15:00:54.201Z (12:00 BRT)",
+    "deltas": "Lula 42,50 = 42,50; Flávio 56,15 = 56,15; vão 13,65 = 13,65; Renan 0,45 = 0,45; volume total USD 155,40M contra 155,44M ao vivo; Lula 2º lugar 24,45 para 24,75 e Cury 3º lugar 41,35 para 41,15, abaixo do gate",
+    "gateRebaseline": "não disparou; a daily cita o volume certificado para não divergir do painel"
+  },
+  "adversarialReview": {
+    "singleSource": "campanha de Lula e voto útil (Folha, atribuída); campanha de Flávio sobre o endividamento (Folha, atribuída)",
+    "numerical": "reconcile-claims só acusa 5,49%, limite de faixa de inflação; vão, somas, volumes e razão de ~500x conferidos contra .cache/capture-guard",
+    "fontesInventadas": "G1 MPF, Estadão e VEJA conferidos no corpo",
+    "quotesLiterais": "nenhuma",
+    "causacao": "nenhuma; o vão reabre 'sem pesquisa nova' e nada é atribuído a ato",
+    "verbosCriticos": "preso desde 17/Nov/2025; condenação por 7 a 3 em julgamento virtual; arquivou por 5 a 4; publicou no fim da noite de 25/Set",
+    "correcoes": "último voto de Nicolao Dino atribuído ao G1 (estava 'segundo a Gazeta'); 'virou com os dois últimos votos' deixou de apontar para a Folha Vitória; 'o maior movimento do dia' reescrito com a comparação medida; 'electoral fraud' no EN virou 'an electoral swindle'",
+    "decisao": "prosseguir"
+  },
+  "medicoes": {
+    "palavras": { "pt": 1086, "en": 1090, "es": 1162 },
+    "numerosComUnidade": 75,
+    "gateTraducao": "limpo nas três versões",
+    "links": "17 distintos, 8 âncora e 9 secundários (53%), resolvidos pelo cache via scripts/daily-links-brz.mjs",
+    "corte": "1.191 para 1.086, só repetição entre corpo, síntese e tabela"
+  },
+  "wayback": "não rodou: pré-check 429 no /save/ (curl e wayback-precheck.mjs), gravado no ledger; pausa até 30/Set; a daily de 26/Set entra no passivo"
+}
