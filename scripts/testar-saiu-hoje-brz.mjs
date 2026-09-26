@@ -6,7 +6,7 @@
  * a Palver prometeu e não saiu, a Veritá saiu dois dias depois do prometido.
  * Se um dia a régua deixar de separar os dois, isto fica vermelho.
  */
-import { classificarTitulo, medirSaida, ehNacional, separarFantasmas, normalizarProtocolo, divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
+import { classificarTitulo, medirSaida, ehNacional, semVeiculo, separarFantasmas, normalizarProtocolo, divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
 
 let ok = 0
 let falhas = 0
@@ -124,6 +124,33 @@ eq(
 
 // ⚠️ A sigla de UF é case-SENSITIVE de propósito: sem isso, "de pé" vira PE.
 eq(ehNacional('Lula e Flávio Bolsonaro disputam voto de pé de igualdade'), true, '"de pé" NAO pode virar a UF PE')
+
+// 🔴 26/Set/2026: estado colado na casa, SEM preposição, e sigla depois de barra
+eq(ehNacional('Datafolha Ceará aponta Lula com 56% contra 26% de Flávio Bolsonaro - Portal Ceará'), false, '🔴 "Datafolha Ceará", manchete real de 26/Set')
+eq(ehNacional('Pesquisa Datafolha Ceará tem Lula 54% e Flávio Bolsonaro 26% - O POVO'), false, 'Datafolha Ceará, 2ª forma')
+eq(ehNacional('Ceará dá 54% a Lula e deixa Flávio Bolsonaro em segundo, aponta Quaest'), false, 'estado ABRINDO a manchete')
+eq(ehNacional('Datafolha/DF: No 2º turno, Flávio mantém 51% e Lula oscila de 39% a 41% - UOL Notícias'), false, '"/DF" depois da casa')
+eq(ehNacional('Datafolha: Flávio lidera no 2º turno em São Paulo, Rio e Espiríto Santo'), false, 'São Paulo solto na enumeração')
+// ⚠️ o que NÃO pode virar estadual
+eq(ehNacional('Paraná Pesquisas: No 2º Turno, Flávio Tem 45,2% E Lula, 44,1% - media.unisba.ac.id'), true, '"Paraná Pesquisas" é CASA, não estado')
+eq(ehNacional('Lula tem 40% e Flávio, 36% para presidente, diz pesquisa'), true, '"para" sem acento NÃO é o Pará')
+// a regra tem caixa, então o caso que exerce o acento é "Para" abrindo a frase
+eq(ehNacional('Para Quaest, Lula tem 40% e Flávio, 36% no 1º turno'), true, '"Para" maiúsculo, sem acento, NÃO é o Pará')
+eq(ehNacional('Deputado do PSB-MG é o maior doador da campanha de Cury à Presidência'), true, 'hífen de partido NÃO é recorte')
+eq(
+  ehNacional('Flávio lidera com 45,53% e Lula tem 41,76%, com 40,5 mil entrevistados nos 26 estados e no Distrito Federal'),
+  true,
+  '"26 estados e no Distrito Federal" por extenso continua NACIONAL'
+)
+
+// 🔴 26/Set/2026: o NOME DO VEÍCULO decidia. 53 nacionais de setembro saíam estaduais.
+eq(ehNacional('Datafolha: Lula tem 46% e Flávio Bolsonaro, 44% no segundo turno - Diario de Pernambuco'), true, '🔴 "- Diario de Pernambuco" é o veículo')
+eq(ehNacional('Pesquisa Nexus/BTG aponta Lula com 40% e Flávio Bolsonaro com 37% no 1º turno - Portal de Prefeitura'), true, '"Prefeitura" do veículo NÃO é disputa municipal')
+eq(ehNacional('AtlasIntel: Flávio vira sobre Lula no 2º turno - Estado de Minas'), true, '"- Estado de Minas"')
+eq(ehNacional('PODERDATA/AYA: FLÁVIO BOLSONARO E LULA EMPATAM TECNICAMENTE NO 2º TURNO - - Bahia Economica'), true, 'traço duplo antes do veículo')
+eq(ehNacional('Datafolha no RJ: Flávio Bolsonaro, 44%; Lula, 38% - G1'), false, 'e o recorte da MANCHETE continua valendo')
+eq(semVeiculo('Datafolha: Lula 40% - 25/09/2026 - Brazil - Folha de S.Paulo'), 'Datafolha: Lula 40% - 25/09/2026 - Brazil', 'só o ÚLTIMO segmento sai')
+eq(semVeiculo('Sem veículo nenhum'), 'Sem veículo nenhum', 'título sem sufixo fica intacto')
 
 console.log('\n🧪 medirSaida — as DUAS divergências de 20/Set, em direções opostas\n')
 
@@ -295,6 +322,25 @@ eq(nenhumCasou.vivas.length, 3, 'e não corta nada, porque cortar seria pior')
 eq(separarFantasmas(reais, []).suspeito, false, 'ledger vazio não é suspeito')
 // lista de servidas vazia também não acusa formato
 eq(separarFantasmas([], ['BR005482026']).suspeito, false, 'sem servidas não há o que casar')
+
+// 🔴 26/Set/2026: o formato se confere no UNIVERSO servido. Nacionais sem
+//    nenhuma retirada é o caso NORMAL, e o alarme gritava nele.
+const nacionaisLimpas = [{ protocol: 'BR047392026' }, { protocol: 'BR042022026' }]
+const rotaInteira = [...nacionaisLimpas, { protocol: 'BR081552026' }]
+const normal = separarFantasmas(nacionaisLimpas, ['BR081552026'], { universo: rotaInteira })
+eq(normal.suspeito, false, 'nacionais sem retirada e rota COM casamento: NÃO é suspeito')
+eq(normal.casamNoUniverso, 1, 'e o casamento no universo sai contado')
+eq(normal.vivas.length, 2, 'e nenhuma nacional é cortada')
+eq(
+  separarFantasmas(nacionaisLimpas, ['XX999999999'], { universo: rotaInteira }).suspeito,
+  true,
+  'rota inteira sem NENHUM casamento continua SUSPEITO'
+)
+eq(
+  separarFantasmas(nacionaisLimpas, ['BR081552026']).suspeito,
+  true,
+  'sem universo vale o conjunto cortado, como antes'
+)
 
 // ⛔ registro sem protocolo nunca é cortado por engano
 eq(separarFantasmas([{ institute: 'X' }], ['BR005482026']).vivas.length, 1, 'registro sem protocolo fica VIVO')

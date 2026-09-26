@@ -65,9 +65,21 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 | `relatorio-pesquisas-brz.ts` | a linha fica e sai marcada com 📅 |
 | `calendario-pesquisas-brz.mjs` | a tabela publicada NÃO muda; o aviso vai ao stderr |
 
-⛔ **Na peça, não escrever "prometeu e não saiu" sobre esses registros.** A data fica porque é o que o TSE publica. Teste: `testar-saiu-hoje-brz.mjs`, **102 asserções**, com 5 de 5 mutações do guarda de UF reprovadas.
+⛔ **Na peça, não escrever "prometeu e não saiu" sobre esses registros.** A data fica porque é o que o TSE publica. Teste: `testar-saiu-hoje-brz.mjs`, 102 asserções em 25/Set (124 desde 26/Set, abaixo), com 5 de 5 mutações do guarda de UF reprovadas.
 
 🔁 **E o `SAIU_DEPOIS_DO_PROMETIDO` do dia seguinte a uma divulgação grande costuma ser REPERCUSSÃO.** Em 25/Set o Datafolha saiu assim com 17 itens, e todos traziam os números da onda de 24/Set (40 a 36, 47 a 45). A conferência é comparar os números com os da véspera antes de ler como onda nova.
+
+## 🗺️ E mais dois, fechados em 26/Set/2026: o VEÍCULO decidia, e o estado vinha SEM preposição
+
+🔴 **O nome do veículo entrava na classificação.** O Google News cola " - Veículo" no fim do título, e o `ehNacional()` lia o título inteiro. Medido no cache de setembro: **53 manchetes presidenciais NACIONAIS saíam estaduais** por causa do rodapé ("- Diario de Pernambuco", "- Estado de Minas", "- Tribuna do Paraná", e "- Portal de Prefeitura", que casava com `prefeit`), e no sentido oposto "- Blog do Mário **Flávio**" fabricava o par Lula+Flávio. Agora a manchete passa por `semVeiculo()` antes de qualquer regra, e só o ÚLTIMO segmento sai.
+
+🔴 **Estado colado na casa, sem preposição.** *"Datafolha Ceará aponta Lula com 56% contra 26% de Flávio Bolsonaro"* saiu como **Datafolha COM NUMERO** no dia em que a nacional da casa era de 24/Set, e *"Datafolha/DF: No 2º turno, Flávio mantém 51%"* passava igual. Por extenso vale solto e com caixa (Pará e Paraná só acentuados); a sigla, só depois de **barra**, porque hífen é partido e órgão ("PSB-MG", "TRE-SP"). ⚠️ **"Paraná Pesquisas" é CASA**, e tem exceção própria. E "nos 26 estados e no **Distrito Federal**" por extenso também caía como estadual: a exceção só cobria a sigla.
+
+📏 **Diferença medida antes de gravar**, nas duas direções, contra a versão anterior no cache de setembro inteiro (22.876 títulos): 20 viram estaduais e 53 viram nacionais, e os 73 foram lidos um a um.
+
+👻 **O alarme "nenhum fantasma casou" gritava no caso NORMAL.** Ele conferia o formato nas 20 nacionais, entre as quais zero retiradas é o comum; na rota inteira, 7 de 200 casavam. Agora `separarFantasmas(..., { universo })` confere na rota inteira e a linha sai declarada: *"formato conferido na rota inteira: 7 de 200"*. Anti-silêncio que grita no caso normal ensina a ignorá-lo.
+
+Teste: **124 asserções**, e **8 de 8 mutações** reprovadas. A do acento do Pará só passou a ser pega com "**Para** Quaest, ..." abrindo a frase, porque a regra tem caixa e o caso minúsculo não a exercia.
 
 ## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
 

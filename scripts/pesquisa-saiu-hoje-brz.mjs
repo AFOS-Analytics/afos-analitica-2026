@@ -95,7 +95,7 @@ function fantasmasDoLedger() {
 }
 
 const fan = fantasmasDoLedger()
-const corte = separarFantasmas(nacionaisBrutas, fan.set ? [...fan.set] : null)
+const corte = separarFantasmas(nacionaisBrutas, fan.set ? [...fan.set] : null, { universo: servidas })
 const retiradas = corte.retiradas
 const nacionais = corte.vivas
 
@@ -165,8 +165,11 @@ if (fan.erro) {
   if (velho) {
     console.log(`      🔴 ledger com mais de 36h: rodar a ingestao com --apply antes de confiar neste corte.`)
   }
+  if (!corte.suspeito) {
+    console.log(`      formato conferido na rota inteira: ${corte.casamNoUniverso} de ${servidas.length} linhas servidas casam com o ledger`)
+  }
   if (corte.suspeito) {
-    console.log(`      🔴 o ledger tem ${fan.set.size} fantasma(s) e NENHUM casou com as ${nacionaisBrutas.length} servidas.`)
+    console.log(`      🔴 o ledger tem ${fan.set.size} fantasma(s) e NENHUM casou com as ${servidas.length} linhas servidas pela rota.`)
     console.log(`         Isso quase nunca e arquivo limpo: e formato de protocolo que mudou. NAO tratar como corte feito.`)
   }
 }
