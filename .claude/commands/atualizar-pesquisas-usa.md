@@ -363,7 +363,7 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 | `DEDUPLICACAO` | saiu e a casa **continua** na média naquela onda |
 | 🔴 `DUPLICOU` | o INVERSO, que não se cala por simetria: a casa passou a ser contada duas vezes |
 
-🧪 `testar-casas-us.mjs` **81 asserções, 11 de 11 mutações** · `testar-atribuicao-us.mjs` **42, 7 de 7**. Os dois no CI.
+🧪 `testar-casas-us.mjs` e `testar-atribuicao-us.mjs`, os dois no CI. ⚠️ **A contagem de asserções não é citada aqui de propósito**: ela envelhece a cada caso novo, e régua com número velho ensina a desconfiar da régua. O número vive na saída do teste.
 
 ## 🔗 A FONTE foi aberta, e o que ela sustenta: `lib/us-polls/fonte-conferida.mjs` (25/Set/2026)
 
@@ -419,11 +419,11 @@ Sem declaração, as duas saem como rodada que **saiu** e rodada que **entrou**,
 
 🔎 **E a renomeação passou a dizer se o VALOR mudou na mesma troca.** Correção da origem escondida dentro de uma troca de rótulo passaria como "só renomeou". 📌 **Neste caso não mudou:** D 48 x R 43 nos dois rótulos, conferido contra o `git HEAD`. ⚠️ **E aqui eu tinha errado:** em 25/Set relatei essa rodada como D 47 x R 42, e o arquivo daquele dia registra 48 x 43. A margem, D+5, estava certa; a decomposição no meu relato não. A errata está na ficha da rodada.
 
-### ⏳ O que ficou declarado como NÃO decidido
+### ⏳ E o que ficou declarado como não decidido durou POUCAS HORAS
 
-`Emerson College/RealClear Opinion Research` **não** foi juntado com `Emerson College` puro, que tem 9 rodadas próprias. Sob "fica quem executa" as duas colapsariam, porque a Emerson vai a campo nas duas, mas vale a advertência da tabela: "Morning Consult" e "Morning Consult/Cato Institute" são produtos diferentes. Juntar é outra pergunta de procedência.
+A junção da Emerson foi listada aqui como pergunta aberta e o André a decidiu no mesmo dia. **A régua envelhece dentro do dia**, e a seção que descrevia a pendência foi substituída pela decisão, logo abaixo, em vez de conviver com ela: duas seções da mesma régua dizendo o contrário uma da outra é pior que nenhuma das duas.
 
-🧪 `node scripts/testar-casas-us.mjs`, **103 asserções e no CI**, com **8 de 8 mutações reprovadas** só na parte do instrumento. Metade dos casos é anti-excesso: onda anterior à troca continua, campo que **começa** antes continua, casa fora do registro não é tocada.
+🧪 `node scripts/testar-casas-us.mjs`, no CI, com **8 de 8 mutações reprovadas** só na parte do instrumento. Metade dos casos é anti-excesso: onda anterior à troca continua, campo que **começa** antes continua, casa fora do registro não é tocada.
 
 ### ⚖️ E a junção da Emerson foi DECIDIDA em 26/Set/2026
 
@@ -436,3 +436,13 @@ O André decidiu juntar: `Emerson College/RealClear Opinion Research` e a grafia
 📌 **A prova da variante `veiculo` sustenta a AUTORIA, não o número:** a matéria estabelece instituto, n, recorte, margem e datas, e **não traz a pergunta**. O topline daquela rodada segue como dívida aberta em `fonte-conferida.mjs`.
 
 ⛔ **A advertência do arquivo segue valendo para quem não foi declarado:** `Morning Consult/Cato Institute` **não** colapsa em `Morning Consult`, e há asserção cobrando isso.
+
+## 📏 A PROJEÇÃO nomeava saída que não causava queda (26/Set/2026)
+
+🔴 **Defeito criado pela exclusão por instrumento, no mesmo dia.** A coluna "quem SAI da janela nesse dia" existe para **explicar** a queda do `n`, e ela passou a nomear a onda de 08/Set da The Economist/YouGov saindo em 09/Out com o `n` **parado**, porque aquela onda nunca esteve na conta. É o mesmo raciocínio que o comentário do próprio arquivo já fazia para não listar três recortes de uma rodada só.
+
+✅ Rodada excluída sai da coluna, e a omissão é **contada e declarada**: `+N fora da média (outro instrumento), sem efeito no n`. Sumir com a linha esconderia que ela deixa a janela de verdade.
+
+🕳️ **E o teste achou coisa maior que a exibição.** A asserção *"nenhum dia perde n sem nomear quem saiu"* reprovou: o `n` da projeção vinha da `media()` com o registro **padrão** e a coluna de saída usava o registro que o chamador passou. **Duas colunas da mesma tabela falando de médias diferentes.** Em produção os dois são o mesmo objeto, então o defeito era **invisível ali**. Os registros passaram a atravessar o `mediaEm()`.
+
+📌 **A régua que fica:** quando uma função de leitura ganha um registro como parâmetro, todo caminho que recomputa a mesma conta tem de receber o mesmo registro, ou a segunda cópia nasce sem ninguém escrever uma linha de regra nova.

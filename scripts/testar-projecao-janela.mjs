@@ -194,5 +194,43 @@ console.log('\n── a linha de base NAO vem do arquivo ──')
   ok('horizonte padrao existe e e um numero', Number.isFinite(HORIZONTE_PADRAO))
 }
 
+
+console.log('\nA rodada que NAO entrava na media nao explica queda (26/Set/2026)')
+{
+  // 🔴 O caso real: no dia em que a exclusao por instrumento entrou, a projecao
+  // nomeava a onda de 08/Set da The Economist/YouGov saindo em 09/Out e o `n`
+  // NAO caia, porque aquela onda nunca esteve na conta. Coluna que explica queda
+  // nomeando quem nao causa queda e numero com rotulo errado.
+  const REG_I = {
+    'Casa Nominal': { desde: '2026-09-01', medidoEm: '2026-09-22', ondas: ['2026-09-01 a 2026-09-05'], ressalva: 'cedula com nomes', prova: 'https://x' },
+  }
+  const base = [
+    { instituto: 'Casa A', campoInicio: '2026-09-02', campoFim: '2026-09-04', amostra: 1000, amostraTipo: 'RV', dem: 50, rep: 45 },
+    { instituto: 'Casa B', campoInicio: '2026-09-10', campoFim: '2026-09-12', amostra: 1000, amostraTipo: 'RV', dem: 51, rep: 44 },
+  ]
+  const nominal = { instituto: 'Casa Nominal', campoInicio: '2026-09-03', campoFim: '2026-09-05', amostra: 1000, amostraTipo: 'RV', dem: 60, rep: 30 }
+  const opts = { de: new Date('2026-09-20T12:00:00Z'), dias: 30, horizonte: 30, registroInstrumento: REG_I }
+  const pr = projetarJanela({ polls: [...base, nominal] }, opts)
+
+  const comNominal = pr.linhas.filter((l) => !l.vazia && l.saindo.some((s) => s.instituto === 'Casa Nominal'))
+  ok('a onda excluida NAO aparece na coluna de quem sai', comNominal.length === 0)
+  const declarado = pr.linhas.filter((l) => (l.saindoForaDaMedia ?? 0) > 0)
+  ok('mas a omissao e CONTADA e declarada', declarado.length === 1, JSON.stringify(declarado.map((l) => l.dia)))
+  ok('e ela conta UMA rodada, nao uma linha por recorte', declarado[0]?.saindoForaDaMedia === 1)
+
+  // ⛔ ANTI-EXCESSO: sem a regra, a mesma rodada volta a ser saida normal.
+  const semRegra = projetarJanela({ polls: [...base, nominal] }, { ...opts, registroInstrumento: {} })
+  ok('SEM a regra ela volta a aparecer como saida', semRegra.linhas.some((l) => !l.vazia && l.saindo.some((s) => s.instituto === 'Casa Nominal')))
+  ok('e ai nao ha nada a declarar como fora', semRegra.linhas.every((l) => (l.saindoForaDaMedia ?? 0) === 0))
+
+  // ⛔ ANTI-EXCESSO: casa comum segue saindo e sendo nomeada.
+  ok('casa fora do registro segue nomeada ao sair', pr.linhas.some((l) => !l.vazia && l.saindo.some((s) => s.instituto === 'Casa A')))
+  // 🔑 E o n cai exatamente nas saidas que SOBRARAM na coluna.
+  const dias = pr.linhas.filter((l) => !l.vazia)
+  const quedasSemNome = dias.filter((l, i) => i > 0 && l.media.nPesquisas < dias[i - 1].media.nPesquisas && l.saindo.length === 0)
+  ok('nenhum dia perde n sem nomear quem saiu', quedasSemNome.length === 0, JSON.stringify(quedasSemNome.map((l) => l.dia)))
+}
+
+
 console.log(`\n${falhas ? '❌ REPROVADO' : '✅ APROVADO'}: ${passes} passaram, ${falhas} falharam\n`)
 process.exitCode = falhas ? 1 : 0

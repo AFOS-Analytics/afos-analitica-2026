@@ -80,8 +80,11 @@ for (const l of p.linhas) {
   const saindo = l.saindo
     .map((s) => `${s.instituto} (${s.campoFim}${s.linhas > 1 ? `, ${s.linhas} recortes` : ''})`)
     .join(', ')
+  const fora = l.saindoForaDaMedia
+    ? `${saindo ? ' · ' : ''}+${l.saindoForaDaMedia} fora da média (outro instrumento), sem efeito no n`
+    : ''
   console.log(
-    `   ${l.dia} | ${String(m.nPesquisas).padStart(2)} | ${String(m.nInstitutos).padStart(4)} | ${fmt(m.vantagemDem).padStart(8)} | ${saindo || '-'}`
+    `   ${l.dia} | ${String(m.nPesquisas).padStart(2)} | ${String(m.nInstitutos).padStart(4)} | ${fmt(m.vantagemDem).padStart(8)} | ${(saindo || (fora ? '' : '-')) + fora}`
   )
 }
 
