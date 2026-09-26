@@ -388,3 +388,39 @@ Ver também `/atualizar-usa`, que roda isto dentro de uma passada completa do pa
 📌 **As duas valem 0,00pp na média de hoje**, porque as duas estão praticamente na média. Isso é propriedade do dia e não motivo para parar de cobrar.
 
 🧪 `node scripts/testar-fonte-conferida.mjs`, **29 asserções e no CI**, com **9 de 9 mutações reprovadas**. A mais importante é a que cala o ledger: `dividasAbertas` devolvendo vazio tem de reprovar.
+
+## 🎯 A MÉDIA MEDE O QUE ELA DIZ MEDIR: onda de outro instrumento fica FORA (26/Set/2026)
+
+⚖️ **Decisão do André**, delegada com "resolva da melhor forma técnica possível".
+
+🔴 **O que havia:** o registro `instrumento-medido.mjs` nasceu em 22/Set para a **cadência** parar de cobrar da casa ondas que ela publicou com cédula **nominal**. A **média** seguiu incluindo essas mesmas ondas. Ou seja, a casa declarava, com prova e data, que três ondas não são generic ballot, e publicava-as dentro de uma média chamada generic ballot. **Dois medidores da mesma pergunta discordando dentro de casa.**
+
+📊 **Preço:** as três ondas nominais eram as **três maiores margens da janela** (D+14, D+12 e D+11) e puxavam a média para cima. **D+7,97 sobre 38 rodadas virou D+7,59 sobre 34** (a diferença inclui a borda que rolou no dia).
+
+| régua | por quê |
+|---|---|
+| o corte é por **ONDA** e pelo **INÍCIO** do campo | a casa segue na média com tudo que é anterior à troca, e segue mesmo, pela onda de 31/Ago |
+| a exclusão **não some** | sai em `mediaAfos.excluidasPorInstrumento`, uma entrada por **rodada**, com `desde`, `medidoEm`, a ressalva literal e a **prova** |
+| `media()` aceita `registroInstrumento` | para o medidor mostrar o preço **desligando** a regra, sem escrever uma segunda cópia dela |
+| o `metodo` publicado diz isso | promessa que a página faz sobre si mesma não pode ficar falsa em silêncio |
+
+⛔ **E a atribuição ganhou `EXCLUIDA_POR_INSTRUMENTO`**, porque sem ela o portão diria `COMPOSICAO`, cuja leitura prescrita é "saiu gente pela borda". Falso: a rodada **continua na janela** e deixou de ser elegível. Quem mexeu foi a **régua**, não o eleitorado nem a borda.
+
+## 🧬 O índice renomeou DUAS casas em 24 horas (26/Set/2026)
+
+⭐ **Prova independente da tese da tabela de casas**, e ela veio sozinha:
+
+| casa | o que mudou |
+|---|---|
+| McLaughlin & Associates | entrou em 25/Set **sem** o sufixo `(R)` e em 26/Set apareceu **com** ele, que é a forma das 7 rodadas anteriores |
+| Emerson College/RealClear | o índice passou a escrever um **ESPAÇO** depois da barra |
+
+Sem declaração, as duas saem como rodada que **saiu** e rodada que **entrou**, ou seja "pesquisa nova" onde nada é novo. Declaradas, saem como `RENOMEADA`.
+
+🔎 **E a renomeação passou a dizer se o VALOR mudou na mesma troca.** Correção da origem escondida dentro de uma troca de rótulo passaria como "só renomeou". 📌 **Neste caso não mudou:** D 48 x R 43 nos dois rótulos, conferido contra o `git HEAD`. ⚠️ **E aqui eu tinha errado:** em 25/Set relatei essa rodada como D 47 x R 42, e o arquivo daquele dia registra 48 x 43. A margem, D+5, estava certa; a decomposição no meu relato não. A errata está na ficha da rodada.
+
+### ⏳ O que ficou declarado como NÃO decidido
+
+`Emerson College/RealClear Opinion Research` **não** foi juntado com `Emerson College` puro, que tem 9 rodadas próprias. Sob "fica quem executa" as duas colapsariam, porque a Emerson vai a campo nas duas, mas vale a advertência da tabela: "Morning Consult" e "Morning Consult/Cato Institute" são produtos diferentes. Juntar é outra pergunta de procedência.
+
+🧪 `node scripts/testar-casas-us.mjs`, **103 asserções e no CI**, com **8 de 8 mutações reprovadas** só na parte do instrumento. Metade dos casos é anti-excesso: onda anterior à troca continua, campo que **começa** antes continua, casa fora do registro não é tocada.

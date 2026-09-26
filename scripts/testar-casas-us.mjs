@@ -29,6 +29,7 @@ import {
 import { medirCadencia } from '../lib/us-polls/atraso.mjs'
 import { verificarCasasAtrasadas, buracosNoRegistro, LISTAGENS_POR_CASA } from '../lib/us-polls/fora-do-indice.mjs'
 import { media } from '../lib/us-polls/collect.mjs'
+import { comparar, veredito, conferirSubtracao } from '../lib/us-polls/atribuicao.mjs'
 
 let ok = 0
 let falhou = 0
@@ -67,7 +68,10 @@ const bigDataNova = [linha('Big Data Poll/Public Polling Project', '2026-09-15',
 console.log('\n1. a tabela')
 caso('rótulo velho da Big Data vai para a série', serieDaCasa('Big Data Poll (R)') === 'Big Data Poll')
 caso('rótulo novo da Big Data vai para a MESMA série', serieDaCasa('Big Data Poll/Public Polling Project') === 'Big Data Poll')
-caso('Focaldata vai para a série com o parceiro', serieDaCasa('Focaldata') === 'Focaldata/Financial Times')
+// ⚖️ INVERTIDO em 26/Set/2026: a canônica passou a ser quem EXECUTA. Antes esta
+// asserção cobrava o contrário, e era a inconsistência declarada no arquivo.
+caso('o rótulo com o veículo vai para o EXECUTOR', serieDaCasa('Focaldata/Financial Times') === 'Focaldata')
+caso('e o nome do executor já é a série', serieDaCasa('Focaldata') === 'Focaldata')
 caso('nome fora da tabela volta intacto', serieDaCasa('Emerson College') === 'Emerson College')
 caso('valor que não é texto volta intacto, sem lançar', serieDaCasa(undefined) === undefined && serieDaCasa(null) === null)
 caso('nomesDaSerie devolve os dois rótulos e a série', nomesDaSerie('Big Data Poll').length === 3)
@@ -178,8 +182,22 @@ caso('nao-string volta como veio', serieDaCasa(undefined) === undefined)
 
 console.log('\n8. a carga da tabela: entrada sem prova e opiniao')
 caso('a tabela real nao tem erro de carga', conferirCarga().length === 0)
-caso('a tabela real tem 5 casas', CASAS_DECLARADAS.length === 5)
-caso('os 3 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,serie,veiculo')
+// Contar entradas quebra a cada casa nova e nao diz nada; o que precisa de
+// tripwire e a REMOCAO silenciosa de uma casa ja declarada.
+caso(
+  'nenhuma casa declarada desapareceu da tabela',
+  [
+    'Big Data Poll',
+    'Focaldata',
+    'Beacon Research (D)/ Shaw & Co. Research (R)',
+    'Marquette University Law School',
+    'ActiVote',
+    'McLaughlin & Associates (R)',
+    'Emerson College/RealClear Opinion Research',
+  ].every((serie) => CASAS_DECLARADAS.some((e) => e.serie === serie))
+)
+// Dois papéis, porque "entre ondas" deixou de ser papel e virou `mesmaOnda`.
+caso('os 2 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,veiculo')
 {
   const base = () => [
     {
@@ -192,6 +210,7 @@ caso('os 3 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,s
           papel: 'veiculo',
           prova: { url: 'https://x' },
           motivo: 'm',
+          mesmaOnda: true,
           assinatura: 'a|b|1|LV',
           valores: ['50/40'],
         },
@@ -215,8 +234,9 @@ caso('os 3 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,s
   caso('entrada sem variantes reprova', err(semCampo('variantes'), 'nao colapsa nada'.replace('nao', 'não')))
   caso('variante sem prova reprova', err(semVar('prova'), 'sem prova'))
   caso('variante sem motivo reprova', err(semVar('motivo'), 'sem motivo'))
-  caso('variante sem assinatura reprova', err(semVar('assinatura'), 'sem assinatura'))
-  caso('variante sem valores reprova', err(semVar('valores'), 'sem valores'))
+  caso('mesmaOnda sem assinatura reprova', err(semVar('assinatura'), 'exige a assinatura'))
+  caso('mesmaOnda sem valores reprova', err(semVar('valores'), 'exige valores'))
+  caso('variante sem mesmaOnda reprova', err(semVar('mesmaOnda'), 'sem mesmaOnda'))
   {
     const r = base()
     r[0].variantes[0].prova = { onde: 'conferido no topline impresso' }
@@ -225,11 +245,18 @@ caso('os 3 papeis previstos', Object.keys(PAPEIS).sort().join(',') === 'grafia,s
     r2[0].variantes[0].papel = 'grafia'
     r2[0].variantes[0].prova = { onde: 'conferido no topline impresso' }
     caso('papel grafia aceita prova por ONDE, sem url', conferirCarga(r2).length === 0)
+    // Ondas DIFERENTES: nao ha rodada a fixar, entao assinatura nao se exige.
     const r3 = base()
-    r3[0].variantes[0].papel = 'serie'
+    r3[0].variantes[0].mesmaOnda = false
     delete r3[0].variantes[0].assinatura
     delete r3[0].variantes[0].valores
-    caso('papel serie NAO exige assinatura: os dois nomes nunca dividem uma onda', conferirCarga(r3).length === 0)
+    caso('mesmaOnda false NAO exige assinatura', conferirCarga(r3).length === 0)
+    // ⛔ E o SIMETRICO, que e o que impede a nova dimensao de virar escapatoria:
+    //    declarar assinatura com mesmaOnda false afirma uma rodada compartilhada
+    //    que nunca existiu, e essa afirmacao passaria calada.
+    const r4 = base()
+    r4[0].variantes[0].mesmaOnda = false
+    caso('mesmaOnda false declarando assinatura reprova', err(r4, 'não pode declarar assinatura'))
   }
   {
     const r = base()
@@ -345,6 +372,76 @@ console.log('\n9. o desempate entre duas linhas da MESMA rodada')
   )
   caso('Marquette: uma rodada so', media(marq, 30, HOJE).nPesquisas === 1)
   caso('Marquette: fica a linha escrita com o nome longo', !('institutoNoIndice' in media(marq, 30, HOJE).incluidas[0]))
+}
+
+
+
+console.log('\n11. INSTRUMENTO: a media mede o que ela diz medir (26/Set/2026)')
+{
+  const HOJE = new Date('2026-09-25T12:00:00Z')
+  const REG_I = {
+    'Casa Nominal': {
+      desde: '2026-09-04',
+      medidoEm: '2026-09-22',
+      ondas: ['2026-09-04 a 2026-09-08'],
+      ressalva: 'cedula com nomes do distrito',
+      prova: 'https://x/topline.pdf',
+    },
+  }
+  const li = (o) => ({ campoInicio: '2026-09-11', campoFim: '2026-09-14', amostra: 1000, amostraTipo: 'LV', dem: 51, rep: 39, ...o })
+  const med = (polls) => media(polls, 30, HOJE, undefined, REG_I)
+  const base = [
+    li({ instituto: 'Casa Normal', dem: 50, rep: 45 }),
+    li({ instituto: 'Casa Normal', campoInicio: '2026-09-18', campoFim: '2026-09-21', dem: 50, rep: 45 }),
+  ]
+
+  const nominal = li({ instituto: 'Casa Nominal' })
+  const m1 = med([...base, nominal])
+  caso('a onda NOMINAL nao entra na media', m1.nPesquisas === 2)
+  caso('e ela NAO desaparece: sai listada', m1.excluidasPorInstrumento.length === 1)
+  caso('a listagem diz de quem e', m1.excluidasPorInstrumento[0].instituto === 'Casa Nominal')
+  caso('a listagem leva a PROVA', m1.excluidasPorInstrumento[0].prova === 'https://x/topline.pdf')
+  caso('e a data em que foi medido', m1.excluidasPorInstrumento[0].medidoEm === '2026-09-22')
+  caso('sem a regra, ela volta a entrar', media([...base, nominal], 30, HOJE, undefined, {}).nPesquisas === 3)
+
+  // ⛔ ANTI-EXCESSO 1: o corte e por ONDA, nunca por casa.
+  const antes = li({ instituto: 'Casa Nominal', campoInicio: '2026-08-20', campoFim: '2026-08-28', dem: 47, rep: 44 })
+  const m2 = med([...base, antes, nominal])
+  caso('onda ANTERIOR a troca da mesma casa CONTINUA na media', m2.nPesquisas === 3)
+  caso('e a casa segue contada como instituto', m2.institutos.includes('Casa Nominal'))
+
+  // ⛔ ANTI-EXCESSO 2: o corte e pelo INICIO do campo, nao pelo fim.
+  const cavalga = li({ instituto: 'Casa Nominal', campoInicio: '2026-09-01', campoFim: '2026-09-06', dem: 51, rep: 39 })
+  caso('campo que COMECA antes da troca continua elegivel', med([...base, cavalga]).nPesquisas === 3)
+
+  // ⛔ ANTI-EXCESSO 3: casa fora do registro nao e tocada.
+  caso('casa fora do registro entra inteira', med(base).nPesquisas === 2 && med(base).excluidasPorInstrumento.length === 0)
+
+  // 🧬 E o registro casa pela SERIE: o rotulo do veiculo acha a entrada do executor.
+  const REG_V = { 'Beacon Research (D)/ Shaw & Co. Research (R)': REG_I['Casa Nominal'] }
+  caso(
+    'o rotulo do VEICULO cai na entrada da serie',
+    media([...base, li({ instituto: 'Fox News' })], 30, HOJE, undefined, REG_V).excluidasPorInstrumento.length === 1
+  )
+
+  // 📌 A listagem fala em RODADAS: dois recortes da mesma onda excluida sao UMA linha.
+  const doisRecortes = [nominal, li({ instituto: 'Casa Nominal', amostraTipo: 'RV', amostra: 1200, dem: 49, rep: 40 })]
+  const m3 = med([...base, ...doisRecortes])
+  caso('dois recortes da MESMA onda excluida sao UMA entrada', m3.excluidasPorInstrumento.length === 1)
+  caso('e a entrada guarda o recorte de cima', m3.excluidasPorInstrumento[0].amostraTipo === 'LV')
+
+  // 🧭 E a ATRIBUICAO nao pode chamar isso de borda rolando.
+  const antesInc = med([...base, nominal])
+  const depoisInc = med([...base, nominal])
+  const semRegra = media([...base, nominal], 30, HOJE, undefined, {})
+  const dif = comparar(semRegra.incluidas, antesInc.incluidas, antesInc.excluidasPorInstrumento)
+  caso('a saida explicada pelo instrumento nao conta como saida', dif.sairam.length === 0)
+  caso('ela sai na classe propria', dif.excluidasPorInstrumento.length === 1)
+  caso('o veredito NAO diz COMPOSICAO', !veredito(dif, -0.38).includes('COMPOSICAO'), veredito(dif, -0.38).join('+'))
+  caso('o veredito diz EXCLUIDA_POR_INSTRUMENTO', veredito(dif, -0.38).includes('EXCLUIDA_POR_INSTRUMENTO'))
+  caso('e a subtracao fecha', conferirSubtracao(semRegra.incluidas, antesInc.incluidas, dif).length === 0)
+  caso('sem excluidas, a saida volta a ser saida', comparar(semRegra.incluidas, antesInc.incluidas, []).sairam.length === 1)
+  void depoisInc
 }
 
 

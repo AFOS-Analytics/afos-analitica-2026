@@ -32,6 +32,7 @@
  */
 import { readFileSync } from 'fs'
 import { pathToFileURL } from 'url'
+import { serieDaCasa } from '../lib/us-polls/casas.mjs'
 
 export const CHAVE_GENERIC_BALLOT = '79287655-1e6e-4a3a-9ca3-13883c9a7496'
 export const BASE_LIVE = 'https://live-data.jifo.co/'
@@ -181,7 +182,11 @@ export const APELIDOS = [
   [/activote/i, 'Activote'],
   [/honest/i, 'The Honest Poll'],
 ]
-const normalizar = (casa) => (APELIDOS.find(([re]) => re.test(casa)) || [null, casa])[1]
+// 🧬 O apelido mapeia o rótulo do AGREGADOR para o nosso, e a série mapeia o
+// rótulo do ÍNDICE para o nosso: as duas pontas compõem, e compor evita que o
+// alvo escrito aqui seja uma terceira cópia da escolha de nome. Instalado em
+// 26/Set/2026, quando a canônica da Focaldata foi invertida.
+const normalizar = (casa) => serieDaCasa((APELIDOS.find(([re]) => re.test(casa)) || [null, casa])[1])
 
 /** Morning Consult fica FORA por desenho: o tracker é produto pago. */
 const FORA_POR_DESENHO = [/morning consult/i]

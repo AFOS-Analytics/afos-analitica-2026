@@ -118,7 +118,11 @@ console.log('')
 
 const linhas = []
 for (const casa of CASAS) {
-  const conhecido = nossoMaisRecente[casa.nome]
+  // 🧬 O índice acima é montado PELA SÉRIE e esta lista é escrita à mão, então a
+  // consulta canoniza o rótulo também. Sem isto, escolher a outra grafia como
+  // canônica faz a casa aparecer sem nada conhecido, que é o defeito de
+  // 17/Set/2026 de novo, pelo outro lado: nada dá erro, a casa só envelhece.
+  const conhecido = nossoMaisRecente[serieDaCasa(casa.nome)]
 
   // RSS primeiro: `pubDate` é data declarada, não data raspada de texto.
   let datas = [], datasDoTema = [], falaDoTema = false, via = 'html', r

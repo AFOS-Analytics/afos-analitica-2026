@@ -254,7 +254,7 @@ if (m && mb) {
 
   if (m.incluidas && mb.incluidas) {
     // ✅ Caminho bom: comparar RODADA a rodada.
-    const dif = comparar(mb.incluidas, m.incluidas)
+    const dif = comparar(mb.incluidas, m.incluidas, m.excluidasPorInstrumento)
     const rot = (x) => `${x.campoFim} ${x.instituto} (D+${(x.dem - x.rep).toFixed(2)})`
     console.log(`        saíram    ${dif.sairam.map(rot).join(' · ') || '(ninguém)'}`)
     console.log(`        entraram  ${dif.entraram.map(rot).join(' · ') || '(ninguém)'}`)
@@ -263,11 +263,25 @@ if (m && mb) {
     // explicaria: o conserto do veredito falso teria criado um silêncio no lugar.
     for (const r of dif.renomeadas ?? []) {
       console.log(`        ${cor.aviso}RENOMEADA${cor.fim} ${r.antes.campoFim}: "${r.antes.instituto}" → "${r.depois.instituto}"`)
-      console.log(`            mesma casa e mesma onda. Não é rodada nova nem correção da origem.`)
+      const mexeu = r.antes.dem !== r.depois.dem || r.antes.rep !== r.depois.rep
+      if (mexeu) {
+        // 🔴 Medido em 26/Set/2026: o índice renomeou a McLaughlin e, na MESMA
+        // troca, mudou D e R em um ponto cada. Correção da origem escondida
+        // dentro de uma troca de rótulo passa como "só renomeou".
+        console.log(
+          `            ${cor.mau}e o VALOR mudou na mesma troca${cor.fim}: D ${r.antes.dem}→${r.depois.dem} · R ${r.antes.rep}→${r.depois.rep}. É correção da origem, não só rótulo.`
+        )
+      } else {
+        console.log(`            mesma casa e mesma onda, com os mesmos valores. Não é rodada nova nem correção.`)
+      }
     }
     for (const x of dif.deduplicadas ?? []) {
       console.log(`        ${cor.aviso}DEDUPLICADA${cor.fim} ${rot(x)}: a casa continua na média nesta onda, sob outro rótulo`)
       console.log(`            ela não saiu da janela: parou de ser contada duas vezes`)
+    }
+    for (const x of dif.excluidasPorInstrumento ?? []) {
+      console.log(`        ${cor.aviso}EXCLUÍDA POR INSTRUMENTO${cor.fim} ${rot(x)}: continua na janela e deixou de ser elegível`)
+      console.log(`            a onda foi medida como OUTRO instrumento; quem mexeu foi a régua, não a borda`)
     }
     for (const x of dif.duplicaram ?? []) {
       console.log(`        ${cor.mau}DUPLICOU${cor.fim} ${rot(x)}: a casa JÁ tinha rodada nesta onda e passou a ter duas`)

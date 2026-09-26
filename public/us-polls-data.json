@@ -1,6 +1,6 @@
 {
-  "lastUpdate": "2026-09-25",
-  "fetchedAt": "2026-09-25T20:00:41.540Z",
+  "lastUpdate": "2026-09-26",
+  "fetchedAt": "2026-09-26T14:48:27.737Z",
   "eleicao": {
     "pais": "US",
     "data": "2026-11-03",
@@ -25,7 +25,7 @@
     ],
     "motivoIgnorar": "são modelos de terceiros; o AFOS calcula a própria média simples e não republica modelo alheio",
     "rodadasCuradas": {
-      "quantas": 14,
+      "quantas": 12,
       "regra": "Rodada que o instituto publicou e o índice não recebeu entra lida na CROSSTAB do próprio instituto, com o link dela, e vem etiquetada com origem \"listagem-do-instituto\". É exceção declarada, não caminho normal: o índice continua sendo a via padrão e sempre vence a duplicata.",
       "institutos": [
         "Quantus Insights (R)",
@@ -46,8 +46,8 @@
   ],
   "mediaAfos": {
     "janelaDias": 30,
-    "desde": "2026-08-26",
-    "nPesquisas": 38,
+    "desde": "2026-08-27",
+    "nPesquisas": 34,
     "incluidas": [
       {
         "instituto": "Emerson College",
@@ -57,7 +57,7 @@
         "rep": 42
       },
       {
-        "instituto": "McLaughlin & Associates",
+        "instituto": "McLaughlin & Associates (R)",
         "campoFim": "2026-09-22",
         "amostraTipo": "LV",
         "dem": 48,
@@ -83,13 +83,6 @@
         "amostraTipo": "LV",
         "dem": 52,
         "rep": 42
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-09-21",
-        "amostraTipo": "LV",
-        "dem": 52,
-        "rep": 38
       },
       {
         "instituto": "Morning Consult",
@@ -136,6 +129,7 @@
       },
       {
         "instituto": "Emerson College/RealClear Opinion Research",
+        "institutoNoIndice": "Emerson College/ RealClear Opinion Research",
         "campoFim": "2026-09-15",
         "amostraTipo": "RV",
         "dem": 37,
@@ -175,13 +169,6 @@
         "amostraTipo": "RV",
         "dem": 44,
         "rep": 37
-      },
-      {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-09-14",
-        "amostraTipo": "LV",
-        "dem": 51,
-        "rep": 39
       },
       {
         "instituto": "The Rainey Center",
@@ -240,13 +227,6 @@
         "rep": 41
       },
       {
-        "instituto": "The Economist/YouGov",
-        "campoFim": "2026-09-08",
-        "amostraTipo": "LV",
-        "dem": 49,
-        "rep": 38
-      },
-      {
         "instituto": "Morning Consult",
         "campoFim": "2026-09-06",
         "amostraTipo": "RV",
@@ -268,7 +248,8 @@
         "rep": 42
       },
       {
-        "instituto": "Focaldata/Financial Times",
+        "instituto": "Focaldata",
+        "institutoNoIndice": "Focaldata/Financial Times",
         "campoFim": "2026-09-02",
         "amostraTipo": "LV",
         "dem": 52,
@@ -308,20 +289,51 @@
         "amostraTipo": "LV",
         "dem": 49.7,
         "rep": 42.8
-      },
-      {
-        "instituto": "UMass Amherst/YouGov",
-        "campoFim": "2026-08-26",
-        "amostraTipo": "A",
-        "dem": 42,
-        "rep": 34
       }
     ],
-    "nInstitutos": 28,
-    "dem": 49.18,
-    "rep": 41.21,
-    "vantagemDem": 7.97,
-    "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa.",
+    "excluidasPorInstrumento": [
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-09-18",
+        "campoFim": "2026-09-21",
+        "amostraTipo": "LV",
+        "dem": 52,
+        "rep": 38,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-09-11",
+        "campoFim": "2026-09-14",
+        "amostraTipo": "LV",
+        "dem": 51,
+        "rep": 39,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      },
+      {
+        "instituto": "The Economist/YouGov",
+        "campoInicio": "2026-09-04",
+        "campoFim": "2026-09-08",
+        "amostraTipo": "LV",
+        "dem": 49,
+        "rep": 38,
+        "desde": "2026-09-04",
+        "medidoEm": "2026-09-22",
+        "ressalva": "Asked using the names of candidates running in the respondent’s district of residence",
+        "prova": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econtoplines_87cqd96.pdf"
+      }
+    ],
+    "nInstitutos": 27,
+    "dem": 49.26,
+    "rep": 41.67,
+    "vantagemDem": 7.59,
+    "metodo": "média aritmética simples, sem ponderação e sem exclusão de instituto. Quando o mesmo instituto publica mais de um recorte da mesma rodada, entra um só, pela hierarquia provável votante > eleitor registrado > adultos. Quando o índice lista a mesma casa sob dois nomes, o de quem executa e o de quem publica, ou duas grafias, ela conta uma vez, pelo nome de quem executa, por tabela declarada casa a casa. Onda que o instituto publicou com OUTRO instrumento, como cédula com nomes de candidatos, fica de fora e é listada em excluidasPorInstrumento com a prova.",
     "institutos": [
       "ActiVote",
       "Beacon Research (D)/ Shaw & Co. Research (R)",
@@ -333,13 +345,13 @@
       "Echelon Insights",
       "Emerson College",
       "Emerson College/RealClear Opinion Research",
-      "Focaldata/Financial Times",
+      "Focaldata",
       "Hart Research Associates (D)/ Public Opinion Strategies (R)",
       "Harvard/Harris Poll/HarrisX",
       "John Zogby Strategies",
       "Marist University",
       "Marquette University Law School",
-      "McLaughlin & Associates",
+      "McLaughlin & Associates (R)",
       "Morning Consult",
       "New York Times/Siena College",
       "Quantus Insights (R)",
@@ -349,21 +361,20 @@
       "Strength In Numbers/Verasight",
       "The Economist/YouGov",
       "The Honest Poll",
-      "The Rainey Center",
-      "UMass Amherst/YouGov"
+      "The Rainey Center"
     ]
   },
   "qualidade": {
-    "linhasLidas": 433,
-    "publicadas": 447,
+    "linhasLidas": 440,
+    "publicadas": 452,
     "descartadasPorForma": 0,
     "descartadasPorValor": 0,
     "descartadas": 0,
     "motivoDescarte": "linha sem data de campo ou com o instituto ilegível (rowspan fora de sincronia na origem), ou com percentual fora da faixa plausível de 15% a 70% e soma até 100 (coluna deslizada, tipicamente amostra ou margem de erro lidas como intenção de voto)",
     "semFontePrimaria": 2,
-    "doIndice": 433,
-    "curadas": 14,
-    "curadasDescartadasPorDuplicidade": 15
+    "doIndice": 440,
+    "curadas": 12,
+    "curadasDescartadasPorDuplicidade": 17
   },
   "polls": [
     {
@@ -382,7 +393,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "McLaughlin & Associates",
+      "instituto": "McLaughlin & Associates (R)",
       "campoInicio": "2026-09-16",
       "campoFim": "2026-09-22",
       "amostra": 1000,
@@ -652,7 +663,7 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "Emerson College/RealClear Opinion Research",
+      "instituto": "Emerson College/ RealClear Opinion Research",
       "campoInicio": "2026-09-12",
       "campoFim": "2026-09-15",
       "amostra": 1500,
@@ -1405,6 +1416,36 @@
       "origem": "indice-wikipedia"
     },
     {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-08-14",
+      "campoFim": "2026-08-17",
+      "amostra": 1449,
+      "amostraTipo": "RV",
+      "margemErro": 3.2,
+      "dem": 46,
+      "rep": 39,
+      "outros": 15,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_jNjXIL6.pdf#page=69",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "The Economist/YouGov",
+      "campoInicio": "2026-08-14",
+      "campoFim": "2026-08-17",
+      "amostra": 1610,
+      "amostraTipo": "A",
+      "margemErro": 3.2,
+      "dem": 39,
+      "rep": 32,
+      "outros": 29,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_jNjXIL6.pdf#page=69",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
       "instituto": "Reuters/Ipsos",
       "campoInicio": "2026-08-14",
       "campoFim": "2026-08-17",
@@ -1480,42 +1521,34 @@
       "origem": "indice-wikipedia"
     },
     {
-      "instituto": "The Economist/YouGov",
-      "campoInicio": "2026-08-14",
-      "campoFim": "2026-08-17",
-      "amostra": 1449,
+      "instituto": "Morning Consult/Cato Institute",
+      "campoInicio": "2026-08-13",
+      "campoFim": "2026-08-16",
+      "amostra": 4150,
       "amostraTipo": "RV",
-      "margemErro": 3.4,
-      "dem": 46,
-      "rep": 39,
-      "outros": 14,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_jNjXIL6.pdf",
-      "opcoes": {
-        "other": 1,
-        "naoSabe": 11,
-        "naoVotara": 2
-      },
-      "origem": "listagem-do-instituto"
+      "margemErro": 2,
+      "dem": 47,
+      "rep": 42,
+      "outros": 11,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.cato.org/blog/75-americans-say-tariffs-will-be-important-their-vote-midterms",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
-      "instituto": "The Economist/YouGov",
-      "campoInicio": "2026-08-14",
-      "campoFim": "2026-08-17",
-      "amostra": 1611,
-      "amostraTipo": "A",
-      "margemErro": 3.4,
-      "dem": 39,
-      "rep": 32,
-      "outros": 30,
-      "vantagemDem": 7,
-      "fontePrimaria": "https://d3nkl3psvxxpe9.cloudfront.net/documents/econTabReport_jNjXIL6.pdf",
-      "opcoes": {
-        "other": 1,
-        "naoSabe": 13,
-        "naoVotara": 16
-      },
-      "origem": "listagem-do-instituto"
+      "instituto": "Noble Predictive Insights/ The Center Square",
+      "campoInicio": "2026-08-12",
+      "campoFim": "2026-08-16",
+      "amostra": 2533,
+      "amostraTipo": "RV",
+      "margemErro": 2,
+      "dem": 47,
+      "rep": 42,
+      "outros": 11,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.thecentersquare.com/polls/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
     },
     {
       "instituto": "Morning Consult",
@@ -1544,6 +1577,36 @@
       "outros": 19,
       "vantagemDem": 9,
       "fontePrimaria": "https://angusreid.us/congressional-generic-ballot-democrats-lead-53-43/",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Wave Polling/Verasight",
+      "campoInicio": "2026-08-07",
+      "campoFim": "2026-08-11",
+      "amostra": 1591,
+      "amostraTipo": "RV",
+      "margemErro": 3,
+      "dem": 50,
+      "rep": 43,
+      "outros": 8,
+      "vantagemDem": 7,
+      "fontePrimaria": "https://wavepolling.com/results/2026-08-17-economic-costs-deportations/topline.pdf",
+      "comLeaners": true,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "Wave Polling/Verasight",
+      "campoInicio": "2026-08-07",
+      "campoFim": "2026-08-11",
+      "amostra": 1591,
+      "amostraTipo": "RV",
+      "margemErro": 3,
+      "dem": 48,
+      "rep": 40,
+      "outros": 12,
+      "vantagemDem": 8,
+      "fontePrimaria": "https://wavepolling.com/results/2026-08-17-economic-costs-deportations/topline.pdf",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
@@ -1649,6 +1712,21 @@
       "outros": 11,
       "vantagemDem": 5,
       "fontePrimaria": "https://intel.morningconsult.com/mc-content/trackers/2026-midterm-election-generic-ballot-polls",
+      "comLeaners": false,
+      "origem": "indice-wikipedia"
+    },
+    {
+      "instituto": "ActiVote",
+      "campoInicio": "2026-07-29",
+      "campoFim": "2026-08-08",
+      "amostra": 1000,
+      "amostraTipo": "LV",
+      "margemErro": 3.1,
+      "dem": 52.5,
+      "rep": 47.5,
+      "outros": null,
+      "vantagemDem": 5,
+      "fontePrimaria": "https://www.activote.net/polls/generic-ballot/2026-08-09/",
       "comLeaners": false,
       "origem": "indice-wikipedia"
     },
