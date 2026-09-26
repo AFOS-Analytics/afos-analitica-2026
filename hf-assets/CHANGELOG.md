@@ -2,6 +2,23 @@
 
 All notable changes to this dataset. The data itself is dated and append-only; this log records **structural** changes (new files, schema, coverage).
 
+## 2026-09-26, a national poll is no longer matched to a STATE registration
+
+### Fixed — affects `polls/national-polls.json` (`tse_registration`), `polls/sample-demographics.csv` and `data/poll-divergence.csv` (`register_tse`)
+
+Polls without a TSE protocol in the source are matched to the registry by pollster and date (within 5 days). That fallback **accepted state-level registrations and broke ties by file order**, so a national poll could carry the methodology, sampling plan and quotas of a single state's poll run by the same house on the same day. On this date the order of the registry changed with 24 new rows and one match flipped on its own, which is how the defect was found.
+
+| Poll | Was published with | Now |
+|---|---|---|
+| AtlasIntel, 2026-05-19 (n=5,000) | `BR-03243/2026`, a **Piauí** poll (n=1,200): the demographics were Piauí's electorate, e.g. 31.8% with household income up to R$2,000 | `BR-06939/2026`, national (n=5,000): 22.4% |
+| Datafolha, 2026-03-07 | `BR-06798/2026`, state | `BR-03715/2026`, national |
+| Quaest/Genial, 2026-03-11 | `BR-02944/2026`, state | `BR-05809/2026`, national |
+| Paraná Pesquisas, 2026-05-07 and 2026-05-08 | `BR-04315/2026`, state | **no match** (`tse_registration: null`): the only registrations in the window are state-level |
+
+- **Rows:** `sample-demographics.csv` goes from 513 to 503. 35 rows leave and 25 enter; the net loss of 10 is exactly the two Paraná Pesquisas polls (5 rows each), which no longer borrow a state poll's quotas. Every other row is unchanged.
+- **Rule now:** the fallback never uses a registration whose derived scope is `state`, and ties break by scope (national first), then by closeness of sample size, then by protocol, so the result no longer depends on file order.
+- **If you used the demographics or the methodology of these five polls, re-pull.** The dated `divergence-*` files are not affected.
+
 ## 2026-08-17, the market series now follows the MARKET, not the panel's table
 
 ### Changed — BREAKING for anyone filtering `data/market-odds-timeseries.csv` by name

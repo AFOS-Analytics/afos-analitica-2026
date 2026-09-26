@@ -161,10 +161,23 @@ function enrich22(reg) {
     let hit = /^BR\d+$/.test(np) ? byProto.get(np) : null, mb = 'protocol'
     if (hit) nP++
     else {
+      // 🔴 26/Set/2026: o casamento por casa+data aceitava registro ESTADUAL e
+      //    desempatava pela ORDEM do arquivo. A AtlasIntel nacional de 19/Mai
+      //    (n=5.000) esteve ligada no dataset público ao registro de uma
+      //    pesquisa do Piauí (BR-03243, n=1.200), empatado em dias com o nacional,
+      //    e trocou de lado sozinha quando 24 linhas novas mudaram a ordem. No
+      //    mesmo estado estavam a Datafolha de 07/Mar e a Quaest de 11/Mar, com
+      //    o registro nacional empatado ao lado, e as duas Paraná Pesquisas de
+      //    Mai, que só têm estaduais na janela. Pesquisa NACIONAL não se liga a
+      //    registro estadual: a metodologia descreve outro eleitorado. Sem
+      //    candidato nacional ou de escopo indefinido, fica sem casamento.
+      const ordemEscopo = (r) => (r.scope === 'national' ? 0 : 1)
+      const amostra = (r) => Math.abs(Number(r.sample_size || 0) - Number(p.sample || 0))
       const toks = TOKEN(p.institute)
-      const c = reg.filter((r) => toks.some((t) => r.institute.toUpperCase().includes(t)))
+      const c = reg.filter((r) => toks.some((t) => r.institute.toUpperCase().includes(t)) && r.scope !== 'state')
         .map((r) => ({ r, dd: Math.min(days(r.publication_date, p.date), days(r.field_end, p.date)) }))
-        .filter((x) => x.dd <= 5).sort((a, b) => a.dd - b.dd)
+        .filter((x) => x.dd <= 5)
+        .sort((a, b) => a.dd - b.dd || ordemEscopo(a.r) - ordemEscopo(b.r) || amostra(a.r) - amostra(b.r) || String(a.r.register_tse).localeCompare(String(b.r.register_tse)))
       if (c.length) { hit = c[0].r; mb = `institute+date(±${c[0].dd.toFixed(0)}d)`; nF++ } else nN++
     }
     p.tse_registration = hit ? pack(hit, mb) : null
