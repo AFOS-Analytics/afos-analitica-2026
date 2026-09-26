@@ -50,7 +50,8 @@
     "materia": "tsx scripts/ler-materia.mjs",
     "check:traducao-brz": "node scripts/conferir-traducao-brz.mjs",
     "leaner:usa": "node scripts/efeito-do-leaner-us.mjs",
-    "folga:brz": "node scripts/folga-do-gatilho-brz.mjs"
+    "folga:brz": "node scripts/folga-do-gatilho-brz.mjs",
+    "wayback:precheck": "node scripts/wayback-precheck.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
