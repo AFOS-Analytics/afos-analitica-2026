@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-25",
+  "lastUpdate": "2026-09-26",
   "institutes": [
     {
       "name": "Datafolha",
@@ -3123,162 +3123,10 @@
         }
       ],
       "source": "PoderData/Aya divulgada em 27/Ago por Poder360, Gazeta do Povo, CNN Brasil, Exame, UOL Notícias, CartaCapital, Jornal de Brasília e Pleno.News. Registro TSE BR-04974/2026."
-    },
-    {
-      "institute": "Gerp",
-      "date": "2026-08-26",
-      "scope": "national",
-      "sample": 2400,
-      "margin": 2,
-      "register": "BR-03547/2026",
-      "reliability": 3,
-      "method": "Misto",
-      "fieldDates": "2026-08-21 a 2026-08-25",
-      "note": "Gerp nacional divulgada em 26/Ago, registro BR-03547/2026, com 2.400 entrevistas e margem de 2pp a 95% de confiança, custo de R$ 20.000 com recursos próprios. Conferida em Poder360 e Gazeta do Povo, com o registro batendo nas duas. ⭐ É A PRIMEIRA DA NOSSA TABELA EM QUE FLÁVIO APARECE À FRENTE NO 1º TURNO, com 38% contra 37% de Lula, dentro da margem. A única outra em que ele não estava atrás é a própria Gerp de 11/Ago, que deu empate em 38 a 38. 📊 A COMPARAÇÃO COM A PRÓPRIA CASA: no 2º turno a distância foi de 2 pontos (Flávio 45 x Lula 43, registro BR-08045/2026, campo de 6 a 10/Ago) para 5 pontos agora, e no 1º turno Lula cedeu 1 ponto no mesmo tracker. ⚠️ REGISTRADA NÃO É PUBLICADA, e aqui as duas divergem: o registro no TSE declara campo de 20 a 23/Ago e publicação prevista para 25/Ago, e o instituto divulgou em 26/Ago informando campo de 21 a 25/Ago. A tabela segue o que o instituto publicou, e a divergência fica declarada. 🔀 E ELA SAIU NO MESMO DIA DA INDEXA, EM DIREÇÃO OPOSTA: a Gerp dá Flávio ganhando o 2º turno por 5 e a Indexa dá Lula ganhando por 5, com janelas de campo que se sobrepõem. São 10 pontos de distância entre duas casas sobre a mesma disputa. 📌 O modo de coleta não aparece no trecho do registro que li, e o rótulo \"Misto\" vem do cadastro do instituto, não desta rodada.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado (1º turno)",
-          "results": [
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 38
-            },
-            {
-              "candidate": "Lula (PT)",
-              "percent": 37
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 4
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 3
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 3
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 42,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 47
-        }
-      ],
-      "source": "Gerp, divulgada em 26/Ago/2026 (campo de 21 a 25/Ago segundo o instituto, n=2.400, margem 2,0pp, registro TSE BR-03547/2026, custo R$ 20.000 com recursos próprios). Números conferidos em Poder360 e Gazeta do Povo, com o registro BR-03547/2026 confirmado nas duas, e cruzados com a tabela da Wikipédia de pesquisas presidenciais de 2026."
-    },
-    {
-      "institute": "Indexa/Broadcast",
-      "date": "2026-08-26",
-      "scope": "national",
-      "sample": 2000,
-      "margin": 2.2,
-      "register": "BR-06366/2026",
-      "reliability": 3,
-      "method": "Telefone",
-      "fieldDates": "2026-08-20 a 2026-08-23",
-      "note": "Indexa/Broadcast nacional divulgada em 26/Ago, registro BR-06366/2026, com 2.000 entrevistas individuais por telefone e margem de 2,2pp a 95% de confiança, custo de R$ 164.000. Campo de 20 a 23/Ago, e aqui o registro no TSE e a divulgação BATEM. Conferida em Gazeta do Povo, Money Times e CartaCapital, com o registro batendo. 📊 COMPARAÇÃO COM A PRÓPRIA CASA: a rodada de julho dava Lula 41% e Flávio 31%, e agora dá 39% e 34%, ou seja o vão caiu de 10 para 5 pontos, com Lula cedendo 2 e Flávio ganhando 4. 📌 DOIS CENÁRIOS DE 1º TURNO, e a diferença é Pablo Marçal: sem ele, Lula 39% e Flávio 34%; com ele, Lula 39% e Flávio 33%, e Marçal aparece com 2%. Quatro cenários de 2º turno, todos com Lula à frente: 46 x 41 contra Flávio, 45 x 34 contra Zema, 44 x 38 contra Caiado e 46 x 34 contra Renan Santos. 🔀 SAIU NO MESMO DIA DA GERP, EM DIREÇÃO OPOSTA: a Indexa dá Lula ganhando o 2º turno por 5 e a Gerp dá Flávio ganhando por 5, com janelas de campo sobrepostas. 🆕 O instituto entra hoje no cadastro da tabela, com confiabilidade 3 atribuída por analogia com as casas de porte parecido, e essa nota é editorial e revisável.",
-      "scenarios": [
-        {
-          "name": "Cenário estimulado SEM Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 34
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            },
-            {
-              "candidate": "Augusto Cury (Avante)",
-              "percent": 1
-            }
-          ]
-        },
-        {
-          "name": "Cenário estimulado COM Pablo Marçal (1º turno)",
-          "results": [
-            {
-              "candidate": "Lula (PT)",
-              "percent": 39
-            },
-            {
-              "candidate": "Flávio Bolsonaro (PL)",
-              "percent": 33
-            },
-            {
-              "candidate": "Ronaldo Caiado (PSD)",
-              "percent": 5
-            },
-            {
-              "candidate": "Renan Santos (Missão)",
-              "percent": 4
-            },
-            {
-              "candidate": "Pablo Marçal (PRTB)",
-              "percent": 2
-            },
-            {
-              "candidate": "Romeu Zema (Novo)",
-              "percent": 1
-            }
-          ]
-        }
-      ],
-      "secondRound": [
-        {
-          "matchup": "Lula vs Flávio",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Flávio Bolsonaro",
-          "percent2": 41
-        },
-        {
-          "matchup": "Lula vs Zema",
-          "candidate1": "Lula",
-          "percent1": 45,
-          "candidate2": "Romeu Zema",
-          "percent2": 34
-        },
-        {
-          "matchup": "Lula vs Caiado",
-          "candidate1": "Lula",
-          "percent1": 44,
-          "candidate2": "Ronaldo Caiado",
-          "percent2": 38
-        },
-        {
-          "matchup": "Lula vs Renan Santos",
-          "candidate1": "Lula",
-          "percent1": 46,
-          "candidate2": "Renan Santos",
-          "percent2": 34
-        }
-      ],
-      "source": "Indexa/Broadcast, divulgada em 26/Ago/2026 (campo de 20 a 23/Ago, n=2.000, telefone, margem 2,2pp, registro TSE BR-06366/2026, custo R$ 164.000). Números conferidos em Gazeta do Povo, Money Times e CartaCapital, com o registro BR-06366/2026 confirmado, e cruzados com a tabela da Wikipédia de pesquisas presidenciais de 2026."
     }
   ],
   "approvalData": {
-    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DE APROVAÇÃO DESTE BLOCO SÃO OS DA QUAEST DE 21/Set, registro BR-06004/2026: 44% de aprovação contra 50% de desaprovação, com 6% sem resposta. O painel mantém UMA casa por bloco de propósito, para a série interna não misturar metodologias, e em 24 e 25/Set não houve rodada nova da Quaest. ⚠️ DENTRO DA PRÓPRIA QUAEST A QUEDA PAROU E DEVOLVEU UM PONTO: eram 48% contra 47% em 05/Ago, 46% contra 48% em 14/Ago, 45% contra 48% em 02/Set, 43% contra 50% em 07/Set, 43% contra 50% em 14/Set e agora 44% contra 50%. O ponto de alta está dentro da margem de 2,0pp e a desaprovação não se moveu. ⭐ E A RÉGUA DA AVALIAÇÃO ANDOU NA DIREÇÃO OPOSTA NA MESMA RODADA: a negativa subiu de 38% para 42%, a positiva de 32% para 33% e a regular caiu de 27% para 23%. As duas perguntas medem coisas diferentes e não se somam: aprovar o trabalho do presidente não é o mesmo que avaliar a gestão como positiva. 🔴 A APROVAÇÃO TAMBÉM FOI MEDIDA EM 24/Set PELA DATAFOLHA, PELA ALFA/TMC, PELA FUTURA/100% CIDADES, PELA PALVER E PELA PODERDATA/AYA, E A DISTÂNCIA ENTRE ELAS É MAIOR NA APROVAÇÃO QUE NA DESAPROVAÇÃO: Datafolha com 47% contra 50%, Alfa/TMC com 46% contra 50%, Futura/100% Cidades com 44,2% contra 53,3%, Palver com 44% contra 55% e PoderData/Aya com 41% contra 50% na pergunta sobre a atuação de Lula. São 6 pontos de distância na aprovação e 5 na desaprovação, entre casas que ouviram o mesmo eleitorado na mesma semana. Somando as leituras anteriores da janela, Datafolha de 17/Set com 48% contra 50%, Quaest de 21/Set com 44% contra 50% e AtlasIntel de 23/Set com 45,4% contra 53%, a aprovação medida em oito leituras de sete casas, entre 17 e 24/Set, vai de 41% a 48%. 📌 A Alfa também pergunta se Lula merece ser reeleito, e ali 55% dizem que não contra 43% que apoiam novo mandato, que é outra pergunta e não entra nesta série.",
+    "note": "🏷️ OS NÚMEROS ESTRUTURADOS DE APROVAÇÃO DESTE BLOCO SÃO OS DA QUAEST DE 21/Set, registro BR-06004/2026: 44% de aprovação contra 50% de desaprovação, com 6% sem resposta. O painel mantém UMA casa por bloco de propósito, para a série interna não misturar metodologias, e entre 24 e 26/Set não houve rodada nacional nova da Quaest. ⚠️ DENTRO DA PRÓPRIA QUAEST A QUEDA PAROU E DEVOLVEU UM PONTO: eram 48% contra 47% em 05/Ago, 46% contra 48% em 14/Ago, 45% contra 48% em 02/Set, 43% contra 50% em 07/Set, 43% contra 50% em 14/Set e agora 44% contra 50%. O ponto de alta está dentro da margem de 2,0pp e a desaprovação não se moveu. ⭐ E A RÉGUA DA AVALIAÇÃO ANDOU NA DIREÇÃO OPOSTA NA MESMA RODADA: a negativa subiu de 38% para 42%, a positiva de 32% para 33% e a regular caiu de 27% para 23%. As duas perguntas medem coisas diferentes e não se somam: aprovar o trabalho do presidente não é o mesmo que avaliar a gestão como positiva. 🔴 A APROVAÇÃO TAMBÉM FOI MEDIDA EM 24/Set PELA DATAFOLHA, PELA ALFA/TMC, PELA FUTURA/100% CIDADES, PELA PALVER E PELA PODERDATA/AYA, E A DISTÂNCIA ENTRE ELAS É MAIOR NA APROVAÇÃO QUE NA DESAPROVAÇÃO: Datafolha com 47% contra 50%, Alfa/TMC com 46% contra 50%, Futura/100% Cidades com 44,2% contra 53,3%, Palver com 44% contra 55% e PoderData/Aya com 41% contra 50% na pergunta sobre a atuação de Lula. São 6 pontos de distância na aprovação e 5 na desaprovação, entre casas que ouviram o mesmo eleitorado na mesma semana. Somando as leituras anteriores da janela, Datafolha de 17/Set com 48% contra 50%, Quaest de 21/Set com 44% contra 50% e AtlasIntel de 23/Set com 45,4% contra 53%, a aprovação medida em oito leituras de sete casas, entre 17 e 24/Set, vai de 41% a 48%. 📌 A Alfa também pergunta se Lula merece ser reeleito, e ali 55% dizem que não contra 43% que apoiam novo mandato, que é outra pergunta e não entra nesta série.",
     "source": "Aprovação, desaprovação e avaliação da gestão: Quaest de 21/Set/2026 (campo de 17 a 20/Set, n=2.004 eleitores de 16 anos ou mais, presencial, margem de 2,0pp, 95% de confiança, registro TSE BR-06004/2026, contratada pelo Grupo Globo), divulgada por CNN Brasil, CartaCapital, Poder360 e CBN. A avaliação da gestão deste bloco, 33% positiva, 23% regular e 42% negativa, é da mesma rodada, e o bloco inteiro tem uma data só. Série da própria casa: rodadas de 05/Ago, 14/Ago, 02/Set, 07/Set e 14/Set, já registradas no painel.",
     "date": "2026-09-21",
     "results": {
@@ -3319,30 +3167,30 @@
     "lastUpdate": "24/09/2026, 22:45"
   },
   "polymarketComparison": {
-    "note": "Preços do Polymarket na leitura confirmada de 25/Set, 17:08 BRT, com o livro presidencial somando USD 155,09M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR NADA SE MOVEU DESDE A LEITURA CONFIRMADA DE 24/Set ÀS 22:45 BRT: Flávio Bolsonaro segue em 55,55%, Lula em 43,50% e o vão em 12,05pp, depois de três dias seguidos de fechamento, de 22,40pp em 21/Set para 19,05pp, 18,35pp e 12,05pp. ⚖️ Nos 8 pontos gravados no backup entre as duas leituras, o preço de Flávio Bolsonaro variou de 54,30% a 56,30% e voltou ao mesmo lugar, e o de Lula ficou em 43,50% em todos eles. 🗳️ Nenhuma pesquisa nacional nova saiu em 25/Set, e o lado pesquisa deste grafo segue sendo a Palver de 24/Set. 🥉 No livro de 3º lugar do 1º turno os três principais sobem no cru, Renan Santos 1,50pp, para 45,50%, Augusto Cury 1,10pp, para 41,05%, e Ronaldo Caiado 0,50pp, para 14,50%, mas a soma do livro inteiro passou de 99,25 para 102,25, e normalizado por ela o movimento vai de um ganho de 0,17pp a uma perda de 0,11pp.",
-    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 25/Set, 17:08 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que segue dando a Palver de 24/Set, n=5.000, entre as seis divulgadas naquele dia. A escolha vai declarada no grafo, com casa e data, e a alternativa mais próxima era a PoderData, n=3.000.",
+    "note": "Preços do Polymarket na leitura confirmada de 26/Set, 12:00 BRT, com o livro presidencial somando USD 155,40M acumulados em 19 contratos. NO CONTRATO DE VENCEDOR O VÃO REABRE: Flávio Bolsonaro sobe 0,60pp, para 56,15%, e Lula cede 1,00pp, para 42,50%, contra a leitura confirmada de 25/Set às 17:08 BRT, e o vão vai de 12,05pp para 13,65pp. Como a soma do par caiu de 99,05 para 98,65, o normalizado é de 0,84pp para cada lado. 🗳️ Nenhuma pesquisa nacional nova saiu em 25 e 26/Set, e o lado pesquisa deste grafo segue sendo a Palver de 24/Set. 🥉 No livro de 3º lugar do 1º turno a distância entre Renan Santos, em 45,50%, e Augusto Cury, em 41,35%, fecha de 4,45pp para 4,15pp. 🏛️ E o maior movimento do dia foi no contrato de partido com mais cadeiras no Senado, com o Partido Liberal subindo 3,50pp, para 92,50%.",
+    "sources": "Preços do Polymarket via proxy AFOS, e o painel só publica preço que duas leituras independentes, tomadas com oito minutos de intervalo, confirmem dentro de 0,20pp. A confirmação é feita contrato a contrato, e os preços desta página são todos da leitura confirmada de 26/Set, 12:00 BRT. Ao lado do movimento cru vai o normalizado pela soma do par binário, ou do livro inteiro quando ele tem mais de dois nomes relevantes. Pesquisas registradas no TSE, com protocolo, casa, campo, amostra e método declarados em cada entrada. 🗳️ O lado PESQUISA do grafo de divergência usa UMA nacional, não a média: a régua do painel é a nacional mais recente com desempate pela maior amostra, o que segue dando a Palver de 24/Set, n=5.000, entre as seis divulgadas naquele dia. A escolha vai declarada no grafo, com casa e data, e a alternativa mais próxima era a PoderData, n=3.000.",
     "candidates": [
       {
         "name": "Lula",
         "percentage": 43,
-        "odds": 43.5,
-        "value": 43.5,
-        "polymarket": "43,50%",
+        "odds": 42.5,
+        "value": 42.5,
+        "polymarket": "42,50%",
         "pesquisaRange": "34% a 45,8%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "EMPATA EM 43% COM FLÁVIO BOLSONARO NO 1º TURNO DA PALVER DE 24/Set, campo de 20 a 23/Set e n=5.000, que é a fonte do lado pesquisa deste grafo. ⭐ E AS SEIS NACIONAIS DE 24/Set, QUE SEGUEM AS MAIS RECENTES, NÃO CONCORDAM SOBRE ELE: no 1º turno ele vai de 7 pontos à frente na Alfa/TMC a 2 pontos atrás na Futura, passando por 4 na Datafolha e na Real Time e 2 na PoderData. No 2º turno contra Flávio Bolsonaro ele vai de 47% a 45% na Datafolha, a única que o põe à frente, a 43,7% contra 49,4% na Futura, onde a desvantagem fica fora da margem. 🔑 Medindo cada casa contra a rodada anterior dela mesma, ele ganhou terreno em três (Datafolha, Palver e PoderData) e perdeu em três (Real Time, Futura e Alfa).",
-        "tendenciaPolymarket": "SEGUE EM 43,50% NO CONTRATO DE VENCEDOR (vol USD 12,21M acumulado), sem movimento na leitura confirmada de 25/Set, 17:08 BRT, nem no cru nem no normalizado, e o preço dele ficou em 43,50% em todos os pontos gravados no backup desde a leitura confirmada anterior. O vão contra Flávio Bolsonaro segue em 12,05pp, depois de três dias seguidos de fechamento. ⚠️ Não é extremo: na série gravada desde 14 de abril o preço dele está a 24,00pp do topo, 67,50% de 16/Ago, e a 9,00pp do piso, 34,50% de 25/Abr. No contrato de 2º lugar do 1º turno ele sobe 0,85pp no cru e 0,89pp no normalizado, para 25,35%."
+        "tendenciaPolymarket": "CEDE 1,00pp NO CONTRATO DE VENCEDOR, para 42,50% (vol USD 12,33M acumulado), leitura confirmada de 26/Set, 12:00 BRT, e 0,84pp no normalizado, porque a soma do par caiu de 99,05 para 98,65. O vão contra Flávio Bolsonaro reabre de 12,05pp para 13,65pp. ⚠️ Não é extremo: na série gravada desde 14 de abril o preço dele está a 25,00pp do topo, 67,50% de 16/Ago, e a 8,00pp do piso, 34,50% de 25/Abr. No contrato de 2º lugar do 1º turno ele cede 0,90pp no cru e 0,68pp no normalizado, para 24,45%."
       },
       {
         "name": "Flávio Bolsonaro",
         "percentage": 43,
-        "odds": 55.55,
-        "value": 55.55,
-        "polymarket": "55,55%",
+        "odds": 56.15,
+        "value": 56.15,
+        "polymarket": "56,15%",
         "pesquisaRange": "29% a 43,4%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "EMPATA EM 43% COM LULA NO 1º TURNO DA PALVER DE 24/Set, campo de 20 a 23/Set e n=5.000, fonte do lado pesquisa deste grafo, depois de liderar por 42% a 41% na rodada da casa de 21/Set. ⭐ NAS SEIS NACIONAIS DE 24/Set ELE LIDERA O 1º TURNO EM UMA, a Futura, por 40,4% a 38,4%, e no 2º turno lidera em quatro das seis: 49,4% a 43,7% na Futura, 48% a 45% na Palver, 46% a 45% na PoderData e 45% a 44% na Real Time, com empate em 43% na Alfa e derrota por 45% a 47% na Datafolha. 📌 A vantagem da Futura, de 5,7 pontos, é a única das seis que fica fora da margem daquela pesquisa, e não é a primeira vez na base: das 34 leituras de 2º turno entre os dois já registradas, 11 ficaram fora da margem e 8 delas favoreciam ele.",
-        "tendenciaPolymarket": "SEGUE EM 55,55% NO CONTRATO DE VENCEDOR (vol USD 11,83M acumulado), sem movimento na leitura confirmada de 25/Set, 17:08 BRT, nem no cru nem no normalizado, mas não parado: nos pontos gravados no backup entre as duas leituras confirmadas o preço dele variou de 54,30% a 56,30%. O vão sobre Lula segue em 12,05pp, depois de fechar de 22,40pp em 21/Set para 19,05pp, 18,35pp e 12,05pp. Na série gravada desde 14 de abril o preço dele está a 6,15pp do topo, 61,70% de 21/Set, e a 33,55pp do piso, 22,00% de 03/Jul. No contrato de 2º lugar do 1º turno ele cede 1,00pp no cru e 0,89pp no normalizado, para 74,50%, num contrato que acumula USD 1,16M."
+        "tendenciaPolymarket": "SOBE 0,60pp NO CONTRATO DE VENCEDOR, para 56,15% (vol USD 11,91M acumulado), leitura confirmada de 26/Set, 12:00 BRT, e 0,84pp no normalizado. O vão sobre Lula reabre de 12,05pp para 13,65pp, a primeira abertura entre leituras confirmadas desde 21/Set. Na série gravada desde 14 de abril o preço dele está a 5,55pp do topo, 61,70% de 21/Set, e a 34,15pp do piso, 22,00% de 03/Jul. No contrato de 2º lugar do 1º turno segue em 74,50%, num contrato que acumula USD 1,16M, com alta de 0,68pp no normalizado porque a soma daquele par caiu de 99,85 para 98,95."
       },
       {
         "name": "Augusto Cury",
@@ -3351,20 +3199,20 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 12,2%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "TEM 2% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e as seis nacionais de 24/Set o medem de 2% a 6%: 6% na Alfa, na PoderData e na Real Time, 5,6% na Futura, 5% na Datafolha e 2% na Palver. 🔑 E A PODERDATA O TESTA NUM PAR QUE CONTRARIA A ORDEM DO 1º TURNO: ele vence Lula por 45% a 42%, o mesmo placar da rodada da casa de 17/Set.",
-        "tendenciaPolymarket": "SOBE 1,10pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 41,05%, num contrato que acumula USD 0,28M, mas cede 0,11pp no normalizado, porque a soma daquele livro passou de 99,25 para 102,25. A distância para Renan Santos abre de 4,05pp para 4,45pp no cru. No contrato de vencedor segue no piso do livro, 0,05%."
+        "tendenciaPolymarket": "SOBE 0,30pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 41,35%, num contrato que acumula USD 0,28M, e 0,06pp no normalizado, porque a soma daquele livro passou de 102,25 para 102,85. A distância para Renan Santos fecha de 4,45pp para 4,15pp no cru. No contrato de vencedor segue no piso do livro, 0,05%."
       },
       {
         "name": "Renan Santos",
         "percentage": 8,
-        "odds": 0.7,
-        "value": 0.7,
-        "polymarket": "0,70%",
+        "odds": 0.45,
+        "value": 0.45,
+        "polymarket": "0,45%",
         "pesquisaRange": "2% a 11%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "TEM 8% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e cede 3 pontos contra a rodada da casa de 21/Set, que media 11%. ⚠️ AS SEIS NACIONAIS DO MESMO DIA 24/Set O MEDEM DE 8% NA PALVER A 2,4% NA FUTURA, com 6% na Real Time e 3% na Datafolha e na PoderData: os 8% da Palver são mais de três vezes os 2,4% da Futura, e como as seis saíram no mesmo dia essa distância não pode ser atribuída a calendário.",
-        "tendenciaPolymarket": "SOBE 1,50pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 45,50%, num contrato que acumula USD 0,41M, e só 0,17pp no normalizado, porque a soma daquele livro passou de 99,25 para 102,25. No de vencedor sobe 0,15pp, para 0,70%. 🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial, USD 14,44M contra USD 14,10M do de Tarcísio de Freitas. E no livro de 2º lugar acontece o mesmo: o contrato dele tem USD 1,36M acumulados, acima dos USD 1,16M do de Flávio Bolsonaro, que paga 74,50% ali."
+        "tendenciaPolymarket": "PARADO EM 45,50% NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, num contrato que acumula USD 0,41M, e com queda de 0,26pp no normalizado, porque a soma daquele livro passou de 102,25 para 102,85. A dianteira sobre Augusto Cury fecha de 4,45pp para 4,15pp. No de vencedor cede 0,25pp, para 0,45%, abaixo de todos os pontos gravados na série até 25/Set, cujo menor era 0,60% de 24/Set. 🏆 O contrato dele no livro de vencedor segue sendo o de MAIOR volume acumulado do presidencial, USD 14,48M contra USD 14,10M do de Tarcísio de Freitas, e no livro de 2º lugar acontece o mesmo: USD 1,37M acumulados, acima dos USD 1,16M do de Flávio Bolsonaro, que paga 74,50% ali."
       },
       {
         "name": "Ronaldo Caiado",
@@ -3373,9 +3221,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 5,7%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "TEM 1% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e nas seis nacionais de 24/Set ele vai de 1% a 5,7%. ⭐ NA FUTURA ELE SUBIU DE 4,5% PARA 5,7% E PASSOU AUGUSTO CURY, e nos pares de 2º turno daquela casa ele vence Lula por 46,5% a 42,4%. Na Alfa e na Palver ele fica a 1 e 2 pontos de Lula no par direto.",
-        "tendenciaPolymarket": "SOBE 0,50pp NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 14,50%, num contrato que acumula USD 0,17M, e 0,08pp no normalizado, porque a soma daquele livro passou de 99,25 para 102,25. Mantém a terceira posição do livro. No contrato de vencedor segue em 0,05%."
+        "tendenciaPolymarket": "SEGUE EM 14,50% NO CRU NO CONTRATO DE 3º LUGAR DO 1º TURNO, num contrato que acumula USD 0,17M, e cede 0,08pp no normalizado, porque a soma daquele livro passou de 102,25 para 102,85. Mantém a terceira posição do livro. No contrato de vencedor segue em 0,05%."
       },
       {
         "name": "Pablo Marçal",
@@ -3384,7 +3232,7 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "1% a 4%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "Fora dos cenários estimulados das seis nacionais de 24/Set, depois do indeferimento do registro de candidatura em 11/Set.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor. O registro de candidatura dele foi indeferido pelo Tribunal Superior Eleitoral em 11/Set."
       },
@@ -3395,9 +3243,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "0,3% a 2,8%",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "TEM 1% NO 1º TURNO DA PALVER DE 24/Set, fonte do lado pesquisa deste grafo, e nas seis nacionais de 24/Set ele vai de 0,9% a 1%. ⭐ E O PAR DE 2º TURNO DELE FICOU APERTADO EM DUAS CASAS: a Futura o põe à frente de Lula por 43,8% a 43,3% e a Palver o põe atrás por 43% a 45%, as duas dentro da margem.",
-        "tendenciaPolymarket": "SEGUE EM 0,35% NO CONTRATO DE 3º LUGAR DO 1º TURNO, sem movimento, num contrato que acumula USD 0,08M. No de vencedor está em 0,05%."
+        "tendenciaPolymarket": "SOBE 0,30pp NO CONTRATO DE 3º LUGAR DO 1º TURNO, para 0,65%, num contrato que acumula USD 0,09M, e 0,29pp no normalizado. No de vencedor está em 0,05%."
       },
       {
         "name": "Tarcísio",
@@ -3406,9 +3254,9 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "As seis nacionais divulgadas em 24/Set não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
-        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,10M acumulados, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 14,44M."
+        "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 14,10M acumulados, e o contrato dele continua atrás do de Renan Santos em volume acumulado no livro presidencial, que tem USD 14,48M."
       },
       {
         "name": "Fernando Haddad",
@@ -3417,12 +3265,12 @@
         "value": 0.05,
         "polymarket": "0,05%",
         "pesquisaRange": "não testado",
-        "lastUpdate": "25/09/2026, 17:08",
+        "lastUpdate": "26/09/2026, 12:00",
         "tendenciaPesquisa": "As seis nacionais divulgadas em 24/Set não o incluem em cenário presidencial de 1º turno nem em par de 2º turno.",
         "tendenciaPolymarket": "Segue em 0,05% no contrato de vencedor, com USD 7,55M acumulados."
       }
     ],
-    "updatedAt": "25/09/2026, 17:08",
+    "updatedAt": "26/09/2026, 12:00",
     "lastUpdate": "25/09/2026, 17:08",
     "pollSource": {
       "pollster": "Palver",
