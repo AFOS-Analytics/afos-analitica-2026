@@ -45,6 +45,14 @@ node scripts/semana-do-contrato.mjs --slug=brazil-presidential-election --de=...
 
 🔑 **A convenção que as edições do Brasil usam, e que o script reproduz:** o valor publicado é o **fechamento de sexta**, o caminho são os **cinco fechamentos diários** e o Δ é **sexta menos segunda**. Conferido em 21/Set contra a №17, que bate no fechamento, no Δ, no caminho e nos três volumes.
 
+### ⚖️ O VÃO pareado e o ranking da semana, criado em 27/Set/2026
+
+```bash
+node scripts/vao-da-semana-brz.mjs --de=2026-09-21 --ate=2026-09-25
+```
+
+O `semana-do-contrato` dá cada lado sozinho, e **o topo do vão não é o topo de um lado menos o piso do outro**: os extremos acontecem em instantes diferentes. Este cruza Flávio e Lula no MESMO carimbo e devolve o caminho dos fechamentos, o piso e o topo intradiários do vão com a hora, o ranking do Δ entre TODAS as semanas seg-sex com ≥4 pregões (por módulo e por sinal) e se o topo ou o piso da janela bate a série inteira (🏆). Calibrado contra a №18: fechamentos, piso de 1.60pp às 12h30Z, Δ +7.60pp e "sexto maior" batem. Na №19 ele achou o topo de **23.80pp às 18h00Z de 21/Set, o maior da série pareada**, que nenhum dos dois lados sozinhos mostrava.
+
 ⛔ **E fechamento diário ESCONDE topo e piso.** Na №17 o piso de Lula saiu como 43.50%, que é o fechamento de quinta, e o piso intradiário da semana era **40.50%** na manhã de sexta. Quando a frase for de extremo, usar o piso e o topo que o script imprime, não o fechamento. → `memory/feedback_fechamento_do_dia_esconde_topo_e_piso.md`
 
 
@@ -252,6 +260,7 @@ NÃO executar commit/push/deploy prod automaticamente. Aguardar mensagem explíc
   Conferir depois que nenhum separador de milhar virou decimal (`grep -o "n=[0-9.]*\|USD [0-9][0-9.]*"`). Conferir também colunas de tabela, que já esconderam separador errado.
 - URLs, protocolos TSE e slugs de mercado não mudam entre idiomas.
 - **Gate numérico obrigatório:** todo número seguido de unidade (`%`, `pp`, `M`, `mil`/`thousand`) tem que dar multiconjunto idêntico nos três idiomas, normalizado pela convenção de cada um. Divergiu, corrigir antes de publicar.
+  🚀 **Desde 27/Set/2026 é um comando:** `node scripts/gate-traducao-tradeoff.mjs AAAA-MM-DD`. Até a №18 a conta era avulsa. Ele compara %, pp, M, pontos, `n=` sem separador e "USD N mil/thousand", e REPROVA vírgula decimal, travessão e milhar em ponto no EN. Calibrado na №18 (146 números iguais) e limpo na №19 (179). ⚠️ Não vê valor em bilhão.
 - Conferir também: nenhuma âncora de glossário inexistente, nenhum link apontando para outro locale, nenhum homóglifo cirílico.
 
 2. **Flip status:draft → published nos 3 locales de uma vez:**
