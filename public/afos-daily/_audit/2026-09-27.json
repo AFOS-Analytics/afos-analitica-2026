@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-27",
+  "generatedAt": "2026-09-27T17:00:00Z",
+  "refetch": {
+    "fetchedAt": "2026-09-27T16:21:57Z",
+    "certificada": "2026-09-27T15:47:08Z",
+    "gate": "nao disparou: vencedor, 3o lugar (Renan) e STF identicos; Cury e Lula no 2o lugar +0,05pp; volume USD 155,76M -> 155,77M"
+  },
+  "factCheck": [
+    { "evento": "Liminar de Nunes Marques suspende jingle 'Foi o Flavio Bolsonaro'", "dataDoAto": "2026-09-22", "publico": "2026-09-26", "fontes": ["UOL/Agencia Estado, 26/09 22h09, corpo lido", "CartaCapital, corpo lido"], "decisao": "incorporar com as duas datas" },
+    { "evento": "Flavio Dino (STF) derruba ordem de Andre Mendonca (TSE) sobre post de Antonio Tabet e manda restabelecer publicacoes", "dataDoAto": "2026-09-27", "tipo": "monocratica, Reclamacao 95.295", "fontes": ["Jovem Pan 27/09 13h01", "Brasil 247 27/09 13h10"], "decisao": "incorporar" },
+    { "evento": "Campanha de Flavio apresenta noticia-crime pedindo prisao preventiva de coordenador da Secom", "dataDoAto": "2026-09-25", "fontes": ["Folha, corpo lido", "Estadao, manchete do cache"], "decisao": "incorporar como PEDIDO; juiz nao deliberou, remeteu ao juiz de garantias" },
+    { "evento": "TSE muda sistema PesqEle (audio, video, imagem e ordem das perguntas)", "dataDoAto": "sem data de assinatura no corpo; informado em 2026-09-26", "fontes": ["BOL/UOL com Estadao Conteudo 26/09 14h49", "O Senadinho 26/09 12h37"], "decisao": "incorporar na forma estreita 'o TSE informou em 26/Set'" },
+    { "evento": "Quaest RS (Flavio 35 x Lula 31)", "nota": "manchete de 27/Set, corpo da GZH diz divulgada em 24/Set", "decisao": "NAO incorporar como nova" }
+  ],
+  "adversarial": {
+    "singleSource": ["contagem estadual do UOL (atribuida)", "protesto da campanha de Renan Santos (Folha, Painel)"],
+    "numerical": "reconcile-claims: 3 divergencias, todas falsos positivos (Quaest PA, faixa de inflacao, proximidade Renan/Cury)",
+    "fontesInventadas": "nenhuma; 17 links resolvidos pelo daily-links-brz, 71% secundario",
+    "quotes": "'atitude muito drastica' (G1), 'pai do Tigrinho' (Folha), 'Foi o Flavio Bolsonaro' (UOL)",
+    "causacao": "nenhuma; debate da Globo sem Renan e a troca no 3o lugar NAO foram ligados",
+    "verbos": "liminar, monocratica, pede prisao",
+    "decisao": "prosseguir"
+  },
+  "omissoes": ["Senado: livro bloqueado nas duas passadas da trava e fora dos textos do painel; a daily segue o painel e nao publica preco", "Gerp BR-03929 registrada para 27/Set sem numero ate 13h: nao citada"]
+}
