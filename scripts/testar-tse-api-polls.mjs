@@ -16,6 +16,10 @@ import {
   diaInteiro,
   divulgamHoje,
   folgaDoGatilho,
+  LIMITE_PEDIDO,
+  bordaDaResposta,
+  tetoDaResposta,
+  urlApiPolls,
 } from './lib/tse-api-polls.mjs'
 
 let passou = 0
@@ -141,6 +145,28 @@ ok('diaInteiro com dia malformado lança', lanca(() => diaInteiro('ontem', null)
   ok('folga: borda EM hoje vira PISO', c.exata === false && c.folga === 0)
   ok('folga: sem linhas lança', lanca(() => folgaDoGatilho([], HOJE)))
   ok('folga: hoje malformado lança', lanca(() => folgaDoGatilho(base, '16/09')))
+}
+
+
+// 📏 27/Set/2026: a rota declara limit, total real e truncated. O teto e o corte
+// saem DA RESPOSTA, e a rota antiga (sem os campos) cai na regra do 200.
+{
+  console.log('\n🧪 TETO E CORTE LIDOS DA RESPOSTA\n')
+  ok('url pede o limite', urlApiPolls('https://x', 15) === `https://x/api/polls/tse?days=15&limit=${LIMITE_PEDIDO}`)
+  const antiga = { total: 200, polls: muitas(200, HOJE) }
+  ok('🔴 rota ANTIGA, 200 linhas sem campo: teto é 200', tetoDaResposta(antiga) === 200)
+  ok('🔴 rota ANTIGA, 200 linhas: sai CORTADA, nunca inteira', bordaDaResposta(antiga, antiga.polls) === HOJE)
+  const nova = { total: 369, returned: 369, limit: 1000, truncated: false, polls: muitas(369, HOJE) }
+  ok('rota nova: teto é o limit declarado', tetoDaResposta(nova) === 1000)
+  ok('rota nova sem corte: janela inteira', bordaDaResposta(nova, nova.polls) === null)
+  const exata = { total: 1000, limit: 1000, truncated: false, polls: muitas(1000, HOJE) }
+  ok('exatamente no limite e truncated=false: inteira (a regra antiga diria cortada)', bordaDaResposta(exata, exata.polls) === null)
+  const cortada = { total: 1500, limit: 1000, truncated: true, polls: [reg('A', '2026-09-03'), reg('B', HOJE)] }
+  ok('truncated=true: borda é a menor data servida', bordaDaResposta(cortada, cortada.polls) === '2026-09-03')
+  ok('truncated=true sem data legível: nada é inteiro', bordaDaResposta({ truncated: true }, [{}]) === '9999-12-31')
+  ok('limit inválido cai no 200', tetoDaResposta({ limit: 'mil' }) === 200 && tetoDaResposta({ limit: 0 }) === 200)
+  const f = folgaDoGatilho(nova.polls, HOJE, tetoDaResposta(nova))
+  ok('folga com o teto da resposta: 1000 - 369', f.folga === 631 && f.exata === true)
 }
 
 console.log(`\n${falhou === 0 ? '✅' : '❌'} ${passou} passaram, ${falhou} falharam\n`)

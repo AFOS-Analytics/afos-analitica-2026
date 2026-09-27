@@ -19,6 +19,7 @@
 
 import { readdirSync, readFileSync } from 'node:fs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
+import { bordaDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { medirCobertura } from './lib/cobertura-imprensa-brz.mjs'
 
@@ -31,11 +32,11 @@ const hoje = dataCivilBrasil()
 let nacionais
 let cortada = false
 try {
-  const r = await fetch(`${baseDeLeitura()}/api/polls/tse?days=30`, { signal: AbortSignal.timeout(25000) })
+  const r = await fetch(urlApiPolls(baseDeLeitura(), 30), { signal: AbortSignal.timeout(25000) })
   if (!r.ok) throw new Error(`HTTP ${r.status}`)
   const j = await r.json()
   const linhas = j.polls ?? []
-  cortada = linhas.length >= 200
+  cortada = bordaDaResposta(j, linhas) !== null
   const borda = new Date(hoje)
   borda.setUTCDate(borda.getUTCDate() - dias)
   const limite = borda.toISOString().slice(0, 10)

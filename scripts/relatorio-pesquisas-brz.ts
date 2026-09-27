@@ -38,7 +38,7 @@ config({ path: '.env' })
 
 import { fetchTSEPolls } from '../lib/tse/ingest'
 import { acharCpf } from './lib/cpf.mjs'
-import { TETO_API_POLLS, bordaDoCorte, divulgamHoje, folgaDoGatilho } from './lib/tse-api-polls.mjs'
+import { bordaDaResposta, divulgamHoje, folgaDoGatilho, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { datasDeHoje } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 import { divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
@@ -103,14 +103,14 @@ async function main() {
   }
 
   // ── Passo 4a: a API de pesquisas ────────────────────────────────────────────
-  const api = await json(`${BASE}/api/polls/tse?days=${dias}`)
+  const api = await json(urlApiPolls(BASE, dias))
   const polls: Poll[] = api.polls
   if (!Array.isArray(polls) || polls.length === 0) {
     falhar('a API devolveu zero linhas. Sem linhas não há relatório, e este zero não é medição.')
     process.exit(1)
   }
   const ingestaoMaisNova = polls.map((p) => String(p.ingestedAt ?? '')).sort().at(-1) ?? '?'
-  console.log(`\n📡 API: ${polls.length} linha(s), total declarado ${api.total}`)
+  console.log(`\n📡 API: ${polls.length} linha(s), total declarado ${api.total}${typeof api.truncated === 'boolean' ? `, limite ${api.limit}, cortada: ${api.truncated ? 'SIM' : 'não'}` : ' (rota sem total real: o total é só o que veio)'}`)
   console.log(`   ingestão mais recente na resposta: ${ingestaoMaisNova}`)
   if (ingestaoMaisNova.slice(0, 10) < HOJE) {
     /**
@@ -155,17 +155,18 @@ async function main() {
    * tinha 351 linhas e a API serviu 200, cortando as divulgações mais antigas.
    * O corte tem borda, e é ela que diz qual bloco abaixo continua inteiro.
    */
-  const borda = bordaDoCorte(polls)
+  const TETO = tetoDaResposta(api)
+  const borda = bordaDaResposta(api, polls)
   if (borda === null) {
-    console.log(`   ✅ abaixo do teto de ${TETO_API_POLLS} linhas da rota: a janela veio inteira`)
+    console.log(`   ✅ abaixo do teto de ${TETO} linhas da rota: a janela veio inteira`)
   } else {
-    console.log(`   🔴 NO TETO de ${TETO_API_POLLS} linhas: a rota corta calada, e o "total" é só o tamanho do que veio.`)
+    console.log(`   🔴 NO TETO de ${TETO} linhas: a janela tem mais do que a rota serviu.`)
     console.log(`      Divulgações até ${borda}, inclusive, podem estar INCOMPLETAS.`)
   }
   // 📈 Desde 16/Set/2026, quando o corte chegou à janela padrão: quanto falta
   // para ele alcançar HOJE, que é quando o gatilho 📣 deixa de ser confiável.
   if (polls.length > 0) {
-    const f = folgaDoGatilho(polls, HOJE)
+    const f = folgaDoGatilho(polls, HOJE, TETO)
     const alerta = f.aFrente >= f.teto * 0.75 ? '🔴' : '📏'
     console.log(
       `   ${alerta} folga do gatilho: ${f.aFrente}${f.exata ? '' : ' (PISO)'} linha(s) com divulgação de ${HOJE} em diante, de ${f.teto}.` +

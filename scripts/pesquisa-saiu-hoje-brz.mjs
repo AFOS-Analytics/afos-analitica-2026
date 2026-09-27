@@ -29,6 +29,7 @@ import { readFileSync, existsSync } from 'node:fs'
 import { CASAS_BRZ, casaDoRegistro } from './lib/cobertura-imprensa-brz.mjs'
 import { dataCivilBrasil, datasDeHoje } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
+import { urlApiPolls } from './lib/tse-api-polls.mjs'
 import { medirSaida, separarFantasmas, divulgacaoAntesDoCampo, normalizarProtocolo as normProto } from '../lib/tse/saiu-hoje-brz.mjs'
 
 const argv = process.argv.slice(2)
@@ -45,7 +46,7 @@ if (d.diverge && !valor('data')) {
 // ── 1. o que foi PROMETIDO: nacionais da janela, pela rota ───────────────────
 let servidas
 try {
-  const r = await fetch(`${baseDeLeitura()}/api/polls/tse?days=${DIAS}`, { signal: AbortSignal.timeout(45_000) })
+  const r = await fetch(urlApiPolls(baseDeLeitura(), DIAS), { signal: AbortSignal.timeout(45_000) })
   if (!r.ok) throw new Error(`HTTP ${r.status}`)
   const j = await r.json()
   servidas = j.findings ?? j.polls ?? j.items ?? []

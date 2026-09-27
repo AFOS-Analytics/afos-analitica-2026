@@ -29,7 +29,7 @@
  */
 
 import { readFileSync, existsSync } from 'node:fs'
-import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
+import { bordaDaResposta, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 import { divulgacaoAntesDoCampo } from '../lib/tse/saiu-hoje-brz.mjs'
@@ -134,22 +134,23 @@ const T = {
 
 const t = T[locale] || T['pt-BR']
 
-const res = await fetch(`${baseDeLeitura()}/api/polls/tse?days=${Math.max(10, dias + 3)}`, {
+const res = await fetch(urlApiPolls(baseDeLeitura(), Math.max(10, dias + 3)), {
   signal: AbortSignal.timeout(30000),
 })
 if (!res.ok) {
   console.error(`❌ a API devolveu ${res.status}. Tabela NÃO gerada, e não se digita à mão.`)
   process.exit(1)
 }
-const { polls = [] } = await res.json()
+const resposta = await res.json()
+const polls = resposta.polls ?? []
 
 // 🔴 A rota para em 200 linhas por divulgação decrescente e diz "total" igual ao
 // que serviu (medido em 14/Set/2026: 351 na janela de 30d, 200 servidas). O corte
 // come as datas MAIS ANTIGAS primeiro, e esta tabela só olha para depois de hoje,
 // então ela só quebra quando a borda do corte passa de hoje.
-const borda = bordaDoCorte(polls)
+const borda = bordaDaResposta(resposta, polls)
 if (borda !== null && borda > hoje) {
-  console.error(`❌ a API parou no teto de ${TETO_API_POLLS} linhas e o corte alcança ${borda}, dentro da janela. Tabela NÃO gerada.`)
+  console.error(`❌ a API parou no teto de ${tetoDaResposta(resposta)} linhas e o corte alcança ${borda}, dentro da janela. Tabela NÃO gerada.`)
   process.exit(1)
 }
 

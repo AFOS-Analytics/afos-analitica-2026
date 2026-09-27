@@ -29,8 +29,48 @@
  *    `scripts/testar-tse-api-polls.mjs`.
  */
 
-/** O `take` de `app/api/polls/tse/route.ts`. Se a rota mudar, muda aqui. */
+/** O `take` PADRÃO de `app/api/polls/tse/route.ts`, o que ela serve sem `?limit=`. */
 export const TETO_API_POLLS = 200
+
+/**
+ * 📏 27/Set/2026: a rota passou a aceitar `?limit=` (teto 1.000) e a declarar
+ * `limit`, `total` REAL (por count) e `truncated`. Decisão do André, no dia em
+ * que a folga do gatilho caiu de 67 para 19 e a projeção foi a ~30/Set, antes
+ * do 1º turno. O padrão público continua 200: quem pede mais são os leitores.
+ */
+export const LIMITE_PEDIDO = 1000
+
+/** A URL que os leitores internos usam: sempre com o limite declarado. */
+export function urlApiPolls(base, dias) {
+  return `${base}/api/polls/tse?days=${dias}&limit=${LIMITE_PEDIDO}`
+}
+
+/**
+ * O teto que valeu PARA ESTA resposta.
+ *
+ * 🔴 Não é a constante: é o que a rota declarou. Se os leitores pedissem 1.000
+ *    contra uma rota que ainda serve 200 e comparassem com 1.000, 200 linhas
+ *    pareceriam "abaixo do teto, janela inteira", em silêncio. Sem o campo, a
+ *    resposta é da rota antiga e o teto é o 200 de sempre.
+ */
+export function tetoDaResposta(resposta) {
+  const l = resposta?.limit
+  return Number.isInteger(l) && l > 0 ? l : TETO_API_POLLS
+}
+
+/**
+ * Onde o corte pegou ESTA resposta. Usa o `truncated` declarado quando a rota o
+ * traz (é o único que distingue "exatamente no teto" de "cortada"); sem ele,
+ * cai na regra de sempre, linhas contra o teto.
+ */
+export function bordaDaResposta(resposta, linhas) {
+  if (typeof resposta?.truncated === 'boolean') {
+    if (!resposta.truncated) return null
+    const datas = (linhas ?? []).map(dataDeDivulgacao).filter(Boolean).sort()
+    return datas.length ? datas[0] : '9999-12-31'
+  }
+  return bordaDoCorte(linhas, tetoDaResposta(resposta))
+}
 
 const ISO_DIA = /^\d{4}-\d{2}-\d{2}$/
 

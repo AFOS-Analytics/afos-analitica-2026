@@ -41,7 +41,7 @@
 import { appendFileSync, existsSync, readFileSync, mkdirSync } from 'node:fs'
 import { dirname } from 'node:path'
 import { dataCivilBrasil, datasDeHoje } from './lib/data-civil-brz.mjs'
-import { folgaDoGatilho } from './lib/tse-api-polls.mjs'
+import { folgaDoGatilho, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 
 const argv = process.argv.slice(2)
@@ -59,18 +59,20 @@ if (d.diverge && !valor('data')) {
 
 // ── 1. medir ────────────────────────────────────────────────────────────────
 let linhas
+let teto
 try {
-  const r = await fetch(`${baseDeLeitura()}/api/polls/tse?days=${DIAS}`, { signal: AbortSignal.timeout(45_000) })
+  const r = await fetch(urlApiPolls(baseDeLeitura(), DIAS), { signal: AbortSignal.timeout(45_000) })
   if (!r.ok) throw new Error(`HTTP ${r.status}`)
   const j = await r.json()
   linhas = j.findings ?? j.polls ?? j.items ?? []
+  teto = tetoDaResposta(j)
 } catch (e) {
   console.error(`\n❌ NAO LEU a rota de pesquisas: ${e.message}`)
   console.error(`   ⛔ Isto NAO e "o gatilho esta folgado": e o medidor declarando que nao mediu.`)
   process.exit(4)
 }
 
-const f = folgaDoGatilho(linhas, HOJE)
+const f = folgaDoGatilho(linhas, HOJE, teto)
 const noTeto = linhas.length >= f.teto
 console.log(`   ${linhas.length} linha(s) servidas, teto ${f.teto}${noTeto ? ' · 🔴 NO TETO' : ' · abaixo do teto'}`)
 console.log(`   ${f.aFrente}${f.exata ? '' : ' (PISO)'} linha(s) com divulgação de ${HOJE} em diante · folga ${f.folga}`)
@@ -121,7 +123,7 @@ console.log('')
 console.log(`   📓 ${serie.length} dia(s) na série${semRegistro ? ' (--sem-registro: o de hoje não foi gravado)' : ''}`)
 for (const o of serie.slice(-6)) {
   const marca = o.fonte === 'medido' ? ' ' : '📎'
-  console.log(`   ${marca} ${o.dia}  a frente ${String(o.aFrente).padStart(3)}  folga ${String(o.folga).padStart(3)}${o.fonte === 'medido' ? '' : `  (${o.fonte})`}`)
+  console.log(`   ${marca} ${o.dia}  a frente ${String(o.aFrente).padStart(3)}  folga ${String(o.folga).padStart(3)}  teto ${String(o.teto ?? 200).padStart(4)}${o.fonte === 'medido' ? '' : `  (${o.fonte})`}`)
 }
 
 // ── 4. a projeção, e ela se RECUSA sobre um ponto só ────────────────────────

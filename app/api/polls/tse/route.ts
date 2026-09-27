@@ -61,19 +61,30 @@ export async function GET(request: Request) {
   const days = Number.isFinite(daysRaw) && daysRaw > 0 ? Math.min(daysRaw, 365) : 15
   // Cap institute filter at 100 chars to bound Prisma query input.
   const institute = searchParams.get('institute')?.trim().slice(0, 100)
+  // 📏 27/Set/2026: `?limit=` com teto 1.000. O padrão continua 200, então quem
+  //    já consome a rota recebe o mesmo de antes. Antes daqui o `total` era o
+  //    tamanho do que veio e nunca acusava corte: com 369 linhas na janela de 15
+  //    dias a rota servia 200 e dizia "total 200", e o gatilho de "divulga hoje"
+  //    ficaria cego perto do 1º turno. Agora `total` é o que EXISTE, e
+  //    `truncated` diz se a resposta ficou menor que isso.
+  const limitRaw = Number(searchParams.get('limit'))
+  const limit = Number.isInteger(limitRaw) && limitRaw > 0 ? Math.min(limitRaw, 1000) : 200
 
   try {
     const since = new Date()
     since.setDate(since.getDate() - days)
 
+    const where = {
+      countryCode: 'BRA',
+      createdAt: { gte: since },
+      ...(institute ? {
+        source: { name: { startsWith: institute, mode: 'insensitive' as const } },
+      } : {}),
+    }
+    const total = await prisma.researchFinding.count({ where })
+
     const findings = await prisma.researchFinding.findMany({
-      where: {
-        countryCode: 'BRA',
-        createdAt: { gte: since },
-        ...(institute ? {
-          source: { name: { startsWith: institute, mode: 'insensitive' } },
-        } : {}),
-      },
+      where,
       select: {
         title: true,
         normalizedPayload: true,
@@ -83,11 +94,14 @@ export async function GET(request: Request) {
         source: { select: { name: true, credibilityScore: true } },
       },
       orderBy: { eventDate: 'desc' },
-      take: 200,
+      take: limit,
     })
 
     return NextResponse.json({
-      total: findings.length,
+      total,
+      returned: findings.length,
+      limit,
+      truncated: findings.length < total,
       days,
       polls: findings.map(f => ({
         protocolo: f.title,

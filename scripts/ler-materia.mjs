@@ -32,6 +32,7 @@
 import { readFileSync } from 'node:fs'
 import { UA_NAVEGADOR, resolverGoogleNews } from './lib/resolver-gnews.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
+import { urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 
 const argv = process.argv.slice(2)
@@ -158,7 +159,7 @@ function normalizarProtocolo(s) {
 async function consultarBase(protocolos) {
   if (protocolos.length === 0 || tem('sem-base')) return null
   try {
-    const r = await fetch(`${baseDeLeitura()}/api/polls/tse?days=30`, { signal: AbortSignal.timeout(20000) })
+    const r = await fetch(urlApiPolls(baseDeLeitura(), 30), { signal: AbortSignal.timeout(20000) })
     if (!r.ok) return { erro: `HTTP ${r.status}` }
     const j = await r.json()
     const linhas = j.polls ?? []

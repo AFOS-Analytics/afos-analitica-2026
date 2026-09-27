@@ -39,7 +39,7 @@
 
 import { readFileSync } from 'fs'
 import { chaveDaCasa, conferirEscopoDerivado } from '../lib/tse/poder-discriminante.mjs'
-import { TETO_API_POLLS, bordaDoCorte } from './lib/tse-api-polls.mjs'
+import { bordaDaResposta, tetoDaResposta, urlApiPolls } from './lib/tse-api-polls.mjs'
 import { dataCivilBrasil } from './lib/data-civil-brz.mjs'
 import { baseDeLeitura } from './lib/base-afos.mjs'
 
@@ -133,16 +133,17 @@ if (arquivo) {
   registros = linhasDe(JSON.parse(readFileSync(arquivo, 'utf8')))
   console.log(`\n🗂️  ESCOPO DERIVADO · ${registros.length} registro(s) de ${arquivo}, hoje ${hoje}`)
 } else {
-  const url = `${BASE}/api/polls/tse?days=${dias}`
+  const url = urlApiPolls(BASE, dias)
   const r = await fetch(url)
   if (!r.ok) {
     naoLeu(`${url} devolveu HTTP ${r.status}`)
   }
-  registros = linhasDe(await r.json())
+  const resposta = await r.json()
+  registros = linhasDe(resposta)
   console.log(`\n🗂️  ESCOPO DERIVADO · ${registros.length} registro(s), janela de ${dias}d, hoje ${hoje}`)
-  borda = bordaDoCorte(registros)
+  borda = bordaDaResposta(resposta, registros)
   if (borda !== null) {
-    console.log(`   🔴 BASE CORTADA: a rota para em ${TETO_API_POLLS} linhas e a janela tem mais.`)
+    console.log(`   🔴 BASE CORTADA: a rota parou em ${tetoDaResposta(resposta)} linhas e a janela tem mais.`)
     console.log(`      Faltam divulgações até ${borda}, inclusive, e o poder de cada casa abaixo é medido sem elas.`)
   }
 }
