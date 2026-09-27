@@ -470,3 +470,30 @@ O André decidiu juntar: `Emerson College/RealClear Opinion Research` e a grafia
 ⛔ **NÃO registrei a ActiVote na lista do `check-us-polls-defasagem.mjs`.** Seriam dois leitores diferentes na mesma página, e o segundo só produziria `INCONCLUSIVO`. Quem cobre a casa agora é o `fora-do-indice`.
 
 🧪 Casos plantados em `scripts/testar-casas-us.mjs`, com **6 de 6 mutações reprovadas**, e metade é anti-excesso. 📌 **E o fixture do caso positivo estava errado primeiro:** usei 06/Out como "mais novo" e o próprio filtro de futuro o removeu. O guarda funcionando foi o que apontou o erro do teste.
+
+## 🧺 INGESTÃO CURADA: o que a de 27/Set/2026 ensina
+
+⚖️ **Decisão do André:** "ingere a BGSU/YouGov antes que ela saia da janela". A rodada nacional de campo 25/Ago-01/Set sairia da janela por volta de 01/Out e era o **único** buraco que o `agregador-na-fonte` cobrava. Depois da ingestão ele foi de **1 para ZERO**.
+
+📊 D+7,59 sobre 34 rodadas de 26 institutos virou **D+7,57 sobre 35 de 27**, veredito `PESQUISA_NOVA`.
+
+### 🔴 DOIS números errados quase entraram no lugar do documento
+
+| origem | o que dizia | o que a casa declara |
+|---|---|---|
+| o **agregador** | `566 LV` | **1.200** prováveis votantes. O 566 é o N não ponderado do subgrupo **MASCULINO** nas crosstabs |
+| um resumo de **busca** | "Democrats 48%, Republicans 47%" | **D 51 x R 44 x Neither 5**, ou seja D+7 e não D+1 |
+
+⛔ **O 566 é N de recorte lido como tamanho do estudo**, a mesma classe do defeito de 01/Ago/2026, quando a amostra foi lida como intenção de voto. E o D+1 da busca teria puxado a média para baixo com número que a fonte não sustenta.
+
+🔑 **A régua que isso confirma, e ela é a mais antiga deste arquivo:** a Wikipédia e o agregador são **ÍNDICE**, o instituto é **FONTE**, e resumo de busca **não é nem índice**. Ingestão curada se escreve do documento, com a pergunta lida.
+
+### 🔗 E a trava do link do documento ganhou exceção NOMEADA com medidor
+
+O ScholarWorks da universidade **entrega o PDF por um endpoint sem extensão** (`viewcontent.cgi?article=...`), medido em HTTP 200 com `content-type: application/pdf`. A regra do arquivo é *"aponta para o DOCUMENTO"*, nunca *"aponta para um `.pdf`"*, então entrou como exceção nomeada, com o padrão exigindo o `article=` com id **e** a coleção `context=depo`.
+
+⛔ **E o reconhecedor saiu de dentro do laço, para cópia única, e ganhou 15 asserções: 5 aceitas e 10 RECUSADAS.** O comentário afirmava que "a home do instituto continua reprovando" e essa afirmação **não tinha teste nenhum**. Exceção sem caso negativo é exceção que ninguém mede.
+
+📌 **E o padrão usa classe de caractere, nunca barra invertida**, porque ele vive numa `new RegExp('...')`: a primeira versão virou `article=d+`, com `d` literal, pela mesma armadilha que já mordeu o slug da ActiVote.
+
+⚠️ **Ingestão curada exige DEPLOY.** A lista é código compartilhado com o cron das 07:10Z: sem publicar, a fonte viva segue calculando a média **sem** a rodada, e o registro do Neon passa a discordar do arquivo.
