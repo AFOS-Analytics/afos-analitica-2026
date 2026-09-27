@@ -81,6 +81,10 @@ Ele encadeia sonda, ingestão, relatório, conferidor de escopo e sonda de fecha
 
 Teste: **124 asserções**, e **8 de 8 mutações** reprovadas. A do acento do Pará só passou a ser pega com "**Para** Quaest, ..." abrindo a frase, porque a regra tem caixa e o caso minúsculo não a exercia.
 
+🔴 **27/Set/2026: a preposição que ABRE a manchete vem com maiúscula.** *"No RS, Flávio Bolsonaro tem 35%, e Lula, 31%..., diz Quaest"* saiu como **Quaest COM NUMERO**, porque a regra da sigla aceitava "no/na/em/de" só em minúscula. Agora aceita as duas caixas e a caixa alta inteira ("LULA LIDERA NA BA"); a sigla segue exigindo maiúscula. No cache do mês: **14 viram estaduais e 0 viram nacionais**, lidos um a um. 128 asserções, e a mutação que volta à minúscula é reprovada. 🏷️ No mesmo dia a **Datavero** entrou pelo detector (nacional, div 02/Out) e foi posta na tabela de cobertura: a imprensa escreve "DataVero".
+
+📏 **27/Set: a FOLGA do corte caiu de 67 para 19** com a entrada de 72 registros num dia, e a projeção foi a **~30/Set**, antes do 1º turno. No banco: 369 linhas na janela de 15 dias e 570 na de 30, contra 200 servidas; a resposta atual pesa ~880 KB (~4,4 KB por linha). O conserto é na ROTA e a decisão é do André.
+
 ## 🔍 A SONDA, passos 0 e 4, criada em 11/Set/2026
 
 🔴 **Por que ela existe:** em 10/Set a mesma URL do TSE devolveu **851 e 863 alternando**. Uma retirada foi publicada como fato, depois desafirmada, e as duas vezes com **UMA leitura**. A dupla contagem resolveu o caso, mas ela só fala **depois** de gravar.

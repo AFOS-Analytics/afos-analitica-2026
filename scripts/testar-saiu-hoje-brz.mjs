@@ -143,6 +143,12 @@ eq(
   '"26 estados e no Distrito Federal" por extenso continua NACIONAL'
 )
 
+// 🔴 27/Set/2026: a preposição abrindo a manchete vem com MAIÚSCULA
+eq(ehNacional('No RS, Flávio Bolsonaro tem 35%, e Lula, 31% das intenções de voto no primeiro turno, diz Quaest - GZH'), false, '🔴 "No RS" abrindo a manchete, caso real de 27/Set')
+eq(ehNacional('Datafolha: Em SP, Flávio lidera 2º turno com 47%; Lula, 42% - CNN Brasil'), false, '"Em SP" depois dos dois-pontos')
+eq(ehNacional('LULA LIDERA NA BA E FLÁVIO EMPATA'), false, 'manchete toda em caixa alta: "NA BA"')
+eq(ehNacional('LULA E FLÁVIO EM PAUTA NO CONGRESSO'), true, '"EM PAUTA" em caixa alta NÃO é a UF PA')
+
 // 🔴 26/Set/2026: o NOME DO VEÍCULO decidia. 53 nacionais de setembro saíam estaduais.
 eq(ehNacional('Datafolha: Lula tem 46% e Flávio Bolsonaro, 44% no segundo turno - Diario de Pernambuco'), true, '🔴 "- Diario de Pernambuco" é o veículo')
 eq(ehNacional('Pesquisa Nexus/BTG aponta Lula com 40% e Flávio Bolsonaro com 37% no 1º turno - Portal de Prefeitura'), true, '"Prefeitura" do veículo NÃO é disputa municipal')

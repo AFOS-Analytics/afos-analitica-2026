@@ -71,6 +71,10 @@ export const CASAS_BRZ = [
   { registro: /poderdata/i, nome: 'PoderData', busca: 'PoderData', alvos: [palavra('poder ?data')] },
   { registro: /gerp/i, nome: 'Gerp', busca: '"pesquisa Gerp"', alvos: [palavra('gerp')] },
   { registro: /datatrends/i, nome: 'DataTrends', busca: 'DataTrends', alvos: [palavra('data ?trends')] },
+// 27/Set/2026: entrou pelo detector (BR078442026, n=1.500, div 02/Out). O
+// registro diz "DATAVERO PESQUISA E CONSULTORIA"; a imprensa escreve "DataVero",
+// medido: 1 manchete no cache de setembro inteiro, e estadual (RN).
+{ registro: /datavero/i, nome: 'Datavero', busca: '"DataVero"', alvos: [palavra('data ?vero')] },
   { registro: /indexa/i, nome: 'Indexa', busca: '"Instituto Indexa"', alvos: [palavra('indexa')] },
   { registro: /ideia|canal meio/i, nome: 'Ideia/Canal Meio', busca: '"Canal Meio"', alvos: [palavra('ideia'), palavra('canal meio')] },
   // 🔴⭐ A ENTRADA QUE PROVA POR QUE A TABELA É EXPLÍCITA, medida em 18/Set/2026.
