@@ -81,6 +81,18 @@ checar(
   checar('nenhuma curada repete instituto+campoFim+recorte', repetidas.length === 0, repetidas.join(' · '))
 }
 
+// 🔗 As duas exceções e o reconhecedor vivem FORA do laço, em cópia única, para
+// os casos negativos abaixo poderem cobrá-los. Antes eles eram recriados a cada
+// volta e nada os media: o comentário afirmava que "a home continua reprovando"
+// e essa afirmação não tinha teste, que é a régua escrita sem medidor.
+const CROSSTAB_EM_HTML = [/^https:\/\/www\.activote\.net\/polls\/generic-ballot\/\d{4}-\d{2}-\d{2}$/]
+const DOCUMENTO_SEM_EXTENSAO = [new RegExp('^https://scholarworks[.]bgsu[.]edu/cgi/viewcontent[.]cgi[?]article=[0-9]+&context=depo$')]
+const ehDocumentoDe = (u) =>
+  /^https:\/\/.+\.(pdf|xlsx?|csv)$/.test(u ?? '') ||
+  /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(u ?? '') ||
+  CROSSTAB_EM_HTML.some((re) => re.test(u ?? '')) ||
+  DOCUMENTO_SEM_EXTENSAO.some((re) => re.test(u ?? ''))
+
 for (const p of RODADAS_CURADAS) {
   const id = `${p.campoFim} ${p.amostraTipo}`
   checar(
@@ -132,12 +144,16 @@ for (const p of RODADAS_CURADAS) {
   // passar a home do instituto. A exceção é NOMEADA, e o padrão casa a forma da
   // URL que de fato contém a tabela (a página de uma leitura datada), nunca só
   // o domínio: `activote.net` puro continua reprovando.
-  const CROSSTAB_EM_HTML = [/^https:\/\/www\.activote\.net\/polls\/generic-ballot\/\d{4}-\d{2}-\d{2}$/]
-  const ehDocumento =
-    /^https:\/\/.+\.(pdf|xlsx?|csv)$/.test(p.fontePrimaria ?? '') ||
-    /^https:\/\/drive\.google\.com\/file\/d\/[\w-]+/.test(p.fontePrimaria ?? '') ||
-    CROSSTAB_EM_HTML.some((re) => re.test(p.fontePrimaria ?? ''))
-  checar(`${id}: tem link do documento da fonte primária`, ehDocumento, String(p.fontePrimaria))
+  // ⚠️ E a BGSU publica pelo repositório da universidade, o ScholarWorks, que
+  // ENTREGA o PDF por um endpoint SEM extensão na URL. Medido em 27/Set/2026:
+  // `viewcontent.cgi?article=1024&context=depo` responde HTTP 200 com
+  // `content-type: application/pdf`. A URL não parece um documento e é um.
+  // ⛔ O padrão exige o `article=` com id E a coleção `context=depo`, então a
+  // home do repositório e uma busca dele continuam reprovando.
+  // 🔑 Classe de caractere e ZERO barra invertida: o padrão vive numa STRING,
+  // e string engole a barra simples (a primeira versão desta linha virou
+  // `article=d+`, com `d` literal). Mesma armadilha do slug da ActiVote.
+  checar(`${id}: tem link do documento da fonte primária`, ehDocumentoDe(p.fontePrimaria), String(p.fontePrimaria))
 }
 
 // ── 2. A deduplicação ─────────────────────────────────────────────────────
@@ -213,6 +229,35 @@ console.log('\n🔁 deduplicação, que é o que torna a exceção segura\n')
   const indice = [doIndice({ instituto: 'The Economist/YouGov', campoFim: '2026-06-01', amostraTipo: 'RV' })]
   const r = mesclarCuradas(indice)
   checar('onda distante da mesma casa NÃO vira suspeita', r.suspeitas.length === 0, `suspeitas=${r.suspeitas.length}`)
+}
+
+console.log('\n🔗 a exceção do link é ESTREITA, e agora isso tem medidor (27/Set/2026)')
+{
+  // ⛔ Exceção sem caso negativo é exceção que ninguém mede. O comentário do
+  //    reconhecedor afirmava que "a home do instituto continua reprovando" e
+  //    essa afirmação nunca foi cobrada por asserção nenhuma.
+  const aceita = [
+    ['documento do repositório da BGSU', 'https://scholarworks.bgsu.edu/cgi/viewcontent.cgi?article=1024&context=depo'],
+    ['crosstab em HTML da ActiVote', 'https://www.activote.net/polls/generic-ballot/2026-09-11'],
+    ['PDF comum', 'https://exemplo.org/topline.pdf'],
+    ['XLSX da Focaldata', 'https://landing.focaldata.com/hubfs/x/tabelas.xlsx'],
+    ['arquivo no Drive', 'https://drive.google.com/file/d/abc123DEF/view'],
+  ]
+  for (const [nome, u] of aceita) checar(`aceita: ${nome}`, ehDocumentoDe(u), u)
+
+  const recusa = [
+    ['home do repositório', 'https://scholarworks.bgsu.edu/'],
+    ['busca no repositório', 'https://scholarworks.bgsu.edu/do/search/?q=poll'],
+    ['outra coleção do repositório', 'https://scholarworks.bgsu.edu/cgi/viewcontent.cgi?article=1024&context=outra'],
+    ['documento sem id de artigo', 'https://scholarworks.bgsu.edu/cgi/viewcontent.cgi?article=&context=depo'],
+    ['home da ActiVote', 'https://www.activote.net/'],
+    ['listagem da ActiVote, sem a data', 'https://www.activote.net/polls/generic-ballot/'],
+    ['post do instituto em vez da tabela', 'https://exemplo.org/blog/nossa-pesquisa-de-setembro'],
+    ['pasta do Drive em vez do arquivo', 'https://drive.google.com/drive/folders/abc123'],
+    ['http sem TLS', 'http://exemplo.org/topline.pdf'],
+    ['vazio', ''],
+  ]
+  for (const [nome, u] of recusa) checar(`RECUSA: ${nome}`, !ehDocumentoDe(u), u)
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} VEREDITO DO TESTE: ${falhas === 0 ? 'todos corretos' : `${falhas} falha(s)`}\n`)

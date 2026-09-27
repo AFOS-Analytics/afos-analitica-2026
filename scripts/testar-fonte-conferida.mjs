@@ -22,7 +22,16 @@ const err = (reg, agulha) => conferirCarga(reg).some((e) => e.includes(agulha))
 
 // ── 1. A carga real ────────────────────────────────────────────────
 caso('a carga real nao tem erro', conferirCarga().length === 0)
-caso('as 2 entradas de 25/Set estao la', FONTE_CONFERIDA.length === 2)
+// Contar entradas quebra a cada conferencia nova e nao diz nada; o tripwire
+// que importa e contra a REMOCAO silenciosa de uma divida ja registrada.
+caso(
+  'nenhuma conferencia registrada desapareceu',
+  [
+    ['CNN/SSRS', '2026-09-17'],
+    ['Emerson College/RealClear Opinion Research', '2026-09-15'],
+    ['BGSU/YouGov', '2026-09-01'],
+  ].every(([casa, fim]) => FONTE_CONFERIDA.some((e) => e.instituto === casa && e.campoFim === fim))
+)
 caso('os 4 resultados previstos', Object.keys(RESULTADOS).sort().join(',') === 'CONFIRMA,CONFIRMA_PARCIAL,NAO_CONTEM_A_PERGUNTA,NAO_ENCONTRADO')
 
 // ── 2. Entrada sem prova nao passa ─────────────────────────────────
