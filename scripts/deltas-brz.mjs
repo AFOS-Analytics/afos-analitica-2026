@@ -235,6 +235,59 @@ export function rankingDeVolume(linhas, livro, n = 3) {
     .slice(0, n)
 }
 
+/**
+ * ⚖️ O movimento NORMALIZADO, ao lado do cru, que é o que a régua do painel manda
+ * publicar: "a soma dos preços se move sozinha".
+ *
+ * 🔴 POR QUE ISTO EXISTE, 27/Set/2026: a régua existia desde 23/Set e a conta
+ *    saía de script AVULSO toda rodada (25/Set e 26/Set, escritos à mão na hora).
+ *    Em 25/Set o cru do 3º lugar dizia "os três sobem" e o livro tinha passado de
+ *    99,25 para 102,25: era sobrepreço, e só a conta normalizada mostrava.
+ *
+ * 🔑 A regra da casa tem DOIS denominadores, e escolher o errado muda o número:
+ *    - `par`: livro binário na prática (vencedor, 2º lugar). Soma dos DOIS maiores
+ *      preços de agora, os mesmos dois nomes nas duas pontas.
+ *    - `livro`: livro com mais de dois nomes relevantes (3º lugar, Senado). Soma
+ *      do livro INTEIRO de cada ponta.
+ *
+ * @returns {{modo, somaAntes, somaAgora, linhas: {pergunta, antes, agora, cru, norm}[]}|null}
+ *   null quando não há base para aquele livro ou o par não existe nas duas pontas.
+ */
+export function normalizado(antes, agora, livro, { modo = 'livro', piso = 0.5 } = {}) {
+  const A = new Map(antes.filter((l) => l.livro === livro).map((l) => [l.pergunta, l.preco]))
+  const B = new Map(agora.filter((l) => l.livro === livro).map((l) => [l.pergunta, l.preco]))
+  if (!A.size || !B.size) return null
+  let nomes
+  if (modo === 'par') {
+    nomes = [...B.entries()].sort((x, y) => y[1] - x[1]).slice(0, 2).map(([n]) => n)
+    if (nomes.length < 2 || nomes.some((n) => !A.has(n))) return null
+  } else {
+    nomes = [...B.keys()]
+  }
+  const soma = (m, ns) => ns.reduce((s, n) => s + (m.get(n) ?? 0), 0)
+  const somaAntes = modo === 'par' ? soma(A, nomes) : soma(A, [...A.keys()])
+  const somaAgora = soma(B, nomes)
+  if (!(somaAntes > 0) || !(somaAgora > 0)) return null
+  const linhas = nomes
+    .filter((n) => A.has(n) && (modo === 'par' || B.get(n) >= piso || A.get(n) >= piso))
+    .map((n) => {
+      const a = A.get(n)
+      const b = B.get(n)
+      return {
+        pergunta: n,
+        antes: a,
+        agora: b,
+        cru: Number((b - a).toFixed(2)),
+        norm: Number(((b / somaAgora - a / somaAntes) * 100).toFixed(2)),
+      }
+    })
+    .sort((x, y) => y.agora - x.agora)
+  return { modo, somaAntes: Number(somaAntes.toFixed(2)), somaAgora: Number(somaAgora.toFixed(2)), linhas }
+}
+
+/** O denominador de cada livro do Brasil. Livro de um contrato só não se normaliza. */
+export const MODO_NORMALIZACAO = { presidential: 'par', secondPlace: 'par', thirdPlace: 'livro', senate: 'livro' }
+
 /** Horas entre dois carimbos, com uma casa. */
 export const horasEntre = (antes, depois) => Math.round((Date.parse(depois) - Date.parse(antes)) / 360_000) / 10
 
@@ -316,6 +369,19 @@ async function principal() {
     }
     const abaixoDoPiso = r.movidos.length - r.relevantes.length
     if (abaixoDoPiso > 0) console.log(`\n   (${abaixoDoPiso} movimento(s) abaixo do piso de ${PISO}%, ruído de book fino, fora da tabela)`)
+
+    console.log('\n⚖️ NORMALIZADO, ao lado do cru (par = soma dos dois maiores; livro = soma do livro inteiro):')
+    for (const [livro, modo] of Object.entries(MODO_NORMALIZACAO)) {
+      const n = normalizado(anterior.linhas, agora, livro, { modo, piso: PISO })
+      if (!n) {
+        console.log(`   ${livro.padEnd(13)} sem base comparável para normalizar`)
+        continue
+      }
+      console.log(`   ${livro.padEnd(13)} ${modo.padEnd(5)} soma ${n.somaAntes.toFixed(2).replace('.', ',')} → ${n.somaAgora.toFixed(2).replace('.', ',')}`)
+      for (const l of n.linhas) {
+        console.log(`      ${l.antes.toFixed(2).padStart(6)} → ${l.agora.toFixed(2).padStart(6)}   cru ${br(l.cru).padStart(6)}   norm ${br(l.norm).padStart(6)}   ${l.pergunta.slice(0, 50)}`)
+      }
+    }
 
     if (r.entrantes.length) {
       console.log(`\n   ➕ ${r.entrantes.length} contrato(s) NOVO(S) no book:`)

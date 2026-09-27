@@ -484,8 +484,10 @@ Execute em sequência:
 5.1. 🖥️ **CONFERIR A TELA COM NAVEGADOR, nos três idiomas** (instalado 07/Set/2026):
 
 ```bash
-node scripts/conferir-tela.mjs --pais=br --esperado=57.50,39.45,58.55,24.50
+node scripts/conferir-tela.mjs --pais=br "--esperado=57.50,39.45,58.55,24.50"
 ```
+
+🔴 **No PowerShell, a lista vai ENTRE ASPAS.** Sem aspas ele lê `57.50,39.45` como lista de NÚMEROS e corta os zeros finais: o conferidor recebe `57.5` e procura "57,5" com fronteira de dígito, que falha contra "57,50" na tela. Medido em 27/Set/2026: acusou 44,40 ausente nos três idiomas, e com aspas deu 7/7. E o erro também pode passar calado, quando outro número da tela termina em "57,5".
 
 ⚠️ **O conferidor existia desde 06/Set e só servia os EUA, com a rota fixa em `/dashboard/us`.** O buraco era o pior possível: a passada do BRASIL é a que publica prosa editorial em três idiomas, e era justamente ela que não tinha conferidor de entrega visual. Ganhou `--pais=`, e o padrão continua `us`.
 

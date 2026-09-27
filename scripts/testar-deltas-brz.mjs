@@ -8,7 +8,7 @@
  * Uso: node scripts/testar-deltas-brz.mjs
  */
 
-import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre, rankingDeVolume, limparPergunta } from './deltas-brz.mjs'
+import { comparar, achatar, lerLinhas, ultimaLeitura, escolherBasePorLivro, horasEntre, rankingDeVolume, limparPergunta, normalizado, MODO_NORMALIZACAO } from './deltas-brz.mjs'
 
 let falhas = 0
 let passes = 0
@@ -190,6 +190,30 @@ console.log('\n11. 🔴 A CHAVE DO AO VIVO casa com a da certificada (16/Set/202
   const leitura = { grupos: { presidential: { linhas: [{ pergunta: 'Will Flávio Bolsonaro win the 2026 Brazilian presidential election?', preco: 53.75, volume: 1 }] } } }
   const r = comparar([L('presidential', 'Flávio Bolsonaro', 51.95, 1)], achatar(leitura))
   conferir('ao vivo x certificada COMPARA em vez de dar novo+sumido', r.movidos.length === 1 && r.entrantes.length === 0 && r.sumidos.length === 0, JSON.stringify(r))
+}
+
+
+// ⚖️ 27/Set/2026: o normalizado, com os números REAIS das certificadas de 25 e 26/Set.
+{
+  const antes = [L('presidential', 'Flávio Bolsonaro', 55.55), L('presidential', 'Luiz Inácio Lula da Silva', 43.5), L('presidential', 'Renan Santos', 0.7)]
+  const agora = [L('presidential', 'Flávio Bolsonaro', 56.15), L('presidential', 'Luiz Inácio Lula da Silva', 42.5), L('presidential', 'Renan Santos', 0.45)]
+  const n = normalizado(antes, agora, 'presidential', { modo: 'par' })
+  conferir('par: soma 99,05 → 98,65', n.somaAntes === 99.05 && n.somaAgora === 98.65, JSON.stringify(n))
+  conferir('par: Flávio +0,84 normalizado', n.linhas.find((l) => l.pergunta === 'Flávio Bolsonaro').norm === 0.84)
+  conferir('par: Lula −0,84 normalizado', n.linhas.find((l) => l.pergunta === 'Luiz Inácio Lula da Silva').norm === -0.84)
+  conferir('par: Renan fica FORA do denominador do par', n.linhas.length === 2)
+
+  const t0 = [L('thirdPlace', 'Renan Santos', 45.5), L('thirdPlace', 'Augusto Cury', 41.05), L('thirdPlace', 'Ronaldo Caiado', 14.5), L('thirdPlace', 'Romeu Zema', 0.35), L('thirdPlace', 'Outros', 0.75), L('thirdPlace', 'Nanico', 0.1)]
+  const t1 = [L('thirdPlace', 'Renan Santos', 45.5), L('thirdPlace', 'Augusto Cury', 41.35), L('thirdPlace', 'Ronaldo Caiado', 14.5), L('thirdPlace', 'Romeu Zema', 0.65), L('thirdPlace', 'Outros', 0.75), L('thirdPlace', 'Nanico', 0.1)]
+  const m = normalizado(t0, t1, 'thirdPlace', { modo: 'livro' })
+  conferir('livro: soma 102,25 → 102,85', m.somaAntes === 102.25 && m.somaAgora === 102.85, JSON.stringify(m))
+  conferir('livro: Renan parado no cru e −0,26 normalizado', (() => { const r = m.linhas.find((l) => l.pergunta === 'Renan Santos'); return r.cru === 0 && r.norm === -0.26 })())
+  conferir('livro: Cury +0,30 cru e +0,06 normalizado', (() => { const r = m.linhas.find((l) => l.pergunta === 'Augusto Cury'); return r.cru === 0.3 && r.norm === 0.06 })())
+  conferir('livro: abaixo do piso nas duas pontas não entra na lista', !m.linhas.some((l) => l.pergunta === 'Nanico'))
+
+  conferir('sem base do livro devolve null', normalizado([], agora, 'presidential', { modo: 'par' }) === null)
+  conferir('par sem um dos dois na base devolve null', normalizado([L('presidential', 'Flávio Bolsonaro', 55)], agora, 'presidential', { modo: 'par' }) === null)
+  conferir('vencedor e 2º lugar são PAR; 3º lugar e Senado são LIVRO', MODO_NORMALIZACAO.presidential === 'par' && MODO_NORMALIZACAO.secondPlace === 'par' && MODO_NORMALIZACAO.thirdPlace === 'livro' && MODO_NORMALIZACAO.senate === 'livro')
 }
 
 console.log(`\n${falhas === 0 ? '✅' : '❌'} ${passes} passaram, ${falhas} falharam.`)
