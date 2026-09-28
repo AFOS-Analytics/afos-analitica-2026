@@ -75,29 +75,78 @@ console.log(`\n─────────────────────�
 // procedencia, nunca a variacao: numa janela movel de 30 dias o nivel anda
 // quando uma rodada velha SAI, e isso e composicao de janela, nao eleitorado.
 let pesquisa = null
-try {
-  const rp = await fetch(BASE + '/us-polls-data.json', { signal: AbortSignal.timeout(45000) })
-  if (rp.ok) {
-    const a = await rp.json()
-    const inc = (a && a.mediaAfos && a.mediaAfos.incluidas) || []
-    const campos = inc.map((x) => x.campoFim).filter(Boolean).sort()
-    pesquisa = {
-      media: a && a.mediaAfos ? a.mediaAfos.vantagemDem : null,
-      rodadas: inc.length,
-      institutos: a && a.mediaAfos ? a.mediaAfos.nInstitutos : null,
-      de: campos[0], ate: campos[campos.length - 1],
-      lastUpdate: a ? a.lastUpdate : null,
-    }
+let fontePesquisa = null
+// 🔴 O PISO NAO E O QUE A TELA SERVE, e confundir os dois quase pos numero velho
+//    num post publico em 28/Set. O painel le o NEON primeiro (registro gravado
+//    pelo cron das 07:10Z) e so cai para o arquivo publicado se o Neon falhar ou
+//    se o arquivo for MAIS NOVO. O arquivo so muda quando alguem publica a mao,
+//    entao ele envelhece entre deploys. Medido em 28/Set: o arquivo dizia
+//    D+7.57 sobre 35 rodadas e a tela ja servia D+7.58 sobre 34, porque uma
+//    rodada de 28/Ago SAIU da janela de 30 dias. Post cita o que a TELA mostra.
+const leDoArquivo = async () => {
+  try {
+    const rp = await fetch(BASE + '/us-polls-data.json', { signal: AbortSignal.timeout(45000) })
+    if (!rp.ok) return null
+    return await rp.json()
+  } catch { return null }
+}
+const leDoNeon = async () => {
+  try {
+    const { config } = await import('dotenv')
+    config({ path: '.env.local' })
+    const url = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL
+    if (!url) return null
+    const { PrismaClient } = await import('@prisma/client')
+    const { PrismaNeon } = await import('@prisma/adapter-neon')
+    const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) })
+    const reg = await prisma.analysisReport.findFirst({
+      where: { slug: { startsWith: 'us-generic-ballot-' } },
+      orderBy: { publishedAt: 'desc' },
+      select: { slug: true, bodyMarkdown: true },
+    })
+    await prisma.$disconnect()
+    if (!reg?.bodyMarkdown) return null
+    const d = JSON.parse(reg.bodyMarkdown)
+    if (!Array.isArray(d?.polls) || d.polls.length === 0) return null
+    d.__slug = reg.slug
+    return d
+  } catch { return null }
+}
+
+const doArquivo = await leDoArquivo()
+const doNeon = await leDoNeon()
+// Mesma regra de desempate do painel: o arquivo so vence se for MAIS novo.
+let escolhido = doNeon
+fontePesquisa = doNeon ? 'NEON (' + (doNeon.__slug || 'us-generic-ballot') + ')' : null
+if (doArquivo?.lastUpdate && doNeon?.lastUpdate && doArquivo.lastUpdate > doNeon.lastUpdate) {
+  escolhido = doArquivo; fontePesquisa = 'ARQUIVO publicado (mais novo que o Neon)'
+}
+if (!escolhido) { escolhido = doArquivo; fontePesquisa = doArquivo ? 'ARQUIVO publicado (Neon nao respondeu)' : null }
+
+if (escolhido) {
+  const inc = (escolhido.mediaAfos && escolhido.mediaAfos.incluidas) || []
+  const campos = inc.map((x) => x.campoFim).filter(Boolean).sort()
+  pesquisa = {
+    media: escolhido.mediaAfos ? escolhido.mediaAfos.vantagemDem : null,
+    rodadas: inc.length,
+    institutos: escolhido.mediaAfos ? escolhido.mediaAfos.nInstitutos : null,
+    de: campos[0], ate: campos[campos.length - 1],
+    lastUpdate: escolhido.lastUpdate,
   }
-} catch { /* fica null, e o veredito avisa */ }
+}
 
 console.log('')
 console.log('   PESQUISA . media do generic ballot, o instrumento que NAO responde a pergunta')
 if (!pesquisa || pesquisa.media == null) {
-  console.log('     AVISO: NAO LEU a media publicada. O post cita esse numero: conferir a mao.')
+  console.log('     AVISO: NAO LEU nem o Neon nem o arquivo. O post cita esse numero: conferir a mao.')
 } else {
+  console.log('     fonte: ' + fontePesquisa)
   console.log('     D+' + String(pesquisa.media).replace('.', ',') + '  sobre ' + pesquisa.rodadas + ' rodadas de ' + pesquisa.institutos + ' institutos')
-  console.log('     campo de ' + pesquisa.de + ' a ' + pesquisa.ate + '  .  janela movel de 30 dias  .  arquivo de ' + pesquisa.lastUpdate)
+  console.log('     campo de ' + pesquisa.de + ' a ' + pesquisa.ate + '  .  janela movel de 30 dias  .  lastUpdate ' + pesquisa.lastUpdate)
+  if (doNeon && doArquivo && doNeon.lastUpdate !== doArquivo.lastUpdate) {
+    const im = doArquivo.mediaAfos ? doArquivo.mediaAfos.vantagemDem : '?'
+    console.log('     NOTA: o arquivo publicado esta em D+' + String(im).replace('.', ',') + ' (' + doArquivo.lastUpdate + '), diferente da tela.')
+  }
   console.log('     PUBLICAR o NIVEL com esta procedencia. NAO publicar VARIACAO da semana:')
   console.log('     a media sobe sozinha quando rodada velha sai da janela, e isso e composicao.')
 }
