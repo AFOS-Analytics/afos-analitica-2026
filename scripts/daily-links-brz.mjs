@@ -13,6 +13,7 @@
  * Marcadores, escritos no lugar da URL dentro de `[texto](...)`:
  *   {{GN:regex do título}}   item SECUNDÁRIO do cache (Google News redirect)
  *   {{AN:regex do título}}   item ÂNCORA do cache (qid prestige-*, URL direta)
+ *   {{AN:regex@Veículo}}     o mesmo, escolhendo o veículo quando o título saiu igual em dois (vale para GN)
  *   {{URL:https://...|Veículo|Título}}   âncora com URL já conhecida (corpo lido)
  *   {{FONTES}}               vira os dois sub-blocos de "Fontes consultadas"
  *
@@ -59,8 +60,11 @@ texto = texto.replace(/\{\{(GN|AN|URL):([^}]+)\}\}/g, (inteiro, tipo, arg) => {
     usados.set(url, { tipo: 'ANCORA', veiculo, titulo })
     return url
   }
-  const re = new RegExp(arg, 'i')
-  const cand = itens.filter((x) => re.test(x.title) && (tipo === 'AN' ? x.qid.startsWith('prestige-') : !x.qid.startsWith('prestige-')))
+  // `regex@Veículo` escolhe entre veículos que publicaram o MESMO título (28/Set/2026:
+  // "Dino pede a Fachin sessão do plenário" saiu igual na Folha e na CartaCapital).
+  const [padrao, soVeiculo] = arg.split('@')
+  const re = new RegExp(padrao, 'i')
+  const cand = itens.filter((x) => re.test(x.title) && (tipo === 'AN' ? x.qid.startsWith('prestige-') : !x.qid.startsWith('prestige-')) && (!soVeiculo || veiculoDe(x.sourceName).toLowerCase() === soVeiculo.trim().toLowerCase()))
   const unicos = [...new Map(cand.map((x) => [x.link, x])).values()]
   if (unicos.length === 0) { erros.push(`sem casamento ${tipo}: /${arg}/`); return inteiro }
   const veiculos = new Set(unicos.map((x) => x.sourceName))

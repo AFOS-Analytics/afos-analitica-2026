@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-28",
+  "refetch": {
+    "fetchedAt": "2026-09-28T17:12:36Z",
+    "certificada": "2026-09-28T16:49:38Z",
+    "gate": "nao disparou: vencedor, 2o lugar, STF e Renan identicos; Cury +0,10pp; volume USD 156,21M certificado contra 156,46M ao vivo"
+  },
+  "factCheck": [
+    { "evento": "Dino derruba ordem de Mendonca sobre post de Tabet (27/Set) e envia a decisao a referendo do plenario apos recurso de Flavio (28/Set)", "fontes": ["G1 28/09, corpo lido", "Folha de S.Paulo e CartaCapital 28/09", "Jovem Pan 27/09"], "decisao": "incorporar como recurso e envio a referendo" },
+    { "evento": "ANJL e IBJR pedem a Fux suspensao da MP 1.394 das bets", "fontes": ["O Globo 28/09, corpo lido", "Folha de S.Paulo 28/09"], "decisao": "incorporar como pedido, sem decisao" },
+    { "evento": "Gilmar ajusta voto para suspender julgamento sobre Moraes", "fontes": ["G1 28/09, corpo lido; O Globo e do mesmo grupo"], "decisao": "NAO incorporar na daily (fonte de um grupo so); no painel entrou atribuido ao G1" }
+  ],
+  "pesquisas": [
+    { "casa": "Quaest", "protocolo": "BR-06520/2026", "campo": "2026-09-24 a 2026-09-27", "n": 2004, "conferida": "corpo CartaCapital e O Globo" },
+    { "casa": "BTG/Nexus", "protocolo": "BR-07557/2026", "campo": "2026-09-25 a 2026-09-27", "n": 2000, "conferida": "corpo Correio Braziliense e CNN Brasil" }
+  ],
+  "adversarial": {
+    "singleSource": ["rejeicao da Nexus (Correio Braziliense, atribuida)", "transferencia de voto da Quaest (O Globo, atribuida)"],
+    "numerical": "reconcile-claims: so recortes de pesquisa e distancias a topo e piso, conferidos",
+    "fontesInventadas": "nenhuma; 17 links, 59% secundario",
+    "quotes": "'mentira nao se combate com mentira' ligada a manchete do G1 que a contem",
+    "causacao": "nenhuma; pesquisas e preco com os carimbos de cada um",
+    "verbos": "recorreu, pediu sessao do plenario, pediram suspensao, decisao monocratica",
+    "correcoes": "'a maior parte' dos eleitores de Renan (48%) nao e maioria: trocado pelos numeros; a mesma impressao ('majoritariamente') foi corrigida no painel publicado, commit 448708b4",
+    "decisao": "prosseguir"
+  }
+}
